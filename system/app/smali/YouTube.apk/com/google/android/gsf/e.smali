@@ -24,16 +24,6 @@
     return-void
 .end method
 
-.method public constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 78
-    invoke-direct {p0}, Lcom/google/android/gsf/d;-><init>()V
-
-    return-void
-.end method
-
 .method private static a(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
     .registers 9
     .parameter
@@ -72,27 +62,27 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
     :try_end_18
-    .catchall {:try_start_1 .. :try_end_18} :catchall_5a
+    .catchall {:try_start_1 .. :try_end_18} :catchall_56
     .catch Landroid/database/SQLException; {:try_start_1 .. :try_end_18} :catch_2d
 
     move-result-object v1
 
     .line 91
-    if-eqz v1, :cond_68
+    if-eqz v1, :cond_64
 
     :try_start_1b
     invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_68
+    if-eqz v0, :cond_64
 
     const/4 v0, 0x0
 
     invoke-interface {v1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
     :try_end_25
-    .catchall {:try_start_1b .. :try_end_25} :catchall_62
-    .catch Landroid/database/SQLException; {:try_start_1b .. :try_end_25} :catch_64
+    .catchall {:try_start_1b .. :try_end_25} :catchall_5e
+    .catch Landroid/database/SQLException; {:try_start_1b .. :try_end_25} :catch_60
 
     move-result-object v6
 
@@ -122,13 +112,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Can\'t get key "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -151,11 +137,11 @@
     move-result-object v3
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_53
-    .catchall {:try_start_2f .. :try_end_53} :catchall_62
+    :try_end_4f
+    .catchall {:try_start_2f .. :try_end_4f} :catchall_5e
 
     .line 96
-    if-eqz v1, :cond_66
+    if-eqz v1, :cond_62
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
@@ -163,36 +149,36 @@
 
     goto :goto_2c
 
-    :catchall_5a
+    :catchall_56
     move-exception v0
 
     move-object v1, v6
 
-    :goto_5c
-    if-eqz v1, :cond_61
+    :goto_58
+    if-eqz v1, :cond_5d
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    :cond_61
+    :cond_5d
     throw v0
 
-    :catchall_62
+    :catchall_5e
     move-exception v0
 
-    goto :goto_5c
+    goto :goto_58
 
     .line 92
-    :catch_64
+    :catch_60
     move-exception v0
 
     goto :goto_2f
 
-    :cond_66
+    :cond_62
     move-object v0, v6
 
     goto :goto_2c
 
-    :cond_68
+    :cond_64
     move-object v0, v6
 
     goto :goto_27

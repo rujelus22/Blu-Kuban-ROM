@@ -1,33 +1,70 @@
 .class final Lcom/google/common/collect/ft;
-.super Ljava/lang/Object;
+.super Ljava/util/AbstractQueue;
 .source "SourceFile"
 
 
-# static fields
-.field static final a:Lcom/google/common/collect/Ordering;
-
-
 # direct methods
-.method static constructor <clinit>()V
+.method constructor <init>()V
     .registers 1
 
     .prologue
-    .line 200
-    new-instance v0, Lcom/google/common/collect/fr;
-
-    invoke-direct {v0}, Lcom/google/common/collect/fr;-><init>()V
-
-    sput-object v0, Lcom/google/common/collect/ft;->a:Lcom/google/common/collect/Ordering;
+    .line 920
+    invoke-direct {p0}, Ljava/util/AbstractQueue;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .registers 1
+
+# virtual methods
+.method public final iterator()Ljava/util/Iterator;
+    .registers 2
 
     .prologue
-    .line 199
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 943
+    invoke-static {}, Lcom/google/common/collect/ee;->a()Lcom/google/common/collect/mt;
 
-    return-void
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final offer(Ljava/lang/Object;)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 923
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final peek()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 928
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public final poll()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 933
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public final size()I
+    .registers 2
+
+    .prologue
+    .line 938
+    const/4 v0, 0x0
+
+    return v0
 .end method

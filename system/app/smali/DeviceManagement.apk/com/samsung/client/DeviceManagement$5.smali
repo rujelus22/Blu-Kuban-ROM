@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 251
+    .line 252
     iput-object p1, p0, Lcom/samsung/client/DeviceManagement$5;->this$0:Lcom/samsung/client/DeviceManagement;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,73 +42,34 @@
     .parameter "preference"
 
     .prologue
-    const/4 v0, 0x0
-
-    .line 254
-    sget v1, Lcom/samsung/client/DMApp;->mCallState:I
-
-    if-eqz v1, :cond_c
-
-    .line 255
-    iget-object v0, p0, Lcom/samsung/client/DeviceManagement$5;->this$0:Lcom/samsung/client/DeviceManagement;
-
-    #calls: Lcom/samsung/client/DeviceManagement;->showCallError()V
-    invoke-static {v0}, Lcom/samsung/client/DeviceManagement;->access$200(Lcom/samsung/client/DeviceManagement;)V
-
     .line 256
-    const/4 v0, 0x1
+    new-instance v0, Landroid/content/Intent;
 
-    .line 266
-    :goto_b
-    return v0
+    const-string v1, "android.provider.Telephony.SECRET_CODE"
 
-    .line 259
-    :cond_c
-    sget-object v1, Lcom/samsung/client/DeviceManagement;->root:Landroid/preference/PreferenceScreen;
+    const-string v2, "android_sercet_code://2432546"
 
-    invoke-virtual {v1, v0}, Landroid/preference/PreferenceScreen;->setEnabled(Z)V
+    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v2
+
+    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
     .line 261
+    .local v0, i:Landroid/content/Intent;
+    const-string v1, "com.google.android.gsf"
+
+    const-string v2, "com.google.android.gsf.update.SystemUpdateActivity"
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 264
     iget-object v1, p0, Lcom/samsung/client/DeviceManagement$5;->this$0:Lcom/samsung/client/DeviceManagement;
 
-    #getter for: Lcom/samsung/client/DeviceManagement;->mApp:Lcom/samsung/client/DMApp;
-    invoke-static {v1}, Lcom/samsung/client/DeviceManagement;->access$000(Lcom/samsung/client/DeviceManagement;)Lcom/samsung/client/DMApp;
-
-    move-result-object v1
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v1, v2}, Lcom/samsung/client/DMApp;->setSessionType(I)V
-
-    .line 262
-    iget-object v1, p0, Lcom/samsung/client/DeviceManagement$5;->this$0:Lcom/samsung/client/DeviceManagement;
-
-    #getter for: Lcom/samsung/client/DeviceManagement;->mApp:Lcom/samsung/client/DMApp;
-    invoke-static {v1}, Lcom/samsung/client/DeviceManagement;->access$000(Lcom/samsung/client/DeviceManagement;)Lcom/samsung/client/DMApp;
-
-    move-result-object v1
-
-    iput-boolean v0, v1, Lcom/samsung/client/DMApp;->userCancel:Z
-
-    .line 263
-    iget-object v1, p0, Lcom/samsung/client/DeviceManagement$5;->this$0:Lcom/samsung/client/DeviceManagement;
-
-    #getter for: Lcom/samsung/client/DeviceManagement;->mApp:Lcom/samsung/client/DMApp;
-    invoke-static {v1}, Lcom/samsung/client/DeviceManagement;->access$000(Lcom/samsung/client/DeviceManagement;)Lcom/samsung/client/DMApp;
-
-    move-result-object v1
-
-    iput-boolean v0, v1, Lcom/samsung/client/DMApp;->userCancelDld:Z
+    invoke-virtual {v1, v0}, Lcom/samsung/client/DeviceManagement;->startActivity(Landroid/content/Intent;)V
 
     .line 265
-    iget-object v1, p0, Lcom/samsung/client/DeviceManagement$5;->this$0:Lcom/samsung/client/DeviceManagement;
+    const/4 v1, 0x1
 
-    #getter for: Lcom/samsung/client/DeviceManagement;->mApp:Lcom/samsung/client/DMApp;
-    invoke-static {v1}, Lcom/samsung/client/DeviceManagement;->access$000(Lcom/samsung/client/DeviceManagement;)Lcom/samsung/client/DMApp;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/samsung/client/DMApp;->fumoStartSession()V
-
-    goto :goto_b
+    return v1
 .end method

@@ -53,10 +53,22 @@
     return-void
 .end method
 
+.method public logTagAndPackage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 5
+    .parameter "tag"
+    .parameter "packageName"
+    .parameter "error"
+    .parameter "reason"
+
+    .prologue
+    .line 25
+    return-void
+.end method
+
 .method public reset()V
     .registers 1
 
     .prologue
-    .line 25
+    .line 29
     return-void
 .end method

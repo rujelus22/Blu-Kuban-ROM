@@ -83,7 +83,7 @@
     .line 2083
     iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment$LocalCallStateClient;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    iget-object v0, v0, Lcom/google/android/talk/fragments/BuddyListFragment;->mHandler:Landroid/os/Handler;
+    iget-object v0, v0, Lcom/google/android/talk/fragments/RosterListFragment;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/android/talk/fragments/BuddyListFragment$LocalCallStateClient$2;
 
@@ -102,7 +102,7 @@
     .line 2065
     iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment$LocalCallStateClient;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    iget-object v0, v0, Lcom/google/android/talk/fragments/BuddyListFragment;->mHandler:Landroid/os/Handler;
+    iget-object v0, v0, Lcom/google/android/talk/fragments/RosterListFragment;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/android/talk/fragments/BuddyListFragment$LocalCallStateClient$1;
 

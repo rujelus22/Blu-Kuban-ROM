@@ -23,10 +23,10 @@
     .registers 2
 
     .prologue
-    .line 5978
+    .line 1778
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 5984
+    .line 1783
     new-instance v0, Lcom/android/email/Controller$ControllerService$1;
 
     invoke-direct {v0, p0}, Lcom/android/email/Controller$ControllerService$1;-><init>(Lcom/android/email/Controller$ControllerService;)V
@@ -43,7 +43,7 @@
     .parameter "intent"
 
     .prologue
-    .line 6177
+    .line 1886
     iget-object v0, p0, Lcom/android/email/Controller$ControllerService;->mBinder:Lcom/android/emailcommon/service/IEmailService$Stub;
 
     return-object v0

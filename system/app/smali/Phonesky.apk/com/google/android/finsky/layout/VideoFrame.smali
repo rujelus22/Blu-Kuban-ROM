@@ -9,10 +9,10 @@
     .parameter "context"
 
     .prologue
-    .line 22
+    .line 23
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 23
+    .line 24
     return-void
 .end method
 
@@ -22,10 +22,10 @@
     .parameter "attrs"
 
     .prologue
-    .line 26
+    .line 27
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 27
+    .line 28
     return-void
 .end method
 
@@ -36,23 +36,38 @@
     .parameter "defStyle"
 
     .prologue
-    .line 30
+    .line 31
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 31
+    .line 32
     return-void
 .end method
 
 
 # virtual methods
-.method public configureOverlays(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/utils/BitmapLoader;)V
+.method public configureFilmOverlay(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/utils/BitmapLoader;)V
     .registers 19
     .parameter "doc"
     .parameter "bitmapLoader"
 
     .prologue
-    .line 34
-    const v1, 0x7f080191
+    .line 35
+    const v1, 0x7f08021c
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/VideoFrame;->findViewById(I)Landroid/view/View;
+
+    move-result-object v15
+
+    .line 36
+    .local v15, previewImage:Landroid/view/View;
+    const/16 v1, 0x8
+
+    invoke-virtual {v15, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 38
+    const v1, 0x7f08021f
 
     move-object/from16 v0, p0
 
@@ -60,14 +75,14 @@
 
     move-result-object v14
 
-    .line 35
-    .local v14, previewImage:Landroid/view/View;
+    .line 39
+    .local v14, previewFlatOverlay:Landroid/view/View;
     const/16 v1, 0x8
 
     invoke-virtual {v14, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 38
-    const v1, 0x7f080192
+    .line 42
+    const v1, 0x7f08021d
 
     move-object/from16 v0, p0
 
@@ -77,19 +92,19 @@
 
     check-cast v12, Landroid/view/ViewStub;
 
-    .line 39
+    .line 43
     .local v12, overlayStub:Landroid/view/ViewStub;
     invoke-virtual {v12}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
     move-result-object v9
 
-    .line 41
+    .line 45
     .local v9, overlay:Landroid/view/View;
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/finsky/layout/VideoFrame;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v3, 0x7f0200b9
+    const v3, 0x7f020101
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -97,7 +112,7 @@
 
     check-cast v7, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 43
+    .line 47
     .local v7, backgroundTile:Landroid/graphics/drawable/BitmapDrawable;
     sget-object v1, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
@@ -105,30 +120,30 @@
 
     invoke-virtual {v7, v1, v3}, Landroid/graphics/drawable/BitmapDrawable;->setTileModeXY(Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
 
-    .line 44
-    const v1, 0x7f080195
+    .line 48
+    const v1, 0x7f080221
 
     invoke-virtual {v9, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v10
 
-    .line 45
+    .line 49
     .local v10, overlayLeft:Landroid/view/View;
     invoke-virtual {v10, v7}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 46
-    const v1, 0x7f080196
+    .line 50
+    const v1, 0x7f080222
 
     invoke-virtual {v9, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v11
 
-    .line 47
+    .line 51
     .local v11, overlayRight:Landroid/view/View;
     invoke-virtual {v11, v7}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 50
-    const v1, 0x7f080194
+    .line 54
+    const v1, 0x7f080220
 
     invoke-virtual {v9, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -136,7 +151,7 @@
 
     check-cast v13, Landroid/widget/ImageView;
 
-    .line 52
+    .line 56
     .local v13, overlayThumbnail:Landroid/widget/ImageView;
     invoke-virtual {v13}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -144,7 +159,7 @@
 
     iget v5, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 53
+    .line 57
     .local v5, width:I
     invoke-virtual {v13}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -152,7 +167,7 @@
 
     iget v6, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 54
+    .line 58
     .local v6, height:I
     const/4 v1, 0x0
 
@@ -162,20 +177,18 @@
 
     move-result-object v2
 
-    .line 57
+    .line 61
     .local v2, url:Ljava/lang/String;
-    if-eqz v2, :cond_7e
+    if-eqz v2, :cond_8b
 
-    .line 58
+    .line 62
     const/4 v3, 0x0
 
     new-instance v4, Lcom/google/android/finsky/layout/ThumbnailListener;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v15, 0x1
-
-    invoke-direct {v4, v13, v1, v15}, Lcom/google/android/finsky/layout/ThumbnailListener;-><init>(Landroid/widget/ImageView;Landroid/view/View;Z)V
+    invoke-direct {v4, v13, v1}, Lcom/google/android/finsky/layout/ThumbnailListener;-><init>(Landroid/widget/ImageView;Z)V
 
     move-object/from16 v1, p2
 
@@ -183,23 +196,78 @@
 
     move-result-object v8
 
-    .line 61
+    .line 65
     .local v8, container:Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
     invoke-virtual {v8}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    if-eqz v1, :cond_7e
+    if-eqz v1, :cond_8b
 
-    .line 62
+    .line 66
     invoke-virtual {v8}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v1
 
     invoke-virtual {v13, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 65
+    .line 69
     .end local v8           #container:Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-    :cond_7e
+    :cond_8b
+    return-void
+.end method
+
+.method public configurePreviewWithFlatOverlay(Landroid/graphics/drawable/Drawable;)V
+    .registers 7
+    .parameter "drawable"
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 72
+    const v3, 0x7f08021c
+
+    invoke-virtual {p0, v3}, Lcom/google/android/finsky/layout/VideoFrame;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/ImageView;
+
+    .line 73
+    .local v2, previewImage:Landroid/widget/ImageView;
+    invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 75
+    const v3, 0x7f08021e
+
+    invoke-virtual {p0, v3}, Lcom/google/android/finsky/layout/VideoFrame;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    .line 76
+    .local v0, previewFilmOverlay:Landroid/view/View;
+    if-eqz v0, :cond_1b
+
+    .line 77
+    const/16 v3, 0x8
+
+    invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
+
+    .line 80
+    :cond_1b
+    const v3, 0x7f08021f
+
+    invoke-virtual {p0, v3}, Lcom/google/android/finsky/layout/VideoFrame;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    .line 81
+    .local v1, previewFlatOverlay:Landroid/view/View;
+    invoke-virtual {v1, v4}, Landroid/view/View;->setVisibility(I)V
+
+    .line 83
+    invoke-virtual {v2, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 84
     return-void
 .end method

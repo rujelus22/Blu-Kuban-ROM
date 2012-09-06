@@ -1,42 +1,62 @@
-.class Lcom/google/android/maps/driveabout/app/bq;
-.super Lcom/google/android/maps/driveabout/app/bx;
+.class Lcom/google/android/maps/driveabout/app/bQ;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/maps/driveabout/app/er;
+
+
+# instance fields
+.field final synthetic a:Ljava/lang/String;
+
+.field final synthetic b:Z
+
+.field final synthetic c:Z
+
+.field final synthetic d:Lcom/google/android/maps/driveabout/app/NavigationActivity;
 
 
 # direct methods
-.method private constructor <init>(Landroid/content/Context;)V
-    .registers 11
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/NavigationActivity;Ljava/lang/String;ZZ)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v4, 0x0
+    .prologue
+    .line 886
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/bQ;->d:Lcom/google/android/maps/driveabout/app/NavigationActivity;
 
-    const-string v2, "__satellite"
+    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/bQ;->a:Ljava/lang/String;
 
-    const v0, 0x7f0b0037
+    iput-boolean p3, p0, Lcom/google/android/maps/driveabout/app/bQ;->b:Z
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    iput-boolean p4, p0, Lcom/google/android/maps/driveabout/app/bQ;->c:Z
 
-    move-result-object v3
-
-    const v6, 0x7f0200fe
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move v5, v4
-
-    move v7, v4
-
-    move v8, v4
-
-    invoke-direct/range {v0 .. v8}, Lcom/google/android/maps/driveabout/app/bx;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;ZZIZI)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Landroid/content/Context;Lcom/google/android/maps/driveabout/app/bl;)V
-    .registers 3
 
-    invoke-direct {p0, p1}, Lcom/google/android/maps/driveabout/app/bq;-><init>(Landroid/content/Context;)V
+# virtual methods
+.method public a(Landroid/os/Bundle;)V
+    .registers 6
+    .parameter
 
+    .prologue
+    .line 889
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/bQ;->d:Lcom/google/android/maps/driveabout/app/NavigationActivity;
+
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/bQ;->a:Ljava/lang/String;
+
+    iget-boolean v2, p0, Lcom/google/android/maps/driveabout/app/bQ;->b:Z
+
+    iget-boolean v3, p0, Lcom/google/android/maps/driveabout/app/bQ;->c:Z
+
+    invoke-static {v0, v1, v2, p1, v3}, Lcom/google/android/maps/driveabout/app/NavigationActivity;->a(Lcom/google/android/maps/driveabout/app/NavigationActivity;Ljava/lang/String;ZLandroid/os/Bundle;Z)V
+
+    .line 891
     return-void
 .end method

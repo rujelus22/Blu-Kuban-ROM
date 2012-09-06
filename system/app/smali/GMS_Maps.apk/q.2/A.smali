@@ -1,128 +1,73 @@
-.class public Lq/A;
-.super Lq/B;
+.class public Lq/a;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field private final a:Ljava/lang/String;
+.field private final a:Lq/e;
 
-.field private final b:Ljava/lang/String;
+.field private final b:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
-
-    invoke-direct {p0, p1}, Lq/B;-><init>(Ljava/lang/String;)V
-
-    iput-object p2, p0, Lq/A;->a:Ljava/lang/String;
-
-    iput-object p3, p0, Lq/A;->b:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Z)V
-    .registers 5
-
-    if-eqz p3, :cond_8
-
-    const-string v0, "true"
-
-    :goto_4
-    invoke-direct {p0, p1, p2, v0}, Lq/A;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-
-    :cond_8
-    const-string v0, "false"
-
-    goto :goto_4
-.end method
-
-.method public constructor <init>(Lorg/w3c/dom/Node;)V
+.method public constructor <init>(Lq/e;I)V
     .registers 3
+    .parameter
+    .parameter
 
-    invoke-direct {p0, p1}, Lq/B;-><init>(Lorg/w3c/dom/Node;)V
+    .prologue
+    .line 34
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "param1"
+    .line 35
+    iput-object p1, p0, Lq/a;->a:Lq/e;
 
-    invoke-static {p1, v0}, Lq/A;->a(Lorg/w3c/dom/Node;Ljava/lang/String;)Ljava/lang/String;
+    .line 36
+    iput p2, p0, Lq/a;->b:I
 
-    move-result-object v0
-
-    iput-object v0, p0, Lq/A;->a:Ljava/lang/String;
-
-    const-string v0, "param2"
-
-    invoke-static {p1, v0}, Lq/A;->a(Lorg/w3c/dom/Node;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lq/A;->b:Ljava/lang/String;
-
+    .line 37
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Ljava/lang/String;
+.method public a()I
     .registers 2
 
-    iget-object v0, p0, Lq/A;->a:Ljava/lang/String;
+    .prologue
+    .line 41
+    iget v0, p0, Lq/a;->b:I
 
-    return-object v0
+    return v0
 .end method
 
-.method protected b(Ljava/io/Writer;)V
-    .registers 4
+.method public a(Lq/b;)Lq/e;
+    .registers 3
+    .parameter
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    .prologue
+    .line 50
+    iget-object v0, p0, Lq/a;->a:Lq/e;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v0}, Lq/e;->a()Z
 
-    const-string v1, "param1=\'"
+    move-result v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_f
 
-    move-result-object v0
+    .line 51
+    iget-object v0, p0, Lq/a;->a:Lq/e;
 
-    iget-object v1, p0, Lq/A;->a:Ljava/lang/String;
-
-    invoke-static {v1}, Lq/k;->g(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Lq/b;->a(Lq/e;)Lq/e;
 
     move-result-object v0
 
-    const-string v1, "\' param2=\'"
+    .line 53
+    :goto_e
+    return-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_f
+    iget-object v0, p0, Lq/a;->a:Lq/e;
 
-    move-result-object v0
-
-    iget-object v1, p0, Lq/A;->b:Ljava/lang/String;
-
-    invoke-static {v1}, Lq/k;->h(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\' "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
-
-    return-void
+    goto :goto_e
 .end method

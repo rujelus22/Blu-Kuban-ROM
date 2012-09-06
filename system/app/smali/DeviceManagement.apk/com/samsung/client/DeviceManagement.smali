@@ -214,7 +214,7 @@
 
     move-result-object v0
 
-    .line 134
+    .line 135
     invoke-virtual {p0}, Lcom/samsung/client/DeviceManagement;->getPreferenceManager()Landroid/preference/PreferenceManager;
 
     move-result-object v1
@@ -223,136 +223,136 @@
 
     move-result-object v1
 
-    .line 136
-    new-instance v2, Landroid/content/Intent;
-
-    const-class v3, Lcom/samsung/prlupdate/PRLUpdate;
-
-    invoke-direct {v2, p0, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 138
-    const-string v3, "dm_menu_start"
-
-    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    .line 139
-    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setIntent(Landroid/content/Intent;)V
-
-    .line 140
-    const v2, 0x7f050004
-
-    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setTitle(I)V
-
-    .line 141
-    new-instance v2, Lcom/samsung/client/DeviceManagement$2;
-
-    invoke-direct {v2, p0}, Lcom/samsung/client/DeviceManagement$2;-><init>(Lcom/samsung/client/DeviceManagement;)V
-
-    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
-
-    .line 175
-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
-
-    .line 178
-    invoke-virtual {p0}, Lcom/samsung/client/DeviceManagement;->getPreferenceManager()Landroid/preference/PreferenceManager;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Landroid/preference/PreferenceManager;->createPreferenceScreen(Landroid/content/Context;)Landroid/preference/PreferenceScreen;
-
-    move-result-object v1
-
-    .line 180
-    new-instance v2, Landroid/content/Intent;
-
-    const-class v3, Lcom/samsung/deviceconfiguration/DeviceConfiguration;
-
-    invoke-direct {v2, p0, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 182
-    const-string v3, "dm_menu_start"
-
-    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    .line 183
-    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setIntent(Landroid/content/Intent;)V
-
-    .line 184
-    const v2, 0x7f050003
-
-    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setTitle(I)V
-
-    .line 185
-    new-instance v2, Lcom/samsung/client/DeviceManagement$3;
-
-    invoke-direct {v2, p0}, Lcom/samsung/client/DeviceManagement$3;-><init>(Lcom/samsung/client/DeviceManagement;)V
-
-    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
-
-    .line 217
-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
-
-    .line 219
-    invoke-virtual {p0}, Lcom/samsung/client/DeviceManagement;->getPreferenceManager()Landroid/preference/PreferenceManager;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Landroid/preference/PreferenceManager;->createPreferenceScreen(Landroid/content/Context;)Landroid/preference/PreferenceScreen;
-
-    move-result-object v1
-
-    .line 221
-    const v2, 0x7f050073
-
-    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setTitle(I)V
-
-    .line 222
-    new-instance v2, Lcom/samsung/client/DeviceManagement$4;
-
-    invoke-direct {v2, p0}, Lcom/samsung/client/DeviceManagement$4;-><init>(Lcom/samsung/client/DeviceManagement;)V
-
-    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
-
-    .line 240
-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
-
-    .line 243
-    invoke-virtual {p0}, Lcom/samsung/client/DeviceManagement;->getPreferenceManager()Landroid/preference/PreferenceManager;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Landroid/preference/PreferenceManager;->createPreferenceScreen(Landroid/content/Context;)Landroid/preference/PreferenceScreen;
-
-    move-result-object v1
-
-    .line 245
+    .line 137
     new-instance v2, Landroid/content/Intent;
 
     const-class v3, Lcom/samsung/fumo/FirmwareUpdate;
 
     invoke-direct {v2, p0, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 247
+    .line 139
     const-string v3, "dm_menu_start"
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 248
+    .line 140
     invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setIntent(Landroid/content/Intent;)V
 
-    .line 249
+    .line 141
     const v2, 0x7f050002
 
     invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setTitle(I)V
 
+    .line 142
+    new-instance v2, Lcom/samsung/client/DeviceManagement$2;
+
+    invoke-direct {v2, p0}, Lcom/samsung/client/DeviceManagement$2;-><init>(Lcom/samsung/client/DeviceManagement;)V
+
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
+
+    .line 162
+    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
+
+    .line 164
+    invoke-virtual {p0}, Lcom/samsung/client/DeviceManagement;->getPreferenceManager()Landroid/preference/PreferenceManager;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Landroid/preference/PreferenceManager;->createPreferenceScreen(Landroid/content/Context;)Landroid/preference/PreferenceScreen;
+
+    move-result-object v1
+
+    .line 166
+    new-instance v2, Landroid/content/Intent;
+
+    const-class v3, Lcom/samsung/deviceconfiguration/DeviceConfiguration;
+
+    invoke-direct {v2, p0, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 168
+    const-string v3, "dm_menu_start"
+
+    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    .line 169
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setIntent(Landroid/content/Intent;)V
+
+    .line 170
+    const v2, 0x7f050003
+
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setTitle(I)V
+
+    .line 171
+    new-instance v2, Lcom/samsung/client/DeviceManagement$3;
+
+    invoke-direct {v2, p0}, Lcom/samsung/client/DeviceManagement$3;-><init>(Lcom/samsung/client/DeviceManagement;)V
+
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
+
+    .line 203
+    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
+
+    .line 205
+    invoke-virtual {p0}, Lcom/samsung/client/DeviceManagement;->getPreferenceManager()Landroid/preference/PreferenceManager;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Landroid/preference/PreferenceManager;->createPreferenceScreen(Landroid/content/Context;)Landroid/preference/PreferenceScreen;
+
+    move-result-object v1
+
+    .line 207
+    new-instance v2, Landroid/content/Intent;
+
+    const-class v3, Lcom/samsung/prlupdate/PRLUpdate;
+
+    invoke-direct {v2, p0, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 209
+    const-string v3, "dm_menu_start"
+
+    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    .line 210
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setIntent(Landroid/content/Intent;)V
+
+    .line 211
+    const v2, 0x7f050004
+
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setTitle(I)V
+
+    .line 212
+    new-instance v2, Lcom/samsung/client/DeviceManagement$4;
+
+    invoke-direct {v2, p0}, Lcom/samsung/client/DeviceManagement$4;-><init>(Lcom/samsung/client/DeviceManagement;)V
+
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
+
+    .line 246
+    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
+
+    .line 248
+    invoke-virtual {p0}, Lcom/samsung/client/DeviceManagement;->getPreferenceManager()Landroid/preference/PreferenceManager;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Landroid/preference/PreferenceManager;->createPreferenceScreen(Landroid/content/Context;)Landroid/preference/PreferenceScreen;
+
+    move-result-object v1
+
     .line 250
+    const v2, 0x7f050073
+
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setTitle(I)V
+
+    .line 251
     new-instance v2, Lcom/samsung/client/DeviceManagement$5;
 
     invoke-direct {v2, p0}, Lcom/samsung/client/DeviceManagement$5;-><init>(Lcom/samsung/client/DeviceManagement;)V
 
     invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
 
-    .line 270
+    .line 269
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
 
     .line 271

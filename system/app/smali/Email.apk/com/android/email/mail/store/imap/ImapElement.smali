@@ -16,7 +16,7 @@
     .registers 1
 
     .prologue
-    .line 51
+    .line 50
     new-instance v0, Lcom/android/email/mail/store/imap/ImapElement$1;
 
     invoke-direct {v0}, Lcom/android/email/mail/store/imap/ImapElement$1;-><init>()V
@@ -30,10 +30,10 @@
     .registers 2
 
     .prologue
-    .line 46
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 45
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 80
+    .line 74
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/email/mail/store/imap/ImapElement;->mDestroyed:Z
@@ -47,12 +47,12 @@
     .registers 3
 
     .prologue
-    .line 102
+    .line 96
     iget-boolean v0, p0, Lcom/android/email/mail/store/imap/ImapElement;->mDestroyed:Z
 
     if-eqz v0, :cond_c
 
-    .line 103
+    .line 97
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Already destroyed"
@@ -61,7 +61,7 @@
 
     throw v0
 
-    .line 105
+    .line 99
     :cond_c
     return-void
 .end method
@@ -70,12 +70,12 @@
     .registers 2
 
     .prologue
-    .line 95
+    .line 89
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/email/mail/store/imap/ImapElement;->mDestroyed:Z
 
-    .line 96
+    .line 90
     return-void
 .end method
 
@@ -86,10 +86,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 121
+    .line 115
     if-nez p1, :cond_4
 
-    .line 124
+    .line 118
     :cond_3
     :goto_3
     return v0
@@ -114,7 +114,7 @@
     .registers 2
 
     .prologue
-    .line 87
+    .line 81
     iget-boolean v0, p0, Lcom/android/email/mail/store/imap/ImapElement;->mDestroyed:Z
 
     return v0

@@ -1,616 +1,329 @@
 .class public Lj/e;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Comparable;
 
 
 # instance fields
-.field final a:Ljava/lang/String;
+.field private final a:I
 
-.field final b:J
+.field private final b:Lt/a;
 
-.field c:Li/D;
-
-.field d:J
-
-.field e:J
-
-.field f:Lj/f;
+.field private final c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Li/D;JJ)V
-    .registers 8
+.method public constructor <init>(Lcom/google/android/maps/driveabout/vector/dg;Ljava/util/Set;)V
+    .registers 4
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 628
+    sget-object v0, Lt/a;->a:Lt/a;
 
-    new-instance v0, Lj/f;
+    invoke-direct {p0, p1, p2, v0}, Lj/e;-><init>(Lcom/google/android/maps/driveabout/vector/dg;Ljava/util/Set;Lt/a;)V
 
-    invoke-direct {v0}, Lj/f;-><init>()V
-
-    iput-object v0, p0, Lj/e;->f:Lj/f;
-
-    iput-object p1, p0, Lj/e;->a:Ljava/lang/String;
-
-    iput-object p2, p0, Lj/e;->c:Li/D;
-
-    iput-wide p3, p0, Lj/e;->b:J
-
-    invoke-virtual {p0, p5, p6}, Lj/e;->a(J)V
-
+    .line 629
     return-void
 .end method
 
-.method private static a(JJJJ)J
+.method public constructor <init>(Lcom/google/android/maps/driveabout/vector/dg;Ljava/util/Set;Lt/a;)V
     .registers 10
+    .parameter
+    .parameter
+    .parameter
 
-    add-long v0, p0, p2
+    .prologue
+    const/4 v5, 0x1
 
-    sub-long/2addr v0, p4
+    .line 641
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p6, p7, v0, v1}, Ljava/lang/Math;->min(JJ)J
+    .line 644
+    iget-boolean v0, p1, Lcom/google/android/maps/driveabout/vector/dg;->w:Z
 
-    move-result-wide v0
+    if-eqz v0, :cond_10
 
-    return-wide v0
+    .line 645
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "Modifier tile types not allowed as base"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 647
+    :cond_10
+    invoke-virtual {p1}, Lcom/google/android/maps/driveabout/vector/dg;->g()I
+
+    move-result v0
+
+    shl-int v0, v5, v0
+
+    .line 648
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Lcom/google/android/maps/driveabout/vector/dg;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 649
+    if-eqz p2, :cond_64
+
+    invoke-interface {p2}, Ljava/util/Set;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_64
+
+    .line 650
+    const-string v1, " with modifiers "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 651
+    invoke-interface {p2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    move v1, v0
+
+    .line 652
+    :cond_31
+    :goto_31
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_63
+
+    .line 653
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/maps/driveabout/vector/dg;
+
+    .line 654
+    iget-boolean v4, v0, Lcom/google/android/maps/driveabout/vector/dg;->w:Z
+
+    if-nez v4, :cond_49
+
+    .line 655
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "Only modifier tile types allowed"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 657
+    :cond_49
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/dg;->g()I
+
+    move-result v4
+
+    shl-int v4, v5, v4
+
+    or-int/2addr v1, v4
+
+    .line 658
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/dg;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 659
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_31
+
+    .line 660
+    const-string v0, ", "
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_31
+
+    :cond_63
+    move v0, v1
+
+    .line 664
+    :cond_64
+    sget-object v1, Lt/a;->a:Lt/a;
+
+    if-eq p3, v1, :cond_7e
+
+    .line 665
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, " with mask "
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 667
+    :cond_7e
+    iput v0, p0, Lj/e;->a:I
+
+    .line 668
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lj/e;->c:Ljava/lang/String;
+
+    .line 669
+    iput-object p3, p0, Lj/e;->b:Lt/a;
+
+    .line 670
+    return-void
 .end method
 
 
 # virtual methods
-.method public declared-synchronized a()LW/a;
-    .registers 2
+.method public a(Lj/e;)I
+    .registers 4
+    .parameter
 
-    monitor-enter p0
+    .prologue
+    .line 674
+    iget v0, p0, Lj/e;->a:I
 
-    :try_start_1
-    iget-object v0, p0, Lj/e;->f:Lj/f;
+    iget v1, p1, Lj/e;->a:I
 
-    invoke-virtual {v0}, Lj/f;->a()LW/a;
-    :try_end_6
-    .catchall {:try_start_1 .. :try_end_6} :catchall_9
+    if-eq v0, v1, :cond_c
 
-    move-result-object v0
+    .line 675
+    iget v0, p0, Lj/e;->a:I
 
-    monitor-exit p0
+    iget v1, p1, Lj/e;->a:I
 
-    return-object v0
+    sub-int/2addr v0, v1
 
-    :catchall_9
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method declared-synchronized a(J)V
-    .registers 5
-
-    monitor-enter p0
-
-    const-wide/16 v0, 0x0
-
-    :try_start_3
-    iput-wide v0, p0, Lj/e;->d:J
-
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Lj/e;->e:J
-
-    invoke-virtual {p0, p1, p2}, Lj/e;->b(J)Z
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_e
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_e
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method declared-synchronized a(JJJLW/a;)V
-    .registers 21
-
-    monitor-enter p0
-
-    if-nez p7, :cond_8
-
-    :try_start_3
-    invoke-virtual {p0, p1, p2}, Lj/e;->a(J)V
-    :try_end_6
-    .catchall {:try_start_3 .. :try_end_6} :catchall_3b
-
-    :goto_6
-    monitor-exit p0
-
-    return-void
-
-    :cond_8
-    const/4 v1, 0x2
-
-    :try_start_9
-    move-object/from16 v0, p7
-
-    invoke-virtual {v0, v1}, LW/a;->d(I)J
-
-    move-result-wide v9
-
-    const/4 v1, 0x1
-
-    move-object/from16 v0, p7
-
-    invoke-virtual {v0, v1}, LW/a;->d(I)J
-
-    move-result-wide v11
-
-    iget-wide v5, p0, Lj/e;->b:J
-
-    move-wide/from16 v1, p3
-
-    move-wide/from16 v3, p5
-
-    move-wide v7, p1
-
-    invoke-static/range {v1 .. v8}, Lj/e;->a(JJJJ)J
-
-    move-result-wide v1
-
-    const-wide/32 v3, 0x5265c00
-
-    add-long/2addr v1, v3
-
-    cmp-long v1, v1, p1
-
-    if-ltz v1, :cond_2f
-
-    const-wide/16 v1, -0x1
-
-    cmp-long v1, v9, v1
-
-    if-nez v1, :cond_3e
-
-    :cond_2f
-    const-wide/16 v1, -0x1
-
-    iput-wide v1, p0, Lj/e;->e:J
-
-    const-wide/16 v1, 0x0
-
-    iput-wide v1, p0, Lj/e;->d:J
-
-    :goto_37
-    invoke-virtual {p0, p1, p2}, Lj/e;->b(J)Z
-    :try_end_3a
-    .catchall {:try_start_9 .. :try_end_3a} :catchall_3b
-
-    goto :goto_6
-
-    :catchall_3b
-    move-exception v1
-
-    monitor-exit p0
-
-    throw v1
-
-    :cond_3e
-    :try_start_3e
-    iget-wide v5, p0, Lj/e;->b:J
-
-    move-wide/from16 v1, p3
-
-    move-wide v3, v9
-
-    move-wide v7, p1
-
-    invoke-static/range {v1 .. v8}, Lj/e;->a(JJJJ)J
-
-    move-result-wide v1
-
-    iput-wide v1, p0, Lj/e;->e:J
-
-    iget-object v1, p0, Lj/e;->c:Li/D;
-
-    iget-wide v1, v1, Li/D;->a:J
-
-    invoke-static {v1, v2, v11, v12}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v1
-
-    iput-wide v1, p0, Lj/e;->d:J
-    :try_end_54
-    .catchall {:try_start_3e .. :try_end_54} :catchall_3b
-
-    goto :goto_37
-.end method
-
-.method declared-synchronized a(LW/a;)V
-    .registers 5
-
-    monitor-enter p0
-
-    const/4 v0, 0x1
-
-    :try_start_2
-    iget-wide v1, p0, Lj/e;->d:J
-
-    invoke-virtual {p1, v0, v1, v2}, LW/a;->b(IJ)V
-
-    const/4 v0, 0x2
-
-    iget-wide v1, p0, Lj/e;->e:J
-
-    invoke-virtual {p1, v0, v1, v2}, LW/a;->b(IJ)V
-    :try_end_d
-    .catchall {:try_start_2 .. :try_end_d} :catchall_f
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_f
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method declared-synchronized a(Li/D;J)V
-    .registers 8
-
-    monitor-enter p0
-
-    if-nez p1, :cond_5
-
-    :goto_3
-    monitor-exit p0
-
-    return-void
-
-    :cond_5
-    :try_start_5
-    invoke-virtual {p0, p2, p3}, Lj/e;->b(J)Z
-
-    iget-wide v0, p0, Lj/e;->d:J
-
-    iget-wide v2, p1, Li/D;->a:J
-
-    cmp-long v0, v0, v2
-
-    if-lez v0, :cond_14
-
-    iget-wide v0, p1, Li/D;->a:J
-
-    iput-wide v0, p0, Lj/e;->d:J
-
-    :cond_14
-    iput-object p1, p0, Lj/e;->c:Li/D;
-    :try_end_16
-    .catchall {:try_start_5 .. :try_end_16} :catchall_17
-
-    goto :goto_3
-
-    :catchall_17
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method declared-synchronized a(JJ)Z
-    .registers 7
-
-    monitor-enter p0
-
-    :try_start_1
-    iget-wide v0, p0, Lj/e;->d:J
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_c
-
-    cmp-long v0, p1, v0
-
-    if-gtz v0, :cond_a
-
-    const/4 v0, 0x1
-
-    :goto_8
-    monitor-exit p0
-
+    .line 677
+    :goto_b
     return v0
 
-    :cond_a
-    const/4 v0, 0x0
+    :cond_c
+    iget-object v0, p0, Lj/e;->b:Lt/a;
 
-    goto :goto_8
+    iget-object v1, p1, Lj/e;->b:Lt/a;
 
-    :catchall_c
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method declared-synchronized a(JJZ)Z
-    .registers 9
-
-    monitor-enter p0
-
-    :try_start_1
-    invoke-virtual {p0, p3, p4}, Lj/e;->b(J)Z
-
-    invoke-virtual {p0, p1, p2, p3, p4}, Lj/e;->a(JJ)Z
-
-    move-result v1
-
-    if-eqz p5, :cond_12
-
-    iget-object v2, p0, Lj/e;->f:Lj/f;
-
-    if-nez v1, :cond_14
-
-    const/4 v0, 0x1
-
-    :goto_f
-    invoke-virtual {v2, v0}, Lj/f;->a(Z)V
-    :try_end_12
-    .catchall {:try_start_1 .. :try_end_12} :catchall_16
-
-    :cond_12
-    monitor-exit p0
-
-    return v1
-
-    :cond_14
-    const/4 v0, 0x0
-
-    goto :goto_f
-
-    :catchall_16
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method declared-synchronized b(J)Z
-    .registers 13
-
-    monitor-enter p0
-
-    :try_start_1
-    iget-wide v2, p0, Lj/e;->e:J
-
-    iget-wide v0, p0, Lj/e;->e:J
-
-    const-wide/16 v4, -0x1
-
-    cmp-long v0, v0, v4
-
-    if-nez v0, :cond_31
-
-    iget-object v0, p0, Lj/e;->c:Li/D;
-
-    iget-wide v0, v0, Li/D;->b:J
-
-    iput-wide p1, p0, Lj/e;->e:J
-
-    :goto_11
-    iget-wide v4, p0, Lj/e;->d:J
-
-    iget-wide v6, p0, Lj/e;->d:J
-
-    add-long/2addr v0, v6
-
-    iget-object v6, p0, Lj/e;->c:Li/D;
-
-    iget-wide v6, v6, Li/D;->a:J
-
-    invoke-static {v0, v1, v6, v7}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lj/e;->d:J
-
-    iget-wide v0, p0, Lj/e;->d:J
-
-    cmp-long v0, v0, v4
-
-    if-nez v0, :cond_2c
-
-    iget-wide v0, p0, Lj/e;->e:J
-    :try_end_28
-    .catchall {:try_start_1 .. :try_end_28} :catchall_4b
-
-    cmp-long v0, v2, v0
-
-    if-eqz v0, :cond_4e
-
-    :cond_2c
-    const/4 v0, 0x1
-
-    :goto_2d
-    if-eqz v0, :cond_2f
-
-    :cond_2f
-    monitor-exit p0
-
-    return v0
-
-    :cond_31
-    :try_start_31
-    iget-wide v0, p0, Lj/e;->e:J
-
-    sub-long v0, p1, v0
-
-    iget-object v4, p0, Lj/e;->c:Li/D;
-
-    iget-wide v4, v4, Li/D;->c:J
-
-    div-long v4, v0, v4
-
-    iget-object v0, p0, Lj/e;->c:Li/D;
-
-    iget-wide v0, v0, Li/D;->b:J
-
-    mul-long/2addr v0, v4
-
-    iget-wide v6, p0, Lj/e;->e:J
-
-    iget-object v8, p0, Lj/e;->c:Li/D;
-
-    iget-wide v8, v8, Li/D;->c:J
-
-    mul-long/2addr v4, v8
-
-    add-long/2addr v4, v6
-
-    iput-wide v4, p0, Lj/e;->e:J
-    :try_end_4a
-    .catchall {:try_start_31 .. :try_end_4a} :catchall_4b
-
-    goto :goto_11
-
-    :catchall_4b
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-
-    :cond_4e
-    const/4 v0, 0x0
-
-    goto :goto_2d
-.end method
-
-.method declared-synchronized b(JJ)Z
-    .registers 10
-
-    const-wide/16 v0, 0x0
-
-    monitor-enter p0
-
-    cmp-long v0, p1, v0
-
-    if-gez v0, :cond_a
-
-    const/4 v0, 0x0
-
-    :goto_8
-    monitor-exit p0
-
-    return v0
-
-    :cond_a
-    :try_start_a
-    invoke-virtual {p0, p3, p4}, Lj/e;->b(J)Z
-
-    invoke-virtual {p0, p1, p2, p3, p4}, Lj/e;->a(JJ)Z
+    invoke-virtual {v0, v1}, Lt/a;->a(Lt/a;)I
 
     move-result v0
 
-    const-wide/16 v1, 0x0
-
-    iget-wide v3, p0, Lj/e;->d:J
-
-    sub-long/2addr v3, p1
-
-    invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v1
-
-    iput-wide v1, p0, Lj/e;->d:J
-    :try_end_1c
-    .catchall {:try_start_a .. :try_end_1c} :catchall_1d
-
-    goto :goto_8
-
-    :catchall_1d
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+    goto :goto_b
 .end method
 
-.method public declared-synchronized toString()Ljava/lang/String;
-    .registers 10
+.method public synthetic compareTo(Ljava/lang/Object;)I
+    .registers 3
+    .parameter
 
-    monitor-enter p0
+    .prologue
+    .line 608
+    check-cast p1, Lj/e;
 
-    :try_start_1
-    new-instance v0, Ljava/text/SimpleDateFormat;
+    invoke-virtual {p0, p1}, Lj/e;->a(Lj/e;)I
 
-    const-string v1, "yyyy/MM/dd HH:mm:ss"
+    move-result v0
 
-    invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+    return v0
+.end method
 
-    const-string v1, "%s - current tokens: %d, last refill: %s, params: %s"
+.method public equals(Ljava/lang/Object;)Z
+    .registers 4
+    .parameter
 
-    const/4 v2, 0x4
+    .prologue
+    .line 682
+    instance-of v0, p1, Lj/e;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    if-eqz v0, :cond_1b
 
-    const/4 v3, 0x0
+    move-object v0, p1
 
-    iget-object v4, p0, Lj/e;->a:Ljava/lang/String;
+    check-cast v0, Lj/e;
 
-    aput-object v4, v2, v3
+    iget v0, v0, Lj/e;->a:I
 
-    const/4 v3, 0x1
+    iget v1, p0, Lj/e;->a:I
 
-    iget-wide v4, p0, Lj/e;->d:J
+    if-ne v0, v1, :cond_1b
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    check-cast p1, Lj/e;
 
-    move-result-object v4
+    iget-object v0, p1, Lj/e;->b:Lt/a;
 
-    aput-object v4, v2, v3
+    iget-object v1, p0, Lj/e;->b:Lt/a;
 
-    const/4 v3, 0x2
+    invoke-virtual {v0, v1}, Lt/a;->equals(Ljava/lang/Object;)Z
 
-    new-instance v4, Ljava/util/Date;
+    move-result v0
 
-    iget-wide v5, p0, Lj/e;->b:J
+    if-eqz v0, :cond_1b
 
-    iget-wide v7, p0, Lj/e;->e:J
+    const/4 v0, 0x1
 
-    add-long/2addr v5, v7
+    :goto_1a
+    return v0
 
-    invoke-direct {v4, v5, v6}, Ljava/util/Date;-><init>(J)V
+    :cond_1b
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v4}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    goto :goto_1a
+.end method
 
-    move-result-object v0
+.method public hashCode()I
+    .registers 3
 
-    aput-object v0, v2, v3
+    .prologue
+    .line 688
+    iget v0, p0, Lj/e;->a:I
 
-    const/4 v0, 0x3
+    mul-int/lit8 v0, v0, 0x21
 
-    iget-object v3, p0, Lj/e;->c:Li/D;
+    iget-object v1, p0, Lj/e;->b:Lt/a;
 
-    aput-object v3, v2, v0
+    invoke-virtual {v1}, Lt/a;->hashCode()I
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-    :try_end_34
-    .catchall {:try_start_1 .. :try_end_34} :catchall_37
+    move-result v1
 
-    move-result-object v0
+    xor-int/2addr v0, v1
 
-    monitor-exit p0
+    return v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 693
+    iget-object v0, p0, Lj/e;->c:Ljava/lang/String;
 
     return-object v0
-
-    :catchall_37
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method

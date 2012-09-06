@@ -2941,7 +2941,7 @@
 
     const/4 v7, 0x2
 
-    if-ne v5, v7, :cond_140
+    if-ne v5, v7, :cond_13d
 
     .line 188
     iget-object v5, p0, Lcom/android/settings/ApnEditor;->mRoamingProtocol:Landroid/preference/ListPreference;
@@ -2996,7 +2996,7 @@
 
     .line 203
     .local v0, action:Ljava/lang/String;
-    if-nez p1, :cond_14a
+    if-nez p1, :cond_144
 
     move v5, v6
 
@@ -3010,7 +3010,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_14c
+    if-eqz v5, :cond_146
 
     .line 206
     invoke-virtual {v1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
@@ -3054,7 +3054,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_13f
+    if-eqz v5, :cond_13c
 
     .line 242
     const-string v5, "apn_protocol"
@@ -3065,58 +3065,54 @@
 
     .line 243
     .local v2, pref:Landroid/preference/Preference;
-    if-eqz v2, :cond_13f
+    if-eqz v2, :cond_13c
 
     .line 244
     invoke-virtual {p0}, Lcom/android/settings/ApnEditor;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v5
 
-    invoke-virtual {v5, v2}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 247
     .end local v2           #pref:Landroid/preference/Preference;
     .end local v3           #salesCode:Ljava/lang/String;
-    :cond_13f
-    :goto_13f
+    :cond_13c
+    :goto_13c
     return-void
 
     .line 190
     .end local v0           #action:Ljava/lang/String;
     .end local v1           #intent:Landroid/content/Intent;
-    :cond_140
+    :cond_13d
     invoke-virtual {p0}, Lcom/android/settings/ApnEditor;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v5
 
     iget-object v7, p0, Lcom/android/settings/ApnEditor;->mRoamingProtocol:Landroid/preference/ListPreference;
 
-    invoke-virtual {v5, v7}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     goto :goto_d6
 
     .line 203
     .restart local v0       #action:Ljava/lang/String;
     .restart local v1       #intent:Landroid/content/Intent;
-    :cond_14a
+    :cond_144
     const/4 v5, 0x0
 
     goto :goto_100
 
     .line 207
-    :cond_14c
+    :cond_146
     const-string v5, "android.intent.action.INSERT"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_1c2
+    if-eqz v5, :cond_1bc
 
     .line 208
     iget-boolean v5, p0, Lcom/android/settings/ApnEditor;->mFirstTime:Z
 
-    if-nez v5, :cond_160
+    if-nez v5, :cond_15a
 
     const-string v5, "pos"
 
@@ -3124,10 +3120,10 @@
 
     move-result v5
 
-    if-nez v5, :cond_19d
+    if-nez v5, :cond_197
 
     .line 209
-    :cond_160
+    :cond_15a
     invoke-virtual {p0}, Lcom/android/settings/ApnEditor;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v5
@@ -3147,13 +3143,13 @@
     iput-object v5, p0, Lcom/android/settings/ApnEditor;->mUri:Landroid/net/Uri;
 
     .line 214
-    :goto_173
+    :goto_16d
     iput-boolean v6, p0, Lcom/android/settings/ApnEditor;->mNewApn:Z
 
     .line 218
     iget-object v5, p0, Lcom/android/settings/ApnEditor;->mUri:Landroid/net/Uri;
 
-    if-nez v5, :cond_1ad
+    if-nez v5, :cond_1a7
 
     .line 219
     sget-object v5, Lcom/android/settings/ApnEditor;->TAG:Ljava/lang/String;
@@ -3189,10 +3185,10 @@
     .line 221
     invoke-virtual {p0}, Lcom/android/settings/ApnEditor;->finish()V
 
-    goto :goto_13f
+    goto :goto_13c
 
     .line 211
-    :cond_19d
+    :cond_197
     sget-object v5, Landroid/provider/Telephony$Carriers;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v7, "pos"
@@ -3209,10 +3205,10 @@
 
     iput-object v5, p0, Lcom/android/settings/ApnEditor;->mUri:Landroid/net/Uri;
 
-    goto :goto_173
+    goto :goto_16d
 
     .line 227
-    :cond_1ad
+    :cond_1a7
     const/4 v5, -0x1
 
     new-instance v6, Landroid/content/Intent;
@@ -3234,10 +3230,10 @@
     goto/16 :goto_110
 
     .line 230
-    :cond_1c2
+    :cond_1bc
     invoke-virtual {p0}, Lcom/android/settings/ApnEditor;->finish()V
 
-    goto/16 :goto_13f
+    goto/16 :goto_13c
 .end method
 
 .method protected onCreateDialog(I)Landroid/app/Dialog;

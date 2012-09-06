@@ -1,93 +1,143 @@
-.class public Lo/r;
-.super Lo/l;
+.class public Lo/R;
+.super Lo/P;
+.source "SourceFile"
 
 
 # instance fields
-.field private final a:I
+.field private a:Z
+
+.field private b:D
+
+.field private c:D
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .registers 3
+.method public constructor <init>(Lo/P;Lo/x;)V
+    .registers 4
+    .parameter
+    .parameter
 
+    .prologue
+    .line 23
+    invoke-direct {p0, p1}, Lo/P;-><init>(Lo/P;)V
+
+    .line 18
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lo/l;-><init>(Lo/m;)V
+    iput-boolean v0, p0, Lo/R;->a:Z
 
-    iput p1, p0, Lo/r;->a:I
+    .line 25
+    invoke-direct {p0, p2}, Lo/R;->a(Lo/x;)V
 
+    .line 26
     return-void
+.end method
+
+.method private a(Lo/x;)V
+    .registers 7
+    .parameter
+
+    .prologue
+    const-wide/high16 v3, -0x4010
+
+    .line 35
+    invoke-virtual {p0}, Lo/R;->c()Ln/s;
+
+    move-result-object v0
+
+    .line 36
+    if-nez v0, :cond_d
+
+    .line 37
+    iput-wide v3, p0, Lo/R;->b:D
+
+    .line 38
+    iput-wide v3, p0, Lo/R;->c:D
+
+    .line 53
+    :goto_c
+    return-void
+
+    .line 41
+    :cond_d
+    invoke-virtual {v0}, Ln/s;->a()I
+
+    move-result v1
+
+    invoke-virtual {v0}, Ln/s;->b()I
+
+    move-result v0
+
+    invoke-static {v1, v0}, Ln/Q;->b(II)Ln/Q;
+
+    move-result-object v0
+
+    .line 43
+    const-wide/high16 v1, 0x4059
+
+    invoke-virtual {p1, v0, v1, v2}, Lo/x;->a(Ln/Q;D)Lo/B;
+
+    move-result-object v0
+
+    .line 46
+    if-eqz v0, :cond_2e
+
+    .line 47
+    invoke-virtual {p1, v0}, Lo/x;->a(Lo/B;)D
+
+    move-result-wide v1
+
+    iput-wide v1, p0, Lo/R;->b:D
+
+    .line 48
+    invoke-virtual {p1, v0}, Lo/x;->b(Lo/B;)D
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lo/R;->c:D
+
+    goto :goto_c
+
+    .line 50
+    :cond_2e
+    iput-wide v3, p0, Lo/R;->b:D
+
+    .line 51
+    iput-wide v3, p0, Lo/R;->c:D
+
+    goto :goto_c
 .end method
 
 
 # virtual methods
-.method public b()I
+.method public a(Z)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 68
+    iput-boolean p1, p0, Lo/R;->a:Z
+
+    .line 69
+    return-void
+.end method
+
+.method public i()Z
     .registers 2
 
-    iget v0, p0, Lo/r;->a:I
+    .prologue
+    .line 56
+    iget-boolean v0, p0, Lo/R;->a:Z
 
     return v0
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x0
-
-    instance-of v1, p1, Lo/r;
-
-    if-eqz v1, :cond_e
-
-    check-cast p1, Lo/r;
-
-    iget v1, p1, Lo/r;->a:I
-
-    iget v2, p0, Lo/r;->a:I
-
-    if-ne v1, v2, :cond_e
-
-    const/4 v0, 0x1
-
-    :cond_e
-    return v0
-.end method
-
-.method public hashCode()I
-    .registers 2
-
-    iget v0, p0, Lo/r;->a:I
-
-    return v0
-.end method
-
-.method public toString()Ljava/lang/String;
+.method public j()D
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    .prologue
+    .line 60
+    iget-wide v0, p0, Lo/R;->b:D
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "<predefined_message type=\""
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lo/r;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\">"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-wide v0
 .end method

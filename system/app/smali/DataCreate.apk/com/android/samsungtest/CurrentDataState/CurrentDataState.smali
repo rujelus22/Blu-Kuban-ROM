@@ -34,8 +34,6 @@
 
 
 # instance fields
-.field private final CONTENT_URI_CALENDAR:Landroid/net/Uri;
-
 .field private final CONTENT_URI_CALLLOG:Landroid/net/Uri;
 
 .field private final CONTENT_URI_CONTACTS:Landroid/net/Uri;
@@ -79,8 +77,6 @@
 .field private final SYSTEM_SPACE:I
 
 .field private final USER_SPACE:I
-
-.field private calendarNum:I
 
 .field private callLogOfIncomingCallNum:I
 
@@ -145,8 +141,6 @@
 .field private queuedboxNum:Landroid/widget/TextView;
 
 .field private ringtoneName:Landroid/widget/TextView;
-
-.field private scheduleNum:Landroid/widget/TextView;
 
 .field private screenName:Landroid/widget/TextView;
 
@@ -511,18 +505,6 @@
 
     .line 184
     iput v1, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->callLogOfmissedCallNum:I
-
-    .line 194
-    const-string v0, "content://com.android.calendar/events"
-
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->CONTENT_URI_CALENDAR:Landroid/net/Uri;
-
-    .line 196
-    iput v1, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->calendarNum:I
 
     .line 208
     const/16 v0, 0x11
@@ -1134,7 +1116,7 @@
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_1a0
+    packed-switch v0, :pswitch_data_18c
 
     .line 447
     :goto_32
@@ -1563,38 +1545,13 @@
     .line 571
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 577
-    iget-object v1, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->mResolver:Landroid/content/ContentResolver;
-
-    iget-object v2, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->CONTENT_URI_CALENDAR:Landroid/net/Uri;
-
-    move-object v4, v3
-
-    move-object v5, v3
-
-    move-object v6, v3
-
-    invoke-virtual/range {v1 .. v6}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v7
-
-    .line 579
-    invoke-interface {v7}, Landroid/database/Cursor;->getCount()I
-
-    move-result v0
-
-    iput v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->calendarNum:I
-
-    .line 581
-    invoke-interface {v7}, Landroid/database/Cursor;->close()V
-
     .line 593
     return-void
 
     .line 425
     nop
 
-    :pswitch_data_1a0
+    :pswitch_data_18c
     .packed-switch 0x1
         :pswitch_38
         :pswitch_3f
@@ -2045,19 +2002,8 @@
 
     iput-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->phoneBookSim:Landroid/widget/TextView;
 
-    .line 351
-    const v0, 0x7f06000a
-
-    invoke-virtual {p0, v0}, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->scheduleNum:Landroid/widget/TextView;
-
     .line 357
-    const v0, 0x7f06000b
+    const v0, 0x7f06000a
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->findViewById(I)Landroid/view/View;
 
@@ -2068,7 +2014,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->inboxNum:Landroid/widget/TextView;
 
     .line 359
-    const v0, 0x7f06000c
+    const v0, 0x7f06000b
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->findViewById(I)Landroid/view/View;
 
@@ -2079,7 +2025,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->outboxNum:Landroid/widget/TextView;
 
     .line 361
-    const v0, 0x7f06000d
+    const v0, 0x7f06000c
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->findViewById(I)Landroid/view/View;
 
@@ -2090,7 +2036,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->sentboxNum:Landroid/widget/TextView;
 
     .line 363
-    const v0, 0x7f06000e
+    const v0, 0x7f06000d
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->findViewById(I)Landroid/view/View;
 
@@ -2101,7 +2047,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->draftboxNum:Landroid/widget/TextView;
 
     .line 365
-    const v0, 0x7f060010
+    const v0, 0x7f06000f
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->findViewById(I)Landroid/view/View;
 
@@ -2112,7 +2058,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->queuedboxNum:Landroid/widget/TextView;
 
     .line 367
-    const v0, 0x7f06000f
+    const v0, 0x7f06000e
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->findViewById(I)Landroid/view/View;
 
@@ -2123,7 +2069,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->failedboxNum:Landroid/widget/TextView;
 
     .line 371
-    const v0, 0x7f060011
+    const v0, 0x7f060010
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->findViewById(I)Landroid/view/View;
 
@@ -2134,7 +2080,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->mmsinboxNum:Landroid/widget/TextView;
 
     .line 373
-    const v0, 0x7f060012
+    const v0, 0x7f060011
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->findViewById(I)Landroid/view/View;
 
@@ -2145,7 +2091,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->mmsoutboxNum:Landroid/widget/TextView;
 
     .line 375
-    const v0, 0x7f060013
+    const v0, 0x7f060012
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->findViewById(I)Landroid/view/View;
 
@@ -2156,7 +2102,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->mmssentboxNum:Landroid/widget/TextView;
 
     .line 377
-    const v0, 0x7f060014
+    const v0, 0x7f060013
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->findViewById(I)Landroid/view/View;
 
@@ -2167,7 +2113,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->mmsdraftboxNum:Landroid/widget/TextView;
 
     .line 383
-    const v0, 0x7f060015
+    const v0, 0x7f060014
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->findViewById(I)Landroid/view/View;
 
@@ -2178,7 +2124,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->ringtoneName:Landroid/widget/TextView;
 
     .line 385
-    const v0, 0x7f060016
+    const v0, 0x7f060015
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->findViewById(I)Landroid/view/View;
 
@@ -2189,7 +2135,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->screenName:Landroid/widget/TextView;
 
     .line 387
-    const v0, 0x7f060017
+    const v0, 0x7f060016
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->findViewById(I)Landroid/view/View;
 
@@ -2200,7 +2146,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->imeiEsnFlag:Landroid/widget/TextView;
 
     .line 389
-    const v0, 0x7f060018
+    const v0, 0x7f060017
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->findViewById(I)Landroid/view/View;
 
@@ -2785,17 +2731,6 @@
     iget-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->mmssentboxNum:Landroid/widget/TextView;
 
     iget v1, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->mmsNumberOfSentbox:I
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 637
-    iget-object v0, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->scheduleNum:Landroid/widget/TextView;
-
-    iget v1, p0, Lcom/android/samsungtest/CurrentDataState/CurrentDataState;->calendarNum:I
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 

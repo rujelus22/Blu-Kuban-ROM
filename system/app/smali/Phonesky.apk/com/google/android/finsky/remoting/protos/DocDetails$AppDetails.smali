@@ -26,6 +26,8 @@
     .end annotation
 .end field
 
+.field private appType_:Ljava/lang/String;
+
 .field private cachedSize:I
 
 .field private contentRating_:I
@@ -46,6 +48,8 @@
         }
     .end annotation
 .end field
+
+.field private hasAppType:Z
 
 .field private hasContentRating:Z
 
@@ -110,95 +114,100 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 471
+    .line 618
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 476
+    .line 623
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->developerName_:Ljava/lang/String;
 
-    .line 493
+    .line 640
     iput v1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->majorVersionNumber_:I
 
-    .line 510
+    .line 657
     iput v1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->versionCode_:I
 
-    .line 527
+    .line 674
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->versionString_:Ljava/lang/String;
 
-    .line 544
+    .line 691
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->title_:Ljava/lang/String;
 
-    .line 560
+    .line 707
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->appCategory_:Ljava/util/List;
 
-    .line 594
+    .line 741
     iput v1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->contentRating_:I
 
-    .line 611
+    .line 758
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->installationSize_:J
 
-    .line 627
+    .line 774
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->permission_:Ljava/util/List;
 
-    .line 661
+    .line 808
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->developerEmail_:Ljava/lang/String;
 
-    .line 678
+    .line 825
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->developerWebsite_:Ljava/lang/String;
 
-    .line 695
+    .line 842
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->numDownloads_:Ljava/lang/String;
 
-    .line 712
+    .line 859
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->packageName_:Ljava/lang/String;
 
-    .line 729
+    .line 876
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->recentChangesHtml_:Ljava/lang/String;
 
-    .line 746
+    .line 893
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->uploadDate_:Ljava/lang/String;
 
-    .line 762
+    .line 909
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->file_:Ljava/util/List;
 
-    .line 870
+    .line 943
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->appType_:Ljava/lang/String;
+
+    .line 1039
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->cachedSize:I
 
-    .line 471
+    .line 618
     return-void
 .end method
 
@@ -209,17 +218,17 @@
     .parameter "value"
 
     .prologue
-    .line 577
+    .line 724
     if-nez p1, :cond_8
 
-    .line 578
+    .line 725
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 580
+    .line 727
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->appCategory_:Ljava/util/List;
 
@@ -229,20 +238,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 581
+    .line 728
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->appCategory_:Ljava/util/List;
 
-    .line 583
+    .line 730
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->appCategory_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 584
+    .line 731
     return-object p0
 .end method
 
@@ -251,17 +260,17 @@
     .parameter "value"
 
     .prologue
-    .line 779
+    .line 926
     if-nez p1, :cond_8
 
-    .line 780
+    .line 927
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 782
+    .line 929
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->file_:Ljava/util/List;
 
@@ -271,20 +280,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 783
+    .line 930
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->file_:Ljava/util/List;
 
-    .line 785
+    .line 932
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->file_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 786
+    .line 933
     return-object p0
 .end method
 
@@ -293,17 +302,17 @@
     .parameter "value"
 
     .prologue
-    .line 644
+    .line 791
     if-nez p1, :cond_8
 
-    .line 645
+    .line 792
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 647
+    .line 794
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->permission_:Ljava/util/List;
 
@@ -313,20 +322,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 648
+    .line 795
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->permission_:Ljava/util/List;
 
-    .line 650
+    .line 797
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->permission_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 651
+    .line 798
     return-object p0
 .end method
 
@@ -343,8 +352,18 @@
     .end annotation
 
     .prologue
-    .line 563
+    .line 710
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->appCategory_:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public getAppType()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 944
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->appType_:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -353,15 +372,15 @@
     .registers 2
 
     .prologue
-    .line 872
+    .line 1042
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 874
+    .line 1044
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getSerializedSize()I
 
-    .line 876
+    .line 1046
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->cachedSize:I
 
@@ -372,7 +391,7 @@
     .registers 2
 
     .prologue
-    .line 595
+    .line 742
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->contentRating_:I
 
     return v0
@@ -382,7 +401,7 @@
     .registers 2
 
     .prologue
-    .line 662
+    .line 809
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->developerEmail_:Ljava/lang/String;
 
     return-object v0
@@ -392,7 +411,7 @@
     .registers 2
 
     .prologue
-    .line 477
+    .line 624
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->developerName_:Ljava/lang/String;
 
     return-object v0
@@ -402,10 +421,41 @@
     .registers 2
 
     .prologue
-    .line 679
+    .line 826
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->developerWebsite_:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public getFile(I)Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;
+    .registers 3
+    .parameter "index"
+
+    .prologue
+    .line 916
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->file_:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;
+
+    return-object v0
+.end method
+
+.method public getFileCount()I
+    .registers 2
+
+    .prologue
+    .line 914
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->file_:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public getFileList()Ljava/util/List;
@@ -421,7 +471,7 @@
     .end annotation
 
     .prologue
-    .line 765
+    .line 912
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->file_:Ljava/util/List;
 
     return-object v0
@@ -431,7 +481,7 @@
     .registers 3
 
     .prologue
-    .line 612
+    .line 759
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->installationSize_:J
 
     return-wide v0
@@ -441,7 +491,7 @@
     .registers 2
 
     .prologue
-    .line 494
+    .line 641
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->majorVersionNumber_:I
 
     return v0
@@ -451,7 +501,7 @@
     .registers 2
 
     .prologue
-    .line 696
+    .line 843
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->numDownloads_:Ljava/lang/String;
 
     return-object v0
@@ -461,7 +511,7 @@
     .registers 2
 
     .prologue
-    .line 713
+    .line 860
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->packageName_:Ljava/lang/String;
 
     return-object v0
@@ -480,7 +530,7 @@
     .end annotation
 
     .prologue
-    .line 630
+    .line 777
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->permission_:Ljava/util/List;
 
     return-object v0
@@ -490,7 +540,7 @@
     .registers 2
 
     .prologue
-    .line 730
+    .line 877
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->recentChangesHtml_:Ljava/lang/String;
 
     return-object v0
@@ -500,10 +550,10 @@
     .registers 8
 
     .prologue
-    .line 880
+    .line 1051
     const/4 v3, 0x0
 
-    .line 881
+    .line 1052
     .local v3, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasDeveloperName()Z
 
@@ -511,7 +561,7 @@
 
     if-eqz v4, :cond_11
 
-    .line 882
+    .line 1053
     const/4 v4, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getDeveloperName()Ljava/lang/String;
@@ -524,7 +574,7 @@
 
     add-int/2addr v3, v4
 
-    .line 885
+    .line 1056
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasMajorVersionNumber()Z
 
@@ -532,7 +582,7 @@
 
     if-eqz v4, :cond_21
 
-    .line 886
+    .line 1057
     const/4 v4, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getMajorVersionNumber()I
@@ -545,7 +595,7 @@
 
     add-int/2addr v3, v4
 
-    .line 889
+    .line 1060
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasVersionCode()Z
 
@@ -553,7 +603,7 @@
 
     if-eqz v4, :cond_31
 
-    .line 890
+    .line 1061
     const/4 v4, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getVersionCode()I
@@ -566,7 +616,7 @@
 
     add-int/2addr v3, v4
 
-    .line 893
+    .line 1064
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasVersionString()Z
 
@@ -574,7 +624,7 @@
 
     if-eqz v4, :cond_41
 
-    .line 894
+    .line 1065
     const/4 v4, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getVersionString()Ljava/lang/String;
@@ -587,7 +637,7 @@
 
     add-int/2addr v3, v4
 
-    .line 897
+    .line 1068
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasTitle()Z
 
@@ -595,7 +645,7 @@
 
     if-eqz v4, :cond_51
 
-    .line 898
+    .line 1069
     const/4 v4, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getTitle()Ljava/lang/String;
@@ -608,11 +658,11 @@
 
     add-int/2addr v3, v4
 
-    .line 902
+    .line 1073
     :cond_51
     const/4 v0, 0x0
 
-    .line 903
+    .line 1074
     .local v0, dataSize:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getAppCategoryList()Ljava/util/List;
 
@@ -636,7 +686,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 904
+    .line 1075
     .local v1, element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -646,12 +696,12 @@
 
     goto :goto_5a
 
-    .line 907
+    .line 1078
     .end local v1           #element:Ljava/lang/String;
     :cond_6c
     add-int/2addr v3, v0
 
-    .line 908
+    .line 1079
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getAppCategoryList()Ljava/util/List;
 
     move-result-object v4
@@ -664,14 +714,14 @@
 
     add-int/2addr v3, v4
 
-    .line 910
+    .line 1081
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasContentRating()Z
 
     move-result v4
 
     if-eqz v4, :cond_89
 
-    .line 911
+    .line 1082
     const/16 v4, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getContentRating()I
@@ -684,7 +734,7 @@
 
     add-int/2addr v3, v4
 
-    .line 914
+    .line 1085
     :cond_89
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasInstallationSize()Z
 
@@ -692,7 +742,7 @@
 
     if-eqz v4, :cond_9a
 
-    .line 915
+    .line 1086
     const/16 v4, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getInstallationSize()J
@@ -705,11 +755,11 @@
 
     add-int/2addr v3, v4
 
-    .line 919
+    .line 1090
     :cond_9a
     const/4 v0, 0x0
 
-    .line 920
+    .line 1091
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getPermissionList()Ljava/util/List;
 
     move-result-object v4
@@ -731,7 +781,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 921
+    .line 1092
     .restart local v1       #element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -741,12 +791,12 @@
 
     goto :goto_a3
 
-    .line 924
+    .line 1095
     .end local v1           #element:Ljava/lang/String;
     :cond_b5
     add-int/2addr v3, v0
 
-    .line 925
+    .line 1096
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getPermissionList()Ljava/util/List;
 
     move-result-object v4
@@ -759,14 +809,14 @@
 
     add-int/2addr v3, v4
 
-    .line 927
+    .line 1098
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasDeveloperEmail()Z
 
     move-result v4
 
     if-eqz v4, :cond_d2
 
-    .line 928
+    .line 1099
     const/16 v4, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getDeveloperEmail()Ljava/lang/String;
@@ -779,7 +829,7 @@
 
     add-int/2addr v3, v4
 
-    .line 931
+    .line 1102
     :cond_d2
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasDeveloperWebsite()Z
 
@@ -787,7 +837,7 @@
 
     if-eqz v4, :cond_e3
 
-    .line 932
+    .line 1103
     const/16 v4, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getDeveloperWebsite()Ljava/lang/String;
@@ -800,7 +850,7 @@
 
     add-int/2addr v3, v4
 
-    .line 935
+    .line 1106
     :cond_e3
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasNumDownloads()Z
 
@@ -808,7 +858,7 @@
 
     if-eqz v4, :cond_f4
 
-    .line 936
+    .line 1107
     const/16 v4, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getNumDownloads()Ljava/lang/String;
@@ -821,7 +871,7 @@
 
     add-int/2addr v3, v4
 
-    .line 939
+    .line 1110
     :cond_f4
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasPackageName()Z
 
@@ -829,7 +879,7 @@
 
     if-eqz v4, :cond_105
 
-    .line 940
+    .line 1111
     const/16 v4, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getPackageName()Ljava/lang/String;
@@ -842,7 +892,7 @@
 
     add-int/2addr v3, v4
 
-    .line 943
+    .line 1114
     :cond_105
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasRecentChangesHtml()Z
 
@@ -850,7 +900,7 @@
 
     if-eqz v4, :cond_116
 
-    .line 944
+    .line 1115
     const/16 v4, 0xf
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getRecentChangesHtml()Ljava/lang/String;
@@ -863,7 +913,7 @@
 
     add-int/2addr v3, v4
 
-    .line 947
+    .line 1118
     :cond_116
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasUploadDate()Z
 
@@ -871,7 +921,7 @@
 
     if-eqz v4, :cond_127
 
-    .line 948
+    .line 1119
     const/16 v4, 0x10
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getUploadDate()Ljava/lang/String;
@@ -884,7 +934,7 @@
 
     add-int/2addr v3, v4
 
-    .line 951
+    .line 1122
     :cond_127
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getFileList()Ljava/util/List;
 
@@ -907,7 +957,7 @@
 
     check-cast v1, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;
 
-    .line 952
+    .line 1123
     .local v1, element:Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;
     const/16 v4, 0x11
 
@@ -919,12 +969,33 @@
 
     goto :goto_12f
 
-    .line 955
+    .line 1126
     .end local v1           #element:Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;
     :cond_143
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasAppType()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_154
+
+    .line 1127
+    const/16 v4, 0x12
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getAppType()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    .line 1130
+    :cond_154
     iput v3, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->cachedSize:I
 
-    .line 956
+    .line 1131
     return v3
 .end method
 
@@ -932,7 +1003,7 @@
     .registers 2
 
     .prologue
-    .line 545
+    .line 692
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->title_:Ljava/lang/String;
 
     return-object v0
@@ -942,7 +1013,7 @@
     .registers 2
 
     .prologue
-    .line 747
+    .line 894
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->uploadDate_:Ljava/lang/String;
 
     return-object v0
@@ -952,7 +1023,7 @@
     .registers 2
 
     .prologue
-    .line 511
+    .line 658
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->versionCode_:I
 
     return v0
@@ -962,17 +1033,27 @@
     .registers 2
 
     .prologue
-    .line 528
+    .line 675
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->versionString_:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public hasAppType()Z
+    .registers 2
+
+    .prologue
+    .line 945
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasAppType:Z
+
+    return v0
 .end method
 
 .method public hasContentRating()Z
     .registers 2
 
     .prologue
-    .line 596
+    .line 743
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasContentRating:Z
 
     return v0
@@ -982,7 +1063,7 @@
     .registers 2
 
     .prologue
-    .line 663
+    .line 810
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasDeveloperEmail:Z
 
     return v0
@@ -992,7 +1073,7 @@
     .registers 2
 
     .prologue
-    .line 478
+    .line 625
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasDeveloperName:Z
 
     return v0
@@ -1002,7 +1083,7 @@
     .registers 2
 
     .prologue
-    .line 680
+    .line 827
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasDeveloperWebsite:Z
 
     return v0
@@ -1012,7 +1093,7 @@
     .registers 2
 
     .prologue
-    .line 613
+    .line 760
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasInstallationSize:Z
 
     return v0
@@ -1022,7 +1103,7 @@
     .registers 2
 
     .prologue
-    .line 495
+    .line 642
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasMajorVersionNumber:Z
 
     return v0
@@ -1032,7 +1113,7 @@
     .registers 2
 
     .prologue
-    .line 697
+    .line 844
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasNumDownloads:Z
 
     return v0
@@ -1042,7 +1123,7 @@
     .registers 2
 
     .prologue
-    .line 714
+    .line 861
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasPackageName:Z
 
     return v0
@@ -1052,7 +1133,7 @@
     .registers 2
 
     .prologue
-    .line 731
+    .line 878
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasRecentChangesHtml:Z
 
     return v0
@@ -1062,7 +1143,7 @@
     .registers 2
 
     .prologue
-    .line 546
+    .line 693
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasTitle:Z
 
     return v0
@@ -1072,7 +1153,7 @@
     .registers 2
 
     .prologue
-    .line 748
+    .line 895
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasUploadDate:Z
 
     return v0
@@ -1082,7 +1163,7 @@
     .registers 2
 
     .prologue
-    .line 512
+    .line 659
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasVersionCode:Z
 
     return v0
@@ -1092,7 +1173,7 @@
     .registers 2
 
     .prologue
-    .line 529
+    .line 676
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasVersionString:Z
 
     return v0
@@ -1108,29 +1189,29 @@
     .end annotation
 
     .prologue
-    .line 963
+    .line 1139
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 964
+    .line 1140
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_94
+    sparse-switch v0, :sswitch_data_9e
 
-    .line 968
+    .line 1144
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 969
+    .line 1145
     :sswitch_d
     return-object p0
 
-    .line 974
+    .line 1150
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1140,7 +1221,7 @@
 
     goto :goto_0
 
-    .line 978
+    .line 1154
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -1150,7 +1231,7 @@
 
     goto :goto_0
 
-    .line 982
+    .line 1158
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -1160,7 +1241,7 @@
 
     goto :goto_0
 
-    .line 986
+    .line 1162
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1170,7 +1251,7 @@
 
     goto :goto_0
 
-    .line 990
+    .line 1166
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1180,7 +1261,7 @@
 
     goto :goto_0
 
-    .line 994
+    .line 1170
     :sswitch_36
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1190,7 +1271,7 @@
 
     goto :goto_0
 
-    .line 998
+    .line 1174
     :sswitch_3e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -1200,7 +1281,7 @@
 
     goto :goto_0
 
-    .line 1002
+    .line 1178
     :sswitch_46
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -1210,7 +1291,7 @@
 
     goto :goto_0
 
-    .line 1006
+    .line 1182
     :sswitch_4e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1220,7 +1301,7 @@
 
     goto :goto_0
 
-    .line 1010
+    .line 1186
     :sswitch_56
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1230,7 +1311,7 @@
 
     goto :goto_0
 
-    .line 1014
+    .line 1190
     :sswitch_5e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1240,7 +1321,7 @@
 
     goto :goto_0
 
-    .line 1018
+    .line 1194
     :sswitch_66
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1250,7 +1331,7 @@
 
     goto :goto_0
 
-    .line 1022
+    .line 1198
     :sswitch_6e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1260,7 +1341,7 @@
 
     goto :goto_0
 
-    .line 1026
+    .line 1202
     :sswitch_76
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1270,7 +1351,7 @@
 
     goto :goto_0
 
-    .line 1030
+    .line 1206
     :sswitch_7e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1280,23 +1361,36 @@
 
     goto/16 :goto_0
 
-    .line 1034
+    .line 1210
     :sswitch_87
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;-><init>()V
 
-    .line 1035
+    .line 1211
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1036
+    .line 1212
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->addFile(Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;)Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
 
     goto/16 :goto_0
 
-    .line 964
-    :sswitch_data_94
+    .line 1216
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;
+    :sswitch_94
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->setAppType(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
+
+    goto/16 :goto_0
+
+    .line 1140
+    nop
+
+    :sswitch_data_9e
     .sparse-switch
         0x0 -> :sswitch_d
         0xa -> :sswitch_e
@@ -1315,6 +1409,7 @@
         0x7a -> :sswitch_76
         0x82 -> :sswitch_7e
         0x8a -> :sswitch_87
+        0x92 -> :sswitch_94
     .end sparse-switch
 .end method
 
@@ -1328,7 +1423,7 @@
     .end annotation
 
     .prologue
-    .line 469
+    .line 615
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
 
     move-result-object v0
@@ -1336,20 +1431,37 @@
     return-object v0
 .end method
 
+.method public setAppType(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 947
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasAppType:Z
+
+    .line 948
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->appType_:Ljava/lang/String;
+
+    .line 949
+    return-object p0
+.end method
+
 .method public setContentRating(I)Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
     .registers 3
     .parameter "value"
 
     .prologue
-    .line 598
+    .line 745
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasContentRating:Z
 
-    .line 599
+    .line 746
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->contentRating_:I
 
-    .line 600
+    .line 747
     return-object p0
 .end method
 
@@ -1358,15 +1470,15 @@
     .parameter "value"
 
     .prologue
-    .line 665
+    .line 812
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasDeveloperEmail:Z
 
-    .line 666
+    .line 813
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->developerEmail_:Ljava/lang/String;
 
-    .line 667
+    .line 814
     return-object p0
 .end method
 
@@ -1375,15 +1487,15 @@
     .parameter "value"
 
     .prologue
-    .line 480
+    .line 627
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasDeveloperName:Z
 
-    .line 481
+    .line 628
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->developerName_:Ljava/lang/String;
 
-    .line 482
+    .line 629
     return-object p0
 .end method
 
@@ -1392,15 +1504,15 @@
     .parameter "value"
 
     .prologue
-    .line 682
+    .line 829
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasDeveloperWebsite:Z
 
-    .line 683
+    .line 830
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->developerWebsite_:Ljava/lang/String;
 
-    .line 684
+    .line 831
     return-object p0
 .end method
 
@@ -1409,15 +1521,15 @@
     .parameter "value"
 
     .prologue
-    .line 615
+    .line 762
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasInstallationSize:Z
 
-    .line 616
+    .line 763
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->installationSize_:J
 
-    .line 617
+    .line 764
     return-object p0
 .end method
 
@@ -1426,15 +1538,15 @@
     .parameter "value"
 
     .prologue
-    .line 497
+    .line 644
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasMajorVersionNumber:Z
 
-    .line 498
+    .line 645
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->majorVersionNumber_:I
 
-    .line 499
+    .line 646
     return-object p0
 .end method
 
@@ -1443,15 +1555,15 @@
     .parameter "value"
 
     .prologue
-    .line 699
+    .line 846
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasNumDownloads:Z
 
-    .line 700
+    .line 847
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->numDownloads_:Ljava/lang/String;
 
-    .line 701
+    .line 848
     return-object p0
 .end method
 
@@ -1460,15 +1572,15 @@
     .parameter "value"
 
     .prologue
-    .line 716
+    .line 863
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasPackageName:Z
 
-    .line 717
+    .line 864
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->packageName_:Ljava/lang/String;
 
-    .line 718
+    .line 865
     return-object p0
 .end method
 
@@ -1477,15 +1589,15 @@
     .parameter "value"
 
     .prologue
-    .line 733
+    .line 880
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasRecentChangesHtml:Z
 
-    .line 734
+    .line 881
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->recentChangesHtml_:Ljava/lang/String;
 
-    .line 735
+    .line 882
     return-object p0
 .end method
 
@@ -1494,15 +1606,15 @@
     .parameter "value"
 
     .prologue
-    .line 548
+    .line 695
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasTitle:Z
 
-    .line 549
+    .line 696
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->title_:Ljava/lang/String;
 
-    .line 550
+    .line 697
     return-object p0
 .end method
 
@@ -1511,15 +1623,15 @@
     .parameter "value"
 
     .prologue
-    .line 750
+    .line 897
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasUploadDate:Z
 
-    .line 751
+    .line 898
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->uploadDate_:Ljava/lang/String;
 
-    .line 752
+    .line 899
     return-object p0
 .end method
 
@@ -1528,15 +1640,15 @@
     .parameter "value"
 
     .prologue
-    .line 514
+    .line 661
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasVersionCode:Z
 
-    .line 515
+    .line 662
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->versionCode_:I
 
-    .line 516
+    .line 663
     return-object p0
 .end method
 
@@ -1545,15 +1657,15 @@
     .parameter "value"
 
     .prologue
-    .line 531
+    .line 678
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasVersionString:Z
 
-    .line 532
+    .line 679
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->versionString_:Ljava/lang/String;
 
-    .line 533
+    .line 680
     return-object p0
 .end method
 
@@ -1567,14 +1679,14 @@
     .end annotation
 
     .prologue
-    .line 820
+    .line 986
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasDeveloperName()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 821
+    .line 987
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getDeveloperName()Ljava/lang/String;
@@ -1583,7 +1695,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 823
+    .line 989
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasMajorVersionNumber()Z
 
@@ -1591,7 +1703,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 824
+    .line 990
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getMajorVersionNumber()I
@@ -1600,7 +1712,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 826
+    .line 992
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasVersionCode()Z
 
@@ -1608,7 +1720,7 @@
 
     if-eqz v2, :cond_2a
 
-    .line 827
+    .line 993
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getVersionCode()I
@@ -1617,7 +1729,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 829
+    .line 995
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasVersionString()Z
 
@@ -1625,7 +1737,7 @@
 
     if-eqz v2, :cond_38
 
-    .line 830
+    .line 996
     const/4 v2, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getVersionString()Ljava/lang/String;
@@ -1634,7 +1746,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 832
+    .line 998
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasTitle()Z
 
@@ -1642,7 +1754,7 @@
 
     if-eqz v2, :cond_46
 
-    .line 833
+    .line 999
     const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getTitle()Ljava/lang/String;
@@ -1651,7 +1763,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 835
+    .line 1001
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getAppCategoryList()Ljava/util/List;
 
@@ -1675,7 +1787,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 836
+    .line 1002
     .local v0, element:Ljava/lang/String;
     const/4 v2, 0x7
 
@@ -1683,7 +1795,7 @@
 
     goto :goto_4e
 
-    .line 838
+    .line 1004
     .end local v0           #element:Ljava/lang/String;
     :cond_5f
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasContentRating()Z
@@ -1692,7 +1804,7 @@
 
     if-eqz v2, :cond_6e
 
-    .line 839
+    .line 1005
     const/16 v2, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getContentRating()I
@@ -1701,7 +1813,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 841
+    .line 1007
     :cond_6e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasInstallationSize()Z
 
@@ -1709,7 +1821,7 @@
 
     if-eqz v2, :cond_7d
 
-    .line 842
+    .line 1008
     const/16 v2, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getInstallationSize()J
@@ -1718,7 +1830,7 @@
 
     invoke-virtual {p1, v2, v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 844
+    .line 1010
     :cond_7d
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getPermissionList()Ljava/util/List;
 
@@ -1741,7 +1853,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 845
+    .line 1011
     .restart local v0       #element:Ljava/lang/String;
     const/16 v2, 0xa
 
@@ -1749,7 +1861,7 @@
 
     goto :goto_85
 
-    .line 847
+    .line 1013
     .end local v0           #element:Ljava/lang/String;
     :cond_97
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasDeveloperEmail()Z
@@ -1758,7 +1870,7 @@
 
     if-eqz v2, :cond_a6
 
-    .line 848
+    .line 1014
     const/16 v2, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getDeveloperEmail()Ljava/lang/String;
@@ -1767,7 +1879,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 850
+    .line 1016
     :cond_a6
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasDeveloperWebsite()Z
 
@@ -1775,7 +1887,7 @@
 
     if-eqz v2, :cond_b5
 
-    .line 851
+    .line 1017
     const/16 v2, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getDeveloperWebsite()Ljava/lang/String;
@@ -1784,7 +1896,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 853
+    .line 1019
     :cond_b5
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasNumDownloads()Z
 
@@ -1792,7 +1904,7 @@
 
     if-eqz v2, :cond_c4
 
-    .line 854
+    .line 1020
     const/16 v2, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getNumDownloads()Ljava/lang/String;
@@ -1801,7 +1913,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 856
+    .line 1022
     :cond_c4
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasPackageName()Z
 
@@ -1809,7 +1921,7 @@
 
     if-eqz v2, :cond_d3
 
-    .line 857
+    .line 1023
     const/16 v2, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getPackageName()Ljava/lang/String;
@@ -1818,7 +1930,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 859
+    .line 1025
     :cond_d3
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasRecentChangesHtml()Z
 
@@ -1826,7 +1938,7 @@
 
     if-eqz v2, :cond_e2
 
-    .line 860
+    .line 1026
     const/16 v2, 0xf
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getRecentChangesHtml()Ljava/lang/String;
@@ -1835,7 +1947,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 862
+    .line 1028
     :cond_e2
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasUploadDate()Z
 
@@ -1843,7 +1955,7 @@
 
     if-eqz v2, :cond_f1
 
-    .line 863
+    .line 1029
     const/16 v2, 0x10
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getUploadDate()Ljava/lang/String;
@@ -1852,7 +1964,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 865
+    .line 1031
     :cond_f1
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getFileList()Ljava/util/List;
 
@@ -1875,7 +1987,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;
 
-    .line 866
+    .line 1032
     .local v0, element:Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;
     const/16 v2, 0x11
 
@@ -1883,8 +1995,25 @@
 
     goto :goto_f9
 
-    .line 868
+    .line 1034
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;
     :cond_10b
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasAppType()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_11a
+
+    .line 1035
+    const/16 v2, 0x12
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getAppType()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    .line 1037
+    :cond_11a
     return-void
 .end method

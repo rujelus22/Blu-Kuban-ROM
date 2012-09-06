@@ -104,7 +104,7 @@
     invoke-static {v0, v1}, Lcom/google/android/talk/fragments/BuddyListFragment;->access$500(Lcom/google/android/talk/fragments/BuddyListFragment;Ljava/lang/String;)V
 
     .line 345
-    iget-object v1, v0, Lcom/google/android/talk/fragments/BuddyListFragment;->mHandler:Landroid/os/Handler;
+    iget-object v1, v0, Lcom/google/android/talk/fragments/RosterListFragment;->mHandler:Landroid/os/Handler;
 
     iget-object v2, p0, Lcom/google/android/talk/fragments/BuddyListFragment$ChatListener;->mForceLoadRunnable:Ljava/lang/Runnable;
 
@@ -153,7 +153,7 @@
     invoke-static {v0, v1}, Lcom/google/android/talk/fragments/BuddyListFragment;->access$500(Lcom/google/android/talk/fragments/BuddyListFragment;Ljava/lang/String;)V
 
     .line 334
-    iget-object v1, v0, Lcom/google/android/talk/fragments/BuddyListFragment;->mHandler:Landroid/os/Handler;
+    iget-object v1, v0, Lcom/google/android/talk/fragments/RosterListFragment;->mHandler:Landroid/os/Handler;
 
     iget-object v2, p0, Lcom/google/android/talk/fragments/BuddyListFragment$ChatListener;->mForceLoadRunnable:Ljava/lang/Runnable;
 
@@ -240,7 +240,7 @@
     if-eqz p2, :cond_4
 
     .line 322
-    iget-object v1, v0, Lcom/google/android/talk/fragments/BuddyListFragment;->mHandler:Landroid/os/Handler;
+    iget-object v1, v0, Lcom/google/android/talk/fragments/RosterListFragment;->mHandler:Landroid/os/Handler;
 
     iget-object v2, p0, Lcom/google/android/talk/fragments/BuddyListFragment$ChatListener;->mForceLoadRunnable:Ljava/lang/Runnable;
 

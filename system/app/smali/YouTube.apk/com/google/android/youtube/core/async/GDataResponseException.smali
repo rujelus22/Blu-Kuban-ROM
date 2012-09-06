@@ -13,9 +13,11 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .registers 5
 
     .prologue
+    const/4 v4, 0x0
+
     .line 25
     new-instance v0, Ljava/util/ArrayList;
 
@@ -26,11 +28,17 @@
     .line 26
     sput-object v0, Lcom/google/android/youtube/core/async/GDataResponseException;->YOUTUBE_SIGNUP_REQUIRED_LIST:Ljava/util/List;
 
-    sget-object v1, Lcom/google/android/youtube/core/model/f;->a:Lcom/google/android/youtube/core/model/f;
+    new-instance v1, Lcom/google/android/youtube/core/model/e;
+
+    const-string v2, "yt:service"
+
+    const-string v3, "youtube_signup_required"
+
+    invoke-direct {v1, v2, v3, v4, v4}, Lcom/google/android/youtube/core/model/e;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 27
+    .line 28
     return-void
 .end method
 
@@ -41,7 +49,7 @@
     .parameter
 
     .prologue
-    .line 40
+    .line 41
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -78,7 +86,7 @@
 
     invoke-direct {p0, p1, v0}, Lorg/apache/http/client/HttpResponseException;-><init>(ILjava/lang/String;)V
 
-    .line 42
+    .line 43
     if-nez p3, :cond_32
 
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
@@ -88,10 +96,10 @@
     :goto_2a
     iput-object v0, p0, Lcom/google/android/youtube/core/async/GDataResponseException;->errors:Ljava/util/List;
 
-    .line 44
+    .line 45
     return-void
 
-    .line 40
+    .line 41
     :cond_2d
     invoke-virtual {p3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -99,7 +107,7 @@
 
     goto :goto_19
 
-    .line 42
+    .line 43
     :cond_32
     invoke-static {p3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
@@ -108,7 +116,43 @@
     goto :goto_2a
 .end method
 
-.method private containsError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+.method public static createYouTubeSignupRequired(ILjava/lang/String;)Lcom/google/android/youtube/core/async/GDataResponseException;
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 35
+    new-instance v0, Lcom/google/android/youtube/core/async/GDataResponseException;
+
+    sget-object v1, Lcom/google/android/youtube/core/async/GDataResponseException;->YOUTUBE_SIGNUP_REQUIRED_LIST:Ljava/util/List;
+
+    invoke-direct {v0, p0, p1, v1}, Lcom/google/android/youtube/core/async/GDataResponseException;-><init>(ILjava/lang/String;Ljava/util/List;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public containsDisabledInMaintenanceModeError()Z
+    .registers 4
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 70
+    const-string v0, "yt:service"
+
+    const-string v1, "disabled_in_maintenance_mode"
+
+    invoke-virtual {p0, v0, v1, v2, v2}, Lcom/google/android/youtube/core/async/GDataResponseException;->containsError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public containsError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
     .registers 8
     .parameter
     .parameter
@@ -116,7 +160,7 @@
     .parameter
 
     .prologue
-    .line 56
+    .line 57
     iget-object v0, p0, Lcom/google/android/youtube/core/async/GDataResponseException;->errors:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -134,12 +178,12 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/f;
+    check-cast v0, Lcom/google/android/youtube/core/model/e;
 
-    .line 57
+    .line 58
     if-eqz p1, :cond_1c
 
-    iget-object v2, v0, Lcom/google/android/youtube/core/model/f;->b:Ljava/lang/String;
+    iget-object v2, v0, Lcom/google/android/youtube/core/model/e;->a:Ljava/lang/String;
 
     invoke-static {p1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -150,7 +194,7 @@
     :cond_1c
     if-eqz p2, :cond_26
 
-    iget-object v2, v0, Lcom/google/android/youtube/core/model/f;->c:Ljava/lang/String;
+    iget-object v2, v0, Lcom/google/android/youtube/core/model/e;->b:Ljava/lang/String;
 
     invoke-static {p2, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -161,7 +205,7 @@
     :cond_26
     if-eqz p3, :cond_30
 
-    iget-object v2, v0, Lcom/google/android/youtube/core/model/f;->d:Ljava/lang/String;
+    iget-object v2, v0, Lcom/google/android/youtube/core/model/e;->c:Ljava/lang/String;
 
     invoke-static {p3, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -172,7 +216,7 @@
     :cond_30
     if-eqz p4, :cond_3a
 
-    iget-object v0, v0, Lcom/google/android/youtube/core/model/f;->e:Ljava/lang/String;
+    iget-object v0, v0, Lcom/google/android/youtube/core/model/e;->d:Ljava/lang/String;
 
     invoke-static {p4, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -180,11 +224,11 @@
 
     if-eqz v0, :cond_6
 
-    .line 62
+    .line 63
     :cond_3a
     const/4 v0, 0x1
 
-    .line 65
+    .line 66
     :goto_3b
     return v0
 
@@ -194,36 +238,18 @@
     goto :goto_3b
 .end method
 
-.method public static createYouTubeSignupRequired(ILjava/lang/String;)Lcom/google/android/youtube/core/async/GDataResponseException;
-    .registers 4
-    .parameter
-    .parameter
-
-    .prologue
-    .line 34
-    new-instance v0, Lcom/google/android/youtube/core/async/GDataResponseException;
-
-    sget-object v1, Lcom/google/android/youtube/core/async/GDataResponseException;->YOUTUBE_SIGNUP_REQUIRED_LIST:Ljava/util/List;
-
-    invoke-direct {v0, p0, p1, v1}, Lcom/google/android/youtube/core/async/GDataResponseException;-><init>(ILjava/lang/String;Ljava/util/List;)V
-
-    return-object v0
-.end method
-
-
-# virtual methods
 .method public containsYouTubeSignupRequiredError()Z
     .registers 5
 
     .prologue
     const/4 v3, 0x0
 
-    .line 69
+    .line 75
     const-string v0, "yt:service"
 
     const-string v1, "youtube_signup_required"
 
-    invoke-direct {p0, v0, v1, v3, v3}, Lcom/google/android/youtube/core/async/GDataResponseException;->containsError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-virtual {p0, v0, v1, v3, v3}, Lcom/google/android/youtube/core/async/GDataResponseException;->containsError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -235,7 +261,7 @@
 
     const-string v2, "Missing or invalid username."
 
-    invoke-direct {p0, v0, v1, v3, v2}, Lcom/google/android/youtube/core/async/GDataResponseException;->containsError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-virtual {p0, v0, v1, v3, v2}, Lcom/google/android/youtube/core/async/GDataResponseException;->containsError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 

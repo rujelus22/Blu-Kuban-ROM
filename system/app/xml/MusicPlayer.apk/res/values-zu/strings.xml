@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s, %2$s</string>
+    <string name="no_network_connection">Akuxhunyiwe</string>
+    <string name="authentication_failure_no_network">Uzoxhunywa ku-Inthanethi ukunika igunya i-akhawunti yakho Yomculo.</string>
+    <string name="authentication_failure">Akugunyaziwe</string>
+    <string name="authentication_failure_error">Ayikwazanga ukugunyaza i-akhawunti yakho Yomculo.</string>
+    <string name="positive_button_text">KULUNGLE</string>
+    <string name="negative_button_text">Khansela</string>
+    <string name="save_button_text">Londoloza</string>
+    <string name="not_save_button_text">Ungalondolozi</string>
+    <string name="offline_music_not_available_message">Ukuze ugcine umculo kudivayisi, iya kuma-albhamu, uhlu lwadlalwayo, noma ukubuka komculo.</string>
+    <string name="view_albums_button_text">Iya kuma-albhamu</string>
+    <string name="shuffle_all">Shova konke</string>
+    <string name="play_all">Dlala konke</string>
+    <string name="songs_all">Wonke amaculo</string>
+    <string name="shuffle">Xuba</string>
+    <string name="search">Sesha</string>
+    <string name="settings">Izilungiselelo</string>
+    <string name="library_options">Izinketho zokubukeka</string>
+    <string name="manage_music">Khetha umculo okudivayisi</string>
+    <string name="available_offline">Gcina kwidivayisi</string>
+    <string name="options">Ongakukhetha kukho</string>
+    <string name="clear_queue">Sula umugqa</string>
+    <string name="queue_cleared">Umugqa usuliwe</string>
+    <string name="add_to_queue">Yengeza emugqeni</string>
+    <string name="add_to_athome_queue">Engeza ku-%s</string>
+    <string name="shop_artist">Thenga abaculi</string>
+    <string name="show_offline_music_only">Kudivayisi kuphela</string>
+    <string name="show_all_music">Bonisa wonke umculo</string>
+    <string name="new_playlist_title">Igama lohlu lwadlalwayo</string>
+    <string name="add_to_playlist_title">Igama lohlu lwadlalwayo</string>
+    <string name="rename_playlist_title">Qamba kabusha \"%s\" ku-</string>
+    <string name="search_section_header_artists">ABACULI</string>
+    <string name="search_section_header_albums">AMA-ALBHAMU</string>
+    <string name="search_section_header_songs">AMACULO</string>
+    <string name="search_section_header_playlists">UHLU LOKUDLALAYO</string>
+    <string name="shuffle_all_songs">Shova konke</string>
+    <string name="stream_settings">Izilungiselelo Zomculo</string>
+    <string name="refresh_title">Qala kabusha</string>
+    <string name="refresh_summary">Vuselela umculo kusuka kwi-Google Play</string>
+    <string name="account_settings_title">I-akhawunti yakwa-Google</string>
+    <string name="no_account_selected_summary">Thinta ukuze ukhethe i-akhawunti</string>
+    <string name="account_selected_summary">Xhuma kwi-Google Play usebenzisa i-%s</string>
+    <string name="hide_when_not_connected_title">Fihla umculo ongatholakali</string>
+    <string name="hide_when_not_connected_summary">Bonisa kuphela umculo okhana uma ungaxhunyiwe kwi-intanethi</string>
+    <string name="stream_only_on_wifi_title">Sakaza nge-Wi-Fi kuphela</string>
+    <string name="stream_only_on_wifi_summary">Ukuze wehlise amashaji edatha enkampani yenethiwekhi, ungalandi ngamanethiwekhi eselula</string>
+    <string name="stream_only_hq_title">Sakaza ikhwalithi ephezulu</string>
+    <string name="stream_only_hq_summary">Njalo sakaza umculo kwikhwalithi ephezulu</string>
+    <string name="athome_title">I-Android@Ekhaya</string>
+    <string name="athome_summary">Bheka izisetshenziswa e-Android@Ekhaya.</string>
+    <string name="athome_not_remote">Ukuze ulalele lokhu ku-Nexus Q, qala ngokukulayisha kulabhulali yakho yomculo ye-Google Play.</string>
+    <string name="athome_move_top_menu">Dlala okulandelayo</string>
+    <string name="athome_remove_menu">Susa emgqeni</string>
+    <string name="lock_screen_controls_title">Khiya iziphathi zesikrini</string>
+    <string name="lock_screen_controls_summary">Bonisa ukuphatha komculo phezu kwesikrini sokukhiya.</string>
+    <string name="debug_logs_title">Amalogi e-debug</string>
+    <string name="debug_logs_summary">Sebenzisa amalogi e-debug</string>
+    <string name="debug_logs_enable_warning_message">"Ingabe unesiqinisiso sokuthi ufuna ukunika amandla amalogi we-debug?
+Ulwazi olunohlavane lungagcinwa esilondolozini esingaphandle. Ukushintsha lolukhetho kuzobulala loluhlelo lokusebenza."</string>
+    <string name="debug_logs_disable_warning_message">"Ingabe unesiqinisekiso sokuthi ufuna ukukhubaza amalogi we-debug?
+Ukushintsha le nketho kuzobulala uhlelo lokusebenza."</string>
+    <string name="tungsten_settings">Izilungiselelo ze-Nexus Q</string>
+    <string name="offlinedl_only_on_wifi_title">Layisha nge-Wi-Fi kuphela</string>
+    <string name="offlinedl_only_on_wifi_summary">Ukuze wehlise amashaji edatha enkampani yenethiwekhi, ungalandi ngamanethiwekhi eselula</string>
+    <string name="cache_streamed_title">Faka kunqolobane ngokuzenzakalela</string>
+    <string name="cache_streamed_summary">Londoloza umculo okwesikhashana ngaphandle kokubuza</string>
+    <string name="download_queue_title">Umugqa wokulinda</string>
+    <string name="download_queue_summary">Bonisa amaculo alayishwayo okwamanje</string>
+    <string name="help_title">Usizo</string>
+    <string name="show_no_downloads_title">Awekho amaculo abekwe kulayini ukuze alayishwe</string>
+    <string name="music_version_title">Inguqulo Yomculo</string>
+    <string name="music_version_summary">Inguqulo engaziwe</string>
+    <string name="nowplaying_title">Okudlalwa manje</string>
+    <string name="artists_title">Abaculi</string>
+    <string name="albums_title">Ama-albhamu</string>
+    <string name="genres_title">Izinhlobo</string>
+    <string name="tracks_title">Amaculo</string>
+    <string name="playlists_title">Uhlu lokudlalayo</string>
+    <string name="recent_title">Okwakamuva</string>
+    <string name="search_title">Sesha</string>
+    <string name="no_tracks_title">Awekho amaculo</string>
+    <string name="delete_playlist_menu">Susa</string>
+    <string name="edit_playlist_menu">Hlela</string>
+    <string name="rename_playlist_menu">Qamba kabusha</string>
+    <string name="playlist_delete_confirmation">Ufuna ukusula uhlu lokudlalwayo \"%s\"?</string>
+    <string name="delete_playlist_button_confirm">Susa</string>
+    <string name="playlist_deleted_message">Uhlu lokudlalayo lisusiwe.</string>
+    <string name="playlist_created_message">Uhlu lokudlalayo \"%s\" ludaliwe.</string>
+    <string name="playlist_renamed_message">Uhlu lokudlalayo lwethiwe kabusha\"%s\".</string>
+    <string name="recentlyadded">Okufakwe ekugcineni</string>
+    <string name="recentlyadded_title">Okufakwe ekugcineni</string>
+    <string name="all_songs_list">Wonke amaculo</string>
+    <string name="all_songs_list_title">Wonke amaculo</string>
+    <string name="storemusic_list">Okumahhala kanye nokuthengiwe</string>
+    <string name="storemusic_list_title">Okumahhala kanye nokuthengiwe</string>
+    <string name="freemusic_list">Izingoma zamahhala</string>
+    <string name="freemusic_list_title">Izingoma zamahhala</string>
+    <string name="thumbsup_list">Izithupha phezulu</string>
+    <string name="thumbsup_list_title">Izithupha phezulu</string>
+    <string name="unknown_artist_name">Umculi ongaziwa</string>
+    <string name="unknown_album_name">I-albhamu engaziwa</string>
+    <string name="unknown_playlist_name">Uhlu lokudlalayo olungaziwe</string>
+    <string name="unknown_submitter_name">Akwaziwa</string>
+    <string name="ringtone_menu">Sebenzisa njengeringithoni</string>
+    <string name="ringtone_set">\"%s\" hlela njengeringithoni yefoni.</string>
+    <string name="ringtone_set_failed">Ayikwazanga ukudala ithoni yokukhala.</string>
+    <string name="ringtone_needs_download">Iringithoni izosethiwa uma kulayishwa.</string>
+    <string name="play_selection">Dlala</string>
+    <string name="add_to_playlist">Engeza ohlwini lokudlalayo</string>
+    <string name="rename_playlist_menu_item">Qamba kabusha</string>
+    <string name="add_to_playlist_selector_title">Yengeza ohlwini lokudlalayo</string>
+    <string name="queue">Uhlu lokudlalayo lamanje</string>
+    <string name="save_play_queue_as_playlist">Londoloza umugqa</string>
+    <string name="new_playlist_for_content">Uhlu lwadlalwayo olusha</string>
+    <string name="new_empty_playlist">Uhlu lwadlalwayo olusha</string>
+    <string name="new_playlist_name_template">Uhlu lwadlalwayo %d</string>
+    <string name="removed_from_playlist">I-\"%1$s\" isusiwe ohlwini lokudlala</string>
+    <string name="removed_from_play_queue">I-\"%1$s\" isusiwe emugqeni wokudlala.</string>
+    <string name="playlist_too_many_songs">Izingoma ziningi kakhulu. Isilinganiso ngu %d kuhlu lwadlalwayo</string>
+    <string name="emptyplaylist">Uhlu lokudlalayo olukhethiwe alunalutho.</string>
+    <string name="widget_nowplaying_small_title">Umculo (4x1)</string>
+    <string name="widget_nowplaying_large_title">Umculo (4x4)</string>
+    <string name="appwidget_text_separator">-</string>
+    <string name="playlist_edit_label">IGAMA</string>
+    <string name="create_playlist_create_text">KULUNGILE</string>
+    <string name="rename_playlist_rename_text">Qamba kabusha</string>
+    <string name="service_start_error_title">Inkinga yokuphinda dlala</string>
+    <string name="service_start_error_msg">Ayikwazanga ukudlala ingoma.</string>
+    <string name="service_start_error_button">KULUNGILE</string>
+    <string name="weekpicker_set">Kwenziwe</string>
+    <string name="weekpicker_title">Hlela isikhathi</string>
+    <string name="musicshortcutlabel">Uhlu lokudlalayo lomculo</string>
+    <string name="app_name">I-Google Play Music</string>
+    <string name="launcher_name">I-Play Music</string>
+    <string name="actionbar_title">I-Google Play</string>
+    <string name="playback_failed_title">Iphutha lokudlala umculo.</string>
+    <string name="playback_failed">Ayikwazanga ukudlala ithrekhi oyikhethile.</string>
+    <string name="cancel">Khansela</string>
+    <string name="remove_from_playlist">Susa ohlwini lokudlalayo</string>
+    <string name="streamloadingtext">Ixhuma kwi-%s</string>
+    <string name="search_hint">Sesha umculo</string>
+    <string name="working_artists">Abaculi...</string>
+    <string name="working_albums">Ama-albhamu...</string>
+    <string name="loading">Iyalayisha…</string>
+    <string name="sort_by_track">Amaculo</string>
+    <string name="music_picker_title">Khetha ithrekhi yomculo</string>
+    <string name="fail_to_start_stream">Ayikwazanga ukudlala ukusakazwa okukhethile.</string>
+    <string name="search_settings_description">Abaculi, ama-albhamu, namaculo</string>
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+    <string name="title_tv">Umculo</string>
+    <string name="music_library">Ilabhulali yomculo</string>
+    <string name="playlist_label">Uhlu lokudlalayo</string>
+    <string name="faux_art_all_songs_label">Wonke amaculo</string>
+    <string name="faux_art_playlist_label">Uhlu lwadlalwayo</string>
+    <string name="faux_art_playlist_instant_mix_label">Ukuhlanganisa okumasinya</string>
+    <string name="faux_art_playlist_auto_playlist_label">Uhlu lokudlalwayo oluzenzakalelayo</string>
+    <string name="buffering">Ukugcina kumthamo…</string>
+    <string name="keep_on_phone">Gcina kwidivayisi</string>
+    <string name="no_music_add_music_header">IZINDLELA ZOKUNGEZA UMCULO</string>
+    <string name="no_music_shop_body">Thenga izigidi zomculo, kufaka phakathi namakhulu wamathrekhi wamahhala.</string>
+    <string name="no_music_shop_button">THENGA</string>
+    <string name="no_music_upload_body">Layisha izingoma ezingu-20,000 kwi-Google Play mahhala.</string>
+    <string name="no_music_upload_button">Funda kabanzi.</string>
+    <string name="no_music_usb_copy_body">Ukukopisha umculo ekhompyutheni yakho uwusa edivayisini yakho, sebenzisa intambo ye-USB.</string>
+    <string name="no_music_usb_copy_button">Funda kabanzi.</string>
+    <string name="no_music_heading">Ilabhulali yakho yomculo ayinalutho</string>
+    <string name="no_music_setup_uploader_heading">Sakaza umculo wakho ngaphandle kwentambo</string>
+    <string name="no_music_setup_uploader_body">Ungasakaza emoyeni umculo wakho nge-Google Play Music.</string>
+    <string name="no_music_setup_usb_heading">Kopisha umculo kudivayisi yakho</string>
+    <string name="no_music_setup_usb_body">Ukukopisha umculo ekhompyutheni yakho uwusa edivayisini yakho, sebenzisa intambo ye-USB.</string>
+    <string name="no_local_music_heading">Awukho umculo olondolozwe kudivayisi</string>
+    <string name="no_local_music_body">"Bonisa ilabhulali yakho egcwele, vula imenyu bese ususe ukumaka ku-\"Kudivayisi kuphela.\"
+
+Ukuze ukhethe umculo ongawulondoloza kudivayisi yakho, vula imenyu bese uthepha u-\"Khetha umculo okudivayisi.\""</string>
+    <string name="no_music_learn_more">Funda kabanzi</string>
+    <string name="no_music_syncing_heading">Umculo uyahlanganiswa okwamanje.</string>
+    <string name="no_music_syncing_body">Umculo uthathwa kwisiphakeli futhi kumele uvele isikhashana.</string>
+    <string name="no_music_scanning_heading">Kuhlowla umculo kudivayisi.</string>
+    <string name="no_music_scanning_body">Idivayisi yakho iyahlolwa ukuze kutholakale umculo.</string>
+    <string name="sync_disabled">Udinga ukusetha ukuvumelanisa ngaphambi kokuthi umculo uvele kwi-Google Play Music. Ingabe ufuna ukukwenza manje lokho?</string>
+    <string name="tutorial_welcome_heading">Siyakwamukela kwi-Google Play Music</string>
+    <string name="tutorial_welcome_body">"Layisha kuze kufinyelele ezingomeni ezingu-20, 000 eqoqweni lomculo ongowakho.
+
+Dlala ngokuphuthuma umculo othengwe ku-Google Play.
+
+Lalela wonke umculo wakho okuwebhu noma kuluphi ucingo noma i-tablet. Landa kalula ukuze udlale umculo wakho ungaxhumekile ku-intanethi.
+
+Konke mahhala."</string>
+    <string name="tutorial_select_account_heading">Khetha i-akhawunti</string>
+    <string name="tutorial_select_account_body">"Xhuma i-akhawunti yakho ne-Google Play Music ukuze ukwazi ukudlala ilabhulali yomculo wakho kanye nokuthenge esitolo.
+
+Ingabe iyiphi i-akhawunti ofuna ukuyisebenzisa?"</string>
+    <string name="tutorial_sign_in">Xhumanisa i-akhawunti yakho ne-Google Play Music ukuze udlale ilabhulali yomculo wakho kanye nowuthenge esitolo.</string>
+    <string name="tutorial_free_music_heading">Thola umculo wamahhala</string>
+    <string name="tutorial_free_music_body">Phequlula amakhulu ama-track amahhala ku-Google Play ngamanye amagama amakhulu ku-rock, hip-hop, nokuningi.</string>
+    <string name="tutorial_account_heading">Wemukeliwe</string>
+    <string name="tutorial_account_body">Uyamenywa kwi-Google Play Music. Ungase usebenzise lesi sidlali ukufinyelela ngokushesha izingoma ozifaka kwi-Google Play Music kanye nezinye izingoma ozokopishele kwidivaysi yakho ye-Android.</string>
+    <string name="tutorial_account_list_header">Qala ngokukhetha i-Akhawunti ye-Google ukuxhuma lesi sidlali kwi-Google Play Music:</string>
+    <string name="tutorial_done_heading">Jabulela</string>
+    <string name="tutorial_done_body">"Manje isidlali Somculo sixhunywe kwi-akhawunti yakho ye-Google.
+
+Uma usuvele usufake iqoqo lakho kwi-Google Play Music, kuzoqala ukuvela kulesi sidlali.
+
+Uma usafuna ukufaka umculo wakho kwi-Google Play Music, qalisa ngokuvakashela iwebhusayithi yethu kusuka kwikhompyutha yakho:"</string>
+    <string name="tutorial_skip">Yeqa</string>
+    <string name="tutorial_next">Okulandelayo</string>
+    <string name="tutorial_done">Kwenzekile</string>
+    <string name="tutorial_add_account">Engeza i-akhawunti</string>
+    <string name="tutorial_free_music">Thola izingoma zamahhala</string>
+    <string name="spinner_carousel">Okwakamuva</string>
+    <string name="spinner_album">Ama-albhamu</string>
+    <string name="spinner_artist">Abaculi</string>
+    <string name="spinner_songs">Amaculo</string>
+    <string name="spinner_playlists">Uhlu lwadlalwayo</string>
+    <string name="spinner_genres">Izinhlobo</string>
+    <string name="sort_by_title">Hlunga A-Z</string>
+    <string name="sort_by_artist">Hlunga ngomculi</string>
+    <string name="sort_by_album">Hlunga nge-albhamu</string>
+    <string name="sort_by_date">Hlunga ngokosuku okufakwe ngalo</string>
+    <string name="more_by_artist">Okwengeziwe ngomculi</string>
+    <string name="make_available_offline">Gcina kwidivayisi</string>
+    <string name="search_web">Sesha iwebhu</string>
+    <string name="manage_done">Kwenziwe</string>
+    <string name="too_many_items_title">Izintwana eziningi</string>
+    <string name="too_many_items_body">Akunasikhala esanele ukugcina zonke izinto ezikhethile. Susa ukukhetha kwezinye izinto ukuze wenze isikhala.</string>
+    <string name="save_manage_music_change_title">Izinguquko ezingagciniwe</string>
+    <string name="save_manage_music_change_body">Ufuna ukugcina umculo okhethiwe kudivayisi?</string>
+    <string name="not_all_items_can_be_kept_body">Akunasikhala esanele ukugcina zonke izinto ozikhethile. Akuzona zonke izinto ezizolandwa.</string>
+    <string name="free_space_overfull">Isilondolozi sigcwelel %s ngaphezulu kuka)</string>
+    <string name="free_space">%s KHULULEKILE</string>
+    <string name="stream_error_title">Umculo awutholakali okwamanje.</string>
+    <string name="stream_error_no_space_available">Asikho isikhala esitholakalayo</string>
+    <string name="stream_error_only_on_wifi">Uzodinga ukuba kunethiwekhi ye-Wi-Fi ukudlala le ngoma.</string>
+    <string name="stream_error_no_connection">Uzodinga ukuba selayinini ukudlala le ngoma.</string>
+    <string name="stream_error_unauthorized_title">Iphutha lokugunyaza.</string>
+    <string name="stream_error_unauthorized">Igama lomsebenzisi noma iphasiwedi engalungile</string>
+    <string name="stream_error_another_stream_being_played">Umculo umisiwe isikhashana ngoba ulalele iqoqo lakho kwenye idivayisi</string>
+    <string name="stream_error_rate_limit_reached">Umculo awutholakali okwamanje. Sicela uqiniseke ukuthi udlala iqoqo lakho kudivayisi eyodwa ngesikhathi.</string>
+    <string name="stream_error_device_not_authorized">Umtapo wakho wolwazi womculo ungasetshenziswa namadivayisi afika ku-8. Uzodinga ukususa igunya kwenye idivayisi ngaphambi kokwengeza enye.</string>
+    <string name="stream_error_device_not_authorized_link">https://play.google.com/music/listen?view=settings_pl</string>
+    <string name="market_uri_link">market://details?id=com.google.android.music</string>
+    <string name="stream_error_device_not_authorized_not_now_button">Hhayi manje</string>
+    <string name="stream_error_device_not_authorized_manage_devices_button">Phatha amadivayisi</string>
+    <string name="stream_error_learn_more">Funda kabanzi</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/chrome/bin/answer.py?answer=95669</string>
+    <string name="stream_error_another_stream_being_played_short">Umculo umisiwe okwesikhashana</string>
+    <string name="stream_error_rate_limit_reached_short">Umculo awukatholakali okwamanje</string>
+    <string name="stream_error_device_not_authorized_short">Kunamadivayisi amaningi kakhulu asetshenziswa nomtapo wolwazi</string>
+    <string name="stream_error_another_stream_being_played_notification">Ulalele kwenye idivayisi.</string>
+    <string name="stream_error_rate_limit_reached_notification">Ulalele kwenye idivayisi.</string>
+    <string name="stream_error_device_not_authorized_notification">Amadivayisi angeqi kwayi-10 emtapweni ngamunye.</string>
+    <string name="stream_error_another_stream_being_played_notification_short">Umculo umisiwe okwesikhashana</string>
+    <string name="stream_error_rate_limit_reached_notification_short">Umculo awukatholakali okwamanje</string>
+    <string name="stream_error_device_not_authorized_notification_short">Kufinyelelwe emkhawuleni wedivayisi yomculo</string>
+    <string name="athome_error_place_disconnected_short">Ayikwazi ukuxhumana ne-Nexus Q.</string>
+    <string name="athome_error_controller_too_old_short">I-Nexus Q idinga uhlelo lokusebenza lakamuva le-Google Play Music.</string>
+    <string name="athome_error_controller_too_old">Ukuze usebenzise i-Nexus Q, qala ngokubuyekeza uhlelo lakho lokusebenza le-Google Play Music.</string>
+    <string name="athome_error_controller_too_old_notification_short">Buyekeza uhlelo lokusebenza lwe-Google Play Music</string>
+    <string name="athome_error_controller_too_old_notification">ukuze usebenze nge-Nexus Q.</string>
+    <string name="athome_error_controller_too_old_update_button">Thuthukisa</string>
+    <string name="athome_error_controller_too_new_short">I-Nexus Q idinga isofthiwe entsha.</string>
+    <string name="athome_error_controller_too_new">Isofthiwe le-Nexus Q lidala kakhulu. Ukuze ubuyekeze ngokuzenzakalela, xhuma i-Nexus Q ku-intanethi nge-Ethernet noma i-Wi-Fi.</string>
+    <string name="athome_error_controller_too_new_notification_short">I-Nexus Q idinga isofthiwe entsha.</string>
+    <string name="athome_error_controller_too_new_notification">Ukuze ubuyekeze ngokuzenzakalela, xhuma i-Nexus Q ku-intanethi.</string>
+    <string name="athome_error_generic_short">Iphutha lenethiwekhi le-Nexus Q.</string>
+    <string name="athome_error_generic">Kulahleke uxhumo lwenethiwekhi ne-Nexus Q.</string>
+    <string name="athome_error_generic_notification_short">Iphutha lenethiwekhi le-Nexus Q</string>
+    <string name="athome_error_generic_notification">Ayikwazi ukuxhumana ne-Nexus Q mhlawumbe ngenxa yoxhumo lwenethiwekhi elingalungile noma inkinga ngedivayisi.</string>
+    <string name="athome_error_device_setup_short">I-Nexus Q idinga ukusetha kwefekthri.</string>
+    <string name="athome_error_device_setup">Ukusetha kwe-Nexus Q kuqedile. Ukuze uqalise, setha kabusha ifekthri ye-Nexus Q yakho.</string>
+    <string name="athome_error_device_setup_notification_short">Ukusetha kwe-Nexus Q kuqedile.</string>
+    <string name="athome_error_device_setup_notification">Ukuze uqalise, setha kabusha ifekthri ye-Nexus Q yakho.</string>
+    <string name="athome_error_unauthorized_account_short">I-akhawunti ayigunyaziwe</string>
+    <string name="athome_error_unauthorized_account">I-akhawunti ekhethiwe ayigunyaziwe ukusetshenziswa ne-Nexus Q</string>
+    <string name="athome_error_unauthorized_account_notification_short">I-akhawunti ayigunyaziwe</string>
+    <string name="athome_error_unauthorized_account_notification">I-akhawunti ekhethiwe ayigunyaziwe ukusetshenziswa ne-Nexus Q.</string>
+    <string name="athome_error_incompatible_tgs_version">Inguqulo engahambelani yesevisi yeqoqo isebenza ku-Nexus Q.</string>
+    <string name="athome_error_incompatible_tgs_version_short">Iphutha lesevisi yeqoqo le-Nexus Q</string>
+    <string name="athome_error_incompatible_tgs_version_notification">Inguqulo engahambelani yesevisi yeqoqo isebenza ku-Nexus Q.</string>
+    <string name="athome_error_incompatible_tgs_version_notification_short">Iphutha lesevisi yeqoqo le-Nexus Q</string>
+    <string name="athome_error_unreachable_tgs">Ayikwazi ukuxhumana ne-Nexus Q. uma lokhu kuqhubeka, i-Nexus Q ingahle idinge ukuqalwa kabusha.</string>
+    <string name="athome_error_unreachable_tgs_short">Ayikwazi ukuxhumana ne-Nexus Q</string>
+    <string name="athome_error_unreachable_tgs_notification">Ayikwazi ukuxhumana ne-Nexus Q. uma lokhu kuqhubeka, i-Nexus Q ingahle idinge ukuqalwa kabusha.</string>
+    <string name="athome_error_unreachable_tgs_notification_short">Ayikwazi ukuxhumana ne-Nexus Q</string>
+    <string name="athome_error_server_network_short">Iphutha lenethiwekhi</string>
+    <string name="athome_error_server_network">Ayikwazi ukuxhumana nesiphakeli</string>
+    <string name="hide_now_playing_bar">Fihla manje ibha edlalayo</string>
+    <string name="show_now_playing_bar">Bonisa manje ibha edlalayo</string>
+    <string name="show_options">Bonisa izinketho</string>
+    <string name="hide_options">Fihla izinketho</string>
+    <string name="all_songs_in_genre">"Zonke izingoma kusuka kuzinhlobo
+%s"</string>
+    <string name="preview_header">KWABIWE KU-GOOGLE+</string>
+    <string name="shared_playback_full">UKUDALA KWAMAHHALA OKUGCWELE</string>
+    <string name="shared_playback_partial">ISAMPULA</string>
+    <string name="btn_buy">Thenga</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">Igcina umculo eceliwe…</string>
+    <string name="notification_downloading_when_on_wifi">Ukugcina umculo oceliwe kuzoqhubeka ngesikhathi esilandelayo idivayisi uma iku-intanethi futhi ixhunywe ku-Wi-Fi</string>
+    <string name="notification_downloading_excessive_errors">Ayikwazi ukulayisha izingoma manje. Hlola ukuxhumana kwakho kwe-inthanethi.</string>
+    <string name="notification_downloading_done">Umculo oceliwe ulandiwe</string>
+    <string name="notification_ticker_ringtone_set">Ithoni yokukhala isethelwe ku-\"%s\"</string>
+    <string name="notification_title_ringtone_set">Iringithoni isethwe ku \"%s\"</string>
+    <string name="notification_content_ringtone_set">Thinta ukuze uhlele le thoni yokukhala</string>
+    <string name="notification_ticker_ringtone_set_failed">Ayikwazanga ukudala ithoni yokukhala.</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_songcount">Izingoma ezisha ze-%d</string>
+    <string name="notification_newsongs_subtitle">Ifakwe kwi-Google Play Music</string>
+    <string name="carousel_label_shuffle_all">Shova konke</string>
+    <string name="song_label">ICULO</string>
+    <string name="artist_label">UMCULI</string>
+    <string name="album_label">ALBHAMU</string>
+    <string name="effectspanel">Isilinganisi somsindo</string>
+    <string name="menu_make_instant_mix">Yakha ukuhlanganisa oku-instant</string>
+    <string name="instant_mix_default_name">Okuhlangnisiwe kuka-%s</string>
+    <string name="creating_instant_mix">"Yengeza ukuhlanganisa oku-instant
+kuya kuhlu lwadlalayo"</string>
+    <string name="creating_instant_mix_with_seed">"Uwengeza ukuhlanganisa oku-instant
+kuhlu lwadlalayo, kusekelwe ku
+%s."</string>
+    <string name="create_instant_mix_failed">Ayikwazanga ukwakha ukuhlanganisa kwaalesosikhathi. Sicela uzame futhi</string>
+    <string name="create_instant_mix_failed_insufficient_results">Bezingekho izingoma ezifanayo eqoqweni lakho ukuze wakhe ukuhlanganisa okwaleso sikhathi\"%s\". Sicela uzame ukwakha ukuhlanganisa kwalesosikhathi ngengoma ehlukile.</string>
+    <string name="create_instant_mix_sync_timeout">"Ukuhluanganisa oku-instant 
+okwakhiwe futhi kuzovela
+kuhlu lakho ngokushesha."</string>
+    <string name="create_instant_mix_btn_ok">KULUNGILE</string>
+    <string name="delete">Susa</string>
+    <string name="confirm_delete_local_only">Ufuna ukususa i-\"%s\"?</string>
+    <string name="confirm_delete_has_remote">I-\"%s\" ilayishiwe eceleni futhi yalayishwa kwi-Google Play Music. Izinto kuphela ezilayishwe eceleni ezizosuswa. Ingabe ufuna ukuzisusa?</string>
+    <string name="waiting_share">Iyabelana %s</string>
+    <string name="share">Yaba</string>
+    <string name="share_failure">Kube nenkinga ekulayisheni umculo wakho.</string>
+    <string name="share_google_plus_footer">Ukwabelana kuvumela ukudlala kwamahhala okugcwele kubantu abasendingilizini yakho</string>
+    <string name="accessibility_play">Dlala</string>
+    <string name="accessibility_pause">Misa okwesikhashana</string>
+    <string name="accessibility_stop">Misa</string>
+    <string name="accessibility_next">Okulandelayo</string>
+    <string name="accessibility_prev">Okwandulele</string>
+    <string name="accessibility_shuffle">Xuba</string>
+    <string name="accessibility_repeat">Ukuphindwa:</string>
+    <string name="accessibility_thumbsUp">Izithupha phezulu</string>
+    <string name="accessibility_thumbsDown">Isithupha phansi.</string>
+    <string name="accessibility_star1">inknayezi eyi-1</string>
+    <string name="accessibility_star2">Izinkanyezi ezimbili</string>
+    <string name="accessibility_star3">Izinkanyezi ezintathu</string>
+    <string name="accessibility_star4">Izinkanyezi ezine</string>
+    <string name="accessibility_star5">Izinkanyezi ezinhlanu</string>
+    <string name="accessibility_contractor">Yelula ulwai lweculo</string>
+    <string name="accessibility_back">Emuva</string>
+    <string name="accessibility_contextMenu">Imenyu yamaculo</string>
+    <string name="accessibility_home">Ikhaya Lomculo</string>
+    <string name="accessibility_search">Sesha</string>
+    <string name="accessibility_search_cancel">Hoxisa ukusesha kwamanje</string>
+    <string name="accessibility_current">Ingoma yamanje</string>
+    <string name="accessibility_createnewplaylist">Dala uhlu lokudlalwayo olusha</string>
+    <string name="accessibility_menu">Izinketho ezingaphezulu</string>
+    <string name="accessibility_shop">Ukuthenga umculo</string>
+    <string name="accessibility_volume">Ivolomu</string>
+    <string name="accessibility_at_home_volume">Ivolomu</string>
+    <string name="accessibility_select_output">Khetha okukhiphayo komsindo</string>
+    <string name="accessibility_close_social_mix_mode">Vala isimo sengxube yabanye</string>
+    <string name="header_help_add_songs">Yengeza izingoma ezisuka emtapweni wakho wolwazi ukuqala imiksi yenhlalo</string>
+    <string name="ringtone_replace_alert_button">Buyisela</string>
+    <string name="ringtone_replace_alert_title">Buyisela Iringithoni</string>
+    <string name="ringtone_replace_alert_message">Ithoni yokukhala enaleli gama isivele ikhona. Ufuna ukuyimiselela?</string>
+    <string name="legal_information">Ulwazi olusemthethweni</string>
+    <string name="license_title">Amalayisensi e-Open source</string>
+    <string name="license_error">Ayikwazanga ukulayisha amalayisensi.</string>
+    <string name="market_wrong_account" formatted="false">"Umculo ozama ukuwudlala wawuthengwe nge-akhawunti %s
+
+Okwamanje ungene ngemvume kwi-Google Play Music nge-akhawunti ethi %s
+
+Ukulalela okuthengile, shintsha kuqala ama-akhawunti."</string>
+    <string name="gplus_wrong_account" formatted="false">"Umculo ozama ukuwudlala wabelwane ne-akhawunti %s
+
+Okwamanje ungene ngemvume kwi-Google Play Music nge-akhawunti ethi %s
+
+Ukulalela umculo wakho owabiwe, shintsha kuqala ama-akhawunti."</string>
+    <string name="switch_account_button">Shintsha ama-akhawunti</string>
+    <string name="switch_account_warning_message">"Unesiqinisekiso sokuthi ufuna ukushintshanisa ama-akhawunti?
+Umculo ogcinwe kule divayisi uzosuswa."</string>
+    <string name="switch_account_warning_button">Shintshanisa ama-akhawunti</string>
+    <string name="retry_button">Zama futhi</string>
+    <string name="wait_for_item">Ilindele ukuthi kuvumelaniseke umculo</string>
+    <string name="wait_for_item_failure">Umculo wakho okwamanje uyangezwa. Sicela ulinde kancane bese uyazama futhi.</string>
+    <string name="ringtone_title">Buyekeza amaringithoni</string>
+    <string name="edit_ringtone">Hlela ithoni yokukhala</string>
+    <string name="ringtone_done">KUQEDIWE</string>
+    <string name="ringtone_file_edited_name">Isiqeshana se-%1$s</string>
+    <string name="progress_dialog_saving">Iyalondoloza…</string>
+    <string name="start_handle">Isibambi sokuqala</string>
+    <string name="resize_handle">Khulisa isibambi</string>
+    <string name="menu_reset">Setha kabusha</string>
+    <string name="save_success_message">I-%1$s igcinwe njengeringithoni yangokwakhona.</string>
+    <string name="save_failure_message">Yehlulekile ukulodoloza %1$s njengeringithoni.</string>
+    <string name="play_error">Ayikwazanga ukudlala leli fayela lemidiya.</string>
+    <string name="write_error">Ayikwazanga ukubhala efayeleni.</string>
+    <string name="read_error">Ayikwazanga ukufunda ifayela.</string>
+    <string name="no_space_error">Akunasikhala esanele ekhadini lakho le-SD ukugcina leli fayela.</string>
+    <string name="bad_extension_error">Ayikwazi ukuhlela lolu hlobo lwamafayela.</string>
+    <string name="no_extension_error">Ayikwazi ukuhlela ifayela elingenaso eselulo se-.mp3 noma i-.wav.</string>
+    <string name="alert_ok_button">KULUNGILE</string>
+    <string name="athome_playback_title">Kuyadlala manje</string>
+    <string name="store_tutorial_title">Thenga futhi udlale ngaleso sikhathi</string>
+    <string name="store_tutorial_content">Thenga izigidi ngezigidi zama-track angama-MP3 ku-Google Play okubandakanya namakhulu ezingoma zamahhala.</string>
+    <string name="store_tutorial_instruction">Ukuze uvakashele isitolo, chofoza isithonjana sesikhwama sokuthenga</string>
+    <string name="athome_added_by">Kungezwe ngu-</string>
+    <string name="athome_tutorial_title">Dlala umculo lapho uwufuna khona</string>
+    <string name="athome_tutorial_content">Thinta isithonjana sokusakaza ukuze ukhethe lapho kudlala khona umculo wakho</string>
+    <string name="athome_party_mode_disclamer">Kungahle kwenzeke ukuthi isithombe sephrofayela yakho siyabonakala kwabanye abasebenzisi uma usebenzisa i-Social Mix</string>
+    <string name="athome_party_mode_disclamer_save_preference">Ungabonisi lokhu futhi</string>
+    <string name="no_song_added">Dala umugqa ngokugcwele. Ubuningi izingoma ezingu-%1$d.</string>
+    <string name="recent_added">Okwengeziwe</string>
+    <string name="recent_purchased">Okuthengiwe</string>
+    <string name="recent_played">Kudlaliwe</string>
+    <string name="now_playing_tab_now_playing">OKUDLALA MANJE</string>
+    <string name="now_playing_tab_queue">DLALA UMUGQA</string>
+</resources>

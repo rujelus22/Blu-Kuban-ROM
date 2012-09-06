@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 5984
+    .line 1783
     iput-object p1, p0, Lcom/android/email/Controller$ControllerService$1;->this$0:Lcom/android/email/Controller$ControllerService;
 
     invoke-direct {p0}, Lcom/android/emailcommon/service/IEmailService$Stub;-><init>()V
@@ -34,149 +34,57 @@
 
 
 # virtual methods
-.method public OoOffice(JLcom/android/emailcommon/service/OoODataList;)V
+.method public autoDiscover(Ljava/lang/String;Ljava/lang/String;)Landroid/os/Bundle;
     .registers 4
-    .parameter "accountId"
-    .parameter "data"
-
-    .prologue
-    .line 5997
-    return-void
-.end method
-
-.method public autoDiscover(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/os/Bundle;
-    .registers 6
     .parameter "userName"
     .parameter "password"
-    .parameter "domain"
-    .parameter "bTrustCert"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 5993
+    .line 1790
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
-.method public changeSmsSettings(J)V
-    .registers 3
+.method public createFolder(JLjava/lang/String;)Z
+    .registers 5
     .parameter "accountId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+    .parameter "name"
 
     .prologue
-    .line 6131
-    return-void
+    .line 1855
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public deleteAccountPIMData(J)V
     .registers 3
     .parameter "accountId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 6089
+    .line 1871
     return-void
 .end method
 
-.method public emptyTrash(J)V
-    .registers 3
+.method public deleteFolder(JLjava/lang/String;)Z
+    .registers 5
     .parameter "accountId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+    .parameter "name"
 
     .prologue
-    .line 6094
-    return-void
-.end method
-
-.method public folderCreate(JLjava/lang/String;J)V
-    .registers 6
-    .parameter "accountId"
-    .parameter "folderName"
-    .parameter "parentMailboxId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 6106
-    return-void
-.end method
-
-.method public folderDelete(J)V
-    .registers 3
-    .parameter "mailboxId"
-
-    .prologue
-    .line 6115
-    return-void
-.end method
-
-.method public folderMove(JLjava/lang/String;)V
-    .registers 4
-    .parameter "mailboxId"
-    .parameter "toMailboxParentId"
-
-    .prologue
-    .line 6112
-    return-void
-.end method
-
-.method public folderRename(JLjava/lang/String;)V
-    .registers 4
-    .parameter "mailboxId"
-    .parameter "toName"
-
-    .prologue
-    .line 6109
-    return-void
-.end method
-
-.method public getAliasFromMap(J)Ljava/lang/String;
-    .registers 4
-    .parameter "tId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 6158
+    .line 1859
     const/4 v0, 0x0
 
-    return-object v0
+    return v0
 .end method
 
 .method public getApiLevel()I
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 6137
-    const/4 v0, 0x1
+    .line 1880
+    const/4 v0, 0x2
 
     return v0
 .end method
@@ -184,19 +92,14 @@
 .method public hostChanged(J)V
     .registers 3
     .parameter "accountId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 6062
+    .line 1842
     return-void
 .end method
 
 .method public loadAttachment(JZ)V
-    .registers 17
+    .registers 20
     .parameter "attachmentId"
     .parameter "background"
     .annotation system Ldalvik/annotation/Throws;
@@ -206,375 +109,280 @@
     .end annotation
 
     .prologue
-    .line 6007
-    iget-object v0, p0, Lcom/android/email/Controller$ControllerService$1;->this$0:Lcom/android/email/Controller$ControllerService;
+    .line 1801
+    move-object/from16 v0, p0
 
-    invoke-static {v0, p1, p2}, Lcom/android/emailcommon/provider/EmailContent$Attachment;->restoreAttachmentWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Attachment;
+    iget-object v3, v0, Lcom/android/email/Controller$ControllerService$1;->this$0:Lcom/android/email/Controller$ControllerService;
 
-    move-result-object v10
+    move-wide/from16 v0, p1
 
-    .line 6009
-    .local v10, att:Lcom/android/emailcommon/provider/EmailContent$Attachment;
-    if-eqz v10, :cond_6b
+    invoke-static {v3, v0, v1}, Lcom/android/emailcommon/provider/EmailContent$Attachment;->restoreAttachmentWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Attachment;
 
-    .line 6010
-    sget-boolean v0, Lcom/android/email/Email;->DEBUG:Z
+    move-result-object v13
 
-    if-eqz v0, :cond_30
+    .line 1803
+    .local v13, att:Lcom/android/emailcommon/provider/EmailContent$Attachment;
+    if-eqz v13, :cond_77
 
-    .line 6011
-    const-string v0, "Controller"
+    .line 1804
+    sget-boolean v3, Lcom/android/email/Email;->DEBUG:Z
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    if-eqz v3, :cond_36
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 1805
+    const-string v3, "Controller"
 
-    const-string v2, "loadAttachment "
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v1
+    const-string v5, "loadAttachment "
 
-    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v4
 
-    const-string v2, ": "
+    move-wide/from16 v0, p1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v4
 
-    iget-object v2, v10, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mFileName:Ljava/lang/String;
+    const-string v5, ": "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v4
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v5, v13, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mFileName:Ljava/lang/String;
 
-    move-result-object v1
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v4
 
-    .line 6013
-    :cond_30
-    iget-object v0, p0, Lcom/android/email/Controller$ControllerService$1;->this$0:Lcom/android/email/Controller$ControllerService;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget-wide v1, v10, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mMessageKey:J
+    move-result-object v4
 
-    invoke-static {v0, v1, v2}, Lcom/android/emailcommon/provider/EmailContent$Message;->restoreMessageWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Message;
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result-object v12
+    .line 1807
+    :cond_36
+    move-object/from16 v0, p0
 
-    .line 6015
-    .local v12, msg:Lcom/android/emailcommon/provider/EmailContent$Message;
-    if-eqz v12, :cond_7f
+    iget-object v3, v0, Lcom/android/email/Controller$ControllerService$1;->this$0:Lcom/android/email/Controller$ControllerService;
 
-    .line 6021
-    iget v0, v12, Lcom/android/emailcommon/provider/EmailContent$Message;->mFlags:I
+    iget-wide v4, v13, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mMessageKey:J
 
-    and-int/lit8 v0, v0, 0x2
+    invoke-static {v3, v4, v5}, Lcom/android/emailcommon/provider/EmailContent$Message;->restoreMessageWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Message;
 
-    if-eqz v0, :cond_6c
+    move-result-object v15
 
-    .line 6022
-    iget-object v0, p0, Lcom/android/email/Controller$ControllerService$1;->this$0:Lcom/android/email/Controller$ControllerService;
+    .line 1809
+    .local v15, msg:Lcom/android/emailcommon/provider/EmailContent$Message;
+    if-eqz v15, :cond_96
 
-    sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Body;->CONTENT_URI:Landroid/net/Uri;
+    .line 1813
+    iget v3, v15, Lcom/android/emailcommon/provider/EmailContent$Message;->mFlags:I
 
-    invoke-static {}, Lcom/android/email/Controller;->access$1300()[Ljava/lang/String;
+    and-int/lit8 v3, v3, 0x2
+
+    if-eqz v3, :cond_78
+
+    .line 1814
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/email/Controller$ControllerService$1;->this$0:Lcom/android/email/Controller$ControllerService;
+
+    sget-object v4, Lcom/android/emailcommon/provider/EmailContent$Body;->CONTENT_URI:Landroid/net/Uri;
+
+    invoke-static {}, Lcom/android/email/Controller;->access$1000()[Ljava/lang/String;
+
+    move-result-object v5
+
+    const-string v6, "messageKey=?"
+
+    const/4 v7, 0x1
+
+    new-array v7, v7, [Ljava/lang/String;
+
+    const/4 v8, 0x0
+
+    iget-wide v9, v15, Lcom/android/emailcommon/provider/EmailContent$Message;->mId:J
+
+    invoke-static {v9, v10}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v9
+
+    aput-object v9, v7, v8
+
+    invoke-static {v3, v4, v5, v6, v7}, Lcom/android/emailcommon/utility/Utility;->getRowColumns(Landroid/content/Context;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v14
+
+    .line 1817
+    .local v14, cols:[Ljava/lang/String;
+    if-eqz v14, :cond_78
+
+    .line 1818
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/email/Controller$ControllerService$1;->this$0:Lcom/android/email/Controller$ControllerService;
+
+    const/4 v4, 0x0
+
+    aget-object v4, v14, v4
+
+    invoke-static {v4}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v4
+
+    invoke-static {v3, v4, v5}, Lcom/android/emailcommon/provider/EmailContent$Message;->restoreMessageWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Message;
+
+    move-result-object v15
+
+    .line 1820
+    if-nez v15, :cond_78
+
+    .line 1836
+    .end local v14           #cols:[Ljava/lang/String;
+    .end local v15           #msg:Lcom/android/emailcommon/provider/EmailContent$Message;
+    :cond_77
+    :goto_77
+    return-void
+
+    .line 1826
+    .restart local v15       #msg:Lcom/android/emailcommon/provider/EmailContent$Message;
+    :cond_78
+    invoke-static {}, Lcom/android/email/Controller;->access$1100()Lcom/android/email/Controller;
+
+    move-result-object v3
+
+    #getter for: Lcom/android/email/Controller;->mLegacyController:Lcom/android/email/MessagingController;
+    invoke-static {v3}, Lcom/android/email/Controller;->access$300(Lcom/android/email/Controller;)Lcom/android/email/MessagingController;
 
     move-result-object v2
 
-    const-string v3, "messageKey=?"
+    .line 1827
+    .local v2, legacyController:Lcom/android/email/MessagingController;
+    invoke-static {}, Lcom/android/email/Controller;->access$1100()Lcom/android/email/Controller;
 
-    const/4 v4, 0x1
+    move-result-object v3
 
-    new-array v4, v4, [Ljava/lang/String;
-
-    const/4 v5, 0x0
-
-    iget-wide v6, v12, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v6
-
-    aput-object v6, v4, v5
-
-    invoke-static {v0, v1, v2, v3, v4}, Lcom/android/emailcommon/utility/Utility;->getRowColumns(Landroid/content/Context;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
+    #getter for: Lcom/android/email/Controller;->mLegacyListener:Lcom/android/email/Controller$LegacyListener;
+    invoke-static {v3}, Lcom/android/email/Controller;->access$200(Lcom/android/email/Controller;)Lcom/android/email/Controller$LegacyListener;
 
     move-result-object v11
 
-    .line 6027
-    .local v11, cols:[Ljava/lang/String;
-    if-eqz v11, :cond_6c
+    .line 1828
+    .local v11, legacyListener:Lcom/android/email/Controller$LegacyListener;
+    iget-wide v3, v15, Lcom/android/emailcommon/provider/EmailContent$Message;->mAccountKey:J
 
-    .line 6028
-    iget-object v0, p0, Lcom/android/email/Controller$ControllerService$1;->this$0:Lcom/android/email/Controller$ControllerService;
+    iget-wide v5, v15, Lcom/android/emailcommon/provider/EmailContent$Message;->mId:J
 
-    const/4 v1, 0x0
+    iget-wide v7, v15, Lcom/android/emailcommon/provider/EmailContent$Message;->mMailboxKey:J
 
-    aget-object v1, v11, v1
+    move-wide/from16 v9, p1
 
-    invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+    move/from16 v12, p3
 
-    move-result-wide v1
+    invoke-virtual/range {v2 .. v12}, Lcom/android/email/MessagingController;->loadAttachment(JJJJLcom/android/email/MessagingListener;Z)V
 
-    invoke-static {v0, v1, v2}, Lcom/android/emailcommon/provider/EmailContent$Message;->restoreMessageWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Message;
+    goto :goto_77
 
-    move-result-object v12
+    .line 1832
+    .end local v2           #legacyController:Lcom/android/email/MessagingController;
+    .end local v11           #legacyListener:Lcom/android/email/Controller$LegacyListener;
+    :cond_96
+    invoke-static {}, Lcom/android/email/Controller;->access$1100()Lcom/android/email/Controller;
 
-    .line 6030
-    if-nez v12, :cond_6c
-
-    .line 6056
-    .end local v11           #cols:[Ljava/lang/String;
-    .end local v12           #msg:Lcom/android/emailcommon/provider/EmailContent$Message;
-    :cond_6b
-    :goto_6b
-    return-void
-
-    .line 6046
-    .restart local v12       #msg:Lcom/android/emailcommon/provider/EmailContent$Message;
-    :cond_6c
-    iget-wide v0, v12, Lcom/android/emailcommon/provider/EmailContent$Message;->mAccountKey:J
-
-    invoke-static {v0, v1}, Lcom/android/email/adapter/ProtocolAdapter;->getProtocolAdapter(J)Lcom/android/email/adapter/ProtocolAdapter;
-
-    move-result-object v0
-
-    iget-wide v1, v12, Lcom/android/emailcommon/provider/EmailContent$Message;->mAccountKey:J
-
-    iget-wide v3, v12, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    iget-wide v5, v12, Lcom/android/emailcommon/provider/EmailContent$Message;->mMailboxKey:J
-
-    move-wide v7, p1
-
-    move/from16 v9, p3
-
-    invoke-virtual/range {v0 .. v9}, Lcom/android/email/adapter/ProtocolAdapter;->loadAttachment(JJJJZ)V
-
-    goto :goto_6b
-
-    .line 6052
-    :cond_7f
-    invoke-static {}, Lcom/android/email/Controller;->access$1400()Lcom/android/email/Controller;
-
-    move-result-object v0
+    move-result-object v3
 
     #getter for: Lcom/android/email/Controller;->mCallbackProxy:Lcom/android/emailcommon/service/IEmailServiceCallback$Stub;
-    invoke-static {v0}, Lcom/android/email/Controller;->access$900(Lcom/android/email/Controller;)Lcom/android/emailcommon/service/IEmailServiceCallback$Stub;
+    invoke-static {v3}, Lcom/android/email/Controller;->access$800(Lcom/android/email/Controller;)Lcom/android/emailcommon/service/IEmailServiceCallback$Stub;
 
-    move-result-object v0
+    move-result-object v3
 
-    iget-wide v1, v10, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mMessageKey:J
+    iget-wide v4, v13, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mMessageKey:J
 
-    const/16 v5, 0x10
+    const/16 v8, 0x10
 
-    const/4 v6, 0x0
+    const/4 v9, 0x0
 
-    move-wide v3, p1
+    move-wide/from16 v6, p1
 
-    invoke-virtual/range {v0 .. v6}, Lcom/android/emailcommon/service/IEmailServiceCallback$Stub;->loadAttachmentStatus(JJII)V
+    invoke-virtual/range {v3 .. v9}, Lcom/android/emailcommon/service/IEmailServiceCallback$Stub;->loadAttachmentStatus(JJII)V
 
-    goto :goto_6b
+    goto :goto_77
 .end method
 
 .method public loadMore(J)V
     .registers 3
     .parameter "messageId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 6079
+    .line 1851
     return-void
 .end method
 
-.method public loadMoreCancel()V
-    .registers 1
-
-    .prologue
-    .line 6141
-    return-void
-.end method
-
-.method public moveConversationAlways(JJ[BI)V
-    .registers 7
-    .parameter "mailboxId"
-    .parameter "toMailboxId"
-    .parameter "conversationId"
-    .parameter "ignore"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 6121
-    return-void
-.end method
-
-.method public moveMessage(JJ)V
-    .registers 5
-    .parameter "messageId"
-    .parameter "mailboxId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 6086
-    return-void
-.end method
-
-.method public refreshIRMTemplates(J)V
-    .registers 3
-    .parameter "accountId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 6150
-    return-void
-.end method
-
-.method public searchMessage(JJJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 12
-    .parameter "accId"
-    .parameter "mailboxId"
-    .parameter "foldId"
-    .parameter "searchTextString"
-    .parameter "greaterThanDateString"
-    .parameter "lessThanDateString"
-    .parameter "optionsDeepTraversalStr"
-    .parameter "conversationIdStr"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 6171
-    return-void
-.end method
-
-.method public sendMeetingEditedResponse(JJI)V
+.method public renameFolder(JLjava/lang/String;Ljava/lang/String;)Z
     .registers 6
-    .parameter "messageId"
-    .parameter "draftMessageId"
-    .parameter "response"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+    .parameter "accountId"
+    .parameter "oldName"
+    .parameter "newName"
 
     .prologue
-    .line 6075
-    return-void
+    .line 1863
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public searchMessages(JLcom/android/emailcommon/service/SearchParams;J)I
+    .registers 7
+    .parameter "accountId"
+    .parameter "searchParams"
+    .parameter "destMailboxId"
+
+    .prologue
+    .line 1875
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public sendMeetingResponse(JI)V
     .registers 4
     .parameter "messageId"
     .parameter "response"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 6068
-    return-void
-.end method
-
-.method public sendMessageCancel([JJJ)V
-    .registers 6
-    .parameter "messageIds"
-    .parameter "outboxId"
-    .parameter "accountId"
-
-    .prologue
-    .line 6144
-    return-void
-.end method
-
-.method public sendRecoveryPassword(JLjava/lang/String;)V
-    .registers 4
-    .parameter "accountId"
-    .parameter "password"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 6100
+    .line 1848
     return-void
 .end method
 
 .method public setCallback(Lcom/android/emailcommon/service/IEmailServiceCallback;)V
     .registers 3
     .parameter "cb"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 6082
-    invoke-static {}, Lcom/android/email/Controller;->access$1200()Landroid/os/RemoteCallbackList;
+    .line 1867
+    invoke-static {}, Lcom/android/email/Controller;->access$900()Landroid/os/RemoteCallbackList;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/os/RemoteCallbackList;->register(Landroid/os/IInterface;)Z
 
-    .line 6083
-    return-void
-.end method
-
-.method public setDeviceInfo(J)V
-    .registers 3
-    .parameter "accountId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 6126
+    .line 1868
     return-void
 .end method
 
 .method public setLogging(I)V
     .registers 2
-    .parameter "on"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+    .parameter "flags"
 
     .prologue
-    .line 6065
+    .line 1845
     return-void
 .end method
 
@@ -582,62 +390,36 @@
     .registers 4
     .parameter "mailboxId"
     .parameter "userRequest"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 6000
+    .line 1794
     return-void
 .end method
 
 .method public stopSync(J)V
     .registers 3
     .parameter "mailboxId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 6003
+    .line 1797
     return-void
 .end method
 
 .method public updateFolderList(J)V
     .registers 3
     .parameter "accountId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 6059
+    .line 1839
     return-void
 .end method
 
-.method public validate(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZZ)Landroid/os/Bundle;
-    .registers 9
-    .parameter "protocol"
-    .parameter "host"
-    .parameter "userName"
-    .parameter "password"
-    .parameter "port"
-    .parameter "ssl"
-    .parameter "trustCertificates"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+.method public validate(Lcom/android/emailcommon/provider/HostAuth;)Landroid/os/Bundle;
+    .registers 3
+    .parameter "hostAuth"
 
     .prologue
-    .line 5988
+    .line 1786
     const/4 v0, 0x0
 
     return-object v0

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/ControllerResultUiThreadWrapper;->loadMoreCallback(Lcom/android/emailcommon/mail/MessagingException;JI)V
+    value = Lcom/android/email/ControllerResultUiThreadWrapper;->loadAttachmentCallback(Lcom/android/emailcommon/mail/MessagingException;JJJI)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,6 +20,10 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/ControllerResultUiThreadWrapper;
 
+.field final synthetic val$accountId:J
+
+.field final synthetic val$attachmentId:J
+
 .field final synthetic val$messageId:J
 
 .field final synthetic val$progress:I
@@ -28,25 +32,31 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JI)V
-    .registers 6
+.method constructor <init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JJJI)V
+    .registers 10
+    .parameter
+    .parameter
     .parameter
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 65
+    .line 63
     .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper$1;,"Lcom/android/email/ControllerResultUiThreadWrapper.1;"
     iput-object p1, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->this$0:Lcom/android/email/ControllerResultUiThreadWrapper;
 
     iput-object p2, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->val$result:Lcom/android/emailcommon/mail/MessagingException;
 
-    iput-wide p3, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->val$messageId:J
+    iput-wide p3, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->val$accountId:J
 
-    iput p5, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->val$progress:I
+    iput-wide p5, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->val$messageId:J
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    iput-wide p7, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->val$attachmentId:J
+
+    iput p9, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->val$progress:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -54,10 +64,10 @@
 
 # virtual methods
 .method public run()V
-    .registers 6
+    .registers 10
 
     .prologue
-    .line 67
+    .line 69
     .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper$1;,"Lcom/android/email/ControllerResultUiThreadWrapper.1;"
     iget-object v0, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->this$0:Lcom/android/email/ControllerResultUiThreadWrapper;
 
@@ -67,11 +77,11 @@
 
     if-nez v0, :cond_9
 
-    .line 70
+    .line 72
     :goto_8
     return-void
 
-    .line 69
+    .line 70
     :cond_9
     iget-object v0, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->this$0:Lcom/android/email/ControllerResultUiThreadWrapper;
 
@@ -82,11 +92,15 @@
 
     iget-object v1, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->val$result:Lcom/android/emailcommon/mail/MessagingException;
 
-    iget-wide v2, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->val$messageId:J
+    iget-wide v2, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->val$accountId:J
 
-    iget v4, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->val$progress:I
+    iget-wide v4, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->val$messageId:J
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/email/Controller$Result;->loadMoreCallback(Lcom/android/emailcommon/mail/MessagingException;JI)V
+    iget-wide v6, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->val$attachmentId:J
+
+    iget v8, p0, Lcom/android/email/ControllerResultUiThreadWrapper$1;->val$progress:I
+
+    invoke-virtual/range {v0 .. v8}, Lcom/android/email/Controller$Result;->loadAttachmentCallback(Lcom/android/emailcommon/mail/MessagingException;JJJI)V
 
     goto :goto_8
 .end method

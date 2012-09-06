@@ -65,12 +65,12 @@
     .registers 1
 
     .prologue
-    .line 53
+    .line 61
     sget-object v0, Lcom/google/android/finsky/previews/PreviewController;->mPlayer:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/previews/PreviewPlayer;->reset()V
 
-    .line 54
+    .line 62
     return-void
 .end method
 
@@ -79,24 +79,38 @@
     .parameter "navigationManager"
 
     .prologue
-    .line 62
+    .line 70
     new-instance v0, Lcom/google/android/finsky/previews/PreviewController$1;
 
     invoke-direct {v0, p0}, Lcom/google/android/finsky/previews/PreviewController$1;-><init>(Lcom/google/android/finsky/navigationmanager/NavigationManager;)V
 
-    .line 75
+    .line 83
     .local v0, listener:Landroid/support/v4/app/FragmentManager$OnBackStackChangedListener;
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->removeOnBackStackChangedListener(Landroid/support/v4/app/FragmentManager$OnBackStackChangedListener;)V
 
-    .line 76
+    .line 84
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->addOnBackStackChangedListener(Landroid/support/v4/app/FragmentManager$OnBackStackChangedListener;)V
 
-    .line 77
+    .line 85
     return-void
 .end method
 
 
 # virtual methods
+.method public getCurrentQueueSize()I
+    .registers 2
+
+    .prologue
+    .line 54
+    sget-object v0, Lcom/google/android/finsky/previews/PreviewController;->mPlayer:Lcom/google/android/finsky/previews/PreviewPlayer;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/previews/PreviewPlayer;->getCurrentQueueSize()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getCurrentTrack()Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
     .registers 2
 
@@ -109,6 +123,20 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public getStatusUpdate(Lcom/google/android/finsky/previews/StatusListener;)V
+    .registers 3
+    .parameter "statusListener"
+
+    .prologue
+    .line 50
+    sget-object v0, Lcom/google/android/finsky/previews/PreviewController;->mPlayer:Lcom/google/android/finsky/previews/PreviewPlayer;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/finsky/previews/PreviewPlayer;->notifyListener(Lcom/google/android/finsky/previews/StatusListener;)V
+
+    .line 51
+    return-void
 .end method
 
 .method public play(Ljava/util/Collection;)V

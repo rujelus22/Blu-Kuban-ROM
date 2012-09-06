@@ -1,19 +1,18 @@
-.class public interface abstract Ld/r;
+.class Ld/r;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# virtual methods
-.method public abstract a(ILW/a;)V
-.end method
+# direct methods
+.method public static a(Ld/t;)Ljava/lang/Object;
+    .registers 2
+    .parameter
 
-.method public abstract a(ILjava/lang/String;)V
-.end method
+    .prologue
+    .line 38
+    new-instance v0, Ld/s;
 
-.method public abstract a(ILjava/lang/String;Ld/aw;)V
-.end method
+    invoke-direct {v0, p0}, Ld/s;-><init>(Ld/t;)V
 
-.method public abstract a(Ljava/lang/String;)V
-.end method
-
-.method public abstract a(Ljava/lang/String;Ld/aw;)V
+    return-object v0
 .end method

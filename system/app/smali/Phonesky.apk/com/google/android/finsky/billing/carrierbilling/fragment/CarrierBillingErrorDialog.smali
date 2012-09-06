@@ -107,7 +107,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0700ef
+    const v2, 0x7f0700fe
 
     invoke-virtual {v1, v2}, Lcom/google/android/finsky/FinskyApp;->getString(I)Ljava/lang/String;
 

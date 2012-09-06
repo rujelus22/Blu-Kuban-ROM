@@ -1,133 +1,61 @@
-.class public final Lcom/google/android/youtube/core/async/r;
+.class final Lcom/google/android/youtube/core/async/r;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/ad;
-
-
-# static fields
-.field private static final a:Lcom/google/android/youtube/core/utils/l;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final b:Lcom/google/android/youtube/core/async/ad;
+.field final synthetic a:Lcom/google/android/youtube/core/async/q;
 
-.field private final c:Lcom/google/android/youtube/core/async/ad;
+.field private final b:Ljava/lang/Object;
 
-.field private final d:Lcom/google/android/youtube/core/utils/l;
+.field private final c:Lcom/google/android/youtube/core/async/l;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    .prologue
-    .line 22
-    new-instance v0, Lcom/google/android/youtube/core/async/s;
-
-    invoke-direct {v0}, Lcom/google/android/youtube/core/async/s;-><init>()V
-
-    sput-object v0, Lcom/google/android/youtube/core/async/r;->a:Lcom/google/android/youtube/core/utils/l;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/async/ad;)V
+.method public constructor <init>(Lcom/google/android/youtube/core/async/q;Ljava/lang/Object;Lcom/google/android/youtube/core/async/l;)V
     .registers 4
     .parameter
     .parameter
-
-    .prologue
-    .line 42
-    sget-object v0, Lcom/google/android/youtube/core/async/r;->a:Lcom/google/android/youtube/core/utils/l;
-
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/youtube/core/async/r;-><init>(Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/utils/l;)V
-
-    .line 43
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/utils/l;)V
-    .registers 5
-    .parameter
-    .parameter
     .parameter
 
     .prologue
-    .line 35
+    .line 59
+    iput-object p1, p0, Lcom/google/android/youtube/core/async/r;->a:Lcom/google/android/youtube/core/async/q;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 36
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 60
+    iput-object p2, p0, Lcom/google/android/youtube/core/async/r;->b:Ljava/lang/Object;
 
-    move-result-object v0
+    .line 61
+    iput-object p3, p0, Lcom/google/android/youtube/core/async/r;->c:Lcom/google/android/youtube/core/async/l;
 
-    check-cast v0, Lcom/google/android/youtube/core/async/ad;
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/r;->b:Lcom/google/android/youtube/core/async/ad;
-
-    .line 37
-    invoke-static {p2}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/youtube/core/async/ad;
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/r;->c:Lcom/google/android/youtube/core/async/ad;
-
-    .line 38
-    invoke-static {p3}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/youtube/core/utils/l;
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/r;->d:Lcom/google/android/youtube/core/utils/l;
-
-    .line 39
+    .line 62
     return-void
-.end method
-
-.method static synthetic a(Lcom/google/android/youtube/core/async/r;)Lcom/google/android/youtube/core/utils/l;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 20
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/r;->d:Lcom/google/android/youtube/core/utils/l;
-
-    return-object v0
-.end method
-
-.method static synthetic b(Lcom/google/android/youtube/core/async/r;)Lcom/google/android/youtube/core/async/ad;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 20
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/r;->c:Lcom/google/android/youtube/core/async/ad;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Lcom/google/android/youtube/core/async/g;)V
-    .registers 5
-    .parameter
-    .parameter
+.method public final run()V
+    .registers 4
 
     .prologue
-    .line 46
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/r;->b:Lcom/google/android/youtube/core/async/ad;
+    .line 65
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/r;->a:Lcom/google/android/youtube/core/async/q;
 
-    new-instance v1, Lcom/google/android/youtube/core/async/t;
+    invoke-static {v0}, Lcom/google/android/youtube/core/async/q;->a(Lcom/google/android/youtube/core/async/q;)Lcom/google/android/youtube/core/async/ar;
 
-    invoke-direct {v1, p0, p2}, Lcom/google/android/youtube/core/async/t;-><init>(Lcom/google/android/youtube/core/async/r;Lcom/google/android/youtube/core/async/g;)V
+    move-result-object v0
 
-    invoke-interface {v0, p1, v1}, Lcom/google/android/youtube/core/async/ad;->a(Ljava/lang/Object;Lcom/google/android/youtube/core/async/g;)V
+    iget-object v1, p0, Lcom/google/android/youtube/core/async/r;->b:Ljava/lang/Object;
 
-    .line 47
+    iget-object v2, p0, Lcom/google/android/youtube/core/async/r;->c:Lcom/google/android/youtube/core/async/l;
+
+    invoke-interface {v0, v1, v2}, Lcom/google/android/youtube/core/async/ar;->a(Ljava/lang/Object;Lcom/google/android/youtube/core/async/l;)V
+
+    .line 66
     return-void
 .end method

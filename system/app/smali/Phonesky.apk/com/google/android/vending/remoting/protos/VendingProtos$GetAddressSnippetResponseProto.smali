@@ -27,20 +27,20 @@
     .registers 2
 
     .prologue
-    .line 20847
+    .line 21428
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 20852
+    .line 21433
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;->addressSnippet_:Ljava/lang/String;
 
-    .line 20883
+    .line 21465
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;->cachedSize:I
 
-    .line 20847
+    .line 21428
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .registers 2
 
     .prologue
-    .line 20853
+    .line 21434
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;->addressSnippet_:Ljava/lang/String;
 
     return-object v0
@@ -60,15 +60,15 @@
     .registers 2
 
     .prologue
-    .line 20885
+    .line 21468
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 20887
+    .line 21470
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;->getSerializedSize()I
 
-    .line 20889
+    .line 21472
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;->cachedSize:I
 
@@ -79,10 +79,10 @@
     .registers 4
 
     .prologue
-    .line 20893
+    .line 21477
     const/4 v0, 0x0
 
-    .line 20894
+    .line 21478
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;->hasAddressSnippet()Z
 
@@ -90,7 +90,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 20895
+    .line 21479
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;->getAddressSnippet()Ljava/lang/String;
@@ -103,11 +103,11 @@
 
     add-int/2addr v0, v1
 
-    .line 20898
+    .line 21482
     :cond_11
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;->cachedSize:I
 
-    .line 20899
+    .line 21483
     return v0
 .end method
 
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 20854
+    .line 21435
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;->hasAddressSnippet:Z
 
     return v0
@@ -131,29 +131,29 @@
     .end annotation
 
     .prologue
-    .line 20906
+    .line 21491
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 20907
+    .line 21492
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_16
 
-    .line 20911
+    .line 21496
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 20912
+    .line 21497
     :sswitch_d
     return-object p0
 
-    .line 20917
+    .line 21502
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 20907
+    .line 21492
     :sswitch_data_16
     .sparse-switch
         0x0 -> :sswitch_d
@@ -181,7 +181,7 @@
     .end annotation
 
     .prologue
-    .line 20845
+    .line 21426
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;
 
     move-result-object v0
@@ -194,15 +194,15 @@
     .parameter "value"
 
     .prologue
-    .line 20856
+    .line 21437
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;->hasAddressSnippet:Z
 
-    .line 20857
+    .line 21438
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;->addressSnippet_:Ljava/lang/String;
 
-    .line 20858
+    .line 21439
     return-object p0
 .end method
 
@@ -216,14 +216,14 @@
     .end annotation
 
     .prologue
-    .line 20878
+    .line 21460
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;->hasAddressSnippet()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 20879
+    .line 21461
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetResponseProto;->getAddressSnippet()Ljava/lang/String;
@@ -232,7 +232,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 20881
+    .line 21463
     :cond_e
     return-void
 .end method

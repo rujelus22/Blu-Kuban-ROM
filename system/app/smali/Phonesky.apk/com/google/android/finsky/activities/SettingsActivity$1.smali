@@ -43,7 +43,7 @@
     .parameter
 
     .prologue
-    .line 338
+    .line 354
     iput-object p1, p0, Lcom/google/android/finsky/activities/SettingsActivity$1;->this$0:Lcom/google/android/finsky/activities/SettingsActivity;
 
     iput-boolean p2, p0, Lcom/google/android/finsky/activities/SettingsActivity$1;->val$isChecked:Z
@@ -62,7 +62,7 @@
     .parameter "response"
 
     .prologue
-    .line 341
+    .line 357
     sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->INTEREST_BASED_ADS_ENABLED:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
     iget-boolean v1, p0, Lcom/google/android/finsky/activities/SettingsActivity$1;->val$isChecked:Z
@@ -73,7 +73,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->put(Ljava/lang/Object;)V
 
-    .line 342
+    .line 358
     iget-object v0, p0, Lcom/google/android/finsky/activities/SettingsActivity$1;->this$0:Lcom/google/android/finsky/activities/SettingsActivity;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/SettingsActivity$1;->val$preference:Landroid/preference/CheckBoxPreference;
@@ -83,7 +83,7 @@
     #calls: Lcom/google/android/finsky/activities/SettingsActivity;->setInterestBasedAds(Landroid/preference/CheckBoxPreference;Z)V
     invoke-static {v0, v1, v2}, Lcom/google/android/finsky/activities/SettingsActivity;->access$000(Lcom/google/android/finsky/activities/SettingsActivity;Landroid/preference/CheckBoxPreference;Z)V
 
-    .line 343
+    .line 359
     return-void
 .end method
 
@@ -92,7 +92,7 @@
     .parameter "x0"
 
     .prologue
-    .line 338
+    .line 354
     check-cast p1, Ljava/lang/Boolean;
 
     .end local p1

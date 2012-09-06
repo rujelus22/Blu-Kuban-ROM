@@ -1,5 +1,5 @@
 .class public Lcom/google/android/finsky/layout/UnevenGrid;
-.super Landroid/widget/AdapterView;
+.super Landroid/view/ViewGroup;
 .source "UnevenGrid.java"
 
 
@@ -8,15 +8,6 @@
     value = {
         Lcom/google/android/finsky/layout/UnevenGrid$1;,
         Lcom/google/android/finsky/layout/UnevenGrid$UnevenGridAdapterObserver;
-    }
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Landroid/widget/AdapterView",
-        "<",
-        "Lcom/google/android/finsky/adapters/UnevenGridAdapter;",
-        ">;"
     }
 .end annotation
 
@@ -65,6 +56,8 @@
 
 .field private mShopperBitmap:Landroid/graphics/Bitmap;
 
+.field private mShopperBitmapRect:Landroid/graphics/Rect;
+
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -73,12 +66,12 @@
     .parameter "attributeSet"
 
     .prologue
-    .line 60
+    .line 63
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/android/finsky/layout/UnevenGrid;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 61
+    .line 64
     return-void
 .end method
 
@@ -91,34 +84,34 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 64
-    invoke-direct {p0, p1, p2, p3}, Landroid/widget/AdapterView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    .line 67
+    invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 35
+    .line 36
     invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mItems:Ljava/util/List;
 
-    .line 41
+    .line 42
     invoke-static {}, Lcom/google/android/finsky/utils/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mConvertViewTypeMap:Ljava/util/Map;
 
-    .line 42
+    .line 43
     iput-boolean v3, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mRebindNecessary:Z
 
-    .line 65
+    .line 68
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 66
+    .line 69
     .local v0, resources:Landroid/content/res/Resources;
-    const v1, 0x7f0c0007
+    const v1, 0x7f0c0008
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -126,7 +119,7 @@
 
     iput v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mNumCellsWide:I
 
-    .line 67
+    .line 70
     new-instance v1, Lcom/google/android/finsky/layout/CellBasedLayout;
 
     iget v2, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mNumCellsWide:I
@@ -135,8 +128,8 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGridData:Lcom/google/android/finsky/layout/CellBasedLayout;
 
-    .line 68
-    const v1, 0x7f0b004d
+    .line 71
+    const v1, 0x7f0b0038
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -144,10 +137,30 @@
 
     iput v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGutterSize:I
 
-    .line 69
+    .line 73
+    new-instance v1, Landroid/graphics/Rect;
+
+    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mShopperBitmapRect:Landroid/graphics/Rect;
+
+    .line 74
+    invoke-virtual {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f020014
+
+    invoke-static {v1, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mShopperBitmap:Landroid/graphics/Bitmap;
+
+    .line 77
     invoke-virtual {p0, v3}, Lcom/google/android/finsky/layout/UnevenGrid;->setWillNotDraw(Z)V
 
-    .line 70
+    .line 78
     return-void
 .end method
 
@@ -157,7 +170,7 @@
     .parameter "x1"
 
     .prologue
-    .line 29
+    .line 30
     iput-boolean p1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mRebindNecessary:Z
 
     return p1
@@ -171,16 +184,16 @@
 
     const/4 v7, 0x0
 
-    .line 142
+    .line 148
     const/4 v4, 0x0
 
-    .line 143
+    .line 149
     .local v4, maxHeight:I
     iget v8, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGutterSize:I
 
     div-int/lit8 v1, v8, 0x2
 
-    .line 144
+    .line 150
     .local v1, halfGutter:I
     const/4 v0, 0x0
 
@@ -194,7 +207,7 @@
 
     if-ge v0, v8, :cond_64
 
-    .line 145
+    .line 151
     iget-object v8, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mItems:Ljava/util/List;
 
     invoke-interface {v8, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -203,7 +216,7 @@
 
     check-cast v2, Lcom/google/android/finsky/layout/CellBasedLayout$Item;
 
-    .line 146
+    .line 152
     .local v2, item:Lcom/google/android/finsky/layout/CellBasedLayout$Item;
     iget-object v8, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGridData:Lcom/google/android/finsky/layout/CellBasedLayout;
 
@@ -215,7 +228,7 @@
 
     move v3, v7
 
-    .line 147
+    .line 153
     .local v3, leftMargin:I
     :goto_22
     iget-object v8, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGridData:Lcom/google/android/finsky/layout/CellBasedLayout;
@@ -228,7 +241,7 @@
 
     move v6, v7
 
-    .line 148
+    .line 154
     .local v6, rightMargin:I
     :goto_2b
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/UnevenGrid;->getChildAt(I)Landroid/view/View;
@@ -269,7 +282,7 @@
 
     invoke-virtual {v8, v9, v10}, Landroid/view/View;->measure(II)V
 
-    .line 155
+    .line 161
     iget-object v8, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGridData:Lcom/google/android/finsky/layout/CellBasedLayout;
 
     invoke-virtual {v8, v2}, Lcom/google/android/finsky/layout/CellBasedLayout;->getTop(Lcom/google/android/finsky/layout/CellBasedLayout$Item;)I
@@ -286,7 +299,7 @@
 
     move-result v4
 
-    .line 144
+    .line 150
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_9
@@ -296,17 +309,17 @@
     :cond_60
     move v3, v1
 
-    .line 146
+    .line 152
     goto :goto_22
 
     .restart local v3       #leftMargin:I
     :cond_62
     move v6, v1
 
-    .line 147
+    .line 153
     goto :goto_2b
 
-    .line 157
+    .line 163
     .end local v2           #item:Lcom/google/android/finsky/layout/CellBasedLayout$Item;
     .end local v3           #leftMargin:I
     :cond_64
@@ -314,18 +327,18 @@
 
     mul-int v5, v4, v7
 
-    .line 158
+    .line 164
     .local v5, result:I
     iget-boolean v7, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mHasTopGutter:Z
 
     if-nez v7, :cond_6f
 
-    .line 159
+    .line 165
     iget v7, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGutterSize:I
 
     sub-int/2addr v5, v7
 
-    .line 161
+    .line 167
     :cond_6f
     return v5
 .end method
@@ -334,12 +347,12 @@
     .registers 9
 
     .prologue
-    .line 209
+    .line 216
     iget-object v5, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mItems:Ljava/util/List;
 
     invoke-interface {v5}, Ljava/util/List;->clear()V
 
-    .line 210
+    .line 217
     new-instance v5, Lcom/google/android/finsky/layout/CellBasedLayout;
 
     iget v6, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mNumCellsWide:I
@@ -348,7 +361,7 @@
 
     iput-object v5, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGridData:Lcom/google/android/finsky/layout/CellBasedLayout;
 
-    .line 211
+    .line 218
     const/4 v1, 0x0
 
     .local v1, index:I
@@ -361,12 +374,12 @@
 
     if-ge v1, v5, :cond_8c
 
-    .line 212
+    .line 219
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/layout/UnevenGrid;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 215
+    .line 222
     .local v3, oldChild:Landroid/view/View;
     iget-object v5, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mConvertViewTypeMap:Ljava/util/Map;
 
@@ -408,22 +421,22 @@
 
     if-nez v5, :cond_4d
 
-    .line 217
+    .line 224
     :cond_43
     if-eqz v3, :cond_4c
 
-    .line 218
+    .line 225
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/layout/UnevenGrid;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
     invoke-virtual {p0, v5}, Lcom/google/android/finsky/layout/UnevenGrid;->removeViewInLayout(Landroid/view/View;)V
 
-    .line 220
+    .line 227
     :cond_4c
     const/4 v3, 0x0
 
-    .line 222
+    .line 229
     :cond_4d
     iget-object v5, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mAdapter:Lcom/google/android/finsky/adapters/UnevenGridAdapter;
 
@@ -431,7 +444,7 @@
 
     move-result-object v4
 
-    .line 223
+    .line 230
     .local v4, view:Landroid/view/View;
     iget-object v5, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mAdapter:Lcom/google/android/finsky/adapters/UnevenGridAdapter;
 
@@ -439,31 +452,31 @@
 
     move-result-object v2
 
-    .line 225
+    .line 232
     .local v2, item:Lcom/google/android/finsky/layout/CellBasedLayout$Item;
     iget-object v5, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGridData:Lcom/google/android/finsky/layout/CellBasedLayout;
 
     invoke-virtual {v5, v2}, Lcom/google/android/finsky/layout/CellBasedLayout;->addItem(Lcom/google/android/finsky/layout/CellBasedLayout$Item;)V
 
-    .line 226
+    .line 233
     iget-object v5, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mItems:Ljava/util/List;
 
     invoke-interface {v5, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 227
+    .line 234
     if-eq v4, v3, :cond_89
 
-    .line 228
+    .line 235
     if-eqz v3, :cond_6e
 
-    .line 229
+    .line 236
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/layout/UnevenGrid;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
     invoke-virtual {p0, v5}, Lcom/google/android/finsky/layout/UnevenGrid;->removeViewInLayout(Landroid/view/View;)V
 
-    .line 231
+    .line 238
     :cond_6e
     invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -473,7 +486,7 @@
 
     invoke-virtual {p0, v4, v1, v5, v6}, Lcom/google/android/finsky/layout/UnevenGrid;->addViewInLayout(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;Z)Z
 
-    .line 232
+    .line 239
     iget-object v5, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mConvertViewTypeMap:Ljava/util/Map;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -492,13 +505,13 @@
 
     invoke-interface {v5, v6, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 211
+    .line 218
     :cond_89
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_f
 
-    .line 235
+    .line 242
     .end local v2           #item:Lcom/google/android/finsky/layout/CellBasedLayout$Item;
     .end local v3           #oldChild:Landroid/view/View;
     .end local v4           #view:Landroid/view/View;
@@ -515,7 +528,7 @@
 
     if-le v5, v6, :cond_c4
 
-    .line 237
+    .line 244
     iget-object v5, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mItems:Ljava/util/List;
 
     invoke-interface {v5}, Ljava/util/List;->size()I
@@ -530,7 +543,7 @@
 
     if-ge v0, v5, :cond_b0
 
-    .line 238
+    .line 245
     iget-object v5, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mConvertViewTypeMap:Ljava/util/Map;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -539,12 +552,12 @@
 
     invoke-interface {v5, v6}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 237
+    .line 244
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_9e
 
-    .line 240
+    .line 247
     :cond_b0
     iget-object v5, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mItems:Ljava/util/List;
 
@@ -566,7 +579,7 @@
 
     invoke-virtual {p0, v5, v6}, Lcom/google/android/finsky/layout/UnevenGrid;->removeViewsInLayout(II)V
 
-    .line 242
+    .line 249
     .end local v0           #i:I
     :cond_c4
     return-void
@@ -576,7 +589,7 @@
     .registers 3
 
     .prologue
-    .line 165
+    .line 171
     new-instance v0, Lcom/google/android/finsky/layout/CellBasedLayout;
 
     iget v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mNumCellsWide:I
@@ -585,20 +598,20 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGridData:Lcom/google/android/finsky/layout/CellBasedLayout;
 
-    .line 166
+    .line 172
     iget-object v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mItems:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 167
+    .line 173
     iget-object v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mConvertViewTypeMap:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 168
+    .line 174
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->removeAllViewsInLayout()V
 
-    .line 169
+    .line 175
     return-void
 .end method
 
@@ -606,7 +619,7 @@
     .registers 3
 
     .prologue
-    .line 195
+    .line 200
     iget-object v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mAdapter:Lcom/google/android/finsky/adapters/UnevenGridAdapter;
 
     if-eqz v0, :cond_f
@@ -615,95 +628,57 @@
 
     if-eqz v0, :cond_f
 
-    .line 196
+    .line 201
     iget-object v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mAdapter:Lcom/google/android/finsky/adapters/UnevenGridAdapter;
 
     iget-object v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mObserver:Lcom/google/android/finsky/layout/UnevenGrid$UnevenGridAdapterObserver;
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/adapters/UnevenGridAdapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
 
-    .line 198
+    .line 203
     :cond_f
     return-void
 .end method
 
 
 # virtual methods
-.method public bridge synthetic getAdapter()Landroid/widget/Adapter;
-    .registers 2
-
-    .prologue
-    .line 29
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->getAdapter()Lcom/google/android/finsky/adapters/UnevenGridAdapter;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getAdapter()Lcom/google/android/finsky/adapters/UnevenGridAdapter;
-    .registers 2
-
-    .prologue
-    .line 74
-    iget-object v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mAdapter:Lcom/google/android/finsky/adapters/UnevenGridAdapter;
-
-    return-object v0
-.end method
-
-.method public getSelectedView()Landroid/view/View;
-    .registers 2
-
-    .prologue
-    .line 246
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
 .method public onDestroyView()V
-    .registers 2
+    .registers 3
 
     .prologue
-    .line 204
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    iput-object v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mShopperBitmap:Landroid/graphics/Bitmap;
+    .line 209
+    iget-object v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mShopperBitmap:Landroid/graphics/Bitmap;
 
-    .line 205
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
+
+    .line 210
+    iput-object v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mShopperBitmap:Landroid/graphics/Bitmap;
+
+    .line 211
+    iput-object v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mShopperBitmapRect:Landroid/graphics/Rect;
+
+    .line 212
     invoke-direct {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->resetAdapter()V
 
-    .line 206
+    .line 213
     return-void
 .end method
 
 .method public onDraw(Landroid/graphics/Canvas;)V
-    .registers 10
+    .registers 9
     .parameter "canvas"
 
     .prologue
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    .line 84
+    .line 90
     iget-object v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mShopperBitmap:Landroid/graphics/Bitmap;
 
-    if-nez v1, :cond_12
+    if-eqz v1, :cond_39
 
-    .line 85
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f020006
-
-    invoke-static {v1, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mShopperBitmap:Landroid/graphics/Bitmap;
-
-    .line 88
-    :cond_12
+    .line 92
     iget v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mCellHeight:I
 
     int-to-float v1, v1
@@ -730,42 +705,47 @@
 
     float-to-int v0, v1
 
-    .line 90
+    .line 94
     .local v0, scaledWidth:I
-    iget-object v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mShopperBitmap:Landroid/graphics/Bitmap;
-
-    new-instance v2, Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mShopperBitmapRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->getWidth()I
+
+    move-result v2
+
+    sub-int/2addr v2, v0
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->getHeight()I
 
     move-result v3
 
-    sub-int/2addr v3, v0
+    iget v4, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mCellHeight:I
 
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->getHeight()I
-
-    move-result v4
-
-    iget v5, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mCellHeight:I
-
-    sub-int/2addr v4, v5
+    sub-int/2addr v3, v4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->getWidth()I
 
-    move-result v5
+    move-result v4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->getHeight()I
 
-    move-result v6
+    move-result v5
 
-    invoke-direct {v2, v3, v4, v5, v6}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    invoke-virtual {p1, v1, v7, v2, v7}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+    .line 96
+    iget-object v1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mShopperBitmap:Landroid/graphics/Bitmap;
 
-    .line 92
-    invoke-super {p0, p1}, Landroid/widget/AdapterView;->onDraw(Landroid/graphics/Canvas;)V
+    iget-object v2, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mShopperBitmapRect:Landroid/graphics/Rect;
 
-    .line 93
+    invoke-virtual {p1, v1, v6, v2, v6}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+
+    .line 98
+    .end local v0           #scaledWidth:I
+    :cond_39
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onDraw(Landroid/graphics/Canvas;)V
+
+    .line 99
     return-void
 .end method
 
@@ -778,30 +758,30 @@
     .parameter "b"
 
     .prologue
-    .line 97
+    .line 103
     sub-int v4, p5, p3
 
-    .line 98
+    .line 104
     .local v4, height:I
     sub-int v11, p4, p2
 
-    .line 99
+    .line 105
     .local v11, width:I
     if-lez v11, :cond_8
 
     if-gtz v4, :cond_9
 
-    .line 121
+    .line 127
     :cond_8
     return-void
 
-    .line 103
+    .line 109
     :cond_9
     iget v12, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGutterSize:I
 
     div-int/lit8 v3, v12, 0x2
 
-    .line 104
+    .line 110
     .local v3, halfGutter:I
     const/4 v1, 0x0
 
@@ -815,7 +795,7 @@
 
     if-ge v1, v12, :cond_8
 
-    .line 105
+    .line 111
     iget-object v12, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mItems:Ljava/util/List;
 
     invoke-interface {v12, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -824,13 +804,13 @@
 
     check-cast v5, Lcom/google/android/finsky/layout/CellBasedLayout$Item;
 
-    .line 106
+    .line 112
     .local v5, item:Lcom/google/android/finsky/layout/CellBasedLayout$Item;
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/layout/UnevenGrid;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 107
+    .line 113
     .local v2, childView:Landroid/view/View;
     iget-object v12, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGridData:Lcom/google/android/finsky/layout/CellBasedLayout;
 
@@ -842,7 +822,7 @@
 
     mul-int v6, v12, v13
 
-    .line 108
+    .line 114
     .local v6, left:I
     iget-object v12, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGridData:Lcom/google/android/finsky/layout/CellBasedLayout;
 
@@ -854,7 +834,7 @@
 
     mul-int v10, v12, v13
 
-    .line 109
+    .line 115
     .local v10, top:I
     invoke-interface {v5}, Lcom/google/android/finsky/layout/CellBasedLayout$Item;->getCellWidth()I
 
@@ -866,7 +846,7 @@
 
     add-int v8, v6, v12
 
-    .line 110
+    .line 116
     .local v8, right:I
     invoke-interface {v5}, Lcom/google/android/finsky/layout/CellBasedLayout$Item;->getCellHeight()I
 
@@ -878,7 +858,7 @@
 
     add-int v0, v10, v12
 
-    .line 111
+    .line 117
     .local v0, bottom:I
     iget-object v12, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGridData:Lcom/google/android/finsky/layout/CellBasedLayout;
 
@@ -890,7 +870,7 @@
 
     const/4 v7, 0x0
 
-    .line 112
+    .line 118
     .local v7, leftMargin:I
     :goto_51
     iget-object v12, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGridData:Lcom/google/android/finsky/layout/CellBasedLayout;
@@ -903,24 +883,24 @@
 
     const/4 v9, 0x0
 
-    .line 114
+    .line 120
     .local v9, rightMargin:I
     :goto_5a
     iget-boolean v12, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mHasTopGutter:Z
 
     if-nez v12, :cond_64
 
-    .line 115
+    .line 121
     iget v12, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGutterSize:I
 
     sub-int/2addr v10, v12
 
-    .line 116
+    .line 122
     iget v12, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mGutterSize:I
 
     sub-int/2addr v0, v12
 
-    .line 118
+    .line 124
     :cond_64
     add-int v12, v6, v7
 
@@ -932,7 +912,7 @@
 
     invoke-virtual {v2, v12, v13, v14, v0}, Landroid/view/View;->layout(IIII)V
 
-    .line 104
+    .line 110
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_e
@@ -942,14 +922,14 @@
     :cond_71
     move v7, v3
 
-    .line 111
+    .line 117
     goto :goto_51
 
     .restart local v7       #leftMargin:I
     :cond_73
     move v9, v3
 
-    .line 112
+    .line 118
     goto :goto_5a
 .end method
 
@@ -959,20 +939,20 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 125
+    .line 131
     iget-boolean v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mRebindNecessary:Z
 
     if-eqz v0, :cond_a
 
-    .line 126
+    .line 132
     invoke-direct {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->rebindChildren()V
 
-    .line 127
+    .line 133
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mRebindNecessary:Z
 
-    .line 129
+    .line 135
     :cond_a
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->getChildCount()I
 
@@ -980,7 +960,7 @@
 
     if-nez v0, :cond_1c
 
-    .line 130
+    .line 136
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
@@ -991,11 +971,11 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/google/android/finsky/layout/UnevenGrid;->setMeasuredDimension(II)V
 
-    .line 139
+    .line 145
     :goto_1b
     return-void
 
-    .line 134
+    .line 140
     :cond_1c
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -1007,7 +987,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/google/android/finsky/layout/UnevenGrid;->setMeasuredDimension(II)V
 
-    .line 136
+    .line 142
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->getMeasuredWidth()I
 
     move-result v0
@@ -1018,12 +998,12 @@
 
     iput v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mCellWidth:I
 
-    .line 137
+    .line 143
     iget v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mCellWidth:I
 
     iput v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mCellHeight:I
 
-    .line 138
+    .line 144
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
@@ -1037,45 +1017,31 @@
     goto :goto_1b
 .end method
 
-.method public bridge synthetic setAdapter(Landroid/widget/Adapter;)V
-    .registers 2
-    .parameter "x0"
-
-    .prologue
-    .line 29
-    check-cast p1, Lcom/google/android/finsky/adapters/UnevenGridAdapter;
-
-    .end local p1
-    invoke-virtual {p0, p1}, Lcom/google/android/finsky/layout/UnevenGrid;->setAdapter(Lcom/google/android/finsky/adapters/UnevenGridAdapter;)V
-
-    return-void
-.end method
-
 .method public setAdapter(Lcom/google/android/finsky/adapters/UnevenGridAdapter;)V
     .registers 4
     .parameter "adapter"
 
     .prologue
-    .line 177
+    .line 182
     invoke-direct {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->resetAdapter()V
 
-    .line 178
+    .line 183
     invoke-direct {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->removeAllItems()V
 
-    .line 180
+    .line 185
     iput-object p1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mAdapter:Lcom/google/android/finsky/adapters/UnevenGridAdapter;
 
-    .line 181
+    .line 186
     iget-object v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mAdapter:Lcom/google/android/finsky/adapters/UnevenGridAdapter;
 
     if-eqz v0, :cond_22
 
-    .line 182
+    .line 187
     iget-object v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mObserver:Lcom/google/android/finsky/layout/UnevenGrid$UnevenGridAdapterObserver;
 
     if-nez v0, :cond_18
 
-    .line 183
+    .line 188
     new-instance v0, Lcom/google/android/finsky/layout/UnevenGrid$UnevenGridAdapterObserver;
 
     const/4 v1, 0x0
@@ -1084,7 +1050,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mObserver:Lcom/google/android/finsky/layout/UnevenGrid$UnevenGridAdapterObserver;
 
-    .line 185
+    .line 190
     :cond_18
     iget-object v0, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mAdapter:Lcom/google/android/finsky/adapters/UnevenGridAdapter;
 
@@ -1092,14 +1058,14 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/adapters/UnevenGridAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
 
-    .line 186
+    .line 191
     invoke-direct {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->rebindChildren()V
 
-    .line 188
+    .line 193
     :cond_22
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/UnevenGrid;->requestLayout()V
 
-    .line 189
+    .line 194
     return-void
 .end method
 
@@ -1108,18 +1074,9 @@
     .parameter "hasTopGutter"
 
     .prologue
-    .line 78
+    .line 85
     iput-boolean p1, p0, Lcom/google/android/finsky/layout/UnevenGrid;->mHasTopGutter:Z
 
-    .line 79
-    return-void
-.end method
-
-.method public setSelection(I)V
-    .registers 2
-    .parameter "position"
-
-    .prologue
-    .line 251
+    .line 86
     return-void
 .end method

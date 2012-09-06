@@ -29,6 +29,12 @@
         <item>Само у нечујном режиму</item>
         <item>Никад</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>искључена</item>
+        <item>ниска</item>
+        <item>средња</item>
+        <item>виртуелна</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Без подешавања</item>
         <item>Стабилизација слике: Ниска</item>

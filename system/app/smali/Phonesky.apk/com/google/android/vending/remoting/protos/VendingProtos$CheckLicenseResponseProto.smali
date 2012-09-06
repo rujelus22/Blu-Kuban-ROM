@@ -35,30 +35,30 @@
     .registers 2
 
     .prologue
-    .line 14711
+    .line 15033
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 14716
+    .line 15038
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->responseCode_:I
 
-    .line 14733
+    .line 15055
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->signedData_:Ljava/lang/String;
 
-    .line 14750
+    .line 15072
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->signature_:Ljava/lang/String;
 
-    .line 14792
+    .line 15115
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->cachedSize:I
 
-    .line 14711
+    .line 15033
     return-void
 .end method
 
@@ -68,15 +68,15 @@
     .registers 2
 
     .prologue
-    .line 14794
+    .line 15118
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 14796
+    .line 15120
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->getSerializedSize()I
 
-    .line 14798
+    .line 15122
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->cachedSize:I
 
@@ -87,7 +87,7 @@
     .registers 2
 
     .prologue
-    .line 14717
+    .line 15039
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->responseCode_:I
 
     return v0
@@ -97,10 +97,10 @@
     .registers 4
 
     .prologue
-    .line 14802
+    .line 15127
     const/4 v0, 0x0
 
-    .line 14803
+    .line 15128
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->hasResponseCode()Z
 
@@ -108,7 +108,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 14804
+    .line 15129
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->getResponseCode()I
@@ -121,7 +121,7 @@
 
     add-int/2addr v0, v1
 
-    .line 14807
+    .line 15132
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->hasSignedData()Z
 
@@ -129,7 +129,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 14808
+    .line 15133
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->getSignedData()Ljava/lang/String;
@@ -142,7 +142,7 @@
 
     add-int/2addr v0, v1
 
-    .line 14811
+    .line 15136
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->hasSignature()Z
 
@@ -150,7 +150,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 14812
+    .line 15137
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->getSignature()Ljava/lang/String;
@@ -163,11 +163,11 @@
 
     add-int/2addr v0, v1
 
-    .line 14815
+    .line 15140
     :cond_31
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->cachedSize:I
 
-    .line 14816
+    .line 15141
     return v0
 .end method
 
@@ -175,7 +175,7 @@
     .registers 2
 
     .prologue
-    .line 14751
+    .line 15073
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->signature_:Ljava/lang/String;
 
     return-object v0
@@ -185,7 +185,7 @@
     .registers 2
 
     .prologue
-    .line 14734
+    .line 15056
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->signedData_:Ljava/lang/String;
 
     return-object v0
@@ -195,7 +195,7 @@
     .registers 2
 
     .prologue
-    .line 14718
+    .line 15040
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->hasResponseCode:Z
 
     return v0
@@ -205,7 +205,7 @@
     .registers 2
 
     .prologue
-    .line 14752
+    .line 15074
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->hasSignature:Z
 
     return v0
@@ -215,7 +215,7 @@
     .registers 2
 
     .prologue
-    .line 14735
+    .line 15057
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->hasSignedData:Z
 
     return v0
@@ -231,29 +231,29 @@
     .end annotation
 
     .prologue
-    .line 14823
+    .line 15149
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 14824
+    .line 15150
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_26
 
-    .line 14828
+    .line 15154
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 14829
+    .line 15155
     :sswitch_d
     return-object p0
 
-    .line 14834
+    .line 15160
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -263,7 +263,7 @@
 
     goto :goto_0
 
-    .line 14838
+    .line 15164
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -273,7 +273,7 @@
 
     goto :goto_0
 
-    .line 14842
+    .line 15168
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -283,7 +283,7 @@
 
     goto :goto_0
 
-    .line 14824
+    .line 15150
     :sswitch_data_26
     .sparse-switch
         0x0 -> :sswitch_d
@@ -303,7 +303,7 @@
     .end annotation
 
     .prologue
-    .line 14709
+    .line 15031
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;
 
     move-result-object v0
@@ -316,15 +316,15 @@
     .parameter "value"
 
     .prologue
-    .line 14720
+    .line 15042
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->hasResponseCode:Z
 
-    .line 14721
+    .line 15043
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->responseCode_:I
 
-    .line 14722
+    .line 15044
     return-object p0
 .end method
 
@@ -333,15 +333,15 @@
     .parameter "value"
 
     .prologue
-    .line 14754
+    .line 15076
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->hasSignature:Z
 
-    .line 14755
+    .line 15077
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->signature_:Ljava/lang/String;
 
-    .line 14756
+    .line 15078
     return-object p0
 .end method
 
@@ -350,15 +350,15 @@
     .parameter "value"
 
     .prologue
-    .line 14737
+    .line 15059
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->hasSignedData:Z
 
-    .line 14738
+    .line 15060
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->signedData_:Ljava/lang/String;
 
-    .line 14739
+    .line 15061
     return-object p0
 .end method
 
@@ -372,14 +372,14 @@
     .end annotation
 
     .prologue
-    .line 14781
+    .line 15104
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->hasResponseCode()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 14782
+    .line 15105
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->getResponseCode()I
@@ -388,7 +388,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 14784
+    .line 15107
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->hasSignedData()Z
 
@@ -396,7 +396,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 14785
+    .line 15108
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->getSignedData()Ljava/lang/String;
@@ -405,7 +405,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 14787
+    .line 15110
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->hasSignature()Z
 
@@ -413,7 +413,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 14788
+    .line 15111
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseResponseProto;->getSignature()Ljava/lang/String;
@@ -422,7 +422,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 14790
+    .line 15113
     :cond_2a
     return-void
 .end method

@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="settings_default_access_items">
-        <item>Prompt</item>
-        <item>Grant</item>
-        <item>Deny</item>
+        <item>ប្រអប់បញ្ជា</item>
+        <item>ផ្ដល់សិទ្ធី</item>
+        <item>បដិសេធ</item>
     </string-array>
     <string-array name="settings_log_items">
-        <item>Full content</item>
-        <item>Access only</item>
-        <item>None</item>
+        <item>មាតិកាពេញ</item>
+        <item>មានត្ត្រឹមសិទ្ធិចូលប៉ុណ្ណោះ</item>
+        <item>អត់មានអី</item>
     </string-array>
     <string-array name="settings_log_age_items">
-        <item>Never</item>
-        <item>2 weeks</item>
-        <item>1 week</item>
-        <item>3 days</item>
-        <item>2 days</item>
-        <item>1 day</item>
+        <item>មិនដែល</item>
+        <item>២សប្ដាហ៍</item>
+        <item>១សប្ដាហ៍</item>
+        <item>៣ថ្ងៃ</item>
+        <item>២ថ្ងៃ</item>
+        <item>១ថ្ងៃ</item>
     </string-array>
     <string-array name="settings_log_format_items">
-        <item>31/12 23:59</item>
-        <item>12/31 23:59</item>
-        <item>31/12 11:59 PM</item>
-        <item>12/31 11:59 PM</item>
+        <item>ថ្ងៃ៣១ ខែ១២ ម៉ោង២៣:៥៩</item>
+        <item>ខែ១២ ថ្ងៃ៣១ ម៉ោង២៣:៥៩</item>
+        <item>ថ្ងៃ៣១ ខែ១២ ម៉ោង១១:៥៩ល្ងាច</item>
+        <item>ខែ១២ ថ្ងៃ៣១ ម៉ោង១១:៥៩ល្ងាច</item>
     </string-array>
     <string-array name="appdetail_access_items">
-        <item>Prompt</item>
-        <item>Grant</item>
-        <item>Deny</item>
+        <item>ប្រអប់បញ្ជា</item>
+        <item>ផ្ដលសិទ្ធិ</item>
+        <item>បដិសេធ</item>
     </string-array>
     <string-array name="appdetail_logging_items">
-        <item>Global default</item>
-        <item>Full content</item>
-        <item>Access only</item>
-        <item>None</item>
+        <item>ទំរង់ដើមសាកល</item>
+        <item>មាតិកាពេញ</item>
+        <item>មានត្រឹមសិទ្ធិចូលប៉ុណ្ណោះ</item>
+        <item>អត់មានអី</item>
     </string-array>
     <string-array name="appdetail_notification_items">
-        <item>Global default</item>
-        <item>Enabled</item>
-        <item>Disabled</item>
+        <item>ទំរង់ដើមសាកល</item>
+        <item>បានអនុញ្ញាត</item>
+        <item>បានបិទ</item>
     </string-array>
 </resources>

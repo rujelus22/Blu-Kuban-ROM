@@ -22,15 +22,15 @@
     .registers 2
 
     .prologue
-    .line 39
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 33
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
+    .line 34
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/exchange/utility/Duration;->sign:I
 
-    .line 41
+    .line 35
     return-void
 .end method
 
@@ -40,14 +40,14 @@
     .registers 6
 
     .prologue
-    .line 131
+    .line 123
     iget v2, p0, Lcom/android/exchange/utility/Duration;->sign:I
 
     mul-int/lit16 v2, v2, 0x3e8
 
     int-to-long v0, v2
 
-    .line 132
+    .line 124
     .local v0, factor:J
     const v2, 0x93a80
 
@@ -87,7 +87,7 @@
 .end method
 
 .method public parse(Ljava/lang/String;)V
-    .registers 10
+    .registers 9
     .parameter "str"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -96,287 +96,285 @@
     .end annotation
 
     .prologue
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    .line 48
-    iput v6, p0, Lcom/android/exchange/utility/Duration;->sign:I
+    .line 42
+    iput v5, p0, Lcom/android/exchange/utility/Duration;->sign:I
+
+    .line 43
+    iput v4, p0, Lcom/android/exchange/utility/Duration;->weeks:I
+
+    .line 44
+    iput v4, p0, Lcom/android/exchange/utility/Duration;->days:I
+
+    .line 45
+    iput v4, p0, Lcom/android/exchange/utility/Duration;->hours:I
+
+    .line 46
+    iput v4, p0, Lcom/android/exchange/utility/Duration;->minutes:I
+
+    .line 47
+    iput v4, p0, Lcom/android/exchange/utility/Duration;->seconds:I
 
     .line 49
-    iput v5, p0, Lcom/android/exchange/utility/Duration;->weeks:I
-
-    .line 50
-    iput v5, p0, Lcom/android/exchange/utility/Duration;->days:I
-
-    .line 51
-    iput v5, p0, Lcom/android/exchange/utility/Duration;->hours:I
-
-    .line 52
-    iput v5, p0, Lcom/android/exchange/utility/Duration;->minutes:I
-
-    .line 53
-    iput v5, p0, Lcom/android/exchange/utility/Duration;->seconds:I
-
-    .line 55
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    .line 56
+    .line 50
     .local v2, len:I
     const/4 v1, 0x0
 
-    .line 59
+    .line 53
     .local v1, index:I
-    if-ge v2, v6, :cond_16
+    if-ge v2, v5, :cond_16
 
-    .line 113
+    .line 105
     :cond_15
     return-void
 
-    .line 63
+    .line 57
     :cond_16
-    invoke-virtual {p1, v5}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    .line 64
+    .line 58
     .local v0, c:C
-    const/16 v5, 0x2d
+    const/16 v4, 0x2d
 
-    if-ne v0, v5, :cond_50
+    if-ne v0, v4, :cond_50
 
-    .line 65
-    const/4 v5, -0x1
+    .line 59
+    const/4 v4, -0x1
 
-    iput v5, p0, Lcom/android/exchange/utility/Duration;->sign:I
+    iput v4, p0, Lcom/android/exchange/utility/Duration;->sign:I
 
-    .line 66
+    .line 60
     add-int/lit8 v1, v1, 0x1
 
-    .line 71
+    .line 65
     :cond_23
     :goto_23
     if-lt v2, v1, :cond_15
 
-    .line 75
+    .line 69
     invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    .line 76
-    const/16 v5, 0x50
+    .line 70
+    const/16 v4, 0x50
 
-    if-eq v0, v5, :cond_57
+    if-eq v0, v4, :cond_57
 
-    .line 77
-    new-instance v5, Ljava/text/ParseException;
+    .line 71
+    new-instance v4, Ljava/text/ParseException;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "Duration.parse(str=\'"
+    const-string v6, "Duration.parse(str=\'"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    const-string v7, "\') expected \'P\' at index="
+    const-string v6, "\') expected \'P\' at index="
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-direct {v5, v6, v1}, Ljava/text/ParseException;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v4, v5, v1}, Ljava/text/ParseException;-><init>(Ljava/lang/String;I)V
 
-    throw v5
+    throw v4
 
-    .line 67
+    .line 61
     :cond_50
-    const/16 v5, 0x2b
+    const/16 v4, 0x2b
 
-    if-ne v0, v5, :cond_23
+    if-ne v0, v4, :cond_23
 
-    .line 68
+    .line 62
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_23
 
-    .line 80
+    .line 75
     :cond_57
     add-int/lit8 v1, v1, 0x1
 
-    .line 82
+    .line 77
     const/4 v3, 0x0
 
-    .line 83
+    .line 78
     .local v3, n:I
-    new-instance v4, Ljava/lang/StringBuffer;
-
-    invoke-direct {v4}, Ljava/lang/StringBuffer;-><init>()V
-
-    .line 84
-    .local v4, tempException:Ljava/lang/StringBuffer;
-    :goto_5f
+    :goto_5a
     if-ge v1, v2, :cond_15
 
-    .line 85
+    .line 79
     invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    .line 86
-    const/16 v5, 0x30
+    .line 80
+    const/16 v4, 0x30
 
-    if-lt v0, v5, :cond_75
+    if-lt v0, v4, :cond_70
 
-    const/16 v5, 0x39
+    const/16 v4, 0x39
 
-    if-gt v0, v5, :cond_75
+    if-gt v0, v4, :cond_70
 
-    .line 87
+    .line 81
     mul-int/lit8 v3, v3, 0xa
 
-    .line 88
-    add-int/lit8 v5, v0, -0x30
+    .line 82
+    add-int/lit8 v4, v0, -0x30
 
-    add-int/2addr v3, v5
+    add-int/2addr v3, v4
 
-    .line 84
-    :cond_72
-    :goto_72
+    .line 78
+    :cond_6d
+    :goto_6d
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5f
+    goto :goto_5a
+
+    .line 83
+    :cond_70
+    const/16 v4, 0x57
+
+    if-ne v0, v4, :cond_78
+
+    .line 84
+    iput v3, p0, Lcom/android/exchange/utility/Duration;->weeks:I
+
+    .line 85
+    const/4 v3, 0x0
+
+    goto :goto_6d
+
+    .line 86
+    :cond_78
+    const/16 v4, 0x48
+
+    if-ne v0, v4, :cond_80
+
+    .line 87
+    iput v3, p0, Lcom/android/exchange/utility/Duration;->hours:I
+
+    .line 88
+    const/4 v3, 0x0
+
+    goto :goto_6d
 
     .line 89
-    :cond_75
-    const/16 v5, 0x57
+    :cond_80
+    const/16 v4, 0x4d
 
-    if-ne v0, v5, :cond_7d
+    if-ne v0, v4, :cond_88
 
     .line 90
-    iput v3, p0, Lcom/android/exchange/utility/Duration;->weeks:I
+    iput v3, p0, Lcom/android/exchange/utility/Duration;->minutes:I
 
     .line 91
     const/4 v3, 0x0
 
-    goto :goto_72
+    goto :goto_6d
 
     .line 92
-    :cond_7d
-    const/16 v5, 0x48
+    :cond_88
+    const/16 v4, 0x53
 
-    if-ne v0, v5, :cond_85
+    if-ne v0, v4, :cond_90
 
     .line 93
-    iput v3, p0, Lcom/android/exchange/utility/Duration;->hours:I
+    iput v3, p0, Lcom/android/exchange/utility/Duration;->seconds:I
 
     .line 94
     const/4 v3, 0x0
 
-    goto :goto_72
+    goto :goto_6d
 
     .line 95
-    :cond_85
-    const/16 v5, 0x4d
+    :cond_90
+    const/16 v4, 0x44
 
-    if-ne v0, v5, :cond_8d
+    if-ne v0, v4, :cond_98
 
     .line 96
-    iput v3, p0, Lcom/android/exchange/utility/Duration;->minutes:I
+    iput v3, p0, Lcom/android/exchange/utility/Duration;->days:I
 
     .line 97
     const/4 v3, 0x0
 
-    goto :goto_72
+    goto :goto_6d
 
     .line 98
-    :cond_8d
-    const/16 v5, 0x53
+    :cond_98
+    const/16 v4, 0x54
 
-    if-ne v0, v5, :cond_95
-
-    .line 99
-    iput v3, p0, Lcom/android/exchange/utility/Duration;->seconds:I
+    if-eq v0, v4, :cond_6d
 
     .line 100
-    const/4 v3, 0x0
+    new-instance v4, Ljava/text/ParseException;
 
-    goto :goto_72
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    .line 101
-    :cond_95
-    const/16 v5, 0x44
-
-    if-ne v0, v5, :cond_9d
-
-    .line 102
-    iput v3, p0, Lcom/android/exchange/utility/Duration;->days:I
-
-    .line 103
-    const/4 v3, 0x0
-
-    goto :goto_72
-
-    .line 104
-    :cond_9d
-    const/16 v5, 0x54
-
-    if-eq v0, v5, :cond_72
-
-    .line 106
-    new-instance v5, Ljava/text/ParseException;
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v6, "Duration.parse(str=\'"
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6, p1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    const-string v7, "\') unexpected char \'"
+    const-string v6, "\') unexpected char \'"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    const-string v7, "\' at index="
+    const-string v6, "\' at index="
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-direct {v5, v6, v1}, Ljava/text/ParseException;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v4, v5, v1}, Ljava/text/ParseException;-><init>(Ljava/lang/String;I)V
 
-    throw v5
+    throw v4
 .end method

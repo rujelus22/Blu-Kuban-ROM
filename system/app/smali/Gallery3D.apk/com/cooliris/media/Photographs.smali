@@ -204,14 +204,18 @@
     .line 234
     sget-boolean v2, Lcom/cooliris/media/Utils;->mUse_Tn_Us_Common:Z
 
-    if-nez v2, :cond_1a
+    if-nez v2, :cond_1e
 
     sget-boolean v2, Lcom/cooliris/media/Utils;->mUse_U1_Us_USCC:Z
 
-    if-eqz v2, :cond_57
+    if-nez v2, :cond_1e
+
+    sget-boolean v2, Lcom/cooliris/media/Utils;->mUse_U1_NA_SPR:Z
+
+    if-eqz v2, :cond_5b
 
     .line 235
-    :cond_1a
+    :cond_1e
     invoke-static {}, Lcom/cooliris/media/Utils;->getScreenWidth()I
 
     move-result v1
@@ -224,7 +228,7 @@
 
     .line 242
     .local v0, height:I
-    :goto_22
+    :goto_26
     const-string v2, "outputX"
 
     invoke-virtual {p1, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
@@ -282,7 +286,7 @@
     .line 238
     .end local v0           #height:I
     .end local v1           #width:I
-    :cond_57
+    :cond_5b
     invoke-static {}, Lcom/cooliris/media/Utils;->getScreenWidth()I
 
     move-result v2
@@ -296,7 +300,7 @@
     move-result v0
 
     .restart local v0       #height:I
-    goto :goto_22
+    goto :goto_26
 .end method
 
 .method protected onActivityResult(IILandroid/content/Intent;)V

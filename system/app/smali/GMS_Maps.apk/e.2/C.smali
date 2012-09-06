@@ -1,13 +1,23 @@
-.class final Le/C;
+.class LE/c;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Le/w;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field final synthetic a:LE/a;
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method constructor <init>(LE/a;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 72
+    iput-object p1, p0, LE/c;->a:LE/a;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -16,40 +26,15 @@
 
 
 # virtual methods
-.method public a(Ljava/io/DataInput;)Ljava/lang/String;
-    .registers 3
+.method public run()V
+    .registers 2
 
-    invoke-interface {p1}, Ljava/io/DataInput;->readUTF()Ljava/lang/String;
+    .prologue
+    .line 75
+    iget-object v0, p0, LE/c;->a:LE/a;
 
-    move-result-object v0
+    invoke-static {v0}, LE/a;->a(LE/a;)V
 
-    return-object v0
-.end method
-
-.method public bridge synthetic a(Ljava/lang/Object;Ljava/io/DataOutput;)V
-    .registers 3
-
-    check-cast p1, Ljava/lang/String;
-
-    invoke-virtual {p0, p1, p2}, Le/C;->a(Ljava/lang/String;Ljava/io/DataOutput;)V
-
+    .line 76
     return-void
-.end method
-
-.method public a(Ljava/lang/String;Ljava/io/DataOutput;)V
-    .registers 3
-
-    invoke-interface {p2, p1}, Ljava/io/DataOutput;->writeUTF(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public synthetic b(Ljava/io/DataInput;)Ljava/lang/Object;
-    .registers 3
-
-    invoke-virtual {p0, p1}, Le/C;->a(Ljava/io/DataInput;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

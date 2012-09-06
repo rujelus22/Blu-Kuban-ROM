@@ -30,12 +30,12 @@
     .parameter
 
     .prologue
-    .line 57
+    .line 59
     iput-object p1, p0, Lcom/android/emailcommon/service/AccountServiceProxy$2;->this$0:Lcom/android/emailcommon/service/AccountServiceProxy;
 
     iput-wide p2, p0, Lcom/android/emailcommon/service/AccountServiceProxy$2;->val$accountId:J
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -51,7 +51,7 @@
     .end annotation
 
     .prologue
-    .line 59
+    .line 62
     iget-object v0, p0, Lcom/android/emailcommon/service/AccountServiceProxy$2;->this$0:Lcom/android/emailcommon/service/AccountServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/AccountServiceProxy;->mService:Lcom/android/emailcommon/service/IAccountService;
@@ -63,6 +63,6 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/emailcommon/service/IAccountService;->notifyLoginSucceeded(J)V
 
-    .line 60
+    .line 63
     return-void
 .end method

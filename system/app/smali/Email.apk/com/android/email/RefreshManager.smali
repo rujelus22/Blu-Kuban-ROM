@@ -21,13 +21,13 @@
 
 
 # instance fields
-.field private mClock:Lcom/android/email/Clock;
+.field private final mClock:Lcom/android/email/Clock;
 
-.field private mContext:Landroid/content/Context;
+.field private final mContext:Landroid/content/Context;
 
-.field private mController:Lcom/android/email/Controller;
+.field private final mController:Lcom/android/email/Controller;
 
-.field private mControllerResult:Lcom/android/email/Controller$Result;
+.field private final mControllerResult:Lcom/android/email/Controller$Result;
 
 .field private mErrorMessage:Ljava/lang/String;
 
@@ -42,9 +42,9 @@
     .end annotation
 .end field
 
-.field private mMailboxListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
+.field private final mMailboxListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
 
-.field private mMessageListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
+.field private final mMessageListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
 
 
 # direct methods
@@ -58,44 +58,44 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 200
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 178
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 105
+    .line 86
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/email/RefreshManager;->mListeners:Ljava/util/ArrayList;
 
-    .line 185
+    .line 163
     new-instance v0, Lcom/android/email/RefreshManager$RefreshStatusMap;
 
     invoke-direct {v0, v2}, Lcom/android/email/RefreshManager$RefreshStatusMap;-><init>(Lcom/android/email/RefreshManager$1;)V
 
     iput-object v0, p0, Lcom/android/email/RefreshManager;->mMailboxListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
 
-    .line 187
+    .line 164
     new-instance v0, Lcom/android/email/RefreshManager$RefreshStatusMap;
 
     invoke-direct {v0, v2}, Lcom/android/email/RefreshManager$RefreshStatusMap;-><init>(Lcom/android/email/RefreshManager$1;)V
 
     iput-object v0, p0, Lcom/android/email/RefreshManager;->mMessageListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
 
-    .line 201
+    .line 179
     iput-object p3, p0, Lcom/android/email/RefreshManager;->mClock:Lcom/android/email/Clock;
 
-    .line 202
+    .line 180
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/email/RefreshManager;->mContext:Landroid/content/Context;
 
-    .line 203
+    .line 181
     iput-object p2, p0, Lcom/android/email/RefreshManager;->mController:Lcom/android/email/Controller;
 
-    .line 204
+    .line 182
     new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper;
 
     new-instance v1, Lcom/android/email/RefreshManager$ControllerResult;
@@ -106,14 +106,14 @@
 
     iput-object v0, p0, Lcom/android/email/RefreshManager;->mControllerResult:Lcom/android/email/Controller$Result;
 
-    .line 206
+    .line 184
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mController:Lcom/android/email/Controller;
 
     iget-object v1, p0, Lcom/android/email/RefreshManager;->mControllerResult:Lcom/android/email/Controller$Result;
 
     invoke-virtual {v0, v1}, Lcom/android/email/Controller;->addResultCallback(Lcom/android/email/Controller$Result;)V
 
-    .line 207
+    .line 185
     return-void
 .end method
 
@@ -122,7 +122,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 51
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -133,7 +133,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 51
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mClock:Lcom/android/email/Clock;
 
     return-object v0
@@ -144,7 +144,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 51
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mMailboxListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
 
     return-object v0
@@ -158,7 +158,7 @@
     .parameter "x3"
 
     .prologue
-    .line 59
+    .line 51
     invoke-direct/range {p0 .. p5}, Lcom/android/email/RefreshManager;->reportError(JJLjava/lang/String;)V
 
     return-void
@@ -171,7 +171,7 @@
     .parameter "x2"
 
     .prologue
-    .line 59
+    .line 51
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/email/RefreshManager;->notifyRefreshStatusChanged(JJ)V
 
     return-void
@@ -182,7 +182,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 51
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mMessageListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
 
     return-object v0
@@ -193,7 +193,7 @@
     .parameter "context"
 
     .prologue
-    .line 193
+    .line 170
     const-class v1, Lcom/android/email/RefreshManager;
 
     monitor-enter v1
@@ -203,7 +203,7 @@
 
     if-nez v0, :cond_19
 
-    .line 194
+    .line 171
     new-instance v0, Lcom/android/email/RefreshManager;
 
     invoke-static {p0}, Lcom/android/email/Controller;->getInstance(Landroid/content/Context;)Lcom/android/email/Controller;
@@ -220,7 +220,7 @@
 
     sput-object v0, Lcom/android/email/RefreshManager;->sInstance:Lcom/android/email/RefreshManager;
 
-    .line 197
+    .line 174
     :cond_19
     sget-object v0, Lcom/android/email/RefreshManager;->sInstance:Lcom/android/email/RefreshManager;
     :try_end_1b
@@ -230,7 +230,7 @@
 
     return-object v0
 
-    .line 193
+    .line 170
     :catchall_1d
     move-exception v0
 
@@ -245,7 +245,7 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 428
+    .line 331
     iget-object v2, p0, Lcom/android/email/RefreshManager;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -266,142 +266,70 @@
 
     check-cast v1, Lcom/android/email/RefreshManager$Listener;
 
-    .line 429
+    .line 332
     .local v1, l:Lcom/android/email/RefreshManager$Listener;
     invoke-interface {v1, p1, p2, p3, p4}, Lcom/android/email/RefreshManager$Listener;->onRefreshStatusChanged(JJ)V
 
     goto :goto_6
 
-    .line 431
+    .line 334
     .end local v1           #l:Lcom/android/email/RefreshManager$Listener;
     :cond_16
     return-void
 .end method
 
 .method private refreshMessageList(JJZZ)Z
-    .registers 16
+    .registers 14
     .parameter "accountId"
     .parameter "mailboxId"
     .parameter "loadMoreMessages"
     .parameter "userRequest"
 
     .prologue
-    const/4 v8, 0x1
+    .line 251
+    iget-object v0, p0, Lcom/android/email/RefreshManager;->mMessageListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
+
+    invoke-virtual {v0, p3, p4}, Lcom/android/email/RefreshManager$RefreshStatusMap;->get(J)Lcom/android/email/RefreshManager$Status;
+
+    move-result-object v6
+
+    .line 252
+    .local v6, status:Lcom/android/email/RefreshManager$Status;
+    invoke-virtual {v6}, Lcom/android/email/RefreshManager$Status;->canRefresh()Z
+
+    move-result v0
+
+    if-nez v0, :cond_e
 
     const/4 v0, 0x0
 
-    .line 281
-    iget-object v1, p0, Lcom/android/email/RefreshManager;->mMessageListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
-
-    invoke-virtual {v1, p3, p4}, Lcom/android/email/RefreshManager$RefreshStatusMap;->get(J)Lcom/android/email/RefreshManager$Status;
-
-    move-result-object v7
-
-    .line 282
-    .local v7, status:Lcom/android/email/RefreshManager$Status;
-    invoke-virtual {v7}, Lcom/android/email/RefreshManager$Status;->canRefresh()Z
-
-    move-result v1
-
-    if-nez v1, :cond_f
-
-    .line 314
-    :goto_e
+    .line 265
+    :goto_d
     return v0
 
-    .line 286
-    :cond_f
-    iget-object v1, p0, Lcom/android/email/RefreshManager;->mContext:Landroid/content/Context;
+    .line 258
+    :cond_e
+    invoke-virtual {v6}, Lcom/android/email/RefreshManager$Status;->onRefreshRequested()V
 
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string v2, "airplane_mode_on"
-
-    invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v1
-
-    if-ne v1, v8, :cond_3c
-
-    move v6, v8
-
-    .line 289
-    .local v6, isEnabled:Z
-    :goto_1e
-    if-eqz v6, :cond_46
-
-    invoke-static {}, Lcom/android/email/activity/MessageListXL;->isNetworkConnected()Z
-
-    move-result v1
-
-    if-nez v1, :cond_46
-
-    .line 290
-    if-eqz p5, :cond_3e
-
-    .line 291
-    const-string v1, "Email"
-
-    const-string v2, "loadMoreMessages is truerefreshMessageList AIRPLANE MODE IS ON"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 293
-    iget-object v1, p0, Lcom/android/email/RefreshManager;->mContext:Landroid/content/Context;
-
-    const v2, 0x7f080576
-
-    invoke-static {v1, v2, v0}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
-
-    goto :goto_e
-
-    .end local v6           #isEnabled:Z
-    :cond_3c
-    move v6, v0
-
-    .line 286
-    goto :goto_1e
-
-    .line 296
-    .restart local v6       #isEnabled:Z
-    :cond_3e
-    const-string v1, "Email"
-
-    const-string v2, "loadMoreMessages is falserefreshMessageList AIRPLANE MODE IS ON"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_e
-
-    .line 307
-    :cond_46
-    invoke-virtual {v7}, Lcom/android/email/RefreshManager$Status;->onRefreshRequested()V
-
-    .line 308
+    .line 259
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/email/RefreshManager;->notifyRefreshStatusChanged(JJ)V
 
-    .line 309
-    if-eqz p5, :cond_55
+    .line 260
+    if-eqz p5, :cond_1d
 
-    .line 310
+    .line 261
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mController:Lcom/android/email/Controller;
 
     invoke-virtual {v0, p3, p4}, Lcom/android/email/Controller;->loadMoreMessages(J)V
 
-    :goto_53
-    move v0, v8
+    .line 265
+    :goto_1b
+    const/4 v0, 0x1
 
-    .line 314
-    goto :goto_e
+    goto :goto_d
 
-    .line 312
-    :cond_55
+    .line 263
+    :cond_1d
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mController:Lcom/android/email/Controller;
 
     move-wide v1, p1
@@ -412,7 +340,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/email/Controller;->updateMailbox(JJZ)V
 
-    goto :goto_53
+    goto :goto_1b
 .end method
 
 .method private reportError(JJLjava/lang/String;)V
@@ -422,10 +350,10 @@
     .parameter "errorMessage"
 
     .prologue
-    .line 434
+    .line 337
     iput-object p5, p0, Lcom/android/email/RefreshManager;->mErrorMessage:Ljava/lang/String;
 
-    .line 435
+    .line 338
     iget-object v1, p0, Lcom/android/email/RefreshManager;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -446,7 +374,7 @@
 
     check-cast v0, Lcom/android/email/RefreshManager$Listener;
 
-    .line 436
+    .line 339
     .local v0, l:Lcom/android/email/RefreshManager$Listener;
     iget-object v5, p0, Lcom/android/email/RefreshManager;->mErrorMessage:Ljava/lang/String;
 
@@ -458,7 +386,7 @@
 
     goto :goto_8
 
-    .line 438
+    .line 341
     .end local v0           #l:Lcom/android/email/RefreshManager$Listener;
     :cond_1c
     return-void
@@ -470,15 +398,53 @@
     .registers 3
 
     .prologue
-    .line 214
+    .line 192
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mController:Lcom/android/email/Controller;
 
     iget-object v1, p0, Lcom/android/email/RefreshManager;->mControllerResult:Lcom/android/email/Controller$Result;
 
     invoke-virtual {v0, v1}, Lcom/android/email/Controller;->removeResultCallback(Lcom/android/email/Controller$Result;)V
 
-    .line 215
+    .line 193
     return-void
+.end method
+
+.method public getLastMailboxListRefreshTime(J)J
+    .registers 5
+    .parameter "accountId"
+
+    .prologue
+    .line 303
+    iget-object v0, p0, Lcom/android/email/RefreshManager;->mMailboxListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
+
+    invoke-virtual {v0, p1, p2}, Lcom/android/email/RefreshManager$RefreshStatusMap;->get(J)Lcom/android/email/RefreshManager$Status;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/email/RefreshManager$Status;->getLastRefreshTime()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public getLastMessageListRefreshTime(J)J
+    .registers 5
+    .parameter "mailboxId"
+
+    .prologue
+    .line 307
+    iget-object v0, p0, Lcom/android/email/RefreshManager;->mMessageListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
+
+    invoke-virtual {v0, p1, p2}, Lcom/android/email/RefreshManager$RefreshStatusMap;->get(J)Lcom/android/email/RefreshManager$Status;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/email/RefreshManager$Status;->getLastRefreshTime()J
+
+    move-result-wide v0
+
+    return-wide v0
 .end method
 
 .method getListenersForTest()Ljava/util/Collection;
@@ -494,7 +460,7 @@
     .end annotation
 
     .prologue
-    .line 441
+    .line 344
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mListeners:Ljava/util/ArrayList;
 
     return-object v0
@@ -505,7 +471,7 @@
     .parameter "accountId"
 
     .prologue
-    .line 445
+    .line 348
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mMailboxListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/email/RefreshManager$RefreshStatusMap;->get(J)Lcom/android/email/RefreshManager$Status;
@@ -520,7 +486,7 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 449
+    .line 352
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mMessageListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/email/RefreshManager$RefreshStatusMap;->get(J)Lcom/android/email/RefreshManager$Status;
@@ -530,110 +496,105 @@
     return-object v0
 .end method
 
-.method public interruptRefreshMessageList(J)V
+.method public isMailboxListRefreshing(J)Z
     .registers 4
-    .parameter "mailboxId"
-
-    .prologue
-    .line 263
-    iget-object v0, p0, Lcom/android/email/RefreshManager;->mMessageListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
-
-    invoke-virtual {v0, p1, p2}, Lcom/android/email/RefreshManager$RefreshStatusMap;->remove(J)V
-
-    .line 264
-    return-void
-.end method
-
-.method public isMailboxListStale(J)Z
-    .registers 10
     .parameter "accountId"
 
     .prologue
-    const/4 v0, 0x0
+    .line 311
+    iget-object v0, p0, Lcom/android/email/RefreshManager;->mMailboxListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
 
-    .line 256
-    const-wide/high16 v1, 0x1000
+    invoke-virtual {v0, p1, p2}, Lcom/android/email/RefreshManager$RefreshStatusMap;->get(J)Lcom/android/email/RefreshManager$Status;
 
-    cmp-long v1, p1, v1
+    move-result-object v0
 
-    if-eqz v1, :cond_20
+    invoke-virtual {v0}, Lcom/android/email/RefreshManager$Status;->isRefreshing()Z
 
-    .line 257
-    iget-object v1, p0, Lcom/android/email/RefreshManager;->mClock:Lcom/android/email/Clock;
+    move-result v0
 
-    invoke-virtual {v1}, Lcom/android/email/Clock;->getTime()J
-
-    move-result-wide v1
-
-    iget-object v3, p0, Lcom/android/email/RefreshManager;->mMailboxListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
-
-    invoke-virtual {v3, p1, p2}, Lcom/android/email/RefreshManager$RefreshStatusMap;->get(J)Lcom/android/email/RefreshManager$Status;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/android/email/RefreshManager$Status;->getLastRefreshTime()J
-
-    move-result-wide v3
-
-    const-wide/32 v5, 0x493e0
-
-    add-long/2addr v3, v5
-
-    cmp-long v1, v1, v3
-
-    if-ltz v1, :cond_20
-
-    const/4 v0, 0x1
-
-    .line 259
-    :cond_20
     return v0
 .end method
 
-.method public isMailboxStale(J)Z
-    .registers 10
-    .parameter "mailboxId"
+.method public isMailboxListStale(J)Z
+    .registers 9
+    .parameter "accountId"
 
     .prologue
-    const/4 v0, 0x0
+    .line 231
+    iget-object v0, p0, Lcom/android/email/RefreshManager;->mClock:Lcom/android/email/Clock;
 
-    .line 249
-    const-wide/16 v1, -0x2
+    invoke-virtual {v0}, Lcom/android/email/Clock;->getTime()J
 
-    cmp-long v1, p1, v1
+    move-result-wide v0
 
-    if-lez v1, :cond_20
+    iget-object v2, p0, Lcom/android/email/RefreshManager;->mMailboxListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
 
-    .line 250
-    iget-object v1, p0, Lcom/android/email/RefreshManager;->mClock:Lcom/android/email/Clock;
+    invoke-virtual {v2, p1, p2}, Lcom/android/email/RefreshManager$RefreshStatusMap;->get(J)Lcom/android/email/RefreshManager$Status;
 
-    invoke-virtual {v1}, Lcom/android/email/Clock;->getTime()J
+    move-result-object v2
 
-    move-result-wide v1
+    invoke-virtual {v2}, Lcom/android/email/RefreshManager$Status;->getLastRefreshTime()J
 
-    iget-object v3, p0, Lcom/android/email/RefreshManager;->mMessageListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
+    move-result-wide v2
 
-    invoke-virtual {v3, p1, p2}, Lcom/android/email/RefreshManager$RefreshStatusMap;->get(J)Lcom/android/email/RefreshManager$Status;
+    const-wide/32 v4, 0x493e0
 
-    move-result-object v3
+    add-long/2addr v2, v4
 
-    invoke-virtual {v3}, Lcom/android/email/RefreshManager$Status;->getLastRefreshTime()J
+    cmp-long v0, v0, v2
 
-    move-result-wide v3
-
-    const-wide/32 v5, 0x493e0
-
-    add-long/2addr v3, v5
-
-    cmp-long v1, v1, v3
-
-    if-ltz v1, :cond_20
+    if-ltz v0, :cond_1a
 
     const/4 v0, 0x1
 
-    .line 252
-    :cond_20
+    :goto_19
     return v0
+
+    :cond_1a
+    const/4 v0, 0x0
+
+    goto :goto_19
+.end method
+
+.method public isMailboxStale(J)Z
+    .registers 9
+    .parameter "mailboxId"
+
+    .prologue
+    .line 226
+    iget-object v0, p0, Lcom/android/email/RefreshManager;->mClock:Lcom/android/email/Clock;
+
+    invoke-virtual {v0}, Lcom/android/email/Clock;->getTime()J
+
+    move-result-wide v0
+
+    iget-object v2, p0, Lcom/android/email/RefreshManager;->mMessageListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
+
+    invoke-virtual {v2, p1, p2}, Lcom/android/email/RefreshManager$RefreshStatusMap;->get(J)Lcom/android/email/RefreshManager$Status;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/android/email/RefreshManager$Status;->getLastRefreshTime()J
+
+    move-result-wide v2
+
+    const-wide/32 v4, 0x493e0
+
+    add-long/2addr v2, v4
+
+    cmp-long v0, v0, v2
+
+    if-ltz v0, :cond_1a
+
+    const/4 v0, 0x1
+
+    :goto_19
+    return v0
+
+    :cond_1a
+    const/4 v0, 0x0
+
+    goto :goto_19
 .end method
 
 .method public isMessageListRefreshing(J)Z
@@ -641,7 +602,7 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 412
+    .line 315
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mMessageListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/email/RefreshManager$RefreshStatusMap;->get(J)Lcom/android/email/RefreshManager$Status;
@@ -659,7 +620,7 @@
     .registers 2
 
     .prologue
-    .line 416
+    .line 319
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mMailboxListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
 
     invoke-virtual {v0}, Lcom/android/email/RefreshManager$RefreshStatusMap;->isRefreshingAny()Z
@@ -673,7 +634,7 @@
     .registers 2
 
     .prologue
-    .line 420
+    .line 323
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mMessageListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
 
     invoke-virtual {v0}, Lcom/android/email/RefreshManager$RefreshStatusMap;->isRefreshingAny()Z
@@ -691,7 +652,7 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 276
+    .line 246
     move-object v0, p0
 
     move-wide v1, p1
@@ -712,14 +673,14 @@
     .parameter "accountId"
 
     .prologue
-    .line 235
+    .line 213
     iget-object v1, p0, Lcom/android/email/RefreshManager;->mMailboxListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
 
     invoke-virtual {v1, p1, p2}, Lcom/android/email/RefreshManager$RefreshStatusMap;->get(J)Lcom/android/email/RefreshManager$Status;
 
     move-result-object v0
 
-    .line 236
+    .line 214
     .local v0, status:Lcom/android/email/RefreshManager$Status;
     invoke-virtual {v0}, Lcom/android/email/RefreshManager$Status;->canRefresh()Z
 
@@ -727,28 +688,27 @@
 
     if-nez v1, :cond_e
 
-    .line 237
     const/4 v1, 0x0
 
-    .line 245
+    .line 222
     :goto_d
     return v1
 
-    .line 242
+    .line 219
     :cond_e
     invoke-virtual {v0}, Lcom/android/email/RefreshManager$Status;->onRefreshRequested()V
 
-    .line 243
+    .line 220
     const-wide/16 v1, -0x1
 
     invoke-direct {p0, p1, p2, v1, v2}, Lcom/android/email/RefreshManager;->notifyRefreshStatusChanged(JJ)V
 
-    .line 244
+    .line 221
     iget-object v1, p0, Lcom/android/email/RefreshManager;->mController:Lcom/android/email/Controller;
 
     invoke-virtual {v1, p1, p2}, Lcom/android/email/Controller;->updateMailboxList(J)V
 
-    .line 245
+    .line 222
     const/4 v1, 0x1
 
     goto :goto_d
@@ -761,7 +721,7 @@
     .parameter "userRequest"
 
     .prologue
-    .line 269
+    .line 239
     const/4 v5, 0x0
 
     move-object v0, p0
@@ -784,23 +744,23 @@
     .parameter "listener"
 
     .prologue
-    .line 218
+    .line 196
     if-nez p1, :cond_8
 
-    .line 219
-    new-instance v0, Ljava/security/InvalidParameterException;
+    .line 197
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {v0}, Ljava/security/InvalidParameterException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
 
-    .line 221
+    .line 199
     :cond_8
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 222
+    .line 200
     return-void
 .end method
 
@@ -809,38 +769,40 @@
     .parameter "accountId"
 
     .prologue
-    .line 373
+    .line 275
     const-wide/16 v0, -0x1
 
     invoke-direct {p0, p1, p2, v0, v1}, Lcom/android/email/RefreshManager;->notifyRefreshStatusChanged(JJ)V
 
-    .line 374
+    .line 276
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mController:Lcom/android/email/Controller;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/email/Controller;->sendPendingMessages(J)V
 
-    .line 375
+    .line 277
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public sendPendingMessagesForAllAccounts()V
-    .registers 3
+    .registers 4
 
     .prologue
-    .line 385
+    .line 287
     new-instance v0, Lcom/android/email/RefreshManager$SendPendingMessagesForAllAccountsImpl;
 
     invoke-direct {v0, p0}, Lcom/android/email/RefreshManager$SendPendingMessagesForAllAccountsImpl;-><init>(Lcom/android/email/RefreshManager;)V
 
-    const/4 v1, 0x0
+    sget-object v1, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
-    new-array v1, v1, [Ljava/lang/Void;
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/android/email/RefreshManager$SendPendingMessagesForAllAccountsImpl;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+    new-array v2, v2, [Ljava/lang/Void;
 
-    .line 386
+    invoke-virtual {v0, v1, v2}, Lcom/android/email/RefreshManager$SendPendingMessagesForAllAccountsImpl;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    .line 289
     return-void
 .end method
 
@@ -849,22 +811,22 @@
     .parameter "listener"
 
     .prologue
-    .line 225
+    .line 203
     if-nez p1, :cond_8
 
-    .line 226
-    new-instance v0, Ljava/security/InvalidParameterException;
+    .line 204
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {v0}, Ljava/security/InvalidParameterException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
 
-    .line 228
+    .line 206
     :cond_8
     iget-object v0, p0, Lcom/android/email/RefreshManager;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 229
+    .line 207
     return-void
 .end method

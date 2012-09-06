@@ -1,38 +1,50 @@
-.class Lcom/google/googlenav/ui/wizard/F;
-.super Lcom/google/googlenav/bZ;
+.class Lcom/google/googlenav/ui/wizard/f;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lag/f;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/E;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/e;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/E;Lam/b;Lcom/google/googlenav/ca;)V
-    .registers 4
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/e;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/F;->a:Lcom/google/googlenav/ui/wizard/E;
+    .prologue
+    .line 72
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/f;->a:Lcom/google/googlenav/ui/wizard/e;
 
-    invoke-direct {p0, p2, p3}, Lcom/google/googlenav/bZ;-><init>(Lam/b;Lcom/google/googlenav/ca;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b()V
+.method public a(Lag/c;)V
     .registers 3
+    .parameter
 
-    invoke-super {p0}, Lcom/google/googlenav/bZ;->b()V
+    .prologue
+    .line 75
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/f;->a:Lcom/google/googlenav/ui/wizard/e;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/F;->a:Lcom/google/googlenav/ui/wizard/E;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/E;->a(Lcom/google/googlenav/ui/wizard/E;)Lax/k;
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/e;->a(Lcom/google/googlenav/ui/wizard/e;)Lcom/google/googlenav/ui/wizard/q;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    .line 76
+    if-eqz v0, :cond_b
 
-    invoke-virtual {v0, v1}, Lax/k;->b(Lax/l;)V
+    .line 77
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/q;->g()V
 
+    .line 79
+    :cond_b
     return-void
 .end method

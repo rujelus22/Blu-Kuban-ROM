@@ -34,7 +34,7 @@
 
     const/4 v3, 0x0
 
-    .line 25
+    .line 28
     new-instance v0, Lcom/google/android/youtube/core/model/Subscription$Type;
 
     const-string v1, "USER"
@@ -43,7 +43,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/model/Subscription$Type;->USER:Lcom/google/android/youtube/core/model/Subscription$Type;
 
-    .line 26
+    .line 29
     new-instance v0, Lcom/google/android/youtube/core/model/Subscription$Type;
 
     const-string v1, "FAVORITES"
@@ -52,7 +52,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/model/Subscription$Type;->FAVORITES:Lcom/google/android/youtube/core/model/Subscription$Type;
 
-    .line 27
+    .line 30
     new-instance v0, Lcom/google/android/youtube/core/model/Subscription$Type;
 
     const-string v1, "PLAYLIST"
@@ -61,7 +61,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/model/Subscription$Type;->PLAYLIST:Lcom/google/android/youtube/core/model/Subscription$Type;
 
-    .line 28
+    .line 31
     new-instance v0, Lcom/google/android/youtube/core/model/Subscription$Type;
 
     const-string v1, "QUERY"
@@ -70,7 +70,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/model/Subscription$Type;->QUERY:Lcom/google/android/youtube/core/model/Subscription$Type;
 
-    .line 29
+    .line 32
     new-instance v0, Lcom/google/android/youtube/core/model/Subscription$Type;
 
     const-string v1, "CHANNEL"
@@ -79,7 +79,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/model/Subscription$Type;->CHANNEL:Lcom/google/android/youtube/core/model/Subscription$Type;
 
-    .line 30
+    .line 33
     new-instance v0, Lcom/google/android/youtube/core/model/Subscription$Type;
 
     const-string v1, "UNKNOWN"
@@ -90,7 +90,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/model/Subscription$Type;->UNKNOWN:Lcom/google/android/youtube/core/model/Subscription$Type;
 
-    .line 24
+    .line 27
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/google/android/youtube/core/model/Subscription$Type;
@@ -132,7 +132,7 @@
     .parameter
 
     .prologue
-    .line 24
+    .line 27
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -143,7 +143,7 @@
     .parameter
 
     .prologue
-    .line 24
+    .line 27
     const-class v0, Lcom/google/android/youtube/core/model/Subscription$Type;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -159,7 +159,7 @@
     .registers 1
 
     .prologue
-    .line 24
+    .line 27
     sget-object v0, Lcom/google/android/youtube/core/model/Subscription$Type;->$VALUES:[Lcom/google/android/youtube/core/model/Subscription$Type;
 
     invoke-virtual {v0}, [Lcom/google/android/youtube/core/model/Subscription$Type;->clone()Ljava/lang/Object;

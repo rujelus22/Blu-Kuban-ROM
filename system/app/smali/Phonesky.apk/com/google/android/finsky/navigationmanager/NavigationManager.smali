@@ -3,14 +3,6 @@
 .source "NavigationManager.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/finsky/navigationmanager/NavigationManager$6;
-    }
-.end annotation
-
-
 # instance fields
 .field private mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
@@ -34,28 +26,50 @@
     .parameter "activity"
 
     .prologue
-    .line 78
+    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 73
+    .line 66
     new-instance v0, Lcom/google/android/finsky/utils/MainThreadStack;
 
     invoke-direct {v0}, Lcom/google/android/finsky/utils/MainThreadStack;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
-    .line 79
+    .line 72
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->init(Lcom/google/android/finsky/activities/MainActivity;)V
 
-    .line 80
+    .line 73
     return-void
+.end method
+
+.method static synthetic access$000(Lcom/google/android/finsky/navigationmanager/NavigationManager;)Lcom/google/android/finsky/activities/MainActivity;
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 57
+    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
+
+    return-object v0
+.end method
+
+.method static synthetic access$100(Lcom/google/android/finsky/navigationmanager/NavigationManager;)Landroid/support/v4/app/FragmentManager;
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 57
+    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
+
+    return-object v0
 .end method
 
 .method private canNavigate()Z
     .registers 2
 
     .prologue
-    .line 107
+    .line 100
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
     if-eqz v0, :cond_e
@@ -79,194 +93,11 @@
     goto :goto_d
 .end method
 
-.method private getConsumptionAppPackageName(I)Ljava/lang/String;
-    .registers 3
-    .parameter "docBackend"
-
-    .prologue
-    .line 473
-    packed-switch p1, :pswitch_data_e
-
-    .line 481
-    :pswitch_3
-    const/4 v0, 0x0
-
-    :goto_4
-    return-object v0
-
-    .line 475
-    :pswitch_5
-    const-string v0, "com.google.android.apps.books"
-
-    goto :goto_4
-
-    .line 477
-    :pswitch_8
-    const-string v0, "com.google.android.videos"
-
-    goto :goto_4
-
-    .line 479
-    :pswitch_b
-    const-string v0, "com.google.android.music"
-
-    goto :goto_4
-
-    .line 473
-    :pswitch_data_e
-    .packed-switch 0x1
-        :pswitch_5
-        :pswitch_b
-        :pswitch_3
-        :pswitch_8
-    .end packed-switch
-.end method
-
-.method private getConsumptionAppRequiredString(I)I
-    .registers 3
-    .parameter "docBackend"
-
-    .prologue
-    .line 486
-    packed-switch p1, :pswitch_data_12
-
-    .line 494
-    :pswitch_3
-    const/4 v0, -0x1
-
-    :goto_4
-    return v0
-
-    .line 488
-    :pswitch_5
-    const v0, 0x7f0701a8
-
-    goto :goto_4
-
-    .line 490
-    :pswitch_9
-    const v0, 0x7f0701aa
-
-    goto :goto_4
-
-    .line 492
-    :pswitch_d
-    const v0, 0x7f0701ab
-
-    goto :goto_4
-
-    .line 486
-    nop
-
-    :pswitch_data_12
-    .packed-switch 0x1
-        :pswitch_5
-        :pswitch_d
-        :pswitch_3
-        :pswitch_9
-    .end packed-switch
-.end method
-
-.method public static getConsumptionIntent(Landroid/content/Context;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/content/Intent;
-    .registers 8
-    .parameter "context"
-    .parameter "doc"
-    .parameter "accountName"
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 574
-    if-nez p1, :cond_4
-
-    .line 593
-    :cond_3
-    :goto_3
-    return-object v2
-
-    .line 580
-    :cond_4
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
-
-    move-result v0
-
-    .line 581
-    .local v0, contentType:I
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getBackendDocId()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 582
-    .local v1, id:Ljava/lang/String;
-    if-eqz v1, :cond_3
-
-    .line 586
-    packed-switch v0, :pswitch_data_3c
-
-    .line 596
-    new-instance v2, Ljava/lang/IllegalStateException;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Cannot open an item from the corpus "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-
-    .line 590
-    :pswitch_2a
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v2
-
-    invoke-static {v2, p1, p2}, Lcom/google/android/finsky/utils/IntentUtils;->buildConsumptionAppViewItemIntent(Landroid/content/pm/PackageManager;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/content/Intent;
-
-    move-result-object v2
-
-    goto :goto_3
-
-    .line 593
-    :pswitch_33
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v2
-
-    invoke-static {v2, p1, p2}, Lcom/google/android/finsky/utils/IntentUtils;->buildConsumptionAppViewItemIntent(Landroid/content/pm/PackageManager;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/content/Intent;
-
-    move-result-object v2
-
-    goto :goto_3
-
-    .line 586
-    :pswitch_data_3c
-    .packed-switch 0x1
-        :pswitch_2a
-        :pswitch_33
-        :pswitch_2a
-        :pswitch_2a
-    .end packed-switch
-.end method
-
 .method private goToAggregatedHome()V
     .registers 2
 
     .prologue
-    .line 163
+    .line 155
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
@@ -277,433 +108,470 @@
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToAggregatedHome(Lcom/google/android/finsky/api/model/DfeToc;)V
 
-    .line 164
+    .line 156
     return-void
 .end method
 
 .method private goToCorpusHome()V
-    .registers 7
+    .registers 11
 
     .prologue
-    .line 809
-    iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
+    const/4 v1, 0x3
 
-    if-eqz v4, :cond_c
+    const/4 v2, 0x0
 
-    iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
+    .line 745
+    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
-    invoke-virtual {v4}, Lcom/google/android/finsky/activities/MainActivity;->isStateSaved()Z
+    if-eqz v0, :cond_e
 
-    move-result v4
+    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
-    if-eqz v4, :cond_d
-
-    .line 850
-    :cond_c
-    :goto_c
-    return-void
-
-    .line 813
-    :cond_d
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Lcom/google/android/finsky/FinskyApp;->getToc()Lcom/google/android/finsky/api/model/DfeToc;
-
-    move-result-object v3
-
-    .line 814
-    .local v3, dfeToc:Lcom/google/android/finsky/api/model/DfeToc;
-    if-eqz v3, :cond_c
-
-    .line 823
-    :goto_17
-    iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
-
-    invoke-virtual {v4}, Ljava/util/Stack;->isEmpty()Z
-
-    move-result v4
-
-    if-nez v4, :cond_34
-
-    iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
-
-    invoke-virtual {v4}, Ljava/util/Stack;->peek()Ljava/lang/Object;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/google/android/finsky/navigationmanager/NavigationState;->CORPUS_HOME:Lcom/google/android/finsky/navigationmanager/NavigationState;
-
-    if-eq v4, v5, :cond_34
-
-    .line 827
-    iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
-
-    invoke-virtual {v4}, Ljava/util/Stack;->pop()Ljava/lang/Object;
-
-    .line 828
-    iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
-
-    invoke-virtual {v4}, Landroid/support/v4/app/FragmentManager;->popBackStack()V
-
-    goto :goto_17
-
-    .line 836
-    :cond_34
-    iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
-
-    invoke-virtual {v4}, Ljava/util/Stack;->isEmpty()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_c
-
-    .line 837
-    invoke-virtual {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getCurrentDocument()Lcom/google/android/finsky/api/model/Document;
-
-    move-result-object v2
-
-    .line 838
-    .local v2, currentDocument:Lcom/google/android/finsky/api/model/Document;
-    if-eqz v2, :cond_58
-
-    .line 839
-    invoke-virtual {v2}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
+    invoke-virtual {v0}, Lcom/google/android/finsky/activities/MainActivity;->isStateSaved()Z
 
     move-result v0
 
-    .line 840
-    .local v0, backendId:I
-    invoke-virtual {v3, v0}, Lcom/google/android/finsky/api/model/DfeToc;->getCorpus(I)Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
+    if-eqz v0, :cond_f
 
-    move-result-object v1
+    .line 802
+    :cond_e
+    :goto_e
+    return-void
 
-    .line 841
-    .local v1, corpus:Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
-    if-eqz v1, :cond_58
+    .line 749
+    :cond_f
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    .line 842
-    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getLandingUrl()Ljava/lang/String;
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getToc()Lcom/google/android/finsky/api/model/DfeToc;
 
     move-result-object v4
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getName()Ljava/lang/String;
+    .line 750
+    .local v4, dfeToc:Lcom/google/android/finsky/api/model/DfeToc;
+    if-eqz v4, :cond_e
 
-    move-result-object v5
+    .line 759
+    invoke-virtual {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getCurrentDocument()Lcom/google/android/finsky/api/model/Document;
 
-    invoke-virtual {p0, v4, v5, v0, v3}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToCorpusHome(Ljava/lang/String;Ljava/lang/String;ILcom/google/android/finsky/api/model/DfeToc;)V
+    move-result-object v9
 
-    goto :goto_c
+    .line 760
+    .local v9, currentDocument:Lcom/google/android/finsky/api/model/Document;
+    :goto_1d
+    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
-    .line 848
-    .end local v0           #backendId:I
-    .end local v1           #corpus:Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
-    :cond_58
+    invoke-virtual {v0}, Ljava/util/Stack;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_44
+
+    .line 761
+    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
+
+    invoke-virtual {v0}, Ljava/util/Stack;->peek()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lcom/google/android/finsky/navigationmanager/NavigationState;
+
+    .line 762
+    .local v7, currTop:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    iget v8, v7, Lcom/google/android/finsky/navigationmanager/NavigationState;->pageType:I
+
+    .line 763
+    .local v8, currType:I
+    if-ne v8, v1, :cond_41
+
+    .line 764
+    if-eqz v9, :cond_41
+
+    invoke-virtual {v9}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
+
+    move-result v0
+
+    if-ne v0, v1, :cond_41
+
+    .line 766
+    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
+
+    iget-object v1, v7, Lcom/google/android/finsky/navigationmanager/NavigationState;->backstackName:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Landroid/support/v4/app/FragmentManager;->popBackStack(Ljava/lang/String;I)V
+
+    goto :goto_e
+
+    .line 770
+    :cond_41
+    const/4 v0, 0x2
+
+    if-ne v8, v0, :cond_5c
+
+    .line 783
+    .end local v7           #currTop:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    .end local v8           #currType:I
+    :cond_44
+    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
+
+    invoke-virtual {v0}, Ljava/util/Stack;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_62
+
+    .line 784
+    iget-object v1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
+
+    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
+
+    invoke-virtual {v0}, Ljava/util/Stack;->peek()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/navigationmanager/NavigationState;
+
+    iget-object v0, v0, Lcom/google/android/finsky/navigationmanager/NavigationState;->backstackName:Ljava/lang/String;
+
+    invoke-virtual {v1, v0, v2}, Landroid/support/v4/app/FragmentManager;->popBackStack(Ljava/lang/String;I)V
+
+    goto :goto_e
+
+    .line 776
+    .restart local v7       #currTop:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    .restart local v8       #currType:I
+    :cond_5c
+    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
+
+    invoke-virtual {v0}, Ljava/util/Stack;->pop()Ljava/lang/Object;
+
+    goto :goto_1d
+
+    .line 787
+    .end local v7           #currTop:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    .end local v8           #currType:I
+    :cond_62
+    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
+
+    iget-object v1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
+
+    invoke-virtual {v1, v2}, Landroid/support/v4/app/FragmentManager;->getBackStackEntryAt(I)Landroid/support/v4/app/FragmentManager$BackStackEntry;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/support/v4/app/FragmentManager$BackStackEntry;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Landroid/support/v4/app/FragmentManager;->popBackStack(Ljava/lang/String;I)V
+
+    .line 789
+    if-eqz v9, :cond_8c
+
+    .line 790
+    invoke-virtual {v9}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
+
+    move-result v3
+
+    .line 791
+    .local v3, backendId:I
+    invoke-virtual {v4, v3}, Lcom/google/android/finsky/api/model/DfeToc;->getCorpus(I)Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
+
+    move-result-object v6
+
+    .line 792
+    .local v6, corpus:Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
+    if-eqz v6, :cond_8c
+
+    .line 793
+    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getLandingUrl()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToCorpusHome(Ljava/lang/String;Ljava/lang/String;ILcom/google/android/finsky/api/model/DfeToc;Ljava/lang/String;)V
+
+    goto :goto_e
+
+    .line 800
+    .end local v3           #backendId:I
+    .end local v6           #corpus:Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
+    :cond_8c
     invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToAggregatedHome()V
 
-    goto :goto_c
+    goto/16 :goto_e
 .end method
 
-.method private goToDocPage(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
-    .registers 13
+.method private goToDocPage(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    .registers 17
     .parameter "doc"
     .parameter "originalUrl"
     .parameter "cookie"
     .parameter "referrerUrl"
     .parameter "externalReferrer"
+    .parameter "continueUrl"
     .parameter "replaceTop"
 
     .prologue
-    const/4 v3, 0x2
+    .line 271
+    const/4 v7, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    move-object v5, p5
+
+    move-object v6, p6
+
+    move/from16 v8, p7
+
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToDocPage(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)V
 
     .line 273
+    return-void
+.end method
+
+.method private goToDocPage(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)V
+    .registers 16
+    .parameter "doc"
+    .parameter "originalUrl"
+    .parameter "cookie"
+    .parameter "referrerUrl"
+    .parameter "externalReferrer"
+    .parameter "continueUrl"
+    .parameter "returnAfterPurchase"
+    .parameter "replaceTop"
+
+    .prologue
+    const/4 v5, 0x2
+
+    const/4 v4, 0x5
+
+    .line 290
     invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->canNavigate()Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_8
+    if-nez v3, :cond_9
 
-    .line 307
-    :goto_7
+    .line 334
+    :goto_8
     return-void
 
-    .line 277
-    :cond_8
+    .line 294
+    :cond_9
     invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getDocumentType()I
-
-    move-result v1
-
-    .line 278
-    .local v1, type:I
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
 
     move-result v2
 
-    if-ne v2, v3, :cond_22
+    .line 295
+    .local v2, type:I
+    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
+
+    move-result v3
+
+    if-ne v3, v5, :cond_21
 
     invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->hasAntennaInfo()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_22
+    if-eqz v3, :cond_21
 
-    .line 279
-    sget-object v2, Lcom/google/android/finsky/navigationmanager/NavigationState;->DETAILS:Lcom/google/android/finsky/navigationmanager/NavigationState;
-
+    .line 296
     invoke-static {p1, p2, p3, p4}, Lcom/google/android/finsky/activities/AntennaFragment;->newInstance(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/activities/AntennaFragment;
 
     move-result-object v3
 
-    invoke-direct {p0, v2, v3, p6}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(Lcom/google/android/finsky/navigationmanager/NavigationState;Landroid/support/v4/app/Fragment;Z)V
+    invoke-direct {p0, v4, v3, p8}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(ILandroid/support/v4/app/Fragment;Z)V
 
-    goto :goto_7
+    goto :goto_8
 
-    .line 281
-    :cond_22
+    .line 298
+    :cond_21
     invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
 
-    move-result v2
+    move-result v3
 
-    if-ne v2, v3, :cond_38
+    if-ne v3, v5, :cond_35
 
     invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->hasDealOfTheDayInfo()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_38
+    if-eqz v3, :cond_35
 
-    .line 282
-    sget-object v2, Lcom/google/android/finsky/navigationmanager/NavigationState;->DETAILS:Lcom/google/android/finsky/navigationmanager/NavigationState;
-
+    .line 299
     invoke-static {p1, p2, p3, p4}, Lcom/google/android/finsky/activities/FreeSongOfTheDayFragment;->newInstance(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/activities/FreeSongOfTheDayFragment;
 
     move-result-object v3
 
-    invoke-direct {p0, v2, v3, p6}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(Lcom/google/android/finsky/navigationmanager/NavigationState;Landroid/support/v4/app/Fragment;Z)V
+    invoke-direct {p0, v4, v3, p8}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(ILandroid/support/v4/app/Fragment;Z)V
 
-    goto :goto_7
+    goto :goto_8
 
-    .line 287
-    :cond_38
-    packed-switch v1, :pswitch_data_6e
+    .line 304
+    :cond_35
+    sparse-switch v2, :sswitch_data_68
 
-    .line 302
-    :pswitch_3b
-    sget-object v2, Lcom/google/android/finsky/navigationmanager/NavigationState;->DETAILS:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    .line 322
+    invoke-static/range {p1 .. p7}, Lcom/google/android/finsky/activities/DetailsFragment;->newInstance(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Lcom/google/android/finsky/activities/DetailsFragment;
 
-    invoke-static {p1, p2, p3, p4, p5}, Lcom/google/android/finsky/activities/DetailsFragment;->newInstance(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/activities/DetailsFragment;
+    move-result-object v0
 
-    move-result-object v3
+    .line 330
+    .local v0, detailsFragment:Lcom/google/android/finsky/activities/DetailsFragment;
+    invoke-direct {p0, v4, v0, p8}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(ILandroid/support/v4/app/Fragment;Z)V
 
-    invoke-direct {p0, v2, v3, p6}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(Lcom/google/android/finsky/navigationmanager/NavigationState;Landroid/support/v4/app/Fragment;Z)V
+    goto :goto_8
 
-    goto :goto_7
-
-    .line 291
-    :pswitch_45
-    sget-object v2, Lcom/google/android/finsky/navigationmanager/NavigationState;->DETAILS:Lcom/google/android/finsky/navigationmanager/NavigationState;
-
+    .line 311
+    .end local v0           #detailsFragment:Lcom/google/android/finsky/activities/DetailsFragment;
+    :sswitch_40
     invoke-static {p1, p2, p3, p4}, Lcom/google/android/finsky/activities/CreatorDetailsFragment;->newInstance(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/activities/CreatorDetailsFragment;
 
     move-result-object v3
 
-    invoke-direct {p0, v2, v3, p6}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(Lcom/google/android/finsky/navigationmanager/NavigationState;Landroid/support/v4/app/Fragment;Z)V
+    invoke-direct {p0, v4, v3, p8}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(ILandroid/support/v4/app/Fragment;Z)V
 
-    goto :goto_7
+    goto :goto_8
 
-    .line 295
-    :pswitch_4f
-    iget-object v2, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
+    .line 315
+    :sswitch_48
+    iget-object v3, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/activities/MainActivity;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    .line 296
-    .local v0, resources:Landroid/content/res/Resources;
-    iget-object v2, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
-
-    invoke-virtual {v2}, Lcom/google/android/finsky/activities/MainActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
-
-    move-result-object v2
-
-    const v3, 0x7f0700ef
-
-    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    const v4, 0x7f070201
-
-    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    const/4 v5, 0x0
-
-    invoke-static {v2, v3, v4, v5}, Lcom/google/android/finsky/activities/ErrorDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;Ljava/lang/String;Z)Lcom/google/android/finsky/activities/ErrorDialog;
-
-    goto :goto_7
-
-    .line 287
-    :pswitch_data_6e
-    .packed-switch 0x3
-        :pswitch_45
-        :pswitch_3b
-        :pswitch_3b
-        :pswitch_3b
-        :pswitch_4f
-        :pswitch_45
-        :pswitch_45
-    .end packed-switch
-.end method
-
-.method private isConsumptionAppNeeded(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Z
-    .registers 10
-    .parameter "doc"
-    .parameter "accountName"
-
-    .prologue
-    const/4 v5, 0x0
-
-    const/4 v4, 0x1
-
-    .line 450
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
-
-    move-result v6
-
-    invoke-direct {p0, v6}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getConsumptionAppPackageName(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 452
-    .local v2, packageName:Ljava/lang/String;
-    if-nez v2, :cond_e
-
-    move v4, v5
-
-    .line 468
-    :cond_d
-    :goto_d
-    return v4
-
-    .line 457
-    :cond_e
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Lcom/google/android/finsky/FinskyApp;->getPackageInfoCache()Lcom/google/android/finsky/utils/PackageInfoCache;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v2}, Lcom/google/android/finsky/utils/PackageInfoCache;->isPackageInstalled(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_d
-
-    .line 462
-    iget-object v6, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
-
-    invoke-static {v6, p1, p2}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getConsumptionIntent(Landroid/content/Context;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v3}, Lcom/google/android/finsky/activities/MainActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 463
-    .local v1, intent:Landroid/content/Intent;
-    if-eqz v1, :cond_d
+    .line 316
+    .local v1, resources:Landroid/content/res/Resources;
+    iget-object v3, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
-    .line 466
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Lcom/google/android/finsky/FinskyApp;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-virtual {v3}, Lcom/google/android/finsky/activities/MainActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v3
 
-    .line 467
-    .local v3, pm:Landroid/content/pm/PackageManager;
-    invoke-static {v3, v1}, Lcom/google/android/finsky/utils/IntentUtils;->canResolveIntent(Landroid/content/pm/PackageManager;Landroid/content/Intent;)Z
+    const v4, 0x7f0700fe
 
-    move-result v0
+    invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    .line 468
-    .local v0, installed:Z
-    if-eqz v0, :cond_d
+    move-result-object v4
 
-    move v4, v5
+    const v5, 0x7f07023a
 
-    goto :goto_d
+    invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    const/4 v6, 0x0
+
+    invoke-static {v3, v4, v5, v6}, Lcom/google/android/finsky/activities/ErrorDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;Ljava/lang/String;Z)Lcom/google/android/finsky/activities/ErrorDialog;
+
+    goto :goto_8
+
+    .line 304
+    nop
+
+    :sswitch_data_68
+    .sparse-switch
+        0x3 -> :sswitch_40
+        0x7 -> :sswitch_48
+        0x8 -> :sswitch_40
+        0x9 -> :sswitch_40
+        0x12 -> :sswitch_40
+        0x13 -> :sswitch_40
+        0x14 -> :sswitch_40
+    .end sparse-switch
 .end method
 
-.method private showPage(Lcom/google/android/finsky/navigationmanager/NavigationState;Landroid/support/v4/app/Fragment;)V
+.method private showPage(ILandroid/support/v4/app/Fragment;)V
     .registers 4
-    .parameter "state"
+    .parameter "pageType"
     .parameter "fragment"
 
     .prologue
-    .line 642
+    .line 556
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(Lcom/google/android/finsky/navigationmanager/NavigationState;Landroid/support/v4/app/Fragment;Z)V
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(ILandroid/support/v4/app/Fragment;Z)V
 
-    .line 643
+    .line 557
     return-void
 .end method
 
-.method private showPage(Lcom/google/android/finsky/navigationmanager/NavigationState;Landroid/support/v4/app/Fragment;Z)V
-    .registers 6
-    .parameter "state"
+.method private showPage(ILandroid/support/v4/app/Fragment;Z)V
+    .registers 7
+    .parameter "pageType"
     .parameter "fragment"
     .parameter "replaceTop"
 
     .prologue
-    .line 659
+    .line 573
     invoke-static {}, Lcom/google/android/finsky/utils/FinskyLog;->startTiming()V
 
-    .line 661
-    iget-object v1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
+    .line 575
+    iget-object v2, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
 
-    invoke-virtual {v1}, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
+    invoke-virtual {v2}, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
 
     move-result-object v0
 
-    .line 662
+    .line 576
     .local v0, ft:Landroid/support/v4/app/FragmentTransaction;
-    const v1, 0x7f08003e
+    const v2, 0x7f080033
 
-    invoke-virtual {v0, v1, p2}, Landroid/support/v4/app/FragmentTransaction;->replace(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
+    invoke-virtual {v0, v2, p2}, Landroid/support/v4/app/FragmentTransaction;->replace(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 
-    .line 664
+    .line 578
     if-eqz p3, :cond_14
 
-    .line 665
+    .line 579
     invoke-virtual {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->popBackStack()V
 
-    .line 669
+    .line 581
     :cond_14
-    const-string v1, "unused name"
+    new-instance v1, Lcom/google/android/finsky/navigationmanager/NavigationState;
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentTransaction;->addToBackStack(Ljava/lang/String;)Landroid/support/v4/app/FragmentTransaction;
+    invoke-direct {v1, p1}, Lcom/google/android/finsky/navigationmanager/NavigationState;-><init>(I)V
 
-    .line 670
-    const/16 v1, 0x1001
+    .line 583
+    .local v1, state:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    iget-object v2, v1, Lcom/google/android/finsky/navigationmanager/NavigationState;->backstackName:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentTransaction;->setTransition(I)Landroid/support/v4/app/FragmentTransaction;
+    invoke-virtual {v0, v2}, Landroid/support/v4/app/FragmentTransaction;->addToBackStack(Ljava/lang/String;)Landroid/support/v4/app/FragmentTransaction;
 
-    .line 671
-    iget-object v1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
+    .line 584
+    const/16 v2, 0x1001
 
-    invoke-virtual {v1, p1}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Landroid/support/v4/app/FragmentTransaction;->setTransition(I)Landroid/support/v4/app/FragmentTransaction;
 
-    .line 673
+    .line 585
+    iget-object v2, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
+
+    invoke-virtual {v2, v1}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 587
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->commit()I
 
-    .line 674
+    .line 588
     return-void
 .end method
 
@@ -714,105 +582,162 @@
     .parameter "listener"
 
     .prologue
-    .line 887
+    .line 805
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/app/FragmentManager;->addOnBackStackChangedListener(Landroid/support/v4/app/FragmentManager$OnBackStackChangedListener;)V
 
-    .line 888
+    .line 806
     return-void
 .end method
 
-.method public buy(Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;)V
-    .registers 13
+.method public buy(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 15
+    .parameter "account"
     .parameter "doc"
     .parameter "offerType"
     .parameter "referrerUrl"
     .parameter "externalReferrer"
+    .parameter "continueUrl"
 
     .prologue
-    .line 703
-    invoke-virtual {p1, p2}, Lcom/google/android/finsky/api/model/Document;->needsConfirmation(I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_a
-
-    .line 704
-    invoke-static {p0, p1, p2, p4}, Lcom/google/android/finsky/utils/PurchaseInitiator;->makeFreePurchase(Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;)V
-
-    .line 719
-    :goto_9
-    return-void
-
-    .line 707
-    :cond_a
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
-
-    move-result v7
-
-    .line 708
-    .local v7, contentType:I
-    packed-switch v7, :pswitch_data_2e
-
-    goto :goto_9
-
-    .line 717
-    :pswitch_12
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "Unsupported backend for buy."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 713
-    :pswitch_1a
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getDetailsUrl()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getCookie()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getDocId()Ljava/lang/String;
-
-    move-result-object v6
+    .line 628
+    const/4 v7, 0x0
 
     move-object v0, p0
 
-    move v2, p2
+    move-object v1, p1
 
-    move-object v3, p3
+    move-object v2, p2
 
-    move-object v5, p4
+    move v3, p3
 
-    invoke-virtual/range {v0 .. v6}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToPurchase(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    move-object v4, p4
 
-    goto :goto_9
+    move-object v5, p5
 
-    .line 708
-    :pswitch_data_2e
+    move-object v6, p6
+
+    invoke-virtual/range {v0 .. v7}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->buy(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+
+    .line 629
+    return-void
+.end method
+
+.method public buy(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    .registers 25
+    .parameter "account"
+    .parameter "doc"
+    .parameter "offerType"
+    .parameter "referrerUrl"
+    .parameter "externalReferrer"
+    .parameter "continueUrl"
+    .parameter "returnAfterPurchase"
+
+    .prologue
+    .line 633
+    invoke-virtual/range {p2 .. p3}, Lcom/google/android/finsky/api/model/Document;->needsConfirmation(I)Z
+
+    move-result v5
+
+    if-nez v5, :cond_14
+
+    .line 634
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, p2
+
+    move/from16 v2, p3
+
+    move-object/from16 v3, p5
+
+    move-object/from16 v4, p6
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/google/android/finsky/utils/PurchaseInitiator;->makeFreePurchase(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;)V
+
+    .line 652
+    :goto_13
+    return-void
+
+    .line 638
+    :cond_14
+    invoke-virtual/range {p2 .. p2}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
+
+    move-result v16
+
+    .line 639
+    .local v16, contentType:I
+    packed-switch v16, :pswitch_data_44
+
+    :pswitch_1b
+    goto :goto_13
+
+    .line 650
+    :pswitch_1c
+    new-instance v5, Ljava/lang/IllegalArgumentException;
+
+    const-string v6, "Unsupported backend for buy."
+
+    invoke-direct {v5, v6}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v5
+
+    .line 645
+    :pswitch_24
+    invoke-virtual/range {p2 .. p2}, Lcom/google/android/finsky/api/model/Document;->getDetailsUrl()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual/range {p2 .. p2}, Lcom/google/android/finsky/api/model/Document;->getCookie()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual/range {p2 .. p2}, Lcom/google/android/finsky/api/model/Document;->getDocId()Ljava/lang/String;
+
+    move-result-object v14
+
+    move-object/from16 v5, p0
+
+    move-object/from16 v6, p1
+
+    move/from16 v8, p3
+
+    move-object/from16 v9, p4
+
+    move/from16 v11, p7
+
+    move-object/from16 v12, p5
+
+    move-object/from16 v13, p6
+
+    move/from16 v15, p7
+
+    invoke-virtual/range {v5 .. v15}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToPurchase(Landroid/accounts/Account;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+
+    goto :goto_13
+
+    .line 639
+    :pswitch_data_44
     .packed-switch 0x0
-        :pswitch_12
-        :pswitch_1a
-        :pswitch_1a
-        :pswitch_1a
-        :pswitch_1a
+        :pswitch_1c
+        :pswitch_24
+        :pswitch_24
+        :pswitch_24
+        :pswitch_24
+        :pswitch_1b
+        :pswitch_24
     .end packed-switch
 .end method
 
 .method public canGoUp()Z
-    .registers 7
+    .registers 8
 
     .prologue
     const/4 v3, 0x1
 
     const/4 v4, 0x0
 
-    .line 780
+    .line 715
     iget-object v5, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
     invoke-virtual {v5}, Ljava/util/Stack;->isEmpty()Z
@@ -821,12 +746,12 @@
 
     if-eqz v5, :cond_b
 
-    .line 802
+    .line 737
     :cond_a
     :goto_a
     return v4
 
-    .line 784
+    .line 719
     :cond_b
     iget-object v5, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
@@ -836,24 +761,26 @@
 
     check-cast v1, Lcom/google/android/finsky/navigationmanager/NavigationState;
 
-    .line 785
+    .line 720
     .local v1, currentState:Lcom/google/android/finsky/navigationmanager/NavigationState;
-    sget-object v5, Lcom/google/android/finsky/navigationmanager/NavigationState;->AGGREGATED_HOME:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    iget v5, v1, Lcom/google/android/finsky/navigationmanager/NavigationState;->pageType:I
 
-    if-eq v1, v5, :cond_a
+    if-eq v5, v3, :cond_a
 
-    .line 789
-    sget-object v5, Lcom/google/android/finsky/navigationmanager/NavigationState;->CORPUS_HOME:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    .line 724
+    iget v5, v1, Lcom/google/android/finsky/navigationmanager/NavigationState;->pageType:I
 
-    if-eq v1, v5, :cond_1d
+    const/4 v6, 0x2
+
+    if-eq v5, v6, :cond_1e
 
     move v4, v3
 
-    .line 791
+    .line 726
     goto :goto_a
 
-    .line 794
-    :cond_1d
+    .line 729
+    :cond_1e
     invoke-virtual {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getActivePage()Lcom/google/android/finsky/fragments/PageFragment;
 
     move-result-object v5
@@ -862,11 +789,11 @@
 
     move-result-object v2
 
-    .line 795
+    .line 730
     .local v2, toc:Lcom/google/android/finsky/api/model/DfeToc;
     if-eqz v2, :cond_a
 
-    .line 800
+    .line 735
     invoke-virtual {v2}, Lcom/google/android/finsky/api/model/DfeToc;->getCorpusList()Ljava/util/List;
 
     move-result-object v5
@@ -875,58 +802,50 @@
 
     move-result v0
 
-    .line 802
+    .line 737
     .local v0, corporaCount:I
-    if-le v0, v3, :cond_33
+    if-le v0, v3, :cond_34
 
-    :goto_31
+    :goto_32
     move v4, v3
 
     goto :goto_a
 
-    :cond_33
+    :cond_34
     move v3, v4
 
-    goto :goto_31
+    goto :goto_32
 .end method
 
 .method public canSearch()Z
-    .registers 3
+    .registers 2
 
     .prologue
-    .line 904
-    sget-object v0, Lcom/google/android/finsky/navigationmanager/NavigationManager$6;->$SwitchMap$com$google$android$finsky$navigationmanager$NavigationState:[I
+    .line 822
+    invoke-virtual {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getCurrentPageType()I
 
-    invoke-virtual {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getCurrentPageType()Lcom/google/android/finsky/navigationmanager/NavigationState;
+    move-result v0
 
-    move-result-object v1
+    packed-switch v0, :pswitch_data_c
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/navigationmanager/NavigationState;->ordinal()I
-
-    move-result v1
-
-    aget v0, v0, v1
-
-    packed-switch v0, :pswitch_data_14
-
-    .line 908
+    .line 826
     const/4 v0, 0x1
 
-    :goto_10
+    :goto_8
     return v0
 
-    .line 906
-    :pswitch_11
+    .line 824
+    :pswitch_9
     const/4 v0, 0x0
 
-    goto :goto_10
+    goto :goto_8
 
-    .line 904
+    .line 822
     nop
 
-    :pswitch_data_14
-    .packed-switch 0x6
-        :pswitch_11
+    :pswitch_data_c
+    .packed-switch 0x8
+        :pswitch_9
     .end packed-switch
 .end method
 
@@ -934,7 +853,7 @@
     .registers 2
 
     .prologue
-    .line 90
+    .line 83
     :goto_0
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
@@ -944,19 +863,19 @@
 
     if-nez v0, :cond_13
 
-    .line 91
+    .line 84
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->pop()Ljava/lang/Object;
 
-    .line 92
+    .line 85
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->popBackStack()V
 
     goto :goto_0
 
-    .line 94
+    .line 87
     :cond_13
     return-void
 .end method
@@ -966,14 +885,14 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 399
+    .line 445
     const-string v3, "nm_state"
 
     invoke-virtual {p1, v3}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 402
+    .line 448
     .local v0, contents:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/navigationmanager/NavigationState;>;"
     if-eqz v0, :cond_14
 
@@ -989,15 +908,15 @@
 
     if-nez v3, :cond_16
 
-    .line 405
+    .line 451
     :cond_14
     const/4 v3, 0x0
 
-    .line 418
+    .line 464
     :goto_15
     return v3
 
-    .line 408
+    .line 454
     :cond_16
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1017,7 +936,7 @@
 
     check-cast v2, Lcom/google/android/finsky/navigationmanager/NavigationState;
 
-    .line 409
+    .line 455
     .local v2, st:Lcom/google/android/finsky/navigationmanager/NavigationState;
     iget-object v3, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
@@ -1025,7 +944,7 @@
 
     goto :goto_1a
 
-    .line 416
+    .line 462
     .end local v2           #st:Lcom/google/android/finsky/navigationmanager/NavigationState;
     :cond_2c
     invoke-virtual {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getActivePage()Lcom/google/android/finsky/fragments/PageFragment;
@@ -1034,7 +953,7 @@
 
     invoke-virtual {v3}, Lcom/google/android/finsky/fragments/PageFragment;->rebindActionBar()V
 
-    .line 418
+    .line 464
     const/4 v3, 0x1
 
     goto :goto_15
@@ -1044,7 +963,7 @@
     .registers 2
 
     .prologue
-    .line 900
+    .line 818
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->executePendingTransactions()Z
@@ -1058,10 +977,10 @@
     .registers 3
 
     .prologue
-    .line 446
+    .line 492
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
 
-    const v1, 0x7f08003e
+    const v1, 0x7f080033
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentManager;->findFragmentById(I)Landroid/support/v4/app/Fragment;
 
@@ -1072,28 +991,71 @@
     return-object v0
 .end method
 
-.method public getBuyImmediateClickListener(Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;)Landroid/view/View$OnClickListener;
-    .registers 11
+.method public getBuyImmediateClickListener(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/view/View$OnClickListener;
+    .registers 15
+    .parameter "account"
     .parameter "doc"
     .parameter "offerType"
     .parameter "referrerUrl"
     .parameter "externalReferrer"
+    .parameter "continueUrl"
 
     .prologue
-    .line 686
+    .line 601
+    const/4 v7, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move v3, p3
+
+    move-object v4, p4
+
+    move-object v5, p5
+
+    move-object v6, p6
+
+    invoke-virtual/range {v0 .. v7}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getBuyImmediateClickListener(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/view/View$OnClickListener;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getBuyImmediateClickListener(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/view/View$OnClickListener;
+    .registers 17
+    .parameter "account"
+    .parameter "doc"
+    .parameter "offerType"
+    .parameter "referrerUrl"
+    .parameter "externalReferrer"
+    .parameter "continueUrl"
+    .parameter "returnAfterPurchase"
+
+    .prologue
+    .line 608
     new-instance v0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;
 
     move-object v1, p0
 
     move-object v2, p1
 
-    move v3, p2
+    move-object v3, p2
 
-    move-object v4, p3
+    move v4, p3
 
     move-object v5, p4
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;-><init>(Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;)V
+    move-object v6, p5
+
+    move-object v7, p6
+
+    move/from16 v8, p7
+
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;-><init>(Lcom/google/android/finsky/navigationmanager/NavigationManager;Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     return-object v0
 .end method
@@ -1104,23 +1066,23 @@
     .parameter "referrerUrl"
 
     .prologue
-    .line 606
+    .line 520
     invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->hasLinkAnnotation()Z
 
     move-result v0
 
     if-eqz v0, :cond_c
 
-    .line 607
+    .line 521
     new-instance v0, Lcom/google/android/finsky/navigationmanager/NavigationManager$1;
 
     invoke-direct {v0, p0, p1}, Lcom/google/android/finsky/navigationmanager/NavigationManager$1;-><init>(Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/api/model/Document;)V
 
-    .line 625
+    .line 539
     :goto_b
     return-object v0
 
-    .line 615
+    .line 529
     :cond_c
     invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->hasContainerAnnotation()Z
 
@@ -1142,14 +1104,14 @@
 
     if-nez v0, :cond_26
 
-    .line 617
+    .line 531
     new-instance v0, Lcom/google/android/finsky/navigationmanager/NavigationManager$2;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/google/android/finsky/navigationmanager/NavigationManager$2;-><init>(Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)V
 
     goto :goto_b
 
-    .line 625
+    .line 539
     :cond_26
     new-instance v0, Lcom/google/android/finsky/navigationmanager/NavigationManager$3;
 
@@ -1164,29 +1126,29 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 742
+    .line 676
     invoke-virtual {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getActivePage()Lcom/google/android/finsky/fragments/PageFragment;
 
     move-result-object v0
 
-    .line 743
+    .line 677
     .local v0, active:Lcom/google/android/finsky/fragments/PageFragment;
     if-nez v0, :cond_8
 
-    .line 749
+    .line 683
     .end local v0           #active:Lcom/google/android/finsky/fragments/PageFragment;
     :cond_7
     :goto_7
     return-object v1
 
-    .line 746
+    .line 680
     .restart local v0       #active:Lcom/google/android/finsky/fragments/PageFragment;
     :cond_8
     instance-of v2, v0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;
 
     if-eqz v2, :cond_7
 
-    .line 747
+    .line 681
     check-cast v0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;
 
     .end local v0           #active:Lcom/google/android/finsky/fragments/PageFragment;
@@ -1197,25 +1159,25 @@
     goto :goto_7
 .end method
 
-.method public getCurrentPageType()Lcom/google/android/finsky/navigationmanager/NavigationState;
+.method public getCurrentPageType()I
     .registers 2
 
     .prologue
-    .line 346
+    .line 391
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_a
 
-    sget-object v0, Lcom/google/android/finsky/navigationmanager/NavigationState;->INITIAL:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    const/4 v0, 0x0
 
-    :goto_a
-    return-object v0
+    :goto_9
+    return v0
 
-    :cond_b
+    :cond_a
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->peek()Ljava/lang/Object;
@@ -1224,19 +1186,21 @@
 
     check-cast v0, Lcom/google/android/finsky/navigationmanager/NavigationState;
 
-    goto :goto_a
+    iget v0, v0, Lcom/google/android/finsky/navigationmanager/NavigationState;->pageType:I
+
+    goto :goto_9
 .end method
 
-.method public getOpenClickListener(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/view/View$OnClickListener;
+.method public getOpenClickListener(Lcom/google/android/finsky/api/model/Document;Landroid/accounts/Account;)Landroid/view/View$OnClickListener;
     .registers 4
     .parameter "doc"
-    .parameter "accountName"
+    .parameter "account"
 
     .prologue
-    .line 726
+    .line 660
     new-instance v0, Lcom/google/android/finsky/navigationmanager/NavigationManager$5;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/google/android/finsky/navigationmanager/NavigationManager$5;-><init>(Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p2, p1}, Lcom/google/android/finsky/navigationmanager/NavigationManager$5;-><init>(Lcom/google/android/finsky/navigationmanager/NavigationManager;Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;)V
 
     return-object v0
 .end method
@@ -1247,7 +1211,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 370
+    .line 416
     iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
     if-eqz v4, :cond_d
@@ -1260,17 +1224,17 @@
 
     if-eqz v4, :cond_e
 
-    .line 394
+    .line 440
     :cond_d
     :goto_d
     return v3
 
-    .line 375
+    .line 421
     :cond_e
     :try_start_e
     invoke-static {}, Lcom/google/android/finsky/utils/FinskyLog;->startTiming()V
 
-    .line 376
+    .line 422
     iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
     invoke-virtual {v4}, Ljava/util/Stack;->pop()Ljava/lang/Object;
@@ -1279,13 +1243,13 @@
 
     check-cast v0, Lcom/google/android/finsky/navigationmanager/NavigationState;
 
-    .line 377
+    .line 423
     .local v0, currentEntry:Lcom/google/android/finsky/navigationmanager/NavigationState;
     iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
 
     invoke-virtual {v4}, Landroid/support/v4/app/FragmentManager;->popBackStack()V
 
-    .line 379
+    .line 425
     iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
     invoke-virtual {v4}, Ljava/util/Stack;->peek()Ljava/lang/Object;
@@ -1296,19 +1260,19 @@
     :try_end_26
     .catch Ljava/util/EmptyStackException; {:try_start_e .. :try_end_26} :catch_28
 
-    .line 387
+    .line 433
     .local v2, newStackEntry:Lcom/google/android/finsky/navigationmanager/NavigationState;
     const/4 v3, 0x1
 
     goto :goto_d
 
-    .line 389
+    .line 435
     .end local v0           #currentEntry:Lcom/google/android/finsky/navigationmanager/NavigationState;
     .end local v2           #newStackEntry:Lcom/google/android/finsky/navigationmanager/NavigationState;
     :catch_28
     move-exception v1
 
-    .line 394
+    .line 440
     .local v1, ex:Ljava/util/EmptyStackException;
     goto :goto_d
 .end method
@@ -1322,24 +1286,24 @@
     .parameter "dfeToc"
 
     .prologue
-    .line 181
+    .line 169
     invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->canNavigate()Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_e
 
-    .line 182
-    sget-object v0, Lcom/google/android/finsky/navigationmanager/NavigationState;->BROWSE:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    .line 170
+    const/4 v0, 0x4
 
     invoke-static {p1, p2, p3, p4, p5}, Lcom/google/android/finsky/activities/TabbedBrowseFragment;->newInstance(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Lcom/google/android/finsky/api/model/DfeToc;)Lcom/google/android/finsky/activities/TabbedBrowseFragment;
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(Lcom/google/android/finsky/navigationmanager/NavigationState;Landroid/support/v4/app/Fragment;)V
+    invoke-direct {p0, v0, v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(ILandroid/support/v4/app/Fragment;)V
 
-    .line 186
-    :cond_f
+    .line 174
+    :cond_e
     return-void
 .end method
 
@@ -1348,12 +1312,12 @@
     .parameter "dfeToc"
 
     .prologue
-    .line 156
+    .line 148
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToAggregatedHome(Lcom/google/android/finsky/api/model/DfeToc;Ljava/lang/String;)V
 
-    .line 157
+    .line 149
     return-void
 .end method
 
@@ -1365,25 +1329,25 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 124
+    .line 112
     if-nez p1, :cond_4
 
-    .line 153
+    .line 140
     :goto_3
     return-void
 
-    .line 127
+    .line 115
     :cond_4
     invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->canNavigate()Z
 
     move-result v3
 
-    if-eqz v3, :cond_5a
+    if-eqz v3, :cond_53
 
-    .line 129
+    .line 117
     invoke-virtual {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->clear()V
 
-    .line 130
+    .line 118
     invoke-virtual {p1}, Lcom/google/android/finsky/api/model/DfeToc;->getCorpusList()Ljava/util/List;
 
     move-result-object v3
@@ -1392,9 +1356,9 @@
 
     move-result v3
 
-    if-ne v3, v6, :cond_38
+    if-ne v3, v6, :cond_37
 
-    .line 132
+    .line 120
     invoke-virtual {p1}, Lcom/google/android/finsky/api/model/DfeToc;->getCorpusList()Ljava/util/List;
 
     move-result-object v3
@@ -1407,7 +1371,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
 
-    .line 133
+    .line 121
     .local v0, corpusMetadata:Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getLandingUrl()Ljava/lang/String;
 
@@ -1425,18 +1389,18 @@
 
     move-result-object v1
 
-    .line 136
+    .line 124
     .local v1, fragment:Lcom/google/android/finsky/activities/TabbedBrowseFragment;
-    sget-object v3, Lcom/google/android/finsky/navigationmanager/NavigationState;->CORPUS_HOME:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    const/4 v3, 0x2
 
-    invoke-direct {p0, v3, v1, v6}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(Lcom/google/android/finsky/navigationmanager/NavigationState;Landroid/support/v4/app/Fragment;Z)V
+    invoke-direct {p0, v3, v1, v6}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(ILandroid/support/v4/app/Fragment;Z)V
 
     goto :goto_3
 
-    .line 139
+    .line 127
     .end local v0           #corpusMetadata:Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
     .end local v1           #fragment:Lcom/google/android/finsky/activities/TabbedBrowseFragment;
-    :cond_38
+    :cond_37
     invoke-virtual {p1}, Lcom/google/android/finsky/api/model/DfeToc;->getHomeUrl()Ljava/lang/String;
 
     move-result-object v3
@@ -1445,29 +1409,23 @@
 
     move-result v3
 
-    if-nez v3, :cond_50
+    if-nez v3, :cond_49
 
-    .line 140
+    .line 128
     invoke-virtual {p1}, Lcom/google/android/finsky/api/model/DfeToc;->getHomeUrl()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 145
+    .line 133
     .local v2, landingUrl:Ljava/lang/String;
-    :goto_46
-    sget-object v3, Lcom/google/android/finsky/navigationmanager/NavigationState;->AGGREGATED_HOME:Lcom/google/android/finsky/navigationmanager/NavigationState;
-
-    invoke-static {p1, v2, p2}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->newInstance(Lcom/google/android/finsky/api/model/DfeToc;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/activities/CorporaHomeFragment;
-
-    move-result-object v4
-
-    invoke-direct {p0, v3, v4, v6}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(Lcom/google/android/finsky/navigationmanager/NavigationState;Landroid/support/v4/app/Fragment;Z)V
+    :goto_45
+    invoke-virtual {p0, p1, v2, p2}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToAggregatedHome(Lcom/google/android/finsky/api/model/DfeToc;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_3
 
-    .line 143
+    .line 131
     .end local v2           #landingUrl:Ljava/lang/String;
-    :cond_50
+    :cond_49
     const/4 v3, 0x3
 
     invoke-virtual {p1, v3}, Lcom/google/android/finsky/api/model/DfeToc;->getCorpus(I)Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
@@ -1479,11 +1437,11 @@
     move-result-object v2
 
     .restart local v2       #landingUrl:Ljava/lang/String;
-    goto :goto_46
+    goto :goto_45
 
-    .line 151
+    .line 138
     .end local v2           #landingUrl:Ljava/lang/String;
-    :cond_5a
+    :cond_53
     iget-object v3, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
     invoke-virtual {v3}, Lcom/google/android/finsky/activities/MainActivity;->restartOnResume()V
@@ -1491,12 +1449,32 @@
     goto :goto_3
 .end method
 
+.method public goToAggregatedHome(Lcom/google/android/finsky/api/model/DfeToc;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 6
+    .parameter "dfeToc"
+    .parameter "landingUrl"
+    .parameter "referrerUrl"
+
+    .prologue
+    const/4 v1, 0x1
+
+    .line 143
+    invoke-static {p1, p2, p3}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->newInstance(Lcom/google/android/finsky/api/model/DfeToc;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/activities/CorporaHomeFragment;
+
+    move-result-object v0
+
+    invoke-direct {p0, v1, v0, v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(ILandroid/support/v4/app/Fragment;Z)V
+
+    .line 145
+    return-void
+.end method
+
 .method public goToAllReviews(Lcom/google/android/finsky/api/model/Document;)V
     .registers 3
     .parameter "document"
 
     .prologue
-    .line 189
+    .line 177
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
     if-eqz v0, :cond_c
@@ -1509,45 +1487,18 @@
 
     if-eqz v0, :cond_d
 
-    .line 194
+    .line 182
     :cond_c
     :goto_c
     return-void
 
-    .line 193
+    .line 181
     :cond_d
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
     invoke-static {v0, p1}, Lcom/google/android/finsky/activities/ReviewsActivity;->show(Landroid/content/Context;Lcom/google/android/finsky/api/model/Document;)V
 
     goto :goto_c
-.end method
-
-.method public goToCorpusHome(Ljava/lang/String;Ljava/lang/String;ILcom/google/android/finsky/api/model/DfeToc;)V
-    .registers 11
-    .parameter "url"
-    .parameter "title"
-    .parameter "backendId"
-    .parameter "dfeToc"
-
-    .prologue
-    .line 176
-    const/4 v5, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move v3, p3
-
-    move-object v4, p4
-
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToCorpusHome(Ljava/lang/String;Ljava/lang/String;ILcom/google/android/finsky/api/model/DfeToc;Ljava/lang/String;)V
-
-    .line 177
-    return-void
 .end method
 
 .method public goToCorpusHome(Ljava/lang/String;Ljava/lang/String;ILcom/google/android/finsky/api/model/DfeToc;Ljava/lang/String;)V
@@ -1559,41 +1510,42 @@
     .parameter "referrerUrl"
 
     .prologue
-    .line 168
+    .line 160
     invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->canNavigate()Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_e
 
-    .line 170
-    sget-object v0, Lcom/google/android/finsky/navigationmanager/NavigationState;->CORPUS_HOME:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    .line 162
+    const/4 v0, 0x2
 
     invoke-static {p1, p2, p3, p5, p4}, Lcom/google/android/finsky/activities/TabbedBrowseFragment;->newInstance(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Lcom/google/android/finsky/api/model/DfeToc;)Lcom/google/android/finsky/activities/TabbedBrowseFragment;
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(Lcom/google/android/finsky/navigationmanager/NavigationState;Landroid/support/v4/app/Fragment;)V
+    invoke-direct {p0, v0, v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(ILandroid/support/v4/app/Fragment;)V
 
-    .line 173
-    :cond_f
+    .line 165
+    :cond_e
     return-void
 .end method
 
-.method public goToDocPage(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 12
+.method public goToDocPage(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 14
     .parameter "doc"
     .parameter "cookie"
     .parameter "referrerUrl"
     .parameter "externalReferrer"
+    .parameter "continueUrl"
 
     .prologue
-    .line 250
+    .line 255
     invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getDetailsUrl()Ljava/lang/String;
 
     move-result-object v2
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
     move-object v0, p0
 
@@ -1605,40 +1557,77 @@
 
     move-object v5, p4
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToDocPage(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    move-object v6, p5
 
-    .line 251
+    invoke-direct/range {v0 .. v7}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToDocPage(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+
+    .line 257
     return-void
 .end method
 
-.method public goToDocPage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
+.method public goToDocPage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 8
     .parameter "url"
     .parameter "cookie"
     .parameter "referrerUrl"
     .parameter "externalReferrer"
+    .parameter "continueUrl"
 
     .prologue
-    .line 237
+    .line 231
     invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->canNavigate()Z
 
     move-result v0
 
     if-nez v0, :cond_7
 
-    .line 242
+    .line 237
     :goto_6
     return-void
 
-    .line 240
+    .line 234
     :cond_7
-    sget-object v0, Lcom/google/android/finsky/navigationmanager/NavigationState;->DETAILS_SHIM:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    const/4 v0, 0x6
 
-    invoke-static {p1, p2, p3, p4}, Lcom/google/android/finsky/utils/DetailsShimFragment;->newInstance(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/utils/DetailsShimFragment;
+    invoke-static {p1, p2, p3, p4, p5}, Lcom/google/android/finsky/utils/DetailsShimFragment;->newInstance(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/utils/DetailsShimFragment;
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(Lcom/google/android/finsky/navigationmanager/NavigationState;Landroid/support/v4/app/Fragment;)V
+    invoke-direct {p0, v0, v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(ILandroid/support/v4/app/Fragment;)V
+
+    goto :goto_6
+.end method
+
+.method public goToDocPage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    .registers 9
+    .parameter "url"
+    .parameter "cookie"
+    .parameter "referrerUrl"
+    .parameter "externalReferrer"
+    .parameter "continueUrl"
+    .parameter "returnAfterPurchase"
+
+    .prologue
+    .line 241
+    invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->canNavigate()Z
+
+    move-result v0
+
+    if-nez v0, :cond_7
+
+    .line 247
+    :goto_6
+    return-void
+
+    .line 244
+    :cond_7
+    const/4 v0, 0x6
+
+    invoke-static/range {p1 .. p6}, Lcom/google/android/finsky/utils/DetailsShimFragment;->newInstance(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Lcom/google/android/finsky/utils/DetailsShimFragment;
+
+    move-result-object v1
+
+    invoke-direct {p0, v0, v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(ILandroid/support/v4/app/Fragment;)V
 
     goto :goto_6
 .end method
@@ -1648,130 +1637,31 @@
     .parameter "url"
 
     .prologue
-    .line 226
+    .line 220
     invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->canNavigate()Z
 
     move-result v0
 
     if-eqz v0, :cond_b
 
-    .line 227
+    .line 221
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
     invoke-static {v0, p1}, Lcom/google/android/finsky/activities/FlagItemDialog;->show(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 229
+    .line 223
     :cond_b
     return-void
 .end method
 
-.method public goToMyDownloads()V
-    .registers 3
+.method public goToImagesLightbox(Lcom/google/android/finsky/api/model/Document;II)V
+    .registers 5
+    .parameter "doc"
+    .parameter "initialIndex"
+    .parameter "imageType"
 
     .prologue
-    .line 197
-    invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->canNavigate()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_f
-
-    .line 198
-    sget-object v0, Lcom/google/android/finsky/navigationmanager/NavigationState;->MY_DOWNLOADS:Lcom/google/android/finsky/navigationmanager/NavigationState;
-
-    invoke-static {}, Lcom/google/android/finsky/activities/MyDownloadsFragment;->newInstance()Lcom/google/android/finsky/activities/MyDownloadsFragment;
-
-    move-result-object v1
-
-    invoke-direct {p0, v0, v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(Lcom/google/android/finsky/navigationmanager/NavigationState;Landroid/support/v4/app/Fragment;)V
-
-    .line 200
-    :cond_f
-    return-void
-.end method
-
-.method public goToPurchase(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 15
-    .parameter "url"
-    .parameter "offerType"
-    .parameter "referrerUrl"
-    .parameter "listReferrerCookie"
-    .parameter "externalReferrer"
-    .parameter "docIdToPurchase"
-
-    .prologue
-    .line 328
-    const/4 v3, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move v2, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    move-object v7, p6
-
-    invoke-virtual/range {v0 .. v7}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToPurchase(Ljava/lang/String;IZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 330
-    return-void
-.end method
-
-.method public goToPurchase(Ljava/lang/String;IZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 16
-    .parameter "url"
-    .parameter "offerType"
-    .parameter "isDirectLink"
-    .parameter "referrerUrl"
-    .parameter "listReferrerCookie"
-    .parameter "externalReferrer"
-    .parameter "docIdToPurchase"
-
-    .prologue
-    .line 339
-    invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->canNavigate()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_12
-
-    .line 340
-    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
-
-    move-object v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move-object v4, p4
-
-    move-object v5, p5
-
-    move-object v6, p6
-
-    move-object v7, p7
-
-    invoke-static/range {v0 .. v7}, Lcom/google/android/finsky/activities/PurchaseDialog;->show(Landroid/content/Context;Ljava/lang/String;IZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 343
-    :cond_12
-    return-void
-.end method
-
-.method public goToScreenshots(Lcom/google/android/finsky/api/model/Document;I)V
-    .registers 6
-    .parameter
-    .parameter
-
-    .prologue
-    .line 315
+    .line 353
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
     if-eqz v0, :cond_c
@@ -1784,42 +1674,201 @@
 
     if-eqz v0, :cond_d
 
-    .line 324
+    .line 358
     :cond_c
     :goto_c
     return-void
 
-    .line 319
+    .line 357
     :cond_d
-    new-instance v0, Landroid/content/Intent;
+    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
-    const-string v1, "android.intent.action.VIEW"
-
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 320
-    iget-object v1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
-
-    const-class v2, Lcom/google/android/finsky/activities/ScreenshotsActivity;
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
-
-    .line 321
-    const-string v1, "finsky.ScreenshotsFragment.document"
-
-    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
-
-    .line 322
-    const-string v1, "finsky.ScreenshotsFragment.selectedIndex"
-
-    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    .line 323
-    iget-object v1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
-
-    invoke-virtual {v1, v0}, Lcom/google/android/finsky/activities/MainActivity;->startActivity(Landroid/content/Intent;)V
+    invoke-static {v0, p1, p2, p3}, Lcom/google/android/finsky/activities/ScreenshotsActivity;->show(Landroid/content/Context;Lcom/google/android/finsky/api/model/Document;II)V
 
     goto :goto_c
+.end method
+
+.method public goToMyDownloads(Lcom/google/android/finsky/api/model/DfeToc;)V
+    .registers 4
+    .parameter "dfeToc"
+
+    .prologue
+    .line 185
+    invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->canNavigate()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_e
+
+    .line 186
+    const/4 v0, 0x3
+
+    invoke-static {p1}, Lcom/google/android/finsky/activities/myapps/MyAppsTabbedFragment;->newInstance(Lcom/google/android/finsky/api/model/DfeToc;)Lcom/google/android/finsky/activities/myapps/MyAppsTabbedFragment;
+
+    move-result-object v1
+
+    invoke-direct {p0, v0, v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(ILandroid/support/v4/app/Fragment;)V
+
+    .line 189
+    :cond_e
+    return-void
+.end method
+
+.method public goToMyWishlist()V
+    .registers 3
+
+    .prologue
+    .line 192
+    invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->canNavigate()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_10
+
+    .line 193
+    const/16 v0, 0xa
+
+    new-instance v1, Lcom/google/android/finsky/activities/mywishlist/MyWishlistFragment;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/activities/mywishlist/MyWishlistFragment;-><init>()V
+
+    invoke-direct {p0, v0, v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(ILandroid/support/v4/app/Fragment;)V
+
+    .line 196
+    :cond_10
+    return-void
+.end method
+
+.method public goToPurchase(Landroid/accounts/Account;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    .registers 21
+    .parameter "account"
+    .parameter "url"
+    .parameter "offerType"
+    .parameter "referrerUrl"
+    .parameter "listReferrerCookie"
+    .parameter "externalReferrer"
+    .parameter "continueUrl"
+    .parameter "docIdToPurchase"
+    .parameter "isSynchronous"
+
+    .prologue
+    .line 367
+    const/4 v6, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move v3, p3
+
+    move-object v4, p4
+
+    move-object/from16 v5, p5
+
+    move-object/from16 v7, p6
+
+    move-object/from16 v8, p7
+
+    move-object/from16 v9, p8
+
+    move/from16 v10, p9
+
+    invoke-virtual/range {v0 .. v10}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToPurchase(Landroid/accounts/Account;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+
+    .line 369
+    return-void
+.end method
+
+.method public goToPurchase(Landroid/accounts/Account;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    .registers 20
+    .parameter "account"
+    .parameter "url"
+    .parameter "offerType"
+    .parameter "referrerUrl"
+    .parameter "listReferrerCookie"
+    .parameter "isDirectLinkPurchase"
+    .parameter "externalReferrer"
+    .parameter "continueUrl"
+    .parameter "docIdToPurchase"
+    .parameter "isSynchronous"
+
+    .prologue
+    .line 378
+    invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->canNavigate()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_18
+
+    .line 379
+    if-eqz p10, :cond_19
+
+    .line 380
+    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
+
+    const/16 v8, 0x21
+
+    move-object v1, p2
+
+    move v2, p3
+
+    move-object v3, p4
+
+    move-object v4, p5
+
+    move v5, p6
+
+    move-object/from16 v6, p7
+
+    move-object/from16 v7, p9
+
+    invoke-static/range {v0 .. v8}, Lcom/google/android/finsky/activities/SynchronousPurchaseActivity;->show(Landroid/app/Activity;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;I)V
+
+    .line 388
+    :cond_18
+    :goto_18
+    return-void
+
+    .line 384
+    :cond_19
+    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move v3, p3
+
+    move-object v4, p4
+
+    move-object v5, p5
+
+    move-object/from16 v6, p7
+
+    move-object/from16 v7, p8
+
+    move-object/from16 v8, p9
+
+    invoke-static/range {v0 .. v8}, Lcom/google/android/finsky/activities/PurchaseDialog;->show(Landroid/content/Context;Landroid/accounts/Account;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_18
+.end method
+
+.method public goToScreenshots(Lcom/google/android/finsky/api/model/Document;I)V
+    .registers 4
+    .parameter "doc"
+    .parameter "initialIndex"
+
+    .prologue
+    .line 342
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, p1, p2, v0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToImagesLightbox(Lcom/google/android/finsky/api/model/Document;II)V
+
+    .line 343
+    return-void
 .end method
 
 .method public goToSearch(Ljava/lang/String;ILjava/lang/String;)V
@@ -1829,14 +1878,14 @@
     .parameter "referrerUrl"
 
     .prologue
-    .line 203
-    invoke-static {p1, p2}, Lcom/google/android/finsky/api/DfeApi;->formSearchUrl(Ljava/lang/String;I)Ljava/lang/String;
+    .line 199
+    invoke-static {p1, p2}, Lcom/google/android/finsky/api/DfeUtils;->formSearchUrl(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p0, p1, v0, p3}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToSearch(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 204
+    .line 200
     return-void
 .end method
 
@@ -1847,15 +1896,15 @@
     .parameter "referrerUrl"
 
     .prologue
-    .line 207
+    .line 203
     invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->canNavigate()Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_f
 
-    .line 208
-    sget-object v0, Lcom/google/android/finsky/navigationmanager/NavigationState;->SEARCH:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    .line 204
+    const/4 v0, 0x7
 
     invoke-static {p1, p2, p3}, Lcom/google/android/finsky/activities/SearchFragment;->newInstance(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/activities/SearchFragment;
 
@@ -1863,18 +1912,18 @@
 
     const/4 v2, 0x0
 
-    invoke-direct {p0, v0, v1, v2}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(Lcom/google/android/finsky/navigationmanager/NavigationState;Landroid/support/v4/app/Fragment;Z)V
+    invoke-direct {p0, v0, v1, v2}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(ILandroid/support/v4/app/Fragment;Z)V
 
-    .line 211
-    :cond_10
+    .line 207
+    :cond_f
     return-void
 .end method
 
 .method public goUp()V
-    .registers 4
+    .registers 3
 
     .prologue
-    .line 753
+    .line 687
     iget-object v1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
     if-eqz v1, :cond_14
@@ -1895,12 +1944,12 @@
 
     if-eqz v1, :cond_15
 
-    .line 773
+    .line 708
     :cond_14
     :goto_14
     return-void
 
-    .line 757
+    .line 691
     :cond_15
     iget-object v1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
@@ -1910,50 +1959,47 @@
 
     check-cast v0, Lcom/google/android/finsky/navigationmanager/NavigationState;
 
-    .line 758
+    .line 692
     .local v0, currentState:Lcom/google/android/finsky/navigationmanager/NavigationState;
-    sget-object v1, Lcom/google/android/finsky/navigationmanager/NavigationManager$6;->$SwitchMap$com$google$android$finsky$navigationmanager$NavigationState:[I
+    iget v1, v0, Lcom/google/android/finsky/navigationmanager/NavigationState;->pageType:I
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/navigationmanager/NavigationState;->ordinal()I
+    packed-switch v1, :pswitch_data_30
 
-    move-result v2
-
-    aget v1, v1, v2
-
-    packed-switch v1, :pswitch_data_36
-
+    :pswitch_22
     goto :goto_14
 
-    .line 764
-    :pswitch_29
-    invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToCorpusHome()V
-
-    goto :goto_14
-
-    .line 767
-    :pswitch_2d
-    invoke-virtual {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goBack()Z
-
-    goto :goto_14
-
-    .line 770
-    :pswitch_31
+    .line 705
+    :pswitch_23
     invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToAggregatedHome()V
 
     goto :goto_14
 
-    .line 758
+    .line 699
+    :pswitch_27
+    invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToCorpusHome()V
+
+    goto :goto_14
+
+    .line 702
+    :pswitch_2b
+    invoke-virtual {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goBack()Z
+
+    goto :goto_14
+
+    .line 692
     nop
 
-    :pswitch_data_36
-    .packed-switch 0x1
-        :pswitch_29
-        :pswitch_29
-        :pswitch_29
-        :pswitch_29
-        :pswitch_29
-        :pswitch_2d
-        :pswitch_31
+    :pswitch_data_30
+    .packed-switch 0x2
+        :pswitch_23
+        :pswitch_27
+        :pswitch_27
+        :pswitch_27
+        :pswitch_27
+        :pswitch_27
+        :pswitch_2b
+        :pswitch_22
+        :pswitch_27
     .end packed-switch
 .end method
 
@@ -1962,16 +2008,16 @@
     .parameter "url"
 
     .prologue
-    .line 115
-    sget-object v0, Lcom/google/android/finsky/navigationmanager/NavigationState;->LINK_RESOLVER:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    .line 104
+    const/16 v0, 0x9
 
     invoke-static {p1}, Lcom/google/android/finsky/fragments/DeepLinkShimFragment;->newInstance(Ljava/lang/String;)Landroid/support/v4/app/Fragment;
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(Lcom/google/android/finsky/navigationmanager/NavigationState;Landroid/support/v4/app/Fragment;)V
+    invoke-direct {p0, v0, v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(ILandroid/support/v4/app/Fragment;)V
 
-    .line 116
+    .line 105
     return-void
 .end method
 
@@ -1980,10 +2026,10 @@
     .parameter "activity"
 
     .prologue
-    .line 100
+    .line 93
     iput-object p1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
-    .line 101
+    .line 94
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/activities/MainActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
@@ -1992,7 +2038,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
 
-    .line 102
+    .line 95
     return-void
 .end method
 
@@ -2000,7 +2046,7 @@
     .registers 2
 
     .prologue
-    .line 776
+    .line 711
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->isEmpty()Z
@@ -2011,163 +2057,78 @@
 .end method
 
 .method public onPositiveClick(ILandroid/os/Bundle;)V
-    .registers 6
+    .registers 9
     .parameter "requestCode"
     .parameter "extraArguments"
 
     .prologue
     const/4 v2, 0x0
 
-    .line 526
-    const/4 v1, 0x1
+    .line 503
+    const/4 v0, 0x1
 
-    if-ne p1, v1, :cond_17
+    if-ne p1, v0, :cond_1b
 
-    if-eqz p2, :cond_17
+    if-eqz p2, :cond_1b
 
-    .line 527
-    const-string v1, "dialog_details_url"
+    .line 504
+    const-string v0, "dialog_details_url"
 
-    invoke-virtual {p2, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 528
-    .local v0, detailsUrl:Ljava/lang/String;
-    if-eqz v0, :cond_17
-
-    invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->canNavigate()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_17
-
-    .line 529
-    invoke-virtual {p0, v0, v2, v2, v2}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToDocPage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 532
-    .end local v0           #detailsUrl:Ljava/lang/String;
-    :cond_17
-    return-void
-.end method
-
-.method public openItem(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)V
-    .registers 10
-    .parameter "doc"
-    .parameter "accountName"
-
-    .prologue
-    const/4 v6, 0x0
-
-    .line 542
-    invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->isConsumptionAppNeeded(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_f
-
-    .line 543
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
-
-    move-result v3
-
-    invoke-virtual {p0, v3}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showAppNeededDialog(I)V
-
-    .line 567
-    :goto_e
-    return-void
-
-    .line 547
-    :cond_f
-    iget-object v3, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
-
-    invoke-static {v3, p1, p2}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getConsumptionIntent(Landroid/content/Context;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/content/Intent;
-
-    move-result-object v0
-
-    .line 548
-    .local v0, intent:Landroid/content/Intent;
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/google/android/finsky/FinskyApp;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0, v6}, Landroid/content/pm/PackageManager;->resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
-
-    move-result-object v2
-
-    .line 549
-    .local v2, resolveInfo:Landroid/content/pm/ResolveInfo;
-    if-eqz v0, :cond_44
-
-    if-eqz v2, :cond_44
-
-    .line 550
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_3e
-
-    .line 553
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/google/android/finsky/FinskyApp;->getNotifier()Lcom/google/android/finsky/utils/Notifier;
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 554
-    .local v1, notifier:Lcom/google/android/finsky/utils/Notifier;
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
+    .line 505
+    .local v1, detailsUrl:Ljava/lang/String;
+    if-eqz v1, :cond_1b
 
-    move-result-object v3
+    invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->canNavigate()Z
 
-    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getPackageName()Ljava/lang/String;
+    move-result v0
 
-    move-result-object v3
+    if-eqz v0, :cond_1b
 
-    invoke-interface {v1, v3}, Lcom/google/android/finsky/utils/Notifier;->hideAllMessagesForPackage(Ljava/lang/String;)V
+    move-object v0, p0
 
-    .line 556
-    .end local v1           #notifier:Lcom/google/android/finsky/utils/Notifier;
-    :cond_3e
-    iget-object v3, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
+    move-object v3, v2
 
-    invoke-virtual {v3, v0}, Lcom/google/android/finsky/activities/MainActivity;->startActivity(Landroid/content/Intent;)V
+    move-object v4, v2
 
-    goto :goto_e
+    move-object v5, v2
 
-    .line 561
-    :cond_44
-    iget-object v3, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
+    .line 506
+    invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToDocPage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
+    .line 509
+    .end local v1           #detailsUrl:Ljava/lang/String;
+    :cond_1b
+    return-void
+.end method
 
-    const v5, 0x7f070115
+.method public openItem(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;)V
+    .registers 6
+    .parameter "account"
+    .parameter "doc"
 
-    invoke-virtual {v4, v5}, Lcom/google/android/finsky/activities/MainActivity;->getString(I)Ljava/lang/String;
+    .prologue
+    .line 512
+    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
-    move-result-object v4
+    const/4 v1, 0x0
 
-    invoke-static {v3, v4, v6}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    iget-object v2, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
 
-    move-result-object v3
+    invoke-static {v0, v1, v2, p1, p2}, Lcom/google/android/finsky/navigationmanager/ConsumptionUtils;->openItem(Landroid/content/Context;Landroid/support/v4/app/Fragment;Landroid/support/v4/app/FragmentManager;Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;)V
 
-    invoke-virtual {v3}, Landroid/widget/Toast;->show()V
-
-    goto :goto_e
+    .line 513
+    return-void
 .end method
 
 .method public popBackStack()V
     .registers 2
 
     .prologue
-    .line 678
+    .line 592
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->isEmpty()Z
@@ -2176,18 +2137,18 @@
 
     if-nez v0, :cond_d
 
-    .line 679
+    .line 593
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->pop()Ljava/lang/Object;
 
-    .line 681
+    .line 595
     :cond_d
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->popBackStack()V
 
-    .line 682
+    .line 596
     return-void
 .end method
 
@@ -2195,7 +2156,7 @@
     .registers 4
 
     .prologue
-    .line 429
+    .line 475
     iget-object v1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
     invoke-virtual {v1}, Ljava/util/Stack;->isEmpty()Z
@@ -2204,29 +2165,29 @@
 
     if-eqz v1, :cond_9
 
-    .line 443
+    .line 489
     :goto_8
     return-void
 
-    .line 433
+    .line 479
     :cond_9
     invoke-virtual {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getActivePage()Lcom/google/android/finsky/fragments/PageFragment;
 
     move-result-object v0
 
-    .line 434
+    .line 480
     .local v0, active:Lcom/google/android/finsky/fragments/PageFragment;
     if-eqz v0, :cond_16
 
-    .line 438
+    .line 484
     invoke-virtual {v0}, Lcom/google/android/finsky/fragments/PageFragment;->refresh()V
 
-    .line 439
+    .line 485
     invoke-virtual {v0}, Lcom/google/android/finsky/fragments/PageFragment;->onDataChanged()V
 
     goto :goto_8
 
-    .line 441
+    .line 487
     :cond_16
     const-string v1, "Called refresh but there was no active page"
 
@@ -2244,26 +2205,28 @@
     .parameter "listener"
 
     .prologue
-    .line 891
+    .line 809
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/app/FragmentManager;->removeOnBackStackChangedListener(Landroid/support/v4/app/FragmentManager$OnBackStackChangedListener;)V
 
-    .line 892
+    .line 810
     return-void
 .end method
 
-.method public replaceDetailsShimWithDocPage(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 13
+.method public replaceDetailsShimWithDocPage(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    .registers 17
     .parameter "doc"
     .parameter "originalUrl"
     .parameter "cookie"
     .parameter "referrerUrl"
     .parameter "externalReferrer"
+    .parameter "continueUrl"
+    .parameter "returnAfterPurchase"
 
     .prologue
-    .line 258
-    const/4 v6, 0x1
+    .line 265
+    const/4 v8, 0x1
 
     move-object v0, p0
 
@@ -2277,9 +2240,13 @@
 
     move-object v5, p5
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToDocPage(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    move-object v6, p6
 
-    .line 259
+    move/from16 v7, p7
+
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToDocPage(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)V
+
+    .line 267
     return-void
 .end method
 
@@ -2290,17 +2257,17 @@
     .parameter "referrerUrl"
 
     .prologue
-    .line 214
+    .line 210
     invoke-direct {p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->canNavigate()Z
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_13
 
-    .line 215
-    sget-object v0, Lcom/google/android/finsky/navigationmanager/NavigationState;->SEARCH:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    .line 211
+    const/4 v0, 0x7
 
-    invoke-static {p1, p2}, Lcom/google/android/finsky/api/DfeApi;->formSearchUrl(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {p1, p2}, Lcom/google/android/finsky/api/DfeUtils;->formSearchUrl(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -2310,10 +2277,10 @@
 
     const/4 v2, 0x1
 
-    invoke-direct {p0, v0, v1, v2}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(Lcom/google/android/finsky/navigationmanager/NavigationState;Landroid/support/v4/app/Fragment;Z)V
+    invoke-direct {p0, v0, v1, v2}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showPage(ILandroid/support/v4/app/Fragment;Z)V
 
-    .line 218
-    :cond_14
+    .line 214
+    :cond_13
     return-void
 .end method
 
@@ -2322,7 +2289,7 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 362
+    .line 408
     iget-object v1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mBackStack:Ljava/util/Stack;
 
     if-eqz v1, :cond_c
@@ -2335,12 +2302,12 @@
 
     if-eqz v1, :cond_d
 
-    .line 367
+    .line 413
     :cond_c
     :goto_c
     return-void
 
-    .line 365
+    .line 411
     :cond_d
     new-instance v0, Ljava/util/ArrayList;
 
@@ -2348,7 +2315,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 366
+    .line 412
     .local v0, asList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/google/android/finsky/navigationmanager/NavigationState;>;"
     const-string v1, "nm_state"
 
@@ -2358,114 +2325,32 @@
 .end method
 
 .method public showAppNeededDialog(I)V
-    .registers 10
+    .registers 5
     .parameter "docBackend"
 
     .prologue
-    const/4 v7, 0x0
+    .line 496
+    iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
-    .line 499
-    invoke-direct {p0, p1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getConsumptionAppPackageName(I)Ljava/lang/String;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    iget-object v2, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
 
-    .line 501
-    .local v0, appDocId:Ljava/lang/String;
-    if-nez v0, :cond_1b
+    invoke-static {v0, v1, v2, p1}, Lcom/google/android/finsky/navigationmanager/ConsumptionUtils;->showAppNeededDialog(Landroid/content/Context;Landroid/support/v4/app/Fragment;Landroid/support/v4/app/FragmentManager;I)V
 
-    .line 502
-    iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
-
-    iget-object v5, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
-
-    const v6, 0x7f070115
-
-    invoke-virtual {v5, v6}, Lcom/google/android/finsky/activities/MainActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    const/4 v6, 0x0
-
-    invoke-static {v4, v5, v6}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/widget/Toast;->show()V
-
-    .line 520
-    :cond_1a
-    :goto_1a
+    .line 497
     return-void
-
-    .line 508
-    :cond_1b
-    iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
-
-    const-string v5, "app_needed_dialog"
-
-    invoke-virtual {v4, v5}, Landroid/support/v4/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/support/v4/app/Fragment;
-
-    move-result-object v4
-
-    if-nez v4, :cond_1a
-
-    .line 512
-    invoke-direct {p0, p1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getConsumptionAppRequiredString(I)I
-
-    move-result v3
-
-    .line 514
-    .local v3, messageId:I
-    new-instance v2, Landroid/os/Bundle;
-
-    invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
-
-    .line 515
-    .local v2, extraArgs:Landroid/os/Bundle;
-    const-string v4, "dialog_details_url"
-
-    invoke-static {v0, v7}, Lcom/google/android/finsky/api/DfeApi;->createDetailsUrlFromId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v2, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 516
-    const/4 v4, -0x1
-
-    const v5, 0x7f070162
-
-    const v6, 0x7f070060
-
-    invoke-static {v4, v3, v5, v6}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->newInstance(IIII)Lcom/google/android/finsky/activities/SimpleAlertDialog;
-
-    move-result-object v1
-
-    .line 518
-    .local v1, df:Lcom/google/android/finsky/activities/SimpleAlertDialog;
-    const/4 v4, 0x1
-
-    invoke-virtual {v1, v7, v4, v2}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->setCallback(Landroid/support/v4/app/Fragment;ILandroid/os/Bundle;)Lcom/google/android/finsky/activities/SimpleAlertDialog;
-
-    .line 519
-    iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
-
-    const-string v5, "app_needed_dialog"
-
-    invoke-virtual {v1, v4, v5}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
-
-    goto :goto_1a
 .end method
 
 .method public terminate()V
     .registers 2
 
     .prologue
-    .line 353
+    .line 399
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager;->mActivity:Lcom/google/android/finsky/activities/MainActivity;
 
-    .line 354
+    .line 400
     return-void
 .end method

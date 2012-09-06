@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rom">רום</string>
+    <string name="homepage">דף הבית</string>
+    <string name="plugin">מודים</string>
+    <string name="Themes">ערכות נושא</string>
+    <string name="apps">יישומים</string>
+    <string name="kernel">קרנל</string>
+    <string name="app_name">עדכן אותי</string>
+    <string name="check_rom_update">בדוק עדכוני רום</string>
+    <string name="exit">יציאה</string>
+    <string name="info">מידע</string>
+    <string name="costumization">התאמה אישית</string>
+    <string name="settings">הגדרות</string>
+    <string name="downloading_file">מוריד קובץ...</string>
+    <string name="md5_ok">בדיקת MD5 עברה בהצלחה</string>
+    <string name="md5_error">בדיקת MD5 נכשלה</string>
+    <string name="file_downloaded">קובץ להורדה:</string>
+    <string name="reboot_to_recovery">הם ברצונך לאתחל למצב Recovery?</string>
+    <string name="ok">אישור</string>
+    <string name="cancel">ביטול</string>
+    <string name="new_rom">גרסת רום חדשה נמצאה</string>
+    <string name="download_new_rom">מוריד גרסת רום חדשה</string>
+    <string name="changelog">שינויים</string>
+    <string name="reload_apps">הפעל יישומים מחדש</string>
+    <string name="check_rom_startup">בדיקת רום בהפעלה</string>
+    <string name="choose_download_dir">בחר ספריית הורדה</string>
+    <string name="reboot_recovery">אתחל למצב Recovery</string>
+    <string name="donate">תרום</string>
+    <string name="donate_acquariusoft">תרום ל acquariusoft</string>
+    <string name="donate_acquariusoft_desc">מפתח עדכן אותי</string>
+    <string name="no_update_available">אין עדכונים זמינים</string>
+    <string name="use_light_theme">השתמש בערכת נושא בהירה</string>
+    <string name="reboot_to_enable">אתחל את האפליקציה להפעלת הגדרות אלה</string>
+    <string name="reboot_and_install">אתחול והתקנה</string>
+    <string name="downloaded_files">קבצים שהורדו</string>
+    <string name="cwm_flip_sdcard">הפוך שמות כרטיס זיכרון ב CWM</string>
+    <string name="cwm_flip_sdcard_desc">בשימוש בחלק CWM אשר לא מתקינים קבצי ZIP אוטומטית</string>
+    <string name="dialog_donate_title">תרום</string>
+    <string name="dialog_donate_text">אם הנך משתמש אפליקציה זו, תמוך במפתח לשיפור האפליקציה. באפשרותך להשתמש ב PayPal או לקנות את אפליקציית התרומה במרקט.</string>
+    <string name="dialog_donate_paypal">Paypal</string>
+    <string name="dialog_donate_market">מרקט</string>
+    <string name="error">שגיאה</string>
+    <string name="error_on_donwload">אותרה שגיאה בקובץ שהורד</string>
+    <string name="install">התקנה</string>
+    <string name="click_for_update_market">בדוק עדכונים במרקט</string>
+    <string name="reboot_type">סוג אתחול</string>
+    <string name="alert_no_config">"הגדרות לא זמינות!!
+
+רום זה לא תורום לאפליקציה זו.
+דווח ליוצר הרום להתאים רום זה לאפליקציה או בדוק את רשימת הרומים המותאמים!
+
+זוהי לא בעיה עם האפליקציה, אנא המנעו מלהציף את המרקט, תודה!"</string>
+    <string name="compatible_rom_list">רשימת רומים מותאמים</string>
+    <string name="check_rom_time">בדוק רום כל (שעות)</string>
+    <string name="disable_check_rom">בטל בדיקות אוטומטיות</string>
+    <string name="recovery">מצב Recovery</string>
+    <string name="option">אפשרות</string>
+    <string name="other">אחר</string>
+    <string name="buy_donated">קנה את אפליקציית התרומה</string>
+    <string name="buy_donated_desc">מסתיר את הפרסומות ונותן לך עוד אפשרויות...</string>
+    <string name="download_script">הורד סקריפטים</string>
+    <string name="script_title">כותרת</string>
+    <string name="script_desc">תאור</string>
+    <string name="script_text">סקריפט</string>
+    <string name="script_create_your">צור סקריפט</string>
+    <string name="script_insert">הכנס</string>
+    <string name="script_inserted">סקריפט הוכנס</string>
+    <string name="scripts">סקריפטים</string>
+    <string name="my_scripts">הסקריפטים שלי</string>
+</resources>

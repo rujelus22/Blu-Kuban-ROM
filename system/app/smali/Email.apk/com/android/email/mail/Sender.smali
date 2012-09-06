@@ -3,59 +3,22 @@
 .source "Sender.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/android/email/mail/Sender$LimitViolationException;
-    }
-.end annotation
-
-
-# static fields
-.field private static final sSenders:Ljava/util/HashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/HashMap",
-            "<",
-            "Ljava/lang/String;",
-            "Lcom/android/email/mail/Sender;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    .prologue
-    .line 37
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v0, Lcom/android/email/mail/Sender;->sSenders:Ljava/util/HashMap;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .registers 1
 
     .prologue
-    .line 34
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 33
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 148
     return-void
 .end method
 
-.method private static findSender(Landroid/content/Context;ILjava/lang/String;)Lcom/android/email/mail/Sender;
-    .registers 10
+.method private static findSender(Landroid/content/Context;ILcom/android/emailcommon/provider/Account;)Lcom/android/email/mail/Sender;
+    .registers 11
     .parameter "context"
     .parameter "resourceId"
-    .parameter "uri"
+    .parameter "account"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/emailcommon/mail/MessagingException;
@@ -63,111 +26,124 @@
     .end annotation
 
     .prologue
-    .line 74
+    .line 73
     const/4 v2, 0x0
 
-    .line 76
+    .line 75
     .local v2, sender:Lcom/android/email/mail/Sender;
     :try_start_1
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v5, p1}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
+    invoke-virtual {v6, p1}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
 
     move-result-object v3
 
-    .line 79
+    .line 77
     .local v3, xml:Landroid/content/res/XmlResourceParser;
-    :cond_9
-    :goto_9
+    invoke-virtual {p2, p0}, Lcom/android/emailcommon/provider/Account;->getOrCreateHostAuthSend(Landroid/content/Context;)Lcom/android/emailcommon/provider/HostAuth;
+
+    move-result-object v1
+
+    .line 79
+    .local v1, sendAuth:Lcom/android/emailcommon/provider/HostAuth;
+    :cond_d
+    :goto_d
     invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->next()I
 
     move-result v4
 
     .local v4, xmlEventType:I
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    if-eq v4, v5, :cond_39
+    if-eq v4, v6, :cond_43
 
     .line 80
-    const/4 v5, 0x2
+    const/4 v6, 0x2
 
-    if-ne v4, v5, :cond_9
+    if-ne v4, v6, :cond_d
 
-    const-string v5, "sender"
+    const-string v6, "sender"
 
     invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_9
-
-    .line 81
-    const/4 v5, 0x0
-
-    const-string v6, "scheme"
-
-    invoke-interface {v3, v5, v6}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
+    if-eqz v6, :cond_d
 
     .line 82
-    .local v1, scheme:Ljava/lang/String;
-    invoke-virtual {p2, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    const/4 v6, 0x0
 
-    move-result v5
+    const-string v7, "scheme"
 
-    if-eqz v5, :cond_9
+    invoke-interface {v3, v6, v7}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 85
-    const/4 v5, 0x0
+    move-result-object v5
 
-    const-string v6, "class"
+    .line 83
+    .local v5, xmlScheme:Ljava/lang/String;
+    iget-object v6, v1, Lcom/android/emailcommon/provider/HostAuth;->mProtocol:Ljava/lang/String;
 
-    invoke-interface {v3, v5, v6}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    if-eqz v6, :cond_d
+
+    iget-object v6, v1, Lcom/android/emailcommon/provider/HostAuth;->mProtocol:Ljava/lang/String;
+
+    invoke-virtual {v6, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_d
+
+    .line 86
+    const/4 v6, 0x0
+
+    const-string v7, "class"
+
+    invoke-interface {v3, v6, v7}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 86
+    .line 87
     .local v0, className:Ljava/lang/String;
-    invoke-static {p0, v0, p2}, Lcom/android/email/mail/Sender;->instantiateSender(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Lcom/android/email/mail/Sender;
-    :try_end_36
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_36} :catch_3a
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_36} :catch_38
+    invoke-static {p0, v0, p2}, Lcom/android/email/mail/Sender;->instantiateSender(Landroid/content/Context;Ljava/lang/String;Lcom/android/emailcommon/provider/Account;)Lcom/android/email/mail/Sender;
+    :try_end_40
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_40} :catch_44
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_40} :catch_42
 
     move-result-object v2
 
-    goto :goto_9
+    goto :goto_d
 
-    .line 92
+    .line 93
     .end local v0           #className:Ljava/lang/String;
-    .end local v1           #scheme:Ljava/lang/String;
+    .end local v1           #sendAuth:Lcom/android/emailcommon/provider/HostAuth;
     .end local v3           #xml:Landroid/content/res/XmlResourceParser;
     .end local v4           #xmlEventType:I
-    :catch_38
-    move-exception v5
+    .end local v5           #xmlScheme:Ljava/lang/String;
+    :catch_42
+    move-exception v6
 
-    .line 95
-    :cond_39
-    :goto_39
+    .line 96
+    :cond_43
+    :goto_43
     return-object v2
 
-    .line 90
-    :catch_3a
-    move-exception v5
+    .line 91
+    :catch_44
+    move-exception v6
 
-    goto :goto_39
+    goto :goto_43
 .end method
 
-.method public static declared-synchronized getInstance(Landroid/content/Context;Ljava/lang/String;)Lcom/android/email/mail/Sender;
-    .registers 7
+.method public static declared-synchronized getInstance(Landroid/content/Context;Lcom/android/emailcommon/provider/Account;)Lcom/android/email/mail/Sender;
+    .registers 8
     .parameter "context"
-    .parameter "uri"
+    .parameter "account"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/emailcommon/mail/MessagingException;
@@ -175,108 +151,88 @@
     .end annotation
 
     .prologue
-    .line 100
-    const-class v2, Lcom/android/email/mail/Sender;
+    .line 110
+    const-class v3, Lcom/android/email/mail/Sender;
 
-    monitor-enter v2
+    monitor-enter v3
 
     :try_start_3
-    sget-object v1, Lcom/android/email/mail/Sender;->sSenders:Ljava/util/HashMap;
-
-    invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/email/mail/Sender;
-
-    .line 101
-    .local v0, sender:Lcom/android/email/mail/Sender;
-    if-nez v0, :cond_2a
-
-    .line 102
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object p0
-
-    .line 103
-    invoke-static {}, Lcom/android/email/activity/ActivityResourceInterface;->getId_senders_product()I
-
-    move-result v1
-
-    invoke-static {p0, v1, p1}, Lcom/android/email/mail/Sender;->findSender(Landroid/content/Context;ILjava/lang/String;)Lcom/android/email/mail/Sender;
-
     move-result-object v0
 
-    .line 104
-    if-nez v0, :cond_23
+    .line 111
+    .local v0, appContext:Landroid/content/Context;
+    const v2, 0x7f05000c
 
-    .line 105
-    invoke-static {}, Lcom/android/email/activity/ActivityResourceInterface;->getId_senders()I
+    invoke-static {v0, v2, p1}, Lcom/android/email/mail/Sender;->findSender(Landroid/content/Context;ILcom/android/emailcommon/provider/Account;)Lcom/android/email/mail/Sender;
 
-    move-result v1
+    move-result-object v1
 
-    invoke-static {p0, v1, p1}, Lcom/android/email/mail/Sender;->findSender(Landroid/content/Context;ILjava/lang/String;)Lcom/android/email/mail/Sender;
-
-    move-result-object v0
-
-    .line 108
-    :cond_23
-    if-eqz v0, :cond_2a
-
-    .line 109
-    sget-object v1, Lcom/android/email/mail/Sender;->sSenders:Ljava/util/HashMap;
-
-    invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 112
+    .local v1, sender:Lcom/android/email/mail/Sender;
+    if-nez v1, :cond_17
 
     .line 113
-    :cond_2a
-    if-nez v0, :cond_48
+    const v2, 0x7f05000b
 
-    .line 114
-    new-instance v1, Lcom/android/emailcommon/mail/MessagingException;
+    invoke-static {v0, v2, p1}, Lcom/android/email/mail/Sender;->findSender(Landroid/content/Context;ILcom/android/emailcommon/provider/Account;)Lcom/android/email/mail/Sender;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    .line 115
+    :cond_17
+    if-nez v1, :cond_37
 
-    const-string v4, "Unable to locate an applicable Transport for "
+    .line 116
+    new-instance v2, Lcom/android/emailcommon/mail/MessagingException;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v5, "Cannot find sender for account "
 
-    move-result-object v3
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v4
 
-    move-result-object v3
+    iget-object v5, p1, Lcom/android/emailcommon/provider/Account;->mDisplayName:Ljava/lang/String;
 
-    invoke-direct {v1, v3}, Lcom/android/emailcommon/mail/MessagingException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    throw v1
-    :try_end_45
-    .catchall {:try_start_3 .. :try_end_45} :catchall_45
+    move-result-object v4
 
-    .line 100
-    .end local v0           #sender:Lcom/android/email/mail/Sender;
-    :catchall_45
-    move-exception v1
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    monitor-exit v2
+    move-result-object v4
 
-    throw v1
+    invoke-direct {v2, v4}, Lcom/android/emailcommon/mail/MessagingException;-><init>(Ljava/lang/String;)V
 
-    .line 117
-    .restart local v0       #sender:Lcom/android/email/mail/Sender;
-    :cond_48
-    monitor-exit v2
+    throw v2
+    :try_end_34
+    .catchall {:try_start_3 .. :try_end_34} :catchall_34
 
-    return-object v0
+    .line 110
+    .end local v0           #appContext:Landroid/content/Context;
+    .end local v1           #sender:Lcom/android/email/mail/Sender;
+    :catchall_34
+    move-exception v2
+
+    monitor-exit v3
+
+    throw v2
+
+    .line 118
+    .restart local v0       #appContext:Landroid/content/Context;
+    .restart local v1       #sender:Lcom/android/email/mail/Sender;
+    :cond_37
+    monitor-exit v3
+
+    return-object v1
 .end method
 
-.method private static instantiateSender(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Lcom/android/email/mail/Sender;
+.method private static instantiateSender(Landroid/content/Context;Ljava/lang/String;Lcom/android/emailcommon/provider/Account;)Lcom/android/email/mail/Sender;
     .registers 11
     .parameter
     .parameter
@@ -294,14 +250,14 @@
 
     const/4 v5, 0x0
 
+    .line 48
     .line 50
-    .line 52
     :try_start_3
     invoke-static {p1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 55
+    .line 52
     const-string v1, "newInstance"
 
     const/4 v2, 0x2
@@ -310,13 +266,13 @@
 
     const/4 v3, 0x0
 
-    const-class v4, Landroid/content/Context;
+    const-class v4, Lcom/android/emailcommon/provider/Account;
 
     aput-object v4, v2, v3
 
     const/4 v3, 0x1
 
-    const-class v4, Ljava/lang/String;
+    const-class v4, Landroid/content/Context;
 
     aput-object v4, v2, v3
 
@@ -324,7 +280,7 @@
 
     move-result-object v0
 
-    .line 56
+    .line 54
     const/4 v1, 0x0
 
     const/4 v2, 0x2
@@ -333,31 +289,33 @@
 
     const/4 v3, 0x0
 
-    aput-object p0, v2, v3
+    aput-object p2, v2, v3
 
     const/4 v3, 0x1
 
-    aput-object p2, v2, v3
+    aput-object p0, v2, v3
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_27
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_27} :catch_4f
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_27} :catch_51
 
     move-result-object v0
 
-    .line 63
+    .line 61
     instance-of v1, v0, Lcom/android/email/mail/Sender;
 
-    if-nez v1, :cond_81
+    if-nez v1, :cond_87
 
-    .line 64
+    .line 62
     new-instance v0, Lcom/android/emailcommon/mail/MessagingException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v2, p2, Lcom/android/emailcommon/provider/Account;->mDisplayName:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -385,14 +343,14 @@
 
     throw v0
 
-    .line 57
-    :catch_4f
+    .line 55
+    :catch_51
     move-exception v0
 
-    .line 58
+    .line 56
     const-string v1, "Email"
 
-    const-string v2, "exception %s invoking %s.newInstance.(Context, String) method for %s"
+    const-string v2, "exception %s invoking method %s#newInstance(Account, Context) for %s"
 
     const/4 v3, 0x3
 
@@ -406,7 +364,9 @@
 
     aput-object p1, v3, v6
 
-    aput-object p2, v3, v7
+    iget-object v0, p2, Lcom/android/emailcommon/provider/Account;->mDisplayName:Ljava/lang/String;
+
+    aput-object v0, v3, v7
 
     invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -414,20 +374,22 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 61
+    .line 59
     new-instance v0, Lcom/android/emailcommon/mail/MessagingException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "can not instantiate Sender object for "
+    const-string v2, "can not instantiate Sender for "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v2, p2, Lcom/android/emailcommon/provider/Account;->mDisplayName:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -439,79 +401,11 @@
 
     throw v0
 
-    .line 66
-    :cond_81
+    .line 65
+    :cond_87
     check-cast v0, Lcom/android/email/mail/Sender;
 
     return-object v0
-.end method
-
-.method public static newInstance(Landroid/content/Context;Ljava/lang/String;)Lcom/android/email/mail/Sender;
-    .registers 5
-    .parameter "context"
-    .parameter "uri"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 45
-    new-instance v0, Lcom/android/emailcommon/mail/MessagingException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Sender.newInstance: Unknown scheme in "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/android/emailcommon/mail/MessagingException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public static declared-synchronized removeInstance(Ljava/lang/String;)V
-    .registers 3
-    .parameter "senderUri"
-
-    .prologue
-    .line 181
-    const-class v1, Lcom/android/email/mail/Sender;
-
-    monitor-enter v1
-
-    :try_start_3
-    sget-object v0, Lcom/android/email/mail/Sender;->sSenders:Ljava/util/HashMap;
-
-    invoke-virtual {v0, p0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_8
-    .catchall {:try_start_3 .. :try_end_8} :catchall_a
-
-    .line 182
-    monitor-exit v1
-
-    return-void
-
-    .line 181
-    :catchall_a
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
 .end method
 
 
@@ -522,32 +416,6 @@
             Lcom/android/emailcommon/mail/MessagingException;
         }
     .end annotation
-.end method
-
-.method public forwardMessage(JLjava/util/List;)V
-    .registers 4
-    .parameter "messageId"
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(J",
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 195
-    .local p3, urlAuthList:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
-    return-void
 .end method
 
 .method public getSettingActivityClass()Ljava/lang/Class;
@@ -563,10 +431,8 @@
     .end annotation
 
     .prologue
-    .line 130
-    invoke-static {}, Lcom/android/email/activity/ActivityResourceInterface;->getOutgoingSettingActivityClass()Ljava/lang/Class;
-
-    move-result-object v0
+    .line 127
+    const-class v0, Lcom/android/email/activity/setup/AccountSetupOutgoing;
 
     return-object v0
 .end method

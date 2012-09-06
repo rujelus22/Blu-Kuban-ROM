@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 2188
+    .line 2174
     iput-object p1, p0, Lcom/samsung/client/DMApp$6;->this$0:Lcom/samsung/client/DMApp;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -40,14 +40,14 @@
     .parameter "incomingNumber"
 
     .prologue
-    .line 2200
+    .line 2186
     const-string v0, "DMApp"
 
     const-string v1, "*******************************************"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2201
+    .line 2187
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -70,17 +70,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2202
+    .line 2188
     const-string v0, "DMApp"
 
     const-string v1, "*******************************************"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2203
+    .line 2189
     sput p1, Lcom/samsung/client/DMApp;->mCallState:I
 
-    .line 2204
+    .line 2190
     return-void
 .end method
 
@@ -89,14 +89,14 @@
     .parameter "serviceState"
 
     .prologue
-    .line 2191
+    .line 2177
     const-string v0, "DMApp"
 
     const-string v1, "*******************************************"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2192
+    .line 2178
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -123,20 +123,20 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2194
+    .line 2180
     const-string v0, "DMApp"
 
     const-string v1, "*******************************************"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2195
+    .line 2181
     invoke-virtual {p1}, Landroid/telephony/ServiceState;->getState()I
 
     move-result v0
 
     sput v0, Lcom/samsung/client/DMApp;->mPhoneState:I
 
-    .line 2196
+    .line 2182
     return-void
 .end method

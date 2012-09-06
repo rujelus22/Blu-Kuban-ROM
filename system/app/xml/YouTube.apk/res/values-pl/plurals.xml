@@ -28,6 +28,14 @@
         <item quantity="other">%1$d s temu</item>
         <item quantity="one">sekundę temu</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Wygasa za %1$d dni</item>
+        <item quantity="one">Wygasa za 1 dzień</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Wygasa za %1$d godz.</item>
+        <item quantity="one">Wygasa za godzinę</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">nowe przesłane filmy</item>
         <item quantity="one">nowy przesłany film</item>

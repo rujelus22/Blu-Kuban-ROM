@@ -16,10 +16,10 @@
     .registers 1
 
     .prologue
-    .line 42
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 36
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 243
+    .line 213
     return-void
 .end method
 
@@ -31,22 +31,22 @@
     .prologue
     const/16 v3, 0x20
 
-    .line 322
+    .line 306
     invoke-virtual {p1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v1
 
-    .line 323
+    .line 307
     .local v1, password:Landroid/text/Editable;
     invoke-interface {v1}, Landroid/text/Editable;->length()I
 
     move-result v0
 
-    .line 324
+    .line 308
     .local v0, length:I
     if-lez v0, :cond_25
 
-    .line 325
+    .line 309
     const/4 v2, 0x0
 
     invoke-interface {v1, v2}, Landroid/text/Editable;->charAt(I)C
@@ -63,9 +63,9 @@
 
     if-ne v2, v3, :cond_25
 
-    .line 326
+    .line 310
     :cond_1b
-    const v2, 0x7f0800d2
+    const v2, 0x7f0800ba
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -73,181 +73,45 @@
 
     invoke-virtual {p1, v2}, Landroid/widget/EditText;->setError(Ljava/lang/CharSequence;)V
 
-    .line 329
+    .line 313
     :cond_25
     return-void
 .end method
 
-.method public static commitSettings(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Account;)V
+.method public static commitSettings(Landroid/content/Context;Lcom/android/emailcommon/provider/Account;)V
     .registers 4
     .parameter "context"
     .parameter "account"
 
     .prologue
-    .line 54
-    invoke-virtual {p1}, Lcom/android/emailcommon/provider/EmailContent$Account;->isSaved()Z
+    .line 52
+    invoke-virtual {p1}, Lcom/android/emailcommon/provider/Account;->isSaved()Z
 
     move-result v1
 
     if-nez v1, :cond_d
 
-    .line 55
-    invoke-virtual {p1, p0}, Lcom/android/emailcommon/provider/EmailContent$Account;->save(Landroid/content/Context;)Landroid/net/Uri;
+    .line 53
+    invoke-virtual {p1, p0}, Lcom/android/emailcommon/provider/Account;->save(Landroid/content/Context;)Landroid/net/Uri;
 
-    .line 61
+    .line 59
     :goto_9
-    invoke-static {p0}, Lcom/android/email/AccountBackupRestore;->backupAccounts(Landroid/content/Context;)V
+    invoke-static {p0}, Lcom/android/email/provider/AccountBackupRestore;->backup(Landroid/content/Context;)V
 
-    .line 62
+    .line 60
     return-void
 
-    .line 57
+    .line 55
     :cond_d
-    invoke-static {p0, p1}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getAccountContentValues(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Account;)Landroid/content/ContentValues;
+    invoke-static {p1}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getAccountContentValues(Lcom/android/emailcommon/provider/Account;)Landroid/content/ContentValues;
 
     move-result-object v0
 
-    .line 58
+    .line 56
     .local v0, cv:Landroid/content/ContentValues;
-    invoke-virtual {p1, p0, v0}, Lcom/android/emailcommon/provider/EmailContent$Account;->update(Landroid/content/Context;Landroid/content/ContentValues;)I
+    invoke-virtual {p1, p0, v0}, Lcom/android/emailcommon/provider/Account;->update(Landroid/content/Context;Landroid/content/ContentValues;)I
 
     goto :goto_9
-.end method
-
-.method public static commitSyncSettings(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Account;)V
-    .registers 7
-    .parameter "context"
-    .parameter "account"
-
-    .prologue
-    .line 65
-    new-instance v0, Landroid/content/ContentValues;
-
-    invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
-
-    .line 66
-    .local v0, cvCB:Landroid/content/ContentValues;
-    const-string v1, "peakTime"
-
-    iget v2, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mPeakTime:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 67
-    const-string v1, "offPeakTime"
-
-    iget v2, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mOffPeakTime:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 68
-    const-string v1, "days"
-
-    iget-object v2, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mDays:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 69
-    const-string v1, "peakStartTime"
-
-    iget-object v2, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mPeakStartTime:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 70
-    const-string v1, "peakEndTime"
-
-    iget-object v2, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mPeakEndTime:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 71
-    const-string v1, "timeLimit"
-
-    iget-wide v2, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mTimeLimit:J
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 72
-    const-string v1, "whileRoaming"
-
-    iget v2, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mWhileroaming:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 73
-    const-string v1, "attachmentEnabled"
-
-    iget v2, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mAttachmentEnabled:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 74
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$AccountCB;->CONTENT_URI:Landroid/net/Uri;
-
-    const-string v3, "typeMsg=1"
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v1, v2, v0, v3, v4}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    .line 75
-    return-void
-.end method
-
-.method public static findProviderCustomer(Landroid/content/Context;Ljava/lang/String;)Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
-    .registers 4
-    .parameter "context"
-    .parameter "domain"
-
-    .prologue
-    .line 212
-    invoke-static {}, Lcom/android/email/activity/setup/AccountSetupCustomer;->getInstance()Lcom/android/email/activity/setup/AccountSetupCustomer;
-
-    move-result-object v0
-
-    .line 213
-    .local v0, customer:Lcom/android/email/activity/setup/AccountSetupCustomer;
-    invoke-virtual {v0, p1}, Lcom/android/email/activity/setup/AccountSetupCustomer;->getProviderCustomer(Ljava/lang/String;)Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
-
-    move-result-object v1
-
-    .line 220
-    .local v1, p:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
-    if-nez v1, :cond_e
-
-    .line 221
-    invoke-static {p0, p1}, Lcom/android/email/activity/setup/AccountSettingsUtils;->findProviderForDomain(Landroid/content/Context;Ljava/lang/String;)Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
-
-    move-result-object v1
-
-    .line 223
-    :cond_e
-    return-object v1
 .end method
 
 .method public static findProviderForDomain(Landroid/content/Context;Ljava/lang/String;)Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
@@ -256,7 +120,7 @@
     .parameter "domain"
 
     .prologue
-    .line 162
+    .line 92
     invoke-static {p0}, Lcom/android/email/VendorPolicyLoader;->getInstance(Landroid/content/Context;)Lcom/android/email/VendorPolicyLoader;
 
     move-result-object v1
@@ -265,679 +129,456 @@
 
     move-result-object v0
 
-    .line 163
+    .line 93
     .local v0, p:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
     if-nez v0, :cond_11
 
-    .line 164
-    const v1, 0x7f06000e
+    .line 94
+    const v1, 0x7f05000a
 
     invoke-static {p0, p1, v1}, Lcom/android/email/activity/setup/AccountSettingsUtils;->findProviderForDomain(Landroid/content/Context;Ljava/lang/String;I)Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
 
     move-result-object v0
 
-    .line 166
+    .line 96
     :cond_11
     if-nez v0, :cond_1a
 
-    .line 167
-    const v1, 0x7f06000d
+    .line 97
+    const v1, 0x7f050009
 
     invoke-static {p0, p1, v1}, Lcom/android/email/activity/setup/AccountSettingsUtils;->findProviderForDomain(Landroid/content/Context;Ljava/lang/String;I)Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
 
     move-result-object v0
 
-    .line 169
+    .line 99
     :cond_1a
     return-object v0
 .end method
 
-.method private static findProviderForDomain(Landroid/content/Context;Ljava/lang/String;I)Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
-    .registers 10
+.method static findProviderForDomain(Landroid/content/Context;Ljava/lang/String;I)Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
+    .registers 13
     .parameter "context"
     .parameter "domain"
     .parameter "resourceId"
 
     .prologue
-    const/4 v6, 0x2
+    const/4 v9, 0x2
 
-    .line 181
+    .line 112
     :try_start_1
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
+    move-result-object v6
+
+    invoke-virtual {v6, p2}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
+
     move-result-object v4
 
-    invoke-virtual {v4, p2}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
-
-    move-result-object v2
-
-    .line 183
-    .local v2, xml:Landroid/content/res/XmlResourceParser;
+    .line 114
+    .local v4, xml:Landroid/content/res/XmlResourceParser;
     const/4 v1, 0x0
 
-    .line 184
     .local v1, provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
-    :cond_a
-    :goto_a
-    invoke-interface {v2}, Landroid/content/res/XmlResourceParser;->next()I
+    move-object v2, v1
 
-    move-result v3
+    .line 115
+    .end local v1           #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
+    .local v2, provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
+    :cond_b
+    :goto_b
+    invoke-interface {v4}, Landroid/content/res/XmlResourceParser;->next()I
 
-    .local v3, xmlEventType:I
-    const/4 v4, 0x1
+    move-result v5
 
-    if-eq v3, v4, :cond_59
+    .local v5, xmlEventType:I
+    const/4 v6, 0x1
 
-    .line 185
-    if-ne v3, v6, :cond_5b
+    if-eq v5, v6, :cond_7e
 
-    const-string v4, "provider"
+    .line 116
+    if-ne v5, v9, :cond_80
 
-    invoke-interface {v2}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
+    const-string v6, "provider"
 
-    move-result-object v5
+    invoke-interface {v4}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v7
 
-    move-result v4
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v4, :cond_5b
+    move-result v6
 
-    const-string v4, "domain"
+    if-eqz v6, :cond_80
 
-    invoke-static {p0, v2, v4}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
+    .line 118
+    const-string v6, "domain"
 
-    move-result-object v4
+    invoke-static {p0, v4, v6}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
+    :try_end_25
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_25} :catch_76
 
-    invoke-virtual {p1, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    move-result-object v3
 
-    move-result v4
+    .line 120
+    .local v3, providerDomain:Ljava/lang/String;
+    :try_start_26
+    invoke-static {p1, v3}, Lcom/android/email/activity/setup/AccountSettingsUtils;->matchProvider(Ljava/lang/String;Ljava/lang/String;)Z
 
-    if-eqz v4, :cond_5b
+    move-result v6
 
-    .line 187
+    if-eqz v6, :cond_d9
+
+    .line 121
     new-instance v1, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
 
-    .end local v1           #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
     invoke-direct {v1}, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;-><init>()V
+    :try_end_31
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_26 .. :try_end_31} :catch_51
+    .catch Ljava/lang/Exception; {:try_start_26 .. :try_end_31} :catch_76
 
-    .line 188
+    .line 122
+    .end local v2           #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
     .restart local v1       #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
-    const-string v4, "id"
+    :try_start_31
+    const-string v6, "id"
 
-    invoke-static {p0, v2, v4}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v4, v6}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
-    iput-object v4, v1, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->id:Ljava/lang/String;
+    iput-object v6, v1, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->id:Ljava/lang/String;
 
-    .line 189
-    const-string v4, "label"
+    .line 123
+    const-string v6, "label"
 
-    invoke-static {p0, v2, v4}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v4, v6}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
-    iput-object v4, v1, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->label:Ljava/lang/String;
+    iput-object v6, v1, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->label:Ljava/lang/String;
 
-    .line 190
-    const-string v4, "domain"
+    .line 124
+    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    invoke-static {p0, v2, v4}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v6
 
-    move-result-object v4
+    iput-object v6, v1, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->domain:Ljava/lang/String;
 
-    iput-object v4, v1, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->domain:Ljava/lang/String;
+    .line 125
+    const-string v6, "note"
 
-    .line 191
-    const-string v4, "note"
+    invoke-static {p0, v4, v6}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {p0, v2, v4}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v6
 
-    move-result-object v4
+    iput-object v6, v1, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->note:Ljava/lang/String;
+    :try_end_4f
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_31 .. :try_end_4f} :catch_d6
+    .catch Ljava/lang/Exception; {:try_start_31 .. :try_end_4f} :catch_76
 
-    iput-object v4, v1, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->note:Ljava/lang/String;
-    :try_end_50
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_50} :catch_51
+    :goto_4f
+    move-object v2, v1
 
-    goto :goto_a
-
-    .line 205
+    .line 131
     .end local v1           #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
-    .end local v2           #xml:Landroid/content/res/XmlResourceParser;
-    .end local v3           #xmlEventType:I
+    .restart local v2       #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
+    goto :goto_b
+
+    .line 127
     :catch_51
     move-exception v0
 
-    .line 206
-    .local v0, e:Ljava/lang/Exception;
-    const-string v4, "Email"
+    move-object v1, v2
 
-    const-string v5, "Error while trying to load provider settings."
-
-    invoke-static {v4, v5, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 208
-    .end local v0           #e:Ljava/lang/Exception;
-    :cond_59
-    const/4 v1, 0x0
-
-    :goto_5a
-    return-object v1
-
-    .line 192
+    .line 128
+    .end local v2           #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
+    .local v0, e:Ljava/lang/IllegalArgumentException;
     .restart local v1       #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
-    .restart local v2       #xml:Landroid/content/res/XmlResourceParser;
-    .restart local v3       #xmlEventType:I
-    :cond_5b
-    if-ne v3, v6, :cond_7c
+    :goto_53
+    :try_start_53
+    const-string v6, "Email"
 
-    :try_start_5d
-    const-string v4, "incoming"
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-interface {v2}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v5
+    const-string v8, "providers line: "
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v4
+    move-result-object v7
 
-    if-eqz v4, :cond_7c
+    invoke-interface {v4}, Landroid/content/res/XmlResourceParser;->getLineNumber()I
 
-    if-eqz v1, :cond_7c
+    move-result v8
 
-    .line 194
-    const-string v4, "uri"
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-static {p0, v2, v4}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v7
 
-    move-result-object v4
+    const-string v8, "; Domain contains multiple globals"
 
-    iput-object v4, v1, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->incomingUriTemplate:Ljava/lang/String;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 195
-    const-string v4, "username"
+    move-result-object v7
 
-    invoke-static {p0, v2, v4}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v7
 
-    iput-object v4, v1, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->incomingUsernameTemplate:Ljava/lang/String;
+    invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_75
+    .catch Ljava/lang/Exception; {:try_start_53 .. :try_end_75} :catch_76
 
-    goto :goto_a
+    goto :goto_4f
 
-    .line 196
-    :cond_7c
-    if-ne v3, v6, :cond_9e
+    .line 151
+    .end local v0           #e:Ljava/lang/IllegalArgumentException;
+    .end local v1           #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
+    .end local v3           #providerDomain:Ljava/lang/String;
+    .end local v4           #xml:Landroid/content/res/XmlResourceParser;
+    .end local v5           #xmlEventType:I
+    :catch_76
+    move-exception v0
 
-    const-string v4, "outgoing"
+    .line 152
+    .local v0, e:Ljava/lang/Exception;
+    const-string v6, "Email"
 
-    invoke-interface {v2}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
+    const-string v7, "Error while trying to load provider settings."
 
-    move-result-object v5
+    invoke-static {v6, v7, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 154
+    .end local v0           #e:Ljava/lang/Exception;
+    :cond_7e
+    const/4 v2, 0x0
 
-    move-result v4
+    :goto_7f
+    return-object v2
 
-    if-eqz v4, :cond_9e
+    .line 132
+    .restart local v2       #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
+    .restart local v4       #xml:Landroid/content/res/XmlResourceParser;
+    .restart local v5       #xmlEventType:I
+    :cond_80
+    if-ne v5, v9, :cond_a2
 
-    if-eqz v1, :cond_9e
+    :try_start_82
+    const-string v6, "incoming"
 
-    .line 198
-    const-string v4, "uri"
+    invoke-interface {v4}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
-    invoke-static {p0, v2, v4}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v7
 
-    move-result-object v4
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iput-object v4, v1, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->outgoingUriTemplate:Ljava/lang/String;
+    move-result v6
 
-    .line 199
-    const-string v4, "username"
+    if-eqz v6, :cond_a2
 
-    invoke-static {p0, v2, v4}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
+    if-eqz v2, :cond_a2
 
-    move-result-object v4
+    .line 135
+    const-string v6, "uri"
 
-    iput-object v4, v1, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->outgoingUsernameTemplate:Ljava/lang/String;
+    invoke-static {p0, v4, v6}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
 
-    goto/16 :goto_a
+    move-result-object v6
 
-    .line 200
-    :cond_9e
-    const/4 v4, 0x3
+    iput-object v6, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->incomingUriTemplate:Ljava/lang/String;
 
-    if-ne v3, v4, :cond_a
+    .line 136
+    const-string v6, "username"
 
-    const-string v4, "provider"
+    invoke-static {p0, v4, v6}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-interface {v2}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
+    move-result-object v6
 
-    move-result-object v5
+    iput-object v6, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->incomingUsernameTemplate:Ljava/lang/String;
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-    :try_end_aa
-    .catch Ljava/lang/Exception; {:try_start_5d .. :try_end_aa} :catch_51
+    goto/16 :goto_b
 
-    move-result v4
+    .line 138
+    :cond_a2
+    if-ne v5, v9, :cond_c4
 
-    if-eqz v4, :cond_a
+    const-string v6, "outgoing"
 
-    if-eqz v1, :cond_a
+    invoke-interface {v4}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
-    goto :goto_5a
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_c4
+
+    if-eqz v2, :cond_c4
+
+    .line 141
+    const-string v6, "uri"
+
+    invoke-static {p0, v4, v6}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    iput-object v6, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->outgoingUriTemplate:Ljava/lang/String;
+
+    .line 142
+    const-string v6, "username"
+
+    invoke-static {p0, v4, v6}, Lcom/android/email/activity/setup/AccountSettingsUtils;->getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    iput-object v6, v2, Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;->outgoingUsernameTemplate:Ljava/lang/String;
+
+    goto/16 :goto_b
+
+    .line 144
+    :cond_c4
+    const/4 v6, 0x3
+
+    if-ne v5, v6, :cond_b
+
+    const-string v6, "provider"
+
+    invoke-interface {v4}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :try_end_d0
+    .catch Ljava/lang/Exception; {:try_start_82 .. :try_end_d0} :catch_76
+
+    move-result v6
+
+    if-eqz v6, :cond_b
+
+    if-eqz v2, :cond_b
+
+    goto :goto_7f
+
+    .line 127
+    .end local v2           #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
+    .restart local v1       #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
+    .restart local v3       #providerDomain:Ljava/lang/String;
+    :catch_d6
+    move-exception v0
+
+    goto/16 :goto_53
+
+    .end local v1           #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
+    .restart local v2       #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
+    :cond_d9
+    move-object v1, v2
+
+    .end local v2           #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
+    .restart local v1       #provider:Lcom/android/email/activity/setup/AccountSettingsUtils$Provider;
+    goto/16 :goto_4f
 .end method
 
-.method public static getAccountContentValues(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Account;)Landroid/content/ContentValues;
-    .registers 9
-    .parameter "context"
+.method public static getAccountContentValues(Lcom/android/emailcommon/provider/Account;)Landroid/content/ContentValues;
+    .registers 4
     .parameter "account"
 
     .prologue
-    .line 83
+    .line 67
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 84
+    .line 68
     .local v0, cv:Landroid/content/ContentValues;
-    const-string v4, "isDefault"
+    const-string v1, "isDefault"
 
-    iget-boolean v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mIsDefault:Z
+    iget-boolean v2, p0, Lcom/android/emailcommon/provider/Account;->mIsDefault:Z
 
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
-
-    .line 85
-    const-string v4, "displayName"
-
-    invoke-virtual {p1}, Lcom/android/emailcommon/provider/EmailContent$Account;->getDisplayName()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 86
-    const-string v4, "senderName"
-
-    invoke-virtual {p1}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSenderName()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 87
-    const-string v4, "signature"
-
-    invoke-virtual {p1}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSignature()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 88
-    const-string v4, "syncInterval"
-
-    iget v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncInterval:I
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 89
-    const-string v4, "ringtoneUri"
-
-    iget-object v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mRingtoneUri:Ljava/lang/String;
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 90
-    const-string v4, "flags"
-
-    iget v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mFlags:I
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 91
-    const-string v4, "syncLookback"
-
-    iget v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncLookback:I
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 92
-    const-string v4, "emailsize"
-
-    iget v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mEmailSize:I
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 94
-    const-string v4, "conflict"
-
-    iget v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mConflictFlags:I
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 96
-    invoke-virtual {p1}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSyncScheduleData()Lcom/android/emailcommon/utility/SyncScheduleData;
-
-    move-result-object v3
-
-    .line 97
-    .local v3, syncData:Lcom/android/emailcommon/utility/SyncScheduleData;
-    const-string v4, "peakDays"
-
-    invoke-virtual {v3}, Lcom/android/emailcommon/utility/SyncScheduleData;->getPeakDay()I
-
-    move-result v5
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 98
-    const-string v4, "peakStartMinute"
-
-    invoke-virtual {v3}, Lcom/android/emailcommon/utility/SyncScheduleData;->getStartMinute()I
-
-    move-result v5
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 99
-    const-string v4, "peakEndMinute"
-
-    invoke-virtual {v3}, Lcom/android/emailcommon/utility/SyncScheduleData;->getEndMinute()I
-
-    move-result v5
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 100
-    const-string v4, "peakSchedule"
-
-    invoke-virtual {v3}, Lcom/android/emailcommon/utility/SyncScheduleData;->getPeakSchedule()I
-
-    move-result v5
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 101
-    const-string v4, "offPeakSchedule"
-
-    invoke-virtual {v3}, Lcom/android/emailcommon/utility/SyncScheduleData;->getOffPeakSchedule()I
-
-    move-result v5
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 103
-    invoke-static {p0}, Lcom/android/email/SecurityPolicy;->getInstance(Landroid/content/Context;)Lcom/android/email/SecurityPolicy;
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v2
 
-    .line 104
-    .local v2, securityPolicy:Lcom/android/email/SecurityPolicy;
-    const/4 v1, 0x0
+    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 105
-    .local v1, policySet:Lcom/android/emailcommon/service/PolicySet;
-    if-eqz v2, :cond_bf
+    .line 69
+    const-string v1, "displayName"
 
-    .line 106
-    iget-wide v4, p1, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    invoke-virtual {p0}, Lcom/android/emailcommon/provider/Account;->getDisplayName()Ljava/lang/String;
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-object v2
 
-    move-result-object v4
+    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v2, v4}, Lcom/android/email/SecurityPolicy;->getAccountPolicy(Ljava/lang/Long;)Lcom/android/emailcommon/service/PolicySet;
+    .line 70
+    const-string v1, "senderName"
 
-    move-result-object v1
+    invoke-virtual {p0}, Lcom/android/emailcommon/provider/Account;->getSenderName()Ljava/lang/String;
 
-    .line 107
-    :cond_bf
-    if-eqz v1, :cond_173
+    move-result-object v2
 
-    iget-boolean v4, v1, Lcom/android/emailcommon/service/PolicySet;->mRequireManualSyncWhenRoaming:Z
+    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz v4, :cond_173
+    .line 71
+    const-string v1, "signature"
 
-    .line 108
-    const-string v4, "roamingSchedule"
+    invoke-virtual {p0}, Lcom/android/emailcommon/provider/Account;->getSignature()Ljava/lang/String;
 
-    const/4 v5, 0x0
+    move-result-object v2
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v5
+    .line 72
+    const-string v1, "syncInterval"
 
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    iget v2, p0, Lcom/android/emailcommon/provider/Account;->mSyncInterval:I
 
-    .line 114
-    :goto_cf
-    const-string v4, "calendarSyncLookback"
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mCalendarSyncLookback:I
+    move-result-object v2
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    move-result-object v5
+    .line 73
+    const-string v1, "ringtoneUri"
 
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    iget-object v2, p0, Lcom/android/emailcommon/provider/Account;->mRingtoneUri:Ljava/lang/String;
 
-    .line 117
-    const-string v4, "smimeOwnCertificateAlias"
+    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mSmimeOwnCertificateAlias:Ljava/lang/String;
+    .line 74
+    const-string v1, "flags"
 
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+    iget v2, p0, Lcom/android/emailcommon/provider/Account;->mFlags:I
 
-    .line 120
-    const-string v4, "smimeOptionsFlags"
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {p1}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSmimeFlags()I
+    move-result-object v2
 
-    move-result v5
+    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 75
+    const-string v1, "syncLookback"
 
-    move-result-object v5
+    iget v2, p0, Lcom/android/emailcommon/provider/Account;->mSyncLookback:I
 
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    .line 121
-    const-string v4, "smimeSignAlgorithm"
+    move-result-object v2
 
-    invoke-virtual {p1}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSmimeSignAlgorithm()I
+    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    move-result v5
+    .line 76
+    const-string v1, "securitySyncKey"
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v2, p0, Lcom/android/emailcommon/provider/Account;->mSecuritySyncKey:Ljava/lang/String;
 
-    move-result-object v5
+    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 122
-    const-string v4, "smimeEncryptionAlgorithm"
-
-    invoke-virtual {p1}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSmimeEncryptionAlgorithm()I
-
-    move-result v5
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 125
-    const-string v4, "textPreview"
-
-    iget v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mTextPreviewSize:I
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 129
-    const-string v4, "securityFlags"
-
-    iget-wide v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mSecurityFlags:J
-
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 130
-    const-string v4, "securitySyncKey"
-
-    iget-object v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mSecuritySyncKey:Ljava/lang/String;
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 131
-    const-string v4, "conversationMode"
-
-    iget v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mConversationMode:I
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 135
-    const-string v4, "messageFormat"
-
-    iget v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mMessageFormat:I
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 139
-    const-string v4, "forwardWithFiles"
-
-    iget-boolean v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mForwardWithFiles:Z
-
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
-
-    .line 140
-    const-string v4, "autoDownload"
-
-    iget-boolean v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mAutoDownload:Z
-
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
-
-    .line 141
-    const-string v4, "recentMessages"
-
-    iget v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mRecentMessages:I
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 142
-    const-string v4, "showImage"
-
-    iget-boolean v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mShowImage:Z
-
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
-
-    .line 144
-    const-string v4, "autoRetryTimes"
-
-    iget v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mAutoRetryTimes:I
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 148
+    .line 77
     return-object v0
-
-    .line 110
-    :cond_173
-    const-string v4, "roamingSchedule"
-
-    invoke-virtual {v3}, Lcom/android/emailcommon/utility/SyncScheduleData;->getRoamingSchedule()I
-
-    move-result v5
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    goto/16 :goto_cf
 .end method
 
 .method private static getXmlAttribute(Landroid/content/Context;Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
@@ -949,23 +590,23 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 235
+    .line 204
     const/4 v1, 0x0
 
     invoke-interface {p1, v2, p2, v1}, Landroid/content/res/XmlResourceParser;->getAttributeResourceValue(Ljava/lang/String;Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 236
+    .line 205
     .local v0, resId:I
     if-nez v0, :cond_d
 
-    .line 237
+    .line 206
     invoke-interface {p1, v2, p2}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 239
+    .line 209
     :goto_c
     return-object v1
 
@@ -988,22 +629,22 @@
 
     const/4 v2, 0x0
 
-    .line 286
+    .line 273
     const/4 v4, 0x0
 
-    .line 287
+    .line 274
     .local v4, keepFirstChar:I
     invoke-virtual {p0, v6}, Ljava/lang/String;->indexOf(I)I
 
     move-result v0
 
-    .line 288
+    .line 275
     .local v0, firstDotIndex:I
     const/4 v5, -0x1
 
     if-eq v0, v5, :cond_3d
 
-    .line 290
+    .line 277
     invoke-virtual {p0, v2, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v5
@@ -1012,7 +653,7 @@
 
     move-result-object v1
 
-    .line 291
+    .line 278
     .local v1, firstWord:Ljava/lang/String;
     const-string v5, "imap"
 
@@ -1041,7 +682,7 @@
     :cond_2b
     const/4 v2, 0x1
 
-    .line 293
+    .line 280
     .local v2, isImapOrPop:Z
     :cond_2c
     const-string v5, "mail"
@@ -1050,16 +691,16 @@
 
     move-result v3
 
-    .line 295
+    .line 282
     .local v3, isMail:Z
     if-eqz p1, :cond_39
 
-    .line 298
+    .line 284
     if-nez v2, :cond_38
 
     if-eqz v3, :cond_3d
 
-    .line 314
+    .line 299
     .end local v1           #firstWord:Ljava/lang/String;
     .end local v2           #isImapOrPop:Z
     .end local v3           #isMail:Z
@@ -1069,7 +710,7 @@
     :goto_38
     return-object p0
 
-    .line 305
+    .line 290
     .restart local v1       #firstWord:Ljava/lang/String;
     .restart local v2       #isImapOrPop:Z
     .restart local v3       #isMail:Z
@@ -1078,10 +719,10 @@
     :cond_39
     if-eqz v2, :cond_59
 
-    .line 306
+    .line 291
     add-int/lit8 v4, v0, 0x1
 
-    .line 314
+    .line 299
     .end local v1           #firstWord:Ljava/lang/String;
     .end local v2           #isImapOrPop:Z
     .end local v3           #isMail:Z
@@ -1116,7 +757,7 @@
 
     goto :goto_38
 
-    .line 307
+    .line 292
     .restart local v1       #firstWord:Ljava/lang/String;
     .restart local v2       #isImapOrPop:Z
     .restart local v3       #isMail:Z
@@ -1132,6 +773,168 @@
     :cond_5c
     move-object p1, p2
 
-    .line 314
+    .line 299
     goto :goto_44
+.end method
+
+.method static matchProvider(Ljava/lang/String;Ljava/lang/String;)Z
+    .registers 10
+    .parameter "testDomain"
+    .parameter "providerDomain"
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+
+    .prologue
+    const/4 v5, 0x0
+
+    .line 165
+    const-string v6, "\\."
+
+    invoke-virtual {p0, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 166
+    .local v4, testParts:[Ljava/lang/String;
+    const-string v6, "\\."
+
+    invoke-virtual {p1, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 167
+    .local v2, providerParts:[Ljava/lang/String;
+    array-length v6, v4
+
+    array-length v7, v2
+
+    if-eq v6, v7, :cond_12
+
+    .line 178
+    :cond_11
+    :goto_11
+    return v5
+
+    .line 170
+    :cond_12
+    const/4 v0, 0x0
+
+    .local v0, i:I
+    :goto_13
+    array-length v6, v4
+
+    if-ge v0, v6, :cond_33
+
+    .line 171
+    aget-object v6, v4, v0
+
+    invoke-virtual {v6}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 172
+    .local v3, testPart:Ljava/lang/String;
+    aget-object v6, v2, v0
+
+    invoke-virtual {v6}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 173
+    .local v1, providerPart:Ljava/lang/String;
+    const-string v6, "*"
+
+    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_30
+
+    invoke-static {v3, v1}, Lcom/android/email/activity/setup/AccountSettingsUtils;->matchWithWildcards(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_11
+
+    .line 170
+    :cond_30
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_13
+
+    .line 178
+    .end local v1           #providerPart:Ljava/lang/String;
+    .end local v3           #testPart:Ljava/lang/String;
+    :cond_33
+    const/4 v5, 0x1
+
+    goto :goto_11
+.end method
+
+.method private static matchWithWildcards(Ljava/lang/String;Ljava/lang/String;)Z
+    .registers 8
+    .parameter "testPart"
+    .parameter "providerPart"
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 182
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    .line 183
+    .local v2, providerLength:I
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    if-eq v5, v2, :cond_c
+
+    .line 193
+    :cond_b
+    :goto_b
+    return v4
+
+    .line 186
+    :cond_c
+    const/4 v0, 0x0
+
+    .local v0, i:I
+    :goto_d
+    if-ge v0, v2, :cond_20
+
+    .line 187
+    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
+
+    move-result v3
+
+    .line 188
+    .local v3, testChar:C
+    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
+
+    move-result v1
+
+    .line 189
+    .local v1, providerChar:C
+    if-eq v3, v1, :cond_1d
+
+    const/16 v5, 0x3f
+
+    if-ne v1, v5, :cond_b
+
+    .line 186
+    :cond_1d
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_d
+
+    .line 193
+    .end local v1           #providerChar:C
+    .end local v3           #testChar:C
+    :cond_20
+    const/4 v4, 0x1
+
+    goto :goto_b
 .end method

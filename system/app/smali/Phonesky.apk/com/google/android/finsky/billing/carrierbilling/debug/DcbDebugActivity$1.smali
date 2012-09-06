@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 59
+    .line 58
     iput-object p1, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity$1;->this$0:Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,15 +41,15 @@
     .registers 2
 
     .prologue
-    .line 62
+    .line 61
     invoke-static {}, Lcom/google/android/finsky/utils/Utils;->ensureOnMainThread()V
 
-    .line 63
+    .line 62
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity$1;->this$0:Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;
 
     #calls: Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->updateStatus()V
     invoke-static {v0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->access$000(Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;)V
 
-    .line 64
+    .line 63
     return-void
 .end method

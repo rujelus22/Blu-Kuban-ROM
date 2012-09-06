@@ -16,16 +16,16 @@
     .parameter "displayIcon"
 
     .prologue
-    .line 25
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 26
+    .line 27
     iput-object p1, p0, Lcom/google/android/finsky/billing/Instrument;->mCheckoutOption:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;
 
-    .line 27
+    .line 28
     iput-object p2, p0, Lcom/google/android/finsky/billing/Instrument;->mDisplayIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 28
+    .line 29
     return-void
 .end method
 
@@ -38,7 +38,7 @@
     .registers 2
 
     .prologue
-    .line 70
+    .line 85
     iget-object v0, p0, Lcom/google/android/finsky/billing/Instrument;->mCheckoutOption:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;
 
     return-object v0
@@ -58,7 +58,7 @@
     .end annotation
 
     .prologue
-    .line 83
+    .line 98
     const/4 v0, 0x0
 
     return-object v0
@@ -68,7 +68,7 @@
     .registers 2
 
     .prologue
-    .line 49
+    .line 50
     iget-object v0, p0, Lcom/google/android/finsky/billing/Instrument;->mCheckoutOption:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;->getFormOfPayment()Ljava/lang/String;
@@ -82,7 +82,7 @@
     .registers 2
 
     .prologue
-    .line 42
+    .line 43
     iget-object v0, p0, Lcom/google/android/finsky/billing/Instrument;->mCheckoutOption:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;->getInstrumentFamily()I
@@ -96,7 +96,7 @@
     .registers 2
 
     .prologue
-    .line 35
+    .line 36
     iget-object v0, p0, Lcom/google/android/finsky/billing/Instrument;->mCheckoutOption:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;->getInstrumentId()Ljava/lang/String;
@@ -106,11 +106,58 @@
     return-object v0
 .end method
 
+.method public getMessages()Ljava/util/List;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 78
+    iget-object v0, p0, Lcom/google/android/finsky/billing/Instrument;->mCheckoutOption:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;->getDisabledReasonList()Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public hasMessages()Z
+    .registers 2
+
+    .prologue
+    .line 71
+    iget-object v0, p0, Lcom/google/android/finsky/billing/Instrument;->mCheckoutOption:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;->getDisabledReasonCount()I
+
+    move-result v0
+
+    if-lez v0, :cond_a
+
+    const/4 v0, 0x1
+
+    :goto_9
+    return v0
+
+    :cond_a
+    const/4 v0, 0x0
+
+    goto :goto_9
+.end method
+
 .method public isValid()Z
     .registers 2
 
     .prologue
-    .line 63
+    .line 64
     iget-object v0, p0, Lcom/google/android/finsky/billing/Instrument;->mCheckoutOption:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;->hasEncodedAdjustedCart()Z
@@ -124,7 +171,7 @@
     .registers 2
 
     .prologue
-    .line 75
+    .line 90
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/Instrument;->getDisplayName()Ljava/lang/String;
 
     move-result-object v0

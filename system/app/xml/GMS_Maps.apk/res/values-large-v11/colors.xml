@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tab_background">@color/tab_background_tablet</color>
+    <color name="tab_text_color">@color/tab_text_color_tablet</color>
+    <color name="refinement_buttons_background">@color/refinement_buttons_background_tablet</color>
+    <color name="refinement_button_text">@color/refinement_button_text_tablet</color>
+    <color name="local_plus_tab_divider">@color/local_plus_tab_divider_tablet</color>
+    <color name="local_plus_tab_text">@color/local_plus_tab_text_tablet</color>
+    <color name="vehicle_selector_item_background">@color/white</color>
+</resources>

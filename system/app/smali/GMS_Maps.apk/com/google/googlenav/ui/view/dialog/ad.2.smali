@@ -1,37 +1,20 @@
-.class Lcom/google/googlenav/ui/view/dialog/ad;
+.class public interface abstract Lcom/google/googlenav/ui/view/dialog/aD;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnCancelListener;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/aa;
-
-
-# direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/aa;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/ad;->a:Lcom/google/googlenav/ui/view/dialog/aa;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.source "SourceFile"
 
 
 # virtual methods
-.method public onCancel(Landroid/content/DialogInterface;)V
-    .registers 3
+.method public abstract a()V
+.end method
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/ad;->a:Lcom/google/googlenav/ui/view/dialog/aa;
+.method public abstract a(Lcom/google/googlenav/friend/aK;)V
+.end method
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/aa;->a(Lcom/google/googlenav/ui/view/dialog/aa;)Lcom/google/googlenav/ui/view/dialog/ae;
+.method public abstract b(Lcom/google/googlenav/friend/aK;)V
+.end method
 
-    move-result-object v0
+.method public abstract c(Lcom/google/googlenav/friend/aK;)V
+.end method
 
-    invoke-interface {v0}, Lcom/google/googlenav/ui/view/dialog/ae;->b()V
-
-    return-void
+.method public abstract d(Lcom/google/googlenav/friend/aK;)V
 .end method

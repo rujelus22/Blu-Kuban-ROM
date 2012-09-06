@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/media_info_main_text_item_layout" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="52.0dip" android:layout_marginLeft="1.0dip" android:layout_marginRight="1.0dip">
-        <TextView android:textSize="17.0dip" android:textStyle="bold" android:textColor="@color/tw_white" android:ellipsize="marquee" android:id="@id/media_info_main_text_item_line2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:singleLine="true" android:layout_toLeftOf="@id/media_info_main_text_item_image_button" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" android:marqueeRepeatLimit="marquee_forever" />
-        <TextView android:textSize="14.0dip" android:textColor="#ff8c8c8c" android:ellipsize="marquee" android:id="@id/media_info_main_text_item_line1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" android:singleLine="true" android:layout_toLeftOf="@id/media_info_main_text_item_image_button" android:layout_above="@id/media_info_main_text_item_line2" android:layout_alignParentLeft="true" android:marqueeRepeatLimit="marquee_forever" />
-    </RelativeLayout>
-</LinearLayout>

@@ -3,7 +3,14 @@
     <attr name="maxTextWidth" format="dimension" />
     <attr name="desiredTextSize" format="dimension" />
     <attr name="minTextSize" format="dimension" />
+    <attr name="horizontalGridSize" format="dimension" />
+    <attr name="verticalGridSize" format="dimension" />
+    <attr name="horizontalGridSpacing" format="dimension" />
+    <attr name="verticalGridSpacing" format="dimension" />
     <attr name="selectableItemBackground" format="reference|color" />
+    <attr name="dialogResource" format="reference" />
+    <attr name="arrowOnLeft" format="boolean" />
+    <attr name="spinner_max_width" format="dimension" />
     <attr name="da_desiredTextSize" format="dimension" />
     <attr name="da_minTextSize" format="dimension" />
     <attr name="title" format="string" />

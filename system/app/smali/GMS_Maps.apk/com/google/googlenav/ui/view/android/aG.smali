@@ -1,64 +1,99 @@
-.class Lcom/google/googlenav/ui/view/android/aG;
+.class Lcom/google/googlenav/ui/view/android/ag;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
 
 # instance fields
-.field private final a:Lbb/c;
-
-.field private final b:Lbb/c;
+.field final synthetic a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
 
 
 # direct methods
-.method public constructor <init>(Lbb/c;Lbb/c;)V
-    .registers 3
+.method private constructor <init>(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 111
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/ag;->a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/aG;->a:Lbb/c;
+    return-void
+.end method
 
-    iput-object p2, p0, Lcom/google/googlenav/ui/view/android/aG;->b:Lbb/c;
+.method synthetic constructor <init>(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;Lcom/google/googlenav/ui/view/android/ae;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 111
+    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/view/android/ag;-><init>(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public notifyClick(Ljava/lang/String;)V
+.method public onChildViewAdded(Landroid/view/View;Landroid/view/View;)V
     .registers 4
+    .parameter
+    .parameter
 
-    if-eqz p1, :cond_10
+    .prologue
+    .line 115
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/ag;->a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aG;->a:Lbb/c;
+    if-ne p1, v0, :cond_13
 
-    if-eqz v0, :cond_10
+    instance-of v0, p2, Lcom/google/googlenav/ui/view/android/DescriptiveRadioButton;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aG;->a:Lbb/c;
+    if-eqz v0, :cond_13
 
-    new-instance v1, Lbb/A;
+    .line 116
+    check-cast p2, Lcom/google/googlenav/ui/view/android/DescriptiveRadioButton;
 
-    invoke-direct {v1, p1}, Lbb/A;-><init>(Ljava/lang/String;)V
+    .line 117
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/ag;->a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
 
-    invoke-interface {v0, v1}, Lbb/c;->a(Lbb/E;)Z
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;->a(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;)Lcom/google/googlenav/ui/view/android/ab;
 
-    :cond_10
+    move-result-object v0
+
+    invoke-virtual {p2, v0}, Lcom/google/googlenav/ui/view/android/DescriptiveRadioButton;->setOnCheckedChangeListener(Lcom/google/googlenav/ui/view/android/ab;)V
+
+    .line 119
+    :cond_13
     return-void
 .end method
 
-.method public notifyPageLoad(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+.method public onChildViewRemoved(Landroid/view/View;Landroid/view/View;)V
+    .registers 4
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aG;->b:Lbb/c;
+    .prologue
+    .line 123
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/ag;->a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
+
+    if-ne p1, v0, :cond_e
+
+    instance-of v0, p2, Lcom/google/googlenav/ui/view/android/DescriptiveRadioButton;
 
     if-eqz v0, :cond_e
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aG;->b:Lbb/c;
+    .line 124
+    check-cast p2, Lcom/google/googlenav/ui/view/android/DescriptiveRadioButton;
 
-    new-instance v1, Lbb/A;
+    .line 125
+    const/4 v0, 0x0
 
-    invoke-direct {v1, p2, p1}, Lbb/A;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p2, v0}, Lcom/google/googlenav/ui/view/android/DescriptiveRadioButton;->setOnCheckedChangeListener(Lcom/google/googlenav/ui/view/android/ab;)V
 
-    invoke-interface {v0, v1}, Lbb/c;->a(Lbb/E;)Z
-
+    .line 127
     :cond_e
     return-void
 .end method

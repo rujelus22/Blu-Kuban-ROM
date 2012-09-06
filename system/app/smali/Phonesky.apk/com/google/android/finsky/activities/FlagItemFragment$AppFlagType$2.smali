@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 419
+    .line 409
     iput-object p1, p0, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType$2;->this$0:Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,6 +42,6 @@
     .parameter "error"
 
     .prologue
-    .line 422
+    .line 412
     return-void
 .end method

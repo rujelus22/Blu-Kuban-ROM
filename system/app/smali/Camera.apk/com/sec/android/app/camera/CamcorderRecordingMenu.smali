@@ -160,7 +160,7 @@
     iput v7, p0, Lcom/sec/android/app/camera/CamcorderRecordingMenu;->mRecordingTime:I
 
     .line 88
-    const v0, 0x7f020188
+    const v0, 0x7f020187
 
     iput v0, p0, Lcom/sec/android/app/camera/CamcorderRecordingMenu;->mRecImageId:I
 
@@ -606,7 +606,7 @@
     .line 120
     iget-object v0, p0, Lcom/sec/android/app/camera/CamcorderRecordingMenu;->mRecIcon:Landroid/widget/ImageView;
 
-    const v1, 0x7f020188
+    const v1, 0x7f020187
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1825,7 +1825,7 @@
     :goto_78
     iget-object v0, p0, Lcom/sec/android/app/camera/CamcorderRecordingMenu;->mRecIcon:Landroid/widget/ImageView;
 
-    const v1, 0x7f020188
+    const v1, 0x7f020187
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 

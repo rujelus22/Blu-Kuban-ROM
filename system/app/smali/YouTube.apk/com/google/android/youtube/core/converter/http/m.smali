@@ -1,5 +1,5 @@
 .class public final Lcom/google/android/youtube/core/converter/http/m;
-.super Lcom/google/android/youtube/core/converter/http/ad;
+.super Lcom/google/android/youtube/core/converter/http/ar;
 .source "SourceFile"
 
 
@@ -13,25 +13,25 @@
     .parameter
 
     .prologue
-    .line 18
-    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/converter/http/ad;-><init>(Lcom/google/android/youtube/core/converter/k;)V
+    .line 23
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/converter/http/ar;-><init>(Lcom/google/android/youtube/core/converter/k;)V
 
-    .line 19
-    new-instance v0, Lcom/google/android/youtube/core/converter/d;
+    .line 24
+    invoke-static {}, Lcom/google/android/youtube/core/converter/e;->a()Lcom/google/android/youtube/core/converter/d;
 
-    invoke-direct {v0}, Lcom/google/android/youtube/core/converter/d;-><init>()V
+    move-result-object v0
 
-    .line 20
-    invoke-static {v0}, Lcom/google/android/youtube/core/converter/http/n;->b(Lcom/google/android/youtube/core/converter/d;)V
+    .line 25
+    invoke-static {v0}, Lcom/google/android/youtube/core/converter/http/o;->a(Lcom/google/android/youtube/core/converter/d;)V
 
-    .line 21
+    .line 26
     invoke-virtual {v0}, Lcom/google/android/youtube/core/converter/d;->a()Lcom/google/android/youtube/core/converter/c;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/youtube/core/converter/http/m;->b:Lcom/google/android/youtube/core/converter/c;
 
-    .line 22
+    .line 27
     return-void
 .end method
 
@@ -41,7 +41,7 @@
     .registers 2
 
     .prologue
-    .line 26
+    .line 31
     iget-object v0, p0, Lcom/google/android/youtube/core/converter/http/m;->b:Lcom/google/android/youtube/core/converter/c;
 
     return-object v0

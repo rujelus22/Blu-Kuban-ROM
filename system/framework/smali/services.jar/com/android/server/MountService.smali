@@ -33,11 +33,11 @@
 # static fields
 .field private static final CRYPTO_ALGORITHM_KEY_SIZE:I = 0x80
 
-.field private static final DEBUG_EVENTS:Z = true
+.field private static final DEBUG_EVENTS:Z = false
 
 .field private static final DEBUG_OBB:Z = false
 
-.field private static final DEBUG_UNMOUNT:Z = true
+.field private static final DEBUG_UNMOUNT:Z = false
 
 .field static final DEFAULT_CONTAINER_COMPONENT:Landroid/content/ComponentName; = null
 

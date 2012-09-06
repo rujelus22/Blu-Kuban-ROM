@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/activities/AuthenticatedActivity;->recreateDelayed(J)V
+    value = Lcom/google/android/finsky/activities/AuthenticatedActivity;->restart()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
 
+.field final synthetic val$intent:Landroid/content/Intent;
+
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/activities/AuthenticatedActivity;)V
-    .registers 2
+.method constructor <init>(Lcom/google/android/finsky/activities/AuthenticatedActivity;Landroid/content/Intent;)V
+    .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 998
+    .line 924
     iput-object p1, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$14;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
+
+    iput-object p2, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$14;->val$intent:Landroid/content/Intent;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,27 +43,46 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .registers 6
 
     .prologue
-    .line 1002
-    const-string v0, "b/5160617: Reinitializing with null account from recreateDelayed"
+    .line 928
+    :try_start_0
+    iget-object v1, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$14;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
 
-    const/4 v1, 0x0
+    iget-object v2, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$14;->val$intent:Landroid/content/Intent;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->startActivity(Landroid/content/Intent;)V
+    :try_end_7
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_7} :catch_8
 
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    .line 933
+    return-void
 
-    .line 1003
-    iget-object v0, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$14;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
+    .line 929
+    :catch_8
+    move-exception v0
 
-    const/4 v1, 0x0
+    .line 930
+    .local v0, e:Landroid/content/ActivityNotFoundException;
+    const-string v1, "Intent: %s"
 
     const/4 v2, 0x1
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->reinitialize(Landroid/accounts/Account;Z)V
+    new-array v2, v2, [Ljava/lang/Object;
 
-    .line 1004
-    return-void
+    const/4 v3, 0x0
+
+    iget-object v4, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$14;->val$intent:Landroid/content/Intent;
+
+    invoke-virtual {v4}, Landroid/content/Intent;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    invoke-static {v0, v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->wtf(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 931
+    throw v0
 .end method

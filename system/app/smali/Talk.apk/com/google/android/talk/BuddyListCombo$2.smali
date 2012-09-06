@@ -45,7 +45,7 @@
 
     iput-boolean p4, p0, Lcom/google/android/talk/BuddyListCombo$2;->val$expandoOpen:Z
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

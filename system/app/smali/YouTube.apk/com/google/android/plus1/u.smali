@@ -122,7 +122,7 @@
 
     iget-object v1, p1, Lcom/google/android/plus1/u;->a:Landroid/net/Uri;
 
-    invoke-static {v0, v1}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -132,7 +132,7 @@
 
     iget-object v1, p1, Lcom/google/android/plus1/u;->b:Ljava/lang/Boolean;
 
-    invoke-static {v0, v1}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -142,7 +142,7 @@
 
     iget-object v1, p1, Lcom/google/android/plus1/u;->c:Ljava/util/Set;
 
-    invoke-static {v0, v1}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -224,9 +224,9 @@
 
     .prologue
     .line 61
-    const-string v0, "URI=%s,+1=%s,totalCount=%s,abuseToken=%s"
+    const-string v0, "URI=%s,+1=%s,totalCount=%s"
 
-    const/4 v1, 0x4
+    const/4 v1, 0x3
 
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -249,12 +249,6 @@
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    iget-object v3, p0, Lcom/google/android/plus1/u;->e:Ljava/lang/String;
 
     aput-object v3, v1, v2
 

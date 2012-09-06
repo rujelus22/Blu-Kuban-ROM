@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;
 
-.field final synthetic val$localAsset:Lcom/google/android/finsky/local/LocalAsset;
-
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Lcom/google/android/finsky/local/LocalAsset;)V
-    .registers 3
-    .parameter
+.method constructor <init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 209
+    .line 254
     iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$3;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;
-
-    iput-object p2, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$3;->val$localAsset:Lcom/google/android/finsky/local/LocalAsset;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,24 +38,35 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 5
+    .registers 6
     .parameter "v"
 
     .prologue
-    .line 212
-    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$3;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;
+    .line 257
+    const v1, 0x7f070105
 
-    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$3;->val$localAsset:Lcom/google/android/finsky/local/LocalAsset;
+    const v2, 0x7f070197
 
-    invoke-interface {v1}, Lcom/google/android/finsky/local/LocalAsset;->getPackage()Ljava/lang/String;
+    const/4 v3, -0x1
+
+    invoke-static {v1, v2, v3}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->newInstance(III)Lcom/google/android/finsky/activities/SimpleAlertDialog;
+
+    move-result-object v0
+
+    .line 259
+    .local v0, dialog:Lcom/google/android/finsky/activities/SimpleAlertDialog;
+    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$3;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;
+
+    iget-object v1, v1, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContainerFragment:Lcom/google/android/finsky/fragments/PageFragment;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/fragments/PageFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v1
 
     const/4 v2, 0x0
 
-    #calls: Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->refundAsset(Ljava/lang/String;Ljava/lang/Runnable;)V
-    invoke-static {v0, v1, v2}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->access$100(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;Ljava/lang/Runnable;)V
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 213
+    .line 260
     return-void
 .end method

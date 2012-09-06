@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:layout_gravity="center" android:id="@id/shuffle" android:focusable="true" android:visibility="invisible" android:layout_width="@dimen/shuffle_repeat_controls_now_playing_page" android:layout_height="@dimen/shuffle_repeat_controls_now_playing_page" android:scaleType="fitCenter" android:contentDescription="@string/accessibility_shuffle" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <com.google.android.music.RepeatingImageButton android:layout_gravity="center" android:id="@id/prev" android:layout_width="@dimen/play_controls_now_playing_page" android:layout_height="@dimen/play_controls_now_playing_page" style="@style/PlaybackControl.Previous" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <com.google.android.music.PlayPauseButton android:layout_gravity="center" android:id="@id/pause" android:layout_width="@dimen/play_controls_now_playing_page" android:layout_height="@dimen/play_controls_now_playing_page" style="@style/PlaybackControl.Play" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <com.google.android.music.RepeatingImageButton android:layout_gravity="center" android:id="@id/next" android:layout_width="@dimen/play_controls_now_playing_page" android:layout_height="@dimen/play_controls_now_playing_page" style="@style/PlaybackControl.Next" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:layout_gravity="center" android:id="@id/repeat" android:focusable="true" android:visibility="invisible" android:layout_width="@dimen/shuffle_repeat_controls_now_playing_page" android:layout_height="@dimen/shuffle_repeat_controls_now_playing_page" android:scaleType="fitCenter" android:contentDescription="@string/accessibility_repeat" />
+    </FrameLayout>
+</merge>

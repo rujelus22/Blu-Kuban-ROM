@@ -1,53 +1,105 @@
 .class public abstract LaB/h;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements LaB/c;
+.source "SourceFile"
 
 
-# instance fields
-.field private a:Z
+# static fields
+.field private static a:LaB/h;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
+    .prologue
+    .line 77
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, LaB/h;->a:Z
+    sput-object v0, LaB/h;->a:LaB/h;
 
     return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 15
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 61
+    return-void
+.end method
+
+.method public static a(LaB/h;)V
+    .registers 1
+    .parameter
+
+    .prologue
+    .line 159
+    sput-object p0, LaB/h;->a:LaB/h;
+
+    .line 160
+    return-void
+.end method
+
+.method public static i()LaB/h;
+    .registers 1
+
+    .prologue
+    .line 154
+    sget-object v0, LaB/h;->a:LaB/h;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public a(Lcom/google/googlenav/ui/D;)V
-    .registers 3
+.method public abstract a(LaB/i;)V
+.end method
 
-    const/4 v0, 0x0
+.method public abstract a(LaB/j;)V
+.end method
 
-    iput-boolean v0, p0, LaB/h;->a:Z
+.method public abstract a()Z
+.end method
 
+.method public abstract b()I
+.end method
+
+.method public abstract b(LaB/i;)V
+.end method
+
+.method public abstract c()Z
+.end method
+
+.method public abstract d()F
+.end method
+
+.method protected abstract e()V
+.end method
+
+.method protected abstract f()V
+.end method
+
+.method public g()V
+    .registers 1
+
+    .prologue
+    .line 123
+    invoke-virtual {p0}, LaB/h;->f()V
+
+    .line 124
     return-void
 .end method
 
-.method public a(Lcom/google/googlenav/ui/D;Z)V
-    .registers 4
+.method public h()V
+    .registers 1
 
-    const/4 v0, 0x1
+    .prologue
+    .line 131
+    invoke-virtual {p0}, LaB/h;->e()V
 
-    iput-boolean v0, p0, LaB/h;->a:Z
-
+    .line 132
     return-void
-.end method
-
-.method public e()Z
-    .registers 2
-
-    iget-boolean v0, p0, LaB/h;->a:Z
-
-    return v0
 .end method

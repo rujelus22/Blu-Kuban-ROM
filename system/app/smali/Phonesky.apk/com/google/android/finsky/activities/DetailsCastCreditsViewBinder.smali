@@ -34,7 +34,7 @@
     .line 40
     iget-object v6, p0, Lcom/google/android/finsky/activities/DetailsCastCreditsViewBinder;->mLayout:Landroid/view/View;
 
-    const v7, 0x7f0800c4
+    const v7, 0x7f0800cd
 
     invoke-virtual {v6, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -71,7 +71,7 @@
     .local v0, credit:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;
     iget-object v6, p0, Lcom/google/android/finsky/activities/DetailsCastCreditsViewBinder;->mInflater:Landroid/view/LayoutInflater;
 
-    const v7, 0x7f040020
+    const v7, 0x7f040025
 
     const/4 v8, 0x0
 
@@ -83,7 +83,7 @@
 
     .line 50
     .local v1, creditEntry:Landroid/view/ViewGroup;
-    const v6, 0x7f080070
+    const v6, 0x7f080074
 
     invoke-virtual {v1, v6}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -104,7 +104,7 @@
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 53
-    const v6, 0x7f080071
+    const v6, 0x7f080075
 
     invoke-virtual {v1, v6}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -150,7 +150,7 @@
 
     .prologue
     .line 28
-    const v0, 0x7f070120
+    const v0, 0x7f070134
 
     invoke-super {p0, p1, p2, v0}, Lcom/google/android/finsky/fragments/DetailsViewBinder;->bind(Landroid/view/View;Lcom/google/android/finsky/api/model/Document;I)V
 

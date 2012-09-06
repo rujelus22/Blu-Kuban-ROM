@@ -32,7 +32,7 @@
     .registers 1
 
     .prologue
-    .line 1055
+    .line 1079
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter
 
     .prologue
-    .line 1058
+    .line 1082
     const-class v0, Lcom/google/android/finsky/utils/ParcelableProto;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
@@ -58,12 +58,12 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
-    .line 1060
+    .line 1084
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1061
+    .line 1085
     new-instance v2, Lcom/google/android/finsky/api/model/Document;
 
     invoke-direct {v2, v0, v1}, Lcom/google/android/finsky/api/model/Document;-><init>(Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;Ljava/lang/String;)V
@@ -76,7 +76,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1055
+    .line 1079
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/api/model/Document$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/finsky/api/model/Document;
 
     move-result-object v0
@@ -89,7 +89,7 @@
     .parameter "size"
 
     .prologue
-    .line 1066
+    .line 1090
     new-array v0, p1, [Lcom/google/android/finsky/api/model/Document;
 
     return-object v0
@@ -100,7 +100,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1055
+    .line 1079
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/api/model/Document$1;->newArray(I)[Lcom/google/android/finsky/api/model/Document;
 
     move-result-object v0

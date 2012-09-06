@@ -72,6 +72,8 @@
     .registers 6
 
     .prologue
+    const/4 v3, 0x0
+
     .line 96
     const/4 v0, 0x2
 
@@ -80,22 +82,22 @@
     .line 97
     iget-object v0, p0, Lcom/google/android/plus1/BasePlusOneWebSignupActivity;->a:Lcom/google/android/plus1/p;
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_10
 
     new-instance v0, Lcom/google/android/plus1/p;
 
-    invoke-direct {v0}, Lcom/google/android/plus1/p;-><init>()V
+    invoke-direct {v0, v3}, Lcom/google/android/plus1/p;-><init>(B)V
 
     iput-object v0, p0, Lcom/google/android/plus1/BasePlusOneWebSignupActivity;->a:Lcom/google/android/plus1/p;
 
-    :cond_f
+    :cond_10
     iget-object v0, p0, Lcom/google/android/plus1/BasePlusOneWebSignupActivity;->a:Lcom/google/android/plus1/p;
 
     new-instance v1, Lcom/google/android/plus1/a/c;
 
     new-instance v2, Lcom/google/android/plus1/o;
 
-    invoke-direct {v2, p0}, Lcom/google/android/plus1/o;-><init>(Lcom/google/android/plus1/BasePlusOneWebSignupActivity;)V
+    invoke-direct {v2, p0, v3}, Lcom/google/android/plus1/o;-><init>(Lcom/google/android/plus1/BasePlusOneWebSignupActivity;B)V
 
     invoke-virtual {p0}, Lcom/google/android/plus1/BasePlusOneWebSignupActivity;->f()Ljava/lang/String;
 
@@ -145,7 +147,7 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .registers 4
+    .registers 5
     .parameter
 
     .prologue
@@ -164,7 +166,7 @@
     .line 89
     iget-object v0, p0, Lcom/google/android/plus1/BasePlusOneWebSignupActivity;->a:Lcom/google/android/plus1/p;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1c
 
     .line 90
     iget-object v0, p0, Lcom/google/android/plus1/BasePlusOneWebSignupActivity;->a:Lcom/google/android/plus1/p;
@@ -173,12 +175,14 @@
 
     new-instance v1, Lcom/google/android/plus1/o;
 
-    invoke-direct {v1, p0}, Lcom/google/android/plus1/o;-><init>(Lcom/google/android/plus1/BasePlusOneWebSignupActivity;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Lcom/google/android/plus1/o;-><init>(Lcom/google/android/plus1/BasePlusOneWebSignupActivity;B)V
 
     invoke-virtual {v0, v1}, Lcom/google/android/plus1/a/c;->a(Lcom/google/android/plus1/a/b;)V
 
     .line 92
-    :cond_1b
+    :cond_1c
     return-void
 .end method
 

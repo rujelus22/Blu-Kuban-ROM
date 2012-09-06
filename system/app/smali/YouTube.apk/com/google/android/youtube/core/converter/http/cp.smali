@@ -3,19 +3,12 @@
 .source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/converter/http/ci;
-
-
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/core/converter/http/ci;)V
-    .registers 2
-    .parameter
+.method constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 61
-    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/cp;->a:Lcom/google/android/youtube/core/converter/http/ci;
-
+    .line 45
     invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
     return-void
@@ -23,31 +16,19 @@
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
-    .registers 6
-    .parameter
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;)V
+    .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 64
-    invoke-virtual {p1}, Lcom/google/android/youtube/core/utils/p;->peek()Ljava/lang/Object;
+    .line 50
+    new-instance v0, Lcom/google/android/youtube/core/converter/http/cq;
 
-    move-result-object v0
+    invoke-direct {v0, p0}, Lcom/google/android/youtube/core/converter/http/cq;-><init>(Lcom/google/android/youtube/core/converter/http/cp;)V
 
-    check-cast v0, Lcom/google/android/youtube/core/model/UserProfile$Builder;
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->offer(Ljava/lang/Object;)Z
 
-    .line 65
-    invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_f
-
-    .line 66
-    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->displayUsername(Ljava/lang/String;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
-
-    .line 68
-    :cond_f
+    .line 55
     return-void
 .end method

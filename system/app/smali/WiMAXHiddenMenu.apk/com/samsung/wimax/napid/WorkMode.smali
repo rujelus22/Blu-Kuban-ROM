@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final DIALOG_ADD_WM:I = 0x0
 

@@ -20,7 +20,7 @@
 
 .field private static final BLUETOOTH_PROPERTY_SECURITY_POLICY:Ljava/lang/String; = "service.bt.security.policy.mode"
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final DOCK_ADDRESS_PATH:Ljava/lang/String; = "/sys/class/switch/dock/bt_addr"
 

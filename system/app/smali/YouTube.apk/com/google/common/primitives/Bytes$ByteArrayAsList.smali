@@ -25,14 +25,14 @@
     .parameter
 
     .prologue
-    .line 266
+    .line 270
     const/4 v0, 0x0
 
     array-length v1, p1
 
     invoke-direct {p0, p1, v0, v1}, Lcom/google/common/primitives/Bytes$ByteArrayAsList;-><init>([BII)V
 
-    .line 267
+    .line 271
     return-void
 .end method
 
@@ -43,19 +43,19 @@
     .parameter
 
     .prologue
-    .line 269
+    .line 273
     invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
 
-    .line 270
+    .line 274
     iput-object p1, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->array:[B
 
-    .line 271
+    .line 275
     iput p2, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->start:I
 
-    .line 272
+    .line 276
     iput p3, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->end:I
 
-    .line 273
+    .line 277
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .parameter
 
     .prologue
-    .line 290
+    .line 294
     instance-of v0, p1, Ljava/lang/Byte;
 
     if-eqz v0, :cond_19
@@ -111,29 +111,29 @@
 
     const/4 v1, 0x0
 
-    .line 334
+    .line 337
     if-ne p1, p0, :cond_5
 
-    .line 350
+    .line 353
     :cond_4
     :goto_4
     return v0
 
-    .line 337
+    .line 340
     :cond_5
     instance-of v2, p1, Lcom/google/common/primitives/Bytes$ByteArrayAsList;
 
     if-eqz v2, :cond_2f
 
-    .line 338
+    .line 341
     check-cast p1, Lcom/google/common/primitives/Bytes$ByteArrayAsList;
 
-    .line 339
+    .line 342
     invoke-virtual {p0}, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->size()I
 
     move-result v3
 
-    .line 340
+    .line 343
     invoke-virtual {p1}, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->size()I
 
     move-result v2
@@ -142,17 +142,17 @@
 
     move v0, v1
 
-    .line 341
+    .line 344
     goto :goto_4
 
     :cond_17
     move v2, v1
 
-    .line 343
+    .line 346
     :goto_18
     if-ge v2, v3, :cond_4
 
-    .line 344
+    .line 347
     iget-object v4, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->array:[B
 
     iget v5, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->start:I
@@ -173,16 +173,16 @@
 
     move v0, v1
 
-    .line 345
+    .line 348
     goto :goto_4
 
-    .line 343
+    .line 346
     :cond_2c
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_18
 
-    .line 350
+    .line 353
     :cond_2f
     invoke-super {p0, p1}, Ljava/util/AbstractList;->equals(Ljava/lang/Object;)Z
 
@@ -196,14 +196,14 @@
     .parameter
 
     .prologue
-    .line 284
+    .line 288
     invoke-virtual {p0}, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->size()I
 
     move-result v0
 
-    invoke-static {p1, v0}, Lcom/google/common/base/t;->a(II)I
+    invoke-static {p1, v0}, Lcom/google/common/base/ag;->a(II)I
 
-    .line 285
+    .line 289
     iget-object v0, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->array:[B
 
     iget v1, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->start:I
@@ -224,7 +224,7 @@
     .parameter
 
     .prologue
-    .line 258
+    .line 262
     invoke-virtual {p0, p1}, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->get(I)Ljava/lang/Byte;
 
     move-result-object v0
@@ -236,10 +236,10 @@
     .registers 4
 
     .prologue
-    .line 354
+    .line 357
     const/4 v1, 0x1
 
-    .line 355
+    .line 358
     iget v0, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->start:I
 
     :goto_3
@@ -247,7 +247,7 @@
 
     if-ge v0, v2, :cond_11
 
-    .line 356
+    .line 359
     mul-int/lit8 v1, v1, 0x1f
 
     iget-object v2, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->array:[B
@@ -256,12 +256,12 @@
 
     add-int/2addr v1, v2
 
-    .line 355
+    .line 358
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
 
-    .line 358
+    .line 361
     :cond_11
     return v1
 .end method
@@ -271,12 +271,12 @@
     .parameter
 
     .prologue
-    .line 296
+    .line 300
     instance-of v0, p1, Ljava/lang/Byte;
 
     if-eqz v0, :cond_1a
 
-    .line 297
+    .line 301
     iget-object v0, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->array:[B
 
     check-cast p1, Ljava/lang/Byte;
@@ -293,15 +293,15 @@
 
     move-result v0
 
-    .line 298
+    .line 302
     if-ltz v0, :cond_1a
 
-    .line 299
+    .line 303
     iget v1, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->start:I
 
     sub-int/2addr v0, v1
 
-    .line 302
+    .line 306
     :goto_19
     return v0
 
@@ -315,7 +315,7 @@
     .registers 2
 
     .prologue
-    .line 280
+    .line 284
     const/4 v0, 0x0
 
     return v0
@@ -326,12 +326,12 @@
     .parameter
 
     .prologue
-    .line 307
+    .line 311
     instance-of v0, p1, Ljava/lang/Byte;
 
     if-eqz v0, :cond_1a
 
-    .line 308
+    .line 312
     iget-object v0, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->array:[B
 
     check-cast p1, Ljava/lang/Byte;
@@ -348,15 +348,15 @@
 
     move-result v0
 
-    .line 309
+    .line 313
     if-ltz v0, :cond_1a
 
-    .line 310
+    .line 314
     iget v1, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->start:I
 
     sub-int/2addr v0, v1
 
-    .line 313
+    .line 317
     :goto_19
     return v0
 
@@ -372,37 +372,43 @@
     .parameter
 
     .prologue
-    .line 317
+    .line 321
     invoke-virtual {p0}, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->size()I
 
     move-result v0
 
-    invoke-static {p1, v0}, Lcom/google/common/base/t;->a(II)I
+    invoke-static {p1, v0}, Lcom/google/common/base/ag;->a(II)I
 
-    .line 318
+    .line 322
     iget-object v0, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->array:[B
 
     iget v1, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->start:I
 
     add-int/2addr v1, p1
 
-    aget-byte v0, v0, v1
+    aget-byte v1, v0, v1
 
-    .line 319
-    iget-object v1, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->array:[B
+    .line 323
+    iget-object v2, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->array:[B
 
-    iget v2, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->start:I
+    iget v0, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->start:I
 
-    add-int/2addr v2, p1
+    add-int v3, v0, p1
 
-    invoke-virtual {p2}, Ljava/lang/Byte;->byteValue()B
+    invoke-static {p2}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v3
+    move-result-object v0
 
-    aput-byte v3, v1, v2
+    check-cast v0, Ljava/lang/Byte;
 
-    .line 320
-    invoke-static {v0}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    invoke-virtual {v0}, Ljava/lang/Byte;->byteValue()B
+
+    move-result v0
+
+    aput-byte v0, v2, v3
+
+    .line 324
+    invoke-static {v1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     move-result-object v0
 
@@ -415,7 +421,7 @@
     .parameter
 
     .prologue
-    .line 258
+    .line 262
     check-cast p2, Ljava/lang/Byte;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->set(ILjava/lang/Byte;)Ljava/lang/Byte;
@@ -429,7 +435,7 @@
     .registers 3
 
     .prologue
-    .line 276
+    .line 280
     iget v0, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->end:I
 
     iget v1, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->start:I
@@ -445,23 +451,23 @@
     .parameter
 
     .prologue
-    .line 325
+    .line 328
     invoke-virtual {p0}, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->size()I
 
     move-result v0
 
-    .line 326
-    invoke-static {p1, p2, v0}, Lcom/google/common/base/t;->a(III)V
+    .line 329
+    invoke-static {p1, p2, v0}, Lcom/google/common/base/ag;->a(III)V
 
-    .line 327
+    .line 330
     if-ne p1, p2, :cond_e
 
-    .line 328
+    .line 331
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 330
+    .line 333
     :goto_d
     return-object v0
 
@@ -487,15 +493,15 @@
     .registers 6
 
     .prologue
-    .line 372
+    .line 375
     invoke-virtual {p0}, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->size()I
 
     move-result v0
 
-    .line 373
+    .line 376
     new-array v1, v0, [B
 
-    .line 374
+    .line 377
     iget-object v2, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->array:[B
 
     iget v3, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->start:I
@@ -504,7 +510,7 @@
 
     invoke-static {v2, v3, v1, v4, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 375
+    .line 378
     return-object v1
 .end method
 
@@ -512,7 +518,7 @@
     .registers 5
 
     .prologue
-    .line 362
+    .line 365
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->size()I
@@ -523,7 +529,7 @@
 
     invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 363
+    .line 366
     const/16 v0, 0x5b
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -538,7 +544,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 364
+    .line 367
     iget v0, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->start:I
 
     add-int/lit8 v0, v0, 0x1
@@ -548,7 +554,7 @@
 
     if-ge v0, v2, :cond_32
 
-    .line 365
+    .line 368
     const-string v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -561,12 +567,12 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 364
+    .line 367
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1e
 
-    .line 367
+    .line 370
     :cond_32
     const/16 v0, 0x5d
 

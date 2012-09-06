@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private a:Lcom/google/android/youtube/coreicecream/a;
+.field private m:Lcom/google/android/youtube/coreicecream/Controller;
 
 
 # direct methods
@@ -20,7 +20,7 @@
 
 
 # virtual methods
-.method protected abstract a(Landroid/os/Bundle;)Lcom/google/android/youtube/coreicecream/a;
+.method protected abstract a(Landroid/os/Bundle;)Lcom/google/android/youtube/coreicecream/Controller;
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
@@ -59,16 +59,16 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/SingleControllerActivity;->a(Landroid/os/Bundle;)Lcom/google/android/youtube/coreicecream/a;
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/SingleControllerActivity;->a(Landroid/os/Bundle;)Lcom/google/android/youtube/coreicecream/Controller;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/coreicecream/SingleControllerActivity;->a:Lcom/google/android/youtube/coreicecream/a;
+    iput-object v0, p0, Lcom/google/android/youtube/coreicecream/SingleControllerActivity;->m:Lcom/google/android/youtube/coreicecream/Controller;
 
     .line 30
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/SingleControllerActivity;->a:Lcom/google/android/youtube/coreicecream/a;
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/SingleControllerActivity;->m:Lcom/google/android/youtube/coreicecream/Controller;
 
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/youtube/coreicecream/SingleControllerActivity;->a(Lcom/google/android/youtube/coreicecream/a;Landroid/os/Bundle;)V
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/youtube/coreicecream/SingleControllerActivity;->a(Lcom/google/android/youtube/coreicecream/Controller;Landroid/os/Bundle;)V
 
     .line 31
     return-void

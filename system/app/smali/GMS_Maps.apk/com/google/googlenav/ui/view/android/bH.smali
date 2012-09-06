@@ -1,33 +1,30 @@
-.class Lcom/google/googlenav/ui/view/android/bH;
+.class Lcom/google/googlenav/ui/view/android/bh;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field a:Ljava/lang/String;
+.field final synthetic a:I
 
-.field b:Lcom/google/googlenav/ui/p;
-
-.field final synthetic c:Lcom/google/googlenav/ui/view/android/bE;
+.field final synthetic b:Lcom/google/googlenav/ui/view/android/LineDialogSchematicView;
 
 
 # direct methods
-.method private constructor <init>(Lcom/google/googlenav/ui/view/android/bE;)V
-    .registers 2
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/LineDialogSchematicView;I)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/bH;->c:Lcom/google/googlenav/ui/view/android/bE;
+    .prologue
+    .line 369
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/bh;->b:Lcom/google/googlenav/ui/view/android/LineDialogSchematicView;
+
+    iput p2, p0, Lcom/google/googlenav/ui/view/android/bh;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/google/googlenav/ui/view/android/bE;Lcom/google/googlenav/ui/view/android/bF;)V
-    .registers 3
-
-    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/view/android/bH;-><init>(Lcom/google/googlenav/ui/view/android/bE;)V
 
     return-void
 .end method
@@ -35,17 +32,27 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 6
+    .registers 4
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bH;->b:Lcom/google/googlenav/ui/p;
+    .prologue
+    .line 372
+    iget v0, p0, Lcom/google/googlenav/ui/view/android/bh;->a:I
 
-    const/4 v1, 0x5
+    if-ltz v0, :cond_f
 
-    const/4 v2, -0x1
+    .line 373
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bh;->b:Lcom/google/googlenav/ui/view/android/LineDialogSchematicView;
 
-    iget-object v3, p0, Lcom/google/googlenav/ui/view/android/bH;->a:Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/LineDialogSchematicView;->c(Lcom/google/googlenav/ui/view/android/LineDialogSchematicView;)Lcom/google/googlenav/ui/view/android/bi;
 
-    invoke-interface {v0, v1, v2, v3}, Lcom/google/googlenav/ui/p;->a(IILjava/lang/Object;)Z
+    move-result-object v0
 
+    iget v1, p0, Lcom/google/googlenav/ui/view/android/bh;->a:I
+
+    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/view/android/bi;->a(I)V
+
+    .line 375
+    :cond_f
     return-void
 .end method

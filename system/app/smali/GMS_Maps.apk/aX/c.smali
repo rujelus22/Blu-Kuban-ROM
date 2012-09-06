@@ -1,26 +1,23 @@
-.class LaX/c;
-.super Lap/b;
+.class Lax/c;
+.super LY/b;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:LaX/f;
-
-.field final synthetic e:Lcom/google/googlenav/android/ac;
-
-.field final synthetic f:LaX/a;
+.field final synthetic a:Lax/b;
 
 
 # direct methods
-.method constructor <init>(LaX/a;Lap/c;LaX/f;Lcom/google/googlenav/android/ac;)V
-    .registers 5
+.method constructor <init>(Lax/b;LY/c;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, LaX/c;->f:LaX/a;
+    .prologue
+    .line 186
+    iput-object p1, p0, Lax/c;->a:Lax/b;
 
-    iput-object p3, p0, LaX/c;->a:LaX/f;
-
-    iput-object p4, p0, LaX/c;->e:Lcom/google/googlenav/android/ac;
-
-    invoke-direct {p0, p2}, Lap/b;-><init>(Lap/c;)V
+    invoke-direct {p0, p2}, LY/b;-><init>(LY/c;)V
 
     return-void
 .end method
@@ -30,74 +27,159 @@
 .method public a()V
     .registers 5
 
-    invoke-static {}, Laf/b;->a()Laf/b;
+    .prologue
+    .line 189
+    iget-object v0, p0, Lax/c;->a:Lax/b;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Laf/b;->n()Lak/m;
+    invoke-static {v0}, Lax/b;->a(Lax/b;)Ljava/util/Set;
 
     move-result-object v1
 
-    const-string v0, "SAVED_BGSF_"
+    monitor-enter v1
 
-    invoke-static {v1, v0}, Laf/l;->a(Lak/m;Ljava/lang/String;)Ljava/io/DataInput;
+    .line 192
+    :try_start_7
+    iget-object v0, p0, Lax/c;->a:Lax/b;
 
-    move-result-object v2
-
-    const/4 v0, 0x0
-
-    if-eqz v2, :cond_15
-
-    :try_start_11
-    invoke-static {v2}, Lax/bz;->a(Ljava/io/DataInput;)Lax/bz;
-    :try_end_14
-    .catch Ljava/io/IOException; {:try_start_11 .. :try_end_14} :catch_27
+    invoke-static {v0}, Lax/b;->a(Lax/b;)Ljava/util/Set;
 
     move-result-object v0
 
-    :cond_15
-    :goto_15
-    if-eqz v0, :cond_1d
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
-    invoke-virtual {v0}, Lax/bz;->a()Z
+    move-result v0
+
+    if-nez v0, :cond_15
+
+    .line 193
+    monitor-exit v1
+
+    .line 224
+    :goto_14
+    return-void
+
+    .line 195
+    :cond_15
+    monitor-exit v1
+    :try_end_16
+    .catchall {:try_start_7 .. :try_end_16} :catchall_2a
+
+    .line 198
+    iget-object v0, p0, Lax/c;->a:Lax/b;
+
+    invoke-static {v0}, Lax/b;->b(Lax/b;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    monitor-enter v1
+
+    .line 199
+    :try_start_1d
+    iget-object v0, p0, Lax/c;->a:Lax/b;
+
+    invoke-static {v0}, Lax/b;->c(Lax/b;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2d
+
+    .line 200
+    monitor-exit v1
+
+    goto :goto_14
+
+    .line 206
+    :catchall_27
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_29
+    .catchall {:try_start_1d .. :try_end_29} :catchall_27
+
+    throw v0
+
+    .line 195
+    :catchall_2a
+    move-exception v0
+
+    :try_start_2b
+    monitor-exit v1
+    :try_end_2c
+    .catchall {:try_start_2b .. :try_end_2c} :catchall_2a
+
+    throw v0
+
+    .line 202
+    :cond_2d
+    :try_start_2d
+    iget-object v0, p0, Lax/c;->a:Lax/b;
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v2}, Lax/b;->a(Lax/b;Z)Z
+
+    .line 204
+    iget-object v0, p0, Lax/c;->a:Lax/b;
+
+    invoke-static {v0}, Lax/b;->d(Lax/b;)Z
+
+    move-result v0
+
+    .line 205
+    iget-object v2, p0, Lax/c;->a:Lax/b;
+
+    const/4 v3, 0x0
+
+    invoke-static {v2, v3}, Lax/b;->b(Lax/b;Z)Z
+
+    .line 206
+    monitor-exit v1
+    :try_end_40
+    .catchall {:try_start_2d .. :try_end_40} :catchall_27
+
+    .line 208
+    const-string v1, "BackgroundPlaceDetailsFetcher.doCheck"
+
+    invoke-static {v1}, Lcom/google/googlenav/common/util/o;->a(Ljava/lang/String;)V
+
+    .line 213
+    iget-object v1, p0, Lax/c;->a:Lax/b;
+
+    invoke-static {v1}, Lax/b;->e(Lax/b;)I
 
     move-result v1
 
-    if-eqz v1, :cond_2e
+    .line 219
+    if-eqz v0, :cond_65
 
-    :cond_1d
-    iget-object v0, p0, LaX/c;->f:LaX/a;
+    .line 220
+    const-string v0, "BPDF1"
 
-    iget-object v1, p0, LaX/c;->a:LaX/f;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, LaX/c;->e:Lcom/google/googlenav/android/ac;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v0, v1, v2}, LaX/a;->a(LaX/a;LaX/f;Lcom/google/googlenav/android/ac;)V
+    const-string v3, ""
 
-    :goto_26
-    return-void
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :catch_27
-    move-exception v2
+    move-result-object v2
 
-    const-string v3, "-Error loading suggested friends"
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, v2, v3}, LaX/a;->a(Lak/m;Ljava/lang/Throwable;Ljava/lang/String;)V
+    move-result-object v1
 
-    goto :goto_15
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :cond_2e
-    iget-object v1, p0, LaX/c;->f:LaX/a;
+    move-result-object v1
 
-    invoke-static {v1, v0}, LaX/a;->a(LaX/a;Lax/bz;)Lax/bz;
+    invoke-static {v0, v1}, LaT/k;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v1, p0, LaX/c;->f:LaX/a;
+    .line 223
+    :cond_65
+    const-string v0, "BackgroundPlaceDetailsFetcher.doCheck"
 
-    iget-object v2, p0, LaX/c;->a:LaX/f;
+    invoke-static {v0}, Lcom/google/googlenav/common/util/o;->b(Ljava/lang/String;)V
 
-    iget-object v3, p0, LaX/c;->e:Lcom/google/googlenav/android/ac;
-
-    invoke-static {v1, v0, v2, v3}, LaX/a;->a(LaX/a;Lax/bz;LaX/f;Lcom/google/googlenav/android/ac;)V
-
-    goto :goto_26
+    goto :goto_14
 .end method

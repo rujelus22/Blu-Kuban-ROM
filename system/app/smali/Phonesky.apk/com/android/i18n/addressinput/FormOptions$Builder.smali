@@ -95,15 +95,15 @@
     .registers 3
 
     .prologue
-    .line 123
+    .line 127
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 125
+    .line 129
     const-string v0, "addressform"
 
     iput-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mBaseId:Ljava/lang/String;
 
-    .line 127
+    .line 131
     const-class v0, Lcom/android/i18n/addressinput/AddressField;
 
     invoke-static {v0}, Ljava/util/EnumSet;->noneOf(Ljava/lang/Class;)Ljava/util/EnumSet;
@@ -112,7 +112,7 @@
 
     iput-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mRequiredFields:Ljava/util/EnumSet;
 
-    .line 130
+    .line 134
     const-class v0, Lcom/android/i18n/addressinput/AddressField;
 
     invoke-static {v0}, Ljava/util/EnumSet;->noneOf(Ljava/lang/Class;)Ljava/util/EnumSet;
@@ -121,7 +121,7 @@
 
     iput-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mHiddenFields:Ljava/util/EnumSet;
 
-    .line 133
+    .line 137
     const-class v0, Lcom/android/i18n/addressinput/AddressField;
 
     invoke-static {v0}, Ljava/util/EnumSet;->noneOf(Ljava/lang/Class;)Ljava/util/EnumSet;
@@ -130,7 +130,7 @@
 
     iput-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mReadonlyFields:Ljava/util/EnumSet;
 
-    .line 136
+    .line 140
     new-instance v0, Ljava/util/EnumMap;
 
     const-class v1, Lcom/android/i18n/addressinput/AddressField;
@@ -139,14 +139,14 @@
 
     iput-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mCustomLabels:Ljava/util/EnumMap;
 
-    .line 139
+    .line 143
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mOverrideFieldOrder:Ljava/util/Map;
 
-    .line 142
+    .line 146
     new-instance v0, Ljava/util/EnumMap;
 
     const-class v1, Lcom/android/i18n/addressinput/AddressField;
@@ -155,7 +155,7 @@
 
     iput-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mMaxLengths:Ljava/util/EnumMap;
 
-    .line 148
+    .line 152
     new-instance v0, Lcom/android/i18n/addressinput/CacheData;
 
     invoke-direct {v0}, Lcom/android/i18n/addressinput/CacheData;-><init>()V
@@ -174,7 +174,7 @@
     .parameter "x0"
 
     .prologue
-    .line 123
+    .line 127
     iget-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mBaseId:Ljava/lang/String;
 
     return-object v0
@@ -185,7 +185,7 @@
     .parameter "x0"
 
     .prologue
-    .line 123
+    .line 127
     iget-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mHiddenFields:Ljava/util/EnumSet;
 
     return-object v0
@@ -196,7 +196,7 @@
     .parameter "x0"
 
     .prologue
-    .line 123
+    .line 127
     iget-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mReadonlyFields:Ljava/util/EnumSet;
 
     return-object v0
@@ -207,7 +207,7 @@
     .parameter "x0"
 
     .prologue
-    .line 123
+    .line 127
     iget-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mRequiredFields:Ljava/util/EnumSet;
 
     return-object v0
@@ -218,7 +218,7 @@
     .parameter "x0"
 
     .prologue
-    .line 123
+    .line 127
     iget-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mCustomLabels:Ljava/util/EnumMap;
 
     return-object v0
@@ -229,7 +229,7 @@
     .parameter "x0"
 
     .prologue
-    .line 123
+    .line 127
     iget-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mOverrideFieldOrder:Ljava/util/Map;
 
     return-object v0
@@ -240,7 +240,7 @@
     .parameter "x0"
 
     .prologue
-    .line 123
+    .line 127
     iget-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mMaxLengths:Ljava/util/EnumMap;
 
     return-object v0
@@ -251,7 +251,7 @@
     .parameter "x0"
 
     .prologue
-    .line 123
+    .line 127
     iget-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mServerUrl:Ljava/lang/String;
 
     return-object v0
@@ -263,7 +263,7 @@
     .registers 3
 
     .prologue
-    .line 284
+    .line 289
     new-instance v0, Lcom/android/i18n/addressinput/FormOptions;
 
     const/4 v1, 0x0
@@ -278,10 +278,10 @@
     .parameter "field"
 
     .prologue
-    .line 162
+    .line 166
     if-nez p1, :cond_a
 
-    .line 163
+    .line 167
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "AddressField field cannot be null."
@@ -290,12 +290,17 @@
 
     throw v0
 
-    .line 165
+    .line 169
     :cond_a
     iget-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mHiddenFields:Ljava/util/EnumSet;
 
     invoke-virtual {v0, p1}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
 
-    .line 166
+    .line 170
+    iget-object v0, p0, Lcom/android/i18n/addressinput/FormOptions$Builder;->mRequiredFields:Ljava/util/EnumSet;
+
+    invoke-virtual {v0, p1}, Ljava/util/EnumSet;->remove(Ljava/lang/Object;)Z
+
+    .line 171
     return-object p0
 .end method

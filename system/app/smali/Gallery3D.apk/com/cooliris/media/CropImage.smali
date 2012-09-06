@@ -129,7 +129,7 @@
     iput-object v3, p0, Lcom/cooliris/media/CropImage;->mApp:Lcom/cooliris/app/App;
 
     .line 115
-    sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+    sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
     iput-object v0, p0, Lcom/cooliris/media/CropImage;->mOutputFormat:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -188,7 +188,7 @@
 
     iput-object v0, p0, Lcom/cooliris/media/CropImage;->mLocaleReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 1198
+    .line 1193
     new-instance v0, Lcom/cooliris/media/CropImage$24;
 
     invoke-direct {v0, p0}, Lcom/cooliris/media/CropImage$24;-><init>(Lcom/cooliris/media/CropImage;)V
@@ -206,90 +206,90 @@
 
     const/4 v4, -0x2
 
-    .line 862
+    .line 857
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 863
+    .line 858
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 864
+    .line 859
     invoke-virtual {v0, v5}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 866
+    .line 861
     new-instance v1, Landroid/widget/TextView;
 
     invoke-direct {v1, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 867
+    .line 862
     const v2, 0x7f060085
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
-    .line 868
+    .line 863
     new-instance v2, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-direct {v2, v4, v4}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 869
+    .line 864
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 870
+    .line 865
     const/high16 v2, 0x418c
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 871
+    .line 866
     new-instance v2, Landroid/widget/CheckBox;
 
     invoke-direct {v2, p0}, Landroid/widget/CheckBox;-><init>(Landroid/content/Context;)V
 
-    .line 872
+    .line 867
     new-instance v3, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-direct {v3, v4, v4}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
     invoke-virtual {v2, v3}, Landroid/widget/CheckBox;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 873
+    .line 868
     invoke-virtual {v2, v5}, Landroid/widget/CheckBox;->setGravity(I)V
 
-    .line 874
+    .line 869
     const v3, 0x7f060086
 
     invoke-virtual {v2, v3}, Landroid/widget/CheckBox;->setText(I)V
 
-    .line 875
+    .line 870
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 876
+    .line 871
     new-instance v3, Lcom/cooliris/media/CropImage$21;
 
     invoke-direct {v3, p0}, Lcom/cooliris/media/CropImage$21;-><init>(Lcom/cooliris/media/CropImage;)V
 
     invoke-virtual {v2, v3}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 887
+    .line 882
     new-instance v3, Lcom/cooliris/media/CropImage$22;
 
     invoke-direct {v3, p0}, Lcom/cooliris/media/CropImage$22;-><init>(Lcom/cooliris/media/CropImage;)V
 
     invoke-virtual {v2, v3}, Landroid/widget/CheckBox;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 893
+    .line 888
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 894
+    .line 889
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 895
+    .line 890
     return-object v0
 .end method
 
@@ -784,13 +784,13 @@
     .parameter
 
     .prologue
-    .line 1429
+    .line 1424
     if-eqz p1, :cond_6
 
-    .line 1430
+    .line 1425
     const v0, 0x7f020020
 
-    .line 1432
+    .line 1427
     :goto_5
     return v0
 
@@ -805,13 +805,13 @@
     .parameter
 
     .prologue
-    .line 1422
+    .line 1417
     if-eqz p1, :cond_6
 
-    .line 1423
+    .line 1418
     const v0, 0x7f020026
 
-    .line 1425
+    .line 1420
     :goto_5
     return v0
 
@@ -1385,7 +1385,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 859
+    .line 854
     :cond_7
     :goto_7
     return-void
@@ -1428,7 +1428,7 @@
     .line 816
     iget-boolean v0, p0, Lcom/cooliris/media/CropImage;->mIsMultiBtnSelected:Z
 
-    if-nez v0, :cond_88
+    if-nez v0, :cond_80
 
     .line 817
     const-string v0, "com.cooliris.media"
@@ -1437,26 +1437,24 @@
 
     move-result-object v0
 
-    .line 819
-    sget-boolean v1, Lcom/cooliris/media/Utils;->mUse_U1_NA_SPR:Z
+    .line 818
+    const-string v1, "LockScreenDialogUse"
 
-    if-eqz v1, :cond_7b
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    .line 820
-    const/4 v0, 0x1
+    move-result v0
 
     iput-boolean v0, p0, Lcom/cooliris/media/CropImage;->bLockScreenDialogOff:Z
 
-    .line 825
-    :goto_38
+    .line 820
     iget-boolean v0, p0, Lcom/cooliris/media/CropImage;->bLockScreenDialogOff:Z
 
-    if-nez v0, :cond_84
+    if-nez v0, :cond_7c
 
-    .line 826
+    .line 821
     iget-object v0, p0, Lcom/cooliris/media/CropImage;->mDialog:Landroid/app/AlertDialog;
 
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_49
 
     iget-object v0, p0, Lcom/cooliris/media/CropImage;->mDialog:Landroid/app/AlertDialog;
 
@@ -1466,8 +1464,8 @@
 
     if-nez v0, :cond_7
 
-    .line 827
-    :cond_48
+    .line 822
+    :cond_49
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -1514,32 +1512,20 @@
 
     goto :goto_7
 
-    .line 823
-    :cond_7b
-    const-string v1, "LockScreenDialogUse"
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/cooliris/media/CropImage;->bLockScreenDialogOff:Z
-
-    goto :goto_38
-
-    .line 853
-    :cond_84
+    .line 848
+    :cond_7c
     invoke-direct {p0}, Lcom/cooliris/media/CropImage;->wallpaperSave()V
 
     goto :goto_7
 
-    .line 856
-    :cond_88
+    .line 851
+    :cond_80
     iput-boolean v2, p0, Lcom/cooliris/media/CropImage;->bLockScreen:Z
 
-    .line 857
+    .line 852
     invoke-direct {p0}, Lcom/cooliris/media/CropImage;->wallpaperSave()V
 
-    goto/16 :goto_7
+    goto :goto_7
 .end method
 
 .method private static performReturn(Landroid/content/Context;Landroid/os/Bundle;Ljava/lang/String;)V
@@ -1833,17 +1819,17 @@
     .parameter
 
     .prologue
-    .line 1017
+    .line 1012
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/cooliris/media/CropImage;->mSaveUri:Landroid/net/Uri;
 
     if-eqz v1, :cond_90
 
-    .line 1018
+    .line 1013
     const/4 v2, 0x0
 
-    .line 1020
+    .line 1015
     :try_start_7
     move-object/from16 v0, p0
 
@@ -1857,10 +1843,10 @@
 
     move-result-object v2
 
-    .line 1021
+    .line 1016
     if-eqz v2, :cond_20
 
-    .line 1022
+    .line 1017
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/cooliris/media/CropImage;->mOutputFormat:Landroid/graphics/Bitmap$CompressFormat;
@@ -1874,46 +1860,46 @@
     .catchall {:try_start_7 .. :try_end_20} :catchall_8b
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_20} :catch_6a
 
-    .line 1028
+    .line 1023
     :cond_20
     invoke-static {v2}, Lcom/cooliris/media/Util;->closeSilently(Ljava/io/Closeable;)V
 
-    .line 1030
+    .line 1025
     :goto_23
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 1031
+    .line 1026
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/cooliris/media/CropImage;->mItem:Lcom/cooliris/media/MediaItem;
 
-    .line 1032
+    .line 1027
     if-eqz v2, :cond_43
 
-    .line 1033
+    .line 1028
     const-string v3, "takenTime"
 
     iget-wide v4, v2, Lcom/cooliris/media/MediaItem;->mDateTakenInMs:J
 
     invoke-virtual {v1, v3, v4, v5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 1034
+    .line 1029
     const-string v3, "latitude"
 
     iget-wide v4, v2, Lcom/cooliris/media/MediaItem;->mLatitude:D
 
     invoke-virtual {v1, v3, v4, v5}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
 
-    .line 1035
+    .line 1030
     const-string v3, "longitude"
 
     iget-wide v4, v2, Lcom/cooliris/media/MediaItem;->mLongitude:D
 
     invoke-virtual {v1, v3, v4, v5}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
 
-    .line 1037
+    .line 1032
     :cond_43
     const-string v2, "lockscreen_ok"
 
@@ -1923,7 +1909,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 1038
+    .line 1033
     const/4 v2, -0x1
 
     new-instance v3, Landroid/content/Intent;
@@ -1946,22 +1932,22 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/cooliris/media/CropImage;->setResult(ILandroid/content/Intent;)V
 
-    .line 1174
+    .line 1169
     :cond_63
     :goto_63
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1175
+    .line 1170
     invoke-virtual/range {p0 .. p0}, Lcom/cooliris/media/CropImage;->finish()V
 
-    .line 1176
+    .line 1171
     return-void
 
-    .line 1025
+    .line 1020
     :catch_6a
     move-exception v1
 
-    .line 1026
+    .line 1021
     :try_start_6b
     const-string v3, "CropImage"
 
@@ -1991,7 +1977,7 @@
     :try_end_87
     .catchall {:try_start_6b .. :try_end_87} :catchall_8b
 
-    .line 1028
+    .line 1023
     invoke-static {v2}, Lcom/cooliris/media/Util;->closeSilently(Ljava/io/Closeable;)V
 
     goto :goto_23
@@ -2003,42 +1989,42 @@
 
     throw v1
 
-    .line 1040
+    .line 1035
     :cond_90
     new-instance v14, Landroid/os/Bundle;
 
     invoke-direct {v14}, Landroid/os/Bundle;-><init>()V
 
-    .line 1041
+    .line 1036
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/cooliris/media/CropImage;->mItem:Lcom/cooliris/media/MediaItem;
 
-    .line 1042
+    .line 1037
     if-eqz v1, :cond_b0
 
-    .line 1043
+    .line 1038
     const-string v2, "takenTime"
 
     iget-wide v3, v1, Lcom/cooliris/media/MediaItem;->mDateTakenInMs:J
 
     invoke-virtual {v14, v2, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 1044
+    .line 1039
     const-string v2, "latitude"
 
     iget-wide v3, v1, Lcom/cooliris/media/MediaItem;->mLatitude:D
 
     invoke-virtual {v14, v2, v3, v4}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
 
-    .line 1045
+    .line 1040
     const-string v2, "longitude"
 
     iget-wide v3, v1, Lcom/cooliris/media/MediaItem;->mLongitude:D
 
     invoke-virtual {v14, v2, v3, v4}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
 
-    .line 1047
+    .line 1042
     :cond_b0
     const-string v1, "rect"
 
@@ -2056,14 +2042,14 @@
 
     invoke-virtual {v14, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1048
+    .line 1043
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/cooliris/media/CropImage;->mItem:Lcom/cooliris/media/MediaItem;
 
     if-eqz v1, :cond_63
 
-    .line 1053
+    .line 1048
     new-instance v2, Ljava/io/File;
 
     move-object/from16 v0, p0
@@ -2074,7 +2060,7 @@
 
     invoke-direct {v2, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 1054
+    .line 1049
     new-instance v9, Ljava/io/File;
 
     invoke-virtual {v2}, Ljava/io/File;->getParent()Ljava/lang/String;
@@ -2083,15 +2069,15 @@
 
     invoke-direct {v9, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 1056
+    .line 1051
     const/4 v1, 0x0
 
-    .line 1057
+    .line 1052
     invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1058
+    .line 1053
     const/4 v3, 0x0
 
     const/16 v4, 0x2e
@@ -2104,11 +2090,11 @@
 
     move-result-object v2
 
-    .line 1064
+    .line 1059
     :cond_eb
     add-int/lit8 v1, v1, 0x1
 
-    .line 1068
+    .line 1063
     new-instance v3, Ljava/lang/StringBuffer;
 
     invoke-virtual {v9}, Ljava/io/File;->toString()Ljava/lang/String;
@@ -2127,7 +2113,7 @@
 
     move-result-object v3
 
-    .line 1070
+    .line 1065
     const-string v4, "-"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -2138,7 +2124,7 @@
 
     move-result-object v3
 
-    const-string v4, ".jpg"
+    const-string v4, ".png"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -2148,7 +2134,7 @@
 
     move-result-object v3
 
-    .line 1071
+    .line 1066
     new-instance v4, Ljava/io/File;
 
     invoke-direct {v4, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -2157,16 +2143,16 @@
 
     move-result v3
 
-    .line 1072
+    .line 1067
     if-nez v3, :cond_eb
 
-    .line 1078
+    .line 1073
     :try_start_11f
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/cooliris/media/CropImage;->mItem:Lcom/cooliris/media/MediaItem;
 
-    .line 1079
+    .line 1074
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -2185,7 +2171,7 @@
 
     move-result-object v1
 
-    const-string v2, ".jpg"
+    const-string v2, ".png"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2195,23 +2181,23 @@
 
     move-result-object v10
 
-    .line 1080
+    .line 1075
     const/4 v1, 0x1
 
     new-array v13, v1, [I
     :try_end_143
     .catch Ljava/lang/Exception; {:try_start_11f .. :try_end_143} :catch_1e2
 
-    .line 1082
+    .line 1077
     const-wide/16 v11, 0x0
 
-    .line 1083
+    .line 1078
     const/4 v8, 0x0
 
-    .line 1084
+    .line 1079
     const/4 v7, 0x0
 
-    .line 1086
+    .line 1081
     const/4 v1, 0x1
 
     :try_start_148
@@ -2223,7 +2209,7 @@
 
     aput-object v2, v3, v1
 
-    .line 1089
+    .line 1084
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/cooliris/media/CropImage;->mContentResolver:Landroid/content/ContentResolver;
@@ -2243,7 +2229,7 @@
 
     move-result-object v8
 
-    .line 1091
+    .line 1086
     :try_start_15c
     move-object/from16 v0, p0
 
@@ -2264,7 +2250,7 @@
 
     move-result-object v2
 
-    .line 1093
+    .line 1088
     if-eqz v8, :cond_317
 
     :try_start_16b
@@ -2274,7 +2260,7 @@
 
     if-eqz v1, :cond_317
 
-    .line 1094
+    .line 1089
     const/4 v1, 0x0
 
     invoke-interface {v8, v1}, Landroid/database/Cursor;->getLong(I)J
@@ -2290,7 +2276,7 @@
 
     move-wide v3, v11
 
-    .line 1096
+    .line 1091
     :goto_17b
     if-eqz v2, :cond_314
 
@@ -2301,7 +2287,7 @@
 
     if-eqz v1, :cond_314
 
-    .line 1097
+    .line 1092
     const/4 v1, 0x0
 
     invoke-interface {v2, v1}, Landroid/database/Cursor;->getLong(I)J
@@ -2316,7 +2302,7 @@
 
     if-gtz v1, :cond_314
 
-    .line 1098
+    .line 1093
     const/4 v1, 0x0
 
     invoke-interface {v2, v1}, Landroid/database/Cursor;->getLong(I)J
@@ -2332,22 +2318,22 @@
 
     move-wide v5, v3
 
-    .line 1104
+    .line 1099
     :goto_198
     if-eqz v8, :cond_19d
 
-    .line 1105
+    .line 1100
     :try_start_19a
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 1107
+    .line 1102
     :cond_19d
     if-eqz v2, :cond_1a2
 
-    .line 1108
+    .line 1103
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
-    .line 1110
+    .line 1105
     :cond_1a2
     const-wide/16 v1, 0x0
 
@@ -2355,7 +2341,7 @@
 
     if-nez v1, :cond_1b0
 
-    .line 1111
+    .line 1106
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -2364,7 +2350,7 @@
 
     add-long v5, v1, v3
 
-    .line 1114
+    .line 1109
     :cond_1b0
     :goto_1b0
     move-object/from16 v0, p0
@@ -2411,10 +2397,10 @@
 
     move-result-object v2
 
-    .line 1118
+    .line 1113
     if-nez v2, :cond_225
 
-    .line 1119
+    .line 1114
     new-instance v1, Ljava/lang/NullPointerException;
 
     invoke-direct {v1}, Ljava/lang/NullPointerException;-><init>()V
@@ -2423,11 +2409,11 @@
     :try_end_1e2
     .catch Ljava/lang/Exception; {:try_start_19a .. :try_end_1e2} :catch_1e2
 
-    .line 1168
+    .line 1163
     :catch_1e2
     move-exception v1
 
-    .line 1170
+    .line 1165
     const-string v2, "CropImage"
 
     const-string v3, "Store image fail, continue anyway"
@@ -2436,7 +2422,7 @@
 
     goto/16 :goto_63
 
-    .line 1101
+    .line 1096
     :catch_1ec
     move-exception v1
 
@@ -2446,28 +2432,28 @@
 
     move-wide v4, v11
 
-    .line 1102
+    .line 1097
     :goto_1f0
     :try_start_1f0
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
     :try_end_1f3
     .catchall {:try_start_1f0 .. :try_end_1f3} :catchall_2f8
 
-    .line 1104
+    .line 1099
     if-eqz v3, :cond_1f8
 
-    .line 1105
+    .line 1100
     :try_start_1f5
     invoke-interface {v3}, Landroid/database/Cursor;->close()V
 
-    .line 1107
+    .line 1102
     :cond_1f8
     if-eqz v2, :cond_1fd
 
-    .line 1108
+    .line 1103
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
-    .line 1110
+    .line 1105
     :cond_1fd
     const-wide/16 v1, 0x0
 
@@ -2475,7 +2461,7 @@
 
     if-nez v1, :cond_311
 
-    .line 1111
+    .line 1106
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -2486,24 +2472,24 @@
 
     goto :goto_1b0
 
-    .line 1104
+    .line 1099
     :catchall_20c
     move-exception v1
 
     :goto_20d
     if-eqz v8, :cond_212
 
-    .line 1105
+    .line 1100
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 1107
+    .line 1102
     :cond_212
     if-eqz v7, :cond_217
 
-    .line 1108
+    .line 1103
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 1110
+    .line 1105
     :cond_217
     const-wide/16 v2, 0x0
 
@@ -2511,7 +2497,7 @@
 
     if-nez v2, :cond_224
 
-    .line 1111
+    .line 1106
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -2525,7 +2511,7 @@
     :try_end_225
     .catch Ljava/lang/Exception; {:try_start_1f5 .. :try_end_225} :catch_1e2
 
-    .line 1123
+    .line 1118
     :cond_225
     const/4 v1, 0x2
 
@@ -2544,7 +2530,7 @@
 
     aput-object v4, v3, v1
 
-    .line 1126
+    .line 1121
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/cooliris/media/CropImage;->mContentResolver:Landroid/content/ContentResolver;
@@ -2562,7 +2548,7 @@
 
     move-result-object v1
 
-    .line 1128
+    .line 1123
     const/4 v3, 0x0
 
     :try_start_23e
@@ -2570,16 +2556,16 @@
     :try_end_241
     .catchall {:try_start_23e .. :try_end_241} :catchall_28e
 
-    .line 1130
+    .line 1125
     :try_start_241
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    .line 1132
+    .line 1127
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1133
+    .line 1128
     const-string v3, "mini_thumb_magic"
 
     const/4 v4, 0x0
@@ -2593,7 +2579,7 @@
     .catchall {:try_start_241 .. :try_end_253} :catchall_2bd
     .catch Ljava/lang/Exception; {:try_start_241 .. :try_end_253} :catch_293
 
-    .line 1135
+    .line 1130
     :try_start_253
     move-object/from16 v0, p0
 
@@ -2609,11 +2595,11 @@
     .catch Landroid/database/sqlite/SQLiteFullException; {:try_start_253 .. :try_end_25c} :catch_2a6
     .catch Ljava/lang/Exception; {:try_start_253 .. :try_end_25c} :catch_293
 
-    .line 1141
+    .line 1136
     :goto_25c
     const/4 v3, 0x0
 
-    .line 1143
+    .line 1138
     :try_start_25d
     move-object/from16 v0, p0
 
@@ -2623,10 +2609,10 @@
 
     move-result-object v3
 
-    .line 1144
+    .line 1139
     if-eqz v3, :cond_272
 
-    .line 1145
+    .line 1140
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/cooliris/media/CropImage;->mOutputFormat:Landroid/graphics/Bitmap$CompressFormat;
@@ -2640,7 +2626,7 @@
     .catchall {:try_start_25d .. :try_end_272} :catchall_2e5
     .catch Ljava/io/IOException; {:try_start_25d .. :try_end_272} :catch_2c8
 
-    .line 1151
+    .line 1146
     :cond_272
     :try_start_272
     invoke-static {v3}, Lcom/cooliris/media/Util;->closeSilently(Ljava/io/Closeable;)V
@@ -2648,7 +2634,7 @@
     .catchall {:try_start_272 .. :try_end_275} :catchall_2bd
     .catch Ljava/lang/Exception; {:try_start_272 .. :try_end_275} :catch_293
 
-    .line 1166
+    .line 1161
     :goto_275
     const/4 v1, -0x1
 
@@ -2677,7 +2663,7 @@
 
     goto/16 :goto_63
 
-    .line 1130
+    .line 1125
     :catchall_28e
     move-exception v3
 
@@ -2689,17 +2675,17 @@
     .catchall {:try_start_28f .. :try_end_293} :catchall_2bd
     .catch Ljava/lang/Exception; {:try_start_28f .. :try_end_293} :catch_293
 
-    .line 1154
+    .line 1149
     :catch_293
     move-exception v1
 
-    .line 1155
+    .line 1150
     :try_start_294
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
     :try_end_297
     .catchall {:try_start_294 .. :try_end_297} :catchall_2bd
 
-    .line 1159
+    .line 1154
     :try_start_297
     move-object/from16 v0, p0
 
@@ -2715,11 +2701,11 @@
 
     goto :goto_275
 
-    .line 1160
+    .line 1155
     :catch_2a1
     move-exception v1
 
-    .line 1162
+    .line 1157
     :try_start_2a2
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
     :try_end_2a5
@@ -2727,11 +2713,11 @@
 
     goto :goto_275
 
-    .line 1136
+    .line 1131
     :catch_2a6
     move-exception v1
 
-    .line 1137
+    .line 1132
     :try_start_2a7
     invoke-virtual/range {p0 .. p0}, Lcom/cooliris/media/CropImage;->getResources()Landroid/content/res/Resources;
 
@@ -2758,11 +2744,11 @@
 
     goto :goto_25c
 
-    .line 1157
+    .line 1152
     :catchall_2bd
     move-exception v1
 
-    .line 1159
+    .line 1154
     :try_start_2be
     move-object/from16 v0, p0
 
@@ -2776,18 +2762,18 @@
     :try_end_2c7
     .catch Ljava/lang/Exception; {:try_start_2be .. :try_end_2c7} :catch_2ea
 
-    .line 1163
+    .line 1158
     :goto_2c7
     :try_start_2c7
     throw v1
     :try_end_2c8
     .catch Ljava/lang/Exception; {:try_start_2c7 .. :try_end_2c8} :catch_1e2
 
-    .line 1147
+    .line 1142
     :catch_2c8
     move-exception v1
 
-    .line 1149
+    .line 1144
     :try_start_2c9
     const-string v4, "CropImage"
 
@@ -2813,7 +2799,7 @@
     :try_end_2e1
     .catchall {:try_start_2c9 .. :try_end_2e1} :catchall_2e5
 
-    .line 1151
+    .line 1146
     :try_start_2e1
     invoke-static {v3}, Lcom/cooliris/media/Util;->closeSilently(Ljava/io/Closeable;)V
 
@@ -2829,11 +2815,11 @@
     .catchall {:try_start_2e1 .. :try_end_2ea} :catchall_2bd
     .catch Ljava/lang/Exception; {:try_start_2e1 .. :try_end_2ea} :catch_293
 
-    .line 1160
+    .line 1155
     :catch_2ea
     move-exception v2
 
-    .line 1162
+    .line 1157
     :try_start_2eb
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
     :try_end_2ee
@@ -2841,7 +2827,7 @@
 
     goto :goto_2c7
 
-    .line 1104
+    .line 1099
     :catchall_2ef
     move-exception v1
 
@@ -2869,7 +2855,7 @@
 
     goto/16 :goto_20d
 
-    .line 1101
+    .line 1096
     :catch_2fe
     move-exception v1
 
@@ -3062,36 +3048,8 @@
     .parameter "multi"
 
     .prologue
-    .line 1417
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lcom/cooliris/media/CropImage;->getSingleButtonResource(Z)I
-
-    move-result v0
-
-    invoke-virtual {p1, v0}, Landroid/widget/Button;->setBackgroundResource(I)V
-
-    .line 1418
-    const/4 v0, 0x1
-
-    invoke-direct {p0, v0}, Lcom/cooliris/media/CropImage;->getMultiButtonResource(Z)I
-
-    move-result v0
-
-    invoke-virtual {p2, v0}, Landroid/widget/Button;->setBackgroundResource(I)V
-
-    .line 1419
-    return-void
-.end method
-
-.method private updateSingleBtnImgToSelected(Landroid/widget/Button;Landroid/widget/Button;)V
-    .registers 4
-    .parameter "single"
-    .parameter "multi"
-
-    .prologue
     .line 1412
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/cooliris/media/CropImage;->getSingleButtonResource(Z)I
 
@@ -3100,7 +3058,7 @@
     invoke-virtual {p1, v0}, Landroid/widget/Button;->setBackgroundResource(I)V
 
     .line 1413
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/cooliris/media/CropImage;->getMultiButtonResource(Z)I
 
@@ -3112,6 +3070,34 @@
     return-void
 .end method
 
+.method private updateSingleBtnImgToSelected(Landroid/widget/Button;Landroid/widget/Button;)V
+    .registers 4
+    .parameter "single"
+    .parameter "multi"
+
+    .prologue
+    .line 1407
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Lcom/cooliris/media/CropImage;->getSingleButtonResource(Z)I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/Button;->setBackgroundResource(I)V
+
+    .line 1408
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lcom/cooliris/media/CropImage;->getMultiButtonResource(Z)I
+
+    move-result v0
+
+    invoke-virtual {p2, v0}, Landroid/widget/Button;->setBackgroundResource(I)V
+
+    .line 1409
+    return-void
+.end method
+
 .method private wallpaperSave()V
     .registers 12
 
@@ -3120,28 +3106,28 @@
 
     const/4 v10, 0x0
 
-    const/high16 v8, 0x4000
+    const v8, 0xeaab6a
 
     const/4 v9, 0x0
 
-    .line 902
+    .line 897
     iget-object v0, p0, Lcom/cooliris/media/CropImage;->mCrop:Lcom/cooliris/media/HighlightView;
 
     invoke-virtual {v0}, Lcom/cooliris/media/HighlightView;->getCropRect()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 903
+    .line 898
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
     move-result v2
 
-    .line 904
+    .line 899
     invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
 
     move-result v3
 
-    .line 906
+    .line 901
     const-string v1, "CropImage"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -3174,41 +3160,41 @@
 
     invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 907
-    if-lt v2, v6, :cond_39
+    .line 902
+    if-lt v2, v6, :cond_3a
 
-    if-ge v3, v6, :cond_3f
+    if-ge v3, v6, :cond_40
 
-    .line 909
-    :cond_39
+    .line 904
+    :cond_3a
     sget-object v0, Lcom/cooliris/media/CropImage;->mToast:Landroid/widget/Toast;
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 1014
-    :goto_3e
+    .line 1009
+    :goto_3f
     return-void
 
-    .line 913
-    :cond_3f
+    .line 908
+    :cond_40
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/cooliris/media/CropImage;->mSaving:Z
 
-    .line 919
-    :try_start_42
+    .line 914
+    :try_start_43
     sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v2, v3, v1}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 920
+    .line 915
     new-instance v4, Landroid/graphics/Canvas;
 
     invoke-direct {v4, v1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 921
+    .line 916
     new-instance v5, Landroid/graphics/Rect;
 
     const/4 v6, 0x0
@@ -3217,31 +3203,31 @@
 
     invoke-direct {v5, v6, v7, v2, v3}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 922
+    .line 917
     iget-object v6, p0, Lcom/cooliris/media/CropImage;->mBitmap:Landroid/graphics/Bitmap;
 
     const/4 v7, 0x0
 
     invoke-virtual {v4, v6, v0, v5, v7}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
-    :try_end_5a
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_42 .. :try_end_5a} :catch_f8
+    :try_end_5b
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_43 .. :try_end_5b} :catch_f9
 
-    .line 928
+    .line 923
     iget-boolean v0, p0, Lcom/cooliris/media/CropImage;->mCircleCrop:Z
 
-    if-eqz v0, :cond_7d
+    if-eqz v0, :cond_7e
 
-    .line 934
+    .line 929
     new-instance v4, Landroid/graphics/Canvas;
 
     invoke-direct {v4, v1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 935
+    .line 930
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    .line 936
+    .line 931
     int-to-float v5, v2
 
     div-float/2addr v5, v8
@@ -3258,36 +3244,36 @@
 
     invoke-virtual {v0, v5, v3, v2, v6}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 938
-    :try_start_73
+    .line 933
+    :try_start_74
     sget-object v2, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
 
     invoke-virtual {v4, v0, v2}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;Landroid/graphics/Region$Op;)Z
-    :try_end_78
-    .catch Ljava/lang/Exception; {:try_start_73 .. :try_end_78} :catch_102
+    :try_end_79
+    .catch Ljava/lang/Exception; {:try_start_74 .. :try_end_79} :catch_103
 
-    .line 942
-    :goto_78
+    .line 937
+    :goto_79
     sget-object v0, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v4, v9, v0}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 946
-    :cond_7d
+    .line 941
+    :cond_7e
     iget v0, p0, Lcom/cooliris/media/CropImage;->mOutputX:I
 
-    if-eqz v0, :cond_177
+    if-eqz v0, :cond_178
 
     iget v0, p0, Lcom/cooliris/media/CropImage;->mOutputY:I
 
-    if-eqz v0, :cond_177
+    if-eqz v0, :cond_178
 
-    .line 947
+    .line 942
     iget-boolean v0, p0, Lcom/cooliris/media/CropImage;->mScale:Z
 
-    if-eqz v0, :cond_108
+    if-eqz v0, :cond_109
 
-    .line 950
+    .line 945
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
@@ -3302,21 +3288,21 @@
 
     move-result-object v0
 
-    .line 952
-    if-eqz v1, :cond_a3
+    .line 947
+    if-eqz v1, :cond_a4
 
     invoke-virtual {v1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_a3
+    if-nez v2, :cond_a4
 
-    .line 953
+    .line 948
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 990
-    :cond_a3
-    :goto_a3
+    .line 985
+    :cond_a4
+    :goto_a4
     invoke-virtual {p0}, Lcom/cooliris/media/CropImage;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
@@ -3325,8 +3311,8 @@
 
     move-result-object v1
 
-    .line 991
-    if-eqz v1, :cond_15e
+    .line 986
+    if-eqz v1, :cond_15f
 
     const-string v2, "data"
 
@@ -3334,7 +3320,7 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_bd
+    if-nez v2, :cond_be
 
     const-string v2, "return-data"
 
@@ -3342,48 +3328,48 @@
 
     move-result v1
 
-    if-eqz v1, :cond_15e
+    if-eqz v1, :cond_15f
 
-    .line 994
-    :cond_bd
+    .line 989
+    :cond_be
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 995
+    .line 990
     const-string v2, "data"
 
     invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 996
+    .line 991
     iget-object v0, p0, Lcom/cooliris/media/CropImage;->mItem:Lcom/cooliris/media/MediaItem;
 
-    .line 997
-    if-eqz v0, :cond_e0
+    .line 992
+    if-eqz v0, :cond_e1
 
-    .line 998
+    .line 993
     const-string v2, "takenTime"
 
     iget-wide v3, v0, Lcom/cooliris/media/MediaItem;->mDateTakenInMs:J
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 999
+    .line 994
     const-string v2, "latitude"
 
     iget-wide v3, v0, Lcom/cooliris/media/MediaItem;->mLatitude:D
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
 
-    .line 1000
+    .line 995
     const-string v2, "longitude"
 
     iget-wide v3, v0, Lcom/cooliris/media/MediaItem;->mLongitude:D
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
 
-    .line 1002
-    :cond_e0
+    .line 997
+    :cond_e1
     const/4 v0, -0x1
 
     new-instance v2, Landroid/content/Intent;
@@ -3402,35 +3388,35 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/cooliris/media/CropImage;->setResult(ILandroid/content/Intent;)V
 
-    .line 1003
+    .line 998
     invoke-virtual {p0}, Lcom/cooliris/media/CropImage;->finish()V
 
-    goto/16 :goto_3e
+    goto/16 :goto_3f
 
-    .line 923
-    :catch_f8
+    .line 918
+    :catch_f9
     move-exception v0
 
-    .line 924
+    .line 919
     const-string v0, "CropImage"
 
     const-string v1, "onSaveClicked() IllegalArgumentException from createBitmap()..."
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_3e
+    goto/16 :goto_3f
 
-    .line 939
-    :catch_102
+    .line 934
+    :catch_103
     move-exception v0
 
-    .line 940
+    .line 935
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    goto/16 :goto_78
+    goto/16 :goto_79
 
-    .line 965
-    :cond_108
+    .line 960
+    :cond_109
     iget v0, p0, Lcom/cooliris/media/CropImage;->mOutputX:I
 
     iget v2, p0, Lcom/cooliris/media/CropImage;->mOutputY:I
@@ -3441,19 +3427,19 @@
 
     move-result-object v0
 
-    .line 966
+    .line 961
     new-instance v2, Landroid/graphics/Canvas;
 
     invoke-direct {v2, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 968
+    .line 963
     iget-object v3, p0, Lcom/cooliris/media/CropImage;->mCrop:Lcom/cooliris/media/HighlightView;
 
     invoke-virtual {v3}, Lcom/cooliris/media/HighlightView;->getCropRect()Landroid/graphics/Rect;
 
     move-result-object v3
 
-    .line 969
+    .line 964
     new-instance v4, Landroid/graphics/Rect;
 
     iget v5, p0, Lcom/cooliris/media/CropImage;->mOutputX:I
@@ -3462,7 +3448,7 @@
 
     invoke-direct {v4, v9, v9, v5, v6}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 971
+    .line 966
     invoke-virtual {v3}, Landroid/graphics/Rect;->width()I
 
     move-result v5
@@ -3475,7 +3461,7 @@
 
     div-int/lit8 v5, v5, 0x2
 
-    .line 972
+    .line 967
     invoke-virtual {v3}, Landroid/graphics/Rect;->height()I
 
     move-result v6
@@ -3488,7 +3474,7 @@
 
     div-int/lit8 v6, v6, 0x2
 
-    .line 975
+    .line 970
     invoke-static {v9, v5}, Ljava/lang/Math;->max(II)I
 
     move-result v7
@@ -3499,7 +3485,7 @@
 
     invoke-virtual {v3, v7, v8}, Landroid/graphics/Rect;->inset(II)V
 
-    .line 978
+    .line 973
     neg-int v5, v5
 
     invoke-static {v9, v5}, Ljava/lang/Math;->max(II)I
@@ -3514,23 +3500,23 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/graphics/Rect;->inset(II)V
 
-    .line 981
+    .line 976
     iget-object v5, p0, Lcom/cooliris/media/CropImage;->mBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v2, v5, v3, v4, v10}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 984
+    .line 979
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
-    goto/16 :goto_a3
+    goto/16 :goto_a4
 
-    .line 1006
-    :cond_15e
+    .line 1001
+    :cond_15f
     new-instance v1, Lcom/cooliris/media/CropImage$23;
 
     invoke-direct {v1, p0, v0}, Lcom/cooliris/media/CropImage$23;-><init>(Lcom/cooliris/media/CropImage;Landroid/graphics/Bitmap;)V
 
-    .line 1011
+    .line 1006
     invoke-virtual {p0}, Lcom/cooliris/media/CropImage;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -3547,12 +3533,12 @@
 
     invoke-static {p0, v10, v0, v1, v2}, Lcom/cooliris/media/Util;->startBackgroundJob(Lcom/cooliris/media/MonitoredActivity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;Landroid/os/Handler;)V
 
-    goto/16 :goto_3e
+    goto/16 :goto_3f
 
-    :cond_177
+    :cond_178
     move-object v0, v1
 
-    goto/16 :goto_a3
+    goto/16 :goto_a4
 .end method
 
 
@@ -3562,15 +3548,15 @@
     .parameter "newConfig"
 
     .prologue
-    .line 1392
+    .line 1387
     invoke-super {p0, p1}, Lcom/cooliris/media/MonitoredActivity;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 1397
+    .line 1392
     const v1, 0x7f030004
 
     invoke-virtual {p0, v1}, Lcom/cooliris/media/CropImage;->setContentView(I)V
 
-    .line 1398
+    .line 1393
     const v1, 0x7f080008
 
     invoke-virtual {p0, v1}, Lcom/cooliris/media/CropImage;->findViewById(I)Landroid/view/View;
@@ -3581,7 +3567,7 @@
 
     iput-object v1, p0, Lcom/cooliris/media/CropImage;->mImageView:Lcom/cooliris/media/CropImageView;
 
-    .line 1399
+    .line 1394
     iget-object v1, p0, Lcom/cooliris/media/CropImage;->mImageView:Lcom/cooliris/media/CropImageView;
 
     const v2, 0x7f08000e
@@ -3592,37 +3578,37 @@
 
     invoke-virtual {v1, v2}, Lcom/cooliris/media/CropImageView;->setButtonsLayout(Landroid/view/View;)V
 
-    .line 1401
+    .line 1396
     invoke-direct {p0}, Lcom/cooliris/media/CropImage;->isHomeScreen()Z
 
     move-result v1
 
     if-eqz v1, :cond_29
 
-    .line 1402
+    .line 1397
     invoke-direct {p0}, Lcom/cooliris/media/CropImage;->initHomeScreenUI()V
 
-    .line 1404
+    .line 1399
     :cond_29
     invoke-direct {p0}, Lcom/cooliris/media/CropImage;->setSaveBtnListener()V
 
-    .line 1405
+    .line 1400
     invoke-direct {p0}, Lcom/cooliris/media/CropImage;->setDiscardBtnListener()V
 
-    .line 1407
+    .line 1402
     iget-object v1, p0, Lcom/cooliris/media/CropImage;->mImageLoadHandler:Landroid/os/Handler;
 
     invoke-virtual {v1}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1408
+    .line 1403
     .local v0, msg:Landroid/os/Message;
     iget-object v1, p0, Lcom/cooliris/media/CropImage;->mImageLoadHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1409
+    .line 1404
     return-void
 .end method
 
@@ -4031,20 +4017,20 @@
     .registers 2
 
     .prologue
-    .line 1193
+    .line 1188
     iget-object v0, p0, Lcom/cooliris/media/CropImage;->mApp:Lcom/cooliris/app/App;
 
     invoke-virtual {v0}, Lcom/cooliris/app/App;->shutdown()V
 
-    .line 1194
+    .line 1189
     iget-object v0, p0, Lcom/cooliris/media/CropImage;->mLocaleReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v0}, Lcom/cooliris/media/CropImage;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 1195
+    .line 1190
     invoke-super {p0}, Lcom/cooliris/media/MonitoredActivity;->onDestroy()V
 
-    .line 1196
+    .line 1191
     return-void
 .end method
 
@@ -4052,10 +4038,10 @@
     .registers 3
 
     .prologue
-    .line 1186
+    .line 1181
     invoke-super {p0}, Lcom/cooliris/media/MonitoredActivity;->onPause()V
 
-    .line 1187
+    .line 1182
     invoke-static {}, Lcom/cooliris/media/BitmapManager;->instance()Lcom/cooliris/media/BitmapManager;
 
     move-result-object v0
@@ -4064,12 +4050,12 @@
 
     invoke-virtual {v0, v1}, Lcom/cooliris/media/BitmapManager;->cancelThreadDecoding(Lcom/cooliris/media/BitmapManager$ThreadSet;)V
 
-    .line 1188
+    .line 1183
     iget-object v0, p0, Lcom/cooliris/media/CropImage;->mApp:Lcom/cooliris/app/App;
 
     invoke-virtual {v0}, Lcom/cooliris/app/App;->onPause()V
 
-    .line 1189
+    .line 1184
     return-void
 .end method
 
@@ -4077,14 +4063,14 @@
     .registers 2
 
     .prologue
-    .line 1180
+    .line 1175
     invoke-super {p0}, Lcom/cooliris/media/MonitoredActivity;->onResume()V
 
-    .line 1181
+    .line 1176
     iget-object v0, p0, Lcom/cooliris/media/CropImage;->mApp:Lcom/cooliris/app/App;
 
     invoke-virtual {v0}, Lcom/cooliris/app/App;->onResume()V
 
-    .line 1182
+    .line 1177
     return-void
 .end method

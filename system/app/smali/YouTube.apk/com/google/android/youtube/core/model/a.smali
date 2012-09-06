@@ -22,7 +22,7 @@
     .line 28
     const-string v0, "uris contain be null"
 
-    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 29
     invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
@@ -36,7 +36,7 @@
     :goto_f
     const-string v1, "uris must contain at least one uri"
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
 
     .line 30
     iput p1, p0, Lcom/google/android/youtube/core/model/a;->a:I

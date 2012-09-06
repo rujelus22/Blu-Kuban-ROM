@@ -42,7 +42,7 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/WallpaperWidget;->TAG:Ljava/lang/String;
 
     .line 26
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/WallpaperWidget;->DBG:Z
 
@@ -62,7 +62,7 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/WallpaperWidget;->ACTION_LOCKSCREEN_LIVE_WALLPAPER_CHANGED:Ljava/lang/String;
 
     .line 36
-    const-string v1, "/data/data/com.cooliris.media/files/zzzzzz_lockscreen_wallpaper.jpg"
+    const-string v1, "/data/data/com.cooliris.media/files/zzzzzz_lockscreen_wallpaper.png"
 
     iput-object v1, p0, Lcom/android/internal/policy/impl/WallpaperWidget;->WALLPAPER_IMAGE_PATH:Ljava/lang/String;
 
@@ -86,7 +86,7 @@
     .line 49
     iget-object v1, p0, Lcom/android/internal/policy/impl/WallpaperWidget;->mLockScreenWallpaperImage:Landroid/widget/ImageView;
 
-    sget-object v2, Landroid/widget/ImageView$ScaleType;->FIT_XY:Landroid/widget/ImageView$ScaleType;
+    sget-object v2, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
@@ -177,7 +177,7 @@
     .line 150
     new-instance v1, Ljava/io/File;
 
-    const-string v4, "/system/wallpaper/default_lockscreen/default_lockscreen.jpg"
+    const-string v4, "/system/wallpaper/default_lockscreen/default_lockscreen.png"
 
     invoke-direct {v1, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
@@ -267,7 +267,7 @@
     .line 134
     new-instance v1, Ljava/io/File;
 
-    const-string v3, "/system/wallpaper/default_wallpaper/default_wallpaper.jpg"
+    const-string v3, "/system/wallpaper/default_wallpaper/default_wallpaper.png"
 
     invoke-direct {v1, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
@@ -341,7 +341,7 @@
     .line 110
     new-instance v1, Ljava/io/File;
 
-    const-string v3, "/data/data/com.cooliris.media/files/zzzzzz_lockscreen_wallpaper.jpg"
+    const-string v3, "/data/data/com.cooliris.media/files/zzzzzz_lockscreen_wallpaper.png"
 
     invoke-direct {v1, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
@@ -363,7 +363,7 @@
 
     move-result-object v5
 
-    const-string v6, "/data/data/com.cooliris.media/files/zzzzzz_lockscreen_wallpaper.jpg"
+    const-string v6, "/data/data/com.cooliris.media/files/zzzzzz_lockscreen_wallpaper.png"
 
     invoke-direct {v4, v5, v6}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Ljava/lang/String;)V
 

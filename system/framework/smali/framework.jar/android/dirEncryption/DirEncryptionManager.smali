@@ -17,7 +17,7 @@
 
 .field public static final BATCH_DECRYPT:I = 0xc
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field public static final DECRYPT:I = 0x3
 

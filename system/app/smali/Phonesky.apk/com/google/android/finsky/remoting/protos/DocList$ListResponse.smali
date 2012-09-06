@@ -45,29 +45,29 @@
     .registers 2
 
     .prologue
-    .line 9
+    .line 10
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 13
+    .line 14
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->bucket_:Ljava/util/List;
 
-    .line 46
+    .line 47
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->doc_:Ljava/util/List;
 
-    .line 104
+    .line 106
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->cachedSize:I
 
-    .line 9
+    .line 10
     return-void
 .end method
 
@@ -78,17 +78,17 @@
     .parameter "value"
 
     .prologue
-    .line 30
+    .line 31
     if-nez p1, :cond_8
 
-    .line 31
+    .line 32
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 33
+    .line 34
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->bucket_:Ljava/util/List;
 
@@ -98,20 +98,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 34
+    .line 35
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->bucket_:Ljava/util/List;
 
-    .line 36
+    .line 37
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->bucket_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 37
+    .line 38
     return-object p0
 .end method
 
@@ -120,17 +120,17 @@
     .parameter "value"
 
     .prologue
-    .line 63
+    .line 64
     if-nez p1, :cond_8
 
-    .line 64
+    .line 65
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 66
+    .line 67
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->doc_:Ljava/util/List;
 
@@ -140,20 +140,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 67
+    .line 68
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->doc_:Ljava/util/List;
 
-    .line 69
+    .line 70
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->doc_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 70
+    .line 71
     return-object p0
 .end method
 
@@ -170,7 +170,7 @@
     .end annotation
 
     .prologue
-    .line 16
+    .line 17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->bucket_:Ljava/util/List;
 
     return-object v0
@@ -180,15 +180,15 @@
     .registers 2
 
     .prologue
-    .line 106
+    .line 109
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 108
+    .line 111
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->getSerializedSize()I
 
-    .line 110
+    .line 113
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->cachedSize:I
 
@@ -200,7 +200,7 @@
     .parameter "index"
 
     .prologue
-    .line 53
+    .line 54
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->doc_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -216,7 +216,7 @@
     .registers 2
 
     .prologue
-    .line 51
+    .line 52
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->doc_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -239,7 +239,7 @@
     .end annotation
 
     .prologue
-    .line 49
+    .line 50
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->doc_:Ljava/util/List;
 
     return-object v0
@@ -249,10 +249,10 @@
     .registers 5
 
     .prologue
-    .line 114
+    .line 118
     const/4 v2, 0x0
 
-    .line 115
+    .line 119
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->getBucketList()Ljava/util/List;
 
@@ -276,7 +276,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
 
-    .line 116
+    .line 120
     .local v0, element:Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
     const/4 v3, 0x1
 
@@ -288,7 +288,7 @@
 
     goto :goto_9
 
-    .line 119
+    .line 123
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->getDocList()Ljava/util/List;
@@ -312,7 +312,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
-    .line 120
+    .line 124
     .local v0, element:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
     const/4 v3, 0x2
 
@@ -324,12 +324,12 @@
 
     goto :goto_24
 
-    .line 123
+    .line 127
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
     :cond_37
     iput v2, p0, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->cachedSize:I
 
-    .line 124
+    .line 128
     return v2
 .end method
 
@@ -343,60 +343,60 @@
     .end annotation
 
     .prologue
-    .line 131
+    .line 136
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 132
+    .line 137
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_26
 
-    .line 136
+    .line 141
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 137
+    .line 142
     :sswitch_d
     return-object p0
 
-    .line 142
+    .line 147
     :sswitch_e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocList$Bucket;-><init>()V
 
-    .line 143
+    .line 148
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 144
+    .line 149
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->addBucket(Lcom/google/android/finsky/remoting/protos/DocList$Bucket;)Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;
 
     goto :goto_0
 
-    .line 148
+    .line 153
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
     :sswitch_1a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;-><init>()V
 
-    .line 149
+    .line 154
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 150
+    .line 155
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->addDoc(Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;)Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;
 
     goto :goto_0
 
-    .line 132
+    .line 137
     :sswitch_data_26
     .sparse-switch
         0x0 -> :sswitch_d
@@ -433,7 +433,7 @@
     .end annotation
 
     .prologue
-    .line 96
+    .line 98
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->getBucketList()Ljava/util/List;
 
     move-result-object v2
@@ -456,7 +456,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
 
-    .line 97
+    .line 99
     .local v0, element:Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
     const/4 v2, 0x1
 
@@ -464,7 +464,7 @@
 
     goto :goto_8
 
-    .line 99
+    .line 101
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
     :cond_19
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->getDocList()Ljava/util/List;
@@ -488,7 +488,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
-    .line 100
+    .line 102
     .local v0, element:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
     const/4 v2, 0x2
 
@@ -496,7 +496,7 @@
 
     goto :goto_21
 
-    .line 102
+    .line 104
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
     :cond_32
     return-void

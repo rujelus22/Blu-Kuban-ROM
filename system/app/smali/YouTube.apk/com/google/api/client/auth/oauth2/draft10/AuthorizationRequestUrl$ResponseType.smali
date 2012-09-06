@@ -24,7 +24,7 @@
 
     const/4 v2, 0x0
 
-    .line 61
+    .line 66
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationRequestUrl$ResponseType;
 
     const-string v1, "CODE"
@@ -33,7 +33,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationRequestUrl$ResponseType;->CODE:Lcom/google/api/client/auth/oauth2/draft10/AuthorizationRequestUrl$ResponseType;
 
-    .line 64
+    .line 69
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationRequestUrl$ResponseType;
 
     const-string v1, "TOKEN"
@@ -42,7 +42,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationRequestUrl$ResponseType;->TOKEN:Lcom/google/api/client/auth/oauth2/draft10/AuthorizationRequestUrl$ResponseType;
 
-    .line 67
+    .line 72
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationRequestUrl$ResponseType;
 
     const-string v1, "CODE_AND_TOKEN"
@@ -51,7 +51,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationRequestUrl$ResponseType;->CODE_AND_TOKEN:Lcom/google/api/client/auth/oauth2/draft10/AuthorizationRequestUrl$ResponseType;
 
-    .line 58
+    .line 63
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/api/client/auth/oauth2/draft10/AuthorizationRequestUrl$ResponseType;
@@ -79,7 +79,7 @@
     .parameter
 
     .prologue
-    .line 58
+    .line 63
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -90,7 +90,7 @@
     .parameter
 
     .prologue
-    .line 58
+    .line 63
     const-class v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationRequestUrl$ResponseType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -106,7 +106,7 @@
     .registers 1
 
     .prologue
-    .line 58
+    .line 63
     sget-object v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationRequestUrl$ResponseType;->$VALUES:[Lcom/google/api/client/auth/oauth2/draft10/AuthorizationRequestUrl$ResponseType;
 
     invoke-virtual {v0}, [Lcom/google/api/client/auth/oauth2/draft10/AuthorizationRequestUrl$ResponseType;->clone()Ljava/lang/Object;
@@ -125,7 +125,7 @@
     .parameter
 
     .prologue
-    .line 75
+    .line 80
     invoke-virtual {p0}, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationRequestUrl$ResponseType;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -136,6 +136,6 @@
 
     iput-object v0, p1, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationRequestUrl;->responseType:Ljava/lang/String;
 
-    .line 76
+    .line 81
     return-void
 .end method

@@ -6,7 +6,7 @@
 # static fields
 .field public static final BT_STATE_CHANGE:Ljava/lang/String; = "android.bluetooth.adapter.action.STATE_CHANGED"
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field public static final MAP_ADDRECORD:Ljava/lang/String; = "android.intent.action.MAP_ADDRECORD"
 

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.anddoes.launcher.Hotseat android:background="@drawable/hotseat_bg_panel" launcher:pageSpacing="@dimen/hotseat_page_spacing"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:launcher="http://schemas.android.com/apk/res/com.anddoes.launcher" />

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 200
+    .line 203
     iput-object p1, p0, Lcom/google/android/finsky/activities/ReviewsFragmentXLarge$8;->this$0:Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,12 +44,12 @@
     .parameter "fromUser"
 
     .prologue
-    .line 203
+    .line 206
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragmentXLarge$8;->this$0:Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;
 
     #calls: Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;->updateSubmitState()V
     invoke-static {v0}, Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;->access$200(Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;)V
 
-    .line 204
+    .line 207
     return-void
 .end method

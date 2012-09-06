@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.1">
+        <ImageView android:layout_width="90.0dip" android:layout_height="90.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="20.0dip" android:src="@drawable/circles_big" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/dark_grey" android:layout_gravity="center_vertical" android:id="@id/headerText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="20.0dip" />
+    </LinearLayout>
+    <TextView android:textSize="16.0sp" android:textColor="@color/grey" android:id="@id/bodyText" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="20.0dip" android:layout_weight="0.5" />
+    <com.google.android.apps.plusone.widgets.ActionButton android:id="@id/installButton" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="20.0dip" android:minHeight="@dimen/action_bar_height" style="@style/ActionButton" />
+</LinearLayout>

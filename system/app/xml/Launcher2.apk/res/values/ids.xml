@@ -1,27 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item type="id" name="all_apps_cling_title">false</item>
-    <item type="id" name="all_apps_cling_add_item">false</item>
-    <item type="id" name="cling_dismiss">false</item>
+    <item type="id" name="icon">false</item>
+    <item type="id" name="title">false</item>
+    <item type="id" name="app_icon">false</item>
+    <item type="id" name="app_name">false</item>
+    <item type="id" name="app_checked">false</item>
+    <item type="id" name="apply_icon_pack">false</item>
+    <item type="id" name="apply_skin">false</item>
+    <item type="id" name="apply_font">false</item>
+    <item type="id" name="apply_wallpaper">false</item>
     <item type="id" name="application_icon">false</item>
     <item type="id" name="apps_customize_content">false</item>
     <item type="id" name="tabs_container">false</item>
-    <item type="id" name="market_button">false</item>
+    <item type="id" name="menu_button">false</item>
     <item type="id" name="apps_customize_pane_content">false</item>
     <item type="id" name="animation_buffer">false</item>
     <item type="id" name="paged_view_indicator">false</item>
-    <item type="id" name="all_apps_cling">false</item>
     <item type="id" name="apps_customize_progress_bar">false</item>
     <item type="id" name="widget_name">false</item>
     <item type="id" name="widget_dims">false</item>
     <item type="id" name="widget_preview">false</item>
+    <item type="id" name="msg">false</item>
+    <item type="id" name="changelog">false</item>
+    <item type="id" name="info">false</item>
+    <item type="id" name="content">false</item>
+    <item type="id" name="pick_icon">false</item>
+    <item type="id" name="pick_activity">false</item>
+    <item type="id" name="label">false</item>
+    <item type="id" name="divider">false</item>
+    <item type="id" name="cancel">false</item>
+    <item type="id" name="ok">false</item>
     <item type="id" name="provider_icon">false</item>
     <item type="id" name="provider">false</item>
-    <item type="id" name="folder_cling_title">false</item>
-    <item type="id" name="folder_cling_create_folder">false</item>
     <item type="id" name="preview_background">false</item>
     <item type="id" name="folder_icon_name">false</item>
-    <item type="id" name="layout">false</item>
+    <item type="id" name="number_picker_rows">false</item>
+    <item type="id" name="number_picker_columns">false</item>
+    <item type="id" name="group_type">false</item>
+    <item type="id" name="group_name">false</item>
+    <item type="id" name="ungrouped_only">false</item>
+    <item type="id" name="help_drawer_tabs">false</item>
+    <item type="id" name="help_unread_count">false</item>
+    <item type="id" name="help_dock_gestures">false</item>
+    <item type="id" name="help_two_finger_gestures">false</item>
+    <item type="id" name="help_transition_effects">false</item>
+    <item type="id" name="help_folder_batch_add">false</item>
+    <item type="id" name="help_folder_merge">false</item>
+    <item type="id" name="help_advanced_widgets">false</item>
+    <item type="id" name="icon_grid">false</item>
     <item type="id" name="drag_layer">false</item>
     <item type="id" name="workspace">false</item>
     <item type="id" name="cell1">false</item>
@@ -34,27 +60,66 @@
     <item type="id" name="hotseat">false</item>
     <item type="id" name="qsb_bar">false</item>
     <item type="id" name="apps_customize_pane">false</item>
-    <item type="id" name="workspace_cling">false</item>
-    <item type="id" name="folder_cling">false</item>
+    <item type="id" name="preview">false</item>
+    <item type="id" name="license_key">false</item>
+    <item type="id" name="note">false</item>
+    <item type="id" name="dialogMessage">false</item>
+    <item type="id" name="number_picker">false</item>
+    <item type="id" name="scroller">false</item>
+    <item type="id" name="tracks">false</item>
+    <item type="id" name="arrow_up">false</item>
+    <item type="id" name="arrow_down">false</item>
+    <item type="id" name="ribbon">false</item>
+    <item type="id" name="home">false</item>
+    <item type="id" name="previews">false</item>
+    <item type="id" name="indicator">false</item>
+    <item type="id" name="pages">false</item>
+    <item type="id" name="faq">false</item>
     <item type="id" name="qsb_search_bar">false</item>
     <item type="id" name="drag_target_bar">false</item>
     <item type="id" name="delete_target_text">false</item>
     <item type="id" name="info_target_text">false</item>
-    <item type="id" name="label">false</item>
     <item type="id" name="folder_name">false</item>
     <item type="id" name="search_button">false</item>
     <item type="id" name="search_divider">false</item>
     <item type="id" name="voice_button">false</item>
+    <item type="id" name="search_frame">false</item>
     <item type="id" name="search_button_container">false</item>
     <item type="id" name="voice_button_container">false</item>
     <item type="id" name="all_apps_button">false</item>
     <item type="id" name="all_apps_divider">false</item>
+    <item type="id" name="swipe_up_action">false</item>
+    <item type="id" name="swipe_up_action_detail">false</item>
+    <item type="id" name="swipe_down_action">false</item>
+    <item type="id" name="swipe_down_action_detail">false</item>
+    <item type="id" name="list">false</item>
+    <item type="id" name="sort_button">false</item>
+    <item type="id" name="delete_button">false</item>
+    <item type="id" name="feature">false</item>
+    <item type="id" name="description">false</item>
+    <item type="id" name="link">false</item>
+    <item type="id" name="rate">false</item>
+    <item type="id" name="apply">false</item>
+    <item type="id" name="icontype">false</item>
+    <item type="id" name="iconpack">false</item>
+    <item type="id" name="skin">false</item>
+    <item type="id" name="font">false</item>
     <item type="id" name="folder_content">false</item>
     <item type="id" name="gallery">false</item>
     <item type="id" name="set">false</item>
     <item type="id" name="wallpaper_chooser_fragment">false</item>
     <item type="id" name="wallpaper_image">false</item>
-    <item type="id" name="workspace_cling_title">false</item>
-    <item type="id" name="workspace_cling_move_item">false</item>
-    <item type="id" name="workspace_cling_open_all_apps">false</item>
+    <item type="id" name="search_button_icon">false</item>
+    <item type="id" name="homescreen_settings">false</item>
+    <item type="id" name="drawer_settings">false</item>
+    <item type="id" name="dock_settings">false</item>
+    <item type="id" name="folder_settings">false</item>
+    <item type="id" name="behavior_settings">false</item>
+    <item type="id" name="theme_settings">false</item>
+    <item type="id" name="advanced_settings">false</item>
+    <item type="id" name="backup_restore_settings">false</item>
+    <item type="id" name="apex_settings">false</item>
+    <item type="id" name="apex_launcher_pro">false</item>
+    <item type="id" name="about_settings">false</item>
+    <item type="id" name="restart_settings">false</item>
 </resources>

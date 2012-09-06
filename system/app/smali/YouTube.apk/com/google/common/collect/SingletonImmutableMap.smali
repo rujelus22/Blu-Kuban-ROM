@@ -24,16 +24,16 @@
     .parameter
 
     .prologue
-    .line 41
+    .line 40
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableMap;-><init>()V
 
-    .line 42
+    .line 41
     iput-object p1, p0, Lcom/google/common/collect/SingletonImmutableMap;->singleKey:Ljava/lang/Object;
 
-    .line 43
+    .line 42
     iput-object p2, p0, Lcom/google/common/collect/SingletonImmutableMap;->singleValue:Ljava/lang/Object;
 
-    .line 44
+    .line 43
     return-void
 .end method
 
@@ -42,41 +42,27 @@
     .parameter
 
     .prologue
-    .line 46
+    .line 45
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableMap;-><init>()V
 
+    .line 46
+    iput-object p1, p0, Lcom/google/common/collect/SingletonImmutableMap;->entry:Ljava/util/Map$Entry;
+
     .line 47
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    iput-object v0, p0, Lcom/google/common/collect/SingletonImmutableMap;->entry:Ljava/util/Map$Entry;
-
-    .line 48
     invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/SingletonImmutableMap;->singleKey:Ljava/lang/Object;
 
-    .line 49
+    .line 48
     invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/SingletonImmutableMap;->singleValue:Ljava/lang/Object;
 
-    .line 50
+    .line 49
     return-void
 .end method
 
@@ -84,10 +70,10 @@
     .registers 3
 
     .prologue
-    .line 53
+    .line 52
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableMap;->entry:Ljava/util/Map$Entry;
 
-    .line 54
+    .line 53
     if-nez v0, :cond_e
 
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableMap;->singleKey:Ljava/lang/Object;
@@ -109,6 +95,9 @@
 .method public final containsKey(Ljava/lang/Object;)Z
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     .line 71
@@ -124,6 +113,9 @@
 .method public final containsValue(Ljava/lang/Object;)Z
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     .line 75
@@ -140,10 +132,10 @@
     .registers 2
 
     .prologue
-    .line 81
+    .line 85
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableMap;->entrySet:Lcom/google/common/collect/ImmutableSet;
 
-    .line 82
+    .line 86
     if-nez v0, :cond_e
 
     invoke-direct {p0}, Lcom/google/common/collect/SingletonImmutableMap;->entry()Ljava/util/Map$Entry;
@@ -164,7 +156,7 @@
     .registers 2
 
     .prologue
-    .line 33
+    .line 31
     invoke-virtual {p0}, Lcom/google/common/collect/SingletonImmutableMap;->entrySet()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -175,31 +167,34 @@
 .method public final equals(Ljava/lang/Object;)Z
     .registers 7
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    .line 125
+    .line 134
     if-ne p1, p0, :cond_6
 
     move v0, v1
 
-    .line 137
+    .line 146
     :goto_5
     return v0
 
-    .line 128
+    .line 137
     :cond_6
     instance-of v0, p1, Ljava/util/Map;
 
     if-eqz v0, :cond_3e
 
-    .line 129
+    .line 138
     check-cast p1, Ljava/util/Map;
 
-    .line 130
+    .line 139
     invoke-interface {p1}, Ljava/util/Map;->size()I
 
     move-result v0
@@ -208,10 +203,10 @@
 
     move v0, v2
 
-    .line 131
+    .line 140
     goto :goto_5
 
-    .line 133
+    .line 142
     :cond_14
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -227,7 +222,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 134
+    .line 143
     iget-object v3, p0, Lcom/google/common/collect/SingletonImmutableMap;->singleKey:Ljava/lang/Object;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -264,16 +259,19 @@
     :cond_3e
     move v0, v2
 
-    .line 137
+    .line 146
     goto :goto_5
 .end method
 
 .method public final get(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 59
+    .line 58
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableMap;->singleKey:Ljava/lang/Object;
 
     invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -297,7 +295,7 @@
     .registers 3
 
     .prologue
-    .line 141
+    .line 150
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableMap;->singleKey:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -325,14 +323,24 @@
     return v0
 .end method
 
+.method final isPartialView()Z
+    .registers 2
+
+    .prologue
+    .line 79
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public final keySet()Lcom/google/common/collect/ImmutableSet;
     .registers 2
 
     .prologue
-    .line 88
+    .line 92
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableMap;->keySet:Lcom/google/common/collect/ImmutableSet;
 
-    .line 89
+    .line 93
     if-nez v0, :cond_c
 
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableMap;->singleKey:Ljava/lang/Object;
@@ -351,7 +359,7 @@
     .registers 2
 
     .prologue
-    .line 33
+    .line 31
     invoke-virtual {p0}, Lcom/google/common/collect/SingletonImmutableMap;->keySet()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -373,16 +381,12 @@
     .registers 3
 
     .prologue
-    .line 145
+    .line 154
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "{"
 
-    const/16 v1, 0x7b
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/common/collect/SingletonImmutableMap;->singleKey:Ljava/lang/Object;
 
@@ -427,10 +431,10 @@
     .registers 3
 
     .prologue
-    .line 95
+    .line 99
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableMap;->values:Lcom/google/common/collect/ImmutableCollection;
 
-    .line 96
+    .line 100
     if-nez v0, :cond_d
 
     new-instance v0, Lcom/google/common/collect/SingletonImmutableMap$Values;
@@ -449,7 +453,7 @@
     .registers 2
 
     .prologue
-    .line 33
+    .line 31
     invoke-virtual {p0}, Lcom/google/common/collect/SingletonImmutableMap;->values()Lcom/google/common/collect/ImmutableCollection;
 
     move-result-object v0

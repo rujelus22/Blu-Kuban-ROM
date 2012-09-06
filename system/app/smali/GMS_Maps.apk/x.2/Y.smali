@@ -1,206 +1,251 @@
-.class public Lx/Y;
-.super Lt/af;
+.class public Lx/y;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field private final d:Lt/C;
+.field final a:D
+
+.field final b:D
 
 
 # direct methods
-.method public constructor <init>(IIILt/C;)V
-    .registers 5
+.method public static a(DDDDDD)D
+    .registers 20
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0, p1, p2, p3}, Lt/af;-><init>(III)V
+    .prologue
+    .line 61
+    sub-double v0, p4, p0
 
-    iput-object p4, p0, Lx/Y;->d:Lt/C;
+    sub-double v2, p10, p2
 
-    return-void
+    mul-double/2addr v0, v2
+
+    sub-double v2, p8, p0
+
+    sub-double v4, p6, p2
+
+    mul-double/2addr v2, v4
+
+    sub-double/2addr v0, v2
+
+    .line 63
+    sub-double v2, p0, p8
+
+    sub-double v4, p0, p8
+
+    mul-double/2addr v2, v4
+
+    sub-double v4, p2, p10
+
+    sub-double v6, p2, p10
+
+    mul-double/2addr v4, v6
+
+    add-double/2addr v2, v4
+
+    sub-double v4, p0, p4
+
+    sub-double v6, p0, p4
+
+    mul-double/2addr v4, v6
+
+    add-double/2addr v2, v4
+
+    sub-double v4, p2, p6
+
+    sub-double v6, p2, p6
+
+    mul-double/2addr v4, v6
+
+    add-double/2addr v2, v4
+
+    const-wide v4, 0x3ddb7cdfd9d7bdbbL
+
+    mul-double/2addr v2, v4
+
+    .line 67
+    invoke-static {v0, v1}, Ljava/lang/Math;->abs(D)D
+
+    move-result-wide v4
+
+    cmpg-double v2, v4, v2
+
+    if-gez v2, :cond_32
+
+    const-wide/16 v0, 0x0
+
+    :cond_32
+    return-wide v0
 .end method
 
-.method public constructor <init>(Lt/af;Lt/C;)V
-    .registers 6
+.method public static a(DDDD)I
+    .registers 9
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-virtual {p1}, Lt/af;->b()I
+    .prologue
+    .line 44
+    invoke-static {p0, p1, p4, p5}, Ljava/lang/Double;->compare(DD)I
 
     move-result v0
 
-    invoke-virtual {p1}, Lt/af;->c()I
+    .line 45
+    if-nez v0, :cond_a
 
-    move-result v1
+    .line 46
+    invoke-static {p2, p3, p6, p7}, Ljava/lang/Double;->compare(DD)I
 
-    invoke-virtual {p1}, Lt/af;->d()I
+    move-result v0
 
-    move-result v2
-
-    invoke-direct {p0, v0, v1, v2, p2}, Lx/Y;-><init>(IIILt/C;)V
-
-    return-void
+    .line 48
+    :cond_a
+    return v0
 .end method
 
 
 # virtual methods
-.method public a()Lt/C;
-    .registers 2
-
-    iget-object v0, p0, Lx/Y;->d:Lt/C;
-
-    return-object v0
-.end method
-
-.method public a(Lx/Y;)Z
-    .registers 4
-
-    iget-object v0, p0, Lx/Y;->d:Lt/C;
-
-    iget-object v1, p1, Lx/Y;->d:Lt/C;
-
-    if-ne v0, v1, :cond_8
-
-    const/4 v0, 0x1
-
-    :goto_7
-    return v0
-
-    :cond_8
-    const/4 v0, 0x0
-
-    goto :goto_7
-.end method
-
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .registers 8
+    .parameter
 
+    .prologue
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    const/4 v1, 0x0
 
-    :cond_3
-    :goto_3
+    .line 89
+    if-ne p0, p1, :cond_5
+
+    .line 96
+    :cond_4
+    :goto_4
     return v0
 
-    :cond_4
-    instance-of v1, p1, Lx/Y;
+    .line 92
+    :cond_5
+    instance-of v2, p1, Lx/y;
 
-    if-eqz v1, :cond_16
+    if-nez v2, :cond_b
 
-    invoke-super {p0, p1}, Lt/af;->equals(Ljava/lang/Object;)Z
+    move v0, v1
 
-    move-result v1
+    .line 93
+    goto :goto_4
 
-    if-eqz v1, :cond_16
+    .line 95
+    :cond_b
+    check-cast p1, Lx/y;
 
-    check-cast p1, Lx/Y;
+    .line 96
+    iget-wide v2, p1, Lx/y;->a:D
 
-    invoke-virtual {p0, p1}, Lx/Y;->a(Lx/Y;)Z
+    iget-wide v4, p0, Lx/y;->a:D
 
-    move-result v1
+    cmpl-double v2, v2, v4
 
-    if-nez v1, :cond_3
+    if-nez v2, :cond_1d
 
-    :cond_16
-    const/4 v0, 0x0
+    iget-wide v2, p1, Lx/y;->b:D
 
-    goto :goto_3
+    iget-wide v4, p0, Lx/y;->b:D
+
+    cmpl-double v2, v2, v4
+
+    if-eqz v2, :cond_4
+
+    :cond_1d
+    move v0, v1
+
+    goto :goto_4
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .registers 7
 
-    invoke-super {p0}, Lt/af;->hashCode()I
+    .prologue
+    .line 102
+    iget-wide v0, p0, Lx/y;->a:D
 
-    move-result v0
+    invoke-static {v0, v1}, Ljava/lang/Double;->doubleToLongBits(D)J
 
-    mul-int/lit8 v0, v0, 0x25
+    move-result-wide v0
 
-    iget-object v1, p0, Lx/Y;->d:Lt/C;
+    .line 103
+    iget-wide v2, p0, Lx/y;->b:D
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    invoke-static {v2, v3}, Ljava/lang/Double;->doubleToLongBits(D)J
 
-    move-result v1
+    move-result-wide v2
 
-    add-int/2addr v0, v1
+    const-wide/16 v4, 0x1f
+
+    mul-long/2addr v2, v4
+
+    xor-long/2addr v0, v2
+
+    .line 104
+    long-to-int v2, v0
+
+    const/16 v3, 0x20
+
+    shr-long/2addr v0, v3
+
+    long-to-int v0, v0
+
+    xor-int/2addr v0, v2
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .registers 4
 
+    .prologue
+    .line 84
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "[layer: "
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lx/Y;->d:Lt/C;
-
-    invoke-virtual {v1}, Lt/C;->c()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "("
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string v0, " params: "
+    iget-wide v1, p0, Lx/y;->a:D
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v0, p0, Lx/Y;->d:Lt/C;
-
-    invoke-virtual {v0}, Lt/C;->d()[Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v0, 0x0
-
-    :goto_1d
-    array-length v3, v2
-
-    if-ge v0, v3, :cond_36
-
-    aget-object v3, v2, v0
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const/16 v4, 0x3d
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    add-int/lit8 v4, v0, 0x1
-
-    aget-object v4, v2, v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v0, v0, 0x2
-
-    goto :goto_1d
-
-    :cond_36
-    const-string v0, " coords: "
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-super {p0}, Lt/af;->toString()Ljava/lang/String;
+    const-string v1, ","
 
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const/16 v2, 0x5d
+    iget-wide v1, p0, Lx/y;->b:D
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
+
+    const-string v1, ")"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

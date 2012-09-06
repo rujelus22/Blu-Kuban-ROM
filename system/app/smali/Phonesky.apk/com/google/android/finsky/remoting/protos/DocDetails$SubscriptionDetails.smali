@@ -27,20 +27,20 @@
     .registers 2
 
     .prologue
-    .line 3251
+    .line 3582
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 3256
+    .line 3587
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;->subscriptionPeriod_:I
 
-    .line 3287
+    .line 3619
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;->cachedSize:I
 
-    .line 3251
+    .line 3582
     return-void
 .end method
 
@@ -50,15 +50,15 @@
     .registers 2
 
     .prologue
-    .line 3289
+    .line 3622
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 3291
+    .line 3624
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;->getSerializedSize()I
 
-    .line 3293
+    .line 3626
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;->cachedSize:I
 
@@ -69,10 +69,10 @@
     .registers 4
 
     .prologue
-    .line 3297
+    .line 3631
     const/4 v0, 0x0
 
-    .line 3298
+    .line 3632
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;->hasSubscriptionPeriod()Z
 
@@ -80,7 +80,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 3299
+    .line 3633
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;->getSubscriptionPeriod()I
@@ -93,11 +93,11 @@
 
     add-int/2addr v0, v1
 
-    .line 3302
+    .line 3636
     :cond_11
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;->cachedSize:I
 
-    .line 3303
+    .line 3637
     return v0
 .end method
 
@@ -105,7 +105,7 @@
     .registers 2
 
     .prologue
-    .line 3258
+    .line 3589
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;->subscriptionPeriod_:I
 
     return v0
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 3257
+    .line 3588
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;->hasSubscriptionPeriod:Z
 
     return v0
@@ -131,29 +131,29 @@
     .end annotation
 
     .prologue
-    .line 3310
+    .line 3645
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 3311
+    .line 3646
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_16
 
-    .line 3315
+    .line 3650
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 3316
+    .line 3651
     :sswitch_d
     return-object p0
 
-    .line 3321
+    .line 3656
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 3311
+    .line 3646
     :sswitch_data_16
     .sparse-switch
         0x0 -> :sswitch_d
@@ -181,7 +181,7 @@
     .end annotation
 
     .prologue
-    .line 3249
+    .line 3579
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;
 
     move-result-object v0
@@ -194,15 +194,15 @@
     .parameter "value"
 
     .prologue
-    .line 3260
+    .line 3591
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;->hasSubscriptionPeriod:Z
 
-    .line 3261
+    .line 3592
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;->subscriptionPeriod_:I
 
-    .line 3262
+    .line 3593
     return-object p0
 .end method
 
@@ -216,14 +216,14 @@
     .end annotation
 
     .prologue
-    .line 3282
+    .line 3614
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;->hasSubscriptionPeriod()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 3283
+    .line 3615
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;->getSubscriptionPeriod()I
@@ -232,7 +232,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 3285
+    .line 3617
     :cond_e
     return-void
 .end method

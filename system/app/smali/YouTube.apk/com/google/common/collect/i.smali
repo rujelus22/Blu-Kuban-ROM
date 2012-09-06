@@ -1,69 +1,182 @@
-.class final synthetic Lcom/google/common/collect/i;
-.super Ljava/lang/Object;
+.class abstract Lcom/google/common/collect/i;
+.super Lcom/google/common/collect/mu;
 .source "SourceFile"
 
 
-# static fields
-.field static final synthetic a:[I
+# instance fields
+.field private final a:I
+
+.field private b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method protected constructor <init>(I)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 54
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lcom/google/common/collect/i;-><init>(II)V
+
+    .line 55
+    return-void
+.end method
+
+.method protected constructor <init>(II)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 68
+    invoke-direct {p0}, Lcom/google/common/collect/mu;-><init>()V
+
+    .line 69
+    invoke-static {p2, p1}, Lcom/google/common/base/ag;->b(II)I
+
+    .line 70
+    iput p1, p0, Lcom/google/common/collect/i;->a:I
+
+    .line 71
+    iput p2, p0, Lcom/google/common/collect/i;->b:I
+
+    .line 72
+    return-void
+.end method
+
+
+# virtual methods
+.method protected abstract a(I)Ljava/lang/Object;
+.end method
+
+.method public final hasNext()Z
     .registers 3
 
     .prologue
-    .line 124
-    invoke-static {}, Lcom/google/common/collect/AbstractIterator$State;->values()[Lcom/google/common/collect/AbstractIterator$State;
+    .line 76
+    iget v0, p0, Lcom/google/common/collect/i;->b:I
+
+    iget v1, p0, Lcom/google/common/collect/i;->a:I
+
+    if-ge v0, v1, :cond_8
+
+    const/4 v0, 0x1
+
+    :goto_7
+    return v0
+
+    :cond_8
+    const/4 v0, 0x0
+
+    goto :goto_7
+.end method
+
+.method public final hasPrevious()Z
+    .registers 2
+
+    .prologue
+    .line 94
+    iget v0, p0, Lcom/google/common/collect/i;->b:I
+
+    if-lez v0, :cond_6
+
+    const/4 v0, 0x1
+
+    :goto_5
+    return v0
+
+    :cond_6
+    const/4 v0, 0x0
+
+    goto :goto_5
+.end method
+
+.method public final next()Ljava/lang/Object;
+    .registers 3
+
+    .prologue
+    .line 81
+    invoke-virtual {p0}, Lcom/google/common/collect/i;->hasNext()Z
+
+    move-result v0
+
+    if-nez v0, :cond_c
+
+    .line 82
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw v0
+
+    .line 84
+    :cond_c
+    iget v0, p0, Lcom/google/common/collect/i;->b:I
+
+    add-int/lit8 v1, v0, 0x1
+
+    iput v1, p0, Lcom/google/common/collect/i;->b:I
+
+    invoke-virtual {p0, v0}, Lcom/google/common/collect/i;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    array-length v0, v0
+    return-object v0
+.end method
 
-    new-array v0, v0, [I
+.method public final nextIndex()I
+    .registers 2
 
-    sput-object v0, Lcom/google/common/collect/i;->a:[I
+    .prologue
+    .line 89
+    iget v0, p0, Lcom/google/common/collect/i;->b:I
 
-    :try_start_9
-    sget-object v0, Lcom/google/common/collect/i;->a:[I
+    return v0
+.end method
 
-    sget-object v1, Lcom/google/common/collect/AbstractIterator$State;->DONE:Lcom/google/common/collect/AbstractIterator$State;
+.method public final previous()Ljava/lang/Object;
+    .registers 2
 
-    invoke-virtual {v1}, Lcom/google/common/collect/AbstractIterator$State;->ordinal()I
+    .prologue
+    .line 99
+    invoke-virtual {p0}, Lcom/google/common/collect/i;->hasPrevious()Z
 
-    move-result v1
+    move-result v0
 
-    const/4 v2, 0x1
+    if-nez v0, :cond_c
 
-    aput v2, v0, v1
-    :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
+    .line 100
+    new-instance v0, Ljava/util/NoSuchElementException;
 
-    :goto_14
-    :try_start_14
-    sget-object v0, Lcom/google/common/collect/i;->a:[I
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
-    sget-object v1, Lcom/google/common/collect/AbstractIterator$State;->READY:Lcom/google/common/collect/AbstractIterator$State;
+    throw v0
 
-    invoke-virtual {v1}, Lcom/google/common/collect/AbstractIterator$State;->ordinal()I
+    .line 102
+    :cond_c
+    iget v0, p0, Lcom/google/common/collect/i;->b:I
 
-    move-result v1
+    add-int/lit8 v0, v0, -0x1
 
-    const/4 v2, 0x2
+    iput v0, p0, Lcom/google/common/collect/i;->b:I
 
-    aput v2, v0, v1
-    :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
+    invoke-virtual {p0, v0}, Lcom/google/common/collect/i;->a(I)Ljava/lang/Object;
 
-    :goto_1f
-    return-void
+    move-result-object v0
 
-    :catch_20
-    move-exception v0
+    return-object v0
+.end method
 
-    goto :goto_1f
+.method public final previousIndex()I
+    .registers 2
 
-    :catch_22
-    move-exception v0
+    .prologue
+    .line 107
+    iget v0, p0, Lcom/google/common/collect/i;->b:I
 
-    goto :goto_14
+    add-int/lit8 v0, v0, -0x1
+
+    return v0
 .end method

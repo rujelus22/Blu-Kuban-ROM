@@ -1,49 +1,44 @@
-.class Lcom/google/googlenav/ui/N;
+.class Lcom/google/googlenav/ui/n;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements LaJ/q;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/D;
+.field public final a:Ljava/lang/String;
+
+.field public final b:Ljava/util/List;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/D;)V
-    .registers 2
+.method private constructor <init>(Ljava/lang/String;Ljava/util/List;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/N;->a:Lcom/google/googlenav/ui/D;
-
+    .prologue
+    .line 349
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 350
+    iput-object p1, p0, Lcom/google/googlenav/ui/n;->a:Ljava/lang/String;
+
+    .line 351
+    iput-object p2, p0, Lcom/google/googlenav/ui/n;->b:Ljava/util/List;
+
+    .line 352
     return-void
 .end method
 
+.method public static a(Ljava/lang/String;Ljava/util/List;)Lcom/google/googlenav/ui/n;
+    .registers 3
+    .parameter
+    .parameter
 
-# virtual methods
-.method public a(LaJ/H;)V
-    .registers 5
+    .prologue
+    .line 355
+    new-instance v0, Lcom/google/googlenav/ui/n;
 
-    invoke-virtual {p1}, LaJ/H;->a()LaJ/B;
+    invoke-direct {v0, p0, p1}, Lcom/google/googlenav/ui/n;-><init>(Ljava/lang/String;Ljava/util/List;)V
 
-    move-result-object v0
-
-    invoke-virtual {p1}, LaJ/H;->b()LaJ/Y;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, LaJ/Y;->a()I
-
-    move-result v1
-
-    iget-object v2, p0, Lcom/google/googlenav/ui/N;->a:Lcom/google/googlenav/ui/D;
-
-    invoke-static {v2}, Lcom/google/googlenav/ui/D;->c(Lcom/google/googlenav/ui/D;)Lap/c;
-
-    move-result-object v2
-
-    invoke-static {v0, v1, v2}, LaE/d;->a(LaJ/B;ILap/c;)V
-
-    return-void
+    return-object v0
 .end method

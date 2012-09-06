@@ -87,14 +87,6 @@
     .end annotation
 .end method
 
-.method public abstract setSize(I)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
 .method public abstract writeTo(Ljava/io/OutputStream;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

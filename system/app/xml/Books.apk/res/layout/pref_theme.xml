@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<view android:orientation="vertical" android:id="@id/pref_theme" android:layout_width="fill_parent" android:layout_height="wrap_content" books:key="themes" books:entries="@array/themes" books:entryValues="@array/themes_values" books:entryIcons="@array/themes_icons" class="com.google.android.apps.books.widget.TabletSpinnerPreference"
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:books="http://schemas.android.com/apk/res/com.google.android.apps.books">
-    <Spinner android:id="@id/pref_theme_content" android:tag="themes" style="@style/Preference.Spinner" />
-</view>

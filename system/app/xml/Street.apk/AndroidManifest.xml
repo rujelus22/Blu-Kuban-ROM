@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:versionCode="17105" android:versionName="1.7.1.0" package="com.google.android.street"
+<manifest android:versionCode="18100" android:versionName="1.8.1.0" package="com.google.android.street"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-sdk android:minSdkVersion="7" />
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="11" />
     <supports-screens android:xlargeScreens="true" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

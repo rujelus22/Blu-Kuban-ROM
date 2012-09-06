@@ -307,39 +307,37 @@
 .end method
 
 .method public static varargs logTiming(Ljava/lang/String;[Ljava/lang/Object;)V
-    .registers 10
+    .registers 9
     .parameter "msg"
     .parameter "args"
 
     .prologue
-    const/4 v2, 0x2
-
-    const/4 v7, 0x0
+    const/4 v1, 0x2
 
     .line 77
     sget-object v0, Lcom/google/android/finsky/utils/FinskyLog;->TAG:Ljava/lang/String;
 
-    invoke-static {v0, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_a
 
     .line 82
-    :goto_a
+    :goto_9
     return-void
 
     .line 80
-    :cond_b
-    if-nez p1, :cond_2d
+    :cond_a
+    if-nez p1, :cond_25
 
     .line 81
-    :goto_d
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+    :goto_c
+    const-string v0, "%4dms: %s"
 
-    const-string v1, "%4dms: %s"
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -353,31 +351,25 @@
 
     move-result-object v3
 
-    aput-object v3, v2, v7
+    aput-object v3, v1, v2
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    aput-object p0, v2, v3
-
-    invoke-static {v0, v1, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    new-array v1, v7, [Ljava/lang/Object;
+    aput-object p0, v1, v2
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    goto :goto_a
+    goto :goto_9
 
     .line 80
-    :cond_2d
+    :cond_25
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     invoke-static {v0, p0, p1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
-    goto :goto_d
+    goto :goto_c
 .end method
 
 .method public static scrubPii(Ljava/lang/String;)Ljava/lang/String;
@@ -386,6 +378,8 @@
 
     .prologue
     .line 54
+    if-eqz p0, :cond_10
+
     sget-object v0, Lcom/google/android/finsky/config/G;->debugOptionsEnabled:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
@@ -398,15 +392,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_11
 
     .line 57
     .end local p0
-    :goto_e
+    :cond_10
+    :goto_10
     return-object p0
 
     .restart local p0
-    :cond_f
+    :cond_11
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -435,7 +430,7 @@
 
     move-result-object p0
 
-    goto :goto_e
+    goto :goto_10
 .end method
 
 .method public static startTiming()V

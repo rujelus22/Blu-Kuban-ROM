@@ -28,6 +28,14 @@
         <item quantity="other">vor %1$d Sekunden</item>
         <item quantity="one">vor 1 Sekunde</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Ablauf in %1$d Tagen</item>
+        <item quantity="one">Läuft in 1 Tag ab</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Ablauf in %1$d Stunden</item>
+        <item quantity="one">Läuft in 1 Stunde ab</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">neue Uploads</item>
         <item quantity="one">neuer Upload</item>

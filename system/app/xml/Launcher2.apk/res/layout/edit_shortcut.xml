@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/info" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/edit_shortcut_info" android:layout_alignParentTop="true" />
+    <RelativeLayout android:gravity="center_horizontal" android:id="@id/content" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/info">
+        <ImageButton android:id="@id/pick_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:src="@drawable/ic_launcher_shortcut" />
+        <Button android:id="@id/pick_activity" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="@string/pick_activity" android:layout_toRightOf="@id/pick_icon" />
+    </RelativeLayout>
+    <EditText android:id="@id/label" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/default_label" android:maxLines="1" android:maxLength="32" android:layout_below="@id/content" android:layout_centerHorizontal="true" android:inputType="textCapWords" />
+    <View android:id="@id/divider" android:background="?android:listDivider" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" android:layout_below="@id/label" />
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/divider" style="@android:style/Holo.ButtonBar.AlertDialog">
+        <Button android:id="@id/cancel" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/btn_cancel" android:layout_weight="1.0" style="@android:style/Widget.Holo.Button.Borderless.Small" />
+        <Button android:id="@id/ok" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/btn_ok" android:layout_weight="1.0" style="@android:style/Widget.Holo.Button.Borderless.Small" />
+    </LinearLayout>
+</RelativeLayout>

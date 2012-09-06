@@ -139,8 +139,10 @@
     .parameter "context"
 
     .prologue
+    const/4 v2, 0x0
+
     .line 111
-    :try_start_0
+    :try_start_1
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v3
@@ -153,6 +155,16 @@
 
     .line 113
     .local v0, androidId:Ljava/lang/String;
+    if-nez v0, :cond_e
+
+    .line 124
+    .end local v0           #androidId:Ljava/lang/String;
+    :goto_d
+    return-object v2
+
+    .line 116
+    .restart local v0       #androidId:Ljava/lang/String;
+    :cond_e
     const/4 v3, 0x2
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -169,38 +181,35 @@
 
     move-result-object v1
 
-    .line 115
+    .line 118
     .local v1, sig:[B
     const/16 v3, 0xb
 
     invoke-static {v1, v3}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
-    :try_end_1c
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_1c} :catch_21
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_1c} :catch_1e
+    :try_end_20
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_1 .. :try_end_20} :catch_24
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_1 .. :try_end_20} :catch_22
 
     move-result-object v2
 
-    .line 121
+    .line 120
+    .local v2, sigString:Ljava/lang/String;
+    goto :goto_d
+
+    .line 122
     .end local v0           #androidId:Ljava/lang/String;
     .end local v1           #sig:[B
-    :goto_1d
-    return-object v2
-
-    .line 119
-    :catch_1e
+    .end local v2           #sigString:Ljava/lang/String;
+    :catch_22
     move-exception v3
+
+    goto :goto_d
 
     .line 121
-    :goto_1f
-    const/4 v2, 0x0
-
-    goto :goto_1d
-
-    .line 118
-    :catch_21
+    :catch_24
     move-exception v3
 
-    goto :goto_1f
+    goto :goto_d
 .end method
 
 

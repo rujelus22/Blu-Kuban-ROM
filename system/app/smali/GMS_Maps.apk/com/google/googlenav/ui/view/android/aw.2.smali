@@ -1,90 +1,69 @@
-.class Lcom/google/googlenav/ui/view/android/aw;
+.class Lcom/google/googlenav/ui/view/android/aW;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/googlenav/ui/view/android/au;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
+.field final synthetic a:Lcom/google/googlenav/ui/view/android/aU;
 
 
 # direct methods
-.method private constructor <init>(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;)V
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/aU;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/aw;->a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
+    .prologue
+    .line 426
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/aW;->a:Lcom/google/googlenav/ui/view/android/aU;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;Lcom/google/googlenav/ui/view/android/av;)V
-    .registers 3
-
-    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/view/android/aw;-><init>(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;)V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public a(Lcom/google/googlenav/ui/view/android/CheckableContainer;Z)V
-    .registers 6
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .registers 8
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v2, 0x0
+    .prologue
+    .line 429
+    check-cast p1, Landroid/widget/ListView;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aw;->a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
+    invoke-virtual {p1}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;->b(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;)Z
+    move-result-object v0
 
-    move-result v0
+    invoke-interface {v0, p3}, Landroid/widget/ListAdapter;->getItem(I)Ljava/lang/Object;
 
-    if-eqz v0, :cond_a
+    move-result-object v0
 
-    :goto_9
+    check-cast v0, Lcom/google/googlenav/ui/bd;
+
+    .line 431
+    if-nez v0, :cond_f
+
+    .line 436
+    :goto_e
     return-void
 
-    :cond_a
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aw;->a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
+    .line 434
+    :cond_f
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/aW;->a:Lcom/google/googlenav/ui/view/android/aU;
 
-    const/4 v1, 0x1
+    invoke-virtual {v1, v0}, Lcom/google/googlenav/ui/view/android/aU;->a(Lcom/google/googlenav/ui/aQ;)Z
 
-    invoke-static {v0, v1}, Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;->a(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;Z)Z
+    .line 435
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aW;->a:Lcom/google/googlenav/ui/view/android/aU;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aw;->a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/aU;->v()V
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;->c(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;)I
-
-    move-result v0
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_24
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aw;->a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/aw;->a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
-
-    invoke-static {v1}, Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;->c(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;)I
-
-    move-result v1
-
-    invoke-static {v0, v1, v2}, Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;->a(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;IZ)V
-
-    :cond_24
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aw;->a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
-
-    invoke-static {v0, v2}, Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;->a(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;Z)Z
-
-    invoke-virtual {p1}, Lcom/google/googlenav/ui/view/android/CheckableContainer;->getId()I
-
-    move-result v0
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/aw;->a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
-
-    invoke-static {v1, v0}, Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;->a(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;I)V
-
-    goto :goto_9
+    goto :goto_e
 .end method

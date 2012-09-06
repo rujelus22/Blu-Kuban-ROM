@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="detailed_channel_item_num_columns">2</integer>
+    <integer name="channel_store_num_columns">5</integer>
+    <integer name="guide_content_num_columns">2</integer>
+</resources>

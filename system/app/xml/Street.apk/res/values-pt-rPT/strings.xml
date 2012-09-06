@@ -14,10 +14,10 @@
     <string name="invalid_panorama_data">Panorama inválido.</string>
     <string name="click_to_go_toast">Arraste o Pegman para o local de destino.</string>
     <string name="street_range_name_format">%1$s %2$s</string>
-    <string name="network_unavailable">Este programa requer uma ligação de dados, pelo que tentará de novo estabelecer ligação automaticamente. Verifique a intensidade do sinal. O modo de avião está ligado? Os dados de roaming estão desactivados?</string>
+    <string name="network_unavailable">Este programa requer uma ligação de dados, pelo que tentará de novo estabelecer ligação automaticamente. Verifique a intensidade do sinal. O modo de avião está ligado? Os dados de roaming estão desativados?</string>
     <string name="whats_new_header">O que há de novo?</string>
     <string name="whats_new_c2g">Voe até onde pode ver. Arraste o Pegman a partir do canto inferior esquerdo e largue-o onde pretende ir.</string>
     <string name="terms_and_privacy">Termos e privacidade</string>
-    <string name="terms_and_conditions">Termos de utilização</string>
+    <string name="terms_and_conditions">Termos de Utilização</string>
     <string name="privacy_policy">Política de privacidade</string>
 </resources>

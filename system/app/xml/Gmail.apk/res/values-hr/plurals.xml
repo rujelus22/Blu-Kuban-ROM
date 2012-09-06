@@ -53,40 +53,40 @@
         <item quantity="one">Čekanje na postupanje po %1$d razgovora.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">Zanemareno: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Zanemareno: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Zanemareno: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Zanemareno: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">Prijavljeno kao neželjeno: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Prijavljeno kao neželjeno: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Prijavljeno kao neželjeno: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Prijavljeno kao neželjeno: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">Arhivirano: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Arhivirano: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Arhivirano: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Arhivirano: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">Premješteno u mapu Primljeno: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Premješteno u mapu Primljeno: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Premješteno u mapu Primljeno: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Premješteno u mapu Primljeno: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">Izbrisano: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Izbrisano: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Izbrisano: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Izbrisano: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">Označeno kao važno: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Označeno kao važno: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Označeno kao važno: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Označeno kao važno: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">Označeno kao nevažno: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Označeno kao nevažno: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Označeno kao nevažno: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Označeno kao nevažno: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">Označeno kao pročitano: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Označeno kao pročitano: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Označeno kao pročitano: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Označeno kao pročitano: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">Označeno kao nepročitano: &amp;lt;b>%1$d&amp;lt;/b&amp;amp;gt.</item>
-        <item quantity="one">Označeno kao nepročitano: &amp;lt;b>%1$d&amp;lt;/b&amp;amp;gt.</item>
+        <item quantity="other">Označeno kao nepročitano: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b&amp;amp;amp;amp;gt.</item>
+        <item quantity="one">Označeno kao nepročitano: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b&amp;amp;amp;amp;gt.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Promijenjene oznake.</item>

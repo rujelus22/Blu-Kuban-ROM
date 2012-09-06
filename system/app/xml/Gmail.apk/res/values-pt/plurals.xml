@@ -53,40 +53,40 @@
         <item quantity="one">Esperando pela operação em %1$d conversa.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> ignoradas.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> ignorada.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ignoradas.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ignorada.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> denunciadas como spam.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> denunciada como spam.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> denunciadas como spam.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> denunciada como spam.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> arquivadas.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> arquivada.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> arquivadas.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> arquivada.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> movidas para a Caixa de entrada.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> movida para a Caixa de entrada.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> movidas para a Caixa de entrada.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> movida para a Caixa de entrada.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> excluídas.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> excluídas.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> excluídas.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> excluídas.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> marcadas como importante.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> marcada como importante.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> marcadas como importante.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> marcada como importante.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> marcadas como não importantes.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> marcada como não importante.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> marcadas como não importantes.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> marcada como não importante.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> marcadas como lidas.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> marcada como lida.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> marcadas como lidas.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> marcada como lida.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> marcadas como não lidas.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> marcada como não lida.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> marcadas como não lidas.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> marcada como não lida.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Marcadores alterados.</item>

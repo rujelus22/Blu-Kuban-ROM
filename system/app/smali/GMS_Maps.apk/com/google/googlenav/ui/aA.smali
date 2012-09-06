@@ -1,120 +1,182 @@
-.class public final enum Lcom/google/googlenav/ui/aA;
-.super Ljava/lang/Enum;
+.class Lcom/google/googlenav/ui/aa;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Las/h;
 
 
-# static fields
-.field public static final enum a:Lcom/google/googlenav/ui/aA;
-
-.field public static final enum b:Lcom/google/googlenav/ui/aA;
-
-.field public static final enum c:Lcom/google/googlenav/ui/aA;
-
-.field public static final enum d:Lcom/google/googlenav/ui/aA;
-
-.field private static final synthetic e:[Lcom/google/googlenav/ui/aA;
+# instance fields
+.field final synthetic a:Lcom/google/googlenav/ui/v;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
+.method private constructor <init>(Lcom/google/googlenav/ui/v;)V
+    .registers 2
+    .parameter
 
-    const/4 v5, 0x3
+    .prologue
+    .line 5836
+    iput-object p1, p0, Lcom/google/googlenav/ui/aa;->a:Lcom/google/googlenav/ui/v;
 
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Lcom/google/googlenav/ui/aA;
-
-    const-string v1, "DEFAULT"
-
-    invoke-direct {v0, v1, v2}, Lcom/google/googlenav/ui/aA;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/googlenav/ui/aA;->a:Lcom/google/googlenav/ui/aA;
-
-    new-instance v0, Lcom/google/googlenav/ui/aA;
-
-    const-string v1, "SEARCH"
-
-    invoke-direct {v0, v1, v3}, Lcom/google/googlenav/ui/aA;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/googlenav/ui/aA;->b:Lcom/google/googlenav/ui/aA;
-
-    new-instance v0, Lcom/google/googlenav/ui/aA;
-
-    const-string v1, "DIRECTIONS"
-
-    invoke-direct {v0, v1, v4}, Lcom/google/googlenav/ui/aA;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/googlenav/ui/aA;->c:Lcom/google/googlenav/ui/aA;
-
-    new-instance v0, Lcom/google/googlenav/ui/aA;
-
-    const-string v1, "LATITUDE"
-
-    invoke-direct {v0, v1, v5}, Lcom/google/googlenav/ui/aA;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/googlenav/ui/aA;->d:Lcom/google/googlenav/ui/aA;
-
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Lcom/google/googlenav/ui/aA;
-
-    sget-object v1, Lcom/google/googlenav/ui/aA;->a:Lcom/google/googlenav/ui/aA;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/googlenav/ui/aA;->b:Lcom/google/googlenav/ui/aA;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/google/googlenav/ui/aA;->c:Lcom/google/googlenav/ui/aA;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/google/googlenav/ui/aA;->d:Lcom/google/googlenav/ui/aA;
-
-    aput-object v1, v0, v5
-
-    sput-object v0, Lcom/google/googlenav/ui/aA;->e:[Lcom/google/googlenav/ui/aA;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
+.method synthetic constructor <init>(Lcom/google/googlenav/ui/v;Lcom/google/googlenav/ui/w;)V
     .registers 3
+    .parameter
+    .parameter
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    .prologue
+    .line 5836
+    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/aa;-><init>(Lcom/google/googlenav/ui/v;)V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lcom/google/googlenav/ui/aA;
+
+# virtual methods
+.method public D_()V
     .registers 2
 
-    const-class v0, Lcom/google/googlenav/ui/aA;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    .prologue
+    .line 5870
+    invoke-static {}, Lax/l;->a()Lax/l;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/googlenav/ui/aA;
+    invoke-virtual {v0}, Lax/l;->f()Lax/m;
 
-    return-object v0
+    move-result-object v0
+
+    invoke-interface {v0}, Lax/m;->D_()V
+
+    .line 5871
+    invoke-static {}, Lax/l;->a()Lax/l;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lax/l;->g()Lax/m;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lax/m;->D_()V
+
+    .line 5872
+    iget-object v0, p0, Lcom/google/googlenav/ui/aa;->a:Lcom/google/googlenav/ui/v;
+
+    invoke-static {v0}, Lcom/google/googlenav/ui/v;->l(Lcom/google/googlenav/ui/v;)Lcom/google/googlenav/friend/a;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/friend/a;->a()V
+
+    .line 5873
+    return-void
 .end method
 
-.method public static values()[Lcom/google/googlenav/ui/aA;
-    .registers 1
+.method public E_()V
+    .registers 2
 
-    sget-object v0, Lcom/google/googlenav/ui/aA;->e:[Lcom/google/googlenav/ui/aA;
-
-    invoke-virtual {v0}, [Lcom/google/googlenav/ui/aA;->clone()Ljava/lang/Object;
+    .prologue
+    .line 5877
+    invoke-static {}, Lax/l;->a()Lax/l;
 
     move-result-object v0
 
-    check-cast v0, [Lcom/google/googlenav/ui/aA;
+    invoke-virtual {v0}, Lax/l;->f()Lax/m;
 
-    return-object v0
+    move-result-object v0
+
+    invoke-interface {v0}, Lax/m;->E_()V
+
+    .line 5878
+    invoke-static {}, Lax/l;->a()Lax/l;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lax/l;->g()Lax/m;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lax/m;->E_()V
+
+    .line 5879
+    return-void
+.end method
+
+.method public F_()V
+    .registers 1
+
+    .prologue
+    .line 5889
+    return-void
+.end method
+
+.method public L_()V
+    .registers 3
+
+    .prologue
+    .line 5842
+    invoke-static {}, Lax/l;->a()Lax/l;
+
+    move-result-object v0
+
+    .line 5843
+    if-eqz v0, :cond_14
+
+    .line 5844
+    invoke-virtual {v0}, Lax/l;->f()Lax/m;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Lax/m;->L_()V
+
+    .line 5845
+    invoke-virtual {v0}, Lax/l;->g()Lax/m;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lax/m;->L_()V
+
+    .line 5850
+    :cond_14
+    iget-object v0, p0, Lcom/google/googlenav/ui/aa;->a:Lcom/google/googlenav/ui/v;
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Lcom/google/googlenav/ui/v;->c:Z
+
+    .line 5855
+    :try_start_19
+    invoke-static {}, Landroid/webkit/CookieSyncManager;->getInstance()Landroid/webkit/CookieSyncManager;
+    :try_end_1c
+    .catch Ljava/lang/IllegalStateException; {:try_start_19 .. :try_end_1c} :catch_24
+
+    .line 5864
+    invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/webkit/CookieManager;->removeAllCookie()V
+
+    .line 5866
+    :goto_23
+    return-void
+
+    .line 5856
+    :catch_24
+    move-exception v0
+
+    goto :goto_23
+.end method
+
+.method public M_()V
+    .registers 1
+
+    .prologue
+    .line 5884
+    return-void
 .end method

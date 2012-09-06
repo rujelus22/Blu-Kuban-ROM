@@ -32,7 +32,7 @@
     .line 574
     iput-object p1, p0, Lcom/google/android/talk/fragments/BuddyListFragment$3;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 575
     const/4 v0, 0x1
@@ -85,7 +85,7 @@
 
     iget-object v2, p0, Lcom/google/android/talk/fragments/BuddyListFragment$3;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    iget-object v2, v2, Lcom/google/android/talk/fragments/BuddyListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
+    iget-object v2, v2, Lcom/google/android/talk/fragments/RosterListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
 
     invoke-virtual {v1, v2}, Lcom/google/android/talk/fragments/BuddyListFragment;->switchAccounts(Lcom/google/android/talk/TalkApp$AccountInfo;)V
 
@@ -106,7 +106,7 @@
     .line 592
     iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment$3;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    iget-object v1, v1, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v1, v1, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     if-nez v1, :cond_3c
 
@@ -136,7 +136,7 @@
 
     iget-object v2, p0, Lcom/google/android/talk/fragments/BuddyListFragment$3;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    iget-object v2, v2, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v2, v2, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-interface {v2}, Lcom/google/android/talk/IRosterListAdapter;->hasActiveChats()Z
 

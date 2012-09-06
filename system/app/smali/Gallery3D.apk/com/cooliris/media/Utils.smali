@@ -1109,7 +1109,7 @@
 
     .line 441
     .local v0, height:I
-    const-string v2, "800x480"
+    const-string v2, "800x960"
 
     const-string v3, "x"
 
@@ -1151,7 +1151,7 @@
 
     .line 431
     .local v1, width:I
-    const-string v2, "800x480"
+    const-string v2, "800x960"
 
     const-string v3, "x"
 

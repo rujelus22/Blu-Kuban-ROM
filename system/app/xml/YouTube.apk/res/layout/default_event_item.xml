@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/event_item" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/medium_font_size" android:textStyle="bold" android:textColor="@color/event_font" android:ellipsize="end" android:id="@id/text" android:paddingLeft="@dimen/list_item_padding" android:paddingBottom="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" />
+    <include layout="@layout/default_video_item" />
+</LinearLayout>

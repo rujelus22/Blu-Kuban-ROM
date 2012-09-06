@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/emailcommon/service/PolicyServiceProxy;->remoteWipe()V
+    value = Lcom/android/emailcommon/service/PolicyServiceProxy;->policiesUpdated(J)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,17 +20,22 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
 
+.field final synthetic val$arg0:J
+
 
 # direct methods
-.method constructor <init>(Lcom/android/emailcommon/service/PolicyServiceProxy;)V
-    .registers 2
+.method constructor <init>(Lcom/android/emailcommon/service/PolicyServiceProxy;J)V
+    .registers 4
+    .parameter
     .parameter
 
     .prologue
-    .line 180
+    .line 152
     iput-object p1, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$8;->this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    iput-wide p2, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$8;->val$arg0:J
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -38,7 +43,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 2
+    .registers 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -46,7 +51,7 @@
     .end annotation
 
     .prologue
-    .line 182
+    .line 154
     iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$8;->this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/PolicyServiceProxy;->mService:Lcom/android/emailcommon/service/IPolicyService;
@@ -54,8 +59,10 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/android/emailcommon/service/IPolicyService;->remoteWipe()V
+    iget-wide v1, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$8;->val$arg0:J
 
-    .line 183
+    invoke-interface {v0, v1, v2}, Lcom/android/emailcommon/service/IPolicyService;->policiesUpdated(J)V
+
+    .line 155
     return-void
 .end method

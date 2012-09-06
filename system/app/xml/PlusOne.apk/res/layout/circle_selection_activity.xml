@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<view android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:maxHeight="360.0dip" class="com.google.android.apps.plus.views.FullSizeLinearLayout"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <fragment android:id="@id/profile_circles_fragment" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" class="com.google.android.apps.plus.fragments.CirclesMultipleSelectFragment" />
-    <include layout="@layout/button_bar" />
-</view>

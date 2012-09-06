@@ -28,6 +28,14 @@
         <item quantity="other">%1$d сек. тому</item>
         <item quantity="one">1 секунду тому</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Закінч. ч-з %1$d дн.</item>
+        <item quantity="one">Закінч. через 1 день</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Зак. ч-з %1$d год.</item>
+        <item quantity="one">Закінч. через 1 год.</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">нові завантаження</item>
         <item quantity="one">нове завантаження</item>

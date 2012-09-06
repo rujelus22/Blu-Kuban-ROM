@@ -1,35 +1,111 @@
-.class Lcom/google/googlenav/ui/view/dialog/ay;
+.class synthetic Lcom/google/googlenav/ui/view/dialog/ay;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
+.source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/ax;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/ax;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/ay;->a:Lcom/google/googlenav/ui/view/dialog/ax;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public onClick(Landroid/view/View;)V
+.method static constructor <clinit>()V
     .registers 3
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/ay;->a:Lcom/google/googlenav/ui/view/dialog/ax;
+    .prologue
+    .line 255
+    invoke-static {}, Lcom/google/googlenav/ui/wizard/cC;->values()[Lcom/google/googlenav/ui/wizard/cC;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/view/dialog/ax;->a:Lcom/google/googlenav/ui/wizard/hp;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hp;->g()V
+    array-length v0, v0
 
+    new-array v0, v0, [I
+
+    sput-object v0, Lcom/google/googlenav/ui/view/dialog/ay;->a:[I
+
+    :try_start_9
+    sget-object v0, Lcom/google/googlenav/ui/view/dialog/ay;->a:[I
+
+    sget-object v1, Lcom/google/googlenav/ui/wizard/cC;->a:Lcom/google/googlenav/ui/wizard/cC;
+
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/wizard/cC;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_3c
+
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/googlenav/ui/view/dialog/ay;->a:[I
+
+    sget-object v1, Lcom/google/googlenav/ui/wizard/cC;->b:Lcom/google/googlenav/ui/wizard/cC;
+
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/wizard/cC;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_3a
+
+    :goto_1f
+    :try_start_1f
+    sget-object v0, Lcom/google/googlenav/ui/view/dialog/ay;->a:[I
+
+    sget-object v1, Lcom/google/googlenav/ui/wizard/cC;->c:Lcom/google/googlenav/ui/wizard/cC;
+
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/wizard/cC;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_38
+
+    :goto_2a
+    :try_start_2a
+    sget-object v0, Lcom/google/googlenav/ui/view/dialog/ay;->a:[I
+
+    sget-object v1, Lcom/google/googlenav/ui/wizard/cC;->d:Lcom/google/googlenav/ui/wizard/cC;
+
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/wizard/cC;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_35
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_36
+
+    :goto_35
     return-void
+
+    :catch_36
+    move-exception v0
+
+    goto :goto_35
+
+    :catch_38
+    move-exception v0
+
+    goto :goto_2a
+
+    :catch_3a
+    move-exception v0
+
+    goto :goto_1f
+
+    :catch_3c
+    move-exception v0
+
+    goto :goto_14
 .end method

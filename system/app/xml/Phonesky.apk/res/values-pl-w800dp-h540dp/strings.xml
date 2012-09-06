@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="magazine_buy_current">Kup numer za %1$s</string>
+    <string name="search_result_title">Wyniki wyszukiwania dla „%1$s”</string>
+</resources>

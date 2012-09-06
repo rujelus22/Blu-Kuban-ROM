@@ -32,43 +32,43 @@
     .parameter "_email"
 
     .prologue
-    .line 390
+    .line 284
     iput-object p1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EmailRow;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 391
+    .line 285
     invoke-static {p2}, Landroid/text/util/Rfc822Tokenizer;->tokenize(Ljava/lang/CharSequence;)[Landroid/text/util/Rfc822Token;
 
     move-result-object v1
 
-    .line 393
+    .line 287
     .local v1, tokens:[Landroid/text/util/Rfc822Token;
     array-length v2, v1
 
     if-nez v2, :cond_15
 
-    .line 394
+    .line 288
     const-string v2, ""
 
     iput-object v2, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EmailRow;->email:Ljava/lang/String;
 
-    .line 395
+    .line 289
     const-string v2, ""
 
     iput-object v2, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EmailRow;->displayName:Ljava/lang/String;
 
-    .line 401
+    .line 295
     :goto_14
     return-void
 
-    .line 397
+    .line 291
     :cond_15
     const/4 v2, 0x0
 
     aget-object v0, v1, v2
 
-    .line 398
+    .line 292
     .local v0, token:Landroid/text/util/Rfc822Token;
     invoke-virtual {v0}, Landroid/text/util/Rfc822Token;->getAddress()Ljava/lang/String;
 
@@ -76,7 +76,7 @@
 
     iput-object v2, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EmailRow;->email:Ljava/lang/String;
 
-    .line 399
+    .line 293
     invoke-virtual {v0}, Landroid/text/util/Rfc822Token;->getName()Ljava/lang/String;
 
     move-result-object v2
@@ -93,21 +93,21 @@
     .parameter "builder"
 
     .prologue
-    .line 404
+    .line 298
     const-string v0, "data1"
 
     iget-object v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EmailRow;->email:Ljava/lang/String;
 
     invoke-virtual {p1, v0, v1}, Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;
 
-    .line 405
+    .line 299
     const-string v0, "data4"
 
     iget-object v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EmailRow;->displayName:Ljava/lang/String;
 
     invoke-virtual {p1, v0, v1}, Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;
 
-    .line 406
+    .line 300
     return-void
 .end method
 
@@ -117,7 +117,7 @@
     .parameter "value"
 
     .prologue
-    .line 409
+    .line 303
     iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EmailRow;->email:Ljava/lang/String;
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z

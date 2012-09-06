@@ -21,33 +21,49 @@
 
 .field private hasDcbTos:Z
 
+.field private hasNeedsDcbTosAcceptance:Z
+
+.field private hasNeedsPiiTosAcceptance:Z
+
 .field private hasPiiTos:Z
+
+.field private needsDcbTosAcceptance_:Z
+
+.field private needsPiiTosAcceptance_:Z
 
 .field private piiTos_:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
 
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .registers 3
 
     .prologue
+    const/4 v1, 0x0
+
     const/4 v0, 0x0
 
-    .line 1625
+    .line 1964
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1630
-    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->dcbTos_:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
+    .line 1969
+    iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->dcbTos_:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
 
-    .line 1650
-    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->piiTos_:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
+    .line 1989
+    iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->piiTos_:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
 
-    .line 1688
+    .line 2009
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->needsDcbTosAcceptance_:Z
+
+    .line 2026
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->needsPiiTosAcceptance_:Z
+
+    .line 2070
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->cachedSize:I
 
-    .line 1625
+    .line 1964
     return-void
 .end method
 
@@ -57,15 +73,15 @@
     .registers 2
 
     .prologue
-    .line 1690
+    .line 2073
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 1692
+    .line 2075
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->getSerializedSize()I
 
-    .line 1694
+    .line 2077
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->cachedSize:I
 
@@ -76,17 +92,37 @@
     .registers 2
 
     .prologue
-    .line 1632
+    .line 1971
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->dcbTos_:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
 
     return-object v0
+.end method
+
+.method public getNeedsDcbTosAcceptance()Z
+    .registers 2
+
+    .prologue
+    .line 2010
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->needsDcbTosAcceptance_:Z
+
+    return v0
+.end method
+
+.method public getNeedsPiiTosAcceptance()Z
+    .registers 2
+
+    .prologue
+    .line 2027
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->needsPiiTosAcceptance_:Z
+
+    return v0
 .end method
 
 .method public getPiiTos()Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
     .registers 2
 
     .prologue
-    .line 1652
+    .line 1991
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->piiTos_:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
 
     return-object v0
@@ -96,10 +132,10 @@
     .registers 4
 
     .prologue
-    .line 1698
+    .line 2082
     const/4 v0, 0x0
 
-    .line 1699
+    .line 2083
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->hasDcbTos()Z
 
@@ -107,7 +143,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 1700
+    .line 2084
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->getDcbTos()Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
@@ -120,7 +156,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1703
+    .line 2087
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->hasPiiTos()Z
 
@@ -128,7 +164,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 1704
+    .line 2088
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->getPiiTos()Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
@@ -141,11 +177,53 @@
 
     add-int/2addr v0, v1
 
-    .line 1707
+    .line 2091
     :cond_21
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->hasNeedsDcbTosAcceptance()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_31
+
+    .line 2092
+    const/4 v1, 0x3
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->getNeedsDcbTosAcceptance()Z
+
+    move-result v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeBoolSize(IZ)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 2095
+    :cond_31
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->hasNeedsPiiTosAcceptance()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_41
+
+    .line 2096
+    const/4 v1, 0x4
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->getNeedsPiiTosAcceptance()Z
+
+    move-result v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeBoolSize(IZ)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 2099
+    :cond_41
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->cachedSize:I
 
-    .line 1708
+    .line 2100
     return v0
 .end method
 
@@ -153,8 +231,28 @@
     .registers 2
 
     .prologue
-    .line 1631
+    .line 1970
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->hasDcbTos:Z
+
+    return v0
+.end method
+
+.method public hasNeedsDcbTosAcceptance()Z
+    .registers 2
+
+    .prologue
+    .line 2011
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->hasNeedsDcbTosAcceptance:Z
+
+    return v0
+.end method
+
+.method public hasNeedsPiiTosAcceptance()Z
+    .registers 2
+
+    .prologue
+    .line 2028
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->hasNeedsPiiTosAcceptance:Z
 
     return v0
 .end method
@@ -163,7 +261,7 @@
     .registers 2
 
     .prologue
-    .line 1651
+    .line 1990
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->hasPiiTos:Z
 
     return v0
@@ -179,65 +277,88 @@
     .end annotation
 
     .prologue
-    .line 1715
+    .line 2108
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1716
+    .line 2109
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_26
+    sparse-switch v0, :sswitch_data_36
 
-    .line 1720
+    .line 2113
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 1721
+    .line 2114
     :sswitch_d
     return-object p0
 
-    .line 1726
+    .line 2119
     :sswitch_e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;-><init>()V
 
-    .line 1727
+    .line 2120
     .local v1, value:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1728
+    .line 2121
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->setDcbTos(Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;)Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;
 
     goto :goto_0
 
-    .line 1732
+    .line 2125
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
     :sswitch_1a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;-><init>()V
 
-    .line 1733
+    .line 2126
     .restart local v1       #value:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1734
+    .line 2127
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->setPiiTos(Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;)Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;
 
     goto :goto_0
 
-    .line 1716
-    :sswitch_data_26
+    .line 2131
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
+    :sswitch_26
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
+
+    move-result v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->setNeedsDcbTosAcceptance(Z)Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;
+
+    goto :goto_0
+
+    .line 2135
+    :sswitch_2e
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
+
+    move-result v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->setNeedsPiiTosAcceptance(Z)Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;
+
+    goto :goto_0
+
+    .line 2109
+    :sswitch_data_36
     .sparse-switch
         0x0 -> :sswitch_d
         0xa -> :sswitch_e
         0x12 -> :sswitch_1a
+        0x18 -> :sswitch_26
+        0x20 -> :sswitch_2e
     .end sparse-switch
 .end method
 
@@ -251,7 +372,7 @@
     .end annotation
 
     .prologue
-    .line 1623
+    .line 1961
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;
 
     move-result-object v0
@@ -264,26 +385,60 @@
     .parameter "value"
 
     .prologue
-    .line 1634
+    .line 1973
     if-nez p1, :cond_8
 
-    .line 1635
+    .line 1974
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1637
+    .line 1976
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->hasDcbTos:Z
 
-    .line 1638
+    .line 1977
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->dcbTos_:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
 
-    .line 1639
+    .line 1978
+    return-object p0
+.end method
+
+.method public setNeedsDcbTosAcceptance(Z)Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 2013
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->hasNeedsDcbTosAcceptance:Z
+
+    .line 2014
+    iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->needsDcbTosAcceptance_:Z
+
+    .line 2015
+    return-object p0
+.end method
+
+.method public setNeedsPiiTosAcceptance(Z)Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 2030
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->hasNeedsPiiTosAcceptance:Z
+
+    .line 2031
+    iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->needsPiiTosAcceptance_:Z
+
+    .line 2032
     return-object p0
 .end method
 
@@ -292,26 +447,26 @@
     .parameter "value"
 
     .prologue
-    .line 1654
+    .line 1993
     if-nez p1, :cond_8
 
-    .line 1655
+    .line 1994
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1657
+    .line 1996
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->hasPiiTos:Z
 
-    .line 1658
+    .line 1997
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->piiTos_:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
 
-    .line 1659
+    .line 1998
     return-object p0
 .end method
 
@@ -325,14 +480,14 @@
     .end annotation
 
     .prologue
-    .line 1680
+    .line 2056
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->hasDcbTos()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 1681
+    .line 2057
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->getDcbTos()Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
@@ -341,7 +496,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1683
+    .line 2059
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->hasPiiTos()Z
 
@@ -349,7 +504,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 1684
+    .line 2060
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->getPiiTos()Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;
@@ -358,7 +513,41 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1686
+    .line 2062
     :cond_1c
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->hasNeedsDcbTosAcceptance()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2a
+
+    .line 2063
+    const/4 v0, 0x3
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->getNeedsDcbTosAcceptance()Z
+
+    move-result v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
+
+    .line 2065
+    :cond_2a
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->hasNeedsPiiTosAcceptance()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_38
+
+    .line 2066
+    const/4 v0, 0x4
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;->getNeedsPiiTosAcceptance()Z
+
+    move-result v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
+
+    .line 2068
+    :cond_38
     return-void
 .end method

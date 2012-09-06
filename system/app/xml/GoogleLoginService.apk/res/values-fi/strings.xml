@@ -242,18 +242,18 @@ kysymys"</b></string>
     <string name="account_intro_recommended_title">Määritä asetukset</string>
     <string name="common_message">"Google-tilin avulla voit
 
-"<li><ul>tarkastella ja järjestellä tietoja mistä tahansa</ul></li>"
+"<ul><li>tarkastella ja järjestellä tietoja mistä tahansa</li></ul>"
 
-"<li><ul>varmuuskopioida tiedot automaattisesti</ul></li>"
+"<ul><li>varmuuskopioida tiedot automaattisesti</li></ul>"
 
-"<li><ul>käyttää Googlen palveluita helposti mistä tahansa.</ul></li></string>
+"<ul><li>käyttää Googlen palveluita helposti mistä tahansa.</li></ul></string>
     <string name="add_account_message">" Voit käyttää useampaa kuin yhtä Google-tiliä (kuten koti- ja työtilejä). Lisää Google-tili koskettamalla "<b> kirjaudu sisään</b> tai <b>luo tili </b>.</string>
     <string name="account_intro_default_message">Enää et menetä tietoja. Google-tili pitää kaiken turvassa.</string>
     <string name="account_intro_custom_endtext">Onko sinulla %s? Kirjaudu sisään.</string>
     <string name="account_intro_simple_message">Haluatko lisätä olemassa olevan tilin vai luoda uuden?</string>
     <string name="learn_more_title"><annotation id="learn_more">Lisätietoja</annotation></string>
     <string name="learn_more_account_intro">"Google-tilin avulla voit
-"<li><ul>tarkastella ja järjestellä kaikki tietosi mistä tahansa.<li>Varmuuskopioi automaattisesti tietosi, kuten sähköpostit, yhteystiedot, musiikki ja kuvat.</li><li>"Käytä Googlen palveluita, kuten  yhteystietoja, kalenteria, Mapsia ynnä muita, helposti mistä tahansa."</li></ul></li></string>
+"<ul><li>tarkastella ja järjestellä kaikki tietosi mistä tahansa.<li>Varmuuskopioi automaattisesti tietosi, kuten sähköpostit, yhteystiedot, musiikki ja kuvat.</li><li>"Käytä Googlen palveluita, kuten  yhteystietoja, kalenteria, Mapsia ynnä muita, helposti mistä tahansa."</li></li></ul></string>
     <string name="learn_more_account_intro_title">Tietoja Google-tileistä</string>
     <string name="learn_more_web_history">"Verkkohistoria muokkaa hakutuloksia aiempien hakujesi ja käyttämiesi sivustojen perusteella ja tarjoaa näin sinulle henkilökohtaisen Google-hakukokemuksen.
 

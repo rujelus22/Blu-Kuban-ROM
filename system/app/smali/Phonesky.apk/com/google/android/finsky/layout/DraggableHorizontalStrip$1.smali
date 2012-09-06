@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 85
+    .line 91
     iput-object p1, p0, Lcom/google/android/finsky/layout/DraggableHorizontalStrip$1;->this$0:Lcom/google/android/finsky/layout/DraggableHorizontalStrip;
 
     iput p2, p0, Lcom/google/android/finsky/layout/DraggableHorizontalStrip$1;->val$velocity:F
@@ -47,7 +47,7 @@
     .parameter "animation"
 
     .prologue
-    .line 88
+    .line 94
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -62,7 +62,7 @@
 
     div-float v0, v2, v3
 
-    .line 89
+    .line 95
     .local v0, timePassed:F
     iget v2, p0, Lcom/google/android/finsky/layout/DraggableHorizontalStrip$1;->val$velocity:F
 
@@ -86,7 +86,7 @@
 
     sub-float v1, v2, v3
 
-    .line 91
+    .line 97
     .local v1, travelled:F
     iget v2, p0, Lcom/google/android/finsky/layout/DraggableHorizontalStrip$1;->val$velocity:F
 
@@ -96,10 +96,10 @@
 
     if-gez v2, :cond_28
 
-    .line 92
+    .line 98
     neg-float v1, v1
 
-    .line 94
+    .line 100
     :cond_28
     iget-object v2, p0, Lcom/google/android/finsky/layout/DraggableHorizontalStrip$1;->this$0:Lcom/google/android/finsky/layout/DraggableHorizontalStrip;
 
@@ -112,11 +112,11 @@
     #calls: Lcom/google/android/finsky/layout/DraggableHorizontalStrip;->updateFirstChildOffset(F)V
     invoke-static {v2, v3}, Lcom/google/android/finsky/layout/DraggableHorizontalStrip;->access$000(Lcom/google/android/finsky/layout/DraggableHorizontalStrip;F)V
 
-    .line 95
+    .line 101
     iget-object v2, p0, Lcom/google/android/finsky/layout/DraggableHorizontalStrip$1;->this$0:Lcom/google/android/finsky/layout/DraggableHorizontalStrip;
 
     invoke-virtual {v2}, Lcom/google/android/finsky/layout/DraggableHorizontalStrip;->requestLayout()V
 
-    .line 96
+    .line 102
     return-void
 .end method

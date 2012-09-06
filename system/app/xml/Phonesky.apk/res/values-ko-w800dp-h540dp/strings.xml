@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="magazine_buy_current">구매가: %1$s</string>
+    <string name="search_result_title">"'%1$s' 검색결과"</string>
+</resources>

@@ -1,9 +1,9 @@
 .class abstract Lcom/google/common/collect/AbstractBiMap;
-.super Lcom/google/common/collect/bo;
+.super Lcom/google/common/collect/cx;
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/collect/as;
+.implements Lcom/google/common/collect/bj;
 .implements Ljava/io/Serializable;
 
 
@@ -30,16 +30,16 @@
     .parameter
 
     .prologue
-    .line 58
-    invoke-direct {p0}, Lcom/google/common/collect/bo;-><init>()V
-
-    .line 59
-    iput-object p1, p0, Lcom/google/common/collect/AbstractBiMap;->delegate:Ljava/util/Map;
-
     .line 60
-    iput-object p2, p0, Lcom/google/common/collect/AbstractBiMap;->inverse:Lcom/google/common/collect/AbstractBiMap;
+    invoke-direct {p0}, Lcom/google/common/collect/cx;-><init>()V
 
     .line 61
+    iput-object p1, p0, Lcom/google/common/collect/AbstractBiMap;->delegate:Ljava/util/Map;
+
+    .line 62
+    iput-object p2, p0, Lcom/google/common/collect/AbstractBiMap;->inverse:Lcom/google/common/collect/AbstractBiMap;
+
+    .line 63
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .parameter
 
     .prologue
-    .line 46
+    .line 48
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/AbstractBiMap;-><init>(Ljava/util/Map;Lcom/google/common/collect/AbstractBiMap;)V
 
     return-void
@@ -62,13 +62,13 @@
     .parameter
 
     .prologue
-    .line 53
-    invoke-direct {p0}, Lcom/google/common/collect/bo;-><init>()V
+    .line 55
+    invoke-direct {p0}, Lcom/google/common/collect/cx;-><init>()V
 
-    .line 54
+    .line 56
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/AbstractBiMap;->setDelegates(Ljava/util/Map;Ljava/util/Map;)V
 
-    .line 55
+    .line 57
     return-void
 .end method
 
@@ -77,7 +77,7 @@
     .parameter
 
     .prologue
-    .line 46
+    .line 48
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->delegate:Ljava/util/Map;
 
     return-object v0
@@ -89,7 +89,7 @@
     .parameter
 
     .prologue
-    .line 46
+    .line 48
     invoke-direct {p0, p1}, Lcom/google/common/collect/AbstractBiMap;->removeFromBothMaps(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -103,7 +103,7 @@
     .parameter
 
     .prologue
-    .line 46
+    .line 48
     invoke-direct {p0, p1}, Lcom/google/common/collect/AbstractBiMap;->removeFromInverseMap(Ljava/lang/Object;)V
 
     return-void
@@ -114,7 +114,7 @@
     .parameter
 
     .prologue
-    .line 46
+    .line 48
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->inverse:Lcom/google/common/collect/AbstractBiMap;
 
     return-object v0
@@ -129,7 +129,7 @@
     .parameter
 
     .prologue
-    .line 46
+    .line 48
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/common/collect/AbstractBiMap;->updateInverseMap(Ljava/lang/Object;ZLjava/lang/Object;Ljava/lang/Object;)V
 
     return-void
@@ -138,48 +138,55 @@
 .method private putInBothMaps(Ljava/lang/Object;Ljava/lang/Object;Z)Ljava/lang/Object;
     .registers 9
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+    .end parameter
 
     .prologue
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    .line 102
+    .line 105
     invoke-virtual {p0, p1}, Lcom/google/common/collect/AbstractBiMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v3
 
-    .line 103
+    .line 106
     if-eqz v3, :cond_13
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/AbstractBiMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {p2, v0}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p2, v0}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_13
 
-    .line 113
+    .line 116
     :goto_12
     return-object p2
 
-    .line 106
+    .line 109
     :cond_13
     if-eqz p3, :cond_27
 
-    .line 107
-    invoke-virtual {p0}, Lcom/google/common/collect/AbstractBiMap;->inverse()Lcom/google/common/collect/as;
+    .line 110
+    invoke-virtual {p0}, Lcom/google/common/collect/AbstractBiMap;->inverse()Lcom/google/common/collect/bj;
 
     move-result-object v0
 
-    invoke-interface {v0, p2}, Lcom/google/common/collect/as;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p2}, Lcom/google/common/collect/bj;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 111
+    .line 114
     :goto_1c
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->delegate:Ljava/util/Map;
 
@@ -187,15 +194,15 @@
 
     move-result-object v0
 
-    .line 112
+    .line 115
     invoke-direct {p0, p1, v3, v0, p2}, Lcom/google/common/collect/AbstractBiMap;->updateInverseMap(Ljava/lang/Object;ZLjava/lang/Object;Ljava/lang/Object;)V
 
     move-object p2, v0
 
-    .line 113
+    .line 116
     goto :goto_12
 
-    .line 109
+    .line 112
     :cond_27
     invoke-virtual {p0, p2}, Lcom/google/common/collect/AbstractBiMap;->containsValue(Ljava/lang/Object;)Z
 
@@ -212,7 +219,7 @@
 
     aput-object p2, v1, v2
 
-    invoke-static {v0, v4, v1}, Lcom/google/common/base/t;->a(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v4, v1}, Lcom/google/common/base/ag;->a(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_1c
 
@@ -227,17 +234,17 @@
     .parameter
 
     .prologue
-    .line 129
+    .line 132
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->delegate:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 130
+    .line 133
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractBiMap;->removeFromInverseMap(Ljava/lang/Object;)V
 
-    .line 131
+    .line 134
     return-object v0
 .end method
 
@@ -246,14 +253,14 @@
     .parameter
 
     .prologue
-    .line 135
+    .line 138
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->inverse:Lcom/google/common/collect/AbstractBiMap;
 
     iget-object v0, v0, Lcom/google/common/collect/AbstractBiMap;->delegate:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 136
+    .line 139
     return-void
 .end method
 
@@ -265,13 +272,13 @@
     .parameter
 
     .prologue
-    .line 118
+    .line 121
     if-eqz p2, :cond_5
 
-    .line 119
+    .line 122
     invoke-direct {p0, p3}, Lcom/google/common/collect/AbstractBiMap;->removeFromInverseMap(Ljava/lang/Object;)V
 
-    .line 121
+    .line 124
     :cond_5
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->inverse:Lcom/google/common/collect/AbstractBiMap;
 
@@ -279,7 +286,7 @@
 
     invoke-interface {v0, p4, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 122
+    .line 125
     return-void
 .end method
 
@@ -289,19 +296,19 @@
     .registers 2
 
     .prologue
-    .line 147
+    .line 150
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->delegate:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 148
+    .line 151
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->inverse:Lcom/google/common/collect/AbstractBiMap;
 
     iget-object v0, v0, Lcom/google/common/collect/AbstractBiMap;->delegate:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 149
+    .line 152
     return-void
 .end method
 
@@ -310,7 +317,7 @@
     .parameter
 
     .prologue
-    .line 88
+    .line 90
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->inverse:Lcom/google/common/collect/AbstractBiMap;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/AbstractBiMap;->containsKey(Ljava/lang/Object;)Z
@@ -324,7 +331,7 @@
     .registers 2
 
     .prologue
-    .line 45
+    .line 47
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractBiMap;->delegate()Ljava/util/Map;
 
     move-result-object v0
@@ -336,29 +343,31 @@
     .registers 2
 
     .prologue
-    .line 64
+    .line 66
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->delegate:Ljava/util/Map;
 
     return-object v0
 .end method
 
 .method public entrySet()Ljava/util/Set;
-    .registers 2
+    .registers 3
 
     .prologue
-    .line 265
+    .line 272
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->entrySet:Ljava/util/Set;
 
-    .line 266
-    if-nez v0, :cond_b
+    .line 273
+    if-nez v0, :cond_c
 
     new-instance v0, Lcom/google/common/collect/b;
 
-    invoke-direct {v0, p0}, Lcom/google/common/collect/b;-><init>(Lcom/google/common/collect/AbstractBiMap;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/b;-><init>(Lcom/google/common/collect/AbstractBiMap;B)V
 
     iput-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->entrySet:Ljava/util/Set;
 
-    :cond_b
+    :cond_c
     return-object v0
 .end method
 
@@ -368,7 +377,7 @@
     .parameter
 
     .prologue
-    .line 98
+    .line 101
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/collect/AbstractBiMap;->putInBothMaps(Ljava/lang/Object;Ljava/lang/Object;Z)Ljava/lang/Object;
@@ -378,33 +387,35 @@
     return-object v0
 .end method
 
-.method public inverse()Lcom/google/common/collect/as;
+.method public inverse()Lcom/google/common/collect/bj;
     .registers 2
 
     .prologue
-    .line 154
+    .line 158
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->inverse:Lcom/google/common/collect/AbstractBiMap;
 
     return-object v0
 .end method
 
 .method public keySet()Ljava/util/Set;
-    .registers 2
+    .registers 3
 
     .prologue
-    .line 160
+    .line 164
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->keySet:Ljava/util/Set;
 
-    .line 161
-    if-nez v0, :cond_b
+    .line 165
+    if-nez v0, :cond_c
 
     new-instance v0, Lcom/google/common/collect/e;
 
-    invoke-direct {v0, p0}, Lcom/google/common/collect/e;-><init>(Lcom/google/common/collect/AbstractBiMap;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/e;-><init>(Lcom/google/common/collect/AbstractBiMap;B)V
 
     iput-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->keySet:Ljava/util/Set;
 
-    :cond_b
+    :cond_c
     return-object v0
 .end method
 
@@ -414,7 +425,7 @@
     .parameter
 
     .prologue
-    .line 94
+    .line 96
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/collect/AbstractBiMap;->putInBothMaps(Ljava/lang/Object;Ljava/lang/Object;Z)Ljava/lang/Object;
@@ -429,7 +440,7 @@
     .parameter
 
     .prologue
-    .line 141
+    .line 144
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -451,7 +462,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 142
+    .line 145
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -464,7 +475,7 @@
 
     goto :goto_8
 
-    .line 144
+    .line 147
     :cond_20
     return-void
 .end method
@@ -474,7 +485,7 @@
     .parameter
 
     .prologue
-    .line 125
+    .line 128
     invoke-virtual {p0, p1}, Lcom/google/common/collect/AbstractBiMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v0
@@ -504,7 +515,7 @@
 
     const/4 v2, 0x0
 
-    .line 72
+    .line 74
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->delegate:Ljava/util/Map;
 
     if-nez v0, :cond_30
@@ -512,9 +523,9 @@
     move v0, v1
 
     :goto_7
-    invoke-static {v0}, Lcom/google/common/base/t;->b(Z)V
+    invoke-static {v0}, Lcom/google/common/base/ag;->b(Z)V
 
-    .line 73
+    .line 75
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->inverse:Lcom/google/common/collect/AbstractBiMap;
 
     if-nez v0, :cond_32
@@ -522,32 +533,32 @@
     move v0, v1
 
     :goto_f
-    invoke-static {v0}, Lcom/google/common/base/t;->b(Z)V
+    invoke-static {v0}, Lcom/google/common/base/ag;->b(Z)V
 
-    .line 74
+    .line 76
     invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/common/base/t;->a(Z)V
+    invoke-static {v0}, Lcom/google/common/base/ag;->a(Z)V
 
-    .line 75
+    .line 77
     invoke-interface {p2}, Ljava/util/Map;->isEmpty()Z
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/common/base/t;->a(Z)V
+    invoke-static {v0}, Lcom/google/common/base/ag;->a(Z)V
 
-    .line 76
+    .line 78
     if-eq p1, p2, :cond_34
 
     :goto_22
-    invoke-static {v1}, Lcom/google/common/base/t;->a(Z)V
+    invoke-static {v1}, Lcom/google/common/base/ag;->a(Z)V
 
-    .line 77
+    .line 79
     iput-object p1, p0, Lcom/google/common/collect/AbstractBiMap;->delegate:Ljava/util/Map;
 
-    .line 78
+    .line 80
     new-instance v0, Lcom/google/common/collect/AbstractBiMap$Inverse;
 
     const/4 v1, 0x0
@@ -556,25 +567,25 @@
 
     iput-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->inverse:Lcom/google/common/collect/AbstractBiMap;
 
-    .line 79
+    .line 81
     return-void
 
     :cond_30
     move v0, v2
 
-    .line 72
+    .line 74
     goto :goto_7
 
     :cond_32
     move v0, v2
 
-    .line 73
+    .line 75
     goto :goto_f
 
     :cond_34
     move v1, v2
 
-    .line 76
+    .line 78
     goto :goto_22
 .end method
 
@@ -583,10 +594,10 @@
     .parameter
 
     .prologue
-    .line 82
+    .line 84
     iput-object p1, p0, Lcom/google/common/collect/AbstractBiMap;->inverse:Lcom/google/common/collect/AbstractBiMap;
 
-    .line 83
+    .line 85
     return-void
 .end method
 
@@ -594,7 +605,7 @@
     .registers 2
 
     .prologue
-    .line 45
+    .line 47
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractBiMap;->values()Ljava/util/Set;
 
     move-result-object v0
@@ -603,21 +614,23 @@
 .end method
 
 .method public values()Ljava/util/Set;
-    .registers 2
+    .registers 3
 
     .prologue
-    .line 218
+    .line 225
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->valueSet:Ljava/util/Set;
 
-    .line 219
-    if-nez v0, :cond_b
+    .line 226
+    if-nez v0, :cond_c
 
     new-instance v0, Lcom/google/common/collect/g;
 
-    invoke-direct {v0, p0}, Lcom/google/common/collect/g;-><init>(Lcom/google/common/collect/AbstractBiMap;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/g;-><init>(Lcom/google/common/collect/AbstractBiMap;B)V
 
     iput-object v0, p0, Lcom/google/common/collect/AbstractBiMap;->valueSet:Ljava/util/Set;
 
-    :cond_b
+    :cond_c
     return-object v0
 .end method

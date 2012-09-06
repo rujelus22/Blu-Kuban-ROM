@@ -19,10 +19,10 @@
     .registers 1
 
     .prologue
-    .line 50
+    .line 54
     invoke-direct {p0}, Lorg/apache/james/mime4j/message/Entity;-><init>()V
 
-    .line 51
+    .line 55
     return-void
 .end method
 
@@ -36,15 +36,15 @@
     .end annotation
 
     .prologue
-    .line 60
+    .line 64
     invoke-direct {p0}, Lorg/apache/james/mime4j/message/Entity;-><init>()V
 
-    .line 61
+    .line 65
     new-instance v0, Lorg/apache/james/mime4j/MimeStreamParser;
 
     invoke-direct {v0}, Lorg/apache/james/mime4j/MimeStreamParser;-><init>()V
 
-    .line 62
+    .line 66
     .local v0, parser:Lorg/apache/james/mime4j/MimeStreamParser;
     new-instance v1, Lorg/apache/james/mime4j/message/Message$MessageBuilder;
 
@@ -52,10 +52,10 @@
 
     invoke-virtual {v0, v1}, Lorg/apache/james/mime4j/MimeStreamParser;->setContentHandler(Lorg/apache/james/mime4j/ContentHandler;)V
 
-    .line 63
+    .line 67
     invoke-virtual {v0, p1}, Lorg/apache/james/mime4j/MimeStreamParser;->parse(Ljava/io/InputStream;)V
 
-    .line 64
+    .line 68
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .registers 3
 
     .prologue
-    .line 73
+    .line 78
     invoke-virtual {p0}, Lorg/apache/james/mime4j/message/Message;->getHeader()Lorg/apache/james/mime4j/message/Header;
 
     move-result-object v0
@@ -91,19 +91,19 @@
     .end annotation
 
     .prologue
-    .line 81
+    .line 87
     invoke-virtual {p0}, Lorg/apache/james/mime4j/message/Message;->getHeader()Lorg/apache/james/mime4j/message/Header;
 
     move-result-object v2
 
     invoke-virtual {v2, p1}, Lorg/apache/james/mime4j/message/Header;->writeTo(Ljava/io/OutputStream;)V
 
-    .line 83
+    .line 89
     invoke-virtual {p0}, Lorg/apache/james/mime4j/message/Message;->getBody()Lorg/apache/james/mime4j/message/Body;
 
     move-result-object v0
 
-    .line 84
+    .line 90
     .local v0, body:Lorg/apache/james/mime4j/message/Body;
     instance-of v2, v0, Lorg/apache/james/mime4j/message/Multipart;
 
@@ -111,19 +111,19 @@
 
     move-object v1, v0
 
-    .line 85
+    .line 91
     check-cast v1, Lorg/apache/james/mime4j/message/Multipart;
 
-    .line 86
+    .line 92
     .local v1, mp:Lorg/apache/james/mime4j/message/Multipart;
     invoke-virtual {v1, p1}, Lorg/apache/james/mime4j/message/Multipart;->writeTo(Ljava/io/OutputStream;)V
 
-    .line 90
+    .line 96
     .end local v1           #mp:Lorg/apache/james/mime4j/message/Multipart;
     :goto_15
     return-void
 
-    .line 88
+    .line 94
     :cond_16
     invoke-interface {v0, p1}, Lorg/apache/james/mime4j/message/Body;->writeTo(Ljava/io/OutputStream;)V
 

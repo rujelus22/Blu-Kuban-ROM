@@ -3,20 +3,29 @@
 .source "ErrorDialog.java"
 
 
+# instance fields
+.field private mIsRemoved:Z
+
+
 # direct methods
 .method public constructor <init>()V
     .registers 2
 
     .prologue
-    .line 35
+    .line 37
     invoke-direct {p0}, Landroid/support/v4/app/DialogFragment;-><init>()V
 
-    .line 36
+    .line 35
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/activities/ErrorDialog;->mIsRemoved:Z
+
+    .line 38
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/activities/ErrorDialog;->setCancelable(Z)V
 
-    .line 37
+    .line 39
     return-void
 .end method
 
@@ -27,52 +36,52 @@
     .parameter "goBack"
 
     .prologue
-    .line 71
+    .line 78
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 72
+    .line 79
     .local v0, args:Landroid/os/Bundle;
     if-nez p0, :cond_12
 
-    .line 73
+    .line 80
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v2
 
-    const v3, 0x7f0700ef
+    const v3, 0x7f0700fe
 
     invoke-virtual {v2, v3}, Lcom/google/android/finsky/FinskyApp;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 75
+    .line 82
     :cond_12
     const-string v2, "title"
 
     invoke-virtual {v0, v2, p0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 76
+    .line 83
     const-string v2, "html_message"
 
     invoke-virtual {v0, v2, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 77
+    .line 84
     const-string v2, "go_back"
 
     invoke-virtual {v0, v2, p2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 78
+    .line 85
     new-instance v1, Lcom/google/android/finsky/activities/ErrorDialog;
 
     invoke-direct {v1}, Lcom/google/android/finsky/activities/ErrorDialog;-><init>()V
 
-    .line 79
+    .line 86
     .local v1, errorDialog:Lcom/google/android/finsky/activities/ErrorDialog;
     invoke-virtual {v1, v0}, Lcom/google/android/finsky/activities/ErrorDialog;->setArguments(Landroid/os/Bundle;)V
 
-    .line 80
+    .line 87
     return-object v1
 .end method
 
@@ -84,25 +93,35 @@
     .parameter "goBack"
 
     .prologue
-    .line 51
+    .line 55
+    invoke-virtual {p0}, Landroid/support/v4/app/FragmentManager;->executePendingTransactions()Z
+
+    .line 56
     const-string v4, "error_dialog"
 
     invoke-virtual {p0, v4}, Landroid/support/v4/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/support/v4/app/Fragment;
 
     move-result-object v3
 
-    .line 54
-    .local v3, previousErrorDialog:Landroid/support/v4/app/Fragment;
-    if-eqz v3, :cond_18
+    check-cast v3, Lcom/google/android/finsky/activities/ErrorDialog;
 
-    .line 55
+    .line 60
+    .local v3, previousErrorDialog:Lcom/google/android/finsky/activities/ErrorDialog;
+    if-eqz v3, :cond_20
+
+    .line 61
     invoke-virtual {p0}, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
 
     move-result-object v2
 
-    .line 57
+    .line 63
     .local v2, ft:Landroid/support/v4/app/FragmentTransaction;
-    :try_start_c
+    const/4 v4, 0x1
+
+    :try_start_12
+    iput-boolean v4, v3, Lcom/google/android/finsky/activities/ErrorDialog;->mIsRemoved:Z
+
+    .line 64
     invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentTransaction;->remove(Landroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 
     move-result-object v4
@@ -114,33 +133,33 @@
     move-result-object v4
 
     invoke-virtual {v4}, Landroid/support/v4/app/FragmentTransaction;->commit()I
-    :try_end_18
-    .catch Ljava/lang/IllegalStateException; {:try_start_c .. :try_end_18} :catch_22
+    :try_end_20
+    .catch Ljava/lang/IllegalStateException; {:try_start_12 .. :try_end_20} :catch_2a
 
-    .line 65
+    .line 72
     .end local v2           #ft:Landroid/support/v4/app/FragmentTransaction;
-    :cond_18
-    :goto_18
+    :cond_20
+    :goto_20
     invoke-static {p1, p2, p3}, Lcom/google/android/finsky/activities/ErrorDialog;->newInstance(Ljava/lang/String;Ljava/lang/String;Z)Lcom/google/android/finsky/activities/ErrorDialog;
 
     move-result-object v0
 
-    .line 66
+    .line 73
     .local v0, dialog:Lcom/google/android/finsky/activities/ErrorDialog;
     const-string v4, "error_dialog"
 
     invoke-virtual {v0, p0, v4}, Lcom/google/android/finsky/activities/ErrorDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 67
+    .line 74
     return-object v0
 
-    .line 58
+    .line 65
     .end local v0           #dialog:Lcom/google/android/finsky/activities/ErrorDialog;
     .restart local v2       #ft:Landroid/support/v4/app/FragmentTransaction;
-    :catch_22
+    :catch_2a
     move-exception v1
 
-    .line 62
+    .line 69
     .local v1, ex:Ljava/lang/IllegalStateException;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -166,7 +185,7 @@
 
     invoke-static {v4, v5}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    goto :goto_18
+    goto :goto_20
 .end method
 
 
@@ -178,7 +197,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 85
+    .line 92
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/ErrorDialog;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -217,21 +236,21 @@
 
     move-result-object v0
 
-    .line 90
+    .line 97
     .local v0, alertDialog:Landroid/app/AlertDialog;
     invoke-virtual {v0}, Landroid/app/AlertDialog;->getLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object v3
 
-    const v4, 0x7f040066
+    const v4, 0x7f04006d
 
     invoke-virtual {v3, v4, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v2
 
-    .line 92
+    .line 99
     .local v2, messageView:Landroid/view/View;
-    const v3, 0x7f0800fc
+    const v3, 0x7f080122
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -239,7 +258,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 93
+    .line 100
     .local v1, messageTextView:Landroid/widget/TextView;
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/ErrorDialog;->getArguments()Landroid/os/Bundle;
 
@@ -257,17 +276,17 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 94
+    .line 101
     invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
 
     move-result-object v3
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    .line 96
+    .line 103
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog;->setView(Landroid/view/View;)V
 
-    .line 97
+    .line 104
     return-object v0
 .end method
 
@@ -276,12 +295,16 @@
     .parameter "dialog"
 
     .prologue
-    .line 103
+    .line 111
+    iget-boolean v1, p0, Lcom/google/android/finsky/activities/ErrorDialog;->mIsRemoved:Z
+
+    if-nez v1, :cond_27
+
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/ErrorDialog;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_27
 
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/ErrorDialog;->getArguments()Landroid/os/Bundle;
 
@@ -293,39 +316,39 @@
 
     move-result v1
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_27
 
-    .line 104
+    .line 113
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/ErrorDialog;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
     instance-of v1, v1, Lcom/google/android/finsky/fragments/PageFragmentHost;
 
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_2b
 
-    .line 105
+    .line 114
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/ErrorDialog;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/finsky/fragments/PageFragmentHost;
 
-    .line 106
+    .line 115
     .local v0, fragmentHost:Lcom/google/android/finsky/fragments/PageFragmentHost;
     invoke-interface {v0}, Lcom/google/android/finsky/fragments/PageFragmentHost;->goBack()V
 
-    .line 111
+    .line 120
     .end local v0           #fragmentHost:Lcom/google/android/finsky/fragments/PageFragmentHost;
-    :cond_23
-    :goto_23
+    :cond_27
+    :goto_27
     invoke-super {p0, p1}, Landroid/support/v4/app/DialogFragment;->onDismiss(Landroid/content/DialogInterface;)V
 
-    .line 112
+    .line 121
     return-void
 
-    .line 108
-    :cond_27
+    .line 117
+    :cond_2b
     const-string v1, "Dialog not hosted by PageFragmentHost. Cannot navigate back."
 
     const/4 v2, 0x0
@@ -334,5 +357,5 @@
 
     invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    goto :goto_23
+    goto :goto_27
 .end method

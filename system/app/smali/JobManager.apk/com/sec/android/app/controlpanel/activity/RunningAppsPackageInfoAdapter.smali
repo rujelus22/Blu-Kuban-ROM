@@ -548,7 +548,7 @@
 
     const v8, 0x7f02001b
 
-    const v7, 0x2050001
+    const v7, 0x205000c
 
     const/4 v6, 0x1
 

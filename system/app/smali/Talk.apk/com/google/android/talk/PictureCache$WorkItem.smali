@@ -42,7 +42,7 @@
     .line 838
     iput-object p1, p0, Lcom/google/android/talk/PictureCache$WorkItem;->this$0:Lcom/google/android/talk/PictureCache;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 839
     iput-object p2, p0, Lcom/google/android/talk/PictureCache$WorkItem;->mUrl:Ljava/lang/String;

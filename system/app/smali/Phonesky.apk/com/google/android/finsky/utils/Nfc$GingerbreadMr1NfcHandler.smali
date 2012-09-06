@@ -24,17 +24,17 @@
     .parameter "fragment"
 
     .prologue
-    .line 125
+    .line 128
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/google/android/finsky/utils/Nfc$BaseNfcHandler;-><init>(Lcom/google/android/finsky/activities/DetailsDataBasedFragment;Lcom/google/android/finsky/utils/Nfc$1;)V
 
-    .line 122
+    .line 125
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/utils/Nfc$GingerbreadMr1NfcHandler;->mEnabled:Z
 
-    .line 126
+    .line 129
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .parameter "x1"
 
     .prologue
-    .line 121
+    .line 124
     invoke-direct {p0, p1}, Lcom/google/android/finsky/utils/Nfc$GingerbreadMr1NfcHandler;-><init>(Lcom/google/android/finsky/activities/DetailsDataBasedFragment;)V
 
     return-void
@@ -54,7 +54,7 @@
     .registers 4
 
     .prologue
-    .line 147
+    .line 150
     iget-boolean v1, p0, Lcom/google/android/finsky/utils/Nfc$GingerbreadMr1NfcHandler;->mEnabled:Z
 
     if-nez v1, :cond_20
@@ -67,16 +67,16 @@
 
     if-eqz v1, :cond_20
 
-    .line 148
+    .line 151
     invoke-virtual {p0}, Lcom/google/android/finsky/utils/Nfc$GingerbreadMr1NfcHandler;->createMessage()Landroid/nfc/NdefMessage;
 
     move-result-object v0
 
-    .line 149
+    .line 152
     .local v0, message:Landroid/nfc/NdefMessage;
     if-eqz v0, :cond_20
 
-    .line 150
+    .line 153
     iget-object v1, p0, Lcom/google/android/finsky/utils/Nfc$GingerbreadMr1NfcHandler;->mNfcAdapter:Landroid/nfc/NfcAdapter;
 
     iget-object v2, p0, Lcom/google/android/finsky/utils/Nfc$GingerbreadMr1NfcHandler;->mFragment:Lcom/google/android/finsky/activities/DetailsDataBasedFragment;
@@ -87,12 +87,12 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/nfc/NfcAdapter;->enableForegroundNdefPush(Landroid/app/Activity;Landroid/nfc/NdefMessage;)V
 
-    .line 151
+    .line 154
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/google/android/finsky/utils/Nfc$GingerbreadMr1NfcHandler;->mEnabled:Z
 
-    .line 154
+    .line 157
     .end local v0           #message:Landroid/nfc/NdefMessage;
     :cond_20
     return-void
@@ -104,10 +104,10 @@
     .registers 1
 
     .prologue
-    .line 143
+    .line 146
     invoke-direct {p0}, Lcom/google/android/finsky/utils/Nfc$GingerbreadMr1NfcHandler;->setPushMessage()V
 
-    .line 144
+    .line 147
     return-void
 .end method
 
@@ -115,12 +115,12 @@
     .registers 3
 
     .prologue
-    .line 130
+    .line 133
     iget-boolean v0, p0, Lcom/google/android/finsky/utils/Nfc$GingerbreadMr1NfcHandler;->mEnabled:Z
 
     if-eqz v0, :cond_12
 
-    .line 131
+    .line 134
     iget-object v0, p0, Lcom/google/android/finsky/utils/Nfc$GingerbreadMr1NfcHandler;->mNfcAdapter:Landroid/nfc/NfcAdapter;
 
     iget-object v1, p0, Lcom/google/android/finsky/utils/Nfc$GingerbreadMr1NfcHandler;->mFragment:Lcom/google/android/finsky/activities/DetailsDataBasedFragment;
@@ -131,12 +131,12 @@
 
     invoke-virtual {v0, v1}, Landroid/nfc/NfcAdapter;->disableForegroundNdefPush(Landroid/app/Activity;)V
 
-    .line 132
+    .line 135
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/utils/Nfc$GingerbreadMr1NfcHandler;->mEnabled:Z
 
-    .line 134
+    .line 137
     :cond_12
     return-void
 .end method
@@ -145,9 +145,9 @@
     .registers 1
 
     .prologue
-    .line 138
+    .line 141
     invoke-direct {p0}, Lcom/google/android/finsky/utils/Nfc$GingerbreadMr1NfcHandler;->setPushMessage()V
 
-    .line 139
+    .line 142
     return-void
 .end method

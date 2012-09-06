@@ -1,18 +1,21 @@
-.class Lcom/google/android/maps/driveabout/vector/B;
+.class public Lcom/google/android/maps/driveabout/vector/B;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# instance fields
-.field public a:I
-
-.field public b:I
+# static fields
+.field private static a:Lcom/google/android/maps/driveabout/vector/C;
 
 
 # direct methods
-.method constructor <init>()V
+.method public static a(Lcom/google/android/maps/driveabout/vector/C;)V
     .registers 1
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 44
+    sput-object p0, Lcom/google/android/maps/driveabout/vector/B;->a:Lcom/google/android/maps/driveabout/vector/C;
 
+    .line 45
     return-void
 .end method

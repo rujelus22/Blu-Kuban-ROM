@@ -25,13 +25,13 @@
     .parameter "context"
 
     .prologue
-    .line 77
+    .line 51
     iput-object p1, p0, Lcom/android/email/service/PopImapAuthenticatorService$PopImapAuthenticator;->this$0:Lcom/android/email/service/PopImapAuthenticatorService;
 
-    .line 78
+    .line 52
     invoke-direct {p0, p2}, Landroid/accounts/AbstractAccountAuthenticator;-><init>(Landroid/content/Context;)V
 
-    .line 79
+    .line 53
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 89
+    .line 62
     if-eqz p5, :cond_6f
 
     const-string v4, "password"
@@ -72,7 +72,7 @@
 
     if-eqz v4, :cond_6f
 
-    .line 91
+    .line 64
     new-instance v0, Landroid/accounts/Account;
 
     const-string v4, "username"
@@ -85,7 +85,7 @@
 
     invoke-direct {v0, v4, v5}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 93
+    .line 66
     .local v0, account:Landroid/accounts/Account;
     iget-object v4, p0, Lcom/android/email/service/PopImapAuthenticatorService$PopImapAuthenticator;->this$0:Lcom/android/email/service/PopImapAuthenticatorService;
 
@@ -103,10 +103,10 @@
 
     invoke-virtual {v4, v0, v5, v6}, Landroid/accounts/AccountManager;->addAccountExplicitly(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)Z
 
-    .line 97
+    .line 70
     const/4 v3, 0x0
 
-    .line 98
+    .line 71
     .local v3, syncEmail:Z
     const-string v4, "email"
 
@@ -124,10 +124,10 @@
 
     if-eqz v4, :cond_42
 
-    .line 100
+    .line 73
     const/4 v3, 0x1
 
-    .line 102
+    .line 75
     :cond_42
     const-string v4, "com.android.email.provider"
 
@@ -135,27 +135,27 @@
 
     invoke-static {v0, v4, v5}, Landroid/content/ContentResolver;->setIsSyncable(Landroid/accounts/Account;Ljava/lang/String;I)V
 
-    .line 103
+    .line 76
     const-string v4, "com.android.email.provider"
 
     invoke-static {v0, v4, v3}, Landroid/content/ContentResolver;->setSyncAutomatically(Landroid/accounts/Account;Ljava/lang/String;Z)V
 
-    .line 104
+    .line 77
     const-string v4, "com.android.contacts"
 
     invoke-static {v0, v4, v7}, Landroid/content/ContentResolver;->setIsSyncable(Landroid/accounts/Account;Ljava/lang/String;I)V
 
-    .line 105
+    .line 78
     const-string v4, "com.android.calendar"
 
     invoke-static {v0, v4, v7}, Landroid/content/ContentResolver;->setIsSyncable(Landroid/accounts/Account;Ljava/lang/String;I)V
 
-    .line 107
+    .line 80
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 108
+    .line 81
     .local v1, b:Landroid/os/Bundle;
     const-string v4, "authAccount"
 
@@ -167,41 +167,41 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 109
+    .line 82
     const-string v4, "accountType"
 
     const-string v5, "com.android.email"
 
     invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 136
+    .line 93
     .end local v0           #account:Landroid/accounts/Account;
     .end local v3           #syncEmail:Z
     :goto_6e
     return-object v1
 
-    .line 117
+    .line 88
     .end local v1           #b:Landroid/os/Bundle;
     :cond_6f
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 130
+    .line 89
     .restart local v1       #b:Landroid/os/Bundle;
     iget-object v4, p0, Lcom/android/email/service/PopImapAuthenticatorService$PopImapAuthenticator;->this$0:Lcom/android/email/service/PopImapAuthenticatorService;
 
-    invoke-static {v4}, Lcom/android/email/activity/ActivityResourceInterface;->getSetupPopImapSetupIntent(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-static {v4}, Lcom/android/email/activity/setup/AccountSetupBasics;->actionSetupPopImapIntent(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v2
 
-    .line 134
+    .line 91
     .local v2, intent:Landroid/content/Intent;
     const-string v4, "accountAuthenticatorResponse"
 
     invoke-virtual {v2, v4, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 135
+    .line 92
     const-string v4, "intent"
 
     invoke-virtual {v1, v4, v2}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
@@ -216,7 +216,7 @@
     .parameter "options"
 
     .prologue
-    .line 174
+    .line 100
     const/4 v0, 0x0
 
     return-object v0
@@ -228,163 +228,10 @@
     .parameter "accountType"
 
     .prologue
-    .line 179
+    .line 105
     const/4 v0, 0x0
 
     return-object v0
-.end method
-
-.method public getAccountRemovalAllowed(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;)Landroid/os/Bundle;
-    .registers 10
-    .parameter "response"
-    .parameter "account"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/accounts/NetworkErrorException;
-        }
-    .end annotation
-
-    .prologue
-    const/4 v6, 0x1
-
-    .line 144
-    new-instance v2, Landroid/os/Bundle;
-
-    invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
-
-    .line 145
-    .local v2, result:Landroid/os/Bundle;
-    iget-object v3, p0, Lcom/android/email/service/PopImapAuthenticatorService$PopImapAuthenticator;->this$0:Lcom/android/email/service/PopImapAuthenticatorService;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "emailAddress=\'"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p2, Landroid/accounts/Account;->name:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "\'"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcom/android/emailcommon/provider/EmailContent$Account;->getAccountIdWhere(Landroid/content/Context;Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    .line 148
-    .local v0, accountId:J
-    const-string v3, "PopImapAuthenticatorService"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "getAccountRemovalAllowed() called for "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcom/android/email/EmailLog;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 149
-    invoke-static {v0, v1}, Lcom/android/email/Controller;->isSnc(J)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_77
-
-    .line 150
-    iget-object v3, p0, Lcom/android/email/service/PopImapAuthenticatorService$PopImapAuthenticator;->this$0:Lcom/android/email/service/PopImapAuthenticatorService;
-
-    #getter for: Lcom/android/email/service/PopImapAuthenticatorService;->mController:Lcom/android/email/Controller;
-    invoke-static {v3}, Lcom/android/email/service/PopImapAuthenticatorService;->access$200(Lcom/android/email/service/PopImapAuthenticatorService;)Lcom/android/email/Controller;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/android/email/service/PopImapAuthenticatorService$PopImapAuthenticator;->this$0:Lcom/android/email/service/PopImapAuthenticatorService;
-
-    #getter for: Lcom/android/email/service/PopImapAuthenticatorService;->mControllerResult:Lcom/android/email/Controller$Result;
-    invoke-static {v4}, Lcom/android/email/service/PopImapAuthenticatorService;->access$100(Lcom/android/email/service/PopImapAuthenticatorService;)Lcom/android/email/Controller$Result;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Lcom/android/email/Controller;->addResultCallback(Lcom/android/email/Controller$Result;)V
-
-    .line 156
-    iget-object v3, p0, Lcom/android/email/service/PopImapAuthenticatorService$PopImapAuthenticator;->this$0:Lcom/android/email/service/PopImapAuthenticatorService;
-
-    invoke-static {v3}, Lcom/android/email/Controller;->getInstance(Landroid/content/Context;)Lcom/android/email/Controller;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0, v1}, Lcom/android/email/Controller;->deleteAccount(J)V
-
-    .line 157
-    iget-object v3, p0, Lcom/android/email/service/PopImapAuthenticatorService$PopImapAuthenticator;->this$0:Lcom/android/email/service/PopImapAuthenticatorService;
-
-    #calls: Lcom/android/email/service/PopImapAuthenticatorService;->waitForAccountDeletion()V
-    invoke-static {v3}, Lcom/android/email/service/PopImapAuthenticatorService;->access$300(Lcom/android/email/service/PopImapAuthenticatorService;)V
-
-    .line 158
-    iget-object v3, p0, Lcom/android/email/service/PopImapAuthenticatorService$PopImapAuthenticator;->this$0:Lcom/android/email/service/PopImapAuthenticatorService;
-
-    #getter for: Lcom/android/email/service/PopImapAuthenticatorService;->isMailDeletedFromProvider:Z
-    invoke-static {v3}, Lcom/android/email/service/PopImapAuthenticatorService;->access$400(Lcom/android/email/service/PopImapAuthenticatorService;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_70
-
-    .line 159
-    const-string v3, "booleanResult"
-
-    invoke-virtual {v2, v3, v6}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
-
-    .line 166
-    :goto_6f
-    return-object v2
-
-    .line 161
-    :cond_70
-    const-string v3, "booleanResult"
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
-
-    goto :goto_6f
-
-    .line 164
-    :cond_77
-    const-string v3, "booleanResult"
-
-    invoke-virtual {v2, v3, v6}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
-
-    goto :goto_6f
 .end method
 
 .method public getAuthToken(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
@@ -400,7 +247,7 @@
     .end annotation
 
     .prologue
-    .line 185
+    .line 111
     const/4 v0, 0x0
 
     return-object v0
@@ -411,7 +258,7 @@
     .parameter "authTokenType"
 
     .prologue
-    .line 191
+    .line 117
     const/4 v0, 0x0
 
     return-object v0
@@ -429,7 +276,7 @@
     .end annotation
 
     .prologue
-    .line 197
+    .line 123
     const/4 v0, 0x0
 
     return-object v0
@@ -443,7 +290,7 @@
     .parameter "loginOptions"
 
     .prologue
-    .line 203
+    .line 129
     const/4 v0, 0x0
 
     return-object v0

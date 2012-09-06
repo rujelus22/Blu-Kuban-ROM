@@ -13,20 +13,11 @@
 
 
 # instance fields
-.field public final dateOnly:Z
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field private final dateOnly:Z
 
-.field public final tzShift:Ljava/lang/Integer;
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field private final tzShift:Ljava/lang/Integer;
 
-.field public final value:J
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field private final value:J
 
 
 # direct methods
@@ -34,7 +25,7 @@
     .registers 1
 
     .prologue
-    .line 43
+    .line 38
     const-string v0, "GMT"
 
     invoke-static {v0}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
@@ -51,14 +42,14 @@
     .parameter
 
     .prologue
-    .line 81
+    .line 67
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, p1, p2, v1}, Lcom/google/api/client/util/DateTime;-><init>(ZJLjava/lang/Integer;)V
 
-    .line 82
+    .line 68
     return-void
 .end method
 
@@ -68,12 +59,12 @@
     .parameter
 
     .prologue
-    .line 89
+    .line 75
     const/4 v0, 0x0
 
     invoke-direct {p0, v0, p1, p2, p3}, Lcom/google/api/client/util/DateTime;-><init>(ZJLjava/lang/Integer;)V
 
-    .line 90
+    .line 76
     return-void
 .end method
 
@@ -82,14 +73,14 @@
     .parameter
 
     .prologue
-    .line 85
+    .line 71
     invoke-virtual {p1}, Ljava/util/Date;->getTime()J
 
     move-result-wide v0
 
     invoke-direct {p0, v0, v1}, Lcom/google/api/client/util/DateTime;-><init>(J)V
 
-    .line 86
+    .line 72
     return-void
 .end method
 
@@ -99,23 +90,23 @@
     .parameter
 
     .prologue
-    .line 73
+    .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 74
+    .line 60
     invoke-virtual {p1}, Ljava/util/Date;->getTime()J
 
     move-result-wide v0
 
-    .line 75
+    .line 61
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/google/api/client/util/DateTime;->dateOnly:Z
 
-    .line 76
+    .line 62
     iput-wide v0, p0, Lcom/google/api/client/util/DateTime;->value:J
 
-    .line 77
+    .line 63
     invoke-virtual {p2, v0, v1}, Ljava/util/TimeZone;->getOffset(J)I
 
     move-result v0
@@ -130,7 +121,7 @@
 
     iput-object v0, p0, Lcom/google/api/client/util/DateTime;->tzShift:Ljava/lang/Integer;
 
-    .line 78
+    .line 64
     return-void
 .end method
 
@@ -141,19 +132,19 @@
     .parameter
 
     .prologue
-    .line 92
+    .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 93
+    .line 79
     iput-boolean p1, p0, Lcom/google/api/client/util/DateTime;->dateOnly:Z
 
-    .line 94
+    .line 80
     iput-wide p2, p0, Lcom/google/api/client/util/DateTime;->value:J
 
-    .line 95
+    .line 81
     iput-object p4, p0, Lcom/google/api/client/util/DateTime;->tzShift:Ljava/lang/Integer;
 
-    .line 96
+    .line 82
     return-void
 .end method
 
@@ -164,57 +155,57 @@
     .parameter
 
     .prologue
-    .line 260
+    .line 247
     if-gez p1, :cond_8
 
-    .line 261
+    .line 248
     const/16 v0, 0x2d
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 262
+    .line 249
     neg-int p1, p1
 
     :cond_8
     move v0, p1
 
-    .line 265
+    .line 252
     :goto_9
     if-lez v0, :cond_10
 
-    .line 266
+    .line 253
     div-int/lit8 v0, v0, 0xa
 
-    .line 267
+    .line 254
     add-int/lit8 p2, p2, -0x1
 
     goto :goto_9
 
-    .line 269
+    .line 256
     :cond_10
     const/4 v0, 0x0
 
     :goto_11
     if-ge v0, p2, :cond_1b
 
-    .line 270
+    .line 257
     const/16 v1, 0x30
 
     invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 269
+    .line 256
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_11
 
-    .line 272
+    .line 259
     :cond_1b
     if-eqz p1, :cond_20
 
-    .line 273
+    .line 260
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 275
+    .line 262
     :cond_20
     return-void
 .end method
@@ -228,11 +219,11 @@
 
     const/16 v9, 0x13
 
-    const/4 v7, 0x0
-
     const/16 v4, 0xa
 
-    .line 213
+    const/4 v7, 0x0
+
+    .line 199
     :try_start_7
     new-instance v0, Ljava/util/GregorianCalendar;
 
@@ -240,7 +231,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/GregorianCalendar;-><init>(Ljava/util/TimeZone;)V
 
-    .line 214
+    .line 200
     const/4 v1, 0x0
 
     const/4 v2, 0x4
@@ -253,7 +244,7 @@
 
     move-result v1
 
-    .line 215
+    .line 201
     const/4 v2, 0x5
 
     const/4 v3, 0x7
@@ -268,7 +259,7 @@
 
     add-int/lit8 v2, v2, -0x1
 
-    .line 216
+    .line 202
     const/16 v3, 0x8
 
     const/16 v5, 0xa
@@ -281,12 +272,12 @@
 
     move-result v3
 
-    .line 218
+    .line 204
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v11
 
-    .line 219
+    .line 205
     if-le v11, v4, :cond_44
 
     const/16 v5, 0xa
@@ -308,26 +299,26 @@
 
     move v10, v5
 
-    .line 220
+    .line 206
     :goto_46
     if-eqz v10, :cond_6d
 
-    .line 221
+    .line 207
     invoke-virtual {v0, v1, v2, v3}, Ljava/util/Calendar;->set(III)V
 
-    .line 236
+    .line 223
     :goto_4b
     const/4 v3, 0x0
 
-    .line 237
+    .line 224
     invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v1
 
-    .line 238
-    if-le v11, v4, :cond_ea
+    .line 225
+    if-le v11, v4, :cond_f1
 
-    .line 240
+    .line 227
     invoke-virtual {p0, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
@@ -338,7 +329,7 @@
 
     const/16 v3, 0x5a
 
-    if-ne v0, v3, :cond_b3
+    if-ne v0, v3, :cond_b9
 
     move-wide v13, v1
 
@@ -346,13 +337,13 @@
 
     move v2, v7
 
-    .line 250
+    .line 237
     :goto_61
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    .line 252
+    .line 239
     :goto_65
     new-instance v3, Lcom/google/api/client/util/DateTime;
 
@@ -363,10 +354,10 @@
     :cond_6b
     move v10, v7
 
-    .line 219
+    .line 205
     goto :goto_46
 
-    .line 224
+    .line 210
     :cond_6d
     const/16 v4, 0xb
 
@@ -380,7 +371,7 @@
 
     move-result v4
 
-    .line 225
+    .line 211
     const/16 v5, 0xe
 
     const/16 v6, 0x10
@@ -393,7 +384,7 @@
 
     move-result v5
 
-    .line 226
+    .line 212
     const/16 v6, 0x11
 
     const/16 v12, 0x13
@@ -406,10 +397,10 @@
 
     move-result v6
 
-    .line 227
+    .line 213
     invoke-virtual/range {v0 .. v6}, Ljava/util/Calendar;->set(IIIIII)V
 
-    .line 228
+    .line 214
     const/16 v1, 0x13
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
@@ -420,7 +411,7 @@
 
     if-ne v1, v2, :cond_b1
 
-    .line 229
+    .line 215
     const/16 v1, 0x14
 
     const/16 v2, 0x17
@@ -433,24 +424,31 @@
 
     move-result v1
 
-    .line 230
+    .line 216
     const/16 v2, 0xe
 
     invoke-virtual {v0, v2, v1}, Ljava/util/Calendar;->set(II)V
 
     move v4, v8
 
-    .line 232
+    .line 218
     goto :goto_4b
 
+    .line 219
     :cond_b1
+    const/16 v1, 0xe
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/Calendar;->set(II)V
+
     move v4, v9
 
-    .line 233
+    .line 220
     goto :goto_4b
 
-    .line 243
-    :cond_b3
+    .line 230
+    :cond_b9
     add-int/lit8 v0, v4, 0x1
 
     add-int/lit8 v3, v4, 0x3
@@ -479,22 +477,22 @@
 
     add-int/2addr v0, v3
 
-    .line 245
+    .line 232
     invoke-virtual {p0, v4}, Ljava/lang/String;->charAt(I)C
-    :try_end_d1
-    .catch Ljava/lang/StringIndexOutOfBoundsException; {:try_start_7 .. :try_end_d1} :catch_e1
+    :try_end_d7
+    .catch Ljava/lang/StringIndexOutOfBoundsException; {:try_start_7 .. :try_end_d7} :catch_e8
 
     move-result v3
 
     const/16 v4, 0x2d
 
-    if-ne v3, v4, :cond_d7
+    if-ne v3, v4, :cond_dd
 
-    .line 246
+    .line 233
     neg-int v0, v0
 
-    .line 248
-    :cond_d7
+    .line 235
+    :cond_dd
     const v3, 0xea60
 
     mul-int/2addr v3, v0
@@ -509,10 +507,10 @@
 
     move-wide v0, v13
 
-    goto :goto_61
+    goto/16 :goto_61
 
-    .line 254
-    :catch_e1
+    .line 241
+    :catch_e8
     move-exception v0
 
     new-instance v0, Ljava/lang/NumberFormatException;
@@ -523,7 +521,7 @@
 
     throw v0
 
-    :cond_ea
+    :cond_f1
     move-wide v13, v1
 
     move-wide v0, v13
@@ -544,15 +542,15 @@
 
     const/4 v1, 0x0
 
-    .line 198
+    .line 184
     if-ne p1, p0, :cond_5
 
-    .line 205
+    .line 191
     :cond_4
     :goto_4
     return v0
 
-    .line 201
+    .line 187
     :cond_5
     instance-of v2, p1, Lcom/google/api/client/util/DateTime;
 
@@ -560,14 +558,14 @@
 
     move v0, v1
 
-    .line 202
+    .line 188
     goto :goto_4
 
-    .line 204
+    .line 190
     :cond_b
     check-cast p1, Lcom/google/api/client/util/DateTime;
 
-    .line 205
+    .line 191
     iget-boolean v2, p0, Lcom/google/api/client/util/DateTime;->dateOnly:Z
 
     iget-boolean v3, p1, Lcom/google/api/client/util/DateTime;->dateOnly:Z
@@ -592,7 +590,7 @@
     .registers 2
 
     .prologue
-    .line 127
+    .line 113
     iget-object v0, p0, Lcom/google/api/client/util/DateTime;->tzShift:Ljava/lang/Integer;
 
     return-object v0
@@ -602,7 +600,7 @@
     .registers 3
 
     .prologue
-    .line 109
+    .line 95
     iget-wide v0, p0, Lcom/google/api/client/util/DateTime;->value:J
 
     return-wide v0
@@ -612,7 +610,7 @@
     .registers 2
 
     .prologue
-    .line 118
+    .line 104
     iget-boolean v0, p0, Lcom/google/api/client/util/DateTime;->dateOnly:Z
 
     return v0
@@ -622,7 +620,7 @@
     .registers 2
 
     .prologue
-    .line 193
+    .line 179
     invoke-virtual {p0}, Lcom/google/api/client/util/DateTime;->toStringRfc3339()Ljava/lang/String;
 
     move-result-object v0
@@ -642,28 +640,28 @@
 
     const/4 v9, 0x2
 
-    .line 133
+    .line 119
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 135
+    .line 121
     new-instance v3, Ljava/util/GregorianCalendar;
 
     sget-object v0, Lcom/google/api/client/util/DateTime;->GMT:Ljava/util/TimeZone;
 
     invoke-direct {v3, v0}, Ljava/util/GregorianCalendar;-><init>(Ljava/util/TimeZone;)V
 
-    .line 136
+    .line 122
     iget-wide v0, p0, Lcom/google/api/client/util/DateTime;->value:J
 
-    .line 137
+    .line 123
     iget-object v4, p0, Lcom/google/api/client/util/DateTime;->tzShift:Ljava/lang/Integer;
 
-    .line 138
+    .line 124
     if-eqz v4, :cond_22
 
-    .line 139
+    .line 125
     invoke-virtual {v4}, Ljava/lang/Integer;->longValue()J
 
     move-result-wide v5
@@ -674,11 +672,11 @@
 
     add-long/2addr v0, v5
 
-    .line 141
+    .line 127
     :cond_22
     invoke-virtual {v3, v0, v1}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 143
+    .line 129
     const/4 v0, 0x1
 
     invoke-virtual {v3, v0}, Ljava/util/Calendar;->get(I)I
@@ -689,10 +687,10 @@
 
     invoke-static {v2, v0, v1}, Lcom/google/api/client/util/DateTime;->appendInt(Ljava/lang/StringBuilder;II)V
 
-    .line 144
+    .line 130
     invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 145
+    .line 131
     invoke-virtual {v3, v9}, Ljava/util/Calendar;->get(I)I
 
     move-result v0
@@ -701,10 +699,10 @@
 
     invoke-static {v2, v0, v9}, Lcom/google/api/client/util/DateTime;->appendInt(Ljava/lang/StringBuilder;II)V
 
-    .line 146
+    .line 132
     invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 147
+    .line 133
     const/4 v0, 0x5
 
     invoke-virtual {v3, v0}, Ljava/util/Calendar;->get(I)I
@@ -713,17 +711,17 @@
 
     invoke-static {v2, v0, v9}, Lcom/google/api/client/util/DateTime;->appendInt(Ljava/lang/StringBuilder;II)V
 
-    .line 149
+    .line 135
     iget-boolean v0, p0, Lcom/google/api/client/util/DateTime;->dateOnly:Z
 
     if-nez v0, :cond_82
 
-    .line 151
+    .line 137
     const/16 v0, 0x54
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 152
+    .line 138
     const/16 v0, 0xb
 
     invoke-virtual {v3, v0}, Ljava/util/Calendar;->get(I)I
@@ -732,10 +730,10 @@
 
     invoke-static {v2, v0, v9}, Lcom/google/api/client/util/DateTime;->appendInt(Ljava/lang/StringBuilder;II)V
 
-    .line 153
+    .line 139
     invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 154
+    .line 140
     const/16 v0, 0xc
 
     invoke-virtual {v3, v0}, Ljava/util/Calendar;->get(I)I
@@ -744,10 +742,10 @@
 
     invoke-static {v2, v0, v9}, Lcom/google/api/client/util/DateTime;->appendInt(Ljava/lang/StringBuilder;II)V
 
-    .line 155
+    .line 141
     invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 156
+    .line 142
     const/16 v0, 0xd
 
     invoke-virtual {v3, v0}, Ljava/util/Calendar;->get(I)I
@@ -756,19 +754,19 @@
 
     invoke-static {v2, v0, v9}, Lcom/google/api/client/util/DateTime;->appendInt(Ljava/lang/StringBuilder;II)V
 
-    .line 158
+    .line 144
     invoke-virtual {v3, v12}, Ljava/util/Calendar;->isSet(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_82
 
-    .line 159
+    .line 145
     const/16 v0, 0x2e
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 160
+    .line 146
     invoke-virtual {v3, v12}, Ljava/util/Calendar;->get(I)I
 
     move-result v0
@@ -777,23 +775,23 @@
 
     invoke-static {v2, v0, v1}, Lcom/google/api/client/util/DateTime;->appendInt(Ljava/lang/StringBuilder;II)V
 
-    .line 164
+    .line 150
     :cond_82
     if-eqz v4, :cond_8f
 
-    .line 166
+    .line 152
     invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
     if-nez v0, :cond_94
 
-    .line 168
+    .line 154
     const/16 v0, 0x5a
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 188
+    .line 174
     :cond_8f
     :goto_8f
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -802,47 +800,47 @@
 
     return-object v0
 
-    .line 172
+    .line 158
     :cond_94
     invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    .line 173
+    .line 159
     invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
     if-lez v1, :cond_b1
 
-    .line 174
+    .line 160
     const/16 v1, 0x2b
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 180
+    .line 166
     :goto_a3
     div-int/lit8 v1, v0, 0x3c
 
-    .line 181
+    .line 167
     rem-int/lit8 v0, v0, 0x3c
 
-    .line 182
+    .line 168
     invoke-static {v2, v1, v9}, Lcom/google/api/client/util/DateTime;->appendInt(Ljava/lang/StringBuilder;II)V
 
-    .line 183
+    .line 169
     invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 184
+    .line 170
     invoke-static {v2, v0, v9}, Lcom/google/api/client/util/DateTime;->appendInt(Ljava/lang/StringBuilder;II)V
 
     goto :goto_8f
 
-    .line 176
+    .line 162
     :cond_b1
     invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 177
+    .line 163
     neg-int v0, v0
 
     goto :goto_a3

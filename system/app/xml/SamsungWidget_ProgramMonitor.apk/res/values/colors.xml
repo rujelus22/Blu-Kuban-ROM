@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="program_monitor_number_text_color">#ffffa700</color>
-    <color name="program_monitor_number_text_color_noti3">#ffff0000</color>
-    <color name="program_monitor_slide_text_color_normal">#ffffffff</color>
-    <color name="program_monitor_slide_text_color_noti_1">#ffffa700</color>
-    <color name="program_monitor_slide_text_color_noti_2">#ff45ff00</color>
-    <color name="program_monitor_slide_text_color_noti_3">#ffff0000</color>
-</resources>

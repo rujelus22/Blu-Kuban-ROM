@@ -8,17 +8,6 @@
         <wipe-data />
         <expire-password />
         <encrypted-storage />
-        <require-storagecard-encryption />
-        <recover-password />
-        <allow-popimapemail />
-        <allow-storagecard />
         <disable-camera />
-        <allow-wifi />
-        <allow-textmessaging />
-        <allow-browser />
-        <allow-internetsharing />
-        <allow-bluetoothmode />
-        <allow-desktopsync />
-        <allow-irda />
     </uses-policies>
 </device-admin>

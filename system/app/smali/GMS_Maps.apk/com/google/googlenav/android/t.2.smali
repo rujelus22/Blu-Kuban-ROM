@@ -1,67 +1,31 @@
-.class Lcom/google/googlenav/android/t;
-.super Lbf/g;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/android/l;
+.class public Lcom/google/googlenav/android/T;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/android/l;Lap/c;Lcom/google/googlenav/android/ac;Z)V
-    .registers 5
+.method public static a()Z
+    .registers 1
 
-    iput-object p1, p0, Lcom/google/googlenav/android/t;->a:Lcom/google/googlenav/android/l;
+    .prologue
+    .line 35
+    :try_start_0
+    invoke-static {}, Landroid/app/ActivityManager;->isUserAMonkey()Z
+    :try_end_3
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_3} :catch_5
 
-    invoke-direct {p0, p2, p3, p4}, Lbf/g;-><init>(Lap/c;Lcom/google/googlenav/android/ac;Z)V
+    move-result v0
 
-    return-void
-.end method
+    .line 38
+    :goto_4
+    return v0
 
+    .line 36
+    :catch_5
+    move-exception v0
 
-# virtual methods
-.method protected b()V
-    .registers 2
+    .line 38
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lcom/google/googlenav/android/t;->a:Lcom/google/googlenav/android/l;
-
-    invoke-static {v0}, Lcom/google/googlenav/android/l;->c(Lcom/google/googlenav/android/l;)Lcom/google/android/maps/MapsActivity;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2a
-
-    iget-object v0, p0, Lcom/google/googlenav/android/t;->a:Lcom/google/googlenav/android/l;
-
-    invoke-static {v0}, Lcom/google/googlenav/android/l;->c(Lcom/google/googlenav/android/l;)Lcom/google/android/maps/MapsActivity;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/maps/MapsActivity;->e()V
-
-    iget-object v0, p0, Lcom/google/googlenav/android/t;->a:Lcom/google/googlenav/android/l;
-
-    invoke-static {v0}, Lcom/google/googlenav/android/l;->c(Lcom/google/googlenav/android/l;)Lcom/google/android/maps/MapsActivity;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/maps/MapsActivity;->h()Lcom/google/googlenav/ui/android/BaseAndroidView;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2a
-
-    iget-object v0, p0, Lcom/google/googlenav/android/t;->a:Lcom/google/googlenav/android/l;
-
-    invoke-static {v0}, Lcom/google/googlenav/android/l;->c(Lcom/google/googlenav/android/l;)Lcom/google/android/maps/MapsActivity;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/maps/MapsActivity;->h()Lcom/google/googlenav/ui/android/BaseAndroidView;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/android/BaseAndroidView;->h()V
-
-    :cond_2a
-    return-void
+    goto :goto_4
 .end method

@@ -19,10 +19,49 @@
     .registers 1
 
     .prologue
-    .line 3291
+    .line 694
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
     return-void
+.end method
+
+.method public static newInstance(Lcom/android/emailcommon/provider/Account;Landroid/app/Fragment;)Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;
+    .registers 6
+    .parameter "account"
+    .parameter "parentFragment"
+
+    .prologue
+    .line 704
+    new-instance v1, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;
+
+    invoke-direct {v1}, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;-><init>()V
+
+    .line 705
+    .local v1, f:Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    .line 706
+    .local v0, b:Landroid/os/Bundle;
+    const-string v2, "DeleteAccountFragment.Name"
+
+    invoke-virtual {p0}, Lcom/android/emailcommon/provider/Account;->getDisplayName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v2, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 707
+    invoke-virtual {v1, v0}, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;->setArguments(Landroid/os/Bundle;)V
+
+    .line 708
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, p1, v2}, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;->setTargetFragment(Landroid/app/Fragment;I)V
+
+    .line 709
+    return-object v1
 .end method
 
 
@@ -32,12 +71,12 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 3311
+    .line 714
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 3312
+    .line 715
     .local v0, context:Landroid/content/Context;
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;->getArguments()Landroid/os/Bundle;
 
@@ -49,7 +88,7 @@
 
     move-result-object v1
 
-    .line 3314
+    .line 717
     .local v1, name:Ljava/lang/String;
     new-instance v2, Landroid/app/AlertDialog$Builder;
 
@@ -61,13 +100,13 @@
 
     move-result-object v2
 
-    const v3, 0x7f080147
+    const v3, 0x7f080154
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v2
 
-    const v3, 0x7f080148
+    const v3, 0x7f080155
 
     const/4 v4, 0x1
 
@@ -85,7 +124,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f080042
+    const v3, 0x7f080009
 
     new-instance v4, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment$2;
 
@@ -95,7 +134,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f080043
+    const v3, 0x7f08000a
 
     new-instance v4, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment$1;
 

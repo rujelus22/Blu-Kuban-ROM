@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 80
+    .line 77
     const/16 v0, 0x32
 
     new-array v0, v0, [Ljava/lang/String;
@@ -338,7 +338,7 @@
 
     .prologue
     .line 34
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -348,7 +348,7 @@
     .parameter "status"
 
     .prologue
-    .line 101
+    .line 98
     const/16 v0, 0x86
 
     if-eq p0, v0, :cond_8
@@ -374,7 +374,7 @@
     .parameter "status"
 
     .prologue
-    .line 106
+    .line 103
     const/16 v0, 0x7e
 
     if-eq p0, v0, :cond_24
@@ -428,7 +428,7 @@
     .parameter "status"
 
     .prologue
-    .line 94
+    .line 91
     const/16 v0, 0x8e
 
     if-eq p0, v0, :cond_10
@@ -457,13 +457,13 @@
     goto :goto_11
 .end method
 
-.method public static isServerError(I)Z
+.method public static isTransientError(I)Z
     .registers 2
     .parameter "status"
 
     .prologue
-    .line 127
-    const/16 v0, 0x6e
+    .line 115
+    const/16 v0, 0x84
 
     if-eq p0, v0, :cond_8
 
@@ -483,68 +483,26 @@
     goto :goto_9
 .end method
 
-.method public static isTooManyPartnerships(I)Z
-    .registers 2
-    .parameter "status"
-
-    .prologue
-    .line 117
-    const/16 v0, 0xb1
-
-    if-ne p0, v0, :cond_6
-
-    const/4 v0, 0x1
-
-    :goto_5
-    return v0
-
-    :cond_6
-    const/4 v0, 0x0
-
-    goto :goto_5
-.end method
-
-.method public static isTransientError(I)Z
-    .registers 2
-    .parameter "status"
-
-    .prologue
-    .line 123
-    const/16 v0, 0x84
-
-    if-ne p0, v0, :cond_6
-
-    const/4 v0, 0x1
-
-    :goto_5
-    return v0
-
-    :cond_6
-    const/4 v0, 0x0
-
-    goto :goto_5
-.end method
-
 .method public static toString(I)Ljava/lang/String;
     .registers 4
     .parameter "status"
 
     .prologue
-    .line 133
+    .line 120
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 134
+    .line 121
     .local v1, sb:Ljava/lang/StringBuilder;
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 135
+    .line 122
     const-string v2, " ("
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 136
+    .line 123
     const/16 v2, 0x65
 
     if-lt p0, v2, :cond_15
@@ -553,31 +511,31 @@
 
     if-le p0, v2, :cond_24
 
-    .line 137
+    .line 124
     :cond_15
     const-string v2, "unknown"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 144
+    .line 131
     :cond_1a
     :goto_1a
     const-string v2, ")"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 145
+    .line 132
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     return-object v2
 
-    .line 139
+    .line 126
     :cond_24
     add-int/lit8 v0, p0, -0x65
 
-    .line 140
+    .line 127
     .local v0, offset:I
     sget-object v2, Lcom/android/exchange/CommandStatusException$CommandStatus;->STATUS_TEXT:[Ljava/lang/String;
 
@@ -585,7 +543,7 @@
 
     if-gt v0, v2, :cond_1a
 
-    .line 141
+    .line 128
     sget-object v2, Lcom/android/exchange/CommandStatusException$CommandStatus;->STATUS_TEXT:[Ljava/lang/String;
 
     aget-object v2, v2, v0

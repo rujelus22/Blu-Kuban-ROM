@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 580
+    .line 578
     new-instance v0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;
 
     const-string v1, "SUCCESS"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;->SUCCESS:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;
 
-    .line 582
+    .line 580
     new-instance v0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;
 
     const-string v1, "FAILURE"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;->FAILURE:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;
 
-    .line 584
+    .line 582
     new-instance v0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;
 
     const-string v1, "CANCELED"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;->CANCELED:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;
 
-    .line 578
+    .line 576
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;
@@ -104,7 +104,7 @@
     .end annotation
 
     .prologue
-    .line 578
+    .line 576
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -115,7 +115,7 @@
     .parameter
 
     .prologue
-    .line 578
+    .line 576
     const-class v0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -131,7 +131,7 @@
     .registers 1
 
     .prologue
-    .line 578
+    .line 576
     sget-object v0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;->$VALUES:[Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;
 
     invoke-virtual {v0}, [Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;->clone()Ljava/lang/Object;

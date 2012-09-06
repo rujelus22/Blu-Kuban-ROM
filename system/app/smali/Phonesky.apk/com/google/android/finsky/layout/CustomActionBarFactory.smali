@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 10
+    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,30 +19,30 @@
     .parameter "activity"
 
     .prologue
-    .line 12
+    .line 14
     invoke-static {}, Lcom/google/android/finsky/layout/CustomActionBarFactory;->shouldUseSystemActionBar()Z
 
     move-result v0
 
     if-eqz v0, :cond_18
 
-    .line 13
+    .line 15
     invoke-virtual {p0}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
 
     move-result-object v0
 
     if-nez v0, :cond_12
 
-    .line 15
+    .line 17
     new-instance v0, Lcom/google/android/finsky/layout/FakeActionBar;
 
     invoke-direct {v0}, Lcom/google/android/finsky/layout/FakeActionBar;-><init>()V
 
-    .line 20
+    .line 22
     :goto_11
     return-object v0
 
-    .line 17
+    .line 19
     :cond_12
     new-instance v0, Lcom/google/android/finsky/layout/NativeActionBar;
 
@@ -50,9 +50,9 @@
 
     goto :goto_11
 
-    .line 20
+    .line 22
     :cond_18
-    const v0, 0x7f080003
+    const v0, 0x7f080007
 
     invoke-virtual {p0, v0}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -67,7 +67,7 @@
     .registers 2
 
     .prologue
-    .line 25
+    .line 27
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0xb

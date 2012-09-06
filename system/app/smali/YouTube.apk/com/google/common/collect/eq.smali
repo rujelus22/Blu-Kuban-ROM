@@ -1,120 +1,98 @@
-.class abstract Lcom/google/common/collect/eq;
-.super Ljava/util/AbstractMap;
+.class final Lcom/google/common/collect/eq;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field private transient a:Ljava/util/Set;
+.field a:Ljava/util/Map$Entry;
 
-.field private transient b:Ljava/util/Set;
+.field final synthetic b:Ljava/util/Iterator;
 
-.field private transient c:Ljava/util/Collection;
+.field final synthetic c:Lcom/google/common/collect/LinkedHashMultimap;
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method constructor <init>(Lcom/google/common/collect/LinkedHashMultimap;Ljava/util/Iterator;)V
+    .registers 3
+    .parameter
+    .parameter
 
     .prologue
-    .line 1264
-    invoke-direct {p0}, Ljava/util/AbstractMap;-><init>()V
+    .line 292
+    iput-object p1, p0, Lcom/google/common/collect/eq;->c:Lcom/google/common/collect/LinkedHashMultimap;
+
+    iput-object p2, p0, Lcom/google/common/collect/eq;->b:Ljava/util/Iterator;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected abstract a()Ljava/util/Set;
-.end method
-
-.method public entrySet()Ljava/util/Set;
+.method public final hasNext()Z
     .registers 2
 
     .prologue
-    .line 1277
-    iget-object v0, p0, Lcom/google/common/collect/eq;->a:Ljava/util/Set;
+    .line 297
+    iget-object v0, p0, Lcom/google/common/collect/eq;->b:Ljava/util/Iterator;
 
-    .line 1278
-    if-nez v0, :cond_a
-
-    .line 1279
-    invoke-virtual {p0}, Lcom/google/common/collect/eq;->a()Ljava/util/Set;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/common/collect/eq;->a:Ljava/util/Set;
-
-    .line 1281
-    :cond_a
-    return-object v0
-.end method
-
-.method public isEmpty()Z
-    .registers 2
-
-    .prologue
-    .line 1330
-    invoke-virtual {p0}, Lcom/google/common/collect/eq;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public keySet()Ljava/util/Set;
-    .registers 3
+.method public final bridge synthetic next()Ljava/lang/Object;
+    .registers 2
 
     .prologue
-    .line 1287
-    iget-object v0, p0, Lcom/google/common/collect/eq;->b:Ljava/util/Set;
+    .line 292
+    iget-object v0, p0, Lcom/google/common/collect/eq;->b:Ljava/util/Iterator;
 
-    .line 1288
-    if-nez v0, :cond_f
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    .line 1289
-    invoke-super {p0}, Ljava/util/AbstractMap;->keySet()Ljava/util/Set;
+    move-result-object v0
 
-    move-result-object v1
+    check-cast v0, Ljava/util/Map$Entry;
 
-    .line 1290
-    new-instance v0, Lcom/google/common/collect/er;
+    iput-object v0, p0, Lcom/google/common/collect/eq;->a:Ljava/util/Map$Entry;
 
-    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/er;-><init>(Lcom/google/common/collect/eq;Ljava/util/Set;)V
+    iget-object v0, p0, Lcom/google/common/collect/eq;->a:Ljava/util/Map$Entry;
 
-    iput-object v0, p0, Lcom/google/common/collect/eq;->b:Ljava/util/Set;
-
-    .line 1300
-    :cond_f
     return-object v0
 .end method
 
-.method public values()Ljava/util/Collection;
-    .registers 3
+.method public final remove()V
+    .registers 4
 
     .prologue
-    .line 1306
-    iget-object v0, p0, Lcom/google/common/collect/eq;->c:Ljava/util/Collection;
+    .line 309
+    iget-object v0, p0, Lcom/google/common/collect/eq;->b:Ljava/util/Iterator;
 
-    .line 1307
-    if-nez v0, :cond_f
+    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    .line 1308
-    invoke-super {p0}, Ljava/util/AbstractMap;->values()Ljava/util/Collection;
+    .line 310
+    iget-object v0, p0, Lcom/google/common/collect/eq;->c:Lcom/google/common/collect/LinkedHashMultimap;
+
+    iget-object v1, p0, Lcom/google/common/collect/eq;->a:Ljava/util/Map$Entry;
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1309
-    new-instance v0, Lcom/google/common/collect/es;
+    iget-object v2, p0, Lcom/google/common/collect/eq;->a:Ljava/util/Map$Entry;
 
-    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/es;-><init>(Lcom/google/common/collect/eq;Ljava/util/Collection;)V
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    iput-object v0, p0, Lcom/google/common/collect/eq;->c:Ljava/util/Collection;
+    move-result-object v2
 
-    .line 1319
-    :cond_f
-    return-object v0
+    invoke-virtual {v0, v1, v2}, Lcom/google/common/collect/LinkedHashMultimap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 311
+    return-void
 .end method

@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 93
+    .line 85
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$ArrayAdapterWithButtons$2;->this$0:Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$ArrayAdapterWithButtons;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -38,77 +38,25 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 7
+    .registers 4
     .parameter "view"
 
     .prologue
-    const v4, 0x7f10026d
-
-    .line 96
+    .line 88
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Lcom/android/emailcommon/provider/QuickResponse;
+    check-cast v0, Lcom/android/emailcommon/provider/QuickResponse;
 
-    .line 98
-    .local v2, quickResponse:Lcom/android/emailcommon/provider/QuickResponse;
-    invoke-virtual {v2}, Lcom/android/emailcommon/provider/QuickResponse;->getId()J
+    .line 92
+    .local v0, quickResponse:Lcom/android/emailcommon/provider/QuickResponse;
+    new-instance v1, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$ArrayAdapterWithButtons$2$1;
 
-    move-result-wide v0
+    invoke-direct {v1, p0, v0}, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$ArrayAdapterWithButtons$2$1;-><init>(Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$ArrayAdapterWithButtons$2;Lcom/android/emailcommon/provider/QuickResponse;)V
 
-    .line 100
-    .local v0, accountid:J
-    invoke-static {}, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment;->access$200()Ljava/util/HashSet;
+    invoke-static {v1}, Lcom/android/emailcommon/utility/EmailAsyncTask;->runAsyncParallel(Ljava/lang/Runnable;)Lcom/android/emailcommon/utility/EmailAsyncTask;
 
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2b
-
-    .line 101
-    invoke-static {}, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment;->access$200()Ljava/util/HashSet;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
-
-    .line 102
-    invoke-virtual {p1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/widget/ImageView;
-
-    const v4, 0x7f020028
-
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 118
-    :goto_2a
+    .line 99
     return-void
-
-    .line 105
-    :cond_2b
-    invoke-static {}, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment;->access$200()Ljava/util/HashSet;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    .line 106
-    invoke-virtual {p1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/widget/ImageView;
-
-    const v4, 0x7f02002d
-
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    goto :goto_2a
 .end method

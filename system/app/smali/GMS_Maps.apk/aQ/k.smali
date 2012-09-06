@@ -1,105 +1,56 @@
 .class LaQ/k;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/googlenav/actionbar/b;
+.implements LaQ/bE;
 
 
 # instance fields
-.field final synthetic a:LaQ/g;
+.field private a:Landroid/widget/TextView;
 
 
 # direct methods
-.method constructor <init>(LaQ/g;)V
-    .registers 2
+.method private constructor <init>()V
+    .registers 1
 
-    iput-object p1, p0, LaQ/k;->a:LaQ/g;
-
+    .prologue
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public a(Ljava/lang/String;)Lcom/google/googlenav/bb;
-    .registers 7
-
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    new-instance v0, Lcom/google/googlenav/bc;
-
-    invoke-direct {v0}, Lcom/google/googlenav/bc;-><init>()V
-
-    invoke-virtual {v0, p1}, Lcom/google/googlenav/bc;->a(Ljava/lang/String;)Lcom/google/googlenav/bc;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/bc;->a(I)Lcom/google/googlenav/bc;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Lcom/google/googlenav/bc;->b(I)Lcom/google/googlenav/bc;
-
-    move-result-object v0
-
-    const-string v1, "19"
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/bc;->b(Ljava/lang/String;)Lcom/google/googlenav/bc;
-
-    move-result-object v0
-
-    const/16 v1, 0x40a
-
-    invoke-static {v1}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v4, [Ljava/lang/String;
-
-    aput-object p1, v2, v3
-
-    invoke-static {v1, v2}, Las/b;->a(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/bc;->c(Ljava/lang/String;)Lcom/google/googlenav/bc;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Lcom/google/googlenav/bc;->f(Z)Lcom/google/googlenav/bc;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/bc;->a()Lcom/google/googlenav/bb;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public a()Z
+.method synthetic constructor <init>(LaQ/j;)V
     .registers 2
+    .parameter
 
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public b()V
-    .registers 1
+    .prologue
+    .line 18
+    invoke-direct {p0}, LaQ/k;-><init>()V
 
     return-void
 .end method
 
-.method public b(Ljava/lang/String;)Z
-    .registers 3
+.method static synthetic a(LaQ/k;)Landroid/widget/TextView;
+    .registers 2
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    .line 18
+    iget-object v0, p0, LaQ/k;->a:Landroid/widget/TextView;
 
-    return v0
+    return-object v0
+.end method
+
+.method static synthetic a(LaQ/k;Landroid/widget/TextView;)Landroid/widget/TextView;
+    .registers 2
+    .parameter
+    .parameter
+
+    .prologue
+    .line 18
+    iput-object p1, p0, LaQ/k;->a:Landroid/widget/TextView;
+
+    return-object p1
 .end method

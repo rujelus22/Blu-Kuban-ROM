@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="checkableId" format="integer" />
+    <attr name="rowHeight" format="dimension" />
+    <attr name="maxItemsPerRow" format="integer" />
+    <attr name="maxRows" format="integer" />
+    <attr name="trackHeight" format="dimension" />
+    <attr name="clickReceiver" format="reference" />
+    <attr name="passDrawableStateChange" format="reference" />
+    <attr name="pauseImage" format="integer" />
+    <attr name="playImage" format="integer" />
+    <attr name="stopImage" format="integer" />
+    <attr name="maxWidth" format="dimension" />
+    <attr name="makeSquare" format="boolean" />
+    <attr name="stretchToFill" format="boolean" />
+    <attr name="delegate" format="reference" />
+    <attr name="mediaRouteButtonStyleFallback" format="reference" />
+    <attr name="externalRouteEnabledDrawableFallback" format="reference" />
+    <attr name="mediaRouteTypes" format="integer">
+        <enum name="liveAudio" value="1" />
+        <enum name="user" value="8388608" />
+    </attr>
 </resources>

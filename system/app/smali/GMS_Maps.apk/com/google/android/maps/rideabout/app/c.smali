@@ -1,5 +1,6 @@
 .class public final enum Lcom/google/android/maps/rideabout/app/c;
 .super Ljava/lang/Enum;
+.source "SourceFile"
 
 
 # static fields
@@ -28,6 +29,7 @@
 .method static constructor <clinit>()V
     .registers 8
 
+    .prologue
     const/4 v7, 0x4
 
     const/4 v6, 0x3
@@ -38,6 +40,7 @@
 
     const/4 v3, 0x0
 
+    .line 41
     new-instance v0, Lcom/google/android/maps/rideabout/app/c;
 
     const-string v1, "WALK"
@@ -46,6 +49,7 @@
 
     sput-object v0, Lcom/google/android/maps/rideabout/app/c;->a:Lcom/google/android/maps/rideabout/app/c;
 
+    .line 42
     new-instance v0, Lcom/google/android/maps/rideabout/app/c;
 
     const-string v1, "BOARD"
@@ -54,6 +58,7 @@
 
     sput-object v0, Lcom/google/android/maps/rideabout/app/c;->b:Lcom/google/android/maps/rideabout/app/c;
 
+    .line 43
     new-instance v0, Lcom/google/android/maps/rideabout/app/c;
 
     const-string v1, "STAY"
@@ -62,6 +67,7 @@
 
     sput-object v0, Lcom/google/android/maps/rideabout/app/c;->c:Lcom/google/android/maps/rideabout/app/c;
 
+    .line 44
     new-instance v0, Lcom/google/android/maps/rideabout/app/c;
 
     const-string v1, "GET_OFF_AT_NEXT_STATION"
@@ -70,6 +76,7 @@
 
     sput-object v0, Lcom/google/android/maps/rideabout/app/c;->d:Lcom/google/android/maps/rideabout/app/c;
 
+    .line 45
     new-instance v0, Lcom/google/android/maps/rideabout/app/c;
 
     const-string v1, "GET_OFF"
@@ -78,6 +85,7 @@
 
     sput-object v0, Lcom/google/android/maps/rideabout/app/c;->e:Lcom/google/android/maps/rideabout/app/c;
 
+    .line 46
     new-instance v0, Lcom/google/android/maps/rideabout/app/c;
 
     const-string v1, "TRANSFER_TO_LINE_NAME"
@@ -88,6 +96,7 @@
 
     sput-object v0, Lcom/google/android/maps/rideabout/app/c;->f:Lcom/google/android/maps/rideabout/app/c;
 
+    .line 47
     new-instance v0, Lcom/google/android/maps/rideabout/app/c;
 
     const-string v1, "DESTINATION"
@@ -98,6 +107,7 @@
 
     sput-object v0, Lcom/google/android/maps/rideabout/app/c;->g:Lcom/google/android/maps/rideabout/app/c;
 
+    .line 48
     new-instance v0, Lcom/google/android/maps/rideabout/app/c;
 
     const-string v1, "WAITING_FOR_LOCATION"
@@ -108,6 +118,7 @@
 
     sput-object v0, Lcom/google/android/maps/rideabout/app/c;->h:Lcom/google/android/maps/rideabout/app/c;
 
+    .line 49
     new-instance v0, Lcom/google/android/maps/rideabout/app/c;
 
     const-string v1, "RETURN_TO_ROUTE"
@@ -118,6 +129,7 @@
 
     sput-object v0, Lcom/google/android/maps/rideabout/app/c;->i:Lcom/google/android/maps/rideabout/app/c;
 
+    .line 40
     const/16 v0, 0x9
 
     new-array v0, v0, [Lcom/google/android/maps/rideabout/app/c;
@@ -173,7 +185,11 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .registers 3
+    .parameter
+    .parameter
 
+    .prologue
+    .line 40
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -181,7 +197,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/android/maps/rideabout/app/c;
     .registers 2
+    .parameter
 
+    .prologue
+    .line 40
     const-class v0, Lcom/google/android/maps/rideabout/app/c;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -196,6 +215,8 @@
 .method public static values()[Lcom/google/android/maps/rideabout/app/c;
     .registers 1
 
+    .prologue
+    .line 40
     sget-object v0, Lcom/google/android/maps/rideabout/app/c;->j:[Lcom/google/android/maps/rideabout/app/c;
 
     invoke-virtual {v0}, [Lcom/google/android/maps/rideabout/app/c;->clone()Ljava/lang/Object;

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 223
+    .line 215
     iput-object p1, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration$6;->this$0:Lcom/samsung/deviceconfiguration/DeviceConfiguration;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "whichButton"
 
     .prologue
-    .line 226
+    .line 218
     const-string v0, "DeviceConfiguration"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -66,6 +66,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 229
+    .line 221
     return-void
 .end method

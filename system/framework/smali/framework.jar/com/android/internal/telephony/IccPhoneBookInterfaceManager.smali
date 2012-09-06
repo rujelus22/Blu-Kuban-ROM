@@ -6,7 +6,7 @@
 # static fields
 .field protected static final ALLOW_SIM_OP_IN_UI_THREAD:Z = false
 
-.field protected static final DBG:Z = true
+.field protected static final DBG:Z = false
 
 .field protected static final EVENT_GET_RECORD_INFO_DONE:I = 0x5
 

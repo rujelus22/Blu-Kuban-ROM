@@ -1,62 +1,72 @@
-.class public abstract Lcom/google/googlenav/ui/android/ab;
-.super Landroid/widget/BaseAdapter;
+.class public Lcom/google/googlenav/ui/android/ab;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# instance fields
+.field private final a:Lcom/google/googlenav/ui/android/HeaderContainer;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
+.method public constructor <init>(Lcom/google/googlenav/ui/android/HeaderContainer;)V
+    .registers 2
+    .parameter
 
-    invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
+    .prologue
+    .line 21
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 22
+    iput-object p1, p0, Lcom/google/googlenav/ui/android/ab;->a:Lcom/google/googlenav/ui/android/HeaderContainer;
+
+    .line 23
     return-void
 .end method
 
 
 # virtual methods
-.method public a(I)I
-    .registers 8
+.method public a()I
+    .registers 2
 
-    const/4 v5, 0x0
+    .prologue
+    .line 48
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/ab;->a:Lcom/google/googlenav/ui/android/HeaderContainer;
 
-    const/4 v1, 0x0
+    if-nez v0, :cond_6
 
-    move v0, v1
+    .line 49
+    const/4 v0, 0x0
 
-    move v2, v1
-
-    :goto_4
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/android/ab;->getCount()I
-
-    move-result v3
-
-    if-ge v0, v3, :cond_1f
-
-    invoke-virtual {p0, v0, v5, v5}, Lcom/google/googlenav/ui/android/ab;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v3
-
-    const/high16 v4, -0x8000
-
-    invoke-static {p1, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4, v1}, Landroid/view/View;->measure(II)V
-
-    invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_4
-
-    :cond_1f
-    sget v0, Lcom/google/googlenav/ui/android/RealtimeScheduleTransitStationView;->a:I
-
-    add-int/2addr v0, v2
-
+    .line 51
+    :goto_5
     return v0
+
+    :cond_6
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/ab;->a:Lcom/google/googlenav/ui/android/HeaderContainer;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/android/HeaderContainer;->a()I
+
+    move-result v0
+
+    goto :goto_5
+.end method
+
+.method public a(Lcom/google/googlenav/ui/android/aa;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 32
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/ab;->a:Lcom/google/googlenav/ui/android/HeaderContainer;
+
+    if-eqz v0, :cond_9
+
+    .line 33
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/ab;->a:Lcom/google/googlenav/ui/android/HeaderContainer;
+
+    invoke-virtual {v0, p1}, Lcom/google/googlenav/ui/android/HeaderContainer;->a(Lcom/google/googlenav/ui/android/aa;)V
+
+    .line 35
+    :cond_9
+    return-void
 .end method

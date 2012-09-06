@@ -1,5 +1,5 @@
 .class public abstract Lcom/google/common/collect/AbstractIterator;
-.super Lcom/google/common/collect/gf;
+.super Lcom/google/common/collect/mt;
 .source "SourceFile"
 
 
@@ -10,19 +10,19 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method protected constructor <init>()V
     .registers 2
 
     .prologue
-    .line 61
-    invoke-direct {p0}, Lcom/google/common/collect/gf;-><init>()V
+    .line 68
+    invoke-direct {p0}, Lcom/google/common/collect/mt;-><init>()V
 
-    .line 62
+    .line 65
     sget-object v0, Lcom/google/common/collect/AbstractIterator$State;->NOT_READY:Lcom/google/common/collect/AbstractIterator$State;
 
     iput-object v0, p0, Lcom/google/common/collect/AbstractIterator;->a:Lcom/google/common/collect/AbstractIterator$State;
 
-    .line 64
+    .line 68
     return-void
 .end method
 
@@ -35,12 +35,12 @@
     .registers 2
 
     .prologue
-    .line 118
+    .line 124
     sget-object v0, Lcom/google/common/collect/AbstractIterator$State;->DONE:Lcom/google/common/collect/AbstractIterator$State;
 
     iput-object v0, p0, Lcom/google/common/collect/AbstractIterator;->a:Lcom/google/common/collect/AbstractIterator$State;
 
-    .line 119
+    .line 125
     const/4 v0, 0x0
 
     return-object v0
@@ -54,7 +54,7 @@
 
     const/4 v2, 0x0
 
-    .line 123
+    .line 130
     iget-object v0, p0, Lcom/google/common/collect/AbstractIterator;->a:Lcom/google/common/collect/AbstractIterator$State;
 
     sget-object v3, Lcom/google/common/collect/AbstractIterator$State;->FAILED:Lcom/google/common/collect/AbstractIterator$State;
@@ -64,10 +64,10 @@
     move v0, v1
 
     :goto_9
-    invoke-static {v0}, Lcom/google/common/base/t;->b(Z)V
+    invoke-static {v0}, Lcom/google/common/base/ag;->b(Z)V
 
-    .line 124
-    sget-object v0, Lcom/google/common/collect/i;->a:[I
+    .line 131
+    sget-object v0, Lcom/google/common/collect/j;->a:[I
 
     iget-object v3, p0, Lcom/google/common/collect/AbstractIterator;->a:Lcom/google/common/collect/AbstractIterator$State;
 
@@ -79,7 +79,7 @@
 
     packed-switch v0, :pswitch_data_34
 
-    .line 131
+    .line 138
     sget-object v0, Lcom/google/common/collect/AbstractIterator$State;->FAILED:Lcom/google/common/collect/AbstractIterator$State;
 
     iput-object v0, p0, Lcom/google/common/collect/AbstractIterator;->a:Lcom/google/common/collect/AbstractIterator$State;
@@ -110,16 +110,16 @@
     :cond_2f
     move v0, v2
 
-    .line 123
+    .line 130
     goto :goto_9
 
     :pswitch_31
     move v2, v1
 
-    .line 128
+    .line 135
     goto :goto_2e
 
-    .line 124
+    .line 131
     nop
 
     :pswitch_data_34
@@ -133,27 +133,27 @@
     .registers 2
 
     .prologue
-    .line 145
+    .line 153
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractIterator;->hasNext()Z
 
     move-result v0
 
     if-nez v0, :cond_c
 
-    .line 146
+    .line 154
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
     throw v0
 
-    .line 148
+    .line 156
     :cond_c
     sget-object v0, Lcom/google/common/collect/AbstractIterator$State;->NOT_READY:Lcom/google/common/collect/AbstractIterator$State;
 
     iput-object v0, p0, Lcom/google/common/collect/AbstractIterator;->a:Lcom/google/common/collect/AbstractIterator$State;
 
-    .line 149
+    .line 157
     iget-object v0, p0, Lcom/google/common/collect/AbstractIterator;->b:Ljava/lang/Object;
 
     return-object v0

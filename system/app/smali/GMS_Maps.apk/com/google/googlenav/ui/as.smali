@@ -1,49 +1,20 @@
-.class public abstract Lcom/google/googlenav/ui/as;
+.class public interface abstract Lcom/google/googlenav/ui/aS;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/googlenav/ui/aP;
-
-
-# direct methods
-.method public constructor <init>()V
-    .registers 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.source "SourceFile"
 
 
 # virtual methods
-.method public a(LaJ/Y;)I
-    .registers 3
-
-    const/4 v0, 0x2
-
-    return v0
+.method public abstract a()V
 .end method
 
-.method public a()Lt/y;
-    .registers 2
-
-    const/4 v0, 0x0
-
-    return-object v0
+.method public abstract a(III)V
 .end method
 
-.method public h()Z
-    .registers 2
-
-    const/4 v0, 0x1
-
-    return v0
+.method public abstract a(IIIIIII)V
 .end method
 
-.method public l()Z
-    .registers 2
+.method public abstract a([I[IZ)V
+.end method
 
-    const/4 v0, 0x1
-
-    return v0
+.method public abstract a([[JIII)V
 .end method

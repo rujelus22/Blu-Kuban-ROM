@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="move_messages">
+        <item quantity="other">संदेशों को स्‍थानांतरित करें</item>
+        <item quantity="one">संदेश स्‍थानांतरित करें</item>
+    </plurals>
+    <plurals name="notification_new_one_account_fmt">
+        <item quantity="other">%1$d बिना पढ़े (%2$s)</item>
+        <item quantity="one">%1$d बिना पढ़े (%2$s)</item>
+        <item quantity="few">%1$d बिना पढ़े (%2$s)</item>
+    </plurals>
+    <plurals name="notification_new_multi_account_fmt">
+        <item quantity="other">%d खातों में</item>
+        <item quantity="few">%d खातों में</item>
+    </plurals>
+    <plurals name="number_of_accounts">
+        <item quantity="other">%1$d खाते</item>
+        <item quantity="one">%1$d खाता</item>
+    </plurals>
+    <plurals name="picker_combined_view_account_count">
+        <item quantity="other">%d खाते</item>
+        <item quantity="one">%d खाता</item>
+    </plurals>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="other">%d चयनित</item>
+        <item quantity="one">%d चयनित</item>
+    </plurals>
+    <plurals name="message_view_show_attachments_action">
+        <item quantity="other">%1$d अनुलग्नक</item>
+        <item quantity="one">अनुलग्नक %1$d</item>
+    </plurals>
+    <plurals name="message_delete_confirm">
+        <item quantity="other">इन संदेशों को हटाएं?</item>
+        <item quantity="one">इस संदेश को हटाएं?</item>
+    </plurals>
+    <plurals name="message_deleted_toast">
+        <item quantity="other">संदेश हटाए गए.</item>
+        <item quantity="one">संदेश हटाया गया.</item>
+    </plurals>
+    <plurals name="message_moved_toast">
+        <item quantity="other">%1$d संदेश %2$s में ले जाए गए</item>
+        <item quantity="one">%1$d संदेश %2$s में ले जाया गया</item>
+    </plurals>
+    <plurals name="message_view_attachment_bytes">
+        <item quantity="other">%dB</item>
+        <item quantity="one">%dB</item>
+    </plurals>
+    <plurals name="message_view_attachment_kilobytes">
+        <item quantity="other">%dKB</item>
+        <item quantity="one">%dKB</item>
+    </plurals>
+    <plurals name="message_view_attachment_megabytes">
+        <item quantity="other">%dMB</item>
+        <item quantity="one">%dMB</item>
+    </plurals>
+    <plurals name="message_view_attachment_gigabytes">
+        <item quantity="other">%dGB</item>
+        <item quantity="one">%dGB</item>
+    </plurals>
+    <plurals name="gal_completed_fmt">
+        <item quantity="other">%2$s से %1$d परिणाम</item>
+        <item quantity="one">" %2$s से %1$d परिणाम"</item>
+    </plurals>
+</resources>

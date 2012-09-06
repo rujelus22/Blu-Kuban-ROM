@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/frameLayout1" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/loading_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ProgressBar android:id="@id/progressBar1" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/progressBarStyleLarge" />
+        <TextView android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/loading" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/loading_failed_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:id="@id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_data" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/textView3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_compatible_interfaces_detected" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:gravity="center" android:id="@id/textView4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/medium_text" />
+    </LinearLayout>
+    <android.support.v4.view.ViewPager android:id="@id/pager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <LinearLayout android:layout_gravity="bottom" android:id="@id/uv_apply_reset_layout" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+        <Button android:layout_gravity="bottom" android:id="@id/uv_apply_button" android:layout_width="240.0dip" android:layout_height="wrap_content" android:text="@string/apply_changes" android:layout_weight="0.5" />
+        <Button android:layout_gravity="bottom" android:id="@id/uv_discard_button" android:layout_width="240.0dip" android:layout_height="wrap_content" android:text="@string/discard_changes" android:layout_weight="0.5" />
+    </LinearLayout>
+</FrameLayout>

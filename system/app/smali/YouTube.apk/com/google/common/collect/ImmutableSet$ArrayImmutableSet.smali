@@ -13,13 +13,13 @@
     .parameter
 
     .prologue
-    .line 296
+    .line 381
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableSet;-><init>()V
 
-    .line 297
+    .line 382
     iput-object p1, p0, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;->elements:[Ljava/lang/Object;
 
-    .line 298
+    .line 383
     return-void
 .end method
 
@@ -34,28 +34,28 @@
 
     const/4 v1, 0x0
 
-    .line 335
+    .line 421
     if-ne p1, p0, :cond_5
 
-    .line 349
+    .line 435
     :cond_4
     :goto_4
     return v0
 
-    .line 338
+    .line 424
     :cond_5
     instance-of v2, p1, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;
 
     if-nez v2, :cond_e
 
-    .line 339
+    .line 425
     invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableSet;->containsAll(Ljava/util/Collection;)Z
 
     move-result v0
 
     goto :goto_4
 
-    .line 341
+    .line 427
     :cond_e
     invoke-interface {p1}, Ljava/util/Collection;->size()I
 
@@ -69,10 +69,10 @@
 
     move v0, v1
 
-    .line 342
+    .line 428
     goto :goto_4
 
-    .line 344
+    .line 430
     :cond_1a
     check-cast p1, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;
 
@@ -87,7 +87,7 @@
 
     aget-object v5, v3, v2
 
-    .line 345
+    .line 431
     invoke-virtual {p0, v5}, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;->contains(Ljava/lang/Object;)Z
 
     move-result v5
@@ -96,10 +96,10 @@
 
     move v0, v1
 
-    .line 346
+    .line 432
     goto :goto_4
 
-    .line 344
+    .line 430
     :cond_2c
     add-int/lit8 v2, v2, 0x1
 
@@ -110,7 +110,7 @@
     .registers 3
 
     .prologue
-    .line 353
+    .line 443
     new-instance v0, Lcom/google/common/collect/ImmutableAsList;
 
     iget-object v1, p0, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;->elements:[Ljava/lang/Object;
@@ -124,20 +124,30 @@
     .registers 2
 
     .prologue
-    .line 305
+    .line 391
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public iterator()Lcom/google/common/collect/gf;
+.method isPartialView()Z
     .registers 2
 
     .prologue
-    .line 314
+    .line 439
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public iterator()Lcom/google/common/collect/mt;
+    .registers 2
+
+    .prologue
+    .line 400
     iget-object v0, p0, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;->elements:[Ljava/lang/Object;
 
-    invoke-static {v0}, Lcom/google/common/collect/cr;->a([Ljava/lang/Object;)Lcom/google/common/collect/gf;
+    invoke-static {v0}, Lcom/google/common/collect/ee;->a([Ljava/lang/Object;)Lcom/google/common/collect/mt;
 
     move-result-object v0
 
@@ -148,8 +158,8 @@
     .registers 2
 
     .prologue
-    .line 292
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;->iterator()Lcom/google/common/collect/gf;
+    .line 377
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;->iterator()Lcom/google/common/collect/mt;
 
     move-result-object v0
 
@@ -160,7 +170,7 @@
     .registers 2
 
     .prologue
-    .line 301
+    .line 387
     iget-object v0, p0, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;->elements:[Ljava/lang/Object;
 
     array-length v0, v0
@@ -174,23 +184,23 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 318
+    .line 404
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;->size()I
 
     move-result v0
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 319
+    .line 405
     iget-object v1, p0, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;->elements:[Ljava/lang/Object;
 
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;->size()I
 
     move-result v2
 
-    invoke-static {v1, v3, v0, v3, v2}, Lcom/google/common/collect/fu;->a([Ljava/lang/Object;I[Ljava/lang/Object;II)V
+    invoke-static {v1, v3, v0, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 320
+    .line 406
     return-object v0
 .end method
 
@@ -201,38 +211,38 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 324
+    .line 410
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;->size()I
 
     move-result v0
 
-    .line 325
+    .line 411
     array-length v1, p1
 
     if-ge v1, v0, :cond_12
 
-    .line 326
-    invoke-static {p1, v0}, Lcom/google/common/collect/fq;->a([Ljava/lang/Object;I)[Ljava/lang/Object;
+    .line 412
+    invoke-static {p1, v0}, Lcom/google/common/collect/jd;->a([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 330
+    .line 416
     :cond_c
     :goto_c
     iget-object v1, p0, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;->elements:[Ljava/lang/Object;
 
-    invoke-static {v1, v2, p1, v2, v0}, Lcom/google/common/collect/fu;->a([Ljava/lang/Object;I[Ljava/lang/Object;II)V
+    invoke-static {v1, v2, p1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 331
+    .line 417
     return-object p1
 
-    .line 327
+    .line 413
     :cond_12
     array-length v1, p1
 
     if-le v1, v0, :cond_c
 
-    .line 328
+    .line 414
     const/4 v1, 0x0
 
     aput-object v1, p1, v0

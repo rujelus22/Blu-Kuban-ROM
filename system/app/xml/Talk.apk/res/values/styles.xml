@@ -6,7 +6,7 @@
     </style>
     <style name="InCallTouchButton">
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
-        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:textColor">#ffffffff</item>
         <item name="android:ellipsize">marquee</item>
         <item name="android:gravity">center</item>
         <item name="android:background">@drawable/incall_button</item>
@@ -18,7 +18,7 @@
     </style>
     <style name="InCallTouchToggleButton">
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
-        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:textColor">#ffffffff</item>
         <item name="android:ellipsize">marquee</item>
         <item name="android:gravity">center</item>
         <item name="android:background">@drawable/incall_toggle_button</item>
@@ -28,10 +28,10 @@
         <item name="android:layout_marginBottom">8.0dip</item>
         <item name="android:singleLine">true</item>
     </style>
-    <style name="TallTitle" parent="@android:style/Theme.Light">
+    <style name="TallTitle" parent="@android:style/Theme.Black">
         <item name="android:windowTitleSize">60.0dip</item>
     </style>
-    <style name="HuskyTitle" parent="@android:style/Theme.Light">
+    <style name="HuskyTitle" parent="@android:style/Theme.Black">
         <item name="android:windowTitleSize">36.0dip</item>
     </style>
     <style name="VideoChatActionBar" parent="@android:style/Widget.Holo.ActionBar">
@@ -41,7 +41,7 @@
     <style name="NoFadeButton" parent="@android:style/Widget.Holo.ActionButton">
         <item name="android:background">@drawable/no_fade_button_bg</item>
     </style>
-    <style name="AddBuddyCustomActionButton" parent="@android:style/Widget.Holo.Light.ActionButton">
+    <style name="AddBuddyCustomActionButton" parent="@android:style/Widget.Holo.ActionButton">
         <item name="android:orientation">horizontal</item>
         <item name="android:focusable">true</item>
         <item name="android:layout_width">0.0dip</item>
@@ -55,7 +55,7 @@
     </style>
     <style name="AddBuddyCustomActionButtonText">
         <item name="android:textAppearance">?android:actionMenuTextAppearance</item>
-        <item name="android:textColor">?android:actionMenuTextColor</item>
+        <item name="android:textColor">#ffffffff</item>
         <item name="android:ellipsize">none</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:padding">4.0dip</item>
@@ -87,7 +87,7 @@
         <item name="android:actionBarStyle">@style/VideoChatActionBar</item>
         <item name="android:actionBarItemBackground">@drawable/no_fade_button_bg</item>
     </style>
-    <style name="Theme.Holo.Light.Wallpaper.NoTitleBar" parent="@android:style/Theme.Holo.Light">
+    <style name="Theme.Holo.Light.Wallpaper.NoTitleBar" parent="@android:style/Theme.Holo.Wallpaper.NoTitleBar">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowShowWallpaper">true</item>

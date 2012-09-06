@@ -1,203 +1,356 @@
-.class public Lcom/google/googlenav/bZ;
-.super Lat/a;
+.class Lcom/google/googlenav/bz;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field private final a:Lam/b;
+.field a:Lcom/google/googlenav/by;
 
-.field private final b:Lcom/google/googlenav/ca;
+.field private b:Z
+
+.field private c:Ljava/lang/Thread;
+
+.field private d:I
+
+.field private e:I
+
+.field private final f:Lax/r;
 
 
 # direct methods
-.method public constructor <init>(Lam/b;Lcom/google/googlenav/ca;)V
-    .registers 3
-
-    invoke-direct {p0}, Lat/a;-><init>()V
-
-    iput-object p1, p0, Lcom/google/googlenav/bZ;->a:Lam/b;
-
-    iput-object p2, p0, Lcom/google/googlenav/bZ;->b:Lcom/google/googlenav/ca;
-
-    return-void
-.end method
-
-.method private static a(ILam/b;Lam/b;)V
+.method constructor <init>(Lax/r;)V
     .registers 4
+    .parameter
 
-    invoke-virtual {p1, p0}, Lam/b;->j(I)Z
+    .prologue
+    const/4 v1, 0x0
 
-    move-result v0
+    .line 379
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz v0, :cond_d
+    .line 380
+    iput-object p1, p0, Lcom/google/googlenav/bz;->f:Lax/r;
 
-    invoke-virtual {p1, p0}, Lam/b;->b(I)Z
+    .line 381
+    iput-boolean v1, p0, Lcom/google/googlenav/bz;->b:Z
 
-    move-result v0
-
-    invoke-virtual {p2, p0, v0}, Lam/b;->b(IZ)V
-
-    :cond_d
-    return-void
-.end method
-
-
-# virtual methods
-.method public a()I
-    .registers 2
-
-    const/16 v0, 0x5e
-
-    return v0
-.end method
-
-.method public a(Ljava/io/DataOutput;)V
-    .registers 9
-
-    const/4 v6, 0x3
-
-    const/4 v5, 0x2
-
-    const/4 v4, 0x1
-
-    new-instance v0, Lam/b;
-
-    sget-object v1, LbD/bx;->Y:Lam/e;
-
-    invoke-direct {v0, v1}, Lam/b;-><init>(Lam/e;)V
-
-    iget-object v1, p0, Lcom/google/googlenav/bZ;->a:Lam/b;
-
-    if-eqz v1, :cond_3a
-
-    new-instance v1, Lam/b;
-
-    sget-object v2, LbF/G;->y:Lam/e;
-
-    invoke-direct {v1, v2}, Lam/b;-><init>(Lam/e;)V
-
-    iget-object v2, p0, Lcom/google/googlenav/bZ;->a:Lam/b;
-
-    invoke-static {v5, v2, v1}, Lcom/google/googlenav/bZ;->a(ILam/b;Lam/b;)V
-
-    iget-object v2, p0, Lcom/google/googlenav/bZ;->a:Lam/b;
-
-    invoke-static {v4, v2, v1}, Lcom/google/googlenav/bZ;->a(ILam/b;Lam/b;)V
-
-    iget-object v2, p0, Lcom/google/googlenav/bZ;->a:Lam/b;
-
-    invoke-static {v6, v2, v1}, Lcom/google/googlenav/bZ;->a(ILam/b;Lam/b;)V
-
-    iget-object v2, p0, Lcom/google/googlenav/bZ;->b:Lcom/google/googlenav/ca;
-
-    if-eqz v2, :cond_37
-
-    iget-object v2, p0, Lcom/google/googlenav/bZ;->b:Lcom/google/googlenav/ca;
-
-    iget-object v2, v2, Lcom/google/googlenav/ca;->e:Lam/b;
-
-    if-eqz v2, :cond_37
-
-    const/16 v2, 0x9
-
-    iget-object v3, p0, Lcom/google/googlenav/bZ;->b:Lcom/google/googlenav/ca;
-
-    iget-object v3, v3, Lcom/google/googlenav/ca;->e:Lam/b;
-
-    invoke-virtual {v1, v2, v3}, Lam/b;->b(ILam/b;)V
-
-    :cond_37
-    invoke-virtual {v0, v4, v1}, Lam/b;->b(ILam/b;)V
-
-    :cond_3a
-    iget-object v1, p0, Lcom/google/googlenav/bZ;->b:Lcom/google/googlenav/ca;
-
-    if-eqz v1, :cond_74
-
-    iget-object v1, p0, Lcom/google/googlenav/bZ;->b:Lcom/google/googlenav/ca;
-
-    iget-object v1, v1, Lcom/google/googlenav/ca;->a:Lam/b;
-
-    if-eqz v1, :cond_4b
-
-    iget-object v1, p0, Lcom/google/googlenav/bZ;->b:Lcom/google/googlenav/ca;
-
-    iget-object v1, v1, Lcom/google/googlenav/ca;->a:Lam/b;
-
-    invoke-virtual {v0, v5, v1}, Lam/b;->a(ILam/b;)V
-
-    :cond_4b
-    iget-object v1, p0, Lcom/google/googlenav/bZ;->b:Lcom/google/googlenav/ca;
-
-    iget-object v1, v1, Lcom/google/googlenav/ca;->b:Lam/b;
-
-    if-eqz v1, :cond_58
-
-    iget-object v1, p0, Lcom/google/googlenav/bZ;->b:Lcom/google/googlenav/ca;
-
-    iget-object v1, v1, Lcom/google/googlenav/ca;->b:Lam/b;
-
-    invoke-virtual {v0, v6, v1}, Lam/b;->a(ILam/b;)V
-
-    :cond_58
-    iget-object v1, p0, Lcom/google/googlenav/bZ;->b:Lcom/google/googlenav/ca;
-
-    iget-object v1, v1, Lcom/google/googlenav/ca;->c:Lam/b;
-
-    if-eqz v1, :cond_66
-
-    const/4 v1, 0x4
-
-    iget-object v2, p0, Lcom/google/googlenav/bZ;->b:Lcom/google/googlenav/ca;
-
-    iget-object v2, v2, Lcom/google/googlenav/ca;->c:Lam/b;
-
-    invoke-virtual {v0, v1, v2}, Lam/b;->a(ILam/b;)V
-
-    :cond_66
-    iget-object v1, p0, Lcom/google/googlenav/bZ;->b:Lcom/google/googlenav/ca;
-
-    iget-object v1, v1, Lcom/google/googlenav/ca;->d:Lam/b;
-
-    if-eqz v1, :cond_74
-
-    const/4 v1, 0x5
-
-    iget-object v2, p0, Lcom/google/googlenav/bZ;->b:Lcom/google/googlenav/ca;
-
-    iget-object v2, v2, Lcom/google/googlenav/ca;->d:Lam/b;
-
-    invoke-virtual {v0, v1, v2}, Lam/b;->a(ILam/b;)V
-
-    :cond_74
-    check-cast p1, Ljava/io/OutputStream;
-
-    invoke-virtual {v0, p1}, Lam/b;->a(Ljava/io/OutputStream;)V
-
-    return-void
-.end method
-
-.method public a(Ljava/io/DataInput;)Z
-    .registers 4
-
-    const/4 v0, 0x1
-
-    sget-object v1, LbD/bx;->Z:Lam/e;
-
-    invoke-static {v1, p1}, Lam/g;->a(Lam/e;Ljava/io/DataInput;)Lam/b;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lam/b;->d(I)I
-
-    move-result v1
-
-    if-nez v1, :cond_e
-
-    :goto_d
-    return v0
-
-    :cond_e
+    .line 382
     const/4 v0, 0x0
 
-    goto :goto_d
+    iput-object v0, p0, Lcom/google/googlenav/bz;->c:Ljava/lang/Thread;
+
+    .line 383
+    iput v1, p0, Lcom/google/googlenav/bz;->d:I
+
+    .line 384
+    iput v1, p0, Lcom/google/googlenav/bz;->e:I
+
+    .line 385
+    new-instance v0, Lcom/google/googlenav/by;
+
+    invoke-direct {v0}, Lcom/google/googlenav/by;-><init>()V
+
+    iput-object v0, p0, Lcom/google/googlenav/bz;->a:Lcom/google/googlenav/by;
+
+    .line 386
+    return-void
+.end method
+
+.method static synthetic a(Lcom/google/googlenav/bz;)I
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 343
+    invoke-direct {p0}, Lcom/google/googlenav/bz;->b()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method private declared-synchronized a()Lcom/google/googlenav/by;
+    .registers 2
+
+    .prologue
+    .line 389
+    monitor-enter p0
+
+    :try_start_1
+    iget-object v0, p0, Lcom/google/googlenav/bz;->a:Lcom/google/googlenav/by;
+    :try_end_3
+    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_5
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method private a(I)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 470
+    :goto_0
+    :try_start_0
+    monitor-enter p0
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_1} :catch_10
+
+    .line 471
+    :try_start_1
+    iget v0, p0, Lcom/google/googlenav/bz;->e:I
+
+    if-lt v0, p1, :cond_7
+
+    .line 472
+    monitor-exit p0
+
+    .line 484
+    :cond_6
+    :goto_6
+    return-void
+
+    .line 474
+    :cond_7
+    iget-object v0, p0, Lcom/google/googlenav/bz;->c:Ljava/lang/Thread;
+
+    .line 475
+    monitor-exit p0
+    :try_end_a
+    .catchall {:try_start_1 .. :try_end_a} :catchall_12
+
+    .line 476
+    if-eqz v0, :cond_6
+
+    .line 479
+    :try_start_c
+    invoke-virtual {v0}, Ljava/lang/Thread;->join()V
+    :try_end_f
+    .catch Ljava/lang/InterruptedException; {:try_start_c .. :try_end_f} :catch_10
+
+    goto :goto_0
+
+    .line 481
+    :catch_10
+    move-exception v0
+
+    goto :goto_6
+
+    .line 475
+    :catchall_12
+    move-exception v0
+
+    :try_start_13
+    monitor-exit p0
+    :try_end_14
+    .catchall {:try_start_13 .. :try_end_14} :catchall_12
+
+    :try_start_14
+    throw v0
+    :try_end_15
+    .catch Ljava/lang/InterruptedException; {:try_start_14 .. :try_end_15} :catch_10
+.end method
+
+.method private declared-synchronized a(ILcom/google/googlenav/by;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 416
+    monitor-enter p0
+
+    :try_start_1
+    iput-object p2, p0, Lcom/google/googlenav/bz;->a:Lcom/google/googlenav/by;
+
+    .line 417
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/googlenav/bz;->c:Ljava/lang/Thread;
+
+    .line 418
+    iget v0, p0, Lcom/google/googlenav/bz;->e:I
+
+    invoke-static {p1, v0}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/googlenav/bz;->e:I
+
+    .line 419
+    iget-boolean v0, p0, Lcom/google/googlenav/bz;->b:Z
+
+    if-eqz v0, :cond_15
+
+    .line 420
+    invoke-direct {p0}, Lcom/google/googlenav/bz;->c()V
+    :try_end_15
+    .catchall {:try_start_1 .. :try_end_15} :catchall_17
+
+    .line 422
+    :cond_15
+    monitor-exit p0
+
+    return-void
+
+    .line 416
+    :catchall_17
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method static synthetic a(Lcom/google/googlenav/bz;I)V
+    .registers 2
+    .parameter
+    .parameter
+
+    .prologue
+    .line 343
+    invoke-direct {p0, p1}, Lcom/google/googlenav/bz;->a(I)V
+
+    return-void
+.end method
+
+.method static synthetic a(Lcom/google/googlenav/bz;ILcom/google/googlenav/by;)V
+    .registers 3
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 343
+    invoke-direct {p0, p1, p2}, Lcom/google/googlenav/bz;->a(ILcom/google/googlenav/by;)V
+
+    return-void
+.end method
+
+.method private declared-synchronized b()I
+    .registers 2
+
+    .prologue
+    .line 397
+    monitor-enter p0
+
+    :try_start_1
+    iget-boolean v0, p0, Lcom/google/googlenav/bz;->b:Z
+
+    if-nez v0, :cond_e
+
+    .line 398
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/googlenav/bz;->b:Z
+
+    .line 399
+    iget v0, p0, Lcom/google/googlenav/bz;->d:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lcom/google/googlenav/bz;->d:I
+
+    .line 401
+    :cond_e
+    iget-object v0, p0, Lcom/google/googlenav/bz;->c:Ljava/lang/Thread;
+
+    if-nez v0, :cond_15
+
+    .line 402
+    invoke-direct {p0}, Lcom/google/googlenav/bz;->c()V
+
+    .line 404
+    :cond_15
+    iget v0, p0, Lcom/google/googlenav/bz;->d:I
+    :try_end_17
+    .catchall {:try_start_1 .. :try_end_17} :catchall_19
+
+    monitor-exit p0
+
+    return v0
+
+    .line 397
+    :catchall_19
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method static synthetic b(Lcom/google/googlenav/bz;)Lcom/google/googlenav/by;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 343
+    invoke-direct {p0}, Lcom/google/googlenav/bz;->a()Lcom/google/googlenav/by;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static synthetic c(Lcom/google/googlenav/bz;)Lax/r;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 343
+    iget-object v0, p0, Lcom/google/googlenav/bz;->f:Lax/r;
+
+    return-object v0
+.end method
+
+.method private declared-synchronized c()V
+    .registers 3
+
+    .prologue
+    .line 428
+    monitor-enter p0
+
+    const/4 v0, 0x0
+
+    :try_start_2
+    iput-boolean v0, p0, Lcom/google/googlenav/bz;->b:Z
+
+    .line 430
+    iget v0, p0, Lcom/google/googlenav/bz;->d:I
+
+    .line 433
+    new-instance v1, Lcom/google/googlenav/bA;
+
+    invoke-direct {v1, p0, v0}, Lcom/google/googlenav/bA;-><init>(Lcom/google/googlenav/bz;I)V
+
+    iput-object v1, p0, Lcom/google/googlenav/bz;->c:Ljava/lang/Thread;
+
+    .line 459
+    iget-object v0, p0, Lcom/google/googlenav/bz;->c:Ljava/lang/Thread;
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+    :try_end_12
+    .catchall {:try_start_2 .. :try_end_12} :catchall_14
+
+    .line 460
+    monitor-exit p0
+
+    return-void
+
+    .line 428
+    :catchall_14
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

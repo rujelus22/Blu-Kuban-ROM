@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final LONG_PRESS_TIME:I = 0xc8
 
@@ -37,41 +37,41 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 30
+    .line 29
     invoke-direct {p0, p1}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;)V
 
-    .line 23
+    .line 22
     iput v2, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->lastPos:I
 
-    .line 24
+    .line 23
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->lastAction:I
 
-    .line 25
+    .line 24
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->seekType:I
 
-    .line 26
+    .line 25
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->lastTime:J
 
-    .line 27
+    .line 26
     iput v2, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->variableSensitivity:I
 
-    .line 56
+    .line 55
     new-instance v0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow$1;
 
     invoke-direct {v0, p0}, Lcom/sec/android/app/videoplayer/view/MainVideoWindow$1;-><init>(Lcom/sec/android/app/videoplayer/view/MainVideoWindow;)V
 
     iput-object v0, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->mTouchListener:Landroid/view/View$OnTouchListener;
 
-    .line 31
+    .line 30
     invoke-direct {p0}, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->initView()V
 
-    .line 32
+    .line 31
     return-void
 .end method
 
@@ -81,15 +81,15 @@
     .parameter "attrs"
 
     .prologue
-    .line 35
+    .line 34
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 36
+    .line 35
     invoke-direct {p0}, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->initView()V
 
-    .line 37
+    .line 36
     return-void
 .end method
 
@@ -102,41 +102,41 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 40
+    .line 39
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 23
+    .line 22
     iput v2, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->lastPos:I
 
-    .line 24
+    .line 23
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->lastAction:I
 
-    .line 25
+    .line 24
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->seekType:I
 
-    .line 26
+    .line 25
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->lastTime:J
 
-    .line 27
+    .line 26
     iput v2, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->variableSensitivity:I
 
-    .line 56
+    .line 55
     new-instance v0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow$1;
 
     invoke-direct {v0, p0}, Lcom/sec/android/app/videoplayer/view/MainVideoWindow$1;-><init>(Lcom/sec/android/app/videoplayer/view/MainVideoWindow;)V
 
     iput-object v0, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->mTouchListener:Landroid/view/View$OnTouchListener;
 
-    .line 41
+    .line 40
     invoke-direct {p0}, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->initView()V
 
-    .line 42
+    .line 41
     return-void
 .end method
 
@@ -145,7 +145,7 @@
     .parameter "x0"
 
     .prologue
-    .line 15
+    .line 14
     iget v0, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->lastAction:I
 
     return v0
@@ -157,7 +157,7 @@
     .parameter "x1"
 
     .prologue
-    .line 15
+    .line 14
     iput p1, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->lastAction:I
 
     return p1
@@ -168,7 +168,7 @@
     .parameter "x0"
 
     .prologue
-    .line 15
+    .line 14
     iget v0, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->lastPos:I
 
     return v0
@@ -180,7 +180,7 @@
     .parameter "x1"
 
     .prologue
-    .line 15
+    .line 14
     iput p1, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->lastPos:I
 
     return p1
@@ -191,7 +191,7 @@
     .parameter "x0"
 
     .prologue
-    .line 15
+    .line 14
     iget v0, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->seekType:I
 
     return v0
@@ -203,7 +203,7 @@
     .parameter "x1"
 
     .prologue
-    .line 15
+    .line 14
     iput p1, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->seekType:I
 
     return p1
@@ -214,7 +214,7 @@
     .parameter "x0"
 
     .prologue
-    .line 15
+    .line 14
     iget v0, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->variableSensitivity:I
 
     return v0
@@ -226,7 +226,7 @@
     .parameter "x1"
 
     .prologue
-    .line 15
+    .line 14
     iput p1, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->variableSensitivity:I
 
     return p1
@@ -237,7 +237,7 @@
     .parameter "x0"
 
     .prologue
-    .line 15
+    .line 14
     iget-wide v0, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->lastTime:J
 
     return-wide v0
@@ -249,7 +249,7 @@
     .parameter "x1"
 
     .prologue
-    .line 15
+    .line 14
     iput-wide p1, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->lastTime:J
 
     return-wide p1
@@ -259,12 +259,12 @@
     .registers 2
 
     .prologue
-    .line 45
+    .line 44
     iget-object v0, p0, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->mTouchListener:Landroid/view/View$OnTouchListener;
 
     invoke-virtual {p0, v0}, Lcom/sec/android/app/videoplayer/view/MainVideoWindow;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 46
+    .line 45
     return-void
 .end method
 
@@ -275,7 +275,7 @@
     .parameter "ev"
 
     .prologue
-    .line 53
+    .line 52
     invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -292,9 +292,9 @@
     .parameter "bottom"
 
     .prologue
-    .line 49
+    .line 48
     invoke-super/range {p0 .. p5}, Landroid/widget/RelativeLayout;->onLayout(ZIIII)V
 
-    .line 50
+    .line 49
     return-void
 .end method

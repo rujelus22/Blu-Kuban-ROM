@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:background="@drawable/margin_fill" android:layout_width="fill_parent" android:layout_height="fill_parent" android:baselineAligned="false" android:weightSum="3.0"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ListView android:id="@id/my_downloads_list" android:background="@color/main_background" android:layout_width="0.0dip" android:layout_height="fill_parent" android:divider="@null" android:choiceMode="singleChoice" android:layout_weight="1.0" />
-    <com.google.android.finsky.layout.AssetView android:id="@id/my_downloads_details" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="2.0" />
-</LinearLayout>

@@ -29,6 +29,12 @@
         <item>Kapag tahimik lang</item>
         <item>Hindi kailanman</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>naka-off</item>
+        <item>mababa</item>
+        <item>katamtaman</item>
+        <item>virtual</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Wala</item>
         <item>Pag-stabilize ng larawan: Mababa</item>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/widget" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/widget_margin_left" android:layout_marginTop="@dimen/widget_margin_top" android:layout_marginRight="@dimen/widget_margin_right" android:layout_marginBottom="@dimen/widget_margin_bottom"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <StackView android:gravity="center" android:id="@id/stack_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:loopViews="true" />
-    <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/solid_white" android:gravity="center" android:id="@id/empty_view" android:background="#77000000" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/widget_photos_waiting_to_sync" />
-</FrameLayout>

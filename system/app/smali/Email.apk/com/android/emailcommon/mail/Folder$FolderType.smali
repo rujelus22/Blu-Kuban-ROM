@@ -40,7 +40,7 @@
 
     const/4 v2, 0x0
 
-    .line 31
+    .line 29
     new-instance v0, Lcom/android/emailcommon/mail/Folder$FolderType;
 
     const-string v1, "HOLDS_FOLDERS"
@@ -57,7 +57,7 @@
 
     sput-object v0, Lcom/android/emailcommon/mail/Folder$FolderType;->HOLDS_MESSAGES:Lcom/android/emailcommon/mail/Folder$FolderType;
 
-    .line 30
+    .line 28
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/android/emailcommon/mail/Folder$FolderType;
@@ -86,7 +86,7 @@
     .end annotation
 
     .prologue
-    .line 30
+    .line 28
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -97,7 +97,7 @@
     .parameter
 
     .prologue
-    .line 30
+    .line 28
     const-class v0, Lcom/android/emailcommon/mail/Folder$FolderType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -113,7 +113,7 @@
     .registers 1
 
     .prologue
-    .line 30
+    .line 28
     sget-object v0, Lcom/android/emailcommon/mail/Folder$FolderType;->$VALUES:[Lcom/android/emailcommon/mail/Folder$FolderType;
 
     invoke-virtual {v0}, [Lcom/android/emailcommon/mail/Folder$FolderType;->clone()Ljava/lang/Object;

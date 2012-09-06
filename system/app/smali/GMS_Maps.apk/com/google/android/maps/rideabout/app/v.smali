@@ -1,19 +1,23 @@
 .class Lcom/google/android/maps/rideabout/app/v;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/googlenav/ui/wizard/aX;
+.implements Lcom/google/googlenav/ui/wizard/bn;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/rideabout/app/s;
+.field final synthetic a:Lcom/google/android/maps/rideabout/app/q;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/rideabout/app/s;)V
+.method constructor <init>(Lcom/google/android/maps/rideabout/app/q;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/rideabout/app/v;->a:Lcom/google/android/maps/rideabout/app/s;
+    .prologue
+    .line 436
+    iput-object p1, p0, Lcom/google/android/maps/rideabout/app/v;->a:Lcom/google/android/maps/rideabout/app/q;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,67 +28,56 @@
 # virtual methods
 .method public a(Z)V
     .registers 4
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/v;->a:Lcom/google/android/maps/rideabout/app/s;
+    .prologue
+    .line 440
+    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/v;->a:Lcom/google/android/maps/rideabout/app/q;
 
-    const-string v1, "a"
+    const-string v1, "o"
 
-    invoke-static {v0, v1}, Lcom/google/android/maps/rideabout/app/s;->a(Lcom/google/android/maps/rideabout/app/s;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/google/android/maps/rideabout/app/q;->c(Lcom/google/android/maps/rideabout/app/q;Ljava/lang/String;)V
 
-    if-eqz p1, :cond_10
+    .line 441
+    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/v;->a:Lcom/google/android/maps/rideabout/app/q;
 
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/v;->a:Lcom/google/android/maps/rideabout/app/s;
+    invoke-static {v0}, Lcom/google/android/maps/rideabout/app/q;->i(Lcom/google/android/maps/rideabout/app/q;)V
 
-    const-string v1, "n"
-
-    invoke-static {v0, v1}, Lcom/google/android/maps/rideabout/app/s;->a(Lcom/google/android/maps/rideabout/app/s;Ljava/lang/String;)V
-
-    :cond_10
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/v;->a:Lcom/google/android/maps/rideabout/app/s;
-
-    invoke-static {v0}, Lcom/google/android/maps/rideabout/app/s;->d(Lcom/google/android/maps/rideabout/app/s;)Lcom/google/android/maps/MapsActivity;
-
-    move-result-object v0
-
-    const-string v1, "ShowTransitNavDisclaimer"
-
-    invoke-static {v0, v1, p1}, LI/m;->b(Landroid/content/Context;Ljava/lang/String;Z)V
-
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/v;->a:Lcom/google/android/maps/rideabout/app/s;
-
-    invoke-static {v0}, Lcom/google/android/maps/rideabout/app/s;->g(Lcom/google/android/maps/rideabout/app/s;)V
-
+    .line 442
     return-void
 .end method
 
 .method public b(Z)V
-    .registers 4
+    .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/v;->a:Lcom/google/android/maps/rideabout/app/s;
+    .prologue
+    .line 449
+    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/v;->a:Lcom/google/android/maps/rideabout/app/q;
 
-    const-string v1, "d"
+    invoke-virtual {v0}, Lcom/google/android/maps/rideabout/app/q;->n()V
 
-    invoke-static {v0, v1}, Lcom/google/android/maps/rideabout/app/s;->a(Lcom/google/android/maps/rideabout/app/s;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/v;->a:Lcom/google/android/maps/rideabout/app/s;
-
-    invoke-virtual {v0}, Lcom/google/android/maps/rideabout/app/s;->n()V
-
+    .line 450
     return-void
 .end method
 
 .method public c(Z)V
     .registers 4
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/v;->a:Lcom/google/android/maps/rideabout/app/s;
+    .prologue
+    .line 455
+    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/v;->a:Lcom/google/android/maps/rideabout/app/q;
 
     const-string v1, "b"
 
-    invoke-static {v0, v1}, Lcom/google/android/maps/rideabout/app/s;->a(Lcom/google/android/maps/rideabout/app/s;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/google/android/maps/rideabout/app/q;->c(Lcom/google/android/maps/rideabout/app/q;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/v;->a:Lcom/google/android/maps/rideabout/app/s;
+    .line 456
+    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/v;->a:Lcom/google/android/maps/rideabout/app/q;
 
-    invoke-virtual {v0}, Lcom/google/android/maps/rideabout/app/s;->n()V
+    invoke-virtual {v0}, Lcom/google/android/maps/rideabout/app/q;->n()V
 
+    .line 457
     return-void
 .end method

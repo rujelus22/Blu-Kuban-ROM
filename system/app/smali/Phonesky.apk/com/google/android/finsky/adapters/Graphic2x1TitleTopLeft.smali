@@ -9,6 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$1;,
         Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;
     }
 .end annotation
@@ -55,164 +56,172 @@
 
 # virtual methods
 .method public bind(Landroid/view/ViewGroup;Z)V
-    .registers 11
+    .registers 12
     .parameter "group"
     .parameter "showCorpusStrip"
 
     .prologue
-    const/4 v7, 0x0
-
     .line 70
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getTag()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v3
 
-    if-nez v4, :cond_2e
+    if-nez v3, :cond_2e
 
     .line 71
-    new-instance v2, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;
+    new-instance v1, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;
 
-    invoke-direct {v2, v7}, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;-><init>(Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$1;)V
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v3}, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;-><init>(Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$1;)V
 
     .line 72
-    .local v2, holder:Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;
-    const v4, 0x7f080120
+    .local v1, holder:Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;
+    const v3, 0x7f080156
 
-    invoke-virtual {p1, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/widget/ImageView;
-
-    iput-object v4, v2, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;->imageView:Landroid/widget/ImageView;
-
-    .line 73
-    const v4, 0x7f080017
-
-    invoke-virtual {p1, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/widget/TextView;
-
-    iput-object v4, v2, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;->title:Landroid/widget/TextView;
-
-    .line 74
-    const v4, 0x7f080011
-
-    invoke-virtual {p1, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    iput-object v4, v2, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;->accessibilityOverlay:Landroid/view/View;
-
-    .line 75
-    invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
-
-    .line 78
-    .end local v2           #holder:Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;
-    :cond_2e
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getTag()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;
-
-    .line 80
-    .restart local v2       #holder:Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;
-    iget-object v4, p0, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft;->mContainerDoc:Lcom/google/android/finsky/api/model/Document;
-
-    iget-object v5, v2, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;->imageView:Landroid/widget/ImageView;
-
-    invoke-virtual {v5}, Landroid/widget/ImageView;->getWidth()I
-
-    move-result v5
-
-    const/4 v6, 0x0
-
-    invoke-static {v4, v5, v6}, Lcom/google/android/finsky/utils/ThumbnailUtils;->getPromoBitmapUrlFromDocument(Lcom/google/android/finsky/api/model/Document;II)Ljava/lang/String;
+    invoke-virtual {p1, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 82
-    .local v3, imageUrl:Ljava/lang/String;
-    if-eqz v3, :cond_62
+    check-cast v3, Lcom/google/android/finsky/layout/SmartThumbnailView;
+
+    iput-object v3, v1, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;->imageView:Lcom/google/android/finsky/layout/SmartThumbnailView;
+
+    .line 73
+    const v3, 0x7f08001e
+
+    invoke-virtual {p1, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/widget/TextView;
+
+    iput-object v3, v1, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;->title:Landroid/widget/TextView;
+
+    .line 74
+    const v3, 0x7f080014
+
+    invoke-virtual {p1, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;->accessibilityOverlay:Landroid/view/View;
+
+    .line 75
+    invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
+
+    .line 78
+    .end local v1           #holder:Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;
+    :cond_2e
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getTag()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;
+
+    .line 80
+    .restart local v1       #holder:Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;
+    iget-object v3, v1, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;->imageView:Lcom/google/android/finsky/layout/SmartThumbnailView;
+
+    iget-object v4, p0, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft;->mContainerDoc:Lcom/google/android/finsky/api/model/Document;
+
+    iget-object v5, p0, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
+
+    const/4 v6, 0x1
+
+    new-array v6, v6, [I
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x2
+
+    aput v8, v6, v7
+
+    invoke-virtual {v3, v4, v5, v6}, Lcom/google/android/finsky/layout/SmartThumbnailView;->bind(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/utils/BitmapLoader;[I)V
 
     .line 83
-    new-instance v1, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$1;
+    iget-object v3, p0, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft;->mContainerDoc:Lcom/google/android/finsky/api/model/Document;
 
-    invoke-direct {v1, p0, v2}, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$1;-><init>(Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft;Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;)V
+    invoke-virtual {v3}, Lcom/google/android/finsky/api/model/Document;->getTemplate()Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;
 
-    .line 94
-    .local v1, handler:Lcom/google/android/finsky/utils/BitmapLoader$BitmapLoadedHandler;
-    iget-object v4, p0, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
+    move-result-object v2
 
-    invoke-virtual {v4, v3, v7, v1}, Lcom/google/android/finsky/utils/BitmapLoader;->get(Ljava/lang/String;Landroid/graphics/Bitmap;Lcom/google/android/finsky/utils/BitmapLoader$BitmapLoadedHandler;)Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
+    .line 84
+    .local v2, template:Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;
+    if-eqz v2, :cond_69
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getTileGraphicUpperLeftTitle2X1()Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_69
+
+    .line 85
+    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getTileGraphicUpperLeftTitle2X1()Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->getColorTextArgb()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 95
-    .local v0, container:Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-    invoke-virtual {v0}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
+    .line 86
+    .local v0, color:Ljava/lang/String;
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_69
+
+    .line 87
+    iget-object v3, v1, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;->title:Landroid/widget/TextView;
+
+    invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 90
+    .end local v0           #color:Ljava/lang/String;
+    :cond_69
+    iget-object v3, v1, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;->title:Landroid/widget/TextView;
+
+    iget-object v4, p0, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft;->mContainerDoc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-virtual {v4}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
 
     move-result-object v4
 
-    if-eqz v4, :cond_62
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 96
-    iget-object v4, v2, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;->imageView:Landroid/widget/ImageView;
+    .line 91
+    iget-object v3, v1, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;->accessibilityOverlay:Landroid/view/View;
 
-    new-instance v5, Landroid/graphics/drawable/BitmapDrawable;
+    iget-object v4, p0, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft;->mContainerDoc:Lcom/google/android/finsky/api/model/Document;
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
+    invoke-virtual {v4}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-direct {v5, v6}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v3, v4}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    .line 92
+    iget-object v3, v1, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;->accessibilityOverlay:Landroid/view/View;
 
-    .line 99
-    .end local v0           #container:Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-    .end local v1           #handler:Lcom/google/android/finsky/utils/BitmapLoader$BitmapLoadedHandler;
-    :cond_62
-    iget-object v4, v2, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;->title:Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     iget-object v5, p0, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft;->mContainerDoc:Lcom/google/android/finsky/api/model/Document;
 
-    invoke-virtual {v5}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
+    iget-object v6, p0, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft;->mCurrentPageUrl:Ljava/lang/String;
 
-    move-result-object v5
+    invoke-virtual {v4, v5, v6}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getClickListener(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/view/View$OnClickListener;
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    move-result-object v4
 
-    .line 100
-    iget-object v4, v2, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;->accessibilityOverlay:Landroid/view/View;
+    invoke-virtual {v3, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    iget-object v5, p0, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft;->mContainerDoc:Lcom/google/android/finsky/api/model/Document;
-
-    invoke-virtual {v5}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    .line 101
-    iget-object v4, v2, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;->accessibilityOverlay:Landroid/view/View;
-
-    iget-object v5, p0, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
-
-    iget-object v6, p0, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft;->mContainerDoc:Lcom/google/android/finsky/api/model/Document;
-
-    iget-object v7, p0, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft;->mCurrentPageUrl:Ljava/lang/String;
-
-    invoke-virtual {v5, v6, v7}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getClickListener(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/view/View$OnClickListener;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 103
+    .line 94
     return-void
 .end method
 
@@ -240,7 +249,7 @@
     .registers 2
 
     .prologue
-    .line 107
+    .line 98
     sget-object v0, Lcom/google/android/finsky/adapters/UnevenGridItemType;->GRAPHIC_2x1_TITLE_TOP_LEFT:Lcom/google/android/finsky/adapters/UnevenGridItemType;
 
     return-object v0
@@ -251,7 +260,7 @@
 
     .prologue
     .line 65
-    const v0, 0x7f04009e
+    const v0, 0x7f0400cf
 
     return v0
 .end method

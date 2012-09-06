@@ -226,4 +226,9 @@
     <item type="id" name="close_button">false</item>
     <item type="id" name="recent_remove_item">false</item>
     <item type="id" name="recent_inspect_item">false</item>
+    <item type="id" name="flashlight">false</item>
+    <item type="id" name="buttonOn">false</item>
+    <item type="id" name="cameraButton">false</item>
+    <item type="id" name="exp_power_stat">false</item>
+    <item type="id" name="battery2">false</item>
 </resources>

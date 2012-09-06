@@ -4,6 +4,7 @@
     <integer name="creator_moreby_items_per_row">3</integer>
     <integer name="creator_related_items_per_row">3</integer>
     <integer name="album_items_per_row">3</integer>
+    <integer name="magazine_items_per_row">3</integer>
     <integer name="antenna_num_items_per_row">3</integer>
     <integer name="num_items_per_list_row">3</integer>
     <integer name="num_items_per_list_column">4</integer>

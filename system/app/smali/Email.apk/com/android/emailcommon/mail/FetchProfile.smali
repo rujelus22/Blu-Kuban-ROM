@@ -38,7 +38,7 @@
     .registers 4
 
     .prologue
-    .line 84
+    .line 78
     invoke-virtual {p0}, Lcom/android/emailcommon/mail/FetchProfile;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -57,16 +57,16 @@
 
     check-cast v1, Lcom/android/emailcommon/mail/Fetchable;
 
-    .line 85
+    .line 79
     .local v1, o:Lcom/android/emailcommon/mail/Fetchable;
     instance-of v2, v1, Lcom/android/emailcommon/mail/Part;
 
     if-eqz v2, :cond_4
 
-    .line 86
+    .line 80
     check-cast v1, Lcom/android/emailcommon/mail/Part;
 
-    .line 89
+    .line 83
     .end local v1           #o:Lcom/android/emailcommon/mail/Fetchable;
     :goto_16
     return-object v1

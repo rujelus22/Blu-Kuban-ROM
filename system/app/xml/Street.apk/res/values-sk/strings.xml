@@ -15,9 +15,9 @@
     <string name="click_to_go_toast">Myšou presuňte panáčika Pegman.</string>
     <string name="street_range_name_format">%2$s %1$s</string>
     <string name="network_unavailable">Tento program vyžaduje dátové spojenie a automaticky zopakuje pokus o pripojenie. Skontrolujte silu signálu. Sú dátové služby pri roamingu zakázané?</string>
-    <string name="whats_new_header">Čo je nové v Zobrazení ulíc?</string>
+    <string name="whats_new_header">Novinky v Zobrazení ulíc</string>
     <string name="whats_new_c2g">Preleťte na ktorékoľvek miesto, ktoré vidíte. Presuňte postavičku Pegmana (vľavo dolu) na miesto, kde chcete ísť.</string>
-    <string name="terms_and_privacy">Podmienky, ochrana údajov</string>
+    <string name="terms_and_privacy">Podm. a ochr. údajov</string>
     <string name="terms_and_conditions">Zmluvné podmienky</string>
     <string name="privacy_policy">Pravidlá ochrany os. údajov</string>
 </resources>

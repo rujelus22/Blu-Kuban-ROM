@@ -4,7 +4,7 @@
 
 
 # static fields
-.field protected static final DBG:Z = true
+.field protected static final DBG:Z = false
 
 .field public static final DEFAULT_GPRS_CHECK_PERIOD_MILLIS:I = 0xea60
 

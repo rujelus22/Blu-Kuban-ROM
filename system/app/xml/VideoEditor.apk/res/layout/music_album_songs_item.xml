@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:id="@id/MusicFilelayout" android:background="@drawable/listbuttonselector" android:paddingLeft="30.0px" android:layout_width="fill_parent" android:layout_height="72.0px" android:minHeight="72.0px"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:layout_gravity="center_vertical" android:id="@id/MusicPlayButton" android:visibility="visible" android:layout_width="22.0px" android:layout_height="22.0px" android:src="@drawable/list_arrow" android:scaleType="center" />
-    <FrameLayout android:layout_gravity="center_vertical" android:id="@id/FrameLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <TextView android:textSize="26.0px" android:textColor="@drawable/style_txt_color" android:gravity="center" android:id="@id/musicfilename1" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" />
-        <TextView android:textSize="26.0px" android:textColor="@color/white" android:gravity="center" android:id="@id/musicfilename" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
-    </FrameLayout>
-</LinearLayout>

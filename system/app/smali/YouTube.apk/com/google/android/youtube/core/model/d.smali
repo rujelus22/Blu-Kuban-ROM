@@ -16,20 +16,20 @@
     .parameter
 
     .prologue
-    .line 34
+    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
+    .line 36
     const-string v0, "deviceId cannot be empty"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 36
-    const-string v0, "deviceKey cannot be null"
-
-    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     .line 37
+    const-string v0, "deviceKey cannot be null"
+
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 38
     array-length v0, p2
 
     const/16 v1, 0x14
@@ -41,18 +41,18 @@
     :goto_13
     const-string v1, "deviceKey must be 20 bytes"
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
-
-    .line 40
-    iput-object p1, p0, Lcom/google/android/youtube/core/model/d;->a:Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
 
     .line 41
-    iput-object p2, p0, Lcom/google/android/youtube/core/model/d;->b:[B
+    iput-object p1, p0, Lcom/google/android/youtube/core/model/d;->a:Ljava/lang/String;
 
     .line 42
+    iput-object p2, p0, Lcom/google/android/youtube/core/model/d;->b:[B
+
+    .line 43
     return-void
 
-    .line 37
+    .line 38
     :cond_1d
     const/4 v0, 0x0
 
@@ -65,14 +65,14 @@
     .parameter
 
     .prologue
-    .line 55
+    .line 56
     new-instance v0, Ljavax/crypto/spec/SecretKeySpec;
 
     const-string v1, "HmacSHA1"
 
     invoke-direct {v0, p1, v1}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
 
-    .line 57
+    .line 58
     :try_start_7
     const-string v1, "HmacSHA1"
 
@@ -80,10 +80,10 @@
 
     move-result-object v1
 
-    .line 58
+    .line 59
     invoke-virtual {v1, v0}, Ljavax/crypto/Mac;->init(Ljava/security/Key;)V
 
-    .line 59
+    .line 60
     invoke-virtual {p0}, Ljava/lang/String;->getBytes()[B
 
     move-result-object v0
@@ -92,7 +92,7 @@
 
     move-result-object v0
 
-    .line 60
+    .line 61
     new-instance v1, Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -110,30 +110,30 @@
 
     move-result-object v0
 
-    .line 66
+    .line 67
     :goto_26
     return-object v0
 
-    .line 61
+    .line 62
     :catch_27
     move-exception v0
 
-    .line 62
+    .line 63
     const-string v1, "error signing request"
 
     invoke-static {v1, v0}, Lcom/google/android/youtube/core/L;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 66
+    .line 67
     :goto_2d
     const/4 v0, 0x0
 
     goto :goto_26
 
-    .line 63
+    .line 64
     :catch_2f
     move-exception v0
 
-    .line 64
+    .line 65
     const-string v1, "error signing request"
 
     invoke-static {v1, v0}, Lcom/google/android/youtube/core/L;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -147,7 +147,7 @@
     .parameter
 
     .prologue
-    .line 81
+    .line 82
     invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
@@ -178,9 +178,9 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->a(Landroid/content/SharedPreferences$Editor;)V
 
-    .line 85
+    .line 86
     return-void
 .end method
 
@@ -191,7 +191,7 @@
     .parameter
 
     .prologue
-    .line 45
+    .line 46
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-virtual {p1}, Landroid/net/Uri;->getEncodedPath()Ljava/lang/String;
@@ -200,15 +200,15 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 46
+    .line 47
     invoke-virtual {p1}, Landroid/net/Uri;->getEncodedQuery()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 47
+    .line 48
     if-eqz v1, :cond_18
 
-    .line 48
+    .line 49
     const-string v2, "?"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -217,7 +217,7 @@
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 50
+    .line 51
     :cond_18
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -229,7 +229,7 @@
 
     move-result-object v0
 
-    .line 51
+    .line 52
     const-string v1, "device-id=\"%s\", data=\"%s\""
 
     const/4 v2, 0x2

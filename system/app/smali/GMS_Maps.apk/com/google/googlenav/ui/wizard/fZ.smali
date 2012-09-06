@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/wizard/fZ;
+.class Lcom/google/googlenav/ui/wizard/fz;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements LaT/b;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/fX;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/ft;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/fX;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/ft;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fZ;->a:Lcom/google/googlenav/ui/wizard/fX;
+    .prologue
+    .line 494
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fz;->a:Lcom/google/googlenav/ui/wizard/ft;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,46 +26,23 @@
 
 
 # virtual methods
-.method public a(I)V
+.method public onClick(Landroid/content/DialogInterface;I)V
     .registers 4
+    .parameter
+    .parameter
 
-    if-nez p1, :cond_14
+    .prologue
+    .line 497
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fZ;->a:Lcom/google/googlenav/ui/wizard/fX;
+    .line 498
+    invoke-static {}, Lcom/google/googlenav/ui/wizard/ft;->e()V
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/fX;->b:Lcom/google/googlenav/ui/wizard/hM;
+    .line 499
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fz;->a:Lcom/google/googlenav/ui/wizard/ft;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hM;->G()Lcom/google/googlenav/L;
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/ft;->j(Lcom/google/googlenav/ui/wizard/ft;)V
 
-    move-result-object v0
-
-    const/16 v1, 0x325
-
-    invoke-static {v1}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/google/googlenav/L;->a(Ljava/lang/String;)V
-
-    :goto_13
+    .line 500
     return-void
-
-    :cond_14
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fZ;->a:Lcom/google/googlenav/ui/wizard/fX;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/fX;->b:Lcom/google/googlenav/ui/wizard/hM;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hM;->G()Lcom/google/googlenav/L;
-
-    move-result-object v0
-
-    const/16 v1, 0x10a
-
-    invoke-static {v1}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/google/googlenav/L;->a(Ljava/lang/String;)V
-
-    goto :goto_13
 .end method

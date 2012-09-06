@@ -30,12 +30,12 @@
     .parameter
 
     .prologue
-    .line 476
+    .line 170
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$1;->val$fromActivity:Landroid/app/Activity;
 
     iput-wide p2, p0, Lcom/android/email/activity/setup/AccountSetupBasics$1;->val$accountId:J
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,65 +43,42 @@
 
 # virtual methods
 .method public run()V
-    .registers 6
+    .registers 5
 
     .prologue
-    .line 478
-    const/4 v1, 0x0
+    .line 172
+    new-instance v0, Landroid/content/Intent;
 
-    .line 481
-    .local v1, i:Landroid/content/Intent;
-    new-instance v1, Landroid/content/Intent;
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$1;->val$fromActivity:Landroid/app/Activity;
 
-    .end local v1           #i:Landroid/content/Intent;
-    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupBasics$1;->val$fromActivity:Landroid/app/Activity;
+    const-class v2, Lcom/android/email/activity/setup/AccountSetupBasics;
 
-    const-class v3, Lcom/android/email/activity/setup/AccountSetupBasics;
+    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    .line 175
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$1;->val$fromActivity:Landroid/app/Activity;
 
-    .line 486
-    .restart local v1       #i:Landroid/content/Intent;
-    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupBasics$1;->val$fromActivity:Landroid/app/Activity;
+    iget-wide v2, p0, Lcom/android/email/activity/setup/AccountSetupBasics$1;->val$accountId:J
 
-    iget-wide v3, p0, Lcom/android/email/activity/setup/AccountSetupBasics$1;->val$accountId:J
+    invoke-static {v1, v2, v3}, Lcom/android/emailcommon/provider/Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Account;
 
-    invoke-static {v2, v3, v4}, Lcom/android/emailcommon/provider/EmailContent$Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Account;
+    move-result-object v1
 
-    move-result-object v0
-
-    .line 487
-    .local v0, account:Lcom/android/emailcommon/provider/EmailContent$Account;
-    sget v2, Lcom/android/email/Email;->ACCOUNT_SETUP_OPTION:I
-
-    const/4 v3, 0x2
-
-    if-ne v2, v3, :cond_26
-
-    .line 488
-    const/4 v2, 0x5
-
-    invoke-static {v2, v0}, Lcom/android/email/activity/setup/SetupData;->init(ILcom/android/emailcommon/provider/EmailContent$Account;)V
-
-    .line 492
-    :goto_1b
-    const/high16 v2, 0x400
-
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
-
-    .line 493
-    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupBasics$1;->val$fromActivity:Landroid/app/Activity;
-
-    invoke-virtual {v2, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 494
-    return-void
-
-    .line 490
-    :cond_26
+    .line 176
     const/4 v2, 0x6
 
-    invoke-static {v2, v0}, Lcom/android/email/activity/setup/SetupData;->init(ILcom/android/emailcommon/provider/EmailContent$Account;)V
+    invoke-static {v2, v1}, Lcom/android/email/activity/setup/SetupData;->init(ILcom/android/emailcommon/provider/Account;)V
 
-    goto :goto_1b
+    .line 177
+    const/high16 v1, 0x400
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    .line 178
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$1;->val$fromActivity:Landroid/app/Activity;
+
+    invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+
+    .line 179
+    return-void
 .end method

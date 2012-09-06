@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/av;
+.implements Lcom/google/android/youtube/core/async/bc;
 
 
 # instance fields
@@ -17,12 +17,26 @@
 
 .field private e:Lcom/google/android/youtube/core/async/UserAuthorizer;
 
-.field private f:Lcom/google/android/youtube/core/utils/i;
+.field private f:Lcom/google/android/youtube/core/utils/k;
 
-.field private g:Lcom/google/android/youtube/plus1/f;
+.field private g:Lcom/google/android/youtube/plus1/a;
 
 
 # direct methods
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 48
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/plus1/PlusOneButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    .line 49
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 13
     .parameter
@@ -55,9 +69,9 @@
     move-result-object v1
 
     .line 59
-    sget-object v0, Lcom/google/android/youtube/b;->e:[I
+    sget-object v0, Lcom/google/android/youtube/b;->g:[I
 
-    const v2, 0x7f0d000a
+    const v2, 0x7f0c001a
 
     invoke-virtual {p1, p2, v0, v2, v6}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
@@ -71,9 +85,9 @@
     iput-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->a:Landroid/widget/FrameLayout;
 
     .line 63
-    const/4 v0, 0x2
+    const/4 v0, 0x3
 
-    const v3, 0x7f0b0015
+    const v3, 0x7f0a0024
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -103,9 +117,9 @@
     invoke-virtual {p0, v0, v3}, Lcom/google/android/youtube/plus1/PlusOneButton;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 70
-    const/4 v0, 0x3
+    const/4 v0, 0x4
 
-    const/high16 v3, 0x7f0e
+    const/high16 v3, 0x7f0f
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -120,7 +134,7 @@
 
     const/4 v4, 0x0
 
-    if-eqz v0, :cond_c2
+    if-eqz v0, :cond_d0
 
     const v0, 0x1010288
 
@@ -170,7 +184,7 @@
     invoke-virtual {v0, v9}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 83
-    const v0, 0x7f0b0017
+    const v0, 0x7f0a0026
 
     invoke-virtual {v1, v0}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -186,32 +200,46 @@
     invoke-virtual {v3, v6, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 86
-    const/high16 v0, 0x7f0f
+    const/4 v0, 0x2
 
-    invoke-virtual {v1, v0}, Landroid/content/res/Resources;->getInteger(I)I
+    const v3, 0x7f0d0006
 
-    move-result v0
+    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
-    invoke-virtual {v2, v8, v0}, Landroid/content/res/TypedArray;->getInteger(II)I
+    move-result v3
+
+    invoke-virtual {v2, v0, v3}, Landroid/content/res/TypedArray;->getInteger(II)I
 
     move-result v0
 
     .line 88
+    const v3, 0x7f090002
+
+    invoke-virtual {v2, v8, v3}, Landroid/content/res/TypedArray;->getColor(II)I
+
+    move-result v3
+
+    .line 90
+    iget-object v4, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->c:Landroid/widget/TextView;
+
+    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 91
     iget-object v3, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->c:Landroid/widget/TextView;
 
     invoke-virtual {v3, v0}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 89
+    .line 92
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
     const/4 v3, -0x1
 
     invoke-direct {v0, v3, v7}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    .line 91
-    const/4 v3, 0x4
+    .line 94
+    const/4 v3, 0x5
 
-    const v4, 0x7f0b0016
+    const v4, 0x7f0a0025
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -221,22 +249,22 @@
 
     move-result v1
 
-    .line 93
+    .line 96
     iput v1, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
-    .line 94
+    .line 97
     iget-object v1, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->c:Landroid/widget/TextView;
 
     invoke-virtual {p0, v1, v0}, Lcom/google/android/youtube/plus1/PlusOneButton;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 96
+    .line 99
     invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 97
+    .line 100
     return-void
 
     .line 73
-    :cond_c2
+    :cond_d0
     const v0, 0x1010079
 
     goto :goto_58
@@ -249,10 +277,10 @@
     .parameter
 
     .prologue
-    .line 189
-    iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->g:Lcom/google/android/youtube/plus1/f;
+    .line 192
+    iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->g:Lcom/google/android/youtube/plus1/a;
 
-    invoke-interface {v0, p1}, Lcom/google/android/youtube/plus1/f;->a(Ljava/lang/String;)Lcom/google/android/plus1/w;
+    invoke-interface {v0}, Lcom/google/android/youtube/plus1/a;->a()Lcom/google/android/plus1/w;
 
     move-result-object v0
 
@@ -264,12 +292,12 @@
     .parameter
 
     .prologue
-    .line 101
+    .line 104
     invoke-virtual {p0}, Lcom/google/android/youtube/plus1/PlusOneButton;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/google/android/youtube/plus1/h;->a(Landroid/content/Context;Lcom/google/android/plus1/u;)Ljava/lang/CharSequence;
+    invoke-static {v0, p1}, Lcom/google/android/youtube/plus1/c;->a(Landroid/content/Context;Lcom/google/android/plus1/u;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -280,34 +308,34 @@
     .registers 3
 
     .prologue
-    .line 118
+    .line 121
     iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->a:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f020095
+    const v1, 0x7f0200dd
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundResource(I)V
 
-    .line 119
+    .line 122
     iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->b:Landroid/widget/ProgressBar;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 120
+    .line 123
     return-void
 .end method
 
-.method public final a(Landroid/app/Activity;Lcom/google/android/youtube/plus1/f;)V
+.method public final a(Landroid/app/Activity;Lcom/google/android/youtube/plus1/a;)V
     .registers 6
     .parameter
     .parameter
 
     .prologue
-    .line 146
+    .line 149
     const-string v0, "activity cannot be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -315,73 +343,47 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->d:Landroid/app/Activity;
 
-    .line 147
+    .line 150
     invoke-virtual {p1}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
 
     move-result-object v0
 
-    .line 148
+    .line 151
     instance-of v1, v0, Lcom/google/android/youtube/core/BaseApplication;
 
     const-string v2, "activity is not a compatible activity"
 
-    invoke-static {v1, v2}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
+    invoke-static {v1, v2}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
 
-    .line 150
+    .line 153
     check-cast v0, Lcom/google/android/youtube/core/BaseApplication;
 
-    .line 151
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/BaseApplication;->D()Lcom/google/android/youtube/core/async/UserAuthorizer;
+    .line 154
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/BaseApplication;->Q()Lcom/google/android/youtube/core/async/UserAuthorizer;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->e:Lcom/google/android/youtube/core/async/UserAuthorizer;
 
-    .line 152
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/BaseApplication;->F()Lcom/google/android/youtube/core/utils/i;
+    .line 155
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/BaseApplication;->U()Lcom/google/android/youtube/core/utils/k;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->f:Lcom/google/android/youtube/core/utils/i;
+    iput-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->f:Lcom/google/android/youtube/core/utils/k;
 
-    .line 153
+    .line 156
     const-string v0, "plusOneClient cannot be null"
 
-    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/plus1/f;
+    check-cast v0, Lcom/google/android/youtube/plus1/a;
 
-    iput-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->g:Lcom/google/android/youtube/plus1/f;
+    iput-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->g:Lcom/google/android/youtube/plus1/a;
 
-    .line 154
-    return-void
-.end method
-
-.method public final a(Landroid/net/Uri;)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 160
-    const-string v0, "uri cannot be null"
-
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 161
-    iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->d:Landroid/app/Activity;
-
-    const-string v1, "setUri cannot be called before init is called"
-
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 162
-    iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->d:Landroid/app/Activity;
-
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/youtube/plus1/PlusOneButton;->a(Landroid/app/Activity;Landroid/net/Uri;)V
-
-    .line 163
+    .line 157
     return-void
 .end method
 
@@ -390,12 +392,12 @@
     .parameter
 
     .prologue
-    .line 171
+    .line 174
     iget-object v0, p1, Lcom/google/android/youtube/core/model/UserAuth;->a:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/plus1/PlusOneButton;->b(Ljava/lang/String;)V
 
-    .line 172
+    .line 175
     return-void
 .end method
 
@@ -404,12 +406,12 @@
     .parameter
 
     .prologue
-    .line 142
+    .line 145
     iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->c:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 143
+    .line 146
     return-void
 .end method
 
@@ -418,12 +420,12 @@
     .parameter
 
     .prologue
-    .line 179
+    .line 182
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/plus1/PlusOneButton;->b(Ljava/lang/String;)V
 
-    .line 180
+    .line 183
     return-void
 .end method
 
@@ -431,21 +433,21 @@
     .registers 3
 
     .prologue
-    .line 124
+    .line 127
     iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->a:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f020093
+    const v1, 0x7f0200db
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundResource(I)V
 
-    .line 125
+    .line 128
     iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->b:Landroid/widget/ProgressBar;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 126
+    .line 129
     return-void
 .end method
 
@@ -453,21 +455,21 @@
     .registers 3
 
     .prologue
-    .line 130
+    .line 133
     iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->a:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f020094
+    const v1, 0x7f0200dc
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundResource(I)V
 
-    .line 131
+    .line 134
     iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->b:Landroid/widget/ProgressBar;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 132
+    .line 135
     return-void
 .end method
 
@@ -475,34 +477,21 @@
     .registers 3
 
     .prologue
-    .line 136
+    .line 139
     iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->a:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f020096
+    const v1, 0x7f0200de
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundResource(I)V
 
-    .line 137
+    .line 140
     iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->b:Landroid/widget/ProgressBar;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 138
-    return-void
-.end method
-
-.method public final d_()V
-    .registers 2
-
-    .prologue
-    .line 175
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/plus1/PlusOneButton;->b(Ljava/lang/String;)V
-
-    .line 176
+    .line 141
     return-void
 .end method
 
@@ -510,18 +499,18 @@
     .registers 3
 
     .prologue
-    .line 106
-    iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->f:Lcom/google/android/youtube/core/utils/i;
+    .line 109
+    iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->f:Lcom/google/android/youtube/core/utils/k;
 
-    invoke-interface {v0}, Lcom/google/android/youtube/core/utils/i;->a()Z
+    invoke-interface {v0}, Lcom/google/android/youtube/core/utils/k;->a()Z
 
     move-result v0
 
     if-eqz v0, :cond_14
 
-    const v0, 0x7f0a0093
+    const v0, 0x7f0b00b8
 
-    .line 108
+    .line 111
     :goto_b
     invoke-virtual {p0}, Lcom/google/android/youtube/plus1/PlusOneButton;->getContext()Landroid/content/Context;
 
@@ -533,23 +522,36 @@
 
     return-object v0
 
-    .line 106
+    .line 109
     :cond_14
-    const v0, 0x7f0a0092
+    const v0, 0x7f0b00b7
 
     goto :goto_b
+.end method
+
+.method public final e_()V
+    .registers 2
+
+    .prologue
+    .line 178
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/plus1/PlusOneButton;->b(Ljava/lang/String;)V
+
+    .line 179
+    return-void
 .end method
 
 .method protected final f()Ljava/lang/String;
     .registers 3
 
     .prologue
-    .line 113
+    .line 116
     invoke-virtual {p0}, Lcom/google/android/youtube/plus1/PlusOneButton;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    const v1, 0x7f0a0094
+    const v1, 0x7f0b00b9
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -562,12 +564,12 @@
     .registers 2
 
     .prologue
-    .line 167
+    .line 170
     iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->e:Lcom/google/android/youtube/core/async/UserAuthorizer;
 
-    invoke-virtual {v0, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Lcom/google/android/youtube/core/async/av;)V
+    invoke-virtual {v0, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Lcom/google/android/youtube/core/async/bc;)V
 
-    .line 168
+    .line 171
     return-void
 .end method
 
@@ -575,14 +577,14 @@
     .registers 3
 
     .prologue
-    .line 184
+    .line 187
     iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->e:Lcom/google/android/youtube/core/async/UserAuthorizer;
 
     iget-object v1, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->d:Landroid/app/Activity;
 
-    invoke-virtual {v0, v1, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/av;)V
+    invoke-virtual {v0, v1, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/bc;)V
 
-    .line 185
+    .line 188
     return-void
 .end method
 
@@ -590,6 +592,32 @@
     .registers 1
 
     .prologue
-    .line 195
+    .line 198
+    return-void
+.end method
+
+.method public setUri(Landroid/net/Uri;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 163
+    const-string v0, "uri cannot be null"
+
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 164
+    iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->d:Landroid/app/Activity;
+
+    const-string v1, "setUri cannot be called before init is called"
+
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 165
+    iget-object v0, p0, Lcom/google/android/youtube/plus1/PlusOneButton;->d:Landroid/app/Activity;
+
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/youtube/plus1/PlusOneButton;->a(Landroid/app/Activity;Landroid/net/Uri;)V
+
+    .line 166
     return-void
 .end method

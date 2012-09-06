@@ -53,40 +53,40 @@
         <item quantity="one">Oczekiwanie na operację na %1$d wątku.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">Zignorowane: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Zignorowane: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Zignorowane: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Zignorowane: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">Zgłoszone jako spam: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Zgłoszone jako spam: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Zgłoszone jako spam: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Zgłoszone jako spam: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">Zarchiwizowane: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Zarchiwizowane: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Zarchiwizowane: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Zarchiwizowane: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">Przeniesione do odebranych: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Przeniesione do odebranych: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Przeniesione do odebranych: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Przeniesione do odebranych: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">Usunięte: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Usunięte: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Usunięte: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Usunięte: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">Oznaczone jako ważne: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Oznaczone jako ważne: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Oznaczone jako ważne: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Oznaczone jako ważne: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">Oznaczone jako mało ważne: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Oznaczone jako mało ważne: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Oznaczone jako mało ważne: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Oznaczone jako mało ważne: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">Oznaczone jako przeczytane: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Oznaczone jako przeczytane: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Oznaczone jako przeczytane: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Oznaczone jako przeczytane: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">Oznaczone jako nieprzeczytane: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Oznaczone jako nieprzeczytane: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Oznaczone jako nieprzeczytane: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Oznaczone jako nieprzeczytane: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Zmieniono etykiety.</item>

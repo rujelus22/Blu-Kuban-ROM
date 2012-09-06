@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field private final a:Lcom/google/android/youtube/core/client/ad;
+.field private final a:Lcom/google/android/youtube/core/b/ae;
 
 .field private final b:Lcom/google/android/youtube/core/model/UserAuth;
 
@@ -23,7 +23,7 @@
 
 .field private h:I
 
-.field private i:Lcom/google/android/youtube/core/async/g;
+.field private i:Lcom/google/android/youtube/core/async/l;
 
 .field private j:I
 
@@ -31,7 +31,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Lcom/google/android/youtube/core/client/ad;Lcom/google/android/youtube/core/model/UserAuth;)V
+.method public constructor <init>(Ljava/util/List;Lcom/google/android/youtube/core/b/ae;Lcom/google/android/youtube/core/model/UserAuth;)V
     .registers 6
     .parameter
     .parameter
@@ -46,18 +46,18 @@
     .line 39
     const-string v0, "gdataClient cannot be null"
 
-    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/client/ad;
+    check-cast v0, Lcom/google/android/youtube/core/b/ae;
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/a/c;->a:Lcom/google/android/youtube/core/client/ad;
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/a/c;->a:Lcom/google/android/youtube/core/b/ae;
 
     .line 40
     const-string v0, "videoIds cannot be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -111,9 +111,9 @@
     iput-boolean v0, p0, Lcom/google/android/youtube/core/async/a/c;->k:Z
 
     .line 119
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/a/c;->i:Lcom/google/android/youtube/core/async/g;
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/a/c;->i:Lcom/google/android/youtube/core/async/l;
 
-    invoke-interface {v0, p1, p2}, Lcom/google/android/youtube/core/async/g;->a(Ljava/lang/Object;Ljava/lang/Exception;)V
+    invoke-interface {v0, p1, p2}, Lcom/google/android/youtube/core/async/l;->a(Ljava/lang/Object;Ljava/lang/Exception;)V
     :try_end_9
     .catchall {:try_start_2 .. :try_end_9} :catchall_b
 
@@ -179,9 +179,9 @@
     iput-boolean p4, p0, Lcom/google/android/youtube/core/async/a/c;->f:Z
 
     .line 114
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/a/c;->i:Lcom/google/android/youtube/core/async/g;
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/a/c;->i:Lcom/google/android/youtube/core/async/l;
 
-    invoke-interface {v0, p2, p1}, Lcom/google/android/youtube/core/async/g;->a(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-interface {v0, p2, p1}, Lcom/google/android/youtube/core/async/l;->a(Ljava/lang/Object;Ljava/lang/Object;)V
     :try_end_d
     .catchall {:try_start_2 .. :try_end_d} :catchall_f
 
@@ -389,7 +389,7 @@
     if-eqz v0, :cond_24
 
     .line 102
-    iget-object v1, p0, Lcom/google/android/youtube/core/async/a/c;->a:Lcom/google/android/youtube/core/client/ad;
+    iget-object v1, p0, Lcom/google/android/youtube/core/async/a/c;->a:Lcom/google/android/youtube/core/b/ae;
 
     iget-object v0, p0, Lcom/google/android/youtube/core/async/a/c;->c:Ljava/util/List;
 
@@ -405,7 +405,7 @@
 
     invoke-direct {v3, p0, p1}, Lcom/google/android/youtube/core/async/a/d;-><init>(Lcom/google/android/youtube/core/async/a/c;I)V
 
-    invoke-interface {v1, v0, v2, v3}, Lcom/google/android/youtube/core/client/ad;->b(Ljava/lang/String;Lcom/google/android/youtube/core/model/UserAuth;Lcom/google/android/youtube/core/async/g;)V
+    invoke-interface {v1, v0, v2, v3}, Lcom/google/android/youtube/core/b/ae;->a(Ljava/lang/String;Lcom/google/android/youtube/core/model/UserAuth;Lcom/google/android/youtube/core/async/l;)V
     :try_end_22
     .catchall {:try_start_1 .. :try_end_22} :catchall_37
 
@@ -419,7 +419,7 @@
     .line 104
     :cond_24
     :try_start_24
-    iget-object v1, p0, Lcom/google/android/youtube/core/async/a/c;->a:Lcom/google/android/youtube/core/client/ad;
+    iget-object v1, p0, Lcom/google/android/youtube/core/async/a/c;->a:Lcom/google/android/youtube/core/b/ae;
 
     iget-object v0, p0, Lcom/google/android/youtube/core/async/a/c;->c:Ljava/util/List;
 
@@ -433,7 +433,7 @@
 
     invoke-direct {v2, p0, p1}, Lcom/google/android/youtube/core/async/a/d;-><init>(Lcom/google/android/youtube/core/async/a/c;I)V
 
-    invoke-interface {v1, v0, v2}, Lcom/google/android/youtube/core/client/ad;->d(Ljava/lang/String;Lcom/google/android/youtube/core/async/g;)V
+    invoke-interface {v1, v0, v2}, Lcom/google/android/youtube/core/b/ae;->c(Ljava/lang/String;Lcom/google/android/youtube/core/async/l;)V
     :try_end_36
     .catchall {:try_start_24 .. :try_end_36} :catchall_37
 
@@ -480,11 +480,11 @@
     monitor-enter p0
 
     :try_start_1
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/a/c;->i:Lcom/google/android/youtube/core/async/g;
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/a/c;->i:Lcom/google/android/youtube/core/async/l;
 
     const-string v1, "call setCallback() first"
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 54
     iget v0, p0, Lcom/google/android/youtube/core/async/a/c;->h:I
@@ -540,19 +540,19 @@
     throw v0
 .end method
 
-.method public final a(Lcom/google/android/youtube/core/async/g;)V
+.method public final a(Lcom/google/android/youtube/core/async/l;)V
     .registers 3
     .parameter
 
     .prologue
     .line 49
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/async/g;
+    check-cast v0, Lcom/google/android/youtube/core/async/l;
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/a/c;->i:Lcom/google/android/youtube/core/async/g;
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/a/c;->i:Lcom/google/android/youtube/core/async/l;
 
     .line 50
     return-void
@@ -566,11 +566,11 @@
     monitor-enter p0
 
     :try_start_1
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/a/c;->i:Lcom/google/android/youtube/core/async/g;
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/a/c;->i:Lcom/google/android/youtube/core/async/l;
 
     const-string v1, "call setCallback() first"
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 59
     iget v0, p0, Lcom/google/android/youtube/core/async/a/c;->h:I

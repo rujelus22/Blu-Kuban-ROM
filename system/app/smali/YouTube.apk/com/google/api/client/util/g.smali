@@ -4,9 +4,15 @@
 
 
 # static fields
-.field private static final a:[B
+.field private static final b:Ljava/util/Map;
 
-.field private static final b:[B
+
+# instance fields
+.field final a:Ljava/util/List;
+
+.field private final c:Ljava/lang/Class;
+
+.field private final d:Ljava/util/IdentityHashMap;
 
 
 # direct methods
@@ -14,744 +20,334 @@
     .registers 1
 
     .prologue
-    .line 155
-    const/16 v0, 0x40
+    .line 43
+    new-instance v0, Ljava/util/WeakHashMap;
 
-    new-array v0, v0, [B
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
-    fill-array-data v0, :array_14
-
-    sput-object v0, Lcom/google/api/client/util/g;->a:[B
-
-    .line 225
-    const/16 v0, 0x100
-
-    new-array v0, v0, [B
-
-    fill-array-data v0, :array_38
-
-    sput-object v0, Lcom/google/api/client/util/g;->b:[B
+    sput-object v0, Lcom/google/api/client/util/g;->b:Ljava/util/Map;
 
     return-void
-
-    .line 155
-    nop
-
-    :array_14
-    .array-data 0x1
-        0x41t
-        0x42t
-        0x43t
-        0x44t
-        0x45t
-        0x46t
-        0x47t
-        0x48t
-        0x49t
-        0x4at
-        0x4bt
-        0x4ct
-        0x4dt
-        0x4et
-        0x4ft
-        0x50t
-        0x51t
-        0x52t
-        0x53t
-        0x54t
-        0x55t
-        0x56t
-        0x57t
-        0x58t
-        0x59t
-        0x5at
-        0x61t
-        0x62t
-        0x63t
-        0x64t
-        0x65t
-        0x66t
-        0x67t
-        0x68t
-        0x69t
-        0x6at
-        0x6bt
-        0x6ct
-        0x6dt
-        0x6et
-        0x6ft
-        0x70t
-        0x71t
-        0x72t
-        0x73t
-        0x74t
-        0x75t
-        0x76t
-        0x77t
-        0x78t
-        0x79t
-        0x7at
-        0x30t
-        0x31t
-        0x32t
-        0x33t
-        0x34t
-        0x35t
-        0x36t
-        0x37t
-        0x38t
-        0x39t
-        0x2bt
-        0x2ft
-    .end array-data
-
-    .line 225
-    :array_38
-    .array-data 0x1
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xfbt
-        0xfbt
-        0xf7t
-        0xf7t
-        0xfbt
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xfbt
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0x3et
-        0xf7t
-        0xf7t
-        0xf7t
-        0x3ft
-        0x34t
-        0x35t
-        0x36t
-        0x37t
-        0x38t
-        0x39t
-        0x3at
-        0x3bt
-        0x3ct
-        0x3dt
-        0xf7t
-        0xf7t
-        0xf7t
-        0xfft
-        0xf7t
-        0xf7t
-        0xf7t
-        0x0t
-        0x1t
-        0x2t
-        0x3t
-        0x4t
-        0x5t
-        0x6t
-        0x7t
-        0x8t
-        0x9t
-        0xat
-        0xbt
-        0xct
-        0xdt
-        0xet
-        0xft
-        0x10t
-        0x11t
-        0x12t
-        0x13t
-        0x14t
-        0x15t
-        0x16t
-        0x17t
-        0x18t
-        0x19t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0x1at
-        0x1bt
-        0x1ct
-        0x1dt
-        0x1et
-        0x1ft
-        0x20t
-        0x21t
-        0x22t
-        0x23t
-        0x24t
-        0x25t
-        0x26t
-        0x27t
-        0x28t
-        0x29t
-        0x2at
-        0x2bt
-        0x2ct
-        0x2dt
-        0x2et
-        0x2ft
-        0x30t
-        0x31t
-        0x32t
-        0x33t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-        0xf7t
-    .end array-data
 .end method
 
-.method private constructor <init>()V
-    .registers 1
+.method private constructor <init>(Ljava/lang/Class;)V
+    .registers 15
+    .parameter
 
     .prologue
-    .line 478
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    .line 125
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 479
-    return-void
-.end method
+    .line 49
+    new-instance v0, Ljava/util/IdentityHashMap;
 
-.method public static a([B)[B
-    .registers 9
-    .parameter
+    invoke-direct {v0}, Ljava/util/IdentityHashMap;-><init>()V
 
-    .prologue
-    const/4 v7, 0x3
+    iput-object v0, p0, Lcom/google/api/client/util/g;->d:Ljava/util/IdentityHashMap;
 
-    const/4 v1, 0x0
+    .line 126
+    iput-object p1, p0, Lcom/google/api/client/util/g;->c:Ljava/lang/Class;
 
-    .line 565
-    array-length v4, p0
+    .line 128
+    new-instance v5, Ljava/util/TreeSet;
 
-    if-nez p0, :cond_d
+    new-instance v0, Lcom/google/api/client/util/h;
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    invoke-direct {v0, p0}, Lcom/google/api/client/util/h;-><init>(Lcom/google/api/client/util/g;)V
 
-    const-string v1, "Cannot serialize a null array."
+    invoke-direct {v5, v0}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    .line 134
+    invoke-virtual {p1}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
-    throw v0
+    move-result-object v0
 
-    :cond_d
-    if-gez v4, :cond_28
+    .line 135
+    if-eqz v0, :cond_2e
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    .line 136
+    invoke-static {v0}, Lcom/google/api/client/util/g;->a(Ljava/lang/Class;)Lcom/google/api/client/util/g;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 137
+    iget-object v1, p0, Lcom/google/api/client/util/g;->d:Ljava/util/IdentityHashMap;
 
-    const-string v2, "Cannot have length offset: "
+    iget-object v4, v0, Lcom/google/api/client/util/g;->d:Ljava/util/IdentityHashMap;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/util/IdentityHashMap;->putAll(Ljava/util/Map;)V
 
-    move-result-object v1
+    .line 138
+    iget-object v0, v0, Lcom/google/api/client/util/g;->a:Ljava/util/List;
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v0}, Ljava/util/TreeSet;->addAll(Ljava/util/Collection;)Z
 
-    move-result-object v1
+    .line 141
+    :cond_2e
+    invoke-virtual {p1}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v6
 
-    move-result-object v1
+    array-length v7, v6
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    move v4, v3
 
-    throw v0
+    :goto_34
+    if-ge v4, v7, :cond_72
 
-    :cond_28
-    add-int/lit8 v0, v4, 0x0
+    aget-object v8, v6, v4
 
-    array-length v2, p0
+    .line 142
+    invoke-static {v8}, Lcom/google/api/client/util/n;->a(Ljava/lang/reflect/Field;)Lcom/google/api/client/util/n;
 
-    if-le v0, v2, :cond_50
+    move-result-object v9
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    .line 143
+    if-eqz v9, :cond_67
 
-    const-string v2, "Cannot have offset of %d and length of %d with array of length %d"
+    .line 144
+    invoke-virtual {v9}, Lcom/google/api/client/util/n;->b()Ljava/lang/String;
 
-    new-array v3, v7, [Ljava/lang/Object;
+    move-result-object v10
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 147
+    iget-object v0, p0, Lcom/google/api/client/util/g;->d:Ljava/util/IdentityHashMap;
 
-    move-result-object v5
+    invoke-virtual {v0, v10}, Ljava/util/IdentityHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    aput-object v5, v3, v1
+    move-result-object v0
 
-    const/4 v1, 0x1
+    check-cast v0, Lcom/google/api/client/util/n;
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 148
+    if-nez v0, :cond_6b
 
-    move-result-object v4
+    move v1, v2
 
-    aput-object v4, v3, v1
+    :goto_4d
+    const-string v11, "two fields have the same name <%s>: %s and %s"
 
-    const/4 v1, 0x2
+    const/4 v12, 0x3
 
-    array-length v4, p0
+    new-array v12, v12, [Ljava/lang/Object;
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    aput-object v10, v12, v3
 
-    move-result-object v4
+    aput-object v8, v12, v2
 
-    aput-object v4, v3, v1
+    const/4 v8, 0x2
 
-    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_50
-    div-int/lit8 v0, v4, 0x3
-
-    mul-int/lit8 v2, v0, 0x4
-
-    rem-int/lit8 v0, v4, 0x3
-
-    if-lez v0, :cond_6c
-
-    const/4 v0, 0x4
-
-    :goto_59
-    add-int/2addr v0, v2
-
-    new-array v3, v0, [B
-
-    add-int/lit8 v5, v4, -0x2
-
-    move v0, v1
-
-    move v2, v1
-
-    :goto_60
-    if-ge v2, v5, :cond_6e
-
-    add-int/lit8 v6, v2, 0x0
-
-    invoke-static {p0, v6, v7, v3, v0}, Lcom/google/api/client/util/g;->a([BII[BI)[B
-
-    add-int/lit8 v2, v2, 0x3
-
-    add-int/lit8 v0, v0, 0x4
-
-    goto :goto_60
-
-    :cond_6c
-    move v0, v1
-
-    goto :goto_59
-
-    :cond_6e
-    if-ge v2, v4, :cond_79
-
-    add-int/lit8 v5, v2, 0x0
-
-    sub-int v2, v4, v2
-
-    invoke-static {p0, v5, v2, v3, v0}, Lcom/google/api/client/util/g;->a([BII[BI)[B
-
-    add-int/lit8 v0, v0, 0x4
-
-    :cond_79
-    array-length v2, v3
-
-    add-int/lit8 v2, v2, -0x1
-
-    if-gt v0, v2, :cond_85
-
-    new-array v2, v0, [B
-
-    invoke-static {v3, v1, v2, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    move-object v0, v2
-
-    :goto_84
-    return-object v0
-
-    :cond_85
-    move-object v0, v3
-
-    goto :goto_84
-.end method
-
-.method private static a([BII[BI)[B
-    .registers 10
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    const/16 v4, 0x3d
+    if-nez v0, :cond_6d
 
     const/4 v0, 0x0
 
-    .line 520
-    if-lez p2, :cond_28
+    :goto_5a
+    aput-object v0, v12, v8
 
-    aget-byte v1, p0, p1
+    invoke-static {v1, v11, v12}, Lcom/google/common/base/ag;->a(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    shl-int/lit8 v1, v1, 0x18
+    .line 151
+    iget-object v0, p0, Lcom/google/api/client/util/g;->d:Ljava/util/IdentityHashMap;
 
-    ushr-int/lit8 v1, v1, 0x8
+    invoke-virtual {v0, v10, v9}, Ljava/util/IdentityHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move v2, v1
+    .line 152
+    invoke-virtual {v5, v10}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
 
-    :goto_c
-    const/4 v1, 0x1
+    .line 141
+    :cond_67
+    add-int/lit8 v0, v4, 0x1
 
-    if-le p2, v1, :cond_2a
+    move v4, v0
 
-    add-int/lit8 v1, p1, 0x1
+    goto :goto_34
 
-    aget-byte v1, p0, v1
+    :cond_6b
+    move v1, v3
 
-    shl-int/lit8 v1, v1, 0x18
+    .line 148
+    goto :goto_4d
 
-    ushr-int/lit8 v1, v1, 0x10
+    :cond_6d
+    invoke-virtual {v0}, Lcom/google/api/client/util/n;->a()Ljava/lang/reflect/Field;
 
-    :goto_17
-    or-int/2addr v1, v2
+    move-result-object v0
 
-    const/4 v2, 0x2
+    goto :goto_5a
 
-    if-le p2, v2, :cond_23
+    .line 154
+    :cond_72
+    invoke-virtual {v5}, Ljava/util/TreeSet;->isEmpty()Z
 
-    add-int/lit8 v0, p1, 0x2
+    move-result v0
 
-    aget-byte v0, p0, v0
+    if-eqz v0, :cond_7f
 
-    shl-int/lit8 v0, v0, 0x18
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
-    ushr-int/lit8 v0, v0, 0x18
+    move-result-object v0
 
-    :cond_23
-    or-int/2addr v0, v1
+    :goto_7c
+    iput-object v0, p0, Lcom/google/api/client/util/g;->a:Ljava/util/List;
 
-    .line 525
-    packed-switch p2, :pswitch_data_9a
+    .line 156
+    return-void
 
-    .line 548
-    :goto_27
-    return-object p3
+    .line 154
+    :cond_7f
+    new-instance v0, Ljava/util/ArrayList;
 
-    :cond_28
-    move v2, v0
+    invoke-direct {v0, v5}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 520
-    goto :goto_c
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
-    :cond_2a
-    move v1, v0
+    move-result-object v0
 
-    goto :goto_17
+    goto :goto_7c
+.end method
 
-    .line 527
-    :pswitch_2c
-    sget-object v1, Lcom/google/api/client/util/g;->a:[B
+.method public static a(Ljava/lang/Class;)Lcom/google/api/client/util/g;
+    .registers 4
+    .parameter
 
-    ushr-int/lit8 v2, v0, 0x12
+    .prologue
+    .line 65
+    if-nez p0, :cond_4
 
-    aget-byte v1, v1, v2
+    .line 66
+    const/4 v0, 0x0
 
-    aput-byte v1, p3, p4
+    .line 74
+    :goto_3
+    return-object v0
 
-    .line 528
-    add-int/lit8 v1, p4, 0x1
+    .line 68
+    :cond_4
+    sget-object v1, Lcom/google/api/client/util/g;->b:Ljava/util/Map;
 
-    sget-object v2, Lcom/google/api/client/util/g;->a:[B
+    monitor-enter v1
 
-    ushr-int/lit8 v3, v0, 0xc
+    .line 69
+    :try_start_7
+    sget-object v0, Lcom/google/api/client/util/g;->b:Ljava/util/Map;
 
-    and-int/lit8 v3, v3, 0x3f
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    aget-byte v2, v2, v3
+    move-result-object v0
 
-    aput-byte v2, p3, v1
+    check-cast v0, Lcom/google/api/client/util/g;
 
-    .line 529
-    add-int/lit8 v1, p4, 0x2
+    .line 70
+    if-nez v0, :cond_1b
 
-    sget-object v2, Lcom/google/api/client/util/g;->a:[B
+    .line 71
+    new-instance v0, Lcom/google/api/client/util/g;
 
-    ushr-int/lit8 v3, v0, 0x6
+    invoke-direct {v0, p0}, Lcom/google/api/client/util/g;-><init>(Ljava/lang/Class;)V
 
-    and-int/lit8 v3, v3, 0x3f
+    .line 72
+    sget-object v2, Lcom/google/api/client/util/g;->b:Ljava/util/Map;
 
-    aget-byte v2, v2, v3
+    invoke-interface {v2, p0, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    aput-byte v2, p3, v1
+    .line 74
+    :cond_1b
+    monitor-exit v1
+    :try_end_1c
+    .catchall {:try_start_7 .. :try_end_1c} :catchall_1d
 
-    .line 530
-    add-int/lit8 v1, p4, 0x3
+    goto :goto_3
 
-    sget-object v2, Lcom/google/api/client/util/g;->a:[B
+    .line 75
+    :catchall_1d
+    move-exception v0
 
-    and-int/lit8 v0, v0, 0x3f
+    monitor-exit v1
 
-    aget-byte v0, v2, v0
+    throw v0
+.end method
 
-    aput-byte v0, p3, v1
 
-    goto :goto_27
+# virtual methods
+.method public final a(Ljava/lang/String;)Lcom/google/api/client/util/n;
+    .registers 4
+    .parameter
 
-    .line 534
-    :pswitch_57
-    sget-object v1, Lcom/google/api/client/util/g;->a:[B
+    .prologue
+    .line 94
+    iget-object v1, p0, Lcom/google/api/client/util/g;->d:Ljava/util/IdentityHashMap;
 
-    ushr-int/lit8 v2, v0, 0x12
+    if-nez p1, :cond_c
 
-    aget-byte v1, v1, v2
+    const/4 v0, 0x0
 
-    aput-byte v1, p3, p4
+    :goto_5
+    invoke-virtual {v1, v0}, Ljava/util/IdentityHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 535
-    add-int/lit8 v1, p4, 0x1
+    move-result-object v0
 
-    sget-object v2, Lcom/google/api/client/util/g;->a:[B
+    check-cast v0, Lcom/google/api/client/util/n;
 
-    ushr-int/lit8 v3, v0, 0xc
+    return-object v0
 
-    and-int/lit8 v3, v3, 0x3f
+    :cond_c
+    invoke-virtual {p1}, Ljava/lang/String;->intern()Ljava/lang/String;
 
-    aget-byte v2, v2, v3
+    move-result-object v0
 
-    aput-byte v2, p3, v1
+    goto :goto_5
+.end method
 
-    .line 536
-    add-int/lit8 v1, p4, 0x2
+.method public final a()Z
+    .registers 2
 
-    sget-object v2, Lcom/google/api/client/util/g;->a:[B
+    .prologue
+    .line 114
+    iget-object v0, p0, Lcom/google/api/client/util/g;->c:Ljava/lang/Class;
 
-    ushr-int/lit8 v0, v0, 0x6
+    invoke-virtual {v0}, Ljava/lang/Class;->isEnum()Z
 
-    and-int/lit8 v0, v0, 0x3f
+    move-result v0
 
-    aget-byte v0, v2, v0
+    return v0
+.end method
 
-    aput-byte v0, p3, v1
+.method public final b(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    .registers 3
+    .parameter
 
-    .line 537
-    add-int/lit8 v0, p4, 0x3
+    .prologue
+    .line 104
+    invoke-virtual {p0, p1}, Lcom/google/api/client/util/g;->a(Ljava/lang/String;)Lcom/google/api/client/util/n;
 
-    aput-byte v4, p3, v0
+    move-result-object v0
 
-    goto :goto_27
+    .line 105
+    if-nez v0, :cond_8
 
-    .line 541
-    :pswitch_7c
-    sget-object v1, Lcom/google/api/client/util/g;->a:[B
+    const/4 v0, 0x0
 
-    ushr-int/lit8 v2, v0, 0x12
+    :goto_7
+    return-object v0
 
-    aget-byte v1, v1, v2
+    :cond_8
+    invoke-virtual {v0}, Lcom/google/api/client/util/n;->a()Ljava/lang/reflect/Field;
 
-    aput-byte v1, p3, p4
+    move-result-object v0
 
-    .line 542
-    add-int/lit8 v1, p4, 0x1
+    goto :goto_7
+.end method
 
-    sget-object v2, Lcom/google/api/client/util/g;->a:[B
+.method public final b()Ljava/util/Collection;
+    .registers 2
 
-    ushr-int/lit8 v0, v0, 0xc
+    .prologue
+    .line 122
+    iget-object v0, p0, Lcom/google/api/client/util/g;->a:Ljava/util/List;
 
-    and-int/lit8 v0, v0, 0x3f
-
-    aget-byte v0, v2, v0
-
-    aput-byte v0, p3, v1
-
-    .line 543
-    add-int/lit8 v0, p4, 0x2
-
-    aput-byte v4, p3, v0
-
-    .line 544
-    add-int/lit8 v0, p4, 0x3
-
-    aput-byte v4, p3, v0
-
-    goto :goto_27
-
-    .line 525
-    nop
-
-    :pswitch_data_9a
-    .packed-switch 0x1
-        :pswitch_7c
-        :pswitch_57
-        :pswitch_2c
-    .end packed-switch
+    return-object v0
 .end method

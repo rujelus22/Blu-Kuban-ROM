@@ -1,45 +1,39 @@
 .class final Lcom/google/android/youtube/core/converter/http/cq;
-.super Lcom/google/android/youtube/core/converter/l;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/youtube/core/model/i;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/converter/http/ci;
+.field final synthetic a:Lcom/google/android/youtube/core/converter/http/cp;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/core/converter/http/ci;)V
+.method constructor <init>(Lcom/google/android/youtube/core/converter/http/cp;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 54
-    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/cq;->a:Lcom/google/android/youtube/core/converter/http/ci;
+    .line 50
+    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/cq;->a:Lcom/google/android/youtube/core/converter/http/cp;
 
-    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
-    .registers 5
-    .parameter
-    .parameter
-    .parameter
+.method public final synthetic build()Ljava/lang/Object;
+    .registers 2
 
     .prologue
-    .line 57
-    invoke-virtual {p1}, Lcom/google/android/youtube/core/utils/p;->peek()Ljava/lang/Object;
+    .line 50
+    invoke-static {}, Lcom/google/android/youtube/core/async/Optional$Null;->instance()Lcom/google/android/youtube/core/async/Optional;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/UserProfile$Builder;
-
-    .line 58
-    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->username(Ljava/lang/String;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
-
-    .line 59
-    return-void
+    return-object v0
 .end method

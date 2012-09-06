@@ -279,7 +279,7 @@
     if-nez v3, :cond_d
 
     .line 36
-    const v3, 0x1030119
+    const v3, 0x103006b
 
     invoke-virtual {p0, v3}, Lcom/google/android/talk/GroupChatInviteeList;->setTheme(I)V
 

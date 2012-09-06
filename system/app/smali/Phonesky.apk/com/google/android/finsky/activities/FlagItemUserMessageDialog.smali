@@ -198,7 +198,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f04006c
+    const v8, 0x7f040077
 
     const/4 v9, 0x0
 
@@ -208,7 +208,7 @@
 
     .line 65
     .local v4, flagMessageView:Landroid/view/View;
-    const v7, 0x7f080107
+    const v7, 0x7f080141
 
     invoke-virtual {v4, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -335,7 +335,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 93
-    const v3, 0x7f080107
+    const v3, 0x7f080141
 
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog;->findViewById(I)Landroid/view/View;
 

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.sec.android.inputmethod.axt9.AxT9CandidateViewMgr android:orientation="vertical" android:id="@id/candidates_manager" android:layout_width="fill_parent" android:layout_height="@dimen/candidate_height"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.sec.android.inputmethod.axt9.AxT9CandidateViewLayout android:orientation="vertical" android:id="@id/candidates_bottom" android:background="@drawable/sip_bg_predictive_normal" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-</com.sec.android.inputmethod.axt9.AxT9CandidateViewMgr>

@@ -29,7 +29,7 @@
     .parameter "cause"
 
     .prologue
-    .line 67
+    .line 65
     if-nez p1, :cond_a
 
     const/4 v0, 0x0
@@ -37,13 +37,13 @@
     :goto_3
     invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    .line 68
+    .line 66
     invoke-virtual {p0, p1}, Lorg/apache/commons/io/IOExceptionWithCause;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
-    .line 69
+    .line 67
     return-void
 
-    .line 67
+    .line 65
     :cond_a
     invoke-virtual {p1}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 

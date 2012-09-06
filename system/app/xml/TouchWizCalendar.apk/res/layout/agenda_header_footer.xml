@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:background="@drawable/calendars_list_selector_background" android:paddingLeft="10.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="65.32999dip" android:minHeight="?android:listPreferredItemHeight"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:ellipsize="end" android:gravity="center_vertical" android:id="@id/label" android:text="@string/tap_to_look" android:singleLine="true" style="@style/TextStyle_1" />
-    <TextView android:textSize="@dimen/info_text_size_2" android:textColor="@drawable/calendar_text_secondary" android:id="@id/showing" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-</LinearLayout>

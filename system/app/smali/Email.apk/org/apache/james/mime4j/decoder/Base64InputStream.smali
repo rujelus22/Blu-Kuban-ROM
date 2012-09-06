@@ -26,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 134
+    .line 131
     const/16 v0, 0x100
 
     new-array v0, v0, [B
@@ -305,36 +305,36 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 42
+    .line 43
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
-    .line 36
+    .line 37
     iput v1, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->outCount:I
 
-    .line 37
+    .line 38
     iput v1, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->outIndex:I
 
-    .line 38
+    .line 39
     const/4 v0, 0x3
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->outputBuffer:[I
 
-    .line 39
+    .line 40
     const/4 v0, 0x4
 
     new-array v0, v0, [B
 
     iput-object v0, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->inputBuffer:[B
 
-    .line 40
+    .line 41
     iput-boolean v1, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->done:Z
 
-    .line 43
+    .line 44
     iput-object p1, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->s:Ljava/io/InputStream;
 
-    .line 44
+    .line 45
     return-void
 .end method
 
@@ -351,10 +351,10 @@
 
     const/4 v3, 0x0
 
-    .line 107
+    .line 105
     const/4 v0, 0x0
 
-    .line 108
+    .line 106
     .local v0, accum:I
     iget-object v1, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->inputBuffer:[B
 
@@ -364,7 +364,7 @@
 
     or-int/2addr v0, v1
 
-    .line 109
+    .line 107
     iget-object v1, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->inputBuffer:[B
 
     aget-byte v1, v1, v4
@@ -373,7 +373,7 @@
 
     or-int/2addr v0, v1
 
-    .line 110
+    .line 108
     iget-object v1, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->inputBuffer:[B
 
     aget-byte v1, v1, v5
@@ -382,19 +382,19 @@
 
     or-int/2addr v0, v1
 
-    .line 111
+    .line 109
     iget-object v1, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->inputBuffer:[B
 
     aget-byte v1, v1, v6
 
     or-int/2addr v0, v1
 
-    .line 116
+    .line 113
     const/4 v1, 0x4
 
     if-ne p1, v1, :cond_3b
 
-    .line 117
+    .line 114
     iget-object v1, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->outputBuffer:[I
 
     shr-int/lit8 v2, v0, 0x10
@@ -403,7 +403,7 @@
 
     aput v2, v1, v3
 
-    .line 118
+    .line 115
     iget-object v1, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->outputBuffer:[I
 
     shr-int/lit8 v2, v0, 0x8
@@ -412,25 +412,25 @@
 
     aput v2, v1, v4
 
-    .line 119
+    .line 116
     iget-object v1, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->outputBuffer:[I
 
     and-int/lit16 v2, v0, 0xff
 
     aput v2, v1, v5
 
-    .line 120
+    .line 117
     iput v6, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->outCount:I
 
-    .line 130
+    .line 127
     :goto_3a
     return-void
 
-    .line 122
+    .line 119
     :cond_3b
     if-ne p1, v6, :cond_50
 
-    .line 123
+    .line 120
     iget-object v1, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->outputBuffer:[I
 
     shr-int/lit8 v2, v0, 0x10
@@ -439,7 +439,7 @@
 
     aput v2, v1, v3
 
-    .line 124
+    .line 121
     iget-object v1, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->outputBuffer:[I
 
     shr-int/lit8 v2, v0, 0x8
@@ -448,12 +448,12 @@
 
     aput v2, v1, v4
 
-    .line 125
+    .line 122
     iput v5, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->outCount:I
 
     goto :goto_3a
 
-    .line 128
+    .line 125
     :cond_50
     iget-object v1, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->outputBuffer:[I
 
@@ -463,7 +463,7 @@
 
     aput v2, v1, v3
 
-    .line 129
+    .line 126
     iput v4, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->outCount:I
 
     goto :goto_3a
@@ -507,16 +507,16 @@
     .local v0, i:I
     sparse-switch v0, :sswitch_data_30
 
-    .line 93
+    .line 92
     sget-object v4, Lorg/apache/james/mime4j/decoder/Base64InputStream;->TRANSLATION:[B
 
     aget-byte v3, v4, v0
 
-    .line 94
+    .line 93
     .local v3, sX:B
     if-ltz v3, :cond_6
 
-    .line 96
+    .line 94
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->inputBuffer:[B
 
     add-int/lit8 v2, v1, 0x1
@@ -525,17 +525,17 @@
     .local v2, inCount:I
     aput-byte v3, v4, v1
 
-    .line 97
+    .line 95
     const/4 v4, 0x4
 
     if-ne v2, v4, :cond_2e
 
-    .line 98
+    .line 96
     invoke-direct {p0, v2}, Lorg/apache/james/mime4j/decoder/Base64InputStream;->decodeAndEnqueue(I)V
 
     move v1, v2
 
-    .line 104
+    .line 102
     .end local v0           #i:I
     .end local v2           #inCount:I
     .end local v3           #sX:B
@@ -545,14 +545,14 @@
     :sswitch_26
     return-void
 
-    .line 89
+    .line 88
     .restart local v0       #i:I
     :sswitch_27
     const/4 v4, 0x1
 
     iput-boolean v4, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->done:Z
 
-    .line 90
+    .line 89
     invoke-direct {p0, v1}, Lorg/apache/james/mime4j/decoder/Base64InputStream;->decodeAndEnqueue(I)V
 
     goto :goto_26
@@ -563,7 +563,7 @@
     :cond_2e
     move v1, v2
 
-    .line 101
+    .line 99
     .end local v2           #inCount:I
     .restart local v1       #inCount:I
     goto :goto_6
@@ -587,12 +587,12 @@
     .end annotation
 
     .prologue
-    .line 53
+    .line 54
     iget-object v0, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->s:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
 
-    .line 54
+    .line 55
     return-void
 .end method
 
@@ -605,27 +605,27 @@
     .end annotation
 
     .prologue
-    .line 58
+    .line 59
     iget v0, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->outIndex:I
 
     iget v1, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->outCount:I
 
     if-ne v0, v1, :cond_11
-
-    .line 59
-    invoke-direct {p0}, Lorg/apache/james/mime4j/decoder/Base64InputStream;->fillBuffer()V
 
     .line 60
+    invoke-direct {p0}, Lorg/apache/james/mime4j/decoder/Base64InputStream;->fillBuffer()V
+
+    .line 61
     iget v0, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->outIndex:I
 
     iget v1, p0, Lorg/apache/james/mime4j/decoder/Base64InputStream;->outCount:I
 
     if-ne v0, v1, :cond_11
 
-    .line 61
+    .line 62
     const/4 v0, -0x1
 
-    .line 65
+    .line 66
     :goto_10
     return v0
 

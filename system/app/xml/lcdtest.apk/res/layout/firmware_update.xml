@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@color/background" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/Main_update" android:lines="2" />
-    <Button android:id="@id/Firmware_update" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/Update" />
-    <Button android:id="@id/Firmware_update_Exit" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/EXIT" />
-</LinearLayout>

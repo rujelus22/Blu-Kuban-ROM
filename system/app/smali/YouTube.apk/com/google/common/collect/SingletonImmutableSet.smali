@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private transient cachedHashCode:Ljava/lang/Integer;
+.field private transient cachedHashCode:I
 
 .field final transient element:Ljava/lang/Object;
 
@@ -15,40 +15,36 @@
     .parameter
 
     .prologue
-    .line 42
+    .line 46
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableSet;-><init>()V
 
-    .line 43
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 47
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->element:Ljava/lang/Object;
 
-    .line 44
+    .line 48
     return-void
 .end method
 
 .method constructor <init>(Ljava/lang/Object;I)V
-    .registers 4
+    .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 46
+    .line 50
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableSet;-><init>()V
 
-    .line 48
+    .line 52
     iput-object p1, p0, Lcom/google/common/collect/SingletonImmutableSet;->element:Ljava/lang/Object;
 
-    .line 49
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 53
+    iput p2, p0, Lcom/google/common/collect/SingletonImmutableSet;->cachedHashCode:I
 
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->cachedHashCode:Ljava/lang/Integer;
-
-    .line 50
+    .line 54
     return-void
 .end method
 
@@ -59,7 +55,7 @@
     .parameter
 
     .prologue
-    .line 61
+    .line 66
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->element:Ljava/lang/Object;
 
     invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -72,30 +68,33 @@
 .method public final equals(Ljava/lang/Object;)Z
     .registers 6
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     const/4 v1, 0x0
 
     const/4 v0, 0x1
 
-    .line 86
+    .line 94
     if-ne p1, p0, :cond_5
 
-    .line 93
+    .line 101
     :cond_4
     :goto_4
     return v0
 
-    .line 89
+    .line 97
     :cond_5
     instance-of v2, p1, Ljava/util/Set;
 
     if-eqz v2, :cond_23
 
-    .line 90
+    .line 98
     check-cast p1, Ljava/util/Set;
 
-    .line 91
+    .line 99
     invoke-interface {p1}, Ljava/util/Set;->size()I
 
     move-result v2
@@ -126,7 +125,7 @@
     :cond_23
     move v0, v1
 
-    .line 93
+    .line 101
     goto :goto_4
 .end method
 
@@ -134,46 +133,31 @@
     .registers 2
 
     .prologue
-    .line 97
-    iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->cachedHashCode:Ljava/lang/Integer;
+    .line 106
+    iget v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->cachedHashCode:I
 
-    .line 98
-    if-nez v0, :cond_15
+    .line 107
+    if-nez v0, :cond_c
 
-    .line 99
+    .line 108
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->element:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iput v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->cachedHashCode:I
 
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->cachedHashCode:Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    .line 101
-    :goto_14
+    .line 110
+    :cond_c
     return v0
-
-    :cond_15
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    goto :goto_14
 .end method
 
 .method public final isEmpty()Z
     .registers 2
 
     .prologue
-    .line 57
+    .line 62
     const/4 v0, 0x0
 
     return v0
@@ -183,20 +167,40 @@
     .registers 2
 
     .prologue
-    .line 105
+    .line 114
+    iget v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->cachedHashCode:I
+
+    if-eqz v0, :cond_6
+
+    const/4 v0, 0x1
+
+    :goto_5
+    return v0
+
+    :cond_6
+    const/4 v0, 0x0
+
+    goto :goto_5
+.end method
+
+.method final isPartialView()Z
+    .registers 2
+
+    .prologue
+    .line 74
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public final iterator()Lcom/google/common/collect/gf;
+.method public final iterator()Lcom/google/common/collect/mt;
     .registers 2
 
     .prologue
-    .line 65
+    .line 70
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->element:Ljava/lang/Object;
 
-    invoke-static {v0}, Lcom/google/common/collect/cr;->a(Ljava/lang/Object;)Lcom/google/common/collect/gf;
+    invoke-static {v0}, Lcom/google/common/collect/ee;->a(Ljava/lang/Object;)Lcom/google/common/collect/mt;
 
     move-result-object v0
 
@@ -208,7 +212,7 @@
 
     .prologue
     .line 32
-    invoke-virtual {p0}, Lcom/google/common/collect/SingletonImmutableSet;->iterator()Lcom/google/common/collect/gf;
+    invoke-virtual {p0}, Lcom/google/common/collect/SingletonImmutableSet;->iterator()Lcom/google/common/collect/mt;
 
     move-result-object v0
 
@@ -219,7 +223,7 @@
     .registers 2
 
     .prologue
-    .line 53
+    .line 58
     const/4 v0, 0x1
 
     return v0
@@ -229,7 +233,7 @@
     .registers 4
 
     .prologue
-    .line 69
+    .line 78
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -250,17 +254,17 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 74
+    .line 82
     array-length v0, p1
 
     if-nez v0, :cond_e
 
-    .line 75
-    invoke-static {p1, v1}, Lcom/google/common/collect/fq;->a([Ljava/lang/Object;I)[Ljava/lang/Object;
+    .line 83
+    invoke-static {p1, v1}, Lcom/google/common/collect/jd;->a([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 81
+    .line 89
     :cond_8
     :goto_8
     const/4 v0, 0x0
@@ -269,16 +273,16 @@
 
     aput-object v1, p1, v0
 
-    .line 82
+    .line 90
     return-object p1
 
-    .line 76
+    .line 84
     :cond_e
     array-length v0, p1
 
     if-le v0, v1, :cond_8
 
-    .line 77
+    .line 85
     const/4 v0, 0x0
 
     aput-object v0, p1, v1
@@ -290,14 +294,14 @@
     .registers 4
 
     .prologue
-    .line 109
+    .line 118
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->element:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 110
+    .line 119
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I

@@ -41,31 +41,31 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 12394
+    .line 12668
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 12399
+    .line 12673
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->fileType_:I
 
-    .line 12416
+    .line 12690
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->versionCode_:I
 
-    .line 12433
+    .line 12707
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->size_:J
 
-    .line 12450
+    .line 12724
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->downloadUrl_:Ljava/lang/String;
 
-    .line 12496
+    .line 12771
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->cachedSize:I
 
-    .line 12394
+    .line 12668
     return-void
 .end method
 
@@ -75,15 +75,15 @@
     .registers 2
 
     .prologue
-    .line 12498
+    .line 12774
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 12500
+    .line 12776
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->getSerializedSize()I
 
-    .line 12502
+    .line 12778
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->cachedSize:I
 
@@ -94,7 +94,7 @@
     .registers 2
 
     .prologue
-    .line 12451
+    .line 12725
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->downloadUrl_:Ljava/lang/String;
 
     return-object v0
@@ -104,7 +104,7 @@
     .registers 2
 
     .prologue
-    .line 12401
+    .line 12675
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->fileType_:I
 
     return v0
@@ -114,10 +114,10 @@
     .registers 5
 
     .prologue
-    .line 12506
+    .line 12783
     const/4 v0, 0x0
 
-    .line 12507
+    .line 12784
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->hasFileType()Z
 
@@ -125,7 +125,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 12508
+    .line 12785
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->getFileType()I
@@ -138,7 +138,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12511
+    .line 12788
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->hasVersionCode()Z
 
@@ -146,7 +146,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 12512
+    .line 12789
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->getVersionCode()I
@@ -159,7 +159,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12515
+    .line 12792
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->hasSize()Z
 
@@ -167,7 +167,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 12516
+    .line 12793
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->getSize()J
@@ -180,7 +180,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12519
+    .line 12796
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->hasDownloadUrl()Z
 
@@ -188,7 +188,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 12520
+    .line 12797
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->getDownloadUrl()Ljava/lang/String;
@@ -201,11 +201,11 @@
 
     add-int/2addr v0, v1
 
-    .line 12523
+    .line 12800
     :cond_41
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->cachedSize:I
 
-    .line 12524
+    .line 12801
     return v0
 .end method
 
@@ -213,7 +213,7 @@
     .registers 3
 
     .prologue
-    .line 12434
+    .line 12708
     iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->size_:J
 
     return-wide v0
@@ -223,7 +223,7 @@
     .registers 2
 
     .prologue
-    .line 12417
+    .line 12691
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->versionCode_:I
 
     return v0
@@ -233,7 +233,7 @@
     .registers 2
 
     .prologue
-    .line 12452
+    .line 12726
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->hasDownloadUrl:Z
 
     return v0
@@ -243,7 +243,7 @@
     .registers 2
 
     .prologue
-    .line 12400
+    .line 12674
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->hasFileType:Z
 
     return v0
@@ -253,7 +253,7 @@
     .registers 2
 
     .prologue
-    .line 12435
+    .line 12709
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->hasSize:Z
 
     return v0
@@ -263,7 +263,7 @@
     .registers 2
 
     .prologue
-    .line 12418
+    .line 12692
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->hasVersionCode:Z
 
     return v0
@@ -279,29 +279,29 @@
     .end annotation
 
     .prologue
-    .line 12531
+    .line 12809
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 12532
+    .line 12810
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_2e
 
-    .line 12536
+    .line 12814
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 12537
+    .line 12815
     :sswitch_d
     return-object p0
 
-    .line 12542
+    .line 12820
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -311,7 +311,7 @@
 
     goto :goto_0
 
-    .line 12546
+    .line 12824
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -321,7 +321,7 @@
 
     goto :goto_0
 
-    .line 12550
+    .line 12828
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -331,7 +331,7 @@
 
     goto :goto_0
 
-    .line 12554
+    .line 12832
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -341,7 +341,7 @@
 
     goto :goto_0
 
-    .line 12532
+    .line 12810
     :sswitch_data_2e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -362,7 +362,7 @@
     .end annotation
 
     .prologue
-    .line 12392
+    .line 12666
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;
 
     move-result-object v0
@@ -375,15 +375,15 @@
     .parameter "value"
 
     .prologue
-    .line 12454
+    .line 12728
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->hasDownloadUrl:Z
 
-    .line 12455
+    .line 12729
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->downloadUrl_:Ljava/lang/String;
 
-    .line 12456
+    .line 12730
     return-object p0
 .end method
 
@@ -392,15 +392,15 @@
     .parameter "value"
 
     .prologue
-    .line 12403
+    .line 12677
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->hasFileType:Z
 
-    .line 12404
+    .line 12678
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->fileType_:I
 
-    .line 12405
+    .line 12679
     return-object p0
 .end method
 
@@ -409,15 +409,15 @@
     .parameter "value"
 
     .prologue
-    .line 12437
+    .line 12711
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->hasSize:Z
 
-    .line 12438
+    .line 12712
     iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->size_:J
 
-    .line 12439
+    .line 12713
     return-object p0
 .end method
 
@@ -426,15 +426,15 @@
     .parameter "value"
 
     .prologue
-    .line 12420
+    .line 12694
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->hasVersionCode:Z
 
-    .line 12421
+    .line 12695
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->versionCode_:I
 
-    .line 12422
+    .line 12696
     return-object p0
 .end method
 
@@ -448,14 +448,14 @@
     .end annotation
 
     .prologue
-    .line 12482
+    .line 12757
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->hasFileType()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 12483
+    .line 12758
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->getFileType()I
@@ -464,7 +464,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 12485
+    .line 12760
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->hasVersionCode()Z
 
@@ -472,7 +472,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 12486
+    .line 12761
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->getVersionCode()I
@@ -481,7 +481,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 12488
+    .line 12763
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->hasSize()Z
 
@@ -489,7 +489,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 12489
+    .line 12764
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->getSize()J
@@ -498,7 +498,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 12491
+    .line 12766
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->hasDownloadUrl()Z
 
@@ -506,7 +506,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 12492
+    .line 12767
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$FileMetadataProto;->getDownloadUrl()Ljava/lang/String;
@@ -515,7 +515,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 12494
+    .line 12769
     :cond_38
     return-void
 .end method

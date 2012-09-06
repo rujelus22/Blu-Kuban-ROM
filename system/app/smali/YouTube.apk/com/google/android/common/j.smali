@@ -113,7 +113,7 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/common/SwipeySwitcher;->a(I)V
+    invoke-virtual {v0, v1}, Lcom/google/android/common/SwipeySwitcher;->setSelection(I)V
 
     .line 765
     iget-object v0, p0, Lcom/google/android/common/j;->b:Lcom/google/android/common/SwipeySwitcher;

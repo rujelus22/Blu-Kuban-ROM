@@ -146,11 +146,13 @@
 .end method
 
 .method protected onPostCreate(Landroid/os/Bundle;)V
-    .registers 5
+    .registers 6
     .parameter
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v3, 0x1
+
+    const/4 v0, 0x0
 
     .line 93
     invoke-super {p0, p1}, Lcom/google/android/plus1/BasePlusOneWebSignupActivity;->onPostCreate(Landroid/os/Bundle;)V
@@ -158,39 +160,39 @@
     .line 94
     invoke-virtual {p0}, Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;->l()Landroid/webkit/WebView;
 
-    move-result-object v0
-
-    .line 95
-    invoke-virtual {v0}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
     move-result-object v1
 
+    .line 95
+    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
+
+    move-result-object v2
+
     .line 96
-    invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
+    invoke-virtual {v2, v3}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
 
     .line 97
-    invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V
+    invoke-virtual {v2, v3}, Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V
 
     .line 98
-    new-instance v1, Lcom/google/android/plus1/t;
+    new-instance v2, Lcom/google/android/plus1/t;
 
-    invoke-direct {v1, p0}, Lcom/google/android/plus1/t;-><init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;)V
+    invoke-direct {v2, p0, v0}, Lcom/google/android/plus1/t;-><init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;B)V
 
-    invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
+    invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
 
     .line 99
-    new-instance v1, Lcom/google/android/plus1/s;
+    new-instance v2, Lcom/google/android/plus1/s;
 
-    invoke-direct {v1, p0}, Lcom/google/android/plus1/s;-><init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;)V
+    invoke-direct {v2, p0, v0}, Lcom/google/android/plus1/s;-><init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;B)V
 
-    invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V
+    invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V
 
     .line 103
-    new-instance v1, Lcom/google/android/plus1/r;
+    new-instance v2, Lcom/google/android/plus1/r;
 
-    invoke-direct {v1, p0}, Lcom/google/android/plus1/r;-><init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;)V
+    invoke-direct {v2, p0}, Lcom/google/android/plus1/r;-><init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;)V
 
-    invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 117
     invoke-static {p0}, Landroid/webkit/CookieSyncManager;->createInstance(Landroid/content/Context;)Landroid/webkit/CookieSyncManager;
@@ -198,14 +200,12 @@
     .line 118
     invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Landroid/webkit/CookieManager;->removeAllCookie()V
+    invoke-virtual {v1}, Landroid/webkit/CookieManager;->removeAllCookie()V
 
     .line 120
     if-nez p1, :cond_4d
-
-    const/4 v0, 0x0
 
     .line 122
     :goto_37
@@ -216,7 +216,7 @@
 
     const/4 v1, 0x3
 
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v1}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v0
 

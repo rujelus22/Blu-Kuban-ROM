@@ -26,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 541
+    .line 207
     new-instance v0, Lcom/android/email/activity/MessageListFragment$EmptyCallback;
 
     invoke-direct {v0}, Lcom/android/email/activity/MessageListFragment$EmptyCallback;-><init>()V
@@ -40,97 +40,57 @@
     .registers 1
 
     .prologue
-    .line 540
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 206
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public messageUpdateDB(J)V
-    .registers 3
-    .parameter "messageId"
-
-    .prologue
-    .line 632
-    return-void
-.end method
-
-.method public onAllMessageLoaded(I)V
+.method public onAdvancingOpAccepted(Ljava/util/Set;)V
     .registers 2
-    .parameter "count"
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Set",
+            "<",
+            "Ljava/lang/Long;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 636
+    .line 220
+    .local p1, affectedMessages:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/Long;>;"
     return-void
 .end method
 
-.method public onComposeFromMessageListFragment()V
+.method public onDragEnded()V
     .registers 1
 
     .prologue
-    .line 555
+    .line 229
     return-void
 .end method
 
-.method public onConversationMoveAlways([J[Ljava/lang/String;I)V
-    .registers 4
-    .parameter "messageIds"
-    .parameter "convIds"
-    .parameter "bundleConversationType"
-
-    .prologue
-    .line 587
-    return-void
-.end method
-
-.method public onEnterSelectionMode(Z)V
+.method public onDragStarted()Z
     .registers 2
-    .parameter "enter"
 
     .prologue
-    .line 574
-    return-void
+    .line 224
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
-.method public onFollowUpViewShown()V
-    .registers 3
+.method public onMailboxNotFound(Z)V
+    .registers 2
+    .parameter "isFirstLoad"
 
     .prologue
-    .line 591
-    sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
-
-    const-string v1, "Here"
-
-    invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
-
-    .line 592
-    return-void
-.end method
-
-.method public onForward(J)V
-    .registers 3
-    .parameter "messageId"
-
-    .prologue
-    .line 623
-    return-void
-.end method
-
-.method public onMailBoxList()V
-    .registers 1
-
-    .prologue
-    .line 550
-    return-void
-.end method
-
-.method public onMailboxNotFound()V
-    .registers 1
-
-    .prologue
-    .line 545
+    .line 211
     return-void
 .end method
 
@@ -142,93 +102,6 @@
     .parameter "type"
 
     .prologue
-    .line 570
-    return-void
-.end method
-
-.method public onMoveMessages([J)V
-    .registers 2
-    .parameter "messageIds"
-
-    .prologue
-    .line 578
-    return-void
-.end method
-
-.method public onOutboxMessageSending()V
-    .registers 1
-
-    .prologue
-    .line 640
-    return-void
-.end method
-
-.method public onRefreshFromMessageListFragment()V
-    .registers 1
-
-    .prologue
-    .line 560
-    return-void
-.end method
-
-.method public onReply(J)V
-    .registers 3
-    .parameter "messageId"
-
-    .prologue
-    .line 615
-    return-void
-.end method
-
-.method public onReplyAll(J)V
-    .registers 3
-    .parameter "messageId"
-
-    .prologue
-    .line 619
-    return-void
-.end method
-
-.method public onSearchFromMessageListFragment()V
-    .registers 1
-
-    .prologue
-    .line 565
-    return-void
-.end method
-
-.method public onWaitTooLong()V
-    .registers 1
-
-    .prologue
-    .line 628
-    return-void
-.end method
-
-.method public refreshAllAccount()V
-    .registers 1
-
-    .prologue
-    .line 610
-    return-void
-.end method
-
-.method public setItemCheckboxPressed(ZLcom/android/email/activity/MessageListItemContainer;)V
-    .registers 3
-    .parameter "bool"
-    .parameter "item"
-
-    .prologue
-    .line 596
-    return-void
-.end method
-
-.method public setSubItemCheckboxPressed(ZLcom/android/email/activity/MessageListItemContainer;)V
-    .registers 3
-    .parameter "b"
-    .parameter "messageListSubTitleItem"
-
-    .prologue
-    .line 601
+    .line 216
     return-void
 .end method

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<animation-list android:id="@id/pcwanimation" android:oneshot="false"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:duration="200" android:drawable="@drawable/fmm_ani_ring_01" />
-    <item android:duration="200" android:drawable="@drawable/fmm_ani_ring_02" />
-    <item android:duration="200" android:drawable="@drawable/fmm_ani_ring_03" />
-    <item android:duration="200" android:drawable="@drawable/fmm_ani_ring_04" />
-</animation-list>

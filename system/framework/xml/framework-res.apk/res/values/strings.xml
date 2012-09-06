@@ -363,7 +363,7 @@ Buy a new USIM card, please."</string>
     <string name="global_actions">Device options</string>
     <string name="global_action_lock">Screen lock</string>
     <string name="global_action_power_off">Power off</string>
-    <string name="global_action_restart">Restart</string>
+    <string name="global_action_restart">Reboot</string>
     <string name="global_action_toggle_silent_mode">Silent mode</string>
     <string name="global_action_silent_mode_on_status">Sound is OFF</string>
     <string name="global_action_silent_mode_off_status">Sound is ON</string>
@@ -1621,6 +1621,35 @@ for account %s"</string>
     <string name="wifi_on_vt_not_allowed_msg">Video Telephony is impossible during Wi-Fi on</string>
     <string name="sum_hide_caller_id">Number hidden in outgoing calls</string>
     <string name="sum_show_caller_id">Number displayed in outgoing calls</string>
+    <item type="string" name="APKTOOL_DUMMY_063d">false</item>
+    <item type="string" name="APKTOOL_DUMMY_063e">false</item>
+    <item type="string" name="APKTOOL_DUMMY_063f">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0640">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0641">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0644">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0645">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0646">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0647">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0648">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0649">false</item>
+    <item type="string" name="APKTOOL_DUMMY_064a">false</item>
+    <item type="string" name="APKTOOL_DUMMY_064b">false</item>
+    <item type="string" name="APKTOOL_DUMMY_064c">false</item>
+    <item type="string" name="APKTOOL_DUMMY_064d">false</item>
+    <item type="string" name="APKTOOL_DUMMY_064e">false</item>
+    <item type="string" name="APKTOOL_DUMMY_064f">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0650">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0651">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0652">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0653">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0654">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0655">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0656">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0657">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0658">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0659">false</item>
+    <item type="string" name="APKTOOL_DUMMY_065a">false</item>
+    <item type="string" name="APKTOOL_DUMMY_065b">false</item>
     <string name="cutAll">Cut all</string>
     <string name="copyAll">Copy all</string>
     <string name="undo">Undo</string>
@@ -1628,7 +1657,7 @@ for account %s"</string>
     <string name="operation_not_allowed">Operation Not Allowed</string>
     <string name="exceeded_maxlength">Maximum message size exceeded</string>
     <string name="zz_roamingText0">Digital Roaming</string>
-    <string name="zz_roamingText1">Sprint</string>
+    <string name="zz_roamingText1">The Blu Kuban</string>
     <string name="zz_roamingText2">Digital Roaming</string>
     <string name="zz_roamingText3">Out of Neighborhood</string>
     <string name="zz_roamingText4">Out of Building</string>
@@ -1675,7 +1704,7 @@ for account %s"</string>
     <string name="zz_roamingText96">Hotel Guest</string>
     <string name="zz_roamingText97">Rental</string>
     <string name="zz_roamingText98">Corporate</string>
-    <string name="zz_roamingText99">Sprint</string>
+    <string name="zz_roamingText99">The Blu Kuban</string>
     <string name="zz_roamingText100">Campus</string>
     <string name="zz_roamingText101">In Building</string>
     <string name="zz_roamingText102">Regional</string>
@@ -1699,7 +1728,7 @@ for account %s"</string>
     <string name="zz_roamingText120">Hotel Guest</string>
     <string name="zz_roamingText121">Rental</string>
     <string name="zz_roamingText122">Corporate</string>
-    <string name="zz_roamingText123">Sprint</string>
+    <string name="zz_roamingText123">The Blu Kuban</string>
     <string name="zz_roamingText124">International</string>
     <string name="zz_roamingText125">International</string>
     <string name="zz_roamingText126">International</string>
@@ -1773,33 +1802,14 @@ for account %s"</string>
     <string name="wimax_private_network_connected">4G Private network connected</string>
     <string name="wimax_private_network_disconnected">4G Private network disconnected</string>
     <string name="cmas_pres_alert">Presidential Alert</string>
-    <item type="string" name="APKTOOL_DUMMY_063d">false</item>
-    <item type="string" name="APKTOOL_DUMMY_063e">false</item>
-    <item type="string" name="APKTOOL_DUMMY_063f">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0640">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0641">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0644">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0645">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0646">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0647">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0648">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0649">false</item>
-    <item type="string" name="APKTOOL_DUMMY_064a">false</item>
-    <item type="string" name="APKTOOL_DUMMY_064b">false</item>
-    <item type="string" name="APKTOOL_DUMMY_064c">false</item>
-    <item type="string" name="APKTOOL_DUMMY_064d">false</item>
-    <item type="string" name="APKTOOL_DUMMY_064e">false</item>
-    <item type="string" name="APKTOOL_DUMMY_064f">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0650">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0651">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0652">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0653">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0654">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0655">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0656">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0657">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0658">false</item>
-    <item type="string" name="APKTOOL_DUMMY_0659">false</item>
-    <item type="string" name="APKTOOL_DUMMY_065a">false</item>
-    <item type="string" name="APKTOOL_DUMMY_065b">false</item>
+    <string name="reboot_system">Reboot phone</string>
+    <string name="global_action_screenshot">Screenshot</string>
+    <string name="reboot_reboot">Normal</string>
+    <string name="reboot_recovery">Recovery</string>
+    <string name="reboot_bootloader">Bootloader</string>
+    <string name="reboot_bootmenu">Bootmenu</string>
+    <string name="reboot_fastboot">Fastboot</string>
+    <string name="reboot_download">Download</string>
+    <string name="reboot_progress">Rebooting…</string>
+    <string name="reboot_confirm">Your phone will reboot.</string>
 </resources>

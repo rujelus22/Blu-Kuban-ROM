@@ -31,25 +31,25 @@
     .registers 2
 
     .prologue
-    .line 11570
+    .line 11820
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 11575
+    .line 11825
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->deprecatedRetrieveBillingCountries_:Z
 
-    .line 11592
+    .line 11842
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->billingInstrumentType_:I
 
-    .line 11627
+    .line 11878
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->cachedSize:I
 
-    .line 11570
+    .line 11820
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .registers 2
 
     .prologue
-    .line 11594
+    .line 11844
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->billingInstrumentType_:I
 
     return v0
@@ -69,15 +69,15 @@
     .registers 2
 
     .prologue
-    .line 11629
+    .line 11881
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 11631
+    .line 11883
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->getSerializedSize()I
 
-    .line 11633
+    .line 11885
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->cachedSize:I
 
@@ -88,7 +88,7 @@
     .registers 2
 
     .prologue
-    .line 11576
+    .line 11826
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->deprecatedRetrieveBillingCountries_:Z
 
     return v0
@@ -98,10 +98,10 @@
     .registers 4
 
     .prologue
-    .line 11637
+    .line 11890
     const/4 v0, 0x0
 
-    .line 11638
+    .line 11891
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->hasDeprecatedRetrieveBillingCountries()Z
 
@@ -109,7 +109,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 11639
+    .line 11892
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->getDeprecatedRetrieveBillingCountries()Z
@@ -122,7 +122,7 @@
 
     add-int/2addr v0, v1
 
-    .line 11642
+    .line 11895
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->hasBillingInstrumentType()Z
 
@@ -130,7 +130,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 11643
+    .line 11896
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->getBillingInstrumentType()I
@@ -143,11 +143,11 @@
 
     add-int/2addr v0, v1
 
-    .line 11646
+    .line 11899
     :cond_21
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->cachedSize:I
 
-    .line 11647
+    .line 11900
     return v0
 .end method
 
@@ -155,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 11593
+    .line 11843
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->hasBillingInstrumentType:Z
 
     return v0
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 11577
+    .line 11827
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->hasDeprecatedRetrieveBillingCountries:Z
 
     return v0
@@ -181,29 +181,29 @@
     .end annotation
 
     .prologue
-    .line 11654
+    .line 11908
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 11655
+    .line 11909
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 11659
+    .line 11913
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 11660
+    .line 11914
     :sswitch_d
     return-object p0
 
-    .line 11665
+    .line 11919
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 11669
+    .line 11923
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 11655
+    .line 11909
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -242,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 11568
+    .line 11818
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;
 
     move-result-object v0
@@ -255,15 +255,15 @@
     .parameter "value"
 
     .prologue
-    .line 11596
+    .line 11846
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->hasBillingInstrumentType:Z
 
-    .line 11597
+    .line 11847
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->billingInstrumentType_:I
 
-    .line 11598
+    .line 11848
     return-object p0
 .end method
 
@@ -272,15 +272,15 @@
     .parameter "value"
 
     .prologue
-    .line 11579
+    .line 11829
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->hasDeprecatedRetrieveBillingCountries:Z
 
-    .line 11580
+    .line 11830
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->deprecatedRetrieveBillingCountries_:Z
 
-    .line 11581
+    .line 11831
     return-object p0
 .end method
 
@@ -294,14 +294,14 @@
     .end annotation
 
     .prologue
-    .line 11619
+    .line 11870
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->hasDeprecatedRetrieveBillingCountries()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 11620
+    .line 11871
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->getDeprecatedRetrieveBillingCountries()Z
@@ -310,7 +310,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 11622
+    .line 11873
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->hasBillingInstrumentType()Z
 
@@ -318,7 +318,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 11623
+    .line 11874
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;->getBillingInstrumentType()I
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 11625
+    .line 11876
     :cond_1c
     return-void
 .end method

@@ -242,9 +242,9 @@ vraag"</b></string>
     <string name="account_intro_recommended_title">Maak dit Google</string>
     <string name="common_message">"Met 'n Google-rekening kan jy 
 
-"<li><ul>Al jou inligting bekyk en organiseer vanaf enige plek.</ul></li>"
+"<ul><li>Al jou inligting bekyk en organiseer vanaf enige plek.</li></ul>"
 
-"<li><ul>Jou data outomaties rugsteun. </ul></li>" 
+"<ul><li>Jou data outomaties rugsteun. </li></ul>" 
  
  "<ul> <li>Google-dienste maklik vanaf enige plek gebruik. </li></ul></string>
     <string name="add_account_message">" Jy kan meer as een Google-rekening gebruik (byvoorbeeld huis- en werkrekeninge). Raak "<b>Meld aan</b> of <b>Skep rekening</b>" om 'n Google-rekening by te voeg"</string>
@@ -253,7 +253,7 @@ vraag"</b></string>
     <string name="account_intro_simple_message">"Wil jy 'n bestaande rekening byvoeg of 'n nuwe een skep?"</string>
     <string name="learn_more_title"><annotation id="learn_more">Kom meer te wete</annotation></string>
     <string name="learn_more_account_intro">"Met 'n Google-rekening kan jy
-"<li><ul>jou inligting sien en organiseer van oral.<li>Rugsteun jou data outomaties, soos e-pos, kontakte, musiek en prente.</li><li>Gebruik Google-dienste maklike vanaf enige plek—, insluitende Kontakte, Kalender, Kaarte en meer.</li></ul></li></string>
+"<ul><li>jou inligting sien en organiseer van oral.<li>Rugsteun jou data outomaties, soos e-pos, kontakte, musiek en prente.</li><li>Gebruik Google-dienste maklike vanaf enige plek—, insluitende Kontakte, Kalender, Kaarte en meer.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Meer oor Google-rekeninge</string>
     <string name="learn_more_web_history">"Webgeskiedenis pas soekresultate aan gebaseer op wat jy gesoek het en watter werwe jy besoek het, wat sorg vir 'n persoonlike Google-ervaring.
 

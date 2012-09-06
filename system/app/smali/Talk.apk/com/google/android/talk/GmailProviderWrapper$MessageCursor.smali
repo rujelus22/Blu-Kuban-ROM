@@ -96,7 +96,7 @@
 
     .line 655
     :cond_d
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     const-string v1, "_id"
 
@@ -107,7 +107,7 @@
     iput v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mIdIndex:I
 
     .line 656
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     const-string v1, "conversation"
 
@@ -118,7 +118,7 @@
     iput v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mConversationIdIndex:I
 
     .line 658
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     const-string v1, "subject"
 
@@ -129,7 +129,7 @@
     iput v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mSubjectIndex:I
 
     .line 659
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     const-string v1, "snippet"
 
@@ -140,7 +140,7 @@
     iput v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mSnippetIndex:I
 
     .line 660
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     const-string v1, "fromAddress"
 
@@ -151,7 +151,7 @@
     iput v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mFromIndex:I
 
     .line 661
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     const-string v1, "toAddresses"
 
@@ -162,7 +162,7 @@
     iput v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mToIndex:I
 
     .line 662
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     const-string v1, "ccAddresses"
 
@@ -173,7 +173,7 @@
     iput v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCcIndex:I
 
     .line 663
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     const-string v1, "dateReceivedMs"
 
@@ -184,7 +184,7 @@
     iput v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mDateReceivedMsIndex:I
 
     .line 665
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     const-string v1, "body"
 
@@ -195,7 +195,7 @@
     iput v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mBodyIndex:I
 
     .line 666
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     const-string v1, "bodyEmbedsExternalResources"
 
@@ -206,7 +206,7 @@
     iput v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mBodyEmbedsExternalResourcesIndex:I
 
     .line 668
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     const-string v1, "labelIds"
 
@@ -333,7 +333,7 @@
     invoke-virtual {p0}, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->checkCursor()V
 
     .line 800
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     iget v1, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mBodyEmbedsExternalResourcesIndex:I
 
@@ -390,7 +390,7 @@
     invoke-virtual {p0}, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->checkCursor()V
 
     .line 781
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     iget v1, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mDateReceivedMsIndex:I
 
@@ -423,7 +423,7 @@
     invoke-virtual {p0}, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->checkCursor()V
 
     .line 705
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     iget v1, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mIdIndex:I
 
@@ -439,7 +439,7 @@
 
     .prologue
     .line 807
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     iget v1, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mLabelIdsIndex:I
 
@@ -469,7 +469,7 @@
 
     .prologue
     .line 682
-    iget-object v2, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v2, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v2}, Landroid/database/Cursor;->getExtras()Landroid/os/Bundle;
 
@@ -537,7 +537,7 @@
     invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 691
-    iget-object v3, p0, Lcom/google/android/talk/GmailProviderWrapper$MessageCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v3, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v3, v0}, Landroid/database/Cursor;->respond(Landroid/os/Bundle;)Landroid/os/Bundle;
 

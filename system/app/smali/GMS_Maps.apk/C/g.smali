@@ -1,101 +1,69 @@
-.class public LC/g;
-.super LC/j;
+.class synthetic LC/g;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# instance fields
-.field private final a:Ljava/lang/String;
-
-.field private b:I
-
-.field private c:I
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lat/g;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 3
 
-    invoke-direct {p0}, LC/j;-><init>()V
+    .prologue
+    .line 163
+    invoke-static {}, LC/j;->values()[LC/j;
 
-    iput-object p1, p0, LC/g;->a:Ljava/lang/String;
+    move-result-object v0
 
-    if-eqz p2, :cond_13
+    array-length v0, v0
 
-    invoke-interface {p2}, Lat/g;->a()I
+    new-array v0, v0, [I
 
-    move-result v0
+    sput-object v0, LC/g;->a:[I
 
-    iput v0, p0, LC/g;->b:I
+    :try_start_9
+    sget-object v0, LC/g;->a:[I
 
-    invoke-virtual {p2}, Ljava/lang/Object;->hashCode()I
+    sget-object v1, LC/j;->d:LC/j;
 
-    move-result v0
+    invoke-virtual {v1}, LC/j;->ordinal()I
 
-    iput v0, p0, LC/g;->c:I
+    move-result v1
 
-    :cond_13
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
+
+    :goto_14
+    :try_start_14
+    sget-object v0, LC/g;->a:[I
+
+    sget-object v1, LC/j;->c:LC/j;
+
+    invoke-virtual {v1}, LC/j;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
+
+    :goto_1f
     return-void
-.end method
 
+    :catch_20
+    move-exception v0
 
-# virtual methods
-.method protected a(Ljava/io/Writer;)V
-    .registers 4
+    goto :goto_1f
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    :catch_22
+    move-exception v0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "<datarequest type=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, LC/g;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\' requestType=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, LC/g;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\' request=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, LC/g;->c:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\' />"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
-
-    return-void
+    goto :goto_14
 .end method

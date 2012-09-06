@@ -10,36 +10,34 @@
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/apps/pos/network/f;[Lcom/google/android/apps/pos/network/q;)V
-    .registers 4
+.method private constructor <init>(Lcom/google/android/apps/pos/network/f;[Lcom/google/android/apps/pos/network/q;)V
+    .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 1032
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/apps/pos/network/i;-><init>(Lcom/google/android/apps/pos/network/f;[Lcom/google/android/apps/pos/network/q;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/apps/pos/network/f;[Lcom/google/android/apps/pos/network/q;B)V
-    .registers 4
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 1037
+    .line 1076
     iput-object p1, p0, Lcom/google/android/apps/pos/network/i;->a:Lcom/google/android/apps/pos/network/f;
 
     invoke-direct {p0, p1}, Lcom/google/android/apps/pos/network/s;-><init>(Lcom/google/android/apps/pos/network/f;)V
 
-    .line 1038
+    .line 1077
     iput-object p2, p0, Lcom/google/android/apps/pos/network/i;->c:[Lcom/google/android/apps/pos/network/q;
 
-    .line 1039
+    .line 1078
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/apps/pos/network/f;[Lcom/google/android/apps/pos/network/q;B)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 1071
+    invoke-direct {p0, p1, p2}, Lcom/google/android/apps/pos/network/i;-><init>(Lcom/google/android/apps/pos/network/f;[Lcom/google/android/apps/pos/network/q;)V
+
     return-void
 .end method
 
@@ -49,7 +47,7 @@
     .registers 3
 
     .prologue
-    .line 1032
+    .line 1071
     iget-object v0, p0, Lcom/google/android/apps/pos/network/i;->c:[Lcom/google/android/apps/pos/network/q;
 
     array-length v0, v0

@@ -58,32 +58,32 @@
     .line 54
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 380
+    .line 378
     sget-object v0, Lcom/cooliris/media/HighlightView$ModifyMode;->None:Lcom/cooliris/media/HighlightView$ModifyMode;
 
     iput-object v0, p0, Lcom/cooliris/media/HighlightView;->mMode:Lcom/cooliris/media/HighlightView$ModifyMode;
 
-    .line 390
+    .line 388
     iput-boolean v1, p0, Lcom/cooliris/media/HighlightView;->mMaintainAspectRatio:Z
 
-    .line 394
+    .line 392
     iput-boolean v1, p0, Lcom/cooliris/media/HighlightView;->mCircle:Z
 
-    .line 402
+    .line 400
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/cooliris/media/HighlightView;->mFocusPaint:Landroid/graphics/Paint;
 
-    .line 404
+    .line 402
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/cooliris/media/HighlightView;->mNoFocusPaint:Landroid/graphics/Paint;
 
-    .line 406
+    .line 404
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
@@ -103,7 +103,7 @@
     .prologue
     const/high16 v5, 0x3f80
 
-    .line 340
+    .line 338
     new-instance v0, Landroid/graphics/RectF;
 
     iget-object v1, p0, Lcom/cooliris/media/HighlightView;->mCropRect:Landroid/graphics/RectF;
@@ -132,13 +132,13 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 342
+    .line 340
     .local v0, r:Landroid/graphics/RectF;
     iget-object v1, p0, Lcom/cooliris/media/HighlightView;->mMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Matrix;->mapRect(Landroid/graphics/RectF;)Z
 
-    .line 343
+    .line 341
     new-instance v1, Landroid/graphics/Rect;
 
     iget v2, v0, Landroid/graphics/RectF;->left:F
@@ -222,7 +222,7 @@
 
 # virtual methods
 .method protected draw(Landroid/graphics/Canvas;)V
-    .registers 30
+    .registers 31
     .parameter "canvas"
 
     .prologue
@@ -231,11 +231,11 @@
 
     iget-boolean v0, v0, Lcom/cooliris/media/HighlightView;->mHidden:Z
 
-    move/from16 v22, v0
+    move/from16 v23, v0
 
-    if-eqz v22, :cond_9
+    if-eqz v23, :cond_9
 
-    .line 161
+    .line 159
     :cond_8
     :goto_8
     return-void
@@ -245,47 +245,47 @@
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     .line 87
-    new-instance v11, Landroid/graphics/Path;
+    new-instance v12, Landroid/graphics/Path;
 
-    invoke-direct {v11}, Landroid/graphics/Path;-><init>()V
+    invoke-direct {v12}, Landroid/graphics/Path;-><init>()V
 
     .line 88
-    .local v11, path:Landroid/graphics/Path;
+    .local v12, path:Landroid/graphics/Path;
     invoke-virtual/range {p0 .. p0}, Lcom/cooliris/media/HighlightView;->hasFocus()Z
 
-    move-result v22
+    move-result v23
 
-    if-nez v22, :cond_38
+    if-nez v23, :cond_38
 
     .line 89
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mOutlinePaint:Landroid/graphics/Paint;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    const/high16 v23, -0x100
+    const/high16 v24, -0x100
 
-    invoke-virtual/range {v22 .. v23}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual/range {v23 .. v24}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 90
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mOutlinePaint:Landroid/graphics/Paint;
 
-    move-object/from16 v23, v0
+    move-object/from16 v24, v0
 
     move-object/from16 v0, p1
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v23
 
-    move-object/from16 v2, v23
+    move-object/from16 v2, v24
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
@@ -293,88 +293,66 @@
 
     .line 92
     :cond_38
-    new-instance v14, Landroid/graphics/Rect;
+    new-instance v15, Landroid/graphics/Rect;
 
-    invoke-direct {v14}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v15}, Landroid/graphics/Rect;-><init>()V
 
     .line 93
-    .local v14, viewDrawingRect:Landroid/graphics/Rect;
+    .local v15, viewDrawingRect:Landroid/graphics/Rect;
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mContext:Landroid/view/View;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
-    invoke-virtual {v0, v14}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
+    invoke-virtual {v0, v15}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
     .line 94
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/cooliris/media/HighlightView;->mCircle:Z
 
-    move/from16 v22, v0
+    move/from16 v23, v0
 
-    if-eqz v22, :cond_18e
+    if-eqz v23, :cond_1ac
 
     .line 95
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    invoke-virtual/range {v22 .. v22}, Landroid/graphics/Rect;->width()I
+    invoke-virtual/range {v23 .. v23}, Landroid/graphics/Rect;->width()I
 
-    move-result v22
+    move-result v23
 
-    move/from16 v0, v22
-
-    int-to-float v15, v0
-
-    .line 96
-    .local v15, width:F
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v22, v0
-
-    invoke-virtual/range {v22 .. v22}, Landroid/graphics/Rect;->height()I
-
-    move-result v22
-
-    move/from16 v0, v22
-
-    int-to-float v7, v0
-
-    .line 97
-    .local v7, height:F
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    iget v0, v0, Landroid/graphics/Rect;->left:I
-
-    move/from16 v22, v0
-
-    move/from16 v0, v22
+    move/from16 v0, v23
 
     int-to-float v0, v0
 
-    move/from16 v22, v0
+    move/from16 v16, v0
 
-    const/high16 v23, 0x4000
+    .line 96
+    .local v16, width:F
+    move-object/from16 v0, p0
 
-    div-float v23, v15, v23
+    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    add-float v22, v22, v23
+    move-object/from16 v23, v0
 
+    invoke-virtual/range {v23 .. v23}, Landroid/graphics/Rect;->height()I
+
+    move-result v23
+
+    move/from16 v0, v23
+
+    int-to-float v8, v0
+
+    .line 97
+    .local v8, height:F
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
@@ -383,7 +361,7 @@
 
     move-object/from16 v0, v23
 
-    iget v0, v0, Landroid/graphics/Rect;->top:I
+    iget v0, v0, Landroid/graphics/Rect;->left:I
 
     move/from16 v23, v0
 
@@ -395,110 +373,211 @@
 
     const/high16 v24, 0x4000
 
-    div-float v24, v7, v24
+    div-float v24, v16, v24
 
     add-float v23, v23, v24
 
-    const/high16 v24, 0x4000
+    move-object/from16 v0, p0
 
-    div-float v24, v15, v24
+    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    sget-object v25, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
+    move-object/from16 v24, v0
 
-    move/from16 v0, v22
+    move-object/from16 v0, v24
 
-    move/from16 v1, v23
+    iget v0, v0, Landroid/graphics/Rect;->top:I
 
-    move/from16 v2, v24
+    move/from16 v24, v0
 
-    move-object/from16 v3, v25
+    move/from16 v0, v24
 
-    invoke-virtual {v11, v0, v1, v2, v3}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
+    int-to-float v0, v0
+
+    move/from16 v24, v0
+
+    const/high16 v25, 0x4000
+
+    div-float v25, v8, v25
+
+    add-float v24, v24, v25
+
+    const/high16 v25, 0x4000
+
+    div-float v25, v16, v25
+
+    sget-object v26, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
+
+    move/from16 v0, v23
+
+    move/from16 v1, v24
+
+    move/from16 v2, v25
+
+    move-object/from16 v3, v26
+
+    invoke-virtual {v12, v0, v1, v2, v3}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
     .line 99
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mOutlinePaint:Landroid/graphics/Paint;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    const v23, -0x10fb2a
+    const v24, -0x10fb2a
 
-    invoke-virtual/range {v22 .. v23}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual/range {v23 .. v24}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 113
-    .end local v7           #height:F
-    .end local v15           #width:F
-    :goto_b5
+    .line 105
+    .end local v8           #height:F
+    .end local v16           #width:F
+    :goto_b7
+    :try_start_b7
+    sget-object v23, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v23
+
+    invoke-virtual {v0, v12, v1}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;Landroid/graphics/Region$Op;)Z
+    :try_end_c0
+    .catch Ljava/lang/Exception; {:try_start_b7 .. :try_end_c0} :catch_1ce
+
+    .line 109
+    :goto_c0
+    invoke-virtual/range {p0 .. p0}, Lcom/cooliris/media/HighlightView;->hasFocus()Z
+
+    move-result v23
+
+    if-eqz v23, :cond_1d4
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mFocusPaint:Landroid/graphics/Paint;
+
+    move-object/from16 v23, v0
+
+    :goto_cc
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v23
+
+    invoke-virtual {v0, v15, v1}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+
+    .line 111
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 114
+    .line 112
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mOutlinePaint:Landroid/graphics/Paint;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
     move-object/from16 v0, p1
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v23
 
-    invoke-virtual {v0, v11, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+    invoke-virtual {v0, v12, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 116
+    .line 114
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mMode:Lcom/cooliris/media/HighlightView$ModifyMode;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    sget-object v23, Lcom/cooliris/media/HighlightView$ModifyMode;->Grow:Lcom/cooliris/media/HighlightView$ModifyMode;
+    sget-object v24, Lcom/cooliris/media/HighlightView$ModifyMode;->Grow:Lcom/cooliris/media/HighlightView$ModifyMode;
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v24
 
     if-ne v0, v1, :cond_8
 
-    .line 117
+    .line 115
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/cooliris/media/HighlightView;->mCircle:Z
 
-    move/from16 v22, v0
+    move/from16 v23, v0
 
-    if-eqz v22, :cond_1af
+    if-eqz v23, :cond_1dc
 
-    .line 118
+    .line 116
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableDiagonal:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    invoke-virtual/range {v22 .. v22}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+    invoke-virtual/range {v23 .. v23}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
-    move-result v15
+    move-result v16
+
+    .line 117
+    .local v16, width:I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableDiagonal:Landroid/graphics/drawable/Drawable;
+
+    move-object/from16 v23, v0
+
+    invoke-virtual/range {v23 .. v23}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v8
 
     .line 119
-    .local v15, width:I
+    .local v8, height:I
+    const-wide v23, 0x3fe921fb54442d18L
+
+    invoke-static/range {v23 .. v24}, Ljava/lang/Math;->cos(D)D
+
+    move-result-wide v23
+
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableDiagonal:Landroid/graphics/drawable/Drawable;
+    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    move-object/from16 v22, v0
+    move-object/from16 v25, v0
 
-    invoke-virtual/range {v22 .. v22}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    invoke-virtual/range {v25 .. v25}, Landroid/graphics/Rect;->width()I
 
-    move-result v7
+    move-result v25
+
+    move/from16 v0, v25
+
+    int-to-double v0, v0
+
+    move-wide/from16 v25, v0
+
+    const-wide/high16 v27, 0x4000
+
+    div-double v25, v25, v27
+
+    mul-double v23, v23, v25
+
+    invoke-static/range {v23 .. v24}, Ljava/lang/Math;->round(D)J
+
+    move-result-wide v23
+
+    move-wide/from16 v0, v23
+
+    long-to-int v6, v0
 
     .line 121
-    .local v7, height:I
-    const-wide v22, 0x3fe921fb54442d18L
+    .local v6, d:I
+    move-object/from16 v0, p0
 
-    invoke-static/range {v22 .. v23}, Ljava/lang/Math;->cos(D)D
+    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    move-result-wide v22
+    move-object/from16 v23, v0
+
+    move-object/from16 v0, v23
+
+    iget v0, v0, Landroid/graphics/Rect;->left:I
+
+    move/from16 v23, v0
 
     move-object/from16 v0, p0
 
@@ -510,113 +589,57 @@
 
     move-result v24
 
-    move/from16 v0, v24
+    div-int/lit8 v24, v24, 0x2
 
-    int-to-double v0, v0
+    add-int v23, v23, v24
 
-    move-wide/from16 v24, v0
+    add-int v23, v23, v6
 
-    const-wide/high16 v26, 0x4000
+    div-int/lit8 v24, v16, 0x2
 
-    div-double v24, v24, v26
+    sub-int v19, v23, v24
 
-    mul-double v22, v22, v24
-
-    invoke-static/range {v22 .. v23}, Ljava/lang/Math;->round(D)J
-
-    move-result-wide v22
-
-    move-wide/from16 v0, v22
-
-    long-to-int v6, v0
-
-    .line 123
-    .local v6, d:I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    iget v0, v0, Landroid/graphics/Rect;->left:I
-
-    move/from16 v22, v0
-
+    .line 122
+    .local v19, x:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
     move-object/from16 v23, v0
 
-    invoke-virtual/range {v23 .. v23}, Landroid/graphics/Rect;->width()I
-
-    move-result v23
-
-    div-int/lit8 v23, v23, 0x2
-
-    add-int v22, v22, v23
-
-    add-int v22, v22, v6
-
-    div-int/lit8 v23, v15, 0x2
-
-    sub-int v18, v22, v23
-
-    .line 124
-    .local v18, x:I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
 
-    move/from16 v22, v0
+    move/from16 v23, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    move-object/from16 v23, v0
+    move-object/from16 v24, v0
 
-    invoke-virtual/range {v23 .. v23}, Landroid/graphics/Rect;->height()I
+    invoke-virtual/range {v24 .. v24}, Landroid/graphics/Rect;->height()I
 
-    move-result v23
+    move-result v24
 
-    div-int/lit8 v23, v23, 0x2
+    div-int/lit8 v24, v24, 0x2
 
-    add-int v22, v22, v23
+    add-int v23, v23, v24
 
-    sub-int v22, v22, v6
+    sub-int v23, v23, v6
 
-    div-int/lit8 v23, v7, 0x2
+    div-int/lit8 v24, v8, 0x2
 
-    sub-int v20, v22, v23
+    sub-int v21, v23, v24
 
-    .line 125
-    .local v20, y:I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableDiagonal:Landroid/graphics/drawable/Drawable;
-
-    move-object/from16 v22, v0
-
+    .line 123
+    .local v21, y:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableDiagonal:Landroid/graphics/drawable/Drawable;
 
     move-object/from16 v23, v0
-
-    invoke-virtual/range {v23 .. v23}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v23
-
-    add-int v23, v23, v18
 
     move-object/from16 v0, p0
 
@@ -624,32 +647,44 @@
 
     move-object/from16 v24, v0
 
-    invoke-virtual/range {v24 .. v24}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    invoke-virtual/range {v24 .. v24}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v24
 
-    add-int v24, v24, v20
+    add-int v24, v24, v19
 
-    move-object/from16 v0, v22
-
-    move/from16 v1, v18
-
-    move/from16 v2, v20
-
-    move/from16 v3, v23
-
-    move/from16 v4, v24
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    .line 128
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableDiagonal:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v22, v0
+    move-object/from16 v25, v0
 
-    move-object/from16 v0, v22
+    invoke-virtual/range {v25 .. v25}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v25
+
+    add-int v25, v25, v21
+
+    move-object/from16 v0, v23
+
+    move/from16 v1, v19
+
+    move/from16 v2, v21
+
+    move/from16 v3, v24
+
+    move/from16 v4, v25
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    .line 126
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableDiagonal:Landroid/graphics/drawable/Drawable;
+
+    move-object/from16 v23, v0
+
+    move-object/from16 v0, v23
 
     move-object/from16 v1, p1
 
@@ -659,176 +694,185 @@
 
     .line 101
     .end local v6           #d:I
-    .end local v7           #height:I
-    .end local v15           #width:I
-    .end local v18           #x:I
-    .end local v20           #y:I
-    :cond_18e
-    new-instance v22, Landroid/graphics/RectF;
+    .end local v8           #height:I
+    .end local v16           #width:I
+    .end local v19           #x:I
+    .end local v21           #y:I
+    :cond_1ac
+    new-instance v23, Landroid/graphics/RectF;
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    move-object/from16 v23, v0
+    move-object/from16 v24, v0
 
-    invoke-direct/range {v22 .. v23}, Landroid/graphics/RectF;-><init>(Landroid/graphics/Rect;)V
+    invoke-direct/range {v23 .. v24}, Landroid/graphics/RectF;-><init>(Landroid/graphics/Rect;)V
 
-    sget-object v23, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
+    sget-object v24, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v24
 
-    invoke-virtual {v11, v0, v1}, Landroid/graphics/Path;->addRect(Landroid/graphics/RectF;Landroid/graphics/Path$Direction;)V
+    invoke-virtual {v12, v0, v1}, Landroid/graphics/Path;->addRect(Landroid/graphics/RectF;Landroid/graphics/Path$Direction;)V
 
     .line 102
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mOutlinePaint:Landroid/graphics/Paint;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    const/16 v23, -0x7600
+    const v24, -0xeaab6a
 
-    invoke-virtual/range {v22 .. v23}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual/range {v23 .. v24}, Landroid/graphics/Paint;->setColor(I)V
 
-    goto/16 :goto_b5
+    goto/16 :goto_b7
 
-    .line 130
-    :cond_1af
+    .line 106
+    :catch_1ce
+    move-exception v7
+
+    .line 107
+    .local v7, e:Ljava/lang/Exception;
+    invoke-virtual {v7}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto/16 :goto_c0
+
+    .line 109
+    .end local v7           #e:Ljava/lang/Exception;
+    :cond_1d4
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mNoFocusPaint:Landroid/graphics/Paint;
+
+    move-object/from16 v23, v0
+
+    goto/16 :goto_cc
+
+    .line 128
+    :cond_1dc
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
     iget v0, v0, Landroid/graphics/Rect;->left:I
 
-    move/from16 v22, v0
+    move/from16 v23, v0
 
-    add-int/lit8 v10, v22, 0x1
+    add-int/lit8 v11, v23, 0x1
 
-    .line 131
-    .local v10, left:I
+    .line 129
+    .local v11, left:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
     iget v0, v0, Landroid/graphics/Rect;->right:I
 
-    move/from16 v22, v0
+    move/from16 v23, v0
 
-    add-int/lit8 v12, v22, 0x1
+    add-int/lit8 v13, v23, 0x1
 
-    .line 132
-    .local v12, right:I
+    .line 130
+    .local v13, right:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
 
-    move/from16 v22, v0
+    move/from16 v23, v0
 
-    add-int/lit8 v13, v22, 0x4
+    add-int/lit8 v14, v23, 0x4
 
-    .line 133
-    .local v13, top:I
+    .line 131
+    .local v14, top:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
     iget v0, v0, Landroid/graphics/Rect;->bottom:I
 
-    move/from16 v22, v0
+    move/from16 v23, v0
 
-    add-int/lit8 v5, v22, 0x3
+    add-int/lit8 v5, v23, 0x3
 
-    .line 135
+    .line 133
     .local v5, bottom:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableWidth:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    invoke-virtual/range {v22 .. v22}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+    invoke-virtual/range {v23 .. v23}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
-    move-result v22
+    move-result v23
 
-    div-int/lit8 v17, v22, 0x4
+    div-int/lit8 v18, v23, 0x4
 
-    .line 136
-    .local v17, widthWidth:I
+    .line 134
+    .local v18, widthWidth:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableWidth:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    invoke-virtual/range {v22 .. v22}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    invoke-virtual/range {v23 .. v23}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
-    move-result v22
+    move-result v23
 
-    div-int/lit8 v16, v22, 0x4
+    div-int/lit8 v17, v23, 0x4
 
-    .line 137
-    .local v16, widthHeight:I
+    .line 135
+    .local v17, widthHeight:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    invoke-virtual/range {v22 .. v22}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    invoke-virtual/range {v23 .. v23}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
-    move-result v22
+    move-result v23
 
-    div-int/lit8 v8, v22, 0x4
+    div-int/lit8 v9, v23, 0x4
+
+    .line 136
+    .local v9, heightHeight:I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
+
+    move-object/from16 v23, v0
+
+    invoke-virtual/range {v23 .. v23}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v23
+
+    div-int/lit8 v10, v23, 0x4
 
     .line 138
-    .local v8, heightHeight:I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
-
-    move-object/from16 v22, v0
-
-    invoke-virtual/range {v22 .. v22}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v22
-
-    div-int/lit8 v9, v22, 0x4
-
-    .line 140
-    .local v9, heightWidth:I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    iget v0, v0, Landroid/graphics/Rect;->left:I
-
-    move/from16 v22, v0
-
+    .local v10, heightWidth:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
@@ -836,43 +880,43 @@
     move-object/from16 v23, v0
 
     move-object/from16 v0, v23
+
+    iget v0, v0, Landroid/graphics/Rect;->left:I
+
+    move/from16 v23, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v0, v24
 
     iget v0, v0, Landroid/graphics/Rect;->right:I
 
-    move/from16 v23, v0
+    move/from16 v24, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    move-object/from16 v24, v0
+    move-object/from16 v25, v0
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v25
 
     iget v0, v0, Landroid/graphics/Rect;->left:I
 
-    move/from16 v24, v0
+    move/from16 v25, v0
 
-    sub-int v23, v23, v24
+    sub-int v24, v24, v25
 
-    div-int/lit8 v23, v23, 0x2
+    div-int/lit8 v24, v24, 0x2
 
-    add-int v19, v22, v23
+    add-int v20, v23, v24
 
-    .line 141
-    .local v19, xMiddle:I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    move/from16 v22, v0
-
+    .line 139
+    .local v20, xMiddle:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
@@ -881,7 +925,7 @@
 
     move-object/from16 v0, v23
 
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
+    iget v0, v0, Landroid/graphics/Rect;->top:I
 
     move/from16 v23, v0
 
@@ -893,140 +937,152 @@
 
     move-object/from16 v0, v24
 
-    iget v0, v0, Landroid/graphics/Rect;->top:I
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
 
     move/from16 v24, v0
 
-    sub-int v23, v23, v24
+    move-object/from16 v0, p0
 
-    div-int/lit8 v23, v23, 0x2
+    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    add-int v21, v22, v23
+    move-object/from16 v25, v0
 
-    .line 143
-    .local v21, yMiddle:I
+    move-object/from16 v0, v25
+
+    iget v0, v0, Landroid/graphics/Rect;->top:I
+
+    move/from16 v25, v0
+
+    sub-int v24, v24, v25
+
+    div-int/lit8 v24, v24, 0x2
+
+    add-int v22, v23, v24
+
+    .line 141
+    .local v22, yMiddle:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableWidth:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    sub-int v23, v10, v17
+    sub-int v24, v11, v18
 
-    add-int/lit8 v23, v23, -0x1
+    add-int/lit8 v24, v24, -0x1
 
-    sub-int v24, v21, v16
+    sub-int v25, v22, v17
 
-    add-int v25, v10, v17
+    add-int v26, v11, v18
 
-    add-int/lit8 v25, v25, -0x1
+    add-int/lit8 v26, v26, -0x1
 
-    add-int v26, v21, v16
+    add-int v27, v22, v17
 
-    invoke-virtual/range {v22 .. v26}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual/range {v23 .. v27}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    .line 143
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableWidth:Landroid/graphics/drawable/Drawable;
+
+    move-object/from16 v23, v0
+
+    move-object/from16 v0, v23
+
+    move-object/from16 v1, p1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     .line 145
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableWidth:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    move-object/from16 v0, v22
+    sub-int v24, v13, v18
 
-    move-object/from16 v1, p1
+    sub-int v25, v22, v17
 
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    add-int v26, v13, v18
+
+    add-int v27, v22, v17
+
+    invoke-virtual/range {v23 .. v27}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 147
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableWidth:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    sub-int v23, v12, v17
-
-    sub-int v24, v21, v16
-
-    add-int v25, v12, v17
-
-    add-int v26, v21, v16
-
-    invoke-virtual/range {v22 .. v26}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    .line 149
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableWidth:Landroid/graphics/drawable/Drawable;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
     move-object/from16 v1, p1
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    .line 149
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
+
+    move-object/from16 v23, v0
+
+    sub-int v24, v20, v10
+
+    sub-int v25, v14, v9
+
+    add-int/lit8 v25, v25, -0x1
+
+    add-int v26, v20, v10
+
+    add-int v27, v14, v9
+
+    add-int/lit8 v27, v27, -0x1
+
+    invoke-virtual/range {v23 .. v27}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 151
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    sub-int v23, v19, v9
+    move-object/from16 v0, v23
 
-    sub-int v24, v13, v8
+    move-object/from16 v1, p1
 
-    add-int/lit8 v24, v24, -0x1
-
-    add-int v25, v19, v9
-
-    add-int v26, v13, v8
-
-    add-int/lit8 v26, v26, -0x1
-
-    invoke-virtual/range {v22 .. v26}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     .line 153
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    move-object/from16 v0, v22
+    sub-int v24, v20, v10
 
-    move-object/from16 v1, p1
+    sub-int v25, v5, v9
 
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    add-int v26, v20, v10
+
+    add-int v27, v5, v9
+
+    invoke-virtual/range {v23 .. v27}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 155
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    sub-int v23, v19, v9
-
-    sub-int v24, v5, v8
-
-    add-int v25, v19, v9
-
-    add-int v26, v5, v8
-
-    invoke-virtual/range {v22 .. v26}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    .line 157
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/cooliris/media/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
     move-object/from16 v1, p1
 
@@ -1039,7 +1095,7 @@
     .registers 6
 
     .prologue
-    .line 334
+    .line 332
     new-instance v0, Landroid/graphics/Rect;
 
     iget-object v1, p0, Lcom/cooliris/media/HighlightView;->mCropRect:Landroid/graphics/RectF;
@@ -1077,26 +1133,26 @@
     .parameter "y"
 
     .prologue
-    .line 172
+    .line 170
     invoke-direct {p0}, Lcom/cooliris/media/HighlightView;->computeLayout()Landroid/graphics/Rect;
 
     move-result-object v6
 
-    .line 173
+    .line 171
     .local v6, r:Landroid/graphics/Rect;
     const/high16 v5, 0x41a0
 
-    .line 174
+    .line 172
     .local v5, hysteresis:F
     const/4 v8, 0x1
 
-    .line 176
+    .line 174
     .local v8, retval:I
     iget-boolean v10, p0, Lcom/cooliris/media/HighlightView;->mCircle:Z
 
     if-eqz v10, :cond_60
 
-    .line 177
+    .line 175
     invoke-virtual {v6}, Landroid/graphics/Rect;->centerX()I
 
     move-result v10
@@ -1105,7 +1161,7 @@
 
     sub-float v1, p1, v10
 
-    .line 178
+    .line 176
     .local v1, distX:F
     invoke-virtual {v6}, Landroid/graphics/Rect;->centerY()I
 
@@ -1115,7 +1171,7 @@
 
     sub-float v2, p2, v10
 
-    .line 179
+    .line 177
     .local v2, distY:F
     mul-float v10, v1, v1
 
@@ -1131,7 +1187,7 @@
 
     double-to-int v3, v10
 
-    .line 180
+    .line 178
     .local v3, distanceFromCenter:I
     iget-object v10, p0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
@@ -1141,11 +1197,11 @@
 
     div-int/lit8 v7, v10, 0x2
 
-    .line 181
+    .line 179
     .local v7, radius:I
     sub-int v0, v3, v7
 
-    .line 182
+    .line 180
     .local v0, delta:I
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
@@ -1159,7 +1215,7 @@
 
     if-gtz v10, :cond_59
 
-    .line 183
+    .line 181
     invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
     move-result v10
@@ -1172,17 +1228,17 @@
 
     if-lez v10, :cond_50
 
-    .line 184
+    .line 182
     const/4 v10, 0x0
 
     cmpg-float v10, v2, v10
 
     if-gez v10, :cond_4d
 
-    .line 185
+    .line 183
     const/16 v8, 0x8
 
-    .line 226
+    .line 224
     .end local v0           #delta:I
     .end local v1           #distX:F
     .end local v2           #distY:F
@@ -1192,7 +1248,7 @@
     :goto_4c
     return v8
 
-    .line 187
+    .line 185
     .restart local v0       #delta:I
     .restart local v1       #distX:F
     .restart local v2       #distY:F
@@ -1203,7 +1259,7 @@
 
     goto :goto_4c
 
-    .line 190
+    .line 188
     :cond_50
     const/4 v10, 0x0
 
@@ -1211,33 +1267,33 @@
 
     if-gez v10, :cond_57
 
-    .line 191
+    .line 189
     const/4 v8, 0x2
 
     goto :goto_4c
 
-    .line 193
+    .line 191
     :cond_57
     const/4 v8, 0x4
 
     goto :goto_4c
 
-    .line 196
+    .line 194
     :cond_59
     if-ge v3, v7, :cond_5e
 
-    .line 197
+    .line 195
     const/16 v8, 0x20
 
     goto :goto_4c
 
-    .line 199
+    .line 197
     :cond_5e
     const/4 v8, 0x1
 
     goto :goto_4c
 
-    .line 204
+    .line 202
     .end local v0           #delta:I
     .end local v1           #distX:F
     .end local v2           #distY:F
@@ -1270,7 +1326,7 @@
 
     const/4 v9, 0x1
 
-    .line 205
+    .line 203
     .local v9, verticalCheck:Z
     :goto_75
     iget v10, v6, Landroid/graphics/Rect;->left:I
@@ -1299,7 +1355,7 @@
 
     const/4 v4, 0x1
 
-    .line 208
+    .line 206
     .local v4, horizCheck:Z
     :goto_8a
     iget v10, v6, Landroid/graphics/Rect;->left:I
@@ -1320,10 +1376,10 @@
 
     if-eqz v9, :cond_9c
 
-    .line 209
+    .line 207
     or-int/lit8 v8, v8, 0x2
 
-    .line 211
+    .line 209
     :cond_9c
     iget v10, v6, Landroid/graphics/Rect;->right:I
 
@@ -1343,10 +1399,10 @@
 
     if-eqz v9, :cond_ae
 
-    .line 212
+    .line 210
     or-int/lit8 v8, v8, 0x4
 
-    .line 214
+    .line 212
     :cond_ae
     iget v10, v6, Landroid/graphics/Rect;->top:I
 
@@ -1366,10 +1422,10 @@
 
     if-eqz v4, :cond_c0
 
-    .line 215
+    .line 213
     or-int/lit8 v8, v8, 0x8
 
-    .line 217
+    .line 215
     :cond_c0
     iget v10, v6, Landroid/graphics/Rect;->bottom:I
 
@@ -1389,10 +1445,10 @@
 
     if-eqz v4, :cond_d2
 
-    .line 218
+    .line 216
     or-int/lit8 v8, v8, 0x10
 
-    .line 222
+    .line 220
     :cond_d2
     const/4 v10, 0x1
 
@@ -1408,12 +1464,12 @@
 
     if-eqz v10, :cond_4c
 
-    .line 223
+    .line 221
     const/16 v8, 0x20
 
     goto/16 :goto_4c
 
-    .line 204
+    .line 202
     .end local v4           #horizCheck:Z
     .end local v9           #verticalCheck:Z
     :cond_e1
@@ -1421,7 +1477,7 @@
 
     goto :goto_75
 
-    .line 205
+    .line 203
     .restart local v9       #verticalCheck:Z
     :cond_e3
     const/4 v4, 0x0
@@ -1441,22 +1497,22 @@
 
     const/4 v6, 0x0
 
-    .line 276
+    .line 274
     iget-boolean v4, p0, Lcom/cooliris/media/HighlightView;->mMaintainAspectRatio:Z
 
     if-eqz v4, :cond_11
 
-    .line 277
+    .line 275
     cmpl-float v4, p1, v6
 
     if-eqz v4, :cond_db
 
-    .line 278
+    .line 276
     iget v4, p0, Lcom/cooliris/media/HighlightView;->mInitialAspectRatio:F
 
     div-float p2, p1, v4
 
-    .line 287
+    .line 285
     :cond_11
     :goto_11
     new-instance v2, Landroid/graphics/RectF;
@@ -1465,7 +1521,7 @@
 
     invoke-direct {v2, v4}, Landroid/graphics/RectF;-><init>(Landroid/graphics/RectF;)V
 
-    .line 288
+    .line 286
     .local v2, r:Landroid/graphics/RectF;
     cmpl-float v4, p1, v6
 
@@ -1489,7 +1545,7 @@
 
     if-lez v4, :cond_43
 
-    .line 289
+    .line 287
     iget-object v4, p0, Lcom/cooliris/media/HighlightView;->mImageRect:Landroid/graphics/RectF;
 
     invoke-virtual {v4}, Landroid/graphics/RectF;->width()F
@@ -1504,21 +1560,21 @@
 
     div-float v0, v4, v7
 
-    .line 290
+    .line 288
     .local v0, adjustment:F
     move p1, v0
 
-    .line 291
+    .line 289
     iget-boolean v4, p0, Lcom/cooliris/media/HighlightView;->mMaintainAspectRatio:Z
 
     if-eqz v4, :cond_43
 
-    .line 292
+    .line 290
     iget v4, p0, Lcom/cooliris/media/HighlightView;->mInitialAspectRatio:F
 
     div-float p2, p1, v4
 
-    .line 295
+    .line 293
     .end local v0           #adjustment:F
     :cond_43
     cmpl-float v4, p2, v6
@@ -1543,7 +1599,7 @@
 
     if-lez v4, :cond_6e
 
-    .line 296
+    .line 294
     iget-object v4, p0, Lcom/cooliris/media/HighlightView;->mImageRect:Landroid/graphics/RectF;
 
     invoke-virtual {v4}, Landroid/graphics/RectF;->height()F
@@ -1558,21 +1614,21 @@
 
     div-float v0, v4, v7
 
-    .line 297
+    .line 295
     .restart local v0       #adjustment:F
     move p2, v0
 
-    .line 298
+    .line 296
     iget-boolean v4, p0, Lcom/cooliris/media/HighlightView;->mMaintainAspectRatio:Z
 
     if-eqz v4, :cond_6e
 
-    .line 299
+    .line 297
     iget v4, p0, Lcom/cooliris/media/HighlightView;->mInitialAspectRatio:F
 
     mul-float p1, p2, v4
 
-    .line 303
+    .line 301
     .end local v0           #adjustment:F
     :cond_6e
     neg-float v4, p1
@@ -1581,10 +1637,10 @@
 
     invoke-virtual {v2, v4, v5}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 306
+    .line 304
     const/high16 v3, 0x41c8
 
-    .line 307
+    .line 305
     .local v3, widthCap:F
     invoke-virtual {v2}, Landroid/graphics/RectF;->width()F
 
@@ -1594,7 +1650,7 @@
 
     if-gez v4, :cond_88
 
-    .line 308
+    .line 306
     invoke-virtual {v2}, Landroid/graphics/RectF;->width()F
 
     move-result v4
@@ -1607,7 +1663,7 @@
 
     invoke-virtual {v2, v4, v6}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 310
+    .line 308
     :cond_88
     iget-boolean v4, p0, Lcom/cooliris/media/HighlightView;->mMaintainAspectRatio:Z
 
@@ -1617,7 +1673,7 @@
 
     div-float/2addr v1, v4
 
-    .line 311
+    .line 309
     .local v1, heightCap:F
     :cond_8f
     invoke-virtual {v2}, Landroid/graphics/RectF;->height()F
@@ -1628,7 +1684,7 @@
 
     if-gez v4, :cond_a2
 
-    .line 312
+    .line 310
     invoke-virtual {v2}, Landroid/graphics/RectF;->height()F
 
     move-result v4
@@ -1641,7 +1697,7 @@
 
     invoke-virtual {v2, v6, v4}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 316
+    .line 314
     :cond_a2
     iget v4, v2, Landroid/graphics/RectF;->left:F
 
@@ -1653,7 +1709,7 @@
 
     if-gez v4, :cond_e5
 
-    .line 317
+    .line 315
     iget-object v4, p0, Lcom/cooliris/media/HighlightView;->mImageRect:Landroid/graphics/RectF;
 
     iget v4, v4, Landroid/graphics/RectF;->left:F
@@ -1664,7 +1720,7 @@
 
     invoke-virtual {v2, v4, v6}, Landroid/graphics/RectF;->offset(FF)V
 
-    .line 321
+    .line 319
     :cond_b6
     :goto_b6
     iget v4, v2, Landroid/graphics/RectF;->top:F
@@ -1677,7 +1733,7 @@
 
     if-gez v4, :cond_fb
 
-    .line 322
+    .line 320
     iget-object v4, p0, Lcom/cooliris/media/HighlightView;->mImageRect:Landroid/graphics/RectF;
 
     iget v4, v4, Landroid/graphics/RectF;->top:F
@@ -1688,29 +1744,29 @@
 
     invoke-virtual {v2, v6, v4}, Landroid/graphics/RectF;->offset(FF)V
 
-    .line 327
+    .line 325
     :cond_ca
     :goto_ca
     iget-object v4, p0, Lcom/cooliris/media/HighlightView;->mCropRect:Landroid/graphics/RectF;
 
     invoke-virtual {v4, v2}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
-    .line 328
+    .line 326
     invoke-direct {p0}, Lcom/cooliris/media/HighlightView;->computeLayout()Landroid/graphics/Rect;
 
     move-result-object v4
 
     iput-object v4, p0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    .line 329
+    .line 327
     iget-object v4, p0, Lcom/cooliris/media/HighlightView;->mContext:Landroid/view/View;
 
     invoke-virtual {v4}, Landroid/view/View;->invalidate()V
 
-    .line 330
+    .line 328
     return-void
 
-    .line 279
+    .line 277
     .end local v1           #heightCap:F
     .end local v2           #r:Landroid/graphics/RectF;
     .end local v3           #widthCap:F
@@ -1719,14 +1775,14 @@
 
     if-eqz v4, :cond_11
 
-    .line 280
+    .line 278
     iget v4, p0, Lcom/cooliris/media/HighlightView;->mInitialAspectRatio:F
 
     mul-float p1, p2, v4
 
     goto/16 :goto_11
 
-    .line 318
+    .line 316
     .restart local v1       #heightCap:F
     .restart local v2       #r:Landroid/graphics/RectF;
     .restart local v3       #widthCap:F
@@ -1741,7 +1797,7 @@
 
     if-lez v4, :cond_b6
 
-    .line 319
+    .line 317
     iget v4, v2, Landroid/graphics/RectF;->right:F
 
     iget-object v5, p0, Lcom/cooliris/media/HighlightView;->mImageRect:Landroid/graphics/RectF;
@@ -1756,7 +1812,7 @@
 
     goto :goto_b6
 
-    .line 323
+    .line 321
     :cond_fb
     iget v4, v2, Landroid/graphics/RectF;->bottom:F
 
@@ -1768,7 +1824,7 @@
 
     if-lez v4, :cond_ca
 
-    .line 324
+    .line 322
     iget v4, v2, Landroid/graphics/RectF;->bottom:F
 
     iget-object v5, p0, Lcom/cooliris/media/HighlightView;->mImageRect:Landroid/graphics/RectF;
@@ -1795,26 +1851,26 @@
 
     const/4 v4, 0x1
 
-    .line 232
+    .line 230
     invoke-direct {p0}, Lcom/cooliris/media/HighlightView;->computeLayout()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 233
+    .line 231
     .local v0, r:Landroid/graphics/Rect;
     if-ne p1, v4, :cond_9
 
-    .line 253
+    .line 251
     :goto_8
     return-void
 
-    .line 235
+    .line 233
     :cond_9
     const/16 v5, 0x20
 
     if-ne p1, v5, :cond_2b
 
-    .line 237
+    .line 235
     iget-object v3, p0, Lcom/cooliris/media/HighlightView;->mCropRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->width()F
@@ -1851,25 +1907,25 @@
 
     goto :goto_8
 
-    .line 239
+    .line 237
     :cond_2b
     and-int/lit8 v5, p1, 0x6
 
     if-nez v5, :cond_30
 
-    .line 240
+    .line 238
     const/4 p2, 0x0
 
-    .line 243
+    .line 241
     :cond_30
     and-int/lit8 v5, p1, 0x18
 
     if-nez v5, :cond_35
 
-    .line 244
+    .line 242
     const/4 p3, 0x0
 
-    .line 248
+    .line 246
     :cond_35
     iget-object v5, p0, Lcom/cooliris/media/HighlightView;->mCropRect:Landroid/graphics/RectF;
 
@@ -1887,7 +1943,7 @@
 
     mul-float v1, p2, v5
 
-    .line 249
+    .line 247
     .local v1, xDelta:F
     iget-object v5, p0, Lcom/cooliris/media/HighlightView;->mCropRect:Landroid/graphics/RectF;
 
@@ -1905,7 +1961,7 @@
 
     mul-float v2, p3, v5
 
-    .line 250
+    .line 248
     .local v2, yDelta:F
     and-int/lit8 v5, p1, 0x2
 
@@ -1956,14 +2012,14 @@
     .registers 2
 
     .prologue
-    .line 348
+    .line 346
     invoke-direct {p0}, Lcom/cooliris/media/HighlightView;->computeLayout()Landroid/graphics/Rect;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    .line 349
+    .line 347
     return-void
 .end method
 
@@ -1977,20 +2033,20 @@
 
     const/4 v5, 0x0
 
-    .line 257
+    .line 255
     new-instance v0, Landroid/graphics/Rect;
 
     iget-object v1, p0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
     invoke-direct {v0, v1}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
 
-    .line 259
+    .line 257
     .local v0, invalRect:Landroid/graphics/Rect;
     iget-object v1, p0, Lcom/cooliris/media/HighlightView;->mCropRect:Landroid/graphics/RectF;
 
     invoke-virtual {v1, p1, p2}, Landroid/graphics/RectF;->offset(FF)V
 
-    .line 262
+    .line 260
     iget-object v1, p0, Lcom/cooliris/media/HighlightView;->mCropRect:Landroid/graphics/RectF;
 
     iget-object v2, p0, Lcom/cooliris/media/HighlightView;->mImageRect:Landroid/graphics/RectF;
@@ -2023,7 +2079,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/graphics/RectF;->offset(FF)V
 
-    .line 265
+    .line 263
     iget-object v1, p0, Lcom/cooliris/media/HighlightView;->mCropRect:Landroid/graphics/RectF;
 
     iget-object v2, p0, Lcom/cooliris/media/HighlightView;->mImageRect:Landroid/graphics/RectF;
@@ -2056,27 +2112,27 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/graphics/RectF;->offset(FF)V
 
-    .line 268
+    .line 266
     invoke-direct {p0}, Lcom/cooliris/media/HighlightView;->computeLayout()Landroid/graphics/Rect;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    .line 269
+    .line 267
     iget-object v1, p0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Rect;->union(Landroid/graphics/Rect;)V
 
-    .line 270
+    .line 268
     invoke-virtual {v0, v6, v6}, Landroid/graphics/Rect;->inset(II)V
 
-    .line 271
+    .line 269
     iget-object v1, p0, Lcom/cooliris/media/HighlightView;->mContext:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->invalidate(Landroid/graphics/Rect;)V
 
-    .line 272
+    .line 270
     return-void
 .end method
 
@@ -2109,7 +2165,7 @@
     .parameter "mode"
 
     .prologue
-    .line 164
+    .line 162
     iget-object v0, p0, Lcom/cooliris/media/HighlightView;->mMode:Lcom/cooliris/media/HighlightView$ModifyMode;
 
     invoke-virtual {v0, p1}, Lcom/cooliris/media/HighlightView$ModifyMode;->equals(Ljava/lang/Object;)Z
@@ -2118,15 +2174,15 @@
 
     if-nez v0, :cond_f
 
-    .line 165
+    .line 163
     iput-object p1, p0, Lcom/cooliris/media/HighlightView;->mMode:Lcom/cooliris/media/HighlightView$ModifyMode;
 
-    .line 166
+    .line 164
     iget-object v0, p0, Lcom/cooliris/media/HighlightView;->mContext:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 168
+    .line 166
     :cond_f
     return-void
 .end method
@@ -2144,13 +2200,13 @@
 
     const/16 v2, 0x32
 
-    .line 353
+    .line 351
     if-eqz p4, :cond_7
 
-    .line 354
+    .line 352
     const/4 p5, 0x1
 
-    .line 356
+    .line 354
     :cond_7
     new-instance v0, Landroid/graphics/Matrix;
 
@@ -2158,23 +2214,23 @@
 
     iput-object v0, p0, Lcom/cooliris/media/HighlightView;->mMatrix:Landroid/graphics/Matrix;
 
-    .line 358
+    .line 356
     iput-object p3, p0, Lcom/cooliris/media/HighlightView;->mCropRect:Landroid/graphics/RectF;
 
-    .line 359
+    .line 357
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0, p2}, Landroid/graphics/RectF;-><init>(Landroid/graphics/Rect;)V
 
     iput-object v0, p0, Lcom/cooliris/media/HighlightView;->mImageRect:Landroid/graphics/RectF;
 
-    .line 360
+    .line 358
     iput-boolean p5, p0, Lcom/cooliris/media/HighlightView;->mMaintainAspectRatio:Z
 
-    .line 361
+    .line 359
     iput-boolean p4, p0, Lcom/cooliris/media/HighlightView;->mCircle:Z
 
-    .line 363
+    .line 361
     iget-object v0, p0, Lcom/cooliris/media/HighlightView;->mCropRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
@@ -2191,52 +2247,52 @@
 
     iput v0, p0, Lcom/cooliris/media/HighlightView;->mInitialAspectRatio:F
 
-    .line 364
+    .line 362
     invoke-direct {p0}, Lcom/cooliris/media/HighlightView;->computeLayout()Landroid/graphics/Rect;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/cooliris/media/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    .line 366
+    .line 364
     iget-object v0, p0, Lcom/cooliris/media/HighlightView;->mFocusPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v3, v2, v2, v2}, Landroid/graphics/Paint;->setARGB(IIII)V
 
-    .line 367
+    .line 365
     iget-object v0, p0, Lcom/cooliris/media/HighlightView;->mNoFocusPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v3, v2, v2, v2}, Landroid/graphics/Paint;->setARGB(IIII)V
 
-    .line 368
+    .line 366
     iget-object v0, p0, Lcom/cooliris/media/HighlightView;->mOutlinePaint:Landroid/graphics/Paint;
 
     const/high16 v1, 0x4040
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 369
+    .line 367
     iget-object v0, p0, Lcom/cooliris/media/HighlightView;->mOutlinePaint:Landroid/graphics/Paint;
 
     sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 370
+    .line 368
     iget-object v0, p0, Lcom/cooliris/media/HighlightView;->mOutlinePaint:Landroid/graphics/Paint;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 372
+    .line 370
     sget-object v0, Lcom/cooliris/media/HighlightView$ModifyMode;->None:Lcom/cooliris/media/HighlightView$ModifyMode;
 
     iput-object v0, p0, Lcom/cooliris/media/HighlightView;->mMode:Lcom/cooliris/media/HighlightView$ModifyMode;
 
-    .line 373
+    .line 371
     invoke-direct {p0}, Lcom/cooliris/media/HighlightView;->init()V
 
-    .line 374
+    .line 372
     return-void
 .end method

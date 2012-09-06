@@ -32,7 +32,7 @@
     .parameter "vertexArray"
 
     .prologue
-    .line 1556
+    .line 1634
     array-length v0, p1
 
     div-int/lit8 v0, v0, 0x3
@@ -43,7 +43,7 @@
 
     invoke-direct {p0, p1, v0}, Lcom/google/android/street/Overlay$Polygon;-><init>([F[B)V
 
-    .line 1557
+    .line 1635
     return-void
 .end method
 
@@ -53,10 +53,10 @@
     .parameter "indexArray"
 
     .prologue
-    .line 1560
+    .line 1638
     invoke-direct {p0, p1, p2, p2}, Lcom/google/android/street/Overlay$Polygon;-><init>([F[B[B)V
 
-    .line 1561
+    .line 1639
     return-void
 .end method
 
@@ -71,13 +71,13 @@
 
     const/4 v3, 0x0
 
-    .line 1564
+    .line 1642
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1565
+    .line 1643
     const/4 v0, 0x4
 
-    .line 1566
+    .line 1644
     .local v0, FLOAT_SIZE:I
     array-length v1, p1
 
@@ -101,29 +101,29 @@
 
     iput-object v1, p0, Lcom/google/android/street/Overlay$Polygon;->mVertexBuffer:Ljava/nio/FloatBuffer;
 
-    .line 1569
+    .line 1647
     iget-object v1, p0, Lcom/google/android/street/Overlay$Polygon;->mVertexBuffer:Ljava/nio/FloatBuffer;
 
     array-length v2, p1
 
     invoke-virtual {v1, p1, v3, v2}, Ljava/nio/FloatBuffer;->put([FII)Ljava/nio/FloatBuffer;
 
-    .line 1570
+    .line 1648
     iget-object v1, p0, Lcom/google/android/street/Overlay$Polygon;->mVertexBuffer:Ljava/nio/FloatBuffer;
 
     invoke-virtual {v1, v3}, Ljava/nio/FloatBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 1572
+    .line 1650
     array-length v1, p2
 
     iput v1, p0, Lcom/google/android/street/Overlay$Polygon;->mFillIndexCount:I
 
-    .line 1573
+    .line 1651
     array-length v1, p3
 
     iput v1, p0, Lcom/google/android/street/Overlay$Polygon;->mOutlineIndexCount:I
 
-    .line 1574
+    .line 1652
     iget v1, p0, Lcom/google/android/street/Overlay$Polygon;->mFillIndexCount:I
 
     if-gt v1, v4, :cond_35
@@ -132,7 +132,7 @@
 
     if-le v1, v4, :cond_3d
 
-    .line 1575
+    .line 1653
     :cond_35
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -142,7 +142,7 @@
 
     throw v1
 
-    .line 1577
+    .line 1655
     :cond_3d
     invoke-static {p2}, Lcom/google/android/street/Overlay$Polygon;->indexBufferHelper([B)Ljava/nio/ByteBuffer;
 
@@ -150,14 +150,14 @@
 
     iput-object v1, p0, Lcom/google/android/street/Overlay$Polygon;->mFillIndexBuffer:Ljava/nio/ByteBuffer;
 
-    .line 1578
+    .line 1656
     invoke-static {p3}, Lcom/google/android/street/Overlay$Polygon;->indexBufferHelper([B)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/android/street/Overlay$Polygon;->mOutlineIndexBuffer:Ljava/nio/ByteBuffer;
 
-    .line 1579
+    .line 1657
     return-void
 .end method
 
@@ -169,7 +169,7 @@
     .parameter "viewHeight"
 
     .prologue
-    .line 1668
+    .line 1746
     if-ltz p1, :cond_a
 
     if-ltz p2, :cond_a
@@ -194,10 +194,10 @@
     .parameter "numEntries"
 
     .prologue
-    .line 1591
+    .line 1669
     new-array v1, p0, [B
 
-    .line 1592
+    .line 1670
     .local v1, result:[B
     const/4 v0, 0x0
 
@@ -205,17 +205,17 @@
     :goto_3
     if-ge v0, p0, :cond_b
 
-    .line 1593
+    .line 1671
     int-to-byte v2, v0
 
     aput-byte v2, v1, v0
 
-    .line 1592
+    .line 1670
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
 
-    .line 1595
+    .line 1673
     :cond_b
     return-object v1
 .end method
@@ -227,10 +227,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1582
+    .line 1660
     array-length v1, p0
 
-    .line 1583
+    .line 1661
     .local v1, indexCount:I
     invoke-static {v1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
@@ -244,14 +244,14 @@
 
     move-result-object v0
 
-    .line 1585
+    .line 1663
     .local v0, indexBuffer:Ljava/nio/ByteBuffer;
     invoke-virtual {v0, p0, v4, v1}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
 
-    .line 1586
+    .line 1664
     invoke-virtual {v0, v4}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 1587
+    .line 1665
     return-object v0
 .end method
 
@@ -263,12 +263,12 @@
     .parameter "drawMode"
 
     .prologue
-    .line 1647
+    .line 1725
     const v0, 0x8074
 
     invoke-interface {p1, v0}, Ljavax/microedition/khronos/opengles/GL10;->glEnableClientState(I)V
 
-    .line 1648
+    .line 1726
     const/4 v0, 0x3
 
     const/16 v1, 0x1406
@@ -279,17 +279,17 @@
 
     invoke-interface {p1, v0, v1, v2, v3}, Ljavax/microedition/khronos/opengles/GL10;->glVertexPointer(IIILjava/nio/Buffer;)V
 
-    .line 1649
+    .line 1727
     const v0, 0x8078
 
     invoke-interface {p1, v0}, Ljavax/microedition/khronos/opengles/GL10;->glDisableClientState(I)V
 
-    .line 1650
+    .line 1728
     const/16 v0, 0xde1
 
     invoke-interface {p1, v0}, Ljavax/microedition/khronos/opengles/GL10;->glDisable(I)V
 
-    .line 1651
+    .line 1729
     iget v0, p0, Lcom/google/android/street/Overlay$Polygon;->mFillIndexCount:I
 
     const/16 v1, 0x1401
@@ -298,7 +298,7 @@
 
     invoke-interface {p1, p2, v0, v1, v2}, Ljavax/microedition/khronos/opengles/GL10;->glDrawElements(IIILjava/nio/Buffer;)V
 
-    .line 1653
+    .line 1731
     return-void
 .end method
 
@@ -309,25 +309,25 @@
     .prologue
     const/16 v4, 0xb20
 
-    .line 1656
+    .line 1734
     const/16 v0, 0xde1
 
     invoke-interface {p1, v0}, Ljavax/microedition/khronos/opengles/GL10;->glDisable(I)V
 
-    .line 1657
+    .line 1735
     const v0, 0x8078
 
     invoke-interface {p1, v0}, Ljavax/microedition/khronos/opengles/GL10;->glDisableClientState(I)V
 
-    .line 1658
+    .line 1736
     invoke-interface {p1, v4}, Ljavax/microedition/khronos/opengles/GL10;->glEnable(I)V
 
-    .line 1659
+    .line 1737
     const v0, 0x8074
 
     invoke-interface {p1, v0}, Ljavax/microedition/khronos/opengles/GL10;->glEnableClientState(I)V
 
-    .line 1660
+    .line 1738
     const/4 v0, 0x3
 
     const/16 v1, 0x1406
@@ -338,7 +338,7 @@
 
     invoke-interface {p1, v0, v1, v2, v3}, Ljavax/microedition/khronos/opengles/GL10;->glVertexPointer(IIILjava/nio/Buffer;)V
 
-    .line 1661
+    .line 1739
     const/4 v0, 0x2
 
     iget v1, p0, Lcom/google/android/street/Overlay$Polygon;->mOutlineIndexCount:I
@@ -349,10 +349,10 @@
 
     invoke-interface {p1, v0, v1, v2, v3}, Ljavax/microedition/khronos/opengles/GL10;->glDrawElements(IIILjava/nio/Buffer;)V
 
-    .line 1663
+    .line 1741
     invoke-interface {p1, v4}, Ljavax/microedition/khronos/opengles/GL10;->glDisable(I)V
 
-    .line 1664
+    .line 1742
     return-void
 .end method
 
@@ -366,7 +366,7 @@
     .parameter "viewHeight"
 
     .prologue
-    .line 1615
+    .line 1693
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/android/street/Overlay$Polygon;->mVertexBuffer:Ljava/nio/FloatBuffer;
@@ -379,27 +379,27 @@
 
     div-int/lit8 v7, v15, 0x3
 
-    .line 1616
+    .line 1694
     .local v7, vertCount:I
     const v10, 0x7fffffff
 
-    .line 1617
+    .line 1695
     .local v10, x0:I
     const/high16 v11, -0x8000
 
-    .line 1618
+    .line 1696
     .local v11, x1:I
     const v13, 0x7fffffff
 
-    .line 1619
+    .line 1697
     .local v13, y0:I
     const/high16 v14, -0x8000
 
-    .line 1620
+    .line 1698
     .local v14, y1:I
     const/4 v8, 0x0
 
-    .line 1621
+    .line 1699
     .local v8, vertexInView:Z
     const/4 v5, 0x0
 
@@ -407,10 +407,10 @@
     :goto_17
     if-ge v5, v7, :cond_8d
 
-    .line 1622
+    .line 1700
     mul-int/lit8 v6, v5, 0x3
 
-    .line 1623
+    .line 1701
     .local v6, ii:I
     const/4 v15, 0x0
 
@@ -430,7 +430,7 @@
 
     aput v16, p4, v15
 
-    .line 1624
+    .line 1702
     const/4 v15, 0x1
 
     move-object/from16 v0, p0
@@ -447,7 +447,7 @@
 
     aput v16, p4, v15
 
-    .line 1625
+    .line 1703
     const/4 v15, 0x2
 
     move-object/from16 v0, p0
@@ -464,14 +464,14 @@
 
     aput v16, p4, v15
 
-    .line 1626
+    .line 1704
     const/4 v15, 0x3
 
     const/high16 v16, 0x3f80
 
     aput v16, p4, v15
 
-    .line 1627
+    .line 1705
     const/4 v15, 0x0
 
     const/16 v16, 0x4
@@ -488,14 +488,14 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/android/street/Projector;->project([FI[FI)V
 
-    .line 1628
+    .line 1706
     const/4 v15, 0x4
 
     aget v15, p4, v15
 
     float-to-int v9, v15
 
-    .line 1629
+    .line 1707
     .local v9, x:I
     const/4 v15, 0x5
 
@@ -503,7 +503,7 @@
 
     float-to-int v12, v15
 
-    .line 1630
+    .line 1708
     .local v12, y:I
     if-nez v8, :cond_75
 
@@ -528,33 +528,33 @@
 
     move v8, v15
 
-    .line 1632
+    .line 1710
     :goto_77
     invoke-static {v10, v9}, Ljava/lang/Math;->min(II)I
 
     move-result v10
 
-    .line 1633
+    .line 1711
     invoke-static {v11, v9}, Ljava/lang/Math;->max(II)I
 
     move-result v11
 
-    .line 1634
+    .line 1712
     invoke-static {v13, v12}, Ljava/lang/Math;->min(II)I
 
     move-result v13
 
-    .line 1635
+    .line 1713
     invoke-static {v14, v12}, Ljava/lang/Math;->max(II)I
 
     move-result v14
 
-    .line 1621
+    .line 1699
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_17
 
-    .line 1630
+    .line 1708
     :cond_8a
     const/4 v15, 0x0
 
@@ -562,32 +562,32 @@
 
     goto :goto_77
 
-    .line 1637
+    .line 1715
     .end local v6           #ii:I
     .end local v9           #x:I
     .end local v12           #y:I
     :cond_8d
     if-eqz v8, :cond_9d
 
-    .line 1638
+    .line 1716
     aput v10, p2, p3
 
-    .line 1639
+    .line 1717
     add-int/lit8 v15, p3, 0x1
 
     aput v13, p2, v15
 
-    .line 1640
+    .line 1718
     add-int/lit8 v15, p3, 0x2
 
     aput v11, p2, v15
 
-    .line 1641
+    .line 1719
     add-int/lit8 v15, p3, 0x3
 
     aput v14, p2, v15
 
-    .line 1643
+    .line 1721
     :cond_9d
     return v8
 .end method

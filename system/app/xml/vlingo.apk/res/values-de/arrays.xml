@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="prediction_modes">
-        <item>Erweitert</item>
-        <item>Keine</item>
-        <item>Hauptoptionen</item>
-    </string-array>
-</resources>

@@ -34,22 +34,22 @@
     .registers 2
 
     .prologue
-    .line 217
+    .line 223
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 221
+    .line 227
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;->clickEvent_:Ljava/util/List;
 
-    .line 269
+    .line 276
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;->cachedSize:I
 
-    .line 217
+    .line 223
     return-void
 .end method
 
@@ -60,17 +60,17 @@
     .parameter "value"
 
     .prologue
-    .line 238
+    .line 244
     if-nez p1, :cond_8
 
-    .line 239
+    .line 245
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 241
+    .line 247
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;->clickEvent_:Ljava/util/List;
 
@@ -80,20 +80,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 242
+    .line 248
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;->clickEvent_:Ljava/util/List;
 
-    .line 244
+    .line 250
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;->clickEvent_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 245
+    .line 251
     return-object p0
 .end method
 
@@ -101,15 +101,15 @@
     .registers 2
 
     .prologue
-    .line 271
+    .line 279
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 273
+    .line 281
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;->getSerializedSize()I
 
-    .line 275
+    .line 283
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;->cachedSize:I
 
@@ -129,7 +129,7 @@
     .end annotation
 
     .prologue
-    .line 224
+    .line 230
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;->clickEvent_:Ljava/util/List;
 
     return-object v0
@@ -139,10 +139,10 @@
     .registers 5
 
     .prologue
-    .line 279
+    .line 288
     const/4 v2, 0x0
 
-    .line 280
+    .line 289
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;->getClickEventList()Ljava/util/List;
 
@@ -166,7 +166,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
 
-    .line 281
+    .line 290
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
     const/4 v3, 0x1
 
@@ -178,12 +178,12 @@
 
     goto :goto_9
 
-    .line 284
+    .line 293
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
     :cond_1c
     iput v2, p0, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;->cachedSize:I
 
-    .line 285
+    .line 294
     return v2
 .end method
 
@@ -197,44 +197,44 @@
     .end annotation
 
     .prologue
-    .line 292
+    .line 302
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 293
+    .line 303
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1a
 
-    .line 297
+    .line 307
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 298
+    .line 308
     :sswitch_d
     return-object p0
 
-    .line 303
+    .line 313
     :sswitch_e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;-><init>()V
 
-    .line 304
+    .line 314
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 305
+    .line 315
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;->addClickEvent(Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;)Lcom/google/android/finsky/remoting/protos/Log$LogRequest;
 
     goto :goto_0
 
-    .line 293
+    .line 303
     :sswitch_data_1a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -252,7 +252,7 @@
     .end annotation
 
     .prologue
-    .line 215
+    .line 220
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Log$LogRequest;
 
     move-result-object v0
@@ -270,7 +270,7 @@
     .end annotation
 
     .prologue
-    .line 264
+    .line 271
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;->getClickEventList()Ljava/util/List;
 
     move-result-object v2
@@ -293,7 +293,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
 
-    .line 265
+    .line 272
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
     const/4 v2, 0x1
 
@@ -301,7 +301,7 @@
 
     goto :goto_8
 
-    .line 267
+    .line 274
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
     :cond_19
     return-void

@@ -85,7 +85,7 @@
 
 .field protected static final EVENT_USSD:I = 0x7
 
-.field private static final LOCAL_DEBUG:Z = true
+.field private static final LOCAL_DEBUG:Z = false
 
 .field private static final LOG_TAG:Ljava/lang/String; = "PHONE"
 

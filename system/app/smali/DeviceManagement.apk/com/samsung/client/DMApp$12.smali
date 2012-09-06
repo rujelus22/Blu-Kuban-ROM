@@ -26,7 +26,7 @@
     .parameter "x1"
 
     .prologue
-    .line 3215
+    .line 3201
     iput-object p1, p0, Lcom/samsung/client/DMApp$12;->this$0:Lcom/samsung/client/DMApp;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
@@ -40,14 +40,14 @@
     .registers 4
 
     .prologue
-    .line 3224
+    .line 3210
     const-string v1, "DMApp"
 
     const-string v2, "cancelUpdateSessionTimer onFinish"
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3226
+    .line 3212
     :try_start_7
     invoke-static {}, Lcom/samsung/client/DMApp;->access$500()Lcom/samsung/client/ISyncmlService;
 
@@ -55,7 +55,7 @@
 
     if-eqz v1, :cond_14
 
-    .line 3227
+    .line 3213
     invoke-static {}, Lcom/samsung/client/DMApp;->access$500()Lcom/samsung/client/ISyncmlService;
 
     move-result-object v1
@@ -64,16 +64,16 @@
     :try_end_14
     .catch Landroid/os/RemoteException; {:try_start_7 .. :try_end_14} :catch_15
 
-    .line 3232
+    .line 3218
     :cond_14
     :goto_14
     return-void
 
-    .line 3229
+    .line 3215
     :catch_15
     move-exception v0
 
-    .line 3230
+    .line 3216
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "DMApp"
 
@@ -91,13 +91,13 @@
     .parameter "millisUntilFinished"
 
     .prologue
-    .line 3219
+    .line 3205
     const-string v0, "DMApp"
 
     const-string v1, "cancelUpdateSessionTimer onTick"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3220
+    .line 3206
     return-void
 .end method

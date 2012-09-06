@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextView android:textSize="@dimen/account_select_list_text_size" android:textColor="@color/message_list_account_text_color" android:ellipsize="marquee" android:gravity="left" android:id="@id/display_name" android:paddingLeft="6.0dip" android:fadingEdge="horizontal" android:fadingEdgeLength="30.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:shadowColor="@color/message_list_shadow_color" android:shadowDy="-1.0" android:shadowRadius="0.2"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

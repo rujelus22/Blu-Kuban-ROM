@@ -97,11 +97,11 @@
 
     throw v0
 
-    .line 86
+    .line 87
     :cond_25
     invoke-direct {p0, p1}, Lorg/apache/commons/io/output/ByteArrayOutputStream;->needNewBuffer(I)V
 
-    .line 87
+    .line 88
     return-void
 .end method
 
@@ -110,7 +110,7 @@
     .parameter "index"
 
     .prologue
-    .line 96
+    .line 98
     iget-object v0, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->buffers:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -127,7 +127,7 @@
     .parameter "newcount"
 
     .prologue
-    .line 106
+    .line 108
     iget v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBufferIndex:I
 
     iget-object v2, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->buffers:Ljava/util/List;
@@ -140,7 +140,7 @@
 
     if-ge v1, v2, :cond_23
 
-    .line 108
+    .line 110
     iget v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->filledBufferSum:I
 
     iget-object v2, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer:[B
@@ -151,14 +151,14 @@
 
     iput v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->filledBufferSum:I
 
-    .line 110
+    .line 112
     iget v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBufferIndex:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBufferIndex:I
 
-    .line 111
+    .line 113
     iget v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBufferIndex:I
 
     invoke-direct {p0, v1}, Lorg/apache/commons/io/output/ByteArrayOutputStream;->getBuffer(I)[B
@@ -167,26 +167,26 @@
 
     iput-object v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer:[B
 
-    .line 127
+    .line 131
     :goto_22
     return-void
 
-    .line 115
+    .line 117
     :cond_23
     iget-object v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer:[B
 
     if-nez v1, :cond_3d
 
-    .line 116
+    .line 118
     move v0, p1
 
-    .line 117
+    .line 119
     .local v0, newBufferSize:I
     const/4 v1, 0x0
 
     iput v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->filledBufferSum:I
 
-    .line 123
+    .line 127
     :goto_2b
     iget v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBufferIndex:I
 
@@ -194,12 +194,12 @@
 
     iput v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBufferIndex:I
 
-    .line 124
+    .line 128
     new-array v1, v0, [B
 
     iput-object v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer:[B
 
-    .line 125
+    .line 129
     iget-object v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->buffers:Ljava/util/List;
 
     iget-object v2, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer:[B
@@ -208,7 +208,7 @@
 
     goto :goto_22
 
-    .line 119
+    .line 121
     .end local v0           #newBufferSize:I
     :cond_3d
     iget-object v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer:[B
@@ -225,7 +225,7 @@
 
     move-result v0
 
-    .line 120
+    .line 124
     .restart local v0       #newBufferSize:I
     iget v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->filledBufferSum:I
 
@@ -251,7 +251,7 @@
     .end annotation
 
     .prologue
-    .line 225
+    .line 229
     return-void
 .end method
 
@@ -259,37 +259,37 @@
     .registers 8
 
     .prologue
-    .line 267
+    .line 270
     monitor-enter p0
 
     :try_start_1
     iget v5, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->count:I
 
-    .line 268
+    .line 271
     .local v5, remaining:I
     if-nez v5, :cond_9
 
-    .line 269
+    .line 272
     sget-object v3, Lorg/apache/commons/io/output/ByteArrayOutputStream;->EMPTY_BYTE_ARRAY:[B
     :try_end_7
     .catchall {:try_start_1 .. :try_end_7} :catchall_29
 
-    .line 283
+    .line 286
     :cond_7
     monitor-exit p0
 
     return-object v3
 
-    .line 271
+    .line 274
     :cond_9
     :try_start_9
     new-array v3, v5, [B
 
-    .line 272
+    .line 275
     .local v3, newbuf:[B
     const/4 v4, 0x0
 
-    .line 273
+    .line 276
     .local v4, pos:I
     const/4 v2, 0x0
 
@@ -303,12 +303,12 @@
 
     if-ge v2, v6, :cond_7
 
-    .line 274
+    .line 277
     invoke-direct {p0, v2}, Lorg/apache/commons/io/output/ByteArrayOutputStream;->getBuffer(I)[B
 
     move-result-object v0
 
-    .line 275
+    .line 278
     .local v0, buf:[B
     array-length v6, v0
 
@@ -316,7 +316,7 @@
 
     move-result v1
 
-    .line 276
+    .line 279
     .local v1, c:I
     const/4 v6, 0x0
 
@@ -324,21 +324,21 @@
     :try_end_22
     .catchall {:try_start_9 .. :try_end_22} :catchall_29
 
-    .line 277
+    .line 280
     add-int/2addr v4, v1
 
-    .line 278
+    .line 281
     sub-int/2addr v5, v1
 
-    .line 279
+    .line 282
     if-eqz v5, :cond_7
 
-    .line 273
+    .line 276
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_d
 
-    .line 267
+    .line 270
     .end local v0           #buf:[B
     .end local v1           #c:I
     .end local v2           #i:I
@@ -357,7 +357,7 @@
     .registers 3
 
     .prologue
-    .line 294
+    .line 296
     new-instance v0, Ljava/lang/String;
 
     invoke-virtual {p0}, Lorg/apache/commons/io/output/ByteArrayOutputStream;->toByteArray()[B
@@ -374,7 +374,7 @@
     .parameter "b"
 
     .prologue
-    .line 168
+    .line 173
     monitor-enter p0
 
     :try_start_1
@@ -384,7 +384,7 @@
 
     sub-int v0, v1, v2
 
-    .line 169
+    .line 174
     .local v0, inBufferPos:I
     iget-object v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer:[B
 
@@ -392,17 +392,17 @@
 
     if-ne v0, v1, :cond_14
 
-    .line 170
+    .line 175
     iget v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->count:I
 
     add-int/lit8 v1, v1, 0x1
 
     invoke-direct {p0, v1}, Lorg/apache/commons/io/output/ByteArrayOutputStream;->needNewBuffer(I)V
 
-    .line 171
+    .line 176
     const/4 v0, 0x0
 
-    .line 173
+    .line 178
     :cond_14
     iget-object v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer:[B
 
@@ -410,7 +410,7 @@
 
     aput-byte v2, v1, v0
 
-    .line 174
+    .line 179
     iget v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->count:I
 
     add-int/lit8 v1, v1, 0x1
@@ -419,12 +419,12 @@
     :try_end_1f
     .catchall {:try_start_1 .. :try_end_1f} :catchall_21
 
-    .line 175
+    .line 180
     monitor-exit p0
 
     return-void
 
-    .line 168
+    .line 173
     .end local v0           #inBufferPos:I
     :catchall_21
     move-exception v1
@@ -441,7 +441,7 @@
     .parameter "len"
 
     .prologue
-    .line 138
+    .line 141
     if-ltz p2, :cond_10
 
     array-length v4, p1
@@ -460,7 +460,7 @@
 
     if-gez v4, :cond_16
 
-    .line 140
+    .line 146
     :cond_10
     new-instance v4, Ljava/lang/IndexOutOfBoundsException;
 
@@ -468,29 +468,29 @@
 
     throw v4
 
-    .line 141
+    .line 147
     :cond_16
     if-nez p3, :cond_19
 
-    .line 159
+    .line 165
     :goto_18
     return-void
 
-    .line 144
+    .line 150
     :cond_19
     monitor-enter p0
 
-    .line 145
+    .line 151
     :try_start_1a
     iget v4, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->count:I
 
     add-int v1, v4, p3
 
-    .line 146
+    .line 152
     .local v1, newcount:I
     move v3, p3
 
-    .line 147
+    .line 153
     .local v3, remaining:I
     iget v4, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->count:I
 
@@ -498,13 +498,13 @@
 
     sub-int v0, v4, v5
 
-    .line 148
+    .line 154
     .local v0, inBufferPos:I
     :cond_25
     :goto_25
     if-lez v3, :cond_3f
 
-    .line 149
+    .line 155
     iget-object v4, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->currentBuffer:[B
 
     array-length v4, v4
@@ -515,7 +515,7 @@
 
     move-result v2
 
-    .line 150
+    .line 156
     .local v2, part:I
     add-int v4, p2, p3
 
@@ -525,26 +525,26 @@
 
     invoke-static {p1, v4, v5, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 151
+    .line 157
     sub-int/2addr v3, v2
 
-    .line 152
+    .line 158
     if-lez v3, :cond_25
 
-    .line 153
+    .line 159
     invoke-direct {p0, v1}, Lorg/apache/commons/io/output/ByteArrayOutputStream;->needNewBuffer(I)V
 
-    .line 154
+    .line 160
     const/4 v0, 0x0
 
     goto :goto_25
 
-    .line 157
+    .line 163
     .end local v2           #part:I
     :cond_3f
     iput v1, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->count:I
 
-    .line 158
+    .line 164
     monitor-exit p0
 
     goto :goto_18
@@ -572,13 +572,13 @@
     .end annotation
 
     .prologue
-    .line 247
+    .line 250
     monitor-enter p0
 
     :try_start_1
     iget v3, p0, Lorg/apache/commons/io/output/ByteArrayOutputStream;->count:I
 
-    .line 248
+    .line 251
     .local v3, remaining:I
     const/4 v2, 0x0
 
@@ -592,12 +592,12 @@
 
     if-ge v2, v4, :cond_1c
 
-    .line 249
+    .line 252
     invoke-direct {p0, v2}, Lorg/apache/commons/io/output/ByteArrayOutputStream;->getBuffer(I)[B
 
     move-result-object v0
 
-    .line 250
+    .line 253
     .local v0, buf:[B
     array-length v4, v0
 
@@ -605,7 +605,7 @@
 
     move-result v1
 
-    .line 251
+    .line 254
     .local v1, c:I
     const/4 v4, 0x0
 
@@ -613,13 +613,13 @@
     :try_end_19
     .catchall {:try_start_1 .. :try_end_19} :catchall_21
 
-    .line 252
+    .line 255
     sub-int/2addr v3, v1
 
-    .line 253
+    .line 256
     if-nez v3, :cond_1e
 
-    .line 257
+    .line 260
     .end local v0           #buf:[B
     .end local v1           #c:I
     :cond_1c
@@ -627,7 +627,7 @@
 
     return-void
 
-    .line 248
+    .line 251
     .restart local v0       #buf:[B
     .restart local v1       #c:I
     :cond_1e
@@ -635,7 +635,7 @@
 
     goto :goto_4
 
-    .line 247
+    .line 250
     .end local v0           #buf:[B
     .end local v1           #c:I
     .end local v2           #i:I

@@ -30,7 +30,7 @@
 
     const/4 v2, 0x0
 
-    .line 87
+    .line 88
     new-instance v0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$InteractionMode;
 
     const-string v1, "NON_SCROLLING"
@@ -39,7 +39,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$InteractionMode;->NON_SCROLLING:Lcom/google/android/youtube/core/ui/AbstractWorkspace$InteractionMode;
 
-    .line 88
+    .line 89
     new-instance v0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$InteractionMode;
 
     const-string v1, "SCROLLING"
@@ -48,7 +48,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$InteractionMode;->SCROLLING:Lcom/google/android/youtube/core/ui/AbstractWorkspace$InteractionMode;
 
-    .line 89
+    .line 90
     new-instance v0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$InteractionMode;
 
     const-string v1, "FLINGABLE_SCROLLING"
@@ -57,7 +57,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$InteractionMode;->FLINGABLE_SCROLLING:Lcom/google/android/youtube/core/ui/AbstractWorkspace$InteractionMode;
 
-    .line 85
+    .line 86
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/android/youtube/core/ui/AbstractWorkspace$InteractionMode;
@@ -87,16 +87,16 @@
     .parameter
 
     .prologue
-    .line 94
+    .line 95
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 95
+    .line 96
     iput-boolean p3, p0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$InteractionMode;->enableFling:Z
 
-    .line 96
+    .line 97
     iput-boolean p4, p0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$InteractionMode;->enableSmoothScroll:Z
 
-    .line 97
+    .line 98
     return-void
 .end method
 
@@ -105,7 +105,7 @@
     .parameter
 
     .prologue
-    .line 85
+    .line 86
     const-class v0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$InteractionMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -121,7 +121,7 @@
     .registers 1
 
     .prologue
-    .line 85
+    .line 86
     sget-object v0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$InteractionMode;->$VALUES:[Lcom/google/android/youtube/core/ui/AbstractWorkspace$InteractionMode;
 
     invoke-virtual {v0}, [Lcom/google/android/youtube/core/ui/AbstractWorkspace$InteractionMode;->clone()Ljava/lang/Object;

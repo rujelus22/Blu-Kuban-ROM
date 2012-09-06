@@ -29,6 +29,12 @@
         <item>Sólo cuando esté en silencio</item>
         <item>Nunca</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>desactivada</item>
+        <item>baja</item>
+        <item>media</item>
+        <item>virtual</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Ninguna</item>
         <item>Estabilización de imagen: baja</item>
@@ -42,7 +48,7 @@
     <string-array name="prefEntries_text_notifications">
         <item>Abrir diálogo</item>
         <item>Mostrar notificación</item>
-        <item>Desactivado</item>
+        <item>Apagado</item>
     </string-array>
     <string-array name="smiley_names">
         <item>Feliz</item>

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 193
+    .line 195
     iput-object p1, p0, Lcom/google/android/street/StreetView$2;->this$0:Lcom/google/android/street/StreetView;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,12 +39,12 @@
     .parameter "msg"
 
     .prologue
-    .line 196
+    .line 198
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_42
 
-    .line 207
+    .line 209
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -71,7 +71,7 @@
 
     throw v0
 
-    .line 198
+    .line 200
     :pswitch_20
     iget-object v0, p0, Lcom/google/android/street/StreetView$2;->this$0:Lcom/google/android/street/StreetView;
 
@@ -90,18 +90,18 @@
     #calls: Lcom/google/android/street/StreetView;->addPanoramaConfig(ZLcom/google/android/street/PanoramaConfig;)V
     invoke-static {v0, v1, p0}, Lcom/google/android/street/StreetView;->access$100(Lcom/google/android/street/StreetView;ZLcom/google/android/street/PanoramaConfig;)V
 
-    .line 210
+    .line 212
     :goto_2e
     return-void
 
-    .line 198
+    .line 200
     .restart local p0
     :cond_2f
     const/4 v1, 0x0
 
     goto :goto_27
 
-    .line 201
+    .line 203
     :pswitch_31
     iget-object v0, p0, Lcom/google/android/street/StreetView$2;->this$0:Lcom/google/android/street/StreetView;
 
@@ -112,7 +112,7 @@
 
     goto :goto_2e
 
-    .line 204
+    .line 206
     :pswitch_39
     iget-object v0, p0, Lcom/google/android/street/StreetView$2;->this$0:Lcom/google/android/street/StreetView;
 
@@ -123,7 +123,7 @@
 
     goto :goto_2e
 
-    .line 196
+    .line 198
     nop
 
     :pswitch_data_42

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="orientation">
+        <flag name="horizontal" value="0x00000001" />
+        <flag name="vertical" value="0x00000002" />
+    </attr>
+    <attr name="leftText" format="string" />
+    <attr name="rightText" format="string" />
+    <attr name="leftDrawable" format="reference" />
+    <attr name="rightDrawable" format="reference" />
+</resources>

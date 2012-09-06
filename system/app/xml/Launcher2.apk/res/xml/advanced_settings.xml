@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/advanced_settings_title" android:key="@string/pref_advanced_settings_key"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceScreen android:title="@string/customize_menu_title" android:summary="@string/customize_menu_summary">
+        <CheckBoxPreference android:title="@string/menu_add" android:key="@string/pref_menu_add_key" android:defaultValue="@bool/pref_menu_add_default" android:summaryOn="@string/show" android:summaryOff="@string/hide" />
+        <CheckBoxPreference android:title="@string/menu_wallpaper" android:key="@string/pref_menu_wallpaper_key" android:defaultValue="@bool/pref_menu_wallpaper_default" android:summaryOn="@string/show" android:summaryOff="@string/hide" />
+        <CheckBoxPreference android:title="@string/theme_settings_title" android:key="@string/pref_menu_theme_key" android:defaultValue="@bool/pref_menu_theme_default" android:summaryOn="@string/show" android:summaryOff="@string/hide" />
+        <CheckBoxPreference android:title="@string/menu_search" android:key="@string/pref_menu_search_key" android:defaultValue="@bool/pref_menu_search_default" android:summaryOn="@string/show" android:summaryOff="@string/hide" />
+        <CheckBoxPreference android:title="@string/menu_notifications" android:key="@string/pref_menu_notifications_key" android:defaultValue="@bool/pref_menu_notifications_default" android:summaryOn="@string/show" android:summaryOff="@string/hide" />
+        <CheckBoxPreference android:title="@string/menu_manage_apps" android:key="@string/pref_menu_manage_apps_key" android:defaultValue="@bool/pref_menu_manage_apps_default" android:summaryOn="@string/show" android:summaryOff="@string/hide" />
+        <CheckBoxPreference android:title="@string/manage_screens_title" android:key="@string/pref_menu_manage_screens_key" android:defaultValue="@bool/pref_menu_manage_screens_default" android:summaryOn="@string/show" android:summaryOff="@string/hide" />
+        <CheckBoxPreference android:title="@string/menu_preferences" android:key="@string/pref_menu_preferences_key" android:defaultValue="@bool/pref_menu_preferences_default" android:summaryOn="@string/show" android:summaryOff="@string/hide" />
+        <CheckBoxPreference android:title="@string/menu_settings" android:key="@string/pref_menu_settings_key" android:defaultValue="@bool/pref_menu_settings_default" android:summaryOn="@string/show" android:summaryOff="@string/hide" />
+        <CheckBoxPreference android:title="@string/menu_lock_desktop" android:key="@string/pref_menu_lock_desktop_key" android:defaultValue="@bool/pref_menu_lock_desktop_default" android:summaryOn="@string/show" android:summaryOff="@string/hide" />
+        <CheckBoxPreference android:title="@string/menu_help" android:key="@string/pref_menu_help_key" android:defaultValue="@bool/pref_menu_help_default" android:summaryOn="@string/show" android:summaryOff="@string/hide" />
+    </PreferenceScreen>
+    <PreferenceCategory android:title="@string/notifications_title" android:key="@string/pref_notifications_settings_key">
+        <CheckBoxPreference android:title="@string/missed_call_count_title" android:key="@string/pref_missed_call_count_key" android:summary="@string/missed_call_count_summary" android:defaultValue="@bool/pref_missed_call_count_default" />
+        <Preference android:title="@string/phone_app_title" android:key="@string/pref_phone_app_key" android:summary="@string/phone_app_summary" android:dependency="@string/pref_missed_call_count_key" />
+        <CheckBoxPreference android:title="@string/unread_sms_count_title" android:key="@string/pref_unread_sms_count_key" android:summary="@string/unread_sms_count_summary" android:defaultValue="@bool/pref_unread_sms_count_default" />
+        <Preference android:title="@string/sms_app_title" android:key="@string/pref_sms_app_key" android:summary="@string/sms_app_summary" android:dependency="@string/pref_unread_sms_count_key" />
+        <CheckBoxPreference android:title="@string/unread_gmail_count_title" android:key="@string/pref_unread_gmail_count_key" android:summary="@string/unread_gmail_count_summary" android:defaultValue="@bool/pref_unread_gmail_count_default" />
+        <Preference android:title="@string/gmail_app_title" android:key="@string/pref_gmail_app_key" android:summary="@string/gmail_app_summary" android:dependency="@string/pref_unread_gmail_count_key" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/widget_settings_title" android:key="@string/pref_widget_settings_key">
+        <CheckBoxPreference android:title="@string/resize_any_widget_title" android:key="@string/pref_resize_any_widget_key" android:summary="@string/resize_any_widget_summary" android:defaultValue="@bool/pref_resize_any_widget_default" />
+        <CheckBoxPreference android:title="@string/overlapping_widgets_title" android:key="@string/pref_overlapping_widgets_key" android:summary="@string/overlapping_widgets_summary" android:defaultValue="@bool/pref_overlapping_widgets_default" />
+        <CheckBoxPreference android:title="@string/widgets_in_dock_title" android:key="@string/pref_widgets_in_dock_key" android:summary="@string/widgets_in_dock_summary" android:defaultValue="@bool/pref_widgets_in_dock_default" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/other_settings_title">
+        <Preference android:title="@string/set_default_launcher_title" android:key="@string/pref_set_default_launcher_key" android:summary="@string/not_set" />
+        <ListPreference android:entries="@array/app_locale_entries" android:title="@string/select_language_title" android:key="@string/pref_app_locale_key" android:defaultValue="@string/pref_app_locale_default" android:entryValues="@array/app_locale_values" />
+        <CheckBoxPreference android:title="@string/keep_in_memory_title" android:key="@string/pref_keep_in_memory_key" android:summary="@string/keep_in_memory_summary" android:defaultValue="@bool/pref_keep_in_memory_default" />
+        <CheckBoxPreference android:title="@string/enable_root_helper_title" android:key="@string/pref_enable_root_helper_key" android:summary="@string/enable_root_helper_summary" android:defaultValue="@bool/pref_enable_root_helper_default" />
+        <CheckBoxPreference android:title="@string/report_usage_errors_title" android:key="@string/pref_enable_reporting_key" android:summary="@string/report_usage_errors_summary" android:defaultValue="@bool/pref_enable_reporting_default" />
+    </PreferenceCategory>
+</PreferenceScreen>

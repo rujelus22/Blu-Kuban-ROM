@@ -3,150 +3,158 @@
 .source "AccountSelectorView.java"
 
 
+# instance fields
+.field protected final mMultiAccountDrawable:Landroid/graphics/drawable/Drawable;
+
+
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .registers 4
     .parameter "context"
 
     .prologue
-    .line 20
-    invoke-direct {p0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    .line 25
+    const/4 v0, 0x0
 
-    .line 21
+    const/4 v1, 0x0
+
+    invoke-direct {p0, p1, v0, v1}, Lcom/google/android/finsky/layout/AccountSelectorView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+    .line 26
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 3
+    .registers 4
     .parameter "context"
     .parameter "attrs"
 
     .prologue
-    .line 24
-    invoke-direct {p0, p1, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .line 29
+    const/4 v0, 0x0
 
-    .line 25
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/finsky/layout/AccountSelectorView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+    .line 30
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 4
+    .registers 7
     .parameter "context"
     .parameter "attrs"
     .parameter "defStyle"
 
     .prologue
-    .line 28
+    const/4 v2, 0x0
+
+    .line 33
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 29
+    .line 35
+    sget-object v1, Lcom/android/vending/R$styleable;->AccountSelectorView:[I
+
+    invoke-virtual {p1, p2, v1, p3, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+
+    move-result-object v0
+
+    .line 37
+    .local v0, a:Landroid/content/res/TypedArray;
+    invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/google/android/finsky/layout/AccountSelectorView;->mMultiAccountDrawable:Landroid/graphics/drawable/Drawable;
+
+    .line 39
+    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+
+    .line 40
     return-void
 .end method
 
 
 # virtual methods
 .method public configure(Lcom/google/android/finsky/activities/AuthenticatedActivity;)V
-    .registers 9
+    .registers 8
     .parameter "authenticatedActivity"
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/4 v2, 0x1
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    .line 32
+    .line 43
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Lcom/google/android/finsky/FinskyApp;->getCurrentAccountName()Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/google/android/finsky/FinskyApp;->getCurrentAccountName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {p0, v5}, Lcom/google/android/finsky/layout/AccountSelectorView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v4}, Lcom/google/android/finsky/layout/AccountSelectorView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 33
+    .line 44
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/AccountSelectorView;->getContext()Landroid/content/Context;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-static {v5}, Lcom/google/android/finsky/api/AccountHandler;->getAccounts(Landroid/content/Context;)[Landroid/accounts/Account;
+    invoke-static {v4}, Lcom/google/android/finsky/api/AccountHandler;->getAccounts(Landroid/content/Context;)[Landroid/accounts/Account;
 
     move-result-object v0
 
-    .line 34
+    .line 45
     .local v0, accounts:[Landroid/accounts/Account;
-    array-length v5, v0
+    array-length v4, v0
 
-    if-le v5, v3, :cond_41
+    if-le v4, v2, :cond_2d
 
-    move v1, v3
+    move v1, v2
 
-    .line 35
+    .line 46
     .local v1, hasMultipleAccounts:Z
     :goto_1a
-    if-eqz v1, :cond_43
+    if-eqz v1, :cond_2f
 
-    .line 36
-    invoke-virtual {p0, v3}, Lcom/google/android/finsky/layout/AccountSelectorView;->setClickable(Z)V
+    .line 47
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/layout/AccountSelectorView;->setClickable(Z)V
 
-    .line 37
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/AccountSelectorView;->getResources()Landroid/content/res/Resources;
+    .line 48
+    iget-object v2, p0, Lcom/google/android/finsky/layout/AccountSelectorView;->mMultiAccountDrawable:Landroid/graphics/drawable/Drawable;
 
-    move-result-object v3
+    invoke-virtual {p0, v5, v5, v2, v5}, Lcom/google/android/finsky/layout/AccountSelectorView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    const v5, 0x7f02009c
+    .line 49
+    new-instance v2, Lcom/google/android/finsky/layout/AccountSelectorView$1;
 
-    invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-direct {v2, p0, p1}, Lcom/google/android/finsky/layout/AccountSelectorView$1;-><init>(Lcom/google/android/finsky/layout/AccountSelectorView;Lcom/google/android/finsky/activities/AuthenticatedActivity;)V
 
-    move-result-object v2
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/layout/AccountSelectorView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 39
-    .local v2, spinnerArrowDrawable:Landroid/graphics/drawable/Drawable;
-    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v3
-
-    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v5
-
-    invoke-virtual {v2, v4, v4, v3, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    .line 41
-    invoke-virtual {p0, v6, v6, v2, v6}, Lcom/google/android/finsky/layout/AccountSelectorView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    .line 42
-    new-instance v3, Lcom/google/android/finsky/layout/AccountSelectorView$1;
-
-    invoke-direct {v3, p0, p1}, Lcom/google/android/finsky/layout/AccountSelectorView$1;-><init>(Lcom/google/android/finsky/layout/AccountSelectorView;Lcom/google/android/finsky/activities/AuthenticatedActivity;)V
-
-    invoke-virtual {p0, v3}, Lcom/google/android/finsky/layout/AccountSelectorView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 53
-    .end local v2           #spinnerArrowDrawable:Landroid/graphics/drawable/Drawable;
-    :goto_40
+    .line 60
+    :goto_2c
     return-void
 
     .end local v1           #hasMultipleAccounts:Z
-    :cond_41
-    move v1, v4
+    :cond_2d
+    move v1, v3
 
-    .line 34
+    .line 45
     goto :goto_1a
 
-    .line 49
+    .line 56
     .restart local v1       #hasMultipleAccounts:Z
-    :cond_43
-    invoke-virtual {p0, v4}, Lcom/google/android/finsky/layout/AccountSelectorView;->setClickable(Z)V
+    :cond_2f
+    invoke-virtual {p0, v3}, Lcom/google/android/finsky/layout/AccountSelectorView;->setClickable(Z)V
 
-    .line 50
-    invoke-virtual {p0, v6, v6, v6, v6}, Lcom/google/android/finsky/layout/AccountSelectorView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    .line 57
+    invoke-virtual {p0, v5, v5, v5, v5}, Lcom/google/android/finsky/layout/AccountSelectorView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 51
-    invoke-virtual {p0, v6}, Lcom/google/android/finsky/layout/AccountSelectorView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    .line 58
+    invoke-virtual {p0, v5}, Lcom/google/android/finsky/layout/AccountSelectorView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    goto :goto_40
+    goto :goto_2c
 .end method

@@ -1,100 +1,71 @@
-.class public Lcom/google/googlenav/ui/view/android/Y;
-.super Lcom/google/googlenav/ui/view/android/N;
+.class public abstract Lcom/google/googlenav/ui/view/android/Y;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LaQ/H;
+
+
+# instance fields
+.field private final a:J
+
+.field private final b:J
+
+.field private final c:Lcom/google/googlenav/ui/view/a;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lbb/o;Lcom/google/googlenav/ui/p;)V
-    .registers 4
+.method protected constructor <init>(JJLcom/google/googlenav/ui/view/a;)V
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/googlenav/ui/view/android/N;-><init>(Landroid/content/Context;Lbb/o;Lcom/google/googlenav/ui/p;)V
+    .prologue
+    .line 20
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 21
+    iput-wide p1, p0, Lcom/google/googlenav/ui/view/android/Y;->a:J
+
+    .line 22
+    iput-wide p3, p0, Lcom/google/googlenav/ui/view/android/Y;->b:J
+
+    .line 23
+    iput-object p5, p0, Lcom/google/googlenav/ui/view/android/Y;->c:Lcom/google/googlenav/ui/view/a;
+
+    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 8
+.method public d()J
+    .registers 3
 
-    invoke-virtual {p0, p1}, Lcom/google/googlenav/ui/view/android/Y;->getItem(I)Ljava/lang/Object;
+    .prologue
+    .line 33
+    iget-wide v0, p0, Lcom/google/googlenav/ui/view/android/Y;->a:J
 
-    move-result-object v0
+    return-wide v0
+.end method
 
-    check-cast v0, Lcom/google/googlenav/ui/bl;
+.method public e()J
+    .registers 3
 
-    iget v1, v0, Lcom/google/googlenav/ui/bl;->r:I
+    .prologue
+    .line 43
+    iget-wide v0, p0, Lcom/google/googlenav/ui/view/android/Y;->b:J
 
-    const/16 v2, 0x26
+    return-wide v0
+.end method
 
-    if-eq v1, v2, :cond_11
+.method public f()Lcom/google/googlenav/ui/view/a;
+    .registers 2
 
-    invoke-super {p0, p1, p2, p3}, Lcom/google/googlenav/ui/view/android/N;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .prologue
+    .line 52
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/Y;->c:Lcom/google/googlenav/ui/view/a;
 
-    move-result-object v0
-
-    :goto_10
     return-object v0
-
-    :cond_11
-    invoke-virtual {p3}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    const-string v2, "layout_inflater"
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/view/LayoutInflater;
-
-    const v2, 0x7f030114
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, p3, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v1
-
-    new-instance v2, Landroid/text/SpannableStringBuilder;
-
-    invoke-direct {v2}, Landroid/text/SpannableStringBuilder;-><init>()V
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/bl;->i:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_30
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_40
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlenav/ui/bh;
-
-    invoke-static {v0, v2}, Lcom/google/googlenav/ui/bw;->a(Lcom/google/googlenav/ui/bh;Landroid/text/SpannableStringBuilder;)V
-
-    goto :goto_30
-
-    :cond_40
-    const v0, 0x1020014
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/CheckedTextView;
-
-    invoke-virtual {v0, v2}, Landroid/widget/CheckedTextView;->setText(Ljava/lang/CharSequence;)V
-
-    move-object v0, v1
-
-    goto :goto_10
 .end method

@@ -1,131 +1,90 @@
-.class final Lcom/google/android/youtube/app/ui/ak;
-.super Landroid/widget/BaseAdapter;
+.class final synthetic Lcom/google/android/youtube/app/ui/ak;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field private final a:Landroid/view/LayoutInflater;
-
-.field private final b:Ljava/util/List;
-
-.field private final c:I
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/LayoutInflater;Ljava/util/List;I)V
-    .registers 4
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 293
-    invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
-
-    .line 294
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/ak;->a:Landroid/view/LayoutInflater;
-
-    .line 295
-    iput-object p2, p0, Lcom/google/android/youtube/app/ui/ak;->b:Ljava/util/List;
-
-    .line 296
-    iput p3, p0, Lcom/google/android/youtube/app/ui/ak;->c:I
-
-    .line 297
-    return-void
-.end method
-
-
-# virtual methods
-.method public final getCount()I
-    .registers 2
-
-    .prologue
-    .line 300
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ak;->b:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final getItem(I)Ljava/lang/Object;
+.method static constructor <clinit>()V
     .registers 3
-    .parameter
 
     .prologue
-    .line 304
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ak;->b:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    .line 586
+    invoke-static {}, Lcom/google/android/youtube/app/ui/DefaultSliderDynamics$Fling;->values()[Lcom/google/android/youtube/app/ui/DefaultSliderDynamics$Fling;
 
     move-result-object v0
 
-    check-cast v0, Landroid/util/Pair;
+    array-length v0, v0
 
-    iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
+    new-array v0, v0, [I
 
-    return-object v0
-.end method
+    sput-object v0, Lcom/google/android/youtube/app/ui/ak;->a:[I
 
-.method public final getItemId(I)J
-    .registers 4
-    .parameter
+    :try_start_9
+    sget-object v0, Lcom/google/android/youtube/app/ui/ak;->a:[I
 
-    .prologue
-    .line 308
-    int-to-long v0, p1
+    sget-object v1, Lcom/google/android/youtube/app/ui/DefaultSliderDynamics$Fling;->BACK:Lcom/google/android/youtube/app/ui/DefaultSliderDynamics$Fling;
 
-    return-wide v0
-.end method
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/ui/DefaultSliderDynamics$Fling;->ordinal()I
 
-.method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 7
-    .parameter
-    .parameter
-    .parameter
+    move-result v1
 
-    .prologue
-    .line 312
-    if-nez p2, :cond_1d
+    const/4 v2, 0x1
 
-    .line 313
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ak;->a:Landroid/view/LayoutInflater;
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_2f
 
-    iget v1, p0, Lcom/google/android/youtube/app/ui/ak;->c:I
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/android/youtube/app/ui/ak;->a:[I
 
-    const/4 v2, 0x0
+    sget-object v1, Lcom/google/android/youtube/app/ui/DefaultSliderDynamics$Fling;->FORWARD:Lcom/google/android/youtube/app/ui/DefaultSliderDynamics$Fling;
 
-    invoke-virtual {v0, v1, p3, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/ui/DefaultSliderDynamics$Fling;->ordinal()I
 
-    move-result-object v0
+    move-result v1
 
-    .line 315
-    :goto_b
-    check-cast v0, Landroid/widget/TextView;
+    const/4 v2, 0x2
 
-    .line 316
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/ak;->b:Ljava/util/List;
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_2d
 
-    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    :goto_1f
+    :try_start_1f
+    sget-object v0, Lcom/google/android/youtube/app/ui/ak;->a:[I
 
-    move-result-object v1
+    sget-object v1, Lcom/google/android/youtube/app/ui/DefaultSliderDynamics$Fling;->NONE:Lcom/google/android/youtube/app/ui/DefaultSliderDynamics$Fling;
 
-    check-cast v1, Landroid/util/Pair;
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/ui/DefaultSliderDynamics$Fling;->ordinal()I
 
-    iget-object v1, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
+    move-result v1
 
-    check-cast v1, Ljava/lang/CharSequence;
+    const/4 v2, 0x3
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_2b
 
-    .line 317
-    return-object v0
+    :goto_2a
+    return-void
 
-    :cond_1d
-    move-object v0, p2
+    :catch_2b
+    move-exception v0
 
-    goto :goto_b
+    goto :goto_2a
+
+    :catch_2d
+    move-exception v0
+
+    goto :goto_1f
+
+    :catch_2f
+    move-exception v0
+
+    goto :goto_14
 .end method

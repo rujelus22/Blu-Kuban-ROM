@@ -40,7 +40,7 @@
 
     const/4 v2, 0x0
 
-    .line 97
+    .line 98
     new-instance v0, Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;
 
     const-string v1, "TEXT_TOKEN"
@@ -49,7 +49,7 @@
 
     sput-object v0, Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;->TEXT_TOKEN:Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;
 
-    .line 103
+    .line 104
     new-instance v0, Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;
 
     const-string v1, "WORD_ENTITY"
@@ -58,7 +58,7 @@
 
     sput-object v0, Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;->WORD_ENTITY:Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;
 
-    .line 92
+    .line 93
     const/4 v0, 0x2
 
     new-array v0, v0, [Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;
@@ -87,7 +87,7 @@
     .end annotation
 
     .prologue
-    .line 92
+    .line 93
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -98,7 +98,7 @@
     .parameter
 
     .prologue
-    .line 92
+    .line 93
     const-class v0, Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -114,7 +114,7 @@
     .registers 1
 
     .prologue
-    .line 92
+    .line 93
     sget-object v0, Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;->$VALUES:[Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;
 
     invoke-virtual {v0}, [Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;->clone()Ljava/lang/Object;

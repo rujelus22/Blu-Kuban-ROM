@@ -41,7 +41,7 @@
     .parameter
 
     .prologue
-    .line 71
+    .line 94
     iput-object p1, p0, Lcom/google/android/finsky/download/DownloadBroadcastReceiver$1;->this$0:Lcom/google/android/finsky/download/DownloadBroadcastReceiver;
 
     iput-object p2, p0, Lcom/google/android/finsky/download/DownloadBroadcastReceiver$1;->val$contentUri:Landroid/net/Uri;
@@ -60,7 +60,7 @@
     .parameter "fileUri"
 
     .prologue
-    .line 74
+    .line 97
     array-length v0, p1
 
     const/4 v1, 0x1
@@ -96,7 +96,7 @@
     .parameter "x0"
 
     .prologue
-    .line 71
+    .line 94
     check-cast p1, [Landroid/net/Uri;
 
     .end local p1
@@ -114,51 +114,53 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 79
+    .line 102
     invoke-static {}, Lcom/google/android/finsky/download/DownloadBroadcastReceiver;->access$100()Lcom/google/android/finsky/download/DownloadQueueImpl;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/google/android/finsky/download/DownloadBroadcastReceiver$1;->val$contentUri:Landroid/net/Uri;
 
-    invoke-virtual {v1, v2}, Lcom/google/android/finsky/download/DownloadQueueImpl;->getExisting(Landroid/net/Uri;)Lcom/google/android/finsky/download/InternalDownload;
+    invoke-virtual {v1, v2}, Lcom/google/android/finsky/download/DownloadQueueImpl;->getDownloadByContentUri(Landroid/net/Uri;)Lcom/google/android/finsky/download/Download;
 
     move-result-object v0
 
-    .line 80
-    .local v0, download:Lcom/google/android/finsky/download/InternalDownload;
-    if-nez v0, :cond_15
+    check-cast v0, Lcom/google/android/finsky/download/InternalDownload;
 
-    .line 81
+    .line 104
+    .local v0, download:Lcom/google/android/finsky/download/InternalDownload;
+    if-nez v0, :cond_17
+
+    .line 105
     const-string v1, "DownloadBroadcastReceiver could not find download in queue."
 
     new-array v2, v3, [Ljava/lang/Object;
 
     invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 108
-    :goto_14
+    .line 132
+    :goto_16
     return-void
 
-    .line 86
-    :cond_15
+    .line 110
+    :cond_17
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
     const/4 v2, -0x1
 
-    if-eq v1, v2, :cond_35
+    if-eq v1, v2, :cond_37
 
-    .line 87
+    .line 111
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
     invoke-interface {v0, v1}, Lcom/google/android/finsky/download/InternalDownload;->setHttpStatus(I)V
 
-    .line 92
-    :goto_23
+    .line 116
+    :goto_25
     iget-object v1, p0, Lcom/google/android/finsky/download/DownloadBroadcastReceiver$1;->val$action:Ljava/lang/String;
 
     const-string v2, "android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED"
@@ -167,48 +169,48 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_3f
 
-    .line 93
+    .line 117
     invoke-static {}, Lcom/google/android/finsky/download/DownloadBroadcastReceiver;->access$100()Lcom/google/android/finsky/download/DownloadQueueImpl;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Lcom/google/android/finsky/download/DownloadQueueImpl;->notifyClicked(Lcom/google/android/finsky/download/InternalDownload;)V
 
-    goto :goto_14
+    goto :goto_16
 
-    .line 89
-    :cond_35
+    .line 113
+    :cond_37
     const-string v1, "DownloadBroadcastReceiver received invalid HTTP status of -1"
 
     new-array v2, v3, [Ljava/lang/Object;
 
     invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    goto :goto_23
+    goto :goto_25
 
-    .line 94
-    :cond_3d
+    .line 118
+    :cond_3f
     iget-object v1, p0, Lcom/google/android/finsky/download/DownloadBroadcastReceiver$1;->val$action:Ljava/lang/String;
 
-    const-string v2, "android.intent.action.DOWNLOAD_COMPLETED"
+    const-string v2, "android.intent.action.DOWNLOAD_COMPLETE"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_80
+    if-eqz v1, :cond_82
 
-    .line 95
+    .line 119
     invoke-interface {v0}, Lcom/google/android/finsky/download/InternalDownload;->isCompleted()Z
 
     move-result v1
 
-    if-eqz v1, :cond_62
+    if-eqz v1, :cond_64
 
-    .line 97
-    const-string v1, "Received ACTION_DOWNLOAD_COMPLETED %d for %s - dropping because already in state %s."
+    .line 121
+    const-string v1, "Received ACTION_DOWNLOAD_COMPLETE %d for %s - dropping because already in state %s."
 
     const/4 v2, 0x3
 
@@ -230,10 +232,10 @@
 
     invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    goto :goto_14
+    goto :goto_16
 
-    .line 100
-    :cond_62
+    .line 124
+    :cond_64
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
@@ -242,9 +244,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_76
+    if-eqz v1, :cond_78
 
-    .line 101
+    .line 125
     invoke-static {}, Lcom/google/android/finsky/download/DownloadBroadcastReceiver;->access$100()Lcom/google/android/finsky/download/DownloadQueueImpl;
 
     move-result-object v1
@@ -253,10 +255,10 @@
 
     invoke-virtual {v1, v0, v2}, Lcom/google/android/finsky/download/DownloadQueueImpl;->setDownloadState(Lcom/google/android/finsky/download/InternalDownload;Lcom/google/android/finsky/download/Download$DownloadState;)V
 
-    goto :goto_14
+    goto :goto_16
 
-    .line 103
-    :cond_76
+    .line 127
+    :cond_78
     invoke-static {}, Lcom/google/android/finsky/download/DownloadBroadcastReceiver;->access$100()Lcom/google/android/finsky/download/DownloadQueueImpl;
 
     move-result-object v1
@@ -265,17 +267,17 @@
 
     invoke-virtual {v1, v0, v2}, Lcom/google/android/finsky/download/DownloadQueueImpl;->setDownloadState(Lcom/google/android/finsky/download/InternalDownload;Lcom/google/android/finsky/download/Download$DownloadState;)V
 
-    goto :goto_14
+    goto :goto_16
 
-    .line 106
-    :cond_80
+    .line 130
+    :cond_82
     const-string v1, "Invalid DownloadBroadcastReceiver intent"
 
     new-array v2, v3, [Ljava/lang/Object;
 
     invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    goto :goto_14
+    goto :goto_16
 .end method
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
@@ -283,7 +285,7 @@
     .parameter "x0"
 
     .prologue
-    .line 71
+    .line 94
     check-cast p1, Ljava/lang/Integer;
 
     .end local p1

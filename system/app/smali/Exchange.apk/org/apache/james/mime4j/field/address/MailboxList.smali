@@ -32,25 +32,25 @@
     .end annotation
 
     .prologue
-    .line 36
-    .local p1, mailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lorg/apache/james/mime4j/field/address/Address;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
     .line 37
-    if-eqz p1, :cond_11
+    .local p1, mailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lorg/apache/james/mime4j/field/address/Address;>;"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 38
+    if-eqz p1, :cond_11
+
+    .line 39
     if-eqz p2, :cond_a
 
     .end local p1           #mailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lorg/apache/james/mime4j/field/address/Address;>;"
     :goto_7
     iput-object p1, p0, Lorg/apache/james/mime4j/field/address/MailboxList;->mailboxes:Ljava/util/ArrayList;
 
-    .line 41
+    .line 42
     :goto_9
     return-void
 
-    .line 38
+    .line 39
     .restart local p1       #mailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lorg/apache/james/mime4j/field/address/Address;>;"
     :cond_a
     new-instance v0, Ljava/util/ArrayList;
@@ -61,7 +61,7 @@
 
     goto :goto_7
 
-    .line 40
+    .line 41
     :cond_11
     new-instance v0, Ljava/util/ArrayList;
 
@@ -81,7 +81,7 @@
     .parameter "index"
 
     .prologue
-    .line 54
+    .line 55
     if-ltz p1, :cond_8
 
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/MailboxList;->size()I
@@ -90,7 +90,7 @@
 
     if-gt v0, p1, :cond_e
 
-    .line 55
+    .line 56
     :cond_8
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -98,7 +98,7 @@
 
     throw v0
 
-    .line 56
+    .line 57
     :cond_e
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/MailboxList;->mailboxes:Ljava/util/ArrayList;
 
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 47
+    .line 48
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/MailboxList;->mailboxes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I

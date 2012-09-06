@@ -1,500 +1,585 @@
-.class public LaR/a;
-.super LaR/e;
+.class public Lar/a;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lar/d;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/android/J;Lx/aF;Landroid/net/wifi/WifiManager$WifiLock;Lcom/google/googlenav/prefetch/android/PrefetcherService;Lcom/google/googlenav/prefetch/android/g;)V
-    .registers 6
+.method public constructor <init>()V
+    .registers 1
 
-    invoke-direct/range {p0 .. p5}, LaR/e;-><init>(Lcom/google/googlenav/android/J;Lx/aF;Landroid/net/wifi/WifiManager$WifiLock;Lcom/google/googlenav/prefetch/android/PrefetcherService;Lcom/google/googlenav/prefetch/android/g;)V
+    .prologue
+    .line 23
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private d()Z
+.method private a(I)I
     .registers 3
+    .parameter
 
-    iget-object v0, p0, LaR/a;->a:Lcom/google/googlenav/android/J;
+    .prologue
+    .line 130
+    const/16 v0, 0x1388
 
-    invoke-virtual {v0}, Lcom/google/googlenav/android/J;->b()I
+    if-lt p1, v0, :cond_a
 
-    move-result v0
+    const/16 v0, 0x1770
 
-    const/16 v1, 0x3c
+    if-gt p1, v0, :cond_a
 
-    if-lt v0, v1, :cond_c
-
-    const/4 v0, 0x1
-
-    :goto_b
-    return v0
-
-    :cond_c
+    .line 131
     const/4 v0, 0x0
 
-    goto :goto_b
-.end method
-
-.method private e()Z
-    .registers 3
-
-    iget-object v0, p0, LaR/a;->a:Lcom/google/googlenav/android/J;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/J;->b()I
-
-    move-result v0
-
-    const/16 v1, 0x35
-
-    if-lt v0, v1, :cond_c
-
-    const/4 v0, 0x1
-
-    :goto_b
+    .line 135
+    :goto_9
     return v0
 
-    :cond_c
-    const/4 v0, 0x0
+    .line 132
+    :cond_a
+    const/16 v0, 0x96c
 
-    goto :goto_b
+    if-lt p1, v0, :cond_14
+
+    const/16 v0, 0x9a8
+
+    if-gt p1, v0, :cond_14
+
+    .line 133
+    const/4 v0, 0x2
+
+    goto :goto_9
+
+    .line 135
+    :cond_14
+    const/4 v0, -0x1
+
+    goto :goto_9
 .end method
 
-.method private f()Z
-    .registers 2
+.method private b(I)Ljava/lang/String;
+    .registers 5
+    .parameter
 
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
+    .prologue
+    .line 142
+    const/4 v0, 0x4
+
+    new-array v0, v0, [B
+
+    const/4 v1, 0x0
+
+    shr-int/lit8 v2, p1, 0x18
+
+    int-to-byte v2, v2
+
+    aput-byte v2, v0, v1
+
+    const/4 v1, 0x1
+
+    shr-int/lit8 v2, p1, 0x10
+
+    int-to-byte v2, v2
+
+    aput-byte v2, v0, v1
+
+    const/4 v1, 0x2
+
+    shr-int/lit8 v2, p1, 0x8
+
+    int-to-byte v2, v2
+
+    aput-byte v2, v0, v1
+
+    const/4 v1, 0x3
+
+    int-to-byte v2, p1
+
+    aput-byte v2, v0, v1
+
+    .line 149
+    :try_start_19
+    invoke-static {v0}, Ljava/net/InetAddress;->getByAddress([B)Ljava/net/InetAddress;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->as()Z
+    .line 150
+    invoke-virtual {v0}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
+    :try_end_20
+    .catch Ljava/net/UnknownHostException; {:try_start_19 .. :try_end_20} :catch_22
 
-    move-result v0
+    move-result-object v0
 
-    if-nez v0, :cond_c
+    .line 152
+    :goto_21
+    return-object v0
 
-    const/4 v0, 0x1
+    .line 151
+    :catch_22
+    move-exception v0
 
-    :goto_b
-    return v0
-
-    :cond_c
+    .line 152
     const/4 v0, 0x0
 
-    goto :goto_b
+    goto :goto_21
 .end method
 
 
 # virtual methods
-.method public a()Z
-    .registers 8
+.method public a()Lar/c;
+    .registers 11
+
+    .prologue
+    const/4 v5, -0x1
+
+    .line 31
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->D()Landroid/content/Context;
+
+    move-result-object v0
+
+    .line 32
+    const-string v1, "wifi"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/wifi/WifiManager;
+
+    .line 34
+    invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
+
+    move-result-object v4
+
+    .line 35
+    if-eqz v4, :cond_21
+
+    invoke-virtual {v4}, Landroid/net/wifi/WifiInfo;->getBSSID()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Laa/b;->b(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_26
+
+    .line 36
+    :cond_21
+    invoke-static {}, Lar/c;->e()Lar/c;
+
+    move-result-object v0
+
+    .line 64
+    :goto_25
+    return-object v0
+
+    .line 38
+    :cond_26
+    invoke-virtual {v4}, Landroid/net/wifi/WifiInfo;->getBSSID()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 39
+    invoke-virtual {v4}, Landroid/net/wifi/WifiInfo;->getSSID()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 40
+    invoke-virtual {v4}, Landroid/net/wifi/WifiInfo;->getLinkSpeed()I
+
+    move-result v3
+
+    .line 41
+    invoke-virtual {v4}, Landroid/net/wifi/WifiInfo;->getMacAddress()Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 42
+    invoke-virtual {v4}, Landroid/net/wifi/WifiInfo;->getIpAddress()I
+
+    move-result v4
+
+    invoke-direct {p0, v4}, Lar/a;->b(I)Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 44
+    const/4 v8, 0x0
+
+    .line 45
+    invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getScanResults()Ljava/util/List;
+
+    move-result-object v9
+
+    .line 46
+    if-eqz v9, :cond_81
+
+    .line 47
+    const/4 v0, 0x0
+
+    move v4, v0
+
+    :goto_47
+    invoke-interface {v9}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-ge v4, v0, :cond_81
+
+    .line 48
+    invoke-interface {v9, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/wifi/ScanResult;
+
+    iget-object v0, v0, Landroid/net/wifi/ScanResult;->BSSID:Ljava/lang/String;
+
+    if-eqz v0, :cond_7b
+
+    invoke-interface {v9, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/wifi/ScanResult;
+
+    iget-object v0, v0, Landroid/net/wifi/ScanResult;->BSSID:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7b
+
+    .line 50
+    invoke-interface {v9, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/wifi/ScanResult;
+
+    .line 59
+    :goto_6b
+    if-eqz v0, :cond_7f
+
+    .line 60
+    iget v5, v0, Landroid/net/wifi/ScanResult;->level:I
+
+    .line 61
+    iget v0, v0, Landroid/net/wifi/ScanResult;->frequency:I
+
+    invoke-direct {p0, v0}, Lar/a;->a(I)I
+
+    move-result v4
+
+    .line 64
+    :goto_75
+    new-instance v0, Lar/c;
+
+    invoke-direct/range {v0 .. v7}, Lar/c;-><init>(Ljava/lang/String;Ljava/lang/String;IIILjava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_25
+
+    .line 47
+    :cond_7b
+    add-int/lit8 v0, v4, 0x1
+
+    move v4, v0
+
+    goto :goto_47
+
+    :cond_7f
+    move v4, v5
+
+    goto :goto_75
+
+    :cond_81
+    move-object v0, v8
+
+    goto :goto_6b
+.end method
+
+.method public a(Lar/e;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 161
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->D()Landroid/content/Context;
+
+    .line 162
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.settings.WIFI_SETTINGS"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 163
+    invoke-static {}, Lcom/google/googlenav/android/Q;->a()Lcom/google/googlenav/android/Q;
+
+    move-result-object v1
+
+    new-instance v2, Lar/b;
+
+    invoke-direct {v2, p0, p1}, Lar/b;-><init>(Lar/a;Lar/e;)V
+
+    invoke-virtual {v1, v0, v2}, Lcom/google/googlenav/android/Q;->a(Landroid/content/Intent;Lcom/google/googlenav/android/R;)V
+
+    .line 177
+    return-void
+.end method
+
+.method public b()[Lar/c;
+    .registers 16
+
+    .prologue
+    .line 70
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->D()Landroid/content/Context;
+
+    move-result-object v0
+
+    .line 71
+    const-string v1, "wifi"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/wifi/WifiManager;
+
+    .line 73
+    invoke-virtual {p0}, Lar/a;->a()Lar/c;
+
+    move-result-object v13
+
+    .line 75
+    const/4 v12, 0x0
+
+    .line 76
+    invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getScanResults()Ljava/util/List;
+
+    move-result-object v14
+
+    .line 77
+    if-eqz v14, :cond_83
+
+    invoke-interface {v14}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_83
+
+    .line 78
+    invoke-interface {v14}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    const/16 v1, 0x19
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    new-array v12, v0, [Lar/c;
+
+    .line 79
+    const/4 v0, 0x0
+
+    aput-object v13, v12, v0
+
+    .line 81
+    invoke-interface {v14}, Ljava/util/List;->size()I
+
+    move-result v0
 
     const/4 v1, 0x1
 
-    const/4 v2, 0x0
+    if-ne v0, v1, :cond_39
 
-    iget-object v0, p0, LaR/a;->d:Lcom/google/googlenav/prefetch/android/PrefetcherService;
+    move-object v0, v12
 
-    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/PrefetcherService;->e()Z
+    .line 118
+    :cond_38
+    :goto_38
+    return-object v0
+
+    .line 85
+    :cond_39
+    const/4 v1, 0x1
+
+    .line 87
+    const/4 v0, 0x0
+
+    move v10, v0
+
+    move v11, v1
+
+    :goto_3d
+    invoke-interface {v14}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_63
+    if-ge v10, v0, :cond_81
 
-    move v0, v1
-
-    :goto_b
-    invoke-direct {p0}, LaR/a;->d()Z
-
-    move-result v3
-
-    iget-object v4, p0, LaR/a;->b:Lx/aF;
-
-    invoke-virtual {v4}, Lx/aF;->g()Z
-
-    move-result v4
-
-    iget-object v5, p0, LaR/a;->a:Lcom/google/googlenav/android/J;
-
-    invoke-virtual {v5}, Lcom/google/googlenav/android/J;->d()Z
-
-    move-result v5
-
-    iget-object v6, p0, LaR/a;->d:Lcom/google/googlenav/prefetch/android/PrefetcherService;
-
-    invoke-virtual {v6}, Lcom/google/googlenav/prefetch/android/PrefetcherService;->g()Z
-
-    move-result v6
-
-    if-eqz v0, :cond_29
-
-    if-eqz v3, :cond_29
-
-    if-eqz v4, :cond_29
-
-    if-nez v5, :cond_71
-
-    :cond_29
-    if-eqz v6, :cond_62
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    if-nez v0, :cond_65
-
-    const-string v0, "r"
-
-    :goto_34
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    if-nez v3, :cond_68
-
-    const-string v0, "b"
-
-    :goto_3c
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    if-nez v4, :cond_6b
-
-    const-string v0, "c"
-
-    :goto_44
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    if-nez v5, :cond_6e
-
-    const-string v0, "d"
-
-    :goto_4c
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 88
+    invoke-interface {v14, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    check-cast v0, Landroid/net/wifi/ScanResult;
 
-    move-result-object v0
+    .line 90
+    iget-object v1, v0, Landroid/net/wifi/ScanResult;->BSSID:Ljava/lang/String;
 
-    iget-object v1, p0, LaR/a;->d:Lcom/google/googlenav/prefetch/android/PrefetcherService;
+    .line 91
+    invoke-virtual {v13}, Lar/c;->g()Ljava/lang/String;
 
-    iget-object v3, p0, LaR/a;->e:Lcom/google/googlenav/prefetch/android/g;
+    move-result-object v2
 
-    const-string v4, "n"
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v1, v3, v4, v0}, Lcom/google/googlenav/prefetch/android/PrefetcherService;->a(Lcom/google/googlenav/prefetch/android/g;Ljava/lang/String;Ljava/lang/String;)V
+    move-result v2
 
-    iget-object v0, p0, LaR/a;->d:Lcom/google/googlenav/prefetch/android/PrefetcherService;
+    if-eqz v2, :cond_5b
 
-    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/PrefetcherService;->f()V
+    move v1, v11
 
-    :cond_62
-    :goto_62
-    return v2
+    .line 87
+    :cond_56
+    add-int/lit8 v0, v10, 0x1
 
-    :cond_63
-    move v0, v2
+    move v10, v0
 
-    goto :goto_b
+    move v11, v1
 
-    :cond_65
-    const-string v0, ""
+    goto :goto_3d
 
-    goto :goto_34
+    .line 95
+    :cond_5b
+    iget-object v2, v0, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
-    :cond_68
-    const-string v0, ""
+    .line 96
+    iget v5, v0, Landroid/net/wifi/ScanResult;->level:I
 
-    goto :goto_3c
+    .line 98
+    new-instance v0, Lar/c;
 
-    :cond_6b
-    const-string v0, ""
+    const/4 v3, -0x1
 
-    goto :goto_44
+    const/4 v4, -0x1
 
-    :cond_6e
-    const-string v0, ""
+    const/4 v6, 0x0
 
-    goto :goto_4c
+    const/4 v7, 0x0
 
-    :cond_71
-    invoke-direct {p0}, LaR/a;->f()Z
+    invoke-virtual {v13}, Lar/c;->h()J
 
-    move-result v0
+    move-result-wide v8
 
-    if-eqz v0, :cond_c3
+    invoke-direct/range {v0 .. v9}, Lar/c;-><init>(Ljava/lang/String;Ljava/lang/String;IIILjava/lang/String;Ljava/lang/String;J)V
 
-    iget-object v0, p0, LaR/a;->a:Lcom/google/googlenav/android/J;
+    aput-object v0, v12, v11
 
-    invoke-virtual {v0}, Lcom/google/googlenav/android/J;->c()Z
+    .line 107
+    add-int/lit8 v1, v11, 0x1
 
-    move-result v0
+    .line 108
+    array-length v0, v12
 
-    if-nez v0, :cond_90
+    if-ne v1, v0, :cond_56
 
-    iget-object v0, p0, LaR/a;->d:Lcom/google/googlenav/prefetch/android/PrefetcherService;
+    move-object v0, v12
 
-    iget-object v1, p0, LaR/a;->e:Lcom/google/googlenav/prefetch/android/g;
+    .line 114
+    :goto_74
+    if-nez v0, :cond_38
 
-    const-string v3, "n"
+    .line 115
+    const/4 v0, 0x1
 
-    const-string v4, "e"
-
-    invoke-virtual {v0, v1, v3, v4}, Lcom/google/googlenav/prefetch/android/PrefetcherService;->a(Lcom/google/googlenav/prefetch/android/g;Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, LaR/a;->d:Lcom/google/googlenav/prefetch/android/PrefetcherService;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/PrefetcherService;->f()V
-
-    goto :goto_62
-
-    :cond_90
-    iget-object v0, p0, LaR/a;->c:Landroid/net/wifi/WifiManager$WifiLock;
-
-    invoke-virtual {v0}, Landroid/net/wifi/WifiManager$WifiLock;->acquire()V
-
-    move v0, v2
-
-    :goto_96
-    int-to-long v3, v0
-
-    sget-wide v5, Lcom/google/googlenav/prefetch/android/PrefetcherService;->a:J
-
-    cmp-long v3, v3, v5
-
-    if-gez v3, :cond_ad
-
-    invoke-static {}, Lcom/google/googlenav/android/J;->e()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_a5
-
-    move v2, v1
-
-    goto :goto_62
-
-    :cond_a5
-    const-wide/16 v3, 0x7d0
-
-    :try_start_a7
-    invoke-static {v3, v4}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_aa
-    .catch Ljava/lang/InterruptedException; {:try_start_a7 .. :try_end_aa} :catch_dc
-
-    :goto_aa
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_96
-
-    :cond_ad
-    iget-object v0, p0, LaR/a;->d:Lcom/google/googlenav/prefetch/android/PrefetcherService;
-
-    iget-object v1, p0, LaR/a;->e:Lcom/google/googlenav/prefetch/android/g;
-
-    const-string v3, "n"
-
-    const-string v4, "w"
-
-    invoke-virtual {v0, v1, v3, v4}, Lcom/google/googlenav/prefetch/android/PrefetcherService;->a(Lcom/google/googlenav/prefetch/android/g;Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, LaR/a;->d:Lcom/google/googlenav/prefetch/android/PrefetcherService;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/PrefetcherService;->f()V
-
-    iget-object v0, p0, LaR/a;->c:Landroid/net/wifi/WifiManager$WifiLock;
-
-    invoke-virtual {v0}, Landroid/net/wifi/WifiManager$WifiLock;->release()V
-
-    goto :goto_62
-
-    :cond_c3
-    invoke-static {}, Lcom/google/googlenav/android/J;->f()Z
-
-    move-result v0
-
-    if-nez v0, :cond_da
-
-    iget-object v0, p0, LaR/a;->d:Lcom/google/googlenav/prefetch/android/PrefetcherService;
-
-    iget-object v1, p0, LaR/a;->e:Lcom/google/googlenav/prefetch/android/g;
-
-    const-string v3, "n"
-
-    const-string v4, "n"
-
-    invoke-virtual {v0, v1, v3, v4}, Lcom/google/googlenav/prefetch/android/PrefetcherService;->a(Lcom/google/googlenav/prefetch/android/g;Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, LaR/a;->d:Lcom/google/googlenav/prefetch/android/PrefetcherService;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/PrefetcherService;->f()V
-
-    goto :goto_62
-
-    :cond_da
-    move v2, v1
-
-    goto :goto_62
-
-    :catch_dc
-    move-exception v3
-
-    goto :goto_aa
-.end method
-
-.method public b()Z
-    .registers 9
-
-    const/4 v2, 0x1
+    new-array v0, v0, [Lar/c;
 
     const/4 v1, 0x0
 
-    iget-object v0, p0, LaR/a;->a:Lcom/google/googlenav/android/J;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/J;->a()Z
-
-    move-result v3
-
-    invoke-direct {p0}, LaR/a;->f()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_14
-
-    invoke-static {}, Lcom/google/googlenav/android/J;->e()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6b
-
-    :cond_14
-    move v0, v2
-
-    :goto_15
-    invoke-direct {p0}, LaR/a;->e()Z
-
-    move-result v4
-
-    iget-object v5, p0, LaR/a;->b:Lx/aF;
-
-    invoke-virtual {v5}, Lx/aF;->g()Z
-
-    move-result v5
-
-    iget-object v6, p0, LaR/a;->a:Lcom/google/googlenav/android/J;
-
-    invoke-virtual {v6}, Lcom/google/googlenav/android/J;->d()Z
-
-    move-result v6
-
-    if-eqz v3, :cond_2f
-
-    if-eqz v0, :cond_2f
-
-    if-eqz v4, :cond_2f
-
-    if-eqz v5, :cond_2f
-
-    if-nez v6, :cond_6a
-
-    :cond_2f
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    if-nez v3, :cond_6d
-
-    const-string v2, "p"
-
-    :goto_38
-    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {}, Lar/c;->e()Lar/c;
 
     move-result-object v2
 
-    if-nez v0, :cond_70
-
-    const-string v0, "n"
-
-    :goto_40
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    if-nez v4, :cond_73
-
-    const-string v0, "d"
-
-    :goto_48
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    if-nez v5, :cond_76
-
-    const-string v0, "c"
-
-    :goto_50
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    if-nez v6, :cond_79
-
-    const-string v0, "b"
-
-    :goto_58
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v2, p0, LaR/a;->d:Lcom/google/googlenav/prefetch/android/PrefetcherService;
-
-    iget-object v3, p0, LaR/a;->e:Lcom/google/googlenav/prefetch/android/g;
-
-    const-string v4, "u"
-
-    invoke-virtual {v2, v3, v4, v0}, Lcom/google/googlenav/prefetch/android/PrefetcherService;->a(Lcom/google/googlenav/prefetch/android/g;Ljava/lang/String;Ljava/lang/String;)V
-
-    move v2, v1
-
-    :cond_6a
-    return v2
-
-    :cond_6b
-    move v0, v1
-
-    goto :goto_15
-
-    :cond_6d
-    const-string v2, ""
+    aput-object v2, v0, v1
 
     goto :goto_38
 
-    :cond_70
-    const-string v0, ""
+    :cond_81
+    move-object v0, v12
 
-    goto :goto_40
+    goto :goto_74
 
-    :cond_73
-    const-string v0, ""
+    :cond_83
+    move-object v0, v12
 
-    goto :goto_48
+    goto :goto_74
+.end method
 
-    :cond_76
-    const-string v0, ""
+.method public c()Z
+    .registers 3
 
-    goto :goto_50
+    .prologue
+    .line 181
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
 
-    :cond_79
-    const-string v0, ""
+    move-result-object v0
 
-    goto :goto_58
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->D()Landroid/content/Context;
+
+    move-result-object v0
+
+    .line 182
+    const-string v1, "wifi"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/wifi/WifiManager;
+
+    .line 183
+    invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getWifiState()I
+
+    move-result v0
+
+    .line 184
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_1a
+
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_1c
+
+    :cond_1a
+    const/4 v0, 0x1
+
+    :goto_1b
+    return v0
+
+    :cond_1c
+    const/4 v0, 0x0
+
+    goto :goto_1b
 .end method

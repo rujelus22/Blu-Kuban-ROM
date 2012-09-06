@@ -290,11 +290,9 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .registers 5
 
     .prologue
-    const/16 v4, 0x5d
-
     const/16 v3, 0x22
 
     .line 174
@@ -327,8 +325,10 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    :goto_24
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    :goto_22
+    const/16 v1, 0x7d
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 176
     :goto_27
@@ -344,14 +344,14 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_24
+    goto :goto_22
 
     :cond_32
     iget v1, p0, Lorg/codehaus/jackson/a/i;->a:I
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_47
+    if-ne v1, v2, :cond_49
 
     const/16 v1, 0x5b
 
@@ -363,11 +363,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const/16 v1, 0x5d
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_27
 
-    :cond_47
+    :cond_49
     const-string v1, "/"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;

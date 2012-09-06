@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_gravity="center" android:orientation="vertical" android:background="@drawable/launchcameracorderselector" android:focusable="true" android:clickable="true" android:layout_width="151.0px" android:layout_height="151.0px"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/icon" android:layout_width="72.0px" android:layout_height="58.0px" android:layout_marginLeft="40.0px" android:layout_marginTop="40.0px" android:scaleType="fitXY" />
-    <TextView android:textSize="20.0px" android:textColor="@color/white" android:id="@id/title" android:paddingLeft="35.0px" android:paddingTop="5.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/launchcamera" />
-</LinearLayout>

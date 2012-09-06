@@ -16,17 +16,17 @@
     .prologue
     const/4 v4, -0x1
 
-    .line 53
+    .line 52
     new-instance v3, Lorg/apache/commons/io/FileSystemUtils;
 
     invoke-direct {v3}, Lorg/apache/commons/io/FileSystemUtils;-><init>()V
 
     sput-object v3, Lorg/apache/commons/io/FileSystemUtils;->INSTANCE:Lorg/apache/commons/io/FileSystemUtils;
 
-    .line 69
+    .line 68
     const/4 v1, 0x0
 
-    .line 71
+    .line 70
     .local v1, os:I
     :try_start_9
     const-string v3, "os.name"
@@ -35,11 +35,11 @@
 
     move-result-object v2
 
-    .line 72
+    .line 71
     .local v2, osName:Ljava/lang/String;
     if-nez v2, :cond_1e
 
-    .line 73
+    .line 72
     new-instance v3, Ljava/io/IOException;
 
     const-string v4, "os.name not found"
@@ -50,24 +50,24 @@
     :try_end_19
     .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_19} :catch_19
 
-    .line 91
+    .line 96
     .end local v2           #osName:Ljava/lang/String;
     :catch_19
     move-exception v0
 
-    .line 92
+    .line 97
     .local v0, ex:Ljava/lang/Exception;
     const/4 v1, -0x1
 
-    .line 94
+    .line 99
     .end local v0           #ex:Ljava/lang/Exception;
     :goto_1b
     sput v1, Lorg/apache/commons/io/FileSystemUtils;->OS:I
 
-    .line 95
+    .line 100
     return-void
 
-    .line 75
+    .line 74
     .restart local v2       #osName:Ljava/lang/String;
     :cond_1e
     :try_start_1e
@@ -75,7 +75,7 @@
 
     move-result-object v2
 
-    .line 77
+    .line 76
     const-string v3, "windows"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
@@ -84,12 +84,12 @@
 
     if-eq v3, v4, :cond_2c
 
-    .line 78
+    .line 77
     const/4 v1, 0x1
 
     goto :goto_1b
 
-    .line 79
+    .line 78
     :cond_2c
     const-string v3, "linux"
 
@@ -171,13 +171,13 @@
 
     if-eq v3, v4, :cond_7e
 
-    .line 84
+    .line 88
     :cond_7c
     const/4 v1, 0x2
 
     goto :goto_1b
 
-    .line 85
+    .line 89
     :cond_7e
     const-string v3, "hp-ux"
 
@@ -197,13 +197,13 @@
 
     if-eq v3, v4, :cond_90
 
-    .line 86
+    .line 91
     :cond_8e
     const/4 v1, 0x3
 
     goto :goto_1b
 
-    .line 88
+    .line 93
     :cond_90
     const/4 v1, 0x0
 
@@ -214,9 +214,9 @@
     .registers 1
 
     .prologue
-    .line 101
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 106
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 102
+    .line 107
     return-void
 .end method

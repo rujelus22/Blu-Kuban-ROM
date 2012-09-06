@@ -337,11 +337,11 @@
         <item>"insert into country values(201,'Thailand','태국','66','ㅌㄱ' ,0)"</item>
         <item>"insert into country values(202,'Togo','토고','228','ㅌㄱ' ,1)"</item>
         <item>"insert into country values(203,'Tonga','통가','676','ㅌㄱ' ,1)"</item>
-        <item>"insert into country values(204,'Trinidad &amp;amp; Tobogo','트리니다드토바고','1+868','ㅌㄹㄴㄷㄷㅌㅂㄱ' ,1)"</item>
+        <item>"insert into country values(204,'Trinidad &amp;amp;amp; Tobogo','트리니다드토바고','1+868','ㅌㄹㄴㄷㄷㅌㅂㄱ' ,1)"</item>
         <item>"insert into country values(205,'Tunisia','튀니지','216','ㅌㄴㅈ' ,1)"</item>
         <item>"insert into country values(206,'Turkey','터키','90','ㅌㅋ' ,0)"</item>
         <item>"insert into country values(207,'Turkmenistan','투르크메니스탄','993','ㅌㄹㅋㅁㄴㅅㅌ' ,1)"</item>
-        <item>"insert into country values(208,'Turks &amp;amp; Caicos Is.','턱스케이코스제도','1+649','ㅌㅅㅋㅇㅋㅅㅈㄷ' ,1)"</item>
+        <item>"insert into country values(208,'Turks &amp;amp;amp; Caicos Is.','턱스케이코스제도','1+649','ㅌㅅㅋㅇㅋㅅㅈㄷ' ,1)"</item>
         <item>"insert into country values(209,'Tuvalu','투발루','688','ㅌㅂㄹ' ,1)"</item>
         <item>"insert into country values(210,'Uganda','우간다','256','ㅇㄱㄷ' ,1)"</item>
         <item>"insert into country values(211,'Ukraine','우크라이나','380','ㅇㅋㄹㅇㄴ' ,0)"</item>

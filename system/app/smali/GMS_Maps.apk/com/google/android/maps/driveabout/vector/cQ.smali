@@ -1,187 +1,121 @@
-.class Lcom/google/android/maps/driveabout/vector/cQ;
-.super Ljava/lang/Object;
+.class public Lcom/google/android/maps/driveabout/vector/cq;
+.super Lcom/google/android/maps/driveabout/vector/cZ;
+.source "SourceFile"
 
 
 # instance fields
-.field private final a:Ljava/util/LinkedList;
+.field private a:Lcom/google/android/maps/driveabout/vector/cY;
+
+.field private b:Lcom/google/android/maps/driveabout/vector/cJ;
+
+.field private c:Lcom/google/android/maps/driveabout/vector/dg;
+
+.field private d:I
+
+.field private e:Z
 
 
 # direct methods
-.method public constructor <init>(Lt/L;Lt/L;)V
-    .registers 4
+.method public constructor <init>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0, p1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0, p2}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    .prologue
+    .line 14
+    invoke-direct {p0}, Lcom/google/android/maps/driveabout/vector/cZ;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Lt/L;
-    .registers 2
+.method public declared-synchronized a(Lcom/google/android/maps/driveabout/vector/dg;ZLcom/google/android/maps/driveabout/vector/df;)Lcom/google/android/maps/driveabout/vector/cJ;
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
+    .prologue
+    .line 44
+    monitor-enter p0
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->getFirst()Ljava/lang/Object;
+    :try_start_1
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cq;->b:Lcom/google/android/maps/driveabout/vector/cJ;
+
+    if-nez v0, :cond_b
+
+    .line 45
+    invoke-super {p0, p1, p2, p3}, Lcom/google/android/maps/driveabout/vector/cZ;->a(Lcom/google/android/maps/driveabout/vector/dg;ZLcom/google/android/maps/driveabout/vector/df;)Lcom/google/android/maps/driveabout/vector/cJ;
 
     move-result-object v0
 
-    check-cast v0, Lt/L;
+    iput-object v0, p0, Lcom/google/android/maps/driveabout/vector/cq;->b:Lcom/google/android/maps/driveabout/vector/cJ;
+
+    .line 49
+    :cond_b
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cq;->b:Lcom/google/android/maps/driveabout/vector/cJ;
+    :try_end_d
+    .catchall {:try_start_1 .. :try_end_d} :catchall_f
+
+    monitor-exit p0
 
     return-object v0
+
+    .line 44
+    :catchall_f
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method public a(Lcom/google/android/maps/driveabout/vector/cQ;)Z
+.method public declared-synchronized a(Lcom/google/android/maps/driveabout/vector/dg;IZLcom/google/android/maps/driveabout/vector/df;)Lcom/google/android/maps/driveabout/vector/cY;
     .registers 6
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v1, 0x1
+    .prologue
+    .line 24
+    monitor-enter p0
 
-    const/4 v2, 0x0
+    :try_start_1
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cq;->a:Lcom/google/android/maps/driveabout/vector/cY;
 
-    iget-object v0, p1, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
+    if-nez v0, :cond_11
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->getLast()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lt/L;
-
-    iget-object v3, p0, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v3}, Ljava/util/LinkedList;->getFirst()Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Lt/L;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_24
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
-
-    iget-object v3, p1, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0, v2, v3}, Ljava/util/LinkedList;->addAll(ILjava/util/Collection;)Z
-
-    move v0, v1
-
-    :goto_23
-    return v0
-
-    :cond_24
-    iget-object v0, p1, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->getFirst()Ljava/lang/Object;
+    .line 25
+    invoke-super {p0, p1, p2, p3, p4}, Lcom/google/android/maps/driveabout/vector/cZ;->a(Lcom/google/android/maps/driveabout/vector/dg;IZLcom/google/android/maps/driveabout/vector/df;)Lcom/google/android/maps/driveabout/vector/cY;
 
     move-result-object v0
 
-    check-cast v0, Lt/L;
+    iput-object v0, p0, Lcom/google/android/maps/driveabout/vector/cq;->a:Lcom/google/android/maps/driveabout/vector/cY;
 
-    iget-object v3, p0, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
+    .line 27
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/vector/cq;->c:Lcom/google/android/maps/driveabout/vector/dg;
 
-    invoke-virtual {v3}, Ljava/util/LinkedList;->getLast()Ljava/lang/Object;
+    .line 28
+    iput p2, p0, Lcom/google/android/maps/driveabout/vector/cq;->d:I
 
-    move-result-object v3
+    .line 29
+    iput-boolean p3, p0, Lcom/google/android/maps/driveabout/vector/cq;->e:Z
 
-    invoke-virtual {v0, v3}, Lt/L;->equals(Ljava/lang/Object;)Z
+    .line 38
+    :cond_11
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cq;->a:Lcom/google/android/maps/driveabout/vector/cY;
+    :try_end_13
+    .catchall {:try_start_1 .. :try_end_13} :catchall_15
 
-    move-result v0
-
-    if-eqz v0, :cond_46
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->removeLast()Ljava/lang/Object;
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
-
-    iget-object v2, p1, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0, v2}, Ljava/util/LinkedList;->addAll(Ljava/util/Collection;)Z
-
-    move v0, v1
-
-    goto :goto_23
-
-    :cond_46
-    move v0, v2
-
-    goto :goto_23
-.end method
-
-.method public b()Lt/L;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->getLast()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lt/L;
+    monitor-exit p0
 
     return-object v0
-.end method
 
-.method public c()Lt/P;
-    .registers 4
+    .line 24
+    :catchall_15
+    move-exception v0
 
-    new-instance v1, Lt/R;
+    monitor-exit p0
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
-
-    move-result v0
-
-    invoke-direct {v1, v0}, Lt/R;-><init>(I)V
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cQ;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_11
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_21
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lt/L;
-
-    invoke-virtual {v1, v0}, Lt/R;->a(Lt/L;)Z
-
-    goto :goto_11
-
-    :cond_21
-    invoke-virtual {v1}, Lt/R;->d()Lt/P;
-
-    move-result-object v0
-
-    return-object v0
+    throw v0
 .end method

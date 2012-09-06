@@ -5,8 +5,8 @@
         <item quantity="one">%1$d резултат</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">Пронађена су ажурирања (%1$d) за налог %2$s.</item>
-        <item quantity="one">Пронађено је %1$d ажурирање за налог %2$s.</item>
+        <item quantity="other">Пронађена су ажурирања (%1$d).</item>
+        <item quantity="one">Пронађено је %1$d ажурирање.</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">%1$s људи је додало +1 овоме.</item>

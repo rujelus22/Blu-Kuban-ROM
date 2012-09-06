@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/delete_zone_img" android:background="@drawable/delete_n" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0px" android:src="@drawable/remove_icon" android:scaleType="center" />
-    <TextView android:textSize="21.0px" android:textColor="@color/white" android:id="@id/delete_zone_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="9.0px" android:text="@string/remove" />
-</LinearLayout>

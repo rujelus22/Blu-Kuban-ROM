@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/email/provider/EmailProvider$AttachmentService;,
         Lcom/android/email/provider/EmailProvider$DatabaseHelper;,
         Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;
     }
@@ -13,15 +14,15 @@
 
 
 # static fields
-.field private static final CONTENT_CACHES:[Lcom/android/email/provider/ContentCache;
+.field public static final ACCOUNT_BACKUP_URI:Landroid/net/Uri;
+
+.field private static final CACHE_PROJECTIONS:[[Ljava/lang/String;
 
 .field private static final CONTENT_VALUES_RESET_NEW_MESSAGE_COUNT:Landroid/content/ContentValues;
 
-.field private static final GB_FLAGS_UPGRADE_ACCOUNT_PROJECTION:[Ljava/lang/String;
+.field public static final INTEGRITY_CHECK_URI:Landroid/net/Uri;
 
 .field private static final ORPHANS_PROJECTION:[Ljava/lang/String;
-
-.field private static final RESETSECURITYSYNCKEY_ACCOUNT_PROJECTION:[Ljava/lang/String;
 
 .field private static final TABLE_NAMES:[Ljava/lang/String;
 
@@ -29,131 +30,116 @@
 
 .field private static final V21_HOSTAUTH_PROJECTION:[Ljava/lang/String;
 
-.field private static sBodyDBHelper:Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;
+.field private static final V25_ACCOUNT_PROJECTION:[Ljava/lang/String;
 
-.field private static final sCacheAccount:Lcom/android/email/provider/ContentCache;
-
-.field private static final sCacheHostAuth:Lcom/android/email/provider/ContentCache;
-
-.field static final sCacheMailbox:Lcom/android/email/provider/ContentCache;
-
-.field private static final sCacheMessage:Lcom/android/email/provider/ContentCache;
-
-.field private static sDBHelper:Lcom/android/email/provider/EmailProvider$DatabaseHelper;
+.field private static final V25_HOSTAUTH_PROJECTION:[Ljava/lang/String;
 
 .field private static final sURIMatcher:Landroid/content/UriMatcher;
 
 
 # instance fields
+.field private final DEFAULT_ATTACHMENT_SERVICE:Lcom/android/email/provider/EmailProvider$AttachmentService;
+
+.field private mAttachmentService:Lcom/android/email/provider/EmailProvider$AttachmentService;
+
 .field private mBodyDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
+.field private final mCacheAccount:Lcom/android/email/provider/ContentCache;
+
+.field private final mCacheHostAuth:Lcom/android/email/provider/ContentCache;
+
+.field final mCacheMailbox:Lcom/android/email/provider/ContentCache;
+
+.field private final mCacheMessage:Lcom/android/email/provider/ContentCache;
+
+.field private final mCachePolicy:Lcom/android/email/provider/ContentCache;
+
+.field private final mContentCaches:[Lcom/android/email/provider/ContentCache;
+
 .field private mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+.field private final mMailboxTypeMap:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/Long;",
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/Integer;",
+            "Ljava/lang/Long;",
+            ">;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 9
+    .registers 8
 
     .prologue
-    const/4 v8, 0x3
+    const/4 v7, 0x3
 
-    const/4 v7, 0x2
+    const/4 v3, 0x0
 
-    const/4 v6, 0x1
+    const/4 v6, 0x2
 
-    const/4 v5, 0x0
+    const/4 v5, 0x1
 
     const/4 v4, 0x0
 
-    .line 110
-    sput-object v4, Lcom/android/email/provider/EmailProvider;->sDBHelper:Lcom/android/email/provider/EmailProvider$DatabaseHelper;
+    .line 94
+    const-string v0, "content://com.android.email.provider/integrityCheck"
 
-    .line 111
-    sput-object v4, Lcom/android/email/provider/EmailProvider;->sBodyDBHelper:Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    .line 121
-    new-array v0, v7, [Ljava/lang/String;
+    move-result-object v0
+
+    sput-object v0, Lcom/android/email/provider/EmailProvider;->INTEGRITY_CHECK_URI:Landroid/net/Uri;
+
+    .line 96
+    const-string v0, "content://com.android.email.provider/accountBackup"
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/android/email/provider/EmailProvider;->ACCOUNT_BACKUP_URI:Landroid/net/Uri;
+
+    .line 107
+    new-array v0, v6, [Ljava/lang/String;
 
     const-string v1, "_id"
 
-    aput-object v1, v0, v5
+    aput-object v1, v0, v4
 
     const-string v1, "mailboxKey"
 
-    aput-object v1, v0, v6
+    aput-object v1, v0, v5
 
     sput-object v0, Lcom/android/email/provider/EmailProvider;->ORPHANS_PROJECTION:[Ljava/lang/String;
 
-    .line 133
-    new-instance v0, Lcom/android/email/provider/ContentCache;
-
-    const-string v1, "Account"
-
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Account;->CONTENT_PROJECTION:[Ljava/lang/String;
-
-    const/4 v3, 0x4
-
-    invoke-direct {v0, v1, v2, v3}, Lcom/android/email/provider/ContentCache;-><init>(Ljava/lang/String;[Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/android/email/provider/EmailProvider;->sCacheAccount:Lcom/android/email/provider/ContentCache;
-
-    .line 136
-    new-instance v0, Lcom/android/email/provider/ContentCache;
-
-    const-string v1, "HostAuth"
-
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$HostAuth;->CONTENT_PROJECTION:[Ljava/lang/String;
-
-    const/16 v3, 0x8
-
-    invoke-direct {v0, v1, v2, v3}, Lcom/android/email/provider/ContentCache;-><init>(Ljava/lang/String;[Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/android/email/provider/EmailProvider;->sCacheHostAuth:Lcom/android/email/provider/ContentCache;
-
-    .line 139
-    new-instance v0, Lcom/android/email/provider/ContentCache;
-
-    const-string v1, "Mailbox"
-
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_PROJECTION:[Ljava/lang/String;
-
-    const/16 v3, 0x8
-
-    invoke-direct {v0, v1, v2, v3}, Lcom/android/email/provider/ContentCache;-><init>(Ljava/lang/String;[Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/android/email/provider/EmailProvider;->sCacheMailbox:Lcom/android/email/provider/ContentCache;
-
-    .line 142
-    new-instance v0, Lcom/android/email/provider/ContentCache;
-
-    const-string v1, "Message"
-
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Message;->CONTENT_PROJECTION:[Ljava/lang/String;
-
-    invoke-direct {v0, v1, v2, v8}, Lcom/android/email/provider/ContentCache;-><init>(Ljava/lang/String;[Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/android/email/provider/EmailProvider;->sCacheMessage:Lcom/android/email/provider/ContentCache;
-
-    .line 272
-    const/16 v0, 0x16
+    .line 231
+    const/16 v0, 0xa
 
     new-array v0, v0, [Ljava/lang/String;
 
     const-string v1, "Account"
 
-    aput-object v1, v0, v5
+    aput-object v1, v0, v4
 
     const-string v1, "Mailbox"
 
-    aput-object v1, v0, v6
+    aput-object v1, v0, v5
 
     const-string v1, "Message"
 
-    aput-object v1, v0, v7
+    aput-object v1, v0, v6
 
     const-string v1, "Attachment"
 
-    aput-object v1, v0, v8
+    aput-object v1, v0, v7
 
     const/4 v1, 0x4
 
@@ -175,118 +161,513 @@
 
     const/4 v1, 0x7
 
-    const-string v2, "FollowupFlag"
+    const-string v2, "Policy"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8
 
-    const-string v2, "FollowupFlag_Updates"
+    const-string v2, "QuickResponse"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9
 
-    const-string v2, "FollowupFlag_Deletes"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xa
-
-    const-string v2, "Policies"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xb
-
-    const-string v2, "Mailbox_CB"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xc
-
-    const-string v2, "Message_CB"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xd
-
-    const-string v2, "Account_CB"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xe
-
-    const-string v2, "CertificateCache"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xf
-
-    const-string v2, "RecipientInformation"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x10
-
-    const-string v2, "historyAccount"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x11
-
-    const-string v2, "EmailAddressCache"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x12
-
-    const-string v2, "QuickResponse"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x13
-
-    const-string v2, "Document"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x14
-
     const-string v2, "Body"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x15
-
-    const-string v2, "IRMTemplate"
 
     aput-object v2, v0, v1
 
     sput-object v0, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
 
-    .line 309
-    const/16 v0, 0x16
+    .line 259
+    const/16 v0, 0xa
 
-    new-array v0, v0, [Lcom/android/email/provider/ContentCache;
+    new-array v0, v0, [[Ljava/lang/String;
 
-    sget-object v1, Lcom/android/email/provider/EmailProvider;->sCacheAccount:Lcom/android/email/provider/ContentCache;
+    sget-object v1, Lcom/android/emailcommon/provider/Account;->CONTENT_PROJECTION:[Ljava/lang/String;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lcom/android/emailcommon/provider/Mailbox;->CONTENT_PROJECTION:[Ljava/lang/String;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/android/email/provider/EmailProvider;->sCacheMailbox:Lcom/android/email/provider/ContentCache;
+    sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Message;->CONTENT_PROJECTION:[Ljava/lang/String;
 
     aput-object v1, v0, v6
 
-    sget-object v1, Lcom/android/email/provider/EmailProvider;->sCacheMessage:Lcom/android/email/provider/ContentCache;
-
-    aput-object v1, v0, v7
-
-    aput-object v4, v0, v8
+    aput-object v3, v0, v7
 
     const/4 v1, 0x4
 
-    sget-object v2, Lcom/android/email/provider/EmailProvider;->sCacheHostAuth:Lcom/android/email/provider/ContentCache;
+    sget-object v2, Lcom/android/emailcommon/provider/HostAuth;->CONTENT_PROJECTION:[Ljava/lang/String;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x5
+
+    aput-object v3, v0, v1
+
+    const/4 v1, 0x6
+
+    aput-object v3, v0, v1
+
+    const/4 v1, 0x7
+
+    sget-object v2, Lcom/android/emailcommon/provider/Policy;->CONTENT_PROJECTION:[Ljava/lang/String;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x8
+
+    aput-object v3, v0, v1
+
+    const/16 v1, 0x9
+
+    aput-object v3, v0, v1
+
+    sput-object v0, Lcom/android/email/provider/EmailProvider;->CACHE_PROJECTIONS:[[Ljava/lang/String;
+
+    .line 272
+    new-instance v0, Landroid/content/UriMatcher;
+
+    const/4 v1, -0x1
+
+    invoke-direct {v0, v1}, Landroid/content/UriMatcher;-><init>(I)V
+
+    sput-object v0, Lcom/android/email/provider/EmailProvider;->sURIMatcher:Landroid/content/UriMatcher;
+
+    .line 332
+    sget-object v0, Lcom/android/email/provider/EmailProvider;->sURIMatcher:Landroid/content/UriMatcher;
+
+    .line 335
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "account"
+
+    invoke-virtual {v0, v1, v2, v4}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 338
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "account/#"
+
+    invoke-virtual {v0, v1, v2, v5}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 339
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "account/default"
+
+    const/4 v3, 0x5
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 343
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "resetNewMessageCount"
+
+    invoke-virtual {v0, v1, v2, v7}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 345
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "resetNewMessageCount/#"
+
+    const/4 v3, 0x4
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 349
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "mailbox"
+
+    const/16 v3, 0x1000
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 353
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "mailbox/#"
+
+    const/16 v3, 0x1001
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 354
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "mailboxIdFromAccountAndType/#/#"
+
+    const/16 v3, 0x1002
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 357
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "message"
+
+    const/16 v3, 0x2000
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 360
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "message/#"
+
+    const/16 v3, 0x2001
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 363
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "attachment"
+
+    const/16 v3, 0x3000
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 365
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "attachment/#"
+
+    const/16 v3, 0x3001
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 367
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "attachment/message/#"
+
+    const/16 v3, 0x3002
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 371
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "body"
+
+    const v3, 0x9000
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 373
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "body/#"
+
+    const v3, 0x9001
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 376
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "hostauth"
+
+    const/16 v3, 0x4000
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 378
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "hostauth/#"
+
+    const/16 v3, 0x4001
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 381
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "mailboxIdAddToField/#"
+
+    const/16 v3, 0x1002
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 383
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "accountIdAddToField/#"
+
+    invoke-virtual {v0, v1, v2, v6}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 391
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "syncedMessage/#"
+
+    const/16 v3, 0x2002
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 399
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "deletedMessage"
+
+    const/16 v3, 0x6000
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 401
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "deletedMessage/#"
+
+    const/16 v3, 0x6001
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 404
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "updatedMessage"
+
+    const/16 v3, 0x5000
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 406
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "updatedMessage/#"
+
+    const/16 v3, 0x5001
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 408
+    new-instance v1, Landroid/content/ContentValues;
+
+    invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
+
+    sput-object v1, Lcom/android/email/provider/EmailProvider;->CONTENT_VALUES_RESET_NEW_MESSAGE_COUNT:Landroid/content/ContentValues;
+
+    .line 409
+    sget-object v1, Lcom/android/email/provider/EmailProvider;->CONTENT_VALUES_RESET_NEW_MESSAGE_COUNT:Landroid/content/ContentValues;
+
+    const-string v2, "newMessageCount"
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    .line 411
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "policy"
+
+    const/16 v3, 0x7000
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 412
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "policy/#"
+
+    const/16 v3, 0x7001
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 415
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "quickresponse"
+
+    const v3, 0x8000
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 417
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "quickresponse/#"
+
+    const v3, 0x8001
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 419
+    const-string v1, "com.android.email.provider"
+
+    const-string v2, "quickresponse/account/#"
+
+    const v3, 0x8002
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 2449
+    new-array v0, v6, [Ljava/lang/String;
+
+    const-string v1, "hostAuthKeyRecv"
+
+    aput-object v1, v0, v4
+
+    const-string v1, "emailAddress"
+
+    aput-object v1, v0, v5
+
+    sput-object v0, Lcom/android/email/provider/EmailProvider;->V21_ACCOUNT_PROJECTION:[Ljava/lang/String;
+
+    .line 2454
+    new-array v0, v6, [Ljava/lang/String;
+
+    const-string v1, "protocol"
+
+    aput-object v1, v0, v4
+
+    const-string v1, "password"
+
+    aput-object v1, v0, v5
+
+    sput-object v0, Lcom/android/email/provider/EmailProvider;->V21_HOSTAUTH_PROJECTION:[Ljava/lang/String;
+
+    .line 2557
+    new-array v0, v7, [Ljava/lang/String;
+
+    const-string v1, "_id"
+
+    aput-object v1, v0, v4
+
+    const-string v1, "flags"
+
+    aput-object v1, v0, v5
+
+    const-string v1, "hostAuthKeyRecv"
+
+    aput-object v1, v0, v6
+
+    sput-object v0, Lcom/android/email/provider/EmailProvider;->V25_ACCOUNT_PROJECTION:[Ljava/lang/String;
+
+    .line 2563
+    new-array v0, v5, [Ljava/lang/String;
+
+    const-string v1, "protocol"
+
+    aput-object v1, v0, v4
+
+    sput-object v0, Lcom/android/email/provider/EmailProvider;->V25_HOSTAUTH_PROJECTION:[Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 8
+
+    .prologue
+    const/16 v6, 0x10
+
+    const/16 v5, 0x8
+
+    const/4 v4, 0x0
+
+    .line 77
+    invoke-direct {p0}, Landroid/content/ContentProvider;-><init>()V
+
+    .line 121
+    new-instance v0, Lcom/android/email/provider/ContentCache;
+
+    const-string v1, "Account"
+
+    sget-object v2, Lcom/android/emailcommon/provider/Account;->CONTENT_PROJECTION:[Ljava/lang/String;
+
+    invoke-direct {v0, v1, v2, v6}, Lcom/android/email/provider/ContentCache;-><init>(Ljava/lang/String;[Ljava/lang/String;I)V
+
+    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->mCacheAccount:Lcom/android/email/provider/ContentCache;
+
+    .line 123
+    new-instance v0, Lcom/android/email/provider/ContentCache;
+
+    const-string v1, "HostAuth"
+
+    sget-object v2, Lcom/android/emailcommon/provider/HostAuth;->CONTENT_PROJECTION:[Ljava/lang/String;
+
+    const/16 v3, 0x20
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/android/email/provider/ContentCache;-><init>(Ljava/lang/String;[Ljava/lang/String;I)V
+
+    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->mCacheHostAuth:Lcom/android/email/provider/ContentCache;
+
+    .line 125
+    new-instance v0, Lcom/android/email/provider/ContentCache;
+
+    const-string v1, "Mailbox"
+
+    sget-object v2, Lcom/android/emailcommon/provider/Mailbox;->CONTENT_PROJECTION:[Ljava/lang/String;
+
+    const/16 v3, 0x80
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/android/email/provider/ContentCache;-><init>(Ljava/lang/String;[Ljava/lang/String;I)V
+
+    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->mCacheMailbox:Lcom/android/email/provider/ContentCache;
+
+    .line 128
+    new-instance v0, Lcom/android/email/provider/ContentCache;
+
+    const-string v1, "Message"
+
+    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Message;->CONTENT_PROJECTION:[Ljava/lang/String;
+
+    invoke-direct {v0, v1, v2, v5}, Lcom/android/email/provider/ContentCache;-><init>(Ljava/lang/String;[Ljava/lang/String;I)V
+
+    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->mCacheMessage:Lcom/android/email/provider/ContentCache;
+
+    .line 130
+    new-instance v0, Lcom/android/email/provider/ContentCache;
+
+    const-string v1, "Policy"
+
+    sget-object v2, Lcom/android/emailcommon/provider/Policy;->CONTENT_PROJECTION:[Ljava/lang/String;
+
+    invoke-direct {v0, v1, v2, v6}, Lcom/android/email/provider/ContentCache;-><init>(Ljava/lang/String;[Ljava/lang/String;I)V
+
+    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->mCachePolicy:Lcom/android/email/provider/ContentCache;
+
+    .line 245
+    const/16 v0, 0xa
+
+    new-array v0, v0, [Lcom/android/email/provider/ContentCache;
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lcom/android/email/provider/EmailProvider;->mCacheAccount:Lcom/android/email/provider/ContentCache;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    iget-object v2, p0, Lcom/android/email/provider/EmailProvider;->mCacheMailbox:Lcom/android/email/provider/ContentCache;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    iget-object v2, p0, Lcom/android/email/provider/EmailProvider;->mCacheMessage:Lcom/android/email/provider/ContentCache;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x3
+
+    aput-object v4, v0, v1
+
+    const/4 v1, 0x4
+
+    iget-object v2, p0, Lcom/android/email/provider/EmailProvider;->mCacheHostAuth:Lcom/android/email/provider/ContentCache;
 
     aput-object v2, v0, v1
 
@@ -300,760 +681,441 @@
 
     const/4 v1, 0x7
 
-    aput-object v4, v0, v1
+    iget-object v2, p0, Lcom/android/email/provider/EmailProvider;->mCachePolicy:Lcom/android/email/provider/ContentCache;
 
-    const/16 v1, 0x8
+    aput-object v2, v0, v1
 
-    aput-object v4, v0, v1
+    aput-object v4, v0, v5
 
     const/16 v1, 0x9
 
     aput-object v4, v0, v1
 
-    const/16 v1, 0xa
+    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->mContentCaches:[Lcom/android/email/provider/ContentCache;
 
-    aput-object v4, v0, v1
+    .line 886
+    new-instance v0, Ljava/util/HashMap;
 
-    const/16 v1, 0xb
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    aput-object v4, v0, v1
+    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->mMailboxTypeMap:Ljava/util/HashMap;
 
-    const/16 v1, 0xc
+    .line 2629
+    new-instance v0, Lcom/android/email/provider/EmailProvider$1;
 
-    aput-object v4, v0, v1
+    invoke-direct {v0, p0}, Lcom/android/email/provider/EmailProvider$1;-><init>(Lcom/android/email/provider/EmailProvider;)V
 
-    const/16 v1, 0xd
+    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->DEFAULT_ATTACHMENT_SERVICE:Lcom/android/email/provider/EmailProvider$AttachmentService;
 
-    aput-object v4, v0, v1
+    .line 2636
+    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->DEFAULT_ATTACHMENT_SERVICE:Lcom/android/email/provider/EmailProvider$AttachmentService;
 
-    const/16 v1, 0xe
+    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->mAttachmentService:Lcom/android/email/provider/EmailProvider$AttachmentService;
 
-    aput-object v4, v0, v1
+    return-void
+.end method
 
-    const/16 v1, 0xf
+.method static synthetic access$000(Landroid/database/sqlite/SQLiteDatabase;)V
+    .registers 1
+    .parameter "x0"
 
-    aput-object v4, v0, v1
+    .prologue
+    .line 77
+    invoke-static {p0}, Lcom/android/email/provider/EmailProvider;->upgradeFromVersion20ToVersion21(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    const/16 v1, 0x10
+    return-void
+.end method
 
-    aput-object v4, v0, v1
+.method static synthetic access$100(Landroid/database/sqlite/SQLiteDatabase;)V
+    .registers 1
+    .parameter "x0"
 
-    const/16 v1, 0x11
+    .prologue
+    .line 77
+    invoke-static {p0}, Lcom/android/email/provider/EmailProvider;->upgradeFromVersion22ToVersion23(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    aput-object v4, v0, v1
+    return-void
+.end method
 
-    const/16 v1, 0x12
+.method static synthetic access$200(Landroid/database/sqlite/SQLiteDatabase;)V
+    .registers 1
+    .parameter "x0"
 
-    aput-object v4, v0, v1
+    .prologue
+    .line 77
+    invoke-static {p0}, Lcom/android/email/provider/EmailProvider;->upgradeFromVersion23ToVersion24(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    const/16 v1, 0x13
+    return-void
+.end method
 
-    aput-object v4, v0, v1
+.method static synthetic access$300(Landroid/database/sqlite/SQLiteDatabase;)V
+    .registers 1
+    .parameter "x0"
 
-    const/16 v1, 0x14
+    .prologue
+    .line 77
+    invoke-static {p0}, Lcom/android/email/provider/EmailProvider;->upgradeFromVersion24ToVersion25(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    aput-object v4, v0, v1
+    return-void
+.end method
 
-    const/16 v1, 0x15
+.method static synthetic access$400(Landroid/database/sqlite/SQLiteDatabase;)V
+    .registers 1
+    .parameter "x0"
 
-    aput-object v4, v0, v1
+    .prologue
+    .line 77
+    invoke-static {p0}, Lcom/android/email/provider/EmailProvider;->upgradeFromVersion25ToVersion26(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    sput-object v0, Lcom/android/email/provider/EmailProvider;->CONTENT_CACHES:[Lcom/android/email/provider/ContentCache;
+    return-void
+.end method
 
-    .line 316
-    new-instance v0, Landroid/content/UriMatcher;
+.method private addToMailboxTypeMap(Landroid/database/Cursor;)V
+    .registers 10
+    .parameter "c"
 
-    const/4 v1, -0x1
+    .prologue
+    .line 901
+    const/4 v4, 0x4
 
-    invoke-direct {v0, v1}, Landroid/content/UriMatcher;-><init>(I)V
+    invoke-interface {p1, v4}, Landroid/database/Cursor;->getLong(I)J
 
-    sput-object v0, Lcom/android/email/provider/EmailProvider;->sURIMatcher:Landroid/content/UriMatcher;
+    move-result-wide v0
 
-    .line 435
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->sURIMatcher:Landroid/content/UriMatcher;
+    .line 902
+    .local v0, accountId:J
+    const/4 v4, 0x5
 
-    .line 438
-    const-string v1, "com.android.email.provider"
+    invoke-interface {p1, v4}, Landroid/database/Cursor;->getInt(I)I
 
-    const-string v2, "account"
+    move-result v3
 
-    invoke-virtual {v0, v1, v2, v5}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
+    .line 903
+    .local v3, type:I
+    iget-object v5, p0, Lcom/android/email/provider/EmailProvider;->mMailboxTypeMap:Ljava/util/HashMap;
 
-    .line 441
-    const-string v1, "com.android.email.provider"
+    monitor-enter v5
 
-    const-string v2, "account/#"
-
-    invoke-virtual {v0, v1, v2, v6}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 445
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "resetNewMessageCount"
-
-    invoke-virtual {v0, v1, v2, v8}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 447
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "resetNewMessageCount/#"
-
-    const/4 v3, 0x4
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 450
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "account/#/mailbox"
-
-    const/4 v3, 0x5
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 453
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "mailbox"
-
-    const/16 v3, 0x1000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 457
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "mailbox/#"
-
-    const/16 v3, 0x1001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 459
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "mailbox/#/message"
-
-    const/16 v3, 0x1003
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 462
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "message"
-
-    const/16 v3, 0x2000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 465
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "message/#"
-
-    const/16 v3, 0x2001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 468
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "attachment"
-
-    const/16 v3, 0x3000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 470
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "attachment/#"
-
-    const/16 v3, 0x3001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 473
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "attachment/message/#"
-
-    const/16 v3, 0x3002
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 477
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "attachment/content/*"
-
-    const/16 v3, 0x3003
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 481
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "body"
-
-    const v3, 0x14000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 483
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "body/#"
-
-    const v3, 0x14001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 485
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "body/message/#"
-
-    const v3, 0x14002
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 487
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "body/#/html"
-
-    const v3, 0x14003
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 489
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "body/#/text"
-
-    const v3, 0x14004
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 492
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "hostauth"
-
-    const/16 v3, 0x4000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 494
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "hostauth/#"
-
-    const/16 v3, 0x4001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 498
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "mailboxIdAddToField/#"
-
-    const/16 v3, 0x1002
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 500
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "accountIdAddToField/#"
-
-    invoke-virtual {v0, v1, v2, v7}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 508
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "syncedMessage/#"
-
-    const/16 v3, 0x2002
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 516
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "deletedMessage"
-
-    const/16 v3, 0x6000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 518
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "deletedMessage/#"
-
-    const/16 v3, 0x6001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 521
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "deletedMessage/mailbox/#"
-
-    const/16 v3, 0x6002
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 525
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "updatedMessage"
-
-    const/16 v3, 0x5000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 527
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "updatedMessage/#"
-
-    const/16 v3, 0x5001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 531
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "followupFlag"
-
-    const/16 v3, 0x7000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 532
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "updatedFollowupFlag"
-
-    const v3, 0x8000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 534
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "deletedFollowupFlag"
-
-    const v3, 0x9000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 537
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "followupFlag/#"
-
-    const/16 v3, 0x7001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 538
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "updatedFollowupFlag/#"
-
-    const v3, 0x8001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 540
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "deletedFollowupFlag/#"
-
-    const v3, 0x9001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 547
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "syncedFollowupFlag/#"
-
-    const/16 v3, 0x7002
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 552
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "policies"
-
-    const v3, 0xa000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 553
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "policies/#"
-
-    const v3, 0xa001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 557
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "mailboxcb"
-
-    const v3, 0xb000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 558
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "mailboxcb/#"
-
-    const v3, 0xb001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 559
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "mailboxcb/#/mailbox"
-
-    const v3, 0xb002
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 561
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "messagecb"
-
-    const v3, 0xc000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 562
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "messagecb/#"
-
-    const v3, 0xc001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 563
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "accountcb"
-
-    const v3, 0xd000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 564
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "accountcb/#"
-
-    const v3, 0xd001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 565
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "accountcb/protocol"
-
-    const v3, 0xd002
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 568
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "certificateCache"
-
-    const v3, 0xe000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 571
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "syncedMessage"
-
-    const/16 v3, 0x2003
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 574
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "recipientInformation"
-
-    const v3, 0xf000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 576
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "recipientInformation/#"
-
-    const v3, 0xf001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 578
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "recipientInformation/filter/*"
-
-    const v3, 0xf002
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 583
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "document"
-
-    const v3, 0x13000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 584
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "document/#"
-
-    const v3, 0x13001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 587
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "historyAccount"
-
-    const/high16 v3, 0x1
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 589
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "IRMTemplate"
-
-    const v3, 0x15000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 590
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "IRMTemplate/#"
-
-    const v3, 0x15001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 594
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "emailaddresscache"
-
-    const v3, 0x11000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 595
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "emailaddresscache/filter"
-
-    const v3, 0x11001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 596
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "emailaddresscache/filter/*"
-
-    const v3, 0x11001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 597
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "emailaddresscache/#"
-
-    const v3, 0x11002
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 602
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "quickresponse"
-
-    const v3, 0x12000
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 604
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "quickresponse/#"
-
-    const v3, 0x12001
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 606
-    const-string v1, "com.android.email.provider"
-
-    const-string v2, "quickresponse/account/#"
-
-    const v3, 0x12002
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 609
-    new-instance v0, Landroid/content/ContentValues;
-
-    invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
-
-    sput-object v0, Lcom/android/email/provider/EmailProvider;->CONTENT_VALUES_RESET_NEW_MESSAGE_COUNT:Landroid/content/ContentValues;
-
-    .line 610
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->CONTENT_VALUES_RESET_NEW_MESSAGE_COUNT:Landroid/content/ContentValues;
-
-    const-string v1, "newMessageCount"
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 904
+    :try_start_d
+    invoke-direct {p0, v0, v1}, Lcom/android/email/provider/EmailProvider;->getOrCreateAccountMailboxTypeMap(J)Ljava/util/HashMap;
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    .line 906
+    .local v2, accountMailboxTypeMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Long;>;"
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    .line 3248
-    new-array v0, v6, [Ljava/lang/String;
+    move-result-object v4
 
-    const-string v1, "_id"
+    const/4 v6, 0x0
 
-    aput-object v1, v0, v5
+    invoke-interface {p1, v6}, Landroid/database/Cursor;->getLong(I)J
 
-    sput-object v0, Lcom/android/email/provider/EmailProvider;->RESETSECURITYSYNCKEY_ACCOUNT_PROJECTION:[Ljava/lang/String;
+    move-result-wide v6
 
-    .line 4599
-    new-array v0, v7, [Ljava/lang/String;
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const-string v1, "hostAuthKeyRecv"
+    move-result-object v6
 
-    aput-object v1, v0, v5
+    invoke-virtual {v2, v4, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v1, "emailAddress"
+    .line 907
+    monitor-exit v5
 
-    aput-object v1, v0, v6
-
-    sput-object v0, Lcom/android/email/provider/EmailProvider;->V21_ACCOUNT_PROJECTION:[Ljava/lang/String;
-
-    .line 4605
-    new-array v0, v7, [Ljava/lang/String;
-
-    const-string v1, "protocol"
-
-    aput-object v1, v0, v5
-
-    const-string v1, "password"
-
-    aput-object v1, v0, v6
-
-    sput-object v0, Lcom/android/email/provider/EmailProvider;->V21_HOSTAUTH_PROJECTION:[Ljava/lang/String;
-
-    .line 4726
-    new-array v0, v7, [Ljava/lang/String;
-
-    const-string v1, "_id"
-
-    aput-object v1, v0, v5
-
-    const-string v1, "flags"
-
-    aput-object v1, v0, v6
-
-    sput-object v0, Lcom/android/email/provider/EmailProvider;->GB_FLAGS_UPGRADE_ACCOUNT_PROJECTION:[Ljava/lang/String;
-
+    .line 908
     return-void
+
+    .line 907
+    .end local v2           #accountMailboxTypeMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Long;>;"
+    :catchall_23
+    move-exception v4
+
+    monitor-exit v5
+    :try_end_25
+    .catchall {:try_start_d .. :try_end_25} :catchall_23
+
+    throw v4
 .end method
 
-.method public constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 107
-    invoke-direct {p0}, Landroid/content/ContentProvider;-><init>()V
-
-    .line 1718
-    return-void
-.end method
-
-.method static synthetic access$000(Lcom/android/email/provider/EmailProvider;Landroid/database/sqlite/SQLiteDatabase;II)V
-    .registers 4
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-    .parameter "x3"
-
-    .prologue
-    .line 107
-    invoke-direct {p0, p1, p2, p3}, Lcom/android/email/provider/EmailProvider;->resetEmailAddressCacheTable(Landroid/database/sqlite/SQLiteDatabase;II)V
-
-    return-void
-.end method
-
-.method static synthetic access$100(Lcom/android/email/provider/EmailProvider;Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 2
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 107
-    invoke-direct {p0, p1}, Lcom/android/email/provider/EmailProvider;->populateFollowupFlagsTable(Landroid/database/sqlite/SQLiteDatabase;)V
-
-    return-void
-.end method
-
-.method static convertAccountFlagsFromGB(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 11
+.method private static backupAccounts(Landroid/content/Context;Landroid/database/sqlite/SQLiteDatabase;)I
+    .registers 7
+    .parameter
     .parameter
 
     .prologue
+    .line 2044
+    sget-boolean v0, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v0, :cond_b
+
+    .line 2045
+    const-string v0, "EmailProvider"
+
+    const-string v1, "backupAccounts..."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2047
+    :cond_b
+    invoke-static {p0}, Lcom/android/email/provider/EmailProvider;->getBackupDatabase(Landroid/content/Context;)Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v1
+
+    .line 2049
+    :try_start_f
+    invoke-static {p1, v1}, Lcom/android/email/provider/EmailProvider;->copyAccountTables(Landroid/database/sqlite/SQLiteDatabase;Landroid/database/sqlite/SQLiteDatabase;)I
+
+    move-result v0
+
+    .line 2050
+    if-gez v0, :cond_22
+
+    .line 2051
+    const-string v2, "EmailProvider"
+
+    const-string v3, "Account backup failed!"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1c
+    .catchall {:try_start_f .. :try_end_1c} :catchall_45
+
+    .line 2057
+    :cond_1c
+    :goto_1c
+    if-eqz v1, :cond_21
+
+    .line 2058
+    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+
+    :cond_21
+    return v0
+
+    .line 2052
+    :cond_22
+    :try_start_22
+    sget-boolean v2, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v2, :cond_1c
+
+    .line 2053
+    const-string v2, "EmailProvider"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Backed up "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " accounts..."
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_44
+    .catchall {:try_start_22 .. :try_end_44} :catchall_45
+
+    goto :goto_1c
+
+    .line 2057
+    :catchall_45
+    move-exception v0
+
+    if-eqz v1, :cond_4b
+
+    .line 2058
+    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+
+    :cond_4b
+    throw v0
+.end method
+
+.method static convertPolicyFlagsToPolicyTable(Landroid/database/sqlite/SQLiteDatabase;)V
+    .registers 11
+    .parameter
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+
+    .prologue
+    const/4 v9, 0x1
+
     const/4 v8, 0x0
 
-    const/4 v9, 0x0
+    const/4 v4, 0x0
 
-    .line 4736
-    .line 4738
-    :try_start_2
+    .line 2377
     const-string v1, "Account"
 
-    sget-object v2, Lcom/android/email/provider/EmailProvider;->GB_FLAGS_UPGRADE_ACCOUNT_PROJECTION:[Ljava/lang/String;
+    const/4 v0, 0x2
 
-    const-string v3, "_id>0"
+    new-array v2, v0, [Ljava/lang/String;
+
+    const-string v0, "_id"
+
+    aput-object v0, v2, v8
+
+    const-string v0, "securityFlags"
+
+    aput-object v0, v2, v9
+
+    const-string v3, "securityFlags>0"
+
+    move-object v0, p0
+
+    move-object v5, v4
+
+    move-object v6, v4
+
+    move-object v7, v4
+
+    invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v0
+
+    .line 2380
+    new-instance v1, Landroid/content/ContentValues;
+
+    invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
+
+    .line 2381
+    new-array v2, v9, [Ljava/lang/String;
+
+    .line 2382
+    :goto_21
+    invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_59
+
+    .line 2383
+    invoke-interface {v0, v9}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v5
+
+    .line 2384
+    invoke-static {v5, v6}, Lcom/android/emailcommon/service/LegacyPolicySet;->flagsToPolicy(J)Lcom/android/emailcommon/provider/Policy;
+
+    move-result-object v3
+
+    .line 2385
+    const-string v5, "Policy"
+
+    invoke-virtual {v3}, Lcom/android/emailcommon/provider/Policy;->toContentValues()Landroid/content/ContentValues;
+
+    move-result-object v3
+
+    invoke-virtual {p0, v5, v4, v3}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
+
+    move-result-wide v5
+
+    .line 2386
+    const-string v3, "policyKey"
+
+    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v3, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+
+    .line 2387
+    const-string v3, "securityFlags"
+
+    invoke-virtual {v1, v3}, Landroid/content/ContentValues;->putNull(Ljava/lang/String;)V
+
+    .line 2388
+    invoke-interface {v0, v8}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v5
+
+    invoke-static {v5, v6}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v3
+
+    aput-object v3, v2, v8
+
+    .line 2389
+    const-string v3, "Account"
+
+    const-string v5, "_id=?"
+
+    invoke-virtual {p0, v3, v1, v5, v2}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+
+    goto :goto_21
+
+    .line 2391
+    :cond_59
+    return-void
+.end method
+
+.method private static copyAccountTables(Landroid/database/sqlite/SQLiteDatabase;Landroid/database/sqlite/SQLiteDatabase;)I
+    .registers 16
+    .parameter "fromDatabase"
+    .parameter "toDatabase"
+
+    .prologue
+    .line 1970
+    if-eqz p0, :cond_4
+
+    if-nez p1, :cond_6
+
+    :cond_4
+    const/4 v10, -0x1
+
+    .line 2032
+    :goto_5
+    return v10
+
+    .line 1971
+    :cond_6
+    const/4 v10, 0x0
+
+    .line 1975
+    .local v10, copyCount:I
+    :try_start_7
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
+
+    .line 1976
+    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
+
+    .line 1978
+    const-string v0, "Account"
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, v0, v1, v2}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+
+    .line 1979
+    const-string v0, "HostAuth"
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, v0, v1, v2}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+
+    .line 1981
+    const-string v1, "Account"
+
+    sget-object v2, Lcom/android/emailcommon/provider/Account;->CONTENT_PROJECTION:[Ljava/lang/String;
+
+    const/4 v3, 0x0
 
     const/4 v4, 0x0
 
@@ -1066,290 +1128,220 @@
     move-object v0, p0
 
     invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_10
-    .catchall {:try_start_2 .. :try_end_10} :catchall_96
-    .catch Landroid/database/SQLException; {:try_start_2 .. :try_end_10} :catch_9e
+    :try_end_28
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_7 .. :try_end_28} :catch_91
 
-    move-result-object v1
+    move-result-object v9
 
-    .line 4744
-    if-eqz v1, :cond_8b
+    .line 1983
+    .local v9, c:Landroid/database/Cursor;
+    const/4 v13, 0x1
 
-    .line 4745
-    :goto_13
-    :try_start_13
-    invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
+    .line 1986
+    .local v13, noErrors:Z
+    :cond_2a
+    :goto_2a
+    :try_start_2a
+    invoke-interface {v9}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_92
+    if-eqz v0, :cond_81
 
-    .line 4746
+    .line 1987
+    new-instance v8, Lcom/android/emailcommon/provider/Account;
+
+    invoke-direct {v8}, Lcom/android/emailcommon/provider/Account;-><init>()V
+
+    .line 1988
+    .local v8, account:Lcom/android/emailcommon/provider/Account;
+    invoke-virtual {v8, v9}, Lcom/android/emailcommon/provider/Account;->restore(Landroid/database/Cursor;)V
+
+    .line 1994
     const/4 v0, 0x0
 
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
+    iput-object v0, v8, Lcom/android/emailcommon/provider/Account;->mSecuritySyncKey:Ljava/lang/String;
 
-    move-result v2
+    .line 1995
+    const/4 v0, 0x0
 
-    .line 4747
-    const/4 v0, 0x1
+    iput-object v0, v8, Lcom/android/emailcommon/provider/Account;->mSyncKey:Ljava/lang/String;
 
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
+    .line 1996
+    const-wide/16 v0, 0x0
 
-    move-result v3
+    iput-wide v0, v8, Lcom/android/emailcommon/provider/Account;->mPolicyKey:J
 
-    .line 4749
-    and-int/lit16 v4, v3, -0xf81
+    .line 1999
+    iget-wide v0, v8, Lcom/android/emailcommon/provider/Account;->mHostAuthKeyRecv:J
 
-    .line 4751
-    and-int/lit16 v0, v3, 0x80
+    invoke-static {p0, v0, v1}, Lcom/android/email/provider/EmailProvider;->restoreHostAuth(Landroid/database/sqlite/SQLiteDatabase;J)Lcom/android/emailcommon/provider/HostAuth;
 
-    if-eqz v0, :cond_83
+    move-result-object v12
 
-    const/16 v0, 0x200
+    .line 2001
+    .local v12, hostAuth:Lcom/android/emailcommon/provider/HostAuth;
+    if-eqz v12, :cond_2a
 
-    :goto_2b
-    or-int/2addr v4, v0
+    .line 2002
+    const-string v0, "HostAuth"
 
-    .line 4752
-    and-int/lit16 v0, v3, 0x100
+    const/4 v1, 0x0
 
-    if-eqz v0, :cond_85
+    invoke-virtual {v12}, Lcom/android/emailcommon/provider/HostAuth;->toContentValues()Landroid/content/ContentValues;
 
-    const/16 v0, 0x400
+    move-result-object v2
 
-    :goto_32
-    or-int/2addr v4, v0
+    invoke-virtual {p1, v0, v1, v2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
 
-    .line 4753
-    and-int/lit16 v0, v3, 0x200
+    move-result-wide v0
 
-    if-eqz v0, :cond_87
+    iput-wide v0, v8, Lcom/android/emailcommon/provider/Account;->mHostAuthKeyRecv:J
 
-    const/16 v0, 0x800
+    .line 2005
+    iget-wide v0, v8, Lcom/android/emailcommon/provider/Account;->mHostAuthKeySend:J
 
-    :goto_39
-    or-int/2addr v4, v0
+    const-wide/16 v2, 0x0
 
-    .line 4754
-    and-int/lit16 v0, v3, 0x800
+    cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_89
+    if-lez v0, :cond_74
 
-    const/16 v0, 0x2000
+    .line 2006
+    iget-wide v0, v8, Lcom/android/emailcommon/provider/Account;->mHostAuthKeySend:J
 
-    :goto_40
-    or-int/2addr v0, v4
+    invoke-static {p0, v0, v1}, Lcom/android/email/provider/EmailProvider;->restoreHostAuth(Landroid/database/sqlite/SQLiteDatabase;J)Lcom/android/emailcommon/provider/HostAuth;
 
-    .line 4755
-    new-instance v3, Ljava/lang/StringBuilder;
+    move-result-object v12
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    .line 2009
+    if-eqz v12, :cond_2a
 
-    const-string v4, "update Account set flags="
+    .line 2010
+    const-string v0, "HostAuth"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v1, 0x0
 
-    move-result-object v3
+    invoke-virtual {v12}, Lcom/android/emailcommon/provider/HostAuth;->toContentValues()Landroid/content/ContentValues;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v0
+    invoke-virtual {p1, v0, v1, v2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
 
-    const-string v3, " where "
+    move-result-wide v0
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput-wide v0, v8, Lcom/android/emailcommon/provider/Account;->mHostAuthKeySend:J
 
-    move-result-object v0
+    .line 2014
+    :cond_74
+    const-string v0, "Account"
 
-    const-string v3, "_id"
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8}, Lcom/android/emailcommon/provider/Account;->toContentValues()Landroid/content/ContentValues;
 
-    move-result-object v0
+    move-result-object v2
 
-    const-string v3, "="
+    invoke-virtual {p1, v0, v1, v2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
+    :try_end_7e
+    .catchall {:try_start_2a .. :try_end_7e} :catchall_a8
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_2a .. :try_end_7e} :catch_95
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 2015
+    add-int/lit8 v10, v10, 0x1
 
-    move-result-object v0
+    .line 2016
+    goto :goto_2a
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    .line 2021
+    .end local v8           #account:Lcom/android/emailcommon/provider/Account;
+    .end local v12           #hostAuth:Lcom/android/emailcommon/provider/HostAuth;
+    :cond_81
+    :try_start_81
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    move-result-object v0
+    .line 2022
+    if-eqz v13, :cond_89
 
-    const-string v2, ";"
+    .line 2024
+    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-    :try_end_73
-    .catchall {:try_start_13 .. :try_end_73} :catchall_9c
-    .catch Landroid/database/SQLException; {:try_start_13 .. :try_end_73} :catch_74
-
-    goto :goto_13
-
-    .line 4761
-    :catch_74
-    move-exception v0
-
-    .line 4762
-    :goto_75
-    :try_start_75
-    const-string v2, "EmailProvider"
-
-    const-string v3, "Exception during converting account flags from GB"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 4763
-    invoke-virtual {v0}, Landroid/database/SQLException;->printStackTrace()V
-    :try_end_7f
-    .catchall {:try_start_75 .. :try_end_7f} :catchall_9c
-
-    .line 4765
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    .line 4767
-    :goto_82
-    return-void
-
-    :cond_83
-    move v0, v9
-
-    .line 4751
-    goto :goto_2b
-
-    :cond_85
-    move v0, v9
-
-    .line 4752
-    goto :goto_32
-
-    :cond_87
-    move v0, v9
-
-    .line 4753
-    goto :goto_39
-
+    .line 2026
     :cond_89
-    move v0, v9
+    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 4754
-    goto :goto_40
+    .line 2027
+    invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
-    .line 4759
-    :cond_8b
-    :try_start_8b
-    const-string v0, "EmailProvider"
+    goto/16 :goto_5
 
-    const-string v2, "convertAccountFlagsFromGB(): null account cursor"
+    .line 2029
+    .end local v9           #c:Landroid/database/Cursor;
+    .end local v13           #noErrors:Z
+    :catch_91
+    move-exception v11
 
-    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_92
-    .catchall {:try_start_8b .. :try_end_92} :catchall_9c
-    .catch Landroid/database/SQLException; {:try_start_8b .. :try_end_92} :catch_74
+    .line 2030
+    .local v11, e:Landroid/database/sqlite/SQLiteException;
+    const/4 v10, -0x1
 
-    .line 4765
-    :cond_92
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    goto/16 :goto_5
 
-    goto :goto_82
+    .line 2017
+    .end local v11           #e:Landroid/database/sqlite/SQLiteException;
+    .restart local v9       #c:Landroid/database/Cursor;
+    .restart local v13       #noErrors:Z
+    :catch_95
+    move-exception v11
 
-    :catchall_96
+    .line 2018
+    .restart local v11       #e:Landroid/database/sqlite/SQLiteException;
+    const/4 v13, 0x0
+
+    .line 2019
+    const/4 v10, -0x1
+
+    .line 2021
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+
+    .line 2022
+    if-eqz v13, :cond_a0
+
+    .line 2024
+    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
+
+    .line 2026
+    :cond_a0
+    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+
+    .line 2027
+    invoke-interface {v9}, Landroid/database/Cursor;->close()V
+
+    goto/16 :goto_5
+
+    .line 2021
+    .end local v11           #e:Landroid/database/sqlite/SQLiteException;
+    :catchall_a8
     move-exception v0
 
-    move-object v1, v8
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    :goto_98
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    .line 2022
+    if-eqz v13, :cond_b1
+
+    .line 2024
+    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
+
+    .line 2026
+    :cond_b1
+    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+
+    .line 2027
+    invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
     throw v0
-
-    :catchall_9c
-    move-exception v0
-
-    goto :goto_98
-
-    .line 4761
-    :catch_9e
-    move-exception v0
-
-    move-object v1, v8
-
-    goto :goto_75
-.end method
-
-.method static createAccountCBTable(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 1438
-    const-string v0, " (_id integer primary key autoincrement, accountKey integer, sevenAccountKey integer, typeMsg integer, timeLimit integer default 7, sizeLimit integer default 50, peakTime integer default 0, offPeakTime integer default 1, days text default \'0111110\', peakStartTime text default \'09:00\', peakEndTime text default \'18:00\', whileRoaming integer default 1, attachmentEnabled integer default 5000 );"
-
-    .line 1462
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "CREATE TABLE IF NOT EXISTS  Account_CB"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1463
-    const-string v0, "Account_CB"
-
-    const-string v1, "accountKey"
-
-    invoke-static {v0, v1}, Lcom/android/email/provider/EmailProvider;->createIndex(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1464
-    const-string v0, "Account_CB"
-
-    const-string v1, "sevenAccountKey"
-
-    invoke-static {v0, v1}, Lcom/android/email/provider/EmailProvider;->createIndex(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1465
-    const-string v0, "Account_CB"
-
-    const-string v1, "typeMsg"
-
-    invoke-static {v0, v1}, Lcom/android/email/provider/EmailProvider;->createIndex(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1466
-    return-void
+    :try_end_b8
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_81 .. :try_end_b8} :catch_91
 .end method
 
 .method private static createAccountManagerAccount(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
@@ -1363,44 +1355,44 @@
 
     const/4 v3, 0x0
 
-    .line 4652
+    .line 2461
     invoke-static {p0}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
 
     move-result-object v0
 
-    .line 4653
+    .line 2462
     new-instance v1, Landroid/accounts/Account;
 
     const-string v2, "com.android.email"
 
     invoke-direct {v1, p1, v2}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4655
+    .line 2464
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, p2, v2}, Landroid/accounts/AccountManager;->addAccountExplicitly(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)Z
 
-    .line 4656
+    .line 2465
     const-string v0, "com.android.email.provider"
 
     invoke-static {v1, v0, v4}, Landroid/content/ContentResolver;->setIsSyncable(Landroid/accounts/Account;Ljava/lang/String;I)V
 
-    .line 4657
+    .line 2466
     const-string v0, "com.android.email.provider"
 
     invoke-static {v1, v0, v4}, Landroid/content/ContentResolver;->setSyncAutomatically(Landroid/accounts/Account;Ljava/lang/String;Z)V
 
-    .line 4658
+    .line 2467
     const-string v0, "com.android.contacts"
 
     invoke-static {v1, v0, v3}, Landroid/content/ContentResolver;->setIsSyncable(Landroid/accounts/Account;Ljava/lang/String;I)V
 
-    .line 4659
+    .line 2468
     const-string v0, "com.android.calendar"
 
     invoke-static {v1, v0, v3}, Landroid/content/ContentResolver;->setIsSyncable(Landroid/accounts/Account;Ljava/lang/String;I)V
 
-    .line 4660
+    .line 2469
     return-void
 .end method
 
@@ -1409,10 +1401,10 @@
     .parameter "db"
 
     .prologue
-    .line 889
-    const-string v0, " (_id integer primary key autoincrement, displayName text, emailAddress text, syncKey text, syncLookback integer, syncInterval text, hostAuthKeyRecv integer, hostAuthKeySend integer, flags integer, isDefault integer, compatibilityUuid text, senderName text, ringtoneUri text, protocolVersion text, newMessageCount integer, securityFlags integer, securitySyncKey text, signature text, emailsize integer default 3, policyKey text, peakDays integer, peakStartMinute integer, peakEndMinute integer, peakSchedule integer, offPeakSchedule integer, roamingSchedule integer, calendarSyncLookback integer default 0, conflict integer default 0, smimeOwnCertificateAlias text, smimeOptionsFlags integer default 0, smimeSignAlgorithm integer default 0, smimeEncryptionAlgorithm integer default 0, conversationMode integer default 0, textPreview integer  default 0,deviceInfoSent integer default 0, deviceBlockedType integer default 0,IRMTemplateTimeStamp text, cbaCertificateAlias text, messageFormat integer default 0, accountType integer default -1, easLocalChange integer default 0, forwardWithFiles integer default 1, autoDownload integer default 0, recentMessages integer default 0, showImage integer default 1, autoRetryTimes integer default 3);"
+    .line 598
+    const-string v0, " (_id integer primary key autoincrement, displayName text, emailAddress text, syncKey text, syncLookback integer, syncInterval text, hostAuthKeyRecv integer, hostAuthKeySend integer, flags integer, isDefault integer, compatibilityUuid text, senderName text, ringtoneUri text, protocolVersion text, newMessageCount integer, securityFlags integer, securitySyncKey text, signature text, policyKey integer, notifiedMessageId integer, notifiedMessageCount integer);"
 
-    .line 1014
+    .line 620
     .local v0, s:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1434,44 +1426,25 @@
 
     invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1016
-    const-string v1, "create trigger account_delete before delete on Account begin delete from Mailbox where accountKey=old._id; delete from HostAuth where _id=old.hostAuthKeyRecv; delete from HostAuth where _id=old.hostAuthKeySend; end"
+    .line 622
+    const-string v1, "create trigger account_delete before delete on Account begin delete from Mailbox where accountKey=old._id; delete from HostAuth where _id=old.hostAuthKeyRecv; delete from HostAuth where _id=old.hostAuthKeySend; delete from Policy where _id=old.policyKey; end"
 
     invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1026
-    const-string v1, "create trigger account_delete_policy before delete on Account begin delete from Policies where account_id=old._id; end"
-
-    invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1032
-    const-string v1, "create trigger account_insert after insert on Account begin  update HostAuth set accountKey = new._id where accountKey = 0; end"
-
-    invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1037
-    const-string v1, "create trigger account_delete_recipientinformation before delete on Account begin delete from RecipientInformation where accountkey=old._id; end"
-
-    invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1042
-    const-string v1, "create trigger account_delete_irm before delete on Account begin delete from IRMTemplate where AccountKey=old._id; end"
-
-    invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1046
+    .line 623
     return-void
 .end method
 
 .method static createAttachmentTable(Landroid/database/sqlite/SQLiteDatabase;)V
     .registers 4
-    .parameter
+    .parameter "db"
 
     .prologue
-    .line 1147
-    const-string v0, " (_id integer primary key autoincrement, fileName text, mimeType text, size integer, contentId text, contentUri text, messageKey integer, location text, encoding text, content text, flags integer, content_bytes blob, vmAttOrder integer default 0,vmAttDuration integer default 0,accountKey integer,isInline integer);"
+    .line 722
+    const-string v0, " (_id integer primary key autoincrement, fileName text, mimeType text, size integer, contentId text, contentUri text, messageKey integer, location text, encoding text, content text, flags integer, content_bytes blob, accountKey integer);"
 
-    .line 1164
+    .line 736
+    .local v0, s:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1484,38 +1457,39 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1165
-    const-string v0, "Attachment"
+    .line 737
+    const-string v1, "Attachment"
 
-    const-string v1, "messageKey"
+    const-string v2, "messageKey"
 
-    invoke-static {v0, v1}, Lcom/android/email/provider/EmailProvider;->createIndex(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2}, Lcom/android/email/provider/EmailProvider;->createIndex(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1166
+    .line 738
     return-void
 .end method
 
 .method static createBodyTable(Landroid/database/sqlite/SQLiteDatabase;)V
     .registers 4
-    .parameter
+    .parameter "db"
 
     .prologue
-    .line 1185
+    .line 757
     const-string v0, " (_id integer primary key autoincrement, messageKey integer, htmlContent text, textContent text, htmlReply text, textReply text, sourceMessageKey text, introText text);"
 
-    .line 1190
+    .line 766
+    .local v0, s:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1528,51 +1502,6 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1191
-    const-string v0, "Body"
-
-    const-string v1, "messageKey"
-
-    invoke-static {v0, v1}, Lcom/android/email/provider/EmailProvider;->createIndex(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1192
-    return-void
-.end method
-
-.method static createCertificateCacheTable(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 4
-    .parameter "db"
-
-    .prologue
-    .line 1298
-    const-string v0, " (_id integer primary key autoincrement, email text UNIQUE, certificate text );"
-
-    .line 1302
-    .local v0, s:Ljava/lang/String;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "create table CertificateCache"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v1
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1581,275 +1510,18 @@
 
     invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1303
-    return-void
-.end method
+    .line 767
+    const-string v1, "Body"
 
-.method static createDocumentTable(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 6
-    .parameter
+    const-string v2, "messageKey"
 
-    .prologue
-    const/4 v0, 0x0
-
-    .line 1325
-    const-string v1, "linkId text UNIQUE, displayName text, isFolder integer, creationDate integer, lastModifiedDate integer, ishidden integer, contentLength integer, contentType text, mailboxKey integer, accountKey integer,parentFolderLinkId integer);"
-
-    .line 1337
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, " (_id integer primary key autoincrement, syncServerId text, syncServerTimeStamp integer, "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 1353
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "create table Document"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1, v2}, Lcom/android/email/provider/EmailProvider;->createIndex(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1359
-    const/4 v1, 0x5
-
-    new-array v1, v1, [Ljava/lang/String;
-
-    const-string v2, "creationDate"
-
-    aput-object v2, v1, v0
-
-    const/4 v2, 0x1
-
-    const-string v3, "isFolder"
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    const-string v3, "ishidden"
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    const-string v3, "mailboxKey"
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x4
-
-    const-string v3, "syncServerId"
-
-    aput-object v3, v1, v2
-
-    .line 1364
-    array-length v2, v1
-
-    :goto_48
-    if-ge v0, v2, :cond_58
-
-    aget-object v3, v1, v0
-
-    .line 1365
-    const-string v4, "Document"
-
-    invoke-static {v4, v3}, Lcom/android/email/provider/EmailProvider;->createIndex(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p0, v3}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1364
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_48
-
-    .line 1379
-    :cond_58
-    return-void
-.end method
-
-.method static createEmailAddressCacheTable(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 4
-    .parameter "db"
-
-    .prologue
-    .line 1485
-    const-string v0, " (_id integer primary key autoincrement, accountAddress text constraint email unique not null, accountName text, accountSource text, accountPrefix text, timeStamp integer, usageCount integer, operationType  integer, accountRank integer );"
-
-    .line 1494
-    .local v0, combinedSearchColumns:Ljava/lang/String;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "create table EmailAddressCache"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1495
-    const-string v1, "CREATE TRIGGER email_cache_delete BEFORE INSERT ON EmailAddressCache WHEN ((SELECT COUNT(*) FROM EmailAddressCache)  >= 50 )  begin delete from EmailAddressCache  where timeStamp= (SELECT min(timeStamp) from EmailAddressCache ) AND usageCount= (SELECT min(usageCount) from EmailAddressCache );end"
-
-    invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1496
-    const-string v1, "CREATE TRIGGER email_cache_update AFTER UPDATE ON EmailAddressCache begin update EmailAddressCache set usageCount = NEW.usageCount + OLD.usageCount where _id=NEW._id;end"
-
-    invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1497
-    return-void
-.end method
-
-.method static createFollowupFlagsTable(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 4
-    .parameter "db"
-
-    .prologue
-    .line 1248
-    const-string v0, " (_id integer primary key autoincrement, messageKey integer, messageSyncServerId text, taskKey integer, taskSyncServerId text, ringtoneUri text, status integer, flagType text, completeTime text, dateCompleted text, startDate text, dueDate text, UTCStartDate text, UTCDueDate text, reminderSet integer, reminderTime text, ordinalDate text, sub_ordinaldate text );"
-
-    .line 1262
-    .local v0, s:Ljava/lang/String;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "create table FollowupFlag"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1263
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "create table FollowupFlag_Updates"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1264
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "create table FollowupFlag_Deletes"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1267
-    const-string v1, "create trigger message_delete_followup before delete on Message begin delete from FollowupFlag where messageKey=old._id; end"
-
-    invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1270
-    return-void
-.end method
-
-.method static createHistoryAccountTable(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 4593
-    const-string v0, " (_id integer primary key autoincrement, EmailAddress text UNIQUE, TimeDate text );"
-
-    .line 4596
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "create table historyAccount"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 4597
+    .line 768
     return-void
 .end method
 
@@ -1858,10 +1530,10 @@
     .parameter "db"
 
     .prologue
-    .line 1078
-    const-string v0, " (_id integer primary key autoincrement, protocol text, address text, port integer, flags integer, login text, password text, domain text, accountKey integer);"
+    .line 660
+    const-string v0, " (_id integer primary key autoincrement, protocol text, address text, port integer, flags integer, login text, password text, domain text, accountKey integer,certAlias text);"
 
-    .line 1084
+    .line 671
     .local v0, s:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1883,41 +1555,7 @@
 
     invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1085
-    return-void
-.end method
-
-.method static createIRMTemplateTable(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 4
-    .parameter "db"
-
-    .prologue
-    .line 1058
-    const-string v0, " (_id integer primary key autoincrement, AccountKey integer, IRMTemplateDescription text, IRMTemplateId text, IRMTemplateName text);"
-
-    .line 1064
-    .local v0, s:Ljava/lang/String;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "create table IRMTemplate"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1065
+    .line 672
     return-void
 .end method
 
@@ -1927,7 +1565,7 @@
     .parameter "columnName"
 
     .prologue
-    .line 639
+    .line 446
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1989,70 +1627,15 @@
     return-object v0
 .end method
 
-.method static createMailboxCBTable(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 1397
-    const-string v0, " (_id integer primary key autoincrement, mailboxKey integer, typeMsg integer, sevenMailboxKey integer, syncFlag integer);"
-
-    .line 1402
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "CREATE TABLE IF NOT EXISTS  Mailbox_CB"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1403
-    const-string v0, "Mailbox_CB"
-
-    const-string v1, "mailboxKey"
-
-    invoke-static {v0, v1}, Lcom/android/email/provider/EmailProvider;->createIndex(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1404
-    const-string v0, "Mailbox_CB"
-
-    const-string v1, "typeMsg"
-
-    invoke-static {v0, v1}, Lcom/android/email/provider/EmailProvider;->createIndex(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1405
-    return-void
-.end method
-
 .method static createMailboxTable(Landroid/database/sqlite/SQLiteDatabase;)V
     .registers 4
     .parameter "db"
 
     .prologue
-    .line 1096
-    const-string v0, " (_id integer primary key autoincrement, displayName text, serverId text, parentServerId text, parentKey integer, accountKey integer, type integer, delimiter integer, syncKey text, syncLookback integer, syncInterval integer, syncTime integer, unreadCount integer, flagVisible integer, flags integer, visibleLimit integer, syncStatus text, messageCount integer not null default 0,flagChanged integer, dstMailboxId text, newDisplayName text, flagNoSelect integer default 0, lastTouchedTime integer default 0 ,offpeakSyncSchedule integer ,peakSyncSchedule integer ,SyncIntervalReference integer default -1 ,keyWord text );"
+    .line 683
+    const-string v0, " (_id integer primary key autoincrement, displayName text, serverId text, parentServerId text, parentKey integer, accountKey integer, type integer, delimiter integer, syncKey text, syncLookback integer, syncInterval integer, syncTime integer, unreadCount integer, flagVisible integer, flags integer, visibleLimit integer, syncStatus text, messageCount integer not null default 0, lastSeenMessageKey integer, lastTouchedTime integer default 0);"
 
-    .line 1129
+    .line 704
     .local v0, s:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2074,306 +1657,264 @@
 
     invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1130
+    .line 705
     const-string v1, "create index mailbox_serverId on Mailbox (serverId)"
 
     invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1132
+    .line 707
     const-string v1, "create index mailbox_accountKey on Mailbox (accountKey)"
 
     invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1135
+    .line 710
     const-string v1, "create trigger mailbox_delete before delete on Mailbox begin delete from Message  where mailboxKey=old._id; delete from Message_Updates  where mailboxKey=old._id; delete from Message_Deletes  where mailboxKey=old._id; end"
 
     invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1136
-    return-void
-.end method
-
-.method static createMessageCBTable(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 1416
-    const-string v0, " (_id integer primary key autoincrement, messageKey integer, typeMsg integer,sevenMessageKey integer, missingBody integer, missingHtmlBody integer, unkEncoding integer, sevenAccountKey integer );"
-
-    .line 1424
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "CREATE TABLE IF NOT EXISTS  Message_CB"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1425
-    const-string v0, "Message_CB"
-
-    const-string v1, "messageKey"
-
-    invoke-static {v0, v1}, Lcom/android/email/provider/EmailProvider;->createIndex(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1426
-    const-string v0, "Message_CB"
-
-    const-string v1, "typeMsg"
-
-    invoke-static {v0, v1}, Lcom/android/email/provider/EmailProvider;->createIndex(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1427
+    .line 711
     return-void
 .end method
 
 .method static createMessageTable(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 6
-    .parameter
+    .registers 11
+    .parameter "db"
 
     .prologue
-    const/4 v0, 0x0
+    .line 451
+    const-string v7, "displayName text, timeStamp integer, subject text, flagRead integer, flagLoaded integer, flagFavorite integer, flagAttachment integer, flags integer, clientId integer, messageId text, mailboxKey integer, accountKey integer, fromList text, toList text, ccList text, bccList text, replyToList text, meetingInfo text, snippet text, protocolSearchInfo text);"
 
-    .line 644
-    const-string v1, "displayName text, timeStamp integer, subject text, flagRead integer, flagLoaded integer, flagFavorite integer, flagAttachment integer, flagReply integer, originalId integer, flags integer, clientId integer, messageId text, mailboxKey integer, accountKey integer, fromList text, toList text, ccList text, bccList text, replyToList text, meetingInfo text, threadId integer, threadName text, importance integer default 1, istruncated integer default 0, flagMoved integer default 0, dstMailboxKey integer default -1,flagStatus integer default 0, isMimeLoaded integer default 0, smimeFlags integer default 0, encryptionAlgorithm integer default 0, conversationId text, conversationIndex blob, followupflag integer default 0, umCallerId text, umUserNotes text,lastVerb integer default 0, lastVerbTime integer default 0,messageType integer default 0, messageDirty integer default 0, accountSchema text, mailboxType integer default -1, IRMTemplateId text, IRMContentExpiryDate text, IRMContentOwner text, IRMLicenseFlag integer default -1, IRMOwner integer, IRMRemovalFlag integer default 0, IRMTemplateName text, IRMTemplateDescription text, EasLocalDeleteFlag integer default 0, EasLocalReadFlag integer default 0, snippet text, retrySendTimes integer default 0);"
+    .line 475
+    .local v7, messageColumns:Ljava/lang/String;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    .line 771
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v9, " (_id integer primary key autoincrement, syncServerId text, syncServerTimeStamp integer, "
 
-    const-string v3, " (_id integer primary key autoincrement, syncServerId text, syncServerTimeStamp integer, "
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v8
 
-    move-result-object v2
+    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v8
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 780
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, " (_id integer unique, syncServerId text, syncServerTimeStamp integer, "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 483
+    .local v3, createString:Ljava/lang/String;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v9, " (_id integer unique, syncServerId text, syncServerTimeStamp integer, "
 
-    move-result-object v1
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 785
-    new-instance v3, Ljava/lang/StringBuilder;
+    move-result-object v8
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v4, "create table Message"
+    move-result-object v8
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 489
+    .local v0, altCreateString:Ljava/lang/String;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v9, "create table Message"
 
-    move-result-object v2
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, v2}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    move-result-object v8
 
-    .line 786
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v8
 
-    const-string v3, "create table Message_Updates"
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v8
 
-    move-result-object v2
+    invoke-virtual {p0, v8}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 490
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v9, "create table Message_Updates"
 
-    move-result-object v2
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, v2}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    move-result-object v8
 
-    .line 787
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v8
 
-    const-string v3, "create table Message_Deletes"
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v8
 
-    move-result-object v2
+    invoke-virtual {p0, v8}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 491
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v9, "create table Message_Deletes"
 
-    move-result-object v1
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    move-result-object v8
 
-    .line 789
-    const/4 v1, 0x5
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-array v1, v1, [Ljava/lang/String;
+    move-result-object v8
 
-    const-string v2, "timeStamp"
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    aput-object v2, v1, v0
+    move-result-object v8
 
-    const/4 v2, 0x1
+    invoke-virtual {p0, v8}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    const-string v3, "flagRead"
+    .line 493
+    const/4 v8, 0x5
 
-    aput-object v3, v1, v2
+    new-array v5, v8, [Ljava/lang/String;
 
-    const/4 v2, 0x2
+    const/4 v8, 0x0
 
-    const-string v3, "flagLoaded"
+    const-string v9, "timeStamp"
 
-    aput-object v3, v1, v2
+    aput-object v9, v5, v8
 
-    const/4 v2, 0x3
+    const/4 v8, 0x1
 
-    const-string v3, "mailboxKey"
+    const-string v9, "flagRead"
 
-    aput-object v3, v1, v2
+    aput-object v9, v5, v8
 
-    const/4 v2, 0x4
+    const/4 v8, 0x2
 
-    const-string v3, "syncServerId"
+    const-string v9, "flagLoaded"
 
-    aput-object v3, v1, v2
+    aput-object v9, v5, v8
 
-    .line 794
-    array-length v2, v1
+    const/4 v8, 0x3
 
-    :goto_87
-    if-ge v0, v2, :cond_97
+    const-string v9, "mailboxKey"
 
-    aget-object v3, v1, v0
+    aput-object v9, v5, v8
 
-    .line 795
-    const-string v4, "Message"
+    const/4 v8, 0x4
 
-    invoke-static {v4, v3}, Lcom/android/email/provider/EmailProvider;->createIndex(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    const-string v9, "syncServerId"
 
-    move-result-object v3
+    aput-object v9, v5, v8
 
-    invoke-virtual {p0, v3}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    .line 501
+    .local v5, indexColumns:[Ljava/lang/String;
+    move-object v1, v5
 
-    .line 794
-    add-int/lit8 v0, v0, 0x1
+    .local v1, arr$:[Ljava/lang/String;
+    array-length v6, v1
 
-    goto :goto_87
+    .local v6, len$:I
+    const/4 v4, 0x0
 
-    .line 803
-    :cond_97
-    const-string v0, "create trigger message_delete before delete on Message begin delete from Attachment  where messageKey=old._id; end"
+    .local v4, i$:I
+    :goto_89
+    if-ge v4, v6, :cond_99
 
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    aget-object v2, v1, v4
 
-    .line 815
-    const-string v0, "create trigger unread_message_insert before insert on Message when NEW.flagRead=0 begin update Mailbox set unreadCount=unreadCount+1  where _id=NEW.mailboxKey; end"
+    .line 502
+    .local v2, columnName:Ljava/lang/String;
+    const-string v8, "Message"
 
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-static {v8, v2}, Lcom/android/email/provider/EmailProvider;->createIndex(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 823
-    const-string v0, "create trigger unread_message_delete before delete on Message when OLD.flagRead=0 begin update Mailbox set unreadCount=unreadCount-1  where _id=OLD.mailboxKey; end"
+    move-result-object v8
 
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-virtual {p0, v8}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 830
-    const-string v0, "create trigger unread_message_move before update of mailboxKey on Message when OLD.flagRead=0 begin update Mailbox set unreadCount=unreadCount-1  where _id=OLD.mailboxKey; update Mailbox set unreadCount=unreadCount+1 where _id=NEW.mailboxKey; end"
+    .line 501
+    add-int/lit8 v4, v4, 0x1
 
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    goto :goto_89
 
-    .line 840
-    const-string v0, "create trigger unread_message_read before update of flagRead on Message when OLD.flagRead!=NEW.flagRead begin update Mailbox set unreadCount=unreadCount+ case OLD.flagRead when 0 then -1 else 1 end  where _id=OLD.mailboxKey; end"
+    .line 508
+    .end local v2           #columnName:Ljava/lang/String;
+    :cond_99
+    const-string v8, "create trigger message_delete before delete on Message begin delete from Attachment  where messageKey=old._id; end"
 
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-virtual {p0, v8}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 851
-    const-string v0, "create trigger message_count_message_insert after insert on Message begin update Mailbox set messageCount=messageCount+1  where _id=NEW.mailboxKey; end"
+    .line 519
+    const-string v8, "create trigger unread_message_insert before insert on Message when NEW.flagRead=0 begin update Mailbox set unreadCount=unreadCount+1  where _id=NEW.mailboxKey; end"
 
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-virtual {p0, v8}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 859
-    const-string v0, "create trigger message_count_message_delete after delete on Message begin update Mailbox set messageCount=messageCount-1  where _id=OLD.mailboxKey; end"
+    .line 527
+    const-string v8, "create trigger unread_message_delete before delete on Message when OLD.flagRead=0 begin update Mailbox set unreadCount=unreadCount-1  where _id=OLD.mailboxKey; end"
 
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-virtual {p0, v8}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 866
-    const-string v0, "create trigger message_count_message_move after update of mailboxKey on Message begin update Mailbox set messageCount=messageCount-1  where _id=OLD.mailboxKey; update Mailbox set messageCount=messageCount+1 where _id=NEW.mailboxKey; end"
+    .line 535
+    const-string v8, "create trigger unread_message_move before update of mailboxKey on Message when OLD.flagRead=0 begin update Mailbox set unreadCount=unreadCount-1  where _id=OLD.mailboxKey; update Mailbox set unreadCount=unreadCount+1 where _id=NEW.mailboxKey; end"
 
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-virtual {p0, v8}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 874
+    .line 547
+    const-string v8, "create trigger unread_message_read before update of flagRead on Message when OLD.flagRead!=NEW.flagRead begin update Mailbox set unreadCount=unreadCount+ case OLD.flagRead when 0 then -1 else 1 end  where _id=OLD.mailboxKey; end"
+
+    invoke-virtual {p0, v8}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    .line 559
+    const-string v8, "create trigger message_count_message_insert after insert on Message begin update Mailbox set messageCount=messageCount+1  where _id=NEW.mailboxKey; end"
+
+    invoke-virtual {p0, v8}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    .line 567
+    const-string v8, "create trigger message_count_message_delete after delete on Message begin update Mailbox set messageCount=messageCount-1  where _id=OLD.mailboxKey; end"
+
+    invoke-virtual {p0, v8}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    .line 575
+    const-string v8, "create trigger message_count_message_move after update of mailboxKey on Message begin update Mailbox set messageCount=messageCount-1  where _id=OLD.mailboxKey; update Mailbox set messageCount=messageCount+1 where _id=NEW.mailboxKey; end"
+
+    invoke-virtual {p0, v8}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    .line 584
     return-void
 .end method
 
-.method static createPoliciesTable(Landroid/database/sqlite/SQLiteDatabase;)V
+.method static createPolicyTable(Landroid/database/sqlite/SQLiteDatabase;)V
     .registers 4
     .parameter "db"
 
     .prologue
-    .line 1216
-    const-string v0, " (_id integer primary key autoincrement, name text, type text, value text, account_id integer , CONSTRAINT policyconstraint UNIQUE(account_id,name));"
+    .line 634
+    const-string v0, " (_id integer primary key autoincrement, passwordMode integer, passwordMinLength integer, passwordExpirationDays integer, passwordHistory integer, passwordComplexChars integer, passwordMaxFails integer, maxScreenLockTime integer, requireRemoteWipe integer, requireEncryption integer, requireEncryptionExternal integer, requireManualSyncRoaming integer, dontAllowCamera integer, dontAllowAttachments integer, dontAllowHtml integer, maxAttachmentSize integer, maxTextTruncationSize integer, maxHTMLTruncationSize integer, maxEmailLookback integer, maxCalendarLookback integer, passwordRecoveryEnabled integer);"
 
-    .line 1224
+    .line 656
     .local v0, s:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "create table Policies"
+    const-string v2, "create table Policy"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2389,7 +1930,7 @@
 
     invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1226
+    .line 657
     return-void
 .end method
 
@@ -2398,10 +1939,10 @@
     .parameter "db"
 
     .prologue
-    .line 1178
+    .line 749
     const-string v0, " (_id integer primary key autoincrement, quickResponse text, accountKey integer);"
 
-    .line 1181
+    .line 753
     .local v0, s:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2423,54 +1964,20 @@
 
     invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1182
+    .line 754
     return-void
 .end method
 
-.method static createRecipientInformationTable(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 4
-    .parameter "db"
-
-    .prologue
-    .line 1274
-    const-string v0, " (_id integer primary key autoincrement, server_id text, accountkey integer, email_address text, fileas text, alias text, weightedrank integer );"
-
-    .line 1281
-    .local v0, s:Ljava/lang/String;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "create table RecipientInformation"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 1283
-    return-void
-.end method
-
-.method static deleteOrphans(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
+.method static deleteMessageOrphans(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
     .registers 22
     .parameter "database"
     .parameter "tableName"
 
     .prologue
-    .line 1642
+    .line 996
     if-eqz p0, :cond_1a
 
-    .line 1645
+    .line 998
     sget-object v4, Lcom/android/email/provider/EmailProvider;->ORPHANS_PROJECTION:[Ljava/lang/String;
 
     const/4 v5, 0x0
@@ -2491,7 +1998,7 @@
 
     move-result-object v11
 
-    .line 1649
+    .line 1001
     .local v11, c:Landroid/database/Cursor;
     :try_start_11
     invoke-interface {v11}, Landroid/database/Cursor;->getCount()I
@@ -2502,16 +2009,16 @@
 
     if-nez v2, :cond_1b
 
-    .line 1692
+    .line 1038
     invoke-interface {v11}, Landroid/database/Cursor;->close()V
 
-    .line 1695
+    .line 1041
     .end local v11           #c:Landroid/database/Cursor;
     :cond_1a
     :goto_1a
     return-void
 
-    .line 1651
+    .line 1002
     .restart local v11       #c:Landroid/database/Cursor;
     :cond_1b
     :try_start_1b
@@ -2519,25 +2026,25 @@
 
     invoke-direct {v13}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1652
+    .line 1003
     .local v13, foundMailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
     new-instance v19, Ljava/util/ArrayList;
 
     invoke-direct/range {v19 .. v19}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1653
+    .line 1004
     .local v19, notFoundMailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
     new-instance v12, Ljava/util/ArrayList;
 
     invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1654
+    .line 1005
     .local v12, deleteList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
     const/4 v2, 0x1
 
     new-array v6, v2, [Ljava/lang/String;
 
-    .line 1655
+    .line 1006
     .local v6, bindArray:[Ljava/lang/String;
     :cond_2d
     :goto_2d
@@ -2547,14 +2054,14 @@
 
     if-eqz v2, :cond_a2
 
-    .line 1659
+    .line 1009
     const/4 v2, 0x1
 
     invoke-interface {v11, v2}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v15
 
-    .line 1662
+    .line 1011
     .local v15, mailboxId:J
     invoke-static/range {v15 .. v16}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -2568,7 +2075,7 @@
 
     if-eqz v2, :cond_56
 
-    .line 1663
+    .line 1012
     const/4 v2, 0x0
 
     invoke-interface {v11, v2}, Landroid/database/Cursor;->getLong(I)J
@@ -2585,7 +2092,7 @@
 
     goto :goto_2d
 
-    .line 1692
+    .line 1038
     .end local v6           #bindArray:[Ljava/lang/String;
     .end local v12           #deleteList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
     .end local v13           #foundMailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
@@ -2598,7 +2105,7 @@
 
     throw v2
 
-    .line 1666
+    .line 1014
     .restart local v6       #bindArray:[Ljava/lang/String;
     .restart local v12       #deleteList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
     .restart local v13       #foundMailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
@@ -2616,7 +2123,7 @@
 
     if-nez v2, :cond_2d
 
-    .line 1667
+    .line 1015
     const/4 v2, 0x0
 
     invoke-static/range {v15 .. v16}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
@@ -2625,10 +2132,10 @@
 
     aput-object v3, v6, v2
 
-    .line 1668
+    .line 1016
     const-string v3, "Mailbox"
 
-    sget-object v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->ID_PROJECTION:[Ljava/lang/String;
+    sget-object v4, Lcom/android/emailcommon/provider/Mailbox;->ID_PROJECTION:[Ljava/lang/String;
 
     const-string v5, "_id=?"
 
@@ -2646,7 +2153,7 @@
 
     move-result-object v10
 
-    .line 1673
+    .line 1020
     .local v10, boxCursor:Landroid/database/Cursor;
     :try_start_76
     invoke-interface {v10}, Landroid/database/Cursor;->moveToFirst()Z
@@ -2655,7 +2162,7 @@
 
     if-eqz v2, :cond_87
 
-    .line 1674
+    .line 1021
     invoke-static/range {v15 .. v16}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -2664,7 +2171,7 @@
     :try_end_83
     .catchall {:try_start_76 .. :try_end_83} :catchall_9d
 
-    .line 1682
+    .line 1028
     :goto_83
     :try_start_83
     invoke-interface {v10}, Landroid/database/Cursor;->close()V
@@ -2673,7 +2180,7 @@
 
     goto :goto_2d
 
-    .line 1678
+    .line 1024
     :cond_87
     :try_start_87
     invoke-static/range {v15 .. v16}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2684,7 +2191,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1679
+    .line 1025
     const/4 v2, 0x0
 
     invoke-interface {v11, v2}, Landroid/database/Cursor;->getLong(I)J
@@ -2701,7 +2208,7 @@
 
     goto :goto_83
 
-    .line 1682
+    .line 1028
     :catchall_9d
     move-exception v2
 
@@ -2710,7 +2217,7 @@
 
     throw v2
 
-    .line 1687
+    .line 1033
     .end local v10           #boxCursor:Landroid/database/Cursor;
     .end local v15           #mailboxId:J
     :cond_a2
@@ -2736,7 +2243,7 @@
 
     move-result-wide v17
 
-    .line 1688
+    .line 1034
     .local v17, messageId:J
     const/4 v2, 0x0
 
@@ -2746,7 +2253,7 @@
 
     aput-object v3, v6, v2
 
-    .line 1689
+    .line 1035
     const-string v2, "_id=?"
 
     move-object/from16 v0, p0
@@ -2759,7 +2266,7 @@
 
     goto :goto_a6
 
-    .line 1692
+    .line 1038
     .end local v17           #messageId:J
     :cond_c7
     invoke-interface {v11}, Landroid/database/Cursor;->close()V
@@ -2767,271 +2274,24 @@
     goto/16 :goto_1a
 .end method
 
-.method static dropTrigger(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
-    .registers 4
-    .parameter "db"
-    .parameter "triggerName"
-
-    .prologue
-    .line 1478
-    :try_start_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "drop trigger "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-    :try_end_16
-    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_16} :catch_17
-
-    .line 1481
-    :goto_16
-    return-void
-
-    .line 1479
-    :catch_17
-    move-exception v0
-
-    goto :goto_16
-.end method
-
-.method static enableEmailSyncFromGB(Landroid/database/sqlite/SQLiteDatabase;Landroid/content/Context;)V
-    .registers 11
-    .parameter
-    .parameter
-
-    .prologue
-    .line 4614
-    :try_start_0
-    const-string v1, "Account"
-
-    sget-object v2, Lcom/android/email/provider/EmailProvider;->V21_ACCOUNT_PROJECTION:[Ljava/lang/String;
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    move-object v0, p0
-
-    invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_d
-    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_d} :catch_61
-
-    move-result-object v8
-
-    .line 4617
-    const/4 v0, 0x1
-
-    :try_start_f
-    new-array v4, v0, [Ljava/lang/String;
-
-    .line 4618
-    :goto_11
-    invoke-interface {v8}, Landroid/database/Cursor;->moveToNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_80
-
-    .line 4619
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    invoke-interface {v8, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    aput-object v1, v4, v0
-
-    .line 4621
-    const-string v1, "HostAuth"
-
-    sget-object v2, Lcom/android/email/provider/EmailProvider;->V21_HOSTAUTH_PROJECTION:[Ljava/lang/String;
-
-    const-string v3, "_id=?"
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    move-object v0, p0
-
-    invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_2c
-    .catchall {:try_start_f .. :try_end_2c} :catchall_5c
-
-    move-result-object v1
-
-    .line 4625
-    :try_start_2d
-    invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_58
-
-    .line 4626
-    const/4 v0, 0x0
-
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 4627
-    const-string v2, "eas"
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_58
-
-    .line 4628
-    new-instance v0, Landroid/accounts/Account;
-
-    const/4 v2, 0x1
-
-    invoke-interface {v8, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "com.android.exchange"
-
-    invoke-direct {v0, v2, v3}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 4632
-    const-string v2, "com.android.email.provider"
-
-    const/4 v3, 0x1
-
-    invoke-static {v0, v2, v3}, Landroid/content/ContentResolver;->setIsSyncable(Landroid/accounts/Account;Ljava/lang/String;I)V
-
-    .line 4633
-    const-string v2, "com.android.email.provider"
-
-    const/4 v3, 0x1
-
-    invoke-static {v0, v2, v3}, Landroid/content/ContentResolver;->setSyncAutomatically(Landroid/accounts/Account;Ljava/lang/String;Z)V
-    :try_end_58
-    .catchall {:try_start_2d .. :try_end_58} :catchall_7b
-
-    .line 4638
-    :cond_58
-    :try_start_58
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-    :try_end_5b
-    .catchall {:try_start_58 .. :try_end_5b} :catchall_5c
-
-    goto :goto_11
-
-    .line 4642
-    :catchall_5c
-    move-exception v0
-
-    :try_start_5d
-    invoke-interface {v8}, Landroid/database/Cursor;->close()V
-
-    throw v0
-    :try_end_61
-    .catch Landroid/database/SQLException; {:try_start_5d .. :try_end_61} :catch_61
-
-    .line 4644
-    :catch_61
-    move-exception v0
-
-    .line 4646
-    const-string v1, "EmailProvider"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Exception enabling Sync Email option from GB "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 4648
-    :goto_7a
-    return-void
-
-    .line 4638
-    :catchall_7b
-    move-exception v0
-
-    :try_start_7c
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    throw v0
-    :try_end_80
-    .catchall {:try_start_7c .. :try_end_80} :catchall_5c
-
-    .line 4642
-    :cond_80
-    :try_start_80
-    invoke-interface {v8}, Landroid/database/Cursor;->close()V
-    :try_end_83
-    .catch Landroid/database/SQLException; {:try_start_80 .. :try_end_83} :catch_61
-
-    goto :goto_7a
-.end method
-
 .method private static findMatch(Landroid/net/Uri;Ljava/lang/String;)I
     .registers 6
     .parameter "uri"
     .parameter "methodName"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;
-        }
-    .end annotation
 
     .prologue
-    .line 623
+    .line 429
     sget-object v1, Lcom/android/email/provider/EmailProvider;->sURIMatcher:Landroid/content/UriMatcher;
 
     invoke-virtual {v1, p0}, Landroid/content/UriMatcher;->match(Landroid/net/Uri;)I
 
     move-result v0
 
-    .line 624
+    .line 430
     .local v0, match:I
     if-gez v0, :cond_21
 
-    .line 625
+    .line 431
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3056,111 +2316,529 @@
 
     throw v1
 
-    .line 629
+    .line 432
     :cond_21
+    sget-boolean v1, Lcom/android/emailcommon/Logging;->LOGD:Z
+
+    if-eqz v1, :cond_4b
+
+    .line 433
+    const-string v1, "EmailProvider"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ": uri="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ", match is "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 435
+    :cond_4b
     return v0
 .end method
 
-.method public static getRemoteFolder(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Mailbox;)Ljava/lang/String;
-    .registers 7
-    .parameter
+.method private static getBackupDatabase(Landroid/content/Context;)Landroid/database/sqlite/SQLiteDatabase;
+    .registers 3
     .parameter
 
     .prologue
-    .line 4580
-    iget-object v0, p1, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
+    .line 2036
+    new-instance v0, Lcom/android/email/provider/EmailProvider$DatabaseHelper;
 
-    .line 4581
-    iget-wide v1, p1, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mAccountKey:J
+    const-string v1, "EmailProviderBackup.db"
 
-    invoke-static {p0, v1, v2}, Lcom/android/emailcommon/provider/EmailContent$Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Account;
+    invoke-direct {v0, p0, v1}, Lcom/android/email/provider/EmailProvider$DatabaseHelper;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    .line 2037
+    invoke-virtual {v0}, Lcom/android/email/provider/EmailProvider$DatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private getBaseNotificationUri(I)Landroid/net/Uri;
+    .registers 3
+    .parameter "match"
+
+    .prologue
+    .line 2300
+    const/4 v0, 0x0
+
+    .line 2301
+    .local v0, baseUri:Landroid/net/Uri;
+    sparse-switch p1, :sswitch_data_c
+
+    .line 2312
+    :goto_4
+    return-object v0
+
+    .line 2305
+    :sswitch_5
+    sget-object v0, Lcom/android/emailcommon/provider/EmailContent$Message;->NOTIFIER_URI:Landroid/net/Uri;
+
+    .line 2306
+    goto :goto_4
+
+    .line 2309
+    :sswitch_8
+    sget-object v0, Lcom/android/emailcommon/provider/Account;->NOTIFIER_URI:Landroid/net/Uri;
+
+    goto :goto_4
+
+    .line 2301
+    nop
+
+    :sswitch_data_c
+    .sparse-switch
+        0x0 -> :sswitch_8
+        0x1 -> :sswitch_8
+        0x2000 -> :sswitch_5
+        0x2001 -> :sswitch_5
+        0x2002 -> :sswitch_5
+    .end sparse-switch
+.end method
+
+.method private getMailboxIdFromMailboxTypeMap(JI)J
+    .registers 9
+    .parameter "accountId"
+    .parameter "type"
+
+    .prologue
+    .line 911
+    iget-object v4, p0, Lcom/android/email/provider/EmailProvider;->mMailboxTypeMap:Ljava/util/HashMap;
+
+    monitor-enter v4
+
+    .line 912
+    :try_start_3
+    iget-object v2, p0, Lcom/android/email/provider/EmailProvider;->mMailboxTypeMap:Ljava/util/HashMap;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/HashMap;
+
+    .line 913
+    .local v0, accountMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Long;>;"
+    const/4 v1, 0x0
+
+    .line 914
+    .local v1, mailboxId:Ljava/lang/Long;
+    if-eqz v0, :cond_1c
+
+    .line 915
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 4582
-    if-eqz v1, :cond_1a
+    .end local v1           #mailboxId:Ljava/lang/Long;
+    check-cast v1, Ljava/lang/Long;
 
-    const/4 v2, 0x5
+    .line 917
+    .restart local v1       #mailboxId:Ljava/lang/Long;
+    :cond_1c
+    if-nez v1, :cond_22
 
-    iget-wide v3, v1, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    const-wide/16 v2, -0x1
 
-    invoke-static {v3, v4}, Lcom/android/email/adapter/ProtocolAdapter;->getAccountTransport(J)I
+    monitor-exit v4
 
-    move-result v1
+    .line 918
+    :goto_21
+    return-wide v2
 
-    if-ne v2, v1, :cond_1a
+    :cond_22
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
 
-    .line 4585
-    iget v0, p1, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
+    move-result-wide v2
 
-    const/4 v1, 0x6
+    monitor-exit v4
 
-    if-ne v0, v1, :cond_1b
+    goto :goto_21
 
-    const-string v0, "Trash"
+    .line 919
+    .end local v0           #accountMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Long;>;"
+    .end local v1           #mailboxId:Ljava/lang/Long;
+    :catchall_28
+    move-exception v2
 
-    .line 4588
-    :cond_1a
-    :goto_1a
-    return-object v0
+    monitor-exit v4
+    :try_end_2a
+    .catchall {:try_start_3 .. :try_end_2a} :catchall_28
 
-    .line 4585
-    :cond_1b
-    const-string v0, "UnifiedInbox"
-
-    goto :goto_1a
+    throw v2
 .end method
 
-.method private populateFollowupFlagsTable(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 2
-    .parameter "db"
+.method private getOrCreateAccountMailboxTypeMap(J)Ljava/util/HashMap;
+    .registers 7
+    .parameter "accountId"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J)",
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/Integer;",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 1319
+    .line 890
+    iget-object v2, p0, Lcom/android/email/provider/EmailProvider;->mMailboxTypeMap:Ljava/util/HashMap;
+
+    monitor-enter v2
+
+    .line 891
+    :try_start_3
+    iget-object v1, p0, Lcom/android/email/provider/EmailProvider;->mMailboxTypeMap:Ljava/util/HashMap;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/HashMap;
+
+    .line 892
+    .local v0, accountMailboxTypeMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Long;>;"
+    if-nez v0, :cond_1f
+
+    .line 893
+    new-instance v0, Ljava/util/HashMap;
+
+    .end local v0           #accountMailboxTypeMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Long;>;"
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    .line 894
+    .restart local v0       #accountMailboxTypeMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Long;>;"
+    iget-object v1, p0, Lcom/android/email/provider/EmailProvider;->mMailboxTypeMap:Ljava/util/HashMap;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 896
+    :cond_1f
+    monitor-exit v2
+
+    return-object v0
+
+    .line 897
+    .end local v0           #accountMailboxTypeMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Long;>;"
+    :catchall_21
+    move-exception v1
+
+    monitor-exit v2
+    :try_end_23
+    .catchall {:try_start_3 .. :try_end_23} :catchall_21
+
+    throw v1
+.end method
+
+.method static getReadableDatabase(Landroid/content/Context;)Landroid/database/sqlite/SQLiteDatabase;
+    .registers 3
+    .parameter "context"
+
+    .prologue
+    .line 947
+    new-instance v0, Lcom/android/email/provider/EmailProvider$DatabaseHelper;
+
+    const-string v1, "EmailProvider.db"
+
+    invoke-direct {v0, p0, v1}, Lcom/android/email/provider/EmailProvider$DatabaseHelper;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    .line 948
+    .local v0, helper:Lcom/android/email/provider/EmailProvider$DatabaseHelper;
+    invoke-virtual {v0}, Lcom/android/email/provider/EmailProvider$DatabaseHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v1
+
+    return-object v1
+.end method
+
+.method private preCacheData()V
+    .registers 9
+
+    .prologue
+    .line 923
+    iget-object v5, p0, Lcom/android/email/provider/EmailProvider;->mMailboxTypeMap:Ljava/util/HashMap;
+
+    monitor-enter v5
+
+    .line 924
+    :try_start_3
+    iget-object v4, p0, Lcom/android/email/provider/EmailProvider;->mMailboxTypeMap:Ljava/util/HashMap;
+
+    invoke-virtual {v4}, Ljava/util/HashMap;->clear()V
+
+    .line 927
+    sget-object v4, Lcom/android/emailcommon/provider/Account;->CONTENT_URI:Landroid/net/Uri;
+
+    sget-object v6, Lcom/android/emailcommon/provider/Account;->CONTENT_PROJECTION:[Ljava/lang/String;
+
+    const/4 v7, 0x0
+
+    invoke-direct {p0, v4, v6, v7}, Lcom/android/email/provider/EmailProvider;->preCacheTable(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 928
+    sget-object v4, Lcom/android/emailcommon/provider/HostAuth;->CONTENT_URI:Landroid/net/Uri;
+
+    sget-object v6, Lcom/android/emailcommon/provider/HostAuth;->CONTENT_PROJECTION:[Ljava/lang/String;
+
+    const/4 v7, 0x0
+
+    invoke-direct {p0, v4, v6, v7}, Lcom/android/email/provider/EmailProvider;->preCacheTable(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 929
+    sget-object v4, Lcom/android/emailcommon/provider/Policy;->CONTENT_URI:Landroid/net/Uri;
+
+    sget-object v6, Lcom/android/emailcommon/provider/Policy;->CONTENT_PROJECTION:[Ljava/lang/String;
+
+    const/4 v7, 0x0
+
+    invoke-direct {p0, v4, v6, v7}, Lcom/android/email/provider/EmailProvider;->preCacheTable(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 930
+    sget-object v4, Lcom/android/emailcommon/provider/Mailbox;->CONTENT_URI:Landroid/net/Uri;
+
+    sget-object v6, Lcom/android/emailcommon/provider/Mailbox;->CONTENT_PROJECTION:[Ljava/lang/String;
+
+    const-string v7, "type IN (0,3,6,5,8,4)"
+
+    invoke-direct {p0, v4, v6, v7}, Lcom/android/email/provider/EmailProvider;->preCacheTable(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 934
+    iget-object v4, p0, Lcom/android/email/provider/EmailProvider;->mCacheMailbox:Lcom/android/email/provider/ContentCache;
+
+    invoke-virtual {v4}, Lcom/android/email/provider/ContentCache;->getSnapshot()Ljava/util/Map;
+
+    move-result-object v2
+
+    .line 935
+    .local v2, snapshot:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Landroid/database/Cursor;>;"
+    invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v3
+
+    .line 936
+    .local v3, values:Ljava/util/Collection;,"Ljava/util/Collection<Landroid/database/Cursor;>;"
+    if-eqz v3, :cond_52
+
+    .line 937
+    invoke-interface {v3}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :cond_39
+    :goto_39
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_52
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/database/Cursor;
+
+    .line 938
+    .local v0, c:Landroid/database/Cursor;
+    invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_39
+
+    .line 939
+    invoke-direct {p0, v0}, Lcom/android/email/provider/EmailProvider;->addToMailboxTypeMap(Landroid/database/Cursor;)V
+
+    goto :goto_39
+
+    .line 943
+    .end local v0           #c:Landroid/database/Cursor;
+    .end local v1           #i$:Ljava/util/Iterator;
+    .end local v2           #snapshot:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Landroid/database/Cursor;>;"
+    .end local v3           #values:Ljava/util/Collection;,"Ljava/util/Collection<Landroid/database/Cursor;>;"
+    :catchall_4f
+    move-exception v4
+
+    monitor-exit v5
+    :try_end_51
+    .catchall {:try_start_3 .. :try_end_51} :catchall_4f
+
+    throw v4
+
+    .restart local v2       #snapshot:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Landroid/database/Cursor;>;"
+    .restart local v3       #values:Ljava/util/Collection;,"Ljava/util/Collection<Landroid/database/Cursor;>;"
+    :cond_52
+    :try_start_52
+    monitor-exit v5
+    :try_end_53
+    .catchall {:try_start_52 .. :try_end_53} :catchall_4f
+
+    .line 944
+    return-void
+.end method
+
+.method private preCacheTable(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;)V
+    .registers 14
+    .parameter "tableUri"
+    .parameter "baseProjection"
+    .parameter "selection"
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 867
+    sget-object v2, Lcom/android/emailcommon/provider/EmailContent;->ID_PROJECTION:[Ljava/lang/String;
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v3, p3
+
+    move-object v5, v4
+
+    invoke-virtual/range {v0 .. v5}, Lcom/android/email/provider/EmailProvider;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v6
+
+    .line 869
+    .local v6, c:Landroid/database/Cursor;
+    :cond_b
+    :goto_b
+    :try_start_b
+    invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_35
+
+    .line 870
+    const/4 v0, 0x0
+
+    invoke-interface {v6, v0}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v8
+
+    .line 871
+    .local v8, id:J
+    invoke-static {p1, v8, v9}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
+
+    move-result-object v1
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v2, p2
+
+    invoke-virtual/range {v0 .. v5}, Lcom/android/email/provider/EmailProvider;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v7
+
+    .line 873
+    .local v7, cachedCursor:Landroid/database/Cursor;
+    if-eqz v7, :cond_b
+
+    .line 875
+    sget-object v0, Lcom/android/emailcommon/provider/Account;->CONTENT_URI:Landroid/net/Uri;
+
+    if-ne p1, v0, :cond_2c
+
+    .line 876
+    invoke-direct {p0, v8, v9}, Lcom/android/email/provider/EmailProvider;->getOrCreateAccountMailboxTypeMap(J)Ljava/util/HashMap;
+
+    .line 878
+    :cond_2c
+    invoke-interface {v7}, Landroid/database/Cursor;->close()V
+    :try_end_2f
+    .catchall {:try_start_b .. :try_end_2f} :catchall_30
+
+    goto :goto_b
+
+    .line 882
+    .end local v7           #cachedCursor:Landroid/database/Cursor;
+    .end local v8           #id:J
+    :catchall_30
+    move-exception v0
+
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+
+    throw v0
+
+    :cond_35
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+
+    .line 884
     return-void
 .end method
 
 .method static recalculateMessageCount(Landroid/database/sqlite/SQLiteDatabase;)V
     .registers 2
-    .parameter "db"
+    .parameter
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
 
     .prologue
-    .line 4568
+    .line 2368
     const-string v0, "update Mailbox set messageCount= (select count(*) from Message where mailboxKey = Mailbox._id)"
 
     invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 4571
+    .line 2372
     return-void
-.end method
-
-.method static resetAccountCBTable(Landroid/database/sqlite/SQLiteDatabase;II)V
-    .registers 4
-    .parameter "db"
-    .parameter "oldVersion"
-    .parameter "newVersion"
-
-    .prologue
-    .line 1470
-    :try_start_0
-    const-string v0, "drop table Account_CB"
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-    :try_end_5
-    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_5} :catch_9
-
-    .line 1473
-    :goto_5
-    invoke-static {p0}, Lcom/android/email/provider/EmailProvider;->createAccountCBTable(Landroid/database/sqlite/SQLiteDatabase;)V
-
-    .line 1474
-    return-void
-
-    .line 1471
-    :catch_9
-    move-exception v0
-
-    goto :goto_5
 .end method
 
 .method static resetAccountTable(Landroid/database/sqlite/SQLiteDatabase;II)V
@@ -3170,7 +2848,7 @@
     .parameter "newVersion"
 
     .prologue
-    .line 1050
+    .line 627
     :try_start_0
     const-string v0, "drop table Account"
 
@@ -3178,14 +2856,14 @@
     :try_end_5
     .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_5} :catch_9
 
-    .line 1053
+    .line 630
     :goto_5
     invoke-static {p0}, Lcom/android/email/provider/EmailProvider;->createAccountTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1054
+    .line 631
     return-void
 
-    .line 1051
+    .line 628
     :catch_9
     move-exception v0
 
@@ -3199,7 +2877,7 @@
     .parameter "newVersion"
 
     .prologue
-    .line 1170
+    .line 742
     :try_start_0
     const-string v0, "drop table Attachment"
 
@@ -3207,43 +2885,14 @@
     :try_end_5
     .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_5} :catch_9
 
-    .line 1173
+    .line 745
     :goto_5
     invoke-static {p0}, Lcom/android/email/provider/EmailProvider;->createAttachmentTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1174
+    .line 746
     return-void
 
-    .line 1171
-    :catch_9
-    move-exception v0
-
-    goto :goto_5
-.end method
-
-.method private resetEmailAddressCacheTable(Landroid/database/sqlite/SQLiteDatabase;II)V
-    .registers 5
-    .parameter "db"
-    .parameter "oldVersion"
-    .parameter "newVersion"
-
-    .prologue
-    .line 1501
-    :try_start_0
-    const-string v0, "drop table EmailAddressCache"
-
-    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-    :try_end_5
-    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_5} :catch_9
-
-    .line 1504
-    :goto_5
-    invoke-static {p1}, Lcom/android/email/provider/EmailProvider;->createEmailAddressCacheTable(Landroid/database/sqlite/SQLiteDatabase;)V
-
-    .line 1506
-    return-void
-
-    .line 1502
+    .line 743
     :catch_9
     move-exception v0
 
@@ -3257,7 +2906,7 @@
     .parameter "newVersion"
 
     .prologue
-    .line 1089
+    .line 676
     :try_start_0
     const-string v0, "drop table HostAuth"
 
@@ -3265,14 +2914,14 @@
     :try_end_5
     .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_5} :catch_9
 
-    .line 1092
+    .line 679
     :goto_5
     invoke-static {p0}, Lcom/android/email/provider/EmailProvider;->createHostAuthTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1093
+    .line 680
     return-void
 
-    .line 1090
+    .line 677
     :catch_9
     move-exception v0
 
@@ -3286,7 +2935,7 @@
     .parameter "newVersion"
 
     .prologue
-    .line 1140
+    .line 715
     :try_start_0
     const-string v0, "drop table Mailbox"
 
@@ -3294,14 +2943,14 @@
     :try_end_5
     .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_5} :catch_9
 
-    .line 1143
+    .line 718
     :goto_5
     invoke-static {p0}, Lcom/android/email/provider/EmailProvider;->createMailboxTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1144
+    .line 719
     return-void
 
-    .line 1141
+    .line 716
     :catch_9
     move-exception v0
 
@@ -3315,115 +2964,428 @@
     .parameter "newVersion"
 
     .prologue
-    .line 878
+    .line 588
     :try_start_0
     const-string v0, "drop table Message"
 
     invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 879
+    .line 589
     const-string v0, "drop table Message_Updates"
 
     invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 880
+    .line 590
     const-string v0, "drop table Message_Deletes"
 
     invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    :try_end_f
+    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_f} :catch_13
 
-    .line 882
-    const-string v0, "drop table Message_CB"
-
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-    :try_end_14
-    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_14} :catch_18
-
-    .line 885
-    :goto_14
+    .line 593
+    :goto_f
     invoke-static {p0}, Lcom/android/email/provider/EmailProvider;->createMessageTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 886
+    .line 594
     return-void
 
-    .line 883
-    :catch_18
+    .line 591
+    :catch_13
     move-exception v0
 
-    goto :goto_14
+    goto :goto_f
 .end method
 
-.method static setDefaultRingtoneToPostman(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 4
+.method private static restoreAccounts(Landroid/content/Context;Landroid/database/sqlite/SQLiteDatabase;)I
+    .registers 7
+    .parameter
     .parameter
 
     .prologue
-    .line 4775
-    :try_start_0
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 2067
+    sget-boolean v0, Lcom/android/email/Email;->DEBUG:Z
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    if-eqz v0, :cond_b
 
-    const-string v1, "update Account set ringtoneUri = \'"
+    .line 2068
+    const-string v0, "EmailProvider"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, "restoreAccounts..."
 
-    move-result-object v0
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget-object v1, Lcom/android/emailcommon/provider/EmailContent;->DEFAULTRINGTONEURI:Ljava/lang/String;
+    .line 2070
+    :cond_b
+    invoke-static {p0}, Lcom/android/email/provider/EmailProvider;->getBackupDatabase(Landroid/content/Context;)Landroid/database/sqlite/SQLiteDatabase;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v0
+    .line 2072
+    :try_start_f
+    invoke-static {v1, p1}, Lcom/android/email/provider/EmailProvider;->copyAccountTables(Landroid/database/sqlite/SQLiteDatabase;Landroid/database/sqlite/SQLiteDatabase;)I
 
-    const-string v1, "\' ;"
+    move-result v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 2073
+    if-lez v0, :cond_39
 
-    move-result-object v0
+    .line 2074
+    const-string v2, "EmailProvider"
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-    :try_end_1e
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1e} :catch_1f
+    const-string v4, "Recovered "
 
-    .line 4783
-    :goto_1e
-    return-void
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4778
-    :catch_1f
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " accounts!"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_33
+    .catchall {:try_start_f .. :try_end_33} :catchall_43
+
+    .line 2082
+    :cond_33
+    :goto_33
+    if-eqz v1, :cond_38
+
+    .line 2083
+    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+
+    :cond_38
+    return v0
+
+    .line 2075
+    :cond_39
+    if-gez v0, :cond_4a
+
+    .line 2076
+    :try_start_3b
+    const-string v2, "EmailProvider"
+
+    const-string v3, "Account recovery failed?"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_42
+    .catchall {:try_start_3b .. :try_end_42} :catchall_43
+
+    goto :goto_33
+
+    .line 2082
+    :catchall_43
     move-exception v0
 
-    .line 4781
-    const-string v1, "EmailProvider"
+    if-eqz v1, :cond_49
 
-    const-string v2, "Exception upgrading EmailProvider.db set DEFAULTRINGTONEURI"
+    .line 2083
+    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->close()V
 
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :cond_49
+    throw v0
 
-    goto :goto_1e
+    .line 2077
+    :cond_4a
+    :try_start_4a
+    sget-boolean v2, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v2, :cond_33
+
+    .line 2078
+    const-string v2, "EmailProvider"
+
+    const-string v3, "No accounts to restore..."
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_55
+    .catchall {:try_start_4a .. :try_end_55} :catchall_43
+
+    goto :goto_33
 .end method
 
-.method static updatePasswordModeFromGB(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 2
-    .parameter
+.method private static restoreHostAuth(Landroid/database/sqlite/SQLiteDatabase;J)Lcom/android/emailcommon/provider/HostAuth;
+    .registers 13
+    .parameter "db"
+    .parameter "id"
 
     .prologue
-    .line 1237
-    const-string v0, "update Policies set value=\'32\' where name = \'PasswordMode\' AND (value = \'2\' OR value = \'1\');"
+    const/4 v5, 0x0
 
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    .line 1949
+    const-string v1, "HostAuth"
 
-    .line 1241
-    const-string v0, "update Policies set value=\'64\' where name = \'PasswordMode\' AND value = \'4\';"
+    sget-object v2, Lcom/android/emailcommon/provider/HostAuth;->CONTENT_PROJECTION:[Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    const-string v3, "_id=?"
 
-    .line 1244
+    const/4 v0, 0x1
+
+    new-array v4, v0, [Ljava/lang/String;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v6
+
+    aput-object v6, v4, v0
+
+    move-object v0, p0
+
+    move-object v6, v5
+
+    move-object v7, v5
+
+    invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v8
+
+    .line 1952
+    .local v8, c:Landroid/database/Cursor;
+    :try_start_18
+    invoke-interface {v8}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2a
+
+    .line 1953
+    new-instance v9, Lcom/android/emailcommon/provider/HostAuth;
+
+    invoke-direct {v9}, Lcom/android/emailcommon/provider/HostAuth;-><init>()V
+
+    .line 1954
+    .local v9, hostAuth:Lcom/android/emailcommon/provider/HostAuth;
+    invoke-virtual {v9, v8}, Lcom/android/emailcommon/provider/HostAuth;->restore(Landroid/database/Cursor;)V
+    :try_end_26
+    .catchall {:try_start_18 .. :try_end_26} :catchall_2f
+
+    .line 1959
+    invoke-interface {v8}, Landroid/database/Cursor;->close()V
+
+    .end local v9           #hostAuth:Lcom/android/emailcommon/provider/HostAuth;
+    :goto_29
+    return-object v9
+
+    :cond_2a
+    invoke-interface {v8}, Landroid/database/Cursor;->close()V
+
+    move-object v9, v5
+
+    goto :goto_29
+
+    :catchall_2f
+    move-exception v0
+
+    invoke-interface {v8}, Landroid/database/Cursor;->close()V
+
+    throw v0
+.end method
+
+.method public static restoreIfNeeded(Landroid/content/Context;Landroid/database/sqlite/SQLiteDatabase;)V
+    .registers 12
+    .parameter "context"
+    .parameter "mainDatabase"
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 955
+    sget-boolean v0, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v0, :cond_c
+
+    .line 956
+    const-string v0, "EmailProvider"
+
+    const-string v1, "restoreIfNeeded..."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 959
+    :cond_c
+    invoke-static {p0}, Lcom/android/email/Preferences;->getLegacyBackupPreference(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v9
+
+    .line 963
+    .local v9, legacyBackup:Ljava/lang/String;
+    invoke-static {v9}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_24
+
+    .line 964
+    invoke-static {p0, p1}, Lcom/android/email/provider/EmailProvider;->backupAccounts(Landroid/content/Context;Landroid/database/sqlite/SQLiteDatabase;)I
+
+    .line 965
+    invoke-static {p0}, Lcom/android/email/Preferences;->clearLegacyBackupPreference(Landroid/content/Context;)V
+
+    .line 966
+    const-string v0, "EmailProvider"
+
+    const-string v1, "Created new EmailProvider backup database"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 980
+    :cond_23
+    :goto_23
     return-void
+
+    .line 971
+    :cond_24
+    const-string v1, "Account"
+
+    sget-object v2, Lcom/android/emailcommon/provider/EmailContent;->ID_PROJECTION:[Ljava/lang/String;
+
+    move-object v0, p1
+
+    move-object v4, v3
+
+    move-object v5, v3
+
+    move-object v6, v3
+
+    move-object v7, v3
+
+    invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v8
+
+    .line 973
+    .local v8, c:Landroid/database/Cursor;
+    invoke-interface {v8}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_43
+
+    .line 974
+    sget-boolean v0, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v0, :cond_23
+
+    .line 975
+    const-string v0, "EmailProvider"
+
+    const-string v1, "restoreIfNeeded: Account exists."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_23
+
+    .line 979
+    :cond_43
+    invoke-static {p0, p1}, Lcom/android/email/provider/EmailProvider;->restoreAccounts(Landroid/content/Context;Landroid/database/sqlite/SQLiteDatabase;)I
+
+    goto :goto_23
+.end method
+
+.method private sendNotifierChange(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 10
+    .parameter "baseUri"
+    .parameter "op"
+    .parameter "id"
+
+    .prologue
+    const/4 v5, 0x0
+
+    .line 2330
+    if-nez p1, :cond_4
+
+    .line 2348
+    :goto_3
+    return-void
+
+    .line 2332
+    :cond_4
+    invoke-virtual {p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    .line 2335
+    .local v2, resolver:Landroid/content/ContentResolver;
+    if-eqz p2, :cond_1a
+
+    .line 2336
+    invoke-virtual {p1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p2}, Landroid/net/Uri$Builder;->appendEncodedPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object p1
+
+    .line 2339
+    :cond_1a
+    const-wide/16 v0, 0x0
+
+    .line 2341
+    .local v0, longId:J
+    :try_start_1c
+    invoke-static {p3}, Ljava/lang/Long;->valueOf(Ljava/lang/String;)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
+    :try_end_23
+    .catch Ljava/lang/NumberFormatException; {:try_start_1c .. :try_end_23} :catch_36
+
+    move-result-wide v0
+
+    .line 2343
+    :goto_24
+    const-wide/16 v3, 0x0
+
+    cmp-long v3, v0, v3
+
+    if-lez v3, :cond_32
+
+    .line 2344
+    invoke-static {p1, v0, v1}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3, v5}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
+
+    goto :goto_3
+
+    .line 2346
+    :cond_32
+    invoke-virtual {v2, p1, v5}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
+
+    goto :goto_3
+
+    .line 2342
+    :catch_36
+    move-exception v3
+
+    goto :goto_24
 .end method
 
 .method static upgradeBodyTable(Landroid/database/sqlite/SQLiteDatabase;II)V
@@ -3435,30 +3397,30 @@
     .prologue
     const/4 v1, 0x5
 
-    .line 1195
+    .line 771
     if-ge p1, v1, :cond_c
 
-    .line 1197
+    .line 773
     :try_start_3
     const-string v1, "drop table Body"
 
     invoke-virtual {p0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1198
+    .line 774
     invoke-static {p0}, Lcom/android/email/provider/EmailProvider;->createBodyTable(Landroid/database/sqlite/SQLiteDatabase;)V
     :try_end_b
     .catch Landroid/database/SQLException; {:try_start_3 .. :try_end_b} :catch_1e
 
-    .line 1212
+    .line 787
     :cond_b
     :goto_b
     return-void
 
-    .line 1201
+    .line 777
     :cond_c
     if-ne p1, v1, :cond_b
 
-    .line 1203
+    .line 779
     :try_start_e
     const-string v1, "alter table Body add introText text"
 
@@ -3466,17 +3428,17 @@
     :try_end_13
     .catch Landroid/database/SQLException; {:try_start_e .. :try_end_13} :catch_15
 
-    .line 1210
+    .line 785
     :goto_13
     const/4 p1, 0x6
 
     goto :goto_b
 
-    .line 1205
+    .line 781
     :catch_15
     move-exception v0
 
-    .line 1208
+    .line 783
     .local v0, e:Landroid/database/SQLException;
     const-string v1, "EmailProvider"
 
@@ -3486,7 +3448,7 @@
 
     goto :goto_13
 
-    .line 1199
+    .line 775
     .end local v0           #e:Landroid/database/SQLException;
     :catch_1e
     move-exception v1
@@ -3494,13 +3456,114 @@
     goto :goto_b
 .end method
 
-.method static upgradeEmailAccountManagerDB(Landroid/database/sqlite/SQLiteDatabase;Landroid/content/Context;)V
-    .registers 11
+.method static upgradeFromVersion17ToVersion18(Landroid/database/sqlite/SQLiteDatabase;)V
+    .registers 5
     .parameter
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+
+    .prologue
+    .line 2408
+    :try_start_0
+    const-string v0, "UPDATE Mailbox SET serverId=displayName WHERE Mailbox._id IN ( SELECT Mailbox._id FROM Mailbox,Account,HostAuth WHERE (Mailbox.parentKey isnull OR Mailbox.parentKey=0 ) AND Mailbox.accountKey=Account._id AND Account.hostAuthKeyRecv=HostAuth._id AND ( HostAuth.protocol=\'imap\' OR HostAuth.protocol=\'pop3\' ) )"
+
+    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    :try_end_5
+    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_5} :catch_9
+
+    .line 2430
+    :goto_5
+    invoke-static {}, Lcom/android/email/provider/ContentCache;->invalidateAllCaches()V
+
+    .line 2431
+    return-void
+
+    .line 2426
+    :catch_9
+    move-exception v0
+
+    .line 2428
+    const-string v1, "EmailProvider"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Exception upgrading EmailProvider.db from 17 to 18 "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_5
+.end method
+
+.method private static upgradeFromVersion20ToVersion21(Landroid/database/sqlite/SQLiteDatabase;)V
+    .registers 5
     .parameter
 
     .prologue
-    .line 4665
+    .line 2436
+    :try_start_0
+    const-string v0, "alter table Mailbox add column lastSeenMessageKey integer;"
+
+    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    :try_end_5
+    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_5} :catch_6
+
+    .line 2442
+    :goto_5
+    return-void
+
+    .line 2438
+    :catch_6
+    move-exception v0
+
+    .line 2440
+    const-string v1, "EmailProvider"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Exception upgrading EmailProvider.db from 20 to 21 "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_5
+.end method
+
+.method static upgradeFromVersion21ToVersion22(Landroid/database/sqlite/SQLiteDatabase;Landroid/content/Context;)V
+    .registers 11
+    .parameter
+    .parameter
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+
+    .prologue
+    .line 2475
     :try_start_0
     const-string v1, "Account"
 
@@ -3524,21 +3587,21 @@
 
     move-result-object v8
 
-    .line 4668
+    .line 2478
     const/4 v0, 0x1
 
     :try_start_f
     new-array v4, v0, [Ljava/lang/String;
 
-    .line 4669
+    .line 2479
     :goto_11
     invoke-interface {v8}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a8
+    if-eqz v0, :cond_c9
 
-    .line 4670
+    .line 2480
     const/4 v0, 0x0
 
     const/4 v1, 0x0
@@ -3549,7 +3612,7 @@
 
     aput-object v1, v4, v0
 
-    .line 4672
+    .line 2482
     const-string v1, "HostAuth"
 
     sget-object v2, Lcom/android/email/provider/EmailProvider;->V21_HOSTAUTH_PROJECTION:[Ljava/lang/String;
@@ -3570,7 +3633,7 @@
 
     move-result-object v1
 
-    .line 4676
+    .line 2486
     :try_start_2d
     invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -3578,14 +3641,14 @@
 
     if-eqz v0, :cond_80
 
-    .line 4677
+    .line 2487
     const/4 v0, 0x0
 
     invoke-interface {v1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4679
+    .line 2489
     const-string v2, "imap"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -3600,15 +3663,15 @@
 
     move-result v2
 
-    if-eqz v2, :cond_80
+    if-eqz v2, :cond_a3
 
-    .line 4681
+    .line 2491
     :cond_48
     sget-boolean v2, Lcom/android/email/Email;->DEBUG:Z
 
     if-eqz v2, :cond_73
 
-    .line 4682
+    .line 2492
     const-string v2, "EmailProvider"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3647,7 +3710,7 @@
 
     invoke-static {v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4686
+    .line 2496
     :cond_73
     const/4 v0, 0x1
 
@@ -3663,10 +3726,11 @@
 
     invoke-static {p1, v0, v2}, Lcom/android/email/provider/EmailProvider;->createAccountManagerAccount(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     :try_end_80
-    .catchall {:try_start_2d .. :try_end_80} :catchall_a3
+    .catchall {:try_start_2d .. :try_end_80} :catchall_c4
 
-    .line 4703
+    .line 2513
     :cond_80
+    :goto_80
     :try_start_80
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
     :try_end_83
@@ -3674,7 +3738,7 @@
 
     goto :goto_11
 
-    .line 4707
+    .line 2517
     :catchall_84
     move-exception v0
 
@@ -3685,11 +3749,11 @@
     :try_end_89
     .catch Landroid/database/SQLException; {:try_start_85 .. :try_end_89} :catch_89
 
-    .line 4709
+    .line 2519
     :catch_89
     move-exception v0
 
-    .line 4711
+    .line 2521
     const-string v1, "EmailProvider"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3712,29 +3776,428 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4713
+    .line 2523
     :goto_a2
     return-void
 
-    .line 4703
-    :catchall_a3
+    .line 2501
+    :cond_a3
+    :try_start_a3
+    const-string v2, "eas"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_80
+
+    .line 2502
+    new-instance v0, Landroid/accounts/Account;
+
+    const/4 v2, 0x1
+
+    invoke-interface {v8, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "com.android.exchange"
+
+    invoke-direct {v0, v2, v3}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 2506
+    const-string v2, "com.android.email.provider"
+
+    const/4 v3, 0x1
+
+    invoke-static {v0, v2, v3}, Landroid/content/ContentResolver;->setIsSyncable(Landroid/accounts/Account;Ljava/lang/String;I)V
+
+    .line 2507
+    const-string v2, "com.android.email.provider"
+
+    const/4 v3, 0x1
+
+    invoke-static {v0, v2, v3}, Landroid/content/ContentResolver;->setSyncAutomatically(Landroid/accounts/Account;Ljava/lang/String;Z)V
+    :try_end_c3
+    .catchall {:try_start_a3 .. :try_end_c3} :catchall_c4
+
+    goto :goto_80
+
+    .line 2513
+    :catchall_c4
     move-exception v0
 
-    :try_start_a4
+    :try_start_c5
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
     throw v0
-    :try_end_a8
-    .catchall {:try_start_a4 .. :try_end_a8} :catchall_84
+    :try_end_c9
+    .catchall {:try_start_c5 .. :try_end_c9} :catchall_84
 
-    .line 4707
-    :cond_a8
-    :try_start_a8
+    .line 2517
+    :cond_c9
+    :try_start_c9
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
-    :try_end_ab
-    .catch Landroid/database/SQLException; {:try_start_a8 .. :try_end_ab} :catch_89
+    :try_end_cc
+    .catch Landroid/database/SQLException; {:try_start_c9 .. :try_end_cc} :catch_89
 
     goto :goto_a2
+.end method
+
+.method private static upgradeFromVersion22ToVersion23(Landroid/database/sqlite/SQLiteDatabase;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 2528
+    :try_start_0
+    const-string v0, "alter table Mailbox add column lastTouchedTime integer default 0;"
+
+    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    :try_end_5
+    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_5} :catch_6
+
+    .line 2534
+    :goto_5
+    return-void
+
+    .line 2530
+    :catch_6
+    move-exception v0
+
+    .line 2532
+    const-string v1, "EmailProvider"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Exception upgrading EmailProvider.db from 22 to 23 "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_5
+.end method
+
+.method private static upgradeFromVersion23ToVersion24(Landroid/database/sqlite/SQLiteDatabase;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 2539
+    :try_start_0
+    const-string v0, "alter table HostAuth add column certAlias text;"
+
+    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    :try_end_5
+    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_5} :catch_6
+
+    .line 2545
+    :goto_5
+    return-void
+
+    .line 2541
+    :catch_6
+    move-exception v0
+
+    .line 2543
+    const-string v1, "EmailProvider"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Exception upgrading EmailProvider.db from 23 to 24 "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_5
+.end method
+
+.method private static upgradeFromVersion24ToVersion25(Landroid/database/sqlite/SQLiteDatabase;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 2550
+    :try_start_0
+    invoke-static {p0}, Lcom/android/email/provider/EmailProvider;->createQuickResponseTable(Landroid/database/sqlite/SQLiteDatabase;)V
+    :try_end_3
+    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_3} :catch_4
+
+    .line 2555
+    :goto_3
+    return-void
+
+    .line 2551
+    :catch_4
+    move-exception v0
+
+    .line 2553
+    const-string v1, "EmailProvider"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Exception upgrading EmailProvider.db from 24 to 25 "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_3
+.end method
+
+.method private static upgradeFromVersion25ToVersion26(Landroid/database/sqlite/SQLiteDatabase;)V
+    .registers 11
+    .parameter
+
+    .prologue
+    .line 2570
+    :try_start_0
+    const-string v1, "Account"
+
+    sget-object v2, Lcom/android/email/provider/EmailProvider;->V25_ACCOUNT_PROJECTION:[Ljava/lang/String;
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    move-object v0, p0
+
+    invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v8
+
+    .line 2572
+    new-instance v9, Landroid/content/ContentValues;
+
+    invoke-direct {v9}, Landroid/content/ContentValues;-><init>()V
+    :try_end_13
+    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_13} :catch_70
+
+    .line 2574
+    const/4 v0, 0x1
+
+    :try_start_14
+    new-array v4, v0, [Ljava/lang/String;
+
+    .line 2575
+    :goto_16
+    invoke-interface {v8}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8f
+
+    .line 2576
+    const/4 v0, 0x0
+
+    const/4 v1, 0x2
+
+    invoke-interface {v8, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    aput-object v1, v4, v0
+
+    .line 2578
+    const-string v1, "HostAuth"
+
+    sget-object v2, Lcom/android/email/provider/EmailProvider;->V25_HOSTAUTH_PROJECTION:[Ljava/lang/String;
+
+    const-string v3, "_id=?"
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    move-object v0, p0
+
+    invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+    :try_end_31
+    .catchall {:try_start_14 .. :try_end_31} :catchall_6b
+
+    move-result-object v1
+
+    .line 2582
+    :try_start_32
+    invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_67
+
+    .line 2583
+    const/4 v0, 0x0
+
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 2585
+    const-string v2, "imap"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_67
+
+    .line 2586
+    const/4 v0, 0x0
+
+    invoke-interface {v8, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 2587
+    const/4 v2, 0x1
+
+    invoke-interface {v8, v2}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v2
+
+    .line 2588
+    const-string v3, "flags"
+
+    or-int/lit16 v2, v2, 0x800
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v9, v3, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    .line 2589
+    const-string v2, "Account"
+
+    const-string v3, "_id=?"
+
+    const/4 v5, 0x1
+
+    new-array v5, v5, [Ljava/lang/String;
+
+    const/4 v6, 0x0
+
+    aput-object v0, v5, v6
+
+    invoke-virtual {p0, v2, v9, v3, v5}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+    :try_end_67
+    .catchall {:try_start_32 .. :try_end_67} :catchall_8a
+
+    .line 2594
+    :cond_67
+    :try_start_67
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    :try_end_6a
+    .catchall {:try_start_67 .. :try_end_6a} :catchall_6b
+
+    goto :goto_16
+
+    .line 2598
+    :catchall_6b
+    move-exception v0
+
+    :try_start_6c
+    invoke-interface {v8}, Landroid/database/Cursor;->close()V
+
+    throw v0
+    :try_end_70
+    .catch Landroid/database/SQLException; {:try_start_6c .. :try_end_70} :catch_70
+
+    .line 2600
+    :catch_70
+    move-exception v0
+
+    .line 2602
+    const-string v1, "EmailProvider"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Exception upgrading EmailProvider.db from 25 to 26 "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2604
+    :goto_89
+    return-void
+
+    .line 2594
+    :catchall_8a
+    move-exception v0
+
+    :try_start_8b
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+
+    throw v0
+    :try_end_8f
+    .catchall {:try_start_8b .. :try_end_8f} :catchall_6b
+
+    .line 2598
+    :cond_8f
+    :try_start_8f
+    invoke-interface {v8}, Landroid/database/Cursor;->close()V
+    :try_end_92
+    .catch Landroid/database/SQLException; {:try_start_8f .. :try_end_92} :catch_70
+
+    goto :goto_89
 .end method
 
 .method private whereWith(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -3743,33 +4206,33 @@
     .parameter
 
     .prologue
-    .line 4254
+    .line 1931
     if-nez p2, :cond_3
 
-    .line 4262
+    .line 1939
     :goto_2
     return-object p1
 
-    .line 4257
+    .line 1934
     :cond_3
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 4258
+    .line 1935
     const-string v1, " AND ("
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4259
+    .line 1936
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4260
+    .line 1937
     const/16 v1, 0x29
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 4262
+    .line 1939
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -3783,38 +4246,38 @@
     .parameter
 
     .prologue
-    .line 4233
+    .line 1909
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x100
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 4234
+    .line 1910
     const-string v1, "_id="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4235
+    .line 1911
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4236
+    .line 1912
     if-eqz p2, :cond_1e
 
-    .line 4237
+    .line 1913
     const-string v1, " AND ("
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4238
+    .line 1914
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4239
+    .line 1915
     const/16 v1, 0x29
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 4241
+    .line 1917
     :cond_1e
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -3826,7 +4289,7 @@
 
 # virtual methods
 .method public applyBatch(Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;
-    .registers 7
+    .registers 6
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3846,157 +4309,46 @@
     .end annotation
 
     .prologue
+    .line 2353
     .local p1, operations:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentProviderOperation;>;"
-    const/4 v4, 0x0
-
-    .line 4541
     invoke-virtual {p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 4542
+    .line 2354
     .local v0, context:Landroid/content/Context;
     invoke-virtual {p0, v0}, Lcom/android/email/provider/EmailProvider;->getDatabase(Landroid/content/Context;)Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v1
 
-    .line 4543
+    .line 2355
     .local v1, db:Landroid/database/sqlite/SQLiteDatabase;
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-    .line 4545
-    :try_start_c
+    .line 2357
+    :try_start_b
     invoke-super {p0, p1}, Landroid/content/ContentProvider;->applyBatch(Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;
 
-    move-result-object v3
+    move-result-object v2
 
-    .line 4546
-    .local v3, results:[Landroid/content/ContentProviderResult;
+    .line 2358
+    .local v2, results:[Landroid/content/ContentProviderResult;
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
-    :try_end_13
-    .catchall {:try_start_c .. :try_end_13} :catchall_38
-    .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_c .. :try_end_13} :catch_1c
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_c .. :try_end_13} :catch_2a
+    :try_end_12
+    .catchall {:try_start_b .. :try_end_12} :catchall_16
 
-    .line 4556
-    :try_start_13
+    .line 2361
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-    :try_end_16
-    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_16} :catch_17
 
-    .line 4559
-    .end local v3           #results:[Landroid/content/ContentProviderResult;
-    :goto_16
-    return-object v3
+    return-object v2
 
-    .line 4557
-    .restart local v3       #results:[Landroid/content/ContentProviderResult;
-    :catch_17
-    move-exception v2
+    .end local v2           #results:[Landroid/content/ContentProviderResult;
+    :catchall_16
+    move-exception v3
 
-    .line 4558
-    .local v2, e:Ljava/lang/Exception;
-    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
-
-    goto :goto_16
-
-    .line 4548
-    .end local v2           #e:Ljava/lang/Exception;
-    .end local v3           #results:[Landroid/content/ContentProviderResult;
-    :catch_1c
-    move-exception v2
-
-    .line 4549
-    .local v2, e:Landroid/database/sqlite/SQLiteDiskIOException;
-    :try_start_1d
-    invoke-virtual {v2}, Landroid/database/sqlite/SQLiteDiskIOException;->printStackTrace()V
-    :try_end_20
-    .catchall {:try_start_1d .. :try_end_20} :catchall_38
-
-    .line 4556
-    :try_start_20
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-    :try_end_23
-    .catch Ljava/lang/Exception; {:try_start_20 .. :try_end_23} :catch_25
 
-    .end local v2           #e:Landroid/database/sqlite/SQLiteDiskIOException;
-    :goto_23
-    move-object v3, v4
-
-    .line 4559
-    goto :goto_16
-
-    .line 4557
-    .restart local v2       #e:Landroid/database/sqlite/SQLiteDiskIOException;
-    :catch_25
-    move-exception v2
-
-    .line 4558
-    .local v2, e:Ljava/lang/Exception;
-    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
-
-    goto :goto_23
-
-    .line 4551
-    .end local v2           #e:Ljava/lang/Exception;
-    :catch_2a
-    move-exception v2
-
-    .line 4552
-    .local v2, e:Landroid/database/sqlite/SQLiteException;
-    :try_start_2b
-    invoke-virtual {v2}, Landroid/database/sqlite/SQLiteException;->printStackTrace()V
-    :try_end_2e
-    .catchall {:try_start_2b .. :try_end_2e} :catchall_38
-
-    .line 4556
-    :try_start_2e
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-    :try_end_31
-    .catch Ljava/lang/Exception; {:try_start_2e .. :try_end_31} :catch_33
-
-    .end local v2           #e:Landroid/database/sqlite/SQLiteException;
-    :goto_31
-    move-object v3, v4
-
-    .line 4559
-    goto :goto_16
-
-    .line 4557
-    .restart local v2       #e:Landroid/database/sqlite/SQLiteException;
-    :catch_33
-    move-exception v2
-
-    .line 4558
-    .local v2, e:Ljava/lang/Exception;
-    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
-
-    goto :goto_31
-
-    .line 4555
-    .end local v2           #e:Ljava/lang/Exception;
-    :catchall_38
-    move-exception v4
-
-    .line 4556
-    :try_start_39
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-    :try_end_3c
-    .catch Ljava/lang/Exception; {:try_start_39 .. :try_end_3c} :catch_3d
-
-    .line 4559
-    :goto_3c
-    throw v4
-
-    .line 4557
-    :catch_3d
-    move-exception v2
-
-    .line 4558
-    .restart local v2       #e:Ljava/lang/Exception;
-    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
-
-    goto :goto_3c
+    throw v3
 .end method
 
 .method public checkDatabases()V
@@ -4005,35 +4357,25 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 3899
+    .line 1704
     iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_7
 
-    .line 3900
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
-
-    .line 3901
+    .line 1705
     iput-object v1, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 3903
-    :cond_c
+    .line 1707
+    :cond_7
     iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mBodyDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_d
 
-    .line 3904
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mBodyDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
-
-    .line 3905
+    .line 1708
     iput-object v1, p0, Lcom/android/email/provider/EmailProvider;->mBodyDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 3909
-    :cond_17
+    .line 1711
+    :cond_d
     invoke-virtual {p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -4044,7 +4386,7 @@
 
     move-result-object v0
 
-    .line 3910
+    .line 1712
     invoke-virtual {p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -4055,2767 +4397,1056 @@
 
     move-result-object v1
 
-    .line 3913
+    .line 1715
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v2
 
-    if-eqz v2, :cond_42
+    if-eqz v2, :cond_38
 
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v2
 
-    if-nez v2, :cond_42
+    if-nez v2, :cond_38
 
-    .line 3914
+    .line 1716
     const-string v1, "EmailProvider"
 
     const-string v2, "Deleting orphaned EmailProvider database..."
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3915
+    .line 1717
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 3920
-    :cond_41
-    :goto_41
+    .line 1722
+    :cond_37
+    :goto_37
     return-void
 
-    .line 3916
-    :cond_42
+    .line 1718
+    :cond_38
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v2
 
-    if-eqz v2, :cond_41
+    if-eqz v2, :cond_37
 
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v0
 
-    if-nez v0, :cond_41
+    if-nez v0, :cond_37
 
-    .line 3917
+    .line 1719
     const-string v0, "EmailProvider"
 
     const-string v2, "Deleting orphaned EmailProviderBody database..."
 
     invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3918
+    .line 1720
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
 
-    goto :goto_41
-.end method
-
-.method public createSevenTrigger(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 3
-    .parameter "db"
-
-    .prologue
-    .line 3302
-    const-string v0, " create trigger mailbox_delete_cb before delete on Mailbox begin delete from Mailbox_CB where mailboxKey = old._id; end"
-
-    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 3307
-    const-string v0, " create trigger mailbox_insert_cb after insert on Mailbox begin insert into Mailbox_CB(mailboxKey  ,typeMsg) values (new._id  , (select typeMsg from Account_CB where accountKey = new.accountKey)); end"
-
-    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 3314
-    const-string v0, "create trigger message_delete_cb before delete on Message begin  delete from Message_CB  where messageKey=old._id; end"
-
-    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 3319
-    const-string v0, "create trigger message_insert_cb after insert on Message begin  insert into Message_CB(messageKey,typeMsg)  values (new._id, 0); end"
-
-    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 3325
-    const-string v0, "create trigger account_delete_cb before delete on Account begin  delete from Account_CB where accountKey=old._id; delete from Mailbox_CB where mailboxKey    in ( select _id from Mailbox          where accountKey=old._id); end"
-
-    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 3332
-    return-void
+    goto :goto_37
 .end method
 
 .method public delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
-    .registers 15
-    .parameter
-    .parameter
-    .parameter
+    .registers 20
+    .parameter "uri"
+    .parameter "selection"
+    .parameter "selectionArgs"
 
     .prologue
-    .line 3336
-    const-string v0, "delete"
+    .line 1357
+    const-string v13, "delete"
 
-    invoke-static {p1, v0}, Lcom/android/email/provider/EmailProvider;->findMatch(Landroid/net/Uri;Ljava/lang/String;)I
+    move-object/from16 v0, p1
 
-    move-result v4
+    invoke-static {v0, v13}, Lcom/android/email/provider/EmailProvider;->findMatch(Landroid/net/Uri;Ljava/lang/String;)I
 
-    .line 3337
-    invoke-virtual {p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
+    move-result v7
 
-    move-result-object v0
+    .line 1358
+    .local v7, match:I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
 
-    .line 3345
-    invoke-virtual {p0, v0}, Lcom/android/email/provider/EmailProvider;->getDatabase(Landroid/content/Context;)Landroid/database/sqlite/SQLiteDatabase;
+    move-result-object v3
 
-    move-result-object v5
+    .line 1363
+    .local v3, context:Landroid/content/Context;
+    move-object/from16 v0, p0
 
-    .line 3346
-    shr-int/lit8 v6, v4, 0xc
+    invoke-virtual {v0, v3}, Lcom/android/email/provider/EmailProvider;->getDatabase(Landroid/content/Context;)Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 3347
-    const-string v3, "0"
+    move-result-object v4
 
-    .line 3348
-    const/4 v2, 0x0
+    .line 1364
+    .local v4, db:Landroid/database/sqlite/SQLiteDatabase;
+    shr-int/lit8 v11, v7, 0xc
 
-    .line 3349
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    .line 1365
+    .local v11, table:I
+    const-string v6, "0"
 
-    move-result-object v7
+    .line 1366
+    .local v6, id:Ljava/lang/String;
+    const/4 v8, 0x0
 
-    .line 3354
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->CONTENT_CACHES:[Lcom/android/email/provider/ContentCache;
+    .line 1367
+    .local v8, messageDeletion:Z
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    aget-object v8, v0, v6
+    move-result-object v9
 
-    .line 3355
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
+    .line 1369
+    .local v9, resolver:Landroid/content/ContentResolver;
+    move-object/from16 v0, p0
 
-    aget-object v9, v0, v6
+    iget-object v13, v0, Lcom/android/email/provider/EmailProvider;->mContentCaches:[Lcom/android/email/provider/ContentCache;
 
-    .line 3359
-    sparse-switch v4, :sswitch_data_2c0
+    aget-object v2, v13, v11
 
-    .line 3387
-    :goto_22
-    sparse-switch v4, :sswitch_data_2e2
+    .line 1370
+    .local v2, cache:Lcom/android/email/provider/ContentCache;
+    sget-object v13, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
 
-    .line 3573
-    :try_start_25
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    aget-object v12, v13, v11
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    .line 1371
+    .local v12, tableName:Ljava/lang/String;
+    const/4 v10, -0x1
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 1374
+    .local v10, result:I
+    sparse-switch v7, :sswitch_data_1c2
 
-    const-string v3, "Unknown URI "
+    .line 1395
+    :goto_29
+    sparse-switch v7, :sswitch_data_1e0
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 1496
+    :try_start_2c
+    new-instance v13, Ljava/lang/IllegalArgumentException;
 
-    move-result-object v1
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v1
+    const-string v15, "Unknown URI "
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v14
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    move-object/from16 v0, p1
 
-    throw v0
-    :try_end_3e
-    .catchall {:try_start_25 .. :try_end_3e} :catchall_1bd
-    .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_25 .. :try_end_3e} :catch_3e
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_25 .. :try_end_3e} :catch_128
+    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 3593
-    :catch_3e
-    move-exception v0
+    move-result-object v14
 
-    move v1, v2
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 3594
-    :goto_40
-    :try_start_40
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDiskIOException;->printStackTrace()V
-    :try_end_43
-    .catchall {:try_start_40 .. :try_end_43} :catchall_2b5
+    move-result-object v14
 
-    .line 3595
-    const/4 v0, -0x1
+    invoke-direct {v13, v14}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    .line 3602
-    if-eqz v1, :cond_49
+    throw v13
+    :try_end_47
+    .catchall {:try_start_2c .. :try_end_47} :catchall_4c
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_2c .. :try_end_47} :catch_47
 
-    .line 3604
-    :try_start_46
-    invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-    :try_end_49
-    .catch Ljava/lang/Exception; {:try_start_46 .. :try_end_49} :catch_2af
+    .line 1508
+    :catch_47
+    move-exception v5
 
-    .line 3611
-    :cond_49
-    :goto_49
-    sget-object v1, Lcom/android/emailcommon/provider/EmailContent;->CONTENT_URI:Landroid/net/Uri;
+    .line 1509
+    .local v5, e:Landroid/database/sqlite/SQLiteException;
+    :try_start_48
+    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->checkDatabases()V
 
-    const/4 v2, 0x0
+    .line 1510
+    throw v5
+    :try_end_4c
+    .catchall {:try_start_48 .. :try_end_4c} :catchall_4c
 
-    invoke-virtual {v7, v1, v2}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
+    .line 1512
+    .end local v5           #e:Landroid/database/sqlite/SQLiteException;
+    :catchall_4c
+    move-exception v13
 
-    .line 3612
-    return v0
+    if-eqz v8, :cond_52
 
-    .line 3382
-    :sswitch_50
-    const/4 v1, 0x1
+    .line 1513
+    invoke-virtual {v4}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 3383
-    :try_start_51
-    invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
+    :cond_52
+    throw v13
 
-    .line 3384
-    sget-object v0, Lcom/android/emailcommon/provider/EmailContent$Message;->NOTIFIER_URI:Landroid/net/Uri;
+    .line 1391
+    :sswitch_53
+    const/4 v8, 0x1
 
-    const/4 v2, 0x0
+    .line 1392
+    :try_start_54
+    invoke-virtual {v4}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-    invoke-virtual {v7, v0, v2}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
-    :try_end_5a
-    .catchall {:try_start_51 .. :try_end_5a} :catchall_2b5
-    .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_51 .. :try_end_5a} :catch_2bd
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_51 .. :try_end_5a} :catch_2b9
+    goto :goto_29
 
-    move v2, v1
+    .line 1407
+    :sswitch_58
+    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
-    goto :goto_22
+    move-result-object v13
 
-    .line 3399
-    :sswitch_5c
-    :try_start_5c
-    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
+    const/4 v14, 0x1
 
-    move-result-object v0
+    invoke-interface {v13, v14}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    const/4 v1, 0x1
+    move-result-object v13
 
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
+    move-object v0, v13
 
     check-cast v0, Ljava/lang/String;
 
-    .line 3400
-    const/16 v1, 0x2002
+    move-object v6, v0
 
-    if-ne v4, v1, :cond_aa
+    .line 1408
+    const/16 v13, 0x2002
 
-    .line 3407
-    new-instance v1, Ljava/lang/StringBuilder;
+    if-ne v7, v13, :cond_95
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 1412
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    const-string v3, "insert or replace into Message_Deletes select * from Message where _id="
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v14, "insert or replace into Message_Deletes select * from Message where _id="
 
-    move-result-object v1
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v13
 
-    move-result-object v1
+    invoke-virtual {v13, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v13
 
-    move-result-object v1
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v5, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    move-result-object v13
 
-    .line 3408
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v13}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 1413
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    const-string v3, "delete from Message_Updates where _id="
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v14, "delete from Message_Updates where _id="
 
-    move-result-object v1
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v13
 
-    move-result-object v1
+    invoke-virtual {v13, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v13
 
-    move-result-object v1
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v5, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    move-result-object v13
 
-    .line 3410
-    const-string v1, "delete"
+    invoke-virtual {v4, v13}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    const-string v3, " message_delete_deletes start "
+    .line 1415
+    :cond_95
+    if-eqz v2, :cond_9a
 
-    invoke-static {v1, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    .line 1416
+    invoke-virtual {v2, v6}, Lcom/android/email/provider/ContentCache;->lock(Ljava/lang/String;)V
+    :try_end_9a
+    .catchall {:try_start_54 .. :try_end_9a} :catchall_4c
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_54 .. :try_end_9a} :catch_47
 
-    .line 3412
-    const-string v1, "delete from Message_Deletes where _id in (select messageKey from Message_CB where typeMsg = 1)"
+    .line 1419
+    :cond_9a
+    :try_start_9a
+    move-object/from16 v0, p0
 
-    invoke-virtual {v5, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    move-object/from16 v1, p2
 
-    .line 3415
-    const-string v1, "delete"
+    invoke-direct {v0, v6, v1}, Lcom/android/email/provider/EmailProvider;->whereWithId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v3, " message_delete_deletes end "
+    move-result-object v13
 
-    invoke-static {v1, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    move-object/from16 v0, p3
 
-    .line 3417
-    :cond_aa
-    if-eqz v8, :cond_af
+    invoke-virtual {v4, v12, v13, v0}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    :try_end_a7
+    .catchall {:try_start_9a .. :try_end_a7} :catchall_130
 
-    .line 3418
-    invoke-virtual {v8, v0}, Lcom/android/email/provider/ContentCache;->lock(Ljava/lang/String;)V
-    :try_end_af
-    .catchall {:try_start_5c .. :try_end_af} :catchall_1bd
-    .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_5c .. :try_end_af} :catch_3e
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_5c .. :try_end_af} :catch_128
+    move-result v10
 
-    .line 3421
-    :cond_af
+    .line 1420
+    if-eqz v2, :cond_ad
+
+    .line 1421
+    sparse-switch v7, :sswitch_data_236
+
+    .line 1446
+    :cond_ad
+    :goto_ad
+    if-eqz v2, :cond_b2
+
+    .line 1447
     :try_start_af
-    invoke-direct {p0, v0, p2}, Lcom/android/email/provider/EmailProvider;->whereWithId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2, v6}, Lcom/android/email/provider/ContentCache;->unlock(Ljava/lang/String;)V
 
-    move-result-object v1
+    .line 1498
+    :cond_b2
+    :goto_b2
+    if-eqz v8, :cond_d1
 
-    invoke-virtual {v5, v9, v1, p3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_b6
-    .catchall {:try_start_af .. :try_end_b6} :catchall_121
+    .line 1499
+    const/16 v13, 0x2001
 
-    move-result v1
+    if-ne v7, v13, :cond_1ba
 
-    .line 3422
-    if-eqz v8, :cond_bc
+    .line 1501
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    .line 3423
-    sparse-switch v4, :sswitch_data_378
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 3445
-    :cond_bc
-    :goto_bc
-    if-eqz v8, :cond_c1
+    const-string v14, "delete from Body where messageKey="
 
-    .line 3446
-    :try_start_be
-    invoke-virtual {v8, v0}, Lcom/android/email/provider/ContentCache;->unlock(Ljava/lang/String;)V
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_c1
-    move v10, v1
+    move-result-object v13
 
-    move-object v1, v0
+    invoke-virtual {v13, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move v0, v10
+    move-result-object v13
 
-    .line 3575
-    :goto_c4
-    if-eqz v2, :cond_fc
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 3577
-    const/4 v3, 0x1
+    move-result-object v13
 
-    if-ne v4, v3, :cond_df
+    invoke-virtual {v4, v13}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 3580
-    new-instance v3, Ljava/lang/StringBuilder;
+    .line 1506
+    :goto_ce
+    invoke-virtual {v4}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
+    :try_end_d1
+    .catchall {:try_start_af .. :try_end_d1} :catchall_4c
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_af .. :try_end_d1} :catch_47
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    .line 1512
+    :cond_d1
+    if-eqz v8, :cond_d6
 
-    const-string v6, "delete from Document where accountKey="
+    .line 1513
+    invoke-virtual {v4}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 1518
+    :cond_d6
+    move-object/from16 v0, p0
 
-    move-result-object v3
+    invoke-direct {v0, v7}, Lcom/android/email/provider/EmailProvider;->getBaseNotificationUri(I)Landroid/net/Uri;
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v13
 
-    move-result-object v3
+    const-string v14, "delete"
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-object/from16 v0, p0
 
-    move-result-object v3
+    invoke-direct {v0, v13, v14, v6}, Lcom/android/email/provider/EmailProvider;->sendNotifierChange(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v5, v3}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    .line 1521
+    sget-object v13, Lcom/android/emailcommon/provider/EmailContent;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 3583
-    :cond_df
-    const/16 v3, 0x2001
+    const/4 v14, 0x0
 
-    if-ne v4, v3, :cond_2a8
+    invoke-virtual {v9, v13, v14}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
 
-    .line 3586
-    new-instance v3, Ljava/lang/StringBuilder;
+    .line 1522
+    return v10
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    .line 1425
+    :sswitch_ea
+    :try_start_ea
+    move-object/from16 v0, p0
 
-    const-string v4, "delete from Body where messageKey="
+    iget-object v13, v0, Lcom/android/email/provider/EmailProvider;->mCacheMailbox:Lcom/android/email/provider/ContentCache;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v14, "Delete"
 
-    move-result-object v3
+    move-object/from16 v0, p1
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object/from16 v1, p2
 
-    move-result-object v1
+    invoke-virtual {v13, v14, v0, v1}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 1426
+    move-object/from16 v0, p0
 
-    move-result-object v1
+    iget-object v13, v0, Lcom/android/email/provider/EmailProvider;->mCacheHostAuth:Lcom/android/email/provider/ContentCache;
 
-    invoke-virtual {v5, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    const-string v14, "Delete"
 
-    .line 3591
-    :goto_f9
-    invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
-    :try_end_fc
-    .catchall {:try_start_be .. :try_end_fc} :catchall_1bd
-    .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_be .. :try_end_fc} :catch_3e
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_be .. :try_end_fc} :catch_128
+    move-object/from16 v0, p1
 
-    .line 3602
-    :cond_fc
-    if-eqz v2, :cond_49
+    move-object/from16 v1, p2
 
-    .line 3604
-    :try_start_fe
-    invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-    :try_end_101
-    .catch Ljava/lang/Exception; {:try_start_fe .. :try_end_101} :catch_103
+    invoke-virtual {v13, v14, v0, v1}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
 
-    goto/16 :goto_49
+    .line 1427
+    move-object/from16 v0, p0
 
-    .line 3605
-    :catch_103
-    move-exception v1
+    iget-object v13, v0, Lcom/android/email/provider/EmailProvider;->mCachePolicy:Lcom/android/email/provider/ContentCache;
 
-    goto/16 :goto_49
+    const-string v14, "Delete"
 
-    .line 3429
-    :sswitch_106
-    :try_start_106
-    sget-object v3, Lcom/android/email/provider/EmailProvider;->sCacheMailbox:Lcom/android/email/provider/ContentCache;
+    move-object/from16 v0, p1
 
-    const-string v6, "Delete"
+    move-object/from16 v1, p2
 
-    invoke-virtual {v3, v6, p1, p2}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
+    invoke-virtual {v13, v14, v0, v1}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
 
-    .line 3430
-    sget-object v3, Lcom/android/email/provider/EmailProvider;->sCacheHostAuth:Lcom/android/email/provider/ContentCache;
+    .line 1431
+    :sswitch_111
+    move-object/from16 v0, p0
 
-    const-string v6, "Delete"
+    iget-object v13, v0, Lcom/android/email/provider/EmailProvider;->mCacheMessage:Lcom/android/email/provider/ContentCache;
 
-    invoke-virtual {v3, v6, p1, p2}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
+    const-string v14, "Delete"
 
-    .line 3435
-    :sswitch_114
-    sget-object v3, Lcom/android/email/provider/EmailProvider;->sCacheMessage:Lcom/android/email/provider/ContentCache;
+    move-object/from16 v0, p1
 
-    const-string v6, "Delete"
+    move-object/from16 v1, p2
 
-    invoke-virtual {v3, v6, p1, p2}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
+    invoke-virtual {v13, v14, v0, v1}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
 
-    .line 3440
-    :sswitch_11b
-    const-string v3, "Delete"
+    .line 1437
+    :sswitch_11e
+    const-string v13, "Delete"
 
-    invoke-virtual {v8, v3, p1, p2}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
-    :try_end_120
-    .catchall {:try_start_106 .. :try_end_120} :catchall_121
+    move-object/from16 v0, p1
 
-    goto :goto_bc
+    move-object/from16 v1, p2
 
-    .line 3445
-    :catchall_121
-    move-exception v1
+    invoke-virtual {v2, v13, v0, v1}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
 
-    if-eqz v8, :cond_127
+    .line 1439
+    const/16 v13, 0x2001
 
-    .line 3446
-    :try_start_124
-    invoke-virtual {v8, v0}, Lcom/android/email/provider/ContentCache;->unlock(Ljava/lang/String;)V
+    if-eq v7, v13, :cond_ad
 
-    :cond_127
-    throw v1
-    :try_end_128
-    .catchall {:try_start_124 .. :try_end_128} :catchall_1bd
-    .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_124 .. :try_end_128} :catch_3e
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_124 .. :try_end_128} :catch_128
+    .line 1440
+    invoke-direct/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->preCacheData()V
+    :try_end_12e
+    .catchall {:try_start_ea .. :try_end_12e} :catchall_130
 
-    .line 3596
-    :catch_128
-    move-exception v0
+    goto/16 :goto_ad
 
-    .line 3597
-    :goto_129
-    :try_start_129
-    invoke-virtual {p0}, Lcom/android/email/provider/EmailProvider;->checkDatabases()V
+    .line 1446
+    :catchall_130
+    move-exception v13
 
-    .line 3599
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteException;->printStackTrace()V
-    :try_end_12f
-    .catchall {:try_start_129 .. :try_end_12f} :catchall_1bd
+    if-eqz v2, :cond_136
 
-    .line 3600
-    const/4 v0, -0x1
+    .line 1447
+    :try_start_133
+    invoke-virtual {v2, v6}, Lcom/android/email/provider/ContentCache;->unlock(Ljava/lang/String;)V
 
-    .line 3602
-    if-eqz v2, :cond_49
+    :cond_136
+    throw v13
 
-    .line 3604
-    :try_start_132
-    invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-    :try_end_135
-    .catch Ljava/lang/Exception; {:try_start_132 .. :try_end_135} :catch_137
+    .line 1453
+    :sswitch_137
+    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
-    goto/16 :goto_49
+    move-result-object v13
 
-    .line 3605
-    :catch_137
-    move-exception v1
+    const/4 v14, 0x2
 
-    goto/16 :goto_49
+    invoke-interface {v13, v14}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    .line 3454
-    :sswitch_13a
-    :try_start_13a
-    new-instance v0, Ljava/lang/StringBuilder;
+    move-result-object v13
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "insert or replace into Message_Deletes select * from Message where "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 3455
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "delete from Message_Updates where "
-
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 3456
-    invoke-virtual {v5, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 3457
-    invoke-virtual {v5, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 3458
-    invoke-virtual {v5, v9, p2, p3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v0
-
-    move-object v1, v3
-
-    .line 3459
-    goto/16 :goto_c4
-
-    .line 3466
-    :sswitch_16d
-    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
+    move-object v0, v13
 
     check-cast v0, Ljava/lang/String;
 
-    .line 3467
-    new-instance v1, Ljava/lang/StringBuilder;
+    move-object v6, v0
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 1454
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    const-string v3, "messageKey="
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v14, "messageKey="
 
-    move-result-object v1
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v13
 
-    move-result-object v1
+    invoke-virtual {v13, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v13
 
-    move-result-object v1
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-direct {p0, v1, p2}, Lcom/android/email/provider/EmailProvider;->whereWith(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v13
 
-    move-result-object v1
+    move-object/from16 v0, p0
 
-    invoke-virtual {v5, v9, v1, p3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    move-object/from16 v1, p2
 
-    move-result v1
+    invoke-direct {v0, v13, v1}, Lcom/android/email/provider/EmailProvider;->whereWith(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move v10, v1
+    move-result-object v13
 
-    move-object v1, v0
+    move-object/from16 v0, p3
 
-    move v0, v10
+    invoke-virtual {v4, v12, v13, v0}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 3469
-    goto/16 :goto_c4
+    move-result v10
 
-    .line 3479
-    :sswitch_198
-    sparse-switch v4, :sswitch_data_38e
+    .line 1456
+    goto/16 :goto_b2
 
-    .line 3494
-    :goto_19b
-    invoke-virtual {v5, v9, p2, p3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    .line 1467
+    :sswitch_167
+    sparse-switch v7, :sswitch_data_250
 
-    move-result v0
+    .line 1483
+    :goto_16a
+    move-object/from16 v0, p2
 
-    move-object v1, v3
+    move-object/from16 v1, p3
 
-    .line 3495
-    goto/16 :goto_c4
+    invoke-virtual {v4, v12, v0, v1}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 3482
-    :sswitch_1a2
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->sCacheMailbox:Lcom/android/email/provider/ContentCache;
+    move-result v10
 
-    const-string v1, "Delete"
+    .line 1484
+    sparse-switch v7, :sswitch_data_266
 
-    invoke-virtual {v0, v1, p1, p2}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
+    goto/16 :goto_b2
 
-    .line 3483
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->sCacheHostAuth:Lcom/android/email/provider/ContentCache;
+    .line 1490
+    :sswitch_177
+    invoke-direct/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->preCacheData()V
 
-    const-string v1, "Delete"
+    goto/16 :goto_b2
 
-    invoke-virtual {v0, v1, p1, p2}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
+    .line 1470
+    :sswitch_17c
+    move-object/from16 v0, p0
 
-    .line 3486
+    iget-object v13, v0, Lcom/android/email/provider/EmailProvider;->mCacheMailbox:Lcom/android/email/provider/ContentCache;
+
+    const-string v14, "Delete"
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, p2
+
+    invoke-virtual {v13, v14, v0, v1}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
+
+    .line 1471
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/android/email/provider/EmailProvider;->mCacheHostAuth:Lcom/android/email/provider/ContentCache;
+
+    const-string v14, "Delete"
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, p2
+
+    invoke-virtual {v13, v14, v0, v1}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
+
+    .line 1472
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/android/email/provider/EmailProvider;->mCachePolicy:Lcom/android/email/provider/ContentCache;
+
+    const-string v14, "Delete"
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, p2
+
+    invoke-virtual {v13, v14, v0, v1}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
+
+    .line 1475
+    :sswitch_1a3
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/android/email/provider/EmailProvider;->mCacheMessage:Lcom/android/email/provider/ContentCache;
+
+    const-string v14, "Delete"
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, p2
+
+    invoke-virtual {v13, v14, v0, v1}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
+
+    .line 1480
     :sswitch_1b0
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->sCacheMessage:Lcom/android/email/provider/ContentCache;
+    const-string v13, "Delete"
 
-    const-string v1, "Delete"
+    move-object/from16 v0, p1
 
-    invoke-virtual {v0, v1, p1, p2}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
+    move-object/from16 v1, p2
 
-    .line 3490
-    :sswitch_1b7
-    const-string v0, "Delete"
+    invoke-virtual {v2, v13, v0, v1}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
 
-    invoke-virtual {v8, v0, p1, p2}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
-    :try_end_1bc
-    .catchall {:try_start_13a .. :try_end_1bc} :catchall_1bd
-    .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_13a .. :try_end_1bc} :catch_3e
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_13a .. :try_end_1bc} :catch_128
+    goto :goto_16a
 
-    goto :goto_19b
+    .line 1504
+    :cond_1ba
+    const-string v13, "delete from Body where messageKey in (select messageKey from Body except select _id from Message)"
 
-    .line 3602
-    :catchall_1bd
-    move-exception v0
+    invoke-virtual {v4, v13}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    :try_end_1bf
+    .catchall {:try_start_133 .. :try_end_1bf} :catchall_4c
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_133 .. :try_end_1bf} :catch_47
 
-    :goto_1be
-    if-eqz v2, :cond_1c3
+    goto/16 :goto_ce
 
-    .line 3604
-    :try_start_1c0
-    invoke-virtual {v5}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-    :try_end_1c3
-    .catch Ljava/lang/Exception; {:try_start_1c0 .. :try_end_1c3} :catch_2b2
+    .line 1374
+    nop
 
-    .line 3606
-    :cond_1c3
-    :goto_1c3
-    throw v0
-
-    .line 3499
-    :sswitch_1c4
-    :try_start_1c4
-    const-string v0, "Policies"
-
-    invoke-virtual {v5, v0, p2, p3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v0
-
-    move-object v1, v3
-
-    .line 3500
-    goto/16 :goto_c4
-
-    .line 3502
-    :sswitch_1cd
-    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    .line 3503
-    const-string v1, "Policies"
-
-    invoke-direct {p0, v0, p2}, Lcom/android/email/provider/EmailProvider;->whereWithId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v5, v1, v3, p3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v1
-
-    move v10, v1
-
-    move-object v1, v0
-
-    move v0, v10
-
-    .line 3505
-    goto/16 :goto_c4
-
-    .line 3511
-    :sswitch_1e7
-    invoke-virtual {v5, v9, p2, p3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v0
-
-    move-object v1, v3
-
-    .line 3512
-    goto/16 :goto_c4
-
-    .line 3518
-    :sswitch_1ee
-    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    .line 3519
-    const/16 v1, 0x7002
-
-    if-ne v4, v1, :cond_229
-
-    .line 3522
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "insert or replace into FollowupFlag_Deletes select * from FollowupFlag where _id="
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v5, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 3523
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "delete from FollowupFlag_Updates where _id="
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v5, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 3526
-    :cond_229
-    invoke-direct {p0, v0, p2}, Lcom/android/email/provider/EmailProvider;->whereWithId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v5, v9, v1, p3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v1
-
-    move v10, v1
-
-    move-object v1, v0
-
-    move v0, v10
-
-    .line 3527
-    goto/16 :goto_c4
-
-    .line 3532
-    :sswitch_236
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v0, v0, v6
-
-    invoke-virtual {v5, v0, p2, p3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v0
-
-    move-object v1, v3
-
-    .line 3533
-    goto/16 :goto_c4
-
-    .line 3535
-    :sswitch_241
-    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    .line 3536
-    sget-object v1, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v1, v1, v6
-
-    invoke-direct {p0, v0, p2}, Lcom/android/email/provider/EmailProvider;->whereWithId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v5, v1, v3, p3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v1
-
-    move v10, v1
-
-    move-object v1, v0
-
-    move v0, v10
-
-    .line 3538
-    goto/16 :goto_c4
-
-    .line 3541
-    :sswitch_25d
-    invoke-virtual {v5, v9, p2, p3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v0
-
-    move-object v1, v3
-
-    .line 3542
-    goto/16 :goto_c4
-
-    .line 3546
-    :sswitch_264
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v0, v0, v6
-
-    invoke-virtual {v5, v0, p2, p3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v0
-
-    move-object v1, v3
-
-    .line 3547
-    goto/16 :goto_c4
-
-    .line 3552
-    :sswitch_26f
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v0, v0, v6
-
-    invoke-virtual {v5, v0, p2, p3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v0
-
-    move-object v1, v3
-
-    .line 3553
-    goto/16 :goto_c4
-
-    .line 3556
-    :sswitch_27a
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v0, v0, v6
-
-    invoke-virtual {v5, v0, p2, p3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v0
-
-    move-object v1, v3
-
-    .line 3557
-    goto/16 :goto_c4
-
-    .line 3562
-    :sswitch_285
-    const-string v0, "EmailAddressCache"
-
-    invoke-virtual {v5, v0, p2, p3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v0
-
-    move-object v1, v3
-
-    .line 3563
-    goto/16 :goto_c4
-
-    .line 3566
-    :sswitch_28e
-    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    .line 3567
-    const-string v1, "EmailAddressCache"
-
-    invoke-direct {p0, v0, p2}, Lcom/android/email/provider/EmailProvider;->whereWithId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v5, v1, v3, p3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v1
-
-    move v10, v1
-
-    move-object v1, v0
-
-    move v0, v10
-
-    .line 3569
-    goto/16 :goto_c4
-
-    .line 3589
-    :cond_2a8
-    const-string v1, "delete from Body where messageKey in (select messageKey from Body except select _id from Message)"
-
-    invoke-virtual {v5, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-    :try_end_2ad
-    .catchall {:try_start_1c4 .. :try_end_2ad} :catchall_1bd
-    .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_1c4 .. :try_end_2ad} :catch_3e
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1c4 .. :try_end_2ad} :catch_128
-
-    goto/16 :goto_f9
-
-    .line 3605
-    :catch_2af
-    move-exception v1
-
-    goto/16 :goto_49
-
-    :catch_2b2
-    move-exception v1
-
-    goto/16 :goto_1c3
-
-    .line 3602
-    :catchall_2b5
-    move-exception v0
-
-    move v2, v1
-
-    goto/16 :goto_1be
-
-    .line 3596
-    :catch_2b9
-    move-exception v0
-
-    move v2, v1
-
-    goto/16 :goto_129
-
-    .line 3593
-    :catch_2bd
-    move-exception v0
-
-    goto/16 :goto_40
-
-    .line 3359
-    :sswitch_data_2c0
+    :sswitch_data_1c2
     .sparse-switch
-        0x0 -> :sswitch_50
-        0x1 -> :sswitch_50
-        0x1000 -> :sswitch_50
-        0x1001 -> :sswitch_50
-        0x2000 -> :sswitch_50
-        0x2001 -> :sswitch_50
-        0x2002 -> :sswitch_50
-        0x2003 -> :sswitch_50
+        0x0 -> :sswitch_53
+        0x1 -> :sswitch_53
+        0x1000 -> :sswitch_53
+        0x1001 -> :sswitch_53
+        0x2000 -> :sswitch_53
+        0x2001 -> :sswitch_53
+        0x2002 -> :sswitch_53
     .end sparse-switch
 
-    .line 3387
-    :sswitch_data_2e2
+    .line 1395
+    :sswitch_data_1e0
     .sparse-switch
-        0x0 -> :sswitch_198
-        0x1 -> :sswitch_5c
-        0x1000 -> :sswitch_198
-        0x1001 -> :sswitch_5c
-        0x2000 -> :sswitch_198
-        0x2001 -> :sswitch_5c
-        0x2002 -> :sswitch_5c
-        0x2003 -> :sswitch_13a
-        0x3000 -> :sswitch_198
-        0x3001 -> :sswitch_5c
-        0x3002 -> :sswitch_16d
-        0x4000 -> :sswitch_198
-        0x4001 -> :sswitch_5c
-        0x5000 -> :sswitch_198
-        0x5001 -> :sswitch_5c
-        0x6000 -> :sswitch_198
-        0x6001 -> :sswitch_5c
-        0x7000 -> :sswitch_1e7
-        0x7001 -> :sswitch_1ee
-        0x7002 -> :sswitch_1ee
-        0x8000 -> :sswitch_1e7
-        0x8001 -> :sswitch_1ee
-        0x9000 -> :sswitch_1e7
-        0x9001 -> :sswitch_1ee
-        0xa000 -> :sswitch_1c4
-        0xa001 -> :sswitch_1cd
-        0xe000 -> :sswitch_25d
-        0xf000 -> :sswitch_264
-        0x10000 -> :sswitch_26f
-        0x11000 -> :sswitch_285
-        0x11002 -> :sswitch_28e
-        0x12001 -> :sswitch_5c
-        0x13000 -> :sswitch_236
-        0x13001 -> :sswitch_241
-        0x14000 -> :sswitch_198
-        0x14001 -> :sswitch_5c
-        0x15000 -> :sswitch_27a
+        0x0 -> :sswitch_167
+        0x1 -> :sswitch_58
+        0x1000 -> :sswitch_167
+        0x1001 -> :sswitch_58
+        0x2000 -> :sswitch_167
+        0x2001 -> :sswitch_58
+        0x2002 -> :sswitch_58
+        0x3000 -> :sswitch_167
+        0x3001 -> :sswitch_58
+        0x3002 -> :sswitch_137
+        0x4000 -> :sswitch_167
+        0x4001 -> :sswitch_58
+        0x5000 -> :sswitch_167
+        0x5001 -> :sswitch_58
+        0x6000 -> :sswitch_167
+        0x6001 -> :sswitch_58
+        0x7000 -> :sswitch_167
+        0x7001 -> :sswitch_58
+        0x8001 -> :sswitch_58
+        0x9000 -> :sswitch_167
+        0x9001 -> :sswitch_58
     .end sparse-switch
 
-    .line 3423
-    :sswitch_data_378
+    .line 1421
+    :sswitch_data_236
     .sparse-switch
-        0x1 -> :sswitch_106
-        0x1001 -> :sswitch_114
-        0x2001 -> :sswitch_11b
-        0x2002 -> :sswitch_11b
-        0x4001 -> :sswitch_11b
+        0x1 -> :sswitch_ea
+        0x1001 -> :sswitch_111
+        0x2001 -> :sswitch_11e
+        0x2002 -> :sswitch_11e
+        0x4001 -> :sswitch_11e
+        0x7001 -> :sswitch_11e
     .end sparse-switch
 
-    .line 3479
-    :sswitch_data_38e
+    .line 1467
+    :sswitch_data_250
     .sparse-switch
-        0x0 -> :sswitch_1a2
-        0x1000 -> :sswitch_1b0
-        0x2000 -> :sswitch_1b7
-        0x4000 -> :sswitch_1b7
+        0x0 -> :sswitch_17c
+        0x1000 -> :sswitch_1a3
+        0x2000 -> :sswitch_1b0
+        0x4000 -> :sswitch_1b0
+        0x7000 -> :sswitch_1b0
+    .end sparse-switch
+
+    .line 1484
+    :sswitch_data_266
+    .sparse-switch
+        0x0 -> :sswitch_177
+        0x1000 -> :sswitch_177
+        0x4000 -> :sswitch_177
+        0x7000 -> :sswitch_177
     .end sparse-switch
 .end method
 
-.method public declared-synchronized getDatabase(Landroid/content/Context;)Landroid/database/sqlite/SQLiteDatabase;
-    .registers 7
-    .parameter
+.method deleteUnlinked(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 10
+    .parameter "db"
+    .parameter "table"
+    .parameter "column"
+    .parameter "foreignColumn"
+    .parameter "foreignTable"
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
 
     .prologue
-    const/4 v1, 0x0
+    .line 804
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const/4 v0, 0x1
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1516
-    monitor-enter p0
-
-    :try_start_3
-    iget-object v2, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    if-eqz v2, :cond_b
-
-    .line 1517
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_63
-
-    .line 1620
-    :goto_9
-    monitor-exit p0
-
-    return-object v0
-
-    .line 1520
-    :cond_b
-    :try_start_b
-    sget-object v2, Lcom/android/email/provider/EmailProvider;->sDBHelper:Lcom/android/email/provider/EmailProvider$DatabaseHelper;
-
-    if-nez v2, :cond_43
-
-    .line 1522
-    :goto_f
-    const-string v2, "EmailProvider"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "getDB first open?"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_27
-    .catchall {:try_start_b .. :try_end_27} :catchall_63
-
-    .line 1524
-    if-nez v0, :cond_66
-
-    .line 1526
-    :try_start_29
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->sDBHelper:Lcom/android/email/provider/EmailProvider$DatabaseHelper;
-
-    invoke-virtual {v0}, Lcom/android/email/provider/EmailProvider$DatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-    :try_end_31
-    .catchall {:try_start_29 .. :try_end_31} :catchall_63
-    .catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_29 .. :try_end_31} :catch_45
-
-    .line 1537
-    :goto_31
-    :try_start_31
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->sBodyDBHelper:Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;
-
-    invoke-virtual {v0}, Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->mBodyDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    .line 1538
-    const-string v0, "EmailProvider"
-
-    const-string v1, "get used db ok"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1620
-    :goto_40
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-    :try_end_42
-    .catchall {:try_start_31 .. :try_end_42} :catchall_63
-
-    goto :goto_9
-
-    .line 1520
-    :cond_43
-    const/4 v0, 0x0
-
-    goto :goto_f
-
-    .line 1527
-    :catch_45
-    move-exception v0
-
-    .line 1529
-    :try_start_46
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabaseLockedException;->printStackTrace()V
-
-    .line 1530
-    const-string v0, "EmailProvider"
-
-    const-string v1, "After 1 second, try again to get to database instance!!!!!!!!!"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1531
-    const-wide/16 v0, 0x3e8
-
-    invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
-
-    .line 1532
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->sDBHelper:Lcom/android/email/provider/EmailProvider$DatabaseHelper;
-
-    invoke-virtual {v0}, Lcom/android/email/provider/EmailProvider$DatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-    :try_end_5d
-    .catchall {:try_start_46 .. :try_end_5d} :catchall_63
-    .catch Ljava/lang/InterruptedException; {:try_start_46 .. :try_end_5d} :catch_5e
-
-    goto :goto_31
-
-    .line 1533
-    :catch_5e
-    move-exception v0
-
-    .line 1534
-    :try_start_5f
-    invoke-virtual {v0}, Ljava/lang/InterruptedException;->printStackTrace()V
-    :try_end_62
-    .catchall {:try_start_5f .. :try_end_62} :catchall_63
-
-    goto :goto_31
-
-    .line 1516
-    :catchall_63
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-
-    .line 1542
-    :cond_66
-    :try_start_66
-    const-string v0, "EmailProvider"
-
-    const-string v2, "it is first db, go on normal process"
-
-    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1546
-    invoke-virtual {p0}, Lcom/android/email/provider/EmailProvider;->checkDatabases()V
-
-    .line 1549
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->sDBHelper:Lcom/android/email/provider/EmailProvider$DatabaseHelper;
-
-    if-nez v0, :cond_7d
-
-    .line 1550
-    new-instance v0, Lcom/android/email/provider/EmailProvider$DatabaseHelper;
-
-    const-string v2, "EmailProvider.db"
-
-    invoke-direct {v0, p0, p1, v2}, Lcom/android/email/provider/EmailProvider$DatabaseHelper;-><init>(Lcom/android/email/provider/EmailProvider;Landroid/content/Context;Ljava/lang/String;)V
-
-    sput-object v0, Lcom/android/email/provider/EmailProvider;->sDBHelper:Lcom/android/email/provider/EmailProvider$DatabaseHelper;
-
-    .line 1551
-    :cond_7d
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->sBodyDBHelper:Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;
-
-    if-nez v0, :cond_8a
-
-    .line 1552
-    new-instance v0, Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;
-
-    const-string v2, "EmailProviderBody.db"
-
-    invoke-direct {v0, p0, p1, v2}, Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;-><init>(Lcom/android/email/provider/EmailProvider;Landroid/content/Context;Ljava/lang/String;)V
-
-    sput-object v0, Lcom/android/email/provider/EmailProvider;->sBodyDBHelper:Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;
-    :try_end_8a
-    .catchall {:try_start_66 .. :try_end_8a} :catchall_63
-
-    .line 1554
-    :cond_8a
-    :try_start_8a
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->sDBHelper:Lcom/android/email/provider/EmailProvider$DatabaseHelper;
-
-    invoke-virtual {v0}, Lcom/android/email/provider/EmailProvider$DatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-    :try_end_92
-    .catchall {:try_start_8a .. :try_end_92} :catchall_63
-    .catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_8a .. :try_end_92} :catch_136
-
-    .line 1565
-    :goto_92
-    :try_start_92
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    if-eqz v0, :cond_d2
-
-    .line 1566
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v2}, Landroid/database/sqlite/SQLiteDatabase;->setLockingEnabled(Z)V
-
-    .line 1568
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->sBodyDBHelper:Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;
-
-    invoke-virtual {v0}, Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->mBodyDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    .line 1569
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mBodyDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    if-eqz v0, :cond_d2
-
-    .line 1570
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mBodyDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v2}, Landroid/database/sqlite/SQLiteDatabase;->setLockingEnabled(Z)V
-
-    .line 1571
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mBodyDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->getPath()Ljava/lang/String;
-    :try_end_b3
-    .catchall {:try_start_92 .. :try_end_b3} :catchall_63
-
-    move-result-object v2
-
-    .line 1573
-    :try_start_b4
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "attach \""
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "\" as BodyDatabase"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-    :try_end_d2
-    .catchall {:try_start_b4 .. :try_end_d2} :catchall_63
-    .catch Landroid/database/sqlite/SQLiteDatabaseLockedException; {:try_start_b4 .. :try_end_d2} :catch_156
-
-    .line 1588
-    :cond_d2
-    :goto_d2
-    :try_start_d2
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    const-string v2, "Message_Updates"
-
-    invoke-static {v0, v2}, Lcom/android/email/provider/EmailProvider;->deleteOrphans(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
-
-    .line 1589
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    const-string v2, "Message_Deletes"
-
-    invoke-static {v0, v2}, Lcom/android/email/provider/EmailProvider;->deleteOrphans(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
-
-    .line 1591
-    invoke-static {p1}, Lcom/digc/seven/SevenSyncProvider;->getAccountCount(Landroid/content/Context;)I
-
-    move-result v0
-
-    .line 1593
-    const-string v2, "EmailProvider"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "savenCount = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1595
-    if-nez v0, :cond_131
-
-    .line 1596
-    const-string v0, "EmailProvider"
-
-    const-string v2, "saven Account Delete Start"
-
-    invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_105
-    .catchall {:try_start_d2 .. :try_end_105} :catchall_63
-
-    .line 1599
-    :try_start_105
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    if-eqz v0, :cond_126
-
-    .line 1600
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    const-string v2, "SELECT name FROM sqlite_master where type=\'table\' and name=\'Account_CB\'"
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 1604
-    invoke-interface {v1}, Landroid/database/Cursor;->getCount()I
+    const-string v2, " not in (select "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " from "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ")"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, p2, v1, v2}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
     move-result v0
 
-    if-eqz v0, :cond_126
+    .line 806
+    .local v0, count:I
+    if-lez v0, :cond_50
 
-    .line 1605
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+    .line 807
+    const-string v1, "EmailProvider"
 
-    const-string v2, "delete from Account where _id in (select accountKey from Account_CB where typeMsg = 1)"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v2}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1607
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    const-string v2, "delete from Body where messageKey in (select messageKey from Body except select _id from Message)"
-
-    invoke-virtual {v0, v2}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-    :try_end_126
-    .catchall {:try_start_105 .. :try_end_126} :catchall_1a2
-    .catch Ljava/lang/Exception; {:try_start_105 .. :try_end_126} :catch_18c
-
-    .line 1613
-    :cond_126
-    if-eqz v1, :cond_131
-
-    :try_start_128
-    invoke-interface {v1}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_131
-
-    .line 1614
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    .line 1618
-    :cond_131
-    :goto_131
-    invoke-static {p1}, Lcom/android/email/BadgeManager;->updateBadgeProvider(Landroid/content/Context;)V
-    :try_end_134
-    .catchall {:try_start_128 .. :try_end_134} :catchall_63
-
-    goto/16 :goto_40
-
-    .line 1555
-    :catch_136
-    move-exception v0
-
-    .line 1557
-    :try_start_137
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabaseLockedException;->printStackTrace()V
-
-    .line 1558
-    const-string v0, "EmailProvider"
-
-    const-string v2, "After 1 second, try again to get to database instance!!!!!!!!!"
-
-    invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1559
-    const-wide/16 v2, 0x3e8
-
-    invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
-
-    .line 1560
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->sDBHelper:Lcom/android/email/provider/EmailProvider$DatabaseHelper;
-
-    invoke-virtual {v0}, Lcom/android/email/provider/EmailProvider$DatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-    :try_end_14e
-    .catchall {:try_start_137 .. :try_end_14e} :catchall_63
-    .catch Ljava/lang/InterruptedException; {:try_start_137 .. :try_end_14e} :catch_150
-
-    goto/16 :goto_92
-
-    .line 1561
-    :catch_150
-    move-exception v0
-
-    .line 1562
-    :try_start_151
-    invoke-virtual {v0}, Ljava/lang/InterruptedException;->printStackTrace()V
-    :try_end_154
-    .catchall {:try_start_151 .. :try_end_154} :catchall_63
-
-    goto/16 :goto_92
-
-    .line 1574
-    :catch_156
-    move-exception v0
-
-    .line 1576
-    :try_start_157
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabaseLockedException;->printStackTrace()V
-
-    .line 1577
-    const-string v0, "EmailProvider"
-
-    const-string v3, "After 1 second, try again to execute DB query!!!!!!!!!"
-
-    invoke-static {v0, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1578
-    const-wide/16 v3, 0x3e8
-
-    invoke-static {v3, v4}, Ljava/lang/Thread;->sleep(J)V
-
-    .line 1579
-    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "attach \""
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "\" as BodyDatabase"
+    const-string v3, "Found "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " orphaned row(s) in "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v0, v2}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-    :try_end_184
-    .catchall {:try_start_157 .. :try_end_184} :catchall_63
-    .catch Ljava/lang/InterruptedException; {:try_start_157 .. :try_end_184} :catch_186
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_d2
+    .line 809
+    :cond_50
+    return-void
+.end method
 
-    .line 1580
-    :catch_186
-    move-exception v0
+.method declared-synchronized getDatabase(Landroid/content/Context;)Landroid/database/sqlite/SQLiteDatabase;
+    .registers 11
+    .parameter "context"
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
 
-    .line 1581
-    :try_start_187
-    invoke-virtual {v0}, Ljava/lang/InterruptedException;->printStackTrace()V
-    :try_end_18a
-    .catchall {:try_start_187 .. :try_end_18a} :catchall_63
+    .prologue
+    .line 814
+    monitor-enter p0
 
-    goto/16 :goto_d2
+    :try_start_1
+    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 1610
-    :catch_18c
-    move-exception v0
+    if-eqz v0, :cond_9
 
-    .line 1611
-    :try_start_18d
-    const-string v2, "EmailProvider"
+    .line 815
+    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+    :try_end_7
+    .catchall {:try_start_1 .. :try_end_7} :catchall_bf
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    .line 857
+    :goto_7
+    monitor-exit p0
+
+    return-object v0
+
+    .line 820
+    :cond_9
+    :try_start_9
+    invoke-virtual {p0}, Lcom/android/email/provider/EmailProvider;->checkDatabases()V
+
+    .line 822
+    new-instance v8, Lcom/android/email/provider/EmailProvider$DatabaseHelper;
+
+    const-string v0, "EmailProvider.db"
+
+    invoke-direct {v8, p1, v0}, Lcom/android/email/provider/EmailProvider$DatabaseHelper;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    .line 823
+    .local v8, helper:Lcom/android/email/provider/EmailProvider$DatabaseHelper;
+    invoke-virtual {v8}, Lcom/android/email/provider/EmailProvider$DatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    invoke-static {v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_196
-    .catchall {:try_start_18d .. :try_end_196} :catchall_1a2
+    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 1613
-    if-eqz v1, :cond_131
+    .line 824
+    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
-    :try_start_198
-    invoke-interface {v1}, Landroid/database/Cursor;->isClosed()Z
+    const/4 v1, 0x1
 
-    move-result v0
+    invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteDatabase;->setLockingEnabled(Z)V
 
-    if-nez v0, :cond_131
+    .line 825
+    new-instance v7, Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;
 
-    .line 1614
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    const-string v0, "EmailProviderBody.db"
 
-    goto :goto_131
+    invoke-direct {v7, p0, p1, v0}, Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;-><init>(Lcom/android/email/provider/EmailProvider;Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 1613
-    :catchall_1a2
+    .line 826
+    .local v7, bodyHelper:Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;
+    invoke-virtual {v7}, Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/email/provider/EmailProvider;->mBodyDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    .line 827
+    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mBodyDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    if-eqz v0, :cond_5a
+
+    .line 828
+    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mBodyDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteDatabase;->setLockingEnabled(Z)V
+
+    .line 829
+    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mBodyDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->getPath()Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 830
+    .local v6, bodyFileName:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "attach \""
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "\" as BodyDatabase"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    .line 834
+    .end local v6           #bodyFileName:Ljava/lang/String;
+    :cond_5a
+    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-static {p1, v0}, Lcom/android/email/provider/EmailProvider;->restoreIfNeeded(Landroid/content/Context;Landroid/database/sqlite/SQLiteDatabase;)V
+
+    .line 836
+    sget-boolean v0, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v0, :cond_6a
+
+    .line 837
+    const-string v0, "EmailProvider"
+
+    const-string v1, "Deleting orphans..."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 840
+    :cond_6a
+    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    const-string v1, "Message_Updates"
+
+    invoke-static {v0, v1}, Lcom/android/email/provider/EmailProvider;->deleteMessageOrphans(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
+
+    .line 841
+    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    const-string v1, "Message_Deletes"
+
+    invoke-static {v0, v1}, Lcom/android/email/provider/EmailProvider;->deleteMessageOrphans(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
+
+    .line 843
+    iget-object v1, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    const-string v2, "Mailbox"
+
+    const-string v3, "accountKey"
+
+    const-string v4, "_id"
+
+    const-string v5, "Account"
+
+    move-object v0, p0
+
+    invoke-virtual/range {v0 .. v5}, Lcom/android/email/provider/EmailProvider;->deleteUnlinked(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 845
+    iget-object v1, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    const-string v2, "Message"
+
+    const-string v3, "accountKey"
+
+    const-string v4, "_id"
+
+    const-string v5, "Account"
+
+    move-object v0, p0
+
+    invoke-virtual/range {v0 .. v5}, Lcom/android/email/provider/EmailProvider;->deleteUnlinked(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 847
+    iget-object v1, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    const-string v2, "Policy"
+
+    const-string v3, "_id"
+
+    const-string v4, "policyKey"
+
+    const-string v5, "Account"
+
+    move-object v0, p0
+
+    invoke-virtual/range {v0 .. v5}, Lcom/android/email/provider/EmailProvider;->deleteUnlinked(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 850
+    sget-boolean v0, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v0, :cond_ad
+
+    .line 851
+    const-string v0, "EmailProvider"
+
+    const-string v1, "EmailProvider pre-caching..."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 853
+    :cond_ad
+    invoke-direct {p0}, Lcom/android/email/provider/EmailProvider;->preCacheData()V
+
+    .line 854
+    sget-boolean v0, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v0, :cond_bb
+
+    .line 855
+    const-string v0, "EmailProvider"
+
+    const-string v1, "EmailProvider ready."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 857
+    :cond_bb
+    iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+    :try_end_bd
+    .catchall {:try_start_9 .. :try_end_bd} :catchall_bf
+
+    goto/16 :goto_7
+
+    .line 814
+    .end local v7           #bodyHelper:Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;
+    .end local v8           #helper:Lcom/android/email/provider/EmailProvider$DatabaseHelper;
+    :catchall_bf
     move-exception v0
 
-    if-eqz v1, :cond_1ae
+    monitor-exit p0
 
-    invoke-interface {v1}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v2
-
-    if-nez v2, :cond_1ae
-
-    .line 1614
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    :cond_1ae
     throw v0
-    :try_end_1af
-    .catchall {:try_start_198 .. :try_end_1af} :catchall_63
 .end method
 
 .method public getType(Landroid/net/Uri;)Ljava/lang/String;
-    .registers 5
-    .parameter
+    .registers 8
+    .parameter "uri"
 
     .prologue
-    .line 3619
-    const-string v0, "getType"
+    .line 1528
+    const-string v3, "getType"
 
-    invoke-static {p1, v0}, Lcom/android/email/provider/EmailProvider;->findMatch(Landroid/net/Uri;Ljava/lang/String;)I
-
-    move-result v0
-
-    .line 3620
-    sparse-switch v0, :sswitch_data_86
-
-    .line 3704
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unknown URI "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 3622
-    :sswitch_22
-    const-string v0, "vnd.android.cursor.item/email-body"
-
-    .line 3701
-    :cond_24
-    :goto_24
-    return-object v0
-
-    .line 3624
-    :sswitch_25
-    const-string v0, "vnd.android.cursor.dir/email-body"
-
-    goto :goto_24
-
-    .line 3636
-    :sswitch_28
-    const-string v0, "vnd.android.cursor.item/email-message"
-
-    .line 3637
-    const-string v1, "mailboxId"
-
-    invoke-virtual {p1, v1}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 3639
-    if-eqz v1, :cond_24
-
-    .line 3640
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "-"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_24
-
-    .line 3646
-    :sswitch_4a
-    const-string v0, "vnd.android.cursor.dir/email-message"
-
-    goto :goto_24
-
-    .line 3649
-    :sswitch_4d
-    const-string v0, "vnd.android.cursor.dir/email-mailbox"
-
-    goto :goto_24
-
-    .line 3651
-    :sswitch_50
-    const-string v0, "vnd.android.cursor.item/email-mailbox"
-
-    goto :goto_24
-
-    .line 3653
-    :sswitch_53
-    const-string v0, "vnd.android.cursor.dir/email-account"
-
-    goto :goto_24
-
-    .line 3655
-    :sswitch_56
-    const-string v0, "vnd.android.cursor.item/email-account"
-
-    goto :goto_24
-
-    .line 3658
-    :sswitch_59
-    const-string v0, "vnd.android.cursor.dir/email-attachment"
-
-    goto :goto_24
-
-    .line 3660
-    :sswitch_5c
-    const-string v0, "vnd.android.cursor.item/email-attachment"
-
-    goto :goto_24
-
-    .line 3662
-    :sswitch_5f
-    const-string v0, "vnd.android.cursor.dir/email-hostauth"
-
-    goto :goto_24
-
-    .line 3664
-    :sswitch_62
-    const-string v0, "vnd.android.cursor.item/email-hostauth"
-
-    goto :goto_24
-
-    .line 3668
-    :sswitch_65
-    const-string v0, "vnd.android.cursor.dir/email-policies"
-
-    goto :goto_24
-
-    .line 3670
-    :sswitch_68
-    const-string v0, "vnd.android.cursor.item/email-policies"
-
-    goto :goto_24
-
-    .line 3676
-    :sswitch_6b
-    const-string v0, "vnd.android.cursor.dir/email-followupflags"
-
-    goto :goto_24
-
-    .line 3679
-    :sswitch_6e
-    const-string v0, "vnd.android.cursor.item/email-followupflags"
-
-    goto :goto_24
-
-    .line 3683
-    :sswitch_71
-    const-string v0, "vnd.android.cursor.dir/email-document"
-
-    goto :goto_24
-
-    .line 3685
-    :sswitch_74
-    const-string v0, "vnd.android.cursor.item/email-document"
-
-    goto :goto_24
-
-    .line 3689
-    :sswitch_77
-    const-string v0, "vnd.android.cursor.dir/email-recipientinformation"
-
-    goto :goto_24
-
-    .line 3691
-    :sswitch_7a
-    const-string v0, "vnd.android.cursor.item/email-recipientinformation"
-
-    goto :goto_24
-
-    .line 3695
-    :sswitch_7d
-    const-string v0, "vnd.android.cursor.item/email-IRMTemplate"
-
-    goto :goto_24
-
-    .line 3697
-    :sswitch_80
-    const-string v0, "vnd.android.cursor.dir/email-IRMTemplate"
-
-    goto :goto_24
-
-    .line 3701
-    :sswitch_83
-    const-string v0, "vnd.android.cursor.dir/email-emailaddresscache"
-
-    goto :goto_24
-
-    .line 3620
-    :sswitch_data_86
-    .sparse-switch
-        0x0 -> :sswitch_53
-        0x1 -> :sswitch_56
-        0x5 -> :sswitch_4d
-        0x1000 -> :sswitch_4d
-        0x1001 -> :sswitch_50
-        0x1003 -> :sswitch_4a
-        0x2000 -> :sswitch_4a
-        0x2001 -> :sswitch_28
-        0x3000 -> :sswitch_59
-        0x3001 -> :sswitch_5c
-        0x3002 -> :sswitch_59
-        0x4000 -> :sswitch_5f
-        0x4001 -> :sswitch_62
-        0x5000 -> :sswitch_4a
-        0x5001 -> :sswitch_28
-        0x7000 -> :sswitch_6b
-        0x7001 -> :sswitch_6e
-        0x8000 -> :sswitch_6b
-        0x8001 -> :sswitch_6e
-        0xa000 -> :sswitch_65
-        0xa001 -> :sswitch_68
-        0xf000 -> :sswitch_77
-        0xf001 -> :sswitch_7a
-        0x11000 -> :sswitch_83
-        0x13000 -> :sswitch_71
-        0x13001 -> :sswitch_74
-        0x14000 -> :sswitch_25
-        0x14001 -> :sswitch_22
-        0x15000 -> :sswitch_80
-        0x15001 -> :sswitch_7d
-    .end sparse-switch
-.end method
-
-.method public insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
-    .registers 13
-    .parameter
-    .parameter
-
-    .prologue
-    const/4 v9, 0x0
-
-    const/4 v1, 0x0
-
-    .line 3710
-    const-string v0, "insert"
-
-    invoke-static {p1, v0}, Lcom/android/email/provider/EmailProvider;->findMatch(Landroid/net/Uri;Ljava/lang/String;)I
-
-    move-result v2
-
-    .line 3711
-    invoke-virtual {p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    .line 3712
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    .line 3715
-    invoke-virtual {p0, v0}, Lcom/android/email/provider/EmailProvider;->getDatabase(Landroid/content/Context;)Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v4
-
-    .line 3716
-    shr-int/lit8 v5, v2, 0xc
-
-    .line 3725
-    const/16 v0, 0x1001
-
-    if-eq v2, v0, :cond_1e
-
-    const/16 v0, 0x1000
-
-    if-ne v2, v0, :cond_30
-
-    .line 3726
-    :cond_1e
-    const-string v0, "unreadCount"
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-virtual {p2, v0, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 3727
-    const-string v0, "messageCount"
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-virtual {p2, v0, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 3731
-    :cond_30
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v0, v0, v5
-
-    .line 3733
-    sparse-switch v2, :sswitch_data_204
-
-    .line 3870
-    :try_start_37
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unknown URL "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-    :try_end_50
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_37 .. :try_end_50} :catch_50
-
-    .line 3872
-    :catch_50
-    move-exception v0
-
-    .line 3873
-    invoke-virtual {p0}, Lcom/android/email/provider/EmailProvider;->checkDatabases()V
-
-    .line 3874
-    throw v0
-
-    .line 3735
-    :sswitch_55
-    :try_start_55
-    sget-object v5, Lcom/android/emailcommon/provider/EmailContent$Message;->NOTIFIER_URI:Landroid/net/Uri;
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v3, v5, v6}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
-
-    .line 3750
-    :sswitch_5b
-    const-string v5, "foo"
-
-    invoke-virtual {v4, v0, v5, p2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
-
-    move-result-wide v4
-
-    .line 3751
-    invoke-static {p1, v4, v5}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v0
-
-    .line 3759
-    const/16 v6, 0x5000
-
-    if-eq v2, v6, :cond_6d
-
-    const/16 v6, 0x6000
-
-    if-ne v2, v6, :cond_86
-
-    .line 3760
-    :cond_6d
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unknown URL "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 3762
-    :cond_86
-    const/16 v6, 0x3000
-
-    if-ne v2, v6, :cond_9f
-
-    .line 3764
-    const-string v2, "flags"
-
-    invoke-virtual {p2, v2}, Landroid/content/ContentValues;->containsKey(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_9c
-
-    .line 3765
-    const-string v1, "flags"
-
-    invoke-virtual {p2, v1}, Landroid/content/ContentValues;->getAsInteger(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v3}, Lcom/android/email/provider/EmailProvider;->findMatch(Landroid/net/Uri;Ljava/lang/String;)I
 
     move-result v1
 
-    .line 3768
-    :cond_9c
-    invoke-static {v4, v5, v1}, Lcom/android/email/service/AttachmentDownloadService;->attachmentChanged(JI)V
-    :try_end_9f
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_55 .. :try_end_9f} :catch_50
-
-    .line 3879
-    :cond_9f
-    :goto_9f
-    invoke-virtual {v3, p1, v9}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
-
-    .line 3880
-    :goto_a2
-    return-object v0
-
-    .line 3776
-    :sswitch_a3
-    :try_start_a3
-    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    .line 3777
-    const-string v2, "mailboxKey"
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v2, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 3778
-    sget-object v0, Lcom/android/emailcommon/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-virtual {p0, v0, p2}, Lcom/android/email/provider/EmailProvider;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    goto :goto_a2
-
-    .line 3781
-    :sswitch_c2
-    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    .line 3782
-    const-string v2, "messageKey"
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v2, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 3783
-    sget-object v0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-virtual {p0, v0, p2}, Lcom/android/email/provider/EmailProvider;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    goto :goto_a2
-
-    .line 3786
-    :sswitch_e1
-    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    .line 3787
-    const-string v2, "accountKey"
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v2, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 3788
-    sget-object v0, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-virtual {p0, v0, p2}, Lcom/android/email/provider/EmailProvider;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    goto :goto_a2
-
-    .line 3790
-    :sswitch_100
-    const-string v1, "foo"
-
-    invoke-virtual {v4, v0, v1, p2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
-
-    move-result-wide v0
-
-    .line 3791
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Attachment;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-static {v2, v0, v1}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v0
-
-    goto :goto_9f
-
-    .line 3796
-    :sswitch_10d
-    const-string v1, "foo"
-
-    invoke-virtual {v4, v0, v1, p2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
-
-    move-result-wide v0
-
-    .line 3797
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Policies;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-static {v2, v0, v1}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v0
-
-    goto :goto_9f
-
-    .line 3804
-    :sswitch_11a
-    const-string v1, "foo"
-
-    invoke-virtual {v4, v0, v1, p2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
-
-    move-result-wide v0
-
-    .line 3805
-    invoke-static {p1, v0, v1}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v0
-
-    goto/16 :goto_9f
-
-    .line 3808
-    :sswitch_126
-    const-string v1, "foo"
-
-    invoke-virtual {v4, v0, v1, p2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
-
-    move-result-wide v0
-
-    .line 3809
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$FollowupFlag;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-static {v2, v0, v1}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v0
-
-    goto/16 :goto_9f
-
-    .line 3815
-    :sswitch_134
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v0, v0, v5
-
-    const-string v1, "foo"
-
-    invoke-virtual {v4, v0, v1, p2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
-
-    move-result-wide v0
-
-    .line 3816
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$RecipientInformationCache;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-static {v2, v0, v1}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v0
-
-    goto/16 :goto_9f
-
-    .line 3821
-    :sswitch_146
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v0, v0, v5
-
-    const-string v1, "foo"
-
-    invoke-virtual {v4, v0, v1, p2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
-
-    move-result-wide v0
-
-    .line 3822
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Document;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-static {v2, v0, v1}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v0
-
-    goto/16 :goto_9f
-
-    .line 3829
-    :sswitch_158
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v0, v0, v5
-
-    const-string v1, "foo"
-
-    invoke-virtual {v4, v0, v1, p2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
-
-    move-result-wide v0
-
-    .line 3830
-    invoke-static {p1, v0, v1}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v0
-
-    goto/16 :goto_9f
-
-    .line 3833
-    :sswitch_168
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v0, v0, v5
-
-    const-string v1, "foo"
-
-    invoke-virtual {v4, v0, v1, p2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
-
-    move-result-wide v0
-
-    .line 3834
-    invoke-static {p1, v0, v1}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v0
-
-    goto/16 :goto_9f
-
-    .line 3841
-    :sswitch_178
-    const-string v0, "accountAddress"
-
-    invoke-virtual {p2, v0}, Landroid/content/ContentValues;->getAsString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 3844
-    const-wide/16 v0, -0x1
-
-    .line 3846
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "select count(*) from "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    sget-object v7, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v7, v7, v5
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, " where "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, "accountAddress"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, " is \'"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, "\'"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    const/4 v7, 0x0
-
-    invoke-virtual {v4, v6, v7}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v6
-
-    .line 3850
-    invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_1da
-
-    const/4 v7, 0x0
-
-    invoke-interface {v6, v7}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v7
-
-    if-nez v7, :cond_1da
-
-    .line 3851
-    sget-object v0, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v0, v0, v5
-
-    const-string v1, "foo"
-
-    invoke-virtual {v4, v0, v1, p2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
-
-    move-result-wide v0
-
-    .line 3862
-    :cond_1cf
-    :goto_1cf
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    .line 3865
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$EmailAddressCache;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-static {v2, v0, v1}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v0
-
-    goto/16 :goto_9f
-
-    .line 3853
-    :cond_1da
-    if-eqz v2, :cond_1cf
-
-    .line 3854
-    const-string v7, "accountAddress"
-
-    invoke-virtual {p2, v7}, Landroid/content/ContentValues;->remove(Ljava/lang/String;)V
-
-    .line 3856
-    sget-object v7, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v5, v7, v5
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "accountAddress is \'"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v7, "\'"
-
-    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v7, 0x0
-
-    invoke-virtual {v4, v5, p2, v2, v7}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_202
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_a3 .. :try_end_202} :catch_50
-
-    goto :goto_1cf
-
-    .line 3733
-    nop
-
-    :sswitch_data_204
-    .sparse-switch
-        0x0 -> :sswitch_5b
-        0x1 -> :sswitch_e1
-        0x1000 -> :sswitch_5b
-        0x1001 -> :sswitch_a3
-        0x2000 -> :sswitch_55
-        0x2001 -> :sswitch_c2
-        0x3000 -> :sswitch_5b
-        0x3002 -> :sswitch_100
-        0x4000 -> :sswitch_5b
-        0x5000 -> :sswitch_5b
-        0x6000 -> :sswitch_5b
-        0x7000 -> :sswitch_11a
-        0x7001 -> :sswitch_126
-        0xa000 -> :sswitch_10d
-        0xc000 -> :sswitch_5b
-        0xd000 -> :sswitch_5b
-        0xe000 -> :sswitch_5b
-        0xf000 -> :sswitch_134
-        0x10000 -> :sswitch_5b
-        0x11000 -> :sswitch_178
-        0x12000 -> :sswitch_5b
-        0x13000 -> :sswitch_146
-        0x14000 -> :sswitch_5b
-        0x15000 -> :sswitch_158
-        0x15001 -> :sswitch_168
-    .end sparse-switch
-.end method
-
-.method public onCreate()Z
-    .registers 2
-
-    .prologue
-    .line 3885
-    invoke-virtual {p0}, Lcom/android/email/provider/EmailProvider;->checkDatabases()V
-
-    .line 3886
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public openFile(Landroid/net/Uri;Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;
-    .registers 7
-    .parameter
-    .parameter
-
-    .prologue
-    .line 3924
-    new-instance v1, Ljava/io/File;
-
-    const-string v0, "file:///data/data/com.android.email/files/keystore"
-
-    invoke-static {v0}, Ljava/net/URI;->create(Ljava/lang/String;)Ljava/net/URI;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/net/URI;)V
-
-    .line 3925
-    const/4 v0, 0x0
-
-    .line 3927
-    const/high16 v2, 0x1000
-
-    :try_start_e
-    invoke-static {v1, v2}, Landroid/os/ParcelFileDescriptor;->open(Ljava/io/File;I)Landroid/os/ParcelFileDescriptor;
-    :try_end_11
-    .catch Ljava/io/FileNotFoundException; {:try_start_e .. :try_end_11} :catch_13
-
-    move-result-object v0
-
-    .line 3933
-    :goto_12
-    return-object v0
-
-    .line 3928
-    :catch_13
-    move-exception v1
-
-    .line 3929
-    const-string v2, "EmailProvider"
-
-    const-string v3, "key store was not found"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 3930
-    invoke-virtual {v1}, Ljava/io/FileNotFoundException;->printStackTrace()V
-
-    goto :goto_12
-.end method
-
-.method public query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    .registers 25
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 3939
-    const-wide/16 v3, 0x0
-
-    .line 3940
-    sget-boolean v5, Lcom/android/email/Email;->DEBUG:Z
-
-    if-eqz v5, :cond_3e6
-
-    .line 3941
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
-
-    move-result-wide v3
-
-    move-wide v13, v3
-
-    .line 3943
-    :goto_b
-    const/4 v15, 0x0
-
-    .line 3946
-    :try_start_c
-    const-string v3, "query"
-
-    move-object/from16 v0, p1
-
-    invoke-static {v0, v3}, Lcom/android/email/provider/EmailProvider;->findMatch(Landroid/net/Uri;Ljava/lang/String;)I
-    :try_end_13
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_c .. :try_end_13} :catch_75
-
-    move-result v6
-
-    .line 3969
-    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    .line 3971
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3}, Lcom/android/email/provider/EmailProvider;->getDatabase(Landroid/content/Context;)Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v3
-
-    .line 3972
-    shr-int/lit8 v12, v6, 0xc
-
-    .line 3973
-    const-string v4, "limit"
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v4}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v11
-
-    .line 3978
-    const/4 v5, 0x0
-
-    .line 3979
-    sget-object v4, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v4, v4, v12
-
-    .line 3981
-    if-nez p3, :cond_3e2
-
-    .line 3982
-    sget-object v5, Lcom/android/email/provider/EmailProvider;->CONTENT_CACHES:[Lcom/android/email/provider/ContentCache;
-
-    aget-object v5, v5, v12
-
-    move-object/from16 v17, v5
-
-    .line 3984
-    :goto_35
-    if-nez v17, :cond_3e
-
-    .line 3985
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, p3
-
-    invoke-static {v0, v1}, Lcom/android/email/provider/ContentCache;->notCacheable(Landroid/net/Uri;Ljava/lang/String;)V
-
-    .line 3989
-    :cond_3e
-    sparse-switch v6, :sswitch_data_3ea
-
-    .line 4207
-    :try_start_41
+    .line 1529
+    .local v1, match:I
+    sparse-switch v1, :sswitch_data_66
+
+    .line 1568
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -6828,9 +5459,7 @@
 
     move-result-object v4
 
-    move-object/from16 v0, p1
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -6841,98 +5470,892 @@
     invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v3
-    :try_end_5c
-    .catchall {:try_start_41 .. :try_end_5c} :catchall_3ac
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_41 .. :try_end_5c} :catch_5c
-    .catch Ljava/lang/Exception; {:try_start_41 .. :try_end_5c} :catch_137
 
-    .line 4209
-    :catch_5c
-    move-exception v3
+    .line 1531
+    :sswitch_22
+    const-string v2, "vnd.android.cursor.item/email-body"
 
-    move-object v4, v15
+    .line 1566
+    :cond_24
+    :goto_24
+    return-object v2
 
-    .line 4210
-    :goto_5e
-    :try_start_5e
-    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->checkDatabases()V
+    .line 1533
+    :sswitch_25
+    const-string v2, "vnd.android.cursor.dir/email-body"
 
-    .line 4211
-    throw v3
-    :try_end_62
-    .catchall {:try_start_5e .. :try_end_62} :catchall_62
+    goto :goto_24
 
-    .line 4221
-    :catchall_62
-    move-exception v3
+    .line 1541
+    :sswitch_28
+    const-string v2, "vnd.android.cursor.item/email-message"
 
-    move-object v15, v4
+    .line 1542
+    .local v2, mimeType:Ljava/lang/String;
+    const-string v3, "mailboxId"
 
+    invoke-virtual {p1, v3}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 1543
+    .local v0, mailboxId:Ljava/lang/String;
+    if-eqz v0, :cond_24
+
+    .line 1544
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "-"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    goto :goto_24
+
+    .line 1549
+    .end local v0           #mailboxId:Ljava/lang/String;
+    .end local v2           #mimeType:Ljava/lang/String;
+    :sswitch_4a
+    const-string v2, "vnd.android.cursor.dir/email-message"
+
+    goto :goto_24
+
+    .line 1551
+    :sswitch_4d
+    const-string v2, "vnd.android.cursor.dir/email-mailbox"
+
+    goto :goto_24
+
+    .line 1553
+    :sswitch_50
+    const-string v2, "vnd.android.cursor.item/email-mailbox"
+
+    goto :goto_24
+
+    .line 1555
+    :sswitch_53
+    const-string v2, "vnd.android.cursor.dir/email-account"
+
+    goto :goto_24
+
+    .line 1557
+    :sswitch_56
+    const-string v2, "vnd.android.cursor.item/email-account"
+
+    goto :goto_24
+
+    .line 1560
+    :sswitch_59
+    const-string v2, "vnd.android.cursor.dir/email-attachment"
+
+    goto :goto_24
+
+    .line 1562
+    :sswitch_5c
+    const-string v2, "vnd.android.cursor.item/email-attachment"
+
+    goto :goto_24
+
+    .line 1564
+    :sswitch_5f
+    const-string v2, "vnd.android.cursor.dir/email-hostauth"
+
+    goto :goto_24
+
+    .line 1566
+    :sswitch_62
+    const-string v2, "vnd.android.cursor.item/email-hostauth"
+
+    goto :goto_24
+
+    .line 1529
+    nop
+
+    :sswitch_data_66
+    .sparse-switch
+        0x0 -> :sswitch_53
+        0x1 -> :sswitch_56
+        0x1000 -> :sswitch_4d
+        0x1001 -> :sswitch_50
+        0x2000 -> :sswitch_4a
+        0x2001 -> :sswitch_28
+        0x3000 -> :sswitch_59
+        0x3001 -> :sswitch_5c
+        0x3002 -> :sswitch_59
+        0x4000 -> :sswitch_5f
+        0x4001 -> :sswitch_62
+        0x5000 -> :sswitch_4a
+        0x5001 -> :sswitch_28
+        0x9000 -> :sswitch_25
+        0x9001 -> :sswitch_22
+    .end sparse-switch
+.end method
+
+.method public insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
+    .registers 14
+    .parameter
+    .parameter
+
+    .prologue
+    .line 1574
+    const-string v0, "insert"
+
+    invoke-static {p1, v0}, Lcom/android/email/provider/EmailProvider;->findMatch(Landroid/net/Uri;Ljava/lang/String;)I
+
+    move-result v6
+
+    .line 1575
+    invoke-virtual {p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    .line 1576
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v7
+
+    .line 1579
+    invoke-virtual {p0, v0}, Lcom/android/email/provider/EmailProvider;->getDatabase(Landroid/content/Context;)Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v0
+
+    .line 1580
+    shr-int/lit8 v2, v6, 0xc
+
+    .line 1581
+    const-string v8, "0"
+
+    .line 1586
+    const/16 v1, 0x1001
+
+    if-eq v6, v1, :cond_1e
+
+    const/16 v1, 0x1000
+
+    if-ne v6, v1, :cond_32
+
+    .line 1587
+    :cond_1e
+    const-string v1, "unreadCount"
+
+    const/4 v3, 0x0
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {p2, v1, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    .line 1588
+    const-string v1, "messageCount"
+
+    const/4 v3, 0x0
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {p2, v1, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    .line 1594
+    :cond_32
+    sparse-switch v6, :sswitch_data_166
+
+    .line 1675
+    :try_start_35
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Unknown URL "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_4e
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_35 .. :try_end_4e} :catch_4e
+
+    .line 1677
+    :catch_4e
+    move-exception v0
+
+    .line 1678
+    invoke-virtual {p0}, Lcom/android/email/provider/EmailProvider;->checkDatabases()V
+
+    .line 1679
+    throw v0
+
+    .line 1607
+    :sswitch_53
+    :try_start_53
+    sget-object v1, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
+
+    aget-object v1, v1, v2
+
+    const-string v3, "foo"
+
+    invoke-virtual {v0, v1, v3, p2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
+
+    move-result-wide v9
+
+    .line 1608
+    invoke-static {p1, v9, v10}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
+
+    move-result-object v1
+
+    .line 1609
+    sparse-switch v6, :sswitch_data_1a0
+
+    .line 1640
+    :cond_64
     :goto_64
-    if-eqz v17, :cond_74
+    const/16 v0, 0x5000
 
+    if-eq v6, v0, :cond_6c
+
+    const/16 v0, 0x6000
+
+    if-ne v6, v0, :cond_c8
+
+    .line 1641
+    :cond_6c
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Unknown URL "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 1611
+    :sswitch_85
+    const-string v0, "type"
+
+    invoke-virtual {p2, v0}, Landroid/content/ContentValues;->containsKey(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a9
+
+    .line 1613
+    const-string v0, "type"
+
+    invoke-virtual {p2, v0}, Landroid/content/ContentValues;->getAsInteger(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    .line 1614
+    if-eqz v0, :cond_a9
+
+    const/4 v3, 0x4
+
+    if-eq v0, v3, :cond_a9
+
+    const/4 v3, 0x3
+
+    if-eq v0, v3, :cond_a9
+
+    const/4 v3, 0x5
+
+    if-eq v0, v3, :cond_a9
+
+    const/4 v3, 0x6
+
+    if-eq v0, v3, :cond_a9
+
+    const/16 v3, 0x8
+
+    if-ne v0, v3, :cond_64
+
+    .line 1625
+    :cond_a9
+    :sswitch_a9
+    sget-object v0, Lcom/android/email/provider/EmailProvider;->CACHE_PROJECTIONS:[[Ljava/lang/String;
+
+    aget-object v2, v0, v2
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    invoke-virtual/range {v0 .. v5}, Lcom/android/email/provider/EmailProvider;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v0
+
+    .line 1626
+    if-eqz v0, :cond_64
+
+    .line 1627
+    const/16 v2, 0x1000
+
+    if-ne v6, v2, :cond_c2
+
+    .line 1628
+    invoke-direct {p0, v0}, Lcom/android/email/provider/EmailProvider;->addToMailboxTypeMap(Landroid/database/Cursor;)V
+
+    .line 1632
+    :cond_be
+    :goto_be
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
+
+    goto :goto_64
+
+    .line 1629
+    :cond_c2
+    if-nez v6, :cond_be
+
+    .line 1630
+    invoke-direct {p0, v9, v10}, Lcom/android/email/provider/EmailProvider;->getOrCreateAccountMailboxTypeMap(J)Ljava/util/HashMap;
+
+    goto :goto_be
+
+    .line 1643
+    :cond_c8
+    const/16 v0, 0x3000
+
+    if-ne v6, v0, :cond_e8
+
+    .line 1644
+    const/4 v0, 0x0
+
+    .line 1645
+    const-string v2, "flags"
+
+    invoke-virtual {p2, v2}, Landroid/content/ContentValues;->containsKey(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_df
+
+    .line 1646
+    const-string v0, "flags"
+
+    invoke-virtual {p2, v0}, Landroid/content/ContentValues;->getAsInteger(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    .line 1649
+    :cond_df
+    iget-object v2, p0, Lcom/android/email/provider/EmailProvider;->mAttachmentService:Lcom/android/email/provider/EmailProvider$AttachmentService;
+
+    invoke-virtual {p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3, v9, v10, v0}, Lcom/android/email/provider/EmailProvider$AttachmentService;->attachmentChanged(Landroid/content/Context;JI)V
+    :try_end_e8
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_53 .. :try_end_e8} :catch_4e
+
+    .line 1683
+    :cond_e8
+    :goto_e8
+    invoke-direct {p0, v6}, Lcom/android/email/provider/EmailProvider;->getBaseNotificationUri(I)Landroid/net/Uri;
+
+    move-result-object v0
+
+    const-string v2, "insert"
+
+    invoke-direct {p0, v0, v2, v8}, Lcom/android/email/provider/EmailProvider;->sendNotifierChange(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1686
+    sget-object v0, Lcom/android/emailcommon/provider/EmailContent;->CONTENT_URI:Landroid/net/Uri;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v7, v0, v2}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
+
+    .line 1687
+    :goto_f7
+    return-object v1
+
+    .line 1656
+    :sswitch_f8
+    :try_start_f8
+    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    .line 1657
+    const-string v2, "mailboxKey"
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v2, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+
+    .line 1658
+    sget-object v0, Lcom/android/emailcommon/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
+
+    invoke-virtual {p0, v0, p2}, Lcom/android/email/provider/EmailProvider;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    goto :goto_f7
+
+    .line 1661
+    :sswitch_117
+    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    .line 1662
+    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    .line 1663
+    const-string v2, "messageKey"
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v2, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+
+    .line 1664
+    sget-object v0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->CONTENT_URI:Landroid/net/Uri;
+
+    invoke-virtual {p0, v0, p2}, Lcom/android/email/provider/EmailProvider;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    goto :goto_f7
+
+    .line 1667
+    :sswitch_136
+    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    .line 1668
+    const-string v2, "accountKey"
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v2, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+
+    .line 1669
+    sget-object v0, Lcom/android/emailcommon/provider/Mailbox;->CONTENT_URI:Landroid/net/Uri;
+
+    invoke-virtual {p0, v0, p2}, Lcom/android/email/provider/EmailProvider;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    goto :goto_f7
+
+    .line 1671
+    :sswitch_155
+    sget-object v1, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
+
+    aget-object v1, v1, v2
+
+    const-string v2, "foo"
+
+    invoke-virtual {v0, v1, v2, p2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
+
+    move-result-wide v0
+
+    .line 1672
+    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Attachment;->CONTENT_URI:Landroid/net/Uri;
+
+    invoke-static {v2, v0, v1}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
+    :try_end_164
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_f8 .. :try_end_164} :catch_4e
+
+    move-result-object v1
+
+    goto :goto_e8
+
+    .line 1594
+    :sswitch_data_166
+    .sparse-switch
+        0x0 -> :sswitch_53
+        0x1 -> :sswitch_136
+        0x1000 -> :sswitch_53
+        0x1001 -> :sswitch_f8
+        0x2000 -> :sswitch_53
+        0x2001 -> :sswitch_117
+        0x3000 -> :sswitch_53
+        0x3002 -> :sswitch_155
+        0x4000 -> :sswitch_53
+        0x5000 -> :sswitch_53
+        0x6000 -> :sswitch_53
+        0x7000 -> :sswitch_53
+        0x8000 -> :sswitch_53
+        0x9000 -> :sswitch_53
+    .end sparse-switch
+
+    .line 1609
+    :sswitch_data_1a0
+    .sparse-switch
+        0x0 -> :sswitch_a9
+        0x1000 -> :sswitch_85
+        0x4000 -> :sswitch_a9
+        0x7000 -> :sswitch_a9
+    .end sparse-switch
+.end method
+
+.method protected isCached(Landroid/net/Uri;J)Z
+    .registers 7
+    .parameter
+    .parameter
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 2614
+    const-string v1, "isCached"
+
+    invoke-static {p1, v1}, Lcom/android/email/provider/EmailProvider;->findMatch(Landroid/net/Uri;Ljava/lang/String;)I
+
+    move-result v1
+
+    .line 2615
+    shr-int/lit8 v1, v1, 0xc
+
+    .line 2616
+    iget-object v2, p0, Lcom/android/email/provider/EmailProvider;->mContentCaches:[Lcom/android/email/provider/ContentCache;
+
+    aget-object v1, v2, v1
+
+    .line 2617
+    if-nez v1, :cond_10
+
+    .line 2619
+    :cond_f
+    :goto_f
+    return v0
+
+    .line 2618
+    :cond_10
+    invoke-static {p2, p3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lcom/android/email/provider/ContentCache;->get(Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v1
+
+    .line 2619
+    if-eqz v1, :cond_f
+
+    const/4 v0, 0x1
+
+    goto :goto_f
+.end method
+
+.method public onCreate()Z
+    .registers 2
+
+    .prologue
+    .line 1692
+    invoke-virtual {p0}, Lcom/android/email/provider/EmailProvider;->checkDatabases()V
+
+    .line 1693
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+    .registers 24
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 1727
+    const-wide/16 v2, 0x0
+
+    .line 1728
     sget-boolean v4, Lcom/android/email/Email;->DEBUG:Z
 
-    if-eqz v4, :cond_74
+    if-eqz v4, :cond_2f1
 
-    .line 4222
+    .line 1729
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    sub-long/2addr v4, v13
+    move-wide v12, v2
 
-    move-object/from16 v0, v17
+    .line 1731
+    :goto_b
+    const/4 v14, 0x0
 
-    invoke-virtual {v0, v15, v4, v5}, Lcom/android/email/provider/ContentCache;->recordQueryTime(Landroid/database/Cursor;J)V
+    .line 1734
+    :try_start_c
+    const-string v2, "query"
 
-    :cond_74
-    throw v3
+    move-object/from16 v0, p1
 
-    .line 3947
-    :catch_75
-    move-exception v3
-
-    .line 3948
-    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 3952
-    if-eqz v4, :cond_af
-
-    const-string v5, "/-1"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-static {v0, v2}, Lcom/android/email/provider/EmailProvider;->findMatch(Landroid/net/Uri;Ljava/lang/String;)I
+    :try_end_13
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_c .. :try_end_13} :catch_a1
 
     move-result v5
 
-    if-eqz v5, :cond_af
+    .line 1757
+    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
 
-    .line 3953
-    new-instance v5, Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    .line 1759
+    move-object/from16 v0, p0
 
-    const/4 v6, 0x0
+    invoke-virtual {v0, v2}, Lcom/android/email/provider/EmailProvider;->getDatabase(Landroid/content/Context;)Landroid/database/sqlite/SQLiteDatabase;
 
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
+    move-result-object v2
 
-    move-result v7
+    .line 1760
+    shr-int/lit8 v6, v5, 0xc
 
-    add-int/lit8 v7, v7, -0x2
+    .line 1761
+    const-string v3, "limit"
 
-    invoke-virtual {v4, v6, v7}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    move-object/from16 v0, p1
 
-    move-result-object v4
+    invoke-virtual {v0, v3}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v10
 
-    move-result-object v4
+    .line 1765
+    const/4 v4, 0x0
 
-    const-string v5, "0"
+    .line 1766
+    sget-object v3, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
+
+    aget-object v3, v3, v6
+
+    .line 1768
+    if-nez p3, :cond_2ed
+
+    .line 1769
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/email/provider/EmailProvider;->mContentCaches:[Lcom/android/email/provider/ContentCache;
+
+    aget-object v4, v4, v6
+
+    move-object/from16 v16, v4
+
+    .line 1771
+    :goto_37
+    if-nez v16, :cond_40
+
+    .line 1772
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, p3
+
+    invoke-static {v0, v1}, Lcom/android/email/provider/ContentCache;->notCacheable(Landroid/net/Uri;Ljava/lang/String;)V
+
+    .line 1776
+    :cond_40
+    sparse-switch v5, :sswitch_data_2f4
+
+    .line 1883
+    :try_start_43
+    new-instance v2, Ljava/lang/IllegalArgumentException;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Unknown URI "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+    :try_end_5e
+    .catchall {:try_start_43 .. :try_end_5e} :catchall_1cf
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_43 .. :try_end_5e} :catch_5e
+    .catch Ljava/lang/RuntimeException; {:try_start_43 .. :try_end_5e} :catch_1c7
+
+    .line 1885
+    :catch_5e
+    move-exception v2
+
+    move-object v3, v14
+
+    .line 1886
+    :goto_60
+    :try_start_60
+    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->checkDatabases()V
+
+    .line 1887
+    throw v2
+    :try_end_64
+    .catchall {:try_start_60 .. :try_end_64} :catchall_64
+
+    .line 1893
+    :catchall_64
+    move-exception v2
+
+    move-object v14, v3
+
+    :goto_66
+    if-eqz v16, :cond_78
+
+    if-eqz v14, :cond_78
+
+    sget-boolean v3, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v3, :cond_78
+
+    .line 1894
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
+
+    move-result-wide v3
+
+    sub-long/2addr v3, v12
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v14, v3, v4}, Lcom/android/email/provider/ContentCache;->recordQueryTime(Landroid/database/Cursor;J)V
+
+    .line 1896
+    :cond_78
+    if-nez v14, :cond_a0
+
+    .line 1898
+    const-string v3, "EmailProvider"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "Query returning null for uri: "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, ", selection: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -6940,1245 +6363,823 @@
 
     move-result-object v4
 
-    invoke-static {v4}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result-object v4
+    :cond_a0
+    throw v2
 
-    .line 3954
-    const-string v5, "query"
+    .line 1735
+    :catch_a1
+    move-exception v2
 
-    invoke-static {v4, v5}, Lcom/android/email/provider/EmailProvider;->findMatch(Landroid/net/Uri;Ljava/lang/String;)I
+    .line 1736
+    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 1739
+    if-eqz v3, :cond_db
+
+    const-string v4, "/-1"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result v4
 
-    .line 3955
-    sparse-switch v4, :sswitch_data_498
+    if-eqz v4, :cond_db
 
-    .line 3967
-    :cond_af
-    throw v3
+    .line 1740
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    .line 3964
-    :sswitch_b0
-    new-instance v3, Landroid/database/MatrixCursor;
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    add-int/lit8 v6, v6, -0x2
+
+    invoke-virtual {v3, v5, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "0"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v3
+
+    .line 1741
+    const-string v4, "query"
+
+    invoke-static {v3, v4}, Lcom/android/email/provider/EmailProvider;->findMatch(Landroid/net/Uri;Ljava/lang/String;)I
+
+    move-result v3
+
+    .line 1742
+    sparse-switch v3, :sswitch_data_356
+
+    .line 1755
+    :cond_db
+    throw v2
+
+    .line 1752
+    :sswitch_dc
+    new-instance v2, Landroid/database/MatrixCursor;
+
+    const/4 v3, 0x0
 
     move-object/from16 v0, p2
 
-    invoke-direct {v3, v0, v4}, Landroid/database/MatrixCursor;-><init>([Ljava/lang/String;I)V
+    invoke-direct {v2, v0, v3}, Landroid/database/MatrixCursor;-><init>([Ljava/lang/String;I)V
 
-    .line 4229
-    :cond_b8
-    :goto_b8
-    return-object v3
+    .line 1905
+    :cond_e4
+    :goto_e4
+    return-object v2
 
-    .line 4016
-    :sswitch_b9
-    const/4 v8, 0x0
+    .line 1779
+    :sswitch_e5
+    :try_start_e5
+    move-object/from16 v0, p0
 
-    const/4 v9, 0x0
+    iget-object v2, v0, Lcom/android/email/provider/EmailProvider;->mCacheAccount:Lcom/android/email/provider/ContentCache;
 
-    move-object/from16 v5, p2
+    invoke-virtual {v2}, Lcom/android/email/provider/ContentCache;->getSnapshot()Ljava/util/Map;
 
-    move-object/from16 v6, p3
+    move-result-object v2
 
-    move-object/from16 v7, p4
+    .line 1780
+    const-wide/16 v4, -0x1
 
-    move-object/from16 v10, p5
+    .line 1784
+    invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
 
-    :try_start_c3
-    invoke-virtual/range {v3 .. v11}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_c6
-    .catchall {:try_start_c3 .. :try_end_c6} :catchall_3ac
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_c3 .. :try_end_c6} :catch_5c
-    .catch Ljava/lang/Exception; {:try_start_c3 .. :try_end_c6} :catch_137
+    move-result-object v2
 
-    move-result-object v15
+    .line 1785
+    invoke-interface {v2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    .line 4221
-    :cond_c7
-    :goto_c7
-    if-eqz v17, :cond_3d0
+    move-result-object v7
+
+    :goto_f7
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_11c
+
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/database/Cursor;
+
+    .line 1788
+    invoke-interface {v2}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2ea
+
+    .line 1789
+    const/16 v3, 0x9
+
+    invoke-interface {v2, v3}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v3
+
+    const/4 v6, 0x1
+
+    if-ne v3, v6, :cond_181
+
+    const/4 v3, 0x1
+
+    move v6, v3
+
+    .line 1791
+    :goto_114
+    const/4 v3, 0x0
+
+    invoke-interface {v2, v3}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v2
+
+    .line 1793
+    if-eqz v6, :cond_184
+
+    move-wide v4, v2
+
+    .line 1802
+    :cond_11c
+    new-instance v2, Landroid/database/MatrixCursor;
+
+    sget-object v3, Lcom/android/emailcommon/provider/EmailContent;->ID_PROJECTION:[Ljava/lang/String;
+
+    invoke-direct {v2, v3}, Landroid/database/MatrixCursor;-><init>([Ljava/lang/String;)V
+
+    .line 1803
+    const/4 v3, 0x1
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v6, 0x0
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    aput-object v4, v3, v6
+
+    invoke-virtual {v2, v3}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
+    :try_end_130
+    .catchall {:try_start_e5 .. :try_end_130} :catchall_1cf
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_e5 .. :try_end_130} :catch_5e
+    .catch Ljava/lang/RuntimeException; {:try_start_e5 .. :try_end_130} :catch_1c7
+
+    .line 1893
+    :cond_130
+    :goto_130
+    if-eqz v16, :cond_142
+
+    if-eqz v2, :cond_142
 
     sget-boolean v3, Lcom/android/email/Email;->DEBUG:Z
 
-    if-eqz v3, :cond_3d0
+    if-eqz v3, :cond_142
 
-    .line 4222
+    .line 1894
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v3
 
-    sub-long/2addr v3, v13
+    sub-long/2addr v3, v12
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v16
 
-    invoke-virtual {v0, v15, v3, v4}, Lcom/android/email/provider/ContentCache;->recordQueryTime(Landroid/database/Cursor;J)V
+    invoke-virtual {v0, v2, v3, v4}, Lcom/android/email/provider/ContentCache;->recordQueryTime(Landroid/database/Cursor;J)V
 
-    move-object v3, v15
+    .line 1896
+    :cond_142
+    if-nez v2, :cond_16a
 
-    .line 4226
-    :goto_d8
-    if-eqz v3, :cond_b8
+    .line 1898
+    const-string v3, "EmailProvider"
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->isTemporary()Z
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    move-result v4
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-nez v4, :cond_b8
+    const-string v5, "Query returning null for uri: "
 
-    .line 4227
-    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
     move-object/from16 v0, p1
 
-    invoke-interface {v3, v4, v0}, Landroid/database/Cursor;->setNotificationUri(Landroid/content/ContentResolver;Landroid/net/Uri;)V
-
-    goto :goto_b8
-
-    .line 4021
-    :sswitch_ee
-    :try_start_ee
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, p3
-
-    move-object/from16 v2, p5
-
-    invoke-static {v0, v1, v2}, Lcom/android/email/combined/common/QueryUtil;->getMessageQueryString([Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 4023
-    move-object/from16 v0, p4
+    const-string v5, ", selection: "
 
-    invoke-virtual {v3, v4, v0}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v15
-
-    goto :goto_c7
-
-    .line 4027
-    :sswitch_ff
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, p3
-
-    move-object/from16 v2, p5
-
-    invoke-static {v0, v1, v2}, Lcom/android/email/combined/common/QueryUtil;->getAccountQueryString([Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 4028
-    move-object/from16 v0, p4
+    move-object/from16 v0, p3
 
-    invoke-virtual {v3, v4, v0}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v15
-
-    goto :goto_c7
-
-    .line 4032
-    :sswitch_110
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, p3
-
-    move-object/from16 v2, p5
-
-    invoke-static {v0, v1, v2}, Lcom/android/email/combined/common/QueryUtil;->getProtocolQueryString([Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 4034
-    move-object/from16 v0, p4
-
-    invoke-virtual {v3, v4, v0}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v15
-
-    goto :goto_c7
-
-    .line 4037
-    :sswitch_121
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, p3
-
-    move-object/from16 v2, p5
-
-    invoke-static {v0, v1, v2}, Lcom/android/email/combined/common/QueryUtil;->getMailboxQueryString([Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    :try_end_12a
-    .catchall {:try_start_ee .. :try_end_12a} :catchall_3ac
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_ee .. :try_end_12a} :catch_5c
-    .catch Ljava/lang/Exception; {:try_start_ee .. :try_end_12a} :catch_137
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 4039
-    :try_start_12b
-    move-object/from16 v0, p4
+    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v3, v4, v0}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_130
-    .catchall {:try_start_12b .. :try_end_130} :catchall_3ac
-    .catch Ljava/lang/Exception; {:try_start_12b .. :try_end_130} :catch_132
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_12b .. :try_end_130} :catch_5c
+    .line 1902
+    :cond_16a
+    if-eqz v2, :cond_e4
 
-    move-result-object v15
+    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->isTemporary()Z
 
-    goto :goto_c7
+    move-result v3
 
-    .line 4040
-    :catch_132
-    move-exception v3
+    if-nez v3, :cond_e4
 
-    .line 4041
-    :try_start_133
-    invoke-virtual {v3}, Ljava/lang/Exception;->printStackTrace()V
-    :try_end_136
-    .catchall {:try_start_133 .. :try_end_136} :catchall_3ac
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_133 .. :try_end_136} :catch_5c
-    .catch Ljava/lang/Exception; {:try_start_133 .. :try_end_136} :catch_137
+    .line 1903
+    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
 
-    goto :goto_c7
+    move-result-object v3
 
-    .line 4212
-    :catch_137
-    move-exception v3
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    .line 4213
-    :goto_138
-    :try_start_138
-    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->checkDatabases()V
+    move-result-object v3
 
-    .line 4214
-    invoke-virtual {v3}, Ljava/lang/Exception;->printStackTrace()V
-    :try_end_13e
-    .catchall {:try_start_138 .. :try_end_13e} :catchall_3ac
+    move-object/from16 v0, p1
 
-    .line 4216
-    :try_start_13e
-    throw v3
-    :try_end_13f
-    .catchall {:try_start_13e .. :try_end_13f} :catchall_3ac
-    .catch Ljava/lang/Exception; {:try_start_13e .. :try_end_13f} :catch_13f
+    invoke-interface {v2, v3, v0}, Landroid/database/Cursor;->setNotificationUri(Landroid/content/ContentResolver;Landroid/net/Uri;)V
 
-    .line 4217
-    :catch_13f
-    move-exception v3
+    goto/16 :goto_e4
 
-    .line 4218
-    :try_start_140
-    invoke-virtual {v3}, Ljava/lang/Exception;->printStackTrace()V
-    :try_end_143
-    .catchall {:try_start_140 .. :try_end_143} :catchall_3ac
+    .line 1789
+    :cond_181
+    const/4 v3, 0x0
 
-    .line 4221
-    if-eqz v17, :cond_3d0
+    move v6, v3
 
-    sget-boolean v3, Lcom/android/email/Email;->DEBUG:Z
+    goto :goto_114
 
-    if-eqz v3, :cond_3d0
+    .line 1796
+    :cond_184
+    const-wide/16 v8, -0x1
 
-    .line 4222
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
+    cmp-long v6, v4, v8
+
+    if-eqz v6, :cond_18e
+
+    cmp-long v6, v2, v4
+
+    if-gez v6, :cond_2ea
+
+    :cond_18e
+    :goto_18e
+    move-wide v4, v2
+
+    .line 1799
+    goto/16 :goto_f7
+
+    .line 1808
+    :sswitch_191
+    :try_start_191
+    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
+
+    move-result-object v3
+
+    .line 1809
+    const/4 v2, 0x1
+
+    invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-static {v2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v4
+
+    .line 1810
+    const/4 v2, 0x2
+
+    invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v2
+
+    .line 1811
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v4, v5, v2}, Lcom/android/email/provider/EmailProvider;->getMailboxIdFromMailboxTypeMap(JI)J
 
     move-result-wide v3
 
-    sub-long/2addr v3, v13
+    .line 1813
+    new-instance v2, Landroid/database/MatrixCursor;
 
-    move-object/from16 v0, v17
+    sget-object v5, Lcom/android/emailcommon/provider/EmailContent;->ID_PROJECTION:[Ljava/lang/String;
 
-    invoke-virtual {v0, v15, v3, v4}, Lcom/android/email/provider/ContentCache;->recordQueryTime(Landroid/database/Cursor;J)V
+    invoke-direct {v2, v5}, Landroid/database/MatrixCursor;-><init>([Ljava/lang/String;)V
 
-    move-object v3, v15
+    .line 1814
+    const/4 v5, 0x1
 
-    goto :goto_d8
+    new-array v5, v5, [Ljava/lang/Object;
 
-    .line 4065
-    :sswitch_155
-    :try_start_155
-    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
+    const/4 v6, 0x0
 
-    move-result-object v5
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/4 v6, 0x1
+    move-result-object v3
 
-    invoke-interface {v5, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    aput-object v3, v5, v6
 
-    move-result-object v5
+    invoke-virtual {v2, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
+    :try_end_1c5
+    .catchall {:try_start_191 .. :try_end_1c5} :catchall_1cf
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_191 .. :try_end_1c5} :catch_5e
+    .catch Ljava/lang/RuntimeException; {:try_start_191 .. :try_end_1c5} :catch_1c7
 
-    move-object v0, v5
+    goto/16 :goto_130
 
-    check-cast v0, Ljava/lang/String;
+    .line 1888
+    :catch_1c7
+    move-exception v2
 
-    move-object v12, v0
+    .line 1889
+    :goto_1c8
+    :try_start_1c8
+    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->checkDatabases()V
 
-    .line 4066
-    if-eqz v17, :cond_16c
+    .line 1890
+    invoke-virtual {v2}, Ljava/lang/RuntimeException;->printStackTrace()V
 
-    .line 4067
-    move-object/from16 v0, v17
+    .line 1891
+    throw v2
+    :try_end_1cf
+    .catchall {:try_start_1c8 .. :try_end_1cf} :catchall_1cf
 
-    move-object/from16 v1, p2
+    .line 1893
+    :catchall_1cf
+    move-exception v2
 
-    invoke-virtual {v0, v12, v1}, Lcom/android/email/provider/ContentCache;->getCachedCursor(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_16b
-    .catchall {:try_start_155 .. :try_end_16b} :catchall_3ac
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_155 .. :try_end_16b} :catch_5c
-    .catch Ljava/lang/Exception; {:try_start_155 .. :try_end_16b} :catch_137
+    goto/16 :goto_66
 
-    move-result-object v15
+    .line 1828
+    :sswitch_1d2
+    if-nez v5, :cond_20b
 
-    .line 4069
-    :cond_16c
-    if-nez v15, :cond_c7
+    :try_start_1d4
+    sget-object v4, Lcom/android/emailcommon/provider/EmailContent;->COUNT_COLUMNS:[Ljava/lang/String;
 
-    .line 4070
+    move-object/from16 v0, p2
+
+    invoke-static {v0, v4}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_20b
+
+    if-nez p3, :cond_20b
+
+    const-string v4, "1"
+
+    invoke-virtual {v10, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_20b
+
+    .line 1830
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/email/provider/EmailProvider;->mMailboxTypeMap:Ljava/util/HashMap;
+
+    invoke-virtual {v4}, Ljava/util/HashMap;->size()I
+
+    move-result v4
+
+    .line 1832
+    const/16 v5, 0x10
+
+    if-ge v4, v5, :cond_20b
+
+    .line 1833
+    new-instance v2, Landroid/database/MatrixCursor;
+
+    const/4 v3, 0x1
+
+    move-object/from16 v0, p2
+
+    invoke-direct {v2, v0, v3}, Landroid/database/MatrixCursor;-><init>([Ljava/lang/String;I)V
+
+    .line 1834
+    const/4 v3, 0x1
+
+    new-array v3, v3, [Ljava/lang/Object;
+
     const/4 v5, 0x0
 
-    .line 4071
-    if-eqz v17, :cond_3de
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    .line 4072
-    :try_start_171
-    move-object/from16 v0, v17
+    move-result-object v4
 
-    invoke-virtual {v0, v12}, Lcom/android/email/provider/ContentCache;->getCacheToken(Ljava/lang/String;)Ljava/lang/Object;
+    aput-object v4, v3, v5
 
-    move-result-object v5
+    invoke-virtual {v2, v3}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    move-object/from16 v16, v5
+    goto/16 :goto_130
 
-    .line 4074
-    :goto_179
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-direct {v0, v12, v1}, Lcom/android/email/provider/EmailProvider;->whereWithId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
+    .line 1839
+    :cond_20b
+    const/4 v7, 0x0
 
     const/4 v8, 0x0
 
-    const/4 v9, 0x0
+    move-object/from16 v4, p2
 
-    move-object/from16 v5, p2
+    move-object/from16 v5, p3
 
-    move-object/from16 v7, p4
+    move-object/from16 v6, p4
 
-    move-object/from16 v10, p5
+    move-object/from16 v9, p5
 
-    invoke-virtual/range {v3 .. v11}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_18c
-    .catchall {:try_start_171 .. :try_end_18c} :catchall_3ac
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_171 .. :try_end_18c} :catch_3c1
-    .catch Ljava/lang/Exception; {:try_start_171 .. :try_end_18c} :catch_137
+    invoke-virtual/range {v2 .. v10}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
-    move-result-object v3
+    move-result-object v2
 
-    .line 4076
-    if-eqz v17, :cond_199
+    goto/16 :goto_130
 
-    .line 4077
-    :try_start_18f
-    move-object/from16 v0, v17
+    .line 1852
+    :sswitch_21b
+    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
+
+    move-result-object v4
+
+    const/4 v5, 0x1
+
+    invoke-interface {v4, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    move-object v0, v4
+
+    check-cast v0, Ljava/lang/String;
+
+    move-object v11, v0
+
+    .line 1853
+    if-eqz v16, :cond_232
+
+    .line 1854
+    move-object/from16 v0, v16
 
     move-object/from16 v1, p2
 
-    move-object/from16 v2, v16
+    invoke-virtual {v0, v11, v1}, Lcom/android/email/provider/ContentCache;->getCachedCursor(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
+    :try_end_231
+    .catchall {:try_start_1d4 .. :try_end_231} :catchall_1cf
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1d4 .. :try_end_231} :catch_5e
+    .catch Ljava/lang/RuntimeException; {:try_start_1d4 .. :try_end_231} :catch_1c7
 
-    invoke-virtual {v0, v3, v12, v1, v2}, Lcom/android/email/provider/ContentCache;->putCursor(Landroid/database/Cursor;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/Object;)Landroid/database/Cursor;
-    :try_end_198
-    .catchall {:try_start_18f .. :try_end_198} :catchall_3af
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_18f .. :try_end_198} :catch_3c5
-    .catch Ljava/lang/Exception; {:try_start_18f .. :try_end_198} :catch_3b8
+    move-result-object v14
+
+    .line 1856
+    :cond_232
+    if-nez v14, :cond_2e7
+
+    .line 1857
+    const/4 v4, 0x0
+
+    .line 1858
+    if-eqz v16, :cond_2e4
+
+    .line 1859
+    :try_start_237
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v11}, Lcom/android/email/provider/ContentCache;->getCacheToken(Ljava/lang/String;)Lcom/android/email/provider/ContentCache$CacheToken;
+
+    move-result-object v4
+
+    move-object v15, v4
+
+    .line 1861
+    :goto_23e
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p3
+
+    invoke-direct {v0, v11, v1}, Lcom/android/email/provider/EmailProvider;->whereWithId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    move-object/from16 v4, p2
+
+    move-object/from16 v6, p4
+
+    move-object/from16 v9, p5
+
+    invoke-virtual/range {v2 .. v10}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+    :try_end_251
+    .catchall {:try_start_237 .. :try_end_251} :catchall_1cf
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_237 .. :try_end_251} :catch_2d8
+    .catch Ljava/lang/RuntimeException; {:try_start_237 .. :try_end_251} :catch_1c7
+
+    move-result-object v2
+
+    .line 1863
+    if-eqz v16, :cond_130
+
+    .line 1864
+    :try_start_254
+    move-object/from16 v0, v16
+
+    move-object/from16 v1, p2
+
+    invoke-virtual {v0, v2, v11, v1, v15}, Lcom/android/email/provider/ContentCache;->putCursor(Landroid/database/Cursor;Ljava/lang/String;[Ljava/lang/String;Lcom/android/email/provider/ContentCache$CacheToken;)Landroid/database/Cursor;
+    :try_end_25b
+    .catchall {:try_start_254 .. :try_end_25b} :catchall_2ce
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_254 .. :try_end_25b} :catch_2dc
+    .catch Ljava/lang/RuntimeException; {:try_start_254 .. :try_end_25b} :catch_2d3
+
+    move-result-object v2
+
+    goto/16 :goto_130
+
+    .line 1870
+    :sswitch_25e
+    :try_start_25e
+    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
     move-result-object v3
 
-    :cond_199
-    move-object v15, v3
+    const/4 v4, 0x2
 
-    .line 4079
-    goto/16 :goto_c7
+    invoke-interface {v3, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    .line 4083
-    :sswitch_19c
-    :try_start_19c
-    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
+    move-result-object v3
 
-    move-result-object v4
-
-    const/4 v5, 0x2
-
-    invoke-interface {v4, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    move-object v0, v4
+    move-object v0, v3
 
     check-cast v0, Ljava/lang/String;
 
-    move-object v5, v0
+    move-object v4, v0
 
-    .line 4084
-    const-string v4, "Attachment"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "messageKey="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-direct {v0, v5, v1}, Lcom/android/email/provider/EmailProvider;->whereWith(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    move-object/from16 v5, p2
-
-    move-object/from16 v7, p4
-
-    move-object/from16 v10, p5
-
-    invoke-virtual/range {v3 .. v11}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v15
-
-    goto/16 :goto_c7
-
-    .line 4092
-    :sswitch_1d4
-    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v4
-
-    const/4 v5, 0x2
-
-    invoke-interface {v4, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    move-object v0, v4
-
-    check-cast v0, Ljava/lang/String;
-
-    move-object v5, v0
-
-    .line 4093
-    const-string v4, "QuickResponse"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "accountKey="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-direct {v0, v5, v1}, Lcom/android/email/provider/EmailProvider;->whereWith(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    move-object/from16 v5, p2
-
-    move-object/from16 v7, p4
-
-    move-object/from16 v10, p5
-
-    invoke-virtual/range {v3 .. v10}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v15
-
-    goto/16 :goto_c7
-
-    .line 4101
-    :sswitch_20c
-    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v4
-
-    const/4 v5, 0x1
-
-    invoke-interface {v4, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/lang/String;
-
-    .line 4103
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-direct {v0, v4, v1}, Lcom/android/email/provider/EmailProvider;->whereWithId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, p5
-
-    invoke-static {v0, v4, v1}, Lcom/android/email/combined/common/QueryUtil;->getAccountQueryString([Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 4105
-    move-object/from16 v0, p4
-
-    invoke-virtual {v3, v4, v0}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v15
-
-    goto/16 :goto_c7
-
-    .line 4109
-    :sswitch_22f
-    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v4
-
-    const/4 v5, 0x1
-
-    invoke-interface {v4, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/lang/String;
-
-    .line 4110
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-direct {v0, v4, v1}, Lcom/android/email/provider/EmailProvider;->whereWithId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, p5
-
-    invoke-static {v0, v4, v1}, Lcom/android/email/combined/common/QueryUtil;->getMailboxQueryString([Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 4112
-    move-object/from16 v0, p4
-
-    invoke-virtual {v3, v4, v0}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v15
-
-    goto/16 :goto_c7
-
-    .line 4116
-    :sswitch_252
-    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v4
-
-    const/4 v5, 0x1
-
-    invoke-interface {v4, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/lang/String;
-
-    .line 4117
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-direct {v0, v4, v1}, Lcom/android/email/provider/EmailProvider;->whereWithId(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, p5
-
-    invoke-static {v0, v4, v1}, Lcom/android/email/combined/common/QueryUtil;->getMessageQueryString([Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 4119
-    move-object/from16 v0, p4
-
-    invoke-virtual {v3, v4, v0}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v15
-
-    goto/16 :goto_c7
-
-    .line 4123
-    :sswitch_275
-    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v4
-
-    const/4 v5, 0x2
-
-    invoke-interface {v4, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    move-object v0, v4
-
-    check-cast v0, Ljava/lang/String;
-
-    move-object v5, v0
-
-    .line 4124
-    sget-object v4, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v4, v4, v12
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "email_address LIKE \'"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, "%"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, "\'"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-direct {v0, v5, v1}, Lcom/android/email/provider/EmailProvider;->whereWith(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    move-object/from16 v5, p2
-
-    move-object/from16 v7, p4
-
-    move-object/from16 v10, p5
-
-    invoke-virtual/range {v3 .. v10}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v15
-
-    goto/16 :goto_c7
-
-    .line 4132
-    :sswitch_2bb
-    sget-object v4, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v4, v4, v12
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    move-object/from16 v5, p2
-
-    move-object/from16 v6, p3
-
-    move-object/from16 v7, p4
-
-    move-object/from16 v10, p5
-
-    invoke-virtual/range {v3 .. v10}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_2cc
-    .catchall {:try_start_19c .. :try_end_2cc} :catchall_3ac
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_19c .. :try_end_2cc} :catch_5c
-    .catch Ljava/lang/Exception; {:try_start_19c .. :try_end_2cc} :catch_137
-
-    move-result-object v15
-
-    goto/16 :goto_c7
-
-    .line 4141
-    :sswitch_2cf
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    move-object/from16 v5, p2
-
-    move-object/from16 v6, p3
-
-    move-object/from16 v7, p4
-
-    move-object/from16 v10, p5
-
-    :try_start_2d9
-    invoke-virtual/range {v3 .. v10}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_2dc
-    .catchall {:try_start_2d9 .. :try_end_2dc} :catchall_3ac
-    .catch Ljava/lang/IllegalStateException; {:try_start_2d9 .. :try_end_2dc} :catch_2df
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_2d9 .. :try_end_2dc} :catch_5c
-    .catch Ljava/lang/Exception; {:try_start_2d9 .. :try_end_2dc} :catch_137
-
-    move-result-object v15
-
-    goto/16 :goto_c7
-
-    .line 4143
-    :catch_2df
-    move-exception v3
-
-    .line 4144
-    :try_start_2e0
-    const-string v4, "Email"
-
-    const-string v5, "========== IllegalStateException occur POLICIES ~ MEETING_INVITATION=========="
-
-    invoke-static {v4, v5}, Lcom/android/email/Email;->logv(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 4146
-    const-string v4, "Email"
+    .line 1871
+    const-string v3, "Attachment"
 
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "========== IllegalStateException occur TABLE_NAMES[table] = "
+    const-string v6, "messageKey="
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    sget-object v6, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v6, v6, v12
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Lcom/android/email/Email;->logv(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 4149
-    if-eqz v15, :cond_3db
-
-    invoke-interface {v15}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v4
-
-    if-nez v4, :cond_3db
-
-    .line 4150
-    invoke-interface {v15}, Landroid/database/Cursor;->close()V
-    :try_end_30e
-    .catchall {:try_start_2e0 .. :try_end_30e} :catchall_3ac
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_2e0 .. :try_end_30e} :catch_5c
-    .catch Ljava/lang/Exception; {:try_start_2e0 .. :try_end_30e} :catch_137
-
-    .line 4151
-    const/4 v4, 0x0
-
-    .line 4152
-    :try_start_30f
-    const-string v5, "Email"
-
-    const-string v6, "========== IllegalStateException occur cursor closed =========="
-
-    invoke-static {v5, v6}, Lcom/android/email/Email;->logv(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 4155
-    :goto_316
-    invoke-virtual {v3}, Ljava/lang/IllegalStateException;->printStackTrace()V
-    :try_end_319
-    .catchall {:try_start_30f .. :try_end_319} :catchall_3b4
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_30f .. :try_end_319} :catch_3cd
-    .catch Ljava/lang/Exception; {:try_start_30f .. :try_end_319} :catch_3bd
-
-    move-object v15, v4
-
-    .line 4157
-    goto/16 :goto_c7
-
-    .line 4160
-    :sswitch_31c
-    const/4 v4, 0x0
-
-    .line 4162
-    :try_start_31d
-    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v5
-
-    invoke-interface {v5}, Ljava/util/List;->size()I
-
-    move-result v5
-
-    const/4 v6, 0x2
-
-    if-le v5, v6, :cond_3d8
-
-    .line 4163
-    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 4164
-    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result v5
-
-    if-eqz v5, :cond_3d5
-
-    .line 4165
-    const/4 v4, 0x0
-
-    move-object v5, v4
-
-    .line 4168
-    :goto_334
-    if-nez v5, :cond_351
-
-    .line 4170
-    const-string v4, "accountAddress is null "
-    :try_end_338
-    .catchall {:try_start_31d .. :try_end_338} :catchall_3ac
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_31d .. :try_end_338} :catch_5c
-    .catch Ljava/lang/Exception; {:try_start_31d .. :try_end_338} :catch_137
-
-    move-object v5, v4
-
-    move-object/from16 v7, p4
-
-    .line 4185
-    :goto_33b
-    :try_start_33b
-    const-string v4, "EmailAddressCache"
+    move-result-object v4
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p3
 
-    invoke-direct {v0, v5, v1}, Lcom/android/email/provider/EmailProvider;->whereWith(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {v0, v4, v1}, Lcom/android/email/provider/EmailProvider;->whereWith(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
+
+    const/4 v7, 0x0
 
     const/4 v8, 0x0
 
-    const/4 v9, 0x0
+    move-object/from16 v4, p2
 
-    move-object/from16 v5, p2
+    move-object/from16 v6, p4
 
-    move-object/from16 v10, p5
+    move-object/from16 v9, p5
 
-    invoke-virtual/range {v3 .. v10}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_34e
-    .catchall {:try_start_33b .. :try_end_34e} :catchall_3ac
-    .catch Ljava/lang/IllegalStateException; {:try_start_33b .. :try_end_34e} :catch_384
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_33b .. :try_end_34e} :catch_5c
-    .catch Ljava/lang/Exception; {:try_start_33b .. :try_end_34e} :catch_137
+    invoke-virtual/range {v2 .. v10}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
-    move-result-object v15
+    move-result-object v2
 
-    goto/16 :goto_c7
+    goto/16 :goto_130
 
-    .line 4177
-    :cond_351
-    :try_start_351
-    const-string v4, "accountAddress LIKE  ?  OR accountName LIKE  ?"
+    .line 1877
+    :sswitch_296
+    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
-    .line 4179
-    const/4 v6, 0x2
+    move-result-object v3
 
-    new-array v7, v6, [Ljava/lang/String;
+    const/4 v4, 0x2
 
-    const/4 v6, 0x0
+    invoke-interface {v3, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    move-result-object v3
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    move-object v0, v3
 
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v0, Ljava/lang/String;
 
-    move-result-object v8
+    move-object v4, v0
 
-    const/16 v9, 0x25
+    .line 1878
+    const-string v3, "QuickResponse"
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v6, "accountKey="
 
-    move-result-object v8
-
-    aput-object v8, v7, v6
-
-    const/4 v6, 0x1
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    const/16 v8, 0x25
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p3
+
+    invoke-direct {v0, v4, v1}, Lcom/android/email/provider/EmailProvider;->whereWith(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const/4 v7, 0x0
 
-    move-result-object v5
+    const/4 v8, 0x0
 
-    aput-object v5, v7, v6
+    move-object/from16 v4, p2
 
-    move-object v5, v4
+    move-object/from16 v6, p4
 
-    goto :goto_33b
+    move-object/from16 v9, p5
 
-    .line 4188
-    :catch_384
+    invoke-virtual/range {v2 .. v9}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+    :try_end_2cb
+    .catchall {:try_start_25e .. :try_end_2cb} :catchall_1cf
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_25e .. :try_end_2cb} :catch_5e
+    .catch Ljava/lang/RuntimeException; {:try_start_25e .. :try_end_2cb} :catch_1c7
+
+    move-result-object v2
+
+    goto/16 :goto_130
+
+    .line 1893
+    :catchall_2ce
     move-exception v3
 
-    .line 4189
-    const-string v4, "Email"
+    move-object v14, v2
 
-    const-string v5, "========== IllegalStateException occur EMAIL_ADDRESS_CACHE_FILTER=========="
+    move-object v2, v3
 
-    invoke-static {v4, v5}, Lcom/android/email/Email;->logv(Ljava/lang/String;Ljava/lang/String;)V
+    goto/16 :goto_66
 
-    .line 4191
-    const-string v4, "Email"
+    .line 1888
+    :catch_2d3
+    move-exception v3
 
-    const-string v5, "========== IllegalStateException occur EmailAddressCache = EmailAddressCache"
+    move-object v14, v2
 
-    invoke-static {v4, v5}, Lcom/android/email/Email;->logv(Ljava/lang/String;Ljava/lang/String;)V
+    move-object v2, v3
 
-    .line 4194
-    if-eqz v15, :cond_3d3
+    goto/16 :goto_1c8
 
-    invoke-interface {v15}, Landroid/database/Cursor;->isClosed()Z
+    .line 1885
+    :catch_2d8
+    move-exception v2
 
-    move-result v4
+    move-object v3, v14
 
-    if-nez v4, :cond_3d3
+    goto/16 :goto_60
 
-    .line 4195
-    invoke-interface {v15}, Landroid/database/Cursor;->close()V
-    :try_end_39e
-    .catchall {:try_start_351 .. :try_end_39e} :catchall_3ac
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_351 .. :try_end_39e} :catch_5c
-    .catch Ljava/lang/Exception; {:try_start_351 .. :try_end_39e} :catch_137
+    :catch_2dc
+    move-exception v3
 
-    .line 4196
-    const/4 v4, 0x0
+    move-object/from16 v17, v3
 
-    .line 4197
-    :try_start_39f
-    const-string v5, "Email"
+    move-object v3, v2
 
-    const-string v6, "========== IllegalStateException occur cursor closed =========="
+    move-object/from16 v2, v17
 
-    invoke-static {v5, v6}, Lcom/android/email/Email;->logv(Ljava/lang/String;Ljava/lang/String;)V
+    goto/16 :goto_60
 
-    .line 4200
-    :goto_3a6
-    invoke-virtual {v3}, Ljava/lang/IllegalStateException;->printStackTrace()V
-    :try_end_3a9
-    .catchall {:try_start_39f .. :try_end_3a9} :catchall_3b4
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_39f .. :try_end_3a9} :catch_3cd
-    .catch Ljava/lang/Exception; {:try_start_39f .. :try_end_3a9} :catch_3bd
-
+    :cond_2e4
     move-object v15, v4
 
-    .line 4203
-    goto/16 :goto_c7
+    goto/16 :goto_23e
 
-    .line 4221
-    :catchall_3ac
-    move-exception v3
+    :cond_2e7
+    move-object v2, v14
 
-    goto/16 :goto_64
+    goto/16 :goto_130
 
-    :catchall_3af
-    move-exception v4
+    :cond_2ea
+    move-wide v2, v4
 
-    move-object v15, v3
+    goto/16 :goto_18e
 
-    move-object v3, v4
+    :cond_2ed
+    move-object/from16 v16, v4
 
-    goto/16 :goto_64
+    goto/16 :goto_37
 
-    :catchall_3b4
-    move-exception v3
-
-    move-object v15, v4
-
-    goto/16 :goto_64
-
-    .line 4212
-    :catch_3b8
-    move-exception v4
-
-    move-object v15, v3
-
-    move-object v3, v4
-
-    goto/16 :goto_138
-
-    :catch_3bd
-    move-exception v3
-
-    move-object v15, v4
-
-    goto/16 :goto_138
-
-    .line 4209
-    :catch_3c1
-    move-exception v3
-
-    move-object v4, v15
-
-    goto/16 :goto_5e
-
-    :catch_3c5
-    move-exception v4
-
-    move-object/from16 v18, v4
-
-    move-object v4, v3
-
-    move-object/from16 v3, v18
-
-    goto/16 :goto_5e
-
-    :catch_3cd
-    move-exception v3
-
-    goto/16 :goto_5e
-
-    :cond_3d0
-    move-object v3, v15
-
-    goto/16 :goto_d8
-
-    :cond_3d3
-    move-object v4, v15
-
-    goto :goto_3a6
-
-    :cond_3d5
-    move-object v5, v4
-
-    goto/16 :goto_334
-
-    :cond_3d8
-    move-object v5, v4
-
-    goto/16 :goto_334
-
-    :cond_3db
-    move-object v4, v15
-
-    goto/16 :goto_316
-
-    :cond_3de
-    move-object/from16 v16, v5
-
-    goto/16 :goto_179
-
-    :cond_3e2
-    move-object/from16 v17, v5
-
-    goto/16 :goto_35
-
-    :cond_3e6
-    move-wide v13, v3
+    :cond_2f1
+    move-wide v12, v2
 
     goto/16 :goto_b
 
-    .line 3989
-    nop
-
-    :sswitch_data_3ea
+    .line 1776
+    :sswitch_data_2f4
     .sparse-switch
-        0x0 -> :sswitch_ff
-        0x1 -> :sswitch_20c
-        0x1000 -> :sswitch_121
-        0x1001 -> :sswitch_22f
-        0x2000 -> :sswitch_ee
-        0x2001 -> :sswitch_252
-        0x3000 -> :sswitch_b9
-        0x3001 -> :sswitch_155
-        0x3002 -> :sswitch_19c
-        0x4000 -> :sswitch_b9
-        0x4001 -> :sswitch_155
-        0x5000 -> :sswitch_b9
-        0x5001 -> :sswitch_155
-        0x6000 -> :sswitch_b9
-        0x6001 -> :sswitch_155
-        0x7000 -> :sswitch_b9
-        0x7001 -> :sswitch_155
-        0x8000 -> :sswitch_b9
-        0x8001 -> :sswitch_155
-        0x9000 -> :sswitch_b9
-        0x9001 -> :sswitch_155
-        0xa000 -> :sswitch_b9
-        0xa001 -> :sswitch_155
-        0xb000 -> :sswitch_b9
-        0xc000 -> :sswitch_b9
-        0xd000 -> :sswitch_b9
-        0xd001 -> :sswitch_20c
-        0xd002 -> :sswitch_110
-        0xe000 -> :sswitch_b9
-        0xf000 -> :sswitch_b9
-        0xf001 -> :sswitch_155
-        0xf002 -> :sswitch_275
-        0x10000 -> :sswitch_b9
-        0x11000 -> :sswitch_2cf
-        0x11001 -> :sswitch_31c
-        0x12000 -> :sswitch_b9
-        0x12001 -> :sswitch_155
-        0x12002 -> :sswitch_1d4
-        0x13000 -> :sswitch_b9
-        0x13001 -> :sswitch_155
-        0x14000 -> :sswitch_b9
-        0x14001 -> :sswitch_155
-        0x15000 -> :sswitch_2bb
+        0x0 -> :sswitch_1d2
+        0x1 -> :sswitch_21b
+        0x5 -> :sswitch_e5
+        0x1000 -> :sswitch_1d2
+        0x1001 -> :sswitch_21b
+        0x1002 -> :sswitch_191
+        0x2000 -> :sswitch_1d2
+        0x2001 -> :sswitch_21b
+        0x3000 -> :sswitch_1d2
+        0x3001 -> :sswitch_21b
+        0x3002 -> :sswitch_25e
+        0x4000 -> :sswitch_1d2
+        0x4001 -> :sswitch_21b
+        0x5000 -> :sswitch_1d2
+        0x5001 -> :sswitch_21b
+        0x6000 -> :sswitch_1d2
+        0x6001 -> :sswitch_21b
+        0x7000 -> :sswitch_1d2
+        0x7001 -> :sswitch_21b
+        0x8000 -> :sswitch_1d2
+        0x8001 -> :sswitch_21b
+        0x8002 -> :sswitch_296
+        0x9000 -> :sswitch_1d2
+        0x9001 -> :sswitch_21b
     .end sparse-switch
 
-    .line 3955
-    :sswitch_data_498
+    .line 1742
+    :sswitch_data_356
     .sparse-switch
-        0x1 -> :sswitch_b0
-        0x1001 -> :sswitch_b0
-        0x2001 -> :sswitch_b0
-        0x3001 -> :sswitch_b0
-        0x4001 -> :sswitch_b0
-        0x5001 -> :sswitch_b0
-        0x6001 -> :sswitch_b0
-        0x14001 -> :sswitch_b0
+        0x1 -> :sswitch_dc
+        0x1001 -> :sswitch_dc
+        0x2001 -> :sswitch_dc
+        0x3001 -> :sswitch_dc
+        0x4001 -> :sswitch_dc
+        0x5001 -> :sswitch_dc
+        0x6001 -> :sswitch_dc
+        0x7001 -> :sswitch_dc
+        0x9001 -> :sswitch_dc
     .end sparse-switch
-.end method
-
-.method public resetSevenTrigger(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 3288
-    const-string v0, "mailbox_delete_cb"
-
-    invoke-static {p1, v0}, Lcom/android/email/provider/EmailProvider;->dropTrigger(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
-
-    .line 3289
-    const-string v0, "mailbox_insert_cb"
-
-    invoke-static {p1, v0}, Lcom/android/email/provider/EmailProvider;->dropTrigger(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
-
-    .line 3290
-    const-string v0, "message_updates_delete"
-
-    invoke-static {p1, v0}, Lcom/android/email/provider/EmailProvider;->dropTrigger(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
-
-    .line 3291
-    const-string v0, "message_deletes_delete"
-
-    invoke-static {p1, v0}, Lcom/android/email/provider/EmailProvider;->dropTrigger(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
-
-    .line 3292
-    const-string v0, "message_delete_cb"
-
-    invoke-static {p1, v0}, Lcom/android/email/provider/EmailProvider;->dropTrigger(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
-
-    .line 3293
-    const-string v0, "message_insert_cb"
-
-    invoke-static {p1, v0}, Lcom/android/email/provider/EmailProvider;->dropTrigger(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
-
-    .line 3294
-    const-string v0, "account_delete_cb"
-
-    invoke-static {p1, v0}, Lcom/android/email/provider/EmailProvider;->dropTrigger(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
-
-    .line 3296
-    invoke-virtual {p0, p1}, Lcom/android/email/provider/EmailProvider;->createSevenTrigger(Landroid/database/sqlite/SQLiteDatabase;)V
-
-    .line 3297
-    return-void
 .end method
 
 .method public shutdown()V
@@ -8187,34 +7188,34 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1631
+    .line 985
     iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
     if-eqz v0, :cond_c
 
-    .line 1632
+    .line 986
     iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
 
-    .line 1633
+    .line 987
     iput-object v1, p0, Lcom/android/email/provider/EmailProvider;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 1635
+    .line 989
     :cond_c
     iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mBodyDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
     if-eqz v0, :cond_17
 
-    .line 1636
+    .line 990
     iget-object v0, p0, Lcom/android/email/provider/EmailProvider;->mBodyDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
 
-    .line 1637
+    .line 991
     iput-object v1, p0, Lcom/android/email/provider/EmailProvider;->mBodyDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 1639
+    .line 993
     :cond_17
     return-void
 .end method
@@ -8227,131 +7228,130 @@
     .parameter
 
     .prologue
-    .line 4268
-    sget-object v3, Lcom/android/emailcommon/EmailProviderRefs;->INTEGRITY_CHECK_URI:Landroid/net/Uri;
+    .line 2091
+    sget-object v3, Lcom/android/email/provider/EmailProvider;->INTEGRITY_CHECK_URI:Landroid/net/Uri;
 
     move-object/from16 v0, p1
 
     if-ne v0, v3, :cond_b
 
-    .line 4269
+    .line 2092
     invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->checkDatabases()V
 
-    .line 4270
+    .line 2093
     const/4 v3, 0x0
 
-    .line 4530
+    .line 2291
     :goto_a
     return v3
 
-    .line 4274
+    .line 2094
     :cond_b
+    sget-object v3, Lcom/android/email/provider/EmailProvider;->ACCOUNT_BACKUP_URI:Landroid/net/Uri;
+
+    move-object/from16 v0, p1
+
+    if-ne v0, v3, :cond_24
+
+    .line 2095
+    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v4}, Lcom/android/email/provider/EmailProvider;->getDatabase(Landroid/content/Context;)Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/android/email/provider/EmailProvider;->backupAccounts(Landroid/content/Context;Landroid/database/sqlite/SQLiteDatabase;)I
+
+    move-result v3
+
+    goto :goto_a
+
+    .line 2099
+    :cond_24
     sget-object v12, Lcom/android/emailcommon/provider/EmailContent;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 4278
-    :try_start_d
+    .line 2101
     const-string v3, "update"
 
     move-object/from16 v0, p1
 
     invoke-static {v0, v3}, Lcom/android/email/provider/EmailProvider;->findMatch(Landroid/net/Uri;Ljava/lang/String;)I
-    :try_end_14
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_d .. :try_end_14} :catch_4a
 
     move-result v13
 
-    .line 4284
+    .line 2102
     invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
 
     move-result-object v3
 
-    .line 4285
+    .line 2103
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v14
 
-    .line 4287
+    .line 2105
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v3}, Lcom/android/email/provider/EmailProvider;->getDatabase(Landroid/content/Context;)Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v3
 
-    .line 4288
-    shr-int/lit8 v5, v13, 0xc
+    .line 2106
+    shr-int/lit8 v4, v13, 0xc
 
-    .line 4296
-    const/16 v4, 0x1001
+    .line 2111
+    const/16 v5, 0x1001
 
-    if-eq v13, v4, :cond_2d
+    if-eq v13, v5, :cond_46
 
-    const/16 v4, 0x1000
+    const/16 v5, 0x1000
 
-    if-ne v13, v4, :cond_3b
+    if-ne v13, v5, :cond_54
 
-    .line 4297
-    :cond_2d
-    const-string v4, "unreadCount"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v4}, Landroid/content/ContentValues;->remove(Ljava/lang/String;)V
-
-    .line 4298
-    const-string v4, "messageCount"
+    .line 2112
+    :cond_46
+    const-string v5, "unreadCount"
 
     move-object/from16 v0, p2
 
-    invoke-virtual {v0, v4}, Landroid/content/ContentValues;->remove(Ljava/lang/String;)V
+    invoke-virtual {v0, v5}, Landroid/content/ContentValues;->remove(Ljava/lang/String;)V
 
-    .line 4302
-    :cond_3b
-    sget-object v4, Lcom/android/emailcommon/EmailProviderRefs;->INTEGRITY_CHECK_URI:Landroid/net/Uri;
+    .line 2113
+    const-string v5, "messageCount"
 
-    move-object/from16 v0, p1
+    move-object/from16 v0, p2
 
-    invoke-virtual {v4, v0}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v5}, Landroid/content/ContentValues;->remove(Ljava/lang/String;)V
 
-    move-result v4
+    .line 2116
+    :cond_54
+    move-object/from16 v0, p0
 
-    if-eqz v4, :cond_50
+    iget-object v5, v0, Lcom/android/email/provider/EmailProvider;->mContentCaches:[Lcom/android/email/provider/ContentCache;
 
-    .line 4307
-    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->checkDatabases()V
+    aget-object v15, v5, v4
 
-    .line 4308
-    const/4 v3, 0x0
+    .line 2117
+    sget-object v5, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
 
-    goto :goto_a
+    aget-object v4, v5, v4
 
-    .line 4279
-    :catch_4a
-    move-exception v3
+    .line 2118
+    const-string v11, "0"
 
-    .line 4280
-    invoke-virtual {v3}, Ljava/lang/IllegalArgumentException;->printStackTrace()V
+    .line 2122
+    sparse-switch v13, :sswitch_data_2ac
 
-    .line 4281
-    const/4 v3, 0x0
-
-    goto :goto_a
-
-    .line 4311
-    :cond_50
-    sget-object v4, Lcom/android/email/provider/EmailProvider;->CONTENT_CACHES:[Lcom/android/email/provider/ContentCache;
-
-    aget-object v15, v4, v5
-
-    .line 4312
-    sget-object v4, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v4, v4, v5
-
-    .line 4316
-    sparse-switch v13, :sswitch_data_346
-
-    .line 4515
-    :try_start_5b
+    .line 2280
+    :try_start_63
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -8377,56 +7377,22 @@
     invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v3
-    :try_end_76
-    .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_5b .. :try_end_76} :catch_76
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_5b .. :try_end_76} :catch_d6
+    :try_end_7e
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_63 .. :try_end_7e} :catch_7e
 
-    .line 4517
-    :catch_76
+    .line 2282
+    :catch_7e
     move-exception v3
 
-    move-object v4, v3
+    .line 2283
+    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->checkDatabases()V
 
-    .line 4518
-    const/4 v3, -0x1
+    .line 2284
+    throw v3
 
-    .line 4519
-    const-string v5, "EmailContent"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "SQLiteDiskIOException: "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 4520
-    invoke-virtual {v4}, Landroid/database/sqlite/SQLiteDiskIOException;->printStackTrace()V
-
-    .line 4528
-    :goto_94
-    const/4 v4, 0x0
-
-    invoke-virtual {v14, v12, v4}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
-
-    goto/16 :goto_a
-
-    .line 4319
-    :sswitch_9a
-    :try_start_9a
+    .line 2125
+    :sswitch_83
+    :try_start_83
     invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
     move-result-object v5
@@ -8443,7 +7409,7 @@
 
     move-object v11, v0
 
-    .line 4320
+    .line 2126
     const-string v5, "field"
 
     move-object/from16 v0, p2
@@ -8452,7 +7418,7 @@
 
     move-result-object v16
 
-    .line 4321
+    .line 2127
     const-string v5, "add"
 
     move-object/from16 v0, p2
@@ -8461,13 +7427,13 @@
 
     move-result-object v17
 
-    .line 4322
-    if-eqz v16, :cond_bb
+    .line 2128
+    if-eqz v16, :cond_a4
 
-    if-nez v17, :cond_e0
+    if-nez v17, :cond_bf
 
-    .line 4323
-    :cond_bb
+    .line 2129
+    :cond_a4
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -8493,54 +7459,32 @@
     invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v3
-    :try_end_d6
-    .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_9a .. :try_end_d6} :catch_76
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_9a .. :try_end_d6} :catch_d6
 
-    .line 4521
-    :catch_d6
-    move-exception v3
-
-    move-object v4, v3
-
-    .line 4522
-    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->checkDatabases()V
-
-    .line 4523
-    const/4 v3, -0x1
-
-    .line 4524
-    invoke-virtual {v4}, Landroid/database/sqlite/SQLiteException;->printStackTrace()V
-
-    goto :goto_94
-
-    .line 4325
-    :cond_e0
-    :try_start_e0
+    .line 2131
+    :cond_bf
     new-instance v18, Landroid/content/ContentValues;
 
     invoke-direct/range {v18 .. v18}, Landroid/content/ContentValues;-><init>()V
 
-    .line 4326
-    if-eqz v15, :cond_ea
+    .line 2132
+    if-eqz v15, :cond_c9
 
-    .line 4327
+    .line 2133
     invoke-virtual {v15, v11}, Lcom/android/email/provider/ContentCache;->lock(Ljava/lang/String;)V
-    :try_end_ea
-    .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_e0 .. :try_end_ea} :catch_76
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_e0 .. :try_end_ea} :catch_d6
+    :try_end_c9
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_83 .. :try_end_c9} :catch_7e
 
-    .line 4330
-    :cond_ea
-    :try_start_ea
+    .line 2136
+    :cond_c9
+    :try_start_c9
     invoke-virtual {v3}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
-    :try_end_ed
-    .catchall {:try_start_ea .. :try_end_ed} :catchall_15a
+    :try_end_cc
+    .catchall {:try_start_c9 .. :try_end_cc} :catchall_148
 
-    .line 4332
+    .line 2138
     const/4 v5, 0x2
 
-    :try_start_ee
+    :try_start_cd
     new-array v5, v5, [Ljava/lang/String;
 
     const/4 v6, 0x0
@@ -8570,163 +7514,167 @@
     move-object/from16 v7, p4
 
     invoke-virtual/range {v3 .. v10}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_108
-    .catchall {:try_start_ee .. :try_end_108} :catchall_155
+    :try_end_e7
+    .catchall {:try_start_cd .. :try_end_e7} :catchall_143
 
     move-result-object v6
 
-    .line 4336
+    .line 2143
     const/4 v5, 0x0
 
-    .line 4337
-    :try_start_10a
-    new-instance v7, Landroid/content/ContentValues;
+    .line 2144
+    const/4 v7, 0x1
 
-    invoke-direct {v7}, Landroid/content/ContentValues;-><init>()V
+    :try_start_ea
+    new-array v7, v7, [Ljava/lang/String;
 
-    .line 4338
-    const/4 v8, 0x1
-
-    new-array v8, v8, [Ljava/lang/String;
-
-    .line 4339
-    :goto_112
+    .line 2145
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_13b
+    if-eqz v8, :cond_2a9
 
-    .line 4340
+    .line 2146
     const/4 v5, 0x0
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    invoke-interface {v6, v9}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
-    aput-object v9, v8, v5
+    aput-object v8, v7, v5
 
-    .line 4341
+    .line 2147
     const/4 v5, 0x1
 
     invoke-interface {v6, v5}, Landroid/database/Cursor;->getLong(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
     invoke-virtual/range {v17 .. v17}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v19
 
-    add-long v9, v9, v19
+    add-long v8, v8, v19
 
-    .line 4342
-    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    .line 2148
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
 
-    move-object/from16 v0, v16
+    move-object/from16 v0, v18
 
-    invoke-virtual {v7, v0, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+    move-object/from16 v1, v16
 
-    .line 4343
+    invoke-virtual {v0, v1, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+
+    .line 2149
     const-string v5, "_id=?"
 
-    invoke-virtual {v3, v4, v7, v5, v8}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+    move-object/from16 v0, v18
 
-    move-result v5
+    invoke-virtual {v3, v4, v0, v5, v7}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    goto :goto_112
+    move-result v4
 
-    .line 4345
-    :cond_13b
+    .line 2151
+    :goto_118
     invoke-virtual {v3}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
-    :try_end_13e
-    .catchall {:try_start_10a .. :try_end_13e} :catchall_150
+    :try_end_11b
+    .catchall {:try_start_ea .. :try_end_11b} :catchall_13e
 
-    .line 4347
-    :try_start_13e
+    .line 2153
+    :try_start_11b
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
-    :try_end_141
-    .catchall {:try_start_13e .. :try_end_141} :catchall_155
+    :try_end_11e
+    .catchall {:try_start_11b .. :try_end_11e} :catchall_143
 
-    .line 4350
-    :try_start_141
+    .line 2156
+    :try_start_11e
     invoke-virtual {v3}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-    :try_end_144
-    .catchall {:try_start_141 .. :try_end_144} :catchall_15a
+    :try_end_121
+    .catchall {:try_start_11e .. :try_end_121} :catchall_148
 
-    .line 4353
-    if-eqz v15, :cond_14b
+    .line 2159
+    if-eqz v15, :cond_128
 
-    .line 4354
-    :try_start_146
+    .line 2160
+    :try_start_123
     move-object/from16 v0, v18
 
     invoke-virtual {v15, v11, v0}, Lcom/android/email/provider/ContentCache;->unlock(Ljava/lang/String;Landroid/content/ContentValues;)V
-    :try_end_14b
-    .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_146 .. :try_end_14b} :catch_76
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_146 .. :try_end_14b} :catch_d6
+    :try_end_128
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_123 .. :try_end_128} :catch_7e
 
-    :cond_14b
-    move v3, v5
+    :cond_128
+    move-object v5, v11
+
+    move v3, v4
 
     move-object v4, v12
 
-    :goto_14d
-    move-object v12, v4
+    .line 2288
+    :goto_12b
+    move-object/from16 v0, p0
 
-    .line 4526
-    goto/16 :goto_94
+    invoke-direct {v0, v13}, Lcom/android/email/provider/EmailProvider;->getBaseNotificationUri(I)Landroid/net/Uri;
 
-    .line 4347
-    :catchall_150
+    move-result-object v6
+
+    const-string v7, "update"
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v6, v7, v5}, Lcom/android/email/provider/EmailProvider;->sendNotifierChange(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 2290
+    const/4 v5, 0x0
+
+    invoke-virtual {v14, v4, v5}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
+
+    goto/16 :goto_a
+
+    .line 2153
+    :catchall_13e
     move-exception v4
 
-    :try_start_151
+    :try_start_13f
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     throw v4
-    :try_end_155
-    .catchall {:try_start_151 .. :try_end_155} :catchall_155
+    :try_end_143
+    .catchall {:try_start_13f .. :try_end_143} :catchall_143
 
-    .line 4350
-    :catchall_155
+    .line 2156
+    :catchall_143
     move-exception v4
 
-    :try_start_156
+    :try_start_144
     invoke-virtual {v3}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
     throw v4
-    :try_end_15a
-    .catchall {:try_start_156 .. :try_end_15a} :catchall_15a
+    :try_end_148
+    .catchall {:try_start_144 .. :try_end_148} :catchall_148
 
-    .line 4353
-    :catchall_15a
+    .line 2159
+    :catchall_148
     move-exception v3
 
-    if-eqz v15, :cond_162
+    if-eqz v15, :cond_150
 
-    .line 4354
-    :try_start_15d
+    .line 2160
+    :try_start_14b
     move-object/from16 v0, v18
 
     invoke-virtual {v15, v11, v0}, Lcom/android/email/provider/ContentCache;->unlock(Ljava/lang/String;Landroid/content/ContentValues;)V
 
-    :cond_162
+    :cond_150
     throw v3
 
-    .line 4359
-    :sswitch_163
-    sget-object v5, Lcom/android/emailcommon/provider/EmailContent$Message;->NOTIFIER_URI:Landroid/net/Uri;
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v14, v5, v6}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
-
-    .line 4376
-    :sswitch_169
+    .line 2174
+    :sswitch_151
     invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
     move-result-object v5
@@ -8739,23 +7687,22 @@
 
     check-cast v5, Ljava/lang/String;
 
-    .line 4377
-    if-eqz v15, :cond_179
+    .line 2175
+    if-eqz v15, :cond_161
 
-    .line 4378
+    .line 2176
     invoke-virtual {v15, v5}, Lcom/android/email/provider/ContentCache;->lock(Ljava/lang/String;)V
-    :try_end_179
-    .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_15d .. :try_end_179} :catch_76
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_15d .. :try_end_179} :catch_d6
+    :try_end_161
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_14b .. :try_end_161} :catch_7e
 
-    .line 4381
-    :cond_179
+    .line 2179
+    :cond_161
     const/16 v6, 0x2002
 
-    if-ne v13, v6, :cond_1e2
+    if-ne v13, v6, :cond_1bf
 
-    .line 4389
-    :try_start_17d
+    .line 2184
+    :try_start_165
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -8776,28 +7723,9 @@
 
     invoke-virtual {v3, v6}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 4390
-    const-string v6, "delete"
-
-    const-string v7, " message_update_deletes start "
-
-    invoke-static {v6, v7}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 4392
-    const-string v6, "delete from Message_Updates where _id in (select messageKey from Message_CB where typeMsg = 1)"
-
-    invoke-virtual {v3, v6}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 4395
-    const-string v6, "delete"
-
-    const-string v7, " message_update_deletes end "
-
-    invoke-static {v6, v7}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 4399
-    :cond_1a6
-    :goto_1a6
+    .line 2188
+    :cond_17b
+    :goto_17b
     move-object/from16 v0, p0
 
     move-object/from16 v1, p3
@@ -8811,29 +7739,28 @@
     move-object/from16 v1, p4
 
     invoke-virtual {v3, v4, v0, v6, v1}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_1b5
-    .catchall {:try_start_17d .. :try_end_1b5} :catchall_20d
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_17d .. :try_end_1b5} :catch_1fd
+    :try_end_18a
+    .catchall {:try_start_165 .. :try_end_18a} :catchall_1de
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_165 .. :try_end_18a} :catch_1da
 
     move-result v3
 
-    .line 4408
-    if-eqz v15, :cond_1bd
+    .line 2195
+    if-eqz v15, :cond_192
 
-    .line 4409
-    :try_start_1b8
+    .line 2196
+    :try_start_18d
     move-object/from16 v0, p2
 
     invoke-virtual {v15, v5, v0}, Lcom/android/email/provider/ContentCache;->unlock(Ljava/lang/String;Landroid/content/ContentValues;)V
 
-    .line 4412
-    :cond_1bd
-    :goto_1bd
+    .line 2199
+    :cond_192
     const/16 v4, 0x3001
 
-    if-ne v13, v4, :cond_33f
+    if-ne v13, v4, :cond_2a6
 
-    .line 4413
+    .line 2200
     const-string v4, "flags"
 
     move-object/from16 v0, p2
@@ -8842,9 +7769,9 @@
 
     move-result v4
 
-    if-eqz v4, :cond_33f
+    if-eqz v4, :cond_2a6
 
-    .line 4414
+    .line 2201
     const-string v4, "flags"
 
     move-object/from16 v0, p2
@@ -8857,31 +7784,38 @@
 
     move-result v4
 
-    .line 4415
+    .line 2202
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Lcom/android/email/provider/EmailProvider;->mAttachmentService:Lcom/android/email/provider/EmailProvider$AttachmentService;
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/email/provider/EmailProvider;->getContext()Landroid/content/Context;
+
+    move-result-object v7
+
     invoke-static {v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v5
+    move-result v8
 
-    int-to-long v5, v5
+    int-to-long v8, v8
 
-    invoke-static {v5, v6, v4}, Lcom/android/email/service/AttachmentDownloadService;->attachmentChanged(JI)V
-    :try_end_1df
-    .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_1b8 .. :try_end_1df} :catch_76
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1b8 .. :try_end_1df} :catch_d6
+    invoke-interface {v6, v7, v8, v9, v4}, Lcom/android/email/provider/EmailProvider$AttachmentService;->attachmentChanged(Landroid/content/Context;JI)V
+    :try_end_1bc
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_18d .. :try_end_1bc} :catch_7e
 
     move-object v4, v12
 
-    .line 4417
-    goto/16 :goto_14d
+    .line 2204
+    goto/16 :goto_12b
 
-    .line 4396
-    :cond_1e2
+    .line 2185
+    :cond_1bf
     const/16 v6, 0x2001
 
-    if-ne v13, v6, :cond_1a6
+    if-ne v13, v6, :cond_17b
 
-    .line 4397
-    :try_start_1e6
+    .line 2186
+    :try_start_1c3
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -8901,115 +7835,46 @@
     move-result-object v6
 
     invoke-virtual {v3, v6}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-    :try_end_1fc
-    .catchall {:try_start_1e6 .. :try_end_1fc} :catchall_20d
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1e6 .. :try_end_1fc} :catch_1fd
+    :try_end_1d9
+    .catchall {:try_start_1c3 .. :try_end_1d9} :catchall_1de
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1c3 .. :try_end_1d9} :catch_1da
 
-    goto :goto_1a6
+    goto :goto_17b
 
-    .line 4401
-    :catch_1fd
+    .line 2190
+    :catch_1da
     move-exception v3
 
-    .line 4403
+    .line 2192
     const/16 p2, 0x0
 
-    .line 4404
-    const/4 v4, -0x1
+    .line 2193
+    :try_start_1dd
+    throw v3
+    :try_end_1de
+    .catchall {:try_start_1dd .. :try_end_1de} :catchall_1de
 
-    .line 4405
-    :try_start_201
-    invoke-virtual {v3}, Landroid/database/sqlite/SQLiteException;->printStackTrace()V
-    :try_end_204
-    .catchall {:try_start_201 .. :try_end_204} :catchall_20d
-
-    .line 4408
-    if-eqz v15, :cond_342
-
-    .line 4409
-    :try_start_206
-    move-object/from16 v0, p2
-
-    invoke-virtual {v15, v5, v0}, Lcom/android/email/provider/ContentCache;->unlock(Ljava/lang/String;Landroid/content/ContentValues;)V
-
-    move v3, v4
-
-    goto :goto_1bd
-
-    .line 4408
-    :catchall_20d
+    .line 2195
+    :catchall_1de
     move-exception v3
 
-    if-eqz v15, :cond_215
+    if-eqz v15, :cond_1e6
 
-    .line 4409
+    .line 2196
+    :try_start_1e1
     move-object/from16 v0, p2
 
     invoke-virtual {v15, v5, v0}, Lcom/android/email/provider/ContentCache;->unlock(Ljava/lang/String;Landroid/content/ContentValues;)V
 
-    :cond_215
+    :cond_1e6
     throw v3
 
-    .line 4422
-    :sswitch_216
-    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
+    .line 2215
+    :sswitch_1e7
+    sparse-switch v13, :sswitch_data_306
 
-    move-result-object v5
-
-    const/4 v6, 0x1
-
-    invoke-interface {v5, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Ljava/lang/String;
-
-    .line 4423
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "mailboxKey="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-direct {v0, v5, v1}, Lcom/android/email/provider/EmailProvider;->whereWith(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, p4
-
-    invoke-virtual {v3, v4, v0, v5, v1}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v3
-
-    move-object v4, v12
-
-    .line 4425
-    goto/16 :goto_14d
-
-    .line 4443
-    :sswitch_247
-    sparse-switch v13, :sswitch_data_3d4
-
-    .line 4454
-    :goto_24a
+    .line 2246
+    :goto_1ea
     move-object/from16 v0, p2
 
     move-object/from16 v1, p3
@@ -9020,13 +7885,111 @@
 
     move-result v3
 
+    move-object v5, v11
+
     move-object v4, v12
 
-    .line 4455
-    goto/16 :goto_14d
+    .line 2247
+    goto/16 :goto_12b
 
-    .line 4451
-    :sswitch_257
+    .line 2222
+    :sswitch_1f8
+    sget-object v5, Lcom/android/emailcommon/provider/EmailContent;->ID_PROJECTION:[Ljava/lang/String;
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    move-object/from16 v6, p3
+
+    move-object/from16 v7, p4
+
+    invoke-virtual/range {v3 .. v10}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v5
+
+    .line 2224
+    invoke-virtual {v3}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
+    :try_end_208
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1e1 .. :try_end_208} :catch_7e
+
+    .line 2225
+    const/4 v4, 0x0
+
+    .line 2227
+    :goto_209
+    :try_start_209
+    invoke-interface {v5}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_226
+
+    .line 2228
+    const/4 v6, 0x0
+
+    invoke-interface {v5, v6}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v6
+
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v6, v7}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
+
+    move-result-object v6
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p2
+
+    invoke-virtual {v0, v6, v1, v7, v8}, Lcom/android/email/provider/EmailProvider;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+
+    .line 2231
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_209
+
+    .line 2233
+    :cond_226
+    invoke-virtual {v3}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
+    :try_end_229
+    .catchall {:try_start_209 .. :try_end_229} :catchall_234
+
+    .line 2235
+    :try_start_229
+    invoke-virtual {v3}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+
+    .line 2236
+    invoke-interface {v5}, Landroid/database/Cursor;->close()V
+
+    move-object v5, v11
+
+    move v3, v4
+
+    move-object v4, v12
+
+    .line 2238
+    goto/16 :goto_12b
+
+    .line 2235
+    :catchall_234
+    move-exception v4
+
+    invoke-virtual {v3}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+
+    .line 2236
+    invoke-interface {v5}, Landroid/database/Cursor;->close()V
+
+    throw v4
+
+    .line 2243
+    :sswitch_23c
     const-string v5, "Update"
 
     move-object/from16 v0, p1
@@ -9035,10 +7998,10 @@
 
     invoke-virtual {v15, v5, v0, v1}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
 
-    goto :goto_24a
+    goto :goto_1ea
 
-    .line 4457
-    :sswitch_261
+    .line 2250
+    :sswitch_246
     invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
     move-result-object v5
@@ -9051,20 +8014,46 @@
 
     check-cast v5, Ljava/lang/String;
 
-    .line 4458
-    if-eqz v15, :cond_271
+    .line 2251
+    if-eqz v15, :cond_256
 
-    .line 4459
+    .line 2252
     invoke-virtual {v15, v5}, Lcom/android/email/provider/ContentCache;->lock(Ljava/lang/String;)V
-    :try_end_271
-    .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_206 .. :try_end_271} :catch_76
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_206 .. :try_end_271} :catch_d6
 
-    .line 4462
-    :cond_271
-    :try_start_271
+    .line 2254
+    :cond_256
     sget-object v6, Lcom/android/email/provider/EmailProvider;->CONTENT_VALUES_RESET_NEW_MESSAGE_COUNT:Landroid/content/ContentValues;
 
+    .line 2255
+    if-eqz p2, :cond_26e
+
+    .line 2256
+    const-string v7, "set"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v7}, Landroid/content/ContentValues;->getAsLong(Ljava/lang/String;)Ljava/lang/Long;
+
+    move-result-object v7
+
+    .line 2257
+    if-eqz v7, :cond_26e
+
+    .line 2258
+    new-instance v6, Landroid/content/ContentValues;
+
+    invoke-direct {v6}, Landroid/content/ContentValues;-><init>()V
+
+    .line 2259
+    const-string v8, "newMessageCount"
+
+    invoke-virtual {v6, v8, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+    :try_end_26e
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_229 .. :try_end_26e} :catch_7e
+
+    .line 2263
+    :cond_26e
+    :try_start_26e
     move-object/from16 v0, p0
 
     move-object/from16 v1, p3
@@ -9076,42 +8065,42 @@
     move-object/from16 v0, p4
 
     invoke-virtual {v3, v4, v6, v7, v0}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_280
-    .catchall {:try_start_271 .. :try_end_280} :catchall_28c
+    :try_end_27b
+    .catchall {:try_start_26e .. :try_end_27b} :catchall_287
 
     move-result v3
 
-    .line 4465
-    if-eqz v15, :cond_288
+    .line 2266
+    if-eqz v15, :cond_283
 
-    .line 4466
-    :try_start_283
+    .line 2267
+    :try_start_27e
     move-object/from16 v0, p2
 
     invoke-virtual {v15, v5, v0}, Lcom/android/email/provider/ContentCache;->unlock(Ljava/lang/String;Landroid/content/ContentValues;)V
 
-    .line 4469
-    :cond_288
-    sget-object v4, Lcom/android/emailcommon/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
+    .line 2270
+    :cond_283
+    sget-object v4, Lcom/android/emailcommon/provider/Account;->CONTENT_URI:Landroid/net/Uri;
 
-    goto/16 :goto_14d
+    goto/16 :goto_12b
 
-    .line 4465
-    :catchall_28c
+    .line 2266
+    :catchall_287
     move-exception v3
 
-    if-eqz v15, :cond_294
+    if-eqz v15, :cond_28f
 
-    .line 4466
+    .line 2267
     move-object/from16 v0, p2
 
     invoke-virtual {v15, v5, v0}, Lcom/android/email/provider/ContentCache;->unlock(Ljava/lang/String;Landroid/content/ContentValues;)V
 
-    :cond_294
+    :cond_28f
     throw v3
 
-    .line 4473
-    :sswitch_295
+    .line 2273
+    :sswitch_290
     sget-object v5, Lcom/android/email/provider/EmailProvider;->CONTENT_VALUES_RESET_NEW_MESSAGE_COUNT:Landroid/content/ContentValues;
 
     move-object/from16 v0, p3
@@ -9122,7 +8111,7 @@
 
     move-result v3
 
-    .line 4476
+    .line 2276
     const-string v4, "Reset all new counts"
 
     const/4 v5, 0x0
@@ -9131,242 +8120,60 @@
 
     invoke-virtual {v15, v4, v5, v6}, Lcom/android/email/provider/ContentCache;->invalidate(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;)V
 
-    .line 4477
-    sget-object v4, Lcom/android/emailcommon/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
+    .line 2277
+    sget-object v4, Lcom/android/emailcommon/provider/Account;->CONTENT_URI:Landroid/net/Uri;
+    :try_end_2a3
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_27e .. :try_end_2a3} :catch_7e
 
-    goto/16 :goto_14d
+    move-object v5, v11
 
-    .line 4483
-    :sswitch_2aa
-    sget-object v4, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
+    .line 2278
+    goto/16 :goto_12b
 
-    aget-object v4, v4, v5
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, p3
-
-    move-object/from16 v2, p4
-
-    invoke-virtual {v3, v4, v0, v1, v2}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v3
-
+    :cond_2a6
     move-object v4, v12
 
-    .line 4484
-    goto/16 :goto_14d
+    goto/16 :goto_12b
 
-    .line 4489
-    :sswitch_2bb
-    move-object/from16 v0, p2
+    :cond_2a9
+    move v4, v5
 
-    move-object/from16 v1, p3
+    goto/16 :goto_118
 
-    move-object/from16 v2, p4
-
-    invoke-virtual {v3, v4, v0, v1, v2}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v3
-
-    move-object v4, v12
-
-    .line 4490
-    goto/16 :goto_14d
-
-    .line 4494
-    :sswitch_2c8
-    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v5
-
-    const/4 v6, 0x1
-
-    invoke-interface {v5, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Ljava/lang/String;
-
-    .line 4495
-    const/16 v6, 0x7002
-
-    if-ne v13, v6, :cond_313
-
-    .line 4498
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "insert or ignore into FollowupFlag_Updates select * from FollowupFlag where _id="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v3, v6}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 4503
-    :cond_2ed
-    :goto_2ed
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "_id="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p3
-
-    invoke-direct {v0, v5, v1}, Lcom/android/email/provider/EmailProvider;->whereWith(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, p4
-
-    invoke-virtual {v3, v4, v0, v5, v1}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v3
-
-    move-object v4, v12
-
-    .line 4505
-    goto/16 :goto_14d
-
-    .line 4499
-    :cond_313
-    const/16 v6, 0x7001
-
-    if-ne v13, v6, :cond_2ed
-
-    .line 4500
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "delete from FollowupFlag_Updates where _id="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v3, v6}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    goto :goto_2ed
-
-    .line 4510
-    :sswitch_32e
-    sget-object v4, Lcom/android/email/provider/EmailProvider;->TABLE_NAMES:[Ljava/lang/String;
-
-    aget-object v4, v4, v5
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, p3
-
-    move-object/from16 v2, p4
-
-    invoke-virtual {v3, v4, v0, v1, v2}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_33b
-    .catch Landroid/database/sqlite/SQLiteDiskIOException; {:try_start_283 .. :try_end_33b} :catch_76
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_283 .. :try_end_33b} :catch_d6
-
-    move-result v3
-
-    move-object v4, v12
-
-    .line 4511
-    goto/16 :goto_14d
-
-    :cond_33f
-    move-object v4, v12
-
-    goto/16 :goto_14d
-
-    :cond_342
-    move v3, v4
-
-    goto/16 :goto_1bd
-
-    .line 4316
-    nop
-
-    :sswitch_data_346
+    .line 2122
+    :sswitch_data_2ac
     .sparse-switch
-        0x0 -> :sswitch_247
-        0x1 -> :sswitch_169
-        0x2 -> :sswitch_9a
-        0x3 -> :sswitch_295
-        0x4 -> :sswitch_261
-        0x1000 -> :sswitch_247
-        0x1001 -> :sswitch_169
-        0x1002 -> :sswitch_9a
-        0x2000 -> :sswitch_247
-        0x2001 -> :sswitch_169
-        0x2002 -> :sswitch_163
-        0x3000 -> :sswitch_247
-        0x3001 -> :sswitch_169
-        0x4000 -> :sswitch_247
-        0x4001 -> :sswitch_169
-        0x5000 -> :sswitch_247
-        0x5001 -> :sswitch_169
-        0x7000 -> :sswitch_2bb
-        0x7001 -> :sswitch_2c8
-        0x7002 -> :sswitch_2c8
-        0x8000 -> :sswitch_2bb
-        0x8001 -> :sswitch_2c8
-        0xa000 -> :sswitch_247
-        0xa001 -> :sswitch_169
-        0xb000 -> :sswitch_247
-        0xb001 -> :sswitch_216
-        0xc000 -> :sswitch_247
-        0xd000 -> :sswitch_247
-        0xf000 -> :sswitch_2aa
-        0x11000 -> :sswitch_32e
-        0x12001 -> :sswitch_169
-        0x13000 -> :sswitch_247
-        0x13001 -> :sswitch_169
-        0x14000 -> :sswitch_247
-        0x14001 -> :sswitch_169
+        0x0 -> :sswitch_1e7
+        0x1 -> :sswitch_151
+        0x2 -> :sswitch_83
+        0x3 -> :sswitch_290
+        0x4 -> :sswitch_246
+        0x1000 -> :sswitch_1e7
+        0x1001 -> :sswitch_151
+        0x1002 -> :sswitch_83
+        0x2000 -> :sswitch_1e7
+        0x2001 -> :sswitch_151
+        0x2002 -> :sswitch_151
+        0x3000 -> :sswitch_1e7
+        0x3001 -> :sswitch_151
+        0x4000 -> :sswitch_1e7
+        0x4001 -> :sswitch_151
+        0x5000 -> :sswitch_1e7
+        0x5001 -> :sswitch_151
+        0x7000 -> :sswitch_1e7
+        0x7001 -> :sswitch_151
+        0x8001 -> :sswitch_151
+        0x9000 -> :sswitch_1e7
+        0x9001 -> :sswitch_151
     .end sparse-switch
 
-    .line 4443
-    :sswitch_data_3d4
+    .line 2215
+    :sswitch_data_306
     .sparse-switch
-        0x0 -> :sswitch_257
-        0x1000 -> :sswitch_257
-        0x2000 -> :sswitch_257
-        0x4000 -> :sswitch_257
+        0x0 -> :sswitch_1f8
+        0x1000 -> :sswitch_1f8
+        0x2000 -> :sswitch_23c
+        0x4000 -> :sswitch_1f8
+        0x7000 -> :sswitch_1f8
     .end sparse-switch
 .end method

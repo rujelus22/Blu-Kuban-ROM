@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/adapters/ReviewsAdapter;
 
-.field final synthetic val$sourceUrl:Ljava/lang/String;
+.field final synthetic val$review:Lcom/google/android/finsky/remoting/protos/Rev$Review;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/adapters/ReviewsAdapter;Ljava/lang/String;)V
+.method constructor <init>(Lcom/google/android/finsky/adapters/ReviewsAdapter;Lcom/google/android/finsky/remoting/protos/Rev$Review;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 223
+    .line 255
     iput-object p1, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$1;->this$0:Lcom/google/android/finsky/adapters/ReviewsAdapter;
 
-    iput-object p2, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$1;->val$sourceUrl:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$1;->val$review:Lcom/google/android/finsky/remoting/protos/Rev$Review;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,23 +47,18 @@
     .parameter "v"
 
     .prologue
-    .line 226
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    .line 258
+    iget-object v0, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$1;->this$0:Lcom/google/android/finsky/adapters/ReviewsAdapter;
+
+    #getter for: Lcom/google/android/finsky/adapters/ReviewsAdapter;->mRatingHandler:Lcom/google/android/finsky/adapters/ReviewsAdapter$RateReviewHandler;
+    invoke-static {v0}, Lcom/google/android/finsky/adapters/ReviewsAdapter;->access$000(Lcom/google/android/finsky/adapters/ReviewsAdapter;)Lcom/google/android/finsky/adapters/ReviewsAdapter$RateReviewHandler;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$1;->val$sourceUrl:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$1;->val$review:Lcom/google/android/finsky/remoting/protos/Rev$Review;
 
-    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-interface {v0, v1}, Lcom/google/android/finsky/adapters/ReviewsAdapter$RateReviewHandler;->onRateReview(Lcom/google/android/finsky/remoting/protos/Rev$Review;)V
 
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/google/android/finsky/utils/IntentUtils;->createViewIntentForUrl(Landroid/net/Uri;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-
-    .line 228
+    .line 259
     return-void
 .end method

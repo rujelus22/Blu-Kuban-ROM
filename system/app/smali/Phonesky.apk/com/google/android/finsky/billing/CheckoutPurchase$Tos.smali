@@ -29,20 +29,20 @@
     .parameter "link"
 
     .prologue
-    .line 271
+    .line 350
     iput-object p1, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$Tos;->this$0:Lcom/google/android/finsky/billing/CheckoutPurchase;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 272
+    .line 351
     iput-object p2, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$Tos;->mTosLink:Ljava/lang/String;
 
-    .line 273
+    .line 352
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$Tos;->mIsAccepted:Z
 
-    .line 274
+    .line 353
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .registers 2
 
     .prologue
-    .line 295
+    .line 374
     iget-boolean v0, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$Tos;->mIsAccepted:Z
 
     return v0
@@ -62,7 +62,7 @@
     .registers 2
 
     .prologue
-    .line 281
+    .line 360
     iget-object v0, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$Tos;->mTosLink:Ljava/lang/String;
 
     return-object v0
@@ -73,9 +73,9 @@
     .parameter "isAccepted"
 
     .prologue
-    .line 288
+    .line 367
     iput-boolean p1, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$Tos;->mIsAccepted:Z
 
-    .line 289
+    .line 368
     return-void
 .end method

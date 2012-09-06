@@ -27,7 +27,7 @@
     .line 219
     iput-object p1, p0, Lcom/google/android/talk/RosterListAdapter$Bind;->this$0:Lcom/google/android/talk/RosterListAdapter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

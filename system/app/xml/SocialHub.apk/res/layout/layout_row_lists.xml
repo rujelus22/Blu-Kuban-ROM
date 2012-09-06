@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="96.0px"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:id="@id/layout_lists" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0px" android:layout_marginBottom="8.0px">
-        <TextView android:textSize="33.0px" android:textColor="@color/color_palette_01" android:ellipsize="marquee" android:gravity="center_vertical" android:id="@id/txt_lists_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
-    </LinearLayout>
-</LinearLayout>

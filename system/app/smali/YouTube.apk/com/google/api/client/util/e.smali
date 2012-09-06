@@ -139,7 +139,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v3, v0}, Lcom/google/api/client/util/o;->a(Ljava/lang/reflect/Field;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v1, v3, v0}, Lcom/google/api/client/util/n;->a(Ljava/lang/reflect/Field;Ljava/lang/Object;Ljava/lang/Object;)V
 
     goto :goto_36
 
@@ -186,7 +186,7 @@
     const/4 v1, 0x1
 
     :goto_19
-    invoke-static {v1}, Lcom/google/common/base/t;->a(Z)V
+    invoke-static {v1}, Lcom/google/common/base/ag;->a(Z)V
 
     iget-object v0, v0, Lcom/google/api/client/util/f;->b:Ljava/util/ArrayList;
 

@@ -1,56 +1,29 @@
-.class public abstract LB/a;
-.super Lcom/google/android/maps/driveabout/vector/aE;
-
-
-# instance fields
-.field private a:LB/b;
+.class public Lb/a;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
+.method public static a(Lb/c;)Landroid/os/Parcelable$Creator;
+    .registers 3
+    .parameter
 
-    invoke-direct {p0}, Lcom/google/android/maps/driveabout/vector/aE;-><init>()V
+    .prologue
+    .line 36
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    return-void
-.end method
+    const/16 v1, 0xd
 
+    if-lt v0, v1, :cond_9
 
-# virtual methods
-.method public a(LB/b;)V
-    .registers 2
+    .line 37
+    invoke-static {p0}, Lb/e;->a(Lb/c;)Landroid/os/Parcelable$Creator;
 
-    iput-object p1, p0, LB/a;->a:LB/b;
+    .line 39
+    :cond_9
+    new-instance v0, Lb/b;
 
-    return-void
-.end method
-
-.method public e()Z
-    .registers 2
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public h()LB/b;
-    .registers 2
-
-    iget-object v0, p0, LB/a;->a:LB/b;
+    invoke-direct {v0, p0}, Lb/b;-><init>(Lb/c;)V
 
     return-object v0
-.end method
-
-.method public i()V
-    .registers 1
-
-    return-void
-.end method
-
-.method public s_()I
-    .registers 2
-
-    const v0, 0xdbba0
-
-    return v0
 .end method

@@ -3,146 +3,50 @@
 .source "MessageFileViewFragment.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/android/email/activity/MessageFileViewFragment$LoadFileMessageTask;
-    }
-.end annotation
-
-
 # static fields
-.field public static EML_ACCOUNTID:I
-
 .field private static sFragmentCount:I
 
 
 # instance fields
 .field private mFileEmailUri:Landroid/net/Uri;
 
-.field private mLoadFileMessageTask:Lcom/android/email/activity/MessageFileViewFragment$LoadFileMessageTask;
-
-.field private final mLock:Ljava/lang/Object;
-
-.field private mMessage:Lcom/android/emailcommon/provider/EmailContent$Message;
-
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .registers 1
 
     .prologue
-    .line 46
-    const v0, 0x7ffffffe
-
-    sput v0, Lcom/android/email/activity/MessageFileViewFragment;->EML_ACCOUNTID:I
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .registers 2
-
-    .prologue
-    .line 39
+    .line 36
     invoke-direct {p0}, Lcom/android/email/activity/MessageViewFragmentBase;-><init>()V
 
-    .line 49
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lcom/android/email/activity/MessageFileViewFragment;->mLock:Ljava/lang/Object;
-
-    .line 150
     return-void
-.end method
-
-.method static synthetic access$002(Lcom/android/email/activity/MessageFileViewFragment;Lcom/android/emailcommon/provider/EmailContent$Message;)Lcom/android/emailcommon/provider/EmailContent$Message;
-    .registers 2
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 39
-    iput-object p1, p0, Lcom/android/email/activity/MessageFileViewFragment;->mMessage:Lcom/android/emailcommon/provider/EmailContent$Message;
-
-    return-object p1
 .end method
 
 
 # virtual methods
-.method public clearContent()V
+.method public onActivityCreated(Landroid/os/Bundle;)V
     .registers 3
+    .parameter "savedInstanceState"
 
     .prologue
-    .line 102
-    iget-object v1, p0, Lcom/android/email/activity/MessageFileViewFragment;->mLock:Ljava/lang/Object;
+    .line 72
+    invoke-super {p0, p1}, Lcom/android/email/activity/MessageViewFragmentBase;->onActivityCreated(Landroid/os/Bundle;)V
 
-    monitor-enter v1
-
-    .line 103
-    :try_start_3
-    invoke-super {p0}, Lcom/android/email/activity/MessageViewFragmentBase;->clearContent()V
-
-    .line 104
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/android/email/activity/MessageFileViewFragment;->mFileEmailUri:Landroid/net/Uri;
-
-    .line 105
-    monitor-exit v1
-
-    .line 106
-    return-void
-
-    .line 105
-    :catchall_b
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
-
-    throw v0
-.end method
-
-.method protected isMessageSpecified()Z
-    .registers 3
-
-    .prologue
-    .line 110
-    iget-object v1, p0, Lcom/android/email/activity/MessageFileViewFragment;->mLock:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 111
-    :try_start_3
+    .line 73
     iget-object v0, p0, Lcom/android/email/activity/MessageFileViewFragment;->mFileEmailUri:Landroid/net/Uri;
 
-    if-eqz v0, :cond_a
+    if-nez v0, :cond_d
 
-    const/4 v0, 0x1
+    .line 74
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    :goto_8
-    monitor-exit v1
-
-    return v0
-
-    :cond_a
-    const/4 v0, 0x0
-
-    goto :goto_8
-
-    .line 112
-    :catchall_c
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_e
-    .catchall {:try_start_3 .. :try_end_e} :catchall_c
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
+
+    .line 76
+    :cond_d
+    return-void
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
@@ -150,40 +54,82 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 59
+    .line 50
     invoke-super {p0, p1}, Lcom/android/email/activity/MessageViewFragmentBase;->onCreate(Landroid/os/Bundle;)V
 
-    .line 60
+    .line 51
     sget v0, Lcom/android/email/activity/MessageFileViewFragment;->sFragmentCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     sput v0, Lcom/android/email/activity/MessageFileViewFragment;->sFragmentCount:I
 
-    .line 61
-    const/4 v0, 0x1
+    .line 52
+    return-void
+.end method
 
-    iput-boolean v0, p0, Lcom/android/email/activity/MessageViewFragmentBase;->mIsEMLView:Z
+.method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
+    .registers 7
+    .parameter "inflater"
+    .parameter "container"
+    .parameter "savedInstanceState"
+
+    .prologue
+    const/16 v2, 0x8
+
+    .line 57
+    invoke-super {p0, p1, p2, p3}, Lcom/android/email/activity/MessageViewFragmentBase;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
+
+    move-result-object v0
+
+    .line 60
+    .local v0, result:Landroid/view/View;
+    const v1, 0x7f0e00aa
+
+    invoke-static {v0, v1, v2}, Lcom/android/email/activity/UiUtilities;->setVisibilitySafe(Landroid/view/View;II)V
+
+    .line 61
+    const v1, 0x7f0e00ab
+
+    invoke-static {v0, v1, v2}, Lcom/android/email/activity/UiUtilities;->setVisibilitySafe(Landroid/view/View;II)V
 
     .line 62
-    return-void
+    const v1, 0x7f0e00ac
+
+    invoke-static {v0, v1, v2}, Lcom/android/email/activity/UiUtilities;->setVisibilitySafe(Landroid/view/View;II)V
+
+    .line 63
+    const v1, 0x7f0e00ae
+
+    invoke-static {v0, v1, v2}, Lcom/android/email/activity/UiUtilities;->setVisibilitySafe(Landroid/view/View;II)V
+
+    .line 64
+    const v1, 0x7f0e00ad
+
+    invoke-static {v0, v1, v2}, Lcom/android/email/activity/UiUtilities;->setVisibilitySafe(Landroid/view/View;II)V
+
+    .line 66
+    return-object v0
 .end method
 
 .method public onDestroy()V
     .registers 2
 
     .prologue
-    .line 68
+    .line 80
+    invoke-super {p0}, Lcom/android/email/activity/MessageViewFragmentBase;->onDestroy()V
+
+    .line 83
     sget v0, Lcom/android/email/activity/MessageFileViewFragment;->sFragmentCount:I
 
     add-int/lit8 v0, v0, -0x1
 
     sput v0, Lcom/android/email/activity/MessageFileViewFragment;->sFragmentCount:I
 
-    .line 69
+    .line 84
     sget v0, Lcom/android/email/activity/MessageFileViewFragment;->sFragmentCount:I
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1e
 
     invoke-virtual {p0}, Lcom/android/email/activity/MessageFileViewFragment;->getActivity()Landroid/app/Activity;
 
@@ -193,206 +139,198 @@
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1e
 
-    .line 70
+    .line 85
     invoke-virtual {p0}, Lcom/android/email/activity/MessageFileViewFragment;->getController()Lcom/android/email/Controller;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/email/Controller;->deleteAttachmentMessages()V
 
-    .line 73
-    :cond_1b
-    invoke-super {p0}, Lcom/android/email/activity/MessageViewFragmentBase;->onDestroy()V
-
-    .line 75
-    iget-object v0, p0, Lcom/android/email/activity/MessageFileViewFragment;->mLoadFileMessageTask:Lcom/android/email/activity/MessageFileViewFragment$LoadFileMessageTask;
-
-    invoke-static {v0}, Lcom/android/emailcommon/utility/Utility;->cancelTaskInterrupt(Landroid/os/AsyncTask;)V
-
-    .line 76
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/android/email/activity/MessageFileViewFragment;->mLoadFileMessageTask:Lcom/android/email/activity/MessageFileViewFragment$LoadFileMessageTask;
-
-    .line 77
-    return-void
-.end method
-
-.method public openMessage(Landroid/net/Uri;)V
-    .registers 5
-    .parameter "fileEmailUri"
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 84
-    if-nez p1, :cond_9
-
-    .line 85
-    new-instance v0, Ljava/security/InvalidParameterException;
-
-    invoke-direct {v0}, Ljava/security/InvalidParameterException;-><init>()V
-
-    throw v0
-
     .line 87
-    :cond_9
-    iget-object v1, p0, Lcom/android/email/activity/MessageFileViewFragment;->mLock:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 88
-    :try_start_c
-    iput-object p1, p0, Lcom/android/email/activity/MessageFileViewFragment;->mFileEmailUri:Landroid/net/Uri;
-
-    .line 89
-    monitor-exit v1
-    :try_end_f
-    .catchall {:try_start_c .. :try_end_f} :catchall_2e
-
-    .line 92
-    const/4 v0, 0x1
-
-    invoke-super {p0, v2, v0}, Lcom/android/email/activity/MessageViewFragmentBase;->showContent(ZZ)V
-
-    .line 93
-    invoke-virtual {p0}, Lcom/android/email/activity/MessageFileViewFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    const v1, 0x7f0800c0
-
-    invoke-static {v0, v1, v2}, Lcom/android/email/EmailUtility;->showToast(Landroid/app/Activity;II)V
-
-    .line 96
-    new-instance v0, Lcom/android/email/activity/MessageFileViewFragment$LoadFileMessageTask;
-
-    iget-object v1, p0, Lcom/android/email/activity/MessageFileViewFragment;->mFileEmailUri:Landroid/net/Uri;
-
-    invoke-direct {v0, p0, v1}, Lcom/android/email/activity/MessageFileViewFragment$LoadFileMessageTask;-><init>(Lcom/android/email/activity/MessageFileViewFragment;Landroid/net/Uri;)V
-
-    iput-object v0, p0, Lcom/android/email/activity/MessageFileViewFragment;->mLoadFileMessageTask:Lcom/android/email/activity/MessageFileViewFragment$LoadFileMessageTask;
-
-    .line 97
-    iget-object v0, p0, Lcom/android/email/activity/MessageFileViewFragment;->mLoadFileMessageTask:Lcom/android/email/activity/MessageFileViewFragment$LoadFileMessageTask;
-
-    new-array v1, v2, [Ljava/lang/Void;
-
-    invoke-virtual {v0, v1}, Lcom/android/email/activity/MessageFileViewFragment$LoadFileMessageTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
-
-    .line 98
+    :cond_1e
     return-void
-
-    .line 89
-    :catchall_2e
-    move-exception v0
-
-    :try_start_2f
-    monitor-exit v1
-    :try_end_30
-    .catchall {:try_start_2f .. :try_end_30} :catchall_2e
-
-    throw v0
 .end method
 
 .method protected openMessageSync(Landroid/app/Activity;)Lcom/android/emailcommon/provider/EmailContent$Message;
-    .registers 5
+    .registers 6
     .parameter "activity"
 
     .prologue
+    .line 114
+    sget-boolean v1, Lcom/android/emailcommon/Logging;->DEBUG_LIFECYCLE:Z
+
+    if-eqz v1, :cond_20
+
+    sget-boolean v1, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v1, :cond_20
+
+    .line 115
+    const-string v1, "Email"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " openMessageSync"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 118
+    :cond_20
+    const v1, 0x7f0800a4
+
+    invoke-static {p1, v1}, Lcom/android/emailcommon/utility/Utility;->showToast(Landroid/content/Context;I)V
+
+    .line 119
+    invoke-virtual {p0}, Lcom/android/email/activity/MessageFileViewFragment;->getController()Lcom/android/email/Controller;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/email/activity/MessageFileViewFragment;->mFileEmailUri:Landroid/net/Uri;
+
+    invoke-virtual {v1, v2}, Lcom/android/email/Controller;->loadMessageFromUri(Landroid/net/Uri;)Lcom/android/emailcommon/provider/EmailContent$Message;
+
+    move-result-object v0
+
     .line 120
-    iget-object v1, p0, Lcom/android/email/activity/MessageFileViewFragment;->mLock:Ljava/lang/Object;
+    .local v0, msg:Lcom/android/emailcommon/provider/EmailContent$Message;
+    if-nez v0, :cond_39
 
-    monitor-enter v1
+    .line 122
+    const v1, 0x7f0800a2
 
-    .line 125
-    :try_start_3
-    iget-object v0, p0, Lcom/android/email/activity/MessageFileViewFragment;->mMessage:Lcom/android/emailcommon/provider/EmailContent$Message;
+    invoke-static {p1, v1}, Lcom/android/emailcommon/utility/Utility;->showToast(Landroid/content/Context;I)V
 
-    if-nez v0, :cond_11
-
-    .line 127
-    const v0, 0x7f0800be
-
-    const/4 v2, 0x1
-
-    invoke-static {p1, v0, v2}, Lcom/android/email/EmailUtility;->showToast(Landroid/app/Activity;II)V
-
-    .line 129
+    .line 123
     const/4 v0, 0x0
 
-    monitor-exit v1
-
-    .line 131
-    :goto_10
+    .line 125
+    .end local v0           #msg:Lcom/android/emailcommon/provider/EmailContent$Message;
+    :cond_39
     return-object v0
+.end method
 
-    :cond_11
-    iget-object v0, p0, Lcom/android/email/activity/MessageFileViewFragment;->mMessage:Lcom/android/emailcommon/provider/EmailContent$Message;
+.method protected reloadMessageSync(Landroid/app/Activity;)Lcom/android/emailcommon/provider/EmailContent$Message;
+    .registers 3
+    .parameter "activity"
 
-    monitor-exit v1
+    .prologue
+    .line 131
+    invoke-virtual {p0}, Lcom/android/email/activity/MessageFileViewFragment;->getMessage()Lcom/android/emailcommon/provider/EmailContent$Message;
 
-    goto :goto_10
+    move-result-object v0
 
-    .line 132
-    :catchall_15
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_17
-    .catchall {:try_start_3 .. :try_end_17} :catchall_15
-
-    throw v0
+    return-object v0
 .end method
 
 .method protected reloadUiFromMessage(Lcom/android/emailcommon/provider/EmailContent$Message;Z)V
-    .registers 6
+    .registers 5
     .parameter "message"
     .parameter "okToFetch"
 
     .prologue
-    .line 141
-    iget-object v1, p0, Lcom/android/email/activity/MessageFileViewFragment;->mLock:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 143
-    :try_start_3
+    .line 142
     iget v0, p1, Lcom/android/emailcommon/provider/EmailContent$Message;->mFlagLoaded:I
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    if-eq v0, v2, :cond_11
+    if-eq v0, v1, :cond_b
 
-    .line 144
+    .line 143
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
 
-    .line 147
-    :catchall_e
-    move-exception v0
+    .line 145
+    :cond_b
+    invoke-super {p0, p1, p2}, Lcom/android/email/activity/MessageViewFragmentBase;->reloadUiFromMessage(Lcom/android/emailcommon/provider/EmailContent$Message;Z)V
 
-    monitor-exit v1
-    :try_end_10
-    .catchall {:try_start_3 .. :try_end_10} :catchall_e
+    .line 146
+    return-void
+.end method
+
+.method public setFileUri(Landroid/net/Uri;)V
+    .registers 5
+    .parameter "fileEmailUri"
+
+    .prologue
+    .line 97
+    sget-boolean v0, Lcom/android/emailcommon/Logging;->DEBUG_LIFECYCLE:Z
+
+    if-eqz v0, :cond_20
+
+    sget-boolean v0, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v0, :cond_20
+
+    .line 98
+    const-string v0, "Email"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " openMessage"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 100
+    :cond_20
+    iget-object v0, p0, Lcom/android/email/activity/MessageFileViewFragment;->mFileEmailUri:Landroid/net/Uri;
+
+    if-eqz v0, :cond_2a
+
+    .line 101
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
 
-    .line 146
-    :cond_11
-    :try_start_11
-    invoke-super {p0, p1, p2}, Lcom/android/email/activity/MessageViewFragmentBase;->reloadUiFromMessage(Lcom/android/emailcommon/provider/EmailContent$Message;Z)V
+    .line 103
+    :cond_2a
+    if-nez p1, :cond_32
 
-    .line 147
-    monitor-exit v1
-    :try_end_15
-    .catchall {:try_start_11 .. :try_end_15} :catchall_e
+    .line 104
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    .line 148
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw v0
+
+    .line 106
+    :cond_32
+    iput-object p1, p0, Lcom/android/email/activity/MessageFileViewFragment;->mFileEmailUri:Landroid/net/Uri;
+
+    .line 107
     return-void
 .end method

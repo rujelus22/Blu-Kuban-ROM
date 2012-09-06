@@ -242,18 +242,18 @@
     <string name="account_intro_recommended_title">تهيئة Google</string>
     <string name="common_message">"يتيح لك حساب Google
 
-"<li><ul>الاطلاع على جميع معلوماتك وتنظيمها من أي مكان.</ul></li>"
+"<ul><li>الاطلاع على جميع معلوماتك وتنظيمها من أي مكان.</li></ul>"
 
-"<li><ul>نسخ بياناتك احتياطيًا تلقائيًا.</ul></li>"
+"<ul><li>نسخ بياناتك احتياطيًا تلقائيًا.</li></ul>"
 
-"<li><ul>استخدام خدمات Google بسهولة من أي مكان.</ul></li></string>
+"<ul><li>استخدام خدمات Google بسهولة من أي مكان.</li></ul></string>
     <string name="add_account_message">" يمكنك استخدام أكثر من حساب Google واحد (مثل حساب للمنزل وآخر للعمل). المس "<b>تسجيل الدخول</b> أو <b>إنشاء حساب</b> لإضافة حساب Google</string>
     <string name="account_intro_default_message">عدم فقد عناصرك مرة أخرى، حيث يحتفظ حساب Google بكل شيء في أمان.</string>
     <string name="account_intro_custom_endtext">هل حصلت على %s؟ سجّل الدخول الآن.</string>
     <string name="account_intro_simple_message">هل تريد إضافة حساب حالي أو إنشاء حساب جديد؟</string>
     <string name="learn_more_title"><annotation id="learn_more">مزيد من المعلومات</annotation></string>
     <string name="learn_more_account_intro">"يتيح لك حساب Google
-"<li><ul>مشاهدة جميع معلوماتك وتنظيمها من أي مكان.<li>الاحتفاظ بنسخة احتياطية من البيانات، مثل البريد الإلكتروني وجهات الاتصال والموسيقى والصور تلقائيًا.</li><li>استخدام خدمات Google بسهولة من أي مكان- بما في ذلك جهات الاتصال والتقويم وخرائط والمزيد.</li></ul></li></string>
+"<ul><li>مشاهدة جميع معلوماتك وتنظيمها من أي مكان.<li>الاحتفاظ بنسخة احتياطية من البيانات، مثل البريد الإلكتروني وجهات الاتصال والموسيقى والصور تلقائيًا.</li><li>استخدام خدمات Google بسهولة من أي مكان- بما في ذلك جهات الاتصال والتقويم وخرائط والمزيد.</li></li></ul></string>
     <string name="learn_more_account_intro_title">معلومات عن حسابات Google</string>
     <string name="learn_more_web_history">"يعمل سجل بحث الويب على ضبط نتائج البحث بناءً على ما بحثت عنه ومواقع الويب التي انتقلت إليها، مما يوفر تجربة مخصصة على Google.
 

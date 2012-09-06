@@ -12,8 +12,6 @@
 
 .field public static final DEBUG_SECURITY:Z = false
 
-.field public static final FLAG_BACKGROUND_TOUCH_SUPPORT:Z = false
-
 .field public static final FLAG_MDPI_MODEL:Z = false
 
 .field public static final FLAG_REGIONAL_AUS_TEL:Z = false

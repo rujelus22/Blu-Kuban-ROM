@@ -24,15 +24,15 @@
     .parameter "context"
 
     .prologue
-    .line 61
+    .line 55
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, v0}, Landroid/content/AbstractThreadedSyncAdapter;-><init>(Landroid/content/Context;Z)V
 
-    .line 62
+    .line 56
     iput-object p1, p0, Lcom/android/exchange/EmailSyncAdapterService$SyncAdapterImpl;->mContext:Landroid/content/Context;
 
-    .line 63
+    .line 57
     return-void
 .end method
 
@@ -47,7 +47,7 @@
     .parameter "syncResult"
 
     .prologue
-    .line 69
+    .line 63
     :try_start_0
     iget-object v0, p0, Lcom/android/exchange/EmailSyncAdapterService$SyncAdapterImpl;->mContext:Landroid/content/Context;
 
@@ -66,11 +66,11 @@
     :try_end_a
     .catch Landroid/accounts/OperationCanceledException; {:try_start_0 .. :try_end_a} :catch_b
 
-    .line 73
+    .line 67
     :goto_a
     return-void
 
-    .line 71
+    .line 65
     :catch_b
     move-exception v0
 

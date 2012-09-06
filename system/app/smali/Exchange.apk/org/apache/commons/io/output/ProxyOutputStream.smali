@@ -27,12 +27,12 @@
     .end annotation
 
     .prologue
-    .line 91
-    iget-object v0, p0, Ljava/io/FilterOutputStream;->out:Ljava/io/OutputStream;
+    .line 86
+    iget-object v0, p0, Lorg/apache/commons/io/output/ProxyOutputStream;->out:Ljava/io/OutputStream;
 
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
 
-    .line 92
+    .line 87
     return-void
 .end method
 
@@ -45,12 +45,12 @@
     .end annotation
 
     .prologue
-    .line 82
-    iget-object v0, p0, Ljava/io/FilterOutputStream;->out:Ljava/io/OutputStream;
+    .line 78
+    iget-object v0, p0, Lorg/apache/commons/io/output/ProxyOutputStream;->out:Ljava/io/OutputStream;
 
     invoke-virtual {v0}, Ljava/io/OutputStream;->flush()V
 
-    .line 83
+    .line 79
     return-void
 .end method
 
@@ -64,12 +64,12 @@
     .end annotation
 
     .prologue
-    .line 51
-    iget-object v0, p0, Ljava/io/FilterOutputStream;->out:Ljava/io/OutputStream;
+    .line 50
+    iget-object v0, p0, Lorg/apache/commons/io/output/ProxyOutputStream;->out:Ljava/io/OutputStream;
 
     invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write(I)V
 
-    .line 52
+    .line 51
     return-void
 .end method
 
@@ -83,12 +83,12 @@
     .end annotation
 
     .prologue
-    .line 61
-    iget-object v0, p0, Ljava/io/FilterOutputStream;->out:Ljava/io/OutputStream;
+    .line 59
+    iget-object v0, p0, Lorg/apache/commons/io/output/ProxyOutputStream;->out:Ljava/io/OutputStream;
 
     invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write([B)V
 
-    .line 62
+    .line 60
     return-void
 .end method
 
@@ -104,11 +104,11 @@
     .end annotation
 
     .prologue
-    .line 73
-    iget-object v0, p0, Ljava/io/FilterOutputStream;->out:Ljava/io/OutputStream;
+    .line 70
+    iget-object v0, p0, Lorg/apache/commons/io/output/ProxyOutputStream;->out:Ljava/io/OutputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
 
-    .line 74
+    .line 71
     return-void
 .end method

@@ -1,319 +1,326 @@
-.class public LaN/a;
-.super Ljava/lang/Object;
+.class public Lan/a;
+.super Lan/b;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/location/LocationListener;
+
+
+# instance fields
+.field protected a:Lan/C;
+
+.field private final i:Lan/B;
+
+.field private j:Lan/s;
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
+.method public constructor <init>(Landroid/content/Context;Lan/B;)V
+    .registers 4
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 59
+    const/4 v0, 0x1
 
+    invoke-direct {p0, v0}, Lan/b;-><init>(Z)V
+
+    .line 54
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lan/a;->j:Lan/s;
+
+    .line 60
+    iput-object p2, p0, Lan/a;->i:Lan/B;
+
+    .line 61
     return-void
 .end method
 
-.method public static a(Lau/x;I[Lam/b;Ljava/lang/String;)Ljava/lang/String;
-    .registers 13
 
-    const/4 v3, 0x1
+# virtual methods
+.method public a()Ljava/lang/String;
+    .registers 2
 
-    const/4 v1, 0x0
-
-    const/4 v8, 0x2
-
-    invoke-virtual {p0}, Lau/x;->f()LaJ/B;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lau/x;->h()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p0}, Lau/x;->e()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {p0}, Lau/x;->g()Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "google.navigation:"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    if-eqz v0, :cond_3f
-
-    const-string v7, "ll="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, LaJ/B;->c()I
-
-    move-result v7
-
-    invoke-static {v7}, Las/b;->a(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/16 v7, 0x2c
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, LaJ/B;->e()I
-
-    move-result v0
-
-    invoke-static {v0}, Las/b;->a(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_3f
-    invoke-static {v2}, Las/b;->b(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_51
-
-    const-string v0, "&title="
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {v2}, Lak/k;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_51
-    invoke-static {v4}, Las/b;->b(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_63
-
-    const-string v0, "&q="
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {v4}, Lak/k;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_63
-    invoke-static {v5}, Las/b;->b(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_75
-
-    const-string v0, "&token="
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {v5}, Lak/k;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_75
-    if-ne p1, v8, :cond_bf
-
-    const-string v0, "&mode=w"
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_7c
-    :goto_7c
-    invoke-static {p3}, Las/b;->b(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_8e
-
-    const-string v0, "&entry="
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {p3}, Lak/k;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_8e
-    if-eqz p2, :cond_ce
-
-    move v0, v1
-
-    move v2, v3
-
-    :goto_92
-    array-length v4, p2
-
-    if-ge v0, v4, :cond_ce
-
-    aget-object v4, p2, v0
-
-    invoke-virtual {v4, v8}, Lam/b;->k(I)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_bc
-
-    if-eqz v2, :cond_c8
-
-    const-string v2, "&opt="
-
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move v2, v1
-
-    :goto_a5
-    aget-object v4, p2, v0
-
-    invoke-virtual {v4, v3}, Lam/b;->d(I)I
-
-    move-result v4
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v4, "%3A"
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    aget-object v4, p2, v0
-
-    invoke-virtual {v4, v8}, Lam/b;->d(I)I
-
-    move-result v4
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    :cond_bc
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_92
-
-    :cond_bf
-    const/4 v0, 0x3
-
-    if-ne p1, v0, :cond_7c
-
-    const-string v0, "&mode=b"
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_7c
-
-    :cond_c8
-    const-string v4, ","
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_a5
-
-    :cond_ce
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    .prologue
+    .line 66
+    const-string v0, "network"
 
     return-object v0
 .end method
 
-.method public static a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 5
+.method protected a(Lan/s;)V
+    .registers 3
+    .parameter
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    .prologue
+    .line 133
+    if-nez p1, :cond_3
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    .line 143
+    :goto_2
+    return-void
 
-    const-string v1, "google.navigation:"
+    .line 136
+    :cond_3
+    iget-object v0, p0, Lan/a;->a:Lan/C;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Lan/C;->a(Landroid/location/Location;)V
 
-    const-string v1, "q="
+    .line 137
+    iput-object p1, p0, Lan/a;->j:Lan/s;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 142
+    invoke-virtual {p0, p1}, Lan/a;->b(Lan/s;)V
 
-    invoke-static {p0}, Lak/k;->a(Ljava/lang/String;)Ljava/lang/String;
+    goto :goto_2
+.end method
 
-    move-result-object v1
+.method protected a(Landroid/location/Location;)V
+    .registers 3
+    .parameter
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .prologue
+    .line 125
+    const/4 v0, 0x0
 
-    invoke-static {p1}, Las/b;->b(Ljava/lang/String;)Z
+    .line 126
+    if-eqz p1, :cond_10
 
-    move-result v1
+    .line 127
+    new-instance v0, Lan/u;
 
-    if-nez v1, :cond_24
+    invoke-direct {v0}, Lan/u;-><init>()V
 
-    const-string v1, "&sll="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_24
-    invoke-static {p2}, Las/b;->b(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_32
-
-    const-string v1, "&sspn="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_32
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, p1}, Lan/u;->a(Landroid/location/Location;)Lan/u;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v0}, Lan/u;->b()Lan/s;
+
+    move-result-object v0
+
+    .line 129
+    :cond_10
+    invoke-virtual {p0, v0}, Lan/a;->a(Lan/s;)V
+
+    .line 130
+    return-void
 .end method
 
-.method public static a(Z)Ljava/lang/String;
+.method protected b()V
+    .registers 2
+
+    .prologue
+    .line 74
+    monitor-enter p0
+
+    .line 75
+    :try_start_1
+    iget-object v0, p0, Lan/a;->i:Lan/B;
+
+    invoke-interface {v0}, Lan/B;->a()V
+
+    .line 76
+    monitor-exit p0
+    :try_end_7
+    .catchall {:try_start_1 .. :try_end_7} :catchall_b
+
+    .line 82
+    invoke-virtual {p0}, Lan/a;->k()V
+
+    .line 83
+    return-void
+
+    .line 76
+    :catchall_b
+    move-exception v0
+
+    :try_start_c
+    monitor-exit p0
+    :try_end_d
+    .catchall {:try_start_c .. :try_end_d} :catchall_b
+
+    throw v0
+.end method
+
+.method protected c()V
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    .prologue
+    .line 91
+    new-instance v0, Lan/C;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, ""
 
-    const-string v1, "google.navigation:resume=true"
+    invoke-direct {v0, v1}, Lan/C;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput-object v0, p0, Lan/a;->a:Lan/C;
+
+    .line 94
+    monitor-enter p0
+
+    .line 97
+    :try_start_a
+    iget-object v1, p0, Lan/a;->i:Lan/B;
+
+    iget-boolean v0, p0, Lan/a;->d:Z
+
+    if-nez v0, :cond_16
+
+    const/4 v0, 0x1
+
+    :goto_11
+    invoke-interface {v1, v0, p0}, Lan/B;->a(ZLandroid/location/LocationListener;)V
+
+    .line 98
+    monitor-exit p0
+
+    .line 99
+    return-void
+
+    .line 97
+    :cond_16
+    const/4 v0, 0x0
+
+    goto :goto_11
+
+    .line 98
+    :catchall_18
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_1a
+    .catchall {:try_start_a .. :try_end_1a} :catchall_18
+
+    throw v0
+.end method
+
+.method public d()Lan/s;
+    .registers 2
+
+    .prologue
+    .line 151
+    iget-object v0, p0, Lan/a;->j:Lan/s;
+
+    return-object v0
+.end method
+
+.method public declared-synchronized e()Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+    .registers 5
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 193
+    monitor-enter p0
+
+    :try_start_2
+    iget-object v1, p0, Lan/a;->i:Lan/B;
+
+    if-eqz v1, :cond_1f
+
+    iget-object v1, p0, Lan/a;->j:Lan/s;
+
+    if-eqz v1, :cond_1f
+
+    .line 204
+    iget-object v1, p0, Lan/a;->i:Lan/B;
+
+    iget-object v2, p0, Lan/a;->j:Lan/s;
+
+    invoke-interface {v1, v2}, Lan/B;->a(Landroid/location/Location;)[B
+    :try_end_11
+    .catchall {:try_start_2 .. :try_end_11} :catchall_28
 
     move-result-object v1
 
-    if-eqz p0, :cond_18
+    .line 205
+    if-eqz v1, :cond_1f
 
-    const-string v0, "&sync_layers=true"
+    .line 207
+    :try_start_14
+    new-instance v2, Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    :goto_f
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object v3, Lbf/aH;->j:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-direct {v2, v3}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;-><init>(Lcom/google/googlenav/common/io/protocol/ProtoBufType;)V
+
+    invoke-virtual {v2, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->parse([B)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+    :try_end_1e
+    .catchall {:try_start_14 .. :try_end_1e} :catchall_28
+    .catch Ljava/io/IOException; {:try_start_14 .. :try_end_1e} :catch_21
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    .line 214
+    :cond_1f
+    :goto_1f
+    monitor-exit p0
 
     return-object v0
 
-    :cond_18
-    const-string v0, ""
+    .line 208
+    :catch_21
+    move-exception v1
 
-    goto :goto_f
+    .line 209
+    :try_start_22
+    const-string v2, "RMI"
+
+    invoke-static {v2, v1}, LaT/c;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    :try_end_27
+    .catchall {:try_start_22 .. :try_end_27} :catchall_28
+
+    goto :goto_1f
+
+    .line 193
+    :catchall_28
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public onLocationChanged(Landroid/location/Location;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 104
+    invoke-virtual {p0, p1}, Lan/a;->a(Landroid/location/Location;)V
+
+    .line 105
+    return-void
+.end method
+
+.method public onProviderDisabled(Ljava/lang/String;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 120
+    return-void
+.end method
+
+.method public onProviderEnabled(Ljava/lang/String;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 115
+    return-void
+.end method
+
+.method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 110
+    return-void
 .end method

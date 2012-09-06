@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 173
+    .line 166
     iput-object p1, p0, Lcom/google/android/finsky/layout/LegacyActionBar$3;->this$0:Lcom/google/android/finsky/layout/LegacyActionBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "v"
 
     .prologue
-    .line 176
+    .line 169
     iget-object v1, p0, Lcom/google/android/finsky/layout/LegacyActionBar$3;->this$0:Lcom/google/android/finsky/layout/LegacyActionBar;
 
     #getter for: Lcom/google/android/finsky/layout/LegacyActionBar;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
@@ -50,15 +50,15 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getCurrentPageType()Lcom/google/android/finsky/navigationmanager/NavigationState;
+    invoke-virtual {v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getCurrentPageType()I
 
-    move-result-object v1
+    move-result v1
 
-    sget-object v2, Lcom/google/android/finsky/navigationmanager/NavigationState;->SEARCH:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    const/4 v2, 0x7
 
-    if-ne v1, v2, :cond_2b
+    if-ne v1, v2, :cond_2a
 
-    .line 177
+    .line 170
     iget-object v1, p0, Lcom/google/android/finsky/layout/LegacyActionBar$3;->this$0:Lcom/google/android/finsky/layout/LegacyActionBar;
 
     #getter for: Lcom/google/android/finsky/layout/LegacyActionBar;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
@@ -72,7 +72,7 @@
 
     check-cast v0, Lcom/google/android/finsky/activities/SearchFragment;
 
-    .line 179
+    .line 172
     .local v0, searchFragment:Lcom/google/android/finsky/activities/SearchFragment;
     iget-object v1, p0, Lcom/google/android/finsky/layout/LegacyActionBar$3;->this$0:Lcom/google/android/finsky/layout/LegacyActionBar;
 
@@ -93,13 +93,13 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Landroid/app/Activity;->startSearch(Ljava/lang/String;ZLandroid/os/Bundle;Z)V
 
-    .line 183
+    .line 176
     .end local v0           #searchFragment:Lcom/google/android/finsky/activities/SearchFragment;
-    :goto_2a
+    :goto_29
     return-void
 
-    .line 181
-    :cond_2b
+    .line 174
+    :cond_2a
     iget-object v1, p0, Lcom/google/android/finsky/layout/LegacyActionBar$3;->this$0:Lcom/google/android/finsky/layout/LegacyActionBar;
 
     #getter for: Lcom/google/android/finsky/layout/LegacyActionBar;->mActivity:Landroid/app/Activity;
@@ -109,5 +109,5 @@
 
     invoke-virtual {v1}, Landroid/app/Activity;->onSearchRequested()Z
 
-    goto :goto_2a
+    goto :goto_29
 .end method

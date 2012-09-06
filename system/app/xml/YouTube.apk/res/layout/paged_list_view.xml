@@ -6,5 +6,5 @@
     </LinearLayout>
     <ProgressBar android:layout_gravity="center" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
     <include layout="@layout/error_message_view" />
-    <ListView android:layout_width="fill_parent" android:layout_height="fill_parent" android:divider="@drawable/divider_horizontal" />
+    <ListView android:layout_width="fill_parent" android:layout_height="fill_parent" />
 </FrameLayout>

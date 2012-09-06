@@ -26,18 +26,22 @@
     sput-object v0, Lcom/google/android/finsky/utils/DateUtils;->ISO8601_DATE_FORMAT:Ljava/text/DateFormat;
 
     .line 22
-    const/4 v0, 0x1
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    invoke-static {v0}, Ljava/text/DateFormat;->getDateInstance(I)Ljava/text/DateFormat;
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/text/format/DateFormat;->getLongDateFormat(Landroid/content/Context;)Ljava/text/DateFormat;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/android/finsky/utils/DateUtils;->DISPLAY_DATE_FORMAT:Ljava/text/DateFormat;
 
     .line 26
-    const/4 v0, 0x3
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    invoke-static {v0}, Ljava/text/DateFormat;->getDateInstance(I)Ljava/text/DateFormat;
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/text/format/DateFormat;->getDateFormat(Landroid/content/Context;)Ljava/text/DateFormat;
 
     move-result-object v0
 

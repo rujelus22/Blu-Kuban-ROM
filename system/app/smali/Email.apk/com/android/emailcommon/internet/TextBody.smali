@@ -16,13 +16,13 @@
     .parameter "body"
 
     .prologue
-    .line 34
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 33
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
+    .line 34
     iput-object p1, p0, Lcom/android/emailcommon/internet/TextBody;->mBody:Ljava/lang/String;
 
-    .line 36
+    .line 35
     return-void
 .end method
 
@@ -37,7 +37,7 @@
     .end annotation
 
     .prologue
-    .line 63
+    .line 55
     :try_start_0
     iget-object v2, p0, Lcom/android/emailcommon/internet/TextBody;->mBody:Ljava/lang/String;
 
@@ -47,7 +47,7 @@
 
     move-result-object v0
 
-    .line 64
+    .line 56
     .local v0, b:[B
     new-instance v2, Ljava/io/ByteArrayInputStream;
 
@@ -55,37 +55,20 @@
     :try_end_d
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_d} :catch_e
 
-    .line 66
+    .line 59
     .end local v0           #b:[B
     :goto_d
     return-object v2
 
-    .line 65
+    .line 58
     :catch_e
     move-exception v1
 
-    .line 66
+    .line 59
     .local v1, usee:Ljava/io/UnsupportedEncodingException;
     const/4 v2, 0x0
 
     goto :goto_d
-.end method
-
-.method public writeTo(Landroid/content/Context;JLjava/io/OutputStream;)V
-    .registers 5
-    .parameter "context"
-    .parameter "messageId"
-    .parameter "out"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 47
-    return-void
 .end method
 
 .method public writeTo(Ljava/io/OutputStream;)V
@@ -99,7 +82,7 @@
     .end annotation
 
     .prologue
-    .line 39
+    .line 38
     iget-object v1, p0, Lcom/android/emailcommon/internet/TextBody;->mBody:Ljava/lang/String;
 
     const-string v2, "UTF-8"
@@ -108,7 +91,7 @@
 
     move-result-object v0
 
-    .line 40
+    .line 39
     .local v0, bytes:[B
     const/4 v1, 0x4
 
@@ -118,6 +101,6 @@
 
     invoke-virtual {p1, v1}, Ljava/io/OutputStream;->write([B)V
 
-    .line 41
+    .line 40
     return-void
 .end method

@@ -29,15 +29,15 @@
     .end annotation
 
     .prologue
-    .line 205
+    .line 233
     invoke-super {p0}, Lorg/apache/commons/io/output/ThresholdingOutputStream;->close()V
 
-    .line 206
+    .line 234
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/apache/commons/io/output/DeferredFileOutputStream;->closed:Z
 
-    .line 207
+    .line 235
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .end annotation
 
     .prologue
-    .line 132
+    .line 148
     iget-object v0, p0, Lorg/apache/commons/io/output/DeferredFileOutputStream;->currentOutputStream:Ljava/io/OutputStream;
 
     return-object v0
@@ -65,12 +65,12 @@
     .end annotation
 
     .prologue
-    .line 144
+    .line 162
     iget-object v1, p0, Lorg/apache/commons/io/output/DeferredFileOutputStream;->prefix:Ljava/lang/String;
 
     if-eqz v1, :cond_10
 
-    .line 145
+    .line 163
     iget-object v1, p0, Lorg/apache/commons/io/output/DeferredFileOutputStream;->prefix:Ljava/lang/String;
 
     iget-object v2, p0, Lorg/apache/commons/io/output/DeferredFileOutputStream;->suffix:Ljava/lang/String;
@@ -83,7 +83,7 @@
 
     iput-object v1, p0, Lorg/apache/commons/io/output/DeferredFileOutputStream;->outputFile:Ljava/io/File;
 
-    .line 147
+    .line 165
     :cond_10
     new-instance v0, Ljava/io/FileOutputStream;
 
@@ -91,20 +91,20 @@
 
     invoke-direct {v0, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 148
+    .line 166
     .local v0, fos:Ljava/io/FileOutputStream;
     iget-object v1, p0, Lorg/apache/commons/io/output/DeferredFileOutputStream;->memoryOutputStream:Lorg/apache/commons/io/output/ByteArrayOutputStream;
 
     invoke-virtual {v1, v0}, Lorg/apache/commons/io/output/ByteArrayOutputStream;->writeTo(Ljava/io/OutputStream;)V
 
-    .line 149
+    .line 167
     iput-object v0, p0, Lorg/apache/commons/io/output/DeferredFileOutputStream;->currentOutputStream:Ljava/io/OutputStream;
 
-    .line 150
+    .line 168
     const/4 v1, 0x0
 
     iput-object v1, p0, Lorg/apache/commons/io/output/DeferredFileOutputStream;->memoryOutputStream:Lorg/apache/commons/io/output/ByteArrayOutputStream;
 
-    .line 151
+    .line 169
     return-void
 .end method

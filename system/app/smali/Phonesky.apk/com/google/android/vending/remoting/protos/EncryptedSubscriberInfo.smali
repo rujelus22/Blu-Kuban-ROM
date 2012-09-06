@@ -38,41 +38,41 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 7
+    .line 8
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 12
+    .line 13
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->data_:Ljava/lang/String;
 
-    .line 29
+    .line 30
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->encryptedKey_:Ljava/lang/String;
 
-    .line 46
+    .line 47
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->signature_:Ljava/lang/String;
 
-    .line 63
+    .line 64
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->initVector_:Ljava/lang/String;
 
-    .line 80
+    .line 81
     iput v1, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->googleKeyVersion_:I
 
-    .line 97
+    .line 98
     iput v1, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->carrierKeyVersion_:I
 
-    .line 148
+    .line 150
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->cachedSize:I
 
-    .line 7
+    .line 8
     return-void
 .end method
 
@@ -82,15 +82,15 @@
     .registers 2
 
     .prologue
-    .line 150
+    .line 153
     iget v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 152
+    .line 155
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->getSerializedSize()I
 
-    .line 154
+    .line 157
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->cachedSize:I
 
@@ -101,7 +101,7 @@
     .registers 2
 
     .prologue
-    .line 98
+    .line 99
     iget v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->carrierKeyVersion_:I
 
     return v0
@@ -111,7 +111,7 @@
     .registers 2
 
     .prologue
-    .line 13
+    .line 14
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->data_:Ljava/lang/String;
 
     return-object v0
@@ -121,7 +121,7 @@
     .registers 2
 
     .prologue
-    .line 30
+    .line 31
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->encryptedKey_:Ljava/lang/String;
 
     return-object v0
@@ -131,7 +131,7 @@
     .registers 2
 
     .prologue
-    .line 81
+    .line 82
     iget v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->googleKeyVersion_:I
 
     return v0
@@ -141,7 +141,7 @@
     .registers 2
 
     .prologue
-    .line 64
+    .line 65
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->initVector_:Ljava/lang/String;
 
     return-object v0
@@ -151,10 +151,10 @@
     .registers 4
 
     .prologue
-    .line 158
+    .line 162
     const/4 v0, 0x0
 
-    .line 159
+    .line 163
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasData()Z
 
@@ -162,7 +162,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 160
+    .line 164
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->getData()Ljava/lang/String;
@@ -175,7 +175,7 @@
 
     add-int/2addr v0, v1
 
-    .line 163
+    .line 167
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasEncryptedKey()Z
 
@@ -183,7 +183,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 164
+    .line 168
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->getEncryptedKey()Ljava/lang/String;
@@ -196,7 +196,7 @@
 
     add-int/2addr v0, v1
 
-    .line 167
+    .line 171
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasSignature()Z
 
@@ -204,7 +204,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 168
+    .line 172
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->getSignature()Ljava/lang/String;
@@ -217,7 +217,7 @@
 
     add-int/2addr v0, v1
 
-    .line 171
+    .line 175
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasInitVector()Z
 
@@ -225,7 +225,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 172
+    .line 176
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->getInitVector()Ljava/lang/String;
@@ -238,7 +238,7 @@
 
     add-int/2addr v0, v1
 
-    .line 175
+    .line 179
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasGoogleKeyVersion()Z
 
@@ -246,7 +246,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 176
+    .line 180
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->getGoogleKeyVersion()I
@@ -259,7 +259,7 @@
 
     add-int/2addr v0, v1
 
-    .line 179
+    .line 183
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasCarrierKeyVersion()Z
 
@@ -267,7 +267,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 180
+    .line 184
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->getCarrierKeyVersion()I
@@ -280,11 +280,11 @@
 
     add-int/2addr v0, v1
 
-    .line 183
+    .line 187
     :cond_61
     iput v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->cachedSize:I
 
-    .line 184
+    .line 188
     return v0
 .end method
 
@@ -292,7 +292,7 @@
     .registers 2
 
     .prologue
-    .line 47
+    .line 48
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->signature_:Ljava/lang/String;
 
     return-object v0
@@ -302,7 +302,7 @@
     .registers 2
 
     .prologue
-    .line 99
+    .line 100
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasCarrierKeyVersion:Z
 
     return v0
@@ -312,7 +312,7 @@
     .registers 2
 
     .prologue
-    .line 14
+    .line 15
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasData:Z
 
     return v0
@@ -322,7 +322,7 @@
     .registers 2
 
     .prologue
-    .line 31
+    .line 32
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasEncryptedKey:Z
 
     return v0
@@ -332,7 +332,7 @@
     .registers 2
 
     .prologue
-    .line 82
+    .line 83
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasGoogleKeyVersion:Z
 
     return v0
@@ -342,7 +342,7 @@
     .registers 2
 
     .prologue
-    .line 65
+    .line 66
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasInitVector:Z
 
     return v0
@@ -352,7 +352,7 @@
     .registers 2
 
     .prologue
-    .line 48
+    .line 49
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasSignature:Z
 
     return v0
@@ -368,29 +368,29 @@
     .end annotation
 
     .prologue
-    .line 191
+    .line 196
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 192
+    .line 197
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_3e
 
-    .line 196
+    .line 201
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 197
+    .line 202
     :sswitch_d
     return-object p0
 
-    .line 202
+    .line 207
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -400,7 +400,7 @@
 
     goto :goto_0
 
-    .line 206
+    .line 211
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -410,7 +410,7 @@
 
     goto :goto_0
 
-    .line 210
+    .line 215
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -420,7 +420,7 @@
 
     goto :goto_0
 
-    .line 214
+    .line 219
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -430,7 +430,7 @@
 
     goto :goto_0
 
-    .line 218
+    .line 223
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -440,7 +440,7 @@
 
     goto :goto_0
 
-    .line 222
+    .line 227
     :sswitch_36
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -450,7 +450,7 @@
 
     goto :goto_0
 
-    .line 192
+    .line 197
     :sswitch_data_3e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -486,15 +486,15 @@
     .parameter "value"
 
     .prologue
-    .line 101
+    .line 102
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasCarrierKeyVersion:Z
 
-    .line 102
+    .line 103
     iput p1, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->carrierKeyVersion_:I
 
-    .line 103
+    .line 104
     return-object p0
 .end method
 
@@ -503,15 +503,15 @@
     .parameter "value"
 
     .prologue
-    .line 16
+    .line 17
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasData:Z
 
-    .line 17
+    .line 18
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->data_:Ljava/lang/String;
 
-    .line 18
+    .line 19
     return-object p0
 .end method
 
@@ -520,15 +520,15 @@
     .parameter "value"
 
     .prologue
-    .line 33
+    .line 34
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasEncryptedKey:Z
 
-    .line 34
+    .line 35
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->encryptedKey_:Ljava/lang/String;
 
-    .line 35
+    .line 36
     return-object p0
 .end method
 
@@ -537,15 +537,15 @@
     .parameter "value"
 
     .prologue
-    .line 84
+    .line 85
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasGoogleKeyVersion:Z
 
-    .line 85
+    .line 86
     iput p1, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->googleKeyVersion_:I
 
-    .line 86
+    .line 87
     return-object p0
 .end method
 
@@ -554,15 +554,15 @@
     .parameter "value"
 
     .prologue
-    .line 67
+    .line 68
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasInitVector:Z
 
-    .line 68
+    .line 69
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->initVector_:Ljava/lang/String;
 
-    .line 69
+    .line 70
     return-object p0
 .end method
 
@@ -571,15 +571,15 @@
     .parameter "value"
 
     .prologue
-    .line 50
+    .line 51
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasSignature:Z
 
-    .line 51
+    .line 52
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->signature_:Ljava/lang/String;
 
-    .line 52
+    .line 53
     return-object p0
 .end method
 
@@ -593,14 +593,14 @@
     .end annotation
 
     .prologue
-    .line 128
+    .line 130
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasData()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 129
+    .line 131
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->getData()Ljava/lang/String;
@@ -609,7 +609,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 131
+    .line 133
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasEncryptedKey()Z
 
@@ -617,7 +617,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 132
+    .line 134
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->getEncryptedKey()Ljava/lang/String;
@@ -626,7 +626,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 134
+    .line 136
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasSignature()Z
 
@@ -634,7 +634,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 135
+    .line 137
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->getSignature()Ljava/lang/String;
@@ -643,7 +643,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 137
+    .line 139
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasInitVector()Z
 
@@ -651,7 +651,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 138
+    .line 140
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->getInitVector()Ljava/lang/String;
@@ -660,7 +660,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 140
+    .line 142
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasGoogleKeyVersion()Z
 
@@ -668,7 +668,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 141
+    .line 143
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->getGoogleKeyVersion()I
@@ -677,7 +677,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 143
+    .line 145
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->hasCarrierKeyVersion()Z
 
@@ -685,7 +685,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 144
+    .line 146
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/EncryptedSubscriberInfo;->getCarrierKeyVersion()I
@@ -694,7 +694,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 146
+    .line 148
     :cond_54
     return-void
 .end method

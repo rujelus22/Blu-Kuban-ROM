@@ -242,18 +242,18 @@
     <string name="account_intro_recommended_title">利用 Google 的服务</string>
     <string name="common_message">"Google 帐户可以让您
 
-"<li><ul>从任意位置查看和整理所有信息。</ul></li>"
+"<ul><li>从任意位置查看和整理所有信息。</li></ul>"
 
-"<li><ul>自动备份您的数据。</ul></li>"
+"<ul><li>自动备份您的数据。</li></ul>"
 
-"<li><ul>从任意位置轻松使用 Google 的服务。</ul></li></string>
+"<ul><li>从任意位置轻松使用 Google 的服务。</li></ul></string>
     <string name="add_account_message">" 您可以使用多个 Google 帐户（例如家庭帐户和工作帐户）。触摸"<b>登录</b>，或者触摸<b>创建帐户</b>以添加 Google 帐户</string>
     <string name="account_intro_default_message">您再也不会丢失资料了：Google 帐户会确保其安全。</string>
     <string name="account_intro_custom_endtext">已拥有 %s 帐户？立即登录。</string>
     <string name="account_intro_simple_message">您要添加一个现有帐户，还是创建一个新帐户？</string>
     <string name="learn_more_title"><annotation id="learn_more">了解详情</annotation></string>
     <string name="learn_more_account_intro">"Google 帐户可以让您
-"<li><ul>从任何位置查看和整理所有信息。<li>自动备份数据，如电子邮件、联系人、音乐和图片。</li><li>从任意位置轻松使用 Google 的服务，包括通讯录、日历、地图等。</li></ul></li></string>
+"<ul><li>从任何位置查看和整理所有信息。<li>自动备份数据，如电子邮件、联系人、音乐和图片。</li><li>从任意位置轻松使用 Google 的服务，包括通讯录、日历、地图等。</li></li></ul></string>
     <string name="learn_more_account_intro_title">关于 Google 帐户</string>
     <string name="learn_more_web_history">"网络历史记录会根据您搜索过的内容和访问过的网站调整搜索结果，从而提供个性化的 Google 体验。
 

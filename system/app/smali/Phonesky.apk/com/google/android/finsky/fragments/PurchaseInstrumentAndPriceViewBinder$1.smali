@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 336
+    .line 349
     iput-object p1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$1;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
     .end annotation
 
     .prologue
-    .line 341
+    .line 354
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$1;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
 
@@ -69,7 +69,7 @@
 
     check-cast v0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;
 
-    .line 343
+    .line 356
     .local v0, selectorItem:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;
     iget-object v1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$1;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
 
@@ -80,7 +80,7 @@
 
     invoke-interface {v0, v1}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;->onSelected(Z)V
 
-    .line 344
+    .line 357
     iget-object v1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$1;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
 
     const/4 v2, 0x1
@@ -88,7 +88,7 @@
     #setter for: Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mIsUserInitiatedSelection:Z
     invoke-static {v1, v2}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->access$1002(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Z)Z
 
-    .line 345
+    .line 358
     return-void
 .end method
 
@@ -104,7 +104,7 @@
     .end annotation
 
     .prologue
-    .line 349
+    .line 362
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$1;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
 
@@ -115,6 +115,6 @@
 
     invoke-interface {v0}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$OnInstrumentSelectedListener;->onNothingSelected()V
 
-    .line 350
+    .line 363
     return-void
 .end method

@@ -1,88 +1,59 @@
 .class final Lcom/google/api/client/http/e;
-.super Lcom/google/api/client/http/a;
+.super Ljava/io/OutputStream;
 .source "SourceFile"
 
 
 # instance fields
-.field private final a:Lcom/google/api/client/http/g;
-
-.field private final b:Ljava/lang/String;
+.field a:J
 
 
 # direct methods
-.method constructor <init>(Lcom/google/api/client/http/g;Ljava/lang/String;)V
-    .registers 3
-    .parameter
-    .parameter
+.method constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 39
-    invoke-direct {p0}, Lcom/google/api/client/http/a;-><init>()V
+    .line 26
+    invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
 
-    .line 40
-    iput-object p1, p0, Lcom/google/api/client/http/e;->a:Lcom/google/api/client/http/g;
-
-    .line 41
-    iput-object p2, p0, Lcom/google/api/client/http/e;->b:Ljava/lang/String;
-
-    .line 42
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .registers 2
-
-    .prologue
-    .line 52
-    const-string v0, "gzip"
-
-    return-object v0
-.end method
-
-.method public final a(Ljava/io/OutputStream;)V
-    .registers 4
+.method public final write(I)V
+    .registers 6
     .parameter
 
     .prologue
-    .line 45
-    new-instance v0, Ljava/util/zip/GZIPOutputStream;
+    .line 38
+    iget-wide v0, p0, Lcom/google/api/client/http/e;->a:J
 
-    invoke-direct {v0, p1}, Ljava/util/zip/GZIPOutputStream;-><init>(Ljava/io/OutputStream;)V
+    const-wide/16 v2, 0x1
 
-    .line 46
-    iget-object v1, p0, Lcom/google/api/client/http/e;->a:Lcom/google/api/client/http/g;
+    add-long/2addr v0, v2
 
-    invoke-interface {v1, v0}, Lcom/google/api/client/http/g;->a(Ljava/io/OutputStream;)V
+    iput-wide v0, p0, Lcom/google/api/client/http/e;->a:J
 
-    .line 47
-    invoke-virtual {v0}, Ljava/util/zip/GZIPOutputStream;->finish()V
-
-    .line 48
+    .line 39
     return-void
 .end method
 
-.method public final c()Z
-    .registers 2
+.method public final write([BII)V
+    .registers 8
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
-    .line 61
-    iget-object v0, p0, Lcom/google/api/client/http/e;->a:Lcom/google/api/client/http/g;
+    .line 33
+    iget-wide v0, p0, Lcom/google/api/client/http/e;->a:J
 
-    invoke-interface {v0}, Lcom/google/api/client/http/g;->c()Z
+    int-to-long v2, p3
 
-    move-result v0
+    add-long/2addr v0, v2
 
-    return v0
-.end method
+    iput-wide v0, p0, Lcom/google/api/client/http/e;->a:J
 
-.method public final e()Ljava/lang/String;
-    .registers 2
-
-    .prologue
-    .line 56
-    iget-object v0, p0, Lcom/google/api/client/http/e;->b:Ljava/lang/String;
-
-    return-object v0
+    .line 34
+    return-void
 .end method

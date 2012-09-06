@@ -1,96 +1,78 @@
-.class public Lcom/google/googlenav/ui/wizard/hH;
-.super Landroid/app/ProgressDialog;
+.class Lcom/google/googlenav/ui/wizard/hh;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnKeyListener;
+.implements Lcom/google/googlenav/ui/wizard/hf;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/hG;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/hg;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/ui/wizard/hG;Landroid/content/Context;)V
-    .registers 6
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/hg;)V
+    .registers 2
+    .parameter
 
-    const/4 v2, 0x1
+    .prologue
+    .line 103
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/hh;->a:Lcom/google/googlenav/ui/wizard/hg;
 
-    const/4 v1, 0x0
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/hH;->a:Lcom/google/googlenav/ui/wizard/hG;
-
-    invoke-direct {p0, p2}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
-
-    invoke-static {p1}, Lcom/google/googlenav/ui/wizard/hG;->a(Lcom/google/googlenav/ui/wizard/hG;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_22
-
-    invoke-virtual {p0, v2}, Lcom/google/googlenav/ui/wizard/hH;->setProgressStyle(I)V
-
-    invoke-virtual {p0, v1}, Lcom/google/googlenav/ui/wizard/hH;->setIndeterminate(Z)V
-
-    :goto_13
-    invoke-static {p1}, Lcom/google/googlenav/ui/wizard/hG;->b(Lcom/google/googlenav/ui/wizard/hG;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/bw;->a(Ljava/util/List;)Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/google/googlenav/ui/wizard/hH;->setMessage(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {p0, p0}, Lcom/google/googlenav/ui/wizard/hH;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-
-    :cond_22
-    invoke-virtual {p0, v1}, Lcom/google/googlenav/ui/wizard/hH;->setProgressStyle(I)V
-
-    invoke-virtual {p0, v2}, Lcom/google/googlenav/ui/wizard/hH;->setIndeterminate(Z)V
-
-    goto :goto_13
 .end method
 
 
 # virtual methods
-.method public a(II)V
-    .registers 3
+.method public a(Ljava/lang/String;Lcom/google/googlenav/cy;)V
+    .registers 4
+    .parameter
+    .parameter
 
-    invoke-virtual {p0, p1}, Lcom/google/googlenav/ui/wizard/hH;->setProgress(I)V
+    .prologue
+    .line 106
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hh;->a:Lcom/google/googlenav/ui/wizard/hg;
 
-    invoke-virtual {p0, p2}, Lcom/google/googlenav/ui/wizard/hH;->setMax(I)V
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/hg;->a(Lcom/google/googlenav/ui/wizard/hg;)Lcom/google/googlenav/ai;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public onKey(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z
-    .registers 5
+    if-eqz v0, :cond_27
 
-    const/4 v0, 0x4
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hh;->a:Lcom/google/googlenav/ui/wizard/hg;
 
-    if-ne p2, v0, :cond_10
+    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/hg;->h:Lcom/google/googlenav/ui/view/android/bb;
 
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
+    if-eqz v0, :cond_27
+
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hh;->a:Lcom/google/googlenav/ui/wizard/hg;
+
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/hg;->a(Lcom/google/googlenav/ui/wizard/hg;)Lcom/google/googlenav/ai;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ai;->W()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-eqz v0, :cond_27
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hH;->a:Lcom/google/googlenav/ui/wizard/hG;
+    .line 107
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hh;->a:Lcom/google/googlenav/ui/wizard/hg;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hG;->o()V
+    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/hg;->h:Lcom/google/googlenav/ui/view/android/bb;
 
-    :cond_e
-    const/4 v0, 0x1
+    check-cast v0, LaF/c;
 
-    :goto_f
-    return v0
+    invoke-virtual {v0, p2}, LaF/c;->a(Lcom/google/googlenav/cy;)V
 
-    :cond_10
-    const/4 v0, 0x0
-
-    goto :goto_f
+    .line 109
+    :cond_27
+    return-void
 .end method

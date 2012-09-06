@@ -140,7 +140,7 @@
     .local v0, attr:Landroid/content/res/TypedArray;
     const/4 v1, 0x0
 
-    const v2, 0x7f0201bb
+    const v2, 0x7f0201ba
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -151,7 +151,7 @@
     .line 84
     const/4 v1, 0x1
 
-    const v2, 0x7f0201bc
+    const v2, 0x7f0201bb
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 

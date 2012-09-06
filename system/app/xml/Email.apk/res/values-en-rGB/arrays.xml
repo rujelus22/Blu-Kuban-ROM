@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="general_preference_text_zoom_summary_array">
+        <item>Tiny text</item>
+        <item>Small text</item>
+        <item>Normal-sized text</item>
+        <item>Large text</item>
+        <item>Huge text</item>
+    </string-array>
+</resources>

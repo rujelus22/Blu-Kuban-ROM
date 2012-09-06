@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 552
+    .line 725
     iput-object p1, p0, Lcom/google/android/finsky/activities/PurchaseFragment$3;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,23 +41,23 @@
     .registers 3
 
     .prologue
-    .line 555
+    .line 728
     iget-object v0, p0, Lcom/google/android/finsky/activities/PurchaseFragment$3;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
     #getter for: Lcom/google/android/finsky/activities/PurchaseFragment;->mDoc:Lcom/google/android/finsky/api/model/Document;
-    invoke-static {v0}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$1100(Lcom/google/android/finsky/activities/PurchaseFragment;)Lcom/google/android/finsky/api/model/Document;
+    invoke-static {v0}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$1400(Lcom/google/android/finsky/activities/PurchaseFragment;)Lcom/google/android/finsky/api/model/Document;
 
     move-result-object v0
 
     if-nez v0, :cond_18
 
-    .line 556
+    .line 729
     iget-object v0, p0, Lcom/google/android/finsky/activities/PurchaseFragment$3;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/PurchaseFragment$3;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
     #getter for: Lcom/google/android/finsky/activities/PurchaseFragment;->mDfeDetails:Lcom/google/android/finsky/api/model/DfeDetails;
-    invoke-static {v1}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$1200(Lcom/google/android/finsky/activities/PurchaseFragment;)Lcom/google/android/finsky/api/model/DfeDetails;
+    invoke-static {v1}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$1500(Lcom/google/android/finsky/activities/PurchaseFragment;)Lcom/google/android/finsky/api/model/DfeDetails;
 
     move-result-object v1
 
@@ -65,13 +65,14 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/activities/PurchaseFragment;->onDocumentLoaded(Lcom/google/android/finsky/api/model/Document;)V
+    #calls: Lcom/google/android/finsky/activities/PurchaseFragment;->onDocumentLoaded(Lcom/google/android/finsky/api/model/Document;)V
+    invoke-static {v0, v1}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$1600(Lcom/google/android/finsky/activities/PurchaseFragment;Lcom/google/android/finsky/api/model/Document;)V
 
-    .line 560
+    .line 733
     :goto_17
     return-void
 
-    .line 558
+    .line 731
     :cond_18
     const-string v0, "Ignoring soft TTL refresh."
 

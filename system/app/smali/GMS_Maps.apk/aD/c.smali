@@ -1,13 +1,11 @@
 .class public interface abstract LaD/c;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # virtual methods
-.method public abstract a()V
+.method public abstract c()V
 .end method
 
-.method public abstract a(LaD/n;)V
-.end method
-
-.method public abstract b(LaD/n;)V
+.method public abstract d()Z
 .end method

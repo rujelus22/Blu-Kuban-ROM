@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_star" android:id="@id/star" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_photo" android:id="@id/addPhoto" android:showAsAction="always" />
+    <item android:id="@id/streetview" android:showAsAction="never" />
+    <item android:id="@id/share" android:showAsAction="never" />
+    <item android:id="@id/checkin" android:showAsAction="never" />
+    <item android:id="@id/addContact" android:showAsAction="never" />
+    <item android:id="@id/offline" android:showAsAction="never" />
+    <item android:id="@id/report" android:showAsAction="never" />
+</menu>

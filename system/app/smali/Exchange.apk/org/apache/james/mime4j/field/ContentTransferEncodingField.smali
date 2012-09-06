@@ -24,12 +24,12 @@
     .parameter "encoding"
 
     .prologue
-    .line 53
+    .line 55
     invoke-direct {p0, p1, p2, p3}, Lorg/apache/james/mime4j/field/Field;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 54
+    .line 56
     iput-object p4, p0, Lorg/apache/james/mime4j/field/ContentTransferEncodingField;->encoding:Ljava/lang/String;
 
-    .line 55
+    .line 57
     return-void
 .end method

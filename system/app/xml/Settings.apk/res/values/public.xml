@@ -35,6 +35,8 @@
     <public type="drawable" name="double_tap_anim" id="0x7f020034" />
     <public type="drawable" name="empty_icon" id="0x7f020036" />
     <public type="drawable" name="ic_list_sync_anim" id="0x7f020061" />
+    <public type="drawable" name="APKTOOL_DUMMY_0081" id="0x7f020081" />
+    <public type="drawable" name="APKTOOL_DUMMY_0082" id="0x7f020082" />
     <public type="drawable" name="ic_tab_all" id="0x7f020098" />
     <public type="drawable" name="ic_tab_download" id="0x7f020099" />
     <public type="drawable" name="ic_tab_running" id="0x7f02009a" />
@@ -50,15 +52,54 @@
     <public type="drawable" name="ic_wifi_direct_printer" id="0x7f0200ac" />
     <public type="drawable" name="ic_wifi_direct_storage" id="0x7f0200ad" />
     <public type="drawable" name="ic_wifi_direct_telephone" id="0x7f0200ae" />
+    <public type="drawable" name="APKTOOL_DUMMY_00b7" id="0x7f0200b7" />
+    <public type="drawable" name="APKTOOL_DUMMY_00bb" id="0x7f0200bb" />
+    <public type="drawable" name="APKTOOL_DUMMY_00bc" id="0x7f0200bc" />
+    <public type="drawable" name="APKTOOL_DUMMY_00bd" id="0x7f0200bd" />
+    <public type="drawable" name="APKTOOL_DUMMY_00bf" id="0x7f0200bf" />
+    <public type="drawable" name="APKTOOL_DUMMY_00c0" id="0x7f0200c0" />
+    <public type="drawable" name="APKTOOL_DUMMY_00c3" id="0x7f0200c3" />
+    <public type="drawable" name="APKTOOL_DUMMY_00c6" id="0x7f0200c6" />
+    <public type="drawable" name="APKTOOL_DUMMY_00c7" id="0x7f0200c7" />
+    <public type="drawable" name="APKTOOL_DUMMY_00c8" id="0x7f0200c8" />
+    <public type="drawable" name="APKTOOL_DUMMY_00c9" id="0x7f0200c9" />
+    <public type="drawable" name="APKTOOL_DUMMY_00ca" id="0x7f0200ca" />
+    <public type="drawable" name="APKTOOL_DUMMY_00d1" id="0x7f0200d1" />
+    <public type="drawable" name="APKTOOL_DUMMY_00d2" id="0x7f0200d2" />
+    <public type="drawable" name="APKTOOL_DUMMY_00d6" id="0x7f0200d6" />
+    <public type="drawable" name="APKTOOL_DUMMY_00da" id="0x7f0200da" />
+    <public type="drawable" name="APKTOOL_DUMMY_00db" id="0x7f0200db" />
+    <public type="drawable" name="APKTOOL_DUMMY_00dc" id="0x7f0200dc" />
     <public type="drawable" name="lock_anim" id="0x7f0200e0" />
     <public type="drawable" name="noitems_device_based" id="0x7f02010b" />
+    <public type="drawable" name="APKTOOL_DUMMY_010c" id="0x7f02010c" />
+    <public type="drawable" name="APKTOOL_DUMMY_010d" id="0x7f02010d" />
+    <public type="drawable" name="APKTOOL_DUMMY_0113" id="0x7f020113" />
+    <public type="drawable" name="APKTOOL_DUMMY_0114" id="0x7f020114" />
+    <public type="drawable" name="APKTOOL_DUMMY_0115" id="0x7f020115" />
+    <public type="drawable" name="APKTOOL_DUMMY_011a" id="0x7f02011a" />
+    <public type="drawable" name="APKTOOL_DUMMY_011b" id="0x7f02011b" />
+    <public type="drawable" name="APKTOOL_DUMMY_011c" id="0x7f02011c" />
+    <public type="drawable" name="APKTOOL_DUMMY_011d" id="0x7f02011d" />
+    <public type="drawable" name="APKTOOL_DUMMY_011e" id="0x7f02011e" />
     <public type="drawable" name="setting_icon" id="0x7f020122" />
     <public type="drawable" name="setting_icon_01" id="0x7f020123" />
     <public type="drawable" name="setting_icon_01_1" id="0x7f020124" />
     <public type="drawable" name="setting_icon_01_2" id="0x7f020125" />
     <public type="drawable" name="setting_icon_01_3" id="0x7f020126" />
     <public type="drawable" name="signal" id="0x7f02013b" />
+    <public type="drawable" name="APKTOOL_DUMMY_0142" id="0x7f020142" />
+    <public type="drawable" name="APKTOOL_DUMMY_0143" id="0x7f020143" />
+    <public type="drawable" name="APKTOOL_DUMMY_0144" id="0x7f020144" />
+    <public type="drawable" name="APKTOOL_DUMMY_0145" id="0x7f020145" />
+    <public type="drawable" name="APKTOOL_DUMMY_0146" id="0x7f020146" />
+    <public type="drawable" name="APKTOOL_DUMMY_0147" id="0x7f020147" />
+    <public type="drawable" name="APKTOOL_DUMMY_0148" id="0x7f020148" />
+    <public type="drawable" name="APKTOOL_DUMMY_0149" id="0x7f020149" />
     <public type="drawable" name="tablet_motion_play_button" id="0x7f02014a" />
+    <public type="drawable" name="APKTOOL_DUMMY_014b" id="0x7f02014b" />
+    <public type="drawable" name="APKTOOL_DUMMY_014c" id="0x7f02014c" />
+    <public type="drawable" name="APKTOOL_DUMMY_014d" id="0x7f02014d" />
     <public type="drawable" name="wifi_signal" id="0x7f020150" />
     <public type="drawable" name="wifi_signal_lock" id="0x7f020151" />
     <public type="drawable" name="wifi_signal_open" id="0x7f020152" />
@@ -320,47 +361,8 @@
     <public type="drawable" name="usb_bluetooth_fail" id="0x7f02014f" />
     <public type="drawable" name="zzz_null" id="0x7f020155" />
     <public type="drawable" name="zzz_unlock_clock_colon" id="0x7f020156" />
-    <public type="drawable" name="APKTOOL_DUMMY_0081" id="0x7f020081" />
-    <public type="drawable" name="APKTOOL_DUMMY_0082" id="0x7f020082" />
-    <public type="drawable" name="APKTOOL_DUMMY_00b7" id="0x7f0200b7" />
-    <public type="drawable" name="APKTOOL_DUMMY_00bb" id="0x7f0200bb" />
-    <public type="drawable" name="APKTOOL_DUMMY_00bc" id="0x7f0200bc" />
-    <public type="drawable" name="APKTOOL_DUMMY_00bd" id="0x7f0200bd" />
-    <public type="drawable" name="APKTOOL_DUMMY_00bf" id="0x7f0200bf" />
-    <public type="drawable" name="APKTOOL_DUMMY_00c0" id="0x7f0200c0" />
-    <public type="drawable" name="APKTOOL_DUMMY_00c3" id="0x7f0200c3" />
-    <public type="drawable" name="APKTOOL_DUMMY_00c6" id="0x7f0200c6" />
-    <public type="drawable" name="APKTOOL_DUMMY_00c7" id="0x7f0200c7" />
-    <public type="drawable" name="APKTOOL_DUMMY_00c8" id="0x7f0200c8" />
-    <public type="drawable" name="APKTOOL_DUMMY_00c9" id="0x7f0200c9" />
-    <public type="drawable" name="APKTOOL_DUMMY_00ca" id="0x7f0200ca" />
-    <public type="drawable" name="APKTOOL_DUMMY_00d1" id="0x7f0200d1" />
-    <public type="drawable" name="APKTOOL_DUMMY_00d2" id="0x7f0200d2" />
-    <public type="drawable" name="APKTOOL_DUMMY_00d6" id="0x7f0200d6" />
-    <public type="drawable" name="APKTOOL_DUMMY_00da" id="0x7f0200da" />
-    <public type="drawable" name="APKTOOL_DUMMY_00db" id="0x7f0200db" />
-    <public type="drawable" name="APKTOOL_DUMMY_00dc" id="0x7f0200dc" />
-    <public type="drawable" name="APKTOOL_DUMMY_010c" id="0x7f02010c" />
-    <public type="drawable" name="APKTOOL_DUMMY_010d" id="0x7f02010d" />
-    <public type="drawable" name="APKTOOL_DUMMY_0113" id="0x7f020113" />
-    <public type="drawable" name="APKTOOL_DUMMY_0114" id="0x7f020114" />
-    <public type="drawable" name="APKTOOL_DUMMY_0115" id="0x7f020115" />
-    <public type="drawable" name="APKTOOL_DUMMY_011a" id="0x7f02011a" />
-    <public type="drawable" name="APKTOOL_DUMMY_011b" id="0x7f02011b" />
-    <public type="drawable" name="APKTOOL_DUMMY_011c" id="0x7f02011c" />
-    <public type="drawable" name="APKTOOL_DUMMY_011d" id="0x7f02011d" />
-    <public type="drawable" name="APKTOOL_DUMMY_011e" id="0x7f02011e" />
-    <public type="drawable" name="APKTOOL_DUMMY_0142" id="0x7f020142" />
-    <public type="drawable" name="APKTOOL_DUMMY_0143" id="0x7f020143" />
-    <public type="drawable" name="APKTOOL_DUMMY_0144" id="0x7f020144" />
-    <public type="drawable" name="APKTOOL_DUMMY_0145" id="0x7f020145" />
-    <public type="drawable" name="APKTOOL_DUMMY_0146" id="0x7f020146" />
-    <public type="drawable" name="APKTOOL_DUMMY_0147" id="0x7f020147" />
-    <public type="drawable" name="APKTOOL_DUMMY_0148" id="0x7f020148" />
-    <public type="drawable" name="APKTOOL_DUMMY_0149" id="0x7f020149" />
-    <public type="drawable" name="APKTOOL_DUMMY_014b" id="0x7f02014b" />
-    <public type="drawable" name="APKTOOL_DUMMY_014c" id="0x7f02014c" />
-    <public type="drawable" name="APKTOOL_DUMMY_014d" id="0x7f02014d" />
+    <public type="drawable" name="ic_settings_hotspot" id="0x7f020157" />
+    <public type="drawable" name="ic_settings_extweak" id="0x7f020158" />
     <public type="mipmap" name="ic_launcher_settings" id="0x7f030000" />
     <public type="layout" name="accessibility_tutorial_1" id="0x7f040001" />
     <public type="layout" name="accessibility_tutorial_2" id="0x7f040002" />

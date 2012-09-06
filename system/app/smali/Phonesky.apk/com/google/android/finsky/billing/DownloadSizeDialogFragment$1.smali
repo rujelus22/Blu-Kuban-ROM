@@ -20,15 +20,30 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;
 
+.field final synthetic val$checkboxView:Landroid/widget/CheckBox;
+
+.field final synthetic val$setWifiOnlyOption:Z
+
+.field final synthetic val$showWifiOnlyOption:Z
+
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;)V
-    .registers 2
+.method constructor <init>(Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;ZLandroid/widget/CheckBox;Z)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 71
+    .line 123
     iput-object p1, p0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$1;->this$0:Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;
+
+    iput-boolean p2, p0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$1;->val$showWifiOnlyOption:Z
+
+    iput-object p3, p0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$1;->val$checkboxView:Landroid/widget/CheckBox;
+
+    iput-boolean p4, p0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$1;->val$setWifiOnlyOption:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,22 +53,42 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 4
+    .registers 5
     .parameter "dialog"
     .parameter "whichButton"
 
     .prologue
-    .line 74
-    iget-object v0, p0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$1;->this$0:Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;
+    .line 127
+    iget-boolean v1, p0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$1;->val$showWifiOnlyOption:Z
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;->getTargetFragment()Landroid/support/v4/app/Fragment;
+    if-eqz v1, :cond_16
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$1;->val$checkboxView:Landroid/widget/CheckBox;
 
-    check-cast v0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$DownloadSizeDialogListener;
+    invoke-virtual {v1}, Landroid/widget/CheckBox;->isChecked()Z
 
-    invoke-interface {v0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$DownloadSizeDialogListener;->onDownloadCancel()V
+    move-result v0
 
-    .line 75
+    .line 129
+    .local v0, wifiOnly:Z
+    :goto_a
+    iget-object v1, p0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$1;->this$0:Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;->getTargetFragment()Landroid/support/v4/app/Fragment;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$DownloadSizeDialogListener;
+
+    invoke-interface {v1, v0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$DownloadSizeDialogListener;->onDownloadOk(Z)V
+
+    .line 130
     return-void
+
+    .line 127
+    .end local v0           #wifiOnly:Z
+    :cond_16
+    iget-boolean v0, p0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$1;->val$setWifiOnlyOption:Z
+
+    goto :goto_a
 .end method

@@ -1,37 +1,45 @@
-.class public interface abstract Lcom/google/googlenav/ui/wizard/ay;
+.class Lcom/google/googlenav/ui/wizard/ay;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
+
+# instance fields
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/am;
+
+
+# direct methods
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/am;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 374
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/ay;->a:Lcom/google/googlenav/ui/wizard/am;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()V
-.end method
+.method public onClick(Landroid/view/View;)V
+    .registers 3
+    .parameter
 
-.method public abstract a(Lcom/google/googlenav/h;)V
-.end method
+    .prologue
+    .line 377
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/ay;->a:Lcom/google/googlenav/ui/wizard/am;
 
-.method public abstract a(Ljava/lang/String;)V
-.end method
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/am;->a(Lcom/google/googlenav/ui/wizard/am;)Lcom/google/googlenav/ui/wizard/aB;
 
-.method public abstract a(Z)V
-.end method
+    move-result-object v0
 
-.method public abstract b()V
-.end method
+    invoke-interface {v0}, Lcom/google/googlenav/ui/wizard/aB;->c()V
 
-.method public abstract b(Ljava/lang/String;)V
-.end method
-
-.method public abstract c()V
-.end method
-
-.method public abstract d()V
-.end method
-
-.method public abstract e()V
-.end method
-
-.method public abstract f()V
-.end method
-
-.method public abstract g()V
+    .line 378
+    return-void
 .end method

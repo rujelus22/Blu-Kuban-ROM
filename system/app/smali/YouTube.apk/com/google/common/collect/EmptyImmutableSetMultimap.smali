@@ -25,7 +25,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 3
+    .registers 4
 
     .prologue
     .line 32
@@ -35,7 +35,9 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {p0, v0, v1}, Lcom/google/common/collect/ImmutableSetMultimap;-><init>(Lcom/google/common/collect/ImmutableMap;I)V
+    const/4 v2, 0x0
+
+    invoke-direct {p0, v0, v1, v2}, Lcom/google/common/collect/ImmutableSetMultimap;-><init>(Lcom/google/common/collect/ImmutableMap;ILjava/util/Comparator;)V
 
     .line 33
     return-void

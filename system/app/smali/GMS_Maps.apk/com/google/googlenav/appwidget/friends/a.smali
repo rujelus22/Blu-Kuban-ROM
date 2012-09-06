@@ -1,19 +1,15 @@
 .class public Lcom/google/googlenav/appwidget/friends/a;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method public static a(Landroid/content/Context;)J
     .registers 5
+    .parameter
 
+    .prologue
+    .line 21
     const-string v0, "friends_app_widget_preferences"
 
     const/4 v1, 0x0
@@ -35,7 +31,11 @@
 
 .method public static a(Landroid/content/Context;J)V
     .registers 5
+    .parameter
+    .parameter
 
+    .prologue
+    .line 26
     const-string v0, "friends_app_widget_preferences"
 
     const/4 v1, 0x0
@@ -54,14 +54,18 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lag/b;->a(Landroid/content/SharedPreferences$Editor;)V
+    invoke-static {v0}, LR/b;->a(Landroid/content/SharedPreferences$Editor;)V
 
+    .line 29
     return-void
 .end method
 
 .method public static b(Landroid/content/Context;)V
     .registers 3
+    .parameter
 
+    .prologue
+    .line 32
     const-string v0, "friends_app_widget_preferences"
 
     const/4 v1, 0x0
@@ -78,7 +82,8 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lag/b;->a(Landroid/content/SharedPreferences$Editor;)V
+    invoke-static {v0}, LR/b;->a(Landroid/content/SharedPreferences$Editor;)V
 
+    .line 34
     return-void
 .end method

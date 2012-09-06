@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="config_app_persistent">false</bool>
+    <bool name="phone_uses_3D_in_landscape">true</bool>
+    <bool name="use_tabbed_lists_for_top_level">true</bool>
+    <bool name="shop_tutorial_enabled">true</bool>
+    <bool name="grid_scroll_horizontal">true</bool>
+    <bool name="grid_scroll_overlay_follows_thumb">true</bool>
+    <bool name="grid_scroll_auto_fade">false</bool>
+    <bool name="grid_expanded_cluster_label_horizontal">false</bool>
+    <bool name="grid_expand_label_vertical">true</bool>
+    <bool name="grid_cluster_expand_label_vertical">true</bool>
+    <bool name="grid_expand_label_expand_cell">false</bool>
+    <bool name="grid_label_show_song_count">true</bool>
+    <bool name="grid_context_menu_show_mark">true</bool>
+    <bool name="enable_new_and_recent_carousel">true</bool>
+    <bool name="enable_new_and_recent_wall">false</bool>
+    <bool name="allow_lock_screen_activity">true</bool>
+    <bool name="use_album_art_backgrounds">true</bool>
+    <bool name="small_widget_enabled">true</bool>
+</resources>

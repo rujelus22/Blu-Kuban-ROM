@@ -1,53 +1,105 @@
-.class final LI/o;
+.class Li/o;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
-# interfaces
-.implements LI/p;
+
+# instance fields
+.field private final a:Ljava/util/ArrayList;
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method private constructor <init>()V
+    .registers 2
 
+    .prologue
+    .line 249
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 250
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Li/o;->a:Ljava/util/ArrayList;
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Li/m;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 249
+    invoke-direct {p0}, Li/o;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Ljava/lang/String;
-    .registers 2
+.method public a()Li/l;
+    .registers 4
 
-    const/16 v0, 0xf6
+    .prologue
+    .line 263
+    new-instance v1, Li/n;
 
-    invoke-static {v0}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
+    iget-object v0, p0, Li/o;->a:Ljava/util/ArrayList;
+
+    iget-object v2, p0, Li/o;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    new-array v2, v2, [Li/l;
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, [Li/l;
+
+    invoke-direct {v1, v0}, Li/n;-><init>([Li/l;)V
+
+    return-object v1
 .end method
 
-.method public b()Ljava/lang/String;
-    .registers 2
+.method public a(Li/l;)V
+    .registers 4
+    .parameter
 
-    const/16 v0, 0xf8
+    .prologue
+    .line 254
+    instance-of v0, p1, Li/n;
 
-    invoke-static {v0}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
+    if-eqz v0, :cond_14
 
-    move-result-object v0
+    .line 255
+    iget-object v0, p0, Li/o;->a:Ljava/util/ArrayList;
 
-    return-object v0
-.end method
+    check-cast p1, Li/n;
 
-.method public c()Ljava/lang/String;
-    .registers 2
+    invoke-virtual {p1}, Li/n;->b()[Li/l;
 
-    const/16 v0, 0xf9
+    move-result-object v1
 
-    invoke-static {v0}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    move-result-object v0
+    move-result-object v1
 
-    return-object v0
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+
+    .line 260
+    :goto_13
+    return-void
+
+    .line 258
+    :cond_14
+    iget-object v0, p0, Li/o;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_13
 .end method

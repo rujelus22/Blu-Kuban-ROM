@@ -1,76 +1,57 @@
-.class public Lcom/google/googlenav/ui/wizard/fa;
+.class Lcom/google/googlenav/ui/wizard/fA;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnShowListener;
 
 
 # instance fields
-.field private a:Lcom/google/googlenav/ui/wizard/fd;
+.field final synthetic a:Landroid/app/AlertDialog;
 
-.field private final b:Lay/a;
+.field final synthetic b:Lcom/google/googlenav/ui/wizard/ft;
 
 
 # direct methods
-.method public constructor <init>(Lay/a;)V
-    .registers 2
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/ft;Landroid/app/AlertDialog;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 515
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fA;->b:Lcom/google/googlenav/ui/wizard/ft;
+
+    iput-object p2, p0, Lcom/google/googlenav/ui/wizard/fA;->a:Landroid/app/AlertDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fa;->b:Lay/a;
-
     return-void
-.end method
-
-.method static synthetic a(Lcom/google/googlenav/ui/wizard/fa;)Lay/a;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fa;->b:Lay/a;
-
-    return-object v0
-.end method
-
-.method static synthetic b(Lcom/google/googlenav/ui/wizard/fa;)Lcom/google/googlenav/ui/wizard/fd;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fa;->a:Lcom/google/googlenav/ui/wizard/fd;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 5
+.method public onShow(Landroid/content/DialogInterface;)V
+    .registers 4
+    .parameter
 
-    new-instance v0, Lax/af;
+    .prologue
+    .line 518
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fA;->a:Landroid/app/AlertDialog;
 
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
+    const/4 v1, -0x3
 
-    move-result-object v1
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->getButton(I)Landroid/widget/Button;
 
-    invoke-virtual {v1}, Lcom/google/googlenav/M;->m()Z
+    move-result-object v0
 
-    move-result v1
+    .line 519
+    new-instance v1, Lcom/google/googlenav/ui/wizard/fB;
 
-    new-instance v2, Lcom/google/googlenav/ui/wizard/fc;
+    invoke-direct {v1, p0}, Lcom/google/googlenav/ui/wizard/fB;-><init>(Lcom/google/googlenav/ui/wizard/fA;)V
 
-    const/4 v3, 0x0
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    invoke-direct {v2, p0, v3}, Lcom/google/googlenav/ui/wizard/fc;-><init>(Lcom/google/googlenav/ui/wizard/fa;Lcom/google/googlenav/ui/wizard/fb;)V
-
-    invoke-direct {v0, v1, v2}, Lax/af;-><init>(ZLax/ag;)V
-
-    invoke-static {}, Lat/h;->a()Lat/h;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lat/h;->c(Lat/g;)V
-
-    return-void
-.end method
-
-.method public a(Lcom/google/googlenav/ui/wizard/fd;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fa;->a:Lcom/google/googlenav/ui/wizard/fd;
-
+    .line 525
     return-void
 .end method

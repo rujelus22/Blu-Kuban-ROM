@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/custom_dialog" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textAppearance="?android:textAppearanceLarge" android:ellipsize="marquee" android:id="@id/filename" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:singleLine="true" />
-    <RelativeLayout android:id="@id/custom_dialog_all" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginBottom="10.0dip">
-        <CheckBox android:gravity="center_vertical" android:id="@id/all_checkbox" android:paddingRight="15.0dip" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true" />
-        <TextView android:textSize="15.0sp" android:gravity="center_vertical" android:paddingRight="10.0dip" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/all" android:layout_toLeftOf="@id/all_checkbox" />
-    </RelativeLayout>
-</LinearLayout>

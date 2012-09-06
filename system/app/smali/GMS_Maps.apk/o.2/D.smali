@@ -1,108 +1,119 @@
-.class Lo/D;
-.super Ljava/lang/Object;
+.class Lo/d;
+.super Lac/a;
+.source "SourceFile"
 
 
 # instance fields
-.field private final a:Ljava/lang/String;
+.field private a:Ljava/util/Locale;
 
-.field private final b:I
+.field private final b:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Landroid/content/Context;)V
     .registers 3
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 376
+    invoke-direct {p0}, Lac/a;-><init>()V
 
-    iput-object p1, p0, Lo/D;->a:Ljava/lang/String;
+    .line 373
+    const/4 v0, 0x0
 
-    iput p2, p0, Lo/D;->b:I
+    iput-object v0, p0, Lo/d;->a:Ljava/util/Locale;
 
+    .line 377
+    iput-object p1, p0, Lo/d;->b:Landroid/content/Context;
+
+    .line 378
     return-void
 .end method
 
 
 # virtual methods
-.method public equals(Ljava/lang/Object;)Z
-    .registers 6
+.method public a()I
+    .registers 2
 
-    const/4 v0, 0x1
+    .prologue
+    .line 382
+    const/16 v0, 0x2b
 
-    const/4 v1, 0x0
-
-    if-ne p0, p1, :cond_5
-
-    :cond_4
-    :goto_4
     return v0
-
-    :cond_5
-    if-nez p1, :cond_9
-
-    move v0, v1
-
-    goto :goto_4
-
-    :cond_9
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    if-eq v2, v3, :cond_15
-
-    move v0, v1
-
-    goto :goto_4
-
-    :cond_15
-    check-cast p1, Lo/D;
-
-    iget-object v2, p0, Lo/D;->a:Ljava/lang/String;
-
-    iget-object v3, p1, Lo/D;->a:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_23
-
-    move v0, v1
-
-    goto :goto_4
-
-    :cond_23
-    iget v2, p0, Lo/D;->b:I
-
-    iget v3, p1, Lo/D;->b:I
-
-    if-eq v2, v3, :cond_4
-
-    move v0, v1
-
-    goto :goto_4
 .end method
 
-.method public hashCode()I
+.method public a(Ljava/io/DataOutput;)V
     .registers 3
+    .parameter
 
-    iget-object v0, p0, Lo/D;->a:Ljava/lang/String;
+    .prologue
+    .line 388
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    invoke-interface {p1, v0}, Ljava/io/DataOutput;->writeInt(I)V
+
+    .line 394
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lo/d;->a:Ljava/util/Locale;
+
+    .line 395
+    return-void
+.end method
+
+.method public a(Ljava/io/DataInput;)Z
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 399
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lo/d;->a:Ljava/util/Locale;
+
+    invoke-virtual {v0, v1}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    add-int/lit8 v0, v0, 0x1f
+    if-nez v0, :cond_e
 
-    mul-int/lit8 v0, v0, 0x1f
+    .line 402
+    const/4 v0, 0x0
 
-    iget v1, p0, Lo/D;->b:I
-
-    add-int/2addr v0, v1
-
+    .line 408
+    :goto_d
     return v0
+
+    .line 404
+    :cond_e
+    sget-object v0, Lcom/google/wireless/googlenav/proto/j2me/aY;->s:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-static {v0, p1}, Lcom/google/googlenav/common/io/protocol/b;->a(Lcom/google/googlenav/common/io/protocol/ProtoBufType;Ljava/io/DataInput;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    move-result-object v0
+
+    .line 406
+    iget-object v1, p0, Lo/d;->b:Landroid/content/Context;
+
+    iget-object v2, p0, Lo/d;->a:Ljava/util/Locale;
+
+    invoke-static {v2}, Lo/c;->a(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v0, v2}, Lh/a;->a(Landroid/content/Context;Lcom/google/googlenav/common/io/protocol/ProtoBuf;Ljava/lang/String;)Z
+
+    .line 407
+    iget-object v1, p0, Lo/d;->a:Ljava/util/Locale;
+
+    invoke-static {v1, v0}, Lo/c;->a(Ljava/util/Locale;Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+
+    .line 408
+    const/4 v0, 0x1
+
+    goto :goto_d
 .end method

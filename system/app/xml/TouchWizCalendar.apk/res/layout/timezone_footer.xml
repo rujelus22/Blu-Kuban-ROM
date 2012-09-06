@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextView android:textAppearance="?android:textAppearanceLargeInverse" android:gravity="center_vertical" android:id="@id/timezone_footer" android:background="@drawable/calendar_timezone_selector_background" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:minHeight="?android:listPreferredItemHeight" android:text="@string/edit_event_show_all" style="?android:attr/textAppearanceLargeInverse"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

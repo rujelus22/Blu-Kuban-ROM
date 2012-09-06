@@ -33,7 +33,7 @@
 
     const-string v1, "PUBLIC"
 
-    const v2, 0x7f0a0029
+    const v2, 0x7f0b0035
 
     invoke-direct {v0, v1, v3, v2}, Lcom/google/android/youtube/core/model/Video$Privacy;-><init>(Ljava/lang/String;II)V
 
@@ -44,7 +44,7 @@
 
     const-string v1, "UNLISTED"
 
-    const v2, 0x7f0a002b
+    const v2, 0x7f0b0037
 
     invoke-direct {v0, v1, v4, v2}, Lcom/google/android/youtube/core/model/Video$Privacy;-><init>(Ljava/lang/String;II)V
 
@@ -55,7 +55,7 @@
 
     const-string v1, "PRIVATE"
 
-    const v2, 0x7f0a002a
+    const v2, 0x7f0b0036
 
     invoke-direct {v0, v1, v5, v2}, Lcom/google/android/youtube/core/model/Video$Privacy;-><init>(Ljava/lang/String;II)V
 

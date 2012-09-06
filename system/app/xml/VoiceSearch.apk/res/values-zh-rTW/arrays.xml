@@ -139,6 +139,6 @@
     <string-array name="prefEntries_safeSearch">
         <item>關閉</item>
         <item>中安全性</item>
-        <item>嚴格篩選</item>
+        <item>高安全性</item>
     </string-array>
 </resources>

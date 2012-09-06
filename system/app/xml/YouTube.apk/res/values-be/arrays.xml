@@ -5,6 +5,14 @@
         <item>Умераны</item>
         <item>Дакладны</item>
     </string-array>
+    <string-array name="preload_quota_entries">
+        <item>128 Мб</item>
+        <item>256 Мб</item>
+        <item>512 Мб</item>
+        <item>1 Гб</item>
+        <item>2 Гб</item>
+        <item>4 Гб</item>
+    </string-array>
     <string-array name="subtitles_size_entries">
         <item>Маленькі</item>
         <item>Сярэдні</item>

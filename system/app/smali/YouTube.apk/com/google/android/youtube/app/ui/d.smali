@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/g;
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
@@ -27,7 +27,7 @@
     .line 93
     const-string v0, "subscriptionUri cannot be null"
 
-    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -82,7 +82,7 @@
 
     iget-object v0, p0, Lcom/google/android/youtube/app/ui/d;->a:Lcom/google/android/youtube/app/ui/b;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/b;->c(Lcom/google/android/youtube/app/ui/b;)Lcom/google/android/youtube/core/client/af;
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/b;->c(Lcom/google/android/youtube/app/ui/b;)Lcom/google/android/youtube/core/b/ag;
 
     move-result-object v0
 
@@ -90,11 +90,11 @@
 
     iget-object v2, p0, Lcom/google/android/youtube/app/ui/d;->a:Lcom/google/android/youtube/app/ui/b;
 
-    invoke-static {v2}, Lcom/google/android/youtube/app/ui/b;->b(Lcom/google/android/youtube/app/ui/b;)Lcom/google/android/youtube/core/async/g;
+    invoke-static {v2}, Lcom/google/android/youtube/app/ui/b;->b(Lcom/google/android/youtube/app/ui/b;)Lcom/google/android/youtube/core/async/l;
 
     move-result-object v2
 
-    invoke-interface {v0, v1, v2}, Lcom/google/android/youtube/core/client/af;->e(Landroid/net/Uri;Lcom/google/android/youtube/core/async/g;)V
+    invoke-interface {v0, v1, v2}, Lcom/google/android/youtube/core/b/ag;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/async/l;)V
 
     iget-object v0, p0, Lcom/google/android/youtube/app/ui/d;->a:Lcom/google/android/youtube/app/ui/b;
 

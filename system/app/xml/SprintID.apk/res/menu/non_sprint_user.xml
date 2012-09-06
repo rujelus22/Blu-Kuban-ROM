@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:icon="@drawable/ic_menu_sprint" android:id="@id/sprint_zone" android:title="@string/sprint_zone" />
-    <item android:icon="@android:drawable/ic_menu_call" android:id="@id/customer_care" android:title="@string/customer_care" />
-    <item android:icon="@drawable/ic_menu_wifi_settings" android:id="@id/wifi_settings" android:title="@string/wifi_settings" />
-</menu>

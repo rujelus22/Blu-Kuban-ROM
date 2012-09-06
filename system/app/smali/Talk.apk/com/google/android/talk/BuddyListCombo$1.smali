@@ -30,7 +30,7 @@
     .line 394
     iput-object p1, p0, Lcom/google/android/talk/BuddyListCombo$1;->this$0:Lcom/google/android/talk/BuddyListCombo;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -102,7 +102,7 @@
     .line 400
     iget-object v0, p0, Lcom/google/android/talk/BuddyListCombo$1;->this$0:Lcom/google/android/talk/BuddyListCombo;
 
-    iget-object v0, v0, Lcom/google/android/talk/BuddyListCombo;->mHandler:Landroid/os/Handler;
+    iget-object v0, v0, Lcom/google/android/talk/GtalkServiceActivity;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/android/talk/BuddyListCombo$1$1;
 

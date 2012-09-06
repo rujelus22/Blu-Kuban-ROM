@@ -38,27 +38,27 @@
     .registers 3
 
     .prologue
-    .line 23606
+    .line 24203
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 23610
+    .line 24207
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->notification_:Ljava/util/List;
 
-    .line 23644
+    .line 24241
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->nextCheckMillis_:J
 
-    .line 23682
+    .line 24280
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->cachedSize:I
 
-    .line 23606
+    .line 24203
     return-void
 .end method
 
@@ -69,17 +69,17 @@
     .parameter "value"
 
     .prologue
-    .line 23627
+    .line 24224
     if-nez p1, :cond_8
 
-    .line 23628
+    .line 24225
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 23630
+    .line 24227
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->notification_:Ljava/util/List;
 
@@ -89,20 +89,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 23631
+    .line 24228
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->notification_:Ljava/util/List;
 
-    .line 23633
+    .line 24230
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->notification_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 23634
+    .line 24231
     return-object p0
 .end method
 
@@ -110,15 +110,15 @@
     .registers 2
 
     .prologue
-    .line 23684
+    .line 24283
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 23686
+    .line 24285
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->getSerializedSize()I
 
-    .line 23688
+    .line 24287
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->cachedSize:I
 
@@ -129,7 +129,7 @@
     .registers 3
 
     .prologue
-    .line 23645
+    .line 24242
     iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->nextCheckMillis_:J
 
     return-wide v0
@@ -148,7 +148,7 @@
     .end annotation
 
     .prologue
-    .line 23613
+    .line 24210
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->notification_:Ljava/util/List;
 
     return-object v0
@@ -158,10 +158,10 @@
     .registers 7
 
     .prologue
-    .line 23692
+    .line 24292
     const/4 v2, 0x0
 
-    .line 23693
+    .line 24293
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->getNotificationList()Ljava/util/List;
 
@@ -185,7 +185,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;
 
-    .line 23694
+    .line 24294
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;
     const/4 v3, 0x1
 
@@ -197,7 +197,7 @@
 
     goto :goto_9
 
-    .line 23697
+    .line 24297
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->hasNextCheckMillis()Z
@@ -206,7 +206,7 @@
 
     if-eqz v3, :cond_2c
 
-    .line 23698
+    .line 24298
     const/4 v3, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->getNextCheckMillis()J
@@ -219,11 +219,11 @@
 
     add-int/2addr v2, v3
 
-    .line 23701
+    .line 24301
     :cond_2c
     iput v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->cachedSize:I
 
-    .line 23702
+    .line 24302
     return v2
 .end method
 
@@ -231,7 +231,7 @@
     .registers 2
 
     .prologue
-    .line 23646
+    .line 24243
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->hasNextCheckMillis:Z
 
     return v0
@@ -247,44 +247,44 @@
     .end annotation
 
     .prologue
-    .line 23709
+    .line 24310
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 23710
+    .line 24311
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_22
 
-    .line 23714
+    .line 24315
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 23715
+    .line 24316
     :sswitch_d
     return-object p0
 
-    .line 23720
+    .line 24321
     :sswitch_e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;-><init>()V
 
-    .line 23721
+    .line 24322
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 23722
+    .line 24323
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->addNotification(Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;
 
     goto :goto_0
 
-    .line 23726
+    .line 24327
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;
     :sswitch_1a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
@@ -295,7 +295,7 @@
 
     goto :goto_0
 
-    .line 23710
+    .line 24311
     :sswitch_data_22
     .sparse-switch
         0x0 -> :sswitch_d
@@ -314,7 +314,7 @@
     .end annotation
 
     .prologue
-    .line 23604
+    .line 24201
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;
 
     move-result-object v0
@@ -327,15 +327,15 @@
     .parameter "value"
 
     .prologue
-    .line 23648
+    .line 24245
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->hasNextCheckMillis:Z
 
-    .line 23649
+    .line 24246
     iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->nextCheckMillis_:J
 
-    .line 23650
+    .line 24247
     return-object p0
 .end method
 
@@ -349,7 +349,7 @@
     .end annotation
 
     .prologue
-    .line 23674
+    .line 24272
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->getNotificationList()Ljava/util/List;
 
     move-result-object v2
@@ -372,7 +372,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;
 
-    .line 23675
+    .line 24273
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;
     const/4 v2, 0x1
 
@@ -380,7 +380,7 @@
 
     goto :goto_8
 
-    .line 23677
+    .line 24275
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;
     :cond_19
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->hasNextCheckMillis()Z
@@ -389,7 +389,7 @@
 
     if-eqz v2, :cond_27
 
-    .line 23678
+    .line 24276
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;->getNextCheckMillis()J
@@ -398,7 +398,7 @@
 
     invoke-virtual {p1, v2, v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 23680
+    .line 24278
     :cond_27
     return-void
 .end method

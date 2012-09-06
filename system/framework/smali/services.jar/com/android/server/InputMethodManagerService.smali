@@ -30,7 +30,7 @@
 # static fields
 .field public static final ACTION_CLICKEDHOME:Ljava/lang/String; = "android.sec.intent.action.CLICKED_HOMEKEY"
 
-.field static final DEBUG:Z = true
+.field static final DEBUG:Z = false
 
 .field static final DEBUG_LOGCHK:Z = false
 
@@ -9417,7 +9417,7 @@
 
     if-eqz v12, :cond_11d
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
     .line 1437
     .local v3, iconVisibility:Z

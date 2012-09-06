@@ -15,7 +15,7 @@
 # static fields
 .field public static final A2DP:I = 0x1
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field public static final HFP:I = 0x0
 

@@ -23,7 +23,7 @@
         value = {
             "Ljava/util/List",
             "<",
-            "Lcom/google/android/finsky/model/Bucket;",
+            "Lcom/google/android/finsky/api/model/Bucket;",
             ">;"
         }
     .end annotation
@@ -41,9 +41,9 @@
     invoke-direct {p0, p1}, Lcom/google/android/finsky/api/model/PaginatedList;-><init>(Ljava/lang/String;)V
 
     .line 16
-    invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/api/model/BucketedList;->mBuckets:Ljava/util/List;
 
@@ -62,9 +62,9 @@
     invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/api/model/PaginatedList;-><init>(Ljava/lang/String;Z)V
 
     .line 16
-    invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/api/model/BucketedList;->mBuckets:Ljava/util/List;
 
@@ -94,9 +94,9 @@
     invoke-direct {p0, p1, p2, p3}, Lcom/google/android/finsky/api/model/PaginatedList;-><init>(Ljava/util/List;IZ)V
 
     .line 16
-    invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/api/model/BucketedList;->mBuckets:Ljava/util/List;
 
@@ -166,9 +166,9 @@
 
     move-result-object v3
 
-    check-cast v3, Lcom/google/android/finsky/model/Bucket;
+    check-cast v3, Lcom/google/android/finsky/api/model/Bucket;
 
-    invoke-virtual {v3}, Lcom/google/android/finsky/model/Bucket;->getBackend()I
+    invoke-virtual {v3}, Lcom/google/android/finsky/api/model/Bucket;->getBackend()I
 
     move-result v1
 
@@ -221,7 +221,7 @@
             "()",
             "Ljava/util/List",
             "<",
-            "Lcom/google/android/finsky/model/Bucket;",
+            "Lcom/google/android/finsky/api/model/Bucket;",
             ">;"
         }
     .end annotation

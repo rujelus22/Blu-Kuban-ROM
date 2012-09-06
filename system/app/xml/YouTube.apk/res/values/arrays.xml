@@ -2,8 +2,6 @@
 <resources>
     <integer-array name="playlist_thumbnail_rotation_angles">
         <item>0</item>
-        <item>-9</item>
-        <item>8</item>
         <item>-7</item>
         <item>6</item>
     </integer-array>
@@ -12,7 +10,7 @@
         <item>Moderate</item>
         <item>Strict</item>
     </string-array>
-    <string-array name="prefetch_quota_entries">
+    <string-array name="preload_quota_entries">
         <item>128 MB</item>
         <item>256 MB</item>
         <item>512 MB</item>
@@ -20,7 +18,7 @@
         <item>2 GB</item>
         <item>4 GB</item>
     </string-array>
-    <string-array name="prefetch_quota_values">
+    <string-array name="preload_quota_values">
         <item>128</item>
         <item>256</item>
         <item>512</item>

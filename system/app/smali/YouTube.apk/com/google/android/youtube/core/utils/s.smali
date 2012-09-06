@@ -2,15 +2,18 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/util/concurrent/ThreadFactory;
+
 
 # instance fields
-.field private final a:Landroid/content/ContentResolver;
+.field private final a:I
 
-.field private final b:Lcom/google/android/common/http/UrlRules;
+.field private final b:Ljava/util/concurrent/ThreadFactory;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/ContentResolver;)V
+.method public constructor <init>(I)V
     .registers 3
     .parameter
 
@@ -19,89 +22,47 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 27
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    iput p1, p0, Lcom/google/android/youtube/core/utils/s;->a:I
+
+    .line 28
+    invoke-static {}, Ljava/util/concurrent/Executors;->defaultThreadFactory()Ljava/util/concurrent/ThreadFactory;
 
     move-result-object v0
 
-    check-cast v0, Landroid/content/ContentResolver;
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/utils/s;->a:Landroid/content/ContentResolver;
-
-    .line 28
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/utils/s;->b:Lcom/google/android/common/http/UrlRules;
+    iput-object v0, p0, Lcom/google/android/youtube/core/utils/s;->b:Ljava/util/concurrent/ThreadFactory;
 
     .line 29
     return-void
 .end method
 
+.method static synthetic a(Lcom/google/android/youtube/core/utils/s;)I
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 16
+    iget v0, p0, Lcom/google/android/youtube/core/utils/s;->a:I
+
+    return v0
+.end method
+
 
 # virtual methods
-.method public final a(Landroid/net/Uri;)Landroid/net/Uri;
+.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
     .registers 4
     .parameter
 
     .prologue
-    .line 41
-    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    .line 34
+    iget-object v0, p0, Lcom/google/android/youtube/core/utils/s;->b:Ljava/util/concurrent/ThreadFactory;
 
-    move-result-object v0
+    new-instance v1, Lcom/google/android/youtube/core/utils/t;
 
-    .line 42
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/core/utils/s;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {v1, p0, p1}, Lcom/google/android/youtube/core/utils/t;-><init>(Lcom/google/android/youtube/core/utils/s;Ljava/lang/Runnable;)V
 
-    move-result-object v1
-
-    .line 43
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_f
-
-    :goto_e
-    return-object p1
-
-    :cond_f
-    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object p1
-
-    goto :goto_e
-.end method
-
-.method public final a(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 36
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/s;->b:Lcom/google/android/common/http/UrlRules;
-
-    if-eqz v0, :cond_f
-
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/s;->b:Lcom/google/android/common/http/UrlRules;
-
-    :goto_6
-    invoke-virtual {v0, p1}, Lcom/google/android/common/http/UrlRules;->a(Ljava/lang/String;)Lcom/google/android/common/http/e;
-
-    move-result-object v0
-
-    .line 37
-    invoke-virtual {v0, p1}, Lcom/google/android/common/http/e;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v0, v1}, Ljava/util/concurrent/ThreadFactory;->newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
 
     move-result-object v0
 
     return-object v0
-
-    .line 36
-    :cond_f
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/s;->a:Landroid/content/ContentResolver;
-
-    invoke-static {v0}, Lcom/google/android/common/http/UrlRules;->a(Landroid/content/ContentResolver;)Lcom/google/android/common/http/UrlRules;
-
-    move-result-object v0
-
-    goto :goto_6
 .end method

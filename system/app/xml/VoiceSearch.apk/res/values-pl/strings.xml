@@ -51,7 +51,7 @@
     <string name="no_suggestions">Brak sugestii</string>
     <string name="add_number">Dodaj numer</string>
     <string name="voiceSearchPreferences">Wyszukiwanie głosowe</string>
-    <string name="imePreferences">Ustawienia pisania głosowego</string>
+    <string name="imePreferences">Ustawienia wprowadzania głosowego Google</string>
     <string name="prefTitle_language">Język</string>
     <string name="prefDialogTitle_language">Język</string>
     <string name="prefDefault_language">domyślny</string>
@@ -193,7 +193,7 @@
     <string name="voice_ime_language_ur_pk">urdu (Pakistan)</string>
     <string name="voice_ime_language_vi_vn">wietnamski (Wietnam)</string>
     <string name="voice_ime_language_ts_za">tsonga (Republika Południowej Afryki)</string>
-    <string name="prefTitle_safeSearch">Filtr SafeSearch</string>
+    <string name="prefTitle_safeSearch">SafeSearch</string>
     <string name="prefSummary_safeSearchOff">Wyłączony – nie filtruje wyników wyszukiwania</string>
     <string name="prefSummary_safeSearchModerate">Umiarkowany – filtruje tylko obrazy dla dorosłych</string>
     <string name="prefSummary_safeSearchStrict">Ścisły – filtruje tekst i obrazy dla dorosłych</string>
@@ -263,7 +263,7 @@ Odwiedź poniższą witrynę, aby poznać ich listę, lub naciśnij opcję OK, a
     <string name="permission_label_set_alarm">ustawianie alarmu w budziku</string>
     <string name="permission_description_set_alarm">Zezwala aplikacji na ustawianie alarmu w zainstalowanej aplikacji budzika. Niektóre aplikacje budzika mogą nie zawierać tej funkcji.</string>
     <string name="help_search_title">wyszukiwarka</string>
-    <string name="ime_service_label">Pisanie głosowe Google</string>
+    <string name="ime_service_label">Wprowadzanie głosowe Google</string>
     <string name="ime_listening">Nasłuchiwanie</string>
     <string name="ime_listening_done">Gotowe</string>
     <string name="ime_working">Oczekiwanie na wyniki</string>

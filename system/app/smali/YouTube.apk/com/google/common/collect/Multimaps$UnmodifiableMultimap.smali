@@ -1,5 +1,5 @@
 .class Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;
-.super Lcom/google/common/collect/bq;
+.super Lcom/google/common/collect/cz;
 .source "SourceFile"
 
 # interfaces
@@ -11,13 +11,13 @@
 
 
 # instance fields
-.field final delegate:Lcom/google/common/collect/ew;
+.field final delegate:Lcom/google/common/collect/hu;
 
 .field transient entries:Ljava/util/Collection;
 
 .field transient keySet:Ljava/util/Set;
 
-.field transient keys:Lcom/google/common/collect/fj;
+.field transient keys:Lcom/google/common/collect/iq;
 
 .field transient map:Ljava/util/Map;
 
@@ -25,18 +25,24 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/ew;)V
-    .registers 2
+.method constructor <init>(Lcom/google/common/collect/hu;)V
+    .registers 3
     .parameter
 
     .prologue
-    .line 454
-    invoke-direct {p0}, Lcom/google/common/collect/bq;-><init>()V
+    .line 496
+    invoke-direct {p0}, Lcom/google/common/collect/cz;-><init>()V
 
-    .line 455
-    iput-object p1, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate:Lcom/google/common/collect/ew;
+    .line 497
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 456
+    move-result-object v0
+
+    check-cast v0, Lcom/google/common/collect/hu;
+
+    iput-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate:Lcom/google/common/collect/hu;
+
+    .line 498
     return-void
 .end method
 
@@ -46,16 +52,16 @@
     .registers 3
 
     .prologue
-    .line 467
+    .line 509
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->map:Ljava/util/Map;
 
-    .line 468
+    .line 510
     if-nez v0, :cond_15
 
-    .line 469
-    iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate:Lcom/google/common/collect/ew;
+    .line 511
+    iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate:Lcom/google/common/collect/hu;
 
-    invoke-interface {v0}, Lcom/google/common/collect/ew;->asMap()Ljava/util/Map;
+    invoke-interface {v0}, Lcom/google/common/collect/hu;->asMap()Ljava/util/Map;
 
     move-result-object v0
 
@@ -63,14 +69,14 @@
 
     move-result-object v1
 
-    .line 471
-    new-instance v0, Lcom/google/common/collect/fi;
+    .line 513
+    new-instance v0, Lcom/google/common/collect/in;
 
-    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/fi;-><init>(Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;Ljava/util/Map;)V
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/in;-><init>(Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;Ljava/util/Map;)V
 
     iput-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->map:Ljava/util/Map;
 
-    .line 507
+    .line 549
     :cond_15
     return-object v0
 .end method
@@ -79,7 +85,7 @@
     .registers 2
 
     .prologue
-    .line 463
+    .line 505
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -87,12 +93,12 @@
     throw v0
 .end method
 
-.method protected delegate()Lcom/google/common/collect/ew;
+.method protected delegate()Lcom/google/common/collect/hu;
     .registers 2
 
     .prologue
-    .line 459
-    iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate:Lcom/google/common/collect/ew;
+    .line 501
+    iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate:Lcom/google/common/collect/hu;
 
     return-object v0
 .end method
@@ -101,8 +107,8 @@
     .registers 2
 
     .prologue
-    .line 445
-    invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate()Lcom/google/common/collect/ew;
+    .line 487
+    invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate()Lcom/google/common/collect/hu;
 
     move-result-object v0
 
@@ -113,16 +119,16 @@
     .registers 2
 
     .prologue
-    .line 511
+    .line 553
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->entries:Ljava/util/Collection;
 
-    .line 512
+    .line 554
     if-nez v0, :cond_10
 
-    .line 513
-    iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate:Lcom/google/common/collect/ew;
+    .line 555
+    iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate:Lcom/google/common/collect/hu;
 
-    invoke-interface {v0}, Lcom/google/common/collect/ew;->entries()Ljava/util/Collection;
+    invoke-interface {v0}, Lcom/google/common/collect/hu;->entries()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -132,7 +138,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->entries:Ljava/util/Collection;
 
-    .line 515
+    .line 557
     :cond_10
     return-object v0
 .end method
@@ -142,10 +148,10 @@
     .parameter
 
     .prologue
-    .line 519
-    iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate:Lcom/google/common/collect/ew;
+    .line 561
+    iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate:Lcom/google/common/collect/hu;
 
-    invoke-interface {v0, p1}, Lcom/google/common/collect/ew;->get(Ljava/lang/Object;)Ljava/util/Collection;
+    invoke-interface {v0, p1}, Lcom/google/common/collect/hu;->get(Ljava/lang/Object;)Ljava/util/Collection;
 
     move-result-object v0
 
@@ -160,16 +166,16 @@
     .registers 2
 
     .prologue
-    .line 531
+    .line 573
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->keySet:Ljava/util/Set;
 
-    .line 532
+    .line 574
     if-nez v0, :cond_10
 
-    .line 533
-    iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate:Lcom/google/common/collect/ew;
+    .line 575
+    iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate:Lcom/google/common/collect/hu;
 
-    invoke-interface {v0}, Lcom/google/common/collect/ew;->keySet()Ljava/util/Set;
+    invoke-interface {v0}, Lcom/google/common/collect/hu;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
@@ -179,36 +185,36 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->keySet:Ljava/util/Set;
 
-    .line 535
+    .line 577
     :cond_10
     return-object v0
 .end method
 
-.method public keys()Lcom/google/common/collect/fj;
-    .registers 3
+.method public keys()Lcom/google/common/collect/iq;
+    .registers 2
 
     .prologue
-    .line 523
-    iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->keys:Lcom/google/common/collect/fj;
+    .line 565
+    iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->keys:Lcom/google/common/collect/iq;
 
-    .line 524
-    if-nez v0, :cond_11
+    .line 566
+    if-nez v0, :cond_10
 
-    .line 525
-    iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate:Lcom/google/common/collect/ew;
+    .line 567
+    iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate:Lcom/google/common/collect/hu;
 
-    invoke-interface {v0}, Lcom/google/common/collect/ew;->keys()Lcom/google/common/collect/fj;
+    invoke-interface {v0}, Lcom/google/common/collect/hu;->keys()Lcom/google/common/collect/iq;
 
-    move-result-object v1
+    move-result-object v0
 
-    new-instance v0, Lcom/google/common/collect/Multisets$UnmodifiableMultiset;
+    invoke-static {v0}, Lcom/google/common/collect/Multisets;->a(Lcom/google/common/collect/iq;)Lcom/google/common/collect/iq;
 
-    invoke-direct {v0, v1}, Lcom/google/common/collect/Multisets$UnmodifiableMultiset;-><init>(Lcom/google/common/collect/fj;)V
+    move-result-object v0
 
-    iput-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->keys:Lcom/google/common/collect/fj;
+    iput-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->keys:Lcom/google/common/collect/iq;
 
-    .line 527
-    :cond_11
+    .line 569
+    :cond_10
     return-object v0
 .end method
 
@@ -218,7 +224,7 @@
     .parameter
 
     .prologue
-    .line 539
+    .line 581
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -226,12 +232,12 @@
     throw v0
 .end method
 
-.method public putAll(Lcom/google/common/collect/ew;)Z
+.method public putAll(Lcom/google/common/collect/hu;)Z
     .registers 3
     .parameter
 
     .prologue
-    .line 549
+    .line 590
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -245,7 +251,7 @@
     .parameter
 
     .prologue
-    .line 544
+    .line 585
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -259,7 +265,7 @@
     .parameter
 
     .prologue
-    .line 553
+    .line 594
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -272,7 +278,7 @@
     .parameter
 
     .prologue
-    .line 557
+    .line 598
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -286,7 +292,7 @@
     .parameter
 
     .prologue
-    .line 562
+    .line 603
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -298,16 +304,16 @@
     .registers 2
 
     .prologue
-    .line 566
+    .line 607
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->values:Ljava/util/Collection;
 
-    .line 567
+    .line 608
     if-nez v0, :cond_10
 
-    .line 568
-    iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate:Lcom/google/common/collect/ew;
+    .line 609
+    iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate:Lcom/google/common/collect/hu;
 
-    invoke-interface {v0}, Lcom/google/common/collect/ew;->values()Ljava/util/Collection;
+    invoke-interface {v0}, Lcom/google/common/collect/hu;->values()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -317,7 +323,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->values:Ljava/util/Collection;
 
-    .line 570
+    .line 611
     :cond_10
     return-object v0
 .end method

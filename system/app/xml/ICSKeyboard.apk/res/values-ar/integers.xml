@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="mini_keyboard_column_for_punctuation">9</integer>
+</resources>

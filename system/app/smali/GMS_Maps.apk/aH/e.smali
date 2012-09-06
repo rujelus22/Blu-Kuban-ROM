@@ -1,19 +1,23 @@
-.class LaH/e;
+.class Lah/e;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:LaH/d;
+.field final synthetic a:Lah/a;
 
 
 # direct methods
-.method constructor <init>(LaH/d;)V
+.method constructor <init>(Lah/a;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, LaH/e;->a:LaH/d;
+    .prologue
+    .line 326
+    iput-object p1, p0, Lah/e;->a:Lah/a;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,23 +29,18 @@
 .method public run()V
     .registers 3
 
-    iget-object v0, p0, LaH/e;->a:LaH/d;
+    .prologue
+    .line 329
+    iget-object v0, p0, Lah/e;->a:Lah/a;
 
-    invoke-static {v0}, LaH/d;->a(LaH/d;)Landroid/location/Location;
+    iget-object v1, p0, Lah/e;->a:Lah/a;
 
-    move-result-object v0
-
-    iget-object v1, p0, LaH/e;->a:LaH/d;
-
-    invoke-static {v1}, LaH/d;->b(LaH/d;)LaH/j;
+    invoke-static {v1}, Lah/a;->c(Lah/a;)Ljava/util/Vector;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, LaH/j;->d(Landroid/location/Location;)V
+    invoke-static {v0, v1}, Lah/a;->b(Lah/a;Ljava/util/Vector;)V
 
-    iget-object v1, p0, LaH/e;->a:LaH/d;
-
-    invoke-static {v1, v0}, LaH/d;->a(LaH/d;Landroid/location/Location;)Landroid/location/Location;
-
+    .line 330
     return-void
 .end method

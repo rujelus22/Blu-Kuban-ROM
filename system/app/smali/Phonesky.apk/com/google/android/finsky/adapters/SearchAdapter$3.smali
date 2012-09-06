@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 262
+    .line 242
     iput-object p1, p0, Lcom/google/android/finsky/adapters/SearchAdapter$3;->this$0:Lcom/google/android/finsky/adapters/SearchAdapter;
 
     iput-object p2, p0, Lcom/google/android/finsky/adapters/SearchAdapter$3;->val$suggestionString:Ljava/lang/String;
@@ -47,7 +47,7 @@
     .parameter "v"
 
     .prologue
-    .line 266
+    .line 246
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
@@ -62,7 +62,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/provider/SearchRecentSuggestions;->saveRecentQuery(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 267
+    .line 247
     iget-object v0, p0, Lcom/google/android/finsky/adapters/SearchAdapter$3;->this$0:Lcom/google/android/finsky/adapters/SearchAdapter;
 
     iget-object v0, v0, Lcom/google/android/finsky/adapters/SearchAdapter;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
@@ -86,6 +86,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->searchFromSuggestion(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 269
+    .line 249
     return-void
 .end method

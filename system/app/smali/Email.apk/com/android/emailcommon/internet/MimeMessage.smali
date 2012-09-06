@@ -34,11 +34,7 @@
 
 .field private mHeader:Lcom/android/emailcommon/internet/MimeHeader;
 
-.field private mImportance:Ljava/lang/String;
-
 .field private mInhibitLocalMessageId:Z
-
-.field private mReadReceiptTo:[Lcom/android/emailcommon/mail/Address;
 
 .field private mReplyTo:[Lcom/android/emailcommon/mail/Address;
 
@@ -54,14 +50,14 @@
     .registers 3
 
     .prologue
-    .line 89
+    .line 72
     new-instance v0, Ljava/util/Random;
 
     invoke-direct {v0}, Ljava/util/Random;-><init>()V
 
     sput-object v0, Lcom/android/emailcommon/internet/MimeMessage;->sRandom:Ljava/util/Random;
 
-    .line 100
+    .line 79
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     const-string v1, "EEE, dd MMM yyyy HH:mm:ss Z"
@@ -72,7 +68,7 @@
 
     sput-object v0, Lcom/android/emailcommon/internet/MimeMessage;->DATE_FORMAT:Ljava/text/SimpleDateFormat;
 
-    .line 104
+    .line 83
     const-string v0, "^<?([^>]+)>?$"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -81,7 +77,7 @@
 
     sput-object v0, Lcom/android/emailcommon/internet/MimeMessage;->REMOVE_OPTIONAL_BRACKETS:Ljava/util/regex/Pattern;
 
-    .line 106
+    .line 85
     const-string v0, "\r?\n"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -97,20 +93,46 @@
     .registers 2
 
     .prologue
-    .line 109
+    .line 87
     invoke-direct {p0}, Lcom/android/emailcommon/mail/Message;-><init>()V
 
-    .line 84
+    .line 69
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mInhibitLocalMessageId:Z
 
-    .line 110
+    .line 88
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mHeader:Lcom/android/emailcommon/internet/MimeHeader;
 
-    .line 111
+    .line 89
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/io/InputStream;)V
+    .registers 3
+    .parameter "in"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Lcom/android/emailcommon/mail/MessagingException;
+        }
+    .end annotation
+
+    .prologue
+    .line 118
+    invoke-direct {p0}, Lcom/android/emailcommon/mail/Message;-><init>()V
+
+    .line 69
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mInhibitLocalMessageId:Z
+
+    .line 119
+    invoke-virtual {p0, p1}, Lcom/android/emailcommon/internet/MimeMessage;->parse(Ljava/io/InputStream;)V
+
+    .line 120
     return-void
 .end method
 
@@ -118,18 +140,18 @@
     .registers 7
 
     .prologue
-    const/16 v4, 0x3c
-
-    .line 122
+    .line 97
     new-instance v2, Ljava/lang/StringBuffer;
 
-    invoke-direct {v2, v4}, Ljava/lang/StringBuffer;-><init>(I)V
+    invoke-direct {v2}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 124
+    .line 98
     .local v2, sb:Ljava/lang/StringBuffer;
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    const-string v4, "<"
 
-    .line 125
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    .line 99
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -138,7 +160,7 @@
 
     if-ge v1, v4, :cond_23
 
-    .line 127
+    .line 101
     sget-object v4, Lcom/android/emailcommon/internet/MimeMessage;->sRandom:Ljava/util/Random;
 
     invoke-virtual {v4}, Ljava/util/Random;->nextInt()I
@@ -147,7 +169,7 @@
 
     and-int/lit8 v3, v4, 0x1f
 
-    .line 128
+    .line 102
     .local v3, value:I
     const-string v4, "0123456789abcdefghijklmnopqrstuv"
 
@@ -155,24 +177,24 @@
 
     move-result v0
 
-    .line 129
+    .line 103
     .local v0, c:C
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    .line 125
+    .line 99
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_b
 
-    .line 132
+    .line 105
     .end local v0           #c:C
     .end local v3           #value:I
     :cond_23
-    const/16 v4, 0x2e
+    const-string v4, "."
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 133
+    .line 106
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
@@ -183,12 +205,12 @@
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 134
+    .line 107
     const-string v4, "@email.android.com>"
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 135
+    .line 108
     invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v4
@@ -200,19 +222,19 @@
     .registers 2
 
     .prologue
-    .line 176
+    .line 145
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mHeader:Lcom/android/emailcommon/internet/MimeHeader;
 
     if-nez v0, :cond_b
 
-    .line 177
+    .line 146
     new-instance v0, Lcom/android/emailcommon/internet/MimeHeader;
 
     invoke-direct {v0}, Lcom/android/emailcommon/internet/MimeHeader;-><init>()V
 
     iput-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mHeader:Lcom/android/emailcommon/internet/MimeHeader;
 
-    .line 179
+    .line 148
     :cond_b
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mHeader:Lcom/android/emailcommon/internet/MimeHeader;
 
@@ -232,14 +254,14 @@
     .end annotation
 
     .prologue
-    .line 519
+    .line 390
     invoke-direct {p0}, Lcom/android/emailcommon/internet/MimeMessage;->getMimeHeaders()Lcom/android/emailcommon/internet/MimeHeader;
 
     move-result-object v0
 
     invoke-virtual {v0, p1, p2}, Lcom/android/emailcommon/internet/MimeHeader;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 520
+    .line 391
     return-void
 .end method
 
@@ -252,7 +274,7 @@
     .end annotation
 
     .prologue
-    .line 495
+    .line 365
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mBody:Lcom/android/emailcommon/mail/Body;
 
     return-object v0
@@ -267,21 +289,21 @@
     .end annotation
 
     .prologue
-    .line 238
+    .line 196
     const-string v1, "Content-ID"
 
     invoke-virtual {p0, v1}, Lcom/android/emailcommon/internet/MimeMessage;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 239
+    .line 197
     .local v0, contentId:Ljava/lang/String;
     if-nez v0, :cond_a
 
-    .line 240
+    .line 198
     const/4 v1, 0x0
 
-    .line 243
+    .line 201
     :goto_9
     return-object v1
 
@@ -310,21 +332,21 @@
     .end annotation
 
     .prologue
-    .line 220
+    .line 178
     const-string v1, "Content-Type"
 
     invoke-virtual {p0, v1}, Lcom/android/emailcommon/internet/MimeMessage;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 221
+    .line 179
     .local v0, contentType:Ljava/lang/String;
     if-nez v0, :cond_a
 
-    .line 222
+    .line 180
     const-string v0, "text/plain"
 
-    .line 224
+    .line 182
     .end local v0           #contentType:Ljava/lang/String;
     :cond_a
     return-object v0
@@ -339,43 +361,75 @@
     .end annotation
 
     .prologue
-    .line 229
+    .line 187
     const-string v1, "Content-Disposition"
 
     invoke-virtual {p0, v1}, Lcom/android/emailcommon/internet/MimeMessage;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 230
+    .line 188
     .local v0, contentDisposition:Ljava/lang/String;
     if-nez v0, :cond_9
 
-    .line 231
+    .line 189
     const/4 v0, 0x0
 
-    .line 233
+    .line 191
     .end local v0           #contentDisposition:Ljava/lang/String;
     :cond_9
     return-object v0
+.end method
+
+.method public getExtendedHeader(Ljava/lang/String;)Ljava/lang/String;
+    .registers 3
+    .parameter "name"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/emailcommon/mail/MessagingException;
+        }
+    .end annotation
+
+    .prologue
+    .line 440
+    iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mExtendedHeader:Lcom/android/emailcommon/internet/MimeHeader;
+
+    if-nez v0, :cond_6
+
+    .line 441
+    const/4 v0, 0x0
+
+    .line 443
+    :goto_5
+    return-object v0
+
+    :cond_6
+    iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mExtendedHeader:Lcom/android/emailcommon/internet/MimeHeader;
+
+    invoke-virtual {v0, p1}, Lcom/android/emailcommon/internet/MimeHeader;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_5
 .end method
 
 .method public getExtendedHeaders()Ljava/lang/String;
     .registers 2
 
     .prologue
-    .line 604
+    .line 474
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mExtendedHeader:Lcom/android/emailcommon/internet/MimeHeader;
 
     if-eqz v0, :cond_b
 
-    .line 605
+    .line 475
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mExtendedHeader:Lcom/android/emailcommon/internet/MimeHeader;
 
     invoke-virtual {v0}, Lcom/android/emailcommon/internet/MimeHeader;->writeToString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 607
+    .line 477
     :goto_a
     return-object v0
 
@@ -395,7 +449,7 @@
     .end annotation
 
     .prologue
-    .line 514
+    .line 385
     invoke-direct {p0}, Lcom/android/emailcommon/internet/MimeMessage;->getMimeHeaders()Lcom/android/emailcommon/internet/MimeHeader;
 
     move-result-object v0
@@ -416,12 +470,12 @@
     .end annotation
 
     .prologue
-    .line 394
+    .line 289
     iget-object v1, p0, Lcom/android/emailcommon/internet/MimeMessage;->mFrom:[Lcom/android/emailcommon/mail/Address;
 
     if-nez v1, :cond_26
 
-    .line 395
+    .line 290
     const-string v1, "From"
 
     invoke-virtual {p0, v1}, Lcom/android/emailcommon/internet/MimeMessage;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
@@ -432,7 +486,7 @@
 
     move-result-object v0
 
-    .line 396
+    .line 291
     .local v0, list:Ljava/lang/String;
     if-eqz v0, :cond_16
 
@@ -442,7 +496,7 @@
 
     if-nez v1, :cond_20
 
-    .line 397
+    .line 292
     :cond_16
     const-string v1, "Sender"
 
@@ -454,7 +508,7 @@
 
     move-result-object v0
 
-    .line 399
+    .line 294
     :cond_20
     invoke-static {v0}, Lcom/android/emailcommon/mail/Address;->parse(Ljava/lang/String;)[Lcom/android/emailcommon/mail/Address;
 
@@ -462,7 +516,7 @@
 
     iput-object v1, p0, Lcom/android/emailcommon/internet/MimeMessage;->mFrom:[Lcom/android/emailcommon/mail/Address;
 
-    .line 401
+    .line 296
     .end local v0           #list:Ljava/lang/String;
     :cond_26
     iget-object v1, p0, Lcom/android/emailcommon/internet/MimeMessage;->mFrom:[Lcom/android/emailcommon/mail/Address;
@@ -480,7 +534,7 @@
     .end annotation
 
     .prologue
-    .line 529
+    .line 400
     invoke-direct {p0}, Lcom/android/emailcommon/internet/MimeMessage;->getMimeHeaders()Lcom/android/emailcommon/internet/MimeHeader;
 
     move-result-object v0
@@ -488,40 +542,6 @@
     invoke-virtual {v0, p1}, Lcom/android/emailcommon/internet/MimeHeader;->getHeader(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getImportance()Ljava/lang/String;
-    .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 407
-    iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mImportance:Ljava/lang/String;
-
-    if-nez v0, :cond_10
-
-    .line 408
-    const-string v0, "Importance"
-
-    invoke-virtual {p0, v0}, Lcom/android/emailcommon/internet/MimeMessage;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/emailcommon/internet/MimeUtility;->unfold(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mImportance:Ljava/lang/String;
-
-    .line 410
-    :cond_10
-    iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mImportance:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -535,7 +555,7 @@
     .end annotation
 
     .prologue
-    .line 647
+    .line 500
     const/4 v0, 0x0
 
     return-object v0
@@ -550,14 +570,14 @@
     .end annotation
 
     .prologue
-    .line 480
+    .line 350
     const-string v1, "Message-ID"
 
     invoke-virtual {p0, v1}, Lcom/android/emailcommon/internet/MimeMessage;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 481
+    .line 351
     .local v0, messageId:Ljava/lang/String;
     if-nez v0, :cond_13
 
@@ -565,15 +585,15 @@
 
     if-nez v1, :cond_13
 
-    .line 482
+    .line 352
     invoke-direct {p0}, Lcom/android/emailcommon/internet/MimeMessage;->generateMessageId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 483
+    .line 353
     invoke-virtual {p0, v0}, Lcom/android/emailcommon/internet/MimeMessage;->setMessageId(Ljava/lang/String;)V
 
-    .line 485
+    .line 355
     :cond_13
     return-object v0
 .end method
@@ -587,7 +607,7 @@
     .end annotation
 
     .prologue
-    .line 248
+    .line 206
     invoke-virtual {p0}, Lcom/android/emailcommon/internet/MimeMessage;->getContentType()Ljava/lang/String;
 
     move-result-object v0
@@ -601,141 +621,6 @@
     return-object v0
 .end method
 
-.method public getReadReceiptTo()[Lcom/android/emailcommon/mail/Address;
-    .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 462
-    iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mReadReceiptTo:[Lcom/android/emailcommon/mail/Address;
-
-    if-nez v0, :cond_14
-
-    .line 463
-    const-string v0, "Disposition-Notification-To"
-
-    invoke-virtual {p0, v0}, Lcom/android/emailcommon/internet/MimeMessage;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/emailcommon/internet/MimeUtility;->unfold(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/emailcommon/mail/Address;->parse(Ljava/lang/String;)[Lcom/android/emailcommon/mail/Address;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mReadReceiptTo:[Lcom/android/emailcommon/mail/Address;
-
-    .line 466
-    :cond_14
-    iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mReadReceiptTo:[Lcom/android/emailcommon/mail/Address;
-
-    return-object v0
-.end method
-
-.method public getReceivedDate()Ljava/util/Date;
-    .registers 6
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    const/4 v4, 0x1
-
-    .line 185
-    :try_start_1
-    const-string v3, "Received"
-
-    invoke-virtual {p0, v3}, Lcom/android/emailcommon/internet/MimeMessage;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/android/emailcommon/internet/MimeUtility;->unfoldAndDecode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 186
-    .local v1, strReceived:Ljava/lang/String;
-    if-eqz v1, :cond_3a
-
-    .line 187
-    const-string v3, ";"
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 188
-    .local v2, strSplit:[Ljava/lang/String;
-    if-eqz v2, :cond_3a
-
-    array-length v3, v2
-
-    if-le v3, v4, :cond_3a
-
-    .line 189
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Date: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const/4 v4, 0x1
-
-    aget-object v4, v2, v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lorg/apache/james/mime4j/field/Field;->parse(Ljava/lang/String;)Lorg/apache/james/mime4j/field/Field;
-
-    move-result-object v0
-
-    check-cast v0, Lorg/apache/james/mime4j/field/DateTimeField;
-
-    .line 190
-    .local v0, field:Lorg/apache/james/mime4j/field/DateTimeField;
-    invoke-virtual {v0}, Lorg/apache/james/mime4j/field/DateTimeField;->getDate()Ljava/util/Date;
-    :try_end_37
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_37} :catch_39
-
-    move-result-object v3
-
-    .line 195
-    .end local v0           #field:Lorg/apache/james/mime4j/field/DateTimeField;
-    .end local v1           #strReceived:Ljava/lang/String;
-    .end local v2           #strSplit:[Ljava/lang/String;
-    :goto_38
-    return-object v3
-
-    .line 193
-    :catch_39
-    move-exception v3
-
-    .line 195
-    :cond_3a
-    const/4 v3, 0x0
-
-    goto :goto_38
-.end method
-
 .method public getRecipients(Lcom/android/emailcommon/mail/Message$RecipientType;)[Lcom/android/emailcommon/mail/Address;
     .registers 4
     .parameter "type"
@@ -746,17 +631,17 @@
     .end annotation
 
     .prologue
-    .line 268
+    .line 219
     sget-object v0, Lcom/android/emailcommon/mail/Message$RecipientType;->TO:Lcom/android/emailcommon/mail/Message$RecipientType;
 
     if-ne p1, v0, :cond_1b
 
-    .line 269
+    .line 220
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mTo:[Lcom/android/emailcommon/mail/Address;
 
     if-nez v0, :cond_18
 
-    .line 270
+    .line 221
     const-string v0, "To"
 
     invoke-virtual {p0, v0}, Lcom/android/emailcommon/internet/MimeMessage;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
@@ -773,26 +658,26 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mTo:[Lcom/android/emailcommon/mail/Address;
 
-    .line 272
+    .line 223
     :cond_18
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mTo:[Lcom/android/emailcommon/mail/Address;
 
-    .line 282
+    .line 233
     :goto_1a
     return-object v0
 
-    .line 273
+    .line 224
     :cond_1b
     sget-object v0, Lcom/android/emailcommon/mail/Message$RecipientType;->CC:Lcom/android/emailcommon/mail/Message$RecipientType;
 
     if-ne p1, v0, :cond_36
 
-    .line 274
+    .line 225
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mCc:[Lcom/android/emailcommon/mail/Address;
 
     if-nez v0, :cond_33
 
-    .line 275
+    .line 226
     const-string v0, "CC"
 
     invoke-virtual {p0, v0}, Lcom/android/emailcommon/internet/MimeMessage;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
@@ -809,24 +694,24 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mCc:[Lcom/android/emailcommon/mail/Address;
 
-    .line 277
+    .line 228
     :cond_33
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mCc:[Lcom/android/emailcommon/mail/Address;
 
     goto :goto_1a
 
-    .line 278
+    .line 229
     :cond_36
     sget-object v0, Lcom/android/emailcommon/mail/Message$RecipientType;->BCC:Lcom/android/emailcommon/mail/Message$RecipientType;
 
     if-ne p1, v0, :cond_51
 
-    .line 279
+    .line 230
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mBcc:[Lcom/android/emailcommon/mail/Address;
 
     if-nez v0, :cond_4e
 
-    .line 280
+    .line 231
     const-string v0, "BCC"
 
     invoke-virtual {p0, v0}, Lcom/android/emailcommon/internet/MimeMessage;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
@@ -843,13 +728,13 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mBcc:[Lcom/android/emailcommon/mail/Address;
 
-    .line 282
+    .line 233
     :cond_4e
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mBcc:[Lcom/android/emailcommon/mail/Address;
 
     goto :goto_1a
 
-    .line 284
+    .line 235
     :cond_51
     new-instance v0, Lcom/android/emailcommon/mail/MessagingException;
 
@@ -869,12 +754,12 @@
     .end annotation
 
     .prologue
-    .line 429
+    .line 314
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mReplyTo:[Lcom/android/emailcommon/mail/Address;
 
     if-nez v0, :cond_14
 
-    .line 430
+    .line 315
     const-string v0, "Reply-to"
 
     invoke-virtual {p0, v0}, Lcom/android/emailcommon/internet/MimeMessage;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
@@ -891,7 +776,7 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mReplyTo:[Lcom/android/emailcommon/mail/Address;
 
-    .line 432
+    .line 317
     :cond_14
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mReplyTo:[Lcom/android/emailcommon/mail/Address;
 
@@ -907,12 +792,12 @@
     .end annotation
 
     .prologue
-    .line 200
+    .line 158
     iget-object v1, p0, Lcom/android/emailcommon/internet/MimeMessage;->mSentDate:Ljava/util/Date;
 
     if-nez v1, :cond_2d
 
-    .line 202
+    .line 160
     :try_start_4
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -948,7 +833,7 @@
 
     check-cast v0, Lorg/apache/james/mime4j/field/DateTimeField;
 
-    .line 204
+    .line 162
     .local v0, field:Lorg/apache/james/mime4j/field/DateTimeField;
     invoke-virtual {v0}, Lorg/apache/james/mime4j/field/DateTimeField;->getDate()Ljava/util/Date;
 
@@ -958,7 +843,7 @@
     :try_end_2d
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_2d} :catch_30
 
-    .line 209
+    .line 167
     .end local v0           #field:Lorg/apache/james/mime4j/field/DateTimeField;
     :cond_2d
     :goto_2d
@@ -966,7 +851,7 @@
 
     return-object v1
 
-    .line 205
+    .line 163
     :catch_30
     move-exception v1
 
@@ -982,14 +867,14 @@
     .end annotation
 
     .prologue
-    .line 252
+    .line 210
     iget v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mSize:I
 
     return v0
 .end method
 
 .method public getSubject()Ljava/lang/String;
-    .registers 8
+    .registers 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/emailcommon/mail/MessagingException;
@@ -997,144 +882,18 @@
     .end annotation
 
     .prologue
-    const/4 v6, 0x2
+    .line 278
+    const-string v0, "Subject"
 
-    .line 362
-    :try_start_1
-    const-string v4, "Content-Type"
-
-    invoke-virtual {p0, v4}, Lcom/android/emailcommon/internet/MimeMessage;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 363
-    .local v2, data:Ljava/lang/String;
-    if-eqz v2, :cond_4c
-
-    .line 364
-    const-string v4, "charset"
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_4c
-
-    const-string v4, "MBP"
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_4c
-
-    .line 365
-    const/4 v3, 0x0
-
-    .line 366
-    .local v3, tempcharset:Ljava/lang/String;
-    const/4 v0, 0x0
-
-    .line 367
-    .local v0, charset:Ljava/lang/String;
-    const-string v4, "="
-
-    const/4 v5, 0x2
-
-    invoke-virtual {v2, v4, v5}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 368
-    .local v1, charsetParam:[Ljava/lang/String;
-    array-length v4, v1
-
-    if-ge v4, v6, :cond_3f
-
-    .line 369
-    const-string v4, ":"
-
-    const/4 v5, 0x2
-
-    invoke-virtual {v2, v4, v5}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 373
-    :goto_2c
-    if-eqz v3, :cond_32
-
-    .line 374
-    invoke-static {v3}, Lorg/apache/james/mime4j/util/CharsetUtil;->toJavaCharset(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/emailcommon/internet/MimeMessage;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 376
-    :cond_32
-    if-eqz v0, :cond_4c
+    invoke-static {v0}, Lcom/android/emailcommon/internet/MimeUtility;->unfoldAndDecode(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 377
-    const-string v4, "Subject"
+    move-result-object v0
 
-    invoke-virtual {p0, v4}, Lcom/android/emailcommon/internet/MimeMessage;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4, v0}, Lcom/android/emailcommon/internet/MimeUtility;->unfoldAndDecode2(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 383
-    .end local v0           #charset:Ljava/lang/String;
-    .end local v1           #charsetParam:[Ljava/lang/String;
-    .end local v2           #data:Ljava/lang/String;
-    .end local v3           #tempcharset:Ljava/lang/String;
-    :goto_3e
-    return-object v4
-
-    .line 371
-    .restart local v0       #charset:Ljava/lang/String;
-    .restart local v1       #charsetParam:[Ljava/lang/String;
-    .restart local v2       #data:Ljava/lang/String;
-    .restart local v3       #tempcharset:Ljava/lang/String;
-    :cond_3f
-    const/4 v4, 0x1
-
-    aget-object v4, v1, v4
-
-    const-string v5, "\""
-
-    const-string v6, ""
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    :try_end_49
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_49} :catch_4b
-
-    move-result-object v3
-
-    goto :goto_2c
-
-    .line 381
-    .end local v0           #charset:Ljava/lang/String;
-    .end local v1           #charsetParam:[Ljava/lang/String;
-    .end local v2           #data:Ljava/lang/String;
-    .end local v3           #tempcharset:Ljava/lang/String;
-    :catch_4b
-    move-exception v4
-
-    .line 383
-    :cond_4c
-    const-string v4, "Subject"
-
-    invoke-virtual {p0, v4}, Lcom/android/emailcommon/internet/MimeMessage;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/android/emailcommon/internet/MimeUtility;->unfoldAndDecode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    goto :goto_3e
+    return-object v0
 .end method
 
 .method protected parse(Ljava/io/InputStream;)V
@@ -1150,48 +909,45 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 154
+    .line 125
     invoke-direct {p0}, Lcom/android/emailcommon/internet/MimeMessage;->getMimeHeaders()Lcom/android/emailcommon/internet/MimeHeader;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/android/emailcommon/internet/MimeHeader;->clear()V
 
-    .line 155
+    .line 126
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/emailcommon/internet/MimeMessage;->mInhibitLocalMessageId:Z
 
-    .line 156
+    .line 127
     iput-object v2, p0, Lcom/android/emailcommon/internet/MimeMessage;->mFrom:[Lcom/android/emailcommon/mail/Address;
 
-    .line 157
+    .line 128
     iput-object v2, p0, Lcom/android/emailcommon/internet/MimeMessage;->mTo:[Lcom/android/emailcommon/mail/Address;
 
-    .line 158
+    .line 129
     iput-object v2, p0, Lcom/android/emailcommon/internet/MimeMessage;->mCc:[Lcom/android/emailcommon/mail/Address;
 
-    .line 159
+    .line 130
     iput-object v2, p0, Lcom/android/emailcommon/internet/MimeMessage;->mBcc:[Lcom/android/emailcommon/mail/Address;
 
-    .line 160
+    .line 131
     iput-object v2, p0, Lcom/android/emailcommon/internet/MimeMessage;->mReplyTo:[Lcom/android/emailcommon/mail/Address;
 
-    .line 161
+    .line 132
     iput-object v2, p0, Lcom/android/emailcommon/internet/MimeMessage;->mSentDate:Ljava/util/Date;
 
-    .line 162
+    .line 133
     iput-object v2, p0, Lcom/android/emailcommon/internet/MimeMessage;->mBody:Lcom/android/emailcommon/mail/Body;
 
-    .line 163
-    iput-object v2, p0, Lcom/android/emailcommon/internet/MimeMessage;->mImportance:Ljava/lang/String;
-
-    .line 166
+    .line 135
     new-instance v0, Lorg/apache/james/mime4j/MimeStreamParser;
 
     invoke-direct {v0}, Lorg/apache/james/mime4j/MimeStreamParser;-><init>()V
 
-    .line 167
+    .line 136
     .local v0, parser:Lorg/apache/james/mime4j/MimeStreamParser;
     new-instance v1, Lcom/android/emailcommon/internet/MimeMessage$MimeMessageBuilder;
 
@@ -1199,14 +955,14 @@
 
     invoke-virtual {v0, v1}, Lorg/apache/james/mime4j/MimeStreamParser;->setContentHandler(Lorg/apache/james/mime4j/ContentHandler;)V
 
-    .line 168
+    .line 137
     new-instance v1, Lorg/apache/james/mime4j/EOLConvertingInputStream;
 
     invoke-direct {v1, p1}, Lorg/apache/james/mime4j/EOLConvertingInputStream;-><init>(Ljava/io/InputStream;)V
 
     invoke-virtual {v0, v1}, Lorg/apache/james/mime4j/MimeStreamParser;->parse(Ljava/io/InputStream;)V
 
-    .line 169
+    .line 138
     return-void
 .end method
 
@@ -1220,14 +976,14 @@
     .end annotation
 
     .prologue
-    .line 534
+    .line 405
     invoke-direct {p0}, Lcom/android/emailcommon/internet/MimeMessage;->getMimeHeaders()Lcom/android/emailcommon/internet/MimeHeader;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lcom/android/emailcommon/internet/MimeHeader;->removeHeader(Ljava/lang/String;)V
 
-    .line 535
+    .line 406
     const-string v0, "Message-ID"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -1236,12 +992,12 @@
 
     if-eqz v0, :cond_12
 
-    .line 536
+    .line 407
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mInhibitLocalMessageId:Z
 
-    .line 538
+    .line 409
     :cond_12
     return-void
 .end method
@@ -1256,24 +1012,24 @@
     .end annotation
 
     .prologue
-    .line 500
+    .line 370
     iput-object p1, p0, Lcom/android/emailcommon/internet/MimeMessage;->mBody:Lcom/android/emailcommon/mail/Body;
 
-    .line 501
+    .line 371
     instance-of v1, p1, Lcom/android/emailcommon/mail/Multipart;
 
     if-eqz v1, :cond_1d
 
     move-object v0, p1
 
-    .line 502
+    .line 372
     check-cast v0, Lcom/android/emailcommon/mail/Multipart;
 
-    .line 503
+    .line 373
     .local v0, multipart:Lcom/android/emailcommon/mail/Multipart;
     invoke-virtual {v0, p0}, Lcom/android/emailcommon/mail/Multipart;->setParent(Lcom/android/emailcommon/mail/Part;)V
 
-    .line 504
+    .line 374
     const-string v1, "Content-Type"
 
     invoke-virtual {v0}, Lcom/android/emailcommon/mail/Multipart;->getContentType()Ljava/lang/String;
@@ -1282,26 +1038,26 @@
 
     invoke-virtual {p0, v1, v2}, Lcom/android/emailcommon/internet/MimeMessage;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 505
+    .line 375
     const-string v1, "MIME-Version"
 
     const-string v2, "1.0"
 
     invoke-virtual {p0, v1, v2}, Lcom/android/emailcommon/internet/MimeMessage;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 511
+    .line 382
     .end local v0           #multipart:Lcom/android/emailcommon/mail/Multipart;
     :cond_1c
     :goto_1c
     return-void
 
-    .line 506
+    .line 377
     :cond_1d
     instance-of v1, p1, Lcom/android/emailcommon/internet/TextBody;
 
     if-eqz v1, :cond_1c
 
-    .line 507
+    .line 378
     const-string v1, "Content-Type"
 
     const-string v2, "%s;\n charset=utf-8"
@@ -1324,7 +1080,7 @@
 
     invoke-virtual {p0, v1, v2}, Lcom/android/emailcommon/internet/MimeMessage;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 509
+    .line 380
     const-string v1, "Content-Transfer-Encoding"
 
     const-string v2, "base64"
@@ -1332,6 +1088,69 @@
     invoke-virtual {p0, v1, v2}, Lcom/android/emailcommon/internet/MimeMessage;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1c
+.end method
+
+.method public setExtendedHeader(Ljava/lang/String;Ljava/lang/String;)V
+    .registers 6
+    .parameter "name"
+    .parameter "value"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/emailcommon/mail/MessagingException;
+        }
+    .end annotation
+
+    .prologue
+    .line 420
+    if-nez p2, :cond_c
+
+    .line 421
+    iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mExtendedHeader:Lcom/android/emailcommon/internet/MimeHeader;
+
+    if-eqz v0, :cond_b
+
+    .line 422
+    iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mExtendedHeader:Lcom/android/emailcommon/internet/MimeHeader;
+
+    invoke-virtual {v0, p1}, Lcom/android/emailcommon/internet/MimeHeader;->removeHeader(Ljava/lang/String;)V
+
+    .line 430
+    :cond_b
+    :goto_b
+    return-void
+
+    .line 426
+    :cond_c
+    iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mExtendedHeader:Lcom/android/emailcommon/internet/MimeHeader;
+
+    if-nez v0, :cond_17
+
+    .line 427
+    new-instance v0, Lcom/android/emailcommon/internet/MimeHeader;
+
+    invoke-direct {v0}, Lcom/android/emailcommon/internet/MimeHeader;-><init>()V
+
+    iput-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mExtendedHeader:Lcom/android/emailcommon/internet/MimeHeader;
+
+    .line 429
+    :cond_17
+    iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMessage;->mExtendedHeader:Lcom/android/emailcommon/internet/MimeHeader;
+
+    sget-object v1, Lcom/android/emailcommon/internet/MimeMessage;->END_OF_LINE:Ljava/util/regex/Pattern;
+
+    invoke-virtual {v1, p2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v1
+
+    const-string v2, ""
+
+    invoke-virtual {v1, v2}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, p1, v1}, Lcom/android/emailcommon/internet/MimeHeader;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_b
 .end method
 
 .method public setExtendedHeaders(Ljava/lang/String;)V
@@ -1346,23 +1165,23 @@
     .prologue
     const/4 v8, 0x2
 
-    .line 583
+    .line 454
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
     if-eqz v5, :cond_b
 
-    .line 584
+    .line 455
     const/4 v5, 0x0
 
     iput-object v5, p0, Lcom/android/emailcommon/internet/MimeMessage;->mExtendedHeader:Lcom/android/emailcommon/internet/MimeHeader;
 
-    .line 595
+    .line 466
     :cond_a
     return-void
 
-    .line 586
+    .line 457
     :cond_b
     new-instance v5, Lcom/android/emailcommon/internet/MimeHeader;
 
@@ -1370,7 +1189,7 @@
 
     iput-object v5, p0, Lcom/android/emailcommon/internet/MimeMessage;->mExtendedHeader:Lcom/android/emailcommon/internet/MimeHeader;
 
-    .line 587
+    .line 458
     sget-object v5, Lcom/android/emailcommon/internet/MimeMessage;->END_OF_LINE:Ljava/util/regex/Pattern;
 
     invoke-virtual {v5, p1}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;)[Ljava/lang/String;
@@ -1389,7 +1208,7 @@
 
     aget-object v1, v0, v2
 
-    .line 588
+    .line 459
     .local v1, header:Ljava/lang/String;
     const-string v5, ":"
 
@@ -1397,13 +1216,13 @@
 
     move-result-object v4
 
-    .line 589
+    .line 460
     .local v4, tokens:[Ljava/lang/String;
     array-length v5, v4
 
     if-eq v5, v8, :cond_40
 
-    .line 590
+    .line 461
     new-instance v5, Lcom/android/emailcommon/mail/MessagingException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1428,7 +1247,7 @@
 
     throw v5
 
-    .line 592
+    .line 463
     :cond_40
     iget-object v5, p0, Lcom/android/emailcommon/internet/MimeMessage;->mExtendedHeader:Lcom/android/emailcommon/internet/MimeHeader;
 
@@ -1450,7 +1269,7 @@
 
     invoke-virtual {v5, v6, v7}, Lcom/android/emailcommon/internet/MimeHeader;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 587
+    .line 458
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1a
@@ -1466,14 +1285,14 @@
     .end annotation
 
     .prologue
-    .line 416
+    .line 301
     const/4 v0, 0x6
 
-    .line 417
+    .line 302
     .local v0, FROM_LENGTH:I
     if-eqz p1, :cond_1a
 
-    .line 418
+    .line 303
     const-string v1, "From"
 
     invoke-virtual {p1}, Lcom/android/emailcommon/mail/Address;->toHeader()Ljava/lang/String;
@@ -1488,7 +1307,7 @@
 
     invoke-virtual {p0, v1, v2}, Lcom/android/emailcommon/internet/MimeMessage;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 419
+    .line 304
     const/4 v1, 0x1
 
     new-array v1, v1, [Lcom/android/emailcommon/mail/Address;
@@ -1499,11 +1318,11 @@
 
     iput-object v1, p0, Lcom/android/emailcommon/internet/MimeMessage;->mFrom:[Lcom/android/emailcommon/mail/Address;
 
-    .line 425
+    .line 310
     :goto_19
     return-void
 
-    .line 423
+    .line 308
     :cond_1a
     const/4 v1, 0x0
 
@@ -1523,14 +1342,14 @@
     .end annotation
 
     .prologue
-    .line 524
+    .line 395
     invoke-direct {p0}, Lcom/android/emailcommon/internet/MimeMessage;->getMimeHeaders()Lcom/android/emailcommon/internet/MimeHeader;
 
     move-result-object v0
 
     invoke-virtual {v0, p1, p2}, Lcom/android/emailcommon/internet/MimeHeader;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 525
+    .line 396
     return-void
 .end method
 
@@ -1544,12 +1363,12 @@
     .end annotation
 
     .prologue
-    .line 455
+    .line 339
     const-string v0, "Message-ID"
 
     invoke-virtual {p0, v0, p1}, Lcom/android/emailcommon/internet/MimeMessage;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 456
+    .line 340
     return-void
 .end method
 
@@ -1568,44 +1387,44 @@
 
     const/4 v4, 0x0
 
-    .line 324
+    .line 241
     const/4 v2, 0x4
 
-    .line 325
+    .line 242
     .local v2, TO_LENGTH:I
     const/4 v1, 0x4
 
-    .line 326
+    .line 243
     .local v1, CC_LENGTH:I
     const/4 v0, 0x5
 
-    .line 327
+    .line 244
     .local v0, BCC_LENGTH:I
     sget-object v3, Lcom/android/emailcommon/mail/Message$RecipientType;->TO:Lcom/android/emailcommon/mail/Message$RecipientType;
 
     if-ne p1, v3, :cond_26
 
-    .line 328
+    .line 245
     if-eqz p2, :cond_e
 
     array-length v3, p2
 
     if-nez v3, :cond_16
 
-    .line 329
+    .line 246
     :cond_e
     const-string v3, "To"
 
     invoke-virtual {p0, v3}, Lcom/android/emailcommon/internet/MimeMessage;->removeHeader(Ljava/lang/String;)V
 
-    .line 330
+    .line 247
     iput-object v4, p0, Lcom/android/emailcommon/internet/MimeMessage;->mTo:[Lcom/android/emailcommon/mail/Address;
 
-    .line 354
+    .line 271
     :goto_15
     return-void
 
-    .line 332
+    .line 249
     :cond_16
     const-string v3, "To"
 
@@ -1619,36 +1438,36 @@
 
     invoke-virtual {p0, v3, v4}, Lcom/android/emailcommon/internet/MimeMessage;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 333
+    .line 250
     iput-object p2, p0, Lcom/android/emailcommon/internet/MimeMessage;->mTo:[Lcom/android/emailcommon/mail/Address;
 
     goto :goto_15
 
-    .line 335
+    .line 252
     :cond_26
     sget-object v3, Lcom/android/emailcommon/mail/Message$RecipientType;->CC:Lcom/android/emailcommon/mail/Message$RecipientType;
 
     if-ne p1, v3, :cond_47
 
-    .line 336
+    .line 253
     if-eqz p2, :cond_2f
 
     array-length v3, p2
 
     if-nez v3, :cond_37
 
-    .line 337
+    .line 254
     :cond_2f
     const-string v3, "CC"
 
     invoke-virtual {p0, v3}, Lcom/android/emailcommon/internet/MimeMessage;->removeHeader(Ljava/lang/String;)V
 
-    .line 338
+    .line 255
     iput-object v4, p0, Lcom/android/emailcommon/internet/MimeMessage;->mCc:[Lcom/android/emailcommon/mail/Address;
 
     goto :goto_15
 
-    .line 340
+    .line 257
     :cond_37
     const-string v3, "CC"
 
@@ -1662,36 +1481,36 @@
 
     invoke-virtual {p0, v3, v4}, Lcom/android/emailcommon/internet/MimeMessage;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 341
+    .line 258
     iput-object p2, p0, Lcom/android/emailcommon/internet/MimeMessage;->mCc:[Lcom/android/emailcommon/mail/Address;
 
     goto :goto_15
 
-    .line 343
+    .line 260
     :cond_47
     sget-object v3, Lcom/android/emailcommon/mail/Message$RecipientType;->BCC:Lcom/android/emailcommon/mail/Message$RecipientType;
 
     if-ne p1, v3, :cond_69
 
-    .line 344
+    .line 261
     if-eqz p2, :cond_50
 
     array-length v3, p2
 
     if-nez v3, :cond_58
 
-    .line 345
+    .line 262
     :cond_50
     const-string v3, "BCC"
 
     invoke-virtual {p0, v3}, Lcom/android/emailcommon/internet/MimeMessage;->removeHeader(Ljava/lang/String;)V
 
-    .line 346
+    .line 263
     iput-object v4, p0, Lcom/android/emailcommon/internet/MimeMessage;->mBcc:[Lcom/android/emailcommon/mail/Address;
 
     goto :goto_15
 
-    .line 348
+    .line 265
     :cond_58
     const-string v3, "BCC"
 
@@ -1707,12 +1526,12 @@
 
     invoke-virtual {p0, v3, v4}, Lcom/android/emailcommon/internet/MimeMessage;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 349
+    .line 266
     iput-object p2, p0, Lcom/android/emailcommon/internet/MimeMessage;->mBcc:[Lcom/android/emailcommon/mail/Address;
 
     goto :goto_15
 
-    .line 352
+    .line 269
     :cond_69
     new-instance v3, Lcom/android/emailcommon/mail/MessagingException;
 
@@ -1733,10 +1552,10 @@
     .end annotation
 
     .prologue
-    .line 437
+    .line 322
     const/16 v0, 0xa
 
-    .line 438
+    .line 323
     .local v0, REPLY_TO_LENGTH:I
     if-eqz p1, :cond_7
 
@@ -1744,22 +1563,22 @@
 
     if-nez v1, :cond_10
 
-    .line 439
+    .line 324
     :cond_7
     const-string v1, "Reply-to"
 
     invoke-virtual {p0, v1}, Lcom/android/emailcommon/internet/MimeMessage;->removeHeader(Ljava/lang/String;)V
 
-    .line 440
+    .line 325
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/emailcommon/internet/MimeMessage;->mReplyTo:[Lcom/android/emailcommon/mail/Address;
 
-    .line 445
+    .line 330
     :goto_f
     return-void
 
-    .line 442
+    .line 327
     :cond_10
     const-string v1, "Reply-to"
 
@@ -1775,7 +1594,7 @@
 
     invoke-virtual {p0, v1, v2}, Lcom/android/emailcommon/internet/MimeMessage;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 443
+    .line 328
     iput-object p1, p0, Lcom/android/emailcommon/internet/MimeMessage;->mReplyTo:[Lcom/android/emailcommon/mail/Address;
 
     goto :goto_f
@@ -1791,7 +1610,7 @@
     .end annotation
 
     .prologue
-    .line 214
+    .line 172
     const-string v0, "Date"
 
     sget-object v1, Lcom/android/emailcommon/internet/MimeMessage;->DATE_FORMAT:Ljava/text/SimpleDateFormat;
@@ -1802,24 +1621,10 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/internet/MimeMessage;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 215
+    .line 173
     iput-object p1, p0, Lcom/android/emailcommon/internet/MimeMessage;->mSentDate:Ljava/util/Date;
 
-    .line 216
-    return-void
-.end method
-
-.method public setSize(I)V
-    .registers 2
-    .parameter "size"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 259
+    .line 174
     return-void
 .end method
 
@@ -1833,10 +1638,10 @@
     .end annotation
 
     .prologue
-    .line 388
+    .line 283
     const/16 v0, 0x9
 
-    .line 389
+    .line 284
     .local v0, HEADER_NAME_LENGTH:I
     const-string v1, "Subject"
 
@@ -1848,65 +1653,7 @@
 
     invoke-virtual {p0, v1, v2}, Lcom/android/emailcommon/internet/MimeMessage;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 390
-    return-void
-.end method
-
-.method public writeTo(Landroid/content/Context;JLjava/io/OutputStream;)V
-    .registers 8
-    .parameter "context"
-    .parameter "messageId"
-    .parameter "out"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 633
-    new-instance v0, Ljava/io/BufferedWriter;
-
-    new-instance v1, Ljava/io/OutputStreamWriter;
-
-    invoke-direct {v1, p4}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;)V
-
-    const/16 v2, 0x400
-
-    invoke-direct {v0, v1, v2}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
-
-    .line 635
-    .local v0, writer:Ljava/io/BufferedWriter;
-    invoke-virtual {p0}, Lcom/android/emailcommon/internet/MimeMessage;->getMessageId()Ljava/lang/String;
-
-    .line 636
-    invoke-direct {p0}, Lcom/android/emailcommon/internet/MimeMessage;->getMimeHeaders()Lcom/android/emailcommon/internet/MimeHeader;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p4}, Lcom/android/emailcommon/internet/MimeHeader;->writeTo(Ljava/io/OutputStream;)V
-
-    .line 639
-    const-string v1, "\r\n"
-
-    invoke-virtual {v0, v1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
-
-    .line 640
-    invoke-virtual {v0}, Ljava/io/BufferedWriter;->flush()V
-
-    .line 641
-    iget-object v1, p0, Lcom/android/emailcommon/internet/MimeMessage;->mBody:Lcom/android/emailcommon/mail/Body;
-
-    if-eqz v1, :cond_27
-
-    .line 642
-    iget-object v1, p0, Lcom/android/emailcommon/internet/MimeMessage;->mBody:Lcom/android/emailcommon/mail/Body;
-
-    invoke-interface {v1, p1, p2, p3, p4}, Lcom/android/emailcommon/mail/Body;->writeTo(Landroid/content/Context;JLjava/io/OutputStream;)V
-
-    .line 644
-    :cond_27
+    .line 285
     return-void
 .end method
 
@@ -1921,7 +1668,7 @@
     .end annotation
 
     .prologue
-    .line 616
+    .line 486
     new-instance v0, Ljava/io/BufferedWriter;
 
     new-instance v1, Ljava/io/OutputStreamWriter;
@@ -1932,36 +1679,36 @@
 
     invoke-direct {v0, v1, v2}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
 
-    .line 618
+    .line 488
     .local v0, writer:Ljava/io/BufferedWriter;
     invoke-virtual {p0}, Lcom/android/emailcommon/internet/MimeMessage;->getMessageId()Ljava/lang/String;
 
-    .line 619
+    .line 489
     invoke-direct {p0}, Lcom/android/emailcommon/internet/MimeMessage;->getMimeHeaders()Lcom/android/emailcommon/internet/MimeHeader;
 
     move-result-object v1
 
     invoke-virtual {v1, p1}, Lcom/android/emailcommon/internet/MimeHeader;->writeTo(Ljava/io/OutputStream;)V
 
-    .line 622
+    .line 492
     const-string v1, "\r\n"
 
     invoke-virtual {v0, v1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
-    .line 623
+    .line 493
     invoke-virtual {v0}, Ljava/io/BufferedWriter;->flush()V
 
-    .line 624
+    .line 494
     iget-object v1, p0, Lcom/android/emailcommon/internet/MimeMessage;->mBody:Lcom/android/emailcommon/mail/Body;
 
     if-eqz v1, :cond_27
 
-    .line 625
+    .line 495
     iget-object v1, p0, Lcom/android/emailcommon/internet/MimeMessage;->mBody:Lcom/android/emailcommon/mail/Body;
 
     invoke-interface {v1, p1}, Lcom/android/emailcommon/mail/Body;->writeTo(Ljava/io/OutputStream;)V
 
-    .line 627
+    .line 497
     :cond_27
     return-void
 .end method

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
         <RatingBar android:id="@id/dcb_param_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="1" android:layout_alignParentLeft="true" />
         <TextView android:gravity="center" android:id="@id/dcb_param_status_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/dcb_param_status" android:layout_toRightOf="@id/dcb_param_status" android:layout_alignTop="@id/dcb_param_status" android:layout_alignBottom="@id/dcb_param_status" />
         <RatingBar android:id="@id/get_prov_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="1" android:layout_below="@id/dcb_param_status" android:layout_alignParentLeft="true" />

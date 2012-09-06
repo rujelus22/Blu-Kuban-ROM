@@ -242,18 +242,18 @@
     <string name="account_intro_recommended_title">加入 Google</string>
     <string name="common_message">"Google 帳戶可讓您執行以下功能：
 
-"<li><ul>隨時隨地查看及整理所有資訊。</ul></li>"
+"<ul><li>隨時隨地查看及整理所有資訊。</li></ul>"
 
-"<li><ul>自動備份您的資料。</ul></li>"
+"<ul><li>自動備份您的資料。</li></ul>"
 
-"<li><ul>隨時隨地輕鬆使用各項 Google 服務。</ul></li></string>
+"<ul><li>隨時隨地輕鬆使用各項 Google 服務。</li></ul></string>
     <string name="add_account_message">" 您可以使用的「Google 帳戶」不止一個，例如家用帳戶和工作帳戶。輕觸 [登入] 或 [建立帳戶] 即可新增「Google 帳戶」"</string>
     <string name="account_intro_default_message">「Google 帳戶」可確保所有資料安全無虞，再也不會弄丟了。</string>
     <string name="account_intro_custom_endtext">您有 %s 了嗎？請立即登入。</string>
     <string name="account_intro_simple_message">您要加入現有的帳戶還是建立新帳戶？</string>
     <string name="learn_more_title"><annotation id="learn_more">瞭解詳情</annotation></string>
     <string name="learn_more_account_intro">"Google 帳戶可讓您執行以下功能：
-"<li><ul>隨時隨地查看及整理所有資訊。<li>自動備份您的資料，例如電子郵件、聯絡人、音樂和圖片。</li><li>隨時隨地輕鬆使用各項 Google 服務，包括 Google 聯絡人、Google 日曆、Google 地圖等多種服務。</li></ul></li></string>
+"<ul><li>隨時隨地查看及整理所有資訊。<li>自動備份您的資料，例如電子郵件、聯絡人、音樂和圖片。</li><li>隨時隨地輕鬆使用各項 Google 服務，包括 Google 聯絡人、Google 日曆、Google 地圖等多種服務。</li></li></ul></string>
     <string name="learn_more_account_intro_title">關於 Google 帳戶</string>
     <string name="learn_more_web_history">"「網頁記錄」會根據您搜尋過的項目和造訪過的網站來調整搜尋結果，提供更貼近您需求的 Google 服務。
 

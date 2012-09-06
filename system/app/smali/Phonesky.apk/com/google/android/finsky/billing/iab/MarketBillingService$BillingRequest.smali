@@ -52,7 +52,7 @@
 
     const/4 v2, 0x0
 
-    .line 175
+    .line 149
     new-instance v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
 
     const-string v1, "CHECK_BILLING_SUPPORTED"
@@ -61,7 +61,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->CHECK_BILLING_SUPPORTED:Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
 
-    .line 176
+    .line 150
     new-instance v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
 
     const-string v1, "REQUEST_PURCHASE"
@@ -70,7 +70,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->REQUEST_PURCHASE:Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
 
-    .line 177
+    .line 151
     new-instance v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
 
     const-string v1, "GET_PURCHASE_INFORMATION"
@@ -79,7 +79,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->GET_PURCHASE_INFORMATION:Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
 
-    .line 178
+    .line 152
     new-instance v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
 
     const-string v1, "RESTORE_TRANSACTIONS"
@@ -88,7 +88,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->RESTORE_TRANSACTIONS:Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
 
-    .line 179
+    .line 153
     new-instance v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
 
     const-string v1, "CONFIRM_NOTIFICATIONS"
@@ -97,7 +97,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->CONFIRM_NOTIFICATIONS:Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
 
-    .line 174
+    .line 148
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
@@ -138,7 +138,7 @@
     .end annotation
 
     .prologue
-    .line 174
+    .line 148
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -149,7 +149,7 @@
     .parameter
 
     .prologue
-    .line 174
+    .line 148
     const-class v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -165,7 +165,7 @@
     .registers 1
 
     .prologue
-    .line 174
+    .line 148
     sget-object v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->$VALUES:[Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
 
     invoke-virtual {v0}, [Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->clone()Ljava/lang/Object;

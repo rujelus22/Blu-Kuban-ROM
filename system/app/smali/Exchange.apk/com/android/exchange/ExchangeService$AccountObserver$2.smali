@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 1964
+    .line 806
     iput-object p1, p0, Lcom/android/exchange/ExchangeService$AccountObserver$2;->this$1:Lcom/android/exchange/ExchangeService$AccountObserver;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,12 +41,12 @@
     .registers 2
 
     .prologue
-    .line 1966
+    .line 808
     iget-object v0, p0, Lcom/android/exchange/ExchangeService$AccountObserver$2;->this$1:Lcom/android/exchange/ExchangeService$AccountObserver;
 
     #calls: Lcom/android/exchange/ExchangeService$AccountObserver;->onAccountChanged()V
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService$AccountObserver;->access$1300(Lcom/android/exchange/ExchangeService$AccountObserver;)V
+    invoke-static {v0}, Lcom/android/exchange/ExchangeService$AccountObserver;->access$600(Lcom/android/exchange/ExchangeService$AccountObserver;)V
 
-    .line 1967
+    .line 809
     return-void
 .end method

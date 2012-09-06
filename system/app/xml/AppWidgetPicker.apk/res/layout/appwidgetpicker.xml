@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:paddingTop="2.0dip" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/appwidgetpicker_imageview" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="2.0dip" android:layout_marginBottom="2.0dip" android:src="@drawable/icon" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="2.0dip" android:layout_marginBottom="2.0dip" android:layout_toRightOf="@id/appwidgetpicker_imageview" android:layout_centerVertical="true">
+        <TextView android:textSize="20.0dip" android:textColor="#ffffffff" android:id="@id/appwidgetpicker_textview" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Foowidget" />
+        <TextView android:textSize="13.0dip" android:textColor="#ff155496" android:id="@id/appwidgetpicker_count" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="(4 widgets)" />
+    </LinearLayout>
+</RelativeLayout>

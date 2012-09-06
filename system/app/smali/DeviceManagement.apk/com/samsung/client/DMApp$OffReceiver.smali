@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 2795
+    .line 2781
     iput-object p1, p0, Lcom/samsung/client/DMApp$OffReceiver;->this$0:Lcom/samsung/client/DMApp;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2795
+    .line 2781
     invoke-direct {p0, p1}, Lcom/samsung/client/DMApp$OffReceiver;-><init>(Lcom/samsung/client/DMApp;)V
 
     return-void
@@ -52,7 +52,7 @@
     .parameter "arg1"
 
     .prologue
-    .line 2799
+    .line 2785
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -65,23 +65,23 @@
 
     if-eqz v0, :cond_11
 
-    .line 2800
+    .line 2786
     monitor-enter p0
 
-    .line 2801
+    .line 2787
     const/4 v0, 0x0
 
     :try_start_e
     sput-boolean v0, Lcom/samsung/client/SanService;->needCheckHomeScreen:Z
 
-    .line 2802
+    .line 2788
     monitor-exit p0
 
-    .line 2804
+    .line 2790
     :cond_11
     return-void
 
-    .line 2802
+    .line 2788
     :catchall_12
     move-exception v0
 

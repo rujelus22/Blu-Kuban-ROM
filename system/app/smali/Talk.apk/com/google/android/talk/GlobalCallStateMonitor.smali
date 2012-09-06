@@ -55,7 +55,7 @@
 
     .prologue
     .line 26
-    iget-object v0, p0, Lcom/google/android/talk/GlobalCallStateMonitor;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/google/android/videochat/CallStateClient;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -87,7 +87,7 @@
 
     .prologue
     .line 132
-    iget-object v0, p0, Lcom/google/android/talk/GlobalCallStateMonitor;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/google/android/videochat/CallStateClient;->mContext:Landroid/content/Context;
 
     const-string v1, "phone"
 
@@ -112,7 +112,7 @@
 
     .prologue
     .line 137
-    iget-object v0, p0, Lcom/google/android/talk/GlobalCallStateMonitor;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/google/android/videochat/CallStateClient;->mContext:Landroid/content/Context;
 
     const-string v1, "phone"
 
@@ -226,7 +226,7 @@
     invoke-virtual {v0, v3, v4}, Lcom/google/android/talk/videochat/AudioFocusManager;->requestAudioFocus(II)V
 
     .line 73
-    iget-object v0, p0, Lcom/google/android/talk/GlobalCallStateMonitor;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/google/android/videochat/CallStateClient;->mContext:Landroid/content/Context;
 
     invoke-static {v0, p1}, Lcom/google/android/talk/videochat/RingerService;->startServiceForOutgoingRinger(Landroid/content/Context;Ljava/lang/String;)V
 

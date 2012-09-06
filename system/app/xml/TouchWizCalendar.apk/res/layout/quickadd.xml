@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<EditText android:textSize="16.0sp" android:gravity="top|left|center" android:id="@id/edit" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:paddingRight="10.0dip" android:paddingBottom="10.0dip" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.669983dip" android:layout_marginTop="6.669983dip" android:layout_marginRight="6.669983dip" android:layout_marginBottom="6.669983dip" android:maxHeight="98.0dip" android:hint="@string/quick_add_hint" android:capitalize="sentences" android:imeOptions="actionDone"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

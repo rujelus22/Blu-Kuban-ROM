@@ -1,199 +1,54 @@
-.class public Ls/B;
-.super Ls/f;
+.class Ls/b;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final c:LaP/f;
-
-.field private final d:LaP/f;
-
-.field private e:Landroid/location/Location;
-
-.field private f:Z
-
-.field private g:F
+.field final synthetic a:Ls/a;
 
 
 # direct methods
-.method public constructor <init>(Ls/c;)V
-    .registers 5
+.method constructor <init>(Ls/a;)V
+    .registers 2
+    .parameter
 
-    const/4 v2, 0x0
+    .prologue
+    .line 83
+    iput-object p1, p0, Ls/b;->a:Ls/a;
 
-    const-string v0, "driveabout_orientation_filter"
-
-    invoke-direct {p0, v0, p1}, Ls/f;-><init>(Ljava/lang/String;Ls/c;)V
-
-    new-instance v0, LaP/f;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, LaP/f;-><init>(Z)V
-
-    iput-object v0, p0, Ls/B;->c:LaP/f;
-
-    new-instance v0, LaP/f;
-
-    invoke-direct {v0, v2}, LaP/f;-><init>(Z)V
-
-    iput-object v0, p0, Ls/B;->d:LaP/f;
-
-    iput-boolean v2, p0, Ls/B;->f:Z
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Ls/B;->g:F
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ls/C;)V
-    .registers 7
+.method public run()V
+    .registers 5
 
-    new-instance v1, Ls/C;
+    .prologue
+    .line 86
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    invoke-direct {v1, p1}, Ls/C;-><init>(Ls/C;)V
+    move-result-wide v0
 
-    const-string v0, "driveabout_orientation_filter"
-
-    invoke-virtual {v1, v0}, Ls/C;->a(Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Ls/C;->c()F
-
-    move-result v2
-
-    iget-boolean v0, p0, Ls/B;->f:Z
-
-    if-eqz v0, :cond_64
-
-    const/high16 v0, 0x41f0
-
-    :goto_14
-    iget-object v3, p0, Ls/B;->e:Landroid/location/Location;
-
-    if-eqz v3, :cond_67
-
-    iget-object v3, p0, Ls/B;->e:Landroid/location/Location;
-
-    invoke-virtual {v3}, Landroid/location/Location;->hasBearing()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_67
-
-    iget v3, p0, Ls/B;->g:F
-
-    const v4, 0x3e4ccccd
-
-    cmpl-float v3, v3, v4
-
-    if-lez v3, :cond_67
-
-    iget-object v3, p0, Ls/B;->e:Landroid/location/Location;
-
-    invoke-virtual {v3}, Landroid/location/Location;->getBearing()F
-
-    move-result v3
-
-    invoke-static {v3, v2}, Lt/N;->a(FF)F
-
-    move-result v2
-
-    cmpg-float v0, v2, v0
-
-    if-gez v0, :cond_67
-
-    iget-object v0, p0, Ls/B;->c:LaP/f;
-
-    invoke-virtual {p1}, Ls/C;->b()J
+    .line 87
+    invoke-static {}, Lcom/google/android/maps/driveabout/app/NavigationActivity;->b()J
 
     move-result-wide v2
 
-    iget-object v4, p0, Ls/B;->e:Landroid/location/Location;
+    sub-long/2addr v0, v2
 
-    invoke-virtual {v4}, Landroid/location/Location;->getBearing()F
+    long-to-int v0, v0
 
-    move-result v4
+    .line 89
+    const-string v1, "0"
 
-    invoke-virtual {v0, v2, v3, v4}, LaP/f;->a(JF)F
+    invoke-static {v1, v0}, Lcom/google/android/maps/driveabout/app/dh;->a(Ljava/lang/String;I)V
 
-    move-result v0
-
-    const/4 v2, 0x1
-
-    iput-boolean v2, p0, Ls/B;->f:Z
-
-    :goto_4a
-    invoke-virtual {v1, v0}, Ls/C;->a(F)V
-
-    iget-object v0, p0, Ls/B;->d:LaP/f;
-
-    invoke-virtual {p1}, Ls/C;->b()J
-
-    move-result-wide v2
-
-    invoke-virtual {p1}, Ls/C;->d()F
-
-    move-result v4
-
-    invoke-virtual {v0, v2, v3, v4}, LaP/f;->a(JF)F
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Ls/C;->b(F)V
-
-    iget-object v0, p0, Ls/B;->b:Ls/c;
-
-    invoke-interface {v0, v1}, Ls/c;->a(Ls/C;)V
-
-    return-void
-
-    :cond_64
-    const/high16 v0, 0x41c8
-
-    goto :goto_14
-
-    :cond_67
-    iget-object v0, p0, Ls/B;->c:LaP/f;
-
-    invoke-virtual {p1}, Ls/C;->b()J
-
-    move-result-wide v2
-
-    invoke-virtual {p1}, Ls/C;->c()F
-
-    move-result v4
-
-    invoke-virtual {v0, v2, v3, v4}, LaP/f;->a(JF)F
-
-    move-result v0
-
-    const/4 v2, 0x0
-
-    iput-boolean v2, p0, Ls/B;->f:Z
-
-    goto :goto_4a
-.end method
-
-.method public onLocationChanged(Landroid/location/Location;)V
-    .registers 3
-
-    iput-object p1, p0, Ls/B;->e:Landroid/location/Location;
-
-    invoke-virtual {p1}, Landroid/location/Location;->hasSpeed()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_e
-
-    invoke-virtual {p1}, Landroid/location/Location;->getSpeed()F
-
-    move-result v0
-
-    iput v0, p0, Ls/B;->g:F
-
-    :cond_e
+    .line 91
     return-void
 .end method

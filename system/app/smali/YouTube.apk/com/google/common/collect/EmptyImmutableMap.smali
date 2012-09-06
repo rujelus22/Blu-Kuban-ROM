@@ -39,9 +39,12 @@
 .method public final containsKey(Ljava/lang/Object;)Z
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 50
+    .line 51
     const/4 v0, 0x0
 
     return v0
@@ -50,9 +53,12 @@
 .method public final containsValue(Ljava/lang/Object;)Z
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 54
+    .line 55
     const/4 v0, 0x0
 
     return v0
@@ -62,7 +68,7 @@
     .registers 2
 
     .prologue
-    .line 58
+    .line 59
     invoke-static {}, Lcom/google/common/collect/ImmutableSet;->of()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -85,22 +91,25 @@
 .method public final equals(Ljava/lang/Object;)Z
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 70
+    .line 71
     instance-of v0, p1, Ljava/util/Map;
 
     if-eqz v0, :cond_b
 
-    .line 71
+    .line 72
     check-cast p1, Ljava/util/Map;
 
-    .line 72
+    .line 73
     invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
 
     move-result v0
 
-    .line 74
+    .line 75
     :goto_a
     return v0
 
@@ -113,6 +122,9 @@
 .method public final get(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     .line 38
@@ -125,7 +137,7 @@
     .registers 2
 
     .prologue
-    .line 78
+    .line 83
     const/4 v0, 0x0
 
     return v0
@@ -135,8 +147,18 @@
     .registers 2
 
     .prologue
-    .line 46
+    .line 47
     const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method final isPartialView()Z
+    .registers 2
+
+    .prologue
+    .line 79
+    const/4 v0, 0x0
 
     return v0
 .end method
@@ -145,7 +167,7 @@
     .registers 2
 
     .prologue
-    .line 62
+    .line 63
     invoke-static {}, Lcom/google/common/collect/ImmutableSet;->of()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -169,7 +191,7 @@
     .registers 2
 
     .prologue
-    .line 86
+    .line 91
     sget-object v0, Lcom/google/common/collect/EmptyImmutableMap;->INSTANCE:Lcom/google/common/collect/EmptyImmutableMap;
 
     return-object v0
@@ -179,7 +201,7 @@
     .registers 2
 
     .prologue
-    .line 42
+    .line 43
     const/4 v0, 0x0
 
     return v0
@@ -189,7 +211,7 @@
     .registers 2
 
     .prologue
-    .line 82
+    .line 87
     const-string v0, "{}"
 
     return-object v0
@@ -199,7 +221,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 67
     sget-object v0, Lcom/google/common/collect/ImmutableCollection;->EMPTY_IMMUTABLE_COLLECTION:Lcom/google/common/collect/ImmutableCollection;
 
     return-object v0

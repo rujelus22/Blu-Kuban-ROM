@@ -60,7 +60,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/common/collect/bu;->a(I)I
+    invoke-static {v0}, Lcom/google/common/collect/df;->a(I)I
 
     move-result v0
 

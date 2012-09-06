@@ -67,6 +67,92 @@
     goto :goto_8
 .end method
 
+.method public static newInstance(Landroid/app/Fragment;Lcom/android/emailcommon/provider/Account;)Lcom/android/email/activity/InsertQuickResponseDialog;
+    .registers 10
+    .parameter "callbackFragment"
+    .parameter "account"
+
+    .prologue
+    .line 67
+    new-instance v3, Lcom/android/email/activity/InsertQuickResponseDialog;
+
+    invoke-direct {v3}, Lcom/android/email/activity/InsertQuickResponseDialog;-><init>()V
+
+    .line 71
+    .local v3, dialog:Lcom/android/email/activity/InsertQuickResponseDialog;
+    if-eqz p0, :cond_f
+
+    .line 73
+    :try_start_7
+    move-object v0, p0
+
+    check-cast v0, Lcom/android/email/activity/InsertQuickResponseDialog$Callback;
+
+    move-object v2, v0
+    :try_end_b
+    .catch Ljava/lang/ClassCastException; {:try_start_7 .. :try_end_b} :catch_1d
+
+    .line 78
+    .local v2, callback:Lcom/android/email/activity/InsertQuickResponseDialog$Callback;
+    const/4 v5, 0x0
+
+    invoke-virtual {v3, p0, v5}, Lcom/android/email/activity/InsertQuickResponseDialog;->setTargetFragment(Landroid/app/Fragment;I)V
+
+    .line 81
+    .end local v2           #callback:Lcom/android/email/activity/InsertQuickResponseDialog$Callback;
+    :cond_f
+    new-instance v1, Landroid/os/Bundle;
+
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+
+    .line 82
+    .local v1, args:Landroid/os/Bundle;
+    const-string v5, "account"
+
+    invoke-virtual {v1, v5, p1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    .line 83
+    invoke-virtual {v3, v1}, Lcom/android/email/activity/InsertQuickResponseDialog;->setArguments(Landroid/os/Bundle;)V
+
+    .line 84
+    return-object v3
+
+    .line 74
+    .end local v1           #args:Landroid/os/Bundle;
+    :catch_1d
+    move-exception v4
+
+    .line 75
+    .local v4, e:Ljava/lang/ClassCastException;
+    new-instance v5, Ljava/lang/ClassCastException;
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0}, Landroid/app/Fragment;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, " must implement Callback"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-direct {v5, v6}, Ljava/lang/ClassCastException;-><init>(Ljava/lang/String;)V
+
+    throw v5
+.end method
+
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
@@ -95,16 +181,16 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 91
+    .line 90
     invoke-virtual {p0}, Lcom/android/email/activity/InsertQuickResponseDialog;->getTargetFragment()Landroid/app/Fragment;
 
     move-result-object v13
 
-    .line 92
+    .line 91
     .local v13, targetFragment:Landroid/app/Fragment;
     if-eqz v13, :cond_d
 
-    .line 95
+    .line 94
     :try_start_7
     invoke-virtual {p0}, Lcom/android/email/activity/InsertQuickResponseDialog;->getActivity()Landroid/app/Activity;
 
@@ -114,19 +200,19 @@
     :try_end_d
     .catch Ljava/lang/ClassCastException; {:try_start_7 .. :try_end_d} :catch_62
 
-    .line 102
+    .line 101
     :cond_d
     invoke-virtual {p0}, Lcom/android/email/activity/InsertQuickResponseDialog;->getActivity()Landroid/app/Activity;
 
     move-result-object v5
 
-    .line 103
+    .line 102
     .local v5, context:Landroid/content/Context;
     new-instance v10, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v10, v5}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 105
+    .line 104
     .local v10, b:Landroid/app/AlertDialog$Builder;
     new-instance v0, Landroid/widget/ListView;
 
@@ -134,7 +220,7 @@
 
     iput-object v0, p0, Lcom/android/email/activity/InsertQuickResponseDialog;->mQuickResponsesView:Landroid/widget/ListView;
 
-    .line 107
+    .line 106
     invoke-virtual {p0}, Lcom/android/email/activity/InsertQuickResponseDialog;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -145,22 +231,22 @@
 
     move-result-object v9
 
-    check-cast v9, Lcom/android/emailcommon/provider/EmailContent$Account;
+    check-cast v9, Lcom/android/emailcommon/provider/Account;
 
-    .line 108
-    .local v9, account:Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 107
+    .local v9, account:Lcom/android/emailcommon/provider/Account;
     new-instance v0, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
 
     invoke-direct {v0}, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;-><init>()V
 
     iput-object v0, p0, Lcom/android/email/activity/InsertQuickResponseDialog;->mTaskTracker:Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
 
-    .line 109
+    .line 108
     new-instance v0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$QuickResponseFinder;
 
     iget-object v1, p0, Lcom/android/email/activity/InsertQuickResponseDialog;->mTaskTracker:Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
 
-    iget-wide v2, v9, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v2, v9, Lcom/android/emailcommon/provider/Account;->mId:J
 
     iget-object v4, p0, Lcom/android/email/activity/InsertQuickResponseDialog;->mQuickResponsesView:Landroid/widget/ListView;
 
@@ -174,12 +260,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$QuickResponseFinder;->executeParallel([Ljava/lang/Object;)Lcom/android/emailcommon/utility/EmailAsyncTask;
 
-    .line 112
+    .line 111
     invoke-virtual {p0}, Lcom/android/email/activity/InsertQuickResponseDialog;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f0805e5
+    const v1, 0x7f08006d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -195,7 +281,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f080043
+    const v1, 0x7f08000a
 
     invoke-virtual {v0, v1, p0}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -206,14 +292,14 @@
 
     return-object v0
 
-    .line 96
+    .line 95
     .end local v5           #context:Landroid/content/Context;
-    .end local v9           #account:Lcom/android/emailcommon/provider/EmailContent$Account;
+    .end local v9           #account:Lcom/android/emailcommon/provider/Account;
     .end local v10           #b:Landroid/app/AlertDialog$Builder;
     :catch_62
     move-exception v12
 
-    .line 97
+    .line 96
     .local v12, e:Ljava/lang/ClassCastException;
     new-instance v0, Ljava/lang/ClassCastException;
 

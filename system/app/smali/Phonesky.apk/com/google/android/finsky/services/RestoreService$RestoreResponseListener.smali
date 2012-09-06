@@ -40,243 +40,331 @@
     .parameter "accountName"
 
     .prologue
-    .line 282
+    .line 293
     iput-object p1, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 283
+    .line 294
     iput-object p2, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->mAccountName:Ljava/lang/String;
 
-    .line 284
+    .line 295
     return-void
 .end method
 
 
 # virtual methods
 .method public onResponse(Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;)V
-    .registers 15
-    .parameter "response"
+    .registers 16
+    .parameter
 
     .prologue
-    const/4 v12, 0x1
+    const/4 v3, 0x0
 
-    const/4 v6, 0x0
+    const/4 v8, 0x1
 
-    .line 289
-    iget-object v1, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
+    const/4 v11, 0x0
+
+    .line 300
+    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
 
     #setter for: Lcom/google/android/finsky/services/RestoreService;->mDebugCountAlreadyTracked:I
-    invoke-static {v1, v6}, Lcom/google/android/finsky/services/RestoreService;->access$002(Lcom/google/android/finsky/services/RestoreService;I)I
+    invoke-static {v0, v11}, Lcom/google/android/finsky/services/RestoreService;->access$202(Lcom/google/android/finsky/services/RestoreService;I)I
 
-    .line 290
-    iget-object v1, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
+    .line 301
+    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
 
     #setter for: Lcom/google/android/finsky/services/RestoreService;->mDebugCountInstalledOtherAccount:I
-    invoke-static {v1, v6}, Lcom/google/android/finsky/services/RestoreService;->access$102(Lcom/google/android/finsky/services/RestoreService;I)I
+    invoke-static {v0, v11}, Lcom/google/android/finsky/services/RestoreService;->access$302(Lcom/google/android/finsky/services/RestoreService;I)I
 
-    .line 291
-    iget-object v1, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
+    .line 302
+    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
 
-    #setter for: Lcom/google/android/finsky/services/RestoreService;->mDebugCountLowerVersion:I
-    invoke-static {v1, v6}, Lcom/google/android/finsky/services/RestoreService;->access$202(Lcom/google/android/finsky/services/RestoreService;I)I
+    #setter for: Lcom/google/android/finsky/services/RestoreService;->mDebugCountAlreadyInstalled:I
+    invoke-static {v0, v11}, Lcom/google/android/finsky/services/RestoreService;->access$402(Lcom/google/android/finsky/services/RestoreService;I)I
 
-    .line 293
+    .line 304
     invoke-virtual {p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;->getAssetList()Ljava/util/List;
 
-    move-result-object v8
+    move-result-object v12
 
-    .line 295
-    .local v8, assets:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;>;"
+    .line 306
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/finsky/FinskyApp;->getInstaller()Lcom/google/android/finsky/receivers/Installer;
 
     move-result-object v0
 
-    .line 297
-    .local v0, installer:Lcom/google/android/finsky/receivers/Installer;
-    invoke-interface {v8}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getInstaller()Lcom/google/android/finsky/receivers/Installer;
 
-    move-result-object v9
+    move-result-object v0
 
-    .local v9, i$:Ljava/util/Iterator;
-    :cond_21
-    :goto_21
-    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
+    .line 308
+    invoke-interface {v12}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result v1
+    move-result-object v13
 
-    if-eqz v1, :cond_6c
+    move v10, v11
 
-    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;
-
-    .line 299
-    .local v7, a:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;
-    invoke-virtual {v7}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;->getInstallAsset()Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;
-
-    move-result-object v10
-
-    .line 300
-    .local v10, ia:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;
-    if-nez v10, :cond_3b
-
-    .line 301
-    const-string v1, "Unexpected null InstallAsset for restore asset."
-
-    new-array v2, v6, [Ljava/lang/Object;
-
-    invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_21
-
-    .line 305
-    :cond_3b
-    iget-object v1, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->mAccountName:Ljava/lang/String;
-
-    invoke-static {v7, v1, v6}, Lcom/google/android/finsky/receivers/Installer;->packagePropertiesFromResponseAsset(Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;Ljava/lang/String;Z)Lcom/google/android/finsky/download/Download$PackageProperties;
-
-    move-result-object v3
-
-    .line 309
-    .local v3, properties:Lcom/google/android/finsky/download/Download$PackageProperties;
-    iget-object v1, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
-
-    iget-object v2, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->mAccountName:Ljava/lang/String;
-
-    #calls: Lcom/google/android/finsky/services/RestoreService;->shouldRestore(Lcom/google/android/finsky/download/Download$PackageProperties;Ljava/lang/String;)Z
-    invoke-static {v1, v3, v2}, Lcom/google/android/finsky/services/RestoreService;->access$300(Lcom/google/android/finsky/services/RestoreService;Lcom/google/android/finsky/download/Download$PackageProperties;Ljava/lang/String;)Z
+    :cond_23
+    :goto_23
+    invoke-interface {v13}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_71
 
-    .line 313
-    invoke-virtual {v10}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getAssetPackage()Ljava/lang/String;
-
-    move-result-object v11
-
-    .line 314
-    .local v11, packageName:Ljava/lang/String;
-    iget-object v1, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
-
-    #getter for: Lcom/google/android/finsky/services/RestoreService;->mTracker:Lcom/google/android/finsky/services/RestoreService$RestoreTracker;
-    invoke-static {v1}, Lcom/google/android/finsky/services/RestoreService;->access$400(Lcom/google/android/finsky/services/RestoreService;)Lcom/google/android/finsky/services/RestoreService$RestoreTracker;
+    invoke-interface {v13}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {v1, v11}, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->start(Ljava/lang/String;)V
+    move-object v4, v1
 
-    .line 316
-    invoke-virtual {v10}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getBlobUrl()Ljava/lang/String;
+    check-cast v4, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;
 
-    move-result-object v1
-
-    invoke-virtual {v10}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getAssetName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v10}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getDownloadAuthCookieName()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v10}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getDownloadAuthCookieValue()Ljava/lang/String;
+    .line 310
+    invoke-virtual {v4}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;->getInstallAsset()Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;
 
     move-result-object v5
 
-    invoke-virtual/range {v0 .. v6}, Lcom/google/android/finsky/receivers/Installer;->downloadAndInstallAsset(Ljava/lang/String;Ljava/lang/String;Lcom/google/android/finsky/download/Download$PackageProperties;Ljava/lang/String;Ljava/lang/String;Z)V
+    .line 311
+    if-nez v5, :cond_3e
 
-    goto :goto_21
+    .line 312
+    const-string v1, "Unexpected null InstallAsset for restore asset."
+
+    new-array v2, v11, [Ljava/lang/Object;
+
+    invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    goto :goto_23
+
+    .line 316
+    :cond_3e
+    invoke-virtual {v5}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getAssetPackage()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 317
+    invoke-virtual {v5}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getVersionCode()I
+
+    move-result v2
+
+    .line 318
+    invoke-static {v4}, Lcom/google/android/finsky/local/AssetUtils;->assetResponseToDeliveryData(Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;)Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;
+
+    move-result-object v4
+
+    .line 321
+    iget-object v6, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
+
+    iget-object v7, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->mAccountName:Ljava/lang/String;
+
+    #calls: Lcom/google/android/finsky/services/RestoreService;->shouldRestore(Ljava/lang/String;ILcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;Ljava/lang/String;)Z
+    invoke-static {v6, v1, v2, v4, v7}, Lcom/google/android/finsky/services/RestoreService;->access$500(Lcom/google/android/finsky/services/RestoreService;Ljava/lang/String;ILcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_23
 
     .line 325
-    .end local v3           #properties:Lcom/google/android/finsky/download/Download$PackageProperties;
-    .end local v7           #a:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;
-    .end local v10           #ia:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;
-    .end local v11           #packageName:Ljava/lang/String;
-    :cond_6c
-    const-string v1, "Attempted to restore %d assets."
-
-    new-array v2, v12, [Ljava/lang/Object;
-
-    invoke-interface {v8}, Ljava/util/List;->size()I
-
-    move-result v4
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    aput-object v4, v2, v6
-
-    invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 326
-    const-string v1, "  Skipped (already tracked): %d"
-
-    new-array v2, v12, [Ljava/lang/Object;
-
     iget-object v4, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
 
-    #getter for: Lcom/google/android/finsky/services/RestoreService;->mDebugCountAlreadyTracked:I
-    invoke-static {v4}, Lcom/google/android/finsky/services/RestoreService;->access$000(Lcom/google/android/finsky/services/RestoreService;)I
-
-    move-result v4
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    #getter for: Lcom/google/android/finsky/services/RestoreService;->mTracker:Lcom/google/android/finsky/services/RestoreService$RestoreTracker;
+    invoke-static {v4}, Lcom/google/android/finsky/services/RestoreService;->access$600(Lcom/google/android/finsky/services/RestoreService;)Lcom/google/android/finsky/services/RestoreService$RestoreTracker;
 
     move-result-object v4
 
-    aput-object v4, v2, v6
-
-    invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 327
-    const-string v1, "  Skipped (other account): %d"
-
-    new-array v2, v12, [Ljava/lang/Object;
-
-    iget-object v4, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
-
-    #getter for: Lcom/google/android/finsky/services/RestoreService;->mDebugCountInstalledOtherAccount:I
-    invoke-static {v4}, Lcom/google/android/finsky/services/RestoreService;->access$100(Lcom/google/android/finsky/services/RestoreService;)I
-
-    move-result v4
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    aput-object v4, v2, v6
-
-    invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 328
-    const-string v1, "  Skipped (lower version): %d"
-
-    new-array v2, v12, [Ljava/lang/Object;
-
-    iget-object v4, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
-
-    #getter for: Lcom/google/android/finsky/services/RestoreService;->mDebugCountLowerVersion:I
-    invoke-static {v4}, Lcom/google/android/finsky/services/RestoreService;->access$200(Lcom/google/android/finsky/services/RestoreService;)I
-
-    move-result v4
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    aput-object v4, v2, v6
-
-    invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v4, v1}, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->start(Ljava/lang/String;)V
 
     .line 329
+    invoke-interface {v0, v1, v8, v11}, Lcom/google/android/finsky/receivers/Installer;->setVisibility(Ljava/lang/String;ZZ)V
+
+    .line 334
+    iget-object v4, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->mAccountName:Ljava/lang/String;
+
+    invoke-virtual {v5}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getAssetName()Ljava/lang/String;
+
+    move-result-object v7
+
+    const-string v9, "restore"
+
+    move-object v5, v3
+
+    move-object v6, v3
+
+    invoke-interface/range {v0 .. v9}, Lcom/google/android/finsky/receivers/Installer;->requestInstall(Ljava/lang/String;ILcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;)V
+
+    .line 344
+    add-int/lit8 v1, v10, 0x1
+
+    move v10, v1
+
+    .line 345
+    goto :goto_23
+
+    .line 347
+    :cond_71
+    const-string v0, "Attempted to restore %d assets."
+
+    new-array v1, v8, [Ljava/lang/Object;
+
+    invoke-interface {v12}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v1, v11
+
+    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 348
+    const-string v0, "  Skipped (already tracked): %d"
+
+    new-array v1, v8, [Ljava/lang/Object;
+
+    iget-object v2, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
+
+    #getter for: Lcom/google/android/finsky/services/RestoreService;->mDebugCountAlreadyTracked:I
+    invoke-static {v2}, Lcom/google/android/finsky/services/RestoreService;->access$200(Lcom/google/android/finsky/services/RestoreService;)I
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v1, v11
+
+    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 349
+    const-string v0, "  Skipped (other account): %d"
+
+    new-array v1, v8, [Ljava/lang/Object;
+
+    iget-object v2, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
+
+    #getter for: Lcom/google/android/finsky/services/RestoreService;->mDebugCountInstalledOtherAccount:I
+    invoke-static {v2}, Lcom/google/android/finsky/services/RestoreService;->access$300(Lcom/google/android/finsky/services/RestoreService;)I
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v1, v11
+
+    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 350
+    const-string v0, "  Skipped (already installed): %d"
+
+    new-array v1, v8, [Ljava/lang/Object;
+
+    iget-object v2, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
+
+    #getter for: Lcom/google/android/finsky/services/RestoreService;->mDebugCountAlreadyInstalled:I
+    invoke-static {v2}, Lcom/google/android/finsky/services/RestoreService;->access$400(Lcom/google/android/finsky/services/RestoreService;)I
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v1, v11
+
+    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 354
+    if-lez v10, :cond_fc
+
+    .line 355
+    const-string v0, "  Posted for deferred download/install: %d"
+
+    new-array v1, v8, [Ljava/lang/Object;
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v1, v11
+
+    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 356
+    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/services/RestoreService;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    .line 357
+    const-string v0, "alarm"
+
+    invoke-virtual {v2, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/AlarmManager;
+
+    .line 358
+    sget-object v1, Lcom/google/android/finsky/config/G;->appRestoreHoldoffMs:Lcom/google/android/finsky/config/GservicesValue;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Long;
+
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v3
+
+    .line 359
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v5
+
+    add-long/2addr v3, v5
+
+    .line 360
+    new-instance v1, Landroid/content/Intent;
+
+    const-class v5, Lcom/google/android/finsky/services/RestoreService;
+
+    invoke-direct {v1, v2, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 361
+    const-string v5, "kick_installer"
+
+    invoke-virtual {v1, v5, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    .line 362
+    invoke-static {v2, v11, v1, v11}, Landroid/app/PendingIntent;->getService(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v1
+
+    .line 363
+    invoke-virtual {v0, v11, v3, v4, v1}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
+
+    .line 365
+    :cond_fc
+    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->this$0:Lcom/google/android/finsky/services/RestoreService;
+
+    #getter for: Lcom/google/android/finsky/services/RestoreService;->mTracker:Lcom/google/android/finsky/services/RestoreService$RestoreTracker;
+    invoke-static {v0}, Lcom/google/android/finsky/services/RestoreService;->access$600(Lcom/google/android/finsky/services/RestoreService;)Lcom/google/android/finsky/services/RestoreService$RestoreTracker;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/finsky/services/RestoreService$RestoreResponseListener;->mAccountName:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->finishAccount(Ljava/lang/String;)V
+
+    .line 366
     return-void
 .end method
 
@@ -285,7 +373,7 @@
     .parameter "x0"
 
     .prologue
-    .line 279
+    .line 290
     check-cast p1, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;
 
     .end local p1

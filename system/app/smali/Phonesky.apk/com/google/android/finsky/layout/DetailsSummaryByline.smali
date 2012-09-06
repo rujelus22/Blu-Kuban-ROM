@@ -12,11 +12,11 @@
 # instance fields
 .field private mFirstRow:Landroid/widget/LinearLayout;
 
-.field private mFullMode:Z
-
 .field private mInflater:Landroid/view/LayoutInflater;
 
 .field private mSecondRow:Landroid/widget/LinearLayout;
+
+.field private mSingleColumnMode:Z
 
 
 # direct methods
@@ -57,7 +57,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f090009
+    const v1, 0x7f090007
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -68,7 +68,7 @@
     const/4 v0, 0x1
 
     :goto_11
-    iput-boolean v0, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFullMode:Z
+    iput-boolean v0, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSingleColumnMode:Z
 
     .line 56
     return-void
@@ -81,352 +81,555 @@
 .end method
 
 .method private configureContentDescription(Lcom/google/android/finsky/api/model/Document;)V
-    .registers 16
+    .registers 20
     .parameter "document"
 
     .prologue
     .line 94
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->hasRating()Z
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/finsky/api/model/Document;->hasRating()Z
 
-    move-result v7
+    move-result v11
 
-    if-eqz v7, :cond_60
+    if-eqz v11, :cond_62
 
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getRatingCount()J
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/finsky/api/model/Document;->getRatingCount()J
 
-    move-result-wide v4
+    move-result-wide v8
 
     .line 96
-    .local v4, ratingCount:J
+    .local v8, ratingCount:J
     :goto_a
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->hasRating()Z
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/finsky/api/model/Document;->hasRating()Z
 
-    move-result v7
+    move-result v11
 
-    if-eqz v7, :cond_63
+    if-eqz v11, :cond_65
 
     .line 97
-    sget-object v7, Lcom/google/android/finsky/layout/DetailsSummaryByline;->RATING_FORMATTER:Ljava/text/DecimalFormat;
+    sget-object v11, Lcom/google/android/finsky/layout/DetailsSummaryByline;->RATING_FORMATTER:Ljava/text/DecimalFormat;
 
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getStarRating()F
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/finsky/api/model/Document;->getStarRating()F
 
-    move-result v8
+    move-result v12
 
-    float-to-double v8, v8
+    float-to-double v12, v12
 
-    invoke-virtual {v7, v8, v9}, Ljava/text/DecimalFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v11, v12, v13}, Ljava/text/DecimalFormat;->format(D)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v4
 
     .line 102
-    .local v1, averageRating:Ljava/lang/String;
+    .local v4, averageRating:Ljava/lang/String;
     :goto_1b
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
-
-    move-result-object v0
-
-    .line 103
-    .local v0, appDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
-    if-eqz v0, :cond_69
-
-    .line 104
-    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasNumDownloads()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_66
-
-    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getNumDownloads()Ljava/lang/String;
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
 
     move-result-object v3
 
+    .line 103
+    .local v3, appDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
+    if-eqz v3, :cond_6b
+
+    .line 104
+    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasNumDownloads()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_68
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getNumDownloads()Ljava/lang/String;
+
+    move-result-object v6
+
     .line 106
-    .local v3, downloadCount:Ljava/lang/String;
+    .local v6, downloadCount:Ljava/lang/String;
     :goto_2b
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
-
-    move-result-object v7
-
-    const v8, 0x7f0701a1
-
-    const/4 v9, 0x5
-
-    new-array v9, v9, [Ljava/lang/Object;
-
-    const/4 v10, 0x0
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
 
     move-result-object v11
 
-    aput-object v11, v9, v10
+    const v12, 0x7f0701dd
 
-    const/4 v10, 0x1
+    const/4 v13, 0x5
 
-    aput-object v1, v9, v10
+    new-array v13, v13, [Ljava/lang/Object;
 
-    const/4 v10, 0x2
+    const/4 v14, 0x0
 
-    aput-object v3, v9, v10
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/4 v10, 0x3
+    move-result-object v15
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getUploadDate()Ljava/lang/String;
+    aput-object v15, v13, v14
+
+    const/4 v14, 0x1
+
+    aput-object v4, v13, v14
+
+    const/4 v14, 0x2
+
+    aput-object v6, v13, v14
+
+    const/4 v14, 0x3
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getUploadDate()Ljava/lang/String;
+
+    move-result-object v15
+
+    aput-object v15, v13, v14
+
+    const/4 v14, 0x4
+
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
+
+    move-result-object v15
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getInstallationSize()J
+
+    move-result-wide v16
+
+    invoke-static/range {v15 .. v17}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
+
+    move-result-object v15
+
+    aput-object v15, v13, v14
+
+    invoke-virtual {v11, v12, v13}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v11
 
-    aput-object v11, v9, v10
+    move-object/from16 v0, p0
 
-    const/4 v10, 0x4
+    invoke-virtual {v0, v11}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
-
-    move-result-object v11
-
-    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getInstallationSize()J
-
-    move-result-wide v12
-
-    invoke-static {v11, v12, v13}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
-
-    move-result-object v11
-
-    aput-object v11, v9, v10
-
-    invoke-virtual {v7, v8, v9}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {p0, v7}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    .line 144
-    .end local v3           #downloadCount:Ljava/lang/String;
-    :cond_5f
-    :goto_5f
+    .line 170
+    .end local v6           #downloadCount:Ljava/lang/String;
+    :cond_61
+    :goto_61
     return-void
 
     .line 94
-    .end local v0           #appDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
-    .end local v1           #averageRating:Ljava/lang/String;
-    .end local v4           #ratingCount:J
-    :cond_60
-    const-wide/16 v4, 0x0
+    .end local v3           #appDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
+    .end local v4           #averageRating:Ljava/lang/String;
+    .end local v8           #ratingCount:J
+    :cond_62
+    const-wide/16 v8, 0x0
 
     goto :goto_a
 
     .line 99
-    .restart local v4       #ratingCount:J
-    :cond_63
-    const-string v1, "0"
+    .restart local v8       #ratingCount:J
+    :cond_65
+    const-string v4, "0"
 
-    .restart local v1       #averageRating:Ljava/lang/String;
+    .restart local v4       #averageRating:Ljava/lang/String;
     goto :goto_1b
 
     .line 104
-    .restart local v0       #appDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
-    :cond_66
-    const-string v3, "0"
+    .restart local v3       #appDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
+    :cond_68
+    const-string v6, "0"
 
     goto :goto_2b
 
     .line 113
-    :cond_69
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getBookDetails()Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
+    :cond_6b
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/finsky/api/model/Document;->getBookDetails()Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
 
-    move-result-object v2
+    move-result-object v5
 
     .line 114
-    .local v2, bookDetails:Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
-    if-eqz v2, :cond_bc
+    .local v5, bookDetails:Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
+    if-eqz v5, :cond_c0
 
     .line 115
-    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPublicationDate()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_5f
-
-    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPublisher()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_5f
-
-    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasNumberOfPages()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_5f
-
-    .line 118
-    :try_start_81
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
-
-    move-result-object v7
-
-    const v8, 0x7f0701a2
-
-    const/4 v9, 0x5
-
-    new-array v9, v9, [Ljava/lang/Object;
-
-    const/4 v10, 0x0
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v11
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    aput-object v1, v9, v10
-
-    const/4 v10, 0x2
-
-    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getPublisher()Ljava/lang/String;
-
-    move-result-object v11
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x3
-
-    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getPublicationDate()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v11}, Lcom/google/android/finsky/utils/DateUtils;->formatIso8601Date(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v11
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x4
-
-    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getNumberOfPages()I
+    invoke-virtual {v5}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPublicationDate()Z
 
     move-result v11
 
-    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    if-eqz v11, :cond_61
+
+    invoke-virtual {v5}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPublisher()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_61
+
+    invoke-virtual {v5}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasNumberOfPages()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_61
+
+    .line 118
+    :try_start_83
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
 
     move-result-object v11
 
-    aput-object v11, v9, v10
+    const v12, 0x7f0701de
 
-    invoke-virtual {v7, v8, v9}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v13, 0x5
 
-    move-result-object v7
+    new-array v13, v13, [Ljava/lang/Object;
 
-    invoke-virtual {p0, v7}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->setContentDescription(Ljava/lang/CharSequence;)V
-    :try_end_b9
-    .catch Ljava/text/ParseException; {:try_start_81 .. :try_end_b9} :catch_ba
+    const/4 v14, 0x0
 
-    goto :goto_5f
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v15
+
+    aput-object v15, v13, v14
+
+    const/4 v14, 0x1
+
+    aput-object v4, v13, v14
+
+    const/4 v14, 0x2
+
+    invoke-virtual {v5}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getPublisher()Ljava/lang/String;
+
+    move-result-object v15
+
+    aput-object v15, v13, v14
+
+    const/4 v14, 0x3
+
+    invoke-virtual {v5}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getPublicationDate()Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-static {v15}, Lcom/google/android/finsky/utils/DateUtils;->formatIso8601Date(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v15
+
+    aput-object v15, v13, v14
+
+    const/4 v14, 0x4
+
+    invoke-virtual {v5}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getNumberOfPages()I
+
+    move-result v15
+
+    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v15
+
+    aput-object v15, v13, v14
+
+    invoke-virtual {v11, v12, v13}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v11
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v11}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->setContentDescription(Ljava/lang/CharSequence;)V
+    :try_end_bd
+    .catch Ljava/text/ParseException; {:try_start_83 .. :try_end_bd} :catch_be
+
+    goto :goto_61
 
     .line 124
-    :catch_ba
-    move-exception v7
+    :catch_be
+    move-exception v11
 
-    goto :goto_5f
+    goto :goto_61
 
     .line 129
-    :cond_bc
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getVideoDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
+    :cond_c0
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/finsky/api/model/Document;->getVideoDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
 
-    move-result-object v6
+    move-result-object v10
 
     .line 130
-    .local v6, videoDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
-    if-eqz v6, :cond_5f
+    .local v10, videoDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
+    if-eqz v10, :cond_11a
 
     .line 131
-    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasReleaseDate()Z
+    invoke-virtual {v10}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasReleaseDate()Z
 
-    move-result v7
+    move-result v11
 
-    if-eqz v7, :cond_5f
+    if-eqz v11, :cond_61
 
-    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasDuration()Z
+    invoke-virtual {v10}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasDuration()Z
 
-    move-result v7
+    move-result v11
 
-    if-eqz v7, :cond_5f
+    if-eqz v11, :cond_61
 
     .line 133
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
 
-    move-result-object v8
+    move-result-object v12
 
-    const v9, 0x7f0701a3
+    const v13, 0x7f0701df
 
-    const/4 v7, 0x5
+    const/4 v11, 0x5
 
-    new-array v10, v7, [Ljava/lang/Object;
+    new-array v14, v11, [Ljava/lang/Object;
 
-    const/4 v7, 0x0
+    const/4 v11, 0x0
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v11
+    move-result-object v15
 
-    aput-object v11, v10, v7
+    aput-object v15, v14, v11
 
-    const/4 v7, 0x1
+    const/4 v11, 0x1
 
-    aput-object v1, v10, v7
+    aput-object v4, v14, v11
 
-    const/4 v11, 0x2
+    const/4 v15, 0x2
 
-    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasContentRating()Z
+    invoke-virtual {v10}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasContentRating()Z
 
-    move-result v7
+    move-result v11
 
-    if-eqz v7, :cond_106
+    if-eqz v11, :cond_10c
 
-    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getContentRating()Ljava/lang/String;
-
-    move-result-object v7
-
-    :goto_ed
-    aput-object v7, v10, v11
-
-    const/4 v7, 0x3
-
-    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getReleaseDate()Ljava/lang/String;
+    invoke-virtual {v10}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getContentRating()Ljava/lang/String;
 
     move-result-object v11
 
-    aput-object v11, v10, v7
+    :goto_f1
+    aput-object v11, v14, v15
 
-    const/4 v7, 0x4
+    const/4 v11, 0x3
 
-    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getDuration()Ljava/lang/String;
+    invoke-virtual {v10}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getReleaseDate()Ljava/lang/String;
+
+    move-result-object v15
+
+    aput-object v15, v14, v11
+
+    const/4 v11, 0x4
+
+    invoke-virtual {v10}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getDuration()Ljava/lang/String;
+
+    move-result-object v15
+
+    aput-object v15, v14, v11
+
+    invoke-virtual {v12, v13, v14}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v11
 
-    aput-object v11, v10, v7
+    move-object/from16 v0, p0
 
-    invoke-virtual {v8, v9, v10}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v11}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    goto/16 :goto_61
+
+    :cond_10c
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
+
+    move-result-object v11
+
+    const v16, 0x7f070116
+
+    move/from16 v0, v16
+
+    invoke-virtual {v11, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v11
+
+    goto :goto_f1
+
+    .line 143
+    :cond_11a
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/finsky/api/model/Document;->getAlbumDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;
+
+    move-result-object v1
+
+    .line 144
+    .local v1, albumDetailWrapper:Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;
+    if-eqz v1, :cond_179
+
+    .line 145
+    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;->getDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;
+
+    move-result-object v2
+
+    .line 146
+    .local v2, albumDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;
+    if-eqz v2, :cond_61
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;->hasOriginalReleaseDate()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_61
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;->hasLabel()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_61
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;->getLabel()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v11}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_61
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;->getGenreCount()I
+
+    move-result v11
+
+    if-lez v11, :cond_61
+
+    .line 150
+    :try_start_142
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
+
+    move-result-object v11
+
+    const v12, 0x7f0701e0
+
+    const/4 v13, 0x3
+
+    new-array v13, v13, [Ljava/lang/Object;
+
+    const/4 v14, 0x0
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;->getLabel()Ljava/lang/String;
+
+    move-result-object v15
+
+    aput-object v15, v13, v14
+
+    const/4 v14, 0x1
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;->getOriginalReleaseDate()Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-static {v15}, Lcom/google/android/finsky/utils/DateUtils;->formatIso8601Date(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v15
+
+    aput-object v15, v13, v14
+
+    const/4 v14, 0x2
+
+    const-string v15, ", "
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;->getGenreList()Ljava/util/List;
+
+    move-result-object v16
+
+    invoke-static/range {v15 .. v16}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
+
+    move-result-object v15
+
+    aput-object v15, v13, v14
+
+    invoke-virtual {v11, v12, v13}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v11
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v11}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->setContentDescription(Ljava/lang/CharSequence;)V
+    :try_end_174
+    .catch Ljava/text/ParseException; {:try_start_142 .. :try_end_174} :catch_176
+
+    goto/16 :goto_61
+
+    .line 155
+    :catch_176
+    move-exception v11
+
+    goto/16 :goto_61
+
+    .line 160
+    .end local v2           #albumDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;
+    :cond_179
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/finsky/api/model/Document;->getMagazineDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;
 
     move-result-object v7
 
-    invoke-virtual {p0, v7}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->setContentDescription(Ljava/lang/CharSequence;)V
+    .line 161
+    .local v7, magazineDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;
+    if-eqz v7, :cond_61
 
-    goto/16 :goto_5f
+    .line 162
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
 
-    :cond_106
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
+    move-result-object v12
 
-    move-result-object v7
+    const v13, 0x7f0701e1
 
-    const v12, 0x7f070106
+    const/4 v11, 0x4
 
-    invoke-virtual {v7, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    new-array v14, v11, [Ljava/lang/Object;
 
-    move-result-object v7
+    const/4 v11, 0x0
 
-    goto :goto_ed
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v15
+
+    aput-object v15, v14, v11
+
+    const/4 v11, 0x1
+
+    aput-object v4, v14, v11
+
+    const/4 v15, 0x2
+
+    invoke-virtual {v7}, Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;->hasDeliveryFrequencyDescription()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_1b8
+
+    invoke-virtual {v7}, Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;->getDeliveryFrequencyDescription()Ljava/lang/String;
+
+    move-result-object v11
+
+    :goto_19e
+    aput-object v11, v14, v15
+
+    const/4 v15, 0x3
+
+    invoke-virtual {v7}, Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;->hasPsvDescription()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_1bb
+
+    invoke-virtual {v7}, Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;->getPsvDescription()Ljava/lang/String;
+
+    move-result-object v11
+
+    :goto_1ab
+    aput-object v11, v14, v15
+
+    invoke-virtual {v12, v13, v14}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v11
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v11}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    goto/16 :goto_61
+
+    :cond_1b8
+    const-string v11, ""
+
+    goto :goto_19e
+
+    :cond_1bb
+    const-string v11, ""
+
+    goto :goto_1ab
 .end method
 
 .method private configureItemTextInfo(Lcom/google/android/finsky/api/model/Document;)V
@@ -434,48 +637,57 @@
     .parameter "doc"
 
     .prologue
-    .line 147
+    .line 173
     invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_18
+    packed-switch v0, :pswitch_data_1c
 
-    .line 161
+    .line 190
     :goto_7
+    :pswitch_7
     return-void
 
-    .line 149
+    .line 175
     :pswitch_8
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->configureAppDetailsByline(Lcom/google/android/finsky/api/model/Document;)V
 
     goto :goto_7
 
-    .line 152
+    .line 178
     :pswitch_c
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->configureBookDetailsByline(Lcom/google/android/finsky/api/model/Document;)V
 
     goto :goto_7
 
-    .line 155
+    .line 181
     :pswitch_10
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->configureMovieDetailsByline(Lcom/google/android/finsky/api/model/Document;)V
 
     goto :goto_7
 
-    .line 158
+    .line 184
     :pswitch_14
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->configureAlbumDetailsByline(Lcom/google/android/finsky/api/model/Document;)V
 
     goto :goto_7
 
-    .line 147
-    :pswitch_data_18
+    .line 187
+    :pswitch_18
+    invoke-virtual {p0, p1}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->configureMagazineDetailsByline(Lcom/google/android/finsky/api/model/Document;)V
+
+    goto :goto_7
+
+    .line 173
+    :pswitch_data_1c
     .packed-switch 0x1
         :pswitch_c
         :pswitch_14
         :pswitch_8
         :pswitch_10
+        :pswitch_7
+        :pswitch_18
     .end packed-switch
 .end method
 
@@ -491,7 +703,7 @@
     .line 77
     iget-object v3, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
 
-    const v4, 0x7f040052
+    const v4, 0x7f040053
 
     iget-object v5, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFirstRow:Landroid/widget/LinearLayout;
 
@@ -501,7 +713,7 @@
 
     .line 79
     .local v2, ratingView:Landroid/view/View;
-    const v3, 0x7f0800b5
+    const v3, 0x7f0800be
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -511,7 +723,7 @@
 
     .line 80
     .local v0, ratingBar:Landroid/widget/RatingBar;
-    const v3, 0x7f0800b6
+    const v3, 0x7f0800bf
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -589,25 +801,25 @@
     .parameter "doc"
 
     .prologue
-    .line 292
+    .line 339
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/finsky/api/model/Document;->getAlbumDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;
 
     move-result-object v1
 
-    .line 293
+    .line 340
     .local v1, albumDetailWrapper:Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;
     if-eqz v1, :cond_de
 
-    .line 294
+    .line 341
     invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;->getDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;
 
     move-result-object v2
 
-    .line 295
+    .line 342
     .local v2, albumDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;
     const/4 v9, 0x0
 
-    .line 297
+    .line 344
     .local v9, hasInfo:Z
     invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;->hasOriginalReleaseDate()Z
 
@@ -615,7 +827,7 @@
 
     if-eqz v12, :cond_3d
 
-    .line 299
+    .line 346
     :try_start_11
     invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;->getOriginalReleaseDate()Ljava/lang/String;
 
@@ -625,7 +837,7 @@
 
     move-result-object v5
 
-    .line 303
+    .line 350
     .local v5, dateText:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -633,12 +845,12 @@
 
     invoke-virtual {v12}, Landroid/widget/LinearLayout;->removeAllViews()V
 
-    .line 304
+    .line 351
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
 
-    const v13, 0x7f040054
+    const v13, 0x7f040055
 
     move-object/from16 v0, p0
 
@@ -652,11 +864,11 @@
 
     check-cast v10, Landroid/widget/TextView;
 
-    .line 306
+    .line 353
     .local v10, releaseDateView:Landroid/widget/TextView;
     invoke-virtual {v10, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 307
+    .line 354
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFirstRow:Landroid/widget/LinearLayout;
@@ -665,10 +877,10 @@
     :try_end_3c
     .catch Ljava/text/ParseException; {:try_start_11 .. :try_end_3c} :catch_df
 
-    .line 308
+    .line 355
     const/4 v9, 0x1
 
-    .line 315
+    .line 362
     .end local v5           #dateText:Ljava/lang/String;
     .end local v10           #releaseDateView:Landroid/widget/TextView;
     :cond_3d
@@ -689,7 +901,7 @@
 
     if-nez v12, :cond_a2
 
-    .line 318
+    .line 365
     invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;->hasReleaseDate()Z
 
     move-result v12
@@ -708,7 +920,7 @@
 
     if-lt v12, v13, :cond_fb
 
-    .line 319
+    .line 366
     invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;->getReleaseDate()Ljava/lang/String;
 
     move-result-object v12
@@ -721,13 +933,13 @@
 
     move-result-object v11
 
-    .line 320
+    .line 367
     .local v11, year:Ljava/lang/String;
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
 
     move-result-object v12
 
-    const v13, 0x7f070209
+    const v13, 0x7f070249
 
     const/4 v14, 0x2
 
@@ -749,7 +961,7 @@
 
     move-result-object v3
 
-    .line 327
+    .line 374
     .end local v11           #year:Ljava/lang/String;
     .local v3, copyrightText:Ljava/lang/String;
     :goto_80
@@ -757,7 +969,7 @@
 
     iget-object v12, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
 
-    const v13, 0x7f040054
+    const v13, 0x7f040055
 
     move-object/from16 v0, p0
 
@@ -771,26 +983,26 @@
 
     check-cast v4, Landroid/widget/TextView;
 
-    .line 329
+    .line 376
     .local v4, copyrightView:Landroid/widget/TextView;
     const/16 v12, 0x15
 
     invoke-virtual {v4, v12}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 330
+    .line 377
     invoke-virtual {v4, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 331
+    .line 378
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFirstRow:Landroid/widget/LinearLayout;
 
     invoke-virtual {v12, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 332
+    .line 379
     const/4 v9, 0x1
 
-    .line 336
+    .line 383
     .end local v3           #copyrightText:Ljava/lang/String;
     .end local v4           #copyrightView:Landroid/widget/TextView;
     :cond_a2
@@ -800,7 +1012,7 @@
 
     if-lez v12, :cond_d5
 
-    .line 337
+    .line 384
     const-string v12, ", "
 
     invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;->getGenreList()Ljava/util/List;
@@ -811,13 +1023,13 @@
 
     move-result-object v7
 
-    .line 338
+    .line 385
     .local v7, genres:Ljava/lang/String;
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
 
-    const v13, 0x7f040054
+    const v13, 0x7f040055
 
     move-object/from16 v0, p0
 
@@ -831,53 +1043,53 @@
 
     check-cast v8, Landroid/widget/TextView;
 
-    .line 340
+    .line 387
     .local v8, genresView:Landroid/widget/TextView;
     invoke-virtual {v8, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 341
+    .line 388
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSecondRow:Landroid/widget/LinearLayout;
 
     invoke-virtual {v12, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 342
+    .line 389
     invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v12
 
     if-nez v12, :cond_d5
 
-    .line 343
+    .line 390
     const/4 v9, 0x1
 
-    .line 347
+    .line 394
     .end local v7           #genres:Ljava/lang/String;
     .end local v8           #genresView:Landroid/widget/TextView;
     :cond_d5
     if-nez v9, :cond_de
 
-    .line 348
+    .line 395
     const/16 v12, 0x8
 
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->setVisibility(I)V
 
-    .line 351
+    .line 398
     .end local v2           #albumDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;
     .end local v9           #hasInfo:Z
     :cond_de
     return-void
 
-    .line 309
+    .line 356
     .restart local v2       #albumDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;
     .restart local v9       #hasInfo:Z
     :catch_df
     move-exception v6
 
-    .line 310
+    .line 357
     .local v6, e:Ljava/text/ParseException;
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -905,14 +1117,14 @@
 
     goto/16 :goto_3d
 
-    .line 324
+    .line 371
     .end local v6           #e:Ljava/text/ParseException;
     :cond_fb
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
 
     move-result-object v12
 
-    const v13, 0x7f070208
+    const v13, 0x7f070248
 
     const/4 v14, 0x1
 
@@ -935,329 +1147,217 @@
 .end method
 
 .method protected configureAppDetailsByline(Lcom/google/android/finsky/api/model/Document;)V
-    .registers 24
+    .registers 17
     .parameter "doc"
 
     .prologue
-    .line 164
-    const-string v13, ""
+    .line 193
+    const-string v9, ""
 
-    .line 165
-    .local v13, uploadDate:Ljava/lang/String;
-    const-string v11, ""
-
-    .line 166
-    .local v11, numDownloads:Ljava/lang/String;
-    const-wide/16 v7, 0x0
-
-    .line 168
-    .local v7, installationSize:J
-    invoke-virtual/range {p1 .. p1}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
-
-    move-result-object v3
-
-    .line 169
-    .local v3, appDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
-    if-eqz v3, :cond_41
-
-    .line 170
-    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasUploadDate()Z
-
-    move-result v17
-
-    if-eqz v17, :cond_16
-
-    .line 171
-    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getUploadDate()Ljava/lang/String;
-
-    move-result-object v13
-
-    .line 174
-    :cond_16
-    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasNumDownloads()Z
-
-    move-result v17
-
-    if-eqz v17, :cond_37
-
-    .line 175
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
-
-    move-result-object v17
-
-    const v18, 0x7f070103
-
-    const/16 v19, 0x1
-
-    move/from16 v0, v19
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    move-object/from16 v19, v0
-
-    const/16 v20, 0x0
-
-    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getNumDownloads()Ljava/lang/String;
-
-    move-result-object v21
-
-    aput-object v21, v19, v20
-
-    invoke-virtual/range {v17 .. v19}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v11
-
-    .line 179
-    :cond_37
-    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasInstallationSize()Z
-
-    move-result v17
-
-    if-eqz v17, :cond_41
-
-    .line 180
-    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getInstallationSize()J
-
-    move-result-wide v7
-
-    .line 186
-    :cond_41
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
-
-    move-object/from16 v17, v0
-
-    const v18, 0x7f040054
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFirstRow:Landroid/widget/LinearLayout;
-
-    move-object/from16 v19, v0
-
-    const/16 v20, 0x0
-
-    invoke-virtual/range {v17 .. v20}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/widget/TextView;
-
-    .line 188
-    .local v4, dateView:Landroid/widget/TextView;
-    invoke-virtual {v4, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 189
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFullMode:Z
-
-    move/from16 v17, v0
-
-    if-eqz v17, :cond_6a
-
-    .line 190
-    const/16 v17, 0x15
-
-    move/from16 v0, v17
-
-    invoke-virtual {v4, v0}, Landroid/widget/TextView;->setGravity(I)V
-
-    .line 192
-    :cond_6a
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFirstRow:Landroid/widget/LinearLayout;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v0, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    .line 194
+    .local v9, uploadDate:Ljava/lang/String;
+    const-string v7, ""
 
     .line 195
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
-
-    move-object/from16 v17, v0
-
-    const v18, 0x7f040054
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSecondRow:Landroid/widget/LinearLayout;
-
-    move-object/from16 v19, v0
-
-    const/16 v20, 0x0
-
-    invoke-virtual/range {v17 .. v20}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v10
-
-    check-cast v10, Landroid/widget/TextView;
+    .local v7, numDownloads:Ljava/lang/String;
+    const-wide/16 v4, 0x0
 
     .line 197
-    .local v10, numDownloadView:Landroid/widget/TextView;
-    invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    .local v4, installationSize:J
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
+
+    move-result-object v0
 
     .line 198
-    move-object/from16 v0, p0
+    .local v0, appDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
+    if-eqz v0, :cond_3b
 
-    iget-object v0, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSecondRow:Landroid/widget/LinearLayout;
+    .line 199
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasUploadDate()Z
 
-    move-object/from16 v17, v0
+    move-result v10
 
-    move-object/from16 v0, v17
+    if-eqz v10, :cond_16
 
-    invoke-virtual {v0, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    .line 201
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFullMode:Z
-
-    move/from16 v17, v0
-
-    if-eqz v17, :cond_f5
-
-    move-object/from16 v0, p0
-
-    iget-object v6, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSecondRow:Landroid/widget/LinearLayout;
-
-    .line 202
-    .local v6, host:Landroid/widget/LinearLayout;
-    :goto_a6
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
-
-    move-object/from16 v17, v0
-
-    const v18, 0x7f040051
-
-    const/16 v19, 0x0
-
-    move-object/from16 v0, v17
-
-    move/from16 v1, v18
-
-    move/from16 v2, v19
-
-    invoke-virtual {v0, v1, v6, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    .line 200
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getUploadDate()Ljava/lang/String;
 
     move-result-object v9
 
+    .line 203
+    :cond_16
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasNumDownloads()Z
+
+    move-result v10
+
+    if-eqz v10, :cond_31
+
     .line 204
-    .local v9, installationSizeView:Landroid/view/View;
-    const v17, 0x7f0800e6
+    invoke-virtual {p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
 
-    move/from16 v0, v17
+    move-result-object v10
 
-    invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    const v11, 0x7f070113
 
-    move-result-object v5
+    const/4 v12, 0x1
 
-    check-cast v5, Landroid/widget/TextView;
+    new-array v12, v12, [Ljava/lang/Object;
 
-    .line 206
-    .local v5, downloadSizeView:Landroid/widget/TextView;
-    const-wide/16 v17, 0x0
+    const/4 v13, 0x0
 
-    cmp-long v17, v7, v17
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getNumDownloads()Ljava/lang/String;
 
-    if-gtz v17, :cond_fa
+    move-result-object v14
 
-    const-string v12, ""
+    aput-object v14, v12, v13
+
+    invoke-virtual {v10, v11, v12}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
 
     .line 208
-    .local v12, sizeText:Ljava/lang/String;
-    :goto_ce
-    invoke-virtual {v5, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    :cond_31
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->hasInstallationSize()Z
 
-    .line 210
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+    move-result v10
 
-    move-result-object v17
+    if-eqz v10, :cond_3b
 
-    invoke-virtual/range {v17 .. v17}, Lcom/google/android/finsky/FinskyApp;->getInstaller()Lcom/google/android/finsky/receivers/Installer;
+    .line 209
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getInstallationSize()J
 
-    move-result-object v17
-
-    invoke-virtual/range {v17 .. v17}, Lcom/google/android/finsky/receivers/Installer;->getMaxBytesOverMobileRecommended()J
-
-    move-result-wide v14
-
-    .line 211
-    .local v14, warningThreshold:J
-    const v17, 0x7f0800e7
-
-    move/from16 v0, v17
-
-    invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v16
-
-    check-cast v16, Landroid/widget/TextView;
-
-    .line 212
-    .local v16, wifiWarningView:Landroid/widget/TextView;
-    cmp-long v17, v7, v14
-
-    if-ltz v17, :cond_105
-
-    const/16 v17, 0x0
-
-    :goto_ee
-    invoke-virtual/range {v16 .. v17}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 214
-    invoke-virtual {v6, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    move-result-wide v4
 
     .line 215
+    :cond_3b
+    iget-object v10, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
+
+    const v11, 0x7f040055
+
+    iget-object v12, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFirstRow:Landroid/widget/LinearLayout;
+
+    const/4 v13, 0x0
+
+    invoke-virtual {v10, v11, v12, v13}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/TextView;
+
+    .line 217
+    .local v1, dateView:Landroid/widget/TextView;
+    invoke-virtual {v1, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 218
+    iget-boolean v10, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSingleColumnMode:Z
+
+    if-eqz v10, :cond_55
+
+    .line 219
+    const/16 v10, 0x15
+
+    invoke-virtual {v1, v10}, Landroid/widget/TextView;->setGravity(I)V
+
+    .line 221
+    :cond_55
+    iget-object v10, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFirstRow:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v10, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 224
+    iget-object v10, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
+
+    const v11, 0x7f040055
+
+    iget-object v12, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSecondRow:Landroid/widget/LinearLayout;
+
+    const/4 v13, 0x0
+
+    invoke-virtual {v10, v11, v12, v13}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/widget/TextView;
+
+    .line 226
+    .local v6, numDownloadView:Landroid/widget/TextView;
+    invoke-virtual {v6, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 227
+    iget-object v10, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSecondRow:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v10, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 230
+    iget-boolean v10, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSingleColumnMode:Z
+
+    if-eqz v10, :cond_96
+
+    iget-object v3, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSecondRow:Landroid/widget/LinearLayout;
+
+    .line 231
+    .local v3, host:Landroid/widget/LinearLayout;
+    :goto_76
+    iget-object v10, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
+
+    const v11, 0x7f040055
+
+    const/4 v12, 0x0
+
+    invoke-virtual {v10, v11, v3, v12}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    .line 233
+    .local v2, downloadSizeView:Landroid/widget/TextView;
+    const-wide/16 v10, 0x0
+
+    cmp-long v10, v4, v10
+
+    if-gtz v10, :cond_99
+
+    const-string v8, ""
+
+    .line 235
+    .local v8, sizeText:Ljava/lang/String;
+    :goto_8a
+    invoke-virtual {v2, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 236
+    const/16 v10, 0x15
+
+    invoke-virtual {v2, v10}, Landroid/widget/TextView;->setGravity(I)V
+
+    .line 237
+    invoke-virtual {v3, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 238
     return-void
 
-    .line 201
-    .end local v5           #downloadSizeView:Landroid/widget/TextView;
-    .end local v6           #host:Landroid/widget/LinearLayout;
-    .end local v9           #installationSizeView:Landroid/view/View;
-    .end local v12           #sizeText:Ljava/lang/String;
-    .end local v14           #warningThreshold:J
-    .end local v16           #wifiWarningView:Landroid/widget/TextView;
-    :cond_f5
-    move-object/from16 v0, p0
+    .line 230
+    .end local v2           #downloadSizeView:Landroid/widget/TextView;
+    .end local v3           #host:Landroid/widget/LinearLayout;
+    .end local v8           #sizeText:Ljava/lang/String;
+    :cond_96
+    iget-object v3, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFirstRow:Landroid/widget/LinearLayout;
 
-    iget-object v6, v0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFirstRow:Landroid/widget/LinearLayout;
+    goto :goto_76
 
-    goto :goto_a6
+    .line 233
+    .restart local v2       #downloadSizeView:Landroid/widget/TextView;
+    .restart local v3       #host:Landroid/widget/LinearLayout;
+    :cond_99
+    invoke-virtual {p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
 
-    .line 206
-    .restart local v5       #downloadSizeView:Landroid/widget/TextView;
-    .restart local v6       #host:Landroid/widget/LinearLayout;
-    .restart local v9       #installationSizeView:Landroid/view/View;
-    :cond_fa
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
+    move-result-object v10
 
-    move-result-object v17
+    invoke-static {v10, v4, v5}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
 
-    move-object/from16 v0, v17
+    move-result-object v8
 
-    invoke-static {v0, v7, v8}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
-
-    move-result-object v12
-
-    goto :goto_ce
-
-    .line 212
-    .restart local v12       #sizeText:Ljava/lang/String;
-    .restart local v14       #warningThreshold:J
-    .restart local v16       #wifiWarningView:Landroid/widget/TextView;
-    :cond_105
-    const/16 v17, 0x8
-
-    goto :goto_ee
+    goto :goto_8a
 .end method
 
 .method protected configureBookDetailsByline(Lcom/google/android/finsky/api/model/Document;)V
@@ -1267,27 +1367,27 @@
     .prologue
     const/16 v9, 0x15
 
-    const v8, 0x7f040054
+    const v8, 0x7f040055
 
     const/4 v10, 0x0
 
-    .line 218
+    .line 241
     invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getBookDetails()Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
 
     move-result-object v0
 
-    .line 219
+    .line 242
     .local v0, bookDetails:Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
     if-eqz v0, :cond_8a
 
-    .line 221
+    .line 244
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPublisher()Z
 
     move-result v6
 
     if-eqz v6, :cond_28
 
-    .line 222
+    .line 245
     iget-object v6, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
 
     iget-object v7, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSecondRow:Landroid/widget/LinearLayout;
@@ -1298,7 +1398,7 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    .line 224
+    .line 247
     .local v5, publisherView:Landroid/widget/TextView;
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getPublisher()Ljava/lang/String;
 
@@ -1306,12 +1406,12 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 225
+    .line 248
     iget-object v6, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSecondRow:Landroid/widget/LinearLayout;
 
     invoke-virtual {v6, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 229
+    .line 252
     .end local v5           #publisherView:Landroid/widget/TextView;
     :cond_28
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasNumberOfPages()Z
@@ -1320,14 +1420,14 @@
 
     if-eqz v6, :cond_61
 
-    .line 230
-    iget-boolean v6, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFullMode:Z
+    .line 253
+    iget-boolean v6, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSingleColumnMode:Z
 
     if-eqz v6, :cond_8b
 
     iget-object v2, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSecondRow:Landroid/widget/LinearLayout;
 
-    .line 231
+    .line 254
     .local v2, host:Landroid/widget/LinearLayout;
     :goto_34
     iget-object v6, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
@@ -1338,22 +1438,22 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    .line 233
+    .line 256
     .local v3, pageCountView:Landroid/widget/TextView;
-    iget-boolean v6, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFullMode:Z
+    iget-boolean v6, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSingleColumnMode:Z
 
     if-eqz v6, :cond_43
 
-    .line 234
+    .line 257
     invoke-virtual {v3, v9}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 236
+    .line 259
     :cond_43
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
 
     move-result-object v6
 
-    const v7, 0x7f070104
+    const v7, 0x7f070114
 
     const/4 v8, 0x1
 
@@ -1375,10 +1475,10 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 238
+    .line 261
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 242
+    .line 265
     .end local v2           #host:Landroid/widget/LinearLayout;
     .end local v3           #pageCountView:Landroid/widget/TextView;
     :cond_61
@@ -1388,11 +1488,11 @@
 
     if-eqz v6, :cond_8a
 
-    .line 244
+    .line 267
     :try_start_67
     iget-object v6, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
 
-    const v7, 0x7f040054
+    const v7, 0x7f040055
 
     iget-object v8, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFirstRow:Landroid/widget/LinearLayout;
 
@@ -1404,13 +1504,13 @@
 
     check-cast v4, Landroid/widget/TextView;
 
-    .line 246
+    .line 269
     .local v4, pubDateView:Landroid/widget/TextView;
     const/16 v6, 0x15
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 247
+    .line 270
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getPublicationDate()Ljava/lang/String;
 
     move-result-object v6
@@ -1421,30 +1521,30 @@
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 249
+    .line 272
     iget-object v6, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFirstRow:Landroid/widget/LinearLayout;
 
     invoke-virtual {v6, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
     :try_end_8a
     .catch Ljava/text/ParseException; {:try_start_67 .. :try_end_8a} :catch_8e
 
-    .line 255
+    .line 278
     .end local v4           #pubDateView:Landroid/widget/TextView;
     :cond_8a
     :goto_8a
     return-void
 
-    .line 230
+    .line 253
     :cond_8b
     iget-object v2, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFirstRow:Landroid/widget/LinearLayout;
 
     goto :goto_34
 
-    .line 250
+    .line 273
     :catch_8e
     move-exception v1
 
-    .line 251
+    .line 274
     .local v1, e:Ljava/text/ParseException;
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -1471,6 +1571,105 @@
     goto :goto_8a
 .end method
 
+.method protected configureMagazineDetailsByline(Lcom/google/android/finsky/api/model/Document;)V
+    .registers 9
+    .parameter "doc"
+
+    .prologue
+    const v6, 0x7f040055
+
+    const/4 v5, 0x0
+
+    .line 315
+    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getMagazineDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;
+
+    move-result-object v1
+
+    .line 316
+    .local v1, magazineDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;
+    if-eqz v1, :cond_4b
+
+    .line 318
+    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;->hasDeliveryFrequencyDescription()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2f
+
+    .line 319
+    iget-object v3, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
+
+    iget-object v4, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFirstRow:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v3, v6, v4, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    .line 321
+    .local v0, deliveryFrequencyView:Landroid/widget/TextView;
+    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;->getDeliveryFrequencyDescription()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 322
+    iget-boolean v3, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSingleColumnMode:Z
+
+    if-eqz v3, :cond_2a
+
+    .line 323
+    const/16 v3, 0x15
+
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setGravity(I)V
+
+    .line 325
+    :cond_2a
+    iget-object v3, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFirstRow:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v3, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 329
+    .end local v0           #deliveryFrequencyView:Landroid/widget/TextView;
+    :cond_2f
+    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;->hasPsvDescription()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4b
+
+    .line 330
+    iget-object v3, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
+
+    iget-object v4, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSecondRow:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v3, v6, v4, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    .line 332
+    .local v2, psvDescriptionView:Landroid/widget/TextView;
+    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;->getPsvDescription()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 333
+    iget-object v3, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSecondRow:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v3, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 336
+    .end local v2           #psvDescriptionView:Landroid/widget/TextView;
+    :cond_4b
+    return-void
+.end method
+
 .method protected configureMovieDetailsByline(Lcom/google/android/finsky/api/model/Document;)V
     .registers 14
     .parameter "doc"
@@ -1478,20 +1677,20 @@
     .prologue
     const/16 v11, 0x15
 
-    const v10, 0x7f040054
+    const v10, 0x7f040055
 
     const/4 v9, 0x0
 
-    .line 258
+    .line 281
     invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getVideoDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
 
     move-result-object v4
 
-    .line 259
+    .line 282
     .local v4, videoDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
     if-eqz v4, :cond_7a
 
-    .line 261
+    .line 284
     invoke-virtual {v4}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasContentRating()Z
 
     move-result v5
@@ -1502,7 +1701,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f070105
+    const v6, 0x7f070115
 
     const/4 v7, 0x1
 
@@ -1518,7 +1717,7 @@
 
     move-result-object v0
 
-    .line 264
+    .line 287
     .local v0, contentRating:Ljava/lang/String;
     :goto_26
     iget-object v5, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
@@ -1531,32 +1730,32 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 266
+    .line 289
     .local v1, contentRatingView:Landroid/widget/TextView;
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 267
-    iget-boolean v5, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFullMode:Z
+    .line 290
+    iget-boolean v5, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSingleColumnMode:Z
 
     if-eqz v5, :cond_3a
 
-    .line 268
+    .line 291
     invoke-virtual {v1, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 270
+    .line 293
     :cond_3a
     iget-object v5, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFirstRow:Landroid/widget/LinearLayout;
 
     invoke-virtual {v5, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 273
+    .line 296
     invoke-virtual {v4}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasReleaseDate()Z
 
     move-result v5
 
     if-eqz v5, :cond_5b
 
-    .line 274
+    .line 297
     iget-object v5, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
 
     iget-object v6, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSecondRow:Landroid/widget/LinearLayout;
@@ -1567,7 +1766,7 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    .line 276
+    .line 299
     .local v3, releaseDateView:Landroid/widget/TextView;
     invoke-virtual {v4}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getReleaseDate()Ljava/lang/String;
 
@@ -1575,12 +1774,12 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 277
+    .line 300
     iget-object v5, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSecondRow:Landroid/widget/LinearLayout;
 
     invoke-virtual {v5, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 281
+    .line 304
     .end local v3           #releaseDateView:Landroid/widget/TextView;
     :cond_5b
     invoke-virtual {v4}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasDuration()Z
@@ -1589,7 +1788,7 @@
 
     if-eqz v5, :cond_7a
 
-    .line 282
+    .line 305
     iget-object v5, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mInflater:Landroid/view/LayoutInflater;
 
     iget-object v6, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSecondRow:Landroid/widget/LinearLayout;
@@ -1600,7 +1799,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 284
+    .line 307
     .local v2, durationView:Landroid/widget/TextView;
     invoke-virtual {v4}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getDuration()Ljava/lang/String;
 
@@ -1608,28 +1807,28 @@
 
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 285
+    .line 308
     invoke-virtual {v2, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 286
+    .line 309
     iget-object v5, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSecondRow:Landroid/widget/LinearLayout;
 
     invoke-virtual {v5, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 289
+    .line 312
     .end local v0           #contentRating:Ljava/lang/String;
     .end local v1           #contentRatingView:Landroid/widget/TextView;
     .end local v2           #durationView:Landroid/widget/TextView;
     :cond_7a
     return-void
 
-    .line 261
+    .line 284
     :cond_7b
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->getContext()Landroid/content/Context;
 
     move-result-object v5
 
-    const v6, 0x7f070106
+    const v6, 0x7f070116
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1643,7 +1842,7 @@
     .parameter "document"
 
     .prologue
-    const v2, 0x7f040053
+    const v2, 0x7f040054
 
     const/4 v1, 0x0
 
@@ -1694,7 +1893,7 @@
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/DetailsSummaryByline;->addView(Landroid/view/View;)V
 
     .line 68
-    iget-boolean v0, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mFullMode:Z
+    iget-boolean v0, p0, Lcom/google/android/finsky/layout/DetailsSummaryByline;->mSingleColumnMode:Z
 
     if-eqz v0, :cond_36
 

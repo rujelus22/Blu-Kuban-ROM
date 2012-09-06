@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Elements>
+	<Kernels>
+		<Kernel>
+			<Name>Guevor</Name>
+			<Desc>Gueveor test 4 kernel</Desc>
+			<Url>http://www.xdafileserver.nl/TF101/CM9%20by%20ricardopvz/Kernel/Guevor/test4/guevor-test4.zip</Url>
+		</Kernel>
+		<Kernel>
+			<Name>Stock</Name>
+			<Desc>Kernel stock della rom</Desc>
+			<Url>http://www.xdafileserver.nl/TF101/CM9%20by%20ricardopvz/Kernel/Stock/Stock_Kernel.zip</Url>
+		</Kernel>
+	</Kernels>
+</Elements>

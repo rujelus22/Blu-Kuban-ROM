@@ -1,55 +1,59 @@
-.class Lcom/google/googlenav/appwidget/traffic/a;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/text/TextWatcher;
+.class public Lcom/google/googlenav/appwidget/traffic/a;
+.super Ljava/util/LinkedHashMap;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetConfigureActivity;
+.field private final a:I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetConfigureActivity;)V
-    .registers 2
+.method public constructor <init>(I)V
+    .registers 4
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/appwidget/traffic/a;->a:Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetConfigureActivity;
+    .prologue
+    .line 23
+    const/high16 v0, 0x3f80
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x1
 
+    invoke-direct {p0, p1, v0, v1}, Ljava/util/LinkedHashMap;-><init>(IFZ)V
+
+    .line 24
+    iput p1, p0, Lcom/google/googlenav/appwidget/traffic/a;->a:I
+
+    .line 25
     return-void
 .end method
 
 
 # virtual methods
-.method public afterTextChanged(Landroid/text/Editable;)V
+.method protected removeEldestEntry(Ljava/util/Map$Entry;)Z
     .registers 4
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/appwidget/traffic/a;->a:Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetConfigureActivity;
+    .prologue
+    .line 29
+    invoke-virtual {p0}, Lcom/google/googlenav/appwidget/traffic/a;->size()I
 
-    invoke-static {v0}, Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetConfigureActivity;->b(Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetConfigureActivity;)Landroid/widget/Button;
+    move-result v0
+
+    .line 30
+    iget v1, p0, Lcom/google/googlenav/appwidget/traffic/a;->a:I
+
+    if-le v0, v1, :cond_f
+
+    .line 31
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/googlenav/appwidget/traffic/a;->a:Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetConfigureActivity;
+    invoke-virtual {p0, v0}, Lcom/google/googlenav/appwidget/traffic/a;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v1}, Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetConfigureActivity;->a(Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetConfigureActivity;)Z
+    .line 34
+    :cond_f
+    const/4 v0, 0x0
 
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
-
-    return-void
-.end method
-
-.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
-
-    return-void
-.end method
-
-.method public onTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
-
-    return-void
+    return v0
 .end method

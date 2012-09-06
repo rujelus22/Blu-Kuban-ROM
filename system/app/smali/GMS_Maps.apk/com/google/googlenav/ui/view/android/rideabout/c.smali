@@ -1,5 +1,6 @@
 .class Lcom/google/googlenav/ui/view/android/rideabout/c;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
 .implements Landroid/view/View$OnLongClickListener;
@@ -14,7 +15,11 @@
 # direct methods
 .method constructor <init>(Lcom/google/googlenav/ui/view/android/rideabout/DirectionsLineSchematicView;I)V
     .registers 3
+    .parameter
+    .parameter
 
+    .prologue
+    .line 373
     iput-object p1, p0, Lcom/google/googlenav/ui/view/android/rideabout/c;->b:Lcom/google/googlenav/ui/view/android/rideabout/DirectionsLineSchematicView;
 
     iput p2, p0, Lcom/google/googlenav/ui/view/android/rideabout/c;->a:I
@@ -28,10 +33,13 @@
 # virtual methods
 .method public onLongClick(Landroid/view/View;)Z
     .registers 6
+    .parameter
 
+    .prologue
+    .line 376
     iget-object v0, p0, Lcom/google/googlenav/ui/view/android/rideabout/c;->b:Lcom/google/googlenav/ui/view/android/rideabout/DirectionsLineSchematicView;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/rideabout/DirectionsLineSchematicView;->a(Lcom/google/googlenav/ui/view/android/rideabout/DirectionsLineSchematicView;)Lcom/google/googlenav/ui/p;
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/rideabout/DirectionsLineSchematicView;->a(Lcom/google/googlenav/ui/view/android/rideabout/DirectionsLineSchematicView;)Lcom/google/googlenav/ui/g;
 
     move-result-object v0
 
@@ -41,7 +49,7 @@
 
     const/4 v3, 0x0
 
-    invoke-interface {v0, v1, v2, v3}, Lcom/google/googlenav/ui/p;->a(IILjava/lang/Object;)Z
+    invoke-interface {v0, v1, v2, v3}, Lcom/google/googlenav/ui/g;->a(IILjava/lang/Object;)Z
 
     move-result v0
 

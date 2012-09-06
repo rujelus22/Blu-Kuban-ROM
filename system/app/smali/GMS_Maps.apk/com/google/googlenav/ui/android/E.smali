@@ -1,28 +1,22 @@
-.class Lcom/google/googlenav/ui/android/E;
+.class public Lcom/google/googlenav/ui/android/E;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lr/l;
+.field private a:D
 
-.field final synthetic b:Lt/q;
+.field private b:D
 
-.field final synthetic c:Lcom/google/googlenav/ui/android/FloorPickerView;
+.field private c:F
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/android/FloorPickerView;Lr/l;Lt/q;)V
-    .registers 4
+.method public constructor <init>()V
+    .registers 1
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/android/E;->c:Lcom/google/googlenav/ui/android/FloorPickerView;
-
-    iput-object p2, p0, Lcom/google/googlenav/ui/android/E;->a:Lr/l;
-
-    iput-object p3, p0, Lcom/google/googlenav/ui/android/E;->b:Lt/q;
-
+    .prologue
+    .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,45 +24,98 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 4
+.method public a(D)F
+    .registers 9
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/E;->a:Lr/l;
+    .prologue
+    .line 66
+    iget v0, p0, Lcom/google/googlenav/ui/android/E;->c:F
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/E;->b:Lt/q;
+    float-to-double v0, v0
 
-    invoke-virtual {v1}, Lt/q;->a()Lt/r;
+    iget-wide v2, p0, Lcom/google/googlenav/ui/android/E;->a:D
 
-    move-result-object v1
+    sub-double v2, p1, v2
 
-    invoke-virtual {v0, v1}, Lr/l;->a(Lt/r;)Lt/y;
+    mul-double/2addr v0, v2
 
-    move-result-object v0
+    iget-wide v2, p0, Lcom/google/googlenav/ui/android/E;->b:D
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/E;->c:Lcom/google/googlenav/ui/android/FloorPickerView;
+    iget-wide v4, p0, Lcom/google/googlenav/ui/android/E;->a:D
 
-    invoke-static {v1}, Lcom/google/googlenav/ui/android/FloorPickerView;->f(Lcom/google/googlenav/ui/android/FloorPickerView;)Lt/q;
+    sub-double/2addr v2, v4
 
-    move-result-object v1
+    div-double/2addr v0, v2
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/android/E;->b:Lt/q;
+    double-to-float v0, v0
 
-    invoke-static {v1, v2}, Lcom/google/googlenav/ui/android/FloorPickerView;->a(Lt/q;Lt/q;)Z
+    return v0
+.end method
 
-    move-result v1
+.method public a(DD)Z
+    .registers 7
+    .parameter
+    .parameter
 
-    if-eqz v1, :cond_25
+    .prologue
+    .line 20
+    iget-wide v0, p0, Lcom/google/googlenav/ui/android/E;->a:D
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/E;->c:Lcom/google/googlenav/ui/android/FloorPickerView;
+    cmpl-double v0, v0, p1
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/android/E;->c:Lcom/google/googlenav/ui/android/FloorPickerView;
+    if-nez v0, :cond_c
 
-    invoke-static {v2}, Lcom/google/googlenav/ui/android/FloorPickerView;->f(Lcom/google/googlenav/ui/android/FloorPickerView;)Lt/q;
+    iget-wide v0, p0, Lcom/google/googlenav/ui/android/E;->b:D
 
-    move-result-object v2
+    cmpl-double v0, v0, p3
 
-    invoke-static {v1, v2, v0}, Lcom/google/googlenav/ui/android/FloorPickerView;->a(Lcom/google/googlenav/ui/android/FloorPickerView;Lt/q;Lt/y;)V
+    if-eqz v0, :cond_12
 
-    :cond_25
-    return-void
+    .line 21
+    :cond_c
+    iput-wide p1, p0, Lcom/google/googlenav/ui/android/E;->a:D
+
+    .line 22
+    iput-wide p3, p0, Lcom/google/googlenav/ui/android/E;->b:D
+
+    .line 23
+    const/4 v0, 0x1
+
+    .line 25
+    :goto_11
+    return v0
+
+    :cond_12
+    const/4 v0, 0x0
+
+    goto :goto_11
+.end method
+
+.method public a(F)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 47
+    iget v0, p0, Lcom/google/googlenav/ui/android/E;->c:F
+
+    cmpl-float v0, v0, p1
+
+    if-eqz v0, :cond_a
+
+    .line 48
+    iput p1, p0, Lcom/google/googlenav/ui/android/E;->c:F
+
+    .line 49
+    const/4 v0, 0x1
+
+    .line 51
+    :goto_9
+    return v0
+
+    :cond_a
+    const/4 v0, 0x0
+
+    goto :goto_9
 .end method

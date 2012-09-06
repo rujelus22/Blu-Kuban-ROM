@@ -1,75 +1,82 @@
-.class Lcom/android/email/service/MailService$6;
-.super Ljava/lang/Object;
+.class final Lcom/android/email/service/MailService$6;
+.super Lcom/android/email/SingleRunningTask;
 .source "MailService.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/service/MailService;->onStartCommand(Landroid/content/Intent;II)I
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/email/service/MailService;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = null
 .end annotation
 
-
-# instance fields
-.field final synthetic this$0:Lcom/android/email/service/MailService;
-
-.field final synthetic val$alarmManager:Landroid/app/AlarmManager;
-
-.field final synthetic val$startId:I
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/android/email/SingleRunningTask",
+        "<",
+        "Landroid/content/Context;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method constructor <init>(Lcom/android/email/service/MailService;Landroid/app/AlarmManager;I)V
-    .registers 4
-    .parameter
-    .parameter
-    .parameter
+.method constructor <init>(Ljava/lang/String;)V
+    .registers 2
+    .parameter "x0"
 
     .prologue
-    .line 428
-    iput-object p1, p0, Lcom/android/email/service/MailService$6;->this$0:Lcom/android/email/service/MailService;
-
-    iput-object p2, p0, Lcom/android/email/service/MailService$6;->val$alarmManager:Landroid/app/AlarmManager;
-
-    iput p3, p0, Lcom/android/email/service/MailService$6;->val$startId:I
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 687
+    invoke-direct {p0, p1}, Lcom/android/email/SingleRunningTask;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .registers 3
+.method protected runInternal(Landroid/content/Context;)V
+    .registers 6
+    .parameter "context"
 
     .prologue
-    .line 444
-    iget-object v0, p0, Lcom/android/email/service/MailService$6;->this$0:Lcom/android/email/service/MailService;
+    .line 690
+    invoke-static {p1}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
 
-    invoke-virtual {v0}, Lcom/android/email/service/MailService;->refreshSyncReports()V
+    move-result-object v2
 
-    .line 447
-    iget-object v0, p0, Lcom/android/email/service/MailService$6;->this$0:Lcom/android/email/service/MailService;
+    const-string v3, "com.android.email"
 
-    iget-object v1, p0, Lcom/android/email/service/MailService$6;->val$alarmManager:Landroid/app/AlarmManager;
+    invoke-virtual {v2, v3}, Landroid/accounts/AccountManager;->getAccountsByType(Ljava/lang/String;)[Landroid/accounts/Account;
 
-    invoke-virtual {v0, v1}, Lcom/android/email/service/MailService;->reschedule(Landroid/app/AlarmManager;)V
+    move-result-object v0
 
-    .line 448
-    iget-object v0, p0, Lcom/android/email/service/MailService$6;->this$0:Lcom/android/email/service/MailService;
+    .line 692
+    .local v0, accountManagerAccounts:[Landroid/accounts/Account;
+    invoke-static {p1}, Lcom/android/email/service/MailService;->getPopImapAccountList(Landroid/content/Context;)Ljava/util/ArrayList;
 
-    iget v1, p0, Lcom/android/email/service/MailService$6;->val$startId:I
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/android/email/service/MailService;->stopSelf(I)V
+    .line 693
+    .local v1, providerAccounts:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/provider/Account;>;"
+    invoke-static {p1, v1, v0, p1}, Lcom/android/email/service/MailService;->reconcileAccountsWithAccountManager(Landroid/content/Context;Ljava/util/List;[Landroid/accounts/Account;Landroid/content/Context;)V
 
-    .line 449
+    .line 696
+    return-void
+.end method
+
+.method protected bridge synthetic runInternal(Ljava/lang/Object;)V
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 687
+    check-cast p1, Landroid/content/Context;
+
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/android/email/service/MailService$6;->runInternal(Landroid/content/Context;)V
+
     return-void
 .end method

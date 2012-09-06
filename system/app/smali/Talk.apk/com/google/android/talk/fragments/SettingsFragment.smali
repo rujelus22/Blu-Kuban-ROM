@@ -97,11 +97,12 @@
     .line 385
     const v0, 0x7f0c008f
 
-    .line 398
+    .line 394
+    :cond_c
     :goto_c
     invoke-virtual {p1, v0}, Landroid/preference/ListPreference;->setSummary(I)V
 
-    .line 399
+    .line 395
     return-void
 
     .line 386
@@ -142,16 +143,10 @@
 
     move-result v1
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_c
 
     .line 392
     const v0, 0x7f0c0092
-
-    goto :goto_c
-
-    .line 396
-    :cond_34
-    const v0, 0x7f0c0091
 
     goto :goto_c
 .end method

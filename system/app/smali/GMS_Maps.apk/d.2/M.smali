@@ -1,117 +1,129 @@
-.class Ld/M;
-.super Ljava/util/concurrent/ThreadPoolExecutor;
+.class public Ld/m;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# static fields
+.field private static final a:Ld/n;
 
 
 # instance fields
-.field final synthetic a:Ld/L;
+.field private final b:Ljava/lang/Object;
 
 
 # direct methods
-.method constructor <init>(Ld/L;IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/RejectedExecutionHandler;)V
-    .registers 17
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput-object p1, p0, Ld/M;->a:Ld/L;
+    .prologue
+    .line 89
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    move-object v0, p0
+    const/16 v1, 0x10
 
-    move v1, p2
+    if-lt v0, v1, :cond_e
 
-    move v2, p3
+    .line 90
+    new-instance v0, Ld/o;
 
-    move-wide v3, p4
+    invoke-direct {v0}, Ld/o;-><init>()V
 
-    move-object v5, p6
+    sput-object v0, Ld/m;->a:Ld/n;
 
-    move-object v6, p7
+    .line 94
+    :goto_d
+    return-void
 
-    move-object/from16 v7, p8
+    .line 92
+    :cond_e
+    new-instance v0, Ld/q;
 
-    invoke-direct/range {v0 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/RejectedExecutionHandler;)V
+    invoke-direct {v0}, Ld/q;-><init>()V
 
+    sput-object v0, Ld/m;->a:Ld/n;
+
+    goto :goto_d
+.end method
+
+.method public constructor <init>()V
+    .registers 2
+
+    .prologue
+    .line 99
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 100
+    sget-object v0, Ld/m;->a:Ld/n;
+
+    invoke-interface {v0, p0}, Ld/n;->a(Ld/m;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ld/m;->b:Ljava/lang/Object;
+
+    .line 101
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/Object;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 109
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 110
+    iput-object p1, p0, Ld/m;->b:Ljava/lang/Object;
+
+    .line 111
     return-void
 .end method
 
 
 # virtual methods
-.method protected terminated()V
+.method public a(I)Ld/f;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 143
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public a()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 117
+    iget-object v0, p0, Ld/m;->b:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public a(Ljava/lang/String;I)Ljava/util/List;
     .registers 4
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Ld/M;->a:Ld/L;
+    .prologue
+    .line 179
+    const/4 v0, 0x0
 
-    invoke-static {v0}, Ld/L;->a(Ld/L;)Z
+    return-object v0
+.end method
 
-    move-result v0
+.method public a(IILandroid/os/Bundle;)Z
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
 
-    if-eqz v0, :cond_17
+    .prologue
+    .line 160
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Ld/M;->a:Ld/L;
-
-    iget-object v0, v0, Ld/L;->d:Ld/aq;
-
-    if-eqz v0, :cond_17
-
-    iget-object v0, p0, Ld/M;->a:Ld/L;
-
-    iget-object v1, p0, Ld/M;->a:Ld/L;
-
-    iget-object v1, v1, Ld/L;->d:Ld/aq;
-
-    invoke-virtual {v0, v1}, Ld/L;->a(Ld/aq;)V
-
-    :cond_17
-    :try_start_17
-    invoke-static {}, Ld/ai;->a()Ld/ai;
-
-    move-result-object v0
-
-    iget-object v1, p0, Ld/M;->a:Ld/L;
-
-    invoke-static {v1}, Ld/L;->b(Ld/L;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ld/ai;->b(Ljava/lang/String;)V
-    :try_end_24
-    .catchall {:try_start_17 .. :try_end_24} :catchall_36
-
-    iget-object v0, p0, Ld/M;->a:Ld/L;
-
-    iget-object v0, v0, Ld/L;->a:Ld/C;
-
-    if-eqz v0, :cond_35
-
-    iget-object v0, p0, Ld/M;->a:Ld/L;
-
-    iget-object v0, v0, Ld/L;->a:Ld/C;
-
-    iget-object v1, p0, Ld/M;->a:Ld/L;
-
-    iget-object v1, v1, Ld/L;->d:Ld/aq;
-
-    invoke-interface {v0, v1}, Ld/C;->a(Ld/aq;)V
-
-    :cond_35
-    return-void
-
-    :catchall_36
-    move-exception v0
-
-    iget-object v1, p0, Ld/M;->a:Ld/L;
-
-    iget-object v1, v1, Ld/L;->a:Ld/C;
-
-    if-eqz v1, :cond_48
-
-    iget-object v1, p0, Ld/M;->a:Ld/L;
-
-    iget-object v1, v1, Ld/L;->a:Ld/C;
-
-    iget-object v2, p0, Ld/M;->a:Ld/L;
-
-    iget-object v2, v2, Ld/L;->d:Ld/aq;
-
-    invoke-interface {v1, v2}, Ld/C;->a(Ld/aq;)V
-
-    :cond_48
-    throw v0
+    return v0
 .end method

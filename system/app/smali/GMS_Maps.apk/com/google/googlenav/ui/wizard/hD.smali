@@ -1,36 +1,42 @@
-.class Lcom/google/googlenav/ui/wizard/hD;
-.super Lcom/google/googlenav/ui/android/M;
+.class Lcom/google/googlenav/ui/wizard/hd;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lac/d;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/hA;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/ha;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/hA;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/ha;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/hD;->a:Lcom/google/googlenav/ui/wizard/hA;
+    .prologue
+    .line 117
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/hd;->a:Lcom/google/googlenav/ui/wizard/ha;
 
-    invoke-direct {p0}, Lcom/google/googlenav/ui/android/M;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/view/View;)V
-    .registers 6
+.method public Z()V
+    .registers 3
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hD;->a:Lcom/google/googlenav/ui/wizard/hA;
+    .prologue
+    .line 120
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hd;->a:Lcom/google/googlenav/ui/wizard/ha;
 
-    const/16 v1, 0x1f6
+    const/4 v1, 0x0
 
-    const/4 v2, -0x1
+    invoke-static {v0, v1}, Lcom/google/googlenav/ui/wizard/ha;->a(Lcom/google/googlenav/ui/wizard/ha;Z)Z
 
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/google/googlenav/ui/wizard/hA;->a(IILjava/lang/Object;)Z
-
+    .line 121
     return-void
 .end method

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:paddingRight="@dimen/padding_right_size_1" android:layout_width="fill_parent" android:layout_height="@dimen/view_layout_height_size_2"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <View android:id="@id/account_color_bar" android:layout_width="5.3299866dip" android:layout_height="fill_parent" />
-    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="8.0dip" android:layout_weight="1.0">
-        <TextView android:ellipsize="end" android:gravity="center_vertical" android:id="@id/alarm_title" android:singleLine="true" style="@style/TextStyle_1" />
-        <TextView android:ellipsize="end" android:id="@id/alarm_when" android:singleLine="true" style="@style/TextStyle_2" />
-    </LinearLayout>
-</LinearLayout>

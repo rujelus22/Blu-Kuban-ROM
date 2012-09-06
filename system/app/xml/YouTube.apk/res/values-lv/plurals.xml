@@ -28,6 +28,14 @@
         <item quantity="other">Pirms %1$d sekundēm</item>
         <item quantity="one">Pirms 1 sekundes</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Beidzas pēc %1$d d.</item>
+        <item quantity="one">Derīg. term. — 1 d.</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Beidzas pēc %1$d st.</item>
+        <item quantity="one">Derīg. term. — 1 st.</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">jaunas augšupielādes</item>
         <item quantity="one">jauna augšupielāde</item>

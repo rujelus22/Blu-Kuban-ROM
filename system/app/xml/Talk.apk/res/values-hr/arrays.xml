@@ -29,6 +29,12 @@
         <item>Samo ako je bešumno</item>
         <item>Nikad</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>isključena</item>
+        <item>niska</item>
+        <item>srednja</item>
+        <item>virtualna</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Nema</item>
         <item>Stabilizacija slike: Niska</item>

@@ -42,32 +42,32 @@
     .registers 2
 
     .prologue
-    .line 667
+    .line 107
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 672
+    .line 112
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->title_:Ljava/lang/String;
 
-    .line 688
+    .line 128
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->image_:Ljava/util/List;
 
-    .line 722
+    .line 162
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->browseUrl_:Ljava/lang/String;
 
-    .line 764
+    .line 205
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->cachedSize:I
 
-    .line 667
+    .line 107
     return-void
 .end method
 
@@ -78,17 +78,17 @@
     .parameter "value"
 
     .prologue
-    .line 705
+    .line 145
     if-nez p1, :cond_8
 
-    .line 706
+    .line 146
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 708
+    .line 148
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->image_:Ljava/util/List;
 
@@ -98,20 +98,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 709
+    .line 149
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->image_:Ljava/util/List;
 
-    .line 711
+    .line 151
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->image_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 712
+    .line 152
     return-object p0
 .end method
 
@@ -119,7 +119,7 @@
     .registers 2
 
     .prologue
-    .line 723
+    .line 163
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->browseUrl_:Ljava/lang/String;
 
     return-object v0
@@ -129,15 +129,15 @@
     .registers 2
 
     .prologue
-    .line 766
+    .line 208
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 768
+    .line 210
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->getSerializedSize()I
 
-    .line 770
+    .line 212
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->cachedSize:I
 
@@ -157,7 +157,7 @@
     .end annotation
 
     .prologue
-    .line 691
+    .line 131
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->image_:Ljava/util/List;
 
     return-object v0
@@ -167,10 +167,10 @@
     .registers 6
 
     .prologue
-    .line 774
+    .line 217
     const/4 v2, 0x0
 
-    .line 775
+    .line 218
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->hasTitle()Z
 
@@ -178,7 +178,7 @@
 
     if-eqz v3, :cond_11
 
-    .line 776
+    .line 219
     const/4 v3, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->getTitle()Ljava/lang/String;
@@ -191,7 +191,7 @@
 
     add-int/2addr v2, v3
 
-    .line 779
+    .line 222
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->getImageList()Ljava/util/List;
 
@@ -215,7 +215,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Doc$Image;
 
-    .line 780
+    .line 223
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Doc$Image;
     const/4 v3, 0x2
 
@@ -227,7 +227,7 @@
 
     goto :goto_19
 
-    .line 783
+    .line 226
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Doc$Image;
     :cond_2c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->hasBrowseUrl()Z
@@ -236,7 +236,7 @@
 
     if-eqz v3, :cond_3c
 
-    .line 784
+    .line 227
     const/4 v3, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->getBrowseUrl()Ljava/lang/String;
@@ -249,11 +249,11 @@
 
     add-int/2addr v2, v3
 
-    .line 787
+    .line 230
     :cond_3c
     iput v2, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->cachedSize:I
 
-    .line 788
+    .line 231
     return v2
 .end method
 
@@ -261,7 +261,7 @@
     .registers 2
 
     .prologue
-    .line 673
+    .line 113
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->title_:Ljava/lang/String;
 
     return-object v0
@@ -271,7 +271,7 @@
     .registers 2
 
     .prologue
-    .line 724
+    .line 164
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->hasBrowseUrl:Z
 
     return v0
@@ -281,7 +281,7 @@
     .registers 2
 
     .prologue
-    .line 674
+    .line 114
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->hasTitle:Z
 
     return v0
@@ -297,29 +297,29 @@
     .end annotation
 
     .prologue
-    .line 795
+    .line 239
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 796
+    .line 240
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_2a
 
-    .line 800
+    .line 244
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 801
+    .line 245
     :sswitch_d
     return-object p0
 
-    .line 806
+    .line 250
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -329,22 +329,22 @@
 
     goto :goto_0
 
-    .line 810
+    .line 254
     :sswitch_16
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Doc$Image;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Doc$Image;-><init>()V
 
-    .line 811
+    .line 255
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Doc$Image;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 812
+    .line 256
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->addImage(Lcom/google/android/finsky/remoting/protos/Doc$Image;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;
 
     goto :goto_0
 
-    .line 816
+    .line 260
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Doc$Image;
     :sswitch_22
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -355,7 +355,7 @@
 
     goto :goto_0
 
-    .line 796
+    .line 240
     :sswitch_data_2a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -375,7 +375,7 @@
     .end annotation
 
     .prologue
-    .line 665
+    .line 104
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;
 
     move-result-object v0
@@ -388,15 +388,15 @@
     .parameter "value"
 
     .prologue
-    .line 726
+    .line 166
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->hasBrowseUrl:Z
 
-    .line 727
+    .line 167
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->browseUrl_:Ljava/lang/String;
 
-    .line 728
+    .line 168
     return-object p0
 .end method
 
@@ -405,15 +405,15 @@
     .parameter "value"
 
     .prologue
-    .line 676
+    .line 116
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->hasTitle:Z
 
-    .line 677
+    .line 117
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->title_:Ljava/lang/String;
 
-    .line 678
+    .line 118
     return-object p0
 .end method
 
@@ -427,14 +427,14 @@
     .end annotation
 
     .prologue
-    .line 753
+    .line 194
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->hasTitle()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 754
+    .line 195
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->getTitle()Ljava/lang/String;
@@ -443,7 +443,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 756
+    .line 197
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->getImageList()Ljava/util/List;
 
@@ -467,7 +467,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Doc$Image;
 
-    .line 757
+    .line 198
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Doc$Image;
     const/4 v2, 0x2
 
@@ -475,7 +475,7 @@
 
     goto :goto_16
 
-    .line 759
+    .line 200
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Doc$Image;
     :cond_27
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->hasBrowseUrl()Z
@@ -484,7 +484,7 @@
 
     if-eqz v2, :cond_35
 
-    .line 760
+    .line 201
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;->getBrowseUrl()Ljava/lang/String;
@@ -493,7 +493,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 762
+    .line 203
     :cond_35
     return-void
 .end method

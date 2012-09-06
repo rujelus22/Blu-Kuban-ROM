@@ -3,19 +3,19 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/av;
+.implements Lcom/google/android/youtube/core/async/bc;
 
 
 # instance fields
-.field private a:Lcom/google/android/youtube/core/ui/k;
+.field private m:Lcom/google/android/youtube/core/ui/j;
 
-.field private b:Lcom/google/android/youtube/core/async/UserAuthorizer;
+.field private n:Lcom/google/android/youtube/core/async/UserAuthorizer;
 
-.field private c:Lcom/google/android/youtube/core/client/ad;
+.field private o:Lcom/google/android/youtube/core/b/ae;
 
-.field private d:Lcom/google/android/youtube/core/client/af;
+.field private p:Lcom/google/android/youtube/core/b/ag;
 
-.field private e:Lcom/google/android/youtube/core/e;
+.field private q:Lcom/google/android/youtube/core/d;
 
 
 # direct methods
@@ -23,114 +23,52 @@
     .registers 1
 
     .prologue
-    .line 31
+    .line 29
     invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;-><init>()V
 
-    .line 92
+    .line 90
     return-void
-.end method
-
-.method public static a(Landroid/content/Context;)Landroid/content/Intent;
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 42
-    new-instance v0, Landroid/content/Intent;
-
-    const-class v1, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;
-
-    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    const/high16 v1, 0x400
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method protected final a(I)Landroid/app/Dialog;
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 125
-    packed-switch p1, :pswitch_data_c
-
-    .line 129
-    const/4 v0, 0x0
-
-    :goto_4
-    return-object v0
-
-    .line 127
-    :pswitch_5
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->b:Lcom/google/android/youtube/core/async/UserAuthorizer;
-
-    invoke-virtual {v0, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->b(Landroid/app/Activity;)Landroid/app/Dialog;
-
-    move-result-object v0
-
-    goto :goto_4
-
-    .line 125
-    :pswitch_data_c
-    .packed-switch 0x1
-        :pswitch_5
-    .end packed-switch
-.end method
-
-.method protected final a()Ljava/lang/String;
-    .registers 2
-
-    .prologue
-    .line 135
-    const-string v0, "yt_channel"
-
-    return-object v0
-.end method
-
 .method protected final a(Lcom/google/android/youtube/app/YouTubeApplication;)V
     .registers 3
     .parameter
 
     .prologue
-    .line 48
+    .line 46
     invoke-super {p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->a(Lcom/google/android/youtube/app/YouTubeApplication;)V
 
-    .line 49
-    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->D()Lcom/google/android/youtube/core/async/UserAuthorizer;
+    .line 47
+    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->Q()Lcom/google/android/youtube/core/async/UserAuthorizer;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->b:Lcom/google/android/youtube/core/async/UserAuthorizer;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->n:Lcom/google/android/youtube/core/async/UserAuthorizer;
+
+    .line 48
+    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->j()Lcom/google/android/youtube/core/b/ae;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->o:Lcom/google/android/youtube/core/b/ae;
+
+    .line 49
+    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->p()Lcom/google/android/youtube/core/b/ag;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->p:Lcom/google/android/youtube/core/b/ag;
 
     .line 50
-    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->i()Lcom/google/android/youtube/core/client/ad;
+    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->N()Lcom/google/android/youtube/core/d;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->c:Lcom/google/android/youtube/core/client/ad;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->q:Lcom/google/android/youtube/core/d;
 
     .line 51
-    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->o()Lcom/google/android/youtube/core/client/af;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->d:Lcom/google/android/youtube/core/client/af;
-
-    .line 52
-    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->B()Lcom/google/android/youtube/core/e;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->e:Lcom/google/android/youtube/core/e;
-
-    .line 53
     return-void
 .end method
 
@@ -139,8 +77,8 @@
     .parameter
 
     .prologue
-    .line 111
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->a:Lcom/google/android/youtube/core/ui/k;
+    .line 109
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->m:Lcom/google/android/youtube/core/ui/j;
 
     const/4 v1, 0x1
 
@@ -148,21 +86,21 @@
 
     const/4 v2, 0x0
 
-    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->c:Lcom/google/android/youtube/core/client/ad;
+    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->o:Lcom/google/android/youtube/core/b/ae;
 
-    invoke-interface {v3}, Lcom/google/android/youtube/core/client/ad;->a()Lcom/google/android/youtube/core/async/GDataRequestFactory;
+    invoke-interface {v3}, Lcom/google/android/youtube/core/b/ae;->a()Lcom/google/android/youtube/core/async/GDataRequestFactory;
 
     move-result-object v3
 
-    invoke-virtual {v3, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->h(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+    invoke-virtual {v3, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->i(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v3
 
     aput-object v3, v1, v2
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/ui/k;->a([Lcom/google/android/youtube/core/async/GDataRequest;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/ui/j;->a([Lcom/google/android/youtube/core/async/GDataRequest;)V
 
-    .line 113
+    .line 111
     return-void
 .end method
 
@@ -171,21 +109,31 @@
     .parameter
 
     .prologue
-    .line 120
+    .line 118
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->finish()V
 
-    .line 121
+    .line 119
     return-void
 .end method
 
-.method public final d_()V
+.method protected final e()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 123
+    const-string v0, "yt_channel"
+
+    return-object v0
+.end method
+
+.method public final e_()V
     .registers 1
 
     .prologue
-    .line 116
+    .line 114
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->finish()V
 
-    .line 117
+    .line 115
     return-void
 .end method
 
@@ -194,56 +142,56 @@
     .parameter
 
     .prologue
-    .line 57
+    .line 55
     invoke-super {p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 59
-    const v0, 0x7f04002c
+    .line 57
+    const v0, 0x7f040050
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->setContentView(I)V
 
+    .line 58
+    const v0, 0x7f0b0171
+
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->e(I)V
+
     .line 60
-    const v0, 0x7f0a0120
+    new-instance v3, Lcom/google/android/youtube/app/adapter/c;
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->d(I)V
+    invoke-direct {v3, p0}, Lcom/google/android/youtube/app/adapter/c;-><init>(Landroid/content/Context;)V
 
-    .line 62
-    new-instance v3, Lcom/google/android/youtube/app/a/a;
-
-    invoke-direct {v3, p0}, Lcom/google/android/youtube/app/a/a;-><init>(Landroid/content/Context;)V
-
-    .line 63
-    const v0, 0x7f09005f
+    .line 61
+    const v0, 0x7f0800a9
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
-    check-cast v2, Lcom/google/android/youtube/core/ui/h;
+    check-cast v2, Lcom/google/android/youtube/core/ui/g;
 
-    .line 64
+    .line 62
     new-instance v0, Lcom/google/android/youtube/app/ui/b;
 
-    iget-object v4, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->c:Lcom/google/android/youtube/core/client/ad;
+    iget-object v4, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->o:Lcom/google/android/youtube/core/b/ae;
 
-    iget-object v5, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->e:Lcom/google/android/youtube/core/e;
+    iget-object v5, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->q:Lcom/google/android/youtube/core/d;
 
-    iget-object v6, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->d:Lcom/google/android/youtube/core/client/af;
+    iget-object v6, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->p:Lcom/google/android/youtube/core/b/ag;
 
     move-object v1, p0
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/youtube/app/ui/b;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/ui/h;Lcom/google/android/youtube/app/a/a;Lcom/google/android/youtube/core/client/ad;Lcom/google/android/youtube/core/e;Lcom/google/android/youtube/core/client/af;)V
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/youtube/app/ui/b;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/ui/g;Lcom/google/android/youtube/app/adapter/c;Lcom/google/android/youtube/core/b/ae;Lcom/google/android/youtube/core/d;Lcom/google/android/youtube/core/b/ag;)V
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->a:Lcom/google/android/youtube/core/ui/k;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->m:Lcom/google/android/youtube/core/ui/j;
 
-    .line 72
-    new-instance v0, Lcom/google/android/youtube/app/honeycomb/phone/ae;
+    .line 70
+    new-instance v0, Lcom/google/android/youtube/app/honeycomb/phone/be;
 
-    invoke-direct {v0, p0, v3}, Lcom/google/android/youtube/app/honeycomb/phone/ae;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;Lcom/google/android/youtube/app/a/a;)V
+    invoke-direct {v0, p0, v3}, Lcom/google/android/youtube/app/honeycomb/phone/be;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;Lcom/google/android/youtube/app/adapter/c;)V
 
-    invoke-interface {v2, v0}, Lcom/google/android/youtube/core/ui/h;->a(Landroid/widget/AdapterView$OnItemClickListener;)V
+    invoke-interface {v2, v0}, Lcom/google/android/youtube/core/ui/g;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 96
+    .line 94
     return-void
 .end method
 
@@ -251,15 +199,15 @@
     .registers 2
 
     .prologue
-    .line 106
+    .line 104
     invoke-super {p0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->onResume()V
 
-    .line 107
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->b:Lcom/google/android/youtube/core/async/UserAuthorizer;
+    .line 105
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->n:Lcom/google/android/youtube/core/async/UserAuthorizer;
 
-    invoke-virtual {v0, p0, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/av;)V
+    invoke-virtual {v0, p0, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/bc;)V
 
-    .line 108
+    .line 106
     return-void
 .end method
 
@@ -267,14 +215,14 @@
     .registers 2
 
     .prologue
-    .line 100
+    .line 98
     invoke-super {p0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->onStop()V
 
-    .line 101
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->a:Lcom/google/android/youtube/core/ui/k;
+    .line 99
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->m:Lcom/google/android/youtube/core/ui/j;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/ui/k;->e()V
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/ui/j;->e()V
 
-    .line 102
+    .line 100
     return-void
 .end method

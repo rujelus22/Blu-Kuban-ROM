@@ -30,7 +30,7 @@
 
     .prologue
     .line 50
-    const v0, 0x7f090029
+    const v0, 0x7f080032
 
     invoke-virtual {p0, v0}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -39,7 +39,7 @@
     check-cast v0, Lcom/google/android/youtube/core/ui/TabRow;
 
     .line 51
-    const v1, 0x7f09002a
+    const v1, 0x7f080033
 
     invoke-virtual {p0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -88,7 +88,7 @@
 
     invoke-direct {v0, p0}, Lcom/google/android/youtube/core/ui/s;-><init>(Lcom/google/android/youtube/core/ui/Workspace;)V
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/ui/TabRow;->a(Lcom/google/android/youtube/core/ui/o;)V
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/ui/TabRow;->setOnTabClickListener(Lcom/google/android/youtube/core/ui/o;)V
 
     .line 36
     invoke-virtual {p0, p2}, Lcom/google/android/youtube/core/ui/Workspace;->findViewById(I)Landroid/view/View;
@@ -109,7 +109,7 @@
     invoke-virtual {p1, v0, v1}, Lcom/google/android/youtube/core/ui/TabRow;->a(IZ)V
 
     .line 40
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/core/ui/Workspace;->c(I)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/core/ui/Workspace;->setCurrentScreen(I)V
 
     .line 42
     :cond_1e

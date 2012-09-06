@@ -1,131 +1,108 @@
 .class public Lcom/google/googlenav/networkinitiated/i;
-.super Lat/a;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/googlenav/networkinitiated/b;
 
 
 # instance fields
-.field private final a:Ljava/lang/String;
-
-.field private final b:Lcom/google/googlenav/networkinitiated/j;
-
-.field private final c:I
-
-.field private d:I
+.field private final a:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ILcom/google/googlenav/networkinitiated/j;)V
-    .registers 4
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 2
+    .parameter
 
-    invoke-direct {p0}, Lat/a;-><init>()V
+    .prologue
+    .line 30
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/googlenav/networkinitiated/i;->a:Ljava/lang/String;
+    .line 31
+    iput-object p1, p0, Lcom/google/googlenav/networkinitiated/i;->a:Landroid/content/Context;
 
-    iput-object p3, p0, Lcom/google/googlenav/networkinitiated/i;->b:Lcom/google/googlenav/networkinitiated/j;
-
-    iput p2, p0, Lcom/google/googlenav/networkinitiated/i;->c:I
-
+    .line 32
     return-void
 .end method
 
 
 # virtual methods
-.method public a()I
-    .registers 2
-
-    const/16 v0, 0x5b
-
-    return v0
-.end method
-
-.method public a(Ljava/io/DataOutput;)V
-    .registers 6
-
-    const/4 v3, 0x1
-
-    invoke-static {}, Laf/b;->a()Laf/b;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Laf/b;->v()Laf/a;
-
-    new-instance v0, Lam/b;
-
-    sget-object v1, LbF/G;->n:Lam/e;
-
-    invoke-direct {v0, v1}, Lam/b;-><init>(Lam/e;)V
-
-    iget-object v1, p0, Lcom/google/googlenav/networkinitiated/i;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v3, v1}, Lam/b;->b(ILjava/lang/String;)V
-
-    const/4 v1, 0x4
-
-    iget v2, p0, Lcom/google/googlenav/networkinitiated/i;->c:I
-
-    invoke-virtual {v0, v1, v2}, Lam/b;->h(II)V
-
-    const/4 v1, 0x5
-
-    invoke-virtual {v0, v1, v3}, Lam/b;->a(II)V
-
-    new-instance v1, Lam/b;
-
-    sget-object v2, LbD/bx;->K:Lam/e;
-
-    invoke-direct {v1, v2}, Lam/b;-><init>(Lam/e;)V
-
-    invoke-virtual {v1, v3, v0}, Lam/b;->b(ILam/b;)V
-
-    check-cast p1, Ljava/io/OutputStream;
-
-    invoke-virtual {v1, p1}, Lam/b;->a(Ljava/io/OutputStream;)V
-
-    return-void
-.end method
-
-.method public a(Ljava/io/DataInput;)Z
+.method public a(Landroid/content/Intent;)Z
     .registers 4
+    .parameter
 
-    const/4 v1, 0x1
+    .prologue
+    .line 58
+    const-string v0, "com.google.android.c2dm.intent.REGISTRATION"
 
-    sget-object v0, LbD/bx;->L:Lam/e;
+    invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    invoke-static {v0, p1}, Lam/g;->a(Lam/e;Ljava/io/DataInput;)Lam/b;
+    move-result-object v1
 
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lam/b;->d(I)I
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    iput v0, p0, Lcom/google/googlenav/networkinitiated/i;->d:I
-
-    return v1
-.end method
-
-.method public b()V
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/networkinitiated/i;->b:Lcom/google/googlenav/networkinitiated/j;
-
-    if-eqz v0, :cond_d
-
-    iget-object v0, p0, Lcom/google/googlenav/networkinitiated/i;->b:Lcom/google/googlenav/networkinitiated/j;
-
-    iget v1, p0, Lcom/google/googlenav/networkinitiated/i;->d:I
-
-    iget-object v2, p0, Lcom/google/googlenav/networkinitiated/i;->a:Ljava/lang/String;
-
-    invoke-interface {v0, v1, v2}, Lcom/google/googlenav/networkinitiated/j;->a(ILjava/lang/String;)V
-
-    :cond_d
-    return-void
-.end method
-
-.method public z_()Z
-    .registers 2
-
-    const/4 v0, 0x0
-
     return v0
+.end method
+
+.method public b(Landroid/content/Intent;)V
+    .registers 8
+    .parameter
+
+    .prologue
+    .line 36
+    const-string v0, "registration_id"
+
+    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 37
+    const-string v1, "error"
+
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 38
+    const-string v2, "unregistered"
+
+    invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    .line 43
+    if-eqz v1, :cond_1b
+
+    const-string v2, "NONE"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2f
+
+    .line 46
+    :cond_1b
+    invoke-static {}, Lac/h;->a()Lac/h;
+
+    move-result-object v1
+
+    new-instance v2, Lcom/google/googlenav/networkinitiated/j;
+
+    const/4 v3, 0x4
+
+    new-instance v4, Lcom/google/googlenav/networkinitiated/l;
+
+    iget-object v5, p0, Lcom/google/googlenav/networkinitiated/i;->a:Landroid/content/Context;
+
+    invoke-direct {v4, v5}, Lcom/google/googlenav/networkinitiated/l;-><init>(Landroid/content/Context;)V
+
+    invoke-direct {v2, v0, v3, v4}, Lcom/google/googlenav/networkinitiated/j;-><init>(Ljava/lang/String;ILcom/google/googlenav/networkinitiated/k;)V
+
+    invoke-virtual {v1, v2}, Lac/h;->c(Lac/g;)V
+
+    .line 54
+    :cond_2f
+    return-void
 .end method

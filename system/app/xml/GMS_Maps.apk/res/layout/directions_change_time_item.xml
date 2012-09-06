@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/DirectionsActionItem"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/text" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    <ImageView android:gravity="right|center" android:id="@id/right_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:layout_marginRight="15.0dip" android:src="@drawable/ic_maps_clock" />
+</LinearLayout>

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field static final DEBUG:Z = true
+.field static final DEBUG:Z
 
 
 # direct methods

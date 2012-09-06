@@ -17,15 +17,15 @@
     .end annotation
 
     .prologue
-    .line 96
+    .line 90
     invoke-super {p0}, Lorg/apache/commons/io/output/ProxyOutputStream;->close()V
 
-    .line 97
+    .line 91
     iget-object v0, p0, Lorg/apache/commons/io/output/TeeOutputStream;->branch:Ljava/io/OutputStream;
 
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
 
-    .line 98
+    .line 92
     return-void
 .end method
 
@@ -38,15 +38,15 @@
     .end annotation
 
     .prologue
-    .line 86
+    .line 81
     invoke-super {p0}, Lorg/apache/commons/io/output/ProxyOutputStream;->flush()V
 
-    .line 87
+    .line 82
     iget-object v0, p0, Lorg/apache/commons/io/output/TeeOutputStream;->branch:Ljava/io/OutputStream;
 
     invoke-virtual {v0}, Ljava/io/OutputStream;->flush()V
 
-    .line 88
+    .line 83
     return-void
 .end method
 
@@ -60,25 +60,25 @@
     .end annotation
 
     .prologue
-    .line 76
+    .line 72
     monitor-enter p0
 
     :try_start_1
     invoke-super {p0, p1}, Lorg/apache/commons/io/output/ProxyOutputStream;->write(I)V
 
-    .line 77
+    .line 73
     iget-object v0, p0, Lorg/apache/commons/io/output/TeeOutputStream;->branch:Ljava/io/OutputStream;
 
     invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write(I)V
     :try_end_9
     .catchall {:try_start_1 .. :try_end_9} :catchall_b
 
-    .line 78
+    .line 74
     monitor-exit p0
 
     return-void
 
-    .line 76
+    .line 72
     :catchall_b
     move-exception v0
 
@@ -97,25 +97,25 @@
     .end annotation
 
     .prologue
-    .line 52
+    .line 50
     monitor-enter p0
 
     :try_start_1
     invoke-super {p0, p1}, Lorg/apache/commons/io/output/ProxyOutputStream;->write([B)V
 
-    .line 53
+    .line 51
     iget-object v0, p0, Lorg/apache/commons/io/output/TeeOutputStream;->branch:Ljava/io/OutputStream;
 
     invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write([B)V
     :try_end_9
     .catchall {:try_start_1 .. :try_end_9} :catchall_b
 
-    .line 54
+    .line 52
     monitor-exit p0
 
     return-void
 
-    .line 52
+    .line 50
     :catchall_b
     move-exception v0
 
@@ -136,25 +136,25 @@
     .end annotation
 
     .prologue
-    .line 65
+    .line 62
     monitor-enter p0
 
     :try_start_1
     invoke-super {p0, p1, p2, p3}, Lorg/apache/commons/io/output/ProxyOutputStream;->write([BII)V
 
-    .line 66
+    .line 63
     iget-object v0, p0, Lorg/apache/commons/io/output/TeeOutputStream;->branch:Ljava/io/OutputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
     :try_end_9
     .catchall {:try_start_1 .. :try_end_9} :catchall_b
 
-    .line 67
+    .line 64
     monitor-exit p0
 
     return-void
 
-    .line 65
+    .line 62
     :catchall_b
     move-exception v0
 

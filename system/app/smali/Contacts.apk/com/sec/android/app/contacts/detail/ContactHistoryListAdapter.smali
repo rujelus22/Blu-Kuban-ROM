@@ -1301,7 +1301,7 @@
     :pswitch_4
     iget-object v0, p1, Lcom/sec/android/app/contacts/detail/ContactHistoryListAdapter$ItemHistoryCache;->iSendType:Landroid/widget/ImageView;
 
-    const v1, 0x7f020107
+    const v1, 0x7f020198
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1311,7 +1311,7 @@
     :pswitch_d
     iget-object v0, p1, Lcom/sec/android/app/contacts/detail/ContactHistoryListAdapter$ItemHistoryCache;->iSendType:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200f0
+    const v1, 0x7f02019a
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1321,7 +1321,7 @@
     :pswitch_16
     iget-object v0, p1, Lcom/sec/android/app/contacts/detail/ContactHistoryListAdapter$ItemHistoryCache;->iSendType:Landroid/widget/ImageView;
 
-    const v1, 0x7f020100
+    const v1, 0x7f020199
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1331,7 +1331,7 @@
     :pswitch_1f
     iget-object v0, p1, Lcom/sec/android/app/contacts/detail/ContactHistoryListAdapter$ItemHistoryCache;->iSendType:Landroid/widget/ImageView;
 
-    const v1, 0x7f020108
+    const v1, 0x7f020204
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 

@@ -1,36 +1,14 @@
-.class public abstract Lcom/google/common/collect/bs;
+.class interface abstract Lcom/google/common/collect/bs;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method protected constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 56
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
 # virtual methods
-.method protected abstract delegate()Ljava/lang/Object;
-.end method
-
-.method public toString()Ljava/lang/String;
-    .registers 2
-
-    .prologue
-    .line 72
-    invoke-virtual {p0}, Lcom/google/common/collect/bs;->delegate()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+.method public abstract a(Ljava/lang/Object;Lcom/google/common/collect/bw;)Lcom/google/common/collect/BstModificationResult;
+    .parameter
+    .end parameter
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 .end method

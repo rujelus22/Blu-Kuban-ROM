@@ -14,343 +14,232 @@
     .registers 1
 
     .prologue
-    .line 25
+    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static configureDownloadProgressUi(Landroid/content/Context;Lcom/google/android/finsky/local/LocalAsset;Lcom/google/android/finsky/download/Download;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ProgressBar;)V
-    .registers 20
+.method public static configureDownloadProgressUi(Landroid/content/Context;Lcom/google/android/finsky/receivers/Installer$InstallerProgressReport;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ProgressBar;)V
+    .registers 16
     .parameter "ctx"
-    .parameter "localAsset"
-    .parameter "download"
+    .parameter "progressReport"
     .parameter "downloadingBytes"
     .parameter "downloadingPercentage"
     .parameter "progressBar"
 
     .prologue
-    .line 45
-    invoke-static {p0}, Lcom/google/android/finsky/adapters/DownloadProgressHelper;->initializeStrings(Landroid/content/Context;)V
+    const-wide/16 v9, 0x0
 
-    .line 47
-    const-string v10, " "
-
-    move-object/from16 v0, p4
-
-    invoke-virtual {v0, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 48
-    const-string v10, " "
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 49
-    invoke-interface {p1}, Lcom/google/android/finsky/local/LocalAsset;->getState()Lcom/google/android/finsky/local/AssetState;
-
-    move-result-object v10
-
-    sget-object v11, Lcom/google/android/finsky/local/AssetState;->INSTALLING:Lcom/google/android/finsky/local/AssetState;
-
-    if-ne v10, v11, :cond_20
-
-    .line 50
-    const/4 v10, 0x1
-
-    move-object/from16 v0, p5
-
-    invoke-virtual {v0, v10}, Landroid/widget/ProgressBar;->setIndeterminate(Z)V
-
-    .line 104
-    :goto_1f
-    return-void
-
-    .line 54
-    :cond_20
-    if-nez p2, :cond_29
-
-    .line 55
-    const/4 v10, 0x1
-
-    move-object/from16 v0, p5
-
-    invoke-virtual {v0, v10}, Landroid/widget/ProgressBar;->setIndeterminate(Z)V
-
-    goto :goto_1f
-
-    .line 64
-    :cond_29
-    const v10, 0x7f070167
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v10}, Landroid/widget/TextView;->setText(I)V
-
-    .line 67
-    invoke-interface/range {p2 .. p2}, Lcom/google/android/finsky/download/Download;->getBytesCompleted()J
-
-    move-result-wide v1
-
-    .line 68
-    .local v1, bytesCompleted:J
-    invoke-interface/range {p2 .. p2}, Lcom/google/android/finsky/download/Download;->getPackageProperties()Lcom/google/android/finsky/download/Download$PackageProperties;
-
-    move-result-object v10
-
-    iget-wide v3, v10, Lcom/google/android/finsky/download/Download$PackageProperties;->size:J
-
-    .line 72
-    .local v3, bytesTotal:J
-    invoke-interface/range {p2 .. p2}, Lcom/google/android/finsky/download/Download;->getPackageProperties()Lcom/google/android/finsky/download/Download$PackageProperties;
-
-    move-result-object v9
-
-    .line 73
-    .local v9, properties:Lcom/google/android/finsky/download/Download$PackageProperties;
-    iget-object v10, v9, Lcom/google/android/finsky/download/Download$PackageProperties;->mainObb:Lcom/google/android/finsky/download/obb/Obb;
-
-    if-eqz v10, :cond_51
-
-    .line 74
-    iget-object v10, v9, Lcom/google/android/finsky/download/Download$PackageProperties;->mainObb:Lcom/google/android/finsky/download/obb/Obb;
-
-    invoke-static {v10}, Lcom/google/android/finsky/adapters/DownloadProgressHelper;->getObbCompleted(Lcom/google/android/finsky/download/obb/Obb;)J
-
-    move-result-wide v10
-
-    add-long/2addr v1, v10
-
-    .line 75
-    iget-object v10, v9, Lcom/google/android/finsky/download/Download$PackageProperties;->mainObb:Lcom/google/android/finsky/download/obb/Obb;
-
-    invoke-interface {v10}, Lcom/google/android/finsky/download/obb/Obb;->getSize()J
-
-    move-result-wide v10
-
-    add-long/2addr v3, v10
-
-    .line 77
-    :cond_51
-    iget-object v10, v9, Lcom/google/android/finsky/download/Download$PackageProperties;->patchObb:Lcom/google/android/finsky/download/obb/Obb;
-
-    if-eqz v10, :cond_63
-
-    .line 78
-    iget-object v10, v9, Lcom/google/android/finsky/download/Download$PackageProperties;->patchObb:Lcom/google/android/finsky/download/obb/Obb;
-
-    invoke-static {v10}, Lcom/google/android/finsky/adapters/DownloadProgressHelper;->getObbCompleted(Lcom/google/android/finsky/download/obb/Obb;)J
-
-    move-result-wide v10
-
-    add-long/2addr v1, v10
-
-    .line 79
-    iget-object v10, v9, Lcom/google/android/finsky/download/Download$PackageProperties;->patchObb:Lcom/google/android/finsky/download/obb/Obb;
-
-    invoke-interface {v10}, Lcom/google/android/finsky/download/obb/Obb;->getSize()J
-
-    move-result-wide v10
-
-    add-long/2addr v3, v10
-
-    .line 83
-    :cond_63
-    const-wide/16 v10, 0x0
-
-    cmp-long v10, v1, v10
-
-    if-lez v10, :cond_7d
-
-    const-wide/16 v10, 0x0
-
-    cmp-long v10, v3, v10
-
-    if-lez v10, :cond_7d
-
-    cmp-long v10, v1, v3
-
-    if-gtz v10, :cond_7d
+    const/4 v6, 0x0
 
     const/4 v5, 0x1
 
-    .line 85
-    .local v5, bytesValid:Z
-    :goto_74
-    if-nez v5, :cond_7f
+    .line 40
+    invoke-static {p0}, Lcom/google/android/finsky/adapters/DownloadProgressHelper;->initializeStrings(Landroid/content/Context;)V
+
+    .line 42
+    const-string v7, " "
+
+    invoke-virtual {p3, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 43
+    const-string v7, " "
+
+    invoke-virtual {p2, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 44
+    iget-object v7, p1, Lcom/google/android/finsky/receivers/Installer$InstallerProgressReport;->installerState:Lcom/google/android/finsky/receivers/Installer$InstallerState;
+
+    sget-object v8, Lcom/google/android/finsky/receivers/Installer$InstallerState;->DOWNLOADING:Lcom/google/android/finsky/receivers/Installer$InstallerState;
+
+    if-eq v7, v8, :cond_27
+
+    .line 45
+    invoke-virtual {p4, v5}, Landroid/widget/ProgressBar;->setIndeterminate(Z)V
+
+    .line 47
+    iget-object v5, p1, Lcom/google/android/finsky/receivers/Installer$InstallerProgressReport;->installerState:Lcom/google/android/finsky/receivers/Installer$InstallerState;
+
+    sget-object v6, Lcom/google/android/finsky/receivers/Installer$InstallerState;->INSTALLING:Lcom/google/android/finsky/receivers/Installer$InstallerState;
+
+    if-ne v5, v6, :cond_26
+
+    .line 48
+    const v5, 0x7f070195
+
+    invoke-virtual {p2, v5}, Landroid/widget/TextView;->setText(I)V
 
     .line 86
-    const/4 v10, 0x1
+    :cond_26
+    :goto_26
+    return-void
 
-    move-object/from16 v0, p5
+    .line 55
+    :cond_27
+    iget-wide v7, p1, Lcom/google/android/finsky/receivers/Installer$InstallerProgressReport;->bytesCompleted:J
 
-    invoke-virtual {v0, v10}, Landroid/widget/ProgressBar;->setIndeterminate(Z)V
+    cmp-long v7, v7, v9
 
-    goto :goto_1f
+    if-lez v7, :cond_5b
 
-    .line 83
-    .end local v5           #bytesValid:Z
-    :cond_7d
-    const/4 v5, 0x0
+    iget-wide v7, p1, Lcom/google/android/finsky/receivers/Installer$InstallerProgressReport;->bytesTotal:J
 
-    goto :goto_74
+    cmp-long v7, v7, v9
 
-    .line 91
-    .restart local v5       #bytesValid:Z
-    :cond_7f
-    const/4 v6, 0x0
+    if-lez v7, :cond_5b
 
-    .line 92
-    .local v6, percent:I
-    const-wide/16 v10, 0x64
+    iget-wide v7, p1, Lcom/google/android/finsky/receivers/Installer$InstallerProgressReport;->bytesCompleted:J
 
-    mul-long/2addr v10, v1
+    iget-wide v9, p1, Lcom/google/android/finsky/receivers/Installer$InstallerProgressReport;->bytesTotal:J
 
-    div-long/2addr v10, v3
+    cmp-long v7, v7, v9
 
-    long-to-int v6, v10
+    if-gtz v7, :cond_5b
 
-    .line 93
-    const/4 v10, 0x0
+    move v0, v5
 
-    move-object/from16 v0, p5
+    .line 59
+    .local v0, bytesValid:Z
+    :goto_3c
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v10}, Landroid/widget/ProgressBar;->setIndeterminate(Z)V
+    .line 60
+    .local v1, percent:I
+    if-eqz v0, :cond_5d
 
-    .line 94
-    move-object/from16 v0, p5
+    .line 61
+    iget-wide v7, p1, Lcom/google/android/finsky/receivers/Installer$InstallerProgressReport;->bytesCompleted:J
 
-    invoke-virtual {v0, v6}, Landroid/widget/ProgressBar;->setProgress(I)V
+    const-wide/16 v9, 0x64
 
-    .line 97
-    sget-object v10, Lcom/google/android/finsky/adapters/DownloadProgressHelper;->sDownloadStatusFormatPercents:Ljava/lang/CharSequence;
+    mul-long/2addr v7, v9
 
-    const/4 v11, 0x1
+    iget-wide v9, p1, Lcom/google/android/finsky/receivers/Installer$InstallerProgressReport;->bytesTotal:J
 
-    new-array v11, v11, [Ljava/lang/CharSequence;
+    div-long/2addr v7, v9
 
-    const/4 v12, 0x0
+    long-to-int v1, v7
 
-    invoke-static {v6}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    .line 62
+    invoke-virtual {p4, v6}, Landroid/widget/ProgressBar;->setIndeterminate(Z)V
 
-    move-result-object v13
+    .line 63
+    invoke-virtual {p4, v1}, Landroid/widget/ProgressBar;->setProgress(I)V
 
-    aput-object v13, v11, v12
+    .line 69
+    :goto_4e
+    iget v4, p1, Lcom/google/android/finsky/receivers/Installer$InstallerProgressReport;->downloadStatus:I
 
-    invoke-static {v10, v11}, Landroid/text/TextUtils;->expandTemplate(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    .line 70
+    .local v4, status:I
+    const/16 v7, 0xc3
 
-    move-result-object v8
+    if-ne v4, v7, :cond_61
 
-    .line 99
-    .local v8, progressStringPercents:Ljava/lang/CharSequence;
-    move-object/from16 v0, p4
+    .line 71
+    const v5, 0x7f07019d
 
-    invoke-virtual {v0, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p2, v5}, Landroid/widget/TextView;->setText(I)V
 
-    .line 100
-    sget-object v10, Lcom/google/android/finsky/adapters/DownloadProgressHelper;->sDownloadStatusFormatBytes:Ljava/lang/CharSequence;
+    goto :goto_26
 
-    const/4 v11, 0x2
+    .end local v0           #bytesValid:Z
+    .end local v1           #percent:I
+    .end local v4           #status:I
+    :cond_5b
+    move v0, v6
 
-    new-array v11, v11, [Ljava/lang/CharSequence;
+    .line 55
+    goto :goto_3c
 
-    const/4 v12, 0x0
+    .line 65
+    .restart local v0       #bytesValid:Z
+    .restart local v1       #percent:I
+    :cond_5d
+    invoke-virtual {p4, v5}, Landroid/widget/ProgressBar;->setIndeterminate(Z)V
 
-    invoke-static {p0, v1, v2}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
+    goto :goto_4e
 
-    move-result-object v13
+    .line 72
+    .restart local v4       #status:I
+    :cond_61
+    const/16 v7, 0xc4
 
-    aput-object v13, v11, v12
+    if-ne v4, v7, :cond_6c
 
-    const/4 v12, 0x1
+    .line 73
+    const v5, 0x7f07019e
 
-    invoke-static {p0, v3, v4}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
+    invoke-virtual {p2, v5}, Landroid/widget/TextView;->setText(I)V
 
-    move-result-object v13
+    goto :goto_26
 
-    aput-object v13, v11, v12
+    .line 74
+    :cond_6c
+    if-eqz v0, :cond_9c
 
-    invoke-static {v10, v11}, Landroid/text/TextUtils;->expandTemplate(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    .line 75
+    sget-object v7, Lcom/google/android/finsky/adapters/DownloadProgressHelper;->sDownloadStatusFormatPercents:Ljava/lang/CharSequence;
 
-    move-result-object v7
+    new-array v8, v5, [Ljava/lang/CharSequence;
 
-    .line 103
-    .local v7, progressStringBytes:Ljava/lang/CharSequence;
-    move-object/from16 v0, p3
+    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    invoke-virtual {v0, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    move-result-object v9
 
-    goto/16 :goto_1f
-.end method
+    aput-object v9, v8, v6
 
-.method private static getObbCompleted(Lcom/google/android/finsky/download/obb/Obb;)J
-    .registers 7
-    .parameter "obb"
+    invoke-static {v7, v8}, Landroid/text/TextUtils;->expandTemplate(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    .prologue
-    .line 115
-    const-wide/16 v2, 0x0
+    move-result-object v3
 
-    .line 116
-    .local v2, result:J
-    invoke-interface {p0}, Lcom/google/android/finsky/download/obb/Obb;->getState()Lcom/google/android/finsky/download/obb/ObbState;
+    .line 77
+    .local v3, progressStringPercents:Ljava/lang/CharSequence;
+    invoke-virtual {p3, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    move-result-object v4
+    .line 78
+    sget-object v7, Lcom/google/android/finsky/adapters/DownloadProgressHelper;->sDownloadStatusFormatBytes:Ljava/lang/CharSequence;
 
-    .line 117
-    .local v4, state:Lcom/google/android/finsky/download/obb/ObbState;
-    sget-object v5, Lcom/google/android/finsky/download/obb/ObbState;->DOWNLOADING:Lcom/google/android/finsky/download/obb/ObbState;
+    const/4 v8, 0x2
 
-    if-ne v4, v5, :cond_21
+    new-array v8, v8, [Ljava/lang/CharSequence;
 
-    .line 118
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+    iget-wide v9, p1, Lcom/google/android/finsky/receivers/Installer$InstallerProgressReport;->bytesCompleted:J
 
-    move-result-object v5
+    invoke-static {p0, v9, v10}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
 
-    invoke-virtual {v5}, Lcom/google/android/finsky/FinskyApp;->getDownloadQueue()Lcom/google/android/finsky/download/DownloadQueue;
+    move-result-object v9
 
-    move-result-object v0
+    aput-object v9, v8, v6
 
-    .line 119
-    .local v0, downloadQueue:Lcom/google/android/finsky/download/DownloadQueue;
-    invoke-interface {p0}, Lcom/google/android/finsky/download/obb/Obb;->getUrl()Ljava/lang/String;
+    iget-wide v9, p1, Lcom/google/android/finsky/receivers/Installer$InstallerProgressReport;->bytesTotal:J
 
-    move-result-object v5
+    invoke-static {p0, v9, v10}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
 
-    invoke-interface {v0, v5}, Lcom/google/android/finsky/download/DownloadQueue;->getDownloadByUrl(Ljava/lang/String;)Lcom/google/android/finsky/download/Download;
+    move-result-object v6
 
-    move-result-object v1
+    aput-object v6, v8, v5
 
-    .line 120
-    .local v1, obbDownload:Lcom/google/android/finsky/download/Download;
-    if-eqz v1, :cond_20
+    invoke-static {v7, v8}, Landroid/text/TextUtils;->expandTemplate(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    .line 121
-    invoke-interface {v1}, Lcom/google/android/finsky/download/Download;->getBytesCompleted()J
+    move-result-object v2
 
-    move-result-wide v2
+    .line 81
+    .local v2, progressStringBytes:Ljava/lang/CharSequence;
+    invoke-virtual {p2, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 127
-    .end local v0           #downloadQueue:Lcom/google/android/finsky/download/DownloadQueue;
-    .end local v1           #obbDownload:Lcom/google/android/finsky/download/Download;
-    :cond_20
-    :goto_20
-    return-wide v2
+    goto :goto_26
 
-    .line 123
-    :cond_21
-    sget-object v5, Lcom/google/android/finsky/download/obb/ObbState;->DOWNLOADED:Lcom/google/android/finsky/download/obb/ObbState;
+    .line 84
+    .end local v2           #progressStringBytes:Ljava/lang/CharSequence;
+    .end local v3           #progressStringPercents:Ljava/lang/CharSequence;
+    :cond_9c
+    const v5, 0x7f07019c
 
-    if-ne v4, v5, :cond_20
+    invoke-virtual {p2, v5}, Landroid/widget/TextView;->setText(I)V
 
-    .line 124
-    invoke-interface {p0}, Lcom/google/android/finsky/download/obb/Obb;->getSize()J
-
-    move-result-wide v2
-
-    goto :goto_20
+    goto :goto_26
 .end method
 
 .method private static initializeStrings(Landroid/content/Context;)V
@@ -358,13 +247,13 @@
     .parameter "ctx"
 
     .prologue
-    .line 32
+    .line 27
     sget-object v0, Lcom/google/android/finsky/adapters/DownloadProgressHelper;->sDownloadStatusFormatPercents:Ljava/lang/CharSequence;
 
     if-nez v0, :cond_11
 
-    .line 33
-    const v0, 0x7f07015d
+    .line 28
+    const v0, 0x7f070192
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -376,14 +265,14 @@
 
     sput-object v0, Lcom/google/android/finsky/adapters/DownloadProgressHelper;->sDownloadStatusFormatPercents:Ljava/lang/CharSequence;
 
-    .line 36
+    .line 31
     :cond_11
     sget-object v0, Lcom/google/android/finsky/adapters/DownloadProgressHelper;->sDownloadStatusFormatBytes:Ljava/lang/CharSequence;
 
     if-nez v0, :cond_22
 
-    .line 37
-    const v0, 0x7f07015e
+    .line 32
+    const v0, 0x7f070193
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -395,7 +284,7 @@
 
     sput-object v0, Lcom/google/android/finsky/adapters/DownloadProgressHelper;->sDownloadStatusFormatBytes:Ljava/lang/CharSequence;
 
-    .line 40
+    .line 35
     :cond_22
     return-void
 .end method

@@ -39,35 +39,35 @@
     .registers 3
 
     .prologue
-    .line 18761
+    .line 19286
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 18766
+    .line 19291
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->signatureHash_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
 
-    .line 18786
+    .line 19311
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->nonce_:J
 
-    .line 18803
+    .line 19328
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->signatureAlgorithm_:Ljava/lang/String;
 
-    .line 18820
+    .line 19345
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->billingApiVersion_:I
 
-    .line 18866
+    .line 19392
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->cachedSize:I
 
-    .line 18761
+    .line 19286
     return-void
 .end method
 
@@ -77,7 +77,7 @@
     .registers 2
 
     .prologue
-    .line 18821
+    .line 19346
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->billingApiVersion_:I
 
     return v0
@@ -87,15 +87,15 @@
     .registers 2
 
     .prologue
-    .line 18868
+    .line 19395
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 18870
+    .line 19397
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->getSerializedSize()I
 
-    .line 18872
+    .line 19399
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->cachedSize:I
 
@@ -106,7 +106,7 @@
     .registers 3
 
     .prologue
-    .line 18787
+    .line 19312
     iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->nonce_:J
 
     return-wide v0
@@ -116,10 +116,10 @@
     .registers 5
 
     .prologue
-    .line 18876
+    .line 19404
     const/4 v0, 0x0
 
-    .line 18877
+    .line 19405
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->hasSignatureHash()Z
 
@@ -127,7 +127,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 18878
+    .line 19406
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->getSignatureHash()Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
@@ -140,7 +140,7 @@
 
     add-int/2addr v0, v1
 
-    .line 18881
+    .line 19409
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->hasNonce()Z
 
@@ -148,7 +148,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 18882
+    .line 19410
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->getNonce()J
@@ -161,7 +161,7 @@
 
     add-int/2addr v0, v1
 
-    .line 18885
+    .line 19413
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->hasSignatureAlgorithm()Z
 
@@ -169,7 +169,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 18886
+    .line 19414
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->getSignatureAlgorithm()Ljava/lang/String;
@@ -182,7 +182,7 @@
 
     add-int/2addr v0, v1
 
-    .line 18889
+    .line 19417
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->hasBillingApiVersion()Z
 
@@ -190,7 +190,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 18890
+    .line 19418
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->getBillingApiVersion()I
@@ -203,11 +203,11 @@
 
     add-int/2addr v0, v1
 
-    .line 18893
+    .line 19421
     :cond_41
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->cachedSize:I
 
-    .line 18894
+    .line 19422
     return v0
 .end method
 
@@ -215,7 +215,7 @@
     .registers 2
 
     .prologue
-    .line 18804
+    .line 19329
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->signatureAlgorithm_:Ljava/lang/String;
 
     return-object v0
@@ -225,7 +225,7 @@
     .registers 2
 
     .prologue
-    .line 18768
+    .line 19293
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->signatureHash_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
 
     return-object v0
@@ -235,7 +235,7 @@
     .registers 2
 
     .prologue
-    .line 18822
+    .line 19347
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->hasBillingApiVersion:Z
 
     return v0
@@ -245,7 +245,7 @@
     .registers 2
 
     .prologue
-    .line 18788
+    .line 19313
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->hasNonce:Z
 
     return v0
@@ -255,7 +255,7 @@
     .registers 2
 
     .prologue
-    .line 18805
+    .line 19330
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->hasSignatureAlgorithm:Z
 
     return v0
@@ -265,7 +265,7 @@
     .registers 2
 
     .prologue
-    .line 18767
+    .line 19292
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->hasSignatureHash:Z
 
     return v0
@@ -281,44 +281,44 @@
     .end annotation
 
     .prologue
-    .line 18901
+    .line 19430
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 18902
+    .line 19431
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_32
 
-    .line 18906
+    .line 19435
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 18907
+    .line 19436
     :sswitch_d
     return-object p0
 
-    .line 18912
+    .line 19441
     :sswitch_e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;-><init>()V
 
-    .line 18913
+    .line 19442
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 18914
+    .line 19443
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->setSignatureHash(Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;
 
     goto :goto_0
 
-    .line 18918
+    .line 19447
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
     :sswitch_1a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
@@ -329,7 +329,7 @@
 
     goto :goto_0
 
-    .line 18922
+    .line 19451
     :sswitch_22
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -339,7 +339,7 @@
 
     goto :goto_0
 
-    .line 18926
+    .line 19455
     :sswitch_2a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -349,7 +349,7 @@
 
     goto :goto_0
 
-    .line 18902
+    .line 19431
     :sswitch_data_32
     .sparse-switch
         0x0 -> :sswitch_d
@@ -370,7 +370,7 @@
     .end annotation
 
     .prologue
-    .line 18759
+    .line 19284
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;
 
     move-result-object v0
@@ -383,15 +383,15 @@
     .parameter "value"
 
     .prologue
-    .line 18824
+    .line 19349
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->hasBillingApiVersion:Z
 
-    .line 18825
+    .line 19350
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->billingApiVersion_:I
 
-    .line 18826
+    .line 19351
     return-object p0
 .end method
 
@@ -400,15 +400,15 @@
     .parameter "value"
 
     .prologue
-    .line 18790
+    .line 19315
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->hasNonce:Z
 
-    .line 18791
+    .line 19316
     iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->nonce_:J
 
-    .line 18792
+    .line 19317
     return-object p0
 .end method
 
@@ -417,15 +417,15 @@
     .parameter "value"
 
     .prologue
-    .line 18807
+    .line 19332
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->hasSignatureAlgorithm:Z
 
-    .line 18808
+    .line 19333
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->signatureAlgorithm_:Ljava/lang/String;
 
-    .line 18809
+    .line 19334
     return-object p0
 .end method
 
@@ -434,26 +434,26 @@
     .parameter "value"
 
     .prologue
-    .line 18770
+    .line 19295
     if-nez p1, :cond_8
 
-    .line 18771
+    .line 19296
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 18773
+    .line 19298
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->hasSignatureHash:Z
 
-    .line 18774
+    .line 19299
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->signatureHash_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
 
-    .line 18775
+    .line 19300
     return-object p0
 .end method
 
@@ -467,14 +467,14 @@
     .end annotation
 
     .prologue
-    .line 18852
+    .line 19378
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->hasSignatureHash()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 18853
+    .line 19379
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->getSignatureHash()Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
@@ -483,7 +483,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 18855
+    .line 19381
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->hasNonce()Z
 
@@ -491,7 +491,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 18856
+    .line 19382
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->getNonce()J
@@ -500,7 +500,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 18858
+    .line 19384
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->hasSignatureAlgorithm()Z
 
@@ -508,7 +508,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 18859
+    .line 19385
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->getSignatureAlgorithm()Ljava/lang/String;
@@ -517,7 +517,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 18861
+    .line 19387
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->hasBillingApiVersion()Z
 
@@ -525,7 +525,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 18862
+    .line 19388
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;->getBillingApiVersion()I
@@ -534,7 +534,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 18864
+    .line 19390
     :cond_38
     return-void
 .end method

@@ -10,7 +10,6 @@
     <item type="id" name="voice_memo">false</item>
     <item type="id" name="phone_book">false</item>
     <item type="id" name="phone_booksim">false</item>
-    <item type="id" name="schedule_num">false</item>
     <item type="id" name="inbox_num">false</item>
     <item type="id" name="outbox_num">false</item>
     <item type="id" name="sentbox_num">false</item>

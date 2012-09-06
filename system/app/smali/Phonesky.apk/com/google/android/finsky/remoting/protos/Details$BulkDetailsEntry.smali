@@ -27,20 +27,20 @@
     .registers 2
 
     .prologue
-    .line 467
+    .line 509
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 472
+    .line 514
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->doc_:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
-    .line 509
+    .line 552
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->cachedSize:I
 
-    .line 467
+    .line 509
     return-void
 .end method
 
@@ -50,15 +50,15 @@
     .registers 2
 
     .prologue
-    .line 511
+    .line 555
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 513
+    .line 557
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->getSerializedSize()I
 
-    .line 515
+    .line 559
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->cachedSize:I
 
@@ -69,7 +69,7 @@
     .registers 2
 
     .prologue
-    .line 474
+    .line 516
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->doc_:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
     return-object v0
@@ -79,10 +79,10 @@
     .registers 4
 
     .prologue
-    .line 519
+    .line 564
     const/4 v0, 0x0
 
-    .line 520
+    .line 565
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->hasDoc()Z
 
@@ -90,7 +90,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 521
+    .line 566
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->getDoc()Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
@@ -103,11 +103,11 @@
 
     add-int/2addr v0, v1
 
-    .line 524
+    .line 569
     :cond_11
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->cachedSize:I
 
-    .line 525
+    .line 570
     return v0
 .end method
 
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 473
+    .line 515
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->hasDoc:Z
 
     return v0
@@ -131,44 +131,44 @@
     .end annotation
 
     .prologue
-    .line 532
+    .line 578
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 533
+    .line 579
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1a
 
-    .line 537
+    .line 583
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 538
+    .line 584
     :sswitch_d
     return-object p0
 
-    .line 543
+    .line 589
     :sswitch_e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;-><init>()V
 
-    .line 544
+    .line 590
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 545
+    .line 591
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->setDoc(Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;)Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;
 
     goto :goto_0
 
-    .line 533
+    .line 579
     :sswitch_data_1a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -186,7 +186,7 @@
     .end annotation
 
     .prologue
-    .line 465
+    .line 506
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;
 
     move-result-object v0
@@ -199,26 +199,26 @@
     .parameter "value"
 
     .prologue
-    .line 476
+    .line 518
     if-nez p1, :cond_8
 
-    .line 477
+    .line 519
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 479
+    .line 521
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->hasDoc:Z
 
-    .line 480
+    .line 522
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->doc_:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
-    .line 481
+    .line 523
     return-object p0
 .end method
 
@@ -232,14 +232,14 @@
     .end annotation
 
     .prologue
-    .line 504
+    .line 547
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->hasDoc()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 505
+    .line 548
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;->getDoc()Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
@@ -248,7 +248,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 507
+    .line 550
     :cond_e
     return-void
 .end method

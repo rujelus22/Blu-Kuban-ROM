@@ -1,185 +1,162 @@
-.class Lcom/google/googlenav/android/j;
-.super Landroid/telephony/PhoneStateListener;
+.class public Lcom/google/googlenav/android/J;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/android/h;
+# static fields
+.field private static final a:Landroid/content/IntentFilter;
 
-.field private final b:Lcom/google/googlenav/az;
+.field private static final b:Landroid/content/BroadcastReceiver;
 
-.field private final c:Ljava/lang/String;
-
-.field private d:J
-
-.field private e:J
+.field private static final c:Ljava/util/Set;
 
 
 # direct methods
-.method private constructor <init>(Lcom/google/googlenav/android/h;Ljava/lang/String;Lcom/google/googlenav/az;)V
+.method static constructor <clinit>()V
+    .registers 2
+
+    .prologue
+    .line 35
+    new-instance v0, Landroid/content/IntentFilter;
+
+    const-string v1, "com.google.googlenav.STOP_TRANSIT_SERVICE"
+
+    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcom/google/googlenav/android/J;->a:Landroid/content/IntentFilter;
+
+    .line 38
+    new-instance v0, Lcom/google/googlenav/android/K;
+
+    invoke-direct {v0}, Lcom/google/googlenav/android/K;-><init>()V
+
+    sput-object v0, Lcom/google/googlenav/android/J;->b:Landroid/content/BroadcastReceiver;
+
+    .line 50
+    invoke-static {}, Lcom/google/common/collect/dm;->a()Ljava/util/HashSet;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/googlenav/android/J;->c:Ljava/util/Set;
+
+    return-void
+.end method
+
+.method public static declared-synchronized a(Landroid/app/Activity;)V
     .registers 4
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/android/j;->a:Lcom/google/googlenav/android/h;
+    .prologue
+    .line 57
+    const-class v1, Lcom/google/googlenav/android/J;
 
-    invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
+    monitor-enter v1
 
-    iput-object p2, p0, Lcom/google/googlenav/android/j;->c:Ljava/lang/String;
+    :try_start_3
+    sget-object v0, Lcom/google/googlenav/android/J;->b:Landroid/content/BroadcastReceiver;
 
-    iput-object p3, p0, Lcom/google/googlenav/android/j;->b:Lcom/google/googlenav/az;
+    sget-object v2, Lcom/google/googlenav/android/J;->a:Landroid/content/IntentFilter;
+
+    invoke-static {p0, v0, v2}, Lcom/google/googlenav/android/J;->a(Landroid/content/Context;Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)V
+    :try_end_a
+    .catchall {:try_start_3 .. :try_end_a} :catchall_c
+
+    .line 58
+    monitor-exit v1
 
     return-void
+
+    .line 57
+    :catchall_c
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
 .end method
 
-.method synthetic constructor <init>(Lcom/google/googlenav/android/h;Ljava/lang/String;Lcom/google/googlenav/az;Lcom/google/googlenav/android/i;)V
-    .registers 5
+.method private static a(Landroid/content/Context;Landroid/content/BroadcastReceiver;)V
+    .registers 4
+    .parameter
+    .parameter
 
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/googlenav/android/j;-><init>(Lcom/google/googlenav/android/h;Ljava/lang/String;Lcom/google/googlenav/az;)V
+    .prologue
+    .line 76
+    sget-object v0, Lcom/google/googlenav/android/J;->c:Ljava/util/Set;
 
-    return-void
-.end method
-
-.method private a()Landroid/telephony/TelephonyManager;
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/googlenav/android/j;->a:Lcom/google/googlenav/android/h;
-
-    invoke-static {v0}, Lcom/google/googlenav/android/h;->a(Lcom/google/googlenav/android/h;)Lcom/google/googlenav/android/l;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->h()Lcom/google/android/maps/MapsActivity;
-
-    move-result-object v0
-
-    const-string v1, "phone"
-
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/MapsActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/telephony/TelephonyManager;
-
-    return-object v0
-.end method
-
-.method private a(J)V
-    .registers 7
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0}, Lcom/google/googlenav/android/j;->a()Landroid/telephony/TelephonyManager;
+    invoke-static {p0, p1}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object v1
 
-    invoke-virtual {v1, p0, v0}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
+    invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    iget-object v1, p0, Lcom/google/googlenav/android/j;->b:Lcom/google/googlenav/az;
+    move-result v0
 
-    const-wide/16 v2, 0x0
+    if-eqz v0, :cond_f
 
-    cmp-long v2, p1, v2
+    .line 77
+    invoke-virtual {p0, p1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    if-nez v2, :cond_11
-
-    const/4 v0, 0x1
-
-    :cond_11
-    invoke-interface {v1, p1, p2, v0}, Lcom/google/googlenav/az;->a(JZ)V
-
+    .line 79
+    :cond_f
     return-void
 .end method
 
-.method static synthetic a(Lcom/google/googlenav/android/j;)V
-    .registers 1
+.method private static a(Landroid/content/Context;Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Lcom/google/googlenav/android/j;->b()V
+    .prologue
+    .line 70
+    sget-object v0, Lcom/google/googlenav/android/J;->c:Ljava/util/Set;
 
+    invoke-static {p0, p1}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_f
+
+    .line 71
+    invoke-virtual {p0, p1, p2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+    .line 73
+    :cond_f
     return-void
 .end method
 
-.method private b()V
+.method public static declared-synchronized b(Landroid/app/Activity;)V
     .registers 3
+    .parameter
 
-    invoke-static {}, Laf/b;->a()Laf/b;
+    .prologue
+    .line 65
+    const-class v1, Lcom/google/googlenav/android/J;
 
-    move-result-object v0
+    monitor-enter v1
 
-    invoke-virtual {v0}, Laf/b;->v()Laf/a;
+    :try_start_3
+    sget-object v0, Lcom/google/googlenav/android/J;->b:Landroid/content/BroadcastReceiver;
 
-    move-result-object v0
+    invoke-static {p0, v0}, Lcom/google/googlenav/android/J;->a(Landroid/content/Context;Landroid/content/BroadcastReceiver;)V
+    :try_end_8
+    .catchall {:try_start_3 .. :try_end_8} :catchall_a
 
-    invoke-interface {v0}, Laf/a;->c()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/google/googlenav/android/j;->d:J
-
-    invoke-direct {p0}, Lcom/google/googlenav/android/j;->a()Landroid/telephony/TelephonyManager;
-
-    move-result-object v0
-
-    const/16 v1, 0x20
-
-    invoke-virtual {v0, p0, v1}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
+    .line 66
+    monitor-exit v1
 
     return-void
-.end method
 
+    .line 65
+    :catchall_a
+    move-exception v0
 
-# virtual methods
-.method public onCallStateChanged(ILjava/lang/String;)V
-    .registers 11
+    monitor-exit v1
 
-    const-wide/16 v6, 0x0
-
-    invoke-static {}, Laf/b;->a()Laf/b;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Laf/b;->v()Laf/a;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Laf/a;->c()J
-
-    move-result-wide v0
-
-    const/4 v2, 0x2
-
-    if-ne p1, v2, :cond_21
-
-    iget-wide v2, p0, Lcom/google/googlenav/android/j;->d:J
-
-    sub-long v2, v0, v2
-
-    const-wide/16 v4, 0x61a8
-
-    cmp-long v2, v2, v4
-
-    if-lez v2, :cond_1e
-
-    invoke-direct {p0, v6, v7}, Lcom/google/googlenav/android/j;->a(J)V
-
-    :cond_1e
-    iput-wide v0, p0, Lcom/google/googlenav/android/j;->e:J
-
-    :cond_20
-    :goto_20
-    return-void
-
-    :cond_21
-    if-nez p1, :cond_20
-
-    iget-wide v2, p0, Lcom/google/googlenav/android/j;->e:J
-
-    cmp-long v2, v2, v6
-
-    if-eqz v2, :cond_20
-
-    iget-wide v2, p0, Lcom/google/googlenav/android/j;->d:J
-
-    sub-long/2addr v0, v2
-
-    invoke-direct {p0, v0, v1}, Lcom/google/googlenav/android/j;->a(J)V
-
-    goto :goto_20
+    throw v0
 .end method

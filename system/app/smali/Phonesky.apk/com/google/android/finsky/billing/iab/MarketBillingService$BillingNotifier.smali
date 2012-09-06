@@ -24,13 +24,13 @@
     .parameter "service"
 
     .prologue
-    .line 706
+    .line 756
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 707
+    .line 757
     iput-object p1, p0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingNotifier;->mService:Lcom/google/android/finsky/billing/iab/MarketBillingService;
 
-    .line 708
+    .line 758
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .parameter "signature"
 
     .prologue
-    .line 756
+    .line 806
     iget-object v1, p0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingNotifier;->mService:Lcom/google/android/finsky/billing/iab/MarketBillingService;
 
     iget-object v1, v1, Lcom/google/android/finsky/billing/iab/MarketBillingService;->mPackageManager:Landroid/content/pm/PackageManager;
@@ -58,34 +58,34 @@
 
     move-result-object v0
 
-    .line 758
+    .line 808
     .local v0, intent:Landroid/content/Intent;
     if-nez v0, :cond_13
 
-    .line 759
+    .line 809
     const/4 v1, 0x0
 
-    .line 764
+    .line 814
     :goto_12
     return v1
 
-    .line 761
+    .line 811
     :cond_13
     const-string v1, "inapp_signed_data"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 762
+    .line 812
     const-string v1, "inapp_signature"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 763
+    .line 813
     iget-object v1, p0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingNotifier;->mService:Lcom/google/android/finsky/billing/iab/MarketBillingService;
 
     invoke-virtual {v1, v0}, Lcom/google/android/finsky/billing/iab/MarketBillingService;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 764
+    .line 814
     const/4 v1, 0x1
 
     goto :goto_12
@@ -98,7 +98,7 @@
     .parameter "responseCode"
 
     .prologue
-    .line 769
+    .line 819
     iget-object v0, p0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingNotifier;->mService:Lcom/google/android/finsky/billing/iab/MarketBillingService;
 
     invoke-static {v0, p1, p2, p3, p4}, Lcom/google/android/finsky/billing/iab/MarketBillingService;->sendResponseCode(Landroid/content/Context;Ljava/lang/String;JLcom/google/android/finsky/billing/iab/MarketBillingService$ResponseCode;)Z
@@ -115,7 +115,7 @@
     .parameter "response"
 
     .prologue
-    .line 724
+    .line 774
     invoke-virtual {p3}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationResponseProto;->getSignedResponse()Lcom/google/android/vending/remoting/protos/VendingProtos$SignedDataProto;
 
     move-result-object v1
@@ -124,7 +124,7 @@
 
     move-result-object v7
 
-    .line 725
+    .line 775
     .local v7, data:Ljava/lang/String;
     invoke-virtual {p3}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationResponseProto;->getSignedResponse()Lcom/google/android/vending/remoting/protos/VendingProtos$SignedDataProto;
 
@@ -134,7 +134,7 @@
 
     move-result-object v10
 
-    .line 728
+    .line 778
     .local v10, signature:Ljava/lang/String;
     invoke-virtual {p3}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationResponseProto;->getStatusBarNotificationList()Ljava/util/List;
 
@@ -158,25 +158,25 @@
 
     check-cast v9, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;
 
-    .line 729
+    .line 779
     .local v9, notification:Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;
     invoke-virtual {v9}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->getTickerText()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 730
+    .line 780
     .local v2, tickerText:Ljava/lang/String;
     invoke-virtual {v9}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->getContentTitle()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 731
+    .line 781
     .local v3, contentTitle:Ljava/lang/String;
     invoke-virtual {v9}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->getContentText()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 732
+    .line 782
     .local v4, contentText:Ljava/lang/String;
     iget-object v1, p0, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingNotifier;->mService:Lcom/google/android/finsky/billing/iab/MarketBillingService;
 
@@ -186,18 +186,18 @@
 
     move-result-object v6
 
-    .line 733
+    .line 783
     .local v6, intent:Landroid/content/Intent;
     const-string v1, "inapp_signed_data"
 
     invoke-virtual {v6, v1, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 734
+    .line 784
     const-string v1, "inapp_signature"
 
     invoke-virtual {v6, v1, v10}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 736
+    .line 786
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v1
@@ -206,7 +206,7 @@
 
     move-result-object v0
 
-    .line 737
+    .line 787
     .local v0, notifier:Lcom/google/android/finsky/utils/Notifier;
     const v5, 0x108008a
 
@@ -216,7 +216,7 @@
 
     goto :goto_18
 
-    .line 740
+    .line 790
     .end local v0           #notifier:Lcom/google/android/finsky/utils/Notifier;
     .end local v2           #tickerText:Ljava/lang/String;
     .end local v3           #contentTitle:Ljava/lang/String;

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:paddingLeft="13.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
-        <ListView android:id="@android:attr/theme" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-        <TextView android:id="@id/empty" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="" />
-    </FrameLayout>
-</LinearLayout>

@@ -1,84 +1,62 @@
 .class LaV/e;
-.super Lap/b;
+.super Landroid/os/Handler;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/String;
-
-.field final synthetic e:LaV/d;
+.field final synthetic a:LaV/d;
 
 
 # direct methods
-.method constructor <init>(LaV/d;Lap/c;Ljava/lang/String;)V
-    .registers 4
+.method constructor <init>(LaV/d;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, LaV/e;->e:LaV/d;
+    .prologue
+    .line 80
+    iput-object p1, p0, LaV/e;->a:LaV/d;
 
-    iput-object p3, p0, LaV/e;->a:Ljava/lang/String;
-
-    invoke-direct {p0, p2}, Lap/b;-><init>(Lap/c;)V
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
+.method public handleMessage(Landroid/os/Message;)V
     .registers 5
+    .parameter
 
-    const/4 v1, 0x0
+    .prologue
+    .line 83
+    iget-object v0, p0, LaV/e;->a:LaV/d;
 
-    :try_start_1
-    iget-object v0, p0, LaV/e;->e:LaV/d;
+    invoke-static {v0}, LaV/d;->a(LaV/d;)Z
 
-    iget-object v2, p0, LaV/e;->a:Ljava/lang/String;
+    move-result v0
 
-    invoke-virtual {v0, v2}, LaV/d;->b_(Ljava/lang/String;)LaV/r;
+    if-eqz v0, :cond_12
+
+    .line 86
+    iget-object v0, p0, LaV/e;->a:LaV/d;
+
+    invoke-static {v0}, LaV/d;->b(LaV/d;)LaV/f;
 
     move-result-object v0
 
-    iget-object v2, p0, LaV/e;->e:LaV/d;
+    invoke-interface {v0}, LaV/f;->a()V
 
-    invoke-static {v2}, LaV/d;->a(LaV/d;)I
-
-    const/4 v1, 0x1
-
-    iget-object v2, p0, LaV/e;->e:LaV/d;
-
-    invoke-static {v2}, LaV/d;->b(LaV/d;)Ljava/lang/String;
-
-    move-result-object v2
-
-    iget-object v3, p0, LaV/e;->a:Ljava/lang/String;
-
-    invoke-static {v2, v3}, Las/b;->b(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_22
-
-    iget-object v2, p0, LaV/e;->e:LaV/d;
-
-    invoke-virtual {v2, v0}, LaV/d;->a(LaV/r;)V
-    :try_end_22
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_22} :catch_23
-
-    :cond_22
-    :goto_22
+    .line 92
+    :goto_11
     return-void
 
-    :catch_23
-    move-exception v0
+    .line 90
+    :cond_12
+    const/4 v0, 0x0
 
-    const-string v2, "BaseQueryInSeparateThreadProvider"
+    const-wide/16 v1, 0x2710
 
-    invoke-static {v2, v0}, Laf/f;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p0, v0, v1, v2}, LaV/e;->sendEmptyMessageDelayed(IJ)Z
 
-    if-nez v1, :cond_22
-
-    iget-object v0, p0, LaV/e;->e:LaV/d;
-
-    invoke-static {v0}, LaV/d;->a(LaV/d;)I
-
-    goto :goto_22
+    goto :goto_11
 .end method

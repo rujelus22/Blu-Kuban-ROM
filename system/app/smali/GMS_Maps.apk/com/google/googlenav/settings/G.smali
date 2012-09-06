@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/settings/G;
+.class Lcom/google/googlenav/settings/g;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/preference/Preference$OnPreferenceChangeListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/settings/MapTileSettingsActivity;
+.field final synthetic a:Lcom/google/googlenav/settings/LatitudeSettingsActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/settings/MapTileSettingsActivity;)V
+.method constructor <init>(Lcom/google/googlenav/settings/LatitudeSettingsActivity;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/settings/G;->a:Lcom/google/googlenav/settings/MapTileSettingsActivity;
+    .prologue
+    .line 329
+    iput-object p1, p0, Lcom/google/googlenav/settings/g;->a:Lcom/google/googlenav/settings/LatitudeSettingsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,28 +26,47 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 7
+.method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
+    .registers 5
+    .parameter
+    .parameter
 
+    .prologue
+    .line 332
+    iget-object v0, p0, Lcom/google/googlenav/settings/g;->a:Lcom/google/googlenav/settings/LatitudeSettingsActivity;
+
+    invoke-static {v0}, Lcom/google/googlenav/settings/LatitudeSettingsActivity;->a(Lcom/google/googlenav/settings/LatitudeSettingsActivity;)Lcom/google/googlenav/settings/q;
+
+    move-result-object v0
+
+    if-nez v0, :cond_a
+
+    .line 333
     const/4 v0, 0x0
 
-    new-instance v1, Lcom/google/googlenav/settings/J;
+    .line 337
+    :goto_9
+    return v0
 
-    iget-object v2, p0, Lcom/google/googlenav/settings/G;->a:Lcom/google/googlenav/settings/MapTileSettingsActivity;
+    .line 335
+    :cond_a
+    check-cast p2, Ljava/lang/Boolean;
 
-    invoke-direct {v1, v2, v0}, Lcom/google/googlenav/settings/J;-><init>(Lcom/google/googlenav/settings/MapTileSettingsActivity;Lcom/google/googlenav/settings/E;)V
+    .line 336
+    iget-object v0, p0, Lcom/google/googlenav/settings/g;->a:Lcom/google/googlenav/settings/LatitudeSettingsActivity;
 
-    const/4 v2, 0x1
+    invoke-static {v0}, Lcom/google/googlenav/settings/LatitudeSettingsActivity;->a(Lcom/google/googlenav/settings/LatitudeSettingsActivity;)Lcom/google/googlenav/settings/q;
 
-    new-array v2, v2, [Ljava/lang/Void;
+    move-result-object v0
 
-    const/4 v3, 0x0
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
-    check-cast v0, Ljava/lang/Void;
+    move-result v1
 
-    aput-object v0, v2, v3
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/settings/q;->d(Z)V
 
-    invoke-virtual {v1, v2}, Lcom/google/googlenav/settings/J;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+    .line 337
+    const/4 v0, 0x1
 
-    return-void
+    goto :goto_9
 .end method

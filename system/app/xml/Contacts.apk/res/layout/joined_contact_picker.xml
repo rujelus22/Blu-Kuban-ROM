@@ -6,6 +6,6 @@
         <TextView android:textSize="17.0sp" android:textColor="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/join_another_contact_explain" android:alpha="0.5" />
     </LinearLayout>
     <LinearLayout android:gravity="center_horizontal" android:id="@id/joined_contact_list_button_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@android:style/ButtonBar">
-        <Button android:textSize="16.0dip" android:textColor="@color/black" android:id="@id/joined_contact_list_button" android:layout_width="232.0dip" android:layout_height="wrap_content" android:text="@string/join_another_contact" />
+        <Button android:textSize="16.0dip" android:textColor="#ffffffff" android:id="@id/joined_contact_list_button" android:layout_width="232.0dip" android:layout_height="wrap_content" android:text="@string/join_another_contact" />
     </LinearLayout>
 </view>

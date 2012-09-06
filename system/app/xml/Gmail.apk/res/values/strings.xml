@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="quotedTextBackgroundColorString">\#ebebeb</string>
-    <string name="quotedTextFontColorString">\#777777</string>
+    <string name="quotedTextBackgroundColorString">\#1a1a1a</string>
+    <string name="quotedTextFontColorString">\#ebebeb</string>
     <string name="prefDefault_snapHeader">never</string>
     <string name="custom_from_account_address">&lt;%s></string>
     <string name="super_collapsed_count">&lt;span class=\"gm-super-collapsed-count\">%d&lt;/span></string>

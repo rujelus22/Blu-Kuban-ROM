@@ -37,20 +37,20 @@
     .registers 2
 
     .prologue
-    .line 16
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 18
-    invoke-static {}, Lcom/google/android/finsky/utils/Sets;->newHashSet()Ljava/util/HashSet;
+    .line 17
+    new-instance v0, Ljava/util/HashSet;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/api/model/DfeModel;->mListeners:Ljava/util/HashSet;
 
-    .line 19
-    invoke-static {}, Lcom/google/android/finsky/utils/Sets;->newHashSet()Ljava/util/HashSet;
+    .line 18
+    new-instance v0, Ljava/util/HashSet;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/api/model/DfeModel;->mErrorListeners:Ljava/util/HashSet;
 
@@ -64,12 +64,12 @@
     .parameter "handler"
 
     .prologue
-    .line 26
+    .line 25
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeModel;->mListeners:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 27
+    .line 26
     return-void
 .end method
 
@@ -78,12 +78,12 @@
     .parameter "errorListener"
 
     .prologue
-    .line 34
+    .line 33
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeModel;->mErrorListeners:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 35
+    .line 34
     return-void
 .end method
 
@@ -91,12 +91,12 @@
     .registers 2
 
     .prologue
-    .line 85
+    .line 84
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/finsky/api/model/DfeModel;->mVolleyError:Lcom/android/volley/VolleyError;
 
-    .line 86
+    .line 85
     return-void
 .end method
 
@@ -104,7 +104,7 @@
     .registers 2
 
     .prologue
-    .line 41
+    .line 40
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeModel;->mVolleyError:Lcom/android/volley/VolleyError;
 
     return-object v0
@@ -114,7 +114,7 @@
     .registers 2
 
     .prologue
-    .line 48
+    .line 47
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeModel;->mVolleyError:Lcom/android/volley/VolleyError;
 
     if-eqz v0, :cond_6
@@ -130,11 +130,14 @@
     goto :goto_5
 .end method
 
+.method public abstract isReady()Z
+.end method
+
 .method protected notifyDataSetChanged()V
     .registers 5
 
     .prologue
-    .line 98
+    .line 97
     iget-object v2, p0, Lcom/google/android/finsky/api/model/DfeModel;->mListeners:Ljava/util/HashSet;
 
     iget-object v3, p0, Lcom/google/android/finsky/api/model/DfeModel;->mListeners:Ljava/util/HashSet;
@@ -151,7 +154,7 @@
 
     check-cast v1, [Lcom/google/android/finsky/api/model/OnDataChangedListener;
 
-    .line 100
+    .line 99
     .local v1, listeners:[Lcom/google/android/finsky/api/model/OnDataChangedListener;
     const/4 v0, 0x0
 
@@ -161,17 +164,17 @@
 
     if-ge v0, v2, :cond_1c
 
-    .line 101
+    .line 100
     aget-object v2, v1, v0
 
     invoke-interface {v2}, Lcom/google/android/finsky/api/model/OnDataChangedListener;->onDataChanged()V
 
-    .line 100
+    .line 99
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_11
 
-    .line 103
+    .line 102
     :cond_1c
     return-void
 .end method
@@ -181,7 +184,7 @@
     .parameter "error"
 
     .prologue
-    .line 106
+    .line 105
     iget-object v2, p0, Lcom/google/android/finsky/api/model/DfeModel;->mErrorListeners:Ljava/util/HashSet;
 
     iget-object v3, p0, Lcom/google/android/finsky/api/model/DfeModel;->mErrorListeners:Ljava/util/HashSet;
@@ -198,7 +201,7 @@
 
     check-cast v1, [Lcom/android/volley/Response$ErrorListener;
 
-    .line 108
+    .line 107
     .local v1, listeners:[Lcom/android/volley/Response$ErrorListener;
     const/4 v0, 0x0
 
@@ -208,17 +211,17 @@
 
     if-ge v0, v2, :cond_1c
 
-    .line 109
+    .line 108
     aget-object v2, v1, v0
 
     invoke-interface {v2, p1}, Lcom/android/volley/Response$ErrorListener;->onErrorResponse(Lcom/android/volley/VolleyError;)V
 
-    .line 108
+    .line 107
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_11
 
-    .line 111
+    .line 110
     :cond_1c
     return-void
 .end method
@@ -228,13 +231,13 @@
     .parameter "error"
 
     .prologue
-    .line 61
+    .line 60
     iput-object p1, p0, Lcom/google/android/finsky/api/model/DfeModel;->mVolleyError:Lcom/android/volley/VolleyError;
 
-    .line 62
+    .line 61
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/api/model/DfeModel;->notifyErrorOccured(Lcom/android/volley/VolleyError;)V
 
-    .line 63
+    .line 62
     return-void
 .end method
 
@@ -243,12 +246,12 @@
     .parameter "handler"
 
     .prologue
-    .line 70
+    .line 69
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeModel;->mListeners:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 71
+    .line 70
     return-void
 .end method
 
@@ -257,12 +260,12 @@
     .parameter "errorListener"
 
     .prologue
-    .line 78
+    .line 77
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeModel;->mErrorListeners:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 79
+    .line 78
     return-void
 .end method
 
@@ -270,16 +273,16 @@
     .registers 2
 
     .prologue
-    .line 93
+    .line 92
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeModel;->mListeners:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
 
-    .line 94
+    .line 93
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeModel;->mErrorListeners:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
 
-    .line 95
+    .line 94
     return-void
 .end method

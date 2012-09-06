@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field final synthetic val$activity:Landroid/app/Activity;
+.field final synthetic val$context:Landroid/content/Context;
 
 .field final synthetic val$message:Ljava/lang/String;
 
@@ -28,8 +28,8 @@
     .registers 4
 
     .prologue
-    .line 709
-    iget-object v0, p0, Lcom/android/emailcommon/utility/Utility$1;->val$activity:Landroid/app/Activity;
+    .line 535
+    iget-object v0, p0, Lcom/android/emailcommon/utility/Utility$1;->val$context:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/emailcommon/utility/Utility$1;->val$message:Ljava/lang/String;
 
@@ -41,6 +41,6 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 710
+    .line 536
     return-void
 .end method

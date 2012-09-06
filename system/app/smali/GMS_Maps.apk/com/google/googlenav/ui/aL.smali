@@ -1,14 +1,23 @@
-.class public abstract Lcom/google/googlenav/ui/aL;
+.class Lcom/google/googlenav/ui/al;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/googlenav/friend/bd;
 
 
 # instance fields
-.field private a:Lcom/google/googlenav/ui/wizard/hM;
+.field final synthetic a:Lcom/google/googlenav/ui/ak;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
+.method constructor <init>(Lcom/google/googlenav/ui/ak;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 152
+    iput-object p1, p0, Lcom/google/googlenav/ui/al;->a:Lcom/google/googlenav/ui/ak;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -17,117 +26,50 @@
 
 
 # virtual methods
-.method public abstract a()Lcom/google/googlenav/ay;
-.end method
+.method public a(I)V
+    .registers 6
+    .parameter
 
-.method public abstract a(LaJ/p;)Lcom/google/googlenav/ui/bQ;
-.end method
+    .prologue
+    const/4 v3, 0x1
 
-.method public a(LaJ/p;LaJ/u;LaE/h;ZLcom/google/googlenav/ui/wizard/x;Lcom/google/googlenav/L;Lcom/google/googlenav/ui/at;Lax/k;)Lcom/google/googlenav/ui/wizard/hM;
-    .registers 20
+    .line 154
+    if-ne p1, v3, :cond_19
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/aL;->a:Lcom/google/googlenav/ui/wizard/hM;
+    .line 157
+    iget-object v0, p0, Lcom/google/googlenav/ui/al;->a:Lcom/google/googlenav/ui/ak;
 
-    if-nez v0, :cond_1f
+    iget-object v0, v0, Lcom/google/googlenav/ui/ak;->a:Lcom/google/googlenav/ui/ah;
 
-    new-instance v0, Lcom/google/googlenav/ui/wizard/hM;
+    invoke-static {v0}, Lcom/google/googlenav/ui/ah;->b(Lcom/google/googlenav/ui/ah;)V
 
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/aL;->e()Lcom/google/googlenav/android/ac;
+    .line 158
+    const-string v0, "IS_COMING_FROM_SETTINGS_PAGE"
 
-    move-result-object v1
+    const/4 v1, -0x1
 
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/aL;->a()Lcom/google/googlenav/ay;
+    const/4 v2, 0x0
 
-    move-result-object v5
+    invoke-static {v0, v1, v2}, Lcom/google/googlenav/friend/aW;->a(Ljava/lang/String;ILcom/google/googlenav/friend/be;)V
 
-    move-object v2, p1
+    .line 159
+    iget-object v0, p0, Lcom/google/googlenav/ui/al;->a:Lcom/google/googlenav/ui/ak;
 
-    move-object v3, p2
+    iget-object v0, v0, Lcom/google/googlenav/ui/ak;->a:Lcom/google/googlenav/ui/ah;
 
-    move-object v4, p3
+    invoke-static {v0, v3}, Lcom/google/googlenav/ui/ah;->a(Lcom/google/googlenav/ui/ah;Z)Z
 
-    move v6, p4
-
-    move-object/from16 v7, p5
-
-    move-object/from16 v8, p6
-
-    move-object/from16 v9, p7
-
-    move-object/from16 v10, p8
-
-    invoke-direct/range {v0 .. v10}, Lcom/google/googlenav/ui/wizard/hM;-><init>(Lcom/google/googlenav/android/ac;LaJ/p;LaJ/u;LaE/h;Lcom/google/googlenav/ay;ZLcom/google/googlenav/ui/wizard/x;Lcom/google/googlenav/L;Lcom/google/googlenav/ui/at;Lax/k;)V
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/aL;->a:Lcom/google/googlenav/ui/wizard/hM;
-
-    :cond_1f
-    iget-object v0, p0, Lcom/google/googlenav/ui/aL;->a:Lcom/google/googlenav/ui/wizard/hM;
-
-    return-object v0
-.end method
-
-.method public a(Z)V
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/aL;->a:Lcom/google/googlenav/ui/wizard/hM;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hM;->O()V
-
+    .line 163
+    :goto_18
     return-void
-.end method
 
-.method public abstract b(LaJ/p;)Lcom/google/googlenav/ui/A;
-.end method
+    .line 161
+    :cond_19
+    iget-object v0, p0, Lcom/google/googlenav/ui/al;->a:Lcom/google/googlenav/ui/ak;
 
-.method public abstract b()Lcom/google/googlenav/ui/aM;
-.end method
+    iget-object v0, v0, Lcom/google/googlenav/ui/ak;->a:Lcom/google/googlenav/ui/ah;
 
-.method public abstract c()Lcom/google/googlenav/ui/af;
-.end method
+    invoke-static {v0}, Lcom/google/googlenav/ui/ah;->c(Lcom/google/googlenav/ui/ah;)V
 
-.method public abstract d()Lcom/google/googlenav/ui/android/z;
-.end method
-
-.method public abstract e()Lcom/google/googlenav/android/ac;
-.end method
-
-.method public f()Lcom/google/googlenav/layer/r;
-    .registers 2
-
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public g()LaR/i;
-    .registers 2
-
-    new-instance v0, LaR/d;
-
-    invoke-direct {v0}, LaR/d;-><init>()V
-
-    return-object v0
-.end method
-
-.method public h()LaR/g;
-    .registers 2
-
-    new-instance v0, LaR/c;
-
-    invoke-direct {v0}, LaR/c;-><init>()V
-
-    return-object v0
-.end method
-
-.method public abstract i()Lap/c;
-.end method
-
-.method public j()[Ljava/lang/String;
-    .registers 2
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    return-object v0
+    goto :goto_18
 .end method

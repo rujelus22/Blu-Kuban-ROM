@@ -1,102 +1,71 @@
 .class final Lcom/google/android/youtube/core/player/g;
-.super Landroid/os/Handler;
+.super Ljava/lang/Thread;
 .source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/player/d;
-
-
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/core/player/d;Landroid/os/Looper;)V
-    .registers 3
-    .parameter
-    .parameter
+.method constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 174
-    iput-object p1, p0, Lcom/google/android/youtube/core/player/g;->a:Lcom/google/android/youtube/core/player/d;
-
-    invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    .line 71
+    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
-    .registers 6
-    .parameter
+.method public final run()V
+    .registers 7
 
     .prologue
-    .line 177
-    iget v0, p1, Landroid/os/Message;->what:I
+    .line 74
+    new-instance v1, Ljava/io/File;
 
-    packed-switch v0, :pswitch_data_32
+    const-string v0, "java.io.tmpdir"
 
-    .line 192
-    :goto_5
+    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 76
+    new-instance v0, Lcom/google/android/youtube/core/player/h;
+
+    invoke-direct {v0, p0}, Lcom/google/android/youtube/core/player/h;-><init>(Lcom/google/android/youtube/core/player/g;)V
+
+    invoke-virtual {v1, v0}, Ljava/io/File;->list(Ljava/io/FilenameFilter;)[Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 83
+    if-eqz v2, :cond_27
+
+    .line 84
+    array-length v3, v2
+
+    const/4 v0, 0x0
+
+    :goto_18
+    if-ge v0, v3, :cond_27
+
+    aget-object v4, v2, v0
+
+    .line 85
+    new-instance v5, Ljava/io/File;
+
+    invoke-direct {v5, v1, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v5}, Ljava/io/File;->delete()Z
+
+    .line 84
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_18
+
+    .line 88
+    :cond_27
     return-void
-
-    .line 179
-    :pswitch_6
-    iget-object v1, p0, Lcom/google/android/youtube/core/player/g;->a:Lcom/google/android/youtube/core/player/d;
-
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    invoke-static {v1, v2, v3}, Lcom/google/android/youtube/core/player/d;->a(Lcom/google/android/youtube/core/player/d;J)V
-
-    goto :goto_5
-
-    .line 182
-    :pswitch_14
-    iget-object v0, p0, Lcom/google/android/youtube/core/player/g;->a:Lcom/google/android/youtube/core/player/d;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/player/d;->a()V
-
-    goto :goto_5
-
-    .line 185
-    :pswitch_1a
-    iget-object v0, p0, Lcom/google/android/youtube/core/player/g;->a:Lcom/google/android/youtube/core/player/d;
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/player/d;->a(Lcom/google/android/youtube/core/player/d;)V
-
-    .line 186
-    iget-object v0, p0, Lcom/google/android/youtube/core/player/g;->a:Lcom/google/android/youtube/core/player/d;
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/player/d;->b(Lcom/google/android/youtube/core/player/d;)V
-
-    goto :goto_5
-
-    .line 189
-    :pswitch_25
-    iget-object v0, p0, Lcom/google/android/youtube/core/player/g;->a:Lcom/google/android/youtube/core/player/d;
-
-    iget-object v1, p0, Lcom/google/android/youtube/core/player/g;->a:Lcom/google/android/youtube/core/player/d;
-
-    iget v2, p1, Landroid/os/Message;->arg1:I
-
-    iget v3, p1, Landroid/os/Message;->arg2:I
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/youtube/core/player/d;->onError(Landroid/media/MediaPlayer;II)Z
-
-    goto :goto_5
-
-    .line 177
-    nop
-
-    :pswitch_data_32
-    .packed-switch 0x1
-        :pswitch_14
-        :pswitch_25
-        :pswitch_6
-        :pswitch_1a
-    .end packed-switch
 .end method

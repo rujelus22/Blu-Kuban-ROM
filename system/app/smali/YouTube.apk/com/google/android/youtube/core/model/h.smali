@@ -1,60 +1,111 @@
-.class public final Lcom/google/android/youtube/core/model/h;
+.class final synthetic Lcom/google/android/youtube/core/model/h;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lcom/google/android/youtube/core/model/j;
 
-
-# instance fields
-.field private final a:Ljava/util/List;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 3
 
     .prologue
-    .line 19
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 68
+    invoke-static {}, Lcom/google/android/youtube/core/model/LiveEvent$Status;->values()[Lcom/google/android/youtube/core/model/LiveEvent$Status;
 
-    .line 20
-    new-instance v0, Ljava/util/ArrayList;
+    move-result-object v0
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    array-length v0, v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/model/h;->a:Ljava/util/List;
+    new-array v0, v0, [I
 
-    .line 21
+    sput-object v0, Lcom/google/android/youtube/core/model/h;->a:[I
+
+    :try_start_9
+    sget-object v0, Lcom/google/android/youtube/core/model/h;->a:[I
+
+    sget-object v1, Lcom/google/android/youtube/core/model/LiveEvent$Status;->ACTIVE:Lcom/google/android/youtube/core/model/LiveEvent$Status;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/LiveEvent$Status;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_3c
+
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/android/youtube/core/model/h;->a:[I
+
+    sget-object v1, Lcom/google/android/youtube/core/model/LiveEvent$Status;->PENDING:Lcom/google/android/youtube/core/model/LiveEvent$Status;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/LiveEvent$Status;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_3a
+
+    :goto_1f
+    :try_start_1f
+    sget-object v0, Lcom/google/android/youtube/core/model/h;->a:[I
+
+    sget-object v1, Lcom/google/android/youtube/core/model/LiveEvent$Status;->DELAYED:Lcom/google/android/youtube/core/model/LiveEvent$Status;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/LiveEvent$Status;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_38
+
+    :goto_2a
+    :try_start_2a
+    sget-object v0, Lcom/google/android/youtube/core/model/h;->a:[I
+
+    sget-object v1, Lcom/google/android/youtube/core/model/LiveEvent$Status;->COMPLETED:Lcom/google/android/youtube/core/model/LiveEvent$Status;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/LiveEvent$Status;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_35
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_36
+
+    :goto_35
     return-void
-.end method
 
+    :catch_36
+    move-exception v0
 
-# virtual methods
-.method public final a(Ljava/lang/Object;)Lcom/google/android/youtube/core/model/h;
-    .registers 3
-    .parameter
+    goto :goto_35
 
-    .prologue
-    .line 24
-    iget-object v0, p0, Lcom/google/android/youtube/core/model/h;->a:Ljava/util/List;
+    :catch_38
+    move-exception v0
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    goto :goto_2a
 
-    .line 25
-    return-object p0
-.end method
+    :catch_3a
+    move-exception v0
 
-.method public final synthetic build()Ljava/lang/Object;
-    .registers 3
+    goto :goto_1f
 
-    .prologue
-    .line 15
-    new-instance v0, Ljava/util/ArrayList;
+    :catch_3c
+    move-exception v0
 
-    iget-object v1, p0, Lcom/google/android/youtube/core/model/h;->a:Ljava/util/List;
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    return-object v0
+    goto :goto_14
 .end method

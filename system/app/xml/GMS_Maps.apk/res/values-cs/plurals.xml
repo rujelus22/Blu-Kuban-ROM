@@ -31,8 +31,8 @@
         <item quantity="few">Pokračujte po silnici %2$s %1$s míle</item>
     </plurals>
     <plurals name="da_review_count">
-        <item quantity="other">"Počet recenzí: %1$s "</item>
+        <item quantity="other">Recenze: %1$s</item>
         <item quantity="one">%1$s recenze</item>
-        <item quantity="few">"Počet recenzí: %1$s "</item>
+        <item quantity="few">Recenze: %1$s</item>
     </plurals>
 </resources>

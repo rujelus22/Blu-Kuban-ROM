@@ -1,53 +1,90 @@
-.class Lcom/google/googlenav/ui/view/android/aJ;
+.class public Lcom/google/googlenav/ui/view/android/aj;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
-# interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+
+# static fields
+.field private static b:Lcom/google/googlenav/ui/view/android/aj;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/android/aH;
+.field private final a:Lcom/google/googlenav/android/BaseMapsActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/aH;)V
+.method private constructor <init>(Lcom/google/googlenav/android/BaseMapsActivity;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/aJ;->a:Lcom/google/googlenav/ui/view/android/aH;
-
+    .prologue
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 38
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/aj;->a:Lcom/google/googlenav/android/BaseMapsActivity;
+
+    .line 39
+    return-void
+.end method
+
+.method public static a()Lcom/google/googlenav/ui/view/android/aj;
+    .registers 1
+
+    .prologue
+    .line 34
+    sget-object v0, Lcom/google/googlenav/ui/view/android/aj;->b:Lcom/google/googlenav/ui/view/android/aj;
+
+    return-object v0
+.end method
+
+.method public static a(Lcom/google/googlenav/android/BaseMapsActivity;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 30
+    new-instance v0, Lcom/google/googlenav/ui/view/android/aj;
+
+    invoke-direct {v0, p0}, Lcom/google/googlenav/ui/view/android/aj;-><init>(Lcom/google/googlenav/android/BaseMapsActivity;)V
+
+    sput-object v0, Lcom/google/googlenav/ui/view/android/aj;->b:Lcom/google/googlenav/ui/view/android/aj;
+
+    .line 31
     return-void
 .end method
 
 
 # virtual methods
-.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 8
+.method public a(Lcom/google/googlenav/ui/wizard/ju;)Lcom/google/googlenav/ui/wizard/ft;
+    .registers 5
+    .parameter
 
-    if-gez p3, :cond_3
+    .prologue
+    .line 56
+    new-instance v0, Lcom/google/googlenav/ui/wizard/ft;
 
-    :goto_2
-    return-void
+    invoke-virtual {p1}, Lcom/google/googlenav/ui/wizard/ju;->G()Lcom/google/googlenav/J;
 
-    :cond_3
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aJ;->a:Lcom/google/googlenav/ui/view/android/aH;
+    move-result-object v1
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/aH;->b()V
+    iget-object v2, p0, Lcom/google/googlenav/ui/view/android/aj;->a:Lcom/google/googlenav/android/BaseMapsActivity;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/aJ;->a:Lcom/google/googlenav/ui/view/android/aH;
+    invoke-direct {v0, p1, v1, v2}, Lcom/google/googlenav/ui/wizard/ft;-><init>(Lcom/google/googlenav/ui/wizard/ju;Lcom/google/googlenav/J;Lcom/google/googlenav/android/BaseMapsActivity;)V
 
-    invoke-virtual {p1, p3}, Landroid/widget/AdapterView;->getItemAtPosition(I)Ljava/lang/Object;
+    return-object v0
+.end method
 
-    move-result-object v0
+.method public b(Lcom/google/googlenav/ui/wizard/ju;)Lcom/google/googlenav/ui/wizard/js;
+    .registers 4
+    .parameter
 
-    check-cast v0, Lcom/google/googlenav/ui/view/android/aL;
+    .prologue
+    .line 61
+    new-instance v0, Lcom/google/googlenav/ui/wizard/js;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/aL;->a(Lcom/google/googlenav/ui/view/android/aL;)I
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/aj;->a:Lcom/google/googlenav/android/BaseMapsActivity;
 
-    move-result v0
+    invoke-direct {v0, p1, v1}, Lcom/google/googlenav/ui/wizard/js;-><init>(Lcom/google/googlenav/ui/wizard/ju;Landroid/content/Context;)V
 
-    invoke-static {v1, v0}, Lcom/google/googlenav/ui/view/android/aH;->a(Lcom/google/googlenav/ui/view/android/aH;I)V
-
-    goto :goto_2
+    return-object v0
 .end method

@@ -31,25 +31,25 @@
     .registers 2
 
     .prologue
-    .line 8194
+    .line 8348
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 8219
+    .line 8373
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->inputField_:I
 
-    .line 8236
+    .line 8390
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->errorMessage_:Ljava/lang/String;
 
-    .line 8272
+    .line 8427
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->cachedSize:I
 
-    .line 8194
+    .line 8348
     return-void
 .end method
 
@@ -59,15 +59,15 @@
     .registers 2
 
     .prologue
-    .line 8274
+    .line 8430
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 8276
+    .line 8432
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->getSerializedSize()I
 
-    .line 8278
+    .line 8434
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->cachedSize:I
 
@@ -78,7 +78,7 @@
     .registers 2
 
     .prologue
-    .line 8237
+    .line 8391
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->errorMessage_:Ljava/lang/String;
 
     return-object v0
@@ -88,7 +88,7 @@
     .registers 2
 
     .prologue
-    .line 8221
+    .line 8375
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->inputField_:I
 
     return v0
@@ -98,10 +98,10 @@
     .registers 4
 
     .prologue
-    .line 8282
+    .line 8439
     const/4 v0, 0x0
 
-    .line 8283
+    .line 8440
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->hasInputField()Z
 
@@ -109,7 +109,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 8284
+    .line 8441
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->getInputField()I
@@ -122,7 +122,7 @@
 
     add-int/2addr v0, v1
 
-    .line 8287
+    .line 8444
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->hasErrorMessage()Z
 
@@ -130,7 +130,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 8288
+    .line 8445
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->getErrorMessage()Ljava/lang/String;
@@ -143,11 +143,11 @@
 
     add-int/2addr v0, v1
 
-    .line 8291
+    .line 8448
     :cond_21
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->cachedSize:I
 
-    .line 8292
+    .line 8449
     return v0
 .end method
 
@@ -155,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 8238
+    .line 8392
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->hasErrorMessage:Z
 
     return v0
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 8220
+    .line 8374
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->hasInputField:Z
 
     return v0
@@ -181,29 +181,29 @@
     .end annotation
 
     .prologue
-    .line 8299
+    .line 8457
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 8300
+    .line 8458
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 8304
+    .line 8462
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 8305
+    .line 8463
     :sswitch_d
     return-object p0
 
-    .line 8310
+    .line 8468
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 8314
+    .line 8472
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 8300
+    .line 8458
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -242,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 8192
+    .line 8346
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;
 
     move-result-object v0
@@ -255,15 +255,15 @@
     .parameter "value"
 
     .prologue
-    .line 8240
+    .line 8394
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->hasErrorMessage:Z
 
-    .line 8241
+    .line 8395
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->errorMessage_:Ljava/lang/String;
 
-    .line 8242
+    .line 8396
     return-object p0
 .end method
 
@@ -272,15 +272,15 @@
     .parameter "value"
 
     .prologue
-    .line 8223
+    .line 8377
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->hasInputField:Z
 
-    .line 8224
+    .line 8378
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->inputField_:I
 
-    .line 8225
+    .line 8379
     return-object p0
 .end method
 
@@ -294,14 +294,14 @@
     .end annotation
 
     .prologue
-    .line 8264
+    .line 8419
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->hasInputField()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 8265
+    .line 8420
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->getInputField()I
@@ -310,7 +310,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 8267
+    .line 8422
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->hasErrorMessage()Z
 
@@ -318,7 +318,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 8268
+    .line 8423
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InputValidationError;->getErrorMessage()Ljava/lang/String;
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 8270
+    .line 8425
     :cond_1c
     return-void
 .end method

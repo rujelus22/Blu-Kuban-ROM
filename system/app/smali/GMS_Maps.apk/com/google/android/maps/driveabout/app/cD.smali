@@ -1,33 +1,51 @@
-.class Lcom/google/android/maps/driveabout/app/cD;
+.class public Lcom/google/android/maps/driveabout/app/cd;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lag/e;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/NavigationService;
+.field public final a:Landroid/content/Context;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/NavigationService;)V
+.method public constructor <init>(Landroid/content/Context;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/cD;->a:Lcom/google/android/maps/driveabout/app/NavigationService;
-
+    .prologue
+    .line 174
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 175
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/cd;->a:Landroid/content/Context;
+
+    .line 176
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .registers 2
+.method public a(Lag/a;Lag/g;)Lag/d;
+    .registers 7
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/cD;->a:Lcom/google/android/maps/driveabout/app/NavigationService;
+    .prologue
+    .line 181
+    new-instance v0, Lcom/google/android/maps/driveabout/app/cb;
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/NavigationService;->g()V
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/cd;->a:Landroid/content/Context;
 
-    return-void
+    new-instance v2, Lcom/google/android/maps/driveabout/app/ce;
+
+    invoke-direct {v2, p0, p1, p2}, Lcom/google/android/maps/driveabout/app/ce;-><init>(Lcom/google/android/maps/driveabout/app/cd;Lag/a;Lag/g;)V
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/maps/driveabout/app/cb;-><init>(Landroid/content/Context;Lag/g;Lcom/google/android/maps/driveabout/app/cc;)V
+
+    return-object v0
 .end method

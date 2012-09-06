@@ -3,21 +3,21 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/utils/l;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/LiveActivity;
+.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/EditVideoActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/LiveActivity;)V
+.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/EditVideoActivity;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 59
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/q;->a:Lcom/google/android/youtube/app/honeycomb/phone/LiveActivity;
+    .line 101
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/q;->a:Lcom/google/android/youtube/app/honeycomb/phone/EditVideoActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,17 +26,16 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Z
+.method public final onClick(Landroid/view/View;)V
     .registers 3
     .parameter
 
     .prologue
-    .line 59
-    check-cast p1, Lcom/google/android/youtube/core/model/LiveEvent;
+    .line 103
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/q;->a:Lcom/google/android/youtube/app/honeycomb/phone/EditVideoActivity;
 
-    invoke-virtual {p1}, Lcom/google/android/youtube/core/model/LiveEvent;->isLiveNow()Z
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/EditVideoActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/EditVideoActivity;)V
 
-    move-result v0
-
-    return v0
+    .line 104
+    return-void
 .end method

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <plurals name="copies">
-        <item quantity="other">%d copies</item>
-        <item quantity="one">1 copy</item>
-    </plurals>
-</resources>

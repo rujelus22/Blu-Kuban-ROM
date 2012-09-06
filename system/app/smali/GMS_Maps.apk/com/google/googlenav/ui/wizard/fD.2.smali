@@ -1,80 +1,154 @@
 .class Lcom/google/googlenav/ui/wizard/fD;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/googlenav/g;
+.implements Lcom/google/googlenav/af;
 
 
 # instance fields
-.field private final a:Lcom/google/googlenav/ui/wizard/fM;
+.field private a:Lcom/google/googlenav/ai;
 
-.field private final b:Lcom/google/googlenav/ui/wizard/fE;
+.field private b:Lcom/google/googlenav/ui/wizard/fC;
 
-.field private final c:Lcom/google/googlenav/L;
+.field private c:Lcom/google/googlenav/ui/wizard/fG;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/L;Lcom/google/googlenav/ui/wizard/fE;Lcom/google/googlenav/ui/wizard/fM;)V
+.method constructor <init>(Lcom/google/googlenav/ai;Lcom/google/googlenav/ui/wizard/fC;Lcom/google/googlenav/ui/wizard/fG;)V
     .registers 4
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 545
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lcom/google/googlenav/ui/wizard/fD;->a:Lcom/google/googlenav/ui/wizard/fM;
+    .line 546
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fD;->a:Lcom/google/googlenav/ai;
 
-    iput-object p2, p0, Lcom/google/googlenav/ui/wizard/fD;->b:Lcom/google/googlenav/ui/wizard/fE;
+    .line 547
+    iput-object p2, p0, Lcom/google/googlenav/ui/wizard/fD;->b:Lcom/google/googlenav/ui/wizard/fC;
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fD;->c:Lcom/google/googlenav/L;
+    .line 548
+    iput-object p3, p0, Lcom/google/googlenav/ui/wizard/fD;->c:Lcom/google/googlenav/ui/wizard/fG;
 
+    .line 549
     return-void
+.end method
+
+.method private a(ZZ)V
+    .registers 7
+    .parameter
+    .parameter
+
+    .prologue
+    .line 562
+    if-eqz p1, :cond_1a
+
+    .line 565
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fD;->a:Lcom/google/googlenav/ai;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ai;->ar()V
+
+    .line 566
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fD;->b:Lcom/google/googlenav/ui/wizard/fC;
+
+    if-eqz v0, :cond_10
+
+    .line 567
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fD;->b:Lcom/google/googlenav/ui/wizard/fC;
+
+    invoke-interface {v0}, Lcom/google/googlenav/ui/wizard/fC;->a()V
+
+    .line 575
+    :cond_10
+    :goto_10
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fD;->a:Lcom/google/googlenav/ai;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ai;->aq()Lcom/google/googlenav/ax;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ax;->a()V
+
+    .line 576
+    return-void
+
+    .line 570
+    :cond_1a
+    if-eqz p2, :cond_28
+
+    const/16 v0, 0x388
+
+    invoke-static {v0}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 573
+    :goto_22
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/fD;->c:Lcom/google/googlenav/ui/wizard/fG;
+
+    invoke-interface {v1, v0}, Lcom/google/googlenav/ui/wizard/fG;->a(Ljava/lang/String;)V
+
+    goto :goto_10
+
+    .line 570
+    :cond_28
+    const/16 v0, 0x37e
+
+    invoke-static {v0}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lcom/google/googlenav/ui/wizard/fD;->a:Lcom/google/googlenav/ai;
+
+    invoke-virtual {v3}, Lcom/google/googlenav/ai;->ak()Ljava/lang/String;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, Laa/b;->a(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_22
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/String;Lam/b;)V
-    .registers 5
+.method public a(Z)V
+    .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fD;->c:Lcom/google/googlenav/L;
+    .prologue
+    .line 553
+    const/4 v0, 0x0
 
-    invoke-interface {v0}, Lcom/google/googlenav/L;->a()V
+    invoke-direct {p0, p1, v0}, Lcom/google/googlenav/ui/wizard/fD;->a(ZZ)V
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fD;->b:Lcom/google/googlenav/ui/wizard/fE;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/fE;->a(Lcom/google/googlenav/ui/wizard/fE;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_e
-
-    :goto_d
+    .line 554
     return-void
+.end method
 
-    :cond_e
-    if-eqz p2, :cond_1a
+.method public b(Z)V
+    .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fD;->a:Lcom/google/googlenav/ui/wizard/fM;
+    .prologue
+    .line 558
+    const/4 v0, 0x0
 
-    invoke-static {p2}, Lcom/google/googlenav/ah;->a(Lam/b;)Lcom/google/googlenav/ah;
+    invoke-direct {p0, v0, p1}, Lcom/google/googlenav/ui/wizard/fD;->a(ZZ)V
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/wizard/fM;->a(Lcom/google/googlenav/ah;)V
-
-    goto :goto_d
-
-    :cond_1a
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fD;->c:Lcom/google/googlenav/L;
-
-    const/16 v1, 0x335
-
-    invoke-static {v1}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/google/googlenav/L;->a(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fD;->a:Lcom/google/googlenav/ui/wizard/fM;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/fM;->a()V
-
-    goto :goto_d
+    .line 559
+    return-void
 .end method

@@ -33,22 +33,22 @@
     .parameter "zone"
 
     .prologue
-    .line 113
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 86
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 114
+    .line 87
     iput p1, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParser$Time;->hour:I
 
-    .line 115
+    .line 88
     iput p2, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParser$Time;->minute:I
 
-    .line 116
+    .line 89
     iput p3, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParser$Time;->second:I
 
-    .line 117
+    .line 90
     iput p4, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParser$Time;->zone:I
 
-    .line 118
+    .line 91
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .registers 2
 
     .prologue
-    .line 121
+    .line 93
     iget v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParser$Time;->hour:I
 
     return v0
@@ -68,7 +68,7 @@
     .registers 2
 
     .prologue
-    .line 125
+    .line 94
     iget v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParser$Time;->minute:I
 
     return v0
@@ -78,7 +78,7 @@
     .registers 2
 
     .prologue
-    .line 129
+    .line 95
     iget v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParser$Time;->second:I
 
     return v0
@@ -88,7 +88,7 @@
     .registers 2
 
     .prologue
-    .line 133
+    .line 96
     iget v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/DateTimeParser$Time;->zone:I
 
     return v0

@@ -1,173 +1,132 @@
-.class final Lcom/google/android/youtube/app/ui/ck;
-.super Lcom/google/android/youtube/core/ui/f;
+.class final synthetic Lcom/google/android/youtube/app/ui/ck;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lcom/google/android/youtube/core/async/g;
 
-
-# instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/ui/ch;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/app/ui/ch;)V
+.method static constructor <clinit>()V
     .registers 3
-    .parameter
 
     .prologue
-    .line 313
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/ck;->a:Lcom/google/android/youtube/app/ui/ch;
-
-    .line 314
-    invoke-static {p1}, Lcom/google/android/youtube/app/ui/ch;->b(Lcom/google/android/youtube/app/ui/ch;)Lcom/google/android/youtube/core/e;
+    .line 150
+    invoke-static {}, Lcom/google/android/youtube/app/remote/RemoteControl$State;->values()[Lcom/google/android/youtube/app/remote/RemoteControl$State;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/core/ui/f;-><init>(Lcom/google/android/youtube/core/e;)V
+    array-length v0, v0
 
-    .line 315
-    return-void
-.end method
+    new-array v0, v0, [I
 
+    sput-object v0, Lcom/google/android/youtube/app/ui/ck;->a:[I
 
-# virtual methods
-.method public final a(Lcom/google/android/youtube/core/model/UserAuth;)V
-    .registers 5
-    .parameter
+    :try_start_9
+    sget-object v0, Lcom/google/android/youtube/app/ui/ck;->a:[I
 
-    .prologue
-    .line 318
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ck;->a:Lcom/google/android/youtube/app/ui/ch;
+    sget-object v1, Lcom/google/android/youtube/app/remote/RemoteControl$State;->OFFLINE:Lcom/google/android/youtube/app/remote/RemoteControl$State;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/ch;->h(Lcom/google/android/youtube/app/ui/ch;)Lcom/google/android/youtube/core/Analytics;
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/remote/RemoteControl$State;->ordinal()I
 
-    move-result-object v0
+    move-result v1
 
-    const-string v1, "Favorite"
+    const/4 v2, 0x1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/Analytics;->b(Ljava/lang/String;)V
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_49
 
-    .line 319
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ck;->a:Lcom/google/android/youtube/app/ui/ch;
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/android/youtube/app/ui/ck;->a:[I
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/ch;->e(Lcom/google/android/youtube/app/ui/ch;)Lcom/google/android/youtube/core/client/ad;
+    sget-object v1, Lcom/google/android/youtube/app/remote/RemoteControl$State;->ERROR:Lcom/google/android/youtube/app/remote/RemoteControl$State;
 
-    move-result-object v0
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/remote/RemoteControl$State;->ordinal()I
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/ck;->a:Lcom/google/android/youtube/app/ui/ch;
+    move-result v1
 
-    invoke-static {v1}, Lcom/google/android/youtube/app/ui/ch;->f(Lcom/google/android/youtube/app/ui/ch;)Lcom/google/android/youtube/core/model/Video;
+    const/4 v2, 0x2
 
-    move-result-object v1
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_47
 
-    iget-object v1, v1, Lcom/google/android/youtube/core/model/Video;->id:Ljava/lang/String;
+    :goto_1f
+    :try_start_1f
+    sget-object v0, Lcom/google/android/youtube/app/ui/ck;->a:[I
 
-    iget-object v2, p0, Lcom/google/android/youtube/app/ui/ck;->a:Lcom/google/android/youtube/app/ui/ch;
+    sget-object v1, Lcom/google/android/youtube/app/remote/RemoteControl$State;->SLEEP:Lcom/google/android/youtube/app/remote/RemoteControl$State;
 
-    iget-object v2, v2, Lcom/google/android/youtube/app/ui/ch;->a:Landroid/app/Activity;
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/remote/RemoteControl$State;->ordinal()I
 
-    invoke-static {v2, p0}, Lcom/google/android/youtube/core/async/a;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/g;)Lcom/google/android/youtube/core/async/a;
+    move-result v1
 
-    move-result-object v2
+    const/4 v2, 0x3
 
-    invoke-interface {v0, v1, p1, v2}, Lcom/google/android/youtube/core/client/ad;->c(Ljava/lang/String;Lcom/google/android/youtube/core/model/UserAuth;Lcom/google/android/youtube/core/async/g;)V
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_45
 
-    .line 320
-    return-void
-.end method
+    :goto_2a
+    :try_start_2a
+    sget-object v0, Lcom/google/android/youtube/app/ui/ck;->a:[I
 
-.method public final a(Ljava/lang/Exception;)V
-    .registers 2
-    .parameter
+    sget-object v1, Lcom/google/android/youtube/app/remote/RemoteControl$State;->CONNECTED:Lcom/google/android/youtube/app/remote/RemoteControl$State;
 
-    .prologue
-    .line 329
-    invoke-super {p0, p1}, Lcom/google/android/youtube/core/ui/f;->a(Ljava/lang/Exception;)V
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/remote/RemoteControl$State;->ordinal()I
 
-    .line 330
-    return-void
-.end method
+    move-result v1
 
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
-    .registers 5
-    .parameter
-    .parameter
+    const/4 v2, 0x4
 
-    .prologue
-    .line 310
-    instance-of v0, p2, Lorg/apache/http/client/HttpResponseException;
+    aput v2, v0, v1
+    :try_end_35
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_43
 
-    if-eqz v0, :cond_18
+    :goto_35
+    :try_start_35
+    sget-object v0, Lcom/google/android/youtube/app/ui/ck;->a:[I
 
-    move-object v0, p2
+    sget-object v1, Lcom/google/android/youtube/app/remote/RemoteControl$State;->CONNECTING:Lcom/google/android/youtube/app/remote/RemoteControl$State;
 
-    check-cast v0, Lorg/apache/http/client/HttpResponseException;
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/remote/RemoteControl$State;->ordinal()I
 
-    invoke-virtual {v0}, Lorg/apache/http/client/HttpResponseException;->getStatusCode()I
+    move-result v1
 
-    move-result v0
+    const/4 v2, 0x5
 
-    const/16 v1, 0x190
+    aput v2, v0, v1
+    :try_end_40
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_35 .. :try_end_40} :catch_41
 
-    if-ne v0, v1, :cond_18
-
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ck;->a:Lcom/google/android/youtube/app/ui/ch;
-
-    const v1, 0x7f0a016b
-
-    invoke-static {v0, v1}, Lcom/google/android/youtube/app/ui/ch;->a(Lcom/google/android/youtube/app/ui/ch;I)V
-
-    :goto_17
+    :goto_40
     return-void
 
-    :cond_18
-    const-string v0, "Error adding to favorites"
+    :catch_41
+    move-exception v0
 
-    invoke-virtual {p2}, Ljava/lang/Exception;->getCause()Ljava/lang/Throwable;
+    goto :goto_40
 
-    move-result-object v1
+    :catch_43
+    move-exception v0
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/L;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    goto :goto_35
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ck;->c:Lcom/google/android/youtube/core/e;
+    :catch_45
+    move-exception v0
 
-    invoke-virtual {v0, p2}, Lcom/google/android/youtube/core/e;->b(Ljava/lang/Throwable;)V
+    goto :goto_2a
 
-    goto :goto_17
-.end method
+    :catch_47
+    move-exception v0
 
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 5
-    .parameter
-    .parameter
+    goto :goto_1f
 
-    .prologue
-    .line 310
-    check-cast p2, Lcom/google/android/youtube/core/model/Video;
+    :catch_49
+    move-exception v0
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ck;->a:Lcom/google/android/youtube/app/ui/ch;
-
-    iget-object v1, p2, Lcom/google/android/youtube/core/model/Video;->editUri:Landroid/net/Uri;
-
-    invoke-static {v0, v1}, Lcom/google/android/youtube/app/ui/ch;->a(Lcom/google/android/youtube/app/ui/ch;Landroid/net/Uri;)V
-
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ck;->a:Lcom/google/android/youtube/app/ui/ch;
-
-    const v1, 0x7f0a016a
-
-    invoke-static {v0, v1}, Lcom/google/android/youtube/app/ui/ch;->a(Lcom/google/android/youtube/app/ui/ch;I)V
-
-    return-void
-.end method
-
-.method public final d_()V
-    .registers 1
-
-    .prologue
-    .line 324
-    invoke-super {p0}, Lcom/google/android/youtube/core/ui/f;->d_()V
-
-    .line 325
-    return-void
+    goto :goto_14
 .end method

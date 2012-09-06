@@ -108,73 +108,59 @@
 .end method
 
 .method public final compare([Z[Z)I
-    .registers 8
+    .registers 7
     .parameter
     .parameter
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 280
+    .line 281
     array-length v0, p1
 
-    array-length v2, p2
+    array-length v1, p2
 
-    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
-    move-result v3
-
-    move v2, v1
-
-    .line 281
-    :goto_8
-    if-ge v2, v3, :cond_1e
+    move-result v2
 
     .line 282
-    aget-boolean v0, p1, v2
+    const/4 v0, 0x0
 
-    aget-boolean v4, p2, v2
+    move v1, v0
 
-    if-ne v0, v4, :cond_14
-
-    move v0, v1
+    :goto_8
+    if-ge v1, v2, :cond_19
 
     .line 283
-    :goto_11
-    if-eqz v0, :cond_1a
+    aget-boolean v0, p1, v1
 
-    .line 287
-    :goto_13
+    aget-boolean v3, p2, v1
+
+    invoke-static {v0, v3}, Lcom/google/common/primitives/Booleans;->a(ZZ)I
+
+    move-result v0
+
+    .line 284
+    if-eqz v0, :cond_15
+
+    .line 288
+    :goto_14
     return v0
 
     .line 282
-    :cond_14
-    if-eqz v0, :cond_18
+    :cond_15
+    add-int/lit8 v0, v1, 0x1
 
-    const/4 v0, 0x1
-
-    goto :goto_11
-
-    :cond_18
-    const/4 v0, -0x1
-
-    goto :goto_11
-
-    .line 281
-    :cond_1a
-    add-int/lit8 v0, v2, 0x1
-
-    move v2, v0
+    move v1, v0
 
     goto :goto_8
 
-    .line 287
-    :cond_1e
+    .line 288
+    :cond_19
     array-length v0, p1
 
     array-length v1, p2
 
     sub-int/2addr v0, v1
 
-    goto :goto_13
+    goto :goto_14
 .end method

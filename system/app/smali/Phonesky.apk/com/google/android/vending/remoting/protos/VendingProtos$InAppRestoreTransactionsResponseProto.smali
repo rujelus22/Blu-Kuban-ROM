@@ -33,21 +33,21 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 18948
+    .line 19477
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 18953
+    .line 19482
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->signedResponse_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignedDataProto;
 
-    .line 18973
+    .line 19502
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->purchaseResult_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseResultProto;
 
-    .line 19014
+    .line 19544
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->cachedSize:I
 
-    .line 18948
+    .line 19477
     return-void
 .end method
 
@@ -57,15 +57,15 @@
     .registers 2
 
     .prologue
-    .line 19016
+    .line 19547
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 19018
+    .line 19549
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->getSerializedSize()I
 
-    .line 19020
+    .line 19551
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->cachedSize:I
 
@@ -76,7 +76,7 @@
     .registers 2
 
     .prologue
-    .line 18975
+    .line 19504
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->purchaseResult_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseResultProto;
 
     return-object v0
@@ -86,10 +86,10 @@
     .registers 4
 
     .prologue
-    .line 19024
+    .line 19556
     const/4 v0, 0x0
 
-    .line 19025
+    .line 19557
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->hasSignedResponse()Z
 
@@ -97,7 +97,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 19026
+    .line 19558
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->getSignedResponse()Lcom/google/android/vending/remoting/protos/VendingProtos$SignedDataProto;
@@ -110,7 +110,7 @@
 
     add-int/2addr v0, v1
 
-    .line 19029
+    .line 19561
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->hasPurchaseResult()Z
 
@@ -118,7 +118,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 19030
+    .line 19562
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->getPurchaseResult()Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseResultProto;
@@ -131,11 +131,11 @@
 
     add-int/2addr v0, v1
 
-    .line 19033
+    .line 19565
     :cond_21
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->cachedSize:I
 
-    .line 19034
+    .line 19566
     return v0
 .end method
 
@@ -143,7 +143,7 @@
     .registers 2
 
     .prologue
-    .line 18955
+    .line 19484
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->signedResponse_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignedDataProto;
 
     return-object v0
@@ -153,7 +153,7 @@
     .registers 2
 
     .prologue
-    .line 18974
+    .line 19503
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->hasPurchaseResult:Z
 
     return v0
@@ -163,7 +163,7 @@
     .registers 2
 
     .prologue
-    .line 18954
+    .line 19483
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->hasSignedResponse:Z
 
     return v0
@@ -179,60 +179,60 @@
     .end annotation
 
     .prologue
-    .line 19041
+    .line 19574
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 19042
+    .line 19575
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_26
 
-    .line 19046
+    .line 19579
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 19047
+    .line 19580
     :sswitch_d
     return-object p0
 
-    .line 19052
+    .line 19585
     :sswitch_e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$SignedDataProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$SignedDataProto;-><init>()V
 
-    .line 19053
+    .line 19586
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$SignedDataProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 19054
+    .line 19587
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->setSignedResponse(Lcom/google/android/vending/remoting/protos/VendingProtos$SignedDataProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;
 
     goto :goto_0
 
-    .line 19058
+    .line 19591
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$SignedDataProto;
     :sswitch_1a
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseResultProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseResultProto;-><init>()V
 
-    .line 19059
+    .line 19592
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseResultProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 19060
+    .line 19593
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->setPurchaseResult(Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseResultProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;
 
     goto :goto_0
 
-    .line 19042
+    .line 19575
     :sswitch_data_26
     .sparse-switch
         0x0 -> :sswitch_d
@@ -251,7 +251,7 @@
     .end annotation
 
     .prologue
-    .line 18946
+    .line 19475
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;
 
     move-result-object v0
@@ -264,26 +264,26 @@
     .parameter "value"
 
     .prologue
-    .line 18977
+    .line 19506
     if-nez p1, :cond_8
 
-    .line 18978
+    .line 19507
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 18980
+    .line 19509
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->hasPurchaseResult:Z
 
-    .line 18981
+    .line 19510
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->purchaseResult_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseResultProto;
 
-    .line 18982
+    .line 19511
     return-object p0
 .end method
 
@@ -292,26 +292,26 @@
     .parameter "value"
 
     .prologue
-    .line 18957
+    .line 19486
     if-nez p1, :cond_8
 
-    .line 18958
+    .line 19487
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 18960
+    .line 19489
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->hasSignedResponse:Z
 
-    .line 18961
+    .line 19490
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->signedResponse_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignedDataProto;
 
-    .line 18962
+    .line 19491
     return-object p0
 .end method
 
@@ -325,14 +325,14 @@
     .end annotation
 
     .prologue
-    .line 19006
+    .line 19536
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->hasSignedResponse()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 19007
+    .line 19537
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->getSignedResponse()Lcom/google/android/vending/remoting/protos/VendingProtos$SignedDataProto;
@@ -341,7 +341,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 19009
+    .line 19539
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->hasPurchaseResult()Z
 
@@ -349,7 +349,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 19010
+    .line 19540
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsResponseProto;->getPurchaseResult()Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseResultProto;
@@ -358,7 +358,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 19012
+    .line 19542
     :cond_1c
     return-void
 .end method

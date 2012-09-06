@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="ThemeDownloadTap" parent="@android:style/Theme.DeviceDefault">
+    <style name="ThemeDownloadTap" parent="@android:style/Theme.Holo">
         <item name="android:gravity">center</item>
     </style>
 </resources>

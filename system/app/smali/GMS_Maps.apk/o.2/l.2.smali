@@ -1,242 +1,137 @@
-.class public Lo/l;
+.class public Lo/L;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# instance fields
+.field private final a:I
+
+.field private final b:Ljava/lang/String;
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
+.method public constructor <init>(ILjava/lang/String;)V
+    .registers 3
+    .parameter
+    .parameter
 
+    .prologue
+    .line 181
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 182
+    iput p1, p0, Lo/L;->a:I
+
+    .line 183
+    iput-object p2, p0, Lo/L;->b:Ljava/lang/String;
+
+    .line 184
     return-void
 .end method
 
-.method synthetic constructor <init>(Lo/m;)V
-    .registers 2
+.method static a(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)Lo/L;
+    .registers 4
+    .parameter
 
-    invoke-direct {p0}, Lo/l;-><init>()V
-
-    return-void
-.end method
-
-.method public static a(Ljava/lang/String;)I
-    .registers 2
-
-    const-string v0, "THEN"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_a
-
-    const/4 v0, 0x0
-
-    :goto_9
-    return v0
-
-    :cond_a
-    const-string v0, "GPS_LOST"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_14
-
+    .prologue
+    .line 190
     const/4 v0, 0x1
 
-    goto :goto_9
-
-    :cond_14
-    const-string v0, "DATA_LOST"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    .line 191
+    if-ltz v0, :cond_b
 
-    const/4 v0, 0x2
+    const/16 v1, 0x9
 
-    goto :goto_9
+    if-le v0, v1, :cond_c
 
-    :cond_1e
-    const-string v0, "NAVIGATION_RESUMED"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_28
-
-    const/4 v0, 0x3
-
-    goto :goto_9
-
-    :cond_28
-    const-string v0, "PLEASE_DESCRIBE_PROBLEM"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_32
-
-    const/4 v0, 0x4
-
-    goto :goto_9
-
-    :cond_32
-    const-string v0, "ARRIVED"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3c
-
-    const/4 v0, 0x5
-
-    goto :goto_9
-
-    :cond_3c
-    const-string v0, "WILL_ARRIVE"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_46
-
-    const/4 v0, 0x6
-
-    goto :goto_9
-
-    :cond_46
-    const-string v0, "DESTINATION_ON_LEFT"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_50
-
-    const/4 v0, 0x7
-
-    goto :goto_9
-
-    :cond_50
-    const-string v0, "DESTINATION_ON_RIGHT"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5b
-
-    const/16 v0, 0x8
-
-    goto :goto_9
-
-    :cond_5b
-    const-string v0, "DESTINATION_WILL_BE_ON_LEFT"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_66
-
-    const/16 v0, 0x9
-
-    goto :goto_9
-
-    :cond_66
-    const-string v0, "DESTINATION_WILL_BE_ON_RIGHT"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_71
-
-    const/16 v0, 0xa
-
-    goto :goto_9
-
-    :cond_71
-    const-string v0, "GENERIC_CONTINUE"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_7c
-
-    const/16 v0, 0xb
-
-    goto :goto_9
-
-    :cond_7c
-    const/4 v0, -0x1
-
-    goto :goto_9
-.end method
-
-.method public static a(Lo/l;)Lo/l;
-    .registers 2
-
-    if-nez p0, :cond_4
-
+    .line 192
+    :cond_b
     const/4 v0, 0x0
 
-    :goto_3
-    return-object v0
+    .line 194
+    :cond_c
+    const/4 v1, 0x2
 
-    :cond_4
-    new-instance v0, Lo/q;
+    invoke-virtual {p0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getString(I)Ljava/lang/String;
 
-    invoke-direct {v0, p0}, Lo/q;-><init>(Lo/l;)V
+    move-result-object v1
 
-    goto :goto_3
-.end method
+    .line 195
+    new-instance v2, Lo/L;
 
-.method public static a(Lo/l;Lo/l;)Lo/l;
-    .registers 4
+    invoke-direct {v2, v0, v1}, Lo/L;-><init>(ILjava/lang/String;)V
 
-    const/4 v0, 0x0
-
-    if-eqz p0, :cond_5
-
-    if-nez p1, :cond_6
-
-    :cond_5
-    :goto_5
-    return-object v0
-
-    :cond_6
-    new-instance v1, Lo/o;
-
-    invoke-direct {v1, v0}, Lo/o;-><init>(Lo/m;)V
-
-    invoke-virtual {v1, p0}, Lo/o;->a(Lo/l;)V
-
-    invoke-virtual {v1, p1}, Lo/o;->a(Lo/l;)V
-
-    invoke-virtual {v1}, Lo/o;->a()Lo/l;
-
-    move-result-object v0
-
-    goto :goto_5
+    return-object v2
 .end method
 
 
 # virtual methods
-.method public a()Z
+.method public a()I
     .registers 2
 
-    const/4 v0, 0x0
+    .prologue
+    .line 199
+    iget v0, p0, Lo/L;->a:I
 
     return v0
+.end method
+
+.method public b()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 203
+    iget-object v0, p0, Lo/L;->b:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .registers 3
+
+    .prologue
+    .line 208
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "[type:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lo/L;->a:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", text:\""
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lo/L;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\"]"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

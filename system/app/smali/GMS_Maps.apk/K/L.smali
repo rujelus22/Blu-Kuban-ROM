@@ -1,380 +1,159 @@
-.class LK/L;
+.class Lk/l;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Collection;
+.implements Lm/c;
 
 
 # instance fields
-.field final a:Ljava/util/Collection;
-
-.field final b:Lcom/google/common/base/w;
+.field final synthetic a:Lk/k;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/Collection;Lcom/google/common/base/w;)V
-    .registers 3
+.method constructor <init>(Lk/k;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 1112
+    iput-object p1, p0, Lk/l;->a:Lk/k;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, LK/L;->a:Ljava/util/Collection;
-
-    iput-object p2, p0, LK/L;->b:Lcom/google/common/base/w;
 
     return-void
 .end method
 
 
 # virtual methods
-.method a(Lcom/google/common/base/w;)LK/L;
-    .registers 5
+.method public a(Lm/D;)V
+    .registers 6
+    .parameter
 
-    new-instance v0, LK/L;
+    .prologue
+    .line 1140
+    invoke-virtual {p1}, Lm/D;->b()J
 
-    iget-object v1, p0, LK/L;->a:Ljava/util/Collection;
+    move-result-wide v0
 
-    iget-object v2, p0, LK/L;->b:Lcom/google/common/base/w;
+    iget-object v2, p0, Lk/l;->a:Lk/k;
 
-    invoke-static {v2, p1}, Lcom/google/common/base/x;->a(Lcom/google/common/base/w;Lcom/google/common/base/w;)Lcom/google/common/base/w;
+    invoke-static {v2}, Lk/k;->a(Lk/k;)J
 
-    move-result-object v2
+    move-result-wide v2
 
-    invoke-direct {v0, v1, v2}, LK/L;-><init>(Ljava/util/Collection;Lcom/google/common/base/w;)V
+    sub-long/2addr v0, v2
 
-    return-object v0
-.end method
+    iget-object v2, p0, Lk/l;->a:Lk/k;
 
-.method public add(Ljava/lang/Object;)Z
-    .registers 3
+    invoke-static {v2}, Lk/k;->b(Lk/k;)I
 
-    iget-object v0, p0, LK/L;->b:Lcom/google/common/base/w;
+    move-result v2
 
-    invoke-interface {v0, p1}, Lcom/google/common/base/w;->a(Ljava/lang/Object;)Z
+    int-to-long v2, v2
 
-    move-result v0
+    cmp-long v0, v0, v2
 
-    invoke-static {v0}, Lcom/google/common/base/v;->a(Z)V
+    if-lez v0, :cond_29
 
-    iget-object v0, p0, LK/L;->a:Ljava/util/Collection;
+    .line 1142
+    iget-object v0, p0, Lk/l;->a:Lk/k;
 
-    invoke-interface {v0, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    new-instance v1, Lk/x;
 
-    move-result v0
+    invoke-direct {v1, p1}, Lk/x;-><init>(Lm/D;)V
 
-    return v0
-.end method
+    invoke-virtual {v0, v1}, Lk/k;->a(LA/j;)V
 
-.method public addAll(Ljava/util/Collection;)Z
-    .registers 5
+    .line 1143
+    iget-object v0, p0, Lk/l;->a:Lk/k;
 
-    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p1}, Lm/D;->b()J
 
-    move-result-object v0
+    move-result-wide v1
 
-    :goto_4
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v0, v1, v2}, Lk/k;->a(Lk/k;J)J
 
-    move-result v1
-
-    if-eqz v1, :cond_18
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    iget-object v2, p0, LK/L;->b:Lcom/google/common/base/w;
-
-    invoke-interface {v2, v1}, Lcom/google/common/base/w;->a(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    invoke-static {v1}, Lcom/google/common/base/v;->a(Z)V
-
-    goto :goto_4
-
-    :cond_18
-    iget-object v0, p0, LK/L;->a:Ljava/util/Collection;
-
-    invoke-interface {v0, p1}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public clear()V
-    .registers 3
-
-    iget-object v0, p0, LK/L;->a:Ljava/util/Collection;
-
-    iget-object v1, p0, LK/L;->b:Lcom/google/common/base/w;
-
-    invoke-static {v0, v1}, LK/bF;->a(Ljava/lang/Iterable;Lcom/google/common/base/w;)Z
-
+    .line 1145
+    :cond_29
     return-void
 .end method
 
-.method public contains(Ljava/lang/Object;)Z
+.method public onLocationChanged(Landroid/location/Location;)V
     .registers 4
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    .line 1115
+    iget-object v0, p0, Lk/l;->a:Lk/k;
 
-    :try_start_1
-    iget-object v1, p0, LK/L;->b:Lcom/google/common/base/w;
+    new-instance v1, Lk/p;
 
-    invoke-interface {v1, p1}, Lcom/google/common/base/w;->a(Ljava/lang/Object;)Z
+    invoke-direct {v1, p1}, Lk/p;-><init>(Landroid/location/Location;)V
 
-    move-result v1
+    invoke-virtual {v0, v1}, Lk/k;->a(LA/j;)V
 
-    if-eqz v1, :cond_12
+    .line 1116
+    iget-object v0, p0, Lk/l;->a:Lk/k;
 
-    iget-object v1, p0, LK/L;->a:Ljava/util/Collection;
+    invoke-static {v0, p1}, Lk/k;->a(Lk/k;Landroid/location/Location;)Landroid/location/Location;
 
-    invoke-interface {v1, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
-    :try_end_e
-    .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_e} :catch_15
-    .catch Ljava/lang/ClassCastException; {:try_start_1 .. :try_end_e} :catch_13
-
-    move-result v1
-
-    if-eqz v1, :cond_12
-
-    const/4 v0, 0x1
-
-    :cond_12
-    :goto_12
-    return v0
-
-    :catch_13
-    move-exception v1
-
-    goto :goto_12
-
-    :catch_15
-    move-exception v1
-
-    goto :goto_12
+    .line 1117
+    return-void
 .end method
 
-.method public containsAll(Ljava/util/Collection;)Z
+.method public onProviderDisabled(Ljava/lang/String;)V
     .registers 4
+    .parameter
 
-    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    .prologue
+    .line 1121
+    iget-object v0, p0, Lk/l;->a:Lk/k;
 
-    move-result-object v0
+    new-instance v1, Lk/r;
 
-    :cond_4
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-direct {v1, p1}, Lk/r;-><init>(Ljava/lang/String;)V
 
-    move-result v1
+    invoke-virtual {v0, v1}, Lk/k;->a(LA/j;)V
 
-    if-eqz v1, :cond_16
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, LK/L;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    const/4 v0, 0x0
-
-    :goto_15
-    return v0
-
-    :cond_16
-    const/4 v0, 0x1
-
-    goto :goto_15
+    .line 1123
+    return-void
 .end method
 
-.method public isEmpty()Z
-    .registers 3
-
-    iget-object v0, p0, LK/L;->a:Ljava/util/Collection;
-
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    iget-object v1, p0, LK/L;->b:Lcom/google/common/base/w;
-
-    invoke-static {v0, v1}, LK/bI;->c(Ljava/util/Iterator;Lcom/google/common/base/w;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_10
-
-    const/4 v0, 0x1
-
-    :goto_f
-    return v0
-
-    :cond_10
-    const/4 v0, 0x0
-
-    goto :goto_f
-.end method
-
-.method public iterator()Ljava/util/Iterator;
-    .registers 3
-
-    iget-object v0, p0, LK/L;->a:Ljava/util/Collection;
-
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    iget-object v1, p0, LK/L;->b:Lcom/google/common/base/w;
-
-    invoke-static {v0, v1}, LK/bI;->b(Ljava/util/Iterator;Lcom/google/common/base/w;)LK/cC;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public remove(Ljava/lang/Object;)Z
+.method public onProviderEnabled(Ljava/lang/String;)V
     .registers 4
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    .line 1127
+    iget-object v0, p0, Lk/l;->a:Lk/k;
 
-    :try_start_1
-    iget-object v1, p0, LK/L;->b:Lcom/google/common/base/w;
+    new-instance v1, Lk/s;
 
-    invoke-interface {v1, p1}, Lcom/google/common/base/w;->a(Ljava/lang/Object;)Z
+    invoke-direct {v1, p1}, Lk/s;-><init>(Ljava/lang/String;)V
 
-    move-result v1
+    invoke-virtual {v0, v1}, Lk/k;->a(LA/j;)V
 
-    if-eqz v1, :cond_12
-
-    iget-object v1, p0, LK/L;->a:Ljava/util/Collection;
-
-    invoke-interface {v1, p1}, Ljava/util/Collection;->remove(Ljava/lang/Object;)Z
-    :try_end_e
-    .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_e} :catch_15
-    .catch Ljava/lang/ClassCastException; {:try_start_1 .. :try_end_e} :catch_13
-
-    move-result v1
-
-    if-eqz v1, :cond_12
-
-    const/4 v0, 0x1
-
-    :cond_12
-    :goto_12
-    return v0
-
-    :catch_13
-    move-exception v1
-
-    goto :goto_12
-
-    :catch_15
-    move-exception v1
-
-    goto :goto_12
+    .line 1129
+    return-void
 .end method
 
-.method public removeAll(Ljava/util/Collection;)Z
-    .registers 4
+.method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-static {p1}, Lcom/google/common/base/v;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .prologue
+    .line 1134
+    iget-object v0, p0, Lk/l;->a:Lk/k;
 
-    new-instance v0, LK/M;
+    new-instance v1, Lk/t;
 
-    invoke-direct {v0, p0, p1}, LK/M;-><init>(LK/L;Ljava/util/Collection;)V
+    invoke-direct {v1, p1, p2, p3}, Lk/t;-><init>(Ljava/lang/String;ILandroid/os/Bundle;)V
 
-    iget-object v1, p0, LK/L;->a:Ljava/util/Collection;
+    invoke-virtual {v0, v1}, Lk/k;->a(LA/j;)V
 
-    invoke-static {v1, v0}, LK/bF;->a(Ljava/lang/Iterable;Lcom/google/common/base/w;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public retainAll(Ljava/util/Collection;)Z
-    .registers 4
-
-    invoke-static {p1}, Lcom/google/common/base/v;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v0, LK/N;
-
-    invoke-direct {v0, p0, p1}, LK/N;-><init>(LK/L;Ljava/util/Collection;)V
-
-    iget-object v1, p0, LK/L;->a:Ljava/util/Collection;
-
-    invoke-static {v1, v0}, LK/bF;->a(Ljava/lang/Iterable;Lcom/google/common/base/w;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public size()I
-    .registers 2
-
-    invoke-virtual {p0}, LK/L;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    invoke-static {v0}, LK/bI;->a(Ljava/util/Iterator;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public toArray()[Ljava/lang/Object;
-    .registers 2
-
-    invoke-virtual {p0}, LK/L;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    invoke-static {v0}, LK/bR;->a(Ljava/util/Iterator;)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->toArray()[Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 3
-
-    invoke-virtual {p0}, LK/L;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    invoke-static {v0}, LK/bR;->a(Ljava/util/Iterator;)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .registers 2
-
-    invoke-virtual {p0}, LK/L;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    invoke-static {v0}, LK/bI;->b(Ljava/util/Iterator;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    .line 1136
+    return-void
 .end method

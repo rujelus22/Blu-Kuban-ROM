@@ -3,35 +3,21 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/view/View$OnFocusChangeListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/ui/h;
+.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/youtube/app/honeycomb/ui/h;)V
-    .registers 3
+.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 199
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/app/honeycomb/ui/j;-><init>(Lcom/google/android/youtube/app/honeycomb/ui/h;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/youtube/app/honeycomb/ui/h;B)V
-    .registers 3
-    .parameter
-    .parameter
-
-    .prologue
-    .line 199
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/ui/j;->a:Lcom/google/android/youtube/app/honeycomb/ui/h;
+    .line 119
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/ui/j;->a:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,66 +26,55 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final onFocusChange(Landroid/view/View;Z)V
     .registers 6
+    .parameter
     .parameter
 
     .prologue
-    .line 201
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/j;->a:Lcom/google/android/youtube/app/honeycomb/ui/h;
+    .line 121
+    if-eqz p2, :cond_26
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/ui/h;->e(Lcom/google/android/youtube/app/honeycomb/ui/h;)Landroid/view/View;
+    .line 122
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/j;->a:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
 
-    move-result-object v0
-
-    if-ne p1, v0, :cond_1f
-
-    .line 202
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/j;->a:Lcom/google/android/youtube/app/honeycomb/ui/h;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/ui/h;->l(Lcom/google/android/youtube/app/honeycomb/ui/h;)Lcom/google/android/youtube/app/o;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;->a(Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;)Landroid/widget/SearchView;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/ui/j;->a:Lcom/google/android/youtube/app/honeycomb/ui/h;
+    invoke-virtual {v0}, Landroid/widget/SearchView;->getQuery()Ljava/lang/CharSequence;
 
-    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/ui/h;->b(Lcom/google/android/youtube/app/honeycomb/ui/h;)Lcom/google/android/youtube/core/model/LiveEvent;
+    move-result-object v0
+
+    .line 123
+    if-eqz v0, :cond_26
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    iget-object v1, v1, Lcom/google/android/youtube/core/model/LiveEvent;->video:Lcom/google/android/youtube/core/model/Video;
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    iget-object v1, v1, Lcom/google/android/youtube/core/model/Video;->id:Ljava/lang/String;
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_26
+
+    .line 124
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/ui/j;->a:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     const/4 v2, 0x0
 
-    sget-object v3, Lcom/google/android/youtube/core/client/DefaultVideoStatsClient$Referrers;->LIVE_TEASER:Lcom/google/android/youtube/core/client/DefaultVideoStatsClient$Referrers;
+    invoke-virtual {v1, v0, v2}, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;->a(Ljava/lang/String;Z)V
 
-    invoke-interface {v0, v1, v2, v3}, Lcom/google/android/youtube/app/o;->a(Ljava/lang/String;ZLcom/google/android/youtube/core/client/al;)V
-
-    .line 206
-    :cond_1e
-    :goto_1e
+    .line 127
+    :cond_26
     return-void
-
-    .line 203
-    :cond_1f
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/j;->a:Lcom/google/android/youtube/app/honeycomb/ui/h;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/ui/h;->m(Lcom/google/android/youtube/app/honeycomb/ui/h;)Landroid/widget/Button;
-
-    move-result-object v0
-
-    if-ne p1, v0, :cond_1e
-
-    .line 204
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/j;->a:Lcom/google/android/youtube/app/honeycomb/ui/h;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/ui/h;->l(Lcom/google/android/youtube/app/honeycomb/ui/h;)Lcom/google/android/youtube/app/o;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/google/android/youtube/app/o;->k()V
-
-    goto :goto_1e
 .end method

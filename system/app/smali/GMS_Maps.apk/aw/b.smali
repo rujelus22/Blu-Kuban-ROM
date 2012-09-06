@@ -1,338 +1,122 @@
-.class public Law/b;
-.super Landroid/widget/ArrayAdapter;
+.class public LaW/b;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# static fields
-.field public static final a:Law/c;
+# instance fields
+.field private final a:F
 
-.field public static final b:Law/c;
+.field private final b:Ljava/util/ArrayList;
 
-.field public static final c:Law/c;
+.field private final c:I
 
-.field public static final d:Law/c;
+.field private final d:I
 
-.field public static final e:Law/c;
+.field private final e:Landroid/graphics/Paint;
 
-.field public static final f:Law/c;
+.field private final f:[Landroid/graphics/Bitmap;
 
-.field public static final g:Law/c;
+.field private final g:[Landroid/graphics/Bitmap;
 
-.field public static final h:Law/c;
+.field private final h:Landroid/graphics/Bitmap;
 
-.field public static final i:Law/c;
+.field private final i:Lbb/f;
 
-.field public static final j:Law/c;
+.field private j:I
 
-.field public static final k:Law/c;
+.field private k:I
 
-.field public static final l:Law/c;
+.field private l:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 8
-
-    const v7, 0x7f0201cc
-
-    const/16 v6, 0x10b
-
-    new-instance v0, Law/c;
-
-    const/16 v1, 0x10e
-
-    const v2, 0x7f0201ce
-
-    const/16 v3, 0xbb9
-
-    const-string v4, "m"
-
-    invoke-direct {v0, v1, v2, v3, v4}, Law/c;-><init>(IIILjava/lang/String;)V
-
-    sput-object v0, Law/b;->a:Law/c;
-
-    new-instance v0, Law/c;
-
-    const/16 v1, 0x2d9
-
-    const/16 v2, 0x10d
-
-    const v3, 0x7f0201cd
-
-    const/16 v4, 0xbba
-
-    const-string v5, "l"
-
-    invoke-direct/range {v0 .. v5}, Law/c;-><init>(IIIILjava/lang/String;)V
-
-    sput-object v0, Law/b;->b:Law/c;
-
-    new-instance v0, Law/c;
-
-    const/16 v1, 0x110
-
-    const v2, 0x7f0201d1
-
-    const/16 v3, 0xbbc
-
-    const-string v4, "t"
-
-    invoke-direct {v0, v1, v2, v3, v4}, Law/c;-><init>(IIILjava/lang/String;)V
-
-    sput-object v0, Law/b;->c:Law/c;
-
-    new-instance v0, Law/c;
-
-    const/16 v1, 0x27a
-
-    const v2, 0x7f0201d0
-
-    const/16 v3, 0xbbb
-
-    const-string v4, "n"
-
-    invoke-direct {v0, v1, v2, v3, v4}, Law/c;-><init>(IIILjava/lang/String;)V
-
-    sput-object v0, Law/b;->d:Law/c;
-
-    new-instance v0, Law/c;
-
-    const/16 v1, 0x122
-
-    const/16 v4, 0xbbd
-
-    const-string v5, "lj"
-
-    move v2, v6
-
-    move v3, v7
-
-    invoke-direct/range {v0 .. v5}, Law/c;-><init>(IIIILjava/lang/String;)V
-
-    sput-object v0, Law/b;->e:Law/c;
-
-    new-instance v0, Law/c;
-
-    const/16 v1, 0x121
-
-    const/16 v4, 0xbbe
-
-    const-string v5, "la"
-
-    move v2, v6
-
-    move v3, v7
-
-    invoke-direct/range {v0 .. v5}, Law/c;-><init>(IIIILjava/lang/String;)V
-
-    sput-object v0, Law/b;->f:Law/c;
-
-    new-instance v0, Law/c;
-
-    const/16 v1, 0x4d6
-
-    const v2, 0x7f0201d2
-
-    const/16 v3, 0xbbf
-
-    const-string v4, "tr"
-
-    invoke-direct {v0, v1, v2, v3, v4}, Law/c;-><init>(IIILjava/lang/String;)V
-
-    sput-object v0, Law/b;->g:Law/c;
-
-    new-instance v0, Law/c;
-
-    const/16 v1, 0x276
-
-    const v2, 0x7f0201cf
-
-    const/16 v3, 0xbc0
-
-    const-string v4, "p"
-
-    invoke-direct {v0, v1, v2, v3, v4}, Law/c;-><init>(IIILjava/lang/String;)V
-
-    sput-object v0, Law/b;->h:Law/c;
-
-    new-instance v0, Law/c;
-
-    const/16 v1, 0xe7
-
-    const v2, 0x7f0201ca
-
-    const/16 v3, 0xbc1
-
-    const-string v4, "d"
-
-    invoke-direct {v0, v1, v2, v3, v4}, Law/c;-><init>(IIILjava/lang/String;)V
-
-    sput-object v0, Law/b;->i:Law/c;
-
-    new-instance v0, Law/c;
-
-    const/16 v1, 0x7e
-
-    const v2, 0x7f0201c9
-
-    const/16 v3, 0xbc2
-
-    const-string v4, "c"
-
-    invoke-direct {v0, v1, v2, v3, v4}, Law/c;-><init>(IIILjava/lang/String;)V
-
-    sput-object v0, Law/b;->j:Law/c;
-
-    new-instance v0, Law/c;
-
-    const/16 v1, 0x144
-
-    const v2, 0x7f0201cb
-
-    const/16 v3, 0xbc3
-
-    const-string v4, "h"
-
-    invoke-direct {v0, v1, v2, v3, v4}, Law/c;-><init>(IIILjava/lang/String;)V
-
-    sput-object v0, Law/b;->k:Law/c;
-
-    new-instance v0, Law/c;
-
-    const/16 v1, 0x298
-
-    const v2, 0x7f0202d2
-
-    const/16 v3, 0xbc4
-
-    const-string v4, "o"
-
-    invoke-direct {v0, v1, v2, v3, v4}, Law/c;-><init>(IIILjava/lang/String;)V
-
-    sput-object v0, Law/b;->l:Law/c;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
-
-    const v0, 0x7f0f0006
-
-    invoke-direct {p0, p1, v0}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I)V
-
-    return-void
-.end method
-
-.method static synthetic a(I)Ljava/lang/String;
-    .registers 2
-
-    invoke-static {p0}, Law/b;->c(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic b(I)Ljava/lang/String;
-    .registers 2
-
-    invoke-static {p0}, Law/b;->d(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private static c(I)Ljava/lang/String;
-    .registers 5
-
-    const/4 v3, 0x0
-
-    const/4 v2, 0x1
-
+.method public constructor <init>(FII[Landroid/graphics/Bitmap;[Landroid/graphics/Bitmap;Lbb/f;Landroid/graphics/Bitmap;)V
+    .registers 11
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
     const/4 v0, 0x0
 
-    sget v1, Law/c;->a:I
+    const/16 v2, 0x32
 
-    if-le p0, v1, :cond_1b
+    .line 40
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-ne p0, v2, :cond_1c
+    .line 35
+    iput v0, p0, LaW/b;->j:I
 
-    const/16 v0, 0x297
+    .line 36
+    iput v0, p0, LaW/b;->k:I
 
-    invoke-static {v0}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
+    .line 37
+    const/16 v0, 0x1e
 
-    move-result-object v0
+    iput v0, p0, LaW/b;->l:I
 
-    new-array v1, v2, [Ljava/lang/String;
+    .line 41
+    iput p1, p0, LaW/b;->a:F
 
-    invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    .line 42
+    iput-object p4, p0, LaW/b;->f:[Landroid/graphics/Bitmap;
 
-    move-result-object v2
+    .line 43
+    iput-object p5, p0, LaW/b;->g:[Landroid/graphics/Bitmap;
 
-    aput-object v2, v1, v3
+    .line 44
+    iput-object p6, p0, LaW/b;->i:Lbb/f;
 
-    invoke-static {v0, v1}, Las/b;->a(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
+    .line 45
+    iput-object p7, p0, LaW/b;->h:Landroid/graphics/Bitmap;
 
-    move-result-object v0
+    .line 46
+    iput p2, p0, LaW/b;->c:I
 
-    :cond_1b
-    :goto_1b
-    return-object v0
+    .line 47
+    iput p3, p0, LaW/b;->d:I
 
-    :cond_1c
-    const/16 v0, 0x296
+    .line 48
+    new-instance v0, Landroid/graphics/Paint;
 
-    invoke-static {v0}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
-    move-result-object v0
+    iput-object v0, p0, LaW/b;->e:Landroid/graphics/Paint;
 
-    new-array v1, v2, [Ljava/lang/String;
+    .line 49
+    iget-object v0, p0, LaW/b;->e:Landroid/graphics/Paint;
 
-    invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    const/16 v1, 0xff
 
-    move-result-object v2
+    invoke-virtual {v0, v1, v2, v2, v2}, Landroid/graphics/Paint;->setARGB(IIII)V
 
-    aput-object v2, v1, v3
+    .line 50
+    iget-object v0, p0, LaW/b;->e:Landroid/graphics/Paint;
 
-    invoke-static {v0, v1}, Las/b;->a(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
+    const/4 v1, 0x1
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    goto :goto_1b
-.end method
+    .line 51
+    iget-object v0, p0, LaW/b;->e:Landroid/graphics/Paint;
 
-.method private static d(I)Ljava/lang/String;
-    .registers 3
+    sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
-    const/4 v0, 0x0
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    sget v1, Law/c;->a:I
-
-    if-le p0, v1, :cond_e
-
-    const/4 v0, 0x1
-
-    if-ne p0, v0, :cond_f
-
-    const/16 v0, 0x29a
-
-    invoke-static {v0}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    :cond_e
-    :goto_e
-    return-object v0
-
-    :cond_f
-    const/16 v0, 0x299
-
-    invoke-static {v0}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
+    .line 52
+    invoke-static {}, Lcom/google/common/collect/cx;->a()Ljava/util/ArrayList;
 
     move-result-object v0
 
-    goto :goto_e
+    iput-object v0, p0, LaW/b;->b:Ljava/util/ArrayList;
+
+    .line 53
+    return-void
 .end method
 
 
@@ -340,247 +124,571 @@
 .method public a()V
     .registers 3
 
-    invoke-virtual {p0}, Law/b;->clear()V
+    .prologue
+    const/4 v0, 0x0
 
-    invoke-virtual {p0}, Law/b;->b()Ljava/util/ArrayList;
+    .line 160
+    iput v0, p0, LaW/b;->k:I
 
-    move-result-object v0
+    .line 161
+    iput v0, p0, LaW/b;->j:I
+
+    .line 163
+    iget-object v0, p0, LaW/b;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_29
+
+    .line 164
+    iget-object v0, p0, LaW/b;->b:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :goto_b
+    .line 165
+    :goto_13
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_29
 
+    .line 166
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Law/c;
+    check-cast v0, LaW/a;
 
-    invoke-virtual {p0, v0}, Law/b;->add(Ljava/lang/Object;)V
+    invoke-virtual {v0}, LaW/a;->b()V
 
-    goto :goto_b
+    .line 167
+    iget v0, p0, LaW/b;->j:I
 
-    :cond_1b
-    invoke-virtual {p0}, Law/b;->notifyDataSetChanged()V
+    add-int/lit8 v0, v0, 0x1
 
+    iput v0, p0, LaW/b;->j:I
+
+    goto :goto_13
+
+    .line 170
+    :cond_29
     return-void
 .end method
 
-.method public b()Ljava/util/ArrayList;
-    .registers 3
+.method public a(Landroid/graphics/Canvas;Z)V
+    .registers 6
+    .parameter
+    .parameter
 
-    new-instance v1, Ljava/util/ArrayList;
+    .prologue
+    const/4 v1, 0x0
 
-    const/16 v0, 0xd
+    .line 58
+    iget v0, p0, LaW/b;->k:I
 
-    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
+    add-int/lit8 v2, v0, 0x1
 
-    sget-object v0, Law/b;->a:Law/c;
+    iput v2, p0, LaW/b;->k:I
 
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    iget v2, p0, LaW/b;->l:I
 
-    sget-object v0, Law/b;->b:Law/c;
+    if-le v0, v2, :cond_26
 
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 59
+    iget v0, p0, LaW/b;->j:I
 
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
+    if-lez v0, :cond_26
 
-    move-result-object v0
+    move v0, v1
 
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->ah()Z
+    .line 60
+    :goto_10
+    iget v2, p0, LaW/b;->j:I
 
-    move-result v0
+    if-ge v0, v2, :cond_24
 
-    if-eqz v0, :cond_20
+    .line 61
+    iget-object v2, p0, LaW/b;->b:Ljava/util/ArrayList;
 
-    sget-object v0, Law/b;->d:Law/c;
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_20
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->j()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_35
-
-    invoke-static {}, Lax/au;->l()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_35
-
-    sget-object v0, Law/b;->j:Law/c;
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_35
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->i()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4f
-
-    invoke-static {}, Lax/aa;->l()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_55
-
-    sget-object v0, Law/b;->f:Law/c;
-
-    :goto_47
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    sget-object v0, Law/b;->k:Law/c;
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_4f
-    sget-object v0, Law/b;->h:Law/c;
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    return-object v1
-
-    :cond_55
-    sget-object v0, Law/b;->e:Law/c;
-
-    goto :goto_47
-.end method
-
-.method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 10
-
-    const/16 v5, 0x8
-
-    const/4 v4, 0x0
-
-    invoke-virtual {p0}, Law/b;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    const-string v1, "layout_inflater"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/LayoutInflater;
-
-    if-nez p2, :cond_19
-
-    const v1, 0x7f030061
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object p2
-
-    :cond_19
-    invoke-virtual {p0, p1}, Law/b;->getItem(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Law/c;
-
-    const v1, 0x7f0f0061
-
-    invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/ImageView;
-
-    iget v2, v0, Law/c;->e:I
-
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    const v1, 0x7f0f0006
-
-    invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iget-object v2, v0, Law/c;->b:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    const v1, 0x7f0f017d
-
-    invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iget-object v2, v0, Law/c;->c:Ljava/lang/String;
-
-    invoke-static {v2}, Las/b;->b(Ljava/lang/String;)Z
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-nez v2, :cond_70
+    if-lez v2, :cond_21
 
-    iget-object v2, v0, Law/c;->c:Ljava/lang/String;
+    .line 62
+    iget-object v2, p0, LaW/b;->b:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setVisibility(I)V
+    .line 60
+    :cond_21
+    add-int/lit8 v0, v0, 0x1
 
-    :goto_54
-    const v1, 0x7f0f008f
+    goto :goto_10
 
-    invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    .line 65
+    :cond_24
+    iput v1, p0, LaW/b;->j:I
+
+    .line 70
+    :cond_26
+    iget-object v0, p0, LaW/b;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_44
+
+    .line 71
+    iget-object v0, p0, LaW/b;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    check-cast v1, Landroid/widget/TextView;
+    .line 72
+    :goto_34
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    iget v2, v0, Law/c;->f:I
+    move-result v0
 
-    sget v3, Law/c;->a:I
+    if-eqz v0, :cond_44
 
-    if-le v2, v3, :cond_74
-
-    iget v0, v0, Law/c;->f:I
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    .line 73
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    check-cast v0, LaW/a;
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v0, p1, p2}, LaW/a;->a(Landroid/graphics/Canvas;Z)V
 
-    :goto_6f
-    return-object p2
+    goto :goto_34
 
-    :cond_70
-    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setVisibility(I)V
+    .line 76
+    :cond_44
+    return-void
+.end method
 
-    goto :goto_54
+.method public a(Lbb/f;LaW/c;LaW/e;Z)V
+    .registers 23
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    :cond_74
-    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setVisibility(I)V
+    .prologue
+    .line 82
+    const/4 v4, 0x0
 
-    goto :goto_6f
+    move-object/from16 v0, p0
+
+    iput v4, v0, LaW/b;->j:I
+
+    .line 83
+    const/4 v4, 0x0
+
+    move-object/from16 v0, p0
+
+    iput v4, v0, LaW/b;->k:I
+
+    .line 85
+    invoke-virtual/range {p2 .. p2}, LaW/c;->a()I
+
+    move-result v4
+
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, LaW/b;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
+
+    move-result v5
+
+    sub-int v16, v4, v5
+
+    .line 86
+    if-lez v16, :cond_6e
+
+    .line 89
+    const/4 v4, 0x0
+
+    move v15, v4
+
+    :goto_1c
+    move/from16 v0, v16
+
+    if-ge v15, v0, :cond_8e
+
+    .line 92
+    invoke-static {}, Ljava/lang/Math;->random()D
+
+    move-result-wide v4
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, LaW/b;->f:[Landroid/graphics/Bitmap;
+
+    array-length v6, v6
+
+    int-to-double v6, v6
+
+    mul-double/2addr v4, v6
+
+    double-to-int v5, v4
+
+    .line 93
+    invoke-static {}, Ljava/lang/Math;->random()D
+
+    move-result-wide v6
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, LaW/b;->g:[Landroid/graphics/Bitmap;
+
+    array-length v4, v4
+
+    int-to-double v8, v4
+
+    mul-double/2addr v6, v8
+
+    double-to-int v10, v6
+
+    .line 94
+    new-instance v4, LaW/a;
+
+    move-object/from16 v0, p0
+
+    iget v6, v0, LaW/b;->c:I
+
+    move-object/from16 v0, p0
+
+    iget v7, v0, LaW/b;->d:I
+
+    move-object/from16 v0, p0
+
+    iget-object v8, v0, LaW/b;->e:Landroid/graphics/Paint;
+
+    move-object/from16 v0, p0
+
+    iget-object v9, v0, LaW/b;->f:[Landroid/graphics/Bitmap;
+
+    aget-object v9, v9, v5
+
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, LaW/b;->g:[Landroid/graphics/Bitmap;
+
+    aget-object v10, v5, v10
+
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, LaW/b;->i:Lbb/f;
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, LaW/b;->h:Landroid/graphics/Bitmap;
+
+    move-object/from16 v5, p0
+
+    move-object/from16 v11, p2
+
+    move/from16 v14, p4
+
+    invoke-direct/range {v4 .. v14}, LaW/a;-><init>(LaW/b;IILandroid/graphics/Paint;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;LaW/c;Lbb/f;Landroid/graphics/Bitmap;Z)V
+
+    .line 97
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, LaW/b;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 89
+    add-int/lit8 v4, v15, 0x1
+
+    move v15, v4
+
+    goto :goto_1c
+
+    .line 99
+    :cond_6e
+    if-gez v16, :cond_8e
+
+    .line 103
+    const/4 v4, 0x0
+
+    :goto_71
+    invoke-static/range {v16 .. v16}, Ljava/lang/Math;->abs(I)I
+
+    move-result v5
+
+    if-ge v4, v5, :cond_8e
+
+    .line 106
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, LaW/b;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
+
+    move-result v5
+
+    if-lez v5, :cond_8b
+
+    .line 107
+    move-object/from16 v0, p0
+
+    iget v5, v0, LaW/b;->j:I
+
+    add-int/lit8 v5, v5, 0x1
+
+    move-object/from16 v0, p0
+
+    iput v5, v0, LaW/b;->j:I
+
+    .line 103
+    :cond_8b
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_71
+
+    .line 112
+    :cond_8e
+    invoke-static {}, Lcom/google/common/collect/cx;->a()Ljava/util/ArrayList;
+
+    move-result-object v16
+
+    .line 113
+    const/4 v4, 0x0
+
+    .line 114
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, LaW/b;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
+
+    move-result v5
+
+    if-lez v5, :cond_138
+
+    .line 115
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, LaW/b;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v5}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v17
+
+    move v5, v4
+
+    .line 116
+    :goto_a6
+    invoke-interface/range {v17 .. v17}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_138
+
+    .line 117
+    invoke-interface/range {v17 .. v17}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, LaW/a;
+
+    .line 118
+    add-int/lit8 v15, v5, 0x1
+
+    move-object/from16 v0, p0
+
+    iget v6, v0, LaW/b;->j:I
+
+    if-le v5, v6, :cond_134
+
+    .line 126
+    invoke-virtual {v4}, LaW/a;->a()LaW/c;
+
+    move-result-object v5
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v5, v0}, LaW/c;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_d3
+
+    .line 129
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, p2
+
+    move-object/from16 v2, p3
+
+    move/from16 v3, p4
+
+    invoke-virtual {v4, v0, v1, v2, v3}, LaW/a;->a(Lbb/f;LaW/c;LaW/e;Z)V
+
+    :goto_d1
+    move v5, v15
+
+    .line 150
+    goto :goto_a6
+
+    .line 133
+    :cond_d3
+    invoke-virtual {v4}, LaW/a;->b()V
+
+    .line 136
+    invoke-static {}, Ljava/lang/Math;->random()D
+
+    move-result-wide v4
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, LaW/b;->f:[Landroid/graphics/Bitmap;
+
+    array-length v6, v6
+
+    int-to-double v6, v6
+
+    mul-double/2addr v4, v6
+
+    double-to-int v5, v4
+
+    .line 137
+    invoke-static {}, Ljava/lang/Math;->random()D
+
+    move-result-wide v6
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, LaW/b;->g:[Landroid/graphics/Bitmap;
+
+    array-length v4, v4
+
+    int-to-double v8, v4
+
+    mul-double/2addr v6, v8
+
+    double-to-int v10, v6
+
+    .line 138
+    new-instance v4, LaW/a;
+
+    move-object/from16 v0, p0
+
+    iget v6, v0, LaW/b;->c:I
+
+    move-object/from16 v0, p0
+
+    iget v7, v0, LaW/b;->d:I
+
+    move-object/from16 v0, p0
+
+    iget-object v8, v0, LaW/b;->e:Landroid/graphics/Paint;
+
+    move-object/from16 v0, p0
+
+    iget-object v9, v0, LaW/b;->f:[Landroid/graphics/Bitmap;
+
+    aget-object v9, v9, v5
+
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, LaW/b;->g:[Landroid/graphics/Bitmap;
+
+    aget-object v10, v5, v10
+
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, LaW/b;->i:Lbb/f;
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, LaW/b;->h:Landroid/graphics/Bitmap;
+
+    move-object/from16 v5, p0
+
+    move-object/from16 v11, p2
+
+    move/from16 v14, p4
+
+    invoke-direct/range {v4 .. v14}, LaW/a;-><init>(LaW/b;IILandroid/graphics/Paint;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;LaW/c;Lbb/f;Landroid/graphics/Bitmap;Z)V
+
+    .line 142
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, p2
+
+    move-object/from16 v2, p3
+
+    move/from16 v3, p4
+
+    invoke-virtual {v4, v0, v1, v2, v3}, LaW/a;->a(Lbb/f;LaW/c;LaW/e;Z)V
+
+    .line 143
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 144
+    move-object/from16 v0, p0
+
+    iget v4, v0, LaW/b;->j:I
+
+    add-int/lit8 v4, v4, 0x1
+
+    move-object/from16 v0, p0
+
+    iput v4, v0, LaW/b;->j:I
+
+    goto :goto_d1
+
+    .line 148
+    :cond_134
+    invoke-virtual {v4}, LaW/a;->b()V
+
+    goto :goto_d1
+
+    .line 154
+    :cond_138
+    invoke-virtual/range {v16 .. v16}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v4
+
+    if-nez v4, :cond_147
+
+    .line 155
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, LaW/b;->b:Ljava/util/ArrayList;
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v4, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+
+    .line 157
+    :cond_147
+    return-void
+.end method
+
+.method public b()F
+    .registers 2
+
+    .prologue
+    .line 179
+    iget v0, p0, LaW/b;->a:F
+
+    return v0
 .end method

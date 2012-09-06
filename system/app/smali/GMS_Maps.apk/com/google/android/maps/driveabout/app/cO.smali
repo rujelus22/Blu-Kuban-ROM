@@ -1,63 +1,81 @@
-.class Lcom/google/android/maps/driveabout/app/cO;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class Lcom/google/android/maps/driveabout/app/co;
+.super Landroid/content/BroadcastReceiver;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/NavigationView;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/NavigationService;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/NavigationView;)V
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/NavigationService;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/cO;->a:Lcom/google/android/maps/driveabout/app/NavigationView;
+    .prologue
+    .line 160
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/co;->a:Lcom/google/android/maps/driveabout/app/NavigationService;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .registers 7
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .registers 6
+    .parameter
+    .parameter
 
-    const-wide/16 v4, 0x1388
+    .prologue
+    .line 163
+    const-string v0, "android.intent.extra.DOCK_STATE"
 
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+    const/4 v1, -0x1
 
-    move-result-wide v0
+    invoke-virtual {p2, v0, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/cO;->a:Lcom/google/android/maps/driveabout/app/NavigationView;
+    move-result v0
 
-    invoke-static {v2}, Lcom/google/android/maps/driveabout/app/NavigationView;->d(Lcom/google/android/maps/driveabout/app/NavigationView;)J
+    .line 164
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/co;->a:Lcom/google/android/maps/driveabout/app/NavigationService;
 
-    move-result-wide v2
+    const/4 v2, 0x2
 
-    sub-long/2addr v0, v2
+    if-ne v0, v2, :cond_23
 
-    cmp-long v2, v0, v4
+    const/4 v0, 0x1
 
-    if-ltz v2, :cond_18
+    :goto_d
+    invoke-static {v1, v0}, Lcom/google/android/maps/driveabout/app/NavigationService;->a(Lcom/google/android/maps/driveabout/app/NavigationService;Z)Z
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/cO;->a:Lcom/google/android/maps/driveabout/app/NavigationView;
+    .line 167
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/co;->a:Lcom/google/android/maps/driveabout/app/NavigationService;
 
-    const/4 v1, 0x1
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/NavigationService;->b(Lcom/google/android/maps/driveabout/app/NavigationService;)Z
 
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/NavigationView;->h(Z)V
+    move-result v0
 
-    :goto_17
+    if-eqz v0, :cond_1d
+
+    .line 168
+    const-string v0, "C"
+
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/dh;->a(Ljava/lang/String;)V
+
+    .line 171
+    :cond_1d
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/co;->a:Lcom/google/android/maps/driveabout/app/NavigationService;
+
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/NavigationService;->c(Lcom/google/android/maps/driveabout/app/NavigationService;)V
+
+    .line 172
     return-void
 
-    :cond_18
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/cO;->a:Lcom/google/android/maps/driveabout/app/NavigationView;
+    .line 164
+    :cond_23
+    const/4 v0, 0x0
 
-    sub-long v0, v4, v0
-
-    invoke-virtual {v2, p0, v0, v1}, Lcom/google/android/maps/driveabout/app/NavigationView;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    goto :goto_17
+    goto :goto_d
 .end method

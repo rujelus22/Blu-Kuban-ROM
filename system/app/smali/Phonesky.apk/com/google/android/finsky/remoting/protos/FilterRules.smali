@@ -7,6 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;,
+        Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;,
+        Lcom/google/android/finsky/remoting/protos/FilterRules$RuleEvaluation;,
         Lcom/google/android/finsky/remoting/protos/FilterRules$Rule;
     }
 .end annotation

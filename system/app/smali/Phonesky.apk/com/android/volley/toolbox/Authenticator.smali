@@ -4,7 +4,7 @@
 
 
 # virtual methods
-.method public abstract getAuthToken(Ljava/lang/String;)Ljava/lang/String;
+.method public abstract getAuthToken()Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/volley/AuthFailureError;

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 110
+    .line 116
     iput-object p1, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary$3;->this$0:Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;
 
     invoke-direct {p0}, Lcom/google/android/finsky/previews/SongSnippetStatusListener;-><init>()V
@@ -40,7 +40,7 @@
     .parameter "highlighted"
 
     .prologue
-    .line 113
+    .line 119
     iget-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary$3;->this$0:Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;
 
     #getter for: Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mSongIndex:Lcom/google/android/finsky/layout/SongIndex;
@@ -50,12 +50,12 @@
 
     invoke-virtual {v0, p1}, Lcom/google/android/finsky/layout/SongIndex;->setState(I)V
 
-    .line 114
+    .line 120
     iget-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary$3;->this$0:Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;
 
     #calls: Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->setHighlighted(Z)V
     invoke-static {v0, p2}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->access$200(Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;Z)V
 
-    .line 115
+    .line 121
     return-void
 .end method

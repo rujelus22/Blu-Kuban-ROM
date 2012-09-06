@@ -27,16 +27,16 @@
     .parameter "textEntryStringId"
 
     .prologue
-    .line 351
+    .line 341
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 352
+    .line 342
     iput p1, p0, Lcom/google/android/finsky/activities/FlagItemFragment$FlagType;->stringId:I
 
-    .line 353
+    .line 343
     iput p2, p0, Lcom/google/android/finsky/activities/FlagItemFragment$FlagType;->textEntryStringId:I
 
-    .line 354
+    .line 344
     return-void
 .end method
 
@@ -49,7 +49,7 @@
     .registers 3
 
     .prologue
-    .line 360
+    .line 350
     iget v0, p0, Lcom/google/android/finsky/activities/FlagItemFragment$FlagType;->textEntryStringId:I
 
     const/4 v1, -0x1

@@ -1,5 +1,6 @@
 .class Lcom/google/googlenav/friend/android/k;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
 .implements Landroid/content/DialogInterface$OnClickListener;
@@ -16,7 +17,12 @@
 # direct methods
 .method constructor <init>(Lcom/google/googlenav/friend/android/InviteActivity;Landroid/widget/ListView;Landroid/widget/ArrayAdapter;)V
     .registers 4
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 357
     iput-object p1, p0, Lcom/google/googlenav/friend/android/k;->c:Lcom/google/googlenav/friend/android/InviteActivity;
 
     iput-object p2, p0, Lcom/google/googlenav/friend/android/k;->a:Landroid/widget/ListView;
@@ -32,42 +38,54 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .registers 9
+    .parameter
+    .parameter
 
+    .prologue
+    .line 360
     const/4 v0, -0x1
 
     if-ne p2, v0, :cond_3f
 
+    .line 361
     iget-object v0, p0, Lcom/google/googlenav/friend/android/k;->a:Landroid/widget/ListView;
 
     invoke-virtual {v0}, Landroid/widget/ListView;->getCheckedItemPositions()Landroid/util/SparseBooleanArray;
 
     move-result-object v1
 
+    .line 362
     invoke-virtual {v1}, Landroid/util/SparseBooleanArray;->size()I
 
     move-result v2
 
+    .line 363
     if-lez v2, :cond_31
 
-    invoke-static {v2}, LK/bR;->b(I)Ljava/util/ArrayList;
+    .line 364
+    invoke-static {v2}, Lcom/google/common/collect/cx;->b(I)Ljava/util/ArrayList;
 
     move-result-object v3
 
+    .line 365
     const/4 v0, 0x0
 
     :goto_14
     if-ge v0, v2, :cond_2c
 
+    .line 366
     invoke-virtual {v1, v0}, Landroid/util/SparseBooleanArray;->keyAt(I)I
 
     move-result v4
 
+    .line 367
     invoke-virtual {v1, v4}, Landroid/util/SparseBooleanArray;->get(I)Z
 
     move-result v5
 
     if-eqz v5, :cond_29
 
+    .line 370
     iget-object v5, p0, Lcom/google/googlenav/friend/android/k;->b:Landroid/widget/ArrayAdapter;
 
     invoke-virtual {v5, v4}, Landroid/widget/ArrayAdapter;->getItem(I)Ljava/lang/Object;
@@ -76,16 +94,19 @@
 
     invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 365
     :cond_29
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_14
 
+    .line 373
     :cond_2c
     iget-object v0, p0, Lcom/google/googlenav/friend/android/k;->c:Lcom/google/googlenav/friend/android/InviteActivity;
 
     invoke-static {v0, v3}, Lcom/google/googlenav/friend/android/InviteActivity;->a(Lcom/google/googlenav/friend/android/InviteActivity;Ljava/util/List;)V
 
+    .line 378
     :cond_31
     :goto_31
     iget-object v0, p0, Lcom/google/googlenav/friend/android/k;->c:Lcom/google/googlenav/friend/android/InviteActivity;
@@ -96,18 +117,22 @@
 
     if-nez v0, :cond_3e
 
+    .line 379
     iget-object v0, p0, Lcom/google/googlenav/friend/android/k;->c:Lcom/google/googlenav/friend/android/InviteActivity;
 
     invoke-virtual {v0}, Lcom/google/googlenav/friend/android/InviteActivity;->finish()V
 
+    .line 381
     :cond_3e
     return-void
 
+    .line 375
     :cond_3f
     const/4 v0, -0x2
 
     if-ne p2, v0, :cond_31
 
+    .line 376
     iget-object v0, p0, Lcom/google/googlenav/friend/android/k;->c:Lcom/google/googlenav/friend/android/InviteActivity;
 
     invoke-static {v0}, Lcom/google/googlenav/friend/android/InviteActivity;->c(Lcom/google/googlenav/friend/android/InviteActivity;)Lcom/google/googlenav/friend/android/o;

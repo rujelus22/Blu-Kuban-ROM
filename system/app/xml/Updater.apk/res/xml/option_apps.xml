@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="Rom" android:key="first_preferencescreen"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:title="@string/reload_apps" android:key="reload_apps" />
+    <PreferenceCategory android:title="@string/installed_apps" android:key="quick_apps" />
+</PreferenceScreen>

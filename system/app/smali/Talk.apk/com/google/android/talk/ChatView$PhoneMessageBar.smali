@@ -92,15 +92,15 @@
 
     new-array v2, v7, [Landroid/view/View;
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mMuteUnmuteButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMuteUnmuteButton:Landroid/view/View;
 
     aput-object v3, v2, v4
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mAudioChoicesButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAudioChoicesButton:Landroid/view/View;
 
     aput-object v3, v2, v5
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mCloseChatButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mCloseChatButton:Landroid/view/View;
 
     aput-object v3, v2, v6
 
@@ -111,19 +111,19 @@
 
     new-array v2, v8, [Landroid/view/View;
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mResumeVideoChatButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mResumeVideoChatButton:Landroid/view/View;
 
     aput-object v3, v2, v4
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mMuteUnmuteButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMuteUnmuteButton:Landroid/view/View;
 
     aput-object v3, v2, v5
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mEndVideoButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mEndVideoButton:Landroid/view/View;
 
     aput-object v3, v2, v6
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
 
     aput-object v3, v2, v7
 
@@ -134,19 +134,19 @@
 
     new-array v2, v8, [Landroid/view/View;
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mResumeVideoChatButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mResumeVideoChatButton:Landroid/view/View;
 
     aput-object v3, v2, v4
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mMuteUnmuteButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMuteUnmuteButton:Landroid/view/View;
 
     aput-object v3, v2, v5
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mEndVideoButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mEndVideoButton:Landroid/view/View;
 
     aput-object v3, v2, v6
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
 
     aput-object v3, v2, v7
 
@@ -157,15 +157,15 @@
 
     new-array v2, v7, [Landroid/view/View;
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mMuteUnmuteButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMuteUnmuteButton:Landroid/view/View;
 
     aput-object v3, v2, v4
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mAudioChoicesButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAudioChoicesButton:Landroid/view/View;
 
     aput-object v3, v2, v5
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mCloseChatButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mCloseChatButton:Landroid/view/View;
 
     aput-object v3, v2, v6
 
@@ -176,7 +176,7 @@
 
     new-array v2, v5, [Landroid/view/View;
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mCancelAudioButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mCancelAudioButton:Landroid/view/View;
 
     aput-object v3, v2, v4
 
@@ -187,7 +187,7 @@
 
     new-array v2, v5, [Landroid/view/View;
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mCancelVideoButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mCancelVideoButton:Landroid/view/View;
 
     aput-object v3, v2, v4
 
@@ -213,7 +213,7 @@
     .local v1, r:Landroid/content/res/Resources;
     sget-object v3, Lcom/google/android/talk/ChatView$23;->$SwitchMap$com$google$android$talk$ChatView$VideoChatState:[I
 
-    iget-object v4, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mMessageBarState:Lcom/google/android/talk/ChatView$VideoChatState;
+    iget-object v4, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMessageBarState:Lcom/google/android/talk/ChatView$VideoChatState;
 
     invoke-virtual {v4}, Lcom/google/android/talk/ChatView$VideoChatState;->ordinal()I
 
@@ -339,7 +339,7 @@
 
     .prologue
     .line 3432
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mMessageBarContainer:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMessageBarContainer:Landroid/view/View;
 
     if-nez v11, :cond_c
 
@@ -428,7 +428,7 @@
 
     .line 3459
     :cond_49
-    iget-object v0, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mAllViews:[Landroid/view/View;
+    iget-object v0, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAllViews:[Landroid/view/View;
 
     .local v0, arr$:[Landroid/view/View;
     array-length v6, v0
@@ -460,7 +460,7 @@
     .line 3465
     .end local v8           #v:Landroid/view/View;
     :cond_5b
-    iget-object v7, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mMuteUnmuteButton:Landroid/view/View;
+    iget-object v7, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMuteUnmuteButton:Landroid/view/View;
 
     check-cast v7, Landroid/widget/ImageButton;
 
@@ -471,7 +471,7 @@
     invoke-virtual {v7, v11}, Landroid/widget/ImageButton;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 3468
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mStatusMessage:Landroid/widget/TextView;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mStatusMessage:Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lcom/google/android/talk/ChatView$PhoneMessageBar;->getStatusMessage()Ljava/lang/String;
 
@@ -480,14 +480,14 @@
     invoke-virtual {v11, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 3469
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mStatusMessage:Landroid/widget/TextView;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mStatusMessage:Landroid/widget/TextView;
 
     const/4 v12, 0x0
 
     invoke-virtual {v11, v12}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 3470
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mMessageBarContainer:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMessageBarContainer:Landroid/view/View;
 
     invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -511,7 +511,7 @@
     .line 3473
     sget-object v11, Lcom/google/android/talk/ChatView$23;->$SwitchMap$com$google$android$talk$ChatView$VideoChatState:[I
 
-    iget-object v12, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mMessageBarState:Lcom/google/android/talk/ChatView$VideoChatState;
+    iget-object v12, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMessageBarState:Lcom/google/android/talk/ChatView$VideoChatState;
 
     invoke-virtual {v12}, Lcom/google/android/talk/ChatView$VideoChatState;->ordinal()I
 
@@ -523,9 +523,9 @@
 
     .line 3537
     :goto_94
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
 
-    iget-object v12, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mAudioDeviceState:Lcom/google/android/videochat/CallState$AudioDeviceState;
+    iget-object v12, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAudioDeviceState:Lcom/google/android/videochat/CallState$AudioDeviceState;
 
     invoke-virtual {v11, v12}, Lcom/google/android/talk/BluetoothButton;->handleBluetoothStateChange(Lcom/google/android/videochat/CallState$AudioDeviceState;)V
 
@@ -534,7 +534,7 @@
 
     .line 3541
     .local v10, visibleCount:I
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mButtons:Landroid/view/ViewGroup;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mButtons:Landroid/view/ViewGroup;
 
     invoke-virtual {v11}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -549,7 +549,7 @@
     if-ge v4, v3, :cond_1a7
 
     .line 3543
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mButtons:Landroid/view/ViewGroup;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mButtons:Landroid/view/ViewGroup;
 
     invoke-virtual {v11, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
@@ -557,7 +557,7 @@
 
     .line 3544
     .local v1, child:Landroid/view/View;
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mButtons:Landroid/view/ViewGroup;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mButtons:Landroid/view/ViewGroup;
 
     add-int/lit8 v12, v4, 0x1
 
@@ -604,7 +604,7 @@
     .end local v9           #visible:Z
     .end local v10           #visibleCount:I
     :pswitch_c7
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mCloseChatButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mCloseChatButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
@@ -625,7 +625,7 @@
     if-eqz v11, :cond_e0
 
     .line 3477
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mVideoChatButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mVideoChatButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
@@ -649,7 +649,7 @@
     if-eqz v11, :cond_f3
 
     .line 3479
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mAudioChatButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAudioChatButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
@@ -659,14 +659,14 @@
 
     .line 3481
     :cond_f3
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mStatusMessage:Landroid/widget/TextView;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mStatusMessage:Landroid/widget/TextView;
 
     const/16 v12, 0x8
 
     invoke-virtual {v11, v12}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 3482
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mMessageBarContainer:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMessageBarContainer:Landroid/view/View;
 
     invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -696,12 +696,12 @@
     invoke-virtual {v7, v11}, Landroid/widget/ImageButton;->setImageResource(I)V
 
     .line 3489
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mAudioChoicesButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAudioChoicesButton:Landroid/view/View;
 
     if-eqz v11, :cond_120
 
     .line 3490
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mAudioChoicesButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAudioChoicesButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
@@ -709,14 +709,14 @@
 
     .line 3492
     :cond_120
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mMuteUnmuteButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMuteUnmuteButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
     invoke-virtual {v11, v12}, Landroid/view/View;->setVisibility(I)V
 
     .line 3493
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mEndAudioButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mEndAudioButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
@@ -731,12 +731,12 @@
     invoke-virtual {v7, v11}, Landroid/widget/ImageButton;->setImageResource(I)V
 
     .line 3498
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mAudioChoicesButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAudioChoicesButton:Landroid/view/View;
 
     if-eqz v11, :cond_13e
 
     .line 3499
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mAudioChoicesButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAudioChoicesButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
@@ -744,14 +744,14 @@
 
     .line 3501
     :cond_13e
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mMuteUnmuteButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMuteUnmuteButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
     invoke-virtual {v11, v12}, Landroid/view/View;->setVisibility(I)V
 
     .line 3502
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mEndAudioButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mEndAudioButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
@@ -766,12 +766,12 @@
     invoke-virtual {v7, v11}, Landroid/widget/ImageButton;->setImageResource(I)V
 
     .line 3507
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mAudioChoicesButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAudioChoicesButton:Landroid/view/View;
 
     if-eqz v11, :cond_15c
 
     .line 3508
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mAudioChoicesButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAudioChoicesButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
@@ -779,14 +779,14 @@
 
     .line 3510
     :cond_15c
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mMuteUnmuteButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMuteUnmuteButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
     invoke-virtual {v11, v12}, Landroid/view/View;->setVisibility(I)V
 
     .line 3511
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mEndVideoButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mEndVideoButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
@@ -801,12 +801,12 @@
     invoke-virtual {v7, v11}, Landroid/widget/ImageButton;->setImageResource(I)V
 
     .line 3516
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mAudioChoicesButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAudioChoicesButton:Landroid/view/View;
 
     if-eqz v11, :cond_17a
 
     .line 3517
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mAudioChoicesButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAudioChoicesButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
@@ -814,14 +814,14 @@
 
     .line 3519
     :cond_17a
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mMuteUnmuteButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMuteUnmuteButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
     invoke-virtual {v11, v12}, Landroid/view/View;->setVisibility(I)V
 
     .line 3520
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mEndVideoButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mEndVideoButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
@@ -831,7 +831,7 @@
 
     .line 3524
     :pswitch_188
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mCancelAudioButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mCancelAudioButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
@@ -841,7 +841,7 @@
 
     .line 3528
     :pswitch_190
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mCancelVideoButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mCancelVideoButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
@@ -851,7 +851,7 @@
 
     .line 3533
     :pswitch_198
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mCloseChatButton:Landroid/view/View;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mCloseChatButton:Landroid/view/View;
 
     const/4 v12, 0x0
 
@@ -885,7 +885,7 @@
     if-lez v10, :cond_1c0
 
     .line 3552
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mPresenceView:Landroid/widget/ImageView;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mPresenceView:Landroid/widget/ImageView;
 
     const/16 v12, 0x8
 
@@ -910,7 +910,7 @@
 
     .line 3554
     :cond_1c0
-    iget-object v11, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mPresenceView:Landroid/widget/ImageView;
+    iget-object v11, p0, Lcom/google/android/talk/ChatView$MessageBar;->mPresenceView:Landroid/widget/ImageView;
 
     const/4 v12, 0x0
 

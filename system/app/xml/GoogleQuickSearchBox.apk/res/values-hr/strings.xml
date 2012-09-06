@@ -23,7 +23,7 @@
     <string name="first_run_title">Google pretraživanje</string>
     <string name="tos_button_text">Pročitajte Uvjete pruž. usluge</string>
     <string name="yes_agree_use_location">Upotrijebi Moju lokaciju za Googleove rezultate pretraživanja i ostale Googleove usluge</string>
-    <string name="first_run_tos">U skladu s Googleovim Uvjetima pružanja usluge za mobilne uređaje.</string>
+    <string name="first_run_tos">U skladu s Google Mobile Uvjetima pružanja usluge.</string>
     <string name="use_location_title">Upotrijebi Moju lokaciju</string>
     <string name="search_history">Upotreba web-povijesti</string>
     <string name="search_history_summary_no_account">Nema konfiguriranih računa</string>

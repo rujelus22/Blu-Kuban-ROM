@@ -19,7 +19,7 @@
     .parameter
 
     .prologue
-    .line 412
+    .line 434
     iput-object p1, p0, Lcom/google/android/plus1/a;->b:Lcom/google/android/plus1/ApiaryPlusOneApi$PlusOneAuthException;
 
     iput-object p2, p0, Lcom/google/android/plus1/a;->a:Lcom/google/android/plus1/ac;
@@ -36,39 +36,39 @@
     .parameter
 
     .prologue
-    .line 415
+    .line 437
     :try_start_0
     invoke-interface {p1}, Landroid/accounts/AccountManagerFuture;->getResult()Ljava/lang/Object;
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_3} :catch_e
 
-    .line 422
+    .line 444
     iget-object v0, p0, Lcom/google/android/plus1/a;->a:Lcom/google/android/plus1/ac;
 
     if-eqz v0, :cond_d
 
-    .line 423
+    .line 445
     iget-object v0, p0, Lcom/google/android/plus1/a;->a:Lcom/google/android/plus1/ac;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Lcom/google/android/plus1/ac;->a(Ljava/lang/Object;)V
 
-    .line 425
+    .line 447
     :cond_d
     :goto_d
     return-void
 
-    .line 416
+    .line 438
     :catch_e
     move-exception v0
 
-    .line 417
+    .line 439
     iget-object v1, p0, Lcom/google/android/plus1/a;->a:Lcom/google/android/plus1/ac;
 
     if-eqz v1, :cond_d
 
-    .line 418
+    .line 440
     iget-object v1, p0, Lcom/google/android/plus1/a;->a:Lcom/google/android/plus1/ac;
 
     invoke-interface {v1, v0}, Lcom/google/android/plus1/ac;->a(Ljava/lang/Exception;)V

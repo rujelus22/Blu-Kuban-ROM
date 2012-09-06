@@ -30,11 +30,19 @@
 
 .field private final mDoNotifications:Z
 
+.field private final mEncryptionParams:Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$EncryptionParams;
+
 .field private final mExpectedSignature:Ljava/lang/String;
 
 .field private final mExpectedSize:J
 
+.field private final mHandler:Landroid/os/Handler;
+
+.field private final mIsForwardLocked:Z
+
 .field private final mIsUpdate:Z
+
+.field private final mPackageName:Ljava/lang/String;
 
 .field private final mPostInstallCallback:Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;
 
@@ -44,8 +52,8 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/net/Uri;Ljava/lang/String;JLjava/lang/String;ZLcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;Z)V
-    .registers 9
+.method private constructor <init>(Landroid/net/Uri;Ljava/lang/String;JLjava/lang/String;ZLcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;ZZLjava/lang/String;Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$EncryptionParams;)V
+    .registers 14
     .parameter "contentUri"
     .parameter "title"
     .parameter "expectedSize"
@@ -53,38 +61,61 @@
     .parameter "doNotifications"
     .parameter "postInstallCallback"
     .parameter "isUpdate"
+    .parameter "isForwardLocked"
+    .parameter "packageName"
+    .parameter "encryptionParams"
 
     .prologue
-    .line 100
+    .line 157
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 101
+    .line 152
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    iput-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mHandler:Landroid/os/Handler;
+
+    .line 158
     iput-object p1, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mContentUri:Landroid/net/Uri;
 
-    .line 102
+    .line 159
     iput-object p2, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mTitle:Ljava/lang/String;
 
-    .line 103
+    .line 160
     iput-wide p3, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mExpectedSize:J
 
-    .line 104
+    .line 161
     iput-object p5, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mExpectedSignature:Ljava/lang/String;
 
-    .line 105
+    .line 162
     iput-boolean p6, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mDoNotifications:Z
 
-    .line 106
+    .line 163
     iput-object p7, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPostInstallCallback:Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;
 
-    .line 107
+    .line 164
     iput-boolean p8, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mIsUpdate:Z
 
-    .line 108
+    .line 165
+    iput-boolean p9, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mIsForwardLocked:Z
+
+    .line 166
+    iput-object p10, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPackageName:Ljava/lang/String;
+
+    .line 167
+    iput-object p11, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mEncryptionParams:Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$EncryptionParams;
+
+    .line 168
     return-void
 .end method
 
-.method synthetic constructor <init>(Landroid/net/Uri;Ljava/lang/String;JLjava/lang/String;ZLcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;ZLcom/google/android/finsky/utils/PackageManagerHelper$1;)V
-    .registers 10
+.method synthetic constructor <init>(Landroid/net/Uri;Ljava/lang/String;JLjava/lang/String;ZLcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;ZZLjava/lang/String;Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$EncryptionParams;Lcom/google/android/finsky/utils/PackageManagerHelper$1;)V
+    .registers 13
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
@@ -93,385 +124,236 @@
     .parameter "x5"
     .parameter "x6"
     .parameter "x7"
+    .parameter "x8"
+    .parameter "x9"
+    .parameter "x10"
 
     .prologue
-    .line 80
-    invoke-direct/range {p0 .. p8}, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;-><init>(Landroid/net/Uri;Ljava/lang/String;JLjava/lang/String;ZLcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;Z)V
+    .line 139
+    invoke-direct/range {p0 .. p11}, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;-><init>(Landroid/net/Uri;Ljava/lang/String;JLjava/lang/String;ZLcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;ZZLjava/lang/String;Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$EncryptionParams;)V
 
     return-void
 .end method
 
-.method static synthetic access$200(Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;)Z
+.method static synthetic access$400(Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;)Ljava/lang/String;
     .registers 2
     .parameter "x0"
 
     .prologue
-    .line 80
-    iget-boolean v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mDoNotifications:Z
+    .line 139
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPackageName:Ljava/lang/String;
 
-    return v0
+    return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;)Z
+.method static synthetic access$500(Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;)Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;
     .registers 2
     .parameter "x0"
 
     .prologue
-    .line 80
-    iget-boolean v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mIsUpdate:Z
-
-    return v0
-.end method
-
-.method static synthetic access$600(Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;)Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;
-    .registers 2
-    .parameter "x0"
-
-    .prologue
-    .line 80
+    .line 139
     iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPostInstallCallback:Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;
 
     return-object v0
 .end method
 
-.method private static verifyApk(Landroid/content/Context;Landroid/net/Uri;JLjava/lang/String;)Z
-    .registers 11
-    .parameter "context"
-    .parameter "contentUri"
-    .parameter "expectedSize"
-    .parameter "expectedSignature"
+.method static synthetic access$600(Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;)Z
+    .registers 2
+    .parameter "x0"
 
     .prologue
-    const/4 v4, 0x0
+    .line 139
+    iget-boolean v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mDoNotifications:Z
 
-    .line 112
-    const/4 v1, 0x0
+    return v0
+.end method
 
-    .line 114
-    .local v1, input:Ljava/io/InputStream;
-    :try_start_2
-    new-instance v2, Ljava/io/BufferedInputStream;
+.method static synthetic access$700(Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;)Z
+    .registers 2
+    .parameter "x0"
 
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    .prologue
+    .line 139
+    iget-boolean v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mIsUpdate:Z
 
-    move-result-object v3
+    return v0
+.end method
 
-    invoke-virtual {v3, p1}, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
+.method static synthetic access$900(Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;)Landroid/os/Handler;
+    .registers 2
+    .parameter "x0"
 
-    move-result-object v3
+    .prologue
+    .line 139
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mHandler:Landroid/os/Handler;
 
-    invoke-direct {v2, v3}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
-    :try_end_f
-    .catchall {:try_start_2 .. :try_end_f} :catchall_45
-    .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_f} :catch_23
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_f} :catch_34
-
-    .line 116
-    .end local v1           #input:Ljava/io/InputStream;
-    .local v2, input:Ljava/io/InputStream;
-    :try_start_f
-    invoke-static {v2, p4, p2, p3}, Lcom/google/android/finsky/utils/Sha1Util;->verify(Ljava/io/InputStream;Ljava/lang/String;J)Z
-    :try_end_12
-    .catchall {:try_start_f .. :try_end_12} :catchall_55
-    .catch Ljava/io/FileNotFoundException; {:try_start_f .. :try_end_12} :catch_5b
-    .catch Ljava/io/IOException; {:try_start_f .. :try_end_12} :catch_58
-
-    move-result v3
-
-    .line 122
-    if-eqz v2, :cond_18
-
-    .line 124
-    :try_start_15
-    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
-    :try_end_18
-    .catch Ljava/io/IOException; {:try_start_15 .. :try_end_18} :catch_1a
-
-    :cond_18
-    :goto_18
-    move-object v1, v2
-
-    .line 127
-    .end local v2           #input:Ljava/io/InputStream;
-    .restart local v1       #input:Ljava/io/InputStream;
-    :goto_19
-    return v3
-
-    .line 125
-    .end local v1           #input:Ljava/io/InputStream;
-    .restart local v2       #input:Ljava/io/InputStream;
-    :catch_1a
-    move-exception v0
-
-    .line 126
-    .local v0, e:Ljava/io/IOException;
-    const-string v5, "IOException in finally block."
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v5, v4}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_18
-
-    .line 117
-    .end local v0           #e:Ljava/io/IOException;
-    .end local v2           #input:Ljava/io/InputStream;
-    .restart local v1       #input:Ljava/io/InputStream;
-    :catch_23
-    move-exception v0
-
-    .line 122
-    .local v0, e:Ljava/io/FileNotFoundException;
-    :goto_24
-    if-eqz v1, :cond_29
-
-    .line 124
-    :try_start_26
-    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
-    :try_end_29
-    .catch Ljava/io/IOException; {:try_start_26 .. :try_end_29} :catch_2b
-
-    .end local v0           #e:Ljava/io/FileNotFoundException;
-    :cond_29
-    :goto_29
-    move v3, v4
-
-    .line 127
-    goto :goto_19
-
-    .line 125
-    .restart local v0       #e:Ljava/io/FileNotFoundException;
-    :catch_2b
-    move-exception v0
-
-    .line 126
-    .local v0, e:Ljava/io/IOException;
-    const-string v3, "IOException in finally block."
-
-    new-array v5, v4, [Ljava/lang/Object;
-
-    invoke-static {v3, v5}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_29
-
-    .line 119
-    .end local v0           #e:Ljava/io/IOException;
-    :catch_34
-    move-exception v0
-
-    .line 122
-    .restart local v0       #e:Ljava/io/IOException;
-    :goto_35
-    if-eqz v1, :cond_3a
-
-    .line 124
-    :try_start_37
-    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
-    :try_end_3a
-    .catch Ljava/io/IOException; {:try_start_37 .. :try_end_3a} :catch_3c
-
-    :cond_3a
-    :goto_3a
-    move v3, v4
-
-    .line 127
-    goto :goto_19
-
-    .line 125
-    :catch_3c
-    move-exception v0
-
-    .line 126
-    const-string v3, "IOException in finally block."
-
-    new-array v5, v4, [Ljava/lang/Object;
-
-    invoke-static {v3, v5}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_3a
-
-    .line 122
-    .end local v0           #e:Ljava/io/IOException;
-    :catchall_45
-    move-exception v3
-
-    :goto_46
-    if-eqz v1, :cond_4b
-
-    .line 124
-    :try_start_48
-    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
-    :try_end_4b
-    .catch Ljava/io/IOException; {:try_start_48 .. :try_end_4b} :catch_4c
-
-    .line 127
-    :cond_4b
-    :goto_4b
-    throw v3
-
-    .line 125
-    :catch_4c
-    move-exception v0
-
-    .line 126
-    .restart local v0       #e:Ljava/io/IOException;
-    const-string v5, "IOException in finally block."
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v5, v4}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_4b
-
-    .line 122
-    .end local v0           #e:Ljava/io/IOException;
-    .end local v1           #input:Ljava/io/InputStream;
-    .restart local v2       #input:Ljava/io/InputStream;
-    :catchall_55
-    move-exception v3
-
-    move-object v1, v2
-
-    .end local v2           #input:Ljava/io/InputStream;
-    .restart local v1       #input:Ljava/io/InputStream;
-    goto :goto_46
-
-    .line 119
-    .end local v1           #input:Ljava/io/InputStream;
-    .restart local v2       #input:Ljava/io/InputStream;
-    :catch_58
-    move-exception v0
-
-    move-object v1, v2
-
-    .end local v2           #input:Ljava/io/InputStream;
-    .restart local v1       #input:Ljava/io/InputStream;
-    goto :goto_35
-
-    .line 117
-    .end local v1           #input:Ljava/io/InputStream;
-    .restart local v2       #input:Ljava/io/InputStream;
-    :catch_5b
-    move-exception v0
-
-    move-object v1, v2
-
-    .end local v2           #input:Ljava/io/InputStream;
-    .restart local v1       #input:Ljava/io/InputStream;
-    goto :goto_24
+    return-object v0
 .end method
 
 
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Landroid/net/Uri;
-    .registers 10
+    .registers 11
     .parameter "params"
 
     .prologue
-    const/4 v7, 0x2
+    const/4 v8, 0x2
 
-    const/4 v6, 0x1
+    const/4 v7, 0x1
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
-    .line 134
-    iget-wide v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mExpectedSize:J
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v0, v0, v2
-
-    if-ltz v0, :cond_50
-
-    .line 135
-    sget-boolean v0, Lcom/google/android/finsky/utils/FinskyLog;->DEBUG:Z
-
-    if-eqz v0, :cond_22
-
-    .line 136
-    const-string v0, "Performing verification of \'%s\' (expectedSize=%d)..."
-
-    new-array v1, v7, [Ljava/lang/Object;
-
-    iget-object v2, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mTitle:Ljava/lang/String;
-
-    aput-object v2, v1, v5
-
+    .line 172
     iget-wide v2, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mExpectedSize:J
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    const-wide/16 v4, 0x0
+
+    cmp-long v2, v2, v4
+
+    if-ltz v2, :cond_6f
+
+    .line 173
+    sget-boolean v2, Lcom/google/android/finsky/utils/FinskyLog;->DEBUG:Z
+
+    if-eqz v2, :cond_22
+
+    .line 174
+    const-string v2, "Performing verification of \'%s\' (expectedSize=%d)..."
+
+    new-array v3, v8, [Ljava/lang/Object;
+
+    iget-object v4, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mTitle:Ljava/lang/String;
+
+    aput-object v4, v3, v6
+
+    iget-wide v4, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mExpectedSize:J
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    aput-object v4, v3, v7
+
+    invoke-static {v2, v3}, Lcom/google/android/finsky/utils/FinskyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 178
+    :cond_22
+    :try_start_22
+    iget-object v2, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mEncryptionParams:Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$EncryptionParams;
+
+    if-nez v2, :cond_5c
+
+    .line 180
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v2
 
-    aput-object v2, v1, v6
+    invoke-virtual {v2}, Lcom/google/android/finsky/FinskyApp;->getContentResolver()Landroid/content/ContentResolver;
 
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    move-result-object v2
 
-    .line 139
-    :cond_22
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+    iget-object v3, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mContentUri:Landroid/net/Uri;
+
+    invoke-virtual {v2, v3}, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mContentUri:Landroid/net/Uri;
-
+    .line 182
+    .local v0, apkStream:Ljava/io/InputStream;
     iget-wide v2, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mExpectedSize:J
 
     iget-object v4, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mExpectedSignature:Ljava/lang/String;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->verifyApk(Landroid/content/Context;Landroid/net/Uri;JLjava/lang/String;)Z
+    invoke-static {v0, v2, v3, v4}, Lcom/google/android/finsky/utils/PackageManagerHelper;->verifyApk(Ljava/io/InputStream;JLjava/lang/String;)Z
 
-    move-result v0
+    move-result v2
 
-    iput-boolean v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mVerified:Z
+    iput-boolean v2, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mVerified:Z
+    :try_end_3e
+    .catch Ljava/io/FileNotFoundException; {:try_start_22 .. :try_end_3e} :catch_6b
 
-    .line 141
-    sget-boolean v0, Lcom/google/android/finsky/utils/FinskyLog;->DEBUG:Z
+    .line 190
+    .end local v0           #apkStream:Ljava/io/InputStream;
+    :goto_3e
+    sget-boolean v2, Lcom/google/android/finsky/utils/FinskyLog;->DEBUG:Z
 
-    if-eqz v0, :cond_49
+    if-eqz v2, :cond_55
 
-    .line 142
-    const-string v0, "Verification of \'%s\' finished (result=%s)."
+    .line 191
+    const-string v2, "Verification of \'%s\' finished (result=%s)."
 
-    new-array v1, v7, [Ljava/lang/Object;
+    new-array v3, v8, [Ljava/lang/Object;
 
-    iget-object v2, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mTitle:Ljava/lang/String;
+    iget-object v4, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mTitle:Ljava/lang/String;
 
-    aput-object v2, v1, v5
+    aput-object v4, v3, v6
 
-    iget-boolean v2, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mVerified:Z
+    iget-boolean v4, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mVerified:Z
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v4
+
+    aput-object v4, v3, v7
+
+    invoke-static {v2, v3}, Lcom/google/android/finsky/utils/FinskyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 197
+    :cond_55
+    :goto_55
+    iget-object v2, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mContentUri:Landroid/net/Uri;
+
+    invoke-static {v2}, Lcom/google/android/finsky/download/Storage;->getFileUriForContentUri(Landroid/net/Uri;)Landroid/net/Uri;
 
     move-result-object v2
 
-    aput-object v2, v1, v6
+    return-object v2
 
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    .line 185
+    :cond_5c
+    :try_start_5c
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    .line 148
-    :cond_49
-    :goto_49
-    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mContentUri:Landroid/net/Uri;
+    move-result-object v2
 
-    invoke-static {v0}, Lcom/google/android/finsky/download/Storage;->getFileUriForContentUri(Landroid/net/Uri;)Landroid/net/Uri;
+    iget-object v3, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mContentUri:Landroid/net/Uri;
 
-    move-result-object v0
+    iget-wide v4, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mExpectedSize:J
 
-    return-object v0
+    #calls: Lcom/google/android/finsky/utils/PackageManagerHelper;->verifySize(Landroid/content/Context;Landroid/net/Uri;J)Z
+    invoke-static {v2, v3, v4, v5}, Lcom/google/android/finsky/utils/PackageManagerHelper;->access$100(Landroid/content/Context;Landroid/net/Uri;J)Z
 
-    .line 145
-    :cond_50
-    const-string v0, "Signature check not required."
+    move-result v2
 
-    new-array v1, v5, [Ljava/lang/Object;
+    iput-boolean v2, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mVerified:Z
+    :try_end_6a
+    .catch Ljava/io/FileNotFoundException; {:try_start_5c .. :try_end_6a} :catch_6b
 
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    goto :goto_3e
 
-    .line 146
+    .line 187
+    :catch_6b
+    move-exception v1
+
+    .line 188
+    .local v1, e:Ljava/io/FileNotFoundException;
     iput-boolean v6, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mVerified:Z
 
-    goto :goto_49
+    goto :goto_3e
+
+    .line 194
+    .end local v1           #e:Ljava/io/FileNotFoundException;
+    :cond_6f
+    const-string v2, "Signature check not required."
+
+    new-array v3, v6, [Ljava/lang/Object;
+
+    invoke-static {v2, v3}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 195
+    iput-boolean v7, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mVerified:Z
+
+    goto :goto_55
 .end method
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
@@ -479,7 +361,7 @@
     .parameter "x0"
 
     .prologue
-    .line 80
+    .line 139
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -491,196 +373,261 @@
 .end method
 
 .method protected onPostExecute(Landroid/net/Uri;)V
-    .registers 12
+    .registers 15
     .parameter "fileUri"
 
     .prologue
-    const/4 v9, 0x0
+    const/4 v12, 0x1
 
-    .line 153
+    const/4 v5, -0x2
+
+    const/4 v11, 0x0
+
+    .line 203
+    iget-boolean v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mVerified:Z
+
+    if-nez v0, :cond_1f
+
+    .line 204
+    const-string v0, "Signature check failed, aborting installation."
+
+    new-array v4, v11, [Ljava/lang/Object;
+
+    invoke-static {v0, v4}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 205
+    iget-boolean v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mDoNotifications:Z
+
+    if-eqz v0, :cond_17
+
+    .line 206
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPackageName:Ljava/lang/String;
+
+    #calls: Lcom/google/android/finsky/utils/PackageManagerHelper;->notifyFailedInstall(Ljava/lang/String;I)V
+    invoke-static {v0, v5}, Lcom/google/android/finsky/utils/PackageManagerHelper;->access$200(Ljava/lang/String;I)V
+
+    .line 209
+    :cond_17
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPostInstallCallback:Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;
+
+    const-string v4, "signature-check"
+
+    invoke-interface {v0, v11, v4}, Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;->installCompleted(ZLjava/lang/String;)V
+
+    .line 328
+    :goto_1e
+    return-void
+
+    .line 214
+    :cond_1f
+    const/4 v3, 0x2
+
+    .line 215
+    .local v3, installFlags:I
+    iget-boolean v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mIsForwardLocked:Z
+
+    if-eqz v0, :cond_26
+
+    .line 216
+    or-int/lit8 v3, v3, 0x1
+
+    .line 219
+    :cond_26
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPackageName:Ljava/lang/String;
+
+    #calls: Lcom/google/android/finsky/utils/PackageManagerHelper;->isAlreadyInstalled(Ljava/lang/String;)Z
+    invoke-static {v0}, Lcom/google/android/finsky/utils/PackageManagerHelper;->access$300(Ljava/lang/String;)Z
+
+    move-result v9
+
+    .line 220
+    .local v9, isAlreadyInstalled:Z
+    new-instance v2, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier$1;
+
+    invoke-direct {v2, p0}, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier$1;-><init>(Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;)V
+
+    .line 280
+    .local v2, observer:Lcom/google/android/finsky/utils/PackageManagerUtils$PackageInstallObserver;
+    iget-boolean v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mDoNotifications:Z
+
+    if-eqz v0, :cond_44
+
+    .line 281
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lcom/google/android/finsky/FinskyApp;->getAssetStore()Lcom/google/android/finsky/local/AssetStore;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mContentUri:Landroid/net/Uri;
-
-    invoke-interface {v7, v8}, Lcom/google/android/finsky/local/AssetStore;->getAsset(Landroid/net/Uri;)Lcom/google/android/finsky/local/LocalAsset;
 
     move-result-object v0
 
-    .line 155
-    .local v0, asset:Lcom/google/android/finsky/local/LocalAsset;
-    iget-boolean v7, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mVerified:Z
+    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getNotifier()Lcom/google/android/finsky/utils/Notifier;
 
-    if-nez v7, :cond_31
+    move-result-object v10
 
-    .line 156
-    const-string v7, "Signature check failed, aborting installation."
+    .line 282
+    .local v10, notifier:Lcom/google/android/finsky/utils/Notifier;
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mTitle:Ljava/lang/String;
 
-    new-array v8, v9, [Ljava/lang/Object;
+    iget-object v4, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPackageName:Ljava/lang/String;
 
-    invoke-static {v7, v8}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-interface {v10, v0, v4, v9}, Lcom/google/android/finsky/utils/Notifier;->showInstallingMessage(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 157
-    invoke-interface {v0}, Lcom/google/android/finsky/local/LocalAsset;->cleanupInstallFailure()V
+    .line 286
+    .end local v10           #notifier:Lcom/google/android/finsky/utils/Notifier;
+    :cond_44
+    const/4 v6, 0x0
 
-    .line 158
-    iget-boolean v7, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mDoNotifications:Z
+    .line 287
+    .local v6, encryptionKey:Ljava/lang/String;
+    const/4 v7, 0x0
 
-    if-eqz v7, :cond_29
+    .line 288
+    .local v7, encryptionHmacKey:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mEncryptionParams:Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$EncryptionParams;
 
-    .line 159
-    invoke-interface {v0}, Lcom/google/android/finsky/local/LocalAsset;->getPackage()Ljava/lang/String;
+    if-eqz v0, :cond_93
 
-    move-result-object v7
+    .line 290
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mEncryptionParams:Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$EncryptionParams;
 
-    const/4 v8, -0x2
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$EncryptionParams;->getVersion()I
 
-    invoke-static {v7, v8}, Lcom/google/android/finsky/utils/PackageManagerHelper;->notifyFailedInstall(Ljava/lang/String;I)V
+    move-result v8
 
-    .line 162
-    :cond_29
-    iget-object v7, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPostInstallCallback:Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;
+    .line 291
+    .local v8, encryptionVersion:I
+    if-eq v8, v12, :cond_63
 
-    const-string v8, "signature-check"
+    .line 292
+    iget-boolean v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mDoNotifications:Z
 
-    invoke-interface {v7, v9, v8}, Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;->installCompleted(ZLjava/lang/String;)V
+    if-eqz v0, :cond_5b
 
-    .line 246
-    :goto_30
-    return-void
+    .line 293
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPackageName:Ljava/lang/String;
 
-    .line 167
-    :cond_31
-    const/4 v1, 0x2
+    #calls: Lcom/google/android/finsky/utils/PackageManagerHelper;->notifyFailedInstall(Ljava/lang/String;I)V
+    invoke-static {v0, v5}, Lcom/google/android/finsky/utils/PackageManagerHelper;->access$200(Ljava/lang/String;I)V
 
-    .line 168
-    .local v1, installFlags:I
-    if-nez v0, :cond_69
+    .line 296
+    :cond_5b
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPostInstallCallback:Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;
 
-    .line 170
-    const-string v7, "Installing package with no associated asset."
+    const-string v4, "encryption-version"
 
-    new-array v8, v9, [Ljava/lang/Object;
+    invoke-interface {v0, v11, v4}, Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;->installCompleted(ZLjava/lang/String;)V
 
-    invoke-static {v7, v8}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    goto :goto_1e
 
-    .line 175
-    :cond_3b
-    :goto_3b
+    .line 299
+    :cond_63
+    invoke-static {}, Lcom/google/android/finsky/utils/PackageManagerUtils;->isEncryptionSupported()Z
+
+    move-result v0
+
+    if-nez v0, :cond_7a
+
+    .line 300
+    iget-boolean v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mDoNotifications:Z
+
     if-eqz v0, :cond_72
 
-    invoke-interface {v0}, Lcom/google/android/finsky/local/LocalAsset;->getPackage()Ljava/lang/String;
+    .line 301
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPackageName:Ljava/lang/String;
 
-    move-result-object v5
+    #calls: Lcom/google/android/finsky/utils/PackageManagerHelper;->notifyFailedInstall(Ljava/lang/String;I)V
+    invoke-static {v0, v5}, Lcom/google/android/finsky/utils/PackageManagerHelper;->access$200(Ljava/lang/String;I)V
 
-    .line 176
-    .local v5, packageName:Ljava/lang/String;
-    :goto_41
-    #calls: Lcom/google/android/finsky/utils/PackageManagerHelper;->isAlreadyInstalled(Ljava/lang/String;)Z
-    invoke-static {v5}, Lcom/google/android/finsky/utils/PackageManagerHelper;->access$100(Ljava/lang/String;)Z
-
-    move-result v2
-
-    .line 177
-    .local v2, isAlreadyInstalled:Z
-    new-instance v4, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier$1;
-
-    invoke-direct {v4, p0, v5, v2, v0}, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier$1;-><init>(Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;Ljava/lang/String;ZLcom/google/android/finsky/local/LocalAsset;)V
-
-    .line 235
-    .local v4, observer:Lcom/google/android/finsky/utils/PackageManagerUtils$PackageInstallObserver;
-    iget-boolean v7, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mDoNotifications:Z
-
-    if-eqz v7, :cond_5b
-
-    .line 236
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lcom/google/android/finsky/FinskyApp;->getNotifier()Lcom/google/android/finsky/utils/Notifier;
-
-    move-result-object v3
-
-    .line 237
-    .local v3, notifier:Lcom/google/android/finsky/utils/Notifier;
-    iget-object v7, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mTitle:Ljava/lang/String;
-
-    invoke-interface {v3, v7, v5, v2}, Lcom/google/android/finsky/utils/Notifier;->showInstallingMessage(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    .line 239
-    .end local v3           #notifier:Lcom/google/android/finsky/utils/Notifier;
-    :cond_5b
-    if-nez p1, :cond_75
-
-    iget-object v6, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mContentUri:Landroid/net/Uri;
-
-    .line 240
-    .local v6, uri:Landroid/net/Uri;
-    :goto_5f
-    if-eqz v6, :cond_77
-
-    .line 241
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v7
-
-    invoke-static {v7, v6, v4, v1}, Lcom/google/android/finsky/utils/PackageManagerUtils;->installPackage(Landroid/content/Context;Landroid/net/Uri;Lcom/google/android/finsky/utils/PackageManagerUtils$PackageInstallObserver;I)V
-
-    goto :goto_30
-
-    .line 171
-    .end local v2           #isAlreadyInstalled:Z
-    .end local v4           #observer:Lcom/google/android/finsky/utils/PackageManagerUtils$PackageInstallObserver;
-    .end local v5           #packageName:Ljava/lang/String;
-    .end local v6           #uri:Landroid/net/Uri;
-    :cond_69
-    invoke-interface {v0}, Lcom/google/android/finsky/local/LocalAsset;->isForwardLocked()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_3b
-
-    .line 172
-    or-int/lit8 v1, v1, 0x1
-
-    goto :goto_3b
-
-    .line 175
+    .line 304
     :cond_72
-    const-string v5, ""
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPostInstallCallback:Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;
 
-    goto :goto_41
+    const-string v4, "encryption-not-supported"
 
-    .restart local v2       #isAlreadyInstalled:Z
-    .restart local v4       #observer:Lcom/google/android/finsky/utils/PackageManagerUtils$PackageInstallObserver;
-    .restart local v5       #packageName:Ljava/lang/String;
-    :cond_75
-    move-object v6, p1
+    invoke-interface {v0, v11, v4}, Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;->installCompleted(ZLjava/lang/String;)V
 
-    .line 239
-    goto :goto_5f
+    goto :goto_1e
 
-    .line 243
-    .restart local v6       #uri:Landroid/net/Uri;
-    :cond_77
-    const/4 v7, -0x3
+    .line 308
+    :cond_7a
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mEncryptionParams:Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$EncryptionParams;
 
-    invoke-static {v5, v7}, Lcom/google/android/finsky/utils/PackageManagerHelper;->notifyFailedInstall(Ljava/lang/String;I)V
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$EncryptionParams;->getEncryptionKey()Ljava/lang/String;
 
-    .line 244
-    iget-object v7, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPostInstallCallback:Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;
+    move-result-object v6
 
-    const-string v8, "invalid-uri"
+    .line 309
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mEncryptionParams:Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$EncryptionParams;
 
-    invoke-interface {v7, v9, v8}, Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;->installCompleted(ZLjava/lang/String;)V
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$EncryptionParams;->getHmacKey()Ljava/lang/String;
 
-    goto :goto_30
+    move-result-object v7
+
+    .line 312
+    or-int/lit8 v3, v3, 0x1
+
+    .line 314
+    const-string v0, "Install encrypted %s"
+
+    new-array v4, v12, [Ljava/lang/Object;
+
+    iget-object v5, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPackageName:Ljava/lang/String;
+
+    aput-object v5, v4, v11
+
+    invoke-static {v0, v4}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 317
+    .end local v8           #encryptionVersion:I
+    :cond_93
+    if-nez p1, :cond_a4
+
+    iget-object v1, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mContentUri:Landroid/net/Uri;
+
+    .line 318
+    .local v1, uri:Landroid/net/Uri;
+    :goto_97
+    if-eqz v1, :cond_a6
+
+    .line 319
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+
+    move-result-object v0
+
+    iget-wide v4, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mExpectedSize:J
+
+    invoke-static/range {v0 .. v7}, Lcom/google/android/finsky/utils/PackageManagerUtils;->installPackage(Landroid/content/Context;Landroid/net/Uri;Lcom/google/android/finsky/utils/PackageManagerUtils$PackageInstallObserver;IJLjava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_1e
+
+    .end local v1           #uri:Landroid/net/Uri;
+    :cond_a4
+    move-object v1, p1
+
+    .line 317
+    goto :goto_97
+
+    .line 322
+    .restart local v1       #uri:Landroid/net/Uri;
+    :cond_a6
+    iget-boolean v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mDoNotifications:Z
+
+    if-eqz v0, :cond_b0
+
+    .line 323
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPackageName:Ljava/lang/String;
+
+    const/4 v4, -0x3
+
+    #calls: Lcom/google/android/finsky/utils/PackageManagerHelper;->notifyFailedInstall(Ljava/lang/String;I)V
+    invoke-static {v0, v4}, Lcom/google/android/finsky/utils/PackageManagerHelper;->access$200(Ljava/lang/String;I)V
+
+    .line 326
+    :cond_b0
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$OnCompleteListenerNotifier;->mPostInstallCallback:Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;
+
+    const-string v4, "invalid-uri"
+
+    invoke-interface {v0, v11, v4}, Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;->installCompleted(ZLjava/lang/String;)V
+
+    goto/16 :goto_1e
 .end method
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
@@ -688,7 +635,7 @@
     .parameter "x0"
 
     .prologue
-    .line 80
+    .line 139
     check-cast p1, Landroid/net/Uri;
 
     .end local p1

@@ -16,6 +16,8 @@
 
 .field private mPurchasePanel:Landroid/view/View;
 
+.field private mWalletBylineContainer:Landroid/view/View;
+
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
@@ -23,10 +25,10 @@
     .parameter "context"
 
     .prologue
-    .line 26
+    .line 27
     invoke-direct {p0, p1}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
 
-    .line 27
+    .line 28
     return-void
 .end method
 
@@ -36,10 +38,10 @@
     .parameter "attrs"
 
     .prologue
-    .line 30
+    .line 31
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 31
+    .line 32
     return-void
 .end method
 
@@ -50,10 +52,10 @@
     .parameter "defStyle"
 
     .prologue
-    .line 34
+    .line 35
     invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 35
+    .line 36
     return-void
 .end method
 
@@ -61,26 +63,26 @@
     .registers 4
 
     .prologue
-    .line 137
+    .line 139
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/PurchaseContentLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/finsky/layout/ObservableScrollView;
 
-    .line 138
+    .line 140
     .local v0, detailsScroller:Lcom/google/android/finsky/layout/ObservableScrollView;
     iget-object v1, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mDetailsScroller:Lcom/google/android/finsky/layout/ObservableScrollView;
 
-    if-eq v0, v1, :cond_41
+    if-eq v0, v1, :cond_4a
 
-    .line 139
+    .line 141
     iput-object v0, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mDetailsScroller:Lcom/google/android/finsky/layout/ObservableScrollView;
 
-    .line 140
+    .line 142
     iget-object v1, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mDetailsScroller:Lcom/google/android/finsky/layout/ObservableScrollView;
 
-    const v2, 0x7f080159
+    const v2, 0x7f0801bc
 
     invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/ObservableScrollView;->findViewById(I)Landroid/view/View;
 
@@ -88,10 +90,10 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mInputPanel:Landroid/view/View;
 
-    .line 141
+    .line 143
     iget-object v1, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mDetailsScroller:Lcom/google/android/finsky/layout/ObservableScrollView;
 
-    const v2, 0x7f08015a
+    const v2, 0x7f0801be
 
     invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/ObservableScrollView;->findViewById(I)Landroid/view/View;
 
@@ -99,10 +101,10 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mPurchasePanel:Landroid/view/View;
 
-    .line 142
+    .line 144
     iget-object v1, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mDetailsScroller:Lcom/google/android/finsky/layout/ObservableScrollView;
 
-    const v2, 0x7f080153
+    const v2, 0x7f0801ad
 
     invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/ObservableScrollView;->findViewById(I)Landroid/view/View;
 
@@ -110,10 +112,10 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mAcquireRow:Landroid/view/View;
 
-    .line 143
+    .line 145
     iget-object v1, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mDetailsScroller:Lcom/google/android/finsky/layout/ObservableScrollView;
 
-    const v2, 0x7f080156
+    const v2, 0x7f0801b1
 
     invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/ObservableScrollView;->findViewById(I)Landroid/view/View;
 
@@ -121,8 +123,8 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mAcquireRowDummy:Landroid/view/View;
 
-    .line 144
-    const v1, 0x7f080021
+    .line 146
+    const v1, 0x7f080098
 
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/activities/PurchaseContentLayout;->findViewById(I)Landroid/view/View;
 
@@ -130,8 +132,17 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mLeadingStrip:Landroid/view/View;
 
-    .line 146
-    :cond_41
+    .line 147
+    const v1, 0x7f0801c8
+
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/activities/PurchaseContentLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mWalletBylineContainer:Landroid/view/View;
+
+    .line 149
+    :cond_4a
     return-void
 .end method
 
@@ -141,17 +152,17 @@
     .registers 7
 
     .prologue
-    .line 116
+    .line 115
     invoke-direct {p0}, Lcom/google/android/finsky/activities/PurchaseContentLayout;->findViews()V
 
-    .line 117
+    .line 116
     iget-object v4, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mDetailsScroller:Lcom/google/android/finsky/layout/ObservableScrollView;
 
-    invoke-virtual {v4}, Lcom/google/android/finsky/layout/ObservableScrollView;->getViewportTop()I
+    invoke-virtual {v4}, Lcom/google/android/finsky/layout/ObservableScrollView;->getScrollY()I
 
     move-result v3
 
-    .line 118
+    .line 117
     .local v3, viewportTop:I
     iget-object v4, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mInputPanel:Landroid/view/View;
 
@@ -159,7 +170,7 @@
 
     move-result v1
 
-    .line 119
+    .line 118
     .local v1, dummyRowTop:I
     iget-object v4, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mPurchasePanel:Landroid/view/View;
 
@@ -171,7 +182,7 @@
 
     if-eq v4, v5, :cond_20
 
-    .line 120
+    .line 119
     iget-object v4, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mPurchasePanel:Landroid/view/View;
 
     invoke-virtual {v4}, Landroid/view/View;->getBottom()I
@@ -180,13 +191,13 @@
 
     add-int/2addr v1, v4
 
-    .line 122
+    .line 121
     :cond_20
     iget-object v4, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mLeadingStrip:Landroid/view/View;
 
     if-eqz v4, :cond_2b
 
-    .line 123
+    .line 122
     iget-object v4, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mLeadingStrip:Landroid/view/View;
 
     invoke-virtual {v4}, Landroid/view/View;->getBottom()I
@@ -195,8 +206,23 @@
 
     add-int/2addr v1, v4
 
-    .line 126
+    .line 124
     :cond_2b
+    iget-object v4, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mWalletBylineContainer:Landroid/view/View;
+
+    if-eqz v4, :cond_36
+
+    .line 125
+    iget-object v4, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mWalletBylineContainer:Landroid/view/View;
+
+    invoke-virtual {v4}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v4
+
+    add-int/2addr v1, v4
+
+    .line 128
+    :cond_36
     iget-object v4, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mAcquireRowDummy:Landroid/view/View;
 
     invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -205,7 +231,7 @@
 
     iget v0, v4, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 127
+    .line 129
     .local v0, dummyRowHeight:I
     iget-object v4, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mAcquireRow:Landroid/view/View;
 
@@ -215,44 +241,42 @@
 
     iget v2, v4, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 129
+    .line 131
     .local v2, realRowHeight:I
-    add-int v4, v1, v2
-
-    sub-int v5, v0, v2
-
-    sub-int/2addr v4, v5
-
-    if-lt v3, v4, :cond_45
-
-    .line 130
-    add-int v4, v3, v2
-
-    .line 133
-    :goto_44
-    return v4
-
-    :cond_45
     add-int v4, v1, v0
 
-    goto :goto_44
+    sub-int/2addr v4, v2
+
+    if-lt v3, v4, :cond_4e
+
+    .line 132
+    add-int v4, v3, v2
+
+    .line 135
+    :goto_4d
+    return v4
+
+    :cond_4e
+    add-int v4, v1, v0
+
+    goto :goto_4d
 .end method
 
 .method public getAcquireRowTop()I
     .registers 8
 
     .prologue
-    .line 91
+    .line 90
     invoke-direct {p0}, Lcom/google/android/finsky/activities/PurchaseContentLayout;->findViews()V
 
-    .line 92
+    .line 91
     iget-object v5, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mDetailsScroller:Lcom/google/android/finsky/layout/ObservableScrollView;
 
-    invoke-virtual {v5}, Lcom/google/android/finsky/layout/ObservableScrollView;->getViewportTop()I
+    invoke-virtual {v5}, Lcom/google/android/finsky/layout/ObservableScrollView;->getScrollY()I
 
     move-result v4
 
-    .line 93
+    .line 92
     .local v4, viewportTop:I
     iget-object v5, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mInputPanel:Landroid/view/View;
 
@@ -260,7 +284,7 @@
 
     move-result v1
 
-    .line 94
+    .line 93
     .local v1, dummyRowTop:I
     iget-object v5, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mPurchasePanel:Landroid/view/View;
 
@@ -272,7 +296,7 @@
 
     if-eq v5, v6, :cond_20
 
-    .line 95
+    .line 94
     iget-object v5, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mPurchasePanel:Landroid/view/View;
 
     invoke-virtual {v5}, Landroid/view/View;->getBottom()I
@@ -281,13 +305,13 @@
 
     add-int/2addr v1, v5
 
-    .line 97
+    .line 96
     :cond_20
     iget-object v5, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mLeadingStrip:Landroid/view/View;
 
     if-eqz v5, :cond_2b
 
-    .line 98
+    .line 97
     iget-object v5, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mLeadingStrip:Landroid/view/View;
 
     invoke-virtual {v5}, Landroid/view/View;->getBottom()I
@@ -296,7 +320,7 @@
 
     add-int/2addr v1, v5
 
-    .line 101
+    .line 100
     :cond_2b
     iget-object v5, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mAcquireRowDummy:Landroid/view/View;
 
@@ -306,7 +330,7 @@
 
     iget v0, v5, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 102
+    .line 101
     .local v0, dummyRowHeight:I
     iget-object v5, p0, Lcom/google/android/finsky/activities/PurchaseContentLayout;->mAcquireRow:Landroid/view/View;
 
@@ -316,19 +340,19 @@
 
     iget v2, v5, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 104
+    .line 103
     .local v2, realRowHeight:I
     sub-int v5, v0, v2
 
     div-int/lit8 v3, v5, 0x2
 
-    .line 105
+    .line 104
     .local v3, snapDistance:I
     add-int v5, v1, v3
 
     if-lt v4, v5, :cond_44
 
-    .line 108
+    .line 107
     .end local v4           #viewportTop:I
     :goto_43
     return v4
@@ -353,14 +377,14 @@
     .parameter "b"
 
     .prologue
-    .line 68
+    .line 67
     const/4 v9, 0x0
 
     invoke-virtual {p0, v9}, Lcom/google/android/finsky/activities/PurchaseContentLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 69
+    .line 68
     .local v5, mainContents:Landroid/view/View;
     const/4 v9, 0x1
 
@@ -368,7 +392,7 @@
 
     move-result-object v0
 
-    .line 70
+    .line 69
     .local v0, acquireRow:Landroid/view/View;
     const/4 v9, 0x2
 
@@ -376,19 +400,19 @@
 
     move-result-object v1
 
-    .line 72
+    .line 71
     .local v1, acquireRowFooter:Landroid/view/View;
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/PurchaseContentLayout;->getPaddingLeft()I
 
     move-result v6
 
-    .line 73
+    .line 72
     .local v6, paddingLeft:I
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/PurchaseContentLayout;->getPaddingTop()I
 
     move-result v7
 
-    .line 74
+    .line 73
     .local v7, paddingTop:I
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/PurchaseContentLayout;->getWidth()I
 
@@ -402,7 +426,7 @@
 
     sub-int v8, v9, v10
 
-    .line 75
+    .line 74
     .local v8, width:I
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/PurchaseContentLayout;->getHeight()I
 
@@ -416,7 +440,7 @@
 
     sub-int v4, v9, v10
 
-    .line 76
+    .line 75
     .local v4, height:I
     add-int v9, v6, v8
 
@@ -424,12 +448,12 @@
 
     invoke-virtual {v5, v6, v7, v9, v10}, Landroid/view/View;->layout(IIII)V
 
-    .line 78
+    .line 77
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/PurchaseContentLayout;->getAcquireRowTop()I
 
     move-result v3
 
-    .line 79
+    .line 78
     .local v3, acquireRowTop:I
     add-int v9, v6, v8
 
@@ -441,12 +465,12 @@
 
     invoke-virtual {v0, v6, v3, v9, v10}, Landroid/view/View;->layout(IIII)V
 
-    .line 81
+    .line 80
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/PurchaseContentLayout;->getAcquireRowFooterTop()I
 
     move-result v2
 
-    .line 82
+    .line 81
     .local v2, acquireRowFooterTop:I
     add-int v9, v6, v8
 
@@ -458,7 +482,7 @@
 
     invoke-virtual {v1, v6, v2, v9, v10}, Landroid/view/View;->layout(IIII)V
 
-    .line 84
+    .line 83
     return-void
 .end method
 
@@ -472,12 +496,12 @@
 
     const/high16 v7, 0x4000
 
-    .line 39
+    .line 40
     invoke-virtual {p0, v8}, Lcom/google/android/finsky/activities/PurchaseContentLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 40
+    .line 41
     .local v3, mainContents:Landroid/view/View;
     const/4 v5, 0x1
 
@@ -485,7 +509,7 @@
 
     move-result-object v0
 
-    .line 41
+    .line 42
     .local v0, acquireRow:Landroid/view/View;
     const/4 v5, 0x2
 
@@ -493,7 +517,7 @@
 
     move-result-object v1
 
-    .line 43
+    .line 44
     .local v1, acquireRowFooter:Landroid/view/View;
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -511,28 +535,17 @@
 
     sub-int v4, v5, v6
 
-    .line 48
+    .line 49
     .local v4, widthSpecSize:I
     invoke-static {v4, v7}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v2
 
-    .line 50
+    .line 51
     .local v2, fullWidthMeasureSpec:I
     invoke-virtual {v3, v2, v8}, Landroid/view/View;->measure(II)V
 
-    .line 51
-    invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v5
-
-    invoke-static {v5, v7}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v5
-
-    invoke-virtual {v3, v2, v5}, Landroid/view/View;->measure(II)V
-
-    .line 55
+    .line 54
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v5
@@ -545,7 +558,7 @@
 
     invoke-virtual {v0, v2, v5}, Landroid/view/View;->measure(II)V
 
-    .line 58
+    .line 57
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v5
@@ -558,7 +571,7 @@
 
     invoke-virtual {v1, v2, v5}, Landroid/view/View;->measure(II)V
 
-    .line 62
+    .line 61
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v5
@@ -569,6 +582,6 @@
 
     invoke-virtual {p0, v5, v6}, Lcom/google/android/finsky/activities/PurchaseContentLayout;->setMeasuredDimension(II)V
 
-    .line 64
+    .line 63
     return-void
 .end method

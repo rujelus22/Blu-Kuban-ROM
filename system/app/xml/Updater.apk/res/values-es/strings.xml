@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rom">ROM</string>
+    <string name="homepage">Página de la ROM</string>
+    <string name="plugin">Plug-in</string>
+    <string name="Themes">Temas</string>
+    <string name="apps">Apps</string>
+    <string name="kernel">Kernel</string>
+    <string name="check_rom_update">Comprobar actualizaciones</string>
+    <string name="exit">Salir</string>
+    <string name="info">Información</string>
+    <string name="costumization">Personalización</string>
+    <string name="settings">Ajustes</string>
+    <string name="downloading_file">Descargando archivo...</string>
+    <string name="md5_ok">Validación MD5 superada</string>
+    <string name="md5_error">Validación MD5 no superada</string>
+    <string name="file_downloaded">Archivo descargado en:</string>
+    <string name="reboot_to_recovery">¿Desea reiniciar en modo recovery?</string>
+    <string name="ok">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="new_rom">Nueva versión de la ROM disponible</string>
+    <string name="download_new_rom">Descargar nueva ROM version</string>
+    <string name="changelog">Registro de cambios</string>
+    <string name="reload_apps">Recargar apps</string>
+    <string name="check_rom_startup">Comprobar nuevas ROMs al inicio</string>
+    <string name="choose_download_dir">Directorio de descarga</string>
+    <string name="reboot_recovery">Reiniciar en modo recovery</string>
+    <string name="donate">Donar al creador de la ROM</string>
+    <string name="donate_acquariusoft">Donar a acquariusoft</string>
+    <string name="donate_acquariusoft_desc">Creador de Update Me</string>
+    <string name="no_update_available">No hay actualizaciones disponibles</string>
+    <string name="use_light_theme">Usar tema claro</string>
+    <string name="reboot_to_enable">Reiniciar la aplicación para aplicar los cambios</string>
+    <string name="reboot_and_install">Reiniciar e instalar</string>
+    <string name="downloaded_files">Archivos descargados</string>
+    <string name="cwm_flip_sdcard">Intercambiar nombre de /sdcard en CWM</string>
+    <string name="cwm_flip_sdcard_desc">Marcar para poder instalar archivos que no se cargan automáticamente en CWM, como el caso del SGSII</string>
+    <string name="dialog_donate_title">Donar</string>
+    <string name="dialog_donate_text">"Si usas esta app, apoya al desarrollador y ayuda a mejorarla.
+Puedes donar mediante PayPal o comprar la aplicación de donación en la Play Store"</string>
+    <string name="dialog_donate_paypal">Paypal</string>
+    <string name="dialog_donate_market">Play Store</string>
+    <string name="error">Error</string>
+    <string name="error_on_donwload">Error al descargar archivo</string>
+    <string name="install">Instalar</string>
+    <string name="click_for_update_market">Comprobar actualización en la Play Store</string>
+    <string name="reboot_type">Tipo de reinicio</string>
+    <string name="alert_no_config">"No se puede configurar.
+
+Esta ROM no es compatible con esta aplicación.
+Notifica al creador de la ROM para que la haga compatible o comprueba si es compatible en la lista de ROMs
+
+¡Esto NO es un problema de la aplicación!"</string>
+    <string name="compatible_rom_list">Lista de ROMs compatibles</string>
+    <string name="check_rom_time">Comprobar actualización cada (X) horas</string>
+    <string name="disable_check_rom">Desactivar auto-comprobación de ROM</string>
+    <string name="recovery">Recovery</string>
+    <string name="option">Opciones</string>
+    <string name="other">Otros</string>
+    <string name="buy_donated">Comprar app de donación</string>
+    <string name="buy_donated_desc">Desactiva los anuncios, y permite más opciones en el futuro...</string>
+    <string name="download_script">Descargar script</string>
+    <string name="script_title">Título</string>
+    <string name="script_desc">Desc</string>
+    <string name="script_text">Script</string>
+    <string name="script_create_your">Crea tu script</string>
+</resources>

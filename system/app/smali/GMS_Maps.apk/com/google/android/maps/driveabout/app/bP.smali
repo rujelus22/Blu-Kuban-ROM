@@ -1,19 +1,23 @@
-.class Lcom/google/android/maps/driveabout/app/bP;
+.class Lcom/google/android/maps/driveabout/app/bp;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/bn;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;)V
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/bn;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/bP;->a:Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;
+    .prologue
+    .line 94
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/bp;->a:Lcom/google/android/maps/driveabout/app/bn;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,43 +26,16 @@
 
 
 # virtual methods
-.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 9
+.method public onClick(Landroid/view/View;)V
+    .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/bP;->a:Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;
+    .prologue
+    .line 97
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/bp;->a:Lcom/google/android/maps/driveabout/app/bn;
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;->getListAdapter()Landroid/widget/ListAdapter;
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/bn;->a(Lcom/google/android/maps/driveabout/app/bn;)V
 
-    move-result-object v0
-
-    const-wide/16 v1, 0x0
-
-    cmp-long v1, p4, v1
-
-    if-ltz v1, :cond_21
-
-    invoke-interface {v0}, Landroid/widget/ListAdapter;->getCount()I
-
-    move-result v1
-
-    int-to-long v1, v1
-
-    cmp-long v1, p4, v1
-
-    if-gez v1, :cond_21
-
-    long-to-int v1, p4
-
-    invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->getItem(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/maps/driveabout/app/bR;
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/bP;->a:Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;
-
-    invoke-static {v1, v0}, Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;->a(Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;Lcom/google/android/maps/driveabout/app/bR;)V
-
-    :cond_21
+    .line 98
     return-void
 .end method

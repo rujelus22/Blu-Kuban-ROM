@@ -35,30 +35,30 @@
     .registers 2
 
     .prologue
-    .line 19319
+    .line 19856
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 19324
+    .line 19861
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->tickerText_:Ljava/lang/String;
 
-    .line 19341
+    .line 19878
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->contentTitle_:Ljava/lang/String;
 
-    .line 19358
+    .line 19895
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->contentText_:Ljava/lang/String;
 
-    .line 19397
+    .line 19935
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->cachedSize:I
 
-    .line 19319
+    .line 19856
     return-void
 .end method
 
@@ -68,15 +68,15 @@
     .registers 2
 
     .prologue
-    .line 19399
+    .line 19938
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 19401
+    .line 19940
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->getSerializedSize()I
 
-    .line 19403
+    .line 19942
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->cachedSize:I
 
@@ -87,7 +87,7 @@
     .registers 2
 
     .prologue
-    .line 19359
+    .line 19896
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->contentText_:Ljava/lang/String;
 
     return-object v0
@@ -97,7 +97,7 @@
     .registers 2
 
     .prologue
-    .line 19342
+    .line 19879
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->contentTitle_:Ljava/lang/String;
 
     return-object v0
@@ -107,10 +107,10 @@
     .registers 4
 
     .prologue
-    .line 19407
+    .line 19947
     const/4 v0, 0x0
 
-    .line 19408
+    .line 19948
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->hasTickerText()Z
 
@@ -118,7 +118,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 19409
+    .line 19949
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->getTickerText()Ljava/lang/String;
@@ -131,7 +131,7 @@
 
     add-int/2addr v0, v1
 
-    .line 19412
+    .line 19952
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->hasContentTitle()Z
 
@@ -139,7 +139,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 19413
+    .line 19953
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->getContentTitle()Ljava/lang/String;
@@ -152,7 +152,7 @@
 
     add-int/2addr v0, v1
 
-    .line 19416
+    .line 19956
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->hasContentText()Z
 
@@ -160,7 +160,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 19417
+    .line 19957
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->getContentText()Ljava/lang/String;
@@ -173,11 +173,11 @@
 
     add-int/2addr v0, v1
 
-    .line 19420
+    .line 19960
     :cond_31
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->cachedSize:I
 
-    .line 19421
+    .line 19961
     return v0
 .end method
 
@@ -185,7 +185,7 @@
     .registers 2
 
     .prologue
-    .line 19325
+    .line 19862
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->tickerText_:Ljava/lang/String;
 
     return-object v0
@@ -195,7 +195,7 @@
     .registers 2
 
     .prologue
-    .line 19360
+    .line 19897
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->hasContentText:Z
 
     return v0
@@ -205,7 +205,7 @@
     .registers 2
 
     .prologue
-    .line 19343
+    .line 19880
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->hasContentTitle:Z
 
     return v0
@@ -215,7 +215,7 @@
     .registers 2
 
     .prologue
-    .line 19326
+    .line 19863
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->hasTickerText:Z
 
     return v0
@@ -231,29 +231,29 @@
     .end annotation
 
     .prologue
-    .line 19428
+    .line 19969
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 19429
+    .line 19970
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_26
 
-    .line 19433
+    .line 19974
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 19434
+    .line 19975
     :sswitch_d
     return-object p0
 
-    .line 19439
+    .line 19980
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -263,7 +263,7 @@
 
     goto :goto_0
 
-    .line 19443
+    .line 19984
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -273,7 +273,7 @@
 
     goto :goto_0
 
-    .line 19447
+    .line 19988
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -283,7 +283,7 @@
 
     goto :goto_0
 
-    .line 19429
+    .line 19970
     :sswitch_data_26
     .sparse-switch
         0x0 -> :sswitch_d
@@ -303,7 +303,7 @@
     .end annotation
 
     .prologue
-    .line 19317
+    .line 19854
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;
 
     move-result-object v0
@@ -316,15 +316,15 @@
     .parameter "value"
 
     .prologue
-    .line 19362
+    .line 19899
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->hasContentText:Z
 
-    .line 19363
+    .line 19900
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->contentText_:Ljava/lang/String;
 
-    .line 19364
+    .line 19901
     return-object p0
 .end method
 
@@ -333,15 +333,15 @@
     .parameter "value"
 
     .prologue
-    .line 19345
+    .line 19882
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->hasContentTitle:Z
 
-    .line 19346
+    .line 19883
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->contentTitle_:Ljava/lang/String;
 
-    .line 19347
+    .line 19884
     return-object p0
 .end method
 
@@ -350,15 +350,15 @@
     .parameter "value"
 
     .prologue
-    .line 19328
+    .line 19865
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->hasTickerText:Z
 
-    .line 19329
+    .line 19866
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->tickerText_:Ljava/lang/String;
 
-    .line 19330
+    .line 19867
     return-object p0
 .end method
 
@@ -372,14 +372,14 @@
     .end annotation
 
     .prologue
-    .line 19386
+    .line 19924
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->hasTickerText()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 19387
+    .line 19925
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->getTickerText()Ljava/lang/String;
@@ -388,7 +388,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 19389
+    .line 19927
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->hasContentTitle()Z
 
@@ -396,7 +396,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 19390
+    .line 19928
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->getContentTitle()Ljava/lang/String;
@@ -405,7 +405,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 19392
+    .line 19930
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->hasContentText()Z
 
@@ -413,7 +413,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 19393
+    .line 19931
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$StatusBarNotificationProto;->getContentText()Ljava/lang/String;
@@ -422,7 +422,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 19395
+    .line 19933
     :cond_2a
     return-void
 .end method

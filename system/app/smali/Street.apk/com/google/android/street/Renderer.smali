@@ -3686,35 +3686,6 @@
     return-void
 .end method
 
-.method public shutdown()V
-    .registers 2
-
-    .prologue
-    .line 855
-    const/16 v0, 0xd
-
-    invoke-direct {p0, v0}, Lcom/google/android/street/Renderer;->sendCoalesce(I)V
-
-    .line 856
-    invoke-virtual {p0}, Lcom/google/android/street/Renderer;->interrupt()V
-
-    .line 858
-    :try_start_8
-    invoke-virtual {p0}, Lcom/google/android/street/Renderer;->join()V
-    :try_end_b
-    .catch Ljava/lang/InterruptedException; {:try_start_8 .. :try_end_b} :catch_c
-
-    .line 862
-    :goto_b
-    return-void
-
-    .line 859
-    :catch_c
-    move-exception v0
-
-    goto :goto_b
-.end method
-
 .method public startTransition(Lcom/google/android/street/Renderer$Transition;)V
     .registers 3
     .parameter "transition"

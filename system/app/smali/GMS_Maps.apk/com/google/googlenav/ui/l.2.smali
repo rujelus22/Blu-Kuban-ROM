@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/l;
+.class Lcom/google/googlenav/ui/L;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lax/bj;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/f;
+.field final synthetic a:Lcom/google/googlenav/ui/v;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/f;)V
+.method constructor <init>(Lcom/google/googlenav/ui/v;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/l;->a:Lcom/google/googlenav/ui/f;
+    .prologue
+    .line 5100
+    iput-object p1, p0, Lcom/google/googlenav/ui/L;->a:Lcom/google/googlenav/ui/v;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,40 +26,17 @@
 
 
 # virtual methods
-.method public a(I)V
-    .registers 5
+.method public run()V
+    .registers 3
 
-    const/4 v2, 0x1
+    .prologue
+    .line 5103
+    iget-object v0, p0, Lcom/google/googlenav/ui/L;->a:Lcom/google/googlenav/ui/v;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/l;->a:Lcom/google/googlenav/ui/f;
+    const/4 v1, 0x1
 
-    if-ne p1, v2, :cond_1d
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/v;->m(Z)V
 
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    :goto_7
-    invoke-static {v1, v0}, Lcom/google/googlenav/ui/f;->a(Lcom/google/googlenav/ui/f;Ljava/lang/Boolean;)Ljava/lang/Boolean;
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/l;->a:Lcom/google/googlenav/ui/f;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/f;->a(Lcom/google/googlenav/ui/f;)Lcom/google/googlenav/ui/D;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/D;->ae()Lcom/google/googlenav/android/ac;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/google/googlenav/ui/m;
-
-    invoke-direct {v1, p0}, Lcom/google/googlenav/ui/m;-><init>(Lcom/google/googlenav/ui/l;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/googlenav/android/ac;->a(Ljava/lang/Runnable;Z)V
-
+    .line 5104
     return-void
-
-    :cond_1d
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    goto :goto_7
 .end method

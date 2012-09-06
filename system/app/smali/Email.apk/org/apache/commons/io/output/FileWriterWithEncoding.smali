@@ -17,12 +17,12 @@
     .end annotation
 
     .prologue
-    .line 335
+    .line 322
     iget-object v0, p0, Lorg/apache/commons/io/output/FileWriterWithEncoding;->out:Ljava/io/Writer;
 
     invoke-virtual {v0}, Ljava/io/Writer;->close()V
 
-    .line 336
+    .line 323
     return-void
 .end method
 
@@ -35,12 +35,12 @@
     .end annotation
 
     .prologue
-    .line 326
+    .line 314
     iget-object v0, p0, Lorg/apache/commons/io/output/FileWriterWithEncoding;->out:Ljava/io/Writer;
 
     invoke-virtual {v0}, Ljava/io/Writer;->flush()V
 
-    .line 327
+    .line 315
     return-void
 .end method
 
@@ -54,12 +54,12 @@
     .end annotation
 
     .prologue
-    .line 273
+    .line 266
     iget-object v0, p0, Lorg/apache/commons/io/output/FileWriterWithEncoding;->out:Ljava/io/Writer;
 
     invoke-virtual {v0, p1}, Ljava/io/Writer;->write(I)V
 
-    .line 274
+    .line 267
     return-void
 .end method
 
@@ -73,12 +73,12 @@
     .end annotation
 
     .prologue
-    .line 305
+    .line 295
     iget-object v0, p0, Lorg/apache/commons/io/output/FileWriterWithEncoding;->out:Ljava/io/Writer;
 
     invoke-virtual {v0, p1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
-    .line 306
+    .line 296
     return-void
 .end method
 
@@ -94,12 +94,12 @@
     .end annotation
 
     .prologue
-    .line 317
+    .line 306
     iget-object v0, p0, Lorg/apache/commons/io/output/FileWriterWithEncoding;->out:Ljava/io/Writer;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/Writer;->write(Ljava/lang/String;II)V
 
-    .line 318
+    .line 307
     return-void
 .end method
 
@@ -113,12 +113,12 @@
     .end annotation
 
     .prologue
-    .line 283
+    .line 275
     iget-object v0, p0, Lorg/apache/commons/io/output/FileWriterWithEncoding;->out:Ljava/io/Writer;
 
     invoke-virtual {v0, p1}, Ljava/io/Writer;->write([C)V
 
-    .line 284
+    .line 276
     return-void
 .end method
 
@@ -134,11 +134,11 @@
     .end annotation
 
     .prologue
-    .line 295
+    .line 286
     iget-object v0, p0, Lorg/apache/commons/io/output/FileWriterWithEncoding;->out:Ljava/io/Writer;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/Writer;->write([CII)V
 
-    .line 296
+    .line 287
     return-void
 .end method

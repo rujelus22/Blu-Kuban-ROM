@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/base/u;
+.implements Lcom/google/common/base/ah;
 .implements Ljava/io/Serializable;
 
 
@@ -21,11 +21,11 @@
     .parameter
 
     .prologue
-    .line 381
+    .line 428
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 382
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 429
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -33,17 +33,17 @@
 
     iput-object v0, p0, Lcom/google/common/base/Predicates$InstanceOfPredicate;->clazz:Ljava/lang/Class;
 
-    .line 383
+    .line 430
     return-void
 .end method
 
-.method synthetic constructor <init>(Ljava/lang/Class;Lcom/google/common/base/v;)V
+.method synthetic constructor <init>(Ljava/lang/Class;Lcom/google/common/base/ai;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 377
+    .line 424
     invoke-direct {p0, p1}, Lcom/google/common/base/Predicates$InstanceOfPredicate;-><init>(Ljava/lang/Class;)V
 
     return-void
@@ -54,12 +54,15 @@
 .method public apply(Ljava/lang/Object;)Z
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 385
+    .line 433
     iget-object v0, p0, Lcom/google/common/base/Predicates$InstanceOfPredicate;->clazz:Ljava/lang/Class;
 
-    invoke-static {v0, p1}, Lcom/google/common/base/r;->a(Ljava/lang/Class;Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -69,19 +72,22 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 5
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     const/4 v0, 0x0
 
-    .line 391
+    .line 439
     instance-of v1, p1, Lcom/google/common/base/Predicates$InstanceOfPredicate;
 
     if-eqz v1, :cond_e
 
-    .line 392
+    .line 440
     check-cast p1, Lcom/google/common/base/Predicates$InstanceOfPredicate;
 
-    .line 393
+    .line 441
     iget-object v1, p0, Lcom/google/common/base/Predicates$InstanceOfPredicate;->clazz:Ljava/lang/Class;
 
     iget-object v2, p1, Lcom/google/common/base/Predicates$InstanceOfPredicate;->clazz:Ljava/lang/Class;
@@ -90,7 +96,7 @@
 
     const/4 v0, 0x1
 
-    .line 395
+    .line 443
     :cond_e
     return v0
 .end method
@@ -99,7 +105,7 @@
     .registers 2
 
     .prologue
-    .line 388
+    .line 436
     iget-object v0, p0, Lcom/google/common/base/Predicates$InstanceOfPredicate;->clazz:Ljava/lang/Class;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -113,16 +119,12 @@
     .registers 3
 
     .prologue
-    .line 398
+    .line 446
     new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "IsInstanceOf("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/common/base/Predicates$InstanceOfPredicate;->clazz:Ljava/lang/Class;
 

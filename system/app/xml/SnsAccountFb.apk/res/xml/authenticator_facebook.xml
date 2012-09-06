@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<account-authenticator android:label="@string/account_label_facebook" android:icon="@drawable/icon_facebook" android:accountType="com.sec.android.app.snsaccountfacebook.account_type" android:smallIcon="@drawable/icon_facebook" android:accountPreferences="@xml/account_preferences"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

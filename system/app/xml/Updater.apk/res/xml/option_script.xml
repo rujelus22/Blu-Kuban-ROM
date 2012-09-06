@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/info" android:key="first_preferencescreen"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:title="RUJELUS22 Scripts" android:key="ruscripts" />
+    <Preference android:title="@string/download_script" android:key="download" />
+    <Preference android:title="@string/script_create_your" android:key="create_your_script" />
+    <PreferenceCategory android:title="My Scripts" android:key="my_scripts" />
+    <PreferenceCategory android:title="Scripts" android:key="scripts" />
+</PreferenceScreen>

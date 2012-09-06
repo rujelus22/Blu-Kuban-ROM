@@ -2,6 +2,7 @@
 <LinearLayout android:orientation="vertical" android:id="@id/friendsListHeader" android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <Button android:id="@id/locationPrivacyNotification" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" style="?android:attr/buttonStyle" />
+    <Button android:id="@id/sharingNotification" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" style="?android:attr/buttonStyle" />
     <Button android:id="@id/inviteNotification" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" style="?android:attr/buttonStyle" />
     <Button android:id="@id/wifiNotification" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" style="?android:attr/buttonStyle" />
 </LinearLayout>

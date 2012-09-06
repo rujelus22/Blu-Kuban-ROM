@@ -36,7 +36,7 @@
     .registers 1
 
     .prologue
-    .line 1354
+    .line 618
     new-instance v0, Lcom/android/email/activity/ThreePaneLayout$SavedState$1;
 
     invoke-direct {v0}, Lcom/android/email/activity/ThreePaneLayout$SavedState$1;-><init>()V
@@ -51,17 +51,17 @@
     .parameter "in"
 
     .prologue
-    .line 1344
+    .line 608
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 1345
+    .line 609
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/email/activity/ThreePaneLayout$SavedState;->mPaneState:I
 
-    .line 1346
+    .line 610
     return-void
 .end method
 
@@ -71,7 +71,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1330
+    .line 594
     invoke-direct {p0, p1}, Lcom/android/email/activity/ThreePaneLayout$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -82,10 +82,10 @@
     .parameter "superState"
 
     .prologue
-    .line 1337
+    .line 601
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 1338
+    .line 602
     return-void
 .end method
 
@@ -97,14 +97,14 @@
     .parameter "flags"
 
     .prologue
-    .line 1350
+    .line 614
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1351
+    .line 615
     iget v0, p0, Lcom/android/email/activity/ThreePaneLayout$SavedState;->mPaneState:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1352
+    .line 616
     return-void
 .end method

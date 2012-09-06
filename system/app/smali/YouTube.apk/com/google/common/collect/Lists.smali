@@ -4,30 +4,20 @@
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 52
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method public static a(I)Ljava/util/ArrayList;
     .registers 7
     .parameter
 
     .prologue
-    .line 183
+    .line 189
     new-instance v1, Ljava/util/ArrayList;
 
-    if-ltz p0, :cond_1c
+    if-ltz p0, :cond_18
 
     const/4 v0, 0x1
 
     :goto_5
-    invoke-static {v0}, Lcom/google/common/base/t;->a(Z)V
+    invoke-static {v0}, Lcom/google/common/base/ag;->a(Z)V
 
     const-wide/16 v2, 0x5
 
@@ -41,50 +31,45 @@
 
     add-long/2addr v2, v4
 
-    const-wide/32 v4, 0x7fffffff
+    invoke-static {v2, v3}, Lcom/google/common/primitives/Ints;->b(J)I
 
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v2
-
-    long-to-int v0, v2
+    move-result v0
 
     invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
     return-object v1
 
-    :cond_1c
+    :cond_18
     const/4 v0, 0x0
 
     goto :goto_5
 .end method
 
 .method public static a(Ljava/lang/Iterable;)Ljava/util/ArrayList;
-    .registers 2
+    .registers 3
     .parameter
 
     .prologue
-    .line 108
-    invoke-static {p0}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 117
+    invoke-static {p0}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 110
+    .line 119
     instance-of v0, p0, Ljava/util/Collection;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_11
 
-    .line 112
-    check-cast p0, Ljava/util/Collection;
-
-    .line 113
     new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v0, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    invoke-static {p0}, Lcom/google/common/collect/cf;->a(Ljava/lang/Iterable;)Ljava/util/Collection;
 
-    .line 115
-    :goto_e
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    :goto_10
     return-object v0
 
-    :cond_f
+    :cond_11
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -93,7 +78,7 @@
 
     move-result-object v0
 
-    goto :goto_e
+    goto :goto_10
 .end method
 
 .method public static a(Ljava/util/Iterator;)Ljava/util/ArrayList;
@@ -101,15 +86,15 @@
     .parameter
 
     .prologue
-    .line 131
-    invoke-static {p0}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 136
+    invoke-static {p0}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 132
+    .line 137
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 133
+    .line 138
     :goto_8
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -117,7 +102,7 @@
 
     if-eqz v1, :cond_16
 
-    .line 134
+    .line 139
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
@@ -126,7 +111,7 @@
 
     goto :goto_8
 
-    .line 136
+    .line 141
     :cond_16
     return-object v0
 .end method

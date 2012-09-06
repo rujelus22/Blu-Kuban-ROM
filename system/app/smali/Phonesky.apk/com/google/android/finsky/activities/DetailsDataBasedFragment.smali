@@ -2,6 +2,9 @@
 .super Lcom/google/android/finsky/fragments/UrlBasedPageFragment;
 .source "DetailsDataBasedFragment.java"
 
+# interfaces
+.implements Lcom/google/android/finsky/activities/OfferResolutionDialog$OfferResolutionListener;
+
 
 # instance fields
 .field private mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
@@ -9,6 +12,8 @@
 .field private mDocument:Lcom/google/android/finsky/api/model/Document;
 
 .field private mHaveLoggedBefore:Z
+
+.field private final mLibraries:Lcom/google/android/finsky/library/Libraries;
 
 .field private mNfcHandler:Lcom/google/android/finsky/utils/Nfc$NfcHandler;
 
@@ -24,21 +29,33 @@
     .registers 2
 
     .prologue
-    .line 21
+    .line 65
     invoke-direct {p0}, Lcom/google/android/finsky/fragments/UrlBasedPageFragment;-><init>()V
 
-    .line 47
+    .line 52
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mSavedInstanceState:Landroid/os/Bundle;
 
-    .line 50
+    .line 55
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mHaveLoggedBefore:Z
 
+    .line 66
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getLibraries()Lcom/google/android/finsky/library/Libraries;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mLibraries:Lcom/google/android/finsky/library/Libraries;
+
+    .line 67
     return-void
 .end method
 
@@ -46,41 +63,95 @@
     .registers 5
 
     .prologue
-    .line 226
-    iget-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mHaveLoggedBefore:Z
+    .line 247
+    iget-boolean v1, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mHaveLoggedBefore:Z
 
-    if-nez v0, :cond_1e
+    if-nez v1, :cond_4f
 
-    .line 228
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+    .line 249
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mUrl:Ljava/lang/String;
 
-    move-result-object v0
+    .line 250
+    .local v0, currentPage:Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->getDocument()Lcom/google/android/finsky/api/model/Document;
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getAnalytics()Lcom/google/android/finsky/analytics/Analytics;
+    move-result-object v1
 
-    move-result-object v0
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->getToc()Lcom/google/android/finsky/api/model/DfeToc;
 
-    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mReferrer:Ljava/lang/String;
+    move-result-object v2
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->getLibraries()Lcom/google/android/finsky/library/Libraries;
+
+    move-result-object v3
+
+    invoke-static {v1, v2, v3}, Lcom/google/android/finsky/utils/LibraryUtils;->isAvailable(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/api/model/DfeToc;Lcom/google/android/finsky/library/Library;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_37
+
+    .line 251
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "&availability="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->getDocument()Lcom/google/android/finsky/api/model/Document;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/api/model/Document;->getCookie()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/google/android/finsky/api/model/Document;->getAvailabilityRestriction()I
 
-    move-result-object v2
+    move-result v2
 
-    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mUrl:Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-interface {v0, v1, v2, v3}, Lcom/google/android/finsky/analytics/Analytics;->logPageView(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v1
 
-    .line 229
-    const/4 v0, 0x1
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iput-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mHaveLoggedBefore:Z
+    move-result-object v0
 
-    .line 231
-    :cond_1e
+    .line 253
+    :cond_37
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/FinskyApp;->getAnalytics()Lcom/google/android/finsky/analytics/Analytics;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mReferrer:Ljava/lang/String;
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->getDocument()Lcom/google/android/finsky/api/model/Document;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/api/model/Document;->getCookie()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v1, v2, v3, v0}, Lcom/google/android/finsky/analytics/Analytics;->logPageView(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 255
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mHaveLoggedBefore:Z
+
+    .line 257
+    .end local v0           #currentPage:Ljava/lang/String;
+    :cond_4f
     return-void
 .end method
 
@@ -90,7 +161,7 @@
     .registers 2
 
     .prologue
-    .line 68
+    .line 83
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     return-object v0
@@ -100,8 +171,18 @@
     .registers 2
 
     .prologue
-    .line 203
+    .line 224
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDocument:Lcom/google/android/finsky/api/model/Document;
+
+    return-object v0
+.end method
+
+.method protected final getLibraries()Lcom/google/android/finsky/library/Libraries;
+    .registers 2
+
+    .prologue
+    .line 70
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mLibraries:Lcom/google/android/finsky/library/Libraries;
 
     return-object v0
 .end method
@@ -110,7 +191,7 @@
     .registers 2
 
     .prologue
-    .line 83
+    .line 104
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mReferrer:Ljava/lang/String;
 
     return-object v0
@@ -120,7 +201,7 @@
     .registers 2
 
     .prologue
-    .line 100
+    .line 121
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     if-eqz v0, :cond_e
@@ -148,7 +229,7 @@
     .registers 2
 
     .prologue
-    .line 164
+    .line 185
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDocument:Lcom/google/android/finsky/api/model/Document;
 
     if-eqz v0, :cond_6
@@ -169,17 +250,17 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 111
+    .line 132
     invoke-super {p0, p1}, Lcom/google/android/finsky/fragments/UrlBasedPageFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
-    .line 113
+    .line 134
     invoke-static {p0}, Lcom/google/android/finsky/utils/Nfc;->getHandler(Lcom/google/android/finsky/activities/DetailsDataBasedFragment;)Lcom/google/android/finsky/utils/Nfc$NfcHandler;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mNfcHandler:Lcom/google/android/finsky/utils/Nfc$NfcHandler;
 
-    .line 115
+    .line 136
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -194,41 +275,41 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDocument:Lcom/google/android/finsky/api/model/Document;
 
-    .line 118
+    .line 139
     if-eqz p1, :cond_1b
 
-    .line 119
+    .line 140
     iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mSavedInstanceState:Landroid/os/Bundle;
 
-    .line 122
+    .line 143
     :cond_1b
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->switchToBlank()V
 
-    .line 124
+    .line 145
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     if-nez v0, :cond_2c
 
-    .line 125
+    .line 146
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->requestData()V
 
-    .line 126
+    .line 147
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->rebindActionBar()V
 
-    .line 132
+    .line 153
     :goto_28
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->onDataChanged()V
 
-    .line 133
+    .line 154
     return-void
 
-    .line 128
+    .line 149
     :cond_2c
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->addDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 129
+    .line 150
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->addErrorListener(Lcom/android/volley/Response$ErrorListener;)V
@@ -241,17 +322,17 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 105
+    .line 126
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mPageCreationTime:J
 
-    .line 106
+    .line 127
     invoke-super {p0, p1}, Lcom/google/android/finsky/fragments/UrlBasedPageFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 107
+    .line 128
     return-void
 .end method
 
@@ -259,7 +340,7 @@
     .registers 5
 
     .prologue
-    .line 181
+    .line 202
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->isAdded()Z
 
     move-result v0
@@ -272,14 +353,14 @@
 
     if-eqz v0, :cond_32
 
-    .line 182
+    .line 203
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->hasDetailsDataLoaded()Z
 
     move-result v0
 
     if-eqz v0, :cond_2a
 
-    .line 183
+    .line 204
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeDetails;->getDocument()Lcom/google/android/finsky/api/model/Document;
@@ -288,14 +369,14 @@
 
     if-nez v0, :cond_33
 
-    .line 187
+    .line 208
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mPageFragmentHost:Lcom/google/android/finsky/fragments/PageFragmentHost;
 
     const/4 v1, 0x0
 
     iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0700fd
+    const v3, 0x7f07010d
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -305,21 +386,21 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/google/android/finsky/fragments/PageFragmentHost;->showErrorDialog(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 195
+    .line 216
     :cond_2a
     :goto_2a
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mNfcHandler:Lcom/google/android/finsky/utils/Nfc$NfcHandler;
 
     invoke-interface {v0}, Lcom/google/android/finsky/utils/Nfc$NfcHandler;->onDataChanged()V
 
-    .line 197
+    .line 218
     invoke-super {p0}, Lcom/google/android/finsky/fragments/UrlBasedPageFragment;->onDataChanged()V
 
-    .line 199
+    .line 220
     :cond_32
     return-void
 
-    .line 190
+    .line 211
     :cond_33
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
@@ -329,7 +410,7 @@
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->updateDocument(Lcom/google/android/finsky/api/model/Document;)V
 
-    .line 191
+    .line 212
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->logPageView()V
 
     goto :goto_2a
@@ -339,31 +420,66 @@
     .registers 2
 
     .prologue
-    .line 210
+    .line 231
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mHaveLoggedBefore:Z
 
-    .line 213
+    .line 234
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     if-eqz v0, :cond_11
 
-    .line 214
+    .line 235
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->removeDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 215
+    .line 236
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->removeErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 218
+    .line 239
     :cond_11
     invoke-super {p0}, Lcom/google/android/finsky/fragments/UrlBasedPageFragment;->onDestroyView()V
 
-    .line 219
+    .line 240
+    return-void
+.end method
+
+.method public onOfferSelected(Lcom/google/android/finsky/api/model/Document;I)V
+    .registers 11
+    .parameter "document"
+    .parameter "offerType"
+
+    .prologue
+    const/4 v5, 0x0
+
+    .line 261
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+
+    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
+
+    invoke-interface {v1}, Lcom/google/android/finsky/api/DfeApi;->getAccount()Landroid/accounts/Account;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->getReferrer()Ljava/lang/String;
+
+    move-result-object v4
+
+    const/4 v7, 0x0
+
+    move-object v2, p1
+
+    move v3, p2
+
+    move-object v6, v5
+
+    invoke-virtual/range {v0 .. v7}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->buy(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+
+    .line 263
     return-void
 .end method
 
@@ -371,20 +487,20 @@
     .registers 2
 
     .prologue
-    .line 137
+    .line 158
     invoke-super {p0}, Lcom/google/android/finsky/fragments/UrlBasedPageFragment;->onPause()V
 
-    .line 142
+    .line 163
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     invoke-static {v0}, Lcom/google/android/finsky/previews/PreviewController;->setupOnBackStackChangedListener(Lcom/google/android/finsky/navigationmanager/NavigationManager;)V
 
-    .line 144
+    .line 165
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mNfcHandler:Lcom/google/android/finsky/utils/Nfc$NfcHandler;
 
     invoke-interface {v0}, Lcom/google/android/finsky/utils/Nfc$NfcHandler;->onPause()V
 
-    .line 145
+    .line 166
     return-void
 .end method
 
@@ -392,15 +508,15 @@
     .registers 2
 
     .prologue
-    .line 149
+    .line 170
     invoke-super {p0}, Lcom/google/android/finsky/fragments/UrlBasedPageFragment;->onResume()V
 
-    .line 150
+    .line 171
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mNfcHandler:Lcom/google/android/finsky/utils/Nfc$NfcHandler;
 
     invoke-interface {v0}, Lcom/google/android/finsky/utils/Nfc$NfcHandler;->onResume()V
 
-    .line 151
+    .line 172
     return-void
 .end method
 
@@ -409,26 +525,26 @@
     .parameter "bundle"
 
     .prologue
-    .line 155
+    .line 176
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mSavedInstanceState:Landroid/os/Bundle;
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->recordState(Landroid/os/Bundle;)V
 
-    .line 156
+    .line 177
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mSavedInstanceState:Landroid/os/Bundle;
 
     if-eqz v0, :cond_e
 
-    .line 157
+    .line 178
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mSavedInstanceState:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
-    .line 159
+    .line 180
     :cond_e
     invoke-super {p0, p1}, Lcom/google/android/finsky/fragments/UrlBasedPageFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 160
+    .line 181
     return-void
 .end method
 
@@ -436,12 +552,12 @@
     .registers 8
 
     .prologue
-    .line 88
+    .line 109
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mSavedInstanceState:Landroid/os/Bundle;
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->rebindViews(Landroid/os/Bundle;)V
 
-    .line 89
+    .line 110
     const-string v0, "Page [class=%s] loaded in [%s ms] (partial? %b)"
 
     const/4 v1, 0x3
@@ -490,7 +606,7 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 93
+    .line 114
     return-void
 .end method
 
@@ -501,12 +617,12 @@
     .registers 2
 
     .prologue
-    .line 63
+    .line 78
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mSavedInstanceState:Landroid/os/Bundle;
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->recordState(Landroid/os/Bundle;)V
 
-    .line 64
+    .line 79
     return-void
 .end method
 
@@ -517,22 +633,22 @@
     .registers 6
 
     .prologue
-    .line 169
+    .line 190
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     if-eqz v0, :cond_e
 
-    .line 170
+    .line 191
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->removeDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 171
+    .line 192
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->removeErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 173
+    .line 194
     :cond_e
     new-instance v0, Lcom/google/android/finsky/api/model/DfeDetails;
 
@@ -554,7 +670,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
-    .line 174
+    .line 195
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -567,17 +683,17 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mReferrer:Ljava/lang/String;
 
-    .line 175
+    .line 196
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->addDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 176
+    .line 197
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->addErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 177
+    .line 198
     return-void
 .end method
 
@@ -586,23 +702,49 @@
     .parameter "document"
 
     .prologue
-    .line 73
+    .line 88
     const-string v0, "finsky.DetailsDataBasedFragment.document"
 
     invoke-virtual {p0, v0, p1}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->setArgument(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 74
+    .line 89
     return-void
 .end method
 
 .method protected updateDocument(Lcom/google/android/finsky/api/model/Document;)V
-    .registers 2
+    .registers 5
     .parameter "document"
 
     .prologue
-    .line 78
+    .line 93
     iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDocument:Lcom/google/android/finsky/api/model/Document;
 
-    .line 79
+    .line 95
+    const/high16 v0, -0x8000
+
+    .line 96
+    .local v0, streamType:I
+    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->mDocument:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    if-ne v1, v2, :cond_e
+
+    .line 97
+    const/4 v0, 0x3
+
+    .line 99
+    :cond_e
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/support/v4/app/FragmentActivity;->setVolumeControlStream(I)V
+
+    .line 100
     return-void
 .end method

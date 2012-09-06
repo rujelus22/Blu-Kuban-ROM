@@ -1,25 +1,30 @@
 .class Lcom/google/googlenav/ui/view/android/bS;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field a:Lbb/a;
+.field final synthetic a:Landroid/content/Context;
 
-.field final synthetic b:Lcom/google/googlenav/ui/view/android/bN;
+.field final synthetic b:Lcom/google/googlenav/ui/view/android/bR;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/ui/view/android/bN;Lbb/a;)V
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/bR;Landroid/content/Context;)V
     .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/bS;->b:Lcom/google/googlenav/ui/view/android/bN;
+    .prologue
+    .line 90
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/bS;->b:Lcom/google/googlenav/ui/view/android/bR;
+
+    iput-object p2, p0, Lcom/google/googlenav/ui/view/android/bS;->a:Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Lcom/google/googlenav/ui/view/android/bS;->a:Lbb/a;
 
     return-void
 .end method
@@ -28,35 +33,27 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .registers 6
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bS;->a:Lbb/a;
+    .prologue
+    .line 93
+    const-string v0, "http://www.google.com/support/go/placesprivacy"
 
-    if-eqz v0, :cond_1d
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bS;->b:Lcom/google/googlenav/ui/view/android/bN;
+    move-result-object v0
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/view/android/bN;->F:Lcom/google/googlenav/ui/p;
+    .line 94
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/bS;->a:Landroid/content/Context;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/bS;->a:Lbb/a;
+    new-instance v2, Landroid/content/Intent;
 
-    invoke-virtual {v1}, Lbb/a;->a()I
+    const-string v3, "android.intent.action.VIEW"
 
-    move-result v1
+    invoke-direct {v2, v3, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/view/android/bS;->a:Lbb/a;
+    invoke-virtual {v1, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    invoke-virtual {v2}, Lbb/a;->b()I
-
-    move-result v2
-
-    iget-object v3, p0, Lcom/google/googlenav/ui/view/android/bS;->a:Lbb/a;
-
-    invoke-virtual {v3}, Lbb/a;->c()Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-interface {v0, v1, v2, v3}, Lcom/google/googlenav/ui/p;->a(IILjava/lang/Object;)Z
-
-    :cond_1d
+    .line 95
     return-void
 .end method

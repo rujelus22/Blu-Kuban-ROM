@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1046
+    .line 1322
     iput-object p1, p0, Lcom/google/android/finsky/activities/PurchaseFragment$12;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,26 +38,15 @@
 
 # virtual methods
 .method public run()V
-    .registers 3
+    .registers 2
 
     .prologue
-    .line 1049
+    .line 1325
     iget-object v0, p0, Lcom/google/android/finsky/activities/PurchaseFragment$12;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
-    iget-object v1, p0, Lcom/google/android/finsky/activities/PurchaseFragment$12;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
+    #calls: Lcom/google/android/finsky/activities/PurchaseFragment;->continueCheckoutSizeCheck()V
+    invoke-static {v0}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$3000(Lcom/google/android/finsky/activities/PurchaseFragment;)V
 
-    #getter for: Lcom/google/android/finsky/activities/PurchaseFragment;->mCheckoutPurchase:Lcom/google/android/finsky/billing/CheckoutPurchase;
-    invoke-static {v1}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$2200(Lcom/google/android/finsky/activities/PurchaseFragment;)Lcom/google/android/finsky/billing/CheckoutPurchase;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/finsky/billing/CheckoutPurchase;->getError()Lcom/google/android/finsky/billing/CheckoutPurchase$Error;
-
-    move-result-object v1
-
-    #calls: Lcom/google/android/finsky/activities/PurchaseFragment;->finishWithError(Lcom/google/android/finsky/billing/CheckoutPurchase$Error;)V
-    invoke-static {v0, v1}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$1300(Lcom/google/android/finsky/activities/PurchaseFragment;Lcom/google/android/finsky/billing/CheckoutPurchase$Error;)V
-
-    .line 1050
+    .line 1326
     return-void
 .end method

@@ -4,16 +4,6 @@
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 19
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method public static a(Landroid/content/Context;)Landroid/widget/RemoteViews;
     .registers 6
     .parameter
@@ -27,19 +17,19 @@
     move-result-object v0
 
     .line 28
-    const v1, 0x7f0900c0
+    const v1, 0x7f080134
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     .line 29
-    const v1, 0x7f0900bf
+    const v1, 0x7f080133
 
     invoke-virtual {v0, v1, v4}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     .line 31
-    const v1, 0x7f0900bd
+    const v1, 0x7f080131
 
     new-instance v2, Landroid/content/Intent;
 
@@ -68,7 +58,7 @@
     .parameter
 
     .prologue
-    const v4, 0x7f0900c0
+    const v4, 0x7f080134
 
     .line 41
     invoke-static {p0}, Lcom/google/android/youtube/app/honeycomb/widget/c;->c(Landroid/content/Context;)Landroid/widget/RemoteViews;
@@ -86,16 +76,16 @@
     invoke-virtual {v0, v4, v2}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     .line 45
-    const v2, 0x7f0900bf
+    const v2, 0x7f080133
 
     const/16 v3, 0x8
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     .line 47
-    const v2, 0x7f0900c1
+    const v2, 0x7f080135
 
-    const v3, 0x7f0a0008
+    const v3, 0x7f0b000c
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -104,9 +94,9 @@
     invoke-virtual {v0, v2, v3}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
     .line 48
-    const v2, 0x7f0900c2
+    const v2, 0x7f080136
 
-    const v3, 0x7f0a0019
+    const v3, 0x7f0b001e
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -137,14 +127,14 @@
 
     move-result-object v1
 
-    const v2, 0x7f04005e
+    const v2, 0x7f0400a2
 
     invoke-direct {v0, v1, v2}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
     .line 60
-    const v1, 0x7f0900bd
+    const v1, 0x7f080131
 
-    const v2, 0x7f0900be
+    const v2, 0x7f080132
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/RemoteViews;->setEmptyView(II)V
 

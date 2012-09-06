@@ -60,7 +60,7 @@
 
 .field private static final CHECK_LOCATION:I = 0x1
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final DOWNLOAD_XTRA_DATA:I = 0x6
 

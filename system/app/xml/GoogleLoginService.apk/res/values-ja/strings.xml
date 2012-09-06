@@ -242,18 +242,18 @@
     <string name="account_intro_recommended_title">Googleを利用する</string>
     <string name="common_message">"Googleアカウントを使用すると、次のメリットがあります。
 
-"<li><ul>管理しているすべての情報をどこからでも閲覧、整理できます。</ul></li>"
+"<ul><li>管理しているすべての情報をどこからでも閲覧、整理できます。</li></ul>"
 
-"<li><ul>データを自動的にバックアップできます。</ul></li>"
+"<ul><li>データを自動的にバックアップできます。</li></ul>"
 
-"<li><ul>Googleのサービスをどこからでも簡単に利用できます。</ul></li></string>
+"<ul><li>Googleのサービスをどこからでも簡単に利用できます。</li></ul></string>
     <string name="add_account_message">" 複数のGoogleアカウント（たとえば自宅用と仕事用）を使用できます。Googleアカウントを追加するには["<b>ログイン</b>]または[<b>アカウントを作成</b>]をタップしてしてください。</string>
     <string name="account_intro_default_message">Googleアカウントがあればすべてのデータを安全に保管できます。</string>
     <string name="account_intro_custom_endtext">%sをお使いですか？今すぐログインしてください。</string>
     <string name="account_intro_simple_message">既存のアカウントを追加するか、新しいアカウントを作成しますか？</string>
     <string name="learn_more_title"><annotation id="learn_more">詳細</annotation></string>
     <string name="learn_more_account_intro">"Googleアカウントを使用すると、
-"<li><ul>どこからでも自分の情報を閲覧し、整理することができます。<li>メールや連絡先、音楽、写真などのデータを自動的にバックアップできます。</li><li>連絡先、カレンダー、マップなど他にもいろいろなGoogleサービスをどこからでも簡単に利用できます。</li></ul></li></string>
+"<ul><li>どこからでも自分の情報を閲覧し、整理することができます。<li>メールや連絡先、音楽、写真などのデータを自動的にバックアップできます。</li><li>連絡先、カレンダー、マップなど他にもいろいろなGoogleサービスをどこからでも簡単に利用できます。</li></li></ul></string>
     <string name="learn_more_account_intro_title">Googleアカウントについて</string>
     <string name="learn_more_web_history">"ウェブ履歴を利用すると、過去の検索内容やアクセスしたサイトに基づいて検索結果をさらにカスタマイズできます。
 

@@ -10,7 +10,6 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/exchange/ExchangeService$ConnectivityReceiver;,
-        Lcom/android/exchange/ExchangeService$EasSyncStatusObserver;,
         Lcom/android/exchange/ExchangeService$SyncError;,
         Lcom/android/exchange/ExchangeService$SyncStatus;,
         Lcom/android/exchange/ExchangeService$SyncedMessageObserver;,
@@ -24,73 +23,13 @@
 
 
 # static fields
-.field private static final EMPTY_ACCOUNT_LIST:Lcom/android/exchange/ExchangeService$AccountList;
-
 .field protected static INSTANCE:Lcom/android/exchange/ExchangeService;
-
-.field public static MAILBOX_DUMMY_GALSEARCH:J
-
-.field public static MAILBOX_DUMMY_MAX:J
-
-.field public static MAILBOX_DUMMY_MIN:J
-
-.field public static MAILBOX_DUMMY_OoO:J
-
-.field private static THREAD_MAP_LOCK:Ljava/lang/Object;
-
-.field public static elmsvc:Lcom/android/exchange/EasLoadMoreSvc;
-
-.field public static lmClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-
-.field public static final mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
-
-.field public static mClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-
-.field public static mPingFoldersMap:Ljava/util/HashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/HashMap",
-            "<",
-            "Ljava/lang/Long;",
-            "Ljava/util/HashSet",
-            "<",
-            "Ljava/lang/String;",
-            ">;>;"
-        }
-    .end annotation
-.end field
-
-.field public static mPingHeartBeatIntervalMap:Ljava/util/HashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/HashMap",
-            "<",
-            "Ljava/lang/Long;",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private static mThreadIdMap:Ljava/util/HashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/HashMap",
-            "<",
-            "Ljava/lang/Long;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
 
 .field private static final sCallbackProxy:Lcom/android/emailcommon/service/IEmailServiceCallback$Stub;
 
-.field private static sClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
+.field private static sClientConnectionManager:Lcom/android/emailcommon/utility/EmailClientConnectionManager;
 
 .field private static volatile sClientConnectionManagerShutdownCount:I
-
-.field public static sConnPerPing:Lorg/apache/http/conn/params/ConnPerRoute;
 
 .field public static sConnPerRoute:Lorg/apache/http/conn/params/ConnPerRoute;
 
@@ -100,8 +39,6 @@
 
 .field private static sDeviceId:Ljava/lang/String;
 
-.field private static sLicenseKey:Ljava/lang/String;
-
 .field private static sServiceThread:Ljava/lang/Thread;
 
 .field private static volatile sStartingUp:Z
@@ -110,20 +47,10 @@
 
 .field private static final sSyncLock:Ljava/lang/Object;
 
-.field public static smClientConnectionManager:Ljava/util/HashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/HashMap",
-            "<",
-            "Ljava/lang/Long;",
-            "Lorg/apache/http/conn/ClientConnectionManager;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 
 # instance fields
+.field public final mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
+
 .field private mAccountObserver:Lcom/android/exchange/ExchangeService$AccountObserver;
 
 .field private volatile mBackgroundData:Z
@@ -132,7 +59,7 @@
 
 .field private final mBinder:Lcom/android/emailcommon/service/IEmailService$Stub;
 
-.field private mCalendarObservers:Ljava/util/concurrent/ConcurrentHashMap;
+.field private final mCalendarObservers:Ljava/util/concurrent/ConcurrentHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ConcurrentHashMap",
@@ -144,7 +71,7 @@
     .end annotation
 .end field
 
-.field private mCallbackList:Landroid/os/RemoteCallbackList;
+.field private final mCallbackList:Landroid/os/RemoteCallbackList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/os/RemoteCallbackList",
@@ -157,9 +84,7 @@
 
 .field private mConnectivityReceiver:Lcom/android/exchange/ExchangeService$ConnectivityReceiver;
 
-.field private mHandler:Landroid/os/Handler;
-
-.field private mIsNetworkRoaming:Z
+.field private final mHandler:Landroid/os/Handler;
 
 .field private mKicked:Z
 
@@ -167,11 +92,9 @@
 
 .field private mNetworkInfo:Landroid/net/NetworkInfo;
 
-.field private mNetworkState:I
-
 .field private mNextWaitReason:Ljava/lang/String;
 
-.field private mPendingIntents:Ljava/util/HashMap;
+.field private final mPendingIntents:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap",
@@ -183,25 +106,9 @@
     .end annotation
 .end field
 
-.field private mPhone:Landroid/telephony/TelephonyManager;
-
-.field private mPhoneStateListener:Landroid/telephony/PhoneStateListener;
-
-.field private mProvisionErrorExist:Ljava/util/HashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/HashMap",
-            "<",
-            "Ljava/lang/Long;",
-            "Lcom/android/emailcommon/provider/EmailContent$Account;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field private mResolver:Landroid/content/ContentResolver;
 
-.field private mServiceMap:Ljava/util/HashMap;
+.field private final mServiceMap:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap",
@@ -212,8 +119,6 @@
         }
     .end annotation
 .end field
-
-.field private mStatusChangeListener:Ljava/lang/Object;
 
 .field mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -227,13 +132,11 @@
     .end annotation
 .end field
 
-.field private mSyncStatusObserver:Lcom/android/exchange/ExchangeService$EasSyncStatusObserver;
-
 .field private mSyncedMessageObserver:Lcom/android/exchange/ExchangeService$SyncedMessageObserver;
 
 .field private mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-.field private mWakeLocks:Ljava/util/HashMap;
+.field private final mWakeLocks:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap",
@@ -248,248 +151,157 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
-
-    .prologue
-    const/4 v3, 0x0
-
-    const/4 v2, 0x0
-
-    .line 367
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
-
-    .line 370
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lcom/android/exchange/ExchangeService;->sConnectivityLock:Ljava/lang/Object;
-
-    .line 372
-    sput-boolean v3, Lcom/android/exchange/ExchangeService;->sConnectivityHold:Z
-
-    .line 381
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v0, Lcom/android/exchange/ExchangeService;->mThreadIdMap:Ljava/util/HashMap;
-
-    .line 383
-    const-wide/32 v0, 0xf4240
-
-    sput-wide v0, Lcom/android/exchange/ExchangeService;->MAILBOX_DUMMY_MIN:J
-
-    .line 385
-    const-wide/32 v0, 0xf4241
-
-    sput-wide v0, Lcom/android/exchange/ExchangeService;->MAILBOX_DUMMY_OoO:J
-
-    .line 387
-    const-wide/32 v0, 0xf4242
-
-    sput-wide v0, Lcom/android/exchange/ExchangeService;->MAILBOX_DUMMY_GALSEARCH:J
-
-    .line 389
-    const-wide/32 v0, 0xf4243
-
-    sput-wide v0, Lcom/android/exchange/ExchangeService;->MAILBOX_DUMMY_MAX:J
-
-    .line 407
-    new-instance v0, Lcom/android/exchange/ExchangeService$AccountList;
-
-    invoke-direct {v0}, Lcom/android/exchange/ExchangeService$AccountList;-><init>()V
-
-    sput-object v0, Lcom/android/exchange/ExchangeService;->mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
-
-    .line 430
-    sput-object v2, Lcom/android/exchange/ExchangeService;->sServiceThread:Ljava/lang/Thread;
-
-    .line 433
-    sput-object v2, Lcom/android/exchange/ExchangeService;->sDeviceId:Ljava/lang/String;
-
-    .line 436
-    sput-object v2, Lcom/android/exchange/ExchangeService;->sClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-
-    .line 439
-    sput-object v2, Lcom/android/exchange/ExchangeService;->mClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-
-    .line 442
-    sput v3, Lcom/android/exchange/ExchangeService;->sClientConnectionManagerShutdownCount:I
-
-    .line 445
-    sput-object v2, Lcom/android/exchange/ExchangeService;->lmClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-
-    .line 447
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v0, Lcom/android/exchange/ExchangeService;->smClientConnectionManager:Ljava/util/HashMap;
-
-    .line 455
-    sput-object v2, Lcom/android/exchange/ExchangeService;->sLicenseKey:Ljava/lang/String;
-
-    .line 457
-    sput-boolean v3, Lcom/android/exchange/ExchangeService;->sStartingUp:Z
-
-    .line 458
-    sput-boolean v3, Lcom/android/exchange/ExchangeService;->sStop:Z
-
-    .line 483
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v0, Lcom/android/exchange/ExchangeService;->mPingFoldersMap:Ljava/util/HashMap;
-
-    .line 484
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v0, Lcom/android/exchange/ExchangeService;->mPingHeartBeatIntervalMap:Ljava/util/HashMap;
-
-    .line 488
-    sput-object v2, Lcom/android/exchange/ExchangeService;->elmsvc:Lcom/android/exchange/EasLoadMoreSvc;
-
-    .line 493
-    new-instance v0, Lcom/android/exchange/ExchangeService$AccountList;
-
-    invoke-direct {v0}, Lcom/android/exchange/ExchangeService$AccountList;-><init>()V
-
-    sput-object v0, Lcom/android/exchange/ExchangeService;->EMPTY_ACCOUNT_LIST:Lcom/android/exchange/ExchangeService$AccountList;
-
-    .line 508
-    new-instance v0, Lcom/android/exchange/ExchangeService$1;
-
-    invoke-direct {v0}, Lcom/android/exchange/ExchangeService$1;-><init>()V
-
-    sput-object v0, Lcom/android/exchange/ExchangeService;->sCallbackProxy:Lcom/android/emailcommon/service/IEmailServiceCallback$Stub;
-
-    .line 2826
-    new-instance v0, Lcom/android/exchange/ExchangeService$4;
-
-    invoke-direct {v0}, Lcom/android/exchange/ExchangeService$4;-><init>()V
-
-    sput-object v0, Lcom/android/exchange/ExchangeService;->sConnPerRoute:Lorg/apache/http/conn/params/ConnPerRoute;
-
-    .line 2835
-    new-instance v0, Lcom/android/exchange/ExchangeService$5;
-
-    invoke-direct {v0}, Lcom/android/exchange/ExchangeService$5;-><init>()V
-
-    sput-object v0, Lcom/android/exchange/ExchangeService;->sConnPerPing:Lorg/apache/http/conn/params/ConnPerRoute;
-
-    .line 2841
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lcom/android/exchange/ExchangeService;->THREAD_MAP_LOCK:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .registers 4
+    .registers 3
 
     .prologue
     const/4 v2, 0x0
 
     const/4 v1, 0x0
 
-    .line 168
+    .line 182
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
+
+    .line 184
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lcom/android/exchange/ExchangeService;->sConnectivityLock:Ljava/lang/Object;
+
+    .line 185
+    sput-boolean v1, Lcom/android/exchange/ExchangeService;->sConnectivityHold:Z
+
+    .line 216
+    sput-object v2, Lcom/android/exchange/ExchangeService;->sServiceThread:Ljava/lang/Thread;
+
+    .line 218
+    sput-object v2, Lcom/android/exchange/ExchangeService;->sDeviceId:Ljava/lang/String;
+
+    .line 220
+    sput-object v2, Lcom/android/exchange/ExchangeService;->sClientConnectionManager:Lcom/android/emailcommon/utility/EmailClientConnectionManager;
+
+    .line 222
+    sput v1, Lcom/android/exchange/ExchangeService;->sClientConnectionManagerShutdownCount:I
+
+    .line 224
+    sput-boolean v1, Lcom/android/exchange/ExchangeService;->sStartingUp:Z
+
+    .line 225
+    sput-boolean v1, Lcom/android/exchange/ExchangeService;->sStop:Z
+
+    .line 253
+    new-instance v0, Lcom/android/exchange/ExchangeService$1;
+
+    invoke-direct {v0}, Lcom/android/exchange/ExchangeService$1;-><init>()V
+
+    sput-object v0, Lcom/android/exchange/ExchangeService;->sCallbackProxy:Lcom/android/emailcommon/service/IEmailServiceCallback$Stub;
+
+    .line 1212
+    new-instance v0, Lcom/android/exchange/ExchangeService$4;
+
+    invoke-direct {v0}, Lcom/android/exchange/ExchangeService$4;-><init>()V
+
+    sput-object v0, Lcom/android/exchange/ExchangeService;->sConnPerRoute:Lorg/apache/http/conn/params/ConnPerRoute;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 3
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 105
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 359
-    iput-boolean v2, p0, Lcom/android/exchange/ExchangeService;->mIsNetworkRoaming:Z
-
-    .line 379
+    .line 188
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
 
-    .line 395
+    .line 191
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 398
+    .line 194
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mWakeLocks:Ljava/util/HashMap;
 
-    .line 401
+    .line 196
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mPendingIntents:Ljava/util/HashMap;
 
-    .line 404
+    .line 198
     iput-object v1, p0, Lcom/android/exchange/ExchangeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 410
+    .line 200
+    new-instance v0, Lcom/android/exchange/ExchangeService$AccountList;
+
+    invoke-direct {v0}, Lcom/android/exchange/ExchangeService$AccountList;-><init>()V
+
+    iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
+
+    .line 203
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mHandler:Landroid/os/Handler;
 
-    .line 423
+    .line 209
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mCalendarObservers:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 464
-    iput-boolean v2, p0, Lcom/android/exchange/ExchangeService;->mKicked:Z
+    .line 230
+    const/4 v0, 0x0
 
-    .line 467
+    iput-boolean v0, p0, Lcom/android/exchange/ExchangeService;->mKicked:Z
+
+    .line 233
     iput-object v1, p0, Lcom/android/exchange/ExchangeService;->mConnectivityReceiver:Lcom/android/exchange/ExchangeService$ConnectivityReceiver;
 
-    .line 469
+    .line 234
     iput-object v1, p0, Lcom/android/exchange/ExchangeService;->mBackgroundDataSettingReceiver:Lcom/android/exchange/ExchangeService$ConnectivityReceiver;
 
-    .line 471
+    .line 235
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/exchange/ExchangeService;->mBackgroundData:Z
 
-    .line 474
+    .line 240
     new-instance v0, Landroid/os/RemoteCallbackList;
 
     invoke-direct {v0}, Landroid/os/RemoteCallbackList;-><init>()V
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mCallbackList:Landroid/os/RemoteCallbackList;
 
-    .line 478
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mProvisionErrorExist:Ljava/util/HashMap;
-
-    .line 738
+    .line 330
     new-instance v0, Lcom/android/exchange/ExchangeService$2;
 
     invoke-direct {v0, p0}, Lcom/android/exchange/ExchangeService$2;-><init>(Lcom/android/exchange/ExchangeService;)V
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mBinder:Lcom/android/emailcommon/service/IEmailService$Stub;
 
-    .line 3587
+    .line 1538
     return-void
 .end method
 
@@ -498,62 +310,189 @@
     .parameter "x0"
 
     .prologue
-    .line 168
+    .line 105
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mCallbackList:Landroid/os/RemoteCallbackList;
 
     return-object v0
 .end method
 
-.method static synthetic access$100()Ljava/lang/Object;
+.method static synthetic access$100(Lcom/android/exchange/ExchangeService;Lcom/android/emailcommon/provider/Account;)Z
+    .registers 3
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 105
+    invoke-direct {p0, p1}, Lcom/android/exchange/ExchangeService;->onSyncDisabledHold(Lcom/android/emailcommon/provider/Account;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$1000()V
+    .registers 0
+
+    .prologue
+    .line 105
+    invoke-static {}, Lcom/android/exchange/ExchangeService;->shutdownConnectionManager()V
+
+    return-void
+.end method
+
+.method static synthetic access$1100(Lcom/android/exchange/ExchangeService;)Z
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 105
+    iget-boolean v0, p0, Lcom/android/exchange/ExchangeService;->mBackgroundData:Z
+
+    return v0
+.end method
+
+.method static synthetic access$1102(Lcom/android/exchange/ExchangeService;Z)Z
+    .registers 2
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 105
+    iput-boolean p1, p0, Lcom/android/exchange/ExchangeService;->mBackgroundData:Z
+
+    return p1
+.end method
+
+.method static synthetic access$1200()Z
     .registers 1
 
     .prologue
-    .line 168
-    sget-object v0, Lcom/android/exchange/ExchangeService;->THREAD_MAP_LOCK:Ljava/lang/Object;
+    .line 105
+    sget-boolean v0, Lcom/android/exchange/ExchangeService;->sStartingUp:Z
+
+    return v0
+.end method
+
+.method static synthetic access$1202(Z)Z
+    .registers 1
+    .parameter "x0"
+
+    .prologue
+    .line 105
+    sput-boolean p0, Lcom/android/exchange/ExchangeService;->sStartingUp:Z
+
+    return p0
+.end method
+
+.method static synthetic access$1300()Z
+    .registers 1
+
+    .prologue
+    .line 105
+    sget-boolean v0, Lcom/android/exchange/ExchangeService;->sStop:Z
+
+    return v0
+.end method
+
+.method static synthetic access$1302(Z)Z
+    .registers 1
+    .parameter "x0"
+
+    .prologue
+    .line 105
+    sput-boolean p0, Lcom/android/exchange/ExchangeService;->sStop:Z
+
+    return p0
+.end method
+
+.method static synthetic access$1400()Ljava/lang/String;
+    .registers 1
+
+    .prologue
+    .line 105
+    sget-object v0, Lcom/android/exchange/ExchangeService;->sDeviceId:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method static synthetic access$1000(Lcom/android/exchange/ExchangeService;JZ)V
+.method static synthetic access$1402(Ljava/lang/String;)Ljava/lang/String;
+    .registers 1
+    .parameter "x0"
+
+    .prologue
+    .line 105
+    sput-object p0, Lcom/android/exchange/ExchangeService;->sDeviceId:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method static synthetic access$1500()Ljava/lang/Thread;
+    .registers 1
+
+    .prologue
+    .line 105
+    sget-object v0, Lcom/android/exchange/ExchangeService;->sServiceThread:Ljava/lang/Thread;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1600(Lcom/android/exchange/ExchangeService;JJ)V
+    .registers 5
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+
+    .prologue
+    .line 105
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/exchange/ExchangeService;->setAlarm(JJ)V
+
+    return-void
+.end method
+
+.method static synthetic access$200(Lcom/android/exchange/ExchangeService;Lcom/android/emailcommon/provider/Account;)Z
+    .registers 3
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 105
+    invoke-direct {p0, p1}, Lcom/android/exchange/ExchangeService;->onSecurityHold(Lcom/android/emailcommon/provider/Account;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$300()Lcom/android/emailcommon/service/IEmailServiceCallback$Stub;
+    .registers 1
+
+    .prologue
+    .line 105
+    sget-object v0, Lcom/android/exchange/ExchangeService;->sCallbackProxy:Lcom/android/emailcommon/service/IEmailServiceCallback$Stub;
+
+    return-object v0
+.end method
+
+.method static synthetic access$400(Lcom/android/exchange/ExchangeService;JZ)V
     .registers 4
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
 
     .prologue
-    .line 168
+    .line 105
     invoke-direct {p0, p1, p2, p3}, Lcom/android/exchange/ExchangeService;->stopAccountSyncs(JZ)V
 
     return-void
 .end method
 
-.method static synthetic access$1100(Lcom/android/exchange/ExchangeService;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/android/exchange/SearchRequest;
-    .registers 9
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-    .parameter "x3"
-    .parameter "x4"
-    .parameter "x5"
-    .parameter "x6"
-    .parameter "x7"
-
-    .prologue
-    .line 168
-    invoke-direct/range {p0 .. p7}, Lcom/android/exchange/ExchangeService;->buildSearchRequest(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/android/exchange/SearchRequest;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic access$1200(Landroid/content/Context;Lcom/android/exchange/ExchangeService$AccountList;)Lcom/android/exchange/ExchangeService$AccountList;
+.method static synthetic access$500(Landroid/content/Context;Lcom/android/exchange/ExchangeService$AccountList;)Lcom/android/exchange/ExchangeService$AccountList;
     .registers 3
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 168
+    .line 105
     invoke-static {p0, p1}, Lcom/android/exchange/ExchangeService;->collectEasAccounts(Landroid/content/Context;Lcom/android/exchange/ExchangeService$AccountList;)Lcom/android/exchange/ExchangeService$AccountList;
 
     move-result-object v0
@@ -561,423 +500,132 @@
     return-object v0
 .end method
 
-.method static synthetic access$1400(Lcom/android/exchange/ExchangeService;)Landroid/content/ContentResolver;
+.method static synthetic access$700(Lcom/android/exchange/ExchangeService;)Landroid/content/ContentResolver;
     .registers 2
     .parameter "x0"
 
     .prologue
-    .line 168
+    .line 105
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mResolver:Landroid/content/ContentResolver;
 
     return-object v0
 .end method
 
-.method static synthetic access$1500(Lcom/android/exchange/ExchangeService;J)V
-    .registers 3
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 168
-    invoke-direct {p0, p1, p2}, Lcom/android/exchange/ExchangeService;->stopPing(J)V
-
-    return-void
-.end method
-
-.method static synthetic access$1600(Lcom/android/exchange/ExchangeService;)V
-    .registers 1
-    .parameter "x0"
-
-    .prologue
-    .line 168
-    invoke-direct {p0}, Lcom/android/exchange/ExchangeService;->checkPIMSyncSettings()V
-
-    return-void
-.end method
-
-.method static synthetic access$1700(Lcom/android/exchange/ExchangeService;Landroid/content/Context;)V
-    .registers 2
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 168
-    invoke-direct {p0, p1}, Lcom/android/exchange/ExchangeService;->runAccountReconcilerSync(Landroid/content/Context;)V
-
-    return-void
-.end method
-
-.method static synthetic access$1800(Lcom/android/exchange/ExchangeService;J)V
-    .registers 3
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 168
-    invoke-direct {p0, p1, p2}, Lcom/android/exchange/ExchangeService;->releaseMailbox(J)V
-
-    return-void
-.end method
-
-.method static synthetic access$1900(Lcom/android/exchange/ExchangeService;)Z
-    .registers 2
-    .parameter "x0"
-
-    .prologue
-    .line 168
-    iget-boolean v0, p0, Lcom/android/exchange/ExchangeService;->mBackgroundData:Z
-
-    return v0
-.end method
-
-.method static synthetic access$1902(Lcom/android/exchange/ExchangeService;Z)Z
-    .registers 2
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 168
-    iput-boolean p1, p0, Lcom/android/exchange/ExchangeService;->mBackgroundData:Z
-
-    return p1
-.end method
-
-.method static synthetic access$200()Ljava/util/HashMap;
+.method static synthetic access$800()Ljava/lang/Object;
     .registers 1
 
     .prologue
-    .line 168
-    sget-object v0, Lcom/android/exchange/ExchangeService;->mThreadIdMap:Ljava/util/HashMap;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2000(Lcom/android/exchange/ExchangeService;)Z
-    .registers 2
-    .parameter "x0"
-
-    .prologue
-    .line 168
-    iget-boolean v0, p0, Lcom/android/exchange/ExchangeService;->mIsNetworkRoaming:Z
-
-    return v0
-.end method
-
-.method static synthetic access$2002(Lcom/android/exchange/ExchangeService;Z)Z
-    .registers 2
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 168
-    iput-boolean p1, p0, Lcom/android/exchange/ExchangeService;->mIsNetworkRoaming:Z
-
-    return p1
-.end method
-
-.method static synthetic access$2100(Lcom/android/exchange/ExchangeService;)I
-    .registers 2
-    .parameter "x0"
-
-    .prologue
-    .line 168
-    iget v0, p0, Lcom/android/exchange/ExchangeService;->mNetworkState:I
-
-    return v0
-.end method
-
-.method static synthetic access$2102(Lcom/android/exchange/ExchangeService;I)I
-    .registers 2
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 168
-    iput p1, p0, Lcom/android/exchange/ExchangeService;->mNetworkState:I
-
-    return p1
-.end method
-
-.method static synthetic access$2200(Lcom/android/exchange/ExchangeService;)V
-    .registers 1
-    .parameter "x0"
-
-    .prologue
-    .line 168
-    invoke-direct {p0}, Lcom/android/exchange/ExchangeService;->updateAccountDb()V
-
-    return-void
-.end method
-
-.method static synthetic access$2300()Z
-    .registers 1
-
-    .prologue
-    .line 168
-    sget-boolean v0, Lcom/android/exchange/ExchangeService;->sStartingUp:Z
-
-    return v0
-.end method
-
-.method static synthetic access$2302(Z)Z
-    .registers 1
-    .parameter "x0"
-
-    .prologue
-    .line 168
-    sput-boolean p0, Lcom/android/exchange/ExchangeService;->sStartingUp:Z
-
-    return p0
-.end method
-
-.method static synthetic access$2400()Z
-    .registers 1
-
-    .prologue
-    .line 168
-    sget-boolean v0, Lcom/android/exchange/ExchangeService;->sStop:Z
-
-    return v0
-.end method
-
-.method static synthetic access$2402(Z)Z
-    .registers 1
-    .parameter "x0"
-
-    .prologue
-    .line 168
-    sput-boolean p0, Lcom/android/exchange/ExchangeService;->sStop:Z
-
-    return p0
-.end method
-
-.method static synthetic access$2500()Ljava/lang/String;
-    .registers 1
-
-    .prologue
-    .line 168
-    sget-object v0, Lcom/android/exchange/ExchangeService;->sDeviceId:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2502(Ljava/lang/String;)Ljava/lang/String;
-    .registers 1
-    .parameter "x0"
-
-    .prologue
-    .line 168
-    sput-object p0, Lcom/android/exchange/ExchangeService;->sDeviceId:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method static synthetic access$2600()Ljava/lang/Thread;
-    .registers 1
-
-    .prologue
-    .line 168
-    sget-object v0, Lcom/android/exchange/ExchangeService;->sServiceThread:Ljava/lang/Thread;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2700(Lcom/android/exchange/ExchangeService;JJ)V
-    .registers 5
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-
-    .prologue
-    .line 168
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/exchange/ExchangeService;->setAlarm(JJ)V
-
-    return-void
-.end method
-
-.method static synthetic access$300()Ljava/lang/String;
-    .registers 1
-
-    .prologue
-    .line 168
-    sget-object v0, Lcom/android/exchange/ExchangeService;->sLicenseKey:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic access$302(Ljava/lang/String;)Ljava/lang/String;
-    .registers 1
-    .parameter "x0"
-
-    .prologue
-    .line 168
-    sput-object p0, Lcom/android/exchange/ExchangeService;->sLicenseKey:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method static synthetic access$400()Lcom/android/emailcommon/service/IEmailServiceCallback$Stub;
-    .registers 1
-
-    .prologue
-    .line 168
-    sget-object v0, Lcom/android/exchange/ExchangeService;->sCallbackProxy:Lcom/android/emailcommon/service/IEmailServiceCallback$Stub;
-
-    return-object v0
-.end method
-
-.method static synthetic access$500()Ljava/lang/Object;
-    .registers 1
-
-    .prologue
-    .line 168
+    .line 105
     sget-object v0, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method static synthetic access$600(Lcom/android/exchange/ExchangeService;Landroid/content/Context;IJ)V
-    .registers 5
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-    .parameter "x3"
-
-    .prologue
-    .line 168
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/exchange/ExchangeService;->releaseSyncHoldMailbox(Landroid/content/Context;IJ)V
-
-    return-void
-.end method
-
-.method static synthetic access$700(Lcom/android/exchange/ExchangeService;J)Ljava/lang/Long;
-    .registers 4
+.method static synthetic access$900(Lcom/android/exchange/ExchangeService;J)V
+    .registers 3
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 168
-    invoke-direct {p0, p1, p2}, Lcom/android/exchange/ExchangeService;->getMailBoxIdRIC(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic access$800(Lcom/android/exchange/ExchangeService;)Ljava/util/HashMap;
-    .registers 2
-    .parameter "x0"
-
-    .prologue
-    .line 168
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
-
-    return-object v0
-.end method
-
-.method static synthetic access$900(Lcom/android/exchange/ExchangeService;Lcom/android/emailcommon/provider/EmailContent$Mailbox;ILcom/android/exchange/Request;)V
-    .registers 4
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-    .parameter "x3"
-
-    .prologue
-    .line 168
-    invoke-direct {p0, p1, p2, p3}, Lcom/android/exchange/ExchangeService;->requestSync(Lcom/android/emailcommon/provider/EmailContent$Mailbox;ILcom/android/exchange/Request;)V
+    .line 105
+    invoke-direct {p0, p1, p2}, Lcom/android/exchange/ExchangeService;->releaseMailbox(J)V
 
     return-void
 .end method
 
 .method private acquireWakeLock(J)V
-    .registers 7
-    .parameter
+    .registers 9
+    .parameter "id"
 
     .prologue
-    .line 3297
-    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mWakeLocks:Ljava/util/HashMap;
+    .line 1367
+    iget-object v3, p0, Lcom/android/exchange/ExchangeService;->mWakeLocks:Ljava/util/HashMap;
 
-    monitor-enter v1
+    monitor-enter v3
 
-    .line 3298
+    .line 1368
     :try_start_3
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mWakeLocks:Ljava/util/HashMap;
+    iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mWakeLocks:Ljava/util/HashMap;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-virtual {v0, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/Boolean;
 
-    .line 3299
+    .line 1369
+    .local v0, lock:Ljava/lang/Boolean;
     if-nez v0, :cond_39
 
-    .line 3300
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
+    .line 1370
+    iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    if-nez v0, :cond_2b
+    if-nez v2, :cond_2b
 
-    .line 3301
-    const-string v0, "power"
+    .line 1371
+    const-string v2, "power"
 
-    invoke-virtual {p0, v0}, Lcom/android/exchange/ExchangeService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v2}, Lcom/android/exchange/ExchangeService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Landroid/os/PowerManager;
+    check-cast v1, Landroid/os/PowerManager;
 
-    .line 3302
+    .line 1372
+    .local v1, pm:Landroid/os/PowerManager;
     const/4 v2, 0x1
 
-    const-string v3, "MAIL_SERVICE"
+    const-string v4, "MAIL_SERVICE"
 
-    invoke-virtual {v0, v2, v3}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-
-    .line 3303
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-
-    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
-
-    .line 3306
-    :cond_2b
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mWakeLocks:Ljava/util/HashMap;
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v1, v2, v4}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v2
 
-    const/4 v3, 0x1
+    iput-object v2, p0, Lcom/android/exchange/ExchangeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    .line 1373
+    iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    move-result-object v3
+    invoke-virtual {v2}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 1376
+    .end local v1           #pm:Landroid/os/PowerManager;
+    :cond_2b
+    iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mWakeLocks:Ljava/util/HashMap;
 
-    .line 3308
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    const/4 v5, 0x1
+
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v5
+
+    invoke-virtual {v2, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1378
     :cond_39
-    monitor-exit v1
+    monitor-exit v3
 
-    .line 3309
+    .line 1379
     return-void
 
-    .line 3308
+    .line 1378
+    .end local v0           #lock:Ljava/lang/Boolean;
     :catchall_3b
-    move-exception v0
+    move-exception v2
 
-    monitor-exit v1
+    monitor-exit v3
     :try_end_3d
     .catchall {:try_start_3 .. :try_end_3d} :catchall_3b
 
-    throw v0
+    throw v2
 .end method
 
 .method public static alert(Landroid/content/Context;J)V
@@ -986,39 +634,39 @@
     .parameter
 
     .prologue
-    .line 3421
+    .line 1483
     sget-object v2, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 3422
+    .line 1484
     invoke-static {}, Lcom/android/exchange/ExchangeService;->checkExchangeServiceServiceRunning()V
 
-    .line 3423
+    .line 1485
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
     if-gez v0, :cond_16
 
-    .line 3424
+    .line 1486
     const-string v0, "ExchangeService alert"
 
     invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
-    .line 3425
+    .line 1487
     const-string v0, "ping ExchangeService"
 
     invoke-static {v0}, Lcom/android/exchange/ExchangeService;->kick(Ljava/lang/String;)V
 
-    .line 3500
+    .line 1536
     :cond_15
     :goto_15
     return-void
 
-    .line 3426
+    .line 1488
     :cond_16
     if-nez v2, :cond_23
 
-    .line 3427
+    .line 1489
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/exchange/ExchangeService;
@@ -1029,38 +677,8 @@
 
     goto :goto_15
 
-    .line 3430
+    .line 1491
     :cond_23
-    sget-wide v0, Lcom/android/exchange/ExchangeService;->MAILBOX_DUMMY_MIN:J
-
-    cmp-long v0, p1, v0
-
-    if-lez v0, :cond_3f
-
-    sget-wide v0, Lcom/android/exchange/ExchangeService;->MAILBOX_DUMMY_MAX:J
-
-    cmp-long v0, p1, v0
-
-    if-gez v0, :cond_3f
-
-    .line 3431
-    const-string v0, "ExchangeService Alert: Out of Band"
-
-    .line 3432
-    new-instance v1, Ljava/lang/Thread;
-
-    new-instance v3, Lcom/android/exchange/ExchangeService$6;
-
-    invoke-direct {v3, p1, p2, v2}, Lcom/android/exchange/ExchangeService$6;-><init>(JLcom/android/exchange/ExchangeService;)V
-
-    invoke-direct {v1, v3, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
-
-    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
-
-    goto :goto_15
-
-    .line 3444
-    :cond_3f
     iget-object v0, v2, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1073,18 +691,18 @@
 
     check-cast v0, Lcom/android/exchange/AbstractSyncService;
 
-    .line 3445
+    .line 1492
     if-eqz v0, :cond_15
 
-    .line 3450
+    .line 1495
     const-string v1, "ExchangeService Alert: "
 
-    .line 3451
-    iget-object v3, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    .line 1496
+    iget-object v3, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/Mailbox;
 
-    if-eqz v3, :cond_68
+    if-eqz v3, :cond_4c
 
-    .line 3452
+    .line 1497
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1093,9 +711,9 @@
 
     move-result-object v1
 
-    iget-object v3, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    iget-object v3, v0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/Mailbox;
 
-    iget-object v3, v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
+    iget-object v3, v3, Lcom/android/emailcommon/provider/Mailbox;->mDisplayName:Ljava/lang/String;
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1105,13 +723,13 @@
 
     move-result-object v1
 
-    .line 3454
-    :cond_68
+    .line 1499
+    :cond_4c
     new-instance v3, Ljava/lang/Thread;
 
-    new-instance v4, Lcom/android/exchange/ExchangeService$7;
+    new-instance v4, Lcom/android/exchange/ExchangeService$5;
 
-    invoke-direct {v4, v2, p1, p2, v0}, Lcom/android/exchange/ExchangeService$7;-><init>(Lcom/android/exchange/ExchangeService;JLcom/android/exchange/AbstractSyncService;)V
+    invoke-direct {v4, v2, p1, p2, v0}, Lcom/android/exchange/ExchangeService$5;-><init>(Lcom/android/exchange/ExchangeService;JLcom/android/exchange/AbstractSyncService;)V
 
     invoke-direct {v3, v4, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
@@ -1125,725 +743,121 @@
     .parameter "str"
 
     .prologue
-    .line 2574
-    sget-boolean v0, Lcom/android/emailcommon/EasRefs;->USER_LOG:Z
+    .line 1185
+    sget-boolean v0, Lcom/android/exchange/Eas;->USER_LOG:Z
 
     if-nez v0, :cond_a
 
-    .line 2575
+    .line 1186
     const-string v0, "ExchangeService"
 
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2579
+    .line 1190
     :goto_9
     return-void
 
-    .line 2577
+    .line 1188
     :cond_a
     invoke-static {p0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
     goto :goto_9
 .end method
 
-.method public static blockDevice(JI)V
-    .registers 7
-    .parameter
-    .parameter
-
-    .prologue
-    .line 3085
-    sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    .line 3086
-    if-eqz v0, :cond_23
-
-    .line 3087
-    sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    invoke-static {v0, p0, p1}, Lcom/android/emailcommon/provider/EmailContent$Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    move-result-object v0
-
-    .line 3088
-    if-eqz v0, :cond_23
-
-    iget v1, v0, Lcom/android/emailcommon/provider/EmailContent$Account;->mdeviceBlockedType:I
-
-    if-eq v1, p2, :cond_23
-
-    .line 3089
-    new-instance v1, Landroid/content/ContentValues;
-
-    invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
-
-    .line 3090
-    const-string v2, "deviceBlockedType"
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 3091
-    sget-object v2, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    invoke-virtual {v0, v2, v1}, Lcom/android/emailcommon/provider/EmailContent$Account;->update(Landroid/content/Context;Landroid/content/ContentValues;)I
-
-    .line 3094
-    :cond_23
-    return-void
-.end method
-
-.method private buildSearchRequest(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/android/exchange/SearchRequest;
-    .registers 23
-    .parameter "accountIdString"
-    .parameter "searchTextString"
-    .parameter "greaterThanDateString"
-    .parameter "lessThanDateString"
-    .parameter "mailboxIdString"
-    .parameter "optionsDeepTraversalStr"
-    .parameter "conversationIdStr"
-
-    .prologue
-    .line 1445
-    new-instance v4, Lcom/android/exchange/SearchRequest$Builder;
-
-    invoke-direct {v4}, Lcom/android/exchange/SearchRequest$Builder;-><init>()V
-
-    .line 1446
-    .local v4, builder:Lcom/android/exchange/SearchRequest$Builder;
-    const-string v11, "ExchangeProvider"
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v13, " MailboxString ="
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    move-object/from16 v0, p5
-
-    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v11, v12}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1449
-    const/4 v1, 0x0
-
-    .line 1450
-    .local v1, a:Lcom/android/emailcommon/provider/EmailContent$Account;
-    const-wide/16 v2, -0x1
-
-    .line 1451
-    .local v2, accId:J
-    const/4 v10, 0x0
-
-    .line 1452
-    .local v10, truncation_size:I
-    :try_start_23
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v11}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    .line 1453
-    invoke-static {}, Lcom/android/exchange/ExchangeService;->getContext()Landroid/content/Context;
-
-    move-result-object v11
-
-    invoke-static {v11, v2, v3}, Lcom/android/emailcommon/provider/EmailContent$Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    move-result-object v1
-
-    .line 1454
-    if-eqz v1, :cond_1b4
-
-    .line 1455
-    invoke-virtual {v1}, Lcom/android/emailcommon/provider/EmailContent$Account;->getEmailSize()B
-
-    move-result v11
-
-    invoke-static {v11}, Lcom/android/emailcommon/EasRefs$EmailDataSize;->parse(B)Lcom/android/emailcommon/EasRefs$EmailDataSize;
-
-    move-result-object v11
-
-    sget-object v12, Lcom/android/emailcommon/EasRefs$EmailDataSize;->ALL:Lcom/android/emailcommon/EasRefs$EmailDataSize;
-
-    if-eq v11, v12, :cond_1b1
-
-    .line 1456
-    invoke-virtual {v1}, Lcom/android/emailcommon/provider/EmailContent$Account;->getEmailSize()B
-
-    move-result v11
-
-    invoke-static {v11}, Lcom/android/emailcommon/EasRefs$EmailDataSize;->parse(B)Lcom/android/emailcommon/EasRefs$EmailDataSize;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Lcom/android/emailcommon/EasRefs$EmailDataSize;->toEas12Value()I
-
-    move-result v10
-
-    .line 1457
-    const-string v11, "ExchangeProvider"
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v13, "Jane: Email Size = "
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v1}, Lcom/android/emailcommon/provider/EmailContent$Account;->getEmailSize()B
-
-    move-result v13
-
-    invoke-static {v13}, Lcom/android/emailcommon/EasRefs$EmailDataSize;->parse(B)Lcom/android/emailcommon/EasRefs$EmailDataSize;
-
-    move-result-object v13
-
-    invoke-virtual {v13}, Lcom/android/emailcommon/EasRefs$EmailDataSize;->toEas12Text()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1464
-    :goto_71
-    const/16 v10, 0x34
-
-    .line 1466
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v11}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v11
-
-    invoke-virtual {v4, v11, v12}, Lcom/android/exchange/SearchRequest$Builder;->accountId(J)Lcom/android/exchange/SearchRequest$Builder;
-
-    move-result-object v11
-
-    sget-object v12, Lcom/android/exchange/SearchRequest$StoreName;->MAILBOX:Lcom/android/exchange/SearchRequest$StoreName;
-
-    invoke-virtual {v11, v12}, Lcom/android/exchange/SearchRequest$Builder;->storeName(Lcom/android/exchange/SearchRequest$StoreName;)Lcom/android/exchange/SearchRequest$Builder;
-
-    move-result-object v11
-
-    sget-object v12, Lcom/android/exchange/SearchRequest$QueryClass;->EMAIL:Lcom/android/exchange/SearchRequest$QueryClass;
-
-    invoke-virtual {v11, v12}, Lcom/android/exchange/SearchRequest$Builder;->queryClass(Lcom/android/exchange/SearchRequest$QueryClass;)Lcom/android/exchange/SearchRequest$Builder;
-
-    move-result-object v11
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v11, v0}, Lcom/android/exchange/SearchRequest$Builder;->queryFreeText(Ljava/lang/String;)Lcom/android/exchange/SearchRequest$Builder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Lcom/android/exchange/SearchRequest$Builder;->optionsRebuildResults()Lcom/android/exchange/SearchRequest$Builder;
-
-    move-result-object v11
-
-    const/4 v12, 0x0
-
-    const/16 v13, 0x3e7
-
-    invoke-virtual {v11, v12, v13}, Lcom/android/exchange/SearchRequest$Builder;->optionsRange(II)Lcom/android/exchange/SearchRequest$Builder;
-
-    move-result-object v11
-
-    sget-object v12, Lcom/android/exchange/SearchRequest$BodyPreferenceType;->PLAIN_TEXT:Lcom/android/exchange/SearchRequest$BodyPreferenceType;
-
-    invoke-virtual {v11, v12}, Lcom/android/exchange/SearchRequest$Builder;->optionsBodyPreferenceType(Lcom/android/exchange/SearchRequest$BodyPreferenceType;)Lcom/android/exchange/SearchRequest$Builder;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v10}, Lcom/android/exchange/SearchRequest$Builder;->optionsBodyPreferenceTruncationSize(I)Lcom/android/exchange/SearchRequest$Builder;
-
-    move-result-object v11
-
-    sget-object v12, Lcom/android/exchange/SearchRequest$OptionsMIMESupport;->SEND_DATA_FOR_ALL_MSGS:Lcom/android/exchange/SearchRequest$OptionsMIMESupport;
-
-    invoke-virtual {v11, v12}, Lcom/android/exchange/SearchRequest$Builder;->optionsMIMESupport(Lcom/android/exchange/SearchRequest$OptionsMIMESupport;)Lcom/android/exchange/SearchRequest$Builder;
-
-    move-result-object v11
-
-    move-object/from16 v0, p7
-
-    invoke-virtual {v11, v0}, Lcom/android/exchange/SearchRequest$Builder;->queryConvId(Ljava/lang/String;)Lcom/android/exchange/SearchRequest$Builder;
-
-    .line 1482
-    invoke-virtual/range {p6 .. p6}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v11
-
-    const-string v12, "True"
-
-    invoke-virtual {v11, v12}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result v11
-
-    if-nez v11, :cond_c0
-
-    .line 1483
-    invoke-virtual {v4}, Lcom/android/exchange/SearchRequest$Builder;->optionsDeepTraversal()Lcom/android/exchange/SearchRequest$Builder;
-
-    .line 1485
-    :cond_c0
-    invoke-virtual/range {p3 .. p3}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v11
-
-    const-string v12, "NoneDate"
-
-    invoke-virtual {v11, v12}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result v11
-
-    if-eqz v11, :cond_f9
-
-    .line 1486
-    new-instance v8, Ljava/text/SimpleDateFormat;
-
-    const-string v11, "dd/MM/yyyy hh:mm:ss a"
-
-    invoke-direct {v8, v11}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
-    :try_end_d3
-    .catch Ljava/lang/NumberFormatException; {:try_start_23 .. :try_end_d3} :catch_1c1
-
-    .line 1487
-    .local v8, formatter:Ljava/text/SimpleDateFormat;
-    const/4 v6, 0x0
-
-    .line 1489
-    .local v6, date:Ljava/util/Date;
-    :try_start_d4
-    invoke-virtual/range {p3 .. p3}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v8, v11}, Ljava/text/SimpleDateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
-
-    move-result-object v6
-
-    .line 1490
-    const-string v11, "ExchangeProvider"
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v13, "reaterThanDate = "
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_f6
-    .catch Ljava/lang/Exception; {:try_start_d4 .. :try_end_f6} :catch_1b8
-    .catch Ljava/lang/NumberFormatException; {:try_start_d4 .. :try_end_f6} :catch_1c1
-
-    .line 1494
-    :try_start_f6
-    invoke-virtual {v4, v6}, Lcom/android/exchange/SearchRequest$Builder;->queryGreaterThan(Ljava/util/Date;)Lcom/android/exchange/SearchRequest$Builder;
-
-    .line 1496
-    .end local v6           #date:Ljava/util/Date;
-    .end local v8           #formatter:Ljava/text/SimpleDateFormat;
-    :cond_f9
-    invoke-virtual/range {p4 .. p4}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v11
-
-    const-string v12, "NoneDate"
-
-    invoke-virtual {v11, v12}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result v11
-
-    if-eqz v11, :cond_175
-
-    .line 1497
-    new-instance v8, Ljava/text/SimpleDateFormat;
-
-    const-string v11, "dd/MM/yyyy hh:mm:ss a"
-
-    invoke-direct {v8, v11}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
-    :try_end_10c
-    .catch Ljava/lang/NumberFormatException; {:try_start_f6 .. :try_end_10c} :catch_1c1
-
-    .line 1498
-    .restart local v8       #formatter:Ljava/text/SimpleDateFormat;
-    const/4 v6, 0x0
-
-    .line 1500
-    .restart local v6       #date:Ljava/util/Date;
-    :try_start_10d
-    invoke-virtual/range {p4 .. p4}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v8, v11}, Ljava/text/SimpleDateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
-
-    move-result-object v6
-
-    .line 1503
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
-
-    move-result-object v5
-
-    .line 1504
-    .local v5, cal:Ljava/util/Calendar;
-    invoke-virtual {v5, v6}, Ljava/util/Calendar;->setTime(Ljava/util/Date;)V
-
-    .line 1505
-    sget-object v11, Ljava/lang/System;->out:Ljava/io/PrintStream;
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v13, " LESS Hours "
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    const/16 v13, 0xb
-
-    invoke-virtual {v5, v13}, Ljava/util/Calendar;->get(I)I
-
-    move-result v13
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-virtual {v11, v12}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
-
-    .line 1506
-    sget-object v11, Ljava/lang/System;->out:Ljava/io/PrintStream;
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v13, " LESS mIN "
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    const/16 v13, 0xc
-
-    invoke-virtual {v5, v13}, Ljava/util/Calendar;->get(I)I
-
-    move-result v13
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-virtual {v11, v12}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
-
-    .line 1507
-    const-string v11, "ExchangeProvider"
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v13, "lessThanDate = "
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    move-object/from16 v0, p4
-
-    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_172
-    .catch Ljava/lang/Exception; {:try_start_10d .. :try_end_172} :catch_1ca
-    .catch Ljava/lang/NumberFormatException; {:try_start_10d .. :try_end_172} :catch_1c1
-
-    .line 1511
-    :try_start_172
-    invoke-virtual {v4, v6}, Lcom/android/exchange/SearchRequest$Builder;->queryLessThan(Ljava/util/Date;)Lcom/android/exchange/SearchRequest$Builder;
-
-    .line 1513
-    .end local v5           #cal:Ljava/util/Calendar;
-    .end local v6           #date:Ljava/util/Date;
-    .end local v8           #formatter:Ljava/text/SimpleDateFormat;
-    :cond_175
-    invoke-virtual/range {p5 .. p5}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v11
-
-    const-string v12, "NoneId"
-
-    invoke-virtual {v11, v12}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result v11
-
-    if-eqz v11, :cond_1ac
-
-    .line 1514
-    const-string v11, "ExchangeProvider"
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v13, " MailboxString ="
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    move-object/from16 v0, p5
-
-    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v11, v12}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1515
-    const/4 v11, 0x1
-
-    new-array v11, v11, [J
-
-    const/4 v12, 0x0
-
-    invoke-virtual/range {p5 .. p5}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-static {v13}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v13
-
-    aput-wide v13, v11, v12
-
-    invoke-virtual {v4, v11}, Lcom/android/exchange/SearchRequest$Builder;->queryCollectionIds([J)Lcom/android/exchange/SearchRequest$Builder;
-    :try_end_1ac
-    .catch Ljava/lang/NumberFormatException; {:try_start_172 .. :try_end_1ac} :catch_1c1
-
-    .line 1522
-    :cond_1ac
-    invoke-virtual {v4}, Lcom/android/exchange/SearchRequest$Builder;->build()Lcom/android/exchange/SearchRequest;
-
-    move-result-object v9
-
-    .line 1523
-    .local v9, searchRequest:Lcom/android/exchange/SearchRequest;
-    return-object v9
-
-    .line 1461
-    .end local v9           #searchRequest:Lcom/android/exchange/SearchRequest;
-    :cond_1b1
-    const/4 v10, -0x1
-
-    goto/16 :goto_71
-
-    .line 1463
-    :cond_1b4
-    const/16 v10, 0x400
-
-    goto/16 :goto_71
-
-    .line 1491
-    .restart local v6       #date:Ljava/util/Date;
-    .restart local v8       #formatter:Ljava/text/SimpleDateFormat;
-    :catch_1b8
-    move-exception v7
-
-    .line 1492
-    .local v7, e:Ljava/lang/Exception;
-    :try_start_1b9
-    new-instance v11, Ljava/lang/IllegalArgumentException;
-
-    const-string v12, "Illegal value in Uri Date"
-
-    invoke-direct {v11, v12}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v11
-    :try_end_1c1
-    .catch Ljava/lang/NumberFormatException; {:try_start_1b9 .. :try_end_1c1} :catch_1c1
-
-    .line 1519
-    .end local v6           #date:Ljava/util/Date;
-    .end local v7           #e:Ljava/lang/Exception;
-    .end local v8           #formatter:Ljava/text/SimpleDateFormat;
-    :catch_1c1
-    move-exception v7
-
-    .line 1520
-    .local v7, e:Ljava/lang/NumberFormatException;
-    new-instance v11, Ljava/lang/IllegalArgumentException;
-
-    const-string v12, "Illegal value in URI"
-
-    invoke-direct {v11, v12}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v11
-
-    .line 1508
-    .end local v7           #e:Ljava/lang/NumberFormatException;
-    .restart local v6       #date:Ljava/util/Date;
-    .restart local v8       #formatter:Ljava/text/SimpleDateFormat;
-    :catch_1ca
-    move-exception v7
-
-    .line 1509
-    .local v7, e:Ljava/lang/Exception;
-    :try_start_1cb
-    new-instance v11, Ljava/lang/IllegalArgumentException;
-
-    const-string v12, "Illegal value in Uri Date"
-
-    invoke-direct {v11, v12}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v11
-    :try_end_1d3
-    .catch Ljava/lang/NumberFormatException; {:try_start_1cb .. :try_end_1d3} :catch_1c1
-.end method
-
 .method public static callback()Lcom/android/emailcommon/service/IEmailServiceCallback;
     .registers 1
 
     .prologue
-    .line 2226
+    .line 1018
     sget-object v0, Lcom/android/exchange/ExchangeService;->sCallbackProxy:Lcom/android/emailcommon/service/IEmailServiceCallback$Stub;
 
     return-object v0
 .end method
 
-.method static canAutoSync(Lcom/android/emailcommon/provider/EmailContent$Account;)Z
-    .registers 6
+.method static canAutoSync(Lcom/android/emailcommon/provider/Account;)Z
+    .registers 9
     .parameter "account"
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v5, 0x0
 
-    .line 4259
-    if-nez p0, :cond_4
-
-    .line 4275
-    :cond_3
-    :goto_3
-    return v2
-
-    .line 4262
-    :cond_4
+    .line 2076
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 4263
+    .line 2077
     .local v0, exchangeService:Lcom/android/exchange/ExchangeService;
-    if-eqz v0, :cond_3
+    if-nez v0, :cond_6
 
-    .line 4266
+    .line 2097
+    :cond_5
+    :goto_5
+    return v5
+
+    .line 2080
+    :cond_6
     iget-object v1, v0, Lcom/android/exchange/ExchangeService;->mNetworkInfo:Landroid/net/NetworkInfo;
 
-    .line 4268
+    .line 2083
     .local v1, networkInfo:Landroid/net/NetworkInfo;
-    iget-object v3, p0, Lcom/android/emailcommon/provider/EmailContent$Account;->mPolicySet:Lcom/android/emailcommon/service/PolicySet;
+    iget-wide v3, p0, Lcom/android/emailcommon/provider/Account;->mPolicyKey:J
 
-    if-nez v3, :cond_16
+    .line 2085
+    .local v3, policyKey:J
+    const-wide/16 v6, 0x0
 
-    .line 4269
-    iget-wide v3, p0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    cmp-long v6, v3, v6
 
-    invoke-static {v0, v3, v4}, Lcom/android/exchange/SecurityPolicyDelegate;->getAccountPolicy(Landroid/content/Context;J)Lcom/android/emailcommon/service/PolicySet;
+    if-eqz v6, :cond_34
 
-    move-result-object v3
+    if-eqz v1, :cond_34
 
-    iput-object v3, p0, Lcom/android/emailcommon/provider/EmailContent$Account;->mPolicySet:Lcom/android/emailcommon/service/PolicySet;
+    invoke-virtual {v1}, Landroid/net/NetworkInfo;->getType()I
 
-    .line 4271
-    :cond_16
-    iget-object v3, p0, Lcom/android/emailcommon/provider/EmailContent$Account;->mPolicySet:Lcom/android/emailcommon/service/PolicySet;
+    move-result v6
 
-    if-eqz v3, :cond_28
+    invoke-static {v6}, Landroid/net/ConnectivityManager;->isNetworkTypeMobile(I)Z
 
-    iget-object v3, p0, Lcom/android/emailcommon/provider/EmailContent$Account;->mPolicySet:Lcom/android/emailcommon/service/PolicySet;
+    move-result v6
 
-    iget-boolean v3, v3, Lcom/android/emailcommon/service/PolicySet;->mRequireManualSyncWhenRoaming:Z
+    if-eqz v6, :cond_34
 
-    if-eqz v3, :cond_28
+    .line 2088
+    iget-object v2, p0, Lcom/android/emailcommon/provider/Account;->mPolicy:Lcom/android/emailcommon/provider/Policy;
 
-    if-eqz v1, :cond_28
+    .line 2089
+    .local v2, policy:Lcom/android/emailcommon/provider/Policy;
+    if-nez v2, :cond_28
+
+    .line 2090
+    sget-object v6, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
+
+    invoke-static {v6, v3, v4}, Lcom/android/emailcommon/provider/Policy;->restorePolicyWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Policy;
+
+    move-result-object v2
+
+    .line 2091
+    iput-object v2, p0, Lcom/android/emailcommon/provider/Account;->mPolicy:Lcom/android/emailcommon/provider/Policy;
+
+    .line 2093
+    :cond_28
+    if-eqz v2, :cond_34
+
+    iget-boolean v6, v2, Lcom/android/emailcommon/provider/Policy;->mRequireManualSyncWhenRoaming:Z
+
+    if-eqz v6, :cond_34
 
     invoke-virtual {v1}, Landroid/net/NetworkInfo;->isRoaming()Z
 
-    move-result v3
+    move-result v6
 
-    if-nez v3, :cond_3
+    if-nez v6, :cond_5
 
-    .line 4275
-    :cond_28
-    const/4 v2, 0x1
+    .line 2097
+    .end local v2           #policy:Lcom/android/emailcommon/provider/Policy;
+    :cond_34
+    const/4 v5, 0x1
 
-    goto :goto_3
+    goto :goto_5
 .end method
 
 .method private canSyncEmail(Landroid/accounts/Account;)Z
@@ -1851,7 +865,7 @@
     .parameter
 
     .prologue
-    .line 4287
+    .line 2106
     const-string v0, "com.android.email.provider"
 
     invoke-static {p1, v0}, Landroid/content/ContentResolver;->getSyncAutomatically(Landroid/accounts/Account;Ljava/lang/String;)Z
@@ -1865,29 +879,29 @@
     .registers 3
 
     .prologue
-    .line 4024
+    .line 1866
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 4025
+    .line 1867
     if-nez v0, :cond_5
 
-    .line 4031
+    .line 1872
     :cond_4
     :goto_4
     return-void
 
-    .line 4027
+    .line 1868
     :cond_5
     sget-object v1, Lcom/android/exchange/ExchangeService;->sServiceThread:Ljava/lang/Thread;
 
     if-nez v1, :cond_4
 
-    .line 4028
+    .line 1869
     const-string v1, "!!! checkExchangeServiceServiceRunning; starting service..."
 
     invoke-static {v1}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
-    .line 4029
+    .line 1870
     new-instance v1, Landroid/content/Intent;
 
     const-class v2, Lcom/android/exchange/ExchangeService;
@@ -1900,2659 +914,380 @@
 .end method
 
 .method private checkMailboxes()J
-    .registers 26
+    .registers 14
 
     .prologue
-    .line 4349
-    new-instance v5, Ljava/util/ArrayList;
+    .line 2164
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4350
-    sget-object v6, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
-
-    monitor-enter v6
-
-    .line 4351
-    :try_start_8
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
-
-    invoke-virtual {v4}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
-
-    move-result-object v4
-
-    invoke-interface {v4}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v7
-
-    :cond_14
-    :goto_14
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_37
-
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/lang/Long;
-
-    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v8
-
-    .line 4352
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v8, v9}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    move-result-object v4
-
-    .line 4353
-    if-nez v4, :cond_14
-
-    .line 4354
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v4
-
-    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_14
-
-    .line 4374
-    :catchall_34
-    move-exception v4
-
-    monitor-exit v6
-    :try_end_36
-    .catchall {:try_start_8 .. :try_end_36} :catchall_34
-
-    throw v4
-
-    .line 4358
-    :cond_37
-    :try_start_37
-    invoke-virtual {v5}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v7
-
-    :goto_3b
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_98
-
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/lang/Long;
-
-    .line 4359
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
-
-    invoke-virtual {v5, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lcom/android/exchange/AbstractSyncService;
-
-    .line 4360
-    if-eqz v5, :cond_57
-
-    iget-object v8, v5, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
-
-    if-nez v8, :cond_61
-
-    .line 4361
-    :cond_57
-    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v4, v5}, Lcom/android/exchange/ExchangeService;->releaseMailbox(J)V
-
-    goto :goto_3b
-
-    .line 4364
-    :cond_61
-    iget-object v8, v5, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
-
-    invoke-virtual {v8}, Ljava/lang/Thread;->isAlive()Z
-
-    move-result v8
-
-    .line 4365
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "Deleted mailbox: "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    iget-object v5, v5, Lcom/android/exchange/AbstractSyncService;->mMailboxName:Ljava/lang/String;
-
-    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 4366
-    if-eqz v8, :cond_89
-
-    .line 4367
-    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    invoke-static {v4, v5}, Lcom/android/exchange/ExchangeService;->stopManualSync(J)V
-
-    goto :goto_3b
-
-    .line 4369
-    :cond_89
-    const-string v5, "Removing from serviceMap"
-
-    invoke-static {v5}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 4370
-    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v4, v5}, Lcom/android/exchange/ExchangeService;->releaseMailbox(J)V
-
-    goto :goto_3b
-
-    .line 4374
-    :cond_98
-    monitor-exit v6
-    :try_end_99
-    .catchall {:try_start_37 .. :try_end_99} :catchall_34
-
-    .line 4375
-    const-wide/32 v10, 0xdbba0
-
-    .line 4376
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v12
-
-    .line 4381
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/android/exchange/ExchangeService;->mAccountObserver:Lcom/android/exchange/ExchangeService$AccountObserver;
-
-    if-nez v4, :cond_ad
-
-    .line 4382
-    const-string v4, "mAccountObserver null; service died??"
-
-    invoke-static {v4}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    move-wide v6, v10
-
-    .line 4665
-    :cond_ac
-    :goto_ac
-    return-wide v6
-
-    .line 4385
-    :cond_ad
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/ExchangeService;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    sget-object v6, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_PROJECTION:[Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iget-object v7, v0, Lcom/android/exchange/ExchangeService;->mAccountObserver:Lcom/android/exchange/ExchangeService$AccountObserver;
-
-    invoke-virtual {v7}, Lcom/android/exchange/ExchangeService$AccountObserver;->getSyncableEasMailboxWhere()Ljava/lang/String;
-
-    move-result-object v7
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    invoke-virtual/range {v4 .. v9}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v14
-
-    .line 4389
-    invoke-static {}, Landroid/content/ContentResolver;->getMasterSyncAutomatically()Z
-
-    move-result v8
-
-    move v5, v8
-
-    move-wide v6, v10
-
-    .line 4391
-    :cond_c9
-    :goto_c9
-    if-eqz v14, :cond_530
-
-    :try_start_cb
-    invoke-interface {v14}, Landroid/database/Cursor;->moveToNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_530
-
-    .line 4392
-    const/4 v4, 0x0
-
-    invoke-interface {v14, v4}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v9
-
-    .line 4394
-    const/4 v4, 0x4
-
-    invoke-interface {v14, v4}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v4
-
-    int-to-long v15, v4
-
-    .line 4395
-    const/16 v4, 0x9
-
-    invoke-interface {v14, v4}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v4
-
-    int-to-long v0, v4
-
-    move-wide/from16 v17, v0
-
-    .line 4396
-    const/4 v4, 0x5
-
-    invoke-interface {v14, v4}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v11
-
-    .line 4397
-    const/4 v4, 0x1
-
-    invoke-interface {v14, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v19
-
-    .line 4399
-    sget-object v8, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
-
-    monitor-enter v8
-    :try_end_f2
-    .catchall {:try_start_cb .. :try_end_f2} :catchall_1d5
-
-    .line 4400
-    :try_start_f2
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
-
-    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v20
-
-    move-object/from16 v0, v20
-
-    invoke-virtual {v4, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/android/exchange/AbstractSyncService;
-
-    .line 4401
-    monitor-exit v8
-    :try_end_103
-    .catchall {:try_start_f2 .. :try_end_103} :catchall_1d2
-
-    .line 4406
-    const/16 v8, 0x44
-
-    if-ne v11, v8, :cond_11d
-
-    const-wide/16 v20, -0x1
-
-    cmp-long v8, v17, v20
-
-    if-nez v8, :cond_11d
-
-    :try_start_10d
-    move-object/from16 v0, p0
-
-    iget-object v8, v0, Lcom/android/exchange/ExchangeService;->mProvisionErrorExist:Ljava/util/HashMap;
-
-    invoke-static/range {v15 .. v16}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v20
-
-    move-object/from16 v0, v20
-
-    invoke-virtual {v8, v0}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_c9
-
-    .line 4411
-    :cond_11d
-    if-nez v4, :cond_49a
-
-    .line 4412
-    const/4 v4, 0x4
-
-    invoke-interface {v14, v4}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v4
-
-    int-to-long v0, v4
-
-    move-wide/from16 v20, v0
-
-    invoke-static/range {v20 .. v21}, Lcom/android/exchange/ExchangeService;->getAccountById(J)Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    move-result-object v20
-
-    .line 4413
-    if-eqz v20, :cond_c9
-
-    .line 4421
-    sget-object v8, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
-
-    monitor-enter v8
-    :try_end_130
-    .catchall {:try_start_10d .. :try_end_130} :catchall_1d5
-
-    .line 4426
-    :try_start_130
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/android/exchange/ExchangeService;->mProvisionErrorExist:Ljava/util/HashMap;
-
-    invoke-static/range {v15 .. v16}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v21
-
-    move-object/from16 v0, v21
-
-    invoke-virtual {v4, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    .line 4427
-    const/16 v21, 0x44
-
-    move/from16 v0, v21
-
-    if-eq v11, v0, :cond_18d
-
-    if-eqz v4, :cond_18d
-
-    .line 4428
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v21, "syncErrorExist for account:"
-
-    move-object/from16 v0, v21
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    move-wide v0, v15
-
-    invoke-virtual {v4, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v21, ". Put hold on mailbox:"
-
-    move-object/from16 v0, v21
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v9, v10}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 4430
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v21
-
-    new-instance v22, Lcom/android/exchange/ExchangeService$SyncError;
-
-    const/16 v23, 0x4
-
-    const/16 v24, 0x1
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, p0
-
-    move/from16 v2, v23
-
-    move/from16 v3, v24
-
-    invoke-direct {v0, v1, v2, v3}, Lcom/android/exchange/ExchangeService$SyncError;-><init>(Lcom/android/exchange/ExchangeService;IZ)V
-
-    move-object/from16 v0, v21
-
-    move-object/from16 v1, v22
-
-    invoke-virtual {v4, v0, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 4433
-    :cond_18d
-    monitor-exit v8
-    :try_end_18e
-    .catchall {:try_start_130 .. :try_end_18e} :catchall_1e2
-
-    .line 4438
-    :try_start_18e
-    move-object/from16 v0, p0
-
-    iget-boolean v4, v0, Lcom/android/exchange/ExchangeService;->mBackgroundData:Z
-
-    if-nez v4, :cond_197
-
-    const/4 v4, 0x4
-
-    if-ne v11, v4, :cond_c9
-
-    .line 4444
-    :cond_197
-    const/4 v4, 0x5
-
-    invoke-interface {v14, v4}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v21
-
-    .line 4447
-    const/4 v4, 0x0
-
-    .line 4449
-    const/16 v8, 0x42
-
-    if-eq v11, v8, :cond_1ad
-
-    const/16 v8, 0x41
-
-    if-eq v11, v8, :cond_1ad
-
-    const/16 v8, 0x43
-
-    if-eq v11, v8, :cond_1ad
-
-    const/16 v8, 0x45
-
-    if-ne v11, v8, :cond_56f
-
-    .line 4451
-    :cond_1ad
-    const/4 v8, 0x7
-
-    invoke-interface {v14, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    .line 4453
-    if-eqz v8, :cond_1be
-
-    const-string v22, "0"
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_56f
-
-    .line 4454
-    :cond_1be
-    const/4 v4, 0x1
-
-    .line 4455
-    const/4 v5, 0x1
-
-    move v8, v5
-
-    .line 4459
-    :goto_1c1
-    if-nez v4, :cond_1e5
-
-    .line 4460
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v20
-
-    move/from16 v2, v21
-
-    invoke-direct {v0, v1, v2}, Lcom/android/exchange/ExchangeService;->isMailboxSyncable(Lcom/android/emailcommon/provider/EmailContent$Account;I)Z
-    :try_end_1cc
-    .catchall {:try_start_18e .. :try_end_1cc} :catchall_1d5
-
-    move-result v4
-
-    if-nez v4, :cond_1e5
-
-    move v5, v8
-
-    .line 4461
-    goto/16 :goto_c9
-
-    .line 4401
-    :catchall_1d2
-    move-exception v4
-
-    :try_start_1d3
-    monitor-exit v8
-    :try_end_1d4
-    .catchall {:try_start_1d3 .. :try_end_1d4} :catchall_1d2
-
-    :try_start_1d4
-    throw v4
-    :try_end_1d5
-    .catchall {:try_start_1d4 .. :try_end_1d5} :catchall_1d5
-
-    .line 4662
-    :catchall_1d5
-    move-exception v4
-
-    if-eqz v14, :cond_1e1
-
-    invoke-interface {v14}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v5
-
-    if-nez v5, :cond_1e1
-
-    .line 4663
-    invoke-interface {v14}, Landroid/database/Cursor;->close()V
-
-    .line 4662
-    :cond_1e1
-    throw v4
-
-    .line 4433
-    :catchall_1e2
-    move-exception v4
-
-    :try_start_1e3
-    monitor-exit v8
-    :try_end_1e4
-    .catchall {:try_start_1e3 .. :try_end_1e4} :catchall_1e2
-
-    :try_start_1e4
-    throw v4
-
-    .line 4468
-    :cond_1e5
-    new-instance v5, Landroid/accounts/Account;
-
-    move-object/from16 v0, v20
-
-    iget-object v4, v0, Lcom/android/emailcommon/provider/EmailContent$Account;->mEmailAddress:Ljava/lang/String;
-
-    const-string v21, "com.android.exchange"
-
-    move-object/from16 v0, v21
-
-    invoke-direct {v5, v4, v0}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 4470
-    const/16 v4, 0x42
-
-    if-eq v11, v4, :cond_202
-
-    const/16 v4, 0x41
-
-    if-eq v11, v4, :cond_202
-
-    const/16 v4, 0x43
-
-    if-eq v11, v4, :cond_202
-
-    const/16 v4, 0x45
-
-    if-ne v11, v4, :cond_257
-
-    .line 4474
-    :cond_202
-    if-nez v8, :cond_207
-
-    move v5, v8
-
-    .line 4475
-    goto/16 :goto_c9
-
-    .line 4479
-    :cond_207
-    const/16 v4, 0x42
-
-    if-ne v11, v4, :cond_216
-
-    .line 4480
-    const-string v4, "com.android.contacts"
-
-    .line 4497
-    :cond_20d
-    :goto_20d
-    invoke-static {v5, v4}, Landroid/content/ContentResolver;->getSyncAutomatically(Landroid/accounts/Account;Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_244
-
-    move v5, v8
-
-    .line 4498
-    goto/16 :goto_c9
-
-    .line 4481
-    :cond_216
-    const/16 v4, 0x43
-
-    if-ne v11, v4, :cond_21d
-
-    .line 4482
-    const-string v4, "tasks"
-
-    goto :goto_20d
-
-    .line 4483
-    :cond_21d
-    const/16 v4, 0x45
-
-    if-ne v11, v4, :cond_224
-
-    .line 4484
-    const-string v4, "com.android.notes"
-
-    goto :goto_20d
-
-    .line 4487
-    :cond_224
-    const-string v4, "com.android.calendar"
-
-    .line 4488
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/exchange/ExchangeService;->mCalendarObservers:Ljava/util/concurrent/ConcurrentHashMap;
-
-    move-object/from16 v21, v0
-
-    move-object/from16 v0, v20
-
-    iget-wide v0, v0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    move-wide/from16 v22, v0
-
-    invoke-static/range {v22 .. v23}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v22
-
-    invoke-virtual/range {v21 .. v22}, Ljava/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v21
-
-    if-nez v21, :cond_20d
-
-    .line 4493
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v20
-
-    invoke-direct {v0, v1}, Lcom/android/exchange/ExchangeService;->registerCalendarObserver(Lcom/android/emailcommon/provider/EmailContent$Account;)V
-
-    goto :goto_20d
-
-    .line 4500
-    :cond_244
-    const/16 v4, 0x41
-
-    if-ne v11, v4, :cond_27a
-
-    move-object/from16 v0, v20
-
-    iget-wide v4, v0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v4, v5}, Lcom/android/exchange/ExchangeService;->isCalendarEnabled(J)Z
-
-    move-result v4
-
-    if-nez v4, :cond_27a
-
-    move v5, v8
-
-    .line 4502
-    goto/16 :goto_c9
-
-    .line 4504
-    :cond_257
-    const/4 v4, 0x6
-
-    if-ne v11, v4, :cond_25d
-
-    move v5, v8
-
-    .line 4506
-    goto/16 :goto_c9
-
-    .line 4508
-    :cond_25d
-    const/16 v4, 0x8
-
-    if-ne v11, v4, :cond_264
-
-    move v5, v8
-
-    .line 4509
-    goto/16 :goto_c9
-
-    .line 4510
-    :cond_264
-    const/16 v4, 0x40
-
-    if-ge v11, v4, :cond_273
-
-    const-string v4, "com.android.email.provider"
-
-    invoke-static {v5, v4}, Landroid/content/ContentResolver;->getSyncAutomatically(Landroid/accounts/Account;Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_273
-
-    move v5, v8
-
-    .line 4515
-    goto/16 :goto_c9
-
-    .line 4518
-    :cond_273
-    const/16 v4, 0x62
-
-    if-ne v11, v4, :cond_27a
-
-    move v5, v8
-
-    .line 4519
-    goto/16 :goto_c9
-
-    .line 4524
-    :cond_27a
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/android/exchange/ExchangeService$SyncError;
-
-    .line 4525
-    if-eqz v4, :cond_305
-
-    .line 4527
-    iget-boolean v5, v4, Lcom/android/exchange/ExchangeService$SyncError;->fatal:Z
-
-    if-eqz v5, :cond_2e2
-
-    .line 4529
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v11, "account: "
-
-    invoke-virtual {v5, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    move-wide v0, v15
-
-    invoke-virtual {v5, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v11, " Mailbox: "
-
-    invoke-virtual {v5, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v11, "("
-
-    invoke-virtual {v5, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v9, v10}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v9, ") in fatal error: "
-
-    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget v4, v4, Lcom/android/exchange/ExchangeService$SyncError;->reason:I
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ", Nothing we can do about fatal errors"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 4533
-    if-eqz v20, :cond_56c
-
-    move-object/from16 v0, v20
-
-    iget v4, v0, Lcom/android/emailcommon/provider/EmailContent$Account;->mFlags:I
-
-    and-int/lit8 v4, v4, 0x20
-
-    if-nez v4, :cond_56c
-
-    .line 4534
-    const-string v4, "if mSyncErrorMap of __eas exists, remove it"
-
-    invoke-static {v4}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 4535
-    invoke-static/range {v15 .. v16}, Lcom/android/exchange/ExchangeService;->releaseSecurityHoldForEasMailbox(J)V
-
-    move v5, v8
-
-    goto/16 :goto_c9
-
-    .line 4540
-    :cond_2e2
-    iget-wide v0, v4, Lcom/android/exchange/ExchangeService$SyncError;->holdEndTime:J
-
-    move-wide/from16 v21, v0
-
-    cmp-long v5, v12, v21
-
-    if-gez v5, :cond_2ff
-
-    .line 4543
-    iget-wide v9, v4, Lcom/android/exchange/ExchangeService$SyncError;->holdEndTime:J
-
-    add-long v15, v12, v6
-
-    cmp-long v5, v9, v15
-
-    if-gez v5, :cond_56c
-
-    .line 4544
-    iget-wide v4, v4, Lcom/android/exchange/ExchangeService$SyncError;->holdEndTime:J
-
-    sub-long v6, v4, v12
-
-    .line 4545
-    const-string v4, "Release hold"
-
-    move-object/from16 v0, p0
-
-    iput-object v4, v0, Lcom/android/exchange/ExchangeService;->mNextWaitReason:Ljava/lang/String;
-
-    move v5, v8
-
-    goto/16 :goto_c9
-
-    .line 4550
-    :cond_2ff
-    const-wide/16 v21, 0x0
-
-    move-wide/from16 v0, v21
-
-    iput-wide v0, v4, Lcom/android/exchange/ExchangeService$SyncError;->holdEndTime:J
-
-    .line 4554
-    :cond_305
-    const-wide/16 v4, -0x2
-
-    cmp-long v4, v17, v4
-
-    if-nez v4, :cond_381
-
-    .line 4557
-    if-eqz v20, :cond_36b
-
-    const/4 v4, 0x4
-
-    if-ne v11, v4, :cond_36b
-
-    move-object/from16 v0, v20
-
-    iget v4, v0, Lcom/android/emailcommon/provider/EmailContent$Account;->mFlags:I
-
-    and-int/lit16 v4, v4, 0x800
-
-    if-nez v4, :cond_36b
-
-    .line 4560
-    const-string v4, "Outbox sync interval is PUSH and sms sync is OFF...this is wrong, so, set Outbox sync interval to never"
-
-    invoke-static {v4}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    .line 4562
-    new-instance v4, Landroid/content/ContentValues;
-
-    invoke-direct {v4}, Landroid/content/ContentValues;-><init>()V
-
-    .line 4563
-    const-string v5, "syncInterval"
-
-    const/4 v11, -0x1
-
-    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v11
-
-    invoke-virtual {v4, v5, v11}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 4564
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/ExchangeService;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v5
-
-    sget-object v11, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    const-string v15, "_id=?"
-
-    const/16 v16, 0x1
-
-    move/from16 v0, v16
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    move-object/from16 v16, v0
-
-    const/16 v17, 0x0
-
-    invoke-static {v9, v10}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v9
-
-    aput-object v9, v16, v17
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v5, v11, v4, v15, v0}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    .line 4566
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v14}, Lcom/android/exchange/ExchangeService;->hasSendableMessages(Landroid/database/Cursor;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_365
-
-    .line 4567
-    const-class v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    invoke-static {v14, v4}, Lcom/android/emailcommon/provider/EmailContent;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/emailcommon/provider/EmailContent;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    .line 4568
-    new-instance v5, Lcom/android/exchange/EasOutboxService;
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v5, v0, v4}, Lcom/android/exchange/EasOutboxService;-><init>(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Mailbox;)V
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v5, v4}, Lcom/android/exchange/ExchangeService;->startServiceThread(Lcom/android/exchange/AbstractSyncService;Lcom/android/emailcommon/provider/EmailContent$Mailbox;)V
-
-    :cond_365
-    move-wide v4, v6
-
-    :goto_366
-    move-wide v6, v4
-
-    move v4, v8
-
-    :goto_368
-    move v5, v4
-
-    .line 4647
-    goto/16 :goto_c9
-
-    .line 4571
-    :cond_36b
-    const-string v4, "requestSync for Outbox"
-
-    invoke-static {v4}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    .line 4573
-    const-class v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    invoke-static {v14, v4}, Lcom/android/emailcommon/provider/EmailContent;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/emailcommon/provider/EmailContent;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    .line 4574
-    const/4 v5, 0x2
-
-    const/4 v9, 0x0
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v4, v5, v9}, Lcom/android/exchange/ExchangeService;->requestSync(Lcom/android/emailcommon/provider/EmailContent$Mailbox;ILcom/android/exchange/Request;)V
-
-    move-wide v4, v6
-
-    .line 4575
-    goto :goto_366
-
-    .line 4581
-    :cond_381
-    const/16 v4, 0x44
-
-    if-ne v11, v4, :cond_3a5
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/android/exchange/ExchangeService;->mProvisionErrorExist:Ljava/util/HashMap;
-
-    invoke-static/range {v15 .. v16}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_3a5
-
-    .line 4583
-    const-class v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    invoke-static {v14, v4}, Lcom/android/emailcommon/provider/EmailContent;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/emailcommon/provider/EmailContent;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    .line 4584
-    const/16 v5, 0xa
-
-    const/4 v9, 0x0
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v4, v5, v9}, Lcom/android/exchange/ExchangeService;->requestSync(Lcom/android/emailcommon/provider/EmailContent$Mailbox;ILcom/android/exchange/Request;)V
-
-    move-wide v4, v6
-
-    .line 4585
-    goto :goto_366
-
-    .line 4587
-    :cond_3a5
-    const/4 v4, 0x4
-
-    if-ne v11, v4, :cond_3c6
-
-    .line 4588
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v14}, Lcom/android/exchange/ExchangeService;->hasSendableMessages(Landroid/database/Cursor;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_497
-
-    .line 4589
-    const-class v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    invoke-static {v14, v4}, Lcom/android/emailcommon/provider/EmailContent;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/emailcommon/provider/EmailContent;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    .line 4590
-    new-instance v5, Lcom/android/exchange/EasOutboxService;
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v5, v0, v4}, Lcom/android/exchange/EasOutboxService;-><init>(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Mailbox;)V
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v5, v4}, Lcom/android/exchange/ExchangeService;->startServiceThread(Lcom/android/exchange/AbstractSyncService;Lcom/android/emailcommon/provider/EmailContent$Mailbox;)V
-
-    move-wide v4, v6
-
-    .line 4591
-    goto :goto_366
-
-    .line 4592
-    :cond_3c6
-    const-wide/16 v4, 0x0
-
-    cmp-long v4, v17, v4
-
-    if-lez v4, :cond_497
-
-    const-wide/16 v4, 0x5a0
-
-    cmp-long v4, v17, v4
-
-    if-gtz v4, :cond_497
-
-    .line 4593
-    const/16 v4, 0xa
-
-    invoke-interface {v14, v4}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v4
-
-    .line 4594
-    sub-long v4, v12, v4
-
-    .line 4595
-    const-wide/16 v15, 0x0
-
-    cmp-long v11, v4, v15
-
-    if-gez v11, :cond_3fb
-
-    .line 4596
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "WHOA! lastSync in the future for mailbox: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v9, v10}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 4597
-    const-wide/32 v4, 0xea60
-
-    mul-long v4, v4, v17
-
-    .line 4599
-    :cond_3fb
-    const-wide/32 v9, 0xea60
-
-    mul-long v9, v9, v17
-
-    sub-long v4, v9, v4
-
-    .line 4600
-    const/4 v9, 0x1
-
-    invoke-interface {v14, v9}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    .line 4601
-    const-wide/16 v10, 0x0
-
-    cmp-long v10, v4, v10
-
-    if-gtz v10, :cond_41f
-
-    .line 4602
-    const-class v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    invoke-static {v14, v4}, Lcom/android/emailcommon/provider/EmailContent;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/emailcommon/provider/EmailContent;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    .line 4603
-    const/4 v5, 0x1
-
-    const/4 v9, 0x0
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v4, v5, v9}, Lcom/android/exchange/ExchangeService;->requestSync(Lcom/android/emailcommon/provider/EmailContent$Mailbox;ILcom/android/exchange/Request;)V
-
-    move-wide v4, v6
-
-    .line 4604
-    goto/16 :goto_366
-
-    :cond_41f
-    cmp-long v10, v4, v6
-
-    if-gez v10, :cond_46a
-
-    .line 4606
-    sget-boolean v6, Lcom/android/emailcommon/EasRefs;->USER_LOG:Z
-
-    if-eqz v6, :cond_451
-
-    .line 4607
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Next sync for "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, " in "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-wide/16 v10, 0x3e8
-
-    div-long v10, v4, v10
-
-    invoke-virtual {v6, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, "s"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 4609
-    :cond_451
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Scheduled sync, "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    move-object/from16 v0, p0
-
-    iput-object v6, v0, Lcom/android/exchange/ExchangeService;->mNextWaitReason:Ljava/lang/String;
-
-    goto/16 :goto_366
-
-    .line 4610
-    :cond_46a
-    sget-boolean v10, Lcom/android/emailcommon/EasRefs;->USER_LOG:Z
-
-    if-eqz v10, :cond_497
-
-    .line 4611
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v11, "Next sync for "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    const-string v10, " in "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    const-wide/16 v10, 0x3e8
-
-    div-long/2addr v4, v10
-
-    invoke-virtual {v9, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "s"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    :cond_497
-    move-wide v4, v6
-
-    goto/16 :goto_366
-
-    .line 4615
-    :cond_49a
-    iget-object v8, v4, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
-
-    .line 4618
-    if-eqz v8, :cond_4d9
-
-    invoke-virtual {v8}, Ljava/lang/Thread;->isAlive()Z
-
-    move-result v8
-
-    if-nez v8, :cond_4d9
-
-    .line 4619
-    sget-boolean v4, Lcom/android/emailcommon/EasRefs;->USER_LOG:Z
-
-    if-eqz v4, :cond_4c3
-
-    .line 4620
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "Dead thread, mailbox released: "
-
-    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const/4 v8, 0x1
-
-    invoke-interface {v14, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 4623
-    :cond_4c3
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v9, v10}, Lcom/android/exchange/ExchangeService;->releaseMailbox(J)V
-
-    .line 4625
-    const-wide/16 v8, 0xbb8
-
-    cmp-long v4, v6, v8
-
-    if-lez v4, :cond_52d
-
-    .line 4626
-    const-wide/16 v6, 0xbb8
-
-    .line 4627
-    const-string v4, "Clean up dead thread(s)"
-
-    move-object/from16 v0, p0
-
-    iput-object v4, v0, Lcom/android/exchange/ExchangeService;->mNextWaitReason:Ljava/lang/String;
-
-    move v4, v5
-
-    goto/16 :goto_368
-
-    .line 4630
-    :cond_4d9
-    iget-wide v10, v4, Lcom/android/exchange/AbstractSyncService;->mRequestTime:J
-
-    .line 4631
-    const-wide/16 v8, 0x0
-
-    cmp-long v8, v10, v8
-
-    if-lez v8, :cond_52d
-
-    .line 4632
-    sub-long v8, v10, v12
-
-    .line 4633
-    const-wide/16 v15, 0x0
-
-    cmp-long v15, v8, v15
-
-    if-gtz v15, :cond_4f3
-
-    .line 4634
-    const-wide/16 v8, 0x0
-
-    iput-wide v8, v4, Lcom/android/exchange/AbstractSyncService;->mRequestTime:J
-
-    .line 4635
-    invoke-virtual {v4}, Lcom/android/exchange/AbstractSyncService;->alarm()Z
-
-    move v4, v5
-
-    goto/16 :goto_368
-
-    .line 4636
-    :cond_4f3
-    const-wide/16 v15, 0x0
-
-    cmp-long v4, v10, v15
-
-    if-lez v4, :cond_52d
-
-    cmp-long v4, v8, v6
-
-    if-gez v4, :cond_52d
-
-    .line 4637
-    const-wide/32 v10, 0xa1220
-
-    cmp-long v4, v8, v10
-
-    if-gez v4, :cond_517
-
-    .line 4638
-    const-wide/16 v6, 0xfa
-
-    cmp-long v4, v8, v6
-
-    if-gez v4, :cond_515
-
-    const-wide/16 v6, 0xfa
-
-    .line 4639
-    :goto_50c
-    const-string v4, "Sync data change"
-
-    move-object/from16 v0, p0
-
-    iput-object v4, v0, Lcom/android/exchange/ExchangeService;->mNextWaitReason:Ljava/lang/String;
-
-    move v4, v5
-
-    goto/16 :goto_368
-
-    :cond_515
-    move-wide v6, v8
-
-    .line 4638
-    goto :goto_50c
-
-    .line 4641
-    :cond_517
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "Illegal timeToRequest: "
-
-    invoke-virtual {v4, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    :cond_52d
-    move v4, v5
-
-    goto/16 :goto_368
-
-    .line 4649
-    :cond_530
-    invoke-interface {v14}, Landroid/database/Cursor;->requery()Z
-
-    .line 4650
-    :goto_533
-    if-eqz v14, :cond_55d
-
-    invoke-interface {v14}, Landroid/database/Cursor;->moveToNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_55d
-
-    .line 4651
-    const/4 v4, 0x4
-
-    invoke-interface {v14, v4}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v4
-
-    int-to-long v4, v4
-
-    invoke-static {v4, v5}, Lcom/android/exchange/ExchangeService;->getAccountById(J)Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    move-result-object v4
-
-    .line 4652
-    if-eqz v4, :cond_56a
-
-    .line 4653
-    invoke-virtual {v4}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSyncScheduleData()Lcom/android/emailcommon/utility/SyncScheduleData;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/android/exchange/SyncScheduler;->getIsPeakAndNextAlarm(Lcom/android/emailcommon/utility/SyncScheduleData;)Landroid/util/Pair;
-
-    move-result-object v4
-
-    iget-object v4, v4, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    check-cast v4, Ljava/lang/Long;
-
-    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
-    :try_end_556
-    .catchall {:try_start_1e4 .. :try_end_556} :catchall_1d5
-
-    move-result-wide v4
-
-    .line 4655
-    cmp-long v8, v4, v6
-
-    if-gez v8, :cond_56a
-
-    :goto_55b
-    move-wide v6, v4
-
-    .line 4659
-    goto :goto_533
-
-    .line 4662
-    :cond_55d
-    if-eqz v14, :cond_ac
-
-    invoke-interface {v14}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v4
-
-    if-nez v4, :cond_ac
-
-    .line 4663
-    invoke-interface {v14}, Landroid/database/Cursor;->close()V
-
-    goto/16 :goto_ac
-
-    :cond_56a
-    move-wide v4, v6
-
-    goto :goto_55b
-
-    :cond_56c
-    move v5, v8
-
-    goto/16 :goto_c9
-
-    :cond_56f
-    move v8, v5
-
-    goto/16 :goto_1c1
-.end method
-
-.method private checkPIMSyncSettings()V
-    .registers 6
-
-    .prologue
-    .line 3575
-    sget-object v1, Lcom/android/exchange/ExchangeService;->mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
-
-    monitor-enter v1
-
-    .line 3576
-    :try_start_3
-    sget-object v0, Lcom/android/exchange/ExchangeService;->mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
-
-    invoke-virtual {v0}, Lcom/android/exchange/ExchangeService$AccountList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_9
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2d
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    .line 3577
-    const/16 v3, 0x42
-
-    const-string v4, "com.android.contacts"
-
-    invoke-direct {p0, v0, v3, v4}, Lcom/android/exchange/ExchangeService;->updatePIMSyncSettings(Lcom/android/emailcommon/provider/EmailContent$Account;ILjava/lang/String;)V
-
-    .line 3580
-    const/16 v3, 0x41
-
-    const-string v4, "com.android.calendar"
-
-    invoke-direct {p0, v0, v3, v4}, Lcom/android/exchange/ExchangeService;->updatePIMSyncSettings(Lcom/android/emailcommon/provider/EmailContent$Account;ILjava/lang/String;)V
-
-    .line 3582
-    const/4 v3, 0x0
-
-    const-string v4, "com.android.email.provider"
-
-    invoke-direct {p0, v0, v3, v4}, Lcom/android/exchange/ExchangeService;->updatePIMSyncSettings(Lcom/android/emailcommon/provider/EmailContent$Account;ILjava/lang/String;)V
-
-    goto :goto_9
-
-    .line 3584
-    :catchall_2a
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_2c
-    .catchall {:try_start_3 .. :try_end_2c} :catchall_2a
-
-    throw v0
-
-    :cond_2d
-    :try_start_2d
-    monitor-exit v1
-    :try_end_2e
-    .catchall {:try_start_2d .. :try_end_2e} :catchall_2a
-
-    .line 3585
-    return-void
-.end method
-
-.method public static checkServiceExist(J)Z
-    .registers 6
-    .parameter
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 4908
-    sget-object v1, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    .line 4909
-    if-nez v1, :cond_6
-
-    .line 4917
-    :goto_5
-    return v0
-
-    .line 4911
-    :cond_6
+    .line 2165
     sget-object v2, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 4912
-    :try_start_9
-    iget-object v1, v1, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
+    .line 2166
+    :try_start_8
+    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
 
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    invoke-virtual {v1, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_37
-
-    .line 4913
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "checkServiceExist: Service for mailboxID:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " already exist"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 4914
-    const/4 v0, 0x1
-
-    monitor-exit v2
-
-    goto :goto_5
-
-    .line 4916
-    :catchall_34
-    move-exception v0
-
-    monitor-exit v2
-    :try_end_36
-    .catchall {:try_start_9 .. :try_end_36} :catchall_34
-
-    throw v0
-
-    :cond_37
-    :try_start_37
-    monitor-exit v2
-    :try_end_38
-    .catchall {:try_start_37 .. :try_end_38} :catchall_34
-
-    goto :goto_5
-.end method
-
-.method private clearAlarm(J)V
-    .registers 6
-    .parameter
-
-    .prologue
-    .line 3351
-    iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mPendingIntents:Ljava/util/HashMap;
-
-    monitor-enter v2
-
-    .line 3352
-    :try_start_3
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mPendingIntents:Ljava/util/HashMap;
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/PendingIntent;
-
-    .line 3353
-    if-eqz v0, :cond_25
-
-    .line 3354
-    const-string v1, "alarm"
-
-    invoke-virtual {p0, v1}, Lcom/android/exchange/ExchangeService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/app/AlarmManager;
-
-    .line 3355
-    invoke-virtual {v1, v0}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
-
-    .line 3357
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mPendingIntents:Ljava/util/HashMap;
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 3359
-    :cond_25
-    monitor-exit v2
-
-    .line 3360
-    return-void
-
-    .line 3359
-    :catchall_27
-    move-exception v0
-
-    monitor-exit v2
-    :try_end_29
-    .catchall {:try_start_3 .. :try_end_29} :catchall_27
-
-    throw v0
-.end method
-
-.method private clearAlarms()V
-    .registers 5
-
-    .prologue
-    .line 3381
-    const-string v0, "alarm"
-
-    invoke-virtual {p0, v0}, Lcom/android/exchange/ExchangeService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/AlarmManager;
-
-    .line 3382
-    iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mPendingIntents:Ljava/util/HashMap;
-
-    monitor-enter v2
-
-    .line 3383
-    :try_start_b
-    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mPendingIntents:Ljava/util/HashMap;
-
-    invoke-virtual {v1}, Ljava/util/HashMap;->values()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_15
+    :cond_12
+    :goto_12
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_28
+    if-eqz v0, :cond_33
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/app/PendingIntent;
+    check-cast v0, Ljava/lang/Long;
 
-    .line 3384
-    invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    goto :goto_15
+    move-result-wide v4
 
-    .line 3387
-    :catchall_25
-    move-exception v0
-
-    monitor-exit v2
-    :try_end_27
-    .catchall {:try_start_b .. :try_end_27} :catchall_25
-
-    throw v0
-
-    .line 3386
-    :cond_28
-    :try_start_28
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mPendingIntents:Ljava/util/HashMap;
-
-    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
-
-    .line 3387
-    monitor-exit v2
-    :try_end_2e
-    .catchall {:try_start_28 .. :try_end_2e} :catchall_25
-
-    .line 3388
-    return-void
-.end method
-
-.method public static clearWatchdogAlarm(J)V
-    .registers 3
-    .parameter "id"
-
-    .prologue
-    .line 3407
-    sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    .line 3408
-    .local v0, exchangeService:Lcom/android/exchange/ExchangeService;
-    if-eqz v0, :cond_7
-
-    .line 3409
-    invoke-direct {v0, p0, p1}, Lcom/android/exchange/ExchangeService;->clearAlarm(J)V
-
-    .line 3411
-    :cond_7
-    return-void
-.end method
-
-.method private static collectEasAccounts(Landroid/content/Context;Lcom/android/exchange/ExchangeService$AccountList;)Lcom/android/exchange/ExchangeService$AccountList;
-    .registers 15
-    .parameter "context"
-    .parameter "accounts"
-
-    .prologue
-    const/4 v12, 0x0
-
-    .line 1545
-    const/4 v7, 0x0
-
-    .line 1547
-    .local v7, c:Landroid/database/Cursor;
-    :try_start_2
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    .line 2167
+    invoke-static {p0, v4, v5}, Lcom/android/emailcommon/provider/Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Mailbox;
 
     move-result-object v0
 
-    sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
+    .line 2168
+    if-nez v0, :cond_12
 
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Account;->CONTENT_PROJECTION:[Ljava/lang/String;
+    .line 2169
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/4 v3, 0x0
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_12
+
+    .line 2189
+    :catchall_30
+    move-exception v0
+
+    monitor-exit v2
+    :try_end_32
+    .catchall {:try_start_8 .. :try_end_32} :catchall_30
+
+    throw v0
+
+    .line 2173
+    :cond_33
+    :try_start_33
+    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_37
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8e
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    .line 2174
+    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
+
+    invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/exchange/AbstractSyncService;
+
+    .line 2175
+    if-eqz v1, :cond_51
+
+    iget-object v4, v1, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
+
+    if-nez v4, :cond_59
+
+    .line 2176
+    :cond_51
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    invoke-direct {p0, v0, v1}, Lcom/android/exchange/ExchangeService;->releaseMailbox(J)V
+
+    goto :goto_37
+
+    .line 2179
+    :cond_59
+    iget-object v4, v1, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
+
+    invoke-virtual {v4}, Ljava/lang/Thread;->isAlive()Z
+
+    move-result v4
+
+    .line 2180
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Deleted mailbox: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    iget-object v1, v1, Lcom/android/exchange/AbstractSyncService;->mMailboxName:Ljava/lang/String;
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
+
+    .line 2181
+    if-eqz v4, :cond_81
+
+    .line 2182
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Lcom/android/exchange/ExchangeService;->stopManualSync(J)V
+
+    goto :goto_37
+
+    .line 2184
+    :cond_81
+    const-string v1, "Removing from serviceMap"
+
+    invoke-static {v1}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
+
+    .line 2185
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    invoke-direct {p0, v0, v1}, Lcom/android/exchange/ExchangeService;->releaseMailbox(J)V
+
+    goto :goto_37
+
+    .line 2189
+    :cond_8e
+    monitor-exit v2
+    :try_end_8f
+    .catchall {:try_start_33 .. :try_end_8f} :catchall_30
+
+    .line 2191
+    const-wide/32 v6, 0xdbba0
+
+    .line 2192
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v8
+
+    .line 2196
+    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mAccountObserver:Lcom/android/exchange/ExchangeService$AccountObserver;
+
+    if-nez v0, :cond_a1
+
+    .line 2197
+    const-string v0, "mAccountObserver null; service died??"
+
+    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
+
+    move-wide v2, v6
+
+    .line 2305
+    :goto_a0
+    return-wide v2
+
+    .line 2201
+    :cond_a1
+    invoke-virtual {p0}, Lcom/android/exchange/ExchangeService;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/android/emailcommon/provider/Mailbox;->CONTENT_URI:Landroid/net/Uri;
+
+    sget-object v2, Lcom/android/emailcommon/provider/Mailbox;->CONTENT_PROJECTION:[Ljava/lang/String;
+
+    iget-object v3, p0, Lcom/android/exchange/ExchangeService;->mAccountObserver:Lcom/android/exchange/ExchangeService$AccountObserver;
+
+    invoke-virtual {v3}, Lcom/android/exchange/ExchangeService$AccountObserver;->getSyncableEasMailboxWhere()Ljava/lang/String;
+
+    move-result-object v3
 
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_10
-    .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_10} :catch_1f
 
-    move-result-object v7
+    move-result-object v10
 
-    .line 1552
-    :goto_11
-    const-string v0, "collect eas accounts"
+    .line 2203
+    if-nez v10, :cond_29d
 
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
+    new-instance v0, Lcom/android/emailcommon/provider/ProviderUnavailableException;
 
-    .line 1556
-    if-nez v7, :cond_28
+    invoke-direct {v0}, Lcom/android/emailcommon/provider/ProviderUnavailableException;-><init>()V
 
-    .line 1557
-    const-string v0, "DB returned null cursor! Return null accounts list to prevent deleteing accounts from AccountManager by mistake."
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    move-object p1, v12
-
-    .line 1584
-    .end local p1
-    :cond_1e
-    :goto_1e
-    return-object p1
-
-    .line 1549
-    .restart local p1
-    :catch_1f
-    move-exception v8
-
-    .line 1550
-    .local v8, e:Ljava/lang/RuntimeException;
-    const-string v0, "ExchangeService"
-
-    const-string v1, "RuntimeException in collectEasAccounts"
-
-    invoke-static {v0, v1, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_11
-
-    .line 1563
-    .end local v8           #e:Ljava/lang/RuntimeException;
-    :cond_28
-    :goto_28
-    if-eqz v7, :cond_66
-
-    :try_start_2a
-    invoke-interface {v7}, Landroid/database/Cursor;->moveToNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_66
-
-    .line 1564
-    const/4 v0, 0x6
-
-    invoke-interface {v7, v0}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v10
-
-    .line 1565
-    .local v10, hostAuthId:J
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, v10, v0
-
-    if-lez v0, :cond_28
-
-    .line 1566
-    invoke-static {p0, v10, v11}, Lcom/android/emailcommon/provider/EmailContent$HostAuth;->restoreHostAuthWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$HostAuth;
-
-    move-result-object v9
-
-    .line 1567
-    .local v9, ha:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
-    if-eqz v9, :cond_28
-
-    iget-object v0, v9, Lcom/android/emailcommon/provider/EmailContent$HostAuth;->mProtocol:Ljava/lang/String;
-
-    const-string v1, "eas"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_28
-
-    .line 1568
-    new-instance v6, Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    invoke-direct {v6}, Lcom/android/emailcommon/provider/EmailContent$Account;-><init>()V
-
-    .line 1569
-    .local v6, account:Lcom/android/emailcommon/provider/EmailContent$Account;
-    invoke-virtual {v6, v7}, Lcom/android/emailcommon/provider/EmailContent$Account;->restore(Landroid/database/Cursor;)V
-
-    .line 1571
-    iput-object v9, v6, Lcom/android/emailcommon/provider/EmailContent$Account;->mHostAuthRecv:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
-
-    .line 1572
-    invoke-virtual {p1, v6}, Lcom/android/exchange/ExchangeService$AccountList;->add(Lcom/android/emailcommon/provider/EmailContent$Account;)Z
-    :try_end_58
-    .catchall {:try_start_2a .. :try_end_58} :catchall_59
-
-    goto :goto_28
-
-    .line 1580
-    .end local v6           #account:Lcom/android/emailcommon/provider/EmailContent$Account;
-    .end local v9           #ha:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
-    .end local v10           #hostAuthId:J
-    :catchall_59
-    move-exception v0
-
-    if-eqz v7, :cond_65
-
-    invoke-interface {v7}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v1
-
-    if-nez v1, :cond_65
-
-    .line 1581
-    invoke-interface {v7}, Landroid/database/Cursor;->close()V
-
-    .line 1580
-    :cond_65
     throw v0
 
-    :cond_66
-    if-eqz v7, :cond_1e
-
-    invoke-interface {v7}, Landroid/database/Cursor;->isClosed()Z
+    .line 2205
+    :cond_bd
+    :goto_bd
+    :try_start_bd
+    invoke-interface {v10}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v0
 
-    if-nez v0, :cond_1e
+    if-eqz v0, :cond_298
 
-    .line 1581
-    invoke-interface {v7}, Landroid/database/Cursor;->close()V
+    .line 2206
+    const/4 v0, 0x0
 
-    goto :goto_1e
-.end method
+    invoke-interface {v10, v0}, Landroid/database/Cursor;->getLong(I)J
 
-.method public static deleteAccountPIMData(J)V
-    .registers 7
-    .parameter "accountId"
+    move-result-wide v4
 
-    .prologue
-    .line 1636
-    sget-object v1, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
+    .line 2208
+    sget-object v1, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
 
-    .line 1637
-    .local v1, exchangeService:Lcom/android/exchange/ExchangeService;
-    if-nez v1, :cond_5
+    monitor-enter v1
+    :try_end_cb
+    .catchall {:try_start_bd .. :try_end_cb} :catchall_11a
 
-    .line 1652
-    :cond_4
-    :goto_4
-    return-void
+    .line 2209
+    :try_start_cb
+    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
 
-    .line 1639
-    :cond_5
-    const/16 v4, 0x42
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-static {v1, p0, p1, v4}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxOfType(Landroid/content/Context;JI)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    move-result-object v6
 
-    move-result-object v2
-
-    .line 1641
-    .local v2, mailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    if-eqz v2, :cond_1a
-
-    .line 1642
-    new-instance v3, Lcom/android/exchange/EasSyncService;
-
-    invoke-direct {v3, v1, v2}, Lcom/android/exchange/EasSyncService;-><init>(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Mailbox;)V
-
-    .line 1643
-    .local v3, service:Lcom/android/exchange/EasSyncService;
-    new-instance v0, Lcom/android/exchange/adapter/ContactsSyncAdapter;
-
-    invoke-direct {v0, v3}, Lcom/android/exchange/adapter/ContactsSyncAdapter;-><init>(Lcom/android/exchange/EasSyncService;)V
-
-    .line 1644
-    .local v0, adapter:Lcom/android/exchange/adapter/ContactsSyncAdapter;
-    invoke-virtual {v0}, Lcom/android/exchange/adapter/ContactsSyncAdapter;->wipe()V
-
-    .line 1646
-    .end local v0           #adapter:Lcom/android/exchange/adapter/ContactsSyncAdapter;
-    .end local v3           #service:Lcom/android/exchange/EasSyncService;
-    :cond_1a
-    const/16 v4, 0x41
-
-    invoke-static {v1, p0, p1, v4}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxOfType(Landroid/content/Context;JI)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    move-result-object v2
-
-    .line 1647
-    if-eqz v2, :cond_4
-
-    .line 1648
-    new-instance v3, Lcom/android/exchange/EasSyncService;
-
-    invoke-direct {v3, v1, v2}, Lcom/android/exchange/EasSyncService;-><init>(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Mailbox;)V
-
-    .line 1649
-    .restart local v3       #service:Lcom/android/exchange/EasSyncService;
-    new-instance v0, Lcom/android/exchange/adapter/CalendarSyncAdapter;
-
-    invoke-direct {v0, v3}, Lcom/android/exchange/adapter/CalendarSyncAdapter;-><init>(Lcom/android/exchange/EasSyncService;)V
-
-    .line 1650
-    .local v0, adapter:Lcom/android/exchange/adapter/CalendarSyncAdapter;
-    invoke-virtual {v0}, Lcom/android/exchange/adapter/CalendarSyncAdapter;->wipe()V
-
-    goto :goto_4
-.end method
-
-.method public static done(Lcom/android/exchange/AbstractSyncService;)V
-    .registers 15
-    .parameter
-
-    .prologue
-    const/16 v13, 0x44
-
-    const/4 v12, -0x1
-
-    const/4 v8, 0x2
-
-    .line 5115
-    sget-object v1, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    .line 5116
-    if-nez v1, :cond_9
-
-    .line 5265
-    :goto_8
-    return-void
-
-    .line 5119
-    :cond_9
-    if-nez p0, :cond_11
-
-    .line 5120
-    const-string v0, "done : svc param is null"
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    goto :goto_8
-
-    .line 5124
-    :cond_11
-    sget-object v2, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    .line 5125
-    :try_start_14
-    iget-wide v3, p0, Lcom/android/exchange/AbstractSyncService;->mMailboxId:J
-
-    .line 5126
-    iget-object v5, v1, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
-
-    .line 5127
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v0, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v5, v0}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v0, Lcom/android/exchange/AbstractSyncService;
+
+    .line 2210
+    monitor-exit v1
+    :try_end_d8
+    .catchall {:try_start_cb .. :try_end_d8} :catchall_11f
+
+    .line 2211
+    if-nez v0, :cond_20c
+
+    .line 2213
+    const/4 v0, 0x4
+
+    :try_start_db
+    invoke-interface {v10, v0}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    invoke-static {v0, v1}, Lcom/android/exchange/ExchangeService;->getAccountById(J)Lcom/android/emailcommon/provider/Account;
+
+    move-result-object v0
+
+    .line 2214
+    if-eqz v0, :cond_bd
+
+    .line 2217
+    const/4 v1, 0x5
+
+    invoke-interface {v10, v1}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v1
+
+    .line 2218
+    invoke-direct {p0, v0, v1}, Lcom/android/exchange/ExchangeService;->isMailboxSyncable(Lcom/android/emailcommon/provider/Account;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_bd
+
+    .line 2223
+    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/exchange/ExchangeService$SyncError;
 
-    .line 5128
-    invoke-direct {v1, v3, v4}, Lcom/android/exchange/ExchangeService;->releaseMailbox(J)V
+    .line 2224
+    if-eqz v0, :cond_126
 
-    .line 5129
-    iget v6, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
+    .line 2226
+    iget-boolean v4, v0, Lcom/android/exchange/ExchangeService$SyncError;->fatal:Z
 
-    .line 5130
-    invoke-static {v1, v3, v4}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    if-nez v4, :cond_bd
 
-    move-result-object v7
+    .line 2227
+    iget-wide v4, v0, Lcom/android/exchange/ExchangeService$SyncError;->holdEndTime:J
 
-    .line 5131
-    if-nez v7, :cond_32
+    cmp-long v4, v8, v4
 
-    .line 5132
-    monitor-exit v2
+    if-gez v4, :cond_122
 
-    goto :goto_8
+    .line 2230
+    iget-wide v4, v0, Lcom/android/exchange/ExchangeService$SyncError;->holdEndTime:J
 
-    .line 5264
-    :catchall_2f
+    add-long v6, v8, v2
+
+    cmp-long v1, v4, v6
+
+    if-gez v1, :cond_bd
+
+    .line 2231
+    iget-wide v0, v0, Lcom/android/exchange/ExchangeService$SyncError;->holdEndTime:J
+
+    sub-long v2, v0, v8
+
+    .line 2232
+    const-string v0, "Release hold"
+
+    iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mNextWaitReason:Ljava/lang/String;
+    :try_end_119
+    .catchall {:try_start_db .. :try_end_119} :catchall_11a
+
+    goto :goto_bd
+
+    .line 2303
+    :catchall_11a
     move-exception v0
 
-    monitor-exit v2
-    :try_end_31
-    .catchall {:try_start_14 .. :try_end_31} :catchall_2f
+    invoke-interface {v10}, Landroid/database/Cursor;->close()V
 
     throw v0
 
-    .line 5134
-    :cond_32
-    if-eq v6, v8, :cond_4d
-
-    .line 5135
-    :try_start_34
-    iget-wide v8, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mAccountKey:J
-
-    .line 5136
-    invoke-static {v1, v8, v9}, Lcom/android/emailcommon/provider/EmailContent$Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    move-result-object v10
-
-    .line 5137
-    if-nez v10, :cond_3e
-
-    .line 5138
-    monitor-exit v2
-
-    goto :goto_8
-
-    .line 5139
-    :cond_3e
-    const/4 v11, 0x2
-
-    invoke-virtual {v1, v1, v11, v10}, Lcom/android/exchange/ExchangeService;->releaseSyncHolds(Landroid/content/Context;ILcom/android/emailcommon/provider/EmailContent$Account;)Z
-    :try_end_42
-    .catchall {:try_start_34 .. :try_end_42} :catchall_2f
-
-    move-result v10
-
-    if-eqz v10, :cond_4d
-
-    .line 5142
-    :try_start_45
-    new-instance v10, Lcom/android/emailcommon/service/AccountServiceProxy;
-
-    invoke-direct {v10, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;-><init>(Landroid/content/Context;)V
-
-    invoke-virtual {v10, v8, v9}, Lcom/android/emailcommon/service/AccountServiceProxy;->notifyLoginSucceeded(J)V
-    :try_end_4d
-    .catchall {:try_start_45 .. :try_end_4d} :catchall_2f
-    .catch Landroid/os/RemoteException; {:try_start_45 .. :try_end_4d} :catch_2c7
-
-    .line 5149
-    :cond_4d
-    :goto_4d
-    packed-switch v6, :pswitch_data_2ca
-
-    .line 5263
-    :cond_50
-    :goto_50
-    :pswitch_50
-    :try_start_50
-    const-string v0, "sync completed"
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->kick(Ljava/lang/String;)V
-
-    .line 5264
-    monitor-exit v2
-
-    goto :goto_8
-
-    .line 5151
-    :pswitch_57
-    invoke-virtual {p0}, Lcom/android/exchange/AbstractSyncService;->hasPendingRequests()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5d
-
-    .line 5154
-    :cond_5d
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-virtual {v5, v0}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 5156
-    const-class v1, Lcom/android/exchange/ExchangeService;
-
-    monitor-enter v1
-    :try_end_67
-    .catchall {:try_start_50 .. :try_end_67} :catchall_2f
-
-    .line 5157
-    const/4 v0, 0x0
-
-    :try_start_68
-    sput v0, Lcom/android/exchange/ExchangeService;->sClientConnectionManagerShutdownCount:I
-
-    .line 5158
-    monitor-exit v1
-    :try_end_6b
-    .catchall {:try_start_68 .. :try_end_6b} :catchall_11f
-
-    .line 5159
-    if-eqz p0, :cond_50
-
-    :try_start_6d
-    iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    if-eqz v0, :cond_50
-
-    sget-object v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
-
-    if-eqz v0, :cond_50
-
-    sget-object v0, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
-
-    iget-object v1, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget v1, v1, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    invoke-static {v0, v1}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->isPrivateSyncOptionTypeByType(Landroid/content/Context;I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_50
-
-    .line 5165
-    iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iget v0, v0, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncInterval:I
-
-    if-ne v0, v12, :cond_50
-
-    iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget v0, v0, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    if-ne v0, v13, :cond_9f
-
-    iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iget-object v0, v0, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncKey:Ljava/lang/String;
-
-    if-eqz v0, :cond_9f
-
-    iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iget-object v0, v0, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncKey:Ljava/lang/String;
-
-    const-string v1, "0"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_c1
-
-    :cond_9f
-    iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget-wide v0, v0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    const-wide/16 v3, 0x0
-
-    cmp-long v0, v0, v3
-
-    if-lez v0, :cond_50
-
-    iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget v0, v0, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    if-eq v0, v13, :cond_50
-
-    iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget-object v0, v0, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
-
-    if-eqz v0, :cond_50
-
-    iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget-object v0, v0, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
-
-    const-string v1, "0"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_50
-
-    :cond_c1
-    iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iget v0, v0, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncInterval:I
-
-    iget-object v1, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget v1, v1, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mSyncInterval:I
-
-    if-eq v0, v1, :cond_50
-
-    .line 5177
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "mSyncInterval mismatch mailbox.syncInterval:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget v1, v1, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mSyncInterval:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " account.syncInterval:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iget v1, v1, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncInterval:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 5180
-    new-instance v0, Landroid/content/ContentValues;
-
-    invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
-
-    .line 5181
-    const-string v1, "syncInterval"
-
-    const/4 v3, -0x1
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v1, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 5182
-    sget-object v1, Lcom/android/exchange/AbstractSyncService;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    sget-object v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    const-string v4, "_id=?"
-
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    iget-object v7, p0, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget-wide v7, v7, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v7, v8}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v7
-
-    aput-object v7, v5, v6
-
-    invoke-virtual {v1, v3, v0, v4, v5}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_11d
-    .catchall {:try_start_6d .. :try_end_11d} :catchall_2f
-
-    goto/16 :goto_50
-
-    .line 5158
+    .line 2210
     :catchall_11f
     move-exception v0
 
@@ -4564,29 +1299,1068 @@
     :try_start_121
     throw v0
 
-    .line 5194
-    :pswitch_122
-    if-eqz v0, :cond_154
+    .line 2237
+    :cond_122
+    const-wide/16 v4, 0x0
 
-    .line 5196
-    const/4 v1, 0x0
+    iput-wide v4, v0, Lcom/android/exchange/ExchangeService$SyncError;->holdEndTime:J
 
-    iput-boolean v1, v0, Lcom/android/exchange/ExchangeService$SyncError;->autoRecover:Z
+    .line 2242
+    :cond_126
+    const/16 v0, 0x9
 
-    .line 5197
-    iget-wide v3, v0, Lcom/android/exchange/ExchangeService$SyncError;->DEFAULT_HOLD_DELAY:J
+    invoke-interface {v10, v0}, Landroid/database/Cursor;->getInt(I)I
 
-    iput-wide v3, v0, Lcom/android/exchange/ExchangeService$SyncError;->holdDelay:J
+    move-result v0
 
-    .line 5198
+    int-to-long v4, v0
+
+    .line 2243
+    const-wide/16 v6, -0x2
+
+    cmp-long v0, v4, v6
+
+    if-nez v0, :cond_144
+
+    .line 2244
+    const-class v0, Lcom/android/emailcommon/provider/Mailbox;
+
+    invoke-static {v10, v0}, Lcom/android/emailcommon/provider/EmailContent;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/emailcommon/provider/EmailContent;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/emailcommon/provider/Mailbox;
+
+    .line 2245
+    const/4 v1, 0x2
+
+    const/4 v4, 0x0
+
+    invoke-direct {p0, v0, v1, v4}, Lcom/android/exchange/ExchangeService;->requestSync(Lcom/android/emailcommon/provider/Mailbox;ILcom/android/exchange/Request;)V
+
+    move-wide v0, v2
+
+    :goto_141
+    move-wide v2, v0
+
+    .line 2269
+    goto/16 :goto_bd
+
+    .line 2246
+    :cond_144
+    const/4 v0, 0x4
+
+    if-ne v1, v0, :cond_15f
+
+    .line 2247
+    invoke-direct {p0, v10}, Lcom/android/exchange/ExchangeService;->hasSendableMessages(Landroid/database/Cursor;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_209
+
+    .line 2248
+    const-class v0, Lcom/android/emailcommon/provider/Mailbox;
+
+    invoke-static {v10, v0}, Lcom/android/emailcommon/provider/EmailContent;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/emailcommon/provider/EmailContent;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/emailcommon/provider/Mailbox;
+
+    .line 2249
+    new-instance v1, Lcom/android/exchange/EasOutboxService;
+
+    invoke-direct {v1, p0, v0}, Lcom/android/exchange/EasOutboxService;-><init>(Landroid/content/Context;Lcom/android/emailcommon/provider/Mailbox;)V
+
+    invoke-direct {p0, v1, v0}, Lcom/android/exchange/ExchangeService;->startServiceThread(Lcom/android/exchange/AbstractSyncService;Lcom/android/emailcommon/provider/Mailbox;)V
+
+    move-wide v0, v2
+
+    .line 2250
+    goto :goto_141
+
+    .line 2251
+    :cond_15f
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, v4, v0
+
+    if-lez v0, :cond_209
+
+    const-wide/16 v0, 0x5a0
+
+    cmp-long v0, v4, v0
+
+    if-gtz v0, :cond_209
+
+    .line 2252
+    const/16 v0, 0xa
+
+    invoke-interface {v10, v0}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v0
+
+    .line 2253
+    sub-long v0, v8, v0
+
+    .line 2254
+    const-wide/32 v6, 0xea60
+
+    mul-long/2addr v4, v6
+
+    sub-long v0, v4, v0
+
+    .line 2255
+    const/4 v4, 0x1
+
+    invoke-interface {v10, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 2256
+    const-wide/16 v5, 0x0
+
+    cmp-long v5, v0, v5
+
+    if-gtz v5, :cond_193
+
+    .line 2257
+    const-class v0, Lcom/android/emailcommon/provider/Mailbox;
+
+    invoke-static {v10, v0}, Lcom/android/emailcommon/provider/EmailContent;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/emailcommon/provider/EmailContent;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/emailcommon/provider/Mailbox;
+
+    .line 2258
+    const/4 v1, 0x1
+
+    const/4 v4, 0x0
+
+    invoke-direct {p0, v0, v1, v4}, Lcom/android/exchange/ExchangeService;->requestSync(Lcom/android/emailcommon/provider/Mailbox;ILcom/android/exchange/Request;)V
+
+    move-wide v0, v2
+
+    .line 2259
+    goto :goto_141
+
+    :cond_193
+    cmp-long v5, v0, v2
+
+    if-gez v5, :cond_1dc
+
+    .line 2261
+    sget-boolean v2, Lcom/android/exchange/Eas;->USER_LOG:Z
+
+    if-eqz v2, :cond_1c5
+
+    .line 2262
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Next sync for "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " in "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-wide/16 v5, 0x3e8
+
+    div-long v5, v0, v5
+
+    invoke-virtual {v2, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "s"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
+
+    .line 2264
+    :cond_1c5
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Scheduled sync, "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/android/exchange/ExchangeService;->mNextWaitReason:Ljava/lang/String;
+
+    goto/16 :goto_141
+
+    .line 2265
+    :cond_1dc
+    sget-boolean v5, Lcom/android/exchange/Eas;->USER_LOG:Z
+
+    if-eqz v5, :cond_209
+
+    .line 2266
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Next sync for "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, " in "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-wide/16 v5, 0x3e8
+
+    div-long/2addr v0, v5
+
+    invoke-virtual {v4, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "s"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
+
+    :cond_209
+    move-wide v0, v2
+
+    goto/16 :goto_141
+
+    .line 2270
+    :cond_20c
+    iget-object v1, v0, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
+
+    .line 2272
+    if-eqz v1, :cond_246
+
+    invoke-virtual {v1}, Ljava/lang/Thread;->isAlive()Z
+
+    move-result v1
+
+    if-nez v1, :cond_246
+
+    .line 2273
+    sget-boolean v0, Lcom/android/exchange/Eas;->USER_LOG:Z
+
+    if-eqz v0, :cond_235
+
+    .line 2274
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Dead thread, mailbox released: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-interface {v10, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
+
+    .line 2277
+    :cond_235
+    invoke-direct {p0, v4, v5}, Lcom/android/exchange/ExchangeService;->releaseMailbox(J)V
+
+    .line 2279
+    const-wide/16 v0, 0xbb8
+
+    cmp-long v0, v2, v0
+
+    if-lez v0, :cond_bd
+
+    .line 2280
+    const-wide/16 v2, 0xbb8
+
+    .line 2281
+    const-string v0, "Clean up dead thread(s)"
+
+    iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mNextWaitReason:Ljava/lang/String;
+
+    goto/16 :goto_bd
+
+    .line 2284
+    :cond_246
+    iget-wide v6, v0, Lcom/android/exchange/AbstractSyncService;->mRequestTime:J
+
+    .line 2285
+    const-wide/16 v4, 0x0
+
+    cmp-long v1, v6, v4
+
+    if-lez v1, :cond_bd
+
+    .line 2286
+    sub-long v4, v6, v8
+
+    .line 2287
+    const-wide/16 v11, 0x0
+
+    cmp-long v1, v4, v11
+
+    if-gtz v1, :cond_25f
+
+    .line 2288
+    const-wide/16 v4, 0x0
+
+    iput-wide v4, v0, Lcom/android/exchange/AbstractSyncService;->mRequestTime:J
+
+    .line 2289
+    invoke-virtual {v0}, Lcom/android/exchange/AbstractSyncService;->alarm()Z
+
+    goto/16 :goto_bd
+
+    .line 2290
+    :cond_25f
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, v6, v0
+
+    if-lez v0, :cond_bd
+
+    cmp-long v0, v4, v2
+
+    if-gez v0, :cond_bd
+
+    .line 2291
+    const-wide/32 v0, 0xa1220
+
+    cmp-long v0, v4, v0
+
+    if-gez v0, :cond_280
+
+    .line 2292
+    const-wide/16 v0, 0xfa
+
+    cmp-long v0, v4, v0
+
+    if-gez v0, :cond_27e
+
+    const-wide/16 v2, 0xfa
+
+    .line 2293
+    :goto_278
+    const-string v0, "Sync data change"
+
+    iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mNextWaitReason:Ljava/lang/String;
+
+    goto/16 :goto_bd
+
+    :cond_27e
+    move-wide v2, v4
+
+    .line 2292
+    goto :goto_278
+
+    .line 2295
+    :cond_280
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Illegal timeToRequest: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
+    :try_end_296
+    .catchall {:try_start_121 .. :try_end_296} :catchall_11a
+
+    goto/16 :goto_bd
+
+    .line 2303
+    :cond_298
+    invoke-interface {v10}, Landroid/database/Cursor;->close()V
+
+    goto/16 :goto_a0
+
+    :cond_29d
+    move-wide v2, v6
+
+    goto/16 :goto_bd
+.end method
+
+.method private clearAlarm(J)V
+    .registers 8
+    .parameter "id"
+
+    .prologue
+    .line 1414
+    iget-object v3, p0, Lcom/android/exchange/ExchangeService;->mPendingIntents:Ljava/util/HashMap;
+
+    monitor-enter v3
+
+    .line 1415
+    :try_start_3
+    iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mPendingIntents:Ljava/util/HashMap;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/app/PendingIntent;
+
+    .line 1416
+    .local v1, pi:Landroid/app/PendingIntent;
+    if-eqz v1, :cond_25
+
+    .line 1417
+    const-string v2, "alarm"
+
+    invoke-virtual {p0, v2}, Lcom/android/exchange/ExchangeService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/AlarmManager;
+
+    .line 1418
+    .local v0, alarmManager:Landroid/app/AlarmManager;
+    invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
+
+    .line 1420
+    iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mPendingIntents:Ljava/util/HashMap;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1422
+    .end local v0           #alarmManager:Landroid/app/AlarmManager;
+    :cond_25
+    monitor-exit v3
+
+    .line 1423
+    return-void
+
+    .line 1422
+    .end local v1           #pi:Landroid/app/PendingIntent;
+    :catchall_27
+    move-exception v2
+
+    monitor-exit v3
+    :try_end_29
+    .catchall {:try_start_3 .. :try_end_29} :catchall_27
+
+    throw v2
+.end method
+
+.method private clearAlarms()V
+    .registers 6
+
+    .prologue
+    .line 1443
+    const-string v3, "alarm"
+
+    invoke-virtual {p0, v3}, Lcom/android/exchange/ExchangeService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/AlarmManager;
+
+    .line 1444
+    .local v0, alarmManager:Landroid/app/AlarmManager;
+    iget-object v4, p0, Lcom/android/exchange/ExchangeService;->mPendingIntents:Ljava/util/HashMap;
+
+    monitor-enter v4
+
+    .line 1445
+    :try_start_b
+    iget-object v3, p0, Lcom/android/exchange/ExchangeService;->mPendingIntents:Ljava/util/HashMap;
+
+    invoke-virtual {v3}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :goto_15
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_28
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/app/PendingIntent;
+
+    .line 1446
+    .local v2, pi:Landroid/app/PendingIntent;
+    invoke-virtual {v0, v2}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
+
+    goto :goto_15
+
+    .line 1449
+    .end local v1           #i$:Ljava/util/Iterator;
+    .end local v2           #pi:Landroid/app/PendingIntent;
+    :catchall_25
+    move-exception v3
+
+    monitor-exit v4
+    :try_end_27
+    .catchall {:try_start_b .. :try_end_27} :catchall_25
+
+    throw v3
+
+    .line 1448
+    .restart local v1       #i$:Ljava/util/Iterator;
+    :cond_28
+    :try_start_28
+    iget-object v3, p0, Lcom/android/exchange/ExchangeService;->mPendingIntents:Ljava/util/HashMap;
+
+    invoke-virtual {v3}, Ljava/util/HashMap;->clear()V
+
+    .line 1449
+    monitor-exit v4
+    :try_end_2e
+    .catchall {:try_start_28 .. :try_end_2e} :catchall_25
+
+    .line 1450
+    return-void
+.end method
+
+.method public static clearWatchdogAlarm(J)V
+    .registers 3
+    .parameter "id"
+
+    .prologue
+    .line 1469
+    sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
+
+    .line 1470
+    .local v0, exchangeService:Lcom/android/exchange/ExchangeService;
+    if-eqz v0, :cond_7
+
+    .line 1471
+    invoke-direct {v0, p0, p1}, Lcom/android/exchange/ExchangeService;->clearAlarm(J)V
+
+    .line 1473
+    :cond_7
+    return-void
+.end method
+
+.method private static collectEasAccounts(Landroid/content/Context;Lcom/android/exchange/ExchangeService$AccountList;)Lcom/android/exchange/ExchangeService$AccountList;
+    .registers 15
+    .parameter "context"
+    .parameter "accounts"
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 500
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    .line 501
+    .local v0, resolver:Landroid/content/ContentResolver;
+    sget-object v1, Lcom/android/emailcommon/provider/Account;->CONTENT_URI:Landroid/net/Uri;
+
+    sget-object v2, Lcom/android/emailcommon/provider/Account;->CONTENT_PROJECTION:[Ljava/lang/String;
+
+    move-object v4, v3
+
+    move-object v5, v3
+
+    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v7
+
+    .line 504
+    .local v7, c:Landroid/database/Cursor;
+    if-nez v7, :cond_17
+
+    new-instance v1, Lcom/android/emailcommon/provider/ProviderUnavailableException;
+
+    invoke-direct {v1}, Lcom/android/emailcommon/provider/ProviderUnavailableException;-><init>()V
+
+    throw v1
+
+    .line 506
+    :cond_17
+    :try_start_17
+    new-instance v8, Landroid/content/ContentValues;
+
+    invoke-direct {v8}, Landroid/content/ContentValues;-><init>()V
+
+    .line 507
+    .local v8, cv:Landroid/content/ContentValues;
+    :cond_1c
+    :goto_1c
+    invoke-interface {v7}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_79
+
+    .line 508
+    const/4 v1, 0x6
+
+    invoke-interface {v7, v1}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v10
+
+    .line 509
+    .local v10, hostAuthId:J
+    const-wide/16 v1, 0x0
+
+    cmp-long v1, v10, v1
+
+    if-lez v1, :cond_1c
+
+    .line 510
+    invoke-static {p0, v10, v11}, Lcom/android/emailcommon/provider/HostAuth;->restoreHostAuthWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/HostAuth;
+
+    move-result-object v9
+
+    .line 511
+    .local v9, ha:Lcom/android/emailcommon/provider/HostAuth;
+    if-eqz v9, :cond_1c
+
+    iget-object v1, v9, Lcom/android/emailcommon/provider/HostAuth;->mProtocol:Ljava/lang/String;
+
+    const-string v2, "eas"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1c
+
+    .line 512
+    new-instance v6, Lcom/android/emailcommon/provider/Account;
+
+    invoke-direct {v6}, Lcom/android/emailcommon/provider/Account;-><init>()V
+
+    .line 513
+    .local v6, account:Lcom/android/emailcommon/provider/Account;
+    invoke-virtual {v6, v7}, Lcom/android/emailcommon/provider/Account;->restore(Landroid/database/Cursor;)V
+
+    .line 515
+    iput-object v9, v6, Lcom/android/emailcommon/provider/Account;->mHostAuthRecv:Lcom/android/emailcommon/provider/HostAuth;
+
+    .line 516
+    invoke-virtual {p1, v6}, Lcom/android/exchange/ExchangeService$AccountList;->add(Lcom/android/emailcommon/provider/Account;)Z
+
+    .line 518
+    iget-wide v1, v6, Lcom/android/emailcommon/provider/Account;->mId:J
+
+    const/4 v3, 0x0
+
+    invoke-static {p0, v1, v2, v3}, Lcom/android/emailcommon/provider/Mailbox;->restoreMailboxOfType(Landroid/content/Context;JI)Lcom/android/emailcommon/provider/Mailbox;
+
+    move-result-object v12
+
+    .line 520
+    .local v12, inbox:Lcom/android/emailcommon/provider/Mailbox;
+    if-eqz v12, :cond_1c
+
+    iget v1, v12, Lcom/android/emailcommon/provider/Mailbox;->mFlags:I
+
+    and-int/lit8 v1, v1, 0x10
+
+    if-nez v1, :cond_1c
+
+    .line 522
+    const-string v1, "flags"
+
+    iget v2, v12, Lcom/android/emailcommon/provider/Mailbox;->mFlags:I
+
+    or-int/lit8 v2, v2, 0x10
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v8, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    .line 524
+    sget-object v1, Lcom/android/emailcommon/provider/Mailbox;->CONTENT_URI:Landroid/net/Uri;
+
+    iget-wide v2, v12, Lcom/android/emailcommon/provider/Mailbox;->mId:J
+
+    invoke-static {v1, v2, v3}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v1, v8, v2, v3}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+    :try_end_73
+    .catchall {:try_start_17 .. :try_end_73} :catchall_74
+
+    goto :goto_1c
+
+    .line 532
+    .end local v6           #account:Lcom/android/emailcommon/provider/Account;
+    .end local v8           #cv:Landroid/content/ContentValues;
+    .end local v9           #ha:Lcom/android/emailcommon/provider/HostAuth;
+    .end local v10           #hostAuthId:J
+    .end local v12           #inbox:Lcom/android/emailcommon/provider/Mailbox;
+    :catchall_74
+    move-exception v1
+
+    invoke-interface {v7}, Landroid/database/Cursor;->close()V
+
+    throw v1
+
+    .restart local v8       #cv:Landroid/content/ContentValues;
+    :cond_79
+    invoke-interface {v7}, Landroid/database/Cursor;->close()V
+
+    .line 534
+    return-object p1
+.end method
+
+.method public static deleteAccountPIMData(J)V
+    .registers 7
+    .parameter "accountId"
+
+    .prologue
+    .line 578
+    sget-object v1, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
+
+    .line 579
+    .local v1, exchangeService:Lcom/android/exchange/ExchangeService;
+    if-nez v1, :cond_5
+
+    .line 594
+    :cond_4
+    :goto_4
+    return-void
+
+    .line 580
+    :cond_5
+    const/16 v4, 0x42
+
+    invoke-static {v1, p0, p1, v4}, Lcom/android/emailcommon/provider/Mailbox;->restoreMailboxOfType(Landroid/content/Context;JI)Lcom/android/emailcommon/provider/Mailbox;
+
+    move-result-object v2
+
+    .line 582
+    .local v2, mailbox:Lcom/android/emailcommon/provider/Mailbox;
+    if-eqz v2, :cond_1a
+
+    .line 583
+    new-instance v3, Lcom/android/exchange/EasSyncService;
+
+    invoke-direct {v3, v1, v2}, Lcom/android/exchange/EasSyncService;-><init>(Landroid/content/Context;Lcom/android/emailcommon/provider/Mailbox;)V
+
+    .line 584
+    .local v3, service:Lcom/android/exchange/EasSyncService;
+    new-instance v0, Lcom/android/exchange/adapter/ContactsSyncAdapter;
+
+    invoke-direct {v0, v3}, Lcom/android/exchange/adapter/ContactsSyncAdapter;-><init>(Lcom/android/exchange/EasSyncService;)V
+
+    .line 585
+    .local v0, adapter:Lcom/android/exchange/adapter/ContactsSyncAdapter;
+    invoke-virtual {v0}, Lcom/android/exchange/adapter/ContactsSyncAdapter;->wipe()V
+
+    .line 587
+    .end local v0           #adapter:Lcom/android/exchange/adapter/ContactsSyncAdapter;
+    .end local v3           #service:Lcom/android/exchange/EasSyncService;
+    :cond_1a
+    const/16 v4, 0x41
+
+    invoke-static {v1, p0, p1, v4}, Lcom/android/emailcommon/provider/Mailbox;->restoreMailboxOfType(Landroid/content/Context;JI)Lcom/android/emailcommon/provider/Mailbox;
+
+    move-result-object v2
+
+    .line 589
+    if-eqz v2, :cond_4
+
+    .line 590
+    new-instance v3, Lcom/android/exchange/EasSyncService;
+
+    invoke-direct {v3, v1, v2}, Lcom/android/exchange/EasSyncService;-><init>(Landroid/content/Context;Lcom/android/emailcommon/provider/Mailbox;)V
+
+    .line 591
+    .restart local v3       #service:Lcom/android/exchange/EasSyncService;
+    new-instance v0, Lcom/android/exchange/adapter/CalendarSyncAdapter;
+
+    invoke-direct {v0, v3}, Lcom/android/exchange/adapter/CalendarSyncAdapter;-><init>(Lcom/android/exchange/EasSyncService;)V
+
+    .line 592
+    .local v0, adapter:Lcom/android/exchange/adapter/CalendarSyncAdapter;
+    invoke-virtual {v0}, Lcom/android/exchange/adapter/CalendarSyncAdapter;->wipe()V
+
+    goto :goto_4
+.end method
+
+.method public static done(Lcom/android/exchange/AbstractSyncService;)V
+    .registers 13
+    .parameter
+
+    .prologue
+    const/4 v8, 0x2
+
+    .line 2490
+    sget-object v1, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
+
+    .line 2491
+    if-nez v1, :cond_6
+
+    .line 2550
+    :goto_5
+    return-void
+
+    .line 2492
+    :cond_6
+    sget-object v2, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    .line 2493
+    :try_start_9
+    iget-wide v3, p0, Lcom/android/exchange/AbstractSyncService;->mMailboxId:J
+
+    .line 2495
+    invoke-direct {v1, v3, v4}, Lcom/android/exchange/ExchangeService;->isRunningInServiceThread(J)Z
+
+    move-result v0
+
+    if-nez v0, :cond_16
+
+    .line 2496
+    monitor-exit v2
+
+    goto :goto_5
+
+    .line 2549
+    :catchall_13
+    move-exception v0
+
+    monitor-exit v2
+    :try_end_15
+    .catchall {:try_start_9 .. :try_end_15} :catchall_13
+
+    throw v0
+
+    .line 2498
+    :cond_16
+    :try_start_16
+    invoke-direct {v1, v3, v4}, Lcom/android/exchange/ExchangeService;->releaseMailbox(J)V
+
+    .line 2500
+    iget-object v5, v1, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
+
+    .line 2501
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-virtual {v5, v0}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/exchange/ExchangeService$SyncError;
+
+    .line 2503
+    iget v6, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
+
+    .line 2504
+    invoke-static {v1, v3, v4}, Lcom/android/emailcommon/provider/Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Mailbox;
+
+    move-result-object v7
+
+    .line 2505
+    if-nez v7, :cond_2f
+
+    monitor-exit v2
+
+    goto :goto_5
+
+    .line 2507
+    :cond_2f
+    if-eq v6, v8, :cond_4a
+
+    .line 2508
+    iget-wide v8, v7, Lcom/android/emailcommon/provider/Mailbox;->mAccountKey:J
+
+    .line 2509
+    invoke-static {v1, v8, v9}, Lcom/android/emailcommon/provider/Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Account;
+
+    move-result-object v10
+
+    .line 2510
+    if-nez v10, :cond_3b
+
+    monitor-exit v2
+
+    goto :goto_5
+
+    .line 2511
+    :cond_3b
+    const/4 v11, 0x2
+
+    invoke-virtual {v1, v1, v11, v10}, Lcom/android/exchange/ExchangeService;->releaseSyncHolds(Landroid/content/Context;ILcom/android/emailcommon/provider/Account;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_4a
+
+    .line 2513
+    new-instance v10, Lcom/android/emailcommon/service/AccountServiceProxy;
+
+    invoke-direct {v10, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v10, v8, v9}, Lcom/android/emailcommon/service/AccountServiceProxy;->notifyLoginSucceeded(J)V
+
+    .line 2517
+    :cond_4a
+    packed-switch v6, :pswitch_data_dc
+
+    .line 2548
+    :goto_4d
+    const-string v0, "sync completed"
+
+    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->kick(Ljava/lang/String;)V
+
+    .line 2549
+    monitor-exit v2
+
+    goto :goto_5
+
+    .line 2519
+    :pswitch_54
+    invoke-virtual {p0}, Lcom/android/exchange/AbstractSyncService;->hasPendingRequests()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5a
+
+    .line 2522
+    :cond_5a
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-virtual {v5, v0}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2524
+    const-class v1, Lcom/android/exchange/ExchangeService;
+
+    monitor-enter v1
+    :try_end_64
+    .catchall {:try_start_16 .. :try_end_64} :catchall_13
+
+    .line 2525
+    const/4 v0, 0x0
+
+    :try_start_65
+    sput v0, Lcom/android/exchange/ExchangeService;->sClientConnectionManagerShutdownCount:I
+
+    .line 2526
+    monitor-exit v1
+
+    goto :goto_4d
+
+    :catchall_69
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_6b
+    .catchall {:try_start_65 .. :try_end_6b} :catchall_69
+
+    :try_start_6b
+    throw v0
+
+    .line 2530
+    :pswitch_6c
+    if-eqz v0, :cond_96
+
+    .line 2531
     invoke-virtual {v0}, Lcom/android/exchange/ExchangeService$SyncError;->escalate()V
 
-    .line 5199
+    .line 2532
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v3, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
+    iget-object v3, v7, Lcom/android/emailcommon/provider/Mailbox;->mDisplayName:Ljava/lang/String;
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4614,12 +2388,12 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
-    goto/16 :goto_50
+    goto :goto_4d
 
-    .line 5201
-    :cond_154
+    .line 2534
+    :cond_96
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
@@ -4634,12 +2408,12 @@
 
     invoke-virtual {v5, v0, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5202
+    .line 2535
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
+    iget-object v1, v7, Lcom/android/emailcommon/provider/Mailbox;->mDisplayName:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4655,269 +2429,22 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-    :try_end_17c
-    .catchall {:try_start_121 .. :try_end_17c} :catchall_2f
-
-    goto/16 :goto_50
-
-    .line 5214
-    :pswitch_17e
-    :try_start_17e
-    new-instance v8, Lcom/android/emailcommon/service/AccountServiceProxy;
-
-    invoke-direct {v8, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;-><init>(Landroid/content/Context;)V
-
-    iget-wide v9, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mAccountKey:J
-
-    invoke-virtual {v8, v9, v10}, Lcom/android/emailcommon/service/AccountServiceProxy;->notifyLoginFailed(J)V
-    :try_end_188
-    .catchall {:try_start_17e .. :try_end_188} :catchall_2f
-    .catch Landroid/os/RemoteException; {:try_start_17e .. :try_end_188} :catch_2c4
-
-    .line 5220
-    :goto_188
-    if-eqz v0, :cond_1ca
-
-    .line 5221
-    :try_start_18a
-    iget-boolean v1, v0, Lcom/android/exchange/ExchangeService$SyncError;->autoRecover:Z
-
-    if-nez v1, :cond_196
-
-    .line 5222
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lcom/android/exchange/ExchangeService$SyncError;->autoRecover:Z
-
-    .line 5223
-    const-wide/32 v3, 0xa4cb80
-
-    iput-wide v3, v0, Lcom/android/exchange/ExchangeService$SyncError;->holdDelay:J
-
-    .line 5225
-    :cond_196
-    invoke-virtual {v0}, Lcom/android/exchange/ExchangeService$SyncError;->escalate()V
-
-    .line 5226
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v3, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, " held for "
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-wide v3, v0, Lcom/android/exchange/ExchangeService$SyncError;->holdDelay:J
-
-    invoke-virtual {v1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "ms"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "due to exception: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    goto/16 :goto_50
-
-    .line 5229
-    :cond_1ca
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    new-instance v3, Lcom/android/exchange/ExchangeService$SyncError;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v4, 0x0
-
-    const/4 v8, 0x1
-
-    invoke-direct {v3, v1, v6, v4, v8}, Lcom/android/exchange/ExchangeService$SyncError;-><init>(Lcom/android/exchange/ExchangeService;IZZ)V
-
-    invoke-virtual {v5, v0, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 5230
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " added to syncErrorMap, hold for "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const v1, 0xa4cb80
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    goto/16 :goto_50
-
-    .line 5234
-    :pswitch_1fc
-    if-eqz v0, :cond_22d
-
-    .line 5235
-    invoke-virtual {v0}, Lcom/android/exchange/ExchangeService$SyncError;->escalate()V
-
-    .line 5239
-    :goto_201
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " added to syncErrorMap, hold for "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const v1, 0x1b7740
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "due to exception: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const/4 v1, 0x3
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    goto/16 :goto_50
-
-    .line 5237
-    :cond_22d
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    new-instance v3, Lcom/android/exchange/ExchangeService$SyncError;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const v4, 0x1b7740
-
-    const/4 v8, 0x0
-
-    invoke-direct {v3, v1, v6, v4, v8}, Lcom/android/exchange/ExchangeService$SyncError;-><init>(Lcom/android/exchange/ExchangeService;IIZ)V
-
-    invoke-virtual {v5, v0, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_201
-
-    .line 5245
-    :pswitch_241
-    iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    if-eqz v0, :cond_270
-
-    .line 5246
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "done(): setting the provisioning error for mAccount: "
-
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v7, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iget-wide v7, v7, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-virtual {v0, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
     invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
-    .line 5247
-    sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
+    goto :goto_4d
 
-    iget-object v0, v0, Lcom/android/exchange/ExchangeService;->mProvisionErrorExist:Ljava/util/HashMap;
+    .line 2540
+    :pswitch_bf
+    new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy;
 
-    iget-object v7, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
+    invoke-direct {v0, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;-><init>(Landroid/content/Context;)V
 
-    iget-wide v7, v7, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v7, v7, Lcom/android/emailcommon/provider/Mailbox;->mAccountKey:J
 
-    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v0, v7, v8}, Lcom/android/emailcommon/service/AccountServiceProxy;->notifyLoginFailed(J)V
 
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    invoke-virtual {v0, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 5250
-    :cond_270
+    .line 2545
+    :pswitch_c9
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
@@ -4931,841 +2458,58 @@
     invoke-direct {v3, v1, v6, v4}, Lcom/android/exchange/ExchangeService$SyncError;-><init>(Lcom/android/exchange/ExchangeService;IZ)V
 
     invoke-virtual {v5, v0, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto/16 :goto_50
-
-    .line 5255
-    :pswitch_282
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    new-instance v3, Lcom/android/exchange/ExchangeService$SyncError;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const v4, 0x75300
-
-    const/4 v7, 0x0
-
-    invoke-direct {v3, v1, v6, v4, v7}, Lcom/android/exchange/ExchangeService$SyncError;-><init>(Lcom/android/exchange/ExchangeService;IIZ)V
-
-    invoke-virtual {v5, v0, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 5257
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Account is blocked account Id:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iget-wide v3, v1, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " Sync is put on hold for : "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const v1, 0x75300
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " minutes"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-    :try_end_2c2
-    .catchall {:try_start_18a .. :try_end_2c2} :catchall_2f
-
-    goto/16 :goto_50
-
-    .line 5215
-    :catch_2c4
-    move-exception v8
-
-    goto/16 :goto_188
-
-    .line 5143
-    :catch_2c7
-    move-exception v8
+    :try_end_d9
+    .catchall {:try_start_6b .. :try_end_d9} :catchall_13
 
     goto/16 :goto_4d
 
-    .line 5149
-    :pswitch_data_2ca
-    .packed-switch 0x0
-        :pswitch_57
-        :pswitch_122
-        :pswitch_17e
-        :pswitch_1fc
-        :pswitch_241
-        :pswitch_50
-        :pswitch_282
-        :pswitch_282
-        :pswitch_50
-        :pswitch_50
-        :pswitch_50
-        :pswitch_50
-        :pswitch_122
-    .end packed-switch
-.end method
-
-.method public static doneOutOfBand(Lcom/android/exchange/AbstractSyncService;)V
-    .registers 12
-    .parameter
-
-    .prologue
-    .line 4980
-    sget-object v1, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    .line 4981
-    if-nez v1, :cond_5
-
-    .line 5104
-    :goto_4
-    return-void
-
-    .line 4983
-    :cond_5
-    sget-object v2, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    .line 4984
-    :try_start_8
-    iget-wide v3, p0, Lcom/android/exchange/AbstractSyncService;->mMailboxId:J
-
-    .line 4985
-    iget-object v5, v1, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
-
-    .line 4986
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-virtual {v5, v0}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/exchange/ExchangeService$SyncError;
-
-    .line 4991
-    iget v6, p0, Lcom/android/exchange/AbstractSyncService;->mExitStatus:I
-
-    .line 4992
-    invoke-static {v1, v3, v4}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    move-result-object v7
-
-    .line 4993
-    if-nez v7, :cond_23
-
-    .line 4994
-    monitor-exit v2
-
-    goto :goto_4
-
-    .line 5103
-    :catchall_20
-    move-exception v0
-
-    monitor-exit v2
-    :try_end_22
-    .catchall {:try_start_8 .. :try_end_22} :catchall_20
-
-    throw v0
-
-    .line 4996
-    :cond_23
-    :try_start_23
-    sget-wide v8, Lcom/android/exchange/ExchangeService;->MAILBOX_DUMMY_GALSEARCH:J
-
-    cmp-long v8, v3, v8
-
-    if-eqz v8, :cond_210
-
-    .line 4997
-    packed-switch v6, :pswitch_data_228
-
-    .line 5094
-    :cond_2c
-    :goto_2c
-    :pswitch_2c
-    const-string v0, "sync completed"
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->kick(Ljava/lang/String;)V
-
-    .line 5103
-    :cond_31
-    :goto_31
-    monitor-exit v2
-
-    goto :goto_4
-
-    .line 5001
-    :pswitch_33
-    const-class v1, Lcom/android/exchange/ExchangeService;
-
-    monitor-enter v1
-    :try_end_36
-    .catchall {:try_start_23 .. :try_end_36} :catchall_20
-
-    .line 5002
-    const/4 v0, 0x0
-
-    :try_start_37
-    sput v0, Lcom/android/exchange/ExchangeService;->sClientConnectionManagerShutdownCount:I
-
-    .line 5003
-    monitor-exit v1
-
-    goto :goto_2c
-
-    :catchall_3b
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_3d
-    .catchall {:try_start_37 .. :try_end_3d} :catchall_3b
-
-    :try_start_3d
-    throw v0
-
-    .line 5007
-    :pswitch_3e
-    if-eqz v0, :cond_6f
-
-    .line 5009
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Lcom/android/exchange/ExchangeService$SyncError;->autoRecover:Z
-
-    .line 5010
-    iget-wide v3, v0, Lcom/android/exchange/ExchangeService$SyncError;->DEFAULT_HOLD_DELAY:J
-
-    iput-wide v3, v0, Lcom/android/exchange/ExchangeService$SyncError;->holdDelay:J
-
-    .line 5011
-    invoke-virtual {v0}, Lcom/android/exchange/ExchangeService$SyncError;->escalate()V
-
-    .line 5012
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v3, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, " held for "
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-wide v3, v0, Lcom/android/exchange/ExchangeService$SyncError;->holdDelay:J
-
-    invoke-virtual {v1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "ms"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    goto :goto_2c
-
-    .line 5014
-    :cond_6f
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    new-instance v3, Lcom/android/exchange/ExchangeService$SyncError;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v4, 0x0
-
-    invoke-direct {v3, v1, v6, v4}, Lcom/android/exchange/ExchangeService$SyncError;-><init>(Lcom/android/exchange/ExchangeService;IZ)V
-
-    invoke-virtual {v5, v0, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 5016
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " added to syncErrorMap, hold for 15s"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    goto :goto_2c
-
-    .line 5023
-    :pswitch_98
-    iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    if-eqz v0, :cond_2c
-
-    .line 5024
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "setting the provisioning error for mAccount: "
-
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v7, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iget-wide v7, v7, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-virtual {v0, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 5025
-    sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    iget-object v0, v0, Lcom/android/exchange/ExchangeService;->mProvisionErrorExist:Ljava/util/HashMap;
-
-    iget-object v7, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iget-wide v7, v7, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    invoke-virtual {v0, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 5026
-    const-wide/16 v7, 0x0
-
-    cmp-long v0, v3, v7
-
-    if-lez v0, :cond_2c
-
-    .line 5029
-    invoke-static {v1, v3, v4}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    move-result-object v0
-
-    .line 5030
-    if-eqz v0, :cond_2c
-
-    iget v0, v0, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    const/16 v7, 0x44
-
-    if-eq v0, v7, :cond_2c
-
-    .line 5031
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    new-instance v7, Lcom/android/exchange/ExchangeService$SyncError;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v8, 0x1
-
-    invoke-direct {v7, v1, v6, v8}, Lcom/android/exchange/ExchangeService$SyncError;-><init>(Lcom/android/exchange/ExchangeService;IZ)V
-
-    invoke-virtual {v5, v0, v7}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 5033
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "mailbox: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " put to hold due to security failure"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-    :try_end_105
-    .catchall {:try_start_3d .. :try_end_105} :catchall_20
-
-    goto/16 :goto_2c
-
-    .line 5052
-    :pswitch_107
-    :try_start_107
-    new-instance v8, Lcom/android/emailcommon/service/AccountServiceProxy;
-
-    invoke-direct {v8, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;-><init>(Landroid/content/Context;)V
-
-    iget-wide v9, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mAccountKey:J
-
-    invoke-virtual {v8, v9, v10}, Lcom/android/emailcommon/service/AccountServiceProxy;->notifyLoginFailed(J)V
-    :try_end_111
-    .catchall {:try_start_107 .. :try_end_111} :catchall_20
-    .catch Landroid/os/RemoteException; {:try_start_107 .. :try_end_111} :catch_224
-
-    .line 5058
-    :goto_111
-    if-eqz v0, :cond_153
-
-    .line 5059
-    :try_start_113
-    iget-boolean v1, v0, Lcom/android/exchange/ExchangeService$SyncError;->autoRecover:Z
-
-    if-nez v1, :cond_11f
-
-    .line 5060
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lcom/android/exchange/ExchangeService$SyncError;->autoRecover:Z
-
-    .line 5061
-    const-wide/32 v3, 0xa4cb80
-
-    iput-wide v3, v0, Lcom/android/exchange/ExchangeService$SyncError;->holdDelay:J
-
-    .line 5063
-    :cond_11f
-    invoke-virtual {v0}, Lcom/android/exchange/ExchangeService$SyncError;->escalate()V
-
-    .line 5064
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v3, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, " held for "
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-wide v3, v0, Lcom/android/exchange/ExchangeService$SyncError;->holdDelay:J
-
-    invoke-virtual {v1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "ms"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "due to exception: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    goto/16 :goto_2c
-
-    .line 5067
-    :cond_153
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    new-instance v3, Lcom/android/exchange/ExchangeService$SyncError;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v4, 0x0
-
-    const/4 v8, 0x1
-
-    invoke-direct {v3, v1, v6, v4, v8}, Lcom/android/exchange/ExchangeService$SyncError;-><init>(Lcom/android/exchange/ExchangeService;IZZ)V
-
-    invoke-virtual {v5, v0, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 5068
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " added to syncErrorMap, hold for "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const v1, 0xa4cb80
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    goto/16 :goto_2c
-
-    .line 5072
-    :pswitch_185
-    if-eqz v0, :cond_1b6
-
-    .line 5073
-    invoke-virtual {v0}, Lcom/android/exchange/ExchangeService$SyncError;->escalate()V
-
-    .line 5077
-    :goto_18a
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " added to syncErrorMap, hold for "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const v1, 0x1b7740
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "due to exception: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const/4 v1, 0x3
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    goto/16 :goto_2c
-
-    .line 5075
-    :cond_1b6
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    new-instance v3, Lcom/android/exchange/ExchangeService$SyncError;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const v4, 0x1b7740
-
-    const/4 v8, 0x0
-
-    invoke-direct {v3, v1, v6, v4, v8}, Lcom/android/exchange/ExchangeService$SyncError;-><init>(Lcom/android/exchange/ExchangeService;IIZ)V
-
-    invoke-virtual {v5, v0, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_18a
-
-    .line 5083
-    :pswitch_1ca
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    new-instance v3, Lcom/android/exchange/ExchangeService$SyncError;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const v4, 0x75300
-
-    const/4 v7, 0x0
-
-    invoke-direct {v3, v1, v6, v4, v7}, Lcom/android/exchange/ExchangeService$SyncError;-><init>(Lcom/android/exchange/ExchangeService;IIZ)V
-
-    invoke-virtual {v5, v0, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 5086
-    iget-object v0, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    if-eqz v0, :cond_2c
-
-    .line 5087
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Account is blocked account Id:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iget-wide v3, v1, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " Sync is put on hold for : "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const v1, 0x75300
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " minutes"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    goto/16 :goto_2c
-
-    .line 5095
-    :cond_210
-    sget-wide v0, Lcom/android/exchange/ExchangeService;->MAILBOX_DUMMY_GALSEARCH:J
-
-    cmp-long v0, v3, v0
-
-    if-nez v0, :cond_31
-
-    if-nez v6, :cond_31
-
-    .line 5098
-    const-class v1, Lcom/android/exchange/ExchangeService;
-
-    monitor-enter v1
-    :try_end_21b
-    .catchall {:try_start_113 .. :try_end_21b} :catchall_20
-
-    .line 5099
-    const/4 v0, 0x0
-
-    :try_start_21c
-    sput v0, Lcom/android/exchange/ExchangeService;->sClientConnectionManagerShutdownCount:I
-
-    .line 5100
-    monitor-exit v1
-
-    goto/16 :goto_31
-
-    :catchall_221
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_223
-    .catchall {:try_start_21c .. :try_end_223} :catchall_221
-
-    :try_start_223
-    throw v0
-    :try_end_224
-    .catchall {:try_start_223 .. :try_end_224} :catchall_20
-
-    .line 5053
-    :catch_224
-    move-exception v8
-
-    goto/16 :goto_111
-
-    .line 4997
+    .line 2517
     nop
 
-    :pswitch_data_228
+    :pswitch_data_dc
     .packed-switch 0x0
-        :pswitch_33
-        :pswitch_3e
-        :pswitch_107
-        :pswitch_185
-        :pswitch_98
-        :pswitch_2c
-        :pswitch_1ca
-        :pswitch_1ca
-        :pswitch_2c
-        :pswitch_2c
-        :pswitch_2c
-        :pswitch_2c
-        :pswitch_3e
+        :pswitch_54
+        :pswitch_6c
+        :pswitch_bf
+        :pswitch_c9
+        :pswitch_c9
+        :pswitch_c9
     .end packed-switch
 .end method
 
-.method public static errorlog(Ljava/lang/String;)V
-    .registers 2
-    .parameter "str"
-
-    .prologue
-    .line 2583
-    sget-boolean v0, Lcom/android/emailcommon/EasRefs;->USER_LOG:Z
-
-    if-eqz v0, :cond_12
-
-    .line 2584
-    const-string v0, "ExchangeService"
-
-    invoke-static {v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2585
-    sget-boolean v0, Lcom/android/emailcommon/EasRefs;->FILE_LOG:Z
-
-    if-eqz v0, :cond_12
-
-    .line 2586
-    const-string v0, "ExchangeService"
-
-    invoke-static {v0, p0}, Lcom/android/exchange/utility/FileLogger;->log(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 2589
-    :cond_12
-    return-void
-.end method
-
-.method public static getAccountById(J)Lcom/android/emailcommon/provider/EmailContent$Account;
+.method public static getAccountById(J)Lcom/android/emailcommon/provider/Account;
     .registers 5
     .parameter "accountId"
 
     .prologue
-    .line 2244
+    .line 1022
     sget-object v1, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 2245
+    .line 1023
     .local v1, exchangeService:Lcom/android/exchange/ExchangeService;
     if-eqz v1, :cond_10
 
-    .line 2246
-    sget-object v0, Lcom/android/exchange/ExchangeService;->mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
+    .line 1024
+    iget-object v0, v1, Lcom/android/exchange/ExchangeService;->mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
 
-    .line 2247
+    .line 1025
     .local v0, accountList:Lcom/android/exchange/ExchangeService$AccountList;
     monitor-enter v0
 
-    .line 2248
+    .line 1026
     :try_start_7
-    invoke-virtual {v0, p0, p1}, Lcom/android/exchange/ExchangeService$AccountList;->getById(J)Lcom/android/emailcommon/provider/EmailContent$Account;
+    invoke-virtual {v0, p0, p1}, Lcom/android/exchange/ExchangeService$AccountList;->getById(J)Lcom/android/emailcommon/provider/Account;
 
     move-result-object v2
 
     monitor-exit v0
 
-    .line 2251
+    .line 1029
     .end local v0           #accountList:Lcom/android/exchange/ExchangeService$AccountList;
     :goto_c
     return-object v2
 
-    .line 2249
+    .line 1027
     .restart local v0       #accountList:Lcom/android/exchange/ExchangeService$AccountList;
     :catchall_d
     move-exception v2
@@ -5776,7 +2520,7 @@
 
     throw v2
 
-    .line 2251
+    .line 1029
     .end local v0           #accountList:Lcom/android/exchange/ExchangeService$AccountList;
     :cond_10
     const/4 v2, 0x0
@@ -5784,617 +2528,99 @@
     goto :goto_c
 .end method
 
-.method public static getAccountList()Lcom/android/exchange/ExchangeService$AccountList;
-    .registers 2
+.method public static declared-synchronized getClientConnectionManager()Lcom/android/emailcommon/utility/EmailClientConnectionManager;
+    .registers 4
 
     .prologue
-    .line 2230
-    sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
+    .line 1219
+    const-class v2, Lcom/android/exchange/ExchangeService;
 
-    if-eqz v0, :cond_10
+    monitor-enter v2
 
-    .line 2233
-    sget-object v1, Lcom/android/exchange/ExchangeService;->mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
-
-    monitor-enter v1
-
-    .line 2234
-    :try_start_7
-    sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    sget-object v0, Lcom/android/exchange/ExchangeService;->mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
-
-    monitor-exit v1
-
-    .line 2239
-    :goto_c
-    return-object v0
-
-    .line 2236
-    :catchall_d
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_f
-    .catchall {:try_start_7 .. :try_end_f} :catchall_d
-
-    throw v0
-
-    .line 2239
-    :cond_10
-    sget-object v0, Lcom/android/exchange/ExchangeService;->EMPTY_ACCOUNT_LIST:Lcom/android/exchange/ExchangeService$AccountList;
-
-    goto :goto_c
-.end method
-
-.method public static getAliasFromMap(J)Ljava/lang/String;
-    .registers 6
-    .parameter
-
-    .prologue
-    .line 5638
-    .line 5639
-    sget-object v1, Lcom/android/exchange/ExchangeService;->THREAD_MAP_LOCK:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 5641
     :try_start_3
-    sget-object v0, Lcom/android/exchange/ExchangeService;->mThreadIdMap:Ljava/util/HashMap;
+    sget-object v1, Lcom/android/exchange/ExchangeService;->sClientConnectionManager:Lcom/android/emailcommon/utility/EmailClientConnectionManager;
 
-    new-instance v2, Ljava/lang/Long;
+    if-nez v1, :cond_31
 
-    invoke-direct {v2, p0, p1}, Ljava/lang/Long;-><init>(J)V
+    .line 1222
+    sget v1, Lcom/android/exchange/ExchangeService;->sClientConnectionManagerShutdownCount:I
 
-    invoke-virtual {v0, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v3, 0x1
 
-    move-result-object v0
+    if-le v1, v3, :cond_18
 
-    check-cast v0, Ljava/lang/String;
-    :try_end_10
-    .catchall {:try_start_3 .. :try_end_10} :catchall_2d
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_10} :catch_2a
+    .line 1223
+    const-string v1, "Shutting down process to unblock threads"
 
-    .line 5645
-    :goto_10
-    :try_start_10
-    monitor-exit v1
-    :try_end_11
-    .catchall {:try_start_10 .. :try_end_11} :catchall_2d
+    invoke-static {v1}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
 
-    .line 5646
-    const-string v1, "SyncManager"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Returning Alias "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 5647
-    return-object v0
-
-    .line 5642
-    :catch_2a
-    move-exception v0
-
-    .line 5643
-    const/4 v0, 0x0
-
-    goto :goto_10
-
-    .line 5645
-    :catchall_2d
-    move-exception v0
-
-    :try_start_2e
-    monitor-exit v1
-    :try_end_2f
-    .catchall {:try_start_2e .. :try_end_2f} :catchall_2d
-
-    throw v0
-.end method
-
-.method public static declared-synchronized getClientConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
-    .registers 6
-
-    .prologue
-    const/4 v2, 0x1
-
-    .line 2876
-    const-class v1, Lcom/android/exchange/ExchangeService;
-
-    monitor-enter v1
-
-    :try_start_4
-    sget-object v0, Lcom/android/exchange/ExchangeService;->sClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-
-    if-nez v0, :cond_78
-
-    .line 2880
-    sget v0, Lcom/android/exchange/ExchangeService;->sClientConnectionManagerShutdownCount:I
-
-    if-le v0, v2, :cond_18
-
-    .line 2881
-    const-string v0, "Shutting down process to unblock threads"
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    .line 2882
+    .line 1224
     invoke-static {}, Landroid/os/Process;->myPid()I
 
-    move-result v0
+    move-result v1
 
-    invoke-static {v0}, Landroid/os/Process;->killProcess(I)V
+    invoke-static {v1}, Landroid/os/Process;->killProcess(I)V
 
-    .line 2886
+    .line 1226
     :cond_18
-    new-instance v0, Lorg/apache/http/conn/scheme/SchemeRegistry;
+    new-instance v0, Lorg/apache/http/params/BasicHttpParams;
 
-    invoke-direct {v0}, Lorg/apache/http/conn/scheme/SchemeRegistry;-><init>()V
+    invoke-direct {v0}, Lorg/apache/http/params/BasicHttpParams;-><init>()V
 
-    .line 2887
-    new-instance v2, Lorg/apache/http/conn/scheme/Scheme;
+    .line 1227
+    .local v0, params:Lorg/apache/http/params/HttpParams;
+    const-string v1, "http.conn-manager.max-total"
 
-    const-string v3, "http"
+    const/16 v3, 0x19
 
-    invoke-static {}, Lorg/apache/http/conn/scheme/PlainSocketFactory;->getSocketFactory()Lorg/apache/http/conn/scheme/PlainSocketFactory;
+    invoke-interface {v0, v1, v3}, Lorg/apache/http/params/HttpParams;->setIntParameter(Ljava/lang/String;I)Lorg/apache/http/params/HttpParams;
 
-    move-result-object v4
+    .line 1228
+    const-string v1, "http.conn-manager.max-per-route"
 
-    const/16 v5, 0x50
+    sget-object v3, Lcom/android/exchange/ExchangeService;->sConnPerRoute:Lorg/apache/http/conn/params/ConnPerRoute;
 
-    invoke-direct {v2, v3, v4, v5}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;Lorg/apache/http/conn/scheme/SocketFactory;I)V
+    invoke-interface {v0, v1, v3}, Lorg/apache/http/params/HttpParams;->setParameter(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/params/HttpParams;
 
-    invoke-virtual {v0, v2}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
+    .line 1229
+    invoke-static {v0}, Lcom/android/emailcommon/utility/EmailClientConnectionManager;->newInstance(Lorg/apache/http/params/HttpParams;)Lcom/android/emailcommon/utility/EmailClientConnectionManager;
 
-    .line 2889
-    new-instance v2, Lcom/android/emailcommon/utility/SSLSocketFactory;
+    move-result-object v1
 
-    const/4 v3, 0x0
+    sput-object v1, Lcom/android/exchange/ExchangeService;->sClientConnectionManager:Lcom/android/emailcommon/utility/EmailClientConnectionManager;
 
-    invoke-static {v3}, Lcom/android/exchange/cba/SSLUtils;->getSSLSocketFactory(Z)Ljavax/net/ssl/SSLSocketFactory;
+    .line 1232
+    :cond_31
+    sget-object v1, Lcom/android/exchange/ExchangeService;->sClientConnectionManager:Lcom/android/emailcommon/utility/EmailClientConnectionManager;
+    :try_end_33
+    .catchall {:try_start_3 .. :try_end_33} :catchall_35
 
-    move-result-object v3
+    monitor-exit v2
 
-    invoke-direct {v2, v3}, Lcom/android/emailcommon/utility/SSLSocketFactory;-><init>(Ljavax/net/ssl/SSLSocketFactory;)V
+    return-object v1
 
-    .line 2890
-    new-instance v3, Lorg/apache/http/conn/scheme/Scheme;
+    .line 1219
+    :catchall_35
+    move-exception v1
 
-    const-string v4, "https"
+    monitor-exit v2
 
-    const/16 v5, 0x1bb
-
-    invoke-direct {v3, v4, v2, v5}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;Lorg/apache/http/conn/scheme/SocketFactory;I)V
-
-    invoke-virtual {v0, v3}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
-
-    .line 2893
-    new-instance v2, Lcom/android/emailcommon/utility/SSLSocketFactory;
-
-    const/4 v3, 0x1
-
-    invoke-static {v3}, Lcom/android/exchange/cba/SSLUtils;->getSSLSocketFactory(Z)Ljavax/net/ssl/SSLSocketFactory;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Lcom/android/emailcommon/utility/SSLSocketFactory;-><init>(Ljavax/net/ssl/SSLSocketFactory;)V
-
-    .line 2894
-    sget-object v3, Lcom/android/emailcommon/utility/SSLSocketFactory;->ALLOW_ALL_HOSTNAME_VERIFIER:Lorg/apache/http/conn/ssl/X509HostnameVerifier;
-
-    invoke-virtual {v2, v3}, Lcom/android/emailcommon/utility/SSLSocketFactory;->setHostnameVerifier(Lorg/apache/http/conn/ssl/X509HostnameVerifier;)V
-
-    .line 2896
-    new-instance v3, Lorg/apache/http/conn/scheme/Scheme;
-
-    const-string v4, "httpts"
-
-    const/16 v5, 0x1bb
-
-    invoke-direct {v3, v4, v2, v5}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;Lorg/apache/http/conn/scheme/SocketFactory;I)V
-
-    invoke-virtual {v0, v3}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
-
-    .line 2898
-    new-instance v2, Lorg/apache/http/params/BasicHttpParams;
-
-    invoke-direct {v2}, Lorg/apache/http/params/BasicHttpParams;-><init>()V
-
-    .line 2899
-    const-string v3, "http.conn-manager.max-total"
-
-    const/16 v4, 0x19
-
-    invoke-interface {v2, v3, v4}, Lorg/apache/http/params/HttpParams;->setIntParameter(Ljava/lang/String;I)Lorg/apache/http/params/HttpParams;
-
-    .line 2900
-    const-string v3, "http.conn-manager.max-per-route"
-
-    sget-object v4, Lcom/android/exchange/ExchangeService;->sConnPerRoute:Lorg/apache/http/conn/params/ConnPerRoute;
-
-    invoke-interface {v2, v3, v4}, Lorg/apache/http/params/HttpParams;->setParameter(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/params/HttpParams;
-
-    .line 2901
-    new-instance v3, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;
-
-    invoke-direct {v3, v2, v0}, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;-><init>(Lorg/apache/http/params/HttpParams;Lorg/apache/http/conn/scheme/SchemeRegistry;)V
-
-    sput-object v3, Lcom/android/exchange/ExchangeService;->sClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-
-    .line 2904
-    :cond_78
-    sget-object v0, Lcom/android/exchange/ExchangeService;->sClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-    :try_end_7a
-    .catchall {:try_start_4 .. :try_end_7a} :catchall_7c
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 2876
-    :catchall_7c
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-.end method
-
-.method public static declared-synchronized getClientConnectionManagerForLoadMore()Lorg/apache/http/conn/ClientConnectionManager;
-    .registers 6
-
-    .prologue
-    .line 2909
-    const-class v1, Lcom/android/exchange/ExchangeService;
-
-    monitor-enter v1
-
-    :try_start_3
-    sget-object v0, Lcom/android/exchange/ExchangeService;->lmClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-
-    if-nez v0, :cond_6e
-
-    .line 2929
-    new-instance v0, Lorg/apache/http/conn/scheme/SchemeRegistry;
-
-    invoke-direct {v0}, Lorg/apache/http/conn/scheme/SchemeRegistry;-><init>()V
-
-    .line 2930
-    new-instance v2, Lorg/apache/http/conn/scheme/Scheme;
-
-    const-string v3, "http"
-
-    invoke-static {}, Lorg/apache/http/conn/scheme/PlainSocketFactory;->getSocketFactory()Lorg/apache/http/conn/scheme/PlainSocketFactory;
-
-    move-result-object v4
-
-    const/16 v5, 0x50
-
-    invoke-direct {v2, v3, v4, v5}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;Lorg/apache/http/conn/scheme/SocketFactory;I)V
-
-    invoke-virtual {v0, v2}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
-
-    .line 2932
-    new-instance v2, Lcom/android/emailcommon/utility/SSLSocketFactory;
-
-    const/4 v3, 0x0
-
-    invoke-static {v3}, Lcom/android/exchange/cba/SSLUtils;->getSSLSocketFactory(Z)Ljavax/net/ssl/SSLSocketFactory;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Lcom/android/emailcommon/utility/SSLSocketFactory;-><init>(Ljavax/net/ssl/SSLSocketFactory;)V
-
-    .line 2933
-    new-instance v3, Lorg/apache/http/conn/scheme/Scheme;
-
-    const-string v4, "https"
-
-    const/16 v5, 0x1bb
-
-    invoke-direct {v3, v4, v2, v5}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;Lorg/apache/http/conn/scheme/SocketFactory;I)V
-
-    invoke-virtual {v0, v3}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
-
-    .line 2936
-    new-instance v2, Lcom/android/emailcommon/utility/SSLSocketFactory;
-
-    const/4 v3, 0x1
-
-    invoke-static {v3}, Lcom/android/exchange/cba/SSLUtils;->getSSLSocketFactory(Z)Ljavax/net/ssl/SSLSocketFactory;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Lcom/android/emailcommon/utility/SSLSocketFactory;-><init>(Ljavax/net/ssl/SSLSocketFactory;)V
-
-    .line 2937
-    sget-object v3, Lcom/android/emailcommon/utility/SSLSocketFactory;->ALLOW_ALL_HOSTNAME_VERIFIER:Lorg/apache/http/conn/ssl/X509HostnameVerifier;
-
-    invoke-virtual {v2, v3}, Lcom/android/emailcommon/utility/SSLSocketFactory;->setHostnameVerifier(Lorg/apache/http/conn/ssl/X509HostnameVerifier;)V
-
-    .line 2939
-    new-instance v3, Lorg/apache/http/conn/scheme/Scheme;
-
-    const-string v4, "httpts"
-
-    const/16 v5, 0x1bb
-
-    invoke-direct {v3, v4, v2, v5}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;Lorg/apache/http/conn/scheme/SocketFactory;I)V
-
-    invoke-virtual {v0, v3}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
-
-    .line 2941
-    new-instance v2, Lorg/apache/http/params/BasicHttpParams;
-
-    invoke-direct {v2}, Lorg/apache/http/params/BasicHttpParams;-><init>()V
-
-    .line 2942
-    const-string v3, "http.conn-manager.max-total"
-
-    const/16 v4, 0x19
-
-    invoke-interface {v2, v3, v4}, Lorg/apache/http/params/HttpParams;->setIntParameter(Ljava/lang/String;I)Lorg/apache/http/params/HttpParams;
-
-    .line 2943
-    const-string v3, "http.conn-manager.max-per-route"
-
-    sget-object v4, Lcom/android/exchange/ExchangeService;->sConnPerRoute:Lorg/apache/http/conn/params/ConnPerRoute;
-
-    invoke-interface {v2, v3, v4}, Lorg/apache/http/params/HttpParams;->setParameter(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/params/HttpParams;
-
-    .line 2945
-    const-string v3, "http.conn-manager.timeout"
-
-    const/16 v4, 0x4e20
-
-    invoke-interface {v2, v3, v4}, Lorg/apache/http/params/HttpParams;->setIntParameter(Ljava/lang/String;I)Lorg/apache/http/params/HttpParams;
-
-    .line 2946
-    new-instance v3, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;
-
-    invoke-direct {v3, v2, v0}, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;-><init>(Lorg/apache/http/params/HttpParams;Lorg/apache/http/conn/scheme/SchemeRegistry;)V
-
-    sput-object v3, Lcom/android/exchange/ExchangeService;->lmClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-
-    .line 2949
-    :cond_6e
-    sget-object v0, Lcom/android/exchange/ExchangeService;->lmClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-    :try_end_70
-    .catchall {:try_start_3 .. :try_end_70} :catchall_72
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 2909
-    :catchall_72
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-.end method
-
-.method public static declared-synchronized getClientConnectionManagerForSendMessage(J)Lorg/apache/http/conn/ClientConnectionManager;
-    .registers 8
-    .parameter
-
-    .prologue
-    .line 2955
-    const-class v1, Lcom/android/exchange/ExchangeService;
-
-    monitor-enter v1
-
-    const/4 v0, 0x0
-
-    .line 2956
-    :try_start_4
-    sget-object v2, Lcom/android/exchange/ExchangeService;->smClientConnectionManager:Ljava/util/HashMap;
-
-    if-nez v2, :cond_f
-
-    .line 2957
-    new-instance v2, Ljava/util/HashMap;
-
-    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v2, Lcom/android/exchange/ExchangeService;->smClientConnectionManager:Ljava/util/HashMap;
-
-    .line 2960
-    :cond_f
-    sget-object v2, Lcom/android/exchange/ExchangeService;->smClientConnectionManager:Ljava/util/HashMap;
-
-    if-eqz v2, :cond_8d
-
-    .line 2961
-    sget-object v0, Lcom/android/exchange/ExchangeService;->smClientConnectionManager:Ljava/util/HashMap;
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_8f
-
-    .line 2981
-    new-instance v2, Lorg/apache/http/conn/scheme/SchemeRegistry;
-
-    invoke-direct {v2}, Lorg/apache/http/conn/scheme/SchemeRegistry;-><init>()V
-
-    .line 2982
-    new-instance v0, Lorg/apache/http/conn/scheme/Scheme;
-
-    const-string v3, "http"
-
-    invoke-static {}, Lorg/apache/http/conn/scheme/PlainSocketFactory;->getSocketFactory()Lorg/apache/http/conn/scheme/PlainSocketFactory;
-
-    move-result-object v4
-
-    const/16 v5, 0x50
-
-    invoke-direct {v0, v3, v4, v5}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;Lorg/apache/http/conn/scheme/SocketFactory;I)V
-
-    invoke-virtual {v2, v0}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
-
-    .line 2984
-    new-instance v0, Lcom/android/emailcommon/utility/SSLSocketFactory;
-
-    const/4 v3, 0x0
-
-    invoke-static {v3}, Lcom/android/exchange/cba/SSLUtils;->getSSLSocketFactory(Z)Ljavax/net/ssl/SSLSocketFactory;
-
-    move-result-object v3
-
-    invoke-direct {v0, v3}, Lcom/android/emailcommon/utility/SSLSocketFactory;-><init>(Ljavax/net/ssl/SSLSocketFactory;)V
-
-    .line 2985
-    new-instance v3, Lorg/apache/http/conn/scheme/Scheme;
-
-    const-string v4, "https"
-
-    const/16 v5, 0x1bb
-
-    invoke-direct {v3, v4, v0, v5}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;Lorg/apache/http/conn/scheme/SocketFactory;I)V
-
-    invoke-virtual {v2, v3}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
-
-    .line 2988
-    new-instance v0, Lcom/android/emailcommon/utility/SSLSocketFactory;
-
-    const/4 v3, 0x1
-
-    invoke-static {v3}, Lcom/android/exchange/cba/SSLUtils;->getSSLSocketFactory(Z)Ljavax/net/ssl/SSLSocketFactory;
-
-    move-result-object v3
-
-    invoke-direct {v0, v3}, Lcom/android/emailcommon/utility/SSLSocketFactory;-><init>(Ljavax/net/ssl/SSLSocketFactory;)V
-
-    .line 2989
-    sget-object v3, Lcom/android/emailcommon/utility/SSLSocketFactory;->ALLOW_ALL_HOSTNAME_VERIFIER:Lorg/apache/http/conn/ssl/X509HostnameVerifier;
-
-    invoke-virtual {v0, v3}, Lcom/android/emailcommon/utility/SSLSocketFactory;->setHostnameVerifier(Lorg/apache/http/conn/ssl/X509HostnameVerifier;)V
-
-    .line 2991
-    new-instance v3, Lorg/apache/http/conn/scheme/Scheme;
-
-    const-string v4, "httpts"
-
-    const/16 v5, 0x1bb
-
-    invoke-direct {v3, v4, v0, v5}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;Lorg/apache/http/conn/scheme/SocketFactory;I)V
-
-    invoke-virtual {v2, v3}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
-
-    .line 2993
-    new-instance v3, Lorg/apache/http/params/BasicHttpParams;
-
-    invoke-direct {v3}, Lorg/apache/http/params/BasicHttpParams;-><init>()V
-
-    .line 2994
-    const-string v0, "http.conn-manager.max-total"
-
-    const/16 v4, 0x19
-
-    invoke-interface {v3, v0, v4}, Lorg/apache/http/params/HttpParams;->setIntParameter(Ljava/lang/String;I)Lorg/apache/http/params/HttpParams;
-
-    .line 2995
-    const-string v0, "http.conn-manager.max-per-route"
-
-    sget-object v4, Lcom/android/exchange/ExchangeService;->sConnPerRoute:Lorg/apache/http/conn/params/ConnPerRoute;
-
-    invoke-interface {v3, v0, v4}, Lorg/apache/http/params/HttpParams;->setParameter(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/params/HttpParams;
-
-    .line 2997
-    const-string v0, "http.conn-manager.timeout"
-
-    const/16 v4, 0x4e20
-
-    invoke-interface {v3, v0, v4}, Lorg/apache/http/params/HttpParams;->setIntParameter(Ljava/lang/String;I)Lorg/apache/http/params/HttpParams;
-
-    .line 2998
-    new-instance v0, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;
-
-    invoke-direct {v0, v3, v2}, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;-><init>(Lorg/apache/http/params/HttpParams;Lorg/apache/http/conn/scheme/SchemeRegistry;)V
-
-    .line 2999
-    sget-object v2, Lcom/android/exchange/ExchangeService;->smClientConnectionManager:Ljava/util/HashMap;
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_8d
-    .catchall {:try_start_4 .. :try_end_8d} :catchall_9c
-
-    .line 3005
-    :cond_8d
-    :goto_8d
-    monitor-exit v1
-
-    return-object v0
-
-    .line 3001
-    :cond_8f
-    :try_start_8f
-    sget-object v0, Lcom/android/exchange/ExchangeService;->smClientConnectionManager:Ljava/util/HashMap;
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lorg/apache/http/conn/ClientConnectionManager;
-    :try_end_9b
-    .catchall {:try_start_8f .. :try_end_9b} :catchall_9c
-
-    goto :goto_8d
-
-    .line 2955
-    :catchall_9c
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
+    throw v1
 .end method
 
 .method public static getContext()Landroid/content/Context;
     .registers 1
 
     .prologue
-    .line 5300
+    .line 2581
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
     return-object v0
 .end method
 
-.method public static declared-synchronized getDeviceId(Landroid/content/Context;)Ljava/lang/String;
-    .registers 4
-    .parameter
+.method public static getDeviceId(Landroid/content/Context;)Ljava/lang/String;
+    .registers 3
+    .parameter "context"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -6402,27 +2628,12 @@
     .end annotation
 
     .prologue
-    .line 2608
-    const-class v1, Lcom/android/exchange/ExchangeService;
-
-    monitor-enter v1
-
-    if-nez p0, :cond_7
-
-    .line 2609
-    :try_start_5
-    sget-object p0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    .line 2610
-    :cond_7
+    .line 1200
     sget-object v0, Lcom/android/exchange/ExchangeService;->sDeviceId:Ljava/lang/String;
-    :try_end_9
-    .catchall {:try_start_5 .. :try_end_9} :catchall_32
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_27
 
-    .line 2630
-    :try_start_b
+    .line 1201
     new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy;
 
     invoke-direct {v0, p0}, Lcom/android/emailcommon/service/AccountServiceProxy;-><init>(Landroid/content/Context;)V
@@ -6433,20 +2644,20 @@
 
     sput-object v0, Lcom/android/exchange/ExchangeService;->sDeviceId:Ljava/lang/String;
 
-    .line 2634
+    .line 1202
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Receive deviceId from Email app: "
+    const-string v1, "Received deviceId from Email app: "
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    sget-object v2, Lcom/android/exchange/ExchangeService;->sDeviceId:Ljava/lang/String;
+    sget-object v1, Lcom/android/exchange/ExchangeService;->sDeviceId:Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -6455,45 +2666,22 @@
     move-result-object v0
 
     invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-    :try_end_2e
-    .catchall {:try_start_b .. :try_end_2e} :catchall_32
-    .catch Landroid/os/RemoteException; {:try_start_b .. :try_end_2e} :catch_35
 
-    .line 2639
-    :cond_2e
-    :goto_2e
-    :try_start_2e
+    .line 1204
+    :cond_27
     sget-object v0, Lcom/android/exchange/ExchangeService;->sDeviceId:Ljava/lang/String;
-    :try_end_30
-    .catchall {:try_start_2e .. :try_end_30} :catchall_32
-
-    monitor-exit v1
 
     return-object v0
-
-    .line 2608
-    :catchall_32
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-
-    .line 2635
-    :catch_35
-    move-exception v0
-
-    goto :goto_2e
 .end method
 
 .method public static getEasAccountSelector()Ljava/lang/String;
     .registers 2
 
     .prologue
-    .line 2266
+    .line 1044
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 2267
+    .line 1045
     .local v0, exchangeService:Lcom/android/exchange/ExchangeService;
     if-eqz v0, :cond_f
 
@@ -6501,14 +2689,14 @@
 
     if-eqz v1, :cond_f
 
-    .line 2268
+    .line 1046
     iget-object v1, v0, Lcom/android/exchange/ExchangeService;->mAccountObserver:Lcom/android/exchange/ExchangeService$AccountObserver;
 
     invoke-virtual {v1}, Lcom/android/exchange/ExchangeService$AccountObserver;->getAccountKeyWhere()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2270
+    .line 1048
     :goto_e
     return-object v1
 
@@ -6518,187 +2706,12 @@
     goto :goto_e
 .end method
 
-.method public static getElmSvc()Lcom/android/exchange/EasLoadMoreSvc;
-    .registers 1
-
-    .prologue
-    .line 5628
-    sget-object v0, Lcom/android/exchange/ExchangeService;->elmsvc:Lcom/android/exchange/EasLoadMoreSvc;
-
-    return-object v0
-.end method
-
-.method public static getElmSvcMsg()J
-    .registers 2
-
-    .prologue
-    .line 5632
-    sget-object v0, Lcom/android/exchange/ExchangeService;->elmsvc:Lcom/android/exchange/EasLoadMoreSvc;
-
-    iget-object v0, v0, Lcom/android/exchange/EasLoadMoreSvc;->mMsg:Lcom/android/emailcommon/provider/EmailContent$Message;
-
-    iget-wide v0, v0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    return-wide v0
-.end method
-
-.method private getMailBoxIdRIC(J)Ljava/lang/Long;
-    .registers 15
-    .parameter "mAccountKey"
-
-    .prologue
-    const/4 v11, 0x2
-
-    const/4 v10, 0x0
-
-    const/4 v5, 0x1
-
-    .line 703
-    const-wide/16 v0, -0x1
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v7
-
-    .line 704
-    .local v7, RicBoxId:Ljava/lang/Long;
-    const/4 v0, 0x3
-
-    new-array v2, v0, [Ljava/lang/String;
-
-    const-string v0, "accountKey"
-
-    aput-object v0, v2, v10
-
-    const-string v0, "_id"
-
-    aput-object v0, v2, v5
-
-    const-string v0, "type"
-
-    aput-object v0, v2, v11
-
-    .line 708
-    .local v2, MAILBOX_PROJECTION:[Ljava/lang/String;
-    const-string v3, "accountKey=? AND type=?"
-
-    .line 709
-    .local v3, selection:Ljava/lang/String;
-    const/16 v6, 0x61
-
-    .line 710
-    .local v6, RiCBoxtype:I
-    new-array v4, v11, [Ljava/lang/String;
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v0
-
-    aput-object v0, v4, v10
-
-    invoke-static {v6}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    aput-object v0, v4, v5
-
-    .line 714
-    .local v4, selectionArgs:[Ljava/lang/String;
-    const/4 v9, 0x0
-
-    .line 717
-    .local v9, ric:Landroid/database/Cursor;
-    :try_start_2b
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mResolver:Landroid/content/ContentResolver;
-
-    sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    const/4 v5, 0x0
-
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v9
-
-    .line 719
-    if-eqz v9, :cond_45
-
-    invoke-interface {v9}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_45
-
-    .line 720
-    const/4 v0, 0x1
-
-    invoke-interface {v9, v0}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-    :try_end_44
-    .catchall {:try_start_2b .. :try_end_44} :catchall_5b
-    .catch Ljava/lang/Exception; {:try_start_2b .. :try_end_44} :catch_4b
-
-    move-result-object v7
-
-    .line 727
-    :cond_45
-    if-eqz v9, :cond_4a
-
-    .line 728
-    :goto_47
-    invoke-interface {v9}, Landroid/database/Cursor;->close()V
-
-    .line 731
-    :cond_4a
-    return-object v7
-
-    .line 723
-    :catch_4b
-    move-exception v8
-
-    .line 724
-    .local v8, e:Ljava/lang/Exception;
-    :try_start_4c
-    const-string v0, "MailboxIdRIC"
-
-    invoke-virtual {v8}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 725
-    invoke-virtual {v8}, Ljava/lang/Exception;->printStackTrace()V
-    :try_end_58
-    .catchall {:try_start_4c .. :try_end_58} :catchall_5b
-
-    .line 727
-    if-eqz v9, :cond_4a
-
-    goto :goto_47
-
-    .end local v8           #e:Ljava/lang/Exception;
-    :catchall_5b
-    move-exception v0
-
-    if-eqz v9, :cond_61
-
-    .line 728
-    invoke-interface {v9}, Landroid/database/Cursor;->close()V
-
-    .line 727
-    :cond_61
-    throw v0
-.end method
-
 .method public static getStatusChangeCount(Ljava/lang/String;)I
     .registers 4
     .parameter "status"
 
     .prologue
-    .line 5292
+    .line 2573
     const/4 v2, 0x5
 
     :try_start_1
@@ -6706,7 +2719,7 @@
 
     move-result-object v1
 
-    .line 5293
+    .line 2574
     .local v1, s:Ljava/lang/String;
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
     :try_end_8
@@ -6714,16 +2727,16 @@
 
     move-result v2
 
-    .line 5295
+    .line 2576
     .end local v1           #s:Ljava/lang/String;
     :goto_9
     return v2
 
-    .line 5294
+    .line 2575
     :catch_a
     move-exception v0
 
-    .line 5295
+    .line 2576
     .local v0, e:Ljava/lang/RuntimeException;
     const/4 v2, -0x1
 
@@ -6735,13 +2748,13 @@
     .parameter "status"
 
     .prologue
-    .line 5275
+    .line 2558
     if-nez p0, :cond_4
 
-    .line 5276
+    .line 2559
     const/4 v0, -0x1
 
-    .line 5278
+    .line 2561
     :goto_3
     return v0
 
@@ -6766,14 +2779,14 @@
 
     const/4 v7, 0x0
 
-    .line 4233
+    .line 2051
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mResolver:Landroid/content/ContentResolver;
 
     sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
 
     sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Message;->ID_COLUMN_PROJECTION:[Ljava/lang/String;
 
-    const-string v3, "mailboxKey=? and (syncServerId is null or (syncServerId!=-2 and syncServerId!=-5 and syncServerId!=-3))"
+    const-string v3, "mailboxKey=? and (syncServerId is null or syncServerId!=1)"
 
     new-array v4, v6, [Ljava/lang/String;
 
@@ -6793,18 +2806,16 @@
 
     move-result-object v1
 
-    .line 4238
+    .line 2056
     :cond_1b
-    if-eqz v1, :cond_3c
-
-    :try_start_1d
+    :try_start_1b
     invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_3a
 
-    .line 4239
+    .line 2057
     const/4 v0, 0x0
 
     invoke-interface {v1, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -6812,50 +2823,50 @@
     move-result-wide v2
 
     invoke-static {p0, v2, v3}, Lcom/android/emailcommon/utility/Utility;->hasUnloadedAttachments(Landroid/content/Context;J)Z
-    :try_end_2b
-    .catchall {:try_start_1d .. :try_end_2b} :catchall_35
+    :try_end_29
+    .catchall {:try_start_1b .. :try_end_29} :catchall_33
 
     move-result v0
 
     if-nez v0, :cond_1b
 
-    .line 4244
-    if-eqz v1, :cond_33
+    .line 2062
+    if-eqz v1, :cond_31
 
-    .line 4245
+    .line 2063
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    :cond_33
+    :cond_31
     move v0, v6
 
-    .line 4247
-    :goto_34
+    .line 2066
+    :goto_32
     return v0
 
-    .line 4244
-    :catchall_35
+    .line 2062
+    :catchall_33
     move-exception v0
 
-    if-eqz v1, :cond_3b
+    if-eqz v1, :cond_39
 
-    .line 4245
+    .line 2063
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    .line 4244
-    :cond_3b
+    .line 2062
+    :cond_39
     throw v0
 
-    :cond_3c
-    if-eqz v1, :cond_41
+    :cond_3a
+    if-eqz v1, :cond_3f
 
-    .line 4245
+    .line 2063
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    :cond_41
+    :cond_3f
     move v0, v7
 
-    .line 4247
-    goto :goto_34
+    .line 2066
+    goto :goto_32
 .end method
 
 .method private isCalendarEnabled(J)Z
@@ -6865,7 +2876,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 2060
+    .line 865
     iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mCalendarObservers:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -6878,11 +2889,11 @@
 
     check-cast v0, Lcom/android/exchange/ExchangeService$CalendarObserver;
 
-    .line 2061
+    .line 866
     .local v0, observer:Lcom/android/exchange/ExchangeService$CalendarObserver;
     if-eqz v0, :cond_17
 
-    .line 2062
+    .line 867
     iget-wide v2, v0, Lcom/android/exchange/ExchangeService$CalendarObserver;->mSyncEvents:J
 
     const-wide/16 v4, 0x1
@@ -6891,159 +2902,235 @@
 
     if-nez v2, :cond_18
 
-    .line 2067
+    .line 871
     :cond_17
     :goto_17
     return v1
 
-    .line 2062
+    .line 867
     :cond_18
     const/4 v1, 0x0
 
     goto :goto_17
 .end method
 
-.method private isMailboxSyncable(Lcom/android/emailcommon/provider/EmailContent$Account;I)Z
-    .registers 9
+.method private isMailboxSyncable(Lcom/android/emailcommon/provider/Account;I)Z
+    .registers 10
     .parameter
     .parameter
 
     .prologue
-    const/16 v2, 0x42
+    const/16 v3, 0x42
 
-    const/16 v5, 0x41
+    const/16 v6, 0x41
+
+    const/4 v2, 0x1
 
     const/4 v1, 0x0
 
-    .line 4305
-    if-eq p2, v2, :cond_9
+    .line 2122
+    const/4 v0, 0x4
 
-    if-ne p2, v5, :cond_3f
+    if-eq p2, v0, :cond_d
 
-    .line 4307
-    :cond_9
+    const/16 v0, 0x44
+
+    if-ne p2, v0, :cond_f
+
+    :cond_d
+    move v0, v2
+
+    .line 2159
+    :goto_e
+    return v0
+
+    .line 2125
+    :cond_f
+    if-eq p2, v3, :cond_13
+
+    if-ne p2, v6, :cond_49
+
+    .line 2127
+    :cond_13
     invoke-static {}, Landroid/content/ContentResolver;->getMasterSyncAutomatically()Z
 
     move-result v0
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_1b
 
     move v0, v1
 
-    .line 4343
-    :goto_10
-    return v0
+    .line 2128
+    goto :goto_e
 
-    .line 4312
-    :cond_11
-    if-ne p2, v2, :cond_1f
+    .line 2132
+    :cond_1b
+    if-ne p2, v3, :cond_29
 
-    .line 4313
+    .line 2133
     const-string v0, "com.android.contacts"
 
-    .line 4323
-    :cond_15
-    :goto_15
-    iget-object v2, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mAmAccount:Landroid/accounts/Account;
+    .line 2143
+    :cond_1f
+    :goto_1f
+    iget-object v3, p1, Lcom/android/emailcommon/provider/Account;->mAmAccount:Landroid/accounts/Account;
 
-    invoke-static {v2, v0}, Landroid/content/ContentResolver;->getSyncAutomatically(Landroid/accounts/Account;Ljava/lang/String;)Z
+    invoke-static {v3, v0}, Landroid/content/ContentResolver;->getSyncAutomatically(Landroid/accounts/Account;Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_3d
 
     move v0, v1
 
-    .line 4324
-    goto :goto_10
+    .line 2144
+    goto :goto_e
 
-    .line 4315
-    :cond_1f
+    .line 2135
+    :cond_29
     const-string v0, "com.android.calendar"
 
-    .line 4316
-    iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mCalendarObservers:Ljava/util/concurrent/ConcurrentHashMap;
+    .line 2136
+    iget-object v3, p0, Lcom/android/exchange/ExchangeService;->mCalendarObservers:Ljava/util/concurrent/ConcurrentHashMap;
 
-    iget-wide v3, p1, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v4, p1, Lcom/android/emailcommon/provider/Account;->mId:J
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_15
+    if-nez v3, :cond_1f
 
-    .line 4319
-    invoke-direct {p0, p1}, Lcom/android/exchange/ExchangeService;->registerCalendarObserver(Lcom/android/emailcommon/provider/EmailContent$Account;)V
+    .line 2139
+    invoke-direct {p0, p1}, Lcom/android/exchange/ExchangeService;->registerCalendarObserver(Lcom/android/emailcommon/provider/Account;)V
 
-    goto :goto_15
+    goto :goto_1f
 
-    .line 4327
-    :cond_33
-    if-ne p2, v5, :cond_5b
+    .line 2146
+    :cond_3d
+    if-ne p2, v6, :cond_62
 
-    iget-wide v2, p1, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v3, p1, Lcom/android/emailcommon/provider/Account;->mId:J
 
-    invoke-direct {p0, v2, v3}, Lcom/android/exchange/ExchangeService;->isCalendarEnabled(J)Z
+    invoke-direct {p0, v3, v4}, Lcom/android/exchange/ExchangeService;->isCalendarEnabled(J)Z
 
     move-result v0
 
-    if-nez v0, :cond_5b
+    if-nez v0, :cond_62
 
     move v0, v1
 
-    .line 4328
-    goto :goto_10
+    .line 2147
+    goto :goto_e
 
-    .line 4331
-    :cond_3f
+    .line 2150
+    :cond_49
     const/4 v0, 0x6
 
-    if-ne p2, v0, :cond_44
+    if-ne p2, v0, :cond_4e
 
     move v0, v1
 
-    .line 4332
-    goto :goto_10
+    .line 2151
+    goto :goto_e
 
-    .line 4339
-    :cond_44
-    const/4 v0, 0x4
-
-    if-eq p2, v0, :cond_5b
-
-    invoke-static {p1}, Lcom/android/exchange/ExchangeService;->canAutoSync(Lcom/android/emailcommon/provider/EmailContent$Account;)Z
+    .line 2156
+    :cond_4e
+    invoke-static {p1}, Lcom/android/exchange/ExchangeService;->canAutoSync(Lcom/android/emailcommon/provider/Account;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_59
+    if-eqz v0, :cond_60
 
-    iget-object v0, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mAmAccount:Landroid/accounts/Account;
+    iget-object v0, p1, Lcom/android/emailcommon/provider/Account;->mAmAccount:Landroid/accounts/Account;
 
     invoke-direct {p0, v0}, Lcom/android/exchange/ExchangeService;->canSyncEmail(Landroid/accounts/Account;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_59
+    if-eqz v0, :cond_60
 
     iget-boolean v0, p0, Lcom/android/exchange/ExchangeService;->mBackgroundData:Z
 
-    if-nez v0, :cond_5b
+    if-nez v0, :cond_62
 
-    :cond_59
+    :cond_60
     move v0, v1
 
-    .line 4341
-    goto :goto_10
+    .line 2157
+    goto :goto_e
 
-    .line 4343
-    :cond_5b
-    const/4 v0, 0x1
+    :cond_62
+    move v0, v2
 
-    goto :goto_10
+    .line 2159
+    goto :goto_e
+.end method
+
+.method private isRunningInServiceThread(J)Z
+    .registers 7
+    .parameter "mailboxId"
+
+    .prologue
+    .line 2477
+    iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/exchange/AbstractSyncService;
+
+    .line 2478
+    .local v0, syncService:Lcom/android/exchange/AbstractSyncService;
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v1
+
+    .line 2479
+    .local v1, thisThread:Ljava/lang/Thread;
+    if-eqz v0, :cond_1c
+
+    iget-object v2, v0, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
+
+    if-eqz v2, :cond_1c
+
+    iget-object v2, v0, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
+
+    if-ne v1, v2, :cond_1c
+
+    const/4 v2, 0x1
+
+    :goto_1b
+    return v2
+
+    :cond_1c
+    const/4 v2, 0x0
+
+    goto :goto_1b
+.end method
+
+.method public static isSyncable(Lcom/android/emailcommon/provider/Mailbox;)Z
+    .registers 2
+    .parameter "m"
+
+    .prologue
+    .line 2318
+    const-string v0, "eas"
+
+    invoke-virtual {p0, v0}, Lcom/android/emailcommon/provider/Mailbox;->loadsFromServer(Ljava/lang/String;)Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public static kick(Ljava/lang/String;)V
@@ -7051,57 +3138,57 @@
     .parameter "reason"
 
     .prologue
-    .line 4926
+    .line 2438
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 4927
+    .line 2439
     .local v0, exchangeService:Lcom/android/exchange/ExchangeService;
     if-eqz v0, :cond_c
 
-    .line 4928
+    .line 2440
     monitor-enter v0
 
-    .line 4930
+    .line 2442
     const/4 v1, 0x1
 
     :try_start_6
     iput-boolean v1, v0, Lcom/android/exchange/ExchangeService;->mKicked:Z
 
-    .line 4931
+    .line 2443
     invoke-virtual {v0}, Ljava/lang/Object;->notify()V
 
-    .line 4932
+    .line 2444
     monitor-exit v0
     :try_end_c
     .catchall {:try_start_6 .. :try_end_c} :catchall_1a
 
-    .line 4934
+    .line 2446
     :cond_c
     sget-object v1, Lcom/android/exchange/ExchangeService;->sConnectivityLock:Ljava/lang/Object;
 
     if-eqz v1, :cond_19
 
-    .line 4935
+    .line 2447
     sget-object v2, Lcom/android/exchange/ExchangeService;->sConnectivityLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 4936
+    .line 2448
     :try_start_13
     sget-object v1, Lcom/android/exchange/ExchangeService;->sConnectivityLock:Ljava/lang/Object;
 
     invoke-virtual {v1}, Ljava/lang/Object;->notify()V
 
-    .line 4937
+    .line 2449
     monitor-exit v2
     :try_end_19
     .catchall {:try_start_13 .. :try_end_19} :catchall_1d
 
-    .line 4939
+    .line 2451
     :cond_19
     return-void
 
-    .line 4932
+    .line 2444
     :catchall_1a
     move-exception v1
 
@@ -7112,7 +3199,7 @@
 
     throw v1
 
-    .line 4937
+    .line 2449
     :catchall_1d
     move-exception v1
 
@@ -7129,12 +3216,12 @@
     .parameter "str"
 
     .prologue
-    .line 2561
+    .line 1172
     const-string v0, "ExchangeService"
 
     invoke-static {v0, p0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2562
+    .line 1173
     return-void
 .end method
 
@@ -7144,23 +3231,23 @@
     .parameter "str"
 
     .prologue
-    .line 2565
-    sget-boolean v0, Lcom/android/emailcommon/EasRefs;->USER_LOG:Z
+    .line 1176
+    sget-boolean v0, Lcom/android/exchange/Eas;->USER_LOG:Z
 
     if-eqz v0, :cond_e
 
-    .line 2566
+    .line 1177
     invoke-static {p0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2567
-    sget-boolean v0, Lcom/android/emailcommon/EasRefs;->FILE_LOG:Z
+    .line 1178
+    sget-boolean v0, Lcom/android/exchange/Eas;->FILE_LOG:Z
 
     if-eqz v0, :cond_e
 
-    .line 2568
+    .line 1179
     invoke-static {p0, p1}, Lcom/android/exchange/utility/FileLogger;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2571
+    .line 1182
     :cond_e
     return-void
 .end method
@@ -7169,22 +3256,22 @@
     .registers 13
 
     .prologue
-    .line 2328
-    sget-boolean v7, Lcom/android/emailcommon/EasRefs;->USER_LOG:Z
+    .line 1081
+    sget-boolean v7, Lcom/android/exchange/Eas;->USER_LOG:Z
 
     if-eqz v7, :cond_b4
 
-    .line 2329
+    .line 1082
     const-string v7, "Sync holds:"
 
     invoke-static {v7}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
-    .line 2330
+    .line 1083
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v5
 
-    .line 2331
+    .line 1084
     .local v5, time:J
     iget-object v7, p0, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -7215,17 +3302,17 @@
 
     move-result-wide v3
 
-    .line 2332
+    .line 1085
     .local v3, mailboxId:J
-    invoke-static {p0, v3, v4}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    invoke-static {p0, v3, v4}, Lcom/android/emailcommon/provider/Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Mailbox;
 
     move-result-object v2
 
-    .line 2333
-    .local v2, m:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    .line 1086
+    .local v2, m:Lcom/android/emailcommon/provider/Mailbox;
     if-nez v2, :cond_4a
 
-    .line 2334
+    .line 1087
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -7254,7 +3341,7 @@
 
     goto :goto_17
 
-    .line 2336
+    .line 1089
     :cond_4a
     iget-object v7, p0, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -7268,11 +3355,11 @@
 
     check-cast v0, Lcom/android/exchange/ExchangeService$SyncError;
 
-    .line 2337
+    .line 1090
     .local v0, error:Lcom/android/exchange/ExchangeService$SyncError;
     if-eqz v0, :cond_17
 
-    .line 2338
+    .line 1091
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -7283,7 +3370,7 @@
 
     move-result-object v7
 
-    iget-object v8, v2, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
+    iget-object v8, v2, Lcom/android/emailcommon/provider/Mailbox;->mDisplayName:Ljava/lang/String;
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7319,7 +3406,7 @@
 
     invoke-static {v7}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
-    .line 2340
+    .line 1093
     iget-wide v7, v0, Lcom/android/exchange/ExchangeService$SyncError;->holdEndTime:J
 
     const-wide/16 v9, 0x0
@@ -7328,7 +3415,7 @@
 
     if-lez v7, :cond_17
 
-    .line 2341
+    .line 1094
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -7365,149 +3452,60 @@
 
     goto/16 :goto_17
 
-    .line 2347
+    .line 1100
     .end local v0           #error:Lcom/android/exchange/ExchangeService$SyncError;
     .end local v1           #i$:Ljava/util/Iterator;
-    .end local v2           #m:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    .end local v2           #m:Lcom/android/emailcommon/provider/Mailbox;
     .end local v3           #mailboxId:J
     .end local v5           #time:J
     :cond_b4
     return-void
 .end method
 
-.method public static declared-synchronized newClientConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
-    .registers 6
+.method private onSecurityHold(Lcom/android/emailcommon/provider/Account;)Z
+    .registers 3
+    .parameter "account"
 
     .prologue
-    .line 2846
-    const-class v1, Lcom/android/exchange/ExchangeService;
+    .line 597
+    iget v0, p1, Lcom/android/emailcommon/provider/Account;->mFlags:I
 
-    monitor-enter v1
+    and-int/lit8 v0, v0, 0x20
 
-    :try_start_3
-    sget-object v0, Lcom/android/exchange/ExchangeService;->mClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
+    if-eqz v0, :cond_8
 
-    if-nez v0, :cond_6e
+    const/4 v0, 0x1
 
-    .line 2849
-    new-instance v0, Lorg/apache/http/conn/scheme/SchemeRegistry;
+    :goto_7
+    return v0
 
-    invoke-direct {v0}, Lorg/apache/http/conn/scheme/SchemeRegistry;-><init>()V
+    :cond_8
+    const/4 v0, 0x0
 
-    .line 2850
-    new-instance v2, Lorg/apache/http/conn/scheme/Scheme;
+    goto :goto_7
+.end method
 
-    const-string v3, "http"
+.method private onSyncDisabledHold(Lcom/android/emailcommon/provider/Account;)Z
+    .registers 3
+    .parameter "account"
 
-    invoke-static {}, Lorg/apache/http/conn/scheme/PlainSocketFactory;->getSocketFactory()Lorg/apache/http/conn/scheme/PlainSocketFactory;
+    .prologue
+    .line 601
+    iget v0, p1, Lcom/android/emailcommon/provider/Account;->mFlags:I
 
-    move-result-object v4
+    and-int/lit16 v0, v0, 0x400
 
-    const/16 v5, 0x50
+    if-eqz v0, :cond_8
 
-    invoke-direct {v2, v3, v4, v5}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;Lorg/apache/http/conn/scheme/SocketFactory;I)V
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, v2}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
+    :goto_7
+    return v0
 
-    .line 2852
-    new-instance v2, Lcom/android/emailcommon/utility/SSLSocketFactory;
+    :cond_8
+    const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
-    invoke-static {v3}, Lcom/android/exchange/cba/SSLUtils;->getSSLSocketFactory(Z)Ljavax/net/ssl/SSLSocketFactory;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Lcom/android/emailcommon/utility/SSLSocketFactory;-><init>(Ljavax/net/ssl/SSLSocketFactory;)V
-
-    .line 2853
-    new-instance v3, Lorg/apache/http/conn/scheme/Scheme;
-
-    const-string v4, "https"
-
-    const/16 v5, 0x1bb
-
-    invoke-direct {v3, v4, v2, v5}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;Lorg/apache/http/conn/scheme/SocketFactory;I)V
-
-    invoke-virtual {v0, v3}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
-
-    .line 2856
-    new-instance v2, Lcom/android/emailcommon/utility/SSLSocketFactory;
-
-    const/4 v3, 0x1
-
-    invoke-static {v3}, Lcom/android/exchange/cba/SSLUtils;->getSSLSocketFactory(Z)Ljavax/net/ssl/SSLSocketFactory;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Lcom/android/emailcommon/utility/SSLSocketFactory;-><init>(Ljavax/net/ssl/SSLSocketFactory;)V
-
-    .line 2857
-    sget-object v3, Lcom/android/emailcommon/utility/SSLSocketFactory;->ALLOW_ALL_HOSTNAME_VERIFIER:Lorg/apache/http/conn/ssl/X509HostnameVerifier;
-
-    invoke-virtual {v2, v3}, Lcom/android/emailcommon/utility/SSLSocketFactory;->setHostnameVerifier(Lorg/apache/http/conn/ssl/X509HostnameVerifier;)V
-
-    .line 2859
-    new-instance v3, Lorg/apache/http/conn/scheme/Scheme;
-
-    const-string v4, "httpts"
-
-    const/16 v5, 0x1bb
-
-    invoke-direct {v3, v4, v2, v5}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;Lorg/apache/http/conn/scheme/SocketFactory;I)V
-
-    invoke-virtual {v0, v3}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
-
-    .line 2861
-    new-instance v2, Lorg/apache/http/params/BasicHttpParams;
-
-    invoke-direct {v2}, Lorg/apache/http/params/BasicHttpParams;-><init>()V
-
-    .line 2862
-    const-string v3, "http.conn-manager.max-total"
-
-    const/16 v4, 0x19
-
-    invoke-interface {v2, v3, v4}, Lorg/apache/http/params/HttpParams;->setIntParameter(Ljava/lang/String;I)Lorg/apache/http/params/HttpParams;
-
-    .line 2863
-    const-string v3, "http.conn-manager.max-per-route"
-
-    sget-object v4, Lcom/android/exchange/ExchangeService;->sConnPerPing:Lorg/apache/http/conn/params/ConnPerRoute;
-
-    invoke-interface {v2, v3, v4}, Lorg/apache/http/params/HttpParams;->setParameter(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/params/HttpParams;
-
-    .line 2864
-    const-string v3, "http.conn-manager.timeout"
-
-    const/16 v4, 0x4e20
-
-    invoke-interface {v2, v3, v4}, Lorg/apache/http/params/HttpParams;->setIntParameter(Ljava/lang/String;I)Lorg/apache/http/params/HttpParams;
-
-    .line 2865
-    new-instance v3, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;
-
-    invoke-direct {v3, v2, v0}, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;-><init>(Lorg/apache/http/params/HttpParams;Lorg/apache/http/conn/scheme/SchemeRegistry;)V
-
-    sput-object v3, Lcom/android/exchange/ExchangeService;->mClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-
-    .line 2869
-    :cond_6e
-    sget-object v0, Lcom/android/exchange/ExchangeService;->mClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-    :try_end_70
-    .catchall {:try_start_3 .. :try_end_70} :catchall_72
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 2846
-    :catchall_72
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
+    goto :goto_7
 .end method
 
 .method public static pingStatus(J)I
@@ -7517,19 +3515,19 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 4804
+    .line 2380
     sget-object v1, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 4805
+    .line 2381
     .local v1, exchangeService:Lcom/android/exchange/ExchangeService;
     if-nez v1, :cond_6
 
-    .line 4820
+    .line 2395
     :cond_5
     :goto_5
     return v2
 
-    .line 4808
+    .line 2383
     :cond_6
     iget-object v3, v1, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
 
@@ -7543,12 +3541,12 @@
 
     if-eqz v3, :cond_14
 
-    .line 4809
+    .line 2384
     const/4 v2, 0x1
 
     goto :goto_5
 
-    .line 4812
+    .line 2387
     :cond_14
     iget-object v3, v1, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -7562,21 +3560,21 @@
 
     check-cast v0, Lcom/android/exchange/ExchangeService$SyncError;
 
-    .line 4813
+    .line 2388
     .local v0, error:Lcom/android/exchange/ExchangeService$SyncError;
     if-eqz v0, :cond_5
 
-    .line 4814
+    .line 2389
     iget-boolean v3, v0, Lcom/android/exchange/ExchangeService$SyncError;->fatal:Z
 
     if-eqz v3, :cond_28
 
-    .line 4815
+    .line 2390
     const/4 v2, 0x3
 
     goto :goto_5
 
-    .line 4816
+    .line 2391
     :cond_28
     iget-wide v3, v0, Lcom/android/exchange/ExchangeService$SyncError;->holdEndTime:J
 
@@ -7586,41 +3584,25 @@
 
     if-lez v3, :cond_5
 
-    .line 4817
+    .line 2392
     const/4 v2, 0x2
 
     goto :goto_5
 .end method
 
-.method public static reconcileAccounts(Landroid/content/Context;)V
-    .registers 2
-    .parameter "context"
-
-    .prologue
-    .line 2498
-    new-instance v0, Lcom/android/exchange/ExchangeService$3;
-
-    invoke-direct {v0, p0}, Lcom/android/exchange/ExchangeService$3;-><init>(Landroid/content/Context;)V
-
-    invoke-static {v0}, Lcom/android/emailcommon/utility/Utility;->runAsync(Ljava/lang/Runnable;)Landroid/os/AsyncTask;
-
-    .line 2507
-    return-void
-.end method
-
-.method private registerCalendarObserver(Lcom/android/emailcommon/provider/EmailContent$Account;)V
+.method private registerCalendarObserver(Lcom/android/emailcommon/provider/Account;)V
     .registers 7
     .parameter "account"
 
     .prologue
-    .line 2026
+    .line 834
     new-instance v0, Lcom/android/exchange/ExchangeService$CalendarObserver;
 
     iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mHandler:Landroid/os/Handler;
 
-    invoke-direct {v0, p0, v1, p1}, Lcom/android/exchange/ExchangeService$CalendarObserver;-><init>(Lcom/android/exchange/ExchangeService;Landroid/os/Handler;Lcom/android/emailcommon/provider/EmailContent$Account;)V
+    invoke-direct {v0, p0, v1, p1}, Lcom/android/exchange/ExchangeService$CalendarObserver;-><init>(Lcom/android/exchange/ExchangeService;Landroid/os/Handler;Lcom/android/emailcommon/provider/Account;)V
 
-    .line 2027
+    .line 835
     .local v0, observer:Lcom/android/exchange/ExchangeService$CalendarObserver;
     iget-wide v1, v0, Lcom/android/exchange/ExchangeService$CalendarObserver;->mCalendarId:J
 
@@ -7630,10 +3612,10 @@
 
     if-eqz v1, :cond_28
 
-    .line 2030
+    .line 837
     iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mCalendarObservers:Ljava/util/concurrent/ConcurrentHashMap;
 
-    iget-wide v2, p1, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v2, p1, Lcom/android/emailcommon/provider/Account;->mId:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -7641,7 +3623,7 @@
 
     invoke-virtual {v1, v2, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2031
+    .line 838
     iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mResolver:Landroid/content/ContentResolver;
 
     sget-object v2, Landroid/provider/CalendarContract$Calendars;->CONTENT_URI:Landroid/net/Uri;
@@ -7656,7 +3638,7 @@
 
     invoke-virtual {v1, v2, v3, v0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 2035
+    .line 842
     :cond_28
     return-void
 .end method
@@ -7666,7 +3648,7 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 4221
+    .line 2041
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -7675,139 +3657,48 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4222
-    invoke-virtual {p0, p1, p2}, Lcom/android/exchange/ExchangeService;->releaseWakeLock(J)V
+    .line 2042
+    invoke-direct {p0, p1, p2}, Lcom/android/exchange/ExchangeService;->releaseWakeLock(J)V
 
-    .line 4223
+    .line 2043
     return-void
 .end method
 
-.method public static releaseSecurityHold(Lcom/android/emailcommon/provider/EmailContent$Account;)V
+.method public static releaseSecurityHold(Lcom/android/emailcommon/provider/Account;)V
     .registers 4
     .parameter "account"
 
     .prologue
-    .line 2420
+    .line 1107
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 2421
+    .line 1108
     .local v0, exchangeService:Lcom/android/exchange/ExchangeService;
     if-eqz v0, :cond_a
 
-    .line 2422
+    .line 1109
     sget-object v1, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
     const/4 v2, 0x4
 
-    invoke-virtual {v0, v1, v2, p0}, Lcom/android/exchange/ExchangeService;->releaseSyncHolds(Landroid/content/Context;ILcom/android/emailcommon/provider/EmailContent$Account;)Z
+    invoke-virtual {v0, v1, v2, p0}, Lcom/android/exchange/ExchangeService;->releaseSyncHolds(Landroid/content/Context;ILcom/android/emailcommon/provider/Account;)Z
 
-    .line 2425
+    .line 1112
     :cond_a
     return-void
 .end method
 
-.method public static releaseSecurityHoldForEasMailbox(J)V
-    .registers 5
-    .parameter "accountId"
-
-    .prologue
-    .line 2351
-    const-string v1, "releaseSecurityHoldForEasMailbox(): Entry"
-
-    invoke-static {v1}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 2352
-    sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    .line 2353
-    .local v0, exchangeService:Lcom/android/exchange/ExchangeService;
-    if-eqz v0, :cond_f
-
-    .line 2354
-    sget-object v1, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    const/4 v2, 0x4
-
-    invoke-virtual {v0, v1, v2, p0, p1}, Lcom/android/exchange/ExchangeService;->releaseSyncHoldsForEasMailbox(Landroid/content/Context;IJ)Z
-
-    .line 2357
-    :cond_f
-    return-void
-.end method
-
-.method private releaseSyncHoldMailbox(Landroid/content/Context;IJ)V
-    .registers 9
-    .parameter "context"
-    .parameter "reason"
-    .parameter "mailboxId"
-
-    .prologue
-    .line 2472
-    sget-object v2, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    .line 2473
-    :try_start_3
-    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/exchange/ExchangeService$SyncError;
-
-    .line 2474
-    .local v0, error:Lcom/android/exchange/ExchangeService$SyncError;
-    if-eqz v0, :cond_1e
-
-    iget v1, v0, Lcom/android/exchange/ExchangeService$SyncError;->reason:I
-
-    if-ne v1, p2, :cond_1e
-
-    .line 2475
-    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2477
-    :cond_1e
-    monitor-exit v2
-
-    .line 2478
-    return-void
-
-    .line 2477
-    .end local v0           #error:Lcom/android/exchange/ExchangeService$SyncError;
-    :catchall_20
-    move-exception v1
-
-    monitor-exit v2
-    :try_end_22
-    .catchall {:try_start_3 .. :try_end_22} :catchall_20
-
-    throw v1
-.end method
-
-.method private releaseSyncHoldsImpl(Landroid/content/Context;ILcom/android/emailcommon/provider/EmailContent$Account;)Z
+.method private releaseSyncHoldsImpl(Landroid/content/Context;ILcom/android/emailcommon/provider/Account;)Z
     .registers 14
     .parameter "context"
     .parameter "reason"
     .parameter "account"
 
     .prologue
-    .line 2444
+    .line 1128
     const/4 v1, 0x0
 
-    .line 2445
+    .line 1129
     .local v1, holdWasReleased:Z
     iget-object v6, p0, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -7838,20 +3729,20 @@
 
     move-result-wide v4
 
-    .line 2446
+    .line 1130
     .local v4, mailboxId:J
     if-eqz p3, :cond_2c
 
-    .line 2447
-    invoke-static {p1, v4, v5}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    .line 1131
+    invoke-static {p1, v4, v5}, Lcom/android/emailcommon/provider/Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Mailbox;
 
     move-result-object v3
 
-    .line 2448
-    .local v3, m:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    .line 1132
+    .local v3, m:Lcom/android/emailcommon/provider/Mailbox;
     if-nez v3, :cond_49
 
-    .line 2449
+    .line 1133
     iget-object v6, p0, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -7860,8 +3751,8 @@
 
     invoke-virtual {v6, v7}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2454
-    .end local v3           #m:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    .line 1138
+    .end local v3           #m:Lcom/android/emailcommon/provider/Mailbox;
     :cond_2c
     iget-object v6, p0, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -7875,7 +3766,7 @@
 
     check-cast v0, Lcom/android/exchange/ExchangeService$SyncError;
 
-    .line 2455
+    .line 1139
     .local v0, error:Lcom/android/exchange/ExchangeService$SyncError;
     if-eqz v0, :cond_b
 
@@ -7883,7 +3774,7 @@
 
     if-ne v6, p2, :cond_b
 
-    .line 2456
+    .line 1140
     iget-object v6, p0, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -7892,18 +3783,18 @@
 
     invoke-virtual {v6, v7}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2457
+    .line 1141
     const/4 v1, 0x1
 
     goto :goto_b
 
-    .line 2450
+    .line 1134
     .end local v0           #error:Lcom/android/exchange/ExchangeService$SyncError;
-    .restart local v3       #m:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    .restart local v3       #m:Lcom/android/emailcommon/provider/Mailbox;
     :cond_49
-    iget-wide v6, v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mAccountKey:J
+    iget-wide v6, v3, Lcom/android/emailcommon/provider/Mailbox;->mAccountKey:J
 
-    iget-wide v8, p3, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v8, p3, Lcom/android/emailcommon/provider/Account;->mId:J
 
     cmp-long v6, v6, v8
 
@@ -7911,397 +3802,121 @@
 
     goto :goto_b
 
-    .line 2462
-    .end local v3           #m:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    .line 1144
+    .end local v3           #m:Lcom/android/emailcommon/provider/Mailbox;
     .end local v4           #mailboxId:J
     :cond_52
-    if-eqz p3, :cond_63
-
-    .line 2463
-    sget-object v7, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
-
-    monitor-enter v7
-
-    .line 2464
-    :try_start_57
-    iget-object v6, p0, Lcom/android/exchange/ExchangeService;->mProvisionErrorExist:Ljava/util/HashMap;
-
-    iget-wide v8, p3, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v8
-
-    invoke-virtual {v6, v8}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2465
-    monitor-exit v7
-
-    .line 2466
-    :cond_63
     return v1
-
-    .line 2465
-    :catchall_64
-    move-exception v6
-
-    monitor-exit v7
-    :try_end_66
-    .catchall {:try_start_57 .. :try_end_66} :catchall_64
-
-    throw v6
 .end method
 
-.method private releaseSyncHoldsImplForEasMailbox(Landroid/content/Context;IJ)Z
-    .registers 27
-    .parameter "context"
-    .parameter "reason"
-    .parameter "accountId"
+.method private releaseWakeLock(J)V
+    .registers 7
+    .parameter "id"
 
     .prologue
-    .line 2366
-    const-string v3, "releaseSyncHoldsImplForEasMailbox(): Entry"
+    .line 1382
+    iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mWakeLocks:Ljava/util/HashMap;
 
-    invoke-static {v3}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
+    monitor-enter v2
 
-    .line 2367
-    const/4 v13, 0x0
+    .line 1383
+    :try_start_3
+    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mWakeLocks:Ljava/util/HashMap;
 
-    .line 2368
-    .local v13, holdWasReleased:Z
-    const-wide/16 v10, -0x1
-
-    .line 2370
-    .local v10, easMailboxId:J
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/ExchangeService;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
 
-    sget-object v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    sget-object v5, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_PROJECTION:[Ljava/lang/String;
-
-    const-string v6, "accountKey=? AND type=?"
-
-    const/4 v7, 0x2
-
-    new-array v7, v7, [Ljava/lang/String;
-
-    const/4 v8, 0x0
-
-    invoke-static/range {p3 .. p4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v20
-
-    aput-object v20, v7, v8
-
-    const/4 v8, 0x1
-
-    const-wide/16 v20, 0x44
-
-    invoke-static/range {v20 .. v21}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v20
-
-    aput-object v20, v7, v8
-
-    const/4 v8, 0x0
-
-    invoke-virtual/range {v3 .. v8}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v9
-
-    .line 2375
-    .local v9, c:Landroid/database/Cursor;
-    :try_start_2a
-    invoke-interface {v9}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_35
-
-    .line 2376
-    const/4 v3, 0x0
-
-    invoke-interface {v9, v3}, Landroid/database/Cursor;->getLong(I)J
-    :try_end_34
-    .catchall {:try_start_2a .. :try_end_34} :catchall_b0
-
-    move-result-wide v10
-
-    .line 2379
-    :cond_35
-    if-eqz v9, :cond_3a
-
-    .line 2380
-    invoke-interface {v9}, Landroid/database/Cursor;->close()V
-
-    .line 2383
-    :cond_3a
-    sget-object v4, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
-
-    monitor-enter v4
-
-    .line 2384
-    :try_start_3d
-    new-instance v19, Ljava/util/ArrayList;
-
-    invoke-direct/range {v19 .. v19}, Ljava/util/ArrayList;-><init>()V
-
-    .line 2385
-    .local v19, mailboxIds:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v3}, Ljava/util/concurrent/ConcurrentHashMap;->keySet()Ljava/util/Set;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v14
-
-    .local v14, i$:Ljava/util/Iterator;
-    :cond_4e
-    :goto_4e
-    invoke-interface {v14}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_c4
-
-    invoke-interface {v14}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Long;
-
-    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v17
-
-    .line 2386
-    .local v17, mailboxId:J
-    move-object/from16 v0, p1
-
-    move-wide/from16 v1, v17
-
-    invoke-static {v0, v1, v2}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    move-result-object v16
-
-    .line 2387
-    .local v16, m:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    if-nez v16, :cond_b7
-
-    .line 2388
-    invoke-static/range {v17 .. v18}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 2394
-    :cond_71
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-static/range {v17 .. v18}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v5}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v12
-
-    check-cast v12, Lcom/android/exchange/ExchangeService$SyncError;
-
-    .line 2395
-    .local v12, error:Lcom/android/exchange/ExchangeService$SyncError;
-    if-eqz v12, :cond_4e
-
-    iget v3, v12, Lcom/android/exchange/ExchangeService$SyncError;->reason:I
-
-    move/from16 v0, p2
-
-    if-ne v3, v0, :cond_4e
-
-    .line 2396
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "releaseSyncHoldsImplForEasMailbox(): mSyncErrorMap: "
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    move-wide/from16 v0, v17
-
-    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v5, " is removed"
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 2397
-    invoke-static/range {v17 .. v18}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_ae
-    .catchall {:try_start_3d .. :try_end_ae} :catchall_da
-
-    .line 2399
-    const/4 v13, 0x1
-
-    goto :goto_4e
-
-    .line 2379
-    .end local v12           #error:Lcom/android/exchange/ExchangeService$SyncError;
-    .end local v14           #i$:Ljava/util/Iterator;
-    .end local v16           #m:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    .end local v17           #mailboxId:J
-    .end local v19           #mailboxIds:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
-    :catchall_b0
-    move-exception v3
-
-    if-eqz v9, :cond_b6
-
-    .line 2380
-    invoke-interface {v9}, Landroid/database/Cursor;->close()V
-
-    .line 2379
-    :cond_b6
-    throw v3
-
-    .line 2390
-    .restart local v14       #i$:Ljava/util/Iterator;
-    .restart local v16       #m:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    .restart local v17       #mailboxId:J
-    .restart local v19       #mailboxIds:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
-    :cond_b7
-    :try_start_b7
-    move-object/from16 v0, v16
-
-    iget-wide v5, v0, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mAccountKey:J
-
-    cmp-long v3, v5, p3
-
-    if-nez v3, :cond_4e
-
-    cmp-long v3, v17, v10
-
-    if-eqz v3, :cond_71
-
-    goto :goto_4e
-
-    .line 2402
-    .end local v16           #m:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    .end local v17           #mailboxId:J
-    :cond_c4
-    invoke-virtual/range {v19 .. v19}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v15
-
-    .line 2403
-    .local v15, iter:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/Long;>;"
-    :goto_c8
-    invoke-interface {v15}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_dd
-
-    .line 2404
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-interface {v15}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v5}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_c8
-
-    .line 2406
-    .end local v14           #i$:Ljava/util/Iterator;
-    .end local v15           #iter:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/Long;>;"
-    .end local v19           #mailboxIds:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
-    :catchall_da
-    move-exception v3
-
-    monitor-exit v4
-    :try_end_dc
-    .catchall {:try_start_b7 .. :try_end_dc} :catchall_da
-
-    throw v3
-
-    .restart local v14       #i$:Ljava/util/Iterator;
-    .restart local v15       #iter:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/Long;>;"
-    .restart local v19       #mailboxIds:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
-    :cond_dd
-    :try_start_dd
-    monitor-exit v4
-    :try_end_de
-    .catchall {:try_start_dd .. :try_end_de} :catchall_da
-
-    .line 2408
-    return v13
-.end method
-
-.method public static reloadFolderList(Landroid/content/Context;JZ)V
-    .registers 16
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    const/4 v5, 0x0
-
-    const/4 v9, 0x1
-
-    const/4 v8, 0x0
-
-    .line 3201
-    sget-object v6, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    .line 3202
-    if-nez v6, :cond_8
-
-    .line 3279
-    :goto_7
-    return-void
-
-    .line 3204
-    :cond_8
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v1, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
+    check-cast v0, Ljava/lang/Boolean;
 
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_PROJECTION:[Ljava/lang/String;
+    .line 1384
+    .local v0, lock:Ljava/lang/Boolean;
+    if-eqz v0, :cond_2e
+
+    .line 1385
+    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mWakeLocks:Ljava/util/HashMap;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1386
+    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mWakeLocks:Ljava/util/HashMap;
+
+    invoke-virtual {v1}, Ljava/util/HashMap;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2e
+
+    .line 1387
+    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    if-eqz v1, :cond_2b
+
+    .line 1388
+    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
+
+    .line 1390
+    :cond_2b
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Lcom/android/exchange/ExchangeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    .line 1395
+    :cond_2e
+    monitor-exit v2
+
+    .line 1396
+    return-void
+
+    .line 1395
+    .end local v0           #lock:Ljava/lang/Boolean;
+    :catchall_30
+    move-exception v1
+
+    monitor-exit v2
+    :try_end_32
+    .catchall {:try_start_3 .. :try_end_32} :catchall_30
+
+    throw v1
+.end method
+
+.method public static reloadFolderList(Landroid/content/Context;JZ)V
+    .registers 22
+    .parameter "context"
+    .parameter "accountId"
+    .parameter "force"
+
+    .prologue
+    .line 1294
+    sget-object v9, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
+
+    .line 1295
+    .local v9, exchangeService:Lcom/android/exchange/ExchangeService;
+    if-nez v9, :cond_5
+
+    .line 1349
+    :goto_4
+    return-void
+
+    .line 1296
+    :cond_5
+    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/android/emailcommon/provider/Mailbox;->CONTENT_URI:Landroid/net/Uri;
+
+    sget-object v2, Lcom/android/emailcommon/provider/Mailbox;->CONTENT_PROJECTION:[Ljava/lang/String;
 
     const-string v3, "accountKey=? AND type=?"
 
@@ -8309,103 +3924,120 @@
 
     new-array v4, v4, [Ljava/lang/String;
 
-    invoke-static {p1, p2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+    const/4 v5, 0x0
 
-    move-result-object v7
+    invoke-static/range {p1 .. p2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
-    aput-object v7, v4, v8
+    move-result-object v16
 
-    const-wide/16 v7, 0x44
+    aput-object v16, v4, v5
 
-    invoke-static {v7, v8}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+    const/4 v5, 0x1
 
-    move-result-object v7
+    const-wide/16 v16, 0x44
 
-    aput-object v7, v4, v9
+    invoke-static/range {v16 .. v17}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v16
+
+    aput-object v16, v4, v5
+
+    const/4 v5, 0x0
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
-    move-result-object v1
+    move-result-object v7
 
-    .line 3210
+    .line 1302
+    .local v7, c:Landroid/database/Cursor;
     :try_start_27
-    invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
+    invoke-interface {v7}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v0
 
     if-eqz v0, :cond_42
 
-    .line 3211
-    sget-object v2, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
+    .line 1303
+    sget-object v1, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
 
-    monitor-enter v2
+    monitor-enter v1
     :try_end_30
     .catchall {:try_start_27 .. :try_end_30} :catchall_5c
 
-    .line 3212
+    .line 1304
     :try_start_30
-    new-instance v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    new-instance v12, Lcom/android/emailcommon/provider/Mailbox;
 
-    invoke-direct {v3}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;-><init>()V
+    invoke-direct {v12}, Lcom/android/emailcommon/provider/Mailbox;-><init>()V
 
-    .line 3213
-    invoke-virtual {v3, v1}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restore(Landroid/database/Cursor;)V
+    .line 1305
+    .local v12, mailbox:Lcom/android/emailcommon/provider/Mailbox;
+    invoke-virtual {v12, v7}, Lcom/android/emailcommon/provider/Mailbox;->restore(Landroid/database/Cursor;)V
 
-    .line 3214
-    invoke-static {p0, p1, p2}, Lcom/android/emailcommon/provider/EmailContent$Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 1306
+    invoke-static/range {p0 .. p2}, Lcom/android/emailcommon/provider/Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Account;
 
-    move-result-object v4
+    move-result-object v6
 
-    .line 3215
-    if-nez v4, :cond_46
+    .line 1307
+    .local v6, acct:Lcom/android/emailcommon/provider/Account;
+    if-nez v6, :cond_46
 
-    .line 3216
-    invoke-static {p1, p2}, Lcom/android/exchange/ExchangeService;->reloadFolderListFailed(J)V
+    .line 1308
+    invoke-static/range {p1 .. p2}, Lcom/android/exchange/ExchangeService;->reloadFolderListFailed(J)V
 
-    .line 3217
-    monitor-exit v2
+    .line 1309
+    monitor-exit v1
     :try_end_42
     .catchall {:try_start_30 .. :try_end_42} :catchall_59
 
-    .line 3277
+    .line 1347
+    .end local v6           #acct:Lcom/android/emailcommon/provider/Account;
+    .end local v12           #mailbox:Lcom/android/emailcommon/provider/Mailbox;
     :cond_42
     :goto_42
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    goto :goto_7
+    goto :goto_4
 
-    .line 3219
+    .line 1311
+    .restart local v6       #acct:Lcom/android/emailcommon/provider/Account;
+    .restart local v12       #mailbox:Lcom/android/emailcommon/provider/Mailbox;
     :cond_46
     :try_start_46
-    iget-object v0, v4, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncKey:Ljava/lang/String;
+    iget-object v14, v6, Lcom/android/emailcommon/provider/Account;->mSyncKey:Ljava/lang/String;
 
-    .line 3221
+    .line 1313
+    .local v14, syncKey:Ljava/lang/String;
     if-nez p3, :cond_61
 
-    if-eqz v0, :cond_54
+    if-eqz v14, :cond_54
 
-    const-string v5, "0"
+    const-string v0, "0"
 
-    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v14, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_61
 
-    .line 3222
+    .line 1314
     :cond_54
-    invoke-static {p1, p2}, Lcom/android/exchange/ExchangeService;->reloadFolderListFailed(J)V
+    invoke-static/range {p1 .. p2}, Lcom/android/exchange/ExchangeService;->reloadFolderListFailed(J)V
 
-    .line 3223
-    monitor-exit v2
+    .line 1315
+    monitor-exit v1
 
     goto :goto_42
 
-    .line 3274
+    .line 1344
+    .end local v6           #acct:Lcom/android/emailcommon/provider/Account;
+    .end local v12           #mailbox:Lcom/android/emailcommon/provider/Mailbox;
+    .end local v14           #syncKey:Ljava/lang/String;
     :catchall_59
     move-exception v0
 
-    monitor-exit v2
+    monitor-exit v1
     :try_end_5b
     .catchall {:try_start_46 .. :try_end_5b} :catchall_59
 
@@ -8414,220 +4046,121 @@
     :try_end_5c
     .catchall {:try_start_5b .. :try_end_5c} :catchall_5c
 
-    .line 3277
+    .line 1347
     :catchall_5c
     move-exception v0
 
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
     throw v0
 
-    .line 3227
+    .line 1319
+    .restart local v6       #acct:Lcom/android/emailcommon/provider/Account;
+    .restart local v12       #mailbox:Lcom/android/emailcommon/provider/Mailbox;
+    .restart local v14       #syncKey:Ljava/lang/String;
     :cond_61
     :try_start_61
-    new-instance v0, Landroid/content/ContentValues;
+    new-instance v8, Landroid/content/ContentValues;
 
-    invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
+    invoke-direct {v8}, Landroid/content/ContentValues;-><init>()V
 
-    .line 3228
-    const-string v5, "syncInterval"
+    .line 1320
+    .local v8, cv:Landroid/content/ContentValues;
+    const-string v0, "syncInterval"
 
-    const/4 v7, -0x4
+    const/4 v2, -0x4
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v7
+    move-result-object v2
 
-    invoke-virtual {v0, v5, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-virtual {v8, v0, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3229
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    .line 1321
+    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v5
+    move-result-object v0
 
-    sget-object v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
+    sget-object v2, Lcom/android/emailcommon/provider/Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
-    const-string v8, "accountKey=? and type!=68 and syncInterval IN (-3,-2)"
+    const-string v3, "accountKey=? and type!=68 and syncInterval IN (-3,-2)"
 
-    const/4 v9, 0x1
+    const/4 v4, 0x1
 
-    new-array v9, v9, [Ljava/lang/String;
+    new-array v4, v4, [Ljava/lang/String;
 
-    const/4 v10, 0x0
+    const/4 v5, 0x0
 
-    invoke-static {p1, p2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+    invoke-static/range {p1 .. p2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v16
 
-    aput-object v11, v9, v10
+    aput-object v16, v4, v5
 
-    invoke-virtual {v5, v7, v0, v8, v9}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+    invoke-virtual {v0, v2, v8, v3, v4}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 3233
+    .line 1324
     const-string v0, "Set push/ping boxes to push/hold"
 
     invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
-    .line 3235
-    iget-wide v7, v3, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    .line 1326
+    iget-wide v10, v12, Lcom/android/emailcommon/provider/Mailbox;->mId:J
 
-    .line 3236
-    iget-object v0, v6, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
+    .line 1327
+    .local v10, id:J
+    iget-object v0, v9, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
 
-    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-virtual {v0, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v13
 
-    check-cast v0, Lcom/android/exchange/AbstractSyncService;
+    check-cast v13, Lcom/android/exchange/AbstractSyncService;
 
-    .line 3238
-    if-eqz v0, :cond_d8
+    .line 1329
+    .local v13, svc:Lcom/android/exchange/AbstractSyncService;
+    if-eqz v13, :cond_cc
 
-    iget v5, v0, Lcom/android/exchange/AbstractSyncService;->mSyncReason:I
+    .line 1330
+    invoke-virtual {v13}, Lcom/android/exchange/AbstractSyncService;->getSynchronizer()Ljava/lang/Object;
 
-    const/16 v9, 0xa
+    move-result-object v2
 
-    if-eq v5, v9, :cond_d8
+    monitor-enter v2
+    :try_end_9f
+    .catchall {:try_start_61 .. :try_end_9f} :catchall_59
 
-    .line 3239
-    invoke-virtual {v0}, Lcom/android/exchange/AbstractSyncService;->getSynchronizer()Ljava/lang/Object;
+    .line 1331
+    :try_start_9f
+    invoke-virtual {v13}, Lcom/android/exchange/AbstractSyncService;->stop()V
 
-    move-result-object v3
+    .line 1333
+    iget-object v15, v13, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
 
-    monitor-enter v3
-    :try_end_a5
-    .catchall {:try_start_61 .. :try_end_a5} :catchall_59
+    .line 1334
+    .local v15, thread:Ljava/lang/Thread;
+    if-eqz v15, :cond_c3
 
-    .line 3240
-    :try_start_a5
-    invoke-virtual {v0}, Lcom/android/exchange/AbstractSyncService;->stop()V
-
-    .line 3243
-    iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
-
-    .line 3244
-    if-eqz v0, :cond_c9
-
-    .line 3245
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Ljava/lang/Thread;->getName()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, " (Stopped)"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v4}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
-
-    .line 3246
-    invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
-
-    .line 3248
-    :cond_c9
-    monitor-exit v3
-    :try_end_ca
-    .catchall {:try_start_a5 .. :try_end_ca} :catchall_d5
-
-    .line 3250
-    :try_start_ca
-    invoke-direct {v6, v7, v8}, Lcom/android/exchange/ExchangeService;->releaseMailbox(J)V
-
-    .line 3252
-    const-string v0, "reload folder list"
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->kick(Ljava/lang/String;)V
-
-    .line 3274
-    :cond_d2
-    :goto_d2
-    monitor-exit v2
-    :try_end_d3
-    .catchall {:try_start_ca .. :try_end_d3} :catchall_59
-
-    goto/16 :goto_42
-
-    .line 3248
-    :catchall_d5
-    move-exception v0
-
-    :try_start_d6
-    monitor-exit v3
-    :try_end_d7
-    .catchall {:try_start_d6 .. :try_end_d7} :catchall_d5
-
-    :try_start_d7
-    throw v0
-
-    .line 3264
-    :cond_d8
-    if-nez v0, :cond_d2
-
-    iget v0, v4, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncInterval:I
-
-    const/4 v5, -0x1
-
-    if-ne v0, v5, :cond_d2
-
-    iget-object v0, v6, Lcom/android/exchange/ExchangeService;->mProvisionErrorExist:Ljava/util/HashMap;
-
-    iget-wide v4, v4, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v4}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_d2
-
-    iget-object v0, v6, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
-
-    iget-wide v4, v3, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v4}, Ljava/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_d2
-
-    .line 3267
+    .line 1335
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "Account in Manual mode. Starting Sync forcefully.. for mailbox:"
+    invoke-virtual {v15}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    iget-wide v4, v3, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    const-string v3, " (Stopped)"
 
-    invoke-virtual {v0, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -8635,18 +4168,48 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
+    invoke-virtual {v15, v0}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 
-    .line 3269
-    const/4 v0, 0x5
+    .line 1336
+    invoke-virtual {v15}, Ljava/lang/Thread;->interrupt()V
 
-    const/4 v4, 0x0
+    .line 1338
+    :cond_c3
+    monitor-exit v2
+    :try_end_c4
+    .catchall {:try_start_9f .. :try_end_c4} :catchall_cf
 
-    invoke-direct {v6, v3, v0, v4}, Lcom/android/exchange/ExchangeService;->requestSync(Lcom/android/emailcommon/provider/EmailContent$Mailbox;ILcom/android/exchange/Request;)V
-    :try_end_118
-    .catchall {:try_start_d7 .. :try_end_118} :catchall_59
+    .line 1340
+    :try_start_c4
+    invoke-direct {v9, v10, v11}, Lcom/android/exchange/ExchangeService;->releaseMailbox(J)V
 
-    goto :goto_d2
+    .line 1342
+    const-string v0, "reload folder list"
+
+    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->kick(Ljava/lang/String;)V
+
+    .line 1344
+    .end local v15           #thread:Ljava/lang/Thread;
+    :cond_cc
+    monitor-exit v1
+    :try_end_cd
+    .catchall {:try_start_c4 .. :try_end_cd} :catchall_59
+
+    goto/16 :goto_42
+
+    .line 1338
+    :catchall_cf
+    move-exception v0
+
+    :try_start_d0
+    monitor-exit v2
+    :try_end_d1
+    .catchall {:try_start_d0 .. :try_end_d1} :catchall_cf
+
+    :try_start_d1
+    throw v0
+    :try_end_d2
+    .catchall {:try_start_d1 .. :try_end_d2} :catchall_59
 .end method
 
 .method private static reloadFolderListFailed(J)V
@@ -8654,7 +4217,7 @@
     .parameter "accountId"
 
     .prologue
-    .line 3193
+    .line 1286
     :try_start_0
     invoke-static {}, Lcom/android/exchange/ExchangeService;->callback()Lcom/android/emailcommon/service/IEmailServiceCallback;
 
@@ -8668,59 +4231,15 @@
     :try_end_a
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_a} :catch_b
 
-    .line 3198
+    .line 1291
     :goto_a
     return-void
 
-    .line 3195
+    .line 1288
     :catch_b
     move-exception v0
 
     goto :goto_a
-.end method
-
-.method public static removeAliasFromMap()V
-    .registers 4
-
-    .prologue
-    .line 5657
-    sget-object v1, Lcom/android/exchange/ExchangeService;->THREAD_MAP_LOCK:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 5658
-    :try_start_3
-    sget-object v0, Lcom/android/exchange/ExchangeService;->mThreadIdMap:Ljava/util/HashMap;
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Thread;->getId()J
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 5659
-    monitor-exit v1
-
-    .line 5660
-    return-void
-
-    .line 5659
-    :catchall_16
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_18
-    .catchall {:try_start_3 .. :try_end_18} :catchall_16
-
-    throw v0
 .end method
 
 .method public static removeFromSyncErrorMap(J)V
@@ -8728,14 +4247,14 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 4961
+    .line 2470
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 4962
+    .line 2471
     .local v0, exchangeService:Lcom/android/exchange/ExchangeService;
     if-eqz v0, :cond_d
 
-    .line 4963
+    .line 2472
     iget-object v1, v0, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -8744,261 +4263,182 @@
 
     invoke-virtual {v1, v2}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4965
+    .line 2474
     :cond_d
     return-void
 .end method
 
-.method private requestSync(Lcom/android/emailcommon/provider/EmailContent$Mailbox;ILcom/android/exchange/Request;)V
-    .registers 11
-    .parameter
-    .parameter
-    .parameter
+.method private requestSync(Lcom/android/emailcommon/provider/Mailbox;ILcom/android/exchange/Request;)V
+    .registers 12
+    .parameter "m"
+    .parameter "reason"
+    .parameter "req"
 
     .prologue
-    .line 3706
-    sget-boolean v1, Lcom/android/exchange/ExchangeService;->sConnectivityHold:Z
+    .line 1631
+    sget-boolean v3, Lcom/android/exchange/ExchangeService;->sConnectivityHold:Z
 
-    if-nez v1, :cond_a
+    if-nez v3, :cond_a
 
     if-eqz p1, :cond_a
 
-    sget-boolean v1, Lcom/android/exchange/ExchangeService;->sStop:Z
+    sget-boolean v3, Lcom/android/exchange/ExchangeService;->sStop:Z
 
-    if-eqz v1, :cond_b
+    if-eqz v3, :cond_18
 
-    .line 3733
+    .line 1632
     :cond_a
-    :goto_a
+    const/4 v3, 0x6
+
+    if-lt p2, v3, :cond_17
+
+    .line 1634
+    :try_start_d
+    sget-object v3, Lcom/android/exchange/ExchangeService;->sCallbackProxy:Lcom/android/emailcommon/service/IEmailServiceCallback$Stub;
+
+    iget-wide v4, p1, Lcom/android/emailcommon/provider/Mailbox;->mId:J
+
+    const/16 v6, 0x20
+
+    const/4 v7, 0x0
+
+    invoke-virtual {v3, v4, v5, v6, v7}, Lcom/android/emailcommon/service/IEmailServiceCallback$Stub;->syncMailboxStatus(JII)V
+    :try_end_17
+    .catch Landroid/os/RemoteException; {:try_start_d .. :try_end_17} :catch_51
+
+    .line 1657
+    :cond_17
+    :goto_17
     return-void
 
-    .line 3708
-    :cond_b
-    sget-object v3, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
+    .line 1641
+    :cond_18
+    sget-object v4, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
 
-    monitor-enter v3
+    monitor-enter v4
 
-    .line 3709
-    :try_start_e
-    iget-wide v1, p1, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mAccountKey:J
+    .line 1642
+    :try_start_1b
+    iget-wide v5, p1, Lcom/android/emailcommon/provider/Mailbox;->mAccountKey:J
 
-    invoke-static {p0, v1, v2}, Lcom/android/emailcommon/provider/EmailContent$Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    move-result-object v4
-
-    .line 3710
-    if-eqz v4, :cond_5d
-
-    .line 3713
-    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
-
-    iget-wide v5, p1, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, v5, v6}, Lcom/android/emailcommon/provider/Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Account;
 
     move-result-object v1
 
-    check-cast v1, Lcom/android/exchange/AbstractSyncService;
+    .line 1643
+    .local v1, acct:Lcom/android/emailcommon/provider/Account;
+    if-eqz v1, :cond_4f
 
-    .line 3714
-    if-nez v1, :cond_5d
+    .line 1645
+    iget-object v3, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
 
-    .line 3715
+    iget-wide v5, p1, Lcom/android/emailcommon/provider/Mailbox;->mId:J
+
+    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/exchange/AbstractSyncService;
+
+    .line 1646
+    .local v2, service:Lcom/android/exchange/AbstractSyncService;
+    if-nez v2, :cond_4f
+
+    .line 1647
     new-instance v2, Lcom/android/exchange/EasSyncService;
 
-    invoke-direct {v2, p0, p1}, Lcom/android/exchange/EasSyncService;-><init>(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Mailbox;)V
+    .end local v2           #service:Lcom/android/exchange/AbstractSyncService;
+    invoke-direct {v2, p0, p1}, Lcom/android/exchange/EasSyncService;-><init>(Landroid/content/Context;Lcom/android/emailcommon/provider/Mailbox;)V
 
-    .line 3716
+    .line 1648
+    .restart local v2       #service:Lcom/android/exchange/AbstractSyncService;
     move-object v0, v2
 
     check-cast v0, Lcom/android/exchange/EasSyncService;
 
-    move-object v1, v0
+    move-object v3, v0
 
-    iget-boolean v1, v1, Lcom/android/exchange/EasSyncService;->mIsValid:Z
+    iget-boolean v3, v3, Lcom/android/exchange/EasSyncService;->mIsValid:Z
 
-    if-nez v1, :cond_38
+    if-nez v3, :cond_45
 
-    .line 3717
-    monitor-exit v3
+    monitor-exit v4
 
-    goto :goto_a
+    goto :goto_17
 
-    .line 3732
-    :catchall_35
-    move-exception v1
+    .line 1656
+    .end local v1           #acct:Lcom/android/emailcommon/provider/Account;
+    .end local v2           #service:Lcom/android/exchange/AbstractSyncService;
+    :catchall_42
+    move-exception v3
 
-    monitor-exit v3
-    :try_end_37
-    .catchall {:try_start_e .. :try_end_37} :catchall_35
+    monitor-exit v4
+    :try_end_44
+    .catchall {:try_start_1b .. :try_end_44} :catchall_42
 
-    throw v1
+    throw v3
 
-    .line 3719
-    :cond_38
-    :try_start_38
-    iget v1, p1, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    const/16 v5, 0x44
-
-    if-ne v1, v5, :cond_5f
-
-    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mProvisionErrorExist:Ljava/util/HashMap;
-
-    iget-wide v4, v4, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v4
-
-    invoke-virtual {v1, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_5f
-
-    .line 3721
-    const-string v1, "Provision Error exist. Setting syncReason = SYNC_PROVISION for account sync"
-
-    invoke-static {v1}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 3722
-    const/16 v1, 0xa
-
-    iput v1, v2, Lcom/android/exchange/AbstractSyncService;->mSyncReason:I
-
-    .line 3726
-    :goto_55
-    if-eqz p3, :cond_5a
-
-    .line 3727
-    invoke-virtual {v2, p3}, Lcom/android/exchange/EasSyncService;->addRequest(Lcom/android/exchange/Request;)V
-
-    .line 3729
-    :cond_5a
-    invoke-direct {p0, v2, p1}, Lcom/android/exchange/ExchangeService;->startServiceThread(Lcom/android/exchange/AbstractSyncService;Lcom/android/emailcommon/provider/EmailContent$Mailbox;)V
-
-    .line 3732
-    :cond_5d
-    monitor-exit v3
-
-    goto :goto_a
-
-    .line 3724
-    :cond_5f
+    .line 1649
+    .restart local v1       #acct:Lcom/android/emailcommon/provider/Account;
+    .restart local v2       #service:Lcom/android/exchange/AbstractSyncService;
+    :cond_45
+    :try_start_45
     iput p2, v2, Lcom/android/exchange/AbstractSyncService;->mSyncReason:I
-    :try_end_61
-    .catchall {:try_start_38 .. :try_end_61} :catchall_35
 
-    goto :goto_55
+    .line 1650
+    if-eqz p3, :cond_4c
+
+    .line 1651
+    invoke-virtual {v2, p3}, Lcom/android/exchange/AbstractSyncService;->addRequest(Lcom/android/exchange/Request;)V
+
+    .line 1653
+    :cond_4c
+    invoke-direct {p0, v2, p1}, Lcom/android/exchange/ExchangeService;->startServiceThread(Lcom/android/exchange/AbstractSyncService;Lcom/android/emailcommon/provider/Mailbox;)V
+
+    .line 1656
+    .end local v2           #service:Lcom/android/exchange/AbstractSyncService;
+    :cond_4f
+    monitor-exit v4
+    :try_end_50
+    .catchall {:try_start_45 .. :try_end_50} :catchall_42
+
+    goto :goto_17
+
+    .line 1635
+    .end local v1           #acct:Lcom/android/emailcommon/provider/Account;
+    :catch_51
+    move-exception v3
+
+    goto :goto_17
 .end method
 
-.method private runAccountReconcilerSync(Landroid/content/Context;)V
-    .registers 7
+.method public static runAccountReconcilerSync(Landroid/content/Context;)V
+    .registers 4
     .parameter "context"
 
     .prologue
-    .line 2518
-    sget-object v3, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
+    .line 1166
+    const-string v0, "Reconciling accounts..."
 
-    if-nez v3, :cond_a
+    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
 
-    .line 2519
-    const-string v3, "!!! EAS ExchangeService  -----------  Quit thread : null INSTANCE(1)"
+    .line 1167
+    new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy;
 
-    invoke-static {v3}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
+    invoke-direct {v0, p0}, Lcom/android/emailcommon/service/AccountServiceProxy;-><init>(Landroid/content/Context;)V
 
-    .line 2558
-    :cond_9
-    :goto_9
+    const-string v1, "eas"
+
+    const-string v2, "com.android.exchange"
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/emailcommon/service/AccountServiceProxy;->reconcileAccounts(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1169
     return-void
-
-    .line 2523
-    :cond_a
-    invoke-static {p1}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
-
-    move-result-object v3
-
-    const-string v4, "com.android.exchange"
-
-    invoke-virtual {v3, v4}, Landroid/accounts/AccountManager;->getAccountsByType(Ljava/lang/String;)[Landroid/accounts/Account;
-
-    move-result-object v1
-
-    .line 2530
-    .local v1, accountMgrList:[Landroid/accounts/Account;
-    new-instance v3, Lcom/android/exchange/ExchangeService$AccountList;
-
-    invoke-direct {v3}, Lcom/android/exchange/ExchangeService$AccountList;-><init>()V
-
-    invoke-static {p1, v3}, Lcom/android/exchange/ExchangeService;->collectEasAccounts(Landroid/content/Context;Lcom/android/exchange/ExchangeService$AccountList;)Lcom/android/exchange/ExchangeService$AccountList;
-
-    move-result-object v0
-
-    .line 2534
-    .local v0, accountList:Lcom/android/exchange/ExchangeService$AccountList;
-    if-nez v0, :cond_25
-
-    .line 2535
-    const-string v3, "onAccountChanged(): empty accounts list was returned from collectEasAccounts()! Exit immediately."
-
-    invoke-static {v3}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    goto :goto_9
-
-    .line 2543
-    :cond_25
-    sget-object v3, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    if-nez v3, :cond_2f
-
-    .line 2544
-    const-string v3, "!!! EAS EAS ExchangeService  -----------  Quit thread : null INSTANCE(2)"
-
-    invoke-static {v3}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    goto :goto_9
-
-    .line 2548
-    :cond_2f
-    const-string v3, "Reconciling accounts..."
-
-    invoke-static {v3}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    .line 2549
-    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    invoke-static {p1, v0, v1, v3}, Lcom/android/emailcommon/utility/AccountReconciler;->reconcileAccounts(Landroid/content/Context;Ljava/util/List;[Landroid/accounts/Account;Landroid/content/ContentResolver;)Z
-
-    move-result v2
-
-    .line 2551
-    .local v2, accountsDeleted:Z
-    if-eqz v2, :cond_9
-
-    .line 2553
-    :try_start_3e
-    new-instance v3, Lcom/android/emailcommon/service/AccountServiceProxy;
-
-    invoke-direct {v3, p1}, Lcom/android/emailcommon/service/AccountServiceProxy;-><init>(Landroid/content/Context;)V
-
-    invoke-virtual {v3}, Lcom/android/emailcommon/service/AccountServiceProxy;->accountDeleted()V
-    :try_end_46
-    .catch Landroid/os/RemoteException; {:try_start_3e .. :try_end_46} :catch_47
-
-    goto :goto_9
-
-    .line 2554
-    :catch_47
-    move-exception v3
-
-    goto :goto_9
 .end method
 
 .method public static runAsleep(JJ)V
@@ -9007,20 +4447,20 @@
     .parameter "millis"
 
     .prologue
-    .line 3399
+    .line 1461
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 3400
+    .line 1462
     .local v0, exchangeService:Lcom/android/exchange/ExchangeService;
     if-eqz v0, :cond_a
 
-    .line 3401
+    .line 1463
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/android/exchange/ExchangeService;->setAlarm(JJ)V
 
-    .line 3402
-    invoke-virtual {v0, p0, p1}, Lcom/android/exchange/ExchangeService;->releaseWakeLock(J)V
+    .line 1464
+    invoke-direct {v0, p0, p1}, Lcom/android/exchange/ExchangeService;->releaseWakeLock(J)V
 
-    .line 3404
+    .line 1466
     :cond_a
     return-void
 .end method
@@ -9030,20 +4470,20 @@
     .parameter "id"
 
     .prologue
-    .line 3391
+    .line 1453
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 3392
+    .line 1454
     .local v0, exchangeService:Lcom/android/exchange/ExchangeService;
     if-eqz v0, :cond_a
 
-    .line 3393
+    .line 1455
     invoke-direct {v0, p0, p1}, Lcom/android/exchange/ExchangeService;->acquireWakeLock(J)V
 
-    .line 3394
+    .line 1456
     invoke-direct {v0, p0, p1}, Lcom/android/exchange/ExchangeService;->clearAlarm(J)V
 
-    .line 3396
+    .line 1458
     :cond_a
     return-void
 .end method
@@ -9053,18 +4493,18 @@
     .parameter
 
     .prologue
-    .line 4777
+    .line 2355
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 4778
+    .line 2356
     if-nez v0, :cond_5
 
-    .line 4793
+    .line 2370
     :cond_4
     :goto_4
     return-void
 
-    .line 4780
+    .line 2357
     :cond_5
     iget-wide v1, p0, Lcom/android/exchange/Request;->mMessageId:J
 
@@ -9072,13 +4512,13 @@
 
     move-result-object v1
 
-    .line 4781
+    .line 2358
     if-eqz v1, :cond_4
 
-    .line 4784
+    .line 2361
     iget-wide v1, v1, Lcom/android/emailcommon/provider/EmailContent$Message;->mMailboxKey:J
 
-    .line 4785
+    .line 2362
     iget-object v0, v0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -9091,22 +4531,22 @@
 
     check-cast v0, Lcom/android/exchange/AbstractSyncService;
 
-    .line 4787
+    .line 2364
     if-nez v0, :cond_27
 
-    .line 4788
-    const/4 v0, 0x7
+    .line 2365
+    const/4 v0, 0x5
 
     invoke-static {v1, v2, v0, p0}, Lcom/android/exchange/ExchangeService;->startManualSync(JILcom/android/exchange/Request;)V
 
-    .line 4789
+    .line 2366
     const-string v0, "part request"
 
     invoke-static {v0}, Lcom/android/exchange/ExchangeService;->kick(Ljava/lang/String;)V
 
     goto :goto_4
 
-    .line 4791
+    .line 2368
     :cond_27
     invoke-virtual {v0, p0}, Lcom/android/exchange/AbstractSyncService;->addRequest(Lcom/android/exchange/Request;)V
 
@@ -9119,171 +4559,50 @@
     .parameter "reason"
 
     .prologue
-    .line 4669
+    .line 2309
     const-wide/16 v0, 0x1388
 
     invoke-static {p0, p1, v0, v1, p2}, Lcom/android/exchange/ExchangeService;->serviceRequest(JJI)V
 
-    .line 4670
+    .line 2310
     return-void
 .end method
 
 .method public static serviceRequest(JJI)V
-    .registers 13
+    .registers 8
     .parameter
     .parameter
     .parameter
 
     .prologue
-    const/4 v7, 0x4
-
-    .line 4687
+    .line 2322
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 4688
-    if-nez v0, :cond_6
+    .line 2323
+    if-nez v0, :cond_5
 
-    .line 4758
-    :cond_5
-    :goto_5
+    .line 2337
+    :cond_4
+    :goto_4
     return-void
 
-    .line 4690
-    :cond_6
-    invoke-static {v0, p0, p1}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    .line 2324
+    :cond_5
+    invoke-static {v0, p0, p1}, Lcom/android/emailcommon/provider/Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Mailbox;
 
     move-result-object v1
 
-    .line 4694
-    if-nez v1, :cond_12
+    .line 2325
+    if-eqz v1, :cond_4
 
-    .line 4695
-    const-string v0, "Ignoring serviceRequest for null mailbox"
+    invoke-static {v1}, Lcom/android/exchange/ExchangeService;->isSyncable(Lcom/android/emailcommon/provider/Mailbox;)Z
 
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
+    move-result v1
 
-    goto :goto_5
+    if-eqz v1, :cond_4
 
-    .line 4701
-    :cond_12
-    invoke-static {}, Lcom/android/exchange/ExchangeService;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    iget-wide v3, v1, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mAccountKey:J
-
-    invoke-static {v2, v3, v4}, Lcom/android/emailcommon/provider/EmailContent$Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    move-result-object v2
-
-    .line 4703
-    if-eqz v2, :cond_57
-
-    .line 4711
-    iget-object v3, v2, Lcom/android/emailcommon/provider/EmailContent$Account;->mProtocolVersion:Ljava/lang/String;
-
-    if-eqz v3, :cond_5
-
-    .line 4713
-    iget-object v3, v2, Lcom/android/emailcommon/provider/EmailContent$Account;->mProtocolVersion:Ljava/lang/String;
-
-    invoke-static {v3}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
-
-    move-result-wide v3
-
-    const-wide v5, 0x4028333333333333L
-
-    cmpg-double v3, v3, v5
-
-    if-gtz v3, :cond_3b
-
-    iget v3, v1, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    if-ne v3, v7, :cond_3b
-
-    .line 4715
-    const-string v0, "Ignoring serviceRequest for outbox mailbox"
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    goto :goto_5
-
-    .line 4717
-    :cond_3b
-    iget v3, v1, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    if-ne v3, v7, :cond_5d
-
-    iget-object v3, v2, Lcom/android/emailcommon/provider/EmailContent$Account;->mProtocolVersion:Ljava/lang/String;
-
-    invoke-static {v3}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
-
-    move-result-wide v3
-
-    const-wide/high16 v5, 0x402c
-
-    cmpl-double v3, v3, v5
-
-    if-ltz v3, :cond_5d
-
-    iget v2, v2, Lcom/android/emailcommon/provider/EmailContent$Account;->mFlags:I
-
-    and-int/lit16 v2, v2, 0x800
-
-    if-nez v2, :cond_5d
-
-    .line 4720
-    const-string v0, "Ignoring serviceRequest for outbox mailbox as SMS Sync is not enabled"
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    goto :goto_5
-
-    .line 4724
-    :cond_57
-    const-string v0, "Ignoring serviceRequest for null account"
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    goto :goto_5
-
-    .line 4730
-    :cond_5d
-    iget v2, v1, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    const/16 v3, 0x8
-
-    if-ne v2, v3, :cond_6b
-
-    .line 4732
-    sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    const-string v0, "Ignoring serviceRequest for search"
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    goto :goto_5
-
-    .line 4736
-    :cond_6b
-    iget v1, v1, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    const/16 v2, 0x62
-
-    if-ne v1, v2, :cond_79
-
-    .line 4737
-    sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    const-string v0, "Ignoring serviceRequest for document search"
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    goto :goto_5
-
-    .line 4743
-    :cond_79
-    :try_start_79
+    .line 2327
+    :try_start_11
     iget-object v0, v0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
 
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -9296,15 +4615,10 @@
 
     check-cast v0, Lcom/android/exchange/AbstractSyncService;
 
-    .line 4744
-    if-eqz v0, :cond_be
+    .line 2328
+    if-eqz v0, :cond_31
 
-    .line 4745
-    instance-of v1, v0, Lcom/android/exchange/EasOutboxService;
-
-    if-nez v1, :cond_9f
-
-    .line 4746
+    .line 2329
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -9313,67 +4627,34 @@
 
     iput-wide v1, v0, Lcom/android/exchange/AbstractSyncService;->mRequestTime:J
 
-    .line 4751
-    :goto_92
+    .line 2330
     const-string v0, "service request"
 
     invoke-static {v0}, Lcom/android/exchange/ExchangeService;->kick(Ljava/lang/String;)V
-    :try_end_97
-    .catch Ljava/lang/Exception; {:try_start_79 .. :try_end_97} :catch_99
+    :try_end_2b
+    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_2b} :catch_2c
 
-    goto/16 :goto_5
+    goto :goto_4
 
-    .line 4755
-    :catch_99
+    .line 2334
+    :catch_2c
     move-exception v0
 
-    .line 4756
+    .line 2335
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    goto/16 :goto_5
+    goto :goto_4
 
-    .line 4748
-    :cond_9f
-    :try_start_9f
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "serviceRequest() : service.mRequestTime = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-wide v2, v0, Lcom/android/exchange/AbstractSyncService;->mRequestTime:J
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "service.mRequestTime should not be set for EasOutboxService."
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    goto :goto_92
-
-    .line 4753
-    :cond_be
+    .line 2332
+    :cond_31
     const/4 v0, 0x0
 
+    :try_start_32
     invoke-static {p0, p1, p4, v0}, Lcom/android/exchange/ExchangeService;->startManualSync(JILcom/android/exchange/Request;)V
-    :try_end_c2
-    .catch Ljava/lang/Exception; {:try_start_9f .. :try_end_c2} :catch_99
+    :try_end_35
+    .catch Ljava/lang/Exception; {:try_start_32 .. :try_end_35} :catch_2c
 
-    goto/16 :goto_5
+    goto :goto_4
 .end method
 
 .method private setAlarm(JJ)V
@@ -9382,12 +4663,12 @@
     .parameter
 
     .prologue
-    .line 3363
+    .line 1426
     iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mPendingIntents:Ljava/util/HashMap;
 
     monitor-enter v1
 
-    .line 3364
+    .line 1427
     :try_start_3
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mPendingIntents:Ljava/util/HashMap;
 
@@ -9401,22 +4682,22 @@
 
     check-cast v0, Landroid/app/PendingIntent;
 
-    .line 3365
+    .line 1428
     if-nez v0, :cond_57
 
-    .line 3366
+    .line 1429
     new-instance v0, Landroid/content/Intent;
 
     const-class v2, Lcom/android/exchange/MailboxAlarmReceiver;
 
     invoke-direct {v0, p0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 3367
+    .line 1430
     const-string v2, "mailbox"
 
     invoke-virtual {v0, v2, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 3368
+    .line 1431
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9441,7 +4722,7 @@
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 3369
+    .line 1432
     const/4 v2, 0x0
 
     const/4 v3, 0x0
@@ -9450,7 +4731,7 @@
 
     move-result-object v2
 
-    .line 3370
+    .line 1433
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mPendingIntents:Ljava/util/HashMap;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -9459,7 +4740,7 @@
 
     invoke-virtual {v0, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3372
+    .line 1435
     const-string v0, "alarm"
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/ExchangeService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -9468,7 +4749,7 @@
 
     check-cast v0, Landroid/app/AlarmManager;
 
-    .line 3373
+    .line 1436
     const/4 v3, 0x0
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -9479,14 +4760,14 @@
 
     invoke-virtual {v0, v3, v4, v5, v2}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
 
-    .line 3377
+    .line 1439
     :cond_57
     monitor-exit v1
 
-    .line 3378
+    .line 1440
     return-void
 
-    .line 3377
+    .line 1439
     :catchall_59
     move-exception v0
 
@@ -9497,2078 +4778,290 @@
     throw v0
 .end method
 
-.method public static setAliasInMap(Ljava/lang/String;)V
-    .registers 6
-    .parameter "alias"
-
-    .prologue
-    .line 5651
-    sget-object v1, Lcom/android/exchange/ExchangeService;->THREAD_MAP_LOCK:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 5652
-    :try_start_3
-    sget-object v0, Lcom/android/exchange/ExchangeService;->mThreadIdMap:Ljava/util/HashMap;
-
-    new-instance v2, Ljava/lang/Long;
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Thread;->getId()J
-
-    move-result-wide v3
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Long;-><init>(J)V
-
-    invoke-virtual {v0, v2, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 5653
-    monitor-exit v1
-
-    .line 5654
-    return-void
-
-    .line 5653
-    :catchall_17
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_19
-    .catchall {:try_start_3 .. :try_end_19} :catchall_17
-
-    throw v0
-.end method
-
-.method public static setEasSyncIntervals(Landroid/content/Context;Ljava/lang/String;IJZ)V
-    .registers 20
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 5306
-    new-instance v2, Landroid/accounts/Account;
-
-    const-string v3, "com.android.exchange"
-
-    invoke-direct {v2, p1, v3}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 5308
-    const-string v3, "com.android.contacts"
-
-    invoke-static {v2, v3}, Landroid/content/ContentResolver;->getSyncAutomatically(Landroid/accounts/Account;Ljava/lang/String;)Z
-
-    move-result v4
-
-    .line 5312
-    const-string v3, "com.android.calendar"
-
-    invoke-static {v2, v3}, Landroid/content/ContentResolver;->getSyncAutomatically(Landroid/accounts/Account;Ljava/lang/String;)Z
-
-    move-result v5
-
-    .line 5317
-    const-string v3, "tasks"
-
-    invoke-static {v2, v3}, Landroid/content/ContentResolver;->getSyncAutomatically(Landroid/accounts/Account;Ljava/lang/String;)Z
-
-    move-result v6
-
-    .line 5322
-    const-string v3, "com.android.notes"
-
-    invoke-static {v2, v3}, Landroid/content/ContentResolver;->getSyncAutomatically(Landroid/accounts/Account;Ljava/lang/String;)Z
-
-    move-result v7
-
-    .line 5324
-    new-instance v8, Landroid/content/ContentValues;
-
-    invoke-direct {v8}, Landroid/content/ContentValues;-><init>()V
-
-    .line 5325
-    if-eqz p5, :cond_87
-
-    .line 5327
-    move-wide/from16 v0, p3
-
-    invoke-static {p0, v0, v1}, Lcom/android/emailcommon/provider/EmailContent$Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    move-result-object v3
-
-    .line 5328
-    const/4 v2, 0x1
-
-    .line 5329
-    if-eqz v3, :cond_67
-
-    .line 5334
-    :try_start_2f
-    iget-object v9, v3, Lcom/android/emailcommon/provider/EmailContent$Account;->mProtocolVersion:Ljava/lang/String;
-
-    invoke-static {v9}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
-
-    move-result-wide v9
-
-    const-wide/high16 v11, 0x402c
-
-    cmpl-double v9, v9, v11
-
-    if-ltz v9, :cond_67
-
-    .line 5336
-    iget v3, v3, Lcom/android/emailcommon/provider/EmailContent$Account;->mFlags:I
-
-    and-int/lit16 v3, v3, 0x800
-
-    if-eqz v3, :cond_108
-
-    .line 5337
-    const-string v3, "syncInterval"
-
-    invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v3, v9}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 5338
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    sget-object v9, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    const-string v10, "accountKey=? and type in (0,4,97,68)"
-
-    const/4 v11, 0x1
-
-    new-array v11, v11, [Ljava/lang/String;
-
-    const/4 v12, 0x0
-
-    invoke-static/range {p3 .. p4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v13
-
-    aput-object v13, v11, v12
-
-    invoke-virtual {v3, v9, v8, v10, v11}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    .line 5350
-    :goto_5f
-    const-string v3, "ExchangeService"
-
-    const-string v9, "exchange service - seteassync intervals,inbox,outbox,RIC"
-
-    invoke-static {v3, v9}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_66
-    .catch Ljava/lang/NullPointerException; {:try_start_2f .. :try_end_66} :catch_128
-
-    .line 5352
-    const/4 v2, 0x0
-
-    .line 5360
-    :cond_67
-    :goto_67
-    if-eqz v2, :cond_87
-
-    .line 5361
-    const-string v2, "syncInterval"
-
-    invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v8, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 5362
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    const-string v9, "accountKey=? and type in (0,68)"
-
-    const/4 v10, 0x1
-
-    new-array v10, v10, [Ljava/lang/String;
-
-    const/4 v11, 0x0
-
-    invoke-static/range {p3 .. p4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v12
-
-    aput-object v12, v10, v11
-
-    invoke-virtual {v2, v3, v8, v9, v10}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    .line 5370
-    :cond_87
-    if-eqz v4, :cond_12e
-
-    .line 5371
-    const-string v2, "syncInterval"
-
-    invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v8, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 5372
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    const-string v4, "accountKey=? and type in (66)"
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Ljava/lang/String;
-
-    const/4 v10, 0x0
-
-    invoke-static/range {p3 .. p4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v11
-
-    aput-object v11, v9, v10
-
-    invoke-virtual {v2, v3, v8, v4, v9}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    .line 5384
-    :goto_a7
-    if-eqz v5, :cond_14f
-
-    .line 5385
-    const-string v2, "syncInterval"
-
-    invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v8, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 5386
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    const-string v4, "accountKey=? and type in (65)"
-
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v9, 0x0
-
-    invoke-static/range {p3 .. p4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v10
-
-    aput-object v10, v5, v9
-
-    invoke-virtual {v2, v3, v8, v4, v5}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    .line 5399
-    :goto_c7
-    if-eqz v7, :cond_170
-
-    .line 5401
-    const-string v2, "syncInterval"
-
-    invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v8, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 5402
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    const-string v4, "accountKey=? and type in (69)"
-
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v7, 0x0
-
-    invoke-static/range {p3 .. p4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v9
-
-    aput-object v9, v5, v7
-
-    invoke-virtual {v2, v3, v8, v4, v5}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    .line 5416
-    :goto_e7
-    if-eqz v6, :cond_191
-
-    .line 5418
-    const-string v2, "syncInterval"
-
-    invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v8, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 5419
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    const-string v4, "accountKey=? and type in (67)"
-
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-static/range {p3 .. p4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v7
-
-    aput-object v7, v5, v6
-
-    invoke-virtual {v2, v3, v8, v4, v5}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    .line 5431
-    :goto_107
-    return-void
-
-    .line 5343
-    :cond_108
-    :try_start_108
-    const-string v3, "syncInterval"
-
-    invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v3, v9}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 5344
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    sget-object v9, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    const-string v10, "accountKey=? and type in (0,97,68)"
-
-    const/4 v11, 0x1
-
-    new-array v11, v11, [Ljava/lang/String;
-
-    const/4 v12, 0x0
-
-    invoke-static/range {p3 .. p4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v13
-
-    aput-object v13, v11, v12
-
-    invoke-virtual {v3, v9, v8, v10, v11}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_126
-    .catch Ljava/lang/NullPointerException; {:try_start_108 .. :try_end_126} :catch_128
-
-    goto/16 :goto_5f
-
-    .line 5355
-    :catch_128
-    move-exception v3
-
-    .line 5356
-    invoke-virtual {v3}, Ljava/lang/NullPointerException;->printStackTrace()V
-
-    goto/16 :goto_67
-
-    .line 5377
-    :cond_12e
-    const-string v2, "syncInterval"
-
-    const/4 v3, -0x1
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v8, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 5378
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    const-string v4, "accountKey=? and type in (66)"
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Ljava/lang/String;
-
-    const/4 v10, 0x0
-
-    invoke-static/range {p3 .. p4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v11
-
-    aput-object v11, v9, v10
-
-    invoke-virtual {v2, v3, v8, v4, v9}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    goto/16 :goto_a7
-
-    .line 5391
-    :cond_14f
-    const-string v2, "syncInterval"
-
-    const/4 v3, -0x1
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v8, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 5392
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    const-string v4, "accountKey=? and type in (65)"
-
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v9, 0x0
-
-    invoke-static/range {p3 .. p4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v10
-
-    aput-object v10, v5, v9
-
-    invoke-virtual {v2, v3, v8, v4, v5}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    goto/16 :goto_c7
-
-    .line 5407
-    :cond_170
-    const-string v2, "syncInterval"
-
-    const/4 v3, -0x1
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v8, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 5408
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    const-string v4, "accountKey=? and type in (69)"
-
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v7, 0x0
-
-    invoke-static/range {p3 .. p4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v9
-
-    aput-object v9, v5, v7
-
-    invoke-virtual {v2, v3, v8, v4, v5}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    goto/16 :goto_e7
-
-    .line 5424
-    :cond_191
-    const-string v2, "syncInterval"
-
-    const/4 v3, -0x1
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v8, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 5425
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    const-string v4, "accountKey=? and type in (67)"
-
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    invoke-static/range {p3 .. p4}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v7
-
-    aput-object v7, v5, v6
-
-    invoke-virtual {v2, v3, v8, v4, v5}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    goto/16 :goto_107
-.end method
-
 .method public static setWatchdogAlarm(JJ)V
     .registers 5
     .parameter "id"
     .parameter "millis"
 
     .prologue
-    .line 3414
+    .line 1476
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 3415
+    .line 1477
     .local v0, exchangeService:Lcom/android/exchange/ExchangeService;
     if-eqz v0, :cond_7
 
-    .line 3416
+    .line 1478
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/android/exchange/ExchangeService;->setAlarm(JJ)V
 
-    .line 3418
+    .line 1480
     :cond_7
     return-void
 .end method
 
 .method private shutdown()V
-    .registers 5
+    .registers 4
 
     .prologue
-    .line 4147
+    .line 1983
     sget-object v1, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 4149
+    .line 1985
     :try_start_3
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    if-eqz v0, :cond_9d
+    if-eqz v0, :cond_6d
 
-    .line 4150
+    .line 1986
     const-string v0, "ExchangeService shutting down..."
 
     invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
-    .line 4152
+    .line 1989
     invoke-direct {p0}, Lcom/android/exchange/ExchangeService;->stopServiceThreads()V
-    :try_end_f
-    .catchall {:try_start_3 .. :try_end_f} :catchall_a1
 
-    .line 4155
-    :try_start_f
+    .line 1992
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mConnectivityReceiver:Lcom/android/exchange/ExchangeService$ConnectivityReceiver;
 
     if-eqz v0, :cond_18
 
-    .line 4156
+    .line 1993
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mConnectivityReceiver:Lcom/android/exchange/ExchangeService$ConnectivityReceiver;
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/ExchangeService;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-    :try_end_18
-    .catchall {:try_start_f .. :try_end_18} :catchall_9f
-    .catch Ljava/lang/RuntimeException; {:try_start_f .. :try_end_18} :catch_ac
 
-    .line 4163
+    .line 1995
     :cond_18
-    :goto_18
-    :try_start_18
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mBackgroundDataSettingReceiver:Lcom/android/exchange/ExchangeService$ConnectivityReceiver;
 
     if-eqz v0, :cond_21
 
-    .line 4164
+    .line 1996
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mBackgroundDataSettingReceiver:Lcom/android/exchange/ExchangeService$ConnectivityReceiver;
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/ExchangeService;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-    :try_end_21
-    .catchall {:try_start_18 .. :try_end_21} :catchall_a4
-    .catch Ljava/lang/RuntimeException; {:try_start_18 .. :try_end_21} :catch_a9
 
-    .line 4171
+    .line 2000
     :cond_21
-    :goto_21
-    :try_start_21
     invoke-virtual {p0}, Lcom/android/exchange/ExchangeService;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 4172
+    .line 2001
     iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mSyncedMessageObserver:Lcom/android/exchange/ExchangeService$SyncedMessageObserver;
 
     if-eqz v2, :cond_31
 
-    .line 4173
+    .line 2002
     iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mSyncedMessageObserver:Lcom/android/exchange/ExchangeService$SyncedMessageObserver;
 
     invoke-virtual {v0, v2}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 4174
+    .line 2003
     const/4 v2, 0x0
 
     iput-object v2, p0, Lcom/android/exchange/ExchangeService;->mSyncedMessageObserver:Lcom/android/exchange/ExchangeService$SyncedMessageObserver;
 
-    .line 4176
+    .line 2005
     :cond_31
     iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mAccountObserver:Lcom/android/exchange/ExchangeService$AccountObserver;
 
     if-eqz v2, :cond_3d
 
-    .line 4177
+    .line 2006
     iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mAccountObserver:Lcom/android/exchange/ExchangeService$AccountObserver;
 
     invoke-virtual {v0, v2}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 4178
+    .line 2007
     const/4 v2, 0x0
 
     iput-object v2, p0, Lcom/android/exchange/ExchangeService;->mAccountObserver:Lcom/android/exchange/ExchangeService$AccountObserver;
 
-    .line 4180
+    .line 2009
     :cond_3d
     iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mMailboxObserver:Lcom/android/exchange/ExchangeService$MailboxObserver;
 
     if-eqz v2, :cond_49
 
-    .line 4181
+    .line 2010
     iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mMailboxObserver:Lcom/android/exchange/ExchangeService$MailboxObserver;
 
     invoke-virtual {v0, v2}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 4182
+    .line 2011
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mMailboxObserver:Lcom/android/exchange/ExchangeService$MailboxObserver;
 
-    .line 4184
+    .line 2013
     :cond_49
     invoke-static {}, Lcom/android/exchange/ExchangeService;->unregisterCalendarObservers()V
 
-    .line 4188
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mStatusChangeListener:Ljava/lang/Object;
-
-    if-eqz v0, :cond_5b
-
-    .line 4189
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mStatusChangeListener:Ljava/lang/Object;
-
-    invoke-static {v0}, Landroid/content/ContentResolver;->removeStatusChangeListener(Ljava/lang/Object;)V
-
-    .line 4190
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mStatusChangeListener:Ljava/lang/Object;
-
-    .line 4191
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mSyncStatusObserver:Lcom/android/exchange/ExchangeService$EasSyncStatusObserver;
-
-    .line 4194
-    :cond_5b
-    invoke-virtual {p0}, Lcom/android/exchange/ExchangeService;->getBaseContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    const-string v2, "phone"
-
-    invoke-virtual {v0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/telephony/TelephonyManager;
-
-    iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mPhone:Landroid/telephony/TelephonyManager;
-
-    .line 4196
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mPhone:Landroid/telephony/TelephonyManager;
-
-    if-eqz v0, :cond_7c
-
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
-
-    if-eqz v0, :cond_7c
-
-    .line 4197
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mPhone:Landroid/telephony/TelephonyManager;
-
-    iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, v2, v3}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
-
-    .line 4198
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
-
-    .line 4202
-    :cond_7c
+    .line 2016
     invoke-direct {p0}, Lcom/android/exchange/ExchangeService;->clearAlarms()V
 
-    .line 4205
+    .line 2019
     iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mWakeLocks:Ljava/util/HashMap;
 
     monitor-enter v2
-    :try_end_82
-    .catchall {:try_start_21 .. :try_end_82} :catchall_a1
+    :try_end_52
+    .catchall {:try_start_3 .. :try_end_52} :catchall_72
 
-    .line 4206
-    :try_start_82
+    .line 2020
+    :try_start_52
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    if-eqz v0, :cond_8e
+    if-eqz v0, :cond_5e
 
-    .line 4207
+    .line 2021
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 4208
+    .line 2022
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 4210
-    :cond_8e
+    .line 2024
+    :cond_5e
     monitor-exit v2
-    :try_end_8f
-    .catchall {:try_start_82 .. :try_end_8f} :catchall_a6
+    :try_end_5f
+    .catchall {:try_start_52 .. :try_end_5f} :catchall_6f
 
-    .line 4212
+    .line 2026
     const/4 v0, 0x0
 
-    :try_start_90
+    :try_start_60
     sput-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 4213
+    .line 2027
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/exchange/ExchangeService;->sServiceThread:Ljava/lang/Thread;
 
-    .line 4214
+    .line 2028
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/exchange/ExchangeService;->sStop:Z
 
-    .line 4215
+    .line 2029
     const-string v0, "Goodbye"
 
     invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
-    .line 4217
-    :cond_9d
+    .line 2031
+    :cond_6d
     monitor-exit v1
+    :try_end_6e
+    .catchall {:try_start_60 .. :try_end_6e} :catchall_72
 
-    .line 4218
+    .line 2032
     return-void
 
-    .line 4160
-    :catchall_9f
+    .line 2024
+    :catchall_6f
     move-exception v0
 
+    :try_start_70
+    monitor-exit v2
+    :try_end_71
+    .catchall {:try_start_70 .. :try_end_71} :catchall_6f
+
+    :try_start_71
     throw v0
 
-    .line 4217
-    :catchall_a1
+    .line 2031
+    :catchall_72
     move-exception v0
 
     monitor-exit v1
-    :try_end_a3
-    .catchall {:try_start_90 .. :try_end_a3} :catchall_a1
+    :try_end_74
+    .catchall {:try_start_71 .. :try_end_74} :catchall_72
 
     throw v0
-
-    .line 4168
-    :catchall_a4
-    move-exception v0
-
-    :try_start_a5
-    throw v0
-    :try_end_a6
-    .catchall {:try_start_a5 .. :try_end_a6} :catchall_a1
-
-    .line 4210
-    :catchall_a6
-    move-exception v0
-
-    :try_start_a7
-    monitor-exit v2
-    :try_end_a8
-    .catchall {:try_start_a7 .. :try_end_a8} :catchall_a6
-
-    :try_start_a8
-    throw v0
-    :try_end_a9
-    .catchall {:try_start_a8 .. :try_end_a9} :catchall_a1
-
-    .line 4166
-    :catch_a9
-    move-exception v0
-
-    goto/16 :goto_21
-
-    .line 4158
-    :catch_ac
-    move-exception v0
-
-    goto/16 :goto_18
 .end method
 
-.method public static declared-synchronized shutdownConnectionManager()V
-    .registers 4
+.method private static declared-synchronized shutdownConnectionManager()V
+    .registers 2
 
     .prologue
-    .line 3029
-    const-class v2, Lcom/android/exchange/ExchangeService;
+    .line 1236
+    const-class v1, Lcom/android/exchange/ExchangeService;
 
-    monitor-enter v2
+    monitor-enter v1
 
-    const/4 v0, 0x0
+    :try_start_3
+    sget-object v0, Lcom/android/exchange/ExchangeService;->sClientConnectionManager:Lcom/android/emailcommon/utility/EmailClientConnectionManager;
 
-    .line 3030
-    :try_start_4
-    sget-object v1, Lcom/android/exchange/ExchangeService;->sClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
+    if-eqz v0, :cond_1a
 
-    if-eqz v1, :cond_8b
-
-    .line 3031
+    .line 1237
     const-string v0, "Shutting down ClientConnectionManager"
 
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
-    .line 3032
-    sget-object v0, Lcom/android/exchange/ExchangeService;->sClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
+    .line 1238
+    sget-object v0, Lcom/android/exchange/ExchangeService;->sClientConnectionManager:Lcom/android/emailcommon/utility/EmailClientConnectionManager;
 
-    invoke-interface {v0}, Lorg/apache/http/conn/ClientConnectionManager;->shutdown()V
+    invoke-virtual {v0}, Lcom/android/emailcommon/utility/EmailClientConnectionManager;->shutdown()V
 
-    .line 3034
-    const/4 v0, 0x0
-
-    sput-object v0, Lcom/android/exchange/ExchangeService;->sClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-
-    .line 3035
-    const/4 v0, 0x1
-
-    move v1, v0
-
-    .line 3038
-    :goto_17
-    sget-object v0, Lcom/android/exchange/ExchangeService;->lmClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-
-    if-eqz v0, :cond_28
-
-    .line 3039
-    const-string v0, "Shutting down ClientConnectionManager for loadMore"
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    .line 3041
-    sget-object v0, Lcom/android/exchange/ExchangeService;->lmClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-
-    invoke-interface {v0}, Lorg/apache/http/conn/ClientConnectionManager;->shutdown()V
-
-    .line 3044
-    const/4 v0, 0x0
-
-    sput-object v0, Lcom/android/exchange/ExchangeService;->lmClientConnectionManager:Lorg/apache/http/conn/ClientConnectionManager;
-
-    .line 3052
-    :cond_28
-    sget-object v0, Lcom/android/exchange/ExchangeService;->smClientConnectionManager:Ljava/util/HashMap;
-
-    if-eqz v0, :cond_61
-
-    .line 3053
-    const-string v0, "Shutting down smClientConnectionManager"
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-    :try_end_31
-    .catchall {:try_start_4 .. :try_end_31} :catchall_88
-
-    .line 3055
-    :try_start_31
-    sget-object v0, Lcom/android/exchange/ExchangeService;->smClientConnectionManager:Ljava/util/HashMap;
-
-    invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :cond_3b
-    :goto_3b
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5c
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    .line 3057
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lorg/apache/http/conn/ClientConnectionManager;
-    :try_end_4d
-    .catchall {:try_start_31 .. :try_end_4d} :catchall_88
-    .catch Ljava/lang/Exception; {:try_start_31 .. :try_end_4d} :catch_58
-
-    .line 3058
-    if-eqz v0, :cond_3b
-
-    .line 3060
-    :try_start_4f
-    invoke-interface {v0}, Lorg/apache/http/conn/ClientConnectionManager;->shutdown()V
-    :try_end_52
-    .catchall {:try_start_4f .. :try_end_52} :catchall_88
-    .catch Ljava/lang/Exception; {:try_start_4f .. :try_end_52} :catch_53
-
-    goto :goto_3b
-
-    .line 3061
-    :catch_53
-    move-exception v0
-
-    .line 3062
-    :try_start_54
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
-    :try_end_57
-    .catchall {:try_start_54 .. :try_end_57} :catchall_88
-    .catch Ljava/lang/Exception; {:try_start_54 .. :try_end_57} :catch_58
-
-    goto :goto_3b
-
-    .line 3066
-    :catch_58
-    move-exception v0
-
-    .line 3067
-    :try_start_59
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
-
-    .line 3069
-    :cond_5c
-    sget-object v0, Lcom/android/exchange/ExchangeService;->smClientConnectionManager:Ljava/util/HashMap;
-
-    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
-
-    .line 3073
-    :cond_61
-    if-eqz v1, :cond_86
-
-    .line 3075
+    .line 1239
     sget v0, Lcom/android/exchange/ExchangeService;->sClientConnectionManagerShutdownCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     sput v0, Lcom/android/exchange/ExchangeService;->sClientConnectionManagerShutdownCount:I
 
-    .line 3077
-    const-string v0, "shutdownConnectionManager(): sClientConnectionManagerShutdownCount is increased"
+    .line 1240
+    const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
+    sput-object v0, Lcom/android/exchange/ExchangeService;->sClientConnectionManager:Lcom/android/emailcommon/utility/EmailClientConnectionManager;
+    :try_end_1a
+    .catchall {:try_start_3 .. :try_end_1a} :catchall_1c
 
-    .line 3079
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "shutdownConnectionManager(): sClientConnectionManagerShutdownCount= "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    sget v1, Lcom/android/exchange/ExchangeService;->sClientConnectionManagerShutdownCount:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-    :try_end_86
-    .catchall {:try_start_59 .. :try_end_86} :catchall_88
-
-    .line 3082
-    :cond_86
-    monitor-exit v2
+    .line 1242
+    :cond_1a
+    monitor-exit v1
 
     return-void
 
-    .line 3029
-    :catchall_88
+    .line 1236
+    :catchall_1c
     move-exception v0
 
-    monitor-exit v2
+    monitor-exit v1
 
     throw v0
-
-    :cond_8b
-    move v1, v0
-
-    goto :goto_17
-.end method
-
-.method public static shutdownSendMessageConnection(J)V
-    .registers 5
-    .parameter
-
-    .prologue
-    .line 3009
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "shutdownSendMessageConnection() called. accountId = "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    .line 3010
-    sget-object v0, Lcom/android/exchange/ExchangeService;->smClientConnectionManager:Ljava/util/HashMap;
-
-    if-nez v0, :cond_21
-
-    .line 3011
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v0, Lcom/android/exchange/ExchangeService;->smClientConnectionManager:Ljava/util/HashMap;
-
-    .line 3013
-    :cond_21
-    sget-object v0, Lcom/android/exchange/ExchangeService;->smClientConnectionManager:Ljava/util/HashMap;
-
-    if-eqz v0, :cond_61
-
-    sget-object v0, Lcom/android/exchange/ExchangeService;->smClientConnectionManager:Ljava/util/HashMap;
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_61
-
-    .line 3014
-    sget-object v0, Lcom/android/exchange/ExchangeService;->smClientConnectionManager:Ljava/util/HashMap;
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lorg/apache/http/conn/ClientConnectionManager;
-
-    .line 3015
-    if-eqz v0, :cond_58
-
-    .line 3017
-    :try_start_3f
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "shutdownSendMessageConnection() manager clear OK. accountId = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    .line 3018
-    invoke-interface {v0}, Lorg/apache/http/conn/ClientConnectionManager;->shutdown()V
-    :try_end_58
-    .catch Ljava/lang/Exception; {:try_start_3f .. :try_end_58} :catch_62
-
-    .line 3024
-    :cond_58
-    :goto_58
-    sget-object v0, Lcom/android/exchange/ExchangeService;->smClientConnectionManager:Ljava/util/HashMap;
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 3026
-    :cond_61
-    return-void
-
-    .line 3019
-    :catch_62
-    move-exception v0
-
-    .line 3020
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "shutdownSendMessageConnection() exception caughted while manager clear. accountId = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
-
-    .line 3021
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
-
-    goto :goto_58
 .end method
 
 .method public static startManualSync(JILcom/android/exchange/Request;)V
-    .registers 19
+    .registers 9
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 4824
-    sget-object v4, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    .line 4825
-    if-nez v4, :cond_5
-
-    .line 4888
-    :goto_4
-    return-void
-
-    .line 4827
-    :cond_5
-    sget-object v5, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
-
-    monitor-enter v5
-
-    .line 4828
-    :try_start_8
-    iget-object v2, v4, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
-
-    invoke-static/range {p0 .. p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/android/exchange/AbstractSyncService;
-
-    .line 4829
-    move-wide v0, p0
-
-    invoke-static {v4, v0, v1}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    move-result-object v6
-
-    .line 4830
-    if-nez v6, :cond_20
-
-    .line 4831
-    monitor-exit v5
-
-    goto :goto_4
-
-    .line 4887
-    :catchall_1d
-    move-exception v2
-
-    monitor-exit v5
-    :try_end_1f
-    .catchall {:try_start_8 .. :try_end_1f} :catchall_1d
-
-    throw v2
-
-    .line 4832
-    :cond_20
-    :try_start_20
-    iget-wide v7, v6, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mAccountKey:J
-
-    invoke-static {v4, v7, v8}, Lcom/android/emailcommon/provider/EmailContent$Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    move-result-object v7
-
-    .line 4833
-    if-nez v2, :cond_a0
-
-    .line 4834
-    iget-object v2, v4, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-static/range {p0 .. p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 4835
-    if-eqz v6, :cond_52
-
-    .line 4836
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Starting sync for "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, v6, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 4837
-    move/from16 v0, p2
-
-    move-object/from16 v1, p3
-
-    invoke-direct {v4, v6, v0, v1}, Lcom/android/exchange/ExchangeService;->requestSync(Lcom/android/emailcommon/provider/EmailContent$Mailbox;ILcom/android/exchange/Request;)V
-
-    .line 4862
-    :cond_52
-    :goto_52
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-
-    .line 4863
-    iget-object v2, v4, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/ConcurrentHashMap;->keySet()Ljava/util/Set;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v8
-
-    :cond_61
-    :goto_61
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_ef
-
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Long;
-
-    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v9
-
-    .line 4864
-    if-eqz v7, :cond_80
-
-    .line 4865
-    invoke-static {v4, v9, v10}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    move-result-object v2
-
-    .line 4867
-    if-nez v2, :cond_e5
-
-    .line 4868
-    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 4873
-    :cond_80
-    iget-object v2, v4, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v11
-
-    invoke-virtual {v2, v11}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/android/exchange/ExchangeService$SyncError;
-
-    .line 4874
-    if-eqz v2, :cond_61
-
-    iget v11, v2, Lcom/android/exchange/ExchangeService$SyncError;->reason:I
-
-    const/4 v12, 0x2
-
-    if-eq v11, v12, :cond_98
-
-    iget v2, v2, Lcom/android/exchange/ExchangeService$SyncError;->reason:I
-
-    const/4 v11, 0x3
-
-    if-ne v2, v11, :cond_61
-
-    .line 4876
-    :cond_98
-    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_61
-
-    .line 4842
-    :cond_a0
-    if-eqz v7, :cond_52
-
-    .line 4843
-    iget-object v2, v4, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
-
-    iget-wide v8, v6, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/android/exchange/AbstractSyncService;
-
-    .line 4844
-    new-instance v3, Lcom/android/exchange/EasSyncService;
-
-    invoke-direct {v3, v4, v6}, Lcom/android/exchange/EasSyncService;-><init>(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Mailbox;)V
-
-    .line 4845
-    move-object v0, v3
-
-    check-cast v0, Lcom/android/exchange/EasSyncService;
-
-    move-object v2, v0
-
-    iget-boolean v2, v2, Lcom/android/exchange/EasSyncService;->mIsValid:Z
-
-    if-nez v2, :cond_c0
-
-    .line 4846
-    monitor-exit v5
-
-    goto/16 :goto_4
-
-    .line 4847
-    :cond_c0
-    iget v2, v6, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    const/16 v8, 0x44
-
-    if-ne v2, v8, :cond_df
-
-    iget-object v2, v4, Lcom/android/exchange/ExchangeService;->mProvisionErrorExist:Ljava/util/HashMap;
-
-    iget-wide v8, v7, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v8
-
-    invoke-virtual {v2, v8}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_df
-
-    .line 4849
-    const-string v2, "Provision Error exist. Setting syncReason = SYNC_PROVISION for account sync"
-
-    invoke-static {v2}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 4850
-    const/16 v2, 0xa
-
-    iput v2, v3, Lcom/android/exchange/AbstractSyncService;->mSyncReason:I
-
-    goto/16 :goto_52
-
-    .line 4852
-    :cond_df
-    move/from16 v0, p2
-
-    iput v0, v3, Lcom/android/exchange/AbstractSyncService;->mSyncReason:I
-
-    goto/16 :goto_52
-
-    .line 4869
-    :cond_e5
-    iget-wide v11, v6, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mAccountKey:J
-
-    iget-wide v13, v7, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    cmp-long v2, v11, v13
-
-    if-eqz v2, :cond_80
-
-    goto/16 :goto_61
-
-    .line 4879
-    :cond_ef
-    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_f3
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_129
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Long;
-
-    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v6
-
-    .line 4880
-    iget-object v2, v4, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v8
-
-    invoke-virtual {v2, v8}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 4881
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "Delete mailboxId "
-
-    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v6, " from mSyncErrorMap"
-
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    goto :goto_f3
-
-    .line 4887
-    :cond_129
-    monitor-exit v5
-    :try_end_12a
-    .catchall {:try_start_20 .. :try_end_12a} :catchall_1d
-
-    goto/16 :goto_4
-.end method
-
-.method private startServiceThread(Lcom/android/exchange/AbstractSyncService;Lcom/android/emailcommon/provider/EmailContent$Mailbox;)V
-    .registers 8
-    .parameter
-    .parameter
-
-    .prologue
-    .line 3651
-    if-nez p2, :cond_3
-
-    .line 3678
-    :goto_2
-    return-void
-
-    .line 3653
-    :cond_3
-    sget-object v1, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 3654
-    :try_start_6
-    iget-object v2, p2, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    .line 3656
-    iget v0, p2, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    const/4 v3, 0x4
-
-    if-ne v0, v3, :cond_4b
-
-    .line 3657
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
-
-    iget-wide v3, p2, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/exchange/AbstractSyncService;
-
-    .line 3658
-    if-eqz v0, :cond_4b
-
-    .line 3659
-    const-string v0, "ExchangeService"
-
-    const-string v3, "startServiceThread: warning. mServiceMap for Outbox is already running."
-
-    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 3661
-    iget-object v0, p1, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
-
-    .line 3662
-    if-eqz v0, :cond_4b
-
-    invoke-virtual {v0}, Ljava/lang/Thread;->isAlive()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4b
-
-    .line 3663
-    const-string v0, "ExchangeService"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "startServiceThread: outboxthread should not be duplicated. return  mailboxName : "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 3665
-    monitor-exit v1
-
-    goto :goto_2
-
-    .line 3677
-    :catchall_48
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_4a
-    .catchall {:try_start_6 .. :try_end_4a} :catchall_48
-
-    throw v0
-
-    .line 3669
-    :cond_4b
-    :try_start_4b
-    new-instance v0, Ljava/lang/Thread;
-
-    invoke-direct {v0, p1, v2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
-
-    .line 3670
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Starting thread for "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 3671
-    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
-
-    .line 3672
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
-
-    iget-wide v2, p2, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 3673
-    iget-wide v2, p2, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v2, v3}, Lcom/android/exchange/ExchangeService;->runAwake(J)V
-
-    .line 3674
-    iget-object v0, p2, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mServerId:Ljava/lang/String;
-
-    if-eqz v0, :cond_8c
-
-    iget-object v0, p2, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mServerId:Ljava/lang/String;
-
-    const-string v2, "__eas"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_8c
-
-    .line 3675
-    iget-wide v2, p2, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mAccountKey:J
-
-    invoke-direct {p0, v2, v3}, Lcom/android/exchange/ExchangeService;->stopPing(J)V
-
-    .line 3677
-    :cond_8c
-    monitor-exit v1
-    :try_end_8d
-    .catchall {:try_start_4b .. :try_end_8d} :catchall_48
-
-    goto/16 :goto_2
-.end method
-
-.method public static stopAccountSyncs(J)V
-    .registers 4
-    .parameter "acctId"
-
-    .prologue
-    .line 3097
-    sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
-
-    .line 3098
-    .local v0, exchangeService:Lcom/android/exchange/ExchangeService;
-    if-eqz v0, :cond_8
-
-    .line 3099
-    const/4 v1, 0x1
-
-    invoke-direct {v0, p0, p1, v1}, Lcom/android/exchange/ExchangeService;->stopAccountSyncs(JZ)V
-
-    .line 3101
-    :cond_8
-    return-void
-.end method
-
-.method private stopAccountSyncs(JZ)V
-    .registers 13
-    .parameter
-    .parameter
-
-    .prologue
-    .line 3142
-    sget-object v4, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
-
-    monitor-enter v4
-
-    .line 3143
-    :try_start_3
-    new-instance v5, Ljava/util/ArrayList;
-
-    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
-
-    .line 3144
-    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
-
-    invoke-virtual {v1}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v6
-
-    :cond_12
-    :goto_12
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_a0
-
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Long;
-
-    .line 3145
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    invoke-static {p0, v2, v3}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    move-result-object v2
-
-    .line 3146
-    if-eqz v2, :cond_12
-
-    .line 3147
-    iget-wide v7, v2, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mAccountKey:J
-
-    cmp-long v3, v7, p1
-
-    if-nez v3, :cond_12
-
-    .line 3148
-    if-nez p3, :cond_47
-
-    iget v2, v2, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    const/16 v3, 0x44
-
-    if-ne v2, v3, :cond_47
-
-    .line 3149
-    iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
-
-    invoke-virtual {v2, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/exchange/AbstractSyncService;
-
-    .line 3150
-    if-eqz v1, :cond_12
-
-    .line 3151
-    invoke-virtual {v1}, Lcom/android/exchange/AbstractSyncService;->stop()V
-
-    goto :goto_12
-
-    .line 3188
-    :catchall_44
-    move-exception v1
-
-    monitor-exit v4
-    :try_end_46
-    .catchall {:try_start_3 .. :try_end_46} :catchall_44
-
-    throw v1
-
-    .line 3155
-    :cond_47
-    :try_start_47
-    iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
-
-    invoke-virtual {v2, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/android/exchange/AbstractSyncService;
-
-    .line 3156
-    if-eqz v2, :cond_9b
-
-    .line 3158
-    instance-of v3, v2, Lcom/android/exchange/EasSyncService;
-
-    if-eqz v3, :cond_91
-
-    .line 3159
-    move-object v0, v2
-
-    check-cast v0, Lcom/android/exchange/EasSyncService;
-
-    move-object v3, v0
-
-    .line 3160
-    iget-object v7, v3, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget v7, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    const/16 v8, 0x41
-
-    if-eq v7, v8, :cond_79
-
-    iget-object v7, v3, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget v7, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    const/16 v8, 0x42
-
-    if-eq v7, v8, :cond_79
-
-    iget-object v7, v3, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget v7, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    const/16 v8, 0x43
-
-    if-eq v7, v8, :cond_79
-
-    iget-object v7, v3, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget v7, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    const/16 v8, 0x45
-
-    if-ne v7, v8, :cond_91
-
-    :cond_79
-    iget-object v7, v3, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget-object v7, v7, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
-
-    if-eqz v7, :cond_8b
-
-    iget-object v3, v3, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget-object v3, v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
-
-    const-string v7, "0"
-
-    invoke-virtual {v3, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_91
-
-    .line 3165
-    :cond_8b
-    const-string v1, "stopAccountSyncs(): Calendar/Contacts doing initial sync. Continuing without stopping..."
-
-    invoke-static {v1}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    goto :goto_12
-
-    .line 3170
-    :cond_91
-    invoke-virtual {v2}, Lcom/android/exchange/AbstractSyncService;->stop()V
-
-    .line 3171
-    iget-object v2, v2, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
-
-    .line 3172
-    if-eqz v2, :cond_9b
-
-    .line 3173
-    invoke-virtual {v2}, Ljava/lang/Thread;->interrupt()V
-
-    .line 3176
-    :cond_9b
-    invoke-interface {v5, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_12
-
-    .line 3180
-    :cond_a0
-    invoke-interface {v5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_a4
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_b8
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Long;
-
-    .line 3181
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v5
-
-    invoke-direct {p0, v5, v6}, Lcom/android/exchange/ExchangeService;->releaseMailbox(J)V
-
-    goto :goto_a4
-
-    .line 3185
-    :cond_b8
-    sget-object v1, Lcom/android/exchange/ExchangeService;->mPingFoldersMap:Ljava/util/HashMap;
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 3186
-    sget-object v1, Lcom/android/exchange/ExchangeService;->mPingHeartBeatIntervalMap:Ljava/util/HashMap;
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 3188
-    monitor-exit v4
-    :try_end_cb
-    .catchall {:try_start_47 .. :try_end_cb} :catchall_44
-
-    .line 3189
-    return-void
-.end method
-
-.method public static stopManualSync(J)V
-    .registers 7
-    .parameter
-
-    .prologue
-    .line 4892
+    .line 2399
     sget-object v1, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 4893
+    .line 2400
     if-nez v1, :cond_5
 
-    .line 4904
+    .line 2417
     :goto_4
     return-void
 
-    .line 4895
+    .line 2401
     :cond_5
     sget-object v2, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 4896
+    .line 2402
     :try_start_8
     iget-object v0, v1, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
 
@@ -11582,10 +5075,480 @@
 
     check-cast v0, Lcom/android/exchange/AbstractSyncService;
 
-    .line 4897
+    .line 2403
+    if-nez v0, :cond_45
+
+    .line 2404
+    iget-object v0, v1, Lcom/android/exchange/ExchangeService;->mSyncErrorMap:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2405
+    invoke-static {v1, p0, p1}, Lcom/android/emailcommon/provider/Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Mailbox;
+
+    move-result-object v0
+
+    .line 2406
+    if-eqz v0, :cond_40
+
+    .line 2407
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Starting sync for "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v0, Lcom/android/emailcommon/provider/Mailbox;->mDisplayName:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
+
+    .line 2408
+    invoke-direct {v1, v0, p2, p3}, Lcom/android/exchange/ExchangeService;->requestSync(Lcom/android/emailcommon/provider/Mailbox;ILcom/android/exchange/Request;)V
+
+    .line 2416
+    :cond_40
+    :goto_40
+    monitor-exit v2
+
+    goto :goto_4
+
+    :catchall_42
+    move-exception v0
+
+    monitor-exit v2
+    :try_end_44
+    .catchall {:try_start_8 .. :try_end_44} :catchall_42
+
+    throw v0
+
+    .line 2412
+    :cond_45
+    const/4 v1, 0x6
+
+    if-lt p2, v1, :cond_40
+
+    .line 2413
+    :try_start_48
+    iput p2, v0, Lcom/android/exchange/AbstractSyncService;->mSyncReason:I
+    :try_end_4a
+    .catchall {:try_start_48 .. :try_end_4a} :catchall_42
+
+    goto :goto_40
+.end method
+
+.method private startServiceThread(Lcom/android/exchange/AbstractSyncService;Lcom/android/emailcommon/provider/Mailbox;)V
+    .registers 9
+    .parameter
+    .parameter
+
+    .prologue
+    .line 1592
+    if-nez p2, :cond_3
+
+    .line 1605
+    :goto_2
+    return-void
+
+    .line 1593
+    :cond_3
+    sget-object v1, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 1594
+    :try_start_6
+    iget-object v0, p2, Lcom/android/emailcommon/provider/Mailbox;->mDisplayName:Ljava/lang/String;
+
+    .line 1595
+    iget-object v2, p1, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/Account;
+
+    iget-object v2, v2, Lcom/android/emailcommon/provider/Account;->mDisplayName:Ljava/lang/String;
+
+    .line 1596
+    new-instance v3, Ljava/lang/Thread;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, "["
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, "]"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, p1, v4}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+
+    .line 1597
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "Starting thread for "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v4, " in account "
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
+
+    .line 1598
+    invoke-virtual {v3}, Ljava/lang/Thread;->start()V
+
+    .line 1599
+    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
+
+    iget-wide v2, p2, Lcom/android/emailcommon/provider/Mailbox;->mId:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1600
+    iget-wide v2, p2, Lcom/android/emailcommon/provider/Mailbox;->mId:J
+
+    invoke-static {v2, v3}, Lcom/android/exchange/ExchangeService;->runAwake(J)V
+
+    .line 1601
+    iget-object v0, p2, Lcom/android/emailcommon/provider/Mailbox;->mServerId:Ljava/lang/String;
+
+    if-eqz v0, :cond_74
+
+    iget-object v0, p2, Lcom/android/emailcommon/provider/Mailbox;->mServerId:Ljava/lang/String;
+
+    const-string v2, "__eas"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_74
+
+    .line 1602
+    iget-wide v2, p2, Lcom/android/emailcommon/provider/Mailbox;->mAccountKey:J
+
+    invoke-direct {p0, v2, v3}, Lcom/android/exchange/ExchangeService;->stopPing(J)V
+
+    .line 1604
+    :cond_74
+    monitor-exit v1
+
+    goto :goto_2
+
+    :catchall_76
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_78
+    .catchall {:try_start_6 .. :try_end_78} :catchall_76
+
+    throw v0
+.end method
+
+.method public static stopAccountSyncs(J)V
+    .registers 4
+    .parameter "acctId"
+
+    .prologue
+    .line 1245
+    sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
+
+    .line 1246
+    .local v0, exchangeService:Lcom/android/exchange/ExchangeService;
+    if-eqz v0, :cond_8
+
+    .line 1247
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p0, p1, v1}, Lcom/android/exchange/ExchangeService;->stopAccountSyncs(JZ)V
+
+    .line 1249
+    :cond_8
+    return-void
+.end method
+
+.method private stopAccountSyncs(JZ)V
+    .registers 14
+    .parameter "acctId"
+    .parameter "includeAccountMailbox"
+
+    .prologue
+    .line 1252
+    sget-object v7, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
+
+    monitor-enter v7
+
+    .line 1253
+    :try_start_3
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 1254
+    .local v1, deletedBoxes:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Long;>;"
+    iget-object v6, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
+
+    invoke-virtual {v6}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+
+    move-result-object v6
+
+    invoke-interface {v6}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    .local v2, i$:Ljava/util/Iterator;
+    :cond_12
+    :goto_12
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_5f
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Long;
+
+    .line 1255
+    .local v3, mid:Ljava/lang/Long;
+    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v8
+
+    invoke-static {p0, v8, v9}, Lcom/android/emailcommon/provider/Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Mailbox;
+
+    move-result-object v0
+
+    .line 1256
+    .local v0, box:Lcom/android/emailcommon/provider/Mailbox;
+    if-eqz v0, :cond_12
+
+    .line 1257
+    iget-wide v8, v0, Lcom/android/emailcommon/provider/Mailbox;->mAccountKey:J
+
+    cmp-long v6, v8, p1
+
+    if-nez v6, :cond_12
+
+    .line 1258
+    if-nez p3, :cond_47
+
+    iget v6, v0, Lcom/android/emailcommon/provider/Mailbox;->mType:I
+
+    const/16 v8, 0x44
+
+    if-ne v6, v8, :cond_47
+
+    .line 1260
+    iget-object v6, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
+
+    invoke-virtual {v6, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/android/exchange/AbstractSyncService;
+
+    .line 1261
+    .local v4, svc:Lcom/android/exchange/AbstractSyncService;
+    if-eqz v4, :cond_12
+
+    .line 1262
+    invoke-virtual {v4}, Lcom/android/exchange/AbstractSyncService;->stop()V
+
+    goto :goto_12
+
+    .line 1281
+    .end local v0           #box:Lcom/android/emailcommon/provider/Mailbox;
+    .end local v1           #deletedBoxes:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Long;>;"
+    .end local v2           #i$:Ljava/util/Iterator;
+    .end local v3           #mid:Ljava/lang/Long;
+    .end local v4           #svc:Lcom/android/exchange/AbstractSyncService;
+    :catchall_44
+    move-exception v6
+
+    monitor-exit v7
+    :try_end_46
+    .catchall {:try_start_3 .. :try_end_46} :catchall_44
+
+    throw v6
+
+    .line 1266
+    .restart local v0       #box:Lcom/android/emailcommon/provider/Mailbox;
+    .restart local v1       #deletedBoxes:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Long;>;"
+    .restart local v2       #i$:Ljava/util/Iterator;
+    .restart local v3       #mid:Ljava/lang/Long;
+    :cond_47
+    :try_start_47
+    iget-object v6, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
+
+    invoke-virtual {v6, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/android/exchange/AbstractSyncService;
+
+    .line 1267
+    .restart local v4       #svc:Lcom/android/exchange/AbstractSyncService;
+    if-eqz v4, :cond_5b
+
+    .line 1268
+    invoke-virtual {v4}, Lcom/android/exchange/AbstractSyncService;->stop()V
+
+    .line 1269
+    iget-object v5, v4, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
+
+    .line 1270
+    .local v5, t:Ljava/lang/Thread;
+    if-eqz v5, :cond_5b
+
+    .line 1271
+    invoke-virtual {v5}, Ljava/lang/Thread;->interrupt()V
+
+    .line 1274
+    .end local v5           #t:Ljava/lang/Thread;
+    :cond_5b
+    invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_12
+
+    .line 1278
+    .end local v0           #box:Lcom/android/emailcommon/provider/Mailbox;
+    .end local v3           #mid:Ljava/lang/Long;
+    .end local v4           #svc:Lcom/android/exchange/AbstractSyncService;
+    :cond_5f
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_63
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_77
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Long;
+
+    .line 1279
+    .restart local v3       #mid:Ljava/lang/Long;
+    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v8
+
+    invoke-direct {p0, v8, v9}, Lcom/android/exchange/ExchangeService;->releaseMailbox(J)V
+
+    goto :goto_63
+
+    .line 1281
+    .end local v3           #mid:Ljava/lang/Long;
+    :cond_77
+    monitor-exit v7
+    :try_end_78
+    .catchall {:try_start_47 .. :try_end_78} :catchall_44
+
+    .line 1282
+    return-void
+.end method
+
+.method public static stopManualSync(J)V
+    .registers 7
+    .parameter
+
+    .prologue
+    .line 2421
+    sget-object v1, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
+
+    .line 2422
+    if-nez v1, :cond_5
+
+    .line 2432
+    :goto_4
+    return-void
+
+    .line 2423
+    :cond_5
+    sget-object v2, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    .line 2424
+    :try_start_8
+    iget-object v0, v1, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
+
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/exchange/AbstractSyncService;
+
+    .line 2425
     if-eqz v0, :cond_39
 
-    .line 4898
+    .line 2426
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -11608,18 +5571,18 @@
 
     invoke-static {v3}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
-    .line 4899
+    .line 2427
     invoke-virtual {v0}, Lcom/android/exchange/AbstractSyncService;->stop()V
 
-    .line 4900
+    .line 2428
     iget-object v0, v0, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
 
     invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
 
-    .line 4901
-    invoke-virtual {v1, p0, p1}, Lcom/android/exchange/ExchangeService;->releaseWakeLock(J)V
+    .line 2429
+    invoke-direct {v1, p0, p1}, Lcom/android/exchange/ExchangeService;->releaseWakeLock(J)V
 
-    .line 4903
+    .line 2431
     :cond_39
     monitor-exit v2
 
@@ -11637,26 +5600,27 @@
 
 .method public static stopNonAccountMailboxSyncsForAccount(J)V
     .registers 4
-    .parameter
+    .parameter "acctId"
 
     .prologue
-    .line 3289
+    .line 1359
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 3290
+    .line 1360
+    .local v0, exchangeService:Lcom/android/exchange/ExchangeService;
     if-eqz v0, :cond_d
 
-    .line 3291
+    .line 1361
     const/4 v1, 0x0
 
     invoke-direct {v0, p0, p1, v1}, Lcom/android/exchange/ExchangeService;->stopAccountSyncs(JZ)V
 
-    .line 3292
-    const-string v0, "reload folder list"
+    .line 1362
+    const-string v1, "reload folder list"
 
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->kick(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/exchange/ExchangeService;->kick(Ljava/lang/String;)V
 
-    .line 3294
+    .line 1364
     :cond_d
     return-void
 .end method
@@ -11666,12 +5630,12 @@
     .parameter
 
     .prologue
-    .line 3687
+    .line 1613
     sget-object v1, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 3688
+    .line 1614
     :try_start_3
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
 
@@ -11701,19 +5665,19 @@
 
     move-result-wide v3
 
-    .line 3689
-    invoke-static {p0, v3, v4}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    .line 1615
+    invoke-static {p0, v3, v4}, Lcom/android/emailcommon/provider/Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Mailbox;
 
     move-result-object v0
 
-    .line 3690
+    .line 1616
     if-eqz v0, :cond_d
 
-    .line 3691
-    iget-object v5, v0, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mServerId:Ljava/lang/String;
+    .line 1617
+    iget-object v5, v0, Lcom/android/emailcommon/provider/Mailbox;->mServerId:Ljava/lang/String;
 
-    .line 3692
-    iget-wide v6, v0, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mAccountKey:J
+    .line 1618
+    iget-wide v6, v0, Lcom/android/emailcommon/provider/Mailbox;->mAccountKey:J
 
     cmp-long v0, v6, p1
 
@@ -11729,7 +5693,7 @@
 
     if-eqz v0, :cond_d
 
-    .line 3696
+    .line 1621
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -11742,12 +5706,12 @@
 
     check-cast v0, Lcom/android/exchange/AbstractSyncService;
 
-    .line 3697
+    .line 1622
     invoke-virtual {v0}, Lcom/android/exchange/AbstractSyncService;->reset()V
 
     goto :goto_d
 
-    .line 3701
+    .line 1626
     :catchall_45
     move-exception v0
 
@@ -11763,148 +5727,165 @@
     :try_end_49
     .catchall {:try_start_48 .. :try_end_49} :catchall_45
 
-    .line 3702
+    .line 1627
     return-void
 .end method
 
 .method private stopServiceThreads()V
-    .registers 9
+    .registers 7
 
     .prologue
-    .line 3736
-    sget-object v5, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
+    .line 1660
+    sget-object v2, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
 
-    monitor-enter v5
+    monitor-enter v2
 
-    .line 3737
+    .line 1661
     :try_start_3
-    new-instance v3, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3739
-    .local v3, toStop:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
-    iget-object v4, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
+    .line 1664
+    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
 
-    invoke-virtual {v4}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
-
-    move-result-object v4
-
-    invoke-interface {v4}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
-    .local v0, i$:Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
     :goto_12
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v0
 
-    if-eqz v4, :cond_25
+    if-eqz v0, :cond_25
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Ljava/lang/Long;
+    check-cast v0, Ljava/lang/Long;
 
-    .line 3740
-    .local v1, mailboxId:Ljava/lang/Long;
-    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 1665
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_12
 
-    .line 3757
-    .end local v0           #i$:Ljava/util/Iterator;
-    .end local v1           #mailboxId:Ljava/lang/Long;
-    .end local v3           #toStop:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
+    .line 1680
     :catchall_22
-    move-exception v4
+    move-exception v0
 
-    monitor-exit v5
+    monitor-exit v2
     :try_end_24
     .catchall {:try_start_3 .. :try_end_24} :catchall_22
 
-    throw v4
+    throw v0
 
-    .line 3743
-    .restart local v0       #i$:Ljava/util/Iterator;
-    .restart local v3       #toStop:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
+    .line 1669
     :cond_25
     :try_start_25
-    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_29
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7b
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_29
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v0, Ljava/lang/Long;
 
-    move-result v4
+    .line 1670
+    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
 
-    if-eqz v4, :cond_5b
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Ljava/lang/Long;
+    check-cast v1, Lcom/android/exchange/AbstractSyncService;
 
-    .line 3744
-    .restart local v1       #mailboxId:Ljava/lang/Long;
-    iget-object v4, p0, Lcom/android/exchange/ExchangeService;->mServiceMap:Ljava/util/HashMap;
+    .line 1671
+    if-eqz v1, :cond_73
 
-    invoke-virtual {v4, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 1672
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    check-cast v2, Lcom/android/exchange/AbstractSyncService;
+    const-string v5, "Stopping "
 
-    .line 3745
-    .local v2, svc:Lcom/android/exchange/AbstractSyncService;
-    if-eqz v2, :cond_53
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3746
-    iget-object v4, v2, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
+    move-result-object v4
 
-    if-eqz v4, :cond_4a
+    iget-object v5, v1, Lcom/android/exchange/AbstractSyncService;->mAccount:Lcom/android/emailcommon/provider/Account;
 
-    iget-object v4, v2, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    iget-object v5, v5, Lcom/android/emailcommon/provider/Account;->mDisplayName:Ljava/lang/String;
 
-    if-eqz v4, :cond_4a
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3750
-    invoke-virtual {v2}, Lcom/android/exchange/AbstractSyncService;->stop()V
+    move-result-object v4
 
-    .line 3751
-    :cond_4a
-    iget-object v4, v2, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
+    const/16 v5, 0x2f
 
-    if-eqz v4, :cond_53
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 3752
-    iget-object v4, v2, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
+    move-result-object v4
 
-    invoke-virtual {v4}, Ljava/lang/Thread;->interrupt()V
+    iget-object v5, v1, Lcom/android/exchange/AbstractSyncService;->mMailbox:Lcom/android/emailcommon/provider/Mailbox;
 
-    .line 3755
-    :cond_53
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+    iget-object v5, v5, Lcom/android/emailcommon/provider/Mailbox;->mDisplayName:Ljava/lang/String;
 
-    move-result-wide v6
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, v6, v7}, Lcom/android/exchange/ExchangeService;->releaseWakeLock(J)V
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
+
+    .line 1673
+    invoke-virtual {v1}, Lcom/android/exchange/AbstractSyncService;->stop()V
+
+    .line 1674
+    iget-object v4, v1, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
+
+    if-eqz v4, :cond_73
+
+    .line 1675
+    iget-object v1, v1, Lcom/android/exchange/AbstractSyncService;->mThread:Ljava/lang/Thread;
+
+    invoke-virtual {v1}, Ljava/lang/Thread;->interrupt()V
+
+    .line 1678
+    :cond_73
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    invoke-direct {p0, v0, v1}, Lcom/android/exchange/ExchangeService;->releaseWakeLock(J)V
 
     goto :goto_29
 
-    .line 3757
-    .end local v1           #mailboxId:Ljava/lang/Long;
-    .end local v2           #svc:Lcom/android/exchange/AbstractSyncService;
-    :cond_5b
-    monitor-exit v5
-    :try_end_5c
-    .catchall {:try_start_25 .. :try_end_5c} :catchall_22
+    .line 1680
+    :cond_7b
+    monitor-exit v2
+    :try_end_7c
+    .catchall {:try_start_25 .. :try_end_7c} :catchall_22
 
-    .line 3758
+    .line 1681
     return-void
 .end method
 
@@ -11912,22 +5893,22 @@
     .registers 5
 
     .prologue
-    .line 2041
+    .line 848
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 2042
+    .line 849
     .local v0, exchangeService:Lcom/android/exchange/ExchangeService;
     if-nez v0, :cond_5
 
-    .line 2049
+    .line 855
     :goto_4
     return-void
 
-    .line 2044
+    .line 850
     :cond_5
     iget-object v3, v0, Lcom/android/exchange/ExchangeService;->mResolver:Landroid/content/ContentResolver;
 
-    .line 2045
+    .line 851
     .local v3, resolver:Landroid/content/ContentResolver;
     iget-object v4, v0, Lcom/android/exchange/ExchangeService;->mCalendarObservers:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -11953,13 +5934,13 @@
 
     check-cast v2, Lcom/android/exchange/ExchangeService$CalendarObserver;
 
-    .line 2046
+    .line 852
     .local v2, observer:Lcom/android/exchange/ExchangeService$CalendarObserver;
     invoke-virtual {v3, v2}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
     goto :goto_11
 
-    .line 2048
+    .line 854
     .end local v2           #observer:Lcom/android/exchange/ExchangeService$CalendarObserver;
     :cond_21
     iget-object v4, v0, Lcom/android/exchange/ExchangeService;->mCalendarObservers:Ljava/util/concurrent/ConcurrentHashMap;
@@ -11967,1210 +5948,6 @@
     invoke-virtual {v4}, Ljava/util/concurrent/ConcurrentHashMap;->clear()V
 
     goto :goto_4
-.end method
-
-.method private updateAccountDb()V
-    .registers 26
-
-    .prologue
-    .line 5439
-    const-string v2, "phone"
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v2}, Lcom/android/exchange/ExchangeService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/telephony/TelephonyManager;
-
-    .line 5440
-    invoke-virtual {v2}, Landroid/telephony/TelephonyManager;->isNetworkRoaming()Z
-
-    move-result v11
-
-    .line 5442
-    const-string v2, "ExchangeService"
-
-    const-string v3, "updateAccountDb start"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 5443
-    invoke-static {}, Lcom/android/exchange/ExchangeService;->getAccountList()Lcom/android/exchange/ExchangeService$AccountList;
-
-    move-result-object v12
-
-    .line 5445
-    monitor-enter v12
-
-    .line 5447
-    :try_start_1a
-    invoke-static {}, Lcom/android/exchange/ExchangeService;->getContext()Landroid/content/Context;
-
-    move-result-object v13
-
-    .line 5448
-    invoke-interface {v12}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v14
-
-    :cond_22
-    :goto_22
-    invoke-interface {v14}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_298
-
-    invoke-interface {v14}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    move-object v0, v2
-
-    check-cast v0, Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    move-object v7, v0
-
-    .line 5450
-    invoke-virtual {v7}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSyncScheduleData()Lcom/android/emailcommon/utility/SyncScheduleData;
-
-    move-result-object v15
-
-    .line 5452
-    invoke-static {v15}, Lcom/android/exchange/SyncScheduler;->getIsPeakAndNextAlarm(Lcom/android/emailcommon/utility/SyncScheduleData;)Landroid/util/Pair;
-
-    move-result-object v2
-
-    iget-object v2, v2, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    check-cast v2, Ljava/lang/Boolean;
-
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v16
-
-    .line 5457
-    const/4 v2, 0x1
-
-    .line 5458
-    if-eqz v11, :cond_2a5
-
-    if-eqz v13, :cond_2a5
-
-    .line 5460
-    iget-wide v3, v7, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v13, v3, v4}, Lcom/android/exchange/SecurityPolicyDelegate;->getAccountPolicy(Landroid/content/Context;J)Lcom/android/emailcommon/service/PolicySet;
-
-    move-result-object v3
-
-    .line 5463
-    if-eqz v3, :cond_2a5
-
-    .line 5464
-    iget-boolean v2, v3, Lcom/android/emailcommon/service/PolicySet;->mRequireManualSyncWhenRoaming:Z
-
-    move v10, v2
-
-    .line 5469
-    :goto_50
-    if-eqz v11, :cond_1ec
-
-    invoke-virtual {v15}, Lcom/android/emailcommon/utility/SyncScheduleData;->getRoamingSchedule()I
-
-    move-result v2
-
-    if-eqz v2, :cond_5a
-
-    if-eqz v10, :cond_1ec
-
-    .line 5476
-    :cond_5a
-    const/4 v9, -0x1
-
-    .line 5480
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-wide v3, v7, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ": in roaming manual=["
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "]"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " db interval=["
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget v3, v7, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncInterval:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "]"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 5509
-    :goto_8f
-    iget v2, v7, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncInterval:I
-
-    if-eq v2, v9, :cond_10a
-
-    iget-object v2, v7, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncKey:Ljava/lang/String;
-
-    if-eqz v2, :cond_10a
-
-    iget-object v2, v7, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncKey:Ljava/lang/String;
-
-    const-string v3, "0"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_10a
-
-    .line 5515
-    new-instance v2, Landroid/content/ContentValues;
-
-    invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
-
-    .line 5517
-    const-string v3, "syncInterval"
-
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 5519
-    invoke-static {}, Lcom/android/exchange/ExchangeService;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-virtual {v7, v3, v2}, Lcom/android/emailcommon/provider/EmailContent$Account;->update(Landroid/content/Context;Landroid/content/ContentValues;)I
-
-    .line 5521
-    new-instance v2, Ljava/util/Date;
-
-    invoke-direct {v2}, Ljava/util/Date;-><init>()V
-
-    .line 5523
-    new-instance v3, Ljava/text/SimpleDateFormat;
-
-    const-string v4, "HH:mm"
-
-    invoke-direct {v3, v4}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
-
-    .line 5527
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-wide v5, v7, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ": "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "peak-offpeak/roaming switching - update db at ["
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v2}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "]"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " new=["
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "] old=["
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget v3, v7, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncInterval:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "]"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 5539
-    :cond_10a
-    const/16 v17, 0x0
-
-    .line 5540
-    const/16 v18, 0x1
-
-    .line 5541
-    const/16 v19, 0x2
-
-    .line 5542
-    const/16 v20, 0x3
-
-    .line 5544
-    const/4 v2, 0x4
-
-    new-array v4, v2, [Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    const-string v3, "_id"
-
-    aput-object v3, v4, v2
-
-    const/4 v2, 0x1
-
-    const-string v3, "SyncIntervalReference"
-
-    aput-object v3, v4, v2
-
-    const/4 v2, 0x2
-
-    const-string v3, "peakSyncSchedule"
-
-    aput-object v3, v4, v2
-
-    const/4 v2, 0x3
-
-    const-string v3, "offpeakSyncSchedule"
-
-    aput-object v3, v4, v2
-
-    .line 5549
-    const-string v2, "accountKey=? and (type=6 or type=12 or type=5 or type=3)"
-
-    .line 5555
-    new-instance v21, Ljava/util/ArrayList;
-
-    invoke-direct/range {v21 .. v21}, Ljava/util/ArrayList;-><init>()V
-    :try_end_130
-    .catchall {:try_start_1a .. :try_end_130} :catchall_1e9
-
-    .line 5556
-    const/4 v8, 0x0
-
-    .line 5558
-    :try_start_131
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/ExchangeService;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    const-string v5, "accountKey=? and (type=6 or type=12 or type=5 or type=3)"
-
-    const/4 v6, 0x1
-
-    new-array v6, v6, [Ljava/lang/String;
-
-    const/16 v22, 0x0
-
-    iget-wide v0, v7, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    move-wide/from16 v23, v0
-
-    invoke-static/range {v23 .. v24}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v7
-
-    aput-object v7, v6, v22
-
-    const/4 v7, 0x0
-
-    invoke-virtual/range {v2 .. v7}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_14c
-    .catchall {:try_start_131 .. :try_end_14c} :catchall_28a
-    .catch Ljava/lang/Exception; {:try_start_131 .. :try_end_14c} :catch_27e
-
-    move-result-object v3
-
-    .line 5561
-    :try_start_14d
-    invoke-interface {v3}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1cb
-
-    .line 5563
-    :cond_153
-    move/from16 v0, v17
-
-    invoke-interface {v3, v0}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v4
-
-    .line 5564
-    move/from16 v0, v18
-
-    invoke-interface {v3, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v6
-
-    .line 5566
-    if-eqz v11, :cond_266
-
-    invoke-virtual {v15}, Lcom/android/emailcommon/utility/SyncScheduleData;->getRoamingSchedule()I
-
-    move-result v2
-
-    if-eqz v2, :cond_169
-
-    if-eqz v10, :cond_266
-
-    .line 5567
-    :cond_169
-    const/4 v2, -0x1
-
-    .line 5579
-    :cond_16a
-    :goto_16a
-    if-eq v6, v2, :cond_1c5
-
-    .line 5580
-    const-string v7, "ExchangeService"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v22, "mailbox id "
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v22, ", interval "
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v22, "from "
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v7, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 5581
-    sget-object v6, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-static {v6, v4, v5}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v4
-
-    invoke-static {v4}, Landroid/content/ContentProviderOperation;->newUpdate(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
-
-    move-result-object v4
-
-    const-string v5, "SyncIntervalReference"
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
-
-    move-result-object v4
-
-    const-string v5, "syncInterval"
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v4, v5, v2}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
-
-    move-result-object v2
-
-    move-object/from16 v0, v21
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 5593
-    :cond_1c5
-    invoke-interface {v3}, Landroid/database/Cursor;->moveToNext()Z
-    :try_end_1c8
-    .catchall {:try_start_14d .. :try_end_1c8} :catchall_2a1
-    .catch Ljava/lang/Exception; {:try_start_14d .. :try_end_1c8} :catch_2a3
-
-    move-result v2
-
-    if-nez v2, :cond_153
-
-    .line 5598
-    :cond_1cb
-    if-eqz v3, :cond_1d0
-
-    .line 5599
-    :try_start_1cd
-    invoke-interface {v3}, Landroid/database/Cursor;->close()V
-
-    .line 5603
-    :cond_1d0
-    :goto_1d0
-    invoke-virtual/range {v21 .. v21}, Ljava/util/ArrayList;->size()I
-    :try_end_1d3
-    .catchall {:try_start_1cd .. :try_end_1d3} :catchall_1e9
-
-    move-result v2
-
-    if-lez v2, :cond_22
-
-    .line 5605
-    :try_start_1d6
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/ExchangeService;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    const-string v3, "com.android.email.provider"
-
-    move-object/from16 v0, v21
-
-    invoke-virtual {v2, v3, v0}, Landroid/content/ContentResolver;->applyBatch(Ljava/lang/String;Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;
-    :try_end_1e1
-    .catchall {:try_start_1d6 .. :try_end_1e1} :catchall_1e9
-    .catch Landroid/os/RemoteException; {:try_start_1d6 .. :try_end_1e1} :catch_1e3
-    .catch Ljava/lang/Exception; {:try_start_1d6 .. :try_end_1e1} :catch_292
-
-    goto/16 :goto_22
-
-    .line 5608
-    :catch_1e3
-    move-exception v2
-
-    .line 5610
-    :try_start_1e4
-    invoke-virtual {v2}, Landroid/os/RemoteException;->printStackTrace()V
-
-    goto/16 :goto_22
-
-    .line 5617
-    :catchall_1e9
-    move-exception v2
-
-    monitor-exit v12
-    :try_end_1eb
-    .catchall {:try_start_1e4 .. :try_end_1eb} :catchall_1e9
-
-    throw v2
-
-    .line 5484
-    :cond_1ec
-    if-eqz v16, :cond_22a
-
-    .line 5488
-    :try_start_1ee
-    invoke-virtual {v15}, Lcom/android/emailcommon/utility/SyncScheduleData;->getPeakSchedule()I
-
-    move-result v9
-
-    .line 5490
-    const-string v2, "ExchangeService"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-wide v4, v7, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ": in peak=["
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "]"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, " db interval=["
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget v4, v7, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncInterval:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "]"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_8f
-
-    .line 5498
-    :cond_22a
-    invoke-virtual {v15}, Lcom/android/emailcommon/utility/SyncScheduleData;->getOffPeakSchedule()I
-
-    move-result v9
-
-    .line 5500
-    const-string v2, "ExchangeService"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-wide v4, v7, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ": in offpeak=["
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "]"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, " db interval=["
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget v4, v7, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncInterval:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "]"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_264
-    .catchall {:try_start_1ee .. :try_end_264} :catchall_1e9
-
-    goto/16 :goto_8f
-
-    .line 5568
-    :cond_266
-    if-eqz v16, :cond_273
-
-    .line 5569
-    :try_start_268
-    move/from16 v0, v19
-
-    invoke-interface {v3, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v2
-
-    .line 5570
-    if-nez v2, :cond_16a
-
-    move v2, v9
-
-    .line 5571
-    goto/16 :goto_16a
-
-    .line 5574
-    :cond_273
-    move/from16 v0, v20
-
-    invoke-interface {v3, v0}, Landroid/database/Cursor;->getInt(I)I
-    :try_end_278
-    .catchall {:try_start_268 .. :try_end_278} :catchall_2a1
-    .catch Ljava/lang/Exception; {:try_start_268 .. :try_end_278} :catch_2a3
-
-    move-result v2
-
-    .line 5575
-    if-nez v2, :cond_16a
-
-    move v2, v9
-
-    .line 5576
-    goto/16 :goto_16a
-
-    .line 5595
-    :catch_27e
-    move-exception v2
-
-    move-object v3, v8
-
-    .line 5596
-    :goto_280
-    :try_start_280
-    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
-    :try_end_283
-    .catchall {:try_start_280 .. :try_end_283} :catchall_2a1
-
-    .line 5598
-    if-eqz v3, :cond_1d0
-
-    .line 5599
-    :try_start_285
-    invoke-interface {v3}, Landroid/database/Cursor;->close()V
-
-    goto/16 :goto_1d0
-
-    .line 5598
-    :catchall_28a
-    move-exception v2
-
-    move-object v3, v8
-
-    :goto_28c
-    if-eqz v3, :cond_291
-
-    .line 5599
-    invoke-interface {v3}, Landroid/database/Cursor;->close()V
-
-    .line 5598
-    :cond_291
-    throw v2
-
-    .line 5611
-    :catch_292
-    move-exception v2
-
-    .line 5613
-    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
-
-    goto/16 :goto_22
-
-    .line 5617
-    :cond_298
-    monitor-exit v12
-    :try_end_299
-    .catchall {:try_start_285 .. :try_end_299} :catchall_1e9
-
-    .line 5620
-    const-string v2, "ExchangeService"
-
-    const-string v3, "updateAccountDb end"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 5621
-    return-void
-
-    .line 5598
-    :catchall_2a1
-    move-exception v2
-
-    goto :goto_28c
-
-    .line 5595
-    :catch_2a3
-    move-exception v2
-
-    goto :goto_280
-
-    :cond_2a5
-    move v10, v2
-
-    goto/16 :goto_50
-.end method
-
-.method private updatePIMSyncSettings(Lcom/android/emailcommon/provider/EmailContent$Account;ILjava/lang/String;)V
-    .registers 13
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    const/4 v8, -0x1
-
-    .line 3510
-    new-instance v0, Landroid/content/ContentValues;
-
-    invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
-
-    .line 3511
-    iget-wide v1, p1, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {p0, v1, v2, p2}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->findMailboxOfType(Landroid/content/Context;JI)J
-
-    move-result-wide v1
-
-    .line 3513
-    const-wide/16 v3, -0x1
-
-    cmp-long v3, v1, v3
-
-    if-eqz v3, :cond_21
-
-    .line 3516
-    new-instance v3, Landroid/accounts/Account;
-
-    iget-object v4, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mEmailAddress:Ljava/lang/String;
-
-    const-string v5, "com.android.exchange"
-
-    invoke-direct {v3, v4, v5}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 3520
-    invoke-static {p0, v1, v2}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    move-result-object v4
-
-    .line 3521
-    if-nez v4, :cond_22
-
-    .line 3569
-    :cond_21
-    :goto_21
-    return-void
-
-    .line 3523
-    :cond_22
-    iget v5, v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mSyncInterval:I
-
-    .line 3525
-    invoke-static {v3, p3}, Landroid/content/ContentResolver;->getIsSyncable(Landroid/accounts/Account;Ljava/lang/String;)I
-
-    move-result v6
-
-    if-lez v6, :cond_c6
-
-    .line 3528
-    invoke-static {v3, p3}, Landroid/content/ContentResolver;->getSyncAutomatically(Landroid/accounts/Account;Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_9c
-
-    .line 3534
-    invoke-virtual {p1}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSyncInterval()I
-
-    move-result v6
-
-    if-eq v6, v5, :cond_7c
-
-    .line 3535
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Sync for "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget-object v4, v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, " in "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v3, v3, Landroid/accounts/Account;->name:Ljava/lang/String;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ": syncInterval ="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {p1}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSyncInterval()I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 3537
-    const-string v3, "syncInterval"
-
-    invoke-virtual {p1}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSyncInterval()I
-
-    move-result v4
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 3538
-    const-string v3, "Saritha"
-
-    const-string v4, "-exchange service update PIM sync settings - putting sync interval as push//schedule "
-
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 3557
-    :cond_7c
-    :goto_7c
-    const-string v3, "syncInterval"
-
-    invoke-virtual {v0, v3}, Landroid/content/ContentValues;->containsKey(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_21
-
-    .line 3559
-    :try_start_84
-    iget-object v3, p0, Lcom/android/exchange/ExchangeService;->mResolver:Landroid/content/ContentResolver;
-
-    sget-object v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-static {v4, v1, v2}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v3, v1, v0, v2, v4}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_91
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_84 .. :try_end_91} :catch_142
-
-    .line 3565
-    :goto_91
-    iget-wide v0, p1, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-direct {p0, v0, v1}, Lcom/android/exchange/ExchangeService;->stopPing(J)V
-
-    .line 3566
-    const-string v0, "sync settings change"
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->kick(Ljava/lang/String;)V
-
-    goto :goto_21
-
-    .line 3541
-    :cond_9c
-    if-eq v5, v8, :cond_7c
-
-    .line 3542
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Sync for "
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ": manual"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 3543
-    const-string v3, "syncInterval"
-
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    goto :goto_7c
-
-    .line 3546
-    :cond_c6
-    iget v6, v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    if-eqz v6, :cond_d0
-
-    iget v6, v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    const/16 v7, 0x61
-
-    if-ne v6, v7, :cond_117
-
-    :cond_d0
-    invoke-virtual {p1}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSyncInterval()I
-
-    move-result v6
-
-    if-eq v6, v5, :cond_117
-
-    .line 3548
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Sync for "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget-object v4, v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, " in "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v3, v3, Landroid/accounts/Account;->name:Ljava/lang/String;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, " "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {p1}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSyncInterval()I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 3550
-    const-string v3, "syncInterval"
-
-    invoke-virtual {p1}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSyncInterval()I
-
-    move-result v4
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    goto/16 :goto_7c
-
-    .line 3551
-    :cond_117
-    if-eq v5, v8, :cond_7c
-
-    .line 3552
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Sync for "
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mDisplayName:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ": manual"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 3553
-    const-string v3, "syncInterval"
-
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    goto/16 :goto_7c
-
-    .line 3561
-    :catch_142
-    move-exception v0
-
-    .line 3562
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteException;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->errorlog(Ljava/lang/String;)V
-
-    goto/16 :goto_91
 .end method
 
 .method private waitForConnectivity()V
@@ -13181,8 +5958,8 @@
 
     const/4 v1, 0x0
 
-    .line 3761
-    .line 3762
+    .line 1684
+    .line 1685
     const-string v0, "connectivity"
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/ExchangeService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -13191,232 +5968,138 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 3764
+    .line 1687
     :goto_a
     sget-boolean v3, Lcom/android/exchange/ExchangeService;->sStop:Z
 
-    if-nez v3, :cond_7d
+    if-nez v3, :cond_1f
 
-    .line 3765
+    .line 1688
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v3
 
+    .line 1689
+    if-eqz v3, :cond_20
+
+    .line 1690
     iput-object v3, p0, Lcom/android/exchange/ExchangeService;->mNetworkInfo:Landroid/net/NetworkInfo;
 
-    .line 3767
-    iget-object v3, p0, Lcom/android/exchange/ExchangeService;->mNetworkInfo:Landroid/net/NetworkInfo;
+    .line 1692
+    if-eqz v1, :cond_1f
 
-    if-eqz v3, :cond_5c
-
-    .line 3768
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "ActiveNetworkInfo:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/android/exchange/ExchangeService;->mNetworkInfo:Landroid/net/NetworkInfo;
-
-    invoke-virtual {v4}, Landroid/net/NetworkInfo;->getTypeName()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", State:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/android/exchange/ExchangeService;->mNetworkInfo:Landroid/net/NetworkInfo;
-
-    invoke-virtual {v4}, Landroid/net/NetworkInfo;->getState()Landroid/net/NetworkInfo$State;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/net/NetworkInfo$State;->name()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", DetailedState:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/android/exchange/ExchangeService;->mNetworkInfo:Landroid/net/NetworkInfo;
-
-    invoke-virtual {v4}, Landroid/net/NetworkInfo;->getDetailedState()Landroid/net/NetworkInfo$DetailedState;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/net/NetworkInfo$DetailedState;->name()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 3772
-    :cond_5c
-    iget-object v3, p0, Lcom/android/exchange/ExchangeService;->mNetworkInfo:Landroid/net/NetworkInfo;
-
-    if-eqz v3, :cond_7e
-
-    iget-object v3, p0, Lcom/android/exchange/ExchangeService;->mNetworkInfo:Landroid/net/NetworkInfo;
-
-    invoke-virtual {v3}, Landroid/net/NetworkInfo;->getState()Landroid/net/NetworkInfo$State;
-
-    move-result-object v3
-
-    sget-object v4, Landroid/net/NetworkInfo$State;->CONNECTED:Landroid/net/NetworkInfo$State;
-
-    if-ne v3, v4, :cond_7e
-
-    iget-object v3, p0, Lcom/android/exchange/ExchangeService;->mNetworkInfo:Landroid/net/NetworkInfo;
-
-    invoke-virtual {v3}, Landroid/net/NetworkInfo;->getDetailedState()Landroid/net/NetworkInfo$DetailedState;
-
-    move-result-object v3
-
-    sget-object v4, Landroid/net/NetworkInfo$DetailedState;->CONNECTED:Landroid/net/NetworkInfo$DetailedState;
-
-    if-ne v3, v4, :cond_7e
-
-    .line 3776
-    if-eqz v1, :cond_7d
-
-    .line 3778
+    .line 1694
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p0, v2, v0}, Lcom/android/exchange/ExchangeService;->releaseSyncHolds(Landroid/content/Context;ILcom/android/emailcommon/provider/EmailContent$Account;)Z
+    invoke-virtual {p0, p0, v2, v0}, Lcom/android/exchange/ExchangeService;->releaseSyncHolds(Landroid/content/Context;ILcom/android/emailcommon/provider/Account;)Z
 
-    .line 3780
+    .line 1696
     invoke-direct {p0}, Lcom/android/exchange/ExchangeService;->logSyncHolds()V
 
-    .line 3810
-    :cond_7d
+    .line 1723
+    :cond_1f
     return-void
 
-    .line 3786
-    :cond_7e
-    if-nez v1, :cond_84
+    .line 1701
+    :cond_20
+    if-nez v1, :cond_26
 
-    .line 3788
+    .line 1703
     invoke-direct {p0}, Lcom/android/exchange/ExchangeService;->stopServiceThreads()V
 
     move v1, v2
 
-    .line 3794
-    :cond_84
+    .line 1707
+    :cond_26
     sget-object v3, Lcom/android/exchange/ExchangeService;->sConnectivityLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 3795
+    .line 1708
     const-wide/16 v4, -0x1
 
     const-wide/32 v6, 0x93b48
 
-    :try_start_8c
+    :try_start_2e
     invoke-static {v4, v5, v6, v7}, Lcom/android/exchange/ExchangeService;->runAsleep(JJ)V
-    :try_end_8f
-    .catchall {:try_start_8c .. :try_end_8f} :catchall_af
+    :try_end_31
+    .catchall {:try_start_2e .. :try_end_31} :catchall_50
 
-    .line 3797
-    :try_start_8f
+    .line 1710
+    :try_start_31
     const-string v4, "Connectivity lock..."
 
     invoke-static {v4}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
-    .line 3798
+    .line 1711
     const/4 v4, 0x1
 
     sput-boolean v4, Lcom/android/exchange/ExchangeService;->sConnectivityHold:Z
 
-    .line 3799
+    .line 1712
     sget-object v4, Lcom/android/exchange/ExchangeService;->sConnectivityLock:Ljava/lang/Object;
 
     const-wide/32 v5, 0x927c0
 
     invoke-virtual {v4, v5, v6}, Ljava/lang/Object;->wait(J)V
 
-    .line 3800
+    .line 1713
     const-string v4, "Connectivity lock released..."
 
     invoke-static {v4}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-    :try_end_a4
-    .catchall {:try_start_8f .. :try_end_a4} :catchall_b2
-    .catch Ljava/lang/InterruptedException; {:try_start_8f .. :try_end_a4} :catch_b7
+    :try_end_46
+    .catchall {:try_start_31 .. :try_end_46} :catchall_53
+    .catch Ljava/lang/InterruptedException; {:try_start_31 .. :try_end_46} :catch_58
 
-    .line 3804
+    .line 1717
     const/4 v4, 0x0
 
-    :try_start_a5
+    :try_start_47
     sput-boolean v4, Lcom/android/exchange/ExchangeService;->sConnectivityHold:Z
 
-    .line 3806
-    :goto_a7
+    .line 1719
+    :goto_49
     const-wide/16 v4, -0x1
 
     invoke-static {v4, v5}, Lcom/android/exchange/ExchangeService;->runAwake(J)V
 
-    .line 3807
+    .line 1720
     monitor-exit v3
 
-    goto/16 :goto_a
+    goto :goto_a
 
-    :catchall_af
+    :catchall_50
     move-exception v0
 
     monitor-exit v3
-    :try_end_b1
-    .catchall {:try_start_a5 .. :try_end_b1} :catchall_af
+    :try_end_52
+    .catchall {:try_start_47 .. :try_end_52} :catchall_50
 
     throw v0
 
-    .line 3804
-    :catchall_b2
+    .line 1717
+    :catchall_53
     move-exception v0
 
     const/4 v1, 0x0
 
-    :try_start_b4
+    :try_start_55
     sput-boolean v1, Lcom/android/exchange/ExchangeService;->sConnectivityHold:Z
 
     throw v0
 
-    .line 3801
-    :catch_b7
+    .line 1714
+    :catch_58
     move-exception v4
 
-    .line 3804
+    .line 1717
     const/4 v4, 0x0
 
     sput-boolean v4, Lcom/android/exchange/ExchangeService;->sConnectivityHold:Z
-    :try_end_bb
-    .catchall {:try_start_b4 .. :try_end_bb} :catchall_af
+    :try_end_5c
+    .catchall {:try_start_55 .. :try_end_5c} :catchall_50
 
-    goto :goto_a7
+    goto :goto_49
 .end method
 
 
@@ -13425,7 +6108,7 @@
     .registers 4
 
     .prologue
-    .line 4007
+    .line 1850
     sget-object v0, Lcom/android/exchange/ExchangeService;->sServiceThread:Ljava/lang/Thread;
 
     if-eqz v0, :cond_c
@@ -13438,9 +6121,9 @@
 
     if-nez v0, :cond_30
 
-    .line 4008
+    .line 1851
     :cond_c
-    sget-object v0, Lcom/android/emailcommon/provider/EmailContent$HostAuth;->CONTENT_URI:Landroid/net/Uri;
+    sget-object v0, Lcom/android/emailcommon/provider/HostAuth;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "protocol=\"eas\""
 
@@ -13452,7 +6135,7 @@
 
     if-lez v0, :cond_30
 
-    .line 4009
+    .line 1852
     sget-object v0, Lcom/android/exchange/ExchangeService;->sServiceThread:Ljava/lang/Thread;
 
     if-nez v0, :cond_31
@@ -13462,7 +6145,7 @@
     :goto_1d
     invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
-    .line 4010
+    .line 1853
     new-instance v0, Ljava/lang/Thread;
 
     const-string v1, "ExchangeService"
@@ -13471,19 +6154,19 @@
 
     sput-object v0, Lcom/android/exchange/ExchangeService;->sServiceThread:Ljava/lang/Thread;
 
-    .line 4011
+    .line 1854
     sput-object p0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 4012
+    .line 1855
     sget-object v0, Lcom/android/exchange/ExchangeService;->sServiceThread:Ljava/lang/Thread;
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 4015
+    .line 1858
     :cond_30
     return-void
 
-    .line 4009
+    .line 1852
     :cond_31
     const-string v0, "Restarting thread..."
 
@@ -13495,89 +6178,44 @@
     .parameter "arg0"
 
     .prologue
-    .line 2823
+    .line 1209
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mBinder:Lcom/android/emailcommon/service/IEmailService$Stub;
 
     return-object v0
 .end method
 
 .method public onCreate()V
-    .registers 3
+    .registers 2
 
     .prologue
-    .line 3846
-    const-string v0, "phone"
+    .line 1749
+    new-instance v0, Lcom/android/exchange/ExchangeService$6;
 
-    invoke-virtual {p0, v0}, Lcom/android/exchange/ExchangeService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/telephony/TelephonyManager;
-
-    .line 3847
-    invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->isNetworkRoaming()Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/android/exchange/ExchangeService;->mIsNetworkRoaming:Z
-
-    .line 3849
-    sget-object v1, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 3851
-    :try_start_11
-    new-instance v0, Lcom/android/exchange/ExchangeService$8;
-
-    invoke-direct {v0, p0}, Lcom/android/exchange/ExchangeService$8;-><init>(Lcom/android/exchange/ExchangeService;)V
-
-    iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
-
-    .line 3871
-    monitor-exit v1
-    :try_end_19
-    .catchall {:try_start_11 .. :try_end_19} :catchall_22
-
-    .line 3873
-    new-instance v0, Lcom/android/exchange/ExchangeService$9;
-
-    invoke-direct {v0, p0}, Lcom/android/exchange/ExchangeService$9;-><init>(Lcom/android/exchange/ExchangeService;)V
+    invoke-direct {v0, p0}, Lcom/android/exchange/ExchangeService$6;-><init>(Lcom/android/exchange/ExchangeService;)V
 
     invoke-static {v0}, Lcom/android/emailcommon/utility/Utility;->runAsync(Ljava/lang/Runnable;)Landroid/os/AsyncTask;
 
-    .line 3891
+    .line 1764
     return-void
-
-    .line 3871
-    :catchall_22
-    move-exception v0
-
-    :try_start_23
-    monitor-exit v1
-    :try_end_24
-    .catchall {:try_start_23 .. :try_end_24} :catchall_22
-
-    throw v0
 .end method
 
 .method public onDestroy()V
     .registers 2
 
     .prologue
-    .line 3985
+    .line 1830
     const-string v0, "!!! EAS ExchangeService, onDestroy"
 
     invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
-    .line 3987
-    new-instance v0, Lcom/android/exchange/ExchangeService$12;
+    .line 1832
+    new-instance v0, Lcom/android/exchange/ExchangeService$8;
 
-    invoke-direct {v0, p0}, Lcom/android/exchange/ExchangeService$12;-><init>(Lcom/android/exchange/ExchangeService;)V
+    invoke-direct {v0, p0}, Lcom/android/exchange/ExchangeService$8;-><init>(Lcom/android/exchange/ExchangeService;)V
 
     invoke-static {v0}, Lcom/android/emailcommon/utility/Utility;->runAsync(Ljava/lang/Runnable;)Landroid/os/AsyncTask;
 
-    .line 4002
+    .line 1845
     return-void
 .end method
 
@@ -13590,7 +6228,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 3895
+    .line 1768
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -13630,169 +6268,56 @@
 
     invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
 
-    .line 3897
+    .line 1770
     sget-boolean v0, Lcom/android/exchange/ExchangeService;->sStartingUp:Z
 
-    if-nez v0, :cond_3d
+    if-nez v0, :cond_3a
 
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    if-nez v0, :cond_3d
+    if-nez v0, :cond_3a
 
-    .line 3898
+    .line 1771
     sput-boolean v1, Lcom/android/exchange/ExchangeService;->sStartingUp:Z
 
-    .line 3899
-    new-instance v0, Lcom/android/exchange/ExchangeService$10;
+    .line 1772
+    new-instance v0, Lcom/android/exchange/ExchangeService$7;
 
-    invoke-direct {v0, p0}, Lcom/android/exchange/ExchangeService$10;-><init>(Lcom/android/exchange/ExchangeService;)V
+    invoke-direct {v0, p0}, Lcom/android/exchange/ExchangeService$7;-><init>(Lcom/android/exchange/ExchangeService;)V
 
     invoke-static {v0}, Lcom/android/emailcommon/utility/Utility;->runAsync(Ljava/lang/Runnable;)Landroid/os/AsyncTask;
 
-    .line 3980
-    :goto_3a
+    .line 1825
+    :cond_3a
     return v1
 
-    .line 3895
+    .line 1768
     :cond_3b
     const/4 v0, 0x0
 
     goto :goto_1d
-
-    .line 3967
-    :cond_3d
-    new-instance v0, Lcom/android/exchange/ExchangeService$11;
-
-    invoke-direct {v0, p0}, Lcom/android/exchange/ExchangeService$11;-><init>(Lcom/android/exchange/ExchangeService;)V
-
-    invoke-static {v0}, Lcom/android/emailcommon/utility/Utility;->runAsync(Ljava/lang/Runnable;)Landroid/os/AsyncTask;
-
-    goto :goto_3a
 .end method
 
-.method releaseSyncHolds(Landroid/content/Context;ILcom/android/emailcommon/provider/EmailContent$Account;)Z
+.method releaseSyncHolds(Landroid/content/Context;ILcom/android/emailcommon/provider/Account;)Z
     .registers 6
     .parameter "context"
     .parameter "reason"
     .parameter "account"
 
     .prologue
-    .line 2438
-    invoke-direct {p0, p1, p2, p3}, Lcom/android/exchange/ExchangeService;->releaseSyncHoldsImpl(Landroid/content/Context;ILcom/android/emailcommon/provider/EmailContent$Account;)Z
+    .line 1122
+    invoke-direct {p0, p1, p2, p3}, Lcom/android/exchange/ExchangeService;->releaseSyncHoldsImpl(Landroid/content/Context;ILcom/android/emailcommon/provider/Account;)Z
 
     move-result v0
 
-    .line 2439
+    .line 1123
     .local v0, holdWasReleased:Z
     const-string v1, "security release"
 
     invoke-static {v1}, Lcom/android/exchange/ExchangeService;->kick(Ljava/lang/String;)V
 
-    .line 2440
+    .line 1124
     return v0
-.end method
-
-.method releaseSyncHoldsForEasMailbox(Landroid/content/Context;IJ)Z
-    .registers 7
-    .parameter "context"
-    .parameter "reason"
-    .parameter "accountId"
-
-    .prologue
-    .line 2360
-    const-string v1, "releaseSyncHoldsForEasMailbox(): Entry"
-
-    invoke-static {v1}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 2361
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/exchange/ExchangeService;->releaseSyncHoldsImplForEasMailbox(Landroid/content/Context;IJ)Z
-
-    move-result v0
-
-    .line 2362
-    .local v0, holdWasReleased:Z
-    return v0
-.end method
-
-.method public releaseWakeLock(J)V
-    .registers 7
-    .parameter "id"
-
-    .prologue
-    .line 3313
-    iget-object v2, p0, Lcom/android/exchange/ExchangeService;->mWakeLocks:Ljava/util/HashMap;
-
-    monitor-enter v2
-
-    .line 3314
-    :try_start_3
-    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mWakeLocks:Ljava/util/HashMap;
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    .line 3315
-    .local v0, lock:Ljava/lang/Boolean;
-    if-eqz v0, :cond_2e
-
-    .line 3316
-    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mWakeLocks:Ljava/util/HashMap;
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 3317
-    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mWakeLocks:Ljava/util/HashMap;
-
-    invoke-virtual {v1}, Ljava/util/HashMap;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2e
-
-    .line 3318
-    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-
-    if-eqz v1, :cond_2b
-
-    .line 3319
-    iget-object v1, p0, Lcom/android/exchange/ExchangeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-
-    invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
-
-    .line 3321
-    :cond_2b
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lcom/android/exchange/ExchangeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-
-    .line 3326
-    :cond_2e
-    monitor-exit v2
-
-    .line 3327
-    return-void
-
-    .line 3326
-    .end local v0           #lock:Ljava/lang/Boolean;
-    :catchall_30
-    move-exception v1
-
-    monitor-exit v2
-    :try_end_32
-    .catchall {:try_start_3 .. :try_end_32} :catchall_30
-
-    throw v1
 .end method
 
 .method public run()V
@@ -13801,64 +6326,64 @@
     .prologue
     const-wide/16 v2, 0x3e8
 
-    const/4 v0, 0x0
-
     const/4 v1, 0x1
 
-    .line 4034
+    const/4 v0, 0x0
+
+    .line 1875
     sput-boolean v0, Lcom/android/exchange/ExchangeService;->sStop:Z
 
-    .line 4035
+    .line 1876
     const-string v0, "ExchangeService thread running"
 
     invoke-static {v0}, Lcom/android/exchange/ExchangeService;->alwaysLog(Ljava/lang/String;)V
 
-    .line 4037
-    sget-boolean v0, Lcom/android/emailcommon/EasRefs;->DEBUG:Z
+    .line 1878
+    sget-boolean v0, Lcom/android/exchange/Eas;->DEBUG:Z
 
     if-eqz v0, :cond_15
 
-    .line 4038
-    sput-boolean v1, Lcom/android/emailcommon/EasRefs;->USER_LOG:Z
+    .line 1879
+    sput-boolean v1, Lcom/android/exchange/Eas;->USER_LOG:Z
 
-    .line 4039
-    sput-boolean v1, Lcom/android/emailcommon/EasRefs;->PARSER_LOG:Z
+    .line 1880
+    sput-boolean v1, Lcom/android/exchange/Eas;->PARSER_LOG:Z
 
-    .line 4040
-    sput-boolean v1, Lcom/android/emailcommon/EasRefs;->FILE_LOG:Z
+    .line 1881
+    sput-boolean v1, Lcom/android/exchange/Eas;->FILE_LOG:Z
 
-    .line 4043
+    .line 1884
     :cond_15
     invoke-static {p0}, Lcom/android/emailcommon/TempDirectory;->setTempDirectory(Landroid/content/Context;)V
 
-    .line 4045
-    sget-boolean v0, Lcom/android/emailcommon/EasRefs;->WAIT_DEBUG:Z
+    .line 1887
+    sget-boolean v0, Lcom/android/exchange/Eas;->WAIT_DEBUG:Z
 
     if-eqz v0, :cond_1f
 
-    .line 4046
+    .line 1888
     invoke-static {}, Landroid/os/Debug;->waitForDebugger()V
 
-    .line 4052
+    .line 1893
     :cond_1f
     sget-object v1, Lcom/android/exchange/ExchangeService;->sSyncLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 4053
+    .line 1894
     :try_start_22
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    if-eqz v0, :cond_cd
+    if-eqz v0, :cond_a0
 
-    .line 4054
+    .line 1895
     invoke-virtual {p0}, Lcom/android/exchange/ExchangeService;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mResolver:Landroid/content/ContentResolver;
 
-    .line 4060
+    .line 1900
     new-instance v0, Lcom/android/exchange/ExchangeService$AccountObserver;
 
     iget-object v4, p0, Lcom/android/exchange/ExchangeService;->mHandler:Landroid/os/Handler;
@@ -13867,10 +6392,10 @@
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mAccountObserver:Lcom/android/exchange/ExchangeService$AccountObserver;
 
-    .line 4061
+    .line 1901
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mResolver:Landroid/content/ContentResolver;
 
-    sget-object v4, Lcom/android/emailcommon/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
+    sget-object v4, Lcom/android/emailcommon/provider/Account;->NOTIFIER_URI:Landroid/net/Uri;
 
     const/4 v5, 0x1
 
@@ -13878,7 +6403,7 @@
 
     invoke-virtual {v0, v4, v5, v6}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 4062
+    .line 1902
     new-instance v0, Lcom/android/exchange/ExchangeService$MailboxObserver;
 
     iget-object v4, p0, Lcom/android/exchange/ExchangeService;->mHandler:Landroid/os/Handler;
@@ -13887,10 +6412,10 @@
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mMailboxObserver:Lcom/android/exchange/ExchangeService$MailboxObserver;
 
-    .line 4063
+    .line 1903
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mResolver:Landroid/content/ContentResolver;
 
-    sget-object v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
+    sget-object v4, Lcom/android/emailcommon/provider/Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v5, 0x0
 
@@ -13898,7 +6423,7 @@
 
     invoke-virtual {v0, v4, v5, v6}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 4064
+    .line 1904
     new-instance v0, Lcom/android/exchange/ExchangeService$SyncedMessageObserver;
 
     iget-object v4, p0, Lcom/android/exchange/ExchangeService;->mHandler:Landroid/os/Handler;
@@ -13907,7 +6432,7 @@
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mSyncedMessageObserver:Lcom/android/exchange/ExchangeService$SyncedMessageObserver;
 
-    .line 4065
+    .line 1905
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mResolver:Landroid/content/ContentResolver;
 
     sget-object v4, Lcom/android/emailcommon/provider/EmailContent$Message;->SYNCED_CONTENT_URI:Landroid/net/Uri;
@@ -13918,32 +6443,14 @@
 
     invoke-virtual {v0, v4, v5, v6}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 4067
-    new-instance v0, Lcom/android/exchange/ExchangeService$EasSyncStatusObserver;
-
-    invoke-direct {v0, p0}, Lcom/android/exchange/ExchangeService$EasSyncStatusObserver;-><init>(Lcom/android/exchange/ExchangeService;)V
-
-    iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mSyncStatusObserver:Lcom/android/exchange/ExchangeService$EasSyncStatusObserver;
-
-    .line 4068
-    const/4 v0, 0x1
-
-    iget-object v4, p0, Lcom/android/exchange/ExchangeService;->mSyncStatusObserver:Lcom/android/exchange/ExchangeService$EasSyncStatusObserver;
-
-    invoke-static {v0, v4}, Landroid/content/ContentResolver;->addStatusChangeListener(ILandroid/content/SyncStatusObserver;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mStatusChangeListener:Ljava/lang/Object;
-
-    .line 4071
+    .line 1909
     new-instance v0, Lcom/android/exchange/ExchangeService$ConnectivityReceiver;
 
     invoke-direct {v0, p0}, Lcom/android/exchange/ExchangeService$ConnectivityReceiver;-><init>(Lcom/android/exchange/ExchangeService;)V
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mConnectivityReceiver:Lcom/android/exchange/ExchangeService$ConnectivityReceiver;
 
-    .line 4072
+    .line 1910
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mConnectivityReceiver:Lcom/android/exchange/ExchangeService$ConnectivityReceiver;
 
     new-instance v4, Landroid/content/IntentFilter;
@@ -13954,44 +6461,14 @@
 
     invoke-virtual {p0, v0, v4}, Lcom/android/exchange/ExchangeService;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 4075
-    invoke-virtual {p0}, Lcom/android/exchange/ExchangeService;->getBaseContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    const-string v4, "phone"
-
-    invoke-virtual {v0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/telephony/TelephonyManager;
-
-    iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mPhone:Landroid/telephony/TelephonyManager;
-
-    .line 4077
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mPhone:Landroid/telephony/TelephonyManager;
-
-    if-eqz v0, :cond_a2
-
-    .line 4078
-    iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mPhone:Landroid/telephony/TelephonyManager;
-
-    iget-object v4, p0, Lcom/android/exchange/ExchangeService;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
-
-    const/4 v5, 0x1
-
-    invoke-virtual {v0, v4, v5}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
-
-    .line 4081
-    :cond_a2
+    .line 1913
     new-instance v0, Lcom/android/exchange/ExchangeService$ConnectivityReceiver;
 
     invoke-direct {v0, p0}, Lcom/android/exchange/ExchangeService$ConnectivityReceiver;-><init>(Lcom/android/exchange/ExchangeService;)V
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mBackgroundDataSettingReceiver:Lcom/android/exchange/ExchangeService$ConnectivityReceiver;
 
-    .line 4082
+    .line 1914
     iget-object v0, p0, Lcom/android/exchange/ExchangeService;->mBackgroundDataSettingReceiver:Lcom/android/exchange/ExchangeService$ConnectivityReceiver;
 
     new-instance v4, Landroid/content/IntentFilter;
@@ -14002,7 +6479,7 @@
 
     invoke-virtual {p0, v0, v4}, Lcom/android/exchange/ExchangeService;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 4087
+    .line 1918
     const-string v0, "connectivity"
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/ExchangeService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -14011,101 +6488,96 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 4088
+    .line 1920
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getBackgroundDataSetting()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/exchange/ExchangeService;->mBackgroundData:Z
 
-    .line 4090
-    invoke-direct {p0}, Lcom/android/exchange/ExchangeService;->checkPIMSyncSettings()V
-
-    .line 4095
+    .line 1924
     invoke-static {}, Lcom/android/exchange/ExchangeService;->getEasAccountSelector()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/android/exchange/provider/MailboxUtilities;->fixupUninitializedParentKeys(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 4097
-    :cond_cd
+    .line 1926
+    :cond_a0
     monitor-exit v1
-    :try_end_ce
-    .catchall {:try_start_22 .. :try_end_ce} :catchall_14d
+    :try_end_a1
+    .catchall {:try_start_22 .. :try_end_a1} :catchall_124
 
-    .line 4100
-    :goto_ce
-    :try_start_ce
+    .line 1930
+    :goto_a1
+    :try_start_a1
     sget-boolean v0, Lcom/android/exchange/ExchangeService;->sStop:Z
 
-    if-nez v0, :cond_172
+    if-nez v0, :cond_157
 
-    .line 4101
+    .line 1931
     const-wide/16 v0, -0x1
 
     invoke-static {v0, v1}, Lcom/android/exchange/ExchangeService;->runAwake(J)V
 
-    .line 4102
+    .line 1932
     invoke-direct {p0}, Lcom/android/exchange/ExchangeService;->waitForConnectivity()V
 
-    .line 4103
-    const-string v0, "Heartbeat"
+    .line 1933
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService;->mNextWaitReason:Ljava/lang/String;
 
-    .line 4106
-    invoke-direct {p0}, Lcom/android/exchange/ExchangeService;->updateAccountDb()V
-
-    .line 4108
+    .line 1934
     invoke-direct {p0}, Lcom/android/exchange/ExchangeService;->checkMailboxes()J
-    :try_end_e4
-    .catchall {:try_start_ce .. :try_end_e4} :catchall_148
-    .catch Ljava/lang/RuntimeException; {:try_start_ce .. :try_end_e4} :catch_13f
+    :try_end_b3
+    .catchall {:try_start_a1 .. :try_end_b3} :catchall_147
+    .catch Lcom/android/emailcommon/provider/ProviderUnavailableException; {:try_start_a1 .. :try_end_b3} :catch_10e
+    .catch Ljava/lang/RuntimeException; {:try_start_a1 .. :try_end_b3} :catch_13e
 
     move-result-wide v0
 
-    .line 4110
-    :try_start_e5
+    .line 1936
+    :try_start_b4
     monitor-enter p0
-    :try_end_e6
-    .catchall {:try_start_e5 .. :try_end_e6} :catchall_167
-    .catch Ljava/lang/InterruptedException; {:try_start_e5 .. :try_end_e6} :catch_153
+    :try_end_b5
+    .catchall {:try_start_b4 .. :try_end_b5} :catchall_14c
+    .catch Ljava/lang/InterruptedException; {:try_start_b4 .. :try_end_b5} :catch_12a
 
-    .line 4111
-    :try_start_e6
+    .line 1937
+    :try_start_b5
     iget-boolean v4, p0, Lcom/android/exchange/ExchangeService;->mKicked:Z
 
-    if-nez v4, :cond_131
+    if-nez v4, :cond_100
 
-    .line 4112
+    .line 1938
     const-wide/16 v4, 0x0
 
     cmp-long v4, v0, v4
 
-    if-gez v4, :cond_f6
+    if-gez v4, :cond_c5
 
-    .line 4113
+    .line 1939
     const-string v0, "Negative wait? Setting to 1s"
 
     invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
     move-wide v0, v2
 
-    .line 4116
-    :cond_f6
+    .line 1942
+    :cond_c5
     const-wide/16 v4, 0x2710
 
     cmp-long v4, v0, v4
 
-    if-lez v4, :cond_12e
+    if-lez v4, :cond_fd
 
-    .line 4117
+    .line 1943
     iget-object v4, p0, Lcom/android/exchange/ExchangeService;->mNextWaitReason:Ljava/lang/String;
 
-    if-eqz v4, :cond_126
+    if-eqz v4, :cond_f5
 
-    .line 4118
+    .line 1944
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -14142,8 +6614,8 @@
 
     invoke-static {v4}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
-    .line 4120
-    :cond_126
+    .line 1946
+    :cond_f5
     const-wide/16 v4, -0x1
 
     const-wide/16 v6, 0xbb8
@@ -14152,207 +6624,244 @@
 
     invoke-static {v4, v5, v6, v7}, Lcom/android/exchange/ExchangeService;->runAsleep(JJ)V
 
-    .line 4122
-    :cond_12e
+    .line 1948
+    :cond_fd
     invoke-virtual {p0, v0, v1}, Ljava/lang/Object;->wait(J)V
 
-    .line 4124
-    :cond_131
+    .line 1950
+    :cond_100
     monitor-exit p0
-    :try_end_132
-    .catchall {:try_start_e6 .. :try_end_132} :catchall_150
+    :try_end_101
+    .catchall {:try_start_b5 .. :try_end_101} :catchall_127
 
-    .line 4129
-    :try_start_132
+    .line 1955
+    :try_start_101
     monitor-enter p0
-    :try_end_133
-    .catchall {:try_start_132 .. :try_end_133} :catchall_148
-    .catch Ljava/lang/RuntimeException; {:try_start_132 .. :try_end_133} :catch_13f
+    :try_end_102
+    .catchall {:try_start_101 .. :try_end_102} :catchall_147
+    .catch Lcom/android/emailcommon/provider/ProviderUnavailableException; {:try_start_101 .. :try_end_102} :catch_10e
+    .catch Ljava/lang/RuntimeException; {:try_start_101 .. :try_end_102} :catch_13e
 
-    .line 4130
-    :try_start_133
+    .line 1956
+    :try_start_102
     iget-boolean v0, p0, Lcom/android/exchange/ExchangeService;->mKicked:Z
 
-    if-eqz v0, :cond_13a
+    if-eqz v0, :cond_109
 
-    .line 4132
+    .line 1958
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/exchange/ExchangeService;->mKicked:Z
 
-    .line 4134
-    :cond_13a
+    .line 1960
+    :cond_109
     monitor-exit p0
 
-    goto :goto_ce
+    goto :goto_a1
 
-    :catchall_13c
+    :catchall_10b
     move-exception v0
 
     monitor-exit p0
-    :try_end_13e
-    .catchall {:try_start_133 .. :try_end_13e} :catchall_13c
+    :try_end_10d
+    .catchall {:try_start_102 .. :try_end_10d} :catchall_10b
 
-    :try_start_13e
+    :try_start_10d
     throw v0
-    :try_end_13f
-    .catchall {:try_start_13e .. :try_end_13f} :catchall_148
-    .catch Ljava/lang/RuntimeException; {:try_start_13e .. :try_end_13f} :catch_13f
+    :try_end_10e
+    .catchall {:try_start_10d .. :try_end_10e} :catchall_147
+    .catch Lcom/android/emailcommon/provider/ProviderUnavailableException; {:try_start_10d .. :try_end_10e} :catch_10e
+    .catch Ljava/lang/RuntimeException; {:try_start_10d .. :try_end_10e} :catch_13e
 
-    .line 4138
-    :catch_13f
+    .line 1964
+    :catch_10e
     move-exception v0
 
-    .line 4139
-    :try_start_140
+    .line 1970
+    :try_start_10f
+    const-string v0, "ExchangeService"
+
+    const-string v1, "EmailProvider unavailable; shutting down"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1972
+    new-instance v0, Landroid/content/Intent;
+
+    const-class v1, Lcom/android/exchange/ExchangeService;
+
+    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    invoke-virtual {p0, v0}, Lcom/android/exchange/ExchangeService;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+    :try_end_120
+    .catchall {:try_start_10f .. :try_end_120} :catchall_147
+
+    .line 1978
+    :goto_120
+    invoke-direct {p0}, Lcom/android/exchange/ExchangeService;->shutdown()V
+
+    .line 1980
+    return-void
+
+    .line 1926
+    :catchall_124
+    move-exception v0
+
+    :try_start_125
+    monitor-exit v1
+    :try_end_126
+    .catchall {:try_start_125 .. :try_end_126} :catchall_124
+
+    throw v0
+
+    .line 1950
+    :catchall_127
+    move-exception v0
+
+    :try_start_128
+    monitor-exit p0
+    :try_end_129
+    .catchall {:try_start_128 .. :try_end_129} :catchall_127
+
+    :try_start_129
+    throw v0
+    :try_end_12a
+    .catchall {:try_start_129 .. :try_end_12a} :catchall_14c
+    .catch Ljava/lang/InterruptedException; {:try_start_129 .. :try_end_12a} :catch_12a
+
+    .line 1951
+    :catch_12a
+    move-exception v0
+
+    .line 1953
+    :try_start_12b
+    const-string v0, "ExchangeService interrupted"
+
+    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
+    :try_end_130
+    .catchall {:try_start_12b .. :try_end_130} :catchall_14c
+
+    .line 1955
+    :try_start_130
+    monitor-enter p0
+    :try_end_131
+    .catchall {:try_start_130 .. :try_end_131} :catchall_147
+    .catch Lcom/android/emailcommon/provider/ProviderUnavailableException; {:try_start_130 .. :try_end_131} :catch_10e
+    .catch Ljava/lang/RuntimeException; {:try_start_130 .. :try_end_131} :catch_13e
+
+    .line 1956
+    :try_start_131
+    iget-boolean v0, p0, Lcom/android/exchange/ExchangeService;->mKicked:Z
+
+    if-eqz v0, :cond_138
+
+    .line 1958
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/exchange/ExchangeService;->mKicked:Z
+
+    .line 1960
+    :cond_138
+    monitor-exit p0
+
+    goto/16 :goto_a1
+
+    :catchall_13b
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_13d
+    .catchall {:try_start_131 .. :try_end_13d} :catchall_13b
+
+    :try_start_13d
+    throw v0
+    :try_end_13e
+    .catchall {:try_start_13d .. :try_end_13e} :catchall_147
+    .catch Lcom/android/emailcommon/provider/ProviderUnavailableException; {:try_start_13d .. :try_end_13e} :catch_10e
+    .catch Ljava/lang/RuntimeException; {:try_start_13d .. :try_end_13e} :catch_13e
+
+    .line 1973
+    :catch_13e
+    move-exception v0
+
+    .line 1975
+    :try_start_13f
     const-string v1, "ExchangeService"
 
     const-string v2, "RuntimeException in ExchangeService"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4140
+    .line 1976
     throw v0
-    :try_end_148
-    .catchall {:try_start_140 .. :try_end_148} :catchall_148
+    :try_end_147
+    .catchall {:try_start_13f .. :try_end_147} :catchall_147
 
-    .line 4142
-    :catchall_148
+    .line 1978
+    :catchall_147
     move-exception v0
 
     invoke-direct {p0}, Lcom/android/exchange/ExchangeService;->shutdown()V
 
     throw v0
 
-    .line 4097
-    :catchall_14d
+    .line 1955
+    :catchall_14c
     move-exception v0
 
+    :try_start_14d
+    monitor-enter p0
+    :try_end_14e
+    .catchall {:try_start_14d .. :try_end_14e} :catchall_147
+    .catch Lcom/android/emailcommon/provider/ProviderUnavailableException; {:try_start_14d .. :try_end_14e} :catch_10e
+    .catch Ljava/lang/RuntimeException; {:try_start_14d .. :try_end_14e} :catch_13e
+
+    .line 1956
     :try_start_14e
-    monitor-exit v1
-    :try_end_14f
-    .catchall {:try_start_14e .. :try_end_14f} :catchall_14d
-
-    throw v0
-
-    .line 4124
-    :catchall_150
-    move-exception v0
-
-    :try_start_151
-    monitor-exit p0
-    :try_end_152
-    .catchall {:try_start_151 .. :try_end_152} :catchall_150
-
-    :try_start_152
-    throw v0
-    :try_end_153
-    .catchall {:try_start_152 .. :try_end_153} :catchall_167
-    .catch Ljava/lang/InterruptedException; {:try_start_152 .. :try_end_153} :catch_153
-
-    .line 4125
-    :catch_153
-    move-exception v0
-
-    .line 4127
-    :try_start_154
-    const-string v0, "ExchangeService interrupted"
-
-    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-    :try_end_159
-    .catchall {:try_start_154 .. :try_end_159} :catchall_167
-
-    .line 4129
-    :try_start_159
-    monitor-enter p0
-    :try_end_15a
-    .catchall {:try_start_159 .. :try_end_15a} :catchall_148
-    .catch Ljava/lang/RuntimeException; {:try_start_159 .. :try_end_15a} :catch_13f
-
-    .line 4130
-    :try_start_15a
-    iget-boolean v0, p0, Lcom/android/exchange/ExchangeService;->mKicked:Z
-
-    if-eqz v0, :cond_161
-
-    .line 4132
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/exchange/ExchangeService;->mKicked:Z
-
-    .line 4134
-    :cond_161
-    monitor-exit p0
-
-    goto/16 :goto_ce
-
-    :catchall_164
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_166
-    .catchall {:try_start_15a .. :try_end_166} :catchall_164
-
-    :try_start_166
-    throw v0
-
-    .line 4129
-    :catchall_167
-    move-exception v0
-
-    monitor-enter p0
-    :try_end_169
-    .catchall {:try_start_166 .. :try_end_169} :catchall_148
-    .catch Ljava/lang/RuntimeException; {:try_start_166 .. :try_end_169} :catch_13f
-
-    .line 4130
-    :try_start_169
     iget-boolean v1, p0, Lcom/android/exchange/ExchangeService;->mKicked:Z
 
-    if-eqz v1, :cond_170
+    if-eqz v1, :cond_155
 
-    .line 4132
+    .line 1958
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/exchange/ExchangeService;->mKicked:Z
 
-    .line 4134
-    :cond_170
+    .line 1960
+    :cond_155
     monitor-exit p0
-    :try_end_171
-    .catchall {:try_start_169 .. :try_end_171} :catchall_17b
+    :try_end_156
+    .catchall {:try_start_14e .. :try_end_156} :catchall_15d
 
-    .line 4129
-    :try_start_171
+    .line 1955
+    :try_start_156
     throw v0
 
-    .line 4137
-    :cond_172
+    .line 1963
+    :cond_157
     const-string v0, "Shutdown requested"
 
     invoke-static {v0}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-    :try_end_177
-    .catchall {:try_start_171 .. :try_end_177} :catchall_148
-    .catch Ljava/lang/RuntimeException; {:try_start_171 .. :try_end_177} :catch_13f
+    :try_end_15c
+    .catchall {:try_start_156 .. :try_end_15c} :catchall_147
+    .catch Lcom/android/emailcommon/provider/ProviderUnavailableException; {:try_start_156 .. :try_end_15c} :catch_10e
+    .catch Ljava/lang/RuntimeException; {:try_start_156 .. :try_end_15c} :catch_13e
 
-    .line 4142
-    invoke-direct {p0}, Lcom/android/exchange/ExchangeService;->shutdown()V
+    goto :goto_120
 
-    .line 4144
-    return-void
-
-    .line 4134
-    :catchall_17b
+    .line 1960
+    :catchall_15d
     move-exception v0
 
-    :try_start_17c
+    :try_start_15e
     monitor-exit p0
-    :try_end_17d
-    .catchall {:try_start_17c .. :try_end_17d} :catchall_17b
+    :try_end_15f
+    .catchall {:try_start_15e .. :try_end_15f} :catchall_15d
 
-    :try_start_17d
+    :try_start_15f
     throw v0
-    :try_end_17e
-    .catchall {:try_start_17d .. :try_end_17e} :catchall_148
-    .catch Ljava/lang/RuntimeException; {:try_start_17d .. :try_end_17e} :catch_13f
+    :try_end_160
+    .catchall {:try_start_15f .. :try_end_160} :catchall_147
+    .catch Lcom/android/emailcommon/provider/ProviderUnavailableException; {:try_start_15f .. :try_end_160} :catch_10e
+    .catch Ljava/lang/RuntimeException; {:try_start_15f .. :try_end_160} :catch_13e
 .end method

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 107
+    .line 112
     iput-object p1, p0, Lcom/google/android/finsky/activities/ReviewSamplesViewBinder$1;->this$0:Lcom/google/android/finsky/activities/ReviewSamplesViewBinder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "v"
 
     .prologue
-    .line 110
+    .line 115
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewSamplesViewBinder$1;->this$0:Lcom/google/android/finsky/activities/ReviewSamplesViewBinder;
 
     #getter for: Lcom/google/android/finsky/activities/ReviewSamplesViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
@@ -59,6 +59,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToAllReviews(Lcom/google/android/finsky/api/model/Document;)V
 
-    .line 111
+    .line 116
     return-void
 .end method

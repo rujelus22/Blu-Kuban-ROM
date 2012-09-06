@@ -8,6 +8,6 @@
     </LinearLayout>
     <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
         <ProgressBar android:id="@id/msg_list_item_progressbar" android:visibility="gone" android:layout_width="12.0dip" android:layout_height="12.0dip" android:layout_marginTop="3.5dip" android:layout_marginRight="3.0dip" style="@android:style/Widget.ProgressBar.Small" />
-        <TextView android:textSize="13.0sp" android:textColor="#ff787878" android:id="@id/msg_list_item_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+        <TextView android:textSize="13.0sp" android:textColor="#ffc0c0c0" android:id="@id/msg_list_item_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
     </LinearLayout>
 </LinearLayout>

@@ -1,267 +1,192 @@
-.class public LaM/v;
+.class LaM/v;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements LaM/B;
-.implements LaM/u;
+.implements Lcom/google/googlenav/g;
 
 
 # instance fields
-.field private a:LaM/A;
+.field final synthetic a:LaM/m;
 
-.field private b:LaM/D;
+.field private final b:Lcom/google/googlenav/ai;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/ui/wizard/hM;)V
-    .registers 4
+.method private constructor <init>(LaM/m;Lcom/google/googlenav/ai;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 2113
+    iput-object p1, p0, LaM/v;->a:LaM/m;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, LaM/A;
+    .line 2114
+    iput-object p2, p0, LaM/v;->b:Lcom/google/googlenav/ai;
 
-    invoke-direct {v0, p0, p1}, LaM/A;-><init>(LaM/B;Lcom/google/googlenav/ui/wizard/hM;)V
-
-    iput-object v0, p0, LaM/v;->a:LaM/A;
-
-    new-instance v0, LaM/D;
-
-    iget-object v1, p0, LaM/v;->a:LaM/A;
-
-    invoke-direct {v0, v1}, LaM/D;-><init>(LaM/z;)V
-
-    iput-object v0, p0, LaM/v;->b:LaM/D;
-
-    invoke-virtual {p0}, LaM/v;->h()V
-
-    invoke-virtual {p0}, LaM/v;->d()V
-
+    .line 2115
     return-void
 .end method
 
-.method private k()V
-    .registers 3
+.method synthetic constructor <init>(LaM/m;Lcom/google/googlenav/ai;LaM/n;)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    iget-object v0, p0, LaM/v;->b:LaM/D;
+    .prologue
+    .line 2110
+    invoke-direct {p0, p1, p2}, LaM/v;-><init>(LaM/m;Lcom/google/googlenav/ai;)V
 
-    if-eqz v0, :cond_c
-
-    iget-object v0, p0, LaM/v;->a:LaM/A;
-
-    invoke-virtual {v0}, LaM/A;->h()Z
-
-    move-result v0
-
-    if-nez v0, :cond_d
-
-    :cond_c
-    :goto_c
     return-void
-
-    :cond_d
-    :try_start_d
-    iget-object v0, p0, LaM/v;->a:LaM/A;
-
-    invoke-virtual {v0}, LaM/A;->a()Lam/b;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lam/g;->a(Lam/b;)Lam/b;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lam/b;->l(I)I
-
-    move-result v1
-
-    if-eqz v1, :cond_c
-
-    invoke-virtual {p0, v0}, LaM/v;->a_(Lam/b;)V
-    :try_end_21
-    .catch Ljava/io/IOException; {:try_start_d .. :try_end_21} :catch_22
-
-    goto :goto_c
-
-    :catch_22
-    move-exception v0
-
-    goto :goto_c
 .end method
 
 
 # virtual methods
-.method public B_()V
-    .registers 1
+.method public a(Ljava/lang/String;Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+    .registers 11
+    .parameter
+    .parameter
 
+    .prologue
+    const/16 v7, 0x9e
+
+    const/4 v1, 0x1
+
+    const/4 v0, 0x0
+
+    .line 2119
+    if-nez p2, :cond_7
+
+    .line 2160
+    :cond_6
+    :goto_6
     return-void
-.end method
 
-.method public C_()V
-    .registers 1
+    .line 2124
+    :cond_7
+    invoke-virtual {p2, v7}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getCount(I)I
 
-    return-void
-.end method
+    move-result v3
 
-.method public E_()V
-    .registers 2
+    move v2, v0
 
-    iget-object v0, p0, LaM/v;->a:LaM/A;
+    .line 2125
+    :goto_c
+    if-ge v2, v3, :cond_3e
 
-    invoke-virtual {v0}, LaM/A;->f()V
+    .line 2126
+    invoke-virtual {p2, v7, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getProtoBuf(II)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    return-void
-.end method
+    move-result-object v4
 
-.method public F_()V
-    .registers 2
+    .line 2127
+    invoke-virtual {v4, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
 
-    iget-object v0, p0, LaM/v;->a:LaM/A;
+    move-result v5
 
-    invoke-virtual {v0}, LaM/A;->g()V
+    .line 2128
+    iget-object v6, p0, LaM/v;->b:Lcom/google/googlenav/ai;
 
-    return-void
-.end method
+    invoke-virtual {v6, v5}, Lcom/google/googlenav/ai;->i(I)Lcom/google/googlenav/au;
 
-.method public a(I)V
-    .registers 3
+    move-result-object v6
 
-    iget-object v0, p0, LaM/v;->a:LaM/A;
+    if-nez v6, :cond_3b
 
-    invoke-virtual {v0, p1}, LaM/A;->d(I)V
+    .line 2129
+    iget-object v0, p0, LaM/v;->b:Lcom/google/googlenav/ai;
 
-    invoke-direct {p0}, LaM/v;->k()V
+    invoke-virtual {v0, v4}, Lcom/google/googlenav/ai;->d(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
 
-    return-void
-.end method
+    .line 2137
+    const/16 v0, 0x4c
 
-.method public a(LaM/C;)V
-    .registers 3
+    if-ne v5, v0, :cond_3a
 
-    iget-object v0, p0, LaM/v;->b:LaM/D;
+    .line 2138
+    iget-object v0, p0, LaM/v;->b:Lcom/google/googlenav/ai;
 
-    invoke-virtual {v0, p1}, LaM/D;->a(LaM/C;)V
-
-    return-void
-.end method
-
-.method a(Lcom/google/googlenav/ui/wizard/hM;)V
-    .registers 3
-
-    iget-object v0, p0, LaM/v;->a:LaM/A;
-
-    invoke-virtual {v0, p1}, LaM/A;->a(Lcom/google/googlenav/ui/wizard/hM;)V
-
-    return-void
-.end method
-
-.method public a_(Lam/b;)V
-    .registers 3
-
-    iget-object v0, p0, LaM/v;->b:LaM/D;
-
-    invoke-virtual {v0, p1}, LaM/D;->a_(Lam/b;)V
-
-    iget-object v0, p0, LaM/v;->a:LaM/A;
-
-    invoke-virtual {v0, p1}, LaM/A;->b(Lam/b;)V
-
-    return-void
-.end method
-
-.method public b(I)LaM/w;
-    .registers 3
-
-    iget-object v0, p0, LaM/v;->a:LaM/A;
-
-    invoke-virtual {v0, p1}, LaM/A;->a(I)LaM/w;
+    invoke-virtual {v0}, Lcom/google/googlenav/ai;->cc()LaS/o;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    invoke-static {v4}, Lcom/google/googlenav/au;->a(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)Lcom/google/googlenav/au;
 
-.method public b(LaM/C;)V
-    .registers 3
+    move-result-object v4
 
-    iget-object v0, p0, LaM/v;->b:LaM/D;
+    sget-object v5, Lbm/bm;->e:Lcom/google/googlenav/common/io/protocol/Extension;
 
-    invoke-virtual {v0, p1}, LaM/D;->b(LaM/C;)V
+    invoke-virtual {v4, v5}, Lcom/google/googlenav/au;->a(Lcom/google/googlenav/common/io/protocol/Extension;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    return-void
-.end method
+    move-result-object v4
 
-.method public c()Z
-    .registers 2
+    invoke-virtual {v0, v4}, LaS/o;->a(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
 
-    iget-object v0, p0, LaM/v;->b:LaM/D;
+    :cond_3a
+    move v0, v1
 
-    if-eqz v0, :cond_e
+    .line 2125
+    :cond_3b
+    add-int/lit8 v2, v2, 0x1
 
-    iget-object v0, p0, LaM/v;->b:LaM/D;
+    goto :goto_c
 
-    invoke-virtual {v0}, LaM/D;->a()Z
+    .line 2145
+    :cond_3e
+    iget-object v1, p0, LaM/v;->b:Lcom/google/googlenav/ai;
+
+    sget-object v2, Lcom/google/googlenav/av;->c:Lcom/google/googlenav/av;
+
+    invoke-virtual {v1, v2}, Lcom/google/googlenav/ai;->a(Lcom/google/googlenav/av;)V
+
+    .line 2146
+    iget-object v1, p0, LaM/v;->a:LaM/m;
+
+    iget-object v2, p0, LaM/v;->b:Lcom/google/googlenav/ai;
+
+    invoke-static {v1, v2}, LaM/m;->b(LaM/m;Lcom/google/googlenav/ai;)V
+
+    .line 2149
+    if-eqz v0, :cond_6
+
+    .line 2155
+    iget-object v0, p0, LaM/v;->a:LaM/m;
+
+    iget-object v0, v0, LaM/m;->f:Lcom/google/googlenav/F;
+
+    invoke-interface {v0}, Lcom/google/googlenav/F;->e()Lcom/google/googlenav/E;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlenav/ai;
+
+    .line 2156
+    if-eqz v0, :cond_6
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ai;->f()Ljava/lang/Object;
+
+    move-result-object v0
+
+    iget-object v1, p0, LaM/v;->b:Lcom/google/googlenav/ai;
+
+    invoke-virtual {v1}, Lcom/google/googlenav/ai;->f()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_6
 
-    const/4 v0, 0x1
+    .line 2158
+    iget-object v0, p0, LaM/v;->a:LaM/m;
 
-    :goto_d
-    return v0
+    invoke-virtual {v0}, LaM/m;->bo()V
 
-    :cond_e
-    const/4 v0, 0x0
-
-    goto :goto_d
-.end method
-
-.method public d()V
-    .registers 2
-
-    iget-object v0, p0, LaM/v;->a:LaM/A;
-
-    invoke-virtual {v0}, LaM/A;->b()V
-
-    invoke-direct {p0}, LaM/v;->k()V
-
-    return-void
-.end method
-
-.method public f()V
-    .registers 2
-
-    iget-object v0, p0, LaM/v;->b:LaM/D;
-
-    invoke-virtual {v0}, LaM/D;->f()V
-
-    return-void
-.end method
-
-.method public g()V
-    .registers 2
-
-    iget-object v0, p0, LaM/v;->a:LaM/A;
-
-    invoke-virtual {v0}, LaM/A;->d()V
-
-    return-void
-.end method
-
-.method public h()V
-    .registers 2
-
-    iget-object v0, p0, LaM/v;->a:LaM/A;
-
-    invoke-virtual {v0}, LaM/A;->e()V
-
-    return-void
-.end method
-
-.method public i()V
-    .registers 1
-
-    return-void
+    goto :goto_6
 .end method

@@ -58,13 +58,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "WindowResumeService.Control.processResponse("
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -86,29 +82,25 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_27
 
     const-string v1, "WindowResumeService.Control.processResponse(): exception != null"
 
     invoke-static {v1}, Lcom/google/android/youtube/googlemobile/masf/b/a/h;->b(Ljava/lang/String;)V
 
-    :goto_2a
+    :goto_26
     return v0
 
-    :cond_2b
+    :cond_27
     invoke-virtual {p1}, Lcom/google/android/youtube/googlemobile/masf/b/a/g;->d()I
 
     move-result v2
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "WindowResumeService.Control.processResponse(): statusCode == "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -120,25 +112,21 @@
 
     invoke-static {v3}, Lcom/google/android/youtube/googlemobile/masf/b/a/h;->b(Ljava/lang/String;)V
 
-    packed-switch v2, :pswitch_data_f8
+    packed-switch v2, :pswitch_data_ec
 
-    :pswitch_48
+    :pswitch_40
     const-string v1, "WindowResumeService.Control.processResponse(): default"
 
     invoke-static {v1}, Lcom/google/android/youtube/googlemobile/masf/b/a/h;->b(Ljava/lang/String;)V
 
-    goto :goto_2a
+    goto :goto_26
 
-    :pswitch_4e
+    :pswitch_46
     new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v4, "WindowResumeService.Control.processResponse(): statusCode == OK ("
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -158,7 +146,7 @@
 
     iget-object v3, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->g:Ljava/lang/String;
 
-    if-nez v3, :cond_82
+    if-nez v3, :cond_76
 
     const-string v3, "WindowResumeService.Control.processResponse(): serverTicket == null"
 
@@ -178,20 +166,20 @@
 
     invoke-virtual {v3, v4, v5}, Lcom/google/android/youtube/googlemobile/masf/b/a/h;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_82
+    :cond_76
     invoke-virtual {p1}, Lcom/google/android/youtube/googlemobile/masf/b/a/g;->f()I
 
     move-result v3
 
-    if-nez v3, :cond_a7
+    if-nez v3, :cond_9b
 
-    if-nez v2, :cond_a7
+    if-nez v2, :cond_9b
 
     const-string v0, "WindowResumeService.Control.processResponse(): missingChunkCount == 0"
 
     invoke-static {v0}, Lcom/google/android/youtube/googlemobile/masf/b/a/h;->b(Ljava/lang/String;)V
 
-    :try_start_8f
+    :try_start_83
     invoke-virtual {p1}, Lcom/google/android/youtube/googlemobile/masf/b/a/g;->i()Ljava/io/DataInputStream;
 
     move-result-object v0
@@ -209,30 +197,30 @@
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->e:Z
-    :try_end_a1
-    .catch Ljava/io/IOException; {:try_start_8f .. :try_end_a1} :catch_a3
+    :try_end_95
+    .catch Ljava/io/IOException; {:try_start_83 .. :try_end_95} :catch_97
 
-    :cond_a1
-    :goto_a1
+    :cond_95
+    :goto_95
     move v0, v1
 
-    goto :goto_2a
+    goto :goto_26
 
-    :catch_a3
+    :catch_97
     move-exception v0
 
     iput-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->d:Ljava/lang/Exception;
 
-    goto :goto_a1
+    goto :goto_95
 
-    :cond_a7
+    :cond_9b
     const-string v2, "WindowResumeService.Control.processResponse(): missingChunkCount > 0"
 
     invoke-static {v2}, Lcom/google/android/youtube/googlemobile/masf/b/a/h;->b(Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->i:Ljava/util/Vector;
 
-    if-nez v2, :cond_a1
+    if-nez v2, :cond_95
 
     new-instance v2, Ljava/util/Vector;
 
@@ -248,8 +236,8 @@
 
     move-result-object v4
 
-    :goto_bf
-    if-ge v0, v3, :cond_a1
+    :goto_b3
+    if-ge v0, v3, :cond_95
 
     iget-object v5, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->i:Ljava/util/Vector;
 
@@ -267,9 +255,9 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_bf
+    goto :goto_b3
 
-    :pswitch_d4
+    :pswitch_c8
     const-string v0, "WindowResumeServiceControl.processResponse(): statusCode == CONTINUE (2)"
 
     invoke-static {v0}, Lcom/google/android/youtube/googlemobile/masf/b/a/h;->b(Ljava/lang/String;)V
@@ -278,9 +266,9 @@
 
     move v0, v1
 
-    goto/16 :goto_2a
+    goto/16 :goto_26
 
-    :pswitch_de
+    :pswitch_d2
     const-string v0, "WindowResumeService.Control.processResponse(): statusCode == BAD TICKET (-4)"
 
     invoke-static {v0}, Lcom/google/android/youtube/googlemobile/masf/b/a/h;->b(Ljava/lang/String;)V
@@ -297,26 +285,26 @@
 
     move v0, v1
 
-    goto/16 :goto_2a
+    goto/16 :goto_26
 
-    :pswitch_f1
+    :pswitch_e5
     const-string v1, "WindowResumeService.Control.processResponse(): statusCode == CANNOT_EXTEND (-5)"
 
     invoke-static {v1}, Lcom/google/android/youtube/googlemobile/masf/b/a/h;->b(Ljava/lang/String;)V
 
-    goto/16 :goto_2a
+    goto/16 :goto_26
 
-    :pswitch_data_f8
+    :pswitch_data_ec
     .packed-switch -0x5
-        :pswitch_f1
-        :pswitch_de
-        :pswitch_48
-        :pswitch_48
-        :pswitch_48
-        :pswitch_4e
-        :pswitch_48
-        :pswitch_d4
-        :pswitch_4e
+        :pswitch_e5
+        :pswitch_d2
+        :pswitch_40
+        :pswitch_40
+        :pswitch_40
+        :pswitch_46
+        :pswitch_40
+        :pswitch_c8
+        :pswitch_46
     .end packed-switch
 .end method
 
@@ -325,13 +313,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "WindowResumeService.Control.getRequestPayload("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -361,7 +345,7 @@
 
     iget v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->l:I
 
-    if-ge p1, v0, :cond_32
+    if-ge p1, v0, :cond_2e
 
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->a:Ljava/io/DataInputStream;
 
@@ -371,10 +355,10 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->a:Ljava/io/DataInputStream;
 
-    :cond_32
+    :cond_2e
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->a:Ljava/io/DataInputStream;
 
-    if-nez v0, :cond_66
+    if-nez v0, :cond_62
 
     const/4 v0, 0x0
 
@@ -386,7 +370,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_46
 
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->b:Lcom/google/android/youtube/googlemobile/masf/b/a/c;
 
@@ -396,9 +380,9 @@
 
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_7a
+    if-ne v0, v1, :cond_76
 
-    :cond_4a
+    :cond_46
     new-instance v0, Ljava/io/DataInputStream;
 
     new-instance v1, Lcom/google/android/youtube/googlemobile/common/io/l;
@@ -425,11 +409,11 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->a:Ljava/io/DataInputStream;
 
-    :cond_66
-    :goto_66
+    :cond_62
+    :goto_62
     iget v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->l:I
 
-    if-le p1, v0, :cond_88
+    if-le p1, v0, :cond_84
 
     iget v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->l:I
 
@@ -447,9 +431,9 @@
 
     iput v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->l:I
 
-    goto :goto_66
+    goto :goto_62
 
-    :cond_7a
+    :cond_76
     new-instance v0, Ljava/io/DataInputStream;
 
     iget-object v1, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->b:Lcom/google/android/youtube/googlemobile/masf/b/a/c;
@@ -462,9 +446,9 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->a:Ljava/io/DataInputStream;
 
-    goto :goto_66
+    goto :goto_62
 
-    :cond_88
+    :cond_84
     new-array v0, p2, [B
 
     iget-object v1, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->a:Ljava/io/DataInputStream;
@@ -491,13 +475,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "WindowResumeService.Control.createRequest("
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -517,7 +497,7 @@
 
     iget-object v1, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->g:Ljava/lang/String;
 
-    if-nez v1, :cond_60
+    if-nez v1, :cond_5c
 
     const-string v1, "WindowResumeService.Control.createRequest(): serverTicket == null"
 
@@ -529,7 +509,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_5f
+    if-nez v1, :cond_5b
 
     iget v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->m:I
 
@@ -575,14 +555,14 @@
 
     aput-object v1, v0, v3
 
-    :cond_5f
-    :goto_5f
+    :cond_5b
+    :goto_5b
     return-object v0
 
-    :cond_60
+    :cond_5c
     iget-object v1, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->i:Ljava/util/Vector;
 
-    if-nez v1, :cond_96
+    if-nez v1, :cond_92
 
     const-string v1, "WindowResumeService.Control.createRequest(): chunkVector == null"
 
@@ -594,7 +574,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_5f
+    if-nez v1, :cond_5b
 
     invoke-direct {p0}, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->b()Lcom/google/android/youtube/googlemobile/masf/b/a/f;
 
@@ -628,9 +608,9 @@
 
     aput-object v1, v0, v3
 
-    goto :goto_5f
+    goto :goto_5b
 
-    :cond_96
+    :cond_92
     const-string v0, "WindowResumeService.Control.createRequest(): chunkVector != null"
 
     invoke-static {v0}, Lcom/google/android/youtube/googlemobile/masf/b/a/h;->b(Ljava/lang/String;)V
@@ -639,8 +619,8 @@
 
     move v2, v3
 
-    :goto_9e
-    if-ge v2, p1, :cond_e8
+    :goto_9a
+    if-ge v2, p1, :cond_e4
 
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->i:Ljava/util/Vector;
 
@@ -648,7 +628,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_e8
+    if-lez v0, :cond_e4
 
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->i:Ljava/util/Vector;
 
@@ -674,7 +654,7 @@
 
     iget v6, v0, Lcom/google/android/youtube/googlemobile/masf/b/a/j;->b:I
 
-    if-le v6, v5, :cond_e2
+    if-le v6, v5, :cond_de
 
     iget v6, v0, Lcom/google/android/youtube/googlemobile/masf/b/a/j;->a:I
 
@@ -688,7 +668,7 @@
 
     iput v6, v0, Lcom/google/android/youtube/googlemobile/masf/b/a/j;->b:I
 
-    :goto_cc
+    :goto_c8
     invoke-direct {p0}, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->b()Lcom/google/android/youtube/googlemobile/masf/b/a/f;
 
     move-result-object v0
@@ -709,23 +689,25 @@
 
     move v2, v0
 
-    goto :goto_9e
+    goto :goto_9a
 
-    :cond_e2
+    :cond_de
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->i:Ljava/util/Vector;
 
     invoke-virtual {v0, v3}, Ljava/util/Vector;->removeElementAt(I)V
 
-    goto :goto_cc
+    goto :goto_c8
 
-    :cond_e8
+    :cond_e4
     move-object v0, v1
 
-    goto/16 :goto_5f
+    goto/16 :goto_5b
 .end method
 
 .method private b()Lcom/google/android/youtube/googlemobile/masf/b/a/f;
-    .registers 4
+    .registers 5
+
+    const/4 v3, 0x0
 
     new-instance v0, Lcom/google/android/youtube/googlemobile/masf/b/a/f;
 
@@ -735,13 +717,11 @@
 
     iget-object v2, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->u:Lcom/google/android/youtube/googlemobile/masf/b/a/h;
 
-    invoke-direct {v1, v2}, Lcom/google/android/youtube/googlemobile/masf/b/a/l;-><init>(Lcom/google/android/youtube/googlemobile/masf/b/a/h;)V
+    invoke-direct {v1, v2, v3}, Lcom/google/android/youtube/googlemobile/masf/b/a/l;-><init>(Lcom/google/android/youtube/googlemobile/masf/b/a/h;B)V
 
     invoke-virtual {v0, v1}, Lcom/google/android/youtube/googlemobile/masf/b/a/f;->a(Lcom/google/android/youtube/googlemobile/masf/a/n;)V
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/googlemobile/masf/b/a/f;->b(I)V
+    invoke-virtual {v0, v3}, Lcom/google/android/youtube/googlemobile/masf/b/a/f;->b(I)V
 
     return-object v0
 .end method
@@ -764,13 +744,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "WindowResumeService.Control.run(): requestVector.size() == "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->h:Ljava/util/Vector;
 
@@ -794,20 +770,16 @@
 
     move-result v0
 
-    :goto_2b
-    if-lez v0, :cond_b3
+    :goto_27
+    if-lez v0, :cond_ab
 
     add-int/lit8 v1, v0, -0x1
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "WindowResumeService.Control.run(): i == "
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -831,7 +803,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_76
+    if-eqz v2, :cond_6e
 
     iget v3, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->p:I
 
@@ -843,13 +815,13 @@
 
     move-result v3
 
-    if-eqz v3, :cond_78
+    if-eqz v3, :cond_70
 
     iget v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->k:I
 
     iget v3, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->j:I
 
-    if-ge v0, v3, :cond_6e
+    if-ge v0, v3, :cond_66
 
     iget v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->k:I
 
@@ -861,20 +833,20 @@
 
     iput v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->o:I
 
-    :cond_6e
+    :cond_66
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->h:Ljava/util/Vector;
 
     invoke-virtual {v0, v1}, Ljava/util/Vector;->removeElementAt(I)V
 
-    :goto_73
+    :goto_6b
     invoke-virtual {v2}, Lcom/google/android/youtube/googlemobile/masf/b/a/g;->a()V
 
-    :cond_76
+    :cond_6e
     move v0, v1
 
-    goto :goto_2b
+    goto :goto_27
 
-    :cond_78
+    :cond_70
     iget v3, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->o:I
 
     add-int/lit8 v3, v3, 0x1
@@ -885,7 +857,7 @@
 
     iget v4, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->n:I
 
-    if-ge v3, v4, :cond_95
+    if-ge v3, v4, :cond_8d
 
     const/4 v3, 0x0
 
@@ -898,25 +870,25 @@
     move-result-object v3
 
     invoke-virtual {v3, v0}, Lcom/google/android/youtube/googlemobile/masf/f;->a(Lcom/google/android/youtube/googlemobile/masf/a/m;)V
-    :try_end_91
-    .catchall {:try_start_4 .. :try_end_91} :catchall_92
+    :try_end_89
+    .catchall {:try_start_4 .. :try_end_89} :catchall_8a
 
-    goto :goto_73
+    goto :goto_6b
 
-    :catchall_92
+    :catchall_8a
     move-exception v0
 
     monitor-exit p0
 
     throw v0
 
-    :cond_95
-    :try_start_95
+    :cond_8d
+    :try_start_8d
     invoke-virtual {v2}, Lcom/google/android/youtube/googlemobile/masf/b/a/g;->b()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a7
+    if-eqz v0, :cond_9f
 
     invoke-virtual {v2}, Lcom/google/android/youtube/googlemobile/masf/b/a/g;->c()Ljava/lang/Exception;
 
@@ -924,14 +896,14 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->d:Ljava/lang/Exception;
 
-    :goto_a1
+    :goto_99
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->h:Ljava/util/Vector;
 
     invoke-virtual {v0, v1}, Ljava/util/Vector;->removeElementAt(I)V
 
-    goto :goto_73
+    goto :goto_6b
 
-    :cond_a7
+    :cond_9f
     new-instance v0, Lcom/google/android/youtube/googlemobile/masf/ConnectionException;
 
     invoke-virtual {v2}, Lcom/google/android/youtube/googlemobile/masf/b/a/g;->d()I
@@ -942,9 +914,9 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->d:Ljava/lang/Exception;
 
-    goto :goto_a1
+    goto :goto_99
 
-    :cond_b3
+    :cond_ab
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -963,28 +935,28 @@
 
     cmp-long v1, v4, v7
 
-    if-nez v1, :cond_ca
+    if-nez v1, :cond_c2
 
     iput-wide v2, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->q:J
 
     move v0, v6
 
-    :cond_ca
+    :cond_c2
     const/16 v1, 0x64
 
-    if-lt v0, v1, :cond_11c
+    if-lt v0, v1, :cond_110
 
     iget v1, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->p:I
 
     const/4 v4, 0x2
 
-    if-le v1, v4, :cond_11c
+    if-le v1, v4, :cond_110
 
     iget v1, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->l:I
 
     iget v4, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->s:I
 
-    if-le v1, v4, :cond_116
+    if-le v1, v4, :cond_10a
 
     iget v1, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->l:I
 
@@ -992,11 +964,11 @@
 
     sub-int/2addr v1, v4
 
-    if-nez v0, :cond_e1
+    if-nez v0, :cond_d9
 
     const/4 v0, 0x1
 
-    :cond_e1
+    :cond_d9
     mul-int/lit16 v1, v1, 0x3e8
 
     div-int v0, v1, v0
@@ -1013,13 +985,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "WindowResumeService.Control.run(): bandwidthEstimate = "
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1047,26 +1015,26 @@
 
     cmp-long v7, v0, v7
 
-    if-nez v7, :cond_16e
+    if-nez v7, :cond_162
 
     const-wide/16 v0, -0x1
 
-    :goto_114
+    :goto_108
     iput-wide v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->r:J
 
-    :cond_116
+    :cond_10a
     iget v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->l:I
 
     iput v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->s:I
 
     iput-wide v2, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->q:J
 
-    :cond_11c
+    :cond_110
     iget v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->p:I
 
     const/4 v1, 0x4
 
-    if-le v0, v1, :cond_13b
+    if-le v0, v1, :cond_12f
 
     new-instance v7, Lcom/google/android/youtube/googlemobile/common/c/b;
 
@@ -1092,10 +1060,10 @@
 
     invoke-virtual {v7}, Lcom/google/android/youtube/googlemobile/common/c/b;->e()V
 
-    :cond_13b
+    :cond_12f
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->d:Ljava/lang/Exception;
 
-    if-eqz v0, :cond_174
+    if-eqz v0, :cond_168
 
     const-string v0, "WindowResumeService.Control.run(): exception != null"
 
@@ -1108,10 +1076,10 @@
     move-result-object v1
 
     monitor-enter v1
-    :try_end_14b
-    .catchall {:try_start_95 .. :try_end_14b} :catchall_92
+    :try_end_13f
+    .catchall {:try_start_8d .. :try_end_13f} :catchall_8a
 
-    :try_start_14b
+    :try_start_13f
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->u:Lcom/google/android/youtube/googlemobile/masf/b/a/h;
 
     invoke-static {v0}, Lcom/google/android/youtube/googlemobile/masf/b/a/h;->e(Lcom/google/android/youtube/googlemobile/masf/b/a/h;)Ljava/util/Vector;
@@ -1121,10 +1089,10 @@
     invoke-virtual {v0, p0}, Ljava/util/Vector;->removeElement(Ljava/lang/Object;)Z
 
     monitor-exit v1
-    :try_end_155
-    .catchall {:try_start_14b .. :try_end_155} :catchall_171
+    :try_end_149
+    .catchall {:try_start_13f .. :try_end_149} :catchall_165
 
-    :try_start_155
+    :try_start_149
     new-instance v0, Lcom/google/android/youtube/googlemobile/common/c/b;
 
     iget-object v1, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->u:Lcom/google/android/youtube/googlemobile/masf/b/a/h;
@@ -1144,32 +1112,32 @@
     invoke-direct {v0, v1, v2}, Lcom/google/android/youtube/googlemobile/common/c/b;-><init>(Lcom/google/android/youtube/googlemobile/common/c/c;Ljava/lang/Runnable;)V
 
     invoke-virtual {v0}, Lcom/google/android/youtube/googlemobile/common/c/b;->e()V
-    :try_end_16c
-    .catchall {:try_start_155 .. :try_end_16c} :catchall_92
+    :try_end_160
+    .catchall {:try_start_149 .. :try_end_160} :catchall_8a
 
-    :cond_16c
-    :goto_16c
+    :cond_160
+    :goto_160
     monitor-exit p0
 
     return-void
 
-    :cond_16e
-    :try_start_16e
+    :cond_162
+    :try_start_162
     div-long v0, v4, v0
 
-    goto :goto_114
+    goto :goto_108
 
-    :catchall_171
+    :catchall_165
     move-exception v0
 
     monitor-exit v1
 
     throw v0
 
-    :cond_174
+    :cond_168
     iget-boolean v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->e:Z
 
-    if-eqz v0, :cond_1a9
+    if-eqz v0, :cond_19d
 
     const-string v0, "WindowResumeService.Control.run(): done == true"
 
@@ -1182,10 +1150,10 @@
     move-result-object v1
 
     monitor-enter v1
-    :try_end_184
-    .catchall {:try_start_16e .. :try_end_184} :catchall_92
+    :try_end_178
+    .catchall {:try_start_162 .. :try_end_178} :catchall_8a
 
-    :try_start_184
+    :try_start_178
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->u:Lcom/google/android/youtube/googlemobile/masf/b/a/h;
 
     invoke-static {v0}, Lcom/google/android/youtube/googlemobile/masf/b/a/h;->e(Lcom/google/android/youtube/googlemobile/masf/b/a/h;)Ljava/util/Vector;
@@ -1195,10 +1163,10 @@
     invoke-virtual {v0, p0}, Ljava/util/Vector;->removeElement(Ljava/lang/Object;)Z
 
     monitor-exit v1
-    :try_end_18e
-    .catchall {:try_start_184 .. :try_end_18e} :catchall_1a6
+    :try_end_182
+    .catchall {:try_start_178 .. :try_end_182} :catchall_19a
 
-    :try_start_18e
+    :try_start_182
     new-instance v0, Lcom/google/android/youtube/googlemobile/common/c/b;
 
     iget-object v1, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->u:Lcom/google/android/youtube/googlemobile/masf/b/a/h;
@@ -1219,23 +1187,23 @@
 
     invoke-virtual {v0}, Lcom/google/android/youtube/googlemobile/common/c/b;->e()V
 
-    goto :goto_16c
+    goto :goto_160
 
-    :catchall_1a6
+    :catchall_19a
     move-exception v0
 
     monitor-exit v1
 
     throw v0
 
-    :cond_1a9
+    :cond_19d
     const-string v0, "WindowResumeService.Control.run(): queuing requests"
 
     invoke-static {v0}, Lcom/google/android/youtube/googlemobile/masf/b/a/h;->b(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->i:Ljava/util/Vector;
 
-    if-eqz v0, :cond_1ca
+    if-eqz v0, :cond_1be
 
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->i:Ljava/util/Vector;
 
@@ -1243,7 +1211,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1ca
+    if-nez v0, :cond_1be
 
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->h:Ljava/util/Vector;
 
@@ -1251,7 +1219,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1ca
+    if-nez v0, :cond_1be
 
     const-string v0, "WindowResumeService.Control.run(): resetting chunkVector"
 
@@ -1260,11 +1228,11 @@
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->i:Ljava/util/Vector;
-    :try_end_1ca
-    .catchall {:try_start_18e .. :try_end_1ca} :catchall_92
+    :try_end_1be
+    .catchall {:try_start_182 .. :try_end_1be} :catchall_8a
 
-    :cond_1ca
-    :try_start_1ca
+    :cond_1be
+    :try_start_1be
     iget v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->k:I
 
     iget-object v1, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->h:Ljava/util/Vector;
@@ -1279,28 +1247,24 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_16c
+    if-eqz v1, :cond_160
 
     move v0, v6
 
-    :goto_1da
+    :goto_1ce
     array-length v2, v1
 
-    if-ge v0, v2, :cond_16c
+    if-ge v0, v2, :cond_160
 
     aget-object v2, v1, v0
 
-    if-eqz v2, :cond_205
+    if-eqz v2, :cond_1f5
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "WindowResumeService.Control.run(): request = "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -1323,19 +1287,19 @@
     move-result-object v3
 
     invoke-virtual {v3, v2}, Lcom/google/android/youtube/googlemobile/masf/f;->a(Lcom/google/android/youtube/googlemobile/masf/a/m;)V
-    :try_end_205
-    .catchall {:try_start_1ca .. :try_end_205} :catchall_92
-    .catch Ljava/io/IOException; {:try_start_1ca .. :try_end_205} :catch_208
+    :try_end_1f5
+    .catchall {:try_start_1be .. :try_end_1f5} :catchall_8a
+    .catch Ljava/io/IOException; {:try_start_1be .. :try_end_1f5} :catch_1f8
 
-    :cond_205
+    :cond_1f5
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1da
+    goto :goto_1ce
 
-    :catch_208
+    :catch_1f8
     move-exception v0
 
-    :try_start_209
+    :try_start_1f9
     iput-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->d:Ljava/lang/Exception;
 
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/k;->u:Lcom/google/android/youtube/googlemobile/masf/b/a/h;
@@ -1345,8 +1309,8 @@
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/google/android/youtube/googlemobile/common/c/b;->e()V
-    :try_end_214
-    .catchall {:try_start_209 .. :try_end_214} :catchall_92
+    :try_end_204
+    .catchall {:try_start_1f9 .. :try_end_204} :catchall_8a
 
-    goto/16 :goto_16c
+    goto/16 :goto_160
 .end method

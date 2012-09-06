@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 3319
+    .line 723
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment$2;->this$0:Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,32 +43,32 @@
     .parameter "whichButton"
 
     .prologue
-    .line 3321
+    .line 725
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment$2;->this$0:Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;
 
     invoke-virtual {v1}, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;->getTargetFragment()Landroid/app/Fragment;
 
     move-result-object v0
 
-    .line 3322
+    .line 726
     .local v0, f:Landroid/app/Fragment;
     instance-of v1, v0, Lcom/android/email/activity/setup/AccountSettingsFragment;
 
     if-eqz v1, :cond_f
 
-    .line 3323
+    .line 727
     check-cast v0, Lcom/android/email/activity/setup/AccountSettingsFragment;
 
     .end local v0           #f:Landroid/app/Fragment;
     #calls: Lcom/android/email/activity/setup/AccountSettingsFragment;->finishDeleteAccount()V
-    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSettingsFragment;->access$5200(Lcom/android/email/activity/setup/AccountSettingsFragment;)V
+    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSettingsFragment;->access$1700(Lcom/android/email/activity/setup/AccountSettingsFragment;)V
 
-    .line 3325
+    .line 729
     :cond_f
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment$2;->this$0:Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;
 
     invoke-virtual {v1}, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;->dismiss()V
 
-    .line 3326
+    .line 730
     return-void
 .end method

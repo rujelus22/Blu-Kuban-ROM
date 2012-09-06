@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@android:id/content" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@color/agenda_list_separator_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.android.calendar.ColorChipView android:layout_gravity="top" android:id="@id/agenda_item_color" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="16.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="8.0dip" android:layout_marginBottom="8.0dip" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:minHeight="64.0dip" android:layout_weight="1.0">
+            <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/agenda_item_standard_color" android:ellipsize="marquee" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="?android:attr/textAppearanceMediumInverse" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/agenda_item_where_text_color" android:ellipsize="marquee" android:id="@id/when" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_below="@id/title" android:layout_alignLeft="@id/title" style="?android:attr/textAppearanceSmallInverse" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/agenda_item_where_text_color" android:ellipsize="marquee" android:id="@id/where" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-3.0dip" android:singleLine="true" android:layout_below="@id/when" android:layout_alignLeft="@id/title" style="?android:attr/textAppearanceSmallInverse" />
+        </LinearLayout>
+        <ImageView android:id="@id/selected_marker" android:background="@drawable/list_multi_left_activated_holo" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </LinearLayout>
+</LinearLayout>

@@ -41,31 +41,31 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2202
+    .line 2082
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 2207
+    .line 2087
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->name_:Ljava/lang/String;
 
-    .line 2224
+    .line 2104
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->description_:Ljava/lang/String;
 
-    .line 2241
+    .line 2121
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->offer_:Lcom/google/android/finsky/remoting/protos/Common$Offer;
 
-    .line 2261
+    .line 2141
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->amount_:Lcom/google/android/finsky/remoting/protos/Buy$Money;
 
-    .line 2313
+    .line 2194
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->cachedSize:I
 
-    .line 2202
+    .line 2082
     return-void
 .end method
 
@@ -75,7 +75,7 @@
     .registers 2
 
     .prologue
-    .line 2263
+    .line 2143
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->amount_:Lcom/google/android/finsky/remoting/protos/Buy$Money;
 
     return-object v0
@@ -85,15 +85,15 @@
     .registers 2
 
     .prologue
-    .line 2315
+    .line 2197
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 2317
+    .line 2199
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->getSerializedSize()I
 
-    .line 2319
+    .line 2201
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->cachedSize:I
 
@@ -104,7 +104,7 @@
     .registers 2
 
     .prologue
-    .line 2225
+    .line 2105
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->description_:Ljava/lang/String;
 
     return-object v0
@@ -114,7 +114,7 @@
     .registers 2
 
     .prologue
-    .line 2208
+    .line 2088
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->name_:Ljava/lang/String;
 
     return-object v0
@@ -124,7 +124,7 @@
     .registers 2
 
     .prologue
-    .line 2243
+    .line 2123
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->offer_:Lcom/google/android/finsky/remoting/protos/Common$Offer;
 
     return-object v0
@@ -134,10 +134,10 @@
     .registers 4
 
     .prologue
-    .line 2323
+    .line 2206
     const/4 v0, 0x0
 
-    .line 2324
+    .line 2207
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasName()Z
 
@@ -145,7 +145,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 2325
+    .line 2208
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->getName()Ljava/lang/String;
@@ -158,7 +158,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2328
+    .line 2211
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasDescription()Z
 
@@ -166,7 +166,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 2329
+    .line 2212
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->getDescription()Ljava/lang/String;
@@ -179,7 +179,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2332
+    .line 2215
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasOffer()Z
 
@@ -187,7 +187,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 2333
+    .line 2216
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->getOffer()Lcom/google/android/finsky/remoting/protos/Common$Offer;
@@ -200,7 +200,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2336
+    .line 2219
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasAmount()Z
 
@@ -208,7 +208,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 2337
+    .line 2220
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->getAmount()Lcom/google/android/finsky/remoting/protos/Buy$Money;
@@ -221,11 +221,11 @@
 
     add-int/2addr v0, v1
 
-    .line 2340
+    .line 2223
     :cond_41
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->cachedSize:I
 
-    .line 2341
+    .line 2224
     return v0
 .end method
 
@@ -233,7 +233,7 @@
     .registers 2
 
     .prologue
-    .line 2262
+    .line 2142
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasAmount:Z
 
     return v0
@@ -243,7 +243,7 @@
     .registers 2
 
     .prologue
-    .line 2226
+    .line 2106
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasDescription:Z
 
     return v0
@@ -253,7 +253,7 @@
     .registers 2
 
     .prologue
-    .line 2209
+    .line 2089
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasName:Z
 
     return v0
@@ -263,7 +263,7 @@
     .registers 2
 
     .prologue
-    .line 2242
+    .line 2122
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasOffer:Z
 
     return v0
@@ -279,29 +279,29 @@
     .end annotation
 
     .prologue
-    .line 2348
+    .line 2232
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 2349
+    .line 2233
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_36
 
-    .line 2353
+    .line 2237
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 2354
+    .line 2238
     :sswitch_d
     return-object p0
 
-    .line 2359
+    .line 2243
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -311,7 +311,7 @@
 
     goto :goto_0
 
-    .line 2363
+    .line 2247
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -321,38 +321,38 @@
 
     goto :goto_0
 
-    .line 2367
+    .line 2251
     :sswitch_1e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Common$Offer;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Common$Offer;-><init>()V
 
-    .line 2368
+    .line 2252
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Common$Offer;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2369
+    .line 2253
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->setOffer(Lcom/google/android/finsky/remoting/protos/Common$Offer;)Lcom/google/android/finsky/remoting/protos/Buy$LineItem;
 
     goto :goto_0
 
-    .line 2373
+    .line 2257
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Common$Offer;
     :sswitch_2a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Buy$Money;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Buy$Money;-><init>()V
 
-    .line 2374
+    .line 2258
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Buy$Money;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2375
+    .line 2259
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->setAmount(Lcom/google/android/finsky/remoting/protos/Buy$Money;)Lcom/google/android/finsky/remoting/protos/Buy$LineItem;
 
     goto :goto_0
 
-    .line 2349
+    .line 2233
     :sswitch_data_36
     .sparse-switch
         0x0 -> :sswitch_d
@@ -373,7 +373,7 @@
     .end annotation
 
     .prologue
-    .line 2200
+    .line 2079
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Buy$LineItem;
 
     move-result-object v0
@@ -386,26 +386,26 @@
     .parameter "value"
 
     .prologue
-    .line 2265
+    .line 2145
     if-nez p1, :cond_8
 
-    .line 2266
+    .line 2146
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2268
+    .line 2148
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasAmount:Z
 
-    .line 2269
+    .line 2149
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->amount_:Lcom/google/android/finsky/remoting/protos/Buy$Money;
 
-    .line 2270
+    .line 2150
     return-object p0
 .end method
 
@@ -414,15 +414,15 @@
     .parameter "value"
 
     .prologue
-    .line 2228
+    .line 2108
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasDescription:Z
 
-    .line 2229
+    .line 2109
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->description_:Ljava/lang/String;
 
-    .line 2230
+    .line 2110
     return-object p0
 .end method
 
@@ -431,15 +431,15 @@
     .parameter "value"
 
     .prologue
-    .line 2211
+    .line 2091
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasName:Z
 
-    .line 2212
+    .line 2092
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->name_:Ljava/lang/String;
 
-    .line 2213
+    .line 2093
     return-object p0
 .end method
 
@@ -448,26 +448,26 @@
     .parameter "value"
 
     .prologue
-    .line 2245
+    .line 2125
     if-nez p1, :cond_8
 
-    .line 2246
+    .line 2126
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2248
+    .line 2128
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasOffer:Z
 
-    .line 2249
+    .line 2129
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->offer_:Lcom/google/android/finsky/remoting/protos/Common$Offer;
 
-    .line 2250
+    .line 2130
     return-object p0
 .end method
 
@@ -481,14 +481,14 @@
     .end annotation
 
     .prologue
-    .line 2299
+    .line 2180
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasName()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 2300
+    .line 2181
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->getName()Ljava/lang/String;
@@ -497,7 +497,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2302
+    .line 2183
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasDescription()Z
 
@@ -505,7 +505,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 2303
+    .line 2184
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->getDescription()Ljava/lang/String;
@@ -514,7 +514,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2305
+    .line 2186
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasOffer()Z
 
@@ -522,7 +522,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 2306
+    .line 2187
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->getOffer()Lcom/google/android/finsky/remoting/protos/Common$Offer;
@@ -531,7 +531,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2308
+    .line 2189
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasAmount()Z
 
@@ -539,7 +539,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 2309
+    .line 2190
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->getAmount()Lcom/google/android/finsky/remoting/protos/Buy$Money;
@@ -548,7 +548,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2311
+    .line 2192
     :cond_38
     return-void
 .end method

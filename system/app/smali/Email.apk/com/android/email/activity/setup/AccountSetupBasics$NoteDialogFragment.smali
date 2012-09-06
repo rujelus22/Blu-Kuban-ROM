@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 2187
+    .line 703
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
     return-void
@@ -30,27 +30,27 @@
     .parameter "note"
 
     .prologue
-    .line 2197
+    .line 713
     new-instance v1, Lcom/android/email/activity/setup/AccountSetupBasics$NoteDialogFragment;
 
     invoke-direct {v1}, Lcom/android/email/activity/setup/AccountSetupBasics$NoteDialogFragment;-><init>()V
 
-    .line 2198
+    .line 714
     .local v1, f:Lcom/android/email/activity/setup/AccountSetupBasics$NoteDialogFragment;
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 2199
+    .line 715
     .local v0, b:Landroid/os/Bundle;
     const-string v2, "NoteDialogFragment.Note"
 
     invoke-virtual {v0, v2, p0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2200
+    .line 716
     invoke-virtual {v1, v0}, Lcom/android/email/activity/setup/AccountSetupBasics$NoteDialogFragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 2201
+    .line 717
     return-object v1
 .end method
 
@@ -61,12 +61,12 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 2206
+    .line 722
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupBasics$NoteDialogFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 2207
+    .line 723
     .local v0, context:Landroid/content/Context;
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupBasics$NoteDialogFragment;->getArguments()Landroid/os/Bundle;
 
@@ -78,7 +78,7 @@
 
     move-result-object v1
 
-    .line 2209
+    .line 725
     .local v1, note:Ljava/lang/String;
     new-instance v2, Landroid/app/AlertDialog$Builder;
 
@@ -100,7 +100,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f080042
+    const v3, 0x7f080009
 
     new-instance v4, Lcom/android/email/activity/setup/AccountSetupBasics$NoteDialogFragment$1;
 
@@ -110,9 +110,9 @@
 
     move-result-object v2
 
-    const v3, 0x7f080043
+    const v3, 0x7f08000a
 
-    invoke-virtual {v0, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 

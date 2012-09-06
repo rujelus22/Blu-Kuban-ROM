@@ -1,48 +1,69 @@
-.class final Lcom/google/android/youtube/core/converter/http/bp;
-.super Lcom/google/android/youtube/core/converter/l;
+.class final synthetic Lcom/google/android/youtube/core/converter/http/bp;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field static final synthetic a:[I
+
+
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method static constructor <clinit>()V
+    .registers 3
 
     .prologue
-    .line 76
-    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;)V
-    .registers 5
-    .parameter
-    .parameter
-
-    .prologue
-    .line 79
-    const-class v0, Lcom/google/android/youtube/core/model/Playlist$Builder;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    .line 55
+    invoke-static {}, Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;->values()[Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/Playlist$Builder;
+    array-length v0, v0
 
-    const-string v1, "src"
+    new-array v0, v0, [I
 
-    invoke-interface {p2, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
+    sput-object v0, Lcom/google/android/youtube/core/converter/http/bp;->a:[I
 
-    move-result-object v1
+    :try_start_9
+    sget-object v0, Lcom/google/android/youtube/core/converter/http/bp;->a:[I
 
-    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    sget-object v1, Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;->CLIENTLOGIN:Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;
 
-    move-result-object v1
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;->ordinal()I
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Playlist$Builder;->contentUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Playlist$Builder;
+    move-result v1
 
-    .line 80
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
+
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/android/youtube/core/converter/http/bp;->a:[I
+
+    sget-object v1, Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;->OAUTH2:Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
+
+    :goto_1f
     return-void
+
+    :catch_20
+    move-exception v0
+
+    goto :goto_1f
+
+    :catch_22
+    move-exception v0
+
+    goto :goto_14
 .end method

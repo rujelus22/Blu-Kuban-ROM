@@ -48,7 +48,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lcom/google/net/async/ac;-><init>(C)V
+    invoke-direct {v0, v1}, Lcom/google/net/async/ac;-><init>(B)V
 
     sput-object v0, Lcom/google/net/async/x;->c:Lcom/google/net/async/ab;
 

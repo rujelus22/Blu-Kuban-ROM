@@ -1,64 +1,108 @@
-.class public final Lcom/google/android/youtube/core/async/ae;
-.super Ljava/lang/Object;
+.class final Lcom/google/android/youtube/core/async/ae;
+.super Lcom/google/android/youtube/core/async/al;
 .source "SourceFile"
-
-# interfaces
-.implements Lcom/google/android/youtube/core/async/ad;
-
-
-# instance fields
-.field private final a:Lcom/google/android/youtube/core/async/ad;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/core/async/ad;)V
-    .registers 3
+.method constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 54
+    invoke-direct {p0}, Lcom/google/android/youtube/core/async/al;-><init>()V
+
+    return-void
+.end method
+
+.method private a(Lcom/google/android/youtube/core/async/GDataRequest;Ljava/lang/Exception;)Z
+    .registers 4
+    .parameter
     .parameter
 
     .prologue
-    .line 24
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 58
+    instance-of v0, p2, Lcom/google/android/youtube/core/async/GDataResponseException;
 
-    .line 25
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz v0, :cond_14
 
-    move-result-object v0
+    move-object v0, p2
 
-    check-cast v0, Lcom/google/android/youtube/core/async/ad;
+    .line 59
+    check-cast v0, Lcom/google/android/youtube/core/async/GDataResponseException;
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/ae;->a:Lcom/google/android/youtube/core/async/ad;
+    .line 60
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/async/GDataResponseException;->containsYouTubeSignupRequiredError()Z
 
-    .line 26
-    return-void
+    move-result v0
+
+    if-eqz v0, :cond_14
+
+    .line 61
+    const-string v0, "operation needs a full YouTube account"
+
+    invoke-static {v0}, Lcom/google/android/youtube/core/L;->c(Ljava/lang/String;)V
+
+    .line 62
+    const/4 v0, 0x0
+
+    .line 65
+    :goto_13
+    return v0
+
+    :cond_14
+    invoke-super {p0, p1, p2}, Lcom/google/android/youtube/core/async/al;->a(Lcom/google/android/youtube/core/async/aj;Ljava/lang/Exception;)Z
+
+    move-result v0
+
+    goto :goto_13
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Lcom/google/android/youtube/core/async/g;)V
-    .registers 6
+.method public final bridge synthetic a(Ljava/lang/Object;Lcom/google/android/youtube/core/model/UserAuth;)Ljava/lang/Object;
+    .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 29
-    new-instance v0, Ljava/util/ArrayList;
+    .line 54
+    check-cast p1, Lcom/google/android/youtube/core/async/GDataRequest;
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, p2}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+    move-result-object v0
 
-    .line 30
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    return-object v0
+.end method
 
-    .line 31
-    iget-object v1, p0, Lcom/google/android/youtube/core/async/ae;->a:Lcom/google/android/youtube/core/async/ad;
+.method public final bridge synthetic a(Lcom/google/android/youtube/core/async/aj;Ljava/lang/Exception;)Z
+    .registers 4
+    .parameter
+    .parameter
 
-    new-instance v2, Lcom/google/android/youtube/core/async/af;
+    .prologue
+    .line 54
+    check-cast p1, Lcom/google/android/youtube/core/async/GDataRequest;
 
-    invoke-direct {v2, p0, p2}, Lcom/google/android/youtube/core/async/af;-><init>(Lcom/google/android/youtube/core/async/ae;Lcom/google/android/youtube/core/async/g;)V
+    invoke-direct {p0, p1, p2}, Lcom/google/android/youtube/core/async/ae;->a(Lcom/google/android/youtube/core/async/GDataRequest;Ljava/lang/Exception;)Z
 
-    invoke-interface {v1, v0, v2}, Lcom/google/android/youtube/core/async/ad;->a(Ljava/lang/Object;Lcom/google/android/youtube/core/async/g;)V
+    move-result v0
 
-    .line 47
-    return-void
+    return v0
+.end method
+
+.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)Z
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 54
+    check-cast p1, Lcom/google/android/youtube/core/async/GDataRequest;
+
+    invoke-direct {p0, p1, p2}, Lcom/google/android/youtube/core/async/ae;->a(Lcom/google/android/youtube/core/async/GDataRequest;Ljava/lang/Exception;)Z
+
+    move-result v0
+
+    return v0
 .end method

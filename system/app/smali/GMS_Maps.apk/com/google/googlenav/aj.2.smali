@@ -1,54 +1,52 @@
-.class public Lcom/google/googlenav/aj;
+.class final Lcom/google/googlenav/aj;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
-
-# instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:I
+# interfaces
+.implements Lcom/google/common/base/D;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;I)V
-    .registers 4
+.method constructor <init>()V
+    .registers 1
 
+    .prologue
+    .line 184
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/googlenav/aj;->a:Ljava/lang/String;
-
-    iput-object p2, p0, Lcom/google/googlenav/aj;->b:Ljava/lang/String;
-
-    iput p3, p0, Lcom/google/googlenav/aj;->c:I
 
     return-void
 .end method
 
-.method public static a(Lam/b;)Lcom/google/googlenav/aj;
-    .registers 5
 
-    new-instance v0, Lcom/google/googlenav/aj;
+# virtual methods
+.method public a(Lcom/google/googlenav/ai;)Ljava/lang/Long;
+    .registers 4
+    .parameter
 
-    const/4 v1, 0x2
+    .prologue
+    .line 187
+    invoke-virtual {p1}, Lcom/google/googlenav/ai;->V()J
 
-    invoke-static {p0, v1}, Lam/g;->b(Lam/b;I)Ljava/lang/String;
+    move-result-wide v0
 
-    move-result-object v1
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/4 v2, 0x3
+    move-result-object v0
 
-    invoke-static {p0, v2}, Lam/g;->b(Lam/b;I)Ljava/lang/String;
+    return-object v0
+.end method
 
-    move-result-object v2
+.method public bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+    .parameter
 
-    const/4 v3, 0x4
+    .prologue
+    .line 184
+    check-cast p1, Lcom/google/googlenav/ai;
 
-    invoke-static {p0, v3}, Lam/g;->e(Lam/b;I)I
+    invoke-virtual {p0, p1}, Lcom/google/googlenav/aj;->a(Lcom/google/googlenav/ai;)Ljava/lang/Long;
 
-    move-result v3
-
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/googlenav/aj;-><init>(Ljava/lang/String;Ljava/lang/String;I)V
+    move-result-object v0
 
     return-object v0
 .end method

@@ -28,6 +28,14 @@
         <item quantity="other">Prieš %1$d sek.</item>
         <item quantity="one">Prieš 1 sek.</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Baigiasi po %1$d d.</item>
+        <item quantity="one">Gal. l. baig. po 1 d.</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Baigiasi po %1$d val.</item>
+        <item quantity="one">Gal. l. baig. po 1 val.</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">nauji įkėlimai</item>
         <item quantity="one">naujas įkėlimas</item>

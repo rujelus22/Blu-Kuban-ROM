@@ -7,5 +7,5 @@
 .method public abstract a()Landroid/app/Activity;
 .end method
 
-.method public abstract a(Landroid/net/Uri;)V
+.method public abstract a(Landroid/net/Uri;Ljava/lang/Exception;)V
 .end method

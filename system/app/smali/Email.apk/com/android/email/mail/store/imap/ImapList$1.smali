@@ -32,7 +32,7 @@
     .parameter "e"
 
     .prologue
-    .line 38
+    .line 35
     new-instance v0, Ljava/lang/RuntimeException;
 
     invoke-direct {v0}, Ljava/lang/RuntimeException;-><init>()V
@@ -44,6 +44,6 @@
     .registers 1
 
     .prologue
-    .line 34
+    .line 32
     return-void
 .end method

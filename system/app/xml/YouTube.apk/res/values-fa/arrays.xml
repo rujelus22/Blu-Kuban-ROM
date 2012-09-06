@@ -5,6 +5,14 @@
         <item>متوسط</item>
         <item>شدید</item>
     </string-array>
+    <string-array name="preload_quota_entries">
+        <item>۱۲۸ مگابایت</item>
+        <item>۲۵۶ مگابایت</item>
+        <item>۵۱۲ مگابایت</item>
+        <item>۱ گیگابایت</item>
+        <item>۲ گیگابایت</item>
+        <item>۴ گیگابایت</item>
+    </string-array>
     <string-array name="subtitles_size_entries">
         <item>کوچک</item>
         <item>متوسط</item>

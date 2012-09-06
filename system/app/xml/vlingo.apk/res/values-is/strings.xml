@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="driving_mode">Akstursstilling</string>
-    <string name="app_name">Talstjóri</string>
-    <string name="incar">Tal</string>
-    <string name="incar_icon">Tal</string>
-    <string name="Vlingo">Tal</string>
-    <string name="widget_name">Tal</string>
-</resources>

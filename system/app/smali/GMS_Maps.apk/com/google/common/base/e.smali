@@ -1,99 +1,94 @@
-.class abstract enum Lcom/google/common/base/e;
-.super Ljava/lang/Enum;
-
-# interfaces
-.implements Lcom/google/common/base/b;
+.class final Lcom/google/common/base/e;
+.super Lcom/google/common/base/b;
+.source "SourceFile"
 
 
-# static fields
-.field public static final enum a:Lcom/google/common/base/e;
-
-.field public static final enum b:Lcom/google/common/base/e;
-
-.field private static final synthetic c:[Lcom/google/common/base/e;
+# instance fields
+.field final synthetic p:[C
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Lcom/google/common/base/f;
-
-    const-string v1, "EQUALS"
-
-    invoke-direct {v0, v1, v2}, Lcom/google/common/base/f;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/common/base/e;->a:Lcom/google/common/base/e;
-
-    new-instance v0, Lcom/google/common/base/g;
-
-    const-string v1, "IDENTITY"
-
-    invoke-direct {v0, v1, v3}, Lcom/google/common/base/g;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/common/base/e;->b:Lcom/google/common/base/e;
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Lcom/google/common/base/e;
-
-    sget-object v1, Lcom/google/common/base/e;->a:Lcom/google/common/base/e;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/common/base/e;->b:Lcom/google/common/base/e;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/google/common/base/e;->c:[Lcom/google/common/base/e;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Ljava/lang/String;ILcom/google/common/base/d;)V
-    .registers 4
-
-    invoke-direct {p0, p1, p2}, Lcom/google/common/base/e;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lcom/google/common/base/e;
+.method constructor <init>([C)V
     .registers 2
+    .parameter
 
-    const-class v0, Lcom/google/common/base/e;
+    .prologue
+    .line 480
+    iput-object p1, p0, Lcom/google/common/base/e;->p:[C
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-direct {p0}, Lcom/google/common/base/b;-><init>()V
 
-    move-result-object v0
-
-    check-cast v0, Lcom/google/common/base/e;
-
-    return-object v0
+    return-void
 .end method
 
-.method public static values()[Lcom/google/common/base/e;
-    .registers 1
 
-    sget-object v0, Lcom/google/common/base/e;->c:[Lcom/google/common/base/e;
+# virtual methods
+.method a(Lcom/google/common/base/o;)V
+    .registers 6
+    .parameter
 
-    invoke-virtual {v0}, [Lcom/google/common/base/e;->clone()Ljava/lang/Object;
+    .prologue
+    .line 486
+    iget-object v1, p0, Lcom/google/common/base/e;->p:[C
 
-    move-result-object v0
+    array-length v2, v1
 
-    check-cast v0, [Lcom/google/common/base/e;
+    const/4 v0, 0x0
 
-    return-object v0
+    :goto_4
+    if-ge v0, v2, :cond_e
+
+    aget-char v3, v1, v0
+
+    .line 487
+    invoke-virtual {p1, v3}, Lcom/google/common/base/o;->a(C)V
+
+    .line 486
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_4
+
+    .line 489
+    :cond_e
+    return-void
+.end method
+
+.method public bridge synthetic a(Ljava/lang/Object;)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 480
+    check-cast p1, Ljava/lang/Character;
+
+    invoke-super {p0, p1}, Lcom/google/common/base/b;->a(Ljava/lang/Character;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public b(C)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 482
+    iget-object v0, p0, Lcom/google/common/base/e;->p:[C
+
+    invoke-static {v0, p1}, Ljava/util/Arrays;->binarySearch([CC)I
+
+    move-result v0
+
+    if-ltz v0, :cond_a
+
+    const/4 v0, 0x1
+
+    :goto_9
+    return v0
+
+    :cond_a
+    const/4 v0, 0x0
+
+    goto :goto_9
 .end method

@@ -102,7 +102,7 @@
     .line 71
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/google/android/videochat/CameraManager;->sInstanceLock:Ljava/lang/Object;
 
@@ -114,12 +114,12 @@
 
     .prologue
     .line 147
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 95
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/videochat/CameraManager;->mCameraLock:Ljava/lang/Object;
 
@@ -131,14 +131,14 @@
     .line 105
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/videochat/CameraManager;->mCurrentCameraLock:Ljava/lang/Object;
 
     .line 120
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/videochat/CameraManager;->mFramePusherLock:Ljava/lang/Object;
 

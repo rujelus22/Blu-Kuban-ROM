@@ -1,91 +1,365 @@
-.class Lcom/google/googlenav/ui/U;
-.super Lcom/google/googlenav/x;
+.class public Lcom/google/googlenav/ui/u;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# static fields
+.field private static i:Lcom/google/googlenav/ui/u;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/D;
+.field private a:LS/e;
+
+.field private b:LS/e;
+
+.field private c:I
+
+.field private d:I
+
+.field private e:I
+
+.field private f:I
+
+.field private g:I
+
+.field private h:I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/D;)V
-    .registers 2
+.method private constructor <init>()V
+    .registers 1
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/U;->a:Lcom/google/googlenav/ui/D;
+    .prologue
+    .line 50
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcom/google/googlenav/x;-><init>()V
-
+    .line 52
     return-void
+.end method
+
+.method public static a(LS/e;II)Lcom/google/googlenav/ui/u;
+    .registers 10
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 130
+    move-object v0, p0
+
+    move v1, p1
+
+    move v2, p2
+
+    move v4, v3
+
+    move v5, p1
+
+    move v6, p2
+
+    invoke-static/range {v0 .. v6}, Lcom/google/googlenav/ui/u;->a(LS/e;IIIIII)Lcom/google/googlenav/ui/u;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static a(LS/e;IIIIII)Lcom/google/googlenav/ui/u;
+    .registers 15
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 116
+    sget-object v0, Lcom/google/googlenav/ui/u;->i:Lcom/google/googlenav/ui/u;
+
+    if-nez v0, :cond_b
+
+    .line 117
+    new-instance v0, Lcom/google/googlenav/ui/u;
+
+    invoke-direct {v0}, Lcom/google/googlenav/ui/u;-><init>()V
+
+    sput-object v0, Lcom/google/googlenav/ui/u;->i:Lcom/google/googlenav/ui/u;
+
+    .line 119
+    :cond_b
+    sget-object v0, Lcom/google/googlenav/ui/u;->i:Lcom/google/googlenav/ui/u;
+
+    move-object v1, p0
+
+    move v2, p1
+
+    move v3, p2
+
+    move v4, p3
+
+    move v5, p4
+
+    move v6, p5
+
+    move v7, p6
+
+    invoke-direct/range {v0 .. v7}, Lcom/google/googlenav/ui/u;->b(LS/e;IIIIII)V
+
+    .line 121
+    sget-object v0, Lcom/google/googlenav/ui/u;->i:Lcom/google/googlenav/ui/u;
+
+    return-object v0
+.end method
+
+.method public static b(LS/e;II)Lcom/google/googlenav/ui/u;
+    .registers 11
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 140
+    new-instance v0, Lcom/google/googlenav/ui/u;
+
+    invoke-direct {v0}, Lcom/google/googlenav/ui/u;-><init>()V
+
+    move-object v1, p0
+
+    move v2, p1
+
+    move v3, p2
+
+    move v5, v4
+
+    move v6, p1
+
+    move v7, p2
+
+    .line 141
+    invoke-direct/range {v0 .. v7}, Lcom/google/googlenav/ui/u;->b(LS/e;IIIIII)V
+
+    .line 142
+    return-object v0
+.end method
+
+.method private b(LS/e;IIIIII)V
+    .registers 14
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 64
+    iput p2, p0, Lcom/google/googlenav/ui/u;->c:I
+
+    .line 65
+    iput p3, p0, Lcom/google/googlenav/ui/u;->d:I
+
+    .line 66
+    iput p4, p0, Lcom/google/googlenav/ui/u;->e:I
+
+    .line 67
+    iput p5, p0, Lcom/google/googlenav/ui/u;->f:I
+
+    .line 68
+    iput p6, p0, Lcom/google/googlenav/ui/u;->g:I
+
+    .line 69
+    iput p7, p0, Lcom/google/googlenav/ui/u;->h:I
+
+    .line 70
+    iput-object p1, p0, Lcom/google/googlenav/ui/u;->a:LS/e;
+
+    .line 72
+    if-nez p4, :cond_19
+
+    if-nez p5, :cond_19
+
+    if-ne p6, p2, :cond_19
+
+    if-ne p7, p3, :cond_19
+
+    .line 75
+    iput-object p1, p0, Lcom/google/googlenav/ui/u;->b:LS/e;
+
+    .line 86
+    :goto_18
+    return-void
+
+    .line 77
+    :cond_19
+    iget-object v0, p0, Lcom/google/googlenav/ui/u;->b:LS/e;
+
+    instance-of v0, v0, LS/q;
+
+    if-eqz v0, :cond_2d
+
+    .line 79
+    iget-object v0, p0, Lcom/google/googlenav/ui/u;->b:LS/e;
+
+    check-cast v0, LS/q;
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/u;->a:LS/e;
+
+    move v2, p4
+
+    move v3, p5
+
+    move v4, p6
+
+    move v5, p7
+
+    invoke-virtual/range {v0 .. v5}, LS/q;->a(LS/e;IIII)V
+
+    goto :goto_18
+
+    .line 82
+    :cond_2d
+    new-instance v0, LS/q;
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/u;->a:LS/e;
+
+    move v2, p4
+
+    move v3, p5
+
+    move v4, p6
+
+    move v5, p7
+
+    invoke-direct/range {v0 .. v5}, LS/q;-><init>(LS/e;IIII)V
+
+    iput-object v0, p0, Lcom/google/googlenav/ui/u;->b:LS/e;
+
+    goto :goto_18
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 4
+.method public a()LS/e;
+    .registers 2
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/U;->a:Lcom/google/googlenav/ui/D;
+    .prologue
+    .line 150
+    iget-object v0, p0, Lcom/google/googlenav/ui/u;->a:LS/e;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/D;->g(Lcom/google/googlenav/ui/D;)LaE/h;
+    return-object v0
+.end method
 
-    move-result-object v0
+.method public b()LS/e;
+    .registers 2
 
-    invoke-virtual {v0}, LaE/h;->m()Z
+    .prologue
+    .line 158
+    iget-object v0, p0, Lcom/google/googlenav/ui/u;->b:LS/e;
 
-    move-result v0
+    return-object v0
+.end method
 
-    if-eqz v0, :cond_42
+.method public c()I
+    .registers 2
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/U;->a:Lcom/google/googlenav/ui/D;
+    .prologue
+    .line 170
+    iget v0, p0, Lcom/google/googlenav/ui/u;->e:I
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/U;->a:Lcom/google/googlenav/ui/D;
+    return v0
+.end method
 
-    invoke-static {v1}, Lcom/google/googlenav/ui/D;->g(Lcom/google/googlenav/ui/D;)LaE/h;
+.method public d()I
+    .registers 2
 
-    move-result-object v1
+    .prologue
+    .line 174
+    iget v0, p0, Lcom/google/googlenav/ui/u;->f:I
 
-    invoke-virtual {v1}, LaE/h;->q()LaJ/B;
+    return v0
+.end method
 
-    move-result-object v1
+.method public e()I
+    .registers 2
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/U;->a:Lcom/google/googlenav/ui/D;
+    .prologue
+    .line 178
+    iget v0, p0, Lcom/google/googlenav/ui/u;->g:I
 
-    invoke-static {v2}, Lcom/google/googlenav/ui/D;->g(Lcom/google/googlenav/ui/D;)LaE/h;
+    return v0
+.end method
 
-    move-result-object v2
+.method public f()I
+    .registers 2
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/googlenav/ui/D;->a(LaJ/B;LaE/h;)V
+    .prologue
+    .line 182
+    iget v0, p0, Lcom/google/googlenav/ui/u;->h:I
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/U;->a:Lcom/google/googlenav/ui/D;
+    return v0
+.end method
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/D;->h(Lcom/google/googlenav/ui/D;)Lax/bD;
+.method public g()Z
+    .registers 3
 
-    move-result-object v0
+    .prologue
+    .line 205
+    iget-object v0, p0, Lcom/google/googlenav/ui/u;->b:LS/e;
 
-    if-eqz v0, :cond_42
+    iget-object v1, p0, Lcom/google/googlenav/ui/u;->a:LS/e;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/U;->a:Lcom/google/googlenav/ui/D;
+    if-ne v0, v1, :cond_8
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/D;->h(Lcom/google/googlenav/ui/D;)Lax/bD;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    :goto_7
+    return v0
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/U;->a:Lcom/google/googlenav/ui/D;
+    :cond_8
+    const/4 v0, 0x0
 
-    invoke-static {v1}, Lcom/google/googlenav/ui/D;->g(Lcom/google/googlenav/ui/D;)LaE/h;
+    goto :goto_7
+.end method
 
-    move-result-object v1
+.method public h()V
+    .registers 6
 
-    invoke-virtual {v1}, LaE/h;->q()LaJ/B;
+    .prologue
+    .line 212
+    iget-object v0, p0, Lcom/google/googlenav/ui/u;->a:LS/e;
 
-    move-result-object v1
+    const/high16 v1, -0x100
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/U;->a:Lcom/google/googlenav/ui/D;
+    invoke-interface {v0, v1}, LS/e;->a(I)V
 
-    invoke-static {v2}, Lcom/google/googlenav/ui/D;->g(Lcom/google/googlenav/ui/D;)LaE/h;
+    .line 215
+    iget-object v0, p0, Lcom/google/googlenav/ui/u;->a:LS/e;
 
-    move-result-object v2
+    iget v1, p0, Lcom/google/googlenav/ui/u;->e:I
 
-    invoke-virtual {v0, v1, v2}, Lax/bD;->a(LaJ/B;LaE/h;)V
+    add-int/lit8 v1, v1, -0x1
 
-    :cond_42
+    iget v2, p0, Lcom/google/googlenav/ui/u;->f:I
+
+    add-int/lit8 v2, v2, -0x1
+
+    iget v3, p0, Lcom/google/googlenav/ui/u;->g:I
+
+    add-int/lit8 v3, v3, 0x1
+
+    iget v4, p0, Lcom/google/googlenav/ui/u;->h:I
+
+    add-int/lit8 v4, v4, 0x1
+
+    invoke-interface {v0, v1, v2, v3, v4}, LS/e;->c(IIII)V
+
+    .line 216
     return-void
 .end method

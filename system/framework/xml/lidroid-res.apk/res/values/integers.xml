@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="config_rotaryOuterRadiusDIP">390</integer>
+    <integer name="config_rotaryStrokeWidthDIP">83</integer>
+    <integer name="config_rotaryMarginBottomDIP">60</integer>
+    <integer name="config_lenseTimeLabelOffsetDIP">0</integer>
+    <integer name="config_ringThresholdDIP">160</integer>
+    <integer name="config_ringBaselineBottomDIP">150</integer>
+    <integer name="config_ringCenterOffsetDIP">30</integer>
+    <integer name="config_ringSecIconSizeDIP">40</integer>
+    <integer name="config_ringSecBaselineOffsetDIP">30</integer>
+    <integer name="config_ringSecCenterOffsetDIP">30</integer>
+    <integer name="quickpanel_scroll_threshold_port">5</integer>
+    <integer name="quickpanel_scroll_threshold_land">8</integer>
+</resources>

@@ -6,7 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/android/finsky/remoting/protos/LibraryReplication$LibraryReplicationResponse;
+        Lcom/google/android/finsky/remoting/protos/LibraryReplication$LibraryReplicationResponse;,
+        Lcom/google/android/finsky/remoting/protos/LibraryReplication$ClientLibraryState;,
+        Lcom/google/android/finsky/remoting/protos/LibraryReplication$LibraryReplicationRequest;
     }
 .end annotation
 

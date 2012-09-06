@@ -1,83 +1,183 @@
 .class final Lcom/google/common/collect/fw;
-.super Lcom/google/common/collect/AbstractIterator;
+.super Ljava/util/AbstractSet;
 .source "SourceFile"
 
 
 # instance fields
-.field a:I
-
-.field final synthetic b:Lcom/google/common/collect/RegularImmutableMap$Values;
+.field final synthetic a:Lcom/google/common/collect/MapMakerInternalMap;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/RegularImmutableMap$Values;)V
-    .registers 3
+.method constructor <init>(Lcom/google/common/collect/MapMakerInternalMap;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 189
-    iput-object p1, p0, Lcom/google/common/collect/fw;->b:Lcom/google/common/collect/RegularImmutableMap$Values;
+    .line 3885
+    iput-object p1, p0, Lcom/google/common/collect/fw;->a:Lcom/google/common/collect/MapMakerInternalMap;
 
-    invoke-direct {p0}, Lcom/google/common/collect/AbstractIterator;-><init>()V
-
-    .line 190
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/google/common/collect/fw;->a:I
+    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a()Ljava/lang/Object;
-    .registers 4
+.method public final clear()V
+    .registers 2
 
     .prologue
-    .line 192
-    iget v0, p0, Lcom/google/common/collect/fw;->a:I
+    .line 3929
+    iget-object v0, p0, Lcom/google/common/collect/fw;->a:Lcom/google/common/collect/MapMakerInternalMap;
 
-    iget-object v1, p0, Lcom/google/common/collect/fw;->b:Lcom/google/common/collect/RegularImmutableMap$Values;
+    invoke-virtual {v0}, Lcom/google/common/collect/MapMakerInternalMap;->clear()V
 
-    iget-object v1, v1, Lcom/google/common/collect/RegularImmutableMap$Values;->map:Lcom/google/common/collect/RegularImmutableMap;
+    .line 3930
+    return-void
+.end method
 
-    #getter for: Lcom/google/common/collect/RegularImmutableMap;->entries:[Ljava/util/Map$Entry;
-    invoke-static {v1}, Lcom/google/common/collect/RegularImmutableMap;->access$000(Lcom/google/common/collect/RegularImmutableMap;)[Ljava/util/Map$Entry;
+.method public final contains(Ljava/lang/Object;)Z
+    .registers 6
+    .parameter
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 3894
+    instance-of v1, p1, Ljava/util/Map$Entry;
+
+    if-nez v1, :cond_6
+
+    .line 3904
+    :cond_5
+    :goto_5
+    return v0
+
+    .line 3897
+    :cond_6
+    check-cast p1, Ljava/util/Map$Entry;
+
+    .line 3898
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
-    array-length v1, v1
+    .line 3899
+    if-eqz v1, :cond_5
 
-    if-ge v0, v1, :cond_22
+    .line 3902
+    iget-object v2, p0, Lcom/google/common/collect/fw;->a:Lcom/google/common/collect/MapMakerInternalMap;
 
-    iget-object v0, p0, Lcom/google/common/collect/fw;->b:Lcom/google/common/collect/RegularImmutableMap$Values;
+    invoke-virtual {v2, v1}, Lcom/google/common/collect/MapMakerInternalMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, v0, Lcom/google/common/collect/RegularImmutableMap$Values;->map:Lcom/google/common/collect/RegularImmutableMap;
+    move-result-object v1
 
-    #getter for: Lcom/google/common/collect/RegularImmutableMap;->entries:[Ljava/util/Map$Entry;
-    invoke-static {v0}, Lcom/google/common/collect/RegularImmutableMap;->access$000(Lcom/google/common/collect/RegularImmutableMap;)[Ljava/util/Map$Entry;
+    .line 3904
+    if-eqz v1, :cond_5
 
-    move-result-object v0
+    iget-object v2, p0, Lcom/google/common/collect/fw;->a:Lcom/google/common/collect/MapMakerInternalMap;
 
-    iget v1, p0, Lcom/google/common/collect/fw;->a:I
+    iget-object v2, v2, Lcom/google/common/collect/MapMakerInternalMap;->valueEquivalence:Lcom/google/common/base/Equivalence;
 
-    add-int/lit8 v2, v1, 0x1
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    iput v2, p0, Lcom/google/common/collect/fw;->a:I
+    move-result-object v3
 
-    aget-object v0, v0, v1
+    invoke-virtual {v2, v3, v1}, Lcom/google/common/base/Equivalence;->equivalent(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    move-result v1
 
-    move-result-object v0
+    if-eqz v1, :cond_5
 
-    :goto_21
+    const/4 v0, 0x1
+
+    goto :goto_5
+.end method
+
+.method public final isEmpty()Z
+    .registers 2
+
+    .prologue
+    .line 3924
+    iget-object v0, p0, Lcom/google/common/collect/fw;->a:Lcom/google/common/collect/MapMakerInternalMap;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/MapMakerInternalMap;->isEmpty()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .registers 3
+
+    .prologue
+    .line 3889
+    new-instance v0, Lcom/google/common/collect/fv;
+
+    iget-object v1, p0, Lcom/google/common/collect/fw;->a:Lcom/google/common/collect/MapMakerInternalMap;
+
+    invoke-direct {v0, v1}, Lcom/google/common/collect/fv;-><init>(Lcom/google/common/collect/MapMakerInternalMap;)V
+
     return-object v0
+.end method
 
-    :cond_22
-    invoke-virtual {p0}, Lcom/google/common/collect/fw;->b()Ljava/lang/Object;
+.method public final remove(Ljava/lang/Object;)Z
+    .registers 6
+    .parameter
 
-    move-result-object v0
+    .prologue
+    const/4 v0, 0x0
 
-    goto :goto_21
+    .line 3909
+    instance-of v1, p1, Ljava/util/Map$Entry;
+
+    if-nez v1, :cond_6
+
+    .line 3914
+    :cond_5
+    :goto_5
+    return v0
+
+    .line 3912
+    :cond_6
+    check-cast p1, Ljava/util/Map$Entry;
+
+    .line 3913
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 3914
+    if-eqz v1, :cond_5
+
+    iget-object v2, p0, Lcom/google/common/collect/fw;->a:Lcom/google/common/collect/MapMakerInternalMap;
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v1, v3}, Lcom/google/common/collect/MapMakerInternalMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    const/4 v0, 0x1
+
+    goto :goto_5
+.end method
+
+.method public final size()I
+    .registers 2
+
+    .prologue
+    .line 3919
+    iget-object v0, p0, Lcom/google/common/collect/fw;->a:Lcom/google/common/collect/MapMakerInternalMap;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/MapMakerInternalMap;->size()I
+
+    move-result v0
+
+    return v0
 .end method

@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 156
+    .line 155
     iput-object p1, p0, Lcom/google/android/finsky/analytics/DfeAnalytics$2;->this$0:Lcom/google/android/finsky/analytics/DfeAnalytics;
 
     iput p2, p0, Lcom/google/android/finsky/analytics/DfeAnalytics$2;->val$currentLogCount:I
@@ -47,7 +47,7 @@
     .parameter "error"
 
     .prologue
-    .line 159
+    .line 158
     const-string v0, "Failed to send %d events because of [%s]"
 
     const/4 v1, 0x2
@@ -70,6 +70,6 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 160
+    .line 159
     return-void
 .end method

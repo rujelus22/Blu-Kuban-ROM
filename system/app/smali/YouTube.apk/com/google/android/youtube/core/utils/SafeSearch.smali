@@ -60,7 +60,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 67
     iget-object v0, p0, Lcom/google/android/youtube/core/utils/SafeSearch;->c:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -87,9 +87,14 @@
 
     move-result-object v0
 
-    if-eq v0, p1, :cond_1c
+    if-eq v0, p1, :cond_21
 
     .line 60
+    iget-object v0, p0, Lcom/google/android/youtube/core/utils/SafeSearch;->c:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+
+    .line 61
     iget-object v0, p0, Lcom/google/android/youtube/core/utils/SafeSearch;->b:Landroid/content/SharedPreferences;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -106,17 +111,12 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    .line 62
-    :cond_1c
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/SafeSearch;->c:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->a(Landroid/content/SharedPreferences$Editor;)V
     :try_end_21
     .catchall {:try_start_1 .. :try_end_21} :catchall_23
 
-    .line 63
+    .line 64
+    :cond_21
     monitor-exit p0
 
     return-void
@@ -134,7 +134,7 @@
     .registers 2
 
     .prologue
-    .line 70
+    .line 71
     iget-object v0, p0, Lcom/google/android/youtube/core/utils/SafeSearch;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
@@ -167,13 +167,9 @@
     .line 51
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "parental control is "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/android/youtube/core/utils/SafeSearch;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -196,7 +192,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_4a
+    if-nez v0, :cond_46
 
     .line 53
     iget-object v0, p0, Lcom/google/android/youtube/core/utils/SafeSearch;->b:Landroid/content/SharedPreferences;
@@ -223,6 +219,6 @@
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/core/utils/SafeSearch;->a(Lcom/google/android/youtube/core/utils/SafeSearch$SafeSearchMode;)V
 
     .line 56
-    :cond_4a
+    :cond_46
     return-void
 .end method

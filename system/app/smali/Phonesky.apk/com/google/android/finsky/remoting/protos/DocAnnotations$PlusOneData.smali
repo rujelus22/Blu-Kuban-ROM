@@ -48,33 +48,33 @@
     .prologue
     const-wide/16 v1, 0x0
 
-    .line 1246
+    .line 701
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1251
+    .line 706
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->setByUser_:Z
 
-    .line 1268
+    .line 723
     iput-wide v1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->total_:J
 
-    .line 1285
+    .line 740
     iput-wide v1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->circlesTotal_:J
 
-    .line 1301
+    .line 756
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->circlesPeople_:Ljava/util/List;
 
-    .line 1361
+    .line 817
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->cachedSize:I
 
-    .line 1246
+    .line 701
     return-void
 .end method
 
@@ -85,17 +85,17 @@
     .parameter "value"
 
     .prologue
-    .line 1318
+    .line 773
     if-nez p1, :cond_8
 
-    .line 1319
+    .line 774
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1321
+    .line 776
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->circlesPeople_:Ljava/util/List;
 
@@ -105,20 +105,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 1322
+    .line 777
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->circlesPeople_:Ljava/util/List;
 
-    .line 1324
+    .line 779
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->circlesPeople_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1325
+    .line 780
     return-object p0
 .end method
 
@@ -126,15 +126,15 @@
     .registers 2
 
     .prologue
-    .line 1363
+    .line 820
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 1365
+    .line 822
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getSerializedSize()I
 
-    .line 1367
+    .line 824
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->cachedSize:I
 
@@ -145,7 +145,7 @@
     .registers 2
 
     .prologue
-    .line 1306
+    .line 761
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->circlesPeople_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -168,7 +168,7 @@
     .end annotation
 
     .prologue
-    .line 1304
+    .line 759
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->circlesPeople_:Ljava/util/List;
 
     return-object v0
@@ -178,7 +178,7 @@
     .registers 3
 
     .prologue
-    .line 1286
+    .line 741
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->circlesTotal_:J
 
     return-wide v0
@@ -188,10 +188,10 @@
     .registers 7
 
     .prologue
-    .line 1371
+    .line 829
     const/4 v2, 0x0
 
-    .line 1372
+    .line 830
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->hasSetByUser()Z
 
@@ -199,7 +199,7 @@
 
     if-eqz v3, :cond_11
 
-    .line 1373
+    .line 831
     const/4 v3, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getSetByUser()Z
@@ -212,7 +212,7 @@
 
     add-int/2addr v2, v3
 
-    .line 1376
+    .line 834
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->hasTotal()Z
 
@@ -220,7 +220,7 @@
 
     if-eqz v3, :cond_21
 
-    .line 1377
+    .line 835
     const/4 v3, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getTotal()J
@@ -233,7 +233,7 @@
 
     add-int/2addr v2, v3
 
-    .line 1380
+    .line 838
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->hasCirclesTotal()Z
 
@@ -241,7 +241,7 @@
 
     if-eqz v3, :cond_31
 
-    .line 1381
+    .line 839
     const/4 v3, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getCirclesTotal()J
@@ -254,7 +254,7 @@
 
     add-int/2addr v2, v3
 
-    .line 1384
+    .line 842
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getCirclesPeopleList()Ljava/util/List;
 
@@ -278,7 +278,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;
 
-    .line 1385
+    .line 843
     .local v0, element:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;
     const/4 v3, 0x4
 
@@ -290,12 +290,12 @@
 
     goto :goto_39
 
-    .line 1388
+    .line 846
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;
     :cond_4c
     iput v2, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->cachedSize:I
 
-    .line 1389
+    .line 847
     return v2
 .end method
 
@@ -303,7 +303,7 @@
     .registers 2
 
     .prologue
-    .line 1252
+    .line 707
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->setByUser_:Z
 
     return v0
@@ -313,7 +313,7 @@
     .registers 3
 
     .prologue
-    .line 1269
+    .line 724
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->total_:J
 
     return-wide v0
@@ -323,7 +323,7 @@
     .registers 2
 
     .prologue
-    .line 1287
+    .line 742
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->hasCirclesTotal:Z
 
     return v0
@@ -333,7 +333,7 @@
     .registers 2
 
     .prologue
-    .line 1253
+    .line 708
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->hasSetByUser:Z
 
     return v0
@@ -343,7 +343,7 @@
     .registers 2
 
     .prologue
-    .line 1270
+    .line 725
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->hasTotal:Z
 
     return v0
@@ -359,29 +359,29 @@
     .end annotation
 
     .prologue
-    .line 1396
+    .line 855
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1397
+    .line 856
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_32
 
-    .line 1401
+    .line 860
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 1402
+    .line 861
     :sswitch_d
     return-object p0
 
-    .line 1407
+    .line 866
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -391,7 +391,7 @@
 
     goto :goto_0
 
-    .line 1411
+    .line 870
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -401,7 +401,7 @@
 
     goto :goto_0
 
-    .line 1415
+    .line 874
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -411,22 +411,22 @@
 
     goto :goto_0
 
-    .line 1419
+    .line 878
     :sswitch_26
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;-><init>()V
 
-    .line 1420
+    .line 879
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1421
+    .line 880
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->addCirclesPeople(Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
 
     goto :goto_0
 
-    .line 1397
+    .line 856
     :sswitch_data_32
     .sparse-switch
         0x0 -> :sswitch_d
@@ -447,7 +447,7 @@
     .end annotation
 
     .prologue
-    .line 1244
+    .line 698
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
 
     move-result-object v0
@@ -460,15 +460,15 @@
     .parameter "value"
 
     .prologue
-    .line 1289
+    .line 744
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->hasCirclesTotal:Z
 
-    .line 1290
+    .line 745
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->circlesTotal_:J
 
-    .line 1291
+    .line 746
     return-object p0
 .end method
 
@@ -477,15 +477,15 @@
     .parameter "value"
 
     .prologue
-    .line 1255
+    .line 710
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->hasSetByUser:Z
 
-    .line 1256
+    .line 711
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->setByUser_:Z
 
-    .line 1257
+    .line 712
     return-object p0
 .end method
 
@@ -494,15 +494,15 @@
     .parameter "value"
 
     .prologue
-    .line 1272
+    .line 727
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->hasTotal:Z
 
-    .line 1273
+    .line 728
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->total_:J
 
-    .line 1274
+    .line 729
     return-object p0
 .end method
 
@@ -516,14 +516,14 @@
     .end annotation
 
     .prologue
-    .line 1347
+    .line 803
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->hasSetByUser()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 1348
+    .line 804
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getSetByUser()Z
@@ -532,7 +532,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 1350
+    .line 806
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->hasTotal()Z
 
@@ -540,7 +540,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 1351
+    .line 807
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getTotal()J
@@ -549,7 +549,7 @@
 
     invoke-virtual {p1, v2, v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 1353
+    .line 809
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->hasCirclesTotal()Z
 
@@ -557,7 +557,7 @@
 
     if-eqz v2, :cond_2a
 
-    .line 1354
+    .line 810
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getCirclesTotal()J
@@ -566,7 +566,7 @@
 
     invoke-virtual {p1, v2, v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 1356
+    .line 812
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getCirclesPeopleList()Ljava/util/List;
 
@@ -590,7 +590,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;
 
-    .line 1357
+    .line 813
     .local v0, element:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;
     const/4 v2, 0x4
 
@@ -598,7 +598,7 @@
 
     goto :goto_32
 
-    .line 1359
+    .line 815
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;
     :cond_43
     return-void

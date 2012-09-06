@@ -30,19 +30,19 @@
     .registers 3
 
     .prologue
-    .line 86
+    .line 85
     invoke-virtual {p0}, Lcom/android/email/activity/DeleteMessageConfirmationDialog;->getTargetFragment()Landroid/app/Fragment;
 
     move-result-object v0
 
-    .line 87
+    .line 86
     .local v0, targetFragment:Landroid/app/Fragment;
     if-eqz v0, :cond_9
 
-    .line 89
+    .line 88
     check-cast v0, Lcom/android/email/activity/DeleteMessageConfirmationDialog$Callback;
 
-    .line 92
+    .line 91
     .end local v0           #targetFragment:Landroid/app/Fragment;
     :goto_8
     return-object v0
@@ -66,35 +66,35 @@
     .parameter "callbackFragment"
 
     .prologue
-    .line 51
+    .line 50
     new-instance v1, Lcom/android/email/activity/DeleteMessageConfirmationDialog;
 
     invoke-direct {v1}, Lcom/android/email/activity/DeleteMessageConfirmationDialog;-><init>()V
 
-    .line 52
+    .line 51
     .local v1, dialog:Lcom/android/email/activity/DeleteMessageConfirmationDialog;
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 53
+    .line 52
     .local v0, args:Landroid/os/Bundle;
     const-string v2, "count_messages"
 
     invoke-virtual {v0, v2, p0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 54
+    .line 53
     invoke-virtual {v1, v0}, Lcom/android/email/activity/DeleteMessageConfirmationDialog;->setArguments(Landroid/os/Bundle;)V
 
-    .line 55
+    .line 54
     if-eqz p1, :cond_18
 
-    .line 56
+    .line 55
     const/4 v2, 0x0
 
     invoke-virtual {v1, p1, v2}, Lcom/android/email/activity/DeleteMessageConfirmationDialog;->setTargetFragment(Landroid/app/Fragment;I)V
 
-    .line 58
+    .line 57
     :cond_18
     return-object v1
 .end method
@@ -107,14 +107,14 @@
     .parameter "which"
 
     .prologue
-    .line 78
+    .line 77
     packed-switch p2, :pswitch_data_c
 
-    .line 83
+    .line 82
     :goto_3
     return-void
 
-    .line 80
+    .line 79
     :pswitch_4
     invoke-direct {p0}, Lcom/android/email/activity/DeleteMessageConfirmationDialog;->getCallback()Lcom/android/email/activity/DeleteMessageConfirmationDialog$Callback;
 
@@ -124,7 +124,7 @@
 
     goto :goto_3
 
-    .line 78
+    .line 77
     :pswitch_data_c
     .packed-switch -0x1
         :pswitch_4
@@ -136,7 +136,7 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 63
+    .line 62
     invoke-virtual {p0}, Lcom/android/email/activity/DeleteMessageConfirmationDialog;->getArguments()Landroid/os/Bundle;
 
     move-result-object v4
@@ -147,27 +147,27 @@
 
     move-result v2
 
-    .line 65
+    .line 64
     .local v2, countMessages:I
     invoke-virtual {p0}, Lcom/android/email/activity/DeleteMessageConfirmationDialog;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    .line 66
+    .line 65
     .local v1, context:Landroid/content/Context;
-    invoke-virtual {v1}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 67
+    .line 66
     .local v3, res:Landroid/content/res/Resources;
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 68
+    .line 67
     .local v0, b:Landroid/app/AlertDialog$Builder;
-    const v4, 0x7f08003f
+    const v4, 0x7f08009f
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -183,7 +183,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0d0008
+    const v5, 0x7f0c0007
 
     invoke-virtual {v3, v5, v2}, Landroid/content/res/Resources;->getQuantityString(II)Ljava/lang/String;
 
@@ -193,19 +193,19 @@
 
     move-result-object v4
 
-    const v5, 0x7f080042
+    const v5, 0x7f080009
 
     invoke-virtual {v4, v5, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
-    const v5, 0x7f080043
+    const v5, 0x7f08000a
 
     const/4 v6, 0x0
 
     invoke-virtual {v4, v5, v6}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 73
+    .line 72
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v4

@@ -1851,7 +1851,7 @@
     .registers 3
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
     .line 4999
     iget-boolean v0, p0, Landroid/widget/AbsListView;->mScrollingCacheEnabled:Z
@@ -2373,7 +2373,7 @@
     invoke-virtual {p0, v2}, Landroid/widget/AbsListView;->setAlwaysDrawnWithCacheEnabled(Z)V
 
     .line 892
-    invoke-virtual {p0, v1}, Landroid/widget/AbsListView;->setScrollingCacheEnabled(Z)V
+    invoke-virtual {p0, v2}, Landroid/widget/AbsListView;->setScrollingCacheEnabled(Z)V
 
     .line 894
     iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
@@ -15409,7 +15409,7 @@
 
 .method public setScrollingCacheEnabled(Z)V
     .registers 3
-    .parameter "enabled"
+    .parameter "disabled"
 
     .prologue
     .line 1445

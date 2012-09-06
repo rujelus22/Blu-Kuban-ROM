@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="abs__action_bar_home_description">Navigate home</string>
+    <string name="abs__action_bar_up_description">Navigate up</string>
+    <string name="abs__action_menu_overflow_description">More options</string>
+    <string name="abs__action_mode_done">Done</string>
+    <string name="abs__activity_chooser_view_see_all">See all...</string>
+    <string name="abs__activity_chooser_view_dialog_title_default">Select activity</string>
+    <string name="abs__share_action_provider_share_with">Share with...</string>
+    <string name="abs__activitychooserview_choose_application">Choose an application</string>
+    <string name="abs__shareactionprovider_share_with">Share with</string>
+    <string name="abs__shareactionprovider_share_with_application">Share with %s</string>
+    <string name="hello">Hello World, ExtensiveTweakerActivity!</string>
+    <string name="app_name">ExTweaks</string>
+    <string name="key_profiles">key_profiles</string>
+    <string name="manage_profiles">Manage profiles</string>
+    <string name="rename_profile">Rename profile</string>
+    <string name="loading">loading...</string>
+    <string name="rom_info">ROM info:</string>
+    <string name="busybox_info">Busybox info:</string>
+    <string name="kernel_info">Kernel info:</string>
+    <string name="cpu_info">CPU info:</string>
+    <string name="no_data">No data</string>
+    <string name="no_compatible_interfaces_detected">No compatible interfaces detected</string>
+    <string name="medium_text">Medium Text</string>
+    <string name="apply_changes">Apply changes</string>
+    <string name="discard_changes">Discard changes</string>
+</resources>

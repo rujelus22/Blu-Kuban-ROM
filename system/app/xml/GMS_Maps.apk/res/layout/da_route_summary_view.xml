@@ -13,7 +13,7 @@
             <TextView android:textSize="18.0dip" android:textStyle="bold" android:textColor="@color/da_primary_text" android:ellipsize="end" android:id="@id/da_destinationTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
             <TextView android:textSize="14.0dip" android:textColor="@color/da_primary_text" android:id="@id/da_destinationAddress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="4" android:lineSpacingExtra="1.0dip" />
         </LinearLayout>
-        <ImageView android:id="@id/da_routeOverviewButton" android:background="@drawable/on_map_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginBottom="4.0dip" android:src="@drawable/da_ic_menu_route_info" />
+        <ImageView android:id="@id/da_routeOverviewButton" android:background="@drawable/on_map_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginBottom="4.0dip" android:src="@drawable/da_ic_btn_route_info" />
     </LinearLayout>
     <ImageView android:id="@id/da_separator" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="-1.0px" android:layout_marginBottom="-1.0px" android:src="@drawable/da_horizontal_separator" android:scaleType="fitXY" />
     <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">

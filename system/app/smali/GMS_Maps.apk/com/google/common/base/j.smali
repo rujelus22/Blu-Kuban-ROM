@@ -1,41 +1,45 @@
-.class Lcom/google/common/base/j;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/common/base/k;
+.class final Lcom/google/common/base/j;
+.super Lcom/google/common/base/b;
+.source "SourceFile"
 
 
 # direct methods
 .method constructor <init>()V
     .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 163
+    invoke-direct {p0}, Lcom/google/common/base/b;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Ljava/lang/Class;
+.method public bridge synthetic a(Ljava/lang/Object;)Z
     .registers 3
+    .parameter
 
-    :try_start_0
-    const-string v0, "J.a"
+    .prologue
+    .line 163
+    check-cast p1, Ljava/lang/Character;
 
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-    :try_end_5
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_5} :catch_7
+    invoke-super {p0, p1}, Lcom/google/common/base/b;->a(Ljava/lang/Character;)Z
 
-    move-result-object v0
+    move-result v0
 
-    return-object v0
+    return v0
+.end method
 
-    :catch_7
-    move-exception v0
+.method public b(C)Z
+    .registers 3
+    .parameter
 
-    new-instance v1, Ljava/lang/AssertionError;
+    .prologue
+    .line 165
+    invoke-static {p1}, Ljava/lang/Character;->isUpperCase(C)Z
 
-    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+    move-result v0
 
-    throw v1
+    return v0
 .end method

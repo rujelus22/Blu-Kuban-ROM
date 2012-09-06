@@ -28,6 +28,14 @@
         <item quantity="other">%1$d amasekhondi adlule</item>
         <item quantity="one">1 isekhondi eledlule</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Iphelelwa isikhathi ezinsukwini ezingu-%1$d</item>
+        <item quantity="one">Izophelelwa isikhathi esikhathini esingusuku oluyi-1</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Izophelelwa isikhathi ema %1$d horeni</item>
+        <item quantity="one">Iphelelwa isikhathi ehoreni elingu-1</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">ukulayisha okusha</item>
         <item quantity="one">ukulayisha okusha</item>

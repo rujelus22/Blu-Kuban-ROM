@@ -1,5 +1,5 @@
 .class public final Lcom/google/android/youtube/core/a/b;
-.super Lcom/google/android/youtube/core/a/a;
+.super Landroid/widget/BaseAdapter;
 .source "SourceFile"
 
 # interfaces
@@ -11,21 +11,29 @@
 
 .field private final b:Landroid/view/View;
 
-.field private c:Z
+.field private final c:Z
+
+.field private d:Z
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/core/a/a;Landroid/view/View;)V
-    .registers 4
+.method private constructor <init>(Lcom/google/android/youtube/core/a/a;ZLandroid/view/View;Z)V
+    .registers 7
+    .parameter
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 28
-    invoke-direct {p0}, Lcom/google/android/youtube/core/a/a;-><init>()V
+    const/4 v1, 0x0
 
-    .line 29
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 33
+    invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
+
+    .line 34
+    const-string v0, "target cannot be null"
+
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -33,8 +41,10 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
 
-    .line 30
-    invoke-static {p2}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 35
+    const-string v0, "paddingView cannot be null"
+
+    invoke-static {p3, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -42,18 +52,104 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/core/a/b;->b:Landroid/view/View;
 
-    .line 31
+    .line 36
+    iput-boolean v1, p0, Lcom/google/android/youtube/core/a/b;->c:Z
+
+    .line 37
     new-instance v0, Lcom/google/android/youtube/core/a/c;
 
-    invoke-direct {v0, p0}, Lcom/google/android/youtube/core/a/c;-><init>(Lcom/google/android/youtube/core/a/b;)V
+    invoke-direct {v0, p0, v1}, Lcom/google/android/youtube/core/a/c;-><init>(Lcom/google/android/youtube/core/a/b;B)V
 
     invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/a/a;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
 
-    .line 32
+    .line 38
+    if-eqz p4, :cond_28
+
+    .line 39
+    invoke-virtual {p0}, Lcom/google/android/youtube/core/a/b;->b()V
+
+    .line 43
+    :goto_27
+    return-void
+
+    .line 41
+    :cond_28
     invoke-virtual {p0}, Lcom/google/android/youtube/core/a/b;->c()V
 
-    .line 33
-    return-void
+    goto :goto_27
+.end method
+
+.method private a(I)I
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 146
+    iget-boolean v0, p0, Lcom/google/android/youtube/core/a/b;->d:Z
+
+    if-eqz v0, :cond_a
+
+    iget-boolean v0, p0, Lcom/google/android/youtube/core/a/b;->c:Z
+
+    if-eqz v0, :cond_a
+
+    add-int/lit8 p1, p1, -0x1
+
+    :cond_a
+    return p1
+.end method
+
+.method public static a(Lcom/google/android/youtube/core/a/a;Landroid/view/View;Z)Lcom/google/android/youtube/core/a/b;
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 52
+    new-instance v0, Lcom/google/android/youtube/core/a/b;
+
+    invoke-direct {v0, p0, v1, p1, v1}, Lcom/google/android/youtube/core/a/b;-><init>(Lcom/google/android/youtube/core/a/a;ZLandroid/view/View;Z)V
+
+    return-object v0
+.end method
+
+.method private b(I)Z
+    .registers 4
+    .parameter
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 150
+    iget-boolean v1, p0, Lcom/google/android/youtube/core/a/b;->d:Z
+
+    if-eqz v1, :cond_d
+
+    iget-boolean v1, p0, Lcom/google/android/youtube/core/a/b;->c:Z
+
+    if-eqz v1, :cond_e
+
+    move v1, v0
+
+    :goto_a
+    if-ne p1, v1, :cond_d
+
+    const/4 v0, 0x1
+
+    :cond_d
+    return v0
+
+    :cond_e
+    iget-object v1, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/a/a;->getCount()I
+
+    move-result v1
+
+    goto :goto_a
 .end method
 
 
@@ -62,12 +158,29 @@
     .registers 2
 
     .prologue
-    .line 78
+    .line 105
     iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
 
     invoke-virtual {v0}, Lcom/google/android/youtube/core/a/a;->a()V
 
-    .line 79
+    .line 106
+    return-void
+.end method
+
+.method public final a(ILjava/lang/Object;)V
+    .registers 5
+    .parameter
+    .parameter
+
+    .prologue
+    .line 101
+    iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1, p2}, Lcom/google/android/youtube/core/a/a;->b(ILjava/lang/Object;)V
+
+    .line 102
     return-void
 .end method
 
@@ -76,12 +189,12 @@
     .parameter
 
     .prologue
-    .line 68
+    .line 97
     iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/core/a/a;->a(Ljava/lang/Iterable;)V
+    invoke-virtual {v0, p1}, Lcom/google/android/youtube/core/a/a;->b(Ljava/lang/Iterable;)V
 
-    .line 69
+    .line 98
     return-void
 .end method
 
@@ -89,8 +202,8 @@
     .registers 2
 
     .prologue
-    .line 83
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/a/b;->c:Z
+    .line 110
+    iget-boolean v0, p0, Lcom/google/android/youtube/core/a/b;->d:Z
 
     if-nez v0, :cond_e
 
@@ -117,37 +230,22 @@
     .registers 3
 
     .prologue
-    .line 95
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/a/b;->c:Z
+    .line 122
+    iget-boolean v0, p0, Lcom/google/android/youtube/core/a/b;->d:Z
 
-    .line 96
+    .line 123
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/google/android/youtube/core/a/b;->c:Z
+    iput-boolean v1, p0, Lcom/google/android/youtube/core/a/b;->d:Z
 
-    .line 97
+    .line 124
     if-nez v0, :cond_a
 
-    .line 98
+    .line 125
     invoke-virtual {p0}, Lcom/google/android/youtube/core/a/b;->notifyDataSetChanged()V
 
-    .line 100
+    .line 127
     :cond_a
-    return-void
-.end method
-
-.method public final b(ILjava/lang/Object;)V
-    .registers 4
-    .parameter
-    .parameter
-
-    .prologue
-    .line 73
-    iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
-
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/youtube/core/a/a;->b(ILjava/lang/Object;)V
-
-    .line 74
     return-void
 .end method
 
@@ -155,21 +253,21 @@
     .registers 3
 
     .prologue
-    .line 103
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/a/b;->c:Z
+    .line 130
+    iget-boolean v0, p0, Lcom/google/android/youtube/core/a/b;->d:Z
 
-    .line 104
+    .line 131
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Lcom/google/android/youtube/core/a/b;->c:Z
+    iput-boolean v1, p0, Lcom/google/android/youtube/core/a/b;->d:Z
 
-    .line 105
+    .line 132
     if-eqz v0, :cond_a
 
-    .line 106
+    .line 133
     invoke-virtual {p0}, Lcom/google/android/youtube/core/a/b;->notifyDataSetChanged()V
 
-    .line 108
+    .line 135
     :cond_a
     return-void
 .end method
@@ -178,14 +276,14 @@
     .registers 3
 
     .prologue
-    .line 37
+    .line 70
     iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
 
     invoke-virtual {v0}, Lcom/google/android/youtube/core/a/a;->getCount()I
 
     move-result v1
 
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/a/b;->c:Z
+    iget-boolean v0, p0, Lcom/google/android/youtube/core/a/b;->d:Z
 
     if-eqz v0, :cond_d
 
@@ -203,38 +301,36 @@
 .end method
 
 .method public final getItem(I)Ljava/lang/Object;
-    .registers 3
+    .registers 4
     .parameter
 
     .prologue
-    .line 42
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/a/b;->c:Z
-
-    if-eqz v0, :cond_e
-
-    iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/a/a;->getCount()I
+    .line 74
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/a/b;->b(I)Z
 
     move-result v0
 
-    if-ne p1, v0, :cond_e
+    if-eqz v0, :cond_8
 
-    .line 44
+    .line 76
     const/4 v0, 0x0
 
-    .line 46
-    :goto_d
+    .line 78
+    :goto_7
     return-object v0
 
-    :cond_e
+    :cond_8
     iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/core/a/a;->getItem(I)Ljava/lang/Object;
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/a/b;->a(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/a/a;->getItem(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    goto :goto_d
+    goto :goto_7
 .end method
 
 .method public final getItemId(I)J
@@ -242,34 +338,69 @@
     .parameter
 
     .prologue
-    .line 51
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/a/b;->c:Z
-
-    if-eqz v0, :cond_f
-
-    iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/a/a;->getCount()I
+    .line 82
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/a/b;->b(I)Z
 
     move-result v0
 
-    if-ne p1, v0, :cond_f
+    if-eqz v0, :cond_9
 
-    .line 53
+    .line 84
     const-wide/16 v0, -0x1
 
-    .line 55
-    :goto_e
+    .line 86
+    :goto_8
     return-wide v0
 
-    :cond_f
+    :cond_9
     iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/core/a/a;->getItemId(I)J
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/a/b;->a(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/a/a;->getItemId(I)J
 
     move-result-wide v0
 
-    goto :goto_e
+    goto :goto_8
+.end method
+
+.method public final getItemViewType(I)I
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 62
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/a/b;->b(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_d
+
+    .line 63
+    iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/a/a;->getViewTypeCount()I
+
+    move-result v0
+
+    .line 65
+    :goto_c
+    return v0
+
+    :cond_d
+    iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
+
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/a/b;->a(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/a/a;->getItemViewType(I)I
+
+    move-result v0
+
+    goto :goto_c
 .end method
 
 .method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
@@ -279,84 +410,89 @@
     .parameter
 
     .prologue
-    .line 59
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/a/b;->c:Z
-
-    if-eqz v0, :cond_f
-
-    iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/a/a;->getCount()I
+    .line 90
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/a/b;->b(I)Z
 
     move-result v0
 
-    if-ne p1, v0, :cond_f
+    if-eqz v0, :cond_9
 
-    .line 61
+    .line 91
     iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->b:Landroid/view/View;
 
-    .line 63
-    :goto_e
+    .line 93
+    :goto_8
     return-object v0
 
-    :cond_f
+    :cond_9
     iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
 
-    iget-object v1, p0, Lcom/google/android/youtube/core/a/b;->b:Landroid/view/View;
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/a/b;->a(I)I
 
-    if-ne p2, v1, :cond_16
+    move-result v1
 
-    const/4 p2, 0x0
-
-    :cond_16
-    invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/youtube/core/a/a;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    invoke-virtual {v0, v1, p2, p3}, Lcom/google/android/youtube/core/a/a;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
-    goto :goto_e
+    goto :goto_8
+.end method
+
+.method public final getViewTypeCount()I
+    .registers 2
+
+    .prologue
+    .line 57
+    iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/a/a;->getViewTypeCount()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    return v0
 .end method
 
 .method public final getWrappedAdapter()Landroid/widget/ListAdapter;
     .registers 2
 
     .prologue
-    .line 115
+    .line 142
     iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
 
     return-object v0
 .end method
 
 .method public final isEnabled(I)Z
-    .registers 3
+    .registers 4
     .parameter
 
     .prologue
-    .line 88
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/a/b;->c:Z
-
-    if-eqz v0, :cond_e
-
-    iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/a/a;->getCount()I
+    .line 115
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/a/b;->b(I)Z
 
     move-result v0
 
-    if-ne p1, v0, :cond_e
+    if-eqz v0, :cond_8
 
-    .line 89
+    .line 116
     const/4 v0, 0x0
 
-    .line 91
-    :goto_d
+    .line 118
+    :goto_7
     return v0
 
-    :cond_e
+    :cond_8
     iget-object v0, p0, Lcom/google/android/youtube/core/a/b;->a:Lcom/google/android/youtube/core/a/a;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/core/a/a;->isEnabled(I)Z
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/a/b;->a(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/a/a;->isEnabled(I)Z
 
     move-result v0
 
-    goto :goto_d
+    goto :goto_7
 .end method

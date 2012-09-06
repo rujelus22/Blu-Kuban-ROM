@@ -1,236 +1,119 @@
-.class public Lcom/google/googlenav/ui/wizard/gX;
-.super Lcom/google/googlenav/ui/view/android/ap;
+.class final enum Lcom/google/googlenav/ui/wizard/gx;
+.super Ljava/lang/Enum;
+.source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/gU;
+# static fields
+.field public static final enum a:Lcom/google/googlenav/ui/wizard/gx;
+
+.field public static final enum b:Lcom/google/googlenav/ui/wizard/gx;
+
+.field public static final enum c:Lcom/google/googlenav/ui/wizard/gx;
+
+.field private static final synthetic d:[Lcom/google/googlenav/ui/wizard/gx;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/ui/wizard/gU;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 5
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/gX;->a:Lcom/google/googlenav/ui/wizard/gU;
+    .prologue
+    const/4 v4, 0x2
 
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->ak()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_13
-
-    const v0, 0x7f0d001c
-
-    :goto_f
-    invoke-direct {p0, p1, v0}, Lcom/google/googlenav/ui/view/android/ap;-><init>(Lcom/google/googlenav/ui/p;I)V
-
-    return-void
-
-    :cond_13
-    invoke-static {}, Lcom/google/googlenav/ui/wizard/gX;->b()I
-
-    move-result v0
-
-    goto :goto_f
-.end method
-
-.method private a(Landroid/widget/TextView;)V
-    .registers 4
-
-    const/16 v1, 0x433
-
-    const-string v0, ""
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/gX;->a:Lcom/google/googlenav/ui/wizard/gU;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/gU;->c(Lcom/google/googlenav/ui/wizard/gU;)I
-
-    move-result v0
-
-    packed-switch v0, :pswitch_data_30
-
-    invoke-static {v1}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_11
-    if-eqz v0, :cond_1c
-
-    sget-object v1, Lcom/google/googlenav/ui/bg;->aL:Lcom/google/googlenav/ui/bg;
-
-    invoke-static {v0, v1}, Lcom/google/googlenav/ui/bw;->b(Ljava/lang/CharSequence;Lcom/google/googlenav/ui/bg;)Landroid/text/SpannableStringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    :cond_1c
-    return-void
-
-    :pswitch_1d
-    invoke-static {v1}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_11
-
-    :pswitch_22
-    const/16 v0, 0x42a
-
-    invoke-static {v0}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_11
-
-    :pswitch_29
-    const/16 v0, 0x435
-
-    invoke-static {v0}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_11
-
-    :pswitch_data_30
-    .packed-switch 0x0
-        :pswitch_1d
-        :pswitch_29
-        :pswitch_22
-    .end packed-switch
-.end method
-
-
-# virtual methods
-.method public L_()Z
-    .registers 2
-
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->ak()Z
-
-    move-result v0
-
-    if-nez v0, :cond_c
-
-    const/4 v0, 0x1
-
-    :goto_b
-    return v0
-
-    :cond_c
-    const/4 v0, 0x0
-
-    goto :goto_b
-.end method
-
-.method protected c()Landroid/view/View;
-    .registers 7
-
-    const/4 v5, 0x0
-
-    const/4 v4, 0x1
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/wizard/gX;->getLayoutInflater()Landroid/view/LayoutInflater;
-
-    move-result-object v0
-
-    const v1, 0x7f030177
-
-    invoke-virtual {v0, v1, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/LinearLayout;
-
-    const v1, 0x7f0f0006
-
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    invoke-direct {p0, v1}, Lcom/google/googlenav/ui/wizard/gX;->a(Landroid/widget/TextView;)V
+    const/4 v3, 0x1
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
+    .line 212
+    new-instance v0, Lcom/google/googlenav/ui/wizard/gx;
 
-    const v1, 0x7f0f005a
+    const-string v1, "MAP_VIEW_PORT"
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
+    invoke-direct {v0, v1, v2}, Lcom/google/googlenav/ui/wizard/gx;-><init>(Ljava/lang/String;I)V
 
-    move-result-object v1
+    sput-object v0, Lcom/google/googlenav/ui/wizard/gx;->a:Lcom/google/googlenav/ui/wizard/gx;
 
-    check-cast v1, Landroid/widget/ListView;
+    .line 213
+    new-instance v0, Lcom/google/googlenav/ui/wizard/gx;
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/wizard/gX;->a:Lcom/google/googlenav/ui/wizard/gU;
+    const-string v1, "MY_LOCATION"
 
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/wizard/gX;->getContext()Landroid/content/Context;
+    invoke-direct {v0, v1, v3}, Lcom/google/googlenav/ui/wizard/gx;-><init>(Ljava/lang/String;I)V
 
-    move-result-object v3
+    sput-object v0, Lcom/google/googlenav/ui/wizard/gx;->b:Lcom/google/googlenav/ui/wizard/gx;
 
-    invoke-virtual {v2, v3}, Lcom/google/googlenav/ui/wizard/gU;->a(Landroid/content/Context;)Lcom/google/googlenav/ui/view/android/R;
+    .line 214
+    new-instance v0, Lcom/google/googlenav/ui/wizard/gx;
 
-    move-result-object v2
+    const-string v1, "USER_SELECTED"
 
-    invoke-virtual {v1, v2}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
+    invoke-direct {v0, v1, v4}, Lcom/google/googlenav/ui/wizard/gx;-><init>(Ljava/lang/String;I)V
 
-    new-instance v2, Lcom/google/googlenav/ui/wizard/gW;
+    sput-object v0, Lcom/google/googlenav/ui/wizard/gx;->c:Lcom/google/googlenav/ui/wizard/gx;
 
-    iget-object v3, p0, Lcom/google/googlenav/ui/wizard/gX;->a:Lcom/google/googlenav/ui/wizard/gU;
+    .line 210
+    const/4 v0, 0x3
 
-    invoke-direct {v2, v3, v5}, Lcom/google/googlenav/ui/wizard/gW;-><init>(Lcom/google/googlenav/ui/wizard/gU;Lcom/google/googlenav/ui/wizard/gV;)V
+    new-array v0, v0, [Lcom/google/googlenav/ui/wizard/gx;
 
-    invoke-virtual {v1, v2}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+    sget-object v1, Lcom/google/googlenav/ui/wizard/gx;->a:Lcom/google/googlenav/ui/wizard/gx;
 
-    invoke-virtual {v1, v4}, Landroid/widget/ListView;->setEnabled(Z)V
+    aput-object v1, v0, v2
 
-    invoke-virtual {v1, v4}, Landroid/widget/ListView;->setItemsCanFocus(Z)V
+    sget-object v1, Lcom/google/googlenav/ui/wizard/gx;->b:Lcom/google/googlenav/ui/wizard/gx;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lcom/google/googlenav/ui/wizard/gx;->c:Lcom/google/googlenav/ui/wizard/gx;
+
+    aput-object v1, v0, v4
+
+    sput-object v0, Lcom/google/googlenav/ui/wizard/gx;->d:[Lcom/google/googlenav/ui/wizard/gx;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;I)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 211
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lcom/google/googlenav/ui/wizard/gx;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 210
+    const-class v0, Lcom/google/googlenav/ui/wizard/gx;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlenav/ui/wizard/gx;
 
     return-object v0
 .end method
 
-.method protected e()Z
-    .registers 2
+.method public static values()[Lcom/google/googlenav/ui/wizard/gx;
+    .registers 1
 
-    const/4 v0, 0x0
+    .prologue
+    .line 210
+    sget-object v0, Lcom/google/googlenav/ui/wizard/gx;->d:[Lcom/google/googlenav/ui/wizard/gx;
 
-    return v0
-.end method
-
-.method public f()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/gX;->a:Lcom/google/googlenav/ui/wizard/gU;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/gU;->b(Lcom/google/googlenav/ui/wizard/gU;)Lcom/google/googlenav/ah;
+    invoke-virtual {v0}, [Lcom/google/googlenav/ui/wizard/gx;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-nez v0, :cond_b
+    check-cast v0, [Lcom/google/googlenav/ui/wizard/gx;
 
-    const-string v0, ""
-
-    :goto_a
     return-object v0
-
-    :cond_b
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/gX;->a:Lcom/google/googlenav/ui/wizard/gU;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/gU;->b(Lcom/google/googlenav/ui/wizard/gU;)Lcom/google/googlenav/ah;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ah;->an()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_a
 .end method

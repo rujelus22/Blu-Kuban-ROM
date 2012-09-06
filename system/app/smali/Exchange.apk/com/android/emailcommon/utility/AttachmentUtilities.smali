@@ -24,10 +24,6 @@
 
 .field public static final INSTALLABLE_ATTACHMENT_EXTENSIONS:[Ljava/lang/String;
 
-.field public static final MAX_ATTACHMENT_DOWNLOAD_SIZE:I
-
-.field public static final MAX_ATTACHMENT_UPLOAD_SIZE:I
-
 .field public static final UNACCEPTABLE_ATTACHMENT_DOWNLOAD_TYPES:[Ljava/lang/String;
 
 .field public static final UNACCEPTABLE_ATTACHMENT_EXTENSIONS:[Ljava/lang/String;
@@ -37,20 +33,16 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 7
+    .registers 5
 
     .prologue
-    const/high16 v1, 0x320
+    const/4 v2, 0x2
 
-    const/4 v6, 0x3
+    const/4 v4, 0x1
 
-    const/4 v3, 0x2
+    const/4 v3, 0x0
 
-    const/4 v5, 0x1
-
-    const/4 v4, 0x0
-
-    .line 38
+    .line 37
     const-string v0, "content://com.android.email.attachmentprovider"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -59,333 +51,293 @@
 
     sput-object v0, Lcom/android/emailcommon/utility/AttachmentUtilities;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 55
-    new-array v0, v5, [Ljava/lang/String;
+    .line 54
+    new-array v0, v4, [Ljava/lang/String;
 
-    const-string v2, "*/*"
+    const-string v1, "*/*"
 
-    aput-object v2, v0, v4
+    aput-object v1, v0, v3
 
     sput-object v0, Lcom/android/emailcommon/utility/AttachmentUtilities;->ACCEPTABLE_ATTACHMENT_SEND_INTENT_TYPES:[Ljava/lang/String;
 
-    .line 64
-    new-array v0, v3, [Ljava/lang/String;
+    .line 63
+    new-array v0, v2, [Ljava/lang/String;
 
-    const-string v2, "image/*"
+    const-string v1, "image/*"
 
-    aput-object v2, v0, v4
+    aput-object v1, v0, v3
 
-    const-string v2, "video/*"
+    const-string v1, "video/*"
 
-    aput-object v2, v0, v5
+    aput-object v1, v0, v4
 
     sput-object v0, Lcom/android/emailcommon/utility/AttachmentUtilities;->ACCEPTABLE_ATTACHMENT_SEND_UI_TYPES:[Ljava/lang/String;
 
     .line 70
-    new-array v0, v5, [Ljava/lang/String;
+    new-array v0, v4, [Ljava/lang/String;
 
-    const-string v2, "*/*"
+    const-string v1, "*/*"
 
-    aput-object v2, v0, v4
+    aput-object v1, v0, v3
 
     sput-object v0, Lcom/android/emailcommon/utility/AttachmentUtilities;->ACCEPTABLE_ATTACHMENT_VIEW_TYPES:[Ljava/lang/String;
 
     .line 76
-    new-array v0, v4, [Ljava/lang/String;
+    new-array v0, v3, [Ljava/lang/String;
 
     sput-object v0, Lcom/android/emailcommon/utility/AttachmentUtilities;->UNACCEPTABLE_ATTACHMENT_VIEW_TYPES:[Ljava/lang/String;
 
-    .line 80
-    new-array v0, v6, [Ljava/lang/String;
+    .line 81
+    new-array v0, v4, [Ljava/lang/String;
 
-    const-string v2, "*/*"
+    const-string v1, "*/*"
 
-    aput-object v2, v0, v4
-
-    const-string v2, "text/*"
-
-    aput-object v2, v0, v5
-
-    const-string v2, "html/*"
-
-    aput-object v2, v0, v3
+    aput-object v1, v0, v3
 
     sput-object v0, Lcom/android/emailcommon/utility/AttachmentUtilities;->ACCEPTABLE_ATTACHMENT_DOWNLOAD_TYPES:[Ljava/lang/String;
 
-    .line 90
-    new-array v0, v4, [Ljava/lang/String;
+    .line 87
+    new-array v0, v3, [Ljava/lang/String;
 
     sput-object v0, Lcom/android/emailcommon/utility/AttachmentUtilities;->UNACCEPTABLE_ATTACHMENT_DOWNLOAD_TYPES:[Ljava/lang/String;
 
-    .line 97
+    .line 94
     const/16 v0, 0x24
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const-string v2, "ade"
+    const-string v1, "ade"
 
-    aput-object v2, v0, v4
+    aput-object v1, v0, v3
 
-    const-string v2, "adp"
+    const-string v1, "adp"
 
-    aput-object v2, v0, v5
+    aput-object v1, v0, v4
 
-    const-string v2, "bat"
+    const-string v1, "bat"
 
-    aput-object v2, v0, v3
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x3
 
     const-string v2, "chm"
 
-    aput-object v2, v0, v6
+    aput-object v2, v0, v1
 
-    const/4 v2, 0x4
+    const/4 v1, 0x4
 
-    const-string v3, "cmd"
+    const-string v2, "cmd"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/4 v2, 0x5
+    const/4 v1, 0x5
 
-    const-string v3, "com"
+    const-string v2, "com"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/4 v2, 0x6
+    const/4 v1, 0x6
 
-    const-string v3, "cpl"
+    const-string v2, "cpl"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/4 v2, 0x7
+    const/4 v1, 0x7
 
-    const-string v3, "dll"
+    const-string v2, "dll"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x8
+    const/16 v1, 0x8
 
-    const-string v3, "exe"
+    const-string v2, "exe"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x9
+    const/16 v1, 0x9
 
-    const-string v3, "hta"
+    const-string v2, "hta"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0xa
+    const/16 v1, 0xa
 
-    const-string v3, "ins"
+    const-string v2, "ins"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0xb
+    const/16 v1, 0xb
 
-    const-string v3, "isp"
+    const-string v2, "isp"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0xc
+    const/16 v1, 0xc
 
-    const-string v3, "jse"
+    const-string v2, "jse"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0xd
+    const/16 v1, 0xd
 
-    const-string v3, "lib"
+    const-string v2, "lib"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0xe
+    const/16 v1, 0xe
 
-    const-string v3, "mde"
+    const-string v2, "mde"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0xf
+    const/16 v1, 0xf
 
-    const-string v3, "msc"
+    const-string v2, "msc"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x10
+    const/16 v1, 0x10
 
-    const-string v3, "msp"
+    const-string v2, "msp"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x11
+    const/16 v1, 0x11
 
-    const-string v3, "mst"
+    const-string v2, "mst"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x12
+    const/16 v1, 0x12
 
-    const-string v3, "pif"
+    const-string v2, "pif"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x13
+    const/16 v1, 0x13
 
-    const-string v3, "scr"
+    const-string v2, "scr"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x14
+    const/16 v1, 0x14
 
-    const-string v3, "sct"
+    const-string v2, "sct"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x15
+    const/16 v1, 0x15
 
-    const-string v3, "shb"
+    const-string v2, "shb"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x16
+    const/16 v1, 0x16
 
-    const-string v3, "sys"
+    const-string v2, "sys"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x17
+    const/16 v1, 0x17
 
-    const-string v3, "vb"
+    const-string v2, "vb"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x18
+    const/16 v1, 0x18
 
-    const-string v3, "vbe"
+    const-string v2, "vbe"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x19
+    const/16 v1, 0x19
 
-    const-string v3, "vbs"
+    const-string v2, "vbs"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x1a
+    const/16 v1, 0x1a
 
-    const-string v3, "vxd"
+    const-string v2, "vxd"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x1b
+    const/16 v1, 0x1b
 
-    const-string v3, "wsc"
+    const-string v2, "wsc"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x1c
+    const/16 v1, 0x1c
 
-    const-string v3, "wsf"
+    const-string v2, "wsf"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x1d
+    const/16 v1, 0x1d
 
-    const-string v3, "wsh"
+    const-string v2, "wsh"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x1e
+    const/16 v1, 0x1e
 
-    const-string v3, "zip"
+    const-string v2, "zip"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x1f
+    const/16 v1, 0x1f
 
-    const-string v3, "gz"
+    const-string v2, "gz"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x20
+    const/16 v1, 0x20
 
-    const-string v3, "z"
+    const-string v2, "z"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x21
+    const/16 v1, 0x21
 
-    const-string v3, "tar"
+    const-string v2, "tar"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x22
+    const/16 v1, 0x22
 
-    const-string v3, "tgz"
+    const-string v2, "tgz"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
-    const/16 v2, 0x23
+    const/16 v1, 0x23
 
-    const-string v3, "bz2"
+    const-string v2, "bz2"
 
-    aput-object v3, v0, v2
+    aput-object v2, v0, v1
 
     sput-object v0, Lcom/android/emailcommon/utility/AttachmentUtilities;->UNACCEPTABLE_ATTACHMENT_EXTENSIONS:[Ljava/lang/String;
 
-    .line 111
-    new-array v0, v5, [Ljava/lang/String;
+    .line 108
+    new-array v0, v4, [Ljava/lang/String;
 
-    const-string v2, "apk"
+    const-string v1, "apk"
 
-    aput-object v2, v0, v4
+    aput-object v1, v0, v3
 
     sput-object v0, Lcom/android/emailcommon/utility/AttachmentUtilities;->INSTALLABLE_ATTACHMENT_EXTENSIONS:[Ljava/lang/String;
 
-    .line 123
-    const-string v0, "VZW_LTE"
-
-    invoke-static {v0}, Lcom/android/emailcommon/utility/SecFeatureWrapper;->isEnabled(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_135
-
-    const/high16 v0, 0xa0
-
-    :goto_126
-    sput v0, Lcom/android/emailcommon/utility/AttachmentUtilities;->MAX_ATTACHMENT_DOWNLOAD_SIZE:I
-
-    .line 136
-    const-string v0, "VZW_LTE"
-
-    invoke-static {v0}, Lcom/android/emailcommon/utility/SecFeatureWrapper;->isEnabled(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_132
-
-    const/high16 v1, 0x50
-
-    :cond_132
-    sput v1, Lcom/android/emailcommon/utility/AttachmentUtilities;->MAX_ATTACHMENT_UPLOAD_SIZE:I
-
     return-void
-
-    :cond_135
-    move v0, v1
-
-    .line 123
-    goto :goto_126
 .end method
 
 .method public constructor <init>()V
     .registers 1
 
     .prologue
-    .line 36
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 35
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
+    .line 42
     return-void
 .end method
 
@@ -398,14 +350,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 338
+    .line 297
     sget-object v0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->MESSAGE_ID_URI:Landroid/net/Uri;
 
     invoke-static {v0, p3, p4}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 339
+    .line 298
     .local v1, uri:Landroid/net/Uri;
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -421,7 +373,7 @@
 
     move-result-object v9
 
-    .line 342
+    .line 301
     .local v9, c:Landroid/database/Cursor;
     :goto_13
     :try_start_13
@@ -431,20 +383,20 @@
 
     if-eqz v0, :cond_2b
 
-    .line 343
+    .line 302
     const/4 v0, 0x0
 
     invoke-interface {v9, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v7
 
-    .line 344
+    .line 303
     .local v7, attachmentId:J
     invoke-static {p0, p1, p2, v7, v8}, Lcom/android/emailcommon/utility/AttachmentUtilities;->getAttachmentFilename(Landroid/content/Context;JJ)Ljava/io/File;
 
     move-result-object v6
 
-    .line 350
+    .line 307
     .local v6, attachmentFile:Ljava/io/File;
     invoke-virtual {v6}, Ljava/io/File;->delete()Z
     :try_end_25
@@ -452,7 +404,7 @@
 
     goto :goto_13
 
-    .line 353
+    .line 310
     .end local v6           #attachmentFile:Ljava/io/File;
     .end local v7           #attachmentId:J
     :catchall_26
@@ -465,7 +417,7 @@
     :cond_2b
     invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
-    .line 355
+    .line 312
     return-void
 .end method
 
@@ -478,7 +430,7 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 367
+    .line 323
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -505,7 +457,7 @@
 
     move-result-object v6
 
-    .line 372
+    .line 327
     .local v6, c:Landroid/database/Cursor;
     :goto_19
     :try_start_19
@@ -515,14 +467,14 @@
 
     if-eqz v0, :cond_2d
 
-    .line 373
+    .line 328
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v7
 
-    .line 374
+    .line 329
     .local v7, messageId:J
     invoke-static {p0, p1, p2, v7, v8}, Lcom/android/emailcommon/utility/AttachmentUtilities;->deleteAllAttachmentFiles(Landroid/content/Context;JJ)V
     :try_end_27
@@ -530,7 +482,7 @@
 
     goto :goto_19
 
-    .line 377
+    .line 332
     .end local v7           #messageId:J
     :catchall_28
     move-exception v0
@@ -542,45 +494,39 @@
     :cond_2d
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 379
+    .line 334
     return-void
 .end method
 
 .method public static getAttachmentDirectory(Landroid/content/Context;J)Ljava/io/File;
-    .registers 7
+    .registers 5
     .parameter "context"
     .parameter "accountId"
 
     .prologue
-    .line 170
-    new-instance v0, Ljava/io/File;
+    .line 164
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v1
+    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, ".db_att"
 
-    invoke-virtual {v2, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string v3, ".db_att"
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v2
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getDatabasePath(Ljava/lang/String;)Ljava/io/File;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    .line 176
-    .local v0, directory:Ljava/io/File;
     return-object v0
 .end method
 
@@ -591,7 +537,7 @@
     .parameter "attachmentId"
 
     .prologue
-    .line 161
+    .line 153
     new-instance v0, Ljava/io/File;
 
     invoke-static {p0, p1, p2}, Lcom/android/emailcommon/utility/AttachmentUtilities;->getAttachmentDirectory(Landroid/content/Context;J)Ljava/io/File;
@@ -613,7 +559,7 @@
     .parameter "id"
 
     .prologue
-    .line 144
+    .line 127
     sget-object v0, Lcom/android/emailcommon/utility/AttachmentUtilities;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;

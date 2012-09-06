@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Lcom/android/volley/Response$ErrorListener;
+.implements Lcom/google/android/finsky/adapters/ReviewsAdapter$ChooseFilterOptionsHandler;
 .implements Lcom/google/android/finsky/adapters/ReviewsAdapter$RateReviewHandler;
 .implements Lcom/google/android/finsky/api/model/OnDataChangedListener;
 
@@ -17,7 +18,8 @@
         ">;",
         "Lcom/google/android/finsky/api/model/OnDataChangedListener;",
         "Lcom/android/volley/Response$ErrorListener;",
-        "Lcom/google/android/finsky/adapters/ReviewsAdapter$RateReviewHandler;"
+        "Lcom/google/android/finsky/adapters/ReviewsAdapter$RateReviewHandler;",
+        "Lcom/google/android/finsky/adapters/ReviewsAdapter$ChooseFilterOptionsHandler;"
     }
 .end annotation
 
@@ -35,23 +37,14 @@
 
 .field private mReviewList:Landroid/widget/ListView;
 
-.field private final mReviewStatsViewBinder:Lcom/google/android/finsky/activities/ReviewStatsViewBinder;
-
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .registers 1
 
     .prologue
-    .line 29
+    .line 30
     invoke-direct {p0}, Lcom/google/android/finsky/fragments/ViewBinder;-><init>()V
-
-    .line 42
-    new-instance v0, Lcom/google/android/finsky/activities/ReviewStatsViewBinder;
-
-    invoke-direct {v0}, Lcom/google/android/finsky/activities/ReviewStatsViewBinder;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mReviewStatsViewBinder:Lcom/google/android/finsky/activities/ReviewStatsViewBinder;
 
     return-void
 .end method
@@ -59,21 +52,21 @@
 
 # virtual methods
 .method public bind(Landroid/view/View;Lcom/google/android/finsky/api/model/Document;)V
-    .registers 6
+    .registers 9
     .parameter "reviewsView"
     .parameter "document"
 
     .prologue
-    .line 51
+    .line 55
     check-cast p1, Landroid/view/ViewGroup;
 
     .end local p1
     iput-object p1, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mContentLayout:Landroid/view/ViewGroup;
 
-    .line 52
+    .line 56
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mContentLayout:Landroid/view/ViewGroup;
 
-    const v1, 0x7f080119
+    const v1, 0x7f080150
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -83,77 +76,76 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mReviewList:Landroid/widget/ListView;
 
-    .line 54
+    .line 58
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mAdapter:Lcom/google/android/finsky/adapters/ReviewsAdapter;
 
     if-eqz v0, :cond_1a
 
-    .line 55
+    .line 59
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mAdapter:Lcom/google/android/finsky/adapters/ReviewsAdapter;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/adapters/ReviewsAdapter;->onDestroyView()V
 
-    .line 57
+    .line 61
     :cond_1a
-    new-instance v1, Lcom/google/android/finsky/adapters/ReviewsAdapter;
+    new-instance v0, Lcom/google/android/finsky/adapters/ReviewsAdapter;
 
-    iget-object v2, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mContext:Landroid/content/Context;
 
-    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
+    iget-object v3, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
 
-    check-cast v0, Lcom/google/android/finsky/api/model/DfeReviews;
+    check-cast v3, Lcom/google/android/finsky/api/model/DfeReviews;
 
-    invoke-direct {v1, v2, p2, v0, p0}, Lcom/google/android/finsky/adapters/ReviewsAdapter;-><init>(Landroid/content/Context;Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/api/model/DfeReviews;Lcom/google/android/finsky/adapters/ReviewsAdapter$RateReviewHandler;)V
+    move-object v2, p2
 
-    iput-object v1, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mAdapter:Lcom/google/android/finsky/adapters/ReviewsAdapter;
+    move-object v4, p0
 
-    .line 58
+    move-object v5, p0
+
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/finsky/adapters/ReviewsAdapter;-><init>(Landroid/content/Context;Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/api/model/DfeReviews;Lcom/google/android/finsky/adapters/ReviewsAdapter$RateReviewHandler;Lcom/google/android/finsky/adapters/ReviewsAdapter$ChooseFilterOptionsHandler;)V
+
+    iput-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mAdapter:Lcom/google/android/finsky/adapters/ReviewsAdapter;
+
+    .line 63
     iput-object p2, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mDocument:Lcom/google/android/finsky/api/model/Document;
 
-    .line 59
+    .line 64
     iget-boolean v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mHasLoadedAtLeastOnce:Z
 
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_44
 
-    .line 60
+    .line 65
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mReviewList:Landroid/widget/ListView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setEmptyView(Landroid/view/View;)V
 
-    .line 64
-    :goto_33
+    .line 69
+    :goto_36
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mReviewList:Landroid/widget/ListView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setItemsCanFocus(Z)V
 
-    .line 65
+    .line 70
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mReviewList:Landroid/widget/ListView;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mAdapter:Lcom/google/android/finsky/adapters/ReviewsAdapter;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 67
-    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mAdapter:Lcom/google/android/finsky/adapters/ReviewsAdapter;
-
-    iget-object v1, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mReviewStatsViewBinder:Lcom/google/android/finsky/activities/ReviewStatsViewBinder;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/adapters/ReviewsAdapter;->setReviewStatsViewBinder(Lcom/google/android/finsky/activities/ReviewStatsViewBinder;)V
-
-    .line 68
+    .line 71
     return-void
 
-    .line 62
-    :cond_48
+    .line 67
+    :cond_44
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mReviewList:Landroid/widget/ListView;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mContentLayout:Landroid/view/ViewGroup;
 
-    const v2, 0x7f080144
+    const v2, 0x7f08010f
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -161,21 +153,21 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setEmptyView(Landroid/view/View;)V
 
-    goto :goto_33
+    goto :goto_36
 .end method
 
 .method public getAdapter()Lcom/google/android/finsky/adapters/ReviewsAdapter;
     .registers 2
 
     .prologue
-    .line 128
+    .line 152
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mAdapter:Lcom/google/android/finsky/adapters/ReviewsAdapter;
 
     return-object v0
 .end method
 
 .method public init(Landroid/content/Context;Landroid/support/v4/app/Fragment;Lcom/google/android/finsky/api/DfeApi;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/utils/BitmapLoader;)V
-    .registers 6
+    .registers 7
     .parameter "context"
     .parameter "containerFragment"
     .parameter "dfeApi"
@@ -183,35 +175,118 @@
     .parameter "bitmapLoader"
 
     .prologue
+    .line 45
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
+
+    check-cast v0, Lcom/google/android/finsky/api/model/DfeReviews;
+
     .line 46
+    .local v0, currentData:Lcom/google/android/finsky/api/model/DfeReviews;
     invoke-super {p0, p1, p4, p5}, Lcom/google/android/finsky/fragments/ViewBinder;->init(Landroid/content/Context;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/utils/BitmapLoader;)V
 
-    .line 47
+    .line 50
+    iput-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
+
+    .line 51
     iput-object p2, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mContainerFragment:Landroid/support/v4/app/Fragment;
 
-    .line 48
+    .line 52
     return-void
+.end method
+
+.method public onChooseFilterOptions()V
+    .registers 5
+
+    .prologue
+    .line 123
+    iget-object v2, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
+
+    if-nez v2, :cond_5
+
+    .line 135
+    :cond_4
+    :goto_4
+    return-void
+
+    .line 127
+    :cond_5
+    iget-object v2, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mContainerFragment:Landroid/support/v4/app/Fragment;
+
+    invoke-virtual {v2}, Landroid/support/v4/app/Fragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
+
+    move-result-object v1
+
+    .line 128
+    .local v1, fragmentManager:Landroid/support/v4/app/FragmentManager;
+    const-string v2, "filter_options_dialog"
+
+    invoke-virtual {v1, v2}, Landroid/support/v4/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/support/v4/app/Fragment;
+
+    move-result-object v2
+
+    if-nez v2, :cond_4
+
+    .line 131
+    iget-object v2, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
+
+    check-cast v2, Lcom/google/android/finsky/api/model/DfeReviews;
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/api/model/DfeReviews;->currentlyFilteringByVersion()Z
+
+    move-result v3
+
+    iget-object v2, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
+
+    check-cast v2, Lcom/google/android/finsky/api/model/DfeReviews;
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/api/model/DfeReviews;->shouldFilterByDevice()Z
+
+    move-result v2
+
+    invoke-static {v3, v2}, Lcom/google/android/finsky/activities/FilterOptionsDialog;->newInstance(ZZ)Lcom/google/android/finsky/activities/FilterOptionsDialog;
+
+    move-result-object v0
+
+    .line 133
+    .local v0, dialog:Lcom/google/android/finsky/activities/FilterOptionsDialog;
+    iget-object v2, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mContainerFragment:Landroid/support/v4/app/Fragment;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v2, v3}, Lcom/google/android/finsky/activities/FilterOptionsDialog;->setTargetFragment(Landroid/support/v4/app/Fragment;I)V
+
+    .line 134
+    const-string v2, "filter_options_dialog"
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/activities/FilterOptionsDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
+
+    goto :goto_4
 .end method
 
 .method public onDataChanged()V
     .registers 4
 
     .prologue
-    .line 72
-    iget-boolean v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mHasLoadedAtLeastOnce:Z
-
-    if-nez v0, :cond_19
-
+    .line 75
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mReviewList:Landroid/widget/ListView;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1d
 
-    .line 73
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
+
+    if-eqz v0, :cond_1d
+
+    .line 76
+    iget-boolean v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mHasLoadedAtLeastOnce:Z
+
+    if-nez v0, :cond_1e
+
+    .line 77
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mReviewList:Landroid/widget/ListView;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mContentLayout:Landroid/view/ViewGroup;
 
-    const v2, 0x7f080144
+    const v2, 0x7f08010f
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -219,14 +294,23 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setEmptyView(Landroid/view/View;)V
 
-    .line 74
+    .line 78
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mHasLoadedAtLeastOnce:Z
 
-    .line 76
-    :cond_19
+    .line 83
+    :cond_1d
+    :goto_1d
     return-void
+
+    .line 80
+    :cond_1e
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mAdapter:Lcom/google/android/finsky/adapters/ReviewsAdapter;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/adapters/ReviewsAdapter;->notifyDataSetChanged()V
+
+    goto :goto_1d
 .end method
 
 .method public onDestroyView()V
@@ -235,46 +319,46 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 101
+    .line 108
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mAdapter:Lcom/google/android/finsky/adapters/ReviewsAdapter;
 
     if-eqz v0, :cond_c
 
-    .line 102
+    .line 109
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mAdapter:Lcom/google/android/finsky/adapters/ReviewsAdapter;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/adapters/ReviewsAdapter;->onDestroyView()V
 
-    .line 103
+    .line 110
     iput-object v1, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mAdapter:Lcom/google/android/finsky/adapters/ReviewsAdapter;
 
-    .line 105
+    .line 112
     :cond_c
     iput-object v1, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mReviewList:Landroid/widget/ListView;
 
-    .line 106
+    .line 113
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
 
     if-eqz v0, :cond_22
 
-    .line 107
+    .line 114
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
 
     check-cast v0, Lcom/google/android/finsky/api/model/DfeReviews;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->removeDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 108
+    .line 115
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
 
     check-cast v0, Lcom/google/android/finsky/api/model/DfeReviews;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->removeErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 109
+    .line 116
     iput-object v1, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
 
-    .line 111
+    .line 118
     :cond_22
     return-void
 .end method
@@ -284,17 +368,17 @@
     .parameter "error"
 
     .prologue
-    .line 95
+    .line 102
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mReviewList:Landroid/widget/ListView;
 
     if-eqz v0, :cond_9
 
-    .line 96
+    .line 103
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mAdapter:Lcom/google/android/finsky/adapters/ReviewsAdapter;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/adapters/ReviewsAdapter;->triggerFooterErrorMode()V
 
-    .line 98
+    .line 105
     :cond_9
     return-void
 .end method
@@ -304,14 +388,14 @@
     .parameter "review"
 
     .prologue
-    .line 116
+    .line 140
     iget-object v2, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mContainerFragment:Landroid/support/v4/app/Fragment;
 
     invoke-virtual {v2}, Landroid/support/v4/app/Fragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v1
 
-    .line 117
+    .line 141
     .local v1, fragmentManager:Landroid/support/v4/app/FragmentManager;
     const-string v2, "rate_review_dialog"
 
@@ -321,11 +405,11 @@
 
     if-eqz v2, :cond_f
 
-    .line 125
+    .line 149
     :goto_e
     return-void
 
-    .line 121
+    .line 145
     :cond_f
     iget-object v2, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mDocument:Lcom/google/android/finsky/api/model/Document;
 
@@ -343,7 +427,7 @@
 
     move-result-object v0
 
-    .line 123
+    .line 147
     .local v0, dialog:Lcom/google/android/finsky/activities/RateReviewDialog;
     iget-object v2, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mContainerFragment:Landroid/support/v4/app/Fragment;
 
@@ -351,7 +435,7 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/google/android/finsky/activities/RateReviewDialog;->setTargetFragment(Landroid/support/v4/app/Fragment;I)V
 
-    .line 124
+    .line 148
     const-string v2, "rate_review_dialog"
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/activities/RateReviewDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
@@ -364,56 +448,56 @@
     .parameter "data"
 
     .prologue
-    .line 80
+    .line 87
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mHasLoadedAtLeastOnce:Z
 
-    .line 82
-    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
-
-    if-eqz v0, :cond_15
-
-    .line 83
-    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
-
-    check-cast v0, Lcom/google/android/finsky/api/model/DfeReviews;
-
-    invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->removeDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
-
-    .line 84
-    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
-
-    check-cast v0, Lcom/google/android/finsky/api/model/DfeReviews;
-
-    invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->removeErrorListener(Lcom/android/volley/Response$ErrorListener;)V
-
-    .line 87
-    :cond_15
-    invoke-super {p0, p1}, Lcom/google/android/finsky/fragments/ViewBinder;->setData(Ljava/lang/Object;)V
-
-    .line 88
-    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
-
-    check-cast v0, Lcom/google/android/finsky/api/model/DfeReviews;
-
-    invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeReviews;->clearTransientState()V
-
     .line 89
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
 
-    check-cast v0, Lcom/google/android/finsky/api/model/DfeReviews;
-
-    invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->addDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
+    if-eqz v0, :cond_15
 
     .line 90
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
 
     check-cast v0, Lcom/google/android/finsky/api/model/DfeReviews;
 
-    invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->addErrorListener(Lcom/android/volley/Response$ErrorListener;)V
+    invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->removeDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
     .line 91
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
+
+    check-cast v0, Lcom/google/android/finsky/api/model/DfeReviews;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->removeErrorListener(Lcom/android/volley/Response$ErrorListener;)V
+
+    .line 94
+    :cond_15
+    invoke-super {p0, p1}, Lcom/google/android/finsky/fragments/ViewBinder;->setData(Ljava/lang/Object;)V
+
+    .line 95
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
+
+    check-cast v0, Lcom/google/android/finsky/api/model/DfeReviews;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeReviews;->clearTransientState()V
+
+    .line 96
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
+
+    check-cast v0, Lcom/google/android/finsky/api/model/DfeReviews;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->addDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
+
+    .line 97
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewListViewBinder;->mData:Ljava/lang/Object;
+
+    check-cast v0, Lcom/google/android/finsky/api/model/DfeReviews;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->addErrorListener(Lcom/android/volley/Response$ErrorListener;)V
+
+    .line 98
     return-void
 .end method
 
@@ -422,7 +506,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 30
     check-cast p1, Lcom/google/android/finsky/api/model/DfeReviews;
 
     .end local p1

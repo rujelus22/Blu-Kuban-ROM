@@ -34,11 +34,15 @@
 
 .field private cachedSize:I
 
+.field private deviceAssociationMethod_:I
+
 .field private hasApiVersion:Z
 
 .field private hasApplicationId:Z
 
 .field private hasBillingInstrumentType:Z
+
+.field private hasDeviceAssociationMethod:Z
 
 .field private hasIconId:Z
 
@@ -48,11 +52,17 @@
 
 .field private hasName:Z
 
+.field private hasPassphraseRequired:Z
+
 .field private hasPerTransactionCredentialsRequired:Z
 
 .field private hasSendSubscriberIdWithCarrierBillingRequests:Z
 
 .field private hasTosUrl:Z
+
+.field private hasUserTokenRequestAddress:Z
+
+.field private hasUserTokenRequestMessage:Z
 
 .field private iconId_:Ljava/lang/String;
 
@@ -73,11 +83,17 @@
 
 .field private name_:Ljava/lang/String;
 
+.field private passphraseRequired_:Z
+
 .field private perTransactionCredentialsRequired_:Z
 
 .field private sendSubscriberIdWithCarrierBillingRequests_:Z
 
 .field private tosUrl_:Ljava/lang/String;
+
+.field private userTokenRequestAddress_:Ljava/lang/String;
+
+.field private userTokenRequestMessage_:Ljava/lang/String;
 
 
 # direct methods
@@ -89,69 +105,85 @@
 
     const/4 v1, 0x0
 
-    .line 15159
+    .line 15489
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 15164
+    .line 15497
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->id_:Ljava/lang/String;
 
-    .line 15181
+    .line 15514
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->name_:Ljava/lang/String;
 
-    .line 15197
+    .line 15530
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->mncMcc_:Ljava/util/List;
 
-    .line 15230
+    .line 15563
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->backendUrl_:Ljava/util/List;
 
-    .line 15264
+    .line 15597
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->iconId_:Ljava/lang/String;
 
-    .line 15281
+    .line 15614
     iput v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->billingInstrumentType_:I
 
-    .line 15298
+    .line 15631
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->applicationId_:Ljava/lang/String;
 
-    .line 15315
+    .line 15648
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->tosUrl_:Ljava/lang/String;
 
-    .line 15332
+    .line 15665
     iput-boolean v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->instrumentTosRequired_:Z
 
-    .line 15349
+    .line 15682
     iput v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->apiVersion_:I
 
-    .line 15366
+    .line 15699
     iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->perTransactionCredentialsRequired_:Z
 
-    .line 15383
+    .line 15716
     iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->sendSubscriberIdWithCarrierBillingRequests_:Z
 
-    .line 15460
+    .line 15733
+    iput v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->deviceAssociationMethod_:I
+
+    .line 15750
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->userTokenRequestMessage_:Ljava/lang/String;
+
+    .line 15767
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->userTokenRequestAddress_:Ljava/lang/String;
+
+    .line 15784
+    iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->passphraseRequired_:Z
+
+    .line 15878
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->cachedSize:I
 
-    .line 15159
+    .line 15489
     return-void
 .end method
 
@@ -162,17 +194,17 @@
     .parameter "value"
 
     .prologue
-    .line 15247
+    .line 15580
     if-nez p1, :cond_8
 
-    .line 15248
+    .line 15581
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 15250
+    .line 15583
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->backendUrl_:Ljava/util/List;
 
@@ -182,20 +214,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 15251
+    .line 15584
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->backendUrl_:Ljava/util/List;
 
-    .line 15253
+    .line 15586
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->backendUrl_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 15254
+    .line 15587
     return-object p0
 .end method
 
@@ -204,17 +236,17 @@
     .parameter "value"
 
     .prologue
-    .line 15214
+    .line 15547
     if-nez p1, :cond_8
 
-    .line 15215
+    .line 15548
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 15217
+    .line 15550
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->mncMcc_:Ljava/util/List;
 
@@ -224,20 +256,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 15218
+    .line 15551
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->mncMcc_:Ljava/util/List;
 
-    .line 15220
+    .line 15553
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->mncMcc_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 15221
+    .line 15554
     return-object p0
 .end method
 
@@ -245,7 +277,7 @@
     .registers 2
 
     .prologue
-    .line 15350
+    .line 15683
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->apiVersion_:I
 
     return v0
@@ -255,7 +287,7 @@
     .registers 2
 
     .prologue
-    .line 15299
+    .line 15632
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->applicationId_:Ljava/lang/String;
 
     return-object v0
@@ -266,7 +298,7 @@
     .parameter "index"
 
     .prologue
-    .line 15237
+    .line 15570
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->backendUrl_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -291,7 +323,7 @@
     .end annotation
 
     .prologue
-    .line 15233
+    .line 15566
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->backendUrl_:Ljava/util/List;
 
     return-object v0
@@ -301,7 +333,7 @@
     .registers 2
 
     .prologue
-    .line 15283
+    .line 15616
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->billingInstrumentType_:I
 
     return v0
@@ -311,17 +343,27 @@
     .registers 2
 
     .prologue
-    .line 15462
+    .line 15881
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 15464
+    .line 15883
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getSerializedSize()I
 
-    .line 15466
+    .line 15885
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->cachedSize:I
+
+    return v0
+.end method
+
+.method public getDeviceAssociationMethod()I
+    .registers 2
+
+    .prologue
+    .line 15735
+    iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->deviceAssociationMethod_:I
 
     return v0
 .end method
@@ -330,7 +372,7 @@
     .registers 2
 
     .prologue
-    .line 15265
+    .line 15598
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->iconId_:Ljava/lang/String;
 
     return-object v0
@@ -340,7 +382,7 @@
     .registers 2
 
     .prologue
-    .line 15165
+    .line 15498
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->id_:Ljava/lang/String;
 
     return-object v0
@@ -350,7 +392,7 @@
     .registers 2
 
     .prologue
-    .line 15333
+    .line 15666
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->instrumentTosRequired_:Z
 
     return v0
@@ -369,7 +411,7 @@
     .end annotation
 
     .prologue
-    .line 15200
+    .line 15533
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->mncMcc_:Ljava/util/List;
 
     return-object v0
@@ -379,17 +421,27 @@
     .registers 2
 
     .prologue
-    .line 15182
+    .line 15515
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->name_:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public getPassphraseRequired()Z
+    .registers 2
+
+    .prologue
+    .line 15785
+    iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->passphraseRequired_:Z
+
+    return v0
 .end method
 
 .method public getPerTransactionCredentialsRequired()Z
     .registers 2
 
     .prologue
-    .line 15367
+    .line 15700
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->perTransactionCredentialsRequired_:Z
 
     return v0
@@ -399,7 +451,7 @@
     .registers 2
 
     .prologue
-    .line 15384
+    .line 15717
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->sendSubscriberIdWithCarrierBillingRequests_:Z
 
     return v0
@@ -409,10 +461,10 @@
     .registers 7
 
     .prologue
-    .line 15470
+    .line 15890
     const/4 v3, 0x0
 
-    .line 15471
+    .line 15891
     .local v3, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasId()Z
 
@@ -420,7 +472,7 @@
 
     if-eqz v4, :cond_11
 
-    .line 15472
+    .line 15892
     const/4 v4, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getId()Ljava/lang/String;
@@ -433,7 +485,7 @@
 
     add-int/2addr v3, v4
 
-    .line 15475
+    .line 15895
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasName()Z
 
@@ -441,7 +493,7 @@
 
     if-eqz v4, :cond_21
 
-    .line 15476
+    .line 15896
     const/4 v4, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getName()Ljava/lang/String;
@@ -454,11 +506,11 @@
 
     add-int/2addr v3, v4
 
-    .line 15480
+    .line 15900
     :cond_21
     const/4 v0, 0x0
 
-    .line 15481
+    .line 15901
     .local v0, dataSize:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getMncMccList()Ljava/util/List;
 
@@ -482,7 +534,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 15482
+    .line 15902
     .local v1, element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -492,12 +544,12 @@
 
     goto :goto_2a
 
-    .line 15485
+    .line 15905
     .end local v1           #element:Ljava/lang/String;
     :cond_3c
     add-int/2addr v3, v0
 
-    .line 15486
+    .line 15906
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getMncMccList()Ljava/util/List;
 
     move-result-object v4
@@ -510,10 +562,10 @@
 
     add-int/2addr v3, v4
 
-    .line 15489
+    .line 15909
     const/4 v0, 0x0
 
-    .line 15490
+    .line 15910
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getBackendUrlList()Ljava/util/List;
 
     move-result-object v4
@@ -535,7 +587,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 15491
+    .line 15911
     .restart local v1       #element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -545,12 +597,12 @@
 
     goto :goto_51
 
-    .line 15494
+    .line 15914
     .end local v1           #element:Ljava/lang/String;
     :cond_63
     add-int/2addr v3, v0
 
-    .line 15495
+    .line 15915
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getBackendUrlList()Ljava/util/List;
 
     move-result-object v4
@@ -563,14 +615,14 @@
 
     add-int/2addr v3, v4
 
-    .line 15497
+    .line 15917
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasIconId()Z
 
     move-result v4
 
     if-eqz v4, :cond_7f
 
-    .line 15498
+    .line 15918
     const/4 v4, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getIconId()Ljava/lang/String;
@@ -583,7 +635,7 @@
 
     add-int/2addr v3, v4
 
-    .line 15501
+    .line 15921
     :cond_7f
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasBillingInstrumentType()Z
 
@@ -591,7 +643,7 @@
 
     if-eqz v4, :cond_8f
 
-    .line 15502
+    .line 15922
     const/4 v4, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getBillingInstrumentType()I
@@ -604,7 +656,7 @@
 
     add-int/2addr v3, v4
 
-    .line 15505
+    .line 15925
     :cond_8f
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasApplicationId()Z
 
@@ -612,7 +664,7 @@
 
     if-eqz v4, :cond_9f
 
-    .line 15506
+    .line 15926
     const/4 v4, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getApplicationId()Ljava/lang/String;
@@ -625,7 +677,7 @@
 
     add-int/2addr v3, v4
 
-    .line 15509
+    .line 15929
     :cond_9f
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasTosUrl()Z
 
@@ -633,7 +685,7 @@
 
     if-eqz v4, :cond_b0
 
-    .line 15510
+    .line 15930
     const/16 v4, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getTosUrl()Ljava/lang/String;
@@ -646,7 +698,7 @@
 
     add-int/2addr v3, v4
 
-    .line 15513
+    .line 15933
     :cond_b0
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasInstrumentTosRequired()Z
 
@@ -654,7 +706,7 @@
 
     if-eqz v4, :cond_c1
 
-    .line 15514
+    .line 15934
     const/16 v4, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getInstrumentTosRequired()Z
@@ -667,7 +719,7 @@
 
     add-int/2addr v3, v4
 
-    .line 15517
+    .line 15937
     :cond_c1
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasApiVersion()Z
 
@@ -675,7 +727,7 @@
 
     if-eqz v4, :cond_d2
 
-    .line 15518
+    .line 15938
     const/16 v4, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getApiVersion()I
@@ -688,7 +740,7 @@
 
     add-int/2addr v3, v4
 
-    .line 15521
+    .line 15941
     :cond_d2
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasPerTransactionCredentialsRequired()Z
 
@@ -696,7 +748,7 @@
 
     if-eqz v4, :cond_e3
 
-    .line 15522
+    .line 15942
     const/16 v4, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getPerTransactionCredentialsRequired()Z
@@ -709,7 +761,7 @@
 
     add-int/2addr v3, v4
 
-    .line 15525
+    .line 15945
     :cond_e3
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasSendSubscriberIdWithCarrierBillingRequests()Z
 
@@ -717,7 +769,7 @@
 
     if-eqz v4, :cond_f4
 
-    .line 15526
+    .line 15946
     const/16 v4, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getSendSubscriberIdWithCarrierBillingRequests()Z
@@ -730,11 +782,95 @@
 
     add-int/2addr v3, v4
 
-    .line 15529
+    .line 15949
     :cond_f4
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasDeviceAssociationMethod()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_105
+
+    .line 15950
+    const/16 v4, 0xd
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getDeviceAssociationMethod()I
+
+    move-result v5
+
+    invoke-static {v4, v5}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    .line 15953
+    :cond_105
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasUserTokenRequestMessage()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_116
+
+    .line 15954
+    const/16 v4, 0xe
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getUserTokenRequestMessage()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    .line 15957
+    :cond_116
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasUserTokenRequestAddress()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_127
+
+    .line 15958
+    const/16 v4, 0xf
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getUserTokenRequestAddress()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    .line 15961
+    :cond_127
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasPassphraseRequired()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_138
+
+    .line 15962
+    const/16 v4, 0x10
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getPassphraseRequired()Z
+
+    move-result v5
+
+    invoke-static {v4, v5}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeBoolSize(IZ)I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    .line 15965
+    :cond_138
     iput v3, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->cachedSize:I
 
-    .line 15530
+    .line 15966
     return v3
 .end method
 
@@ -742,8 +878,28 @@
     .registers 2
 
     .prologue
-    .line 15316
+    .line 15649
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->tosUrl_:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getUserTokenRequestAddress()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 15768
+    iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->userTokenRequestAddress_:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getUserTokenRequestMessage()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 15751
+    iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->userTokenRequestMessage_:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -752,7 +908,7 @@
     .registers 2
 
     .prologue
-    .line 15351
+    .line 15684
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasApiVersion:Z
 
     return v0
@@ -762,7 +918,7 @@
     .registers 2
 
     .prologue
-    .line 15300
+    .line 15633
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasApplicationId:Z
 
     return v0
@@ -772,8 +928,18 @@
     .registers 2
 
     .prologue
-    .line 15282
+    .line 15615
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasBillingInstrumentType:Z
+
+    return v0
+.end method
+
+.method public hasDeviceAssociationMethod()Z
+    .registers 2
+
+    .prologue
+    .line 15734
+    iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasDeviceAssociationMethod:Z
 
     return v0
 .end method
@@ -782,7 +948,7 @@
     .registers 2
 
     .prologue
-    .line 15266
+    .line 15599
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasIconId:Z
 
     return v0
@@ -792,7 +958,7 @@
     .registers 2
 
     .prologue
-    .line 15166
+    .line 15499
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasId:Z
 
     return v0
@@ -802,7 +968,7 @@
     .registers 2
 
     .prologue
-    .line 15334
+    .line 15667
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasInstrumentTosRequired:Z
 
     return v0
@@ -812,8 +978,18 @@
     .registers 2
 
     .prologue
-    .line 15183
+    .line 15516
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasName:Z
+
+    return v0
+.end method
+
+.method public hasPassphraseRequired()Z
+    .registers 2
+
+    .prologue
+    .line 15786
+    iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasPassphraseRequired:Z
 
     return v0
 .end method
@@ -822,7 +998,7 @@
     .registers 2
 
     .prologue
-    .line 15368
+    .line 15701
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasPerTransactionCredentialsRequired:Z
 
     return v0
@@ -832,7 +1008,7 @@
     .registers 2
 
     .prologue
-    .line 15385
+    .line 15718
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasSendSubscriberIdWithCarrierBillingRequests:Z
 
     return v0
@@ -842,8 +1018,28 @@
     .registers 2
 
     .prologue
-    .line 15317
+    .line 15650
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasTosUrl:Z
+
+    return v0
+.end method
+
+.method public hasUserTokenRequestAddress()Z
+    .registers 2
+
+    .prologue
+    .line 15769
+    iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasUserTokenRequestAddress:Z
+
+    return v0
+.end method
+
+.method public hasUserTokenRequestMessage()Z
+    .registers 2
+
+    .prologue
+    .line 15752
+    iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasUserTokenRequestMessage:Z
 
     return v0
 .end method
@@ -858,29 +1054,29 @@
     .end annotation
 
     .prologue
-    .line 15537
+    .line 15974
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 15538
+    .line 15975
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_6e
+    sparse-switch v0, :sswitch_data_90
 
-    .line 15542
+    .line 15979
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 15543
+    .line 15980
     :sswitch_d
     return-object p0
 
-    .line 15548
+    .line 15985
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -890,7 +1086,7 @@
 
     goto :goto_0
 
-    .line 15552
+    .line 15989
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -900,7 +1096,7 @@
 
     goto :goto_0
 
-    .line 15556
+    .line 15993
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -910,7 +1106,7 @@
 
     goto :goto_0
 
-    .line 15560
+    .line 15997
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -920,7 +1116,7 @@
 
     goto :goto_0
 
-    .line 15564
+    .line 16001
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -930,7 +1126,7 @@
 
     goto :goto_0
 
-    .line 15568
+    .line 16005
     :sswitch_36
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -940,7 +1136,7 @@
 
     goto :goto_0
 
-    .line 15572
+    .line 16009
     :sswitch_3e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -950,7 +1146,7 @@
 
     goto :goto_0
 
-    .line 15576
+    .line 16013
     :sswitch_46
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -960,7 +1156,7 @@
 
     goto :goto_0
 
-    .line 15580
+    .line 16017
     :sswitch_4e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -970,7 +1166,7 @@
 
     goto :goto_0
 
-    .line 15584
+    .line 16021
     :sswitch_56
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -980,7 +1176,7 @@
 
     goto :goto_0
 
-    .line 15588
+    .line 16025
     :sswitch_5e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -990,7 +1186,7 @@
 
     goto :goto_0
 
-    .line 15592
+    .line 16029
     :sswitch_66
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -1000,8 +1196,48 @@
 
     goto :goto_0
 
-    .line 15538
-    :sswitch_data_6e
+    .line 16033
+    :sswitch_6e
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->setDeviceAssociationMethod(I)Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
+
+    goto :goto_0
+
+    .line 16037
+    :sswitch_76
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->setUserTokenRequestMessage(Ljava/lang/String;)Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
+
+    goto :goto_0
+
+    .line 16041
+    :sswitch_7e
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->setUserTokenRequestAddress(Ljava/lang/String;)Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
+
+    goto/16 :goto_0
+
+    .line 16045
+    :sswitch_87
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->setPassphraseRequired(Z)Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
+
+    goto/16 :goto_0
+
+    .line 15975
+    :sswitch_data_90
     .sparse-switch
         0x0 -> :sswitch_d
         0xa -> :sswitch_e
@@ -1016,6 +1252,10 @@
         0x50 -> :sswitch_56
         0x58 -> :sswitch_5e
         0x60 -> :sswitch_66
+        0x68 -> :sswitch_6e
+        0x72 -> :sswitch_76
+        0x7a -> :sswitch_7e
+        0x80 -> :sswitch_87
     .end sparse-switch
 .end method
 
@@ -1029,7 +1269,7 @@
     .end annotation
 
     .prologue
-    .line 15157
+    .line 15487
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
 
     move-result-object v0
@@ -1042,15 +1282,15 @@
     .parameter "value"
 
     .prologue
-    .line 15353
+    .line 15686
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasApiVersion:Z
 
-    .line 15354
+    .line 15687
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->apiVersion_:I
 
-    .line 15355
+    .line 15688
     return-object p0
 .end method
 
@@ -1059,15 +1299,15 @@
     .parameter "value"
 
     .prologue
-    .line 15302
+    .line 15635
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasApplicationId:Z
 
-    .line 15303
+    .line 15636
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->applicationId_:Ljava/lang/String;
 
-    .line 15304
+    .line 15637
     return-object p0
 .end method
 
@@ -1076,15 +1316,32 @@
     .parameter "value"
 
     .prologue
-    .line 15285
+    .line 15618
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasBillingInstrumentType:Z
 
-    .line 15286
+    .line 15619
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->billingInstrumentType_:I
 
-    .line 15287
+    .line 15620
+    return-object p0
+.end method
+
+.method public setDeviceAssociationMethod(I)Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 15737
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasDeviceAssociationMethod:Z
+
+    .line 15738
+    iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->deviceAssociationMethod_:I
+
+    .line 15739
     return-object p0
 .end method
 
@@ -1093,15 +1350,15 @@
     .parameter "value"
 
     .prologue
-    .line 15268
+    .line 15601
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasIconId:Z
 
-    .line 15269
+    .line 15602
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->iconId_:Ljava/lang/String;
 
-    .line 15270
+    .line 15603
     return-object p0
 .end method
 
@@ -1110,15 +1367,15 @@
     .parameter "value"
 
     .prologue
-    .line 15168
+    .line 15501
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasId:Z
 
-    .line 15169
+    .line 15502
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->id_:Ljava/lang/String;
 
-    .line 15170
+    .line 15503
     return-object p0
 .end method
 
@@ -1127,15 +1384,15 @@
     .parameter "value"
 
     .prologue
-    .line 15336
+    .line 15669
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasInstrumentTosRequired:Z
 
-    .line 15337
+    .line 15670
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->instrumentTosRequired_:Z
 
-    .line 15338
+    .line 15671
     return-object p0
 .end method
 
@@ -1144,15 +1401,32 @@
     .parameter "value"
 
     .prologue
-    .line 15185
+    .line 15518
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasName:Z
 
-    .line 15186
+    .line 15519
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->name_:Ljava/lang/String;
 
-    .line 15187
+    .line 15520
+    return-object p0
+.end method
+
+.method public setPassphraseRequired(Z)Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 15788
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasPassphraseRequired:Z
+
+    .line 15789
+    iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->passphraseRequired_:Z
+
+    .line 15790
     return-object p0
 .end method
 
@@ -1161,15 +1435,15 @@
     .parameter "value"
 
     .prologue
-    .line 15370
+    .line 15703
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasPerTransactionCredentialsRequired:Z
 
-    .line 15371
+    .line 15704
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->perTransactionCredentialsRequired_:Z
 
-    .line 15372
+    .line 15705
     return-object p0
 .end method
 
@@ -1178,15 +1452,15 @@
     .parameter "value"
 
     .prologue
-    .line 15387
+    .line 15720
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasSendSubscriberIdWithCarrierBillingRequests:Z
 
-    .line 15388
+    .line 15721
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->sendSubscriberIdWithCarrierBillingRequests_:Z
 
-    .line 15389
+    .line 15722
     return-object p0
 .end method
 
@@ -1195,15 +1469,49 @@
     .parameter "value"
 
     .prologue
-    .line 15319
+    .line 15652
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasTosUrl:Z
 
-    .line 15320
+    .line 15653
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->tosUrl_:Ljava/lang/String;
 
-    .line 15321
+    .line 15654
+    return-object p0
+.end method
+
+.method public setUserTokenRequestAddress(Ljava/lang/String;)Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 15771
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasUserTokenRequestAddress:Z
+
+    .line 15772
+    iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->userTokenRequestAddress_:Ljava/lang/String;
+
+    .line 15773
+    return-object p0
+.end method
+
+.method public setUserTokenRequestMessage(Ljava/lang/String;)Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 15754
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasUserTokenRequestMessage:Z
+
+    .line 15755
+    iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->userTokenRequestMessage_:Ljava/lang/String;
+
+    .line 15756
     return-object p0
 .end method
 
@@ -1217,14 +1525,14 @@
     .end annotation
 
     .prologue
-    .line 15422
+    .line 15828
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasId()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 15423
+    .line 15829
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getId()Ljava/lang/String;
@@ -1233,7 +1541,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 15425
+    .line 15831
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasName()Z
 
@@ -1241,7 +1549,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 15426
+    .line 15832
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getName()Ljava/lang/String;
@@ -1250,7 +1558,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 15428
+    .line 15834
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getMncMccList()Ljava/util/List;
 
@@ -1274,7 +1582,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 15429
+    .line 15835
     .local v0, element:Ljava/lang/String;
     const/4 v2, 0x3
 
@@ -1282,7 +1590,7 @@
 
     goto :goto_24
 
-    .line 15431
+    .line 15837
     .end local v0           #element:Ljava/lang/String;
     :cond_35
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getBackendUrlList()Ljava/util/List;
@@ -1306,7 +1614,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 15432
+    .line 15838
     .restart local v0       #element:Ljava/lang/String;
     const/4 v2, 0x4
 
@@ -1314,7 +1622,7 @@
 
     goto :goto_3d
 
-    .line 15434
+    .line 15840
     .end local v0           #element:Ljava/lang/String;
     :cond_4e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasIconId()Z
@@ -1323,7 +1631,7 @@
 
     if-eqz v2, :cond_5c
 
-    .line 15435
+    .line 15841
     const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getIconId()Ljava/lang/String;
@@ -1332,7 +1640,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 15437
+    .line 15843
     :cond_5c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasBillingInstrumentType()Z
 
@@ -1340,7 +1648,7 @@
 
     if-eqz v2, :cond_6a
 
-    .line 15438
+    .line 15844
     const/4 v2, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getBillingInstrumentType()I
@@ -1349,7 +1657,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 15440
+    .line 15846
     :cond_6a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasApplicationId()Z
 
@@ -1357,7 +1665,7 @@
 
     if-eqz v2, :cond_78
 
-    .line 15441
+    .line 15847
     const/4 v2, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getApplicationId()Ljava/lang/String;
@@ -1366,7 +1674,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 15443
+    .line 15849
     :cond_78
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasTosUrl()Z
 
@@ -1374,7 +1682,7 @@
 
     if-eqz v2, :cond_87
 
-    .line 15444
+    .line 15850
     const/16 v2, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getTosUrl()Ljava/lang/String;
@@ -1383,7 +1691,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 15446
+    .line 15852
     :cond_87
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasInstrumentTosRequired()Z
 
@@ -1391,7 +1699,7 @@
 
     if-eqz v2, :cond_96
 
-    .line 15447
+    .line 15853
     const/16 v2, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getInstrumentTosRequired()Z
@@ -1400,7 +1708,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 15449
+    .line 15855
     :cond_96
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasApiVersion()Z
 
@@ -1408,7 +1716,7 @@
 
     if-eqz v2, :cond_a5
 
-    .line 15450
+    .line 15856
     const/16 v2, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getApiVersion()I
@@ -1417,7 +1725,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 15452
+    .line 15858
     :cond_a5
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasPerTransactionCredentialsRequired()Z
 
@@ -1425,7 +1733,7 @@
 
     if-eqz v2, :cond_b4
 
-    .line 15453
+    .line 15859
     const/16 v2, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getPerTransactionCredentialsRequired()Z
@@ -1434,7 +1742,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 15455
+    .line 15861
     :cond_b4
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasSendSubscriberIdWithCarrierBillingRequests()Z
 
@@ -1442,7 +1750,7 @@
 
     if-eqz v2, :cond_c3
 
-    .line 15456
+    .line 15862
     const/16 v2, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getSendSubscriberIdWithCarrierBillingRequests()Z
@@ -1451,7 +1759,75 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 15458
+    .line 15864
     :cond_c3
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasDeviceAssociationMethod()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_d2
+
+    .line 15865
+    const/16 v2, 0xd
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getDeviceAssociationMethod()I
+
+    move-result v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
+
+    .line 15867
+    :cond_d2
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasUserTokenRequestMessage()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_e1
+
+    .line 15868
+    const/16 v2, 0xe
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getUserTokenRequestMessage()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    .line 15870
+    :cond_e1
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasUserTokenRequestAddress()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_f0
+
+    .line 15871
+    const/16 v2, 0xf
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getUserTokenRequestAddress()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    .line 15873
+    :cond_f0
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->hasPassphraseRequired()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_ff
+
+    .line 15874
+    const/16 v2, 0x10
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getPassphraseRequired()Z
+
+    move-result v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
+
+    .line 15876
+    :cond_ff
     return-void
 .end method

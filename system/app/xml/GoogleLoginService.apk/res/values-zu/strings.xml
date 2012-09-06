@@ -242,18 +242,18 @@ wokuphepha"</b></string>
     <string name="account_intro_recommended_title">Yenze ibe i-Google+</string>
     <string name="common_message">"I-akhawunti ka-Google ikuvumela ukuthi
 
-"<li><ul>Ubone futhi uhlelele kahle yonke imininingwane yakho evela moma yikuphi.</ul></li>"
+"<ul><li>Ubone futhi uhlelele kahle yonke imininingwane yakho evela moma yikuphi.</li></ul>"
 
-"<li><ul>Faka izipele zemininingwane yakho okuzenzelayo.</ul></li>"
+"<ul><li>Faka izipele zemininingwane yakho okuzenzelayo.</li></ul>"
 
-"<li><ul>Sebenzisa izinsizakali ze-Google kalula nanoma kuphi.</ul></li></string>
+"<ul><li>Sebenzisa izinsizakali ze-Google kalula nanoma kuphi.</li></ul></string>
     <string name="add_account_message">" Ungasebenzisa i-akhawunti ye-Google engaphezulu kweyodwa (njengama-akhawunti akho asekhaya nawasemsebenzini). Cindezela "<b>"  Ngena ngemvume"</b> noma <b>Yakha I-akhawunti</b> ukuze wengeze I-akhawunti ye-Google</string>
     <string name="account_intro_default_message">Ungaphinde ulahlekelwe izinto zakho futhi. I-akhawunti yakho yakwa-Google igcina yonke into yakho iphephile.</string>
     <string name="account_intro_custom_endtext">Unayo i-%s? Ngena manje.</string>
     <string name="account_intro_simple_message">Ingabe ufuna ukwengeza i-akhawunti esivele ikhona noma ufuna ukuqala entsha?</string>
     <string name="learn_more_title">Funda kabanzi</string>
     <string name="learn_more_account_intro">"I-akhawunti ye-Google ikuvumela ukuthi
-"<li><ul>Ubone futhi uhlele imininingwane yakho noma kuphi.<li>Londoloza imininingo yakho ngokuzenzekelayo, kokufana ne-imeyli, oxhumana nabo, umculo, kanye nezithombe.</li><li>Sebenzisa izinsiza zika-Google kalula noma yikuphi—okuhlanganisa imininingwane yokuxhumana nabo, Ikhalenda, Amabalazwe, kanye nokunye.</li></ul></li></string>
+"<ul><li>Ubone futhi uhlele imininingwane yakho noma kuphi.<li>Londoloza imininingo yakho ngokuzenzekelayo, kokufana ne-imeyli, oxhumana nabo, umculo, kanye nezithombe.</li><li>Sebenzisa izinsiza zika-Google kalula noma yikuphi—okuhlanganisa imininingwane yokuxhumana nabo, Ikhalenda, Amabalazwe, kanye nokunye.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Mayelana nama-akhawunti akwa-Google</string>
     <string name="learn_more_web_history">"Umlando weWebhu ulungisa imiphumela yokutholakele ngokusekela kulokho okucingile kanye nezindawo ozivakashele, uhlinzeka ngomuzwa wokusebenzisa u-Google wakho.
 

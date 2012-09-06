@@ -242,18 +242,18 @@ pitanje"</b></string>
     <string name="account_intro_recommended_title">Neka bude Google</string>
     <string name="common_message">"Google račun omogućuje vam sljedeće:
 
-"<li><ul>prikaz i organiziranje svih podataka s bilo kojeg mjesta</ul></li>"
+"<ul><li>prikaz i organiziranje svih podataka s bilo kojeg mjesta</li></ul>"
 
-"<li><ul>automatsko stvaranje sigurnosne kopije podataka</ul></li>"
+"<ul><li>automatsko stvaranje sigurnosne kopije podataka</li></ul>"
 
-"<li><ul>upotrebu Googleovih usluga bez poteškoća, s bilo kojeg mjesta.</ul></li></string>
+"<ul><li>upotrebu Googleovih usluga bez poteškoća, s bilo kojeg mjesta.</li></ul></string>
     <string name="add_account_message">" Možete upotrebljavati više Google računa (npr. kućni i poslovni račun). Dodirnite "<b>Prijavi se</b> ili <b>Izradi račun</b> kako biste dodali Google račun</string>
     <string name="account_intro_default_message">Više nikada ne morate izgubiti svoje stvari. Na Google računu sve je sigurno.</string>
     <string name="account_intro_custom_endtext">Imate %s? Prijavite se sada.</string>
     <string name="account_intro_simple_message">Želite li dodati postojeći račun ili stvoriti novi?</string>
     <string name="learn_more_title"><annotation id="learn_more">Saznajte više</annotation></string>
     <string name="learn_more_account_intro">"Pomoću Google računa možete 
-"<li><ul>Vidjeti i organizirati sve svoje podatke odasvuda.<li>Automatski napraviti sigurnosnu kopiju svojih podataka, poput e-pošte, kontakata, glazbe i slika.</li><li>Upotrebljavati Googleove usluge od bilo kuda—uključujući Kontakte, Kalendar, Karte i mnoge druge usluge.</li></ul></li></string>
+"<ul><li>Vidjeti i organizirati sve svoje podatke odasvuda.<li>Automatski napraviti sigurnosnu kopiju svojih podataka, poput e-pošte, kontakata, glazbe i slika.</li><li>Upotrebljavati Googleove usluge od bilo kuda—uključujući Kontakte, Kalendar, Karte i mnoge druge usluge.</li></li></ul></string>
     <string name="learn_more_account_intro_title">O Google računima</string>
     <string name="learn_more_web_history">"Web-povijest prilagođava rezultate pretraživanja na temelju onoga što ste tražili i web-lokacija koje ste posjetili, pružajući prilagođeni doživljaj Googlea.
 

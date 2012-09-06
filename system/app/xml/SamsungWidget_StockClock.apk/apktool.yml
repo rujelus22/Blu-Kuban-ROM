@@ -1,7 +1,0 @@
-version: 1.4.3
-apkFileName: SamsungWidget_StockClock.apk
-isFrameworkApk: false
-usesFramework:
-  ids:
-  - 1
-  - 2

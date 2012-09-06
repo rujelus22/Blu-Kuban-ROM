@@ -28,6 +28,14 @@
         <item quantity="other">För %1$d sek. sedan</item>
         <item quantity="one">för 1 sekund sedan</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Går ut om %1$d dagar</item>
+        <item quantity="one">Går ut om 1 dag</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Går ut om %1$d timmar</item>
+        <item quantity="one">Går ut om 1 timme</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">nya uppladdningar</item>
         <item quantity="one">ny överföring</item>

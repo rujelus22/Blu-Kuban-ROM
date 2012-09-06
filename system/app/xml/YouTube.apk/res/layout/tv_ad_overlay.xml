@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_gravity="bottom" android:background="@color/darker_transparent" android:layout_width="fill_parent" android:layout_height="80.0dip">
+        <TextView android:textColor="@color/advertisment_remaining" android:id="@id/remaining" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" style="@style/TvSmallTextAppearance" />
+        <TextView android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/remaining" android:layout_alignLeft="@id/remaining" style="@style/TvMediumTextAppearance" />
+    </RelativeLayout>
+    <FrameLayout android:layout_gravity="bottom|right|center" android:layout_width="228.0dip" android:layout_height="129.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="30.0dip">
+        <ImageView android:id="@id/thumbnail" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="8.0dip" android:src="@drawable/ic_no_thumb" />
+        <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:background="@color/dark_transparent" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:paddingLeft="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ad_next_up" style="@style/TvSmallTextAppearance" />
+            <TextView android:ellipsize="marquee" android:id="@id/upcoming_title" android:paddingLeft="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/space_separator" android:singleLine="true" style="@style/TvSmallTextAppearance" />
+        </LinearLayout>
+    </FrameLayout>
+</merge>

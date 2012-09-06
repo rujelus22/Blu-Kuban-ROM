@@ -1,483 +1,351 @@
 .class public final Lcom/google/android/youtube/app/honeycomb/phone/a;
-.super Lcom/google/android/youtube/app/honeycomb/phone/ap;
+.super Lcom/google/android/youtube/app/honeycomb/phone/p;
 .source "SourceFile"
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
-.implements Lcom/google/android/youtube/core/async/av;
+.implements Lcom/google/android/youtube/core/async/bc;
 
 
 # instance fields
-.field private final c:Lcom/google/android/youtube/app/honeycomb/phone/b;
+.field private b:Lcom/google/android/youtube/core/async/UserAuthorizer;
 
-.field private d:Lcom/google/android/youtube/core/async/UserAuthorizer;
+.field private c:Lcom/google/android/youtube/core/model/UserAuth;
 
-.field private e:Lcom/google/android/youtube/core/model/UserAuth;
+.field private d:Lcom/google/android/youtube/core/b/ae;
 
-.field private f:Lcom/google/android/youtube/core/client/ad;
+.field private e:Lcom/google/android/youtube/core/b/ag;
 
-.field private g:Lcom/google/android/youtube/core/client/af;
+.field private f:Lcom/google/android/youtube/core/d;
 
-.field private h:Lcom/google/android/youtube/core/e;
+.field private g:Lcom/google/android/youtube/app/ui/StackButton;
 
-.field private i:Lcom/google/android/youtube/app/ui/h;
+.field private h:Lcom/google/android/youtube/app/ui/StackButton;
+
+.field private i:Lcom/google/android/youtube/app/ui/StackButton;
 
 .field private j:Lcom/google/android/youtube/app/ui/StackButton;
 
 .field private k:Lcom/google/android/youtube/app/ui/StackButton;
 
-.field private l:Lcom/google/android/youtube/app/ui/StackButton;
+.field private l:Landroid/widget/TextView;
 
-.field private m:Lcom/google/android/youtube/app/ui/StackButton;
+.field private m:Landroid/widget/TextView;
 
-.field private n:Lcom/google/android/youtube/app/ui/StackButton;
+.field private n:Landroid/widget/TextView;
+
+.field private o:Landroid/widget/TextView;
+
+.field private p:Landroid/widget/ImageView;
+
+.field private q:Landroid/view/View;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;Lcom/google/android/youtube/app/honeycomb/phone/b;)V
-    .registers 4
-    .parameter
-    .parameter
-
-    .prologue
-    .line 69
-    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/ap;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;)V
-
-    .line 70
-    invoke-static {p2}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/youtube/app/honeycomb/phone/b;
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->c:Lcom/google/android/youtube/app/honeycomb/phone/b;
-
-    .line 71
-    return-void
-.end method
-
-.method static synthetic a(Lcom/google/android/youtube/app/honeycomb/phone/a;)Lcom/google/android/youtube/core/client/af;
+.method public constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 37
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->g:Lcom/google/android/youtube/core/client/af;
+    .line 64
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/p;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;)V
 
-    return-object v0
-.end method
-
-.method static synthetic b(Lcom/google/android/youtube/app/honeycomb/phone/a;)Lcom/google/android/youtube/app/ui/StackButton;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 37
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->m:Lcom/google/android/youtube/app/ui/StackButton;
-
-    return-object v0
-.end method
-
-.method static synthetic c(Lcom/google/android/youtube/app/honeycomb/phone/a;)Lcom/google/android/youtube/core/client/ad;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 37
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->f:Lcom/google/android/youtube/core/client/ad;
-
-    return-object v0
-.end method
-
-.method private i()V
-    .registers 3
-
-    .prologue
-    .line 110
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->i:Lcom/google/android/youtube/app/ui/h;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/h;->a()V
-
-    .line 111
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->j:Lcom/google/android/youtube/app/ui/StackButton;
-
-    const v1, 0x7f0200ae
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->a(I)V
-
-    .line 112
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->k:Lcom/google/android/youtube/app/ui/StackButton;
-
-    const v1, 0x7f0200a9
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->a(I)V
-
-    .line 113
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->l:Lcom/google/android/youtube/app/ui/StackButton;
-
-    const v1, 0x7f0200ab
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->a(I)V
-
-    .line 114
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->m:Lcom/google/android/youtube/app/ui/StackButton;
-
-    const v1, 0x7f0200ac
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->a(I)V
-
-    .line 115
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->n:Lcom/google/android/youtube/app/ui/StackButton;
-
-    const v1, 0x7f0200ad
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->a(I)V
-
-    .line 116
+    .line 65
     return-void
 .end method
 
-
-# virtual methods
-.method protected final a(I)Landroid/app/Dialog;
-    .registers 4
+.method static synthetic a(Lcom/google/android/youtube/app/honeycomb/phone/a;)V
+    .registers 1
     .parameter
 
     .prologue
-    .line 206
-    packed-switch p1, :pswitch_data_e
+    .line 41
+    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/phone/a;->m()V
 
-    .line 210
-    const/4 v0, 0x0
-
-    :goto_4
-    return-object v0
-
-    .line 208
-    :pswitch_5
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->d:Lcom/google/android/youtube/core/async/UserAuthorizer;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/async/UserAuthorizer;->b(Landroid/app/Activity;)Landroid/app/Dialog;
-
-    move-result-object v0
-
-    goto :goto_4
-
-    .line 206
-    :pswitch_data_e
-    .packed-switch 0x1
-        :pswitch_5
-    .end packed-switch
-.end method
-
-.method protected final a(Landroid/view/Menu;)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 125
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;->getMenuInflater()Landroid/view/MenuInflater;
-
-    move-result-object v0
-
-    const/high16 v1, 0x7f11
-
-    invoke-virtual {v0, v1, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
-
-    .line 126
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/g;->b(Landroid/content/Context;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_26
-
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/g;->a(Landroid/content/Context;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_26
-
-    .line 128
-    const v0, 0x7f0900c9
-
-    invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
-
-    .line 130
-    :cond_26
     return-void
 .end method
 
-.method public final a(Lcom/google/android/youtube/core/model/UserAuth;)V
+.method static synthetic a(Lcom/google/android/youtube/app/honeycomb/phone/a;Lcom/google/android/youtube/core/model/UserProfile;)V
     .registers 8
     .parameter
-
-    .prologue
-    const/4 v5, 0x1
-
-    .line 159
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->e:Lcom/google/android/youtube/core/model/UserAuth;
-
-    .line 160
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->i:Lcom/google/android/youtube/app/ui/h;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/app/ui/h;->a(Lcom/google/android/youtube/core/model/UserAuth;)V
-
-    .line 162
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->f:Lcom/google/android/youtube/core/client/ad;
-
-    new-instance v1, Lcom/google/android/youtube/app/ui/bn;
-
-    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
-
-    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->g:Lcom/google/android/youtube/core/client/af;
-
-    iget-object v4, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->j:Lcom/google/android/youtube/app/ui/StackButton;
-
-    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/youtube/app/ui/bn;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/client/af;Lcom/google/android/youtube/app/ui/StackButton;)V
-
-    invoke-interface {v0, p1, v5, v1}, Lcom/google/android/youtube/core/client/ad;->a(Lcom/google/android/youtube/core/model/UserAuth;ILcom/google/android/youtube/core/async/g;)V
-
-    .line 168
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->f:Lcom/google/android/youtube/core/client/ad;
-
-    new-instance v1, Lcom/google/android/youtube/app/ui/bn;
-
-    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
-
-    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->g:Lcom/google/android/youtube/core/client/af;
-
-    iget-object v4, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->k:Lcom/google/android/youtube/app/ui/StackButton;
-
-    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/youtube/app/ui/bn;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/client/af;Lcom/google/android/youtube/app/ui/StackButton;)V
-
-    invoke-interface {v0, p1, v5, v1}, Lcom/google/android/youtube/core/client/ad;->b(Lcom/google/android/youtube/core/model/UserAuth;ILcom/google/android/youtube/core/async/g;)V
-
-    .line 171
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->f:Lcom/google/android/youtube/core/client/ad;
-
-    new-instance v1, Lcom/google/android/youtube/app/honeycomb/phone/c;
-
-    invoke-direct {v1, p0}, Lcom/google/android/youtube/app/honeycomb/phone/c;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/a;)V
-
-    invoke-interface {v0, p1, v5, v1}, Lcom/google/android/youtube/core/client/ad;->d(Lcom/google/android/youtube/core/model/UserAuth;ILcom/google/android/youtube/core/async/g;)V
-
-    .line 173
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->f:Lcom/google/android/youtube/core/client/ad;
-
-    new-instance v1, Lcom/google/android/youtube/app/ui/bn;
-
-    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
-
-    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->g:Lcom/google/android/youtube/core/client/af;
-
-    iget-object v4, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->n:Lcom/google/android/youtube/app/ui/StackButton;
-
-    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/youtube/app/ui/bn;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/client/af;Lcom/google/android/youtube/app/ui/StackButton;)V
-
-    invoke-interface {v0, p1, v5, v1}, Lcom/google/android/youtube/core/client/ad;->e(Lcom/google/android/youtube/core/model/UserAuth;ILcom/google/android/youtube/core/async/g;)V
-
-    .line 176
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->c:Lcom/google/android/youtube/app/honeycomb/phone/b;
-
-    invoke-interface {v0}, Lcom/google/android/youtube/app/honeycomb/phone/b;->e_()V
-
-    .line 177
-    return-void
-.end method
-
-.method public final a(Ljava/lang/Exception;)V
-    .registers 3
     .parameter
 
     .prologue
-    .line 200
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->h:Lcom/google/android/youtube/core/e;
+    const/4 v4, 0x1
 
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/core/e;->b(Ljava/lang/Throwable;)V
+    const/4 v5, 0x0
 
-    .line 201
-    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/a;->h()V
+    .line 41
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->l:Landroid/widget/TextView;
 
-    .line 202
-    return-void
-.end method
+    iget-object v1, p1, Lcom/google/android/youtube/core/model/UserProfile;->displayUsername:Ljava/lang/String;
 
-.method protected final a(Landroid/view/MenuItem;)Z
-    .registers 6
-    .parameter
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .prologue
-    const/4 v0, 0x1
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->n:Landroid/widget/TextView;
 
-    const/4 v1, 0x0
+    const-string v1, "%1$,d"
 
-    .line 134
-    invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
+    new-array v2, v4, [Ljava/lang/Object;
 
-    move-result v2
+    iget v3, p1, Lcom/google/android/youtube/core/model/UserProfile;->subscribersCount:I
 
-    packed-switch v2, :pswitch_data_58
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move v0, v1
+    move-result-object v3
 
-    .line 155
-    :goto_a
-    return v0
+    aput-object v3, v2, v5
 
-    .line 136
-    :pswitch_b
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
-
-    invoke-virtual {v1}, Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;->n()Lcom/google/android/youtube/core/Analytics;
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "Logout"
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v1, v2}, Lcom/google/android/youtube/core/Analytics;->b(Ljava/lang/String;)V
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->o:Landroid/widget/TextView;
 
-    .line 137
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->d:Lcom/google/android/youtube/core/async/UserAuthorizer;
+    const-string v1, "%1$,d"
 
-    invoke-virtual {v1}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a()V
+    new-array v2, v4, [Ljava/lang/Object;
 
-    .line 138
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->c:Lcom/google/android/youtube/app/honeycomb/phone/b;
+    iget-wide v3, p1, Lcom/google/android/youtube/core/model/UserProfile;->uploadViewsCount:J
 
-    invoke-interface {v1}, Lcom/google/android/youtube/app/honeycomb/phone/b;->b()V
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    .line 139
-    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/phone/a;->i()V
+    move-result-object v3
 
-    .line 140
-    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/a;->h()V
+    aput-object v3, v2, v5
 
-    goto :goto_a
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 143
-    :pswitch_27
-    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
+    move-result-object v1
 
-    invoke-virtual {v2}, Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;->n()Lcom/google/android/youtube/core/Analytics;
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v0, p1, Lcom/google/android/youtube/core/model/UserProfile;->thumbnailUri:Landroid/net/Uri;
+
+    if-eqz v0, :cond_4a
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->e:Lcom/google/android/youtube/core/b/ag;
+
+    iget-object v1, p1, Lcom/google/android/youtube/core/model/UserProfile;->thumbnailUri:Landroid/net/Uri;
+
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
+
+    new-instance v3, Lcom/google/android/youtube/app/honeycomb/phone/d;
+
+    invoke-direct {v3, p0, v5}, Lcom/google/android/youtube/app/honeycomb/phone/d;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/a;B)V
+
+    invoke-static {v2, v3}, Lcom/google/android/youtube/core/async/c;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/l;)Lcom/google/android/youtube/core/async/c;
 
     move-result-object v2
 
-    const-string v3, "Rentals"
+    invoke-interface {v0, v1, v2}, Lcom/google/android/youtube/core/b/ag;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/async/l;)V
 
-    invoke-virtual {v2, v3}, Lcom/google/android/youtube/core/Analytics;->b(Ljava/lang/String;)V
+    :goto_49
+    return-void
 
-    .line 144
-    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
+    :cond_4a
+    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/phone/a;->m()V
 
-    invoke-static {v2}, Lcom/google/android/youtube/core/utils/g;->b(Landroid/content/Context;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_51
-
-    .line 145
-    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->e:Lcom/google/android/youtube/core/model/UserAuth;
-
-    if-nez v2, :cond_47
-
-    .line 146
-    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
-
-    const v3, 0x7f0a00a8
-
-    invoke-static {v2, v3, v1}, Lcom/google/android/youtube/core/utils/Util;->a(Landroid/content/Context;II)V
-
-    goto :goto_a
-
-    .line 148
-    :cond_47
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
-
-    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->e:Lcom/google/android/youtube/core/model/UserAuth;
-
-    iget-object v2, v2, Lcom/google/android/youtube/core/model/UserAuth;->a:Ljava/lang/String;
-
-    invoke-static {v1, v2}, Lcom/google/android/youtube/core/utils/g;->a(Landroid/app/Activity;Ljava/lang/String;)V
-
-    goto :goto_a
-
-    .line 151
-    :cond_51
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
-
-    invoke-static {v1}, Lcom/google/android/youtube/core/utils/g;->c(Landroid/app/Activity;)V
-
-    goto :goto_a
-
-    .line 134
-    nop
-
-    :pswitch_data_58
-    .packed-switch 0x7f0900c9
-        :pswitch_27
-        :pswitch_b
-    .end packed-switch
+    goto :goto_49
 .end method
 
-.method protected final b()V
-    .registers 7
+.method static synthetic b(Lcom/google/android/youtube/app/honeycomb/phone/a;)Lcom/google/android/youtube/core/d;
+    .registers 2
+    .parameter
 
     .prologue
-    .line 75
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
+    .line 41
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->f:Lcom/google/android/youtube/core/d;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;->getApplication()Landroid/app/Application;
+    return-object v0
+.end method
+
+.method static synthetic c(Lcom/google/android/youtube/app/honeycomb/phone/a;)Landroid/widget/ImageView;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 41
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->p:Landroid/widget/ImageView;
+
+    return-object v0
+.end method
+
+.method static synthetic d(Lcom/google/android/youtube/app/honeycomb/phone/a;)Lcom/google/android/youtube/core/b/ag;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 41
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->e:Lcom/google/android/youtube/core/b/ag;
+
+    return-object v0
+.end method
+
+.method static synthetic e(Lcom/google/android/youtube/app/honeycomb/phone/a;)Lcom/google/android/youtube/app/ui/StackButton;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 41
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->j:Lcom/google/android/youtube/app/ui/StackButton;
+
+    return-object v0
+.end method
+
+.method static synthetic f(Lcom/google/android/youtube/app/honeycomb/phone/a;)Lcom/google/android/youtube/core/b/ae;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 41
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->d:Lcom/google/android/youtube/core/b/ae;
+
+    return-object v0
+.end method
+
+.method private l()V
+    .registers 5
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 85
+    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/a;->n()Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/app/YouTubeApplication;
+    check-cast v0, Landroid/view/ViewGroup;
 
-    .line 76
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->D()Lcom/google/android/youtube/core/async/UserAuthorizer;
+    .line 86
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->q:Landroid/view/View;
+
+    if-eqz v1, :cond_10
+
+    .line 87
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->q:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    .line 89
+    :cond_10
+    invoke-static {}, Lcom/google/android/youtube/core/utils/Util;->c()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_160
+
+    .line 90
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
+
+    invoke-static {v1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->d:Lcom/google/android/youtube/core/async/UserAuthorizer;
+    const v2, 0x7f04006e
 
-    .line 77
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->i()Lcom/google/android/youtube/core/client/ad;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->f:Lcom/google/android/youtube/core/client/ad;
-
-    .line 78
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->o()Lcom/google/android/youtube/core/client/af;
+    invoke-virtual {v1, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->g:Lcom/google/android/youtube/core/client/af;
+    iput-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->q:Landroid/view/View;
 
-    .line 79
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->B()Lcom/google/android/youtube/core/e;
+    .line 96
+    :goto_25
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->q:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 97
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->q:Landroid/view/View;
+
+    const v1, 0x7f0800af
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->h:Lcom/google/android/youtube/core/e;
+    check-cast v0, Lcom/google/android/youtube/app/ui/StackButton;
 
-    .line 81
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->b:Landroid/view/View;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->g:Lcom/google/android/youtube/app/ui/StackButton;
 
-    const v1, 0x7f090064
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->g:Lcom/google/android/youtube/app/ui/StackButton;
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
+
+    const v2, 0x7f0b016b
+
+    invoke-virtual {v1, v2}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->setText(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->g:Lcom/google/android/youtube/app/ui/StackButton;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/youtube/app/ui/StackButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->q:Landroid/view/View;
+
+    const v1, 0x7f0800ac
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/app/ui/StackButton;
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->h:Lcom/google/android/youtube/app/ui/StackButton;
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->h:Lcom/google/android/youtube/app/ui/StackButton;
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
+
+    const v2, 0x7f0b016d
+
+    invoke-virtual {v1, v2}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->setText(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->h:Lcom/google/android/youtube/app/ui/StackButton;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/youtube/app/ui/StackButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->q:Landroid/view/View;
+
+    const v1, 0x7f0800ab
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/app/ui/StackButton;
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->i:Lcom/google/android/youtube/app/ui/StackButton;
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->i:Lcom/google/android/youtube/app/ui/StackButton;
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
+
+    const v2, 0x7f0b016f
+
+    invoke-virtual {v1, v2}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->setText(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->i:Lcom/google/android/youtube/app/ui/StackButton;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/youtube/app/ui/StackButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->q:Landroid/view/View;
+
+    const v1, 0x7f0800ae
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -487,28 +355,25 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->j:Lcom/google/android/youtube/app/ui/StackButton;
 
-    .line 82
     iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->j:Lcom/google/android/youtube/app/ui/StackButton;
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
 
-    const v2, 0x7f0a011a
+    const v2, 0x7f0b0170
 
-    invoke-virtual {v1, v2}, Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->a(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->setText(Ljava/lang/String;)V
 
-    .line 83
     iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->j:Lcom/google/android/youtube/app/ui/StackButton;
 
     invoke-virtual {v0, p0}, Lcom/google/android/youtube/app/ui/StackButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 85
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->b:Landroid/view/View;
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->q:Landroid/view/View;
 
-    const v1, 0x7f090061
+    const v1, 0x7f0800ad
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -518,188 +383,416 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->k:Lcom/google/android/youtube/app/ui/StackButton;
 
-    .line 86
     iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->k:Lcom/google/android/youtube/app/ui/StackButton;
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
 
-    const v2, 0x7f0a011c
+    const v2, 0x7f0b016e
 
-    invoke-virtual {v1, v2}, Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->a(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->setText(Ljava/lang/String;)V
 
-    .line 87
     iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->k:Lcom/google/android/youtube/app/ui/StackButton;
 
     invoke-virtual {v0, p0}, Lcom/google/android/youtube/app/ui/StackButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 88
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->k:Lcom/google/android/youtube/app/ui/StackButton;
+    invoke-static {}, Lcom/google/android/youtube/core/utils/Util;->c()Z
 
-    const/4 v1, 0x0
+    move-result v0
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->setVisibility(I)V
+    if-eqz v0, :cond_f6
 
-    .line 90
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->b:Landroid/view/View;
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
 
-    const v1, 0x7f090065
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f090050
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColorStateList(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->g:Lcom/google/android/youtube/app/ui/StackButton;
+
+    invoke-virtual {v1, v0}, Lcom/google/android/youtube/app/ui/StackButton;->setTextColor(Landroid/content/res/ColorStateList;)V
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->h:Lcom/google/android/youtube/app/ui/StackButton;
+
+    invoke-virtual {v1, v0}, Lcom/google/android/youtube/app/ui/StackButton;->setTextColor(Landroid/content/res/ColorStateList;)V
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->i:Lcom/google/android/youtube/app/ui/StackButton;
+
+    invoke-virtual {v1, v0}, Lcom/google/android/youtube/app/ui/StackButton;->setTextColor(Landroid/content/res/ColorStateList;)V
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->j:Lcom/google/android/youtube/app/ui/StackButton;
+
+    invoke-virtual {v1, v0}, Lcom/google/android/youtube/app/ui/StackButton;->setTextColor(Landroid/content/res/ColorStateList;)V
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->k:Lcom/google/android/youtube/app/ui/StackButton;
+
+    invoke-virtual {v1, v0}, Lcom/google/android/youtube/app/ui/StackButton;->setTextColor(Landroid/content/res/ColorStateList;)V
+
+    :cond_f6
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->q:Landroid/view/View;
+
+    const v1, 0x7f080018
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/app/ui/StackButton;
+    check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->l:Lcom/google/android/youtube/app/ui/StackButton;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->l:Landroid/widget/TextView;
 
-    .line 91
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->l:Lcom/google/android/youtube/app/ui/StackButton;
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->q:Landroid/view/View;
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
-
-    const v2, 0x7f0a011e
-
-    invoke-virtual {v1, v2}, Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->a(Ljava/lang/String;)V
-
-    .line 92
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->l:Lcom/google/android/youtube/app/ui/StackButton;
-
-    invoke-virtual {v0, p0}, Lcom/google/android/youtube/app/ui/StackButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 93
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->l:Lcom/google/android/youtube/app/ui/StackButton;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->setVisibility(I)V
-
-    .line 95
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->b:Landroid/view/View;
-
-    const v1, 0x7f090062
+    const v1, 0x7f080019
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/app/ui/StackButton;
+    check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->m:Lcom/google/android/youtube/app/ui/StackButton;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->m:Landroid/widget/TextView;
 
-    .line 96
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->m:Lcom/google/android/youtube/app/ui/StackButton;
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->q:Landroid/view/View;
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
+    const v1, 0x7f08001a
 
-    const v2, 0x7f0a011f
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    invoke-virtual {v1, v2}, Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;->getString(I)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    check-cast v0, Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->a(Ljava/lang/String;)V
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->n:Landroid/widget/TextView;
 
-    .line 97
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->m:Lcom/google/android/youtube/app/ui/StackButton;
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->q:Landroid/view/View;
 
-    invoke-virtual {v0, p0}, Lcom/google/android/youtube/app/ui/StackButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    const v1, 0x7f08001b
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->o:Landroid/widget/TextView;
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->q:Landroid/view/View;
+
+    const v1, 0x7f080017
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->p:Landroid/widget/ImageView;
+
+    .line 98
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->g:Lcom/google/android/youtube/app/ui/StackButton;
+
+    const v1, 0x7f0200fa
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->setThumbnail(I)V
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->h:Lcom/google/android/youtube/app/ui/StackButton;
+
+    const v1, 0x7f0200f6
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->setThumbnail(I)V
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->i:Lcom/google/android/youtube/app/ui/StackButton;
+
+    const v1, 0x7f0200f8
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->setThumbnail(I)V
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->j:Lcom/google/android/youtube/app/ui/StackButton;
+
+    const v1, 0x7f0200f9
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->setThumbnail(I)V
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->k:Lcom/google/android/youtube/app/ui/StackButton;
+
+    const v1, 0x7f0200fb
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->setThumbnail(I)V
 
     .line 99
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->b:Landroid/view/View;
+    return-void
 
-    const v1, 0x7f090063
+    .line 93
+    :cond_160
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/youtube/app/ui/StackButton;
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->n:Lcom/google/android/youtube/app/ui/StackButton;
-
-    .line 100
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->n:Lcom/google/android/youtube/app/ui/StackButton;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
-
-    const v2, 0x7f0a0120
-
-    invoke-virtual {v1, v2}, Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;->getString(I)Ljava/lang/String;
+    invoke-static {v1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/StackButton;->a(Ljava/lang/String;)V
+    const/high16 v2, 0x7f04
 
-    .line 101
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->n:Lcom/google/android/youtube/app/ui/StackButton;
+    invoke-virtual {v1, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    invoke-virtual {v0, p0}, Lcom/google/android/youtube/app/ui/StackButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    move-result-object v1
 
-    .line 103
-    new-instance v0, Lcom/google/android/youtube/app/ui/h;
+    iput-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->q:Landroid/view/View;
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
-
-    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->f:Lcom/google/android/youtube/core/client/ad;
-
-    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->g:Lcom/google/android/youtube/core/client/af;
-
-    iget-object v4, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->h:Lcom/google/android/youtube/core/e;
-
-    const v5, 0x7f0a0097
-
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/youtube/app/ui/h;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/client/ad;Lcom/google/android/youtube/core/client/af;Lcom/google/android/youtube/core/e;I)V
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->i:Lcom/google/android/youtube/app/ui/h;
-
-    .line 106
-    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/phone/a;->i()V
-
-    .line 107
-    return-void
+    goto/16 :goto_25
 .end method
 
-.method protected final c()V
+.method private m()V
     .registers 3
 
     .prologue
-    .line 120
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->d:Lcom/google/android/youtube/core/async/UserAuthorizer;
+    .line 190
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->p:Landroid/widget/ImageView;
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
+    const v1, 0x7f02012c
 
-    invoke-virtual {v0, v1, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/av;)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 121
+    .line 191
     return-void
 .end method
 
-.method protected final d()Ljava/lang/String;
+
+# virtual methods
+.method public final a(Landroid/content/res/Configuration;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 78
+    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/phone/a;->l()V
+
+    .line 79
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->c:Lcom/google/android/youtube/core/model/UserAuth;
+
+    if-eqz v0, :cond_c
+
+    .line 80
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->c:Lcom/google/android/youtube/core/model/UserAuth;
+
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/phone/a;->a(Lcom/google/android/youtube/core/model/UserAuth;)V
+
+    .line 82
+    :cond_c
+    return-void
+.end method
+
+.method public final a(Landroid/view/Menu;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 117
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->getMenuInflater()Landroid/view/MenuInflater;
+
+    move-result-object v0
+
+    const/high16 v1, 0x7f12
+
+    invoke-virtual {v0, v1, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
+
+    .line 118
+    return-void
+.end method
+
+.method public final a(Lcom/google/android/youtube/core/model/UserAuth;)V
+    .registers 9
+    .parameter
+
+    .prologue
+    const/4 v6, 0x0
+
+    const/4 v5, 0x1
+
+    .line 121
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->c:Lcom/google/android/youtube/core/model/UserAuth;
+
+    .line 123
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->m:Landroid/widget/TextView;
+
+    iget-object v1, p1, Lcom/google/android/youtube/core/model/UserAuth;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 124
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->d:Lcom/google/android/youtube/core/b/ae;
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
+
+    new-instance v2, Lcom/google/android/youtube/app/honeycomb/phone/c;
+
+    invoke-direct {v2, p0, v6}, Lcom/google/android/youtube/app/honeycomb/phone/c;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/a;B)V
+
+    invoke-static {v1, v2}, Lcom/google/android/youtube/core/async/c;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/l;)Lcom/google/android/youtube/core/async/c;
+
+    move-result-object v1
+
+    invoke-interface {v0, p1, v1}, Lcom/google/android/youtube/core/b/ae;->a(Lcom/google/android/youtube/core/model/UserAuth;Lcom/google/android/youtube/core/async/l;)V
+
+    .line 127
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->d:Lcom/google/android/youtube/core/b/ae;
+
+    new-instance v1, Lcom/google/android/youtube/app/ui/cg;
+
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
+
+    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->e:Lcom/google/android/youtube/core/b/ag;
+
+    iget-object v4, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->g:Lcom/google/android/youtube/app/ui/StackButton;
+
+    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/youtube/app/ui/cg;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/b/ag;Lcom/google/android/youtube/app/ui/StackButton;)V
+
+    invoke-interface {v0, p1, v5, v1}, Lcom/google/android/youtube/core/b/ae;->a(Lcom/google/android/youtube/core/model/UserAuth;ILcom/google/android/youtube/core/async/l;)V
+
+    .line 129
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->d:Lcom/google/android/youtube/core/b/ae;
+
+    new-instance v1, Lcom/google/android/youtube/app/ui/cg;
+
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
+
+    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->e:Lcom/google/android/youtube/core/b/ag;
+
+    iget-object v4, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->i:Lcom/google/android/youtube/app/ui/StackButton;
+
+    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/youtube/app/ui/cg;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/b/ag;Lcom/google/android/youtube/app/ui/StackButton;)V
+
+    invoke-interface {v0, p1, v5, v1}, Lcom/google/android/youtube/core/b/ae;->d(Lcom/google/android/youtube/core/model/UserAuth;ILcom/google/android/youtube/core/async/l;)V
+
+    .line 131
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->d:Lcom/google/android/youtube/core/b/ae;
+
+    new-instance v1, Lcom/google/android/youtube/app/ui/cg;
+
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
+
+    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->e:Lcom/google/android/youtube/core/b/ag;
+
+    iget-object v4, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->h:Lcom/google/android/youtube/app/ui/StackButton;
+
+    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/youtube/app/ui/cg;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/b/ag;Lcom/google/android/youtube/app/ui/StackButton;)V
+
+    invoke-interface {v0, p1, v5, v1}, Lcom/google/android/youtube/core/b/ae;->b(Lcom/google/android/youtube/core/model/UserAuth;ILcom/google/android/youtube/core/async/l;)V
+
+    .line 133
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->d:Lcom/google/android/youtube/core/b/ae;
+
+    new-instance v1, Lcom/google/android/youtube/app/ui/cg;
+
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
+
+    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->e:Lcom/google/android/youtube/core/b/ag;
+
+    iget-object v4, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->k:Lcom/google/android/youtube/app/ui/StackButton;
+
+    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/youtube/app/ui/cg;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/b/ag;Lcom/google/android/youtube/app/ui/StackButton;)V
+
+    invoke-interface {v0, p1, v5, v1}, Lcom/google/android/youtube/core/b/ae;->c(Lcom/google/android/youtube/core/model/UserAuth;ILcom/google/android/youtube/core/async/l;)V
+
+    .line 135
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->d:Lcom/google/android/youtube/core/b/ae;
+
+    new-instance v1, Lcom/google/android/youtube/app/honeycomb/phone/b;
+
+    invoke-direct {v1, p0, v6}, Lcom/google/android/youtube/app/honeycomb/phone/b;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/a;B)V
+
+    invoke-interface {v0, p1, v5, v1}, Lcom/google/android/youtube/core/b/ae;->e(Lcom/google/android/youtube/core/model/UserAuth;ILcom/google/android/youtube/core/async/l;)V
+
+    .line 137
+    return-void
+.end method
+
+.method public final a(Ljava/lang/Exception;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 240
+    return-void
+.end method
+
+.method public final b()V
+    .registers 3
+
+    .prologue
+    .line 69
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->getApplication()Landroid/app/Application;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/app/YouTubeApplication;
+
+    .line 70
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->Q()Lcom/google/android/youtube/core/async/UserAuthorizer;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->b:Lcom/google/android/youtube/core/async/UserAuthorizer;
+
+    .line 71
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->j()Lcom/google/android/youtube/core/b/ae;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->d:Lcom/google/android/youtube/core/b/ae;
+
+    .line 72
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->p()Lcom/google/android/youtube/core/b/ag;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->e:Lcom/google/android/youtube/core/b/ag;
+
+    .line 73
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->N()Lcom/google/android/youtube/core/d;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->f:Lcom/google/android/youtube/core/d;
+
+    .line 74
+    return-void
+.end method
+
+.method public final c()V
     .registers 2
 
     .prologue
-    .line 230
-    const-string v0, "yt_your_channel"
+    .line 111
+    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/phone/a;->l()V
 
-    return-object v0
+    .line 112
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->b:Lcom/google/android/youtube/core/async/UserAuthorizer;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Lcom/google/android/youtube/core/async/bc;)V
+
+    .line 113
+    return-void
 .end method
 
-.method public final d_()V
+.method public final e_()V
     .registers 1
 
     .prologue
-    .line 196
-    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/a;->h()V
-
-    .line 197
+    .line 237
     return-void
 .end method
 
@@ -708,90 +801,90 @@
     .parameter
 
     .prologue
-    .line 215
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->j:Lcom/google/android/youtube/app/ui/StackButton;
+    .line 243
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->g:Lcom/google/android/youtube/app/ui/StackButton;
 
     if-ne p1, v0, :cond_e
 
-    .line 216
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
+    .line 244
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;->l()Lcom/google/android/youtube/app/o;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->t()Lcom/google/android/youtube/app/a;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/youtube/app/o;->d()V
+    invoke-interface {v0}, Lcom/google/android/youtube/app/a;->d()V
 
-    .line 226
+    .line 254
     :cond_d
     :goto_d
     return-void
 
-    .line 217
+    .line 245
     :cond_e
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->k:Lcom/google/android/youtube/app/ui/StackButton;
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->h:Lcom/google/android/youtube/app/ui/StackButton;
 
     if-ne p1, v0, :cond_1c
 
-    .line 218
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
+    .line 246
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;->l()Lcom/google/android/youtube/app/o;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->t()Lcom/google/android/youtube/app/a;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/youtube/app/o;->e()V
+    invoke-interface {v0}, Lcom/google/android/youtube/app/a;->e()V
 
     goto :goto_d
 
-    .line 219
+    .line 247
     :cond_1c
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->l:Lcom/google/android/youtube/app/ui/StackButton;
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->k:Lcom/google/android/youtube/app/ui/StackButton;
 
     if-ne p1, v0, :cond_2a
 
-    .line 220
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
+    .line 248
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;->l()Lcom/google/android/youtube/app/o;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->t()Lcom/google/android/youtube/app/a;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/youtube/app/o;->g()V
+    invoke-interface {v0}, Lcom/google/android/youtube/app/a;->f()V
 
     goto :goto_d
 
-    .line 221
+    .line 249
     :cond_2a
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->m:Lcom/google/android/youtube/app/ui/StackButton;
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->i:Lcom/google/android/youtube/app/ui/StackButton;
 
     if-ne p1, v0, :cond_38
 
-    .line 222
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
+    .line 250
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;->l()Lcom/google/android/youtube/app/o;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->t()Lcom/google/android/youtube/app/a;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/youtube/app/o;->h()V
+    invoke-interface {v0}, Lcom/google/android/youtube/app/a;->g()V
 
     goto :goto_d
 
-    .line 223
+    .line 251
     :cond_38
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->n:Lcom/google/android/youtube/app/ui/StackButton;
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->j:Lcom/google/android/youtube/app/ui/StackButton;
 
     if-ne p1, v0, :cond_d
 
-    .line 224
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;
+    .line 252
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/a;->a:Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/TabbedActivity;->l()Lcom/google/android/youtube/app/o;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->t()Lcom/google/android/youtube/app/a;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/youtube/app/o;->i()V
+    invoke-interface {v0}, Lcom/google/android/youtube/app/a;->h()V
 
     goto :goto_d
 .end method

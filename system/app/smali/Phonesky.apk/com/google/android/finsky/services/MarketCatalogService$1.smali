@@ -84,7 +84,7 @@
 
     invoke-direct {v5, p0, v2}, Lcom/google/android/finsky/services/MarketCatalogService$1$2;-><init>(Lcom/google/android/finsky/services/MarketCatalogService$1;Ljava/util/concurrent/Semaphore;)V
 
-    invoke-virtual {v3, v4, v5, v6}, Lcom/google/android/finsky/api/DfeApi;->getToc(Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;Z)Lcom/android/volley/Request;
+    invoke-interface {v3, v4, v5, v6}, Lcom/google/android/finsky/api/DfeApi;->getToc(Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;Z)Lcom/android/volley/Request;
 
     .line 56
     invoke-virtual {v2}, Ljava/util/concurrent/Semaphore;->acquireUninterruptibly()V

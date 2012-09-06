@@ -15,7 +15,7 @@
     <string name="click_to_go_toast">Trageţi pictograma Pegman unde doriţi să mergeţi.</string>
     <string name="street_range_name_format">%2$s %1$s</string>
     <string name="network_unavailable">Acest program necesită o conexiune de date şi va reîncerca automat. Verificaţi puterea semnalului. Sunteţi în modul Avion? Aveţi dezactivată conexiunea de date în roaming?</string>
-    <string name="whats_new_header">Ce este nou în Street View?</string>
+    <string name="whats_new_header">Ce e nou în Street View?</string>
     <string name="whats_new_c2g">Zburaţi oriunde vedeţi cu ochii. Trageţi-l pe Pegman din stânga jos şi plasaţi-l unde doriţi să vă deplasaţi.</string>
     <string name="terms_and_privacy">Confidenţialitate</string>
     <string name="terms_and_conditions">Termeni şi condiţii</string>

@@ -1,64 +1,101 @@
-.class Lcom/google/android/finsky/adapters/ReviewsAdapter$2;
+.class synthetic Lcom/google/android/finsky/adapters/ReviewsAdapter$2;
 .super Ljava/lang/Object;
 .source "ReviewsAdapter.java"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
-
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/adapters/ReviewsAdapter;->bindItemView(Landroid/view/View;Lcom/google/android/finsky/adapters/ReviewsAdapter$ViewHolder;I)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/android/finsky/adapters/ReviewsAdapter;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1008
     name = null
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lcom/google/android/finsky/adapters/ReviewsAdapter;
-
-.field final synthetic val$review:Lcom/google/android/finsky/remoting/protos/Rev$Review;
+# static fields
+.field static final synthetic $SwitchMap$com$google$android$finsky$adapters$PaginatedListAdapter$FooterMode:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/adapters/ReviewsAdapter;Lcom/google/android/finsky/remoting/protos/Rev$Review;)V
+.method static constructor <clinit>()V
     .registers 3
-    .parameter
-    .parameter
 
     .prologue
-    .line 258
-    iput-object p1, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$2;->this$0:Lcom/google/android/finsky/adapters/ReviewsAdapter;
-
-    iput-object p2, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$2;->val$review:Lcom/google/android/finsky/remoting/protos/Rev$Review;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 4
-    .parameter "v"
-
-    .prologue
-    .line 261
-    iget-object v0, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$2;->this$0:Lcom/google/android/finsky/adapters/ReviewsAdapter;
-
-    #getter for: Lcom/google/android/finsky/adapters/ReviewsAdapter;->mRatingHandler:Lcom/google/android/finsky/adapters/ReviewsAdapter$RateReviewHandler;
-    invoke-static {v0}, Lcom/google/android/finsky/adapters/ReviewsAdapter;->access$000(Lcom/google/android/finsky/adapters/ReviewsAdapter;)Lcom/google/android/finsky/adapters/ReviewsAdapter$RateReviewHandler;
+    .line 127
+    invoke-static {}, Lcom/google/android/finsky/adapters/PaginatedListAdapter$FooterMode;->values()[Lcom/google/android/finsky/adapters/PaginatedListAdapter$FooterMode;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$2;->val$review:Lcom/google/android/finsky/remoting/protos/Rev$Review;
+    array-length v0, v0
 
-    invoke-interface {v0, v1}, Lcom/google/android/finsky/adapters/ReviewsAdapter$RateReviewHandler;->onRateReview(Lcom/google/android/finsky/remoting/protos/Rev$Review;)V
+    new-array v0, v0, [I
 
-    .line 262
+    sput-object v0, Lcom/google/android/finsky/adapters/ReviewsAdapter$2;->$SwitchMap$com$google$android$finsky$adapters$PaginatedListAdapter$FooterMode:[I
+
+    :try_start_9
+    sget-object v0, Lcom/google/android/finsky/adapters/ReviewsAdapter$2;->$SwitchMap$com$google$android$finsky$adapters$PaginatedListAdapter$FooterMode:[I
+
+    sget-object v1, Lcom/google/android/finsky/adapters/PaginatedListAdapter$FooterMode;->LOADING:Lcom/google/android/finsky/adapters/PaginatedListAdapter$FooterMode;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/adapters/PaginatedListAdapter$FooterMode;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_2f
+
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/android/finsky/adapters/ReviewsAdapter$2;->$SwitchMap$com$google$android$finsky$adapters$PaginatedListAdapter$FooterMode:[I
+
+    sget-object v1, Lcom/google/android/finsky/adapters/PaginatedListAdapter$FooterMode;->ERROR:Lcom/google/android/finsky/adapters/PaginatedListAdapter$FooterMode;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/adapters/PaginatedListAdapter$FooterMode;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_2d
+
+    :goto_1f
+    :try_start_1f
+    sget-object v0, Lcom/google/android/finsky/adapters/ReviewsAdapter$2;->$SwitchMap$com$google$android$finsky$adapters$PaginatedListAdapter$FooterMode:[I
+
+    sget-object v1, Lcom/google/android/finsky/adapters/PaginatedListAdapter$FooterMode;->NONE:Lcom/google/android/finsky/adapters/PaginatedListAdapter$FooterMode;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/adapters/PaginatedListAdapter$FooterMode;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_2b
+
+    :goto_2a
     return-void
+
+    :catch_2b
+    move-exception v0
+
+    goto :goto_2a
+
+    :catch_2d
+    move-exception v0
+
+    goto :goto_1f
+
+    :catch_2f
+    move-exception v0
+
+    goto :goto_14
 .end method

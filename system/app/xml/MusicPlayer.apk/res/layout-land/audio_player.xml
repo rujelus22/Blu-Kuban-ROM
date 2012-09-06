@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:music="http://schemas.android.com/apk/res/com.google.android.music">
+    <RelativeLayout android:id="@id/large_album_frame" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentLeft="true">
+        <com.google.android.music.AsyncAlbumArtImageView android:id="@id/album" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentLeft="true" music:makeSquare="true" music:stretchToFill="true" />
+        <include android:layout_width="wrap_content" android:layout_height="@dimen/buy_bar_height" android:layout_alignLeft="@id/album" android:layout_alignRight="@id/album" android:layout_alignBottom="@id/album" layout="@layout/buy_link_audio_player" />
+        <ImageView android:layout_width="@dimen/shadow_height" android:layout_height="fill_parent" android:src="@drawable/right_shadow" android:layout_alignRight="@id/album" />
+        <com.google.android.music.SafePostProgressBar android:id="@id/loading_progress" android:padding="0.0dip" android:visibility="gone" android:layout_width="70.0dip" android:layout_height="70.0dip" android:max="10000" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <FrameLayout android:id="@id/playing_list" android:background="@color/now_playing_list_bg" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignRight="@id/large_album_frame" android:layout_alignParentLeft="true">
+        <com.google.android.music.widgets.TrackListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:drawSelectorOnTop="true" android:cacheColorHint="@color/now_playing_list_bg" android:divider="@drawable/list_divider_horizontal" />
+        <ImageView android:layout_gravity="right" android:layout_width="@dimen/shadow_height" android:layout_height="fill_parent" android:src="@drawable/right_shadow" />
+    </FrameLayout>
+    <View android:id="@id/background_color" android:background="@color/now_playing_title_bar" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_toRightOf="@id/large_album_frame" android:layout_alignParentRight="true" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/now_playing_title" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/now_playing_title_bar_height" android:baselineAligned="false" android:layout_toRightOf="@id/large_album_frame" android:layout_alignParentTop="true" android:layout_alignParentRight="true">
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/header_text" android:paddingLeft="@dimen/now_playing_right_left_margin" android:paddingRight="@dimen/now_playing_right_left_margin" android:layout_width="0.0dip" android:layout_height="wrap_content" android:baselineAligned="false" android:layout_weight="1.0">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="@color/now_playing_track_color" android:ellipsize="end" android:gravity="bottom" android:id="@id/trackname" android:layout_width="fill_parent" android:layout_height="0.0dip" android:singleLine="true" android:layout_weight="1.0" />
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/now_playing_album_artist_color" android:ellipsize="end" android:gravity="top" android:id="@id/artistname" android:layout_width="fill_parent" android:layout_height="0.0dip" android:singleLine="true" android:layout_weight="1.0" />
+        </LinearLayout>
+        <FrameLayout android:id="@id/view_state_switcher_frame" android:padding="@dimen/now_playing_switcher_padding" android:focusable="true" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <ImageView android:layout_gravity="center" android:id="@id/detailedViewSwitcher" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_q_list_view" />
+            <com.google.android.music.AsyncAlbumArtImageView android:id="@id/smallalbum" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent" music:makeSquare="true" />
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/light_up_bar" android:background="@color/now_playing_rating_bar" android:padding="0.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="@dimen/now_playing_rating_bar_height" android:baselineAligned="false" android:layout_toRightOf="@id/large_album_frame" android:layout_above="@id/currenttime" android:layout_alignParentRight="true">
+        <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <RelativeLayout android:id="@id/submitter_info" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.google.android.music.widgets.QuickContactBadgeComp android:layout_gravity="center_vertical" android:id="@id/quickcontact_badge" android:layout_width="@dimen/quickcontact_width" android:layout_height="@dimen/quickcontact_height" android:layout_marginLeft="16.0dip" android:layout_marginRight="8.0dip" android:layout_alignParentLeft="true" />
+                <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="@color/tertiary_text" android:ellipsize="end" android:layout_gravity="center_vertical" android:id="@id/added_by" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/athome_added_by" android:singleLine="true" android:layout_toRightOf="@id/quickcontact_badge" />
+                <TextView android:textAppearance="@style/SecondaryTitle" android:ellipsize="marquee" android:layout_gravity="center_vertical" android:id="@id/submitter_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_toRightOf="@id/quickcontact_badge" android:layout_below="@id/added_by" />
+            </RelativeLayout>
+        </FrameLayout>
+        <com.google.android.music.RatingSelector android:layout_gravity="center_vertical" android:id="@id/rating_views" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <include android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/rating_thumbs" />
+            <include android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/rating_stars" />
+        </com.google.android.music.RatingSelector>
+    </LinearLayout>
+    <TextView android:textColor="@color/current_text" android:id="@id/currenttime" android:visibility="invisible" android:layout_toRightOf="@id/large_album_frame" android:layout_alignTop="@android:id/progress" android:layout_alignBottom="@android:id/progress" style="@style/NowPlayingTime" />
+    <TextView android:textColor="@color/current_text" android:id="@id/totaltime" android:visibility="invisible" android:layout_alignTop="@android:id/progress" android:layout_alignBottom="@android:id/progress" android:layout_alignParentRight="true" style="@style/NowPlayingTime" />
+    <com.google.android.music.SizableTrackSeekBar android:id="@android:id/progress" android:background="@null" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/progress_bar_bottom_margin" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" android:layout_toLeftOf="@id/totaltime" android:layout_toRightOf="@id/currenttime" android:layout_above="@id/playControls" music:trackHeight="2.0dip" />
+    <LinearLayout android:id="@id/playControls" android:layout_width="wrap_content" android:layout_height="wrap_content" android:baselineAligned="false" android:layout_toRightOf="@id/large_album_frame" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+        <include layout="@layout/play_controls" />
+    </LinearLayout>
+    <View android:id="@id/lightsUpInterceptor" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+</RelativeLayout>

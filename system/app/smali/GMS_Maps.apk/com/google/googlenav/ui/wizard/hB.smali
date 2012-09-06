@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/wizard/hB;
+.class Lcom/google/googlenav/ui/wizard/hb;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/hA;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/ha;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/hA;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/ha;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/hB;->a:Lcom/google/googlenav/ui/wizard/hA;
+    .prologue
+    .line 40
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/hb;->a:Lcom/google/googlenav/ui/wizard/ha;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,39 +26,38 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 4
+.method public a(Lcom/google/googlenav/cy;Lcom/google/googlenav/cy;)I
+    .registers 5
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hB;->a:Lcom/google/googlenav/ui/wizard/hA;
+    .prologue
+    .line 43
+    iget-object v0, p1, Lcom/google/googlenav/cy;->c:Ljava/lang/String;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/hA;->f:Lcom/google/googlenav/ui/view/android/bs;
+    iget-object v1, p2, Lcom/google/googlenav/cy;->c:Ljava/lang/String;
 
-    if-nez v0, :cond_20
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hB;->a:Lcom/google/googlenav/ui/wizard/hA;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hA;->r()Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    return v0
+.end method
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hB;->a:Lcom/google/googlenav/ui/wizard/hA;
+.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .registers 4
+    .parameter
+    .parameter
 
-    new-instance v1, Lcom/google/googlenav/ui/wizard/hE;
+    .prologue
+    .line 40
+    check-cast p1, Lcom/google/googlenav/cy;
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/wizard/hB;->a:Lcom/google/googlenav/ui/wizard/hA;
+    check-cast p2, Lcom/google/googlenav/cy;
 
-    invoke-direct {v1, v2}, Lcom/google/googlenav/ui/wizard/hE;-><init>(Lcom/google/googlenav/ui/wizard/hA;)V
+    invoke-virtual {p0, p1, p2}, Lcom/google/googlenav/ui/wizard/hb;->a(Lcom/google/googlenav/cy;Lcom/google/googlenav/cy;)I
 
-    iput-object v1, v0, Lcom/google/googlenav/ui/wizard/hA;->f:Lcom/google/googlenav/ui/view/android/bs;
+    move-result v0
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hB;->a:Lcom/google/googlenav/ui/wizard/hA;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/hA;->f:Lcom/google/googlenav/ui/view/android/bs;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/bs;->show()V
-
-    :cond_20
-    return-void
+    return v0
 .end method

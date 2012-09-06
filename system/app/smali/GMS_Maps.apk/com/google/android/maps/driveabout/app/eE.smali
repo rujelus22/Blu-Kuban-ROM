@@ -1,41 +1,41 @@
-.class Lcom/google/android/maps/driveabout/app/eE;
+.class Lcom/google/android/maps/driveabout/app/ee;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/maps/driveabout/app/eF;
+.implements Landroid/view/View$OnClickListener;
+
+
+# instance fields
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/dD;
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/dD;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 1016
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/ee;->a:Lcom/google/android/maps/driveabout/app/dD;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/google/android/maps/driveabout/app/eC;)V
-    .registers 2
-
-    invoke-direct {p0}, Lcom/google/android/maps/driveabout/app/eE;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public a(Landroid/content/res/Configuration;)I
+.method public onClick(Landroid/view/View;)V
     .registers 3
+    .parameter
 
-    if-nez p1, :cond_4
+    .prologue
+    .line 1019
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ee;->a:Lcom/google/android/maps/driveabout/app/dD;
 
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/dD;->i()V
 
-    :goto_3
-    return v0
-
-    :cond_4
-    iget v0, p1, Landroid/content/res/Configuration;->uiMode:I
-
-    goto :goto_3
+    .line 1020
+    return-void
 .end method

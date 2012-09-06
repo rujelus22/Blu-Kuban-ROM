@@ -15,9 +15,9 @@
     <string name="click_to_go_toast">Velciet Google cilvēciņu uz vietu, kurp vēlaties doties.</string>
     <string name="street_range_name_format">%1$s %2$s</string>
     <string name="network_unavailable">Šai programmai ir nepieciešams datu savienojums, un tā atsāksies automātiski. Lūdzu, pārbaudiet signāla stiprumu. Vai lidošanas režīms ir ieslēgts? Vai datu viesabonēšana ir atspējota?</string>
-    <string name="whats_new_header">Vai ir kas jauns Ielas attēlā?</string>
+    <string name="whats_new_header">Kas jauns Ielas attēlā?</string>
     <string name="whats_new_c2g">Aizlidojiet jebkur, kur acis rāda. Velciet cilvēciņu no kreisās puses apakšas un nometiet to tur, kur vēlaties doties.</string>
     <string name="terms_and_privacy">Pak. snieg. not.</string>
     <string name="terms_and_conditions">Pak. snieg. not.</string>
-    <string name="privacy_policy">Konfidencialitātes politika</string>
+    <string name="privacy_policy">Konf. politika</string>
 </resources>

@@ -4,16 +4,6 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 16
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method static a(Ljava/util/List;)Lcom/google/android/apps/pos/model/Plusones;
     .registers 7
     .parameter
@@ -39,39 +29,39 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6f
+    if-eqz v0, :cond_67
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/apps/pos/network/a;
+    check-cast v0, Lcom/google/android/apps/pos/network/BatchResponseItemJson;
 
     .line 56
     new-instance v1, Lcom/google/android/apps/pos/model/Plusone;
 
     invoke-direct {v1}, Lcom/google/android/apps/pos/model/Plusone;-><init>()V
 
-    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/a;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/BatchResponseItemJson;->getResponseId()Ljava/lang/String;
 
     move-result-object v5
 
     invoke-virtual {v1, v5}, Lcom/google/android/apps/pos/model/Plusone;->setResponseId(Ljava/lang/String;)Lcom/google/android/apps/pos/model/Plusone;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/a;->a_()Z
+    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/BatchResponseItemJson;->hasError()Z
 
     move-result v5
 
     if-eqz v5, :cond_33
 
-    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/a;->c()Lcom/google/android/apps/pos/model/PlusoneError;
+    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/BatchResponseItemJson;->getError()Lcom/google/android/apps/pos/model/PlusoneError;
 
     move-result-object v5
 
     invoke-static {v5}, Lcom/google/android/apps/pos/network/d;->a(Lcom/google/android/apps/pos/model/PlusoneError;)V
 
     :cond_33
-    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/a;->d()Z
+    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/BatchResponseItemJson;->hasResult()Z
 
     move-result v5
 
@@ -87,7 +77,7 @@
 
     .line 56
     :cond_3e
-    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/a;->e()Lcom/google/android/apps/pos/network/b;
+    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/BatchResponseItemJson;->getResult()Lcom/google/android/apps/pos/network/BatchResponseItemJson$ResultJson;
 
     move-result-object v0
 
@@ -98,7 +88,7 @@
     goto :goto_3a
 
     :cond_46
-    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/b;->e()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/BatchResponseItemJson$ResultJson;->getAbuseToken()Ljava/lang/String;
 
     move-result-object v5
 
@@ -106,7 +96,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/b;->f()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/BatchResponseItemJson$ResultJson;->getId()Ljava/lang/String;
 
     move-result-object v5
 
@@ -114,15 +104,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/b;->g()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v1, v5}, Lcom/google/android/apps/pos/model/Plusone;->setKind(Ljava/lang/String;)Lcom/google/android/apps/pos/model/Plusone;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/b;->i()Ljava/lang/Boolean;
+    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/BatchResponseItemJson$ResultJson;->isSetByViewer()Ljava/lang/Boolean;
 
     move-result-object v5
 
@@ -130,7 +112,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/b;->h()Lcom/google/android/apps/pos/model/Metadata;
+    invoke-virtual {v0}, Lcom/google/android/apps/pos/network/BatchResponseItemJson$ResultJson;->getMetadata()Lcom/google/android/apps/pos/model/Metadata;
 
     move-result-object v0
 
@@ -141,7 +123,7 @@
     goto :goto_3a
 
     .line 59
-    :cond_6f
+    :cond_67
     const/4 v0, 0x0
 
     new-array v0, v0, [Lcom/google/android/apps/pos/model/Plusone;
@@ -159,7 +141,7 @@
     return-object v0
 .end method
 
-.method static a(Lcom/google/android/apps/pos/network/a;)Lcom/google/android/apps/pos/model/SignUpState;
+.method static a(Lcom/google/android/apps/pos/network/BatchResponseItemJson;)Lcom/google/android/apps/pos/model/SignUpState;
     .registers 4
     .parameter
 
@@ -170,21 +152,21 @@
     invoke-direct {v0}, Lcom/google/android/apps/pos/model/SignUpState;-><init>()V
 
     .line 21
-    invoke-virtual {p0}, Lcom/google/android/apps/pos/network/a;->a()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/apps/pos/network/BatchResponseItemJson;->getResponseId()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/google/android/apps/pos/model/SignUpState;->setResponseId(Ljava/lang/String;)Lcom/google/android/apps/pos/model/SignUpState;
 
     .line 22
-    invoke-virtual {p0}, Lcom/google/android/apps/pos/network/a;->a_()Z
+    invoke-virtual {p0}, Lcom/google/android/apps/pos/network/BatchResponseItemJson;->hasError()Z
 
     move-result v1
 
     if-eqz v1, :cond_19
 
     .line 23
-    invoke-virtual {p0}, Lcom/google/android/apps/pos/network/a;->c()Lcom/google/android/apps/pos/model/PlusoneError;
+    invoke-virtual {p0}, Lcom/google/android/apps/pos/network/BatchResponseItemJson;->getError()Lcom/google/android/apps/pos/model/PlusoneError;
 
     move-result-object v1
 
@@ -192,7 +174,7 @@
 
     .line 25
     :cond_19
-    invoke-virtual {p0}, Lcom/google/android/apps/pos/network/a;->d()Z
+    invoke-virtual {p0}, Lcom/google/android/apps/pos/network/BatchResponseItemJson;->hasResult()Z
 
     move-result v1
 
@@ -204,12 +186,12 @@
 
     .line 28
     :cond_20
-    invoke-virtual {p0}, Lcom/google/android/apps/pos/network/a;->e()Lcom/google/android/apps/pos/network/b;
+    invoke-virtual {p0}, Lcom/google/android/apps/pos/network/BatchResponseItemJson;->getResult()Lcom/google/android/apps/pos/network/BatchResponseItemJson$ResultJson;
 
     move-result-object v1
 
     .line 29
-    invoke-virtual {v1}, Lcom/google/android/apps/pos/network/b;->a()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/apps/pos/network/BatchResponseItemJson$ResultJson;->getDisplayName()Ljava/lang/String;
 
     move-result-object v2
 
@@ -217,7 +199,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v1}, Lcom/google/android/apps/pos/network/b;->b_()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/apps/pos/network/BatchResponseItemJson$ResultJson;->getEmail()Ljava/lang/String;
 
     move-result-object v2
 
@@ -225,7 +207,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v1}, Lcom/google/android/apps/pos/network/b;->c()Ljava/lang/Boolean;
+    invoke-virtual {v1}, Lcom/google/android/apps/pos/network/BatchResponseItemJson$ResultJson;->isSignedUp()Ljava/lang/Boolean;
 
     move-result-object v2
 
@@ -233,7 +215,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v1}, Lcom/google/android/apps/pos/network/b;->d()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/apps/pos/network/BatchResponseItemJson$ResultJson;->getProfileImageUrl()Ljava/lang/String;
 
     move-result-object v1
 
@@ -249,7 +231,7 @@
     .parameter
 
     .prologue
-    .line 86
+    .line 85
     invoke-virtual {p0}, Lcom/google/android/apps/pos/model/PlusoneError;->getCode()I
 
     move-result v0
@@ -258,14 +240,14 @@
 
     if-ne v0, v1, :cond_e
 
-    .line 87
+    .line 86
     new-instance v0, Lcom/google/android/apps/pos/network/PosAuthorizationException;
 
     invoke-direct {v0, p0}, Lcom/google/android/apps/pos/network/PosAuthorizationException;-><init>(Lcom/google/android/apps/pos/model/PlusoneError;)V
 
     throw v0
 
-    .line 89
+    .line 88
     :cond_e
     new-instance v0, Lcom/google/android/apps/pos/network/PosException;
 

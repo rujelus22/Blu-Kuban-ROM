@@ -25,13 +25,13 @@
     .parameter "url"
 
     .prologue
-    .line 143
+    .line 144
     iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder$SelfishUrlSpan;->this$0:Lcom/google/android/finsky/activities/DetailsTextViewBinder;
 
-    .line 144
+    .line 145
     invoke-direct {p0, p2}, Landroid/text/style/URLSpan;-><init>(Ljava/lang/String;)V
 
-    .line 145
+    .line 146
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .parameter "widget"
 
     .prologue
-    .line 149
+    .line 150
     iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder$SelfishUrlSpan;->this$0:Lcom/google/android/finsky/activities/DetailsTextViewBinder;
 
     const/4 v3, 0x1
@@ -50,12 +50,12 @@
     #setter for: Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mUrlSpanClicked:Z
     invoke-static {v2, v3}, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->access$402(Lcom/google/android/finsky/activities/DetailsTextViewBinder;Z)Z
 
-    .line 151
+    .line 152
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 152
+    .line 153
     .local v0, context:Landroid/content/Context;
     new-instance v1, Landroid/content/Intent;
 
@@ -63,7 +63,7 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 153
+    .line 154
     .local v1, intent:Landroid/content/Intent;
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsTextViewBinder$SelfishUrlSpan;->getURL()Ljava/lang/String;
 
@@ -75,14 +75,14 @@
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 156
+    .line 157
     invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 157
+    .line 158
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
@@ -95,7 +95,7 @@
 
     if-eqz v2, :cond_3d
 
-    .line 160
+    .line 161
     iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder$SelfishUrlSpan;->this$0:Lcom/google/android/finsky/activities/DetailsTextViewBinder;
 
     #getter for: Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
@@ -109,17 +109,17 @@
 
     invoke-virtual {v2, v3}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->handleDeepLink(Ljava/lang/String;)V
 
-    .line 168
+    .line 169
     :goto_3c
     return-void
 
-    .line 166
+    .line 167
     :cond_3d
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 167
+    .line 168
     invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_3c

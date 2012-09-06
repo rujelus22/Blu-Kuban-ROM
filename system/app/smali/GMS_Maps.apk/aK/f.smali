@@ -1,43 +1,59 @@
 .class LaK/f;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/maps/driveabout/vector/bY;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:LaK/e;
+.field private a:Lcom/google/googlenav/friend/aK;
+
+.field private final b:Lcom/google/googlenav/friend/L;
 
 
 # direct methods
-.method constructor <init>(LaK/e;)V
+.method public constructor <init>(Lcom/google/googlenav/friend/L;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, LaK/f;->a:LaK/e;
-
+    .prologue
+    .line 249
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 250
+    iput-object p1, p0, LaK/f;->b:Lcom/google/googlenav/friend/L;
+
+    .line 251
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lcom/google/android/maps/driveabout/vector/u;Ljava/util/List;)V
-    .registers 6
+.method public a(Lcom/google/googlenav/friend/aK;)V
+    .registers 2
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    .line 262
+    iput-object p1, p0, LaK/f;->a:Lcom/google/googlenav/friend/aK;
 
-    iget-object v1, p0, LaK/f;->a:LaK/e;
+    .line 263
+    return-void
+.end method
 
-    invoke-static {v1}, LaK/e;->c(LaK/e;)Lcom/google/googlenav/android/ac;
+.method public onClick(Landroid/view/View;)V
+    .registers 4
+    .parameter
 
-    move-result-object v1
+    .prologue
+    .line 255
+    iget-object v0, p0, LaK/f;->b:Lcom/google/googlenav/friend/L;
 
-    new-instance v2, LaK/g;
+    iget-object v1, p0, LaK/f;->a:Lcom/google/googlenav/friend/aK;
 
-    invoke-direct {v2, p0, p2}, LaK/g;-><init>(LaK/f;Ljava/util/List;)V
+    invoke-interface {v0, v1}, Lcom/google/googlenav/friend/L;->a(Lcom/google/googlenav/friend/aK;)V
 
-    invoke-virtual {v1, v2, v0}, Lcom/google/googlenav/android/ac;->a(Ljava/lang/Runnable;Z)V
-
+    .line 256
     return-void
 .end method

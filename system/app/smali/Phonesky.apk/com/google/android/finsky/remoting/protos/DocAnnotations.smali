@@ -6,7 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/android/finsky/remoting/protos/DocAnnotations$Reason;,
         Lcom/google/android/finsky/remoting/protos/DocAnnotations$DealOfTheDay;,
+        Lcom/google/android/finsky/remoting/protos/DocAnnotations$RecommendationsContainer;,
         Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;,
         Lcom/google/android/finsky/remoting/protos/DocAnnotations$ContainerWithBanner;,
         Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;,
@@ -18,8 +20,7 @@
         Lcom/google/android/finsky/remoting/protos/DocAnnotations$PromotedDoc;,
         Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;,
         Lcom/google/android/finsky/remoting/protos/DocAnnotations$Badge;,
-        Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;,
-        Lcom/google/android/finsky/remoting/protos/DocAnnotations$Annotations;
+        Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;
     }
 .end annotation
 

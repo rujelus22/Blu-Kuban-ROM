@@ -1,80 +1,78 @@
 .class final Lcom/google/android/youtube/app/honeycomb/phone/ax;
-.super Lcom/google/android/youtube/app/ui/cv;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/WatchLaterActivity;
+.field final synthetic a:Lcom/google/android/youtube/core/model/Video;
+
+.field final synthetic b:Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/WatchLaterActivity;Landroid/app/Activity;Lcom/google/android/youtube/app/o;Lcom/google/android/youtube/core/ui/h;Lcom/google/android/youtube/app/a/x;Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/client/af;Lcom/google/android/youtube/core/client/ag;ZLcom/google/android/youtube/core/Analytics;Lcom/google/android/youtube/core/Analytics$VideoCategory;Lcom/google/android/youtube/core/client/al;Lcom/google/android/youtube/core/e;)V
-    .registers 27
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
+.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;Lcom/google/android/youtube/core/model/Video;)V
+    .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 112
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ax;->a:Lcom/google/android/youtube/app/honeycomb/phone/WatchLaterActivity;
+    .line 174
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ax;->b:Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;
 
-    const/4 v8, 0x1
+    iput-object p2, p0, Lcom/google/android/youtube/app/honeycomb/phone/ax;->a:Lcom/google/android/youtube/core/model/Video;
 
-    move-object v0, p0
-
-    move-object v1, p2
-
-    move-object/from16 v2, p3
-
-    move-object/from16 v3, p4
-
-    move-object/from16 v4, p5
-
-    move-object/from16 v5, p6
-
-    move-object/from16 v6, p7
-
-    move-object/from16 v7, p8
-
-    move-object/from16 v9, p10
-
-    move-object/from16 v10, p11
-
-    move-object/from16 v11, p12
-
-    move-object/from16 v12, p13
-
-    invoke-direct/range {v0 .. v12}, Lcom/google/android/youtube/app/ui/cv;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/app/o;Lcom/google/android/youtube/core/ui/h;Lcom/google/android/youtube/app/a/x;Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/client/af;Lcom/google/android/youtube/core/client/ag;ZLcom/google/android/youtube/core/Analytics;Lcom/google/android/youtube/core/Analytics$VideoCategory;Lcom/google/android/youtube/core/client/al;Lcom/google/android/youtube/core/e;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Lcom/google/android/youtube/core/async/GDataRequest;Ljava/util/List;)V
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
     .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 115
-    invoke-super {p0, p1, p2}, Lcom/google/android/youtube/app/ui/cv;->a(Lcom/google/android/youtube/core/async/GDataRequest;Ljava/util/List;)V
+    .line 174
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ax;->b:Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;
 
-    .line 116
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ax;->c:Landroid/app/Activity;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;->b(Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;)Lcom/google/android/youtube/core/d;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/b/d;->a(Landroid/content/Context;)V
+    move-result-object v0
 
-    .line 117
+    invoke-virtual {v0, p2}, Lcom/google/android/youtube/core/d;->b(Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 6
+    .parameter
+    .parameter
+
+    .prologue
+    .line 174
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ax;->b:Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;)Lcom/google/android/youtube/app/adapter/ba;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ax;->a:Lcom/google/android/youtube/core/model/Video;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/adapter/ba;->b(Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ax;->b:Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;
+
+    const v1, 0x7f0b01c7
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v1, v2}, Lcom/google/android/youtube/core/utils/Util;->a(Landroid/content/Context;II)V
+
     return-void
 .end method

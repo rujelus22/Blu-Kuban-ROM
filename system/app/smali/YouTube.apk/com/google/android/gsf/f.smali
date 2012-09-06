@@ -112,41 +112,39 @@
 .end method
 
 .method public static a(Landroid/content/ContentResolver;Ljava/lang/String;J)J
-    .registers 7
+    .registers 5
     .parameter
     .parameter
     .parameter
 
     .prologue
-    const-wide/32 v0, 0x2932e00
-
     .line 150
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    invoke-static {p0, p1, v2}, Lcom/google/android/gsf/f;->a(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1, v0}, Lcom/google/android/gsf/f;->a(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 153
-    if-eqz v2, :cond_e
+    if-eqz v0, :cond_b
 
-    :try_start_a
-    invoke-static {v2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-    :try_end_d
-    .catch Ljava/lang/NumberFormatException; {:try_start_a .. :try_end_d} :catch_f
+    :try_start_7
+    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+    :try_end_a
+    .catch Ljava/lang/NumberFormatException; {:try_start_7 .. :try_end_a} :catch_c
 
-    move-result-wide v0
+    move-result-wide p2
 
     .line 157
-    :cond_e
-    :goto_e
-    return-wide v0
+    :cond_b
+    :goto_b
+    return-wide p2
 
     .line 155
-    :catch_f
-    move-exception v2
+    :catch_c
+    move-exception v0
 
-    goto :goto_e
+    goto :goto_b
 .end method
 
 .method public static a(Landroid/content/ContentResolver;)Ljava/lang/Object;
@@ -526,13 +524,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "attempt to read gservices key "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

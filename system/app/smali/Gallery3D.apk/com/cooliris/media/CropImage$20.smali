@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 829
+    .line 824
     iput-object p1, p0, Lcom/cooliris/media/CropImage$20;->this$0:Lcom/cooliris/media/CropImage;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "arg1"
 
     .prologue
-    .line 831
+    .line 826
     iget-object v2, p0, Lcom/cooliris/media/CropImage$20;->this$0:Lcom/cooliris/media/CropImage;
 
     const/4 v3, 0x1
@@ -51,7 +51,7 @@
     #setter for: Lcom/cooliris/media/CropImage;->bLockScreen:Z
     invoke-static {v2, v3}, Lcom/cooliris/media/CropImage;->access$1902(Lcom/cooliris/media/CropImage;Z)Z
 
-    .line 832
+    .line 827
     iget-object v2, p0, Lcom/cooliris/media/CropImage$20;->this$0:Lcom/cooliris/media/CropImage;
 
     const-string v3, "com.cooliris.media"
@@ -62,13 +62,13 @@
 
     move-result-object v1
 
-    .line 834
+    .line 829
     .local v1, settings:Landroid/content/SharedPreferences;
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 835
+    .line 830
     .local v0, editor:Landroid/content/SharedPreferences$Editor;
     const-string v2, "LockScreenSave"
 
@@ -81,15 +81,15 @@
 
     invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 836
+    .line 831
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 837
+    .line 832
     iget-object v2, p0, Lcom/cooliris/media/CropImage$20;->this$0:Lcom/cooliris/media/CropImage;
 
     #calls: Lcom/cooliris/media/CropImage;->wallpaperSave()V
     invoke-static {v2}, Lcom/cooliris/media/CropImage;->access$2000(Lcom/cooliris/media/CropImage;)V
 
-    .line 838
+    .line 833
     return-void
 .end method

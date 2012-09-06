@@ -1,23 +1,28 @@
-.class Lcom/google/android/maps/driveabout/app/aw;
+.class Lcom/google/android/maps/driveabout/app/aW;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Landroid/content/DialogInterface$OnCancelListener;
+.field final synthetic a:Lm/D;
 
-.field final synthetic b:Lcom/google/android/maps/driveabout/app/am;
+.field final synthetic b:Lcom/google/android/maps/driveabout/app/aS;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/am;Landroid/content/DialogInterface$OnCancelListener;)V
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/aS;Lm/D;)V
     .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aw;->b:Lcom/google/android/maps/driveabout/app/am;
+    .prologue
+    .line 1089
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aW;->b:Lcom/google/android/maps/driveabout/app/aS;
 
-    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/aw;->a:Landroid/content/DialogInterface$OnCancelListener;
+    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/aW;->a:Lm/D;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,12 +31,18 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 4
+.method public run()V
+    .registers 3
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aw;->a:Landroid/content/DialogInterface$OnCancelListener;
+    .prologue
+    .line 1091
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aW;->b:Lcom/google/android/maps/driveabout/app/aS;
 
-    invoke-interface {v0, p1}, Landroid/content/DialogInterface$OnCancelListener;->onCancel(Landroid/content/DialogInterface;)V
+    iget-object v0, v0, Lcom/google/android/maps/driveabout/app/aS;->a:Lcom/google/android/maps/driveabout/app/aN;
+
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/aW;->a:Lm/D;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/aN;->a(Lm/D;)V
 
     return-void
 .end method

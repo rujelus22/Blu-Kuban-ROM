@@ -3,191 +3,233 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Map$Entry;
+.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/api/client/util/k;
+.field final synthetic a:Lcom/google/api/client/util/j;
 
-.field private b:Ljava/lang/Object;
+.field private b:I
 
-.field private final c:Lcom/google/api/client/util/o;
+.field private c:Lcom/google/api/client/util/n;
+
+.field private d:Ljava/lang/Object;
+
+.field private e:Z
+
+.field private f:Z
+
+.field private g:Lcom/google/api/client/util/n;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/api/client/util/k;Lcom/google/api/client/util/o;Ljava/lang/Object;)V
-    .registers 5
-    .parameter
-    .parameter
+.method constructor <init>(Lcom/google/api/client/util/j;)V
+    .registers 3
     .parameter
 
     .prologue
-    .line 200
-    iput-object p1, p0, Lcom/google/api/client/util/l;->a:Lcom/google/api/client/util/k;
+    .line 119
+    iput-object p1, p0, Lcom/google/api/client/util/l;->a:Lcom/google/api/client/util/j;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 201
-    iput-object p2, p0, Lcom/google/api/client/util/l;->c:Lcom/google/api/client/util/o;
+    .line 125
+    const/4 v0, -0x1
 
-    .line 202
-    invoke-static {p3}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    iput v0, p0, Lcom/google/api/client/util/l;->b:I
 
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/api/client/util/l;->b:Ljava/lang/Object;
-
-    .line 203
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
-    .parameter
+.method public final hasNext()Z
+    .registers 5
 
     .prologue
-    const/4 v0, 0x1
+    const/4 v1, 0x1
+
+    .line 152
+    iget-boolean v0, p0, Lcom/google/api/client/util/l;->f:Z
+
+    if-nez v0, :cond_45
+
+    .line 153
+    iput-boolean v1, p0, Lcom/google/api/client/util/l;->f:Z
+
+    .line 154
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/api/client/util/l;->d:Ljava/lang/Object;
+
+    .line 155
+    :goto_a
+    iget-object v0, p0, Lcom/google/api/client/util/l;->d:Ljava/lang/Object;
+
+    if-nez v0, :cond_45
+
+    iget v0, p0, Lcom/google/api/client/util/l;->b:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lcom/google/api/client/util/l;->b:I
+
+    iget-object v2, p0, Lcom/google/api/client/util/l;->a:Lcom/google/api/client/util/j;
+
+    iget-object v2, v2, Lcom/google/api/client/util/j;->b:Lcom/google/api/client/util/g;
+
+    iget-object v2, v2, Lcom/google/api/client/util/g;->a:Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-ge v0, v2, :cond_45
+
+    .line 156
+    iget-object v0, p0, Lcom/google/api/client/util/l;->a:Lcom/google/api/client/util/j;
+
+    iget-object v2, v0, Lcom/google/api/client/util/j;->b:Lcom/google/api/client/util/g;
+
+    iget-object v0, p0, Lcom/google/api/client/util/l;->a:Lcom/google/api/client/util/j;
+
+    iget-object v0, v0, Lcom/google/api/client/util/j;->b:Lcom/google/api/client/util/g;
+
+    iget-object v0, v0, Lcom/google/api/client/util/g;->a:Ljava/util/List;
+
+    iget v3, p0, Lcom/google/api/client/util/l;->b:I
+
+    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-virtual {v2, v0}, Lcom/google/api/client/util/g;->a(Ljava/lang/String;)Lcom/google/api/client/util/n;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/api/client/util/l;->c:Lcom/google/api/client/util/n;
+
+    .line 157
+    iget-object v0, p0, Lcom/google/api/client/util/l;->c:Lcom/google/api/client/util/n;
+
+    iget-object v2, p0, Lcom/google/api/client/util/l;->a:Lcom/google/api/client/util/j;
+
+    iget-object v2, v2, Lcom/google/api/client/util/j;->a:Ljava/lang/Object;
+
+    invoke-virtual {v0, v2}, Lcom/google/api/client/util/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/api/client/util/l;->d:Ljava/lang/Object;
+
+    goto :goto_a
+
+    .line 160
+    :cond_45
+    iget-object v0, p0, Lcom/google/api/client/util/l;->d:Ljava/lang/Object;
+
+    if-eqz v0, :cond_4b
+
+    move v0, v1
+
+    :goto_4a
+    return v0
+
+    :cond_4b
+    const/4 v0, 0x0
+
+    goto :goto_4a
+.end method
+
+.method public final synthetic next()Ljava/lang/Object;
+    .registers 5
+
+    .prologue
+    const/4 v2, 0x0
 
     const/4 v1, 0x0
 
-    .line 227
-    if-ne p0, p1, :cond_5
-
-    .line 234
-    :cond_4
-    :goto_4
-    return v0
-
-    .line 230
-    :cond_5
-    instance-of v2, p1, Ljava/util/Map$Entry;
-
-    if-nez v2, :cond_b
-
-    move v0, v1
-
-    .line 231
-    goto :goto_4
-
-    .line 233
-    :cond_b
-    check-cast p1, Ljava/util/Map$Entry;
-
-    .line 234
-    iget-object v2, p0, Lcom/google/api/client/util/l;->c:Lcom/google/api/client/util/o;
-
-    invoke-virtual {v2}, Lcom/google/api/client/util/o;->b()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2b
-
-    invoke-virtual {p0}, Lcom/google/api/client/util/l;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    :cond_2b
-    move v0, v1
-
-    goto :goto_4
-.end method
-
-.method public final synthetic getKey()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 189
-    iget-object v0, p0, Lcom/google/api/client/util/l;->c:Lcom/google/api/client/util/o;
-
-    invoke-virtual {v0}, Lcom/google/api/client/util/o;->b()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final getValue()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 210
-    iget-object v0, p0, Lcom/google/api/client/util/l;->b:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final hashCode()I
-    .registers 3
-
-    .prologue
-    .line 222
-    iget-object v0, p0, Lcom/google/api/client/util/l;->c:Lcom/google/api/client/util/o;
-
-    invoke-virtual {v0}, Lcom/google/api/client/util/o;->b()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    .line 119
+    invoke-virtual {p0}, Lcom/google/api/client/util/l;->hasNext()Z
 
     move-result v0
 
-    invoke-virtual {p0}, Lcom/google/api/client/util/l;->getValue()Ljava/lang/Object;
+    if-nez v0, :cond_e
 
-    move-result-object v1
+    new-instance v0, Ljava/util/NoSuchElementException;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
-    move-result v1
+    throw v0
 
-    xor-int/2addr v0, v1
+    :cond_e
+    iget-object v0, p0, Lcom/google/api/client/util/l;->c:Lcom/google/api/client/util/n;
 
-    return v0
+    iput-object v0, p0, Lcom/google/api/client/util/l;->g:Lcom/google/api/client/util/n;
+
+    iget-object v0, p0, Lcom/google/api/client/util/l;->d:Ljava/lang/Object;
+
+    iput-boolean v1, p0, Lcom/google/api/client/util/l;->f:Z
+
+    iput-boolean v1, p0, Lcom/google/api/client/util/l;->e:Z
+
+    iput-object v2, p0, Lcom/google/api/client/util/l;->c:Lcom/google/api/client/util/n;
+
+    iput-object v2, p0, Lcom/google/api/client/util/l;->d:Ljava/lang/Object;
+
+    new-instance v1, Lcom/google/api/client/util/k;
+
+    iget-object v2, p0, Lcom/google/api/client/util/l;->a:Lcom/google/api/client/util/j;
+
+    iget-object v3, p0, Lcom/google/api/client/util/l;->g:Lcom/google/api/client/util/n;
+
+    invoke-direct {v1, v2, v3, v0}, Lcom/google/api/client/util/k;-><init>(Lcom/google/api/client/util/j;Lcom/google/api/client/util/n;Ljava/lang/Object;)V
+
+    return-object v1
 .end method
 
-.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
-    .parameter
+.method public final remove()V
+    .registers 4
 
     .prologue
-    .line 214
-    iget-object v0, p0, Lcom/google/api/client/util/l;->b:Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    .line 215
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 177
+    iget-object v0, p0, Lcom/google/api/client/util/l;->g:Lcom/google/api/client/util/n;
 
-    move-result-object v1
+    if-eqz v0, :cond_1a
 
-    iput-object v1, p0, Lcom/google/api/client/util/l;->b:Ljava/lang/Object;
+    iget-boolean v0, p0, Lcom/google/api/client/util/l;->e:Z
 
-    .line 216
-    iget-object v1, p0, Lcom/google/api/client/util/l;->c:Lcom/google/api/client/util/o;
+    if-nez v0, :cond_1a
 
-    iget-object v2, p0, Lcom/google/api/client/util/l;->a:Lcom/google/api/client/util/k;
+    move v0, v1
 
-    iget-object v2, v2, Lcom/google/api/client/util/k;->a:Ljava/lang/Object;
+    :goto_a
+    invoke-static {v0}, Lcom/google/common/base/ag;->b(Z)V
 
-    invoke-virtual {v1, v2, p1}, Lcom/google/api/client/util/o;->a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .line 178
+    iput-boolean v1, p0, Lcom/google/api/client/util/l;->e:Z
 
-    .line 217
-    return-object v0
+    .line 179
+    iget-object v0, p0, Lcom/google/api/client/util/l;->g:Lcom/google/api/client/util/n;
+
+    iget-object v1, p0, Lcom/google/api/client/util/l;->a:Lcom/google/api/client/util/j;
+
+    iget-object v1, v1, Lcom/google/api/client/util/j;->a:Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/api/client/util/n;->a(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 180
+    return-void
+
+    .line 177
+    :cond_1a
+    const/4 v0, 0x0
+
+    goto :goto_a
 .end method

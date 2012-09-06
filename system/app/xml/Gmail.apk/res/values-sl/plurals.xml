@@ -53,40 +53,40 @@
         <item quantity="one">Čakanje na operacijo pri %1$d pogovoru.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">Št. prezrtih pogovorov: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> prezrt pogovor.</item>
+        <item quantity="other">Št. prezrtih pogovorov: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> prezrt pogovor.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">Št. pogovorov, prijavljenih kot neželenih: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> pogovor je prijavljen kot neželen.</item>
+        <item quantity="other">Št. pogovorov, prijavljenih kot neželenih: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> pogovor je prijavljen kot neželen.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">Št. arhiviranih pogovorov: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> arhiviran pogovor.</item>
+        <item quantity="other">Št. arhiviranih pogovorov: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> arhiviran pogovor.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">Št. pogovorov, premaknjenih v mapo »Prejeto«: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> premaknjen pogovor v mapo »Prejeto«.</item>
+        <item quantity="other">Št. pogovorov, premaknjenih v mapo »Prejeto«: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> premaknjen pogovor v mapo »Prejeto«.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">Št. izbrisanih pogovorov: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> izbrisan pogovor.</item>
+        <item quantity="other">Št. izbrisanih pogovorov: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> izbrisan pogovor.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">Št. pogovorov, označenih kot pomembnih: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> pogovor je označen kot pomemben.</item>
+        <item quantity="other">Št. pogovorov, označenih kot pomembnih: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> pogovor je označen kot pomemben.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">Št. sporočil, označenih kot nepomembnih: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> pogovor je označen kot nepomemben.</item>
+        <item quantity="other">Št. sporočil, označenih kot nepomembnih: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> pogovor je označen kot nepomemben.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">Št. pogovorov, označenih kot prebranih: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> pogovor je označen kot prebran.</item>
+        <item quantity="other">Št. pogovorov, označenih kot prebranih: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> pogovor je označen kot prebran.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">Št. pogovorov, označenih kot neprebranih: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> pogovor je označen kot neprebran.</item>
+        <item quantity="other">Št. pogovorov, označenih kot neprebranih: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> pogovor je označen kot neprebran.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Spremenjene oznake.</item>

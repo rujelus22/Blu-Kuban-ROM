@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<view android:orientation="vertical" android:id="@id/pref_text_size" android:layout_width="fill_parent" android:layout_height="wrap_content" books:key="textZoom" class="com.google.android.apps.books.preference.TextZoomPreference"
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:books="http://schemas.android.com/apk/res/com.google.android.apps.books">
-    <LinearLayout style="@style/Preference.SegmentedButtons">
-        <Button android:id="@id/btn_text_size_minus" android:drawableTop="@drawable/ic_settings_fontsize_smaller" android:contentDescription="@string/decrease_font_size" style="@style/Preference.SmallButton" />
-        <Button android:id="@id/btn_text_size_plus" android:drawableTop="@drawable/ic_settings_fontsize_larger" android:contentDescription="@string/increase_font_size" style="@style/Preference.SmallButton" />
-    </LinearLayout>
-</view>

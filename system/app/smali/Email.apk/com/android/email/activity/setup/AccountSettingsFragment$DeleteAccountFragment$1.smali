@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 3329
+    .line 734
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment$1;->this$0:Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,11 +43,11 @@
     .parameter "whichButton"
 
     .prologue
-    .line 3331
+    .line 736
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment$1;->this$0:Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;
 
     invoke-virtual {v0}, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;->dismiss()V
 
-    .line 3332
+    .line 737
     return-void
 .end method

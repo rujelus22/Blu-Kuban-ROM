@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/collect/ew;
+.implements Lcom/google/common/collect/hu;
 .implements Ljava/io/Serializable;
 
 
@@ -30,66 +30,75 @@
     .parameter
 
     .prologue
-    .line 248
+    .line 317
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 249
+    .line 318
     iput-object p1, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
 
-    .line 250
+    .line 319
     iput p2, p0, Lcom/google/common/collect/ImmutableMultimap;->size:I
 
-    .line 251
+    .line 320
     return-void
 .end method
 
-.method public static builder()Lcom/google/common/collect/cb;
+.method public static builder()Lcom/google/common/collect/dn;
     .registers 1
 
     .prologue
-    .line 103
-    new-instance v0, Lcom/google/common/collect/cb;
+    .line 114
+    new-instance v0, Lcom/google/common/collect/dn;
 
-    invoke-direct {v0}, Lcom/google/common/collect/cb;-><init>()V
+    invoke-direct {v0}, Lcom/google/common/collect/dn;-><init>()V
 
     return-object v0
 .end method
 
-.method public static copyOf(Lcom/google/common/collect/ew;)Lcom/google/common/collect/ImmutableMultimap;
-    .registers 2
+.method public static copyOf(Lcom/google/common/collect/hu;)Lcom/google/common/collect/ImmutableMultimap;
+    .registers 3
     .parameter
 
     .prologue
-    .line 218
+    .line 289
     instance-of v0, p0, Lcom/google/common/collect/ImmutableMultimap;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_e
 
-    .line 220
-    check-cast p0, Lcom/google/common/collect/ImmutableMultimap;
+    move-object v0, p0
 
-    .line 224
-    :goto_6
-    return-object p0
+    .line 291
+    check-cast v0, Lcom/google/common/collect/ImmutableMultimap;
 
-    :cond_7
-    invoke-static {p0}, Lcom/google/common/collect/ImmutableListMultimap;->copyOf(Lcom/google/common/collect/ew;)Lcom/google/common/collect/ImmutableListMultimap;
+    .line 293
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMultimap;->isPartialView()Z
 
-    move-result-object p0
+    move-result v1
 
-    goto :goto_6
+    if-nez v1, :cond_e
+
+    .line 297
+    :goto_d
+    return-object v0
+
+    :cond_e
+    invoke-static {p0}, Lcom/google/common/collect/ImmutableListMultimap;->copyOf(Lcom/google/common/collect/hu;)Lcom/google/common/collect/ImmutableListMultimap;
+
+    move-result-object v0
+
+    goto :goto_d
 .end method
 
 .method private createKeys()Lcom/google/common/collect/ImmutableMultiset;
     .registers 5
 
     .prologue
-    .line 466
-    invoke-static {}, Lcom/google/common/collect/ImmutableMultiset;->builder()Lcom/google/common/collect/cg;
+    .line 573
+    invoke-static {}, Lcom/google/common/collect/ImmutableMultiset;->builder()Lcom/google/common/collect/ds;
 
     move-result-object v1
 
-    .line 468
+    .line 575
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->entrySet()Lcom/google/common/collect/ImmutableSet;
@@ -113,7 +122,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 469
+    .line 576
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -128,13 +137,13 @@
 
     move-result v0
 
-    invoke-virtual {v1, v3, v0}, Lcom/google/common/collect/cg;->a(Ljava/lang/Object;I)Lcom/google/common/collect/cg;
+    invoke-virtual {v1, v3, v0}, Lcom/google/common/collect/ds;->a(Ljava/lang/Object;I)Lcom/google/common/collect/ds;
 
     goto :goto_e
 
-    .line 471
+    .line 578
     :cond_2c
-    invoke-virtual {v1}, Lcom/google/common/collect/cg;->a()Lcom/google/common/collect/ImmutableMultiset;
+    invoke-virtual {v1}, Lcom/google/common/collect/ds;->a()Lcom/google/common/collect/ImmutableMultiset;
 
     move-result-object v0
 
@@ -145,7 +154,7 @@
     .registers 1
 
     .prologue
-    .line 55
+    .line 66
     invoke-static {}, Lcom/google/common/collect/ImmutableListMultimap;->of()Lcom/google/common/collect/ImmutableListMultimap;
 
     move-result-object v0
@@ -159,7 +168,7 @@
     .parameter
 
     .prologue
-    .line 62
+    .line 73
     invoke-static {p0, p1}, Lcom/google/common/collect/ImmutableListMultimap;->of(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableListMultimap;
 
     move-result-object v0
@@ -175,7 +184,7 @@
     .parameter
 
     .prologue
-    .line 69
+    .line 80
     invoke-static {p0, p1, p2, p3}, Lcom/google/common/collect/ImmutableListMultimap;->of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableListMultimap;
 
     move-result-object v0
@@ -193,7 +202,7 @@
     .parameter
 
     .prologue
-    .line 77
+    .line 88
     invoke-static/range {p0 .. p5}, Lcom/google/common/collect/ImmutableListMultimap;->of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableListMultimap;
 
     move-result-object v0
@@ -213,7 +222,7 @@
     .parameter
 
     .prologue
-    .line 85
+    .line 96
     invoke-static/range {p0 .. p7}, Lcom/google/common/collect/ImmutableListMultimap;->of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableListMultimap;
 
     move-result-object v0
@@ -235,7 +244,7 @@
     .parameter
 
     .prologue
-    .line 93
+    .line 104
     invoke-static/range {p0 .. p9}, Lcom/google/common/collect/ImmutableListMultimap;->of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableListMultimap;
 
     move-result-object v0
@@ -249,7 +258,7 @@
     .registers 2
 
     .prologue
-    .line 388
+    .line 486
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
 
     return-object v0
@@ -259,7 +268,7 @@
     .registers 2
 
     .prologue
-    .line 49
+    .line 59
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap;->asMap()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
@@ -271,7 +280,7 @@
     .registers 2
 
     .prologue
-    .line 280
+    .line 352
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -282,10 +291,16 @@
 .method public containsEntry(Ljava/lang/Object;Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 330
+    .line 422
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -294,7 +309,7 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 331
+    .line 423
     if-eqz v0, :cond_12
 
     invoke-interface {v0, p2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
@@ -317,9 +332,12 @@
 .method public containsKey(Ljava/lang/Object;)Z
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 335
+    .line 428
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableMap;->containsKey(Ljava/lang/Object;)Z
@@ -332,9 +350,12 @@
 .method public containsValue(Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 339
+    .line 433
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->values()Lcom/google/common/collect/ImmutableCollection;
@@ -358,17 +379,17 @@
 
     check-cast v0, Lcom/google/common/collect/ImmutableCollection;
 
-    .line 340
+    .line 434
     invoke-interface {v0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_a
 
-    .line 341
+    .line 435
     const/4 v0, 0x1
 
-    .line 344
+    .line 438
     :goto_1d
     return v0
 
@@ -382,10 +403,10 @@
     .registers 2
 
     .prologue
-    .line 399
+    .line 498
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->entries:Lcom/google/common/collect/ImmutableCollection;
 
-    .line 400
+    .line 499
     if-nez v0, :cond_b
 
     new-instance v0, Lcom/google/common/collect/ImmutableMultimap$EntryCollection;
@@ -402,7 +423,7 @@
     .registers 2
 
     .prologue
-    .line 49
+    .line 59
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap;->entries()Lcom/google/common/collect/ImmutableCollection;
 
     move-result-object v0
@@ -413,20 +434,23 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 356
-    instance-of v0, p1, Lcom/google/common/collect/ew;
+    .line 452
+    instance-of v0, p1, Lcom/google/common/collect/hu;
 
     if-eqz v0, :cond_11
 
-    .line 357
-    check-cast p1, Lcom/google/common/collect/ew;
+    .line 453
+    check-cast p1, Lcom/google/common/collect/hu;
 
-    .line 358
+    .line 454
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
 
-    invoke-interface {p1}, Lcom/google/common/collect/ew;->asMap()Ljava/util/Map;
+    invoke-interface {p1}, Lcom/google/common/collect/hu;->asMap()Ljava/util/Map;
 
     move-result-object v1
 
@@ -434,7 +458,7 @@
 
     move-result v0
 
-    .line 360
+    .line 456
     :goto_10
     return v0
 
@@ -452,7 +476,7 @@
     .parameter
 
     .prologue
-    .line 49
+    .line 59
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableMultimap;->get(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableCollection;
 
     move-result-object v0
@@ -464,7 +488,7 @@
     .registers 2
 
     .prologue
-    .line 364
+    .line 460
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->hashCode()I
@@ -474,11 +498,14 @@
     return v0
 .end method
 
+.method public abstract inverse()Lcom/google/common/collect/ImmutableMultimap;
+.end method
+
 .method public isEmpty()Z
     .registers 2
 
     .prologue
-    .line 348
+    .line 443
     iget v0, p0, Lcom/google/common/collect/ImmutableMultimap;->size:I
 
     if-nez v0, :cond_6
@@ -494,11 +521,25 @@
     goto :goto_5
 .end method
 
+.method isPartialView()Z
+    .registers 2
+
+    .prologue
+    .line 415
+    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->isPartialView()Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public keySet()Lcom/google/common/collect/ImmutableSet;
     .registers 2
 
     .prologue
-    .line 379
+    .line 476
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->keySet()Lcom/google/common/collect/ImmutableSet;
@@ -512,7 +553,7 @@
     .registers 2
 
     .prologue
-    .line 49
+    .line 59
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap;->keySet()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -524,10 +565,10 @@
     .registers 2
 
     .prologue
-    .line 461
+    .line 568
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->keys:Lcom/google/common/collect/ImmutableMultiset;
 
-    .line 462
+    .line 569
     if-nez v0, :cond_a
 
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableMultimap;->createKeys()Lcom/google/common/collect/ImmutableMultiset;
@@ -540,11 +581,11 @@
     return-object v0
 .end method
 
-.method public bridge synthetic keys()Lcom/google/common/collect/fj;
+.method public bridge synthetic keys()Lcom/google/common/collect/iq;
     .registers 2
 
     .prologue
-    .line 49
+    .line 59
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap;->keys()Lcom/google/common/collect/ImmutableMultiset;
 
     move-result-object v0
@@ -558,7 +599,7 @@
     .parameter
 
     .prologue
-    .line 297
+    .line 381
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -566,12 +607,12 @@
     throw v0
 .end method
 
-.method public putAll(Lcom/google/common/collect/ew;)Z
+.method public putAll(Lcom/google/common/collect/hu;)Z
     .registers 3
     .parameter
 
     .prologue
-    .line 315
+    .line 401
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -585,7 +626,7 @@
     .parameter
 
     .prologue
-    .line 306
+    .line 391
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -599,7 +640,7 @@
     .parameter
 
     .prologue
-    .line 324
+    .line 411
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -612,7 +653,7 @@
     .parameter
 
     .prologue
-    .line 261
+    .line 331
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -625,7 +666,7 @@
     .parameter
 
     .prologue
-    .line 49
+    .line 59
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableMultimap;->removeAll(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableCollection;
 
     move-result-object v0
@@ -639,7 +680,7 @@
     .parameter
 
     .prologue
-    .line 271
+    .line 342
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -653,7 +694,7 @@
     .parameter
 
     .prologue
-    .line 49
+    .line 59
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ImmutableMultimap;->replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableCollection;
 
     move-result-object v0
@@ -665,7 +706,7 @@
     .registers 2
 
     .prologue
-    .line 352
+    .line 448
     iget v0, p0, Lcom/google/common/collect/ImmutableMultimap;->size:I
 
     return v0
@@ -675,7 +716,7 @@
     .registers 2
 
     .prologue
-    .line 368
+    .line 464
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->toString()Ljava/lang/String;
@@ -689,15 +730,15 @@
     .registers 2
 
     .prologue
-    .line 482
+    .line 590
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->values:Lcom/google/common/collect/ImmutableCollection;
 
-    .line 483
+    .line 591
     if-nez v0, :cond_b
 
     new-instance v0, Lcom/google/common/collect/ImmutableMultimap$Values;
 
-    invoke-direct {v0, p0}, Lcom/google/common/collect/ImmutableMultimap$Values;-><init>(Lcom/google/common/collect/ew;)V
+    invoke-direct {v0, p0}, Lcom/google/common/collect/ImmutableMultimap$Values;-><init>(Lcom/google/common/collect/ImmutableMultimap;)V
 
     iput-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->values:Lcom/google/common/collect/ImmutableCollection;
 
@@ -709,7 +750,7 @@
     .registers 2
 
     .prologue
-    .line 49
+    .line 59
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap;->values()Lcom/google/common/collect/ImmutableCollection;
 
     move-result-object v0

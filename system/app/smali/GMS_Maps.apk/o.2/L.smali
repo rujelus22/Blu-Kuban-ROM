@@ -1,360 +1,143 @@
-.class public Lo/L;
-.super Lo/a;
+.class Lo/l;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field final a:Landroid/os/Handler;
+.field private final a:I
 
-.field private b:Z
+.field private final b:I
 
-.field private c:Landroid/media/MediaPlayer;
+.field private final c:I
 
-.field private d:Landroid/content/Context;
+.field private final d:Z
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;Landroid/media/MediaPlayer;Landroid/os/Handler;)V
-    .registers 4
+.method public constructor <init>(III)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Lo/a;-><init>()V
+    .prologue
+    .line 29
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lo/L;->c:Landroid/media/MediaPlayer;
+    invoke-direct {p0, p1, p2, p3, v0}, Lo/l;-><init>(IIIZ)V
 
-    iput-object p3, p0, Lo/L;->a:Landroid/os/Handler;
-
-    iput-object p1, p0, Lo/L;->d:Landroid/content/Context;
-
-    invoke-virtual {p0}, Lo/L;->b()V
-
+    .line 30
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;ILandroid/os/Handler;)Lo/a;
-    .registers 11
-
-    const/4 v6, 0x0
-
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->openRawResourceFd(I)Landroid/content/res/AssetFileDescriptor;
-
-    move-result-object v7
-
-    if-nez v7, :cond_d
-
-    move-object v0, v6
-
-    :goto_c
-    return-object v0
-
-    :cond_d
-    new-instance v0, Landroid/media/MediaPlayer;
-
-    invoke-direct {v0}, Landroid/media/MediaPlayer;-><init>()V
-
-    const/4 v1, 0x3
-
-    invoke-virtual {v0, v1}, Landroid/media/MediaPlayer;->setAudioStreamType(I)V
-
-    :try_start_16
-    invoke-virtual {v7}, Landroid/content/res/AssetFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
-
-    move-result-object v1
-
-    invoke-virtual {v7}, Landroid/content/res/AssetFileDescriptor;->getStartOffset()J
-
-    move-result-wide v2
-
-    invoke-virtual {v7}, Landroid/content/res/AssetFileDescriptor;->getLength()J
-
-    move-result-wide v4
-
-    invoke-virtual/range {v0 .. v5}, Landroid/media/MediaPlayer;->setDataSource(Ljava/io/FileDescriptor;JJ)V
-
-    invoke-virtual {v7}, Landroid/content/res/AssetFileDescriptor;->close()V
-
-    invoke-virtual {v0}, Landroid/media/MediaPlayer;->prepare()V
-
-    new-instance v1, Lo/L;
-
-    invoke-direct {v1, p0, v0, p2}, Lo/L;-><init>(Landroid/content/Context;Landroid/media/MediaPlayer;Landroid/os/Handler;)V
-    :try_end_30
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_16 .. :try_end_30} :catch_32
-    .catch Ljava/lang/IllegalStateException; {:try_start_16 .. :try_end_30} :catch_3a
-    .catch Ljava/io/IOException; {:try_start_16 .. :try_end_30} :catch_41
-
-    move-object v0, v1
-
-    goto :goto_c
-
-    :catch_32
-    move-exception v0
-
-    const-string v1, "Error loading sound file from resource"
-
-    invoke-static {v1, v0}, Ln/b;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :goto_38
-    move-object v0, v6
-
-    goto :goto_c
-
-    :catch_3a
-    move-exception v0
-
-    const-string v1, "Error loading sound file from resource"
-
-    invoke-static {v1, v0}, Ln/b;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_38
-
-    :catch_41
-    move-exception v0
-
-    const-string v1, "Error loading sound file from resource"
-
-    invoke-static {v1, v0}, Ln/b;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_38
-.end method
-
-.method public static a(Landroid/content/Context;Ljava/io/File;Landroid/os/Handler;)Lo/a;
+.method public constructor <init>(IIIZ)V
     .registers 6
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    :try_start_0
-    new-instance v1, Landroid/media/MediaPlayer;
+    .prologue
+    .line 32
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v1}, Landroid/media/MediaPlayer;-><init>()V
+    .line 33
+    iput p1, p0, Lo/l;->a:I
 
-    const/4 v0, 0x3
+    .line 34
+    iput p2, p0, Lo/l;->b:I
 
-    invoke-virtual {v1, v0}, Landroid/media/MediaPlayer;->setAudioStreamType(I)V
+    .line 35
+    iput-boolean p4, p0, Lo/l;->d:Z
 
-    new-instance v0, Ljava/io/FileInputStream;
+    .line 37
+    if-eqz p3, :cond_e
 
-    invoke-direct {v0, p1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    .line 38
+    iput p3, p0, Lo/l;->c:I
 
-    invoke-virtual {v0}, Ljava/io/FileInputStream;->getFD()Ljava/io/FileDescriptor;
+    .line 42
+    :goto_d
+    return-void
 
-    move-result-object v2
+    .line 40
+    :cond_e
+    const v0, 0x7f020161
 
-    invoke-virtual {v1, v2}, Landroid/media/MediaPlayer;->setDataSource(Ljava/io/FileDescriptor;)V
+    iput v0, p0, Lo/l;->c:I
 
-    invoke-virtual {v1}, Landroid/media/MediaPlayer;->prepare()V
-
-    invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
-
-    new-instance v0, Lo/L;
-
-    invoke-direct {v0, p0, v1, p2}, Lo/L;-><init>(Landroid/content/Context;Landroid/media/MediaPlayer;Landroid/os/Handler;)V
-    :try_end_20
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_20} :catch_21
-
-    :goto_20
-    return-object v0
-
-    :catch_21
-    move-exception v0
-
-    const-string v1, "Exception creating MediaAlert from file"
-
-    invoke-static {v1, v0}, Ln/b;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    const/4 v0, 0x0
-
-    goto :goto_20
+    goto :goto_d
 .end method
 
-.method private declared-synchronized d()V
+.method static synthetic a(Lo/l;)I
     .registers 2
+    .parameter
 
-    monitor-enter p0
+    .prologue
+    .line 22
+    iget v0, p0, Lo/l;->c:I
 
-    :try_start_1
-    iget-object v0, p0, Lo/L;->c:Landroid/media/MediaPlayer;
-
-    invoke-virtual {v0}, Landroid/media/MediaPlayer;->stop()V
-
-    iget-object v0, p0, Lo/L;->c:Landroid/media/MediaPlayer;
-
-    invoke-virtual {v0}, Landroid/media/MediaPlayer;->release()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lo/L;->c:Landroid/media/MediaPlayer;
-    :try_end_e
-    .catchall {:try_start_1 .. :try_end_e} :catchall_10
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_10
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+    return v0
 .end method
 
-.method private e()V
-    .registers 4
+.method static synthetic b(Lo/l;)Z
+    .registers 2
+    .parameter
 
-    iget-object v0, p0, Lo/L;->d:Landroid/content/Context;
+    .prologue
+    .line 22
+    iget-boolean v0, p0, Lo/l;->d:Z
 
-    const-string v1, "audio"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/media/AudioManager;
-
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0xe
-
-    if-lt v1, v2, :cond_27
-
-    invoke-virtual {v0}, Landroid/media/AudioManager;->isBluetoothA2dpOn()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1c
-
-    invoke-virtual {v0}, Landroid/media/AudioManager;->isWiredHeadsetOn()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_24
-
-    :cond_1c
-    const/high16 v0, 0x3f40
-
-    :goto_1e
-    iget-object v1, p0, Lo/L;->c:Landroid/media/MediaPlayer;
-
-    invoke-virtual {v1, v0, v0}, Landroid/media/MediaPlayer;->setVolume(FF)V
-
-    return-void
-
-    :cond_24
-    const/high16 v0, 0x3f80
-
-    goto :goto_1e
-
-    :cond_27
-    const v0, 0x3f19999a
-
-    goto :goto_1e
-.end method
-
-.method private f()V
-    .registers 3
-
-    const/4 v1, 0x0
-
-    iget-object v0, p0, Lo/L;->c:Landroid/media/MediaPlayer;
-
-    invoke-virtual {v0, v1, v1}, Landroid/media/MediaPlayer;->setVolume(FF)V
-
-    return-void
+    return v0
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 2
+.method public a(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
+    .registers 3
+    .parameter
 
-    const/4 v0, 0x1
+    .prologue
+    .line 56
+    new-instance v0, Lo/m;
 
-    iput-boolean v0, p0, Lo/L;->b:Z
+    invoke-direct {v0, p1, p0}, Lo/m;-><init>(Landroid/content/Context;Lo/l;)V
 
-    iget-object v0, p0, Lo/L;->c:Landroid/media/MediaPlayer;
-
-    if-eqz v0, :cond_a
-
-    invoke-direct {p0}, Lo/L;->f()V
-
-    :cond_a
-    return-void
+    return-object v0
 .end method
 
-.method public declared-synchronized a(Lo/b;)V
-    .registers 4
+.method public a(III)Z
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
 
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v0, p0, Lo/L;->c:Landroid/media/MediaPlayer;
-
-    if-nez v0, :cond_a
-
-    invoke-interface {p1, p0}, Lo/b;->a(Lo/a;)V
-    :try_end_8
-    .catchall {:try_start_1 .. :try_end_8} :catchall_1d
-
-    :goto_8
-    monitor-exit p0
-
-    return-void
-
-    :cond_a
-    :try_start_a
-    iget-object v0, p0, Lo/L;->c:Landroid/media/MediaPlayer;
-
-    new-instance v1, Lo/M;
-
-    invoke-direct {v1, p0, p1}, Lo/M;-><init>(Lo/L;Lo/b;)V
-
-    invoke-virtual {v0, v1}, Landroid/media/MediaPlayer;->setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
-
-    invoke-direct {p0}, Lo/L;->e()V
-
-    iget-object v0, p0, Lo/L;->c:Landroid/media/MediaPlayer;
-
-    invoke-virtual {v0}, Landroid/media/MediaPlayer;->start()V
-    :try_end_1c
-    .catchall {:try_start_a .. :try_end_1c} :catchall_1d
-
-    goto :goto_8
-
-    :catchall_1d
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public b()V
-    .registers 2
-
+    .prologue
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lo/L;->b:Z
+    .line 45
+    iget v1, p0, Lo/l;->a:I
 
-    iget-object v0, p0, Lo/L;->c:Landroid/media/MediaPlayer;
+    if-eq v1, p1, :cond_6
 
-    if-eqz v0, :cond_a
+    .line 51
+    :cond_5
+    :goto_5
+    return v0
 
-    invoke-direct {p0}, Lo/L;->e()V
+    .line 48
+    :cond_6
+    iget v1, p0, Lo/l;->b:I
 
-    :cond_a
-    return-void
-.end method
+    if-eqz v1, :cond_e
 
-.method b(Lo/b;)V
-    .registers 2
+    iget v1, p0, Lo/l;->b:I
 
-    invoke-direct {p0}, Lo/L;->d()V
+    if-ne v1, p2, :cond_5
 
-    if-eqz p1, :cond_8
+    .line 49
+    :cond_e
+    const/4 v0, 0x1
 
-    invoke-interface {p1, p0}, Lo/b;->a(Lo/a;)V
-
-    :cond_8
-    return-void
+    goto :goto_5
 .end method

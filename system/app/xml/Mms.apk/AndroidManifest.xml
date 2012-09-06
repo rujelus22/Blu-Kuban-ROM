@@ -46,6 +46,7 @@
         <activity android:label="@string/app_label" android:name=".ui.ConversationComposer" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|uiMode|screenSize" android:allowTaskReparenting="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.Mms" />
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

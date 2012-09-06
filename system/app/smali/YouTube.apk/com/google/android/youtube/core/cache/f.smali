@@ -3,26 +3,21 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/io/FilenameFilter;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/String;
-
-.field final synthetic b:Lcom/google/android/youtube/core/cache/e;
+.field final synthetic a:Lcom/google/android/youtube/core/cache/d;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/core/cache/e;Ljava/lang/String;)V
-    .registers 3
-    .parameter
+.method constructor <init>(Lcom/google/android/youtube/core/cache/d;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 71
-    iput-object p1, p0, Lcom/google/android/youtube/core/cache/f;->b:Lcom/google/android/youtube/core/cache/e;
-
-    iput-object p2, p0, Lcom/google/android/youtube/core/cache/f;->a:Ljava/lang/String;
+    .line 107
+    iput-object p1, p0, Lcom/google/android/youtube/core/cache/f;->a:Lcom/google/android/youtube/core/cache/d;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,18 +26,24 @@
 
 
 # virtual methods
-.method public final accept(Ljava/io/File;Ljava/lang/String;)Z
-    .registers 4
-    .parameter
-    .parameter
+.method public final run()V
+    .registers 2
 
     .prologue
-    .line 73
-    iget-object v0, p0, Lcom/google/android/youtube/core/cache/f;->a:Ljava/lang/String;
+    .line 109
+    iget-object v0, p0, Lcom/google/android/youtube/core/cache/f;->a:Lcom/google/android/youtube/core/cache/d;
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-static {v0}, Lcom/google/android/youtube/core/cache/d;->a(Lcom/google/android/youtube/core/cache/d;)V
 
-    move-result v0
+    .line 110
+    iget-object v0, p0, Lcom/google/android/youtube/core/cache/f;->a:Lcom/google/android/youtube/core/cache/d;
 
-    return v0
+    invoke-static {v0}, Lcom/google/android/youtube/core/cache/d;->b(Lcom/google/android/youtube/core/cache/d;)Landroid/os/ConditionVariable;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/ConditionVariable;->open()V
+
+    .line 111
+    return-void
 .end method

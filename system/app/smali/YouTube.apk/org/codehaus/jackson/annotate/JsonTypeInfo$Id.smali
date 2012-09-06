@@ -36,7 +36,7 @@
 
     const/4 v3, 0x0
 
-    .line 68
+    .line 66
     new-instance v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;
 
     const-string v1, "NONE"
@@ -47,7 +47,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;->NONE:Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;
 
-    .line 73
+    .line 71
     new-instance v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;
 
     const-string v1, "CLASS"
@@ -58,7 +58,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;->CLASS:Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;
 
-    .line 92
+    .line 95
     new-instance v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;
 
     const-string v1, "MINIMAL_CLASS"
@@ -69,7 +69,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;->MINIMAL_CLASS:Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;
 
-    .line 98
+    .line 101
     new-instance v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;
 
     const-string v1, "NAME"
@@ -80,7 +80,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;->NAME:Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;
 
-    .line 105
+    .line 108
     new-instance v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;
 
     const-string v1, "CUSTOM"
@@ -91,7 +91,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;->CUSTOM:Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;
 
-    .line 59
+    .line 57
     const/4 v0, 0x5
 
     new-array v0, v0, [Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;
@@ -128,13 +128,13 @@
     .parameter
 
     .prologue
-    .line 110
+    .line 113
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 111
+    .line 114
     iput-object p3, p0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;->_defaultPropertyName:Ljava/lang/String;
 
-    .line 112
+    .line 115
     return-void
 .end method
 
@@ -143,7 +143,7 @@
     .parameter
 
     .prologue
-    .line 59
+    .line 57
     const-class v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -159,7 +159,7 @@
     .registers 1
 
     .prologue
-    .line 59
+    .line 57
     sget-object v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;->$VALUES:[Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;
 
     invoke-virtual {v0}, [Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;->clone()Ljava/lang/Object;
@@ -177,7 +177,7 @@
     .registers 2
 
     .prologue
-    .line 114
+    .line 117
     iget-object v0, p0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$Id;->_defaultPropertyName:Ljava/lang/String;
 
     return-object v0

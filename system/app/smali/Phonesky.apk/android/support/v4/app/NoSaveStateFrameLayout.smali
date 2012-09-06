@@ -1,4 +1,4 @@
-.class public Landroid/support/v4/app/NoSaveStateFrameLayout;
+.class Landroid/support/v4/app/NoSaveStateFrameLayout;
 .super Landroid/widget/FrameLayout;
 .source "NoSaveStateFrameLayout.java"
 

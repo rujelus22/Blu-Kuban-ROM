@@ -154,7 +154,7 @@
 
     .line 75
     .local v2, errors:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/google/android/finsky/billing/carrierbilling/PhoneCarrierBillingUtils$AddressInputField;>;"
-    invoke-static {p0}, Lcom/google/android/finsky/billing/BillingUtils;->isEmptyOrSpaces(Ljava/lang/String;)Z
+    invoke-static {p0}, Lcom/google/android/finsky/billing/BillingUtils;->isEmptyOrSpaces(Ljava/lang/CharSequence;)Z
 
     move-result v4
 
@@ -173,7 +173,7 @@
 
     if-eqz v4, :cond_21
 
-    invoke-static {p1}, Lcom/google/android/finsky/billing/BillingUtils;->isEmptyOrSpaces(Ljava/lang/String;)Z
+    invoke-static {p1}, Lcom/google/android/finsky/billing/BillingUtils;->isEmptyOrSpaces(Ljava/lang/CharSequence;)Z
 
     move-result v4
 
@@ -241,7 +241,7 @@
 
     packed-switch v4, :pswitch_data_64
 
-    .line 97
+    .line 100
     :cond_52
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -253,16 +253,16 @@
 
     move-result-object v1
 
-    .line 98
+    .line 101
     .local v1, errorField:Lcom/google/android/finsky/billing/carrierbilling/PhoneCarrierBillingUtils$AddressInputField;
     if-eqz v1, :cond_2d
 
-    .line 99
+    .line 102
     invoke-interface {v2, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_2d
 
-    .line 102
+    .line 105
     .end local v0           #addressError:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Lcom/android/i18n/addressinput/AddressField;Lcom/android/i18n/addressinput/AddressProblemType;>;"
     .end local v1           #errorField:Lcom/google/android/finsky/billing/carrierbilling/PhoneCarrierBillingUtils$AddressInputField;
     :cond_62
@@ -279,7 +279,80 @@
         :pswitch_2d
         :pswitch_2d
         :pswitch_2d
+        :pswitch_2d
     .end packed-switch
+.end method
+
+.method public static getSubscriberInfo(Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;)Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;
+    .registers 3
+    .parameter "address"
+
+    .prologue
+    .line 208
+    if-nez p0, :cond_4
+
+    .line 209
+    const/4 v1, 0x0
+
+    .line 218
+    :goto_3
+    return-object v1
+
+    .line 211
+    :cond_4
+    new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo$Builder;
+
+    invoke-direct {v0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo$Builder;-><init>()V
+
+    .line 212
+    .local v0, builder:Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo$Builder;
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo$Builder;->setName(Ljava/lang/String;)Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo$Builder;
+
+    .line 213
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->getAddressLine1()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo$Builder;->setAddress1(Ljava/lang/String;)Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo$Builder;
+
+    .line 214
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->getAddressLine2()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo$Builder;->setAddress2(Ljava/lang/String;)Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo$Builder;
+
+    .line 215
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->getCity()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo$Builder;->setCity(Ljava/lang/String;)Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo$Builder;
+
+    .line 216
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->getState()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo$Builder;->setState(Ljava/lang/String;)Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo$Builder;
+
+    .line 217
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->getPostalCode()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo$Builder;->setPostalCode(Ljava/lang/String;)Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo$Builder;
+
+    .line 218
+    invoke-virtual {v0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo$Builder;->build()Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;
+
+    move-result-object v1
+
+    goto :goto_3
 .end method
 
 .method public static isPhoneNumberRequired(Lcom/google/android/finsky/billing/BillingUtils$AddressMode;)Z
@@ -289,25 +362,25 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 113
+    .line 116
     invoke-static {}, Lcom/google/android/finsky/billing/carrierbilling/CarrierBillingUtils;->isDcb30()Z
 
     move-result v1
 
     if-eqz v1, :cond_8
 
-    .line 121
+    .line 124
     :cond_7
     :goto_7
     return v0
 
-    .line 117
+    .line 120
     :cond_8
     sget-object v1, Lcom/google/android/finsky/billing/BillingUtils$AddressMode;->REDUCED_ADDRESS:Lcom/google/android/finsky/billing/BillingUtils$AddressMode;
 
     if-ne p0, v1, :cond_7
 
-    .line 118
+    .line 121
     sget-object v0, Lcom/google/android/finsky/config/G;->reducedBillingAddressRequiresPhonenumber:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
@@ -323,19 +396,19 @@
     goto :goto_7
 .end method
 
-.method public static subscriberInfoToAddress(Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;Lcom/google/android/finsky/billing/BillingUtils$AddressMode;)Lcom/google/android/finsky/remoting/protos/Address;
+.method public static subscriberInfoToAddress(Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;Lcom/google/android/finsky/billing/BillingUtils$AddressMode;)Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
     .registers 4
     .parameter "info"
     .parameter "mode"
 
     .prologue
-    .line 166
-    new-instance v0, Lcom/google/android/finsky/remoting/protos/Address;
+    .line 169
+    new-instance v0, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
-    invoke-direct {v0}, Lcom/google/android/finsky/remoting/protos/Address;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;-><init>()V
 
-    .line 167
-    .local v0, address:Lcom/google/android/finsky/remoting/protos/Address;
+    .line 170
+    .local v0, address:Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -346,14 +419,14 @@
 
     if-nez v1, :cond_16
 
-    .line 168
+    .line 171
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;->getName()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/Address;->setName(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->setName(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
-    .line 170
+    .line 173
     :cond_16
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;->getIdentifier()Ljava/lang/String;
 
@@ -365,20 +438,20 @@
 
     if-nez v1, :cond_27
 
-    .line 171
+    .line 174
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;->getIdentifier()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/Address;->setPhoneNumber(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->setPhoneNumber(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
-    .line 174
+    .line 177
     :cond_27
     sget-object v1, Lcom/google/android/finsky/billing/BillingUtils$AddressMode;->FULL_ADDRESS:Lcom/google/android/finsky/billing/BillingUtils$AddressMode;
 
     if-ne v1, p1, :cond_96
 
-    .line 175
+    .line 178
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;->getAddress1()Ljava/lang/String;
 
     move-result-object v1
@@ -389,14 +462,14 @@
 
     if-nez v1, :cond_3c
 
-    .line 176
+    .line 179
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;->getAddress1()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/Address;->setAddressLine1(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->setAddressLine1(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
-    .line 178
+    .line 181
     :cond_3c
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;->getAddress2()Ljava/lang/String;
 
@@ -408,14 +481,14 @@
 
     if-nez v1, :cond_4d
 
-    .line 179
+    .line 182
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;->getAddress2()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/Address;->setAddressLine2(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->setAddressLine2(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
-    .line 181
+    .line 184
     :cond_4d
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;->getCity()Ljava/lang/String;
 
@@ -427,14 +500,14 @@
 
     if-nez v1, :cond_5e
 
-    .line 182
+    .line 185
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;->getCity()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/Address;->setCity(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->setCity(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
-    .line 184
+    .line 187
     :cond_5e
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;->getState()Ljava/lang/String;
 
@@ -446,20 +519,20 @@
 
     if-nez v1, :cond_6f
 
-    .line 185
+    .line 188
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;->getState()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/Address;->setState(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->setState(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
-    .line 187
+    .line 190
     :cond_6f
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/Address;->setIsReduced(Z)Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->setDeprecatedIsReduced(Z)Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
-    .line 191
+    .line 194
     :goto_73
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;->getPostalCode()Ljava/lang/String;
 
@@ -471,14 +544,14 @@
 
     if-nez v1, :cond_84
 
-    .line 192
+    .line 195
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;->getPostalCode()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/Address;->setPostalCode(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->setPostalCode(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
-    .line 194
+    .line 197
     :cond_84
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;->getCountry()Ljava/lang/String;
 
@@ -490,22 +563,22 @@
 
     if-nez v1, :cond_95
 
-    .line 195
+    .line 198
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;->getCountry()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/Address;->setPostalCountry(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->setPostalCountry(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
-    .line 198
+    .line 201
     :cond_95
     return-object v0
 
-    .line 189
+    .line 192
     :cond_96
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/Address;->setIsReduced(Z)Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->setDeprecatedIsReduced(Z)Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
     goto :goto_73
 .end method
@@ -515,7 +588,7 @@
     .parameter "info"
 
     .prologue
-    .line 152
+    .line 155
     new-instance v0, Lcom/android/i18n/addressinput/AddressData$Builder;
 
     invoke-direct {v0}, Lcom/android/i18n/addressinput/AddressData$Builder;-><init>()V

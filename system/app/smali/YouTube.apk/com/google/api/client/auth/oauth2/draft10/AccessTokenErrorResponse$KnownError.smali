@@ -34,7 +34,7 @@
 
     const/4 v3, 0x0
 
-    .line 40
+    .line 43
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;
 
     const-string v1, "INVALID_REQUEST"
@@ -43,7 +43,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;->INVALID_REQUEST:Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;
 
-    .line 47
+    .line 50
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;
 
     const-string v1, "INVALID_CLIENT"
@@ -52,7 +52,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;->INVALID_CLIENT:Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;
 
-    .line 52
+    .line 55
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;
 
     const-string v1, "UNAUTHORIZED_CLIENT"
@@ -61,7 +61,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;->UNAUTHORIZED_CLIENT:Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;
 
-    .line 59
+    .line 62
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;
 
     const-string v1, "INVALID_GRANT"
@@ -70,7 +70,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;->INVALID_GRANT:Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;
 
-    .line 65
+    .line 68
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;
 
     const-string v1, "UNSUPPORTED_GRANT_TYPE"
@@ -79,7 +79,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;->UNSUPPORTED_GRANT_TYPE:Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;
 
-    .line 70
+    .line 73
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;
 
     const-string v1, "INVALID_SCOPE"
@@ -90,7 +90,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;->INVALID_SCOPE:Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;
 
-    .line 33
+    .line 36
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;
@@ -132,7 +132,7 @@
     .parameter
 
     .prologue
-    .line 33
+    .line 36
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -143,7 +143,7 @@
     .parameter
 
     .prologue
-    .line 33
+    .line 36
     const-class v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -159,7 +159,7 @@
     .registers 1
 
     .prologue
-    .line 33
+    .line 36
     sget-object v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;->$VALUES:[Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;
 
     invoke-virtual {v0}, [Lcom/google/api/client/auth/oauth2/draft10/AccessTokenErrorResponse$KnownError;->clone()Ljava/lang/Object;

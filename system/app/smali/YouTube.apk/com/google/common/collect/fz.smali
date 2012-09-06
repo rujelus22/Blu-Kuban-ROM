@@ -1,20 +1,49 @@
-.class public interface abstract Lcom/google/common/collect/fz;
-.super Ljava/lang/Object;
+.class final Lcom/google/common/collect/fz;
+.super Lcom/google/common/collect/k;
 .source "SourceFile"
 
-# interfaces
-.implements Lcom/google/common/collect/ew;
+
+# instance fields
+.field final synthetic a:Lcom/google/common/collect/fx;
+
+
+# direct methods
+.method constructor <init>(Lcom/google/common/collect/fx;Lcom/google/common/collect/gg;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 3263
+    iput-object p1, p0, Lcom/google/common/collect/fz;->a:Lcom/google/common/collect/fx;
+
+    invoke-direct {p0, p2}, Lcom/google/common/collect/k;-><init>(Ljava/lang/Object;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract entries()Ljava/util/Set;
-.end method
+.method protected final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+    .parameter
 
-.method public abstract get(Ljava/lang/Object;)Ljava/util/Set;
-.end method
+    .prologue
+    .line 3263
+    check-cast p1, Lcom/google/common/collect/gg;
 
-.method public abstract removeAll(Ljava/lang/Object;)Ljava/util/Set;
-.end method
+    invoke-interface {p1}, Lcom/google/common/collect/gg;->getNextEvictable()Lcom/google/common/collect/gg;
 
-.method public abstract replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/Set;
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/common/collect/fz;->a:Lcom/google/common/collect/fx;
+
+    iget-object v1, v1, Lcom/google/common/collect/fx;->a:Lcom/google/common/collect/gg;
+
+    if-ne v0, v1, :cond_d
+
+    const/4 v0, 0x0
+
+    :cond_d
+    return-object v0
 .end method

@@ -43,7 +43,7 @@
     .registers 1
 
     .prologue
-    .line 145
+    .line 217
     new-instance v0, Lcom/google/android/finsky/billing/CheckoutPurchase$Error$1;
 
     invoke-direct {v0}, Lcom/google/android/finsky/billing/CheckoutPurchase$Error$1;-><init>()V
@@ -60,16 +60,16 @@
     .parameter "messageStringResource"
 
     .prologue
-    .line 180
+    .line 252
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 181
+    .line 253
     iput-object p1, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$Error;->type:Lcom/google/android/finsky/billing/CheckoutPurchase$ErrorType;
 
-    .line 182
+    .line 254
     iput p2, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$Error;->code:I
 
-    .line 183
+    .line 255
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
@@ -80,7 +80,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$Error;->message:Ljava/lang/String;
 
-    .line 184
+    .line 256
     return-void
 .end method
 
@@ -91,19 +91,19 @@
     .parameter "message"
 
     .prologue
-    .line 169
+    .line 241
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 170
+    .line 242
     iput-object p1, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$Error;->type:Lcom/google/android/finsky/billing/CheckoutPurchase$ErrorType;
 
-    .line 171
+    .line 243
     iput p2, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$Error;->code:I
 
-    .line 172
+    .line 244
     iput-object p3, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$Error;->message:Ljava/lang/String;
 
-    .line 173
+    .line 245
     return-void
 .end method
 
@@ -113,7 +113,7 @@
     .registers 2
 
     .prologue
-    .line 188
+    .line 260
     const/4 v0, 0x0
 
     return v0
@@ -126,15 +126,15 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 200
+    .line 272
     if-nez p1, :cond_4
 
-    .line 205
+    .line 277
     :cond_3
     :goto_3
     return v1
 
-    .line 202
+    .line 274
     :cond_4
     instance-of v2, p1, Lcom/google/android/finsky/billing/CheckoutPurchase$Error;
 
@@ -142,10 +142,10 @@
 
     move-object v0, p1
 
-    .line 204
+    .line 276
     check-cast v0, Lcom/google/android/finsky/billing/CheckoutPurchase$Error;
 
-    .line 205
+    .line 277
     .local v0, other:Lcom/google/android/finsky/billing/CheckoutPurchase$Error;
     iget-object v2, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$Error;->type:Lcom/google/android/finsky/billing/CheckoutPurchase$ErrorType;
 
@@ -193,7 +193,7 @@
     .registers 2
 
     .prologue
-    .line 215
+    .line 287
     const/16 v0, 0x2a
 
     return v0
@@ -203,7 +203,7 @@
     .registers 5
 
     .prologue
-    .line 220
+    .line 292
     const-string v0, "Error[type=%s,code=%d,message=%s"
 
     const/4 v1, 0x3
@@ -249,7 +249,7 @@
     .parameter "i"
 
     .prologue
-    .line 193
+    .line 265
     iget-object v0, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$Error;->type:Lcom/google/android/finsky/billing/CheckoutPurchase$ErrorType;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/billing/CheckoutPurchase$ErrorType;->name()Ljava/lang/String;
@@ -258,16 +258,16 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 194
+    .line 266
     iget v0, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$Error;->code:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 195
+    .line 267
     iget-object v0, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$Error;->message:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 196
+    .line 268
     return-void
 .end method

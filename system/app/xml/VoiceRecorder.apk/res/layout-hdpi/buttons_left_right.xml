@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:id="@id/voice_recorder_softkey" android:background="@color/gray" android:layout_width="fill_parent" android:layout_height="54.669983dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <Button android:textSize="16.0dip" android:id="@id/softkey_left_button" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="1.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="1.0dip" android:layout_weight="1.0" />
-    <Button android:textSize="16.0dip" android:id="@id/softkey_right_button" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="1.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="1.0dip" android:layout_weight="1.0" />
-</LinearLayout>

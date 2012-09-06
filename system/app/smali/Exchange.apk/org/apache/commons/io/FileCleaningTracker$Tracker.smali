@@ -34,7 +34,7 @@
     .registers 4
 
     .prologue
-    .line 265
+    .line 255
     iget-object v0, p0, Lorg/apache/commons/io/FileCleaningTracker$Tracker;->deleteStrategy:Lorg/apache/commons/io/FileDeleteStrategy;
 
     new-instance v1, Ljava/io/File;

@@ -1,328 +1,211 @@
-.class public abstract LaA/e;
+.class LaA/e;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
-
-# instance fields
-.field protected final a:LaA/l;
-
-.field private b:Z
+# interfaces
+.implements LaA/c;
 
 
 # direct methods
-.method public constructor <init>(LaA/l;)V
-    .registers 2
+.method constructor <init>()V
+    .registers 1
 
+    .prologue
+    .line 338
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, LaA/e;->a:LaA/l;
-
     return-void
-.end method
-
-.method protected static a(FF)F
-    .registers 7
-
-    cmpl-float v0, p1, p0
-
-    if-ltz v0, :cond_15
-
-    sub-float v0, p1, p0
-
-    const-wide v1, 0x401921fb54442d18L
-
-    float-to-double v3, p0
-
-    add-double/2addr v1, v3
-
-    float-to-double v3, p1
-
-    sub-double/2addr v1, v3
-
-    double-to-float v1, v1
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
-
-    move-result v0
-
-    :goto_14
-    return v0
-
-    :cond_15
-    invoke-static {p1, p0}, LaA/e;->a(FF)F
-
-    move-result v0
-
-    neg-float v0, v0
-
-    goto :goto_14
 .end method
 
 
 # virtual methods
-.method protected abstract a(JLjava/util/LinkedList;Ljava/util/List;)LaA/f;
-.end method
+.method public a(Ln/al;I)Ljava/util/List;
+    .registers 12
+    .parameter
+    .parameter
 
-.method public a(JLjava/util/LinkedList;ZLjava/util/List;)LaA/f;
-    .registers 8
+    .prologue
+    .line 341
+    move-object v0, p1
 
-    invoke-virtual {p0}, LaA/e;->b()Z
+    check-cast v0, Ln/aF;
 
-    move-result v0
+    .line 342
+    new-instance v3, Ljava/util/ArrayList;
 
-    if-eqz v0, :cond_f
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-interface {p5}, Ljava/util/List;->isEmpty()Z
+    .line 343
+    const/4 v1, 0x0
 
-    move-result v0
+    move v2, v1
 
-    if-nez v0, :cond_f
+    :goto_a
+    invoke-virtual {v0}, Ln/aF;->j()I
 
-    sget-object v0, LaA/f;->a:LaA/f;
+    move-result v1
 
-    :goto_e
-    return-object v0
+    if-ge v2, v1, :cond_a3
 
-    :cond_f
-    invoke-interface {p5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    .line 344
+    invoke-virtual {v0, v2}, Ln/aF;->a(I)Ln/l;
 
-    move-result-object v1
+    move-result-object v4
 
-    :cond_13
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_28
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, LaA/e;
-
-    invoke-virtual {v0}, LaA/e;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_13
-
-    sget-object v0, LaA/f;->a:LaA/f;
-
-    goto :goto_e
-
-    :cond_28
-    invoke-virtual {p0}, LaA/e;->d()Z
-
-    move-result v0
-
-    if-eq p4, v0, :cond_31
-
-    sget-object v0, LaA/f;->a:LaA/f;
-
-    goto :goto_e
-
-    :cond_31
-    invoke-virtual {p0, p1, p2, p3, p5}, LaA/e;->a(JLjava/util/LinkedList;Ljava/util/List;)LaA/f;
-
-    move-result-object v0
-
-    goto :goto_e
-.end method
-
-.method protected a(Ljava/lang/String;)V
-    .registers 3
-
-    const/16 v0, 0x63
-
-    invoke-static {v0, p1}, Laf/m;->a(ILjava/lang/String;)Z
-
-    return-void
-.end method
-
-.method public a()Z
-    .registers 2
-
-    iget-boolean v0, p0, LaA/e;->b:Z
-
-    return v0
-.end method
-
-.method public a(LaA/j;)Z
-    .registers 5
-
-    iget-boolean v0, p0, LaA/e;->b:Z
-
-    if-eqz v0, :cond_25
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Gesture already active: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 345
+    invoke-static {v4}, LaA/a;->a(Ln/l;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 346
+    invoke-static {v4}, LaA/a;->b(Ln/l;)Lat/B;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    .line 347
+    if-eqz v1, :cond_9e
 
-    move-result-object v2
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v6
 
-    move-result-object v1
+    if-lez v6, :cond_9e
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-eqz v5, :cond_9e
 
-    move-result-object v1
+    .line 348
+    new-instance v6, Landroid/content/ContentValues;
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v6}, Landroid/content/ContentValues;-><init>()V
 
-    throw v0
+    .line 349
+    const-string v7, "label"
 
-    :cond_25
-    invoke-virtual {p0, p1}, LaA/e;->b(LaA/j;)Z
+    invoke-virtual {v6, v7, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result v0
+    .line 350
+    const-string v1, "tile_type"
 
-    iput-boolean v0, p0, LaA/e;->b:Z
+    invoke-interface {p1}, Ln/al;->g()Lcom/google/android/maps/driveabout/vector/dg;
 
-    iget-boolean v0, p0, LaA/e;->b:Z
+    move-result-object v7
 
-    return v0
-.end method
+    invoke-virtual {v7}, Lcom/google/android/maps/driveabout/vector/dg;->f()I
 
-.method public b()Z
-    .registers 2
+    move-result v7
 
-    const/4 v0, 0x0
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    return v0
-.end method
+    move-result-object v7
 
-.method protected abstract b(LaA/j;)Z
-.end method
+    invoke-virtual {v6, v1, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-.method public c(LaA/j;)V
-    .registers 5
+    .line 351
+    const-string v1, "shard_id"
 
-    iget-boolean v0, p0, LaA/e;->b:Z
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    if-nez v0, :cond_25
+    move-result-object v7
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    invoke-virtual {v6, v1, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    .line 352
+    const-string v7, "tile_key"
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Gesture already inactive: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {p1}, Ln/al;->g()Lcom/google/android/maps/driveabout/vector/dg;
 
     move-result-object v1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {p1}, Ln/al;->d()Ln/am;
 
-    move-result-object v2
+    move-result-object v8
 
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1, v8}, Lh/a;->a(Lcom/google/android/maps/driveabout/vector/dg;Ln/am;)Landroid/util/Pair;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v1, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/Long;
+
+    invoke-virtual {v6, v7, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+
+    .line 354
+    invoke-interface {v4}, Ln/l;->a()Ln/m;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    if-eqz v1, :cond_72
 
-    throw v0
+    .line 355
+    const-string v1, "feature_id"
 
-    :cond_25
-    const/4 v0, 0x0
+    invoke-interface {v4}, Ln/l;->a()Ln/m;
 
-    iput-boolean v0, p0, LaA/e;->b:Z
+    move-result-object v7
 
-    invoke-virtual {p0, p1}, LaA/e;->d(LaA/j;)V
+    invoke-virtual {v7}, Ln/m;->a()Ljava/lang/String;
 
-    return-void
-.end method
+    move-result-object v7
 
-.method public c()Z
-    .registers 2
+    invoke-virtual {v6, v1, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    const/4 v0, 0x0
+    .line 358
+    :cond_72
+    if-eqz v5, :cond_8e
 
-    return v0
-.end method
+    .line 359
+    const-string v1, "latitude"
 
-.method protected abstract d(LaA/j;)V
-.end method
+    invoke-virtual {v5}, Lat/B;->c()I
 
-.method public d()Z
-    .registers 2
+    move-result v7
 
-    const/4 v0, 0x0
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    return v0
-.end method
+    move-result-object v7
 
-.method public e(LaA/j;)Z
-    .registers 5
+    invoke-virtual {v6, v1, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    iget-boolean v0, p0, LaA/e;->b:Z
+    .line 360
+    const-string v1, "longitude"
 
-    if-nez v0, :cond_25
+    invoke-virtual {v5}, Lat/B;->e()I
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    move-result v5
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v5
 
-    const-string v2, "Gesture is not active: "
+    invoke-virtual {v6, v1, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 362
+    :cond_8e
+    const-string v1, "rank"
 
-    move-result-object v1
+    invoke-interface {v4}, Ln/l;->i()I
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result v4
 
-    move-result-object v2
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    move-result-object v4
 
-    move-result-object v2
+    invoke-virtual {v6, v1, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 363
+    invoke-interface {v3, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    move-result-object v1
+    .line 343
+    :cond_9e
+    add-int/lit8 v1, v2, 0x1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move v2, v1
 
-    move-result-object v1
+    goto/16 :goto_a
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_25
-    invoke-virtual {p0, p1}, LaA/e;->f(LaA/j;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method protected abstract f(LaA/j;)Z
+    .line 366
+    :cond_a3
+    return-object v3
 .end method

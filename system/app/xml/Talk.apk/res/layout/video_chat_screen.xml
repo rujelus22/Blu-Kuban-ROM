@@ -13,8 +13,8 @@
         <View android:background="#55000000" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="clickHandler" />
         <LinearLayout android:orientation="vertical" android:background="@drawable/video_panel_dropdown_bg_holo_dark" android:layout_width="@dimen/bg_replacement_panel_width" android:layout_height="wrap_content" android:layout_margin="8.0dip" android:layout_centerInParent="true">
             <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/bgReplaceMessage" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="32.0dip" android:text="@string/bg_replacement_message" android:layout_centerInParent="true" />
-            <View android:background="#ffaaaaaa" android:layout_width="fill_parent" android:layout_height="1.0px" />
-            <Button android:textAppearance="?android:textAppearanceMedium" android:textColor="#ffaaaaaa" android:layout_gravity="center" android:id="@id/bgReplaceCancelButton" android:layout_width="fill_parent" android:layout_height="48.0dip" android:text="@android:string/cancel" style="?android:attr/borderlessButtonStyle" />
+            <View android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            <Button android:textAppearance="?android:textAppearanceMedium" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@id/bgReplaceCancelButton" android:layout_width="fill_parent" android:layout_height="48.0dip" android:text="@android:string/cancel" style="?android:attr/borderlessButtonStyle" />
         </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>

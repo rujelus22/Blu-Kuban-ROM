@@ -1,43 +1,23 @@
-.class public Lcom/google/android/maps/driveabout/vector/cO;
+.class public interface abstract Lcom/google/android/maps/driveabout/vector/cO;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/maps/driveabout/vector/cB;
-
-
-# instance fields
-.field private final a:Lt/m;
-
-
-# direct methods
-.method public constructor <init>(Lt/m;)V
-    .registers 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/vector/cO;->a:Lt/m;
-
-    return-void
-.end method
+.source "SourceFile"
 
 
 # virtual methods
-.method public a(Lcom/google/android/maps/driveabout/vector/cU;Z)Lcom/google/android/maps/driveabout/vector/cn;
-    .registers 4
-
-    const/4 v0, 0x0
-
-    return-object v0
+.method public abstract a(FF)V
 .end method
 
-.method public a(Lcom/google/android/maps/driveabout/vector/cU;IZ)Lcom/google/android/maps/driveabout/vector/cz;
-    .registers 6
+.method public abstract a(II)V
+.end method
 
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/cn;
+.method public abstract a([I)V
+.end method
 
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/cO;->a:Lt/m;
+.method public abstract a([III)V
+.end method
 
-    invoke-direct {v0, p1, v1}, Lcom/google/android/maps/driveabout/vector/cn;-><init>(Lcom/google/android/maps/driveabout/vector/cU;Lt/m;)V
+.method public abstract c(I)V
+.end method
 
-    return-object v0
+.method public abstract g()I
 .end method

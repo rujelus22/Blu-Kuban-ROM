@@ -13,18 +13,18 @@
     .parameter
 
     .prologue
-    .line 129
-    #getter for: Lcom/google/common/collect/RegularImmutableMap;->entries:[Ljava/util/Map$Entry;
-    invoke-static {p1}, Lcom/google/common/collect/RegularImmutableMap;->access$000(Lcom/google/common/collect/RegularImmutableMap;)[Ljava/util/Map$Entry;
+    .line 202
+    #getter for: Lcom/google/common/collect/RegularImmutableMap;->entries:[Lcom/google/common/collect/jn;
+    invoke-static {p1}, Lcom/google/common/collect/RegularImmutableMap;->access$000(Lcom/google/common/collect/RegularImmutableMap;)[Lcom/google/common/collect/jn;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;-><init>([Ljava/lang/Object;)V
 
-    .line 130
+    .line 203
     iput-object p1, p0, Lcom/google/common/collect/RegularImmutableMap$EntrySet;->map:Lcom/google/common/collect/RegularImmutableMap;
 
-    .line 131
+    .line 204
     return-void
 .end method
 
@@ -37,15 +37,15 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 134
+    .line 207
     instance-of v1, p1, Ljava/util/Map$Entry;
 
     if-eqz v1, :cond_1e
 
-    .line 135
+    .line 208
     check-cast p1, Ljava/util/Map$Entry;
 
-    .line 136
+    .line 209
     iget-object v1, p0, Lcom/google/common/collect/RegularImmutableMap$EntrySet;->map:Lcom/google/common/collect/RegularImmutableMap;
 
     invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -56,7 +56,7 @@
 
     move-result-object v1
 
-    .line 137
+    .line 210
     if-eqz v1, :cond_1e
 
     invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -71,7 +71,7 @@
 
     const/4 v0, 0x1
 
-    .line 139
+    .line 212
     :cond_1e
     return v0
 .end method

@@ -12,15 +12,6 @@
     .end annotation
 .end method
 
-.method public abstract writeTo(Landroid/content/Context;JLjava/io/OutputStream;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
 .method public abstract writeTo(Ljava/io/OutputStream;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

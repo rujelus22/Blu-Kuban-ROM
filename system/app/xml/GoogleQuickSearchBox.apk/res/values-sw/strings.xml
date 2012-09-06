@@ -58,7 +58,7 @@
     <string name="accessibility_search_history">Historia</string>
     <string name="accessibility_query_refinement">Hariri maoni %1$s</string>
     <string name="accessibility_remove_from_history">Ondoa %1$s kutoka kwa historia</string>
-    <string name="first_run_help_text">Chapa ili kutafuta wavuti na simu yako, au kuzindua prog</string>
+    <string name="first_run_help_text">Chapa ili kutafuta wavuti na simu yako, au kuzindua programu</string>
     <string name="license_activity_title">Leseni za programu huru za kompyuta</string>
     <string name="license_activity_loading">inapakia…</string>
     <string name="license_activity_unavailable">Kuna tatizo katika kupakia leseni.</string>

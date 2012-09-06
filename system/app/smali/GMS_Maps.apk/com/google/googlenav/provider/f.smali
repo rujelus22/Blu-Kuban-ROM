@@ -1,200 +1,82 @@
-.class final Lcom/google/googlenav/provider/f;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field final synthetic a:Ljava/lang/String;
-
-.field final synthetic b:Ljava/lang/String;
-
-.field final synthetic c:Landroid/content/Context;
-
-.field final synthetic d:LaJ/B;
+.class Lcom/google/googlenav/provider/f;
+.super Landroid/database/sqlite/SQLiteOpenHelper;
+.source "SourceFile"
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;LaJ/B;)V
+.method public constructor <init>(Landroid/content/Context;)V
     .registers 5
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/provider/f;->a:Ljava/lang/String;
+    .prologue
+    .line 161
+    const-string v0, "offline_feature_index.db"
 
-    iput-object p2, p0, Lcom/google/googlenav/provider/f;->b:Ljava/lang/String;
+    const/4 v1, 0x0
 
-    iput-object p3, p0, Lcom/google/googlenav/provider/f;->c:Landroid/content/Context;
+    const/4 v2, 0x3
 
-    iput-object p4, p0, Lcom/google/googlenav/provider/f;->d:LaJ/B;
+    invoke-direct {p0, p1, v0, v1, v2}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
+    .line 162
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .registers 9
+.method public onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
+    .registers 3
+    .parameter
 
-    const v7, 0xbebc200
+    .prologue
+    .line 166
+    const-string v0, "CREATE VIRTUAL TABLE features_indexed USING fts3(label TEXT, details TEXT);"
 
-    iget-object v0, p0, Lcom/google/googlenav/provider/f;->a:Ljava/lang/String;
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/google/googlenav/provider/f;->a:Ljava/lang/String;
+    .line 169
+    const-string v0, "CREATE TABLE features_nonindexed (tile_type INTEGER, shard_id INTEGER, tile_key INT8, feature_id TEXT, latitude INTEGER, longitude INTEGER, rank INTEGER);"
 
-    if-eqz v1, :cond_20
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/google/googlenav/provider/f;->a:Ljava/lang/String;
+    .line 177
+    const-string v0, "CREATE TRIGGER features_cascade_delete BEFORE DELETE ON features_nonindexed BEGIN DELETE FROM features_indexed WHERE docid=old.rowid; END;"
 
-    iget-object v2, p0, Lcom/google/googlenav/provider/f;->b:Ljava/lang/String;
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1f
-
-    iget-object v1, p0, Lcom/google/googlenav/provider/f;->a:Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    if-nez v1, :cond_20
-
-    :cond_1f
-    const/4 v0, 0x0
-
-    :cond_20
-    iget-object v1, p0, Lcom/google/googlenav/provider/f;->b:Ljava/lang/String;
-
-    invoke-static {v1}, Lcom/google/googlenav/aV;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    if-nez v0, :cond_32
-
-    iget-object v2, p0, Lcom/google/googlenav/provider/f;->b:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_32
-
-    iget-object v0, p0, Lcom/google/googlenav/provider/f;->b:Ljava/lang/String;
-
-    :cond_32
-    iget-object v2, p0, Lcom/google/googlenav/provider/f;->c:Landroid/content/Context;
-
-    invoke-static {v2, v1}, Lcom/google/googlenav/provider/SearchHistoryProvider;->a(Landroid/content/Context;Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4d
-
-    iget-object v2, p0, Lcom/google/googlenav/provider/f;->c:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/google/googlenav/provider/SearchHistoryProvider;->a:Landroid/net/Uri;
-
-    const-string v4, "data1=?"
-
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    aput-object v1, v5, v6
-
-    invoke-virtual {v2, v3, v4, v5}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
-
-    :cond_4d
-    new-instance v2, Landroid/content/ContentValues;
-
-    invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
-
-    const-string v3, "data1"
-
-    invoke-virtual {v2, v3, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    if-eqz v0, :cond_5e
-
-    const-string v1, "displayQuery"
-
-    invoke-virtual {v2, v1, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_5e
-    iget-object v0, p0, Lcom/google/googlenav/provider/f;->d:LaJ/B;
-
-    if-eqz v0, :cond_8c
-
-    const-string v0, "latitude"
-
-    iget-object v1, p0, Lcom/google/googlenav/provider/f;->d:LaJ/B;
-
-    invoke-virtual {v1}, LaJ/B;->c()I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v2, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    const-string v0, "longitude"
-
-    iget-object v1, p0, Lcom/google/googlenav/provider/f;->d:LaJ/B;
-
-    invoke-virtual {v1}, LaJ/B;->e()I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v2, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    :goto_80
-    iget-object v0, p0, Lcom/google/googlenav/provider/f;->c:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/google/googlenav/provider/SearchHistoryProvider;->a:Landroid/net/Uri;
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
-
+    .line 181
     return-void
+.end method
 
-    :cond_8c
-    const-string v0, "latitude"
+.method public onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .prologue
+    .line 185
+    if-eq p2, p3, :cond_2
 
-    move-result-object v1
+    .line 192
+    :cond_2
+    const-string v0, "DROP TABLE IF EXISTS features_indexed;"
 
-    invoke-virtual {v2, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    const-string v0, "longitude"
+    .line 193
+    const-string v0, "DROP TABLE IF EXISTS features_nonindexed;"
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    move-result-object v1
+    .line 194
+    const-string v0, "DROP TRIGGER IF EXISTS features_cascade_delete;"
 
-    invoke-virtual {v2, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    goto :goto_80
+    .line 195
+    invoke-virtual {p0, p1}, Lcom/google/googlenav/provider/f;->onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
+
+    .line 196
+    return-void
 .end method

@@ -1,152 +1,107 @@
-.class public final Lcom/google/android/youtube/core/transfer/g;
-.super Landroid/os/Binder;
+.class final Lcom/google/android/youtube/core/transfer/g;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/transfer/TransferService;
+.field public final a:J
+
+.field public final b:I
+
+.field private final c:Ljava/lang/Object;
+
+.field private d:I
+
+.field private e:Z
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/core/transfer/TransferService;)V
-    .registers 2
+.method public constructor <init>(Ljava/lang/Object;IJ)V
+    .registers 5
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 165
-    iput-object p1, p0, Lcom/google/android/youtube/core/transfer/g;->a:Lcom/google/android/youtube/core/transfer/TransferService;
+    .line 224
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
+    .line 225
+    iput-object p1, p0, Lcom/google/android/youtube/core/transfer/g;->c:Ljava/lang/Object;
 
+    .line 226
+    iput-wide p3, p0, Lcom/google/android/youtube/core/transfer/g;->a:J
+
+    .line 227
+    iput p2, p0, Lcom/google/android/youtube/core/transfer/g;->b:I
+
+    .line 228
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/Map;
+.method public final a()I
     .registers 2
 
     .prologue
-    .line 192
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/g;->a:Lcom/google/android/youtube/core/transfer/TransferService;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/transfer/TransferService;->e()Ljava/util/Map;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final a(Ljava/lang/String;)V
-    .registers 5
-    .parameter
-
-    .prologue
-    .line 208
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/g;->a:Lcom/google/android/youtube/core/transfer/TransferService;
-
-    iget-object v1, p0, Lcom/google/android/youtube/core/transfer/g;->a:Lcom/google/android/youtube/core/transfer/TransferService;
-
-    iget-object v2, p0, Lcom/google/android/youtube/core/transfer/g;->a:Lcom/google/android/youtube/core/transfer/TransferService;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/google/android/youtube/core/transfer/TransferService;->a(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/transfer/TransferService;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-
-    .line 209
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/g;->a:Lcom/google/android/youtube/core/transfer/TransferService;
-
-    iget-object v1, p0, Lcom/google/android/youtube/core/transfer/g;->a:Lcom/google/android/youtube/core/transfer/TransferService;
-
-    invoke-static {v1}, Lcom/google/android/youtube/core/transfer/TransferService;->a(Lcom/google/android/youtube/core/transfer/TransferService;)Lcom/google/android/youtube/core/transfer/TransfersExecutor;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Lcom/google/android/youtube/core/transfer/TransfersExecutor;->a(Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/transfer/TransferService;->a(Lcom/google/android/youtube/core/transfer/TransferService;I)I
-
-    .line 210
-    return-void
-.end method
-
-.method public final a(Ljava/lang/String;Ljava/lang/String;Lcom/google/android/youtube/core/transfer/b;)V
-    .registers 7
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 200
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/g;->a:Lcom/google/android/youtube/core/transfer/TransferService;
-
-    iget-object v1, p0, Lcom/google/android/youtube/core/transfer/g;->a:Lcom/google/android/youtube/core/transfer/TransferService;
-
-    iget-object v2, p0, Lcom/google/android/youtube/core/transfer/g;->a:Lcom/google/android/youtube/core/transfer/TransferService;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/google/android/youtube/core/transfer/TransferService;->a(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/transfer/TransferService;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-
-    .line 201
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/g;->a:Lcom/google/android/youtube/core/transfer/TransferService;
-
-    iget-object v1, p0, Lcom/google/android/youtube/core/transfer/g;->a:Lcom/google/android/youtube/core/transfer/TransferService;
-
-    invoke-static {v1}, Lcom/google/android/youtube/core/transfer/TransferService;->a(Lcom/google/android/youtube/core/transfer/TransferService;)Lcom/google/android/youtube/core/transfer/TransfersExecutor;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1, p2, p3}, Lcom/google/android/youtube/core/transfer/TransfersExecutor;->a(Ljava/lang/String;Ljava/lang/String;Lcom/google/android/youtube/core/transfer/b;)I
-
-    move-result v1
-
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/transfer/TransferService;->a(Lcom/google/android/youtube/core/transfer/TransferService;I)I
-
-    .line 202
-    return-void
-.end method
-
-.method public final a(Lcom/google/android/youtube/core/transfer/d;)Z
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 175
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/g;->a:Lcom/google/android/youtube/core/transfer/TransferService;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/core/transfer/TransferService;->a(Lcom/google/android/youtube/core/transfer/d;)Z
-
-    move-result v0
+    .line 232
+    iget v0, p0, Lcom/google/android/youtube/core/transfer/g;->d:I
 
     return v0
 .end method
 
-.method public final b(Lcom/google/android/youtube/core/transfer/d;)Z
-    .registers 3
+.method public final a(I)V
+    .registers 4
     .parameter
 
     .prologue
-    .line 184
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/g;->a:Lcom/google/android/youtube/core/transfer/TransferService;
+    .line 244
+    iget-object v1, p0, Lcom/google/android/youtube/core/transfer/g;->c:Ljava/lang/Object;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/core/transfer/TransferService;->b(Lcom/google/android/youtube/core/transfer/d;)Z
+    monitor-enter v1
+
+    .line 245
+    const/4 v0, 0x0
+
+    :try_start_4
+    invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
 
     move-result v0
+
+    iput v0, p0, Lcom/google/android/youtube/core/transfer/g;->d:I
+
+    .line 246
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/youtube/core/transfer/g;->e:Z
+
+    .line 247
+    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/g;->c:Ljava/lang/Object;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->notify()V
+
+    .line 248
+    monitor-exit v1
+    :try_end_13
+    .catchall {:try_start_4 .. :try_end_13} :catchall_14
+
+    return-void
+
+    :catchall_14
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method public final b()Z
+    .registers 2
+
+    .prologue
+    .line 237
+    iget-boolean v0, p0, Lcom/google/android/youtube/core/transfer/g;->e:Z
 
     return v0
 .end method

@@ -1,120 +1,85 @@
-.class public Lx/L;
-.super Lx/d;
+.class Lx/l;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# static fields
-.field private static final g:Ljava/util/List;
+# instance fields
+.field public a:Lx/m;
+
+.field public b:Lx/u;
+
+.field public c:Lx/d;
+
+.field public d:I
+
+.field public e:I
+
+.field public f:Lx/c;
+
+.field public g:Ljava/util/List;
+
+.field public h:[I
+
+.field public i:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 5
+.method private constructor <init>()V
+    .registers 1
 
-    const/4 v4, 0x3
+    .prologue
+    .line 71
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v3, 0x2
-
-    const/4 v2, 0x0
-
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Ljava/lang/Integer;
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v0, v2
-
-    const/4 v1, 0x1
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v0, v3
-
-    const/4 v1, 0x5
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v0, v4
-
-    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    sput-object v0, Lx/L;->g:Ljava/util/List;
-
+    .line 72
     return-void
 .end method
 
-.method public constructor <init>(Lat/h;Lcom/google/android/maps/driveabout/vector/cU;IILjava/util/Locale;Ljava/io/File;)V
-    .registers 19
+.method synthetic constructor <init>(Lx/i;)V
+    .registers 2
+    .parameter
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "its"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p2, Lcom/google/android/maps/driveabout/vector/cU;->r:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/16 v4, 0x100
-
-    sget-object v5, Lx/L;->g:Ljava/util/List;
-
-    const/4 v8, 0x0
-
-    const/4 v10, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v3, p2
-
-    move v6, p3
-
-    move/from16 v7, p4
-
-    move-object/from16 v9, p5
-
-    move-object/from16 v11, p6
-
-    invoke-direct/range {v0 .. v11}, Lx/d;-><init>(Lat/h;Ljava/lang/String;Lcom/google/android/maps/driveabout/vector/cU;ILjava/util/List;IIZLjava/util/Locale;ZLjava/io/File;)V
+    .prologue
+    .line 71
+    invoke-direct {p0}, Lx/l;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected n()Lx/o;
-    .registers 2
+.method public a(Lx/m;Lx/u;Lx/d;IILx/c;Ljava/util/List;)Lx/l;
+    .registers 8
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    new-instance v0, Lx/M;
+    .prologue
+    .line 95
+    iput-object p1, p0, Lx/l;->a:Lx/m;
 
-    invoke-direct {v0, p0}, Lx/M;-><init>(Lx/L;)V
+    .line 96
+    iput-object p2, p0, Lx/l;->b:Lx/u;
 
-    return-object v0
+    .line 97
+    iput-object p3, p0, Lx/l;->c:Lx/d;
+
+    .line 98
+    iput p4, p0, Lx/l;->d:I
+
+    .line 99
+    iput p5, p0, Lx/l;->e:I
+
+    .line 100
+    iput-object p6, p0, Lx/l;->f:Lx/c;
+
+    .line 101
+    iput-object p7, p0, Lx/l;->g:Ljava/util/List;
+
+    .line 102
+    return-object p0
 .end method

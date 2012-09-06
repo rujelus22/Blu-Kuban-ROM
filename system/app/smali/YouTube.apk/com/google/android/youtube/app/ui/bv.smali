@@ -1,153 +1,46 @@
-.class final synthetic Lcom/google/android/youtube/app/ui/bv;
+.class final Lcom/google/android/youtube/app/ui/bv;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/view/View$OnFocusChangeListener;
 
-# static fields
-.field static final synthetic a:[I
+
+# instance fields
+.field final synthetic a:Lcom/google/android/youtube/app/ui/bt;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method constructor <init>(Lcom/google/android/youtube/app/ui/bt;)V
+    .registers 2
+    .parameter
 
     .prologue
-    .line 80
-    invoke-static {}, Lcom/google/android/youtube/app/t;->values()[Lcom/google/android/youtube/app/t;
+    .line 137
+    iput-object p1, p0, Lcom/google/android/youtube/app/ui/bv;->a:Lcom/google/android/youtube/app/ui/bt;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onFocusChange(Landroid/view/View;Z)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 139
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/bv;->a:Lcom/google/android/youtube/app/ui/bt;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/bt;->c(Lcom/google/android/youtube/app/ui/bt;)Landroid/view/View;
 
     move-result-object v0
 
-    array-length v0, v0
+    invoke-virtual {v0, p2}, Landroid/view/View;->setSelected(Z)V
 
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/google/android/youtube/app/ui/bv;->a:[I
-
-    :try_start_9
-    sget-object v0, Lcom/google/android/youtube/app/ui/bv;->a:[I
-
-    sget-object v1, Lcom/google/android/youtube/app/t;->a:Lcom/google/android/youtube/app/t;
-
-    invoke-virtual {v1}, Lcom/google/android/youtube/app/t;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_56
-
-    :goto_14
-    :try_start_14
-    sget-object v0, Lcom/google/android/youtube/app/ui/bv;->a:[I
-
-    sget-object v1, Lcom/google/android/youtube/app/t;->f:Lcom/google/android/youtube/app/t;
-
-    invoke-virtual {v1}, Lcom/google/android/youtube/app/t;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_54
-
-    :goto_1f
-    :try_start_1f
-    sget-object v0, Lcom/google/android/youtube/app/ui/bv;->a:[I
-
-    sget-object v1, Lcom/google/android/youtube/app/t;->e:Lcom/google/android/youtube/app/t;
-
-    invoke-virtual {v1}, Lcom/google/android/youtube/app/t;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_52
-
-    :goto_2a
-    :try_start_2a
-    sget-object v0, Lcom/google/android/youtube/app/ui/bv;->a:[I
-
-    sget-object v1, Lcom/google/android/youtube/app/t;->d:Lcom/google/android/youtube/app/t;
-
-    invoke-virtual {v1}, Lcom/google/android/youtube/app/t;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_35
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_50
-
-    :goto_35
-    :try_start_35
-    sget-object v0, Lcom/google/android/youtube/app/ui/bv;->a:[I
-
-    sget-object v1, Lcom/google/android/youtube/app/t;->c:Lcom/google/android/youtube/app/t;
-
-    invoke-virtual {v1}, Lcom/google/android/youtube/app/t;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_40
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_35 .. :try_end_40} :catch_4e
-
-    :goto_40
-    :try_start_40
-    sget-object v0, Lcom/google/android/youtube/app/ui/bv;->a:[I
-
-    sget-object v1, Lcom/google/android/youtube/app/t;->b:Lcom/google/android/youtube/app/t;
-
-    invoke-virtual {v1}, Lcom/google/android/youtube/app/t;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x6
-
-    aput v2, v0, v1
-    :try_end_4b
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_40 .. :try_end_4b} :catch_4c
-
-    :goto_4b
+    .line 140
     return-void
-
-    :catch_4c
-    move-exception v0
-
-    goto :goto_4b
-
-    :catch_4e
-    move-exception v0
-
-    goto :goto_40
-
-    :catch_50
-    move-exception v0
-
-    goto :goto_35
-
-    :catch_52
-    move-exception v0
-
-    goto :goto_2a
-
-    :catch_54
-    move-exception v0
-
-    goto :goto_1f
-
-    :catch_56
-    move-exception v0
-
-    goto :goto_14
 .end method

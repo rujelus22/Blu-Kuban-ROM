@@ -88,6 +88,8 @@
         <item>2</item>
         <item>3</item>
     </string-array>
+    <item type="array" name="APKTOOL_DUMMY_000e">false</item>
+    <item type="array" name="APKTOOL_DUMMY_000f">false</item>
     <string-array name="auto_reject_mode">
         <item>Off</item>
         <item>All numbers</item>
@@ -98,6 +100,4 @@
         <item>1</item>
         <item>2</item>
     </string-array>
-    <item type="array" name="APKTOOL_DUMMY_000e">false</item>
-    <item type="array" name="APKTOOL_DUMMY_000f">false</item>
 </resources>

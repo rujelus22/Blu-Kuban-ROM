@@ -3,12 +3,12 @@
 .source "MainActivity.java"
 
 # interfaces
-.implements Landroid/support/v4/app/FragmentManager$OnBackStackChangedListener;
+.implements Landroid/view/MenuItem$OnMenuItemClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/activities/MainActivity;->onCreateOptionsMenu(Landroid/view/Menu;)Z
+    value = Lcom/google/android/finsky/activities/MainActivity;->setupDebugMenu(Landroid/view/Menu;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 538
+    .line 825
     iput-object p1, p0, Lcom/google/android/finsky/activities/MainActivity$6;->this$0:Lcom/google/android/finsky/activities/MainActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,16 +37,26 @@
 
 
 # virtual methods
-.method public onBackStackChanged()V
-    .registers 2
+.method public onMenuItemClick(Landroid/view/MenuItem;)Z
+    .registers 6
+    .parameter "item"
 
     .prologue
-    .line 541
+    .line 828
     iget-object v0, p0, Lcom/google/android/finsky/activities/MainActivity$6;->this$0:Lcom/google/android/finsky/activities/MainActivity;
 
-    #calls: Lcom/google/android/finsky/activities/MainActivity;->updateConsumptionAppMenu()V
-    invoke-static {v0}, Lcom/google/android/finsky/activities/MainActivity;->access$600(Lcom/google/android/finsky/activities/MainActivity;)V
+    new-instance v1, Landroid/content/Intent;
 
-    .line 542
-    return-void
+    iget-object v2, p0, Lcom/google/android/finsky/activities/MainActivity$6;->this$0:Lcom/google/android/finsky/activities/MainActivity;
+
+    const-class v3, Lcom/google/android/finsky/activities/DebugActivity;
+
+    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/activities/MainActivity;->startActivity(Landroid/content/Intent;)V
+
+    .line 829
+    const/4 v0, 0x1
+
+    return v0
 .end method

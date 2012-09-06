@@ -1,21 +1,23 @@
 .class Lcom/google/googlenav/settings/v;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lax/l;
+.super LY/b;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/settings/q;
+.field final synthetic a:Lcom/google/googlenav/settings/u;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/settings/q;)V
-    .registers 2
+.method constructor <init>(Lcom/google/googlenav/settings/u;LY/c;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/settings/v;->a:Lcom/google/googlenav/settings/q;
+    .prologue
+    .line 218
+    iput-object p1, p0, Lcom/google/googlenav/settings/v;->a:Lcom/google/googlenav/settings/u;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, LY/b;-><init>(LY/c;)V
 
     return-void
 .end method
@@ -25,17 +27,37 @@
 .method public a()V
     .registers 3
 
-    iget-object v0, p0, Lcom/google/googlenav/settings/v;->a:Lcom/google/googlenav/settings/q;
+    .prologue
+    .line 221
+    iget-object v0, p0, Lcom/google/googlenav/settings/v;->a:Lcom/google/googlenav/settings/u;
 
-    invoke-static {v0}, Lcom/google/googlenav/settings/q;->b(Lcom/google/googlenav/settings/q;)Landroid/os/Handler;
+    iget-object v0, v0, Lcom/google/googlenav/settings/u;->b:Lcom/google/googlenav/settings/s;
+
+    invoke-static {v0}, Lcom/google/googlenav/settings/s;->b(Lcom/google/googlenav/settings/s;)Lcom/google/googlenav/friend/reporting/s;
 
     move-result-object v0
 
-    new-instance v1, Lcom/google/googlenav/settings/w;
+    iget-object v1, p0, Lcom/google/googlenav/settings/v;->a:Lcom/google/googlenav/settings/u;
 
-    invoke-direct {v1, p0}, Lcom/google/googlenav/settings/w;-><init>(Lcom/google/googlenav/settings/v;)V
+    iget-boolean v1, v1, Lcom/google/googlenav/settings/u;->a:Z
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/friend/reporting/s;->a(Z)V
 
+    .line 222
+    iget-object v0, p0, Lcom/google/googlenav/settings/v;->a:Lcom/google/googlenav/settings/u;
+
+    iget-object v0, v0, Lcom/google/googlenav/settings/u;->b:Lcom/google/googlenav/settings/s;
+
+    invoke-static {v0}, Lcom/google/googlenav/settings/s;->a(Lcom/google/googlenav/settings/s;)Lcom/google/googlenav/settings/B;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/googlenav/settings/v;->a:Lcom/google/googlenav/settings/u;
+
+    iget-boolean v1, v1, Lcom/google/googlenav/settings/u;->a:Z
+
+    invoke-interface {v0, v1}, Lcom/google/googlenav/settings/B;->a(Z)V
+
+    .line 223
     return-void
 .end method

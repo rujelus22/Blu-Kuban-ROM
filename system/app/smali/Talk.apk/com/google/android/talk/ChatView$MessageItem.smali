@@ -3562,7 +3562,7 @@
     invoke-virtual {v2, v7}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
     .line 1203
-    const/4 v7, -0x1
+    const/4 v7, 0x0
 
     invoke-virtual {v2, v7}, Landroid/graphics/Paint;->setColor(I)V
 
@@ -3635,7 +3635,7 @@
     .line 1241
     :cond_7f
     :goto_7f
-    const v7, -0x333334
+    const v7, -0xb2b2b3
 
     invoke-virtual {v2, v7}, Landroid/graphics/Paint;->setColor(I)V
 

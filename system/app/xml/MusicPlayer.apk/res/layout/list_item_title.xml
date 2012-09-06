@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/list_item_title_layout" android:background="@drawable/dark_header" android:focusable="false" android:visibility="gone" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <ImageView android:id="@id/list_item_title_image" android:focusable="false" android:clickable="false" android:layout_width="40.0dip" android:layout_height="40.0dip" android:scaleType="fitXY" android:layout_alignParentLeft="true" />
-        <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/music_player_list_group_title" android:ellipsize="marquee" android:id="@id/list_item_title_text" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:maxLines="1" android:singleLine="true" android:layout_toRightOf="@id/list_item_title_image" android:layout_centerVertical="true" android:marqueeRepeatLimit="marquee_forever" />
-    </RelativeLayout>
-</merge>

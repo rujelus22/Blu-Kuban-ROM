@@ -18,7 +18,7 @@
     const/16 v4, 0x80
 
     .line 67
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 68
     invoke-virtual {p1}, Ljava/lang/String;->toCharArray()[C

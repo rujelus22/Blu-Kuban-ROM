@@ -17,14 +17,14 @@
     .registers 1
 
     .prologue
-    .line 50
+    .line 48
     new-instance v0, Lorg/apache/commons/io/filefilter/DirectoryFileFilter;
 
     invoke-direct {v0}, Lorg/apache/commons/io/filefilter/DirectoryFileFilter;-><init>()V
 
     sput-object v0, Lorg/apache/commons/io/filefilter/DirectoryFileFilter;->DIRECTORY:Lorg/apache/commons/io/filefilter/IOFileFilter;
 
-    .line 56
+    .line 55
     sget-object v0, Lorg/apache/commons/io/filefilter/DirectoryFileFilter;->DIRECTORY:Lorg/apache/commons/io/filefilter/IOFileFilter;
 
     sput-object v0, Lorg/apache/commons/io/filefilter/DirectoryFileFilter;->INSTANCE:Lorg/apache/commons/io/filefilter/IOFileFilter;
@@ -36,10 +36,10 @@
     .registers 1
 
     .prologue
-    .line 61
+    .line 60
     invoke-direct {p0}, Lorg/apache/commons/io/filefilter/AbstractFileFilter;-><init>()V
 
-    .line 62
+    .line 61
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .parameter "file"
 
     .prologue
-    .line 71
+    .line 70
     invoke-virtual {p1}, Ljava/io/File;->isDirectory()Z
 
     move-result v0

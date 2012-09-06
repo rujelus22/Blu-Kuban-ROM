@@ -33,21 +33,21 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 23471
+    .line 24064
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 23476
+    .line 24069
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->request_:Lcom/google/android/vending/remoting/protos/VendingProtos$SingleRequestProto;
 
-    .line 23496
+    .line 24089
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->response_:Lcom/google/android/vending/remoting/protos/VendingProtos$SingleResponseProto;
 
-    .line 23538
+    .line 24132
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->cachedSize:I
 
-    .line 23471
+    .line 24064
     return-void
 .end method
 
@@ -57,15 +57,15 @@
     .registers 2
 
     .prologue
-    .line 23540
+    .line 24135
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 23542
+    .line 24137
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->getSerializedSize()I
 
-    .line 23544
+    .line 24139
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->cachedSize:I
 
@@ -76,7 +76,7 @@
     .registers 2
 
     .prologue
-    .line 23478
+    .line 24071
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->request_:Lcom/google/android/vending/remoting/protos/VendingProtos$SingleRequestProto;
 
     return-object v0
@@ -86,7 +86,7 @@
     .registers 2
 
     .prologue
-    .line 23498
+    .line 24091
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->response_:Lcom/google/android/vending/remoting/protos/VendingProtos$SingleResponseProto;
 
     return-object v0
@@ -96,10 +96,10 @@
     .registers 4
 
     .prologue
-    .line 23548
+    .line 24144
     const/4 v0, 0x0
 
-    .line 23549
+    .line 24145
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->hasRequest()Z
 
@@ -107,7 +107,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 23550
+    .line 24146
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->getRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$SingleRequestProto;
@@ -120,7 +120,7 @@
 
     add-int/2addr v0, v1
 
-    .line 23553
+    .line 24149
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->hasResponse()Z
 
@@ -128,7 +128,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 23554
+    .line 24150
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->getResponse()Lcom/google/android/vending/remoting/protos/VendingProtos$SingleResponseProto;
@@ -141,11 +141,11 @@
 
     add-int/2addr v0, v1
 
-    .line 23557
+    .line 24153
     :cond_21
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->cachedSize:I
 
-    .line 23558
+    .line 24154
     return v0
 .end method
 
@@ -153,7 +153,7 @@
     .registers 2
 
     .prologue
-    .line 23477
+    .line 24070
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->hasRequest:Z
 
     return v0
@@ -163,7 +163,7 @@
     .registers 2
 
     .prologue
-    .line 23497
+    .line 24090
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->hasResponse:Z
 
     return v0
@@ -179,60 +179,60 @@
     .end annotation
 
     .prologue
-    .line 23565
+    .line 24162
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 23566
+    .line 24163
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_26
 
-    .line 23570
+    .line 24167
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 23571
+    .line 24168
     :sswitch_d
     return-object p0
 
-    .line 23576
+    .line 24173
     :sswitch_e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$SingleRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$SingleRequestProto;-><init>()V
 
-    .line 23577
+    .line 24174
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$SingleRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 23578
+    .line 24175
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->setRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$SingleRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;
 
     goto :goto_0
 
-    .line 23582
+    .line 24179
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$SingleRequestProto;
     :sswitch_1a
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$SingleResponseProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$SingleResponseProto;-><init>()V
 
-    .line 23583
+    .line 24180
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$SingleResponseProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 23584
+    .line 24181
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->setResponse(Lcom/google/android/vending/remoting/protos/VendingProtos$SingleResponseProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;
 
     goto :goto_0
 
-    .line 23566
+    .line 24163
     :sswitch_data_26
     .sparse-switch
         0x0 -> :sswitch_d
@@ -251,7 +251,7 @@
     .end annotation
 
     .prologue
-    .line 23469
+    .line 24062
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;
 
     move-result-object v0
@@ -264,26 +264,26 @@
     .parameter "value"
 
     .prologue
-    .line 23480
+    .line 24073
     if-nez p1, :cond_8
 
-    .line 23481
+    .line 24074
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 23483
+    .line 24076
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->hasRequest:Z
 
-    .line 23484
+    .line 24077
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->request_:Lcom/google/android/vending/remoting/protos/VendingProtos$SingleRequestProto;
 
-    .line 23485
+    .line 24078
     return-object p0
 .end method
 
@@ -292,26 +292,26 @@
     .parameter "value"
 
     .prologue
-    .line 23500
+    .line 24093
     if-nez p1, :cond_8
 
-    .line 23501
+    .line 24094
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 23503
+    .line 24096
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->hasResponse:Z
 
-    .line 23504
+    .line 24097
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->response_:Lcom/google/android/vending/remoting/protos/VendingProtos$SingleResponseProto;
 
-    .line 23505
+    .line 24098
     return-object p0
 .end method
 
@@ -325,14 +325,14 @@
     .end annotation
 
     .prologue
-    .line 23530
+    .line 24124
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->hasRequest()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 23531
+    .line 24125
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->getRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$SingleRequestProto;
@@ -341,7 +341,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 23533
+    .line 24127
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->hasResponse()Z
 
@@ -349,7 +349,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 23534
+    .line 24128
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PrefetchedBundleProto;->getResponse()Lcom/google/android/vending/remoting/protos/VendingProtos$SingleResponseProto;
@@ -358,7 +358,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 23536
+    .line 24130
     :cond_1c
     return-void
 .end method

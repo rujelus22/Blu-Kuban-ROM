@@ -13,13 +13,11 @@
 
 
 # instance fields
-.field private mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
+.field private mAccount:Lcom/android/emailcommon/provider/Account;
 
 .field private mTriedAddAdministrator:Z
 
 .field private mTriedSetEncryption:Z
-
-.field private mTriedSetExtEncryption:Z
 
 .field private mTriedSetPassword:Z
 
@@ -31,69 +29,54 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 52
+    .line 51
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 64
+    .line 63
     iput-boolean v0, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedAddAdministrator:Z
 
-    .line 65
+    .line 64
     iput-boolean v0, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedSetPassword:Z
 
-    .line 66
+    .line 65
     iput-boolean v0, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedSetEncryption:Z
 
-    .line 67
-    iput-boolean v0, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedSetExtEncryption:Z
-
-    .line 408
+    .line 364
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/android/email/activity/setup/AccountSecurity;)Lcom/android/emailcommon/provider/EmailContent$Account;
+.method static synthetic access$000(Lcom/android/email/activity/setup/AccountSecurity;)Lcom/android/emailcommon/provider/Account;
     .registers 2
     .parameter "x0"
 
     .prologue
-    .line 52
-    iget-object v0, p0, Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 51
+    iget-object v0, p0, Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/Account;
 
     return-object v0
 .end method
 
-.method static synthetic access$002(Lcom/android/email/activity/setup/AccountSecurity;Lcom/android/emailcommon/provider/EmailContent$Account;)Lcom/android/emailcommon/provider/EmailContent$Account;
+.method static synthetic access$100(Lcom/android/email/activity/setup/AccountSecurity;Lcom/android/emailcommon/provider/Account;)V
     .registers 2
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 52
-    iput-object p1, p0, Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    return-object p1
-.end method
-
-.method static synthetic access$100(Lcom/android/email/activity/setup/AccountSecurity;Lcom/android/emailcommon/provider/EmailContent$Account;)V
-    .registers 2
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 52
-    invoke-direct {p0, p1}, Lcom/android/email/activity/setup/AccountSecurity;->tryAdvanceSecurity(Lcom/android/emailcommon/provider/EmailContent$Account;)V
+    .line 51
+    invoke-direct {p0, p1}, Lcom/android/email/activity/setup/AccountSecurity;->tryAdvanceSecurity(Lcom/android/emailcommon/provider/Account;)V
 
     return-void
 .end method
 
-.method static synthetic access$200(Lcom/android/email/activity/setup/AccountSecurity;Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/email/SecurityPolicy;)V
+.method static synthetic access$200(Lcom/android/email/activity/setup/AccountSecurity;Lcom/android/emailcommon/provider/Account;Lcom/android/email/SecurityPolicy;)V
     .registers 3
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
 
     .prologue
-    .line 52
-    invoke-direct {p0, p1, p2}, Lcom/android/email/activity/setup/AccountSecurity;->repostNotification(Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/email/SecurityPolicy;)V
+    .line 51
+    invoke-direct {p0, p1, p2}, Lcom/android/email/activity/setup/AccountSecurity;->repostNotification(Lcom/android/emailcommon/provider/Account;Lcom/android/email/SecurityPolicy;)V
 
     return-void
 .end method
@@ -105,19 +88,19 @@
     .parameter
 
     .prologue
-    .line 97
+    .line 94
     new-instance v1, Landroid/content/Intent;
 
     const-class v0, Lcom/android/email/activity/setup/AccountSecurity;
 
     invoke-direct {v1, p0, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 98
-    const-string v0, "com.android.email.activity.setup.ACCOUNT_ID"
+    .line 95
+    const-string v0, "ACCOUNT_ID"
 
     invoke-virtual {v1, v0, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 99
+    .line 96
     if-eqz p3, :cond_15
 
     const-string v0, "EXPIRED"
@@ -127,10 +110,10 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 100
+    .line 97
     return-object v1
 
-    .line 99
+    .line 96
     :cond_15
     const-string v0, "EXPIRING"
 
@@ -144,413 +127,389 @@
     .parameter
 
     .prologue
-    .line 80
+    .line 81
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/email/activity/setup/AccountSecurity;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 81
-    const-string v1, "com.android.email.activity.setup.ACCOUNT_ID"
+    .line 82
+    const-string v1, "ACCOUNT_ID"
 
     invoke-virtual {v0, v1, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 82
+    .line 83
     const-string v1, "SHOW_DIALOG"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
     .line 84
-    const/high16 v1, 0x80
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 86
     return-object v0
 .end method
 
-.method public static checkIfAccountSecurityNeed(Landroid/content/Context;)Z
-    .registers 6
-    .parameter "context"
-
-    .prologue
-    const/4 v4, 0x0
-
-    const/4 v2, 0x0
-
-    .line 104
-    invoke-static {p0}, Lcom/android/email/SecurityPolicy;->getInstance(Landroid/content/Context;)Lcom/android/email/SecurityPolicy;
-
-    move-result-object v1
-
-    .line 105
-    .local v1, security:Lcom/android/email/SecurityPolicy;
-    invoke-virtual {v1}, Lcom/android/email/SecurityPolicy;->isActiveAdmin()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_23
-
-    .line 106
-    invoke-virtual {v1, v4}, Lcom/android/email/SecurityPolicy;->isActive(Lcom/android/emailcommon/service/PolicySet;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_16
-
-    .line 107
-    invoke-static {p0}, Lcom/android/emailcommon/provider/EmailContent$Account;->clearSecurityHoldOnAllAccounts(Landroid/content/Context;)V
-
-    .line 117
-    :goto_15
-    return v2
-
-    .line 110
-    :cond_16
-    invoke-virtual {v1}, Lcom/android/email/SecurityPolicy;->setActivePolicies()V
-
-    .line 111
-    invoke-virtual {v1, v4}, Lcom/android/email/SecurityPolicy;->getInactiveReasons(Lcom/android/emailcommon/service/PolicySet;)I
-
-    move-result v0
-
-    .line 112
-    .local v0, inactiveReasons:I
-    if-nez v0, :cond_23
-
-    .line 113
-    invoke-static {p0}, Lcom/android/emailcommon/provider/EmailContent$Account;->clearSecurityHoldOnAllAccounts(Landroid/content/Context;)V
-
-    goto :goto_15
-
-    .line 117
-    .end local v0           #inactiveReasons:I
-    :cond_23
-    const/4 v2, 0x1
-
-    goto :goto_15
-.end method
-
-.method private repostNotification(Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/email/SecurityPolicy;)V
+.method private repostNotification(Lcom/android/emailcommon/provider/Account;Lcom/android/email/SecurityPolicy;)V
     .registers 4
     .parameter "account"
     .parameter "security"
 
     .prologue
-    .line 336
-    new-instance v0, Lcom/android/email/activity/setup/AccountSecurity$2;
+    .line 285
+    if-nez p1, :cond_3
 
-    invoke-direct {v0, p0, p2, p1}, Lcom/android/email/activity/setup/AccountSecurity$2;-><init>(Lcom/android/email/activity/setup/AccountSecurity;Lcom/android/email/SecurityPolicy;Lcom/android/emailcommon/provider/EmailContent$Account;)V
+    .line 292
+    :goto_2
+    return-void
+
+    .line 286
+    :cond_3
+    new-instance v0, Lcom/android/email/activity/setup/AccountSecurity$1;
+
+    invoke-direct {v0, p0, p2, p1}, Lcom/android/email/activity/setup/AccountSecurity$1;-><init>(Lcom/android/email/activity/setup/AccountSecurity;Lcom/android/email/SecurityPolicy;Lcom/android/emailcommon/provider/Account;)V
 
     invoke-static {v0}, Lcom/android/emailcommon/utility/Utility;->runAsync(Ljava/lang/Runnable;)Landroid/os/AsyncTask;
 
-    .line 342
-    return-void
+    goto :goto_2
 .end method
 
-.method private tryAdvanceSecurity(Lcom/android/emailcommon/provider/EmailContent$Account;)V
-    .registers 13
+.method private tryAdvanceSecurity(Lcom/android/emailcommon/provider/Account;)V
+    .registers 12
     .parameter "account"
 
     .prologue
-    const/4 v8, 0x0
+    const/4 v5, 0x0
 
-    const/4 v7, 0x4
+    const/4 v9, 0x1
 
-    const/4 v6, 0x2
-
-    const/4 v10, 0x1
-
-    .line 211
+    .line 176
     invoke-static {p0}, Lcom/android/email/SecurityPolicy;->getInstance(Landroid/content/Context;)Lcom/android/email/SecurityPolicy;
 
-    move-result-object v4
+    move-result-object v3
 
-    .line 213
-    .local v4, security:Lcom/android/email/SecurityPolicy;
-    if-nez p1, :cond_e
+    .line 178
+    .local v3, security:Lcom/android/email/SecurityPolicy;
+    invoke-virtual {v3}, Lcom/android/email/SecurityPolicy;->isActiveAdmin()Z
 
-    .line 214
+    move-result v4
+
+    if-nez v4, :cond_70
+
+    .line 179
+    iget-boolean v4, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedAddAdministrator:Z
+
+    if-eqz v4, :cond_22
+
+    .line 180
+    sget-boolean v4, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v4, :cond_1b
+
+    .line 181
+    const-string v4, "Email/AccountSecurity"
+
+    const-string v5, "Not active admin: repost notification"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 183
+    :cond_1b
+    invoke-direct {p0, p1, v3}, Lcom/android/email/activity/setup/AccountSecurity;->repostNotification(Lcom/android/emailcommon/provider/Account;Lcom/android/email/SecurityPolicy;)V
+
+    .line 184
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->finish()V
 
-    .line 329
-    :goto_d
+    .line 278
+    :goto_21
     return-void
 
-    .line 220
-    :cond_e
-    invoke-virtual {v4}, Lcom/android/email/SecurityPolicy;->isActiveAdmin()Z
+    .line 186
+    :cond_22
+    iput-boolean v9, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedAddAdministrator:Z
 
-    move-result v5
+    .line 188
+    iget-wide v4, p1, Lcom/android/emailcommon/provider/Account;->mHostAuthKeyRecv:J
 
-    if-nez v5, :cond_5c
-
-    .line 221
-    iget-boolean v5, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedAddAdministrator:Z
-
-    if-eqz v5, :cond_1f
-
-    .line 222
-    invoke-direct {p0, p1, v4}, Lcom/android/email/activity/setup/AccountSecurity;->repostNotification(Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/email/SecurityPolicy;)V
-
-    .line 223
-    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->finish()V
-
-    goto :goto_d
-
-    .line 225
-    :cond_1f
-    iput-boolean v10, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedAddAdministrator:Z
-
-    .line 227
-    iget-wide v5, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mHostAuthKeyRecv:J
-
-    invoke-static {p0, v5, v6}, Lcom/android/emailcommon/provider/EmailContent$HostAuth;->restoreHostAuthWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$HostAuth;
+    invoke-static {p0, v4, v5}, Lcom/android/emailcommon/provider/HostAuth;->restoreHostAuthWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/HostAuth;
 
     move-result-object v0
 
-    .line 228
-    .local v0, hostAuth:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
-    if-nez v0, :cond_30
+    .line 189
+    .local v0, hostAuth:Lcom/android/emailcommon/provider/HostAuth;
+    if-nez v0, :cond_3e
 
-    .line 229
-    invoke-direct {p0, p1, v4}, Lcom/android/email/activity/setup/AccountSecurity;->repostNotification(Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/email/SecurityPolicy;)V
+    .line 190
+    sget-boolean v4, Lcom/android/email/Email;->DEBUG:Z
 
-    .line 230
+    if-eqz v4, :cond_37
+
+    .line 191
+    const-string v4, "Email/AccountSecurity"
+
+    const-string v5, "No HostAuth: repost notification"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 193
+    :cond_37
+    invoke-direct {p0, p1, v3}, Lcom/android/email/activity/setup/AccountSecurity;->repostNotification(Lcom/android/emailcommon/provider/Account;Lcom/android/email/SecurityPolicy;)V
+
+    .line 194
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->finish()V
 
-    goto :goto_d
+    goto :goto_21
 
-    .line 234
-    :cond_30
+    .line 196
+    :cond_3e
+    sget-boolean v4, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v4, :cond_49
+
+    .line 197
+    const-string v4, "Email/AccountSecurity"
+
+    const-string v5, "Not active admin: post initial notification"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 200
+    :cond_49
     new-instance v2, Landroid/content/Intent;
 
-    const-string v5, "android.app.action.ADD_DEVICE_ADMIN"
+    const-string v4, "android.app.action.ADD_DEVICE_ADMIN"
 
-    invoke-direct {v2, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 235
+    .line 201
     .local v2, intent:Landroid/content/Intent;
-    const-string v5, "android.app.extra.DEVICE_ADMIN"
+    const-string v4, "android.app.extra.DEVICE_ADMIN"
 
-    invoke-virtual {v4}, Lcom/android/email/SecurityPolicy;->getAdminComponent()Landroid/content/ComponentName;
-
-    move-result-object v6
-
-    invoke-virtual {v2, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
-
-    .line 236
-    const-string v5, "android.app.extra.ADD_EXPLANATION"
-
-    const v6, 0x7f08011f
-
-    new-array v7, v10, [Ljava/lang/Object;
-
-    const/4 v8, 0x0
-
-    iget-object v9, v0, Lcom/android/emailcommon/provider/EmailContent$HostAuth;->mAddress:Ljava/lang/String;
-
-    aput-object v9, v7, v8
-
-    invoke-virtual {p0, v6, v7}, Lcom/android/email/activity/setup/AccountSecurity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v2, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 241
-    const/high16 v5, 0x2400
-
-    invoke-virtual {v2, v5}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 246
-    invoke-virtual {p0, v2, v10}, Lcom/android/email/activity/setup/AccountSecurity;->startActivityForResult(Landroid/content/Intent;I)V
-
-    goto :goto_d
-
-    .line 255
-    .end local v0           #hostAuth:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
-    .end local v2           #intent:Landroid/content/Intent;
-    :cond_5c
-    invoke-virtual {v4, v8}, Lcom/android/email/SecurityPolicy;->isActive(Lcom/android/emailcommon/service/PolicySet;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_69
-
-    .line 256
-    invoke-static {p0}, Lcom/android/emailcommon/provider/EmailContent$Account;->clearSecurityHoldOnAllAccounts(Landroid/content/Context;)V
-
-    .line 259
-    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->finish()V
-
-    goto :goto_d
-
-    .line 265
-    :cond_69
-    invoke-virtual {v4}, Lcom/android/email/SecurityPolicy;->setActivePolicies()V
-
-    .line 270
-    invoke-virtual {v4, v8}, Lcom/android/email/SecurityPolicy;->getInactiveReasons(Lcom/android/emailcommon/service/PolicySet;)I
-
-    move-result v1
-
-    .line 273
-    .local v1, inactiveReasons:I
-    and-int/lit8 v5, v1, 0x4
-
-    if-eqz v5, :cond_8c
-
-    .line 274
-    iget-boolean v5, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedSetPassword:Z
-
-    if-eqz v5, :cond_7f
-
-    .line 275
-    invoke-direct {p0, p1, v4}, Lcom/android/email/activity/setup/AccountSecurity;->repostNotification(Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/email/SecurityPolicy;)V
-
-    .line 276
-    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->finish()V
-
-    goto :goto_d
-
-    .line 278
-    :cond_7f
-    iput-boolean v10, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedSetPassword:Z
-
-    .line 280
-    new-instance v2, Landroid/content/Intent;
-
-    const-string v5, "android.app.action.SET_NEW_PASSWORD"
-
-    invoke-direct {v2, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 281
-    .restart local v2       #intent:Landroid/content/Intent;
-    invoke-virtual {p0, v2, v6}, Lcom/android/email/activity/setup/AccountSecurity;->startActivityForResult(Landroid/content/Intent;I)V
-
-    goto :goto_d
-
-    .line 287
-    .end local v2           #intent:Landroid/content/Intent;
-    :cond_8c
-    and-int/lit8 v5, v1, 0x8
-
-    if-eqz v5, :cond_ab
-
-    .line 288
-    iget-boolean v5, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedSetEncryption:Z
-
-    if-eqz v5, :cond_9c
-
-    .line 289
-    invoke-direct {p0, p1, v4}, Lcom/android/email/activity/setup/AccountSecurity;->repostNotification(Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/email/SecurityPolicy;)V
-
-    .line 290
-    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->finish()V
-
-    goto/16 :goto_d
-
-    .line 292
-    :cond_9c
-    iput-boolean v10, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedSetEncryption:Z
-
-    .line 294
-    new-instance v2, Landroid/content/Intent;
-
-    const-string v5, "android.app.action.START_ENCRYPTION"
-
-    invoke-direct {v2, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 295
-    .restart local v2       #intent:Landroid/content/Intent;
-    const/4 v5, 0x3
-
-    invoke-virtual {p0, v2, v5}, Lcom/android/email/activity/setup/AccountSecurity;->startActivityForResult(Landroid/content/Intent;I)V
-
-    goto/16 :goto_d
-
-    .line 302
-    .end local v2           #intent:Landroid/content/Intent;
-    :cond_ab
-    and-int/lit8 v5, v1, 0x10
-
-    if-eqz v5, :cond_d7
-
-    .line 303
-    iget-boolean v5, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedSetExtEncryption:Z
-
-    if-eqz v5, :cond_bb
-
-    .line 304
-    invoke-direct {p0, p1, v4}, Lcom/android/email/activity/setup/AccountSecurity;->repostNotification(Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/email/SecurityPolicy;)V
-
-    .line 305
-    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->finish()V
-
-    goto/16 :goto_d
-
-    .line 307
-    :cond_bb
-    iput-boolean v10, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedSetExtEncryption:Z
-
-    .line 310
-    new-instance v3, Landroid/dirEncryption/DirEncryptionManager;
-
-    invoke-direct {v3, p0}, Landroid/dirEncryption/DirEncryptionManager;-><init>(Landroid/content/Context;)V
-
-    .line 312
-    .local v3, mDEM:Landroid/dirEncryption/DirEncryptionManager;
-    const/4 v5, 0x7
-
-    invoke-virtual {v3, v6, v7, v5}, Landroid/dirEncryption/DirEncryptionManager;->setStorageCardEncryptionPolicy(III)I
-
-    .line 315
-    new-instance v2, Landroid/content/Intent;
-
-    const-string v5, "android.app.action.START_SDCARD_ENCRYPTION"
-
-    invoke-direct {v2, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 316
-    .restart local v2       #intent:Landroid/content/Intent;
-    const/high16 v5, 0x1000
-
-    invoke-virtual {v2, v5}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
-
-    .line 317
-    invoke-virtual {p0, v2, v7}, Lcom/android/email/activity/setup/AccountSecurity;->startActivityForResult(Landroid/content/Intent;I)V
-
-    goto/16 :goto_d
-
-    .line 323
-    .end local v2           #intent:Landroid/content/Intent;
-    .end local v3           #mDEM:Landroid/dirEncryption/DirEncryptionManager;
-    :cond_d7
-    invoke-static {p0}, Lcom/android/emailcommon/provider/EmailContent$Account;->clearSecurityHoldOnAllAccounts(Landroid/content/Context;)V
-
-    .line 324
-    invoke-virtual {v4}, Lcom/android/email/SecurityPolicy;->isRecoveryPasswordEnabled()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_e9
-
-    .line 326
-    invoke-static {v10}, Lcom/android/email/adapter/ProtocolAdapter;->getProtocolAdapterDirect(I)Lcom/android/email/adapter/ProtocolAdapter;
+    invoke-virtual {v3}, Lcom/android/email/SecurityPolicy;->getAdminComponent()Landroid/content/ComponentName;
 
     move-result-object v5
 
-    iget-wide v6, p1, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    invoke-virtual {v2, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    invoke-virtual {v5, v6, v7}, Lcom/android/email/adapter/ProtocolAdapter;->updateMailboxList(J)V
+    .line 203
+    const-string v4, "android.app.extra.ADD_EXPLANATION"
 
-    .line 328
-    :cond_e9
+    const v5, 0x7f080123
+
+    new-array v6, v9, [Ljava/lang/Object;
+
+    const/4 v7, 0x0
+
+    iget-object v8, v0, Lcom/android/emailcommon/provider/HostAuth;->mAddress:Ljava/lang/String;
+
+    aput-object v8, v6, v7
+
+    invoke-virtual {p0, v5, v6}, Lcom/android/email/activity/setup/AccountSecurity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v2, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 206
+    invoke-virtual {p0, v2, v9}, Lcom/android/email/activity/setup/AccountSecurity;->startActivityForResult(Landroid/content/Intent;I)V
+
+    goto :goto_21
+
+    .line 214
+    .end local v0           #hostAuth:Lcom/android/emailcommon/provider/HostAuth;
+    .end local v2           #intent:Landroid/content/Intent;
+    :cond_70
+    invoke-virtual {v3, v5}, Lcom/android/email/SecurityPolicy;->isActive(Lcom/android/emailcommon/provider/Policy;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_8b
+
+    .line 215
+    sget-boolean v4, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v4, :cond_81
+
+    .line 216
+    const-string v4, "Email/AccountSecurity"
+
+    const-string v5, "Security active; clear holds"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 218
+    :cond_81
+    invoke-static {p0}, Lcom/android/emailcommon/provider/Account;->clearSecurityHoldOnAllAccounts(Landroid/content/Context;)V
+
+    .line 219
+    invoke-virtual {v3}, Lcom/android/email/SecurityPolicy;->clearNotification()V
+
+    .line 220
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->finish()V
 
-    goto/16 :goto_d
+    goto :goto_21
+
+    .line 225
+    :cond_8b
+    invoke-virtual {v3}, Lcom/android/email/SecurityPolicy;->setActivePolicies()V
+
+    .line 229
+    invoke-virtual {v3, v5}, Lcom/android/email/SecurityPolicy;->getInactiveReasons(Lcom/android/emailcommon/provider/Policy;)I
+
+    move-result v1
+
+    .line 232
+    .local v1, inactiveReasons:I
+    and-int/lit8 v4, v1, 0x4
+
+    if-eqz v4, :cond_c7
+
+    .line 233
+    iget-boolean v4, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedSetPassword:Z
+
+    if-eqz v4, :cond_ad
+
+    .line 234
+    sget-boolean v4, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v4, :cond_a5
+
+    .line 235
+    const-string v4, "Email/AccountSecurity"
+
+    const-string v5, "Password needed; repost notification"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 237
+    :cond_a5
+    invoke-direct {p0, p1, v3}, Lcom/android/email/activity/setup/AccountSecurity;->repostNotification(Lcom/android/emailcommon/provider/Account;Lcom/android/email/SecurityPolicy;)V
+
+    .line 238
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->finish()V
+
+    goto/16 :goto_21
+
+    .line 240
+    :cond_ad
+    sget-boolean v4, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v4, :cond_b8
+
+    .line 241
+    const-string v4, "Email/AccountSecurity"
+
+    const-string v5, "Password needed; request it via DPM"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 243
+    :cond_b8
+    iput-boolean v9, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedSetPassword:Z
+
+    .line 245
+    new-instance v2, Landroid/content/Intent;
+
+    const-string v4, "android.app.action.SET_NEW_PASSWORD"
+
+    invoke-direct {v2, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 246
+    .restart local v2       #intent:Landroid/content/Intent;
+    const/4 v4, 0x2
+
+    invoke-virtual {p0, v2, v4}, Lcom/android/email/activity/setup/AccountSecurity;->startActivityForResult(Landroid/content/Intent;I)V
+
+    goto/16 :goto_21
+
+    .line 252
+    .end local v2           #intent:Landroid/content/Intent;
+    :cond_c7
+    and-int/lit8 v4, v1, 0x8
+
+    if-eqz v4, :cond_fc
+
+    .line 253
+    iget-boolean v4, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedSetEncryption:Z
+
+    if-eqz v4, :cond_e2
+
+    .line 254
+    sget-boolean v4, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v4, :cond_da
+
+    .line 255
+    const-string v4, "Email/AccountSecurity"
+
+    const-string v5, "Encryption needed; repost notification"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 257
+    :cond_da
+    invoke-direct {p0, p1, v3}, Lcom/android/email/activity/setup/AccountSecurity;->repostNotification(Lcom/android/emailcommon/provider/Account;Lcom/android/email/SecurityPolicy;)V
+
+    .line 258
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->finish()V
+
+    goto/16 :goto_21
+
+    .line 260
+    :cond_e2
+    sget-boolean v4, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v4, :cond_ed
+
+    .line 261
+    const-string v4, "Email/AccountSecurity"
+
+    const-string v5, "Encryption needed; request it via DPM"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 263
+    :cond_ed
+    iput-boolean v9, p0, Lcom/android/email/activity/setup/AccountSecurity;->mTriedSetEncryption:Z
+
+    .line 265
+    new-instance v2, Landroid/content/Intent;
+
+    const-string v4, "android.app.action.START_ENCRYPTION"
+
+    invoke-direct {v2, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 266
+    .restart local v2       #intent:Landroid/content/Intent;
+    const/4 v4, 0x3
+
+    invoke-virtual {p0, v2, v4}, Lcom/android/email/activity/setup/AccountSecurity;->startActivityForResult(Landroid/content/Intent;I)V
+
+    goto/16 :goto_21
+
+    .line 272
+    .end local v2           #intent:Landroid/content/Intent;
+    :cond_fc
+    sget-boolean v4, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v4, :cond_107
+
+    .line 273
+    const-string v4, "Email/AccountSecurity"
+
+    const-string v5, "Policies enforced; clear holds"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 275
+    :cond_107
+    invoke-static {p0}, Lcom/android/emailcommon/provider/Account;->clearSecurityHoldOnAllAccounts(Landroid/content/Context;)V
+
+    .line 276
+    invoke-virtual {v3}, Lcom/android/email/SecurityPolicy;->clearNotification()V
+
+    .line 277
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->finish()V
+
+    goto/16 :goto_21
 .end method
 
 
@@ -562,103 +521,216 @@
     .parameter "data"
 
     .prologue
-    .line 194
-    iget-object v0, p0, Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 158
+    iget-object v0, p0, Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/Account;
 
-    invoke-direct {p0, v0}, Lcom/android/email/activity/setup/AccountSecurity;->tryAdvanceSecurity(Lcom/android/emailcommon/provider/EmailContent$Account;)V
+    invoke-direct {p0, v0}, Lcom/android/email/activity/setup/AccountSecurity;->tryAdvanceSecurity(Lcom/android/emailcommon/provider/Account;)V
 
-    .line 195
+    .line 159
     invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 196
+    .line 160
     return-void
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .registers 14
+    .registers 15
     .parameter "savedInstanceState"
 
     .prologue
-    const-wide/16 v10, -0x1
+    const-wide/16 v11, -0x1
 
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
-    .line 122
+    .line 102
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 123
+    .line 103
     invoke-static {p0}, Lcom/android/email/activity/ActivityHelper;->debugSetWindowFlags(Landroid/app/Activity;)V
 
-    .line 125
+    .line 105
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v7
+    move-result-object v4
 
-    .line 126
-    .local v7, i:Landroid/content/Intent;
-    const-string v0, "com.android.email.activity.setup.ACCOUNT_ID"
+    .line 106
+    .local v4, i:Landroid/content/Intent;
+    const-string v9, "ACCOUNT_ID"
 
-    invoke-virtual {v7, v0, v10, v11}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
+    invoke-virtual {v4, v9, v11, v12}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
-    move-result-wide v2
+    move-result-wide v0
 
-    .line 127
-    .local v2, accountId:J
-    const-string v0, "SHOW_DIALOG"
+    .line 107
+    .local v0, accountId:J
+    const-string v9, "SHOW_DIALOG"
 
-    invoke-virtual {v7, v0, v9}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-virtual {v4, v9, v10}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v8
+
+    .line 108
+    .local v8, showDialog:Z
+    const-string v9, "EXPIRING"
+
+    invoke-virtual {v4, v9, v10}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v6
 
-    .line 128
-    .local v6, showDialog:Z
-    const-string v0, "EXPIRING"
+    .line 109
+    .local v6, passwordExpiring:Z
+    const-string v9, "EXPIRED"
 
-    invoke-virtual {v7, v0, v9}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
-
-    move-result v4
-
-    .line 129
-    .local v4, passwordExpiring:Z
-    const-string v0, "EXPIRED"
-
-    invoke-virtual {v7, v0, v9}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-virtual {v4, v9, v10}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v5
 
-    .line 130
+    .line 110
     .local v5, passwordExpired:Z
     invoke-static {p0}, Lcom/android/email/SecurityPolicy;->getInstance(Landroid/content/Context;)Lcom/android/email/SecurityPolicy;
 
-    move-result-object v8
+    move-result-object v7
 
-    .line 131
-    .local v8, security:Lcom/android/email/SecurityPolicy;
-    invoke-virtual {v8, v2, v3}, Lcom/android/email/SecurityPolicy;->clearNotification(J)V
+    .line 111
+    .local v7, security:Lcom/android/email/SecurityPolicy;
+    invoke-virtual {v7}, Lcom/android/email/SecurityPolicy;->clearNotification()V
 
-    .line 132
-    cmp-long v0, v2, v10
+    .line 112
+    cmp-long v9, v0, v11
 
-    if-nez v0, :cond_34
+    if-nez v9, :cond_34
 
-    .line 133
+    .line 113
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->finish()V
 
-    .line 187
+    .line 151
+    :cond_33
     :goto_33
     return-void
 
-    .line 139
+    .line 117
     :cond_34
-    new-instance v0, Lcom/android/email/activity/setup/AccountSecurity$1;
+    invoke-static {p0, v0, v1}, Lcom/android/emailcommon/provider/Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Account;
 
-    move-object v1, p0
+    move-result-object v9
 
-    invoke-direct/range {v0 .. v6}, Lcom/android/email/activity/setup/AccountSecurity$1;-><init>(Lcom/android/email/activity/setup/AccountSecurity;JZZZ)V
+    iput-object v9, p0, Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/Account;
 
-    new-array v1, v9, [Ljava/lang/Void;
+    .line 118
+    iget-object v9, p0, Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/Account;
 
-    invoke-virtual {v0, v1}, Lcom/android/email/activity/setup/AccountSecurity$1;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+    if-nez v9, :cond_42
+
+    .line 119
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->finish()V
+
+    goto :goto_33
+
+    .line 123
+    :cond_42
+    if-nez v6, :cond_46
+
+    if-eqz v5, :cond_62
+
+    .line 124
+    :cond_46
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->getFragmentManager()Landroid/app/FragmentManager;
+
+    move-result-object v3
+
+    .line 125
+    .local v3, fm:Landroid/app/FragmentManager;
+    const-string v9, "password_expiration"
+
+    invoke-virtual {v3, v9}, Landroid/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/app/Fragment;
+
+    move-result-object v9
+
+    if-nez v9, :cond_33
+
+    .line 126
+    iget-object v9, p0, Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/Account;
+
+    invoke-virtual {v9}, Lcom/android/emailcommon/provider/Account;->getDisplayName()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v9, v5}, Lcom/android/email/activity/setup/AccountSecurity$PasswordExpirationDialog;->newInstance(Ljava/lang/String;Z)Lcom/android/email/activity/setup/AccountSecurity$PasswordExpirationDialog;
+
+    move-result-object v2
+
+    .line 129
+    .local v2, dialog:Lcom/android/email/activity/setup/AccountSecurity$PasswordExpirationDialog;
+    const-string v9, "password_expiration"
+
+    invoke-virtual {v2, v3, v9}, Lcom/android/email/activity/setup/AccountSecurity$PasswordExpirationDialog;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
+
+    goto :goto_33
+
+    .line 134
+    .end local v2           #dialog:Lcom/android/email/activity/setup/AccountSecurity$PasswordExpirationDialog;
+    .end local v3           #fm:Landroid/app/FragmentManager;
+    :cond_62
+    iget-object v9, p0, Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/Account;
+
+    iget-wide v9, v9, Lcom/android/emailcommon/provider/Account;->mPolicyKey:J
+
+    const-wide/16 v11, 0x0
+
+    cmp-long v9, v9, v11
+
+    if-eqz v9, :cond_90
+
+    .line 136
+    if-eqz v8, :cond_8a
+
+    .line 138
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->getFragmentManager()Landroid/app/FragmentManager;
+
+    move-result-object v3
+
+    .line 139
+    .restart local v3       #fm:Landroid/app/FragmentManager;
+    const-string v9, "security_needed"
+
+    invoke-virtual {v3, v9}, Landroid/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/app/Fragment;
+
+    move-result-object v9
+
+    if-nez v9, :cond_33
+
+    .line 140
+    iget-object v9, p0, Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/Account;
+
+    invoke-virtual {v9}, Lcom/android/emailcommon/provider/Account;->getDisplayName()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v9}, Lcom/android/email/activity/setup/AccountSecurity$SecurityNeededDialog;->newInstance(Ljava/lang/String;)Lcom/android/email/activity/setup/AccountSecurity$SecurityNeededDialog;
+
+    move-result-object v2
+
+    .line 142
+    .local v2, dialog:Lcom/android/email/activity/setup/AccountSecurity$SecurityNeededDialog;
+    const-string v9, "security_needed"
+
+    invoke-virtual {v2, v3, v9}, Lcom/android/email/activity/setup/AccountSecurity$SecurityNeededDialog;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
+
+    goto :goto_33
+
+    .line 146
+    .end local v2           #dialog:Lcom/android/email/activity/setup/AccountSecurity$SecurityNeededDialog;
+    .end local v3           #fm:Landroid/app/FragmentManager;
+    :cond_8a
+    iget-object v9, p0, Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/Account;
+
+    invoke-direct {p0, v9}, Lcom/android/email/activity/setup/AccountSecurity;->tryAdvanceSecurity(Lcom/android/emailcommon/provider/Account;)V
+
+    goto :goto_33
+
+    .line 150
+    :cond_90
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity;->finish()V
 
     goto :goto_33
 .end method

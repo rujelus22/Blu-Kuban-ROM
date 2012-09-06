@@ -10,11 +10,11 @@
     <string name="device_settings_category_title">Búsqueda por dispositivo</string>
     <string name="search_sources">Elementos de búsqueda</string>
     <string name="search_sources_summary">Selecciona lo que deseas buscar en el teléfono.</string>
-    <string name="clear_shortcuts">Eliminar del historial</string>
+    <string name="clear_shortcuts">Borrar del historial</string>
     <string name="clear_shortcuts_prompt">"Se borrarán de este dispositivo las sugerencias en cuanto a contenido y aplicaciones que aceptaste recientemente.
 
 (Para eliminar el historial del navegador usa la configuración del navegador)."</string>
-    <string name="clear_shortcuts_agree">Eliminar el historial</string>
+    <string name="clear_shortcuts_agree">Borrar el historial</string>
     <string name="clear_shortcuts_disagree">No borrar el historial</string>
     <string name="menu_help">Ayuda</string>
     <string name="google_search_label">Google</string>
@@ -51,7 +51,7 @@
     <string name="more_than_new_sources_available_text2">incluidos %1$s y %2$s</string>
     <string name="new_source_label_suffix">(Nuevo)</string>
     <string name="accessibility_menu_button">Menú</string>
-    <string name="accessibility_close_button">Eliminar</string>
+    <string name="accessibility_close_button">Borrar</string>
     <string name="accessibility_go_button">Ir</string>
     <string name="accessibility_voice_button">Búsqueda por voz</string>
     <string name="accessibility_widget_search">Búsqueda</string>

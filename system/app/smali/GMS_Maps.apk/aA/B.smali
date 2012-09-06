@@ -1,373 +1,778 @@
-.class public abstract LaA/B;
-.super LaA/e;
+.class public LaA/b;
+.super Lt/t;
+.source "SourceFile"
+
+# interfaces
+.implements Lr/t;
+
+
+# static fields
+.field private static a:I
+
+.field private static final c:LaA/b;
 
 
 # instance fields
-.field protected b:F
+.field private d:Ljava/util/Map;
 
-.field protected c:F
+.field private e:Landroid/content/ContentResolver;
 
-.field protected d:F
-
-.field protected e:F
+.field private f:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(LaA/l;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0, p1}, LaA/e;-><init>(LaA/l;)V
+    .prologue
+    .line 70
+    const/16 v0, 0x64
 
-    const v0, 0x3f490fdb
+    sput v0, LaA/b;->a:I
 
-    iput v0, p0, LaA/B;->b:F
+    .line 76
+    new-instance v0, LaA/b;
 
-    const/high16 v0, 0x3e80
+    invoke-direct {v0}, LaA/b;-><init>()V
 
-    iput v0, p0, LaA/B;->c:F
-
-    const/high16 v0, 0x3e00
-
-    iput v0, p0, LaA/B;->d:F
-
-    const/high16 v0, 0x3f80
-
-    iput v0, p0, LaA/B;->e:F
+    sput-object v0, LaA/b;->c:LaA/b;
 
     return-void
 .end method
 
+.method private constructor <init>()V
+    .registers 1
 
-# virtual methods
-.method protected abstract a(F)F
+    .prologue
+    .line 154
+    invoke-direct {p0}, Lt/t;-><init>()V
+
+    return-void
 .end method
 
-.method protected abstract a(LaA/h;I)F
+.method private static a(Ljava/lang/String;)Ljava/lang/String;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 297
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "=?"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
-.method public a(JLjava/util/LinkedList;Ljava/util/List;)LaA/f;
-    .registers 15
+.method private a(Landroid/content/ContentProviderOperation;)V
+    .registers 4
+    .parameter
 
-    invoke-virtual {p3}, Ljava/util/LinkedList;->size()I
+    .prologue
+    .line 161
+    .line 162
+    iget-object v1, p0, LaA/b;->f:Ljava/util/List;
+
+    monitor-enter v1
+
+    .line 163
+    :try_start_3
+    iget-object v0, p0, LaA/b;->f:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 164
+    iget-object v0, p0, LaA/b;->f:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    const/4 v1, 0x3
+    .line 165
+    monitor-exit v1
+    :try_end_f
+    .catchall {:try_start_3 .. :try_end_f} :catchall_17
 
-    if-ge v0, v1, :cond_a
+    .line 166
+    sget v1, LaA/b;->a:I
 
-    sget-object v0, LaA/f;->b:LaA/f;
+    if-lt v0, v1, :cond_16
 
-    :goto_9
-    return-object v0
+    .line 167
+    invoke-direct {p0}, LaA/b;->b()V
 
-    :cond_a
-    const/4 v4, 0x0
+    .line 169
+    :cond_16
+    return-void
 
-    const/4 v3, 0x0
+    .line 165
+    :catchall_17
+    move-exception v0
 
-    const/4 v2, 0x0
+    :try_start_18
+    monitor-exit v1
+    :try_end_19
+    .catchall {:try_start_18 .. :try_end_19} :catchall_17
+
+    throw v0
+.end method
+
+.method private static a(I)[Ljava/lang/String;
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 309
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/String;
 
     const/4 v1, 0x0
 
-    const/4 v0, 0x0
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v6
+    const-string v3, ""
 
-    move v5, v4
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move v4, v3
+    move-result-object v2
 
-    move v3, v2
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move v2, v1
+    move-result-object v2
 
-    move-object v1, v0
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    return-object v0
+.end method
+
+.method private b()V
+    .registers 5
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 176
+    iget-object v1, p0, LaA/b;->f:Ljava/util/List;
+
+    monitor-enter v1
+
+    .line 177
+    :try_start_4
+    new-instance v0, Ljava/util/ArrayList;
+
+    iget-object v2, p0, LaA/b;->f:Ljava/util/List;
+
+    invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    .line 178
+    iget-object v2, p0, LaA/b;->f:Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/util/List;->clear()V
+
+    .line 179
+    monitor-exit v1
+    :try_end_11
+    .catchall {:try_start_4 .. :try_end_11} :catchall_19
+
+    .line 181
+    :try_start_11
+    iget-object v1, p0, LaA/b;->e:Landroid/content/ContentResolver;
+
+    sget-object v2, Lcom/google/googlenav/provider/OfflineIndexProvider;->b:Ljava/lang/String;
+
+    invoke-virtual {v1, v2, v0}, Landroid/content/ContentResolver;->applyBatch(Ljava/lang/String;Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;
+    :try_end_18
+    .catch Landroid/content/OperationApplicationException; {:try_start_11 .. :try_end_18} :catch_1c
+    .catch Landroid/os/RemoteException; {:try_start_11 .. :try_end_18} :catch_25
+
+    .line 196
     :goto_18
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+    return-void
 
-    move-result v0
+    .line 179
+    :catchall_19
+    move-exception v0
 
-    if-eqz v0, :cond_90
+    :try_start_1a
+    monitor-exit v1
+    :try_end_1b
+    .catchall {:try_start_1a .. :try_end_1b} :catchall_19
 
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    throw v0
 
-    move-result-object v0
+    .line 182
+    :catch_1c
+    move-exception v0
 
-    check-cast v0, LaA/h;
+    .line 191
+    iget-object v0, p0, LaA/b;->e:Landroid/content/ContentResolver;
 
-    invoke-virtual {v0}, LaA/h;->e()F
+    sget-object v1, Lcom/google/googlenav/provider/OfflineIndexProvider;->a:Landroid/net/Uri;
 
-    move-result v7
-
-    invoke-virtual {p0, v7}, LaA/B;->a(F)F
-
-    move-result v7
-
-    invoke-virtual {v0}, LaA/h;->f()F
-
-    move-result v8
-
-    invoke-virtual {v0}, LaA/h;->b()F
-
-    move-result v9
-
-    div-float/2addr v8, v9
-
-    iget v9, p0, LaA/B;->b:F
-
-    cmpl-float v7, v7, v9
-
-    if-gez v7, :cond_41
-
-    iget v7, p0, LaA/B;->c:F
-
-    cmpg-float v7, v8, v7
-
-    if-gez v7, :cond_44
-
-    :cond_41
-    sget-object v0, LaA/f;->a:LaA/f;
-
-    goto :goto_9
-
-    :cond_44
-    if-eqz v1, :cond_f3
-
-    const/4 v7, 0x0
-
-    invoke-virtual {p0, v0, v7}, LaA/B;->a(LaA/h;I)F
-
-    move-result v7
-
-    const/4 v8, 0x0
-
-    invoke-virtual {p0, v1, v8}, LaA/B;->a(LaA/h;I)F
-
-    move-result v8
-
-    sub-float/2addr v7, v8
-
-    invoke-static {v7}, Ljava/lang/Math;->abs(F)F
-
-    move-result v7
-
-    add-float/2addr v5, v7
-
-    const/4 v7, 0x0
-
-    invoke-virtual {p0, v0, v7}, LaA/B;->b(LaA/h;I)F
-
-    move-result v7
-
-    const/4 v8, 0x0
-
-    invoke-virtual {p0, v1, v8}, LaA/B;->b(LaA/h;I)F
-
-    move-result v8
-
-    sub-float/2addr v7, v8
-
-    invoke-static {v7}, Ljava/lang/Math;->abs(F)F
-
-    move-result v7
-
-    add-float/2addr v3, v7
-
-    const/4 v7, 0x1
-
-    invoke-virtual {p0, v0, v7}, LaA/B;->a(LaA/h;I)F
-
-    move-result v7
-
-    const/4 v8, 0x1
-
-    invoke-virtual {p0, v1, v8}, LaA/B;->a(LaA/h;I)F
-
-    move-result v8
-
-    sub-float/2addr v7, v8
-
-    invoke-static {v7}, Ljava/lang/Math;->abs(F)F
-
-    move-result v7
-
-    add-float/2addr v4, v7
-
-    const/4 v7, 0x1
-
-    invoke-virtual {p0, v0, v7}, LaA/B;->b(LaA/h;I)F
-
-    move-result v7
-
-    const/4 v8, 0x1
-
-    invoke-virtual {p0, v1, v8}, LaA/B;->b(LaA/h;I)F
-
-    move-result v1
-
-    sub-float v1, v7, v1
-
-    invoke-static {v1}, Ljava/lang/Math;->abs(F)F
-
-    move-result v1
-
-    add-float/2addr v1, v2
-
-    move v2, v3
-
-    move v3, v4
-
-    move v4, v5
-
-    :goto_8a
-    move v5, v4
-
-    move v4, v3
-
-    move v3, v2
-
-    move v2, v1
-
-    move-object v1, v0
+    invoke-virtual {v0, v1, v3, v3}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
     goto :goto_18
 
-    :cond_90
-    add-float v0, v5, v4
+    .line 192
+    :catch_25
+    move-exception v0
 
-    add-float v1, v3, v2
+    goto :goto_18
+.end method
 
-    iget v2, p0, LaA/B;->e:F
+.method private static b(Lcom/google/android/maps/driveabout/vector/dg;Ln/am;)[Ljava/lang/String;
+    .registers 6
+    .parameter
+    .parameter
 
-    mul-float/2addr v1, v2
+    .prologue
+    .line 305
+    const/4 v0, 0x1
 
-    cmpl-float v0, v0, v1
+    new-array v0, v0, [Ljava/lang/String;
 
-    if-lez v0, :cond_9f
+    const/4 v1, 0x0
 
-    sget-object v0, LaA/f;->a:LaA/f;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    goto/16 :goto_9
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    :cond_9f
-    invoke-virtual {p3}, Ljava/util/LinkedList;->getFirst()Ljava/lang/Object;
+    const-string v3, ""
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-static {p0, p1}, Lh/a;->a(Lcom/google/android/maps/driveabout/vector/dg;Ln/am;)Landroid/util/Pair;
+
+    move-result-object v3
+
+    iget-object v3, v3, Landroid/util/Pair;->first:Ljava/lang/Object;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    return-object v0
+.end method
+
+.method private static c(Lcom/google/android/maps/driveabout/vector/dg;)[Ljava/lang/String;
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 301
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, ""
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/vector/dg;->f()I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method protected a()V
+    .registers 4
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 140
+    iget-object v1, p0, LaA/b;->f:Ljava/util/List;
+
+    monitor-enter v1
+
+    .line 141
+    :try_start_4
+    iget-object v0, p0, LaA/b;->f:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_17
+
+    .line 142
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v2, "TileCacheIndexer was destroyed before all pending operations were applied"
+
+    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 145
+    :catchall_14
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_16
+    .catchall {:try_start_4 .. :try_end_16} :catchall_14
+
+    throw v0
+
+    :cond_17
+    :try_start_17
+    monitor-exit v1
+    :try_end_18
+    .catchall {:try_start_17 .. :try_end_18} :catchall_14
+
+    .line 146
+    iput-object v2, p0, LaA/b;->e:Landroid/content/ContentResolver;
+
+    .line 147
+    iput-object v2, p0, LaA/b;->d:Ljava/util/Map;
+
+    .line 148
+    iput-object v2, p0, LaA/b;->f:Ljava/util/List;
+
+    .line 149
+    return-void
+.end method
+
+.method public a(Lcom/google/android/maps/driveabout/vector/dg;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 278
+    iget-object v0, p0, LaA/b;->d:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_9
+
+    .line 286
+    :goto_8
+    return-void
+
+    .line 281
+    :cond_9
+    const-string v0, "tile_type"
+
+    invoke-static {v0}, LaA/b;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, LaA/h;
-
-    invoke-virtual {p3}, Ljava/util/LinkedList;->getLast()Ljava/lang/Object;
+    .line 282
+    invoke-static {p1}, LaA/b;->c(Lcom/google/android/maps/driveabout/vector/dg;)[Ljava/lang/String;
 
     move-result-object v1
 
-    check-cast v1, LaA/h;
+    .line 283
+    sget-object v2, Lcom/google/googlenav/provider/OfflineIndexProvider;->a:Landroid/net/Uri;
 
-    const/4 v2, 0x0
+    invoke-static {v2}, Landroid/content/ContentProviderOperation;->newDelete(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
 
-    invoke-virtual {p0, v1, v2}, LaA/B;->b(LaA/h;I)F
+    move-result-object v2
 
-    move-result v2
+    invoke-virtual {v2, v0, v1}, Landroid/content/ContentProviderOperation$Builder;->withSelection(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/ContentProviderOperation$Builder;
 
-    const/4 v3, 0x0
+    move-result-object v0
 
-    invoke-virtual {p0, v0, v3}, LaA/B;->b(LaA/h;I)F
+    invoke-virtual {v0}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
 
-    move-result v3
+    move-result-object v0
 
-    sub-float/2addr v2, v3
+    invoke-direct {p0, v0}, LaA/b;->a(Landroid/content/ContentProviderOperation;)V
 
-    const/4 v3, 0x1
+    goto :goto_8
+.end method
 
-    invoke-virtual {p0, v1, v3}, LaA/B;->b(LaA/h;I)F
+.method public a(Lcom/google/android/maps/driveabout/vector/dg;I)V
+    .registers 6
+    .parameter
+    .parameter
 
-    move-result v3
+    .prologue
+    .line 259
+    iget-object v0, p0, LaA/b;->d:Ljava/util/Map;
 
-    const/4 v4, 0x1
-
-    invoke-virtual {p0, v0, v4}, LaA/B;->b(LaA/h;I)F
+    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v0
 
-    sub-float v0, v3, v0
+    if-nez v0, :cond_9
 
-    mul-float v3, v2, v0
+    .line 271
+    :goto_8
+    return-void
 
-    const/4 v4, 0x0
+    .line 262
+    :cond_9
+    const-string v0, "tile_type"
 
-    cmpg-float v3, v3, v4
+    invoke-static {v0}, LaA/b;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    if-gez v3, :cond_cd
+    move-result-object v0
 
-    sget-object v0, LaA/f;->a:LaA/f;
+    const-string v1, "shard_id"
 
-    goto/16 :goto_9
+    invoke-static {v1}, LaA/b;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    :cond_cd
-    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+    move-result-object v1
 
-    move-result v2
+    invoke-static {v0, v1}, Landroid/database/DatabaseUtils;->concatenateWhere(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v1}, LaA/h;->c()F
+    move-result-object v0
 
-    move-result v3
+    .line 265
+    invoke-static {p1}, LaA/b;->c(Lcom/google/android/maps/driveabout/vector/dg;)[Ljava/lang/String;
 
-    div-float/2addr v2, v3
+    move-result-object v1
 
-    iget v3, p0, LaA/B;->d:F
+    invoke-static {p2}, LaA/b;->a(I)[Ljava/lang/String;
 
-    cmpg-float v2, v2, v3
+    move-result-object v2
 
-    if-ltz v2, :cond_eb
+    invoke-static {v1, v2}, Landroid/database/DatabaseUtils;->appendSelectionArgs([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
 
-    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+    move-result-object v1
+
+    .line 268
+    sget-object v2, Lcom/google/googlenav/provider/OfflineIndexProvider;->a:Landroid/net/Uri;
+
+    invoke-static {v2}, Landroid/content/ContentProviderOperation;->newDelete(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0, v1}, Landroid/content/ContentProviderOperation$Builder;->withSelection(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/ContentProviderOperation$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, LaA/b;->a(Landroid/content/ContentProviderOperation;)V
+
+    goto :goto_8
+.end method
+
+.method public a(Lcom/google/android/maps/driveabout/vector/dg;Ln/al;I)V
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 203
+    iget-object v0, p0, LaA/b;->d:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LaA/c;
+
+    .line 204
+    if-nez v0, :cond_b
+
+    .line 213
+    :cond_a
+    return-void
+
+    .line 207
+    :cond_b
+    invoke-interface {v0, p2, p3}, LaA/c;->a(Ln/al;I)Ljava/util/List;
+
+    move-result-object v0
+
+    .line 208
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_13
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    invoke-virtual {v1}, LaA/h;->c()F
+    if-eqz v0, :cond_a
 
-    move-result v1
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    div-float/2addr v0, v1
+    move-result-object v0
 
-    iget v1, p0, LaA/B;->d:F
+    check-cast v0, Landroid/content/ContentValues;
 
-    cmpg-float v0, v0, v1
+    .line 209
+    sget-object v2, Lcom/google/googlenav/provider/OfflineIndexProvider;->a:Landroid/net/Uri;
 
-    if-gez v0, :cond_ef
+    invoke-static {v2}, Landroid/content/ContentProviderOperation;->newInsert(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
 
-    :cond_eb
-    sget-object v0, LaA/f;->b:LaA/f;
+    move-result-object v2
 
-    goto/16 :goto_9
+    invoke-virtual {v2, v0}, Landroid/content/ContentProviderOperation$Builder;->withValues(Landroid/content/ContentValues;)Landroid/content/ContentProviderOperation$Builder;
 
-    :cond_ef
-    sget-object v0, LaA/f;->c:LaA/f;
+    move-result-object v0
 
-    goto/16 :goto_9
+    invoke-virtual {v0}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
 
-    :cond_f3
-    move v1, v2
+    move-result-object v0
 
-    move v2, v3
+    invoke-direct {p0, v0}, LaA/b;->a(Landroid/content/ContentProviderOperation;)V
 
-    move v3, v4
-
-    move v4, v5
-
-    goto :goto_8a
+    goto :goto_13
 .end method
 
-.method protected abstract b(LaA/h;I)F
+.method public a(Lcom/google/android/maps/driveabout/vector/dg;Ln/am;)V
+    .registers 6
+    .parameter
+    .parameter
+
+    .prologue
+    .line 240
+    iget-object v0, p0, LaA/b;->d:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_9
+
+    .line 252
+    :goto_8
+    return-void
+
+    .line 243
+    :cond_9
+    const-string v0, "tile_type"
+
+    invoke-static {v0}, LaA/b;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "tile_key"
+
+    invoke-static {v1}, LaA/b;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/database/DatabaseUtils;->concatenateWhere(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 246
+    invoke-static {p1}, LaA/b;->c(Lcom/google/android/maps/driveabout/vector/dg;)[Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1, p2}, LaA/b;->b(Lcom/google/android/maps/driveabout/vector/dg;Ln/am;)[Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/database/DatabaseUtils;->appendSelectionArgs([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 249
+    sget-object v2, Lcom/google/googlenav/provider/OfflineIndexProvider;->a:Landroid/net/Uri;
+
+    invoke-static {v2}, Landroid/content/ContentProviderOperation;->newDelete(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0, v1}, Landroid/content/ContentProviderOperation$Builder;->withSelection(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/ContentProviderOperation$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, LaA/b;->a(Landroid/content/ContentProviderOperation;)V
+
+    goto :goto_8
 .end method
 
-.method public b()Z
+.method public a(Lcom/google/android/maps/driveabout/vector/dg;Ln/am;I)V
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 220
+    iget-object v0, p0, LaA/b;->d:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_9
+
+    .line 233
+    :goto_8
+    return-void
+
+    .line 223
+    :cond_9
+    const-string v0, "tile_type"
+
+    invoke-static {v0}, LaA/b;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "tile_key"
+
+    invoke-static {v1}, LaA/b;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/database/DatabaseUtils;->concatenateWhere(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 226
+    invoke-static {p1}, LaA/b;->c(Lcom/google/android/maps/driveabout/vector/dg;)[Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1, p2}, LaA/b;->b(Lcom/google/android/maps/driveabout/vector/dg;Ln/am;)[Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/database/DatabaseUtils;->appendSelectionArgs([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 229
+    sget-object v2, Lcom/google/googlenav/provider/OfflineIndexProvider;->a:Landroid/net/Uri;
+
+    invoke-static {v2}, Landroid/content/ContentProviderOperation;->newUpdate(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0, v1}, Landroid/content/ContentProviderOperation$Builder;->withSelection(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/ContentProviderOperation$Builder;
+
+    move-result-object v0
+
+    const-string v1, "shard_id"
+
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, LaA/b;->a(Landroid/content/ContentProviderOperation;)V
+
+    goto :goto_8
+.end method
+
+.method protected b(Landroid/content/Context;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 125
+    iget-object v0, p0, LaA/b;->b:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    iput-object v0, p0, LaA/b;->e:Landroid/content/ContentResolver;
+
+    .line 127
+    new-instance v0, LaA/e;
+
+    invoke-direct {v0}, LaA/e;-><init>()V
+
+    .line 128
+    new-instance v1, Ljava/util/HashMap;
+
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v1, p0, LaA/b;->d:Ljava/util/Map;
+
+    .line 129
+    iget-object v1, p0, LaA/b;->d:Ljava/util/Map;
+
+    sget-object v2, Lcom/google/android/maps/driveabout/vector/dg;->a:Lcom/google/android/maps/driveabout/vector/dg;
+
+    invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 131
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, LaA/b;->f:Ljava/util/List;
+
+    .line 132
+    return-void
+.end method
+
+.method public b(Lcom/google/android/maps/driveabout/vector/dg;)V
     .registers 2
+    .parameter
 
-    const/4 v0, 0x1
+    .prologue
+    .line 293
+    invoke-direct {p0}, LaA/b;->b()V
 
-    return v0
+    .line 294
+    return-void
 .end method

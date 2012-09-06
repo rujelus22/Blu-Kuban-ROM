@@ -21,13 +21,9 @@
 
 .field private hasCertificateHash:Z
 
-.field private hasPackageName:Z
-
 .field private hasPostDeliveryRefundWindowMsec:Z
 
 .field private hasRefundTimeoutTimestampMsec:Z
-
-.field private packageName_:Ljava/lang/String;
 
 .field private postDeliveryRefundWindowMsec_:J
 
@@ -41,31 +37,26 @@
     .prologue
     const-wide/16 v1, 0x0
 
-    .line 499
+    .line 539
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 504
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->packageName_:Ljava/lang/String;
-
-    .line 521
+    .line 544
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->certificateHash_:Ljava/lang/String;
 
-    .line 538
+    .line 561
     iput-wide v1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->refundTimeoutTimestampMsec_:J
 
-    .line 555
+    .line 578
     iput-wide v1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->postDeliveryRefundWindowMsec_:J
 
-    .line 598
+    .line 618
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->cachedSize:I
 
-    .line 499
+    .line 539
     return-void
 .end method
 
@@ -75,15 +66,15 @@
     .registers 2
 
     .prologue
-    .line 600
+    .line 621
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 602
+    .line 623
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->getSerializedSize()I
 
-    .line 604
+    .line 625
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->cachedSize:I
 
@@ -94,18 +85,8 @@
     .registers 2
 
     .prologue
-    .line 522
+    .line 545
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->certificateHash_:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public getPackageName()Ljava/lang/String;
-    .registers 2
-
-    .prologue
-    .line 505
-    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->packageName_:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -114,7 +95,7 @@
     .registers 3
 
     .prologue
-    .line 556
+    .line 579
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->postDeliveryRefundWindowMsec_:J
 
     return-wide v0
@@ -124,7 +105,7 @@
     .registers 3
 
     .prologue
-    .line 539
+    .line 562
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->refundTimeoutTimestampMsec_:J
 
     return-wide v0
@@ -134,39 +115,18 @@
     .registers 5
 
     .prologue
-    .line 608
+    .line 630
     const/4 v0, 0x0
 
-    .line 609
+    .line 631
     .local v0, size:I
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasPackageName()Z
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasCertificateHash()Z
 
     move-result v1
 
     if-eqz v1, :cond_11
 
-    .line 610
-    const/4 v1, 0x1
-
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->getPackageName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 613
-    :cond_11
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasCertificateHash()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_21
-
-    .line 614
+    .line 632
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->getCertificateHash()Ljava/lang/String;
@@ -179,15 +139,15 @@
 
     add-int/2addr v0, v1
 
-    .line 617
-    :cond_21
+    .line 635
+    :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasRefundTimeoutTimestampMsec()Z
 
     move-result v1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_21
 
-    .line 618
+    .line 636
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->getRefundTimeoutTimestampMsec()J
@@ -200,15 +160,15 @@
 
     add-int/2addr v0, v1
 
-    .line 621
-    :cond_31
+    .line 639
+    :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasPostDeliveryRefundWindowMsec()Z
 
     move-result v1
 
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_31
 
-    .line 622
+    .line 640
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->getPostDeliveryRefundWindowMsec()J
@@ -221,11 +181,11 @@
 
     add-int/2addr v0, v1
 
-    .line 625
-    :cond_41
+    .line 643
+    :cond_31
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->cachedSize:I
 
-    .line 626
+    .line 644
     return v0
 .end method
 
@@ -233,18 +193,8 @@
     .registers 2
 
     .prologue
-    .line 523
+    .line 546
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasCertificateHash:Z
-
-    return v0
-.end method
-
-.method public hasPackageName()Z
-    .registers 2
-
-    .prologue
-    .line 506
-    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasPackageName:Z
 
     return v0
 .end method
@@ -253,7 +203,7 @@
     .registers 2
 
     .prologue
-    .line 557
+    .line 580
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasPostDeliveryRefundWindowMsec:Z
 
     return v0
@@ -263,7 +213,7 @@
     .registers 2
 
     .prologue
-    .line 540
+    .line 563
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasRefundTimeoutTimestampMsec:Z
 
     return v0
@@ -279,40 +229,30 @@
     .end annotation
 
     .prologue
-    .line 633
+    .line 652
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 634
+    .line 653
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_2e
+    sparse-switch v0, :sswitch_data_26
 
-    .line 638
+    .line 657
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 639
+    .line 658
     :sswitch_d
     return-object p0
 
-    .line 644
+    .line 663
     :sswitch_e
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->setPackageName(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;
-
-    goto :goto_0
-
-    .line 648
-    :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
     move-result-object v1
@@ -321,8 +261,8 @@
 
     goto :goto_0
 
-    .line 652
-    :sswitch_1e
+    .line 667
+    :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
     move-result-wide v1
@@ -331,8 +271,8 @@
 
     goto :goto_0
 
-    .line 656
-    :sswitch_26
+    .line 671
+    :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
     move-result-wide v1
@@ -341,14 +281,13 @@
 
     goto :goto_0
 
-    .line 634
-    :sswitch_data_2e
+    .line 653
+    :sswitch_data_26
     .sparse-switch
         0x0 -> :sswitch_d
-        0xa -> :sswitch_e
-        0x12 -> :sswitch_16
-        0x18 -> :sswitch_1e
-        0x20 -> :sswitch_26
+        0x12 -> :sswitch_e
+        0x18 -> :sswitch_16
+        0x20 -> :sswitch_1e
     .end sparse-switch
 .end method
 
@@ -362,7 +301,7 @@
     .end annotation
 
     .prologue
-    .line 497
+    .line 536
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;
 
     move-result-object v0
@@ -375,32 +314,15 @@
     .parameter "value"
 
     .prologue
-    .line 525
+    .line 548
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasCertificateHash:Z
 
-    .line 526
+    .line 549
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->certificateHash_:Ljava/lang/String;
 
-    .line 527
-    return-object p0
-.end method
-
-.method public setPackageName(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;
-    .registers 3
-    .parameter "value"
-
-    .prologue
-    .line 508
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasPackageName:Z
-
-    .line 509
-    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->packageName_:Ljava/lang/String;
-
-    .line 510
+    .line 550
     return-object p0
 .end method
 
@@ -409,15 +331,15 @@
     .parameter "value"
 
     .prologue
-    .line 559
+    .line 582
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasPostDeliveryRefundWindowMsec:Z
 
-    .line 560
+    .line 583
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->postDeliveryRefundWindowMsec_:J
 
-    .line 561
+    .line 584
     return-object p0
 .end method
 
@@ -426,15 +348,15 @@
     .parameter "value"
 
     .prologue
-    .line 542
+    .line 565
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasRefundTimeoutTimestampMsec:Z
 
-    .line 543
+    .line 566
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->refundTimeoutTimestampMsec_:J
 
-    .line 544
+    .line 567
     return-object p0
 .end method
 
@@ -448,31 +370,14 @@
     .end annotation
 
     .prologue
-    .line 584
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasPackageName()Z
+    .line 607
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasCertificateHash()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 585
-    const/4 v0, 0x1
-
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->getPackageName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
-
-    .line 587
-    :cond_e
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasCertificateHash()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1c
-
-    .line 588
+    .line 608
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->getCertificateHash()Ljava/lang/String;
@@ -481,15 +386,15 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 590
-    :cond_1c
+    .line 610
+    :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasRefundTimeoutTimestampMsec()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_1c
 
-    .line 591
+    .line 611
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->getRefundTimeoutTimestampMsec()J
@@ -498,15 +403,15 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 593
-    :cond_2a
+    .line 613
+    :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->hasPostDeliveryRefundWindowMsec()Z
 
     move-result v0
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_2a
 
-    .line 594
+    .line 614
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;->getPostDeliveryRefundWindowMsec()J
@@ -515,7 +420,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 596
-    :cond_38
+    .line 616
+    :cond_2a
     return-void
 .end method

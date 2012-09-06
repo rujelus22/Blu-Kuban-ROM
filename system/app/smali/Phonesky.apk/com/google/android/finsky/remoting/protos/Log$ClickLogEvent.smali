@@ -43,40 +43,40 @@
     .registers 3
 
     .prologue
-    .line 9
+    .line 10
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 14
+    .line 15
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->eventTime_:J
 
-    .line 31
+    .line 32
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->url_:Ljava/lang/String;
 
-    .line 48
+    .line 49
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->listId_:Ljava/lang/String;
 
-    .line 65
+    .line 66
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->referrerUrl_:Ljava/lang/String;
 
-    .line 82
+    .line 83
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->referrerListId_:Ljava/lang/String;
 
-    .line 129
+    .line 131
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->cachedSize:I
 
-    .line 9
+    .line 10
     return-void
 .end method
 
@@ -86,15 +86,15 @@
     .registers 2
 
     .prologue
-    .line 131
+    .line 134
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 133
+    .line 136
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->getSerializedSize()I
 
-    .line 135
+    .line 138
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->cachedSize:I
 
@@ -105,7 +105,7 @@
     .registers 3
 
     .prologue
-    .line 15
+    .line 16
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->eventTime_:J
 
     return-wide v0
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 49
+    .line 50
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->listId_:Ljava/lang/String;
 
     return-object v0
@@ -125,7 +125,7 @@
     .registers 2
 
     .prologue
-    .line 83
+    .line 84
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->referrerListId_:Ljava/lang/String;
 
     return-object v0
@@ -135,7 +135,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 67
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->referrerUrl_:Ljava/lang/String;
 
     return-object v0
@@ -145,10 +145,10 @@
     .registers 5
 
     .prologue
-    .line 139
+    .line 143
     const/4 v0, 0x0
 
-    .line 140
+    .line 144
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasEventTime()Z
 
@@ -156,7 +156,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 141
+    .line 145
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->getEventTime()J
@@ -169,7 +169,7 @@
 
     add-int/2addr v0, v1
 
-    .line 144
+    .line 148
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasUrl()Z
 
@@ -177,7 +177,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 145
+    .line 149
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->getUrl()Ljava/lang/String;
@@ -190,7 +190,7 @@
 
     add-int/2addr v0, v1
 
-    .line 148
+    .line 152
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasListId()Z
 
@@ -198,7 +198,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 149
+    .line 153
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->getListId()Ljava/lang/String;
@@ -211,7 +211,7 @@
 
     add-int/2addr v0, v1
 
-    .line 152
+    .line 156
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasReferrerUrl()Z
 
@@ -219,7 +219,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 153
+    .line 157
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->getReferrerUrl()Ljava/lang/String;
@@ -232,7 +232,7 @@
 
     add-int/2addr v0, v1
 
-    .line 156
+    .line 160
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasReferrerListId()Z
 
@@ -240,7 +240,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 157
+    .line 161
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->getReferrerListId()Ljava/lang/String;
@@ -253,11 +253,11 @@
 
     add-int/2addr v0, v1
 
-    .line 160
+    .line 164
     :cond_51
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->cachedSize:I
 
-    .line 161
+    .line 165
     return v0
 .end method
 
@@ -265,7 +265,7 @@
     .registers 2
 
     .prologue
-    .line 32
+    .line 33
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->url_:Ljava/lang/String;
 
     return-object v0
@@ -275,7 +275,7 @@
     .registers 2
 
     .prologue
-    .line 16
+    .line 17
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasEventTime:Z
 
     return v0
@@ -285,7 +285,7 @@
     .registers 2
 
     .prologue
-    .line 50
+    .line 51
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasListId:Z
 
     return v0
@@ -295,7 +295,7 @@
     .registers 2
 
     .prologue
-    .line 84
+    .line 85
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasReferrerListId:Z
 
     return v0
@@ -305,7 +305,7 @@
     .registers 2
 
     .prologue
-    .line 67
+    .line 68
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasReferrerUrl:Z
 
     return v0
@@ -315,7 +315,7 @@
     .registers 2
 
     .prologue
-    .line 33
+    .line 34
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasUrl:Z
 
     return v0
@@ -331,29 +331,29 @@
     .end annotation
 
     .prologue
-    .line 168
+    .line 173
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 169
+    .line 174
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_36
 
-    .line 173
+    .line 178
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 174
+    .line 179
     :sswitch_d
     return-object p0
 
-    .line 179
+    .line 184
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -363,7 +363,7 @@
 
     goto :goto_0
 
-    .line 183
+    .line 188
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -373,7 +373,7 @@
 
     goto :goto_0
 
-    .line 187
+    .line 192
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -383,7 +383,7 @@
 
     goto :goto_0
 
-    .line 191
+    .line 196
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -393,7 +393,7 @@
 
     goto :goto_0
 
-    .line 195
+    .line 200
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -403,7 +403,7 @@
 
     goto :goto_0
 
-    .line 169
+    .line 174
     :sswitch_data_36
     .sparse-switch
         0x0 -> :sswitch_d
@@ -438,15 +438,15 @@
     .parameter "value"
 
     .prologue
-    .line 18
+    .line 19
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasEventTime:Z
 
-    .line 19
+    .line 20
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->eventTime_:J
 
-    .line 20
+    .line 21
     return-object p0
 .end method
 
@@ -455,15 +455,15 @@
     .parameter "value"
 
     .prologue
-    .line 52
+    .line 53
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasListId:Z
 
-    .line 53
+    .line 54
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->listId_:Ljava/lang/String;
 
-    .line 54
+    .line 55
     return-object p0
 .end method
 
@@ -472,15 +472,15 @@
     .parameter "value"
 
     .prologue
-    .line 86
+    .line 87
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasReferrerListId:Z
 
-    .line 87
+    .line 88
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->referrerListId_:Ljava/lang/String;
 
-    .line 88
+    .line 89
     return-object p0
 .end method
 
@@ -489,15 +489,15 @@
     .parameter "value"
 
     .prologue
-    .line 69
+    .line 70
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasReferrerUrl:Z
 
-    .line 70
+    .line 71
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->referrerUrl_:Ljava/lang/String;
 
-    .line 71
+    .line 72
     return-object p0
 .end method
 
@@ -506,15 +506,15 @@
     .parameter "value"
 
     .prologue
-    .line 35
+    .line 36
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasUrl:Z
 
-    .line 36
+    .line 37
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->url_:Ljava/lang/String;
 
-    .line 37
+    .line 38
     return-object p0
 .end method
 
@@ -528,14 +528,14 @@
     .end annotation
 
     .prologue
-    .line 112
+    .line 114
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasEventTime()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 113
+    .line 115
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->getEventTime()J
@@ -544,7 +544,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 115
+    .line 117
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasUrl()Z
 
@@ -552,7 +552,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 116
+    .line 118
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->getUrl()Ljava/lang/String;
@@ -561,7 +561,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 118
+    .line 120
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasListId()Z
 
@@ -569,7 +569,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 119
+    .line 121
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->getListId()Ljava/lang/String;
@@ -578,7 +578,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 121
+    .line 123
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasReferrerUrl()Z
 
@@ -586,7 +586,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 122
+    .line 124
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->getReferrerUrl()Ljava/lang/String;
@@ -595,7 +595,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 124
+    .line 126
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->hasReferrerListId()Z
 
@@ -603,7 +603,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 125
+    .line 127
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->getReferrerListId()Ljava/lang/String;
@@ -612,7 +612,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 127
+    .line 129
     :cond_46
     return-void
 .end method

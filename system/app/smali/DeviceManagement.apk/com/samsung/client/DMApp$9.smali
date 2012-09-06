@@ -26,7 +26,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2894
+    .line 2880
     iput-object p1, p0, Lcom/samsung/client/DMApp$9;->this$0:Lcom/samsung/client/DMApp;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
@@ -42,7 +42,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2906
+    .line 2892
     iget-object v0, p0, Lcom/samsung/client/DMApp$9;->this$0:Lcom/samsung/client/DMApp;
 
     #getter for: Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
@@ -63,7 +63,7 @@
 
     if-nez v0, :cond_36
 
-    .line 2908
+    .line 2894
     iget-object v0, p0, Lcom/samsung/client/DMApp$9;->this$0:Lcom/samsung/client/DMApp;
 
     const/4 v1, 0x7
@@ -71,7 +71,7 @@
     #setter for: Lcom/samsung/client/DMApp;->sessStatus:I
     invoke-static {v0, v1}, Lcom/samsung/client/DMApp;->access$702(Lcom/samsung/client/DMApp;I)I
 
-    .line 2909
+    .line 2895
     iget-object v0, p0, Lcom/samsung/client/DMApp$9;->this$0:Lcom/samsung/client/DMApp;
 
     const/4 v1, -0x2
@@ -79,13 +79,13 @@
     #setter for: Lcom/samsung/client/DMApp;->errCode:I
     invoke-static {v0, v1}, Lcom/samsung/client/DMApp;->access$802(Lcom/samsung/client/DMApp;I)I
 
-    .line 2910
+    .line 2896
     iget-object v0, p0, Lcom/samsung/client/DMApp$9;->this$0:Lcom/samsung/client/DMApp;
 
     #setter for: Lcom/samsung/client/DMApp;->sessUpdate:I
     invoke-static {v0, v3}, Lcom/samsung/client/DMApp;->access$902(Lcom/samsung/client/DMApp;I)I
 
-    .line 2911
+    .line 2897
     iget-object v0, p0, Lcom/samsung/client/DMApp$9;->this$0:Lcom/samsung/client/DMApp;
 
     iget-object v0, v0, Lcom/samsung/client/DMApp;->mHandler:Landroid/os/Handler;
@@ -104,7 +104,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 2914
+    .line 2900
     :cond_36
     return-void
 .end method
@@ -114,7 +114,7 @@
     .parameter "millisUntilFinished"
 
     .prologue
-    .line 2897
+    .line 2883
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -137,6 +137,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2898
+    .line 2884
     return-void
 .end method

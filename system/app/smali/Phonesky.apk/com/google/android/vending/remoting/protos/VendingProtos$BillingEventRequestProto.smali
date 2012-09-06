@@ -45,36 +45,36 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 18201
+    .line 18710
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 18210
+    .line 18719
     iput v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->eventType_:I
 
-    .line 18227
+    .line 18736
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->billingParametersId_:Ljava/lang/String;
 
-    .line 18244
+    .line 18753
     iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->resultSuccess_:Z
 
-    .line 18261
+    .line 18770
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->clientMessage_:Ljava/lang/String;
 
-    .line 18278
+    .line 18787
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->carrierInstrument_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;
 
-    .line 18332
+    .line 18842
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->cachedSize:I
 
-    .line 18201
+    .line 18710
     return-void
 .end method
 
@@ -84,7 +84,7 @@
     .registers 2
 
     .prologue
-    .line 18228
+    .line 18737
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->billingParametersId_:Ljava/lang/String;
 
     return-object v0
@@ -94,15 +94,15 @@
     .registers 2
 
     .prologue
-    .line 18334
+    .line 18845
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 18336
+    .line 18847
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->getSerializedSize()I
 
-    .line 18338
+    .line 18849
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->cachedSize:I
 
@@ -113,7 +113,7 @@
     .registers 2
 
     .prologue
-    .line 18280
+    .line 18789
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->carrierInstrument_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;
 
     return-object v0
@@ -123,7 +123,7 @@
     .registers 2
 
     .prologue
-    .line 18262
+    .line 18771
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->clientMessage_:Ljava/lang/String;
 
     return-object v0
@@ -133,7 +133,7 @@
     .registers 2
 
     .prologue
-    .line 18212
+    .line 18721
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->eventType_:I
 
     return v0
@@ -143,7 +143,7 @@
     .registers 2
 
     .prologue
-    .line 18245
+    .line 18754
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->resultSuccess_:Z
 
     return v0
@@ -153,10 +153,10 @@
     .registers 4
 
     .prologue
-    .line 18342
+    .line 18854
     const/4 v0, 0x0
 
-    .line 18343
+    .line 18855
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasEventType()Z
 
@@ -164,7 +164,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 18344
+    .line 18856
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->getEventType()I
@@ -177,7 +177,7 @@
 
     add-int/2addr v0, v1
 
-    .line 18347
+    .line 18859
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasBillingParametersId()Z
 
@@ -185,7 +185,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 18348
+    .line 18860
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->getBillingParametersId()Ljava/lang/String;
@@ -198,7 +198,7 @@
 
     add-int/2addr v0, v1
 
-    .line 18351
+    .line 18863
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasResultSuccess()Z
 
@@ -206,7 +206,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 18352
+    .line 18864
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->getResultSuccess()Z
@@ -219,7 +219,7 @@
 
     add-int/2addr v0, v1
 
-    .line 18355
+    .line 18867
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasClientMessage()Z
 
@@ -227,7 +227,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 18356
+    .line 18868
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->getClientMessage()Ljava/lang/String;
@@ -240,7 +240,7 @@
 
     add-int/2addr v0, v1
 
-    .line 18359
+    .line 18871
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasCarrierInstrument()Z
 
@@ -248,7 +248,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 18360
+    .line 18872
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->getCarrierInstrument()Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;
@@ -261,11 +261,11 @@
 
     add-int/2addr v0, v1
 
-    .line 18363
+    .line 18875
     :cond_51
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->cachedSize:I
 
-    .line 18364
+    .line 18876
     return v0
 .end method
 
@@ -273,7 +273,7 @@
     .registers 2
 
     .prologue
-    .line 18229
+    .line 18738
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasBillingParametersId:Z
 
     return v0
@@ -283,7 +283,7 @@
     .registers 2
 
     .prologue
-    .line 18279
+    .line 18788
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasCarrierInstrument:Z
 
     return v0
@@ -293,7 +293,7 @@
     .registers 2
 
     .prologue
-    .line 18263
+    .line 18772
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasClientMessage:Z
 
     return v0
@@ -303,7 +303,7 @@
     .registers 2
 
     .prologue
-    .line 18211
+    .line 18720
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasEventType:Z
 
     return v0
@@ -313,7 +313,7 @@
     .registers 2
 
     .prologue
-    .line 18246
+    .line 18755
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasResultSuccess:Z
 
     return v0
@@ -329,29 +329,29 @@
     .end annotation
 
     .prologue
-    .line 18371
+    .line 18884
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 18372
+    .line 18885
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_3a
 
-    .line 18376
+    .line 18889
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 18377
+    .line 18890
     :sswitch_d
     return-object p0
 
-    .line 18382
+    .line 18895
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -361,7 +361,7 @@
 
     goto :goto_0
 
-    .line 18386
+    .line 18899
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -371,7 +371,7 @@
 
     goto :goto_0
 
-    .line 18390
+    .line 18903
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -381,7 +381,7 @@
 
     goto :goto_0
 
-    .line 18394
+    .line 18907
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -391,22 +391,22 @@
 
     goto :goto_0
 
-    .line 18398
+    .line 18911
     :sswitch_2e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;-><init>()V
 
-    .line 18399
+    .line 18912
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 18400
+    .line 18913
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->setCarrierInstrument(Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;
 
     goto :goto_0
 
-    .line 18372
+    .line 18885
     :sswitch_data_3a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -428,7 +428,7 @@
     .end annotation
 
     .prologue
-    .line 18199
+    .line 18708
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;
 
     move-result-object v0
@@ -441,15 +441,15 @@
     .parameter "value"
 
     .prologue
-    .line 18231
+    .line 18740
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasBillingParametersId:Z
 
-    .line 18232
+    .line 18741
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->billingParametersId_:Ljava/lang/String;
 
-    .line 18233
+    .line 18742
     return-object p0
 .end method
 
@@ -458,26 +458,26 @@
     .parameter "value"
 
     .prologue
-    .line 18282
+    .line 18791
     if-nez p1, :cond_8
 
-    .line 18283
+    .line 18792
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 18285
+    .line 18794
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasCarrierInstrument:Z
 
-    .line 18286
+    .line 18795
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->carrierInstrument_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;
 
-    .line 18287
+    .line 18796
     return-object p0
 .end method
 
@@ -486,15 +486,15 @@
     .parameter "value"
 
     .prologue
-    .line 18265
+    .line 18774
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasClientMessage:Z
 
-    .line 18266
+    .line 18775
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->clientMessage_:Ljava/lang/String;
 
-    .line 18267
+    .line 18776
     return-object p0
 .end method
 
@@ -503,15 +503,15 @@
     .parameter "value"
 
     .prologue
-    .line 18214
+    .line 18723
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasEventType:Z
 
-    .line 18215
+    .line 18724
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->eventType_:I
 
-    .line 18216
+    .line 18725
     return-object p0
 .end method
 
@@ -520,15 +520,15 @@
     .parameter "value"
 
     .prologue
-    .line 18248
+    .line 18757
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasResultSuccess:Z
 
-    .line 18249
+    .line 18758
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->resultSuccess_:Z
 
-    .line 18250
+    .line 18759
     return-object p0
 .end method
 
@@ -542,14 +542,14 @@
     .end annotation
 
     .prologue
-    .line 18315
+    .line 18825
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasEventType()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 18316
+    .line 18826
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->getEventType()I
@@ -558,7 +558,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 18318
+    .line 18828
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasBillingParametersId()Z
 
@@ -566,7 +566,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 18319
+    .line 18829
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->getBillingParametersId()Ljava/lang/String;
@@ -575,7 +575,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 18321
+    .line 18831
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasResultSuccess()Z
 
@@ -583,7 +583,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 18322
+    .line 18832
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->getResultSuccess()Z
@@ -592,7 +592,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 18324
+    .line 18834
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasClientMessage()Z
 
@@ -600,7 +600,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 18325
+    .line 18835
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->getClientMessage()Ljava/lang/String;
@@ -609,7 +609,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 18327
+    .line 18837
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->hasCarrierInstrument()Z
 
@@ -617,7 +617,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 18328
+    .line 18838
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;->getCarrierInstrument()Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;
@@ -626,7 +626,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 18330
+    .line 18840
     :cond_46
     return-void
 .end method

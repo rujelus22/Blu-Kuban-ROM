@@ -20,7 +20,7 @@
 
     const/4 v2, 0x0
 
-    .line 81
+    .line 82
     new-instance v0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$SelectionMethod;
 
     const-string v1, "FLING"
@@ -29,7 +29,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$SelectionMethod;->FLING:Lcom/google/android/youtube/core/ui/AbstractWorkspace$SelectionMethod;
 
-    .line 82
+    .line 83
     new-instance v0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$SelectionMethod;
 
     const-string v1, "TAP"
@@ -38,7 +38,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$SelectionMethod;->TAP:Lcom/google/android/youtube/core/ui/AbstractWorkspace$SelectionMethod;
 
-    .line 80
+    .line 81
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/android/youtube/core/ui/AbstractWorkspace$SelectionMethod;
@@ -62,7 +62,7 @@
     .parameter
 
     .prologue
-    .line 80
+    .line 81
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -73,7 +73,7 @@
     .parameter
 
     .prologue
-    .line 80
+    .line 81
     const-class v0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$SelectionMethod;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -89,7 +89,7 @@
     .registers 1
 
     .prologue
-    .line 80
+    .line 81
     sget-object v0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$SelectionMethod;->$VALUES:[Lcom/google/android/youtube/core/ui/AbstractWorkspace$SelectionMethod;
 
     invoke-virtual {v0}, [Lcom/google/android/youtube/core/ui/AbstractWorkspace$SelectionMethod;->clone()Ljava/lang/Object;

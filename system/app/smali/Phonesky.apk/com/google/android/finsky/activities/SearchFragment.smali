@@ -29,7 +29,7 @@
     .registers 1
 
     .prologue
-    .line 19
+    .line 20
     invoke-direct {p0}, Lcom/google/android/finsky/fragments/PageFragment;-><init>()V
 
     return-void
@@ -42,12 +42,12 @@
     .parameter "referrerUrl"
 
     .prologue
-    .line 46
+    .line 47
     new-instance v0, Lcom/google/android/finsky/activities/SearchFragment;
 
     invoke-direct {v0}, Lcom/google/android/finsky/activities/SearchFragment;-><init>()V
 
-    .line 47
+    .line 48
     .local v0, fragment:Lcom/google/android/finsky/activities/SearchFragment;
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
@@ -59,22 +59,22 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/activities/SearchFragment;->setDfeToc(Lcom/google/android/finsky/api/model/DfeToc;)V
 
-    .line 48
+    .line 49
     const-string v1, "finsky.PageFragment.SearchFragment.query"
 
     invoke-virtual {v0, v1, p0}, Lcom/google/android/finsky/activities/SearchFragment;->setArgument(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 49
+    .line 50
     const-string v1, "finsky.PageFragment.SearchFragment.referrer"
 
     invoke-virtual {v0, v1, p2}, Lcom/google/android/finsky/activities/SearchFragment;->setArgument(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 50
+    .line 51
     const-string v1, "finsky.PageFragment.SearchFragment.searchUrl"
 
     invoke-virtual {v0, v1, p1}, Lcom/google/android/finsky/activities/SearchFragment;->setArgument(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 51
+    .line 52
     return-object v0
 .end method
 
@@ -82,23 +82,23 @@
     .registers 3
 
     .prologue
-    .line 141
+    .line 131
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->isDataReady()Z
 
     move-result v0
 
     if-nez v0, :cond_7
 
-    .line 153
+    .line 143
     :cond_6
     :goto_6
     return-void
 
-    .line 145
+    .line 135
     :cond_7
     iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mDataView:Landroid/view/ViewGroup;
 
-    const v1, 0x7f080059
+    const v1, 0x7f08005d
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -108,7 +108,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 146
+    .line 136
     iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchBinder:Lcom/google/android/finsky/fragments/DfeSearchBinder;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/fragments/DfeSearchBinder;->hasData()Z
@@ -117,24 +117,24 @@
 
     if-nez v0, :cond_6
 
-    .line 147
+    .line 137
     iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchBinder:Lcom/google/android/finsky/fragments/DfeSearchBinder;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/fragments/DfeSearchBinder;->setData(Ljava/lang/Object;)V
 
-    .line 148
+    .line 138
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->isAdded()Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 149
+    .line 139
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->switchToData()V
 
-    .line 150
+    .line 140
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->rebindViews()V
 
     goto :goto_6
@@ -146,8 +146,8 @@
     .registers 2
 
     .prologue
-    .line 119
-    const v0, 0x7f040019
+    .line 109
+    const v0, 0x7f04001e
 
     return v0
 .end method
@@ -194,18 +194,18 @@
     .registers 7
 
     .prologue
-    .line 162
+    .line 152
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->isDataReady()Z
 
     move-result v1
 
     if-nez v1, :cond_7
 
-    .line 170
+    .line 160
     :cond_6
     return-void
 
-    .line 166
+    .line 156
     :cond_7
     const/4 v0, 0x0
 
@@ -219,7 +219,7 @@
 
     if-ge v0, v1, :cond_6
 
-    .line 167
+    .line 157
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v1
@@ -248,15 +248,15 @@
 
     move-result-object v1
 
-    check-cast v1, Lcom/google/android/finsky/model/Bucket;
+    check-cast v1, Lcom/google/android/finsky/api/model/Bucket;
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/model/Bucket;->getAnalyticsCookie()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Bucket;->getAnalyticsCookie()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-interface {v2, v3, v4, v5, v1}, Lcom/google/android/finsky/analytics/Analytics;->logListViewOnPage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 166
+    .line 156
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_8
@@ -267,13 +267,13 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 74
+    .line 66
     invoke-super {p0, p1}, Lcom/google/android/finsky/fragments/PageFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
-    .line 75
+    .line 67
     if-eqz p1, :cond_15
 
-    .line 78
+    .line 70
     const-string v0, "backend_id"
 
     const/4 v1, 0x0
@@ -284,43 +284,55 @@
 
     iput v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mBackendId:I
 
-    .line 79
+    .line 71
     iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mPageFragmentHost:Lcom/google/android/finsky/fragments/PageFragmentHost;
 
     iget v1, p0, Lcom/google/android/finsky/activities/SearchFragment;->mBackendId:I
 
     invoke-interface {v0, v1}, Lcom/google/android/finsky/fragments/PageFragmentHost;->updateCurrentBackendId(I)V
 
-    .line 82
+    .line 74
     :cond_15
-    iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->getResources()Landroid/content/res/Resources;
 
-    if-nez v0, :cond_44
+    move-result-object v0
 
-    .line 83
-    new-instance v0, Lcom/google/android/finsky/api/model/DfeSearch;
+    const v1, 0x7f0c000e
 
-    iget-object v1, p0, Lcom/google/android/finsky/activities/SearchFragment;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    iget-object v2, p0, Lcom/google/android/finsky/activities/SearchFragment;->mQuery:Ljava/lang/String;
+    move-result v0
 
-    iget-object v3, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchUrl:Ljava/lang/String;
+    iput v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mNumCellsWideSearch:I
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/finsky/api/model/DfeSearch;-><init>(Lcom/google/android/finsky/api/DfeApi;Ljava/lang/String;Ljava/lang/String;)V
+    .line 75
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->getResources()Landroid/content/res/Resources;
 
-    iput-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
+    move-result-object v0
 
-    .line 84
-    iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
+    const v1, 0x7f0c000d
 
-    invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeSearch;->addDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mNumCellsTallSearch:I
+
+    .line 77
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->isDataReady()Z
+
+    move-result v0
+
+    if-nez v0, :cond_50
+
+    .line 78
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->switchToLoading()V
+
+    .line 79
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->requestData()V
 
     .line 85
-    iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
-
-    invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeSearch;->addErrorListener(Lcom/android/volley/Response$ErrorListener;)V
-
-    .line 87
+    :goto_3b
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
@@ -341,55 +353,14 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/google/android/finsky/analytics/Analytics;->logPageView(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 90
-    :cond_44
-    invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f0c000d
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v0
-
-    iput v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mNumCellsWideSearch:I
-
-    .line 91
-    invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f0c000c
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v0
-
-    iput v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mNumCellsTallSearch:I
-
-    .line 93
-    invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->isDataReady()Z
-
-    move-result v0
-
-    if-nez v0, :cond_6b
-
-    .line 94
-    invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->switchToLoading()V
-
-    .line 95
-    invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->requestData()V
-
-    .line 99
-    :goto_6a
+    .line 86
     return-void
 
-    .line 97
-    :cond_6b
+    .line 81
+    :cond_50
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->rebindViews()V
 
-    goto :goto_6a
+    goto :goto_3b
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
@@ -397,10 +368,10 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 56
+    .line 57
     invoke-super {p0, p1}, Lcom/google/android/finsky/fragments/PageFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 57
+    .line 58
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -413,7 +384,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mQuery:Ljava/lang/String;
 
-    .line 58
+    .line 59
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -426,7 +397,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mReferrerUrl:Ljava/lang/String;
 
-    .line 59
+    .line 60
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -439,10 +410,10 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchUrl:Ljava/lang/String;
 
-    .line 60
+    .line 61
     new-instance v0, Lcom/google/android/finsky/fragments/DfeSearchBinder;
 
-    const v1, 0x7f040074
+    const v1, 0x7f04007f
 
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->getToc()Lcom/google/android/finsky/api/model/DfeToc;
 
@@ -452,83 +423,87 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchBinder:Lcom/google/android/finsky/fragments/DfeSearchBinder;
 
-    .line 61
+    .line 62
     return-void
 .end method
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
-    .registers 7
+    .registers 12
     .parameter "inflater"
     .parameter "container"
     .parameter "savedInstanceState"
 
     .prologue
-    .line 104
+    const/4 v5, 0x1
+
+    .line 91
     invoke-super {p0, p1, p2, p3}, Lcom/google/android/finsky/fragments/PageFragment;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
+
+    move-result-object v2
+
+    .line 97
+    .local v2, result:Landroid/view/View;
+    invoke-direct {p0}, Lcom/google/android/finsky/activities/SearchFragment;->setData()V
+
+    .line 98
+    const v3, 0x7f08005d
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 110
-    .local v1, result:Landroid/view/View;
-    invoke-direct {p0}, Lcom/google/android/finsky/activities/SearchFragment;->setData()V
+    check-cast v1, Landroid/widget/ListView;
 
-    .line 111
-    const v2, 0x7f080059
+    .line 99
+    .local v1, list:Landroid/widget/ListView;
+    invoke-virtual {v1, v5}, Landroid/widget/ListView;->setItemsCanFocus(Z)V
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    .line 101
+    const v3, 0x7f080188
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/ListView;
+    check-cast v0, Landroid/widget/TextView;
 
-    .line 112
-    .local v0, list:Landroid/widget/ListView;
-    const/4 v2, 0x1
+    .line 102
+    .local v0, emptyResultsView:Landroid/widget/TextView;
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->getResources()Landroid/content/res/Resources;
 
-    invoke-virtual {v0, v2}, Landroid/widget/ListView;->setItemsCanFocus(Z)V
+    move-result-object v3
 
-    .line 114
-    return-object v1
+    const v4, 0x7f0700f3
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v6, 0x0
+
+    iget-object v7, p0, Lcom/google/android/finsky/activities/SearchFragment;->mQuery:Ljava/lang/String;
+
+    aput-object v7, v5, v6
+
+    invoke-virtual {v3, v4, v5}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 104
+    return-object v2
 .end method
 
 .method public onDataChanged()V
     .registers 1
 
     .prologue
-    .line 157
+    .line 147
     invoke-direct {p0}, Lcom/google/android/finsky/activities/SearchFragment;->setData()V
 
-    .line 158
+    .line 148
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->logListView()V
 
-    .line 159
-    return-void
-.end method
-
-.method public onDestroy()V
-    .registers 2
-
-    .prologue
-    .line 65
-    iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
-
-    if-eqz v0, :cond_c
-
-    .line 66
-    iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
-
-    invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeSearch;->unregisterAll()V
-
-    .line 67
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
-
-    .line 69
-    :cond_c
-    invoke-super {p0}, Lcom/google/android/finsky/fragments/PageFragment;->onDestroy()V
-
-    .line 70
+    .line 149
     return-void
 .end method
 
@@ -536,7 +511,28 @@
     .registers 2
 
     .prologue
+    .line 207
+    iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
+
+    if-eqz v0, :cond_11
+
+    .line 208
+    iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeSearch;->removeDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
+
+    .line 209
+    iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeSearch;->removeErrorListener(Lcom/android/volley/Response$ErrorListener;)V
+
+    .line 210
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
+
     .line 212
+    :cond_11
     iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchBinder:Lcom/google/android/finsky/fragments/DfeSearchBinder;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/fragments/DfeSearchBinder;->onDestroyView()V
@@ -552,7 +548,7 @@
     .registers 5
 
     .prologue
-    .line 124
+    .line 114
     iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchBinder:Lcom/google/android/finsky/fragments/DfeSearchBinder;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/SearchFragment;->mContext:Landroid/content/Context;
@@ -563,7 +559,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/finsky/fragments/DfeSearchBinder;->init(Landroid/content/Context;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/utils/BitmapLoader;)V
 
-    .line 125
+    .line 115
     return-void
 .end method
 
@@ -594,18 +590,18 @@
 
     const/4 v8, 0x0
 
-    .line 181
+    .line 171
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->isDataReady()Z
 
     move-result v2
 
     if-nez v2, :cond_9
 
-    .line 203
+    .line 193
     :goto_8
     return-void
 
-    .line 185
+    .line 175
     :cond_9
     iget-object v2, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
 
@@ -615,7 +611,7 @@
 
     iput v2, p0, Lcom/google/android/finsky/activities/SearchFragment;->mBackendId:I
 
-    .line 187
+    .line 177
     iget v2, p0, Lcom/google/android/finsky/activities/SearchFragment;->mBackendId:I
 
     const/4 v3, 0x3
@@ -632,14 +628,14 @@
 
     if-eqz v2, :cond_59
 
-    .line 192
+    .line 182
     iget-object v2, p0, Lcom/google/android/finsky/activities/SearchFragment;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    const v3, 0x7f0701f7
+    const v3, 0x7f070231
 
     new-array v4, v5, [Ljava/lang/Object;
 
@@ -659,13 +655,13 @@
 
     move-result-object v1
 
-    .line 194
+    .line 184
     .local v1, breadcrumb:Ljava/lang/String;
     iget-object v2, p0, Lcom/google/android/finsky/activities/SearchFragment;->mPageFragmentHost:Lcom/google/android/finsky/fragments/PageFragmentHost;
 
     invoke-interface {v2, v1}, Lcom/google/android/finsky/fragments/PageFragmentHost;->updateBreadcrumb(Ljava/lang/String;)V
 
-    .line 200
+    .line 190
     .end local v1           #breadcrumb:Ljava/lang/String;
     :goto_40
     iget-object v2, p0, Lcom/google/android/finsky/activities/SearchFragment;->mPageFragmentHost:Lcom/google/android/finsky/fragments/PageFragmentHost;
@@ -676,7 +672,7 @@
 
     move-result-object v0
 
-    .line 201
+    .line 191
     .local v0, actionBar:Lcom/google/android/finsky/layout/CustomActionBar;
     iget-object v2, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
 
@@ -686,7 +682,7 @@
 
     invoke-interface {v0, v2}, Lcom/google/android/finsky/layout/CustomActionBar;->updateSearchQuery(Ljava/lang/String;)V
 
-    .line 202
+    .line 192
     iget-object v2, p0, Lcom/google/android/finsky/activities/SearchFragment;->mPageFragmentHost:Lcom/google/android/finsky/fragments/PageFragmentHost;
 
     iget v3, p0, Lcom/google/android/finsky/activities/SearchFragment;->mBackendId:I
@@ -695,7 +691,7 @@
 
     goto :goto_8
 
-    .line 196
+    .line 186
     .end local v0           #actionBar:Lcom/google/android/finsky/layout/CustomActionBar;
     :cond_59
     iget-object v2, p0, Lcom/google/android/finsky/activities/SearchFragment;->mPageFragmentHost:Lcom/google/android/finsky/fragments/PageFragmentHost;
@@ -704,7 +700,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0701f2
+    const v4, 0x7f07022c
 
     new-array v5, v5, [Ljava/lang/Object;
 
@@ -725,17 +721,17 @@
     .registers 6
 
     .prologue
-    .line 174
+    .line 164
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->rebindActionBar()V
 
-    .line 175
+    .line 165
     iget-object v1, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
 
     invoke-virtual {v1}, Lcom/google/android/finsky/api/model/DfeSearch;->getUrl()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 176
+    .line 166
     .local v0, currentPageUrl:Ljava/lang/String;
     iget-object v1, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchBinder:Lcom/google/android/finsky/fragments/DfeSearchBinder;
 
@@ -747,7 +743,7 @@
 
     invoke-virtual {v1, v2, v3, v4, v0}, Lcom/google/android/finsky/fragments/DfeSearchBinder;->bind(Landroid/view/ViewGroup;IILjava/lang/String;)V
 
-    .line 177
+    .line 167
     return-void
 .end method
 
@@ -755,44 +751,73 @@
     .registers 2
 
     .prologue
-    .line 129
+    .line 119
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->isDataReady()Z
 
     move-result v0
 
     if-eqz v0, :cond_d
 
-    .line 130
+    .line 120
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->logListView()V
 
-    .line 131
+    .line 121
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/SearchFragment;->rebindViews()V
 
-    .line 138
+    .line 128
     :goto_c
     return-void
 
-    .line 134
+    .line 124
     :cond_d
     iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeSearch;->clearTransientState()V
 
-    .line 136
+    .line 126
     invoke-super {p0}, Lcom/google/android/finsky/fragments/PageFragment;->refresh()V
 
     goto :goto_c
 .end method
 
 .method protected requestData()V
-    .registers 2
+    .registers 5
 
     .prologue
-    .line 207
+    .line 197
+    iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
+
+    if-nez v0, :cond_1b
+
+    .line 198
+    new-instance v0, Lcom/google/android/finsky/api/model/DfeSearch;
+
+    iget-object v1, p0, Lcom/google/android/finsky/activities/SearchFragment;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
+
+    iget-object v2, p0, Lcom/google/android/finsky/activities/SearchFragment;->mQuery:Ljava/lang/String;
+
+    iget-object v3, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchUrl:Ljava/lang/String;
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/finsky/api/model/DfeSearch;-><init>(Lcom/google/android/finsky/api/DfeApi;Ljava/lang/String;Ljava/lang/String;)V
+
+    iput-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
+
+    .line 199
+    iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeSearch;->addDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
+
+    .line 200
+    iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeSearch;->addErrorListener(Lcom/android/volley/Response$ErrorListener;)V
+
+    .line 202
+    :cond_1b
     iget-object v0, p0, Lcom/google/android/finsky/activities/SearchFragment;->mSearchData:Lcom/google/android/finsky/api/model/DfeSearch;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeSearch;->startLoadItems()V
 
-    .line 208
+    .line 203
     return-void
 .end method

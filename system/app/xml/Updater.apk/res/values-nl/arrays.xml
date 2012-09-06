@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="reboot_type_array_desc">
+        <item>Geen</item>
+        <item>CWM</item>
+        <item>OpenRecoveryScript</item>
+        <item>4EXT</item>
+    </string-array>
+</resources>

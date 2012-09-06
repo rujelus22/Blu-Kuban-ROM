@@ -50,7 +50,7 @@
 
 .field static final CURRENT_ANCESTRAL_RECORD_VERSION:I = 0x1
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field static final ENCRYPTION_ALGORITHM_NAME:Ljava/lang/String; = "AES-256"
 

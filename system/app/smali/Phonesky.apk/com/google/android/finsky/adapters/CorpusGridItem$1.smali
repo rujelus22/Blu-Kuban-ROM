@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 154
+    .line 133
     iput-object p1, p0, Lcom/google/android/finsky/adapters/CorpusGridItem$1;->this$0:Lcom/google/android/finsky/adapters/CorpusGridItem;
 
     iput-object p2, p0, Lcom/google/android/finsky/adapters/CorpusGridItem$1;->val$landingUrl:Ljava/lang/String;
@@ -53,15 +53,15 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 7
+    .registers 8
     .parameter "view"
 
     .prologue
-    .line 157
+    .line 136
     iget-object v0, p0, Lcom/google/android/finsky/adapters/CorpusGridItem$1;->this$0:Lcom/google/android/finsky/adapters/CorpusGridItem;
 
     #getter for: Lcom/google/android/finsky/adapters/CorpusGridItem;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
-    invoke-static {v0}, Lcom/google/android/finsky/adapters/CorpusGridItem;->access$100(Lcom/google/android/finsky/adapters/CorpusGridItem;)Lcom/google/android/finsky/navigationmanager/NavigationManager;
+    invoke-static {v0}, Lcom/google/android/finsky/adapters/CorpusGridItem;->access$200(Lcom/google/android/finsky/adapters/CorpusGridItem;)Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     move-result-object v0
 
@@ -78,8 +78,15 @@
 
     move-result-object v4
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToCorpusHome(Ljava/lang/String;Ljava/lang/String;ILcom/google/android/finsky/api/model/DfeToc;)V
+    iget-object v5, p0, Lcom/google/android/finsky/adapters/CorpusGridItem$1;->this$0:Lcom/google/android/finsky/adapters/CorpusGridItem;
 
-    .line 158
+    #getter for: Lcom/google/android/finsky/adapters/CorpusGridItem;->mCurrentPageUrl:Ljava/lang/String;
+    invoke-static {v5}, Lcom/google/android/finsky/adapters/CorpusGridItem;->access$100(Lcom/google/android/finsky/adapters/CorpusGridItem;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToCorpusHome(Ljava/lang/String;Ljava/lang/String;ILcom/google/android/finsky/api/model/DfeToc;Ljava/lang/String;)V
+
+    .line 138
     return-void
 .end method

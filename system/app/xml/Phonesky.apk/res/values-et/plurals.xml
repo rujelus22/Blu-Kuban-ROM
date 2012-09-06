@@ -5,8 +5,8 @@
         <item quantity="one">%1$d tulemus</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">Konto %2$s jaoks leiti %1$d värskendust.</item>
-        <item quantity="one">Konto %2$s jaoks leiti %1$d värskendus.</item>
+        <item quantity="other">Leiti %1$d värskendust.</item>
+        <item quantity="one">Leiti %1$d värskendus.</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">%1$s inimest märkisid selle +1-ga.</item>

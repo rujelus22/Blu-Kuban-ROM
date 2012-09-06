@@ -12,7 +12,7 @@
     .registers 1
 
     .prologue
-    .line 174
+    .line 189
     invoke-direct {p0}, Landroid/preference/PreferenceFragment;-><init>()V
 
     return-void
@@ -25,10 +25,10 @@
     .parameter
 
     .prologue
-    .line 179
+    .line 194
     invoke-super {p0, p1}, Landroid/preference/PreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 180
+    .line 195
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$SearchPrefsFragment;->getPreferenceManager()Landroid/preference/PreferenceManager;
 
     move-result-object v0
@@ -37,12 +37,12 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceManager;->setSharedPreferencesName(Ljava/lang/String;)V
 
-    .line 181
-    const v0, 0x7f060003
+    .line 196
+    const v0, 0x7f060004
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$SearchPrefsFragment;->addPreferencesFromResource(I)V
 
-    .line 183
+    .line 198
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$SearchPrefsFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -55,17 +55,17 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$SearchPrefsFragment;->a:Lcom/google/android/youtube/app/YouTubeApplication;
 
-    .line 185
+    .line 200
     const-string v0, "safe_search"
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$SearchPrefsFragment;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v1
 
-    .line 186
+    .line 201
     iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$SearchPrefsFragment;->a:Lcom/google/android/youtube/app/YouTubeApplication;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->E()Lcom/google/android/youtube/core/utils/SafeSearch;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->R()Lcom/google/android/youtube/core/utils/SafeSearch;
 
     move-result-object v0
 
@@ -80,10 +80,10 @@
     :goto_31
     invoke-virtual {v1, v0}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 187
+    .line 202
     return-void
 
-    .line 186
+    .line 201
     :cond_35
     const/4 v0, 0x0
 
@@ -98,12 +98,12 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 191
+    .line 206
     invoke-virtual {p2}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 193
+    .line 208
     const-string v2, "clear_history"
 
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -112,7 +112,7 @@
 
     if-eqz v2, :cond_17
 
-    .line 194
+    .line 209
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$SearchPrefsFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -121,11 +121,11 @@
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->showDialog(I)V
 
-    .line 201
+    .line 216
     :goto_16
     return v0
 
-    .line 196
+    .line 211
     :cond_17
     const-string v2, "safe_search"
 
@@ -135,7 +135,7 @@
 
     if-eqz v1, :cond_29
 
-    .line 197
+    .line 212
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$SearchPrefsFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -146,7 +146,7 @@
 
     goto :goto_16
 
-    .line 201
+    .line 216
     :cond_29
     invoke-super {p0, p1, p2}, Landroid/preference/PreferenceFragment;->onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
 

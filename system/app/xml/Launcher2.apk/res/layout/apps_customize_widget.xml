@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.android.launcher2.PagedViewWidget android:orientation="vertical" android:background="@drawable/focusable_view_bg" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" launcher:blurColor="#ff6b8cf0" launcher:outlineColor="#ff8cd2ff"
+<com.anddoes.launcher.PagedViewWidget android:orientation="vertical" android:background="@drawable/focusable_view_bg" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" launcher:blurColor="#ff155496" launcher:outlineColor="#ff155496"
   xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:launcher="http://schemas.android.com/apk/res/com.android.launcher">
+  xmlns:launcher="http://schemas.android.com/apk/res/com.anddoes.launcher">
     <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="4.0dip">
         <TextView android:textSize="13.0sp" android:textColor="#ffffffff" android:ellipsize="marquee" android:gravity="left" android:id="@id/widget_name" android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0"
           xmlns:android="http://schemas.android.com/apk/res/android" />
         <TextView android:textSize="12.0sp" android:textColor="#ff555555" android:gravity="left" android:layout_gravity="center" android:id="@id/widget_dims" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_weight="0.0"
           xmlns:android="http://schemas.android.com/apk/res/android" />
     </LinearLayout>
-    <com.android.launcher2.PagedViewWidgetImageView android:id="@id/widget_preview" android:paddingLeft="@dimen/app_widget_preview_padding_left" android:paddingTop="@dimen/app_widget_preview_padding_top" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="matrix" android:layout_weight="1.0" />
-</com.android.launcher2.PagedViewWidget>
+    <com.anddoes.launcher.PagedViewWidgetImageView android:id="@id/widget_preview" android:paddingLeft="@dimen/app_widget_preview_padding_left" android:paddingTop="@dimen/app_widget_preview_padding_top" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="matrix" android:layout_weight="1.0" />
+</com.anddoes.launcher.PagedViewWidget>

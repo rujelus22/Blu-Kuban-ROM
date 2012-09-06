@@ -4,61 +4,46 @@
 
 
 # instance fields
-.field final synthetic a:Lcom/google/common/collect/CustomConcurrentHashMap$Impl;
+.field final synthetic a:Lcom/google/common/collect/ArrayTable;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/CustomConcurrentHashMap$Impl;)V
+.method private constructor <init>(Lcom/google/common/collect/ArrayTable;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 1817
-    iput-object p1, p0, Lcom/google/common/collect/bh;->a:Lcom/google/common/collect/CustomConcurrentHashMap$Impl;
+    .line 821
+    iput-object p1, p0, Lcom/google/common/collect/bh;->a:Lcom/google/common/collect/ArrayTable;
 
     invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final clear()V
-    .registers 2
+.method synthetic constructor <init>(Lcom/google/common/collect/ArrayTable;B)V
+    .registers 3
+    .parameter
+    .parameter
 
     .prologue
-    .line 1836
-    iget-object v0, p0, Lcom/google/common/collect/bh;->a:Lcom/google/common/collect/CustomConcurrentHashMap$Impl;
+    .line 821
+    invoke-direct {p0, p1}, Lcom/google/common/collect/bh;-><init>(Lcom/google/common/collect/ArrayTable;)V
 
-    invoke-virtual {v0}, Lcom/google/common/collect/CustomConcurrentHashMap$Impl;->clear()V
-
-    .line 1837
     return-void
 .end method
 
+
+# virtual methods
 .method public final contains(Ljava/lang/Object;)Z
     .registers 3
     .parameter
 
     .prologue
-    .line 1832
-    iget-object v0, p0, Lcom/google/common/collect/bh;->a:Lcom/google/common/collect/CustomConcurrentHashMap$Impl;
+    .line 837
+    iget-object v0, p0, Lcom/google/common/collect/bh;->a:Lcom/google/common/collect/ArrayTable;
 
-    invoke-virtual {v0, p1}, Lcom/google/common/collect/CustomConcurrentHashMap$Impl;->containsValue(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final isEmpty()Z
-    .registers 2
-
-    .prologue
-    .line 1828
-    iget-object v0, p0, Lcom/google/common/collect/bh;->a:Lcom/google/common/collect/CustomConcurrentHashMap$Impl;
-
-    invoke-virtual {v0}, Lcom/google/common/collect/CustomConcurrentHashMap$Impl;->isEmpty()Z
+    invoke-virtual {v0, p1}, Lcom/google/common/collect/ArrayTable;->containsValue(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -69,12 +54,14 @@
     .registers 3
 
     .prologue
-    .line 1820
-    new-instance v0, Lcom/google/common/collect/bg;
+    .line 823
+    new-instance v0, Lcom/google/common/collect/bi;
 
-    iget-object v1, p0, Lcom/google/common/collect/bh;->a:Lcom/google/common/collect/CustomConcurrentHashMap$Impl;
+    invoke-virtual {p0}, Lcom/google/common/collect/bh;->size()I
 
-    invoke-direct {v0, v1}, Lcom/google/common/collect/bg;-><init>(Lcom/google/common/collect/CustomConcurrentHashMap$Impl;)V
+    move-result v1
+
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/bi;-><init>(Lcom/google/common/collect/bh;I)V
 
     return-object v0
 .end method
@@ -83,10 +70,10 @@
     .registers 2
 
     .prologue
-    .line 1824
-    iget-object v0, p0, Lcom/google/common/collect/bh;->a:Lcom/google/common/collect/CustomConcurrentHashMap$Impl;
+    .line 833
+    iget-object v0, p0, Lcom/google/common/collect/bh;->a:Lcom/google/common/collect/ArrayTable;
 
-    invoke-virtual {v0}, Lcom/google/common/collect/CustomConcurrentHashMap$Impl;->size()I
+    invoke-virtual {v0}, Lcom/google/common/collect/ArrayTable;->size()I
 
     move-result v0
 

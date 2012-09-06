@@ -35,30 +35,30 @@
     .registers 2
 
     .prologue
-    .line 17093
+    .line 17570
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 17098
+    .line 17575
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->backupAndroidId_:Ljava/lang/String;
 
-    .line 17115
+    .line 17592
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->tosVersion_:Ljava/lang/String;
 
-    .line 17132
+    .line 17609
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->deviceConfiguration_:Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
 
-    .line 17179
+    .line 17657
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->cachedSize:I
 
-    .line 17093
+    .line 17570
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .registers 2
 
     .prologue
-    .line 17099
+    .line 17576
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->backupAndroidId_:Ljava/lang/String;
 
     return-object v0
@@ -78,15 +78,15 @@
     .registers 2
 
     .prologue
-    .line 17181
+    .line 17660
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 17183
+    .line 17662
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->getSerializedSize()I
 
-    .line 17185
+    .line 17664
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->cachedSize:I
 
@@ -97,7 +97,7 @@
     .registers 2
 
     .prologue
-    .line 17134
+    .line 17611
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->deviceConfiguration_:Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
 
     return-object v0
@@ -107,10 +107,10 @@
     .registers 4
 
     .prologue
-    .line 17189
+    .line 17669
     const/4 v0, 0x0
 
-    .line 17190
+    .line 17670
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->hasBackupAndroidId()Z
 
@@ -118,7 +118,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 17191
+    .line 17671
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->getBackupAndroidId()Ljava/lang/String;
@@ -131,7 +131,7 @@
 
     add-int/2addr v0, v1
 
-    .line 17194
+    .line 17674
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->hasTosVersion()Z
 
@@ -139,7 +139,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 17195
+    .line 17675
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->getTosVersion()Ljava/lang/String;
@@ -152,7 +152,7 @@
 
     add-int/2addr v0, v1
 
-    .line 17198
+    .line 17678
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->hasDeviceConfiguration()Z
 
@@ -160,7 +160,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 17199
+    .line 17679
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->getDeviceConfiguration()Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
@@ -173,11 +173,11 @@
 
     add-int/2addr v0, v1
 
-    .line 17202
+    .line 17682
     :cond_31
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->cachedSize:I
 
-    .line 17203
+    .line 17683
     return v0
 .end method
 
@@ -185,7 +185,7 @@
     .registers 2
 
     .prologue
-    .line 17116
+    .line 17593
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->tosVersion_:Ljava/lang/String;
 
     return-object v0
@@ -195,7 +195,7 @@
     .registers 2
 
     .prologue
-    .line 17100
+    .line 17577
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->hasBackupAndroidId:Z
 
     return v0
@@ -205,7 +205,7 @@
     .registers 2
 
     .prologue
-    .line 17133
+    .line 17610
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->hasDeviceConfiguration:Z
 
     return v0
@@ -215,7 +215,7 @@
     .registers 2
 
     .prologue
-    .line 17117
+    .line 17594
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->hasTosVersion:Z
 
     return v0
@@ -231,29 +231,29 @@
     .end annotation
 
     .prologue
-    .line 17210
+    .line 17691
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 17211
+    .line 17692
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_2a
 
-    .line 17215
+    .line 17696
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 17216
+    .line 17697
     :sswitch_d
     return-object p0
 
-    .line 17221
+    .line 17702
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -263,7 +263,7 @@
 
     goto :goto_0
 
-    .line 17225
+    .line 17706
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -273,22 +273,22 @@
 
     goto :goto_0
 
-    .line 17229
+    .line 17710
     :sswitch_1e
     new-instance v1, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;-><init>()V
 
-    .line 17230
+    .line 17711
     .local v1, value:Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 17231
+    .line 17712
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->setDeviceConfiguration(Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;
 
     goto :goto_0
 
-    .line 17211
+    .line 17692
     :sswitch_data_2a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -308,7 +308,7 @@
     .end annotation
 
     .prologue
-    .line 17091
+    .line 17568
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;
 
     move-result-object v0
@@ -321,15 +321,15 @@
     .parameter "value"
 
     .prologue
-    .line 17102
+    .line 17579
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->hasBackupAndroidId:Z
 
-    .line 17103
+    .line 17580
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->backupAndroidId_:Ljava/lang/String;
 
-    .line 17104
+    .line 17581
     return-object p0
 .end method
 
@@ -338,26 +338,26 @@
     .parameter "value"
 
     .prologue
-    .line 17136
+    .line 17613
     if-nez p1, :cond_8
 
-    .line 17137
+    .line 17614
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 17139
+    .line 17616
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->hasDeviceConfiguration:Z
 
-    .line 17140
+    .line 17617
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->deviceConfiguration_:Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
 
-    .line 17141
+    .line 17618
     return-object p0
 .end method
 
@@ -366,15 +366,15 @@
     .parameter "value"
 
     .prologue
-    .line 17119
+    .line 17596
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->hasTosVersion:Z
 
-    .line 17120
+    .line 17597
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->tosVersion_:Ljava/lang/String;
 
-    .line 17121
+    .line 17598
     return-object p0
 .end method
 
@@ -388,14 +388,14 @@
     .end annotation
 
     .prologue
-    .line 17168
+    .line 17646
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->hasBackupAndroidId()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 17169
+    .line 17647
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->getBackupAndroidId()Ljava/lang/String;
@@ -404,7 +404,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 17171
+    .line 17649
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->hasTosVersion()Z
 
@@ -412,7 +412,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 17172
+    .line 17650
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->getTosVersion()Ljava/lang/String;
@@ -421,7 +421,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 17174
+    .line 17652
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->hasDeviceConfiguration()Z
 
@@ -429,7 +429,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 17175
+    .line 17653
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;->getDeviceConfiguration()Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
@@ -438,7 +438,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 17177
+    .line 17655
     :cond_2a
     return-void
 .end method

@@ -90,10 +90,10 @@
     <public type="array" name="entryvalues_list_preference" id="0x7f05000b" />
     <public type="array" name="match_criteria_entries" id="0x7f05000c" />
     <public type="array" name="match_criteria_values" id="0x7f05000d" />
-    <public type="array" name="auto_reject_mode" id="0x7f050010" />
-    <public type="array" name="auto_reject_mode_values" id="0x7f050011" />
     <public type="array" name="APKTOOL_DUMMY_000e" id="0x7f05000e" />
     <public type="array" name="APKTOOL_DUMMY_000f" id="0x7f05000f" />
+    <public type="array" name="auto_reject_mode" id="0x7f050010" />
+    <public type="array" name="auto_reject_mode_values" id="0x7f050011" />
     <public type="color" name="tw_color001" id="0x7f060000" />
     <public type="color" name="tw_color003" id="0x7f060001" />
     <public type="color" name="twcolor036" id="0x7f060002" />

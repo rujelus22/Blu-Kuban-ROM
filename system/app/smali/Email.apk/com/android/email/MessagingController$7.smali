@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/email/MessagingController;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/email/MessagingController;->processPendingActions(J)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,36 +20,86 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/MessagingController;
 
-.field final synthetic val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
+.field final synthetic val$accountId:J
 
-.field final synthetic val$folder:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+
+# direct methods
+.method constructor <init>(Lcom/android/email/MessagingController;J)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 1050
+    iput-object p1, p0, Lcom/android/email/MessagingController$7;->this$0:Lcom/android/email/MessagingController;
+
+    iput-wide p2, p0, Lcom/android/email/MessagingController$7;->val$accountId:J
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .registers 6
 
     .prologue
-    .line 1382
-    iget-object v0, p0, Lcom/android/email/MessagingController$7;->this$0:Lcom/android/email/MessagingController;
+    .line 1053
+    :try_start_0
+    iget-object v2, p0, Lcom/android/email/MessagingController$7;->this$0:Lcom/android/email/MessagingController;
 
-    iget-object v1, p0, Lcom/android/email/MessagingController$7;->val$folder:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    #getter for: Lcom/android/email/MessagingController;->mContext:Landroid/content/Context;
+    invoke-static {v2}, Lcom/android/email/MessagingController;->access$100(Lcom/android/email/MessagingController;)Landroid/content/Context;
 
-    iget-wide v1, v1, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    move-result-object v2
 
-    const/4 v3, 0x0
+    iget-wide v3, p0, Lcom/android/email/MessagingController$7;->val$accountId:J
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/email/MessagingController;->setFetchFlag(JI)V
+    invoke-static {v2, v3, v4}, Lcom/android/emailcommon/provider/Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Account;
 
-    .line 1383
-    iget-object v0, p0, Lcom/android/email/MessagingController$7;->this$0:Lcom/android/email/MessagingController;
+    move-result-object v0
 
-    iget-object v1, p0, Lcom/android/email/MessagingController$7;->val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 1054
+    .local v0, account:Lcom/android/emailcommon/provider/Account;
+    if-nez v0, :cond_f
 
-    iget-object v2, p0, Lcom/android/email/MessagingController$7;->val$folder:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/email/MessagingController;->qreSyncMailboxSynchronous(Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/emailcommon/provider/EmailContent$Mailbox;)V
-
-    .line 1384
+    .line 1068
+    .end local v0           #account:Lcom/android/emailcommon/provider/Account;
+    :cond_e
+    :goto_e
     return-void
+
+    .line 1057
+    .restart local v0       #account:Lcom/android/emailcommon/provider/Account;
+    :cond_f
+    iget-object v2, p0, Lcom/android/email/MessagingController$7;->this$0:Lcom/android/email/MessagingController;
+
+    #calls: Lcom/android/email/MessagingController;->processPendingActionsSynchronous(Lcom/android/emailcommon/provider/Account;)V
+    invoke-static {v2, v0}, Lcom/android/email/MessagingController;->access$900(Lcom/android/email/MessagingController;Lcom/android/emailcommon/provider/Account;)V
+    :try_end_14
+    .catch Lcom/android/emailcommon/mail/MessagingException; {:try_start_0 .. :try_end_14} :catch_15
+
+    goto :goto_e
+
+    .line 1059
+    .end local v0           #account:Lcom/android/emailcommon/provider/Account;
+    :catch_15
+    move-exception v1
+
+    .line 1060
+    .local v1, me:Lcom/android/emailcommon/mail/MessagingException;
+    sget-boolean v2, Lcom/android/emailcommon/Logging;->LOGD:Z
+
+    if-eqz v2, :cond_e
+
+    .line 1061
+    const-string v2, "Email"
+
+    const-string v3, "processPendingActions"
+
+    invoke-static {v2, v3, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_e
 .end method

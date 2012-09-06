@@ -3,5 +3,6 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <header android:title="@string/pref_general_category" android:fragment="com.google.android.youtube.app.honeycomb.SettingsActivity$GeneralPrefsFragment" />
     <header android:title="@string/pref_search_category" android:fragment="com.google.android.youtube.app.honeycomb.SettingsActivity$SearchPrefsFragment" />
+    <header android:title="@string/pref_preloading_category" android:fragment="com.google.android.youtube.app.honeycomb.SettingsActivity$PrefetchPrefsFragment" />
     <header android:title="@string/pref_about_category" android:fragment="com.google.android.youtube.app.honeycomb.SettingsActivity$AboutPrefsFragment" />
 </preference-headers>

@@ -23,18 +23,18 @@
     .end annotation
 
     .prologue
-    .line 111
+    .line 46
     invoke-direct {p0, p1}, Lcom/android/exchange/adapter/Parser;-><init>(Ljava/io/InputStream;)V
 
-    .line 57
+    .line 28
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/exchange/adapter/MoveItemsParser;->mStatusCode:I
 
-    .line 113
+    .line 47
     iput-object p2, p0, Lcom/android/exchange/adapter/MoveItemsParser;->mService:Lcom/android/exchange/EasSyncService;
 
-    .line 115
+    .line 48
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .registers 2
 
     .prologue
-    .line 129
+    .line 55
     iget-object v0, p0, Lcom/android/exchange/adapter/MoveItemsParser;->mNewServerId:Ljava/lang/String;
 
     return-object v0
@@ -54,7 +54,7 @@
     .registers 2
 
     .prologue
-    .line 121
+    .line 51
     iget v0, p0, Lcom/android/exchange/adapter/MoveItemsParser;->mStatusCode:I
 
     return v0
@@ -71,10 +71,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 223
+    .line 99
     const/4 v0, 0x0
 
-    .line 225
+    .line 100
     .local v0, res:Z
     invoke-virtual {p0, v3}, Lcom/android/exchange/adapter/MoveItemsParser;->nextTag(I)I
 
@@ -84,14 +84,14 @@
 
     if-eq v1, v2, :cond_10
 
-    .line 227
+    .line 101
     new-instance v1, Ljava/io/IOException;
 
     invoke-direct {v1}, Ljava/io/IOException;-><init>()V
 
     throw v1
 
-    .line 231
+    .line 103
     :cond_10
     :goto_10
     invoke-virtual {p0, v3}, Lcom/android/exchange/adapter/MoveItemsParser;->nextTag(I)I
@@ -102,25 +102,25 @@
 
     if-eq v1, v2, :cond_25
 
-    .line 233
-    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 104
+    iget v1, p0, Lcom/android/exchange/adapter/MoveItemsParser;->tag:I
 
     const/16 v2, 0x14a
 
     if-ne v1, v2, :cond_21
 
-    .line 235
+    .line 105
     invoke-virtual {p0}, Lcom/android/exchange/adapter/MoveItemsParser;->parseResponse()V
 
     goto :goto_10
 
-    .line 239
+    .line 107
     :cond_21
     invoke-virtual {p0}, Lcom/android/exchange/adapter/MoveItemsParser;->skipTag()V
 
     goto :goto_10
 
-    .line 245
+    .line 110
     :cond_25
     return v0
 .end method
@@ -140,7 +140,7 @@
 
     const/4 v5, 0x1
 
-    .line 137
+    .line 59
     :cond_3
     :goto_3
     const/16 v1, 0x14a
@@ -151,33 +151,33 @@
 
     if-eq v1, v6, :cond_6f
 
-    .line 139
-    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 60
+    iget v1, p0, Lcom/android/exchange/adapter/MoveItemsParser;->tag:I
 
     const/16 v2, 0x14b
 
     if-ne v1, v2, :cond_40
 
-    .line 141
+    .line 61
     invoke-virtual {p0}, Lcom/android/exchange/adapter/MoveItemsParser;->getValueInt()I
 
     move-result v0
 
-    .line 145
+    .line 63
     .local v0, status:I
     packed-switch v0, :pswitch_data_70
 
-    .line 187
+    .line 81
     :pswitch_18
     const/4 v1, 0x2
 
     iput v1, p0, Lcom/android/exchange/adapter/MoveItemsParser;->mStatusCode:I
 
-    .line 193
+    .line 84
     :goto_1b
     if-eq v0, v6, :cond_3
 
-    .line 197
+    .line 86
     iget-object v1, p0, Lcom/android/exchange/adapter/MoveItemsParser;->mService:Lcom/android/exchange/EasSyncService;
 
     new-array v2, v5, [Ljava/lang/String;
@@ -206,35 +206,35 @@
 
     goto :goto_3
 
-    .line 159
+    .line 69
     :pswitch_3a
     iput v5, p0, Lcom/android/exchange/adapter/MoveItemsParser;->mStatusCode:I
 
     goto :goto_1b
 
-    .line 169
+    .line 73
     :pswitch_3d
     iput v6, p0, Lcom/android/exchange/adapter/MoveItemsParser;->mStatusCode:I
 
     goto :goto_1b
 
-    .line 201
+    .line 88
     .end local v0           #status:I
     :cond_40
-    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/MoveItemsParser;->tag:I
 
     const/16 v2, 0x14c
 
     if-ne v1, v2, :cond_6b
 
-    .line 203
+    .line 89
     invoke-virtual {p0}, Lcom/android/exchange/adapter/MoveItemsParser;->getValue()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/exchange/adapter/MoveItemsParser;->mNewServerId:Ljava/lang/String;
 
-    .line 205
+    .line 90
     iget-object v1, p0, Lcom/android/exchange/adapter/MoveItemsParser;->mService:Lcom/android/exchange/EasSyncService;
 
     new-array v2, v5, [Ljava/lang/String;
@@ -265,17 +265,17 @@
 
     goto :goto_3
 
-    .line 209
+    .line 92
     :cond_6b
     invoke-virtual {p0}, Lcom/android/exchange/adapter/MoveItemsParser;->skipTag()V
 
     goto :goto_3
 
-    .line 215
+    .line 95
     :cond_6f
     return-void
 
-    .line 145
+    .line 63
     :pswitch_data_70
     .packed-switch 0x3
         :pswitch_3a

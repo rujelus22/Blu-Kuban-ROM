@@ -27,20 +27,20 @@
     .registers 2
 
     .prologue
-    .line 1564
+    .line 1029
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1569
+    .line 1034
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;->localizedMessage_:Ljava/lang/String;
 
-    .line 1600
+    .line 1066
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;->cachedSize:I
 
-    .line 1564
+    .line 1029
     return-void
 .end method
 
@@ -50,15 +50,15 @@
     .registers 2
 
     .prologue
-    .line 1602
+    .line 1069
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 1604
+    .line 1071
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;->getSerializedSize()I
 
-    .line 1606
+    .line 1073
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;->cachedSize:I
 
@@ -69,7 +69,7 @@
     .registers 2
 
     .prologue
-    .line 1570
+    .line 1035
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;->localizedMessage_:Ljava/lang/String;
 
     return-object v0
@@ -79,10 +79,10 @@
     .registers 4
 
     .prologue
-    .line 1610
+    .line 1078
     const/4 v0, 0x0
 
-    .line 1611
+    .line 1079
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;->hasLocalizedMessage()Z
 
@@ -90,7 +90,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 1612
+    .line 1080
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;->getLocalizedMessage()Ljava/lang/String;
@@ -103,11 +103,11 @@
 
     add-int/2addr v0, v1
 
-    .line 1615
+    .line 1083
     :cond_11
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;->cachedSize:I
 
-    .line 1616
+    .line 1084
     return v0
 .end method
 
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 1571
+    .line 1036
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;->hasLocalizedMessage:Z
 
     return v0
@@ -131,29 +131,29 @@
     .end annotation
 
     .prologue
-    .line 1623
+    .line 1092
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1624
+    .line 1093
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_16
 
-    .line 1628
+    .line 1097
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1629
+    .line 1098
     :sswitch_d
     return-object p0
 
-    .line 1634
+    .line 1103
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 1624
+    .line 1093
     :sswitch_data_16
     .sparse-switch
         0x0 -> :sswitch_d
@@ -181,7 +181,7 @@
     .end annotation
 
     .prologue
-    .line 1562
+    .line 1026
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;
 
     move-result-object v0
@@ -194,15 +194,15 @@
     .parameter "value"
 
     .prologue
-    .line 1573
+    .line 1038
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;->hasLocalizedMessage:Z
 
-    .line 1574
+    .line 1039
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;->localizedMessage_:Ljava/lang/String;
 
-    .line 1575
+    .line 1040
     return-object p0
 .end method
 
@@ -216,14 +216,14 @@
     .end annotation
 
     .prologue
-    .line 1595
+    .line 1061
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;->hasLocalizedMessage()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 1596
+    .line 1062
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Warning;->getLocalizedMessage()Ljava/lang/String;
@@ -232,7 +232,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1598
+    .line 1064
     :cond_e
     return-void
 .end method

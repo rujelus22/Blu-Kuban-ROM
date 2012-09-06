@@ -71,9 +71,10 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Handler;)V
-    .registers 3
+.method public constructor <init>(Landroid/os/Handler;Lcom/google/android/finsky/api/DfeApi;)V
+    .registers 4
     .parameter "handler"
+    .parameter "dfeApi"
 
     .prologue
     .line 42
@@ -86,7 +87,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mPendingEvents:Ljava/util/List;
 
-    .line 169
+    .line 168
     new-instance v0, Lcom/google/android/finsky/analytics/DfeAnalytics$3;
 
     invoke-direct {v0, p0}, Lcom/google/android/finsky/analytics/DfeAnalytics$3;-><init>(Lcom/google/android/finsky/analytics/DfeAnalytics;)V
@@ -97,22 +98,9 @@
     iput-object p1, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mHandler:Landroid/os/Handler;
 
     .line 44
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Handler;Lcom/google/android/finsky/api/DfeApi;)V
-    .registers 3
-    .parameter "handler"
-    .parameter "dfeApi"
-
-    .prologue
-    .line 50
-    invoke-direct {p0, p1}, Lcom/google/android/finsky/analytics/DfeAnalytics;-><init>(Landroid/os/Handler;)V
-
-    .line 51
     iput-object p2, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
-    .line 52
+    .line 45
     return-void
 .end method
 
@@ -131,17 +119,17 @@
     .registers 8
 
     .prologue
-    .line 132
+    .line 131
     iget-object v6, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
     if-nez v6, :cond_5
 
-    .line 163
+    .line 162
     :cond_4
     :goto_4
     return-void
 
-    .line 136
+    .line 135
     :cond_5
     iget-object v6, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mPendingEvents:Ljava/util/List;
 
@@ -149,16 +137,16 @@
 
     move-result v0
 
-    .line 137
+    .line 136
     .local v0, currentLogCount:I
     if-eqz v0, :cond_4
 
-    .line 141
+    .line 140
     new-instance v4, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;
 
     invoke-direct {v4}, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;-><init>()V
 
-    .line 143
+    .line 142
     .local v4, request:Lcom/google/android/finsky/remoting/protos/Log$LogRequest;
     iget-object v6, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mPendingEvents:Ljava/util/List;
 
@@ -180,35 +168,35 @@
 
     check-cast v2, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
 
-    .line 144
+    .line 143
     .local v2, event:Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
     invoke-virtual {v4, v2}, Lcom/google/android/finsky/remoting/protos/Log$LogRequest;->addClickEvent(Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;)Lcom/google/android/finsky/remoting/protos/Log$LogRequest;
 
     goto :goto_18
 
-    .line 146
+    .line 145
     .end local v2           #event:Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
     :cond_28
     iget-object v6, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mPendingEvents:Ljava/util/List;
 
     invoke-interface {v6}, Ljava/util/List;->clear()V
 
-    .line 148
+    .line 147
     new-instance v5, Lcom/google/android/finsky/analytics/DfeAnalytics$1;
 
     invoke-direct {v5, p0, v0}, Lcom/google/android/finsky/analytics/DfeAnalytics$1;-><init>(Lcom/google/android/finsky/analytics/DfeAnalytics;I)V
 
-    .line 156
+    .line 155
     .local v5, responseListener:Lcom/android/volley/Response$Listener;,"Lcom/android/volley/Response$Listener<Lcom/google/android/finsky/remoting/protos/Log$LogResponse;>;"
     new-instance v1, Lcom/google/android/finsky/analytics/DfeAnalytics$2;
 
     invoke-direct {v1, p0, v0}, Lcom/google/android/finsky/analytics/DfeAnalytics$2;-><init>(Lcom/google/android/finsky/analytics/DfeAnalytics;I)V
 
-    .line 162
+    .line 161
     .local v1, errorListener:Lcom/android/volley/Response$ErrorListener;
     iget-object v6, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
-    invoke-virtual {v6, v4, v5, v1}, Lcom/google/android/finsky/api/DfeApi;->log(Lcom/google/android/finsky/remoting/protos/Log$LogRequest;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
+    invoke-interface {v6, v4, v5, v1}, Lcom/google/android/finsky/api/DfeApi;->log(Lcom/google/android/finsky/remoting/protos/Log$LogRequest;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
 
     goto :goto_4
 .end method
@@ -221,12 +209,12 @@
     .parameter "listCookie"
 
     .prologue
-    .line 88
+    .line 87
     new-instance v0, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
 
     invoke-direct {v0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;-><init>()V
 
-    .line 89
+    .line 88
     .local v0, cle:Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -234,30 +222,30 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->setEventTime(J)Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
 
-    .line 90
+    .line 89
     if-eqz p0, :cond_11
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->setReferrerUrl(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
 
-    .line 91
+    .line 90
     :cond_11
     if-eqz p1, :cond_16
 
     invoke-virtual {v0, p1}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->setReferrerListId(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
 
-    .line 92
+    .line 91
     :cond_16
     if-eqz p2, :cond_1b
 
     invoke-virtual {v0, p2}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->setUrl(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
 
-    .line 93
+    .line 92
     :cond_1b
     if-eqz p3, :cond_20
 
     invoke-virtual {v0, p3}, Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;->setListId(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Log$ClickLogEvent;
 
-    .line 94
+    .line 93
     :cond_20
     return-object v0
 .end method
@@ -267,14 +255,14 @@
     .parameter "forceNow"
 
     .prologue
-    .line 102
+    .line 101
     iget-object v0, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mLogFlusher:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 103
+    .line 102
     if-nez p1, :cond_13
 
     iget-object v0, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mPendingEvents:Ljava/util/List;
@@ -287,7 +275,7 @@
 
     if-lt v0, v1, :cond_1b
 
-    .line 104
+    .line 103
     :cond_13
     iget-object v0, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mHandler:Landroid/os/Handler;
 
@@ -295,11 +283,11 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 108
+    .line 107
     :goto_1a
     return-void
 
-    .line 106
+    .line 105
     :cond_1b
     iget-object v0, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mHandler:Landroid/os/Handler;
 
@@ -326,12 +314,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 70
+    .line 63
     sget-boolean v0, Lcom/google/android/finsky/utils/FinskyLog;->DEBUG:Z
 
     if-eqz v0, :cond_18
 
-    .line 71
+    .line 64
     const-string v0, "Logging list view: referrerUrl=[%s], referrerCookie=[%s], currentPageUrl=[%s], listCookie=[%s]"
 
     const/4 v1, 0x4
@@ -354,7 +342,7 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 75
+    .line 68
     :cond_18
     iget-object v0, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mPendingEvents:Ljava/util/List;
 
@@ -364,10 +352,10 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 77
+    .line 70
     invoke-direct {p0, v3}, Lcom/google/android/finsky/analytics/DfeAnalytics;->scheduleFlush(Z)V
 
-    .line 78
+    .line 71
     return-void
 .end method
 
@@ -380,12 +368,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 56
+    .line 49
     sget-boolean v0, Lcom/google/android/finsky/utils/FinskyLog;->DEBUG:Z
 
     if-eqz v0, :cond_15
 
-    .line 57
+    .line 50
     const-string v0, "Logging page view: referrerUrl=[%s], referrerCookie=[%s], currentPageUrl=[%s]"
 
     const/4 v1, 0x3
@@ -404,7 +392,7 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 62
+    .line 55
     :cond_15
     iget-object v0, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mPendingEvents:Ljava/util/List;
 
@@ -416,23 +404,40 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 64
+    .line 57
     invoke-direct {p0, v3}, Lcom/google/android/finsky/analytics/DfeAnalytics;->scheduleFlush(Z)V
 
-    .line 65
+    .line 58
     return-void
 .end method
 
 .method public logTagAndPackage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 8
+    .registers 5
     .parameter "tag"
     .parameter "packageName"
     .parameter "error"
 
     .prologue
+    .line 75
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, p2, p3, v0}, Lcom/google/android/finsky/analytics/DfeAnalytics;->logTagAndPackage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 76
+    return-void
+.end method
+
+.method public logTagAndPackage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 9
+    .parameter "tag"
+    .parameter "packageName"
+    .parameter "error"
+    .parameter "reason"
+
+    .prologue
     const/4 v3, 0x0
 
-    .line 82
+    .line 80
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -455,11 +460,20 @@
 
     move-result-object v1
 
-    if-nez p3, :cond_28
+    if-nez p3, :cond_30
 
     const-string v0, ""
 
     :goto_1c
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    if-nez p4, :cond_48
+
+    const-string v0, ""
+
+    :goto_24
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -470,11 +484,11 @@
 
     invoke-virtual {p0, v3, v3, v0}, Lcom/google/android/finsky/analytics/DfeAnalytics;->logPageView(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 84
+    .line 83
     return-void
 
-    .line 82
-    :cond_28
+    .line 80
+    :cond_30
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -498,16 +512,41 @@
     move-result-object v0
 
     goto :goto_1c
+
+    :cond_48
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "&reason="
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-static {p4}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_24
 .end method
 
 .method public reset()V
     .registers 3
 
     .prologue
-    .line 117
+    .line 116
     iget-object v0, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
-    .line 118
+    .line 117
     .local v0, oldApi:Lcom/google/android/finsky/api/DfeApi;
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
@@ -519,19 +558,19 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
-    .line 119
+    .line 118
     if-eqz v0, :cond_14
 
-    .line 123
+    .line 122
     iget-object v1, p0, Lcom/google/android/finsky/analytics/DfeAnalytics;->mPendingEvents:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
-    .line 128
+    .line 127
     :goto_13
     return-void
 
-    .line 126
+    .line 125
     :cond_14
     const/4 v1, 0x1
 

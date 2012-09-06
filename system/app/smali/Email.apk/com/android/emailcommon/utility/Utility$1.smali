@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/emailcommon/utility/Utility;->showToast(Landroid/app/Activity;Ljava/lang/String;)V
+    value = Lcom/android/emailcommon/utility/Utility;->showToast(Landroid/content/Context;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,24 +18,24 @@
 
 
 # instance fields
-.field final synthetic val$activity:Landroid/app/Activity;
+.field final synthetic val$context:Landroid/content/Context;
 
 .field final synthetic val$message:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Landroid/app/Activity;Ljava/lang/String;)V
+.method constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 707
-    iput-object p1, p0, Lcom/android/emailcommon/utility/Utility$1;->val$activity:Landroid/app/Activity;
+    .line 532
+    iput-object p1, p0, Lcom/android/emailcommon/utility/Utility$1;->val$context:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/android/emailcommon/utility/Utility$1;->val$message:Ljava/lang/String;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,8 +46,8 @@
     .registers 4
 
     .prologue
-    .line 709
-    iget-object v0, p0, Lcom/android/emailcommon/utility/Utility$1;->val$activity:Landroid/app/Activity;
+    .line 535
+    iget-object v0, p0, Lcom/android/emailcommon/utility/Utility$1;->val$context:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/emailcommon/utility/Utility$1;->val$message:Ljava/lang/String;
 
@@ -59,6 +59,6 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 710
+    .line 536
     return-void
 .end method

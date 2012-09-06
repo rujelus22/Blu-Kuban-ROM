@@ -15,19 +15,11 @@
 
 
 # instance fields
-.field author:Landroid/widget/TextView;
+.field reviewItemLayout:Lcom/google/android/finsky/layout/ReviewItemLayout;
 
-.field ratingBar:Landroid/widget/RatingBar;
+.field reviewReplyLayout:Lcom/google/android/finsky/layout/ReviewReplyLayout;
 
-.field ratingImage:Landroid/widget/ImageView;
-
-.field reviewDate:Landroid/widget/TextView;
-
-.field reviewText:Landroid/widget/TextView;
-
-.field source:Landroid/widget/TextView;
-
-.field title:Landroid/widget/TextView;
+.field reviewReplyStub:Landroid/view/ViewStub;
 
 
 # direct methods
@@ -36,89 +28,45 @@
     .parameter "convertView"
 
     .prologue
-    .line 293
+    .line 298
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 294
-    const v0, 0x7f080173
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$ViewHolder;->title:Landroid/widget/TextView;
-
-    .line 295
-    const v0, 0x7f080176
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$ViewHolder;->author:Landroid/widget/TextView;
-
-    .line 296
-    const v0, 0x7f080177
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$ViewHolder;->source:Landroid/widget/TextView;
-
-    .line 297
-    const v0, 0x7f080179
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$ViewHolder;->reviewText:Landroid/widget/TextView;
-
-    .line 298
-    const v0, 0x7f080178
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$ViewHolder;->reviewDate:Landroid/widget/TextView;
-
     .line 299
-    const v0, 0x7f080175
+    const v0, 0x7f0801f3
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/RatingBar;
+    check-cast v0, Lcom/google/android/finsky/layout/ReviewItemLayout;
 
-    iput-object v0, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$ViewHolder;->ratingBar:Landroid/widget/RatingBar;
+    iput-object v0, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$ViewHolder;->reviewItemLayout:Lcom/google/android/finsky/layout/ReviewItemLayout;
 
-    .line 300
-    const v0, 0x7f080172
+    .line 301
+    const v0, 0x7f080201
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/ImageView;
+    check-cast v0, Landroid/view/ViewStub;
 
-    iput-object v0, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$ViewHolder;->ratingImage:Landroid/widget/ImageView;
+    iput-object v0, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$ViewHolder;->reviewReplyStub:Landroid/view/ViewStub;
 
     .line 302
+    const v0, 0x7f0801eb
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/layout/ReviewReplyLayout;
+
+    iput-object v0, p0, Lcom/google/android/finsky/adapters/ReviewsAdapter$ViewHolder;->reviewReplyLayout:Lcom/google/android/finsky/layout/ReviewReplyLayout;
+
+    .line 304
     invoke-virtual {p1, p0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 303
+    .line 305
     return-void
 .end method

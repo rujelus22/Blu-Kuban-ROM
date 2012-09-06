@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<appwidget-provider android:minWidth="140.0dip" android:minHeight="40.0dip" android:updatePeriodMillis="0" android:initialLayout="@layout/bookmark_default_widget" android:configure="com.android.browser.BookmarkAppWidgetConfigure" android:resizeMode="horizontal|vertical" android:minResizeWidth="140.0dip" android:minResizeHeight="80.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="qwerty_enterkey_label_size">16.0dip</dimen>
-    <dimen name="phonepad_enterkey_label_size">20.666992dip</dimen>
-    <dimen name="landqwerty_enterkey_label_size">20.666992dip</dimen>
-</resources>

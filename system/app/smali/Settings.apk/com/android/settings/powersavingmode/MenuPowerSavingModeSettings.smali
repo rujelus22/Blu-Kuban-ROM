@@ -350,7 +350,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_69
+    if-eqz v1, :cond_63
 
     move v1, v2
 
@@ -377,7 +377,7 @@
 
     move-result v4
 
-    if-ne v4, v2, :cond_6b
+    if-ne v4, v2, :cond_65
 
     :goto_43
     invoke-virtual {v1, v2}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
@@ -407,8 +407,6 @@
 
     check-cast v1, Landroid/preference/PreferenceCategory;
 
-    invoke-virtual {v2, v1}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 92
     invoke-virtual {p0}, Lcom/android/settings/powersavingmode/MenuPowerSavingModeSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
@@ -416,18 +414,16 @@
 
     iget-object v2, p0, Lcom/android/settings/powersavingmode/MenuPowerSavingModeSettings;->mMaximumPowerSavingMode:Landroid/preference/CheckBoxPreference;
 
-    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 95
     return-void
 
-    :cond_69
+    :cond_63
     move v1, v3
 
     .line 86
     goto :goto_2c
 
-    :cond_6b
+    :cond_65
     move v2, v3
 
     .line 88

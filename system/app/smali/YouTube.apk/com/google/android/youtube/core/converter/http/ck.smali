@@ -1,80 +1,48 @@
-.class final Lcom/google/android/youtube/core/converter/http/ck;
-.super Lcom/google/android/youtube/core/converter/l;
+.class public final Lcom/google/android/youtube/core/converter/http/ck;
+.super Lcom/google/android/youtube/core/converter/http/ar;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/converter/http/ci;
+.field private final b:Lcom/google/android/youtube/core/converter/c;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/core/converter/http/ci;)V
-    .registers 2
+.method public constructor <init>(Lcom/google/android/youtube/core/converter/k;)V
+    .registers 3
     .parameter
 
     .prologue
-    .line 98
-    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/ck;->a:Lcom/google/android/youtube/core/converter/http/ci;
+    .line 18
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/converter/http/ar;-><init>(Lcom/google/android/youtube/core/converter/k;)V
 
-    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
+    .line 19
+    new-instance v0, Lcom/google/android/youtube/core/converter/d;
 
+    invoke-direct {v0}, Lcom/google/android/youtube/core/converter/d;-><init>()V
+
+    .line 20
+    invoke-static {v0}, Lcom/google/android/youtube/core/converter/http/cl;->a(Lcom/google/android/youtube/core/converter/d;)V
+
+    .line 21
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/converter/d;->a()Lcom/google/android/youtube/core/converter/c;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/converter/http/ck;->b:Lcom/google/android/youtube/core/converter/c;
+
+    .line 22
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;)V
-    .registers 6
-    .parameter
-    .parameter
+.method protected final a()Lcom/google/android/youtube/core/converter/c;
+    .registers 2
 
     .prologue
-    .line 101
-    invoke-virtual {p1}, Lcom/google/android/youtube/core/utils/p;->peek()Ljava/lang/Object;
+    .line 26
+    iget-object v0, p0, Lcom/google/android/youtube/core/converter/http/ck;->b:Lcom/google/android/youtube/core/converter/c;
 
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/youtube/core/model/UserProfile$Builder;
-
-    .line 102
-    const-string v1, "viewCount"
-
-    invoke-interface {p2, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v1
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->channelViewsCount(J)Lcom/google/android/youtube/core/model/UserProfile$Builder;
-
-    .line 103
-    const-string v1, "totalUploadViews"
-
-    invoke-interface {p2, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v1
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->uploadViewsCount(J)Lcom/google/android/youtube/core/model/UserProfile$Builder;
-
-    .line 104
-    const-string v1, "subscriberCount"
-
-    invoke-interface {p2, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->subscribersCount(I)Lcom/google/android/youtube/core/model/UserProfile$Builder;
-
-    .line 105
-    return-void
+    return-object v0
 .end method

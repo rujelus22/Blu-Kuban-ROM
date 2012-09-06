@@ -1,50 +1,69 @@
-.class public final Lcom/google/common/collect/cq;
+.class final synthetic Lcom/google/common/collect/cq;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field static final synthetic a:[I
+
+
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 54
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static a(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+.method static constructor <clinit>()V
     .registers 3
-    .parameter
-    .parameter
 
     .prologue
-    .line 253
-    instance-of v0, p1, Ljava/util/Collection;
-
-    if-eqz v0, :cond_b
-
-    .line 255
-    check-cast p1, Ljava/util/Collection;
-
-    .line 256
-    invoke-interface {p0, p1}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
-
-    move-result v0
-
-    .line 258
-    :goto_a
-    return v0
-
-    :cond_b
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    .line 247
+    invoke-static {}, Lcom/google/common/collect/BoundType;->values()[Lcom/google/common/collect/BoundType;
 
     move-result-object v0
 
-    invoke-static {p0, v0}, Lcom/google/common/collect/cr;->a(Ljava/util/Collection;Ljava/util/Iterator;)Z
+    array-length v0, v0
 
-    move-result v0
+    new-array v0, v0, [I
 
-    goto :goto_a
+    sput-object v0, Lcom/google/common/collect/cq;->a:[I
+
+    :try_start_9
+    sget-object v0, Lcom/google/common/collect/cq;->a:[I
+
+    sget-object v1, Lcom/google/common/collect/BoundType;->CLOSED:Lcom/google/common/collect/BoundType;
+
+    invoke-virtual {v1}, Lcom/google/common/collect/BoundType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
+
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/common/collect/cq;->a:[I
+
+    sget-object v1, Lcom/google/common/collect/BoundType;->OPEN:Lcom/google/common/collect/BoundType;
+
+    invoke-virtual {v1}, Lcom/google/common/collect/BoundType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
+
+    :goto_1f
+    return-void
+
+    :catch_20
+    move-exception v0
+
+    goto :goto_1f
+
+    :catch_22
+    move-exception v0
+
+    goto :goto_14
 .end method

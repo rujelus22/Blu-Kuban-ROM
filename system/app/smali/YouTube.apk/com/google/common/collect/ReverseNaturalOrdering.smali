@@ -17,7 +17,7 @@
     .registers 1
 
     .prologue
-    .line 29
+    .line 31
     new-instance v0, Lcom/google/common/collect/ReverseNaturalOrdering;
 
     invoke-direct {v0}, Lcom/google/common/collect/ReverseNaturalOrdering;-><init>()V
@@ -31,7 +31,7 @@
     .registers 1
 
     .prologue
-    .line 81
+    .line 89
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 2
 
     .prologue
-    .line 74
+    .line 82
     sget-object v0, Lcom/google/common/collect/ReverseNaturalOrdering;->INSTANCE:Lcom/google/common/collect/ReverseNaturalOrdering;
 
     return-object v0
@@ -55,20 +55,19 @@
     .parameter
 
     .prologue
-    .line 32
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 34
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 33
+    .line 35
     if-ne p1, p2, :cond_7
 
-    .line 34
+    .line 36
     const/4 v0, 0x0
 
     .line 39
     :goto_6
     return v0
 
-    .line 38
     :cond_7
     invoke-interface {p2, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
@@ -83,7 +82,7 @@
     .parameter
 
     .prologue
-    .line 25
+    .line 27
     check-cast p1, Ljava/lang/Comparable;
 
     check-cast p2, Ljava/lang/Comparable;
@@ -101,7 +100,7 @@
     .parameter
 
     .prologue
-    .line 61
+    .line 65
     sget-object v0, Lcom/google/common/collect/NaturalOrdering;->INSTANCE:Lcom/google/common/collect/NaturalOrdering;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/common/collect/NaturalOrdering;->min(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -121,7 +120,7 @@
     .parameter
 
     .prologue
-    .line 65
+    .line 69
     sget-object v0, Lcom/google/common/collect/NaturalOrdering;->INSTANCE:Lcom/google/common/collect/NaturalOrdering;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Lcom/google/common/collect/NaturalOrdering;->min(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -138,10 +137,27 @@
     .parameter
 
     .prologue
-    .line 69
+    .line 77
     sget-object v0, Lcom/google/common/collect/NaturalOrdering;->INSTANCE:Lcom/google/common/collect/NaturalOrdering;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/NaturalOrdering;->min(Ljava/lang/Iterable;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Comparable;
+
+    return-object v0
+.end method
+
+.method public final max(Ljava/util/Iterator;)Ljava/lang/Comparable;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 73
+    sget-object v0, Lcom/google/common/collect/NaturalOrdering;->INSTANCE:Lcom/google/common/collect/NaturalOrdering;
+
+    invoke-virtual {v0, p1}, Lcom/google/common/collect/NaturalOrdering;->min(Ljava/util/Iterator;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -155,7 +171,7 @@
     .parameter
 
     .prologue
-    .line 25
+    .line 27
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ReverseNaturalOrdering;->max(Ljava/lang/Iterable;)Ljava/lang/Comparable;
 
     move-result-object v0
@@ -169,7 +185,7 @@
     .parameter
 
     .prologue
-    .line 25
+    .line 27
     check-cast p1, Ljava/lang/Comparable;
 
     check-cast p2, Ljava/lang/Comparable;
@@ -189,7 +205,7 @@
     .parameter
 
     .prologue
-    .line 25
+    .line 27
     check-cast p1, Ljava/lang/Comparable;
 
     check-cast p2, Ljava/lang/Comparable;
@@ -199,6 +215,19 @@
     check-cast p4, [Ljava/lang/Comparable;
 
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/common/collect/ReverseNaturalOrdering;->max(Ljava/lang/Comparable;Ljava/lang/Comparable;Ljava/lang/Comparable;[Ljava/lang/Comparable;)Ljava/lang/Comparable;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic max(Ljava/util/Iterator;)Ljava/lang/Object;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 27
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/ReverseNaturalOrdering;->max(Ljava/util/Iterator;)Ljava/lang/Comparable;
 
     move-result-object v0
 
@@ -248,10 +277,27 @@
     .parameter
 
     .prologue
-    .line 57
+    .line 61
     sget-object v0, Lcom/google/common/collect/NaturalOrdering;->INSTANCE:Lcom/google/common/collect/NaturalOrdering;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/NaturalOrdering;->max(Ljava/lang/Iterable;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Comparable;
+
+    return-object v0
+.end method
+
+.method public final min(Ljava/util/Iterator;)Ljava/lang/Comparable;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 57
+    sget-object v0, Lcom/google/common/collect/NaturalOrdering;->INSTANCE:Lcom/google/common/collect/NaturalOrdering;
+
+    invoke-virtual {v0, p1}, Lcom/google/common/collect/NaturalOrdering;->max(Ljava/util/Iterator;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -265,7 +311,7 @@
     .parameter
 
     .prologue
-    .line 25
+    .line 27
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ReverseNaturalOrdering;->min(Ljava/lang/Iterable;)Ljava/lang/Comparable;
 
     move-result-object v0
@@ -279,7 +325,7 @@
     .parameter
 
     .prologue
-    .line 25
+    .line 27
     check-cast p1, Ljava/lang/Comparable;
 
     check-cast p2, Ljava/lang/Comparable;
@@ -299,7 +345,7 @@
     .parameter
 
     .prologue
-    .line 25
+    .line 27
     check-cast p1, Ljava/lang/Comparable;
 
     check-cast p2, Ljava/lang/Comparable;
@@ -309,6 +355,19 @@
     check-cast p4, [Ljava/lang/Comparable;
 
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/common/collect/ReverseNaturalOrdering;->min(Ljava/lang/Comparable;Ljava/lang/Comparable;Ljava/lang/Comparable;[Ljava/lang/Comparable;)Ljava/lang/Comparable;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic min(Ljava/util/Iterator;)Ljava/lang/Object;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 27
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/ReverseNaturalOrdering;->min(Ljava/util/Iterator;)Ljava/lang/Comparable;
 
     move-result-object v0
 
@@ -331,7 +390,7 @@
     .registers 2
 
     .prologue
-    .line 78
+    .line 86
     const-string v0, "Ordering.natural().reverse()"
 
     return-object v0

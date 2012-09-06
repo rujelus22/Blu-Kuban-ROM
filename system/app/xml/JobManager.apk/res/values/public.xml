@@ -192,11 +192,11 @@
     <public type="string" name="battery_info_health_unspecified_failure" id="0x7f05007e" />
     <public type="string" name="force_stop_dlg_title" id="0x7f05007f" />
     <public type="string" name="force_stop_dlg_text" id="0x7f050080" />
+    <public type="string" name="APKTOOL_DUMMY_0085" id="0x7f050085" />
     <public type="string" name="cpu_help" id="0x7f050081" />
     <public type="string" name="ram_help" id="0x7f050082" />
     <public type="string" name="summary_help" id="0x7f050083" />
     <public type="string" name="clear_user_data" id="0x7f050084" />
-    <public type="string" name="APKTOOL_DUMMY_0085" id="0x7f050085" />
     <public type="color" name="text_sub" id="0x7f060000" />
     <public type="id" name="help_content" id="0x7f070000" />
     <public type="id" name="item_layout" id="0x7f070001" />

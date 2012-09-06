@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="event_info_dialog_width">500</integer>
+    <integer name="event_info_dialog_height">600</integer>
+</resources>

@@ -5,8 +5,8 @@
         <item quantity="one">%1$d resultats</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">"S'han trobat %1$d actualitzacions per a %2$s."</item>
-        <item quantity="one">"S'ha trobat %1$d actualització per a %2$s."</item>
+        <item quantity="other">"S'han trobat %1$d actualitzacions."</item>
+        <item quantity="one">"S'han trobat %1$d actualitzacions."</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">%1$s persones hi han fet +1.</item>

@@ -16090,7 +16090,7 @@
     .line 8869
     iget-object v0, p0, Lcom/android/mms/ui/ComposeMessageFragment;->mMsgListView:Lcom/android/mms/ui/MessageListView;
 
-    const v1, -0xd4d2d0
+    const v1, -0x1000000
 
     invoke-virtual {v0, v1}, Lcom/android/mms/ui/MessageListView;->setBackgroundColor(I)V
 

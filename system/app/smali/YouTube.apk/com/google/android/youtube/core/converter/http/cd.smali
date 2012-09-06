@@ -3,19 +3,12 @@
 .source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/converter/http/cc;
-
-
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/core/converter/http/cc;)V
-    .registers 2
-    .parameter
+.method constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 48
-    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/cd;->a:Lcom/google/android/youtube/core/converter/http/cc;
-
+    .line 82
     invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
     return-void
@@ -23,69 +16,49 @@
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
-    .registers 10
-    .parameter
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;)V
+    .registers 5
     .parameter
     .parameter
 
     .prologue
-    .line 51
-    const-class v0, Lcom/google/android/youtube/core/model/n;
+    .line 85
+    const-string v0, "rel"
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-interface {p2, v0}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/n;
+    const-string v1, "edit"
 
-    .line 52
-    const-string v1, "start"
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_23
+
+    .line 86
+    const-class v0, Lcom/google/android/youtube/core/model/Playlist$Builder;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->a(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/core/model/Playlist$Builder;
+
+    const-string v1, "href"
 
     invoke-interface {p2, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/youtube/core/converter/http/cc;->a(Ljava/lang/String;)I
-
-    move-result v2
-
-    .line 53
-    const-string v1, "dur"
-
-    invoke-interface {p2, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/youtube/core/converter/http/cc;->a(Ljava/lang/String;)I
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Playlist$Builder;->editUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Playlist$Builder;
 
-    move-result v1
-
-    .line 54
-    if-nez v1, :cond_20
-
-    .line 55
-    const/16 v1, 0x1b58
-
-    .line 57
-    :cond_20
-    invoke-virtual {p3}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v4, "\n"
-
-    const-string v5, "<br/>"
-
-    invoke-virtual {v3, v4, v5}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 58
-    add-int/2addr v1, v2
-
-    invoke-virtual {v0, v3, v2, v1}, Lcom/google/android/youtube/core/model/n;->a(Ljava/lang/String;II)Lcom/google/android/youtube/core/model/n;
-
-    .line 59
+    .line 88
+    :cond_23
     return-void
 .end method

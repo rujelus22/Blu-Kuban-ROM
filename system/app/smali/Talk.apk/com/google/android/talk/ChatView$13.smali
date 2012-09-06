@@ -35,7 +35,7 @@
 
     iput-boolean p2, p0, Lcom/google/android/talk/ChatView$13;->val$mutedFinal:Z
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

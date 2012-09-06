@@ -36,13 +36,13 @@
     .parameter "context"
 
     .prologue
-    .line 1122
+    .line 853
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 1123
+    .line 854
     iput-object p1, p0, Lcom/android/emailcommon/utility/Utility$ForEachAccount;->mContext:Landroid/content/Context;
 
-    .line 1124
+    .line 855
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1119
+    .line 850
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -71,12 +71,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1128
+    .line 859
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1129
+    .line 860
     .local v7, ids:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
     iget-object v0, p0, Lcom/android/emailcommon/utility/Utility$ForEachAccount;->mContext:Landroid/content/Context;
 
@@ -84,9 +84,9 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
+    sget-object v1, Lcom/android/emailcommon/provider/Account;->CONTENT_URI:Landroid/net/Uri;
 
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Account;->ID_PROJECTION:[Ljava/lang/String;
+    sget-object v2, Lcom/android/emailcommon/provider/Account;->ID_PROJECTION:[Ljava/lang/String;
 
     move-object v4, v3
 
@@ -96,7 +96,7 @@
 
     move-result-object v6
 
-    .line 1132
+    .line 863
     .local v6, c:Landroid/database/Cursor;
     :goto_16
     :try_start_16
@@ -106,7 +106,7 @@
 
     if-eqz v0, :cond_2e
 
-    .line 1133
+    .line 864
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -123,7 +123,7 @@
 
     goto :goto_16
 
-    .line 1136
+    .line 867
     :catchall_29
     move-exception v0
 
@@ -134,7 +134,7 @@
     :cond_2e
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 1138
+    .line 869
     sget-object v0, Lcom/android/emailcommon/utility/Utility;->EMPTY_LONGS:[Ljava/lang/Long;
 
     invoke-virtual {v7, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
@@ -150,7 +150,7 @@
     .registers 1
 
     .prologue
-    .line 1160
+    .line 891
     return-void
 .end method
 
@@ -159,7 +159,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1119
+    .line 850
     check-cast p1, [Ljava/lang/Long;
 
     .end local p1
@@ -173,7 +173,7 @@
     .parameter "ids"
 
     .prologue
-    .line 1143
+    .line 874
     if-eqz p1, :cond_19
 
     invoke-virtual {p0}, Lcom/android/emailcommon/utility/Utility$ForEachAccount;->isCancelled()Z
@@ -182,7 +182,7 @@
 
     if-nez v5, :cond_19
 
-    .line 1144
+    .line 875
     move-object v0, p1
 
     .local v0, arr$:[Ljava/lang/Long;
@@ -201,16 +201,16 @@
 
     move-result-wide v2
 
-    .line 1145
+    .line 876
     .local v2, id:J
     invoke-virtual {p0, v2, v3}, Lcom/android/emailcommon/utility/Utility$ForEachAccount;->performAction(J)V
 
-    .line 1144
+    .line 875
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_b
 
-    .line 1148
+    .line 879
     .end local v0           #arr$:[Ljava/lang/Long;
     .end local v1           #i$:I
     .end local v2           #id:J
@@ -218,7 +218,7 @@
     :cond_19
     invoke-virtual {p0}, Lcom/android/emailcommon/utility/Utility$ForEachAccount;->onFinished()V
 
-    .line 1149
+    .line 880
     return-void
 .end method
 

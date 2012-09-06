@@ -24,13 +24,13 @@
     .parameter "encoding"
 
     .prologue
-    .line 53
+    .line 55
     invoke-direct {p0, p1, p2, p3}, Lorg/apache/james/mime4j/field/Field;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 54
+    .line 56
     iput-object p4, p0, Lorg/apache/james/mime4j/field/ContentTransferEncodingField;->encoding:Ljava/lang/String;
 
-    .line 55
+    .line 57
     return-void
 .end method
 
@@ -39,7 +39,7 @@
     .parameter "f"
 
     .prologue
-    .line 73
+    .line 76
     if-eqz p0, :cond_11
 
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/ContentTransferEncodingField;->getEncoding()Ljava/lang/String;
@@ -52,12 +52,12 @@
 
     if-eqz v0, :cond_11
 
-    .line 74
+    .line 77
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/ContentTransferEncodingField;->getEncoding()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 76
+    .line 79
     :goto_10
     return-object v0
 
@@ -73,7 +73,7 @@
     .registers 2
 
     .prologue
-    .line 63
+    .line 65
     iget-object v0, p0, Lorg/apache/james/mime4j/field/ContentTransferEncodingField;->encoding:Ljava/lang/String;
 
     return-object v0

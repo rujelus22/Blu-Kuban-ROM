@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 106
+    .line 104
     iput-object p1, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration$1;->this$0:Lcom/samsung/deviceconfiguration/DeviceConfiguration;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 109
+    .line 107
     const-string v1, "DeviceConfiguration"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -69,7 +69,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 110
+    .line 108
     const-string v1, "DeviceConfiguration"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -92,7 +92,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 111
+    .line 109
     const-string v1, "DeviceConfiguration"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -122,14 +122,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 112
+    .line 110
     packed-switch p2, :pswitch_data_6a
 
-    .line 122
+    .line 120
     :goto_52
     return v0
 
-    .line 114
+    .line 112
     :pswitch_53
     iget-object v1, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration$1;->this$0:Lcom/samsung/deviceconfiguration/DeviceConfiguration;
 
@@ -140,7 +140,7 @@
 
     invoke-virtual {v1}, Landroid/app/Dialog;->dismiss()V
 
-    .line 115
+    .line 113
     iget-object v1, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration$1;->this$0:Lcom/samsung/deviceconfiguration/DeviceConfiguration;
 
     #calls: Lcom/samsung/deviceconfiguration/DeviceConfiguration;->cancelSession()V
@@ -148,19 +148,19 @@
 
     goto :goto_52
 
-    .line 118
+    .line 116
     :pswitch_62
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration$1;->this$0:Lcom/samsung/deviceconfiguration/DeviceConfiguration;
 
     #calls: Lcom/samsung/deviceconfiguration/DeviceConfiguration;->cancelSession()V
     invoke-static {v0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->access$300(Lcom/samsung/deviceconfiguration/DeviceConfiguration;)V
 
-    .line 119
+    .line 117
     const/4 v0, 0x0
 
     goto :goto_52
 
-    .line 112
+    .line 110
     nop
 
     :pswitch_data_6a

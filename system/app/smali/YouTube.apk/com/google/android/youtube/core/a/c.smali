@@ -8,29 +8,27 @@
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/youtube/core/a/b;)V
-    .registers 3
+.method private constructor <init>(Lcom/google/android/youtube/core/a/b;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 118
-    const/4 v0, 0x0
+    .line 164
+    iput-object p1, p0, Lcom/google/android/youtube/core/a/c;->a:Lcom/google/android/youtube/core/a/b;
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/core/a/c;-><init>(Lcom/google/android/youtube/core/a/b;B)V
+    invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>(Lcom/google/android/youtube/core/a/b;B)V
+.method synthetic constructor <init>(Lcom/google/android/youtube/core/a/b;B)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 118
-    iput-object p1, p0, Lcom/google/android/youtube/core/a/c;->a:Lcom/google/android/youtube/core/a/b;
-
-    invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
+    .line 164
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/a/c;-><init>(Lcom/google/android/youtube/core/a/b;)V
 
     return-void
 .end method
@@ -41,12 +39,12 @@
     .registers 2
 
     .prologue
-    .line 122
+    .line 168
     iget-object v0, p0, Lcom/google/android/youtube/core/a/c;->a:Lcom/google/android/youtube/core/a/b;
 
     invoke-virtual {v0}, Lcom/google/android/youtube/core/a/b;->notifyDataSetChanged()V
 
-    .line 123
+    .line 169
     return-void
 .end method
 
@@ -54,11 +52,11 @@
     .registers 2
 
     .prologue
-    .line 127
+    .line 173
     iget-object v0, p0, Lcom/google/android/youtube/core/a/c;->a:Lcom/google/android/youtube/core/a/b;
 
     invoke-virtual {v0}, Lcom/google/android/youtube/core/a/b;->notifyDataSetInvalidated()V
 
-    .line 128
+    .line 174
     return-void
 .end method

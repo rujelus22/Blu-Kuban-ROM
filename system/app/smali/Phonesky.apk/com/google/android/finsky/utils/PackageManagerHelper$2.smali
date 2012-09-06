@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 323
+    .line 409
     iput p1, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$2;->val$returnCode:I
 
     iput-object p2, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$2;->val$packageName:Ljava/lang/String;
@@ -51,15 +51,15 @@
     .registers 6
 
     .prologue
-    .line 327
+    .line 413
     iget v2, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$2;->val$returnCode:I
 
     packed-switch v2, :pswitch_data_24
 
-    .line 333
+    .line 419
     const/4 v0, -0x1
 
-    .line 337
+    .line 423
     .local v0, internalReturnCode:I
     :goto_6
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
@@ -70,17 +70,17 @@
 
     move-result-object v1
 
-    .line 343
+    .line 429
     .local v1, notifier:Lcom/google/android/finsky/utils/Notifier;
     iget-object v2, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$2;->val$packageName:Ljava/lang/String;
 
     invoke-interface {v1, v2}, Lcom/google/android/finsky/utils/Notifier;->hideAllMessagesForPackage(Ljava/lang/String;)V
 
-    .line 344
+    .line 430
     iget-object v2, p0, Lcom/google/android/finsky/utils/PackageManagerHelper$2;->val$packageName:Ljava/lang/String;
 
     #calls: Lcom/google/android/finsky/utils/PackageManagerHelper;->getApplicationName(Ljava/lang/String;)Ljava/lang/String;
-    invoke-static {v2}, Lcom/google/android/finsky/utils/PackageManagerHelper;->access$700(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/google/android/finsky/utils/PackageManagerHelper;->access$1000(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -90,20 +90,20 @@
 
     invoke-interface {v1, v2, v3, v4, v0}, Lcom/google/android/finsky/utils/Notifier;->showInstallationFailureMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 346
+    .line 432
     return-void
 
-    .line 329
+    .line 415
     .end local v0           #internalReturnCode:I
     .end local v1           #notifier:Lcom/google/android/finsky/utils/Notifier;
     :pswitch_21
     const/4 v0, 0x1
 
-    .line 331
+    .line 417
     .restart local v0       #internalReturnCode:I
     goto :goto_6
 
-    .line 327
+    .line 413
     nop
 
     :pswitch_data_24

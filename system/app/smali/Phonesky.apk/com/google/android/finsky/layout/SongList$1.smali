@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 35
+    .line 39
     iput-object p1, p0, Lcom/google/android/finsky/layout/SongList$1;->this$0:Lcom/google/android/finsky/layout/SongList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .registers 6
 
     .prologue
-    .line 38
+    .line 42
     iget-object v2, p0, Lcom/google/android/finsky/layout/SongList$1;->this$0:Lcom/google/android/finsky/layout/SongList;
 
     #getter for: Lcom/google/android/finsky/layout/SongList;->mSongSnippets:Ljava/util/Map;
@@ -62,22 +62,22 @@
 
     check-cast v1, Lcom/google/android/finsky/layout/SongSnippet;
 
-    .line 39
+    .line 43
     .local v1, song:Lcom/google/android/finsky/layout/SongSnippet;
     if-nez v1, :cond_15
 
-    .line 53
+    .line 57
     :cond_14
     :goto_14
     return-void
 
-    .line 43
+    .line 47
     :cond_15
     const/4 v2, 0x2
 
     invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/SongSnippet;->setState(I)V
 
-    .line 45
+    .line 49
     iget-object v2, p0, Lcom/google/android/finsky/layout/SongList$1;->this$0:Lcom/google/android/finsky/layout/SongList;
 
     #getter for: Lcom/google/android/finsky/layout/SongList;->mParent:Landroid/widget/ScrollView;
@@ -87,7 +87,7 @@
 
     if-nez v2, :cond_2a
 
-    .line 46
+    .line 50
     const-string v2, "Unable to scroll the highlighted song into view."
 
     const/4 v3, 0x0
@@ -98,13 +98,13 @@
 
     goto :goto_14
 
-    .line 49
+    .line 53
     :cond_2a
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 50
+    .line 54
     .local v0, position:Landroid/graphics/Rect;
     invoke-virtual {v1, v0}, Lcom/google/android/finsky/layout/SongSnippet;->getLocalVisibleRect(Landroid/graphics/Rect;)Z
 
@@ -112,7 +112,7 @@
 
     if-nez v2, :cond_14
 
-    .line 51
+    .line 55
     iget-object v2, p0, Lcom/google/android/finsky/layout/SongList$1;->this$0:Lcom/google/android/finsky/layout/SongList;
 
     #getter for: Lcom/google/android/finsky/layout/SongList;->mParent:Landroid/widget/ScrollView;

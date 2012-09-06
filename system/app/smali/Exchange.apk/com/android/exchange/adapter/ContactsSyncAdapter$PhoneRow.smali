@@ -33,18 +33,18 @@
     .parameter "_type"
 
     .prologue
-    .line 434
+    .line 327
     iput-object p1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$PhoneRow;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 435
+    .line 328
     iput-object p2, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$PhoneRow;->phone:Ljava/lang/String;
 
-    .line 436
+    .line 329
     iput p3, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$PhoneRow;->type:I
 
-    .line 437
+    .line 330
     return-void
 .end method
 
@@ -55,14 +55,14 @@
     .parameter "builder"
 
     .prologue
-    .line 440
+    .line 333
     const-string v0, "data1"
 
     iget-object v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$PhoneRow;->phone:Ljava/lang/String;
 
     invoke-virtual {p1, v0, v1}, Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;
 
-    .line 441
+    .line 334
     const-string v0, "data2"
 
     iget v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$PhoneRow;->type:I
@@ -73,7 +73,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Lcom/android/exchange/adapter/ContactsSyncAdapter$RowBuilder;
 
-    .line 442
+    .line 335
     return-void
 .end method
 
@@ -83,7 +83,7 @@
     .parameter "value"
 
     .prologue
-    .line 445
+    .line 338
     iget v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$PhoneRow;->type:I
 
     if-ne v0, p1, :cond_e

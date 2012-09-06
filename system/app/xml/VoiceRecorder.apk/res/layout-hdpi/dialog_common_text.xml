@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:id="@id/dialog_text" style="@style/layout_match_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <EditText android:textSize="30.0px" android:textColor="@color/black" android:id="@id/dialog_text_edittext" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.0px" android:layout_marginRight="6.0px" android:singleLine="true" android:selectAllOnFocus="true" android:capitalize="sentences" />
-</LinearLayout>

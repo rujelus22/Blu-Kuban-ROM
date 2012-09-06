@@ -56,7 +56,7 @@
 
     const/4 v3, 0x0
 
-    .line 38
+    .line 36
     new-instance v0, Lcom/android/emailcommon/mail/Folder$FolderRole;
 
     const-string v1, "INBOX"
@@ -65,7 +65,7 @@
 
     sput-object v0, Lcom/android/emailcommon/mail/Folder$FolderRole;->INBOX:Lcom/android/emailcommon/mail/Folder$FolderRole;
 
-    .line 39
+    .line 37
     new-instance v0, Lcom/android/emailcommon/mail/Folder$FolderRole;
 
     const-string v1, "TRASH"
@@ -74,6 +74,7 @@
 
     sput-object v0, Lcom/android/emailcommon/mail/Folder$FolderRole;->TRASH:Lcom/android/emailcommon/mail/Folder$FolderRole;
 
+    .line 38
     new-instance v0, Lcom/android/emailcommon/mail/Folder$FolderRole;
 
     const-string v1, "SENT"
@@ -82,6 +83,7 @@
 
     sput-object v0, Lcom/android/emailcommon/mail/Folder$FolderRole;->SENT:Lcom/android/emailcommon/mail/Folder$FolderRole;
 
+    .line 39
     new-instance v0, Lcom/android/emailcommon/mail/Folder$FolderRole;
 
     const-string v1, "DRAFTS"
@@ -121,7 +123,7 @@
 
     sput-object v0, Lcom/android/emailcommon/mail/Folder$FolderRole;->UNKNOWN:Lcom/android/emailcommon/mail/Folder$FolderRole;
 
-    .line 37
+    .line 35
     const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/android/emailcommon/mail/Folder$FolderRole;
@@ -174,7 +176,7 @@
     .end annotation
 
     .prologue
-    .line 37
+    .line 35
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -185,7 +187,7 @@
     .parameter
 
     .prologue
-    .line 37
+    .line 35
     const-class v0, Lcom/android/emailcommon/mail/Folder$FolderRole;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -201,7 +203,7 @@
     .registers 1
 
     .prologue
-    .line 37
+    .line 35
     sget-object v0, Lcom/android/emailcommon/mail/Folder$FolderRole;->$VALUES:[Lcom/android/emailcommon/mail/Folder$FolderRole;
 
     invoke-virtual {v0}, [Lcom/android/emailcommon/mail/Folder$FolderRole;->clone()Ljava/lang/Object;

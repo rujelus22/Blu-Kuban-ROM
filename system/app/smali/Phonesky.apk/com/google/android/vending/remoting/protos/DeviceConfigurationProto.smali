@@ -117,90 +117,90 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 7
+    .line 8
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 45
+    .line 46
     iput v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->touchScreen_:I
 
-    .line 62
+    .line 63
     iput v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->keyboard_:I
 
-    .line 79
+    .line 80
     iput v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->navigation_:I
 
-    .line 96
+    .line 97
     iput v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->screenLayout_:I
 
-    .line 113
+    .line 114
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasHardKeyboard_:Z
 
-    .line 130
+    .line 131
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasFiveWayNavigation_:Z
 
-    .line 147
+    .line 148
     iput v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->screenDensity_:I
 
-    .line 164
+    .line 165
     iput v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->screenWidth_:I
 
-    .line 181
+    .line 182
     iput v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->screenHeight_:I
 
-    .line 198
+    .line 199
     iput v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->glEsVersion_:I
 
-    .line 214
+    .line 215
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->systemSharedLibrary_:Ljava/util/List;
 
-    .line 247
+    .line 248
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->systemAvailableFeature_:Ljava/util/List;
 
-    .line 280
+    .line 281
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->nativePlatform_:Ljava/util/List;
 
-    .line 313
+    .line 314
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->systemSupportedLocale_:Ljava/util/List;
 
-    .line 346
+    .line 347
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->glExtension_:Ljava/util/List;
 
-    .line 380
+    .line 381
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->deviceClass_:I
 
-    .line 397
+    .line 398
     const/16 v0, 0x32
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->maxApkDownloadSizeMb_:I
 
-    .line 500
+    .line 502
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->cachedSize:I
 
-    .line 7
+    .line 8
     return-void
 .end method
 
@@ -211,17 +211,17 @@
     .parameter "value"
 
     .prologue
-    .line 363
+    .line 364
     if-nez p1, :cond_8
 
-    .line 364
+    .line 365
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 366
+    .line 367
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->glExtension_:Ljava/util/List;
 
@@ -231,20 +231,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 367
+    .line 368
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->glExtension_:Ljava/util/List;
 
-    .line 369
+    .line 370
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->glExtension_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 370
+    .line 371
     return-object p0
 .end method
 
@@ -253,17 +253,17 @@
     .parameter "value"
 
     .prologue
-    .line 297
+    .line 298
     if-nez p1, :cond_8
 
-    .line 298
+    .line 299
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 300
+    .line 301
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->nativePlatform_:Ljava/util/List;
 
@@ -273,20 +273,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 301
+    .line 302
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->nativePlatform_:Ljava/util/List;
 
-    .line 303
+    .line 304
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->nativePlatform_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 304
+    .line 305
     return-object p0
 .end method
 
@@ -295,17 +295,17 @@
     .parameter "value"
 
     .prologue
-    .line 264
+    .line 265
     if-nez p1, :cond_8
 
-    .line 265
+    .line 266
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 267
+    .line 268
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->systemAvailableFeature_:Ljava/util/List;
 
@@ -315,20 +315,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 268
+    .line 269
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->systemAvailableFeature_:Ljava/util/List;
 
-    .line 270
+    .line 271
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->systemAvailableFeature_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 271
+    .line 272
     return-object p0
 .end method
 
@@ -337,17 +337,17 @@
     .parameter "value"
 
     .prologue
-    .line 231
+    .line 232
     if-nez p1, :cond_8
 
-    .line 232
+    .line 233
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 234
+    .line 235
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->systemSharedLibrary_:Ljava/util/List;
 
@@ -357,20 +357,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 235
+    .line 236
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->systemSharedLibrary_:Ljava/util/List;
 
-    .line 237
+    .line 238
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->systemSharedLibrary_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 238
+    .line 239
     return-object p0
 .end method
 
@@ -379,17 +379,17 @@
     .parameter "value"
 
     .prologue
-    .line 330
+    .line 331
     if-nez p1, :cond_8
 
-    .line 331
+    .line 332
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 333
+    .line 334
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->systemSupportedLocale_:Ljava/util/List;
 
@@ -399,20 +399,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 334
+    .line 335
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->systemSupportedLocale_:Ljava/util/List;
 
-    .line 336
+    .line 337
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->systemSupportedLocale_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 337
+    .line 338
     return-object p0
 .end method
 
@@ -420,15 +420,15 @@
     .registers 2
 
     .prologue
-    .line 502
+    .line 505
     iget v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 504
+    .line 507
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getSerializedSize()I
 
-    .line 506
+    .line 509
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->cachedSize:I
 
@@ -439,7 +439,7 @@
     .registers 2
 
     .prologue
-    .line 382
+    .line 383
     iget v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->deviceClass_:I
 
     return v0
@@ -449,7 +449,7 @@
     .registers 2
 
     .prologue
-    .line 199
+    .line 200
     iget v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->glEsVersion_:I
 
     return v0
@@ -468,7 +468,7 @@
     .end annotation
 
     .prologue
-    .line 349
+    .line 350
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->glExtension_:Ljava/util/List;
 
     return-object v0
@@ -478,7 +478,7 @@
     .registers 2
 
     .prologue
-    .line 131
+    .line 132
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasFiveWayNavigation_:Z
 
     return v0
@@ -488,7 +488,7 @@
     .registers 2
 
     .prologue
-    .line 114
+    .line 115
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasHardKeyboard_:Z
 
     return v0
@@ -498,7 +498,7 @@
     .registers 2
 
     .prologue
-    .line 64
+    .line 65
     iget v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->keyboard_:I
 
     return v0
@@ -508,7 +508,7 @@
     .registers 2
 
     .prologue
-    .line 398
+    .line 399
     iget v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->maxApkDownloadSizeMb_:I
 
     return v0
@@ -527,7 +527,7 @@
     .end annotation
 
     .prologue
-    .line 283
+    .line 284
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->nativePlatform_:Ljava/util/List;
 
     return-object v0
@@ -537,7 +537,7 @@
     .registers 2
 
     .prologue
-    .line 81
+    .line 82
     iget v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->navigation_:I
 
     return v0
@@ -547,7 +547,7 @@
     .registers 2
 
     .prologue
-    .line 148
+    .line 149
     iget v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->screenDensity_:I
 
     return v0
@@ -557,7 +557,7 @@
     .registers 2
 
     .prologue
-    .line 182
+    .line 183
     iget v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->screenHeight_:I
 
     return v0
@@ -567,7 +567,7 @@
     .registers 2
 
     .prologue
-    .line 98
+    .line 99
     iget v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->screenLayout_:I
 
     return v0
@@ -577,7 +577,7 @@
     .registers 2
 
     .prologue
-    .line 165
+    .line 166
     iget v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->screenWidth_:I
 
     return v0
@@ -587,10 +587,10 @@
     .registers 7
 
     .prologue
-    .line 510
+    .line 514
     const/4 v3, 0x0
 
-    .line 511
+    .line 515
     .local v3, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasTouchScreen()Z
 
@@ -598,7 +598,7 @@
 
     if-eqz v4, :cond_11
 
-    .line 512
+    .line 516
     const/4 v4, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getTouchScreen()I
@@ -611,7 +611,7 @@
 
     add-int/2addr v3, v4
 
-    .line 515
+    .line 519
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasKeyboard()Z
 
@@ -619,7 +619,7 @@
 
     if-eqz v4, :cond_21
 
-    .line 516
+    .line 520
     const/4 v4, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getKeyboard()I
@@ -632,7 +632,7 @@
 
     add-int/2addr v3, v4
 
-    .line 519
+    .line 523
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasNavigation()Z
 
@@ -640,7 +640,7 @@
 
     if-eqz v4, :cond_31
 
-    .line 520
+    .line 524
     const/4 v4, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getNavigation()I
@@ -653,7 +653,7 @@
 
     add-int/2addr v3, v4
 
-    .line 523
+    .line 527
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasScreenLayout()Z
 
@@ -661,7 +661,7 @@
 
     if-eqz v4, :cond_41
 
-    .line 524
+    .line 528
     const/4 v4, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getScreenLayout()I
@@ -674,7 +674,7 @@
 
     add-int/2addr v3, v4
 
-    .line 527
+    .line 531
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasHasHardKeyboard()Z
 
@@ -682,7 +682,7 @@
 
     if-eqz v4, :cond_51
 
-    .line 528
+    .line 532
     const/4 v4, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getHasHardKeyboard()Z
@@ -695,7 +695,7 @@
 
     add-int/2addr v3, v4
 
-    .line 531
+    .line 535
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasHasFiveWayNavigation()Z
 
@@ -703,7 +703,7 @@
 
     if-eqz v4, :cond_61
 
-    .line 532
+    .line 536
     const/4 v4, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getHasFiveWayNavigation()Z
@@ -716,7 +716,7 @@
 
     add-int/2addr v3, v4
 
-    .line 535
+    .line 539
     :cond_61
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasScreenDensity()Z
 
@@ -724,7 +724,7 @@
 
     if-eqz v4, :cond_71
 
-    .line 536
+    .line 540
     const/4 v4, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getScreenDensity()I
@@ -737,7 +737,7 @@
 
     add-int/2addr v3, v4
 
-    .line 539
+    .line 543
     :cond_71
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasGlEsVersion()Z
 
@@ -745,7 +745,7 @@
 
     if-eqz v4, :cond_82
 
-    .line 540
+    .line 544
     const/16 v4, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getGlEsVersion()I
@@ -758,11 +758,11 @@
 
     add-int/2addr v3, v4
 
-    .line 544
+    .line 548
     :cond_82
     const/4 v0, 0x0
 
-    .line 545
+    .line 549
     .local v0, dataSize:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getSystemSharedLibraryList()Ljava/util/List;
 
@@ -786,7 +786,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 546
+    .line 550
     .local v1, element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -796,12 +796,12 @@
 
     goto :goto_8b
 
-    .line 549
+    .line 553
     .end local v1           #element:Ljava/lang/String;
     :cond_9d
     add-int/2addr v3, v0
 
-    .line 550
+    .line 554
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getSystemSharedLibraryList()Ljava/util/List;
 
     move-result-object v4
@@ -814,10 +814,10 @@
 
     add-int/2addr v3, v4
 
-    .line 553
+    .line 557
     const/4 v0, 0x0
 
-    .line 554
+    .line 558
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getSystemAvailableFeatureList()Ljava/util/List;
 
     move-result-object v4
@@ -839,7 +839,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 555
+    .line 559
     .restart local v1       #element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -849,12 +849,12 @@
 
     goto :goto_b2
 
-    .line 558
+    .line 562
     .end local v1           #element:Ljava/lang/String;
     :cond_c4
     add-int/2addr v3, v0
 
-    .line 559
+    .line 563
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getSystemAvailableFeatureList()Ljava/util/List;
 
     move-result-object v4
@@ -867,10 +867,10 @@
 
     add-int/2addr v3, v4
 
-    .line 562
+    .line 566
     const/4 v0, 0x0
 
-    .line 563
+    .line 567
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getNativePlatformList()Ljava/util/List;
 
     move-result-object v4
@@ -892,7 +892,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 564
+    .line 568
     .restart local v1       #element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -902,12 +902,12 @@
 
     goto :goto_d9
 
-    .line 567
+    .line 571
     .end local v1           #element:Ljava/lang/String;
     :cond_eb
     add-int/2addr v3, v0
 
-    .line 568
+    .line 572
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getNativePlatformList()Ljava/util/List;
 
     move-result-object v4
@@ -920,14 +920,14 @@
 
     add-int/2addr v3, v4
 
-    .line 570
+    .line 574
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasScreenWidth()Z
 
     move-result v4
 
     if-eqz v4, :cond_108
 
-    .line 571
+    .line 575
     const/16 v4, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getScreenWidth()I
@@ -940,7 +940,7 @@
 
     add-int/2addr v3, v4
 
-    .line 574
+    .line 578
     :cond_108
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasScreenHeight()Z
 
@@ -948,7 +948,7 @@
 
     if-eqz v4, :cond_119
 
-    .line 575
+    .line 579
     const/16 v4, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getScreenHeight()I
@@ -961,11 +961,11 @@
 
     add-int/2addr v3, v4
 
-    .line 579
+    .line 583
     :cond_119
     const/4 v0, 0x0
 
-    .line 580
+    .line 584
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getSystemSupportedLocaleList()Ljava/util/List;
 
     move-result-object v4
@@ -987,7 +987,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 581
+    .line 585
     .restart local v1       #element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -997,12 +997,12 @@
 
     goto :goto_122
 
-    .line 584
+    .line 588
     .end local v1           #element:Ljava/lang/String;
     :cond_134
     add-int/2addr v3, v0
 
-    .line 585
+    .line 589
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getSystemSupportedLocaleList()Ljava/util/List;
 
     move-result-object v4
@@ -1015,10 +1015,10 @@
 
     add-int/2addr v3, v4
 
-    .line 588
+    .line 592
     const/4 v0, 0x0
 
-    .line 589
+    .line 593
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getGlExtensionList()Ljava/util/List;
 
     move-result-object v4
@@ -1040,7 +1040,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 590
+    .line 594
     .restart local v1       #element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -1050,12 +1050,12 @@
 
     goto :goto_149
 
-    .line 593
+    .line 597
     .end local v1           #element:Ljava/lang/String;
     :cond_15b
     add-int/2addr v3, v0
 
-    .line 594
+    .line 598
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getGlExtensionList()Ljava/util/List;
 
     move-result-object v4
@@ -1068,14 +1068,14 @@
 
     add-int/2addr v3, v4
 
-    .line 596
+    .line 600
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasDeviceClass()Z
 
     move-result v4
 
     if-eqz v4, :cond_178
 
-    .line 597
+    .line 601
     const/16 v4, 0x10
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getDeviceClass()I
@@ -1088,7 +1088,7 @@
 
     add-int/2addr v3, v4
 
-    .line 600
+    .line 604
     :cond_178
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasMaxApkDownloadSizeMb()Z
 
@@ -1096,7 +1096,7 @@
 
     if-eqz v4, :cond_189
 
-    .line 601
+    .line 605
     const/16 v4, 0x11
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getMaxApkDownloadSizeMb()I
@@ -1109,11 +1109,11 @@
 
     add-int/2addr v3, v4
 
-    .line 604
+    .line 608
     :cond_189
     iput v3, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->cachedSize:I
 
-    .line 605
+    .line 609
     return v3
 .end method
 
@@ -1130,7 +1130,7 @@
     .end annotation
 
     .prologue
-    .line 250
+    .line 251
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->systemAvailableFeature_:Ljava/util/List;
 
     return-object v0
@@ -1149,7 +1149,7 @@
     .end annotation
 
     .prologue
-    .line 217
+    .line 218
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->systemSharedLibrary_:Ljava/util/List;
 
     return-object v0
@@ -1168,7 +1168,7 @@
     .end annotation
 
     .prologue
-    .line 316
+    .line 317
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->systemSupportedLocale_:Ljava/util/List;
 
     return-object v0
@@ -1178,7 +1178,7 @@
     .registers 2
 
     .prologue
-    .line 47
+    .line 48
     iget v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->touchScreen_:I
 
     return v0
@@ -1188,7 +1188,7 @@
     .registers 2
 
     .prologue
-    .line 381
+    .line 382
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasDeviceClass:Z
 
     return v0
@@ -1198,7 +1198,7 @@
     .registers 2
 
     .prologue
-    .line 200
+    .line 201
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasGlEsVersion:Z
 
     return v0
@@ -1208,7 +1208,7 @@
     .registers 2
 
     .prologue
-    .line 132
+    .line 133
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasHasFiveWayNavigation:Z
 
     return v0
@@ -1218,7 +1218,7 @@
     .registers 2
 
     .prologue
-    .line 115
+    .line 116
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasHasHardKeyboard:Z
 
     return v0
@@ -1228,7 +1228,7 @@
     .registers 2
 
     .prologue
-    .line 63
+    .line 64
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasKeyboard:Z
 
     return v0
@@ -1238,7 +1238,7 @@
     .registers 2
 
     .prologue
-    .line 399
+    .line 400
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasMaxApkDownloadSizeMb:Z
 
     return v0
@@ -1248,7 +1248,7 @@
     .registers 2
 
     .prologue
-    .line 80
+    .line 81
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasNavigation:Z
 
     return v0
@@ -1258,7 +1258,7 @@
     .registers 2
 
     .prologue
-    .line 149
+    .line 150
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasScreenDensity:Z
 
     return v0
@@ -1268,7 +1268,7 @@
     .registers 2
 
     .prologue
-    .line 183
+    .line 184
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasScreenHeight:Z
 
     return v0
@@ -1278,7 +1278,7 @@
     .registers 2
 
     .prologue
-    .line 97
+    .line 98
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasScreenLayout:Z
 
     return v0
@@ -1288,7 +1288,7 @@
     .registers 2
 
     .prologue
-    .line 166
+    .line 167
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasScreenWidth:Z
 
     return v0
@@ -1298,7 +1298,7 @@
     .registers 2
 
     .prologue
-    .line 46
+    .line 47
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasTouchScreen:Z
 
     return v0
@@ -1314,29 +1314,29 @@
     .end annotation
 
     .prologue
-    .line 612
+    .line 617
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 613
+    .line 618
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_9a
 
-    .line 617
+    .line 622
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 618
+    .line 623
     :sswitch_d
     return-object p0
 
-    .line 623
+    .line 628
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -1346,7 +1346,7 @@
 
     goto :goto_0
 
-    .line 627
+    .line 632
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -1356,7 +1356,7 @@
 
     goto :goto_0
 
-    .line 631
+    .line 636
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -1366,7 +1366,7 @@
 
     goto :goto_0
 
-    .line 635
+    .line 640
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -1376,7 +1376,7 @@
 
     goto :goto_0
 
-    .line 639
+    .line 644
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -1386,7 +1386,7 @@
 
     goto :goto_0
 
-    .line 643
+    .line 648
     :sswitch_36
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -1396,7 +1396,7 @@
 
     goto :goto_0
 
-    .line 647
+    .line 652
     :sswitch_3e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -1406,7 +1406,7 @@
 
     goto :goto_0
 
-    .line 651
+    .line 656
     :sswitch_46
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -1416,7 +1416,7 @@
 
     goto :goto_0
 
-    .line 655
+    .line 660
     :sswitch_4e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1426,7 +1426,7 @@
 
     goto :goto_0
 
-    .line 659
+    .line 664
     :sswitch_56
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1436,7 +1436,7 @@
 
     goto :goto_0
 
-    .line 663
+    .line 668
     :sswitch_5e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1446,7 +1446,7 @@
 
     goto :goto_0
 
-    .line 667
+    .line 672
     :sswitch_66
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -1456,7 +1456,7 @@
 
     goto :goto_0
 
-    .line 671
+    .line 676
     :sswitch_6e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -1466,7 +1466,7 @@
 
     goto :goto_0
 
-    .line 675
+    .line 680
     :sswitch_76
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1476,7 +1476,7 @@
 
     goto :goto_0
 
-    .line 679
+    .line 684
     :sswitch_7e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1486,7 +1486,7 @@
 
     goto/16 :goto_0
 
-    .line 683
+    .line 688
     :sswitch_87
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -1496,7 +1496,7 @@
 
     goto/16 :goto_0
 
-    .line 687
+    .line 692
     :sswitch_90
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -1506,7 +1506,7 @@
 
     goto/16 :goto_0
 
-    .line 613
+    .line 618
     nop
 
     :sswitch_data_9a
@@ -1555,15 +1555,15 @@
     .parameter "value"
 
     .prologue
-    .line 384
+    .line 385
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasDeviceClass:Z
 
-    .line 385
+    .line 386
     iput p1, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->deviceClass_:I
 
-    .line 386
+    .line 387
     return-object p0
 .end method
 
@@ -1572,15 +1572,15 @@
     .parameter "value"
 
     .prologue
-    .line 202
+    .line 203
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasGlEsVersion:Z
 
-    .line 203
+    .line 204
     iput p1, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->glEsVersion_:I
 
-    .line 204
+    .line 205
     return-object p0
 .end method
 
@@ -1589,15 +1589,15 @@
     .parameter "value"
 
     .prologue
-    .line 134
+    .line 135
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasHasFiveWayNavigation:Z
 
-    .line 135
+    .line 136
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasFiveWayNavigation_:Z
 
-    .line 136
+    .line 137
     return-object p0
 .end method
 
@@ -1606,15 +1606,15 @@
     .parameter "value"
 
     .prologue
-    .line 117
+    .line 118
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasHasHardKeyboard:Z
 
-    .line 118
+    .line 119
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasHardKeyboard_:Z
 
-    .line 119
+    .line 120
     return-object p0
 .end method
 
@@ -1623,15 +1623,15 @@
     .parameter "value"
 
     .prologue
-    .line 66
+    .line 67
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasKeyboard:Z
 
-    .line 67
+    .line 68
     iput p1, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->keyboard_:I
 
-    .line 68
+    .line 69
     return-object p0
 .end method
 
@@ -1640,15 +1640,15 @@
     .parameter "value"
 
     .prologue
-    .line 401
+    .line 402
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasMaxApkDownloadSizeMb:Z
 
-    .line 402
+    .line 403
     iput p1, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->maxApkDownloadSizeMb_:I
 
-    .line 403
+    .line 404
     return-object p0
 .end method
 
@@ -1657,15 +1657,15 @@
     .parameter "value"
 
     .prologue
-    .line 83
+    .line 84
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasNavigation:Z
 
-    .line 84
+    .line 85
     iput p1, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->navigation_:I
 
-    .line 85
+    .line 86
     return-object p0
 .end method
 
@@ -1674,15 +1674,15 @@
     .parameter "value"
 
     .prologue
-    .line 151
+    .line 152
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasScreenDensity:Z
 
-    .line 152
+    .line 153
     iput p1, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->screenDensity_:I
 
-    .line 153
+    .line 154
     return-object p0
 .end method
 
@@ -1691,15 +1691,15 @@
     .parameter "value"
 
     .prologue
-    .line 185
+    .line 186
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasScreenHeight:Z
 
-    .line 186
+    .line 187
     iput p1, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->screenHeight_:I
 
-    .line 187
+    .line 188
     return-object p0
 .end method
 
@@ -1708,15 +1708,15 @@
     .parameter "value"
 
     .prologue
-    .line 100
+    .line 101
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasScreenLayout:Z
 
-    .line 101
+    .line 102
     iput p1, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->screenLayout_:I
 
-    .line 102
+    .line 103
     return-object p0
 .end method
 
@@ -1725,15 +1725,15 @@
     .parameter "value"
 
     .prologue
-    .line 168
+    .line 169
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasScreenWidth:Z
 
-    .line 169
+    .line 170
     iput p1, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->screenWidth_:I
 
-    .line 170
+    .line 171
     return-object p0
 .end method
 
@@ -1742,15 +1742,15 @@
     .parameter "value"
 
     .prologue
-    .line 49
+    .line 50
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasTouchScreen:Z
 
-    .line 50
+    .line 51
     iput p1, p0, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->touchScreen_:I
 
-    .line 51
+    .line 52
     return-object p0
 .end method
 
@@ -1764,14 +1764,14 @@
     .end annotation
 
     .prologue
-    .line 447
+    .line 449
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasTouchScreen()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 448
+    .line 450
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getTouchScreen()I
@@ -1780,7 +1780,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 450
+    .line 452
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasKeyboard()Z
 
@@ -1788,7 +1788,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 451
+    .line 453
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getKeyboard()I
@@ -1797,7 +1797,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 453
+    .line 455
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasNavigation()Z
 
@@ -1805,7 +1805,7 @@
 
     if-eqz v2, :cond_2a
 
-    .line 454
+    .line 456
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getNavigation()I
@@ -1814,7 +1814,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 456
+    .line 458
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasScreenLayout()Z
 
@@ -1822,7 +1822,7 @@
 
     if-eqz v2, :cond_38
 
-    .line 457
+    .line 459
     const/4 v2, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getScreenLayout()I
@@ -1831,7 +1831,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 459
+    .line 461
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasHasHardKeyboard()Z
 
@@ -1839,7 +1839,7 @@
 
     if-eqz v2, :cond_46
 
-    .line 460
+    .line 462
     const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getHasHardKeyboard()Z
@@ -1848,7 +1848,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 462
+    .line 464
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasHasFiveWayNavigation()Z
 
@@ -1856,7 +1856,7 @@
 
     if-eqz v2, :cond_54
 
-    .line 463
+    .line 465
     const/4 v2, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getHasFiveWayNavigation()Z
@@ -1865,7 +1865,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 465
+    .line 467
     :cond_54
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasScreenDensity()Z
 
@@ -1873,7 +1873,7 @@
 
     if-eqz v2, :cond_62
 
-    .line 466
+    .line 468
     const/4 v2, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getScreenDensity()I
@@ -1882,7 +1882,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 468
+    .line 470
     :cond_62
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasGlEsVersion()Z
 
@@ -1890,7 +1890,7 @@
 
     if-eqz v2, :cond_71
 
-    .line 469
+    .line 471
     const/16 v2, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getGlEsVersion()I
@@ -1899,7 +1899,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 471
+    .line 473
     :cond_71
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getSystemSharedLibraryList()Ljava/util/List;
 
@@ -1923,7 +1923,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 472
+    .line 474
     .local v0, element:Ljava/lang/String;
     const/16 v2, 0x9
 
@@ -1931,7 +1931,7 @@
 
     goto :goto_79
 
-    .line 474
+    .line 476
     .end local v0           #element:Ljava/lang/String;
     :cond_8b
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getSystemAvailableFeatureList()Ljava/util/List;
@@ -1955,7 +1955,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 475
+    .line 477
     .restart local v0       #element:Ljava/lang/String;
     const/16 v2, 0xa
 
@@ -1963,7 +1963,7 @@
 
     goto :goto_93
 
-    .line 477
+    .line 479
     .end local v0           #element:Ljava/lang/String;
     :cond_a5
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getNativePlatformList()Ljava/util/List;
@@ -1987,7 +1987,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 478
+    .line 480
     .restart local v0       #element:Ljava/lang/String;
     const/16 v2, 0xb
 
@@ -1995,7 +1995,7 @@
 
     goto :goto_ad
 
-    .line 480
+    .line 482
     .end local v0           #element:Ljava/lang/String;
     :cond_bf
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasScreenWidth()Z
@@ -2004,7 +2004,7 @@
 
     if-eqz v2, :cond_ce
 
-    .line 481
+    .line 483
     const/16 v2, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getScreenWidth()I
@@ -2013,7 +2013,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 483
+    .line 485
     :cond_ce
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasScreenHeight()Z
 
@@ -2021,7 +2021,7 @@
 
     if-eqz v2, :cond_dd
 
-    .line 484
+    .line 486
     const/16 v2, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getScreenHeight()I
@@ -2030,7 +2030,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 486
+    .line 488
     :cond_dd
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getSystemSupportedLocaleList()Ljava/util/List;
 
@@ -2053,7 +2053,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 487
+    .line 489
     .restart local v0       #element:Ljava/lang/String;
     const/16 v2, 0xe
 
@@ -2061,7 +2061,7 @@
 
     goto :goto_e5
 
-    .line 489
+    .line 491
     .end local v0           #element:Ljava/lang/String;
     :cond_f7
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getGlExtensionList()Ljava/util/List;
@@ -2085,7 +2085,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 490
+    .line 492
     .restart local v0       #element:Ljava/lang/String;
     const/16 v2, 0xf
 
@@ -2093,7 +2093,7 @@
 
     goto :goto_ff
 
-    .line 492
+    .line 494
     .end local v0           #element:Ljava/lang/String;
     :cond_111
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasDeviceClass()Z
@@ -2102,7 +2102,7 @@
 
     if-eqz v2, :cond_120
 
-    .line 493
+    .line 495
     const/16 v2, 0x10
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getDeviceClass()I
@@ -2111,7 +2111,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 495
+    .line 497
     :cond_120
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->hasMaxApkDownloadSizeMb()Z
 
@@ -2119,7 +2119,7 @@
 
     if-eqz v2, :cond_12f
 
-    .line 496
+    .line 498
     const/16 v2, 0x11
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;->getMaxApkDownloadSizeMb()I
@@ -2128,7 +2128,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 498
+    .line 500
     :cond_12f
     return-void
 .end method

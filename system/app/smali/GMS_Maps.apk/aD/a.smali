@@ -1,837 +1,574 @@
 .class public LaD/a;
-.super Lat/a;
-
-
-# instance fields
-.field private final a:LaD/i;
-
-.field private final b:Lam/b;
-
-.field private c:Lam/b;
-
-.field private d:Lcom/google/googlenav/a;
-
-.field private e:LaD/n;
-
-.field private f:LaD/c;
+.super LaD/g;
+.source "SourceFile"
 
 
 # direct methods
-.method public constructor <init>(LaD/i;)V
-    .registers 5
+.method public constructor <init>(Lcom/google/googlenav/android/F;Lr/aP;Landroid/net/wifi/WifiManager$WifiLock;Lcom/google/googlenav/prefetch/android/BasePrefetcherService;Lcom/google/googlenav/prefetch/android/j;)V
+    .registers 13
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Lat/a;-><init>()V
+    .prologue
+    .line 28
+    const/4 v6, 0x0
 
-    new-instance v0, Lam/b;
+    move-object v0, p0
 
-    sget-object v1, LbD/dB;->b:Lam/e;
+    move-object v1, p1
 
-    invoke-direct {v0, v1}, Lam/b;-><init>(Lam/e;)V
+    move-object v2, p2
 
-    iput-object v0, p0, LaD/a;->b:Lam/b;
+    move-object v3, p3
 
-    iget-object v0, p0, LaD/a;->b:Lam/b;
+    move-object v4, p4
 
-    const/16 v1, 0x9
+    move-object v5, p5
 
-    sget v2, Lcom/google/googlenav/ui/bw;->bG:I
+    invoke-direct/range {v0 .. v6}, LaD/g;-><init>(Lcom/google/googlenav/android/F;Lr/aP;Landroid/net/wifi/WifiManager$WifiLock;Lcom/google/googlenav/prefetch/android/BasePrefetcherService;Lcom/google/googlenav/prefetch/android/j;LaD/d;)V
 
-    invoke-virtual {v0, v1, v2}, Lam/b;->h(II)V
-
-    iput-object p1, p0, LaD/a;->a:LaD/i;
-
+    .line 29
     return-void
 .end method
 
-.method private a(Lam/b;LaD/h;)I
-    .registers 5
-
-    sget-object v0, LaD/b;->a:[I
-
-    invoke-virtual {p2}, LaD/h;->ordinal()I
-
-    move-result v1
-
-    aget v0, v0, v1
-
-    packed-switch v0, :pswitch_data_20
-
-    const/4 v0, 0x0
-
-    :goto_c
-    return v0
-
-    :pswitch_d
-    const/4 v0, 0x5
-
-    invoke-static {p1, v0}, Lam/g;->e(Lam/b;I)I
-
-    move-result v0
-
-    goto :goto_c
-
-    :pswitch_13
-    const/4 v0, 0x4
-
-    invoke-static {p1, v0}, Lam/g;->e(Lam/b;I)I
-
-    move-result v0
-
-    goto :goto_c
-
-    :pswitch_19
-    const/4 v0, 0x6
-
-    invoke-static {p1, v0}, Lam/g;->e(Lam/b;I)I
-
-    move-result v0
-
-    goto :goto_c
-
-    nop
-
-    :pswitch_data_20
-    .packed-switch 0x1
-        :pswitch_d
-        :pswitch_13
-        :pswitch_19
-    .end packed-switch
-.end method
-
-.method private a([Lam/b;LaD/h;I)Ljava/util/List;
-    .registers 12
-
-    invoke-static {}, LK/bR;->a()Ljava/util/ArrayList;
-
-    move-result-object v1
-
-    const/4 v0, 0x0
-
-    :goto_5
-    array-length v2, p1
-
-    if-ge v0, v2, :cond_41
-
-    aget-object v2, p1, v0
-
-    const/4 v3, 0x2
-
-    const/4 v4, -0x1
-
-    invoke-static {v2, v3, v4}, Lam/g;->c(Lam/b;II)I
-
-    move-result v3
-
-    if-gez v3, :cond_15
-
-    :cond_12
-    :goto_12
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_5
-
-    :cond_15
-    const/4 v4, 0x1
-
-    invoke-static {v2, v4}, Lam/g;->f(Lam/b;I)J
-
-    move-result-wide v4
-
-    const-wide/16 v6, 0x0
-
-    cmp-long v6, v4, v6
-
-    if-eqz v6, :cond_12
-
-    iget-object v6, p0, LaD/a;->a:LaD/i;
-
-    invoke-virtual {v6, v4, v5}, LaD/i;->a(J)LaD/m;
-
-    move-result-object v4
-
-    if-eqz v4, :cond_12
-
-    invoke-virtual {v4}, LaD/m;->b()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5}, Las/b;->b(Ljava/lang/String;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_12
-
-    invoke-direct {p0, v2, p2}, LaD/a;->a(Lam/b;LaD/h;)I
-
-    move-result v2
-
-    new-instance v5, LaD/f;
-
-    add-int v6, p3, v0
-
-    invoke-direct {v5, v6, v3, v2, v4}, LaD/f;-><init>(IIILaD/m;)V
-
-    invoke-interface {v1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_12
-
-    :cond_41
-    return-object v1
-.end method
-
-.method private k()I
-    .registers 4
-
-    iget-object v0, p0, LaD/a;->c:Lam/b;
-
-    if-eqz v0, :cond_d
-
-    iget-object v0, p0, LaD/a;->c:Lam/b;
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x2
-
-    invoke-static {v0, v1, v2}, Lam/g;->c(Lam/b;II)I
-
-    move-result v0
-
-    :goto_c
-    return v0
-
-    :cond_d
-    const/4 v0, -0x1
-
-    goto :goto_c
-.end method
-
-.method private l()V
-    .registers 9
-
-    const-wide/16 v6, 0x3e8
-
-    const/4 v5, 0x0
-
-    invoke-direct {p0}, LaD/a;->m()Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_b
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1d
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, LaD/m;
-
-    iget-object v3, p0, LaD/a;->a:LaD/i;
-
-    invoke-virtual {v3, v0}, LaD/i;->a(LaD/m;)V
-
-    goto :goto_b
-
-    :cond_1d
-    iget-object v0, p0, LaD/a;->c:Lam/b;
-
-    const/4 v1, 0x3
-
-    invoke-static {v0, v1}, Lam/g;->d(Lam/b;I)[Lam/b;
-
-    move-result-object v0
-
-    iget-object v1, p0, LaD/a;->c:Lam/b;
-
-    const/4 v3, 0x2
-
-    invoke-static {v1, v3}, Lam/g;->d(Lam/b;I)[Lam/b;
-
-    move-result-object v3
-
-    invoke-direct {p0}, LaD/a;->n()LaD/h;
-
-    move-result-object v1
-
-    invoke-static {v1}, LaD/d;->a(LaD/h;)LaD/d;
-
-    move-result-object v4
-
-    invoke-direct {p0, v0, v1, v5}, LaD/a;->a([Lam/b;LaD/h;I)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-virtual {v4, v0}, LaD/d;->a(Ljava/util/List;)V
-
-    invoke-static {v1}, LaD/d;->a(LaD/h;)LaD/d;
-
-    move-result-object v0
-
-    invoke-direct {p0, v3, v1, v5}, LaD/a;->a([Lam/b;LaD/h;I)Ljava/util/List;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, LaD/d;->a(Ljava/util/List;)V
-
-    iget-object v3, p0, LaD/a;->e:LaD/n;
-
-    invoke-direct {p0}, LaD/a;->n()LaD/h;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v5}, LaD/n;->a(LaD/h;)V
-
-    iget-object v3, p0, LaD/a;->e:LaD/n;
-
-    invoke-virtual {v3, v4}, LaD/n;->a(LaD/d;)V
-
-    iget-object v3, p0, LaD/a;->e:LaD/n;
-
-    invoke-virtual {v3, v0}, LaD/n;->b(LaD/d;)V
-
-    iget-object v0, p0, LaD/a;->e:LaD/n;
-
-    invoke-virtual {v0, v2}, LaD/n;->a(Ljava/util/List;)V
-
-    iget-object v0, p0, LaD/a;->c:Lam/b;
-
-    const/4 v2, 0x6
-
-    invoke-static {v0, v2}, Lam/g;->f(Lam/b;I)J
-
-    move-result-wide v2
-
-    iget-object v0, p0, LaD/a;->c:Lam/b;
-
-    const/4 v4, 0x7
-
-    invoke-static {v0, v4}, Lam/g;->f(Lam/b;I)J
-
-    move-result-wide v4
-
-    iget-object v0, p0, LaD/a;->e:LaD/n;
-
-    div-long/2addr v2, v6
-
-    div-long/2addr v4, v6
-
-    invoke-virtual/range {v0 .. v5}, LaD/n;->a(LaD/h;JJ)V
-
-    return-void
-.end method
-
-.method private m()Ljava/util/List;
-    .registers 15
-
-    iget-object v0, p0, LaD/a;->c:Lam/b;
-
-    const/4 v1, 0x5
-
-    invoke-static {v0, v1}, Lam/g;->d(Lam/b;I)[Lam/b;
-
-    move-result-object v2
-
-    iget-object v0, p0, LaD/a;->c:Lam/b;
-
-    const/4 v1, 0x6
-
-    invoke-static {v0, v1}, Lam/g;->f(Lam/b;I)J
-
-    move-result-wide v3
-
-    iget-object v0, p0, LaD/a;->c:Lam/b;
-
-    const/16 v1, 0x8
-
-    invoke-static {v0, v1}, Lam/g;->f(Lam/b;I)J
-
-    move-result-wide v5
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, v5, v0
-
-    if-nez v0, :cond_1c
-
-    :cond_1c
-    invoke-static {}, LK/bR;->a()Ljava/util/ArrayList;
-
-    move-result-object v7
-
-    array-length v8, v2
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_23
-    if-ge v1, v8, :cond_45
-
-    aget-object v9, v2, v1
-
-    const/4 v0, 0x1
-
-    invoke-static {v9, v0}, Lam/g;->f(Lam/b;I)J
-
-    move-result-wide v10
-
-    const-wide/16 v12, 0x0
-
-    cmp-long v0, v5, v12
-
-    if-eqz v0, :cond_43
-
-    cmp-long v0, v5, v10
-
-    if-nez v0, :cond_43
-
-    const/4 v0, 0x1
-
-    :goto_37
-    new-instance v10, LaD/m;
-
-    invoke-direct {v10, v9, v0, v3, v4}, LaD/m;-><init>(Lam/b;ZJ)V
-
-    invoke-interface {v7, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_23
-
-    :cond_43
-    const/4 v0, 0x0
-
-    goto :goto_37
-
-    :cond_45
-    return-object v7
-.end method
-
-.method private n()LaD/h;
+.method private h()Z
     .registers 3
 
-    iget-object v0, p0, LaD/a;->b:Lam/b;
+    .prologue
+    .line 146
+    iget-object v0, p0, LaD/a;->a:Lcom/google/googlenav/android/F;
 
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Lam/b;->d(I)I
+    invoke-virtual {v0}, Lcom/google/googlenav/android/F;->b()I
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_18
+    const/16 v1, 0x3c
 
-    sget-object v0, LaD/h;->b:LaD/h;
+    if-lt v0, v1, :cond_c
 
-    :goto_d
-    return-object v0
+    const/4 v0, 0x1
 
-    :pswitch_e
-    sget-object v0, LaD/h;->a:LaD/h;
+    :goto_b
+    return v0
 
-    goto :goto_d
+    :cond_c
+    const/4 v0, 0x0
 
-    :pswitch_11
-    sget-object v0, LaD/h;->b:LaD/h;
+    goto :goto_b
+.end method
 
-    goto :goto_d
+.method private i()Z
+    .registers 3
 
-    :pswitch_14
-    sget-object v0, LaD/h;->c:LaD/h;
+    .prologue
+    .line 155
+    iget-object v0, p0, LaD/a;->a:Lcom/google/googlenav/android/F;
 
-    goto :goto_d
+    invoke-virtual {v0}, Lcom/google/googlenav/android/F;->b()I
 
-    nop
+    move-result v0
 
-    :pswitch_data_18
-    .packed-switch 0x0
-        :pswitch_11
-        :pswitch_e
-        :pswitch_14
-    .end packed-switch
+    const/16 v1, 0x35
+
+    if-lt v0, v1, :cond_c
+
+    const/4 v0, 0x1
+
+    :goto_b
+    return v0
+
+    :cond_c
+    const/4 v0, 0x0
+
+    goto :goto_b
+.end method
+
+.method private j()Z
+    .registers 2
+
+    .prologue
+    .line 159
+    invoke-static {}, Lcom/google/googlenav/K;->a()Lcom/google/googlenav/K;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/K;->av()Z
+
+    move-result v0
+
+    if-nez v0, :cond_c
+
+    const/4 v0, 0x1
+
+    :goto_b
+    return v0
+
+    :cond_c
+    const/4 v0, 0x0
+
+    goto :goto_b
 .end method
 
 
 # virtual methods
-.method public a()I
-    .registers 2
+.method public a()Z
+    .registers 8
 
-    const/16 v0, 0x7c
-
-    return v0
-.end method
-
-.method public a(I)LaD/a;
-    .registers 5
-
-    iget-object v0, p0, LaD/a;->b:Lam/b;
-
-    const/4 v1, 0x4
+    .prologue
+    const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Lam/b;->h(II)V
+    .line 36
+    iget-object v0, p0, LaD/a;->d:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
 
-    iget-object v0, p0, LaD/a;->b:Lam/b;
-
-    const/4 v1, 0x6
-
-    invoke-virtual {v0, v1, p1}, Lam/b;->h(II)V
-
-    return-object p0
-.end method
-
-.method public a(II)LaD/a;
-    .registers 6
-
-    iget-object v0, p0, LaD/a;->b:Lam/b;
-
-    const/4 v1, 0x4
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Lam/b;->h(II)V
-
-    iget-object v0, p0, LaD/a;->b:Lam/b;
-
-    const/4 v1, 0x5
-
-    invoke-virtual {v0, v1, p1}, Lam/b;->h(II)V
-
-    iget-object v0, p0, LaD/a;->b:Lam/b;
-
-    const/4 v1, 0x6
-
-    invoke-virtual {v0, v1, p2}, Lam/b;->h(II)V
-
-    return-object p0
-.end method
-
-.method public a(LaD/c;)LaD/a;
-    .registers 2
-
-    iput-object p1, p0, LaD/a;->f:LaD/c;
-
-    return-object p0
-.end method
-
-.method public a(LaD/h;)LaD/a;
-    .registers 5
-
-    sget-object v0, LaD/b;->a:[I
-
-    invoke-virtual {p1}, LaD/h;->ordinal()I
-
-    move-result v1
-
-    aget v0, v0, v1
-
-    packed-switch v0, :pswitch_data_1a
-
-    :goto_b
-    return-object p0
-
-    :pswitch_c
-    const/4 v0, 0x1
-
-    :goto_d
-    iget-object v1, p0, LaD/a;->b:Lam/b;
-
-    const/16 v2, 0x8
-
-    invoke-virtual {v1, v2, v0}, Lam/b;->h(II)V
-
-    goto :goto_b
-
-    :pswitch_15
-    const/4 v0, 0x0
-
-    goto :goto_d
-
-    :pswitch_17
-    const/4 v0, 0x2
-
-    goto :goto_d
-
-    nop
-
-    :pswitch_data_1a
-    .packed-switch 0x1
-        :pswitch_c
-        :pswitch_15
-        :pswitch_17
-    .end packed-switch
-.end method
-
-.method public a(Lcom/google/googlenav/a;)LaD/a;
-    .registers 10
-
-    const/4 v7, 0x3
-
-    const/4 v6, 0x2
-
-    const/4 v5, 0x1
-
-    invoke-virtual {p1}, Lcom/google/googlenav/a;->c()Z
+    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->i()Z
 
     move-result v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_63
 
-    :goto_9
-    return-object p0
+    move v0, v1
 
-    :cond_a
-    iput-object p1, p0, LaD/a;->d:Lcom/google/googlenav/a;
-
-    new-instance v0, Lam/b;
-
-    sget-object v1, LbD/dB;->a:Lam/e;
-
-    invoke-direct {v0, v1}, Lam/b;-><init>(Lam/e;)V
-
-    invoke-virtual {p1}, Lcom/google/googlenav/a;->b()J
-
-    move-result-wide v1
-
-    const-wide/16 v3, 0x3e8
-
-    mul-long/2addr v1, v3
-
-    invoke-virtual {v0, v5, v1, v2}, Lam/b;->b(IJ)V
-
-    invoke-virtual {p1}, Lcom/google/googlenav/a;->d()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v6, v1}, Lam/b;->b(ILjava/lang/String;)V
-
-    invoke-virtual {p1}, Lcom/google/googlenav/a;->g()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_36
-
-    :try_start_2a
-    invoke-virtual {p1}, Lcom/google/googlenav/a;->h()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/google/googlenav/ax;->a(Ljava/lang/String;)J
-
-    move-result-wide v1
-
-    const/4 v3, 0x3
-
-    invoke-virtual {v0, v3, v1, v2}, Lam/b;->b(IJ)V
-    :try_end_36
-    .catch Ljava/lang/NumberFormatException; {:try_start_2a .. :try_end_36} :catch_60
-
-    :cond_36
-    :goto_36
-    invoke-virtual {p1}, Lcom/google/googlenav/a;->f()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5a
-
-    invoke-virtual {p1}, Lcom/google/googlenav/a;->a()Lam/b;
-
-    move-result-object v1
-
-    invoke-static {v1, v7}, Lam/g;->a(Lam/b;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Las/b;->b(Ljava/lang/String;)Z
+    .line 37
+    :goto_b
+    invoke-direct {p0}, LaD/a;->h()Z
 
     move-result v3
 
-    if-nez v3, :cond_4e
+    .line 38
+    iget-object v4, p0, LaD/a;->b:Lr/aP;
 
-    const/4 v3, 0x4
+    invoke-virtual {v4}, Lr/aP;->e()Z
 
-    invoke-virtual {v0, v3, v2}, Lam/b;->b(ILjava/lang/String;)V
+    move-result v4
 
-    :cond_4e
-    const/16 v2, 0x18
+    .line 39
+    iget-object v5, p0, LaD/a;->a:Lcom/google/googlenav/android/F;
 
-    invoke-static {v1, v2}, Lam/g;->h(Lam/b;I)Z
+    invoke-virtual {v5}, Lcom/google/googlenav/android/F;->d()Z
 
-    move-result v1
+    move-result v5
 
-    if-eqz v1, :cond_5a
+    .line 41
+    iget-object v6, p0, LaD/a;->d:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
 
-    const/4 v1, 0x5
+    invoke-virtual {v6}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->k()Z
 
-    invoke-virtual {v0, v1, v5}, Lam/b;->a(II)V
+    move-result v6
 
-    :cond_5a
-    iget-object v1, p0, LaD/a;->b:Lam/b;
+    .line 42
+    if-eqz v0, :cond_29
 
-    invoke-virtual {v1, v6, v0}, Lam/b;->a(ILam/b;)V
+    if-eqz v3, :cond_29
 
-    goto :goto_9
+    if-eqz v4, :cond_29
 
-    :catch_60
-    move-exception v1
+    if-nez v5, :cond_71
 
-    goto :goto_36
-.end method
+    .line 46
+    :cond_29
+    if-eqz v6, :cond_62
 
-.method public a(Ljava/io/DataOutput;)V
-    .registers 3
+    .line 47
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, LaD/a;->b:Lam/b;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    check-cast p1, Ljava/io/OutputStream;
+    if-nez v0, :cond_65
 
-    invoke-virtual {v0, p1}, Lam/b;->a(Ljava/io/OutputStream;)V
+    const-string v0, "r"
 
-    return-void
-.end method
+    :goto_34
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public a(Ljava/io/DataInput;)Z
-    .registers 4
+    move-result-object v1
 
-    sget-object v0, LbD/dB;->c:Lam/e;
+    if-nez v3, :cond_68
 
-    invoke-static {v0, p1}, Lam/g;->a(Lam/e;Ljava/io/DataInput;)Lam/b;
+    const-string v0, "b"
+
+    :goto_3c
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    if-nez v4, :cond_6b
+
+    const-string v0, "c"
+
+    :goto_44
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    if-nez v5, :cond_6e
+
+    const-string v0, "d"
+
+    :goto_4c
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    iput-object v0, p0, LaD/a;->c:Lam/b;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-direct {p0}, LaD/a;->k()I
+    move-result-object v0
+
+    .line 52
+    iget-object v1, p0, LaD/a;->d:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+
+    iget-object v3, p0, LaD/a;->e:Lcom/google/googlenav/prefetch/android/j;
+
+    const-string v4, "n"
+
+    invoke-virtual {v1, v3, v4, v0}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->a(Lcom/google/googlenav/prefetch/android/j;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 59
+    iget-object v0, p0, LaD/a;->d:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->j()V
+
+    .line 106
+    :cond_62
+    :goto_62
+    return v2
+
+    :cond_63
+    move v0, v2
+
+    .line 36
+    goto :goto_b
+
+    .line 47
+    :cond_65
+    const-string v0, ""
+
+    goto :goto_34
+
+    :cond_68
+    const-string v0, ""
+
+    goto :goto_3c
+
+    :cond_6b
+    const-string v0, ""
+
+    goto :goto_44
+
+    :cond_6e
+    const-string v0, ""
+
+    goto :goto_4c
+
+    .line 67
+    :cond_71
+    invoke-direct {p0}, LaD/a;->j()Z
 
     move-result v0
 
-    if-nez v0, :cond_27
+    if-eqz v0, :cond_c3
 
-    new-instance v0, LaD/n;
+    .line 68
+    iget-object v0, p0, LaD/a;->a:Lcom/google/googlenav/android/F;
 
-    iget-object v1, p0, LaD/a;->d:Lcom/google/googlenav/a;
+    invoke-virtual {v0}, Lcom/google/googlenav/android/F;->c()Z
 
-    invoke-direct {v0, v1}, LaD/n;-><init>(Lcom/google/googlenav/a;)V
+    move-result v0
 
-    iput-object v0, p0, LaD/a;->e:LaD/n;
+    .line 69
+    if-nez v0, :cond_90
 
-    invoke-direct {p0}, LaD/a;->l()V
+    .line 71
+    iget-object v0, p0, LaD/a;->d:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
 
-    iget-object v0, p0, LaD/a;->f:LaD/c;
+    iget-object v1, p0, LaD/a;->e:Lcom/google/googlenav/prefetch/android/j;
 
-    if-eqz v0, :cond_25
+    const-string v3, "n"
 
-    iget-object v0, p0, LaD/a;->f:LaD/c;
+    const-string v4, "e"
 
-    iget-object v1, p0, LaD/a;->e:LaD/n;
+    invoke-virtual {v0, v1, v3, v4}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->a(Lcom/google/googlenav/prefetch/android/j;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-interface {v0, v1}, LaD/c;->a(LaD/n;)V
+    .line 73
+    iget-object v0, p0, LaD/a;->d:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
 
-    :cond_25
-    :goto_25
-    const/4 v0, 0x1
+    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->j()V
 
-    return v0
+    goto :goto_62
 
-    :cond_27
-    new-instance v0, LaD/n;
+    .line 77
+    :cond_90
+    iget-object v0, p0, LaD/a;->c:Landroid/net/wifi/WifiManager$WifiLock;
 
-    iget-object v1, p0, LaD/a;->d:Lcom/google/googlenav/a;
+    invoke-virtual {v0}, Landroid/net/wifi/WifiManager$WifiLock;->acquire()V
 
-    invoke-direct {v0, v1}, LaD/n;-><init>(Lcom/google/googlenav/a;)V
+    move v0, v2
 
-    iput-object v0, p0, LaD/a;->e:LaD/n;
+    .line 79
+    :goto_96
+    int-to-long v3, v0
 
-    goto :goto_25
+    sget-wide v5, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->a:J
+
+    cmp-long v3, v3, v5
+
+    if-gez v3, :cond_ad
+
+    .line 80
+    invoke-static {}, Lcom/google/googlenav/android/F;->e()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_a5
+
+    move v2, v1
+
+    .line 81
+    goto :goto_62
+
+    .line 84
+    :cond_a5
+    const-wide/16 v3, 0x7d0
+
+    :try_start_a7
+    invoke-static {v3, v4}, Ljava/lang/Thread;->sleep(J)V
+    :try_end_aa
+    .catch Ljava/lang/InterruptedException; {:try_start_a7 .. :try_end_aa} :catch_dc
+
+    .line 79
+    :goto_aa
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_96
+
+    .line 90
+    :cond_ad
+    iget-object v0, p0, LaD/a;->d:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+
+    iget-object v1, p0, LaD/a;->e:Lcom/google/googlenav/prefetch/android/j;
+
+    const-string v3, "n"
+
+    const-string v4, "w"
+
+    invoke-virtual {v0, v1, v3, v4}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->a(Lcom/google/googlenav/prefetch/android/j;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 92
+    iget-object v0, p0, LaD/a;->d:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->j()V
+
+    .line 93
+    iget-object v0, p0, LaD/a;->c:Landroid/net/wifi/WifiManager$WifiLock;
+
+    invoke-virtual {v0}, Landroid/net/wifi/WifiManager$WifiLock;->release()V
+
+    goto :goto_62
+
+    .line 98
+    :cond_c3
+    invoke-static {}, Lcom/google/googlenav/android/F;->f()Z
+
+    move-result v0
+
+    if-nez v0, :cond_da
+
+    .line 100
+    iget-object v0, p0, LaD/a;->d:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+
+    iget-object v1, p0, LaD/a;->e:Lcom/google/googlenav/prefetch/android/j;
+
+    const-string v3, "n"
+
+    const-string v4, "n"
+
+    invoke-virtual {v0, v1, v3, v4}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->a(Lcom/google/googlenav/prefetch/android/j;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 102
+    iget-object v0, p0, LaD/a;->d:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->j()V
+
+    goto :goto_62
+
+    :cond_da
+    move v2, v1
+
+    .line 106
+    goto :goto_62
+
+    .line 85
+    :catch_dc
+    move-exception v3
+
+    goto :goto_aa
 .end method
 
-.method public b()V
-    .registers 3
+.method protected b()Z
+    .registers 9
 
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v0, p0, LaD/a;->f:LaD/c;
+    .prologue
+    const/4 v2, 0x1
 
     const/4 v1, 0x0
 
-    iput-object v1, p0, LaD/a;->f:LaD/c;
+    .line 111
+    iget-object v0, p0, LaD/a;->a:Lcom/google/googlenav/android/F;
 
-    monitor-exit p0
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_15
+    invoke-virtual {v0}, Lcom/google/googlenav/android/F;->a()Z
+
+    move-result v3
+
+    .line 112
+    invoke-direct {p0}, LaD/a;->j()Z
+
+    move-result v0
 
     if-eqz v0, :cond_14
 
-    invoke-direct {p0}, LaD/a;->k()I
+    invoke-static {}, Lcom/google/googlenav/android/F;->e()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_18
-
-    iget-object v1, p0, LaD/a;->e:LaD/n;
-
-    invoke-interface {v0, v1}, LaD/c;->b(LaD/n;)V
+    if-eqz v0, :cond_6b
 
     :cond_14
-    :goto_14
-    return-void
+    move v0, v2
 
-    :catchall_15
-    move-exception v0
+    .line 113
+    :goto_15
+    invoke-direct {p0}, LaD/a;->i()Z
 
-    :try_start_16
-    monitor-exit p0
-    :try_end_17
-    .catchall {:try_start_16 .. :try_end_17} :catchall_15
+    move-result v4
 
-    throw v0
+    .line 114
+    iget-object v5, p0, LaD/a;->b:Lr/aP;
 
-    :cond_18
-    invoke-interface {v0}, LaD/c;->a()V
+    invoke-virtual {v5}, Lr/aP;->e()Z
 
-    goto :goto_14
-.end method
+    move-result v5
 
-.method public j_()V
-    .registers 3
+    .line 115
+    iget-object v6, p0, LaD/a;->a:Lcom/google/googlenav/android/F;
 
-    monitor-enter p0
+    invoke-virtual {v6}, Lcom/google/googlenav/android/F;->d()Z
 
-    :try_start_1
-    iget-object v0, p0, LaD/a;->f:LaD/c;
+    move-result v6
 
-    const/4 v1, 0x0
+    .line 117
+    if-eqz v3, :cond_2f
 
-    iput-object v1, p0, LaD/a;->f:LaD/c;
+    if-eqz v0, :cond_2f
 
-    monitor-exit p0
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_d
+    if-eqz v4, :cond_2f
 
-    if-eqz v0, :cond_c
+    if-eqz v5, :cond_2f
 
-    invoke-interface {v0}, LaD/c;->a()V
+    if-nez v6, :cond_6a
 
-    :cond_c
-    return-void
+    .line 121
+    :cond_2f
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    :catchall_d
-    move-exception v0
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    :try_start_e
-    monitor-exit p0
-    :try_end_f
-    .catchall {:try_start_e .. :try_end_f} :catchall_d
+    if-nez v3, :cond_6d
 
-    throw v0
+    const-string v2, "p"
+
+    :goto_38
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    if-nez v0, :cond_70
+
+    const-string v0, "n"
+
+    :goto_40
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    if-nez v4, :cond_73
+
+    const-string v0, "d"
+
+    :goto_48
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    if-nez v5, :cond_76
+
+    const-string v0, "c"
+
+    :goto_50
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    if-nez v6, :cond_79
+
+    const-string v0, "b"
+
+    :goto_58
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 133
+    iget-object v2, p0, LaD/a;->d:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+
+    iget-object v3, p0, LaD/a;->e:Lcom/google/googlenav/prefetch/android/j;
+
+    const-string v4, "u"
+
+    invoke-virtual {v2, v3, v4, v0}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->a(Lcom/google/googlenav/prefetch/android/j;Ljava/lang/String;Ljava/lang/String;)V
+
+    move v2, v1
+
+    .line 138
+    :cond_6a
+    return v2
+
+    :cond_6b
+    move v0, v1
+
+    .line 112
+    goto :goto_15
+
+    .line 121
+    :cond_6d
+    const-string v2, ""
+
+    goto :goto_38
+
+    :cond_70
+    const-string v0, ""
+
+    goto :goto_40
+
+    :cond_73
+    const-string v0, ""
+
+    goto :goto_48
+
+    :cond_76
+    const-string v0, ""
+
+    goto :goto_50
+
+    :cond_79
+    const-string v0, ""
+
+    goto :goto_58
 .end method

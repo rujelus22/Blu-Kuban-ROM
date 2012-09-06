@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <integer name="portrait_popup_adjustment">95</integer>
-    <integer name="landscape_popup_adjustment_no_fullscreen">90</integer>
-</resources>

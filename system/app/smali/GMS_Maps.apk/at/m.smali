@@ -1,12 +1,14 @@
-.class Lat/m;
-.super Ljava/lang/Exception;
+.class public interface abstract Lat/m;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# direct methods
-.method constructor <init>(Ljava/lang/String;)V
-    .registers 2
+# virtual methods
+.method public abstract a(Ljava/lang/String;[Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+.end method
 
-    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+.method public abstract b()Lcom/google/googlenav/layer/m;
+.end method
 
-    return-void
+.method public abstract c()V
 .end method

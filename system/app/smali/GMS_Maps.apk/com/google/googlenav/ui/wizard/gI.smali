@@ -1,57 +1,65 @@
-.class Lcom/google/googlenav/ui/wizard/gI;
+.class public interface abstract Lcom/google/googlenav/ui/wizard/gi;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/gB;
-
-.field private final b:I
-
-
-# direct methods
-.method public constructor <init>(Lcom/google/googlenav/ui/wizard/gB;I)V
-    .registers 3
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/gI;->a:Lcom/google/googlenav/ui/wizard/gB;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p2, p0, Lcom/google/googlenav/ui/wizard/gI;->b:I
-
-    return-void
-.end method
+.source "SourceFile"
 
 
 # virtual methods
-.method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
-    .registers 7
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/gI;->a:Lcom/google/googlenav/ui/wizard/gB;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/gB;->a(Lcom/google/googlenav/ui/wizard/gB;)Landroid/media/AudioManager;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/google/googlenav/ui/wizard/gI;->b:I
-
-    const/16 v2, 0x14
-
-    invoke-virtual {v0, v1, p2, v2}, Landroid/media/AudioManager;->setStreamVolume(III)V
-
-    return-void
+.method public abstract U_()V
 .end method
 
-.method public onStartTrackingTouch(Landroid/widget/SeekBar;)V
-    .registers 2
-
-    return-void
+.method public abstract V_()V
 .end method
 
-.method public onStopTrackingTouch(Landroid/widget/SeekBar;)V
-    .registers 2
+.method public abstract W_()V
+.end method
 
-    return-void
+.method public abstract X_()V
+.end method
+
+.method public abstract Y_()V
+.end method
+
+.method public abstract Z_()V
+.end method
+
+.method public abstract a(LaC/o;)V
+.end method
+
+.method public abstract a(Lcom/google/googlenav/ai;)V
+.end method
+
+.method public abstract a(Lcom/google/googlenav/ui/wizard/F;)V
+.end method
+
+.method public abstract a(Ljava/lang/String;Ljava/lang/String;LaC/N;)V
+.end method
+
+.method public abstract aa_()V
+.end method
+
+.method public abstract ab_()Z
+.end method
+
+.method public abstract ac_()V
+.end method
+
+.method public abstract ad_()V
+.end method
+
+.method public abstract ae_()Z
+.end method
+
+.method public abstract b(Lcom/google/googlenav/ui/wizard/F;)V
+.end method
+
+.method public abstract i()V
+.end method
+
+.method public abstract l()V
+.end method
+
+.method public abstract q()V
+.end method
+
+.method public abstract w()Lcom/google/googlenav/actionbar/b;
 .end method

@@ -8,7 +8,7 @@
 
 .field private static final CUSTOMER_XML:Ljava/lang/String; = "others.xml"
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final DEBUG_TAG:Ljava/lang/String; = "InputMethodManagerService_CSC"
 

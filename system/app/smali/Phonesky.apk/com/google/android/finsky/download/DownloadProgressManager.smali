@@ -44,7 +44,7 @@
     .registers 1
 
     .prologue
-    .line 56
+    .line 58
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/android/finsky/download/DownloadProgressManager;->sDownloadProgressMap:Ljava/util/Map;
@@ -57,25 +57,25 @@
     .parameter "downloadQueue"
 
     .prologue
-    .line 60
+    .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
+    .line 55
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
 
-    .line 61
+    .line 63
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mContext:Landroid/content/Context;
 
-    .line 62
+    .line 64
     iput-object p1, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mDownloadQueueImpl:Lcom/google/android/finsky/download/DownloadQueueImpl;
 
-    .line 65
+    .line 67
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "Download progress manager runner"
@@ -84,12 +84,12 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mHandlerThread:Landroid/os/HandlerThread;
 
-    .line 66
+    .line 68
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 67
+    .line 69
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->getId()J
@@ -98,7 +98,7 @@
 
     iput-wide v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mHandlerThreadId:J
 
-    .line 68
+    .line 70
     new-instance v0, Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mHandlerThread:Landroid/os/HandlerThread;
@@ -111,7 +111,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mHandler:Landroid/os/Handler;
 
-    .line 70
+    .line 72
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/android/finsky/download/DownloadProgressManager$1;
@@ -120,7 +120,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 77
+    .line 79
     return-void
 .end method
 
@@ -129,7 +129,7 @@
     .parameter "x0"
 
     .prologue
-    .line 28
+    .line 27
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -141,7 +141,7 @@
     .parameter "x1"
 
     .prologue
-    .line 28
+    .line 27
     invoke-direct {p0, p1}, Lcom/google/android/finsky/download/DownloadProgressManager;->makeCursorIfNeeded(Landroid/content/Context;)V
 
     return-void
@@ -152,7 +152,7 @@
     .parameter "x0"
 
     .prologue
-    .line 28
+    .line 27
     invoke-direct {p0}, Lcom/google/android/finsky/download/DownloadProgressManager;->onDownloadProgress()V
 
     return-void
@@ -163,7 +163,7 @@
     .parameter "x0"
 
     .prologue
-    .line 28
+    .line 27
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
 
     return-object v0
@@ -175,7 +175,7 @@
     .parameter "x1"
 
     .prologue
-    .line 28
+    .line 27
     iput-object p1, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
 
     return-object p1
@@ -186,7 +186,7 @@
     .parameter "x0"
 
     .prologue
-    .line 28
+    .line 27
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mHandlerThread:Landroid/os/HandlerThread;
 
     return-object v0
@@ -197,7 +197,7 @@
     .parameter "x0"
 
     .prologue
-    .line 28
+    .line 27
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mDownloadQueueImpl:Lcom/google/android/finsky/download/DownloadQueueImpl;
 
     return-object v0
@@ -207,7 +207,7 @@
     .registers 7
 
     .prologue
-    .line 100
+    .line 102
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v2
@@ -216,7 +216,7 @@
 
     move-result-wide v0
 
-    .line 101
+    .line 103
     .local v0, curThreadId:J
     iget-wide v2, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mHandlerThreadId:J
 
@@ -224,7 +224,7 @@
 
     if-eqz v2, :cond_39
 
-    .line 102
+    .line 104
     new-instance v2, Ljava/lang/IllegalStateException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -267,13 +267,13 @@
 
     throw v2
 
-    .line 107
+    .line 109
     :cond_39
     return-void
 .end method
 
 .method private generateDownloadProgressFromCursor()Ljava/util/Map;
-    .registers 18
+    .registers 22
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -286,188 +286,289 @@
     .end annotation
 
     .prologue
-    .line 229
+    .line 230
     invoke-direct/range {p0 .. p0}, Lcom/google/android/finsky/download/DownloadProgressManager;->assertOnHandlerThread()V
 
-    .line 231
-    new-instance v11, Ljava/util/HashMap;
+    .line 232
+    new-instance v16, Ljava/util/HashMap;
 
-    invoke-direct {v11}, Ljava/util/HashMap;-><init>()V
-
-    .line 233
-    .local v11, result:Ljava/util/Map;,"Ljava/util/Map<Landroid/net/Uri;Lcom/google/android/finsky/download/DownloadProgress;>;"
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
-
-    invoke-interface {v15}, Landroid/database/Cursor;->requery()Z
-
-    move-result v15
-
-    if-nez v15, :cond_20
+    invoke-direct/range {v16 .. v16}, Ljava/util/HashMap;-><init>()V
 
     .line 234
-    const/4 v15, 0x0
-
+    .local v16, result:Ljava/util/Map;,"Ljava/util/Map<Landroid/net/Uri;Lcom/google/android/finsky/download/DownloadProgress;>;"
     move-object/from16 v0, p0
 
-    iput-object v15, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
+    iget-object v0, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
+
+    move-object/from16 v19, v0
+
+    invoke-interface/range {v19 .. v19}, Landroid/database/Cursor;->requery()Z
+
+    move-result v19
+
+    if-nez v19, :cond_29
 
     .line 235
+    const/16 v19, 0x0
+
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
+
+    .line 236
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mContext:Landroid/content/Context;
+
+    move-object/from16 v19, v0
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v15}, Lcom/google/android/finsky/download/DownloadProgressManager;->makeCursorIfNeeded(Landroid/content/Context;)V
+    move-object/from16 v1, v19
 
-    .line 238
-    :cond_20
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
-
-    invoke-interface {v15}, Landroid/database/Cursor;->getCount()I
-
-    move-result v15
-
-    if-lez v15, :cond_8d
+    invoke-direct {v0, v1}, Lcom/google/android/finsky/download/DownloadProgressManager;->makeCursorIfNeeded(Landroid/content/Context;)V
 
     .line 239
+    :cond_29
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
+    iget-object v0, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
 
-    const-string v16, "_id"
+    move-object/from16 v19, v0
 
-    invoke-interface/range {v15 .. v16}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+    invoke-interface/range {v19 .. v19}, Landroid/database/Cursor;->getCount()I
 
-    move-result v10
+    move-result v19
+
+    if-lez v19, :cond_e6
 
     .line 240
-    .local v10, indexId:I
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
+    iget-object v0, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
 
-    const-string v16, "current_bytes"
+    move-object/from16 v19, v0
 
-    invoke-interface/range {v15 .. v16}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+    const-string v20, "_id"
 
-    move-result v7
-
-    .line 242
-    .local v7, currentBytesColumnId:I
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
-
-    const-string v16, "total_bytes"
-
-    invoke-interface/range {v15 .. v16}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+    invoke-interface/range {v19 .. v20}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v13
 
-    .line 244
-    .local v13, totalBytesColumnId:I
+    .line 241
+    .local v13, indexId:I
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
+    iget-object v0, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
 
-    const-string v16, "status"
+    move-object/from16 v19, v0
 
-    invoke-interface/range {v15 .. v16}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+    const-string v20, "current_bytes"
+
+    invoke-interface/range {v19 .. v20}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v12
 
-    .line 247
-    .local v12, statusColumnId:I
-    :goto_52
+    .line 243
+    .local v12, indexCurrentBytes:I
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
+    iget-object v0, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
 
-    invoke-interface {v15}, Landroid/database/Cursor;->moveToNext()Z
+    move-object/from16 v19, v0
+
+    const-string v20, "total_bytes"
+
+    invoke-interface/range {v19 .. v20}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v15
 
-    if-eqz v15, :cond_8d
-
-    .line 249
+    .line 245
+    .local v15, indexTotalBytes:I
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
+    iget-object v0, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
 
-    invoke-interface {v15, v10}, Landroid/database/Cursor;->getLong(I)J
+    move-object/from16 v19, v0
 
-    move-result-wide v8
+    const-string v20, "status"
 
-    .line 250
-    .local v8, id:J
-    invoke-static {}, Lcom/google/android/finsky/download/DownloadManagerConstants;->getContentUri()Landroid/net/Uri;
+    invoke-interface/range {v19 .. v20}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
-    move-result-object v15
-
-    invoke-static {v15, v8, v9}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v14
+    move-result v14
 
     .line 252
-    .local v14, uri:Landroid/net/Uri;
+    .local v14, indexStatus:I
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
+    iget-object v0, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
 
-    invoke-interface {v15, v12}, Landroid/database/Cursor;->getInt(I)I
+    move-object/from16 v19, v0
 
-    move-result v6
+    const-string v20, "allowed_network_types"
 
-    .line 253
-    .local v6, status:I
+    invoke-interface/range {v19 .. v20}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v11
+
+    .line 255
+    .local v11, indexAllowedNetworks:I
+    :goto_71
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
+    iget-object v0, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
 
-    invoke-interface {v15, v13}, Landroid/database/Cursor;->getLong(I)J
+    move-object/from16 v19, v0
 
-    move-result-wide v4
+    invoke-interface/range {v19 .. v19}, Landroid/database/Cursor;->moveToNext()Z
 
-    .line 254
-    .local v4, totalBytes:J
+    move-result v19
+
+    if-eqz v19, :cond_e6
+
+    .line 257
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
+    iget-object v0, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
 
-    invoke-interface {v15, v7}, Landroid/database/Cursor;->getLong(I)J
+    move-object/from16 v19, v0
 
-    move-result-wide v2
+    move-object/from16 v0, v19
 
-    .line 256
-    .local v2, currentBytes:J
-    new-instance v1, Lcom/google/android/finsky/download/DownloadProgress;
+    invoke-interface {v0, v13}, Landroid/database/Cursor;->getLong(I)J
 
-    invoke-direct/range {v1 .. v6}, Lcom/google/android/finsky/download/DownloadProgress;-><init>(JJI)V
+    move-result-wide v9
+
+    .line 258
+    .local v9, id:J
+    invoke-static {v9, v10}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v19
+
+    invoke-static/range {v19 .. v19}, Lcom/google/android/finsky/download/DownloadManagerConstants;->getContentUriString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v18
 
     .line 259
-    .local v1, downloadProgress:Lcom/google/android/finsky/download/DownloadProgress;
-    invoke-interface {v11, v14, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .local v18, uriString:Ljava/lang/String;
+    invoke-static/range {v18 .. v18}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    goto :goto_52
+    move-result-object v17
+
+    .line 261
+    .local v17, uri:Landroid/net/Uri;
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
+
+    move-object/from16 v19, v0
+
+    move-object/from16 v0, v19
+
+    invoke-interface {v0, v14}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v7
+
+    .line 262
+    .local v7, status:I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
+
+    move-object/from16 v19, v0
+
+    move-object/from16 v0, v19
+
+    invoke-interface {v0, v15}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v5
 
     .line 263
-    .end local v1           #downloadProgress:Lcom/google/android/finsky/download/DownloadProgress;
-    .end local v2           #currentBytes:J
-    .end local v4           #totalBytes:J
-    .end local v6           #status:I
-    .end local v7           #currentBytesColumnId:I
-    .end local v8           #id:J
-    .end local v10           #indexId:I
-    .end local v12           #statusColumnId:I
-    .end local v13           #totalBytesColumnId:I
-    .end local v14           #uri:Landroid/net/Uri;
-    :cond_8d
-    return-object v11
+    .local v5, totalBytes:J
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
+
+    move-object/from16 v19, v0
+
+    move-object/from16 v0, v19
+
+    invoke-interface {v0, v12}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v3
+
+    .line 268
+    .local v3, currentBytes:J
+    const/16 v19, 0xc3
+
+    move/from16 v0, v19
+
+    if-ne v7, v0, :cond_d9
+
+    const/16 v19, -0x1
+
+    move/from16 v0, v19
+
+    if-eq v11, v0, :cond_d9
+
+    .line 270
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
+
+    move-object/from16 v19, v0
+
+    move-object/from16 v0, v19
+
+    invoke-interface {v0, v11}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v8
+
+    .line 271
+    .local v8, allowedNetworks:I
+    const/16 v19, 0x2
+
+    move/from16 v0, v19
+
+    if-ne v8, v0, :cond_d9
+
+    .line 272
+    const/16 v7, 0xc4
+
+    .line 276
+    .end local v8           #allowedNetworks:I
+    :cond_d9
+    new-instance v2, Lcom/google/android/finsky/download/DownloadProgress;
+
+    invoke-direct/range {v2 .. v7}, Lcom/google/android/finsky/download/DownloadProgress;-><init>(JJI)V
+
+    .line 279
+    .local v2, downloadProgress:Lcom/google/android/finsky/download/DownloadProgress;
+    move-object/from16 v0, v16
+
+    move-object/from16 v1, v17
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_71
+
+    .line 283
+    .end local v2           #downloadProgress:Lcom/google/android/finsky/download/DownloadProgress;
+    .end local v3           #currentBytes:J
+    .end local v5           #totalBytes:J
+    .end local v7           #status:I
+    .end local v9           #id:J
+    .end local v11           #indexAllowedNetworks:I
+    .end local v12           #indexCurrentBytes:I
+    .end local v13           #indexId:I
+    .end local v14           #indexStatus:I
+    .end local v15           #indexTotalBytes:I
+    .end local v17           #uri:Landroid/net/Uri;
+    .end local v18           #uriString:Ljava/lang/String;
+    :cond_e6
+    return-object v16
 .end method
 
 .method private static getCachedProgress()Ljava/util/Map;
@@ -484,7 +585,7 @@
     .end annotation
 
     .prologue
-    .line 193
+    .line 206
     sget-object v0, Lcom/google/android/finsky/download/DownloadProgressManager;->sDownloadProgressMap:Ljava/util/Map;
 
     return-object v0
@@ -503,22 +604,22 @@
     .end annotation
 
     .prologue
-    .line 212
+    .line 213
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
 
-    .line 213
+    .line 214
     .local v3, uris:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/net/Uri;>;"
     invoke-static {}, Lcom/google/android/finsky/download/DownloadProgressManager;->getCachedProgress()Ljava/util/Map;
 
     move-result-object v1
 
-    .line 214
+    .line 215
     .local v1, map:Ljava/util/Map;,"Ljava/util/Map<Landroid/net/Uri;Lcom/google/android/finsky/download/DownloadProgress;>;"
     if-eqz v1, :cond_23
 
-    .line 215
+    .line 216
     invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v4
@@ -541,13 +642,13 @@
 
     check-cast v2, Landroid/net/Uri;
 
-    .line 216
+    .line 217
     .local v2, uri:Landroid/net/Uri;
     invoke-virtual {v3, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     goto :goto_13
 
-    .line 220
+    .line 221
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v2           #uri:Landroid/net/Uri;
     :cond_23
@@ -555,20 +656,24 @@
 .end method
 
 .method private static makeCursor(Landroid/content/Context;)Landroid/database/Cursor;
-    .registers 8
+    .registers 9
     .parameter "context"
 
     .prologue
+    const/4 v7, 0x0
+
     const/4 v2, 0x0
 
-    .line 273
+    .line 298
+    invoke-static {}, Lcom/google/android/finsky/download/DownloadManagerConstants;->getContentUriForContentObserver()Landroid/net/Uri;
+
+    move-result-object v1
+
+    .line 299
+    .local v1, uri:Landroid/net/Uri;
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
-
-    invoke-static {}, Lcom/google/android/finsky/download/DownloadManagerConstants;->getContentUri()Landroid/net/Uri;
-
-    move-result-object v1
 
     move-object v3, v2
 
@@ -580,47 +685,27 @@
 
     move-result-object v6
 
-    .line 275
+    .line 300
     .local v6, cursor:Landroid/database/Cursor;
-    if-nez v6, :cond_30
+    if-nez v6, :cond_20
 
-    .line 276
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 301
+    const-string v0, "Download progress cursor null: %s"
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const/4 v2, 0x1
 
-    const-string v1, "Download progress cursor null: "
+    new-array v2, v2, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    aput-object v1, v2, v7
 
-    move-result-object v0
+    invoke-static {v0, v2}, Lcom/google/android/finsky/utils/FinskyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-static {}, Lcom/google/android/finsky/download/DownloadManagerConstants;->getContentUri()Landroid/net/Uri;
+    .line 303
+    invoke-static {v7}, Ljava/lang/System;->exit(I)V
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 280
-    :goto_2f
-    return-object v2
-
-    :cond_30
-    move-object v2, v6
-
-    goto :goto_2f
+    .line 305
+    :cond_20
+    return-object v6
 .end method
 
 .method private makeCursorIfNeeded(Landroid/content/Context;)V
@@ -628,35 +713,35 @@
     .parameter "context"
 
     .prologue
-    .line 80
+    .line 82
     invoke-direct {p0}, Lcom/google/android/finsky/download/DownloadProgressManager;->assertOnHandlerThread()V
 
-    .line 82
+    .line 84
     iget-object v1, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
 
     if-nez v1, :cond_19
 
-    .line 83
+    .line 85
     invoke-static {p1}, Lcom/google/android/finsky/download/DownloadProgressManager;->makeCursor(Landroid/content/Context;)Landroid/database/Cursor;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
 
-    .line 84
+    .line 86
     new-instance v0, Lcom/google/android/finsky/download/DownloadProgressManager$2;
 
     iget-object v1, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mHandler:Landroid/os/Handler;
 
     invoke-direct {v0, p0, v1}, Lcom/google/android/finsky/download/DownloadProgressManager$2;-><init>(Lcom/google/android/finsky/download/DownloadProgressManager;Landroid/os/Handler;)V
 
-    .line 95
+    .line 97
     .local v0, downloadObserver:Landroid/database/ContentObserver;
     iget-object v1, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v1, v0}, Landroid/database/Cursor;->registerContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 97
+    .line 99
     .end local v0           #downloadObserver:Landroid/database/ContentObserver;
     :cond_19
     return-void
@@ -666,15 +751,15 @@
     .registers 8
 
     .prologue
-    .line 166
+    .line 179
     invoke-direct {p0}, Lcom/google/android/finsky/download/DownloadProgressManager;->assertOnHandlerThread()V
 
-    .line 168
+    .line 181
     invoke-static {}, Lcom/google/android/finsky/download/DownloadProgressManager;->getUris()Ljava/util/Set;
 
     move-result-object v3
 
-    .line 171
+    .line 184
     .local v3, oldUris:Ljava/util/Set;,"Ljava/util/Set<Landroid/net/Uri;>;"
     invoke-direct {p0}, Lcom/google/android/finsky/download/DownloadProgressManager;->generateDownloadProgressFromCursor()Ljava/util/Map;
 
@@ -684,13 +769,13 @@
 
     move-result-object v1
 
-    .line 176
+    .line 189
     .local v1, downloadProgressMap:Ljava/util/Map;,"Ljava/util/Map<Landroid/net/Uri;Lcom/google/android/finsky/download/DownloadProgress;>;"
     invoke-static {}, Lcom/google/android/finsky/download/DownloadProgressManager;->getCachedProgress()Ljava/util/Map;
 
     move-result-object v0
 
-    .line 177
+    .line 190
     .local v0, cachedProgress:Ljava/util/Map;,"Ljava/util/Map<Landroid/net/Uri;Lcom/google/android/finsky/download/DownloadProgress;>;"
     if-eqz v0, :cond_1b
 
@@ -700,25 +785,25 @@
 
     if-nez v5, :cond_35
 
-    .line 178
+    .line 191
     :cond_1b
     sput-object v1, Lcom/google/android/finsky/download/DownloadProgressManager;->sDownloadProgressMap:Ljava/util/Map;
 
-    .line 182
+    .line 195
     invoke-static {}, Lcom/google/android/finsky/download/DownloadProgressManager;->getUris()Ljava/util/Set;
 
     move-result-object v2
 
-    .line 183
+    .line 196
     .local v2, newUris:Ljava/util/Set;,"Ljava/util/Set<Landroid/net/Uri;>;"
     invoke-interface {v3, v2}, Ljava/util/Set;->removeAll(Ljava/util/Collection;)Z
 
-    .line 184
+    .line 197
     new-instance v4, Lcom/google/android/finsky/download/DownloadProgressManager$ProgressRunnable;
 
     invoke-direct {v4, p0, v1, v3, v2}, Lcom/google/android/finsky/download/DownloadProgressManager$ProgressRunnable;-><init>(Lcom/google/android/finsky/download/DownloadProgressManager;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
 
-    .line 185
+    .line 198
     .local v4, r:Ljava/lang/Runnable;
     new-instance v5, Landroid/os/Handler;
 
@@ -730,7 +815,7 @@
 
     invoke-virtual {v5, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 187
+    .line 200
     .end local v2           #newUris:Ljava/util/Set;,"Ljava/util/Set<Landroid/net/Uri;>;"
     .end local v4           #r:Ljava/lang/Runnable;
     :cond_35
@@ -743,7 +828,7 @@
     .registers 3
 
     .prologue
-    .line 113
+    .line 115
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/android/finsky/download/DownloadProgressManager$3;
@@ -752,6 +837,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 124
+    .line 125
     return-void
 .end method

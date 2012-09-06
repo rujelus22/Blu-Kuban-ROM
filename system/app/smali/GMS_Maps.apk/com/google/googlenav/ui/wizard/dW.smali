@@ -1,19 +1,28 @@
-.class Lcom/google/googlenav/ui/wizard/dW;
+.class Lcom/google/googlenav/ui/wizard/dw;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/googlenav/ui/wizard/O;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/dV;
+.field final synthetic a:Landroid/os/Handler;
+
+.field final synthetic b:Lcom/google/googlenav/ui/wizard/dp;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/dV;)V
-    .registers 2
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/dp;Landroid/os/Handler;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/dW;->a:Lcom/google/googlenav/ui/wizard/dV;
+    .prologue
+    .line 465
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/dw;->b:Lcom/google/googlenav/ui/wizard/dp;
+
+    iput-object p2, p0, Lcom/google/googlenav/ui/wizard/dw;->a:Landroid/os/Handler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,74 +31,34 @@
 
 
 # virtual methods
-.method public a()V
-    .registers 4
+.method public run()V
+    .registers 3
 
-    const/4 v2, 0x1
+    .prologue
+    .line 469
+    const-wide/16 v0, 0x1388
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/dW;->a:Lcom/google/googlenav/ui/wizard/dV;
+    :try_start_2
+    invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
+    :try_end_5
+    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_5} :catch_10
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/dV;->b:Lcom/google/googlenav/ui/wizard/dU;
+    .line 474
+    :goto_5
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/dw;->a:Landroid/os/Handler;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/dU;->a:Lcom/google/googlenav/ui/wizard/dO;
+    new-instance v1, Lcom/google/googlenav/ui/wizard/dx;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/dW;->a:Lcom/google/googlenav/ui/wizard/dV;
+    invoke-direct {v1, p0}, Lcom/google/googlenav/ui/wizard/dx;-><init>(Lcom/google/googlenav/ui/wizard/dw;)V
 
-    iget-object v1, v1, Lcom/google/googlenav/ui/wizard/dV;->a:Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    invoke-virtual {v1}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/wizard/dO;->a([B)V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/dW;->a:Lcom/google/googlenav/ui/wizard/dV;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/dV;->b:Lcom/google/googlenav/ui/wizard/dU;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/dU;->a:Lcom/google/googlenav/ui/wizard/dO;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/dO;->c(Lcom/google/googlenav/ui/wizard/dO;)Lcom/google/googlenav/ah;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Lcom/google/googlenav/ah;->e(Z)V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/dW;->a:Lcom/google/googlenav/ui/wizard/dV;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/dV;->b:Lcom/google/googlenav/ui/wizard/dU;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/dU;->a:Lcom/google/googlenav/ui/wizard/dO;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/dO;->b(Lcom/google/googlenav/ui/wizard/dO;)Lcom/google/googlenav/L;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlenav/ui/D;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/D;->ar()LaY/Y;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LaY/Y;->I()LaY/i;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, LaY/i;->e(Z)V
-
+    .line 485
     return-void
-.end method
 
-.method public b()V
-    .registers 2
+    .line 470
+    :catch_10
+    move-exception v0
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/dW;->a:Lcom/google/googlenav/ui/wizard/dV;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/dV;->b:Lcom/google/googlenav/ui/wizard/dU;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/dU;->a:Lcom/google/googlenav/ui/wizard/dO;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/dO;->W_()V
-
-    return-void
+    goto :goto_5
 .end method

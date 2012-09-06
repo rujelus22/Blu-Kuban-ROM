@@ -1,58 +1,64 @@
-.class public final Lcom/google/android/youtube/core/converter/http/ch;
-.super Ljava/lang/Object;
+.class final Lcom/google/android/youtube/core/converter/http/ch;
+.super Lcom/google/android/youtube/core/converter/l;
 .source "SourceFile"
-
-# interfaces
-.implements Lcom/google/android/youtube/core/converter/a;
-
-
-# instance fields
-.field private final a:Lcom/google/android/youtube/core/converter/http/HttpMethod;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/core/converter/http/HttpMethod;)V
-    .registers 3
-    .parameter
+.method constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 19
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 115
+    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
-    .line 20
-    const-string v0, "method can\'t be null"
-
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/youtube/core/converter/http/HttpMethod;
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/converter/http/ch;->a:Lcom/google/android/youtube/core/converter/http/HttpMethod;
-
-    .line 21
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;)V
+    .registers 5
+    .parameter
     .parameter
 
     .prologue
-    .line 15
-    check-cast p1, Landroid/net/Uri;
+    .line 118
+    const-string v0, "http://schemas.google.com/g/2005#feed"
 
-    const-string v0, "the uri can\'t be null"
+    const-string v1, "rel"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
 
-    iget-object v0, p0, Lcom/google/android/youtube/core/converter/http/ch;->a:Lcom/google/android/youtube/core/converter/http/HttpMethod;
+    move-result-object v1
 
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/core/converter/http/HttpMethod;->createHttpRequest(Landroid/net/Uri;)Lorg/apache/http/client/methods/HttpUriRequest;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_23
+
+    .line 119
+    const-class v0, Lcom/google/android/youtube/core/model/Playlist$Builder;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->a(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Lcom/google/android/youtube/core/model/Playlist$Builder;
+
+    const-string v1, "href"
+
+    invoke-interface {p2, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Playlist$Builder;->contentUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Playlist$Builder;
+
+    .line 121
+    :cond_23
+    return-void
 .end method

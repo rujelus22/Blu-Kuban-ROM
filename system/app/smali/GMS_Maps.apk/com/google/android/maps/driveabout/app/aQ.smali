@@ -1,19 +1,28 @@
-.class Lcom/google/android/maps/driveabout/app/aQ;
+.class Lcom/google/android/maps/driveabout/app/aq;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ls/c;
+.implements Landroid/content/DialogInterface$OnCancelListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/aL;
+.field final synthetic a:Landroid/content/DialogInterface$OnCancelListener;
+
+.field final synthetic b:Lcom/google/android/maps/driveabout/app/al;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/aL;)V
-    .registers 2
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/al;Landroid/content/DialogInterface$OnCancelListener;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aQ;->a:Lcom/google/android/maps/driveabout/app/aL;
+    .prologue
+    .line 880
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aq;->b:Lcom/google/android/maps/driveabout/app/al;
+
+    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/aq;->a:Landroid/content/DialogInterface$OnCancelListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,84 +31,27 @@
 
 
 # virtual methods
-.method public a(Ls/C;)V
-    .registers 4
+.method public onCancel(Landroid/content/DialogInterface;)V
+    .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aQ;->a:Lcom/google/android/maps/driveabout/app/aL;
+    .prologue
+    .line 883
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aq;->b:Lcom/google/android/maps/driveabout/app/al;
 
-    new-instance v1, Lcom/google/android/maps/driveabout/app/aU;
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/al;->r()V
 
-    invoke-direct {v1, p0, p1}, Lcom/google/android/maps/driveabout/app/aU;-><init>(Lcom/google/android/maps/driveabout/app/aQ;Ls/C;)V
+    .line 884
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aq;->a:Landroid/content/DialogInterface$OnCancelListener;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/aL;->a(Ljava/lang/Runnable;)V
+    if-eqz v0, :cond_e
 
-    return-void
-.end method
+    .line 885
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aq;->a:Landroid/content/DialogInterface$OnCancelListener;
 
-.method public onLocationChanged(Landroid/location/Location;)V
-    .registers 4
+    invoke-interface {v0, p1}, Landroid/content/DialogInterface$OnCancelListener;->onCancel(Landroid/content/DialogInterface;)V
 
-    check-cast p1, Ls/b;
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aQ;->a:Lcom/google/android/maps/driveabout/app/aL;
-
-    new-instance v1, Lcom/google/android/maps/driveabout/app/aR;
-
-    invoke-direct {v1, p0, p1}, Lcom/google/android/maps/driveabout/app/aR;-><init>(Lcom/google/android/maps/driveabout/app/aQ;Ls/b;)V
-
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/aL;->a(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public onProviderDisabled(Ljava/lang/String;)V
-    .registers 4
-
-    const-string v0, "gps"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_12
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aQ;->a:Lcom/google/android/maps/driveabout/app/aL;
-
-    new-instance v1, Lcom/google/android/maps/driveabout/app/aS;
-
-    invoke-direct {v1, p0}, Lcom/google/android/maps/driveabout/app/aS;-><init>(Lcom/google/android/maps/driveabout/app/aQ;)V
-
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/aL;->a(Ljava/lang/Runnable;)V
-
-    :cond_12
-    return-void
-.end method
-
-.method public onProviderEnabled(Ljava/lang/String;)V
-    .registers 2
-
-    return-void
-.end method
-
-.method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
-    .registers 6
-
-    const-string v0, "gps"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_12
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aQ;->a:Lcom/google/android/maps/driveabout/app/aL;
-
-    new-instance v1, Lcom/google/android/maps/driveabout/app/aT;
-
-    invoke-direct {v1, p0}, Lcom/google/android/maps/driveabout/app/aT;-><init>(Lcom/google/android/maps/driveabout/app/aQ;)V
-
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/aL;->a(Ljava/lang/Runnable;)V
-
-    :cond_12
+    .line 887
+    :cond_e
     return-void
 .end method

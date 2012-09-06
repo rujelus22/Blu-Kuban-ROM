@@ -38,16 +38,16 @@
 
     const/4 v12, 0x0
 
-    .line 69
+    .line 77
     const/16 v8, 0x400
 
     new-array v2, v8, [B
 
-    .line 70
+    .line 78
     .local v2, inputBuf:[B
     const-wide/16 v6, 0x0
 
-    .line 74
+    .line 82
     .local v6, totalBytesRead:J
     :try_start_8
     const-string v8, "SHA-1"
@@ -58,7 +58,7 @@
 
     move-result-object v3
 
-    .line 79
+    .line 87
     .local v3, messageDigest:Ljava/security/MessageDigest;
     :cond_e
     :goto_e
@@ -69,18 +69,18 @@
     .local v0, bytesRead:I
     if-ltz v0, :cond_2b
 
-    .line 80
+    .line 88
     if-eqz v0, :cond_e
 
-    .line 83
+    .line 91
     array-length v8, v2
 
     if-ne v0, v8, :cond_22
 
-    .line 85
+    .line 93
     invoke-virtual {v3, v2}, Ljava/security/MessageDigest;->update([B)V
 
-    .line 92
+    .line 100
     :goto_1c
     int-to-long v10, v0
 
@@ -88,7 +88,7 @@
 
     goto :goto_e
 
-    .line 75
+    .line 83
     .end local v0           #bytesRead:I
     .end local v3           #messageDigest:Ljava/security/MessageDigest;
     :catch_1f
@@ -97,37 +97,37 @@
     .local v1, e:Ljava/security/NoSuchAlgorithmException;
     move-object v8, v9
 
-    .line 96
+    .line 104
     .end local v1           #e:Ljava/security/NoSuchAlgorithmException;
     :goto_21
     return-object v8
 
-    .line 88
+    .line 96
     .restart local v0       #bytesRead:I
     .restart local v3       #messageDigest:Ljava/security/MessageDigest;
     :cond_22
     new-array v5, v0, [B
 
-    .line 89
+    .line 97
     .local v5, tmpArray:[B
     invoke-static {v2, v12, v5, v12, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 90
+    .line 98
     invoke-virtual {v3, v5}, Ljava/security/MessageDigest;->update([B)V
 
     goto :goto_1c
 
-    .line 94
+    .line 102
     .end local v5           #tmpArray:[B
     :cond_2b
     invoke-virtual {p0}, Ljava/io/InputStream;->close()V
 
-    .line 95
+    .line 103
     invoke-virtual {v3}, Ljava/security/MessageDigest;->digest()[B
 
     move-result-object v4
 
-    .line 96
+    .line 104
     .local v4, result:[B
     new-instance v8, Lcom/google/android/finsky/utils/Sha1Util$DigestResult;
 
@@ -232,21 +232,28 @@
 
     move-result v1
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_1a
+
+    const-wide/16 v1, -0x1
+
+    cmp-long v1, p2, v1
+
+    if-eqz v1, :cond_18
 
     iget-wide v1, v0, Lcom/google/android/finsky/utils/Sha1Util$DigestResult;->byteCount:J
 
     cmp-long v1, v1, p2
 
-    if-nez v1, :cond_14
+    if-nez v1, :cond_1a
 
+    :cond_18
     const/4 v1, 0x1
 
-    :goto_13
+    :goto_19
     return v1
 
-    :cond_14
+    :cond_1a
     const/4 v1, 0x0
 
-    goto :goto_13
+    goto :goto_19
 .end method

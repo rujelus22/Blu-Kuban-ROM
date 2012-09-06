@@ -1,18 +1,23 @@
-.class LaZ/c;
-.super Lz/d;
+.class Laz/c;
+.super LY/b;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:LaZ/b;
+.field final synthetic a:Laz/a;
 
 
 # direct methods
-.method constructor <init>(LaZ/b;Ljava/lang/String;)V
+.method constructor <init>(Laz/a;LY/c;)V
     .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, LaZ/c;->a:LaZ/b;
+    .prologue
+    .line 324
+    iput-object p1, p0, Laz/c;->a:Laz/a;
 
-    invoke-direct {p0, p2}, Lz/d;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p2}, LY/b;-><init>(LY/c;)V
 
     return-void
 .end method
@@ -20,176 +25,224 @@
 
 # virtual methods
 .method public a()V
-    .registers 9
+    .registers 8
 
-    const-wide/16 v6, 0xbb8
+    .prologue
+    .line 328
+    iget-object v2, p0, Laz/c;->a:Laz/a;
 
-    :cond_2
-    :goto_2
-    iget-object v0, p0, LaZ/c;->a:LaZ/b;
+    monitor-enter v2
 
-    invoke-static {v0}, LaZ/b;->a(LaZ/b;)Z
+    .line 329
+    :try_start_3
+    new-instance v3, Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    move-result v0
+    sget-object v0, Lbo/r;->c:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    if-nez v0, :cond_7a
+    invoke-direct {v3, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;-><init>(Lcom/google/googlenav/common/io/protocol/ProtoBufType;)V
 
-    iget-object v0, p0, LaZ/c;->a:LaZ/b;
+    .line 330
+    iget-object v0, p0, Laz/c;->a:Laz/a;
 
-    invoke-static {v0}, LaZ/b;->b(LaZ/b;)Ljava/lang/Object;
+    invoke-static {v0}, Laz/a;->b(Laz/a;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    monitor-enter v1
+    :goto_14
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    :try_start_11
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-    :try_end_14
-    .catchall {:try_start_11 .. :try_end_14} :catchall_77
+    move-result v0
 
-    move-result-wide v2
+    if-eqz v0, :cond_2c
 
-    :try_start_15
-    iget-object v0, p0, LaZ/c;->a:LaZ/b;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-static {v0}, LaZ/b;->c(LaZ/b;)J
+    move-result-object v0
+
+    check-cast v0, Laz/f;
+
+    .line 331
+    const/4 v4, 0x1
+
+    invoke-static {v0}, Laz/f;->a(Laz/f;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    move-result-object v0
+
+    invoke-virtual {v3, v4, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->addProtoBuf(ILcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+
+    goto :goto_14
+
+    .line 352
+    :catchall_29
+    move-exception v0
+
+    monitor-exit v2
+    :try_end_2b
+    .catchall {:try_start_3 .. :try_end_2b} :catchall_29
+
+    throw v0
+
+    .line 334
+    :cond_2c
+    :try_start_2c
+    iget-object v0, p0, Laz/c;->a:Laz/a;
+
+    invoke-static {v0}, Laz/a;->c(Laz/a;)Ljava/util/concurrent/ConcurrentLinkedQueue;
+
+    move-result-object v0
+
+    iget-object v1, p0, Laz/c;->a:Laz/a;
+
+    invoke-static {v1}, Laz/a;->c(Laz/a;)Ljava/util/concurrent/ConcurrentLinkedQueue;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/util/concurrent/ConcurrentLinkedQueue;->size()I
+
+    move-result v1
+
+    new-array v1, v1, [Laz/f;
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/ConcurrentLinkedQueue;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Laz/f;
+
+    .line 336
+    array-length v4, v0
+
+    const/4 v1, 0x0
+
+    :goto_46
+    if-ge v1, v4, :cond_55
+
+    aget-object v5, v0, v1
+
+    .line 337
+    const/4 v6, 0x1
+
+    invoke-static {v5}, Laz/f;->a(Laz/f;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v6, v5}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->addProtoBuf(ILcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+
+    .line 336
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_46
+
+    .line 340
+    :cond_55
+    iget-object v0, p0, Laz/c;->a:Laz/a;
+
+    invoke-static {v0}, Laz/a;->a(Laz/a;)Laz/f;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_6b
+
+    .line 341
+    const/4 v0, 0x1
+
+    iget-object v1, p0, Laz/c;->a:Laz/a;
+
+    invoke-static {v1}, Laz/a;->a(Laz/a;)Laz/f;
+
+    move-result-object v1
+
+    invoke-static {v1}, Laz/f;->a(Laz/f;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    move-result-object v1
+
+    invoke-virtual {v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->addProtoBuf(ILcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+
+    .line 344
+    :cond_6b
+    const/4 v0, 0x2
+
+    iget-object v1, p0, Laz/c;->a:Laz/a;
+
+    invoke-static {v1}, Laz/a;->d(Laz/a;)I
+
+    move-result v1
+
+    invoke-virtual {v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->setInt(II)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    .line 345
+    iget-object v0, p0, Laz/c;->a:Laz/a;
+
+    invoke-static {v0}, Laz/a;->e(Laz/a;)Ln/am;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_8b
+
+    .line 346
+    const/4 v0, 0x3
+
+    iget-object v1, p0, Laz/c;->a:Laz/a;
+
+    invoke-static {v1}, Laz/a;->e(Laz/a;)Ln/am;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ln/am;->i()Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    move-result-object v1
+
+    invoke-virtual {v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->setProtoBuf(ILcom/google/googlenav/common/io/protocol/ProtoBuf;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    .line 349
+    :cond_8b
+    const/4 v0, 0x4
+
+    iget-object v1, p0, Laz/c;->a:Laz/a;
+
+    invoke-static {v1}, Laz/a;->f(Laz/a;)J
 
     move-result-wide v4
 
-    sub-long v2, v4, v2
+    invoke-virtual {v3, v0, v4, v5}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->setLong(IJ)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    const-wide/16 v4, 0x0
+    .line 352
+    monitor-exit v2
+    :try_end_96
+    .catchall {:try_start_2c .. :try_end_96} :catchall_29
 
-    cmp-long v0, v2, v4
-
-    if-lez v0, :cond_2c
-
-    iget-object v0, p0, LaZ/c;->a:LaZ/b;
-
-    invoke-static {v0}, LaZ/b;->b(LaZ/b;)Ljava/lang/Object;
+    .line 353
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2, v3}, Ljava/lang/Object;->wait(J)V
-    :try_end_2c
-    .catchall {:try_start_15 .. :try_end_2c} :catchall_77
-    .catch Ljava/lang/InterruptedException; {:try_start_15 .. :try_end_2c} :catch_7d
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->m()Lcom/google/googlenav/common/io/j;
 
-    :cond_2c
-    :goto_2c
-    :try_start_2c
-    monitor-exit v1
-    :try_end_2d
-    .catchall {:try_start_2c .. :try_end_2d} :catchall_77
+    move-result-object v0
 
-    iget-object v0, p0, LaZ/c;->a:LaZ/b;
-
-    invoke-static {v0}, LaZ/b;->a(LaZ/b;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v0
-
-    iget-object v2, p0, LaZ/c;->a:LaZ/b;
-
-    invoke-static {v2}, LaZ/b;->c(LaZ/b;)J
-
-    move-result-wide v2
-
-    cmp-long v2, v2, v0
-
-    if-gez v2, :cond_57
-
-    iget-object v2, p0, LaZ/c;->a:LaZ/b;
-
-    invoke-static {v2}, LaZ/b;->d(LaZ/b;)LaJ/p;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, LaJ/p;->a()LaJ/D;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, LaJ/D;->c()V
-
-    iget-object v2, p0, LaZ/c;->a:LaZ/b;
-
-    add-long v3, v0, v6
-
-    invoke-static {v2, v3, v4}, LaZ/b;->a(LaZ/b;J)J
-
-    :cond_57
-    iget-object v2, p0, LaZ/c;->a:LaZ/b;
-
-    invoke-static {v2}, LaZ/b;->e(LaZ/b;)J
-
-    move-result-wide v2
-
-    add-long/2addr v2, v6
-
-    cmp-long v0, v2, v0
-
-    if-gez v0, :cond_2
-
-    iget-object v0, p0, LaZ/c;->a:LaZ/b;
-
-    invoke-static {v0}, LaZ/b;->f(LaZ/b;)Ljava/lang/Object;
+    .line 355
+    :try_start_9e
+    invoke-virtual {v3}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->toByteArray()[B
 
     move-result-object v1
 
-    monitor-enter v1
+    sget-object v2, Laz/a;->a:Ljava/lang/String;
 
-    :try_start_69
-    iget-object v0, p0, LaZ/c;->a:LaZ/b;
+    invoke-interface {v0, v1, v2}, Lcom/google/googlenav/common/io/j;->b([BLjava/lang/String;)I
+    :try_end_a7
+    .catch Ljava/io/IOException; {:try_start_9e .. :try_end_a7} :catch_a8
 
-    invoke-static {v0}, LaZ/b;->f(LaZ/b;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->wait()V
-    :try_end_72
-    .catchall {:try_start_69 .. :try_end_72} :catchall_74
-    .catch Ljava/lang/InterruptedException; {:try_start_69 .. :try_end_72} :catch_7b
-
-    :goto_72
-    :try_start_72
-    monitor-exit v1
-
-    goto :goto_2
-
-    :catchall_74
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_76
-    .catchall {:try_start_72 .. :try_end_76} :catchall_74
-
-    throw v0
-
-    :catchall_77
-    move-exception v0
-
-    :try_start_78
-    monitor-exit v1
-    :try_end_79
-    .catchall {:try_start_78 .. :try_end_79} :catchall_77
-
-    throw v0
-
-    :cond_7a
+    .line 359
+    :goto_a7
     return-void
 
-    :catch_7b
+    .line 356
+    :catch_a8
     move-exception v0
 
-    goto :goto_72
-
-    :catch_7d
-    move-exception v0
-
-    goto :goto_2c
+    goto :goto_a7
 .end method

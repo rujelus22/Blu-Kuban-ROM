@@ -4,16 +4,6 @@
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 45
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method static synthetic a([SSII)I
     .registers 6
     .parameter

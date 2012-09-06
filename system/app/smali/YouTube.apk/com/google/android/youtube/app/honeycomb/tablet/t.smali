@@ -1,151 +1,132 @@
-.class final Lcom/google/android/youtube/app/honeycomb/tablet/t;
+.class final synthetic Lcom/google/android/youtube/app/honeycomb/tablet/t;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
 
-
-# instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/a/s;
-
-.field final synthetic b:Lcom/google/android/youtube/app/honeycomb/tablet/n;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/tablet/n;Lcom/google/android/youtube/app/a/s;)V
+.method static constructor <clinit>()V
     .registers 3
-    .parameter
-    .parameter
 
     .prologue
-    .line 467
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/t;->b:Lcom/google/android/youtube/app/honeycomb/tablet/n;
-
-    iput-object p2, p0, Lcom/google/android/youtube/app/honeycomb/tablet/t;->a:Lcom/google/android/youtube/app/a/s;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 10
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 469
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/t;->a:Lcom/google/android/youtube/app/a/s;
-
-    invoke-virtual {v0, p3}, Lcom/google/android/youtube/app/a/s;->getItem(I)Ljava/lang/Object;
+    .line 450
+    invoke-static {}, Lcom/google/android/youtube/core/model/Subscription$Type;->values()[Lcom/google/android/youtube/core/model/Subscription$Type;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/Subscription;
+    array-length v0, v0
 
-    .line 470
-    sget-object v1, Lcom/google/android/youtube/app/honeycomb/tablet/u;->a:[I
+    new-array v0, v0, [I
 
-    iget-object v2, v0, Lcom/google/android/youtube/core/model/Subscription;->type:Lcom/google/android/youtube/core/model/Subscription$Type;
+    sput-object v0, Lcom/google/android/youtube/app/honeycomb/tablet/t;->a:[I
 
-    invoke-virtual {v2}, Lcom/google/android/youtube/core/model/Subscription$Type;->ordinal()I
+    :try_start_9
+    sget-object v0, Lcom/google/android/youtube/app/honeycomb/tablet/t;->a:[I
 
-    move-result v2
+    sget-object v1, Lcom/google/android/youtube/core/model/Subscription$Type;->CHANNEL:Lcom/google/android/youtube/core/model/Subscription$Type;
 
-    aget v1, v1, v2
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/Subscription$Type;->ordinal()I
 
-    packed-switch v1, :pswitch_data_58
-
-    .line 487
-    :goto_15
-    return-void
-
-    .line 472
-    :pswitch_16
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/t;->b:Lcom/google/android/youtube/app/honeycomb/tablet/n;
-
-    iget-object v1, v1, Lcom/google/android/youtube/app/honeycomb/tablet/n;->d:Lcom/google/android/youtube/app/o;
-
-    iget-object v2, v0, Lcom/google/android/youtube/core/model/Subscription;->title:Ljava/lang/String;
-
-    const v3, 0x7f09002b
-
-    iget-object v0, v0, Lcom/google/android/youtube/core/model/Subscription;->editUri:Landroid/net/Uri;
-
-    invoke-interface {v1, v2, v3, v0}, Lcom/google/android/youtube/app/o;->a(Ljava/lang/String;ILandroid/net/Uri;)V
-
-    goto :goto_15
-
-    .line 475
-    :pswitch_25
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/t;->b:Lcom/google/android/youtube/app/honeycomb/tablet/n;
-
-    iget-object v1, v1, Lcom/google/android/youtube/app/honeycomb/tablet/n;->d:Lcom/google/android/youtube/app/o;
-
-    iget-object v2, v0, Lcom/google/android/youtube/core/model/Subscription;->title:Ljava/lang/String;
-
-    const v3, 0x7f09002c
-
-    iget-object v0, v0, Lcom/google/android/youtube/core/model/Subscription;->editUri:Landroid/net/Uri;
-
-    invoke-interface {v1, v2, v3, v0}, Lcom/google/android/youtube/app/o;->a(Ljava/lang/String;ILandroid/net/Uri;)V
-
-    goto :goto_15
-
-    .line 478
-    :pswitch_34
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/t;->b:Lcom/google/android/youtube/app/honeycomb/tablet/n;
-
-    iget-object v1, v1, Lcom/google/android/youtube/app/honeycomb/tablet/n;->d:Lcom/google/android/youtube/app/o;
-
-    iget-object v0, v0, Lcom/google/android/youtube/core/model/Subscription;->uri:Landroid/net/Uri;
+    move-result v1
 
     const/4 v2, 0x1
 
-    invoke-interface {v1, v0, v2}, Lcom/google/android/youtube/app/o;->a(Landroid/net/Uri;Z)V
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_49
 
-    goto :goto_15
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/android/youtube/app/honeycomb/tablet/t;->a:[I
 
-    .line 481
-    :pswitch_3f
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/t;->b:Lcom/google/android/youtube/app/honeycomb/tablet/n;
+    sget-object v1, Lcom/google/android/youtube/core/model/Subscription$Type;->USER:Lcom/google/android/youtube/core/model/Subscription$Type;
 
-    iget-object v1, v1, Lcom/google/android/youtube/app/honeycomb/tablet/n;->d:Lcom/google/android/youtube/app/o;
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/Subscription$Type;->ordinal()I
 
-    iget-object v0, v0, Lcom/google/android/youtube/core/model/Subscription;->title:Ljava/lang/String;
+    move-result v1
 
-    invoke-interface {v1, v0}, Lcom/google/android/youtube/app/o;->b(Ljava/lang/String;)V
+    const/4 v2, 0x2
 
-    goto :goto_15
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_47
 
-    .line 484
-    :pswitch_49
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/t;->b:Lcom/google/android/youtube/app/honeycomb/tablet/n;
+    :goto_1f
+    :try_start_1f
+    sget-object v0, Lcom/google/android/youtube/app/honeycomb/tablet/t;->a:[I
 
-    iget-object v1, v1, Lcom/google/android/youtube/app/honeycomb/tablet/n;->d:Lcom/google/android/youtube/app/o;
+    sget-object v1, Lcom/google/android/youtube/core/model/Subscription$Type;->FAVORITES:Lcom/google/android/youtube/core/model/Subscription$Type;
 
-    iget-object v2, v0, Lcom/google/android/youtube/core/model/Subscription;->title:Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/Subscription$Type;->ordinal()I
 
-    const v3, 0x7f09002d
+    move-result v1
 
-    iget-object v0, v0, Lcom/google/android/youtube/core/model/Subscription;->editUri:Landroid/net/Uri;
+    const/4 v2, 0x3
 
-    invoke-interface {v1, v2, v3, v0}, Lcom/google/android/youtube/app/o;->a(Ljava/lang/String;ILandroid/net/Uri;)V
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_45
 
-    goto :goto_15
+    :goto_2a
+    :try_start_2a
+    sget-object v0, Lcom/google/android/youtube/app/honeycomb/tablet/t;->a:[I
 
-    .line 470
-    :pswitch_data_58
-    .packed-switch 0x1
-        :pswitch_16
-        :pswitch_25
-        :pswitch_34
-        :pswitch_3f
-        :pswitch_49
-    .end packed-switch
+    sget-object v1, Lcom/google/android/youtube/core/model/Subscription$Type;->PLAYLIST:Lcom/google/android/youtube/core/model/Subscription$Type;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/Subscription$Type;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_35
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_43
+
+    :goto_35
+    :try_start_35
+    sget-object v0, Lcom/google/android/youtube/app/honeycomb/tablet/t;->a:[I
+
+    sget-object v1, Lcom/google/android/youtube/core/model/Subscription$Type;->QUERY:Lcom/google/android/youtube/core/model/Subscription$Type;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/Subscription$Type;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_40
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_35 .. :try_end_40} :catch_41
+
+    :goto_40
+    return-void
+
+    :catch_41
+    move-exception v0
+
+    goto :goto_40
+
+    :catch_43
+    move-exception v0
+
+    goto :goto_35
+
+    :catch_45
+    move-exception v0
+
+    goto :goto_2a
+
+    :catch_47
+    move-exception v0
+
+    goto :goto_1f
+
+    :catch_49
+    move-exception v0
+
+    goto :goto_14
 .end method

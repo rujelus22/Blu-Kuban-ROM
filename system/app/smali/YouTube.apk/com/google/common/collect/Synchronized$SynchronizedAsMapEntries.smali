@@ -8,16 +8,20 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Set;Ljava/lang/Object;)V
+.method constructor <init>(Ljava/util/Set;Ljava/lang/Object;)V
     .registers 3
     .parameter
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 1000
+    .line 838
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Synchronized$SynchronizedSet;-><init>(Ljava/util/Set;Ljava/lang/Object;)V
 
-    .line 1001
+    .line 839
     return-void
 .end method
 
@@ -28,12 +32,12 @@
     .parameter
 
     .prologue
-    .line 1038
+    .line 876
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1039
+    .line 877
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->delegate()Ljava/util/Set;
 
@@ -49,7 +53,7 @@
 
     return v0
 
-    .line 1040
+    .line 878
     :catchall_d
     move-exception v0
 
@@ -63,18 +67,18 @@
     .parameter
 
     .prologue
-    .line 1043
+    .line 881
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1044
+    .line 882
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->delegate()Ljava/util/Set;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/google/common/collect/at;->a(Ljava/util/Collection;Ljava/util/Collection;)Z
+    invoke-static {v0, p1}, Lcom/google/common/collect/cf;->a(Ljava/util/Collection;Ljava/util/Collection;)Z
 
     move-result v0
 
@@ -84,7 +88,7 @@
 
     return v0
 
-    .line 1045
+    .line 883
     :catchall_d
     move-exception v0
 
@@ -98,29 +102,29 @@
     .parameter
 
     .prologue
-    .line 1048
+    .line 886
     if-ne p1, p0, :cond_4
 
-    .line 1049
+    .line 887
     const/4 v0, 0x1
 
-    .line 1052
+    .line 890
     :goto_3
     return v0
 
-    .line 1051
+    .line 889
     :cond_4
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1052
+    .line 890
     :try_start_7
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->delegate()Ljava/util/Set;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/google/common/collect/at;->a(Ljava/util/Set;Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Lcom/google/common/collect/Sets;->a(Ljava/util/Set;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -130,7 +134,7 @@
 
     goto :goto_3
 
-    .line 1053
+    .line 891
     :catchall_11
     move-exception v0
 
@@ -143,15 +147,15 @@
     .registers 3
 
     .prologue
-    .line 1005
+    .line 843
     invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 1006
-    new-instance v1, Lcom/google/common/collect/gb;
+    .line 844
+    new-instance v1, Lcom/google/common/collect/lw;
 
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/gb;-><init>(Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;Ljava/util/Iterator;)V
+    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/lw;-><init>(Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;Ljava/util/Iterator;)V
 
     return-object v1
 .end method
@@ -161,12 +165,12 @@
     .parameter
 
     .prologue
-    .line 1056
+    .line 894
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1057
+    .line 895
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->delegate()Ljava/util/Set;
 
@@ -182,7 +186,7 @@
 
     return v0
 
-    .line 1058
+    .line 896
     :catchall_d
     move-exception v0
 
@@ -196,12 +200,12 @@
     .parameter
 
     .prologue
-    .line 1061
+    .line 899
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1062
+    .line 900
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->delegate()Ljava/util/Set;
 
@@ -211,7 +215,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/google/common/collect/cr;->a(Ljava/util/Iterator;Ljava/util/Collection;)Z
+    invoke-static {v0, p1}, Lcom/google/common/collect/ee;->a(Ljava/util/Iterator;Ljava/util/Collection;)Z
 
     move-result v0
 
@@ -221,7 +225,7 @@
 
     return v0
 
-    .line 1063
+    .line 901
     :catchall_11
     move-exception v0
 
@@ -235,12 +239,12 @@
     .parameter
 
     .prologue
-    .line 1066
+    .line 904
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1067
+    .line 905
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->delegate()Ljava/util/Set;
 
@@ -250,7 +254,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/google/common/collect/cr;->b(Ljava/util/Iterator;Ljava/util/Collection;)Z
+    invoke-static {v0, p1}, Lcom/google/common/collect/ee;->b(Ljava/util/Iterator;Ljava/util/Collection;)Z
 
     move-result v0
 
@@ -260,7 +264,7 @@
 
     return v0
 
-    .line 1068
+    .line 906
     :catchall_11
     move-exception v0
 
@@ -273,18 +277,18 @@
     .registers 3
 
     .prologue
-    .line 1028
+    .line 866
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1029
+    .line 867
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->delegate()Ljava/util/Set;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/common/collect/fq;->a(Ljava/util/Collection;)[Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/common/collect/jd;->a(Ljava/util/Collection;)[Ljava/lang/Object;
 
     move-result-object v0
 
@@ -294,7 +298,7 @@
 
     return-object v0
 
-    .line 1030
+    .line 868
     :catchall_d
     move-exception v0
 
@@ -308,18 +312,18 @@
     .parameter
 
     .prologue
-    .line 1033
+    .line 871
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1034
+    .line 872
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->delegate()Ljava/util/Set;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/google/common/collect/fq;->a(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-static {v0, p1}, Lcom/google/common/collect/jd;->a(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
@@ -329,7 +333,7 @@
 
     return-object v0
 
-    .line 1035
+    .line 873
     :catchall_d
     move-exception v0
 

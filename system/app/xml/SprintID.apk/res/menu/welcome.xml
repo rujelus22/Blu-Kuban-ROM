@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:icon="@drawable/ic_menu_skip" android:id="@id/skip" android:title="Skip" />
-    <item android:icon="@drawable/ic_menu_sprint" android:id="@id/sprint_zone" android:visible="false" android:title="Sprint Zone" />
-    <item android:icon="@android:drawable/ic_menu_call" android:id="@id/customer_care" android:visible="false" android:title="@string/customer_care" />
-</menu>

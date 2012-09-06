@@ -16,7 +16,7 @@
 
 .field public static final COLORTONE_DIALOG:I = 0x5
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field public static final DETAILS_DIALOG:I = 0x2
 

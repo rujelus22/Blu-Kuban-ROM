@@ -1,63 +1,77 @@
-.class final Lcom/google/android/maps/driveabout/vector/bK;
+.class Lcom/google/android/maps/driveabout/vector/bk;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Lcom/google/android/maps/driveabout/vector/bn;
 
 
 # direct methods
 .method private constructor <init>()V
     .registers 1
 
+    .prologue
+    .line 868
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/google/android/maps/driveabout/vector/bJ;)V
+.method synthetic constructor <init>(Lcom/google/android/maps/driveabout/vector/bg;)V
     .registers 2
+    .parameter
 
-    invoke-direct {p0}, Lcom/google/android/maps/driveabout/vector/bK;-><init>()V
+    .prologue
+    .line 868
+    invoke-direct {p0}, Lcom/google/android/maps/driveabout/vector/bk;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lcom/google/android/maps/driveabout/vector/bH;Lcom/google/android/maps/driveabout/vector/bH;)I
-    .registers 5
+.method public a(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLConfig;Ljava/lang/Object;)Ljavax/microedition/khronos/egl/EGLSurface;
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-virtual {p2}, Lcom/google/android/maps/driveabout/vector/bH;->a()Lt/l;
+    .prologue
+    const/4 v0, 0x0
+
+    .line 872
+    .line 874
+    const/4 v1, 0x0
+
+    :try_start_2
+    invoke-interface {p1, p2, p3, p4, v1}, Ljavax/microedition/khronos/egl/EGL10;->eglCreateWindowSurface(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLConfig;Ljava/lang/Object;[I)Ljavax/microedition/khronos/egl/EGLSurface;
+    :try_end_5
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_5} :catch_7
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/vector/bI;->a(Lt/l;)I
+    .line 884
+    :goto_6
+    return-object v0
 
-    move-result v0
+    .line 875
+    :catch_7
+    move-exception v1
 
-    invoke-virtual {p1}, Lcom/google/android/maps/driveabout/vector/bH;->a()Lt/l;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/google/android/maps/driveabout/vector/bI;->a(Lt/l;)I
-
-    move-result v1
-
-    sub-int/2addr v0, v1
-
-    return v0
+    goto :goto_6
 .end method
 
-.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public a(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)V
     .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    check-cast p1, Lcom/google/android/maps/driveabout/vector/bH;
+    .prologue
+    .line 889
+    invoke-interface {p1, p2, p3}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroySurface(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)Z
 
-    check-cast p2, Lcom/google/android/maps/driveabout/vector/bH;
-
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/maps/driveabout/vector/bK;->a(Lcom/google/android/maps/driveabout/vector/bH;Lcom/google/android/maps/driveabout/vector/bH;)I
-
-    move-result v0
-
-    return v0
+    .line 890
+    return-void
 .end method

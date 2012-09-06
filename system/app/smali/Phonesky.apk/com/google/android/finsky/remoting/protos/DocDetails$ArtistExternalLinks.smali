@@ -42,32 +42,32 @@
     .registers 2
 
     .prologue
-    .line 1969
+    .line 2170
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1973
+    .line 2174
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->websiteUrl_:Ljava/util/List;
 
-    .line 2007
+    .line 2208
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->googlePlusProfileUrl_:Ljava/lang/String;
 
-    .line 2024
+    .line 2225
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->youtubeChannelUrl_:Ljava/lang/String;
 
-    .line 2063
+    .line 2265
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->cachedSize:I
 
-    .line 1969
+    .line 2170
     return-void
 .end method
 
@@ -78,17 +78,17 @@
     .parameter "value"
 
     .prologue
-    .line 1990
+    .line 2191
     if-nez p1, :cond_8
 
-    .line 1991
+    .line 2192
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1993
+    .line 2194
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->websiteUrl_:Ljava/util/List;
 
@@ -98,20 +98,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 1994
+    .line 2195
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->websiteUrl_:Ljava/util/List;
 
-    .line 1996
+    .line 2197
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->websiteUrl_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1997
+    .line 2198
     return-object p0
 .end method
 
@@ -119,15 +119,15 @@
     .registers 2
 
     .prologue
-    .line 2065
+    .line 2268
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 2067
+    .line 2270
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->getSerializedSize()I
 
-    .line 2069
+    .line 2272
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->cachedSize:I
 
@@ -138,7 +138,7 @@
     .registers 2
 
     .prologue
-    .line 2008
+    .line 2209
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->googlePlusProfileUrl_:Ljava/lang/String;
 
     return-object v0
@@ -148,14 +148,14 @@
     .registers 7
 
     .prologue
-    .line 2073
+    .line 2277
     const/4 v3, 0x0
 
-    .line 2075
+    .line 2279
     .local v3, size:I
     const/4 v0, 0x0
 
-    .line 2076
+    .line 2280
     .local v0, dataSize:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->getWebsiteUrlList()Ljava/util/List;
 
@@ -179,7 +179,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 2077
+    .line 2281
     .local v1, element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -189,12 +189,12 @@
 
     goto :goto_a
 
-    .line 2080
+    .line 2284
     .end local v1           #element:Ljava/lang/String;
     :cond_1c
     add-int/2addr v3, v0
 
-    .line 2081
+    .line 2285
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->getWebsiteUrlList()Ljava/util/List;
 
     move-result-object v4
@@ -207,14 +207,14 @@
 
     add-int/2addr v3, v4
 
-    .line 2083
+    .line 2287
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->hasGooglePlusProfileUrl()Z
 
     move-result v4
 
     if-eqz v4, :cond_38
 
-    .line 2084
+    .line 2288
     const/4 v4, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->getGooglePlusProfileUrl()Ljava/lang/String;
@@ -227,7 +227,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2087
+    .line 2291
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->hasYoutubeChannelUrl()Z
 
@@ -235,7 +235,7 @@
 
     if-eqz v4, :cond_48
 
-    .line 2088
+    .line 2292
     const/4 v4, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->getYoutubeChannelUrl()Ljava/lang/String;
@@ -248,11 +248,11 @@
 
     add-int/2addr v3, v4
 
-    .line 2091
+    .line 2295
     :cond_48
     iput v3, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->cachedSize:I
 
-    .line 2092
+    .line 2296
     return v3
 .end method
 
@@ -260,7 +260,7 @@
     .registers 2
 
     .prologue
-    .line 1978
+    .line 2179
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->websiteUrl_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -283,7 +283,7 @@
     .end annotation
 
     .prologue
-    .line 1976
+    .line 2177
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->websiteUrl_:Ljava/util/List;
 
     return-object v0
@@ -293,7 +293,7 @@
     .registers 2
 
     .prologue
-    .line 2025
+    .line 2226
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->youtubeChannelUrl_:Ljava/lang/String;
 
     return-object v0
@@ -303,7 +303,7 @@
     .registers 2
 
     .prologue
-    .line 2009
+    .line 2210
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->hasGooglePlusProfileUrl:Z
 
     return v0
@@ -313,7 +313,7 @@
     .registers 2
 
     .prologue
-    .line 2026
+    .line 2227
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->hasYoutubeChannelUrl:Z
 
     return v0
@@ -329,29 +329,29 @@
     .end annotation
 
     .prologue
-    .line 2099
+    .line 2304
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 2100
+    .line 2305
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_26
 
-    .line 2104
+    .line 2309
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 2105
+    .line 2310
     :sswitch_d
     return-object p0
 
-    .line 2110
+    .line 2315
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -361,7 +361,7 @@
 
     goto :goto_0
 
-    .line 2114
+    .line 2319
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -371,7 +371,7 @@
 
     goto :goto_0
 
-    .line 2118
+    .line 2323
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -381,7 +381,7 @@
 
     goto :goto_0
 
-    .line 2100
+    .line 2305
     :sswitch_data_26
     .sparse-switch
         0x0 -> :sswitch_d
@@ -401,7 +401,7 @@
     .end annotation
 
     .prologue
-    .line 1967
+    .line 2167
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;
 
     move-result-object v0
@@ -414,15 +414,15 @@
     .parameter "value"
 
     .prologue
-    .line 2011
+    .line 2212
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->hasGooglePlusProfileUrl:Z
 
-    .line 2012
+    .line 2213
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->googlePlusProfileUrl_:Ljava/lang/String;
 
-    .line 2013
+    .line 2214
     return-object p0
 .end method
 
@@ -431,15 +431,15 @@
     .parameter "value"
 
     .prologue
-    .line 2028
+    .line 2229
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->hasYoutubeChannelUrl:Z
 
-    .line 2029
+    .line 2230
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->youtubeChannelUrl_:Ljava/lang/String;
 
-    .line 2030
+    .line 2231
     return-object p0
 .end method
 
@@ -453,7 +453,7 @@
     .end annotation
 
     .prologue
-    .line 2052
+    .line 2254
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->getWebsiteUrlList()Ljava/util/List;
 
     move-result-object v2
@@ -476,7 +476,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 2053
+    .line 2255
     .local v0, element:Ljava/lang/String;
     const/4 v2, 0x1
 
@@ -484,7 +484,7 @@
 
     goto :goto_8
 
-    .line 2055
+    .line 2257
     .end local v0           #element:Ljava/lang/String;
     :cond_19
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->hasGooglePlusProfileUrl()Z
@@ -493,7 +493,7 @@
 
     if-eqz v2, :cond_27
 
-    .line 2056
+    .line 2258
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->getGooglePlusProfileUrl()Ljava/lang/String;
@@ -502,7 +502,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2058
+    .line 2260
     :cond_27
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->hasYoutubeChannelUrl()Z
 
@@ -510,7 +510,7 @@
 
     if-eqz v2, :cond_35
 
-    .line 2059
+    .line 2261
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistExternalLinks;->getYoutubeChannelUrl()Ljava/lang/String;
@@ -519,7 +519,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2061
+    .line 2263
     :cond_35
     return-void
 .end method

@@ -1,37 +1,52 @@
-.class Lcom/google/googlenav/android/o;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/android/l;
+.class Lcom/google/googlenav/android/O;
+.super Lcom/google/googlenav/android/aa;
+.source "SourceFile"
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/android/l;)V
-    .registers 2
+.method public constructor <init>()V
+    .registers 5
 
-    iput-object p1, p0, Lcom/google/googlenav/android/o;->a:Lcom/google/googlenav/android/l;
+    .prologue
+    const/4 v3, 0x1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v2, 0x0
 
-    return-void
-.end method
+    .line 2332
+    invoke-direct {p0}, Lcom/google/googlenav/android/aa;-><init>()V
 
+    .line 2334
+    new-array v0, v3, [Ljava/lang/String;
 
-# virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 4
+    const-string v1, "q"
 
-    iget-object v0, p0, Lcom/google/googlenav/android/o;->a:Lcom/google/googlenav/android/l;
+    aput-object v1, v0, v2
 
-    invoke-static {v0}, Lcom/google/googlenav/android/l;->c(Lcom/google/googlenav/android/l;)Lcom/google/android/maps/MapsActivity;
+    invoke-static {}, Landroid/net/UrlQuerySanitizer;->getAllButNulAndAngleBracketsLegal()Landroid/net/UrlQuerySanitizer$ValueSanitizer;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Lcom/google/android/maps/MapsActivity;->finish()V
+    invoke-virtual {p0, v0, v1}, Lcom/google/googlenav/android/O;->registerParameters([Ljava/lang/String;Landroid/net/UrlQuerySanitizer$ValueSanitizer;)V
 
+    .line 2339
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    const-string v1, "cbp"
+
+    aput-object v1, v0, v2
+
+    const-string v1, "z"
+
+    aput-object v1, v0, v3
+
+    invoke-static {}, Landroid/net/UrlQuerySanitizer;->getAllIllegal()Landroid/net/UrlQuerySanitizer$ValueSanitizer;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v0, v1}, Lcom/google/googlenav/android/O;->registerParameters([Ljava/lang/String;Landroid/net/UrlQuerySanitizer$ValueSanitizer;)V
+
+    .line 2345
     return-void
 .end method

@@ -53,40 +53,40 @@
         <item quantity="one">Laukiama operacijos dėl %1$d pokalbio.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">Nutildyta: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Nutildyta: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Nutildyta: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Nutildyta: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">Pranešta kaip apie šlamštą: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Pranešta kaip apie šlamštą: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Pranešta kaip apie šlamštą: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Pranešta kaip apie šlamštą: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">Suarchyvuota: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Suarchyvuota: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Suarchyvuota: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Suarchyvuota: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">Perkelta į „Gautuosius“: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Perkelta į „Gautuosius“: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Perkelta į „Gautuosius“: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Perkelta į „Gautuosius“: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">Ištrinta: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Ištrinta: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Ištrinta: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Ištrinta: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">Pažymėta kaip svarbūs: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Pažymėta kaip svarbūs: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Pažymėta kaip svarbūs: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Pažymėta kaip svarbūs: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">Pažymėta kaip nesvarbūs: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Pažymėta kaip nesvarbūs: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Pažymėta kaip nesvarbūs: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Pažymėta kaip nesvarbūs: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">Pažymėta kaip skaityti: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Pažymėta kaip skaityti: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Pažymėta kaip skaityti: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Pažymėta kaip skaityti: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">Pažymėta kaip neskaityti: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Pažymėta kaip neskaityti: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Pažymėta kaip neskaityti: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Pažymėta kaip neskaityti: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Pakeistos etiketės.</item>

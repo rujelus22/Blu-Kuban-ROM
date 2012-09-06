@@ -30,7 +30,7 @@
     .line 13
     iget-object v1, p0, Lcom/google/android/finsky/activities/AlbumPackViewBinder;->mLayout:Landroid/view/View;
 
-    const v2, 0x7f0800a3
+    const v2, 0x7f0800a9
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -43,14 +43,14 @@
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 15
-    const v1, 0x7f070210
+    const v1, 0x7f07024f
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
     .line 17
     iget-object v1, p0, Lcom/google/android/finsky/activities/AlbumPackViewBinder;->mLayout:Landroid/view/View;
 
-    const v2, 0x7f0800ce
+    const v2, 0x7f0800d4
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -61,7 +61,7 @@
     .line 18
     iget-object v1, p0, Lcom/google/android/finsky/activities/AlbumPackViewBinder;->mLayout:Landroid/view/View;
 
-    const v2, 0x7f0800c5
+    const v2, 0x7f0800ce
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

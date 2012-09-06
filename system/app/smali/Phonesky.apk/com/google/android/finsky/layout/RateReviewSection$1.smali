@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/layout/RateReviewSection;->configure(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/remoting/protos/Rev$Review;Lcom/google/android/finsky/navigationmanager/NavigationManager;Landroid/support/v4/app/Fragment;)V
+    value = Lcom/google/android/finsky/layout/RateReviewSection;->configure(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/remoting/protos/Rev$Review;Lcom/google/android/finsky/navigationmanager/NavigationManager;Landroid/support/v4/app/Fragment;Lcom/google/android/finsky/library/Libraries;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 77
+    .line 86
     iput-object p1, p0, Lcom/google/android/finsky/layout/RateReviewSection$1;->this$0:Lcom/google/android/finsky/layout/RateReviewSection;
 
     iput-object p2, p0, Lcom/google/android/finsky/layout/RateReviewSection$1;->val$fragment:Landroid/support/v4/app/Fragment;
@@ -66,7 +66,7 @@
 
     const/4 v7, 0x0
 
-    .line 81
+    .line 90
     iget-object v8, p0, Lcom/google/android/finsky/layout/RateReviewSection$1;->val$fragment:Landroid/support/v4/app/Fragment;
 
     invoke-virtual {v8}, Landroid/support/v4/app/Fragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -77,7 +77,7 @@
 
     move-result-object v4
 
-    .line 82
+    .line 91
     .local v4, resources:Landroid/content/res/Resources;
     const/high16 v8, 0x7f09
 
@@ -87,19 +87,19 @@
 
     if-eqz v8, :cond_1c
 
-    .line 84
+    .line 93
     iget-object v7, p0, Lcom/google/android/finsky/layout/RateReviewSection$1;->val$navigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     iget-object v8, p0, Lcom/google/android/finsky/layout/RateReviewSection$1;->val$document:Lcom/google/android/finsky/api/model/Document;
 
     invoke-virtual {v7, v8}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToAllReviews(Lcom/google/android/finsky/api/model/Document;)V
 
-    .line 104
+    .line 113
     :cond_1b
     :goto_1b
     return-void
 
-    .line 87
+    .line 96
     :cond_1c
     iget-object v8, p0, Lcom/google/android/finsky/layout/RateReviewSection$1;->val$fragment:Landroid/support/v4/app/Fragment;
 
@@ -107,7 +107,7 @@
 
     move-result-object v1
 
-    .line 88
+    .line 97
     .local v1, fragmentManager:Landroid/support/v4/app/FragmentManager;
     const-string v8, "review_dialog"
 
@@ -115,11 +115,11 @@
 
     move-result-object v6
 
-    .line 90
+    .line 99
     .local v6, reviewsFragment:Landroid/support/v4/app/Fragment;
     if-nez v6, :cond_1b
 
-    .line 94
+    .line 103
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v8
@@ -128,7 +128,7 @@
 
     move-result-object v2
 
-    .line 95
+    .line 104
     .local v2, metadata:Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;
     invoke-virtual {v2}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasCommentPostEnabled()Z
 
@@ -144,14 +144,14 @@
 
     move v0, v5
 
-    .line 97
+    .line 106
     .local v0, commentsEnabled:Z
     :goto_3f
     if-eqz v0, :cond_42
 
     const/4 v5, 0x2
 
-    .line 99
+    .line 108
     .local v5, reviewMode:I
     :cond_42
     iget-object v8, p0, Lcom/google/android/finsky/layout/RateReviewSection$1;->val$document:Lcom/google/android/finsky/api/model/Document;
@@ -166,13 +166,13 @@
 
     move-result-object v3
 
-    .line 101
+    .line 110
     .local v3, ratingDialog:Lcom/google/android/finsky/activities/ReviewDialog;
     iget-object v8, p0, Lcom/google/android/finsky/layout/RateReviewSection$1;->val$fragment:Landroid/support/v4/app/Fragment;
 
     invoke-virtual {v3, v8, v7}, Lcom/google/android/finsky/activities/ReviewDialog;->setTargetFragment(Landroid/support/v4/app/Fragment;I)V
 
-    .line 102
+    .line 111
     const-string v7, "review_dialog"
 
     invoke-virtual {v3, v1, v7}, Lcom/google/android/finsky/activities/ReviewDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
@@ -185,6 +185,6 @@
     :cond_59
     move v0, v7
 
-    .line 95
+    .line 104
     goto :goto_3f
 .end method

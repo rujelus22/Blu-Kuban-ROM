@@ -7,25 +7,23 @@
 
 
 # direct methods
-.method synthetic constructor <init>()V
-    .registers 2
+.method private constructor <init>()V
+    .registers 1
 
     .prologue
     .line 238
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/core/converter/m;-><init>(B)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>(B)V
+.method synthetic constructor <init>(B)V
     .registers 2
     .parameter
 
     .prologue
     .line 238
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/m;-><init>()V
 
     return-void
 .end method

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rom">ROM</string>
+    <string name="homepage">Homepage</string>
+    <string name="plugin">Plugin</string>
+    <string name="Themes">Temi</string>
+    <string name="apps">Applicazioni</string>
+    <string name="kernel">Kernel</string>
+    <string name="app_name">Update Me</string>
+    <string name="check_rom_update">Controlla aggiornamenti della ROM</string>
+    <string name="exit">Esci</string>
+    <string name="info">Informazioni</string>
+    <string name="costumization">Customizzazione</string>
+    <string name="settings">Configurazione</string>
+    <string name="downloading_file">Downloading file....</string>
+    <string name="md5_ok">Controllo MD5 passato</string>
+    <string name="md5_error">Errore nel controllo MD5</string>
+    <string name="file_downloaded">File scaricato in:</string>
+    <string name="reboot_to_recovery">Vuoi riavviare in recovery?</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Annulla</string>
+    <string name="new_rom">Nuova versione della ROM disponibile</string>
+    <string name="download_new_rom">Scarica la nuova versione della ROM</string>
+    <string name="changelog">Cambiamenti</string>
+    <string name="reload_apps">Ricarica applicazioni</string>
+    <string name="check_rom_startup">"Controlla aggiornamenti ROM all'avvio"</string>
+    <string name="choose_download_dir">Scegli cartella per il download</string>
+    <string name="reboot_recovery">Riavvia in recovery</string>
+    <string name="donate">Dona al creatore della rom</string>
+    <string name="donate_acquariusoft">Dona ad acquariusoft</string>
+    <string name="donate_acquariusoft_desc">Lo sviluppatore di Update me</string>
+    <string name="no_update_available">Nessun aggiornamento disponibile</string>
+    <string name="use_light_theme">Usa tema chiaro</string>
+    <string name="reboot_to_enable">"Riavvia l'applicazione per abilitare questo settaggio"</string>
+    <string name="reboot_and_install">Riavvia ed installa</string>
+    <string name="downloaded_files">File scaricati</string>
+    <string name="cwm_flip_sdcard">"Inverti il nome dell'sdcard in CWM"</string>
+    <string name="cwm_flip_sdcard_desc">"Utile per alcune CWM che non installano i file zip automaticamente, come l' SGSII"</string>
+    <string name="dialog_donate_title">Dona</string>
+    <string name="dialog_donate_text">"Se trovi questa app interessante, dai un supporto allo sviluppatore per migliore le funzionalità.
+Puoi donare con PayPal o comprare la versione donate nel Play Store"</string>
+    <string name="dialog_donate_paypal">Paypal</string>
+    <string name="dialog_donate_market">Play Store</string>
+    <string name="error">Errore</string>
+    <string name="error_on_donwload">Errore nel download del file</string>
+    <string name="install">Installa</string>
+    <string name="click_for_update_market">Controlla aggiornamenti nel the Play Store</string>
+    <string name="reboot_type">Tipo di Reboot</string>
+    <string name="alert_no_config">"Nessuna configurazione disponibile!!
+
+Questa rom non è compatibile con l'applicazione.
+Contatta il creatore della ROM per renderla compatibile o controlle nella lista delle ROM compatibili!
+
+QUESTO NON E' UN PROBLEMA DELL'APP, QUINDI NON INSERITE COMMENTI NEGATIVI NEL MARKET, PER FAVORE!"</string>
+    <string name="compatible_rom_list">Lista ROM compatibili</string>
+    <string name="check_rom_time">Controlla ROM ogni (Ore)</string>
+    <string name="disable_check_rom">Disabilita controllo automatico ROM</string>
+    <string name="recovery">Recovery</string>
+    <string name="option">Opzioni</string>
+    <string name="other">Altri</string>
+    <string name="buy_donated">Compra la versione donazione</string>
+    <string name="buy_donated_desc">Nascondi le pubblicità ed ottieni più opzioni...</string>
+    <string name="download_script">Download scripts</string>
+    <string name="script_title">Titolo</string>
+    <string name="script_desc">Descrizione</string>
+    <string name="script_text">Script</string>
+    <string name="script_create_your">Modifica lo script</string>
+    <string name="script_insert">Inserisci</string>
+    <string name="script_inserted">Script inserito</string>
+    <string name="script_create_new">Crea nuovo</string>
+    <string name="delete">Elimina</string>
+    <string name="share_rom">Condividi la tua ROM</string>
+    <string name="full_wipe">Esegui un wipe quando installi</string>
+    <string name="full_wipe_recommended">Un wipe completo è raccomandato</string>
+    <string name="system_app">Applicazione di sistema</string>
+    <string name="system_app_desc">"Questa è un'applicazione di sistema, puoi danneggiare il sistema se la cancelli!!!
+
+Eliminare?"</string>
+    <string name="installed_apps">Apps installate</string>
+    <string name="view_video_apps">"Se ti piace questo programma, guarda questo video per supportarci.
+
+Questa finestra sarà mostrata solo ad ogni aggiornamento."</string>
+    <string name="download_the_file">Scaricare il file?</string>
+    <string name="disable_apps">Disabilita apps installate</string>
+    <string name="disable_scripts">Disabilita scripts</string>
+    <string name="enable_quick_apps">Abilita Quick Apps</string>
+    <string name="enable_recent_screenshoot">Abilita screenshoot su applicazioni recenti</string>
+    <string name="enable_recent_screenshoot_desc">Il bottone delle applicazioni recenti effettua uno screenshoot</string>
+    <string name="hello">Hello World, MegatronPartsActivity!</string>
+</resources>

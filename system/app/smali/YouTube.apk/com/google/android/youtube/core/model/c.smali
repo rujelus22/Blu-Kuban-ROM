@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/model/j;
+.implements Lcom/google/android/youtube/core/model/i;
 
 
 # instance fields

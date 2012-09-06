@@ -11,77 +11,45 @@
 
 .field private final mContext:Landroid/content/Context;
 
+.field private final mCurrentPageUrl:Ljava/lang/String;
+
 .field private final mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
 .field private final mToc:Lcom/google/android/finsky/api/model/DfeToc;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/api/model/DfeToc;)V
-    .registers 10
+.method public constructor <init>(Landroid/content/Context;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/api/model/DfeToc;Ljava/lang/String;)V
+    .registers 6
     .parameter "context"
     .parameter "navigationManager"
     .parameter "toc"
+    .parameter "currentPageUrl"
 
     .prologue
-    .line 48
+    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
+    .line 51
     iput-object p1, p0, Lcom/google/android/finsky/adapters/CorpusGridItem;->mContext:Landroid/content/Context;
 
-    .line 50
+    .line 52
     iput-object p2, p0, Lcom/google/android/finsky/adapters/CorpusGridItem;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
-    .line 51
+    .line 53
     iput-object p3, p0, Lcom/google/android/finsky/adapters/CorpusGridItem;->mToc:Lcom/google/android/finsky/api/model/DfeToc;
 
-    .line 53
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
     .line 54
-    .local v3, resources:Landroid/content/res/Resources;
-    const v4, 0x7f0b0051
+    iput-object p4, p0, Lcom/google/android/finsky/adapters/CorpusGridItem;->mCurrentPageUrl:Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    .line 56
+    invoke-direct {p0}, Lcom/google/android/finsky/adapters/CorpusGridItem;->approximateCellHeight()I
 
-    move-result v1
+    move-result v0
 
-    .line 55
-    .local v1, minHeight:I
-    const v4, 0x7f0b0052
+    iput v0, p0, Lcom/google/android/finsky/adapters/CorpusGridItem;->mCellHeight:I
 
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v2
-
-    .line 59
-    .local v2, minHeightThreshold:I
-    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v4
-
-    iget v4, v4, Landroid/util/DisplayMetrics;->widthPixels:I
-
-    const v5, 0x7f0c0007
-
-    invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v5
-
-    div-int v0, v4, v5
-
-    .line 61
-    .local v0, displayPixelHeight:I
-    invoke-direct {p0, v0, v1, v2}, Lcom/google/android/finsky/adapters/CorpusGridItem;->approximateCellHeight(III)I
-
-    move-result v4
-
-    iput v4, p0, Lcom/google/android/finsky/adapters/CorpusGridItem;->mCellHeight:I
-
-    .line 63
+    .line 57
     return-void
 .end method
 
@@ -96,7 +64,18 @@
     return-object v0
 .end method
 
-.method static synthetic access$100(Lcom/google/android/finsky/adapters/CorpusGridItem;)Lcom/google/android/finsky/navigationmanager/NavigationManager;
+.method static synthetic access$100(Lcom/google/android/finsky/adapters/CorpusGridItem;)Ljava/lang/String;
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 23
+    iget-object v0, p0, Lcom/google/android/finsky/adapters/CorpusGridItem;->mCurrentPageUrl:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$200(Lcom/google/android/finsky/adapters/CorpusGridItem;)Lcom/google/android/finsky/navigationmanager/NavigationManager;
     .registers 2
     .parameter "x0"
 
@@ -107,73 +86,36 @@
     return-object v0
 .end method
 
-.method private approximateCellHeight(III)I
-    .registers 11
-    .parameter "displayPixelHeight"
-    .parameter "minHeight"
-    .parameter "heightThreshold"
+.method private approximateCellHeight()I
+    .registers 4
 
     .prologue
-    .line 78
-    iget-object v3, p0, Lcom/google/android/finsky/adapters/CorpusGridItem;->mToc:Lcom/google/android/finsky/api/model/DfeToc;
+    .line 69
+    iget-object v1, p0, Lcom/google/android/finsky/adapters/CorpusGridItem;->mToc:Lcom/google/android/finsky/api/model/DfeToc;
 
-    invoke-virtual {v3}, Lcom/google/android/finsky/api/model/DfeToc;->getCorpusList()Ljava/util/List;
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/DfeToc;->getCorpusList()Ljava/util/List;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-interface {v3}, Ljava/util/List;->size()I
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 79
+    .line 70
     .local v0, corpusCount:I
-    if-eqz p1, :cond_e
+    int-to-float v1, v0
 
-    if-nez p2, :cond_11
+    const v2, 0x3f19999a
 
-    .line 80
-    :cond_e
-    mul-int/lit8 v1, v0, 0x1
+    mul-float/2addr v1, v2
 
-    .line 91
-    :cond_10
-    :goto_10
-    return v1
-
-    .line 86
-    :cond_11
-    mul-int v2, p2, v0
-
-    .line 87
-    .local v2, minRequired:I
-    int-to-double v3, v2
-
-    int-to-double v5, p1
-
-    div-double/2addr v3, v5
-
-    invoke-static {v3, v4}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide v3
-
-    double-to-int v1, v3
-
-    .line 88
-    .local v1, minCellsRequired:I
-    mul-int v3, v1, p1
-
-    add-int v4, v2, p3
-
-    if-le v3, v4, :cond_10
-
-    .line 91
-    mul-int/lit8 v3, v0, 0x1
-
-    invoke-static {v3, v1}, Ljava/lang/Math;->min(II)I
+    invoke-static {v1}, Landroid/util/FloatMath;->ceil(F)F
 
     move-result v1
 
-    goto :goto_10
+    float-to-int v1, v1
+
+    return v1
 .end method
 
 .method private bindCorpusTile(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Ljava/lang/String;Ljava/lang/String;ZZIII)V
@@ -189,8 +131,8 @@
     .parameter "backendId"
 
     .prologue
-    .line 128
-    const v6, 0x7f040027
+    .line 107
+    const v6, 0x7f04002c
 
     const/4 v7, 0x0
 
@@ -200,15 +142,15 @@
 
     check-cast v2, Landroid/view/ViewGroup;
 
-    .line 129
+    .line 108
     .local v2, cell:Landroid/view/ViewGroup;
-    const v6, 0x7f080087
+    const v6, 0x7f080083
 
     invoke-virtual {v2, v6}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 132
+    .line 111
     .local v4, strip:Landroid/view/View;
     const v6, -0x3f000001
 
@@ -216,8 +158,8 @@
 
     invoke-virtual {v4, v6}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 134
-    const v6, 0x7f08008a
+    .line 113
+    const v6, 0x7f080086
 
     invoke-virtual {v2, v6}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -225,12 +167,12 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    .line 135
+    .line 114
     .local v5, textView:Landroid/widget/TextView;
     invoke-virtual {v5, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 137
-    const v6, 0x7f08008b
+    .line 116
+    const v6, 0x7f080087
 
     invoke-virtual {v2, v6}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -238,14 +180,14 @@
 
     check-cast v3, Landroid/widget/ImageView;
 
-    .line 138
+    .line 117
     .local v3, corpusImageView:Landroid/widget/ImageView;
     move/from16 v0, p8
 
     invoke-virtual {v3, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 150
-    const v6, 0x7f080088
+    .line 129
+    const v6, 0x7f080084
 
     invoke-virtual {v2, v6}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -262,8 +204,8 @@
     :goto_40
     iput v6, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 151
-    const v6, 0x7f080089
+    .line 130
+    const v6, 0x7f080085
 
     invoke-virtual {v2, v6}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -280,14 +222,14 @@
     :goto_50
     iput v6, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 153
-    const v6, 0x7f080011
+    .line 132
+    const v6, 0x7f080014
 
     invoke-virtual {v2, v6}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 154
+    .line 133
     .local v1, accessibilityOverlay:Landroid/view/View;
     new-instance v6, Lcom/google/android/finsky/adapters/CorpusGridItem$1;
 
@@ -297,23 +239,23 @@
 
     invoke-virtual {v1, v6}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 162
+    .line 142
     invoke-virtual {v1, p3}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 164
+    .line 144
     invoke-virtual {p2, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 165
+    .line 145
     return-void
 
-    .line 150
+    .line 129
     .end local v1           #accessibilityOverlay:Landroid/view/View;
     :cond_6a
     const/4 v6, 0x1
 
     goto :goto_40
 
-    .line 151
+    .line 130
     :cond_6c
     const/4 v6, 0x1
 
@@ -328,14 +270,14 @@
     .parameter "showCorpusStrip"
 
     .prologue
-    .line 109
+    .line 88
     iget-object v0, p0, Lcom/google/android/finsky/adapters/CorpusGridItem;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    .line 110
+    .line 89
     .local v1, inflater:Landroid/view/LayoutInflater;
     iget-object v0, p0, Lcom/google/android/finsky/adapters/CorpusGridItem;->mToc:Lcom/google/android/finsky/api/model/DfeToc;
 
@@ -347,7 +289,7 @@
 
     move-result v10
 
-    .line 111
+    .line 90
     .local v10, corporaCount:I
     const/4 v12, 0x0
 
@@ -355,7 +297,7 @@
     :goto_11
     if-ge v12, v10, :cond_49
 
-    .line 112
+    .line 91
     iget-object v0, p0, Lcom/google/android/finsky/adapters/CorpusGridItem;->mToc:Lcom/google/android/finsky/api/model/DfeToc;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeToc;->getCorpusList()Ljava/util/List;
@@ -368,7 +310,7 @@
 
     check-cast v11, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
 
-    .line 114
+    .line 93
     .local v11, data:Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
     add-int/lit8 v0, v10, -0x1
 
@@ -376,14 +318,14 @@
 
     const/4 v6, 0x1
 
-    .line 115
+    .line 94
     .local v6, isLast:Z
     :goto_24
     invoke-virtual {v11}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getBackend()I
 
     move-result v9
 
-    .line 117
+    .line 96
     .local v9, backendId:I
     iget-object v0, p0, Lcom/google/android/finsky/adapters/CorpusGridItem;->mContext:Landroid/content/Context;
 
@@ -391,13 +333,13 @@
 
     move-result v7
 
-    .line 118
+    .line 97
     .local v7, backendHintColor:I
     invoke-static {v9}, Lcom/google/android/finsky/utils/CorpusResourceUtils;->getCorpusWatermarkIconBig(I)I
 
     move-result v8
 
-    .line 120
+    .line 99
     .local v8, backendDrawable:I
     invoke-virtual {v11}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getName()Ljava/lang/String;
 
@@ -418,12 +360,12 @@
 
     invoke-direct/range {v0 .. v9}, Lcom/google/android/finsky/adapters/CorpusGridItem;->bindCorpusTile(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Ljava/lang/String;Ljava/lang/String;ZZIII)V
 
-    .line 111
+    .line 90
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_11
 
-    .line 114
+    .line 93
     .end local v6           #isLast:Z
     .end local v7           #backendHintColor:I
     .end local v8           #backendDrawable:I
@@ -433,7 +375,7 @@
 
     goto :goto_24
 
-    .line 120
+    .line 99
     .restart local v6       #isLast:Z
     .restart local v7       #backendHintColor:I
     .restart local v8       #backendDrawable:I
@@ -443,7 +385,7 @@
 
     goto :goto_3d
 
-    .line 123
+    .line 102
     .end local v6           #isLast:Z
     .end local v7           #backendHintColor:I
     .end local v8           #backendDrawable:I
@@ -457,7 +399,7 @@
     .registers 2
 
     .prologue
-    .line 99
+    .line 78
     iget v0, p0, Lcom/google/android/finsky/adapters/CorpusGridItem;->mCellHeight:I
 
     return v0
@@ -467,7 +409,7 @@
     .registers 2
 
     .prologue
-    .line 67
+    .line 61
     const/4 v0, 0x2
 
     return v0
@@ -477,7 +419,7 @@
     .registers 2
 
     .prologue
-    .line 169
+    .line 149
     sget-object v0, Lcom/google/android/finsky/adapters/UnevenGridItemType;->CORPUS_2xN:Lcom/google/android/finsky/adapters/UnevenGridItemType;
 
     return-object v0
@@ -487,8 +429,8 @@
     .registers 2
 
     .prologue
-    .line 104
-    const v0, 0x7f040028
+    .line 83
+    const v0, 0x7f04002d
 
     return v0
 .end method

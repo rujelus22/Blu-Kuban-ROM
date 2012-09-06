@@ -1,44 +1,32 @@
-.class Lcom/google/googlenav/ui/wizard/fw;
-.super Lcom/google/googlenav/ui/wizard/fM;
+.class Lcom/google/googlenav/ui/wizard/fW;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/fu;
+.field a:Landroid/widget/TextView;
+
+.field b:Landroid/widget/TextView;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/fu;)V
-    .registers 2
+.method private constructor <init>()V
+    .registers 1
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fw;->a:Lcom/google/googlenav/ui/wizard/fu;
-
-    invoke-direct {p0}, Lcom/google/googlenav/ui/wizard/fM;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public a()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fw;->a:Lcom/google/googlenav/ui/wizard/fu;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/fu;->a()V
+    .prologue
+    .line 519
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public a(Lcom/google/googlenav/ah;)V
-    .registers 3
+.method synthetic constructor <init>(Lcom/google/googlenav/ui/wizard/fM;)V
+    .registers 2
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fw;->a:Lcom/google/googlenav/ui/wizard/fu;
-
-    invoke-static {v0, p1}, Lcom/google/googlenav/ui/wizard/fu;->a(Lcom/google/googlenav/ui/wizard/fu;Lcom/google/googlenav/ah;)Lcom/google/googlenav/ah;
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fw;->a:Lcom/google/googlenav/ui/wizard/fu;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/fu;->a(Lcom/google/googlenav/ui/wizard/fu;)V
+    .prologue
+    .line 519
+    invoke-direct {p0}, Lcom/google/googlenav/ui/wizard/fW;-><init>()V
 
     return-void
 .end method

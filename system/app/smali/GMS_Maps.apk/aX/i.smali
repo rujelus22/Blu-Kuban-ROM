@@ -1,180 +1,106 @@
-.class public LaX/i;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/googlenav/ui/ai;
-
-
-# instance fields
-.field private final a:I
-
-.field private final b:Lay/a;
-
-.field private final c:Lax/aS;
+.class public Lax/i;
+.super Lax/s;
+.source "SourceFile"
 
 
 # direct methods
-.method public constructor <init>(Lay/a;Lax/aS;I)V
-    .registers 4
+.method public constructor <init>(Lax/N;Lax/F;)V
+    .registers 9
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 20
+    const/4 v3, 0x6
 
-    iput-object p1, p0, LaX/i;->b:Lay/a;
+    const/4 v4, 0x0
 
-    iput-object p2, p0, LaX/i;->c:Lax/aS;
+    new-instance v5, Lax/j;
 
-    iput p3, p0, LaX/i;->a:I
+    invoke-direct {v5}, Lax/j;-><init>()V
 
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    invoke-direct/range {v0 .. v5}, Lax/s;-><init>(Lax/N;Lax/F;IZLax/O;)V
+
+    .line 28
     return-void
+.end method
+
+.method private static b(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 55
+    const/4 v0, 0x4
+
+    invoke-virtual {p0, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getProtoBuf(I)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public a(Lcom/google/googlenav/ui/aj;)Lah/f;
-    .registers 7
+.method protected a(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)Lax/A;
+    .registers 4
+    .parameter
 
-    check-cast p1, LaX/j;
+    .prologue
+    .line 37
+    new-instance v0, Lax/h;
 
-    invoke-static {p1}, LaX/j;->a(LaX/j;)Ljava/lang/Long;
-
-    move-result-object v1
-
-    iget-object v0, p0, LaX/i;->b:Lay/a;
-
-    new-instance v2, LaX/j;
-
-    iget v3, p0, LaX/i;->a:I
-
-    invoke-direct {v2, v1, v3}, LaX/j;-><init>(Ljava/lang/Long;I)V
-
-    invoke-virtual {v0, v2}, Lay/a;->a(Lcom/google/googlenav/ui/aj;)Lah/f;
-
-    move-result-object v0
-
-    if-nez v0, :cond_3c
-
-    iget-object v2, p0, LaX/i;->c:Lax/aS;
-
-    if-eqz v2, :cond_2f
-
-    iget-object v2, p0, LaX/i;->c:Lax/aS;
-
-    invoke-virtual {v2, v1}, Lax/aS;->a(Ljava/lang/Long;)Lax/aP;
+    invoke-static {p1}, Lax/i;->b(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
     move-result-object v1
 
-    if-eqz v1, :cond_2f
+    invoke-direct {v0, v1}, Lax/h;-><init>(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
 
-    invoke-static {}, Lcom/google/googlenav/ui/bw;->d()Lcom/google/googlenav/ui/bw;
-
-    move-result-object v0
-
-    invoke-virtual {v1}, Lax/aP;->m()Z
-
-    move-result v1
-
-    iget v2, p0, LaX/i;->a:I
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/googlenav/ui/bw;->a(ZI)Lah/f;
-
-    move-result-object v0
-
-    :cond_2f
-    if-nez v0, :cond_3c
-
-    invoke-static {}, Lcom/google/googlenav/ui/bw;->d()Lcom/google/googlenav/ui/bw;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    iget v2, p0, LaX/i;->a:I
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/googlenav/ui/bw;->a(ZI)Lah/f;
-
-    move-result-object v0
-
-    :cond_3c
-    invoke-static {p1}, LaX/j;->b(LaX/j;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_52
-
-    invoke-virtual {p1}, LaX/j;->b()Lah/f;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_53
-
-    invoke-static {p1}, LaX/j;->c(LaX/j;)Lah/f;
-
-    move-result-object v1
-
-    if-ne v1, v0, :cond_53
-
-    invoke-virtual {p1}, LaX/j;->b()Lah/f;
-
-    move-result-object v0
-
-    :cond_52
-    :goto_52
     return-object v0
+.end method
 
-    :cond_53
-    invoke-static {}, Lcom/google/googlenav/ui/bw;->d()Lcom/google/googlenav/ui/bw;
+.method protected a(Lax/A;Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+    .registers 5
+    .parameter
+    .parameter
 
-    move-result-object v1
+    .prologue
+    .line 42
+    invoke-virtual {p1}, Lax/A;->a()Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    const v2, 0x7f020274
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Lcom/google/googlenav/ui/bw;->a(I)Lah/f;
+    .line 43
+    const/4 v1, 0x4
 
-    move-result-object v1
+    invoke-virtual {p2, v1, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->setProtoBuf(ILcom/google/googlenav/common/io/protocol/ProtoBuf;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    invoke-static {v1}, Lah/j;->d(Lah/f;)Lah/f;
+    .line 44
+    return-void
+.end method
 
-    move-result-object v1
+.method protected a(Lcom/google/googlenav/common/io/protocol/ProtoBuf;Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+    .registers 5
+    .parameter
+    .parameter
 
-    invoke-interface {v1}, Lah/f;->a()I
+    .prologue
+    .line 49
+    invoke-static {p2}, Lax/i;->b(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    move-result v2
+    move-result-object v0
 
-    invoke-interface {v0}, Lah/f;->a()I
+    .line 50
+    const/4 v1, 0x4
 
-    move-result v3
+    invoke-virtual {p1, v1, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->setProtoBuf(ILcom/google/googlenav/common/io/protocol/ProtoBuf;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    sub-int/2addr v2, v3
-
-    div-int/lit8 v2, v2, 0x2
-
-    invoke-interface {v1}, Lah/f;->b()I
-
-    move-result v3
-
-    invoke-interface {v0}, Lah/f;->b()I
-
-    move-result v4
-
-    sub-int/2addr v3, v4
-
-    div-int/lit8 v3, v3, 0x2
-
-    invoke-interface {v0}, Lah/f;->a()I
-
-    invoke-interface {v0}, Lah/f;->b()I
-
-    invoke-interface {v1}, Lah/f;->c()Lah/e;
-
-    move-result-object v4
-
-    invoke-interface {v4, v0, v2, v3}, Lah/e;->a(Lah/f;II)V
-
-    invoke-static {p1, v0}, LaX/j;->a(LaX/j;Lah/f;)Lah/f;
-
-    invoke-virtual {p1, v1}, LaX/j;->a(Lah/f;)V
-
-    move-object v0, v1
-
-    goto :goto_52
+    .line 51
+    return-void
 .end method

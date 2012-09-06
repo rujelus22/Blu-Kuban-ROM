@@ -1,37 +1,14 @@
-.class Lcom/google/googlenav/ui/wizard/av;
+.class public interface abstract Lcom/google/googlenav/ui/wizard/aV;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/aj;
-
-
-# direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/aj;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/av;->a:Lcom/google/googlenav/ui/wizard/aj;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.source "SourceFile"
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 3
+.method public abstract a()V
+.end method
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/av;->a:Lcom/google/googlenav/ui/wizard/aj;
+.method public abstract a(Lcom/google/googlenav/a;)V
+.end method
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/aj;->a(Lcom/google/googlenav/ui/wizard/aj;)Lcom/google/googlenav/ui/wizard/ay;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/google/googlenav/ui/wizard/ay;->b()V
-
-    return-void
+.method public abstract a(Ljava/lang/String;)V
 .end method

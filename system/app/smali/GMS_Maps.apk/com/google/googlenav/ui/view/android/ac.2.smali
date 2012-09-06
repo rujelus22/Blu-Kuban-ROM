@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/view/android/ac;
+.class Lcom/google/googlenav/ui/view/android/aC;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/android/Z;
+.field final synthetic a:Lcom/google/googlenav/ui/view/android/DistanceView;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/Z;)V
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/DistanceView;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/ac;->a:Lcom/google/googlenav/ui/view/android/Z;
+    .prologue
+    .line 139
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/aC;->a:Lcom/google/googlenav/ui/view/android/DistanceView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,12 +26,15 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 3
+.method public run()V
+    .registers 2
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/ac;->a:Lcom/google/googlenav/ui/view/android/Z;
+    .prologue
+    .line 142
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aC;->a:Lcom/google/googlenav/ui/view/android/DistanceView;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/Z;->h(Lcom/google/googlenav/ui/view/android/Z;)V
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/DistanceView;->requestLayout()V
 
+    .line 143
     return-void
 .end method

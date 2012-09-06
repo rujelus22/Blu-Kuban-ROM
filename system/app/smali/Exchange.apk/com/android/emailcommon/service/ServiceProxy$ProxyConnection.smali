@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 68
+    .line 70
     iput-object p1, p0, Lcom/android/emailcommon/service/ServiceProxy$ProxyConnection;->this$0:Lcom/android/emailcommon/service/ServiceProxy;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 68
+    .line 70
     invoke-direct {p0, p1}, Lcom/android/emailcommon/service/ServiceProxy$ProxyConnection;-><init>(Lcom/android/emailcommon/service/ServiceProxy;)V
 
     return-void
@@ -55,12 +55,12 @@
     .parameter "binder"
 
     .prologue
-    .line 70
+    .line 72
     iget-object v0, p0, Lcom/android/emailcommon/service/ServiceProxy$ProxyConnection;->this$0:Lcom/android/emailcommon/service/ServiceProxy;
 
     invoke-virtual {v0, p2}, Lcom/android/emailcommon/service/ServiceProxy;->onConnected(Landroid/os/IBinder;)V
 
-    .line 75
+    .line 77
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Lcom/android/emailcommon/service/ServiceProxy$ProxyConnection$1;
@@ -71,7 +71,7 @@
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 80
+    .line 85
     return-void
 .end method
 
@@ -80,6 +80,6 @@
     .parameter "name"
 
     .prologue
-    .line 86
+    .line 91
     return-void
 .end method

@@ -33,21 +33,21 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1126
+    .line 1395
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1131
+    .line 1400
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->grantPeriodSeconds_:I
 
-    .line 1148
+    .line 1417
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->activatePeriodSeconds_:I
 
-    .line 1183
+    .line 1453
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->cachedSize:I
 
-    .line 1126
+    .line 1395
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .registers 2
 
     .prologue
-    .line 1149
+    .line 1418
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->activatePeriodSeconds_:I
 
     return v0
@@ -67,15 +67,15 @@
     .registers 2
 
     .prologue
-    .line 1185
+    .line 1456
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 1187
+    .line 1458
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->getSerializedSize()I
 
-    .line 1189
+    .line 1460
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->cachedSize:I
 
@@ -86,7 +86,7 @@
     .registers 2
 
     .prologue
-    .line 1132
+    .line 1401
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->grantPeriodSeconds_:I
 
     return v0
@@ -96,10 +96,10 @@
     .registers 4
 
     .prologue
-    .line 1193
+    .line 1465
     const/4 v0, 0x0
 
-    .line 1194
+    .line 1466
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->hasGrantPeriodSeconds()Z
 
@@ -107,7 +107,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 1195
+    .line 1467
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->getGrantPeriodSeconds()I
@@ -120,7 +120,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1198
+    .line 1470
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->hasActivatePeriodSeconds()Z
 
@@ -128,7 +128,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 1199
+    .line 1471
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->getActivatePeriodSeconds()I
@@ -141,11 +141,11 @@
 
     add-int/2addr v0, v1
 
-    .line 1202
+    .line 1474
     :cond_21
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->cachedSize:I
 
-    .line 1203
+    .line 1475
     return v0
 .end method
 
@@ -153,7 +153,7 @@
     .registers 2
 
     .prologue
-    .line 1150
+    .line 1419
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->hasActivatePeriodSeconds:Z
 
     return v0
@@ -163,7 +163,7 @@
     .registers 2
 
     .prologue
-    .line 1133
+    .line 1402
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->hasGrantPeriodSeconds:Z
 
     return v0
@@ -179,29 +179,29 @@
     .end annotation
 
     .prologue
-    .line 1210
+    .line 1483
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1211
+    .line 1484
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 1215
+    .line 1488
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1216
+    .line 1489
     :sswitch_d
     return-object p0
 
-    .line 1221
+    .line 1494
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -211,7 +211,7 @@
 
     goto :goto_0
 
-    .line 1225
+    .line 1498
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -221,7 +221,7 @@
 
     goto :goto_0
 
-    .line 1211
+    .line 1484
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -240,7 +240,7 @@
     .end annotation
 
     .prologue
-    .line 1124
+    .line 1392
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;
 
     move-result-object v0
@@ -253,15 +253,15 @@
     .parameter "value"
 
     .prologue
-    .line 1152
+    .line 1421
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->hasActivatePeriodSeconds:Z
 
-    .line 1153
+    .line 1422
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->activatePeriodSeconds_:I
 
-    .line 1154
+    .line 1423
     return-object p0
 .end method
 
@@ -270,15 +270,15 @@
     .parameter "value"
 
     .prologue
-    .line 1135
+    .line 1404
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->hasGrantPeriodSeconds:Z
 
-    .line 1136
+    .line 1405
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->grantPeriodSeconds_:I
 
-    .line 1137
+    .line 1406
     return-object p0
 .end method
 
@@ -292,14 +292,14 @@
     .end annotation
 
     .prologue
-    .line 1175
+    .line 1445
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->hasGrantPeriodSeconds()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 1176
+    .line 1446
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->getGrantPeriodSeconds()I
@@ -308,7 +308,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 1178
+    .line 1448
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->hasActivatePeriodSeconds()Z
 
@@ -316,7 +316,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 1179
+    .line 1449
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;->getActivatePeriodSeconds()I
@@ -325,7 +325,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 1181
+    .line 1451
     :cond_1c
     return-void
 .end method

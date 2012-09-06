@@ -167,15 +167,39 @@
     const/4 v8, 0x0
 
     .line 46
+    const-string v0, "file"
+
+    invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_e
+
+    .line 69
+    .end local p0
+    .local v6, cursor:Landroid/database/Cursor;
+    .local v7, fileName:Ljava/lang/String;
+    :goto_d
+    return-object p0
+
+    .line 50
+    .end local v6           #cursor:Landroid/database/Cursor;
+    .end local v7           #fileName:Ljava/lang/String;
+    .restart local p0
+    :cond_e
     const/4 v7, 0x0
 
-    .line 47
-    .local v7, fileName:Ljava/lang/String;
+    .line 51
+    .restart local v7       #fileName:Ljava/lang/String;
     const/4 v6, 0x0
 
-    .line 49
-    .local v6, cursor:Landroid/database/Cursor;
-    :try_start_3
+    .line 53
+    .restart local v6       #cursor:Landroid/database/Cursor;
+    :try_start_10
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
@@ -206,45 +230,52 @@
 
     move-result-object v6
 
-    .line 52
+    .line 56
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_33
 
-    .line 53
+    .line 57
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-    :try_end_25
-    .catchall {:try_start_3 .. :try_end_25} :catchall_2d
+    :try_end_32
+    .catchall {:try_start_10 .. :try_end_32} :catchall_3c
 
     move-result-object v7
 
-    .line 56
-    :cond_26
+    .line 60
+    :cond_33
+    if-eqz v6, :cond_38
+
+    .line 61
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 59
-    if-nez v7, :cond_32
+    .line 65
+    :cond_38
+    if-nez v7, :cond_43
 
-    move-object v0, v8
+    move-object p0, v8
 
-    .line 63
-    :goto_2c
-    return-object v0
+    .line 66
+    goto :goto_d
 
-    .line 56
-    :catchall_2d
+    .line 60
+    :catchall_3c
     move-exception v0
 
+    if-eqz v6, :cond_42
+
+    .line 61
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
+    :cond_42
     throw v0
 
-    .line 63
-    :cond_32
+    .line 69
+    :cond_43
     new-instance v0, Ljava/io/File;
 
     invoke-static {v7}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -259,7 +290,7 @@
 
     invoke-static {v0}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
 
-    move-result-object v0
+    move-result-object p0
 
-    goto :goto_2c
+    goto :goto_d
 .end method

@@ -108,7 +108,7 @@
 
     .prologue
     .line 108
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 97
     new-instance v0, Lcom/google/android/talk/PictureCache$BitmapCache;

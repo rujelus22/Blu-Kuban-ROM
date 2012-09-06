@@ -8,10 +8,6 @@
 
 
 # instance fields
-.field public downloadButton:Landroid/widget/ImageButton;
-
-.field public iconView:Landroid/widget/ImageView;
-
 .field public final mAccountKey:J
 
 .field public final mAllowInstall:Z
@@ -20,17 +16,15 @@
 
 .field public final mAllowView:Z
 
-.field public mAttachmentViewLin:Landroid/widget/LinearLayout;
-
 .field public final mContentType:Ljava/lang/String;
 
 .field public final mDenyFlags:I
 
+.field public final mFlags:I
+
 .field public final mId:J
 
 .field public final mName:Ljava/lang/String;
-
-.field public mOverMax:Z
 
 .field public final mSize:J
 
@@ -40,8 +34,8 @@
     .registers 3
 
     .prologue
-    .line 55
-    const/4 v0, 0x5
+    .line 42
+    const/4 v0, 0x6
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -75,32 +69,39 @@
 
     aput-object v2, v0, v1
 
+    const/4 v1, 0x5
+
+    const-string v2, "flags"
+
+    aput-object v2, v0, v1
+
     sput-object v0, Lcom/android/email/AttachmentInfo;->PROJECTION:[Ljava/lang/String;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;JJLjava/lang/String;Ljava/lang/String;J)V
-    .registers 27
+.method public constructor <init>(Landroid/content/Context;JJLjava/lang/String;Ljava/lang/String;JI)V
+    .registers 28
     .parameter "context"
     .parameter "id"
     .parameter "size"
     .parameter "fileName"
     .parameter "mimeType"
     .parameter "accountKey"
+    .parameter "flags"
 
     .prologue
-    .line 144
+    .line 101
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 145
+    .line 102
     move-wide/from16 v0, p4
 
     move-object/from16 v2, p0
 
     iput-wide v0, v2, Lcom/android/email/AttachmentInfo;->mSize:J
 
-    .line 146
+    .line 103
     invoke-static/range {p6 .. p7}, Lcom/android/emailcommon/utility/AttachmentUtilities;->inferMimeType(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v13
@@ -109,62 +110,62 @@
 
     iput-object v13, v0, Lcom/android/email/AttachmentInfo;->mContentType:Ljava/lang/String;
 
-    .line 147
+    .line 104
     move-object/from16 v0, p6
 
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcom/android/email/AttachmentInfo;->mName:Ljava/lang/String;
 
-    .line 148
+    .line 105
     move-wide/from16 v0, p2
 
     move-object/from16 v2, p0
 
     iput-wide v0, v2, Lcom/android/email/AttachmentInfo;->mId:J
 
-    .line 149
+    .line 106
     move-wide/from16 v0, p8
 
     move-object/from16 v2, p0
 
     iput-wide v0, v2, Lcom/android/email/AttachmentInfo;->mAccountKey:J
 
-    .line 150
-    const/4 v13, 0x0
+    .line 107
+    move/from16 v0, p10
 
-    move-object/from16 v0, p0
+    move-object/from16 v1, p0
 
-    iput-boolean v13, v0, Lcom/android/email/AttachmentInfo;->mOverMax:Z
+    iput v0, v1, Lcom/android/email/AttachmentInfo;->mFlags:I
 
-    .line 152
+    .line 108
     const/4 v6, 0x1
 
-    .line 153
+    .line 109
     .local v6, canView:Z
     const/4 v5, 0x1
 
-    .line 154
+    .line 110
     .local v5, canSave:Z
     const/4 v4, 0x0
 
-    .line 155
+    .line 111
     .local v4, canInstall:Z
     const/4 v7, 0x0
 
-    .line 158
+    .line 114
     .local v7, denyFlags:I
     invoke-static {}, Lcom/android/emailcommon/utility/Utility;->isExternalStorageMounted()Z
 
     move-result v13
 
-    if-nez v13, :cond_33
+    if-nez v13, :cond_34
 
-    .line 159
+    .line 115
     const/4 v5, 0x0
 
-    .line 163
-    :cond_33
+    .line 119
+    :cond_34
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/email/AttachmentInfo;->mContentType:Ljava/lang/String;
@@ -175,7 +176,7 @@
 
     move-result v13
 
-    if-eqz v13, :cond_4b
+    if-eqz v13, :cond_4c
 
     move-object/from16 v0, p0
 
@@ -187,14 +188,14 @@
 
     move-result v13
 
-    if-eqz v13, :cond_4c
+    if-eqz v13, :cond_4d
 
-    .line 167
-    :cond_4b
+    .line 123
+    :cond_4c
     const/4 v6, 0x0
 
-    .line 171
-    :cond_4c
+    .line 127
+    :cond_4d
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/email/AttachmentInfo;->mName:Ljava/lang/String;
@@ -203,13 +204,13 @@
 
     move-result-object v8
 
-    .line 172
+    .line 128
     .local v8, extension:Ljava/lang/String;
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v13
 
-    if-nez v13, :cond_65
+    if-nez v13, :cond_67
 
     sget-object v13, Lcom/android/emailcommon/utility/AttachmentUtilities;->UNACCEPTABLE_ATTACHMENT_EXTENSIONS:[Ljava/lang/String;
 
@@ -217,16 +218,36 @@
 
     move-result v13
 
-    if-eqz v13, :cond_65
+    if-eqz v13, :cond_67
 
-    .line 175
+    .line 131
     const/4 v6, 0x0
 
-    .line 176
+    .line 132
+    const/4 v5, 0x0
+
+    .line 133
     or-int/lit8 v7, v7, 0x1
 
-    .line 180
-    :cond_65
+    .line 137
+    :cond_67
+    move/from16 v0, p10
+
+    and-int/lit16 v13, v0, 0x200
+
+    if-eqz v13, :cond_71
+
+    .line 138
+    const/4 v6, 0x0
+
+    .line 139
+    const/4 v5, 0x0
+
+    .line 140
+    or-int/lit8 v7, v7, 0x20
+
+    .line 144
+    :cond_71
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/email/AttachmentInfo;->mName:Ljava/lang/String;
@@ -235,12 +256,12 @@
 
     move-result-object v8
 
-    .line 181
+    .line 145
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v13
 
-    if-nez v13, :cond_90
+    if-nez v13, :cond_9d
 
     sget-object v13, Lcom/android/emailcommon/utility/AttachmentUtilities;->INSTALLABLE_ATTACHMENT_EXTENSIONS:[Ljava/lang/String;
 
@@ -248,9 +269,9 @@
 
     move-result v13
 
-    if-eqz v13, :cond_90
+    if-eqz v13, :cond_9d
 
-    .line 185
+    .line 149
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v13
@@ -265,72 +286,63 @@
 
     const/4 v14, 0x1
 
-    if-ne v13, v14, :cond_d8
+    if-ne v13, v14, :cond_e1
 
     const/4 v12, 0x1
 
-    .line 195
+    .line 151
     .local v12, sideloadEnabled:Z
-    :goto_8a
-    const/4 v6, 0x0
+    :goto_96
+    and-int/2addr v5, v12
 
-    .line 196
-    if-nez v12, :cond_da
+    .line 152
+    move v6, v5
 
-    .line 197
+    .line 153
+    move v4, v5
+
+    .line 154
+    if-nez v12, :cond_9d
+
+    .line 155
     or-int/lit8 v7, v7, 0x8
 
-    .line 201
-    :goto_8f
-    move v4, v6
-
-    .line 207
-    .end local v4           #canInstall:Z
+    .line 161
     .end local v12           #sideloadEnabled:Z
-    :cond_90
+    :cond_9d
     move-object/from16 v0, p0
 
     iget-wide v13, v0, Lcom/android/email/AttachmentInfo;->mSize:J
 
-    sget v15, Lcom/android/emailcommon/utility/AttachmentUtilities;->MAX_ATTACHMENT_DOWNLOAD_SIZE:I
-
-    int-to-long v15, v15
+    const-wide/32 v15, 0x500000
 
     cmp-long v13, v13, v15
 
-    if-lez v13, :cond_ab
+    if-lez v13, :cond_b3
 
-    .line 208
+    .line 162
     invoke-static/range {p1 .. p1}, Lcom/android/email/EmailConnectivityManager;->getActiveNetworkType(Landroid/content/Context;)I
 
     move-result v10
 
-    .line 209
+    .line 163
     .local v10, networkType:I
     const/4 v13, 0x1
 
-    if-eq v10, v13, :cond_a6
+    if-eq v10, v13, :cond_b3
 
-    .line 210
+    .line 164
     const/4 v6, 0x0
 
-    .line 211
+    .line 165
     const/4 v5, 0x0
 
-    .line 212
+    .line 166
     or-int/lit8 v7, v7, 0x2
 
-    .line 214
-    :cond_a6
-    const/4 v13, 0x1
-
-    move-object/from16 v0, p0
-
-    iput-boolean v13, v0, Lcom/android/email/AttachmentInfo;->mOverMax:Z
-
-    .line 220
+    .line 171
     .end local v10           #networkType:I
-    :cond_ab
+    :cond_b3
     const-wide/16 v13, 0x0
 
     move-object/from16 v0, p0
@@ -341,13 +353,13 @@
 
     move-result-object v9
 
-    .line 221
+    .line 172
     .local v9, intent:Landroid/content/Intent;
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v11
 
-    .line 222
+    .line 173
     .local v11, pm:Landroid/content/pm/PackageManager;
     const/4 v13, 0x0
 
@@ -355,69 +367,64 @@
 
     move-result-object v3
 
-    .line 226
+    .line 174
     .local v3, activityList:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
 
     move-result v13
 
-    if-eqz v13, :cond_c7
+    if-eqz v13, :cond_d0
 
-    .line 227
+    .line 175
     const/4 v6, 0x0
 
-    .line 228
+    .line 176
+    const/4 v5, 0x0
+
+    .line 177
     or-int/lit8 v7, v7, 0x4
 
-    .line 231
-    :cond_c7
+    .line 180
+    :cond_d0
     move-object/from16 v0, p0
 
     iput-boolean v6, v0, Lcom/android/email/AttachmentInfo;->mAllowView:Z
 
-    .line 232
+    .line 181
     move-object/from16 v0, p0
 
     iput-boolean v5, v0, Lcom/android/email/AttachmentInfo;->mAllowSave:Z
 
-    .line 233
+    .line 182
     move-object/from16 v0, p0
 
     iput-boolean v4, v0, Lcom/android/email/AttachmentInfo;->mAllowInstall:Z
 
-    .line 234
+    .line 183
     move-object/from16 v0, p0
 
     iput v7, v0, Lcom/android/email/AttachmentInfo;->mDenyFlags:I
 
-    .line 235
+    .line 184
     return-void
 
-    .line 185
+    .line 149
     .end local v3           #activityList:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     .end local v9           #intent:Landroid/content/Intent;
     .end local v11           #pm:Landroid/content/pm/PackageManager;
-    .restart local v4       #canInstall:Z
-    :cond_d8
+    :cond_e1
     const/4 v12, 0x0
 
-    goto :goto_8a
-
-    .line 199
-    .restart local v12       #sideloadEnabled:Z
-    :cond_da
-    or-int/lit8 v7, v7, 0x10
-
-    goto :goto_8f
+    goto :goto_96
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/database/Cursor;)V
-    .registers 13
+    .registers 14
     .parameter "context"
     .parameter "c"
 
     .prologue
-    .line 135
+    .line 90
     const/4 v0, 0x0
 
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -448,24 +455,59 @@
 
     move-result-wide v8
 
+    const/4 v0, 0x5
+
+    invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v10
+
     move-object v0, p0
 
     move-object v1, p1
 
-    invoke-direct/range {v0 .. v9}, Lcom/android/email/AttachmentInfo;-><init>(Landroid/content/Context;JJLjava/lang/String;Ljava/lang/String;J)V
+    invoke-direct/range {v0 .. v10}, Lcom/android/email/AttachmentInfo;-><init>(Landroid/content/Context;JJLjava/lang/String;Ljava/lang/String;JI)V
 
-    .line 137
+    .line 93
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Lcom/android/email/AttachmentInfo;)V
+    .registers 14
+    .parameter "context"
+    .parameter "info"
+
+    .prologue
+    .line 96
+    iget-wide v2, p2, Lcom/android/email/AttachmentInfo;->mId:J
+
+    iget-wide v4, p2, Lcom/android/email/AttachmentInfo;->mSize:J
+
+    iget-object v6, p2, Lcom/android/email/AttachmentInfo;->mName:Ljava/lang/String;
+
+    iget-object v7, p2, Lcom/android/email/AttachmentInfo;->mContentType:Ljava/lang/String;
+
+    iget-wide v8, p2, Lcom/android/email/AttachmentInfo;->mAccountKey:J
+
+    iget v10, p2, Lcom/android/email/AttachmentInfo;->mFlags:I
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    invoke-direct/range {v0 .. v10}, Lcom/android/email/AttachmentInfo;-><init>(Landroid/content/Context;JJLjava/lang/String;Ljava/lang/String;JI)V
+
+    .line 98
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Attachment;)V
-    .registers 13
+    .registers 14
     .parameter "context"
     .parameter "attachment"
 
     .prologue
-    .line 130
-    iget-wide v2, p2, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    .line 85
+    iget-wide v2, p2, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mId:J
 
     iget-wide v4, p2, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mSize:J
 
@@ -475,852 +517,171 @@
 
     iget-wide v8, p2, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mAccountKey:J
 
+    iget v10, p2, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mFlags:I
+
     move-object v0, p0
 
     move-object v1, p1
 
-    invoke-direct/range {v0 .. v9}, Lcom/android/email/AttachmentInfo;-><init>(Landroid/content/Context;JJLjava/lang/String;Ljava/lang/String;J)V
+    invoke-direct/range {v0 .. v10}, Lcom/android/email/AttachmentInfo;-><init>(Landroid/content/Context;JJLjava/lang/String;Ljava/lang/String;JI)V
 
-    .line 132
+    .line 87
     return-void
 .end method
 
 
 # virtual methods
-.method public getAttachmentIntent(Landroid/content/Context;J)Landroid/content/Intent;
-    .registers 10
-    .parameter "context"
-    .parameter "accountId"
+.method public equals(Ljava/lang/Object;)Z
+    .registers 8
+    .parameter "o"
 
     .prologue
-    .line 246
-    iget-wide v3, p0, Lcom/android/email/AttachmentInfo;->mId:J
+    const/4 v0, 0x1
 
-    invoke-static {p2, p3, v3, v4}, Lcom/android/emailcommon/utility/AttachmentUtilities;->getAttachmentUri(JJ)Landroid/net/Uri;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    .line 227
+    if-ne p1, p0, :cond_5
 
-    .line 247
-    .local v0, contentUri:Landroid/net/Uri;
-    const-wide/16 v3, 0x0
+    .line 235
+    .end local p1
+    :cond_4
+    :goto_4
+    return v0
 
-    cmp-long v3, p2, v3
+    .line 231
+    .restart local p1
+    :cond_5
+    if-eqz p1, :cond_11
 
-    if-lez v3, :cond_14
-
-    .line 248
-    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    invoke-static {v3, v0}, Lcom/android/emailcommon/utility/AttachmentUtilities;->resolveAttachmentIdToContentUri(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    .line 251
-    :cond_14
-    new-instance v1, Landroid/content/Intent;
-
-    const-string v3, "android.intent.action.VIEW"
-
-    invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 256
-    .local v1, intent:Landroid/content/Intent;
-    :try_start_1b
-    invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v4, "content://com.android.email.attachmentprovider"
-
-    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2d
-
-    .line 257
-    iget-object v3, p0, Lcom/android/email/AttachmentInfo;->mName:Ljava/lang/String;
-
-    invoke-static {v0, v3}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
-    :try_end_2c
-    .catch Ljava/lang/NullPointerException; {:try_start_1b .. :try_end_2c} :catch_39
-
-    move-result-object v0
-
-    .line 264
-    :cond_2d
-    :goto_2d
-    iget-object v3, p0, Lcom/android/email/AttachmentInfo;->mContentType:Ljava/lang/String;
-
-    invoke-virtual {v1, v0, v3}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 265
-    const v3, 0x80001
-
-    invoke-virtual {v1, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 267
-    return-object v1
-
-    .line 259
-    :catch_39
-    move-exception v2
-
-    .line 260
-    .local v2, npe:Ljava/lang/NullPointerException;
-    const-string v3, "AttachmentInfo.getAttachmentIntent"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "NullPointerException occured!! mName["
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/android/email/AttachmentInfo;->mName:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "]"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_2d
-.end method
-
-.method public getAttachmentIntentToFile(Landroid/content/Context;J)Landroid/content/Intent;
-    .registers 21
-    .parameter "context"
-    .parameter "accountId"
-
-    .prologue
-    .line 271
-    move-object/from16 v0, p0
-
-    iget-wide v14, v0, Lcom/android/email/AttachmentInfo;->mId:J
-
-    move-wide/from16 v0, p2
-
-    invoke-static {v0, v1, v14, v15}, Lcom/android/emailcommon/utility/AttachmentUtilities;->getAttachmentUri(JJ)Landroid/net/Uri;
-
-    move-result-object v4
-
-    .line 272
-    .local v4, contentUri:Landroid/net/Uri;
-    const-wide/16 v14, 0x0
-
-    cmp-long v14, p2, v14
-
-    if-lez v14, :cond_18
-
-    .line 273
-    invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v14
-
-    invoke-static {v14, v4}, Lcom/android/emailcommon/utility/AttachmentUtilities;->resolveAttachmentIdToContentUri(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/net/Uri;
-
-    move-result-object v4
-
-    .line 276
-    :cond_18
-    new-instance v9, Landroid/content/Intent;
-
-    const-string v14, "android.intent.action.VIEW"
-
-    invoke-direct {v9, v14}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 278
-    .local v9, intent:Landroid/content/Intent;
-    const/4 v8, 0x0
-
-    .line 279
-    .local v8, in:Ljava/io/InputStream;
-    const/4 v12, 0x0
-
-    .line 280
-    .local v12, out:Ljava/io/OutputStream;
-    const/4 v6, 0x0
-
-    .line 282
-    .local v6, file:Ljava/io/File;
-    :try_start_22
-    invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getExternalCacheDir()Ljava/io/File;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
 
-    .line 283
-    .local v2, cacheDir:Ljava/io/File;
-    move-object/from16 v0, p0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v7, v0, Lcom/android/email/AttachmentInfo;->mName:Ljava/lang/String;
+    move-result-object v3
 
-    .line 285
-    .local v7, fileName:Ljava/lang/String;
-    if-eqz v7, :cond_32
+    if-eq v2, v3, :cond_13
 
-    invoke-virtual {v7}, Ljava/lang/String;->isEmpty()Z
+    :cond_11
+    move v0, v1
 
-    move-result v14
+    .line 232
+    goto :goto_4
 
-    if-eqz v14, :cond_3d
+    .line 235
+    :cond_13
+    check-cast p1, Lcom/android/email/AttachmentInfo;
 
-    .line 286
-    :cond_32
-    invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    .end local p1
+    iget-wide v2, p1, Lcom/android/email/AttachmentInfo;->mId:J
 
-    move-result-object v14
+    iget-wide v4, p0, Lcom/android/email/AttachmentInfo;->mId:J
 
-    const v15, 0x7f080313
+    cmp-long v2, v2, v4
 
-    invoke-virtual {v14, v15}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    if-eqz v2, :cond_4
 
-    move-result-object v7
+    move v0, v1
 
-    .line 289
-    :cond_3d
-    new-instance v3, Ljava/io/File;
+    goto :goto_4
+.end method
 
-    invoke-direct {v3, v2, v7}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+.method public getAttachmentIntent(Landroid/content/Context;J)Landroid/content/Intent;
+    .registers 7
+    .parameter "context"
+    .parameter "accountId"
 
-    .line 291
-    .local v3, chechFile:Ljava/io/File;
-    if-eqz v3, :cond_4d
+    .prologue
+    .line 194
+    invoke-virtual {p0, p1, p2, p3}, Lcom/android/email/AttachmentInfo;->getUriForIntent(Landroid/content/Context;J)Landroid/net/Uri;
 
-    invoke-virtual {v3}, Ljava/io/File;->exists()Z
+    move-result-object v0
 
-    move-result v14
+    .line 195
+    .local v0, contentUri:Landroid/net/Uri;
+    new-instance v1, Landroid/content/Intent;
 
-    if-eqz v14, :cond_4d
+    const-string v2, "android.intent.action.VIEW"
 
-    .line 292
-    invoke-virtual {v3}, Ljava/io/File;->delete()Z
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 295
-    :cond_4d
-    invoke-static {v2, v7}, Lcom/android/emailcommon/utility/Utility;->createUniqueFile(Ljava/io/File;Ljava/lang/String;)Ljava/io/File;
+    .line 196
+    .local v1, intent:Landroid/content/Intent;
+    iget-object v2, p0, Lcom/android/email/AttachmentInfo;->mContentType:Ljava/lang/String;
 
-    move-result-object v6
+    invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 297
-    if-nez v6, :cond_f7
+    .line 197
+    const v2, 0x80001
 
-    .line 298
-    const-string v14, "Email"
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    const-string v15, "Utility.createUniqueFile - return null"
+    .line 199
+    return-object v1
+.end method
 
-    invoke-static {v14, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+.method protected getUriForIntent(Landroid/content/Context;J)Landroid/net/Uri;
+    .registers 7
+    .parameter "context"
+    .parameter "accountId"
 
-    .line 299
-    const-string v14, "Email"
+    .prologue
+    .line 203
+    iget-wide v1, p0, Lcom/android/email/AttachmentInfo;->mId:J
 
-    new-instance v15, Ljava/lang/StringBuilder;
+    invoke-static {p2, p3, v1, v2}, Lcom/android/emailcommon/utility/AttachmentUtilities;->getAttachmentUri(JJ)Landroid/net/Uri;
 
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v0
 
-    const-string v16, "FileName ["
+    .line 204
+    .local v0, contentUri:Landroid/net/Uri;
+    const-wide/16 v1, 0x0
 
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    cmp-long v1, p2, v1
 
-    move-result-object v15
+    if-lez v1, :cond_14
 
-    invoke-virtual {v15, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 205
+    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v15
+    move-result-object v1
 
-    const-string v16, "]\n"
+    invoke-static {v1, v0}, Lcom/android/emailcommon/utility/AttachmentUtilities;->resolveAttachmentIdToContentUri(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/net/Uri;
 
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v15
+    .line 209
+    :cond_14
+    return-object v0
+.end method
 
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+.method public hashCode()I
+    .registers 6
 
-    move-result-object v15
+    .prologue
+    .line 222
+    iget-wide v0, p0, Lcom/android/email/AttachmentInfo;->mId:J
 
-    invoke-static {v14, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    iget-wide v2, p0, Lcom/android/email/AttachmentInfo;->mId:J
 
-    .line 301
-    new-instance v10, Ljava/io/IOException;
+    const/16 v4, 0x20
 
-    invoke-direct {v10}, Ljava/io/IOException;-><init>()V
+    ushr-long/2addr v2, v4
 
-    .line 302
-    .local v10, ioe:Ljava/io/IOException;
-    throw v10
-    :try_end_7e
-    .catchall {:try_start_22 .. :try_end_7e} :catchall_14d
-    .catch Ljava/io/IOException; {:try_start_22 .. :try_end_7e} :catch_7e
-    .catch Ljava/lang/NullPointerException; {:try_start_22 .. :try_end_7e} :catch_119
+    xor-long/2addr v0, v2
 
-    .line 309
-    .end local v2           #cacheDir:Ljava/io/File;
-    .end local v3           #chechFile:Ljava/io/File;
-    .end local v7           #fileName:Ljava/lang/String;
-    .end local v10           #ioe:Ljava/io/IOException;
-    :catch_7e
-    move-exception v10
+    long-to-int v0, v0
 
-    .line 310
-    .restart local v10       #ioe:Ljava/io/IOException;
-    :goto_7f
-    :try_start_7f
-    const-string v14, "AttachmentInfo.getAttachmentIntent"
-
-    new-instance v15, Ljava/lang/StringBuilder;
-
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v16, "IOException occured!! mName["
-
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v15
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/email/AttachmentInfo;->mName:Ljava/lang/String;
-
-    move-object/from16 v16, v0
-
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v15
-
-    const-string v16, "]"
-
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v15
-
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v15
-
-    invoke-static {v14, v15}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_a3
-    .catchall {:try_start_7f .. :try_end_a3} :catchall_14d
-
-    .line 316
-    if-eqz v8, :cond_a8
-
-    .line 318
-    :try_start_a5
-    invoke-virtual {v8}, Ljava/io/InputStream;->close()V
-    :try_end_a8
-    .catch Ljava/lang/Exception; {:try_start_a5 .. :try_end_a8} :catch_1bc
-
-    .line 322
-    :cond_a8
-    :goto_a8
-    if-eqz v12, :cond_ad
-
-    .line 324
-    :try_start_aa
-    invoke-virtual {v12}, Ljava/io/FileOutputStream;->close()V
-    :try_end_ad
-    .catch Ljava/lang/Exception; {:try_start_aa .. :try_end_ad} :catch_1bf
-
-    .line 330
-    .end local v10           #ioe:Ljava/io/IOException;
-    :cond_ad
-    :goto_ad
-    if-eqz v6, :cond_1b3
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/email/AttachmentInfo;->mName:Ljava/lang/String;
-
-    if-eqz v14, :cond_1b3
-
-    .line 331
-    const/4 v5, 0x0
-
-    .line 332
-    .local v5, extension:Ljava/lang/String;
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/email/AttachmentInfo;->mName:Ljava/lang/String;
-
-    invoke-virtual {v14}, Ljava/lang/String;->length()I
-
-    move-result v14
-
-    const/4 v15, 0x4
-
-    if-le v14, v15, :cond_d3
-
-    .line 333
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/email/AttachmentInfo;->mName:Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/email/AttachmentInfo;->mName:Ljava/lang/String;
-
-    invoke-virtual {v15}, Ljava/lang/String;->length()I
-
-    move-result v15
-
-    add-int/lit8 v15, v15, -0x4
-
-    invoke-virtual {v14, v15}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    .line 335
-    :cond_d3
-    const-string v14, ".aac"
-
-    invoke-virtual {v14, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v14
-
-    if-nez v14, :cond_e7
-
-    const-string v14, "application/aac"
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/email/AttachmentInfo;->mContentType:Ljava/lang/String;
-
-    invoke-virtual {v14, v15}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v14
-
-    if-eqz v14, :cond_159
-
-    .line 336
-    :cond_e7
-    invoke-static {v6}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
-
-    move-result-object v14
-
-    const-string v15, "audio/aac"
-
-    invoke-virtual {v9, v14, v15}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 347
-    :goto_f0
-    const v14, 0x80001
-
-    invoke-virtual {v9, v14}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 351
-    .end local v5           #extension:Ljava/lang/String;
-    .end local v9           #intent:Landroid/content/Intent;
-    :goto_f6
-    return-object v9
-
-    .line 305
-    .restart local v2       #cacheDir:Ljava/io/File;
-    .restart local v3       #chechFile:Ljava/io/File;
-    .restart local v7       #fileName:Ljava/lang/String;
-    .restart local v9       #intent:Landroid/content/Intent;
-    :cond_f7
-    :try_start_f7
-    invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v14
-
-    invoke-virtual {v14, v4}, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
-
-    move-result-object v8
-
-    .line 306
-    new-instance v13, Ljava/io/FileOutputStream;
-
-    invoke-direct {v13, v6}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-    :try_end_104
-    .catchall {:try_start_f7 .. :try_end_104} :catchall_14d
-    .catch Ljava/io/IOException; {:try_start_f7 .. :try_end_104} :catch_7e
-    .catch Ljava/lang/NullPointerException; {:try_start_f7 .. :try_end_104} :catch_119
-
-    .line 307
-    .end local v12           #out:Ljava/io/OutputStream;
-    .local v13, out:Ljava/io/OutputStream;
-    :try_start_104
-    invoke-static {v8, v13}, Lorg/apache/commons/io/IOUtils;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)I
-
-    .line 308
-    invoke-virtual {v13}, Ljava/io/FileOutputStream;->flush()V
-    :try_end_10a
-    .catchall {:try_start_104 .. :try_end_10a} :catchall_1c8
-    .catch Ljava/io/IOException; {:try_start_104 .. :try_end_10a} :catch_1cf
-    .catch Ljava/lang/NullPointerException; {:try_start_104 .. :try_end_10a} :catch_1cb
-
-    .line 316
-    if-eqz v8, :cond_10f
-
-    .line 318
-    :try_start_10c
-    invoke-virtual {v8}, Ljava/io/InputStream;->close()V
-    :try_end_10f
-    .catch Ljava/lang/Exception; {:try_start_10c .. :try_end_10f} :catch_1b9
-
-    .line 322
-    :cond_10f
-    :goto_10f
-    if-eqz v13, :cond_1d3
-
-    .line 324
-    :try_start_111
-    invoke-virtual {v13}, Ljava/io/FileOutputStream;->close()V
-    :try_end_114
-    .catch Ljava/lang/Exception; {:try_start_111 .. :try_end_114} :catch_116
-
-    move-object v12, v13
-
-    .line 326
-    .end local v13           #out:Ljava/io/OutputStream;
-    .restart local v12       #out:Ljava/io/OutputStream;
-    goto :goto_ad
-
-    .line 325
-    .end local v12           #out:Ljava/io/OutputStream;
-    .restart local v13       #out:Ljava/io/OutputStream;
-    :catch_116
-    move-exception v14
-
-    move-object v12, v13
-
-    .line 326
-    .end local v13           #out:Ljava/io/OutputStream;
-    .restart local v12       #out:Ljava/io/OutputStream;
-    goto :goto_ad
-
-    .line 312
-    .end local v2           #cacheDir:Ljava/io/File;
-    .end local v3           #chechFile:Ljava/io/File;
-    .end local v7           #fileName:Ljava/lang/String;
-    :catch_119
-    move-exception v11
-
-    .line 313
-    .local v11, npe:Ljava/lang/NullPointerException;
-    :goto_11a
-    :try_start_11a
-    const-string v14, "AttachmentInfo.getAttachmentIntent"
-
-    new-instance v15, Ljava/lang/StringBuilder;
-
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v16, "NullPointerException occured!! mName["
-
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v15
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/email/AttachmentInfo;->mName:Ljava/lang/String;
-
-    move-object/from16 v16, v0
-
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v15
-
-    const-string v16, "]"
-
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v15
-
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v15
-
-    invoke-static {v14, v15}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_13e
-    .catchall {:try_start_11a .. :try_end_13e} :catchall_14d
-
-    .line 316
-    if-eqz v8, :cond_143
-
-    .line 318
-    :try_start_140
-    invoke-virtual {v8}, Ljava/io/InputStream;->close()V
-    :try_end_143
-    .catch Ljava/lang/Exception; {:try_start_140 .. :try_end_143} :catch_1c2
-
-    .line 322
-    :cond_143
-    :goto_143
-    if-eqz v12, :cond_ad
-
-    .line 324
-    :try_start_145
-    invoke-virtual {v12}, Ljava/io/FileOutputStream;->close()V
-    :try_end_148
-    .catch Ljava/lang/Exception; {:try_start_145 .. :try_end_148} :catch_14a
-
-    goto/16 :goto_ad
-
-    .line 325
-    :catch_14a
-    move-exception v14
-
-    goto/16 :goto_ad
-
-    .line 316
-    .end local v11           #npe:Ljava/lang/NullPointerException;
-    :catchall_14d
-    move-exception v14
-
-    :goto_14e
-    if-eqz v8, :cond_153
-
-    .line 318
-    :try_start_150
-    invoke-virtual {v8}, Ljava/io/InputStream;->close()V
-    :try_end_153
-    .catch Ljava/lang/Exception; {:try_start_150 .. :try_end_153} :catch_1c4
-
-    .line 322
-    :cond_153
-    :goto_153
-    if-eqz v12, :cond_158
-
-    .line 324
-    :try_start_155
-    invoke-virtual {v12}, Ljava/io/FileOutputStream;->close()V
-    :try_end_158
-    .catch Ljava/lang/Exception; {:try_start_155 .. :try_end_158} :catch_1c6
-
-    .line 326
-    :cond_158
-    :goto_158
-    throw v14
-
-    .line 337
-    .restart local v5       #extension:Ljava/lang/String;
-    :cond_159
-    const-string v14, ".3ga"
-
-    invoke-virtual {v14, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v14
-
-    if-nez v14, :cond_16d
-
-    const-string v14, "application/3ga"
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/email/AttachmentInfo;->mContentType:Ljava/lang/String;
-
-    invoke-virtual {v14, v15}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v14
-
-    if-eqz v14, :cond_178
-
-    .line 338
-    :cond_16d
-    invoke-static {v6}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
-
-    move-result-object v14
-
-    const-string v15, "audio/mp4"
-
-    invoke-virtual {v9, v14, v15}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto/16 :goto_f0
-
-    .line 339
-    :cond_178
-    const-string v14, "application/vnt"
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/email/AttachmentInfo;->mContentType:Ljava/lang/String;
-
-    invoke-virtual {v14, v15}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v14
-
-    if-eqz v14, :cond_18f
-
-    .line 340
-    invoke-static {v6}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
-
-    move-result-object v14
-
-    const-string v15, "text/x-vnote"
-
-    invoke-virtual {v9, v14, v15}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto/16 :goto_f0
-
-    .line 341
-    :cond_18f
-    const-string v14, "application/vts"
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/email/AttachmentInfo;->mContentType:Ljava/lang/String;
-
-    invoke-virtual {v14, v15}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v14
-
-    if-eqz v14, :cond_1a6
-
-    .line 342
-    invoke-static {v6}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
-
-    move-result-object v14
-
-    const-string v15, "text/x-vtodo"
-
-    invoke-virtual {v9, v14, v15}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto/16 :goto_f0
-
-    .line 344
-    :cond_1a6
-    invoke-static {v6}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
-
-    move-result-object v14
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/email/AttachmentInfo;->mContentType:Ljava/lang/String;
-
-    invoke-virtual {v9, v14, v15}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto/16 :goto_f0
-
-    .line 351
-    .end local v5           #extension:Ljava/lang/String;
-    :cond_1b3
-    invoke-virtual/range {p0 .. p3}, Lcom/android/email/AttachmentInfo;->getAttachmentIntent(Landroid/content/Context;J)Landroid/content/Intent;
-
-    move-result-object v9
-
-    goto/16 :goto_f6
-
-    .line 319
-    .end local v12           #out:Ljava/io/OutputStream;
-    .restart local v2       #cacheDir:Ljava/io/File;
-    .restart local v3       #chechFile:Ljava/io/File;
-    .restart local v7       #fileName:Ljava/lang/String;
-    .restart local v13       #out:Ljava/io/OutputStream;
-    :catch_1b9
-    move-exception v14
-
-    goto/16 :goto_10f
-
-    .end local v2           #cacheDir:Ljava/io/File;
-    .end local v3           #chechFile:Ljava/io/File;
-    .end local v7           #fileName:Ljava/lang/String;
-    .end local v13           #out:Ljava/io/OutputStream;
-    .restart local v10       #ioe:Ljava/io/IOException;
-    .restart local v12       #out:Ljava/io/OutputStream;
-    :catch_1bc
-    move-exception v14
-
-    goto/16 :goto_a8
-
-    .line 325
-    :catch_1bf
-    move-exception v14
-
-    goto/16 :goto_ad
-
-    .line 319
-    .end local v10           #ioe:Ljava/io/IOException;
-    .restart local v11       #npe:Ljava/lang/NullPointerException;
-    :catch_1c2
-    move-exception v14
-
-    goto :goto_143
-
-    .end local v11           #npe:Ljava/lang/NullPointerException;
-    :catch_1c4
-    move-exception v15
-
-    goto :goto_153
-
-    .line 325
-    :catch_1c6
-    move-exception v15
-
-    goto :goto_158
-
-    .line 316
-    .end local v12           #out:Ljava/io/OutputStream;
-    .restart local v2       #cacheDir:Ljava/io/File;
-    .restart local v3       #chechFile:Ljava/io/File;
-    .restart local v7       #fileName:Ljava/lang/String;
-    .restart local v13       #out:Ljava/io/OutputStream;
-    :catchall_1c8
-    move-exception v14
-
-    move-object v12, v13
-
-    .end local v13           #out:Ljava/io/OutputStream;
-    .restart local v12       #out:Ljava/io/OutputStream;
-    goto :goto_14e
-
-    .line 312
-    .end local v12           #out:Ljava/io/OutputStream;
-    .restart local v13       #out:Ljava/io/OutputStream;
-    :catch_1cb
-    move-exception v11
-
-    move-object v12, v13
-
-    .end local v13           #out:Ljava/io/OutputStream;
-    .restart local v12       #out:Ljava/io/OutputStream;
-    goto/16 :goto_11a
-
-    .line 309
-    .end local v12           #out:Ljava/io/OutputStream;
-    .restart local v13       #out:Ljava/io/OutputStream;
-    :catch_1cf
-    move-exception v10
-
-    move-object v12, v13
-
-    .end local v13           #out:Ljava/io/OutputStream;
-    .restart local v12       #out:Ljava/io/OutputStream;
-    goto/16 :goto_7f
-
-    .end local v12           #out:Ljava/io/OutputStream;
-    .restart local v13       #out:Ljava/io/OutputStream;
-    :cond_1d3
-    move-object v12, v13
-
-    .end local v13           #out:Ljava/io/OutputStream;
-    .restart local v12       #out:Ljava/io/OutputStream;
-    goto/16 :goto_ad
+    return v0
 .end method
 
 .method public isEligibleForDownload()Z
     .registers 2
 
     .prologue
-    .line 362
+    .line 217
     iget-boolean v0, p0, Lcom/android/email/AttachmentInfo;->mAllowView:Z
 
     if-nez v0, :cond_8
@@ -1345,7 +706,7 @@
     .registers 4
 
     .prologue
-    .line 367
+    .line 240
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

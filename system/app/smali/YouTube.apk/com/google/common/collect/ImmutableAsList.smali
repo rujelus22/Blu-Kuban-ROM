@@ -14,17 +14,17 @@
     .parameter
 
     .prologue
-    .line 34
+    .line 37
     const/4 v0, 0x0
 
     array-length v1, p1
 
     invoke-direct {p0, p1, v0, v1}, Lcom/google/common/collect/RegularImmutableList;-><init>([Ljava/lang/Object;II)V
 
-    .line 35
+    .line 38
     iput-object p2, p0, Lcom/google/common/collect/ImmutableAsList;->collection:Lcom/google/common/collect/ImmutableCollection;
 
-    .line 36
+    .line 39
     return-void
 .end method
 
@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 60
+    .line 63
     new-instance v0, Ljava/io/InvalidObjectException;
 
     const-string v1, "Use SerializedForm"
@@ -50,7 +50,7 @@
     .parameter
 
     .prologue
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/google/common/collect/ImmutableAsList;->collection:Lcom/google/common/collect/ImmutableCollection;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableCollection;->contains(Ljava/lang/Object;)Z
@@ -64,7 +64,7 @@
     .registers 3
 
     .prologue
-    .line 64
+    .line 67
     new-instance v0, Lcom/google/common/collect/ImmutableAsList$SerializedForm;
 
     iget-object v1, p0, Lcom/google/common/collect/ImmutableAsList;->collection:Lcom/google/common/collect/ImmutableCollection;

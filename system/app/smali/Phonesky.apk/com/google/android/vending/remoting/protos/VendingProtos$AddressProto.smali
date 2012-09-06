@@ -59,60 +59,60 @@
     .registers 2
 
     .prologue
-    .line 20425
+    .line 20998
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 20430
+    .line 21003
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->address1_:Ljava/lang/String;
 
-    .line 20447
+    .line 21020
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->address2_:Ljava/lang/String;
 
-    .line 20464
+    .line 21037
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->city_:Ljava/lang/String;
 
-    .line 20481
+    .line 21054
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->state_:Ljava/lang/String;
 
-    .line 20498
+    .line 21071
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->postalCode_:Ljava/lang/String;
 
-    .line 20515
+    .line 21088
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->country_:Ljava/lang/String;
 
-    .line 20532
+    .line 21105
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->name_:Ljava/lang/String;
 
-    .line 20549
+    .line 21122
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->type_:Ljava/lang/String;
 
-    .line 20566
+    .line 21139
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->phone_:Ljava/lang/String;
 
-    .line 20629
+    .line 21203
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->cachedSize:I
 
-    .line 20425
+    .line 20998
     return-void
 .end method
 
@@ -122,7 +122,7 @@
     .registers 2
 
     .prologue
-    .line 20431
+    .line 21004
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->address1_:Ljava/lang/String;
 
     return-object v0
@@ -132,7 +132,7 @@
     .registers 2
 
     .prologue
-    .line 20448
+    .line 21021
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->address2_:Ljava/lang/String;
 
     return-object v0
@@ -142,15 +142,15 @@
     .registers 2
 
     .prologue
-    .line 20631
+    .line 21206
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 20633
+    .line 21208
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getSerializedSize()I
 
-    .line 20635
+    .line 21210
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->cachedSize:I
 
@@ -161,7 +161,7 @@
     .registers 2
 
     .prologue
-    .line 20465
+    .line 21038
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->city_:Ljava/lang/String;
 
     return-object v0
@@ -171,7 +171,7 @@
     .registers 2
 
     .prologue
-    .line 20516
+    .line 21089
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->country_:Ljava/lang/String;
 
     return-object v0
@@ -181,7 +181,7 @@
     .registers 2
 
     .prologue
-    .line 20533
+    .line 21106
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->name_:Ljava/lang/String;
 
     return-object v0
@@ -191,7 +191,7 @@
     .registers 2
 
     .prologue
-    .line 20567
+    .line 21140
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->phone_:Ljava/lang/String;
 
     return-object v0
@@ -201,7 +201,7 @@
     .registers 2
 
     .prologue
-    .line 20499
+    .line 21072
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->postalCode_:Ljava/lang/String;
 
     return-object v0
@@ -211,10 +211,10 @@
     .registers 4
 
     .prologue
-    .line 20639
+    .line 21215
     const/4 v0, 0x0
 
-    .line 20640
+    .line 21216
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasAddress1()Z
 
@@ -222,7 +222,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 20641
+    .line 21217
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getAddress1()Ljava/lang/String;
@@ -235,7 +235,7 @@
 
     add-int/2addr v0, v1
 
-    .line 20644
+    .line 21220
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasAddress2()Z
 
@@ -243,7 +243,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 20645
+    .line 21221
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getAddress2()Ljava/lang/String;
@@ -256,7 +256,7 @@
 
     add-int/2addr v0, v1
 
-    .line 20648
+    .line 21224
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasCity()Z
 
@@ -264,7 +264,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 20649
+    .line 21225
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getCity()Ljava/lang/String;
@@ -277,7 +277,7 @@
 
     add-int/2addr v0, v1
 
-    .line 20652
+    .line 21228
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasState()Z
 
@@ -285,7 +285,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 20653
+    .line 21229
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getState()Ljava/lang/String;
@@ -298,7 +298,7 @@
 
     add-int/2addr v0, v1
 
-    .line 20656
+    .line 21232
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasPostalCode()Z
 
@@ -306,7 +306,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 20657
+    .line 21233
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getPostalCode()Ljava/lang/String;
@@ -319,7 +319,7 @@
 
     add-int/2addr v0, v1
 
-    .line 20660
+    .line 21236
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasCountry()Z
 
@@ -327,7 +327,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 20661
+    .line 21237
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getCountry()Ljava/lang/String;
@@ -340,7 +340,7 @@
 
     add-int/2addr v0, v1
 
-    .line 20664
+    .line 21240
     :cond_61
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasName()Z
 
@@ -348,7 +348,7 @@
 
     if-eqz v1, :cond_71
 
-    .line 20665
+    .line 21241
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getName()Ljava/lang/String;
@@ -361,7 +361,7 @@
 
     add-int/2addr v0, v1
 
-    .line 20668
+    .line 21244
     :cond_71
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasType()Z
 
@@ -369,7 +369,7 @@
 
     if-eqz v1, :cond_82
 
-    .line 20669
+    .line 21245
     const/16 v1, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getType()Ljava/lang/String;
@@ -382,7 +382,7 @@
 
     add-int/2addr v0, v1
 
-    .line 20672
+    .line 21248
     :cond_82
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasPhone()Z
 
@@ -390,7 +390,7 @@
 
     if-eqz v1, :cond_93
 
-    .line 20673
+    .line 21249
     const/16 v1, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getPhone()Ljava/lang/String;
@@ -403,11 +403,11 @@
 
     add-int/2addr v0, v1
 
-    .line 20676
+    .line 21252
     :cond_93
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->cachedSize:I
 
-    .line 20677
+    .line 21253
     return v0
 .end method
 
@@ -415,7 +415,7 @@
     .registers 2
 
     .prologue
-    .line 20482
+    .line 21055
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->state_:Ljava/lang/String;
 
     return-object v0
@@ -425,7 +425,7 @@
     .registers 2
 
     .prologue
-    .line 20550
+    .line 21123
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->type_:Ljava/lang/String;
 
     return-object v0
@@ -435,7 +435,7 @@
     .registers 2
 
     .prologue
-    .line 20432
+    .line 21005
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasAddress1:Z
 
     return v0
@@ -445,7 +445,7 @@
     .registers 2
 
     .prologue
-    .line 20449
+    .line 21022
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasAddress2:Z
 
     return v0
@@ -455,7 +455,7 @@
     .registers 2
 
     .prologue
-    .line 20466
+    .line 21039
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasCity:Z
 
     return v0
@@ -465,7 +465,7 @@
     .registers 2
 
     .prologue
-    .line 20517
+    .line 21090
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasCountry:Z
 
     return v0
@@ -475,7 +475,7 @@
     .registers 2
 
     .prologue
-    .line 20534
+    .line 21107
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasName:Z
 
     return v0
@@ -485,7 +485,7 @@
     .registers 2
 
     .prologue
-    .line 20568
+    .line 21141
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasPhone:Z
 
     return v0
@@ -495,7 +495,7 @@
     .registers 2
 
     .prologue
-    .line 20500
+    .line 21073
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasPostalCode:Z
 
     return v0
@@ -505,7 +505,7 @@
     .registers 2
 
     .prologue
-    .line 20483
+    .line 21056
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasState:Z
 
     return v0
@@ -515,7 +515,7 @@
     .registers 2
 
     .prologue
-    .line 20551
+    .line 21124
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasType:Z
 
     return v0
@@ -531,29 +531,29 @@
     .end annotation
 
     .prologue
-    .line 20684
+    .line 21261
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 20685
+    .line 21262
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_56
 
-    .line 20689
+    .line 21266
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 20690
+    .line 21267
     :sswitch_d
     return-object p0
 
-    .line 20695
+    .line 21272
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -563,7 +563,7 @@
 
     goto :goto_0
 
-    .line 20699
+    .line 21276
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -573,7 +573,7 @@
 
     goto :goto_0
 
-    .line 20703
+    .line 21280
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -583,7 +583,7 @@
 
     goto :goto_0
 
-    .line 20707
+    .line 21284
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -593,7 +593,7 @@
 
     goto :goto_0
 
-    .line 20711
+    .line 21288
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -603,7 +603,7 @@
 
     goto :goto_0
 
-    .line 20715
+    .line 21292
     :sswitch_36
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -613,7 +613,7 @@
 
     goto :goto_0
 
-    .line 20719
+    .line 21296
     :sswitch_3e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -623,7 +623,7 @@
 
     goto :goto_0
 
-    .line 20723
+    .line 21300
     :sswitch_46
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -633,7 +633,7 @@
 
     goto :goto_0
 
-    .line 20727
+    .line 21304
     :sswitch_4e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -643,7 +643,7 @@
 
     goto :goto_0
 
-    .line 20685
+    .line 21262
     :sswitch_data_56
     .sparse-switch
         0x0 -> :sswitch_d
@@ -669,7 +669,7 @@
     .end annotation
 
     .prologue
-    .line 20423
+    .line 20996
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;
 
     move-result-object v0
@@ -682,15 +682,15 @@
     .parameter "value"
 
     .prologue
-    .line 20434
+    .line 21007
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasAddress1:Z
 
-    .line 20435
+    .line 21008
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->address1_:Ljava/lang/String;
 
-    .line 20436
+    .line 21009
     return-object p0
 .end method
 
@@ -699,15 +699,15 @@
     .parameter "value"
 
     .prologue
-    .line 20451
+    .line 21024
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasAddress2:Z
 
-    .line 20452
+    .line 21025
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->address2_:Ljava/lang/String;
 
-    .line 20453
+    .line 21026
     return-object p0
 .end method
 
@@ -716,15 +716,15 @@
     .parameter "value"
 
     .prologue
-    .line 20468
+    .line 21041
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasCity:Z
 
-    .line 20469
+    .line 21042
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->city_:Ljava/lang/String;
 
-    .line 20470
+    .line 21043
     return-object p0
 .end method
 
@@ -733,15 +733,15 @@
     .parameter "value"
 
     .prologue
-    .line 20519
+    .line 21092
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasCountry:Z
 
-    .line 20520
+    .line 21093
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->country_:Ljava/lang/String;
 
-    .line 20521
+    .line 21094
     return-object p0
 .end method
 
@@ -750,15 +750,15 @@
     .parameter "value"
 
     .prologue
-    .line 20536
+    .line 21109
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasName:Z
 
-    .line 20537
+    .line 21110
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->name_:Ljava/lang/String;
 
-    .line 20538
+    .line 21111
     return-object p0
 .end method
 
@@ -767,15 +767,15 @@
     .parameter "value"
 
     .prologue
-    .line 20570
+    .line 21143
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasPhone:Z
 
-    .line 20571
+    .line 21144
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->phone_:Ljava/lang/String;
 
-    .line 20572
+    .line 21145
     return-object p0
 .end method
 
@@ -784,15 +784,15 @@
     .parameter "value"
 
     .prologue
-    .line 20502
+    .line 21075
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasPostalCode:Z
 
-    .line 20503
+    .line 21076
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->postalCode_:Ljava/lang/String;
 
-    .line 20504
+    .line 21077
     return-object p0
 .end method
 
@@ -801,15 +801,15 @@
     .parameter "value"
 
     .prologue
-    .line 20485
+    .line 21058
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasState:Z
 
-    .line 20486
+    .line 21059
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->state_:Ljava/lang/String;
 
-    .line 20487
+    .line 21060
     return-object p0
 .end method
 
@@ -818,15 +818,15 @@
     .parameter "value"
 
     .prologue
-    .line 20553
+    .line 21126
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasType:Z
 
-    .line 20554
+    .line 21127
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->type_:Ljava/lang/String;
 
-    .line 20555
+    .line 21128
     return-object p0
 .end method
 
@@ -840,14 +840,14 @@
     .end annotation
 
     .prologue
-    .line 20600
+    .line 21174
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasAddress1()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 20601
+    .line 21175
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getAddress1()Ljava/lang/String;
@@ -856,7 +856,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 20603
+    .line 21177
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasAddress2()Z
 
@@ -864,7 +864,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 20604
+    .line 21178
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getAddress2()Ljava/lang/String;
@@ -873,7 +873,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 20606
+    .line 21180
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasCity()Z
 
@@ -881,7 +881,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 20607
+    .line 21181
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getCity()Ljava/lang/String;
@@ -890,7 +890,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 20609
+    .line 21183
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasState()Z
 
@@ -898,7 +898,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 20610
+    .line 21184
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getState()Ljava/lang/String;
@@ -907,7 +907,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 20612
+    .line 21186
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasPostalCode()Z
 
@@ -915,7 +915,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 20613
+    .line 21187
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getPostalCode()Ljava/lang/String;
@@ -924,7 +924,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 20615
+    .line 21189
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasCountry()Z
 
@@ -932,7 +932,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 20616
+    .line 21190
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getCountry()Ljava/lang/String;
@@ -941,7 +941,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 20618
+    .line 21192
     :cond_54
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasName()Z
 
@@ -949,7 +949,7 @@
 
     if-eqz v0, :cond_62
 
-    .line 20619
+    .line 21193
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getName()Ljava/lang/String;
@@ -958,7 +958,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 20621
+    .line 21195
     :cond_62
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasType()Z
 
@@ -966,7 +966,7 @@
 
     if-eqz v0, :cond_71
 
-    .line 20622
+    .line 21196
     const/16 v0, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getType()Ljava/lang/String;
@@ -975,7 +975,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 20624
+    .line 21198
     :cond_71
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->hasPhone()Z
 
@@ -983,7 +983,7 @@
 
     if-eqz v0, :cond_80
 
-    .line 20625
+    .line 21199
     const/16 v0, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;->getPhone()Ljava/lang/String;
@@ -992,7 +992,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 20627
+    .line 21201
     :cond_80
     return-void
 .end method

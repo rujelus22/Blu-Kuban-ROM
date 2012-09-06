@@ -1,58 +1,43 @@
-.class final LV/c;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lorg/apache/http/HttpRequestInterceptor;
+.class final Lv/c;
+.super Lv/e;
+.source "SourceFile"
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method constructor <init>(ILjava/lang/String;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 26
+    invoke-direct {p0, p1, p2}, Lv/e;-><init>(ILjava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public process(Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)V
-    .registers 5
+.method protected a()[B
+    .registers 2
 
-    invoke-static {}, LV/b;->a()Ljava/lang/ThreadLocal;
+    .prologue
+    .line 31
+    const/16 v0, 0x100a
+
+    new-array v0, v0, [B
+
+    return-object v0
+.end method
+
+.method protected synthetic b()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 26
+    invoke-virtual {p0}, Lv/c;->a()[B
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_22
-
-    invoke-static {}, LV/b;->a()Ljava/lang/ThreadLocal;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_22
-
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    const-string v1, "This thread forbids HTTP requests"
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_22
-    return-void
+    return-object v0
 .end method

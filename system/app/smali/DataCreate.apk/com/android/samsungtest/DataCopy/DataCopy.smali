@@ -1848,7 +1848,7 @@
 
     .prologue
     .line 236
-    const v0, 0x7f060019
+    const v0, 0x7f060018
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/DataCopy/DataCopy;->findViewById(I)Landroid/view/View;
 
@@ -1866,7 +1866,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 238
-    const v0, 0x7f060026
+    const v0, 0x7f060025
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/DataCopy/DataCopy;->findViewById(I)Landroid/view/View;
 
@@ -1884,7 +1884,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 240
-    const v0, 0x7f060027
+    const v0, 0x7f060026
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/DataCopy/DataCopy;->findViewById(I)Landroid/view/View;
 
@@ -1902,7 +1902,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 243
-    const v0, 0x7f06001a
+    const v0, 0x7f060019
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/DataCopy/DataCopy;->findViewById(I)Landroid/view/View;
 
@@ -1913,7 +1913,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/DataCopy/DataCopy;->mEditSMSInBox:Landroid/widget/EditText;
 
     .line 244
-    const v0, 0x7f06001b
+    const v0, 0x7f06001a
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/DataCopy/DataCopy;->findViewById(I)Landroid/view/View;
 
@@ -1924,7 +1924,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/DataCopy/DataCopy;->mEditSMSOutBox:Landroid/widget/EditText;
 
     .line 245
-    const v0, 0x7f06001d
+    const v0, 0x7f06001c
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/DataCopy/DataCopy;->findViewById(I)Landroid/view/View;
 
@@ -1935,7 +1935,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/DataCopy/DataCopy;->mEditSMSDraftBox:Landroid/widget/TextView;
 
     .line 246
-    const v0, 0x7f06001c
+    const v0, 0x7f06001b
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/DataCopy/DataCopy;->findViewById(I)Landroid/view/View;
 
@@ -1946,7 +1946,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/DataCopy/DataCopy;->mEditSMSSentBox:Landroid/widget/EditText;
 
     .line 248
-    const v0, 0x7f06001e
+    const v0, 0x7f06001d
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/DataCopy/DataCopy;->findViewById(I)Landroid/view/View;
 
@@ -1957,7 +1957,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/DataCopy/DataCopy;->mEditMMSInBox:Landroid/widget/EditText;
 
     .line 249
-    const v0, 0x7f06001f
+    const v0, 0x7f06001e
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/DataCopy/DataCopy;->findViewById(I)Landroid/view/View;
 
@@ -1968,7 +1968,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/DataCopy/DataCopy;->mEditMMSOutBox:Landroid/widget/EditText;
 
     .line 250
-    const v0, 0x7f060021
+    const v0, 0x7f060020
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/DataCopy/DataCopy;->findViewById(I)Landroid/view/View;
 
@@ -1979,7 +1979,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/DataCopy/DataCopy;->mEditMMSDraftBox:Landroid/widget/TextView;
 
     .line 251
-    const v0, 0x7f060020
+    const v0, 0x7f06001f
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/DataCopy/DataCopy;->findViewById(I)Landroid/view/View;
 
@@ -1990,7 +1990,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/DataCopy/DataCopy;->mEditMMSSentBox:Landroid/widget/EditText;
 
     .line 253
-    const v0, 0x7f060022
+    const v0, 0x7f060021
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/DataCopy/DataCopy;->findViewById(I)Landroid/view/View;
 
@@ -2001,7 +2001,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/DataCopy/DataCopy;->mContactPerson:Landroid/widget/EditText;
 
     .line 255
-    const v0, 0x7f060023
+    const v0, 0x7f060022
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/DataCopy/DataCopy;->findViewById(I)Landroid/view/View;
 
@@ -2012,7 +2012,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/DataCopy/DataCopy;->mEditIncomingCall:Landroid/widget/EditText;
 
     .line 256
-    const v0, 0x7f060024
+    const v0, 0x7f060023
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/DataCopy/DataCopy;->findViewById(I)Landroid/view/View;
 
@@ -2023,7 +2023,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/DataCopy/DataCopy;->mEditOutgoingCall:Landroid/widget/EditText;
 
     .line 257
-    const v0, 0x7f060025
+    const v0, 0x7f060024
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/DataCopy/DataCopy;->findViewById(I)Landroid/view/View;
 

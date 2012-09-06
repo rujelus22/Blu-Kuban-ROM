@@ -1,222 +1,355 @@
-.class public Lcom/google/android/youtube/core/async/j;
+.class final Lcom/google/android/youtube/core/async/j;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/ad;
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
-.field private final a:Lcom/google/android/youtube/core/async/ad;
+.field final synthetic a:Lcom/google/android/youtube/core/async/i;
 
-.field private final b:Lcom/google/android/youtube/core/converter/a;
+.field private final b:Ljava/util/List;
 
-.field private final c:Lcom/google/android/youtube/core/converter/b;
+.field private final c:Lcom/google/android/youtube/core/async/l;
 
-.field private final d:Ljava/util/concurrent/Executor;
+.field private final d:Ljava/util/List;
+
+.field private final e:[Landroid/graphics/Bitmap;
+
+.field private f:I
 
 
 # direct methods
-.method private constructor <init>(Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/converter/a;Lcom/google/android/youtube/core/converter/b;Ljava/util/concurrent/Executor;)V
-    .registers 6
-    .parameter
+.method public constructor <init>(Lcom/google/android/youtube/core/async/i;Ljava/util/List;Lcom/google/android/youtube/core/async/l;)V
+    .registers 8
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 39
+    .line 51
+    iput-object p1, p0, Lcom/google/android/youtube/core/async/j;->a:Lcom/google/android/youtube/core/async/i;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
-    const-string v0, "requester may not be null"
+    .line 53
+    iput-object p2, p0, Lcom/google/android/youtube/core/async/j;->b:Ljava/util/List;
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 54
+    iput-object p3, p0, Lcom/google/android/youtube/core/async/j;->c:Lcom/google/android/youtube/core/async/l;
+
+    .line 56
+    new-instance v0, Ljava/util/LinkedList;
+
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/j;->d:Ljava/util/List;
+
+    .line 57
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/j;->b:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_16
+    :goto_16
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_38
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/async/ad;
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/j;->a:Lcom/google/android/youtube/core/async/ad;
-
-    .line 41
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/j;->b:Lcom/google/android/youtube/core/converter/a;
-
-    .line 42
-    iput-object p3, p0, Lcom/google/android/youtube/core/async/j;->c:Lcom/google/android/youtube/core/converter/b;
-
-    .line 43
-    iput-object p4, p0, Lcom/google/android/youtube/core/async/j;->d:Ljava/util/concurrent/Executor;
-
-    .line 44
-    return-void
-.end method
-
-.method protected constructor <init>(Lcom/google/android/youtube/core/converter/a;Lcom/google/android/youtube/core/converter/b;)V
-    .registers 4
-    .parameter
-    .parameter
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 53
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 54
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/j;->a:Lcom/google/android/youtube/core/async/ad;
-
-    .line 55
-    iput-object p1, p0, Lcom/google/android/youtube/core/async/j;->b:Lcom/google/android/youtube/core/converter/a;
-
-    .line 56
-    iput-object p2, p0, Lcom/google/android/youtube/core/async/j;->c:Lcom/google/android/youtube/core/converter/b;
-
-    .line 57
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/j;->d:Ljava/util/concurrent/Executor;
+    check-cast v0, Landroid/net/Uri;
 
     .line 58
+    iget-object v2, p0, Lcom/google/android/youtube/core/async/j;->d:Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    invoke-static {p1}, Lcom/google/android/youtube/core/async/i;->a(Lcom/google/android/youtube/core/async/i;)Lcom/google/android/youtube/core/async/k;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Lcom/google/android/youtube/core/async/k;->a()I
+
+    move-result v3
+
+    if-ge v2, v3, :cond_16
+
+    .line 59
+    iget-object v2, p0, Lcom/google/android/youtube/core/async/j;->d:Ljava/util/List;
+
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_16
+
+    .line 62
+    :cond_38
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/j;->d:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    new-array v0, v0, [Landroid/graphics/Bitmap;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/j;->e:[Landroid/graphics/Bitmap;
+
+    .line 63
     return-void
 .end method
 
-.method public static a(Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/converter/b;Ljava/util/concurrent/Executor;)Lcom/google/android/youtube/core/async/ad;
+.method private declared-synchronized a(Landroid/net/Uri;Landroid/graphics/Bitmap;)V
     .registers 5
     .parameter
     .parameter
-    .parameter
 
     .prologue
-    .line 243
-    const-string v0, "responseConverter may not be null"
+    .line 73
+    monitor-enter p0
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_start_1
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/j;->e:[Landroid/graphics/Bitmap;
 
-    .line 244
-    const-string v0, "executor may not be null"
+    iget-object v1, p0, Lcom/google/android/youtube/core/async/j;->d:Ljava/util/List;
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, p1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
 
-    .line 245
-    new-instance v0, Lcom/google/android/youtube/core/async/j;
+    move-result v1
 
-    const/4 v1, 0x0
+    aput-object p2, v0, v1
 
-    invoke-direct {v0, p0, v1, p1, p2}, Lcom/google/android/youtube/core/async/j;-><init>(Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/converter/a;Lcom/google/android/youtube/core/converter/b;Ljava/util/concurrent/Executor;)V
+    .line 74
+    iget v0, p0, Lcom/google/android/youtube/core/async/j;->f:I
 
-    return-object v0
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lcom/google/android/youtube/core/async/j;->f:I
+
+    .line 75
+    invoke-direct {p0}, Lcom/google/android/youtube/core/async/j;->c()V
+    :try_end_14
+    .catchall {:try_start_1 .. :try_end_14} :catchall_16
+
+    .line 76
+    monitor-exit p0
+
+    return-void
+
+    .line 73
+    :catchall_16
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method static synthetic a(Lcom/google/android/youtube/core/async/j;)Lcom/google/android/youtube/core/converter/b;
+.method private declared-synchronized b()V
     .registers 2
-    .parameter
 
     .prologue
-    .line 26
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/j;->c:Lcom/google/android/youtube/core/converter/b;
+    .line 81
+    monitor-enter p0
 
-    return-object v0
+    :try_start_1
+    iget v0, p0, Lcom/google/android/youtube/core/async/j;->f:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lcom/google/android/youtube/core/async/j;->f:I
+
+    .line 82
+    invoke-direct {p0}, Lcom/google/android/youtube/core/async/j;->c()V
+    :try_end_a
+    .catchall {:try_start_1 .. :try_end_a} :catchall_c
+
+    .line 83
+    monitor-exit p0
+
+    return-void
+
+    .line 81
+    :catchall_c
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method static synthetic b(Lcom/google/android/youtube/core/async/j;)Ljava/util/concurrent/Executor;
-    .registers 2
-    .parameter
+.method private c()V
+    .registers 6
 
     .prologue
-    .line 26
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/j;->d:Ljava/util/concurrent/Executor;
+    .line 86
+    iget v0, p0, Lcom/google/android/youtube/core/async/j;->f:I
 
-    return-object v0
+    iget-object v1, p0, Lcom/google/android/youtube/core/async/j;->d:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-ne v0, v1, :cond_30
+
+    .line 88
+    :try_start_a
+    iget-object v1, p0, Lcom/google/android/youtube/core/async/j;->e:[Landroid/graphics/Bitmap;
+
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    array-length v3, v1
+
+    const/4 v0, 0x0
+
+    :goto_13
+    if-ge v0, v3, :cond_1f
+
+    aget-object v4, v1, v0
+
+    if-eqz v4, :cond_1c
+
+    invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_1c
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_13
+
+    .line 89
+    :cond_1f
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/j;->c:Lcom/google/android/youtube/core/async/l;
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/async/j;->b:Ljava/util/List;
+
+    iget-object v3, p0, Lcom/google/android/youtube/core/async/j;->a:Lcom/google/android/youtube/core/async/i;
+
+    invoke-static {v3}, Lcom/google/android/youtube/core/async/i;->a(Lcom/google/android/youtube/core/async/i;)Lcom/google/android/youtube/core/async/k;
+
+    move-result-object v3
+
+    invoke-interface {v3, v2}, Lcom/google/android/youtube/core/async/k;->a(Ljava/util/List;)Landroid/graphics/Bitmap;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Lcom/google/android/youtube/core/async/l;->a(Ljava/lang/Object;Ljava/lang/Object;)V
+    :try_end_30
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_a .. :try_end_30} :catch_31
+
+    .line 94
+    :cond_30
+    :goto_30
+    return-void
+
+    .line 90
+    :catch_31
+    move-exception v0
+
+    .line 91
+    iget-object v1, p0, Lcom/google/android/youtube/core/async/j;->c:Lcom/google/android/youtube/core/async/l;
+
+    iget-object v2, p0, Lcom/google/android/youtube/core/async/j;->b:Ljava/util/List;
+
+    invoke-interface {v1, v2, v0}, Lcom/google/android/youtube/core/async/l;->a(Ljava/lang/Object;Ljava/lang/Exception;)V
+
+    goto :goto_30
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Lcom/google/android/youtube/core/async/g;)V
-    .registers 5
-    .parameter
-    .parameter
+.method public final declared-synchronized a()V
+    .registers 4
 
     .prologue
-    .line 79
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/j;->b:Lcom/google/android/youtube/core/converter/a;
+    .line 66
+    monitor-enter p0
 
-    if-eqz v0, :cond_13
+    :try_start_1
+    invoke-direct {p0}, Lcom/google/android/youtube/core/async/j;->c()V
 
-    .line 80
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/j;->b:Lcom/google/android/youtube/core/converter/a;
+    .line 67
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/j;->d:Ljava/util/List;
 
-    invoke-interface {v0, p1}, Lcom/google/android/youtube/core/converter/a;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_a
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_23
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 88
-    :goto_a
-    new-instance v1, Lcom/google/android/youtube/core/async/k;
+    check-cast v0, Landroid/net/Uri;
 
-    invoke-direct {v1, p0, p1, v0, p2}, Lcom/google/android/youtube/core/async/k;-><init>(Lcom/google/android/youtube/core/async/j;Ljava/lang/Object;Ljava/lang/Object;Lcom/google/android/youtube/core/async/g;)V
+    .line 68
+    iget-object v2, p0, Lcom/google/android/youtube/core/async/j;->a:Lcom/google/android/youtube/core/async/i;
 
-    .line 90
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/youtube/core/async/j;->b(Ljava/lang/Object;Lcom/google/android/youtube/core/async/g;)V
-    :try_end_12
-    .catch Lcom/google/android/youtube/core/converter/ConverterException; {:try_start_0 .. :try_end_12} :catch_15
+    invoke-static {v2}, Lcom/google/android/youtube/core/async/i;->b(Lcom/google/android/youtube/core/async/i;)Lcom/google/android/youtube/core/b/ag;
 
-    .line 94
-    :goto_12
-    return-void
+    move-result-object v2
 
-    :cond_13
-    move-object v0, p1
+    invoke-interface {v2, v0, p0}, Lcom/google/android/youtube/core/b/ag;->b(Landroid/net/Uri;Lcom/google/android/youtube/core/async/l;)V
+    :try_end_1f
+    .catchall {:try_start_1 .. :try_end_1f} :catchall_20
 
-    .line 85
     goto :goto_a
 
-    .line 91
-    :catch_15
+    .line 66
+    :catchall_20
     move-exception v0
 
-    .line 92
-    const/4 v1, 0x0
+    monitor-exit p0
 
-    invoke-virtual {p0, p1, v1, p2, v0}, Lcom/google/android/youtube/core/async/j;->a(Ljava/lang/Object;Ljava/lang/Object;Lcom/google/android/youtube/core/async/g;Ljava/lang/Exception;)V
+    throw v0
 
-    goto :goto_12
-.end method
+    .line 70
+    :cond_23
+    monitor-exit p0
 
-.method protected a(Ljava/lang/Object;Ljava/lang/Object;Lcom/google/android/youtube/core/async/g;Ljava/lang/Exception;)V
-    .registers 5
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 110
-    invoke-interface {p3, p1, p4}, Lcom/google/android/youtube/core/async/g;->a(Ljava/lang/Object;Ljava/lang/Exception;)V
-
-    .line 111
     return-void
 .end method
 
-.method protected b(Ljava/lang/Object;Lcom/google/android/youtube/core/async/g;)V
-    .registers 5
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
+    .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 97
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/j;->a:Lcom/google/android/youtube/core/async/ad;
+    .line 42
+    invoke-direct {p0}, Lcom/google/android/youtube/core/async/j;->b()V
 
-    const-string v1, "subclasses should override doRequest"
+    return-void
+.end method
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    .line 98
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/j;->a:Lcom/google/android/youtube/core/async/ad;
+    .prologue
+    .line 42
+    check-cast p1, Landroid/net/Uri;
 
-    invoke-interface {v0, p1, p2}, Lcom/google/android/youtube/core/async/ad;->a(Ljava/lang/Object;Lcom/google/android/youtube/core/async/g;)V
+    check-cast p2, Landroid/graphics/Bitmap;
 
-    .line 99
+    invoke-direct {p0, p1, p2}, Lcom/google/android/youtube/core/async/j;->a(Landroid/net/Uri;Landroid/graphics/Bitmap;)V
+
     return-void
 .end method

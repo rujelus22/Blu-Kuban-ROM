@@ -4,16 +4,6 @@
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 16
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method private static a(Lcom/google/android/youtube/core/player/mp4/c;Lcom/google/android/youtube/core/player/mp4/HdlrAtom$TrackType;)Lcom/google/android/youtube/core/player/mp4/c;
     .registers 7
     .parameter

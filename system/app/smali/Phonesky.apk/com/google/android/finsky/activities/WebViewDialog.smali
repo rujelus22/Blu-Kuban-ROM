@@ -59,7 +59,7 @@
 
     const-string v2, "android.intent.extra.TITLE"
 
-    const v3, 0x7f0700c0
+    const v3, 0x7f0700cd
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
@@ -68,12 +68,12 @@
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/activities/WebViewDialog;->setTitle(I)V
 
     .line 32
-    const v1, 0x7f040003
+    const v1, 0x7f040002
 
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/activities/WebViewDialog;->setContentView(I)V
 
     .line 34
-    const v1, 0x7f08000c
+    const v1, 0x7f08000f
 
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/activities/WebViewDialog;->findViewById(I)Landroid/view/View;
 

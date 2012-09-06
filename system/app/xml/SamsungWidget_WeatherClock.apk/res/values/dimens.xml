@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="resizewidget_width_2">160.0dip</dimen>
-    <dimen name="resizewidget_width_4">320.0dip</dimen>
-    <dimen name="resizewidget_width_5">400.0dip</dimen>
-    <dimen name="resizewidget_height_1">100.0dip</dimen>
-    <dimen name="resizewidget_height_2">200.0dip</dimen>
-</resources>

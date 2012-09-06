@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingBottom="23.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/toReviewHeader" android:paddingLeft="10.0dip" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/PlacesHeading" />
+    <View android:background="@color/places_dark_gray" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_marginBottom="5.0dip" />
+    <LinearLayout android:orientation="vertical" android:id="@id/recentPlacesContainer" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

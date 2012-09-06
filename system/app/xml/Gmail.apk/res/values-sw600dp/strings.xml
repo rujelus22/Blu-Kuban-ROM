@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="quotedTextBackgroundColorString">\#ffffff</string>
-    <string name="quotedTextFontColorString">\#000000</string>
+    <string name="quotedTextBackgroundColorString">\#000000</string>
+    <string name="quotedTextFontColorString">\#ebebeb</string>
     <string name="menu_label_options">Manage labels</string>
     <string name="plus_cc_label">+ Cc/Bcc</string>
     <string name="plus_bcc_label">+ Bcc</string>

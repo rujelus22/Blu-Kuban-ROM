@@ -38,7 +38,7 @@
     if-ne v2, v0, :cond_d
 
     :goto_a
-    sput-boolean v0, Lcom/sec/android/app/dialertab/calllog/PhoneCallDetailsHelper;->DBG:Z
+    sput-boolean v1, Lcom/sec/android/app/dialertab/calllog/PhoneCallDetailsHelper;->DBG:Z
 
     return-void
 

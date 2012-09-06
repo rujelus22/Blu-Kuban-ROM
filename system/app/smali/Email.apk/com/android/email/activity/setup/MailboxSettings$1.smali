@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 266
+    .line 256
     iput-object p1, p0, Lcom/android/email/activity/setup/MailboxSettings$1;->this$0:Lcom/android/email/activity/setup/MailboxSettings;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,47 +45,31 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 269
+    .line 259
     move-object v0, p1
 
     check-cast v0, Landroid/preference/ListPreference;
 
-    .line 270
+    .line 260
     .local v0, lp:Landroid/preference/ListPreference;
     invoke-virtual {v0}, Landroid/preference/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/String;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-static {v1, p2}, Lcom/google/common/base/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_f
 
-    .line 282
+    .line 272
     .end local p2
-    :goto_1e
+    :goto_e
     return v3
 
-    .line 273
+    .line 263
     .restart local p2
-    :cond_1f
+    :cond_f
     iget-object v1, p0, Lcom/android/email/activity/setup/MailboxSettings$1;->this$0:Lcom/android/email/activity/setup/MailboxSettings;
 
     const/4 v2, 0x1
@@ -93,36 +77,36 @@
     #setter for: Lcom/android/email/activity/setup/MailboxSettings;->mNeedsSave:Z
     invoke-static {v1, v2}, Lcom/android/email/activity/setup/MailboxSettings;->access$402(Lcom/android/email/activity/setup/MailboxSettings;Z)Z
 
-    .line 274
+    .line 264
     sget-boolean v1, Lcom/android/email/Email;->DEBUG:Z
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_20
 
-    .line 275
+    .line 265
     const-string v1, "Email"
 
     const-string v2, "Setting changed"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 279
-    :cond_30
+    .line 269
+    :cond_20
     check-cast p2, Ljava/lang/String;
 
     .end local p2
     invoke-virtual {v0, p2}, Landroid/preference/ListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 280
+    .line 270
     iget-object v1, p0, Lcom/android/email/activity/setup/MailboxSettings$1;->this$0:Lcom/android/email/activity/setup/MailboxSettings;
 
     #calls: Lcom/android/email/activity/setup/MailboxSettings;->updatePreferenceSummary()V
     invoke-static {v1}, Lcom/android/email/activity/setup/MailboxSettings;->access$500(Lcom/android/email/activity/setup/MailboxSettings;)V
 
-    .line 281
+    .line 271
     iget-object v1, p0, Lcom/android/email/activity/setup/MailboxSettings$1;->this$0:Lcom/android/email/activity/setup/MailboxSettings;
 
     #calls: Lcom/android/email/activity/setup/MailboxSettings;->updateObjects()V
     invoke-static {v1}, Lcom/android/email/activity/setup/MailboxSettings;->access$600(Lcom/android/email/activity/setup/MailboxSettings;)V
 
-    goto :goto_1e
+    goto :goto_e
 .end method

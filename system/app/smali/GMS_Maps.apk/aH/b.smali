@@ -1,494 +1,93 @@
-.class public LaH/b;
+.class Lah/b;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lah/i;
 
 
 # instance fields
-.field protected volatile a:Landroid/location/Location;
+.field final synthetic a:Lah/p;
 
-.field private volatile b:Landroid/location/Location;
-
-.field private c:LaH/d;
-
-.field private final d:LaH/j;
-
-.field private final e:LaH/c;
+.field final synthetic b:Lah/a;
 
 
 # direct methods
-.method public constructor <init>(LaH/j;LaH/c;)V
-    .registers 4
+.method constructor <init>(Lah/a;Lah/p;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    .line 223
+    iput-object p1, p0, Lah/b;->b:Lah/a;
+
+    iput-object p2, p0, Lah/b;->a:Lah/p;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, LaH/b;->a:Landroid/location/Location;
-
-    iput-object v0, p0, LaH/b;->b:Landroid/location/Location;
-
-    iput-object p1, p0, LaH/b;->d:LaH/j;
-
-    iput-object p2, p0, LaH/b;->e:LaH/c;
-
     return-void
-.end method
-
-.method private d(Landroid/location/Location;)V
-    .registers 4
-
-    iget-object v0, p0, LaH/b;->c:LaH/d;
-
-    invoke-virtual {v0, p1}, LaH/d;->a(Landroid/location/Location;)V
-
-    iget-object v0, p0, LaH/b;->d:LaH/j;
-
-    invoke-direct {p0, p1}, LaH/b;->e(Landroid/location/Location;)Landroid/location/Location;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, LaH/j;->c(Landroid/location/Location;)V
-
-    return-void
-.end method
-
-.method private e(Landroid/location/Location;)Landroid/location/Location;
-    .registers 3
-
-    iget-object v0, p0, LaH/b;->b:Landroid/location/Location;
-
-    iput-object p1, p0, LaH/b;->b:Landroid/location/Location;
-
-    if-eqz v0, :cond_7
-
-    move-object p1, v0
-
-    :cond_7
-    return-object p1
-.end method
-
-.method private f(Landroid/location/Location;)Z
-    .registers 5
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    iget-object v2, p0, LaH/b;->b:Landroid/location/Location;
-
-    invoke-virtual {p0, v2, p1, v0, v1}, LaH/b;->a(Landroid/location/Location;Landroid/location/Location;J)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_13
-
-    invoke-virtual {p1, v0, v1}, Landroid/location/Location;->setTime(J)V
-
-    iput-object p1, p0, LaH/b;->a:Landroid/location/Location;
-
-    const/4 v0, 0x1
-
-    :goto_12
-    return v0
-
-    :cond_13
-    const/4 v0, 0x0
-
-    goto :goto_12
-.end method
-
-.method private g(Landroid/location/Location;)Z
-    .registers 5
-
-    iget-object v0, p0, LaH/b;->b:Landroid/location/Location;
-
-    invoke-virtual {p1}, Landroid/location/Location;->getTime()J
-
-    move-result-wide v1
-
-    invoke-virtual {p0, v0, p1, v1, v2}, LaH/b;->a(Landroid/location/Location;Landroid/location/Location;J)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_e
-
-    const/4 v0, 0x1
-
-    :goto_d
-    return v0
-
-    :cond_e
-    const/4 v0, 0x0
-
-    goto :goto_d
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 3
-
-    new-instance v0, LaH/d;
-
-    iget-object v1, p0, LaH/b;->d:LaH/j;
-
-    invoke-direct {v0, v1}, LaH/d;-><init>(LaH/j;)V
-
-    iput-object v0, p0, LaH/b;->c:LaH/d;
-
-    return-void
-.end method
-
-.method public a(Landroid/location/Location;)Z
-    .registers 3
-
-    invoke-direct {p0, p1}, LaH/b;->f(Landroid/location/Location;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    invoke-direct {p0, p1}, LaH/b;->d(Landroid/location/Location;)V
-
-    iget-object v0, p0, LaH/b;->e:LaH/c;
-
-    invoke-virtual {v0}, LaH/c;->c()V
-
-    const/4 v0, 0x1
-
-    :goto_f
-    return v0
-
-    :cond_10
-    const/4 v0, 0x0
-
-    goto :goto_f
-.end method
-
-.method protected a(Landroid/location/Location;Landroid/location/Location;J)Z
-    .registers 15
-
-    const-wide/high16 v8, 0x4069
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    const-wide v6, 0x416312d000000000L
-
-    if-nez p2, :cond_c
-
-    :cond_b
-    :goto_b
-    return v0
-
-    :cond_c
-    if-nez p1, :cond_10
-
-    move v0, v1
-
-    goto :goto_b
-
-    :cond_10
-    invoke-virtual {p1}, Landroid/location/Location;->getTime()J
-
-    move-result-wide v2
-
-    invoke-virtual {p2}, Landroid/location/Location;->getTime()J
-
-    move-result-wide v4
-
-    sub-long/2addr v2, v4
-
-    const-wide/16 v4, 0xc8
-
-    cmp-long v2, v2, v4
-
-    if-gtz v2, :cond_b
-
-    invoke-virtual {p1}, Landroid/location/Location;->getAccuracy()F
-
-    move-result v2
-
-    invoke-virtual {p2}, Landroid/location/Location;->getAccuracy()F
-
-    move-result v3
-
-    sub-float/2addr v2, v3
-
-    const/high16 v3, 0x4120
-
-    cmpl-float v2, v2, v3
-
-    if-lez v2, :cond_30
-
-    move v0, v1
-
-    goto :goto_b
-
-    :cond_30
-    invoke-virtual {p1}, Landroid/location/Location;->getTime()J
-
-    move-result-wide v2
-
-    sub-long v2, p3, v2
-
-    const-wide/16 v4, 0xbb8
-
-    cmp-long v2, v2, v4
-
-    if-lez v2, :cond_3e
-
-    move v0, v1
-
-    goto :goto_b
-
-    :cond_3e
-    invoke-virtual {p2}, Landroid/location/Location;->getLatitude()D
-
-    move-result-wide v2
-
-    mul-double/2addr v2, v6
-
-    invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
-
-    move-result-wide v4
-
-    mul-double/2addr v4, v6
-
-    sub-double/2addr v2, v4
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->abs(D)D
-
-    move-result-wide v2
-
-    cmpl-double v2, v2, v8
-
-    if-gtz v2, :cond_64
-
-    invoke-virtual {p2}, Landroid/location/Location;->getLongitude()D
-
-    move-result-wide v2
-
-    mul-double/2addr v2, v6
-
-    invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
-
-    move-result-wide v4
-
-    mul-double/2addr v4, v6
-
-    sub-double/2addr v2, v4
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->abs(D)D
-
-    move-result-wide v2
-
-    cmpl-double v2, v2, v8
-
-    if-lez v2, :cond_b
-
-    :cond_64
-    move v0, v1
-
-    goto :goto_b
-.end method
-
-.method public b()V
-    .registers 2
-
-    iget-object v0, p0, LaH/b;->c:LaH/d;
-
-    invoke-virtual {v0}, LaH/d;->a()V
-
-    return-void
-.end method
-
-.method public b(Landroid/location/Location;)Z
-    .registers 3
-
-    iget-object v0, p0, LaH/b;->e:LaH/c;
-
-    invoke-virtual {v0}, LaH/c;->d()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    iget-object v0, p0, LaH/b;->e:LaH/c;
-
-    invoke-virtual {v0}, LaH/c;->e()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1f
-
-    :cond_10
-    invoke-direct {p0, p1}, LaH/b;->g(Landroid/location/Location;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1f
-
-    invoke-virtual {p0, p1}, LaH/b;->c(Landroid/location/Location;)Landroid/location/Location;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, LaH/b;->d(Landroid/location/Location;)V
-
-    const/4 v0, 0x1
-
-    :goto_1e
-    return v0
-
-    :cond_1f
-    const/4 v0, 0x0
-
-    goto :goto_1e
-.end method
-
-.method protected c(Landroid/location/Location;)Landroid/location/Location;
-    .registers 8
-
-    iget-object v1, p0, LaH/b;->a:Landroid/location/Location;
-
-    if-nez p1, :cond_6
-
-    const/4 p1, 0x0
-
-    :cond_5
-    :goto_5
-    return-object p1
-
-    :cond_6
-    iget-object v0, p0, LaH/b;->e:LaH/c;
-
-    invoke-virtual {v0}, LaH/c;->d()Z
-
-    move-result v0
-
-    if-nez v0, :cond_5
-
-    if-eqz v1, :cond_5
-
-    invoke-virtual {p1}, Landroid/location/Location;->getTime()J
-
-    move-result-wide v2
-
-    invoke-virtual {v1}, Landroid/location/Location;->getTime()J
-
-    move-result-wide v4
-
-    sub-long/2addr v2, v4
-
-    const-wide/32 v4, 0xea60
-
-    cmp-long v0, v2, v4
-
-    if-gez v0, :cond_5
-
-    invoke-virtual {p1}, Landroid/location/Location;->getTime()J
-
-    move-result-wide v2
-
-    invoke-virtual {v1}, Landroid/location/Location;->getTime()J
-
-    move-result-wide v4
-
-    sub-long/2addr v2, v4
-
-    const-wide/16 v4, 0x3e8
-
-    div-long/2addr v2, v4
-
-    invoke-virtual {v1}, Landroid/location/Location;->getAccuracy()F
-
-    move-result v0
-
-    const-wide/16 v4, 0x1
-
-    mul-long/2addr v2, v4
-
-    long-to-float v2, v2
-
-    add-float/2addr v2, v0
-
-    invoke-virtual {p1}, Landroid/location/Location;->getAccuracy()F
-
-    move-result v0
-
-    sub-float/2addr v0, v2
-
-    const/high16 v3, 0x4120
-
-    cmpl-float v0, v0, v3
-
-    if-lez v0, :cond_5
-
-    new-instance v0, Landroid/location/Location;
-
-    const-string v3, "ParticleFilterLocationProvider"
-
-    invoke-direct {v0, v3}, Landroid/location/Location;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, v2}, Landroid/location/Location;->setAccuracy(F)V
-
-    invoke-virtual {p1}, Landroid/location/Location;->getTime()J
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v2, v3}, Landroid/location/Location;->setTime(J)V
-
-    invoke-virtual {v1}, Landroid/location/Location;->hasBearing()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5e
-
-    invoke-virtual {v1}, Landroid/location/Location;->getBearing()F
-
-    move-result v2
-
-    invoke-virtual {v0, v2}, Landroid/location/Location;->setBearing(F)V
-
-    :cond_5e
-    invoke-virtual {v1}, Landroid/location/Location;->getLatitude()D
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v2, v3}, Landroid/location/Location;->setLatitude(D)V
-
-    invoke-virtual {v1}, Landroid/location/Location;->getLongitude()D
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v2, v3}, Landroid/location/Location;->setLongitude(D)V
-
-    invoke-virtual {v1}, Landroid/location/Location;->hasSpeed()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_79
-
-    invoke-virtual {v1}, Landroid/location/Location;->getSpeed()F
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/location/Location;->setSpeed(F)V
-
-    :cond_79
-    iget-object v1, p0, LaH/b;->e:LaH/c;
-
-    invoke-virtual {v1}, LaH/c;->f()Lt/y;
+.method public a(Lah/m;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 232
+    iget-object v0, p0, Lah/b;->b:Lah/a;
+
+    invoke-virtual {p1}, Lah/m;->a()Ljava/lang/Long;
 
     move-result-object v1
 
-    invoke-static {v1}, LaH/a;->a(Lt/y;)Landroid/os/Bundle;
+    invoke-static {v0, v1, p1}, Lah/a;->a(Lah/a;Ljava/lang/Long;Lah/m;)V
+
+    .line 233
+    return-void
+.end method
+
+.method public a(Lah/n;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 237
+    iget-object v0, p0, Lah/b;->b:Lah/a;
+
+    invoke-virtual {p1}, Lah/n;->b()Ljava/lang/Long;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/location/Location;->setExtras(Landroid/os/Bundle;)V
+    invoke-static {}, Lah/a;->b()Lah/m;
 
-    move-object p1, v0
+    move-result-object v2
 
-    goto/16 :goto_5
+    invoke-static {v0, v1, v2}, Lah/a;->a(Lah/a;Ljava/lang/Long;Lah/m;)V
+
+    .line 238
+    return-void
+.end method
+
+.method public a(Ljava/util/Vector;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 226
+    iget-object v0, p0, Lah/b;->b:Lah/a;
+
+    iget-object v1, p0, Lah/b;->a:Lah/p;
+
+    invoke-static {v0, v1}, Lah/a;->a(Lah/a;Lah/p;)V
+
+    .line 227
+    iget-object v0, p0, Lah/b;->b:Lah/a;
+
+    invoke-static {v0}, Lah/a;->a(Lah/a;)V
+
+    .line 228
+    return-void
 .end method

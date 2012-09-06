@@ -8,46 +8,56 @@
 
 
 # instance fields
-.field final multimap:Lcom/google/common/collect/ew;
+.field final multimap:Lcom/google/common/collect/ImmutableMultimap;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/ew;)V
+.method constructor <init>(Lcom/google/common/collect/ImmutableMultimap;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 489
+    .line 597
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableCollection;-><init>()V
 
-    .line 490
-    iput-object p1, p0, Lcom/google/common/collect/ImmutableMultimap$Values;->multimap:Lcom/google/common/collect/ew;
+    .line 598
+    iput-object p1, p0, Lcom/google/common/collect/ImmutableMultimap$Values;->multimap:Lcom/google/common/collect/ImmutableMultimap;
 
-    .line 491
+    .line 599
     return-void
 .end method
 
 
 # virtual methods
-.method public iterator()Lcom/google/common/collect/gf;
+.method isPartialView()Z
+    .registers 2
+
+    .prologue
+    .line 622
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public iterator()Lcom/google/common/collect/mt;
     .registers 3
 
     .prologue
-    .line 494
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap$Values;->multimap:Lcom/google/common/collect/ew;
+    .line 602
+    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap$Values;->multimap:Lcom/google/common/collect/ImmutableMultimap;
 
-    invoke-interface {v0}, Lcom/google/common/collect/ew;->entries()Ljava/util/Collection;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMultimap;->entries()Lcom/google/common/collect/ImmutableCollection;
 
     move-result-object v0
 
-    .line 496
-    new-instance v1, Lcom/google/common/collect/ce;
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableCollection;->iterator()Lcom/google/common/collect/mt;
 
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/ce;-><init>(Lcom/google/common/collect/ImmutableMultimap$Values;Ljava/util/Iterator;)V
+    move-result-object v0
+
+    .line 604
+    new-instance v1, Lcom/google/common/collect/dq;
+
+    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/dq;-><init>(Lcom/google/common/collect/ImmutableMultimap$Values;Ljava/util/Iterator;)V
 
     return-object v1
 .end method
@@ -56,8 +66,8 @@
     .registers 2
 
     .prologue
-    .line 486
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap$Values;->iterator()Lcom/google/common/collect/gf;
+    .line 594
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap$Values;->iterator()Lcom/google/common/collect/mt;
 
     move-result-object v0
 
@@ -68,10 +78,10 @@
     .registers 2
 
     .prologue
-    .line 507
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap$Values;->multimap:Lcom/google/common/collect/ew;
+    .line 618
+    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap$Values;->multimap:Lcom/google/common/collect/ImmutableMultimap;
 
-    invoke-interface {v0}, Lcom/google/common/collect/ew;->size()I
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMultimap;->size()I
 
     move-result v0
 

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/navigate" android:showAsAction="always" />
+    <item android:id="@id/get_directions" android:showAsAction="always" />
+    <item android:id="@id/reverse_start_end" android:showAsAction="never" />
+</menu>

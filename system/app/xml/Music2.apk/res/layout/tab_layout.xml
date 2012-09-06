@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.google.android.music.StatefulShadowTextView android:textSize="12.0sp" android:textColor="@color/tab_text_color" android:ellipsize="end" android:gravity="center" android:background="@drawable/tab" android:focusable="true" android:focusableInTouchMode="false" android:layout_width="140.0dip" android:layout_height="@dimen/top_bar_height" android:singleLine="true" android:selectAllOnFocus="false"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

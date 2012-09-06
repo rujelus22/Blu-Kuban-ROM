@@ -14,13 +14,30 @@
 .end annotation
 
 
+# instance fields
+.field private mAddCcString:Ljava/lang/String;
+
+
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .registers 3
 
     .prologue
-    .line 38
+    .line 40
     invoke-direct {p0}, Lcom/google/android/finsky/billing/InstrumentFactory$FormOfPayment;-><init>()V
+
+    .line 43
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+
+    move-result-object v0
+
+    const v1, 0x7f07003e
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/FinskyApp;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreditCardInstrument$1;->mAddCcString:Ljava/lang/String;
 
     return-void
 .end method
@@ -31,27 +48,27 @@
     .registers 2
 
     .prologue
-    .line 79
+    .line 86
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public create(Lcom/google/android/finsky/billing/BillingFlowContext;Lcom/google/android/finsky/billing/BillingFlowListener;Landroid/os/Bundle;)Lcom/google/android/finsky/billing/BillingFlow;
-    .registers 13
+    .registers 14
     .parameter "context"
     .parameter "listener"
     .parameter "parameters"
 
     .prologue
-    .line 47
+    .line 53
     const-string v0, "authAccount"
 
     invoke-virtual {p3, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 48
+    .line 54
     .local v8, accountName:Ljava/lang/String;
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
@@ -61,11 +78,11 @@
 
     move-result-object v7
 
-    .line 49
+    .line 55
     .local v7, account:Landroid/accounts/Account;
     if-nez v7, :cond_1a
 
-    .line 50
+    .line 56
     const-string v0, "Invalid account passed in parameters."
 
     const/4 v1, 0x0
@@ -74,14 +91,14 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 51
+    .line 57
     const/4 v0, 0x0
 
-    .line 58
+    .line 65
     :goto_19
     return-object v0
 
-    .line 53
+    .line 59
     :cond_1a
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
@@ -93,9 +110,9 @@
 
     move-result-object v4
 
-    .line 54
+    .line 60
     .local v4, dfeApi:Lcom/google/android/finsky/api/DfeApi;
-    new-instance v3, Lcom/android/volley/toolbox/AndroidAuthenticator;
+    new-instance v9, Lcom/android/volley/toolbox/AndroidAuthenticator;
 
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
@@ -109,10 +126,16 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-direct {v3, v1, v7, v0}, Lcom/android/volley/toolbox/AndroidAuthenticator;-><init>(Landroid/content/Context;Landroid/accounts/Account;Ljava/lang/String;)V
+    invoke-direct {v9, v1, v7, v0}, Lcom/android/volley/toolbox/AndroidAuthenticator;-><init>(Landroid/content/Context;Landroid/accounts/Account;Ljava/lang/String;)V
 
-    .line 56
-    .local v3, authenticator:Lcom/android/volley/toolbox/AndroidAuthenticator;
+    .line 62
+    .local v9, authenticator:Lcom/android/volley/toolbox/AndroidAuthenticator;
+    new-instance v3, Lcom/google/android/finsky/billing/AsyncAuthenticator;
+
+    invoke-direct {v3, v9}, Lcom/google/android/finsky/billing/AsyncAuthenticator;-><init>(Lcom/android/volley/toolbox/Authenticator;)V
+
+    .line 63
+    .local v3, asyncAuthenticator:Lcom/google/android/finsky/billing/AsyncAuthenticator;
     new-instance v5, Lcom/google/android/finsky/analytics/DfeAnalytics;
 
     new-instance v0, Landroid/os/Handler;
@@ -125,7 +148,7 @@
 
     invoke-direct {v5, v0, v4}, Lcom/google/android/finsky/analytics/DfeAnalytics;-><init>(Landroid/os/Handler;Lcom/google/android/finsky/api/DfeApi;)V
 
-    .line 58
+    .line 65
     .local v5, analytics:Lcom/google/android/finsky/analytics/Analytics;
     new-instance v0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;
 
@@ -135,7 +158,7 @@
 
     move-object v6, p3
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;-><init>(Lcom/google/android/finsky/billing/BillingFlowContext;Lcom/google/android/finsky/billing/BillingFlowListener;Lcom/android/volley/toolbox/AndroidAuthenticator;Lcom/google/android/finsky/api/DfeApi;Lcom/google/android/finsky/analytics/Analytics;Landroid/os/Bundle;)V
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;-><init>(Lcom/google/android/finsky/billing/BillingFlowContext;Lcom/google/android/finsky/billing/BillingFlowListener;Lcom/google/android/finsky/billing/AsyncAuthenticator;Lcom/google/android/finsky/api/DfeApi;Lcom/google/android/finsky/analytics/Analytics;Landroid/os/Bundle;)V
 
     goto :goto_19
 .end method
@@ -146,7 +169,7 @@
     .parameter "displayIcon"
 
     .prologue
-    .line 64
+    .line 71
     new-instance v0, Lcom/google/android/finsky/billing/creditcard/CreditCardInstrument;
 
     invoke-direct {v0, p1, p2}, Lcom/google/android/finsky/billing/creditcard/CreditCardInstrument;-><init>(Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;Landroid/graphics/drawable/Drawable;)V
@@ -158,7 +181,7 @@
     .registers 3
 
     .prologue
-    .line 69
+    .line 76
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
@@ -167,7 +190,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f020045
+    const v1, 0x7f02005b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -177,33 +200,35 @@
 .end method
 
 .method public getAddText()Ljava/lang/String;
-    .registers 3
+    .registers 2
 
     .prologue
-    .line 74
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v0
-
-    const v1, 0x7f070041
-
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/FinskyApp;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
+    .line 81
+    iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreditCardInstrument$1;->mAddCcString:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method protected getInstrumentFamily()I
+    .registers 2
+
+    .prologue
+    .line 126
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public getUpdateAddressText()Ljava/lang/String;
     .registers 3
 
     .prologue
-    .line 101
+    .line 109
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
 
-    const v1, 0x7f070075
+    const v1, 0x7f070070
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/FinskyApp;->getString(I)Ljava/lang/String;
 
@@ -213,20 +238,20 @@
 .end method
 
 .method public updateAddress(Lcom/google/android/finsky/billing/BillingFlowContext;Lcom/google/android/finsky/billing/BillingFlowListener;Landroid/os/Bundle;)Lcom/google/android/finsky/billing/BillingFlow;
-    .registers 13
+    .registers 14
     .parameter "context"
     .parameter "listener"
     .parameter "parameters"
 
     .prologue
-    .line 85
+    .line 92
     const-string v0, "authAccount"
 
     invoke-virtual {p3, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 86
+    .line 93
     .local v8, accountName:Ljava/lang/String;
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
@@ -236,11 +261,11 @@
 
     move-result-object v7
 
-    .line 87
+    .line 94
     .local v7, account:Landroid/accounts/Account;
     if-nez v7, :cond_1a
 
-    .line 88
+    .line 95
     const-string v0, "Invalid account passed in parameters."
 
     const/4 v1, 0x0
@@ -249,14 +274,14 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 89
+    .line 96
     const/4 v0, 0x0
 
-    .line 95
+    .line 103
     :goto_19
     return-object v0
 
-    .line 91
+    .line 98
     :cond_1a
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
@@ -268,9 +293,9 @@
 
     move-result-object v4
 
-    .line 92
+    .line 99
     .local v4, dfeApi:Lcom/google/android/finsky/api/DfeApi;
-    new-instance v3, Lcom/android/volley/toolbox/AndroidAuthenticator;
+    new-instance v9, Lcom/android/volley/toolbox/AndroidAuthenticator;
 
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
@@ -284,10 +309,16 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-direct {v3, v1, v7, v0}, Lcom/android/volley/toolbox/AndroidAuthenticator;-><init>(Landroid/content/Context;Landroid/accounts/Account;Ljava/lang/String;)V
+    invoke-direct {v9, v1, v7, v0}, Lcom/android/volley/toolbox/AndroidAuthenticator;-><init>(Landroid/content/Context;Landroid/accounts/Account;Ljava/lang/String;)V
 
-    .line 94
-    .local v3, authenticator:Lcom/android/volley/toolbox/AndroidAuthenticator;
+    .line 101
+    .local v9, authenticator:Lcom/android/volley/toolbox/AndroidAuthenticator;
+    new-instance v3, Lcom/google/android/finsky/billing/AsyncAuthenticator;
+
+    invoke-direct {v3, v9}, Lcom/google/android/finsky/billing/AsyncAuthenticator;-><init>(Lcom/android/volley/toolbox/Authenticator;)V
+
+    .line 102
+    .local v3, asyncAuthenticator:Lcom/google/android/finsky/billing/AsyncAuthenticator;
     new-instance v5, Lcom/google/android/finsky/analytics/DfeAnalytics;
 
     new-instance v0, Landroid/os/Handler;
@@ -300,7 +331,7 @@
 
     invoke-direct {v5, v0, v4}, Lcom/google/android/finsky/analytics/DfeAnalytics;-><init>(Landroid/os/Handler;Lcom/google/android/finsky/api/DfeApi;)V
 
-    .line 95
+    .line 103
     .local v5, analytics:Lcom/google/android/finsky/analytics/Analytics;
     new-instance v0, Lcom/google/android/finsky/billing/UpdateAddressFlow;
 
@@ -310,7 +341,47 @@
 
     move-object v6, p3
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/finsky/billing/UpdateAddressFlow;-><init>(Lcom/google/android/finsky/billing/BillingFlowContext;Lcom/google/android/finsky/billing/BillingFlowListener;Lcom/android/volley/toolbox/AndroidAuthenticator;Lcom/google/android/finsky/api/DfeApi;Lcom/google/android/finsky/analytics/Analytics;Landroid/os/Bundle;)V
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/finsky/billing/UpdateAddressFlow;-><init>(Lcom/google/android/finsky/billing/BillingFlowContext;Lcom/google/android/finsky/billing/BillingFlowListener;Lcom/google/android/finsky/billing/AsyncAuthenticator;Lcom/google/android/finsky/api/DfeApi;Lcom/google/android/finsky/analytics/Analytics;Landroid/os/Bundle;)V
 
     goto :goto_19
+.end method
+
+.method public updateStatus(Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;)V
+    .registers 4
+    .parameter "instrument"
+
+    .prologue
+    .line 114
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;->hasDisplayTitle()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_d
+
+    .line 117
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;->getDisplayTitle()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreditCardInstrument$1;->mAddCcString:Ljava/lang/String;
+
+    .line 121
+    :goto_c
+    return-void
+
+    .line 119
+    :cond_d
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+
+    move-result-object v0
+
+    const v1, 0x7f07003e
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/FinskyApp;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreditCardInstrument$1;->mAddCcString:Ljava/lang/String;
+
+    goto :goto_c
 .end method

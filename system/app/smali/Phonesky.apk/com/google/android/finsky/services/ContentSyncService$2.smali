@@ -22,7 +22,7 @@
     .registers 1
 
     .prologue
-    .line 171
+    .line 92
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,29 +30,14 @@
 
 
 # virtual methods
-.method public sync(Landroid/content/Context;)V
-    .registers 5
-    .parameter
+.method public scheduleSync()V
+    .registers 1
 
     .prologue
-    .line 174
-    new-instance v0, Landroid/content/Intent;
+    .line 95
+    #calls: Lcom/google/android/finsky/services/ContentSyncService;->scheduleReplication()V
+    invoke-static {}, Lcom/google/android/finsky/services/ContentSyncService;->access$200()V
 
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v1
-
-    const-class v2, Lcom/google/android/finsky/services/ContentSyncService;
-
-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 175
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/google/android/finsky/FinskyApp;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-
-    .line 176
+    .line 96
     return-void
 .end method

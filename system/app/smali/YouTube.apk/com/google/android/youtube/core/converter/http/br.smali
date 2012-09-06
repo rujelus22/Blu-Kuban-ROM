@@ -1,45 +1,48 @@
-.class final Lcom/google/android/youtube/core/converter/http/br;
-.super Lcom/google/android/youtube/core/converter/l;
+.class public final Lcom/google/android/youtube/core/converter/http/br;
+.super Lcom/google/android/youtube/core/converter/http/ar;
 .source "SourceFile"
 
 
+# instance fields
+.field private final b:Lcom/google/android/youtube/core/converter/c;
+
+
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method public constructor <init>(Lcom/google/android/youtube/core/converter/k;)V
+    .registers 3
+    .parameter
 
     .prologue
-    .line 123
-    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
+    .line 20
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/converter/http/ar;-><init>(Lcom/google/android/youtube/core/converter/k;)V
 
+    .line 21
+    invoke-static {}, Lcom/google/android/youtube/core/converter/e;->a()Lcom/google/android/youtube/core/converter/d;
+
+    move-result-object v0
+
+    .line 22
+    invoke-static {v0}, Lcom/google/android/youtube/core/converter/http/bt;->a(Lcom/google/android/youtube/core/converter/d;)V
+
+    .line 23
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/converter/d;->a()Lcom/google/android/youtube/core/converter/c;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/converter/http/br;->b:Lcom/google/android/youtube/core/converter/c;
+
+    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
-    .registers 6
-    .parameter
-    .parameter
-    .parameter
+.method protected final a()Lcom/google/android/youtube/core/converter/c;
+    .registers 2
 
     .prologue
-    .line 126
-    const-class v0, Lcom/google/android/youtube/core/model/Playlist$Builder;
+    .line 28
+    iget-object v0, p0, Lcom/google/android/youtube/core/converter/http/br;->b:Lcom/google/android/youtube/core/converter/c;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->a(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/youtube/core/model/Playlist$Builder;
-
-    const/4 v1, 0x0
-
-    invoke-static {p3, v1}, Lcom/google/android/youtube/core/utils/Util;->a(Ljava/lang/String;I)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Playlist$Builder;->size(I)Lcom/google/android/youtube/core/model/Playlist$Builder;
-
-    .line 127
-    return-void
+    return-object v0
 .end method

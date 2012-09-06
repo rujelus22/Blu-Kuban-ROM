@@ -3,12 +3,12 @@
 .source "FinskyApp.java"
 
 # interfaces
-.implements Lcom/google/android/vending/remoting/api/PendingNotificationsHandler;
+.implements Lcom/google/android/finsky/library/Libraries$Listener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/finsky/FinskyApp;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/google/android/finsky/FinskyApp;->setupAccountLibrariesAndReplicator(Landroid/os/Handler;Landroid/os/Handler;Lcom/google/android/finsky/library/Accounts;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 629
+    .line 386
     iput-object p1, p0, Lcom/google/android/finsky/FinskyApp$3;->this$0:Lcom/google/android/finsky/FinskyApp;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,18 +37,29 @@
 
 
 # virtual methods
-.method public handlePendingNotifications(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;Z)Z
-    .registers 6
-    .parameter "context"
-    .parameter "accountName"
-    .parameter "pendingNotifications"
-    .parameter "allowCancellation"
+.method public onAllLibrariesLoaded()V
+    .registers 2
 
     .prologue
-    .line 633
-    invoke-static {p1, p2, p3, p4}, Lcom/google/android/finsky/billing/iab/PendingNotificationsService;->handlePendingNotifications(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/vending/remoting/protos/VendingProtos$PendingNotificationsProto;Z)Z
+    .line 389
+    iget-object v0, p0, Lcom/google/android/finsky/FinskyApp$3;->this$0:Lcom/google/android/finsky/FinskyApp;
 
-    move-result v0
+    #getter for: Lcom/google/android/finsky/FinskyApp;->mLibraryReplicators:Lcom/google/android/finsky/library/LibraryReplicators;
+    invoke-static {v0}, Lcom/google/android/finsky/FinskyApp;->access$000(Lcom/google/android/finsky/FinskyApp;)Lcom/google/android/finsky/library/LibraryReplicators;
 
-    return v0
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/android/finsky/library/LibraryReplicators;->reinitialize()V
+
+    .line 390
+    return-void
+.end method
+
+.method public onLibraryContentsChanged(Lcom/google/android/finsky/library/AccountLibrary;)V
+    .registers 2
+    .parameter "library"
+
+    .prologue
+    .line 395
+    return-void
 .end method

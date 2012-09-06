@@ -63,7 +63,7 @@
     invoke-virtual {p0, v5}, Lcom/android/samsungtest/Ver/FTASWVersion;->setContentView(I)V
 
     .line 33
-    const v5, 0x7f06003c
+    const v5, 0x7f06003b
 
     invoke-virtual {p0, v5}, Lcom/android/samsungtest/Ver/FTASWVersion;->findViewById(I)Landroid/view/View;
 
@@ -73,7 +73,7 @@
 
     .line 35
     .local v2, pdatv:Landroid/widget/TextView;
-    const v5, 0x7f06003d
+    const v5, 0x7f06003c
 
     invoke-virtual {p0, v5}, Lcom/android/samsungtest/Ver/FTASWVersion;->findViewById(I)Landroid/view/View;
 
@@ -83,7 +83,7 @@
 
     .line 37
     .local v4, phonetv:Landroid/widget/TextView;
-    const v5, 0x7f06003e
+    const v5, 0x7f06003d
 
     invoke-virtual {p0, v5}, Lcom/android/samsungtest/Ver/FTASWVersion;->findViewById(I)Landroid/view/View;
 

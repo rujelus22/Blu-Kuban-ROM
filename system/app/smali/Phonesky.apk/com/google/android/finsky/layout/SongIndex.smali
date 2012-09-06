@@ -42,26 +42,26 @@
 
     .line 97
     :pswitch_3
-    const v0, 0x7f02006c
+    const v0, 0x7f02009b
 
     :goto_6
     return v0
 
     .line 90
     :pswitch_7
-    const v0, 0x7f02006b
+    const v0, 0x7f02009a
 
     goto :goto_6
 
     .line 92
     :pswitch_b
-    const v0, 0x7f02006d
+    const v0, 0x7f02009c
 
     goto :goto_6
 
     .line 94
     :pswitch_f
-    const v0, 0x7f020016
+    const v0, 0x7f02002c
 
     goto :goto_6
 
@@ -150,7 +150,7 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
     .line 41
-    const v0, 0x7f08010f
+    const v0, 0x7f080148
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/SongIndex;->findViewById(I)Landroid/view/View;
 
@@ -161,7 +161,7 @@
     iput-object v0, p0, Lcom/google/android/finsky/layout/SongIndex;->mSongIndexText:Landroid/widget/TextView;
 
     .line 42
-    const v0, 0x7f080110
+    const v0, 0x7f080149
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/SongIndex;->findViewById(I)Landroid/view/View;
 
@@ -172,7 +172,7 @@
     iput-object v0, p0, Lcom/google/android/finsky/layout/SongIndex;->mStatusIndicator:Landroid/widget/ImageView;
 
     .line 43
-    const v0, 0x7f0800de
+    const v0, 0x7f0800e2
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/SongIndex;->findViewById(I)Landroid/view/View;
 

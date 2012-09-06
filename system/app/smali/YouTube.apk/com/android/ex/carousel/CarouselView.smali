@@ -16,6 +16,22 @@
 
 
 # direct methods
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 119
+    new-instance v0, Lcom/android/ex/carousel/a;
+
+    invoke-direct {v0}, Lcom/android/ex/carousel/a;-><init>()V
+
+    invoke-direct {p0, p1, v0}, Lcom/android/ex/carousel/CarouselView;-><init>(Landroid/content/Context;Lcom/android/ex/carousel/a;)V
+
+    .line 120
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
     .parameter
@@ -60,6 +76,21 @@
     invoke-virtual {p0, v0}, Lcom/android/ex/carousel/CarouselView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
     .line 151
+    return-void
+.end method
+
+.method private constructor <init>(Landroid/content/Context;Lcom/android/ex/carousel/a;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 123
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0, p2}, Lcom/android/ex/carousel/CarouselView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Lcom/android/ex/carousel/a;)V
+
+    .line 124
     return-void
 .end method
 
@@ -142,170 +173,17 @@
 .method public abstract a()Lcom/android/ex/carousel/f;
 .end method
 
-.method public a(F)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 267
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->a(F)V
-
-    .line 268
-    return-void
-.end method
-
-.method public final a(FFFF)V
-    .registers 7
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 406
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, v1, v1, v1, v1}, Lcom/android/ex/carousel/a;->a(FFFF)V
-
-    .line 407
-    return-void
-.end method
-
 .method public a(I)V
     .registers 3
     .parameter
 
     .prologue
-    .line 231
+    .line 332
     iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
 
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->a(I)V
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->g(I)V
 
-    .line 232
-    return-void
-.end method
-
-.method public final a(IFFFFLandroid/graphics/Bitmap;)V
-    .registers 14
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 369
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    move v1, p1
-
-    move v3, p3
-
-    move v4, v2
-
-    move v5, v2
-
-    move-object v6, p6
-
-    invoke-virtual/range {v0 .. v6}, Lcom/android/ex/carousel/a;->a(IFFFFLandroid/graphics/Bitmap;)V
-
-    .line 370
-    return-void
-.end method
-
-.method public final a(ILandroid/graphics/Bitmap;)V
-    .registers 4
-    .parameter
-    .parameter
-
-    .prologue
-    .line 350
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1, p2}, Lcom/android/ex/carousel/a;->a(ILandroid/graphics/Bitmap;)V
-
-    .line 351
-    return-void
-.end method
-
-.method public final a(Landroid/graphics/Bitmap;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 381
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->a(Landroid/graphics/Bitmap;)V
-
-    .line 382
-    return-void
-.end method
-
-.method public final a(Lcom/android/ex/carousel/d;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 483
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->a(Lcom/android/ex/carousel/d;)V
-
-    .line 484
-    return-void
-.end method
-
-.method public final a(Z)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 320
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/android/ex/carousel/a;->a(Z)V
-
-    .line 321
-    return-void
-.end method
-
-.method public final a([F)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 461
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->a([F)V
-
-    .line 462
-    return-void
-.end method
-
-.method public final a([F[F[F)V
-    .registers 5
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 527
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1, p2, p3}, Lcom/android/ex/carousel/a;->a([F[F[F)V
-
-    .line 528
+    .line 333
     return-void
 .end method
 
@@ -317,106 +195,6 @@
     iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
 
     return-object v0
-.end method
-
-.method public final b(F)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 281
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->b(F)V
-
-    .line 282
-    return-void
-.end method
-
-.method public b(I)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 240
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->b(I)V
-
-    .line 241
-    return-void
-.end method
-
-.method public final b(Landroid/graphics/Bitmap;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 393
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->b(Landroid/graphics/Bitmap;)V
-
-    .line 394
-    return-void
-.end method
-
-.method public final b(Z)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 507
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lcom/android/ex/carousel/a;->b(Z)V
-
-    .line 508
-    return-void
-.end method
-
-.method public final c(F)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 495
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->c(F)V
-
-    .line 496
-    return-void
-.end method
-
-.method public final c(I)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 253
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->d(I)V
-
-    .line 254
-    return-void
-.end method
-
-.method public c(Landroid/graphics/Bitmap;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 416
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->c(Landroid/graphics/Bitmap;)V
-
-    .line 417
-    return-void
 .end method
 
 .method public c()Z
@@ -441,124 +219,6 @@
     move-result v0
 
     return v0
-.end method
-
-.method public d(F)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 499
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->e(F)V
-
-    .line 500
-    return-void
-.end method
-
-.method public d(I)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 260
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->e(I)V
-
-    .line 261
-    return-void
-.end method
-
-.method public final e(F)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 503
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    const v1, -0x4036f025
-
-    invoke-virtual {v0, v1}, Lcom/android/ex/carousel/a;->f(F)V
-
-    .line 504
-    return-void
-.end method
-
-.method public final e(I)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 290
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->c(I)V
-
-    .line 291
-    return-void
-.end method
-
-.method public final f(F)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 511
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->g(F)V
-
-    .line 512
-    return-void
-.end method
-
-.method public final f(I)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 299
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    const/16 v1, 0x102
-
-    invoke-virtual {v0, v1}, Lcom/android/ex/carousel/a;->f(I)V
-
-    .line 300
-    return-void
-.end method
-
-.method public g(I)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 332
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->g(I)V
-
-    .line 333
-    return-void
-.end method
-
-.method public final h(I)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 523
-    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
-
-    const/4 v1, 0x2
-
-    invoke-virtual {v0, v1}, Lcom/android/ex/carousel/a;->h(I)V
-
-    .line 524
-    return-void
 .end method
 
 .method protected onAttachedToWindow()V
@@ -754,6 +414,556 @@
         :pswitch_56
         :pswitch_26
     .end packed-switch
+.end method
+
+.method public setBackgroundBitmap(Landroid/graphics/Bitmap;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 416
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->c(Landroid/graphics/Bitmap;)V
+
+    .line 417
+    return-void
+.end method
+
+.method public setBackgroundColor(FFFF)V
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 406
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lcom/android/ex/carousel/a;->a(FFFF)V
+
+    .line 407
+    return-void
+.end method
+
+.method public setCallback(Lcom/android/ex/carousel/d;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 483
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->a(Lcom/android/ex/carousel/d;)V
+
+    .line 484
+    return-void
+.end method
+
+.method public setCardRotation(F)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 503
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->f(F)V
+
+    .line 504
+    return-void
+.end method
+
+.method public setCardsFaceTangent(Z)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 507
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->d(Z)V
+
+    .line 508
+    return-void
+.end method
+
+.method public setController(Lcom/android/ex/carousel/a;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 181
+    iput-object p1, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    .line 182
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    iget-object v1, p0, Lcom/android/ex/carousel/CarouselView;->c:Landroid/renderscript/RenderScriptGL;
+
+    iget-object v2, p0, Lcom/android/ex/carousel/CarouselView;->b:Lcom/android/ex/carousel/b;
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/ex/carousel/a;->a(Landroid/renderscript/RenderScriptGL;Lcom/android/ex/carousel/b;)V
+
+    .line 183
+    return-void
+.end method
+
+.method public setDefaultBitmap(Landroid/graphics/Bitmap;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 381
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->a(Landroid/graphics/Bitmap;)V
+
+    .line 382
+    return-void
+.end method
+
+.method public setDefaultCardMatrix([F)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 461
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->a([F)V
+
+    .line 462
+    return-void
+.end method
+
+.method public setDefaultGeometry(I)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 449
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->h(I)V
+
+    .line 450
+    return-void
+.end method
+
+.method public setDetailLineBitmap(Landroid/graphics/Bitmap;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 437
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->e(Landroid/graphics/Bitmap;)V
+
+    .line 438
+    return-void
+.end method
+
+.method public setDetailLoadingBitmap(Landroid/graphics/Bitmap;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 426
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->d(Landroid/graphics/Bitmap;)V
+
+    .line 427
+    return-void
+.end method
+
+.method public setDetailTextureAlignment(I)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 299
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->f(I)V
+
+    .line 300
+    return-void
+.end method
+
+.method public setDetailTextureForItem(IFFFFLandroid/graphics/Bitmap;)V
+    .registers 14
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 369
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    move v1, p1
+
+    move v2, p2
+
+    move v3, p3
+
+    move v4, p4
+
+    move v5, p5
+
+    move-object v6, p6
+
+    invoke-virtual/range {v0 .. v6}, Lcom/android/ex/carousel/a;->a(IFFFFLandroid/graphics/Bitmap;)V
+
+    .line 370
+    return-void
+.end method
+
+.method public setDragFactor(F)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 519
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->i(F)V
+
+    .line 520
+    return-void
+.end method
+
+.method public setDragModel(I)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 523
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->j(I)V
+
+    .line 524
+    return-void
+.end method
+
+.method public setDrawRuler(Z)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 320
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->c(Z)V
+
+    .line 321
+    return-void
+.end method
+
+.method public setFadeInDuration(J)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 552
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1, p2}, Lcom/android/ex/carousel/a;->a(J)V
+
+    .line 553
+    return-void
+.end method
+
+.method public setFirstCardTop(Z)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 274
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->a(Z)V
+
+    .line 275
+    return-void
+.end method
+
+.method public setForceBlendCardsWithZ(Z)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 311
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->b(Z)V
+
+    .line 312
+    return-void
+.end method
+
+.method public setFrictionCoefficient(F)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 515
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->h(F)V
+
+    .line 516
+    return-void
+.end method
+
+.method public setGeometryForItem(ILandroid/renderscript/Mesh;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 212
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1, p2}, Lcom/android/ex/carousel/a;->a(ILandroid/renderscript/Mesh;)V
+
+    .line 213
+    return-void
+.end method
+
+.method public setLoadingBitmap(Landroid/graphics/Bitmap;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 393
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->b(Landroid/graphics/Bitmap;)V
+
+    .line 394
+    return-void
+.end method
+
+.method public setLoadingGeometry(I)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 473
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->i(I)V
+
+    .line 474
+    return-void
+.end method
+
+.method public setLookAt([F[F[F)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 527
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1, p2, p3}, Lcom/android/ex/carousel/a;->a([F[F[F)V
+
+    .line 528
+    return-void
+.end method
+
+.method public setMatrixForItem(I[F)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 221
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1, p2}, Lcom/android/ex/carousel/a;->a(I[F)V
+
+    .line 222
+    return-void
+.end method
+
+.method public setOverscrollSlots(F)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 281
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->b(F)V
+
+    .line 282
+    return-void
+.end method
+
+.method public setPrefetchCardCount(I)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 253
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->d(I)V
+
+    .line 254
+    return-void
+.end method
+
+.method public setRadius(F)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 499
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->e(F)V
+
+    .line 500
+    return-void
+.end method
+
+.method public setRezInCardCount(F)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 539
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->j(F)V
+
+    .line 540
+    return-void
+.end method
+
+.method public setRowCount(I)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 260
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->e(I)V
+
+    .line 261
+    return-void
+.end method
+
+.method public setRowSpacing(F)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 267
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->a(F)V
+
+    .line 268
+    return-void
+.end method
+
+.method public setSlotCount(I)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 231
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->a(I)V
+
+    .line 232
+    return-void
+.end method
+
+.method public setStartAngle(F)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 495
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->c(F)V
+
+    .line 496
+    return-void
+.end method
+
+.method public setSwaySensitivity(F)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 511
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->g(F)V
+
+    .line 512
+    return-void
+.end method
+
+.method public setTextureForItem(ILandroid/graphics/Bitmap;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 350
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1, p2}, Lcom/android/ex/carousel/a;->a(ILandroid/graphics/Bitmap;)V
+
+    .line 351
+    return-void
+.end method
+
+.method public setVisibleDetails(I)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 290
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->c(I)V
+
+    .line 291
+    return-void
+.end method
+
+.method public setVisibleSlots(I)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 240
+    iget-object v0, p0, Lcom/android/ex/carousel/CarouselView;->a:Lcom/android/ex/carousel/a;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/a;->b(I)V
+
+    .line 241
+    return-void
 .end method
 
 .method public surfaceChanged(Landroid/view/SurfaceHolder;III)V

@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 197
+    .line 128
     iput-object p1, p0, Lcom/android/internal/app/ShutdownThread$2;->val$context:Landroid/content/Context;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,47 +43,17 @@
     .parameter "which"
 
     .prologue
-    .line 200
-    invoke-static {}, Lcom/android/internal/app/ShutdownThread;->access$000()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_e
-
-    .line 201
+    .line 130
     const/4 v0, 0x1
-
-    invoke-static {v0}, Lcom/android/internal/app/ShutdownThread;->access$202(Z)Z
-
-    .line 202
-    const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/android/internal/app/ShutdownThread;->access$002(Z)Z
 
-    .line 204
-    :cond_e
-    invoke-static {}, Lcom/android/internal/app/ShutdownThread;->access$300()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1a
-
-    .line 205
-    iget-object v0, p0, Lcom/android/internal/app/ShutdownThread$2;->val$context:Landroid/content/Context;
-
-    #calls: Lcom/android/internal/app/ShutdownThread;->beginShutdownSamsungSequence(Landroid/content/Context;)V
-    invoke-static {v0}, Lcom/android/internal/app/ShutdownThread;->access$400(Landroid/content/Context;)V
-
-    .line 209
-    :goto_19
-    return-void
-
-    .line 207
-    :cond_1a
+    .line 131
     iget-object v0, p0, Lcom/android/internal/app/ShutdownThread$2;->val$context:Landroid/content/Context;
 
     #calls: Lcom/android/internal/app/ShutdownThread;->beginShutdownSequence(Landroid/content/Context;)V
-    invoke-static {v0}, Lcom/android/internal/app/ShutdownThread;->access$500(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/android/internal/app/ShutdownThread;->access$100(Landroid/content/Context;)V
 
-    goto :goto_19
+    .line 132
+    return-void
 .end method

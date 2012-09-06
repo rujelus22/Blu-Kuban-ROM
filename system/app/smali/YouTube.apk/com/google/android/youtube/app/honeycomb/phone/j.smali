@@ -1,118 +1,127 @@
 .class final Lcom/google/android/youtube/app/honeycomb/phone/j;
-.super Lcom/google/android/youtube/core/ui/f;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/async/a;
-
-.field final synthetic b:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;Lcom/google/android/youtube/core/e;Lcom/google/android/youtube/core/async/a;)V
-    .registers 4
+.method private constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;)V
+    .registers 2
     .parameter
+
+    .prologue
+    .line 380
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;B)V
+    .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 171
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->b:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
-
-    iput-object p3, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->a:Lcom/google/android/youtube/core/async/a;
-
-    invoke-direct {p0, p2}, Lcom/google/android/youtube/core/ui/f;-><init>(Lcom/google/android/youtube/core/e;)V
+    .line 380
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/j;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/model/UserAuth;)V
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
     .registers 5
     .parameter
-
-    .prologue
-    .line 173
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->b:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
-
-    invoke-static {v0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/model/UserAuth;
-
-    .line 174
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->b:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1f
-
-    .line 175
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->b:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->b(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;)Lcom/google/android/youtube/core/client/ad;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->b:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
-
-    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->a:Lcom/google/android/youtube/core/async/a;
-
-    invoke-interface {v0, v1, p1, v2}, Lcom/google/android/youtube/core/client/ad;->f(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;Lcom/google/android/youtube/core/async/g;)V
-
-    .line 179
-    :goto_1e
-    return-void
-
-    .line 177
-    :cond_1f
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->b:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
-
-    const/16 v1, 0x3f9
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->showDialog(I)V
-
-    goto :goto_1e
-.end method
-
-.method public final a(Ljava/lang/Exception;)V
-    .registers 4
     .parameter
 
     .prologue
-    .line 189
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->b:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+    .line 380
+    const-string v0, "Error retrieving user profile"
 
-    const/4 v1, 0x0
+    invoke-static {v0, p2}, Lcom/google/android/youtube/core/L;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;Z)Z
+    instance-of v0, p2, Lorg/apache/http/client/HttpResponseException;
 
-    .line 190
-    invoke-super {p0, p1}, Lcom/google/android/youtube/core/ui/f;->a(Ljava/lang/Exception;)V
+    if-eqz v0, :cond_26
 
-    .line 191
+    move-object v0, p2
+
+    check-cast v0, Lorg/apache/http/client/HttpResponseException;
+
+    invoke-virtual {v0}, Lorg/apache/http/client/HttpResponseException;->getStatusCode()I
+
+    move-result v0
+
+    const/16 v1, 0x193
+
+    if-ne v0, v1, :cond_26
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->d(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;)Lcom/google/android/youtube/core/d;
+
+    move-result-object v0
+
+    const v1, 0x7f0b0191
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/d;->a(I)V
+
+    :goto_20
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->finish()V
+
     return-void
+
+    :cond_26
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->d(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;)Lcom/google/android/youtube/core/d;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Lcom/google/android/youtube/core/d;->b(Ljava/lang/Throwable;)V
+
+    goto :goto_20
 .end method
 
-.method public final d_()V
-    .registers 3
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 4
+    .parameter
+    .parameter
 
     .prologue
-    .line 183
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->b:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+    .line 380
+    check-cast p2, Lcom/google/android/youtube/core/model/UserProfile;
 
-    const/4 v1, 0x0
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;Z)Z
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;)Lcom/google/android/youtube/app/ui/i;
 
-    .line 184
-    invoke-super {p0}, Lcom/google/android/youtube/core/ui/f;->d_()V
+    move-result-object v0
 
-    .line 185
+    invoke-virtual {v0, p2}, Lcom/google/android/youtube/app/ui/i;->a(Lcom/google/android/youtube/core/model/UserProfile;)V
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->b(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;)Lcom/google/android/youtube/app/ui/SubscribeHelper;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->a(Lcom/google/android/youtube/core/model/UserProfile;)V
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/j;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->c(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;)V
+
     return-void
 .end method

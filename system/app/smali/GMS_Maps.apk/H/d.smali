@@ -1,19 +1,28 @@
-.class LH/d;
+.class final LH/d;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements LH/f;
 
 
 # instance fields
-.field final synthetic a:LH/a;
+.field final synthetic a:Ljava/io/File;
+
+.field final synthetic b:Z
 
 
 # direct methods
-.method constructor <init>(LH/a;)V
-    .registers 2
+.method constructor <init>(Ljava/io/File;Z)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, LH/d;->a:LH/a;
+    .prologue
+    .line 129
+    iput-object p1, p0, LH/d;->a:Ljava/io/File;
+
+    iput-boolean p2, p0, LH/d;->b:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,48 +31,30 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 3
+.method public a()Ljava/io/FileOutputStream;
+    .registers 4
 
-    iget-object v0, p0, LH/d;->a:LH/a;
+    .prologue
+    .line 132
+    new-instance v0, Ljava/io/FileOutputStream;
 
-    iget-object v0, v0, LH/a;->b:LH/h;
+    iget-object v1, p0, LH/d;->a:Ljava/io/File;
 
-    invoke-virtual {v0}, LH/h;->c()LH/j;
+    iget-boolean v2, p0, LH/d;->b:Z
+
+    invoke-direct {v0, v1, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;Z)V
+
+    return-object v0
+.end method
+
+.method public synthetic b()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 129
+    invoke-virtual {p0}, LH/d;->a()Ljava/io/FileOutputStream;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LH/j;->b()Lcom/google/android/maps/rideabout/app/a;
-
-    move-result-object v0
-
-    if-nez v0, :cond_f
-
-    :cond_e
-    :goto_e
-    return-void
-
-    :cond_f
-    invoke-virtual {v0}, Lcom/google/android/maps/rideabout/app/a;->l()Lcom/google/android/maps/rideabout/app/c;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/google/android/maps/rideabout/app/c;->e:Lcom/google/android/maps/rideabout/app/c;
-
-    if-eq v0, v1, :cond_1f
-
-    sget-object v1, Lcom/google/android/maps/rideabout/app/c;->a:Lcom/google/android/maps/rideabout/app/c;
-
-    if-eq v0, v1, :cond_1f
-
-    sget-object v1, Lcom/google/android/maps/rideabout/app/c;->g:Lcom/google/android/maps/rideabout/app/c;
-
-    if-ne v0, v1, :cond_e
-
-    :cond_1f
-    iget-object v0, p0, LH/d;->a:LH/a;
-
-    invoke-virtual {v0}, LH/a;->f()V
-
-    goto :goto_e
+    return-object v0
 .end method

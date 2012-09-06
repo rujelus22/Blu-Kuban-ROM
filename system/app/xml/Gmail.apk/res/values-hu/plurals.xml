@@ -53,40 +53,40 @@
         <item quantity="one">Várakozás műveletre %1$d beszélgetés esetében.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> lezárva.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> lezárva.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> lezárva.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> lezárva.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> spamnek jelölve.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> spamnek jelölve.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> spamnek jelölve.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> spamnek jelölve.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> archiválva.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> archiválva.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> archiválva.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> archiválva.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> áthelyezve a beérkező levelek közé.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> áthelyezve a beérkezõ levelek közé.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> áthelyezve a beérkező levelek közé.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> áthelyezve a beérkezõ levelek közé.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> törölve.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> törölve.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> törölve.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> törölve.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> fontosnak jelölve.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> fontosnak jelölve.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> fontosnak jelölve.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> fontosnak jelölve.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> nem fontosnak jelölve.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> nem fontosnak jelölve.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> nem fontosnak jelölve.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> nem fontosnak jelölve.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> olvasottnak jelölve.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> olvasottnak jelölve.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> olvasottnak jelölve.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> olvasottnak jelölve.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> olvasatlannak jelölve.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> olvasatlannak jelölve.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> olvasatlannak jelölve.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> olvasatlannak jelölve.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Címkék módosítva</item>

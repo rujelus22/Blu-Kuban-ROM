@@ -11,7 +11,11 @@
 
 
 # instance fields
+.field public final activityUri:Landroid/net/Uri;
+
 .field public final age:I
+
+.field public final alternateUri:Landroid/net/Uri;
 
 .field public final channelViewsCount:J
 
@@ -20,25 +24,63 @@
 .field public final email:Ljava/lang/String;
 
 .field public final favoritesCount:I
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public final favoritesUri:Landroid/net/Uri;
 
 .field public final isLightweight:Z
+
+.field public final playlistsUri:Landroid/net/Uri;
+
+.field public final selfUri:Landroid/net/Uri;
 
 .field public final subscribersCount:I
 
 .field public final subscriptionsCount:I
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public final subscriptionsUri:Landroid/net/Uri;
+
+.field public final summary:Ljava/lang/String;
 
 .field public final thumbnailUri:Landroid/net/Uri;
 
 .field public final uploadViewsCount:J
 
 .field public final uploadedCount:I
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public final uploadsUri:Landroid/net/Uri;
+
+.field public final uri:Landroid/net/Uri;
 
 .field public final username:Ljava/lang/String;
 
+.field public final watchHistoryUri:Landroid/net/Uri;
+
+.field public final watchLaterUri:Landroid/net/Uri;
+
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/net/Uri;ZIIIJJI)V
-    .registers 16
+.method public constructor <init>(Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Landroid/net/Uri;ZLandroid/net/Uri;ILandroid/net/Uri;ILandroid/net/Uri;ILandroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;JJI)V
+    .registers 29
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
     .parameter
     .parameter
     .parameter
@@ -53,71 +95,126 @@
     .parameter
 
     .prologue
-    .line 57
+    .line 90
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
-    if-eqz p1, :cond_25
+    .line 91
+    iput-object p1, p0, Lcom/google/android/youtube/core/model/UserProfile;->uri:Landroid/net/Uri;
 
-    move-object v0, p1
+    .line 92
+    iput-object p2, p0, Lcom/google/android/youtube/core/model/UserProfile;->selfUri:Landroid/net/Uri;
 
-    :goto_6
-    iput-object v0, p0, Lcom/google/android/youtube/core/model/UserProfile;->username:Ljava/lang/String;
+    .line 93
+    iput-object p3, p0, Lcom/google/android/youtube/core/model/UserProfile;->alternateUri:Landroid/net/Uri;
 
-    .line 60
-    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    .line 95
+    if-eqz p4, :cond_51
 
-    move-result v0
+    move-object v2, p4
 
-    if-eqz v0, :cond_27
+    :goto_c
+    iput-object v2, p0, Lcom/google/android/youtube/core/model/UserProfile;->username:Ljava/lang/String;
 
-    :goto_e
-    iput-object p1, p0, Lcom/google/android/youtube/core/model/UserProfile;->displayUsername:Ljava/lang/String;
+    .line 96
+    invoke-static {p5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    .line 61
-    iput-object p3, p0, Lcom/google/android/youtube/core/model/UserProfile;->email:Ljava/lang/String;
+    move-result v2
 
-    .line 62
-    iput p4, p0, Lcom/google/android/youtube/core/model/UserProfile;->age:I
+    if-eqz v2, :cond_53
 
-    .line 63
-    iput-object p5, p0, Lcom/google/android/youtube/core/model/UserProfile;->thumbnailUri:Landroid/net/Uri;
+    :goto_14
+    iput-object p4, p0, Lcom/google/android/youtube/core/model/UserProfile;->displayUsername:Ljava/lang/String;
 
-    .line 64
-    iput-boolean p6, p0, Lcom/google/android/youtube/core/model/UserProfile;->isLightweight:Z
+    .line 97
+    iput-object p6, p0, Lcom/google/android/youtube/core/model/UserProfile;->email:Ljava/lang/String;
 
-    .line 65
-    iput p7, p0, Lcom/google/android/youtube/core/model/UserProfile;->uploadedCount:I
+    .line 98
+    iput p7, p0, Lcom/google/android/youtube/core/model/UserProfile;->age:I
 
-    .line 66
-    iput p8, p0, Lcom/google/android/youtube/core/model/UserProfile;->favoritesCount:I
+    .line 99
+    iput-object p8, p0, Lcom/google/android/youtube/core/model/UserProfile;->summary:Ljava/lang/String;
 
-    .line 67
-    iput p9, p0, Lcom/google/android/youtube/core/model/UserProfile;->subscriptionsCount:I
+    .line 100
+    iput-object p9, p0, Lcom/google/android/youtube/core/model/UserProfile;->thumbnailUri:Landroid/net/Uri;
 
-    .line 68
-    iput-wide p10, p0, Lcom/google/android/youtube/core/model/UserProfile;->channelViewsCount:J
+    .line 101
+    iput-boolean p10, p0, Lcom/google/android/youtube/core/model/UserProfile;->isLightweight:Z
 
-    .line 69
-    iput-wide p12, p0, Lcom/google/android/youtube/core/model/UserProfile;->uploadViewsCount:J
+    .line 102
+    iput-object p11, p0, Lcom/google/android/youtube/core/model/UserProfile;->uploadsUri:Landroid/net/Uri;
 
-    .line 70
-    iput p14, p0, Lcom/google/android/youtube/core/model/UserProfile;->subscribersCount:I
+    .line 103
+    iput p12, p0, Lcom/google/android/youtube/core/model/UserProfile;->uploadedCount:I
 
-    .line 71
+    .line 104
+    move-object/from16 v0, p13
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/model/UserProfile;->favoritesUri:Landroid/net/Uri;
+
+    .line 105
+    move/from16 v0, p14
+
+    iput v0, p0, Lcom/google/android/youtube/core/model/UserProfile;->favoritesCount:I
+
+    .line 106
+    move-object/from16 v0, p15
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/model/UserProfile;->subscriptionsUri:Landroid/net/Uri;
+
+    .line 107
+    move/from16 v0, p16
+
+    iput v0, p0, Lcom/google/android/youtube/core/model/UserProfile;->subscriptionsCount:I
+
+    .line 108
+    move-object/from16 v0, p17
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/model/UserProfile;->watchHistoryUri:Landroid/net/Uri;
+
+    .line 109
+    move-object/from16 v0, p18
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/model/UserProfile;->watchLaterUri:Landroid/net/Uri;
+
+    .line 110
+    move-object/from16 v0, p19
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/model/UserProfile;->playlistsUri:Landroid/net/Uri;
+
+    .line 111
+    move-object/from16 v0, p20
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/model/UserProfile;->activityUri:Landroid/net/Uri;
+
+    .line 112
+    move-wide/from16 v0, p21
+
+    iput-wide v0, p0, Lcom/google/android/youtube/core/model/UserProfile;->channelViewsCount:J
+
+    .line 113
+    move-wide/from16 v0, p23
+
+    iput-wide v0, p0, Lcom/google/android/youtube/core/model/UserProfile;->uploadViewsCount:J
+
+    .line 114
+    move/from16 v0, p25
+
+    iput v0, p0, Lcom/google/android/youtube/core/model/UserProfile;->subscribersCount:I
+
+    .line 115
     return-void
 
-    :cond_25
-    move-object v0, p3
+    :cond_51
+    move-object v2, p6
 
-    .line 59
-    goto :goto_6
+    .line 95
+    goto :goto_c
 
-    :cond_27
-    move-object p1, p2
+    :cond_53
+    move-object p4, p5
 
-    .line 60
-    goto :goto_e
+    .line 96
+    goto :goto_14
 .end method
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
@@ -125,7 +222,7 @@
     .parameter
 
     .prologue
-    .line 91
+    .line 135
     new-instance v0, Ljava/io/InvalidObjectException;
 
     const-string v1, "builder required"
@@ -139,7 +236,7 @@
     .registers 2
 
     .prologue
-    .line 87
+    .line 131
     invoke-virtual {p0}, Lcom/google/android/youtube/core/model/UserProfile;->buildUpon()Lcom/google/android/youtube/core/model/UserProfile$Builder;
 
     move-result-object v0
@@ -153,10 +250,28 @@
     .registers 4
 
     .prologue
-    .line 95
+    .line 139
     new-instance v0, Lcom/google/android/youtube/core/model/UserProfile$Builder;
 
     invoke-direct {v0}, Lcom/google/android/youtube/core/model/UserProfile$Builder;-><init>()V
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/UserProfile;->uri:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->uri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/UserProfile;->selfUri:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->selfUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/UserProfile;->alternateUri:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->alternateUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
+
+    move-result-object v0
 
     iget-object v1, p0, Lcom/google/android/youtube/core/model/UserProfile;->username:Ljava/lang/String;
 
@@ -182,6 +297,12 @@
 
     move-result-object v0
 
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/UserProfile;->summary:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->summary(Ljava/lang/String;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
+
+    move-result-object v0
+
     iget-object v1, p0, Lcom/google/android/youtube/core/model/UserProfile;->thumbnailUri:Landroid/net/Uri;
 
     invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->thumbnailUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
@@ -194,9 +315,21 @@
 
     move-result-object v0
 
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/UserProfile;->uploadsUri:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->uploadsUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
+
+    move-result-object v0
+
     iget v1, p0, Lcom/google/android/youtube/core/model/UserProfile;->uploadedCount:I
 
     invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->uploadedCount(I)Lcom/google/android/youtube/core/model/UserProfile$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/UserProfile;->favoritesUri:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->favoritesUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
 
     move-result-object v0
 
@@ -206,9 +339,39 @@
 
     move-result-object v0
 
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/UserProfile;->subscriptionsUri:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->subscriptionsUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
+
+    move-result-object v0
+
     iget v1, p0, Lcom/google/android/youtube/core/model/UserProfile;->subscriptionsCount:I
 
     invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->subscriptionsCount(I)Lcom/google/android/youtube/core/model/UserProfile$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/UserProfile;->watchHistoryUri:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->watchHistoryUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/UserProfile;->watchLaterUri:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->watchLaterUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/UserProfile;->playlistsUri:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->playlistsUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/UserProfile;->activityUri:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->activityUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
 
     move-result-object v0
 
@@ -237,7 +400,7 @@
     .registers 3
 
     .prologue
-    .line 78
+    .line 122
     iget v0, p0, Lcom/google/android/youtube/core/model/UserProfile;->age:I
 
     const/4 v1, -0x1
@@ -259,7 +422,7 @@
     .registers 3
 
     .prologue
-    .line 74
+    .line 118
     iget v0, p0, Lcom/google/android/youtube/core/model/UserProfile;->age:I
 
     const/16 v1, 0x12
@@ -281,7 +444,7 @@
     .registers 2
 
     .prologue
-    .line 83
+    .line 127
     iget-object v0, p0, Lcom/google/android/youtube/core/model/UserProfile;->username:Ljava/lang/String;
 
     if-eqz v0, :cond_7

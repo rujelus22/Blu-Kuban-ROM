@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <header android:icon="@drawable/ic_settings_homescreen" android:id="@id/homescreen_settings" android:title="@string/homescreen_settings_title" android:fragment="com.anddoes.launcher.preference.PreferencesActivity$HomescreenSettingsFragment" />
+    <header android:icon="@drawable/ic_settings_drawer" android:id="@id/drawer_settings" android:title="@string/drawer_settings_title" android:fragment="com.anddoes.launcher.preference.PreferencesActivity$DrawerSettingsFragment" />
+    <header android:icon="@drawable/ic_settings_dock" android:id="@id/dock_settings" android:title="@string/dock_settings_title" android:fragment="com.anddoes.launcher.preference.PreferencesActivity$DockSettingsFragment" />
+    <header android:icon="@drawable/ic_settings_folder" android:id="@id/folder_settings" android:title="@string/folder_settings_title" android:fragment="com.anddoes.launcher.preference.PreferencesActivity$FolderSettingsFragment" />
+    <header android:icon="@drawable/ic_settings_behavior" android:id="@id/behavior_settings" android:title="@string/behavior_settings_title" android:fragment="com.anddoes.launcher.preference.PreferencesActivity$BehaviorSettingsFragment" />
+    <header android:icon="@drawable/ic_settings_theme" android:id="@id/theme_settings" android:title="@string/theme_settings_title" />
+    <header android:icon="@drawable/ic_settings_advanced" android:id="@id/advanced_settings" android:title="@string/advanced_settings_title" android:fragment="com.anddoes.launcher.preference.PreferencesActivity$AdvancedSettingsFragment" />
+    <header android:icon="@drawable/ic_settings_backup" android:id="@id/backup_restore_settings" android:title="@string/backup_restore_title" android:fragment="com.anddoes.launcher.preference.PreferencesActivity$BackupRestoreSettingsFragment" />
+    <header android:id="@id/apex_settings" android:title="@string/apex_title" />
+    <header android:icon="@drawable/ic_settings_pro" android:id="@id/apex_launcher_pro" android:title="@string/apex_launcher_pro_title" />
+    <header android:icon="@drawable/ic_settings_about" android:id="@id/about_settings" android:title="" android:fragment="com.anddoes.launcher.preference.PreferencesActivity$AboutSettingsFragment" />
+    <header android:icon="@drawable/ic_settings_restart" android:id="@id/restart_settings" android:title="@string/restart_launcher_title" />
+</preference-headers>

@@ -1,11 +1,14 @@
 .class public Lcom/google/googlenav/capabilities/CapabilitiesControllerSdk7;
 .super Lcom/google/googlenav/capabilities/a;
+.source "SourceFile"
 
 
 # direct methods
 .method public constructor <init>()V
     .registers 1
 
+    .prologue
+    .line 14
     invoke-direct {p0}, Lcom/google/googlenav/capabilities/a;-><init>()V
 
     return-void
@@ -13,7 +16,10 @@
 
 .method private static a(Ljava/lang/String;)Z
     .registers 2
+    .parameter
 
+    .prologue
+    .line 49
     const-string v0, "android:htc"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -76,7 +82,10 @@
 
 .method private static b(Ljava/lang/String;)Z
     .registers 2
+    .parameter
 
+    .prologue
+    .line 55
     const-string v0, "puccinilte"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -88,7 +97,10 @@
 
 .method private static c(Ljava/lang/String;)Z
     .registers 2
+    .parameter
 
+    .prologue
+    .line 59
     const-string v0, "sholes"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -102,7 +114,10 @@
 # virtual methods
 .method public a(Landroid/content/Context;)Z
     .registers 3
+    .parameter
 
+    .prologue
+    .line 64
     const/4 v0, 0x0
 
     return v0
@@ -110,18 +125,22 @@
 
 .method public b(Landroid/content/Context;)Z
     .registers 4
+    .parameter
 
-    invoke-static {}, Lat/h;->a()Lat/h;
+    .prologue
+    .line 20
+    invoke-static {}, Lac/h;->a()Lac/h;
 
     move-result-object v0
 
     if-eqz v0, :cond_26
 
-    invoke-static {}, Lat/h;->a()Lat/h;
+    .line 21
+    invoke-static {}, Lac/h;->a()Lac/h;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lat/h;->d()Ljava/lang/String;
+    invoke-virtual {v0}, Lac/h;->e()Ljava/lang/String;
 
     move-result-object v0
 
@@ -129,6 +148,7 @@
 
     move-result-object v0
 
+    .line 22
     invoke-static {v0}, Lcom/google/googlenav/capabilities/CapabilitiesControllerSdk7;->a(Ljava/lang/String;)Z
 
     move-result v1
@@ -148,9 +168,11 @@
 
     if-eqz v0, :cond_26
 
+    .line 41
     :cond_24
     const/4 v0, 0x1
 
+    .line 45
     :goto_25
     return v0
 

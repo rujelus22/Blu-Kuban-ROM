@@ -1,69 +1,85 @@
-.class final Lcom/google/android/youtube/core/converter/http/db;
-.super Lcom/google/android/youtube/core/converter/l;
+.class public final Lcom/google/android/youtube/core/converter/http/db;
+.super Lcom/google/android/youtube/core/converter/http/bc;
 .source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/converter/http/cv;
-
-
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/core/converter/http/cv;)V
-    .registers 2
-    .parameter
+.method public constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 58
-    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/db;->a:Lcom/google/android/youtube/core/converter/http/cv;
-
-    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
+    .line 19
+    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/http/bc;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
-    .registers 6
-    .parameter
-    .parameter
+.method private d(Lorg/apache/http/HttpResponse;)Landroid/net/Uri;
+    .registers 4
     .parameter
 
     .prologue
-    .line 61
-    const-class v0, Lcom/google/android/youtube/core/model/p;
+    .line 23
+    invoke-virtual {p0, p1}, Lcom/google/android/youtube/core/converter/http/db;->c(Lorg/apache/http/HttpResponse;)V
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    .line 24
+    const-string v0, "Location"
+
+    invoke-interface {p1, v0}, Lorg/apache/http/HttpResponse;->getFirstHeader(Ljava/lang/String;)Lorg/apache/http/Header;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/p;
+    .line 25
+    if-nez v0, :cond_13
 
-    .line 63
-    :try_start_8
-    invoke-virtual {p3}, Ljava/lang/String;->trim()Ljava/lang/String;
+    .line 26
+    new-instance v0, Lcom/google/android/youtube/core/converter/ConverterException;
 
-    move-result-object v1
+    const-string v1, "Location header not present"
 
-    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->c(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-direct {v0, v1}, Lcom/google/android/youtube/core/converter/ConverterException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v1
+    throw v0
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/p;->n(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/p;
-    :try_end_13
-    .catch Ljava/net/MalformedURLException; {:try_start_8 .. :try_end_13} :catch_14
+    .line 28
+    :cond_13
+    invoke-interface {v0}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
 
-    .line 67
-    :goto_13
-    return-void
+    move-result-object v0
 
-    .line 65
-    :catch_14
-    move-exception v0
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    const-string v0, "Badly formed stream uri - ignoring"
+    move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/L;->c(Ljava/lang/String;)V
+    return-object v0
+.end method
 
-    goto :goto_13
+
+# virtual methods
+.method public final synthetic a(Lorg/apache/http/HttpResponse;)Ljava/lang/Object;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 19
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/converter/http/db;->d(Lorg/apache/http/HttpResponse;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 19
+    check-cast p1, Lorg/apache/http/HttpResponse;
+
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/converter/http/db;->d(Lorg/apache/http/HttpResponse;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    return-object v0
 .end method

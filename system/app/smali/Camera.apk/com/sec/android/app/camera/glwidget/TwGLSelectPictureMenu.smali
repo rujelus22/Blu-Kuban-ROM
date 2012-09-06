@@ -91,11 +91,11 @@
     sput v0, Lcom/sec/android/app/camera/glwidget/TwGLSelectPictureMenu;->TITLE_TEXT_COLOR:I
 
     .line 85
-    const/16 v0, 0x8
+    const/16 v0, 0x15
 
-    const/16 v1, 0x83
+    const/16 v1, 0x54
 
-    const/16 v2, 0xd3
+    const/16 v2, 0x96
 
     invoke-static {v3, v0, v1, v2}, Landroid/graphics/Color;->argb(IIII)I
 
@@ -221,7 +221,7 @@
     .line 106
     iget-object v2, p0, Lcom/sec/android/app/camera/glwidget/TwGLSelectPictureMenu;->mList:Lcom/sec/android/glview/TwGLList;
 
-    const v3, 0x7f02017c
+    const v3, 0x7f02017b
 
     invoke-virtual {v2, v3}, Lcom/sec/android/glview/TwGLList;->setScrollBarResource(I)V
 
@@ -777,7 +777,7 @@
     .line 149
     iget-object v0, p0, Lcom/sec/android/app/camera/glwidget/TwGLSelectPictureMenu;->mMenuWrapper:Lcom/sec/android/glview/TwGLTitleDecorator;
 
-    const v1, 0x7f020179
+    const v1, 0x7f020178
 
     invoke-virtual {v0, v1}, Lcom/sec/android/glview/TwGLTitleDecorator;->setNinePatchBackground(I)Z
 

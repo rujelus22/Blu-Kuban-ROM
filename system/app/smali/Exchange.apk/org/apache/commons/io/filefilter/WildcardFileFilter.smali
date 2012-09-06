@@ -18,12 +18,12 @@
     .parameter "file"
 
     .prologue
-    .line 178
+    .line 168
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 179
+    .line 169
     .local v1, name:Ljava/lang/String;
     const/4 v0, 0x0
 
@@ -35,7 +35,7 @@
 
     if-ge v0, v2, :cond_1b
 
-    .line 180
+    .line 170
     iget-object v2, p0, Lorg/apache/commons/io/filefilter/WildcardFileFilter;->wildcards:[Ljava/lang/String;
 
     aget-object v2, v2, v0
@@ -48,20 +48,20 @@
 
     if-eqz v2, :cond_18
 
-    .line 181
+    .line 171
     const/4 v2, 0x1
 
-    .line 184
+    .line 174
     :goto_17
     return v2
 
-    .line 179
+    .line 169
     :cond_18
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_5
 
-    .line 184
+    .line 174
     :cond_1b
     const/4 v2, 0x0
 
@@ -74,7 +74,7 @@
     .parameter "name"
 
     .prologue
-    .line 162
+    .line 152
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -85,7 +85,7 @@
 
     if-ge v0, v1, :cond_17
 
-    .line 163
+    .line 153
     iget-object v1, p0, Lorg/apache/commons/io/filefilter/WildcardFileFilter;->wildcards:[Ljava/lang/String;
 
     aget-object v1, v1, v0
@@ -98,20 +98,20 @@
 
     if-eqz v1, :cond_14
 
-    .line 164
+    .line 154
     const/4 v1, 0x1
 
-    .line 167
+    .line 157
     :goto_13
     return v1
 
-    .line 162
+    .line 152
     :cond_14
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 167
+    .line 157
     :cond_17
     const/4 v1, 0x0
 
@@ -122,12 +122,12 @@
     .registers 4
 
     .prologue
-    .line 194
+    .line 184
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 195
+    .line 185
     .local v0, buffer:Ljava/lang/StringBuffer;
     invoke-super {p0}, Lorg/apache/commons/io/filefilter/AbstractFileFilter;->toString()Ljava/lang/String;
 
@@ -135,17 +135,17 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 196
+    .line 186
     const-string v2, "("
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 197
+    .line 187
     iget-object v2, p0, Lorg/apache/commons/io/filefilter/WildcardFileFilter;->wildcards:[Ljava/lang/String;
 
     if-eqz v2, :cond_2c
 
-    .line 198
+    .line 188
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -156,15 +156,15 @@
 
     if-ge v1, v2, :cond_2c
 
-    .line 199
+    .line 189
     if-lez v1, :cond_22
 
-    .line 200
+    .line 190
     const-string v2, ","
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 202
+    .line 192
     :cond_22
     iget-object v2, p0, Lorg/apache/commons/io/filefilter/WildcardFileFilter;->wildcards:[Ljava/lang/String;
 
@@ -172,19 +172,19 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 198
+    .line 188
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_16
 
-    .line 205
+    .line 195
     .end local v1           #i:I
     :cond_2c
     const-string v2, ")"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 206
+    .line 196
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v2

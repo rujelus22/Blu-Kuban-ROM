@@ -38,17 +38,17 @@
     .parameter
 
     .prologue
-    .line 40
+    .line 41
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 41
+    .line 42
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .line 42
+    .line 43
     :cond_8
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -56,21 +56,21 @@
 
     if-eqz v0, :cond_27
 
-    .line 43
+    .line 44
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-nez v0, :cond_16
 
-    .line 44
+    .line 45
     const/4 v0, 0x1
 
-    .line 54
+    .line 55
     :goto_15
     return v0
 
-    .line 46
+    .line 47
     :cond_16
     iget-object v0, p0, Lcom/google/common/collect/LexicographicalOrdering;->elementOrder:Lcom/google/common/collect/Ordering;
 
@@ -86,12 +86,12 @@
 
     move-result v0
 
-    .line 47
+    .line 48
     if-eqz v0, :cond_8
 
     goto :goto_15
 
-    .line 51
+    .line 52
     :cond_27
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -99,12 +99,12 @@
 
     if-eqz v0, :cond_2f
 
-    .line 52
+    .line 53
     const/4 v0, -0x1
 
     goto :goto_15
 
-    .line 54
+    .line 55
     :cond_2f
     const/4 v0, 0x0
 
@@ -132,28 +132,31 @@
 .method public final equals(Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 58
+    .line 59
     if-ne p1, p0, :cond_4
 
-    .line 59
+    .line 60
     const/4 v0, 0x1
 
-    .line 65
+    .line 66
     :goto_3
     return v0
 
-    .line 61
+    .line 62
     :cond_4
     instance-of v0, p1, Lcom/google/common/collect/LexicographicalOrdering;
 
     if-eqz v0, :cond_13
 
-    .line 62
+    .line 63
     check-cast p1, Lcom/google/common/collect/LexicographicalOrdering;
 
-    .line 63
+    .line 64
     iget-object v0, p0, Lcom/google/common/collect/LexicographicalOrdering;->elementOrder:Lcom/google/common/collect/Ordering;
 
     iget-object v1, p1, Lcom/google/common/collect/LexicographicalOrdering;->elementOrder:Lcom/google/common/collect/Ordering;
@@ -164,7 +167,7 @@
 
     goto :goto_3
 
-    .line 65
+    .line 66
     :cond_13
     const/4 v0, 0x0
 
@@ -175,7 +178,7 @@
     .registers 3
 
     .prologue
-    .line 69
+    .line 70
     iget-object v0, p0, Lcom/google/common/collect/LexicographicalOrdering;->elementOrder:Lcom/google/common/collect/Ordering;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -193,7 +196,7 @@
     .registers 3
 
     .prologue
-    .line 73
+    .line 74
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

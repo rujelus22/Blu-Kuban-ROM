@@ -4,7 +4,6 @@
         <enum name="vertical" value="0" />
         <enum name="horizontal" value="1" />
     </attr>
-    <attr name="drawIdentifier" format="string" />
     <attr name="defaultScreen" format="integer" />
     <attr name="cellCountX" format="integer" />
     <attr name="cellCountY" format="integer" />
@@ -13,9 +12,6 @@
     <attr name="widthGap" format="dimension" />
     <attr name="heightGap" format="dimension" />
     <attr name="maxGap" format="dimension" />
-    <attr name="strokeColor" format="color" />
-    <attr name="strokeTextColor" format="color" />
-    <attr name="strokeWidth" format="float" />
     <attr name="sourceImageViewId" format="integer" />
     <attr name="blurColor" format="color" />
     <attr name="outlineColor" format="color" />
@@ -34,8 +30,6 @@
     <attr name="widgetCellHeightGap" format="dimension" />
     <attr name="widgetCountX" format="integer" />
     <attr name="widgetCountY" format="integer" />
-    <attr name="clingFocusedX" format="integer" />
-    <attr name="clingFocusedY" format="integer" />
     <attr name="className" format="string" />
     <attr name="packageName" format="string" />
     <attr name="container" format="string" />
@@ -47,4 +41,5 @@
     <attr name="icon" format="reference" />
     <attr name="title" format="reference" />
     <attr name="uri" format="string" />
+    <attr name="entryIcons" format="reference" />
 </resources>

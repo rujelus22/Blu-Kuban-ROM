@@ -54,23 +54,23 @@
 
     const/4 v7, 0x1
 
-    .line 33
+    .line 34
     new-instance v0, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;
 
     const-string v1, "SPAM"
 
-    const v5, 0x7f070148
+    const v5, 0x7f070183
 
     invoke-direct/range {v0 .. v5}, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;-><init>(Ljava/lang/String;IIII)V
 
     sput-object v0, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;->SPAM:Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;
 
-    .line 34
+    .line 35
     new-instance v5, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;
 
     const-string v6, "HELPFUL"
 
-    const v10, 0x7f070149
+    const v10, 0x7f070184
 
     move v8, v7
 
@@ -80,12 +80,12 @@
 
     sput-object v5, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;->HELPFUL:Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;
 
-    .line 35
+    .line 36
     new-instance v8, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;
 
     const-string v9, "NOT_HELPFUL"
 
-    const v13, 0x7f07014a
+    const v13, 0x7f070185
 
     move v10, v4
 
@@ -97,7 +97,7 @@
 
     sput-object v8, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;->NOT_HELPFUL:Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;
 
-    .line 32
+    .line 33
     new-array v0, v3, [Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;
 
     sget-object v1, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;->SPAM:Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;
@@ -131,19 +131,19 @@
     .end annotation
 
     .prologue
-    .line 57
+    .line 58
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 58
+    .line 59
     iput p3, p0, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;->mRpcId:I
 
-    .line 59
+    .line 60
     iput p4, p0, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;->mIndex:I
 
-    .line 60
+    .line 61
     iput p5, p0, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;->mDisplayStringId:I
 
-    .line 61
+    .line 62
     return-void
 .end method
 
@@ -152,7 +152,7 @@
     .parameter "x0"
 
     .prologue
-    .line 32
+    .line 33
     invoke-direct {p0}, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;->getIndex()I
 
     move-result v0
@@ -165,7 +165,7 @@
     .parameter "x0"
 
     .prologue
-    .line 32
+    .line 33
     invoke-direct {p0}, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;->getTextResourceId()I
 
     move-result v0
@@ -177,7 +177,7 @@
     .registers 2
 
     .prologue
-    .line 50
+    .line 51
     iget v0, p0, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;->mIndex:I
 
     return v0
@@ -187,7 +187,7 @@
     .registers 2
 
     .prologue
-    .line 54
+    .line 55
     iget v0, p0, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;->mDisplayStringId:I
 
     return v0
@@ -198,7 +198,7 @@
     .parameter
 
     .prologue
-    .line 32
+    .line 33
     const-class v0, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -214,7 +214,7 @@
     .registers 1
 
     .prologue
-    .line 32
+    .line 33
     sget-object v0, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;->$VALUES:[Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;
 
     invoke-virtual {v0}, [Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;->clone()Ljava/lang/Object;
@@ -232,7 +232,7 @@
     .registers 2
 
     .prologue
-    .line 46
+    .line 47
     iget v0, p0, Lcom/google/android/finsky/activities/RateReviewDialog$CommentRating;->mRpcId:I
 
     return v0

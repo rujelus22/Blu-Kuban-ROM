@@ -64,19 +64,19 @@
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
     .line 42
-    new-instance v0, Lcom/google/common/collect/by;
+    new-instance v0, Lcom/google/common/collect/dj;
 
-    invoke-direct {v0}, Lcom/google/common/collect/by;-><init>()V
+    invoke-direct {v0}, Lcom/google/common/collect/dj;-><init>()V
 
-    invoke-virtual {v0, p1}, Lcom/google/common/collect/by;->b(Ljava/lang/Iterable;)Lcom/google/common/collect/by;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Lcom/google/common/collect/by;->b(Ljava/lang/Object;)Lcom/google/common/collect/by;
+    invoke-virtual {v0, p1}, Lcom/google/common/collect/dj;->b(Ljava/lang/Iterable;)Lcom/google/common/collect/dj;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/common/collect/by;->a()Lcom/google/common/collect/ImmutableList;
+    invoke-virtual {v0, p2}, Lcom/google/common/collect/dj;->b(Ljava/lang/Object;)Lcom/google/common/collect/dj;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/dj;->a()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
 
@@ -161,7 +161,7 @@
 
     iget-object v1, p1, Lcom/google/common/collect/CompoundOrdering;->comparators:Lcom/google/common/collect/ImmutableList;
 
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Lcom/google/common/collect/ImmutableList;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -181,7 +181,7 @@
     .line 68
     iget-object v0, p0, Lcom/google/common/collect/CompoundOrdering;->comparators:Lcom/google/common/collect/ImmutableList;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->hashCode()I
 
     move-result v0
 
@@ -195,13 +195,9 @@
     .line 72
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "Ordering.compound("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/common/collect/CompoundOrdering;->comparators:Lcom/google/common/collect/ImmutableList;
 

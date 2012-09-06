@@ -53,40 +53,40 @@
         <item quantity="one">Čeká se na akci s %1$d konverzací.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">Ignorované konverzace: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Ignorované konverzace: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Ignorované konverzace: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Ignorované konverzace: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">Konverzace nahlášené jako spam: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Konverzace nahlášené jako spam: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Konverzace nahlášené jako spam: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Konverzace nahlášené jako spam: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">Archivované konverzace: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Archivované konverzace: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Archivované konverzace: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Archivované konverzace: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">Konverzace přesunuté do doručené pošty: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Konverzace přesunuté do doručené pošty:&amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Konverzace přesunuté do doručené pošty: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Konverzace přesunuté do doručené pošty:&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">Smazané konverzace: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Smazané konverzace: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Smazané konverzace: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Smazané konverzace: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">Konverzace označené jako důležité: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Konverzace označené jako důležité: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Konverzace označené jako důležité: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Konverzace označené jako důležité: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">Konverzace označené jako nedůležité: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Konverzace označené jako nedůležité: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Konverzace označené jako nedůležité: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Konverzace označené jako nedůležité: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">Konverzace označené jako přečtené: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Konverzace označené jako přečtené: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Konverzace označené jako přečtené: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Konverzace označené jako přečtené: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">Konverzace označené jako nepřečtené: &amp;lt;b>%1$d&amp;lt;/b></item>
-        <item quantity="one">Konverzace označené jako nepřečtené: &amp;lt;b>%1$d&amp;lt;/b></item>
+        <item quantity="other">Konverzace označené jako nepřečtené: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
+        <item quantity="one">Konverzace označené jako nepřečtené: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b></item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Změněné štítky</item>

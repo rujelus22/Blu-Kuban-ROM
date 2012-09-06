@@ -4,19 +4,23 @@
 
 
 # instance fields
+.field private mBottomBannerHeight:I
+
 .field private mRightMargin:I
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .registers 3
     .parameter "context"
 
     .prologue
-    .line 22
-    invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+    .line 24
+    const/4 v0, 0x0
 
-    .line 23
+    invoke-direct {p0, p1, v0}, Lcom/google/android/finsky/layout/DetailsRightColumn;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    .line 25
     return-void
 .end method
 
@@ -26,33 +30,34 @@
     .parameter "attrs"
 
     .prologue
-    .line 26
+    .line 28
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 27
+    .line 29
     return-void
 .end method
 
-.method private toApplyRightMargin(Landroid/view/View;)Z
+.method private isPartOfBottomBanner(Landroid/view/View;)Z
     .registers 4
     .parameter "child"
 
     .prologue
-    .line 34
+    .line 40
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 
-    .line 35
+    .line 41
     .local v0, childId:I
-    const v1, 0x7f0800da
-
-    if-eq v0, v1, :cond_10
-
     const v1, 0x7f0800db
 
-    if-eq v0, v1, :cond_10
+    if-eq v0, v1, :cond_e
 
+    const v1, 0x7f0800dc
+
+    if-ne v0, v1, :cond_10
+
+    :cond_e
     const/4 v1, 0x1
 
     :goto_f
@@ -69,14 +74,14 @@
     .parameter "child"
 
     .prologue
-    .line 39
+    .line 45
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 
-    .line 40
+    .line 46
     .local v0, childId:I
-    const v1, 0x7f0800db
+    const v1, 0x7f0800dc
 
     if-ne v0, v1, :cond_b
 
@@ -94,126 +99,169 @@
 
 # virtual methods
 .method protected onMeasure(II)V
-    .registers 11
+    .registers 14
     .parameter "widthMeasureSpec"
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 45
+    const/high16 v10, 0x4000
+
+    .line 51
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
-    .line 47
+    .line 53
+    const/4 v5, 0x0
+
+    .line 54
+    .local v5, totalHeight:I
     const/4 v3, 0x0
 
-    .line 48
-    .local v3, totalHeight:I
-    const/4 v2, 0x0
-
-    .local v2, i:I
-    :goto_5
+    .local v3, i:I
+    :goto_7
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/DetailsRightColumn;->getChildCount()I
 
-    move-result v4
+    move-result v6
 
-    if-ge v2, v4, :cond_4e
+    if-ge v3, v6, :cond_60
 
-    .line 49
-    invoke-virtual {p0, v2}, Lcom/google/android/finsky/layout/DetailsRightColumn;->getChildAt(I)Landroid/view/View;
+    .line 55
+    invoke-virtual {p0, v3}, Lcom/google/android/finsky/layout/DetailsRightColumn;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 50
+    .line 56
     .local v0, child:Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
-    move-result v4
+    move-result v6
 
-    const/16 v5, 0x8
+    const/16 v7, 0x8
 
-    if-ne v4, v5, :cond_1a
+    if-ne v6, v7, :cond_1c
 
-    .line 48
-    :goto_17
-    add-int/lit8 v2, v2, 0x1
+    .line 54
+    :goto_19
+    add-int/lit8 v3, v3, 0x1
 
-    goto :goto_5
+    goto :goto_7
 
-    .line 53
-    :cond_1a
+    .line 59
+    :cond_1c
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
 
-    .line 54
+    .line 60
     .local v1, childWidth:I
-    invoke-direct {p0, v0}, Lcom/google/android/finsky/layout/DetailsRightColumn;->toApplyRightMargin(Landroid/view/View;)Z
+    invoke-direct {p0, v0}, Lcom/google/android/finsky/layout/DetailsRightColumn;->isPartOfBottomBanner(Landroid/view/View;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_27
+    .line 61
+    .local v4, isPartOfBottomBanner:Z
+    if-nez v4, :cond_55
 
-    .line 55
-    iget v4, p0, Lcom/google/android/finsky/layout/DetailsRightColumn;->mRightMargin:I
+    .line 62
+    iget v6, p0, Lcom/google/android/finsky/layout/DetailsRightColumn;->mRightMargin:I
 
-    sub-int/2addr v1, v4
+    sub-int/2addr v1, v6
 
-    .line 57
-    :cond_27
+    .line 66
+    :goto_29
     invoke-direct {p0, v0}, Lcom/google/android/finsky/layout/DetailsRightColumn;->toApplyRightPadding(Landroid/view/View;)Z
 
-    move-result v4
+    move-result v6
 
-    if-eqz v4, :cond_3e
+    if-eqz v6, :cond_40
 
-    .line 58
+    .line 67
     invoke-virtual {v0}, Landroid/view/View;->getPaddingLeft()I
 
-    move-result v4
+    move-result v6
 
     invoke-virtual {v0}, Landroid/view/View;->getPaddingTop()I
 
-    move-result v5
+    move-result v7
 
-    iget v6, p0, Lcom/google/android/finsky/layout/DetailsRightColumn;->mRightMargin:I
+    iget v8, p0, Lcom/google/android/finsky/layout/DetailsRightColumn;->mRightMargin:I
 
     invoke-virtual {v0}, Landroid/view/View;->getPaddingBottom()I
 
-    move-result v7
+    move-result v9
 
-    invoke-virtual {v0, v4, v5, v6, v7}, Landroid/view/View;->setPadding(IIII)V
+    invoke-virtual {v0, v6, v7, v8, v9}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 61
-    :cond_3e
-    const/high16 v4, 0x4000
+    .line 70
+    :cond_40
+    if-eqz v4, :cond_5e
 
-    invoke-static {v1, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    iget v6, p0, Lcom/google/android/finsky/layout/DetailsRightColumn;->mBottomBannerHeight:I
 
-    move-result v4
+    invoke-static {v6, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    const/4 v5, 0x0
+    move-result v2
 
-    invoke-virtual {v0, v4, v5}, Landroid/view/View;->measure(II)V
+    .line 73
+    .local v2, heightSpec:I
+    :goto_48
+    invoke-static {v1, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    .line 63
+    move-result v6
+
+    invoke-virtual {v0, v6, v2}, Landroid/view/View;->measure(II)V
+
+    .line 74
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
-    move-result v4
+    move-result v6
 
-    add-int/2addr v3, v4
+    add-int/2addr v5, v6
 
-    goto :goto_17
+    goto :goto_19
 
-    .line 66
+    .line 64
+    .end local v2           #heightSpec:I
+    :cond_55
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v6
+
+    iget v7, p0, Lcom/google/android/finsky/layout/DetailsRightColumn;->mBottomBannerHeight:I
+
+    iput v7, v6, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    goto :goto_29
+
+    .line 70
+    :cond_5e
+    const/4 v2, 0x0
+
+    goto :goto_48
+
+    .line 77
     .end local v0           #child:Landroid/view/View;
     .end local v1           #childWidth:I
-    :cond_4e
+    .end local v4           #isPartOfBottomBanner:Z
+    :cond_60
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    move-result v4
+    move-result v6
 
-    invoke-virtual {p0, v4, v3}, Lcom/google/android/finsky/layout/DetailsRightColumn;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v6, v5}, Lcom/google/android/finsky/layout/DetailsRightColumn;->setMeasuredDimension(II)V
 
-    .line 67
+    .line 78
+    return-void
+.end method
+
+.method public setBottomBannerHeight(I)V
+    .registers 2
+    .parameter "bottomBannerHeight"
+
+    .prologue
+    .line 36
+    iput p1, p0, Lcom/google/android/finsky/layout/DetailsRightColumn;->mBottomBannerHeight:I
+
+    .line 37
     return-void
 .end method
 
@@ -222,9 +270,9 @@
     .parameter "rightMargin"
 
     .prologue
-    .line 30
+    .line 32
     iput p1, p0, Lcom/google/android/finsky/layout/DetailsRightColumn;->mRightMargin:I
 
-    .line 31
+    .line 33
     return-void
 .end method

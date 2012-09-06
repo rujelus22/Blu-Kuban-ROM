@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="left|center" android:layout_gravity="left|center" android:orientation="horizontal" android:background="?android:selectableItemBackground" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+<LinearLayout android:gravity="left|center" android:layout_gravity="left|center" android:orientation="horizontal" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <ProgressBar android:id="@id/progressBar" android:paddingRight="10.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/progressBarStyleSmall" />
     <TextView android:id="@id/loadingMoreResult" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />

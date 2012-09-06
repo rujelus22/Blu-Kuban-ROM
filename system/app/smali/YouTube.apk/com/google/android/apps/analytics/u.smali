@@ -10,22 +10,20 @@
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/apps/analytics/s;)V
-    .registers 3
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/apps/analytics/u;-><init>(Lcom/google/android/apps/analytics/s;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/apps/analytics/s;B)V
-    .registers 3
+.method private constructor <init>(Lcom/google/android/apps/analytics/s;)V
+    .registers 2
 
     iput-object p1, p0, Lcom/google/android/apps/analytics/u;->a:Lcom/google/android/apps/analytics/s;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/apps/analytics/s;B)V
+    .registers 3
+
+    invoke-direct {p0, p1}, Lcom/google/android/apps/analytics/u;-><init>(Lcom/google/android/apps/analytics/s;)V
 
     return-void
 .end method

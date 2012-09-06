@@ -242,18 +242,18 @@ segurança"</b></string>
     <string name="account_intro_recommended_title">Tornar Google</string>
     <string name="common_message">"Uma Conta Google permite-lhe
 
-"<li><ul>Ver e organizar todas as suas informações a partir de qualquer local.</ul></li>"
+"<ul><li>Ver e organizar todas as suas informações a partir de qualquer local.</li></ul>"
 
-"<li><ul>Efetuar cópias de segurança dos seus dados automaticamente.</ul></li>"
+"<ul><li>Efetuar cópias de segurança dos seus dados automaticamente.</li></ul>"
 
-"<li><ul>Utilizar os serviços da Google a partir de qualquer local.</ul></li></string>
+"<ul><li>Utilizar os serviços da Google a partir de qualquer local.</li></ul></string>
     <string name="add_account_message">" Pode utilizar mais de uma Conta Google (por exemplo, a conta de casa e a conta do trabalho). Toque em "<b>Iniciar sessão</b> ou <b>Criar Conta</b> para adicionar uma Conta Google</string>
     <string name="account_intro_default_message">Porquê arriscar perder todos os seus itens? As Contas Google mantêm tudo em segurança.</string>
     <string name="account_intro_custom_endtext">Tem a aplicação %s? Inicie sessão agora.</string>
     <string name="account_intro_simple_message">Pretende adicionar uma conta existente ou um criar uma nova conta?</string>
     <string name="learn_more_title"><annotation id="learn_more">Saiba mais</annotation></string>
     <string name="learn_more_account_intro">"Uma Conta Google permite-lhe 
-"<li><ul>Ver e organizar todas as suas informações a partir de qualquer local.<li>Efetuar automaticamente cópias de segurança dos seus dados, como o e-mail, contactos, música e imagens.</li><li>Utilizar os serviços da Google de forma simples a partir de qualquer local—incluindo os Contactos, o Calendário, o Google Maps e muito mais.</li></ul></li></string>
+"<ul><li>Ver e organizar todas as suas informações a partir de qualquer local.<li>Efetuar automaticamente cópias de segurança dos seus dados, como o e-mail, contactos, música e imagens.</li><li>Utilizar os serviços da Google de forma simples a partir de qualquer local—incluindo os Contactos, o Calendário, o Google Maps e muito mais.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Acerca das Contas Google</string>
     <string name="learn_more_web_history">"O Histórico da Web ajusta os resultados da pesquisa com base naquilo que pesquisou e nos sites que visitou, proporcionando uma experiência Google personalizada.
 

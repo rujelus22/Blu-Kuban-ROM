@@ -3,9 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/api/client/http/h;
-.implements Lcom/google/api/client/http/n;
-.implements Lcom/google/api/client/http/q;
+.implements Lcom/google/api/client/http/i;
+.implements Lcom/google/api/client/http/o;
+.implements Lcom/google/api/client/http/s;
+
+
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
 
 
 # static fields
@@ -21,7 +26,7 @@
 
 .field private final e:Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource$Method;
 
-.field private final f:Lcom/google/api/client/http/p;
+.field private final f:Lcom/google/api/client/http/r;
 
 .field private final g:Lcom/google/api/client/json/c;
 
@@ -39,7 +44,7 @@
     .registers 3
 
     .prologue
-    .line 83
+    .line 88
     const-class v0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -52,7 +57,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->a:Ljava/util/logging/Logger;
 
-    .line 112
+    .line 117
     sget-object v0, Lcom/google/api/client/http/HttpMethod;->POST:Lcom/google/api/client/http/HttpMethod;
 
     sget-object v1, Lcom/google/api/client/http/HttpMethod;->PUT:Lcom/google/api/client/http/HttpMethod;
@@ -76,21 +81,21 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 149
+    .line 156
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 116
+    .line 121
     new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
     iput-object v0, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->c:Ljava/util/concurrent/locks/Lock;
 
-    .line 150
+    .line 157
     iput-object p1, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->d:Ljava/lang/String;
 
-    .line 151
-    invoke-static {p2}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 158
+    invoke-static {p2}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -98,25 +103,25 @@
 
     iput-object v0, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->e:Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource$Method;
 
-    .line 152
-    iput-object v1, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->f:Lcom/google/api/client/http/p;
+    .line 159
+    iput-object v1, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->f:Lcom/google/api/client/http/r;
 
-    .line 153
+    .line 160
     iput-object v1, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->g:Lcom/google/api/client/json/c;
 
-    .line 154
+    .line 161
     iput-object v1, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->h:Ljava/lang/String;
 
-    .line 155
+    .line 162
     iput-object v1, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->i:Ljava/lang/String;
 
-    .line 156
+    .line 163
     iput-object v1, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->j:Ljava/lang/String;
 
-    .line 157
+    .line 164
     iput-object v1, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->k:Ljava/lang/String;
 
-    .line 158
+    .line 165
     return-void
 .end method
 
@@ -124,18 +129,18 @@
     .registers 3
 
     .prologue
-    .line 193
+    .line 201
     iget-object v0, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->c:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    .line 195
+    .line 203
     :try_start_5
     iget-object v0, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->d:Ljava/lang/String;
     :try_end_7
     .catchall {:try_start_5 .. :try_end_7} :catchall_d
 
-    .line 197
+    .line 205
     iget-object v1, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->c:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
@@ -156,12 +161,12 @@
     .registers 3
 
     .prologue
-    .line 265
+    .line 273
     iget-object v0, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->c:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    .line 267
+    .line 275
     :try_start_5
     invoke-virtual {p0}, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->f()Z
     :try_end_8
@@ -169,7 +174,7 @@
 
     move-result v0
 
-    .line 269
+    .line 277
     iget-object v1, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->c:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
@@ -188,28 +193,28 @@
 
 
 # virtual methods
-.method public final a()Lcom/google/api/client/http/p;
+.method public final a()Lcom/google/api/client/http/r;
     .registers 2
 
     .prologue
-    .line 223
-    iget-object v0, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->f:Lcom/google/api/client/http/p;
+    .line 231
+    iget-object v0, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->f:Lcom/google/api/client/http/r;
 
     return-object v0
 .end method
 
-.method public final a(Lcom/google/api/client/http/k;)V
+.method public final a(Lcom/google/api/client/http/l;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 274
-    iput-object p0, p1, Lcom/google/api/client/http/k;->a:Lcom/google/api/client/http/h;
+    .line 282
+    invoke-virtual {p1, p0}, Lcom/google/api/client/http/l;->a(Lcom/google/api/client/http/i;)Lcom/google/api/client/http/l;
 
-    .line 275
-    iput-object p0, p1, Lcom/google/api/client/http/k;->l:Lcom/google/api/client/http/q;
+    .line 283
+    invoke-virtual {p1, p0}, Lcom/google/api/client/http/l;->a(Lcom/google/api/client/http/s;)Lcom/google/api/client/http/l;
 
-    .line 276
+    .line 284
     return-void
 .end method
 
@@ -218,7 +223,7 @@
     .parameter
 
     .prologue
-    .line 413
+    .line 407
     :try_start_0
     invoke-virtual {p1}, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest;->a()Lcom/google/api/client/auth/oauth2/draft10/c;
 
@@ -228,7 +233,7 @@
     :try_end_6
     .catch Lcom/google/api/client/http/HttpResponseException; {:try_start_0 .. :try_end_6} :catch_16
 
-    .line 421
+    .line 413
     :goto_6
     iget-object v1, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->c:Ljava/util/concurrent/locks/Lock;
 
@@ -237,40 +242,30 @@
     :try_start_b
     iput-object v0, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->d:Ljava/lang/String;
     :try_end_d
-    .catchall {:try_start_b .. :try_end_d} :catchall_21
+    .catchall {:try_start_b .. :try_end_d} :catchall_19
 
     iget-object v1, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->c:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    .line 422
-    if-eqz v0, :cond_28
+    .line 414
+    if-eqz v0, :cond_20
 
     const/4 v0, 0x1
 
     :goto_15
     return v0
 
-    .line 414
+    .line 411
     :catch_16
     move-exception v0
 
-    move-object v1, v0
-
-    .line 417
     const/4 v0, 0x0
-
-    .line 419
-    invoke-virtual {v1}, Lcom/google/api/client/http/HttpResponseException;->getResponse()Lcom/google/api/client/http/o;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/api/client/http/o;->b()V
 
     goto :goto_6
 
-    .line 421
-    :catchall_21
+    .line 413
+    :catchall_19
     move-exception v0
 
     iget-object v1, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->c:Ljava/util/concurrent/locks/Lock;
@@ -279,14 +274,14 @@
 
     throw v0
 
-    .line 422
-    :cond_28
+    .line 414
+    :cond_20
     const/4 v0, 0x0
 
     goto :goto_15
 .end method
 
-.method public final a(Lcom/google/api/client/http/k;Lcom/google/api/client/http/o;)Z
+.method public final a(Lcom/google/api/client/http/l;Lcom/google/api/client/http/p;)Z
     .registers 8
     .parameter
     .parameter
@@ -294,29 +289,31 @@
     .prologue
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    .line 348
-    iget v0, p2, Lcom/google/api/client/http/o;->e:I
+    .line 342
+    invoke-virtual {p2}, Lcom/google/api/client/http/p;->d()I
+
+    move-result v2
 
     const/16 v3, 0x191
 
-    if-ne v0, v3, :cond_8a
+    if-ne v2, v3, :cond_86
 
-    .line 351
-    :try_start_8
-    iget-object v0, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->c:Ljava/util/concurrent/locks/Lock;
+    .line 345
+    :try_start_a
+    iget-object v2, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->c:Ljava/util/concurrent/locks/Lock;
 
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
-    :try_end_d
-    .catch Lcom/google/api/client/http/HttpResponseException; {:try_start_8 .. :try_end_d} :catch_7c
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_d} :catch_8c
+    invoke-interface {v2}, Ljava/util/concurrent/locks/Lock;->lock()V
+    :try_end_f
+    .catch Lcom/google/api/client/http/HttpResponseException; {:try_start_a .. :try_end_f} :catch_7c
+    .catch Ljava/io/IOException; {:try_start_a .. :try_end_f} :catch_88
 
-    .line 354
-    :try_start_d
-    iget-object v3, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->d:Ljava/lang/String;
+    .line 348
+    :try_start_f
+    iget-object v2, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->d:Ljava/lang/String;
 
-    sget-object v0, Lcom/google/api/client/auth/oauth2/draft10/a;->a:[I
+    sget-object v3, Lcom/google/api/client/auth/oauth2/draft10/a;->a:[I
 
     iget-object v4, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->e:Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource$Method;
 
@@ -324,133 +321,126 @@
 
     move-result v4
 
-    aget v0, v0, v4
+    aget v3, v3, v4
 
-    packed-switch v0, :pswitch_data_98
+    packed-switch v3, :pswitch_data_94
 
-    iget-object v0, p1, Lcom/google/api/client/http/k;->f:Lcom/google/api/client/http/g;
+    invoke-static {p1}, Lcom/google/api/client/http/w;->a(Lcom/google/api/client/http/l;)Lcom/google/api/client/http/w;
 
-    check-cast v0, Lcom/google/api/client/http/u;
+    move-result-object v3
 
-    iget-object v0, v0, Lcom/google/api/client/http/u;->b:Ljava/lang/Object;
+    invoke-virtual {v3}, Lcom/google/api/client/http/w;->d()Ljava/lang/Object;
 
-    check-cast v0, Lcom/google/api/client/util/p;
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/google/api/client/util/i;->b(Ljava/lang/Object;)Ljava/util/Map;
+
+    move-result-object v3
 
     const-string v4, "oauth_token"
 
-    invoke-virtual {v0, v4}, Lcom/google/api/client/util/p;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v3, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v3
 
-    if-nez v0, :cond_6e
+    if-nez v3, :cond_6e
 
-    move-object v0, v2
-
-    :goto_2d
-    invoke-static {v3, v0}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :cond_32
+    :goto_32
+    invoke-static {v2, v0}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_3e
 
     invoke-direct {p0}, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->h()Z
-    :try_end_36
-    .catchall {:try_start_d .. :try_end_36} :catchall_75
+    :try_end_3b
+    .catchall {:try_start_f .. :try_end_3b} :catchall_75
 
     move-result v0
 
     if-eqz v0, :cond_73
 
-    :cond_39
+    :cond_3e
     const/4 v0, 0x1
 
-    .line 357
-    :goto_3a
-    :try_start_3a
+    .line 351
+    :goto_3f
+    :try_start_3f
     iget-object v2, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->c:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v2}, Ljava/util/concurrent/locks/Lock;->unlock()V
-    :try_end_3f
-    .catch Lcom/google/api/client/http/HttpResponseException; {:try_start_3a .. :try_end_3f} :catch_7c
-    .catch Ljava/io/IOException; {:try_start_3a .. :try_end_3f} :catch_8c
+    :try_end_44
+    .catch Lcom/google/api/client/http/HttpResponseException; {:try_start_3f .. :try_end_44} :catch_7c
+    .catch Ljava/io/IOException; {:try_start_3f .. :try_end_44} :catch_88
 
-    .line 366
-    :goto_3f
+    .line 360
+    :goto_44
     return v0
 
-    .line 354
-    :pswitch_40
-    :try_start_40
-    iget-object v0, p1, Lcom/google/api/client/http/k;->b:Lcom/google/api/client/http/i;
+    .line 348
+    :pswitch_45
+    :try_start_45
+    invoke-virtual {p1}, Lcom/google/api/client/http/l;->e()Lcom/google/api/client/http/j;
 
-    invoke-virtual {v0}, Lcom/google/api/client/http/i;->a()Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v0
+    invoke-virtual {v3}, Lcom/google/api/client/http/j;->a()Ljava/lang/String;
 
-    if-eqz v0, :cond_5b
+    move-result-object v3
+
+    if-eqz v3, :cond_32
 
     const-string v4, "OAuth "
 
-    invoke-virtual {v0, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_5b
+    if-eqz v4, :cond_32
 
-    const-string v2, "OAuth "
+    const/4 v0, 0x6
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v3, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_2d
-
-    :cond_5b
-    move-object v0, v2
-
-    goto :goto_2d
+    goto :goto_32
 
     :pswitch_5d
-    iget-object v0, p1, Lcom/google/api/client/http/k;->i:Lcom/google/api/client/http/f;
+    invoke-virtual {p1}, Lcom/google/api/client/http/l;->c()Lcom/google/api/client/http/g;
+
+    move-result-object v3
 
     const-string v4, "oauth_token"
 
-    invoke-virtual {v0, v4}, Lcom/google/api/client/http/f;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v4}, Lcom/google/api/client/http/g;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_32
+
+    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    if-nez v0, :cond_69
-
-    move-object v0, v2
-
-    goto :goto_2d
-
-    :cond_69
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_2d
+    goto :goto_32
 
     :cond_6e
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
     :try_end_71
-    .catchall {:try_start_40 .. :try_end_71} :catchall_75
+    .catchall {:try_start_45 .. :try_end_71} :catchall_75
 
     move-result-object v0
 
-    goto :goto_2d
+    goto :goto_32
 
     :cond_73
     move v0, v1
 
-    goto :goto_3a
+    goto :goto_3f
 
-    .line 357
+    .line 351
     :catchall_75
     move-exception v0
 
@@ -462,40 +452,36 @@
     throw v0
     :try_end_7c
     .catch Lcom/google/api/client/http/HttpResponseException; {:try_start_76 .. :try_end_7c} :catch_7c
-    .catch Ljava/io/IOException; {:try_start_76 .. :try_end_7c} :catch_8c
+    .catch Ljava/io/IOException; {:try_start_76 .. :try_end_7c} :catch_88
 
-    .line 359
+    .line 353
     :catch_7c
     move-exception v0
 
-    .line 360
+    .line 354
     :try_start_7d
     sget-object v2, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->a:Ljava/util/logging/Logger;
 
-    invoke-virtual {v0}, Lcom/google/api/client/http/HttpResponseException;->getResponse()Lcom/google/api/client/http/o;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/api/client/http/o;->c()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/api/client/http/HttpResponseException;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v2, v0}, Ljava/util/logging/Logger;->severe(Ljava/lang/String;)V
-    :try_end_8a
-    .catch Ljava/io/IOException; {:try_start_7d .. :try_end_8a} :catch_8c
+    :try_end_86
+    .catch Ljava/io/IOException; {:try_start_7d .. :try_end_86} :catch_88
 
-    :cond_8a
-    :goto_8a
+    :cond_86
+    :goto_86
     move v0, v1
 
-    .line 366
-    goto :goto_3f
+    .line 360
+    goto :goto_44
 
-    .line 362
-    :catch_8c
+    .line 356
+    :catch_88
     move-exception v0
 
-    .line 363
+    .line 357
     sget-object v2, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->a:Ljava/util/logging/Logger;
 
     invoke-virtual {v0}, Ljava/io/IOException;->toString()Ljava/lang/String;
@@ -504,14 +490,14 @@
 
     invoke-virtual {v2, v0}, Ljava/util/logging/Logger;->severe(Ljava/lang/String;)V
 
-    goto :goto_8a
+    goto :goto_86
 
-    .line 354
+    .line 348
     nop
 
-    :pswitch_data_98
+    :pswitch_data_94
     .packed-switch 0x1
-        :pswitch_40
+        :pswitch_45
         :pswitch_5d
     .end packed-switch
 .end method
@@ -520,92 +506,94 @@
     .registers 2
 
     .prologue
-    .line 231
+    .line 239
     iget-object v0, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->g:Lcom/google/api/client/json/c;
 
     return-object v0
 .end method
 
-.method public final b(Lcom/google/api/client/http/k;)V
+.method public final b(Lcom/google/api/client/http/l;)V
     .registers 8
     .parameter
 
     .prologue
-    .line 286
+    .line 294
     invoke-direct {p0}, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->g()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    .line 287
-    if-nez v2, :cond_7
+    .line 295
+    if-nez v0, :cond_7
 
-    .line 315
+    .line 312
     :goto_6
     return-void
 
-    .line 290
+    .line 298
     :cond_7
-    sget-object v0, Lcom/google/api/client/auth/oauth2/draft10/a;->a:[I
+    sget-object v1, Lcom/google/api/client/auth/oauth2/draft10/a;->a:[I
 
-    iget-object v1, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->e:Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource$Method;
+    iget-object v2, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->e:Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource$Method;
 
-    invoke-virtual {v1}, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource$Method;->ordinal()I
+    invoke-virtual {v2}, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource$Method;->ordinal()I
 
-    move-result v1
+    move-result v2
 
-    aget v0, v0, v1
+    aget v1, v1, v2
 
-    packed-switch v0, :pswitch_data_70
+    packed-switch v1, :pswitch_data_60
 
     goto :goto_6
 
-    .line 292
+    .line 300
     :pswitch_15
-    iget-object v0, p1, Lcom/google/api/client/http/k;->b:Lcom/google/api/client/http/i;
+    invoke-virtual {p1}, Lcom/google/api/client/http/l;->e()Lcom/google/api/client/http/j;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, "OAuth "
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object v1
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/api/client/http/i;->a(Ljava/lang/String;)V
+    invoke-virtual {v1, v0}, Lcom/google/api/client/http/j;->a(Ljava/lang/String;)V
 
     goto :goto_6
 
-    .line 295
-    :pswitch_2e
-    iget-object v0, p1, Lcom/google/api/client/http/k;->i:Lcom/google/api/client/http/f;
+    .line 303
+    :pswitch_2c
+    invoke-virtual {p1}, Lcom/google/api/client/http/l;->c()Lcom/google/api/client/http/g;
 
-    const-string v1, "oauth_token"
+    move-result-object v1
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/api/client/http/f;->b(Ljava/lang/String;Ljava/lang/Object;)V
+    const-string v2, "oauth_token"
+
+    invoke-virtual {v1, v2, v0}, Lcom/google/api/client/http/g;->set(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_6
 
-    .line 298
+    .line 306
     :pswitch_36
-    sget-object v0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->b:Ljava/util/EnumSet;
+    sget-object v1, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->b:Ljava/util/EnumSet;
 
-    iget-object v1, p1, Lcom/google/api/client/http/k;->h:Lcom/google/api/client/http/HttpMethod;
+    invoke-virtual {p1}, Lcom/google/api/client/http/l;->b()Lcom/google/api/client/http/HttpMethod;
 
-    invoke-virtual {v0, v1}, Ljava/util/EnumSet;->contains(Ljava/lang/Object;)Z
+    move-result-object v2
 
-    move-result v0
+    invoke-virtual {v1, v2}, Ljava/util/EnumSet;->contains(Ljava/lang/Object;)Z
 
-    const-string v1, "expected one of these HTTP methods: %s"
+    move-result v1
+
+    const-string v2, "expected one of these HTTP methods: %s"
 
     const/4 v3, 0x1
 
@@ -617,65 +605,35 @@
 
     aput-object v5, v3, v4
 
-    invoke-static {v0, v1, v3}, Lcom/google/common/base/t;->a(ZLjava/lang/String;[Ljava/lang/Object;)V
-
-    .line 301
-    iget-object v0, p1, Lcom/google/api/client/http/k;->f:Lcom/google/api/client/http/g;
-
-    check-cast v0, Lcom/google/api/client/http/u;
-
-    .line 302
-    if-nez v0, :cond_6d
-
-    .line 303
-    new-instance v0, Lcom/google/api/client/http/u;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lcom/google/api/client/http/u;-><init>(Ljava/lang/Object;)V
-
-    .line 304
-    iput-object v0, p1, Lcom/google/api/client/http/k;->f:Lcom/google/api/client/http/g;
-
-    move-object v1, v0
-
-    .line 307
-    :goto_5a
-    iget-object v0, v1, Lcom/google/api/client/http/u;->b:Ljava/lang/Object;
-
-    check-cast v0, Lcom/google/api/client/util/p;
+    invoke-static {v1, v2, v3}, Lcom/google/common/base/ag;->a(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     .line 308
-    if-nez v0, :cond_67
+    invoke-static {p1}, Lcom/google/api/client/http/w;->a(Lcom/google/api/client/http/l;)Lcom/google/api/client/http/w;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/api/client/http/w;->d()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/google/api/client/util/i;->b(Ljava/lang/Object;)Ljava/util/Map;
+
+    move-result-object v1
 
     .line 309
-    new-instance v0, Lcom/google/api/client/util/p;
+    const-string v2, "oauth_token"
 
-    invoke-direct {v0}, Lcom/google/api/client/util/p;-><init>()V
-
-    .line 310
-    iput-object v0, v1, Lcom/google/api/client/http/u;->b:Ljava/lang/Object;
-
-    .line 312
-    :cond_67
-    const-string v1, "oauth_token"
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/api/client/util/p;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_6
 
-    :cond_6d
-    move-object v1, v0
-
-    goto :goto_5a
-
-    .line 290
+    .line 298
     nop
 
-    :pswitch_data_70
+    :pswitch_data_60
     .packed-switch 0x1
         :pswitch_15
-        :pswitch_2e
+        :pswitch_2c
         :pswitch_36
     .end packed-switch
 .end method
@@ -684,7 +642,7 @@
     .registers 2
 
     .prologue
-    .line 241
+    .line 249
     iget-object v0, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->i:Ljava/lang/String;
 
     return-object v0
@@ -694,7 +652,7 @@
     .registers 2
 
     .prologue
-    .line 246
+    .line 254
     iget-object v0, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->j:Ljava/lang/String;
 
     return-object v0
@@ -704,7 +662,7 @@
     .registers 2
 
     .prologue
-    .line 254
+    .line 262
     iget-object v0, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->k:Ljava/lang/String;
 
     return-object v0
@@ -714,15 +672,15 @@
     .registers 8
 
     .prologue
-    .line 387
+    .line 381
     iget-object v0, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->k:Ljava/lang/String;
 
     if-eqz v0, :cond_1a
 
-    .line 388
+    .line 382
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/b;
 
-    iget-object v1, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->f:Lcom/google/api/client/http/p;
+    iget-object v1, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->f:Lcom/google/api/client/http/r;
 
     iget-object v2, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->g:Lcom/google/api/client/json/c;
 
@@ -734,14 +692,14 @@
 
     iget-object v6, p0, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->k:Ljava/lang/String;
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/api/client/auth/oauth2/draft10/b;-><init>(Lcom/google/api/client/http/p;Lcom/google/api/client/json/c;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v6}, Lcom/google/api/client/auth/oauth2/draft10/b;-><init>(Lcom/google/api/client/http/r;Lcom/google/api/client/json/c;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 394
+    .line 388
     invoke-virtual {p0, v0}, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource;->a(Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest;)Z
 
     move-result v0
 
-    .line 396
+    .line 390
     :goto_19
     return v0
 

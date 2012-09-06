@@ -242,18 +242,18 @@ secrète"</b></string>
     <string name="account_intro_recommended_title">Utiliser Google</string>
     <string name="common_message">"Un compte Google vous permet de : 
 
-"<li><ul>consulter et organiser toutes vos informations où que vous soyez ;</ul></li>"
+"<ul><li>consulter et organiser toutes vos informations où que vous soyez ;</li></ul>"
 
-"<li><ul>sauvegarder vos données automatiquement ;</ul></li>"
+"<ul><li>sauvegarder vos données automatiquement ;</li></ul>"
 
-"<li><ul>utiliser les services Google facilement, où que vous soyez.</ul></li></string>
+"<ul><li>utiliser les services Google facilement, où que vous soyez.</li></ul></string>
     <string name="add_account_message">" Vous pouvez utiliser plus d'un compte Google (par exemple, un compte personnel et un compte professionnel). Appuyez sur "<b>Connexion</b> ou sur <b>Créer un compte</b> pour ajouter un compte Google.</string>
     <string name="account_intro_default_message">"Ne perdez plus jamais rien. Votre compte Google conserve l'ensemble de vos données en toute sécurité."</string>
     <string name="account_intro_custom_endtext">Vous utilisez déjà %s ? Connectez-vous maintenant.</string>
     <string name="account_intro_simple_message">Voulez-vous ajouter un compte existant ou en créer un ?</string>
     <string name="learn_more_title"><annotation id="learn_more">En savoir plus</annotation></string>
     <string name="learn_more_account_intro">"Un compte Google vous permet
-"<li><ul>"d'afficher et d'organiser toutes vos informations où que vous soyez ;"<li>de sauvegarder automatiquement vos données, telles que vos e-mails, vos contacts, votre musique et vos photos ;</li><li>"d'utiliser les services Google en toute simplicité où que vous soyez, y compris les applications Contacts, Google Agenda, Google Maps et plus encore."</li></ul></li></string>
+"<ul><li>"d'afficher et d'organiser toutes vos informations où que vous soyez ;"<li>de sauvegarder automatiquement vos données, telles que vos e-mails, vos contacts, votre musique et vos photos ;</li><li>"d'utiliser les services Google en toute simplicité où que vous soyez, y compris les applications Contacts, Google Agenda, Google Maps et plus encore."</li></li></ul></string>
     <string name="learn_more_account_intro_title">À propos des comptes Google</string>
     <string name="learn_more_web_history">"L'historique Web adapte les résultats de recherche en fonction de vos recherches précédentes et des sites que vous avez consultés, pour vous proposer une expérience personnalisée sur Google.
 

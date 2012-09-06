@@ -6,9 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/android/finsky/remoting/protos/CarrierBilling$PasswordPrompt;,
-        Lcom/google/android/finsky/remoting/protos/CarrierBilling$VerifyPinResponse;,
-        Lcom/google/android/finsky/remoting/protos/CarrierBilling$GetVerificationIdResponse;
+        Lcom/google/android/finsky/remoting/protos/CarrierBilling$VerifyAssociationResponse;,
+        Lcom/google/android/finsky/remoting/protos/CarrierBilling$InitiateAssociationResponse;
     }
 .end annotation
 

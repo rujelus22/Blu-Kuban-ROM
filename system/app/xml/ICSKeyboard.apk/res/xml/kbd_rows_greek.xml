@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:latin="http://schemas.android.com/apk/res/inputmethod.latin.ported">
+    <include latin:keyboardLayout="@xml/kbd_key_styles" />
+    <Row latin:keyWidth="10.000002%p">
+        <Key latin:moreKeys="@string/more_keys_for_q" latin:keyLabel=";" latin:keyHintLabel="1" />
+        <Key latin:moreKeys="@string/more_keys_for_w" latin:keyLabel="ς" latin:keyHintLabel="2" />
+        <Key latin:moreKeys="@string/more_keys_for_e" latin:keyLabel="ε" latin:keyHintLabel="3" />
+        <Key latin:moreKeys="@string/more_keys_for_r" latin:keyLabel="ρ" latin:keyHintLabel="4" />
+        <Key latin:moreKeys="@string/more_keys_for_r" latin:keyLabel="τ" latin:keyHintLabel="4" />
+        <Key latin:moreKeys="@string/more_keys_for_t" latin:keyLabel="υ" latin:keyHintLabel="5" />
+        <Key latin:moreKeys="@string/more_keys_for_y" latin:keyLabel="θ" latin:keyHintLabel="6" />
+        <Key latin:moreKeys="@string/more_keys_for_u" latin:keyLabel="ι" latin:keyHintLabel="7" />
+        <Key latin:moreKeys="@string/more_keys_for_o" latin:keyLabel="o" latin:keyHintLabel="9" />
+        <Key latin:moreKeys="@string/more_keys_for_p" latin:keyLabel="π" latin:keyHintLabel="0" latin:keyWidth="fillRight" />
+    </Row>
+    <Row latin:keyWidth="10.000002%p">
+        <Key latin:moreKeys="@string/more_keys_for_a" latin:keyLabel="α" latin:keyXPos="4.999995%p" />
+        <Key latin:moreKeys="@string/more_keys_for_s" latin:keyLabel="σ" />
+        <Key latin:moreKeys="@string/more_keys_for_d" latin:keyLabel="δ" />
+        <Key latin:keyLabel="φ" />
+        <Key latin:moreKeys="@string/more_keys_for_g" latin:keyLabel="γ" />
+        <Key latin:keyLabel="η" />
+        <Key latin:keyLabel="ξ" />
+        <Key latin:moreKeys="@string/more_keys_for_k" latin:keyLabel="κ" />
+        <Key latin:moreKeys="@string/more_keys_for_l" latin:keyLabel="λ" />
+    </Row>
+    <Row latin:keyWidth="10.000002%p">
+        <Key latin:keyStyle="shiftKeyStyle" latin:visualInsetsRight="0.99999905%p" latin:keyWidth="14.999998%p" />
+        <Key latin:moreKeys="@string/more_keys_for_z" latin:keyLabel="ζ" />
+        <Key latin:moreKeys="@string/more_keys_for_z" latin:keyLabel="χ" />
+        <Key latin:keyLabel="ψ" />
+        <Key latin:moreKeys="@string/more_keys_for_c" latin:keyLabel="ω" />
+        <Key latin:moreKeys="@string/more_keys_for_v" latin:keyLabel="β" />
+        <Key latin:moreKeys="@string/more_keys_for_n" latin:keyLabel="ν" />
+        <Key latin:keyLabel="μ" />
+        <Key latin:keyStyle="deleteKeyStyle" latin:visualInsetsLeft="0.99999905%p" latin:keyWidth="fillBoth" />
+    </Row>
+    <include latin:keyboardLayout="@xml/kbd_qwerty_row4" />
+</merge>

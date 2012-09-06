@@ -23,10 +23,10 @@
     .registers 1
 
     .prologue
-    .line 44
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 42
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 86
+    .line 78
     return-void
 .end method
 
@@ -35,7 +35,7 @@
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 42
     iget-object v0, p0, Lcom/android/emailcommon/internet/BinaryTempFileBody;->mFile:Ljava/io/File;
 
     return-object v0
@@ -52,7 +52,7 @@
     .end annotation
 
     .prologue
-    .line 67
+    .line 62
     :try_start_0
     new-instance v1, Lcom/android/emailcommon/internet/BinaryTempFileBody$BinaryTempFileBodyInputStream;
 
@@ -68,11 +68,11 @@
 
     return-object v1
 
-    .line 68
+    .line 64
     :catch_d
     move-exception v0
 
-    .line 69
+    .line 65
     .local v0, ioe:Ljava/io/IOException;
     new-instance v1, Lcom/android/emailcommon/mail/MessagingException;
 
@@ -92,7 +92,7 @@
     .end annotation
 
     .prologue
-    .line 60
+    .line 55
     const-string v0, "body"
 
     const/4 v1, 0x0
@@ -107,12 +107,12 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/internet/BinaryTempFileBody;->mFile:Ljava/io/File;
 
-    .line 61
+    .line 56
     iget-object v0, p0, Lcom/android/emailcommon/internet/BinaryTempFileBody;->mFile:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->deleteOnExit()V
 
-    .line 62
+    .line 57
     new-instance v0, Ljava/io/FileOutputStream;
 
     iget-object v1, p0, Lcom/android/emailcommon/internet/BinaryTempFileBody;->mFile:Ljava/io/File;
@@ -120,23 +120,6 @@
     invoke-direct {v0, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
     return-object v0
-.end method
-
-.method public writeTo(Landroid/content/Context;JLjava/io/OutputStream;)V
-    .registers 5
-    .parameter "context"
-    .parameter "messageId"
-    .parameter "out"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 84
-    return-void
 .end method
 
 .method public writeTo(Ljava/io/OutputStream;)V
@@ -150,12 +133,12 @@
     .end annotation
 
     .prologue
-    .line 74
+    .line 70
     invoke-virtual {p0}, Lcom/android/emailcommon/internet/BinaryTempFileBody;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v1
 
-    .line 75
+    .line 71
     .local v1, in:Ljava/io/InputStream;
     new-instance v0, Landroid/util/Base64OutputStream;
 
@@ -163,18 +146,18 @@
 
     invoke-direct {v0, p1, v2}, Landroid/util/Base64OutputStream;-><init>(Ljava/io/OutputStream;I)V
 
-    .line 76
+    .line 73
     .local v0, base64Out:Landroid/util/Base64OutputStream;
     invoke-static {v1, v0}, Lorg/apache/commons/io/IOUtils;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)I
 
-    .line 77
+    .line 74
     invoke-virtual {v0}, Landroid/util/Base64OutputStream;->close()V
 
-    .line 78
+    .line 75
     iget-object v2, p0, Lcom/android/emailcommon/internet/BinaryTempFileBody;->mFile:Ljava/io/File;
 
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    .line 79
+    .line 76
     return-void
 .end method

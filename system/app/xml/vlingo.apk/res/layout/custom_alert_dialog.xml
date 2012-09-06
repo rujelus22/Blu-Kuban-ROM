@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/parentPanel" android:background="@drawable/listening_background" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/home_title" android:background="@drawable/header_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <Button android:layout_gravity="center" android:id="@id/title_button" android:background="@drawable/vlingo_logo" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-    </LinearLayout>
-    <ListView android:id="@id/list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:cacheColorHint="#00000000" />
-</LinearLayout>

@@ -5,8 +5,8 @@
         <item quantity="one">%1$d tulos</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">Tilille %2$s löytyi %1$d päivitystä.</item>
-        <item quantity="one">Tilille %2$s löytyi %1$d päivitys.</item>
+        <item quantity="other">Löytyi %1$d päivitystä.</item>
+        <item quantity="one">Löytyi %1$d päivitys.</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">%1$s käyttäjää antoi tälle +1.</item>

@@ -3,6 +3,14 @@
 .source "DownloadQueue.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/android/finsky/download/DownloadQueue$RunningDownload;
+    }
+.end annotation
+
+
 # virtual methods
 .method public abstract add(Lcom/google/android/finsky/download/InternalDownload;)V
 .end method
@@ -16,35 +24,20 @@
 .method public abstract cancel(Lcom/google/android/finsky/download/Download;)V
 .end method
 
-.method public abstract cancelAll()V
+.method public abstract getByPackageName(Ljava/lang/String;)Lcom/google/android/finsky/download/Download;
 .end method
 
-.method public abstract getAllDownloads()Ljava/util/Collection;
+.method public abstract getRunningUris()Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
             "Ljava/util/Collection",
             "<",
-            "Lcom/google/android/finsky/download/Download;",
+            "Lcom/google/android/finsky/download/DownloadQueue$RunningDownload;",
             ">;"
         }
     .end annotation
 .end method
 
-.method public abstract getByPackageName(Ljava/lang/String;)Lcom/google/android/finsky/download/Download;
-.end method
-
-.method public abstract getDownloadByUrl(Ljava/lang/String;)Lcom/google/android/finsky/download/Download;
-.end method
-
-.method public abstract getNotificationHelper()Lcom/google/android/finsky/utils/Notifier;
-.end method
-
-.method public abstract getUriUrlMap()Lcom/google/android/finsky/download/DownloadUriUrlMap;
-.end method
-
-.method public abstract removeListener(Lcom/google/android/finsky/download/DownloadQueueListener;)V
-.end method
-
-.method public abstract setDownloadState(Lcom/google/android/finsky/download/InternalDownload;Lcom/google/android/finsky/download/Download$DownloadState;)V
+.method public abstract release(Landroid/net/Uri;)V
 .end method

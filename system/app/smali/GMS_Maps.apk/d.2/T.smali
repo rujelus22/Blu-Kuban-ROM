@@ -1,47 +1,14 @@
-.class Ld/T;
+.class interface abstract Ld/t;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ld/aB;
-
-
-# static fields
-.field private static final a:Ld/T;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    new-instance v0, Ld/T;
-
-    invoke-direct {v0}, Ld/T;-><init>()V
-
-    sput-object v0, Ld/T;->a:Ld/T;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .registers 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static a()Ld/T;
-    .registers 1
-
-    sget-object v0, Ld/T;->a:Ld/T;
-
-    return-object v0
-.end method
+.source "SourceFile"
 
 
 # virtual methods
-.method public a(Ljava/util/List;)V
-    .registers 2
+.method public abstract a(I)Ljava/lang/Object;
+.end method
 
-    return-void
+.method public abstract a(Ljava/lang/String;I)Ljava/util/List;
+.end method
+
+.method public abstract a(IILandroid/os/Bundle;)Z
 .end method

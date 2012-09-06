@@ -242,18 +242,18 @@ frage"</b></string>
     <string name="account_intro_recommended_title">Interesse an Google?</string>
     <string name="common_message">"Mit einem Google-Konto können Sie
 
-"<li><ul>alle Informationen aus sämtlichen Quellen anzeigen und ordnen,</ul></li>"
+"<ul><li>alle Informationen aus sämtlichen Quellen anzeigen und ordnen,</li></ul>"
 
-"<li><ul>eine automatische Sicherung Ihrer Daten erstellen und</ul></li>"
+"<ul><li>eine automatische Sicherung Ihrer Daten erstellen und</li></ul>"
 
-"<li><ul>Google-Dienste verwenden - ganz egal, wo Sie sich gerade befinden.</ul></li></string>
+"<ul><li>Google-Dienste verwenden - ganz egal, wo Sie sich gerade befinden.</li></ul></string>
     <string name="add_account_message">" Sie können mehrere Google-Konten verwenden, zum Beispiel ein privates und ein geschäftliches Konto. Tippen Sie auf "<b>Anmelden</b> oder <b>Konto erstellen</b>, um ein neues Konto hinzuzufügen.</string>
     <string name="account_intro_default_message">Nie wieder wichtige Informationen verlieren: Mit einem Google-Konto werden Ihre Daten gesichert.</string>
     <string name="account_intro_custom_endtext">Haben Sie bereits %s? Jetzt anmelden.</string>
     <string name="account_intro_simple_message">Möchten Sie ein vorhandenes Konto hinzufügen oder ein neues Konto erstellen?</string>
     <string name="learn_more_title">Weitere Informationen</string>
     <string name="learn_more_account_intro">"Mit einem Google-Konto können Sie
-"<li><ul>alle Informationen aus sämtlichen Quellen anzeigen und ordnen,<li>eine automatische Sicherung Ihrer Daten wie E-Mails, Kontakte, Musik und Bilder erstellen und</li><li>Google-Dienste wie Google Kontakte, Google Kalender, Google Maps und vieles mehr verwenden - ganz egal, wo Sie sich gerade befinden.</li></ul></li></string>
+"<ul><li>alle Informationen aus sämtlichen Quellen anzeigen und ordnen,<li>eine automatische Sicherung Ihrer Daten wie E-Mails, Kontakte, Musik und Bilder erstellen und</li><li>Google-Dienste wie Google Kontakte, Google Kalender, Google Maps und vieles mehr verwenden - ganz egal, wo Sie sich gerade befinden.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Über Google-Konten</string>
     <string name="learn_more_web_history">"Das Webprotokoll passt die Suchergebnisse auf der Grundlage Ihrer Suchanfragen und besuchten Websites an und ermöglicht Ihnen so eine personalisierte Google-Nutzung.
 

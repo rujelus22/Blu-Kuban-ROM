@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 145
+    .line 73
     invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
     return-void
@@ -16,24 +16,19 @@
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
-    .registers 5
-    .parameter
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;)V
+    .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 148
-    const-class v0, Lcom/google/android/youtube/core/model/Playlist$Builder;
+    .line 76
+    new-instance v0, Lcom/google/android/youtube/core/model/LiveEvent$Builder;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-direct {v0}, Lcom/google/android/youtube/core/model/LiveEvent$Builder;-><init>()V
 
-    move-result-object v0
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->offer(Ljava/lang/Object;)Z
 
-    check-cast v0, Lcom/google/android/youtube/core/model/Playlist$Builder;
-
-    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/Playlist$Builder;->title(Ljava/lang/String;)Lcom/google/android/youtube/core/model/Playlist$Builder;
-
-    .line 149
+    .line 77
     return-void
 .end method

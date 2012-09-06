@@ -33,20 +33,20 @@
     .registers 2
 
     .prologue
-    .line 11691
+    .line 11945
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 12177
+    .line 12443
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->countries_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries;
 
-    .line 12214
+    .line 12481
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->cachedSize:I
 
-    .line 11691
+    .line 11945
     return-void
 .end method
 
@@ -56,15 +56,15 @@
     .registers 2
 
     .prologue
-    .line 12216
+    .line 12484
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 12218
+    .line 12486
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->getSerializedSize()I
 
-    .line 12220
+    .line 12488
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->cachedSize:I
 
@@ -75,7 +75,7 @@
     .registers 2
 
     .prologue
-    .line 12179
+    .line 12445
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->countries_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries;
 
     return-object v0
@@ -85,10 +85,10 @@
     .registers 4
 
     .prologue
-    .line 12224
+    .line 12493
     const/4 v0, 0x0
 
-    .line 12225
+    .line 12494
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->hasCountries()Z
 
@@ -96,7 +96,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 12226
+    .line 12495
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->getCountries()Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries;
@@ -109,11 +109,11 @@
 
     add-int/2addr v0, v1
 
-    .line 12229
+    .line 12498
     :cond_11
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->cachedSize:I
 
-    .line 12230
+    .line 12499
     return v0
 .end method
 
@@ -121,7 +121,7 @@
     .registers 2
 
     .prologue
-    .line 12178
+    .line 12444
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->hasCountries:Z
 
     return v0
@@ -137,46 +137,46 @@
     .end annotation
 
     .prologue
-    .line 12237
+    .line 12507
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 12238
+    .line 12508
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1c
 
-    .line 12242
+    .line 12512
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 12243
+    .line 12513
     :sswitch_d
     return-object p0
 
-    .line 12248
+    .line 12518
     :sswitch_e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries;-><init>()V
 
-    .line 12249
+    .line 12519
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries;
     const/4 v2, 0x1
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readGroup(Lcom/google/protobuf/micro/MessageMicro;I)V
 
-    .line 12250
+    .line 12520
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->setCountries(Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;
 
     goto :goto_0
 
-    .line 12238
+    .line 12508
     nop
 
     :sswitch_data_1c
@@ -196,7 +196,7 @@
     .end annotation
 
     .prologue
-    .line 11689
+    .line 11943
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;
 
     move-result-object v0
@@ -209,26 +209,26 @@
     .parameter "value"
 
     .prologue
-    .line 12181
+    .line 12447
     if-nez p1, :cond_8
 
-    .line 12182
+    .line 12448
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 12184
+    .line 12450
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->hasCountries:Z
 
-    .line 12185
+    .line 12451
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->countries_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries;
 
-    .line 12186
+    .line 12452
     return-object p0
 .end method
 
@@ -242,14 +242,14 @@
     .end annotation
 
     .prologue
-    .line 12209
+    .line 12476
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->hasCountries()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 12210
+    .line 12477
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto;->getCountries()Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries;
@@ -258,7 +258,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeGroup(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 12212
+    .line 12479
     :cond_e
     return-void
 .end method

@@ -61,28 +61,6 @@
     .end annotation
 .end field
 
-.field public static CONTENT_RATING:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/finsky/config/PreferenceFile$SharedPreference",
-            "<",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static DIRECT_DOWNLOAD_KEY:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/finsky/config/PreferenceFile$SharedPreference",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field private static final EMPTY_STRING_ARRAY:[Ljava/lang/String;
 
 .field public static GL_DRIVER_CRASHED:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
@@ -140,78 +118,12 @@
     .end annotation
 .end field
 
-.field public static LAST_RECONSTRUCT_TIMESTAMP:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/finsky/config/PreferenceFile$SharedPreference",
-            "<",
-            "Ljava/lang/Long;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static LAST_UPDATE_CHECK_TIME:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/finsky/config/PreferenceFile$SharedPreference",
-            "<",
-            "Ljava/lang/Long;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field public static NOTIFY_UPDATES:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/finsky/config/PreferenceFile$SharedPreference",
             "<",
             "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static PENDING_RESTORE_ACCOUNT:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/finsky/config/PreferenceFile$SharedPreference",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static PENDING_RESTORE_AID:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/finsky/config/PreferenceFile$SharedPreference",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static PIN_CODE:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/finsky/config/PreferenceFile$SharedPreference",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static RECONCILED_VERSION:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/finsky/config/PreferenceFile$SharedPreference",
-            "<",
-            "Ljava/lang/Integer;",
             ">;"
         }
     .end annotation
@@ -228,30 +140,17 @@
     .end annotation
 .end field
 
-.field public static SEND_CONTENT_RATING:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/finsky/config/PreferenceFile$SharedPreference",
-            "<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field private static sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .registers 6
 
     .prologue
-    const-wide/16 v6, 0x0
+    const/4 v1, 0x0
 
     const/4 v2, 0x1
-
-    const/4 v1, 0x0
 
     const/4 v3, 0x0
 
@@ -302,22 +201,7 @@
 
     sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
-    .line 47
-    sget-object v4, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
-
-    const-string v5, "ddl_key"
-
-    move-object v0, v1
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {v4, v5, v0}, Lcom/google/android/finsky/config/PreferenceFile;->value(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->DIRECT_DOWNLOAD_KEY:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    .line 55
+    .line 51
     sget-object v4, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
     const-string v5, "cached_gl_extensions"
@@ -332,7 +216,7 @@
 
     sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->CACHED_GL_EXTENSIONS:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
-    .line 64
+    .line 60
     sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
     const-string v4, "gl_driver_crashed"
@@ -347,7 +231,7 @@
 
     sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->GL_DRIVER_CRASHED:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
-    .line 68
+    .line 64
     sget-object v4, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
     const-string v5, "last_build_fingerprint"
@@ -362,22 +246,7 @@
 
     sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->LAST_BUILD_FINGERPRINT:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
-    .line 72
-    sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
-
-    const-string v4, "reconciled_version"
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Lcom/google/android/finsky/config/PreferenceFile;->value(Ljava/lang/String;Ljava/lang/Integer;)Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->RECONCILED_VERSION:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    .line 102
+    .line 94
     sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
     const-string v4, "finsky_backed_up"
@@ -392,85 +261,10 @@
 
     sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->BACKED_UP:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
-    .line 110
-    sget-object v4, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
-
-    const-string v5, "finsky_restored_android_id"
-
-    move-object v0, v1
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {v4, v5, v0}, Lcom/google/android/finsky/config/PreferenceFile;->value(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->RESTORED_ANDROID_ID:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    .line 117
+    .line 102
     sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
-    const-string v4, "last_reconstruct_timestamp"
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Lcom/google/android/finsky/config/PreferenceFile;->value(Ljava/lang/String;Ljava/lang/Long;)Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->LAST_RECONSTRUCT_TIMESTAMP:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    .line 124
-    sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
-
-    const-string v4, "last_update_check_timestamp"
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Lcom/google/android/finsky/config/PreferenceFile;->value(Ljava/lang/String;Ljava/lang/Long;)Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->LAST_UPDATE_CHECK_TIME:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    .line 132
-    sget-object v4, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
-
-    const-string v5, "pending_restore_aid"
-
-    move-object v0, v1
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {v4, v5, v0}, Lcom/google/android/finsky/config/PreferenceFile;->value(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->PENDING_RESTORE_AID:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    .line 139
-    sget-object v4, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
-
-    const-string v5, "pending_restore_account"
-
-    move-object v0, v1
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {v4, v5, v0}, Lcom/google/android/finsky/config/PreferenceFile;->value(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->PENDING_RESTORE_ACCOUNT:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    .line 143
-    sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
-
-    const-string v4, "pin_code"
+    const-string v4, "finsky_restored_android_id"
 
     check-cast v1, Ljava/lang/String;
 
@@ -478,41 +272,9 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->PIN_CODE:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
+    sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->RESTORED_ANDROID_ID:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
-    .line 146
-    sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
-
-    const-string v1, "content_rating"
-
-    const/4 v4, -0x1
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v1, v4}, Lcom/google/android/finsky/config/PreferenceFile;->value(Ljava/lang/String;Ljava/lang/Integer;)Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->CONTENT_RATING:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    .line 153
-    sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
-
-    const-string v1, "send_content_rating"
-
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v1, v4}, Lcom/google/android/finsky/config/PreferenceFile;->value(Ljava/lang/String;Ljava/lang/Boolean;)Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->SEND_CONTENT_RATING:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    .line 161
+    .line 110
     sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
     const-string v1, "ads_interest_based"
@@ -527,12 +289,14 @@
 
     sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->INTEREST_BASED_ADS_ENABLED:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
-    .line 168
+    .line 117
     sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
     const-string v1, "last_metadata_warning_timestamp"
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    const-wide/16 v4, 0x0
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v4
 
@@ -542,7 +306,7 @@
 
     sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->LAST_METADATA_WARNING_TIMESTAMP:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
-    .line 172
+    .line 121
     sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
     const-string v1, "notify_updates"
@@ -557,7 +321,7 @@
 
     sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->NOTIFY_UPDATES:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
-    .line 177
+    .line 126
     sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
     const-string v1, "update_over_wifi_only"
@@ -572,7 +336,7 @@
 
     sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->AUTO_UPDATE_WIFI_ONLY:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
-    .line 184
+    .line 133
     sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
     const-string v1, "user_notified_about_auto_update"
@@ -587,7 +351,7 @@
 
     sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->HAS_SEEN_AUTO_UPDATE_DEFAULT:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
-    .line 190
+    .line 139
     sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
     const-string v1, "auto_update_default"
@@ -602,7 +366,7 @@
 
     sput-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->AUTO_UPDATE_BY_DEFAULT:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
-    .line 193
+    .line 142
     sget-object v1, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
     const-string v4, "auto_add_shortcuts"
@@ -611,11 +375,11 @@
 
     const/16 v5, 0xb
 
-    if-lt v0, v5, :cond_155
+    if-lt v0, v5, :cond_da
 
     move v0, v2
 
-    :goto_14a
+    :goto_cf
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -628,10 +392,10 @@
 
     return-void
 
-    :cond_155
+    :cond_da
     move v0, v3
 
-    goto :goto_14a
+    goto :goto_cf
 .end method
 
 .method public constructor <init>()V
@@ -650,7 +414,7 @@
     .parameter "accountName"
 
     .prologue
-    .line 200
+    .line 149
     move-object v1, p0
 
     .local v1, arr$:[Landroid/accounts/Account;
@@ -665,7 +429,7 @@
 
     aget-object v0, v1, v2
 
-    .line 201
+    .line 150
     .local v0, account:Landroid/accounts/Account;
     iget-object v4, v0, Landroid/accounts/Account;->name:Ljava/lang/String;
 
@@ -675,22 +439,22 @@
 
     if-eqz v4, :cond_11
 
-    .line 202
+    .line 151
     const/4 v4, 0x1
 
-    .line 206
+    .line 155
     .end local v0           #account:Landroid/accounts/Account;
     :goto_10
     return v4
 
-    .line 200
+    .line 149
     .restart local v0       #account:Landroid/accounts/Account;
     :cond_11
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
 
-    .line 206
+    .line 155
     .end local v0           #account:Landroid/accounts/Account;
     :cond_14
     const/4 v4, 0x0
@@ -714,7 +478,7 @@
     .end annotation
 
     .prologue
-    .line 211
+    .line 160
     sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -748,106 +512,6 @@
     return-object v0
 .end method
 
-.method public static getLastCheckinHashProperty(Ljava/lang/String;)Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-    .registers 4
-    .parameter "account"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            ")",
-            "Lcom/google/android/finsky/config/PreferenceFile$SharedPreference",
-            "<",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 77
-    sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "last_checkin_hash_"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/config/PreferenceFile;->value(Ljava/lang/String;Ljava/lang/Integer;)Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static getLastSystemAppsHashProperty(Ljava/lang/String;)Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-    .registers 4
-    .parameter "account"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            ")",
-            "Lcom/google/android/finsky/config/PreferenceFile$SharedPreference",
-            "<",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 82
-    sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "last_systems_apps_hash_"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/config/PreferenceFile;->value(Ljava/lang/String;Ljava/lang/Integer;)Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public static getMainPrefs()Lcom/google/android/finsky/config/PreferenceFile;
     .registers 1
 
@@ -874,7 +538,7 @@
     .end annotation
 
     .prologue
-    .line 98
+    .line 90
     sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -924,7 +588,7 @@
     .end annotation
 
     .prologue
-    .line 90
+    .line 82
     sget-object v0, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -963,10 +627,10 @@
     .parameter "accounts"
 
     .prologue
-    .line 251
+    .line 200
     const/4 v4, 0x0
 
-    .line 253
+    .line 202
     .local v4, resultList:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     move-object v1, p0
 
@@ -982,7 +646,7 @@
 
     aget-object v0, v1, v2
 
-    .line 254
+    .line 203
     .local v0, account:Landroid/accounts/Account;
     iget-object v5, v0, Landroid/accounts/Account;->name:Ljava/lang/String;
 
@@ -996,37 +660,37 @@
 
     if-nez v5, :cond_20
 
-    .line 255
+    .line 204
     if-nez v4, :cond_1b
 
-    .line 256
+    .line 205
     const/4 v5, 0x1
 
     invoke-static {v5}, Lcom/google/android/finsky/utils/Lists;->newArrayList(I)Ljava/util/ArrayList;
 
     move-result-object v4
 
-    .line 258
+    .line 207
     :cond_1b
     iget-object v5, v0, Landroid/accounts/Account;->name:Ljava/lang/String;
 
     invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 253
+    .line 202
     :cond_20
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_4
 
-    .line 262
+    .line 211
     .end local v0           #account:Landroid/accounts/Account;
     :cond_23
     if-nez v4, :cond_28
 
-    .line 263
+    .line 212
     sget-object v5, Lcom/google/android/finsky/utils/VendingPreferences;->EMPTY_STRING_ARRAY:[Ljava/lang/String;
 
-    .line 265
+    .line 214
     :goto_27
     return-object v5
 
@@ -1051,30 +715,30 @@
     .parameter "accounts"
 
     .prologue
-    .line 219
+    .line 168
     sget-object v9, Lcom/google/android/finsky/utils/VendingPreferences;->sPrefs:Lcom/google/android/finsky/config/PreferenceFile;
 
     invoke-virtual {v9}, Lcom/google/android/finsky/config/PreferenceFile;->open()Landroid/content/SharedPreferences;
 
     move-result-object v8
 
-    .line 220
+    .line 169
     .local v8, prefsFile:Landroid/content/SharedPreferences;
     invoke-interface {v8}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
 
     move-result-object v1
 
-    .line 221
+    .line 170
     .local v1, all:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;*>;"
     invoke-interface {v8}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v4
 
-    .line 222
+    .line 171
     .local v4, editor:Landroid/content/SharedPreferences$Editor;
     const/4 v3, 0x0
 
-    .line 225
+    .line 174
     .local v3, dirty:Z
     invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
@@ -1099,7 +763,7 @@
 
     check-cast v6, Ljava/lang/String;
 
-    .line 226
+    .line 175
     .local v6, key:Ljava/lang/String;
     const-string v9, "account_exists_"
 
@@ -1109,7 +773,7 @@
 
     if-eqz v9, :cond_17
 
-    .line 227
+    .line 176
     const-string v9, "account_exists_"
 
     invoke-virtual {v9}, Ljava/lang/String;->length()I
@@ -1120,7 +784,7 @@
 
     move-result-object v0
 
-    .line 228
+    .line 177
     .local v0, account:Ljava/lang/String;
     invoke-static {p0, v0}, Lcom/google/android/finsky/utils/VendingPreferences;->contains([Landroid/accounts/Account;Ljava/lang/String;)Z
 
@@ -1128,15 +792,15 @@
 
     if-nez v9, :cond_17
 
-    .line 229
+    .line 178
     invoke-interface {v4, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 230
+    .line 179
     const/4 v3, 0x1
 
     goto :goto_17
 
-    .line 234
+    .line 183
     .end local v0           #account:Ljava/lang/String;
     .end local v6           #key:Ljava/lang/String;
     :cond_40
@@ -1144,7 +808,7 @@
 
     invoke-static {v4}, Lcom/google/android/finsky/config/PreferenceFile;->commit(Landroid/content/SharedPreferences$Editor;)Z
 
-    .line 237
+    .line 186
     :cond_45
     move-object v2, p0
 
@@ -1160,7 +824,7 @@
 
     aget-object v0, v2, v5
 
-    .line 238
+    .line 187
     .local v0, account:Landroid/accounts/Account;
     iget-object v9, v0, Landroid/accounts/Account;->name:Ljava/lang/String;
 
@@ -1174,7 +838,7 @@
 
     if-nez v9, :cond_66
 
-    .line 239
+    .line 188
     iget-object v9, v0, Landroid/accounts/Account;->name:Ljava/lang/String;
 
     invoke-static {v9}, Lcom/google/android/finsky/utils/VendingPreferences;->getAccountExists(Ljava/lang/String;)Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
@@ -1189,13 +853,13 @@
 
     invoke-virtual {v9, v10}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->put(Ljava/lang/Object;)V
 
-    .line 237
+    .line 186
     :cond_66
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_48
 
-    .line 242
+    .line 191
     .end local v0           #account:Landroid/accounts/Account;
     :cond_69
     return-void

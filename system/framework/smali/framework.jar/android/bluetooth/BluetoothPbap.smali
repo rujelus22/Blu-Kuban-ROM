@@ -12,7 +12,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field public static final PBAP_PREVIOUS_STATE:Ljava/lang/String; = "android.bluetooth.pbap.intent.PBAP_PREVIOUS_STATE"
 

@@ -3,12 +3,12 @@
 .source "MessagingController.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/Comparator;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/MessagingController;->searchOnServerSync(Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/emailcommon/provider/EmailContent$Mailbox;Ljava/lang/String;Lcom/android/email/MessagingListener;)V
+    value = Lcom/android/email/MessagingController;->searchMailboxImpl(JLcom/android/emailcommon/service/SearchParams;J)I
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,58 +16,104 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/Comparator",
+        "<",
+        "Lcom/android/email/MessagingController$SortableMessage;",
+        ">;"
+    }
+.end annotation
+
 
 # instance fields
 .field final synthetic this$0:Lcom/android/email/MessagingController;
 
-.field final synthetic val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-.field final synthetic val$folder:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-.field final synthetic val$searchText:Ljava/lang/String;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/email/MessagingController;Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/emailcommon/provider/EmailContent$Mailbox;Ljava/lang/String;)V
-    .registers 5
-    .parameter
-    .parameter
-    .parameter
+.method constructor <init>(Lcom/android/email/MessagingController;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 1290
+    .line 647
     iput-object p1, p0, Lcom/android/email/MessagingController$5;->this$0:Lcom/android/email/MessagingController;
 
-    iput-object p2, p0, Lcom/android/email/MessagingController$5;->val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iput-object p3, p0, Lcom/android/email/MessagingController$5;->val$folder:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iput-object p4, p0, Lcom/android/email/MessagingController$5;->val$searchText:Ljava/lang/String;
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .registers 5
+.method public compare(Lcom/android/email/MessagingController$SortableMessage;Lcom/android/email/MessagingController$SortableMessage;)I
+    .registers 7
+    .parameter "lhs"
+    .parameter "rhs"
 
     .prologue
-    .line 1292
-    iget-object v0, p0, Lcom/android/email/MessagingController$5;->this$0:Lcom/android/email/MessagingController;
+    .line 650
+    #getter for: Lcom/android/email/MessagingController$SortableMessage;->mUid:J
+    invoke-static {p1}, Lcom/android/email/MessagingController$SortableMessage;->access$600(Lcom/android/email/MessagingController$SortableMessage;)J
 
-    iget-object v1, p0, Lcom/android/email/MessagingController$5;->val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
+    move-result-wide v0
 
-    iget-object v2, p0, Lcom/android/email/MessagingController$5;->val$folder:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    #getter for: Lcom/android/email/MessagingController$SortableMessage;->mUid:J
+    invoke-static {p2}, Lcom/android/email/MessagingController$SortableMessage;->access$600(Lcom/android/email/MessagingController$SortableMessage;)J
 
-    iget-object v3, p0, Lcom/android/email/MessagingController$5;->val$searchText:Ljava/lang/String;
+    move-result-wide v2
 
-    #calls: Lcom/android/email/MessagingController;->synchronizeMailboxSearchOnServer(Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/emailcommon/provider/EmailContent$Mailbox;Ljava/lang/String;)V
-    invoke-static {v0, v1, v2, v3}, Lcom/android/email/MessagingController;->access$300(Lcom/android/email/MessagingController;Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/emailcommon/provider/EmailContent$Mailbox;Ljava/lang/String;)V
+    cmp-long v0, v0, v2
 
-    .line 1293
-    return-void
+    if-lez v0, :cond_e
+
+    const/4 v0, -0x1
+
+    :goto_d
+    return v0
+
+    :cond_e
+    #getter for: Lcom/android/email/MessagingController$SortableMessage;->mUid:J
+    invoke-static {p1}, Lcom/android/email/MessagingController$SortableMessage;->access$600(Lcom/android/email/MessagingController$SortableMessage;)J
+
+    move-result-wide v0
+
+    #getter for: Lcom/android/email/MessagingController$SortableMessage;->mUid:J
+    invoke-static {p2}, Lcom/android/email/MessagingController$SortableMessage;->access$600(Lcom/android/email/MessagingController$SortableMessage;)J
+
+    move-result-wide v2
+
+    cmp-long v0, v0, v2
+
+    if-gez v0, :cond_1c
+
+    const/4 v0, 0x1
+
+    goto :goto_d
+
+    :cond_1c
+    const/4 v0, 0x0
+
+    goto :goto_d
+.end method
+
+.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .registers 4
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 647
+    check-cast p1, Lcom/android/email/MessagingController$SortableMessage;
+
+    .end local p1
+    check-cast p2, Lcom/android/email/MessagingController$SortableMessage;
+
+    .end local p2
+    invoke-virtual {p0, p1, p2}, Lcom/android/email/MessagingController$5;->compare(Lcom/android/email/MessagingController$SortableMessage;Lcom/android/email/MessagingController$SortableMessage;)I
+
+    move-result v0
+
+    return v0
 .end method

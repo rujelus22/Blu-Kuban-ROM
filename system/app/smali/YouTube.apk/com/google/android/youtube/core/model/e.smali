@@ -4,108 +4,277 @@
 
 
 # instance fields
-.field private a:Ljava/lang/String;
+.field public final a:Ljava/lang/String;
 
-.field private b:Lcom/google/android/youtube/core/model/Event$Action;
+.field public final b:Ljava/lang/String;
 
-.field private c:Ljava/lang/String;
+.field public final c:Ljava/lang/String;
 
-.field private d:Ljava/lang/String;
-
-.field private e:Ljava/util/Date;
+.field public final d:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
-    .line 99
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 39
+    iput-object p1, p0, Lcom/google/android/youtube/core/model/e;->a:Ljava/lang/String;
+
+    .line 40
+    iput-object p2, p0, Lcom/google/android/youtube/core/model/e;->b:Ljava/lang/String;
+
+    .line 41
+    iput-object p3, p0, Lcom/google/android/youtube/core/model/e;->c:Ljava/lang/String;
+
+    .line 42
+    iput-object p4, p0, Lcom/google/android/youtube/core/model/e;->d:Ljava/lang/String;
+
+    .line 43
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcom/google/android/youtube/core/model/Event;
-    .registers 7
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
+    .parameter
 
     .prologue
-    .line 133
-    new-instance v0, Lcom/google/android/youtube/core/model/Event;
+    const/4 v1, 0x0
+
+    .line 47
+    instance-of v0, p1, Lcom/google/android/youtube/core/model/e;
+
+    if-eqz v0, :cond_36
+
+    move-object v0, p1
+
+    .line 48
+    check-cast v0, Lcom/google/android/youtube/core/model/e;
+
+    .line 49
+    if-eq p1, p0, :cond_32
+
+    iget-object v2, p0, Lcom/google/android/youtube/core/model/e;->a:Ljava/lang/String;
+
+    iget-object v3, v0, Lcom/google/android/youtube/core/model/e;->a:Ljava/lang/String;
+
+    invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_34
+
+    iget-object v2, p0, Lcom/google/android/youtube/core/model/e;->b:Ljava/lang/String;
+
+    iget-object v3, v0, Lcom/google/android/youtube/core/model/e;->b:Ljava/lang/String;
+
+    invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_34
+
+    iget-object v2, p0, Lcom/google/android/youtube/core/model/e;->c:Ljava/lang/String;
+
+    iget-object v3, v0, Lcom/google/android/youtube/core/model/e;->c:Ljava/lang/String;
+
+    invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_34
+
+    iget-object v2, p0, Lcom/google/android/youtube/core/model/e;->d:Ljava/lang/String;
+
+    iget-object v0, v0, Lcom/google/android/youtube/core/model/e;->d:Ljava/lang/String;
+
+    invoke-static {v2, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_34
+
+    :cond_32
+    const/4 v0, 0x1
+
+    .line 55
+    :goto_33
+    return v0
+
+    :cond_34
+    move v0, v1
+
+    .line 49
+    goto :goto_33
+
+    :cond_36
+    move v0, v1
+
+    .line 55
+    goto :goto_33
+.end method
+
+.method public final hashCode()I
+    .registers 4
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 60
+    iget-object v0, p0, Lcom/google/android/youtube/core/model/e;->a:Ljava/lang/String;
+
+    if-eqz v0, :cond_35
+
+    iget-object v0, p0, Lcom/google/android/youtube/core/model/e;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :goto_b
+    add-int/lit16 v0, v0, -0x275
+
+    .line 62
+    mul-int/lit8 v2, v0, 0x25
+
+    iget-object v0, p0, Lcom/google/android/youtube/core/model/e;->b:Ljava/lang/String;
+
+    if-eqz v0, :cond_37
+
+    iget-object v0, p0, Lcom/google/android/youtube/core/model/e;->b:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :goto_19
+    add-int/2addr v0, v2
+
+    .line 63
+    mul-int/lit8 v2, v0, 0x25
+
+    iget-object v0, p0, Lcom/google/android/youtube/core/model/e;->c:Ljava/lang/String;
+
+    if-eqz v0, :cond_39
+
+    iget-object v0, p0, Lcom/google/android/youtube/core/model/e;->c:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :goto_26
+    add-int/2addr v0, v2
+
+    .line 64
+    mul-int/lit8 v0, v0, 0x25
+
+    iget-object v2, p0, Lcom/google/android/youtube/core/model/e;->d:Ljava/lang/String;
+
+    if-eqz v2, :cond_33
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/e;->d:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    :cond_33
+    add-int/2addr v0, v1
+
+    .line 65
+    return v0
+
+    :cond_35
+    move v0, v1
+
+    .line 60
+    goto :goto_b
+
+    :cond_37
+    move v0, v1
+
+    .line 62
+    goto :goto_19
+
+    :cond_39
+    move v0, v1
+
+    .line 63
+    goto :goto_26
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    .prologue
+    .line 70
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "{domain:"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/android/youtube/core/model/e;->a:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/youtube/core/model/e;->b:Lcom/google/android/youtube/core/model/Event$Action;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v3, p0, Lcom/google/android/youtube/core/model/e;->c:Ljava/lang/String;
+    move-result-object v0
 
-    iget-object v4, p0, Lcom/google/android/youtube/core/model/e;->d:Ljava/lang/String;
+    const-string v1, ",code:"
 
-    iget-object v5, p0, Lcom/google/android/youtube/core/model/e;->e:Ljava/util/Date;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/youtube/core/model/Event;-><init>(Ljava/lang/String;Lcom/google/android/youtube/core/model/Event$Action;Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)V
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/e;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ",location:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/e;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ",internalReason:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/e;->d:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "}"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
-.end method
-
-.method public final a(Lcom/google/android/youtube/core/model/Event$Action;)Lcom/google/android/youtube/core/model/e;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 113
-    iput-object p1, p0, Lcom/google/android/youtube/core/model/e;->b:Lcom/google/android/youtube/core/model/Event$Action;
-
-    .line 114
-    return-object p0
-.end method
-
-.method public final a(Ljava/lang/String;)Lcom/google/android/youtube/core/model/e;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 108
-    iput-object p1, p0, Lcom/google/android/youtube/core/model/e;->a:Ljava/lang/String;
-
-    .line 109
-    return-object p0
-.end method
-
-.method public final a(Ljava/util/Date;)Lcom/google/android/youtube/core/model/e;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 128
-    iput-object p1, p0, Lcom/google/android/youtube/core/model/e;->e:Ljava/util/Date;
-
-    .line 129
-    return-object p0
-.end method
-
-.method public final b(Ljava/lang/String;)Lcom/google/android/youtube/core/model/e;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 118
-    iput-object p1, p0, Lcom/google/android/youtube/core/model/e;->c:Ljava/lang/String;
-
-    .line 119
-    return-object p0
-.end method
-
-.method public final c(Ljava/lang/String;)Lcom/google/android/youtube/core/model/e;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 123
-    iput-object p1, p0, Lcom/google/android/youtube/core/model/e;->d:Ljava/lang/String;
-
-    .line 124
-    return-object p0
 .end method

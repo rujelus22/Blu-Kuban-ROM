@@ -294,7 +294,7 @@
     .prologue
     const/16 v14, 0x63
 
-    const v9, 0x7f020196
+    const v9, 0x7f020195
 
     const/4 v2, 0x0
 
@@ -713,7 +713,7 @@
     .parameter "l"
 
     .prologue
-    const v8, 0x7f020196
+    const v8, 0x7f020195
 
     .line 191
     if-nez p1, :cond_4c

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/ControllerResultUiThreadWrapper;->updateMailboxCallback(Lcom/android/emailcommon/mail/MessagingException;JJII)V
+    value = Lcom/android/email/ControllerResultUiThreadWrapper;->updateMailboxListCallback(Lcom/android/emailcommon/mail/MessagingException;JI)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,27 +22,21 @@
 
 .field final synthetic val$accountId:J
 
-.field final synthetic val$mailboxId:J
-
-.field final synthetic val$numNewMessages:I
-
 .field final synthetic val$progress:I
 
 .field final synthetic val$result:Lcom/android/emailcommon/mail/MessagingException;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JJII)V
-    .registers 9
-    .parameter
-    .parameter
+.method constructor <init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JI)V
+    .registers 6
     .parameter
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 132
+    .line 125
     .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper$6;,"Lcom/android/email/ControllerResultUiThreadWrapper.6;"
     iput-object p1, p0, Lcom/android/email/ControllerResultUiThreadWrapper$6;->this$0:Lcom/android/email/ControllerResultUiThreadWrapper;
 
@@ -50,13 +44,9 @@
 
     iput-wide p3, p0, Lcom/android/email/ControllerResultUiThreadWrapper$6;->val$accountId:J
 
-    iput-wide p5, p0, Lcom/android/email/ControllerResultUiThreadWrapper$6;->val$mailboxId:J
+    iput p5, p0, Lcom/android/email/ControllerResultUiThreadWrapper$6;->val$progress:I
 
-    iput p7, p0, Lcom/android/email/ControllerResultUiThreadWrapper$6;->val$progress:I
-
-    iput p8, p0, Lcom/android/email/ControllerResultUiThreadWrapper$6;->val$numNewMessages:I
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -64,10 +54,10 @@
 
 # virtual methods
 .method public run()V
-    .registers 9
+    .registers 6
 
     .prologue
-    .line 134
+    .line 127
     .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper$6;,"Lcom/android/email/ControllerResultUiThreadWrapper.6;"
     iget-object v0, p0, Lcom/android/email/ControllerResultUiThreadWrapper$6;->this$0:Lcom/android/email/ControllerResultUiThreadWrapper;
 
@@ -77,11 +67,11 @@
 
     if-nez v0, :cond_9
 
-    .line 138
+    .line 129
     :goto_8
     return-void
 
-    .line 136
+    .line 128
     :cond_9
     iget-object v0, p0, Lcom/android/email/ControllerResultUiThreadWrapper$6;->this$0:Lcom/android/email/ControllerResultUiThreadWrapper;
 
@@ -94,13 +84,9 @@
 
     iget-wide v2, p0, Lcom/android/email/ControllerResultUiThreadWrapper$6;->val$accountId:J
 
-    iget-wide v4, p0, Lcom/android/email/ControllerResultUiThreadWrapper$6;->val$mailboxId:J
+    iget v4, p0, Lcom/android/email/ControllerResultUiThreadWrapper$6;->val$progress:I
 
-    iget v6, p0, Lcom/android/email/ControllerResultUiThreadWrapper$6;->val$progress:I
-
-    iget v7, p0, Lcom/android/email/ControllerResultUiThreadWrapper$6;->val$numNewMessages:I
-
-    invoke-virtual/range {v0 .. v7}, Lcom/android/email/Controller$Result;->updateMailboxCallback(Lcom/android/emailcommon/mail/MessagingException;JJII)V
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/email/Controller$Result;->updateMailboxListCallback(Lcom/android/emailcommon/mail/MessagingException;JI)V
 
     goto :goto_8
 .end method

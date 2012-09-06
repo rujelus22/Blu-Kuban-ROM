@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/transition_config" android:visibility="invisible" android:layout_width="136.0px" android:layout_height="58.0px" android:layout_marginRight="16.0px" android:layout_marginBottom="53.0px" android:layout_alignParentRight="true" android:layout_alignParentBottom="true"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <Button android:textSize="22.0px" android:textColor="@color/white" android:id="@id/transition_time_button" android:background="@drawable/transition_done_selector" android:paddingBottom="6.0px" android:layout_width="136.0px" android:layout_height="58.0px" android:text="@string/done" />
-</LinearLayout>

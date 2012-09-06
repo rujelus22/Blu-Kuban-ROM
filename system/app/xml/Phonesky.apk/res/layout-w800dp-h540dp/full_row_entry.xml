@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/bucket_cell" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0"
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:finsky="http://schemas.android.com/apk/res/com.android.vending">
-    <include layout="@layout/base_grid_item" />
-</FrameLayout>

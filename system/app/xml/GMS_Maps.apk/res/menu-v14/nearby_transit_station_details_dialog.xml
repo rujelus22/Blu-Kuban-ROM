@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/seeMap" android:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_menu_directions" android:id="@id/get_directions" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_streetview" android:id="@id/street_view" android:showAsAction="always" />
+    <item android:id="@id/share" android:showAsAction="never" />
+    <item android:id="@id/search_nearby_stations" android:showAsAction="never" />
+    <item android:id="@id/manual_tile_prefetch" android:showAsAction="never" />
+    <item android:id="@id/agencyInfo" android:showAsAction="never" />
+</menu>

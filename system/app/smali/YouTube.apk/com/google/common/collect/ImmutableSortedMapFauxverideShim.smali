@@ -14,7 +14,7 @@
     return-void
 .end method
 
-.method public static builder()Lcom/google/common/collect/cn;
+.method public static builder()Lcom/google/common/collect/dy;
     .registers 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation

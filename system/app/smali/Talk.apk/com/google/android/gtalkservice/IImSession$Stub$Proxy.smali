@@ -28,7 +28,7 @@
 
     .prologue
     .line 496
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 497
     iput-object p1, p0, Lcom/google/android/gtalkservice/IImSession$Stub$Proxy;->mRemote:Landroid/os/IBinder;

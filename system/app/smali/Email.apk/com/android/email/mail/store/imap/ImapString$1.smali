@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 39
+    .line 40
     invoke-direct {p0}, Lcom/android/email/mail/store/imap/ImapString;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
     .registers 1
 
     .prologue
-    .line 45
+    .line 44
     return-void
 .end method
 
@@ -39,7 +39,7 @@
     .registers 3
 
     .prologue
-    .line 54
+    .line 51
     new-instance v0, Ljava/io/ByteArrayInputStream;
 
     invoke-static {}, Lcom/android/email/mail/store/imap/ImapString;->access$000()[B
@@ -55,7 +55,7 @@
     .registers 2
 
     .prologue
-    .line 49
+    .line 47
     const-string v0, ""
 
     return-object v0
@@ -65,7 +65,7 @@
     .registers 2
 
     .prologue
-    .line 59
+    .line 55
     const-string v0, ""
 
     return-object v0

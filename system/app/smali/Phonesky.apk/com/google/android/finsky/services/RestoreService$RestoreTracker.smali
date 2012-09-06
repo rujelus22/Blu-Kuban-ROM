@@ -3,7 +3,7 @@
 .source "RestoreService.java"
 
 # interfaces
-.implements Lcom/google/android/finsky/download/DownloadQueueListener;
+.implements Lcom/google/android/finsky/installer/InstallerListener;
 
 
 # annotations
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field private final mAllDownloads:Ljava/util/Set;
+.field private final mAccounts:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set",
@@ -29,7 +29,16 @@
     .end annotation
 .end field
 
-.field private final mCheckinListener:Lcom/google/android/finsky/services/CheckinAssetStoreListener;
+.field private final mAllDownloads:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private final mDownloads:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
@@ -50,104 +59,345 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/finsky/services/RestoreService;Lcom/google/android/finsky/services/CheckinAssetStoreListener;)V
-    .registers 5
+.method private constructor <init>(Lcom/google/android/finsky/services/RestoreService;)V
+    .registers 4
     .parameter
-    .parameter "checkinListener"
 
     .prologue
     const/4 v1, 0x0
 
-    .line 80
+    .line 87
     iput-object p1, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->this$0:Lcom/google/android/finsky/services/RestoreService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 88
-    invoke-static {}, Lcom/google/android/finsky/utils/Sets;->newHashSet()Ljava/util/HashSet;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mDownloads:Ljava/util/Set;
 
     .line 95
     invoke-static {}, Lcom/google/android/finsky/utils/Sets;->newHashSet()Ljava/util/HashSet;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mAllDownloads:Ljava/util/Set;
+    iput-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mAccounts:Ljava/util/Set;
 
     .line 98
+    invoke-static {}, Lcom/google/android/finsky/utils/Sets;->newHashSet()Ljava/util/HashSet;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mDownloads:Ljava/util/Set;
+
+    .line 105
+    invoke-static {}, Lcom/google/android/finsky/utils/Sets;->newHashSet()Ljava/util/HashSet;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mAllDownloads:Ljava/util/Set;
+
+    .line 108
     iput v1, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mSucceeded:I
 
-    .line 101
+    .line 111
     iput v1, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mFailed:I
 
-    .line 81
-    iput-object p2, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mCheckinListener:Lcom/google/android/finsky/services/CheckinAssetStoreListener;
+    return-void
+.end method
 
-    .line 82
+.method synthetic constructor <init>(Lcom/google/android/finsky/services/RestoreService;Lcom/google/android/finsky/services/RestoreService$1;)V
+    .registers 3
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 87
+    invoke-direct {p0, p1}, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;-><init>(Lcom/google/android/finsky/services/RestoreService;)V
+
     return-void
 .end method
 
 
 # virtual methods
 .method public finish(Ljava/lang/String;Z)V
-    .registers 8
+    .registers 4
     .parameter "packageName"
     .parameter "success"
 
     .prologue
-    const/4 v4, 0x0
-
-    .line 123
+    .line 150
     iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mDownloads:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_18
 
-    .line 124
+    .line 151
     iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mDownloads:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 125
-    if-eqz p2, :cond_4b
+    .line 152
+    if-eqz p2, :cond_19
 
-    .line 126
+    .line 153
     iget v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mSucceeded:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mSucceeded:I
 
-    .line 131
-    :goto_16
+    .line 157
+    :goto_15
+    invoke-virtual {p0}, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->stopServiceIfDone()V
+
+    .line 159
+    :cond_18
+    return-void
+
+    .line 155
+    :cond_19
+    iget v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mFailed:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mFailed:I
+
+    goto :goto_15
+.end method
+
+.method public finishAccount(Ljava/lang/String;)V
+    .registers 3
+    .parameter "accountName"
+
+    .prologue
+    .line 126
+    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mAccounts:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    .line 127
+    invoke-virtual {p0}, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->stopServiceIfDone()V
+
+    .line 128
+    return-void
+.end method
+
+.method public isAccountInFlight(Ljava/lang/String;)Z
+    .registers 3
+    .parameter "accountName"
+
+    .prologue
+    .line 134
+    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mAccounts:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isTracked(Ljava/lang/String;)Z
+    .registers 3
+    .parameter "packageName"
+
+    .prologue
+    .line 176
+    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mAllDownloads:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public onInstallPackageEvent(Ljava/lang/String;Lcom/google/android/finsky/installer/InstallerListener$InstallerPackageEvent;I)V
+    .registers 9
+    .parameter "packageName"
+    .parameter "event"
+    .parameter "statusCode"
+
+    .prologue
+    const/4 v2, 0x2
+
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    .line 183
+    sget-object v0, Lcom/google/android/finsky/services/RestoreService$3;->$SwitchMap$com$google$android$finsky$installer$InstallerListener$InstallerPackageEvent:[I
+
+    invoke-virtual {p2}, Lcom/google/android/finsky/installer/InstallerListener$InstallerPackageEvent;->ordinal()I
+
+    move-result v1
+
+    aget v0, v0, v1
+
+    packed-switch v0, :pswitch_data_50
+
+    .line 211
+    :goto_e
+    :pswitch_e
+    return-void
+
+    .line 192
+    :pswitch_f
+    const-string v0, "Restore package %s download cancelled"
+
+    new-array v1, v4, [Ljava/lang/Object;
+
+    aput-object p1, v1, v3
+
+    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 193
+    invoke-virtual {p0, p1, v3}, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->finish(Ljava/lang/String;Z)V
+
+    goto :goto_e
+
+    .line 196
+    :pswitch_1c
+    const-string v0, "Restore package %s download error %d"
+
+    new-array v1, v2, [Ljava/lang/Object;
+
+    aput-object p1, v1, v3
+
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v1, v4
+
+    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 197
+    invoke-virtual {p0, p1, v3}, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->finish(Ljava/lang/String;Z)V
+
+    goto :goto_e
+
+    .line 200
+    :pswitch_2f
+    const-string v0, "Restore package %s install error %d"
+
+    new-array v1, v2, [Ljava/lang/Object;
+
+    aput-object p1, v1, v3
+
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v1, v4
+
+    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 201
+    invoke-virtual {p0, p1, v3}, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->finish(Ljava/lang/String;Z)V
+
+    goto :goto_e
+
+    .line 204
+    :pswitch_42
+    const-string v0, "Restore package %s install complete"
+
+    new-array v1, v4, [Ljava/lang/Object;
+
+    aput-object p1, v1, v3
+
+    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 205
+    invoke-virtual {p0, p1, v4}, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->finish(Ljava/lang/String;Z)V
+
+    goto :goto_e
+
+    .line 183
+    nop
+
+    :pswitch_data_50
+    .packed-switch 0x1
+        :pswitch_e
+        :pswitch_e
+        :pswitch_e
+        :pswitch_e
+        :pswitch_f
+        :pswitch_1c
+        :pswitch_2f
+        :pswitch_42
+    .end packed-switch
+.end method
+
+.method public start(Ljava/lang/String;)V
+    .registers 3
+    .parameter "packageName"
+
+    .prologue
+    .line 141
+    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mDownloads:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    .line 142
+    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mAllDownloads:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    .line 143
+    return-void
+.end method
+
+.method public startAccount(Ljava/lang/String;)V
+    .registers 3
+    .parameter "accountName"
+
+    .prologue
+    .line 117
+    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mAccounts:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    .line 118
+    return-void
+.end method
+
+.method public stopServiceIfDone()V
+    .registers 5
+
+    .prologue
+    .line 162
     iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mDownloads:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_35
 
-    .line 132
+    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mAccounts:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_35
+
+    .line 163
     const-string v0, "Restore complete with %d success and %d failed."
 
     const/4 v1, 0x2
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    iget v2, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mSucceeded:I
+    const/4 v2, 0x0
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget v3, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mSucceeded:I
 
-    move-result-object v2
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    aput-object v2, v1, v4
+    move-result-object v3
+
+    aput-object v3, v1, v2
 
     const/4 v2, 0x1
 
@@ -161,276 +411,19 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 135
-    const-string v0, "Resuming checkin listener as restore completes."
-
-    new-array v1, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 136
-    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mCheckinListener:Lcom/google/android/finsky/services/CheckinAssetStoreListener;
-
-    const-string v1, "RestoreService"
-
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/services/CheckinAssetStoreListener;->resume(Ljava/lang/String;)V
-
-    .line 139
+    .line 165
     iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->this$0:Lcom/google/android/finsky/services/RestoreService;
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/services/RestoreService;->stopSelf()V
+    iget-object v1, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->this$0:Lcom/google/android/finsky/services/RestoreService;
 
-    .line 142
-    :cond_4a
-    return-void
+    #getter for: Lcom/google/android/finsky/services/RestoreService;->mServiceStartId:I
+    invoke-static {v1}, Lcom/google/android/finsky/services/RestoreService;->access$100(Lcom/google/android/finsky/services/RestoreService;)I
 
-    .line 128
-    :cond_4b
-    iget v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mFailed:I
+    move-result v1
 
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mFailed:I
-
-    goto :goto_16
-.end method
-
-.method public isTracked(Ljava/lang/String;)Z
-    .registers 3
-    .parameter "packageName"
-
-    .prologue
-    .line 151
-    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mAllDownloads:Ljava/util/Set;
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public onAdd(Lcom/google/android/finsky/download/Download;)V
-    .registers 2
-    .parameter "download"
-
-    .prologue
-    .line 196
-    return-void
-.end method
-
-.method public onCancel(Lcom/google/android/finsky/download/Download;)V
-    .registers 7
-    .parameter "download"
-
-    .prologue
-    const/4 v4, 0x0
-
-    .line 172
-    invoke-interface {p1}, Lcom/google/android/finsky/download/Download;->getPackageProperties()Lcom/google/android/finsky/download/Download$PackageProperties;
-
-    move-result-object v0
-
-    .line 173
-    .local v0, properties:Lcom/google/android/finsky/download/Download$PackageProperties;
-    if-nez v0, :cond_8
-
-    .line 178
-    :goto_7
-    return-void
-
-    .line 176
-    :cond_8
-    const-string v1, "Restore package %s download cancelled"
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    iget-object v3, v0, Lcom/google/android/finsky/download/Download$PackageProperties;->packageName:Ljava/lang/String;
-
-    aput-object v3, v2, v4
-
-    invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 177
-    iget-object v1, v0, Lcom/google/android/finsky/download/Download$PackageProperties;->packageName:Ljava/lang/String;
-
-    invoke-virtual {p0, v1, v4}, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->finish(Ljava/lang/String;Z)V
-
-    goto :goto_7
-.end method
-
-.method public onComplete(Lcom/google/android/finsky/download/Download;)V
-    .registers 8
-    .parameter "download"
-
-    .prologue
-    const/4 v5, 0x1
-
-    .line 162
-    invoke-interface {p1}, Lcom/google/android/finsky/download/Download;->getPackageProperties()Lcom/google/android/finsky/download/Download$PackageProperties;
-
-    move-result-object v0
-
-    .line 163
-    .local v0, properties:Lcom/google/android/finsky/download/Download$PackageProperties;
-    if-nez v0, :cond_8
-
-    .line 168
-    :goto_7
-    return-void
-
-    .line 166
-    :cond_8
-    const-string v1, "Restore package %s download complete"
-
-    new-array v2, v5, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    iget-object v4, v0, Lcom/google/android/finsky/download/Download$PackageProperties;->packageName:Ljava/lang/String;
-
-    aput-object v4, v2, v3
-
-    invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/services/RestoreService;->stopSelf(I)V
 
     .line 167
-    iget-object v1, v0, Lcom/google/android/finsky/download/Download$PackageProperties;->packageName:Ljava/lang/String;
-
-    invoke-virtual {p0, v1, v5}, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->finish(Ljava/lang/String;Z)V
-
-    goto :goto_7
-.end method
-
-.method public onError(Lcom/google/android/finsky/download/Download;I)V
-    .registers 9
-    .parameter "download"
-    .parameter "httpStatus"
-
-    .prologue
-    const/4 v5, 0x0
-
-    .line 182
-    invoke-interface {p1}, Lcom/google/android/finsky/download/Download;->getPackageProperties()Lcom/google/android/finsky/download/Download$PackageProperties;
-
-    move-result-object v0
-
-    .line 183
-    .local v0, properties:Lcom/google/android/finsky/download/Download$PackageProperties;
-    if-nez v0, :cond_8
-
-    .line 188
-    :goto_7
-    return-void
-
-    .line 186
-    :cond_8
-    const-string v1, "Restore package %s download error %d"
-
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    iget-object v3, v0, Lcom/google/android/finsky/download/Download$PackageProperties;->packageName:Ljava/lang/String;
-
-    aput-object v3, v2, v5
-
-    const/4 v3, 0x1
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 187
-    iget-object v1, v0, Lcom/google/android/finsky/download/Download$PackageProperties;->packageName:Ljava/lang/String;
-
-    invoke-virtual {p0, v1, v5}, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->finish(Ljava/lang/String;Z)V
-
-    goto :goto_7
-.end method
-
-.method public onNotificationClicked(Lcom/google/android/finsky/download/Download;)V
-    .registers 2
-    .parameter "download"
-
-    .prologue
-    .line 200
-    return-void
-.end method
-
-.method public onProgress(Lcom/google/android/finsky/download/Download;Lcom/google/android/finsky/download/DownloadProgress;)V
-    .registers 3
-    .parameter "download"
-    .parameter "progress"
-
-    .prologue
-    .line 204
-    return-void
-.end method
-
-.method public onStart(Lcom/google/android/finsky/download/Download;)V
-    .registers 2
-    .parameter "download"
-
-    .prologue
-    .line 158
-    return-void
-.end method
-
-.method public onUpdate()V
-    .registers 1
-
-    .prologue
-    .line 192
-    return-void
-.end method
-
-.method public start(Ljava/lang/String;)V
-    .registers 4
-    .parameter "packageName"
-
-    .prologue
-    .line 108
-    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mDownloads:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_17
-
-    .line 109
-    const-string v0, "Suspending checkin listener as restore begins."
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 110
-    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mCheckinListener:Lcom/google/android/finsky/services/CheckinAssetStoreListener;
-
-    const-string v1, "RestoreService"
-
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/services/CheckinAssetStoreListener;->suspend(Ljava/lang/String;)V
-
-    .line 113
-    :cond_17
-    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mDownloads:Ljava/util/Set;
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    .line 114
-    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$RestoreTracker;->mAllDownloads:Ljava/util/Set;
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    .line 115
+    :cond_35
     return-void
 .end method

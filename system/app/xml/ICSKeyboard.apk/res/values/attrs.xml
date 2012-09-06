@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="keyboardStyle" format="reference" />
+    <attr name="latinKeyboardStyle" format="reference" />
+    <attr name="keyboardViewStyle" format="reference" />
+    <attr name="miniKeyboardStyle" format="reference" />
+    <attr name="miniKeyboardViewStyle" format="reference" />
+    <attr name="miniKeyboardPanelStyle" format="reference" />
+    <attr name="suggestionsStripBackgroundStyle" format="reference" />
+    <attr name="suggestionsViewStyle" format="reference" />
+    <attr name="moreSuggestionsViewStyle" format="reference" />
+    <attr name="suggestionBackgroundStyle" format="reference" />
+    <attr name="suggestionPreviewBackgroundStyle" format="reference" />
+    <attr name="keyBackground" format="reference" />
+    <attr name="keyLetterSize" format="dimension" />
+    <attr name="keyLabelSize" format="dimension" />
+    <attr name="keyLetterRatio" format="float" />
+    <attr name="keyLargeLetterRatio" format="float" />
+    <attr name="keyLabelRatio" format="float" />
+    <attr name="keyHintLetterRatio" format="float" />
+    <attr name="keyHintLabelRatio" format="float" />
+    <attr name="keyUppercaseLetterRatio" format="float" />
+    <attr name="keyLabelHorizontalPadding" format="dimension" />
+    <attr name="keyHintLetterPadding" format="dimension" />
+    <attr name="keyPopupHintLetterPadding" format="dimension" />
+    <attr name="keyUppercaseLetterPadding" format="dimension" />
+    <attr name="keyTextColor" format="color" />
+    <attr name="keyTextInactivatedColor" format="color" />
+    <attr name="keyHintLetterColor" format="color" />
+    <attr name="keyHintLabelColor" format="color" />
+    <attr name="keyUppercaseLetterInactivatedColor" format="color" />
+    <attr name="keyUppercaseLetterActivatedColor" format="color" />
+    <attr name="keyPreviewLayout" format="reference" />
+    <attr name="keyPreviewBackground" format="reference" />
+    <attr name="keyPreviewLeftBackground" format="reference" />
+    <attr name="keyPreviewRightBackground" format="reference" />
+    <attr name="keyPreviewBackgroundWidth" format="dimension" />
+    <attr name="keyPreviewBackgroundHeight" format="dimension" />
+    <attr name="keyPreviewTextColor" format="color" />
+    <attr name="keyPreviewOffset" format="dimension" />
+    <attr name="keyPreviewHeight" format="dimension" />
+    <attr name="keyPreviewTextRatio" format="float" />
+    <attr name="verticalCorrection" format="dimension" />
+    <attr name="moreKeysLayout" format="reference" />
+    <attr name="shadowColor" format="color" />
+    <attr name="shadowRadius" format="float" />
+    <attr name="backgroundDimAmount" format="float" />
+    <attr name="keyTextStyle">
+        <enum name="normal" value="0" />
+        <enum name="bold" value="1" />
+        <enum name="italic" value="2" />
+        <enum name="boldItalic" value="3" />
+    </attr>
+    <attr name="suggestionStripOption" format="integer">
+        <flag name="autoCorrectBold" value="0x00000001" />
+        <flag name="autoCorrectUnderline" value="0x00000002" />
+        <flag name="validTypedWordBold" value="0x00000004" />
+    </attr>
+    <attr name="colorTypedWord" format="color" />
+    <attr name="colorAutoCorrect" format="color" />
+    <attr name="colorSuggested" format="color" />
+    <attr name="alphaTypedWord" format="integer" />
+    <attr name="alphaAutoCorrect" format="integer" />
+    <attr name="alphaSuggested" format="integer" />
+    <attr name="alphaObsoleted" format="integer" />
+    <attr name="suggestionsCountInStrip" format="integer" />
+    <attr name="centerSuggestionPercentile" format="integer" />
+    <attr name="maxMoreSuggestionsRow" format="integer" />
+    <attr name="minMoreSuggestionsWidth" format="float" />
+    <attr name="themeId" format="integer" />
+    <attr name="touchPositionCorrectionData" format="reference" />
+    <attr name="keyboardHeight" format="dimension|fraction" />
+    <attr name="maxKeyboardHeight" format="dimension|fraction" />
+    <attr name="minKeyboardHeight" format="dimension|fraction" />
+    <attr name="keyboardTopPadding" format="dimension|fraction" />
+    <attr name="keyboardBottomPadding" format="dimension|fraction" />
+    <attr name="keyboardHorizontalEdgesPadding" format="dimension|fraction" />
+    <attr name="rowHeight" format="dimension|fraction" />
+    <attr name="horizontalGap" format="dimension|fraction" />
+    <attr name="verticalGap" format="dimension|fraction" />
+    <attr name="moreKeysTemplate" format="reference" />
+    <attr name="keyboardLocale" format="string" />
+    <attr name="isRtlKeyboard" format="boolean" />
+    <attr name="iconShiftKey" format="reference" />
+    <attr name="iconDeleteKey" format="reference" />
+    <attr name="iconSettingsKey" format="reference" />
+    <attr name="iconSpaceKey" format="reference" />
+    <attr name="iconReturnKey" format="reference" />
+    <attr name="iconSearchKey" format="reference" />
+    <attr name="iconTabKey" format="reference" />
+    <attr name="iconShortcutKey" format="reference" />
+    <attr name="iconShortcutForLabel" format="reference" />
+    <attr name="iconShiftedShiftKey" format="reference" />
+    <attr name="iconPreviewTabKey" format="reference" />
+    <attr name="iconPreviewSettingsKey" format="reference" />
+    <attr name="iconPreviewShortcutKey" format="reference" />
+    <attr name="code" format="integer" />
+    <attr name="moreKeys" format="string" />
+    <attr name="maxMoreKeysColumn" format="integer" />
+    <attr name="backgroundType">
+        <enum name="normal" value="0" />
+        <enum name="functional" value="1" />
+        <enum name="action" value="2" />
+        <enum name="sticky" value="3" />
+    </attr>
+    <attr name="isRepeatable" format="boolean" />
+    <attr name="keyOutputText" format="string" />
+    <attr name="keyLabel" format="string" />
+    <attr name="keyHintLabel" format="string" />
+    <attr name="keyLabelOption" format="integer">
+        <flag name="alignLeft" value="0x00000001" />
+        <flag name="alignRight" value="0x00000002" />
+        <flag name="alignLeftOfCenter" value="0x00000008" />
+        <flag name="largeLetter" value="0x00000010" />
+        <flag name="fontNormal" value="0x00000020" />
+        <flag name="fontMonoSpace" value="0x00000040" />
+        <flag name="followKeyLetterRatio" value="0x00000080" />
+        <flag name="followKeyHintLabelRatio" value="0x00000100" />
+        <flag name="hasPopupHint" value="0x00000200" />
+        <flag name="hasUppercaseLetter" value="0x00000400" />
+        <flag name="hasHintLabel" value="0x00000800" />
+        <flag name="withIconLeft" value="0x00001000" />
+        <flag name="withIconRight" value="0x00002000" />
+        <flag name="autoXScale" value="0x00004000" />
+    </attr>
+    <attr name="keyIcon">
+        <enum name="iconShiftKey" value="1" />
+        <enum name="iconDeleteKey" value="2" />
+        <enum name="iconSettingsKey" value="3" />
+        <enum name="iconSpaceKey" value="4" />
+        <enum name="iconReturnKey" value="5" />
+        <enum name="iconSearchKey" value="6" />
+        <enum name="iconTabKey" value="7" />
+        <enum name="iconShortcutKey" value="8" />
+        <enum name="iconShortcutForLabel" value="9" />
+    </attr>
+    <attr name="keyIconShifted">
+        <enum name="iconShiftedShiftKey" value="10" />
+    </attr>
+    <attr name="keyIconPreview">
+        <enum name="iconPreviewTabKey" value="11" />
+        <enum name="iconPreviewSettingsKey" value="12" />
+        <enum name="iconPreviewShortcutKey" value="13" />
+    </attr>
+    <attr name="keyStyle" format="string" />
+    <attr name="enabled" format="boolean" />
+    <attr name="visualInsetsLeft" format="dimension|fraction" />
+    <attr name="visualInsetsRight" format="dimension|fraction" />
+    <attr name="keyWidth" format="dimension|fraction">
+        <enum name="fillRight" value="-1" />
+        <enum name="fillBoth" value="-2" />
+    </attr>
+    <attr name="keyXPos" format="dimension|fraction" />
+    <attr name="keyboardLayout" format="reference" />
+    <attr name="mode" format="string">
+        <enum name="text" value="0" />
+        <enum name="url" value="1" />
+        <enum name="email" value="2" />
+        <enum name="im" value="3" />
+        <enum name="phone" value="4" />
+        <enum name="number" value="5" />
+    </attr>
+    <attr name="navigateAction" format="boolean" />
+    <attr name="passwordInput" format="boolean" />
+    <attr name="hasSettingsKey" format="boolean" />
+    <attr name="f2KeyMode">
+        <enum name="none" value="0" />
+        <enum name="settings" value="1" />
+        <enum name="shortcutIme" value="2" />
+        <enum name="shortcutImeOrSettings" value="3" />
+    </attr>
+    <attr name="clobberSettingsKey" format="boolean" />
+    <attr name="shortcutKeyEnabled" format="boolean" />
+    <attr name="hasShortcutKey" format="boolean" />
+    <attr name="imeAction">
+        <enum name="actionUnspecified" value="0" />
+        <enum name="actionNone" value="1" />
+        <enum name="actionGo" value="2" />
+        <enum name="actionSearch" value="3" />
+        <enum name="actionSend" value="4" />
+        <enum name="actionNext" value="5" />
+        <enum name="actionDone" value="6" />
+        <enum name="actionPrevious" value="7" />
+    </attr>
+    <attr name="localeCode" format="string" />
+    <attr name="languageCode" format="string" />
+    <attr name="countryCode" format="string" />
+    <attr name="styleName" format="string" />
+    <attr name="parentStyle" format="string" />
+    <attr name="autoCorrectionSpacebarLedEnabled" format="boolean" />
+    <attr name="autoCorrectionSpacebarLedIcon" format="reference" />
+    <attr name="disabledShortcutIcon" format="reference" />
+    <attr name="spacebarTextColor" format="color" />
+    <attr name="spacebarTextShadowColor" format="color" />
+</resources>

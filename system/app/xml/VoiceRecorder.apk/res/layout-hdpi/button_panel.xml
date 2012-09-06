@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_horizontal" android:id="@id/button_control_panel" android:focusable="false" android:focusableInTouchMode="false" android:clickable="false" android:duplicateParentState="true" style="@style/layout_match_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:id="@id/button_control_panel_text" android:focusable="false" android:clickable="false" android:duplicateParentState="true" android:singleLine="true" style="@style/button_text" />
-</LinearLayout>

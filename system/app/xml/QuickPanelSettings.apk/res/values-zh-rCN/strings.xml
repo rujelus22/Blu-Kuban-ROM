@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">力卓下拉开关设置</string>
+    <string name="title_widget_buttons">扩展视图控件</string>
+    <string name="title_expanded_hide_onchange">更改时隐藏</string>
+    <string name="summary_expanded_hide_onchange">在切换控件按键后隐藏下拉通知栏</string>
+    <string name="title_widget_picker">控制按钮</string>
+    <string name="summary_widget_picker">选取您需要的控件按键</string>
+    <string name="title_widget_order">控件按钮顺序</string>
+    <string name="summary_widget_order">排列您的控件按键</string>
+    <string name="title_buttons">按键</string>
+    <string name="title_toggle_wifi">切换 Wifi</string>
+    <string name="title_toggle_wifi_ap">切换 Wifi 热点</string>
+    <string name="title_toggle_bluetooth">切换蓝牙</string>
+    <string name="title_toggle_gps">切换 GPS</string>
+    <string name="title_toggle_sound">切换声音</string>
+    <string name="title_toggle_brightness">切换亮度</string>
+    <string name="title_toggle_sync">切换同步</string>
+    <string name="title_toggle_screentimeout">切换屏幕超时</string>
+    <string name="title_toggle_mobiledata">切换移动数据</string>
+    <string name="title_toggle_lockscreen">切换锁屏</string>
+    <string name="title_toggle_autorotate">切换屏幕旋转</string>
+    <string name="title_toggle_airplane">切换飞行模式</string>
+    <string name="title_toggle_flashlight">切换 LED 手电筒</string>
+    <string name="title_toggle_reboot">执行重启手机动作</string>
+    <string name="title_toggle_shutdown">执行关闭手机动作</string>
+    <string name="title_button_modes">按钮切换模式</string>
+    <string name="pref_brightness_mode_title">亮度切换模式</string>
+    <string name="pref_brightness_mode_summary">选择亮度按钮的切换方式</string>
+    <string name="pref_screentimeout_mode_title">屏幕超时切换模式</string>
+    <string name="pref_screentimeout_mode_summary">选择屏幕超时按钮的切换方式</string>
+    <string name="pref_ring_mode_title">声音切换模式</string>
+    <string name="pref_ring_mode_summary">选择声音按钮的切换方式</string>
+    <string name="cm_sound_mode_soundVib_vib">铃声 + 震动 / 震动</string>
+    <string name="cm_sound_mode_sound_vib">铃声 / 震动</string>
+    <string name="cm_sound_mode_sound_silent">铃声 / 静音</string>
+    <string name="cm_sound_mode_soundVib_vib_silent">铃声 + 震动 / 震动 / 静音</string>
+    <string name="cm_sound_mode_sound_vib_silent">铃声 / 震动 / 静音</string>
+    <string name="cm_sound_mode_soundVib_sound_vib_silent">铃声 + 震动 / 铃声 / 震动 / 静音</string>
+    <string name="cm_sound_mode_vib_silent">震动 / 静音</string>
+    <string name="power_widget_pref_group">下拉栏开关设置</string>
+</resources>

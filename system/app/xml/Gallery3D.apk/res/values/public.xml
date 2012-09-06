@@ -129,6 +129,8 @@
     <public type="drawable" name="scroller_pressed_new" id="0x7f020070" />
     <public type="drawable" name="thumb_gallery" id="0x7f02007e" />
     <public type="drawable" name="videooverlay" id="0x7f020080" />
+    <public type="drawable" name="ic_import" id="0x7f020081" />
+    <public type="drawable" name="icon_detail" id="0x7f020082" />
     <public type="layout" name="boundary_effect_bottom" id="0x7f030000" />
     <public type="layout" name="boundary_effect_left" id="0x7f030001" />
     <public type="layout" name="boundary_effect_right" id="0x7f030002" />

@@ -27,8 +27,8 @@
     .registers 1
 
     .prologue
-    .line 110
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 91
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -39,7 +39,7 @@
     .registers 2
 
     .prologue
-    .line 132
+    .line 114
     invoke-virtual {p0}, Lcom/android/email/RefreshManager$Status;->isRefreshing()Z
 
     move-result v0
@@ -61,7 +61,7 @@
     .registers 3
 
     .prologue
-    .line 140
+    .line 122
     iget-wide v0, p0, Lcom/android/email/RefreshManager$Status;->mLastRefreshTime:J
 
     return-wide v0
@@ -71,7 +71,7 @@
     .registers 2
 
     .prologue
-    .line 128
+    .line 110
     iget-boolean v0, p0, Lcom/android/email/RefreshManager$Status;->mIsRefreshRequested:Z
 
     if-nez v0, :cond_8
@@ -101,22 +101,22 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 144
+    .line 126
     if-nez p1, :cond_9
 
     if-nez p2, :cond_9
 
-    .line 146
+    .line 128
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/email/RefreshManager$Status;->mIsRefreshing:Z
 
-    .line 153
+    .line 135
     :cond_8
     :goto_8
     return-void
 
-    .line 147
+    .line 129
     :cond_9
     if-nez p1, :cond_f
 
@@ -124,14 +124,14 @@
 
     if-ne p2, v0, :cond_8
 
-    .line 149
+    .line 131
     :cond_f
     iput-boolean v1, p0, Lcom/android/email/RefreshManager$Status;->mIsRefreshing:Z
 
-    .line 150
+    .line 132
     iput-boolean v1, p0, Lcom/android/email/RefreshManager$Status;->mIsRefreshRequested:Z
 
-    .line 151
+    .line 133
     invoke-virtual {p3}, Lcom/android/email/Clock;->getTime()J
 
     move-result-wide v0
@@ -145,11 +145,11 @@
     .registers 2
 
     .prologue
-    .line 136
+    .line 118
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/email/RefreshManager$Status;->mIsRefreshRequested:Z
 
-    .line 137
+    .line 119
     return-void
 .end method

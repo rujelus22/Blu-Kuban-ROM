@@ -1,13 +1,11 @@
-.class public interface abstract Lcom/google/android/maps/driveabout/vector/bN;
+.class public interface abstract Lcom/google/android/maps/driveabout/vector/bn;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # virtual methods
-.method public abstract b()V
+.method public abstract a(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLConfig;Ljava/lang/Object;)Ljavax/microedition/khronos/egl/EGLSurface;
 .end method
 
-.method public abstract c()V
-.end method
-
-.method public abstract d()V
+.method public abstract a(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)V
 .end method

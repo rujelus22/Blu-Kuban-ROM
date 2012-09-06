@@ -1,72 +1,41 @@
 .class Lcom/google/googlenav/appwidget/traffic/c;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final a:I
-
-.field final b:Ljava/lang/String;
-
-.field final c:Ljava/lang/String;
-
-.field final d:Ljava/lang/Integer;
-
-.field final e:Ljava/lang/Integer;
-
-.field final f:J
-
-.field final g:I
-
-.field final h:J
-
-.field final i:J
-
-.field final j:J
-
-.field final k:Z
-
-.field final l:J
-
-.field final m:Ljava/lang/String;
+.field final synthetic a:Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetConfigureActivity;
 
 
 # direct methods
-.method constructor <init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;JIJJJZJLjava/lang/String;)V
-    .registers 21
+.method constructor <init>(Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetConfigureActivity;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 138
+    iput-object p1, p0, Lcom/google/googlenav/appwidget/traffic/c;->a:Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetConfigureActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lcom/google/googlenav/appwidget/traffic/c;->a:I
+    return-void
+.end method
 
-    iput-object p2, p0, Lcom/google/googlenav/appwidget/traffic/c;->b:Ljava/lang/String;
 
-    iput-object p3, p0, Lcom/google/googlenav/appwidget/traffic/c;->c:Ljava/lang/String;
+# virtual methods
+.method public onClick(Landroid/view/View;)V
+    .registers 3
+    .parameter
 
-    iput-object p4, p0, Lcom/google/googlenav/appwidget/traffic/c;->d:Ljava/lang/Integer;
+    .prologue
+    .line 141
+    iget-object v0, p0, Lcom/google/googlenav/appwidget/traffic/c;->a:Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetConfigureActivity;
 
-    iput-object p5, p0, Lcom/google/googlenav/appwidget/traffic/c;->e:Ljava/lang/Integer;
+    invoke-static {v0}, Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetConfigureActivity;->c(Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetConfigureActivity;)V
 
-    iput-wide p6, p0, Lcom/google/googlenav/appwidget/traffic/c;->f:J
-
-    iput p8, p0, Lcom/google/googlenav/appwidget/traffic/c;->g:I
-
-    iput-wide p9, p0, Lcom/google/googlenav/appwidget/traffic/c;->h:J
-
-    iput-wide p11, p0, Lcom/google/googlenav/appwidget/traffic/c;->i:J
-
-    iput-wide p13, p0, Lcom/google/googlenav/appwidget/traffic/c;->j:J
-
-    move/from16 v0, p15
-
-    iput-boolean v0, p0, Lcom/google/googlenav/appwidget/traffic/c;->k:Z
-
-    move-wide/from16 v0, p16
-
-    iput-wide v0, p0, Lcom/google/googlenav/appwidget/traffic/c;->l:J
-
-    move-object/from16 v0, p18
-
-    iput-object v0, p0, Lcom/google/googlenav/appwidget/traffic/c;->m:Ljava/lang/String;
-
+    .line 142
     return-void
 .end method

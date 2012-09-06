@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:background="@drawable/bg_stripes_medium_drawable" android:padding="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+<LinearLayout android:orientation="horizontal" android:background="@drawable/bg_stripes_medium_drawable" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:background="@drawable/avatar_border" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip">
-        <ImageView android:id="@id/channel_avatar" android:layout_width="@dimen/avatar_width" android:layout_height="@dimen/avatar_height" android:layout_margin="1.0px" />
+    <FrameLayout android:background="@drawable/bg_avatar" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:id="@id/channel_avatar" android:layout_width="@dimen/avatar_width" android:layout_height="@dimen/avatar_height" android:scaleType="centerCrop" />
     </FrameLayout>
-    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip">
-        <TextView android:textSize="@dimen/large_font_size" android:textStyle="bold" android:textColor="@color/primary_contrast_font" android:ellipsize="end" android:id="@id/channel_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
-        <TextView android:textSize="@dimen/extra_small_font_size" android:textColor="@color/secondary_contrast_font" android:id="@id/channel_views" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/channel_stats_views_empty" />
-        <TextView android:textSize="@dimen/extra_small_font_size" android:textColor="@color/secondary_contrast_font" android:id="@id/channel_uploaded" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/channel_stats_uploaded_empty" />
-        <TextView android:textSize="@dimen/extra_small_font_size" android:textColor="@color/secondary_contrast_font" android:id="@id/channel_subscribers" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/channel_stats_subscribers_empty" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="40.0dip" android:minHeight="40.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+                <ProgressBar android:layout_gravity="center" android:id="@id/subscribe_progress" android:visibility="visible" android:layout_width="@dimen/status_spinner_width" android:layout_height="@dimen/status_spinner_height" />
+                <ImageView android:layout_gravity="center" android:id="@id/channel_subscribe" android:background="?android:selectableItemBackground" android:padding="4.0dip" android:visibility="gone" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="@string/subscribe" />
+            </FrameLayout>
+            <TextView android:textSize="@dimen/large_font_size" android:textStyle="bold" android:textColor="@color/primary_contrast_font" android:ellipsize="end" android:id="@id/channel_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_toLeftOf="@id/channel_avatar" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <include layout="@layout/channel_statistics" />
     </LinearLayout>
 </LinearLayout>

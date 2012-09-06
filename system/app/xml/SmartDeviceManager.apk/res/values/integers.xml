@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <integer name="drivesim_delaySec_defaultValue">0</integer>
-    <integer name="drivesim_durationSec_defaultValue">0</integer>
-</resources>

@@ -23,15 +23,15 @@
     .registers 2
 
     .prologue
-    .line 19741
+    .line 20290
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 19756
+    .line 20306
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsResponseProto;->cachedSize:I
 
-    .line 19741
+    .line 20290
     return-void
 .end method
 
@@ -41,15 +41,15 @@
     .registers 2
 
     .prologue
-    .line 19758
+    .line 20309
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsResponseProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 19760
+    .line 20311
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsResponseProto;->getSerializedSize()I
 
-    .line 19762
+    .line 20313
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsResponseProto;->cachedSize:I
 
@@ -60,14 +60,14 @@
     .registers 2
 
     .prologue
-    .line 19766
+    .line 20318
     const/4 v0, 0x0
 
-    .line 19767
+    .line 20319
     .local v0, size:I
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsResponseProto;->cachedSize:I
 
-    .line 19768
+    .line 20320
     return v0
 .end method
 
@@ -81,28 +81,28 @@
     .end annotation
 
     .prologue
-    .line 19775
+    .line 20328
     :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 19776
+    .line 20329
     .local v0, tag:I
     packed-switch v0, :pswitch_data_e
 
-    .line 19780
+    .line 20333
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsResponseProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 19781
+    .line 20334
     :pswitch_d
     return-object p0
 
-    .line 19776
+    .line 20329
     :pswitch_data_e
     .packed-switch 0x0
         :pswitch_d
@@ -119,7 +119,7 @@
     .end annotation
 
     .prologue
-    .line 19739
+    .line 20288
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsResponseProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsResponseProto;
 
     move-result-object v0
@@ -137,6 +137,6 @@
     .end annotation
 
     .prologue
-    .line 19754
+    .line 20304
     return-void
 .end method

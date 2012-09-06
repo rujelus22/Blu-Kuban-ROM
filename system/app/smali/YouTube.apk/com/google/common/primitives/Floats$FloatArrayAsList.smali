@@ -25,14 +25,14 @@
     .parameter
 
     .prologue
-    .line 385
+    .line 412
     const/4 v0, 0x0
 
     array-length v1, p1
 
     invoke-direct {p0, p1, v0, v1}, Lcom/google/common/primitives/Floats$FloatArrayAsList;-><init>([FII)V
 
-    .line 386
+    .line 413
     return-void
 .end method
 
@@ -43,19 +43,19 @@
     .parameter
 
     .prologue
-    .line 388
+    .line 415
     invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
 
-    .line 389
+    .line 416
     iput-object p1, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->array:[F
 
-    .line 390
+    .line 417
     iput p2, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->start:I
 
-    .line 391
+    .line 418
     iput p3, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->end:I
 
-    .line 392
+    .line 419
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .parameter
 
     .prologue
-    .line 409
+    .line 436
     instance-of v0, p1, Ljava/lang/Float;
 
     if-eqz v0, :cond_19
@@ -111,29 +111,29 @@
 
     const/4 v1, 0x0
 
-    .line 453
+    .line 479
     if-ne p1, p0, :cond_5
 
-    .line 469
+    .line 495
     :cond_4
     :goto_4
     return v0
 
-    .line 456
+    .line 482
     :cond_5
     instance-of v2, p1, Lcom/google/common/primitives/Floats$FloatArrayAsList;
 
     if-eqz v2, :cond_31
 
-    .line 457
+    .line 483
     check-cast p1, Lcom/google/common/primitives/Floats$FloatArrayAsList;
 
-    .line 458
+    .line 484
     invoke-virtual {p0}, Lcom/google/common/primitives/Floats$FloatArrayAsList;->size()I
 
     move-result v3
 
-    .line 459
+    .line 485
     invoke-virtual {p1}, Lcom/google/common/primitives/Floats$FloatArrayAsList;->size()I
 
     move-result v2
@@ -142,17 +142,17 @@
 
     move v0, v1
 
-    .line 460
+    .line 486
     goto :goto_4
 
     :cond_17
     move v2, v1
 
-    .line 462
+    .line 488
     :goto_18
     if-ge v2, v3, :cond_4
 
-    .line 463
+    .line 489
     iget-object v4, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->array:[F
 
     iget v5, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->start:I
@@ -175,16 +175,16 @@
 
     move v0, v1
 
-    .line 464
+    .line 490
     goto :goto_4
 
-    .line 462
+    .line 488
     :cond_2e
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_18
 
-    .line 469
+    .line 495
     :cond_31
     invoke-super {p0, p1}, Ljava/util/AbstractList;->equals(Ljava/lang/Object;)Z
 
@@ -198,14 +198,14 @@
     .parameter
 
     .prologue
-    .line 403
+    .line 430
     invoke-virtual {p0}, Lcom/google/common/primitives/Floats$FloatArrayAsList;->size()I
 
     move-result v0
 
-    invoke-static {p1, v0}, Lcom/google/common/base/t;->a(II)I
+    invoke-static {p1, v0}, Lcom/google/common/base/ag;->a(II)I
 
-    .line 404
+    .line 431
     iget-object v0, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->array:[F
 
     iget v1, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->start:I
@@ -226,7 +226,7 @@
     .parameter
 
     .prologue
-    .line 377
+    .line 404
     invoke-virtual {p0, p1}, Lcom/google/common/primitives/Floats$FloatArrayAsList;->get(I)Ljava/lang/Float;
 
     move-result-object v0
@@ -238,10 +238,10 @@
     .registers 4
 
     .prologue
-    .line 473
+    .line 499
     const/4 v1, 0x1
 
-    .line 474
+    .line 500
     iget v0, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->start:I
 
     :goto_3
@@ -249,7 +249,7 @@
 
     if-ge v0, v2, :cond_19
 
-    .line 475
+    .line 501
     mul-int/lit8 v1, v1, 0x1f
 
     iget-object v2, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->array:[F
@@ -266,12 +266,12 @@
 
     add-int/2addr v1, v2
 
-    .line 474
+    .line 500
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
 
-    .line 477
+    .line 503
     :cond_19
     return v1
 .end method
@@ -281,12 +281,12 @@
     .parameter
 
     .prologue
-    .line 415
+    .line 442
     instance-of v0, p1, Ljava/lang/Float;
 
     if-eqz v0, :cond_1a
 
-    .line 416
+    .line 443
     iget-object v0, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->array:[F
 
     check-cast p1, Ljava/lang/Float;
@@ -303,15 +303,15 @@
 
     move-result v0
 
-    .line 417
+    .line 444
     if-ltz v0, :cond_1a
 
-    .line 418
+    .line 445
     iget v1, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->start:I
 
     sub-int/2addr v0, v1
 
-    .line 421
+    .line 448
     :goto_19
     return v0
 
@@ -325,7 +325,7 @@
     .registers 2
 
     .prologue
-    .line 399
+    .line 426
     const/4 v0, 0x0
 
     return v0
@@ -336,12 +336,12 @@
     .parameter
 
     .prologue
-    .line 426
+    .line 453
     instance-of v0, p1, Ljava/lang/Float;
 
     if-eqz v0, :cond_1a
 
-    .line 427
+    .line 454
     iget-object v0, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->array:[F
 
     check-cast p1, Ljava/lang/Float;
@@ -358,15 +358,15 @@
 
     move-result v0
 
-    .line 428
+    .line 455
     if-ltz v0, :cond_1a
 
-    .line 429
+    .line 456
     iget v1, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->start:I
 
     sub-int/2addr v0, v1
 
-    .line 432
+    .line 459
     :goto_19
     return v0
 
@@ -382,37 +382,43 @@
     .parameter
 
     .prologue
-    .line 436
+    .line 463
     invoke-virtual {p0}, Lcom/google/common/primitives/Floats$FloatArrayAsList;->size()I
 
     move-result v0
 
-    invoke-static {p1, v0}, Lcom/google/common/base/t;->a(II)I
+    invoke-static {p1, v0}, Lcom/google/common/base/ag;->a(II)I
 
-    .line 437
+    .line 464
     iget-object v0, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->array:[F
 
     iget v1, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->start:I
 
     add-int/2addr v1, p1
 
-    aget v0, v0, v1
+    aget v1, v0, v1
 
-    .line 438
-    iget-object v1, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->array:[F
+    .line 465
+    iget-object v2, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->array:[F
 
-    iget v2, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->start:I
+    iget v0, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->start:I
 
-    add-int/2addr v2, p1
+    add-int v3, v0, p1
 
-    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
+    invoke-static {p2}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v3
+    move-result-object v0
 
-    aput v3, v1, v2
+    check-cast v0, Ljava/lang/Float;
 
-    .line 439
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    aput v0, v2, v3
+
+    .line 466
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
 
@@ -425,7 +431,7 @@
     .parameter
 
     .prologue
-    .line 377
+    .line 404
     check-cast p2, Ljava/lang/Float;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/common/primitives/Floats$FloatArrayAsList;->set(ILjava/lang/Float;)Ljava/lang/Float;
@@ -439,7 +445,7 @@
     .registers 3
 
     .prologue
-    .line 395
+    .line 422
     iget v0, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->end:I
 
     iget v1, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->start:I
@@ -455,23 +461,23 @@
     .parameter
 
     .prologue
-    .line 444
+    .line 470
     invoke-virtual {p0}, Lcom/google/common/primitives/Floats$FloatArrayAsList;->size()I
 
     move-result v0
 
-    .line 445
-    invoke-static {p1, p2, v0}, Lcom/google/common/base/t;->a(III)V
+    .line 471
+    invoke-static {p1, p2, v0}, Lcom/google/common/base/ag;->a(III)V
 
-    .line 446
+    .line 472
     if-ne p1, p2, :cond_e
 
-    .line 447
+    .line 473
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 449
+    .line 475
     :goto_d
     return-object v0
 
@@ -497,15 +503,15 @@
     .registers 6
 
     .prologue
-    .line 491
+    .line 517
     invoke-virtual {p0}, Lcom/google/common/primitives/Floats$FloatArrayAsList;->size()I
 
     move-result v0
 
-    .line 492
+    .line 518
     new-array v1, v0, [F
 
-    .line 493
+    .line 519
     iget-object v2, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->array:[F
 
     iget v3, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->start:I
@@ -514,7 +520,7 @@
 
     invoke-static {v2, v3, v1, v4, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 494
+    .line 520
     return-object v1
 .end method
 
@@ -522,7 +528,7 @@
     .registers 5
 
     .prologue
-    .line 481
+    .line 507
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Lcom/google/common/primitives/Floats$FloatArrayAsList;->size()I
@@ -533,7 +539,7 @@
 
     invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 482
+    .line 508
     const/16 v0, 0x5b
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -548,7 +554,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    .line 483
+    .line 509
     iget v0, p0, Lcom/google/common/primitives/Floats$FloatArrayAsList;->start:I
 
     add-int/lit8 v0, v0, 0x1
@@ -558,7 +564,7 @@
 
     if-ge v0, v2, :cond_32
 
-    .line 484
+    .line 510
     const-string v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -571,12 +577,12 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    .line 483
+    .line 509
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1e
 
-    .line 486
+    .line 512
     :cond_32
     const/16 v0, 0x5d
 

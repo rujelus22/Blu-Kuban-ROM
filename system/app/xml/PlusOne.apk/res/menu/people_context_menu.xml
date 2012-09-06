@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:icon="@drawable/ic_menu_remove_person" android:id="@id/menu_remove_people" android:title="@string/menu_remove_people" android:showAsAction="always" />
-</menu>

@@ -122,7 +122,7 @@
 
     .prologue
     .line 140
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 171
     new-instance v0, Lcom/google/android/talk/util/ChatList$2;

@@ -53,28 +53,35 @@
 Sürüş esnasında bu uygulamaya müdahale etmeyin. Trafik verileri gerçek zamanlı değildir ve yol tarifleri yanlış, tehlikeli, yasaklanmış olabilir ya da feribotlar içeriyor olabilir. Yürüyüş rotalarında, olmayan kaldırımlar veya yaya yolları bulunabilir. Geçerli yasalara uyun.
 
 Gözünüzü yoldan ayırmayın!"</string>
+    <string name="da_agreement_with_walking_and_biking">"Google Haritalar Navigasyon beta sürümündedir. Dikkatli olun.
+
+ Hareket halindeyken bu uygulamanın çalışma şeklinde değişiklik yapmayın. Trafik verileri gerçek zamanlı değildir. Yol tarifleri yanlış, tehlikeli ve yasaklı olabilir veya feribot hatlarını içerebilir. Yaya yol tariflerinde, kaldırımlar veya yaya yolları eksik olabilir. Bisikletle yol tarifleri, bisiklet kullanımı için uygun olmayanlar güzergahları içerebilir. Geçerli yasalara uyun.
+
+Gözünüzü yoldan ayırmayın!"</string>
     <string name="da_disclaimer_checkbox">Bu mesajı sonraki seferde göster</string>
-    <string name="da_show_list">Yol Tarifleri Listesi</string>
-    <string name="da_route_overview">Yol bilgileri</string>
-    <string name="da_show_map">Haritayı Göster</string>
+    <string name="da_show_list">Yol tarifleri listesi</string>
+    <string name="da_route_and_alternates">Rota ve alternatifler</string>
+    <string name="da_show_map">Harita göster</string>
+    <string name="da_menu_more">Diğer</string>
     <string name="da_satellite">Uydu</string>
     <string name="da_traffic_view">Trafik görünümü</string>
     <string name="da_no_traffic_here">Burada trafik bilgisi yok</string>
     <string name="da_traffic">Trafik</string>
-    <string name="da_area_view">Alan Görünümü</string>
-    <string name="da_mute">Sessiz</string>
-    <string name="da_unmute">Sesi Aç</string>
+    <string name="da_area_view">Alan görünümü</string>
     <string name="da_settings">Ayarlar</string>
     <string name="da_help">Yardım</string>
-    <string name="da_terms_privacy_notices">Şartlar ve Gizlilik</string>
-    <string name="da_terms_and_conditions">Şartlar ve Koşullar</string>
-    <string name="da_privacy_policy">Gizlilik Politikası</string>
-    <string name="da_legal_notices">Yasal Bildirimler</string>
+    <string name="da_terms_privacy_notices">Şartlar, gizlilik ve bildirimler</string>
+    <string name="da_terms_and_conditions">Şartlar ve koşullar</string>
+    <string name="da_privacy_policy">Gizlilik politikası</string>
+    <string name="da_legal_notices">Yasal bildirimler</string>
     <string name="da_navigation_suspended">Navigasyon askıya alındı</string>
-    <string name="da_exit_navigation">"Navigasyon'dan çık"</string>
-    <string name="da_power_settings_category">Güç Ayarları</string>
-    <string name="da_screen_dimming_setting_title">Ekran Karartma</string>
+    <string name="da_exit_navigation">Gezinmeden çık</string>
+    <string name="da_save">Kaydet</string>
+    <string name="da_power_settings_category">Güç ayarları</string>
+    <string name="da_screen_dimming_setting_title">Ekran karartma</string>
     <string name="da_screen_dimming_setting_summary">Ekran, bir talimattan diğerine geçen süre boyunca güç tasarrufu için kararır</string>
+    <string name="da_home_setting_set_address">Ev adresini ayarla</string>
+    <string name="da_home_setting_set_address_hint">Adres girin.</string>
     <string name="da_info_settings_category">Bilgi</string>
     <string name="da_email_me_when_resolved">Sorun çözüldüğünde bana e-posta gönder</string>
     <string name="da_problem_reported">Sorun bildirildi</string>
@@ -85,7 +92,7 @@ Gözünüzü yoldan ayırmayın!"</string>
 Uygulama ayarlarınızda tek tıklamalı bir kısayol etkinleştirilebilir.
 
  Sorun çözüldüğünde e-posta güncellemeleri almak isterseniz, e-posta adresiniz, konumunuzla ve yorumlarınızla birlikte sorun çözülene kadar saklanır."</string>
-    <string name="da_report_a_problem">Sorun Bildir</string>
+    <string name="da_report_a_problem">Sorun bildir</string>
     <string name="da_report_a_problem_dialog_title">Sorun bildir</string>
     <string name="da_rmi_preference_trackball_summary">Etkinleştirilmişse, iztopuna basılması sorun bildirme işlemini başlatır.</string>
     <string name="da_rmi_preference_camera_summary">Etkinleştirilmişse, kamera düğmesine basılması sorun bildirme işlemini başlatır.</string>
@@ -109,6 +116,8 @@ Uygulama ayarlarınızda tek tıklamalı bir kısayol etkinleştirilebilir.
     <string name="da_turn_on_gps">Konum ayarları gösterilsin mi?</string>
     <string name="da_voice_guidance">Sesli rehber</string>
     <string name="da_install_voice_guidance_prompt">"Sesli navigasyon için, Android Market'tan metin okuma desteği yüklemeniz gerekir."</string>
+    <string name="da_voice_off">Sesi kapat</string>
+    <string name="da_voice_on">Sesi aç</string>
     <string name="da_voice_guidance_on">Sesli yardım açık</string>
     <string name="da_voice_guidance_off">Sesli yardım kapalı</string>
     <string name="da_dialog_ok">Tamam</string>
@@ -117,28 +126,28 @@ Uygulama ayarlarınızda tek tıklamalı bir kısayol etkinleştirilebilir.
     <string name="da_dialog_done">Bitti</string>
     <string name="da_dialog_accept">Kabul et</string>
     <string name="da_dialog_install">Yükle</string>
-    <string name="da_dialog_dont_accept">Kabul Etme</string>
+    <string name="da_dialog_dont_accept">Kabul etme</string>
     <string name="da_dialog_go">Git</string>
-    <string name="da_dialog_get_directions">Yol Tarifi Al</string>
+    <string name="da_dialog_get_directions">Yol tarifleri al</string>
     <string name="da_map">Harita</string>
-    <string name="da_clear_layers">Haritayı Temizle</string>
+    <string name="da_clear_layers">Haritayı temizle</string>
     <string name="da_layer_name_parking">Park yeri</string>
     <string name="da_layer_name_attractions">Turistik Yerler</string>
-    <string name="da_layer_name_gas_stations">Benzin İstasyonları</string>
+    <string name="da_layer_name_gas_stations">Benzin istasyonları</string>
     <string name="da_layer_name_restaurants">Restoranlar</string>
     <string name="da_layer_name_supermarkets">Süpermarketler</string>
-    <string name="da_layer_name_atms_and_banks">"ATM'ler ve Bankalar"</string>
+    <string name="da_layer_name_atms_and_banks">"ATM'ler ve bankalar"</string>
     <string name="da_layer_name_convenience_stores">Marketler</string>
     <string name="da_query_banks_and_atms">"Bankalar ve ATM'ler"</string>
     <string name="da_rerouting">Yeni yollar belirleniyor...</string>
     <string name="da_via">%s üzerinden</string>
     <string name="da_to_destination">%s adresine</string>
     <string name="da_via_name_separator">" ve "</string>
-    <string name="da_record_feedback">Geribildirim Kaydet</string>
+    <string name="da_record_feedback">Geribildirim kaydet</string>
     <string name="da_destination_not_here">Varış yeri burası değil</string>
-    <string name="da_new_destination">Sonraki Hedef</string>
-    <string name="da_reroute_to_destination">Hedefe Dön</string>
-    <string name="da_change_destination">Hedefi Ayarla</string>
+    <string name="da_new_destination">Sonraki hedef</string>
+    <string name="da_reroute_to_destination">Hedefe dön</string>
+    <string name="da_change_destination">Hedefi ayarla</string>
     <string name="da_search_for_destination">Ara...</string>
     <string name="da_point_on_map">Haritadaki nokta</string>
     <string name="da_exit">Çıkış</string>
@@ -184,13 +193,16 @@ Uygulama ayarlarınızda tek tıklamalı bir kısayol etkinleştirilebilir.
     <string name="da_no_image_available">Kullanılabilir resim yok.</string>
     <string name="da_image_error">Resim yüklenirken hata oluştu.</string>
     <string name="da_no_alternate_routes">Hedefinize giden alternatif yol bulunamadı.</string>
-    <string name="da_picker_type_destination">Hedefi Yazın</string>
-    <string name="da_picker_speak_destination">Hedefi Söyleyin</string>
+    <string name="da_picker_type_destination">Hedefi yaz</string>
+    <string name="da_picker_speak_destination">Hedefi söyleyin</string>
     <string name="da_picker_contacts">Kişiler</string>
-    <string name="da_picker_starred_items">Yıldızlı Yerler</string>
-    <string name="da_picker_new_contact">Yeni Kişi</string>
-    <string name="da_picker_saved_destinations">Kayıtlı Hedefler</string>
-    <string name="da_picker_recent_destinations">En Son Bakılan Hedef Yerler</string>
+    <string name="da_picker_starred_items">Yıldızlı yerler</string>
+    <string name="da_picker_starred">YILDIZLI</string>
+    <string name="da_picker_new_contact">Yeni kişi</string>
+    <string name="da_go_home">Eve git</string>
+    <string name="da_picker_saved_destinations">Kayıtlı hedefler</string>
+    <string name="da_picker_recent_destinations">En son bakılan hedef yerler</string>
+    <string name="da_picker_shortcuts">KISAYOLLAR</string>
     <string name="da_navigate_to">Şuraya git:</string>
     <string name="da_return_to">Şuraya dön:</string>
     <string name="da_picker_search_hint">Hedef</string>
@@ -208,7 +220,6 @@ Yeni kişiler ekleyebilir veya Kişiler uygulamasında mevcut kişiler için adr
     <string name="da_walking">Yürüyüş</string>
     <string name="da_bicycling">Bisiklet</string>
     <string name="da_quoted_text">“%1$s”</string>
-    <string name="da_more_info">Daha fazla bilgi</string>
     <string name="da_walking_warning">Yaya (beta): dikkatli kullanın</string>
     <string name="da_bicycling_warning">Bisiklet (beta): dikkatli olun</string>
     <string name="da_calibrate_compass_title">Pusula ayarı</string>
@@ -216,7 +227,6 @@ Yeni kişiler ekleyebilir veya Kişiler uygulamasında mevcut kişiler için adr
     <string name="da_confirm_exit_title">Gezinmeden çıkılsın mı?</string>
     <string name="da_confirm_exit_text">Bu işlem, tüm rota yardımını sonlandıracaktır.</string>
     <string name="da_route_includes_tolls">Rota ücretli geçiş içeriyor</string>
-    <string name="da_avoid_tolls">Ücretli geçişleri kullanma</string>
     <string name="da_avoiding_tolls">Ücretli geçişler kullanılmadan</string>
     <string name="da_avoiding_highways">Otoyollar kullanılmadan</string>
     <string name="da_route_includes_unavoidable_tolls">Bu rota ücretli geçiş içeriyor.</string>
@@ -272,13 +282,15 @@ Yeni kişiler ekleyebilir veya Kişiler uygulamasında mevcut kişiler için adr
     <string name="DIRECTIONS_TITLE">Yol Tarifi</string>
     <string name="EXIT_COMMAND">Çıkış</string>
     <string name="FEATURE_SWITCHER_LATITUDE_SUBTITLE">Ailenizi ve arkadaşlarınızı bulun</string>
-    <string name="FEATURE_SWITCHER_LOCAL">Rehber</string>
+    <string name="FEATURE_SWITCHER_LOCAL">Yerel</string>
     <string name="FEATURE_SWITCHER_LOCAL_SUBTITLE">Restoranları, barları ve daha fazlasını bulun</string>
     <string name="FEATURE_SWITCHER_MAP">Harita</string>
     <string name="FEATURE_SWITCHER_NAV">GPS navigasyon</string>
     <string name="FEATURE_SWITCHER_TRAFFIC">Trafik</string>
     <string name="FRIENDS_COMMAND_ACTIVATE">Latitude</string>
     <string name="FRIENDS_COMMAND_JOIN">"Latitude'a Katıl"</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE">Google+ Profili</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE_DESCRIPTION">Bir arkadaşınızın Google+ profilini görüntüleyin</string>
     <string name="FRIENDS_HISTORY_SUMMARY_TITLE">Konum geçmişi</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TICKER">{0} check-in yapmanızı istiyor</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TITLE">Latitude check-in isteği</string>
@@ -298,10 +310,26 @@ Yeni kişiler ekleyebilir veya Kişiler uygulamasında mevcut kişiler için adr
     <string name="LATITUDE_WIDGET_FRIENDS_ACTIVATE">"Latitude'ta oturum açmak için dokunun"</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LAST_UPDATED_TIME_ABSOLUTE">Son Güncelleme: {0}</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LOCATION_UNKNOWN">Bilinmeyen konum</string>
+    <string name="LATITUDE_WIDGET_START">"Latitude'u açmak için dokunun"</string>
     <string name="LOADING">Yükleniyor</string>
-    <string name="LOCAL_APP_NAME">Google Local</string>
-    <string name="MAPS_APP_NAME">Google Haritalar</string>
+    <string name="MAPS_APP_NAME">Haritalar</string>
     <string name="MY_PLACES_COMMAND">Yerlerim</string>
+    <string name="MY_PLACES_DELETE_CONFIRM">"&lt;b>{0}&lt;/b>, Yerlerim'den kaldırılacak."</string>
+    <string name="MY_PLACES_DELETE_CONFIRM_TITLE">Sil</string>
+    <string name="MY_PLACES_DELETE_ITEM_COMMAND">Sil</string>
+    <string name="MY_PLACES_DELETE_OWNED_MAP_CONFIRM">"&lt;b>{0}&lt;/b>, Yerlerim'den kaldırılacak ve kalıcı olarak silinecek."</string>
+    <string name="MY_PLACES_DELETE_PLACE_CONFIRM">"&lt;b>{0}&lt;/b>, Yerlerim'den kaldırılacak ve bu yerle ilgili etkinlikler kalıcı olarak silinecek: "</string>
+    <string name="MY_PLACES_DELETE_SERVICE_UNAVAILABLE">Hizmet kullanılamıyor. Lütfen daha sonra tekrar deneyin.</string>
+    <string name="MY_PLACES_ITEM_IS_BOOKMARKED_MY_MAP">İmli harita</string>
+    <string name="MY_PLACES_ITEM_IS_MY_MAP">Haritam</string>
+    <string name="MY_PLACES_ITEM_IS_REVIEWED">Yorumlandı</string>
+    <string name="MY_PLACES_ITEM_IS_STARRED">Yıldızlı</string>
+    <string name="MY_PLACES_LINK_ON_SUGGEST">Yerlerim ile kişiselleştirildi</string>
+    <string name="MY_PLACES_NO_DIRECTIONS_ITEM_MESSAGE">Yol tarifi geçmişiniz yok.</string>
+    <string name="MY_PLACES_NO_MY_MAP_ITEM_MESSAGE">Haritanız yok.</string>
+    <string name="MY_PLACES_NO_STARRED_ITEM_MESSAGE">Yıldız işaretli yeriniz yok.</string>
+    <string name="MY_PLACES_SEE_ON_MAP_COMMAND">Harita</string>
+    <string name="MY_PLACES_SHOW_DETAIL_PAGE_COMMAND">Ayrıntılar</string>
     <string name="NAVIGATE_MODE_NAVIGATION">Gezinme</string>
     <string name="NEED_NET_BODY">Bu uygulama siz şebekeden veri alışverişi için izin vermeden kullanılamaz.</string>
     <string name="NEED_NET_TITLE">Şebeke erişimi gerekli</string>
@@ -309,8 +337,11 @@ Yeni kişiler ekleyebilir veya Kişiler uygulamasında mevcut kişiler için adr
     <string name="NET_FAIL_BODY">Bu uygulama çalışan bir veri bağlantısı gerektirir.</string>
     <string name="NET_FAIL_TITLE">Şebeke hatası</string>
     <string name="NET_UNAVAILABLE_TITLE">Şebekeye Erişilemiyor</string>
-    <string name="PLACES_APP_NAME">Rehber</string>
-    <string name="RATINGS_CUSTOM_ASPECT_EXAMPLE_TEXT">ör. Mantı, Kokteyl, Müzik</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_PLURAL">Yakınınızda {0} teklif var</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_SINGLE">Yakınınızda 1 teklif var</string>
+    <string name="OFFERS_FEATURE_SWITCHER_TITLE">Teklifler</string>
+    <string name="PLACES_APP_NAME">Yerel</string>
+    <string name="RATINGS_CORRECT_CATEGORY">Bu yer için doğru kategoriyi seçin</string>
     <string name="RATINGS_CUSTOM_ASPECT_HINT_TEXT">Neleri öne çıkıyor?</string>
     <string name="RATINGS_OPTIN_CANCEL">İptal</string>
     <string name="RATINGS_OPTIN_CLOSE">Kapat</string>
@@ -326,6 +357,7 @@ Yeni kişiler ekleyebilir veya Kişiler uygulamasında mevcut kişiler için adr
     <string name="RATINGS_RATE_PLACES">Yerleri oylamak ne işe yarar?</string>
     <string name="RATINGS_SET_APPEARANCE">Görünümü ayarla</string>
     <string name="RATINGS_WAIT">Lütfen bekleyin...</string>
+    <string name="RATINGS_WRONG_LABELS">Etiketler Yanlış mı?</string>
     <string name="SEARCH_HINT">Haritalarda Ara</string>
     <string name="SHORT_APP_NAME">Google Haritalar</string>
     <string name="TRAFFIC_WIDGET_END_LOCATION">Varış noktası</string>
@@ -335,7 +367,12 @@ Yeni kişiler ekleyebilir veya Kişiler uygulamasında mevcut kişiler için adr
     <string name="TRAFFIC_WIDGET_START_LOCATION">Başlangıç noktası</string>
     <string name="TRANSIT_NAVIGATION">Transit Navigasyon</string>
     <string name="TRANSIT_TITLE">Toplu Taşıma</string>
-    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">Ciddi hata. Lütfen çıkın ve yeniden başlatın.</string>
+    <string name="TRANSIT_TYPE_FILTER_ALL">Tümü</string>
+    <string name="TRANSIT_TYPE_FILTER_BUS">Otobüs</string>
+    <string name="TRANSIT_TYPE_FILTER_SUBWAY">Metro</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAIN">Tren</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAM">Tramvay</string>
+    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">"Bir yanlışlık oldu...  Lütfen birkaç dakika içinde tekrar deneyin."</string>
     <string name="UNKNOWN_COMMUNICATION_FAILURE_TITLE">Bilinmeyen hata</string>
     <string name="UPGRADE_BODY">Bu uygulamayı kullanmak için yeni bir sürümü yüklemelisiniz.</string>
     <string name="UPGRADE_TITLE">Yazılım Sürümünü Yükseltme</string>

@@ -674,7 +674,7 @@
     .line 495
     iget-boolean v1, p0, Lorg/codehaus/jackson/c/a;->b:Z
 
-    if-eqz v1, :cond_225
+    if-eqz v1, :cond_221
 
     .line 496
     sget-object v1, Lorg/codehaus/jackson/util/InternCache;->instance:Lorg/codehaus/jackson/util/InternCache;
@@ -698,7 +698,7 @@
 
     if-ge v0, v1, :cond_18
 
-    packed-switch p3, :pswitch_data_22a
+    packed-switch p3, :pswitch_data_226
 
     :cond_18
     move/from16 v0, p3
@@ -825,7 +825,7 @@
 
     aget-object v2, v2, v4
 
-    if-nez v2, :cond_1ba
+    if-nez v2, :cond_1b6
 
     iget-object v2, p0, Lorg/codehaus/jackson/c/a;->e:[I
 
@@ -879,7 +879,7 @@
 
     sub-int/2addr v2, v3
 
-    if-le v4, v2, :cond_21c
+    if-le v4, v2, :cond_218
 
     const/4 v2, 0x1
 
@@ -1160,13 +1160,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Internal error: count after rehash "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1192,14 +1188,14 @@
 
     throw v1
 
-    :cond_1ba
+    :cond_1b6
     iget-boolean v2, p0, Lorg/codehaus/jackson/c/a;->m:Z
 
-    if-eqz v2, :cond_1cb
+    if-eqz v2, :cond_1c7
 
     iget-object v2, p0, Lorg/codehaus/jackson/c/a;->g:[Lorg/codehaus/jackson/c/b;
 
-    if-nez v2, :cond_207
+    if-nez v2, :cond_203
 
     const/16 v2, 0x20
 
@@ -1207,12 +1203,12 @@
 
     iput-object v2, p0, Lorg/codehaus/jackson/c/a;->g:[Lorg/codehaus/jackson/c/b;
 
-    :goto_1c8
+    :goto_1c4
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lorg/codehaus/jackson/c/a;->m:Z
 
-    :cond_1cb
+    :cond_1c7
     iget v2, p0, Lorg/codehaus/jackson/c/a;->h:I
 
     add-int/lit8 v2, v2, 0x1
@@ -1225,13 +1221,13 @@
 
     and-int/lit16 v2, v3, 0xff
 
-    if-nez v2, :cond_219
+    if-nez v2, :cond_215
 
     iget v2, p0, Lorg/codehaus/jackson/c/a;->i:I
 
     const/16 v5, 0xfe
 
-    if-gt v2, v5, :cond_214
+    if-gt v2, v5, :cond_210
 
     iget v2, p0, Lorg/codehaus/jackson/c/a;->i:I
 
@@ -1245,12 +1241,12 @@
 
     array-length v5, v5
 
-    if-lt v2, v5, :cond_1ef
+    if-lt v2, v5, :cond_1eb
 
     invoke-direct {p0}, Lorg/codehaus/jackson/c/a;->e()V
 
-    :cond_1ef
-    :goto_1ef
+    :cond_1eb
+    :goto_1eb
     iget-object v5, p0, Lorg/codehaus/jackson/c/a;->e:[I
 
     and-int/lit16 v3, v3, -0x100
@@ -1261,7 +1257,7 @@
 
     aput v3, v5, v4
 
-    :goto_1f8
+    :goto_1f4
     iget-object v3, p0, Lorg/codehaus/jackson/c/a;->g:[Lorg/codehaus/jackson/c/b;
 
     new-instance v4, Lorg/codehaus/jackson/c/b;
@@ -1276,7 +1272,7 @@
 
     goto/16 :goto_a4
 
-    :cond_207
+    :cond_203
     array-length v3, v2
 
     new-array v5, v3, [Lorg/codehaus/jackson/c/b;
@@ -1291,21 +1287,21 @@
 
     invoke-static {v2, v5, v6, v7, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    goto :goto_1c8
+    goto :goto_1c4
 
-    :cond_214
+    :cond_210
     invoke-direct {p0}, Lorg/codehaus/jackson/c/a;->d()I
 
     move-result v2
 
-    goto :goto_1ef
+    goto :goto_1eb
 
-    :cond_219
+    :cond_215
     add-int/lit8 v2, v2, -0x1
 
-    goto :goto_1f8
+    goto :goto_1f4
 
-    :cond_21c
+    :cond_218
     iget v2, p0, Lorg/codehaus/jackson/c/a;->h:I
 
     if-lt v2, v3, :cond_b7
@@ -1316,7 +1312,7 @@
 
     goto/16 :goto_b7
 
-    :cond_225
+    :cond_221
     move-object/from16 v2, p1
 
     goto/16 :goto_c
@@ -1324,7 +1320,7 @@
     .line 499
     nop
 
-    :pswitch_data_22a
+    :pswitch_data_226
     .packed-switch 0x1
         :pswitch_28
         :pswitch_b8

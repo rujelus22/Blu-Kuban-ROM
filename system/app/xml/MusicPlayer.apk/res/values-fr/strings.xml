@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s, %2$s</string>
+    <string name="no_network_connection">Non connecté</string>
+    <string name="authentication_failure_no_network">Vous devez être connecté à Internet pour authentifier votre compte Google Musique.</string>
+    <string name="authentication_failure">Non authentifié</string>
+    <string name="authentication_failure_error">"Impossible d'authentifier votre compte Google Musique."</string>
+    <string name="positive_button_text">OK</string>
+    <string name="negative_button_text">Annuler</string>
+    <string name="save_button_text">Enregistrer</string>
+    <string name="not_save_button_text">Annuler</string>
+    <string name="offline_music_not_available_message">"Pour stocker la musique sur l'appareil, sélectionnez la vue \"Albums\", \"Playlists\" ou \"Artiste\"."</string>
+    <string name="view_albums_button_text">Accéder aux albums</string>
+    <string name="shuffle_all">Lecture aléatoire</string>
+    <string name="play_all">Tout lire</string>
+    <string name="songs_all">Tous les titres</string>
+    <string name="shuffle">Lecture aléatoire</string>
+    <string name="search">Rechercher</string>
+    <string name="settings">Paramètres</string>
+    <string name="library_options">"Options d'affichage"</string>
+    <string name="manage_music">Sélect. musique appareil</string>
+    <string name="available_offline">Stocker sur appareil</string>
+    <string name="options">Options</string>
+    <string name="clear_queue">Effacer file attente</string>
+    <string name="queue_cleared">"File d'att. effacée."</string>
+    <string name="add_to_queue">Ajouter file attente</string>
+    <string name="add_to_athome_queue">Ajouter au groupe \"%s\"</string>
+    <string name="shop_artist">Acheter des titres de cet artiste</string>
+    <string name="show_offline_music_only">"Sur l'appareil uniq."</string>
+    <string name="show_all_music">Afficher toute la musique</string>
+    <string name="new_playlist_title">Nom de la playlist</string>
+    <string name="add_to_playlist_title">Nom de la playlist</string>
+    <string name="rename_playlist_title">Renommer \"%s\"</string>
+    <string name="search_section_header_artists">ARTISTES</string>
+    <string name="search_section_header_albums">ALBUMS</string>
+    <string name="search_section_header_songs">MORCEAUX</string>
+    <string name="search_section_header_playlists">PLAYLISTS</string>
+    <string name="shuffle_all_songs">Lecture aléatoire</string>
+    <string name="stream_settings">Paramètres Google Musique</string>
+    <string name="refresh_title">Actualiser</string>
+    <string name="refresh_summary">Actualiser les titres de Google Play</string>
+    <string name="account_settings_title">Compte Google</string>
+    <string name="no_account_selected_summary">Appuyez pour sélectionner un compte.</string>
+    <string name="account_selected_summary">Se connecter à Google Play avec %s</string>
+    <string name="hide_when_not_connected_title">Masquer musique indispo.</string>
+    <string name="hide_when_not_connected_summary">Afficher uniquement la musique disponible hors connexion</string>
+    <string name="stream_only_on_wifi_title">Streaming Wi-Fi uniquement</string>
+    <string name="stream_only_on_wifi_summary">"Ne pas autoriser la diffusion en streaming sur les réseaux mobiles afin de limiter les frais liés à la consommation de données facturés par l'opérateur"</string>
+    <string name="stream_only_hq_title">Streaming qlté sup.</string>
+    <string name="stream_only_hq_summary">Toujours écouter de la musique en streaming en haute qualité</string>
+    <string name="athome_title">Android@Home</string>
+    <string name="athome_summary">Rechercher des appareils Android@Home</string>
+    <string name="athome_not_remote">"Pour écouter ce titre sur le Nexus Q, veuillez d'abord le transférer dans votre bibliothèque Google Play Musique."</string>
+    <string name="athome_move_top_menu">Lire le titre suivant</string>
+    <string name="athome_remove_menu">"Supprimer de la file d'attente"</string>
+    <string name="lock_screen_controls_title">Verr. commandes écran</string>
+    <string name="lock_screen_controls_summary">Afficher commandes musicales en haut écran de verrouillage</string>
+    <string name="debug_logs_title">Journaux de débogage</string>
+    <string name="debug_logs_summary">Utiliser les journaux de débogage</string>
+    <string name="debug_logs_enable_warning_message">"Voulez-vous vraiment activer les journaux de débogage ?
+Des informations sensibles peuvent être stockées dans la mémoire de stockage externe. Si vous modifiez cette option, l'application se fermera."</string>
+    <string name="debug_logs_disable_warning_message">"Voulez-vous vraiment désactiver les journaux de débogage ?
+Si vous modifiez cette option, l'application se fermera."</string>
+    <string name="tungsten_settings">Paramètres du Nexus Q</string>
+    <string name="offlinedl_only_on_wifi_title">Télécharger via Wi-Fi</string>
+    <string name="offlinedl_only_on_wifi_summary">"Ne pas télécharger de musique sur les réseaux mobiles afin de limiter les frais liés à la consommation de données facturés par l'opérateur"</string>
+    <string name="cache_streamed_title">Mise en cache auto</string>
+    <string name="cache_streamed_summary">Stocker temporairement la musique sans demander</string>
+    <string name="download_queue_title">En téléchargement</string>
+    <string name="download_queue_summary">Afficher les morceaux en cours de téléchargement</string>
+    <string name="help_title">Aide</string>
+    <string name="show_no_downloads_title">Aucun titre en attente de téléchargement</string>
+    <string name="music_version_title">Version de Google Musique</string>
+    <string name="music_version_summary">Version inconnue</string>
+    <string name="nowplaying_title">À l’écoute</string>
+    <string name="artists_title">Artistes</string>
+    <string name="albums_title">Albums</string>
+    <string name="genres_title">Genres</string>
+    <string name="tracks_title">Titres</string>
+    <string name="playlists_title">Playlists</string>
+    <string name="recent_title">Récents</string>
+    <string name="search_title">Rechercher</string>
+    <string name="no_tracks_title">Aucun titre</string>
+    <string name="delete_playlist_menu">Supprimer</string>
+    <string name="edit_playlist_menu">Modifier</string>
+    <string name="rename_playlist_menu">Renommer</string>
+    <string name="playlist_delete_confirmation">Voulez-vous supprimer la playlist \"%s\" ?</string>
+    <string name="delete_playlist_button_confirm">Supprimer</string>
+    <string name="playlist_deleted_message">Playlist supprimée.</string>
+    <string name="playlist_created_message">Playlist \"%s\" créée.</string>
+    <string name="playlist_renamed_message">Playlist renommée \"%s\".</string>
+    <string name="recentlyadded">Derniers ajouts</string>
+    <string name="recentlyadded_title">Derniers ajouts</string>
+    <string name="all_songs_list">Tous les titres</string>
+    <string name="all_songs_list_title">Tous les titres</string>
+    <string name="storemusic_list">Titres gratuits et achetés</string>
+    <string name="storemusic_list_title">Titres gratuits et achetés</string>
+    <string name="freemusic_list">Titres gratuits</string>
+    <string name="freemusic_list_title">Titres gratuits</string>
+    <string name="thumbsup_list">"J'aime"</string>
+    <string name="thumbsup_list_title">"J'aime"</string>
+    <string name="unknown_artist_name">Artiste inconnu</string>
+    <string name="unknown_album_name">Album inconnu</string>
+    <string name="unknown_playlist_name">Playlist inconnue</string>
+    <string name="unknown_submitter_name">Inconnu</string>
+    <string name="ringtone_menu">En sonnerie</string>
+    <string name="ringtone_set">\"%s\" a été défini comme sonnerie.</string>
+    <string name="ringtone_set_failed">Impossible de créer la sonnerie.</string>
+    <string name="ringtone_needs_download">La sonnerie sera définie une fois téléchargée.</string>
+    <string name="play_selection">Écouter</string>
+    <string name="add_to_playlist">Ajouter à la playlist</string>
+    <string name="rename_playlist_menu_item">Renommer</string>
+    <string name="add_to_playlist_selector_title">Ajouter à la playlist</string>
+    <string name="queue">Playlist actuelle</string>
+    <string name="save_play_queue_as_playlist">Enregistrer file lecture</string>
+    <string name="new_playlist_for_content">Nouvelle playlist</string>
+    <string name="new_empty_playlist">Nouvelle playlist</string>
+    <string name="new_playlist_name_template">Playlist %d</string>
+    <string name="removed_from_playlist">\"%1$s\" a été retiré de la playlist.</string>
+    <string name="removed_from_play_queue">Le titre \"%1$s\" a été retiré de la file de lecture.</string>
+    <string name="playlist_too_many_songs">Trop de morceaux. Nombre maximal par playlist : %d</string>
+    <string name="emptyplaylist">La playlist sélectionnée est vide.</string>
+    <string name="widget_nowplaying_small_title">Musique (4 x 1)</string>
+    <string name="widget_nowplaying_large_title">Musique (4 x 4)</string>
+    <string name="appwidget_text_separator">–</string>
+    <string name="playlist_edit_label">NOM</string>
+    <string name="create_playlist_create_text">OK</string>
+    <string name="rename_playlist_rename_text">Renommer</string>
+    <string name="service_start_error_title">Erreur de lecture</string>
+    <string name="service_start_error_msg">Impossible de lire le titre.</string>
+    <string name="service_start_error_button">OK</string>
+    <string name="weekpicker_set">OK</string>
+    <string name="weekpicker_title">Définir la période</string>
+    <string name="musicshortcutlabel">Playlist musicale</string>
+    <string name="app_name">Google Play Musique</string>
+    <string name="launcher_name">Play Musique</string>
+    <string name="actionbar_title">Google Play</string>
+    <string name="playback_failed_title">Erreur de lecture de la musique.</string>
+    <string name="playback_failed">Impossible de lire le titre demandé.</string>
+    <string name="cancel">Annuler</string>
+    <string name="remove_from_playlist">Supprimer de la playlist</string>
+    <string name="streamloadingtext">Connexion à %s…</string>
+    <string name="search_hint">Recherchez musique</string>
+    <string name="working_artists">Artistes…</string>
+    <string name="working_albums">Albums…</string>
+    <string name="loading">Chargement…</string>
+    <string name="sort_by_track">Pistes</string>
+    <string name="music_picker_title">Sélectionner un titre</string>
+    <string name="fail_to_start_stream">Impossible de lire le flux demandé.</string>
+    <string name="search_settings_description">Artistes, albums et morceaux</string>
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+    <string name="title_tv">Musique</string>
+    <string name="music_library">Bibliothèque musicale</string>
+    <string name="playlist_label">Playlist</string>
+    <string name="faux_art_all_songs_label">Tous les titres</string>
+    <string name="faux_art_playlist_label">Playlist</string>
+    <string name="faux_art_playlist_instant_mix_label">Mix instantané</string>
+    <string name="faux_art_playlist_auto_playlist_label">Playlist automatique</string>
+    <string name="buffering">Mise en mémoire tampon…</string>
+    <string name="keep_on_phone">"Stocker sur l'appareil"</string>
+    <string name="no_music_add_music_header">COMMENT AJOUTER DE LA MUSIQUE</string>
+    <string name="no_music_shop_body">Accédez à des millions de titres, dont des centaines disponibles gratuitement.</string>
+    <string name="no_music_shop_button">ACHETER</string>
+    <string name="no_music_upload_body">Importez gratuitement 20 000 titres dans Google Play.</string>
+    <string name="no_music_upload_button">EN SAVOIR PLUS</string>
+    <string name="no_music_usb_copy_body">Pour copier de la musique depuis votre ordinateur vers votre appareil, utilisez un câble USB.</string>
+    <string name="no_music_usb_copy_button">EN SAVOIR PLUS</string>
+    <string name="no_music_heading">Votre bibliothèque musicale est vide</string>
+    <string name="no_music_setup_uploader_heading">Écoutez votre musique en streaming</string>
+    <string name="no_music_setup_uploader_body">Avec Google Play Music, vous pouvez écouter le contenu de votre bibliothèque musicale personnelle en streaming.</string>
+    <string name="no_music_setup_usb_heading">Copiez de la musique sur votre appareil</string>
+    <string name="no_music_setup_usb_body">Pour copier de la musique depuis votre ordinateur vers votre appareil, veuillez utiliser un câble USB.</string>
+    <string name="no_local_music_heading">"Aucune musique stockée sur l'appareil"</string>
+    <string name="no_local_music_body">"Pour afficher l'intégralité de votre bibliothèque, ouvrez le menu et décochez la case \"Sur l'appareil uniq\".
+
+Pour sélectionner la musique que vous souhaitez stocker sur votre appareil, ouvrez le menu et appuyez sur \"Sélect. musique appareil\"."</string>
+    <string name="no_music_learn_more">En savoir plus</string>
+    <string name="no_music_syncing_heading">La musique est en cours de synchronisation.</string>
+    <string name="no_music_syncing_body">"La musique est en cours de synchronisation à partir du serveur et devrait bientôt s'afficher."</string>
+    <string name="no_music_scanning_heading">"Recherche de musique sur l'appareil"</string>
+    <string name="no_music_scanning_body">Le système recherche de la musique sur votre appareil.</string>
+    <string name="sync_disabled">"Vous devez configurer la synchronisation pour que les titres de Google Play Music s'affichent. Voulez-vous le faire maintenant ?"</string>
+    <string name="tutorial_welcome_heading">Bienvenue dans Google Play Music</string>
+    <string name="tutorial_welcome_body">"Importez jusqu'à 20 000 titres depuis votre bibliothèque musicale personnelle.
+
+Écoutez instantanément la musique achetée sur Google Play.
+
+Écoutez l'intégralité de votre musique sur le Web, sur votre téléphone ou sur votre tablette. Téléchargez-la facilement pour l'écouter hors connexion.
+
+Le tout, gratuitement."</string>
+    <string name="tutorial_select_account_heading">Sélectionner un compte</string>
+    <string name="tutorial_select_account_body">"Associez votre compte à Google Play Musique pour écouter le contenu de votre bibliothèque musicale, ainsi que les titres que vous avez achetés.
+
+Quel compte voulez-vous utiliser ?"</string>
+    <string name="tutorial_sign_in">Associez votre compte à Google Play Musique pour écouter le contenu de votre bibliothèque musicale, ainsi que les titres que vous avez achetés.</string>
+    <string name="tutorial_free_music_heading">Obtenez de la musique gratuite</string>
+    <string name="tutorial_free_music_body">Découvrez des centaines de titres gratuits des plus grands noms du rock, du hip-hop, et plus encore, sur Google Play.</string>
+    <string name="tutorial_account_heading">Bienvenue</string>
+    <string name="tutorial_account_body">Vous êtes invité à utiliser Google Play Music. Vous pouvez utiliser ce lecteur pour accéder instantanément aux titres que vous ajoutez à Google Play Music et à ceux que vous avez copiés sur votre appareil Android.</string>
+    <string name="tutorial_account_list_header">"Pour commencer, sélectionnez un compte Google afin d'associer ce lecteur à Google Play Music :"</string>
+    <string name="tutorial_done_heading">Amusez-vous bien !</string>
+    <string name="tutorial_done_body">"Le lecteur Musique est maintenant associé à votre compte Google.
+
+Si vous avez déjà ajouté le contenu de votre bibliothèque musicale à Google Play Music, celle-ci va bientôt s'afficher sur ce lecteur.
+
+Dans le cas contraire, commencez par consulter notre site Web depuis votre ordinateur :"</string>
+    <string name="tutorial_skip">Ignorer</string>
+    <string name="tutorial_next">Suivant</string>
+    <string name="tutorial_done">OK</string>
+    <string name="tutorial_add_account">Ajouter un compte</string>
+    <string name="tutorial_free_music">Obtenir des titres gratuits</string>
+    <string name="spinner_carousel">Sélections récentes</string>
+    <string name="spinner_album">Albums</string>
+    <string name="spinner_artist">Artistes</string>
+    <string name="spinner_songs">Titres</string>
+    <string name="spinner_playlists">Playlists</string>
+    <string name="spinner_genres">Genres</string>
+    <string name="sort_by_title">Trier de A à Z</string>
+    <string name="sort_by_artist">Trier par artiste</string>
+    <string name="sort_by_album">Trier par album</string>
+    <string name="sort_by_date">"Trier par date d'ajout"</string>
+    <string name="more_by_artist">Autres albums de cet artiste</string>
+    <string name="make_available_offline">"Stocker sur l'appareil"</string>
+    <string name="search_web">Rechercher sur le Web</string>
+    <string name="manage_done">OK</string>
+    <string name="too_many_items_title">"Trop d'éléments"</string>
+    <string name="too_many_items_body">"Espace de stockage insuffisant pour tous les éléments sélectionnés. Veuillez désélectionner certains éléments pour libérer de l'espace."</string>
+    <string name="save_manage_music_change_title">Modifications non enregistrées</string>
+    <string name="save_manage_music_change_body">"Voulez-vous stocker la musique sélectionnée sur l'appareil ?"</string>
+    <string name="not_all_items_can_be_kept_body">Espace insuffisant pour le stockage de tous les éléments sélectionnés. Ces éléments ne seront pas tous téléchargés.</string>
+    <string name="free_space_overfull">Mém. pleine (%s en trop)</string>
+    <string name="free_space">%s DISPONIBLE(S)</string>
+    <string name="stream_error_title">Musique momentanément indisponible</string>
+    <string name="stream_error_no_space_available">Aucun espace disponible.</string>
+    <string name="stream_error_only_on_wifi">Vous devez être connecté à un réseau Wi-Fi pour lire ce titre.</string>
+    <string name="stream_error_no_connection">Vous devez être connecté pour lire ce titre.</string>
+    <string name="stream_error_unauthorized_title">"Erreur d'autorisation"</string>
+    <string name="stream_error_unauthorized">"Nom d'utilisateur ou mot de passe incorrect."</string>
+    <string name="stream_error_another_stream_being_played">Musique interrompue, car vous écoutez le contenu de votre bibliothèque sur un autre appareil.</string>
+    <string name="stream_error_rate_limit_reached">Google Musique est momentanément indisponible. Assurez-vous de ne lire le contenu de votre bibliothèque que sur un seul appareil à la fois.</string>
+    <string name="stream_error_device_not_authorized">"Vous pouvez utiliser votre bibliothèque musicale avec un maximum de dix appareils. Veuillez annuler l'autorisation de l'un de vos appareils pour en autoriser un autre."</string>
+    <string name="stream_error_device_not_authorized_link">https://play.google.com/music/listen?view=settings_pl</string>
+    <string name="market_uri_link">market://details?id=com.google.android.music</string>
+    <string name="stream_error_device_not_authorized_not_now_button">Pas maintenant</string>
+    <string name="stream_error_device_not_authorized_manage_devices_button">Gérer les appareils</string>
+    <string name="stream_error_learn_more">En savoir plus</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/music/bin/answer.py?answer=1230356</string>
+    <string name="stream_error_another_stream_being_played_short">Musique interrompue.</string>
+    <string name="stream_error_rate_limit_reached_short">Google Musique momentanément indisponible.</string>
+    <string name="stream_error_device_not_authorized_short">"Nombre maximal autorisé d'appareils atteint pour cette bibliothèque musicale."</string>
+    <string name="stream_error_another_stream_being_played_notification">Lecture en cours sur autre appareil.</string>
+    <string name="stream_error_rate_limit_reached_notification">Lecture en cours sur autre appareil.</string>
+    <string name="stream_error_device_not_authorized_notification">10 appareils au max. par biblio.</string>
+    <string name="stream_error_another_stream_being_played_notification_short">Musique interrompue.</string>
+    <string name="stream_error_rate_limit_reached_notification_short">Google Musique indisponible.</string>
+    <string name="stream_error_device_not_authorized_notification_short">Limite appareils atteinte.</string>
+    <string name="athome_error_place_disconnected_short">"Impossible d'établir la communication avec le Nexus Q."</string>
+    <string name="athome_error_controller_too_old_short">"Pour utiliser le Nexus Q, veuillez installer la dernière version de l'application Google Play Musique."</string>
+    <string name="athome_error_controller_too_old">"Pour utiliser le Nexus Q, veuillez d'abord mettre à jour l'application Google Play Musique."</string>
+    <string name="athome_error_controller_too_old_notification_short">Veuillez mettre à jour Google Play Musique</string>
+    <string name="athome_error_controller_too_old_notification">pour utiliser le Nexus Q.</string>
+    <string name="athome_error_controller_too_old_update_button">Mettre à jour</string>
+    <string name="athome_error_controller_too_new_short">Veuillez mettre à jour le logiciel du Nexus Q.</string>
+    <string name="athome_error_controller_too_new">Le logiciel du Nexus Q est obsolète. Pour lancer la mise à jour automatique, veuillez connecter le Nexus Q à Internet via un câble Ethernet ou le réseau Wi-Fi.</string>
+    <string name="athome_error_controller_too_new_notification_short">Mettez à jour logiciel Nexus Q.</string>
+    <string name="athome_error_controller_too_new_notification">Pour lancer la mise à jour automatique, veuillez connecter le Nexus Q à Internet.</string>
+    <string name="athome_error_generic_short">Erreur réseau sur le Nexus Q.</string>
+    <string name="athome_error_generic">Perte de la connexion réseau avec le Nexus Q.</string>
+    <string name="athome_error_generic_notification_short">Erreur réseau sur le Nexus Q.</string>
+    <string name="athome_error_generic_notification">"Impossible de communiquer avec le Nexus Q, probablement en raison d'une connexion réseau de mauvaise qualité ou d'un problème avec l'appareil."</string>
+    <string name="athome_error_device_setup_short">"Veuillez rétablir la configuration d'usine du Nexus Q."</string>
+    <string name="athome_error_device_setup">"La configuration du Nexus Q n'a pas été finalisée. Pour recommencer, veuillez rétablir la configuration d'usine de votre Nexus Q."</string>
+    <string name="athome_error_device_setup_notification_short">Config. Nexus Q non finalisée.</string>
+    <string name="athome_error_device_setup_notification">"Pour recommencer, veuillez rétablir la configuration d'usine de votre Nexus Q."</string>
+    <string name="athome_error_unauthorized_account_short">Compte non autorisé.</string>
+    <string name="athome_error_unauthorized_account">Vous ne pouvez pas utiliser le compte sélectionné avec le Nexus Q.</string>
+    <string name="athome_error_unauthorized_account_notification_short">Compte non autorisé.</string>
+    <string name="athome_error_unauthorized_account_notification">Vous ne pouvez pas utiliser le compte sélectionné avec le Nexus Q.</string>
+    <string name="athome_error_incompatible_tgs_version">La version du service de regroupement actuellement exécutée sur le Nexus Q est incompatible.</string>
+    <string name="athome_error_incompatible_tgs_version_short">Erreur regroupement Nexus Q.</string>
+    <string name="athome_error_incompatible_tgs_version_notification">La version du service de regroupement actuellement exécutée sur le Nexus Q est incompatible.</string>
+    <string name="athome_error_incompatible_tgs_version_notification_short">Erreur regroupement Nexus Q.</string>
+    <string name="athome_error_unreachable_tgs">"Impossible d'établir la communication avec le Nexus Q. Si le problème persiste, il est possible que vous deviez redémarrer votre Nexus Q."</string>
+    <string name="athome_error_unreachable_tgs_short">Connex. impossible avec Nexus Q.</string>
+    <string name="athome_error_unreachable_tgs_notification">"Impossible d'établir la communication avec le Nexus Q. Si le problème persiste, il est possible que vous deviez redémarrer votre Nexus Q."</string>
+    <string name="athome_error_unreachable_tgs_notification_short">Connex. impossible avec Nexus Q.</string>
+    <string name="athome_error_server_network_short">Erreur réseau.</string>
+    <string name="athome_error_server_network">Impossible de communiquer avec le serveur.</string>
+    <string name="hide_now_playing_bar">Masquer la barre \"À l’écoute\"</string>
+    <string name="show_now_playing_bar">Afficher la barre \"À l’écoute\"</string>
+    <string name="show_options">Afficher les options</string>
+    <string name="hide_options">Masquer les options</string>
+    <string name="all_songs_in_genre">"Tous les titres de
+%s"</string>
+    <string name="preview_header">PARTAGÉ SUR GOOGLE+</string>
+    <string name="shared_playback_full">ÉCOUTE INTÉGRALE GRATUITE</string>
+    <string name="shared_playback_partial">EXTRAIT</string>
+    <string name="btn_buy">Acheter</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">Stockage de la musique demandée en cours…</string>
+    <string name="notification_downloading_when_on_wifi">"Le stockage de la musique demandée se poursuivra la prochaine fois que l'appareil sera connecté à Internet via le Wi-Fi."</string>
+    <string name="notification_downloading_excessive_errors">Impossible de télécharger des titres pour le moment. Veuillez vérifier votre connexion Internet.</string>
+    <string name="notification_downloading_done">La musique demandée a bien été téléchargée.</string>
+    <string name="notification_ticker_ringtone_set">Sonnerie définie sur \"%s\".</string>
+    <string name="notification_title_ringtone_set">Sonnerie réglée sur \"%s\"</string>
+    <string name="notification_content_ringtone_set">Appuyez pour modifier cette sonnerie.</string>
+    <string name="notification_ticker_ringtone_set_failed">Impossible de créer la sonnerie.</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s – %s</string>
+    <string name="notification_newsongs_songcount">%d nouveaux titres</string>
+    <string name="notification_newsongs_subtitle">Ajoutés à Google Play Music</string>
+    <string name="carousel_label_shuffle_all">Lecture aléatoire tous titres</string>
+    <string name="song_label">TITRE</string>
+    <string name="artist_label">ARTISTE</string>
+    <string name="album_label">ALBUM</string>
+    <string name="effectspanel">Égaliseur</string>
+    <string name="menu_make_instant_mix">Créer un mix instantané</string>
+    <string name="instant_mix_default_name">Mix %s</string>
+    <string name="creating_instant_mix">"Ajout d'un mix instantané
+aux playlists…"</string>
+    <string name="creating_instant_mix_with_seed">"Ajout d'un mix instantané
+aux playlists, créé à partir de
+\"%s\"…"</string>
+    <string name="create_instant_mix_failed">Impossible de créer le mix instantané. Veuillez réessayer.</string>
+    <string name="create_instant_mix_failed_insufficient_results">Votre bibliothèque ne contient pas assez de titres similaires pour créer un mix instantané à partir de \"%s\". Veuillez réessayer avec un autre titre.</string>
+    <string name="create_instant_mix_sync_timeout">"Le mix instantané a été
+créé. Il va bientôt apparaître dans
+vos playlists."</string>
+    <string name="create_instant_mix_btn_ok">OK</string>
+    <string name="delete">Supprimer</string>
+    <string name="confirm_delete_local_only">Voulez-vous supprimer \"%s\" ?</string>
+    <string name="confirm_delete_has_remote">\"%s\" a été transféré, puis ajouté à Google Play Music. Seuls les éléments transférés vont être supprimés. Voulez-vous vraiment les supprimer ?</string>
+    <string name="waiting_share">Partage de \"%s\"…</string>
+    <string name="share">Partager</string>
+    <string name="share_failure">Un problème est survenu lors du partage de votre musique.</string>
+    <string name="share_google_plus_footer">"Le partage permet aux membres de vos cercles de bénéficier d'une écoute gratuite."</string>
+    <string name="accessibility_play">Écouter</string>
+    <string name="accessibility_pause">Pause</string>
+    <string name="accessibility_stop">Arrêter</string>
+    <string name="accessibility_next">Suivant</string>
+    <string name="accessibility_prev">Précédent</string>
+    <string name="accessibility_shuffle">Lecture aléatoire</string>
+    <string name="accessibility_repeat">Répéter</string>
+    <string name="accessibility_thumbsUp">"J'aime"</string>
+    <string name="accessibility_thumbsDown">"Je n'aime pas"</string>
+    <string name="accessibility_star1">Une étoile</string>
+    <string name="accessibility_star2">Deux étoiles</string>
+    <string name="accessibility_star3">Trois étoiles</string>
+    <string name="accessibility_star4">Quatre étoiles</string>
+    <string name="accessibility_star5">Cinq étoiles</string>
+    <string name="accessibility_contractor">Développer les informations sur le titre</string>
+    <string name="accessibility_back">Retour</string>
+    <string name="accessibility_contextMenu">Menu du titre</string>
+    <string name="accessibility_home">Accueil de Google Musique</string>
+    <string name="accessibility_search">Rechercher</string>
+    <string name="accessibility_search_cancel">Annuler la recherche actuelle</string>
+    <string name="accessibility_current">Morceau en cours</string>
+    <string name="accessibility_createnewplaylist">Créer une playlist</string>
+    <string name="accessibility_menu">"Plus d'options"</string>
+    <string name="accessibility_shop">Acheter de la musique</string>
+    <string name="accessibility_volume">Volume</string>
+    <string name="accessibility_at_home_volume">Volume</string>
+    <string name="accessibility_select_output">Sélectionner la sortie audio</string>
+    <string name="accessibility_close_social_mix_mode">Quitter la session de partage musical</string>
+    <string name="header_help_add_songs">Ajoutez des titres de votre bibliothèque pour démarrer une session de partage musical</string>
+    <string name="ringtone_replace_alert_button">Remplacer</string>
+    <string name="ringtone_replace_alert_title">Remplacer la sonnerie</string>
+    <string name="ringtone_replace_alert_message">Une sonnerie du même nom existe déjà. Voulez-vous la remplacer ?</string>
+    <string name="legal_information">Informations légales</string>
+    <string name="license_title">Licences Open Source</string>
+    <string name="license_error">Impossible de charger les licences.</string>
+    <string name="market_wrong_account" formatted="false">"Le titre que vous tentez d’écouter a été acheté avec le compte %s.
+
+Vous êtes actuellement connecté à Google Play Musique avec le compte %s.
+
+Pour écouter ce titre, vous devez vous connecter au compte utilisé lors de l'achat."</string>
+    <string name="gplus_wrong_account" formatted="false">"Le titre que vous tentez d’écouter a été partagé avec le compte %s.
+
+Vous êtes actuellement connecté à Google Play Music avec le compte %s.
+
+Pour écouter la musique partagée, vous devez vous connecter au compte utilisé lors du partage."</string>
+    <string name="switch_account_button">Changer de compte</string>
+    <string name="switch_account_warning_message">"Voulez-vous vraiment changer de compte ?
+La musique stockée sur cet appareil sera supprimée."</string>
+    <string name="switch_account_warning_button">Changer de compte</string>
+    <string name="retry_button">Réessayer</string>
+    <string name="wait_for_item">En attente de synchronisation de la musique.</string>
+    <string name="wait_for_item_failure">"L'ajout de votre musique est en cours. Veuillez patienter quelques instants, puis réessayer."</string>
+    <string name="ringtone_title">Vérifier la sonnerie</string>
+    <string name="edit_ringtone">Modifier la sonnerie</string>
+    <string name="ringtone_done">OK</string>
+    <string name="ringtone_file_edited_name">Extrait de %1$s</string>
+    <string name="progress_dialog_saving">Enregistrement…</string>
+    <string name="start_handle">Poignée de début</string>
+    <string name="resize_handle">Poignée de redimensionnement</string>
+    <string name="menu_reset">Réinitialiser</string>
+    <string name="save_success_message">\"%1$s\" a été enregistré comme sonnerie par défaut.</string>
+    <string name="save_failure_message">"Impossible d'enregistrer %1$s comme sonnerie."</string>
+    <string name="play_error">Impossible de lire ce fichier multimédia.</string>
+    <string name="write_error">Impossible de modifier le fichier.</string>
+    <string name="read_error">Impossible de lire le fichier.</string>
+    <string name="no_space_error">"Votre carte SD ne dispose pas d'espace suffisant pour enregistrer ce fichier."</string>
+    <string name="bad_extension_error">Impossible de modifier ce type de fichier.</string>
+    <string name="no_extension_error">"Impossible de modifier un fichier dont l'extension est différente de .mp3 ou .wav."</string>
+    <string name="alert_ok_button">OK</string>
+    <string name="athome_playback_title">En cours de lecture</string>
+    <string name="store_tutorial_title">Acheter et écouter instantanément</string>
+    <string name="store_tutorial_content">Découvrez des millions de titres MP3 sur Google Play, dont des centaines disponibles gratuitement.</string>
+    <string name="store_tutorial_instruction">"Pour accéder à la boutique, appuyez sur l'icône représentant un cabas."</string>
+    <string name="athome_added_by">Ajouté par</string>
+    <string name="athome_tutorial_title">Écoutez de la musique où que vous soyez</string>
+    <string name="athome_tutorial_content">"Pour choisir où écouter votre musique, appuyez sur l'icône de streaming."</string>
+    <string name="athome_party_mode_disclamer">Si vous participez à une session de partage musical, les autres internautes peuvent voir votre photo de profil public.</string>
+    <string name="athome_party_mode_disclamer_save_preference">Ne plus afficher</string>
+    <string name="no_song_added">File de lecture pleine. %1$d titres au maximum.</string>
+    <string name="recent_added">Ajouté</string>
+    <string name="recent_purchased">Acheté</string>
+    <string name="recent_played">Écouté</string>
+    <string name="now_playing_tab_now_playing">EN COURS DE LECTURE</string>
+    <string name="now_playing_tab_queue">FILE EN COURS DE LECTURE</string>
+</resources>

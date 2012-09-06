@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 77
+    .line 72
     iput-object p1, p0, Lcom/google/android/finsky/layout/LegacyActionBar$1;->this$0:Lcom/google/android/finsky/layout/LegacyActionBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "v"
 
     .prologue
-    .line 80
+    .line 75
     iget-object v0, p0, Lcom/google/android/finsky/layout/LegacyActionBar$1;->this$0:Lcom/google/android/finsky/layout/LegacyActionBar;
 
     #getter for: Lcom/google/android/finsky/layout/LegacyActionBar;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
@@ -52,7 +52,7 @@
 
     if-eqz v0, :cond_12
 
-    .line 81
+    .line 76
     iget-object v0, p0, Lcom/google/android/finsky/layout/LegacyActionBar$1;->this$0:Lcom/google/android/finsky/layout/LegacyActionBar;
 
     #getter for: Lcom/google/android/finsky/layout/LegacyActionBar;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
@@ -62,11 +62,11 @@
 
     invoke-virtual {v0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goUp()V
 
-    .line 85
+    .line 80
     :goto_11
     return-void
 
-    .line 83
+    .line 78
     :cond_12
     iget-object v0, p0, Lcom/google/android/finsky/layout/LegacyActionBar$1;->this$0:Lcom/google/android/finsky/layout/LegacyActionBar;
 

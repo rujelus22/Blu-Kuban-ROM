@@ -28,89 +28,12 @@
 
 .field private l:Ljava/lang/String;
 
-.field private m:Ljava/lang/String;
+.field private m:Z
 
-.field private n:Z
-
-.field private o:Lcom/google/wireless/gdata2/a/a/a;
-
-.field private p:Ljava/lang/String;
-
-.field private q:Ljava/lang/String;
-
-.field private r:Ljava/lang/String;
+.field private n:Lcom/google/wireless/gdata2/a/a/a;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 3
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 42
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 20
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->a:Ljava/lang/String;
-
-    .line 21
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->b:Ljava/lang/String;
-
-    .line 22
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->c:Ljava/lang/String;
-
-    .line 23
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->d:Ljava/lang/String;
-
-    .line 24
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->e:Ljava/lang/String;
-
-    .line 25
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->f:Ljava/lang/String;
-
-    .line 26
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->g:Ljava/lang/String;
-
-    .line 27
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->h:Ljava/lang/String;
-
-    .line 28
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->i:Ljava/lang/String;
-
-    .line 29
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->j:Ljava/lang/String;
-
-    .line 30
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->k:Ljava/lang/String;
-
-    .line 31
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->l:Ljava/lang/String;
-
-    .line 32
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->m:Ljava/lang/String;
-
-    .line 33
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/google/wireless/gdata2/a/a;->n:Z
-
-    .line 34
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->o:Lcom/google/wireless/gdata2/a/a/a;
-
-    .line 35
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->p:Ljava/lang/String;
-
-    .line 36
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->q:Ljava/lang/String;
-
-    .line 37
-    iput-object v1, p0, Lcom/google/wireless/gdata2/a/a;->r:Ljava/lang/String;
-
-    .line 43
-    return-void
-.end method
-
 .method private static a(Ljava/lang/StringBuffer;Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
     .parameter
@@ -216,31 +139,31 @@
 
     const-string v1, "CATEGORY"
 
-    iget-object v2, p0, Lcom/google/wireless/gdata2/a/a;->i:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/wireless/gdata2/a/a;->h:Ljava/lang/String;
 
     invoke-static {v0, v1, v2}, Lcom/google/wireless/gdata2/a/a;->a(Ljava/lang/StringBuffer;Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v1, "CATEGORY SCHEME"
 
-    iget-object v2, p0, Lcom/google/wireless/gdata2/a/a;->j:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/wireless/gdata2/a/a;->i:Ljava/lang/String;
 
     invoke-static {v0, v1, v2}, Lcom/google/wireless/gdata2/a/a;->a(Ljava/lang/StringBuffer;Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v1, "PUBLICATION DATE"
 
-    iget-object v2, p0, Lcom/google/wireless/gdata2/a/a;->k:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/wireless/gdata2/a/a;->j:Ljava/lang/String;
 
     invoke-static {v0, v1, v2}, Lcom/google/wireless/gdata2/a/a;->a(Ljava/lang/StringBuffer;Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v1, "UPDATE DATE"
 
-    iget-object v2, p0, Lcom/google/wireless/gdata2/a/a;->l:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/wireless/gdata2/a/a;->k:Ljava/lang/String;
 
     invoke-static {v0, v1, v2}, Lcom/google/wireless/gdata2/a/a;->a(Ljava/lang/StringBuffer;Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v1, "DELETED"
 
-    iget-boolean v2, p0, Lcom/google/wireless/gdata2/a/a;->n:Z
+    iget-boolean v2, p0, Lcom/google/wireless/gdata2/a/a;->m:Z
 
     invoke-static {v2}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
 
@@ -250,7 +173,7 @@
 
     const-string v1, "ETAG"
 
-    iget-object v2, p0, Lcom/google/wireless/gdata2/a/a;->m:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/wireless/gdata2/a/a;->l:Ljava/lang/String;
 
     invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -258,13 +181,13 @@
 
     invoke-static {v0, v1, v2}, Lcom/google/wireless/gdata2/a/a;->a(Ljava/lang/StringBuffer;Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/google/wireless/gdata2/a/a;->o:Lcom/google/wireless/gdata2/a/a/a;
+    iget-object v1, p0, Lcom/google/wireless/gdata2/a/a;->n:Lcom/google/wireless/gdata2/a/a/a;
 
     if-eqz v1, :cond_77
 
     const-string v1, "BATCH"
 
-    iget-object v2, p0, Lcom/google/wireless/gdata2/a/a;->o:Lcom/google/wireless/gdata2/a/a/a;
+    iget-object v2, p0, Lcom/google/wireless/gdata2/a/a;->n:Lcom/google/wireless/gdata2/a/a/a;
 
     invoke-virtual {v2}, Lcom/google/wireless/gdata2/a/a/a;->toString()Ljava/lang/String;
 

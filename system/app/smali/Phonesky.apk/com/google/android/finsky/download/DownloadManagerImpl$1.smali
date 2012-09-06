@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 41
+    .line 39
     iput-object p1, p0, Lcom/google/android/finsky/download/DownloadManagerImpl$1;->this$0:Lcom/google/android/finsky/download/DownloadManagerImpl;
 
     iput-object p2, p0, Lcom/google/android/finsky/download/DownloadManagerImpl$1;->val$request:Lcom/google/android/finsky/download/DownloadRequest;
@@ -51,7 +51,7 @@
     .registers 5
 
     .prologue
-    .line 44
+    .line 42
     iget-object v1, p0, Lcom/google/android/finsky/download/DownloadManagerImpl$1;->this$0:Lcom/google/android/finsky/download/DownloadManagerImpl;
 
     #getter for: Lcom/google/android/finsky/download/DownloadManagerImpl;->mContentResolver:Landroid/content/ContentResolver;
@@ -73,17 +73,20 @@
 
     move-result-object v0
 
-    .line 47
+    .line 44
     .local v0, uri:Landroid/net/Uri;
+    invoke-static {v0}, Lcom/google/android/finsky/download/DownloadManagerConstants;->sniffDownloadManagerVersion(Landroid/net/Uri;)V
+
+    .line 45
     iget-object v1, p0, Lcom/google/android/finsky/download/DownloadManagerImpl$1;->val$listener:Lcom/google/android/finsky/utils/ParameterizedRunnable;
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_20
 
     iget-object v1, p0, Lcom/google/android/finsky/download/DownloadManagerImpl$1;->val$listener:Lcom/google/android/finsky/utils/ParameterizedRunnable;
 
     invoke-interface {v1, v0}, Lcom/google/android/finsky/utils/ParameterizedRunnable;->run(Ljava/lang/Object;)V
 
-    .line 48
-    :cond_1d
+    .line 46
+    :cond_20
     return-void
 .end method

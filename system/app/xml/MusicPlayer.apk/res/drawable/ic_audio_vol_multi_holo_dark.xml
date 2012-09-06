@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_audio_vol_multi_0_holo_dark" android:maxLevel="20" />
+    <item android:drawable="@drawable/ic_audio_vol_multi_1_holo_dark" android:maxLevel="40" />
+    <item android:drawable="@drawable/ic_audio_vol_multi_2_holo_dark" android:maxLevel="60" />
+    <item android:drawable="@drawable/ic_audio_vol_multi_3_holo_dark" android:maxLevel="80" />
+    <item android:drawable="@drawable/ic_audio_vol_multi_4_holo_dark" android:maxLevel="100" />
+    <item android:drawable="@drawable/ic_audio_vol_multi_mute_0_holo_dark" android:maxLevel="101" />
+</level-list>

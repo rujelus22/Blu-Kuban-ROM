@@ -128,46 +128,46 @@
 
 Para añadir uno, pulsa la tecla de menú y toca:
  
-"<b><font fgcolor="#ffffffff"><li>"Cuentas para añadir o configurar una cuenta con los contactos que puedes sincronizar,
-"</li></font></b>" 
-"<b><font fgcolor="#ffffffff"><li>"Contacto nuevo para crear un nuevo contacto,
-"</li></font></b>" 
-"<b><font fgcolor="#ffffffff"><li>"Importar/exportar para importar contactos desde la tarjeta SIM o SD
-"</li></font></b>.</string>
+"<li><font fgcolor="#ffffffff"><b>"Cuentas para añadir o configurar una cuenta con los contactos que puedes sincronizar,
+"</b></font></li>" 
+"<li><font fgcolor="#ffffffff"><b>"Contacto nuevo para crear un nuevo contacto,
+"</b></font></li>" 
+"<li><font fgcolor="#ffffffff"><b>"Importar/exportar para importar contactos desde la tarjeta SIM o SD
+"</b></font></li>.</string>
     <string name="noContactsHelpTextWithSync">"No tienes contactos. Si acabas de añadir una cuenta, la sincronización puede tardar.
 
 Para añadir contactos, pulsa la tecla de menú y toca:
  
-"<b><font fgcolor="#ffffffff"><li>"Cuentas para añadir o configurar una cuenta con contactos que puedes sincronizar,
-"</li></font></b>" 
-"<b><font fgcolor="#ffffffff"><li>"Opciones de visualización para modificar los contactos visibles,
-"</li></font></b>" 
-"<b><font fgcolor="#ffffffff"><li>"Contacto nuevo para crear un nuevo contacto,
-"</li></font></b>" 
-"<b><font fgcolor="#ffffffff"><li>"Importar/exportar para importar contactos desde la tarjeta SIM o SD
-"</li></font></b>.</string>
+"<li><font fgcolor="#ffffffff"><b>"Cuentas para añadir o configurar una cuenta con contactos que puedes sincronizar,
+"</b></font></li>" 
+"<li><font fgcolor="#ffffffff"><b>"Opciones de visualización para modificar los contactos visibles,
+"</b></font></li>" 
+"<li><font fgcolor="#ffffffff"><b>"Contacto nuevo para crear un nuevo contacto,
+"</b></font></li>" 
+"<li><font fgcolor="#ffffffff"><b>"Importar/exportar para importar contactos desde la tarjeta SIM o SD
+"</b></font></li>.</string>
     <string name="noContactsNoSimHelpText">"No tienes contactos.
 
 Para añadir uno, pulsa la tecla de menú y toca:
  
-"<b><font fgcolor="#ffffffff"><li>"Cuentas para añadir o configurar una cuenta con los contactos que puedes sincronizar,
-"</li></font></b>" 
-"<b><font fgcolor="#ffffffff"><li>"Contacto nuevo para crear un nuevo contacto,
-"</li></font></b>" 
-"<b><font fgcolor="#ffffffff"><li>"Importar/exportar para importar contactos desde la tarjeta SD
-"</li></font></b>.</string>
+"<li><font fgcolor="#ffffffff"><b>"Cuentas para añadir o configurar una cuenta con los contactos que puedes sincronizar,
+"</b></font></li>" 
+"<li><font fgcolor="#ffffffff"><b>"Contacto nuevo para crear un nuevo contacto,
+"</b></font></li>" 
+"<li><font fgcolor="#ffffffff"><b>"Importar/exportar para importar contactos desde la tarjeta SD
+"</b></font></li>.</string>
     <string name="noContactsNoSimHelpTextWithSync">"No tienes contactos. Si acabas de añadir una cuenta, la sincronización puede tardar.
 
 Para añadir contactos, pulsa la tecla de menú y toca:
  
-"<b><font fgcolor="#ffffffff"><li>"Cuentas para añadir o configurar una cuenta con contactos que puedes sincronizar,
-"</li></font></b>" 
-"<b><font fgcolor="#ffffffff"><li>"Opciones de visualización para modificar los contactos visibles,
-"</li></font></b>" 
-"<b><font fgcolor="#ffffffff"><li>"Contacto nuevo para crear un nuevo contacto,
-"</li></font></b>" 
-"<b><font fgcolor="#ffffffff"><li>"Importar/exportar para importar contactos desde la tarjeta SD
-"</li></font></b>.</string>
+"<li><font fgcolor="#ffffffff"><b>"Cuentas para añadir o configurar una cuenta con contactos que puedes sincronizar,
+"</b></font></li>" 
+"<li><font fgcolor="#ffffffff"><b>"Opciones de visualización para modificar los contactos visibles,
+"</b></font></li>" 
+"<li><font fgcolor="#ffffffff"><b>"Contacto nuevo para crear un nuevo contacto,
+"</b></font></li>" 
+"<li><font fgcolor="#ffffffff"><b>"Importar/exportar para importar contactos desde la tarjeta SD
+"</b></font></li>.</string>
     <string name="noFavoritesHelpText">"No tienes favoritos.
 
 Para añadir un contacto a tu lista de favoritos, sigue estos pasos:

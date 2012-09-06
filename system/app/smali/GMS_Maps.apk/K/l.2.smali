@@ -1,153 +1,47 @@
-.class public abstract LK/l;
-.super LK/cC;
+.class Lk/L;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:LK/n;
+.field final synthetic a:Lk/F;
 
-.field private b:Ljava/lang/Object;
+.field final synthetic b:Lk/I;
 
 
 # direct methods
-.method protected constructor <init>()V
-    .registers 2
+.method constructor <init>(Lk/I;Lk/F;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, LK/cC;-><init>()V
+    .prologue
+    .line 69
+    iput-object p1, p0, Lk/L;->b:Lk/I;
 
-    sget-object v0, LK/n;->b:LK/n;
+    iput-object p2, p0, Lk/L;->a:Lk/F;
 
-    iput-object v0, p0, LK/l;->a:LK/n;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private c()Z
-    .registers 3
-
-    sget-object v0, LK/n;->d:LK/n;
-
-    iput-object v0, p0, LK/l;->a:LK/n;
-
-    invoke-virtual {p0}, LK/l;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    iput-object v0, p0, LK/l;->b:Ljava/lang/Object;
-
-    iget-object v0, p0, LK/l;->a:LK/n;
-
-    sget-object v1, LK/n;->c:LK/n;
-
-    if-eq v0, v1, :cond_16
-
-    sget-object v0, LK/n;->a:LK/n;
-
-    iput-object v0, p0, LK/l;->a:LK/n;
-
-    const/4 v0, 0x1
-
-    :goto_15
-    return v0
-
-    :cond_16
-    const/4 v0, 0x0
-
-    goto :goto_15
-.end method
-
 
 # virtual methods
-.method protected abstract a()Ljava/lang/Object;
-.end method
+.method public run()V
+    .registers 3
 
-.method protected final b()Ljava/lang/Object;
-    .registers 2
+    .prologue
+    .line 72
+    iget-object v0, p0, Lk/L;->b:Lk/I;
 
-    sget-object v0, LK/n;->c:LK/n;
+    iget-object v1, p0, Lk/L;->a:Lk/F;
 
-    iput-object v0, p0, LK/l;->a:LK/n;
+    invoke-static {v0, v1}, Lk/I;->a(Lk/I;Lk/F;)V
 
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final hasNext()Z
-    .registers 5
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    iget-object v0, p0, LK/l;->a:LK/n;
-
-    sget-object v3, LK/n;->d:LK/n;
-
-    if-eq v0, v3, :cond_1e
-
-    move v0, v1
-
-    :goto_9
-    invoke-static {v0}, Lcom/google/common/base/v;->b(Z)V
-
-    sget-object v0, LK/m;->a:[I
-
-    iget-object v3, p0, LK/l;->a:LK/n;
-
-    invoke-virtual {v3}, LK/n;->ordinal()I
-
-    move-result v3
-
-    aget v0, v0, v3
-
-    packed-switch v0, :pswitch_data_22
-
-    invoke-direct {p0}, LK/l;->c()Z
-
-    move-result v2
-
-    :goto_1d
-    :pswitch_1d
-    return v2
-
-    :cond_1e
-    move v0, v2
-
-    goto :goto_9
-
-    :pswitch_20
-    move v2, v1
-
-    goto :goto_1d
-
-    :pswitch_data_22
-    .packed-switch 0x1
-        :pswitch_1d
-        :pswitch_20
-    .end packed-switch
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .registers 2
-
-    invoke-virtual {p0}, LK/l;->hasNext()Z
-
-    move-result v0
-
-    if-nez v0, :cond_c
-
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
-
-    :cond_c
-    sget-object v0, LK/n;->b:LK/n;
-
-    iput-object v0, p0, LK/l;->a:LK/n;
-
-    iget-object v0, p0, LK/l;->b:Ljava/lang/Object;
-
-    return-object v0
+    .line 73
+    return-void
 .end method

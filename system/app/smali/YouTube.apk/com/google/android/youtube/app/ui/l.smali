@@ -3,83 +3,56 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Lcom/google/android/youtube/app/ui/m;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/ui/j;
+.field private final a:Lcom/google/android/youtube/app/a;
+
+.field private final b:Lcom/google/android/youtube/core/Analytics;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/ui/j;)V
-    .registers 2
+.method public constructor <init>(Lcom/google/android/youtube/app/a;Lcom/google/android/youtube/core/Analytics;)V
+    .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 101
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/l;->a:Lcom/google/android/youtube/app/ui/j;
-
+    .line 146
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 147
+    iput-object p1, p0, Lcom/google/android/youtube/app/ui/l;->a:Lcom/google/android/youtube/app/a;
+
+    .line 148
+    iput-object p2, p0, Lcom/google/android/youtube/app/ui/l;->b:Lcom/google/android/youtube/core/Analytics;
+
+    .line 149
     return-void
 .end method
 
 
 # virtual methods
-.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 8
-    .parameter
-    .parameter
-    .parameter
+.method public final a(Lcom/google/android/youtube/core/model/Channel;)V
+    .registers 4
     .parameter
 
     .prologue
-    .line 104
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/l;->a:Lcom/google/android/youtube/app/ui/j;
+    .line 152
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/l;->b:Lcom/google/android/youtube/core/Analytics;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/j;->a(Lcom/google/android/youtube/app/ui/j;)Lcom/google/android/youtube/app/ui/p;
+    const-string v1, "OpenChannelFromSearchResults"
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/Analytics;->b(Ljava/lang/String;)V
 
-    if-eqz v0, :cond_2b
+    .line 153
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/l;->a:Lcom/google/android/youtube/app/a;
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/l;->a:Lcom/google/android/youtube/app/ui/j;
+    iget-object v1, p1, Lcom/google/android/youtube/core/model/Channel;->userProfileUri:Landroid/net/Uri;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/j;->b(Lcom/google/android/youtube/app/ui/j;)Landroid/view/View;
+    invoke-interface {v0, v1}, Lcom/google/android/youtube/app/a;->a(Landroid/net/Uri;)V
 
-    move-result-object v0
-
-    if-eqz v0, :cond_2b
-
-    .line 105
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/l;->a:Lcom/google/android/youtube/app/ui/j;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/j;->a(Lcom/google/android/youtube/app/ui/j;)Lcom/google/android/youtube/app/ui/p;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/l;->a:Lcom/google/android/youtube/app/ui/j;
-
-    invoke-static {v1}, Lcom/google/android/youtube/app/ui/j;->b(Lcom/google/android/youtube/app/ui/j;)Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/View;->getTag()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {v0, p3, v1}, Lcom/google/android/youtube/app/ui/p;->a(ILjava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2b
-
-    .line 106
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/l;->a:Lcom/google/android/youtube/app/ui/j;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/j;->a()V
-
-    .line 109
-    :cond_2b
+    .line 154
     return-void
 .end method

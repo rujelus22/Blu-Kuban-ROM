@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/day_container" android:background="@drawable/calendar_widget_sub_02" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="24.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/agenda_date_text_size" android:textStyle="bold" android:textColor="@color/month_event_date" android:gravity="center_vertical" android:id="@id/date" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/date_margin_left" android:layout_alignParentLeft="true" android:layout_centerHorizontal="true" />
-    <TextView android:textSize="@dimen/agenda_today_text_size" android:textColor="@color/event_title" android:id="@id/today" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:text="@string/goto_today" android:layout_alignBaseline="@id/date" android:layout_alignParentRight="true" />
-</RelativeLayout>

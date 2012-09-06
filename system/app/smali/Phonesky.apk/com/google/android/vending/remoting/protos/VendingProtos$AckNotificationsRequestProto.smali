@@ -49,34 +49,34 @@
     .registers 2
 
     .prologue
-    .line 19804
+    .line 20357
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 19808
+    .line 20361
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->notificationId_:Ljava/util/List;
 
-    .line 19842
+    .line 20395
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->signatureHash_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
 
-    .line 19861
+    .line 20414
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->nackNotificationId_:Ljava/util/List;
 
-    .line 19920
+    .line 20474
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->cachedSize:I
 
-    .line 19804
+    .line 20357
     return-void
 .end method
 
@@ -87,17 +87,17 @@
     .parameter "value"
 
     .prologue
-    .line 19878
+    .line 20431
     if-nez p1, :cond_8
 
-    .line 19879
+    .line 20432
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 19881
+    .line 20434
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->nackNotificationId_:Ljava/util/List;
 
@@ -107,20 +107,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 19882
+    .line 20435
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->nackNotificationId_:Ljava/util/List;
 
-    .line 19884
+    .line 20437
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->nackNotificationId_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 19885
+    .line 20438
     return-object p0
 .end method
 
@@ -129,17 +129,17 @@
     .parameter "value"
 
     .prologue
-    .line 19825
+    .line 20378
     if-nez p1, :cond_8
 
-    .line 19826
+    .line 20379
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 19828
+    .line 20381
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->notificationId_:Ljava/util/List;
 
@@ -149,20 +149,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 19829
+    .line 20382
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->notificationId_:Ljava/util/List;
 
-    .line 19831
+    .line 20384
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->notificationId_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 19832
+    .line 20385
     return-object p0
 .end method
 
@@ -170,15 +170,15 @@
     .registers 2
 
     .prologue
-    .line 19922
+    .line 20477
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 19924
+    .line 20479
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->getSerializedSize()I
 
-    .line 19926
+    .line 20481
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->cachedSize:I
 
@@ -198,7 +198,7 @@
     .end annotation
 
     .prologue
-    .line 19864
+    .line 20417
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->nackNotificationId_:Ljava/util/List;
 
     return-object v0
@@ -217,7 +217,7 @@
     .end annotation
 
     .prologue
-    .line 19811
+    .line 20364
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->notificationId_:Ljava/util/List;
 
     return-object v0
@@ -227,14 +227,14 @@
     .registers 7
 
     .prologue
-    .line 19930
+    .line 20486
     const/4 v3, 0x0
 
-    .line 19932
+    .line 20488
     .local v3, size:I
     const/4 v0, 0x0
 
-    .line 19933
+    .line 20489
     .local v0, dataSize:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->getNotificationIdList()Ljava/util/List;
 
@@ -258,7 +258,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 19934
+    .line 20490
     .local v1, element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -268,12 +268,12 @@
 
     goto :goto_a
 
-    .line 19937
+    .line 20493
     .end local v1           #element:Ljava/lang/String;
     :cond_1c
     add-int/2addr v3, v0
 
-    .line 19938
+    .line 20494
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->getNotificationIdList()Ljava/util/List;
 
     move-result-object v4
@@ -286,14 +286,14 @@
 
     add-int/2addr v3, v4
 
-    .line 19940
+    .line 20496
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->hasSignatureHash()Z
 
     move-result v4
 
     if-eqz v4, :cond_38
 
-    .line 19941
+    .line 20497
     const/4 v4, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->getSignatureHash()Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
@@ -306,11 +306,11 @@
 
     add-int/2addr v3, v4
 
-    .line 19945
+    .line 20501
     :cond_38
     const/4 v0, 0x0
 
-    .line 19946
+    .line 20502
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->getNackNotificationIdList()Ljava/util/List;
 
     move-result-object v4
@@ -332,7 +332,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 19947
+    .line 20503
     .restart local v1       #element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -342,12 +342,12 @@
 
     goto :goto_41
 
-    .line 19950
+    .line 20506
     .end local v1           #element:Ljava/lang/String;
     :cond_53
     add-int/2addr v3, v0
 
-    .line 19951
+    .line 20507
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->getNackNotificationIdList()Ljava/util/List;
 
     move-result-object v4
@@ -360,10 +360,10 @@
 
     add-int/2addr v3, v4
 
-    .line 19953
+    .line 20509
     iput v3, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->cachedSize:I
 
-    .line 19954
+    .line 20510
     return v3
 .end method
 
@@ -371,7 +371,7 @@
     .registers 2
 
     .prologue
-    .line 19844
+    .line 20397
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->signatureHash_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
 
     return-object v0
@@ -381,7 +381,7 @@
     .registers 2
 
     .prologue
-    .line 19843
+    .line 20396
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->hasSignatureHash:Z
 
     return v0
@@ -397,29 +397,29 @@
     .end annotation
 
     .prologue
-    .line 19961
+    .line 20518
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 19962
+    .line 20519
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_2a
 
-    .line 19966
+    .line 20523
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 19967
+    .line 20524
     :sswitch_d
     return-object p0
 
-    .line 19972
+    .line 20529
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -429,22 +429,22 @@
 
     goto :goto_0
 
-    .line 19976
+    .line 20533
     :sswitch_16
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;-><init>()V
 
-    .line 19977
+    .line 20534
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 19978
+    .line 20535
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->setSignatureHash(Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;
 
     goto :goto_0
 
-    .line 19982
+    .line 20539
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
     :sswitch_22
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -455,7 +455,7 @@
 
     goto :goto_0
 
-    .line 19962
+    .line 20519
     :sswitch_data_2a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -475,7 +475,7 @@
     .end annotation
 
     .prologue
-    .line 19802
+    .line 20355
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;
 
     move-result-object v0
@@ -488,26 +488,26 @@
     .parameter "value"
 
     .prologue
-    .line 19846
+    .line 20399
     if-nez p1, :cond_8
 
-    .line 19847
+    .line 20400
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 19849
+    .line 20402
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->hasSignatureHash:Z
 
-    .line 19850
+    .line 20403
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->signatureHash_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
 
-    .line 19851
+    .line 20404
     return-object p0
 .end method
 
@@ -521,7 +521,7 @@
     .end annotation
 
     .prologue
-    .line 19909
+    .line 20463
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->getNotificationIdList()Ljava/util/List;
 
     move-result-object v2
@@ -544,7 +544,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 19910
+    .line 20464
     .local v0, element:Ljava/lang/String;
     const/4 v2, 0x1
 
@@ -552,7 +552,7 @@
 
     goto :goto_8
 
-    .line 19912
+    .line 20466
     .end local v0           #element:Ljava/lang/String;
     :cond_19
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->hasSignatureHash()Z
@@ -561,7 +561,7 @@
 
     if-eqz v2, :cond_27
 
-    .line 19913
+    .line 20467
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->getSignatureHash()Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
@@ -570,7 +570,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 19915
+    .line 20469
     :cond_27
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;->getNackNotificationIdList()Ljava/util/List;
 
@@ -593,7 +593,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 19916
+    .line 20470
     .restart local v0       #element:Ljava/lang/String;
     const/4 v2, 0x3
 
@@ -601,7 +601,7 @@
 
     goto :goto_2f
 
-    .line 19918
+    .line 20472
     .end local v0           #element:Ljava/lang/String;
     :cond_40
     return-void

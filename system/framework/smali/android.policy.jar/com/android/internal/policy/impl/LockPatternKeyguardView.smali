@@ -25,9 +25,9 @@
 
 .field private static final DB_KEY_DRIVING_MODE_ON:Ljava/lang/String; = "driving_mode_on"
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
-.field static final DEBUG_CONFIGURATION:Z = true
+.field static final DEBUG_CONFIGURATION:Z = false
 
 .field private static final EMERGENCY_CALL_TIMEOUT:I = 0x2710
 
@@ -165,10 +165,10 @@
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/KeyguardViewBase;-><init>(Landroid/content/Context;)V
 
     .line 116
-    iput-boolean v1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->GLASSLOCK_MODE:Z
+    iput-boolean v2, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->GLASSLOCK_MODE:Z
 
     .line 117
-    iput-boolean v2, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->CIRCLELOCK_MODE:Z
+    iput-boolean v1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->CIRCLELOCK_MODE:Z
 
     .line 126
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mScreenOn:Z

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/iv_card_image" android:layout_width="34.669983dip" android:layout_height="22.0dip" android:layout_marginLeft="16.669983dip" android:layout_marginTop="20.669983dip" android:layout_marginBottom="21.329987dip" android:scaleType="fitXY" />
-    <TextView android:textSize="22.0sp" android:textColor="@color/color2" android:id="@id/tv_card_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" />
-</LinearLayout>

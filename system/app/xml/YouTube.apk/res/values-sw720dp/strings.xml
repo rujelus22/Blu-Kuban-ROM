@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="primary_font_html_color_name">white</string>
+    <string name="primary_contrast_font_html_color_name">white</string>
+    <string name="play_on_this_device">Play on this tablet</string>
+    <string name="this_phone">This tablet</string>
+</resources>

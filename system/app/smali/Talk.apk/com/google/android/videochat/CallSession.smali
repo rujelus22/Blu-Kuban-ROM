@@ -25,7 +25,7 @@
 
     .prologue
     .line 29
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
     iput-object p2, p0, Lcom/google/android/videochat/CallSession;->mCallManager:Lcom/google/android/videochat/CallManager;

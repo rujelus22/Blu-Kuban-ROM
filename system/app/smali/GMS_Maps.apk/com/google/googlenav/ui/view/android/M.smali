@@ -1,23 +1,23 @@
-.class Lcom/google/googlenav/ui/view/android/M;
+.class Lcom/google/googlenav/ui/view/android/m;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements LL/e;
+.implements Landroid/widget/TextView$OnEditorActionListener;
 
 
 # instance fields
-.field final synthetic a:Landroid/net/Uri;
-
-.field final synthetic b:Lcom/google/googlenav/ui/view/android/L;
+.field final synthetic a:Lcom/google/googlenav/ui/view/android/j;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/L;Landroid/net/Uri;)V
-    .registers 3
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/j;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/M;->b:Lcom/google/googlenav/ui/view/android/L;
-
-    iput-object p2, p0, Lcom/google/googlenav/ui/view/android/M;->a:Landroid/net/Uri;
+    .prologue
+    .line 258
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/m;->a:Lcom/google/googlenav/ui/view/android/j;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,30 +26,48 @@
 
 
 # virtual methods
-.method public a()Ljava/io/InputStream;
-    .registers 3
+.method public onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/M;->b:Lcom/google/googlenav/ui/view/android/L;
+    .prologue
+    .line 261
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/m;->a:Lcom/google/googlenav/ui/view/android/j;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/L;->a(Lcom/google/googlenav/ui/view/android/L;)Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/M;->a:Landroid/net/Uri;
-
-    invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic b()Ljava/lang/Object;
-    .registers 2
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/android/M;->a()Ljava/io/InputStream;
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/j;->b(Lcom/google/googlenav/ui/view/android/j;)Lcom/google/googlenav/suggest/android/SuggestView;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v0}, Lcom/google/googlenav/suggest/android/SuggestView;->isPopupShowing()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1e
+
+    const/4 v0, 0x6
+
+    if-ne p2, v0, :cond_1e
+
+    .line 262
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/m;->a:Lcom/google/googlenav/ui/view/android/j;
+
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/j;->b(Lcom/google/googlenav/ui/view/android/j;)Lcom/google/googlenav/suggest/android/SuggestView;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/m;->a:Lcom/google/googlenav/ui/view/android/j;
+
+    invoke-static {v1}, Lcom/google/googlenav/ui/view/android/j;->c(Lcom/google/googlenav/ui/view/android/j;)Ljava/lang/Runnable;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/suggest/android/SuggestView;->post(Ljava/lang/Runnable;)Z
+
+    .line 264
+    :cond_1e
+    const/4 v0, 0x0
+
+    return v0
 .end method

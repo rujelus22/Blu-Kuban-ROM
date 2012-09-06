@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="normal_text_color">#ffd7d7d7</color>
-    <color name="secondary_text_color">#ff387586</color>
-    <color name="noti_per_color">#ffd7d7d7</color>
-    <color name="noti_desc_color">#ffd7d7d7</color>
-</resources>

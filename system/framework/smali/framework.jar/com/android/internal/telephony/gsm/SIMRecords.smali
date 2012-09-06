@@ -39,7 +39,7 @@
 
 .field private static final CRASH_RIL:Z = false
 
-.field protected static final DBG:Z = true
+.field protected static final DBG:Z = false
 
 .field private static final EVENT_AUTO_SELECT_DONE:I = 0x12c
 

@@ -53,40 +53,40 @@
         <item quantity="one">Elaborazione in corso per %1$d conversazione.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> disattivate.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> disattivata.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> disattivate.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> disattivata.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> segnalate come spam.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> segnalata come spam.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> segnalate come spam.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> segnalata come spam.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> archiviate.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> archiviata.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> archiviate.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> archiviata.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> spostate nella Posta in arrivo.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> spostata nella Posta in arrivo.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> spostate nella Posta in arrivo.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> spostata nella Posta in arrivo.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> eliminate.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> eliminata.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> eliminate.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> eliminata.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> segnate come importanti.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> segnata come importante.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> segnate come importanti.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> segnata come importante.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> segnate come non importanti.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> segnata come non importante.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> segnate come non importanti.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> segnata come non importante.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> segnate come già lette.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> segnata come già letta.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> segnate come già lette.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> segnata come già letta.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> segnate come da leggere.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> segnata come da leggere.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> segnate come da leggere.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> segnata come da leggere.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Etichette modificate.</item>

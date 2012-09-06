@@ -1,42 +1,31 @@
-.class Lcom/google/googlenav/aM;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field private static final a:Lcom/google/googlenav/aJ;
+.class public Lcom/google/googlenav/am;
+.super Lcom/google/googlenav/ar;
+.source "SourceFile"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method public constructor <init>(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+    .registers 2
+    .parameter
 
-    new-instance v0, Lcom/google/googlenav/aJ;
+    .prologue
+    .line 3872
+    invoke-direct {p0, p1}, Lcom/google/googlenav/ar;-><init>(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
 
-    new-instance v1, Lcom/google/googlenav/aN;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v2}, Lcom/google/googlenav/aN;-><init>(Lcom/google/googlenav/aK;)V
-
-    invoke-direct {v0, v1}, Lcom/google/googlenav/aJ;-><init>(Lcom/google/googlenav/aL;)V
-
-    sput-object v0, Lcom/google/googlenav/aM;->a:Lcom/google/googlenav/aJ;
-
+    .line 3873
     return-void
 .end method
 
-.method private constructor <init>()V
-    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public a()Ljava/lang/String;
+    .registers 2
 
-    return-void
-.end method
+    .prologue
+    .line 3876
+    invoke-virtual {p0}, Lcom/google/googlenav/am;->b()Ljava/lang/String;
 
-.method static synthetic a()Lcom/google/googlenav/aJ;
-    .registers 1
-
-    sget-object v0, Lcom/google/googlenav/aM;->a:Lcom/google/googlenav/aJ;
+    move-result-object v0
 
     return-object v0
 .end method

@@ -1,44 +1,37 @@
-.class Lcom/google/android/maps/rideabout/app/f;
-.super Lcom/google/android/maps/rideabout/app/e;
+.class public Lcom/google/android/maps/rideabout/app/f;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/maps/rideabout/app/x;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;)V
-    .registers 2
+.method public constructor <init>()V
+    .registers 1
 
-    invoke-direct {p0, p1}, Lcom/google/android/maps/rideabout/app/e;-><init>(Landroid/content/Context;)V
+    .prologue
+    .line 12
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected c()Z
-    .registers 4
+.method public a()V
+    .registers 1
 
-    const/4 v2, 0x1
-
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/f;->a:Landroid/media/AudioManager;
-
-    const/4 v1, 0x3
-
-    invoke-virtual {v0, v1, v2}, Landroid/media/AudioManager;->setStreamSolo(IZ)V
-
-    return v2
+    .prologue
+    .line 29
+    return-void
 .end method
 
-.method protected d()Z
-    .registers 4
+.method public a(Ljava/lang/String;)V
+    .registers 2
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/f;->a:Landroid/media/AudioManager;
-
-    const/4 v1, 0x3
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/media/AudioManager;->setStreamSolo(IZ)V
-
-    const/4 v0, 0x1
-
-    return v0
+    .prologue
+    .line 16
+    return-void
 .end method

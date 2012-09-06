@@ -16,13 +16,13 @@
 
 .field public final f:J
 
-.field public final g:Lcom/google/android/youtube/core/transfer/b;
+.field public final g:Lcom/google/android/youtube/core/transfer/d;
 
-.field public final h:Lcom/google/android/youtube/core/transfer/b;
+.field public final h:Lcom/google/android/youtube/core/transfer/d;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/google/android/youtube/core/transfer/Transfer$Status;IJJLcom/google/android/youtube/core/transfer/b;Lcom/google/android/youtube/core/transfer/b;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/google/android/youtube/core/transfer/Transfer$Status;IJJLcom/google/android/youtube/core/transfer/d;Lcom/google/android/youtube/core/transfer/d;)V
     .registers 12
     .parameter
     .parameter
@@ -40,7 +40,7 @@
     .line 52
     const-string v0, "filePath may not be empty"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -49,7 +49,7 @@
     .line 53
     const-string v0, "networkUri may not be empty"
 
-    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -58,7 +58,7 @@
     .line 54
     const-string v0, "status may not be null"
 
-    invoke-static {p3, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -78,24 +78,24 @@
     .line 58
     const-string v0, "inputExtras may not be null"
 
-    invoke-static {p9, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p9, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/transfer/b;
+    check-cast v0, Lcom/google/android/youtube/core/transfer/d;
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/transfer/Transfer;->g:Lcom/google/android/youtube/core/transfer/b;
+    iput-object v0, p0, Lcom/google/android/youtube/core/transfer/Transfer;->g:Lcom/google/android/youtube/core/transfer/d;
 
     .line 59
     const-string v0, "outputExtras may not be null"
 
-    invoke-static {p10, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p10, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/transfer/b;
+    check-cast v0, Lcom/google/android/youtube/core/transfer/d;
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/transfer/Transfer;->h:Lcom/google/android/youtube/core/transfer/b;
+    iput-object v0, p0, Lcom/google/android/youtube/core/transfer/Transfer;->h:Lcom/google/android/youtube/core/transfer/d;
 
     .line 60
     return-void
@@ -188,13 +188,9 @@
     .line 87
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "{filePath="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/android/youtube/core/transfer/Transfer;->a:Ljava/lang/String;
 

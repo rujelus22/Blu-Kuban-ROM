@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 57
+    .line 59
     iput-object p1, p0, Lcom/google/android/finsky/activities/ReviewDialog$1;->this$0:Lcom/google/android/finsky/activities/ReviewDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "arg0"
 
     .prologue
-    .line 65
+    .line 67
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .parameter "arg3"
 
     .prologue
-    .line 69
+    .line 71
     return-void
 .end method
 
@@ -66,12 +66,12 @@
     .parameter "arg3"
 
     .prologue
-    .line 60
+    .line 62
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewDialog$1;->this$0:Lcom/google/android/finsky/activities/ReviewDialog;
 
     #calls: Lcom/google/android/finsky/activities/ReviewDialog;->syncOkButtonState()V
     invoke-static {v0}, Lcom/google/android/finsky/activities/ReviewDialog;->access$000(Lcom/google/android/finsky/activities/ReviewDialog;)V
 
-    .line 61
+    .line 63
     return-void
 .end method

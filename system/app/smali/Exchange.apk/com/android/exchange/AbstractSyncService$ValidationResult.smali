@@ -33,7 +33,7 @@
     .registers 4
 
     .prologue
-    .line 308
+    .line 149
     new-instance v0, Lcom/android/exchange/AbstractSyncService$ValidationResult;
 
     const/4 v1, 0x1
@@ -58,29 +58,29 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 318
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 155
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 312
+    .line 151
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/exchange/AbstractSyncService$ValidationResult;->failure:I
 
-    .line 314
+    .line 152
     iput-object v1, p0, Lcom/android/exchange/AbstractSyncService$ValidationResult;->reason:Ljava/lang/String;
 
-    .line 316
+    .line 153
     iput-object v1, p0, Lcom/android/exchange/AbstractSyncService$ValidationResult;->exception:Ljava/lang/Exception;
 
-    .line 319
+    .line 156
     iput-boolean p1, p0, Lcom/android/exchange/AbstractSyncService$ValidationResult;->success:Z
 
-    .line 320
+    .line 157
     iput p2, p0, Lcom/android/exchange/AbstractSyncService$ValidationResult;->failure:I
 
-    .line 321
+    .line 158
     iput-object p3, p0, Lcom/android/exchange/AbstractSyncService$ValidationResult;->reason:Ljava/lang/String;
 
-    .line 322
+    .line 159
     return-void
 .end method

@@ -4,6 +4,7 @@
         <item name="android:textColorSecondary">@color/dialtacts_secondary_text_color</item>
         <item name="android:actionBarStyle">@style/DialtactsActionBarStyle</item>
         <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:editTextColor">#ffffffff</item>
         <item name="contact_browser_list_padding_left">16.0dip</item>
         <item name="contact_browser_list_padding_right">0.0dip</item>
         <item name="contact_browser_background">@android:color/transparent</item>
@@ -21,7 +22,7 @@
         <item name="list_item_presence_icon_size">16.0dip</item>
         <item name="list_item_photo_size">@dimen/contact_browser_list_item_photo_size</item>
         <item name="list_item_profile_photo_size">70.0dip</item>
-        <item name="list_item_prefix_highlight_color">#ff729a27</item>
+        <item name="list_item_prefix_highlight_color">#ff155496</item>
         <item name="list_item_header_text_indent">8.0dip</item>
         <item name="list_item_header_text_color">@color/people_app_theme_color</item>
         <item name="list_item_header_text_size">12.0sp</item>
@@ -30,10 +31,10 @@
         <item name="list_item_header_underline_color">@color/people_app_theme_color</item>
         <item name="list_item_text_indent">@dimen/contact_browser_list_item_text_indent</item>
         <item name="call_log_primary_text_color">#ffffffff</item>
-        <item name="call_log_primary_background_color">#ff000000</item>
+        <item name="call_log_primary_background_color">@android:color/transparent</item>
         <item name="call_log_secondary_text_color">#ff888888</item>
         <item name="call_log_secondary_background_color">#ff333333</item>
-        <item name="call_log_header_color">#ff33b5e5</item>
+        <item name="call_log_header_color">#ff155496</item>
         <item name="call_log_voicemail_status_height">40.0dip</item>
         <item name="call_log_voicemail_status_background_color">#ffffffe0</item>
         <item name="call_log_voicemail_status_text_color">#ff000000</item>
@@ -41,32 +42,36 @@
     </style>
     <style name="CallDetailActivityTheme" parent="@android:style/Theme.DeviceDefault">
         <item name="android:gravity">top</item>
+        <item name="android:editTextColor">#ffffffff</item>
         <item name="call_log_primary_text_color">#ffffffff</item>
-        <item name="call_log_primary_background_color">#ff000000</item>
+        <item name="call_log_primary_background_color">@android:color/transparent</item>
         <item name="call_log_secondary_text_color">#ffffffff</item>
         <item name="call_log_secondary_background_color">#ff333333</item>
-        <item name="call_log_header_color">#ff33b5e5</item>
+        <item name="call_log_header_color">#ff155496</item>
         <item name="call_log_voicemail_status_height">40.0dip</item>
         <item name="call_log_voicemail_status_background_color">#ffffffe0</item>
         <item name="call_log_voicemail_status_text_color">#ff000000</item>
     </style>
     <style name="DetailActivityTheme" parent="@android:style/Theme.DeviceDefault">
         <item name="android:textColorSecondary">@color/secondary_text_color</item>
+        <item name="android:editTextColor">#ffffffff</item>
     </style>
     <style name="EditorActivityTheme" parent="@android:style/Theme.DeviceDefault">
         <item name="android:textColorSecondary">@color/secondary_text_color</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:editTextColor">#ffffffff</item>
     </style>
     <style name="BackgroundOnlyTheme" parent="@android:style/Theme.DeviceDefault">
-        <item name="android:windowBackground">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowAnimationStyle">@null</item>
         <item name="android:windowNoDisplay">true</item>
+        <item name="android:editTextColor">#ffffffff</item>
     </style>
     <style name="Theme" />
-    <style name="Theme.QuickContact" parent="@android:style/Theme.Holo.Light">
+    <style name="Theme.QuickContact" parent="@android:style/Theme.Holo">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowFrame">@null</item>
         <item name="android:windowNoTitle">true</item>
@@ -80,6 +85,7 @@
     <style name="PeopleTheme" parent="@android:style/Theme.DeviceDefault">
         <item name="android:textColorSecondary">@color/secondary_text_color</item>
         <item name="android:actionBarStyle">@style/ContactsActionBarStyleWithoutDisplayOptions</item>
+        <item name="android:editTextColor">#ffffffff</item>
         <item name="contact_browser_list_padding_left">0.0dip</item>
         <item name="contact_browser_list_padding_right">0.0dip</item>
         <item name="contact_browser_background">@android:color/transparent</item>
@@ -100,7 +106,7 @@
         <item name="list_item_presence_icon_size">20.0dip</item>
         <item name="list_item_photo_size">@dimen/contact_browser_list_item_photo_size</item>
         <item name="list_item_profile_photo_size">70.0dip</item>
-        <item name="list_item_prefix_highlight_color">#ff0099ff</item>
+        <item name="list_item_prefix_highlight_color">#ff155496</item>
         <item name="list_item_header_text_indent">8.0dip</item>
         <item name="list_item_header_text_color">@color/list_item_header_text_color</item>
         <item name="list_item_header_text_size">14.0sp</item>
@@ -121,16 +127,18 @@
         <item name="list_item_touchwiz_index_scroll_marginRight">22.0dip</item>
         <item name="favorites_padding_bottom">0.0dip</item>
     </style>
-    <style name="ContactsActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+    <style name="ContactsActionBarStyle" parent="@android:style/Widget.Holo.ActionBar">
         <item name="android:background">@drawable/ab_solid_custom_blue_inverse_holo</item>
         <item name="android:displayOptions"></item>
         <item name="android:backgroundStacked">@drawable/ab_solid_custom_blue_inverse_holo</item>
     </style>
     <style name="ContactsActionBarStyleWithoutDisplayOptions" parent="@android:style/Widget.DeviceDefault.ActionBar">
         <item name="android:displayOptions"></item>
+        <item name="android:editTextColor">#ffffffff</item>
     </style>
     <style name="ContactsActionBarTheme" parent="@android:style/Theme.Holo">
         <item name="android:textColorHint">#ffcccccc</item>
+        <item name="android:editTextColor">#ffffffff</item>
     </style>
     <style name="ContactsActionBarTabView" parent="@android:style/Widget.Holo.ActionBar.TabView">
         <item name="android:background">@drawable/action_bar_tab</item>
@@ -145,10 +153,17 @@
     </style>
     <style name="JoinContactActivityTheme" parent="@style/ContactPickerTheme">
         <item name="android:actionBarStyle">@android:style/Widget.DeviceDefault.ActionBar</item>
+        <item name="android:editTextColor">#ffffffff</item>
     </style>
-    <style name="JoinedContactActivityTheme" parent="@android:style/Theme.DeviceDefault" />
-    <style name="ContactsPreferencesTheme" parent="@android:style/Theme.DeviceDefault" />
-    <style name="ContactListFilterTheme" parent="@android:style/Theme.DeviceDefault" />
+    <style name="JoinedContactActivityTheme" parent="@android:style/Theme.DeviceDefault">
+        <item name="android:editTextColor">#ffffffff</item>
+    </style>
+    <style name="ContactsPreferencesTheme" parent="@android:style/Theme.DeviceDefault">
+        <item name="android:editTextColor">#ffffffff</item>
+    </style>
+    <style name="ContactListFilterTheme" parent="@android:style/Theme.DeviceDefault">
+        <item name="android:editTextColor">#ffffffff</item>
+    </style>
     <style name="CustomContactListFilterView" parent="@style/ContactListFilterTheme">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">fill_parent</item>
@@ -157,16 +172,17 @@
         <item name="android:background">@android:color/transparent</item>
     </style>
     <style name="NonPhoneActivityTheme" parent="@android:style/Theme.Translucent.NoTitleBar" />
-    <style name="NonPhoneDialogTheme" parent="@android:style/Theme.Holo.Light.Dialog" />
-    <style name="ConfirmAddDetailDialogTheme" parent="@android:style/Theme.Holo.Light.Dialog.MinWidth">
+    <style name="NonPhoneDialogTheme" parent="@android:style/Theme.Holo.Dialog" />
+    <style name="ConfirmAddDetailDialogTheme" parent="@android:style/Theme.Holo.Dialog.MinWidth">
         <item name="android:windowCloseOnTouchOutside">true</item>
     </style>
     <style name="ContactEditorAccountsChangedActivityTheme" parent="@android:style/Theme.DeviceDefault.Dialog.MinWidth">
         <item name="android:textColorSecondary">@color/secondary_text_color</item>
+        <item name="android:editTextColor">#ffffffff</item>
         <item name="android:windowCloseOnTouchOutside">true</item>
     </style>
     <style name="SectionDivider">
-        <item name="android:background">#ff7e7e87</item>
+        <item name="android:background">#ff4d4d4d</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">1.0dip</item>
     </style>
@@ -222,6 +238,7 @@
     </style>
     <style name="DialtactsActionBarStyle" parent="@android:style/Widget.DeviceDefault.ActionBar">
         <item name="android:displayOptions"></item>
+        <item name="android:editTextColor">#ffffffff</item>
     </style>
     <style name="QuickContactListItemStyle">
         <item name="android:gravity">center_vertical</item>
@@ -340,7 +357,7 @@
         <item name="android:textColor">@color/tw_main_list_secondary_text_color</item>
     </style>
     <style name="TwMainListAccountFilterHeaderSectionDivider">
-        <item name="android:background">#ff217992</item>
+        <item name="android:background">#ff155496</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">1.0dip</item>
     </style>
@@ -350,7 +367,7 @@
         <item name="android:textColor">@color/account_filter_header_text_color</item>
     </style>
     <style name="TwMainListDirectoryHeaderSectionDivider">
-        <item name="android:background">#ff217992</item>
+        <item name="android:background">#ff155496</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">1.0dip</item>
     </style>
@@ -402,5 +419,6 @@
     <style name="TwContactsActionBarStyle" parent="@android:style/Widget.DeviceDefault.ActionBar">
         <item name="android:height">64.0dip</item>
         <item name="android:displayOptions"></item>
+        <item name="android:editTextColor">#ffffffff</item>
     </style>
 </resources>

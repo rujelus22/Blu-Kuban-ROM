@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/view/android/aa;
+.class Lcom/google/googlenav/ui/view/android/aA;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/android/Z;
+.field final synthetic a:Lcom/google/googlenav/ui/view/android/DistanceView;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/Z;)V
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/DistanceView;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/aa;->a:Lcom/google/googlenav/ui/view/android/Z;
+    .prologue
+    .line 125
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/aA;->a:Lcom/google/googlenav/ui/view/android/DistanceView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,15 +29,14 @@
 .method public run()V
     .registers 3
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aa;->a:Lcom/google/googlenav/ui/view/android/Z;
+    .prologue
+    .line 128
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aA;->a:Lcom/google/googlenav/ui/view/android/DistanceView;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/Z;->a(Lcom/google/googlenav/ui/view/android/Z;)Landroid/widget/HorizontalScrollView;
+    const/16 v1, 0x8
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/view/android/DistanceView;->setVisibility(I)V
 
-    const/16 v1, 0x42
-
-    invoke-virtual {v0, v1}, Landroid/widget/HorizontalScrollView;->fullScroll(I)Z
-
+    .line 129
     return-void
 .end method

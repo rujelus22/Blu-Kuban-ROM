@@ -156,7 +156,7 @@
     <string name="over_capacity">You can select up to %1$d items</string>
     <string name="setting_picture_frame">Setting picture frame...</string>
     <string name="add_pictures">Tap to add <b>images</b></string>
-    <string name="crop_guide_line">Tap and hold orange guide line to resize it</string>
+    <string name="crop_guide_line">Tap and hold the blue guide line to resize it</string>
     <string name="no_share_application">No applications to share media files</string>
     <string name="use_motion_calibration">Use motion after calibration</string>
     <string name="edit">Edit</string>

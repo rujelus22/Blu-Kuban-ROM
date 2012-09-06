@@ -1,428 +1,374 @@
-.class public LR/c;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# static fields
-.field protected static a:Lcom/google/gmm/debug/c;
+.class public abstract Lr/c;
+.super Lr/f;
+.source "SourceFile"
 
 
 # instance fields
-.field protected b:Z
+.field protected final a:Lcom/google/android/maps/driveabout/vector/dg;
 
-.field private c:Ljava/util/Vector;
+.field private volatile h:Z
 
-.field private d:Ljava/lang/Object;
+.field private final i:I
 
-.field private e:LY/c;
+.field private final j:Ljava/util/List;
 
-.field private f:LX/c;
+.field private final k:I
 
-.field private g:LU/i;
+.field private final l:I
 
-.field private h:Ljava/lang/String;
-
-.field private i:[Ljava/lang/Thread;
+.field private final m:F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method protected constructor <init>(Lac/p;Ljava/lang/String;Lcom/google/android/maps/driveabout/vector/dg;ILjava/util/List;IIFZLjava/util/Locale;ZLjava/io/File;Lr/t;)V
+    .registers 26
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    const-class v0, LR/c;
+    .prologue
+    .line 221
+    invoke-virtual {p3}, Lcom/google/android/maps/driveabout/vector/dg;->d()Lr/aE;
 
-    invoke-static {v0}, Lcom/google/gmm/debug/c;->a(Ljava/lang/Class;)Lcom/google/gmm/debug/c;
+    move-result-object v5
 
-    move-result-object v0
+    move/from16 v0, p11
 
-    sput-object v0, LR/c;->a:Lcom/google/gmm/debug/c;
+    move-object/from16 v1, p13
 
-    return-void
-.end method
+    invoke-static {p2, p3, v0, v1}, Lr/c;->a(Ljava/lang/String;Lcom/google/android/maps/driveabout/vector/dg;ZLr/t;)Lr/s;
 
-.method protected constructor <init>()V
-    .registers 2
+    move-result-object v6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {p3}, Lr/c;->a(Lcom/google/android/maps/driveabout/vector/dg;)I
 
-    new-instance v0, Ljava/util/Vector;
+    move-result v7
 
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
+    move-object v2, p0
 
-    iput-object v0, p0, LR/c;->c:Ljava/util/Vector;
+    move-object v3, p1
 
-    new-instance v0, Ljava/lang/Object;
+    move-object v4, p2
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    move/from16 v8, p9
 
-    iput-object v0, p0, LR/c;->d:Ljava/lang/Object;
+    move/from16 v9, p7
 
-    return-void
-.end method
+    move-object/from16 v10, p10
 
-.method public constructor <init>(LY/c;LX/c;LU/i;Ljava/lang/String;I)V
-    .registers 7
+    move-object/from16 v11, p12
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v2 .. v11}, Lr/f;-><init>(Lac/p;Ljava/lang/String;Lr/aE;Lr/s;IZILjava/util/Locale;Ljava/io/File;)V
 
-    new-instance v0, Ljava/util/Vector;
+    .line 162
+    const/4 v2, 0x0
 
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
+    iput-boolean v2, p0, Lr/c;->h:Z
 
-    iput-object v0, p0, LR/c;->c:Ljava/util/Vector;
+    .line 227
+    iput-object p3, p0, Lr/c;->a:Lcom/google/android/maps/driveabout/vector/dg;
 
-    new-instance v0, Ljava/lang/Object;
+    .line 228
+    move/from16 v0, p4
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput v0, p0, Lr/c;->i:I
 
-    iput-object v0, p0, LR/c;->d:Ljava/lang/Object;
+    .line 229
+    move-object/from16 v0, p5
 
-    iput-object p1, p0, LR/c;->e:LY/c;
+    iput-object v0, p0, Lr/c;->j:Ljava/util/List;
 
-    iput-object p2, p0, LR/c;->f:LX/c;
+    .line 230
+    move/from16 v0, p6
 
-    iput-object p3, p0, LR/c;->g:LU/i;
+    iput v0, p0, Lr/c;->l:I
 
-    iput-object p4, p0, LR/c;->h:Ljava/lang/String;
+    .line 235
+    const/4 v2, 0x7
 
-    new-array v0, p5, [Ljava/lang/Thread;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iput-object v0, p0, LR/c;->i:[Ljava/lang/Thread;
+    move-result-object v2
 
-    return-void
-.end method
+    move-object/from16 v0, p5
 
-.method static synthetic a(LR/c;Ljava/lang/String;Z)LU/f;
-    .registers 4
-
-    invoke-direct {p0, p1, p2}, LR/c;->a(Ljava/lang/String;Z)LU/f;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private a(Ljava/lang/String;Z)LU/f;
-    .registers 4
-
-    iget-object v0, p0, LR/c;->g:LU/i;
-
-    invoke-interface {v0, p1, p2}, LU/i;->a(Ljava/lang/String;Z)LU/f;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic a(LR/c;)LY/c;
-    .registers 2
-
-    invoke-direct {p0}, LR/c;->b()LY/c;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic a(LR/c;LR/d;)Z
-    .registers 3
-
-    invoke-direct {p0, p1}, LR/c;->a(LR/d;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private a(LR/d;)Z
-    .registers 4
-
-    iget-object v1, p0, LR/c;->d:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_3
-    iget-object v0, p0, LR/c;->c:Ljava/util/Vector;
-
-    invoke-virtual {v0, p1}, Ljava/util/Vector;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_18
-
-    iget-object v0, p0, LR/c;->c:Ljava/util/Vector;
-
-    invoke-virtual {v0, p1}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
-
-    iget-object v0, p0, LR/c;->d:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
-
-    const/4 v0, 0x1
-
-    monitor-exit v1
-
-    :goto_17
-    return v0
-
-    :cond_18
-    const/4 v0, 0x0
-
-    monitor-exit v1
-
-    goto :goto_17
-
-    :catchall_1b
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_1d
-    .catchall {:try_start_3 .. :try_end_1d} :catchall_1b
-
-    throw v0
-.end method
-
-.method static synthetic b(LR/c;)LU/i;
-    .registers 2
-
-    iget-object v0, p0, LR/c;->g:LU/i;
-
-    return-object v0
-.end method
-
-.method private b()LY/c;
-    .registers 2
-
-    iget-object v0, p0, LR/c;->e:LY/c;
-
-    return-object v0
-.end method
-
-.method private c()Z
-    .registers 5
-
-    const/4 v0, 0x0
-
-    iget-object v1, p0, LR/c;->d:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :goto_4
-    :try_start_4
-    iget-object v2, p0, LR/c;->c:Ljava/util/Vector;
-
-    invoke-virtual {v2}, Ljava/util/Vector;->size()I
+    invoke-interface {v0, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_19
+    if-nez v2, :cond_74
 
-    iget-boolean v2, p0, LR/c;->b:Z
-    :try_end_e
-    .catchall {:try_start_4 .. :try_end_e} :catchall_1f
+    const/16 v2, 0xa
 
-    if-eqz v2, :cond_19
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    :try_start_10
-    iget-object v2, p0, LR/c;->d:Ljava/lang/Object;
+    move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/Object;->wait()V
-    :try_end_15
-    .catchall {:try_start_10 .. :try_end_15} :catchall_1f
-    .catch Ljava/lang/InterruptedException; {:try_start_10 .. :try_end_15} :catch_16
+    move-object/from16 v0, p5
+
+    invoke-interface {v0, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_74
+
+    const/16 v2, 0xb
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    move-object/from16 v0, p5
+
+    invoke-interface {v0, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_74
+
+    const/16 v2, 0xc
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    move-object/from16 v0, p5
+
+    invoke-interface {v0, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_74
+
+    const/16 v2, 0x9
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    move-object/from16 v0, p5
+
+    invoke-interface {v0, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_7c
+
+    .line 240
+    :cond_74
+    const/4 v2, 0x0
+
+    iput v2, p0, Lr/c;->k:I
+
+    .line 244
+    :goto_77
+    move/from16 v0, p8
+
+    iput v0, p0, Lr/c;->m:F
+
+    .line 245
+    return-void
+
+    .line 242
+    :cond_7c
+    invoke-static/range {p4 .. p4}, Lr/c;->a(I)I
+
+    move-result v2
+
+    iput v2, p0, Lr/c;->k:I
+
+    goto :goto_77
+.end method
+
+.method static a(I)I
+    .registers 4
+    .parameter
+
+    .prologue
+    const/16 v2, 0x80
+
+    .line 277
+    const/4 v0, 0x0
+
+    move v1, p0
+
+    .line 278
+    :goto_4
+    if-le v1, v2, :cond_b
+
+    .line 279
+    shr-int/lit8 v1, v1, 0x1
+
+    .line 280
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_4
 
-    :catch_16
-    move-exception v2
+    .line 282
+    :cond_b
+    :goto_b
+    if-ge v1, v2, :cond_12
 
-    :try_start_17
-    monitor-exit v1
+    .line 283
+    shl-int/lit8 v1, v1, 0x1
 
-    :goto_18
+    .line 284
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_b
+
+    .line 286
+    :cond_12
+    return v0
+.end method
+
+.method private static a(Lcom/google/android/maps/driveabout/vector/dg;)I
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 267
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/dg;->d:Lcom/google/android/maps/driveabout/vector/dg;
+
+    if-ne p0, v0, :cond_7
+
+    const/16 v0, 0x3e8
+
+    :goto_6
     return v0
 
-    :cond_19
-    iget-boolean v2, p0, LR/c;->b:Z
+    :cond_7
+    const/16 v0, 0xbb8
 
-    if-nez v2, :cond_22
+    goto :goto_6
+.end method
 
-    monitor-exit v1
+.method static synthetic a(Lr/c;)I
+    .registers 2
+    .parameter
 
-    goto :goto_18
+    .prologue
+    .line 45
+    iget v0, p0, Lr/c;->i:I
 
-    :catchall_1f
-    move-exception v0
+    return v0
+.end method
 
-    monitor-exit v1
-    :try_end_21
-    .catchall {:try_start_17 .. :try_end_21} :catchall_1f
+.method private static a(Ljava/lang/String;Lcom/google/android/maps/driveabout/vector/dg;ZLr/t;)Lr/s;
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    throw v0
+    .prologue
+    .line 252
+    invoke-static {}, Lh/a;->b()Z
 
-    :cond_22
-    :try_start_22
-    iget-object v0, p0, LR/c;->c:Ljava/util/Vector;
+    move-result v0
 
-    const/4 v2, 0x0
+    if-eqz v0, :cond_b
 
-    invoke-virtual {v0, v2}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    .line 255
+    invoke-virtual {p1, p0, p2, p3}, Lcom/google/android/maps/driveabout/vector/dg;->a(Ljava/lang/String;ZLr/t;)Lr/s;
 
     move-result-object v0
 
-    check-cast v0, LR/d;
+    .line 257
+    :goto_a
+    return-object v0
 
-    iget-object v2, p0, LR/c;->c:Ljava/util/Vector;
+    :cond_b
+    const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    goto :goto_a
+.end method
 
-    invoke-virtual {v2, v3}, Ljava/util/Vector;->removeElementAt(I)V
+.method static synthetic b(Lr/c;)I
+    .registers 2
+    .parameter
 
-    monitor-exit v1
-    :try_end_32
-    .catchall {:try_start_22 .. :try_end_32} :catchall_1f
+    .prologue
+    .line 45
+    iget v0, p0, Lr/c;->l:I
 
-    :try_start_32
-    sget-object v1, LR/c;->a:Lcom/google/gmm/debug/c;
+    return v0
+.end method
 
-    const-string v2, "Executing AsyncHttpRequest "
+.method static synthetic c(Lr/c;)F
+    .registers 2
+    .parameter
 
-    invoke-virtual {v1, v2}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
+    .prologue
+    .line 45
+    iget v0, p0, Lr/c;->m:F
 
-    invoke-virtual {v0}, LR/d;->run()V
-    :try_end_3c
-    .catch Ljava/lang/Throwable; {:try_start_32 .. :try_end_3c} :catch_3e
+    return v0
+.end method
 
-    :goto_3c
-    const/4 v0, 0x1
+.method static synthetic d(Lr/c;)Ljava/util/List;
+    .registers 2
+    .parameter
 
-    goto :goto_18
+    .prologue
+    .line 45
+    iget-object v0, p0, Lr/c;->j:Ljava/util/List;
 
-    :catch_3e
-    move-exception v0
+    return-object v0
+.end method
 
-    sget-object v1, LR/c;->a:Lcom/google/gmm/debug/c;
+.method static synthetic e(Lr/c;)Z
+    .registers 2
+    .parameter
 
-    const-string v2, "AsyncHttpRequestFactory.run(): uncaught exception"
+    .prologue
+    .line 45
+    iget-boolean v0, p0, Lr/c;->h:Z
 
-    invoke-virtual {v1, v2, v0}, Lcom/google/gmm/debug/c;->a(Ljava/lang/Object;Ljava/lang/Object;)V
+    return v0
+.end method
 
-    goto :goto_3c
+.method static synthetic f(Lr/c;)I
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 45
+    iget v0, p0, Lr/c;->k:I
+
+    return v0
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/String;I)LR/b;
-    .registers 4
+.method public a(Z)V
+    .registers 2
+    .parameter
 
-    new-instance v0, LR/d;
+    .prologue
+    .line 290
+    iput-boolean p1, p0, Lr/c;->h:Z
 
-    invoke-direct {v0, p0, p1, p2}, LR/d;-><init>(LR/c;Ljava/lang/String;I)V
+    .line 291
+    return-void
+.end method
+
+.method public b()Lcom/google/android/maps/driveabout/vector/dg;
+    .registers 2
+
+    .prologue
+    .line 295
+    iget-object v0, p0, Lr/c;->a:Lcom/google/android/maps/driveabout/vector/dg;
 
     return-object v0
-.end method
-
-.method public a()V
-    .registers 7
-
-    iget-object v1, p0, LR/c;->d:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_3
-    iget-boolean v0, p0, LR/c;->b:Z
-
-    if-nez v0, :cond_3d
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, LR/c;->b:Z
-
-    const/4 v0, 0x0
-
-    :goto_b
-    iget-object v2, p0, LR/c;->i:[Ljava/lang/Thread;
-
-    array-length v2, v2
-
-    if-ge v0, v2, :cond_3d
-
-    iget-object v2, p0, LR/c;->i:[Ljava/lang/Thread;
-
-    iget-object v3, p0, LR/c;->f:LX/c;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v5, p0, LR/c;->h:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "-"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-interface {v3, v4, p0}, LX/c;->a(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Thread;
-
-    move-result-object v3
-
-    aput-object v3, v2, v0
-
-    iget-object v2, p0, LR/c;->i:[Ljava/lang/Thread;
-
-    aget-object v2, v2, v0
-
-    invoke-virtual {v2}, Ljava/lang/Thread;->start()V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_b
-
-    :cond_3d
-    monitor-exit v1
-
-    return-void
-
-    :catchall_3f
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_41
-    .catchall {:try_start_3 .. :try_end_41} :catchall_3f
-
-    throw v0
-.end method
-
-.method public run()V
-    .registers 3
-
-    sget-object v0, LR/c;->a:Lcom/google/gmm/debug/c;
-
-    const-string v1, "run"
-
-    invoke-virtual {v0, v1}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    :cond_7
-    invoke-direct {p0}, LR/c;->c()Z
-
-    move-result v0
-
-    if-nez v0, :cond_7
-
-    return-void
 .end method

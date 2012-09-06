@@ -5,8 +5,8 @@
         <item quantity="one">Rezultatų: %1$d</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">Rasta %2$s naujinių: %1$d.</item>
-        <item quantity="one">Rasta %2$s naujinių: %1$d.</item>
+        <item quantity="other">Rasta naujinių: %1$d.</item>
+        <item quantity="one">Rasta naujinių: %1$d.</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">%1$s žm. spust. mygtuką +1.</item>

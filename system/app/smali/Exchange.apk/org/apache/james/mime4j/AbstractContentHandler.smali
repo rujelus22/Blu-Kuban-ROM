@@ -11,8 +11,8 @@
     .registers 1
 
     .prologue
-    .line 33
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 34
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -62,7 +62,7 @@
     .registers 1
 
     .prologue
-    .line 39
+    .line 40
     return-void
 .end method
 
@@ -146,6 +146,6 @@
     .parameter "bd"
 
     .prologue
-    .line 45
+    .line 46
     return-void
 .end method

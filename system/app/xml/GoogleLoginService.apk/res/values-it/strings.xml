@@ -242,18 +242,18 @@ sicurezza"</b></string>
     <string name="account_intro_recommended_title">Scegli Google</string>
     <string name="common_message">"Un account Google ti consente di
 
-"<li><ul>Visualizzare e organizzare tutti i tuoi dati ovunque.</ul></li>"
+"<ul><li>Visualizzare e organizzare tutti i tuoi dati ovunque.</li></ul>"
 
-"<li><ul>Effettuare automaticamente il backup dei tuoi dati.</ul></li>"
+"<ul><li>Effettuare automaticamente il backup dei tuoi dati.</li></ul>"
 
-"<li><ul>Utilizzare i servizi Google ovunque con facilità.</ul></li></string>
+"<ul><li>Utilizzare i servizi Google ovunque con facilità.</li></ul></string>
     <string name="add_account_message">" Puoi utilizzare più di un account Google (ad esempio gli account di casa e del lavoro). Tocca "<b>Accedi</b> o <b>Crea account</b> per aggiungere un account Google.</string>
     <string name="account_intro_default_message">Non perdere mai più i tuoi dati. Un account Google tiene tutto al sicuro.</string>
     <string name="account_intro_custom_endtext">"Usi già %s? Esegui subito l'accesso."</string>
     <string name="account_intro_simple_message">Desideri aggiungere un account esistente o crearne uno nuovo?</string>
     <string name="learn_more_title">Ulteriori informazioni</string>
     <string name="learn_more_account_intro">"Un account Google ti consente di
-"<li><ul>Visualizzare e organizzare tutti i tuoi dati da qualsiasi posizione.<li>Eseguire automaticamente il backup dei dati, come email, contatti, musica e immagini.</li><li>Utilizzare facilmente i servizi di Google da qualsiasi posizione, inclusi Contatti, Calendario, Maps e altro ancora.</li></ul></li></string>
+"<ul><li>Visualizzare e organizzare tutti i tuoi dati da qualsiasi posizione.<li>Eseguire automaticamente il backup dei dati, come email, contatti, musica e immagini.</li><li>Utilizzare facilmente i servizi di Google da qualsiasi posizione, inclusi Contatti, Calendario, Maps e altro ancora.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Informazioni sugli account Google</string>
     <string name="learn_more_web_history">"La Cronologia web regola i risultati di ricerca in base a ciò che hai cercato e ai siti che hai visitato, offrendo un'esperienza Google personalizzata.
 

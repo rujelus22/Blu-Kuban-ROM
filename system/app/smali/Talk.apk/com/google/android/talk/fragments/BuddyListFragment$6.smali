@@ -30,7 +30,7 @@
     .line 1002
     iput-object p1, p0, Lcom/google/android/talk/fragments/BuddyListFragment$6;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -52,7 +52,7 @@
     .line 1006
     iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment$6;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    iget-object v0, v0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, v0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-interface {v0, v1}, Lcom/google/android/talk/IRosterListAdapter;->setActiveCallState(Lcom/google/android/talk/RosterListAdapter$CallState;)V
 

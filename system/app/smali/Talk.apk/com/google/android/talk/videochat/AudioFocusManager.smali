@@ -27,7 +27,7 @@
     .line 21
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/google/android/talk/videochat/AudioFocusManager;->sInstanceLock:Ljava/lang/Object;
 
@@ -42,7 +42,7 @@
     const/4 v0, -0x1
 
     .line 32
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 16
     iput v0, p0, Lcom/google/android/talk/videochat/AudioFocusManager;->mMode:I

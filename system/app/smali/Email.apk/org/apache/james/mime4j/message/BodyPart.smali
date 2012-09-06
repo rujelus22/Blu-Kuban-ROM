@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 30
+    .line 32
     invoke-direct {p0}, Lorg/apache/james/mime4j/message/Entity;-><init>()V
 
     return-void
@@ -26,20 +26,20 @@
     .end annotation
 
     .prologue
-    .line 36
+    .line 39
     invoke-virtual {p0}, Lorg/apache/james/mime4j/message/BodyPart;->getHeader()Lorg/apache/james/mime4j/message/Header;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lorg/apache/james/mime4j/message/Header;->writeTo(Ljava/io/OutputStream;)V
 
-    .line 37
+    .line 40
     invoke-virtual {p0}, Lorg/apache/james/mime4j/message/BodyPart;->getBody()Lorg/apache/james/mime4j/message/Body;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Lorg/apache/james/mime4j/message/Body;->writeTo(Ljava/io/OutputStream;)V
 
-    .line 38
+    .line 41
     return-void
 .end method

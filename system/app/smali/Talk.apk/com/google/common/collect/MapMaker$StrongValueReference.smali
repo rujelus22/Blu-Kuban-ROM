@@ -54,7 +54,7 @@
     .line 1102
     .local p0, this:Lcom/google/common/collect/MapMaker$StrongValueReference;,"Lcom/google/common/collect/MapMaker$StrongValueReference<TK;TV;>;"
     .local p1, referent:Ljava/lang/Object;,"TV;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1103
     iput-object p1, p0, Lcom/google/common/collect/MapMaker$StrongValueReference;->referent:Ljava/lang/Object;

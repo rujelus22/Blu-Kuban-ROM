@@ -30,7 +30,7 @@
     .line 40
     iput-object p1, p0, Lcom/google/android/talk/videochat/WifiPolicyUtils$1;->val$context:Landroid/content/Context;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

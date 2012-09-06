@@ -1,75 +1,199 @@
-.class Lcom/google/googlenav/ui/wizard/aw;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
+.class Lcom/google/googlenav/ui/wizard/aW;
+.super Lcom/google/googlenav/ui/wizard/eH;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/aj;
+.field a:Ljava/util/List;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/aj;)V
-    .registers 2
+.method constructor <init>(Ljava/util/List;)V
+    .registers 3
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/aw;->a:Lcom/google/googlenav/ui/wizard/aj;
+    .prologue
+    .line 41
+    const-string v0, ""
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0}, Lcom/google/googlenav/ui/wizard/eH;-><init>(Ljava/lang/String;)V
 
+    .line 42
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/aW;->a:Ljava/util/List;
+
+    .line 43
+    return-void
+.end method
+
+.method constructor <init>(Ljava/util/List;I)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 36
+    invoke-static {p2}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/google/googlenav/ui/wizard/eH;-><init>(Ljava/lang/String;)V
+
+    .line 37
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/aW;->a:Ljava/util/List;
+
+    .line 38
+    return-void
+.end method
+
+.method private a(Ljava/util/TreeSet;Lcom/google/googlenav/ui/view/android/Y;)V
+    .registers 8
+    .parameter
+    .parameter
+
+    .prologue
+    .line 94
+    invoke-virtual {p1, p2}, Ljava/util/TreeSet;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_a
+
+    .line 95
+    invoke-virtual {p1, p2}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+
+    .line 110
+    :cond_9
+    :goto_9
+    return-void
+
+    .line 102
+    :cond_a
+    invoke-virtual {p1, p2}, Ljava/util/TreeSet;->tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/SortedSet;->first()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlenav/ui/view/android/Y;
+
+    .line 103
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/Y;->d()J
+
+    move-result-wide v1
+
+    invoke-virtual {p2}, Lcom/google/googlenav/ui/view/android/Y;->d()J
+
+    move-result-wide v3
+
+    cmp-long v1, v1, v3
+
+    if-gtz v1, :cond_9
+
+    .line 108
+    invoke-virtual {p1, v0}, Ljava/util/TreeSet;->remove(Ljava/lang/Object;)Z
+
+    .line 109
+    invoke-virtual {p1, p2}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+
+    goto :goto_9
+.end method
+
+.method private a(Ljava/util/TreeSet;Ljava/util/List;)V
+    .registers 7
+    .parameter
+    .parameter
+
+    .prologue
+    .line 73
+    invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_4
+    :goto_4
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1b
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlenav/ui/view/android/Y;
+
+    .line 78
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/Y;->b()I
+
+    move-result v2
+
+    const/4 v3, 0x3
+
+    if-eq v2, v3, :cond_4
+
+    .line 79
+    invoke-direct {p0, p1, v0}, Lcom/google/googlenav/ui/wizard/aW;->a(Ljava/util/TreeSet;Lcom/google/googlenav/ui/view/android/Y;)V
+
+    goto :goto_4
+
+    .line 82
+    :cond_1b
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
+.method public a()Ljava/util/List;
     .registers 4
 
-    invoke-static {}, Lcom/google/googlenav/android/a;->f()Z
+    .prologue
+    .line 47
+    new-instance v0, Lcom/google/googlenav/ui/wizard/aX;
+
+    invoke-direct {v0, p0}, Lcom/google/googlenav/ui/wizard/aX;-><init>(Lcom/google/googlenav/ui/wizard/aW;)V
+
+    .line 62
+    new-instance v1, Ljava/util/TreeSet;
+
+    invoke-direct {v1, v0}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
+
+    .line 64
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/aW;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_10
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-nez v0, :cond_1e
+    if-eqz v0, :cond_24
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/aw;->a:Lcom/google/googlenav/ui/wizard/aj;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/aj;->a(Lcom/google/googlenav/ui/wizard/aj;)Lcom/google/googlenav/ui/wizard/ay;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/aw;->a:Lcom/google/googlenav/ui/wizard/aj;
+    check-cast v0, Lcom/google/googlenav/ui/wizard/eH;
 
-    invoke-static {v1}, Lcom/google/googlenav/ui/wizard/aj;->b(Lcom/google/googlenav/ui/wizard/aj;)Landroid/widget/EditText;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/wizard/ay;->a(Ljava/lang/String;)V
-
-    :goto_1d
-    return-void
-
-    :cond_1e
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/aw;->a:Lcom/google/googlenav/ui/wizard/aj;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/aj;->a(Lcom/google/googlenav/ui/wizard/aj;)Lcom/google/googlenav/ui/wizard/ay;
+    .line 65
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/eH;->b()Ljava/util/List;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/aw;->a:Lcom/google/googlenav/ui/wizard/aj;
+    invoke-direct {p0, v1, v0}, Lcom/google/googlenav/ui/wizard/aW;->a(Ljava/util/TreeSet;Ljava/util/List;)V
 
-    invoke-static {v1}, Lcom/google/googlenav/ui/wizard/aj;->e(Lcom/google/googlenav/ui/wizard/aj;)Ljava/lang/String;
+    goto :goto_10
 
-    move-result-object v1
+    .line 68
+    :cond_24
+    invoke-static {v1}, Lcom/google/common/collect/cx;->a(Ljava/lang/Iterable;)Ljava/util/ArrayList;
 
-    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/wizard/ay;->a(Ljava/lang/String;)V
+    move-result-object v0
 
-    goto :goto_1d
+    return-object v0
 .end method

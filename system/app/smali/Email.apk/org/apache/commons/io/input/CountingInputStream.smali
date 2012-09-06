@@ -13,10 +13,10 @@
     .parameter "in"
 
     .prologue
-    .line 44
+    .line 43
     invoke-direct {p0, p1}, Lorg/apache/commons/io/input/ProxyInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 45
+    .line 44
     return-void
 .end method
 
@@ -31,12 +31,12 @@
     .end annotation
 
     .prologue
-    .line 91
+    .line 88
     invoke-super {p0}, Lorg/apache/commons/io/input/ProxyInputStream;->read()I
 
     move-result v0
 
-    .line 92
+    .line 89
     .local v0, found:I
     iget-wide v3, p0, Lorg/apache/commons/io/input/CountingInputStream;->count:J
 
@@ -49,10 +49,10 @@
 
     iput-wide v1, p0, Lorg/apache/commons/io/input/CountingInputStream;->count:J
 
-    .line 93
+    .line 90
     return v0
 
-    .line 92
+    .line 89
     :cond_e
     const-wide/16 v1, 0x0
 
@@ -69,12 +69,12 @@
     .end annotation
 
     .prologue
-    .line 59
+    .line 57
     invoke-super {p0, p1}, Lorg/apache/commons/io/input/ProxyInputStream;->read([B)I
 
     move-result v0
 
-    .line 60
+    .line 58
     .local v0, found:I
     iget-wide v3, p0, Lorg/apache/commons/io/input/CountingInputStream;->count:J
 
@@ -87,10 +87,10 @@
 
     iput-wide v1, p0, Lorg/apache/commons/io/input/CountingInputStream;->count:J
 
-    .line 61
+    .line 59
     return v0
 
-    .line 60
+    .line 58
     :cond_d
     const-wide/16 v1, 0x0
 
@@ -109,12 +109,12 @@
     .end annotation
 
     .prologue
-    .line 77
+    .line 74
     invoke-super {p0, p1, p2, p3}, Lorg/apache/commons/io/input/ProxyInputStream;->read([BII)I
 
     move-result v0
 
-    .line 78
+    .line 75
     .local v0, found:I
     iget-wide v3, p0, Lorg/apache/commons/io/input/CountingInputStream;->count:J
 
@@ -127,10 +127,10 @@
 
     iput-wide v1, p0, Lorg/apache/commons/io/input/CountingInputStream;->count:J
 
-    .line 79
+    .line 76
     return v0
 
-    .line 78
+    .line 75
     :cond_d
     const-wide/16 v1, 0x0
 
@@ -147,12 +147,12 @@
     .end annotation
 
     .prologue
-    .line 106
+    .line 103
     invoke-super {p0, p1, p2}, Lorg/apache/commons/io/input/ProxyInputStream;->skip(J)J
 
     move-result-wide v0
 
-    .line 107
+    .line 104
     .local v0, skip:J
     iget-wide v2, p0, Lorg/apache/commons/io/input/CountingInputStream;->count:J
 
@@ -160,6 +160,6 @@
 
     iput-wide v2, p0, Lorg/apache/commons/io/input/CountingInputStream;->count:J
 
-    .line 108
+    .line 105
     return-wide v0
 .end method

@@ -149,7 +149,7 @@ To update the software at a later date, select Update Firmware under the Setting
     <string name="err_ipc">IPC Error</string>
     <string name="err_service">No Service Error</string>
     <string name="err_unknown">Unknown Error</string>
-    <string name="update_android">Update Samsung software</string>
+    <string name="update_android">Update Android</string>
     <string name="activate_device">Activate Device!!</string>
     <string name="notification_not_completed">Activation Not Completed</string>
     <string name="notification_select_retry">Select to retry activation process</string>

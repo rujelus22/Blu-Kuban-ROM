@@ -242,18 +242,18 @@ klausimas"</b></string>
     <string name="account_intro_recommended_title">Atlikite tai „Google“</string>
     <string name="common_message">"„Google“ paskyroje galite
 
-"<li><ul>Žiūrėti ir bendrinti visą informaciją, kad ir kur būtumėte.</ul></li>"
+"<ul><li>Žiūrėti ir bendrinti visą informaciją, kad ir kur būtumėte.</li></ul>"
 
-"<li><ul>Automatiškai kurti atsargines duomenų kopijas.</ul></li>"
+"<ul><li>Automatiškai kurti atsargines duomenų kopijas.</li></ul>"
 
-"<li><ul>Lengvai naudoti „Google“ paslaugas, kad ir kur būtumėte.</ul></li></string>
+"<ul><li>Lengvai naudoti „Google“ paslaugas, kad ir kur būtumėte.</li></ul></string>
     <string name="add_account_message">" Galite naudoti daugiau nei vieną „Google“ paskyrą (pvz., namų ir darbo paskyras). Jei norite pridėti „Google“ paskyrą, palieskite "<b>Prisijungti</b> arba <b>Sukurti paskyrą</b></string>
     <string name="account_intro_default_message">Niekada daugiau nepraraskite savo duomenų. „Google“ paskyroje viskas saugoma.</string>
     <string name="account_intro_custom_endtext">Turite %s? Prisijunkite dabar.</string>
     <string name="account_intro_simple_message">Norite pridėti esamą paskyrą ar sukurti naują?</string>
     <string name="learn_more_title"><annotation id="learn_more">Sužinokite daugiau</annotation></string>
     <string name="learn_more_account_intro">"Naudodami „Google“ paskyrą galite:
-"<li><ul>peržiūrėti ir tvarkyti visą turimą informaciją, kad ir kur būtumėte;<li>automatiškai kurti duomenų, pvz., el. pašto, kontaktų, muzikos ir paveikslėlių, atsargines kopijas;</li><li>nesunkiai naudoti „Google“ paslaugas, pvz., Kontaktus, Kalendorių, Žemėlapius ir kt., kad ir kur būtumėte.</li></ul></li></string>
+"<ul><li>peržiūrėti ir tvarkyti visą turimą informaciją, kad ir kur būtumėte;<li>automatiškai kurti duomenų, pvz., el. pašto, kontaktų, muzikos ir paveikslėlių, atsargines kopijas;</li><li>nesunkiai naudoti „Google“ paslaugas, pvz., Kontaktus, Kalendorių, Žemėlapius ir kt., kad ir kur būtumėte.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Apie „Google“ paskyras</string>
     <string name="learn_more_web_history">"Žiniatinklio istorija paieškos rezultatus koreguoja pagal tai, ko ieškojote, ir pagal svetaines, kuriose lankėtės. Taip suasmeninamos „Google“ teikiamos paslaugos.
 

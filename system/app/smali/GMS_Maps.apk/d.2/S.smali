@@ -1,148 +1,74 @@
-.class final Ld/S;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lbv/f;
+.class final Ld/s;
+.super Landroid/view/accessibility/AccessibilityNodeProvider;
+.source "SourceFile"
 
 
 # instance fields
-.field private a:[B
-
-.field private b:[B
+.field final synthetic a:Ld/t;
 
 
 # direct methods
-.method public constructor <init>([B)V
-    .registers 3
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Ld/S;->a:[B
-
-    iput-object v0, p0, Ld/S;->b:[B
-
-    iput-object p1, p0, Ld/S;->a:[B
-
-    return-void
-.end method
-
-.method private a([B)[B
-    .registers 4
-
-    new-instance v0, Ljava/io/ByteArrayOutputStream;
-
-    invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
-
-    new-instance v1, Ljava/util/zip/GZIPOutputStream;
-
-    invoke-direct {v1, v0}, Ljava/util/zip/GZIPOutputStream;-><init>(Ljava/io/OutputStream;)V
-
-    invoke-virtual {v1, p1}, Ljava/util/zip/GZIPOutputStream;->write([B)V
-
-    invoke-virtual {v1}, Ljava/util/zip/GZIPOutputStream;->close()V
-
-    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->close()V
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Ld/S;->a:[B
-
-    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private d()V
+.method constructor <init>(Ld/t;)V
     .registers 2
+    .parameter
 
-    iget-object v0, p0, Ld/S;->b:[B
+    .prologue
+    .line 38
+    iput-object p1, p0, Ld/s;->a:Ld/t;
 
-    if-nez v0, :cond_f
+    invoke-direct {p0}, Landroid/view/accessibility/AccessibilityNodeProvider;-><init>()V
 
-    iget-object v0, p0, Ld/S;->a:[B
-
-    invoke-direct {p0, v0}, Ld/S;->a([B)[B
-
-    move-result-object v0
-
-    iput-object v0, p0, Ld/S;->b:[B
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Ld/S;->a:[B
-
-    :cond_f
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 2
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Ld/S;->a:[B
-
-    iput-object v0, p0, Ld/S;->b:[B
-
-    return-void
-.end method
-
-.method public declared-synchronized a_()I
-    .registers 2
-
-    monitor-enter p0
-
-    :try_start_1
-    invoke-direct {p0}, Ld/S;->d()V
-
-    iget-object v0, p0, Ld/S;->b:[B
-
-    array-length v0, v0
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_9
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_9
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized b_()Ljava/io/InputStream;
+.method public createAccessibilityNodeInfo(I)Landroid/view/accessibility/AccessibilityNodeInfo;
     .registers 3
+    .parameter
 
-    monitor-enter p0
+    .prologue
+    .line 41
+    iget-object v0, p0, Ld/s;->a:Ld/t;
 
-    :try_start_1
-    invoke-direct {p0}, Ld/S;->d()V
+    invoke-interface {v0, p1}, Ld/t;->a(I)Ljava/lang/Object;
 
-    new-instance v0, Ljava/io/ByteArrayInputStream;
+    move-result-object v0
 
-    iget-object v1, p0, Ld/S;->b:[B
-
-    invoke-direct {v0, v1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_d
-
-    monitor-exit p0
+    check-cast v0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     return-object v0
+.end method
 
-    :catchall_d
-    move-exception v0
+.method public findAccessibilityNodeInfosByText(Ljava/lang/String;I)Ljava/util/List;
+    .registers 4
+    .parameter
+    .parameter
 
-    monitor-exit p0
+    .prologue
+    .line 49
+    iget-object v0, p0, Ld/s;->a:Ld/t;
 
-    throw v0
+    invoke-interface {v0, p1, p2}, Ld/t;->a(Ljava/lang/String;I)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public performAction(IILandroid/os/Bundle;)Z
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 55
+    iget-object v0, p0, Ld/s;->a:Ld/t;
+
+    invoke-interface {v0, p1, p2, p3}, Ld/t;->a(IILandroid/os/Bundle;)Z
+
+    move-result v0
+
+    return v0
 .end method

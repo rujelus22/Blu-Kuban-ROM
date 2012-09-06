@@ -53,28 +53,35 @@
 อย่าดำเนินการใดๆ กับแอปพลิเคชันนี้ในขณะขับขี่ ข้อมูลการจราจรไม่ใช่ข้อมูลตามเวลาจริง และเส้นทางอาจไม่ถูกต้อง มีอันตราย ถูกห้ามใช้ หรือรวมการใช้เรือข้ามฟาก เส้นทางเดินเท้าอาจไม่มีทางเท้าหรือทางคนเดิน โปรดปฏิบัติตามกฎหมายที่เกี่ยวข้อง
 
 อย่าละสายตาจากถนน"</string>
+    <string name="da_agreement_with_walking_and_biking">"Google แผนที่การนำทางเป็นรุ่นเบต้า โปรดใช้ความระมัดระวัง
+
+อย่าปรับแต่งแอปพลิเคชันนี้ในขณะที่กำลังเคลื่อนที่ ข้อมูลการจราจรไม่ได้เป็นข้อมูลตามเวลาจริง และเส้นทางต่างๆ อาจจะผิด มีอันตราย ถูกห้าม หรือต้องใช้เรือข้ามฟาก เส้นทางการเดินอาจจะไม่มีทางเท้าหรือเส้นทางเดินเท้า เส้นทางจักรยานมีทางที่ไม่เหมาะสำหรับการขี่จักรยาน โปรดปฏิบัติตามกฎหมายที่เกี่ยวข้อง
+
+อย่าละสายตาจากถนน!"</string>
     <string name="da_disclaimer_checkbox">แสดงข้อความนี้ในครั้งถัดไป</string>
     <string name="da_show_list">รายการเส้นทาง</string>
-    <string name="da_route_overview">ข้อมูลเส้นทาง</string>
+    <string name="da_route_and_alternates">เส้นทางและทางเลือก</string>
     <string name="da_show_map">แสดงแผนที่</string>
+    <string name="da_menu_more">เพิ่มเติม</string>
     <string name="da_satellite">ดาวเทียม</string>
     <string name="da_traffic_view">มุมมองการจราจร</string>
     <string name="da_no_traffic_here">ไม่มีข้อมูลการจราจรที่นี่</string>
     <string name="da_traffic">การจราจร</string>
     <string name="da_area_view">มุมมองพื้นที่</string>
-    <string name="da_mute">ปิดเสียง</string>
-    <string name="da_unmute">ยกเลิกการปิดเสียง</string>
     <string name="da_settings">การตั้งค่า</string>
     <string name="da_help">ความช่วยเหลือ</string>
-    <string name="da_terms_privacy_notices">ข้อกำหนดและข้อมูลส่วนบุคคล</string>
+    <string name="da_terms_privacy_notices">ข้อกำหนด, ข้อมูลส่วนบุคคล และประกาศ</string>
     <string name="da_terms_and_conditions">ข้อกำหนดในการให้บริการ</string>
     <string name="da_privacy_policy">นโยบายส่วนบุคคล</string>
-    <string name="da_legal_notices">ประกาศทางกฎหมาย</string>
+    <string name="da_legal_notices">คำประกาศด้านกฎหมาย</string>
     <string name="da_navigation_suspended">การนำทางหยุดทำงานชั่วคราว</string>
     <string name="da_exit_navigation">ออกจากการนำทาง</string>
+    <string name="da_save">บันทึก</string>
     <string name="da_power_settings_category">การตั้งค่าพลังงาน</string>
     <string name="da_screen_dimming_setting_title">การหรี่แสงหน้าจอ</string>
     <string name="da_screen_dimming_setting_summary">หน้าจอจะหรี่แสงในระหว่างคำแนะนำเพื่อประหยัดพลังงาน</string>
+    <string name="da_home_setting_set_address">ตั้งค่าที่อยู่บ้าน</string>
+    <string name="da_home_setting_set_address_hint">ป้อนที่อยู่</string>
     <string name="da_info_settings_category">ข้อมูล</string>
     <string name="da_email_me_when_resolved">ส่งอีเมลให้ฉันเมื่อปัญหาได้รับการแก้ไข</string>
     <string name="da_problem_reported">รายงานปัญหาแล้ว</string>
@@ -109,6 +116,8 @@
     <string name="da_turn_on_gps">ต้องการแสดงการตั้งค่าสถานที่หรือไม่</string>
     <string name="da_voice_guidance">การนำทางด้วยเสียง</string>
     <string name="da_install_voice_guidance_prompt">สำหรับการนำทางด้วยเสียง คุณจำเป็นต้องติดตั้งการสนับสนุนข้อความให้เป็นคำพูดจาก Android Market</string>
+    <string name="da_voice_off">ปิดเสียง</string>
+    <string name="da_voice_on">เปิดเสียง</string>
     <string name="da_voice_guidance_on">การนำทางด้วยเสียงถูกเปิด</string>
     <string name="da_voice_guidance_off">การนำทางด้วยเสียงถูกปิด</string>
     <string name="da_dialog_ok">ตกลง</string>
@@ -187,10 +196,13 @@
     <string name="da_picker_type_destination">ประเภทของปลายทาง</string>
     <string name="da_picker_speak_destination">ปลายทางการสนทนา</string>
     <string name="da_picker_contacts">ที่อยู่ติดต่อ</string>
-    <string name="da_picker_starred_items">สถานที่ที่ติดดาว</string>
-    <string name="da_picker_new_contact">ที่อยู่ติดต่อใหม่</string>
-    <string name="da_picker_saved_destinations">จุดหมายที่บันทึกไว้</string>
-    <string name="da_picker_recent_destinations">จุดหมายล่าสุด</string>
+    <string name="da_picker_starred_items">สถานที่ติดดาว</string>
+    <string name="da_picker_starred">ที่ติดดาว</string>
+    <string name="da_picker_new_contact">สมุดติดต่อใหม่</string>
+    <string name="da_go_home">กลับบ้าน</string>
+    <string name="da_picker_saved_destinations">ปลายทางที่บันทึก</string>
+    <string name="da_picker_recent_destinations">ปลายทางล่าสุด</string>
+    <string name="da_picker_shortcuts">ทางลัด</string>
     <string name="da_navigate_to">นำทางไปที่</string>
     <string name="da_return_to">กลับไปยัง</string>
     <string name="da_picker_search_hint">ปลายทาง</string>
@@ -208,7 +220,6 @@
     <string name="da_walking">เดินเท้า</string>
     <string name="da_bicycling">จักรยาน</string>
     <string name="da_quoted_text">“%1$s”</string>
-    <string name="da_more_info">ข้อมูลเพิ่มเติม</string>
     <string name="da_walking_warning">เดินเท้า (เบต้า): ใช้ความระมัดระวัง</string>
     <string name="da_bicycling_warning">จักรยาน (เบต้า): ใช้ด้วยความระมัดระวัง</string>
     <string name="da_calibrate_compass_title">การปรับเทียบเข็มทิศ</string>
@@ -216,7 +227,6 @@
     <string name="da_confirm_exit_title">ออกจากการนำทาง?</string>
     <string name="da_confirm_exit_text">การแนะนำเส้นทางทั้งหมดจะสิ้นสุดลง</string>
     <string name="da_route_includes_tolls">เส้นทางมีทางพิเศษ</string>
-    <string name="da_avoid_tolls">เลี่ยงค่าผ่านทาง</string>
     <string name="da_avoiding_tolls">เลี่ยงทางพิเศษ</string>
     <string name="da_avoiding_highways">เลี่ยงทางหลวง</string>
     <string name="da_route_includes_unavoidable_tolls">เส้นทางนี้รวมค่าผ่านทาง</string>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen android:layout_width="fill_parent" android:layout_height="fill_parent" android:title="@string/menu_settings"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ListPreference android:persistent="false" android:title="@string/menu_settings_auto_scroll" android:key="autoscroll" />
-    <ListPreference android:persistent="false" android:title="@string/menu_settings_update_title" android:key="autorefresh" />
-</PreferenceScreen>

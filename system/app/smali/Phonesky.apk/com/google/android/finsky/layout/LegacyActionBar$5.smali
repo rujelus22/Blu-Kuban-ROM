@@ -3,12 +3,12 @@
 .source "LegacyActionBar.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lcom/google/android/finsky/utils/BitmapLoader$BitmapLoadedHandler;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/layout/LegacyActionBar;->setupShareButton()V
+    value = Lcom/google/android/finsky/layout/LegacyActionBar;->syncActionBar()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/layout/LegacyActionBar;
 
+.field final synthetic val$corpusIcon:Landroid/widget/ImageView;
+
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/layout/LegacyActionBar;)V
-    .registers 2
+.method constructor <init>(Lcom/google/android/finsky/layout/LegacyActionBar;Landroid/widget/ImageView;)V
+    .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 216
+    .line 227
     iput-object p1, p0, Lcom/google/android/finsky/layout/LegacyActionBar$5;->this$0:Lcom/google/android/finsky/layout/LegacyActionBar;
+
+    iput-object p2, p0, Lcom/google/android/finsky/layout/LegacyActionBar$5;->val$corpusIcon:Landroid/widget/ImageView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,23 +42,40 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
+.method public onResponse(Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;)V
     .registers 4
-    .parameter "v"
+    .parameter "result"
 
     .prologue
-    .line 219
-    iget-object v0, p0, Lcom/google/android/finsky/layout/LegacyActionBar$5;->this$0:Lcom/google/android/finsky/layout/LegacyActionBar;
+    .line 230
+    new-instance v0, Landroid/graphics/drawable/BitmapDrawable;
 
-    iget-object v1, p0, Lcom/google/android/finsky/layout/LegacyActionBar$5;->this$0:Lcom/google/android/finsky/layout/LegacyActionBar;
-
-    #getter for: Lcom/google/android/finsky/layout/LegacyActionBar;->mActivity:Landroid/app/Activity;
-    invoke-static {v1}, Lcom/google/android/finsky/layout/LegacyActionBar;->access$100(Lcom/google/android/finsky/layout/LegacyActionBar;)Landroid/app/Activity;
+    invoke-virtual {p1}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/LegacyActionBar;->shareButtonClicked(Landroid/app/Activity;)V
+    invoke-direct {v0, v1}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 220
+    .line 231
+    .local v0, actionBarIcon:Landroid/graphics/drawable/BitmapDrawable;
+    iget-object v1, p0, Lcom/google/android/finsky/layout/LegacyActionBar$5;->val$corpusIcon:Landroid/widget/ImageView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 232
+    return-void
+.end method
+
+.method public bridge synthetic onResponse(Ljava/lang/Object;)V
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 227
+    check-cast p1, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
+
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/google/android/finsky/layout/LegacyActionBar$5;->onResponse(Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;)V
+
     return-void
 .end method

@@ -4,26 +4,26 @@
         <item name="android:textSize">16.0sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">?android:textColorPrimary</item>
-        <item name="android:textColorHighlight">#ffff9200</item>
+        <item name="android:textColorHighlight">#ff155496</item>
         <item name="android:textColorHint">?android:textColorHint</item>
-        <item name="android:textColorLink">#ff5c5cff</item>
+        <item name="android:textColorLink">#ff155496</item>
     </style>
     <style name="TextAppearance.SearchResult" parent="@style/TextAppearance">
         <item name="android:textStyle">normal</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
-        <item name="android:textColorHint">?android:textColorHintInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:textColorHint">?android:textColorHint</item>
     </style>
     <style name="TextAppearance.SearchResult.Title" parent="@style/TextAppearance.SearchResult">
         <item name="android:textSize">16.0sp</item>
     </style>
     <style name="TextAppearance.SearchResult.Subtitle" parent="@style/TextAppearance.SearchResult">
         <item name="android:textSize">13.0sp</item>
-        <item name="android:textColor">?android:textColorSecondaryInverse</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
     </style>
-    <style name="TwMessageTheme" parent="@touchwiz:style/TwTheme">
+    <style name="TwMessageTheme" parent="@android:style/Theme.Holo">
         <item name="android:windowNoTitle">true</item>
     </style>
-    <style name="cmas_alert" parent="@android:style/Theme.Dialog">
+    <style name="cmas_alert" parent="@android:style/Theme.Holo.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 </resources>

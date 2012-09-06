@@ -15,7 +15,7 @@
 
 
 # static fields
-.field protected static final DBG:Z = true
+.field protected static final DBG:Z = false
 
 .field public static final EVENT_GET_ICC_RECORD_DONE:I = 0x64
 

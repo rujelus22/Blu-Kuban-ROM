@@ -57,28 +57,28 @@
     .end annotation
 
     .prologue
-    .line 494
+    .line 432
     .local p2, request:Lcom/android/volley/Request;,"Lcom/android/volley/Request<*>;"
     iput-object p1, p0, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;->this$0:Lcom/google/android/finsky/utils/BitmapLoader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 487
+    .line 425
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;->handlers:Ljava/util/List;
 
-    .line 495
+    .line 433
     iput-object p2, p0, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;->request:Lcom/android/volley/Request;
 
-    .line 496
+    .line 434
     iget-object v0, p0, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;->handlers:Ljava/util/List;
 
     invoke-interface {v0, p3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 497
+    .line 435
     return-void
 .end method
 
@@ -87,7 +87,7 @@
     .parameter "x0"
 
     .prologue
-    .line 479
+    .line 417
     iget-object v0, p0, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;->request:Lcom/android/volley/Request;
 
     return-object v0
@@ -98,7 +98,7 @@
     .parameter "x0"
 
     .prologue
-    .line 479
+    .line 417
     iget-object v0, p0, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;->responseBitmap:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -110,7 +110,7 @@
     .parameter "x1"
 
     .prologue
-    .line 479
+    .line 417
     iput-object p1, p0, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;->responseBitmap:Landroid/graphics/Bitmap;
 
     return-object p1
@@ -121,7 +121,7 @@
     .parameter "x0"
 
     .prologue
-    .line 479
+    .line 417
     iget-object v0, p0, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;->handlers:Ljava/util/List;
 
     return-object v0
@@ -134,12 +134,12 @@
     .parameter "container"
 
     .prologue
-    .line 504
+    .line 442
     iget-object v0, p0, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;->handlers:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 505
+    .line 443
     return-void
 .end method
 
@@ -148,12 +148,12 @@
     .parameter "container"
 
     .prologue
-    .line 514
+    .line 452
     iget-object v0, p0, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;->handlers:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 515
+    .line 453
     iget-object v0, p0, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;->handlers:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -162,15 +162,15 @@
 
     if-nez v0, :cond_14
 
-    .line 516
+    .line 454
     iget-object v0, p0, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;->request:Lcom/android/volley/Request;
 
     invoke-virtual {v0}, Lcom/android/volley/Request;->cancel()V
 
-    .line 517
+    .line 455
     const/4 v0, 0x1
 
-    .line 519
+    .line 457
     :goto_13
     return v0
 

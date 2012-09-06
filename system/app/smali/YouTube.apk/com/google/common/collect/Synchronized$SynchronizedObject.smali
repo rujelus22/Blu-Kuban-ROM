@@ -11,29 +11,33 @@
 
 
 # instance fields
-.field private final delegate:Ljava/lang/Object;
+.field final delegate:Ljava/lang/Object;
 
-.field protected final mutex:Ljava/lang/Object;
+.field final mutex:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
+.method constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 4
     .parameter
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 61
+    .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 62
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 63
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedObject;->delegate:Ljava/lang/Object;
 
-    .line 63
+    .line 64
     if-nez p2, :cond_c
 
     move-object p2, p0
@@ -41,7 +45,7 @@
     :cond_c
     iput-object p2, p0, Lcom/google/common/collect/Synchronized$SynchronizedObject;->mutex:Ljava/lang/Object;
 
-    .line 64
+    .line 65
     return-void
 .end method
 
@@ -50,16 +54,16 @@
     .parameter
 
     .prologue
-    .line 84
+    .line 86
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedObject;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 85
+    .line 87
     :try_start_3
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 86
+    .line 88
     monitor-exit v1
     :try_end_7
     .catchall {:try_start_3 .. :try_end_7} :catchall_8
@@ -76,11 +80,11 @@
 
 
 # virtual methods
-.method protected delegate()Ljava/lang/Object;
+.method delegate()Ljava/lang/Object;
     .registers 2
 
     .prologue
-    .line 67
+    .line 68
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedObject;->delegate:Ljava/lang/Object;
 
     return-object v0
@@ -90,12 +94,12 @@
     .registers 3
 
     .prologue
-    .line 73
+    .line 74
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedObject;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 74
+    .line 75
     :try_start_3
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedObject;->delegate:Ljava/lang/Object;
 
@@ -109,7 +113,7 @@
 
     return-object v0
 
-    .line 75
+    .line 76
     :catchall_b
     move-exception v0
 

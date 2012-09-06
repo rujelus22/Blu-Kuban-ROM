@@ -24,17 +24,17 @@
     .parameter "attrs"
 
     .prologue
-    .line 38
+    .line 40
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 110
+    .line 116
     new-instance v0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary$3;
 
     invoke-direct {v0, p0}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary$3;-><init>(Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;)V
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mStatusListener:Lcom/google/android/finsky/previews/StatusListener;
 
-    .line 39
+    .line 41
     new-instance v0, Lcom/google/android/finsky/previews/PreviewController;
 
     iget-object v1, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mStatusListener:Lcom/google/android/finsky/previews/StatusListener;
@@ -43,7 +43,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mConnection:Lcom/google/android/finsky/previews/PreviewController;
 
-    .line 40
+    .line 42
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .parameter "x0"
 
     .prologue
-    .line 26
+    .line 28
     iget-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mConnection:Lcom/google/android/finsky/previews/PreviewController;
 
     return-object v0
@@ -63,7 +63,7 @@
     .parameter "x0"
 
     .prologue
-    .line 26
+    .line 28
     iget-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mSongIndex:Lcom/google/android/finsky/layout/SongIndex;
 
     return-object v0
@@ -75,7 +75,7 @@
     .parameter "x1"
 
     .prologue
-    .line 26
+    .line 28
     invoke-direct {p0, p1}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->setHighlighted(Z)V
 
     return-void
@@ -94,7 +94,7 @@
 
     const/4 v4, 0x0
 
-    .line 91
+    .line 97
     const/4 v2, 0x4
 
     new-array v0, v2, [I
@@ -123,7 +123,7 @@
 
     aput v2, v0, v7
 
-    .line 98
+    .line 104
     .local v0, paddings:[I
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->getContext()Landroid/content/Context;
 
@@ -133,12 +133,12 @@
 
     move-result-object v1
 
-    .line 99
+    .line 105
     .local v1, r:Landroid/content/res/Resources;
     if-eqz p1, :cond_4b
 
-    .line 100
-    const v2, 0x7f0a0033
+    .line 106
+    const v2, 0x7f0a0032
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -146,7 +146,7 @@
 
     invoke-virtual {p0, v2}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->setBackgroundColor(I)V
 
-    .line 101
+    .line 107
     iget-object v2, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mCreator:Landroid/widget/TextView;
 
     const v3, 0x106000b
@@ -157,7 +157,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 107
+    .line 113
     :goto_3f
     aget v2, v0, v4
 
@@ -169,19 +169,19 @@
 
     invoke-virtual {p0, v2, v3, v4, v5}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->setPadding(IIII)V
 
-    .line 108
+    .line 114
     return-void
 
-    .line 103
+    .line 109
     :cond_4b
-    const v2, 0x7f0200b7
+    const v2, 0x7f0200ff
 
     invoke-virtual {p0, v2}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->setBackgroundResource(I)V
 
-    .line 104
+    .line 110
     iget-object v2, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mCreator:Landroid/widget/TextView;
 
-    const v3, 0x7f0a0007
+    const v3, 0x7f0a0006
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -198,15 +198,15 @@
     .registers 2
 
     .prologue
-    .line 86
+    .line 92
     iget-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mConnection:Lcom/google/android/finsky/previews/PreviewController;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/previews/PreviewController;->unbind()V
 
-    .line 87
+    .line 93
     invoke-super {p0}, Landroid/widget/LinearLayout;->onDetachedFromWindow()V
 
-    .line 88
+    .line 94
     return-void
 .end method
 
@@ -214,11 +214,11 @@
     .registers 2
 
     .prologue
-    .line 44
+    .line 46
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
-    .line 46
-    const v0, 0x7f08007b
+    .line 48
+    const v0, 0x7f0800e4
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->findViewById(I)Landroid/view/View;
 
@@ -228,8 +228,8 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mTitle:Landroid/widget/TextView;
 
-    .line 47
-    const v0, 0x7f0800bc
+    .line 49
+    const v0, 0x7f0800e5
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->findViewById(I)Landroid/view/View;
 
@@ -239,8 +239,8 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mCreator:Landroid/widget/TextView;
 
-    .line 48
-    const v0, 0x7f0800a4
+    .line 50
+    const v0, 0x7f0800aa
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->findViewById(I)Landroid/view/View;
 
@@ -250,8 +250,8 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mBuyButton:Landroid/widget/Button;
 
-    .line 49
-    const v0, 0x7f08010e
+    .line 51
+    const v0, 0x7f080147
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->findViewById(I)Landroid/view/View;
 
@@ -261,109 +261,137 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mSongIndex:Lcom/google/android/finsky/layout/SongIndex;
 
-    .line 50
+    .line 52
     return-void
 .end method
 
 .method public showSummary(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/navigationmanager/NavigationManager;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 8
+    .registers 15
     .parameter "doc"
     .parameter "navManager"
     .parameter "referrer"
     .parameter "externalReferrer"
 
     .prologue
-    .line 54
-    iget-object v1, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mTitle:Landroid/widget/TextView;
+    const/4 v3, 0x1
+
+    .line 56
+    iget-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mTitle:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 55
-    iget-object v1, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mCreator:Landroid/widget/TextView;
+    .line 57
+    iget-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mCreator:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getCreator()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 56
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v1}, Lcom/google/android/finsky/api/model/Document;->ownedByUser(Lcom/google/android/finsky/utils/PackageInfoCache;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_41
-
-    .line 57
-    iget-object v1, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mBuyButton:Landroid/widget/Button;
-
-    const v2, 0x7f070112
-
-    invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 58
-    iget-object v1, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mBuyButton:Landroid/widget/Button;
-
-    new-instance v2, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary$1;
-
-    invoke-direct {v2, p0, p2, p1}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary$1;-><init>(Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/api/model/Document;)V
-
-    invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 71
-    :goto_2b
-    iget-object v1, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mSongIndex:Lcom/google/android/finsky/layout/SongIndex;
-
-    const/4 v2, 0x3
-
-    invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/SongIndex;->setState(I)V
-
-    .line 73
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getSongDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
 
-    .line 74
-    .local v0, song:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
-    new-instance v1, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary$2;
+    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getCurrentAccount()Landroid/accounts/Account;
 
-    invoke-direct {v1, p0, v0}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary$2;-><init>(Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;)V
+    move-result-object v1
 
-    invoke-virtual {p0, v1}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    .line 59
+    .local v1, currentAccount:Landroid/accounts/Account;
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    .line 81
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getLibraries()Lcom/google/android/finsky/library/Libraries;
+
+    move-result-object v0
+
+    invoke-static {p1, v0, v1}, Lcom/google/android/finsky/utils/LibraryUtils;->getOwnerWithCurrentAccount(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/library/Libraries;Landroid/accounts/Account;)Landroid/accounts/Account;
+
+    move-result-object v7
+
+    .line 62
+    .local v7, owner:Landroid/accounts/Account;
+    if-eqz v7, :cond_51
+
+    .line 63
+    iget-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mBuyButton:Landroid/widget/Button;
+
+    const v2, 0x7f07012c
+
+    invoke-virtual {v0, v2}, Landroid/widget/Button;->setText(I)V
+
+    .line 64
+    iget-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mBuyButton:Landroid/widget/Button;
+
+    new-instance v2, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary$1;
+
+    invoke-direct {v2, p0, p2, v7, p1}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary$1;-><init>(Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;Lcom/google/android/finsky/navigationmanager/NavigationManager;Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;)V
+
+    invoke-virtual {v0, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 77
+    :goto_3b
+    iget-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mSongIndex:Lcom/google/android/finsky/layout/SongIndex;
+
+    const/4 v2, 0x3
+
+    invoke-virtual {v0, v2}, Lcom/google/android/finsky/layout/SongIndex;->setState(I)V
+
+    .line 79
+    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getSongDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
+
+    move-result-object v8
+
+    .line 80
+    .local v8, song:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
+    new-instance v0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary$2;
+
+    invoke-direct {v0, p0, v8}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary$2;-><init>(Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;)V
+
+    invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 87
     invoke-static {p2}, Lcom/google/android/finsky/previews/PreviewController;->setupOnBackStackChangedListener(Lcom/google/android/finsky/navigationmanager/NavigationManager;)V
 
-    .line 82
+    .line 88
     return-void
 
-    .line 65
-    .end local v0           #song:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
-    :cond_41
-    iget-object v1, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mBuyButton:Landroid/widget/Button;
+    .line 71
+    .end local v8           #song:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
+    :cond_51
+    iget-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mBuyButton:Landroid/widget/Button;
 
-    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Document;->getFormattedPrice()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
-
-    .line 66
-    iget-object v1, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mBuyButton:Landroid/widget/Button;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {p2, p1, v2, p3, p4}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getBuyImmediateClickListener(Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;)Landroid/view/View$OnClickListener;
+    invoke-virtual {p1, v3}, Lcom/google/android/finsky/api/model/Document;->getFormattedPrice(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v2}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_2b
+    .line 72
+    iget-object v9, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mBuyButton:Landroid/widget/Button;
+
+    const/4 v6, 0x0
+
+    move-object v0, p2
+
+    move-object v2, p1
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    invoke-virtual/range {v0 .. v6}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getBuyImmediateClickListener(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/view/View$OnClickListener;
+
+    move-result-object v0
+
+    invoke-virtual {v9, v0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    goto :goto_3b
 .end method

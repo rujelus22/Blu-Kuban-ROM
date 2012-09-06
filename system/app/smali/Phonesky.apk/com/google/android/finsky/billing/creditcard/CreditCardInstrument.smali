@@ -18,10 +18,10 @@
     .parameter "displayIcon"
 
     .prologue
-    .line 107
+    .line 132
     invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/billing/Instrument;-><init>(Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;Landroid/graphics/drawable/Drawable;)V
 
-    .line 108
+    .line 133
     return-void
 .end method
 
@@ -30,7 +30,7 @@
     .parameter "instrumentFactory"
 
     .prologue
-    .line 37
+    .line 39
     const/4 v0, 0x0
 
     new-instance v1, Lcom/google/android/finsky/billing/creditcard/CreditCardInstrument$1;
@@ -39,7 +39,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/google/android/finsky/billing/InstrumentFactory;->registerFormOfPayment(ILcom/google/android/finsky/billing/InstrumentFactory$FormOfPayment;)V
 
-    .line 104
+    .line 129
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .parameter "parameters"
 
     .prologue
-    .line 113
+    .line 138
     const/4 v0, 0x0
 
     return-object v0

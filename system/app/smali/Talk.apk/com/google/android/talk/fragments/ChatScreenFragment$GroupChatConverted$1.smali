@@ -55,7 +55,7 @@
 
     iput-object p7, p0, Lcom/google/android/talk/fragments/ChatScreenFragment$GroupChatConverted$1;->val$groupChatRoom:Ljava/lang/String;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

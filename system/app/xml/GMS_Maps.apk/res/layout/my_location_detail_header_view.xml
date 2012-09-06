@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.googlenav.mylocationnotifier.HeaderView android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="12.0sp" android:textColor="@color/ultralight_grey" android:id="@id/subtitle" android:paddingTop="@dimen/my_location_notifier_header_view_top_padding_more" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    <TextView android:textSize="16.0sp" android:textColor="@color/white" android:ellipsize="end" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/my_location_notifier_header_view_max_width" android:singleLine="true" android:layout_below="@id/subtitle" />
+    <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/spinner_dir_holo_dark_low" android:scaleType="fitXY" android:layout_alignParentBottom="true" />
+</com.google.googlenav.mylocationnotifier.HeaderView>

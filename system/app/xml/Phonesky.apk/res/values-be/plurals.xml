@@ -5,8 +5,8 @@
         <item quantity="one">Вынікаў: %1$d</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">Абнаўленняў знойдзена для ўліковага запісу %2$s: %1$d.</item>
-        <item quantity="one">Абнаўленняў знойдзена для ўліковага запісу %2$s: %1$d.</item>
+        <item quantity="other">Знойдзена абнаўленняў: %1$d.</item>
+        <item quantity="one">Знойдзена абнаўленняў: %1$d.</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">Дадалі гэта ў +1: %1$s чал.</item>

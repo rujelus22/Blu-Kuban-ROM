@@ -242,18 +242,18 @@ kérdés"</b></string>
     <string name="account_intro_recommended_title">A Google+ bekapcsolása</string>
     <string name="common_message">"Google Fiók segítségével bárhol
 
-"<li><ul>megtekintheti és rendszerezheti az összes adatot.</ul></li>"
+"<ul><li>megtekintheti és rendszerezheti az összes adatot.</li></ul>"
 
-"<li><ul>Automatikus biztonsági másolatot hozhat létre az adatokról.</ul></li>"
+"<ul><li>Automatikus biztonsági másolatot hozhat létre az adatokról.</li></ul>"
 
-"<li><ul>A Google szolgáltatásait bárhol egyszerűen használhatja.</ul></li></string>
+"<ul><li>A Google szolgáltatásait bárhol egyszerűen használhatja.</li></ul></string>
     <string name="add_account_message">" Egynél több Google Fiókot is használhat (például otthoni és munkahelyi fiókokat). Érintse meg a "<b>Regisztráció</b> vagy a <b>Fiók létrehozása</b> lehetőséget egy Google Fiók hozzáadásához</string>
     <string name="account_intro_default_message">Sohasem veszít el többé semmit. A Google Fiókban minden biztonságban van.</string>
     <string name="account_intro_custom_endtext">Már használja a %s szolgáltatást? Jelentkezzen be most.</string>
     <string name="account_intro_simple_message">Szeretne hozzáadni egy már létező fiókot, vagy létrehozni egy újat?</string>
     <string name="learn_more_title"><annotation id="learn_more">További információ</annotation></string>
     <string name="learn_more_account_intro">"A Google Fiók segítségével bárhol
- "<li><ul> megtekintheti és rendezheti az összes adatát.<li>Mentse automatikusan az olyan adatait, mint az e-mailek, névjegyek, zenék és képek.</li><li> Használja a Google-szolgáltatásokat könnyedén bárhonnan—beleértve a Névjegyek, a Naptár, a Térkép és egyéb szolgáltatásokat.</li></ul></li></string>
+ "<ul><li> megtekintheti és rendezheti az összes adatát.<li>Mentse automatikusan az olyan adatait, mint az e-mailek, névjegyek, zenék és képek.</li><li> Használja a Google-szolgáltatásokat könnyedén bárhonnan—beleértve a Névjegyek, a Naptár, a Térkép és egyéb szolgáltatásokat.</li></li></ul></string>
     <string name="learn_more_account_intro_title">A Google Fiókról</string>
     <string name="learn_more_web_history">"Az internetes előzmények a korábbi keresések és meglátogatott webhelyek alapján finomítja a keresési eredményeket, így személyre szabott keresési élményben lehet része.
 

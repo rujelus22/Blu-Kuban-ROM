@@ -2,49 +2,91 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lcom/google/common/collect/gs;
 
-# static fields
-.field static final a:Lcom/google/common/collect/fy;
 
-.field static final b:Lcom/google/common/collect/fy;
+# instance fields
+.field final a:Ljava/lang/Throwable;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method constructor <init>(Ljava/lang/Throwable;)V
     .registers 2
+    .parameter
 
     .prologue
-    .line 156
-    const-class v0, Lcom/google/common/collect/ImmutableMultiset;
+    .line 213
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "map"
+    .line 214
+    iput-object p1, p0, Lcom/google/common/collect/ci;->a:Ljava/lang/Throwable;
 
-    invoke-static {v0, v1}, Lcom/google/common/collect/fx;->a(Ljava/lang/Class;Ljava/lang/String;)Lcom/google/common/collect/fy;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/common/collect/ci;->a:Lcom/google/common/collect/fy;
-
-    .line 158
-    const-class v0, Lcom/google/common/collect/ImmutableMultiset;
-
-    const-string v1, "size"
-
-    invoke-static {v0, v1}, Lcom/google/common/collect/fx;->a(Ljava/lang/Class;Ljava/lang/String;)Lcom/google/common/collect/fy;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/common/collect/ci;->b:Lcom/google/common/collect/fy;
-
+    .line 215
     return-void
 .end method
 
-.method private constructor <init>()V
-    .registers 1
+
+# virtual methods
+.method public final a()Lcom/google/common/collect/gg;
+    .registers 2
 
     .prologue
-    .line 155
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 224
+    const/4 v0, 0x0
 
+    return-object v0
+.end method
+
+.method public final a(Ljava/lang/ref/ReferenceQueue;Lcom/google/common/collect/gg;)Lcom/google/common/collect/gs;
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 229
+    return-object p0
+.end method
+
+.method public final a(Lcom/google/common/collect/gs;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 243
     return-void
+.end method
+
+.method public final b()Z
+    .registers 2
+
+    .prologue
+    .line 234
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final c()Ljava/lang/Object;
+    .registers 3
+
+    .prologue
+    .line 239
+    new-instance v0, Ljava/util/concurrent/ExecutionException;
+
+    iget-object v1, p0, Lcom/google/common/collect/ci;->a:Ljava/lang/Throwable;
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/ExecutionException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method public final get()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 219
+    const/4 v0, 0x0
+
+    return-object v0
 .end method

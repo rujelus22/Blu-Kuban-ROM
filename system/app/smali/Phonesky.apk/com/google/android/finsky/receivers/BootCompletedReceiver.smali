@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 19
+    .line 20
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -22,22 +22,22 @@
     .parameter "intent"
 
     .prologue
-    .line 22
+    .line 23
     invoke-static {p1}, Lcom/google/android/finsky/api/AccountHandler;->getAccounts(Landroid/content/Context;)[Landroid/accounts/Account;
 
     move-result-object v0
 
-    .line 23
+    .line 24
     .local v0, accounts:[Landroid/accounts/Account;
     array-length v1, v0
 
     if-nez v1, :cond_8
 
-    .line 38
+    .line 40
     :goto_7
     return-void
 
-    .line 30
+    .line 31
     :cond_8
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 

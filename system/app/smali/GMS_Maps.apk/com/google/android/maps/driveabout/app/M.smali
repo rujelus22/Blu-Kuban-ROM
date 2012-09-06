@@ -1,78 +1,64 @@
-.class public Lcom/google/android/maps/driveabout/app/M;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.class Lcom/google/android/maps/driveabout/app/m;
+.super Landroid/content/BroadcastReceiver;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/l;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/maps/driveabout/app/DestinationActivity;)V
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/l;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/M;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+    .prologue
+    .line 37
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/m;->a:Lcom/google/android/maps/driveabout/app/l;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 9
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .registers 6
+    .parameter
+    .parameter
 
-    invoke-virtual {p1, p3}, Landroid/widget/AdapterView;->getItemAtPosition(I)Ljava/lang/Object;
+    .prologue
+    .line 41
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/m;->a:Lcom/google/android/maps/driveabout/app/l;
+
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/l;->a(Lcom/google/android/maps/driveabout/app/l;)Landroid/content/Context;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/maps/driveabout/app/X;
+    new-instance v1, Landroid/content/Intent;
 
-    if-eqz v0, :cond_1c
+    const-string v2, "com.google.googlenav.suggest.android.SuggestContentProvider.INIT_SUGGEST_PROVIDER"
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/X;->b()I
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    move-result v1
+    invoke-virtual {v0, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    const/4 v2, 0x3
+    .line 42
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/m;->a:Lcom/google/android/maps/driveabout/app/l;
 
-    if-ne v1, v2, :cond_1d
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/l;->a(Lcom/google/android/maps/driveabout/app/l;)Landroid/content/Context;
 
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/M;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/X;->e()Lu/P;
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/m;->a:Lcom/google/android/maps/driveabout/app/l;
 
-    move-result-object v2
+    invoke-static {v1}, Lcom/google/android/maps/driveabout/app/l;->b(Lcom/google/android/maps/driveabout/app/l;)Landroid/content/BroadcastReceiver;
 
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->a(Lcom/google/android/maps/driveabout/app/X;)I
+    move-result-object v1
 
-    move-result v0
+    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    invoke-static {v1, v2, v0}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->a(Lcom/google/android/maps/driveabout/app/DestinationActivity;Lu/P;I)V
-
-    :cond_1c
-    :goto_1c
+    .line 43
     return-void
-
-    :cond_1d
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/X;->b()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    if-ne v1, v2, :cond_1c
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/M;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
-
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/X;->c()I
-
-    move-result v0
-
-    invoke-static {v1, v0}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->a(Lcom/google/android/maps/driveabout/app/DestinationActivity;I)V
-
-    goto :goto_1c
 .end method

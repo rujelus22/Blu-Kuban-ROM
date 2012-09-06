@@ -36,7 +36,7 @@
     .parameter "x2"
 
     .prologue
-    .line 123
+    .line 87
     iput-object p1, p0, Lcom/google/android/finsky/config/PreferenceFile$1;->this$0:Lcom/google/android/finsky/config/PreferenceFile;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;-><init>(Lcom/google/android/finsky/config/PreferenceFile;Ljava/lang/String;Ljava/lang/Object;)V
@@ -47,40 +47,40 @@
 
 # virtual methods
 .method protected read(Landroid/content/SharedPreferences;)Ljava/lang/Long;
-    .registers 6
+    .registers 5
     .parameter "sp"
 
     .prologue
-    .line 126
+    .line 90
     iget-object v0, p0, Lcom/google/android/finsky/config/PreferenceFile$1;->mKey:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_15
 
-    new-instance v0, Ljava/lang/Long;
+    iget-object v0, p0, Lcom/google/android/finsky/config/PreferenceFile$1;->mKey:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/google/android/finsky/config/PreferenceFile$1;->mKey:Ljava/lang/String;
+    const-wide/16 v1, 0x0
 
-    const-wide/16 v2, 0x0
+    invoke-interface {p1, v0, v1, v2}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
-    invoke-interface {p1, v1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+    move-result-wide v0
 
-    move-result-wide v1
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Long;-><init>(J)V
+    move-result-object v0
 
-    :goto_15
+    :goto_14
     return-object v0
 
-    :cond_16
+    :cond_15
     iget-object v0, p0, Lcom/google/android/finsky/config/PreferenceFile$1;->mDefaultValue:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Long;
 
-    goto :goto_15
+    goto :goto_14
 .end method
 
 .method protected bridge synthetic read(Landroid/content/SharedPreferences;)Ljava/lang/Object;
@@ -88,7 +88,7 @@
     .parameter "x0"
 
     .prologue
-    .line 123
+    .line 87
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/config/PreferenceFile$1;->read(Landroid/content/SharedPreferences;)Ljava/lang/Long;
 
     move-result-object v0
@@ -102,10 +102,10 @@
     .parameter "value"
 
     .prologue
-    .line 131
+    .line 95
     if-nez p2, :cond_a
 
-    .line 132
+    .line 96
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "null cannot be written for <Long>"
@@ -114,7 +114,7 @@
 
     throw v0
 
-    .line 134
+    .line 98
     :cond_a
     iget-object v0, p0, Lcom/google/android/finsky/config/PreferenceFile$1;->mKey:Ljava/lang/String;
 
@@ -124,7 +124,7 @@
 
     invoke-interface {p1, v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    .line 135
+    .line 99
     return-void
 .end method
 
@@ -134,7 +134,7 @@
     .parameter "x1"
 
     .prologue
-    .line 123
+    .line 87
     check-cast p2, Ljava/lang/Long;
 
     .end local p2

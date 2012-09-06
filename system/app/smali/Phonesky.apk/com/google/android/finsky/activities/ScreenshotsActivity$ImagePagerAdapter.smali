@@ -1,4 +1,4 @@
-.class Lcom/google/android/finsky/activities/ScreenshotsActivity$ImagePagerAdapter;
+.class final Lcom/google/android/finsky/activities/ScreenshotsActivity$ImagePagerAdapter;
 .super Landroid/support/v4/view/PagerAdapter;
 .source "ScreenshotsActivity.java"
 
@@ -9,85 +9,84 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
+    accessFlags = 0x1a
     name = "ImagePagerAdapter"
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/google/android/finsky/activities/ScreenshotsActivity;
+.field private final mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
+
+.field private final mContext:Landroid/content/Context;
+
+.field private final mImages:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/android/finsky/remoting/protos/Doc$Image;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method private constructor <init>(Lcom/google/android/finsky/activities/ScreenshotsActivity;)V
-    .registers 2
+.method public constructor <init>(Ljava/util/List;Landroid/content/Context;Lcom/google/android/finsky/utils/BitmapLoader;)V
+    .registers 4
     .parameter
+    .parameter "context"
+    .parameter "bitmapLoader"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/android/finsky/remoting/protos/Doc$Image;",
+            ">;",
+            "Landroid/content/Context;",
+            "Lcom/google/android/finsky/utils/BitmapLoader;",
+            ")V"
+        }
+    .end annotation
 
     .prologue
-    .line 96
-    iput-object p1, p0, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImagePagerAdapter;->this$0:Lcom/google/android/finsky/activities/ScreenshotsActivity;
-
+    .line 62
+    .local p1, images:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/remoting/protos/Doc$Image;>;"
     invoke-direct {p0}, Landroid/support/v4/view/PagerAdapter;-><init>()V
 
-    return-void
-.end method
+    .line 63
+    iput-object p1, p0, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImagePagerAdapter;->mImages:Ljava/util/List;
 
-.method synthetic constructor <init>(Lcom/google/android/finsky/activities/ScreenshotsActivity;Lcom/google/android/finsky/activities/ScreenshotsActivity$1;)V
-    .registers 3
-    .parameter "x0"
-    .parameter "x1"
+    .line 64
+    iput-object p2, p0, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImagePagerAdapter;->mContext:Landroid/content/Context;
 
-    .prologue
-    .line 96
-    invoke-direct {p0, p1}, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImagePagerAdapter;-><init>(Lcom/google/android/finsky/activities/ScreenshotsActivity;)V
+    .line 65
+    iput-object p3, p0, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImagePagerAdapter;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
 
+    .line 66
     return-void
 .end method
 
 
 # virtual methods
 .method public destroyItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
-    .registers 6
-    .parameter "view"
+    .registers 5
+    .parameter "container"
     .parameter "position"
     .parameter "object"
 
     .prologue
-    .line 100
-    iget-object v1, p0, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImagePagerAdapter;->this$0:Lcom/google/android/finsky/activities/ScreenshotsActivity;
+    .line 90
+    move-object v0, p3
 
-    #getter for: Lcom/google/android/finsky/activities/ScreenshotsActivity;->mImages:Ljava/util/List;
-    invoke-static {v1}, Lcom/google/android/finsky/activities/ScreenshotsActivity;->access$400(Lcom/google/android/finsky/activities/ScreenshotsActivity;)Ljava/util/List;
+    check-cast v0, Lcom/google/android/finsky/layout/FifeImageView;
 
-    move-result-object v1
+    .line 91
+    .local v0, imageView:Lcom/google/android/finsky/layout/FifeImageView;
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    invoke-interface {v1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImageEntry;
-
-    .line 101
-    .local v0, imageEntry:Lcom/google/android/finsky/activities/ScreenshotsActivity$ImageEntry;
-    invoke-virtual {v0}, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImageEntry;->getView()Landroid/widget/ImageView;
-
-    move-result-object v1
-
-    invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
-
-    .line 102
-    invoke-virtual {v0}, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImageEntry;->unload()V
-
-    .line 103
-    return-void
-.end method
-
-.method public finishUpdate(Landroid/view/ViewGroup;)V
-    .registers 2
-    .parameter "view"
-
-    .prologue
-    .line 107
+    .line 92
     return-void
 .end method
 
@@ -95,13 +94,8 @@
     .registers 2
 
     .prologue
-    .line 111
-    iget-object v0, p0, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImagePagerAdapter;->this$0:Lcom/google/android/finsky/activities/ScreenshotsActivity;
-
-    #getter for: Lcom/google/android/finsky/activities/ScreenshotsActivity;->mImages:Ljava/util/List;
-    invoke-static {v0}, Lcom/google/android/finsky/activities/ScreenshotsActivity;->access$400(Lcom/google/android/finsky/activities/ScreenshotsActivity;)Ljava/util/List;
-
-    move-result-object v0
+    .line 70
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImagePagerAdapter;->mImages:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -111,37 +105,45 @@
 .end method
 
 .method public instantiateItem(Landroid/view/ViewGroup;I)Ljava/lang/Object;
-    .registers 5
+    .registers 6
     .parameter "container"
     .parameter "position"
 
     .prologue
-    .line 116
-    iget-object v1, p0, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImagePagerAdapter;->this$0:Lcom/google/android/finsky/activities/ScreenshotsActivity;
+    const/4 v2, -0x1
 
-    #getter for: Lcom/google/android/finsky/activities/ScreenshotsActivity;->mImages:Ljava/util/List;
-    invoke-static {v1}, Lcom/google/android/finsky/activities/ScreenshotsActivity;->access$400(Lcom/google/android/finsky/activities/ScreenshotsActivity;)Ljava/util/List;
+    .line 80
+    new-instance v0, Lcom/google/android/finsky/layout/FifeImageView;
 
-    move-result-object v1
+    iget-object v1, p0, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImagePagerAdapter;->mContext:Landroid/content/Context;
+
+    invoke-direct {v0, v1}, Lcom/google/android/finsky/layout/FifeImageView;-><init>(Landroid/content/Context;)V
+
+    .line 81
+    .local v0, imageView:Lcom/google/android/finsky/layout/FifeImageView;
+    new-instance v1, Landroid/view/ViewGroup$LayoutParams;
+
+    invoke-direct {v1, v2, v2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/FifeImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 83
+    iget-object v1, p0, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImagePagerAdapter;->mImages:Ljava/util/List;
 
     invoke-interface {v1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImageEntry;
-
-    .line 117
-    .local v0, imageEntry:Lcom/google/android/finsky/activities/ScreenshotsActivity$ImageEntry;
-    invoke-virtual {v0}, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImageEntry;->load()V
-
-    .line 118
-    invoke-virtual {v0}, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImageEntry;->getView()Landroid/widget/ImageView;
-
     move-result-object v1
 
-    invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    check-cast v1, Lcom/google/android/finsky/remoting/protos/Doc$Image;
 
-    .line 119
+    iget-object v2, p0, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImagePagerAdapter;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/layout/FifeImageView;->setImage(Lcom/google/android/finsky/remoting/protos/Doc$Image;Lcom/google/android/finsky/utils/BitmapLoader;)V
+
+    .line 84
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 85
     return-object v0
 .end method
 
@@ -151,52 +153,16 @@
     .parameter "object"
 
     .prologue
-    .line 124
-    check-cast p2, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImageEntry;
-
-    .end local p2
-    invoke-virtual {p2}, Lcom/google/android/finsky/activities/ScreenshotsActivity$ImageEntry;->getView()Landroid/widget/ImageView;
-
-    move-result-object v0
-
-    if-ne p1, v0, :cond_a
+    .line 75
+    if-ne p1, p2, :cond_4
 
     const/4 v0, 0x1
 
-    :goto_9
+    :goto_3
     return v0
 
-    :cond_a
+    :cond_4
     const/4 v0, 0x0
 
-    goto :goto_9
-.end method
-
-.method public restoreState(Landroid/os/Parcelable;Ljava/lang/ClassLoader;)V
-    .registers 3
-    .parameter "bundle"
-    .parameter "arg1"
-
-    .prologue
-    .line 129
-    return-void
-.end method
-
-.method public saveState()Landroid/os/Parcelable;
-    .registers 2
-
-    .prologue
-    .line 133
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public startUpdate(Landroid/view/ViewGroup;)V
-    .registers 2
-    .parameter "view"
-
-    .prologue
-    .line 138
-    return-void
+    goto :goto_3
 .end method

@@ -3,20 +3,10 @@
 .source "CarrierProvisioningAction.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$GetProvisioningDevice;,
-        Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$GetProvisioningDcb3;,
-        Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$GetProvisioningStrategy;
-    }
-.end annotation
-
-
 # instance fields
-.field private final mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
+.field private final mDcbApi:Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;
 
-.field private mGetProvisioning:Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$GetProvisioningStrategy;
+.field private final mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
 
 
 # direct methods
@@ -24,56 +14,139 @@
     .registers 3
 
     .prologue
-    .line 97
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 98
+    .line 38
     invoke-static {}, Lcom/google/android/finsky/billing/BillingLocator;->getCarrierBillingStorage()Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
+    invoke-static {}, Lcom/google/android/finsky/billing/BillingLocator;->createDcbApi()Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;
 
-    .line 99
-    invoke-static {}, Lcom/google/android/finsky/billing/carrierbilling/CarrierBillingUtils;->isDcb30()Z
+    move-result-object v1
 
-    move-result v0
+    invoke-direct {p0, v0, v1}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;-><init>(Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;)V
 
-    if-eqz v0, :cond_18
-
-    .line 100
-    new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$GetProvisioningDcb3;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$GetProvisioningDcb3;-><init>(Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$1;)V
-
-    iput-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->mGetProvisioning:Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$GetProvisioningStrategy;
-
-    .line 104
-    :goto_17
+    .line 39
     return-void
-
-    .line 102
-    :cond_18
-    new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$GetProvisioningDevice;
-
-    invoke-direct {v0, p0}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$GetProvisioningDevice;-><init>(Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;)V
-
-    iput-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->mGetProvisioning:Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$GetProvisioningStrategy;
-
-    goto :goto_17
 .end method
 
-.method static synthetic access$100(Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
+.method public constructor <init>(Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;)V
+    .registers 3
+    .parameter "storage"
+    .parameter "dcbApi"
+
+    .prologue
+    .line 42
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 43
+    iput-object p1, p0, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
+
+    .line 44
+    iput-object p2, p0, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->mDcbApi:Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;
+
+    .line 45
+    return-void
+.end method
+
+.method static synthetic access$000(Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
     .registers 2
     .parameter "x0"
 
     .prologue
-    .line 32
+    .line 33
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
 
     return-object v0
+.end method
+
+.method private fetchProvisioning(Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
+    .registers 5
+    .parameter "acceptedTosVersion"
+    .parameter
+    .parameter "errorListener"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Lcom/android/volley/Response$Listener",
+            "<",
+            "Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingProvisioning;",
+            ">;",
+            "Lcom/android/volley/Response$ErrorListener;",
+            ")V"
+        }
+    .end annotation
+
+    .prologue
+    .line 107
+    .local p2, listener:Lcom/android/volley/Response$Listener;,"Lcom/android/volley/Response$Listener<Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingProvisioning;>;"
+    iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->mDcbApi:Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;
+
+    invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->getProvisioning(Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
+
+    .line 108
+    return-void
+.end method
+
+.method private fetchProvisioning(Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
+    .registers 10
+    .parameter "acceptedTosVersion"
+    .parameter "successRunnable"
+    .parameter "errorRunnable"
+
+    .prologue
+    .line 112
+    iget-object v4, p0, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
+
+    invoke-virtual {v4}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;->getParams()Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
+
+    move-result-object v3
+
+    .line 113
+    .local v3, params:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
+    if-nez v3, :cond_e
+
+    .line 114
+    if-eqz p3, :cond_d
+
+    .line 115
+    invoke-interface {p3}, Ljava/lang/Runnable;->run()V
+
+    .line 183
+    :cond_d
+    :goto_d
+    return-void
+
+    .line 119
+    :cond_e
+    invoke-virtual {v3}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;->getId()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 121
+    .local v0, carrierId:Ljava/lang/String;
+    new-instance v2, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$1;
+
+    invoke-direct {v2, p0, v0, p2}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$1;-><init>(Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;Ljava/lang/String;Ljava/lang/Runnable;)V
+
+    .line 154
+    .local v2, listener:Lcom/android/volley/Response$Listener;,"Lcom/android/volley/Response$Listener<Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingProvisioning;>;"
+    new-instance v1, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$2;
+
+    invoke-direct {v1, p0, v0, p3}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$2;-><init>(Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;Ljava/lang/String;Ljava/lang/Runnable;)V
+
+    .line 181
+    .local v1, errorListener:Lcom/android/volley/Response$ErrorListener;
+    invoke-direct {p0, p1, v2, v1}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->fetchProvisioning(Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
+
+    .line 182
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v4
+
+    invoke-direct {p0, v4, v5}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->updateBillingPreferences(J)V
+
+    goto :goto_d
 .end method
 
 .method public static shouldFetchProvisioning(Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;)Z
@@ -81,7 +154,7 @@
     .parameter "carrierBillingStorage"
 
     .prologue
-    .line 234
+    .line 186
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -136,12 +209,12 @@
 
     const/4 v4, 0x0
 
-    .line 245
+    .line 197
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;->getParams()Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
 
     move-result-object v2
 
-    .line 246
+    .line 198
     .local v2, params:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
     if-eqz v2, :cond_e
 
@@ -151,7 +224,7 @@
 
     if-nez v5, :cond_17
 
-    .line 247
+    .line 199
     :cond_e
     const-string v3, "Required CarrierBillingParams missing. Shouldn\'t fetch provisioning."
 
@@ -161,12 +234,12 @@
 
     move v3, v4
 
-    .line 266
+    .line 218
     :cond_16
     :goto_16
     return v3
 
-    .line 251
+    .line 203
     :cond_17
     sub-long v5, p1, p5
 
@@ -176,7 +249,7 @@
 
     move v1, v3
 
-    .line 252
+    .line 204
     .local v1, hasBootedSinceLastCheck:Z
     :goto_1e
     cmp-long v5, p1, p7
@@ -185,12 +258,12 @@
 
     move v0, v3
 
-    .line 255
+    .line 207
     .local v0, afterEarliestPerformTime:Z
     :goto_23
     if-nez v0, :cond_16
 
-    .line 260
+    .line 212
     invoke-static {p0}, Lcom/google/android/finsky/billing/carrierbilling/CarrierBillingUtils;->isProvisioned(Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;)Z
 
     move-result v5
@@ -202,7 +275,7 @@
     :cond_2d
     move v3, v4
 
-    .line 266
+    .line 218
     goto :goto_16
 
     .end local v0           #afterEarliestPerformTime:Z
@@ -210,14 +283,14 @@
     :cond_2f
     move v1, v4
 
-    .line 251
+    .line 203
     goto :goto_1e
 
     .restart local v1       #hasBootedSinceLastCheck:Z
     :cond_31
     move v0, v4
 
-    .line 252
+    .line 204
     goto :goto_23
 .end method
 
@@ -226,7 +299,7 @@
     .parameter "now"
 
     .prologue
-    .line 273
+    .line 225
     sget-object v2, Lcom/google/android/finsky/config/G;->vendingCarrierProvisioningRefreshFrequencyMs:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v2}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
@@ -255,7 +328,7 @@
 
     move-result-wide v0
 
-    .line 275
+    .line 227
     .local v0, interval:J
     sget-object v2, Lcom/google/android/finsky/billing/BillingPreferences;->EARLIEST_PROVISIONING_CHECK_TIME_MILLIS:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
@@ -267,7 +340,7 @@
 
     invoke-virtual {v2, v3}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->put(Ljava/lang/Object;)V
 
-    .line 277
+    .line 229
     sget-object v2, Lcom/google/android/finsky/billing/BillingPreferences;->LAST_PROVISIONING_TIME_MILLIS:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -276,83 +349,24 @@
 
     invoke-virtual {v2, v3}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->put(Ljava/lang/Object;)V
 
-    .line 278
+    .line 230
     return-void
 .end method
 
 
 # virtual methods
-.method public fetchProvisioning(Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
-    .registers 10
-    .parameter "acceptedTosVersion"
-    .parameter "successRunnable"
-    .parameter "errorRunnable"
-
-    .prologue
-    .line 162
-    iget-object v4, p0, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
-
-    invoke-virtual {v4}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;->getParams()Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
-
-    move-result-object v3
-
-    .line 163
-    .local v3, params:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
-    if-nez v3, :cond_c
-
-    .line 164
-    invoke-interface {p3}, Ljava/lang/Runnable;->run()V
-
-    .line 231
-    :goto_b
-    return-void
-
-    .line 167
-    :cond_c
-    invoke-virtual {v3}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;->getId()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 169
-    .local v0, carrierId:Ljava/lang/String;
-    new-instance v2, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$1;
-
-    invoke-direct {v2, p0, v0, p2}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$1;-><init>(Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;Ljava/lang/String;Ljava/lang/Runnable;)V
-
-    .line 202
-    .local v2, listener:Lcom/android/volley/Response$Listener;,"Lcom/android/volley/Response$Listener<Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingProvisioning;>;"
-    new-instance v1, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$2;
-
-    invoke-direct {v1, p0, v0, p3}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$2;-><init>(Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;Ljava/lang/String;Ljava/lang/Runnable;)V
-
-    .line 229
-    .local v1, errorListener:Lcom/android/volley/Response$ErrorListener;
-    iget-object v4, p0, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->mGetProvisioning:Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$GetProvisioningStrategy;
-
-    invoke-interface {v4, p1, v2, v1}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$GetProvisioningStrategy;->fetchProvisioning(Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
-
-    .line 230
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v4
-
-    invoke-direct {p0, v4, v5}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->updateBillingPreferences(J)V
-
-    goto :goto_b
-.end method
-
 .method public forceRun(Ljava/lang/Runnable;Ljava/lang/Runnable;)V
     .registers 4
     .parameter "successRunnable"
     .parameter "errorRunnable"
 
     .prologue
-    .line 148
+    .line 93
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0, p1, p2}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->fetchProvisioning(Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
+    invoke-direct {p0, v0, p1, p2}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->fetchProvisioning(Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
-    .line 149
+    .line 94
     return-void
 .end method
 
@@ -363,10 +377,10 @@
     .parameter "acceptedTosVersion"
 
     .prologue
-    .line 157
-    invoke-virtual {p0, p3, p1, p2}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->fetchProvisioning(Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
+    .line 102
+    invoke-direct {p0, p3, p1, p2}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->fetchProvisioning(Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
-    .line 158
+    .line 103
     return-void
 .end method
 
@@ -375,7 +389,7 @@
     .parameter "finishRunnable"
 
     .prologue
-    .line 132
+    .line 77
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
 
     invoke-static {v0}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->shouldFetchProvisioning(Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;)Z
@@ -384,7 +398,7 @@
 
     if-eqz v0, :cond_14
 
-    .line 133
+    .line 78
     sget-object v0, Lcom/google/android/finsky/billing/BillingPreferences;->ACCEPTED_CARRIER_TOS_VERSION:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->get()Ljava/lang/Object;
@@ -393,20 +407,20 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-virtual {p0, v0, p1, p1}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->fetchProvisioning(Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
+    invoke-direct {p0, v0, p1, p1}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->fetchProvisioning(Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
-    .line 141
+    .line 86
     :goto_13
     return-void
 
-    .line 136
+    .line 81
     :cond_14
     if-eqz p1, :cond_19
 
-    .line 137
+    .line 82
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 139
+    .line 84
     :cond_19
     const-string v0, "No need to fetch provisioning from carrier."
 
@@ -419,35 +433,65 @@
     goto :goto_13
 .end method
 
-.method public runIfNotOnWifi(Landroid/content/Context;Ljava/lang/Runnable;)V
-    .registers 4
+.method public runIfNotOnWifi(Landroid/content/Context;)V
+    .registers 3
     .parameter "context"
-    .parameter "finishRunnable"
 
     .prologue
-    .line 117
-    iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->mGetProvisioning:Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$GetProvisioningStrategy;
-
-    invoke-interface {v0, p1}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction$GetProvisioningStrategy;->shouldRunIfNotOnWifi(Landroid/content/Context;)Z
+    .line 52
+    invoke-virtual {p0, p1}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->shouldRunIfNotOnWifi(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_a
 
-    .line 118
-    invoke-virtual {p0, p2}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->run(Ljava/lang/Runnable;)V
+    .line 53
+    const/4 v0, 0x0
 
-    .line 124
-    :cond_b
-    :goto_b
+    invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->run(Ljava/lang/Runnable;)V
+
+    .line 55
+    :cond_a
     return-void
+.end method
 
-    .line 120
-    :cond_c
-    if-eqz p2, :cond_b
+.method public shouldRunIfNotOnWifi(Landroid/content/Context;)Z
+    .registers 6
+    .parameter "context"
 
-    .line 121
-    invoke-interface {p2}, Ljava/lang/Runnable;->run()V
+    .prologue
+    const/4 v2, 0x1
 
-    goto :goto_b
+    .line 62
+    const-string v3, "connectivity"
+
+    invoke-virtual {p1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/ConnectivityManager;
+
+    .line 64
+    .local v0, mgr:Landroid/net/ConnectivityManager;
+    invoke-virtual {v0, v2}, Landroid/net/ConnectivityManager;->getNetworkInfo(I)Landroid/net/NetworkInfo;
+
+    move-result-object v1
+
+    .line 65
+    .local v1, ni:Landroid/net/NetworkInfo;
+    if-eqz v1, :cond_15
+
+    invoke-virtual {v1}, Landroid/net/NetworkInfo;->isConnectedOrConnecting()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_16
+
+    .line 66
+    :cond_15
+    const/4 v2, 0x0
+
+    .line 68
+    :cond_16
+    return v2
 .end method

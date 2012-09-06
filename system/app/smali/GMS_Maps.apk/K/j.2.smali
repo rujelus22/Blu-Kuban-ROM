@@ -1,25 +1,28 @@
-.class LK/j;
+.class Lk/J;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Iterator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field a:Ljava/lang/Object;
+.field final synthetic a:Lk/C;
 
-.field final synthetic b:Ljava/util/Iterator;
-
-.field final synthetic c:LK/i;
+.field final synthetic b:Lk/I;
 
 
 # direct methods
-.method constructor <init>(LK/i;Ljava/util/Iterator;)V
+.method constructor <init>(Lk/I;Lk/C;)V
     .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, LK/j;->c:LK/i;
+    .prologue
+    .line 47
+    iput-object p1, p0, Lk/J;->b:Lk/I;
 
-    iput-object p2, p0, LK/j;->b:Ljava/util/Iterator;
+    iput-object p2, p0, Lk/J;->a:Lk/C;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,46 +31,17 @@
 
 
 # virtual methods
-.method public hasNext()Z
-    .registers 2
-
-    iget-object v0, p0, LK/j;->b:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public next()Ljava/lang/Object;
-    .registers 2
-
-    iget-object v0, p0, LK/j;->b:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    iput-object v0, p0, LK/j;->a:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public remove()V
+.method public run()V
     .registers 3
 
-    iget-object v0, p0, LK/j;->b:Ljava/util/Iterator;
+    .prologue
+    .line 50
+    iget-object v0, p0, Lk/J;->b:Lk/I;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+    iget-object v1, p0, Lk/J;->a:Lk/C;
 
-    iget-object v0, p0, LK/j;->c:LK/i;
+    invoke-static {v0, v1}, Lk/I;->a(Lk/I;Lk/C;)V
 
-    iget-object v0, v0, LK/i;->b:LK/a;
-
-    iget-object v1, p0, LK/j;->a:Ljava/lang/Object;
-
-    invoke-static {v0, v1}, LK/a;->b(LK/a;Ljava/lang/Object;)V
-
+    .line 51
     return-void
 .end method

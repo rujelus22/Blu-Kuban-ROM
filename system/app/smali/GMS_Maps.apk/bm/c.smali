@@ -1,108 +1,69 @@
 .class public Lbm/c;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# instance fields
-.field private final a:F
-
-.field private final b:F
-
-.field private final c:Lbm/d;
-
-.field private d:F
-
-.field private e:F
-
-.field private f:F
-
-.field private g:F
+# static fields
+.field public static final a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
 
 # direct methods
-.method public constructor <init>(Lbm/d;FF)V
+.method static constructor <clinit>()V
     .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    const/16 v3, 0x215
 
-    iput-object p1, p0, Lbm/c;->c:Lbm/d;
+    const/4 v1, 0x0
 
-    iput p2, p0, Lbm/c;->a:F
+    .line 11
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    iput p3, p0, Lbm/c;->b:F
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
 
-    return-void
-.end method
+    sput-object v0, Lbm/c;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
+    .line 13
+    sget-object v2, Lbm/c;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-# virtual methods
-.method public a()F
-    .registers 2
+    move-object v0, v1
 
-    iget v0, p0, Lbm/c;->f:F
+    check-cast v0, Lbm/d;
 
-    return v0
-.end method
+    const/4 v0, 0x1
 
-.method public a(F)V
-    .registers 2
-
-    iput p1, p0, Lbm/c;->f:F
-
-    return-void
-.end method
-
-.method a(FF)V
-    .registers 3
-
-    iput p1, p0, Lbm/c;->d:F
-
-    iput p2, p0, Lbm/c;->e:F
-
-    invoke-virtual {p0}, Lbm/c;->b()V
-
-    return-void
-.end method
-
-.method public b()V
-    .registers 5
-
-    iget v0, p0, Lbm/c;->d:F
-
-    iget v1, p0, Lbm/c;->e:F
-
-    iget-object v2, p0, Lbm/c;->c:Lbm/d;
-
-    invoke-virtual {v2}, Lbm/d;->c()Lbn/f;
+    invoke-virtual {v2, v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
     move-result-object v2
 
-    iget v2, v2, Lbn/f;->a:F
+    move-object v0, v1
 
-    iget-object v3, p0, Lbm/c;->c:Lbm/d;
+    check-cast v0, Lbm/d;
 
-    invoke-virtual {v3}, Lbm/d;->c()Lbn/f;
+    const/4 v0, 0x2
 
-    move-result-object v3
+    invoke-virtual {v2, v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    iget v3, v3, Lbn/f;->b:F
+    move-result-object v2
 
-    invoke-static {v0, v1, v2, v3}, Lbn/c;->a(FFFF)F
+    move-object v0, v1
 
-    move-result v0
+    check-cast v0, Lbm/d;
 
-    const v1, 0x40490fdb
+    const/4 v0, 0x3
 
-    add-float/2addr v0, v1
+    invoke-virtual {v2, v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    iput v0, p0, Lbm/c;->g:F
+    move-result-object v2
 
+    move-object v0, v1
+
+    check-cast v0, Lbm/d;
+
+    const/4 v0, 0x4
+
+    invoke-virtual {v2, v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    .line 27
     return-void
-.end method
-
-.method public c()F
-    .registers 2
-
-    iget v0, p0, Lbm/c;->g:F
-
-    return v0
 .end method

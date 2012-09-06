@@ -1,376 +1,356 @@
-.class public Lcom/google/googlenav/ui/bP;
-.super Ljava/lang/Object;
+.class Lcom/google/googlenav/ui/bp;
+.super Landroid/text/style/ReplacementSpan;
+.source "SourceFile"
 
-# interfaces
-.implements Lbb/c;
+
+# static fields
+.field private static final a:I
+
+.field private static final b:I
+
+.field private static final c:I
+
+.field private static final d:I
 
 
 # instance fields
-.field private a:LaJ/u;
+.field private final e:Ljava/lang/String;
 
-.field private b:Lbb/d;
-
-.field private c:Lbb/d;
-
-.field private final d:Landroid/graphics/Point;
+.field private final f:I
 
 
 # direct methods
-.method public constructor <init>(LaJ/u;)V
+.method static constructor <clinit>()V
     .registers 4
 
-    const/4 v1, 0x0
+    .prologue
+    const/4 v1, 0x5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 3728
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
 
-    new-instance v0, Landroid/graphics/Point;
+    move-result-object v0
 
-    invoke-direct {v0, v1, v1}, Landroid/graphics/Point;-><init>(II)V
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/common/Config;->c(I)I
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/bP;->d:Landroid/graphics/Point;
+    move-result v0
 
-    invoke-virtual {p0, p1}, Lcom/google/googlenav/ui/bP;->a(LaJ/u;)V
+    sput v0, Lcom/google/googlenav/ui/bp;->a:I
+
+    .line 3729
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
+
+    move-result-object v0
+
+    const-wide v2, 0x3fd999999999999aL
+
+    invoke-virtual {v0, v2, v3}, Lcom/google/googlenav/common/Config;->a(D)I
+
+    move-result v0
+
+    sput v0, Lcom/google/googlenav/ui/bp;->b:I
+
+    .line 3731
+    invoke-static {}, Lcom/google/googlenav/K;->a()Lcom/google/googlenav/K;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/K;->an()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_36
+
+    const/16 v0, 0x8
+
+    :goto_26
+    sput v0, Lcom/google/googlenav/ui/bp;->c:I
+
+    .line 3732
+    invoke-static {}, Lcom/google/googlenav/K;->a()Lcom/google/googlenav/K;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/K;->an()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_39
+
+    const/4 v0, 0x4
+
+    :goto_33
+    sput v0, Lcom/google/googlenav/ui/bp;->d:I
 
     return-void
+
+    .line 3731
+    :cond_36
+    const/16 v0, 0xa
+
+    goto :goto_26
+
+    :cond_39
+    move v0, v1
+
+    .line 3732
+    goto :goto_33
 .end method
 
-.method private a(Z)V
+.method public constructor <init>(Ljava/lang/String;I)V
     .registers 3
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/bP;->b:Lbb/d;
+    .prologue
+    .line 3737
+    invoke-direct {p0}, Landroid/text/style/ReplacementSpan;-><init>()V
 
-    if-eqz v0, :cond_9
+    .line 3738
+    iput-object p1, p0, Lcom/google/googlenav/ui/bp;->e:Ljava/lang/String;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/bP;->b:Lbb/d;
+    .line 3739
+    iput p2, p0, Lcom/google/googlenav/ui/bp;->f:I
 
-    invoke-interface {v0, p1}, Lbb/d;->a(Z)V
-
-    :cond_9
+    .line 3740
     return-void
-.end method
-
-.method public static a()Z
-    .registers 1
-
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->ak()Z
-
-    move-result v0
-
-    if-nez v0, :cond_10
-
-    invoke-static {}, Lcom/google/googlenav/android/a;->f()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1e
-
-    :cond_10
-    sget-object v0, LaB/j;->a:LaB/j;
-
-    invoke-virtual {v0}, LaB/j;->e()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1e
-
-    invoke-static {}, Lcom/google/googlenav/ui/bP;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_20
-
-    :cond_1e
-    const/4 v0, 0x1
-
-    :goto_1f
-    return v0
-
-    :cond_20
-    const/4 v0, 0x0
-
-    goto :goto_1f
-.end method
-
-.method private b(Z)V
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/bP;->c:Lbb/d;
-
-    if-eqz v0, :cond_9
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/bP;->c:Lbb/d;
-
-    invoke-interface {v0, p1}, Lbb/d;->a(Z)V
-
-    :cond_9
-    return-void
-.end method
-
-.method public static b()Z
-    .registers 1
-
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->ay()Z
-
-    move-result v0
-
-    if-nez v0, :cond_14
-
-    invoke-static {}, Laf/b;->a()Laf/b;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Laf/b;->A()Z
-
-    move-result v0
-
-    if-nez v0, :cond_16
-
-    :cond_14
-    const/4 v0, 0x1
-
-    :goto_15
-    return v0
-
-    :cond_16
-    const/4 v0, 0x0
-
-    goto :goto_15
 .end method
 
 
 # virtual methods
-.method public a(LaJ/u;)V
-    .registers 2
+.method public draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
+    .registers 18
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/bP;->a:LaJ/u;
+    .prologue
+    .line 3745
+    sget v1, Lcom/google/googlenav/ui/bp;->c:I
 
-    return-void
-.end method
+    int-to-float v1, v1
 
-.method public a(Lcom/google/googlenav/ui/C;)V
-    .registers 4
+    add-float/2addr v1, p5
 
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/bP;->d()V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/bP;->b:Lbb/d;
-
-    if-eqz v0, :cond_e
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/bP;->b:Lbb/d;
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/bP;->d:Landroid/graphics/Point;
-
-    invoke-interface {v0, v1, p1}, Lbb/d;->a(Landroid/graphics/Point;Lcom/google/googlenav/ui/C;)V
-
-    :cond_e
-    iget-object v0, p0, Lcom/google/googlenav/ui/bP;->c:Lbb/d;
-
-    if-eqz v0, :cond_19
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/bP;->c:Lbb/d;
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/bP;->d:Landroid/graphics/Point;
-
-    invoke-interface {v0, v1, p1}, Lbb/d;->a(Landroid/graphics/Point;Lcom/google/googlenav/ui/C;)V
-
-    :cond_19
-    return-void
-.end method
-
-.method public a(Laq/c;)Z
-    .registers 6
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1}, Laq/c;->i()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_18
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/bP;->a:LaJ/u;
-
-    invoke-virtual {p1}, Laq/c;->k()I
+    .line 3747
+    invoke-virtual/range {p9 .. p9}, Landroid/graphics/Paint;->getColor()I
 
     move-result v2
 
-    invoke-virtual {p1}, Laq/c;->l()I
+    .line 3748
+    invoke-virtual/range {p9 .. p9}, Landroid/graphics/Paint;->getStyle()Landroid/graphics/Paint$Style;
 
-    move-result v3
+    move-result-object v3
 
-    invoke-virtual {v1, v0, v2, v3}, LaJ/u;->a(ZII)Z
+    .line 3750
+    iget v4, p0, Lcom/google/googlenav/ui/bp;->f:I
 
-    move-result v1
+    move-object/from16 v0, p9
 
-    if-eqz v1, :cond_18
+    invoke-virtual {v0, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    const/4 v0, 0x1
+    .line 3751
+    sget-object v4, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
-    :cond_18
-    return v0
+    move-object/from16 v0, p9
+
+    invoke-virtual {v0, v4}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 3752
+    iget-object v4, p0, Lcom/google/googlenav/ui/bp;->e:Ljava/lang/String;
+
+    const/4 v5, 0x0
+
+    iget-object v6, p0, Lcom/google/googlenav/ui/bp;->e:Ljava/lang/String;
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    invoke-static {}, Lcom/google/googlenav/ui/bn;->X()Landroid/graphics/Rect;
+
+    move-result-object v7
+
+    move-object/from16 v0, p9
+
+    invoke-virtual {v0, v4, v5, v6, v7}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
+
+    .line 3753
+    invoke-static {}, Lcom/google/googlenav/ui/bn;->X()Landroid/graphics/Rect;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/graphics/Rect;->width()I
+
+    move-result v4
+
+    sget v5, Lcom/google/googlenav/ui/bp;->d:I
+
+    mul-int/lit8 v5, v5, 0x2
+
+    add-int/2addr v4, v5
+
+    .line 3754
+    sub-int v5, p8, p6
+
+    invoke-static {}, Lcom/google/googlenav/ui/bn;->X()Landroid/graphics/Rect;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Landroid/graphics/Rect;->height()I
+
+    move-result v6
+
+    sub-int/2addr v5, v6
+
+    div-int/lit8 v5, v5, 0x2
+
+    .line 3755
+    invoke-static {}, Lcom/google/googlenav/ui/bn;->Y()Landroid/graphics/RectF;
+
+    move-result-object v6
+
+    add-int v7, p6, v5
+
+    int-to-float v7, v7
+
+    int-to-float v4, v4
+
+    add-float/2addr v4, v1
+
+    sub-int v5, p8, v5
+
+    add-int/lit8 v5, v5, 0x1
+
+    int-to-float v5, v5
+
+    invoke-virtual {v6, v1, v7, v4, v5}, Landroid/graphics/RectF;->set(FFFF)V
+
+    .line 3761
+    invoke-static {}, Lcom/google/googlenav/android/a;->b()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_84
+
+    .line 3762
+    invoke-static {}, Lcom/google/googlenav/ui/bn;->Y()Landroid/graphics/RectF;
+
+    move-result-object v4
+
+    move-object/from16 v0, p9
+
+    invoke-virtual {p1, v4, v0}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+
+    .line 3767
+    :goto_66
+    move-object/from16 v0, p9
+
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 3768
+    move-object/from16 v0, p9
+
+    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 3769
+    invoke-virtual/range {p9 .. p9}, Landroid/graphics/Paint;->clearShadowLayer()V
+
+    .line 3770
+    iget-object v2, p0, Lcom/google/googlenav/ui/bp;->e:Ljava/lang/String;
+
+    sget v3, Lcom/google/googlenav/ui/bp;->d:I
+
+    int-to-float v3, v3
+
+    add-float/2addr v1, v3
+
+    sget v3, Lcom/google/googlenav/ui/bp;->b:I
+
+    int-to-float v3, v3
+
+    sub-float/2addr v1, v3
+
+    int-to-float v3, p7
+
+    move-object/from16 v0, p9
+
+    invoke-virtual {p1, v2, v1, v3, v0}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+
+    .line 3771
+    return-void
+
+    .line 3764
+    :cond_84
+    invoke-static {}, Lcom/google/googlenav/ui/bn;->Y()Landroid/graphics/RectF;
+
+    move-result-object v4
+
+    sget v5, Lcom/google/googlenav/ui/bp;->a:I
+
+    int-to-float v5, v5
+
+    sget v6, Lcom/google/googlenav/ui/bp;->a:I
+
+    int-to-float v6, v6
+
+    move-object/from16 v0, p9
+
+    invoke-virtual {p1, v4, v5, v6, v0}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+
+    goto :goto_66
 .end method
 
-.method public a(Lbb/E;)Z
-    .registers 5
+.method public getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
+    .registers 10
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 3776
+    iget-object v0, p0, Lcom/google/googlenav/ui/bp;->e:Ljava/lang/String;
 
     const/4 v1, 0x0
 
-    const/4 v0, 0x1
+    iget-object v2, p0, Lcom/google/googlenav/ui/bp;->e:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/bP;->b:Lbb/d;
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    if-eqz v2, :cond_10
+    move-result v2
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/bP;->b:Lbb/d;
+    invoke-static {}, Lcom/google/googlenav/ui/bn;->X()Landroid/graphics/Rect;
 
-    if-ne p1, v2, :cond_10
+    move-result-object v3
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/bP;->a:LaJ/u;
+    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
 
-    invoke-virtual {v2, v1}, LaJ/u;->a(Z)Z
+    .line 3779
+    invoke-static {}, Lcom/google/googlenav/ui/bn;->X()Landroid/graphics/Rect;
 
-    :goto_f
-    return v0
+    move-result-object v0
 
-    :cond_10
-    iget-object v2, p0, Lcom/google/googlenav/ui/bP;->c:Lbb/d;
+    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
-    if-eqz v2, :cond_1e
+    move-result v0
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/bP;->c:Lbb/d;
+    sget v1, Lcom/google/googlenav/ui/bp;->c:I
 
-    if-ne p1, v2, :cond_1e
+    add-int/2addr v0, v1
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/bP;->a:LaJ/u;
+    sget v1, Lcom/google/googlenav/ui/bp;->d:I
 
-    invoke-virtual {v1, v0}, LaJ/u;->a(Z)Z
+    mul-int/lit8 v1, v1, 0x2
 
-    goto :goto_f
-
-    :cond_1e
-    move v0, v1
-
-    goto :goto_f
-.end method
-
-.method public b(Lbb/E;)Z
-    .registers 3
-
-    const/4 v0, 0x0
+    add-int/2addr v0, v1
 
     return v0
-.end method
-
-.method public c()V
-    .registers 4
-
-    const/4 v2, 0x0
-
-    invoke-static {}, Lcom/google/googlenav/ui/bP;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1e
-
-    invoke-static {}, Lbb/e;->a()Lbb/e;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1, p0, v2}, Lbb/e;->a(ILbb/c;Ljava/lang/String;)Lbb/d;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/bP;->b:Lbb/d;
-
-    invoke-static {}, Lbb/e;->a()Lbb/e;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
-
-    invoke-virtual {v0, v1, p0, v2}, Lbb/e;->a(ILbb/c;Ljava/lang/String;)Lbb/d;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/bP;->c:Lbb/d;
-
-    :cond_1d
-    :goto_1d
-    return-void
-
-    :cond_1e
-    iget-object v0, p0, Lcom/google/googlenav/ui/bP;->b:Lbb/d;
-
-    if-eqz v0, :cond_27
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/bP;->b:Lbb/d;
-
-    invoke-interface {v0}, Lbb/d;->c()V
-
-    :cond_27
-    iget-object v0, p0, Lcom/google/googlenav/ui/bP;->c:Lbb/d;
-
-    if-eqz v0, :cond_1d
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/bP;->c:Lbb/d;
-
-    invoke-interface {v0}, Lbb/d;->c()V
-
-    goto :goto_1d
-.end method
-
-.method public d()V
-    .registers 4
-
-    const/4 v2, 0x1
-
-    const/4 v1, 0x0
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/bP;->a:LaJ/u;
-
-    invoke-virtual {v0}, LaJ/u;->i()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1e
-
-    invoke-direct {p0, v1}, Lcom/google/googlenav/ui/bP;->a(Z)V
-
-    :goto_d
-    iget-object v0, p0, Lcom/google/googlenav/ui/bP;->a:LaJ/u;
-
-    invoke-virtual {v0}, LaJ/u;->j()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_22
-
-    invoke-direct {p0, v1}, Lcom/google/googlenav/ui/bP;->b(Z)V
-
-    :goto_18
-    iget-object v0, p0, Lcom/google/googlenav/ui/bP;->a:LaJ/u;
-
-    invoke-virtual {v0}, LaJ/u;->o()V
-
-    return-void
-
-    :cond_1e
-    invoke-direct {p0, v2}, Lcom/google/googlenav/ui/bP;->a(Z)V
-
-    goto :goto_d
-
-    :cond_22
-    invoke-direct {p0, v2}, Lcom/google/googlenav/ui/bP;->b(Z)V
-
-    goto :goto_18
 .end method

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_horizontal" android:background="@drawable/winset_softkey_bg" android:layout_width="fill_parent" android:layout_height="59.329987dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.sec.android.socialhub.view.HubButton android:textSize="16.0dip" android:id="@id/common_softkey_left_button" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="5.0px" android:layout_marginTop="6.669983dip" android:layout_weight="1.0" />
-    <com.sec.android.socialhub.view.HubButton android:textSize="16.0dip" android:id="@id/common_softkey_right_button" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="6.669983dip" android:layout_marginRight="5.0px" android:text="@string/cancel_button" android:layout_weight="1.0" />
-</LinearLayout>

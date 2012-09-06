@@ -56,7 +56,7 @@
 
     move-result v8
 
-    if-ne v8, v9, :cond_be
+    if-ne v8, v9, :cond_bb
 
     move v8, v9
 
@@ -83,7 +83,7 @@
 
     .line 181
     .local v7, watchdogEnabled:Landroid/preference/CheckBoxPreference;
-    if-eqz v7, :cond_43
+    if-eqz v7, :cond_40
 
     .line 182
     invoke-virtual {p0}, Lcom/android/settings/wifi/AdvancedWifiSettings;->getContentResolver()Landroid/content/ContentResolver;
@@ -96,7 +96,7 @@
 
     move-result v8
 
-    if-ne v8, v9, :cond_c1
+    if-ne v8, v9, :cond_be
 
     :goto_39
     invoke-virtual {v7, v9}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
@@ -106,10 +106,8 @@
 
     move-result-object v8
 
-    invoke-virtual {v8, v7}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 189
-    :cond_43
+    :cond_40
     const-string v8, "frequency_band"
 
     invoke-virtual {p0, v8}, Lcom/android/settings/wifi/AdvancedWifiSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -126,7 +124,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_cc
+    if-eqz v8, :cond_c9
 
     .line 192
     invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
@@ -142,7 +140,7 @@
     .local v6, value:I
     const/4 v8, -0x1
 
-    if-eq v6, v8, :cond_c4
+    if-eq v6, v8, :cond_c1
 
     .line 195
     invoke-static {v6}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -153,8 +151,8 @@
 
     .line 206
     .end local v6           #value:I
-    :cond_66
-    :goto_66
+    :cond_63
+    :goto_63
     const-string v8, "sleep_policy"
 
     invoke-virtual {p0, v8}, Lcom/android/settings/wifi/AdvancedWifiSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -165,7 +163,7 @@
 
     .line 207
     .local v4, sleepPolicyPref:Landroid/preference/ListPreference;
-    if-eqz v4, :cond_98
+    if-eqz v4, :cond_95
 
     .line 208
     invoke-virtual {p0}, Lcom/android/settings/wifi/AdvancedWifiSettings;->getActivity()Landroid/app/Activity;
@@ -176,7 +174,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_80
+    if-eqz v8, :cond_7d
 
     .line 209
     const v8, 0x7f070024
@@ -184,7 +182,7 @@
     invoke-virtual {v4, v8}, Landroid/preference/ListPreference;->setEntries(I)V
 
     .line 211
-    :cond_80
+    :cond_7d
     invoke-virtual {v4, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
     .line 212
@@ -216,7 +214,7 @@
     .line 222
     .end local v5           #stringValue:Ljava/lang/String;
     .end local v6           #value:I
-    :cond_98
+    :cond_95
     invoke-virtual {p0}, Lcom/android/settings/wifi/AdvancedWifiSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v2
@@ -231,13 +229,13 @@
 
     .line 225
     .local v3, removablePref:Landroid/preference/Preference;
-    if-eqz v3, :cond_a7
+    if-eqz v3, :cond_a4
 
     .line 226
     invoke-virtual {v2, v3}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     .line 228
-    :cond_a7
+    :cond_a4
     const-string v8, "iwlan_networks"
 
     invoke-virtual {v2, v8}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -245,13 +243,13 @@
     move-result-object v3
 
     .line 229
-    if-eqz v3, :cond_b2
+    if-eqz v3, :cond_af
 
     .line 230
     invoke-virtual {v2, v3}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     .line 232
-    :cond_b2
+    :cond_af
     const-string v8, "add_other_iwlan"
 
     invoke-virtual {v2, v8}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -259,13 +257,13 @@
     move-result-object v3
 
     .line 233
-    if-eqz v3, :cond_bd
+    if-eqz v3, :cond_ba
 
     .line 234
     invoke-virtual {v2, v3}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     .line 237
-    :cond_bd
+    :cond_ba
     return-void
 
     .end local v0           #frequencyPref:Landroid/preference/ListPreference;
@@ -273,14 +271,14 @@
     .end local v3           #removablePref:Landroid/preference/Preference;
     .end local v4           #sleepPolicyPref:Landroid/preference/ListPreference;
     .end local v7           #watchdogEnabled:Landroid/preference/CheckBoxPreference;
-    :cond_be
+    :cond_bb
     move v8, v10
 
     .line 175
     goto/16 :goto_17
 
     .restart local v7       #watchdogEnabled:Landroid/preference/CheckBoxPreference;
-    :cond_c1
+    :cond_be
     move v9, v10
 
     .line 182
@@ -289,19 +287,19 @@
     .line 197
     .restart local v0       #frequencyPref:Landroid/preference/ListPreference;
     .restart local v6       #value:I
-    :cond_c4
+    :cond_c1
     const-string v8, "AdvancedWifiSettings"
 
     const-string v9, "Failed to fetch frequency band"
 
     invoke-static {v8, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_66
+    goto :goto_63
 
     .line 200
     .end local v6           #value:I
-    :cond_cc
-    if-eqz v0, :cond_66
+    :cond_c9
+    if-eqz v0, :cond_63
 
     .line 202
     invoke-virtual {p0}, Lcom/android/settings/wifi/AdvancedWifiSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -310,7 +308,7 @@
 
     invoke-virtual {v8, v0}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
-    goto :goto_66
+    goto :goto_63
 .end method
 
 .method private refreshWifiInfo()V

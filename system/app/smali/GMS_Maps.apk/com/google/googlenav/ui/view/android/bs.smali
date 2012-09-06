@@ -1,52 +1,69 @@
-.class public Lcom/google/googlenav/ui/view/android/bs;
-.super Landroid/app/Dialog;
+.class synthetic Lcom/google/googlenav/ui/view/android/bs;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # static fields
-.field public static j:Lcom/google/googlenav/ui/android/an;
+.field static final synthetic a:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
-
-    const/4 v0, 0x0
-
-    sput-object v0, Lcom/google/googlenav/ui/view/android/bs;->j:Lcom/google/googlenav/ui/android/an;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 2
-
-    invoke-direct {p0, p1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;I)V
     .registers 3
 
-    invoke-direct {p0, p1, p2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
+    .prologue
+    .line 61
+    invoke-static {}, Lcom/google/googlenav/ui/view/android/bt;->values()[Lcom/google/googlenav/ui/view/android/bt;
 
+    move-result-object v0
+
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    sput-object v0, Lcom/google/googlenav/ui/view/android/bs;->a:[I
+
+    :try_start_9
+    sget-object v0, Lcom/google/googlenav/ui/view/android/bs;->a:[I
+
+    sget-object v1, Lcom/google/googlenav/ui/view/android/bt;->a:Lcom/google/googlenav/ui/view/android/bt;
+
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/view/android/bt;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
+
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/googlenav/ui/view/android/bs;->a:[I
+
+    sget-object v1, Lcom/google/googlenav/ui/view/android/bt;->b:Lcom/google/googlenav/ui/view/android/bt;
+
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/view/android/bt;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
+
+    :goto_1f
     return-void
-.end method
 
+    :catch_20
+    move-exception v0
 
-# virtual methods
-.method public dismiss()V
-    .registers 1
+    goto :goto_1f
 
-    invoke-super {p0}, Landroid/app/Dialog;->dismiss()V
+    :catch_22
+    move-exception v0
 
-    return-void
-.end method
-
-.method public show()V
-    .registers 1
-
-    invoke-super {p0}, Landroid/app/Dialog;->show()V
-
-    return-void
+    goto :goto_14
 .end method

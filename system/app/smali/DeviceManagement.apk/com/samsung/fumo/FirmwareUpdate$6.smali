@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 355
+    .line 354
     iput-object p1, p0, Lcom/samsung/fumo/FirmwareUpdate$6;->this$0:Lcom/samsung/fumo/FirmwareUpdate;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "whichButton"
 
     .prologue
-    .line 358
+    .line 357
     const-string v0, "FirmwareUpdate"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -66,6 +66,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 361
+    .line 360
     return-void
 .end method

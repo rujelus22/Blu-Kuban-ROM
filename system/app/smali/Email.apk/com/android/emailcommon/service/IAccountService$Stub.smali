@@ -97,7 +97,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .registers 14
+    .registers 11
     .parameter "code"
     .parameter "data"
     .parameter "reply"
@@ -109,346 +109,192 @@
     .end annotation
 
     .prologue
-    const/4 v5, 0x0
-
-    const/4 v8, 0x1
+    const/4 v4, 0x1
 
     .line 38
-    sparse-switch p1, :sswitch_data_ee
+    sparse-switch p1, :sswitch_data_80
 
-    .line 164
+    .line 107
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v8
+    move-result v4
 
-    :goto_9
-    return v8
+    :goto_8
+    return v4
 
     .line 42
-    :sswitch_a
-    const-string v0, "com.android.emailcommon.service.IAccountService"
+    :sswitch_9
+    const-string v5, "com.android.emailcommon.service.IAccountService"
 
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    goto :goto_9
+    goto :goto_8
 
     .line 47
-    :sswitch_10
-    const-string v0, "com.android.emailcommon.service.IAccountService"
+    :sswitch_f
+    const-string v5, "com.android.emailcommon.service.IAccountService"
 
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 49
     invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
 
-    move-result-wide v1
+    move-result-wide v0
 
     .line 50
-    .local v1, _arg0:J
-    invoke-virtual {p0, v1, v2}, Lcom/android/emailcommon/service/IAccountService$Stub;->notifyLoginFailed(J)V
+    .local v0, _arg0:J
+    invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/IAccountService$Stub;->notifyLoginFailed(J)V
 
-    goto :goto_9
+    goto :goto_8
 
     .line 55
-    .end local v1           #_arg0:J
-    :sswitch_1d
-    const-string v0, "com.android.emailcommon.service.IAccountService"
+    .end local v0           #_arg0:J
+    :sswitch_1c
+    const-string v5, "com.android.emailcommon.service.IAccountService"
 
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 57
     invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
 
-    move-result-wide v1
+    move-result-wide v0
 
     .line 58
-    .restart local v1       #_arg0:J
-    invoke-virtual {p0, v1, v2}, Lcom/android/emailcommon/service/IAccountService$Stub;->notifyLoginSucceeded(J)V
+    .restart local v0       #_arg0:J
+    invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/IAccountService$Stub;->notifyLoginSucceeded(J)V
 
-    goto :goto_9
+    goto :goto_8
 
     .line 63
-    .end local v1           #_arg0:J
-    :sswitch_2a
-    const-string v0, "com.android.emailcommon.service.IAccountService"
+    .end local v0           #_arg0:J
+    :sswitch_29
+    const-string v5, "com.android.emailcommon.service.IAccountService"
 
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 65
-    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-wide v1
+    move-result-object v0
 
     .line 67
-    .restart local v1       #_arg0:J
-    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
+    .local v0, _arg0:Ljava/lang/String;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-wide v3
+    move-result-object v2
+
+    .line 68
+    .local v2, _arg1:Ljava/lang/String;
+    invoke-virtual {p0, v0, v2}, Lcom/android/emailcommon/service/IAccountService$Stub;->reconcileAccounts(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 69
-    .local v3, _arg1:J
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    move-result v5
+    goto :goto_8
 
-    .local v5, _arg2:I
-    move-object v0, p0
+    .line 74
+    .end local v0           #_arg0:Ljava/lang/String;
+    .end local v2           #_arg1:Ljava/lang/String;
+    :sswitch_3d
+    const-string v5, "com.android.emailcommon.service.IAccountService"
 
-    .line 70
-    invoke-virtual/range {v0 .. v5}, Lcom/android/emailcommon/service/IAccountService$Stub;->notifyNewMessages(JJI)V
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    goto :goto_9
+    .line 76
+    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
 
-    .line 75
-    .end local v1           #_arg0:J
-    .end local v3           #_arg1:J
-    .end local v5           #_arg2:I
-    :sswitch_40
-    const-string v0, "com.android.emailcommon.service.IAccountService"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    move-result-wide v0
 
     .line 77
-    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
+    .local v0, _arg0:J
+    invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/IAccountService$Stub;->getAccountColor(J)I
 
-    move-result-wide v1
+    move-result v3
 
     .line 78
-    .restart local v1       #_arg0:J
-    invoke-virtual {p0, v1, v2}, Lcom/android/emailcommon/service/IAccountService$Stub;->resetNewMessageCount(J)V
+    .local v3, _result:I
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    goto :goto_9
+    .line 79
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 83
-    .end local v1           #_arg0:J
-    :sswitch_4d
-    const-string v0, "com.android.emailcommon.service.IAccountService"
+    goto :goto_8
 
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    .line 84
+    .end local v0           #_arg0:J
+    .end local v3           #_result:I
+    :sswitch_51
+    const-string v5, "com.android.emailcommon.service.IAccountService"
 
-    .line 85
-    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    move-result-wide v1
+    .line 86
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
 
     .line 87
-    .restart local v1       #_arg0:J
-    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
+    .local v0, _arg0:Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/emailcommon/service/IAccountService$Stub;->getConfigurationData(Ljava/lang/String;)Landroid/os/Bundle;
 
-    move-result-wide v3
+    move-result-object v3
 
     .line 88
-    .restart local v3       #_arg1:J
-    invoke-virtual {p0, v1, v2, v3, v4}, Lcom/android/emailcommon/service/IAccountService$Stub;->notifySendFailedOutOfMemoryError(JJ)V
-
-    goto :goto_9
-
-    .line 93
-    .end local v1           #_arg0:J
-    .end local v3           #_arg1:J
-    :sswitch_5e
-    const-string v0, "com.android.emailcommon.service.IAccountService"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 95
-    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v1
-
-    .line 97
-    .restart local v1       #_arg0:J
-    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v3
-
-    .line 99
-    .restart local v3       #_arg1:J
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    if-eqz v0, :cond_72
-
-    move v5, v8
-
-    .line 101
-    .local v5, _arg2:Z
-    :cond_72
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v6
-
-    .local v6, _arg3:Ljava/lang/String;
-    move-object v0, p0
-
-    .line 102
-    invoke-virtual/range {v0 .. v6}, Lcom/android/emailcommon/service/IAccountService$Stub;->notifySendResult(JJZLjava/lang/String;)V
-
-    goto :goto_9
-
-    .line 107
-    .end local v1           #_arg0:J
-    .end local v3           #_arg1:J
-    .end local v5           #_arg2:Z
-    .end local v6           #_arg3:Ljava/lang/String;
-    :sswitch_7b
-    const-string v0, "com.android.emailcommon.service.IAccountService"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 108
-    invoke-virtual {p0}, Lcom/android/emailcommon/service/IAccountService$Stub;->accountDeleted()V
-
-    .line 109
+    .local v3, _result:Landroid/os/Bundle;
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    goto :goto_9
+    .line 89
+    if-eqz v3, :cond_6a
 
-    .line 114
-    :sswitch_87
-    const-string v0, "com.android.emailcommon.service.IAccountService"
+    .line 90
+    invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    .line 91
+    invoke-virtual {v3, p3, v4}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 115
-    invoke-virtual {p0}, Lcom/android/emailcommon/service/IAccountService$Stub;->restoreAccountsIfNeeded()V
+    goto :goto_8
 
-    .line 116
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    .line 94
+    :cond_6a
+    const/4 v5, 0x0
 
-    goto/16 :goto_9
-
-    .line 121
-    :sswitch_94
-    const-string v0, "com.android.emailcommon.service.IAccountService"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 123
-    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v1
-
-    .line 124
-    .restart local v1       #_arg0:J
-    invoke-virtual {p0, v1, v2}, Lcom/android/emailcommon/service/IAccountService$Stub;->getAccountColor(J)I
-
-    move-result v7
-
-    .line 125
-    .local v7, _result:I
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 126
-    invoke-virtual {p3, v7}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_9
-
-    .line 131
-    .end local v1           #_arg0:J
-    .end local v7           #_result:I
-    :sswitch_a9
-    const-string v0, "com.android.emailcommon.service.IAccountService"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 133
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 134
-    .local v1, _arg0:Ljava/lang/String;
-    invoke-virtual {p0, v1}, Lcom/android/emailcommon/service/IAccountService$Stub;->getConfigurationData(Ljava/lang/String;)Landroid/os/Bundle;
-
-    move-result-object v7
-
-    .line 135
-    .local v7, _result:Landroid/os/Bundle;
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 136
-    if-eqz v7, :cond_c3
-
-    .line 137
-    invoke-virtual {p3, v8}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 138
-    invoke-virtual {v7, p3, v8}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
-
-    goto/16 :goto_9
-
-    .line 141
-    :cond_c3
     invoke-virtual {p3, v5}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto/16 :goto_9
+    goto :goto_8
 
-    .line 147
-    .end local v1           #_arg0:Ljava/lang/String;
-    .end local v7           #_result:Landroid/os/Bundle;
-    :sswitch_c8
-    const-string v0, "com.android.emailcommon.service.IAccountService"
+    .line 100
+    .end local v0           #_arg0:Ljava/lang/String;
+    .end local v3           #_result:Landroid/os/Bundle;
+    :sswitch_6f
+    const-string v5, "com.android.emailcommon.service.IAccountService"
 
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 148
+    .line 101
     invoke-virtual {p0}, Lcom/android/emailcommon/service/IAccountService$Stub;->getDeviceId()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v3
 
-    .line 149
-    .local v7, _result:Ljava/lang/String;
+    .line 102
+    .local v3, _result:Ljava/lang/String;
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 150
-    invoke-virtual {p3, v7}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    .line 103
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    goto/16 :goto_9
-
-    .line 155
-    .end local v7           #_result:Ljava/lang/String;
-    :sswitch_d9
-    const-string v0, "com.android.emailcommon.service.IAccountService"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 157
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 158
-    .restart local v1       #_arg0:Ljava/lang/String;
-    invoke-virtual {p0, v1}, Lcom/android/emailcommon/service/IAccountService$Stub;->getDeviceIdForWifi(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 159
-    .restart local v7       #_result:Ljava/lang/String;
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 160
-    invoke-virtual {p3, v7}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    goto/16 :goto_9
+    goto :goto_8
 
     .line 38
-    :sswitch_data_ee
+    nop
+
+    :sswitch_data_80
     .sparse-switch
-        0x1 -> :sswitch_10
-        0x2 -> :sswitch_1d
-        0x3 -> :sswitch_2a
-        0x4 -> :sswitch_40
-        0x5 -> :sswitch_4d
-        0x6 -> :sswitch_5e
-        0x7 -> :sswitch_7b
-        0x8 -> :sswitch_87
-        0x9 -> :sswitch_94
-        0xa -> :sswitch_a9
-        0xb -> :sswitch_c8
-        0xc -> :sswitch_d9
-        0x5f4e5446 -> :sswitch_a
+        0x1 -> :sswitch_f
+        0x2 -> :sswitch_1c
+        0x3 -> :sswitch_29
+        0x4 -> :sswitch_3d
+        0x5 -> :sswitch_51
+        0x6 -> :sswitch_6f
+        0x5f4e5446 -> :sswitch_9
     .end sparse-switch
 .end method

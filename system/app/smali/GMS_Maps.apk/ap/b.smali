@@ -1,130 +1,86 @@
-.class public Lap/b;
-.super Lap/a;
+.class final LaP/b;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
-
-# instance fields
-.field private a:I
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
 # direct methods
-.method public constructor <init>(Lap/c;)V
-    .registers 4
+.method constructor <init>()V
+    .registers 1
 
-    const/4 v0, 0x0
-
-    invoke-virtual {p1}, Lap/c;->a()I
-
-    move-result v1
-
-    invoke-direct {p0, p1, v0, v1}, Lap/b;-><init>(Lap/c;Ljava/lang/Runnable;I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lap/c;Ljava/lang/Runnable;)V
-    .registers 4
-
-    invoke-virtual {p1}, Lap/c;->a()I
-
-    move-result v0
-
-    invoke-direct {p0, p1, p2, v0}, Lap/b;-><init>(Lap/c;Ljava/lang/Runnable;I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lap/c;Ljava/lang/Runnable;I)V
-    .registers 5
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p2, v0, p3}, Lap/b;-><init>(Lap/c;Ljava/lang/Runnable;Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lap/c;Ljava/lang/Runnable;Ljava/lang/String;)V
-    .registers 5
-
-    invoke-virtual {p1}, Lap/c;->a()I
-
-    move-result v0
-
-    invoke-direct {p0, p1, p2, p3, v0}, Lap/b;-><init>(Lap/c;Ljava/lang/Runnable;Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lap/c;Ljava/lang/Runnable;Ljava/lang/String;I)V
-    .registers 5
-
-    invoke-direct {p0, p1, p2, p3}, Lap/a;-><init>(Lap/c;Ljava/lang/Runnable;Ljava/lang/String;)V
-
-    invoke-direct {p0, p4}, Lap/b;->b(I)V
-
-    return-void
-.end method
-
-.method private b(I)V
-    .registers 2
-
-    iput p1, p0, Lap/b;->a:I
+    .prologue
+    .line 92
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method d()I
-    .registers 2
+.method public a(Landroid/os/Parcel;)LaP/a;
+    .registers 5
+    .parameter
 
-    iget-object v0, p0, Lap/b;->b:Lap/c;
+    .prologue
+    .line 94
+    new-instance v1, LaP/a;
 
-    invoke-virtual {v0, p0}, Lap/c;->c(Lap/a;)Z
+    const-class v0, LaP/t;
 
-    move-result v0
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
-    if-eqz v0, :cond_a
+    move-result-object v0
 
-    const/4 v0, 0x1
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
-    :goto_9
-    return v0
+    move-result-object v0
 
-    :cond_a
-    const/4 v0, 0x0
+    check-cast v0, LaP/t;
 
-    goto :goto_9
+    invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
+
+    move-result v2
+
+    invoke-direct {v1, v0, v2}, LaP/a;-><init>(LaP/t;F)V
+
+    return-object v1
 .end method
 
-.method h()V
-    .registers 2
+.method public a(I)[LaP/a;
+    .registers 3
+    .parameter
 
-    iget-object v0, p0, Lap/b;->b:Lap/c;
+    .prologue
+    .line 99
+    new-array v0, p1, [LaP/a;
 
-    invoke-virtual {v0, p0}, Lap/c;->a(Lap/b;)V
-
-    return-void
+    return-object v0
 .end method
 
-.method public declared-synchronized j()I
-    .registers 2
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .registers 3
+    .parameter
 
-    monitor-enter p0
+    .prologue
+    .line 92
+    invoke-virtual {p0, p1}, LaP/b;->a(Landroid/os/Parcel;)LaP/a;
 
-    :try_start_1
-    iget v0, p0, Lap/b;->a:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    move-result-object v0
 
-    monitor-exit p0
+    return-object v0
+.end method
 
-    return v0
+.method public synthetic newArray(I)[Ljava/lang/Object;
+    .registers 3
+    .parameter
 
-    :catchall_5
-    move-exception v0
+    .prologue
+    .line 92
+    invoke-virtual {p0, p1}, LaP/b;->a(I)[LaP/a;
 
-    monitor-exit p0
+    move-result-object v0
 
-    throw v0
+    return-object v0
 .end method

@@ -1,7 +1,3 @@
 .class public interface abstract Lbh/f;
 .super Ljava/lang/Object;
-
-
-# virtual methods
-.method public abstract a()V
-.end method
+.source "SourceFile"

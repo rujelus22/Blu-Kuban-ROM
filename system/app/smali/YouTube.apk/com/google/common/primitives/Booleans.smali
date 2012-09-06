@@ -4,14 +4,31 @@
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
+.method public static a(ZZ)I
+    .registers 3
+    .parameter
+    .parameter
 
     .prologue
-    .line 45
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 69
+    if-ne p0, p1, :cond_4
 
-    return-void
+    const/4 v0, 0x0
+
+    :goto_3
+    return v0
+
+    :cond_4
+    if-eqz p0, :cond_8
+
+    const/4 v0, 0x1
+
+    goto :goto_3
+
+    :cond_8
+    const/4 v0, -0x1
+
+    goto :goto_3
 .end method
 
 .method static synthetic a([ZZII)I

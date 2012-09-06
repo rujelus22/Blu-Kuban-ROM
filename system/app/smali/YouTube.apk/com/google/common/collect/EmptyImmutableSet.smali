@@ -23,7 +23,7 @@
 
     sput-object v0, Lcom/google/common/collect/EmptyImmutableSet;->INSTANCE:Lcom/google/common/collect/EmptyImmutableSet;
 
-    .line 53
+    .line 58
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -50,7 +50,7 @@
     .parameter
 
     .prologue
-    .line 46
+    .line 47
     const/4 v0, 0x0
 
     return v0
@@ -61,7 +61,7 @@
     .parameter
 
     .prologue
-    .line 67
+    .line 72
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
@@ -72,22 +72,25 @@
 .method public final equals(Ljava/lang/Object;)Z
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 71
+    .line 76
     instance-of v0, p1, Ljava/util/Set;
 
     if-eqz v0, :cond_b
 
-    .line 72
+    .line 77
     check-cast p1, Ljava/util/Set;
 
-    .line 73
+    .line 78
     invoke-interface {p1}, Ljava/util/Set;->isEmpty()Z
 
     move-result v0
 
-    .line 75
+    .line 80
     :goto_a
     return v0
 
@@ -101,7 +104,7 @@
     .registers 2
 
     .prologue
-    .line 79
+    .line 84
     const/4 v0, 0x0
 
     return v0
@@ -111,7 +114,7 @@
     .registers 2
 
     .prologue
-    .line 42
+    .line 43
     const/4 v0, 0x1
 
     return v0
@@ -121,18 +124,28 @@
     .registers 2
 
     .prologue
-    .line 83
+    .line 88
     const/4 v0, 0x1
 
     return v0
 .end method
 
-.method public final iterator()Lcom/google/common/collect/gf;
+.method final isPartialView()Z
     .registers 2
 
     .prologue
-    .line 50
-    invoke-static {}, Lcom/google/common/collect/cr;->a()Lcom/google/common/collect/gf;
+    .line 55
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final iterator()Lcom/google/common/collect/mt;
+    .registers 2
+
+    .prologue
+    .line 51
+    invoke-static {}, Lcom/google/common/collect/ee;->a()Lcom/google/common/collect/mt;
 
     move-result-object v0
 
@@ -144,7 +157,7 @@
 
     .prologue
     .line 31
-    invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableSet;->iterator()Lcom/google/common/collect/gf;
+    invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableSet;->iterator()Lcom/google/common/collect/mt;
 
     move-result-object v0
 
@@ -155,7 +168,7 @@
     .registers 2
 
     .prologue
-    .line 91
+    .line 96
     sget-object v0, Lcom/google/common/collect/EmptyImmutableSet;->INSTANCE:Lcom/google/common/collect/EmptyImmutableSet;
 
     return-object v0
@@ -165,7 +178,7 @@
     .registers 2
 
     .prologue
-    .line 38
+    .line 39
     const/4 v0, 0x0
 
     return v0
@@ -175,7 +188,7 @@
     .registers 2
 
     .prologue
-    .line 56
+    .line 61
     sget-object v0, Lcom/google/common/collect/EmptyImmutableSet;->EMPTY_ARRAY:[Ljava/lang/Object;
 
     return-object v0
@@ -186,19 +199,19 @@
     .parameter
 
     .prologue
-    .line 60
+    .line 65
     array-length v0, p1
 
     if-lez v0, :cond_7
 
-    .line 61
+    .line 66
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     aput-object v1, p1, v0
 
-    .line 63
+    .line 68
     :cond_7
     return-object p1
 .end method
@@ -207,7 +220,7 @@
     .registers 2
 
     .prologue
-    .line 87
+    .line 92
     const-string v0, "[]"
 
     return-object v0

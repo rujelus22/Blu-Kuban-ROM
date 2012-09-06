@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 34
+    .line 33
     iput-object p1, p0, Lcom/android/email/service/PolicyService$1;->this$0:Lcom/android/email/service/PolicyService;
 
     invoke-direct {p0}, Lcom/android/emailcommon/service/IPolicyService$Stub;-><init>()V
@@ -34,12 +34,12 @@
 
 
 # virtual methods
-.method public clearUnsupportedPolicies(Lcom/android/emailcommon/service/PolicySet;)Lcom/android/emailcommon/service/PolicySet;
+.method public clearUnsupportedPolicies(Lcom/android/emailcommon/provider/Policy;)Lcom/android/emailcommon/provider/Policy;
     .registers 3
-    .parameter "policies"
+    .parameter "policy"
 
     .prologue
-    .line 72
+    .line 63
     iget-object v0, p0, Lcom/android/email/service/PolicyService$1;->this$0:Lcom/android/email/service/PolicyService;
 
     #getter for: Lcom/android/email/service/PolicyService;->mSecurityPolicy:Lcom/android/email/SecurityPolicy;
@@ -47,67 +47,19 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lcom/android/email/SecurityPolicy;->clearUnsupportedPolicies(Lcom/android/emailcommon/service/PolicySet;)Lcom/android/emailcommon/service/PolicySet;
+    invoke-virtual {v0, p1}, Lcom/android/email/SecurityPolicy;->clearUnsupportedPolicies(Lcom/android/emailcommon/provider/Policy;)Lcom/android/emailcommon/provider/Policy;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getAccountPolicy(J)Lcom/android/emailcommon/service/PolicySet;
-    .registers 5
-    .parameter "accountId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 82
-    iget-object v0, p0, Lcom/android/email/service/PolicyService$1;->this$0:Lcom/android/email/service/PolicyService;
-
-    #getter for: Lcom/android/email/service/PolicyService;->mSecurityPolicy:Lcom/android/email/SecurityPolicy;
-    invoke-static {v0}, Lcom/android/email/service/PolicyService;->access$000(Lcom/android/email/service/PolicyService;)Lcom/android/email/SecurityPolicy;
-
-    move-result-object v0
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/android/email/SecurityPolicy;->getAccountPolicy(Ljava/lang/Long;)Lcom/android/emailcommon/service/PolicySet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getAggregatePolicy()Lcom/android/emailcommon/service/PolicySet;
-    .registers 2
-
-    .prologue
-    .line 76
-    iget-object v0, p0, Lcom/android/email/service/PolicyService$1;->this$0:Lcom/android/email/service/PolicyService;
-
-    #getter for: Lcom/android/email/service/PolicyService;->mSecurityPolicy:Lcom/android/email/SecurityPolicy;
-    invoke-static {v0}, Lcom/android/email/service/PolicyService;->access$000(Lcom/android/email/service/PolicyService;)Lcom/android/email/SecurityPolicy;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/email/SecurityPolicy;->getAggregatePolicy()Lcom/android/emailcommon/service/PolicySet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public isActive(Lcom/android/emailcommon/service/PolicySet;)Z
+.method public isActive(Lcom/android/emailcommon/provider/Policy;)Z
     .registers 3
-    .parameter "policies"
+    .parameter "policy"
 
     .prologue
-    .line 36
+    .line 35
     iget-object v0, p0, Lcom/android/email/service/PolicyService$1;->this$0:Lcom/android/email/service/PolicyService;
 
     #getter for: Lcom/android/email/service/PolicyService;->mSecurityPolicy:Lcom/android/email/SecurityPolicy;
@@ -115,7 +67,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lcom/android/email/SecurityPolicy;->isActive(Lcom/android/emailcommon/service/PolicySet;)Z
+    invoke-virtual {v0, p1}, Lcom/android/email/SecurityPolicy;->isActive(Lcom/android/emailcommon/provider/Policy;)Z
 
     move-result v0
 
@@ -126,7 +78,7 @@
     .registers 2
 
     .prologue
-    .line 52
+    .line 51
     iget-object v0, p0, Lcom/android/email/service/PolicyService$1;->this$0:Lcom/android/email/service/PolicyService;
 
     #getter for: Lcom/android/email/service/PolicyService;->mSecurityPolicy:Lcom/android/email/SecurityPolicy;
@@ -141,12 +93,12 @@
     return v0
 .end method
 
-.method public isSupported(Lcom/android/emailcommon/service/PolicySet;)Z
+.method public isSupported(Lcom/android/emailcommon/provider/Policy;)Z
     .registers 3
-    .parameter "policies"
+    .parameter "policy"
 
     .prologue
-    .line 68
+    .line 59
     iget-object v0, p0, Lcom/android/email/service/PolicyService$1;->this$0:Lcom/android/email/service/PolicyService;
 
     #getter for: Lcom/android/email/service/PolicyService;->mSecurityPolicy:Lcom/android/email/SecurityPolicy;
@@ -154,7 +106,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lcom/android/email/SecurityPolicy;->isSupported(Lcom/android/emailcommon/service/PolicySet;)Z
+    invoke-virtual {v0, p1}, Lcom/android/email/SecurityPolicy;->isSupported(Lcom/android/emailcommon/provider/Policy;)Z
 
     move-result v0
 
@@ -166,7 +118,7 @@
     .parameter "accountId"
 
     .prologue
-    .line 40
+    .line 39
     iget-object v0, p0, Lcom/android/email/service/PolicyService$1;->this$0:Lcom/android/email/service/PolicyService;
 
     #getter for: Lcom/android/email/service/PolicyService;->mSecurityPolicy:Lcom/android/email/SecurityPolicy;
@@ -176,15 +128,16 @@
 
     invoke-virtual {v0, p1, p2}, Lcom/android/email/SecurityPolicy;->policiesRequired(J)V
 
-    .line 41
+    .line 40
     return-void
 .end method
 
-.method public reducePolicies()V
-    .registers 2
+.method public policiesUpdated(J)V
+    .registers 4
+    .parameter "accountId"
 
     .prologue
-    .line 64
+    .line 43
     iget-object v0, p0, Lcom/android/email/service/PolicyService$1;->this$0:Lcom/android/email/service/PolicyService;
 
     #getter for: Lcom/android/email/service/PolicyService;->mSecurityPolicy:Lcom/android/email/SecurityPolicy;
@@ -192,9 +145,9 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/email/SecurityPolicy;->reducePolicies()V
+    invoke-virtual {v0, p1, p2}, Lcom/android/email/SecurityPolicy;->policiesUpdated(J)V
 
-    .line 65
+    .line 44
     return-void
 .end method
 
@@ -202,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 56
+    .line 55
     iget-object v0, p0, Lcom/android/email/service/PolicyService$1;->this$0:Lcom/android/email/service/PolicyService;
 
     #getter for: Lcom/android/email/service/PolicyService;->mSecurityPolicy:Lcom/android/email/SecurityPolicy;
@@ -212,7 +165,7 @@
 
     invoke-virtual {v0}, Lcom/android/email/SecurityPolicy;->remoteWipe()V
 
-    .line 57
+    .line 56
     return-void
 .end method
 
@@ -222,7 +175,7 @@
     .parameter "newState"
 
     .prologue
-    .line 48
+    .line 47
     iget-object v0, p0, Lcom/android/email/service/PolicyService$1;->this$0:Lcom/android/email/service/PolicyService;
 
     #getter for: Lcom/android/email/service/PolicyService;->mContext:Landroid/content/Context;
@@ -232,44 +185,6 @@
 
     invoke-static {v0, p1, p2, p3}, Lcom/android/email/SecurityPolicy;->setAccountHoldFlag(Landroid/content/Context;JZ)V
 
-    .line 49
-    return-void
-.end method
-
-.method public setRecoverPasswordState(Z)V
-    .registers 3
-    .parameter "result"
-
-    .prologue
-    .line 60
-    iget-object v0, p0, Lcom/android/email/service/PolicyService$1;->this$0:Lcom/android/email/service/PolicyService;
-
-    #getter for: Lcom/android/email/service/PolicyService;->mSecurityPolicy:Lcom/android/email/SecurityPolicy;
-    invoke-static {v0}, Lcom/android/email/service/PolicyService;->access$000(Lcom/android/email/service/PolicyService;)Lcom/android/email/SecurityPolicy;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/android/email/SecurityPolicy;->setRecoverPasswordState(Z)V
-
-    .line 61
-    return-void
-.end method
-
-.method public updatePolicies(J)V
-    .registers 4
-    .parameter "accountId"
-
-    .prologue
-    .line 44
-    iget-object v0, p0, Lcom/android/email/service/PolicyService$1;->this$0:Lcom/android/email/service/PolicyService;
-
-    #getter for: Lcom/android/email/service/PolicyService;->mSecurityPolicy:Lcom/android/email/SecurityPolicy;
-    invoke-static {v0}, Lcom/android/email/service/PolicyService;->access$000(Lcom/android/email/service/PolicyService;)Lcom/android/email/SecurityPolicy;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1, p2}, Lcom/android/email/SecurityPolicy;->updatePolicies(J)V
-
-    .line 45
+    .line 48
     return-void
 .end method

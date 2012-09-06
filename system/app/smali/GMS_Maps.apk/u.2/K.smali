@@ -1,200 +1,89 @@
-.class public Lu/K;
+.class public Lu/k;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field private final a:I
+.field private a:J
 
-.field private b:Lu/I;
-
-.field private final c:Ljava/lang/String;
-
-.field private final d:Ljava/lang/String;
-
-.field private final e:Ljava/lang/String;
-
-.field private final f:Ljava/lang/String;
-
-.field private final g:Z
+.field private b:I
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
-    .registers 7
+.method public constructor <init>()V
+    .registers 2
 
+    .prologue
+    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lu/K;->a:I
+    .line 23
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lu/K;->c:Ljava/lang/String;
-
-    iput-object p3, p0, Lu/K;->d:Ljava/lang/String;
-
-    iput-object p4, p0, Lu/K;->e:Ljava/lang/String;
-
-    iput-object p5, p0, Lu/K;->f:Ljava/lang/String;
-
-    iput-boolean p6, p0, Lu/K;->g:Z
+    iput v0, p0, Lu/k;->b:I
 
     return-void
-.end method
-
-.method static synthetic a(Lam/b;)Lu/K;
-    .registers 2
-
-    invoke-static {p0}, Lu/K;->b(Lam/b;)Lu/K;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private a(Lu/I;)V
-    .registers 2
-
-    iput-object p1, p0, Lu/K;->b:Lu/I;
-
-    return-void
-.end method
-
-.method static synthetic a(Lu/K;Lu/I;)V
-    .registers 2
-
-    invoke-direct {p0, p1}, Lu/K;->a(Lu/I;)V
-
-    return-void
-.end method
-
-.method private static b(Lam/b;)Lu/K;
-    .registers 9
-
-    const/4 v5, 0x0
-
-    const/4 v7, 0x3
-
-    const/4 v6, 0x1
-
-    invoke-virtual {p0, v6}, Lam/b;->d(I)I
-
-    move-result v1
-
-    const/4 v0, 0x2
-
-    invoke-virtual {p0, v0}, Lam/b;->i(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v0, 0x5
-
-    invoke-static {p0, v0}, Lam/g;->b(Lam/b;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p0, v7}, Lam/b;->k(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2e
-
-    invoke-virtual {p0, v7}, Lam/b;->i(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    const/4 v0, 0x4
-
-    invoke-virtual {p0, v0}, Lam/b;->i(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    :goto_20
-    invoke-virtual {p0, v6}, Lam/b;->d(I)I
-
-    move-result v0
-
-    if-ne v0, v7, :cond_2c
-
-    :goto_26
-    new-instance v0, Lu/K;
-
-    invoke-direct/range {v0 .. v6}, Lu/K;-><init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
-
-    return-object v0
-
-    :cond_2c
-    const/4 v6, 0x0
-
-    goto :goto_26
-
-    :cond_2e
-    move-object v4, v5
-
-    goto :goto_20
 .end method
 
 
 # virtual methods
-.method public a()I
-    .registers 2
+.method public a(Lcom/google/android/maps/driveabout/vector/aU;)F
+    .registers 6
+    .parameter
 
-    iget v0, p0, Lu/K;->a:I
+    .prologue
+    .line 26
+    invoke-virtual {p1}, Lcom/google/android/maps/driveabout/vector/aU;->d()J
+
+    move-result-wide v0
+
+    .line 27
+    iget-wide v2, p0, Lu/k;->a:J
+
+    cmp-long v2, v0, v2
+
+    if-lez v2, :cond_1e
+
+    .line 28
+    const-wide/16 v2, 0x80
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lu/k;->a:J
+
+    .line 29
+    iget v0, p0, Lu/k;->b:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lu/k;->b:I
+
+    .line 30
+    iget v0, p0, Lu/k;->b:I
+
+    const/16 v1, 0xb
+
+    if-lt v0, v1, :cond_1e
+
+    .line 31
+    const/4 v0, 0x0
+
+    iput v0, p0, Lu/k;->b:I
+
+    .line 37
+    :cond_1e
+    iget-wide v0, p0, Lu/k;->a:J
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/android/maps/driveabout/vector/aU;->a(J)V
+
+    .line 39
+    const/high16 v0, 0x4200
+
+    iget v1, p0, Lu/k;->b:I
+
+    int-to-float v1, v1
+
+    mul-float/2addr v0, v1
 
     return v0
-.end method
-
-.method public b()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lu/K;->c:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public c()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lu/K;->d:Ljava/lang/String;
-
-    if-nez v0, :cond_7
-
-    iget-object v0, p0, Lu/K;->c:Ljava/lang/String;
-
-    :goto_6
-    return-object v0
-
-    :cond_7
-    iget-object v0, p0, Lu/K;->d:Ljava/lang/String;
-
-    goto :goto_6
-.end method
-
-.method public d()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lu/K;->e:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public e()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lu/K;->f:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public f()Z
-    .registers 2
-
-    iget-boolean v0, p0, Lu/K;->g:Z
-
-    return v0
-.end method
-
-.method public g()Lu/I;
-    .registers 2
-
-    iget-object v0, p0, Lu/K;->b:Lu/I;
-
-    return-object v0
 .end method

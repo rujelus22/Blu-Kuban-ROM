@@ -32,8 +32,8 @@
     .registers 1
 
     .prologue
-    .line 328
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 199
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,7 +45,7 @@
     .parameter "in"
 
     .prologue
-    .line 330
+    .line 201
     new-instance v0, Lcom/android/email/activity/setup/SetupData;
 
     invoke-direct {v0, p1}, Lcom/android/email/activity/setup/SetupData;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 328
+    .line 199
     invoke-virtual {p0, p1}, Lcom/android/email/activity/setup/SetupData$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/email/activity/setup/SetupData;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .parameter "size"
 
     .prologue
-    .line 334
+    .line 205
     new-array v0, p1, [Lcom/android/email/activity/setup/SetupData;
 
     return-object v0
@@ -82,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 328
+    .line 199
     invoke-virtual {p0, p1}, Lcom/android/email/activity/setup/SetupData$1;->newArray(I)[Lcom/android/email/activity/setup/SetupData;
 
     move-result-object v0

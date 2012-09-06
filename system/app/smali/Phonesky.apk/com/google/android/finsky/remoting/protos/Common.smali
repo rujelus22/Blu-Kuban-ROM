@@ -6,6 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/android/finsky/remoting/protos/Common$OwnershipInfo;,
+        Lcom/google/android/finsky/remoting/protos/Common$Install;,
+        Lcom/google/android/finsky/remoting/protos/Common$SubscriptionTerms;,
+        Lcom/google/android/finsky/remoting/protos/Common$TimePeriod;,
         Lcom/google/android/finsky/remoting/protos/Common$RentalTerms;,
         Lcom/google/android/finsky/remoting/protos/Common$Offer;,
         Lcom/google/android/finsky/remoting/protos/Common$Docid;

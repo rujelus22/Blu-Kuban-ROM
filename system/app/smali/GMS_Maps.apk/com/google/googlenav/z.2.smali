@@ -1,204 +1,101 @@
-.class public final enum Lcom/google/googlenav/z;
-.super Ljava/lang/Enum;
+.class Lcom/google/googlenav/Z;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
-
-# static fields
-.field public static final enum a:Lcom/google/googlenav/z;
-
-.field public static final enum b:Lcom/google/googlenav/z;
-
-.field public static final enum c:Lcom/google/googlenav/z;
-
-.field public static final enum d:Lcom/google/googlenav/z;
-
-.field public static final enum e:Lcom/google/googlenav/z;
-
-.field private static final synthetic h:[Lcom/google/googlenav/z;
+# interfaces
+.implements Lcom/google/googlenav/ce;
 
 
 # instance fields
-.field public final f:Ljava/lang/String;
+.field private final a:Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-.field private final g:Z
+.field private final b:[Lcom/google/googlenav/ca;
+
+.field private final c:[Lcom/google/googlenav/ca;
+
+.field private final d:Ljava/util/Map;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 8
-
-    const/4 v7, 0x4
-
-    const/4 v6, 0x3
-
-    const/4 v5, 0x2
-
-    const/4 v4, 0x0
-
-    const/4 v3, 0x1
-
-    new-instance v0, Lcom/google/googlenav/z;
-
-    const-string v1, "STARTUP"
-
-    const-string v2, "Startup"
-
-    invoke-direct {v0, v1, v4, v2, v3}, Lcom/google/googlenav/z;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
-
-    sput-object v0, Lcom/google/googlenav/z;->a:Lcom/google/googlenav/z;
-
-    new-instance v0, Lcom/google/googlenav/z;
-
-    const-string v1, "TERMS_AND_CONDITIONS"
-
-    const-string v2, "Term and conditions"
-
-    invoke-direct {v0, v1, v3, v2, v3}, Lcom/google/googlenav/z;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
-
-    sput-object v0, Lcom/google/googlenav/z;->b:Lcom/google/googlenav/z;
-
-    new-instance v0, Lcom/google/googlenav/z;
-
-    const-string v1, "ON_RESUME"
-
-    const-string v2, "On resume"
-
-    invoke-direct {v0, v1, v5, v2, v4}, Lcom/google/googlenav/z;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
-
-    sput-object v0, Lcom/google/googlenav/z;->c:Lcom/google/googlenav/z;
-
-    new-instance v0, Lcom/google/googlenav/z;
-
-    const-string v1, "GENERAL"
-
-    const-string v2, "General"
-
-    invoke-direct {v0, v1, v6, v2, v4}, Lcom/google/googlenav/z;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
-
-    sput-object v0, Lcom/google/googlenav/z;->d:Lcom/google/googlenav/z;
-
-    new-instance v0, Lcom/google/googlenav/z;
-
-    const-string v1, "GENERAL_ONE_TIME"
-
-    const-string v2, "General one time"
-
-    invoke-direct {v0, v1, v7, v2, v3}, Lcom/google/googlenav/z;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
-
-    sput-object v0, Lcom/google/googlenav/z;->e:Lcom/google/googlenav/z;
-
-    const/4 v0, 0x5
-
-    new-array v0, v0, [Lcom/google/googlenav/z;
-
-    sget-object v1, Lcom/google/googlenav/z;->a:Lcom/google/googlenav/z;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/google/googlenav/z;->b:Lcom/google/googlenav/z;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/google/googlenav/z;->c:Lcom/google/googlenav/z;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/google/googlenav/z;->d:Lcom/google/googlenav/z;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lcom/google/googlenav/z;->e:Lcom/google/googlenav/z;
-
-    aput-object v1, v0, v7
-
-    sput-object v0, Lcom/google/googlenav/z;->h:[Lcom/google/googlenav/z;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;Z)V
+.method public constructor <init>(Lcom/google/googlenav/common/io/protocol/ProtoBuf;[Lcom/google/googlenav/ca;[Lcom/google/googlenav/ca;Ljava/util/Map;)V
     .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    .prologue
+    .line 695
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lcom/google/googlenav/z;->f:Ljava/lang/String;
+    .line 696
+    iput-object p1, p0, Lcom/google/googlenav/Z;->a:Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    iput-boolean p4, p0, Lcom/google/googlenav/z;->g:Z
+    .line 697
+    iput-object p2, p0, Lcom/google/googlenav/Z;->b:[Lcom/google/googlenav/ca;
 
+    .line 698
+    iput-object p3, p0, Lcom/google/googlenav/Z;->c:[Lcom/google/googlenav/ca;
+
+    .line 699
+    iput-object p4, p0, Lcom/google/googlenav/Z;->d:Ljava/util/Map;
+
+    .line 700
     return-void
-.end method
-
-.method static synthetic a(Lcom/google/googlenav/z;)Z
-    .registers 2
-
-    iget-boolean v0, p0, Lcom/google/googlenav/z;->g:Z
-
-    return v0
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lcom/google/googlenav/z;
-    .registers 2
-
-    const-class v0, Lcom/google/googlenav/z;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlenav/z;
-
-    return-object v0
-.end method
-
-.method public static values()[Lcom/google/googlenav/z;
-    .registers 1
-
-    sget-object v0, Lcom/google/googlenav/z;->h:[Lcom/google/googlenav/z;
-
-    invoke-virtual {v0}, [Lcom/google/googlenav/z;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lcom/google/googlenav/z;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public toString()Ljava/lang/String;
-    .registers 3
+.method public a(I)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+    .registers 4
+    .parameter
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    .prologue
+    const/4 v1, 0x6
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    .line 704
+    iget-object v0, p0, Lcom/google/googlenav/Z;->a:Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    iget-object v1, p0, Lcom/google/googlenav/z;->f:Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getCount(I)I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
+
+    if-lt p1, v0, :cond_b
+
+    .line 706
+    const/4 v0, 0x0
+
+    .line 708
+    :goto_a
+    return-object v0
+
+    :cond_b
+    iget-object v0, p0, Lcom/google/googlenav/Z;->a:Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    invoke-virtual {v0, v1, p1}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getProtoBuf(II)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    move-result-object v0
+
+    goto :goto_a
+.end method
+
+.method public b(I)Lcom/google/googlenav/ab;
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 724
+    iget-object v0, p0, Lcom/google/googlenav/Z;->d:Ljava/util/Map;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "[oneTime = "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Lcom/google/googlenav/z;->g:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    check-cast v0, Lcom/google/googlenav/ab;
 
     return-object v0
 .end method

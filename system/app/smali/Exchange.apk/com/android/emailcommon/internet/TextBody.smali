@@ -20,7 +20,7 @@
     .end annotation
 
     .prologue
-    .line 63
+    .line 55
     :try_start_0
     iget-object v2, p0, Lcom/android/emailcommon/internet/TextBody;->mBody:Ljava/lang/String;
 
@@ -30,7 +30,7 @@
 
     move-result-object v0
 
-    .line 64
+    .line 56
     .local v0, b:[B
     new-instance v2, Ljava/io/ByteArrayInputStream;
 
@@ -38,16 +38,16 @@
     :try_end_d
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_d} :catch_e
 
-    .line 66
+    .line 59
     .end local v0           #b:[B
     :goto_d
     return-object v2
 
-    .line 65
+    .line 58
     :catch_e
     move-exception v1
 
-    .line 66
+    .line 59
     .local v1, usee:Ljava/io/UnsupportedEncodingException;
     const/4 v2, 0x0
 

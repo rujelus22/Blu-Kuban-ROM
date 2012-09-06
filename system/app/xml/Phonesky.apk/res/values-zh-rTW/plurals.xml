@@ -5,8 +5,8 @@
         <item quantity="one">%1$d 項結果</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">找到 %1$d 個 %2$s 可用的更新。</item>
-        <item quantity="one">找到 %1$d 個 %2$s 可用的更新。</item>
+        <item quantity="other">找到 %1$d 個更新。</item>
+        <item quantity="one">找到 %1$d 個更新。</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">%1$s 位使用者 +1 了這個項目。</item>

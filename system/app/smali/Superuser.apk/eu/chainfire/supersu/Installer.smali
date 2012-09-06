@@ -108,7 +108,7 @@
 
     const/4 v1, 0x1
 
-    const/16 v0, 0x5d
+    const/16 v0, 0x60
 
     iput v0, p0, Leu/chainfire/supersu/Installer;->a:I
 
@@ -841,7 +841,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4c0
+    if-eqz v0, :cond_4c8
 
     move v0, v1
 
@@ -878,7 +878,7 @@
 
     const/4 v7, -0x1
 
-    if-lt v6, v7, :cond_4c3
+    if-lt v6, v7, :cond_4cb
 
     const-string v3, "su"
 
@@ -1323,6 +1323,10 @@
 
     invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    iget-boolean v7, p0, Leu/chainfire/supersu/Installer;->e:Z
+
+    if-eqz v7, :cond_233
+
     const-string v7, "%s -i %s"
 
     new-array v8, v11, [Ljava/lang/Object;
@@ -1343,6 +1347,7 @@
 
     invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    :cond_233
     const-string v7, "%s -i %s"
 
     new-array v8, v11, [Ljava/lang/Object;
@@ -1429,7 +1434,11 @@
 
     iget-boolean v7, p0, Leu/chainfire/supersu/Installer;->f:Z
 
-    if-nez v7, :cond_2ef
+    if-nez v7, :cond_2f7
+
+    iget-boolean v7, p0, Leu/chainfire/supersu/Installer;->e:Z
+
+    if-eqz v7, :cond_2f7
 
     const-string v7, "cat %s > %s"
 
@@ -1517,7 +1526,7 @@
 
     invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_2ef
+    :cond_2f7
     const-string v7, "mkdir %s"
 
     new-array v8, v2, [Ljava/lang/Object;
@@ -1698,7 +1707,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_3c2
+    if-eqz v4, :cond_3ca
 
     const-string v4, "%s +i %s"
 
@@ -1716,7 +1725,7 @@
 
     invoke-virtual {v6, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_3c2
+    :cond_3ca
     const-string v4, "chmod 0711 %s"
 
     new-array v7, v2, [Ljava/lang/Object;
@@ -1735,12 +1744,12 @@
 
     iget-boolean v3, p0, Leu/chainfire/supersu/Installer;->f:Z
 
-    if-nez v3, :cond_4d5
+    if-nez v3, :cond_4dd
 
     const-string v3, "su"
 
-    :goto_3da
-    if-eqz v0, :cond_47e
+    :goto_3e2
+    if-eqz v0, :cond_486
 
     const/16 v0, 0xc
 
@@ -1820,7 +1829,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_43e
+    if-eqz v4, :cond_446
 
     invoke-virtual {v0}, Ljava/io/File;->length()J
 
@@ -1830,7 +1839,7 @@
 
     cmp-long v0, v6, v8
 
-    if-nez v0, :cond_43e
+    if-nez v0, :cond_446
 
     new-array v0, v2, [Ljava/lang/String;
 
@@ -1840,7 +1849,7 @@
 
     invoke-static {v3, v0}, Leu/chainfire/supersu/SuperUser;->a(Ljava/lang/String;[Ljava/lang/String;)Ljava/util/List;
 
-    :cond_43e
+    :cond_446
     new-instance v0, Ljava/io/File;
 
     const-string v4, "/system/app/GMS_Maps.apk"
@@ -1851,7 +1860,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_45e
+    if-eqz v4, :cond_466
 
     invoke-virtual {v0}, Ljava/io/File;->length()J
 
@@ -1861,7 +1870,7 @@
 
     cmp-long v0, v6, v8
 
-    if-nez v0, :cond_45e
+    if-nez v0, :cond_466
 
     new-array v0, v2, [Ljava/lang/String;
 
@@ -1871,7 +1880,7 @@
 
     invoke-static {v3, v0}, Leu/chainfire/supersu/SuperUser;->a(Ljava/lang/String;[Ljava/lang/String;)Ljava/util/List;
 
-    :cond_45e
+    :cond_466
     new-instance v0, Ljava/io/File;
 
     const-string v4, "/system/app/YouTube.apk"
@@ -1882,7 +1891,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_47e
+    if-eqz v4, :cond_486
 
     invoke-virtual {v0}, Ljava/io/File;->length()J
 
@@ -1892,7 +1901,7 @@
 
     cmp-long v0, v6, v8
 
-    if-nez v0, :cond_47e
+    if-nez v0, :cond_486
 
     new-array v0, v2, [Ljava/lang/String;
 
@@ -1902,7 +1911,7 @@
 
     invoke-static {v3, v0}, Leu/chainfire/supersu/SuperUser;->a(Ljava/lang/String;[Ljava/lang/String;)Ljava/util/List;
 
-    :cond_47e
+    :cond_486
     new-array v0, v13, [Ljava/lang/String;
 
     const-string v4, "rm %s"
@@ -1947,22 +1956,22 @@
 
     move-result v0
 
-    const/16 v3, 0x5d
+    const/16 v3, 0x60
 
-    if-ge v0, v3, :cond_4b3
+    if-ge v0, v3, :cond_4bb
 
     iget-boolean v0, p0, Leu/chainfire/supersu/Installer;->f:Z
 
     if-eqz v0, :cond_c
 
-    :cond_4b3
+    :cond_4bb
     const-string v0, "/system/bin/.ext/.su"
 
     invoke-static {v0}, Leu/chainfire/supersu/SuperUser;->a(Ljava/lang/String;)I
 
     move-result v0
 
-    const/16 v3, 0x5d
+    const/16 v3, 0x60
 
     if-lt v0, v3, :cond_c
 
@@ -1970,23 +1979,23 @@
 
     goto/16 :goto_c
 
-    :cond_4c0
+    :cond_4c8
     move v0, v2
 
     goto/16 :goto_3e
 
-    :cond_4c3
+    :cond_4cb
     iget v6, p0, Leu/chainfire/supersu/Installer;->c:I
 
     const/4 v7, -0x1
 
-    if-lt v6, v7, :cond_4cc
+    if-lt v6, v7, :cond_4d4
 
     const-string v3, "/system/bin/.ext/.su"
 
     goto/16 :goto_61
 
-    :cond_4cc
+    :cond_4d4
     iget v6, p0, Leu/chainfire/supersu/Installer;->d:I
 
     const/4 v7, -0x1
@@ -1997,8 +2006,8 @@
 
     goto/16 :goto_61
 
-    :cond_4d5
+    :cond_4dd
     const-string v3, "/system/bin/.ext/.su"
 
-    goto/16 :goto_3da
+    goto/16 :goto_3e2
 .end method

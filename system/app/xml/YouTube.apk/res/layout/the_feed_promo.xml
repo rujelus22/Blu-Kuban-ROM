@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/promo_when_empty" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:yt="http://schemas.android.com/apk/res/com.google.android.youtube">
+    <ImageView android:id="@id/avatars" android:paddingTop="32.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/promo_empty_feed" android:layout_alignParentTop="true" />
+    <TextView android:textSize="@dimen/large_font_size" android:textColor="@color/ics_grey" android:gravity="center" android:id="@id/promo_text" android:padding="32.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="300.0dip" android:text="@string/guide_channel_store_promo_message" android:layout_below="@id/avatars" android:layout_centerHorizontal="true" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/goto_channel_store" android:background="@drawable/btn_cling" android:paddingLeft="16.0dip" android:paddingTop="8.0dip" android:paddingRight="16.0dip" android:paddingBottom="8.0dip" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="16.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:selectable="true">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_menu_add" />
+        <TextView android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/guide_channel_store_promo" android:textAllCaps="true" />
+    </LinearLayout>
+</RelativeLayout>

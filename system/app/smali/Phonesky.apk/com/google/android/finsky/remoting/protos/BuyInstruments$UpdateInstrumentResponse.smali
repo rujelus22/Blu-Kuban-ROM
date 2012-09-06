@@ -24,7 +24,7 @@
         value = {
             "Ljava/util/List",
             "<",
-            "Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;",
+            "Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;",
             ">;"
         }
     .end annotation
@@ -34,11 +34,15 @@
 
 .field private hasInstrumentId:Z
 
+.field private hasRedeemedOffer:Z
+
 .field private hasResult:Z
 
 .field private hasUserMessageHtml:Z
 
 .field private instrumentId_:Ljava/lang/String;
+
+.field private redeemedOffer_:Lcom/google/android/finsky/remoting/protos/CheckPromoOffer$RedeemedPromoOffer;
 
 .field private result_:I
 
@@ -52,59 +56,64 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 137
+    .line 143
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 147
+    .line 153
     iput v1, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->result_:I
 
-    .line 164
+    .line 170
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->instrumentId_:Ljava/lang/String;
 
-    .line 181
+    .line 187
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->userMessageHtml_:Ljava/lang/String;
 
-    .line 197
+    .line 203
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->errorInputField_:Ljava/util/List;
 
-    .line 231
+    .line 237
     iput-boolean v1, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->checkoutTokenRequired_:Z
 
-    .line 282
+    .line 254
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->redeemedOffer_:Lcom/google/android/finsky/remoting/protos/CheckPromoOffer$RedeemedPromoOffer;
+
+    .line 316
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->cachedSize:I
 
-    .line 137
+    .line 143
     return-void
 .end method
 
 
 # virtual methods
-.method public addErrorInputField(Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;)Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
+.method public addErrorInputField(Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;)Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
     .registers 3
     .parameter "value"
 
     .prologue
-    .line 214
+    .line 220
     if-nez p1, :cond_8
 
-    .line 215
+    .line 221
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 217
+    .line 223
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->errorInputField_:Ljava/util/List;
 
@@ -114,20 +123,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 218
+    .line 224
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->errorInputField_:Ljava/util/List;
 
-    .line 220
+    .line 226
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->errorInputField_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 221
+    .line 227
     return-object p0
 .end method
 
@@ -135,15 +144,15 @@
     .registers 2
 
     .prologue
-    .line 284
+    .line 319
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 286
+    .line 321
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getSerializedSize()I
 
-    .line 288
+    .line 323
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->cachedSize:I
 
@@ -154,7 +163,7 @@
     .registers 2
 
     .prologue
-    .line 232
+    .line 238
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->checkoutTokenRequired_:Z
 
     return v0
@@ -167,13 +176,13 @@
             "()",
             "Ljava/util/List",
             "<",
-            "Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;",
+            "Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;",
             ">;"
         }
     .end annotation
 
     .prologue
-    .line 200
+    .line 206
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->errorInputField_:Ljava/util/List;
 
     return-object v0
@@ -183,8 +192,18 @@
     .registers 2
 
     .prologue
-    .line 165
+    .line 171
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->instrumentId_:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getRedeemedOffer()Lcom/google/android/finsky/remoting/protos/CheckPromoOffer$RedeemedPromoOffer;
+    .registers 2
+
+    .prologue
+    .line 256
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->redeemedOffer_:Lcom/google/android/finsky/remoting/protos/CheckPromoOffer$RedeemedPromoOffer;
 
     return-object v0
 .end method
@@ -193,7 +212,7 @@
     .registers 2
 
     .prologue
-    .line 149
+    .line 155
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->result_:I
 
     return v0
@@ -203,10 +222,10 @@
     .registers 6
 
     .prologue
-    .line 292
+    .line 328
     const/4 v2, 0x0
 
-    .line 293
+    .line 329
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasResult()Z
 
@@ -214,7 +233,7 @@
 
     if-eqz v3, :cond_11
 
-    .line 294
+    .line 330
     const/4 v3, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getResult()I
@@ -227,7 +246,7 @@
 
     add-int/2addr v2, v3
 
-    .line 297
+    .line 333
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasInstrumentId()Z
 
@@ -235,7 +254,7 @@
 
     if-eqz v3, :cond_21
 
-    .line 298
+    .line 334
     const/4 v3, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getInstrumentId()Ljava/lang/String;
@@ -248,7 +267,7 @@
 
     add-int/2addr v2, v3
 
-    .line 301
+    .line 337
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasUserMessageHtml()Z
 
@@ -256,7 +275,7 @@
 
     if-eqz v3, :cond_31
 
-    .line 302
+    .line 338
     const/4 v3, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getUserMessageHtml()Ljava/lang/String;
@@ -269,7 +288,7 @@
 
     add-int/2addr v2, v3
 
-    .line 305
+    .line 341
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getErrorInputFieldList()Ljava/util/List;
 
@@ -291,10 +310,10 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;
+    check-cast v0, Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;
 
-    .line 306
-    .local v0, element:Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;
+    .line 342
+    .local v0, element:Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;
     const/4 v3, 0x4
 
     invoke-static {v3, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
@@ -305,8 +324,8 @@
 
     goto :goto_39
 
-    .line 309
-    .end local v0           #element:Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;
+    .line 345
+    .end local v0           #element:Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;
     :cond_4c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasCheckoutTokenRequired()Z
 
@@ -314,7 +333,7 @@
 
     if-eqz v3, :cond_5c
 
-    .line 310
+    .line 346
     const/4 v3, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getCheckoutTokenRequired()Z
@@ -327,11 +346,32 @@
 
     add-int/2addr v2, v3
 
-    .line 313
+    .line 349
     :cond_5c
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasRedeemedOffer()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_6c
+
+    .line 350
+    const/4 v3, 0x6
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getRedeemedOffer()Lcom/google/android/finsky/remoting/protos/CheckPromoOffer$RedeemedPromoOffer;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    .line 353
+    :cond_6c
     iput v2, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->cachedSize:I
 
-    .line 314
+    .line 354
     return v2
 .end method
 
@@ -339,7 +379,7 @@
     .registers 2
 
     .prologue
-    .line 182
+    .line 188
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->userMessageHtml_:Ljava/lang/String;
 
     return-object v0
@@ -349,7 +389,7 @@
     .registers 2
 
     .prologue
-    .line 233
+    .line 239
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasCheckoutTokenRequired:Z
 
     return v0
@@ -359,8 +399,18 @@
     .registers 2
 
     .prologue
-    .line 166
+    .line 172
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasInstrumentId:Z
+
+    return v0
+.end method
+
+.method public hasRedeemedOffer()Z
+    .registers 2
+
+    .prologue
+    .line 255
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasRedeemedOffer:Z
 
     return v0
 .end method
@@ -369,7 +419,7 @@
     .registers 2
 
     .prologue
-    .line 148
+    .line 154
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasResult:Z
 
     return v0
@@ -379,7 +429,7 @@
     .registers 2
 
     .prologue
-    .line 183
+    .line 189
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasUserMessageHtml:Z
 
     return v0
@@ -395,29 +445,29 @@
     .end annotation
 
     .prologue
-    .line 321
+    .line 362
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 322
+    .line 363
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_3a
+    sparse-switch v0, :sswitch_data_46
 
-    .line 326
+    .line 367
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 327
+    .line 368
     :sswitch_d
     return-object p0
 
-    .line 332
+    .line 373
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -427,7 +477,7 @@
 
     goto :goto_0
 
-    .line 336
+    .line 377
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -437,7 +487,7 @@
 
     goto :goto_0
 
-    .line 340
+    .line 381
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -447,23 +497,23 @@
 
     goto :goto_0
 
-    .line 344
+    .line 385
     :sswitch_26
-    new-instance v1, Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;
 
-    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;-><init>()V
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;-><init>()V
 
-    .line 345
-    .local v1, value:Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;
+    .line 386
+    .local v1, value:Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 346
-    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->addErrorInputField(Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;)Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
+    .line 387
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->addErrorInputField(Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;)Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
 
     goto :goto_0
 
-    .line 350
-    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;
+    .line 391
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;
     :sswitch_32
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -473,8 +523,23 @@
 
     goto :goto_0
 
-    .line 322
-    :sswitch_data_3a
+    .line 395
+    :sswitch_3a
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/CheckPromoOffer$RedeemedPromoOffer;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/CheckPromoOffer$RedeemedPromoOffer;-><init>()V
+
+    .line 396
+    .local v1, value:Lcom/google/android/finsky/remoting/protos/CheckPromoOffer$RedeemedPromoOffer;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 397
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->setRedeemedOffer(Lcom/google/android/finsky/remoting/protos/CheckPromoOffer$RedeemedPromoOffer;)Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
+
+    goto :goto_0
+
+    .line 363
+    :sswitch_data_46
     .sparse-switch
         0x0 -> :sswitch_d
         0x8 -> :sswitch_e
@@ -482,6 +547,7 @@
         0x1a -> :sswitch_1e
         0x22 -> :sswitch_26
         0x28 -> :sswitch_32
+        0x32 -> :sswitch_3a
     .end sparse-switch
 .end method
 
@@ -495,7 +561,7 @@
     .end annotation
 
     .prologue
-    .line 135
+    .line 140
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
 
     move-result-object v0
@@ -508,15 +574,15 @@
     .parameter "value"
 
     .prologue
-    .line 235
+    .line 241
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasCheckoutTokenRequired:Z
 
-    .line 236
+    .line 242
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->checkoutTokenRequired_:Z
 
-    .line 237
+    .line 243
     return-object p0
 .end method
 
@@ -525,15 +591,43 @@
     .parameter "value"
 
     .prologue
-    .line 168
+    .line 174
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasInstrumentId:Z
 
-    .line 169
+    .line 175
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->instrumentId_:Ljava/lang/String;
 
-    .line 170
+    .line 176
+    return-object p0
+.end method
+
+.method public setRedeemedOffer(Lcom/google/android/finsky/remoting/protos/CheckPromoOffer$RedeemedPromoOffer;)Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 258
+    if-nez p1, :cond_8
+
+    .line 259
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 261
+    :cond_8
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasRedeemedOffer:Z
+
+    .line 262
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->redeemedOffer_:Lcom/google/android/finsky/remoting/protos/CheckPromoOffer$RedeemedPromoOffer;
+
+    .line 263
     return-object p0
 .end method
 
@@ -542,15 +636,15 @@
     .parameter "value"
 
     .prologue
-    .line 151
+    .line 157
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasResult:Z
 
-    .line 152
+    .line 158
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->result_:I
 
-    .line 153
+    .line 159
     return-object p0
 .end method
 
@@ -559,15 +653,15 @@
     .parameter "value"
 
     .prologue
-    .line 185
+    .line 191
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasUserMessageHtml:Z
 
-    .line 186
+    .line 192
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->userMessageHtml_:Ljava/lang/String;
 
-    .line 187
+    .line 193
     return-object p0
 .end method
 
@@ -581,14 +675,14 @@
     .end annotation
 
     .prologue
-    .line 265
+    .line 296
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasResult()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 266
+    .line 297
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getResult()I
@@ -597,7 +691,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 268
+    .line 299
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasInstrumentId()Z
 
@@ -605,7 +699,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 269
+    .line 300
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getInstrumentId()Ljava/lang/String;
@@ -614,7 +708,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 271
+    .line 302
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasUserMessageHtml()Z
 
@@ -622,7 +716,7 @@
 
     if-eqz v2, :cond_2a
 
-    .line 272
+    .line 303
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getUserMessageHtml()Ljava/lang/String;
@@ -631,7 +725,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 274
+    .line 305
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getErrorInputFieldList()Ljava/util/List;
 
@@ -653,18 +747,18 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;
+    check-cast v0, Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;
 
-    .line 275
-    .local v0, element:Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;
+    .line 306
+    .local v0, element:Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;
     const/4 v2, 0x4
 
     invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
     goto :goto_32
 
-    .line 277
-    .end local v0           #element:Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;
+    .line 308
+    .end local v0           #element:Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;
     :cond_43
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasCheckoutTokenRequired()Z
 
@@ -672,7 +766,7 @@
 
     if-eqz v2, :cond_51
 
-    .line 278
+    .line 309
     const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getCheckoutTokenRequired()Z
@@ -681,7 +775,24 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 280
+    .line 311
     :cond_51
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasRedeemedOffer()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5f
+
+    .line 312
+    const/4 v2, 0x6
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getRedeemedOffer()Lcom/google/android/finsky/remoting/protos/CheckPromoOffer$RedeemedPromoOffer;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 314
+    :cond_5f
     return-void
 .end method

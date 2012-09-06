@@ -4,17 +4,6 @@
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 18
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 20
-    return-void
-.end method
-
 .method public static a(Ljava/util/List;)Ljava/util/List;
     .registers 10
     .parameter

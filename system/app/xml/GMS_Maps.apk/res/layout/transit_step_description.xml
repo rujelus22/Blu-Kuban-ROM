@@ -17,8 +17,8 @@
             <TextView android:textSize="20.0dip" android:textColor="#ffeeeeee" android:ellipsize="none" android:gravity="center" android:id="@id/instruction" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="3" android:singleLine="false" android:includeFontPadding="false" android:lineSpacingExtra="4.0dip" />
         </LinearLayout>
         <RelativeLayout android:gravity="center_vertical" android:id="@id/arrival" android:padding="2.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
-            <Button android:textSize="@dimen/arrival_header_button_text" android:textColor="#ff000000" android:id="@id/exitNav" android:background="@drawable/on_map_button" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true" />
-            <Button android:textSize="@dimen/arrival_header_button_text" android:textColor="#ff000000" android:id="@id/backToNav" android:background="@drawable/on_map_button" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toLeftOf="@id/exitNav" />
+            <Button android:textSize="@dimen/arrival_header_button_text" android:textColor="#ffffffff" android:id="@id/exitNav" android:background="@drawable/on_map_button" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true" />
+            <Button android:textSize="@dimen/arrival_header_button_text" android:textColor="#ffffffff" android:id="@id/backToNav" android:background="@drawable/on_map_button" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toLeftOf="@id/exitNav" />
         </RelativeLayout>
     </LinearLayout>
     <ImageView android:id="@id/prevStep" android:visibility="invisible" android:clickable="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/btn_arrow_left" android:scaleType="center" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />

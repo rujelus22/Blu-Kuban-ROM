@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/base/k;
+.implements Lcom/google/common/base/v;
 
 
 # static fields
@@ -19,7 +19,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 54
+    .line 57
     new-instance v0, Lcom/google/common/base/Functions$ToStringFunction;
 
     const-string v1, "INSTANCE"
@@ -28,7 +28,7 @@
 
     sput-object v0, Lcom/google/common/base/Functions$ToStringFunction;->INSTANCE:Lcom/google/common/base/Functions$ToStringFunction;
 
-    .line 53
+    .line 56
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/common/base/Functions$ToStringFunction;
@@ -48,7 +48,7 @@
     .parameter
 
     .prologue
-    .line 53
+    .line 56
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -59,7 +59,7 @@
     .parameter
 
     .prologue
-    .line 53
+    .line 56
     const-class v0, Lcom/google/common/base/Functions$ToStringFunction;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -75,7 +75,7 @@
     .registers 1
 
     .prologue
-    .line 53
+    .line 56
     sget-object v0, Lcom/google/common/base/Functions$ToStringFunction;->$VALUES:[Lcom/google/common/base/Functions$ToStringFunction;
 
     invoke-virtual {v0}, [Lcom/google/common/base/Functions$ToStringFunction;->clone()Ljava/lang/Object;
@@ -94,7 +94,7 @@
     .parameter
 
     .prologue
-    .line 53
+    .line 56
     invoke-virtual {p0, p1}, Lcom/google/common/base/Functions$ToStringFunction;->apply(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
@@ -107,7 +107,10 @@
     .parameter
 
     .prologue
-    .line 57
+    .line 61
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 62
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -119,7 +122,7 @@
     .registers 2
 
     .prologue
-    .line 61
+    .line 66
     const-string v0, "toString"
 
     return-object v0

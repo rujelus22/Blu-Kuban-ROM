@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Default Home Selector</string>
-    <string name="default_home_activity_class">com.sec.android.app.twlauncher.Launcher</string>
-</resources>

@@ -4,12 +4,18 @@
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
+.method public static a(Ljava/lang/Object;)Lcom/google/common/base/am;
+    .registers 2
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 37
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 193
+    new-instance v0, Lcom/google/common/base/Suppliers$SupplierOfInstance;
 
-    return-void
+    invoke-direct {v0, p0}, Lcom/google/common/base/Suppliers$SupplierOfInstance;-><init>(Ljava/lang/Object;)V
+
+    return-object v0
 .end method

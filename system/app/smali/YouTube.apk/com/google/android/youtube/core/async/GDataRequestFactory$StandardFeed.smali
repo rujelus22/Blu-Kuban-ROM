@@ -42,7 +42,7 @@
 
     const/4 v3, 0x0
 
-    .line 102
+    .line 153
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
     const-string v1, "MOST_VIEWED"
@@ -51,7 +51,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;->MOST_VIEWED:Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
-    .line 103
+    .line 154
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
     const-string v1, "TOP_RATED"
@@ -60,7 +60,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;->TOP_RATED:Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
-    .line 104
+    .line 155
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
     const-string v1, "MOST_DISCUSSED"
@@ -69,7 +69,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;->MOST_DISCUSSED:Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
-    .line 105
+    .line 156
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
     const-string v1, "TOP_FAVORITES"
@@ -78,7 +78,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;->TOP_FAVORITES:Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
-    .line 106
+    .line 157
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
     const-string v1, "MOST_RESPONDED"
@@ -87,7 +87,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;->MOST_RESPONDED:Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
-    .line 107
+    .line 158
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
     const-string v1, "MOST_POPULAR"
@@ -98,7 +98,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;->MOST_POPULAR:Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
-    .line 108
+    .line 159
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
     const-string v1, "MOST_LINKED"
@@ -109,7 +109,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;->MOST_LINKED:Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
-    .line 109
+    .line 160
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
     const-string v1, "RECENTLY_FEATURED"
@@ -120,7 +120,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;->RECENTLY_FEATURED:Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
-    .line 110
+    .line 161
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
     const-string v1, "WATCH_ON_MOBILE"
@@ -131,7 +131,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;->WATCH_ON_MOBILE:Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
-    .line 111
+    .line 162
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
     const-string v1, "ON_THE_WEB"
@@ -142,7 +142,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;->ON_THE_WEB:Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
-    .line 101
+    .line 152
     const/16 v0, 0xa
 
     new-array v0, v0, [Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
@@ -208,7 +208,7 @@
     .parameter
 
     .prologue
-    .line 101
+    .line 152
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -219,7 +219,7 @@
     .parameter
 
     .prologue
-    .line 101
+    .line 152
     const-class v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -235,7 +235,7 @@
     .registers 1
 
     .prologue
-    .line 101
+    .line 152
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;->$VALUES:[Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;
 
     invoke-virtual {v0}, [Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;->clone()Ljava/lang/Object;
@@ -253,12 +253,12 @@
     .registers 2
 
     .prologue
-    .line 115
+    .line 166
     invoke-super {p0}, Ljava/lang/Enum;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->e(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->f(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

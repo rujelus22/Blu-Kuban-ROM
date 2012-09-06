@@ -1,319 +1,230 @@
-.class public LaM/D;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements LaM/B;
-.implements LaM/t;
+.class LaM/d;
+.super LY/b;
+.source "SourceFile"
 
 
 # instance fields
-.field private a:LaM/z;
+.field final synthetic a:I
 
-.field private b:LaM/s;
+.field final synthetic b:LaM/f;
 
-.field private c:Ljava/util/Vector;
+.field final synthetic f:Lcom/google/googlenav/android/Y;
 
-.field private d:LaM/C;
-
-.field private e:Lam/b;
+.field final synthetic g:LaM/a;
 
 
 # direct methods
-.method constructor <init>(LaM/z;)V
-    .registers 3
+.method constructor <init>(LaM/a;LY/c;ILaM/f;Lcom/google/googlenav/android/Y;)V
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 195
+    iput-object p1, p0, LaM/d;->g:LaM/a;
 
-    new-instance v0, Ljava/util/Vector;
+    iput p3, p0, LaM/d;->a:I
 
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
+    iput-object p4, p0, LaM/d;->b:LaM/f;
 
-    iput-object v0, p0, LaM/D;->c:Ljava/util/Vector;
+    iput-object p5, p0, LaM/d;->f:Lcom/google/googlenav/android/Y;
 
-    iput-object p1, p0, LaM/D;->a:LaM/z;
+    invoke-direct {p0, p2}, LY/b;-><init>(LY/c;)V
 
     return-void
 .end method
 
-.method static synthetic a(LaM/D;)V
-    .registers 1
+.method private a(Lcom/google/googlenav/common/io/j;Ljava/io/DataInput;)Lcom/google/googlenav/F;
+    .registers 8
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, LaM/D;->b()V
+    .prologue
+    .line 223
+    new-instance v1, Lcom/google/googlenav/aW;
 
-    return-void
-.end method
+    invoke-direct {v1}, Lcom/google/googlenav/aW;-><init>()V
 
-.method private b()V
-    .registers 2
+    .line 225
+    :try_start_5
+    invoke-virtual {v1, p2}, Lcom/google/googlenav/aW;->a(Ljava/io/DataInput;)Z
+    :try_end_8
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_8} :catch_22
 
-    iget-object v0, p0, LaM/D;->e:Lam/b;
+    .line 231
+    :goto_8
+    const-string v0, "SAVED_BGFS_EXTRA_3"
 
-    if-eqz v0, :cond_c
-
-    iget-object v0, p0, LaM/D;->e:Lam/b;
-
-    invoke-direct {p0, v0}, LaM/D;->b(Lam/b;)V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, LaM/D;->e:Lam/b;
-
-    :cond_c
-    return-void
-.end method
-
-.method private b(Lam/b;)V
-    .registers 5
-
-    iget-object v0, p0, LaM/D;->b:LaM/s;
-
-    if-eqz v0, :cond_9
-
-    iget-object v0, p0, LaM/D;->b:LaM/s;
-
-    invoke-virtual {v0}, LaM/s;->X()V
-
-    :cond_9
-    new-instance v0, LaM/s;
-
-    invoke-direct {v0, p1}, LaM/s;-><init>(Lam/b;)V
-
-    iput-object v0, p0, LaM/D;->b:LaM/s;
-
-    iget-object v0, p0, LaM/D;->b:LaM/s;
-
-    invoke-virtual {v0, p0}, LaM/s;->a(LaM/t;)V
-
-    invoke-static {}, Lat/h;->a()Lat/h;
+    invoke-static {p1, v0}, Lcom/google/googlenav/common/j;->a(Lcom/google/googlenav/common/io/j;Ljava/lang/String;)Ljava/io/DataInput;
 
     move-result-object v0
 
-    iget-object v1, p0, LaM/D;->b:LaM/s;
+    .line 233
+    if-eqz v0, :cond_30
 
-    invoke-virtual {v0, v1}, Lat/h;->c(Lat/g;)V
+    .line 235
+    :try_start_10
+    sget-object v2, Lcom/google/wireless/googlenav/proto/j2me/ag;->g:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    iget-object v0, p0, LaM/D;->c:Ljava/util/Vector;
-
-    invoke-virtual {v0}, Ljava/util/Vector;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_24
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_36
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v2, v0}, Lcom/google/googlenav/common/io/protocol/b;->a(Lcom/google/googlenav/common/io/protocol/ProtoBufType;Ljava/io/DataInput;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
     move-result-object v0
 
-    check-cast v0, LaM/C;
+    .line 237
+    const/16 v2, 0xf
 
-    iget-object v2, p0, LaM/D;->b:LaM/s;
+    const-wide/high16 v3, -0x8000
 
-    invoke-interface {v0, v2}, LaM/C;->a(LaM/s;)V
+    invoke-static {v0, v2, v3, v4}, Lcom/google/googlenav/common/io/protocol/b;->a(Lcom/google/googlenav/common/io/protocol/ProtoBuf;IJ)J
 
-    goto :goto_24
+    move-result-wide v2
 
-    :cond_36
-    iget-object v0, p0, LaM/D;->d:LaM/C;
+    invoke-virtual {v1, v2, v3}, Lcom/google/googlenav/aW;->a(J)V
+    :try_end_21
+    .catch Ljava/io/IOException; {:try_start_10 .. :try_end_21} :catch_29
 
-    if-eqz v0, :cond_41
+    .line 248
+    :goto_21
+    return-object v1
 
-    iget-object v0, p0, LaM/D;->d:LaM/C;
+    .line 226
+    :catch_22
+    move-exception v0
 
-    iget-object v1, p0, LaM/D;->b:LaM/s;
+    .line 227
+    const-string v2, "-Error loading featureSet"
 
-    invoke-interface {v0, v1}, LaM/C;->a(LaM/s;)V
+    invoke-static {p1, v0, v2}, LaM/a;->a(Lcom/google/googlenav/common/io/j;Ljava/lang/Throwable;Ljava/lang/String;)V
 
-    :cond_41
-    return-void
+    goto :goto_8
+
+    .line 240
+    :catch_29
+    move-exception v0
+
+    .line 241
+    const-string v2, "-Error saving featureSet"
+
+    invoke-static {p1, v0, v2}, LaM/a;->a(Lcom/google/googlenav/common/io/j;Ljava/lang/Throwable;Ljava/lang/String;)V
+
+    goto :goto_21
+
+    .line 245
+    :cond_30
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->u()Lcom/google/googlenav/common/a;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/googlenav/common/a;->b()J
+
+    move-result-wide v2
+
+    invoke-virtual {v1, v2, v3}, Lcom/google/googlenav/aW;->a(J)V
+
+    goto :goto_21
 .end method
 
 
 # virtual methods
-.method public a(LaM/C;)V
-    .registers 3
+.method public a()V
+    .registers 5
 
-    iget-object v0, p0, LaM/D;->c:Ljava/util/Vector;
-
-    invoke-virtual {v0, p1}, Ljava/util/Vector;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_d
-
-    iget-object v0, p0, LaM/D;->c:Ljava/util/Vector;
-
-    invoke-virtual {v0, p1}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
-
-    :cond_d
-    return-void
-.end method
-
-.method public a(Lam/b;)V
-    .registers 4
-
-    iget-object v0, p0, LaM/D;->c:Ljava/util/Vector;
-
-    invoke-virtual {v0}, Ljava/util/Vector;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_6
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_16
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .prologue
+    .line 198
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
 
     move-result-object v0
 
-    check-cast v0, LaM/C;
-
-    invoke-interface {v0, p1}, LaM/C;->a(Lam/b;)V
-
-    goto :goto_6
-
-    :cond_16
-    iget-object v0, p0, LaM/D;->d:LaM/C;
-
-    if-eqz v0, :cond_1f
-
-    iget-object v0, p0, LaM/D;->d:LaM/C;
-
-    invoke-interface {v0, p1}, LaM/C;->a(Lam/b;)V
-
-    :cond_1f
-    iget-object v0, p0, LaM/D;->a:LaM/z;
-
-    invoke-interface {v0, p1}, LaM/z;->a(Lam/b;)V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, LaM/D;->b:LaM/s;
-
-    iget-object v0, p0, LaM/D;->c:Ljava/util/Vector;
-
-    invoke-virtual {v0}, Ljava/util/Vector;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->m()Lcom/google/googlenav/common/io/j;
 
     move-result-object v1
 
-    :goto_2d
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    .line 199
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result v0
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-eqz v0, :cond_3d
+    const-string v2, "SAVED_BGFS_"
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, LaM/C;
+    iget v2, p0, LaM/d;->a:I
 
-    invoke-interface {v0}, LaM/C;->O_()V
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    goto :goto_2d
+    move-result-object v0
 
-    :cond_3d
-    iget-object v0, p0, LaM/D;->d:LaM/C;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    if-eqz v0, :cond_46
+    move-result-object v2
 
-    iget-object v0, p0, LaM/D;->d:LaM/C;
-
-    invoke-interface {v0}, LaM/C;->O_()V
-
-    :cond_46
-    return-void
-.end method
-
-.method a()Z
-    .registers 2
-
-    iget-object v0, p0, LaM/D;->b:LaM/s;
-
-    if-eqz v0, :cond_e
-
-    iget-object v0, p0, LaM/D;->b:LaM/s;
-
-    invoke-virtual {v0}, LaM/s;->k()Z
-
-    move-result v0
-
-    if-nez v0, :cond_e
-
-    const/4 v0, 0x1
-
-    :goto_d
-    return v0
-
-    :cond_e
+    .line 201
     const/4 v0, 0x0
 
-    goto :goto_d
-.end method
+    .line 203
+    invoke-static {v1, v2}, Lcom/google/googlenav/common/j;->a(Lcom/google/googlenav/common/io/j;Ljava/lang/String;)Ljava/io/DataInput;
 
-.method public a_(Lam/b;)V
-    .registers 4
+    move-result-object v2
 
-    sget-object v0, Lcom/google/googlenav/z;->a:Lcom/google/googlenav/z;
+    .line 204
+    if-eqz v2, :cond_38
 
-    invoke-static {v0}, Lcom/google/googlenav/u;->c(Lcom/google/googlenav/z;)Z
+    .line 205
+    iget v3, p0, LaM/d;->a:I
 
-    move-result v0
+    packed-switch v3, :pswitch_data_48
 
-    if-eqz v0, :cond_15
+    .line 214
+    :goto_29
+    iget-object v1, p0, LaM/d;->g:LaM/a;
 
-    iput-object p1, p0, LaM/D;->e:Lam/b;
+    invoke-static {v1}, LaM/a;->a(LaM/a;)Ljava/util/Map;
 
-    sget-object v0, Lcom/google/googlenav/z;->a:Lcom/google/googlenav/z;
+    move-result-object v1
 
-    new-instance v1, LaM/E;
+    iget v2, p0, LaM/d;->a:I
 
-    invoke-direct {v1, p0}, LaM/E;-><init>(LaM/D;)V
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v0, v1}, Lcom/google/googlenav/u;->a(Lcom/google/googlenav/z;Lcom/google/googlenav/x;)V
+    move-result-object v2
 
-    :goto_14
+    invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 216
+    :cond_38
+    iget-object v1, p0, LaM/d;->g:LaM/a;
+
+    iget-object v2, p0, LaM/d;->b:LaM/f;
+
+    iget-object v3, p0, LaM/d;->f:Lcom/google/googlenav/android/Y;
+
+    invoke-static {v1, v0, v2, v3}, LaM/a;->a(LaM/a;Lcom/google/googlenav/F;LaM/f;Lcom/google/googlenav/android/Y;)V
+
+    .line 217
     return-void
 
-    :cond_15
-    invoke-direct {p0, p1}, LaM/D;->b(Lam/b;)V
+    .line 207
+    :pswitch_42
+    invoke-direct {p0, v1, v2}, LaM/d;->a(Lcom/google/googlenav/common/io/j;Ljava/io/DataInput;)Lcom/google/googlenav/F;
 
-    goto :goto_14
-.end method
+    move-result-object v0
 
-.method public b(LaM/C;)V
-    .registers 3
+    goto :goto_29
 
-    iget-object v0, p0, LaM/D;->c:Ljava/util/Vector;
+    .line 205
+    nop
 
-    invoke-virtual {v0, p1}, Ljava/util/Vector;->remove(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public f()V
-    .registers 2
-
-    iget-object v0, p0, LaM/D;->b:LaM/s;
-
-    if-eqz v0, :cond_c
-
-    iget-object v0, p0, LaM/D;->b:LaM/s;
-
-    invoke-virtual {v0}, LaM/s;->X()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, LaM/D;->b:LaM/s;
-
-    :cond_c
-    return-void
+    :pswitch_data_48
+    .packed-switch 0x3
+        :pswitch_42
+    .end packed-switch
 .end method

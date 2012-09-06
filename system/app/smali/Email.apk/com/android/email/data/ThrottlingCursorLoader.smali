@@ -102,10 +102,10 @@
     .registers 1
 
     .prologue
-    .line 113
+    .line 106
     invoke-super {p0}, Landroid/content/CursorLoader;->onContentChanged()V
 
-    .line 114
+    .line 107
     return-void
 .end method
 
@@ -116,15 +116,15 @@
     .parameter "cursor"
 
     .prologue
-    .line 90
+    .line 86
     iget-object v0, p0, Lcom/android/email/data/ThrottlingCursorLoader;->mThrottle:Lcom/android/email/Throttle;
 
     invoke-virtual {v0}, Lcom/android/email/Throttle;->cancelScheduledCallback()V
 
-    .line 91
+    .line 87
     invoke-super {p0, p1}, Landroid/content/CursorLoader;->onCanceled(Landroid/database/Cursor;)V
 
-    .line 92
+    .line 88
     return-void
 .end method
 
@@ -146,12 +146,12 @@
     .registers 2
 
     .prologue
-    .line 107
+    .line 101
     iget-object v0, p0, Lcom/android/email/data/ThrottlingCursorLoader;->mThrottle:Lcom/android/email/Throttle;
 
     invoke-virtual {v0}, Lcom/android/email/Throttle;->onEvent()V
 
-    .line 108
+    .line 102
     return-void
 .end method
 
@@ -159,15 +159,15 @@
     .registers 2
 
     .prologue
-    .line 74
+    .line 72
     iget-object v0, p0, Lcom/android/email/data/ThrottlingCursorLoader;->mThrottle:Lcom/android/email/Throttle;
 
     invoke-virtual {v0}, Lcom/android/email/Throttle;->cancelScheduledCallback()V
 
-    .line 75
+    .line 73
     invoke-super {p0}, Landroid/content/CursorLoader;->onForceLoad()V
 
-    .line 76
+    .line 74
     return-void
 .end method
 
@@ -175,15 +175,15 @@
     .registers 2
 
     .prologue
-    .line 98
+    .line 93
     iget-object v0, p0, Lcom/android/email/data/ThrottlingCursorLoader;->mThrottle:Lcom/android/email/Throttle;
 
     invoke-virtual {v0}, Lcom/android/email/Throttle;->cancelScheduledCallback()V
 
-    .line 99
+    .line 94
     invoke-super {p0}, Landroid/content/CursorLoader;->onReset()V
 
-    .line 100
+    .line 95
     return-void
 .end method
 
@@ -191,15 +191,15 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 65
     iget-object v0, p0, Lcom/android/email/data/ThrottlingCursorLoader;->mThrottle:Lcom/android/email/Throttle;
 
     invoke-virtual {v0}, Lcom/android/email/Throttle;->cancelScheduledCallback()V
 
-    .line 67
+    .line 66
     invoke-super {p0}, Landroid/content/CursorLoader;->onStartLoading()V
 
-    .line 68
+    .line 67
     return-void
 .end method
 
@@ -207,14 +207,14 @@
     .registers 2
 
     .prologue
-    .line 82
+    .line 79
     iget-object v0, p0, Lcom/android/email/data/ThrottlingCursorLoader;->mThrottle:Lcom/android/email/Throttle;
 
     invoke-virtual {v0}, Lcom/android/email/Throttle;->cancelScheduledCallback()V
 
-    .line 83
+    .line 80
     invoke-super {p0}, Landroid/content/CursorLoader;->onStopLoading()V
 
-    .line 84
+    .line 81
     return-void
 .end method

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="raw" name="pinyin_gwoyeu_mapping">false</item>
+    <item type="raw" name="pinyin_mapping">false</item>
+    <item type="raw" name="unicode_to_hanyu_pinyin">false</item>
+</resources>

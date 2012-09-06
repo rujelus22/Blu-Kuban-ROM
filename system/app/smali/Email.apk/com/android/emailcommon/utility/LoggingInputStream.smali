@@ -17,14 +17,14 @@
     .parameter "in"
 
     .prologue
-    .line 38
+    .line 39
     const-string v0, "RAW"
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/emailcommon/utility/LoggingInputStream;-><init>(Ljava/io/InputStream;Ljava/lang/String;Z)V
 
-    .line 39
+    .line 40
     return-void
 .end method
 
@@ -35,10 +35,10 @@
     .parameter "dumpEmptyLines"
 
     .prologue
-    .line 42
+    .line 43
     invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 43
+    .line 44
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -59,13 +59,13 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/utility/LoggingInputStream;->mTag:Ljava/lang/String;
 
-    .line 44
+    .line 45
     iput-boolean p3, p0, Lcom/android/emailcommon/utility/LoggingInputStream;->mDumpEmptyLines:Z
 
-    .line 45
+    .line 46
     invoke-direct {p0}, Lcom/android/emailcommon/utility/LoggingInputStream;->initBuffer()V
 
-    .line 46
+    .line 47
     const-string v0, "Email"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -90,7 +90,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 47
+    .line 48
     return-void
 .end method
 
@@ -141,7 +141,7 @@
     .registers 3
 
     .prologue
-    .line 50
+    .line 51
     new-instance v0, Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/emailcommon/utility/LoggingInputStream;->mTag:Ljava/lang/String;
@@ -150,7 +150,7 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/utility/LoggingInputStream;->mSb:Ljava/lang/StringBuilder;
 
-    .line 51
+    .line 52
     return-void
 .end method
 
@@ -159,7 +159,7 @@
     .parameter "oneByte"
 
     .prologue
-    .line 83
+    .line 84
     const/16 v0, 0xd
 
     if-ne p1, v0, :cond_5
@@ -168,18 +168,18 @@
     :goto_4
     return-void
 
-    .line 85
+    .line 86
     :cond_5
     const/16 v0, 0xa
 
     if-ne p1, v0, :cond_d
 
-    .line 86
+    .line 87
     invoke-direct {p0}, Lcom/android/emailcommon/utility/LoggingInputStream;->flushLog()V
 
     goto :goto_4
 
-    .line 87
+    .line 88
     :cond_d
     const/16 v0, 0x20
 
@@ -189,7 +189,7 @@
 
     if-gt p1, v0, :cond_1c
 
-    .line 88
+    .line 89
     iget-object v0, p0, Lcom/android/emailcommon/utility/LoggingInputStream;->mSb:Ljava/lang/StringBuilder;
 
     int-to-char v1, p1
@@ -259,16 +259,16 @@
     .end annotation
 
     .prologue
-    .line 58
+    .line 59
     invoke-super {p0}, Ljava/io/FilterInputStream;->read()I
 
     move-result v0
 
-    .line 59
+    .line 60
     .local v0, oneByte:I
     invoke-direct {p0, v0}, Lcom/android/emailcommon/utility/LoggingInputStream;->logRaw(I)V
 
-    .line 60
+    .line 61
     return v0
 .end method
 
@@ -284,36 +284,36 @@
     .end annotation
 
     .prologue
-    .line 68
+    .line 69
     invoke-super {p0, p1, p2, p3}, Ljava/io/FilterInputStream;->read([BII)I
 
     move-result v0
 
-    .line 69
+    .line 70
     .local v0, bytesRead:I
     move v1, v0
 
-    .line 70
+    .line 71
     .local v1, copyBytes:I
     :goto_5
     if-lez v1, :cond_13
 
-    .line 71
+    .line 72
     aget-byte v2, p1, p2
 
     and-int/lit16 v2, v2, 0xff
 
     invoke-direct {p0, v2}, Lcom/android/emailcommon/utility/LoggingInputStream;->logRaw(I)V
 
-    .line 72
+    .line 73
     add-int/lit8 v1, v1, -0x1
 
-    .line 73
+    .line 74
     add-int/lit8 p2, p2, 0x1
 
     goto :goto_5
 
-    .line 76
+    .line 77
     :cond_13
     return v0
 .end method

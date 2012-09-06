@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ListView android:id="@id/play_list" android:layout_width="fill_parent" android:layout_height="289.32812dip" android:drawSelectorOnTop="false" />
-    <com.sec.android.app.dlna.view.MediaControlView android:id="@id/addin_media_control" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-</LinearLayout>

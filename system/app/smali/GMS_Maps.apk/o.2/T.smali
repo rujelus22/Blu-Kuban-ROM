@@ -1,206 +1,72 @@
-.class public Lo/T;
-.super Lo/W;
+.class Lo/t;
+.super Lt/b;
+.source "SourceFile"
 
 
-# static fields
-.field private static final a:Ljava/util/regex/Pattern;
+# instance fields
+.field final synthetic a:Lo/r;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method constructor <init>(Lo/r;Ljava/lang/String;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    const-string v0, "<.*?>"
+    .prologue
+    .line 444
+    iput-object p1, p0, Lo/t;->a:Lo/r;
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lo/T;->a:Ljava/util/regex/Pattern;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .registers 1
-
-    invoke-direct {p0}, Lo/W;-><init>()V
+    invoke-direct {p0, p2}, Lt/b;-><init>(Ljava/lang/String;)V
 
     return-void
-.end method
-
-.method private b(Ljava/lang/String;)Ljava/lang/String;
-    .registers 5
-
-    const/16 v2, 0x20
-
-    const-string v0, "/"
-
-    const-string v1, "<break time=\"100ms\"/>"
-
-    invoke-virtual {p1, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const/16 v1, 0x2d
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
-
-    move-result-object v0
-
-    const/16 v1, 0x28
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
-
-    move-result-object v0
-
-    const/16 v1, 0x29
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;
-    .registers 7
+.method public a()V
+    .registers 3
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    .prologue
+    .line 447
+    iget-object v0, p0, Lo/t;->a:Lo/r;
 
-    const-string v0, "<?xml version=\"1.0\"?>\n<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.w3.org/2001/10/synthesis http://www.w3.org/TR/speech-synthesis/synthesis.xsd\" xml:lang=\""
-
-    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    if-eqz p2, :cond_13
-
-    invoke-virtual {p2}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v0}, Lo/r;->a(Lo/r;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4b
+    if-nez v0, :cond_1d
 
-    :cond_13
-    const-string v0, "en"
+    .line 448
+    iget-object v0, p0, Lo/t;->a:Lo/r;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_18
-    :goto_18
-    const-string v0, "\">"
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-object v0, Lo/T;->a:Ljava/util/regex/Pattern;
-
-    invoke-virtual {v0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v2
-
-    const/4 v0, 0x0
-
-    :goto_24
-    invoke-virtual {v2}, Ljava/util/regex/Matcher;->find()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_6a
-
-    invoke-virtual {v2}, Ljava/util/regex/Matcher;->start()I
-
-    move-result v3
-
-    if-le v3, v0, :cond_3f
-
-    invoke-virtual {v2}, Ljava/util/regex/Matcher;->start()I
-
-    move-result v3
-
-    invoke-virtual {p1, v0, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-static {v0}, Lo/r;->c(Lo/r;)Lo/p;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lo/T;->b(Ljava/lang/String;)Ljava/lang/String;
+    iget-object v1, p0, Lo/t;->a:Lo/r;
 
-    move-result-object v0
+    invoke-static {v1}, Lo/r;->b(Lo/r;)Landroid/location/Location;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    :cond_3f
-    invoke-virtual {v2}, Ljava/util/regex/Matcher;->group()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lo/p;->a(Landroid/location/Location;)V
 
-    move-result-object v0
+    .line 450
+    iget-object v0, p0, Lo/t;->a:Lo/r;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v1, 0x0
 
-    invoke-virtual {v2}, Ljava/util/regex/Matcher;->end()I
+    invoke-static {v0, v1}, Lo/r;->a(Lo/r;Landroid/location/Location;)Landroid/location/Location;
 
-    move-result v0
+    .line 452
+    :cond_1d
+    iget-object v0, p0, Lo/t;->a:Lo/r;
 
-    goto :goto_24
+    const/4 v1, 0x0
 
-    :cond_4b
-    invoke-virtual {p2}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
+    invoke-static {v0, v1}, Lo/r;->a(Lo/r;Z)Z
 
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_18
-
-    const/16 v0, 0x2d
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {p2}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_18
-
-    :cond_6a
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-ge v0, v2, :cond_7b
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lo/T;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_7b
-    const-string v0, "</speak>"
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    .line 453
+    return-void
 .end method

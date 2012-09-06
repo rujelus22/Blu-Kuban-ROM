@@ -21,41 +21,27 @@
     .parameter "savedInstanceState"
 
     .prologue
+    .line 32
+    invoke-static {p1}, Lcom/android/email/activity/setup/SetupData;->restore(Landroid/os/Bundle;)Lcom/android/email/activity/setup/SetupData;
+
     .line 33
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 34
-    invoke-static {p1}, Lcom/android/email/activity/setup/SetupData;->restore(Landroid/os/Bundle;)Lcom/android/email/activity/setup/SetupData;
-
-    .line 38
+    .line 37
     return-void
 .end method
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
-    .registers 3
+    .registers 2
     .parameter "outState"
 
     .prologue
-    .line 43
-    :try_start_0
+    .line 41
     invoke-super {p0, p1}, Landroid/app/Activity;->onSaveInstanceState(Landroid/os/Bundle;)V
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_3} :catch_7
 
-    .line 47
-    :goto_3
+    .line 42
     invoke-static {p1}, Lcom/android/email/activity/setup/SetupData;->save(Landroid/os/Bundle;)V
 
-    .line 48
+    .line 43
     return-void
-
-    .line 44
-    :catch_7
-    move-exception v0
-
-    .line 45
-    .local v0, e:Ljava/lang/Exception;
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
-
-    goto :goto_3
 .end method

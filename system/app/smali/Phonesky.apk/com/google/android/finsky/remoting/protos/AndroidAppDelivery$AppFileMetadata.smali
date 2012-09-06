@@ -41,31 +41,31 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 9
+    .line 10
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 14
+    .line 15
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->fileType_:I
 
-    .line 31
+    .line 32
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->versionCode_:I
 
-    .line 48
+    .line 49
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->size_:J
 
-    .line 65
+    .line 66
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->downloadUrl_:Ljava/lang/String;
 
-    .line 109
+    .line 111
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->cachedSize:I
 
-    .line 9
+    .line 10
     return-void
 .end method
 
@@ -75,15 +75,15 @@
     .registers 2
 
     .prologue
-    .line 111
+    .line 114
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 113
+    .line 116
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->getSerializedSize()I
 
-    .line 115
+    .line 118
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->cachedSize:I
 
@@ -94,7 +94,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 67
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->downloadUrl_:Ljava/lang/String;
 
     return-object v0
@@ -104,7 +104,7 @@
     .registers 2
 
     .prologue
-    .line 16
+    .line 17
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->fileType_:I
 
     return v0
@@ -114,10 +114,10 @@
     .registers 5
 
     .prologue
-    .line 119
+    .line 123
     const/4 v0, 0x0
 
-    .line 120
+    .line 124
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->hasFileType()Z
 
@@ -125,7 +125,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 121
+    .line 125
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->getFileType()I
@@ -138,7 +138,7 @@
 
     add-int/2addr v0, v1
 
-    .line 124
+    .line 128
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->hasVersionCode()Z
 
@@ -146,7 +146,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 125
+    .line 129
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->getVersionCode()I
@@ -159,7 +159,7 @@
 
     add-int/2addr v0, v1
 
-    .line 128
+    .line 132
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->hasSize()Z
 
@@ -167,7 +167,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 129
+    .line 133
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->getSize()J
@@ -180,7 +180,7 @@
 
     add-int/2addr v0, v1
 
-    .line 132
+    .line 136
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->hasDownloadUrl()Z
 
@@ -188,7 +188,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 133
+    .line 137
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->getDownloadUrl()Ljava/lang/String;
@@ -201,11 +201,11 @@
 
     add-int/2addr v0, v1
 
-    .line 136
+    .line 140
     :cond_41
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->cachedSize:I
 
-    .line 137
+    .line 141
     return v0
 .end method
 
@@ -213,7 +213,7 @@
     .registers 3
 
     .prologue
-    .line 49
+    .line 50
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->size_:J
 
     return-wide v0
@@ -223,7 +223,7 @@
     .registers 2
 
     .prologue
-    .line 32
+    .line 33
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->versionCode_:I
 
     return v0
@@ -233,7 +233,7 @@
     .registers 2
 
     .prologue
-    .line 67
+    .line 68
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->hasDownloadUrl:Z
 
     return v0
@@ -243,7 +243,7 @@
     .registers 2
 
     .prologue
-    .line 15
+    .line 16
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->hasFileType:Z
 
     return v0
@@ -253,7 +253,7 @@
     .registers 2
 
     .prologue
-    .line 50
+    .line 51
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->hasSize:Z
 
     return v0
@@ -263,7 +263,7 @@
     .registers 2
 
     .prologue
-    .line 33
+    .line 34
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->hasVersionCode:Z
 
     return v0
@@ -279,29 +279,29 @@
     .end annotation
 
     .prologue
-    .line 144
+    .line 149
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 145
+    .line 150
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_2e
 
-    .line 149
+    .line 154
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 150
+    .line 155
     :sswitch_d
     return-object p0
 
-    .line 155
+    .line 160
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -311,7 +311,7 @@
 
     goto :goto_0
 
-    .line 159
+    .line 164
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -321,7 +321,7 @@
 
     goto :goto_0
 
-    .line 163
+    .line 168
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -331,7 +331,7 @@
 
     goto :goto_0
 
-    .line 167
+    .line 172
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -341,7 +341,7 @@
 
     goto :goto_0
 
-    .line 145
+    .line 150
     :sswitch_data_2e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -375,15 +375,15 @@
     .parameter "value"
 
     .prologue
-    .line 69
+    .line 70
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->hasDownloadUrl:Z
 
-    .line 70
+    .line 71
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->downloadUrl_:Ljava/lang/String;
 
-    .line 71
+    .line 72
     return-object p0
 .end method
 
@@ -392,15 +392,15 @@
     .parameter "value"
 
     .prologue
-    .line 18
+    .line 19
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->hasFileType:Z
 
-    .line 19
+    .line 20
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->fileType_:I
 
-    .line 20
+    .line 21
     return-object p0
 .end method
 
@@ -409,15 +409,15 @@
     .parameter "value"
 
     .prologue
-    .line 52
+    .line 53
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->hasSize:Z
 
-    .line 53
+    .line 54
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->size_:J
 
-    .line 54
+    .line 55
     return-object p0
 .end method
 
@@ -426,15 +426,15 @@
     .parameter "value"
 
     .prologue
-    .line 35
+    .line 36
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->hasVersionCode:Z
 
-    .line 36
+    .line 37
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->versionCode_:I
 
-    .line 37
+    .line 38
     return-object p0
 .end method
 
@@ -448,14 +448,14 @@
     .end annotation
 
     .prologue
-    .line 95
+    .line 97
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->hasFileType()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 96
+    .line 98
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->getFileType()I
@@ -464,7 +464,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 98
+    .line 100
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->hasVersionCode()Z
 
@@ -472,7 +472,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 99
+    .line 101
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->getVersionCode()I
@@ -481,7 +481,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 101
+    .line 103
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->hasSize()Z
 
@@ -489,7 +489,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 102
+    .line 104
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->getSize()J
@@ -498,7 +498,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 104
+    .line 106
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->hasDownloadUrl()Z
 
@@ -506,7 +506,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 105
+    .line 107
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;->getDownloadUrl()Ljava/lang/String;
@@ -515,7 +515,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 107
+    .line 109
     :cond_38
     return-void
 .end method

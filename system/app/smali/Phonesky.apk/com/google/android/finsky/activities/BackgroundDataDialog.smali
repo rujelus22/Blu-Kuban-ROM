@@ -146,13 +146,13 @@
 
     invoke-direct {v3, v4}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v4, 0x7f0700ea
+    const v4, 0x7f0700f9
 
     invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    const v4, 0x7f0700ec
+    const v4, 0x7f0700fb
 
     new-instance v5, Lcom/google/android/finsky/activities/BackgroundDataDialog$2;
 
@@ -162,7 +162,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0700ed
+    const v4, 0x7f0700fc
 
     new-instance v5, Lcom/google/android/finsky/activities/BackgroundDataDialog$1;
 
@@ -182,7 +182,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f040066
+    const v4, 0x7f04006d
 
     const/4 v5, 0x0
 
@@ -192,7 +192,7 @@
 
     .line 82
     .local v1, messageView:Landroid/view/View;
-    const v3, 0x7f0800fc
+    const v3, 0x7f080122
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -202,7 +202,7 @@
 
     .line 83
     .local v0, messageTextView:Landroid/widget/TextView;
-    const v3, 0x7f0700eb
+    const v3, 0x7f0700fa
 
     invoke-virtual {p0, v3}, Lcom/google/android/finsky/activities/BackgroundDataDialog;->getString(I)Ljava/lang/String;
 

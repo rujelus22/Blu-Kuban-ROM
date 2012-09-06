@@ -1,108 +1,156 @@
-.class Lcom/google/googlenav/ui/view/dialog/R;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/Q;
+.class public abstract Lcom/google/googlenav/ui/view/dialog/r;
+.super Lcom/google/googlenav/ui/view/android/V;
+.source "SourceFile"
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/Q;)V
+.method public constructor <init>()V
     .registers 2
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/R;->a:Lcom/google/googlenav/ui/view/dialog/Q;
+    .prologue
+    .line 36
+    const v0, 0x7f0f001b
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0}, Lcom/google/googlenav/ui/view/android/V;-><init>(I)V
 
+    .line 37
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/google/googlenav/ui/g;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 32
+    const v0, 0x7f0f001b
+
+    invoke-direct {p0, p1, v0}, Lcom/google/googlenav/ui/view/android/V;-><init>(Lcom/google/googlenav/ui/g;I)V
+
+    .line 33
     return-void
 .end method
 
 
 # virtual methods
-.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 8
+.method protected I_()V
+    .registers 3
 
-    packed-switch p3, :pswitch_data_44
+    .prologue
+    .line 41
+    invoke-static {}, Lcom/google/googlenav/android/a;->c()Z
 
-    :goto_3
+    move-result v0
+
+    if-nez v0, :cond_10
+
+    .line 42
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/r;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    const v1, 0x7f02019e
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setBackgroundDrawableResource(I)V
+
+    .line 46
+    :cond_10
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/r;->w_()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 47
+    invoke-static {v0}, Laa/b;->b(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_27
+
+    .line 48
+    invoke-static {}, Lcom/google/googlenav/android/a;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_28
+
+    .line 49
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/r;->w_()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/google/googlenav/ui/view/dialog/r;->setTitle(Ljava/lang/CharSequence;)V
+
+    .line 57
+    :cond_27
+    :goto_27
     return-void
 
-    :pswitch_4
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/R;->a:Lcom/google/googlenav/ui/view/dialog/Q;
+    .line 51
+    :cond_28
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/r;->i:Landroid/view/View;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/Q;->b(Lcom/google/googlenav/ui/view/dialog/Q;)Lcom/google/googlenav/ui/view/dialog/U;
+    const v1, 0x7f100354
 
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/R;->a:Lcom/google/googlenav/ui/view/dialog/Q;
-
-    invoke-static {v1}, Lcom/google/googlenav/ui/view/dialog/Q;->a(Lcom/google/googlenav/ui/view/dialog/Q;)Lax/aP;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/view/dialog/U;->a(Lax/aP;)V
-
-    goto :goto_3
-
-    :pswitch_14
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/R;->a:Lcom/google/googlenav/ui/view/dialog/Q;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/Q;->b(Lcom/google/googlenav/ui/view/dialog/Q;)Lcom/google/googlenav/ui/view/dialog/U;
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/R;->a:Lcom/google/googlenav/ui/view/dialog/Q;
+    check-cast v0, Landroid/widget/TextView;
 
-    invoke-static {v1}, Lcom/google/googlenav/ui/view/dialog/Q;->a(Lcom/google/googlenav/ui/view/dialog/Q;)Lax/aP;
+    .line 52
+    if-eqz v0, :cond_27
+
+    .line 53
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/r;->w_()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/view/dialog/U;->b(Lax/aP;)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_3
+    goto :goto_27
+.end method
 
-    :pswitch_24
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/R;->a:Lcom/google/googlenav/ui/view/dialog/Q;
+.method protected N_()V
+    .registers 3
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/Q;->b(Lcom/google/googlenav/ui/view/dialog/Q;)Lcom/google/googlenav/ui/view/dialog/U;
+    .prologue
+    .line 61
+    invoke-static {}, Lcom/google/googlenav/android/a;->c()Z
+
+    move-result v0
+
+    if-nez v0, :cond_e
+
+    .line 62
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/r;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/R;->a:Lcom/google/googlenav/ui/view/dialog/Q;
+    const/4 v1, 0x1
 
-    invoke-static {v1}, Lcom/google/googlenav/ui/view/dialog/Q;->a(Lcom/google/googlenav/ui/view/dialog/Q;)Lax/aP;
+    invoke-virtual {v0, v1}, Landroid/view/Window;->requestFeature(I)Z
 
-    move-result-object v1
+    .line 64
+    :cond_e
+    return-void
+.end method
 
-    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/view/dialog/U;->c(Lax/aP;)V
+.method public O_()Z
+    .registers 2
 
-    goto :goto_3
+    .prologue
+    .line 73
+    const/4 v0, 0x0
 
-    :pswitch_34
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/R;->a:Lcom/google/googlenav/ui/view/dialog/Q;
+    return v0
+.end method
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/Q;->b(Lcom/google/googlenav/ui/view/dialog/Q;)Lcom/google/googlenav/ui/view/dialog/U;
+.method protected e()Z
+    .registers 2
 
-    move-result-object v0
+    .prologue
+    .line 68
+    const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/R;->a:Lcom/google/googlenav/ui/view/dialog/Q;
-
-    invoke-static {v1}, Lcom/google/googlenav/ui/view/dialog/Q;->a(Lcom/google/googlenav/ui/view/dialog/Q;)Lax/aP;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/view/dialog/U;->d(Lax/aP;)V
-
-    goto :goto_3
-
-    :pswitch_data_44
-    .packed-switch 0x0
-        :pswitch_4
-        :pswitch_14
-        :pswitch_24
-        :pswitch_34
-    .end packed-switch
+    return v0
 .end method

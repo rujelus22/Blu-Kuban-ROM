@@ -1,17 +1,17 @@
-.class public final Lcom/google/android/youtube/core/utils/q;
+.class final Lcom/google/android/youtube/core/utils/q;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/utils/c;
+.implements Lcom/google/android/youtube/core/utils/o;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>()V
     .registers 1
 
     .prologue
-    .line 10
+    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,26 +19,13 @@
 
 
 # virtual methods
-.method public final a()J
+.method public final a(Ljava/lang/Object;)Z
     .registers 3
+    .parameter
 
     .prologue
-    .line 13
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    .line 15
+    const/4 v0, 0x1
 
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final b()J
-    .registers 3
-
-    .prologue
-    .line 17
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    return-wide v0
+    return v0
 .end method

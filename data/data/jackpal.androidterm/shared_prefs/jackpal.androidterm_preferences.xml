@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<string name="shell">/system/bin/sh -</string>
+<string name="initialcommand">export PATH=/data/local/bin:$PATH</string>
+<string name="statusbar">0</string>
+<string name="termtype">screen</string>
+<boolean name="close_window_on_process_exit" value="true" />
+<string name="color">1</string>
+<string name="actionbar">1</string>
+<string name="controlkey">5</string>
+<string name="fnkey">4</string>
+<string name="ime">0</string>
+<string name="backaction">2</string>
+<string name="fontsize">10</string>
+</map>

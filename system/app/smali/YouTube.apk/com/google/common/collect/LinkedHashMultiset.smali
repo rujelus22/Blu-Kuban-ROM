@@ -12,14 +12,14 @@
     .registers 2
 
     .prologue
-    .line 76
+    .line 79
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractMapBasedMultiset;-><init>(Ljava/util/Map;)V
 
-    .line 77
+    .line 80
     return-void
 .end method
 
@@ -28,7 +28,7 @@
     .parameter
 
     .prologue
-    .line 81
+    .line 84
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-static {p1}, Lcom/google/common/collect/Maps;->b(I)I
@@ -39,7 +39,7 @@
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractMapBasedMultiset;-><init>(Ljava/util/Map;)V
 
-    .line 82
+    .line 85
     return-void
 .end method
 
@@ -73,7 +73,7 @@
     .parameter
 
     .prologue
-    .line 69
+    .line 72
     invoke-static {p0}, Lcom/google/common/collect/Multisets;->a(Ljava/lang/Iterable;)I
 
     move-result v0
@@ -82,10 +82,10 @@
 
     move-result-object v0
 
-    .line 71
-    invoke-static {v0, p0}, Lcom/google/common/collect/cq;->a(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+    .line 74
+    invoke-static {v0, p0}, Lcom/google/common/collect/eb;->a(Ljava/util/Collection;Ljava/lang/Iterable;)Z
 
-    .line 72
+    .line 75
     return-object v0
 .end method
 
@@ -94,15 +94,15 @@
     .parameter
 
     .prologue
-    .line 95
+    .line 100
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 96
+    .line 101
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
 
     move-result v0
 
-    .line 97
+    .line 102
     new-instance v1, Ljava/util/LinkedHashMap;
 
     invoke-static {v0}, Lcom/google/common/collect/Maps;->b(I)I
@@ -113,10 +113,10 @@
 
     invoke-virtual {p0, v1}, Lcom/google/common/collect/LinkedHashMultiset;->setBackingMap(Ljava/util/Map;)V
 
-    .line 99
-    invoke-static {p0, p1, v0}, Lcom/google/common/collect/fx;->a(Lcom/google/common/collect/fj;Ljava/io/ObjectInputStream;I)V
+    .line 104
+    invoke-static {p0, p1, v0}, Lcom/google/common/collect/jt;->a(Lcom/google/common/collect/iq;Ljava/io/ObjectInputStream;I)V
 
-    .line 100
+    .line 105
     return-void
 .end method
 
@@ -125,13 +125,13 @@
     .parameter
 
     .prologue
-    .line 89
+    .line 93
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 90
-    invoke-static {p0, p1}, Lcom/google/common/collect/fx;->a(Lcom/google/common/collect/fj;Ljava/io/ObjectOutputStream;)V
+    .line 94
+    invoke-static {p0, p1}, Lcom/google/common/collect/jt;->a(Lcom/google/common/collect/iq;Ljava/io/ObjectOutputStream;)V
 
-    .line 91
+    .line 95
     return-void
 .end method
 
@@ -194,19 +194,6 @@
     .prologue
     .line 39
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final bridge synthetic containsAll(Ljava/util/Collection;)Z
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 39
-    invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->containsAll(Ljava/util/Collection;)Z
 
     move-result v0
 

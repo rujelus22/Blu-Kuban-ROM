@@ -3,12 +3,12 @@
 .source "DetailsSummaryViewBinder.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->refreshFragment()V
+    value = Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->setupItemDetails()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 364
+    .line 204
     iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,29 +37,64 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 2
+.method public onClick(Landroid/view/View;)V
+    .registers 6
+    .parameter "v"
 
     .prologue
-    .line 367
+    const/4 v3, 0x4
+
+    const/4 v2, 0x0
+
+    .line 207
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;
 
-    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->mContainerFragment:Lcom/google/android/finsky/fragments/PageFragment;
+    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/fragments/PageFragment;->isAdded()Z
+    invoke-virtual {v0, v3}, Lcom/google/android/finsky/api/model/Document;->getImages(I)Ljava/util/List;
 
-    move-result v0
+    move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_18
 
-    .line 368
+    .line 208
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;
 
-    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->mContainerFragment:Lcom/google/android/finsky/fragments/PageFragment;
+    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/fragments/PageFragment;->refresh()V
+    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;
 
-    .line 370
-    :cond_11
+    iget-object v1, v1, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToImagesLightbox(Lcom/google/android/finsky/api/model/Document;II)V
+
+    .line 212
+    :cond_17
+    :goto_17
     return-void
+
+    .line 209
+    :cond_18
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;
+
+    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-virtual {v0, v2}, Lcom/google/android/finsky/api/model/Document;->getImages(I)Ljava/util/List;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_17
+
+    .line 210
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;
+
+    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+
+    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;
+
+    iget-object v1, v1, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-virtual {v0, v1, v2, v2}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToImagesLightbox(Lcom/google/android/finsky/api/model/Document;II)V
+
+    goto :goto_17
 .end method

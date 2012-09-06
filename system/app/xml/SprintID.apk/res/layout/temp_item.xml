@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/ListItemContent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:gravity="center" android:id="@id/title" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/loading_message" android:layout_centerInParent="true" style="@style/TextHeaderBasic" />
-    <ProgressBar android:id="@id/temp_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/title" android:layout_centerVertical="true" />
-</RelativeLayout>

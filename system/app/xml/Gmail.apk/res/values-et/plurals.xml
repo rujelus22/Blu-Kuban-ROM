@@ -53,40 +53,40 @@
         <item quantity="one">%1$d meilivestluse tegevuse ootel.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> summutati.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> summutati.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> summutati.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> summutati.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> märgiti rämpspostiks.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> märgiti rämpspostiks.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> märgiti rämpspostiks.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> märgiti rämpspostiks.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> arhiveeriti.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> arhiveeriti.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> arhiveeriti.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> arhiveeriti.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> teisaldati postkasti.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> teisaldati postkasti.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> teisaldati postkasti.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> teisaldati postkasti.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> kustutati.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> kustutati.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> kustutati.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> kustutati.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> märgiti oluliseks.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> märgiti oluliseks.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> märgiti oluliseks.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> märgiti oluliseks.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> märgiti ebaoluliseks.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> märgiti ebaoluliseks.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> märgiti ebaoluliseks.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> märgiti ebaoluliseks.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> märgiti loetuks.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> märgiti loetuks.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> märgiti loetuks.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> märgiti loetuks.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> märgiti mitteloetuks.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> märgiti mitteloetuks.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> märgiti mitteloetuks.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> märgiti mitteloetuks.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Muudetud sildid.</item>

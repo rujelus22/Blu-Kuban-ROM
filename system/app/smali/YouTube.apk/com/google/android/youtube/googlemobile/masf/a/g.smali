@@ -94,14 +94,6 @@
     .end array-data
 .end method
 
-.method public constructor <init>()V
-    .registers 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method public static a(I)Ljava/lang/String;
     .registers 3
 

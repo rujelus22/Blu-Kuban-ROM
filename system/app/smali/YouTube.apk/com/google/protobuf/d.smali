@@ -159,7 +159,7 @@
     .line 682
     iget-object v0, p0, Lcom/google/protobuf/d;->e:Ljava/io/InputStream;
 
-    if-nez v0, :cond_5b
+    if-nez v0, :cond_57
 
     move v0, v1
 
@@ -173,7 +173,7 @@
 
     iget v0, p0, Lcom/google/protobuf/d;->b:I
 
-    if-ge v0, v1, :cond_64
+    if-ge v0, v1, :cond_60
 
     .line 684
     :cond_3a
@@ -181,13 +181,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "InputStream#read(byte[]) returned invalid result: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget v2, p0, Lcom/google/protobuf/d;->b:I
 
@@ -210,7 +206,7 @@
     throw v0
 
     .line 682
-    :cond_5b
+    :cond_57
     iget-object v0, p0, Lcom/google/protobuf/d;->e:Ljava/io/InputStream;
 
     iget-object v3, p0, Lcom/google/protobuf/d;->a:[B
@@ -222,16 +218,16 @@
     goto :goto_30
 
     .line 688
-    :cond_64
+    :cond_60
     iget v0, p0, Lcom/google/protobuf/d;->b:I
 
-    if-ne v0, v1, :cond_73
+    if-ne v0, v1, :cond_6f
 
     .line 689
     iput v2, p0, Lcom/google/protobuf/d;->b:I
 
     .line 690
-    if-eqz p1, :cond_71
+    if-eqz p1, :cond_6d
 
     .line 691
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
@@ -240,14 +236,14 @@
 
     throw v0
 
-    :cond_71
+    :cond_6d
     move v0, v2
 
     .line 693
     goto :goto_21
 
     .line 696
-    :cond_73
+    :cond_6f
     invoke-direct {p0}, Lcom/google/protobuf/d;->f()V
 
     .line 697
@@ -264,12 +260,12 @@
     .line 699
     iget v1, p0, Lcom/google/protobuf/d;->k:I
 
-    if-gt v0, v1, :cond_84
+    if-gt v0, v1, :cond_80
 
-    if-gez v0, :cond_89
+    if-gez v0, :cond_85
 
     .line 700
-    :cond_84
+    :cond_80
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->sizeLimitExceeded()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v0
@@ -277,7 +273,7 @@
     throw v0
 
     .line 702
-    :cond_89
+    :cond_85
     const/4 v0, 0x1
 
     goto :goto_21

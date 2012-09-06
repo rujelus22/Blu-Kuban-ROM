@@ -130,7 +130,7 @@
     invoke-virtual {v5, v6, v7}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
     :try_end_33
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_29 .. :try_end_33} :catch_42
-    .catch Ljava/lang/Exception; {:try_start_29 .. :try_end_33} :catch_17a
+    .catch Ljava/lang/Exception; {:try_start_29 .. :try_end_33} :catch_165
 
     .line 58
     :goto_33
@@ -304,15 +304,13 @@
 
     move-result v5
 
-    if-nez v5, :cond_c9
+    if-nez v5, :cond_c6
 
     .line 76
     iget-object v5, p0, Lcom/android/settings/motion/MotionSettings;->mTilt:Landroid/preference/PreferenceScreen;
 
-    invoke-virtual {v4, v5}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 78
-    :cond_c9
+    :cond_c6
     invoke-virtual {p0}, Lcom/android/settings/motion/MotionSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v5
@@ -327,15 +325,13 @@
 
     move-result v5
 
-    if-nez v5, :cond_df
+    if-nez v5, :cond_d9
 
     .line 79
     iget-object v5, p0, Lcom/android/settings/motion/MotionSettings;->mPan:Landroid/preference/PreferenceScreen;
 
-    invoke-virtual {v4, v5}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 81
-    :cond_df
+    :cond_d9
     invoke-virtual {p0}, Lcom/android/settings/motion/MotionSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v5
@@ -350,7 +346,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_ff
+    if-nez v5, :cond_f6
 
     .line 82
     const-string v5, "SPH-D710"
@@ -361,15 +357,13 @@
 
     move-result v5
 
-    if-nez v5, :cond_ff
+    if-nez v5, :cond_f6
 
     .line 83
     iget-object v5, p0, Lcom/android/settings/motion/MotionSettings;->mShake:Landroid/preference/PreferenceScreen;
 
-    invoke-virtual {v4, v5}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 85
-    :cond_ff
+    :cond_f6
     invoke-virtual {p0}, Lcom/android/settings/motion/MotionSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v5
@@ -384,7 +378,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_11a
+    if-eqz v5, :cond_111
 
     const-string v5, "SPH-D710"
 
@@ -394,17 +388,15 @@
 
     move-result v5
 
-    if-eqz v5, :cond_157
+    if-eqz v5, :cond_145
 
     .line 86
-    :cond_11a
+    :cond_111
     iget-object v5, p0, Lcom/android/settings/motion/MotionSettings;->mDoubleTap:Landroid/preference/PreferenceScreen;
 
-    invoke-virtual {v4, v5}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 106
-    :cond_11f
-    :goto_11f
+    :cond_113
+    :goto_113
     invoke-virtual {p0}, Lcom/android/settings/motion/MotionSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v5
@@ -419,15 +411,13 @@
 
     move-result v5
 
-    if-nez v5, :cond_135
+    if-nez v5, :cond_126
 
     .line 107
     iget-object v5, p0, Lcom/android/settings/motion/MotionSettings;->mPickUp:Landroid/preference/PreferenceScreen;
 
-    invoke-virtual {v4, v5}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 109
-    :cond_135
+    :cond_126
     invoke-virtual {p0}, Lcom/android/settings/motion/MotionSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v5
@@ -442,7 +432,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_150
+    if-eqz v5, :cond_141
 
     invoke-virtual {p0}, Lcom/android/settings/motion/MotionSettings;->getActivity()Landroid/app/Activity;
 
@@ -455,20 +445,18 @@
     if-eqz v5, :cond_41
 
     .line 110
-    :cond_150
+    :cond_141
     iget-object v5, p0, Lcom/android/settings/motion/MotionSettings;->mTurnOver:Landroid/preference/PreferenceScreen;
-
-    invoke-virtual {v4, v5}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     goto/16 :goto_41
 
     .line 89
-    :cond_157
+    :cond_145
     const/4 v2, 0x1
 
     .line 94
     .local v2, isVlingoInstalled:Z
-    :try_start_158
+    :try_start_146
     invoke-virtual {p0}, Lcom/android/settings/motion/MotionSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v5
@@ -482,23 +470,21 @@
     const/4 v7, 0x0
 
     invoke-virtual {v5, v6, v7}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
-    :try_end_166
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_158 .. :try_end_166} :catch_16e
-    .catch Ljava/lang/Exception; {:try_start_158 .. :try_end_166} :catch_178
+    :try_end_154
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_146 .. :try_end_154} :catch_159
+    .catch Ljava/lang/Exception; {:try_start_146 .. :try_end_154} :catch_163
 
     .line 101
-    :goto_166
-    if-nez v2, :cond_11f
+    :goto_154
+    if-nez v2, :cond_113
 
     .line 102
     iget-object v5, p0, Lcom/android/settings/motion/MotionSettings;->mDoubleTap:Landroid/preference/PreferenceScreen;
 
-    invoke-virtual {v4, v5}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
-    goto :goto_11f
+    goto :goto_113
 
     .line 96
-    :catch_16e
+    :catch_159
     move-exception v0
 
     .line 97
@@ -513,21 +499,21 @@
     const/4 v2, 0x0
 
     .line 100
-    goto :goto_166
+    goto :goto_154
 
     .line 99
     .end local v0           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    :catch_178
+    :catch_163
     move-exception v5
 
-    goto :goto_166
+    goto :goto_154
 
     .line 55
     .end local v2           #isVlingoInstalled:Z
     .end local v4           #ps:Landroid/preference/PreferenceScreen;
     .restart local v1       #isReadersHubDisabled:Z
     .restart local v3       #mResolver:Landroid/content/ContentResolver;
-    :catch_17a
+    :catch_165
     move-exception v5
 
     goto/16 :goto_33

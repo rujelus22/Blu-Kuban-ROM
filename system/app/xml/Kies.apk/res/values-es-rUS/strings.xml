@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="cable_title">Configuración USB</string>
-    <string name="cable_basic">Configuración predeterminada</string>
-    <string name="cable_list_samsungkies">Samsung Kies</string>
-    <string name="cable_list_movabledisk">Almacenamiento masivo</string>
-    <string name="cable_list_selectmenu">Preguntar al conectarse</string>
-    <string name="sdcard_missing_message">Insertar la tarjeta de memoria</string>
-</resources>

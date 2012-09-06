@@ -1,44 +1,43 @@
 .class Lcom/google/android/maps/c;
-.super Lap/d;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/googlenav/ui/view/n;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/MapsActivity;
+.field final synthetic a:Lcom/google/android/maps/b;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/MapsActivity;Lap/c;)V
-    .registers 3
+.method constructor <init>(Lcom/google/android/maps/b;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/c;->a:Lcom/google/android/maps/MapsActivity;
+    .prologue
+    .line 1183
+    iput-object p1, p0, Lcom/google/android/maps/c;->a:Lcom/google/android/maps/b;
 
-    invoke-direct {p0, p2}, Lap/d;-><init>(Lap/c;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected a()V
-    .registers 5
+.method public a()V
+    .registers 2
 
-    const/4 v0, 0x0
+    .prologue
+    .line 1187
+    iget-object v0, p0, Lcom/google/android/maps/c;->a:Lcom/google/android/maps/b;
 
-    new-instance v1, Lcom/google/android/maps/d;
+    iget-object v0, v0, Lcom/google/android/maps/b;->d:Lcom/google/android/maps/MapsActivity;
 
-    invoke-static {}, Lcom/google/googlenav/bD;->a()Lap/c;
+    #calls: Lcom/google/android/maps/MapsActivity;->onNewFeaturesContentHintClick()V
+    invoke-static {v0}, Lcom/google/android/maps/MapsActivity;->access$900(Lcom/google/android/maps/MapsActivity;)V
 
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/google/android/maps/c;->a:Lcom/google/android/maps/MapsActivity;
-
-    invoke-virtual {v3}, Lcom/google/android/maps/MapsActivity;->i()Lcom/google/googlenav/android/ac;
-
-    move-result-object v3
-
-    invoke-direct {v1, p0, v2, v3, v0}, Lcom/google/android/maps/d;-><init>(Lcom/google/android/maps/c;Lap/c;Lcom/google/googlenav/android/ac;Z)V
-
-    invoke-virtual {v1}, Lcom/google/android/maps/d;->g()V
-
+    .line 1188
     return-void
 .end method

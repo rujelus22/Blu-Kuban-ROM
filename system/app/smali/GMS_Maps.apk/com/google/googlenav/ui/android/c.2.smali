@@ -1,207 +1,61 @@
-.class public Lcom/google/googlenav/ui/android/c;
+.class Lcom/google/googlenav/ui/android/C;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Lcom/google/googlenav/android/l;
+.field final synthetic a:Lcom/google/googlenav/ui/android/BaseAndroidView;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/android/l;)V
+.method constructor <init>(Lcom/google/googlenav/ui/android/BaseAndroidView;)V
     .registers 2
+    .parameter
+
+    .prologue
+    .line 70
+    iput-object p1, p0, Lcom/google/googlenav/ui/android/C;->a:Lcom/google/googlenav/ui/android/BaseAndroidView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/android/c;->a:Lcom/google/googlenav/android/l;
 
     return-void
 .end method
 
-.method public static a(I)I
-    .registers 2
-
-    sparse-switch p0, :sswitch_data_16
-
-    const/4 v0, 0x0
-
-    :goto_4
-    return v0
-
-    :sswitch_5
-    const/4 v0, 0x1
-
-    goto :goto_4
-
-    :sswitch_7
-    const/4 v0, 0x2
-
-    goto :goto_4
-
-    :sswitch_9
-    const/4 v0, 0x3
-
-    goto :goto_4
-
-    :sswitch_b
-    const/4 v0, 0x4
-
-    goto :goto_4
-
-    :sswitch_d
-    const/4 v0, 0x7
-
-    goto :goto_4
-
-    :sswitch_f
-    const/16 v0, 0x8
-
-    goto :goto_4
-
-    :sswitch_12
-    const/16 v0, 0xc
-
-    goto :goto_4
-
-    nop
-
-    :sswitch_data_16
-    .sparse-switch
-        0x4 -> :sswitch_f
-        0x5 -> :sswitch_12
-        0x13 -> :sswitch_5
-        0x14 -> :sswitch_7
-        0x15 -> :sswitch_9
-        0x16 -> :sswitch_b
-        0x17 -> :sswitch_d
-        0x42 -> :sswitch_d
-    .end sparse-switch
-.end method
-
-.method private static b(I)Z
-    .registers 2
-
-    const/4 v0, 0x0
-
-    sparse-switch p0, :sswitch_data_6
-
-    const/4 v0, 0x1
-
-    :sswitch_5
-    return v0
-
-    :sswitch_data_6
-    .sparse-switch
-        0x5 -> :sswitch_5
-        0x52 -> :sswitch_5
-    .end sparse-switch
-.end method
-
 
 # virtual methods
-.method public a(IILandroid/view/KeyEvent;)Z
-    .registers 8
+.method public run()V
+    .registers 3
 
-    invoke-static {p1}, Lcom/google/googlenav/ui/android/c;->b(I)Z
+    .prologue
+    .line 78
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/C;->a:Lcom/google/googlenav/ui/android/BaseAndroidView;
 
-    move-result v0
+    iget-object v0, v0, Lcom/google/googlenav/ui/android/BaseAndroidView;->b:Lcom/google/googlenav/android/i;
 
-    if-nez v0, :cond_8
-
-    const/4 v0, 0x0
-
-    :goto_7
-    return v0
-
-    :cond_8
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/c;->a:Lcom/google/googlenav/android/l;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
+    invoke-virtual {v0}, Lcom/google/googlenav/android/i;->f()Lcom/google/android/maps/MapsActivity;
 
     move-result-object v0
 
-    new-instance v1, Laq/b;
+    .line 79
+    if-eqz v0, :cond_e
 
-    invoke-static {p1}, Lcom/google/googlenav/ui/android/c;->a(I)I
+    .line 80
+    invoke-virtual {v0}, Lcom/google/android/maps/MapsActivity;->screenDrawn()V
 
-    move-result v2
+    .line 85
+    :goto_d
+    return-void
 
-    const/4 v3, 0x1
+    .line 82
+    :cond_e
+    const-string v0, "AndroidView"
 
-    invoke-direct {v1, p1, p1, v2, v3}, Laq/b;-><init>(IIIZ)V
+    const-string v1, "View Activity should be the MapsActivity, but was null"
 
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/D;->b(Laq/b;)Z
+    invoke-static {v0, v1}, LaT/k;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result v0
-
-    goto :goto_7
-.end method
-
-.method public a(ILandroid/view/KeyEvent;)Z
-    .registers 7
-
-    const/4 v0, 0x0
-
-    invoke-static {p1}, Lcom/google/googlenav/ui/android/c;->b(I)Z
-
-    move-result v1
-
-    if-nez v1, :cond_8
-
-    :goto_7
-    return v0
-
-    :cond_8
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/c;->a:Lcom/google/googlenav/android/l;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
-
-    move-result-object v1
-
-    new-instance v2, Laq/b;
-
-    invoke-static {p1}, Lcom/google/googlenav/ui/android/c;->a(I)I
-
-    move-result v3
-
-    invoke-direct {v2, p1, v0, v3, v0}, Laq/b;-><init>(IIIZ)V
-
-    invoke-virtual {v1, v2}, Lcom/google/googlenav/ui/D;->b(Laq/b;)Z
-
-    move-result v0
-
-    goto :goto_7
-.end method
-
-.method public b(ILandroid/view/KeyEvent;)Z
-    .registers 7
-
-    const/4 v3, 0x0
-
-    invoke-static {p1}, Lcom/google/googlenav/ui/android/c;->b(I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_8
-
-    :goto_7
-    return v3
-
-    :cond_8
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/c;->a:Lcom/google/googlenav/android/l;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
-
-    move-result-object v0
-
-    new-instance v1, Laq/b;
-
-    invoke-static {p1}, Lcom/google/googlenav/ui/android/c;->a(I)I
-
-    move-result v2
-
-    invoke-direct {v1, p1, p1, v2, v3}, Laq/b;-><init>(IIIZ)V
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/D;->a(Laq/b;)V
-
-    goto :goto_7
+    goto :goto_d
 .end method

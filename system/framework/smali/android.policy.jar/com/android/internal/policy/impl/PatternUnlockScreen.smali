@@ -17,7 +17,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final MIN_PATTERN_BEFORE_POKE_WAKELOCK:I = 0x2
 

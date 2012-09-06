@@ -27,20 +27,20 @@
     .registers 2
 
     .prologue
-    .line 20220
+    .line 20785
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 20225
+    .line 20790
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;->retrieveFullHistory_:Z
 
-    .line 20256
+    .line 20822
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;->cachedSize:I
 
-    .line 20220
+    .line 20785
     return-void
 .end method
 
@@ -50,15 +50,15 @@
     .registers 2
 
     .prologue
-    .line 20258
+    .line 20825
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 20260
+    .line 20827
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;->getSerializedSize()I
 
-    .line 20262
+    .line 20829
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;->cachedSize:I
 
@@ -69,7 +69,7 @@
     .registers 2
 
     .prologue
-    .line 20226
+    .line 20791
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;->retrieveFullHistory_:Z
 
     return v0
@@ -79,10 +79,10 @@
     .registers 4
 
     .prologue
-    .line 20266
+    .line 20834
     const/4 v0, 0x0
 
-    .line 20267
+    .line 20835
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;->hasRetrieveFullHistory()Z
 
@@ -90,7 +90,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 20268
+    .line 20836
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;->getRetrieveFullHistory()Z
@@ -103,11 +103,11 @@
 
     add-int/2addr v0, v1
 
-    .line 20271
+    .line 20839
     :cond_11
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;->cachedSize:I
 
-    .line 20272
+    .line 20840
     return v0
 .end method
 
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 20227
+    .line 20792
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;->hasRetrieveFullHistory:Z
 
     return v0
@@ -131,29 +131,29 @@
     .end annotation
 
     .prologue
-    .line 20279
+    .line 20848
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 20280
+    .line 20849
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_16
 
-    .line 20284
+    .line 20853
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 20285
+    .line 20854
     :sswitch_d
     return-object p0
 
-    .line 20290
+    .line 20859
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 20280
+    .line 20849
     :sswitch_data_16
     .sparse-switch
         0x0 -> :sswitch_d
@@ -181,7 +181,7 @@
     .end annotation
 
     .prologue
-    .line 20218
+    .line 20783
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;
 
     move-result-object v0
@@ -194,15 +194,15 @@
     .parameter "value"
 
     .prologue
-    .line 20229
+    .line 20794
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;->hasRetrieveFullHistory:Z
 
-    .line 20230
+    .line 20795
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;->retrieveFullHistory_:Z
 
-    .line 20231
+    .line 20796
     return-object p0
 .end method
 
@@ -216,14 +216,14 @@
     .end annotation
 
     .prologue
-    .line 20251
+    .line 20817
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;->hasRetrieveFullHistory()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 20252
+    .line 20818
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;->getRetrieveFullHistory()Z
@@ -232,7 +232,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 20254
+    .line 20820
     :cond_e
     return-void
 .end method

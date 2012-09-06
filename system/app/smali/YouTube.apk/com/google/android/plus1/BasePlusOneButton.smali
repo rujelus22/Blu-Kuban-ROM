@@ -26,7 +26,7 @@
 
 .field private k:Z
 
-.field private l:Lcom/google/android/plus1/ap;
+.field private l:Lcom/google/android/plus1/aq;
 
 .field private m:Z
 
@@ -44,26 +44,42 @@
 
 
 # direct methods
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 78
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lcom/google/android/plus1/BasePlusOneButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    .line 79
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 4
+    .registers 5
     .parameter
     .parameter
 
     .prologue
+    const/4 v1, 0x0
+
     .line 82
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 84
     new-instance v0, Lcom/google/android/plus1/f;
 
-    invoke-direct {v0, p0}, Lcom/google/android/plus1/f;-><init>(Lcom/google/android/plus1/BasePlusOneButton;)V
+    invoke-direct {v0, p0, v1}, Lcom/google/android/plus1/f;-><init>(Lcom/google/android/plus1/BasePlusOneButton;B)V
 
     iput-object v0, p0, Lcom/google/android/plus1/BasePlusOneButton;->a:Lcom/google/android/plus1/ac;
 
     .line 85
     new-instance v0, Lcom/google/android/plus1/e;
 
-    invoke-direct {v0, p0}, Lcom/google/android/plus1/e;-><init>(Lcom/google/android/plus1/BasePlusOneButton;)V
+    invoke-direct {v0, p0, v1}, Lcom/google/android/plus1/e;-><init>(Lcom/google/android/plus1/BasePlusOneButton;B)V
 
     iput-object v0, p0, Lcom/google/android/plus1/BasePlusOneButton;->b:Lcom/google/android/plus1/ac;
 
@@ -77,14 +93,14 @@
     .line 87
     new-instance v0, Lcom/google/android/plus1/d;
 
-    invoke-direct {v0, p0}, Lcom/google/android/plus1/d;-><init>(Lcom/google/android/plus1/BasePlusOneButton;)V
+    invoke-direct {v0, p0, v1}, Lcom/google/android/plus1/d;-><init>(Lcom/google/android/plus1/BasePlusOneButton;B)V
 
     iput-object v0, p0, Lcom/google/android/plus1/BasePlusOneButton;->d:Landroid/view/View$OnClickListener;
 
     .line 88
     new-instance v0, Lcom/google/android/plus1/g;
 
-    invoke-direct {v0, p0}, Lcom/google/android/plus1/g;-><init>(Lcom/google/android/plus1/BasePlusOneButton;)V
+    invoke-direct {v0, p0, v1}, Lcom/google/android/plus1/g;-><init>(Lcom/google/android/plus1/BasePlusOneButton;B)V
 
     iput-object v0, p0, Lcom/google/android/plus1/BasePlusOneButton;->e:Landroid/view/View$OnClickListener;
 
@@ -92,14 +108,14 @@
     return-void
 .end method
 
-.method static synthetic a(Lcom/google/android/plus1/BasePlusOneButton;Lcom/google/android/plus1/ap;)Lcom/google/android/plus1/ap;
+.method static synthetic a(Lcom/google/android/plus1/BasePlusOneButton;Lcom/google/android/plus1/aq;)Lcom/google/android/plus1/aq;
     .registers 2
     .parameter
     .parameter
 
     .prologue
     .line 49
-    iput-object p1, p0, Lcom/google/android/plus1/BasePlusOneButton;->l:Lcom/google/android/plus1/ap;
+    iput-object p1, p0, Lcom/google/android/plus1/BasePlusOneButton;->l:Lcom/google/android/plus1/aq;
 
     return-object p1
 .end method
@@ -233,9 +249,9 @@
 
     if-eqz v0, :cond_1b
 
-    const-string v0, "user has not authorized +1, using default controller."
+    const-string v0, "User has not authorized +1, using default controller."
 
-    invoke-static {v0}, Lcom/google/android/plus1/c;->b(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/plus1/c;->a(Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -343,7 +359,7 @@
 
     .line 304
     :cond_31
-    iput-object v3, p0, Lcom/google/android/plus1/BasePlusOneButton;->l:Lcom/google/android/plus1/ap;
+    iput-object v3, p0, Lcom/google/android/plus1/BasePlusOneButton;->l:Lcom/google/android/plus1/aq;
 
     .line 305
     iput-boolean v4, p0, Lcom/google/android/plus1/BasePlusOneButton;->m:Z
@@ -431,7 +447,7 @@
 
     iget-object v0, p0, Lcom/google/android/plus1/BasePlusOneButton;->h:Ljava/lang/String;
 
-    invoke-static {v0, p1}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -516,13 +532,13 @@
     return v0
 .end method
 
-.method static synthetic d(Lcom/google/android/plus1/BasePlusOneButton;)Lcom/google/android/plus1/ap;
+.method static synthetic d(Lcom/google/android/plus1/BasePlusOneButton;)Lcom/google/android/plus1/aq;
     .registers 2
     .parameter
 
     .prologue
     .line 49
-    iget-object v0, p0, Lcom/google/android/plus1/BasePlusOneButton;->l:Lcom/google/android/plus1/ap;
+    iget-object v0, p0, Lcom/google/android/plus1/BasePlusOneButton;->l:Lcom/google/android/plus1/aq;
 
     return-object v0
 .end method
@@ -820,7 +836,7 @@
 
     .line 353
     :cond_24
-    iget-object v2, p0, Lcom/google/android/plus1/BasePlusOneButton;->l:Lcom/google/android/plus1/ap;
+    iget-object v2, p0, Lcom/google/android/plus1/BasePlusOneButton;->l:Lcom/google/android/plus1/aq;
 
     if-eqz v2, :cond_2c
 
@@ -841,9 +857,9 @@
     iput-boolean v0, p0, Lcom/google/android/plus1/BasePlusOneButton;->o:Z
 
     .line 357
-    iget-object v2, p0, Lcom/google/android/plus1/BasePlusOneButton;->l:Lcom/google/android/plus1/ap;
+    iget-object v2, p0, Lcom/google/android/plus1/BasePlusOneButton;->l:Lcom/google/android/plus1/aq;
 
-    iget-object v2, v2, Lcom/google/android/plus1/ap;->a:Ljava/lang/Boolean;
+    iget-object v2, v2, Lcom/google/android/plus1/aq;->a:Ljava/lang/Boolean;
 
     invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -940,12 +956,12 @@
     .line 204
     const-string v0, "activity cannot be null"
 
-    invoke-static {p1, v0}, Lcom/google/common/base/t;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 205
     const-string v0, "uri cannot be null"
 
-    invoke-static {p2, v0}, Lcom/google/common/base/t;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 206
     iput-object p1, p0, Lcom/google/android/plus1/BasePlusOneButton;->f:Landroid/app/Activity;
@@ -957,18 +973,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_2b
 
     .line 208
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "PlusOneButton received a new URI: "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -987,7 +999,7 @@
     invoke-direct {p0}, Lcom/google/android/plus1/BasePlusOneButton;->j()V
 
     .line 212
-    :cond_2f
+    :cond_2b
     return-void
 .end method
 
@@ -1007,7 +1019,7 @@
 
     const-string v1, "gotUsername should not be called without calling start."
 
-    invoke-static {v0, v1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 253
     if-nez p1, :cond_1f

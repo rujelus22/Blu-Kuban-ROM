@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 105
+    .line 113
     iput-object p1, p0, Lcom/google/android/finsky/layout/SongSnippet$3;->this$0:Lcom/google/android/finsky/layout/SongSnippet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 
     const/4 v7, 0x1
 
-    .line 108
+    .line 116
     iget-object v2, p0, Lcom/google/android/finsky/layout/SongSnippet$3;->this$0:Lcom/google/android/finsky/layout/SongSnippet;
 
     invoke-virtual {v2}, Lcom/google/android/finsky/layout/SongSnippet;->getContext()Landroid/content/Context;
@@ -64,7 +64,7 @@
 
     move-result-object v0
 
-    .line 109
+    .line 117
     .local v0, intent:Landroid/content/Intent;
     iget-object v2, p0, Lcom/google/android/finsky/layout/SongSnippet$3;->this$0:Lcom/google/android/finsky/layout/SongSnippet;
 
@@ -72,7 +72,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f07014b
+    const v3, 0x7f070186
 
     new-array v4, v7, [Ljava/lang/Object;
 
@@ -95,7 +95,7 @@
 
     move-result-object v1
 
-    .line 111
+    .line 119
     .local v1, title:Ljava/lang/String;
     iget-object v2, p0, Lcom/google/android/finsky/layout/SongSnippet$3;->this$0:Lcom/google/android/finsky/layout/SongSnippet;
 
@@ -109,7 +109,7 @@
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 112
+    .line 120
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v2
@@ -149,6 +149,6 @@
 
     invoke-interface {v2, v8, v8, v3}, Lcom/google/android/finsky/analytics/Analytics;->logPageView(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 114
+    .line 122
     return v7
 .end method

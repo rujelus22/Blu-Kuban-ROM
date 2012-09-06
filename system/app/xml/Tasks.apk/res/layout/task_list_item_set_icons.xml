@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="right" android:orientation="vertical" android:id="@id/task_list_item_set_icons" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="2.0"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/priority" android:layout_width="@dimen/priority_image_size_1" android:layout_height="@dimen/priority_image_size_1" android:layout_marginLeft="10.0dip" android:layout_marginTop="16.699982dip" />
-    <LinearLayout android:gravity="right" android:orientation="horizontal" android:id="@id/reminder_dday_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
-        <ImageView android:id="@id/reminder" android:background="@drawable/reminder_selector" android:layout_width="@dimen/reminder_image_size_1" android:layout_height="@dimen/reminder_image_size_1" android:layout_marginTop="6.029999dip" />
-        <TextView android:textSize="14.069977dip" android:textColor="@drawable/list_text_secondary" android:id="@id/dday" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.019989dip" android:layout_marginTop="2.0299988dip" />
-    </LinearLayout>
-</LinearLayout>

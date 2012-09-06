@@ -26,12 +26,12 @@
     .parameter
 
     .prologue
-    .line 476
+    .line 355
     iput-object p1, p0, Lcom/android/email/RefreshManager$ControllerResult;->this$0:Lcom/android/email/RefreshManager;
 
     invoke-direct {p0}, Lcom/android/email/Controller$Result;-><init>()V
 
-    .line 477
+    .line 356
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/email/RefreshManager$ControllerResult;->mSendMailExceptionReported:Z
@@ -45,7 +45,7 @@
     .parameter "x1"
 
     .prologue
-    .line 476
+    .line 355
     invoke-direct {p0, p1}, Lcom/android/email/RefreshManager$ControllerResult;-><init>(Lcom/android/email/RefreshManager;)V
 
     return-void
@@ -60,7 +60,7 @@
     .parameter "dontUseNumNewMessages"
 
     .prologue
-    .line 542
+    .line 420
     iget-object v0, p0, Lcom/android/email/RefreshManager$ControllerResult;->this$0:Lcom/android/email/RefreshManager;
 
     #getter for: Lcom/android/email/RefreshManager;->mMessageListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
@@ -81,26 +81,10 @@
 
     invoke-virtual {v0, p1, p6, v1}, Lcom/android/email/RefreshManager$Status;->onCallback(Lcom/android/emailcommon/mail/MessagingException;ILcom/android/email/Clock;)V
 
-    .line 543
-    if-eqz p1, :cond_31
+    .line 421
+    if-eqz p1, :cond_26
 
-    .line 545
-    invoke-virtual {p1}, Lcom/android/emailcommon/mail/MessagingException;->getExceptionType()I
-
-    move-result v0
-
-    invoke-static {v0}, Lcom/android/emailcommon/mail/MessagingException;->isError(I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_20
-
-    .line 553
-    :goto_1f
-    return-void
-
-    .line 549
-    :cond_20
+    .line 422
     iget-object v0, p0, Lcom/android/email/RefreshManager$ControllerResult;->this$0:Lcom/android/email/RefreshManager;
 
     iget-object v1, p0, Lcom/android/email/RefreshManager$ControllerResult;->this$0:Lcom/android/email/RefreshManager;
@@ -121,14 +105,15 @@
     #calls: Lcom/android/email/RefreshManager;->reportError(JJLjava/lang/String;)V
     invoke-static/range {v0 .. v5}, Lcom/android/email/RefreshManager;->access$500(Lcom/android/email/RefreshManager;JJLjava/lang/String;)V
 
-    .line 552
-    :cond_31
+    .line 425
+    :cond_26
     iget-object v0, p0, Lcom/android/email/RefreshManager$ControllerResult;->this$0:Lcom/android/email/RefreshManager;
 
     #calls: Lcom/android/email/RefreshManager;->notifyRefreshStatusChanged(JJ)V
     invoke-static {v0, p2, p3, p4, p5}, Lcom/android/email/RefreshManager;->access$600(Lcom/android/email/RefreshManager;JJ)V
 
-    goto :goto_1f
+    .line 426
+    return-void
 .end method
 
 
@@ -143,7 +128,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 566
+    .line 442
     if-nez p6, :cond_b
 
     const-wide/16 v0, -0x1
@@ -152,10 +137,10 @@
 
     if-nez v0, :cond_b
 
-    .line 567
+    .line 443
     iput-boolean v6, p0, Lcom/android/email/RefreshManager$ControllerResult;->mSendMailExceptionReported:Z
 
-    .line 569
+    .line 445
     :cond_b
     if-eqz p1, :cond_25
 
@@ -163,12 +148,12 @@
 
     if-nez v0, :cond_25
 
-    .line 571
+    .line 447
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/email/RefreshManager$ControllerResult;->mSendMailExceptionReported:Z
 
-    .line 572
+    .line 448
     iget-object v0, p0, Lcom/android/email/RefreshManager$ControllerResult;->this$0:Lcom/android/email/RefreshManager;
 
     iget-object v1, p0, Lcom/android/email/RefreshManager$ControllerResult;->this$0:Lcom/android/email/RefreshManager;
@@ -189,16 +174,16 @@
     #calls: Lcom/android/email/RefreshManager;->reportError(JJLjava/lang/String;)V
     invoke-static/range {v0 .. v5}, Lcom/android/email/RefreshManager;->access$500(Lcom/android/email/RefreshManager;JJLjava/lang/String;)V
 
-    .line 575
+    .line 451
     :cond_25
     const/16 v0, 0x64
 
     if-ne p6, v0, :cond_2b
 
-    .line 576
+    .line 452
     iput-boolean v6, p0, Lcom/android/email/RefreshManager$ControllerResult;->mSendMailExceptionReported:Z
 
-    .line 578
+    .line 454
     :cond_2b
     return-void
 .end method
@@ -212,7 +197,7 @@
     .parameter "tag"
 
     .prologue
-    .line 535
+    .line 414
     const/4 v7, 0x0
 
     move-object v0, p0
@@ -227,20 +212,33 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/email/RefreshManager$ControllerResult;->updateMailboxCallbackInternal(Lcom/android/emailcommon/mail/MessagingException;JJII)V
 
-    .line 536
+    .line 415
     return-void
 .end method
 
-.method public updateMailboxCallback(Lcom/android/emailcommon/mail/MessagingException;JJII)V
-    .registers 16
+.method public updateMailboxCallback(Lcom/android/emailcommon/mail/MessagingException;JJIILjava/util/ArrayList;)V
+    .registers 17
     .parameter "exception"
     .parameter "accountId"
     .parameter "mailboxId"
     .parameter "progress"
     .parameter "dontUseNumNewMessages"
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/android/emailcommon/mail/MessagingException;",
+            "JJII",
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/Long;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 515
+    .line 395
+    .local p8, addedMessages:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
     const/4 v7, 0x0
 
     move-object v0, p0
@@ -255,7 +253,7 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/email/RefreshManager$ControllerResult;->updateMailboxCallbackInternal(Lcom/android/emailcommon/mail/MessagingException;JJII)V
 
-    .line 519
+    .line 396
     return-void
 .end method
 
@@ -268,7 +266,7 @@
     .prologue
     const-wide/16 v3, -0x1
 
-    .line 497
+    .line 376
     iget-object v0, p0, Lcom/android/email/RefreshManager$ControllerResult;->this$0:Lcom/android/email/RefreshManager;
 
     #getter for: Lcom/android/email/RefreshManager;->mMailboxListStatus:Lcom/android/email/RefreshManager$RefreshStatusMap;
@@ -289,10 +287,10 @@
 
     invoke-virtual {v0, p1, p4, v1}, Lcom/android/email/RefreshManager$Status;->onCallback(Lcom/android/emailcommon/mail/MessagingException;ILcom/android/email/Clock;)V
 
-    .line 498
+    .line 377
     if-eqz p1, :cond_27
 
-    .line 499
+    .line 378
     iget-object v0, p0, Lcom/android/email/RefreshManager$ControllerResult;->this$0:Lcom/android/email/RefreshManager;
 
     iget-object v1, p0, Lcom/android/email/RefreshManager$ControllerResult;->this$0:Lcom/android/email/RefreshManager;
@@ -311,13 +309,13 @@
     #calls: Lcom/android/email/RefreshManager;->reportError(JJLjava/lang/String;)V
     invoke-static/range {v0 .. v5}, Lcom/android/email/RefreshManager;->access$500(Lcom/android/email/RefreshManager;JJLjava/lang/String;)V
 
-    .line 502
+    .line 381
     :cond_27
     iget-object v0, p0, Lcom/android/email/RefreshManager$ControllerResult;->this$0:Lcom/android/email/RefreshManager;
 
     #calls: Lcom/android/email/RefreshManager;->notifyRefreshStatusChanged(JJ)V
     invoke-static {v0, p2, p3, v3, v4}, Lcom/android/email/RefreshManager;->access$600(Lcom/android/email/RefreshManager;JJ)V
 
-    .line 503
+    .line 382
     return-void
 .end method

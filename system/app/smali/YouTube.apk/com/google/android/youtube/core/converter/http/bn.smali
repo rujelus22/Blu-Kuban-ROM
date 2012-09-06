@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 90
+    .line 84
     invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
     return-void
@@ -16,29 +16,54 @@
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 87
+    new-instance v0, Lcom/google/android/youtube/core/model/Video$Builder;
+
+    invoke-direct {v0}, Lcom/google/android/youtube/core/model/Video$Builder;-><init>()V
+
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->offer(Ljava/lang/Object;)Z
+
+    .line 88
+    return-void
+.end method
+
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
     .registers 6
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 93
-    const-class v0, Lcom/google/android/youtube/core/model/Playlist$Builder;
+    .line 91
+    const-class v0, Lcom/google/android/youtube/core/model/Video$Builder;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->b(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/Playlist$Builder;
+    check-cast v0, Lcom/google/android/youtube/core/model/Video$Builder;
 
-    const/4 v1, 0x0
+    .line 92
+    const-class v1, Lcom/google/android/youtube/core/model/LiveEvent$Builder;
 
-    invoke-static {p3, v1}, Lcom/google/android/youtube/core/utils/Util;->a(Ljava/lang/String;I)I
+    invoke-virtual {p1, v1}, Lcom/google/android/youtube/core/utils/x;->a(Ljava/lang/Class;)Ljava/lang/Object;
 
-    move-result v1
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Playlist$Builder;->size(I)Lcom/google/android/youtube/core/model/Playlist$Builder;
+    check-cast v1, Lcom/google/android/youtube/core/model/LiveEvent$Builder;
+
+    .line 93
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/model/Video$Builder;->build()Lcom/google/android/youtube/core/model/Video;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lcom/google/android/youtube/core/model/LiveEvent$Builder;->video(Lcom/google/android/youtube/core/model/Video;)Lcom/google/android/youtube/core/model/LiveEvent$Builder;
 
     .line 94
     return-void

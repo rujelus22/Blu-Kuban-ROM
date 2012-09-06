@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <View android:background="@drawable/divider_horizontal_dark_opaque" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <TextView android:textAppearance="@style/TwTextAppearanceListTwoLineSecondary" android:textSize="16.0dip" android:id="@id/history_view_comment_receiver_textView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="13.329987dip" android:layout_marginTop="10.669983dip" android:layout_marginRight="13.329987dip" android:layout_marginBottom="10.669983dip" />
-    <View android:background="@drawable/divider_horizontal_dark_opaque" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-</LinearLayout>

@@ -1,20 +1,17 @@
-.class Lcom/google/android/maps/driveabout/app/x;
+.class final Lcom/google/android/maps/driveabout/app/X;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+.implements Ljava/util/Comparator;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/DestinationActivity;)V
-    .registers 2
+.method constructor <init>()V
+    .registers 1
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/x;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
-
+    .prologue
+    .line 210
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -22,24 +19,44 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 6
+.method public a(Lcom/google/android/maps/driveabout/app/W;Lcom/google/android/maps/driveabout/app/W;)I
+    .registers 5
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/x;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+    .prologue
+    .line 213
+    invoke-virtual {p1}, Lcom/google/android/maps/driveabout/app/W;->i()F
 
-    const/4 v1, 0x1
+    move-result v0
 
-    invoke-static {v0, v1}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->b(Lcom/google/android/maps/driveabout/app/DestinationActivity;Z)Z
+    .line 214
+    invoke-virtual {p2}, Lcom/google/android/maps/driveabout/app/W;->i()F
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/x;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+    move-result v1
 
-    new-instance v1, Landroid/content/Intent;
+    .line 215
+    invoke-static {v0, v1}, Ljava/lang/Float;->compare(FF)I
 
-    const-string v2, "android.settings.LOCATION_SOURCE_SETTINGS"
+    move-result v0
 
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    return v0
+.end method
 
-    invoke-static {v0, v1}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->a(Lcom/google/android/maps/driveabout/app/DestinationActivity;Landroid/content/Intent;)V
+.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .registers 4
+    .parameter
+    .parameter
 
-    return-void
+    .prologue
+    .line 210
+    check-cast p1, Lcom/google/android/maps/driveabout/app/W;
+
+    check-cast p2, Lcom/google/android/maps/driveabout/app/W;
+
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/maps/driveabout/app/X;->a(Lcom/google/android/maps/driveabout/app/W;Lcom/google/android/maps/driveabout/app/W;)I
+
+    move-result v0
+
+    return v0
 .end method

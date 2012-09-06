@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:focusable="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="-1.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:background="@drawable/message_list_selector_header_btn" android:duplicateParentState="true" android:layout_width="@dimen/action_bar_mailbox_special_button_width" android:layout_height="@dimen/action_bar_mailbox_special_button_height" android:layout_centerInParent="true">
-        <ImageView android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/email_ic_cab_done" />
-        <TextView android:textSize="@dimen/action_bar_mailbox_button_text_size" android:textColor="@color/tft_color1" android:ellipsize="marquee" android:gravity="center" android:fadingEdge="horizontal" android:fadingEdgeLength="5.0dip" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/done_action" android:singleLine="true" android:shadowColor="@color/message_list_shadow_color" android:shadowDx="-1.0" android:shadowDy="-1.0" android:shadowRadius="0.2" />
-    </LinearLayout>
-</LinearLayout>

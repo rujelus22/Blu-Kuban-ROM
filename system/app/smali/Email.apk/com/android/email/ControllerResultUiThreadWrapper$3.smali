@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/ControllerResultUiThreadWrapper;->loadMessageForViewCallback(Lcom/android/emailcommon/mail/MessagingException;JJI)V
+    value = Lcom/android/email/ControllerResultUiThreadWrapper;->sendMailCallback(Lcom/android/emailcommon/mail/MessagingException;JJI)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 96
+    .line 90
     .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper$3;,"Lcom/android/email/ControllerResultUiThreadWrapper.3;"
     iput-object p1, p0, Lcom/android/email/ControllerResultUiThreadWrapper$3;->this$0:Lcom/android/email/ControllerResultUiThreadWrapper;
 
@@ -51,7 +51,7 @@
 
     iput p7, p0, Lcom/android/email/ControllerResultUiThreadWrapper$3;->val$progress:I
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -62,7 +62,7 @@
     .registers 8
 
     .prologue
-    .line 98
+    .line 92
     .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper$3;,"Lcom/android/email/ControllerResultUiThreadWrapper.3;"
     iget-object v0, p0, Lcom/android/email/ControllerResultUiThreadWrapper$3;->this$0:Lcom/android/email/ControllerResultUiThreadWrapper;
 
@@ -72,11 +72,11 @@
 
     if-nez v0, :cond_9
 
-    .line 101
+    .line 94
     :goto_8
     return-void
 
-    .line 100
+    .line 93
     :cond_9
     iget-object v0, p0, Lcom/android/email/ControllerResultUiThreadWrapper$3;->this$0:Lcom/android/email/ControllerResultUiThreadWrapper;
 
@@ -93,7 +93,7 @@
 
     iget v6, p0, Lcom/android/email/ControllerResultUiThreadWrapper$3;->val$progress:I
 
-    invoke-virtual/range {v0 .. v6}, Lcom/android/email/Controller$Result;->loadMessageForViewCallback(Lcom/android/emailcommon/mail/MessagingException;JJI)V
+    invoke-virtual/range {v0 .. v6}, Lcom/android/email/Controller$Result;->sendMailCallback(Lcom/android/emailcommon/mail/MessagingException;JJI)V
 
     goto :goto_8
 .end method

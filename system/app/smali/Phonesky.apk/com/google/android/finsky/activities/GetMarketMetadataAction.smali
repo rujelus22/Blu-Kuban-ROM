@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 35
+    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -21,7 +21,7 @@
     .parameter "x2"
 
     .prologue
-    .line 35
+    .line 34
     invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/activities/GetMarketMetadataAction;->showWarningIfNecessary(Landroid/content/Context;Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;)V
 
     return-void
@@ -33,10 +33,10 @@
     .parameter "response"
 
     .prologue
-    .line 122
+    .line 120
     const/4 v6, 0x0
 
-    .line 126
+    .line 124
     .local v6, toShowWarning:Z
     sget-object v8, Lcom/google/android/finsky/utils/VendingPreferences;->LAST_METADATA_WARNING_TIMESTAMP:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
@@ -50,13 +50,13 @@
 
     move-result-wide v4
 
-    .line 127
+    .line 125
     .local v4, lastTimestamp:J
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 128
+    .line 126
     .local v0, current:J
     const-wide/16 v8, 0x0
 
@@ -64,15 +64,15 @@
 
     if-nez v8, :cond_30
 
-    .line 129
+    .line 127
     const/4 v6, 0x1
 
-    .line 137
+    .line 135
     :cond_18
     :goto_18
     if-eqz v6, :cond_2f
 
-    .line 138
+    .line 136
     sget-object v8, Lcom/google/android/finsky/utils/VendingPreferences;->LAST_METADATA_WARNING_TIMESTAMP:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -81,12 +81,12 @@
 
     invoke-virtual {v8, v9}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->put(Ljava/lang/Object;)V
 
-    .line 139
+    .line 137
     invoke-virtual {p2}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getWarningMessage()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 140
+    .line 138
     .local v7, warningMessage:Ljava/lang/String;
     const/4 v8, 0x1
 
@@ -96,12 +96,12 @@
 
     invoke-virtual {v8}, Landroid/widget/Toast;->show()V
 
-    .line 142
+    .line 140
     .end local v7           #warningMessage:Ljava/lang/String;
     :cond_2f
     return-void
 
-    .line 131
+    .line 129
     :cond_30
     sget-object v8, Lcom/google/android/finsky/config/G;->vendingWarningMessageFrequencyMs:Lcom/google/android/finsky/config/GservicesValue;
 
@@ -115,7 +115,7 @@
 
     move-result-wide v2
 
-    .line 132
+    .line 130
     .local v2, frequency:J
     add-long v8, v4, v2
 
@@ -123,7 +123,7 @@
 
     if-gez v8, :cond_18
 
-    .line 133
+    .line 131
     const/4 v6, 0x1
 
     goto :goto_18
@@ -152,13 +152,13 @@
     .end annotation
 
     .prologue
-    .line 42
+    .line 41
     .local p3, listener:Lcom/android/volley/Response$Listener;,"Lcom/android/volley/Response$Listener<Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;>;"
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;-><init>()V
 
-    .line 43
+    .line 42
     .local v1, request:Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;
     invoke-static {}, Lcom/google/android/finsky/utils/DeviceConfigurationHelper;->getDeviceConfiguration()Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
 
@@ -166,7 +166,7 @@
 
     invoke-virtual {v1, v2}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->setDeviceConfiguration(Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;
 
-    .line 46
+    .line 45
     const-string v2, "phone"
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -175,7 +175,7 @@
 
     check-cast v11, Landroid/telephony/TelephonyManager;
 
-    .line 48
+    .line 47
     .local v11, telephonyManager:Landroid/telephony/TelephonyManager;
     invoke-virtual {v11}, Landroid/telephony/TelephonyManager;->isNetworkRoaming()Z
 
@@ -183,7 +183,7 @@
 
     invoke-virtual {v1, v2}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->setDeviceRoaming(Z)Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;
 
-    .line 52
+    .line 51
     :try_start_1b
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -199,11 +199,11 @@
 
     move-result-object v8
 
-    .line 55
+    .line 54
     .local v8, marketPackageInfo:Landroid/content/pm/PackageInfo;
     iget-object v10, v8, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
 
-    .line 56
+    .line 55
     .local v10, signatures:[Landroid/content/pm/Signature;
     const/4 v7, 0x0
 
@@ -213,14 +213,14 @@
 
     if-ge v7, v2, :cond_40
 
-    .line 57
+    .line 56
     aget-object v2, v10, v7
 
     invoke-virtual {v2}, Landroid/content/pm/Signature;->toByteArray()[B
 
     move-result-object v9
 
-    .line 58
+    .line 57
     .local v9, signature:[B
     invoke-static {v9}, Lcom/google/android/finsky/utils/Md5Util;->secureHash([B)Ljava/lang/String;
 
@@ -230,12 +230,12 @@
     :try_end_3c
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1b .. :try_end_3c} :catch_3f
 
-    .line 56
+    .line 55
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_2c
 
-    .line 60
+    .line 59
     .end local v7           #i:I
     .end local v8           #marketPackageInfo:Landroid/content/pm/PackageInfo;
     .end local v9           #signature:[B
@@ -243,35 +243,35 @@
     :catch_3f
     move-exception v2
 
-    .line 63
+    .line 62
     :cond_40
     sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->setDeviceModelName(Ljava/lang/String;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;
 
-    .line 64
+    .line 63
     sget-object v2, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->setDeviceManufacturerName(Ljava/lang/String;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;
 
-    .line 66
+    .line 65
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v6
 
-    .line 67
+    .line 66
     .local v6, app:Lcom/google/android/finsky/FinskyApp;
     invoke-virtual {v6, p2}, Lcom/google/android/finsky/FinskyApp;->getVendingApi(Ljava/lang/String;)Lcom/google/android/vending/remoting/api/VendingApi;
 
     move-result-object v0
 
-    .line 69
+    .line 68
     .local v0, vendingApi:Lcom/google/android/vending/remoting/api/VendingApi;
     new-instance v4, Lcom/google/android/finsky/activities/GetMarketMetadataAction$1;
 
     invoke-direct {v4, p0, p2, p1, p3}, Lcom/google/android/finsky/activities/GetMarketMetadataAction$1;-><init>(Lcom/google/android/finsky/activities/GetMarketMetadataAction;Ljava/lang/String;Landroid/content/Context;Lcom/android/volley/Response$Listener;)V
 
-    .line 89
+    .line 87
     .local v4, wrapListener:Lcom/android/volley/Response$Listener;,"Lcom/android/volley/Response$Listener<Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;>;"
     invoke-virtual {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getDeviceConfiguration()Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
 
@@ -293,7 +293,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/android/vending/remoting/api/VendingApi;->getMetadata(Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;IILcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 92
+    .line 90
     return-void
 .end method
 
@@ -305,21 +305,21 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 98
+    .line 96
     invoke-static {}, Lcom/google/android/finsky/utils/Utils;->ensureNotOnMainThread()V
 
-    .line 100
+    .line 98
     new-instance v1, Ljava/util/concurrent/Semaphore;
 
     invoke-direct {v1, v4}, Ljava/util/concurrent/Semaphore;-><init>(I)V
 
-    .line 101
+    .line 99
     .local v1, sem:Ljava/util/concurrent/Semaphore;
     const/4 v2, 0x1
 
     new-array v0, v2, [Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;
 
-    .line 104
+    .line 102
     .local v0, responseProto:[Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;
     new-instance v2, Lcom/google/android/finsky/activities/GetMarketMetadataAction$2;
 
@@ -331,10 +331,10 @@
 
     invoke-virtual {p0, p1, p2, v2, v3}, Lcom/google/android/finsky/activities/GetMarketMetadataAction;->run(Landroid/content/Context;Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 117
+    .line 115
     invoke-virtual {v1}, Ljava/util/concurrent/Semaphore;->acquireUninterruptibly()V
 
-    .line 118
+    .line 116
     aget-object v2, v0, v4
 
     return-object v2

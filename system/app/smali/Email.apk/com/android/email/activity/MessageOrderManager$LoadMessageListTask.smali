@@ -1,5 +1,5 @@
 .class Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;
-.super Landroid/os/AsyncTask;
+.super Lcom/android/emailcommon/utility/EmailAsyncTask;
 .source "MessageOrderManager.java"
 
 
@@ -15,7 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroid/os/AsyncTask",
+        "Lcom/android/emailcommon/utility/EmailAsyncTask",
         "<",
         "Ljava/lang/Void;",
         "Ljava/lang/Void;",
@@ -30,62 +30,38 @@
 
 
 # direct methods
-.method private constructor <init>(Lcom/android/email/activity/MessageOrderManager;)V
-    .registers 2
+.method public constructor <init>(Lcom/android/email/activity/MessageOrderManager;)V
+    .registers 3
     .parameter
 
     .prologue
-    .line 345
+    .line 325
     iput-object p1, p0, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;->this$0:Lcom/android/email/activity/MessageOrderManager;
 
-    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
+    .line 326
+    const/4 v0, 0x0
 
-    return-void
-.end method
+    invoke-direct {p0, v0}, Lcom/android/emailcommon/utility/EmailAsyncTask;-><init>(Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;)V
 
-.method synthetic constructor <init>(Lcom/android/email/activity/MessageOrderManager;Lcom/android/email/activity/MessageOrderManager$1;)V
-    .registers 3
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 345
-    invoke-direct {p0, p1}, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;-><init>(Lcom/android/email/activity/MessageOrderManager;)V
-
+    .line 327
     return-void
 .end method
 
 
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Landroid/database/Cursor;
-    .registers 4
+    .registers 3
     .parameter "params"
 
     .prologue
-    .line 348
-    iget-object v1, p0, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;->this$0:Lcom/android/email/activity/MessageOrderManager;
+    .line 331
+    iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;->this$0:Lcom/android/email/activity/MessageOrderManager;
 
     #calls: Lcom/android/email/activity/MessageOrderManager;->openNewCursor()Landroid/database/Cursor;
-    invoke-static {v1}, Lcom/android/email/activity/MessageOrderManager;->access$300(Lcom/android/email/activity/MessageOrderManager;)Landroid/database/Cursor;
+    invoke-static {v0}, Lcom/android/email/activity/MessageOrderManager;->access$500(Lcom/android/email/activity/MessageOrderManager;)Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 349
-    .local v0, c:Landroid/database/Cursor;
-    invoke-virtual {p0}, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;->isCancelled()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_10
-
-    .line 350
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
-
-    .line 351
-    const/4 v0, 0x0
-
-    .line 353
-    :cond_10
     return-object v0
 .end method
 
@@ -94,7 +70,7 @@
     .parameter "x0"
 
     .prologue
-    .line 345
+    .line 324
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -105,76 +81,67 @@
     return-object v0
 .end method
 
-.method protected onCancelled()V
-    .registers 3
+.method protected onCancelled(Landroid/database/Cursor;)V
+    .registers 4
+    .parameter "cursor"
 
     .prologue
-    .line 358
+    .line 336
+    if-eqz p1, :cond_5
+
+    .line 337
+    invoke-interface {p1}, Landroid/database/Cursor;->close()V
+
+    .line 339
+    :cond_5
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;->this$0:Lcom/android/email/activity/MessageOrderManager;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/email/activity/MessageOrderManager;->onCursorOpenDone(Landroid/database/Cursor;)V
 
-    .line 359
+    .line 340
     return-void
 .end method
 
-.method protected onPostExecute(Landroid/database/Cursor;)V
-    .registers 3
-    .parameter "cursor"
-
-    .prologue
-    .line 363
-    iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;->this$0:Lcom/android/email/activity/MessageOrderManager;
-
-    #getter for: Lcom/android/email/activity/MessageOrderManager;->mClosed:Z
-    invoke-static {v0}, Lcom/android/email/activity/MessageOrderManager;->access$000(Lcom/android/email/activity/MessageOrderManager;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_e
-
-    invoke-virtual {p0}, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;->isCancelled()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_17
-
-    .line 364
-    :cond_e
-    if-eqz p1, :cond_13
-
-    .line 365
-    invoke-interface {p1}, Landroid/database/Cursor;->close()V
-
-    .line 367
-    :cond_13
-    invoke-virtual {p0}, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;->onCancelled()V
-
-    .line 371
-    :goto_16
-    return-void
-
-    .line 369
-    :cond_17
-    iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;->this$0:Lcom/android/email/activity/MessageOrderManager;
-
-    invoke-virtual {v0, p1}, Lcom/android/email/activity/MessageOrderManager;->onCursorOpenDone(Landroid/database/Cursor;)V
-
-    goto :goto_16
-.end method
-
-.method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
+.method protected bridge synthetic onCancelled(Ljava/lang/Object;)V
     .registers 2
     .parameter "x0"
 
     .prologue
-    .line 345
+    .line 324
     check-cast p1, Landroid/database/Cursor;
 
     .end local p1
-    invoke-virtual {p0, p1}, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;->onPostExecute(Landroid/database/Cursor;)V
+    invoke-virtual {p0, p1}, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;->onCancelled(Landroid/database/Cursor;)V
+
+    return-void
+.end method
+
+.method protected onSuccess(Landroid/database/Cursor;)V
+    .registers 3
+    .parameter "cursor"
+
+    .prologue
+    .line 344
+    iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;->this$0:Lcom/android/email/activity/MessageOrderManager;
+
+    invoke-virtual {v0, p1}, Lcom/android/email/activity/MessageOrderManager;->onCursorOpenDone(Landroid/database/Cursor;)V
+
+    .line 345
+    return-void
+.end method
+
+.method protected bridge synthetic onSuccess(Ljava/lang/Object;)V
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 324
+    check-cast p1, Landroid/database/Cursor;
+
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;->onSuccess(Landroid/database/Cursor;)V
 
     return-void
 .end method

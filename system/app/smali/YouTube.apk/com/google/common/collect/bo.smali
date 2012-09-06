@@ -1,278 +1,295 @@
-.class public abstract Lcom/google/common/collect/bo;
-.super Lcom/google/common/collect/bs;
+.class final Lcom/google/common/collect/bo;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Map;
+.implements Lcom/google/common/collect/bl;
+
+
+# instance fields
+.field final synthetic a:Lcom/google/common/collect/bl;
+
+.field final synthetic b:Lcom/google/common/collect/bk;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
+.method constructor <init>(Lcom/google/common/collect/bl;Lcom/google/common/collect/bk;)V
+    .registers 3
+    .parameter
+    .parameter
 
     .prologue
-    .line 39
-    invoke-direct {p0}, Lcom/google/common/collect/bs;-><init>()V
+    .line 164
+    iput-object p1, p0, Lcom/google/common/collect/bo;->a:Lcom/google/common/collect/bl;
+
+    iput-object p2, p0, Lcom/google/common/collect/bo;->b:Lcom/google/common/collect/bk;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public clear()V
-    .registers 2
-
-    .prologue
-    .line 57
-    invoke-virtual {p0}, Lcom/google/common/collect/bo;->delegate()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Map;->clear()V
-
-    .line 58
-    return-void
-.end method
-
-.method public containsKey(Ljava/lang/Object;)Z
-    .registers 3
+.method public final a(Lcom/google/common/collect/by;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;)Lcom/google/common/collect/bw;
+    .registers 12
     .parameter
-
-    .prologue
-    .line 61
-    invoke-virtual {p0}, Lcom/google/common/collect/bo;->delegate()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public containsValue(Ljava/lang/Object;)Z
-    .registers 3
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
 
     .prologue
-    .line 65
-    invoke-virtual {p0}, Lcom/google/common/collect/bo;->delegate()Ljava/util/Map;
+    const-wide/16 v6, 0x4
+
+    .line 191
+    if-nez p2, :cond_5
+
+    .line 207
+    :goto_4
+    return-object p3
+
+    .line 193
+    :cond_5
+    if-nez p3, :cond_9
+
+    move-object p3, p2
+
+    .line 194
+    goto :goto_4
+
+    .line 196
+    :cond_9
+    iget-object v0, p0, Lcom/google/common/collect/bo;->b:Lcom/google/common/collect/bk;
+
+    invoke-interface {v0, p2}, Lcom/google/common/collect/bk;->a(Lcom/google/common/collect/bw;)J
+
+    move-result-wide v0
+
+    .line 197
+    iget-object v2, p0, Lcom/google/common/collect/bo;->b:Lcom/google/common/collect/bk;
+
+    invoke-interface {v2, p3}, Lcom/google/common/collect/bk;->a(Lcom/google/common/collect/bw;)J
+
+    move-result-wide v2
+
+    .line 198
+    mul-long v4, v6, v0
+
+    cmp-long v4, v4, v2
+
+    if-gtz v4, :cond_32
+
+    .line 199
+    sget-object v0, Lcom/google/common/collect/BstSide;->LEFT:Lcom/google/common/collect/BstSide;
+
+    invoke-virtual {p3, v0}, Lcom/google/common/collect/bw;->childOrNull(Lcom/google/common/collect/BstSide;)Lcom/google/common/collect/bw;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsValue(Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1, p2, v0}, Lcom/google/common/collect/bo;->a(Lcom/google/common/collect/by;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;)Lcom/google/common/collect/bw;
 
-    move-result v0
+    move-result-object v0
 
-    return v0
+    .line 200
+    iget-object v1, p0, Lcom/google/common/collect/bo;->a:Lcom/google/common/collect/bl;
+
+    sget-object v2, Lcom/google/common/collect/BstSide;->RIGHT:Lcom/google/common/collect/BstSide;
+
+    invoke-virtual {p3, v2}, Lcom/google/common/collect/bw;->childOrNull(Lcom/google/common/collect/BstSide;)Lcom/google/common/collect/bw;
+
+    move-result-object v2
+
+    invoke-interface {v1, p1, p3, v0, v2}, Lcom/google/common/collect/bl;->a(Lcom/google/common/collect/by;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;)Lcom/google/common/collect/bw;
+
+    move-result-object p3
+
+    goto :goto_4
+
+    .line 202
+    :cond_32
+    mul-long/2addr v2, v6
+
+    cmp-long v0, v2, v0
+
+    if-gtz v0, :cond_4e
+
+    .line 203
+    sget-object v0, Lcom/google/common/collect/BstSide;->RIGHT:Lcom/google/common/collect/BstSide;
+
+    invoke-virtual {p2, v0}, Lcom/google/common/collect/bw;->childOrNull(Lcom/google/common/collect/BstSide;)Lcom/google/common/collect/bw;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p1, v0, p3}, Lcom/google/common/collect/bo;->a(Lcom/google/common/collect/by;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;)Lcom/google/common/collect/bw;
+
+    move-result-object v0
+
+    .line 204
+    iget-object v1, p0, Lcom/google/common/collect/bo;->a:Lcom/google/common/collect/bl;
+
+    sget-object v2, Lcom/google/common/collect/BstSide;->LEFT:Lcom/google/common/collect/BstSide;
+
+    invoke-virtual {p2, v2}, Lcom/google/common/collect/bw;->childOrNull(Lcom/google/common/collect/BstSide;)Lcom/google/common/collect/bw;
+
+    move-result-object v2
+
+    invoke-interface {v1, p1, p2, v2, v0}, Lcom/google/common/collect/bl;->a(Lcom/google/common/collect/by;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;)Lcom/google/common/collect/bw;
+
+    move-result-object p3
+
+    goto :goto_4
+
+    .line 207
+    :cond_4e
+    iget-object v0, p0, Lcom/google/common/collect/bo;->a:Lcom/google/common/collect/bl;
+
+    invoke-interface {v0, p1, p2, p3}, Lcom/google/common/collect/bl;->a(Lcom/google/common/collect/by;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;)Lcom/google/common/collect/bw;
+
+    move-result-object p3
+
+    goto :goto_4
 .end method
 
-.method protected bridge synthetic delegate()Ljava/lang/Object;
-    .registers 2
+.method public final a(Lcom/google/common/collect/by;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;)Lcom/google/common/collect/bw;
+    .registers 13
+    .parameter
+    .end parameter
+    .parameter
+    .end parameter
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 38
-    invoke-virtual {p0}, Lcom/google/common/collect/bo;->delegate()Ljava/util/Map;
+    const-wide/16 v6, 0x4
+
+    .line 168
+    if-nez p3, :cond_b
+
+    .line 169
+    iget-object v0, p0, Lcom/google/common/collect/bo;->a:Lcom/google/common/collect/bl;
+
+    invoke-static {p4, p2, p1, v0}, Lcom/google/common/collect/bz;->a(Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;Lcom/google/common/collect/by;Lcom/google/common/collect/bl;)Lcom/google/common/collect/bw;
 
     move-result-object v0
 
+    .line 184
+    :goto_a
     return-object v0
-.end method
 
-.method protected abstract delegate()Ljava/util/Map;
-.end method
+    .line 170
+    :cond_b
+    if-nez p4, :cond_14
 
-.method public entrySet()Ljava/util/Set;
-    .registers 2
+    .line 171
+    iget-object v0, p0, Lcom/google/common/collect/bo;->a:Lcom/google/common/collect/bl;
 
-    .prologue
-    .line 89
-    invoke-virtual {p0}, Lcom/google/common/collect/bo;->delegate()Ljava/util/Map;
+    invoke-static {p3, p2, p1, v0}, Lcom/google/common/collect/bz;->b(Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;Lcom/google/common/collect/by;Lcom/google/common/collect/bl;)Lcom/google/common/collect/bw;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    goto :goto_a
+
+    .line 173
+    :cond_14
+    iget-object v0, p0, Lcom/google/common/collect/bo;->b:Lcom/google/common/collect/bk;
+
+    invoke-interface {v0, p3}, Lcom/google/common/collect/bk;->a(Lcom/google/common/collect/bw;)J
+
+    move-result-wide v0
+
+    .line 174
+    iget-object v2, p0, Lcom/google/common/collect/bo;->b:Lcom/google/common/collect/bk;
+
+    invoke-interface {v2, p4}, Lcom/google/common/collect/bk;->a(Lcom/google/common/collect/bw;)J
+
+    move-result-wide v2
+
+    .line 175
+    mul-long v4, v6, v0
+
+    cmp-long v4, v4, v2
+
+    if-gtz v4, :cond_3d
+
+    .line 176
+    sget-object v0, Lcom/google/common/collect/BstSide;->LEFT:Lcom/google/common/collect/BstSide;
+
+    invoke-virtual {p4, v0}, Lcom/google/common/collect/bw;->childOrNull(Lcom/google/common/collect/BstSide;)Lcom/google/common/collect/bw;
 
     move-result-object v0
 
-    return-object v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 93
-    if-eq p1, p0, :cond_c
-
-    invoke-virtual {p0}, Lcom/google/common/collect/bo;->delegate()Ljava/util/Map;
+    invoke-virtual {p0, p1, p2, p3, v0}, Lcom/google/common/collect/bo;->a(Lcom/google/common/collect/by;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;)Lcom/google/common/collect/bw;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    .line 177
+    iget-object v1, p0, Lcom/google/common/collect/bo;->a:Lcom/google/common/collect/bl;
 
-    move-result v0
+    sget-object v2, Lcom/google/common/collect/BstSide;->RIGHT:Lcom/google/common/collect/BstSide;
 
-    if-eqz v0, :cond_e
+    invoke-virtual {p4, v2}, Lcom/google/common/collect/bw;->childOrNull(Lcom/google/common/collect/BstSide;)Lcom/google/common/collect/bw;
 
-    :cond_c
-    const/4 v0, 0x1
+    move-result-object v2
 
-    :goto_d
-    return v0
-
-    :cond_e
-    const/4 v0, 0x0
-
-    goto :goto_d
-.end method
-
-.method public get(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 69
-    invoke-virtual {p0}, Lcom/google/common/collect/bo;->delegate()Ljava/util/Map;
+    invoke-interface {v1, p1, p4, v0, v2}, Lcom/google/common/collect/bl;->a(Lcom/google/common/collect/by;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;)Lcom/google/common/collect/bw;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    goto :goto_a
+
+    .line 179
+    :cond_3d
+    mul-long/2addr v2, v6
+
+    cmp-long v0, v2, v0
+
+    if-gtz v0, :cond_59
+
+    .line 180
+    sget-object v0, Lcom/google/common/collect/BstSide;->RIGHT:Lcom/google/common/collect/BstSide;
+
+    invoke-virtual {p3, v0}, Lcom/google/common/collect/bw;->childOrNull(Lcom/google/common/collect/BstSide;)Lcom/google/common/collect/bw;
 
     move-result-object v0
 
-    return-object v0
-.end method
-
-.method public hashCode()I
-    .registers 2
-
-    .prologue
-    .line 97
-    invoke-virtual {p0}, Lcom/google/common/collect/bo;->delegate()Ljava/util/Map;
+    invoke-virtual {p0, p1, p2, v0, p4}, Lcom/google/common/collect/bo;->a(Lcom/google/common/collect/by;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;)Lcom/google/common/collect/bw;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    .line 181
+    iget-object v1, p0, Lcom/google/common/collect/bo;->a:Lcom/google/common/collect/bl;
 
-    move-result v0
+    sget-object v2, Lcom/google/common/collect/BstSide;->LEFT:Lcom/google/common/collect/BstSide;
 
-    return v0
-.end method
+    invoke-virtual {p3, v2}, Lcom/google/common/collect/bw;->childOrNull(Lcom/google/common/collect/BstSide;)Lcom/google/common/collect/bw;
 
-.method public isEmpty()Z
-    .registers 2
+    move-result-object v2
 
-    .prologue
-    .line 49
-    invoke-virtual {p0}, Lcom/google/common/collect/bo;->delegate()Ljava/util/Map;
+    invoke-interface {v1, p1, p3, v2, v0}, Lcom/google/common/collect/bl;->a(Lcom/google/common/collect/by;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;)Lcom/google/common/collect/bw;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
+    goto :goto_a
 
-    move-result v0
-
-    return v0
-.end method
-
-.method public keySet()Ljava/util/Set;
-    .registers 2
-
-    .prologue
-    .line 81
-    invoke-virtual {p0}, Lcom/google/common/collect/bo;->delegate()Ljava/util/Map;
+    .line 184
+    :cond_59
+    invoke-virtual {p1, p2, p3, p4}, Lcom/google/common/collect/by;->a(Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;Lcom/google/common/collect/bw;)Lcom/google/common/collect/bw;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
-    .parameter
-    .parameter
-
-    .prologue
-    .line 73
-    invoke-virtual {p0}, Lcom/google/common/collect/bo;->delegate()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public putAll(Ljava/util/Map;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 77
-    invoke-virtual {p0}, Lcom/google/common/collect/bo;->delegate()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
-
-    .line 78
-    return-void
-.end method
-
-.method public remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 53
-    invoke-virtual {p0}, Lcom/google/common/collect/bo;->delegate()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public size()I
-    .registers 2
-
-    .prologue
-    .line 45
-    invoke-virtual {p0}, Lcom/google/common/collect/bo;->delegate()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Map;->size()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public values()Ljava/util/Collection;
-    .registers 2
-
-    .prologue
-    .line 85
-    invoke-virtual {p0}, Lcom/google/common/collect/bo;->delegate()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_a
 .end method

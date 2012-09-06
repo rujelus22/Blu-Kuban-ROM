@@ -26,7 +26,7 @@
     .parameter "x1"
 
     .prologue
-    .line 3194
+    .line 3180
     iput-object p1, p0, Lcom/samsung/client/DMApp$11;->this$0:Lcom/samsung/client/DMApp;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
@@ -40,14 +40,14 @@
     .registers 4
 
     .prologue
-    .line 3203
+    .line 3189
     const-string v1, "DMApp"
 
     const-string v2, "fumoRunTimer onFinish"
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3205
+    .line 3191
     :try_start_7
     invoke-static {}, Lcom/samsung/client/DMApp;->access$500()Lcom/samsung/client/ISyncmlService;
 
@@ -55,7 +55,7 @@
 
     if-eqz v1, :cond_15
 
-    .line 3206
+    .line 3192
     invoke-static {}, Lcom/samsung/client/DMApp;->access$500()Lcom/samsung/client/ISyncmlService;
 
     move-result-object v1
@@ -66,16 +66,16 @@
     :try_end_15
     .catch Landroid/os/RemoteException; {:try_start_7 .. :try_end_15} :catch_16
 
-    .line 3211
+    .line 3197
     :cond_15
     :goto_15
     return-void
 
-    .line 3208
+    .line 3194
     :catch_16
     move-exception v0
 
-    .line 3209
+    .line 3195
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "DMApp"
 
@@ -93,13 +93,13 @@
     .parameter "millisUntilFinished"
 
     .prologue
-    .line 3198
+    .line 3184
     const-string v0, "DMApp"
 
     const-string v1, "fumoRunTimer onTick"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3199
+    .line 3185
     return-void
 .end method

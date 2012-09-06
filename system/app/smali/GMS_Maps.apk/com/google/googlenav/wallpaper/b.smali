@@ -1,101 +1,199 @@
 .class Lcom/google/googlenav/wallpaper/b;
 .super Landroid/service/wallpaper/WallpaperService$Engine;
+.source "SourceFile"
 
 # interfaces
-.implements LaA/m;
-.implements LaJ/w;
 .implements Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
-.implements Lcom/google/googlenav/wallpaper/f;
+.implements Lcom/google/googlenav/wallpaper/i;
 
 
 # instance fields
 .field final synthetic a:Lcom/google/googlenav/wallpaper/MapWallpaper;
 
-.field private b:Lai/e;
+.field private b:Lcom/google/googlenav/wallpaper/MapWallpaper;
 
-.field private c:LaJ/p;
+.field private c:Landroid/view/SurfaceHolder;
 
-.field private d:Lcom/google/googlenav/android/l;
+.field private d:I
 
-.field private e:Lat/h;
+.field private e:I
 
-.field private f:Lcom/google/googlenav/ui/at;
+.field private f:Ljava/lang/String;
 
-.field private g:F
+.field private g:Lcom/google/googlenav/wallpaper/g;
 
-.field private h:F
+.field private h:LaU/d;
 
-.field private i:J
+.field private i:Z
 
-.field private j:I
+.field private j:Lcom/google/googlenav/wallpaper/c;
 
-.field private k:I
+.field private k:Lcom/google/googlenav/wallpaper/e;
 
-.field private l:Z
+.field private l:Landroid/graphics/drawable/Drawable;
 
-.field private m:Lbg/d;
-
-.field private n:LaA/i;
-
-.field private o:LaJ/B;
-
-.field private p:J
+.field private m:Lcom/google/googlenav/wallpaper/h;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/wallpaper/MapWallpaper;)V
-    .registers 2
+.method public constructor <init>(Lcom/google/googlenav/wallpaper/MapWallpaper;Lcom/google/googlenav/wallpaper/MapWallpaper;)V
+    .registers 5
+    .parameter
+    .parameter
 
+    .prologue
+    const/4 v1, 0x0
+
+    .line 695
     iput-object p1, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
 
     invoke-direct {p0, p1}, Landroid/service/wallpaper/WallpaperService$Engine;-><init>(Landroid/service/wallpaper/WallpaperService;)V
 
+    .line 234
+    const-string v0, "hybrid"
+
+    iput-object v0, p0, Lcom/google/googlenav/wallpaper/b;->f:Ljava/lang/String;
+
+    .line 251
+    iput-object v1, p0, Lcom/google/googlenav/wallpaper/b;->l:Landroid/graphics/drawable/Drawable;
+
+    .line 252
+    iput-object v1, p0, Lcom/google/googlenav/wallpaper/b;->m:Lcom/google/googlenav/wallpaper/h;
+
+    .line 696
+    iput-object p2, p0, Lcom/google/googlenav/wallpaper/b;->b:Lcom/google/googlenav/wallpaper/MapWallpaper;
+
+    .line 697
     return-void
 .end method
 
-.method static synthetic a(Lcom/google/googlenav/wallpaper/b;)LaJ/p;
+.method static synthetic a(Lcom/google/googlenav/wallpaper/b;)Ljava/io/File;
     .registers 2
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->c:LaJ/p;
+    .prologue
+    .line 217
+    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->f()Ljava/io/File;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
+.method static synthetic a(Lcom/google/googlenav/wallpaper/b;Lcom/google/googlenav/wallpaper/h;)Ljava/lang/String;
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 217
+    invoke-direct {p0, p1}, Lcom/google/googlenav/wallpaper/b;->b(Lcom/google/googlenav/wallpaper/h;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private a(Ljava/util/Locale;)Ljava/lang/String;
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 707
+    invoke-virtual {p1}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 708
+    invoke-virtual {p1}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 710
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-lez v2, :cond_22
+
+    .line 711
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 712
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 713
+    const-string v0, "-"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 714
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 715
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 717
+    :cond_22
+    return-object v0
+.end method
+
 .method private a(II)V
-    .registers 7
+    .registers 9
+    .parameter
+    .parameter
 
-    const/4 v3, 0x0
+    .prologue
+    .line 485
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->g:Lcom/google/googlenav/wallpaper/g;
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->b:Lai/e;
+    if-eqz v0, :cond_1e
 
-    invoke-virtual {v0}, Lai/e;->g()I
+    .line 486
+    new-instance v0, Lcom/google/googlenav/wallpaper/h;
 
-    move-result v0
+    new-instance v2, Lcom/google/googlenav/wallpaper/d;
 
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->b:Lai/e;
+    invoke-direct {v2, p0, p1, p2}, Lcom/google/googlenav/wallpaper/d;-><init>(Lcom/google/googlenav/wallpaper/b;II)V
 
-    const/high16 v2, 0x6400
+    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->c()I
 
-    invoke-virtual {v1, v2}, Lai/e;->b(I)Z
+    move-result v3
 
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->b:Lai/e;
+    iget-object v4, p0, Lcom/google/googlenav/wallpaper/b;->f:Ljava/lang/String;
 
-    invoke-virtual {v1, v3, v3, p1, p2}, Lai/e;->b(IIII)V
+    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->g:Lcom/google/googlenav/wallpaper/g;
 
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->b:Lai/e;
+    invoke-virtual {v1}, Lcom/google/googlenav/wallpaper/g;->a()Lcom/google/googlenav/wallpaper/f;
 
-    invoke-virtual {v1, v0}, Lai/e;->b(I)Z
+    move-result-object v5
 
+    move-object v1, p0
+
+    invoke-direct/range {v0 .. v5}, Lcom/google/googlenav/wallpaper/h;-><init>(Lcom/google/googlenav/wallpaper/b;Lcom/google/googlenav/wallpaper/d;ILjava/lang/String;Lcom/google/googlenav/wallpaper/f;)V
+
+    invoke-direct {p0, v0}, Lcom/google/googlenav/wallpaper/b;->a(Lcom/google/googlenav/wallpaper/h;)V
+
+    .line 489
+    :cond_1e
     return-void
 .end method
 
 .method private a(Landroid/content/SharedPreferences;)V
     .registers 4
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->m:Lbg/d;
+    .prologue
+    .line 406
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->h:LaU/d;
 
     if-eqz v0, :cond_16
 
+    .line 407
     const-string v0, "weather_type"
 
     const/4 v1, 0x0
@@ -104,311 +202,602 @@
 
     move-result-object v0
 
+    .line 408
     if-eqz v0, :cond_16
 
+    .line 410
     :try_start_d
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->m:Lbg/d;
+    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->h:LaU/d;
 
-    invoke-static {v0}, Lbg/c;->valueOf(Ljava/lang/String;)Lbg/c;
+    invoke-static {v0}, LaU/c;->valueOf(Ljava/lang/String;)LaU/c;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Lbg/d;->a(Lbg/c;)V
+    invoke-virtual {v1, v0}, LaU/d;->a(LaU/c;)V
     :try_end_16
     .catch Ljava/lang/Exception; {:try_start_d .. :try_end_16} :catch_17
 
+    .line 423
     :cond_16
     :goto_16
     return-void
 
+    .line 411
     :catch_17
     move-exception v0
 
+    .line 419
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_16
 .end method
 
-.method private a(Lat/h;)V
-    .registers 7
+.method private a(Landroid/graphics/Canvas;II)V
+    .registers 10
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v4, -0x1
-
+    .prologue
     const/4 v1, 0x0
 
-    invoke-virtual {p1}, Lat/h;->e()Z
+    .line 495
+    new-instance v5, Landroid/graphics/Paint;
+
+    invoke-direct {v5}, Landroid/graphics/Paint;-><init>()V
+
+    .line 496
+    const/high16 v0, 0x6400
+
+    invoke-virtual {v5, v0}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 497
+    sget-object v0, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v5, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 498
+    int-to-float v3, p2
+
+    int-to-float v4, p3
+
+    move-object v0, p1
+
+    move v2, v1
+
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+
+    .line 499
+    return-void
+.end method
+
+.method private a(Lcom/google/googlenav/wallpaper/h;)V
+    .registers 7
+    .parameter
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 505
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->c:Landroid/view/SurfaceHolder;
+
+    if-eqz v0, :cond_59
+
+    .line 509
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->m:Lcom/google/googlenav/wallpaper/h;
+
+    invoke-virtual {p1, v0}, Lcom/google/googlenav/wallpaper/h;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_5a
 
-    invoke-virtual {p1}, Lat/h;->g()V
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->l:Landroid/graphics/drawable/Drawable;
 
-    :cond_b
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->f:Lcom/google/googlenav/ui/at;
+    if-eqz v0, :cond_5a
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/at;->B()LaE/h;
+    .line 510
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->l:Landroid/graphics/drawable/Drawable;
 
-    move-result-object v0
+    .line 516
+    :goto_13
+    if-eqz v0, :cond_67
 
-    invoke-virtual {v0}, LaE/h;->c()Ljava/util/List;
+    .line 517
+    iget v1, p0, Lcom/google/googlenav/wallpaper/b;->d:I
 
-    move-result-object v0
+    .line 518
+    iget-object v2, p1, Lcom/google/googlenav/wallpaper/h;->a:Lcom/google/googlenav/wallpaper/d;
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    iget v2, v2, Lcom/google/googlenav/wallpaper/d;->a:I
+
+    add-int/2addr v2, v1
+
+    .line 520
+    iget-object v3, p1, Lcom/google/googlenav/wallpaper/h;->a:Lcom/google/googlenav/wallpaper/d;
+
+    iget v3, v3, Lcom/google/googlenav/wallpaper/d;->b:I
+
+    .line 521
+    invoke-virtual {v0, v1, v4, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    .line 523
+    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->c:Landroid/view/SurfaceHolder;
+
+    invoke-interface {v1}, Landroid/view/SurfaceHolder;->lockCanvas()Landroid/graphics/Canvas;
+
+    move-result-object v1
+
+    .line 524
+    if-eqz v1, :cond_59
+
+    .line 525
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    .line 526
+    iget-boolean v0, p0, Lcom/google/googlenav/wallpaper/b;->i:Z
+
+    if-eqz v0, :cond_49
+
+    .line 527
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->h:LaU/d;
+
+    iget-object v2, p0, Lcom/google/googlenav/wallpaper/b;->c:Landroid/view/SurfaceHolder;
+
+    invoke-interface {v2}, Landroid/view/SurfaceHolder;->getSurfaceFrame()Landroid/graphics/Rect;
 
     move-result-object v2
 
-    :cond_19
-    :goto_19
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_39
+    iget-object v3, p1, Lcom/google/googlenav/wallpaper/h;->a:Lcom/google/googlenav/wallpaper/d;
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget v3, v3, Lcom/google/googlenav/wallpaper/d;->a:I
+
+    invoke-virtual {p0}, Lcom/google/googlenav/wallpaper/b;->isPreview()Z
+
+    move-result v4
+
+    invoke-virtual {v0, v1, v2, v3, v4}, LaU/d;->a(Landroid/graphics/Canvas;IIZ)V
+
+    .line 530
+    :cond_49
+    iget-object v0, p1, Lcom/google/googlenav/wallpaper/h;->a:Lcom/google/googlenav/wallpaper/d;
+
+    iget v0, v0, Lcom/google/googlenav/wallpaper/d;->a:I
+
+    iget-object v2, p1, Lcom/google/googlenav/wallpaper/h;->a:Lcom/google/googlenav/wallpaper/d;
+
+    iget v2, v2, Lcom/google/googlenav/wallpaper/d;->b:I
+
+    invoke-direct {p0, v1, v0, v2}, Lcom/google/googlenav/wallpaper/b;->a(Landroid/graphics/Canvas;II)V
+
+    .line 531
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->c:Landroid/view/SurfaceHolder;
+
+    invoke-interface {v0, v1}, Landroid/view/SurfaceHolder;->unlockCanvasAndPost(Landroid/graphics/Canvas;)V
+
+    .line 548
+    :cond_59
+    :goto_59
+    return-void
+
+    .line 512
+    :cond_5a
+    invoke-virtual {p1}, Lcom/google/googlenav/wallpaper/h;->a()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, LaE/c;
-
-    instance-of v3, v0, LaG/a;
-
-    if-eqz v3, :cond_2f
-
-    check-cast v0, LaG/a;
-
-    invoke-virtual {v0, v1}, LaG/a;->a(Z)V
-
-    goto :goto_19
-
-    :cond_2f
-    instance-of v3, v0, LaE/a;
-
-    if-eqz v3, :cond_19
-
-    check-cast v0, LaE/a;
-
-    invoke-virtual {v0, v1}, LaE/a;->a(Z)V
-
-    goto :goto_19
-
-    :cond_39
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->d:Lcom/google/googlenav/android/l;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
+    invoke-static {v0}, Landroid/graphics/drawable/Drawable;->createFromPath(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/D;->ad()V
+    .line 513
+    iput-object p1, p0, Lcom/google/googlenav/wallpaper/b;->m:Lcom/google/googlenav/wallpaper/h;
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
+    .line 514
+    iput-object v0, p0, Lcom/google/googlenav/wallpaper/b;->l:Landroid/graphics/drawable/Drawable;
+
+    goto :goto_13
+
+    .line 542
+    :cond_67
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->k:Lcom/google/googlenav/wallpaper/e;
+
+    if-eqz v0, :cond_75
+
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->k:Lcom/google/googlenav/wallpaper/e;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/wallpaper/e;->getStatus()Landroid/os/AsyncTask$Status;
+
+    move-result-object v0
+
+    sget-object v1, Landroid/os/AsyncTask$Status;->FINISHED:Landroid/os/AsyncTask$Status;
+
+    if-ne v0, v1, :cond_59
+
+    .line 543
+    :cond_75
+    new-instance v0, Lcom/google/googlenav/wallpaper/e;
+
+    invoke-direct {v0, p0, p0}, Lcom/google/googlenav/wallpaper/e;-><init>(Lcom/google/googlenav/wallpaper/b;Lcom/google/googlenav/wallpaper/b;)V
+
+    iput-object v0, p0, Lcom/google/googlenav/wallpaper/b;->k:Lcom/google/googlenav/wallpaper/e;
+
+    .line 544
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->k:Lcom/google/googlenav/wallpaper/e;
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Lcom/google/googlenav/wallpaper/h;
+
+    aput-object p1, v1, v4
+
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/wallpaper/e;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    goto :goto_59
+.end method
+
+.method private b(Lcom/google/googlenav/wallpaper/h;)Ljava/lang/String;
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 731
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 732
+    const-string v1, "http://maps.googleapis.com/maps/api/staticmap?"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 734
+    const-string v1, "&sensor=true"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 737
+    const-string v1, "&scale=2"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 741
+    const-string v1, "&language="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 742
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/google/googlenav/wallpaper/b;->a(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 744
+    const-string v1, "&center="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 745
+    iget-object v1, p1, Lcom/google/googlenav/wallpaper/h;->d:Lcom/google/googlenav/wallpaper/f;
+
+    iget-wide v1, v1, Lcom/google/googlenav/wallpaper/f;->a:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    .line 746
+    const-string v1, ","
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 747
+    iget-object v1, p1, Lcom/google/googlenav/wallpaper/h;->d:Lcom/google/googlenav/wallpaper/f;
+
+    iget-wide v1, v1, Lcom/google/googlenav/wallpaper/f;->b:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    .line 753
+    iget-object v1, p1, Lcom/google/googlenav/wallpaper/h;->c:Ljava/lang/String;
+
+    const-string v2, "terrain"
+
+    if-ne v1, v2, :cond_78
+
+    iget v1, p1, Lcom/google/googlenav/wallpaper/h;->b:I
+
+    const/16 v2, 0xe
+
+    if-le v1, v2, :cond_78
+
+    .line 754
+    const-string v1, "&zoom=14"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 760
+    :goto_4d
+    const-string v1, "&size="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 761
+    iget-object v1, p1, Lcom/google/googlenav/wallpaper/h;->a:Lcom/google/googlenav/wallpaper/d;
+
+    iget v1, v1, Lcom/google/googlenav/wallpaper/d;->c:I
+
+    div-int/lit8 v1, v1, 0x2
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 762
+    const-string v1, "x"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 763
+    iget-object v1, p1, Lcom/google/googlenav/wallpaper/h;->a:Lcom/google/googlenav/wallpaper/d;
+
+    iget v1, v1, Lcom/google/googlenav/wallpaper/d;->d:I
+
+    div-int/lit8 v1, v1, 0x2
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 765
+    const-string v1, "&maptype="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 766
+    iget-object v1, p1, Lcom/google/googlenav/wallpaper/h;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 768
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 756
+    :cond_78
+    const-string v1, "&zoom="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 757
+    iget v1, p1, Lcom/google/googlenav/wallpaper/h;->b:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    goto :goto_4d
+.end method
+
+.method private b()V
+    .registers 8
+
+    .prologue
+    const/16 v0, 0x12
+
+    const/4 v1, 0x4
+
+    const/4 v6, 0x0
+
+    const/4 v5, -0x1
+
+    .line 342
+    iget-object v2, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
+
+    const-string v3, "wallpaper_settings"
+
+    invoke-virtual {v2, v3, v6}, Lcom/google/googlenav/wallpaper/MapWallpaper;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v2
+
+    const-string v3, "zoom_level_string"
+
+    const/4 v4, 0x0
+
+    invoke-interface {v2, v3, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 344
+    if-nez v2, :cond_48
+
+    .line 347
+    iget-object v2, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
+
+    const-string v3, "wallpaper_settings"
+
+    const v4, 0x8000
+
+    invoke-virtual {v2, v3, v4}, Lcom/google/googlenav/wallpaper/MapWallpaper;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v2
+
+    const-string v3, "zoom_level"
+
+    invoke-interface {v2, v3, v5}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v2
+
+    .line 349
+    if-eq v2, v5, :cond_48
+
+    .line 352
+    add-int/lit8 v2, v2, -0x1
+
+    .line 355
+    if-ge v2, v1, :cond_4b
+
+    .line 358
+    :goto_2d
+    if-le v1, v0, :cond_49
+
+    .line 366
+    :goto_2f
+    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
 
     const-string v2, "wallpaper_settings"
 
-    const v3, 0x8000
+    invoke-virtual {v1, v2, v6}, Lcom/google/googlenav/wallpaper/MapWallpaper;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
-    invoke-virtual {v0, v2, v3}, Lcom/google/googlenav/wallpaper/MapWallpaper;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    const-string v2, "zoom_level_string"
+
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v2, "zoom_level"
+    invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    invoke-interface {v0, v2, v4}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    move-result-object v0
 
-    move-result v0
+    invoke-static {v0}, LR/b;->a(Landroid/content/SharedPreferences$Editor;)V
 
-    if-ne v0, v4, :cond_5c
-
-    const/4 v0, 0x1
-
-    :goto_56
-    iget-object v2, p0, Lcom/google/googlenav/wallpaper/b;->f:Lcom/google/googlenav/ui/at;
-
-    invoke-virtual {v2, v0, v0, v1}, Lcom/google/googlenav/ui/at;->a(ZZZ)V
-
+    .line 371
+    :cond_48
     return-void
 
-    :cond_5c
+    :cond_49
     move v0, v1
 
-    goto :goto_56
+    goto :goto_2f
+
+    :cond_4b
+    move v1, v2
+
+    goto :goto_2d
 .end method
 
-.method private a(Z)V
-    .registers 5
+.method static synthetic b(Lcom/google/googlenav/wallpaper/b;)V
+    .registers 1
+    .parameter
 
-    const/16 v1, 0x4c
-
-    const-string v2, "a"
-
-    if-eqz p1, :cond_20
-
-    const-string v0, "o"
-
-    :goto_8
-    invoke-static {v1, v2, v0}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->c:LaJ/p;
-
-    invoke-virtual {v0}, LaJ/p;->c()LaJ/Y;
-
-    move-result-object v0
-
-    if-eqz p1, :cond_23
-
-    invoke-virtual {v0}, LaJ/Y;->d()LaJ/Y;
-
-    move-result-object v0
-
-    :goto_17
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->c:LaJ/p;
-
-    invoke-virtual {v1, v0}, LaJ/p;->a(LaJ/Y;)V
-
-    invoke-virtual {p0}, Lcom/google/googlenav/wallpaper/b;->a()V
+    .prologue
+    .line 217
+    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->e()V
 
     return-void
-
-    :cond_20
-    const-string v0, "i"
-
-    goto :goto_8
-
-    :cond_23
-    invoke-virtual {v0}, LaJ/Y;->c()LaJ/Y;
-
-    move-result-object v0
-
-    goto :goto_17
 .end method
 
-.method private b(II)V
-    .registers 11
+.method static synthetic b(Lcom/google/googlenav/wallpaper/b;Lcom/google/googlenav/wallpaper/h;)V
+    .registers 2
+    .parameter
+    .parameter
 
-    const/4 v7, 0x0
-
-    const/4 v2, 0x1
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->f:Lcom/google/googlenav/ui/at;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/at;->j()LaJ/B;
-
-    move-result-object v0
-
-    if-nez v0, :cond_42
-
-    invoke-static {}, Laf/b;->a()Laf/b;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Laf/b;->v()Laf/a;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Laf/a;->b()J
-
-    move-result-wide v0
-
-    iget-wide v3, p0, Lcom/google/googlenav/wallpaper/b;->p:J
-
-    sub-long v3, v0, v3
-
-    const-wide/16 v5, 0x7530
-
-    cmp-long v3, v3, v5
-
-    if-lez v3, :cond_27
-
-    iput-wide v0, p0, Lcom/google/googlenav/wallpaper/b;->p:J
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->e:Lat/h;
-
-    invoke-direct {p0, v0}, Lcom/google/googlenav/wallpaper/b;->a(Lat/h;)V
-
-    :cond_27
-    :goto_27
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->c:LaJ/p;
-
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->b:Lai/e;
-
-    move v3, v2
-
-    move v4, v2
-
-    move v5, v2
-
-    invoke-virtual/range {v0 .. v5}, LaJ/p;->a(Lah/e;ZZZZ)Z
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->b:Lai/e;
-
-    invoke-static {v0, p1, p2}, Lcom/google/googlenav/ui/C;->a(Lah/e;II)Lcom/google/googlenav/ui/C;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->f:Lcom/google/googlenav/ui/at;
-
-    invoke-virtual {v1, v0, v7, v7}, Lcom/google/googlenav/ui/at;->a(Lcom/google/googlenav/ui/C;IZ)V
-
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->f:Lcom/google/googlenav/ui/at;
-
-    invoke-virtual {v1, v0}, Lcom/google/googlenav/ui/at;->a(Lcom/google/googlenav/ui/C;)V
+    .prologue
+    .line 217
+    invoke-direct {p0, p1}, Lcom/google/googlenav/wallpaper/b;->a(Lcom/google/googlenav/wallpaper/h;)V
 
     return-void
-
-    :cond_42
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->o:LaJ/B;
-
-    if-eqz v1, :cond_4e
-
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->o:LaJ/B;
-
-    invoke-virtual {v1, v0}, LaJ/B;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_27
-
-    :cond_4e
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->c:LaJ/p;
-
-    invoke-virtual {v1, v0}, LaJ/p;->b(LaJ/B;)V
-
-    iput-object v0, p0, Lcom/google/googlenav/wallpaper/b;->o:LaJ/B;
-
-    goto :goto_27
 .end method
 
-.method private b(Landroid/content/SharedPreferences;)V
-    .registers 4
+.method private c()I
+    .registers 6
 
-    const/4 v1, -0x1
+    .prologue
+    const/4 v4, 0x0
 
-    const-string v0, "zoom_level"
+    const/16 v0, 0xc
 
-    invoke-interface {p1, v0, v1}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    .line 374
+    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
+
+    const-string v2, "wallpaper_settings"
+
+    invoke-virtual {v1, v2, v4}, Lcom/google/googlenav/wallpaper/MapWallpaper;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    .line 375
+    const-string v2, "zoom_level_string"
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 377
+    :try_start_15
+    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    :try_end_18
+    .catch Ljava/lang/NumberFormatException; {:try_start_15 .. :try_end_18} :catch_1a
 
     move-result v0
 
-    if-eq v0, v1, :cond_12
+    .line 384
+    :goto_19
+    return v0
 
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->c:LaJ/p;
+    .line 378
+    :catch_1a
+    move-exception v1
 
-    invoke-static {v0}, LaJ/Y;->b(I)LaJ/Y;
+    .line 381
+    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
 
-    move-result-object v0
+    const-string v2, "wallpaper_settings"
 
-    invoke-virtual {v1, v0}, LaJ/p;->a(LaJ/Y;)V
+    invoke-virtual {v1, v2, v4}, Lcom/google/googlenav/wallpaper/MapWallpaper;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
-    :cond_12
-    return-void
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    const-string v2, "zoom_level_string"
+
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    invoke-static {v1}, LR/b;->a(Landroid/content/SharedPreferences$Editor;)V
+
+    goto :goto_19
 .end method
 
-.method private c()V
+.method static synthetic c(Lcom/google/googlenav/wallpaper/b;)Lcom/google/googlenav/wallpaper/c;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 217
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->j:Lcom/google/googlenav/wallpaper/c;
+
+    return-object v0
+.end method
+
+.method private d()V
     .registers 4
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
+    .prologue
+    .line 389
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->b:Lcom/google/googlenav/wallpaper/MapWallpaper;
 
     const-string v1, "wallpaper_settings"
 
@@ -418,538 +807,153 @@
 
     move-result-object v0
 
+    .line 393
+    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->b()V
+
+    .line 396
     invoke-interface {v0, p0}, Landroid/content/SharedPreferences;->registerOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
 
+    .line 399
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/google/googlenav/wallpaper/b;->onSharedPreferenceChanged(Landroid/content/SharedPreferences;Ljava/lang/String;)V
 
+    .line 402
     invoke-direct {p0, v0}, Lcom/google/googlenav/wallpaper/b;->a(Landroid/content/SharedPreferences;)V
 
+    .line 403
     return-void
 .end method
 
-.method private d()I
-    .registers 3
+.method static synthetic d(Lcom/google/googlenav/wallpaper/b;)V
+    .registers 1
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
+    .prologue
+    .line 217
+    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->g()V
 
-    invoke-static {v0}, Landroid/app/WallpaperManager;->getInstance(Landroid/content/Context;)Landroid/app/WallpaperManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/WallpaperManager;->getDesiredMinimumWidth()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Lcom/google/googlenav/wallpaper/b;->isPreview()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_18
-
-    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->e()Z
-
-    move-result v1
-
-    if-nez v1, :cond_18
-
-    div-int/lit8 v0, v0, 0x2
-
-    :cond_18
-    return v0
-.end method
-
-.method private e()Z
-    .registers 3
-
-    iget v0, p0, Lcom/google/googlenav/wallpaper/b;->j:I
-
-    iget v1, p0, Lcom/google/googlenav/wallpaper/b;->k:I
-
-    if-le v0, v1, :cond_8
-
-    const/4 v0, 0x1
-
-    :goto_7
-    return v0
-
-    :cond_8
-    const/4 v0, 0x0
-
-    goto :goto_7
-.end method
-
-.method private f()I
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v0}, Landroid/app/WallpaperManager;->getInstance(Landroid/content/Context;)Landroid/app/WallpaperManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/WallpaperManager;->getDesiredMinimumHeight()I
-
-    move-result v0
-
-    return v0
-.end method
-
-
-# virtual methods
-.method a()V
-    .registers 9
-
-    invoke-virtual {p0}, Lcom/google/googlenav/wallpaper/b;->getSurfaceHolder()Landroid/view/SurfaceHolder;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Landroid/view/SurfaceHolder;->getSurfaceFrame()Landroid/graphics/Rect;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
-
-    move-result v3
-
-    invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
-
-    move-result v0
-
-    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->d()I
-
-    move-result v4
-
-    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->f()I
-
-    move-result v1
-
-    if-eqz v4, :cond_1c
-
-    if-nez v1, :cond_1d
-
-    :cond_1c
-    :goto_1c
     return-void
-
-    :cond_1d
-    sub-int v5, v4, v3
-
-    int-to-float v5, v5
-
-    iget v6, p0, Lcom/google/googlenav/wallpaper/b;->g:F
-
-    mul-float/2addr v5, v6
-
-    float-to-int v5, v5
-
-    neg-int v5, v5
-
-    sub-int v6, v1, v0
-
-    int-to-float v6, v6
-
-    iget v7, p0, Lcom/google/googlenav/wallpaper/b;->h:F
-
-    mul-float/2addr v6, v7
-
-    float-to-int v6, v6
-
-    neg-int v6, v6
-
-    iget-object v7, p0, Lcom/google/googlenav/wallpaper/b;->c:LaJ/p;
-
-    invoke-virtual {v7}, LaJ/p;->r()I
-
-    move-result v7
-
-    if-ne v4, v7, :cond_3d
-
-    iget-object v7, p0, Lcom/google/googlenav/wallpaper/b;->c:LaJ/p;
-
-    invoke-virtual {v7}, LaJ/p;->q()I
-
-    move-result v7
-
-    if-eq v1, v7, :cond_42
-
-    :cond_3d
-    iget-object v7, p0, Lcom/google/googlenav/wallpaper/b;->c:LaJ/p;
-
-    invoke-virtual {v7, v4, v1}, LaJ/p;->d(II)V
-
-    :cond_42
-    const/4 v1, 0x0
-
-    :try_start_43
-    invoke-interface {v2}, Landroid/view/SurfaceHolder;->lockCanvas()Landroid/graphics/Canvas;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_96
-
-    if-lez v3, :cond_96
-
-    if-lez v0, :cond_96
-
-    iget-object v7, p0, Lcom/google/googlenav/wallpaper/b;->b:Lai/e;
-
-    invoke-virtual {v7, v1}, Lai/e;->a(Landroid/graphics/Canvas;)V
-
-    int-to-float v5, v5
-
-    int-to-float v6, v6
-
-    invoke-virtual {v1, v5, v6}, Landroid/graphics/Canvas;->translate(FF)V
-
-    invoke-direct {p0, v4, v0}, Lcom/google/googlenav/wallpaper/b;->b(II)V
-
-    invoke-virtual {v1}, Landroid/graphics/Canvas;->restore()V
-
-    iget-boolean v5, p0, Lcom/google/googlenav/wallpaper/b;->l:Z
-
-    if-eqz v5, :cond_6a
-
-    iget-object v5, p0, Lcom/google/googlenav/wallpaper/b;->m:Lbg/d;
-
-    invoke-virtual {p0}, Lcom/google/googlenav/wallpaper/b;->isPreview()Z
-
-    move-result v6
-
-    invoke-virtual {v5, v1, v3, v4, v6}, Lbg/d;->a(Landroid/graphics/Canvas;IIZ)V
-
-    :cond_6a
-    iget-object v4, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v4}, Lcom/google/googlenav/wallpaper/MapWallpaper;->e(Lcom/google/googlenav/wallpaper/MapWallpaper;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_93
-
-    iget-object v4, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v4}, Lcom/google/googlenav/wallpaper/MapWallpaper;->b(Lcom/google/googlenav/wallpaper/MapWallpaper;)Ljava/lang/String;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v5}, Lcom/google/googlenav/wallpaper/MapWallpaper;->c(Lcom/google/googlenav/wallpaper/MapWallpaper;)Landroid/graphics/Rect;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/graphics/Rect;->width()I
-
-    move-result v5
-
-    sub-int v5, v3, v5
-
-    add-int/lit8 v5, v5, -0x4
-
-    int-to-float v5, v5
-
-    add-int/lit8 v6, v0, -0x4
-
-    int-to-float v6, v6
-
-    iget-object v7, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v7}, Lcom/google/googlenav/wallpaper/MapWallpaper;->a(Lcom/google/googlenav/wallpaper/MapWallpaper;)Landroid/graphics/Paint;
-
-    move-result-object v7
-
-    invoke-virtual {v1, v4, v5, v6, v7}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-
-    :cond_93
-    invoke-direct {p0, v3, v0}, Lcom/google/googlenav/wallpaper/b;->a(II)V
-    :try_end_96
-    .catchall {:try_start_43 .. :try_end_96} :catchall_9c
-
-    :cond_96
-    if-eqz v1, :cond_1c
-
-    invoke-interface {v2, v1}, Landroid/view/SurfaceHolder;->unlockCanvasAndPost(Landroid/graphics/Canvas;)V
-
-    goto :goto_1c
-
-    :catchall_9c
-    move-exception v0
-
-    if-eqz v1, :cond_a2
-
-    invoke-interface {v2, v1}, Landroid/view/SurfaceHolder;->unlockCanvasAndPost(Landroid/graphics/Canvas;)V
-
-    :cond_a2
-    throw v0
 .end method
 
-.method public a(Ljava/lang/String;)V
-    .registers 7
+.method private e()V
+    .registers 3
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
+    .prologue
+    .line 461
+    invoke-virtual {p0}, Lcom/google/googlenav/wallpaper/b;->getDesiredMinimumWidth()I
 
-    invoke-static {v0}, Lcom/google/googlenav/wallpaper/MapWallpaper;->a(Lcom/google/googlenav/wallpaper/MapWallpaper;)Landroid/graphics/Paint;
+    move-result v0
 
-    move-result-object v0
+    invoke-virtual {p0}, Lcom/google/googlenav/wallpaper/b;->getDesiredMinimumHeight()I
 
-    if-eqz v0, :cond_2d
+    move-result v1
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
+    invoke-direct {p0, v0, v1}, Lcom/google/googlenav/wallpaper/b;->a(II)V
 
-    invoke-static {v0, p1}, Lcom/google/googlenav/wallpaper/MapWallpaper;->a(Lcom/google/googlenav/wallpaper/MapWallpaper;Ljava/lang/String;)Ljava/lang/String;
+    .line 462
+    return-void
+.end method
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
+.method private f()Ljava/io/File;
+    .registers 4
 
-    invoke-static {v0}, Lcom/google/googlenav/wallpaper/MapWallpaper;->a(Lcom/google/googlenav/wallpaper/MapWallpaper;)Landroid/graphics/Paint;
+    .prologue
+    .line 468
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->b:Lcom/google/googlenav/wallpaper/MapWallpaper;
 
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v1}, Lcom/google/googlenav/wallpaper/MapWallpaper;->b(Lcom/google/googlenav/wallpaper/MapWallpaper;)Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "wallpaper"
 
     const/4 v2, 0x0
 
-    iget-object v3, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v3}, Lcom/google/googlenav/wallpaper/MapWallpaper;->b(Lcom/google/googlenav/wallpaper/MapWallpaper;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    iget-object v4, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v4}, Lcom/google/googlenav/wallpaper/MapWallpaper;->c(Lcom/google/googlenav/wallpaper/MapWallpaper;)Landroid/graphics/Rect;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
-
-    :cond_2d
-    return-void
-.end method
-
-.method public a(LaA/r;)Z
-    .registers 3
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public a(LaA/t;)Z
-    .registers 4
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p1}, LaA/t;->i()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_a
-
-    invoke-direct {p0, v1}, Lcom/google/googlenav/wallpaper/b;->a(Z)V
-
-    :cond_a
-    return v1
-.end method
-
-.method public a(LaA/z;)Z
-    .registers 3
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public b()V
-    .registers 1
-
-    invoke-virtual {p0}, Lcom/google/googlenav/wallpaper/b;->a()V
-
-    return-void
-.end method
-
-.method public onCommand(Ljava/lang/String;IIILandroid/os/Bundle;Z)Landroid/os/Bundle;
-    .registers 8
-
-    const-string v0, "android.wallpaper.tap"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_11
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->m:Lbg/d;
-
-    if-eqz v0, :cond_11
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->m:Lbg/d;
-
-    invoke-virtual {v0, p2, p3}, Lbg/d;->a(II)V
-
-    :cond_11
-    invoke-super/range {p0 .. p6}, Landroid/service/wallpaper/WallpaperService$Engine;->onCommand(Ljava/lang/String;IIILandroid/os/Bundle;Z)Landroid/os/Bundle;
+    invoke-virtual {v0, v1, v2}, Lcom/google/googlenav/wallpaper/MapWallpaper;->getDir(Ljava/lang/String;I)Ljava/io/File;
 
     move-result-object v0
 
     return-object v0
 .end method
 
+.method private g()V
+    .registers 4
+
+    .prologue
+    .line 475
+    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->f()Ljava/io/File;
+
+    move-result-object v0
+
+    .line 476
+    invoke-virtual {v0}, Ljava/io/File;->listFiles()[Ljava/io/File;
+
+    move-result-object v1
+
+    .line 477
+    const/4 v0, 0x0
+
+    :goto_9
+    array-length v2, v1
+
+    if-ge v0, v2, :cond_14
+
+    .line 478
+    aget-object v2, v1, v0
+
+    invoke-virtual {v2}, Ljava/io/File;->delete()Z
+
+    .line 477
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_9
+
+    .line 480
+    :cond_14
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()V
+    .registers 1
+
+    .prologue
+    .line 457
+    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->e()V
+
+    .line 458
+    return-void
+.end method
+
 .method public onCreate(Landroid/view/SurfaceHolder;)V
-    .registers 9
+    .registers 8
+    .parameter
 
-    const/4 v3, 0x0
-
-    const/16 v6, 0x4c
-
-    const/4 v5, 0x1
-
+    .prologue
     const/4 v4, 0x0
 
+    .line 256
     invoke-super {p0, p1}, Landroid/service/wallpaper/WallpaperService$Engine;->onCreate(Landroid/view/SurfaceHolder;)V
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
+    .line 258
+    new-instance v0, Lcom/google/googlenav/wallpaper/c;
+
+    invoke-direct {v0, p0, v4}, Lcom/google/googlenav/wallpaper/c;-><init>(Lcom/google/googlenav/wallpaper/b;Lcom/google/googlenav/wallpaper/a;)V
+
+    iput-object v0, p0, Lcom/google/googlenav/wallpaper/b;->j:Lcom/google/googlenav/wallpaper/c;
+
+    .line 261
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->b:Lcom/google/googlenav/wallpaper/MapWallpaper;
 
     invoke-static {v0}, Lcom/google/googlenav/android/c;->a(Landroid/content/Context;)V
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
+    .line 262
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->b:Lcom/google/googlenav/wallpaper/MapWallpaper;
 
-    invoke-static {v0}, Lcom/google/googlenav/android/c;->b(Landroid/content/Context;)Lat/h;
+    invoke-static {v0}, Lcom/google/googlenav/android/c;->b(Landroid/content/Context;)Lac/h;
 
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
+    .line 270
+    new-instance v0, LaU/d;
 
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Lcom/google/googlenav/M;->c(Z)V
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/wallpaper/MapWallpaper;->getApplication()Landroid/app/Application;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/googlenav/android/c;->a(Landroid/app/Application;)Lcom/google/googlenav/android/c;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/c;->e()Lcom/google/googlenav/android/l;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/googlenav/wallpaper/b;->d:Lcom/google/googlenav/android/l;
-
-    invoke-static {}, LaA/i;->a()LaA/i;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/googlenav/wallpaper/b;->n:LaA/i;
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->n:LaA/i;
-
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-virtual {v0, v1, p0}, LaA/i;->a(Landroid/content/Context;LaA/m;)V
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->d:Lcom/google/googlenav/android/l;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Lcom/google/googlenav/ui/D;->r(Z)V
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->d:Lcom/google/googlenav/android/l;
-
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/wallpaper/MapWallpaper;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v1
-
-    iget-object v1, v1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
-
-    invoke-virtual {v0, v1, v3, v4, v4}, Lcom/google/googlenav/android/l;->a(Ljava/util/Locale;Lcom/google/googlenav/android/C;ZZ)V
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->d:Lcom/google/googlenav/android/l;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->n()Lcom/google/googlenav/ui/android/z;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/google/googlenav/wallpaper/c;
-
-    iget-object v2, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-virtual {v2}, Lcom/google/googlenav/wallpaper/MapWallpaper;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-direct {v1, p0, v2}, Lcom/google/googlenav/wallpaper/c;-><init>(Lcom/google/googlenav/wallpaper/b;Landroid/content/Context;)V
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/android/z;->a(Landroid/view/View;)V
-
-    invoke-static {}, Lcom/google/googlenav/ui/bw;->d()Lcom/google/googlenav/ui/bw;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/bw;->a(Landroid/content/Context;)V
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->d:Lcom/google/googlenav/android/l;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->l()Lat/h;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/googlenav/wallpaper/b;->e:Lat/h;
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->d:Lcom/google/googlenav/android/l;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->i()LaJ/p;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/googlenav/wallpaper/b;->c:LaJ/p;
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->d:Lcom/google/googlenav/android/l;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/D;->aw()Lcom/google/googlenav/ui/at;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/googlenav/wallpaper/b;->f:Lcom/google/googlenav/ui/at;
-
-    new-instance v0, Lai/e;
-
-    invoke-direct {v0, v3}, Lai/e;-><init>(Landroid/graphics/Canvas;)V
-
-    iput-object v0, p0, Lcom/google/googlenav/wallpaper/b;->b:Lai/e;
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->e:Lat/h;
-
-    invoke-direct {p0, v0}, Lcom/google/googlenav/wallpaper/b;->a(Lat/h;)V
-
-    new-instance v0, Lbg/d;
-
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
+    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->b:Lcom/google/googlenav/wallpaper/MapWallpaper;
 
     invoke-virtual {p0}, Lcom/google/googlenav/wallpaper/b;->getDesiredMinimumWidth()I
 
@@ -959,591 +963,279 @@
 
     move-result v3
 
-    invoke-direct {v0, v1, v2, v3, p0}, Lbg/d;-><init>(Landroid/content/Context;IILcom/google/googlenav/wallpaper/f;)V
+    invoke-direct {v0, v1, v2, v3, p0}, LaU/d;-><init>(Landroid/content/Context;IILcom/google/googlenav/wallpaper/i;)V
 
-    iput-object v0, p0, Lcom/google/googlenav/wallpaper/b;->m:Lbg/d;
+    iput-object v0, p0, Lcom/google/googlenav/wallpaper/b;->h:LaU/d;
 
-    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->c()V
+    .line 273
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->b:Lcom/google/googlenav/wallpaper/MapWallpaper;
 
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
+    const-string v1, "location"
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->am()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_108
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v0}, Lcom/google/googlenav/wallpaper/MapWallpaper;->a(Lcom/google/googlenav/wallpaper/MapWallpaper;)Landroid/graphics/Paint;
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/wallpaper/MapWallpaper;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    const/high16 v1, 0x4160
+    check-cast v0, Landroid/location/LocationManager;
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTextSize(F)V
+    .line 275
+    new-instance v1, Lcom/google/googlenav/wallpaper/g;
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
+    invoke-direct {v1, p0, v4}, Lcom/google/googlenav/wallpaper/g;-><init>(Lcom/google/googlenav/wallpaper/b;Lcom/google/googlenav/wallpaper/a;)V
 
-    invoke-static {v0}, Lcom/google/googlenav/wallpaper/MapWallpaper;->a(Lcom/google/googlenav/wallpaper/MapWallpaper;)Landroid/graphics/Paint;
+    iput-object v1, p0, Lcom/google/googlenav/wallpaper/b;->g:Lcom/google/googlenav/wallpaper/g;
 
-    move-result-object v0
+    .line 278
+    const-string v1, "network"
 
-    invoke-virtual {v0, v5}, Landroid/graphics/Paint;->setSubpixelText(Z)V
+    const-wide/32 v2, 0x927c0
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
+    const v4, 0x453b8000
 
-    invoke-static {v0}, Lcom/google/googlenav/wallpaper/MapWallpaper;->a(Lcom/google/googlenav/wallpaper/MapWallpaper;)Landroid/graphics/Paint;
+    iget-object v5, p0, Lcom/google/googlenav/wallpaper/b;->g:Lcom/google/googlenav/wallpaper/g;
 
-    move-result-object v0
+    invoke-virtual/range {v0 .. v5}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
 
-    invoke-virtual {v0, v5}, Landroid/graphics/Paint;->setAntiAlias(Z)V
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v0}, Lcom/google/googlenav/wallpaper/MapWallpaper;->a(Lcom/google/googlenav/wallpaper/MapWallpaper;)Landroid/graphics/Paint;
-
-    move-result-object v0
-
-    sget-object v1, Landroid/graphics/Typeface;->SERIF:Landroid/graphics/Typeface;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v0}, Lcom/google/googlenav/wallpaper/MapWallpaper;->a(Lcom/google/googlenav/wallpaper/MapWallpaper;)Landroid/graphics/Paint;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v1}, Lcom/google/googlenav/wallpaper/MapWallpaper;->b(Lcom/google/googlenav/wallpaper/MapWallpaper;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v2}, Lcom/google/googlenav/wallpaper/MapWallpaper;->b(Lcom/google/googlenav/wallpaper/MapWallpaper;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    iget-object v3, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v3}, Lcom/google/googlenav/wallpaper/MapWallpaper;->c(Lcom/google/googlenav/wallpaper/MapWallpaper;)Landroid/graphics/Rect;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v1, v4, v2, v3}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v0, v5}, Lcom/google/googlenav/wallpaper/MapWallpaper;->b(Lcom/google/googlenav/wallpaper/MapWallpaper;Z)Z
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->d:Lcom/google/googlenav/android/l;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->i()LaJ/p;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, LaJ/p;->a(LaJ/w;)V
-
-    :cond_108
-    new-instance v0, Lcom/google/googlenav/wallpaper/d;
-
-    invoke-direct {v0, p0}, Lcom/google/googlenav/wallpaper/d;-><init>(Lcom/google/googlenav/wallpaper/b;)V
-
-    new-instance v1, Landroid/os/Handler;
-
-    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
-
-    const-wide/16 v2, 0x3e8
-
-    invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    const-wide/16 v2, 0x7d0
-
-    invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    const-wide/16 v2, 0xbb8
-
-    invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    const-string v1, "wallpaper_settings"
-
-    invoke-virtual {v0, v1, v4}, Lcom/google/googlenav/wallpaper/MapWallpaper;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lcom/google/googlenav/wallpaper/b;->isPreview()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_137
-
-    const-string v0, "a"
-
-    const-string v1, "p"
-
-    invoke-static {v6, v0, v1}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
-
-    :goto_136
-    return-void
-
-    :cond_137
-    const-string v1, "is_wallpaper_set"
-
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_147
-
-    const-string v1, "is_wallpaper_set"
-
-    invoke-interface {v0, v1, v4}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    if-nez v0, :cond_164
-
-    :cond_147
-    const-string v0, "a"
-
-    const-string v1, "s"
-
-    invoke-static {v6, v0, v1}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    const-string v1, "wallpaper_settings"
-
-    invoke-virtual {v0, v1, v4}, Lcom/google/googlenav/wallpaper/MapWallpaper;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "is_wallpaper_set"
-
-    invoke-interface {v0, v1, v5}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lag/b;->a(Landroid/content/SharedPreferences$Editor;)V
-
-    goto :goto_136
-
-    :cond_164
-    const-string v0, "a"
-
-    const-string v1, "w"
-
-    invoke-static {v6, v0, v1}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
-
-    goto :goto_136
-.end method
-
-.method public onDestroy()V
-    .registers 5
-
-    const/4 v3, 0x0
-
-    invoke-super {p0}, Landroid/service/wallpaper/WallpaperService$Engine;->onDestroy()V
-
+    .line 282
     invoke-virtual {p0}, Lcom/google/googlenav/wallpaper/b;->isPreview()Z
 
     move-result v0
 
-    if-nez v0, :cond_30
+    if-eqz v0, :cond_53
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v0}, Lcom/google/googlenav/wallpaper/MapWallpaper;->d(Lcom/google/googlenav/wallpaper/MapWallpaper;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_30
-
+    .line 285
     const/16 v0, 0x4c
 
     const-string v1, "a"
 
-    const-string v2, "u"
+    const-string v2, "p"
 
-    invoke-static {v0, v1, v2}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v0, v1, v2}, LaT/k;->a(ILjava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
+    .line 289
+    :cond_53
+    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->d()V
 
-    const-string v1, "wallpaper_settings"
+    .line 290
+    return-void
+.end method
 
-    invoke-virtual {v0, v1, v3}, Lcom/google/googlenav/wallpaper/MapWallpaper;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+.method public onDesiredSizeChanged(II)V
+    .registers 3
+    .parameter
+    .parameter
 
-    move-result-object v0
+    .prologue
+    .line 306
+    invoke-direct {p0, p1, p2}, Lcom/google/googlenav/wallpaper/b;->a(II)V
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    .line 307
+    return-void
+.end method
 
-    move-result-object v0
+.method public onDestroy()V
+    .registers 3
 
-    const-string v1, "is_wallpaper_set"
+    .prologue
+    .line 294
+    invoke-super {p0}, Landroid/service/wallpaper/WallpaperService$Engine;->onDestroy()V
 
-    invoke-interface {v0, v1, v3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+    .line 297
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->b:Lcom/google/googlenav/wallpaper/MapWallpaper;
 
-    move-result-object v0
+    const-string v1, "location"
 
-    invoke-static {v0}, Lag/b;->a(Landroid/content/SharedPreferences$Editor;)V
-
-    :cond_30
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    const-string v1, "wallpaper_settings"
-
-    invoke-virtual {v0, v1, v3}, Lcom/google/googlenav/wallpaper/MapWallpaper;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "zoom_level"
-
-    iget-object v2, p0, Lcom/google/googlenav/wallpaper/b;->c:LaJ/p;
-
-    invoke-virtual {v2}, LaJ/p;->c()LaJ/Y;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, LaJ/Y;->a()I
-
-    move-result v2
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/wallpaper/MapWallpaper;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Lag/b;->a(Landroid/content/SharedPreferences$Editor;)V
+    check-cast v0, Landroid/location/LocationManager;
 
+    .line 299
+    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->g:Lcom/google/googlenav/wallpaper/g;
+
+    invoke-virtual {v0, v1}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
+
+    .line 301
     invoke-static {}, Lcom/google/googlenav/android/c;->f()V
 
+    .line 302
     return-void
 .end method
 
 .method public onOffsetsChanged(FFFFII)V
     .registers 8
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-super/range {p0 .. p6}, Landroid/service/wallpaper/WallpaperService$Engine;->onOffsetsChanged(FFFFII)V
+    .prologue
+    .line 330
+    iput p5, p0, Lcom/google/googlenav/wallpaper/b;->d:I
 
-    iput p1, p0, Lcom/google/googlenav/wallpaper/b;->g:F
+    .line 331
+    iput p6, p0, Lcom/google/googlenav/wallpaper/b;->e:I
 
-    iput p2, p0, Lcom/google/googlenav/wallpaper/b;->h:F
+    .line 332
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->h:LaU/d;
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->m:Lbg/d;
+    if-eqz v0, :cond_d
 
-    if-eqz v0, :cond_10
+    .line 333
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->h:LaU/d;
 
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->m:Lbg/d;
+    invoke-virtual {v0, p1}, LaU/d;->a(F)V
 
-    invoke-virtual {v0, p1}, Lbg/d;->a(F)V
+    .line 336
+    :cond_d
+    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->e()V
 
-    :cond_10
-    invoke-virtual {p0}, Lcom/google/googlenav/wallpaper/b;->a()V
-
+    .line 337
     return-void
 .end method
 
 .method public onSharedPreferenceChanged(Landroid/content/SharedPreferences;Ljava/lang/String;)V
-    .registers 9
+    .registers 5
+    .parameter
+    .parameter
 
-    const/high16 v5, -0x100
-
+    .prologue
     const/4 v1, 0x1
 
-    const/4 v0, 0x0
+    .line 429
+    iput-boolean v1, p0, Lcom/google/googlenav/wallpaper/b;->i:Z
 
-    const-string v2, "show_traffic"
+    .line 430
+    const-string v0, "weather_on"
 
-    invoke-interface {p1, v2}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1b
-
-    iget-object v2, p0, Lcom/google/googlenav/wallpaper/b;->d:Lcom/google/googlenav/android/l;
-
-    invoke-virtual {v2}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
-
-    move-result-object v2
-
-    const-string v3, "show_traffic"
-
-    invoke-interface {p1, v3, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v3
-
-    invoke-virtual {v2, v3, v0}, Lcom/google/googlenav/ui/D;->a(ZZ)V
-
-    :cond_1b
-    iput-boolean v1, p0, Lcom/google/googlenav/wallpaper/b;->l:Z
-
-    const-string v2, "weather_on"
-
-    invoke-interface {p1, v2}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2d
-
-    const-string v2, "weather_on"
-
-    invoke-interface {p1, v2, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v2
-
-    iput-boolean v2, p0, Lcom/google/googlenav/wallpaper/b;->l:Z
-
-    :cond_2d
-    const-string v2, "map_mode"
-
-    const-string v3, "map_mode_satellite"
-
-    invoke-interface {p1, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v3}, Lcom/google/googlenav/wallpaper/MapWallpaper;->a(Lcom/google/googlenav/wallpaper/MapWallpaper;)Landroid/graphics/Paint;
-
-    move-result-object v3
-
-    const/4 v4, -0x1
-
-    invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setColor(I)V
-
-    const-string v3, "map_mode_terrain"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_6a
-
-    const/4 v0, 0x2
-
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v1}, Lcom/google/googlenav/wallpaper/MapWallpaper;->a(Lcom/google/googlenav/wallpaper/MapWallpaper;)Landroid/graphics/Paint;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v5}, Landroid/graphics/Paint;->setColor(I)V
-
-    :goto_51
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->d:Lcom/google/googlenav/android/l;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/google/googlenav/ui/D;->a(I)Z
-
-    invoke-direct {p0, p1}, Lcom/google/googlenav/wallpaper/b;->b(Landroid/content/SharedPreferences;)V
-
-    invoke-direct {p0, p1}, Lcom/google/googlenav/wallpaper/b;->a(Landroid/content/SharedPreferences;)V
-
-    invoke-virtual {p0}, Lcom/google/googlenav/wallpaper/b;->isVisible()Z
+    invoke-interface {p1, v0}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_69
+    if-eqz v0, :cond_13
 
-    invoke-virtual {p0}, Lcom/google/googlenav/wallpaper/b;->a()V
+    .line 431
+    const-string v0, "weather_on"
 
-    :cond_69
-    return-void
-
-    :cond_6a
-    const-string v3, "map_mode_normal"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_7c
-
-    iget-object v1, p0, Lcom/google/googlenav/wallpaper/b;->a:Lcom/google/googlenav/wallpaper/MapWallpaper;
-
-    invoke-static {v1}, Lcom/google/googlenav/wallpaper/MapWallpaper;->a(Lcom/google/googlenav/wallpaper/MapWallpaper;)Landroid/graphics/Paint;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v5}, Landroid/graphics/Paint;->setColor(I)V
-
-    goto :goto_51
-
-    :cond_7c
-    move v0, v1
-
-    goto :goto_51
-.end method
-
-.method public onSurfaceChanged(Landroid/view/SurfaceHolder;III)V
-    .registers 7
-
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/service/wallpaper/WallpaperService$Engine;->onSurfaceChanged(Landroid/view/SurfaceHolder;III)V
-
-    if-lez p3, :cond_17
-
-    if-lez p4, :cond_17
-
-    iput p3, p0, Lcom/google/googlenav/wallpaper/b;->j:I
-
-    iput p4, p0, Lcom/google/googlenav/wallpaper/b;->k:I
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->c:LaJ/p;
-
-    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->d()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1, p4}, LaJ/p;->d(II)V
-
-    invoke-virtual {p0}, Lcom/google/googlenav/wallpaper/b;->a()V
-
-    :cond_17
-    return-void
-.end method
-
-.method public onTouchEvent(Landroid/view/MotionEvent;)V
-    .registers 6
-
-    invoke-super {p0, p1}, Landroid/service/wallpaper/WallpaperService$Engine;->onTouchEvent(Landroid/view/MotionEvent;)V
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+    invoke-interface {p1, v0, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
-    if-nez v0, :cond_1d
+    iput-boolean v0, p0, Lcom/google/googlenav/wallpaper/b;->i:Z
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getDownTime()J
+    .line 435
+    :cond_13
+    const-string v0, "map_mode"
 
-    move-result-wide v0
+    const-string v1, "map_mode_satellite"
 
-    iget-wide v2, p0, Lcom/google/googlenav/wallpaper/b;->i:J
-
-    sub-long/2addr v0, v2
-
-    invoke-static {}, Landroid/view/ViewConfiguration;->getDoubleTapTimeout()I
-
-    move-result v2
-
-    int-to-long v2, v2
-
-    cmp-long v0, v0, v2
-
-    if-gtz v0, :cond_2c
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lcom/google/googlenav/wallpaper/b;->a(Z)V
-
-    :cond_1d
-    :goto_1d
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->n:LaA/i;
-
-    invoke-virtual {v0, p1}, LaA/i;->b(Landroid/view/MotionEvent;)Z
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->m:Lbg/d;
-
-    if-eqz v0, :cond_2b
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->m:Lbg/d;
-
-    invoke-virtual {v0, p1}, Lbg/d;->a(Landroid/view/MotionEvent;)V
-
-    :cond_2b
-    return-void
-
-    :cond_2c
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getDownTime()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/google/googlenav/wallpaper/b;->i:J
-
-    goto :goto_1d
-.end method
-
-.method public onVisibilityChanged(Z)V
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->m:Lbg/d;
-
-    if-eqz v0, :cond_9
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->m:Lbg/d;
-
-    invoke-virtual {v0, p1}, Lbg/d;->a(Z)V
-
-    :cond_9
-    if-eqz p1, :cond_26
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->e:Lat/h;
-
-    invoke-direct {p0, v0}, Lcom/google/googlenav/wallpaper/b;->a(Lat/h;)V
-
-    invoke-virtual {p0}, Lcom/google/googlenav/wallpaper/b;->a()V
-
-    :goto_13
-    new-instance v0, Ljava/lang/Thread;
-
-    new-instance v1, Lcom/google/googlenav/wallpaper/e;
-
-    invoke-direct {v1, p0}, Lcom/google/googlenav/wallpaper/e;-><init>(Lcom/google/googlenav/wallpaper/b;)V
-
-    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
-
-    const-string v1, "UpdatingWallpaperZoomPref"
-
-    invoke-virtual {v0, v1}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
-
-    return-void
-
-    :cond_26
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->e:Lat/h;
-
-    invoke-virtual {v0}, Lat/h;->e()Z
-
-    move-result v0
-
-    if-nez v0, :cond_33
-
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->e:Lat/h;
-
-    invoke-virtual {v0}, Lat/h;->f()V
-
-    :cond_33
-    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->d:Lcom/google/googlenav/android/l;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
+    invoke-interface {p1, v0, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    .line 437
+    const-string v1, "hybrid"
 
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/D;->k(Z)V
+    iput-object v1, p0, Lcom/google/googlenav/wallpaper/b;->f:Ljava/lang/String;
 
-    goto :goto_13
+    .line 438
+    const-string v1, "map_mode_terrain"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2f
+
+    .line 439
+    const-string v0, "terrain"
+
+    iput-object v0, p0, Lcom/google/googlenav/wallpaper/b;->f:Ljava/lang/String;
+
+    .line 444
+    :cond_2b
+    :goto_2b
+    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->e()V
+
+    .line 445
+    return-void
+
+    .line 440
+    :cond_2f
+    const-string v1, "map_mode_normal"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2b
+
+    .line 441
+    const-string v0, "roadmap"
+
+    iput-object v0, p0, Lcom/google/googlenav/wallpaper/b;->f:Ljava/lang/String;
+
+    goto :goto_2b
+.end method
+
+.method public onSurfaceChanged(Landroid/view/SurfaceHolder;III)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 311
+    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->e()V
+
+    .line 312
+    return-void
+.end method
+
+.method public onSurfaceCreated(Landroid/view/SurfaceHolder;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 316
+    iput-object p1, p0, Lcom/google/googlenav/wallpaper/b;->c:Landroid/view/SurfaceHolder;
+
+    .line 318
+    invoke-direct {p0}, Lcom/google/googlenav/wallpaper/b;->e()V
+
+    .line 319
+    return-void
+.end method
+
+.method public onSurfaceDestroyed(Landroid/view/SurfaceHolder;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 324
+    return-void
+.end method
+
+.method public onVisibilityChanged(Z)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 450
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->h:LaU/d;
+
+    if-eqz v0, :cond_9
+
+    .line 451
+    iget-object v0, p0, Lcom/google/googlenav/wallpaper/b;->h:LaU/d;
+
+    invoke-virtual {v0, p1}, LaU/d;->a(Z)V
+
+    .line 453
+    :cond_9
+    return-void
 .end method

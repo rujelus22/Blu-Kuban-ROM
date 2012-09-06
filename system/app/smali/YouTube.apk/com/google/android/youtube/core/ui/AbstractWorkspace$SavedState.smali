@@ -16,7 +16,7 @@
     .registers 1
 
     .prologue
-    .line 817
+    .line 823
     new-instance v0, Lcom/google/android/youtube/core/ui/c;
 
     invoke-direct {v0}, Lcom/google/android/youtube/core/ui/c;-><init>()V
@@ -31,22 +31,22 @@
     .parameter
 
     .prologue
-    .line 806
+    .line 812
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 799
+    .line 805
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$SavedState;->currentScreen:I
 
-    .line 807
+    .line 813
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$SavedState;->currentScreen:I
 
-    .line 808
+    .line 814
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .parameter
 
     .prologue
-    .line 798
+    .line 804
     invoke-direct {p0, p1}, Lcom/google/android/youtube/core/ui/AbstractWorkspace$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -67,15 +67,15 @@
     .parameter
 
     .prologue
-    .line 802
+    .line 808
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 799
+    .line 805
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$SavedState;->currentScreen:I
 
-    .line 803
+    .line 809
     return-void
 .end method
 
@@ -87,14 +87,14 @@
     .parameter
 
     .prologue
-    .line 812
+    .line 818
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 813
+    .line 819
     iget v0, p0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$SavedState;->currentScreen:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 814
+    .line 820
     return-void
 .end method

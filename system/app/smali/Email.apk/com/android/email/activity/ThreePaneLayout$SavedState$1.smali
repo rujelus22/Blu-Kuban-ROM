@@ -32,8 +32,8 @@
     .registers 1
 
     .prologue
-    .line 1354
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 619
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,7 +45,7 @@
     .parameter "in"
 
     .prologue
-    .line 1356
+    .line 621
     new-instance v0, Lcom/android/email/activity/ThreePaneLayout$SavedState;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1354
+    .line 619
     invoke-virtual {p0, p1}, Lcom/android/email/activity/ThreePaneLayout$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/email/activity/ThreePaneLayout$SavedState;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .parameter "size"
 
     .prologue
-    .line 1360
+    .line 625
     new-array v0, p1, [Lcom/android/email/activity/ThreePaneLayout$SavedState;
 
     return-object v0
@@ -84,7 +84,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1354
+    .line 619
     invoke-virtual {p0, p1}, Lcom/android/email/activity/ThreePaneLayout$SavedState$1;->newArray(I)[Lcom/android/email/activity/ThreePaneLayout$SavedState;
 
     move-result-object v0

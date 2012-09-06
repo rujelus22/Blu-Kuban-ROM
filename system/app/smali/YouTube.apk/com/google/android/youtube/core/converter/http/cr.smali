@@ -3,19 +3,12 @@
 .source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/converter/http/ci;
-
-
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/core/converter/http/ci;)V
-    .registers 2
-    .parameter
+.method constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 44
-    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/cr;->a:Lcom/google/android/youtube/core/converter/http/ci;
-
+    .line 68
     invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
     return-void
@@ -23,33 +16,33 @@
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;)V
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;)V
     .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 47
-    new-instance v0, Lcom/google/android/youtube/core/model/UserProfile$Builder;
+    .line 71
+    new-instance v0, Lcom/google/android/youtube/core/model/Subscription$Builder;
 
-    invoke-direct {v0}, Lcom/google/android/youtube/core/model/UserProfile$Builder;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/youtube/core/model/Subscription$Builder;-><init>()V
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->offer(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->offer(Ljava/lang/Object;)Z
 
-    .line 48
+    .line 72
     return-void
 .end method
 
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
     .registers 4
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 51
-    invoke-virtual {p1}, Lcom/google/android/youtube/core/utils/p;->poll()Ljava/lang/Object;
+    .line 76
+    invoke-virtual {p1}, Lcom/google/android/youtube/core/utils/x;->poll()Ljava/lang/Object;
 
-    .line 52
+    .line 77
     return-void
 .end method

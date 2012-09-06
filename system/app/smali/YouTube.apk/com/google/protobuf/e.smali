@@ -13,21 +13,42 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .registers 2
 
     .prologue
     .line 143
     new-instance v0, Lcom/google/protobuf/e;
 
-    invoke-direct {v0}, Lcom/google/protobuf/e;-><init>()V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lcom/google/protobuf/e;-><init>(B)V
 
     sput-object v0, Lcom/google/protobuf/e;->b:Lcom/google/protobuf/e;
 
     return-void
 .end method
 
-.method private constructor <init>()V
+.method constructor <init>()V
     .registers 2
+
+    .prologue
+    .line 121
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 122
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/google/protobuf/e;->a:Ljava/util/Map;
+
+    .line 125
+    return-void
+.end method
+
+.method private constructor <init>(B)V
+    .registers 3
+    .parameter
 
     .prologue
     .line 140

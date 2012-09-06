@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/toast_menu_none" android:background="@drawable/popuptoast_bg_up_center" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <Button android:textSize="10.0dip" android:textColor="@color/popuptoast_text_color" android:layout_gravity="center" android:id="@id/toast_menuitem_paste" android:background="@drawable/popuptoast_pressed_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/po_menu_item_paste" android:drawableTop="@drawable/ico_toast_paste_selector" />
-</LinearLayout>

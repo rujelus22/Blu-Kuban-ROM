@@ -49,31 +49,16 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .registers 1
 
     .prologue
-    .line 32
+    .line 28
     invoke-static {}, Lcom/google/android/finsky/utils/Sets;->newHashSet()Ljava/util/HashSet;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/android/finsky/experiments/DfeExperiments;->sRecognizedExperiments:Ljava/util/Set;
 
-    .line 35
-    sget-object v0, Lcom/google/android/finsky/experiments/DfeExperiments;->sRecognizedExperiments:Ljava/util/Set;
-
-    const-string v1, "cl:billing.select_add_instrument_by_default"
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    .line 36
-    sget-object v0, Lcom/google/android/finsky/experiments/DfeExperiments;->sRecognizedExperiments:Ljava/util/Set;
-
-    const-string v1, "cl:billing.add_instrument_reminder"
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    .line 37
     return-void
 .end method
 
@@ -81,27 +66,27 @@
     .registers 2
 
     .prologue
-    .line 48
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
+    .line 31
     invoke-static {}, Lcom/google/android/finsky/utils/Sets;->newHashSet()Ljava/util/HashSet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/experiments/DfeExperiments;->mUnsupportedExperiments:Ljava/util/Set;
 
-    .line 42
+    .line 33
     invoke-static {}, Lcom/google/android/finsky/utils/Sets;->newHashSet()Ljava/util/HashSet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/experiments/DfeExperiments;->mEnabledExperiments:Ljava/util/Set;
 
-    .line 49
+    .line 40
     invoke-direct {p0}, Lcom/google/android/finsky/experiments/DfeExperiments;->reset()V
 
-    .line 50
+    .line 41
     return-void
 .end method
 
@@ -109,18 +94,18 @@
     .registers 3
 
     .prologue
-    .line 100
+    .line 95
     iget-object v0, p0, Lcom/google/android/finsky/experiments/DfeExperiments;->mEnabledExperiments:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
 
-    .line 101
+    .line 96
     iget-object v0, p0, Lcom/google/android/finsky/experiments/DfeExperiments;->mUnsupportedExperiments:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
 
-    .line 103
-    sget-object v0, Lcom/google/android/finsky/config/G;->selectAddinstrumentByDefault:Lcom/google/android/finsky/config/GservicesValue;
+    .line 97
+    sget-object v0, Lcom/google/android/finsky/api/DfeApiConfig;->showStagingData:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 
@@ -134,41 +119,18 @@
 
     if-eqz v0, :cond_1f
 
-    .line 104
+    .line 98
     iget-object v0, p0, Lcom/google/android/finsky/experiments/DfeExperiments;->mEnabledExperiments:Ljava/util/Set;
 
-    const-string v1, "cl:billing.select_add_instrument_by_default"
+    const-string v1, "android_group:eng.finsky.merchandising.staging"
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 106
+    .line 100
     :cond_1f
-    sget-object v0, Lcom/google/android/finsky/config/G;->showAddInstrumentReminder:Lcom/google/android/finsky/config/GservicesValue;
-
-    invoke-virtual {v0}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_34
-
-    .line 107
-    iget-object v0, p0, Lcom/google/android/finsky/experiments/DfeExperiments;->mEnabledExperiments:Ljava/util/Set;
-
-    const-string v1, "cl:billing.add_instrument_reminder"
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    .line 109
-    :cond_34
     invoke-direct {p0}, Lcom/google/android/finsky/experiments/DfeExperiments;->updateHeaders()V
 
-    .line 110
+    .line 101
     return-void
 .end method
 
@@ -176,7 +138,7 @@
     .registers 3
 
     .prologue
-    .line 114
+    .line 105
     const-string v0, ","
 
     iget-object v1, p0, Lcom/google/android/finsky/experiments/DfeExperiments;->mEnabledExperiments:Ljava/util/Set;
@@ -187,7 +149,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/experiments/DfeExperiments;->mEnabledHeaderValue:Ljava/lang/String;
 
-    .line 115
+    .line 106
     const-string v0, ","
 
     iget-object v1, p0, Lcom/google/android/finsky/experiments/DfeExperiments;->mUnsupportedExperiments:Ljava/util/Set;
@@ -198,7 +160,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/experiments/DfeExperiments;->mUnsupportedHeaderValue:Ljava/lang/String;
 
-    .line 116
+    .line 107
     return-void
 .end method
 
@@ -208,7 +170,7 @@
     .registers 2
 
     .prologue
-    .line 75
+    .line 69
     monitor-enter p0
 
     :try_start_1
@@ -232,7 +194,7 @@
     .registers 2
 
     .prologue
-    .line 82
+    .line 77
     monitor-enter p0
 
     :try_start_1
@@ -256,7 +218,7 @@
     .registers 2
 
     .prologue
-    .line 61
+    .line 53
     iget-object v0, p0, Lcom/google/android/finsky/experiments/DfeExperiments;->mEnabledExperiments:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->size()I
@@ -280,7 +242,7 @@
     .registers 2
 
     .prologue
-    .line 68
+    .line 61
     monitor-enter p0
 
     :try_start_1
@@ -319,7 +281,7 @@
     .parameter "experimentId"
 
     .prologue
-    .line 54
+    .line 45
     monitor-enter p0
 
     :try_start_1
@@ -357,14 +319,14 @@
     .end annotation
 
     .prologue
-    .line 87
+    .line 82
     .local p1, experiments:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/lang/String;>;"
     monitor-enter p0
 
     :try_start_1
     invoke-direct {p0}, Lcom/google/android/finsky/experiments/DfeExperiments;->reset()V
 
-    .line 88
+    .line 83
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -383,7 +345,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 89
+    .line 84
     .local v0, experiment:Ljava/lang/String;
     sget-object v2, Lcom/google/android/finsky/experiments/DfeExperiments;->sRecognizedExperiments:Ljava/util/Set;
 
@@ -393,7 +355,7 @@
 
     if-eqz v2, :cond_25
 
-    .line 90
+    .line 85
     iget-object v2, p0, Lcom/google/android/finsky/experiments/DfeExperiments;->mEnabledExperiments:Ljava/util/Set;
 
     invoke-interface {v2, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
@@ -402,7 +364,7 @@
 
     goto :goto_8
 
-    .line 87
+    .line 82
     .end local v0           #experiment:Ljava/lang/String;
     .end local v1           #i$:Ljava/util/Iterator;
     :catchall_22
@@ -412,7 +374,7 @@
 
     throw v2
 
-    .line 92
+    .line 87
     .restart local v0       #experiment:Ljava/lang/String;
     .restart local v1       #i$:Ljava/util/Iterator;
     :cond_25
@@ -423,14 +385,14 @@
 
     goto :goto_8
 
-    .line 95
+    .line 90
     .end local v0           #experiment:Ljava/lang/String;
     :cond_2b
     invoke-direct {p0}, Lcom/google/android/finsky/experiments/DfeExperiments;->updateHeaders()V
     :try_end_2e
     .catchall {:try_start_25 .. :try_end_2e} :catchall_22
 
-    .line 96
+    .line 91
     monitor-exit p0
 
     return-void

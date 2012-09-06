@@ -24,13 +24,13 @@
     .parameter "country"
 
     .prologue
-    .line 53
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 54
+    .line 56
     iput-object p1, p0, Lcom/google/android/finsky/layout/BillingAddress$CountrySpinnerItem;->mCountry:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;
 
-    .line 55
+    .line 57
     return-void
 .end method
 
@@ -40,7 +40,7 @@
     .registers 2
 
     .prologue
-    .line 59
+    .line 61
     iget-object v0, p0, Lcom/google/android/finsky/layout/BillingAddress$CountrySpinnerItem;->mCountry:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;
 
     invoke-virtual {v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->getCountryName()Ljava/lang/String;

@@ -1,71 +1,73 @@
-.class final enum LaQ/B;
-.super LaQ/z;
+.class public LaQ/b;
+.super LaQ/aR;
+.source "SourceFile"
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;IIII)V
-    .registers 13
+.method public constructor <init>(Lcom/google/googlenav/ai;LaM/C;IZ)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v6, 0x0
+    .prologue
+    .line 23
+    invoke-direct {p0, p1, p2, p3, p4}, LaQ/aR;-><init>(Lcom/google/googlenav/ai;LaM/i;IZ)V
 
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move v4, p4
-
-    move v5, p5
-
-    invoke-direct/range {v0 .. v6}, LaQ/z;-><init>(Ljava/lang/String;IIIILaQ/y;)V
-
+    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method a()Ljava/lang/CharSequence;
-    .registers 2
+.method protected a(LaM/i;)LaQ/aS;
+    .registers 9
+    .parameter
 
-    sget-boolean v0, LaQ/x;->c:Z
+    .prologue
+    .line 28
+    check-cast p1, LaM/C;
 
-    if-eqz v0, :cond_8
+    iget-object v0, p0, LaQ/b;->a:Lcom/google/googlenav/ai;
 
-    const/16 v0, 0x2f8
+    invoke-virtual {p1, v0}, LaM/C;->d(Lcom/google/googlenav/ai;)Z
 
-    iput v0, p0, LaQ/B;->e:I
+    move-result v4
 
-    :cond_8
-    iget v0, p0, LaQ/B;->e:I
+    .line 29
+    if-eqz v4, :cond_10
 
-    invoke-static {v0}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
+    .line 30
+    iget-object v0, p0, LaQ/b;->a:Lcom/google/googlenav/ai;
 
-    move-result-object v0
+    const/4 v1, 0x7
+
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/ai;->o(I)V
+
+    .line 33
+    :cond_10
+    new-instance v0, LaQ/aS;
+
+    const/16 v1, 0x59c
+
+    invoke-static {v1}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/16 v2, 0x59d
+
+    invoke-static {v2}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    sget-char v3, Lcom/google/googlenav/ui/bn;->aY:C
+
+    const/16 v5, 0x258
+
+    const/4 v6, -0x1
+
+    invoke-direct/range {v0 .. v6}, LaQ/aS;-><init>(Ljava/lang/CharSequence;Ljava/lang/String;CZII)V
 
     return-object v0
-.end method
-
-.method public c()V
-    .registers 2
-
-    sget-boolean v0, LaQ/x;->c:Z
-
-    if-eqz v0, :cond_a
-
-    sget-object v0, LaQ/x;->a:Lcom/google/googlenav/ui/wizard/ez;
-
-    invoke-interface {v0}, Lcom/google/googlenav/ui/wizard/ez;->T_()V
-
-    :goto_9
-    return-void
-
-    :cond_a
-    sget-object v0, LaQ/x;->a:Lcom/google/googlenav/ui/wizard/ez;
-
-    invoke-interface {v0}, Lcom/google/googlenav/ui/wizard/ez;->S_()V
-
-    goto :goto_9
 .end method

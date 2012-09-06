@@ -53,40 +53,40 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 13202
+    .line 13488
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 13214
+    .line 13500
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->assetId_:Ljava/lang/String;
 
-    .line 13231
+    .line 13517
     iput v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->imageUsage_:I
 
-    .line 13248
+    .line 13534
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->imageId_:Ljava/lang/String;
 
-    .line 13265
+    .line 13551
     iput v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->screenPropertyWidth_:I
 
-    .line 13282
+    .line 13568
     iput v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->screenPropertyHeight_:I
 
-    .line 13299
+    .line 13585
     iput v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->screenPropertyDensity_:I
 
-    .line 13316
+    .line 13602
     iput v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->productType_:I
 
-    .line 13371
+    .line 13658
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->cachedSize:I
 
-    .line 13202
+    .line 13488
     return-void
 .end method
 
@@ -96,7 +96,7 @@
     .registers 2
 
     .prologue
-    .line 13215
+    .line 13501
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->assetId_:Ljava/lang/String;
 
     return-object v0
@@ -106,15 +106,15 @@
     .registers 2
 
     .prologue
-    .line 13373
+    .line 13661
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 13375
+    .line 13663
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->getSerializedSize()I
 
-    .line 13377
+    .line 13665
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->cachedSize:I
 
@@ -125,7 +125,7 @@
     .registers 2
 
     .prologue
-    .line 13249
+    .line 13535
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->imageId_:Ljava/lang/String;
 
     return-object v0
@@ -135,7 +135,7 @@
     .registers 2
 
     .prologue
-    .line 13233
+    .line 13519
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->imageUsage_:I
 
     return v0
@@ -145,7 +145,7 @@
     .registers 2
 
     .prologue
-    .line 13318
+    .line 13604
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->productType_:I
 
     return v0
@@ -155,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 13300
+    .line 13586
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->screenPropertyDensity_:I
 
     return v0
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 13283
+    .line 13569
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->screenPropertyHeight_:I
 
     return v0
@@ -175,7 +175,7 @@
     .registers 2
 
     .prologue
-    .line 13266
+    .line 13552
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->screenPropertyWidth_:I
 
     return v0
@@ -185,10 +185,10 @@
     .registers 4
 
     .prologue
-    .line 13381
+    .line 13670
     const/4 v0, 0x0
 
-    .line 13382
+    .line 13671
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasAssetId()Z
 
@@ -196,7 +196,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 13383
+    .line 13672
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->getAssetId()Ljava/lang/String;
@@ -209,7 +209,7 @@
 
     add-int/2addr v0, v1
 
-    .line 13386
+    .line 13675
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasImageUsage()Z
 
@@ -217,7 +217,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 13387
+    .line 13676
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->getImageUsage()I
@@ -230,7 +230,7 @@
 
     add-int/2addr v0, v1
 
-    .line 13390
+    .line 13679
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasImageId()Z
 
@@ -238,7 +238,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 13391
+    .line 13680
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->getImageId()Ljava/lang/String;
@@ -251,7 +251,7 @@
 
     add-int/2addr v0, v1
 
-    .line 13394
+    .line 13683
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasScreenPropertyWidth()Z
 
@@ -259,7 +259,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 13395
+    .line 13684
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->getScreenPropertyWidth()I
@@ -272,7 +272,7 @@
 
     add-int/2addr v0, v1
 
-    .line 13398
+    .line 13687
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasScreenPropertyHeight()Z
 
@@ -280,7 +280,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 13399
+    .line 13688
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->getScreenPropertyHeight()I
@@ -293,7 +293,7 @@
 
     add-int/2addr v0, v1
 
-    .line 13402
+    .line 13691
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasScreenPropertyDensity()Z
 
@@ -301,7 +301,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 13403
+    .line 13692
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->getScreenPropertyDensity()I
@@ -314,7 +314,7 @@
 
     add-int/2addr v0, v1
 
-    .line 13406
+    .line 13695
     :cond_61
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasProductType()Z
 
@@ -322,7 +322,7 @@
 
     if-eqz v1, :cond_72
 
-    .line 13407
+    .line 13696
     const/16 v1, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->getProductType()I
@@ -335,11 +335,11 @@
 
     add-int/2addr v0, v1
 
-    .line 13410
+    .line 13699
     :cond_72
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->cachedSize:I
 
-    .line 13411
+    .line 13700
     return v0
 .end method
 
@@ -347,7 +347,7 @@
     .registers 2
 
     .prologue
-    .line 13216
+    .line 13502
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasAssetId:Z
 
     return v0
@@ -357,7 +357,7 @@
     .registers 2
 
     .prologue
-    .line 13250
+    .line 13536
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasImageId:Z
 
     return v0
@@ -367,7 +367,7 @@
     .registers 2
 
     .prologue
-    .line 13232
+    .line 13518
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasImageUsage:Z
 
     return v0
@@ -377,7 +377,7 @@
     .registers 2
 
     .prologue
-    .line 13317
+    .line 13603
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasProductType:Z
 
     return v0
@@ -387,7 +387,7 @@
     .registers 2
 
     .prologue
-    .line 13301
+    .line 13587
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasScreenPropertyDensity:Z
 
     return v0
@@ -397,7 +397,7 @@
     .registers 2
 
     .prologue
-    .line 13284
+    .line 13570
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasScreenPropertyHeight:Z
 
     return v0
@@ -407,7 +407,7 @@
     .registers 2
 
     .prologue
-    .line 13267
+    .line 13553
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasScreenPropertyWidth:Z
 
     return v0
@@ -423,29 +423,29 @@
     .end annotation
 
     .prologue
-    .line 13418
+    .line 13708
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 13419
+    .line 13709
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_46
 
-    .line 13423
+    .line 13713
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 13424
+    .line 13714
     :sswitch_d
     return-object p0
 
-    .line 13429
+    .line 13719
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -455,7 +455,7 @@
 
     goto :goto_0
 
-    .line 13433
+    .line 13723
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -465,7 +465,7 @@
 
     goto :goto_0
 
-    .line 13437
+    .line 13727
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -475,7 +475,7 @@
 
     goto :goto_0
 
-    .line 13441
+    .line 13731
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -485,7 +485,7 @@
 
     goto :goto_0
 
-    .line 13445
+    .line 13735
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -495,7 +495,7 @@
 
     goto :goto_0
 
-    .line 13449
+    .line 13739
     :sswitch_36
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -505,7 +505,7 @@
 
     goto :goto_0
 
-    .line 13453
+    .line 13743
     :sswitch_3e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -515,7 +515,7 @@
 
     goto :goto_0
 
-    .line 13419
+    .line 13709
     :sswitch_data_46
     .sparse-switch
         0x0 -> :sswitch_d
@@ -539,7 +539,7 @@
     .end annotation
 
     .prologue
-    .line 13200
+    .line 13486
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;
 
     move-result-object v0
@@ -552,15 +552,15 @@
     .parameter "value"
 
     .prologue
-    .line 13218
+    .line 13504
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasAssetId:Z
 
-    .line 13219
+    .line 13505
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->assetId_:Ljava/lang/String;
 
-    .line 13220
+    .line 13506
     return-object p0
 .end method
 
@@ -569,15 +569,15 @@
     .parameter "value"
 
     .prologue
-    .line 13252
+    .line 13538
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasImageId:Z
 
-    .line 13253
+    .line 13539
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->imageId_:Ljava/lang/String;
 
-    .line 13254
+    .line 13540
     return-object p0
 .end method
 
@@ -586,15 +586,15 @@
     .parameter "value"
 
     .prologue
-    .line 13235
+    .line 13521
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasImageUsage:Z
 
-    .line 13236
+    .line 13522
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->imageUsage_:I
 
-    .line 13237
+    .line 13523
     return-object p0
 .end method
 
@@ -603,15 +603,15 @@
     .parameter "value"
 
     .prologue
-    .line 13320
+    .line 13606
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasProductType:Z
 
-    .line 13321
+    .line 13607
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->productType_:I
 
-    .line 13322
+    .line 13608
     return-object p0
 .end method
 
@@ -620,15 +620,15 @@
     .parameter "value"
 
     .prologue
-    .line 13303
+    .line 13589
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasScreenPropertyDensity:Z
 
-    .line 13304
+    .line 13590
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->screenPropertyDensity_:I
 
-    .line 13305
+    .line 13591
     return-object p0
 .end method
 
@@ -637,15 +637,15 @@
     .parameter "value"
 
     .prologue
-    .line 13286
+    .line 13572
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasScreenPropertyHeight:Z
 
-    .line 13287
+    .line 13573
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->screenPropertyHeight_:I
 
-    .line 13288
+    .line 13574
     return-object p0
 .end method
 
@@ -654,15 +654,15 @@
     .parameter "value"
 
     .prologue
-    .line 13269
+    .line 13555
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasScreenPropertyWidth:Z
 
-    .line 13270
+    .line 13556
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->screenPropertyWidth_:I
 
-    .line 13271
+    .line 13557
     return-object p0
 .end method
 
@@ -676,14 +676,14 @@
     .end annotation
 
     .prologue
-    .line 13348
+    .line 13635
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasAssetId()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 13349
+    .line 13636
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->getAssetId()Ljava/lang/String;
@@ -692,7 +692,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 13351
+    .line 13638
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasImageUsage()Z
 
@@ -700,7 +700,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 13352
+    .line 13639
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->getImageUsage()I
@@ -709,7 +709,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 13354
+    .line 13641
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasImageId()Z
 
@@ -717,7 +717,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 13355
+    .line 13642
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->getImageId()Ljava/lang/String;
@@ -726,7 +726,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 13357
+    .line 13644
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasScreenPropertyWidth()Z
 
@@ -734,7 +734,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 13358
+    .line 13645
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->getScreenPropertyWidth()I
@@ -743,7 +743,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 13360
+    .line 13647
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasScreenPropertyHeight()Z
 
@@ -751,7 +751,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 13361
+    .line 13648
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->getScreenPropertyHeight()I
@@ -760,7 +760,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 13363
+    .line 13650
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasScreenPropertyDensity()Z
 
@@ -768,7 +768,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 13364
+    .line 13651
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->getScreenPropertyDensity()I
@@ -777,7 +777,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 13366
+    .line 13653
     :cond_54
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->hasProductType()Z
 
@@ -785,7 +785,7 @@
 
     if-eqz v0, :cond_63
 
-    .line 13367
+    .line 13654
     const/16 v0, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;->getProductType()I
@@ -794,7 +794,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 13369
+    .line 13656
     :cond_63
     return-void
 .end method

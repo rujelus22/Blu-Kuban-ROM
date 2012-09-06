@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="general_preference_text_zoom_summary_array">
+        <item>نص صغير جدًا</item>
+        <item>نص صغير</item>
+        <item>الحجم العادي للنص</item>
+        <item>نص كبير</item>
+        <item>نص ضخم</item>
+    </string-array>
+</resources>

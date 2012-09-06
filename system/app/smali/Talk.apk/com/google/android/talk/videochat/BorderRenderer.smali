@@ -80,7 +80,7 @@
     const/16 v1, 0x8
 
     .line 97
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 68
     new-array v0, v1, [F

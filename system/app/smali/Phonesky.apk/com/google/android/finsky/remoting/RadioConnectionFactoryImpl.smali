@@ -51,7 +51,11 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/google/android/finsky/config/GservicesValue;->value(Ljava/lang/String;Z)Lcom/google/android/finsky/config/GservicesValue;
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/google/android/finsky/config/GservicesValue;->value(Ljava/lang/String;Ljava/lang/Boolean;)Lcom/google/android/finsky/config/GservicesValue;
 
     move-result-object v0
 

@@ -79,7 +79,7 @@
     packed-switch v1, :pswitch_data_22
 
     .line 539
-    iget-object v2, v0, Lcom/google/android/talk/fragments/BuddyListFragment;->mHandler:Landroid/os/Handler;
+    iget-object v2, v0, Lcom/google/android/talk/fragments/RosterListFragment;->mHandler:Landroid/os/Handler;
 
     new-instance v3, Lcom/google/android/talk/fragments/BuddyListFragment$ConnectionStateListener$2;
 
@@ -91,7 +91,7 @@
 
     .line 527
     :pswitch_17
-    iget-object v2, v0, Lcom/google/android/talk/fragments/BuddyListFragment;->mHandler:Landroid/os/Handler;
+    iget-object v2, v0, Lcom/google/android/talk/fragments/RosterListFragment;->mHandler:Landroid/os/Handler;
 
     new-instance v3, Lcom/google/android/talk/fragments/BuddyListFragment$ConnectionStateListener$1;
 

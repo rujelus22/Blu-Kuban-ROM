@@ -1,19 +1,28 @@
-.class Lcom/google/android/maps/driveabout/app/bE;
+.class Lcom/google/android/maps/driveabout/app/be;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/maps/driveabout/vector/cH;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/bD;
+.field final synthetic a:Lo/q;
+
+.field final synthetic b:Lcom/google/android/maps/driveabout/app/aX;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/bD;)V
-    .registers 2
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/aX;Lo/q;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/bE;->a:Lcom/google/android/maps/driveabout/app/bD;
+    .prologue
+    .line 1164
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/be;->b:Lcom/google/android/maps/driveabout/app/aX;
+
+    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/be;->a:Lo/q;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,17 +31,18 @@
 
 
 # virtual methods
-.method public a(Lt/af;Lcom/google/android/maps/driveabout/vector/aU;IJ)V
-    .registers 8
+.method public run()V
+    .registers 3
 
-    if-eqz p2, :cond_8
+    .prologue
+    .line 1166
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/be;->b:Lcom/google/android/maps/driveabout/app/aX;
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/bE;->a:Lcom/google/android/maps/driveabout/app/bD;
+    iget-object v0, v0, Lcom/google/android/maps/driveabout/app/aX;->a:Lcom/google/android/maps/driveabout/app/aN;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/be;->a:Lo/q;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/bD;->a(Lcom/google/android/maps/driveabout/app/bv;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/aN;->d(Lo/q;)V
 
-    :cond_8
     return-void
 .end method

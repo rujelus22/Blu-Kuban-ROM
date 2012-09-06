@@ -83,7 +83,7 @@
     .local p0, this:Lcom/google/common/collect/MapMaker$StrongEntry;,"Lcom/google/common/collect/MapMaker$StrongEntry<TK;TV;>;"
     .local p1, internals:Lcom/google/common/collect/CustomConcurrentHashMap$Internals;,"Lcom/google/common/collect/CustomConcurrentHashMap$Internals<TK;TV;Lcom/google/common/collect/MapMaker$ReferenceEntry<TK;TV;>;>;"
     .local p2, key:Ljava/lang/Object;,"TK;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 896
     #calls: Lcom/google/common/collect/MapMaker;->computing()Lcom/google/common/collect/MapMaker$ValueReference;

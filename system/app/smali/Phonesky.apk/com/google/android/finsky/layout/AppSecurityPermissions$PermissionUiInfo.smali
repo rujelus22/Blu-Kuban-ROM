@@ -43,18 +43,18 @@
     .parameter "description"
 
     .prologue
-    .line 221
+    .line 236
     iput-object p1, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;->this$0:Lcom/google/android/finsky/layout/AppSecurityPermissions;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 222
+    .line 237
     iput-object p2, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;->label:Ljava/lang/String;
 
-    .line 223
+    .line 238
     iput-object p3, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;->description:Ljava/lang/String;
 
-    .line 224
+    .line 239
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .parameter "another"
 
     .prologue
-    .line 230
+    .line 245
     iget-object v0, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;->label:Ljava/lang/String;
 
     iget-object v1, p1, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;->label:Ljava/lang/String;
@@ -82,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 216
+    .line 231
     check-cast p1, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
 
     .end local p1

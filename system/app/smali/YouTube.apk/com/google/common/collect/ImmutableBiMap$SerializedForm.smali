@@ -13,10 +13,10 @@
     .parameter
 
     .prologue
-    .line 300
+    .line 313
     invoke-direct {p0, p1}, Lcom/google/common/collect/ImmutableMap$SerializedForm;-><init>(Lcom/google/common/collect/ImmutableMap;)V
 
-    .line 301
+    .line 314
     return-void
 .end method
 
@@ -26,13 +26,13 @@
     .registers 2
 
     .prologue
-    .line 303
-    new-instance v0, Lcom/google/common/collect/bv;
+    .line 316
+    new-instance v0, Lcom/google/common/collect/dg;
 
-    invoke-direct {v0}, Lcom/google/common/collect/bv;-><init>()V
+    invoke-direct {v0}, Lcom/google/common/collect/dg;-><init>()V
 
-    .line 304
-    invoke-virtual {p0, v0}, Lcom/google/common/collect/ImmutableBiMap$SerializedForm;->createMap(Lcom/google/common/collect/ca;)Ljava/lang/Object;
+    .line 317
+    invoke-virtual {p0, v0}, Lcom/google/common/collect/ImmutableBiMap$SerializedForm;->createMap(Lcom/google/common/collect/dm;)Ljava/lang/Object;
 
     move-result-object v0
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<input-method android:isDefault="@bool/im_is_default" android:settingsActivity="com.android.inputmethod.latin.Settings"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <subtype android:label="@string/subtype_en_US" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="en_US" imeSubtypeMode="keyboard" imeSubtypeExtraValue="TrySuppressingImeSwitcher,AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_en_GB" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="en_GB" imeSubtypeMode="keyboard" imeSubtypeExtraValue="TrySuppressingImeSwitcher,AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="ar" imeSubtypeMode="keyboard" imeSubtypeExtraValue="SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="cs" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="da" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="de" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_de_qwerty" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="de" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,KeyboardLocale=de_ZZ,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="es" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="fi" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="fr" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="fr_CA" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="fr_CH" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="hr" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="hu" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="it" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="iw" imeSubtypeMode="keyboard" imeSubtypeExtraValue="SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="nb" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="nl" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="pl" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="pt" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="ru" imeSubtypeMode="keyboard" imeSubtypeExtraValue="SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="sr" imeSubtypeMode="keyboard" imeSubtypeExtraValue="SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="sv" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+    <subtype android:label="@string/subtype_generic" android:icon="@drawable/ic_subtype_keyboard" imeSubtypeLocale="tr" imeSubtypeMode="keyboard" imeSubtypeExtraValue="AsciiCapable,SupportTouchPositionCorrection" />
+</input-method>

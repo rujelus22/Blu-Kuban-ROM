@@ -20,10 +20,10 @@
     .registers 3
 
     .prologue
-    .line 58
+    .line 65
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
-    .line 148
+    .line 155
     const-string v0, "line.separator"
 
     const-string v1, "\n"
@@ -34,12 +34,12 @@
 
     iput-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->eol:Ljava/lang/String;
 
-    .line 59
+    .line 66
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->specialConstructor:Z
 
-    .line 60
+    .line 67
     return-void
 .end method
 
@@ -48,10 +48,10 @@
     .parameter "message"
 
     .prologue
-    .line 63
+    .line 70
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    .line 148
+    .line 155
     const-string v0, "line.separator"
 
     const-string v1, "\n"
@@ -62,12 +62,12 @@
 
     iput-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->eol:Ljava/lang/String;
 
-    .line 64
+    .line 71
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->specialConstructor:Z
 
-    .line 65
+    .line 72
     return-void
 .end method
 
@@ -78,12 +78,12 @@
     .parameter "tokenImageVal"
 
     .prologue
-    .line 41
+    .line 47
     const-string v0, ""
 
     invoke-direct {p0, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    .line 148
+    .line 155
     const-string v0, "line.separator"
 
     const-string v1, "\n"
@@ -94,21 +94,21 @@
 
     iput-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->eol:Ljava/lang/String;
 
-    .line 42
+    .line 48
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->specialConstructor:Z
 
-    .line 43
+    .line 49
     iput-object p1, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->currentToken:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 44
+    .line 50
     iput-object p2, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->expectedTokenSequences:[[I
 
-    .line 45
+    .line 51
     iput-object p3, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->tokenImage:[Ljava/lang/String;
 
-    .line 46
+    .line 52
     return-void
 .end method
 
@@ -119,12 +119,12 @@
     .parameter "str"
 
     .prologue
-    .line 155
+    .line 163
     new-instance v2, Ljava/lang/StringBuffer;
 
     invoke-direct {v2}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 157
+    .line 165
     .local v2, retval:Ljava/lang/StringBuffer;
     const/4 v1, 0x0
 
@@ -136,14 +136,14 @@
 
     if-ge v1, v4, :cond_93
 
-    .line 158
+    .line 166
     invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v4
 
     sparse-switch v4, :sswitch_data_98
 
-    .line 186
+    .line 195
     invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
@@ -157,7 +157,7 @@
 
     if-le v0, v4, :cond_8f
 
-    .line 187
+    .line 196
     :cond_1f
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -183,7 +183,7 @@
 
     move-result-object v3
 
-    .line 188
+    .line 197
     .local v3, s:Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -219,7 +219,7 @@
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 157
+    .line 165
     .end local v0           #ch:C
     .end local v3           #s:Ljava/lang/String;
     :goto_5c
@@ -228,7 +228,7 @@
 
     goto :goto_6
 
-    .line 162
+    .line 171
     :sswitch_5f
     const-string v4, "\\b"
 
@@ -236,7 +236,7 @@
 
     goto :goto_5c
 
-    .line 165
+    .line 174
     :sswitch_65
     const-string v4, "\\t"
 
@@ -244,7 +244,7 @@
 
     goto :goto_5c
 
-    .line 168
+    .line 177
     :sswitch_6b
     const-string v4, "\\n"
 
@@ -252,7 +252,7 @@
 
     goto :goto_5c
 
-    .line 171
+    .line 180
     :sswitch_71
     const-string v4, "\\f"
 
@@ -260,7 +260,7 @@
 
     goto :goto_5c
 
-    .line 174
+    .line 183
     :sswitch_77
     const-string v4, "\\r"
 
@@ -268,7 +268,7 @@
 
     goto :goto_5c
 
-    .line 177
+    .line 186
     :sswitch_7d
     const-string v4, "\\\""
 
@@ -276,7 +276,7 @@
 
     goto :goto_5c
 
-    .line 180
+    .line 189
     :sswitch_83
     const-string v4, "\\\'"
 
@@ -284,7 +284,7 @@
 
     goto :goto_5c
 
-    .line 183
+    .line 192
     :sswitch_89
     const-string v4, "\\\\"
 
@@ -292,14 +292,14 @@
 
     goto :goto_5c
 
-    .line 190
+    .line 199
     .restart local v0       #ch:C
     :cond_8f
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
     goto :goto_5c
 
-    .line 195
+    .line 204
     .end local v0           #ch:C
     :cond_93
     invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
@@ -308,7 +308,7 @@
 
     return-object v4
 
-    .line 158
+    .line 166
     :sswitch_data_98
     .sparse-switch
         0x0 -> :sswitch_5c
@@ -327,31 +327,31 @@
     .registers 10
 
     .prologue
-    .line 104
+    .line 113
     iget-boolean v6, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->specialConstructor:Z
 
     if-nez v6, :cond_9
 
-    .line 105
+    .line 114
     invoke-super {p0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 142
+    .line 149
     :goto_8
     return-object v4
 
-    .line 107
+    .line 116
     :cond_9
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 108
+    .line 117
     .local v0, expected:Ljava/lang/StringBuffer;
     const/4 v3, 0x0
 
-    .line 109
+    .line 118
     .local v3, maxSize:I
     const/4 v1, 0x0
 
@@ -363,7 +363,7 @@
 
     if-ge v1, v6, :cond_61
 
-    .line 110
+    .line 119
     iget-object v6, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->expectedTokenSequences:[[I
 
     aget-object v6, v6, v1
@@ -372,14 +372,14 @@
 
     if-ge v3, v6, :cond_21
 
-    .line 111
+    .line 120
     iget-object v6, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->expectedTokenSequences:[[I
 
     aget-object v6, v6, v1
 
     array-length v3, v6
 
-    .line 113
+    .line 122
     :cond_21
     const/4 v2, 0x0
 
@@ -393,7 +393,7 @@
 
     if-ge v2, v6, :cond_3f
 
-    .line 114
+    .line 123
     iget-object v6, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->tokenImage:[Ljava/lang/String;
 
     iget-object v7, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->expectedTokenSequences:[[I
@@ -412,12 +412,12 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 113
+    .line 122
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_22
 
-    .line 116
+    .line 125
     :cond_3f
     iget-object v6, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->expectedTokenSequences:[[I
 
@@ -435,12 +435,12 @@
 
     if-eqz v6, :cond_53
 
-    .line 117
+    .line 126
     const-string v6, "..."
 
     invoke-virtual {v0, v6}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 119
+    .line 128
     :cond_53
     iget-object v6, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->eol:Ljava/lang/String;
 
@@ -452,33 +452,32 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 109
+    .line 118
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_10
 
-    .line 121
+    .line 130
     .end local v2           #j:I
     :cond_61
     const-string v4, "Encountered \""
 
-    .line 122
+    .line 131
     .local v4, retval:Ljava/lang/String;
     iget-object v6, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->currentToken:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     iget-object v5, v6, Lorg/apache/james/mime4j/field/address/parser/Token;->next:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 123
+    .line 132
     .local v5, tok:Lorg/apache/james/mime4j/field/address/parser/Token;
     const/4 v1, 0x0
 
     :goto_68
     if-ge v1, v3, :cond_99
 
-    .line 124
+    .line 133
     if-eqz v1, :cond_7f
 
-    .line 125
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -497,13 +496,13 @@
 
     move-result-object v4
 
-    .line 126
+    .line 134
     :cond_7f
     iget v6, v5, Lorg/apache/james/mime4j/field/address/parser/Token;->kind:I
 
     if-nez v6, :cond_11b
 
-    .line 127
+    .line 135
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -526,7 +525,7 @@
 
     move-result-object v4
 
-    .line 133
+    .line 141
     :cond_99
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -572,7 +571,7 @@
 
     move-result-object v4
 
-    .line 135
+    .line 142
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -597,7 +596,7 @@
 
     move-result-object v4
 
-    .line 136
+    .line 143
     iget-object v6, p0, Lorg/apache/james/mime4j/field/address/parser/ParseException;->expectedTokenSequences:[[I
 
     array-length v6, v6
@@ -606,7 +605,7 @@
 
     if-ne v6, v7, :cond_138
 
-    .line 137
+    .line 144
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -637,7 +636,7 @@
 
     move-result-object v4
 
-    .line 141
+    .line 148
     :goto_104
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -659,10 +658,10 @@
 
     move-result-object v4
 
-    .line 142
+    .line 149
     goto/16 :goto_8
 
-    .line 130
+    .line 138
     :cond_11b
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -686,15 +685,15 @@
 
     move-result-object v4
 
-    .line 131
+    .line 139
     iget-object v5, v5, Lorg/apache/james/mime4j/field/address/parser/Token;->next:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 123
+    .line 132
     add-int/lit8 v1, v1, 0x1
 
     goto/16 :goto_68
 
-    .line 139
+    .line 146
     :cond_138
     new-instance v6, Ljava/lang/StringBuilder;
 

@@ -30,17 +30,17 @@
     .registers 2
 
     .prologue
-    .line 18
+    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 20
+    .line 24
     invoke-static {}, Lcom/google/android/finsky/utils/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
-    .line 25
+    .line 29
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .parameter "type"
 
     .prologue
-    .line 219
+    .line 243
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -64,7 +64,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 220
+    .line 244
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -83,7 +83,7 @@
 
     return v0
 
-    .line 222
+    .line 246
     :cond_1d
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -118,7 +118,7 @@
     .parameter "parameters"
 
     .prologue
-    .line 141
+    .line 166
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -131,7 +131,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 142
+    .line 167
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -150,7 +150,7 @@
 
     return-object v0
 
-    .line 144
+    .line 169
     :cond_1d
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -184,7 +184,7 @@
     .parameter "displayIcon"
 
     .prologue
-    .line 121
+    .line 147
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -197,7 +197,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 122
+    .line 148
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -216,7 +216,7 @@
 
     return-object v0
 
-    .line 124
+    .line 150
     :cond_1d
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -248,7 +248,7 @@
     .parameter "type"
 
     .prologue
-    .line 187
+    .line 211
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -261,7 +261,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 188
+    .line 212
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -280,7 +280,7 @@
 
     return-object v0
 
-    .line 190
+    .line 214
     :cond_1d
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -312,7 +312,7 @@
     .parameter "type"
 
     .prologue
-    .line 198
+    .line 222
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -325,7 +325,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 199
+    .line 223
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -344,7 +344,7 @@
 
     return-object v0
 
-    .line 201
+    .line 225
     :cond_1d
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -385,12 +385,12 @@
     .end annotation
 
     .prologue
-    .line 172
+    .line 196
     invoke-static {}, Lcom/google/android/finsky/utils/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v3
 
-    .line 173
+    .line 197
     .local v3, paramsMap:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     iget-object v4, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
@@ -417,26 +417,105 @@
 
     check-cast v0, Lcom/google/android/finsky/billing/InstrumentFactory$FormOfPayment;
 
-    .line 174
+    .line 198
     .local v0, fop:Lcom/google/android/finsky/billing/InstrumentFactory$FormOfPayment;
     invoke-virtual {v0}, Lcom/google/android/finsky/billing/InstrumentFactory$FormOfPayment;->getPrepareParams()Ljava/util/Map;
 
     move-result-object v2
 
-    .line 175
+    .line 199
     .local v2, params:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     if-eqz v2, :cond_e
 
-    .line 176
+    .line 200
     invoke-interface {v3, v2}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
     goto :goto_e
 
-    .line 179
+    .line 203
     .end local v0           #fop:Lcom/google/android/finsky/billing/InstrumentFactory$FormOfPayment;
     .end local v2           #params:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     :cond_24
     return-object v3
+.end method
+
+.method public getCreateIntent(ILjava/lang/String;ILcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    .registers 13
+    .parameter "type"
+    .parameter "accountName"
+    .parameter "backendId"
+    .parameter "uiMode"
+    .parameter "referrerUrl"
+    .parameter "referrerListCookie"
+
+    .prologue
+    .line 271
+    iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_22
+
+    .line 272
+    iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/billing/InstrumentFactory$FormOfPayment;
+
+    move-object v1, p2
+
+    move v2, p3
+
+    move-object v3, p4
+
+    move-object v4, p5
+
+    move-object v5, p6
+
+    invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/billing/InstrumentFactory$FormOfPayment;->getCreateIntent(Ljava/lang/String;ILcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 275
+    :cond_22
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Missing FOP for type "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method public getUpdateAddressText(I)Ljava/lang/String;
@@ -444,7 +523,7 @@
     .parameter "type"
 
     .prologue
-    .line 209
+    .line 233
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -457,7 +536,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 210
+    .line 234
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -476,7 +555,7 @@
 
     return-object v0
 
-    .line 212
+    .line 236
     :cond_1d
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -508,7 +587,7 @@
     .parameter "type"
 
     .prologue
-    .line 111
+    .line 137
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -528,7 +607,7 @@
     .parameter "fop"
 
     .prologue
-    .line 99
+    .line 125
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -541,7 +620,7 @@
 
     if-eqz v0, :cond_25
 
-    .line 100
+    .line 126
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -566,7 +645,7 @@
 
     throw v0
 
-    .line 102
+    .line 128
     :cond_25
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
@@ -576,7 +655,7 @@
 
     invoke-interface {v0, v1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 103
+    .line 129
     return-void
 .end method
 
@@ -588,7 +667,7 @@
     .parameter "parameters"
 
     .prologue
-    .line 161
+    .line 185
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -601,7 +680,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 162
+    .line 186
     iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -620,8 +699,72 @@
 
     return-object v0
 
-    .line 164
+    .line 188
     :cond_1d
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Missing FOP for type "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public updateStatus(ILcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;)V
+    .registers 6
+    .parameter "type"
+    .parameter "instrument"
+
+    .prologue
+    .line 257
+    iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1c
+
+    .line 258
+    iget-object v0, p0, Lcom/google/android/finsky/billing/InstrumentFactory;->mFormsOfPayment:Ljava/util/Map;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/billing/InstrumentFactory$FormOfPayment;
+
+    invoke-virtual {v0, p2}, Lcom/google/android/finsky/billing/InstrumentFactory$FormOfPayment;->updateStatus(Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;)V
+
+    .line 259
+    return-void
+
+    .line 261
+    :cond_1c
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;

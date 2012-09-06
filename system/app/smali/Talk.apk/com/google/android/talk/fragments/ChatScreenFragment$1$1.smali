@@ -30,7 +30,7 @@
     .line 903
     iput-object p1, p0, Lcom/google/android/talk/fragments/ChatScreenFragment$1$1;->this$1:Lcom/google/android/talk/fragments/ChatScreenFragment$1;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

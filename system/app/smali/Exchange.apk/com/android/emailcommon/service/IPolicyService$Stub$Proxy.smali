@@ -27,13 +27,13 @@
     .parameter "remote"
 
     .prologue
-    .line 192
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 146
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 193
+    .line 147
     iput-object p1, p0, Lcom/android/emailcommon/service/IPolicyService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 194
+    .line 148
     return-void
 .end method
 
@@ -43,13 +43,13 @@
     .registers 2
 
     .prologue
-    .line 197
+    .line 151
     iget-object v0, p0, Lcom/android/emailcommon/service/IPolicyService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
 .end method
 
-.method public clearUnsupportedPolicies(Lcom/android/emailcommon/service/PolicySet;)Lcom/android/emailcommon/service/PolicySet;
+.method public clearUnsupportedPolicies(Lcom/android/emailcommon/provider/Policy;)Lcom/android/emailcommon/provider/Policy;
     .registers 8
     .parameter "policies"
     .annotation system Ldalvik/annotation/Throws;
@@ -59,81 +59,81 @@
     .end annotation
 
     .prologue
-    .line 358
+    .line 283
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 359
+    .line 284
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 362
+    .line 287
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_8
     const-string v3, "com.android.emailcommon.service.IPolicyService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 363
+    .line 288
     if-eqz p1, :cond_37
 
-    .line 364
+    .line 289
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 365
+    .line 290
     const/4 v3, 0x0
 
-    invoke-virtual {p1, v0, v3}, Lcom/android/emailcommon/service/PolicySet;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-virtual {p1, v0, v3}, Lcom/android/emailcommon/provider/Policy;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 370
+    .line 295
     :goto_17
     iget-object v3, p0, Lcom/android/emailcommon/service/IPolicyService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0xa
+    const/16 v4, 0x8
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 371
+    .line 296
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 372
+    .line 297
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     if-eqz v3, :cond_44
 
-    .line 373
-    sget-object v3, Lcom/android/emailcommon/service/PolicySet;->CREATOR:Landroid/os/Parcelable$Creator;
+    .line 298
+    sget-object v3, Lcom/android/emailcommon/provider/Policy;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lcom/android/emailcommon/service/PolicySet;
+    check-cast v2, Lcom/android/emailcommon/provider/Policy;
     :try_end_30
     .catchall {:try_start_8 .. :try_end_30} :catchall_3c
 
-    .line 380
-    .local v2, _result:Lcom/android/emailcommon/service/PolicySet;
+    .line 305
+    .local v2, _result:Lcom/android/emailcommon/provider/Policy;
     :goto_30
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 381
+    .line 306
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 383
+    .line 308
     return-object v2
 
-    .line 368
-    .end local v2           #_result:Lcom/android/emailcommon/service/PolicySet;
+    .line 293
+    .end local v2           #_result:Lcom/android/emailcommon/provider/Policy;
     :cond_37
     const/4 v3, 0x0
 
@@ -144,208 +144,26 @@
 
     goto :goto_17
 
-    .line 380
+    .line 305
     :catchall_3c
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 381
+    .line 306
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 
-    .line 376
+    .line 301
     :cond_44
     const/4 v2, 0x0
 
-    .restart local v2       #_result:Lcom/android/emailcommon/service/PolicySet;
+    .restart local v2       #_result:Lcom/android/emailcommon/provider/Policy;
     goto :goto_30
 .end method
 
-.method public getAccountPolicy(J)Lcom/android/emailcommon/service/PolicySet;
-    .registers 9
-    .parameter "accountId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 409
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 410
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 413
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_8
-    const-string v3, "com.android.emailcommon.service.IPolicyService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 414
-    invoke-virtual {v0, p1, p2}, Landroid/os/Parcel;->writeLong(J)V
-
-    .line 415
-    iget-object v3, p0, Lcom/android/emailcommon/service/IPolicyService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0xc
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 416
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 417
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    if-eqz v3, :cond_30
-
-    .line 418
-    sget-object v3, Lcom/android/emailcommon/service/PolicySet;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/android/emailcommon/service/PolicySet;
-    :try_end_29
-    .catchall {:try_start_8 .. :try_end_29} :catchall_32
-
-    .line 425
-    .local v2, _result:Lcom/android/emailcommon/service/PolicySet;
-    :goto_29
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 426
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 428
-    return-object v2
-
-    .line 421
-    .end local v2           #_result:Lcom/android/emailcommon/service/PolicySet;
-    :cond_30
-    const/4 v2, 0x0
-
-    .restart local v2       #_result:Lcom/android/emailcommon/service/PolicySet;
-    goto :goto_29
-
-    .line 425
-    .end local v2           #_result:Lcom/android/emailcommon/service/PolicySet;
-    :catchall_32
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 426
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public getAggregatePolicy()Lcom/android/emailcommon/service/PolicySet;
-    .registers 7
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 387
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 388
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 391
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_8
-    const-string v3, "com.android.emailcommon.service.IPolicyService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 392
-    iget-object v3, p0, Lcom/android/emailcommon/service/IPolicyService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0xb
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 393
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 394
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    if-eqz v3, :cond_2d
-
-    .line 395
-    sget-object v3, Lcom/android/emailcommon/service/PolicySet;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/android/emailcommon/service/PolicySet;
-    :try_end_26
-    .catchall {:try_start_8 .. :try_end_26} :catchall_2f
-
-    .line 402
-    .local v2, _result:Lcom/android/emailcommon/service/PolicySet;
-    :goto_26
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 403
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 405
-    return-object v2
-
-    .line 398
-    .end local v2           #_result:Lcom/android/emailcommon/service/PolicySet;
-    :cond_2d
-    const/4 v2, 0x0
-
-    .restart local v2       #_result:Lcom/android/emailcommon/service/PolicySet;
-    goto :goto_26
-
-    .line 402
-    .end local v2           #_result:Lcom/android/emailcommon/service/PolicySet;
-    :catchall_2f
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 403
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public isActive(Lcom/android/emailcommon/service/PolicySet;)Z
+.method public isActive(Lcom/android/emailcommon/provider/Policy;)Z
     .registers 9
     .parameter "policies"
     .annotation system Ldalvik/annotation/Throws;
@@ -359,38 +177,38 @@
 
     const/4 v3, 0x0
 
-    .line 205
+    .line 159
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 206
+    .line 160
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 209
+    .line 163
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_a
     const-string v4, "com.android.emailcommon.service.IPolicyService"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 210
+    .line 164
     if-eqz p1, :cond_30
 
-    .line 211
+    .line 165
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 212
+    .line 166
     const/4 v4, 0x0
 
-    invoke-virtual {p1, v0, v4}, Lcom/android/emailcommon/service/PolicySet;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-virtual {p1, v0, v4}, Lcom/android/emailcommon/provider/Policy;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 217
+    .line 171
     :goto_19
     iget-object v4, p0, Lcom/android/emailcommon/service/IPolicyService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -400,10 +218,10 @@
 
     invoke-interface {v4, v5, v0, v1, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 218
+    .line 172
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 219
+    .line 173
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_26
     .catchall {:try_start_a .. :try_end_26} :catchall_35
@@ -412,18 +230,18 @@
 
     if-eqz v4, :cond_3d
 
-    .line 222
+    .line 176
     .local v2, _result:Z
     :goto_29
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 223
+    .line 177
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 225
+    .line 179
     return v2
 
-    .line 215
+    .line 169
     .end local v2           #_result:Z
     :cond_30
     const/4 v4, 0x0
@@ -435,13 +253,13 @@
 
     goto :goto_19
 
-    .line 222
+    .line 176
     :catchall_35
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 223
+    .line 177
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -449,7 +267,7 @@
     :cond_3d
     move v2, v3
 
-    .line 219
+    .line 173
     goto :goto_29
 .end method
 
@@ -464,37 +282,37 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 304
+    .line 229
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 305
+    .line 230
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 308
+    .line 233
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_9
     const-string v3, "com.android.emailcommon.service.IPolicyService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 309
+    .line 234
     iget-object v3, p0, Lcom/android/emailcommon/service/IPolicyService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v4, 0x7
+    const/4 v4, 0x5
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 310
+    .line 235
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 311
+    .line 236
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_1b
     .catchall {:try_start_9 .. :try_end_1b} :catchall_26
@@ -505,31 +323,31 @@
 
     const/4 v2, 0x1
 
-    .line 314
+    .line 239
     .local v2, _result:Z
     :cond_1f
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 315
+    .line 240
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 317
+    .line 242
     return v2
 
-    .line 314
+    .line 239
     .end local v2           #_result:Z
     :catchall_26
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 315
+    .line 240
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 .end method
 
-.method public isSupported(Lcom/android/emailcommon/service/PolicySet;)Z
+.method public isSupported(Lcom/android/emailcommon/provider/Policy;)Z
     .registers 9
     .parameter "policies"
     .annotation system Ldalvik/annotation/Throws;
@@ -543,98 +361,98 @@
 
     const/4 v3, 0x0
 
-    .line 334
+    .line 259
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 335
+    .line 260
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 338
+    .line 263
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_a
     const-string v4, "com.android.emailcommon.service.IPolicyService"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 339
-    if-eqz p1, :cond_31
+    .line 264
+    if-eqz p1, :cond_30
 
-    .line 340
+    .line 265
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 341
+    .line 266
     const/4 v4, 0x0
 
-    invoke-virtual {p1, v0, v4}, Lcom/android/emailcommon/service/PolicySet;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-virtual {p1, v0, v4}, Lcom/android/emailcommon/provider/Policy;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 346
+    .line 271
     :goto_19
     iget-object v4, p0, Lcom/android/emailcommon/service/IPolicyService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v5, 0x9
+    const/4 v5, 0x7
 
     const/4 v6, 0x0
 
     invoke-interface {v4, v5, v0, v1, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 347
+    .line 272
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 348
+    .line 273
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_27
-    .catchall {:try_start_a .. :try_end_27} :catchall_36
+    :try_end_26
+    .catchall {:try_start_a .. :try_end_26} :catchall_35
 
     move-result v4
 
-    if-eqz v4, :cond_3e
+    if-eqz v4, :cond_3d
 
-    .line 351
+    .line 276
     .local v2, _result:Z
-    :goto_2a
+    :goto_29
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 352
+    .line 277
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 354
+    .line 279
     return v2
 
-    .line 344
+    .line 269
     .end local v2           #_result:Z
-    :cond_31
+    :cond_30
     const/4 v4, 0x0
 
-    :try_start_32
+    :try_start_31
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_35
-    .catchall {:try_start_32 .. :try_end_35} :catchall_36
+    :try_end_34
+    .catchall {:try_start_31 .. :try_end_34} :catchall_35
 
     goto :goto_19
 
-    .line 351
-    :catchall_36
+    .line 276
+    :catchall_35
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 352
+    .line 277
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 
-    :cond_3e
+    :cond_3d
     move v2, v3
 
-    .line 348
-    goto :goto_2a
+    .line 273
+    goto :goto_29
 .end method
 
 .method public policiesRequired(J)V
@@ -647,28 +465,28 @@
     .end annotation
 
     .prologue
-    .line 229
+    .line 183
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 230
+    .line 184
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 232
+    .line 186
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_8
     const-string v2, "com.android.emailcommon.service.IPolicyService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 233
+    .line 187
     invoke-virtual {v0, p1, p2}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 234
+    .line 188
     iget-object v2, p0, Lcom/android/emailcommon/service/IPolicyService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x2
@@ -677,34 +495,35 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 235
+    .line 189
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_1a
     .catchall {:try_start_8 .. :try_end_1a} :catchall_21
 
-    .line 238
+    .line 192
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 239
+    .line 193
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 241
+    .line 195
     return-void
 
-    .line 238
+    .line 192
     :catchall_21
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 239
+    .line 193
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
 .end method
 
-.method public reducePolicies()V
-    .registers 6
+.method public policiesUpdated(J)V
+    .registers 8
+    .parameter "accountId"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -712,54 +531,57 @@
     .end annotation
 
     .prologue
-    .line 290
+    .line 198
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 291
+    .line 199
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 293
+    .line 201
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_8
     const-string v2, "com.android.emailcommon.service.IPolicyService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 294
+    .line 202
+    invoke-virtual {v0, p1, p2}, Landroid/os/Parcel;->writeLong(J)V
+
+    .line 203
     iget-object v2, p0, Lcom/android/emailcommon/service/IPolicyService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v3, 0x6
+    const/4 v3, 0x3
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 295
+    .line 204
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_17
-    .catchall {:try_start_8 .. :try_end_17} :catchall_1e
+    :try_end_1a
+    .catchall {:try_start_8 .. :try_end_1a} :catchall_21
 
-    .line 298
+    .line 207
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 299
+    .line 208
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 301
+    .line 210
     return-void
 
-    .line 298
-    :catchall_1e
+    .line 207
+    :catchall_21
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 299
+    .line 208
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -774,39 +596,39 @@
     .end annotation
 
     .prologue
-    .line 323
+    .line 248
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 325
+    .line 250
     .local v0, _data:Landroid/os/Parcel;
     :try_start_4
     const-string v1, "com.android.emailcommon.service.IPolicyService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 326
+    .line 251
     iget-object v1, p0, Lcom/android/emailcommon/service/IPolicyService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0x8
+    const/4 v2, 0x6
 
     const/4 v3, 0x0
 
     const/4 v4, 0x1
 
     invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_12
-    .catchall {:try_start_4 .. :try_end_12} :catchall_16
+    :try_end_11
+    .catchall {:try_start_4 .. :try_end_11} :catchall_15
 
-    .line 329
+    .line 254
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 331
+    .line 256
     return-void
 
-    .line 329
-    :catchall_16
+    .line 254
+    :catchall_15
     move-exception v1
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -827,28 +649,28 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 259
+    .line 213
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 260
+    .line 214
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 262
+    .line 216
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_9
     const-string v3, "com.android.emailcommon.service.IPolicyService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 263
+    .line 217
     invoke-virtual {v0, p1, p2}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 264
+    .line 218
     if-eqz p3, :cond_14
 
     const/4 v2, 0x1
@@ -856,7 +678,7 @@
     :cond_14
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 265
+    .line 219
     iget-object v2, p0, Lcom/android/emailcommon/service/IPolicyService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x4
@@ -865,166 +687,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 266
+    .line 220
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_21
     .catchall {:try_start_9 .. :try_end_21} :catchall_28
 
-    .line 269
+    .line 223
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 270
+    .line 224
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 272
+    .line 226
     return-void
 
-    .line 269
+    .line 223
     :catchall_28
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 270
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v2
-.end method
-
-.method public setRecoverPasswordState(Z)V
-    .registers 7
-    .parameter "result"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 275
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 276
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 278
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_9
-    const-string v3, "com.android.emailcommon.service.IPolicyService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 279
-    if-eqz p1, :cond_11
-
-    const/4 v2, 0x1
-
-    :cond_11
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 280
-    iget-object v2, p0, Lcom/android/emailcommon/service/IPolicyService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/4 v3, 0x5
-
-    const/4 v4, 0x0
-
-    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 281
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_1e
-    .catchall {:try_start_9 .. :try_end_1e} :catchall_25
-
-    .line 284
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 285
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 287
-    return-void
-
-    .line 284
-    :catchall_25
-    move-exception v2
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 285
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v2
-.end method
-
-.method public updatePolicies(J)V
-    .registers 8
-    .parameter "accountId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 244
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 245
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 247
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_8
-    const-string v2, "com.android.emailcommon.service.IPolicyService"
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 248
-    invoke-virtual {v0, p1, p2}, Landroid/os/Parcel;->writeLong(J)V
-
-    .line 249
-    iget-object v2, p0, Lcom/android/emailcommon/service/IPolicyService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/4 v3, 0x3
-
-    const/4 v4, 0x0
-
-    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 250
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_1a
-    .catchall {:try_start_8 .. :try_end_1a} :catchall_21
-
-    .line 253
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 254
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 256
-    return-void
-
-    .line 253
-    :catchall_21
-    move-exception v2
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 254
+    .line 224
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2

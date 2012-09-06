@@ -9,6 +9,6 @@
         <View android:layout_gravity="center_vertical" android:background="#ffbabebe" android:layout_width="2.0dip" android:layout_height="fill_parent" android:layout_marginTop="12.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="12.0dip" />
         <Button android:id="@id/respond_inline_button" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/respond_inline" android:textAllCaps="true" style="@style/RespondInlineButtonStyle" />
     </LinearLayout>
-    <View android:id="@id/divider_bar" android:background="#ffbabebe" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_below="@id/quoted_text_button_bar" />
+    <View android:id="@id/divider_bar" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_below="@id/quoted_text_button_bar" />
     <WebView android:id="@id/quoted_text_web_view" android:focusable="false" android:focusableInTouchMode="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/divider_bar" />
 </RelativeLayout>

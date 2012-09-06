@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="carousel_visible_details">3</integer>
+    <integer name="available_mode_genres">2</integer>
+    <integer name="available_mode_artists">2</integer>
+    <integer name="available_mode_playlists">2</integer>
+    <integer name="available_mode_albums">2</integer>
+    <integer name="available_mode_new_and_recent">2</integer>
+</resources>

@@ -1,19 +1,23 @@
-.class Lcom/google/android/maps/driveabout/app/ao;
+.class Lcom/google/android/maps/driveabout/app/aO;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnDismissListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/am;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/aN;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/am;)V
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/aN;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/ao;->a:Lcom/google/android/maps/driveabout/app/am;
+    .prologue
+    .line 568
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aO;->a:Lcom/google/android/maps/driveabout/app/aN;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,47 +26,17 @@
 
 
 # virtual methods
-.method public onDismiss(Landroid/content/DialogInterface;)V
-    .registers 6
+.method public run()V
+    .registers 2
 
-    const/4 v3, 0x0
+    .prologue
+    .line 572
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aO;->a:Lcom/google/android/maps/driveabout/app/aN;
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ao;->a:Lcom/google/android/maps/driveabout/app/am;
+    iget-object v0, v0, Lcom/google/android/maps/driveabout/app/aN;->b:Lcom/google/android/maps/driveabout/app/NavigationService;
 
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/am;->a(Lcom/google/android/maps/driveabout/app/am;)Landroid/widget/CheckBox;
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/NavigationService;->g()V
 
-    move-result-object v0
-
-    if-eqz v0, :cond_1e
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ao;->a:Lcom/google/android/maps/driveabout/app/am;
-
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/am;->b(Lcom/google/android/maps/driveabout/app/am;)Landroid/content/Context;
-
-    move-result-object v0
-
-    const-string v1, "RmiMail"
-
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/ao;->a:Lcom/google/android/maps/driveabout/app/am;
-
-    invoke-static {v2}, Lcom/google/android/maps/driveabout/app/am;->a(Lcom/google/android/maps/driveabout/app/am;)Landroid/widget/CheckBox;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/widget/CheckBox;->isChecked()Z
-
-    move-result v2
-
-    invoke-static {v0, v1, v2}, Lz/r;->a(Landroid/content/Context;Ljava/lang/String;Z)V
-
-    :cond_1e
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ao;->a:Lcom/google/android/maps/driveabout/app/am;
-
-    invoke-static {v0, v3}, Lcom/google/android/maps/driveabout/app/am;->a(Lcom/google/android/maps/driveabout/app/am;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ao;->a:Lcom/google/android/maps/driveabout/app/am;
-
-    invoke-static {v0, v3}, Lcom/google/android/maps/driveabout/app/am;->a(Lcom/google/android/maps/driveabout/app/am;Lcom/google/android/maps/driveabout/app/RecordingLevelsView;)Lcom/google/android/maps/driveabout/app/RecordingLevelsView;
-
+    .line 573
     return-void
 .end method

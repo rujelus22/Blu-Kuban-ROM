@@ -13,5 +13,8 @@
 .method public abstract logTagAndPackage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end method
 
+.method public abstract logTagAndPackage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.end method
+
 .method public abstract reset()V
 .end method

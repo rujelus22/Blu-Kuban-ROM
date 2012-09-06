@@ -1,192 +1,154 @@
-.class public Lar/h;
+.class public LaR/h;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lar/g;
+.field private final a:Lcom/google/googlenav/ai;
 
-.field private b:I
+.field private final b:Lcom/google/googlenav/L;
 
-.field private c:I
-
-.field private d:Ljava/util/Enumeration;
+.field private c:Landroid/view/View;
 
 
 # direct methods
-.method public constructor <init>(Lar/g;)V
+.method public constructor <init>(Lcom/google/googlenav/ai;Lcom/google/googlenav/L;)V
     .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lar/h;->a:Lar/g;
-
+    .prologue
+    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    .line 36
+    iput-object p1, p0, LaR/h;->a:Lcom/google/googlenav/ai;
 
-    iput v0, p0, Lar/h;->b:I
+    .line 37
+    iput-object p2, p0, LaR/h;->b:Lcom/google/googlenav/L;
 
-    const/high16 v0, -0x8000
-
-    iput v0, p0, Lar/h;->c:I
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lar/h;->d:Ljava/util/Enumeration;
-
+    .line 38
     return-void
+.end method
+
+.method static synthetic a(LaR/h;)Lcom/google/googlenav/ai;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 29
+    iget-object v0, p0, LaR/h;->a:Lcom/google/googlenav/ai;
+
+    return-object v0
+.end method
+
+.method private a(Landroid/view/View;ILjava/lang/String;)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 67
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    .line 68
+    invoke-virtual {v0, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 69
+    return-void
+.end method
+
+.method static synthetic b(LaR/h;)Lcom/google/googlenav/L;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 29
+    iget-object v0, p0, LaR/h;->b:Lcom/google/googlenav/L;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public a()Z
-    .registers 4
+.method public a(Landroid/view/LayoutInflater;)Landroid/view/View;
+    .registers 6
+    .parameter
 
-    const/4 v1, 0x1
+    .prologue
+    const v3, 0x7f1002ba
 
-    iget v0, p0, Lar/h;->c:I
+    .line 44
+    const v0, 0x7f0400f3
 
-    const/high16 v2, -0x8000
+    const/4 v1, 0x0
 
-    if-eq v0, v2, :cond_9
-
-    move v0, v1
-
-    :goto_8
-    return v0
-
-    :cond_9
-    iget v0, p0, Lar/h;->b:I
-
-    iget-object v2, p0, Lar/h;->a:Lar/g;
-
-    invoke-static {v2}, Lar/g;->a(Lar/g;)I
-
-    move-result v2
-
-    if-gt v0, v2, :cond_3a
-
-    :goto_13
-    iget v0, p0, Lar/h;->b:I
-
-    iget-object v2, p0, Lar/h;->a:Lar/g;
-
-    invoke-static {v2}, Lar/g;->a(Lar/g;)I
-
-    move-result v2
-
-    if-gt v0, v2, :cond_3a
-
-    iget-object v0, p0, Lar/h;->a:Lar/g;
-
-    invoke-static {v0}, Lar/g;->b(Lar/g;)[Ljava/lang/Object;
+    invoke-virtual {p1, v0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
-    iget v2, p0, Lar/h;->b:I
+    iput-object v0, p0, LaR/h;->c:Landroid/view/View;
 
-    aget-object v0, v0, v2
+    .line 47
+    iget-object v0, p0, LaR/h;->c:Landroid/view/View;
 
-    if-eqz v0, :cond_33
+    const v1, 0x7f1002b8
 
-    iget v0, p0, Lar/h;->b:I
+    iget-object v2, p0, LaR/h;->a:Lcom/google/googlenav/ai;
 
-    add-int/lit8 v2, v0, 0x1
+    invoke-virtual {v2}, Lcom/google/googlenav/ai;->ak()Ljava/lang/String;
 
-    iput v2, p0, Lar/h;->b:I
+    move-result-object v2
 
-    iput v0, p0, Lar/h;->c:I
+    invoke-direct {p0, v0, v1, v2}, LaR/h;->a(Landroid/view/View;ILjava/lang/String;)V
 
-    move v0, v1
+    .line 48
+    iget-object v0, p0, LaR/h;->c:Landroid/view/View;
 
-    goto :goto_8
+    const v1, 0x7f1002b9
 
-    :cond_33
-    iget v0, p0, Lar/h;->b:I
+    const/16 v2, 0x604
 
-    add-int/lit8 v0, v0, 0x1
+    invoke-static {v2}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
 
-    iput v0, p0, Lar/h;->b:I
+    move-result-object v2
 
-    goto :goto_13
+    invoke-direct {p0, v0, v1, v2}, LaR/h;->a(Landroid/view/View;ILjava/lang/String;)V
 
-    :cond_3a
-    iget-object v0, p0, Lar/h;->a:Lar/g;
+    .line 49
+    iget-object v0, p0, LaR/h;->c:Landroid/view/View;
 
-    invoke-static {v0}, Lar/g;->c(Lar/g;)Ljava/util/Hashtable;
+    const/16 v1, 0x603
 
-    move-result-object v0
+    invoke-static {v1}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
 
-    if-eqz v0, :cond_6a
+    move-result-object v1
 
-    iget-object v0, p0, Lar/h;->d:Ljava/util/Enumeration;
+    invoke-direct {p0, v0, v3, v1}, LaR/h;->a(Landroid/view/View;ILjava/lang/String;)V
 
-    if-nez v0, :cond_52
+    .line 52
+    iget-object v0, p0, LaR/h;->c:Landroid/view/View;
 
-    iget-object v0, p0, Lar/h;->a:Lar/g;
-
-    invoke-static {v0}, Lar/g;->c(Lar/g;)Ljava/util/Hashtable;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/Hashtable;->keys()Ljava/util/Enumeration;
+    invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    iput-object v0, p0, Lar/h;->d:Ljava/util/Enumeration;
+    check-cast v0, Landroid/widget/Button;
 
-    :cond_52
-    iget-object v0, p0, Lar/h;->d:Ljava/util/Enumeration;
+    .line 53
+    new-instance v1, LaR/i;
 
-    invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
+    invoke-direct {v1, p0}, LaR/i;-><init>(LaR/h;)V
 
-    move-result v0
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    if-eqz v0, :cond_6a
+    .line 63
+    iget-object v0, p0, LaR/h;->c:Landroid/view/View;
 
-    iget-object v0, p0, Lar/h;->d:Ljava/util/Enumeration;
-
-    invoke-interface {v0}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    iput v0, p0, Lar/h;->c:I
-
-    move v0, v1
-
-    goto :goto_8
-
-    :cond_6a
-    const/4 v0, 0x0
-
-    goto :goto_8
-.end method
-
-.method public b()I
-    .registers 3
-
-    invoke-virtual {p0}, Lar/h;->a()Z
-
-    move-result v0
-
-    if-nez v0, :cond_c
-
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
-
-    :cond_c
-    iget v0, p0, Lar/h;->c:I
-
-    const/high16 v1, -0x8000
-
-    iput v1, p0, Lar/h;->c:I
-
-    return v0
+    return-object v0
 .end method

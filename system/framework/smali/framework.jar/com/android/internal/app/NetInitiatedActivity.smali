@@ -7,7 +7,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final GPS_NO_RESPONSE_TIME_OUT:I = 0x1
 

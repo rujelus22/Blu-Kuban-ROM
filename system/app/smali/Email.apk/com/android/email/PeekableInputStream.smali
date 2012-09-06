@@ -17,13 +17,13 @@
     .parameter "in"
 
     .prologue
-    .line 34
+    .line 32
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
-    .line 35
+    .line 33
     iput-object p1, p0, Lcom/android/email/PeekableInputStream;->mIn:Ljava/io/InputStream;
 
-    .line 36
+    .line 34
     return-void
 .end method
 
@@ -38,24 +38,24 @@
     .end annotation
 
     .prologue
-    .line 49
+    .line 47
     iget-boolean v0, p0, Lcom/android/email/PeekableInputStream;->mPeeked:Z
 
     if-nez v0, :cond_d
 
-    .line 50
+    .line 48
     invoke-virtual {p0}, Lcom/android/email/PeekableInputStream;->read()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/email/PeekableInputStream;->mPeekedByte:I
 
-    .line 51
+    .line 49
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/email/PeekableInputStream;->mPeeked:Z
 
-    .line 53
+    .line 51
     :cond_d
     iget v0, p0, Lcom/android/email/PeekableInputStream;->mPeekedByte:I
 
@@ -71,29 +71,29 @@
     .end annotation
 
     .prologue
-    .line 40
+    .line 38
     iget-boolean v0, p0, Lcom/android/email/PeekableInputStream;->mPeeked:Z
 
     if-nez v0, :cond_b
 
-    .line 41
+    .line 39
     iget-object v0, p0, Lcom/android/email/PeekableInputStream;->mIn:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->read()I
 
     move-result v0
 
-    .line 44
+    .line 42
     :goto_a
     return v0
 
-    .line 43
+    .line 41
     :cond_b
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/email/PeekableInputStream;->mPeeked:Z
 
-    .line 44
+    .line 42
     iget v0, p0, Lcom/android/email/PeekableInputStream;->mPeekedByte:I
 
     goto :goto_a
@@ -109,7 +109,7 @@
     .end annotation
 
     .prologue
-    .line 74
+    .line 72
     const/4 v0, 0x0
 
     array-length v1, p1
@@ -135,23 +135,23 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 58
+    .line 56
     iget-boolean v1, p0, Lcom/android/email/PeekableInputStream;->mPeeked:Z
 
     if-nez v1, :cond_c
 
-    .line 59
+    .line 57
     iget-object v1, p0, Lcom/android/email/PeekableInputStream;->mIn:Ljava/io/InputStream;
 
     invoke-virtual {v1, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
 
     move-result v1
 
-    .line 67
+    .line 65
     :goto_b
     return v1
 
-    .line 61
+    .line 59
     :cond_c
     iget v1, p0, Lcom/android/email/PeekableInputStream;->mPeekedByte:I
 
@@ -159,10 +159,10 @@
 
     aput-byte v1, p1, v2
 
-    .line 62
+    .line 60
     iput-boolean v2, p0, Lcom/android/email/PeekableInputStream;->mPeeked:Z
 
-    .line 63
+    .line 61
     iget-object v1, p0, Lcom/android/email/PeekableInputStream;->mIn:Ljava/io/InputStream;
 
     add-int/lit8 v2, p2, 0x1
@@ -173,18 +173,18 @@
 
     move-result v0
 
-    .line 64
+    .line 62
     .local v0, r:I
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_22
 
-    .line 65
+    .line 63
     const/4 v1, 0x1
 
     goto :goto_b
 
-    .line 67
+    .line 65
     :cond_22
     add-int/lit8 v1, v0, 0x1
 
@@ -195,7 +195,7 @@
     .registers 5
 
     .prologue
-    .line 79
+    .line 77
     const-string v0, "PeekableInputStream(in=%s, peeked=%b, peekedByte=%d)"
 
     const/4 v1, 0x3

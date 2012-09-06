@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final a:Lcom/google/common/base/m;
+.field private static final a:Lcom/google/common/base/x;
 
 
 # direct methods
@@ -12,94 +12,66 @@
     .registers 1
 
     .prologue
-    .line 275
+    .line 326
     const-string v0, ","
 
-    invoke-static {v0}, Lcom/google/common/base/m;->a(Ljava/lang/String;)Lcom/google/common/base/m;
+    invoke-static {v0}, Lcom/google/common/base/x;->a(Ljava/lang/String;)Lcom/google/common/base/x;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/common/base/Predicates;->a:Lcom/google/common/base/m;
+    sput-object v0, Lcom/google/common/base/Predicates;->a:Lcom/google/common/base/x;
 
     return-void
 .end method
 
-.method private constructor <init>()V
+.method public static a()Lcom/google/common/base/ah;
     .registers 1
 
     .prologue
-    .line 43
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 55
+    sget-object v0, Lcom/google/common/base/Predicates$ObjectPredicate;->ALWAYS_TRUE:Lcom/google/common/base/Predicates$ObjectPredicate;
 
-    return-void
-.end method
+    invoke-virtual {v0}, Lcom/google/common/base/Predicates$ObjectPredicate;->withNarrowedType()Lcom/google/common/base/ah;
 
-.method static synthetic a()Lcom/google/common/base/m;
-    .registers 1
-
-    .prologue
-    .line 42
-    sget-object v0, Lcom/google/common/base/Predicates;->a:Lcom/google/common/base/m;
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic a(Ljava/lang/Iterable;Ljava/lang/Iterable;)Z
-    .registers 6
-    .parameter
+.method public static a(Lcom/google/common/base/ah;)Lcom/google/common/base/ah;
+    .registers 2
     .parameter
 
     .prologue
-    .line 42
-    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    .line 89
+    new-instance v0, Lcom/google/common/base/Predicates$NotPredicate;
 
-    move-result-object v0
+    invoke-direct {v0, p0}, Lcom/google/common/base/Predicates$NotPredicate;-><init>(Lcom/google/common/base/ah;)V
 
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    return-object v0
+.end method
 
-    move-result-object v1
+.method public static a(Ljava/util/Collection;)Lcom/google/common/base/ah;
+    .registers 3
+    .parameter
 
-    :cond_8
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    .prologue
+    .line 227
+    new-instance v0, Lcom/google/common/base/Predicates$InPredicate;
 
-    move-result v2
+    const/4 v1, 0x0
 
-    if-eqz v2, :cond_24
+    invoke-direct {v0, p0, v1}, Lcom/google/common/base/Predicates$InPredicate;-><init>(Ljava/util/Collection;Lcom/google/common/base/ai;)V
 
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    return-object v0
+.end method
 
-    move-result v2
+.method static synthetic b()Lcom/google/common/base/x;
+    .registers 1
 
-    if-eqz v2, :cond_22
+    .prologue
+    .line 44
+    sget-object v0, Lcom/google/common/base/Predicates;->a:Lcom/google/common/base/x;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_8
-
-    :cond_22
-    const/4 v0, 0x0
-
-    :goto_23
-    return v0
-
-    :cond_24
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-nez v0, :cond_22
-
-    const/4 v0, 0x1
-
-    goto :goto_23
+    return-object v0
 .end method

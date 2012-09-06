@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:layout_gravity="top" android:orientation="horizontal" android:layout_width="310.0dip" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <EditText android:textSize="37.0sp" android:gravity="center" android:id="@id/repeat_edit" android:layout_width="96.0dip" android:layout_height="80.0dip" android:singleLine="true" android:maxLength="3" android:inputType="number" android:privateImeOptions="inputType=YearDateTime_edittext" />
-</LinearLayout>

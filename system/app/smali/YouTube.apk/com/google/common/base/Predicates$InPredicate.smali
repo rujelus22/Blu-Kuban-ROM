@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/base/u;
+.implements Lcom/google/common/base/ah;
 .implements Ljava/io/Serializable;
 
 
@@ -21,11 +21,11 @@
     .parameter
 
     .prologue
-    .line 434
+    .line 484
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 435
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 485
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -33,17 +33,17 @@
 
     iput-object v0, p0, Lcom/google/common/base/Predicates$InPredicate;->target:Ljava/util/Collection;
 
-    .line 436
+    .line 486
     return-void
 .end method
 
-.method synthetic constructor <init>(Ljava/util/Collection;Lcom/google/common/base/v;)V
+.method synthetic constructor <init>(Ljava/util/Collection;Lcom/google/common/base/ai;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 430
+    .line 481
     invoke-direct {p0, p1}, Lcom/google/common/base/Predicates$InPredicate;-><init>(Ljava/util/Collection;)V
 
     return-void
@@ -58,7 +58,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 440
+    .line 491
     :try_start_1
     iget-object v1, p0, Lcom/google/common/base/Predicates$InPredicate;->target:Ljava/util/Collection;
 
@@ -69,7 +69,7 @@
 
     move-result v0
 
-    .line 444
+    .line 495
     :goto_7
     return v0
 
@@ -78,7 +78,7 @@
 
     goto :goto_7
 
-    .line 442
+    .line 493
     :catch_a
     move-exception v1
 
@@ -88,17 +88,20 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 449
+    .line 500
     instance-of v0, p1, Lcom/google/common/base/Predicates$InPredicate;
 
     if-eqz v0, :cond_f
 
-    .line 450
+    .line 501
     check-cast p1, Lcom/google/common/base/Predicates$InPredicate;
 
-    .line 451
+    .line 502
     iget-object v0, p0, Lcom/google/common/base/Predicates$InPredicate;->target:Ljava/util/Collection;
 
     iget-object v1, p1, Lcom/google/common/base/Predicates$InPredicate;->target:Ljava/util/Collection;
@@ -107,7 +110,7 @@
 
     move-result v0
 
-    .line 453
+    .line 504
     :goto_e
     return v0
 
@@ -121,7 +124,7 @@
     .registers 2
 
     .prologue
-    .line 457
+    .line 508
     iget-object v0, p0, Lcom/google/common/base/Predicates$InPredicate;->target:Ljava/util/Collection;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -135,16 +138,12 @@
     .registers 3
 
     .prologue
-    .line 461
+    .line 512
     new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "In("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/common/base/Predicates$InPredicate;->target:Ljava/util/Collection;
 

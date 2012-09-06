@@ -13,11 +13,21 @@
     name = "BookDetails"
 .end annotation
 
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails$Identifier;
+    }
+.end annotation
+
 
 # instance fields
+.field private aboutTheAuthor_:Ljava/lang/String;
+
 .field private acsEpubTokenUrl_:Ljava/lang/String;
 
 .field private acsPdfTokenUrl_:Ljava/lang/String;
+
+.field private audioVideoContent_:Z
 
 .field private author_:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -38,15 +48,23 @@
 
 .field private epubAvailable_:Z
 
+.field private fixedLayoutContent_:Z
+
+.field private hasAboutTheAuthor:Z
+
 .field private hasAcsEpubTokenUrl:Z
 
 .field private hasAcsPdfTokenUrl:Z
+
+.field private hasAudioVideoContent:Z
 
 .field private hasDownloadEpubUrl:Z
 
 .field private hasDownloadPdfUrl:Z
 
 .field private hasEpubAvailable:Z
+
+.field private hasFixedLayoutContent:Z
 
 .field private hasIsbn:Z
 
@@ -61,6 +79,17 @@
 .field private hasReaderUrl:Z
 
 .field private hasSubtitle:Z
+
+.field private identifier_:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails$Identifier;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private isbn_:Ljava/lang/String;
 
@@ -95,83 +124,101 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 292
+    .line 332
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 299
+    .line 466
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->identifier_:Ljava/util/List;
+
+    .line 499
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->author_:Ljava/util/List;
 
-    .line 332
+    .line 532
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->subject_:Ljava/util/List;
 
-    .line 366
+    .line 566
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->publisher_:Ljava/lang/String;
 
-    .line 383
+    .line 583
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->publicationDate_:Ljava/lang/String;
 
-    .line 400
+    .line 600
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->isbn_:Ljava/lang/String;
 
-    .line 417
+    .line 617
     iput v1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->numberOfPages_:I
 
-    .line 434
+    .line 634
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->subtitle_:Ljava/lang/String;
 
-    .line 451
+    .line 651
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->readerUrl_:Ljava/lang/String;
 
-    .line 468
+    .line 668
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->downloadEpubUrl_:Ljava/lang/String;
 
-    .line 485
+    .line 685
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->downloadPdfUrl_:Ljava/lang/String;
 
-    .line 502
+    .line 702
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->acsEpubTokenUrl_:Ljava/lang/String;
 
-    .line 519
+    .line 719
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->acsPdfTokenUrl_:Ljava/lang/String;
 
-    .line 536
+    .line 736
     iput-boolean v1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->epubAvailable_:Z
 
-    .line 553
+    .line 753
     iput-boolean v1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->pdfAvailable_:Z
 
-    .line 642
+    .line 770
+    iput-boolean v1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->fixedLayoutContent_:Z
+
+    .line 787
+    iput-boolean v1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->audioVideoContent_:Z
+
+    .line 804
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->aboutTheAuthor_:Ljava/lang/String;
+
+    .line 910
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->cachedSize:I
 
-    .line 292
+    .line 332
     return-void
 .end method
 
@@ -182,17 +229,17 @@
     .parameter "value"
 
     .prologue
-    .line 316
+    .line 516
     if-nez p1, :cond_8
 
-    .line 317
+    .line 517
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 319
+    .line 519
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->author_:Ljava/util/List;
 
@@ -202,20 +249,62 @@
 
     if-eqz v0, :cond_17
 
-    .line 320
+    .line 520
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->author_:Ljava/util/List;
 
-    .line 322
+    .line 522
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->author_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 323
+    .line 523
+    return-object p0
+.end method
+
+.method public addIdentifier(Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails$Identifier;)Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 483
+    if-nez p1, :cond_8
+
+    .line 484
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 486
+    :cond_8
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->identifier_:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_17
+
+    .line 487
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->identifier_:Ljava/util/List;
+
+    .line 489
+    :cond_17
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->identifier_:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 490
     return-object p0
 .end method
 
@@ -224,17 +313,17 @@
     .parameter "value"
 
     .prologue
-    .line 349
+    .line 549
     if-nez p1, :cond_8
 
-    .line 350
+    .line 550
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 352
+    .line 552
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->subject_:Ljava/util/List;
 
@@ -244,28 +333,38 @@
 
     if-eqz v0, :cond_17
 
-    .line 353
+    .line 553
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->subject_:Ljava/util/List;
 
-    .line 355
+    .line 555
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->subject_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 356
+    .line 556
     return-object p0
+.end method
+
+.method public getAboutTheAuthor()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 805
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->aboutTheAuthor_:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method public getAcsEpubTokenUrl()Ljava/lang/String;
     .registers 2
 
     .prologue
-    .line 503
+    .line 703
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->acsEpubTokenUrl_:Ljava/lang/String;
 
     return-object v0
@@ -275,10 +374,20 @@
     .registers 2
 
     .prologue
-    .line 520
+    .line 720
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->acsPdfTokenUrl_:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public getAudioVideoContent()Z
+    .registers 2
+
+    .prologue
+    .line 788
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->audioVideoContent_:Z
+
+    return v0
 .end method
 
 .method public getAuthorList()Ljava/util/List;
@@ -294,7 +403,7 @@
     .end annotation
 
     .prologue
-    .line 302
+    .line 502
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->author_:Ljava/util/List;
 
     return-object v0
@@ -304,15 +413,15 @@
     .registers 2
 
     .prologue
-    .line 644
+    .line 913
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 646
+    .line 915
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getSerializedSize()I
 
-    .line 648
+    .line 917
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->cachedSize:I
 
@@ -323,7 +432,7 @@
     .registers 2
 
     .prologue
-    .line 469
+    .line 669
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->downloadEpubUrl_:Ljava/lang/String;
 
     return-object v0
@@ -333,7 +442,7 @@
     .registers 2
 
     .prologue
-    .line 486
+    .line 686
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->downloadPdfUrl_:Ljava/lang/String;
 
     return-object v0
@@ -343,17 +452,46 @@
     .registers 2
 
     .prologue
-    .line 537
+    .line 737
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->epubAvailable_:Z
 
     return v0
+.end method
+
+.method public getFixedLayoutContent()Z
+    .registers 2
+
+    .prologue
+    .line 771
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->fixedLayoutContent_:Z
+
+    return v0
+.end method
+
+.method public getIdentifierList()Ljava/util/List;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails$Identifier;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 469
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->identifier_:Ljava/util/List;
+
+    return-object v0
 .end method
 
 .method public getIsbn()Ljava/lang/String;
     .registers 2
 
     .prologue
-    .line 401
+    .line 601
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->isbn_:Ljava/lang/String;
 
     return-object v0
@@ -363,7 +501,7 @@
     .registers 2
 
     .prologue
-    .line 418
+    .line 618
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->numberOfPages_:I
 
     return v0
@@ -373,7 +511,7 @@
     .registers 2
 
     .prologue
-    .line 554
+    .line 754
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->pdfAvailable_:Z
 
     return v0
@@ -383,7 +521,7 @@
     .registers 2
 
     .prologue
-    .line 384
+    .line 584
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->publicationDate_:Ljava/lang/String;
 
     return-object v0
@@ -393,7 +531,7 @@
     .registers 2
 
     .prologue
-    .line 367
+    .line 567
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->publisher_:Ljava/lang/String;
 
     return-object v0
@@ -403,7 +541,7 @@
     .registers 2
 
     .prologue
-    .line 452
+    .line 652
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->readerUrl_:Ljava/lang/String;
 
     return-object v0
@@ -413,10 +551,10 @@
     .registers 6
 
     .prologue
-    .line 652
+    .line 922
     const/4 v2, 0x0
 
-    .line 653
+    .line 923
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getSubjectList()Ljava/util/List;
 
@@ -440,7 +578,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;
 
-    .line 654
+    .line 924
     .local v0, element:Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;
     const/4 v3, 0x3
 
@@ -452,7 +590,7 @@
 
     goto :goto_9
 
-    .line 657
+    .line 927
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPublisher()Z
@@ -461,7 +599,7 @@
 
     if-eqz v3, :cond_2c
 
-    .line 658
+    .line 928
     const/4 v3, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getPublisher()Ljava/lang/String;
@@ -474,7 +612,7 @@
 
     add-int/2addr v2, v3
 
-    .line 661
+    .line 931
     :cond_2c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPublicationDate()Z
 
@@ -482,7 +620,7 @@
 
     if-eqz v3, :cond_3c
 
-    .line 662
+    .line 932
     const/4 v3, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getPublicationDate()Ljava/lang/String;
@@ -495,7 +633,7 @@
 
     add-int/2addr v2, v3
 
-    .line 665
+    .line 935
     :cond_3c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasIsbn()Z
 
@@ -503,7 +641,7 @@
 
     if-eqz v3, :cond_4c
 
-    .line 666
+    .line 936
     const/4 v3, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getIsbn()Ljava/lang/String;
@@ -516,7 +654,7 @@
 
     add-int/2addr v2, v3
 
-    .line 669
+    .line 939
     :cond_4c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasNumberOfPages()Z
 
@@ -524,7 +662,7 @@
 
     if-eqz v3, :cond_5c
 
-    .line 670
+    .line 940
     const/4 v3, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getNumberOfPages()I
@@ -537,7 +675,7 @@
 
     add-int/2addr v2, v3
 
-    .line 673
+    .line 943
     :cond_5c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasSubtitle()Z
 
@@ -545,7 +683,7 @@
 
     if-eqz v3, :cond_6d
 
-    .line 674
+    .line 944
     const/16 v3, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getSubtitle()Ljava/lang/String;
@@ -558,7 +696,7 @@
 
     add-int/2addr v2, v3
 
-    .line 677
+    .line 947
     :cond_6d
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getAuthorList()Ljava/util/List;
 
@@ -581,7 +719,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookAuthor;
 
-    .line 678
+    .line 948
     .local v0, element:Lcom/google/android/finsky/remoting/protos/BookInfo$BookAuthor;
     const/16 v3, 0x9
 
@@ -593,7 +731,7 @@
 
     goto :goto_75
 
-    .line 681
+    .line 951
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/BookInfo$BookAuthor;
     :cond_89
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasReaderUrl()Z
@@ -602,7 +740,7 @@
 
     if-eqz v3, :cond_9a
 
-    .line 682
+    .line 952
     const/16 v3, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getReaderUrl()Ljava/lang/String;
@@ -615,7 +753,7 @@
 
     add-int/2addr v2, v3
 
-    .line 685
+    .line 955
     :cond_9a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasDownloadEpubUrl()Z
 
@@ -623,7 +761,7 @@
 
     if-eqz v3, :cond_ab
 
-    .line 686
+    .line 956
     const/16 v3, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getDownloadEpubUrl()Ljava/lang/String;
@@ -636,7 +774,7 @@
 
     add-int/2addr v2, v3
 
-    .line 689
+    .line 959
     :cond_ab
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasDownloadPdfUrl()Z
 
@@ -644,7 +782,7 @@
 
     if-eqz v3, :cond_bc
 
-    .line 690
+    .line 960
     const/16 v3, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getDownloadPdfUrl()Ljava/lang/String;
@@ -657,7 +795,7 @@
 
     add-int/2addr v2, v3
 
-    .line 693
+    .line 963
     :cond_bc
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasAcsEpubTokenUrl()Z
 
@@ -665,7 +803,7 @@
 
     if-eqz v3, :cond_cd
 
-    .line 694
+    .line 964
     const/16 v3, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getAcsEpubTokenUrl()Ljava/lang/String;
@@ -678,7 +816,7 @@
 
     add-int/2addr v2, v3
 
-    .line 697
+    .line 967
     :cond_cd
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasAcsPdfTokenUrl()Z
 
@@ -686,7 +824,7 @@
 
     if-eqz v3, :cond_de
 
-    .line 698
+    .line 968
     const/16 v3, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getAcsPdfTokenUrl()Ljava/lang/String;
@@ -699,7 +837,7 @@
 
     add-int/2addr v2, v3
 
-    .line 701
+    .line 971
     :cond_de
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasEpubAvailable()Z
 
@@ -707,7 +845,7 @@
 
     if-eqz v3, :cond_ef
 
-    .line 702
+    .line 972
     const/16 v3, 0xf
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getEpubAvailable()Z
@@ -720,7 +858,7 @@
 
     add-int/2addr v2, v3
 
-    .line 705
+    .line 975
     :cond_ef
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPdfAvailable()Z
 
@@ -728,7 +866,7 @@
 
     if-eqz v3, :cond_100
 
-    .line 706
+    .line 976
     const/16 v3, 0x10
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getPdfAvailable()Z
@@ -741,11 +879,110 @@
 
     add-int/2addr v2, v3
 
-    .line 709
+    .line 979
     :cond_100
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasAboutTheAuthor()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_111
+
+    .line 980
+    const/16 v3, 0x11
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getAboutTheAuthor()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    .line 983
+    :cond_111
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getIdentifierList()Ljava/util/List;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_119
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_12d
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails$Identifier;
+
+    .line 984
+    .local v0, element:Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails$Identifier;
+    const/16 v3, 0x12
+
+    invoke-static {v3, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeGroupSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    goto :goto_119
+
+    .line 987
+    .end local v0           #element:Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails$Identifier;
+    :cond_12d
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasFixedLayoutContent()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_13e
+
+    .line 988
+    const/16 v3, 0x15
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getFixedLayoutContent()Z
+
+    move-result v4
+
+    invoke-static {v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeBoolSize(IZ)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    .line 991
+    :cond_13e
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasAudioVideoContent()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_14f
+
+    .line 992
+    const/16 v3, 0x16
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getAudioVideoContent()Z
+
+    move-result v4
+
+    invoke-static {v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeBoolSize(IZ)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    .line 995
+    :cond_14f
     iput v2, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->cachedSize:I
 
-    .line 710
+    .line 996
     return v2
 .end method
 
@@ -762,7 +999,7 @@
     .end annotation
 
     .prologue
-    .line 335
+    .line 535
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->subject_:Ljava/util/List;
 
     return-object v0
@@ -772,17 +1009,27 @@
     .registers 2
 
     .prologue
-    .line 435
+    .line 635
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->subtitle_:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public hasAboutTheAuthor()Z
+    .registers 2
+
+    .prologue
+    .line 806
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasAboutTheAuthor:Z
+
+    return v0
 .end method
 
 .method public hasAcsEpubTokenUrl()Z
     .registers 2
 
     .prologue
-    .line 504
+    .line 704
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasAcsEpubTokenUrl:Z
 
     return v0
@@ -792,8 +1039,18 @@
     .registers 2
 
     .prologue
-    .line 521
+    .line 721
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasAcsPdfTokenUrl:Z
+
+    return v0
+.end method
+
+.method public hasAudioVideoContent()Z
+    .registers 2
+
+    .prologue
+    .line 789
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasAudioVideoContent:Z
 
     return v0
 .end method
@@ -802,7 +1059,7 @@
     .registers 2
 
     .prologue
-    .line 470
+    .line 670
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasDownloadEpubUrl:Z
 
     return v0
@@ -812,7 +1069,7 @@
     .registers 2
 
     .prologue
-    .line 487
+    .line 687
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasDownloadPdfUrl:Z
 
     return v0
@@ -822,8 +1079,18 @@
     .registers 2
 
     .prologue
-    .line 538
+    .line 738
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasEpubAvailable:Z
+
+    return v0
+.end method
+
+.method public hasFixedLayoutContent()Z
+    .registers 2
+
+    .prologue
+    .line 772
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasFixedLayoutContent:Z
 
     return v0
 .end method
@@ -832,7 +1099,7 @@
     .registers 2
 
     .prologue
-    .line 402
+    .line 602
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasIsbn:Z
 
     return v0
@@ -842,7 +1109,7 @@
     .registers 2
 
     .prologue
-    .line 419
+    .line 619
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasNumberOfPages:Z
 
     return v0
@@ -852,7 +1119,7 @@
     .registers 2
 
     .prologue
-    .line 555
+    .line 755
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPdfAvailable:Z
 
     return v0
@@ -862,7 +1129,7 @@
     .registers 2
 
     .prologue
-    .line 385
+    .line 585
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPublicationDate:Z
 
     return v0
@@ -872,7 +1139,7 @@
     .registers 2
 
     .prologue
-    .line 368
+    .line 568
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPublisher:Z
 
     return v0
@@ -882,7 +1149,7 @@
     .registers 2
 
     .prologue
-    .line 453
+    .line 653
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasReaderUrl:Z
 
     return v0
@@ -892,7 +1159,7 @@
     .registers 2
 
     .prologue
-    .line 436
+    .line 636
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasSubtitle:Z
 
     return v0
@@ -908,44 +1175,44 @@
     .end annotation
 
     .prologue
-    .line 717
+    .line 1004
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 718
+    .line 1005
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_88
+    sparse-switch v0, :sswitch_data_b2
 
-    .line 722
+    .line 1009
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 723
+    .line 1010
     :sswitch_d
     return-object p0
 
-    .line 728
+    .line 1015
     :sswitch_e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;-><init>()V
 
-    .line 729
+    .line 1016
     .local v1, value:Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 730
+    .line 1017
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->addSubject(Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;)Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
 
     goto :goto_0
 
-    .line 734
+    .line 1021
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;
     :sswitch_1a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -956,7 +1223,7 @@
 
     goto :goto_0
 
-    .line 738
+    .line 1025
     :sswitch_22
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -966,7 +1233,7 @@
 
     goto :goto_0
 
-    .line 742
+    .line 1029
     :sswitch_2a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -976,7 +1243,7 @@
 
     goto :goto_0
 
-    .line 746
+    .line 1033
     :sswitch_32
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -986,7 +1253,7 @@
 
     goto :goto_0
 
-    .line 750
+    .line 1037
     :sswitch_3a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -996,22 +1263,22 @@
 
     goto :goto_0
 
-    .line 754
+    .line 1041
     :sswitch_42
     new-instance v1, Lcom/google/android/finsky/remoting/protos/BookInfo$BookAuthor;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookAuthor;-><init>()V
 
-    .line 755
+    .line 1042
     .local v1, value:Lcom/google/android/finsky/remoting/protos/BookInfo$BookAuthor;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 756
+    .line 1043
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->addAuthor(Lcom/google/android/finsky/remoting/protos/BookInfo$BookAuthor;)Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
 
     goto :goto_0
 
-    .line 760
+    .line 1047
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/BookInfo$BookAuthor;
     :sswitch_4e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -1022,7 +1289,7 @@
 
     goto :goto_0
 
-    .line 764
+    .line 1051
     :sswitch_56
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1032,7 +1299,7 @@
 
     goto :goto_0
 
-    .line 768
+    .line 1055
     :sswitch_5e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1042,7 +1309,7 @@
 
     goto :goto_0
 
-    .line 772
+    .line 1059
     :sswitch_66
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1052,7 +1319,7 @@
 
     goto :goto_0
 
-    .line 776
+    .line 1063
     :sswitch_6e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1062,7 +1329,7 @@
 
     goto :goto_0
 
-    .line 780
+    .line 1067
     :sswitch_76
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -1072,7 +1339,7 @@
 
     goto :goto_0
 
-    .line 784
+    .line 1071
     :sswitch_7e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -1082,10 +1349,58 @@
 
     goto/16 :goto_0
 
-    .line 718
+    .line 1075
+    :sswitch_87
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->setAboutTheAuthor(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
+
+    goto/16 :goto_0
+
+    .line 1079
+    :sswitch_90
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails$Identifier;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails$Identifier;-><init>()V
+
+    .line 1080
+    .local v1, value:Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails$Identifier;
+    const/16 v2, 0x12
+
+    invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readGroup(Lcom/google/protobuf/micro/MessageMicro;I)V
+
+    .line 1081
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->addIdentifier(Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails$Identifier;)Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
+
+    goto/16 :goto_0
+
+    .line 1085
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails$Identifier;
+    :sswitch_9f
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
+
+    move-result v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->setFixedLayoutContent(Z)Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
+
+    goto/16 :goto_0
+
+    .line 1089
+    :sswitch_a8
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
+
+    move-result v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->setAudioVideoContent(Z)Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
+
+    goto/16 :goto_0
+
+    .line 1005
     nop
 
-    :sswitch_data_88
+    :sswitch_data_b2
     .sparse-switch
         0x0 -> :sswitch_d
         0x1a -> :sswitch_e
@@ -1102,6 +1417,10 @@
         0x72 -> :sswitch_6e
         0x78 -> :sswitch_76
         0x80 -> :sswitch_7e
+        0x8a -> :sswitch_87
+        0x93 -> :sswitch_90
+        0xa8 -> :sswitch_9f
+        0xb0 -> :sswitch_a8
     .end sparse-switch
 .end method
 
@@ -1115,7 +1434,7 @@
     .end annotation
 
     .prologue
-    .line 290
+    .line 329
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
 
     move-result-object v0
@@ -1123,20 +1442,37 @@
     return-object v0
 .end method
 
+.method public setAboutTheAuthor(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 808
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasAboutTheAuthor:Z
+
+    .line 809
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->aboutTheAuthor_:Ljava/lang/String;
+
+    .line 810
+    return-object p0
+.end method
+
 .method public setAcsEpubTokenUrl(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
     .registers 3
     .parameter "value"
 
     .prologue
-    .line 506
+    .line 706
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasAcsEpubTokenUrl:Z
 
-    .line 507
+    .line 707
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->acsEpubTokenUrl_:Ljava/lang/String;
 
-    .line 508
+    .line 708
     return-object p0
 .end method
 
@@ -1145,15 +1481,32 @@
     .parameter "value"
 
     .prologue
-    .line 523
+    .line 723
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasAcsPdfTokenUrl:Z
 
-    .line 524
+    .line 724
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->acsPdfTokenUrl_:Ljava/lang/String;
 
-    .line 525
+    .line 725
+    return-object p0
+.end method
+
+.method public setAudioVideoContent(Z)Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 791
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasAudioVideoContent:Z
+
+    .line 792
+    iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->audioVideoContent_:Z
+
+    .line 793
     return-object p0
 .end method
 
@@ -1162,15 +1515,15 @@
     .parameter "value"
 
     .prologue
-    .line 472
+    .line 672
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasDownloadEpubUrl:Z
 
-    .line 473
+    .line 673
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->downloadEpubUrl_:Ljava/lang/String;
 
-    .line 474
+    .line 674
     return-object p0
 .end method
 
@@ -1179,15 +1532,15 @@
     .parameter "value"
 
     .prologue
-    .line 489
+    .line 689
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasDownloadPdfUrl:Z
 
-    .line 490
+    .line 690
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->downloadPdfUrl_:Ljava/lang/String;
 
-    .line 491
+    .line 691
     return-object p0
 .end method
 
@@ -1196,15 +1549,32 @@
     .parameter "value"
 
     .prologue
-    .line 540
+    .line 740
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasEpubAvailable:Z
 
-    .line 541
+    .line 741
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->epubAvailable_:Z
 
-    .line 542
+    .line 742
+    return-object p0
+.end method
+
+.method public setFixedLayoutContent(Z)Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 774
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasFixedLayoutContent:Z
+
+    .line 775
+    iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->fixedLayoutContent_:Z
+
+    .line 776
     return-object p0
 .end method
 
@@ -1213,15 +1583,15 @@
     .parameter "value"
 
     .prologue
-    .line 404
+    .line 604
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasIsbn:Z
 
-    .line 405
+    .line 605
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->isbn_:Ljava/lang/String;
 
-    .line 406
+    .line 606
     return-object p0
 .end method
 
@@ -1230,15 +1600,15 @@
     .parameter "value"
 
     .prologue
-    .line 421
+    .line 621
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasNumberOfPages:Z
 
-    .line 422
+    .line 622
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->numberOfPages_:I
 
-    .line 423
+    .line 623
     return-object p0
 .end method
 
@@ -1247,15 +1617,15 @@
     .parameter "value"
 
     .prologue
-    .line 557
+    .line 757
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPdfAvailable:Z
 
-    .line 558
+    .line 758
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->pdfAvailable_:Z
 
-    .line 559
+    .line 759
     return-object p0
 .end method
 
@@ -1264,15 +1634,15 @@
     .parameter "value"
 
     .prologue
-    .line 387
+    .line 587
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPublicationDate:Z
 
-    .line 388
+    .line 588
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->publicationDate_:Ljava/lang/String;
 
-    .line 389
+    .line 589
     return-object p0
 .end method
 
@@ -1281,15 +1651,15 @@
     .parameter "value"
 
     .prologue
-    .line 370
+    .line 570
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPublisher:Z
 
-    .line 371
+    .line 571
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->publisher_:Ljava/lang/String;
 
-    .line 372
+    .line 572
     return-object p0
 .end method
 
@@ -1298,15 +1668,15 @@
     .parameter "value"
 
     .prologue
-    .line 455
+    .line 655
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasReaderUrl:Z
 
-    .line 456
+    .line 656
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->readerUrl_:Ljava/lang/String;
 
-    .line 457
+    .line 657
     return-object p0
 .end method
 
@@ -1315,15 +1685,15 @@
     .parameter "value"
 
     .prologue
-    .line 438
+    .line 638
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasSubtitle:Z
 
-    .line 439
+    .line 639
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->subtitle_:Ljava/lang/String;
 
-    .line 440
+    .line 640
     return-object p0
 .end method
 
@@ -1337,7 +1707,7 @@
     .end annotation
 
     .prologue
-    .line 598
+    .line 854
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getSubjectList()Ljava/util/List;
 
     move-result-object v2
@@ -1360,7 +1730,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;
 
-    .line 599
+    .line 855
     .local v0, element:Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;
     const/4 v2, 0x3
 
@@ -1368,7 +1738,7 @@
 
     goto :goto_8
 
-    .line 601
+    .line 857
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;
     :cond_19
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPublisher()Z
@@ -1377,7 +1747,7 @@
 
     if-eqz v2, :cond_27
 
-    .line 602
+    .line 858
     const/4 v2, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getPublisher()Ljava/lang/String;
@@ -1386,7 +1756,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 604
+    .line 860
     :cond_27
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPublicationDate()Z
 
@@ -1394,7 +1764,7 @@
 
     if-eqz v2, :cond_35
 
-    .line 605
+    .line 861
     const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getPublicationDate()Ljava/lang/String;
@@ -1403,7 +1773,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 607
+    .line 863
     :cond_35
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasIsbn()Z
 
@@ -1411,7 +1781,7 @@
 
     if-eqz v2, :cond_43
 
-    .line 608
+    .line 864
     const/4 v2, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getIsbn()Ljava/lang/String;
@@ -1420,7 +1790,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 610
+    .line 866
     :cond_43
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasNumberOfPages()Z
 
@@ -1428,7 +1798,7 @@
 
     if-eqz v2, :cond_51
 
-    .line 611
+    .line 867
     const/4 v2, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getNumberOfPages()I
@@ -1437,7 +1807,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 613
+    .line 869
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasSubtitle()Z
 
@@ -1445,7 +1815,7 @@
 
     if-eqz v2, :cond_60
 
-    .line 614
+    .line 870
     const/16 v2, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getSubtitle()Ljava/lang/String;
@@ -1454,7 +1824,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 616
+    .line 872
     :cond_60
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getAuthorList()Ljava/util/List;
 
@@ -1477,7 +1847,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookAuthor;
 
-    .line 617
+    .line 873
     .local v0, element:Lcom/google/android/finsky/remoting/protos/BookInfo$BookAuthor;
     const/16 v2, 0x9
 
@@ -1485,7 +1855,7 @@
 
     goto :goto_68
 
-    .line 619
+    .line 875
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/BookInfo$BookAuthor;
     :cond_7a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasReaderUrl()Z
@@ -1494,7 +1864,7 @@
 
     if-eqz v2, :cond_89
 
-    .line 620
+    .line 876
     const/16 v2, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getReaderUrl()Ljava/lang/String;
@@ -1503,7 +1873,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 622
+    .line 878
     :cond_89
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasDownloadEpubUrl()Z
 
@@ -1511,7 +1881,7 @@
 
     if-eqz v2, :cond_98
 
-    .line 623
+    .line 879
     const/16 v2, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getDownloadEpubUrl()Ljava/lang/String;
@@ -1520,7 +1890,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 625
+    .line 881
     :cond_98
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasDownloadPdfUrl()Z
 
@@ -1528,7 +1898,7 @@
 
     if-eqz v2, :cond_a7
 
-    .line 626
+    .line 882
     const/16 v2, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getDownloadPdfUrl()Ljava/lang/String;
@@ -1537,7 +1907,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 628
+    .line 884
     :cond_a7
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasAcsEpubTokenUrl()Z
 
@@ -1545,7 +1915,7 @@
 
     if-eqz v2, :cond_b6
 
-    .line 629
+    .line 885
     const/16 v2, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getAcsEpubTokenUrl()Ljava/lang/String;
@@ -1554,7 +1924,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 631
+    .line 887
     :cond_b6
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasAcsPdfTokenUrl()Z
 
@@ -1562,7 +1932,7 @@
 
     if-eqz v2, :cond_c5
 
-    .line 632
+    .line 888
     const/16 v2, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getAcsPdfTokenUrl()Ljava/lang/String;
@@ -1571,7 +1941,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 634
+    .line 890
     :cond_c5
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasEpubAvailable()Z
 
@@ -1579,7 +1949,7 @@
 
     if-eqz v2, :cond_d4
 
-    .line 635
+    .line 891
     const/16 v2, 0xf
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getEpubAvailable()Z
@@ -1588,7 +1958,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 637
+    .line 893
     :cond_d4
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasPdfAvailable()Z
 
@@ -1596,7 +1966,7 @@
 
     if-eqz v2, :cond_e3
 
-    .line 638
+    .line 894
     const/16 v2, 0x10
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getPdfAvailable()Z
@@ -1605,7 +1975,90 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 640
+    .line 896
     :cond_e3
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasAboutTheAuthor()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_f2
+
+    .line 897
+    const/16 v2, 0x11
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getAboutTheAuthor()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    .line 899
+    :cond_f2
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getIdentifierList()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_fa
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_10c
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails$Identifier;
+
+    .line 900
+    .local v0, element:Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails$Identifier;
+    const/16 v2, 0x12
+
+    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeGroup(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    goto :goto_fa
+
+    .line 902
+    .end local v0           #element:Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails$Identifier;
+    :cond_10c
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasFixedLayoutContent()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_11b
+
+    .line 903
+    const/16 v2, 0x15
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getFixedLayoutContent()Z
+
+    move-result v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
+
+    .line 905
+    :cond_11b
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->hasAudioVideoContent()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_12a
+
+    .line 906
+    const/16 v2, 0x16
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;->getAudioVideoContent()Z
+
+    move-result v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
+
+    .line 908
+    :cond_12a
     return-void
 .end method

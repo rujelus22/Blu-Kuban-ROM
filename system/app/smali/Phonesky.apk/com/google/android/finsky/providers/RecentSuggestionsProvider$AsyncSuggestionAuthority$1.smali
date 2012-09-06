@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field final synthetic this$1:Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AsyncSuggestionAuthority;
+.field final synthetic this$0:Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AsyncSuggestionAuthority;
 
 .field final synthetic val$sem:Ljava/util/concurrent/Semaphore;
 
@@ -30,8 +30,8 @@
     .parameter
 
     .prologue
-    .line 96
-    iput-object p1, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AsyncSuggestionAuthority$1;->this$1:Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AsyncSuggestionAuthority;
+    .line 117
+    iput-object p1, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AsyncSuggestionAuthority$1;->this$0:Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AsyncSuggestionAuthority;
 
     iput-object p2, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AsyncSuggestionAuthority$1;->val$sem:Ljava/util/concurrent/Semaphore;
 
@@ -46,11 +46,11 @@
     .registers 2
 
     .prologue
-    .line 102
+    .line 123
     iget-object v0, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AsyncSuggestionAuthority$1;->val$sem:Ljava/util/concurrent/Semaphore;
 
     invoke-virtual {v0}, Ljava/util/concurrent/Semaphore;->release()V
 
-    .line 103
+    .line 124
     return-void
 .end method

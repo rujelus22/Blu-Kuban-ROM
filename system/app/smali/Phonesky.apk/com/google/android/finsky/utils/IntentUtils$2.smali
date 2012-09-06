@@ -19,7 +19,7 @@
     .registers 2
 
     .prologue
-    .line 144
+    .line 182
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/android/finsky/utils/IntentUtils$ConsumptionApp;-><init>(Lcom/google/android/finsky/utils/IntentUtils$1;)V
@@ -27,130 +27,182 @@
     return-void
 .end method
 
-.method private addAccountParameter(Landroid/net/Uri$Builder;Ljava/lang/String;)V
-    .registers 4
-    .parameter "builder"
+.method private buildItemIntent(Landroid/content/pm/PackageManager;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    .registers 8
+    .parameter "pm"
+    .parameter "doc"
+    .parameter "action"
     .parameter "accountName"
 
     .prologue
-    .line 149
-    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    .line 200
+    const-string v1, "com.android.vending"
 
-    move-result v0
+    invoke-virtual {p1, v1}, Landroid/content/pm/PackageManager;->getLaunchIntentForPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    if-nez v0, :cond_b
+    move-result-object v0
 
-    .line 150
-    const-string v0, "email"
+    .line 201
+    .local v0, intent:Landroid/content/Intent;
+    invoke-virtual {v0, p3}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-virtual {p1, v0, p2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+    .line 202
+    invoke-static {v0}, Lcom/google/android/finsky/utils/IntentUtils$2;->setDefaultFlags(Landroid/content/Intent;)V
 
-    .line 152
-    :cond_b
-    return-void
+    .line 203
+    const-string v1, "account"
+
+    invoke-static {v0, v1, p4}, Lcom/google/android/finsky/utils/IntentUtils$2;->addAccountExtra(Landroid/content/Intent;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 204
+    const-string v1, "asset_package"
+
+    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getPackageName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 205
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public buildViewCollectionIntent(Landroid/content/pm/PackageManager;Ljava/lang/String;)Landroid/content/Intent;
-    .registers 7
-    .parameter "pm"
-    .parameter "accountName"
-
-    .prologue
-    .line 156
-    sget-object v2, Lcom/google/android/finsky/config/G;->myEBooksUrl:Lcom/google/android/finsky/config/GservicesValue;
-
-    invoke-virtual {v2}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    .line 157
-    .local v0, builder:Landroid/net/Uri$Builder;
-    invoke-direct {p0, v0, p2}, Lcom/google/android/finsky/utils/IntentUtils$2;->addAccountParameter(Landroid/net/Uri$Builder;Ljava/lang/String;)V
-
-    .line 158
-    new-instance v1, Landroid/content/Intent;
-
-    const-string v2, "android.intent.action.VIEW"
-
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
-
-    move-result-object v3
-
-    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
-
-    .line 159
-    .local v1, intent:Landroid/content/Intent;
-    invoke-static {v1}, Lcom/google/android/finsky/utils/IntentUtils$2;->setDefaultFlags(Landroid/content/Intent;)V
-
-    .line 160
-    return-object v1
-.end method
-
-.method public buildViewItemIntent(Landroid/content/pm/PackageManager;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/content/Intent;
-    .registers 9
+.method public buildManageItemIntent(Landroid/content/pm/PackageManager;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/content/Intent;
+    .registers 5
     .parameter "pm"
     .parameter "doc"
     .parameter "accountName"
 
     .prologue
-    .line 165
-    sget-object v2, Lcom/google/android/finsky/config/G;->readBookUrl:Lcom/google/android/finsky/config/GservicesValue;
+    .line 230
+    const-string v0, "android.intent.action.VIEW"
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
-
-    move-result-object v2
-
-    const-string v3, "id"
-
-    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getBackendDocId()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-direct {p0, p1, p2, v0, p3}, Lcom/google/android/finsky/utils/IntentUtils$2;->buildItemIntent(Landroid/content/pm/PackageManager;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 167
-    .local v0, builder:Landroid/net/Uri$Builder;
-    invoke-direct {p0, v0, p3}, Lcom/google/android/finsky/utils/IntentUtils$2;->addAccountParameter(Landroid/net/Uri$Builder;Ljava/lang/String;)V
+    return-object v0
+.end method
 
-    .line 168
-    new-instance v1, Landroid/content/Intent;
+.method public buildViewCollectionIntent(Landroid/content/pm/PackageManager;Ljava/lang/String;)Landroid/content/Intent;
+    .registers 5
+    .parameter "pm"
+    .parameter "accountName"
 
-    const-string v2, "android.intent.action.VIEW"
+    .prologue
+    .line 191
+    const-string v1, "com.android.vending"
 
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+    invoke-virtual {p1, v1}, Landroid/content/pm/PackageManager;->getLaunchIntentForPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v0
+
+    .line 192
+    .local v0, intent:Landroid/content/Intent;
+    const-string v1, "android.intent.action.MAIN"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 193
+    invoke-static {v0}, Lcom/google/android/finsky/utils/IntentUtils$2;->setDefaultFlags(Landroid/content/Intent;)V
+
+    .line 194
+    const-string v1, "account"
+
+    invoke-static {v0, v1, p2}, Lcom/google/android/finsky/utils/IntentUtils$2;->addAccountExtra(Landroid/content/Intent;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 195
+    return-object v0
+.end method
+
+.method public buildViewItemIntent(Landroid/content/pm/PackageManager;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/content/Intent;
+    .registers 10
+    .parameter "pm"
+    .parameter "doc"
+    .parameter "accountName"
+
+    .prologue
+    .line 210
+    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getPackageName()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 211
+    .local v4, packageName:Ljava/lang/String;
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/google/android/finsky/FinskyApp;->getAppStates()Lcom/google/android/finsky/appstate/AppStates;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v4}, Lcom/google/android/finsky/appstate/AppStates;->getApp(Ljava/lang/String;)Lcom/google/android/finsky/appstate/AppStates$AppState;
+
+    move-result-object v0
+
+    .line 212
+    .local v0, appState:Lcom/google/android/finsky/appstate/AppStates$AppState;
+    const/4 v2, 0x0
+
+    .line 213
+    .local v2, externalReferrer:Ljava/lang/String;
+    const/4 v1, 0x0
+
+    .line 214
+    .local v1, continueUrl:Ljava/lang/String;
+    if-eqz v0, :cond_28
+
+    iget-object v5, v0, Lcom/google/android/finsky/appstate/AppStates$AppState;->installerData:Lcom/google/android/finsky/appstate/InstallerDataStore$InstallerData;
+
+    if-eqz v5, :cond_28
+
+    .line 215
+    iget-object v5, v0, Lcom/google/android/finsky/appstate/AppStates$AppState;->installerData:Lcom/google/android/finsky/appstate/InstallerDataStore$InstallerData;
+
+    invoke-virtual {v5}, Lcom/google/android/finsky/appstate/InstallerDataStore$InstallerData;->getReferrer()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 216
+    iget-object v5, v0, Lcom/google/android/finsky/appstate/AppStates$AppState;->installerData:Lcom/google/android/finsky/appstate/InstallerDataStore$InstallerData;
+
+    invoke-virtual {v5}, Lcom/google/android/finsky/appstate/InstallerDataStore$InstallerData;->getContinueUrl()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 218
+    :cond_28
+    #calls: Lcom/google/android/finsky/utils/IntentUtils;->createLaunchIntent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/pm/PackageManager;)Landroid/content/Intent;
+    invoke-static {v4, v2, v1, p1}, Lcom/google/android/finsky/utils/IntentUtils;->access$100(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/pm/PackageManager;)Landroid/content/Intent;
 
     move-result-object v3
 
-    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+    .line 219
+    .local v3, intent:Landroid/content/Intent;
+    if-nez v3, :cond_34
 
-    .line 169
-    .local v1, intent:Landroid/content/Intent;
-    invoke-static {v1}, Lcom/google/android/finsky/utils/IntentUtils$2;->setDefaultFlags(Landroid/content/Intent;)V
+    .line 222
+    const-string v5, "android.intent.action.RUN"
 
-    .line 170
-    return-object v1
+    invoke-direct {p0, p1, p2, v5, p3}, Lcom/google/android/finsky/utils/IntentUtils$2;->buildItemIntent(Landroid/content/pm/PackageManager;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v3
+
+    .line 224
+    :cond_34
+    invoke-static {v3}, Lcom/google/android/finsky/utils/IntentUtils$2;->setDefaultFlags(Landroid/content/Intent;)V
+
+    .line 225
+    return-object v3
 .end method

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<include android:paddingLeft="@dimen/local_plus_page_padding_left" layout="@layout/place_page_header_text_list_item"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

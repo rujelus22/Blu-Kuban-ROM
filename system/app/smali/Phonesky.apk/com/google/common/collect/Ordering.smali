@@ -31,7 +31,7 @@
     .registers 1
 
     .prologue
-    .line 285
+    .line 292
     .local p0, this:Lcom/google/common/collect/Ordering;,"Lcom/google/common/collect/Ordering<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

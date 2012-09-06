@@ -4,50 +4,23 @@
 
 
 # instance fields
-.field public final mDraftMessageId:J
-
 .field public final mResponse:I
 
 
 # direct methods
 .method constructor <init>(JI)V
-    .registers 6
+    .registers 4
     .parameter "messageId"
     .parameter "response"
 
     .prologue
-    .line 28
+    .line 26
     invoke-direct {p0, p1, p2}, Lcom/android/exchange/Request;-><init>(J)V
 
-    .line 29
+    .line 27
     iput p3, p0, Lcom/android/exchange/MeetingResponseRequest;->mResponse:I
 
-    .line 31
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Lcom/android/exchange/MeetingResponseRequest;->mDraftMessageId:J
-
-    .line 32
-    return-void
-.end method
-
-.method constructor <init>(JJI)V
-    .registers 6
-    .parameter "messageId"
-    .parameter "draftMessageId"
-    .parameter "response"
-
-    .prologue
-    .line 34
-    invoke-direct {p0, p1, p2}, Lcom/android/exchange/Request;-><init>(J)V
-
-    .line 35
-    iput p5, p0, Lcom/android/exchange/MeetingResponseRequest;->mResponse:I
-
-    .line 36
-    iput-wide p3, p0, Lcom/android/exchange/MeetingResponseRequest;->mDraftMessageId:J
-
-    .line 38
+    .line 28
     return-void
 .end method
 
@@ -60,12 +33,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 43
+    .line 33
     instance-of v1, p1, Lcom/android/exchange/MeetingResponseRequest;
 
     if-nez v1, :cond_6
 
-    .line 44
+    .line 34
     .end local p1
     :cond_5
     :goto_5
@@ -76,9 +49,9 @@
     check-cast p1, Lcom/android/exchange/MeetingResponseRequest;
 
     .end local p1
-    iget-wide v1, p1, Lcom/android/exchange/Request;->mMessageId:J
+    iget-wide v1, p1, Lcom/android/exchange/MeetingResponseRequest;->mMessageId:J
 
-    iget-wide v3, p0, Lcom/android/exchange/Request;->mMessageId:J
+    iget-wide v3, p0, Lcom/android/exchange/MeetingResponseRequest;->mMessageId:J
 
     cmp-long v1, v1, v3
 
@@ -93,8 +66,8 @@
     .registers 3
 
     .prologue
-    .line 48
-    iget-wide v0, p0, Lcom/android/exchange/Request;->mMessageId:J
+    .line 38
+    iget-wide v0, p0, Lcom/android/exchange/MeetingResponseRequest;->mMessageId:J
 
     long-to-int v0, v0
 

@@ -492,14 +492,14 @@
     .line 169
     iget-object v0, p0, Lcom/sec/android/app/camera/widget/TwTouchFocusRectView;->mFocusSuccessImageView:Landroid/widget/ImageView;
 
-    const v1, 0x7f0201c0
+    const v1, 0x7f0201bf
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 170
     iget-object v0, p0, Lcom/sec/android/app/camera/widget/TwTouchFocusRectView;->mFocusFailImageView:Landroid/widget/ImageView;
 
-    const v1, 0x7f0201bd
+    const v1, 0x7f0201bc
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 

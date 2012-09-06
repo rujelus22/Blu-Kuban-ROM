@@ -3,12 +3,12 @@
 .source "PurchaseDocumentDetailsViewBinder.java"
 
 # interfaces
-.implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->initTab(Landroid/view/LayoutInflater;ILjava/lang/String;Landroid/view/View;I)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,30 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;
 
-.field final synthetic val$content:Landroid/view/View;
-
-.field final synthetic val$radioButton:Landroid/widget/RadioButton;
-
-.field final synthetic val$visibility:I
-
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;Landroid/view/View;ILandroid/widget/RadioButton;)V
-    .registers 5
-    .parameter
-    .parameter
-    .parameter
+.method constructor <init>(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 219
+    .line 68
     iput-object p1, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$1;->this$0:Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;
-
-    iput-object p2, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$1;->val$content:Landroid/view/View;
-
-    iput p3, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$1;->val$visibility:I
-
-    iput-object p4, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$1;->val$radioButton:Landroid/widget/RadioButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -52,65 +37,41 @@
 
 
 # virtual methods
-.method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .registers 7
-    .parameter "buttonView"
-    .parameter "isChecked"
+.method public run()V
+    .registers 2
 
     .prologue
-    const/4 v2, 0x0
+    .line 71
+    iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$1;->this$0:Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;
 
-    .line 222
-    iget-object v3, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$1;->val$content:Landroid/view/View;
-
-    if-eqz p2, :cond_26
-
-    move v1, v2
-
-    :goto_6
-    invoke-virtual {v3, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 223
-    if-eqz p2, :cond_20
-
-    .line 224
-    iget-object v1, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$1;->this$0:Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;
-
-    #getter for: Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mButtonStrip:Lcom/google/android/finsky/layout/CustomRadioGroup;
-    invoke-static {v1}, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->access$000(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;)Lcom/google/android/finsky/layout/CustomRadioGroup;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/finsky/layout/CustomRadioGroup;->getParent()Landroid/view/ViewParent;
+    #getter for: Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mLayout:Landroid/view/View;
+    invoke-static {v0}, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->access$000(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Landroid/view/ViewGroup;
+    if-eqz v0, :cond_1a
 
-    .line 225
-    .local v0, parent:Landroid/view/ViewGroup;
-    iget-object v1, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$1;->val$radioButton:Landroid/widget/RadioButton;
+    .line 72
+    iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$1;->this$0:Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;
 
-    invoke-virtual {v1}, Landroid/widget/RadioButton;->getLeft()I
+    #getter for: Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mLayout:Landroid/view/View;
+    invoke-static {v0}, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->access$000(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;)Landroid/view/View;
 
-    move-result v1
+    move-result-object v0
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->scrollTo(II)V
+    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
-    .line 227
-    .end local v0           #parent:Landroid/view/ViewGroup;
-    :cond_20
-    iget-object v1, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$1;->this$0:Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;
+    .line 73
+    iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$1;->this$0:Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;
 
-    #calls: Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->requestContentLayout()V
-    invoke-static {v1}, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->access$100(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;)V
+    #getter for: Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mButtonStrip:Lcom/google/android/finsky/layout/CustomRadioGroup;
+    invoke-static {v0}, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->access$100(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;)Lcom/google/android/finsky/layout/CustomRadioGroup;
 
-    .line 228
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/layout/CustomRadioGroup;->invalidate()V
+
+    .line 75
+    :cond_1a
     return-void
-
-    .line 222
-    :cond_26
-    iget v1, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$1;->val$visibility:I
-
-    goto :goto_6
 .end method

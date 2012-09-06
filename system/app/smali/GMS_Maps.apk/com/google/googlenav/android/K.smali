@@ -1,35 +1,62 @@
-.class final Lcom/google/googlenav/android/K;
-.super Landroid/content/BroadcastReceiver;
+.class Lcom/google/googlenav/android/k;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnKeyListener;
+
+
+# instance fields
+.field final synthetic a:Lcom/google/googlenav/ui/android/a;
+
+.field final synthetic b:Lcom/google/googlenav/android/i;
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method constructor <init>(Lcom/google/googlenav/android/i;Lcom/google/googlenav/ui/android/a;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    .prologue
+    .line 983
+    iput-object p1, p0, Lcom/google/googlenav/android/k;->b:Lcom/google/googlenav/android/i;
+
+    iput-object p2, p0, Lcom/google/googlenav/android/k;->a:Lcom/google/googlenav/ui/android/a;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onKey(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z
     .registers 5
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    .prologue
+    .line 986
+    const/4 v0, 0x4
 
-    move-result-object v0
+    if-ne p2, v0, :cond_a
 
-    const-string v1, "android.net.conn.CONNECTIVITY_CHANGE"
+    .line 987
+    iget-object v0, p0, Lcom/google/googlenav/android/k;->a:Lcom/google/googlenav/ui/android/a;
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/android/a;->d()V
 
-    move-result v0
+    .line 988
+    const/4 v0, 0x1
 
-    if-eqz v0, :cond_f
+    .line 990
+    :goto_9
+    return v0
 
-    invoke-static {p1}, Lcom/google/googlenav/android/J;->c(Landroid/content/Context;)V
+    :cond_a
+    const/4 v0, 0x0
 
-    :cond_f
-    return-void
+    goto :goto_9
 .end method

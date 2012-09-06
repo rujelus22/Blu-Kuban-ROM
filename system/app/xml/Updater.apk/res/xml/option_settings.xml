@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/info" android:key="first_preferencescreen"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/info" android:key="info">
+        <Preference android:title="@string/dev_name" android:key="info_prog" android:summary="@string/app_version" />
+        <Preference android:title="@string/donate_acquariusoft" android:key="donate" android:summary="@string/donate_acquariusoft_desc" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/option">
+        <EditTextPreference android:title="@string/choose_download_dir" android:key="download_dir" />
+        <CheckBoxPreference android:title="@string/check_rom_startup" android:key="check_startup" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/disable_check_rom" android:key="disable_check_rom" />
+        <ListPreference android:entries="@array/check_rom_time_array" android:title="@string/check_rom_time" android:key="check_rom_time" android:entryValues="@array/check_rom_time_array" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/recovery">
+        <CheckBoxPreference android:title="@string/cwm_flip_sdcard" android:key="cwm_flip_sdcard" android:summary="@string/cwm_flip_sdcard_desc" />
+        <ListPreference android:entries="@array/reboot_type_array_desc" android:title="@string/reboot_type" android:key="reboot_type" android:entryValues="@array/reboot_type_array" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/other">
+        <Preference android:title="@string/downloaded_files" android:key="downloaded_files" />
+        <Preference android:title="@string/reboot_recovery" android:key="reboot_recovery" />
+        <Preference android:title="@string/exit" android:key="exit" />
+        <Preference android:title="Modded by RUJELUS22" android:key="donotkang" />
+    </PreferenceCategory>
+</PreferenceScreen>

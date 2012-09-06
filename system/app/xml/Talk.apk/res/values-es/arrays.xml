@@ -29,6 +29,12 @@
         <item>Solo en modo silencio</item>
         <item>Nunca</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>desactivada</item>
+        <item>baja</item>
+        <item>media</item>
+        <item>virtual</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Sin estabilización</item>
         <item>Estabilización de imagen: baja</item>

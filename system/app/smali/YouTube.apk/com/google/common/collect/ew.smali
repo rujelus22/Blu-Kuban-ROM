@@ -1,59 +1,177 @@
-.class public interface abstract Lcom/google/common/collect/ew;
+.class final Lcom/google/common/collect/ew;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/util/ListIterator;
+
+
+# instance fields
+.field final synthetic a:Lcom/google/common/collect/fl;
+
+.field final synthetic b:Lcom/google/common/collect/ev;
+
+
+# direct methods
+.method constructor <init>(Lcom/google/common/collect/ev;Lcom/google/common/collect/fl;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 853
+    iput-object p1, p0, Lcom/google/common/collect/ew;->b:Lcom/google/common/collect/ev;
+
+    iput-object p2, p0, Lcom/google/common/collect/ew;->a:Lcom/google/common/collect/fl;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract asMap()Ljava/util/Map;
+.method public final add(Ljava/lang/Object;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 888
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
 .end method
 
-.method public abstract clear()V
+.method public final hasNext()Z
+    .registers 2
+
+    .prologue
+    .line 856
+    iget-object v0, p0, Lcom/google/common/collect/ew;->a:Lcom/google/common/collect/fl;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/fl;->hasNext()Z
+
+    move-result v0
+
+    return v0
 .end method
 
-.method public abstract containsEntry(Ljava/lang/Object;Ljava/lang/Object;)Z
+.method public final hasPrevious()Z
+    .registers 2
+
+    .prologue
+    .line 864
+    iget-object v0, p0, Lcom/google/common/collect/ew;->a:Lcom/google/common/collect/fl;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/fl;->hasPrevious()Z
+
+    move-result v0
+
+    return v0
 .end method
 
-.method public abstract containsKey(Ljava/lang/Object;)Z
+.method public final next()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 860
+    iget-object v0, p0, Lcom/google/common/collect/ew;->a:Lcom/google/common/collect/fl;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/fl;->a()Lcom/google/common/collect/fk;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lcom/google/common/collect/fk;->b:Ljava/lang/Object;
+
+    return-object v0
 .end method
 
-.method public abstract containsValue(Ljava/lang/Object;)Z
+.method public final nextIndex()I
+    .registers 2
+
+    .prologue
+    .line 872
+    iget-object v0, p0, Lcom/google/common/collect/ew;->a:Lcom/google/common/collect/fl;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/fl;->nextIndex()I
+
+    move-result v0
+
+    return v0
 .end method
 
-.method public abstract entries()Ljava/util/Collection;
+.method public final previous()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 868
+    iget-object v0, p0, Lcom/google/common/collect/ew;->a:Lcom/google/common/collect/fl;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/fl;->b()Lcom/google/common/collect/fk;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lcom/google/common/collect/fk;->b:Ljava/lang/Object;
+
+    return-object v0
 .end method
 
-.method public abstract get(Ljava/lang/Object;)Ljava/util/Collection;
+.method public final previousIndex()I
+    .registers 2
+
+    .prologue
+    .line 876
+    iget-object v0, p0, Lcom/google/common/collect/ew;->a:Lcom/google/common/collect/fl;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/fl;->previousIndex()I
+
+    move-result v0
+
+    return v0
 .end method
 
-.method public abstract isEmpty()Z
+.method public final remove()V
+    .registers 2
+
+    .prologue
+    .line 880
+    iget-object v0, p0, Lcom/google/common/collect/ew;->a:Lcom/google/common/collect/fl;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/fl;->remove()V
+
+    .line 881
+    return-void
 .end method
 
-.method public abstract keySet()Ljava/util/Set;
-.end method
+.method public final set(Ljava/lang/Object;)V
+    .registers 4
+    .parameter
 
-.method public abstract keys()Lcom/google/common/collect/fj;
-.end method
+    .prologue
+    .line 884
+    iget-object v1, p0, Lcom/google/common/collect/ew;->a:Lcom/google/common/collect/fl;
 
-.method public abstract put(Ljava/lang/Object;Ljava/lang/Object;)Z
-.end method
+    iget-object v0, v1, Lcom/google/common/collect/fl;->c:Lcom/google/common/collect/fk;
 
-.method public abstract putAll(Lcom/google/common/collect/ew;)Z
-.end method
+    if-eqz v0, :cond_f
 
-.method public abstract putAll(Ljava/lang/Object;Ljava/lang/Iterable;)Z
-.end method
+    const/4 v0, 0x1
 
-.method public abstract remove(Ljava/lang/Object;Ljava/lang/Object;)Z
-.end method
+    :goto_7
+    invoke-static {v0}, Lcom/google/common/base/ag;->b(Z)V
 
-.method public abstract removeAll(Ljava/lang/Object;)Ljava/util/Collection;
-.end method
+    iget-object v0, v1, Lcom/google/common/collect/fl;->c:Lcom/google/common/collect/fk;
 
-.method public abstract replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/Collection;
-.end method
+    iput-object p1, v0, Lcom/google/common/collect/fk;->b:Ljava/lang/Object;
 
-.method public abstract size()I
-.end method
+    .line 885
+    return-void
 
-.method public abstract values()Ljava/util/Collection;
+    .line 884
+    :cond_f
+    const/4 v0, 0x0
+
+    goto :goto_7
 .end method

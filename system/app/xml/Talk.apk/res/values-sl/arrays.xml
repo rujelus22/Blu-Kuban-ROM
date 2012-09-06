@@ -29,6 +29,12 @@
         <item>Samo v tihem načinu</item>
         <item>Nikoli</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>Izključeno</item>
+        <item>nizka</item>
+        <item>srednja</item>
+        <item>navidezno</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Brez</item>
         <item>Stabilizacija slike: Nizka</item>

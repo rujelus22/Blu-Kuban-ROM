@@ -5,8 +5,8 @@
         <item quantity="one">የ%1$d ውጤት</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">ለ %2$s %1$d ዝማኔዎች ተገኝተዋል፡፡</item>
-        <item quantity="one">ለ %2$s %1$d ዝማኔ ተገኝቶዋል፡፡</item>
+        <item quantity="other">%1$d አዘምኖች ተገኝተዋል።</item>
+        <item quantity="one">%1$d አዘምን ተገኝቷል።</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">"%1$s ሰው ይህን +1'd"</item>

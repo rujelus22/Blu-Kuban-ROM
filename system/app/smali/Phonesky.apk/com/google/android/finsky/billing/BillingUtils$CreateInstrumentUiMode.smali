@@ -26,11 +26,11 @@
 # static fields
 .field private static final synthetic $VALUES:[Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
 
-.field public static final enum EXTERNAL:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
-
 .field public static final enum INTERNAL:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
 
-.field public static final enum REMINDER:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
+.field public static final enum PROMO_OFFER:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
+
+.field public static final enum SETUP_WIZARD:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
 
 
 # direct methods
@@ -56,20 +56,20 @@
     .line 38
     new-instance v0, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
 
-    const-string v1, "EXTERNAL"
+    const-string v1, "SETUP_WIZARD"
 
     invoke-direct {v0, v1, v3}, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->EXTERNAL:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
+    sput-object v0, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->SETUP_WIZARD:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
 
     .line 39
     new-instance v0, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
 
-    const-string v1, "REMINDER"
+    const-string v1, "PROMO_OFFER"
 
     invoke-direct {v0, v1, v4}, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->REMINDER:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
+    sput-object v0, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->PROMO_OFFER:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
 
     .line 36
     const/4 v0, 0x3
@@ -80,11 +80,11 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->EXTERNAL:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
+    sget-object v1, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->SETUP_WIZARD:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->REMINDER:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
+    sget-object v1, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->PROMO_OFFER:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
 
     aput-object v1, v0, v4
 

@@ -1,77 +1,69 @@
-.class final Lcom/google/common/collect/de;
+.class final synthetic Lcom/google/common/collect/de;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/Iterator;
 
-
-# instance fields
-.field final synthetic a:Ljava/util/Iterator;
-
-.field final synthetic b:Lcom/google/common/collect/dd;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/dd;Ljava/util/Iterator;)V
+.method static constructor <clinit>()V
     .registers 3
-    .parameter
-    .parameter
 
     .prologue
-    .line 732
-    iput-object p1, p0, Lcom/google/common/collect/de;->b:Lcom/google/common/collect/dd;
-
-    iput-object p2, p0, Lcom/google/common/collect/de;->a:Ljava/util/Iterator;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final hasNext()Z
-    .registers 2
-
-    .prologue
-    .line 734
-    iget-object v0, p0, Lcom/google/common/collect/de;->a:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 737
-    iget-object v0, p0, Lcom/google/common/collect/de;->a:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 259
+    invoke-static {}, Lcom/google/common/collect/BoundType;->values()[Lcom/google/common/collect/BoundType;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/common/collect/ds;
+    array-length v0, v0
 
-    iget-object v0, v0, Lcom/google/common/collect/ds;->b:Ljava/lang/Object;
+    new-array v0, v0, [I
 
-    return-object v0
-.end method
+    sput-object v0, Lcom/google/common/collect/de;->a:[I
 
-.method public final remove()V
-    .registers 2
+    :try_start_9
+    sget-object v0, Lcom/google/common/collect/de;->a:[I
 
-    .prologue
-    .line 740
-    iget-object v0, p0, Lcom/google/common/collect/de;->a:Ljava/util/Iterator;
+    sget-object v1, Lcom/google/common/collect/BoundType;->CLOSED:Lcom/google/common/collect/BoundType;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+    invoke-virtual {v1}, Lcom/google/common/collect/BoundType;->ordinal()I
 
-    .line 741
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
+
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/common/collect/de;->a:[I
+
+    sget-object v1, Lcom/google/common/collect/BoundType;->OPEN:Lcom/google/common/collect/BoundType;
+
+    invoke-virtual {v1}, Lcom/google/common/collect/BoundType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
+
+    :goto_1f
     return-void
+
+    :catch_20
+    move-exception v0
+
+    goto :goto_1f
+
+    :catch_22
+    move-exception v0
+
+    goto :goto_14
 .end method

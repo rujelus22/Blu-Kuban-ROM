@@ -107,7 +107,7 @@
             </intent-filter>
         </activity-alias>
         <activity android:theme="@style/GmailLabelsHoloTheme" android:label="@string/menu_manage_labels" android:name="LabelsActivity" android:uiOptions="splitActionBarWhenNarrow" />
-        <activity android:theme="@android:style/Theme.Holo.Light.Dialog" android:name="LabelSynchronizationActivity" />
+        <activity android:theme="@android:style/Theme.Holo.Dialog" android:name="LabelSynchronizationActivity" />
         <activity android:theme="@style/ShortcutWidgetTheme" android:label="@string/activity_label_selection" android:name="CreateShortcutActivity" />
         <activity android:theme="@style/ShortcutWidgetTheme" android:label="@string/activity_label_selection" android:name="LabelSelectionActivity" />
         <activity android:theme="@style/InvisibleShortcutWidgetTheme" android:label="@string/activity_gmail" android:name="MailboxSelectionActivity">
@@ -195,7 +195,7 @@
                 <data android:mimeType="*/*" />
             </intent-filter>
         </activity>
-        <activity android:theme="@android:style/Theme.Holo.Light" android:label="@string/activity_preferences" android:name=".preference.GmailPreferenceActivity">
+        <activity android:theme="@android:style/Theme.Holo" android:label="@string/activity_preferences" android:name=".preference.GmailPreferenceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MANAGE_NETWORK_USAGE" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -207,10 +207,10 @@
                 <data android:scheme="setting" />
             </intent-filter>
         </activity>
-        <activity android:theme="@android:style/Theme.Holo.Light" android:label="" android:name="GviewActivity" />
-        <activity android:theme="@android:style/Theme.Holo.Light" android:label="@string/wait_for_sync_title" android:name="WaitActivity" />
+        <activity android:theme="@android:style/Theme.Holo" android:label="" android:name="GviewActivity" />
+        <activity android:theme="@android:style/Theme.Holo" android:label="@string/wait_for_sync_title" android:name="WaitActivity" />
         <activity android:theme="@style/ShortcutWidgetTheme" android:label="@string/shortcut_name_title" android:name="ShortcutNameActivity" />
-        <activity android:theme="@android:style/Theme.Holo.Light" android:label="@string/open_source_licenses_title" android:name="LicenseActivity" />
+        <activity android:theme="@android:style/Theme.Holo" android:label="@string/open_source_licenses_title" android:name="LicenseActivity" />
         <receiver android:name="GmailReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.PROVIDER_CHANGED" android:priority="-10" />

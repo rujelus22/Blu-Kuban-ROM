@@ -1,26 +1,45 @@
-.class public abstract Lcom/google/common/base/j;
-.super Ljava/lang/ref/WeakReference;
+.class final Lcom/google/common/base/j;
+.super Lcom/google/common/base/d;
 .source "SourceFile"
-
-# interfaces
-.implements Lcom/google/common/base/c;
 
 
 # direct methods
-.method protected constructor <init>(Ljava/lang/Object;Lcom/google/common/base/d;)V
-    .registers 4
-    .parameter
+.method constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 131
+    invoke-direct {p0}, Lcom/google/common/base/d;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final synthetic apply(Ljava/lang/Object;)Z
+    .registers 3
     .parameter
 
     .prologue
-    .line 40
-    iget-object v0, p2, Lcom/google/common/base/d;->a:Ljava/lang/ref/ReferenceQueue;
+    .line 131
+    check-cast p1, Ljava/lang/Character;
 
-    invoke-direct {p0, p1, v0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
+    invoke-super {p0, p1}, Lcom/google/common/base/d;->a(Ljava/lang/Character;)Z
 
-    .line 41
-    invoke-virtual {p2}, Lcom/google/common/base/d;->a()V
+    move-result v0
 
-    .line 42
-    return-void
+    return v0
+.end method
+
+.method public final b(C)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 133
+    invoke-static {p1}, Ljava/lang/Character;->isLetter(C)Z
+
+    move-result v0
+
+    return v0
 .end method

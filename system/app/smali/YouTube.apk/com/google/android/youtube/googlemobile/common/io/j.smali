@@ -41,14 +41,6 @@
     .end array-data
 .end method
 
-.method private constructor <init>()V
-    .registers 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method public static a(Lcom/google/android/youtube/googlemobile/common/io/e;)V
     .registers 2
 

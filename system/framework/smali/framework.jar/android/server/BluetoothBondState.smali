@@ -6,7 +6,7 @@
 # static fields
 .field private static final AUTO_PAIRING_BLACKLIST:Ljava/lang/String; = "/etc/bluetooth/auto_pairing.conf"
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final DYNAMIC_AUTO_PAIRING_BLACKLIST:Ljava/lang/String; = "/data/misc/bluetooth/dynamic_auto_pairing.conf"
 

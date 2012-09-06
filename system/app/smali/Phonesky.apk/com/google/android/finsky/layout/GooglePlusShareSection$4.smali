@@ -3,7 +3,7 @@
 .source "GooglePlusShareSection.java"
 
 # interfaces
-.implements Lcom/android/volley/Response$ErrorListener;
+.implements Lcom/google/android/finsky/api/model/OnDataChangedListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 264
+    .line 234
     iput-object p1, p0, Lcom/google/android/finsky/layout/GooglePlusShareSection$4;->this$0:Lcom/google/android/finsky/layout/GooglePlusShareSection;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,40 +37,89 @@
 
 
 # virtual methods
-.method public onErrorResponse(Lcom/android/volley/VolleyError;)V
-    .registers 6
-    .parameter "error"
+.method public onDataChanged()V
+    .registers 7
 
     .prologue
-    const/4 v3, 0x0
+    .line 237
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    .line 267
-    iget-object v0, p0, Lcom/google/android/finsky/layout/GooglePlusShareSection$4;->this$0:Lcom/google/android/finsky/layout/GooglePlusShareSection;
+    move-result-object v5
 
-    #setter for: Lcom/google/android/finsky/layout/GooglePlusShareSection;->mIsFetching:Z
-    invoke-static {v0, v3}, Lcom/google/android/finsky/layout/GooglePlusShareSection;->access$002(Lcom/google/android/finsky/layout/GooglePlusShareSection;Z)Z
-
-    .line 268
-    iget-object v0, p0, Lcom/google/android/finsky/layout/GooglePlusShareSection$4;->this$0:Lcom/google/android/finsky/layout/GooglePlusShareSection;
-
-    #calls: Lcom/google/android/finsky/layout/GooglePlusShareSection;->updateUi()V
-    invoke-static {v0}, Lcom/google/android/finsky/layout/GooglePlusShareSection;->access$200(Lcom/google/android/finsky/layout/GooglePlusShareSection;)V
-
-    .line 269
-    const-string v0, "Unable to load JSON: %s"
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-virtual {p1}, Lcom/android/volley/VolleyError;->getCause()Ljava/lang/Throwable;
+    invoke-virtual {v5}, Lcom/google/android/finsky/FinskyApp;->getLibraries()Lcom/google/android/finsky/library/Libraries;
 
     move-result-object v2
 
-    aput-object v2, v1, v3
+    .line 238
+    .local v2, libraries:Lcom/google/android/finsky/library/Libraries;
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    move-result-object v5
 
-    .line 270
+    invoke-virtual {v5}, Lcom/google/android/finsky/FinskyApp;->getCurrentAccount()Landroid/accounts/Account;
+
+    move-result-object v0
+
+    .line 239
+    .local v0, currentAccount:Landroid/accounts/Account;
+    const/4 v1, 0x0
+
+    .local v1, i:I
+    :goto_11
+    iget-object v5, p0, Lcom/google/android/finsky/layout/GooglePlusShareSection$4;->this$0:Lcom/google/android/finsky/layout/GooglePlusShareSection;
+
+    #getter for: Lcom/google/android/finsky/layout/GooglePlusShareSection;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
+    invoke-static {v5}, Lcom/google/android/finsky/layout/GooglePlusShareSection;->access$1000(Lcom/google/android/finsky/layout/GooglePlusShareSection;)Lcom/google/android/finsky/api/model/DfeList;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/google/android/finsky/api/model/DfeList;->getCount()I
+
+    move-result v5
+
+    if-ge v1, v5, :cond_34
+
+    .line 240
+    iget-object v5, p0, Lcom/google/android/finsky/layout/GooglePlusShareSection$4;->this$0:Lcom/google/android/finsky/layout/GooglePlusShareSection;
+
+    #getter for: Lcom/google/android/finsky/layout/GooglePlusShareSection;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
+    invoke-static {v5}, Lcom/google/android/finsky/layout/GooglePlusShareSection;->access$1000(Lcom/google/android/finsky/layout/GooglePlusShareSection;)Lcom/google/android/finsky/api/model/DfeList;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v1}, Lcom/google/android/finsky/api/model/DfeList;->getItem(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/google/android/finsky/api/model/Document;
+
+    .line 241
+    .local v3, song:Lcom/google/android/finsky/api/model/Document;
+    invoke-static {v3, v2, v0}, Lcom/google/android/finsky/utils/LibraryUtils;->getOwnerWithCurrentAccount(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/library/Libraries;Landroid/accounts/Account;)Landroid/accounts/Account;
+
+    move-result-object v4
+
+    .line 243
+    .local v4, songOwner:Landroid/accounts/Account;
+    if-eqz v4, :cond_35
+
+    .line 245
+    iget-object v5, p0, Lcom/google/android/finsky/layout/GooglePlusShareSection$4;->this$0:Lcom/google/android/finsky/layout/GooglePlusShareSection;
+
+    #calls: Lcom/google/android/finsky/layout/GooglePlusShareSection;->updateWithDocument(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;)V
+    invoke-static {v5, v4, v3}, Lcom/google/android/finsky/layout/GooglePlusShareSection;->access$900(Lcom/google/android/finsky/layout/GooglePlusShareSection;Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;)V
+
+    .line 249
+    .end local v3           #song:Lcom/google/android/finsky/api/model/Document;
+    .end local v4           #songOwner:Landroid/accounts/Account;
+    :cond_34
     return-void
+
+    .line 239
+    .restart local v3       #song:Lcom/google/android/finsky/api/model/Document;
+    .restart local v4       #songOwner:Landroid/accounts/Account;
+    :cond_35
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_11
 .end method

@@ -31,14 +31,14 @@
 
     move-result-wide v0
 
-    .line 35
+    .line 34
     const-wide/16 v2, 0x0
 
     cmp-long v2, v0, v2
 
     if-nez v2, :cond_19
 
-    .line 36
+    .line 35
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/exchange/ExchangeService;
@@ -47,11 +47,11 @@
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 40
+    .line 39
     :goto_18
     return-void
 
-    .line 38
+    .line 37
     :cond_19
     invoke-static {p1, v0, v1}, Lcom/android/exchange/ExchangeService;->alert(Landroid/content/Context;J)V
 

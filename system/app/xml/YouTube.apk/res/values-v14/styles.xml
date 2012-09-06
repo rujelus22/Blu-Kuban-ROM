@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme" parent="@android:style/Theme.Holo">
+        <item name="android:windowBackground">@color/primary_background</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:fadingEdgeLength">0.0dip</item>
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarView_TabView</item>
+        <item name="android:actionBarTabTextStyle">@style/ActionBarView_TabText</item>
+        <item name="android:requiresFadingEdge">none</item>
+        <item name="LiveBadge">@style/LiveBadge</item>
+    </style>
+    <style name="ContextualMenu" parent="@android:style/Theme.Holo.Dialog">
+        <item name="android:windowBackground">@color/full_transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="ActionBar" parent="@android:style/Widget.Holo.ActionBar.Solid">
+        <item name="android:icon">@drawable/ic_logo_wide</item>
+        <item name="android:background">@drawable/bg_stripes_dark_drawable</item>
+        <item name="android:divider">@null</item>
+        <item name="android:logo">@drawable/ic_logo_wide</item>
+        <item name="android:displayOptions">useLogo|showHome</item>
+        <item name="android:titleTextStyle">@style/ActionBarTitle</item>
+        <item name="android:subtitleTextStyle">@style/ActionBarSubtitle</item>
+    </style>
+    <style name="ActionBarView_TabView" parent="@android:style/Widget.Holo.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_drawable</item>
+        <item name="android:paddingLeft">11.0dip</item>
+        <item name="android:paddingRight">11.0dip</item>
+    </style>
+    <style name="LicensesHolo" parent="@android:style/Theme.Holo.Dialog" />
+</resources>

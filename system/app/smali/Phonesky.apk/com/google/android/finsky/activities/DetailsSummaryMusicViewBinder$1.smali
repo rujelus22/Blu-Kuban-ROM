@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 34
+    .line 37
     iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .parameter "v"
 
     .prologue
-    .line 37
+    .line 40
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;
 
     #calls: Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->goToArtistPage()V
     invoke-static {v0}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->access$000(Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;)V
 
-    .line 38
+    .line 41
     return-void
 .end method

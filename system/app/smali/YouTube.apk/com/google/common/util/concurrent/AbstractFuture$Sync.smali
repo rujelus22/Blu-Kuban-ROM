@@ -16,7 +16,7 @@
 
 
 # instance fields
-.field private exception:Ljava/util/concurrent/ExecutionException;
+.field private exception:Ljava/lang/Throwable;
 
 .field private value:Ljava/lang/Object;
 
@@ -26,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 177
+    .line 215
     invoke-direct {p0}, Ljava/util/concurrent/locks/AbstractQueuedSynchronizer;-><init>()V
 
     return-void
@@ -35,75 +35,80 @@
 .method private complete(Ljava/lang/Object;Ljava/lang/Throwable;I)Z
     .registers 7
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+    .end parameter
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
+    .line 351
     const/4 v0, 0x0
 
-    .line 311
-    invoke-virtual {p0, v0, v1}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->compareAndSetState(II)Z
+    invoke-virtual {p0, v0, v2}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->compareAndSetState(II)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_13
+    .line 352
+    if-eqz v0, :cond_10
 
-    .line 312
+    .line 355
     iput-object p1, p0, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->value:Ljava/lang/Object;
 
-    .line 313
-    if-nez p2, :cond_14
+    .line 356
+    iput-object p2, p0, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->exception:Ljava/lang/Throwable;
 
-    const/4 v0, 0x0
-
-    :goto_d
-    iput-object v0, p0, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->exception:Ljava/util/concurrent/ExecutionException;
-
-    .line 314
+    .line 357
     invoke-virtual {p0, p3}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->releaseShared(I)Z
 
-    move v0, v1
-
-    .line 319
-    :cond_13
+    .line 363
+    :cond_f
+    :goto_f
     return v0
 
-    .line 313
-    :cond_14
-    new-instance v0, Ljava/util/concurrent/ExecutionException;
+    .line 358
+    :cond_10
+    invoke-virtual {p0}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->getState()I
 
-    invoke-direct {v0, p2}, Ljava/util/concurrent/ExecutionException;-><init>(Ljava/lang/Throwable;)V
+    move-result v1
 
-    goto :goto_d
+    if-ne v1, v2, :cond_f
+
+    .line 361
+    const/4 v1, -0x1
+
+    invoke-virtual {p0, v1}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->acquireShared(I)V
+
+    goto :goto_f
 .end method
 
 .method private getValue()Ljava/lang/Object;
     .registers 5
 
     .prologue
-    .line 247
+    .line 285
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->getState()I
 
     move-result v0
 
-    .line 248
-    packed-switch v0, :pswitch_data_32
+    .line 286
+    packed-switch v0, :pswitch_data_34
 
-    .line 260
+    .line 298
     :pswitch_7
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Error, synchronizer in invalid state: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -117,25 +122,29 @@
 
     throw v1
 
-    .line 250
-    :pswitch_20
-    iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->exception:Ljava/util/concurrent/ExecutionException;
+    .line 288
+    :pswitch_1c
+    iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->exception:Ljava/lang/Throwable;
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_28
 
-    .line 251
-    iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->exception:Ljava/util/concurrent/ExecutionException;
+    .line 289
+    new-instance v0, Ljava/util/concurrent/ExecutionException;
+
+    iget-object v1, p0, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->exception:Ljava/lang/Throwable;
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/ExecutionException;-><init>(Ljava/lang/Throwable;)V
 
     throw v0
 
-    .line 253
-    :cond_27
+    .line 291
+    :cond_28
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->value:Ljava/lang/Object;
 
     return-object v0
 
-    .line 257
-    :pswitch_2a
+    .line 295
+    :pswitch_2b
     new-instance v0, Ljava/util/concurrent/CancellationException;
 
     const-string v1, "Task was cancelled."
@@ -144,12 +153,14 @@
 
     throw v0
 
-    .line 248
-    :pswitch_data_32
+    .line 286
+    nop
+
+    :pswitch_data_34
     .packed-switch 0x2
-        :pswitch_20
+        :pswitch_1c
         :pswitch_7
-        :pswitch_2a
+        :pswitch_2b
     .end packed-switch
 .end method
 
@@ -161,7 +172,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 297
+    .line 335
     const/4 v0, 0x4
 
     invoke-direct {p0, v1, v1, v0}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->complete(Ljava/lang/Object;Ljava/lang/Throwable;I)Z
@@ -175,12 +186,12 @@
     .registers 2
 
     .prologue
-    .line 237
+    .line 275
     const/4 v0, -0x1
 
     invoke-virtual {p0, v0}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->acquireSharedInterruptibly(I)V
 
-    .line 238
+    .line 276
     invoke-direct {p0}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -193,7 +204,7 @@
     .parameter
 
     .prologue
-    .line 220
+    .line 258
     const/4 v0, -0x1
 
     invoke-virtual {p0, v0, p1, p2}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->tryAcquireSharedNanos(IJ)Z
@@ -202,7 +213,7 @@
 
     if-nez v0, :cond_f
 
-    .line 221
+    .line 259
     new-instance v0, Ljava/util/concurrent/TimeoutException;
 
     const-string v1, "Timeout waiting for task."
@@ -211,7 +222,7 @@
 
     throw v0
 
-    .line 224
+    .line 262
     :cond_f
     invoke-direct {p0}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->getValue()Ljava/lang/Object;
 
@@ -224,7 +235,7 @@
     .registers 3
 
     .prologue
-    .line 276
+    .line 314
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->getState()I
 
     move-result v0
@@ -248,7 +259,7 @@
     .registers 2
 
     .prologue
-    .line 269
+    .line 307
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->getState()I
 
     move-result v0
@@ -271,9 +282,12 @@
 .method final set(Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 283
+    .line 321
     const/4 v0, 0x0
 
     const/4 v1, 0x2
@@ -290,7 +304,7 @@
     .parameter
 
     .prologue
-    .line 290
+    .line 328
     const/4 v0, 0x0
 
     const/4 v1, 0x2
@@ -307,17 +321,17 @@
     .parameter
 
     .prologue
-    .line 195
+    .line 233
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->isDone()Z
 
     move-result v0
 
     if-eqz v0, :cond_8
 
-    .line 196
+    .line 234
     const/4 v0, 0x1
 
-    .line 198
+    .line 236
     :goto_7
     return v0
 
@@ -332,10 +346,10 @@
     .parameter
 
     .prologue
-    .line 207
+    .line 245
     invoke-virtual {p0, p1}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->setState(I)V
 
-    .line 208
+    .line 246
     const/4 v0, 0x1
 
     return v0

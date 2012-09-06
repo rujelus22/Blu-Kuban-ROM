@@ -23,10 +23,10 @@
     .registers 1
 
     .prologue
-    .line 43
+    .line 40
     invoke-direct {p0}, Lcom/google/android/finsky/fragments/DetailsViewBinder;-><init>()V
 
-    .line 44
+    .line 41
     return-void
 .end method
 
@@ -35,7 +35,7 @@
     .parameter "x0"
 
     .prologue
-    .line 31
+    .line 28
     invoke-direct {p0}, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->retryRequest()V
 
     return-void
@@ -46,7 +46,7 @@
     .parameter "x0"
 
     .prologue
-    .line 31
+    .line 28
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mCookie:Ljava/lang/String;
 
     return-object v0
@@ -57,7 +57,7 @@
     .parameter "x0"
 
     .prologue
-    .line 31
+    .line 28
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mReferrerUrl:Ljava/lang/String;
 
     return-object v0
@@ -68,7 +68,7 @@
     .parameter "x0"
 
     .prologue
-    .line 31
+    .line 28
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     return-object v0
@@ -78,17 +78,17 @@
     .registers 4
 
     .prologue
-    .line 104
+    .line 101
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->addDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 105
+    .line 102
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->addErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 107
+    .line 104
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeDetails;->getDocument()Lcom/google/android/finsky/api/model/Document;
@@ -97,26 +97,26 @@
 
     if-eqz v0, :cond_21
 
-    .line 108
+    .line 105
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayout:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 109
+    .line 106
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayoutSwitcher:Lcom/google/android/finsky/layout/LayoutSwitcher;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/layout/LayoutSwitcher;->switchToDataMode()V
 
-    .line 110
+    .line 107
     invoke-direct {p0}, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->prepareAndPopulateContent()V
 
-    .line 117
+    .line 114
     :goto_20
     return-void
 
-    .line 111
+    .line 108
     :cond_21
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
@@ -126,7 +126,7 @@
 
     if-eqz v0, :cond_3b
 
-    .line 112
+    .line 109
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayoutSwitcher:Lcom/google/android/finsky/layout/LayoutSwitcher;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mContext:Landroid/content/Context;
@@ -145,7 +145,7 @@
 
     goto :goto_20
 
-    .line 115
+    .line 112
     :cond_3b
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayoutSwitcher:Lcom/google/android/finsky/layout/LayoutSwitcher;
 
@@ -154,182 +154,146 @@
     goto :goto_20
 .end method
 
-.method private bindImage()V
-    .registers 10
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 156
-    iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayout:Landroid/view/View;
-
-    const v3, 0x7f08001a
-
-    invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v7
-
-    check-cast v7, Landroid/widget/ImageView;
-
-    .line 157
-    .local v7, iv:Landroid/widget/ImageView;
-    invoke-virtual {v7}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    iget v4, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    .line 158
-    .local v4, width:I
-    invoke-virtual {v7}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    iget v5, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
-
-    .line 159
-    .local v5, height:I
-    iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
-
-    invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeDetails;->getDocument()Lcom/google/android/finsky/api/model/Document;
-
-    move-result-object v0
-
-    const/4 v3, 0x0
-
-    invoke-static {v0, v4, v3}, Lcom/google/android/finsky/utils/ThumbnailUtils;->getIconUrlFromDocument(Lcom/google/android/finsky/api/model/Document;II)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 162
-    .local v1, url:Ljava/lang/String;
-    if-eqz v1, :cond_3e
-
-    .line 163
-    iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
-
-    new-instance v3, Lcom/google/android/finsky/layout/ThumbnailListener;
-
-    const/4 v8, 0x1
-
-    invoke-direct {v3, v7, v2, v8}, Lcom/google/android/finsky/layout/ThumbnailListener;-><init>(Landroid/widget/ImageView;Landroid/view/View;Z)V
-
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/utils/BitmapLoader;->get(Ljava/lang/String;Landroid/graphics/Bitmap;Lcom/google/android/finsky/utils/BitmapLoader$BitmapLoadedHandler;II)Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-
-    move-result-object v6
-
-    .line 165
-    .local v6, container:Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-    invoke-virtual {v6}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_3e
-
-    .line 166
-    invoke-virtual {v6}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    invoke-virtual {v7, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
-
-    .line 169
-    .end local v6           #container:Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-    :cond_3e
-    return-void
-.end method
-
 .method private detachListeners()V
     .registers 2
 
     .prologue
-    .line 70
+    .line 67
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     if-eqz v0, :cond_e
 
-    .line 71
+    .line 68
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->removeDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 72
+    .line 69
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->removeErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 74
+    .line 71
     :cond_e
     return-void
 .end method
 
 .method private prepareAndPopulateContent()V
-    .registers 6
+    .registers 11
 
     .prologue
-    .line 134
-    iget-object v3, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
+    .line 131
+    iget-object v4, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
-    invoke-virtual {v3}, Lcom/google/android/finsky/api/model/DfeDetails;->getDocument()Lcom/google/android/finsky/api/model/Document;
+    invoke-virtual {v4}, Lcom/google/android/finsky/api/model/DfeDetails;->getDocument()Lcom/google/android/finsky/api/model/Document;
 
     move-result-object v1
 
-    .line 137
+    .line 134
     .local v1, doc:Lcom/google/android/finsky/api/model/Document;
-    iget-object v3, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayout:Landroid/view/View;
+    iget-object v4, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayout:Landroid/view/View;
 
-    const v4, 0x7f08007b
+    const v5, 0x7f0800e4
 
-    invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/widget/TextView;
-
-    .line 138
-    .local v2, title:Landroid/widget/TextView;
-    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
+    invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    check-cast v3, Landroid/widget/TextView;
 
-    .line 141
-    iget-object v3, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayout:Landroid/view/View;
+    .line 135
+    .local v3, title:Landroid/widget/TextView;
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
 
-    const v4, 0x7f0800bc
+    move-result-object v4
 
-    invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 138
+    iget-object v4, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayout:Landroid/view/View;
+
+    const v5, 0x7f0800e5
+
+    invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/finsky/layout/DecoratedTextView;
 
-    .line 142
+    .line 139
     .local v0, creator:Lcom/google/android/finsky/layout/DecoratedTextView;
     invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Document;->getCreator()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v0, v3}, Lcom/google/android/finsky/layout/DecoratedTextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v4}, Lcom/google/android/finsky/layout/DecoratedTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 144
-    invoke-direct {p0}, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->bindImage()V
+    .line 141
+    iget-object v4, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayout:Landroid/view/View;
 
-    .line 146
-    iget-object v3, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayout:Landroid/view/View;
+    const v5, 0x7f0800b5
 
-    new-instance v4, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder$2;
+    invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    invoke-direct {v4, p0, v1}, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder$2;-><init>(Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;Lcom/google/android/finsky/api/model/Document;)V
+    move-result-object v2
 
-    invoke-virtual {v3, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    check-cast v2, Lcom/google/android/finsky/layout/SmartThumbnailView;
 
-    .line 152
+    .line 143
+    .local v2, thumbnailView:Lcom/google/android/finsky/layout/SmartThumbnailView;
+    iget-object v4, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    iget-object v5, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
+
+    invoke-virtual {v2, v4, v5}, Lcom/google/android/finsky/layout/SmartThumbnailView;->bind(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/utils/BitmapLoader;)V
+
+    .line 145
+    iget-object v4, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayout:Landroid/view/View;
+
+    iget-object v5, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mContext:Landroid/content/Context;
+
+    const v6, 0x7f0701db
+
+    const/4 v7, 0x2
+
+    new-array v7, v7, [Ljava/lang/Object;
+
+    const/4 v8, 0x0
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
+
+    move-result-object v9
+
+    aput-object v9, v7, v8
+
+    const/4 v8, 0x1
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Document;->getCreator()Ljava/lang/String;
+
+    move-result-object v9
+
+    aput-object v9, v7, v8
+
+    invoke-virtual {v5, v6, v7}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    .line 147
+    iget-object v4, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayout:Landroid/view/View;
+
+    new-instance v5, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder$2;
+
+    invoke-direct {v5, p0, v1}, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder$2;-><init>(Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;Lcom/google/android/finsky/api/model/Document;)V
+
+    invoke-virtual {v4, v5}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 154
     return-void
 .end method
 
@@ -337,10 +301,10 @@
     .registers 5
 
     .prologue
-    .line 177
+    .line 162
     invoke-direct {p0}, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->detachListeners()V
 
-    .line 178
+    .line 163
     new-instance v0, Lcom/google/android/finsky/api/model/DfeDetails;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
@@ -353,15 +317,15 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
-    .line 179
+    .line 164
     invoke-direct {p0}, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->attachToInternalRequest()V
 
-    .line 180
+    .line 165
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayoutSwitcher:Lcom/google/android/finsky/layout/LayoutSwitcher;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/layout/LayoutSwitcher;->switchToLoadingMode()V
 
-    .line 181
+    .line 166
     return-void
 .end method
 
@@ -375,21 +339,21 @@
     .parameter "referrerUrl"
 
     .prologue
-    .line 62
-    const v0, 0x7f070206
+    .line 59
+    const v0, 0x7f070247
 
     invoke-super {p0, p1, p2, v0}, Lcom/google/android/finsky/fragments/DetailsViewBinder;->bind(Landroid/view/View;Lcom/google/android/finsky/api/model/Document;I)V
 
-    .line 64
+    .line 61
     iput-object p3, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mUrl:Ljava/lang/String;
 
-    .line 65
+    .line 62
     iput-object p4, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mReferrerUrl:Ljava/lang/String;
 
-    .line 66
+    .line 63
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->setupView()V
 
-    .line 67
+    .line 64
     return-void
 .end method
 
@@ -402,16 +366,16 @@
     .parameter "cookie"
 
     .prologue
-    .line 49
+    .line 46
     invoke-super {p0, p1, p2, p3}, Lcom/google/android/finsky/fragments/DetailsViewBinder;->init(Landroid/content/Context;Lcom/google/android/finsky/api/DfeApi;Lcom/google/android/finsky/navigationmanager/NavigationManager;)V
 
-    .line 51
+    .line 48
     iput-object p4, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
 
-    .line 52
+    .line 49
     iput-object p5, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mCookie:Ljava/lang/String;
 
-    .line 53
+    .line 50
     return-void
 .end method
 
@@ -419,12 +383,12 @@
     .registers 3
 
     .prologue
-    .line 125
+    .line 122
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayoutSwitcher:Lcom/google/android/finsky/layout/LayoutSwitcher;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/layout/LayoutSwitcher;->switchToDataMode()V
 
-    .line 126
+    .line 123
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     if-eqz v0, :cond_1d
@@ -445,14 +409,14 @@
 
     if-eqz v0, :cond_1d
 
-    .line 127
+    .line 124
     invoke-direct {p0}, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->prepareAndPopulateContent()V
 
-    .line 131
+    .line 128
     :goto_1c
     return-void
 
-    .line 129
+    .line 126
     :cond_1d
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayout:Landroid/view/View;
 
@@ -467,10 +431,10 @@
     .registers 1
 
     .prologue
-    .line 173
+    .line 158
     invoke-direct {p0}, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->detachListeners()V
 
-    .line 174
+    .line 159
     return-void
 .end method
 
@@ -478,16 +442,16 @@
     .registers 8
 
     .prologue
-    .line 78
+    .line 75
     new-instance v0, Lcom/google/android/finsky/layout/LayoutSwitcher;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayout:Landroid/view/View;
 
-    const v2, 0x7f0800c6
+    const v2, 0x7f0800cf
 
-    const v3, 0x7f080147
+    const v3, 0x7f08019f
 
-    const v4, 0x7f0800cf
+    const v4, 0x7f0800d5
 
     new-instance v5, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder$1;
 
@@ -499,10 +463,10 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayoutSwitcher:Lcom/google/android/finsky/layout/LayoutSwitcher;
 
-    .line 86
+    .line 83
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayout:Landroid/view/View;
 
-    const v1, 0x7f080114
+    const v1, 0x7f08014c
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -510,18 +474,18 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f0700e5
+    const v1, 0x7f0700f4
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 87
+    .line 84
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayoutSwitcher:Lcom/google/android/finsky/layout/LayoutSwitcher;
 
     const/16 v1, 0x15e
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/LayoutSwitcher;->switchToLoadingDelayed(I)V
 
-    .line 92
+    .line 89
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mUrl:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -530,17 +494,17 @@
 
     if-nez v0, :cond_51
 
-    .line 93
+    .line 90
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayout:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 94
+    .line 91
     invoke-direct {p0}, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->detachListeners()V
 
-    .line 96
+    .line 93
     new-instance v0, Lcom/google/android/finsky/api/model/DfeDetails;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
@@ -553,14 +517,14 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
-    .line 97
+    .line 94
     invoke-direct {p0}, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->attachToInternalRequest()V
 
-    .line 101
+    .line 98
     :goto_50
     return-void
 
-    .line 99
+    .line 96
     :cond_51
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mLayout:Landroid/view/View;
 

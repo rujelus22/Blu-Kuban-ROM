@@ -34,10 +34,10 @@
     .parameter
 
     .prologue
-    .line 1200
+    .line 997
     iput-object p1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Capabilities;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,7 +48,7 @@
     .registers 5
 
     .prologue
-    .line 1217
+    .line 1011
     const-string v0, "STLS %b, TOP %b, USER %b, UIDL %b, PIPELINING %b"
 
     const/4 v1, 0x5

@@ -1,137 +1,153 @@
-.class final Lcom/google/common/collect/dt;
-.super Ljava/lang/Object;
+.class public Lcom/google/common/collect/dt;
+.super Lcom/google/common/collect/di;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field a:Lcom/google/common/collect/ds;
-
-.field b:Lcom/google/common/collect/ds;
-
-.field final synthetic c:Lcom/google/common/collect/LinkedListMultimap;
+.field final a:Ljava/util/ArrayList;
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/common/collect/LinkedListMultimap;)V
-    .registers 3
-    .parameter
+.method public constructor <init>()V
+    .registers 2
 
     .prologue
-    .line 273
-    const/4 v0, 0x0
+    .line 559
+    invoke-direct {p0}, Lcom/google/common/collect/di;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Lcom/google/common/collect/dt;-><init>(Lcom/google/common/collect/LinkedListMultimap;B)V
+    .line 553
+    new-instance v0, Ljava/util/ArrayList;
 
-    return-void
-.end method
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-.method private constructor <init>(Lcom/google/common/collect/LinkedListMultimap;B)V
-    .registers 4
-    .parameter
-    .parameter
+    iput-object v0, p0, Lcom/google/common/collect/dt;->a:Ljava/util/ArrayList;
 
-    .prologue
-    .line 273
-    iput-object p1, p0, Lcom/google/common/collect/dt;->c:Lcom/google/common/collect/LinkedListMultimap;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 274
-    iget-object v0, p0, Lcom/google/common/collect/dt;->c:Lcom/google/common/collect/LinkedListMultimap;
-
-    #getter for: Lcom/google/common/collect/LinkedListMultimap;->head:Lcom/google/common/collect/ds;
-    invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$000(Lcom/google/common/collect/LinkedListMultimap;)Lcom/google/common/collect/ds;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/common/collect/dt;->a:Lcom/google/common/collect/ds;
-
+    .line 559
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .registers 2
+.method public synthetic a(Ljava/lang/Iterable;)Lcom/google/common/collect/di;
+    .registers 3
+    .parameter
 
     .prologue
-    .line 278
-    iget-object v0, p0, Lcom/google/common/collect/dt;->a:Lcom/google/common/collect/ds;
+    .line 551
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/dt;->b(Ljava/lang/Iterable;)Lcom/google/common/collect/dt;
 
-    if-eqz v0, :cond_6
-
-    const/4 v0, 0x1
-
-    :goto_5
-    return v0
-
-    :cond_6
-    const/4 v0, 0x0
-
-    goto :goto_5
-.end method
-
-.method public final synthetic next()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 273
-    iget-object v0, p0, Lcom/google/common/collect/dt;->a:Lcom/google/common/collect/ds;
-
-    #calls: Lcom/google/common/collect/LinkedListMultimap;->checkElement(Ljava/lang/Object;)V
-    invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$100(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lcom/google/common/collect/dt;->a:Lcom/google/common/collect/ds;
-
-    iput-object v0, p0, Lcom/google/common/collect/dt;->b:Lcom/google/common/collect/ds;
-
-    iget-object v0, p0, Lcom/google/common/collect/dt;->a:Lcom/google/common/collect/ds;
-
-    iget-object v0, v0, Lcom/google/common/collect/ds;->c:Lcom/google/common/collect/ds;
-
-    iput-object v0, p0, Lcom/google/common/collect/dt;->a:Lcom/google/common/collect/ds;
-
-    iget-object v0, p0, Lcom/google/common/collect/dt;->b:Lcom/google/common/collect/ds;
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public final remove()V
+.method public synthetic a(Ljava/lang/Object;)Lcom/google/common/collect/di;
     .registers 3
+    .parameter
 
     .prologue
-    .line 287
-    iget-object v0, p0, Lcom/google/common/collect/dt;->b:Lcom/google/common/collect/ds;
+    .line 551
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/dt;->b(Ljava/lang/Object;)Lcom/google/common/collect/dt;
 
-    if-eqz v0, :cond_13
+    move-result-object v0
 
-    const/4 v0, 0x1
+    return-object v0
+.end method
 
-    :goto_5
-    invoke-static {v0}, Lcom/google/common/base/t;->b(Z)V
+.method public synthetic a([Ljava/lang/Object;)Lcom/google/common/collect/di;
+    .registers 3
+    .parameter
 
-    .line 288
-    iget-object v0, p0, Lcom/google/common/collect/dt;->c:Lcom/google/common/collect/LinkedListMultimap;
+    .prologue
+    .line 551
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/dt;->b([Ljava/lang/Object;)Lcom/google/common/collect/dt;
 
-    iget-object v1, p0, Lcom/google/common/collect/dt;->b:Lcom/google/common/collect/ds;
+    move-result-object v0
 
-    #calls: Lcom/google/common/collect/LinkedListMultimap;->removeNode(Lcom/google/common/collect/ds;)V
-    invoke-static {v0, v1}, Lcom/google/common/collect/LinkedListMultimap;->access$200(Lcom/google/common/collect/LinkedListMultimap;Lcom/google/common/collect/ds;)V
+    return-object v0
+.end method
 
-    .line 289
-    const/4 v0, 0x0
+.method public b(Ljava/lang/Iterable;)Lcom/google/common/collect/dt;
+    .registers 5
+    .parameter
 
-    iput-object v0, p0, Lcom/google/common/collect/dt;->b:Lcom/google/common/collect/ds;
+    .prologue
+    .line 600
+    instance-of v0, p1, Ljava/util/Collection;
 
-    .line 290
-    return-void
+    if-eqz v0, :cond_17
 
-    .line 287
-    :cond_13
-    const/4 v0, 0x0
+    move-object v0, p1
 
-    goto :goto_5
+    .line 601
+    check-cast v0, Ljava/util/Collection;
+
+    .line 602
+    iget-object v1, p0, Lcom/google/common/collect/dt;->a:Ljava/util/ArrayList;
+
+    iget-object v2, p0, Lcom/google/common/collect/dt;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    invoke-interface {v0}, Ljava/util/Collection;->size()I
+
+    move-result v0
+
+    add-int/2addr v0, v2
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->ensureCapacity(I)V
+
+    .line 604
+    :cond_17
+    invoke-super {p0, p1}, Lcom/google/common/collect/di;->a(Ljava/lang/Iterable;)Lcom/google/common/collect/di;
+
+    .line 605
+    return-object p0
+.end method
+
+.method public b(Ljava/lang/Object;)Lcom/google/common/collect/dt;
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 571
+    iget-object v0, p0, Lcom/google/common/collect/dt;->a:Ljava/util/ArrayList;
+
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 572
+    return-object p0
+.end method
+
+.method public varargs b([Ljava/lang/Object;)Lcom/google/common/collect/dt;
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 585
+    iget-object v0, p0, Lcom/google/common/collect/dt;->a:Ljava/util/ArrayList;
+
+    iget-object v1, p0, Lcom/google/common/collect/dt;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    array-length v2, p1
+
+    add-int/2addr v1, v2
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->ensureCapacity(I)V
+
+    .line 586
+    invoke-super {p0, p1}, Lcom/google/common/collect/di;->a([Ljava/lang/Object;)Lcom/google/common/collect/di;
+
+    .line 587
+    return-object p0
 .end method

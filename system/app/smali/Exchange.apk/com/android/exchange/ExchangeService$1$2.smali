@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/exchange/ExchangeService$1;->sendMessageStatus(JJLjava/lang/String;II)V
+    value = Lcom/android/exchange/ExchangeService$1;->sendMessageStatus(JLjava/lang/String;II)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,8 +20,6 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/exchange/ExchangeService$1;
 
-.field final synthetic val$accountId:J
-
 .field final synthetic val$messageId:J
 
 .field final synthetic val$progress:I
@@ -32,9 +30,8 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/exchange/ExchangeService$1;JJLjava/lang/String;II)V
-    .registers 9
-    .parameter
+.method constructor <init>(Lcom/android/exchange/ExchangeService$1;JLjava/lang/String;II)V
+    .registers 7
     .parameter
     .parameter
     .parameter
@@ -42,20 +39,18 @@
     .parameter
 
     .prologue
-    .line 553
+    .line 298
     iput-object p1, p0, Lcom/android/exchange/ExchangeService$1$2;->this$0:Lcom/android/exchange/ExchangeService$1;
 
-    iput-wide p2, p0, Lcom/android/exchange/ExchangeService$1$2;->val$accountId:J
+    iput-wide p2, p0, Lcom/android/exchange/ExchangeService$1$2;->val$messageId:J
 
-    iput-wide p4, p0, Lcom/android/exchange/ExchangeService$1$2;->val$messageId:J
+    iput-object p4, p0, Lcom/android/exchange/ExchangeService$1$2;->val$subject:Ljava/lang/String;
 
-    iput-object p6, p0, Lcom/android/exchange/ExchangeService$1$2;->val$subject:Ljava/lang/String;
+    iput p5, p0, Lcom/android/exchange/ExchangeService$1$2;->val$status:I
 
-    iput p7, p0, Lcom/android/exchange/ExchangeService$1$2;->val$status:I
+    iput p6, p0, Lcom/android/exchange/ExchangeService$1$2;->val$progress:I
 
-    iput p8, p0, Lcom/android/exchange/ExchangeService$1$2;->val$progress:I
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -63,7 +58,7 @@
 
 # virtual methods
 .method public call(Lcom/android/emailcommon/service/IEmailServiceCallback;)V
-    .registers 10
+    .registers 8
     .parameter "cb"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -72,21 +67,19 @@
     .end annotation
 
     .prologue
-    .line 556
-    iget-wide v1, p0, Lcom/android/exchange/ExchangeService$1$2;->val$accountId:J
+    .line 301
+    iget-wide v1, p0, Lcom/android/exchange/ExchangeService$1$2;->val$messageId:J
 
-    iget-wide v3, p0, Lcom/android/exchange/ExchangeService$1$2;->val$messageId:J
+    iget-object v3, p0, Lcom/android/exchange/ExchangeService$1$2;->val$subject:Ljava/lang/String;
 
-    iget-object v5, p0, Lcom/android/exchange/ExchangeService$1$2;->val$subject:Ljava/lang/String;
+    iget v4, p0, Lcom/android/exchange/ExchangeService$1$2;->val$status:I
 
-    iget v6, p0, Lcom/android/exchange/ExchangeService$1$2;->val$status:I
-
-    iget v7, p0, Lcom/android/exchange/ExchangeService$1$2;->val$progress:I
+    iget v5, p0, Lcom/android/exchange/ExchangeService$1$2;->val$progress:I
 
     move-object v0, p1
 
-    invoke-interface/range {v0 .. v7}, Lcom/android/emailcommon/service/IEmailServiceCallback;->sendMessageStatus(JJLjava/lang/String;II)V
+    invoke-interface/range {v0 .. v5}, Lcom/android/emailcommon/service/IEmailServiceCallback;->sendMessageStatus(JLjava/lang/String;II)V
 
-    .line 557
+    .line 302
     return-void
 .end method

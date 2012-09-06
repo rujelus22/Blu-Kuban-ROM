@@ -32,8 +32,8 @@
     .registers 1
 
     .prologue
-    .line 812
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 618
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,7 +46,7 @@
     .parameter "column"
 
     .prologue
-    .line 814
+    .line 621
     invoke-interface {p1, p2}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v0
@@ -64,7 +64,7 @@
     .parameter "x1"
 
     .prologue
-    .line 812
+    .line 618
     invoke-virtual {p0, p1, p2}, Lcom/android/emailcommon/utility/Utility$4;->get(Landroid/database/Cursor;I)Ljava/lang/Integer;
 
     move-result-object v0

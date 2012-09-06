@@ -53,28 +53,35 @@
 Ikke bruk programmet mens du kjører. Trafikkdataene leveres ikke direkte, og retningsangivelsene kan være feil, farlige eller forbudte. Fotgjengerruter kan mangle fortau eller gangstier. Overhold gjeldende lovgivning.
 
 Hold blikket på veien!"</string>
+    <string name="da_agreement_with_walking_and_biking">"Google Maps Navigation er i beta. Vær forsiktig.
+
+Ikke bruk dette programmet mens du er i bevegelse. Trafikkdataene er ikke i sanntid, og veibeskrivelsene kan være feilaktige, farlige, forbudt, eller innebære ferger. Gangruter kan mangle fortau eller gangveier. Veibeskrivelser for sykkel kan innebære ruter som ikke egnet for sykling. Overhold gjeldende lover.
+
+Hold øynene på veien!"</string>
     <string name="da_disclaimer_checkbox">Vis denne meldingen neste gang</string>
-    <string name="da_show_list">Liste over veibeskrivelser</string>
-    <string name="da_route_overview">Ruteinformasjon</string>
+    <string name="da_show_list">Destinasjonsliste</string>
+    <string name="da_route_and_alternates">Rute og alternative ruter</string>
     <string name="da_show_map">Vis kart</string>
+    <string name="da_menu_more">Flere</string>
     <string name="da_satellite">Satellitt</string>
     <string name="da_traffic_view">Trafikkvisning</string>
     <string name="da_no_traffic_here">Ingen trafikkinformasjon tilgjengelig</string>
     <string name="da_traffic">Trafikk</string>
     <string name="da_area_view">Områdevisning</string>
-    <string name="da_mute">Lyd av</string>
-    <string name="da_unmute">Slå på lyd</string>
     <string name="da_settings">Innstillinger</string>
     <string name="da_help">Hjelp</string>
     <string name="da_terms_privacy_notices">Vilkår og personvern</string>
     <string name="da_terms_and_conditions">Vilkår</string>
-    <string name="da_privacy_policy">Personvern</string>
+    <string name="da_privacy_policy">Retningslinjer for personvern</string>
     <string name="da_legal_notices">Juridiske merknader</string>
     <string name="da_navigation_suspended">Navigasjon avbrutt</string>
-    <string name="da_exit_navigation">Avslutt navigasjon</string>
+    <string name="da_exit_navigation">Avslutt navigering</string>
+    <string name="da_save">Lagre</string>
     <string name="da_power_settings_category">Innstillinger for strøm</string>
     <string name="da_screen_dimming_setting_title">Skjermdemper</string>
     <string name="da_screen_dimming_setting_summary">Skjermen blir mørk mellom veiledningstrinnene for å spare strøm</string>
+    <string name="da_home_setting_set_address">Angi bostedsadresse</string>
+    <string name="da_home_setting_set_address_hint">Skriv inn en adresse</string>
     <string name="da_info_settings_category">Informasjon</string>
     <string name="da_email_me_when_resolved">Send meg en e-postmelding når problemet er løst</string>
     <string name="da_problem_reported">Problemet er rapportert</string>
@@ -85,7 +92,7 @@ Hold blikket på veien!"</string>
  En hurtigsnarvei kan være aktivert i programinnstillingene.
 
  Hvis du velger å motta e-postoppdateringer, vil e-postadressen bli lagret sammen med kommentarene og informasjonen om din nåværende posisjon inntil problemet er løst."</string>
-    <string name="da_report_a_problem">Rapporter et problem</string>
+    <string name="da_report_a_problem">Rapportér feil</string>
     <string name="da_report_a_problem_dialog_title">Rapporter problem</string>
     <string name="da_rmi_preference_trackball_summary">Hvis hurtigsnarveien er aktivert, kan du klikke styrekulen for å starte problemrapporteringen.</string>
     <string name="da_rmi_preference_camera_summary">Hvis hurtigsnarveien er aktivert, kan du klikke på kameraknappen for å starte problemrapporteringen.</string>
@@ -109,6 +116,8 @@ Hold blikket på veien!"</string>
     <string name="da_turn_on_gps">Vis posisjonsinnstillinger?</string>
     <string name="da_voice_guidance">Talt veibeskrivelse</string>
     <string name="da_install_voice_guidance_prompt">Hvis du ønsker talestyrt navigasjon, må du installere støtte for tekst-til-tale fra Android-markedet.</string>
+    <string name="da_voice_off">Slå av tale</string>
+    <string name="da_voice_on">Slå på tale</string>
     <string name="da_voice_guidance_on">Taleveiledningen er aktivert</string>
     <string name="da_voice_guidance_off">Taleveiledningen er deaktivert</string>
     <string name="da_dialog_ok">OK</string>
@@ -119,7 +128,7 @@ Hold blikket på veien!"</string>
     <string name="da_dialog_install">Installer</string>
     <string name="da_dialog_dont_accept">Ikke godta</string>
     <string name="da_dialog_go">Start</string>
-    <string name="da_dialog_get_directions">Hent veibeskrivelser</string>
+    <string name="da_dialog_get_directions">Få veibeskrivelse</string>
     <string name="da_map">Kart</string>
     <string name="da_clear_layers">Tøm kartet</string>
     <string name="da_layer_name_parking">Parkeringsplass</string>
@@ -136,8 +145,8 @@ Hold blikket på veien!"</string>
     <string name="da_via_name_separator">" og "</string>
     <string name="da_record_feedback">Mikrofonen lytter</string>
     <string name="da_destination_not_here">Destinasjon er ikke her</string>
-    <string name="da_new_destination">Neste reisemål</string>
-    <string name="da_reroute_to_destination">Tilbake til reisemål</string>
+    <string name="da_new_destination">Neste destinasjon</string>
+    <string name="da_reroute_to_destination">Tilbake til destinasjon</string>
     <string name="da_change_destination">Velg destinasjon</string>
     <string name="da_search_for_destination">Søk ...</string>
     <string name="da_point_on_map">Punkt på kartet</string>
@@ -185,12 +194,15 @@ Hold blikket på veien!"</string>
     <string name="da_image_error">Feil under innlasting av bilde.</string>
     <string name="da_no_alternate_routes">Vi kunne ikke finne noen alternative ruter til destinasjonen.</string>
     <string name="da_picker_type_destination">Skriv inn destinasjon</string>
-    <string name="da_picker_speak_destination">Uttal destinasjon</string>
+    <string name="da_picker_speak_destination">Snakk inn destinasjon</string>
     <string name="da_picker_contacts">Kontakter</string>
     <string name="da_picker_starred_items">Stjernemerkede steder</string>
+    <string name="da_picker_starred">MED STJERNE</string>
     <string name="da_picker_new_contact">Ny kontakt</string>
-    <string name="da_picker_saved_destinations">Lagrede Destinasjoner</string>
+    <string name="da_go_home">Gå til startsiden</string>
+    <string name="da_picker_saved_destinations">Lagrede destinasjoner</string>
     <string name="da_picker_recent_destinations">Nylige destinasjoner</string>
+    <string name="da_picker_shortcuts">SNARVEIER</string>
     <string name="da_navigate_to">Naviger til</string>
     <string name="da_return_to">Tilbake til</string>
     <string name="da_picker_search_hint">Destinasjon</string>
@@ -208,7 +220,6 @@ Du kan legge til nye kontakter eller angi adresser for eksisterende kontakter i 
     <string name="da_walking">Til fots</string>
     <string name="da_bicycling">Med sykkel</string>
     <string name="da_quoted_text">«%1$s»</string>
-    <string name="da_more_info">Les mer</string>
     <string name="da_walking_warning">Gåstrekning (beta): Vær forsiktig</string>
     <string name="da_bicycling_warning">Sykkel (beta): Vis forsiktighet</string>
     <string name="da_calibrate_compass_title">Kalibrering av kompass</string>
@@ -216,7 +227,6 @@ Du kan legge til nye kontakter eller angi adresser for eksisterende kontakter i 
     <string name="da_confirm_exit_title">Avslutte navigasjon?</string>
     <string name="da_confirm_exit_text">Ruteveiledningen blir nå avsluttet.</string>
     <string name="da_route_includes_tolls">Bomringer</string>
-    <string name="da_avoid_tolls">Unngå bomringer</string>
     <string name="da_avoiding_tolls">Unngå bomringer</string>
     <string name="da_avoiding_highways">Unngå motorveier</string>
     <string name="da_route_includes_unavoidable_tolls">Det er bomringer på denne strekningen.</string>
@@ -272,13 +282,15 @@ Du kan legge til nye kontakter eller angi adresser for eksisterende kontakter i 
     <string name="DIRECTIONS_TITLE">Kjøreanvisninger</string>
     <string name="EXIT_COMMAND">Avslutt</string>
     <string name="FEATURE_SWITCHER_LATITUDE_SUBTITLE">Finn familie og venner</string>
-    <string name="FEATURE_SWITCHER_LOCAL">Google Steder</string>
+    <string name="FEATURE_SWITCHER_LOCAL">Lokalt</string>
     <string name="FEATURE_SWITCHER_LOCAL_SUBTITLE">Finn restauranter, barer og mye mer</string>
     <string name="FEATURE_SWITCHER_MAP">Kart</string>
     <string name="FEATURE_SWITCHER_NAV">GPS-navigasjon</string>
     <string name="FEATURE_SWITCHER_TRAFFIC">Trafikk</string>
     <string name="FRIENDS_COMMAND_ACTIVATE">Latitude</string>
     <string name="FRIENDS_COMMAND_JOIN">Bli med i Latitude</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE">Google+-profil</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE_DESCRIPTION">Se på en venns profil på Google+</string>
     <string name="FRIENDS_HISTORY_SUMMARY_TITLE">Posisjonslogg</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TICKER">{0} vil at du skal sjekke inn</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TITLE">Forespørsel om innsjekking i Latitude</string>
@@ -298,10 +310,26 @@ Du kan legge til nye kontakter eller angi adresser for eksisterende kontakter i 
     <string name="LATITUDE_WIDGET_FRIENDS_ACTIVATE">Trykk for å logge deg på Google Latitude</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LAST_UPDATED_TIME_ABSOLUTE">Sist oppdatert: {0}</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LOCATION_UNKNOWN">Ukjent posisjon</string>
+    <string name="LATITUDE_WIDGET_START">Trykk for å starte Latitude</string>
     <string name="LOADING">Laster</string>
-    <string name="LOCAL_APP_NAME">Google Lokal</string>
-    <string name="MAPS_APP_NAME">Kart</string>
+    <string name="MAPS_APP_NAME">Maps</string>
     <string name="MY_PLACES_COMMAND">Mine steder</string>
+    <string name="MY_PLACES_DELETE_CONFIRM">&lt;b>{0}&lt;/b> vil bli fjernet fra Mine steder.</string>
+    <string name="MY_PLACES_DELETE_CONFIRM_TITLE">Slett</string>
+    <string name="MY_PLACES_DELETE_ITEM_COMMAND">Slett</string>
+    <string name="MY_PLACES_DELETE_OWNED_MAP_CONFIRM">&lt;b>{0}&lt;/b> vil bli fjernet fra Mine steder og slettet permanent.</string>
+    <string name="MY_PLACES_DELETE_PLACE_CONFIRM">"&lt;b>{0}&lt;/b> vil bli fjernet fra Mine steder, og aktiviteter knyttet til dette stedet vil bli slettet permanent: "</string>
+    <string name="MY_PLACES_DELETE_SERVICE_UNAVAILABLE">Tjenesten er utilgjengelig. Prøv igjen senere.</string>
+    <string name="MY_PLACES_ITEM_IS_BOOKMARKED_MY_MAP">Bokmerket kar</string>
+    <string name="MY_PLACES_ITEM_IS_MY_MAP">Mitt kart</string>
+    <string name="MY_PLACES_ITEM_IS_REVIEWED">Anmeldt</string>
+    <string name="MY_PLACES_ITEM_IS_STARRED">Stjernemerket</string>
+    <string name="MY_PLACES_LINK_ON_SUGGEST">Tilpasset med Mine steder</string>
+    <string name="MY_PLACES_NO_DIRECTIONS_ITEM_MESSAGE">Du har ingen logg over veibeskrivelser.</string>
+    <string name="MY_PLACES_NO_MY_MAP_ITEM_MESSAGE">Du har ingen kart.</string>
+    <string name="MY_PLACES_NO_STARRED_ITEM_MESSAGE">Du har ingen stjernemerkede steder.</string>
+    <string name="MY_PLACES_SEE_ON_MAP_COMMAND">Kart</string>
+    <string name="MY_PLACES_SHOW_DETAIL_PAGE_COMMAND">Detaljer</string>
     <string name="NAVIGATE_MODE_NAVIGATION">Navigering</string>
     <string name="NEED_NET_BODY">Dette programmet kan ikke brukes før du har gitt tillatelse til å sende og motta data via nettverket.</string>
     <string name="NEED_NET_TITLE">Trenger nettverkstilgang</string>
@@ -309,8 +337,11 @@ Du kan legge til nye kontakter eller angi adresser for eksisterende kontakter i 
     <string name="NET_FAIL_BODY">Dette programmet krever en fungerende datatilkobling.</string>
     <string name="NET_FAIL_TITLE">Nettverksfeil</string>
     <string name="NET_UNAVAILABLE_TITLE">Nettverk ikke tilgjengelig</string>
-    <string name="PLACES_APP_NAME">Steder</string>
-    <string name="RATINGS_CUSTOM_ASPECT_EXAMPLE_TEXT">f.eks. spaghetti bolognese, cocktailer, musikk</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_PLURAL">{0} tilbud i nærheten</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_SINGLE">1 tilbud i nærheten</string>
+    <string name="OFFERS_FEATURE_SWITCHER_TITLE">Tilbud</string>
+    <string name="PLACES_APP_NAME">Lokalt</string>
+    <string name="RATINGS_CORRECT_CATEGORY">Velg riktig kategori for dette stedet</string>
     <string name="RATINGS_CUSTOM_ASPECT_HINT_TEXT">Hva skiller seg ut?</string>
     <string name="RATINGS_OPTIN_CANCEL">Avbryt</string>
     <string name="RATINGS_OPTIN_CLOSE">Lukk</string>
@@ -326,6 +357,7 @@ Du kan legge til nye kontakter eller angi adresser for eksisterende kontakter i 
     <string name="RATINGS_RATE_PLACES">Hvorfor vurdere steder?</string>
     <string name="RATINGS_SET_APPEARANCE">Angi synlighet</string>
     <string name="RATINGS_WAIT">Vent litt</string>
+    <string name="RATINGS_WRONG_LABELS">Feil etiketter?</string>
     <string name="SEARCH_HINT">Søk i kartene</string>
     <string name="SHORT_APP_NAME">Google Maps</string>
     <string name="TRAFFIC_WIDGET_END_LOCATION">Sluttpunkt</string>
@@ -335,7 +367,12 @@ Du kan legge til nye kontakter eller angi adresser for eksisterende kontakter i 
     <string name="TRAFFIC_WIDGET_START_LOCATION">Startpunkt</string>
     <string name="TRANSIT_NAVIGATION">Kollektivtrafikknavigasjon</string>
     <string name="TRANSIT_TITLE">Kollektivt</string>
-    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">Alvorlig feil. Avslutt og start på nytt.</string>
+    <string name="TRANSIT_TYPE_FILTER_ALL">Alle</string>
+    <string name="TRANSIT_TYPE_FILTER_BUS">Buss</string>
+    <string name="TRANSIT_TYPE_FILTER_SUBWAY">Tunnellbane</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAIN">Tog</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAM">Trikk</string>
+    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">Noe har gått galt ... Prøv igjen om noen minutter.</string>
     <string name="UNKNOWN_COMMUNICATION_FAILURE_TITLE">Ukjent feil</string>
     <string name="UPGRADE_BODY">Du må installere en ny versjon for å kunne bruke dette programmet.</string>
     <string name="UPGRADE_TITLE">Programvareoppdatering</string>

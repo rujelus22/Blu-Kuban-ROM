@@ -1,5 +1,6 @@
 .class public Lcom/google/googlenav/capabilities/CapabilitiesControllerSdk11;
 .super Lcom/google/googlenav/capabilities/CapabilitiesControllerSdk7;
+.source "SourceFile"
 
 
 # instance fields
@@ -10,8 +11,11 @@
 .method public constructor <init>()V
     .registers 2
 
+    .prologue
+    .line 14
     invoke-direct {p0}, Lcom/google/googlenav/capabilities/CapabilitiesControllerSdk7;-><init>()V
 
+    .line 19
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/googlenav/capabilities/CapabilitiesControllerSdk11;->a:Ljava/lang/Boolean;
@@ -23,16 +27,21 @@
 # virtual methods
 .method public a(Landroid/content/Context;)Z
     .registers 4
+    .parameter
 
+    .prologue
+    .line 23
     iget-object v0, p0, Lcom/google/googlenav/capabilities/CapabilitiesControllerSdk11;->a:Ljava/lang/Boolean;
 
     if-nez v0, :cond_15
 
+    .line 26
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f070002
+    .line 27
+    const v1, 0x7f080004
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -44,6 +53,7 @@
 
     iput-object v0, p0, Lcom/google/googlenav/capabilities/CapabilitiesControllerSdk11;->a:Ljava/lang/Boolean;
 
+    .line 30
     :cond_15
     iget-object v0, p0, Lcom/google/googlenav/capabilities/CapabilitiesControllerSdk11;->a:Ljava/lang/Boolean;
 

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:layout_width="fill_parent" android:layout_height="48.0dip" android:src="#ff282828" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
-    <ImageView android:id="@id/home_icon" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginLeft="8.0dip" android:src="@drawable/icon" android:scaleType="fitXY" android:layout_centerVertical="true" />
-    <ImageView android:id="@id/post_icon" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_menu_new_post_action_bar" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-    <ImageView android:id="@id/camera_icon" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_menu_camera" android:layout_toLeftOf="@id/post_icon" android:layout_centerVertical="true" />
-    <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/stream_name" android:paddingLeft="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/app_name" android:layout_toLeftOf="@id/comment_icon" android:layout_toRightOf="@id/home_icon" android:layout_centerVertical="true" />
-</RelativeLayout>

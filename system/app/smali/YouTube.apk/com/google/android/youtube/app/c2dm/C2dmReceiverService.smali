@@ -22,7 +22,7 @@
     .parameter
 
     .prologue
-    const v6, 0x7f0a0099
+    const v6, 0x7f0b00c0
 
     const/4 v5, 0x0
 
@@ -43,7 +43,7 @@
 
     new-instance v2, Landroid/app/Notification;
 
-    const v3, 0x7f0200d0
+    const v3, 0x7f02012a
 
     invoke-virtual {p0, v6}, Lcom/google/android/youtube/app/c2dm/C2dmReceiverService;->getString(I)Ljava/lang/String;
 
@@ -61,7 +61,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f0a019a
+    const v3, 0x7f0b01ef
 
     invoke-virtual {p0, v3}, Lcom/google/android/youtube/app/c2dm/C2dmReceiverService;->getString(I)Ljava/lang/String;
 
@@ -100,13 +100,9 @@
     .line 38
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "Subscription registration error: "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

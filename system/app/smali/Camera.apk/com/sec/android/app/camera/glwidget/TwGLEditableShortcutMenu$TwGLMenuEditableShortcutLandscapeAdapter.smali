@@ -400,7 +400,7 @@
 
     const/high16 v5, 0x42ee
 
-    const v6, 0x7f02018d
+    const v6, 0x7f02018c
 
     invoke-direct {v1, v2, v4, v5, v6}, Lcom/sec/android/glview/TwGLImage;-><init>(Lcom/sec/android/glview/TwGLContext;FFI)V
 

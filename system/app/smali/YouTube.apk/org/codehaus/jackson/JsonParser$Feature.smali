@@ -46,7 +46,7 @@
 
     const/4 v3, 0x0
 
-    .line 67
+    .line 68
     new-instance v0, Lorg/codehaus/jackson/JsonParser$Feature;
 
     const-string v1, "AUTO_CLOSE_SOURCE"
@@ -55,7 +55,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/JsonParser$Feature;->AUTO_CLOSE_SOURCE:Lorg/codehaus/jackson/JsonParser$Feature;
 
-    .line 85
+    .line 86
     new-instance v0, Lorg/codehaus/jackson/JsonParser$Feature;
 
     const-string v1, "ALLOW_COMMENTS"
@@ -64,7 +64,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/JsonParser$Feature;->ALLOW_COMMENTS:Lorg/codehaus/jackson/JsonParser$Feature;
 
-    .line 101
+    .line 102
     new-instance v0, Lorg/codehaus/jackson/JsonParser$Feature;
 
     const-string v1, "ALLOW_UNQUOTED_FIELD_NAMES"
@@ -73,7 +73,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/JsonParser$Feature;->ALLOW_UNQUOTED_FIELD_NAMES:Lorg/codehaus/jackson/JsonParser$Feature;
 
-    .line 119
+    .line 120
     new-instance v0, Lorg/codehaus/jackson/JsonParser$Feature;
 
     const-string v1, "ALLOW_SINGLE_QUOTES"
@@ -82,7 +82,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/JsonParser$Feature;->ALLOW_SINGLE_QUOTES:Lorg/codehaus/jackson/JsonParser$Feature;
 
-    .line 136
+    .line 137
     new-instance v0, Lorg/codehaus/jackson/JsonParser$Feature;
 
     const-string v1, "ALLOW_UNQUOTED_CONTROL_CHARS"
@@ -91,7 +91,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/JsonParser$Feature;->ALLOW_UNQUOTED_CONTROL_CHARS:Lorg/codehaus/jackson/JsonParser$Feature;
 
-    .line 151
+    .line 152
     new-instance v0, Lorg/codehaus/jackson/JsonParser$Feature;
 
     const-string v1, "ALLOW_BACKSLASH_ESCAPING_ANY_CHARACTER"
@@ -102,7 +102,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/JsonParser$Feature;->ALLOW_BACKSLASH_ESCAPING_ANY_CHARACTER:Lorg/codehaus/jackson/JsonParser$Feature;
 
-    .line 167
+    .line 168
     new-instance v0, Lorg/codehaus/jackson/JsonParser$Feature;
 
     const-string v1, "ALLOW_NUMERIC_LEADING_ZEROS"
@@ -113,7 +113,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/JsonParser$Feature;->ALLOW_NUMERIC_LEADING_ZEROS:Lorg/codehaus/jackson/JsonParser$Feature;
 
-    .line 185
+    .line 186
     new-instance v0, Lorg/codehaus/jackson/JsonParser$Feature;
 
     const-string v1, "ALLOW_NON_NUMERIC_NUMBERS"
@@ -124,7 +124,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/JsonParser$Feature;->ALLOW_NON_NUMERIC_NUMBERS:Lorg/codehaus/jackson/JsonParser$Feature;
 
-    .line 204
+    .line 205
     new-instance v0, Lorg/codehaus/jackson/JsonParser$Feature;
 
     const-string v1, "INTERN_FIELD_NAMES"
@@ -135,7 +135,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/JsonParser$Feature;->INTERN_FIELD_NAMES:Lorg/codehaus/jackson/JsonParser$Feature;
 
-    .line 214
+    .line 215
     new-instance v0, Lorg/codehaus/jackson/JsonParser$Feature;
 
     const-string v1, "CANONICALIZE_FIELD_NAMES"
@@ -146,7 +146,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/JsonParser$Feature;->CANONICALIZE_FIELD_NAMES:Lorg/codehaus/jackson/JsonParser$Feature;
 
-    .line 51
+    .line 52
     const/16 v0, 0xa
 
     new-array v0, v0, [Lorg/codehaus/jackson/JsonParser$Feature;
@@ -213,13 +213,13 @@
     .parameter
 
     .prologue
-    .line 236
+    .line 237
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 237
+    .line 238
     iput-boolean p3, p0, Lorg/codehaus/jackson/JsonParser$Feature;->_defaultState:Z
 
-    .line 238
+    .line 239
     return-void
 .end method
 
@@ -229,7 +229,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 228
+    .line 229
     invoke-static {}, Lorg/codehaus/jackson/JsonParser$Feature;->values()[Lorg/codehaus/jackson/JsonParser$Feature;
 
     move-result-object v2
@@ -243,27 +243,27 @@
 
     aget-object v4, v2, v1
 
-    .line 229
+    .line 230
     invoke-virtual {v4}, Lorg/codehaus/jackson/JsonParser$Feature;->enabledByDefault()Z
 
     move-result v5
 
     if-eqz v5, :cond_16
 
-    .line 230
+    .line 231
     invoke-virtual {v4}, Lorg/codehaus/jackson/JsonParser$Feature;->getMask()I
 
     move-result v4
 
     or-int/2addr v0, v4
 
-    .line 228
+    .line 229
     :cond_16
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_7
 
-    .line 233
+    .line 234
     :cond_19
     return v0
 .end method
@@ -273,7 +273,7 @@
     .parameter
 
     .prologue
-    .line 51
+    .line 52
     const-class v0, Lorg/codehaus/jackson/JsonParser$Feature;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -289,7 +289,7 @@
     .registers 1
 
     .prologue
-    .line 51
+    .line 52
     sget-object v0, Lorg/codehaus/jackson/JsonParser$Feature;->$VALUES:[Lorg/codehaus/jackson/JsonParser$Feature;
 
     invoke-virtual {v0}, [Lorg/codehaus/jackson/JsonParser$Feature;->clone()Ljava/lang/Object;
@@ -307,7 +307,7 @@
     .registers 2
 
     .prologue
-    .line 240
+    .line 241
     iget-boolean v0, p0, Lorg/codehaus/jackson/JsonParser$Feature;->_defaultState:Z
 
     return v0
@@ -318,7 +318,7 @@
     .parameter
 
     .prologue
-    .line 242
+    .line 243
     invoke-virtual {p0}, Lorg/codehaus/jackson/JsonParser$Feature;->getMask()I
 
     move-result v0
@@ -342,7 +342,7 @@
     .registers 3
 
     .prologue
-    .line 244
+    .line 245
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lorg/codehaus/jackson/JsonParser$Feature;->ordinal()I

@@ -1,9 +1,9 @@
 .class public final Lcom/google/android/youtube/core/async/DeviceAuthorizer;
-.super Lcom/google/android/youtube/core/converter/http/ao;
+.super Lcom/google/android/youtube/core/converter/http/bc;
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/g;
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
@@ -17,7 +17,7 @@
 
 .field private final e:Landroid/content/SharedPreferences;
 
-.field private final f:Lcom/google/android/youtube/core/utils/s;
+.field private final f:Lcom/google/android/youtube/core/utils/ae;
 
 .field private volatile g:Z
 
@@ -29,7 +29,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lorg/apache/http/client/HttpClient;[B[BLjava/lang/String;Landroid/content/SharedPreferences;Lcom/google/android/youtube/core/utils/s;)V
+.method public constructor <init>(Lorg/apache/http/client/HttpClient;[B[BLjava/lang/String;Landroid/content/SharedPreferences;Lcom/google/android/youtube/core/utils/ae;)V
     .registers 12
     .parameter
     .parameter
@@ -44,7 +44,7 @@
     const/4 v1, 0x0
 
     .line 73
-    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/http/ao;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/http/bc;-><init>()V
 
     .line 74
     iput-object p5, p0, Lcom/google/android/youtube/core/async/DeviceAuthorizer;->e:Landroid/content/SharedPreferences;
@@ -66,7 +66,7 @@
     iput-object p4, p0, Lcom/google/android/youtube/core/async/DeviceAuthorizer;->d:Ljava/lang/String;
 
     .line 81
-    iput-object p6, p0, Lcom/google/android/youtube/core/async/DeviceAuthorizer;->f:Lcom/google/android/youtube/core/utils/s;
+    iput-object p6, p0, Lcom/google/android/youtube/core/async/DeviceAuthorizer;->f:Lcom/google/android/youtube/core/utils/ae;
 
     .line 83
     const-string v0, "device_id"
@@ -368,23 +368,23 @@
 
     iget-object v3, p0, Lcom/google/android/youtube/core/async/DeviceAuthorizer;->d:Ljava/lang/String;
 
-    new-instance v4, Lcom/google/android/youtube/core/converter/http/ch;
+    new-instance v4, Lcom/google/android/youtube/core/converter/http/dc;
 
     sget-object v5, Lcom/google/android/youtube/core/converter/http/HttpMethod;->POST:Lcom/google/android/youtube/core/converter/http/HttpMethod;
 
-    invoke-direct {v4, v5}, Lcom/google/android/youtube/core/converter/http/ch;-><init>(Lcom/google/android/youtube/core/converter/http/HttpMethod;)V
+    invoke-direct {v4, v5}, Lcom/google/android/youtube/core/converter/http/dc;-><init>(Lcom/google/android/youtube/core/converter/http/HttpMethod;)V
 
-    new-instance v5, Lcom/google/android/youtube/core/async/w;
+    new-instance v5, Lcom/google/android/youtube/core/async/ag;
 
-    invoke-direct {v5, v0, v4, p0}, Lcom/google/android/youtube/core/async/w;-><init>(Lorg/apache/http/client/HttpClient;Lcom/google/android/youtube/core/converter/a;Lcom/google/android/youtube/core/converter/http/ao;)V
+    invoke-direct {v5, v0, v4, p0}, Lcom/google/android/youtube/core/async/ag;-><init>(Lorg/apache/http/client/HttpClient;Lcom/google/android/youtube/core/converter/a;Lcom/google/android/youtube/core/converter/http/bc;)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-object v4, p0, Lcom/google/android/youtube/core/async/DeviceAuthorizer;->f:Lcom/google/android/youtube/core/utils/s;
+    iget-object v4, p0, Lcom/google/android/youtube/core/async/DeviceAuthorizer;->f:Lcom/google/android/youtube/core/utils/ae;
 
     const-string v6, "https://www.google.com/youtube/accounts/registerDevice"
 
-    invoke-virtual {v4, v6}, Lcom/google/android/youtube/core/utils/s;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v4, v6}, Lcom/google/android/youtube/core/utils/ae;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -416,7 +416,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v5, v0, p0}, Lcom/google/android/youtube/core/async/w;->a(Ljava/lang/Object;Lcom/google/android/youtube/core/async/g;)V
+    invoke-virtual {v5, v0, p0}, Lcom/google/android/youtube/core/async/ag;->a(Ljava/lang/Object;Lcom/google/android/youtube/core/async/l;)V
 
     .line 116
     :goto_58

@@ -22,7 +22,7 @@
     .registers 1
 
     .prologue
-    .line 51
+    .line 54
     const-string v0, "^([\\x21-\\x39\\x3b-\\x7e]+)[ \t]*:"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -31,7 +31,7 @@
 
     sput-object v0, Lorg/apache/james/mime4j/field/Field;->fieldNamePattern:Ljava/util/regex/Pattern;
 
-    .line 53
+    .line 57
     new-instance v0, Lorg/apache/james/mime4j/field/DefaultFieldParser;
 
     invoke-direct {v0}, Lorg/apache/james/mime4j/field/DefaultFieldParser;-><init>()V
@@ -48,19 +48,19 @@
     .parameter "raw"
 
     .prologue
-    .line 59
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 63
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
+    .line 64
     iput-object p1, p0, Lorg/apache/james/mime4j/field/Field;->name:Ljava/lang/String;
 
-    .line 61
+    .line 65
     iput-object p2, p0, Lorg/apache/james/mime4j/field/Field;->body:Ljava/lang/String;
 
-    .line 62
+    .line 66
     iput-object p3, p0, Lorg/apache/james/mime4j/field/Field;->raw:Ljava/lang/String;
 
-    .line 63
+    .line 67
     return-void
 .end method
 
@@ -71,7 +71,7 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 88
+    .line 90
     const-string v4, "\r|\n"
 
     const-string v5, ""
@@ -80,7 +80,7 @@
 
     move-result-object v3
 
-    .line 93
+    .line 95
     .local v3, unfolded:Ljava/lang/String;
     sget-object v4, Lorg/apache/james/mime4j/field/Field;->fieldNamePattern:Ljava/util/regex/Pattern;
 
@@ -88,7 +88,7 @@
 
     move-result-object v1
 
-    .line 94
+    .line 96
     .local v1, fieldMatcher:Ljava/util/regex/Matcher;
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
 
@@ -96,7 +96,7 @@
 
     if-nez v4, :cond_1d
 
-    .line 95
+    .line 97
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
     const-string v5, "Invalid field in string"
@@ -105,13 +105,13 @@
 
     throw v4
 
-    .line 97
+    .line 99
     :cond_1d
     invoke-virtual {v1, v6}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 99
+    .line 101
     .local v2, name:Ljava/lang/String;
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->end()I
 
@@ -121,7 +121,7 @@
 
     move-result-object v0
 
-    .line 100
+    .line 102
     .local v0, body:Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -139,12 +139,12 @@
 
     if-ne v4, v5, :cond_3c
 
-    .line 101
+    .line 103
     invoke-virtual {v0, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 104
+    .line 106
     :cond_3c
     sget-object v4, Lorg/apache/james/mime4j/field/Field;->parser:Lorg/apache/james/mime4j/field/DefaultFieldParser;
 
@@ -161,7 +161,7 @@
     .registers 2
 
     .prologue
-    .line 142
+    .line 143
     iget-object v0, p0, Lorg/apache/james/mime4j/field/Field;->body:Ljava/lang/String;
 
     return-object v0
@@ -171,7 +171,7 @@
     .registers 2
 
     .prologue
-    .line 123
+    .line 124
     iget-object v0, p0, Lorg/apache/james/mime4j/field/Field;->name:Ljava/lang/String;
 
     return-object v0
@@ -181,7 +181,7 @@
     .registers 2
 
     .prologue
-    .line 189
+    .line 190
     iget-object v0, p0, Lorg/apache/james/mime4j/field/Field;->raw:Ljava/lang/String;
 
     return-object v0

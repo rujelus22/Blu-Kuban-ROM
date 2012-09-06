@@ -5,6 +5,7 @@
     <item a:icon="@drawable/da_btn_show_map" a:id="@id/da_menu_show_map" a:title="@string/da_map" a:showAsAction="ifRoom" />
     <item a:icon="@drawable/da_ic_menu_add" a:id="@id/da_menu_new_contact" a:title="@string/da_picker_new_contact" a:showAsAction="ifRoom|withText" />
     <item a:icon="@drawable/da_ic_menu_route_options" a:id="@id/da_menu_route_options" a:title="@string/da_route_options" a:showAsAction="never" />
+    <item a:icon="@drawable/da_ic_menu_go_home" a:id="@id/da_menu_home_location" a:title="@string/da_home_setting_set_address" a:showAsAction="never" />
     <item a:icon="@drawable/ic_menu_preferences" a:id="@id/da_menu_settings" a:title="@string/da_settings" a:showAsAction="never" />
     <item a:icon="@drawable/ic_menu_help" a:id="@id/da_menu_help" a:title="@string/da_help" a:showAsAction="never" />
 </menu>

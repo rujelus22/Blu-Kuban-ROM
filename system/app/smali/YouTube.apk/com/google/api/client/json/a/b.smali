@@ -12,7 +12,7 @@
     .registers 3
 
     .prologue
-    .line 79
+    .line 84
     invoke-static {}, Lorg/codehaus/jackson/JsonToken;->values()[Lorg/codehaus/jackson/JsonToken;
 
     move-result-object v0

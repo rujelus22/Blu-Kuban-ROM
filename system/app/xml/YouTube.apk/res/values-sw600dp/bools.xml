@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="show_fullscreen_button_in_portrait">true</bool>
+    <bool name="results_activity_media_route_in_overflow">false</bool>
+    <bool name="hide_media_route_icon_when_search_expanded">false</bool>
+</resources>

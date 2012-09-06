@@ -242,18 +242,18 @@
     <string name="account_intro_recommended_title">Настройка аккаунта Google</string>
     <string name="common_message">"Аккаунт Google – это:
 
-"<li><ul>Просмотр и систематизация информации с любого устройства.</ul></li>"
+"<ul><li>Просмотр и систематизация информации с любого устройства.</li></ul>"
 
-"<li><ul>Резервное копирование данных в автоматическом режиме.</ul></li>"
+"<ul><li>Резервное копирование данных в автоматическом режиме.</li></ul>"
 
-"<li><ul>Доступ к сервисам Google без ограничений.</ul></li></string>
+"<ul><li>Доступ к сервисам Google без ограничений.</li></ul></string>
     <string name="add_account_message">" Можно использовать несколько аккаунтов Google (например, домашний и рабочий). Нажмите кнопку "<b>Войти</b> или создайте аккаунт с помощью кнопки <b>Создать аккаунт</b>.</string>
     <string name="account_intro_default_message">Теперь вы не потеряете свои данные. Все будет храниться в аккаунте Google.</string>
     <string name="account_intro_custom_endtext">Уже зарегистрированы в %s? Войдите в аккаунт.</string>
     <string name="account_intro_simple_message">Добавить существующий аккаунт или создать новый?</string>
     <string name="learn_more_title"><annotation id="learn_more">Подробнее...</annotation></string>
     <string name="learn_more_account_intro">"С помощью аккаунта Google можно:
-"<li><ul>работать со своими данными на любом устройстве;<li>создавать резервные копии данных из аккаунта;</li><li>использовать различные сервисы Google, такие как Контакты, Календарь и Карты.</li></ul></li></string>
+"<ul><li>работать со своими данными на любом устройстве;<li>создавать резервные копии данных из аккаунта;</li><li>использовать различные сервисы Google, такие как Контакты, Календарь и Карты.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Об аккаунтах Google</string>
     <string name="learn_more_web_history">"История веб-поиска позволяет уточнять результаты с учетом ваших запросов и посещенных веб-сайтов, что делает работу с Google более удобной.
 

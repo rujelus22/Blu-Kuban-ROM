@@ -4,14 +4,20 @@
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/String;J)V
+.method public abstract a(Lcom/google/android/youtube/core/transfer/Transfer;)V
 .end method
 
-.method public abstract a(Ljava/lang/String;Lcom/google/android/youtube/core/transfer/TransferException;)V
+.method public abstract b(Lcom/google/android/youtube/core/transfer/Transfer;)V
 .end method
 
-.method public abstract a(Ljava/lang/String;Lcom/google/android/youtube/core/transfer/b;)V
+.method public abstract c(Lcom/google/android/youtube/core/transfer/Transfer;)V
 .end method
 
-.method public abstract b(Ljava/lang/String;J)V
+.method public abstract d(Lcom/google/android/youtube/core/transfer/Transfer;)V
+.end method
+
+.method public abstract e(Lcom/google/android/youtube/core/transfer/Transfer;)V
+.end method
+
+.method public abstract f_()V
 .end method

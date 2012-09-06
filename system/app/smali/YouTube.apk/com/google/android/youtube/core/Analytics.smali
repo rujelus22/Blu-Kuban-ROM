@@ -4,56 +4,75 @@
 
 
 # instance fields
-.field private final a:Lcom/google/android/youtube/core/client/c;
+.field private final a:Lcom/google/android/youtube/core/b/b;
 
-.field private final b:Lcom/google/android/youtube/core/utils/i;
+.field private final b:Lcom/google/android/youtube/core/utils/k;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/core/client/c;Lcom/google/android/youtube/core/utils/i;)V
+.method public constructor <init>(Lcom/google/android/youtube/core/b/b;Lcom/google/android/youtube/core/utils/k;)V
     .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 43
+    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
+    .line 47
     const-string v0, "analyticsClient cannot be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/client/c;
+    check-cast v0, Lcom/google/android/youtube/core/b/b;
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/Analytics;->a:Lcom/google/android/youtube/core/client/c;
+    iput-object v0, p0, Lcom/google/android/youtube/core/Analytics;->a:Lcom/google/android/youtube/core/b/b;
 
-    .line 45
+    .line 48
     const-string v0, "networkStatus cannot be null"
 
-    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/utils/i;
+    check-cast v0, Lcom/google/android/youtube/core/utils/k;
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/Analytics;->b:Lcom/google/android/youtube/core/utils/i;
+    iput-object v0, p0, Lcom/google/android/youtube/core/Analytics;->b:Lcom/google/android/youtube/core/utils/k;
 
-    .line 46
+    .line 49
     return-void
 .end method
 
 
 # virtual methods
+.method public final a(ILjava/lang/String;Ljava/lang/String;I)V
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    const/4 v1, 0x2
+
+    .line 85
+    iget-object v0, p0, Lcom/google/android/youtube/core/Analytics;->a:Lcom/google/android/youtube/core/b/b;
+
+    invoke-interface {v0, v1, p2, p3, v1}, Lcom/google/android/youtube/core/b/b;->a(ILjava/lang/String;Ljava/lang/String;I)V
+
+    .line 86
+    return-void
+.end method
+
 .method public final a(Lcom/google/android/youtube/core/Analytics$VideoCategory;I)V
     .registers 5
     .parameter
     .parameter
 
     .prologue
-    .line 79
+    .line 81
     const-string v0, "PlaySelected"
 
     invoke-virtual {p1}, Lcom/google/android/youtube/core/Analytics$VideoCategory;->toString()Ljava/lang/String;
@@ -62,7 +81,7 @@
 
     invoke-virtual {p0, v0, v1, p2}, Lcom/google/android/youtube/core/Analytics;->a(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 80
+    .line 82
     return-void
 .end method
 
@@ -71,12 +90,28 @@
     .parameter
 
     .prologue
-    .line 49
-    iget-object v0, p0, Lcom/google/android/youtube/core/Analytics;->a:Lcom/google/android/youtube/core/client/c;
+    .line 52
+    iget-object v0, p0, Lcom/google/android/youtube/core/Analytics;->a:Lcom/google/android/youtube/core/b/b;
 
-    invoke-interface {v0, p1}, Lcom/google/android/youtube/core/client/c;->a(Ljava/lang/String;)V
+    invoke-interface {v0, p1}, Lcom/google/android/youtube/core/b/b;->a(Ljava/lang/String;)V
 
-    .line 50
+    .line 53
+    return-void
+.end method
+
+.method public final a(Ljava/lang/String;Lcom/google/android/youtube/core/model/Stream$Quality;Z)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 77
+    const/4 v0, -0x1
+
+    invoke-virtual {p0, p1, p2, p3, v0}, Lcom/google/android/youtube/core/Analytics;->a(Ljava/lang/String;Lcom/google/android/youtube/core/model/Stream$Quality;ZI)V
+
+    .line 78
     return-void
 .end method
 
@@ -88,12 +123,12 @@
     .parameter
 
     .prologue
-    .line 66
+    .line 68
     if-nez p2, :cond_3a
 
     const-string v0, "?"
 
-    .line 67
+    .line 69
     :goto_4
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -109,9 +144,9 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/youtube/core/Analytics;->b:Lcom/google/android/youtube/core/utils/i;
+    iget-object v1, p0, Lcom/google/android/youtube/core/Analytics;->b:Lcom/google/android/youtube/core/utils/k;
 
-    invoke-interface {v1}, Lcom/google/android/youtube/core/utils/i;->d()Ljava/lang/String;
+    invoke-interface {v1}, Lcom/google/android/youtube/core/utils/k;->d()Ljava/lang/String;
 
     move-result-object v1
 
@@ -123,10 +158,10 @@
 
     move-result-object v0
 
-    .line 68
+    .line 70
     if-eqz p3, :cond_36
 
-    .line 69
+    .line 71
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -145,14 +180,14 @@
 
     move-result-object v0
 
-    .line 71
+    .line 73
     :cond_36
     invoke-virtual {p0, p1, v0, p4}, Lcom/google/android/youtube/core/Analytics;->a(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 72
+    .line 74
     return-void
 
-    .line 66
+    .line 68
     :cond_3a
     invoke-virtual {p2}, Lcom/google/android/youtube/core/model/Stream$Quality;->toString()Ljava/lang/String;
 
@@ -161,35 +196,18 @@
     goto :goto_4
 .end method
 
-.method public final a(Ljava/lang/String;Lcom/google/android/youtube/core/model/Video;Lcom/google/android/youtube/core/model/Stream$Quality;Z)V
-    .registers 6
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 75
-    const/4 v0, -0x1
-
-    invoke-virtual {p0, p1, p3, p4, v0}, Lcom/google/android/youtube/core/Analytics;->a(Ljava/lang/String;Lcom/google/android/youtube/core/model/Stream$Quality;ZI)V
-
-    .line 76
-    return-void
-.end method
-
 .method public final a(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 57
+    .line 60
     const/4 v0, -0x1
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/google/android/youtube/core/Analytics;->a(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 58
+    .line 61
     return-void
 .end method
 
@@ -200,12 +218,12 @@
     .parameter
 
     .prologue
-    .line 53
-    iget-object v0, p0, Lcom/google/android/youtube/core/Analytics;->a:Lcom/google/android/youtube/core/client/c;
+    .line 56
+    iget-object v0, p0, Lcom/google/android/youtube/core/Analytics;->a:Lcom/google/android/youtube/core/b/b;
 
-    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/youtube/core/client/c;->a(Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/youtube/core/b/b;->a(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 54
+    .line 57
     return-void
 .end method
 
@@ -214,13 +232,13 @@
     .parameter
 
     .prologue
-    .line 61
+    .line 64
     const/4 v0, 0x0
 
     const/4 v1, -0x1
 
     invoke-virtual {p0, p1, v0, v1}, Lcom/google/android/youtube/core/Analytics;->a(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 62
+    .line 65
     return-void
 .end method

@@ -28,6 +28,14 @@
         <item quantity="other">%1$d सेकंड पहले</item>
         <item quantity="one">1 सेकंड पहले</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">%1$d दिनों में समाप्त होगा</item>
+        <item quantity="one">1 दिन में समाप्त होगा</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">%1$d घंटों में समाप्त होगा</item>
+        <item quantity="one">1 घंटे में समाप्त होगा</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">नए अपलोड</item>
         <item quantity="one">नया अपलोड</item>

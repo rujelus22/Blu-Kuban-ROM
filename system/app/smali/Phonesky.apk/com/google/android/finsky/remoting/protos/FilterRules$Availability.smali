@@ -25,15 +25,34 @@
 
 .field private cachedSize:I
 
+.field private filterInfo_:Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+
 .field private hasAvailableIfOwned:Z
 
+.field private hasFilterInfo:Z
+
 .field private hasOfferType:Z
+
+.field private hasOwnershipInfo:Z
 
 .field private hasRestriction:Z
 
 .field private hasRule:Z
 
+.field private install_:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/android/finsky/remoting/protos/Common$Install;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private offerType_:I
+
+.field private ownershipInfo_:Lcom/google/android/finsky/remoting/protos/Common$OwnershipInfo;
 
 .field private perDeviceAvailabilityRestriction_:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -53,64 +72,119 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .registers 4
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    .line 534
+    const/4 v1, 0x0
+
+    .line 940
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 703
-    iput v1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->restriction_:I
+    .line 1154
+    iput v2, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->restriction_:I
 
-    .line 720
+    .line 1171
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->availableIfOwned_:Z
 
-    .line 737
-    iput v1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->offerType_:I
+    .line 1188
+    iput v2, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->offerType_:I
 
-    .line 754
-    const/4 v0, 0x0
+    .line 1205
+    iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->ownershipInfo_:Lcom/google/android/finsky/remoting/protos/Common$OwnershipInfo;
 
-    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->rule_:Lcom/google/android/finsky/remoting/protos/FilterRules$Rule;
+    .line 1224
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
-    .line 773
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->install_:Ljava/util/List;
+
+    .line 1258
+    iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->rule_:Lcom/google/android/finsky/remoting/protos/FilterRules$Rule;
+
+    .line 1277
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->perDeviceAvailabilityRestriction_:Ljava/util/List;
 
-    .line 843
+    .line 1311
+    iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->filterInfo_:Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+
+    .line 1383
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->cachedSize:I
 
-    .line 534
+    .line 940
     return-void
 .end method
 
 
 # virtual methods
-.method public addPerDeviceAvailabilityRestriction(Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
+.method public addInstall(Lcom/google/android/finsky/remoting/protos/Common$Install;)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
     .registers 3
     .parameter "value"
 
     .prologue
-    .line 790
+    .line 1241
     if-nez p1, :cond_8
 
-    .line 791
+    .line 1242
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 793
+    .line 1244
+    :cond_8
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->install_:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_17
+
+    .line 1245
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->install_:Ljava/util/List;
+
+    .line 1247
+    :cond_17
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->install_:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 1248
+    return-object p0
+.end method
+
+.method public addPerDeviceAvailabilityRestriction(Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 1294
+    if-nez p1, :cond_8
+
+    .line 1295
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 1297
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->perDeviceAvailabilityRestriction_:Ljava/util/List;
 
@@ -120,20 +194,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 794
+    .line 1298
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->perDeviceAvailabilityRestriction_:Ljava/util/List;
 
-    .line 796
+    .line 1300
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->perDeviceAvailabilityRestriction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 797
+    .line 1301
     return-object p0
 .end method
 
@@ -141,7 +215,7 @@
     .registers 2
 
     .prologue
-    .line 721
+    .line 1172
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->availableIfOwned_:Z
 
     return v0
@@ -151,29 +225,68 @@
     .registers 2
 
     .prologue
-    .line 845
+    .line 1386
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 847
+    .line 1388
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getSerializedSize()I
 
-    .line 849
+    .line 1390
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->cachedSize:I
 
     return v0
 .end method
 
+.method public getFilterInfo()Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+    .registers 2
+
+    .prologue
+    .line 1313
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->filterInfo_:Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+
+    return-object v0
+.end method
+
+.method public getInstallList()Ljava/util/List;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/android/finsky/remoting/protos/Common$Install;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 1227
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->install_:Ljava/util/List;
+
+    return-object v0
+.end method
+
 .method public getOfferType()I
     .registers 2
 
     .prologue
-    .line 739
+    .line 1190
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->offerType_:I
 
     return v0
+.end method
+
+.method public getOwnershipInfo()Lcom/google/android/finsky/remoting/protos/Common$OwnershipInfo;
+    .registers 2
+
+    .prologue
+    .line 1207
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->ownershipInfo_:Lcom/google/android/finsky/remoting/protos/Common$OwnershipInfo;
+
+    return-object v0
 .end method
 
 .method public getPerDeviceAvailabilityRestrictionList()Ljava/util/List;
@@ -189,7 +302,7 @@
     .end annotation
 
     .prologue
-    .line 776
+    .line 1280
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->perDeviceAvailabilityRestriction_:Ljava/util/List;
 
     return-object v0
@@ -199,7 +312,7 @@
     .registers 2
 
     .prologue
-    .line 705
+    .line 1156
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->restriction_:I
 
     return v0
@@ -209,7 +322,7 @@
     .registers 2
 
     .prologue
-    .line 756
+    .line 1260
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->rule_:Lcom/google/android/finsky/remoting/protos/FilterRules$Rule;
 
     return-object v0
@@ -219,10 +332,10 @@
     .registers 6
 
     .prologue
-    .line 853
+    .line 1395
     const/4 v2, 0x0
 
-    .line 854
+    .line 1396
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasRestriction()Z
 
@@ -230,7 +343,7 @@
 
     if-eqz v3, :cond_11
 
-    .line 855
+    .line 1397
     const/4 v3, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getRestriction()I
@@ -243,7 +356,7 @@
 
     add-int/2addr v2, v3
 
-    .line 858
+    .line 1400
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasOfferType()Z
 
@@ -251,7 +364,7 @@
 
     if-eqz v3, :cond_21
 
-    .line 859
+    .line 1401
     const/4 v3, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getOfferType()I
@@ -264,7 +377,7 @@
 
     add-int/2addr v2, v3
 
-    .line 862
+    .line 1404
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasRule()Z
 
@@ -272,7 +385,7 @@
 
     if-eqz v3, :cond_31
 
-    .line 863
+    .line 1405
     const/4 v3, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getRule()Lcom/google/android/finsky/remoting/protos/FilterRules$Rule;
@@ -285,7 +398,7 @@
 
     add-int/2addr v2, v3
 
-    .line 866
+    .line 1408
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getPerDeviceAvailabilityRestrictionList()Ljava/util/List;
 
@@ -309,7 +422,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
 
-    .line 867
+    .line 1409
     .local v0, element:Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
     const/16 v3, 0x9
 
@@ -321,7 +434,7 @@
 
     goto :goto_39
 
-    .line 870
+    .line 1412
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
     :cond_4d
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasAvailableIfOwned()Z
@@ -330,7 +443,7 @@
 
     if-eqz v3, :cond_5e
 
-    .line 871
+    .line 1413
     const/16 v3, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getAvailableIfOwned()Z
@@ -343,11 +456,89 @@
 
     add-int/2addr v2, v3
 
-    .line 874
+    .line 1416
     :cond_5e
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getInstallList()Ljava/util/List;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_66
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_7a
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/remoting/protos/Common$Install;
+
+    .line 1417
+    .local v0, element:Lcom/google/android/finsky/remoting/protos/Common$Install;
+    const/16 v3, 0xe
+
+    invoke-static {v3, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    goto :goto_66
+
+    .line 1420
+    .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Common$Install;
+    :cond_7a
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasFilterInfo()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_8b
+
+    .line 1421
+    const/16 v3, 0x10
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getFilterInfo()Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    .line 1424
+    :cond_8b
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasOwnershipInfo()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_9c
+
+    .line 1425
+    const/16 v3, 0x11
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getOwnershipInfo()Lcom/google/android/finsky/remoting/protos/Common$OwnershipInfo;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    .line 1428
+    :cond_9c
     iput v2, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->cachedSize:I
 
-    .line 875
+    .line 1429
     return v2
 .end method
 
@@ -355,8 +546,18 @@
     .registers 2
 
     .prologue
-    .line 722
+    .line 1173
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasAvailableIfOwned:Z
+
+    return v0
+.end method
+
+.method public hasFilterInfo()Z
+    .registers 2
+
+    .prologue
+    .line 1312
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasFilterInfo:Z
 
     return v0
 .end method
@@ -365,8 +566,18 @@
     .registers 2
 
     .prologue
-    .line 738
+    .line 1189
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasOfferType:Z
+
+    return v0
+.end method
+
+.method public hasOwnershipInfo()Z
+    .registers 2
+
+    .prologue
+    .line 1206
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasOwnershipInfo:Z
 
     return v0
 .end method
@@ -375,7 +586,7 @@
     .registers 2
 
     .prologue
-    .line 704
+    .line 1155
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasRestriction:Z
 
     return v0
@@ -385,7 +596,7 @@
     .registers 2
 
     .prologue
-    .line 755
+    .line 1259
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasRule:Z
 
     return v0
@@ -401,29 +612,29 @@
     .end annotation
 
     .prologue
-    .line 882
+    .line 1437
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 883
+    .line 1438
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_40
+    sparse-switch v0, :sswitch_data_64
 
-    .line 887
+    .line 1442
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 888
+    .line 1443
     :sswitch_d
     return-object p0
 
-    .line 893
+    .line 1448
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -433,7 +644,7 @@
 
     goto :goto_0
 
-    .line 897
+    .line 1452
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -443,40 +654,40 @@
 
     goto :goto_0
 
-    .line 901
+    .line 1456
     :sswitch_1e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/FilterRules$Rule;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/FilterRules$Rule;-><init>()V
 
-    .line 902
+    .line 1457
     .local v1, value:Lcom/google/android/finsky/remoting/protos/FilterRules$Rule;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 903
+    .line 1458
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->setRule(Lcom/google/android/finsky/remoting/protos/FilterRules$Rule;)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
 
     goto :goto_0
 
-    .line 907
+    .line 1462
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/FilterRules$Rule;
     :sswitch_2a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;-><init>()V
 
-    .line 908
+    .line 1463
     .local v1, value:Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
     const/16 v2, 0x9
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readGroup(Lcom/google/protobuf/micro/MessageMicro;I)V
 
-    .line 909
+    .line 1464
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->addPerDeviceAvailabilityRestriction(Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
 
     goto :goto_0
 
-    .line 913
+    .line 1468
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
     :sswitch_38
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
@@ -487,8 +698,55 @@
 
     goto :goto_0
 
-    .line 883
-    :sswitch_data_40
+    .line 1472
+    :sswitch_40
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/Common$Install;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Common$Install;-><init>()V
+
+    .line 1473
+    .local v1, value:Lcom/google/android/finsky/remoting/protos/Common$Install;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 1474
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->addInstall(Lcom/google/android/finsky/remoting/protos/Common$Install;)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
+
+    goto :goto_0
+
+    .line 1478
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Common$Install;
+    :sswitch_4c
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;-><init>()V
+
+    .line 1479
+    .local v1, value:Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 1480
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->setFilterInfo(Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
+
+    goto :goto_0
+
+    .line 1484
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+    :sswitch_58
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/Common$OwnershipInfo;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Common$OwnershipInfo;-><init>()V
+
+    .line 1485
+    .local v1, value:Lcom/google/android/finsky/remoting/protos/Common$OwnershipInfo;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 1486
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->setOwnershipInfo(Lcom/google/android/finsky/remoting/protos/Common$OwnershipInfo;)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
+
+    goto :goto_0
+
+    .line 1438
+    :sswitch_data_64
     .sparse-switch
         0x0 -> :sswitch_d
         0x28 -> :sswitch_e
@@ -496,6 +754,9 @@
         0x3a -> :sswitch_1e
         0x4b -> :sswitch_2a
         0x68 -> :sswitch_38
+        0x72 -> :sswitch_40
+        0x82 -> :sswitch_4c
+        0x8a -> :sswitch_58
     .end sparse-switch
 .end method
 
@@ -509,7 +770,7 @@
     .end annotation
 
     .prologue
-    .line 532
+    .line 937
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
 
     move-result-object v0
@@ -522,15 +783,43 @@
     .parameter "value"
 
     .prologue
-    .line 724
+    .line 1175
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasAvailableIfOwned:Z
 
-    .line 725
+    .line 1176
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->availableIfOwned_:Z
 
-    .line 726
+    .line 1177
+    return-object p0
+.end method
+
+.method public setFilterInfo(Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 1315
+    if-nez p1, :cond_8
+
+    .line 1316
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 1318
+    :cond_8
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasFilterInfo:Z
+
+    .line 1319
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->filterInfo_:Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+
+    .line 1320
     return-object p0
 .end method
 
@@ -539,15 +828,43 @@
     .parameter "value"
 
     .prologue
-    .line 741
+    .line 1192
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasOfferType:Z
 
-    .line 742
+    .line 1193
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->offerType_:I
 
-    .line 743
+    .line 1194
+    return-object p0
+.end method
+
+.method public setOwnershipInfo(Lcom/google/android/finsky/remoting/protos/Common$OwnershipInfo;)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 1209
+    if-nez p1, :cond_8
+
+    .line 1210
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 1212
+    :cond_8
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasOwnershipInfo:Z
+
+    .line 1213
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->ownershipInfo_:Lcom/google/android/finsky/remoting/protos/Common$OwnershipInfo;
+
+    .line 1214
     return-object p0
 .end method
 
@@ -556,15 +873,15 @@
     .parameter "value"
 
     .prologue
-    .line 707
+    .line 1158
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasRestriction:Z
 
-    .line 708
+    .line 1159
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->restriction_:I
 
-    .line 709
+    .line 1160
     return-object p0
 .end method
 
@@ -573,26 +890,26 @@
     .parameter "value"
 
     .prologue
-    .line 758
+    .line 1262
     if-nez p1, :cond_8
 
-    .line 759
+    .line 1263
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 761
+    .line 1265
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasRule:Z
 
-    .line 762
+    .line 1266
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->rule_:Lcom/google/android/finsky/remoting/protos/FilterRules$Rule;
 
-    .line 763
+    .line 1267
     return-object p0
 .end method
 
@@ -606,14 +923,14 @@
     .end annotation
 
     .prologue
-    .line 826
+    .line 1357
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasRestriction()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 827
+    .line 1358
     const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getRestriction()I
@@ -622,7 +939,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 829
+    .line 1360
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasOfferType()Z
 
@@ -630,7 +947,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 830
+    .line 1361
     const/4 v2, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getOfferType()I
@@ -639,7 +956,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 832
+    .line 1363
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasRule()Z
 
@@ -647,7 +964,7 @@
 
     if-eqz v2, :cond_2a
 
-    .line 833
+    .line 1364
     const/4 v2, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getRule()Lcom/google/android/finsky/remoting/protos/FilterRules$Rule;
@@ -656,7 +973,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 835
+    .line 1366
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getPerDeviceAvailabilityRestrictionList()Ljava/util/List;
 
@@ -680,7 +997,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
 
-    .line 836
+    .line 1367
     .local v0, element:Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
     const/16 v2, 0x9
 
@@ -688,7 +1005,7 @@
 
     goto :goto_32
 
-    .line 838
+    .line 1369
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
     :cond_44
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasAvailableIfOwned()Z
@@ -697,7 +1014,7 @@
 
     if-eqz v2, :cond_53
 
-    .line 839
+    .line 1370
     const/16 v2, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getAvailableIfOwned()Z
@@ -706,7 +1023,73 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 841
+    .line 1372
     :cond_53
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getInstallList()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_5b
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_6d
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/remoting/protos/Common$Install;
+
+    .line 1373
+    .local v0, element:Lcom/google/android/finsky/remoting/protos/Common$Install;
+    const/16 v2, 0xe
+
+    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    goto :goto_5b
+
+    .line 1375
+    .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Common$Install;
+    :cond_6d
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasFilterInfo()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_7c
+
+    .line 1376
+    const/16 v2, 0x10
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getFilterInfo()Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 1378
+    :cond_7c
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->hasOwnershipInfo()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_8b
+
+    .line 1379
+    const/16 v2, 0x11
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;->getOwnershipInfo()Lcom/google/android/finsky/remoting/protos/Common$OwnershipInfo;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 1381
+    :cond_8b
     return-void
 .end method

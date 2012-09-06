@@ -1,80 +1,112 @@
-.class Lcom/google/googlenav/by;
-.super Lax/bu;
+.class Lcom/google/googlenav/bY;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Comparable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/bw;
+.field private final a:I
+
+.field private final b:Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/bw;Lcom/google/googlenav/ui/wizard/hM;Lcom/google/googlenav/android/ac;Lax/bq;)V
-    .registers 5
+.method public constructor <init>(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+    .registers 4
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/by;->a:Lcom/google/googlenav/bw;
+    .prologue
+    const/4 v1, 0x1
 
-    invoke-direct {p0, p2, p3, p4}, Lax/bu;-><init>(Lcom/google/googlenav/ui/wizard/hM;Lcom/google/googlenav/android/ac;Lax/bq;)V
+    .line 1060
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1061
+    invoke-virtual {p1, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/googlenav/bY;->a:I
+
+    .line 1063
+    const/4 v0, 0x2
+
+    invoke-virtual {p1, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getProtoBuf(I)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getProtoBuf(I)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/googlenav/bY;->b:Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    .line 1065
     return-void
 .end method
 
-.method static synthetic a(Lcom/google/googlenav/by;)Lax/bq;
+.method static synthetic b(Lcom/google/googlenav/bY;)I
     .registers 2
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/by;->d:Lax/bq;
+    .prologue
+    .line 1051
+    iget v0, p0, Lcom/google/googlenav/bY;->a:I
 
-    return-object v0
+    return v0
 .end method
 
-.method static synthetic b(Lcom/google/googlenav/by;)Lax/bq;
+.method static synthetic c(Lcom/google/googlenav/bY;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
     .registers 2
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/by;->d:Lax/bq;
+    .prologue
+    .line 1051
+    iget-object v0, p0, Lcom/google/googlenav/bY;->b:Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public a()V
+.method public a(Lcom/google/googlenav/bY;)I
     .registers 6
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/by;->b:Lcom/google/googlenav/ui/wizard/hM;
+    .prologue
+    .line 1069
+    iget-object v0, p0, Lcom/google/googlenav/bY;->b:Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hM;->j()V
+    invoke-static {v0}, Lcom/google/googlenav/ui/bi;->d(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)J
 
-    const/16 v0, 0x55
+    move-result-wide v0
 
-    const-string v1, "os"
+    iget-object v2, p1, Lcom/google/googlenav/bY;->b:Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    const/4 v2, 0x1
+    invoke-static {v2}, Lcom/google/googlenav/ui/bi;->d(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)J
 
-    new-array v2, v2, [Ljava/lang/String;
+    move-result-wide v2
 
-    const/4 v3, 0x0
+    invoke-static {v0, v1, v2, v3}, LJ/b;->a(JJ)I
 
-    const-string v4, "s=a"
+    move-result v0
 
-    aput-object v4, v2, v3
+    return v0
+.end method
 
-    invoke-static {v2}, Laf/m;->a([Ljava/lang/String;)Ljava/lang/String;
+.method public synthetic compareTo(Ljava/lang/Object;)I
+    .registers 3
+    .parameter
 
-    move-result-object v2
+    .prologue
+    .line 1051
+    check-cast p1, Lcom/google/googlenav/bY;
 
-    invoke-static {v0, v1, v2}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
+    invoke-virtual {p0, p1}, Lcom/google/googlenav/bY;->a(Lcom/google/googlenav/bY;)I
 
-    iget-object v0, p0, Lcom/google/googlenav/by;->b:Lcom/google/googlenav/ui/wizard/hM;
+    move-result v0
 
-    iget-object v1, p0, Lcom/google/googlenav/by;->a:Lcom/google/googlenav/bw;
-
-    invoke-static {v1}, Lcom/google/googlenav/bw;->a(Lcom/google/googlenav/bw;)Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Lcom/google/googlenav/bz;
-
-    invoke-direct {v2, p0}, Lcom/google/googlenav/bz;-><init>(Lcom/google/googlenav/by;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/googlenav/ui/wizard/hM;->a(Ljava/lang/String;Lcom/google/googlenav/ui/wizard/bY;)V
-
-    return-void
+    return v0
 .end method

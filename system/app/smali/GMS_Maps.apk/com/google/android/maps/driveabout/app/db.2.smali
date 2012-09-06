@@ -1,316 +1,117 @@
-.class public Lcom/google/android/maps/driveabout/app/db;
-.super Landroid/app/Dialog;
-
-
-# instance fields
-.field private final a:I
-
-.field private final b:I
-
-.field private final c:Landroid/widget/ListAdapter;
-
-.field private d:Lcom/google/android/maps/driveabout/app/dd;
+.class public Lcom/google/android/maps/driveabout/app/dB;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/view/View;Landroid/widget/ListAdapter;)V
-    .registers 7
-
-    const v0, 0x7f0d000a
-
-    invoke-direct {p0, p1, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [I
-
-    invoke-virtual {p2, v0}, Landroid/view/View;->getLocationOnScreen([I)V
-
-    const/4 v1, 0x0
-
-    aget v1, v0, v1
-
-    invoke-virtual {p2}, Landroid/view/View;->getWidth()I
-
-    move-result v2
-
-    div-int/lit8 v2, v2, 0x2
-
-    add-int/2addr v1, v2
-
-    iput v1, p0, Lcom/google/android/maps/driveabout/app/db;->a:I
-
-    const/4 v1, 0x1
-
-    aget v0, v0, v1
-
-    invoke-virtual {p2}, Landroid/view/View;->getHeight()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, Lcom/google/android/maps/driveabout/app/db;->b:I
-
-    iput-object p3, p0, Lcom/google/android/maps/driveabout/app/db;->c:Landroid/widget/ListAdapter;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public a(Lcom/google/android/maps/driveabout/app/dd;)V
+.method public static a(Landroid/view/Window;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/db;->d:Lcom/google/android/maps/driveabout/app/dd;
+    .prologue
+    .line 268
+    const/4 v0, 0x1
 
+    invoke-static {p0, v0}, Lcom/google/android/maps/driveabout/app/dB;->a(Landroid/view/Window;Z)V
+
+    .line 269
     return-void
 .end method
 
-.method protected a(Ljava/lang/Object;)V
-    .registers 3
+.method public static a(Landroid/view/Window;Z)V
+    .registers 6
+    .parameter
+    .parameter
 
-    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/app/db;->dismiss()V
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/db;->d:Lcom/google/android/maps/driveabout/app/dd;
-
-    if-eqz v0, :cond_c
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/db;->d:Lcom/google/android/maps/driveabout/app/dd;
-
-    invoke-interface {v0, p1}, Lcom/google/android/maps/driveabout/app/dd;->a(Ljava/lang/Object;)V
-
-    :cond_c
-    return-void
-.end method
-
-.method protected onCreate(Landroid/os/Bundle;)V
-    .registers 9
-
-    const/4 v3, -0x2
-
-    const/4 v1, 0x0
-
-    const v0, 0x7f03003c
-
-    invoke-virtual {p0, v0}, Lcom/google/android/maps/driveabout/app/db;->setContentView(I)V
-
-    const v0, 0x7f0f00fd
-
-    invoke-virtual {p0, v0}, Lcom/google/android/maps/driveabout/app/db;->findViewById(I)Landroid/view/View;
+    .prologue
+    .line 279
+    invoke-virtual {p0}, Landroid/view/Window;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/ListView;
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    new-instance v2, Lcom/google/android/maps/driveabout/app/dc;
+    move-result-object v0
 
-    invoke-direct {v2, p0}, Lcom/google/android/maps/driveabout/app/dc;-><init>(Lcom/google/android/maps/driveabout/app/db;)V
-
-    invoke-virtual {v0, v2}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
-
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/db;->c:Landroid/widget/ListAdapter;
-
-    if-eqz v2, :cond_22
-
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/db;->c:Landroid/widget/ListAdapter;
-
-    invoke-virtual {v0, v2}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
-
-    :cond_22
-    const v0, 0x7f0f00fb
-
-    invoke-virtual {p0, v0}, Lcom/google/android/maps/driveabout/app/db;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v3, v3}, Landroid/view/View;->measure(II)V
-
-    invoke-virtual {v2}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v0
-
-    invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v3
-
-    invoke-virtual {v2, v1, v1, v0, v3}, Landroid/view/View;->layout(IIII)V
-
-    const v0, 0x7f0f008e
-
-    invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_af
-
-    invoke-virtual {v3}, Landroid/view/View;->getRight()I
-
-    move-result v0
-
-    invoke-virtual {v3}, Landroid/view/View;->getLeft()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    div-int/lit8 v0, v0, 0x2
-
-    :goto_4b
-    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/app/db;->getWindow()Landroid/view/Window;
+    .line 281
+    invoke-virtual {p0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    .line 282
+    const v2, 0x7f0b00eb
 
-    move-result-object v4
-
-    invoke-virtual {v2}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v5
-
-    iput v5, v4, Landroid/view/WindowManager$LayoutParams;->width:I
-
-    invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
+    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    iput v2, v4, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->width:I
 
-    iget v2, p0, Lcom/google/android/maps/driveabout/app/db;->a:I
+    .line 284
+    if-eqz p1, :cond_22
 
-    sub-int v0, v2, v0
+    .line 285
+    const v2, 0x7f0b00ec
 
-    iput v0, v4, Landroid/view/WindowManager$LayoutParams;->x:I
-
-    iget v0, p0, Lcom/google/android/maps/driveabout/app/db;->b:I
-
-    iput v0, v4, Landroid/view/WindowManager$LayoutParams;->y:I
-
-    new-instance v0, Landroid/util/DisplayMetrics;
-
-    invoke-direct {v0}, Landroid/util/DisplayMetrics;-><init>()V
-
-    invoke-virtual {v1}, Landroid/view/Window;->getWindowManager()Landroid/view/WindowManager;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
-
-    iget v0, v0, Landroid/util/DisplayMetrics;->widthPixels:I
-
-    if-eqz v3, :cond_9f
-
-    iget v2, v4, Landroid/view/WindowManager$LayoutParams;->x:I
-
-    iget v5, v4, Landroid/view/WindowManager$LayoutParams;->width:I
-
-    add-int/2addr v2, v5
-
-    if-le v2, v0, :cond_9f
-
-    invoke-virtual {v3}, Landroid/view/View;->getPaddingLeft()I
+    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    iget v5, v4, Landroid/view/WindowManager$LayoutParams;->x:I
+    .line 288
+    if-eqz v2, :cond_44
 
-    iget v6, v4, Landroid/view/WindowManager$LayoutParams;->width:I
+    .line 289
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->height:I
 
-    add-int/2addr v5, v6
+    .line 295
+    :cond_22
+    :goto_22
+    const v2, 0x7f0b00ee
 
-    sub-int v0, v5, v0
-
-    add-int/2addr v0, v2
-
-    invoke-virtual {v3}, Landroid/view/View;->getPaddingTop()I
+    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    invoke-virtual {v3}, Landroid/view/View;->getPaddingRight()I
+    .line 296
+    const v3, 0x7f0b00ed
 
-    move-result v5
+    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    invoke-virtual {v3}, Landroid/view/View;->getPaddingBottom()I
+    move-result v0
 
-    move-result v6
+    .line 298
+    const/16 v3, 0x30
 
-    invoke-virtual {v3, v0, v2, v5, v6}, Landroid/view/View;->setPadding(IIII)V
+    iput v3, v1, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    :cond_9f
-    const/16 v0, 0x33
+    .line 299
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    iput v0, v4, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    .line 304
+    if-eqz v0, :cond_40
 
-    iget v0, v4, Landroid/view/WindowManager$LayoutParams;->flags:I
+    .line 305
+    iget v2, v1, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    const v2, 0x20100
+    or-int/lit8 v2, v2, 0x3
 
-    or-int/2addr v0, v2
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    iput v0, v4, Landroid/view/WindowManager$LayoutParams;->flags:I
+    .line 306
+    iput v0, v1, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    invoke-virtual {v1, v4}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+    .line 309
+    :cond_40
+    invoke-virtual {p0, v1}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
+    .line 310
     return-void
 
-    :cond_af
-    move v0, v1
+    .line 291
+    :cond_44
+    const/4 v2, -0x1
 
-    goto :goto_4b
-.end method
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->height:I
 
-.method public onKeyDown(ILandroid/view/KeyEvent;)Z
-    .registers 4
-
-    invoke-super {p0, p1, p2}, Landroid/app/Dialog;->onKeyDown(ILandroid/view/KeyEvent;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_7
-
-    :goto_6
-    return v0
-
-    :cond_7
-    const/16 v0, 0x13
-
-    if-ne p1, v0, :cond_10
-
-    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/app/db;->cancel()V
-
-    const/4 v0, 0x1
-
-    goto :goto_6
-
-    :cond_10
-    const/4 v0, 0x0
-
-    goto :goto_6
-.end method
-
-.method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 3
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v0
-
-    if-nez v0, :cond_b
-
-    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/app/db;->cancel()V
-
-    const/4 v0, 0x1
-
-    :goto_a
-    return v0
-
-    :cond_b
-    const/4 v0, 0x0
-
-    goto :goto_a
+    goto :goto_22
 .end method

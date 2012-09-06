@@ -9,10 +9,10 @@
     .parameter "in"
 
     .prologue
-    .line 41
+    .line 40
     invoke-direct {p0, p1}, Lorg/apache/commons/io/input/ProxyInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 42
+    .line 41
     return-void
 .end method
 
@@ -22,13 +22,13 @@
     .registers 2
 
     .prologue
-    .line 50
+    .line 49
     new-instance v0, Lorg/apache/commons/io/input/ClosedInputStream;
 
     invoke-direct {v0}, Lorg/apache/commons/io/input/ClosedInputStream;-><init>()V
 
     iput-object v0, p0, Lorg/apache/commons/io/input/CloseShieldInputStream;->in:Ljava/io/InputStream;
 
-    .line 51
+    .line 50
     return-void
 .end method

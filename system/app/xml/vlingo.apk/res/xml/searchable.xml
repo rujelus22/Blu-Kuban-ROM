@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<searchable android:label="@string/search_label" android:hint="@string/search_hint" android:searchMode="queryRewriteFromData" android:searchSuggestAuthority="com.vlingo.client.samsung.typedrequests.provider.VlingoSuggestionProvider" android:searchSuggestSelection=" ?" android:searchSuggestIntentAction="execute_search" android:searchButtonText="@string/searchable_button_title" android:imeOptions="actionGo" android:searchSuggestThreshold="0" android:queryAfterZeroResults="true"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -29,15 +29,15 @@
     .end annotation
 
     .prologue
-    .line 470
+    .line 345
     invoke-direct {p0, p1}, Lcom/android/exchange/adapter/Parser;-><init>(Ljava/io/InputStream;)V
 
-    .line 467
+    .line 342
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->mEstimate:I
 
-    .line 471
+    .line 346
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .parameter "x0"
 
     .prologue
-    .line 464
+    .line 339
     iget v0, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->mEstimate:I
 
     return v0
@@ -63,7 +63,7 @@
     .end annotation
 
     .prologue
-    .line 476
+    .line 351
     :goto_0
     const/4 v0, 0x0
 
@@ -75,25 +75,25 @@
 
     if-eq v0, v1, :cond_16
 
-    .line 477
-    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 352
+    iget v0, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->tag:I
 
     const/16 v1, 0x185
 
     if-ne v0, v1, :cond_12
 
-    .line 478
+    .line 353
     invoke-virtual {p0}, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->parseGetItemEstimate()V
 
     goto :goto_0
 
-    .line 480
+    .line 355
     :cond_12
     invoke-virtual {p0}, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->skipTag()V
 
     goto :goto_0
 
-    .line 483
+    .line 358
     :cond_16
     const/4 v0, 0x1
 
@@ -109,7 +109,7 @@
     .end annotation
 
     .prologue
-    .line 509
+    .line 384
     :goto_0
     const/16 v0, 0x188
 
@@ -121,14 +121,14 @@
 
     if-eq v0, v1, :cond_7a
 
-    .line 510
-    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 385
+    iget v0, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->tag:I
 
     const/16 v1, 0x189
 
     if-ne v0, v1, :cond_2c
 
-    .line 511
+    .line 386
     const-string v0, "GetItemEstimateParser"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -157,15 +157,15 @@
 
     goto :goto_0
 
-    .line 512
+    .line 387
     :cond_2c
-    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->tag:I
 
     const/16 v1, 0x18a
 
     if-ne v0, v1, :cond_4f
 
-    .line 513
+    .line 388
     const-string v0, "GetItemEstimateParser"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -194,22 +194,22 @@
 
     goto :goto_0
 
-    .line 514
+    .line 389
     :cond_4f
-    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->tag:I
 
     const/16 v1, 0x18c
 
     if-ne v0, v1, :cond_76
 
-    .line 515
+    .line 390
     invoke-virtual {p0}, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->getValueInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->mEstimate:I
 
-    .line 516
+    .line 391
     const-string v0, "GetItemEstimateParser"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -236,13 +236,13 @@
 
     goto :goto_0
 
-    .line 518
+    .line 393
     :cond_76
     invoke-virtual {p0}, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->skipTag()V
 
     goto :goto_0
 
-    .line 521
+    .line 396
     :cond_7a
     return-void
 .end method
@@ -256,7 +256,7 @@
     .end annotation
 
     .prologue
-    .line 487
+    .line 362
     :goto_0
     const/16 v0, 0x185
 
@@ -268,25 +268,25 @@
 
     if-eq v0, v1, :cond_17
 
-    .line 488
-    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 363
+    iget v0, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->tag:I
 
     const/16 v1, 0x18d
 
     if-ne v0, v1, :cond_13
 
-    .line 489
+    .line 364
     invoke-virtual {p0}, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->parseResponse()V
 
     goto :goto_0
 
-    .line 491
+    .line 366
     :cond_13
     invoke-virtual {p0}, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->skipTag()V
 
     goto :goto_0
 
-    .line 494
+    .line 369
     :cond_17
     return-void
 .end method
@@ -300,7 +300,7 @@
     .end annotation
 
     .prologue
-    .line 497
+    .line 372
     :goto_0
     const/16 v0, 0x18d
 
@@ -312,14 +312,14 @@
 
     if-eq v0, v1, :cond_3a
 
-    .line 498
-    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 373
+    iget v0, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->tag:I
 
     const/16 v1, 0x18e
 
     if-ne v0, v1, :cond_2c
 
-    .line 499
+    .line 374
     const-string v0, "GetItemEstimateParser"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -348,26 +348,26 @@
 
     goto :goto_0
 
-    .line 500
+    .line 375
     :cond_2c
-    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->tag:I
 
     const/16 v1, 0x188
 
     if-ne v0, v1, :cond_36
 
-    .line 501
+    .line 376
     invoke-virtual {p0}, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->parseCollection()V
 
     goto :goto_0
 
-    .line 503
+    .line 378
     :cond_36
     invoke-virtual {p0}, Lcom/android/exchange/adapter/EmailSyncAdapter$GetItemEstimateParser;->skipTag()V
 
     goto :goto_0
 
-    .line 506
+    .line 381
     :cond_3a
     return-void
 .end method

@@ -26,7 +26,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2868
+    .line 2854
     iput-object p1, p0, Lcom/samsung/client/DMApp$8;->this$0:Lcom/samsung/client/DMApp;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
@@ -40,19 +40,19 @@
     .registers 4
 
     .prologue
-    .line 2874
+    .line 2860
     const-string v1, "DMApp"
 
     const-string v2, "sendStatusRetry:onFinish"
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2875
+    .line 2861
     const/4 v1, 0x2
 
     invoke-static {v1}, Lcom/samsung/client/DMApp;->access$2102(I)I
 
-    .line 2877
+    .line 2863
     :try_start_b
     invoke-static {}, Lcom/samsung/client/DMApp;->access$500()Lcom/samsung/client/ISyncmlService;
 
@@ -60,7 +60,7 @@
 
     if-eqz v1, :cond_18
 
-    .line 2886
+    .line 2872
     invoke-static {}, Lcom/samsung/client/DMApp;->access$500()Lcom/samsung/client/ISyncmlService;
 
     move-result-object v1
@@ -69,16 +69,16 @@
     :try_end_18
     .catch Landroid/os/RemoteException; {:try_start_b .. :try_end_18} :catch_19
 
-    .line 2891
+    .line 2877
     :cond_18
     :goto_18
     return-void
 
-    .line 2888
+    .line 2874
     :catch_19
     move-exception v0
 
-    .line 2889
+    .line 2875
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "DMApp"
 
@@ -96,6 +96,6 @@
     .parameter "millisUntilFinished"
 
     .prologue
-    .line 2871
+    .line 2857
     return-void
 .end method

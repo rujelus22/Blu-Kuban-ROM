@@ -4,5 +4,11 @@
 
 
 # virtual methods
-.method public abstract a(Lcom/google/android/youtube/googlemobile/masf/a/m;Z)V
+.method public abstract a()V
+.end method
+
+.method public abstract a(Ljava/lang/String;Lcom/google/android/youtube/core/async/l;)V
+.end method
+
+.method public abstract a(Z)V
 .end method

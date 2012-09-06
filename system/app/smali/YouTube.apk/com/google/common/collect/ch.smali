@@ -1,77 +1,105 @@
 .class final Lcom/google/common/collect/ch;
-.super Lcom/google/common/collect/gf;
+.super Ljava/util/AbstractCollection;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Ljava/util/Iterator;
+.field final a:Ljava/util/Collection;
 
-.field final synthetic b:Lcom/google/common/collect/ImmutableMultiset$EntrySet;
+.field final b:Lcom/google/common/base/v;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/ImmutableMultiset$EntrySet;Ljava/util/Iterator;)V
-    .registers 3
+.method constructor <init>(Ljava/util/Collection;Lcom/google/common/base/v;)V
+    .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 293
-    iput-object p1, p0, Lcom/google/common/collect/ch;->b:Lcom/google/common/collect/ImmutableMultiset$EntrySet;
+    .line 270
+    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
 
-    iput-object p2, p0, Lcom/google/common/collect/ch;->a:Ljava/util/Iterator;
+    .line 271
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {p0}, Lcom/google/common/collect/gf;-><init>()V
+    move-result-object v0
 
+    check-cast v0, Ljava/util/Collection;
+
+    iput-object v0, p0, Lcom/google/common/collect/ch;->a:Ljava/util/Collection;
+
+    .line 272
+    invoke-static {p2}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/common/base/v;
+
+    iput-object v0, p0, Lcom/google/common/collect/ch;->b:Lcom/google/common/base/v;
+
+    .line 273
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
+.method public final clear()V
     .registers 2
 
     .prologue
-    .line 295
-    iget-object v0, p0, Lcom/google/common/collect/ch;->a:Ljava/util/Iterator;
+    .line 276
+    iget-object v0, p0, Lcom/google/common/collect/ch;->a:Ljava/util/Collection;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0}, Ljava/util/Collection;->clear()V
+
+    .line 277
+    return-void
+.end method
+
+.method public final isEmpty()Z
+    .registers 2
+
+    .prologue
+    .line 280
+    iget-object v0, p0, Lcom/google/common/collect/ch;->a:Ljava/util/Collection;
+
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final synthetic next()Ljava/lang/Object;
+.method public final iterator()Ljava/util/Iterator;
     .registers 3
 
     .prologue
-    .line 293
-    iget-object v0, p0, Lcom/google/common/collect/ch;->a:Ljava/util/Iterator;
+    .line 284
+    iget-object v0, p0, Lcom/google/common/collect/ch;->a:Ljava/util/Collection;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    iget-object v1, p0, Lcom/google/common/collect/ch;->b:Lcom/google/common/base/v;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-static {v1, v0}, Lcom/google/common/collect/Multisets;->a(Ljava/lang/Object;I)Lcom/google/common/collect/fk;
+    invoke-static {v0, v1}, Lcom/google/common/collect/ee;->a(Ljava/util/Iterator;Lcom/google/common/base/v;)Ljava/util/Iterator;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public final size()I
+    .registers 2
+
+    .prologue
+    .line 288
+    iget-object v0, p0, Lcom/google/common/collect/ch;->a:Ljava/util/Collection;
+
+    invoke-interface {v0}, Ljava/util/Collection;->size()I
+
+    move-result v0
+
+    return v0
 .end method

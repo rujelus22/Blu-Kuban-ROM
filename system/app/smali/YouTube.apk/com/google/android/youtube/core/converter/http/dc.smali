@@ -1,69 +1,58 @@
-.class final Lcom/google/android/youtube/core/converter/http/dc;
-.super Lcom/google/android/youtube/core/converter/l;
+.class public final Lcom/google/android/youtube/core/converter/http/dc;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/youtube/core/converter/a;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/converter/http/cv;
+.field private final a:Lcom/google/android/youtube/core/converter/http/HttpMethod;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/core/converter/http/cv;)V
-    .registers 2
+.method public constructor <init>(Lcom/google/android/youtube/core/converter/http/HttpMethod;)V
+    .registers 3
     .parameter
 
     .prologue
-    .line 47
-    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/dc;->a:Lcom/google/android/youtube/core/converter/http/cv;
+    .line 19
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
+    .line 20
+    const-string v0, "method can\'t be null"
 
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/core/converter/http/HttpMethod;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/converter/http/dc;->a:Lcom/google/android/youtube/core/converter/http/HttpMethod;
+
+    .line 21
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
-    .registers 6
-    .parameter
-    .parameter
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
     .parameter
 
     .prologue
-    .line 50
-    const-class v0, Lcom/google/android/youtube/core/model/p;
+    .line 15
+    check-cast p1, Landroid/net/Uri;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    const-string v0, "the uri can\'t be null"
+
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lcom/google/android/youtube/core/converter/http/dc;->a:Lcom/google/android/youtube/core/converter/http/HttpMethod;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/youtube/core/converter/http/HttpMethod;->createHttpRequest(Landroid/net/Uri;)Lorg/apache/http/client/methods/HttpUriRequest;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/p;
-
-    .line 52
-    :try_start_8
-    invoke-virtual {p3}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->c(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/p;->a(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/p;
-    :try_end_13
-    .catch Ljava/net/MalformedURLException; {:try_start_8 .. :try_end_13} :catch_14
-
-    .line 56
-    :goto_13
-    return-void
-
-    .line 54
-    :catch_14
-    move-exception v0
-
-    const-string v0, "Badly formed impression uri - ignoring"
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/L;->c(Ljava/lang/String;)V
-
-    goto :goto_13
+    return-object v0
 .end method

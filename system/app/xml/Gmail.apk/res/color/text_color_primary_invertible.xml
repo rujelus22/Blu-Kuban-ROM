@@ -3,5 +3,5 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_enabled="false" android:color="#ff999999" />
     <item android:color="@android:color/white" android:state_activated="true" />
-    <item android:color="@android:color/black" />
+    <item android:color="@android:color/primary_text_dark" />
 </selector>

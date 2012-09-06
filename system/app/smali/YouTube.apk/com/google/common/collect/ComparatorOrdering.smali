@@ -20,11 +20,11 @@
     .parameter
 
     .prologue
-    .line 34
+    .line 35
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
-    .line 35
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 36
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -32,7 +32,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/ComparatorOrdering;->comparator:Ljava/util/Comparator;
 
-    .line 36
+    .line 37
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .parameter
 
     .prologue
-    .line 44
+    .line 45
     iget-object v0, p0, Lcom/google/common/collect/ComparatorOrdering;->comparator:Ljava/util/Comparator;
 
     invoke-static {p1, p2, v0}, Ljava/util/Collections;->binarySearch(Ljava/util/List;Ljava/lang/Object;Ljava/util/Comparator;)I
@@ -60,7 +60,7 @@
     .parameter
 
     .prologue
-    .line 39
+    .line 40
     iget-object v0, p0, Lcom/google/common/collect/ComparatorOrdering;->comparator:Ljava/util/Comparator;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
@@ -73,28 +73,31 @@
 .method public final equals(Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 55
+    .line 56
     if-ne p1, p0, :cond_4
 
-    .line 56
+    .line 57
     const/4 v0, 0x1
 
-    .line 62
+    .line 63
     :goto_3
     return v0
 
-    .line 58
+    .line 59
     :cond_4
     instance-of v0, p1, Lcom/google/common/collect/ComparatorOrdering;
 
     if-eqz v0, :cond_13
 
-    .line 59
+    .line 60
     check-cast p1, Lcom/google/common/collect/ComparatorOrdering;
 
-    .line 60
+    .line 61
     iget-object v0, p0, Lcom/google/common/collect/ComparatorOrdering;->comparator:Ljava/util/Comparator;
 
     iget-object v1, p1, Lcom/google/common/collect/ComparatorOrdering;->comparator:Ljava/util/Comparator;
@@ -105,7 +108,7 @@
 
     goto :goto_3
 
-    .line 62
+    .line 63
     :cond_13
     const/4 v0, 0x0
 
@@ -116,7 +119,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 67
     iget-object v0, p0, Lcom/google/common/collect/ComparatorOrdering;->comparator:Ljava/util/Comparator;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -131,17 +134,17 @@
     .parameter
 
     .prologue
-    .line 49
+    .line 50
     invoke-static {p1}, Lcom/google/common/collect/Lists;->a(Ljava/lang/Iterable;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 50
+    .line 51
     iget-object v1, p0, Lcom/google/common/collect/ComparatorOrdering;->comparator:Ljava/util/Comparator;
 
     invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 51
+    .line 52
     return-object v0
 .end method
 
@@ -149,7 +152,7 @@
     .registers 2
 
     .prologue
-    .line 70
+    .line 71
     iget-object v0, p0, Lcom/google/common/collect/ComparatorOrdering;->comparator:Ljava/util/Comparator;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;

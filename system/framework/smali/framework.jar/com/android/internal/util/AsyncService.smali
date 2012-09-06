@@ -16,7 +16,7 @@
 
 .field public static final CMD_ASYNC_SERVICE_ON_START_INTENT:I = 0xffffff
 
-.field protected static final DBG:Z = true
+.field protected static final DBG:Z = false
 
 .field private static final TAG:Ljava/lang/String; = "AsyncService"
 

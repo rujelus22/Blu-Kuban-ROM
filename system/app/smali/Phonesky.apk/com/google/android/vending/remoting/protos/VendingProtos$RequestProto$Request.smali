@@ -161,117 +161,117 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 24018
+    .line 24627
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 24023
+    .line 24632
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->requestSpecificProperties_:Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;
 
-    .line 24043
+    .line 24652
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->assetRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;
 
-    .line 24063
+    .line 24672
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->commentsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$CommentsRequestProto;
 
-    .line 24083
+    .line 24692
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->modifyCommentRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;
 
-    .line 24103
+    .line 24712
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->purchasePostRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto;
 
-    .line 24123
+    .line 24732
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->purchaseOrderRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;
 
-    .line 24143
+    .line 24752
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->contentSyncRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;
 
-    .line 24163
+    .line 24772
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getAssetRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;
 
-    .line 24183
+    .line 24792
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getImageRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;
 
-    .line 24203
+    .line 24812
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->refundRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$RefundRequestProto;
 
-    .line 24223
+    .line 24832
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->purchaseMetadataRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;
 
-    .line 24243
+    .line 24852
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->subCategoriesRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;
 
-    .line 24263
+    .line 24872
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->uninstallReasonRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;
 
-    .line 24283
+    .line 24892
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->rateCommentRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$RateCommentRequestProto;
 
-    .line 24303
+    .line 24912
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->checkLicenseRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;
 
-    .line 24323
+    .line 24932
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getMarketMetadataRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;
 
-    .line 24343
+    .line 24952
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getCategoriesRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesRequestProto;
 
-    .line 24363
+    .line 24972
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getCarrierInfoRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoRequestProto;
 
-    .line 24383
+    .line 24992
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->removeAssetRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;
 
-    .line 24403
+    .line 25012
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->restoreApplicationsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;
 
-    .line 24423
+    .line 25032
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->querySuggestionRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;
 
-    .line 24443
+    .line 25052
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->billingEventRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;
 
-    .line 24463
+    .line 25072
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->paypalPreapprovalRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;
 
-    .line 24483
+    .line 25092
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->paypalPreapprovalDetailsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalDetailsRequestProto;
 
-    .line 24503
+    .line 25112
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->paypalCreateAccountRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCreateAccountRequestProto;
 
-    .line 24523
+    .line 25132
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->paypalPreapprovalCredentialsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalCredentialsRequestProto;
 
-    .line 24543
+    .line 25152
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->inAppRestoreTransactionsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;
 
-    .line 24563
+    .line 25172
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->inAppPurchaseInformationRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
 
-    .line 24583
+    .line 25192
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->checkForNotificationsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsRequestProto;
 
-    .line 24603
+    .line 25212
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->ackNotificationsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;
 
-    .line 24623
+    .line 25232
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->purchaseProductRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;
 
-    .line 24643
+    .line 25252
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->reconstructDatabaseRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;
 
-    .line 24663
+    .line 25272
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->paypalMassageAddressRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;
 
-    .line 24683
+    .line 25292
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getAddressSnippetRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetRequestProto;
 
-    .line 24921
+    .line 25531
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->cachedSize:I
 
-    .line 24018
+    .line 24627
     return-void
 .end method
 
@@ -281,7 +281,7 @@
     .registers 2
 
     .prologue
-    .line 24605
+    .line 25214
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->ackNotificationsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;
 
     return-object v0
@@ -291,7 +291,7 @@
     .registers 2
 
     .prologue
-    .line 24045
+    .line 24654
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->assetRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;
 
     return-object v0
@@ -301,7 +301,7 @@
     .registers 2
 
     .prologue
-    .line 24445
+    .line 25054
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->billingEventRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;
 
     return-object v0
@@ -311,15 +311,15 @@
     .registers 2
 
     .prologue
-    .line 24923
+    .line 25534
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 24925
+    .line 25536
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getSerializedSize()I
 
-    .line 24927
+    .line 25538
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->cachedSize:I
 
@@ -330,7 +330,7 @@
     .registers 2
 
     .prologue
-    .line 24585
+    .line 25194
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->checkForNotificationsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsRequestProto;
 
     return-object v0
@@ -340,7 +340,7 @@
     .registers 2
 
     .prologue
-    .line 24305
+    .line 24914
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->checkLicenseRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;
 
     return-object v0
@@ -350,7 +350,7 @@
     .registers 2
 
     .prologue
-    .line 24065
+    .line 24674
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->commentsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$CommentsRequestProto;
 
     return-object v0
@@ -360,7 +360,7 @@
     .registers 2
 
     .prologue
-    .line 24145
+    .line 24754
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->contentSyncRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;
 
     return-object v0
@@ -370,7 +370,7 @@
     .registers 2
 
     .prologue
-    .line 24685
+    .line 25294
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getAddressSnippetRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetRequestProto;
 
     return-object v0
@@ -380,7 +380,7 @@
     .registers 2
 
     .prologue
-    .line 24165
+    .line 24774
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getAssetRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;
 
     return-object v0
@@ -390,7 +390,7 @@
     .registers 2
 
     .prologue
-    .line 24365
+    .line 24974
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getCarrierInfoRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoRequestProto;
 
     return-object v0
@@ -400,7 +400,7 @@
     .registers 2
 
     .prologue
-    .line 24345
+    .line 24954
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getCategoriesRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesRequestProto;
 
     return-object v0
@@ -410,7 +410,7 @@
     .registers 2
 
     .prologue
-    .line 24185
+    .line 24794
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getImageRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;
 
     return-object v0
@@ -420,7 +420,7 @@
     .registers 2
 
     .prologue
-    .line 24325
+    .line 24934
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getMarketMetadataRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;
 
     return-object v0
@@ -430,7 +430,7 @@
     .registers 2
 
     .prologue
-    .line 24565
+    .line 25174
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->inAppPurchaseInformationRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
 
     return-object v0
@@ -440,7 +440,7 @@
     .registers 2
 
     .prologue
-    .line 24545
+    .line 25154
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->inAppRestoreTransactionsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;
 
     return-object v0
@@ -450,7 +450,7 @@
     .registers 2
 
     .prologue
-    .line 24085
+    .line 24694
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->modifyCommentRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;
 
     return-object v0
@@ -460,7 +460,7 @@
     .registers 2
 
     .prologue
-    .line 24505
+    .line 25114
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->paypalCreateAccountRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCreateAccountRequestProto;
 
     return-object v0
@@ -470,7 +470,7 @@
     .registers 2
 
     .prologue
-    .line 24665
+    .line 25274
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->paypalMassageAddressRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;
 
     return-object v0
@@ -480,7 +480,7 @@
     .registers 2
 
     .prologue
-    .line 24525
+    .line 25134
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->paypalPreapprovalCredentialsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalCredentialsRequestProto;
 
     return-object v0
@@ -490,7 +490,7 @@
     .registers 2
 
     .prologue
-    .line 24485
+    .line 25094
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->paypalPreapprovalDetailsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalDetailsRequestProto;
 
     return-object v0
@@ -500,7 +500,7 @@
     .registers 2
 
     .prologue
-    .line 24465
+    .line 25074
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->paypalPreapprovalRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;
 
     return-object v0
@@ -510,7 +510,7 @@
     .registers 2
 
     .prologue
-    .line 24225
+    .line 24834
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->purchaseMetadataRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;
 
     return-object v0
@@ -520,7 +520,7 @@
     .registers 2
 
     .prologue
-    .line 24125
+    .line 24734
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->purchaseOrderRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;
 
     return-object v0
@@ -530,7 +530,7 @@
     .registers 2
 
     .prologue
-    .line 24105
+    .line 24714
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->purchasePostRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto;
 
     return-object v0
@@ -540,7 +540,7 @@
     .registers 2
 
     .prologue
-    .line 24625
+    .line 25234
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->purchaseProductRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;
 
     return-object v0
@@ -550,7 +550,7 @@
     .registers 2
 
     .prologue
-    .line 24425
+    .line 25034
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->querySuggestionRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;
 
     return-object v0
@@ -560,7 +560,7 @@
     .registers 2
 
     .prologue
-    .line 24285
+    .line 24894
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->rateCommentRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$RateCommentRequestProto;
 
     return-object v0
@@ -570,7 +570,7 @@
     .registers 2
 
     .prologue
-    .line 24645
+    .line 25254
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->reconstructDatabaseRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;
 
     return-object v0
@@ -580,7 +580,7 @@
     .registers 2
 
     .prologue
-    .line 24205
+    .line 24814
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->refundRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$RefundRequestProto;
 
     return-object v0
@@ -590,7 +590,7 @@
     .registers 2
 
     .prologue
-    .line 24385
+    .line 24994
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->removeAssetRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;
 
     return-object v0
@@ -600,7 +600,7 @@
     .registers 2
 
     .prologue
-    .line 24025
+    .line 24634
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->requestSpecificProperties_:Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;
 
     return-object v0
@@ -610,7 +610,7 @@
     .registers 2
 
     .prologue
-    .line 24405
+    .line 25014
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->restoreApplicationsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;
 
     return-object v0
@@ -620,10 +620,10 @@
     .registers 4
 
     .prologue
-    .line 24931
+    .line 25543
     const/4 v0, 0x0
 
-    .line 24932
+    .line 25544
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRequestSpecificProperties()Z
 
@@ -631,7 +631,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 24933
+    .line 25545
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getRequestSpecificProperties()Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;
@@ -644,7 +644,7 @@
 
     add-int/2addr v0, v1
 
-    .line 24936
+    .line 25548
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasAssetRequest()Z
 
@@ -652,7 +652,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 24937
+    .line 25549
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getAssetRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;
@@ -665,7 +665,7 @@
 
     add-int/2addr v0, v1
 
-    .line 24940
+    .line 25552
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasCommentsRequest()Z
 
@@ -673,7 +673,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 24941
+    .line 25553
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getCommentsRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$CommentsRequestProto;
@@ -686,7 +686,7 @@
 
     add-int/2addr v0, v1
 
-    .line 24944
+    .line 25556
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasModifyCommentRequest()Z
 
@@ -694,7 +694,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 24945
+    .line 25557
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getModifyCommentRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;
@@ -707,7 +707,7 @@
 
     add-int/2addr v0, v1
 
-    .line 24948
+    .line 25560
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPurchasePostRequest()Z
 
@@ -715,7 +715,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 24949
+    .line 25561
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPurchasePostRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto;
@@ -728,7 +728,7 @@
 
     add-int/2addr v0, v1
 
-    .line 24952
+    .line 25564
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPurchaseOrderRequest()Z
 
@@ -736,7 +736,7 @@
 
     if-eqz v1, :cond_62
 
-    .line 24953
+    .line 25565
     const/16 v1, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPurchaseOrderRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;
@@ -749,7 +749,7 @@
 
     add-int/2addr v0, v1
 
-    .line 24956
+    .line 25568
     :cond_62
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasContentSyncRequest()Z
 
@@ -757,7 +757,7 @@
 
     if-eqz v1, :cond_73
 
-    .line 24957
+    .line 25569
     const/16 v1, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getContentSyncRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;
@@ -770,7 +770,7 @@
 
     add-int/2addr v0, v1
 
-    .line 24960
+    .line 25572
     :cond_73
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetAssetRequest()Z
 
@@ -778,7 +778,7 @@
 
     if-eqz v1, :cond_84
 
-    .line 24961
+    .line 25573
     const/16 v1, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getGetAssetRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;
@@ -791,7 +791,7 @@
 
     add-int/2addr v0, v1
 
-    .line 24964
+    .line 25576
     :cond_84
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetImageRequest()Z
 
@@ -799,7 +799,7 @@
 
     if-eqz v1, :cond_95
 
-    .line 24965
+    .line 25577
     const/16 v1, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getGetImageRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;
@@ -812,7 +812,7 @@
 
     add-int/2addr v0, v1
 
-    .line 24968
+    .line 25580
     :cond_95
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRefundRequest()Z
 
@@ -820,7 +820,7 @@
 
     if-eqz v1, :cond_a6
 
-    .line 24969
+    .line 25581
     const/16 v1, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getRefundRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$RefundRequestProto;
@@ -833,7 +833,7 @@
 
     add-int/2addr v0, v1
 
-    .line 24972
+    .line 25584
     :cond_a6
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPurchaseMetadataRequest()Z
 
@@ -841,7 +841,7 @@
 
     if-eqz v1, :cond_b7
 
-    .line 24973
+    .line 25585
     const/16 v1, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPurchaseMetadataRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;
@@ -854,7 +854,7 @@
 
     add-int/2addr v0, v1
 
-    .line 24976
+    .line 25588
     :cond_b7
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasSubCategoriesRequest()Z
 
@@ -862,7 +862,7 @@
 
     if-eqz v1, :cond_c8
 
-    .line 24977
+    .line 25589
     const/16 v1, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getSubCategoriesRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;
@@ -875,7 +875,7 @@
 
     add-int/2addr v0, v1
 
-    .line 24980
+    .line 25592
     :cond_c8
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasUninstallReasonRequest()Z
 
@@ -883,7 +883,7 @@
 
     if-eqz v1, :cond_d9
 
-    .line 24981
+    .line 25593
     const/16 v1, 0x10
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getUninstallReasonRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;
@@ -896,7 +896,7 @@
 
     add-int/2addr v0, v1
 
-    .line 24984
+    .line 25596
     :cond_d9
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRateCommentRequest()Z
 
@@ -904,7 +904,7 @@
 
     if-eqz v1, :cond_ea
 
-    .line 24985
+    .line 25597
     const/16 v1, 0x11
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getRateCommentRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$RateCommentRequestProto;
@@ -917,7 +917,7 @@
 
     add-int/2addr v0, v1
 
-    .line 24988
+    .line 25600
     :cond_ea
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasCheckLicenseRequest()Z
 
@@ -925,7 +925,7 @@
 
     if-eqz v1, :cond_fb
 
-    .line 24989
+    .line 25601
     const/16 v1, 0x12
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getCheckLicenseRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;
@@ -938,7 +938,7 @@
 
     add-int/2addr v0, v1
 
-    .line 24992
+    .line 25604
     :cond_fb
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetMarketMetadataRequest()Z
 
@@ -946,7 +946,7 @@
 
     if-eqz v1, :cond_10c
 
-    .line 24993
+    .line 25605
     const/16 v1, 0x13
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getGetMarketMetadataRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;
@@ -959,7 +959,7 @@
 
     add-int/2addr v0, v1
 
-    .line 24996
+    .line 25608
     :cond_10c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetCategoriesRequest()Z
 
@@ -967,7 +967,7 @@
 
     if-eqz v1, :cond_11d
 
-    .line 24997
+    .line 25609
     const/16 v1, 0x15
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getGetCategoriesRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesRequestProto;
@@ -980,7 +980,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25000
+    .line 25612
     :cond_11d
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetCarrierInfoRequest()Z
 
@@ -988,7 +988,7 @@
 
     if-eqz v1, :cond_12e
 
-    .line 25001
+    .line 25613
     const/16 v1, 0x16
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getGetCarrierInfoRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoRequestProto;
@@ -1001,7 +1001,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25004
+    .line 25616
     :cond_12e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRemoveAssetRequest()Z
 
@@ -1009,7 +1009,7 @@
 
     if-eqz v1, :cond_13f
 
-    .line 25005
+    .line 25617
     const/16 v1, 0x17
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getRemoveAssetRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;
@@ -1022,7 +1022,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25008
+    .line 25620
     :cond_13f
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRestoreApplicationsRequest()Z
 
@@ -1030,7 +1030,7 @@
 
     if-eqz v1, :cond_150
 
-    .line 25009
+    .line 25621
     const/16 v1, 0x18
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getRestoreApplicationsRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;
@@ -1043,7 +1043,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25012
+    .line 25624
     :cond_150
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasQuerySuggestionRequest()Z
 
@@ -1051,7 +1051,7 @@
 
     if-eqz v1, :cond_161
 
-    .line 25013
+    .line 25625
     const/16 v1, 0x19
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getQuerySuggestionRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;
@@ -1064,7 +1064,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25016
+    .line 25628
     :cond_161
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasBillingEventRequest()Z
 
@@ -1072,7 +1072,7 @@
 
     if-eqz v1, :cond_172
 
-    .line 25017
+    .line 25629
     const/16 v1, 0x1a
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getBillingEventRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;
@@ -1085,7 +1085,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25020
+    .line 25632
     :cond_172
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalPreapprovalRequest()Z
 
@@ -1093,7 +1093,7 @@
 
     if-eqz v1, :cond_183
 
-    .line 25021
+    .line 25633
     const/16 v1, 0x1b
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPaypalPreapprovalRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;
@@ -1106,7 +1106,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25024
+    .line 25636
     :cond_183
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalPreapprovalDetailsRequest()Z
 
@@ -1114,7 +1114,7 @@
 
     if-eqz v1, :cond_194
 
-    .line 25025
+    .line 25637
     const/16 v1, 0x1c
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPaypalPreapprovalDetailsRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalDetailsRequestProto;
@@ -1127,7 +1127,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25028
+    .line 25640
     :cond_194
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalCreateAccountRequest()Z
 
@@ -1135,7 +1135,7 @@
 
     if-eqz v1, :cond_1a5
 
-    .line 25029
+    .line 25641
     const/16 v1, 0x1d
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPaypalCreateAccountRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCreateAccountRequestProto;
@@ -1148,7 +1148,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25032
+    .line 25644
     :cond_1a5
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalPreapprovalCredentialsRequest()Z
 
@@ -1156,7 +1156,7 @@
 
     if-eqz v1, :cond_1b6
 
-    .line 25033
+    .line 25645
     const/16 v1, 0x1e
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPaypalPreapprovalCredentialsRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalCredentialsRequestProto;
@@ -1169,7 +1169,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25036
+    .line 25648
     :cond_1b6
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasInAppRestoreTransactionsRequest()Z
 
@@ -1177,7 +1177,7 @@
 
     if-eqz v1, :cond_1c7
 
-    .line 25037
+    .line 25649
     const/16 v1, 0x1f
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getInAppRestoreTransactionsRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;
@@ -1190,7 +1190,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25040
+    .line 25652
     :cond_1c7
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasInAppPurchaseInformationRequest()Z
 
@@ -1198,7 +1198,7 @@
 
     if-eqz v1, :cond_1d8
 
-    .line 25041
+    .line 25653
     const/16 v1, 0x20
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getInAppPurchaseInformationRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
@@ -1211,7 +1211,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25044
+    .line 25656
     :cond_1d8
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasCheckForNotificationsRequest()Z
 
@@ -1219,7 +1219,7 @@
 
     if-eqz v1, :cond_1e9
 
-    .line 25045
+    .line 25657
     const/16 v1, 0x21
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getCheckForNotificationsRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsRequestProto;
@@ -1232,7 +1232,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25048
+    .line 25660
     :cond_1e9
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasAckNotificationsRequest()Z
 
@@ -1240,7 +1240,7 @@
 
     if-eqz v1, :cond_1fa
 
-    .line 25049
+    .line 25661
     const/16 v1, 0x22
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getAckNotificationsRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;
@@ -1253,7 +1253,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25052
+    .line 25664
     :cond_1fa
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPurchaseProductRequest()Z
 
@@ -1261,7 +1261,7 @@
 
     if-eqz v1, :cond_20b
 
-    .line 25053
+    .line 25665
     const/16 v1, 0x23
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPurchaseProductRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;
@@ -1274,7 +1274,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25056
+    .line 25668
     :cond_20b
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasReconstructDatabaseRequest()Z
 
@@ -1282,7 +1282,7 @@
 
     if-eqz v1, :cond_21c
 
-    .line 25057
+    .line 25669
     const/16 v1, 0x24
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getReconstructDatabaseRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;
@@ -1295,7 +1295,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25060
+    .line 25672
     :cond_21c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalMassageAddressRequest()Z
 
@@ -1303,7 +1303,7 @@
 
     if-eqz v1, :cond_22d
 
-    .line 25061
+    .line 25673
     const/16 v1, 0x25
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPaypalMassageAddressRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;
@@ -1316,7 +1316,7 @@
 
     add-int/2addr v0, v1
 
-    .line 25064
+    .line 25676
     :cond_22d
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetAddressSnippetRequest()Z
 
@@ -1324,7 +1324,7 @@
 
     if-eqz v1, :cond_23e
 
-    .line 25065
+    .line 25677
     const/16 v1, 0x26
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getGetAddressSnippetRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetRequestProto;
@@ -1337,11 +1337,11 @@
 
     add-int/2addr v0, v1
 
-    .line 25068
+    .line 25680
     :cond_23e
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->cachedSize:I
 
-    .line 25069
+    .line 25681
     return v0
 .end method
 
@@ -1349,7 +1349,7 @@
     .registers 2
 
     .prologue
-    .line 24245
+    .line 24854
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->subCategoriesRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;
 
     return-object v0
@@ -1359,7 +1359,7 @@
     .registers 2
 
     .prologue
-    .line 24265
+    .line 24874
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->uninstallReasonRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;
 
     return-object v0
@@ -1369,7 +1369,7 @@
     .registers 2
 
     .prologue
-    .line 24604
+    .line 25213
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasAckNotificationsRequest:Z
 
     return v0
@@ -1379,7 +1379,7 @@
     .registers 2
 
     .prologue
-    .line 24044
+    .line 24653
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasAssetRequest:Z
 
     return v0
@@ -1389,7 +1389,7 @@
     .registers 2
 
     .prologue
-    .line 24444
+    .line 25053
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasBillingEventRequest:Z
 
     return v0
@@ -1399,7 +1399,7 @@
     .registers 2
 
     .prologue
-    .line 24584
+    .line 25193
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasCheckForNotificationsRequest:Z
 
     return v0
@@ -1409,7 +1409,7 @@
     .registers 2
 
     .prologue
-    .line 24304
+    .line 24913
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasCheckLicenseRequest:Z
 
     return v0
@@ -1419,7 +1419,7 @@
     .registers 2
 
     .prologue
-    .line 24064
+    .line 24673
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasCommentsRequest:Z
 
     return v0
@@ -1429,7 +1429,7 @@
     .registers 2
 
     .prologue
-    .line 24144
+    .line 24753
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasContentSyncRequest:Z
 
     return v0
@@ -1439,7 +1439,7 @@
     .registers 2
 
     .prologue
-    .line 24684
+    .line 25293
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetAddressSnippetRequest:Z
 
     return v0
@@ -1449,7 +1449,7 @@
     .registers 2
 
     .prologue
-    .line 24164
+    .line 24773
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetAssetRequest:Z
 
     return v0
@@ -1459,7 +1459,7 @@
     .registers 2
 
     .prologue
-    .line 24364
+    .line 24973
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetCarrierInfoRequest:Z
 
     return v0
@@ -1469,7 +1469,7 @@
     .registers 2
 
     .prologue
-    .line 24344
+    .line 24953
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetCategoriesRequest:Z
 
     return v0
@@ -1479,7 +1479,7 @@
     .registers 2
 
     .prologue
-    .line 24184
+    .line 24793
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetImageRequest:Z
 
     return v0
@@ -1489,7 +1489,7 @@
     .registers 2
 
     .prologue
-    .line 24324
+    .line 24933
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetMarketMetadataRequest:Z
 
     return v0
@@ -1499,7 +1499,7 @@
     .registers 2
 
     .prologue
-    .line 24564
+    .line 25173
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasInAppPurchaseInformationRequest:Z
 
     return v0
@@ -1509,7 +1509,7 @@
     .registers 2
 
     .prologue
-    .line 24544
+    .line 25153
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasInAppRestoreTransactionsRequest:Z
 
     return v0
@@ -1519,7 +1519,7 @@
     .registers 2
 
     .prologue
-    .line 24084
+    .line 24693
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasModifyCommentRequest:Z
 
     return v0
@@ -1529,7 +1529,7 @@
     .registers 2
 
     .prologue
-    .line 24504
+    .line 25113
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalCreateAccountRequest:Z
 
     return v0
@@ -1539,7 +1539,7 @@
     .registers 2
 
     .prologue
-    .line 24664
+    .line 25273
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalMassageAddressRequest:Z
 
     return v0
@@ -1549,7 +1549,7 @@
     .registers 2
 
     .prologue
-    .line 24524
+    .line 25133
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalPreapprovalCredentialsRequest:Z
 
     return v0
@@ -1559,7 +1559,7 @@
     .registers 2
 
     .prologue
-    .line 24484
+    .line 25093
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalPreapprovalDetailsRequest:Z
 
     return v0
@@ -1569,7 +1569,7 @@
     .registers 2
 
     .prologue
-    .line 24464
+    .line 25073
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalPreapprovalRequest:Z
 
     return v0
@@ -1579,7 +1579,7 @@
     .registers 2
 
     .prologue
-    .line 24224
+    .line 24833
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPurchaseMetadataRequest:Z
 
     return v0
@@ -1589,7 +1589,7 @@
     .registers 2
 
     .prologue
-    .line 24124
+    .line 24733
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPurchaseOrderRequest:Z
 
     return v0
@@ -1599,7 +1599,7 @@
     .registers 2
 
     .prologue
-    .line 24104
+    .line 24713
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPurchasePostRequest:Z
 
     return v0
@@ -1609,7 +1609,7 @@
     .registers 2
 
     .prologue
-    .line 24624
+    .line 25233
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPurchaseProductRequest:Z
 
     return v0
@@ -1619,7 +1619,7 @@
     .registers 2
 
     .prologue
-    .line 24424
+    .line 25033
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasQuerySuggestionRequest:Z
 
     return v0
@@ -1629,7 +1629,7 @@
     .registers 2
 
     .prologue
-    .line 24284
+    .line 24893
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRateCommentRequest:Z
 
     return v0
@@ -1639,7 +1639,7 @@
     .registers 2
 
     .prologue
-    .line 24644
+    .line 25253
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasReconstructDatabaseRequest:Z
 
     return v0
@@ -1649,7 +1649,7 @@
     .registers 2
 
     .prologue
-    .line 24204
+    .line 24813
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRefundRequest:Z
 
     return v0
@@ -1659,7 +1659,7 @@
     .registers 2
 
     .prologue
-    .line 24384
+    .line 24993
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRemoveAssetRequest:Z
 
     return v0
@@ -1669,7 +1669,7 @@
     .registers 2
 
     .prologue
-    .line 24024
+    .line 24633
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRequestSpecificProperties:Z
 
     return v0
@@ -1679,7 +1679,7 @@
     .registers 2
 
     .prologue
-    .line 24404
+    .line 25013
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRestoreApplicationsRequest:Z
 
     return v0
@@ -1689,7 +1689,7 @@
     .registers 2
 
     .prologue
-    .line 24244
+    .line 24853
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasSubCategoriesRequest:Z
 
     return v0
@@ -1699,7 +1699,7 @@
     .registers 2
 
     .prologue
-    .line 24264
+    .line 24873
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasUninstallReasonRequest:Z
 
     return v0
@@ -1715,572 +1715,572 @@
     .end annotation
 
     .prologue
-    .line 25076
+    .line 25689
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 25077
+    .line 25690
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1c0
 
-    .line 25081
+    .line 25694
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 25082
+    .line 25695
     :sswitch_d
     return-object p0
 
-    .line 25087
+    .line 25700
     :sswitch_e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;-><init>()V
 
-    .line 25088
+    .line 25701
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25089
+    .line 25702
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setRequestSpecificProperties(Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto :goto_0
 
-    .line 25093
+    .line 25706
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;
     :sswitch_1a
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;-><init>()V
 
-    .line 25094
+    .line 25707
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25095
+    .line 25708
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setAssetRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto :goto_0
 
-    .line 25099
+    .line 25712
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;
     :sswitch_26
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$CommentsRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$CommentsRequestProto;-><init>()V
 
-    .line 25100
+    .line 25713
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$CommentsRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25101
+    .line 25714
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setCommentsRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$CommentsRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto :goto_0
 
-    .line 25105
+    .line 25718
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$CommentsRequestProto;
     :sswitch_32
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;-><init>()V
 
-    .line 25106
+    .line 25719
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25107
+    .line 25720
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setModifyCommentRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto :goto_0
 
-    .line 25111
+    .line 25724
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;
     :sswitch_3e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto;-><init>()V
 
-    .line 25112
+    .line 25725
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25113
+    .line 25726
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setPurchasePostRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto :goto_0
 
-    .line 25117
+    .line 25730
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto;
     :sswitch_4a
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;-><init>()V
 
-    .line 25118
+    .line 25731
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25119
+    .line 25732
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setPurchaseOrderRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto :goto_0
 
-    .line 25123
+    .line 25736
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;
     :sswitch_56
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;-><init>()V
 
-    .line 25124
+    .line 25737
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25125
+    .line 25738
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setContentSyncRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto :goto_0
 
-    .line 25129
+    .line 25742
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;
     :sswitch_62
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;-><init>()V
 
-    .line 25130
+    .line 25743
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25131
+    .line 25744
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setGetAssetRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto :goto_0
 
-    .line 25135
+    .line 25748
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;
     :sswitch_6e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;-><init>()V
 
-    .line 25136
+    .line 25749
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25137
+    .line 25750
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setGetImageRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto :goto_0
 
-    .line 25141
+    .line 25754
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;
     :sswitch_7a
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundRequestProto;-><init>()V
 
-    .line 25142
+    .line 25755
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$RefundRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25143
+    .line 25756
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setRefundRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$RefundRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25147
+    .line 25760
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$RefundRequestProto;
     :sswitch_87
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;-><init>()V
 
-    .line 25148
+    .line 25761
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25149
+    .line 25762
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setPurchaseMetadataRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25153
+    .line 25766
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;
     :sswitch_94
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;-><init>()V
 
-    .line 25154
+    .line 25767
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25155
+    .line 25768
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setSubCategoriesRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25159
+    .line 25772
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;
     :sswitch_a1
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;-><init>()V
 
-    .line 25160
+    .line 25773
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25161
+    .line 25774
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setUninstallReasonRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25165
+    .line 25778
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;
     :sswitch_ae
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$RateCommentRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RateCommentRequestProto;-><init>()V
 
-    .line 25166
+    .line 25779
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$RateCommentRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25167
+    .line 25780
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setRateCommentRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$RateCommentRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25171
+    .line 25784
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$RateCommentRequestProto;
     :sswitch_bb
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;-><init>()V
 
-    .line 25172
+    .line 25785
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25173
+    .line 25786
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setCheckLicenseRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25177
+    .line 25790
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;
     :sswitch_c8
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;-><init>()V
 
-    .line 25178
+    .line 25791
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25179
+    .line 25792
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setGetMarketMetadataRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25183
+    .line 25796
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;
     :sswitch_d5
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesRequestProto;-><init>()V
 
-    .line 25184
+    .line 25797
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25185
+    .line 25798
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setGetCategoriesRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25189
+    .line 25802
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesRequestProto;
     :sswitch_e2
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoRequestProto;-><init>()V
 
-    .line 25190
+    .line 25803
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25191
+    .line 25804
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setGetCarrierInfoRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25195
+    .line 25808
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoRequestProto;
     :sswitch_ef
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;-><init>()V
 
-    .line 25196
+    .line 25809
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25197
+    .line 25810
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setRemoveAssetRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25201
+    .line 25814
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;
     :sswitch_fc
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;-><init>()V
 
-    .line 25202
+    .line 25815
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25203
+    .line 25816
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setRestoreApplicationsRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25207
+    .line 25820
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;
     :sswitch_109
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;-><init>()V
 
-    .line 25208
+    .line 25821
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25209
+    .line 25822
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setQuerySuggestionRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25213
+    .line 25826
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;
     :sswitch_116
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;-><init>()V
 
-    .line 25214
+    .line 25827
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25215
+    .line 25828
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setBillingEventRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25219
+    .line 25832
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;
     :sswitch_123
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;-><init>()V
 
-    .line 25220
+    .line 25833
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25221
+    .line 25834
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setPaypalPreapprovalRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25225
+    .line 25838
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;
     :sswitch_130
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalDetailsRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalDetailsRequestProto;-><init>()V
 
-    .line 25226
+    .line 25839
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalDetailsRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25227
+    .line 25840
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setPaypalPreapprovalDetailsRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalDetailsRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25231
+    .line 25844
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalDetailsRequestProto;
     :sswitch_13d
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCreateAccountRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCreateAccountRequestProto;-><init>()V
 
-    .line 25232
+    .line 25845
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCreateAccountRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25233
+    .line 25846
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setPaypalCreateAccountRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCreateAccountRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25237
+    .line 25850
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCreateAccountRequestProto;
     :sswitch_14a
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalCredentialsRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalCredentialsRequestProto;-><init>()V
 
-    .line 25238
+    .line 25851
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalCredentialsRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25239
+    .line 25852
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setPaypalPreapprovalCredentialsRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalCredentialsRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25243
+    .line 25856
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalCredentialsRequestProto;
     :sswitch_157
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;-><init>()V
 
-    .line 25244
+    .line 25857
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25245
+    .line 25858
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setInAppRestoreTransactionsRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25249
+    .line 25862
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;
     :sswitch_164
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;-><init>()V
 
-    .line 25250
+    .line 25863
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25251
+    .line 25864
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setInAppPurchaseInformationRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25255
+    .line 25868
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
     :sswitch_171
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsRequestProto;-><init>()V
 
-    .line 25256
+    .line 25869
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25257
+    .line 25870
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setCheckForNotificationsRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25261
+    .line 25874
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsRequestProto;
     :sswitch_17e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;-><init>()V
 
-    .line 25262
+    .line 25875
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25263
+    .line 25876
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setAckNotificationsRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25267
+    .line 25880
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;
     :sswitch_18b
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;-><init>()V
 
-    .line 25268
+    .line 25881
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25269
+    .line 25882
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setPurchaseProductRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25273
+    .line 25886
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;
     :sswitch_198
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;-><init>()V
 
-    .line 25274
+    .line 25887
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25275
+    .line 25888
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setReconstructDatabaseRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25279
+    .line 25892
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;
     :sswitch_1a5
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;-><init>()V
 
-    .line 25280
+    .line 25893
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25281
+    .line 25894
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setPaypalMassageAddressRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25285
+    .line 25898
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;
     :sswitch_1b2
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetRequestProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetRequestProto;-><init>()V
 
-    .line 25286
+    .line 25899
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetRequestProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 25287
+    .line 25900
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->setGetAddressSnippetRequest(Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetRequestProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     goto/16 :goto_0
 
-    .line 25077
+    .line 25690
     nop
 
     :sswitch_data_1c0
@@ -2333,7 +2333,7 @@
     .end annotation
 
     .prologue
-    .line 24016
+    .line 24625
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;
 
     move-result-object v0
@@ -2346,26 +2346,26 @@
     .parameter "value"
 
     .prologue
-    .line 24607
+    .line 25216
     if-nez p1, :cond_8
 
-    .line 24608
+    .line 25217
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24610
+    .line 25219
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasAckNotificationsRequest:Z
 
-    .line 24611
+    .line 25220
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->ackNotificationsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;
 
-    .line 24612
+    .line 25221
     return-object p0
 .end method
 
@@ -2374,26 +2374,26 @@
     .parameter "value"
 
     .prologue
-    .line 24047
+    .line 24656
     if-nez p1, :cond_8
 
-    .line 24048
+    .line 24657
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24050
+    .line 24659
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasAssetRequest:Z
 
-    .line 24051
+    .line 24660
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->assetRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;
 
-    .line 24052
+    .line 24661
     return-object p0
 .end method
 
@@ -2402,26 +2402,26 @@
     .parameter "value"
 
     .prologue
-    .line 24447
+    .line 25056
     if-nez p1, :cond_8
 
-    .line 24448
+    .line 25057
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24450
+    .line 25059
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasBillingEventRequest:Z
 
-    .line 24451
+    .line 25060
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->billingEventRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;
 
-    .line 24452
+    .line 25061
     return-object p0
 .end method
 
@@ -2430,26 +2430,26 @@
     .parameter "value"
 
     .prologue
-    .line 24587
+    .line 25196
     if-nez p1, :cond_8
 
-    .line 24588
+    .line 25197
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24590
+    .line 25199
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasCheckForNotificationsRequest:Z
 
-    .line 24591
+    .line 25200
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->checkForNotificationsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsRequestProto;
 
-    .line 24592
+    .line 25201
     return-object p0
 .end method
 
@@ -2458,26 +2458,26 @@
     .parameter "value"
 
     .prologue
-    .line 24307
+    .line 24916
     if-nez p1, :cond_8
 
-    .line 24308
+    .line 24917
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24310
+    .line 24919
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasCheckLicenseRequest:Z
 
-    .line 24311
+    .line 24920
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->checkLicenseRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;
 
-    .line 24312
+    .line 24921
     return-object p0
 .end method
 
@@ -2486,26 +2486,26 @@
     .parameter "value"
 
     .prologue
-    .line 24067
+    .line 24676
     if-nez p1, :cond_8
 
-    .line 24068
+    .line 24677
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24070
+    .line 24679
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasCommentsRequest:Z
 
-    .line 24071
+    .line 24680
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->commentsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$CommentsRequestProto;
 
-    .line 24072
+    .line 24681
     return-object p0
 .end method
 
@@ -2514,26 +2514,26 @@
     .parameter "value"
 
     .prologue
-    .line 24147
+    .line 24756
     if-nez p1, :cond_8
 
-    .line 24148
+    .line 24757
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24150
+    .line 24759
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasContentSyncRequest:Z
 
-    .line 24151
+    .line 24760
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->contentSyncRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;
 
-    .line 24152
+    .line 24761
     return-object p0
 .end method
 
@@ -2542,26 +2542,26 @@
     .parameter "value"
 
     .prologue
-    .line 24687
+    .line 25296
     if-nez p1, :cond_8
 
-    .line 24688
+    .line 25297
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24690
+    .line 25299
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetAddressSnippetRequest:Z
 
-    .line 24691
+    .line 25300
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getAddressSnippetRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetRequestProto;
 
-    .line 24692
+    .line 25301
     return-object p0
 .end method
 
@@ -2570,26 +2570,26 @@
     .parameter "value"
 
     .prologue
-    .line 24167
+    .line 24776
     if-nez p1, :cond_8
 
-    .line 24168
+    .line 24777
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24170
+    .line 24779
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetAssetRequest:Z
 
-    .line 24171
+    .line 24780
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getAssetRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;
 
-    .line 24172
+    .line 24781
     return-object p0
 .end method
 
@@ -2598,26 +2598,26 @@
     .parameter "value"
 
     .prologue
-    .line 24367
+    .line 24976
     if-nez p1, :cond_8
 
-    .line 24368
+    .line 24977
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24370
+    .line 24979
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetCarrierInfoRequest:Z
 
-    .line 24371
+    .line 24980
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getCarrierInfoRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoRequestProto;
 
-    .line 24372
+    .line 24981
     return-object p0
 .end method
 
@@ -2626,26 +2626,26 @@
     .parameter "value"
 
     .prologue
-    .line 24347
+    .line 24956
     if-nez p1, :cond_8
 
-    .line 24348
+    .line 24957
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24350
+    .line 24959
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetCategoriesRequest:Z
 
-    .line 24351
+    .line 24960
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getCategoriesRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesRequestProto;
 
-    .line 24352
+    .line 24961
     return-object p0
 .end method
 
@@ -2654,26 +2654,26 @@
     .parameter "value"
 
     .prologue
-    .line 24187
+    .line 24796
     if-nez p1, :cond_8
 
-    .line 24188
+    .line 24797
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24190
+    .line 24799
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetImageRequest:Z
 
-    .line 24191
+    .line 24800
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getImageRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;
 
-    .line 24192
+    .line 24801
     return-object p0
 .end method
 
@@ -2682,26 +2682,26 @@
     .parameter "value"
 
     .prologue
-    .line 24327
+    .line 24936
     if-nez p1, :cond_8
 
-    .line 24328
+    .line 24937
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24330
+    .line 24939
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetMarketMetadataRequest:Z
 
-    .line 24331
+    .line 24940
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getMarketMetadataRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;
 
-    .line 24332
+    .line 24941
     return-object p0
 .end method
 
@@ -2710,26 +2710,26 @@
     .parameter "value"
 
     .prologue
-    .line 24567
+    .line 25176
     if-nez p1, :cond_8
 
-    .line 24568
+    .line 25177
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24570
+    .line 25179
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasInAppPurchaseInformationRequest:Z
 
-    .line 24571
+    .line 25180
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->inAppPurchaseInformationRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
 
-    .line 24572
+    .line 25181
     return-object p0
 .end method
 
@@ -2738,26 +2738,26 @@
     .parameter "value"
 
     .prologue
-    .line 24547
+    .line 25156
     if-nez p1, :cond_8
 
-    .line 24548
+    .line 25157
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24550
+    .line 25159
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasInAppRestoreTransactionsRequest:Z
 
-    .line 24551
+    .line 25160
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->inAppRestoreTransactionsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;
 
-    .line 24552
+    .line 25161
     return-object p0
 .end method
 
@@ -2766,26 +2766,26 @@
     .parameter "value"
 
     .prologue
-    .line 24087
+    .line 24696
     if-nez p1, :cond_8
 
-    .line 24088
+    .line 24697
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24090
+    .line 24699
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasModifyCommentRequest:Z
 
-    .line 24091
+    .line 24700
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->modifyCommentRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;
 
-    .line 24092
+    .line 24701
     return-object p0
 .end method
 
@@ -2794,26 +2794,26 @@
     .parameter "value"
 
     .prologue
-    .line 24507
+    .line 25116
     if-nez p1, :cond_8
 
-    .line 24508
+    .line 25117
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24510
+    .line 25119
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalCreateAccountRequest:Z
 
-    .line 24511
+    .line 25120
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->paypalCreateAccountRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCreateAccountRequestProto;
 
-    .line 24512
+    .line 25121
     return-object p0
 .end method
 
@@ -2822,26 +2822,26 @@
     .parameter "value"
 
     .prologue
-    .line 24667
+    .line 25276
     if-nez p1, :cond_8
 
-    .line 24668
+    .line 25277
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24670
+    .line 25279
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalMassageAddressRequest:Z
 
-    .line 24671
+    .line 25280
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->paypalMassageAddressRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;
 
-    .line 24672
+    .line 25281
     return-object p0
 .end method
 
@@ -2850,26 +2850,26 @@
     .parameter "value"
 
     .prologue
-    .line 24527
+    .line 25136
     if-nez p1, :cond_8
 
-    .line 24528
+    .line 25137
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24530
+    .line 25139
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalPreapprovalCredentialsRequest:Z
 
-    .line 24531
+    .line 25140
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->paypalPreapprovalCredentialsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalCredentialsRequestProto;
 
-    .line 24532
+    .line 25141
     return-object p0
 .end method
 
@@ -2878,26 +2878,26 @@
     .parameter "value"
 
     .prologue
-    .line 24487
+    .line 25096
     if-nez p1, :cond_8
 
-    .line 24488
+    .line 25097
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24490
+    .line 25099
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalPreapprovalDetailsRequest:Z
 
-    .line 24491
+    .line 25100
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->paypalPreapprovalDetailsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalDetailsRequestProto;
 
-    .line 24492
+    .line 25101
     return-object p0
 .end method
 
@@ -2906,26 +2906,26 @@
     .parameter "value"
 
     .prologue
-    .line 24467
+    .line 25076
     if-nez p1, :cond_8
 
-    .line 24468
+    .line 25077
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24470
+    .line 25079
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalPreapprovalRequest:Z
 
-    .line 24471
+    .line 25080
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->paypalPreapprovalRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;
 
-    .line 24472
+    .line 25081
     return-object p0
 .end method
 
@@ -2934,26 +2934,26 @@
     .parameter "value"
 
     .prologue
-    .line 24227
+    .line 24836
     if-nez p1, :cond_8
 
-    .line 24228
+    .line 24837
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24230
+    .line 24839
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPurchaseMetadataRequest:Z
 
-    .line 24231
+    .line 24840
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->purchaseMetadataRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;
 
-    .line 24232
+    .line 24841
     return-object p0
 .end method
 
@@ -2962,26 +2962,26 @@
     .parameter "value"
 
     .prologue
-    .line 24127
+    .line 24736
     if-nez p1, :cond_8
 
-    .line 24128
+    .line 24737
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24130
+    .line 24739
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPurchaseOrderRequest:Z
 
-    .line 24131
+    .line 24740
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->purchaseOrderRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;
 
-    .line 24132
+    .line 24741
     return-object p0
 .end method
 
@@ -2990,26 +2990,26 @@
     .parameter "value"
 
     .prologue
-    .line 24107
+    .line 24716
     if-nez p1, :cond_8
 
-    .line 24108
+    .line 24717
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24110
+    .line 24719
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPurchasePostRequest:Z
 
-    .line 24111
+    .line 24720
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->purchasePostRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto;
 
-    .line 24112
+    .line 24721
     return-object p0
 .end method
 
@@ -3018,26 +3018,26 @@
     .parameter "value"
 
     .prologue
-    .line 24627
+    .line 25236
     if-nez p1, :cond_8
 
-    .line 24628
+    .line 25237
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24630
+    .line 25239
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPurchaseProductRequest:Z
 
-    .line 24631
+    .line 25240
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->purchaseProductRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;
 
-    .line 24632
+    .line 25241
     return-object p0
 .end method
 
@@ -3046,26 +3046,26 @@
     .parameter "value"
 
     .prologue
-    .line 24427
+    .line 25036
     if-nez p1, :cond_8
 
-    .line 24428
+    .line 25037
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24430
+    .line 25039
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasQuerySuggestionRequest:Z
 
-    .line 24431
+    .line 25040
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->querySuggestionRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;
 
-    .line 24432
+    .line 25041
     return-object p0
 .end method
 
@@ -3074,26 +3074,26 @@
     .parameter "value"
 
     .prologue
-    .line 24287
+    .line 24896
     if-nez p1, :cond_8
 
-    .line 24288
+    .line 24897
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24290
+    .line 24899
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRateCommentRequest:Z
 
-    .line 24291
+    .line 24900
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->rateCommentRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$RateCommentRequestProto;
 
-    .line 24292
+    .line 24901
     return-object p0
 .end method
 
@@ -3102,26 +3102,26 @@
     .parameter "value"
 
     .prologue
-    .line 24647
+    .line 25256
     if-nez p1, :cond_8
 
-    .line 24648
+    .line 25257
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24650
+    .line 25259
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasReconstructDatabaseRequest:Z
 
-    .line 24651
+    .line 25260
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->reconstructDatabaseRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;
 
-    .line 24652
+    .line 25261
     return-object p0
 .end method
 
@@ -3130,26 +3130,26 @@
     .parameter "value"
 
     .prologue
-    .line 24207
+    .line 24816
     if-nez p1, :cond_8
 
-    .line 24208
+    .line 24817
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24210
+    .line 24819
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRefundRequest:Z
 
-    .line 24211
+    .line 24820
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->refundRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$RefundRequestProto;
 
-    .line 24212
+    .line 24821
     return-object p0
 .end method
 
@@ -3158,26 +3158,26 @@
     .parameter "value"
 
     .prologue
-    .line 24387
+    .line 24996
     if-nez p1, :cond_8
 
-    .line 24388
+    .line 24997
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24390
+    .line 24999
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRemoveAssetRequest:Z
 
-    .line 24391
+    .line 25000
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->removeAssetRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;
 
-    .line 24392
+    .line 25001
     return-object p0
 .end method
 
@@ -3186,26 +3186,26 @@
     .parameter "value"
 
     .prologue
-    .line 24027
+    .line 24636
     if-nez p1, :cond_8
 
-    .line 24028
+    .line 24637
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24030
+    .line 24639
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRequestSpecificProperties:Z
 
-    .line 24031
+    .line 24640
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->requestSpecificProperties_:Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;
 
-    .line 24032
+    .line 24641
     return-object p0
 .end method
 
@@ -3214,26 +3214,26 @@
     .parameter "value"
 
     .prologue
-    .line 24407
+    .line 25016
     if-nez p1, :cond_8
 
-    .line 24408
+    .line 25017
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24410
+    .line 25019
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRestoreApplicationsRequest:Z
 
-    .line 24411
+    .line 25020
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->restoreApplicationsRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;
 
-    .line 24412
+    .line 25021
     return-object p0
 .end method
 
@@ -3242,26 +3242,26 @@
     .parameter "value"
 
     .prologue
-    .line 24247
+    .line 24856
     if-nez p1, :cond_8
 
-    .line 24248
+    .line 24857
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24250
+    .line 24859
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasSubCategoriesRequest:Z
 
-    .line 24251
+    .line 24860
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->subCategoriesRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;
 
-    .line 24252
+    .line 24861
     return-object p0
 .end method
 
@@ -3270,26 +3270,26 @@
     .parameter "value"
 
     .prologue
-    .line 24267
+    .line 24876
     if-nez p1, :cond_8
 
-    .line 24268
+    .line 24877
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 24270
+    .line 24879
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasUninstallReasonRequest:Z
 
-    .line 24271
+    .line 24880
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->uninstallReasonRequest_:Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;
 
-    .line 24272
+    .line 24881
     return-object p0
 .end method
 
@@ -3303,14 +3303,14 @@
     .end annotation
 
     .prologue
-    .line 24817
+    .line 25427
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRequestSpecificProperties()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 24818
+    .line 25428
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getRequestSpecificProperties()Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;
@@ -3319,7 +3319,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24820
+    .line 25430
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasAssetRequest()Z
 
@@ -3327,7 +3327,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 24821
+    .line 25431
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getAssetRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;
@@ -3336,7 +3336,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24823
+    .line 25433
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasCommentsRequest()Z
 
@@ -3344,7 +3344,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 24824
+    .line 25434
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getCommentsRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$CommentsRequestProto;
@@ -3353,7 +3353,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24826
+    .line 25436
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasModifyCommentRequest()Z
 
@@ -3361,7 +3361,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 24827
+    .line 25437
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getModifyCommentRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;
@@ -3370,7 +3370,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24829
+    .line 25439
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPurchasePostRequest()Z
 
@@ -3378,7 +3378,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 24830
+    .line 25440
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPurchasePostRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto;
@@ -3387,7 +3387,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24832
+    .line 25442
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPurchaseOrderRequest()Z
 
@@ -3395,7 +3395,7 @@
 
     if-eqz v0, :cond_55
 
-    .line 24833
+    .line 25443
     const/16 v0, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPurchaseOrderRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;
@@ -3404,7 +3404,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24835
+    .line 25445
     :cond_55
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasContentSyncRequest()Z
 
@@ -3412,7 +3412,7 @@
 
     if-eqz v0, :cond_64
 
-    .line 24836
+    .line 25446
     const/16 v0, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getContentSyncRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;
@@ -3421,7 +3421,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24838
+    .line 25448
     :cond_64
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetAssetRequest()Z
 
@@ -3429,7 +3429,7 @@
 
     if-eqz v0, :cond_73
 
-    .line 24839
+    .line 25449
     const/16 v0, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getGetAssetRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;
@@ -3438,7 +3438,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24841
+    .line 25451
     :cond_73
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetImageRequest()Z
 
@@ -3446,7 +3446,7 @@
 
     if-eqz v0, :cond_82
 
-    .line 24842
+    .line 25452
     const/16 v0, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getGetImageRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$GetImageRequestProto;
@@ -3455,7 +3455,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24844
+    .line 25454
     :cond_82
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRefundRequest()Z
 
@@ -3463,7 +3463,7 @@
 
     if-eqz v0, :cond_91
 
-    .line 24845
+    .line 25455
     const/16 v0, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getRefundRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$RefundRequestProto;
@@ -3472,7 +3472,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24847
+    .line 25457
     :cond_91
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPurchaseMetadataRequest()Z
 
@@ -3480,7 +3480,7 @@
 
     if-eqz v0, :cond_a0
 
-    .line 24848
+    .line 25458
     const/16 v0, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPurchaseMetadataRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;
@@ -3489,7 +3489,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24850
+    .line 25460
     :cond_a0
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasSubCategoriesRequest()Z
 
@@ -3497,7 +3497,7 @@
 
     if-eqz v0, :cond_af
 
-    .line 24851
+    .line 25461
     const/16 v0, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getSubCategoriesRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;
@@ -3506,7 +3506,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24853
+    .line 25463
     :cond_af
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasUninstallReasonRequest()Z
 
@@ -3514,7 +3514,7 @@
 
     if-eqz v0, :cond_be
 
-    .line 24854
+    .line 25464
     const/16 v0, 0x10
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getUninstallReasonRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;
@@ -3523,7 +3523,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24856
+    .line 25466
     :cond_be
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRateCommentRequest()Z
 
@@ -3531,7 +3531,7 @@
 
     if-eqz v0, :cond_cd
 
-    .line 24857
+    .line 25467
     const/16 v0, 0x11
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getRateCommentRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$RateCommentRequestProto;
@@ -3540,7 +3540,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24859
+    .line 25469
     :cond_cd
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasCheckLicenseRequest()Z
 
@@ -3548,7 +3548,7 @@
 
     if-eqz v0, :cond_dc
 
-    .line 24860
+    .line 25470
     const/16 v0, 0x12
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getCheckLicenseRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;
@@ -3557,7 +3557,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24862
+    .line 25472
     :cond_dc
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetMarketMetadataRequest()Z
 
@@ -3565,7 +3565,7 @@
 
     if-eqz v0, :cond_eb
 
-    .line 24863
+    .line 25473
     const/16 v0, 0x13
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getGetMarketMetadataRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;
@@ -3574,7 +3574,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24865
+    .line 25475
     :cond_eb
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetCategoriesRequest()Z
 
@@ -3582,7 +3582,7 @@
 
     if-eqz v0, :cond_fa
 
-    .line 24866
+    .line 25476
     const/16 v0, 0x15
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getGetCategoriesRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesRequestProto;
@@ -3591,7 +3591,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24868
+    .line 25478
     :cond_fa
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetCarrierInfoRequest()Z
 
@@ -3599,7 +3599,7 @@
 
     if-eqz v0, :cond_109
 
-    .line 24869
+    .line 25479
     const/16 v0, 0x16
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getGetCarrierInfoRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoRequestProto;
@@ -3608,7 +3608,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24871
+    .line 25481
     :cond_109
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRemoveAssetRequest()Z
 
@@ -3616,7 +3616,7 @@
 
     if-eqz v0, :cond_118
 
-    .line 24872
+    .line 25482
     const/16 v0, 0x17
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getRemoveAssetRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;
@@ -3625,7 +3625,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24874
+    .line 25484
     :cond_118
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasRestoreApplicationsRequest()Z
 
@@ -3633,7 +3633,7 @@
 
     if-eqz v0, :cond_127
 
-    .line 24875
+    .line 25485
     const/16 v0, 0x18
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getRestoreApplicationsRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;
@@ -3642,7 +3642,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24877
+    .line 25487
     :cond_127
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasQuerySuggestionRequest()Z
 
@@ -3650,7 +3650,7 @@
 
     if-eqz v0, :cond_136
 
-    .line 24878
+    .line 25488
     const/16 v0, 0x19
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getQuerySuggestionRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;
@@ -3659,7 +3659,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24880
+    .line 25490
     :cond_136
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasBillingEventRequest()Z
 
@@ -3667,7 +3667,7 @@
 
     if-eqz v0, :cond_145
 
-    .line 24881
+    .line 25491
     const/16 v0, 0x1a
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getBillingEventRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;
@@ -3676,7 +3676,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24883
+    .line 25493
     :cond_145
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalPreapprovalRequest()Z
 
@@ -3684,7 +3684,7 @@
 
     if-eqz v0, :cond_154
 
-    .line 24884
+    .line 25494
     const/16 v0, 0x1b
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPaypalPreapprovalRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;
@@ -3693,7 +3693,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24886
+    .line 25496
     :cond_154
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalPreapprovalDetailsRequest()Z
 
@@ -3701,7 +3701,7 @@
 
     if-eqz v0, :cond_163
 
-    .line 24887
+    .line 25497
     const/16 v0, 0x1c
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPaypalPreapprovalDetailsRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalDetailsRequestProto;
@@ -3710,7 +3710,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24889
+    .line 25499
     :cond_163
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalCreateAccountRequest()Z
 
@@ -3718,7 +3718,7 @@
 
     if-eqz v0, :cond_172
 
-    .line 24890
+    .line 25500
     const/16 v0, 0x1d
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPaypalCreateAccountRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCreateAccountRequestProto;
@@ -3727,7 +3727,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24892
+    .line 25502
     :cond_172
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalPreapprovalCredentialsRequest()Z
 
@@ -3735,7 +3735,7 @@
 
     if-eqz v0, :cond_181
 
-    .line 24893
+    .line 25503
     const/16 v0, 0x1e
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPaypalPreapprovalCredentialsRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalCredentialsRequestProto;
@@ -3744,7 +3744,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24895
+    .line 25505
     :cond_181
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasInAppRestoreTransactionsRequest()Z
 
@@ -3752,7 +3752,7 @@
 
     if-eqz v0, :cond_190
 
-    .line 24896
+    .line 25506
     const/16 v0, 0x1f
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getInAppRestoreTransactionsRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;
@@ -3761,7 +3761,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24898
+    .line 25508
     :cond_190
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasInAppPurchaseInformationRequest()Z
 
@@ -3769,7 +3769,7 @@
 
     if-eqz v0, :cond_19f
 
-    .line 24899
+    .line 25509
     const/16 v0, 0x20
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getInAppPurchaseInformationRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
@@ -3778,7 +3778,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24901
+    .line 25511
     :cond_19f
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasCheckForNotificationsRequest()Z
 
@@ -3786,7 +3786,7 @@
 
     if-eqz v0, :cond_1ae
 
-    .line 24902
+    .line 25512
     const/16 v0, 0x21
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getCheckForNotificationsRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsRequestProto;
@@ -3795,7 +3795,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24904
+    .line 25514
     :cond_1ae
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasAckNotificationsRequest()Z
 
@@ -3803,7 +3803,7 @@
 
     if-eqz v0, :cond_1bd
 
-    .line 24905
+    .line 25515
     const/16 v0, 0x22
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getAckNotificationsRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;
@@ -3812,7 +3812,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24907
+    .line 25517
     :cond_1bd
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPurchaseProductRequest()Z
 
@@ -3820,7 +3820,7 @@
 
     if-eqz v0, :cond_1cc
 
-    .line 24908
+    .line 25518
     const/16 v0, 0x23
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPurchaseProductRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;
@@ -3829,7 +3829,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24910
+    .line 25520
     :cond_1cc
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasReconstructDatabaseRequest()Z
 
@@ -3837,7 +3837,7 @@
 
     if-eqz v0, :cond_1db
 
-    .line 24911
+    .line 25521
     const/16 v0, 0x24
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getReconstructDatabaseRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;
@@ -3846,7 +3846,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24913
+    .line 25523
     :cond_1db
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasPaypalMassageAddressRequest()Z
 
@@ -3854,7 +3854,7 @@
 
     if-eqz v0, :cond_1ea
 
-    .line 24914
+    .line 25524
     const/16 v0, 0x25
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getPaypalMassageAddressRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;
@@ -3863,7 +3863,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24916
+    .line 25526
     :cond_1ea
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->hasGetAddressSnippetRequest()Z
 
@@ -3871,7 +3871,7 @@
 
     if-eqz v0, :cond_1f9
 
-    .line 24917
+    .line 25527
     const/16 v0, 0x26
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestProto$Request;->getGetAddressSnippetRequest()Lcom/google/android/vending/remoting/protos/VendingProtos$GetAddressSnippetRequestProto;
@@ -3880,7 +3880,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 24919
+    .line 25529
     :cond_1f9
     return-void
 .end method

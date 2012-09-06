@@ -16,5 +16,5 @@
     <color name="da_destination_list_header_text">#ff999999</color>
     <color name="da_destination_button_background">#ff444466</color>
     <color name="da_destination_button_stroke">#ff15171b</color>
-    <color name="da_destination_action_bar_bg_color">#ff2f2f2f</color>
+    <color name="da_destination_action_bar_bg_color">#ff222222</color>
 </resources>

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 76
+    .line 81
     iput-object p1, p0, Lcom/google/android/finsky/layout/HorizontalStrip$1;->this$0:Lcom/google/android/finsky/layout/HorizontalStrip;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
@@ -38,13 +38,13 @@
     .registers 2
 
     .prologue
-    .line 79
+    .line 84
     iget-object v0, p0, Lcom/google/android/finsky/layout/HorizontalStrip$1;->this$0:Lcom/google/android/finsky/layout/HorizontalStrip;
 
     #calls: Lcom/google/android/finsky/layout/HorizontalStrip;->syncChildViews()V
     invoke-static {v0}, Lcom/google/android/finsky/layout/HorizontalStrip;->access$000(Lcom/google/android/finsky/layout/HorizontalStrip;)V
 
-    .line 80
+    .line 85
     return-void
 .end method
 
@@ -52,12 +52,12 @@
     .registers 2
 
     .prologue
-    .line 84
+    .line 89
     iget-object v0, p0, Lcom/google/android/finsky/layout/HorizontalStrip$1;->this$0:Lcom/google/android/finsky/layout/HorizontalStrip;
 
     #calls: Lcom/google/android/finsky/layout/HorizontalStrip;->recreateChildViews()V
     invoke-static {v0}, Lcom/google/android/finsky/layout/HorizontalStrip;->access$100(Lcom/google/android/finsky/layout/HorizontalStrip;)V
 
-    .line 85
+    .line 90
     return-void
 .end method

@@ -17,7 +17,7 @@
     .registers 1
 
     .prologue
-    .line 286
+    .line 287
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 1291
+    .line 1432
     new-instance v0, Lorg/codehaus/jackson/JsonParseException;
 
     invoke-virtual {p0}, Lorg/codehaus/jackson/JsonParser;->e()Lorg/codehaus/jackson/JsonLocation;
@@ -50,7 +50,7 @@
     .parameter
 
     .prologue
-    .line 498
+    .line 501
     iget v0, p0, Lorg/codehaus/jackson/JsonParser;->a:I
 
     invoke-virtual {p1}, Lorg/codehaus/jackson/JsonParser$Feature;->getMask()I
@@ -79,7 +79,7 @@
     .registers 2
 
     .prologue
-    .line 616
+    .line 725
     iget-object v0, p0, Lorg/codehaus/jackson/JsonParser;->b:Lorg/codehaus/jackson/JsonToken;
 
     return-object v0
@@ -101,31 +101,27 @@
     .registers 3
 
     .prologue
-    .line 851
+    .line 960
     invoke-virtual {p0}, Lorg/codehaus/jackson/JsonParser;->i()I
 
     move-result v0
 
-    .line 853
+    .line 962
     const/16 v1, -0x80
 
     if-lt v0, v1, :cond_c
 
     const/16 v1, 0x7f
 
-    if-le v0, v1, :cond_2e
+    if-le v0, v1, :cond_2a
 
-    .line 854
+    .line 963
     :cond_c
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "Numeric value ("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lorg/codehaus/jackson/JsonParser;->f()Ljava/lang/String;
 
@@ -151,8 +147,8 @@
 
     throw v0
 
-    .line 856
-    :cond_2e
+    .line 965
+    :cond_2a
     int-to-byte v0, v0
 
     return v0
@@ -162,31 +158,27 @@
     .registers 3
 
     .prologue
-    .line 875
+    .line 984
     invoke-virtual {p0}, Lorg/codehaus/jackson/JsonParser;->i()I
 
     move-result v0
 
-    .line 876
+    .line 985
     const/16 v1, -0x8000
 
     if-lt v0, v1, :cond_c
 
     const/16 v1, 0x7fff
 
-    if-le v0, v1, :cond_2e
+    if-le v0, v1, :cond_2a
 
-    .line 877
+    .line 986
     :cond_c
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "Numeric value ("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lorg/codehaus/jackson/JsonParser;->f()Ljava/lang/String;
 
@@ -212,8 +204,8 @@
 
     throw v0
 
-    .line 879
-    :cond_2e
+    .line 988
+    :cond_2a
     int-to-short v0, v0
 
     return v0

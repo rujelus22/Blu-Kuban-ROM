@@ -375,7 +375,7 @@
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
     .line 387
-    const v4, -0x9e5eeb
+    const v4, -0xeaab6a
 
     iput v4, p0, Lcom/android/phone/IncomingCallWidget$Handle;->mCircleColor:I
 
@@ -476,7 +476,7 @@
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
     .line 391
-    const v4, -0x57e5f1
+    const v4, -0x670000
 
     iput v4, p0, Lcom/android/phone/IncomingCallWidget$Handle;->mCircleColor:I
 

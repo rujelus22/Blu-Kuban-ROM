@@ -5,8 +5,8 @@
         <item quantity="one">%1$d imiphumela</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">%1$d kutholakale okwakamuva okuzofakwa kwe %2$s.</item>
-        <item quantity="one">%1$d kutholakale okwakamuva okuzofakwa kwe %2$s.</item>
+        <item quantity="other">%1$d izibuyekezo ezitholakele.</item>
+        <item quantity="one">%1$d isibuyekezo esitholiwe.</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">%1$s abantu ababeke +1 lokhu</item>

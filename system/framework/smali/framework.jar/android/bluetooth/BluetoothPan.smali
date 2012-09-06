@@ -9,7 +9,7 @@
 # static fields
 .field public static final ACTION_CONNECTION_STATE_CHANGED:Ljava/lang/String; = "android.bluetooth.pan.profile.action.CONNECTION_STATE_CHANGED"
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field public static final EXTRA_LOCAL_ROLE:Ljava/lang/String; = "android.bluetooth.pan.extra.LOCAL_ROLE"
 

@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 823
+    .line 519
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
     .parameter
 
     .prologue
-    .line 826
+    .line 522
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/google/android/youtube/core/async/UserAuthorizer$AccountsChangedService;
@@ -31,6 +31,6 @@
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 827
+    .line 523
     return-void
 .end method

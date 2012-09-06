@@ -82,7 +82,7 @@
     .end annotation
 
     .prologue
-    .line 135
+    .line 136
     .local p2, downloadProgressMap:Ljava/util/Map;,"Ljava/util/Map<Landroid/net/Uri;Lcom/google/android/finsky/download/DownloadProgress;>;"
     .local p3, oldUris:Ljava/util/Set;,"Ljava/util/Set<Landroid/net/Uri;>;"
     .local p4, newUris:Ljava/util/Set;,"Ljava/util/Set<Landroid/net/Uri;>;"
@@ -90,16 +90,16 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 136
+    .line 137
     iput-object p3, p0, Lcom/google/android/finsky/download/DownloadProgressManager$ProgressRunnable;->mOldUris:Ljava/util/Set;
 
-    .line 137
+    .line 138
     iput-object p4, p0, Lcom/google/android/finsky/download/DownloadProgressManager$ProgressRunnable;->mNewUris:Ljava/util/Set;
 
-    .line 138
+    .line 139
     iput-object p2, p0, Lcom/google/android/finsky/download/DownloadProgressManager$ProgressRunnable;->mDownloadProgressMap:Ljava/util/Map;
 
-    .line 139
+    .line 140
     return-void
 .end method
 
@@ -109,7 +109,7 @@
     .registers 7
 
     .prologue
-    .line 143
+    .line 144
     iget-object v4, p0, Lcom/google/android/finsky/download/DownloadProgressManager$ProgressRunnable;->this$0:Lcom/google/android/finsky/download/DownloadProgressManager;
 
     #getter for: Lcom/google/android/finsky/download/DownloadProgressManager;->mDownloadQueueImpl:Lcom/google/android/finsky/download/DownloadQueueImpl;
@@ -117,7 +117,7 @@
 
     move-result-object v1
 
-    .line 144
+    .line 145
     .local v1, downloadQueue:Lcom/google/android/finsky/download/DownloadQueueImpl;
     iget-object v4, p0, Lcom/google/android/finsky/download/DownloadProgressManager$ProgressRunnable;->mOldUris:Ljava/util/Set;
 
@@ -132,7 +132,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_34
+    if-eqz v4, :cond_36
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -140,13 +140,15 @@
 
     check-cast v3, Landroid/net/Uri;
 
-    .line 145
+    .line 146
     .local v3, uri:Landroid/net/Uri;
-    invoke-virtual {v1, v3}, Lcom/google/android/finsky/download/DownloadQueueImpl;->getExisting(Landroid/net/Uri;)Lcom/google/android/finsky/download/InternalDownload;
+    invoke-virtual {v1, v3}, Lcom/google/android/finsky/download/DownloadQueueImpl;->getDownloadByContentUri(Landroid/net/Uri;)Lcom/google/android/finsky/download/Download;
 
     move-result-object v0
 
-    .line 146
+    check-cast v0, Lcom/google/android/finsky/download/InternalDownload;
+
+    .line 148
     .local v0, download:Lcom/google/android/finsky/download/InternalDownload;
     if-eqz v0, :cond_c
 
@@ -162,7 +164,7 @@
 
     if-eqz v4, :cond_c
 
-    .line 147
+    .line 149
     iget-object v4, p0, Lcom/google/android/finsky/download/DownloadProgressManager$ProgressRunnable;->this$0:Lcom/google/android/finsky/download/DownloadProgressManager;
 
     #getter for: Lcom/google/android/finsky/download/DownloadProgressManager;->mDownloadQueueImpl:Lcom/google/android/finsky/download/DownloadQueueImpl;
@@ -174,23 +176,23 @@
 
     goto :goto_c
 
-    .line 152
+    .line 154
     .end local v0           #download:Lcom/google/android/finsky/download/InternalDownload;
     .end local v3           #uri:Landroid/net/Uri;
-    :cond_34
+    :cond_36
     iget-object v4, p0, Lcom/google/android/finsky/download/DownloadProgressManager$ProgressRunnable;->mNewUris:Ljava/util/Set;
 
     invoke-interface {v4}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :cond_3a
-    :goto_3a
+    :cond_3c
+    :goto_3c
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_58
+    if-eqz v4, :cond_5c
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -198,17 +200,19 @@
 
     check-cast v3, Landroid/net/Uri;
 
-    .line 153
+    .line 155
     .restart local v3       #uri:Landroid/net/Uri;
-    invoke-virtual {v1, v3}, Lcom/google/android/finsky/download/DownloadQueueImpl;->getExisting(Landroid/net/Uri;)Lcom/google/android/finsky/download/InternalDownload;
+    invoke-virtual {v1, v3}, Lcom/google/android/finsky/download/DownloadQueueImpl;->getDownloadByContentUri(Landroid/net/Uri;)Lcom/google/android/finsky/download/Download;
 
     move-result-object v0
 
-    .line 154
-    .restart local v0       #download:Lcom/google/android/finsky/download/InternalDownload;
-    if-eqz v0, :cond_3a
+    check-cast v0, Lcom/google/android/finsky/download/InternalDownload;
 
-    .line 155
+    .line 157
+    .restart local v0       #download:Lcom/google/android/finsky/download/InternalDownload;
+    if-eqz v0, :cond_3c
+
+    .line 168
     iget-object v4, p0, Lcom/google/android/finsky/download/DownloadProgressManager$ProgressRunnable;->mDownloadProgressMap:Ljava/util/Map;
 
     invoke-interface {v4, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -219,11 +223,11 @@
 
     invoke-virtual {v1, v0, v4}, Lcom/google/android/finsky/download/DownloadQueueImpl;->notifyProgress(Lcom/google/android/finsky/download/InternalDownload;Lcom/google/android/finsky/download/DownloadProgress;)V
 
-    goto :goto_3a
+    goto :goto_3c
 
-    .line 158
+    .line 171
     .end local v0           #download:Lcom/google/android/finsky/download/InternalDownload;
     .end local v3           #uri:Landroid/net/Uri;
-    :cond_58
+    :cond_5c
     return-void
 .end method

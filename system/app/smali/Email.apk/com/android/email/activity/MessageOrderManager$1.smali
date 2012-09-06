@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MessageOrderManager;-><init>(Landroid/content/Context;JLcom/android/email/activity/MessageOrderManager$Callback;)V
+    value = Lcom/android/email/activity/MessageOrderManager;-><init>(Landroid/content/Context;Lcom/android/email/MessageListContext;Lcom/android/email/activity/MessageOrderManager$Callback;Lcom/android/emailcommon/utility/DelayedOperations;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 124
+    .line 139
     iput-object p1, p0, Lcom/android/email/activity/MessageOrderManager$1;->this$0:Lcom/android/email/activity/MessageOrderManager;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,26 +40,26 @@
     .parameter "selfChange"
 
     .prologue
-    .line 127
+    .line 141
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager$1;->this$0:Lcom/android/email/activity/MessageOrderManager;
 
     #getter for: Lcom/android/email/activity/MessageOrderManager;->mClosed:Z
-    invoke-static {v0}, Lcom/android/email/activity/MessageOrderManager;->access$000(Lcom/android/email/activity/MessageOrderManager;)Z
+    invoke-static {v0}, Lcom/android/email/activity/MessageOrderManager;->access$300(Lcom/android/email/activity/MessageOrderManager;)Z
 
     move-result v0
 
     if-eqz v0, :cond_9
 
-    .line 131
+    .line 145
     :goto_8
     return-void
 
-    .line 130
+    .line 144
     :cond_9
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager$1;->this$0:Lcom/android/email/activity/MessageOrderManager;
 
     #calls: Lcom/android/email/activity/MessageOrderManager;->onContentChanged()V
-    invoke-static {v0}, Lcom/android/email/activity/MessageOrderManager;->access$100(Lcom/android/email/activity/MessageOrderManager;)V
+    invoke-static {v0}, Lcom/android/email/activity/MessageOrderManager;->access$400(Lcom/android/email/activity/MessageOrderManager;)V
 
     goto :goto_8
 .end method

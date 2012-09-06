@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <integer name="paged_views_max_items">150</integer>
+    <integer name="paged_views_items_per_page">18</integer>
+    <integer name="tv_controller_timeout_idle">3000</integer>
+    <integer name="tv_controller_repeated_action_delay">350</integer>
+    <integer name="fade_duration_slow">500</integer>
+    <integer name="fade_duration_fast">100</integer>
     <integer name="plus_one_button_text_lines">2</integer>
+    <integer name="detailed_channel_item_num_columns">1</integer>
+    <integer name="channel_store_summary_max_lines">3</integer>
+    <integer name="channel_store_num_columns">3</integer>
+    <integer name="guide_content_num_columns">1</integer>
     <integer name="upload_max_title_length">50</integer>
     <integer name="upload_max_description_length">5000</integer>
     <integer name="upload_max_keywords_length">200</integer>
-    <integer name="playlist_thumbnail_stack_size">5</integer>
+    <integer name="playlist_thumbnail_stack_size">3</integer>
     <integer name="playlist_thumbnail_scale">80</integer>
 </resources>

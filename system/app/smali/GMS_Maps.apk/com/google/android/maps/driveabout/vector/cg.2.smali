@@ -1,62 +1,118 @@
-.class Lcom/google/android/maps/driveabout/vector/cg;
+.class public Lcom/google/android/maps/driveabout/vector/cG;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/maps/driveabout/vector/cK;
+.implements Lcom/google/android/maps/driveabout/vector/E;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/vector/ce;
+.field private a:Lcom/google/android/maps/driveabout/vector/D;
+
+.field private b:I
+
+.field private c:Lcom/google/android/maps/driveabout/vector/cv;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/vector/ce;)V
-    .registers 2
+.method public constructor <init>(Lcom/google/android/maps/driveabout/vector/D;I)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/vector/cg;->a:Lcom/google/android/maps/driveabout/vector/ce;
-
+    .prologue
+    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 31
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/vector/cG;->a:Lcom/google/android/maps/driveabout/vector/D;
+
+    .line 32
+    iput p2, p0, Lcom/google/android/maps/driveabout/vector/cG;->b:I
+
+    .line 33
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/google/android/maps/driveabout/vector/E;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 39
+    invoke-interface {p1}, Lcom/google/android/maps/driveabout/vector/E;->a()Lcom/google/android/maps/driveabout/vector/D;
+
+    move-result-object v0
+
+    invoke-interface {p1}, Lcom/google/android/maps/driveabout/vector/E;->b()I
+
+    move-result v1
+
+    invoke-direct {p0, v0, v1}, Lcom/google/android/maps/driveabout/vector/cG;-><init>(Lcom/google/android/maps/driveabout/vector/D;I)V
+
+    .line 40
+    invoke-interface {p1}, Lcom/google/android/maps/driveabout/vector/E;->c()Lcom/google/android/maps/driveabout/vector/cv;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/google/android/maps/driveabout/vector/cG;->a(Lcom/google/android/maps/driveabout/vector/cv;)V
+
+    .line 41
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Z)Z
-    .registers 6
+.method public a()Lcom/google/android/maps/driveabout/vector/D;
+    .registers 2
 
-    const/4 v3, 0x1
+    .prologue
+    .line 66
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cG;->a:Lcom/google/android/maps/driveabout/vector/D;
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cg;->a:Lcom/google/android/maps/driveabout/vector/ce;
+    return-object v0
+.end method
 
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/vector/ce;->a(Lcom/google/android/maps/driveabout/vector/ce;)LB/c;
+.method public a(I)V
+    .registers 2
+    .parameter
 
-    move-result-object v0
+    .prologue
+    .line 79
+    iput p1, p0, Lcom/google/android/maps/driveabout/vector/cG;->b:I
 
-    if-eqz v0, :cond_13
+    .line 80
+    return-void
+.end method
 
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/cg;->a:Lcom/google/android/maps/driveabout/vector/ce;
+.method public a(Lcom/google/android/maps/driveabout/vector/cv;)V
+    .registers 2
+    .parameter
 
-    monitor-enter v1
+    .prologue
+    .line 91
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/vector/cG;->c:Lcom/google/android/maps/driveabout/vector/cv;
 
-    :try_start_c
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cg;->a:Lcom/google/android/maps/driveabout/vector/ce;
+    .line 92
+    return-void
+.end method
 
-    const/4 v2, 0x1
+.method public b()I
+    .registers 2
 
-    invoke-static {v0, v2}, Lcom/google/android/maps/driveabout/vector/ce;->a(Lcom/google/android/maps/driveabout/vector/ce;Z)Z
+    .prologue
+    .line 75
+    iget v0, p0, Lcom/google/android/maps/driveabout/vector/cG;->b:I
 
-    monitor-exit v1
+    return v0
+.end method
 
-    :cond_13
-    return v3
+.method public c()Lcom/google/android/maps/driveabout/vector/cv;
+    .registers 2
 
-    :catchall_14
-    move-exception v0
+    .prologue
+    .line 87
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/cG;->c:Lcom/google/android/maps/driveabout/vector/cv;
 
-    monitor-exit v1
-    :try_end_16
-    .catchall {:try_start_c .. :try_end_16} :catchall_14
-
-    throw v0
+    return-object v0
 .end method

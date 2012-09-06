@@ -35,30 +35,30 @@
     .registers 2
 
     .prologue
-    .line 10718
+    .line 10940
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 10728
+    .line 10950
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->result_:I
 
-    .line 10745
+    .line 10967
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->asset_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;
 
-    .line 10765
+    .line 10987
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->resultDetail_:Ljava/lang/String;
 
-    .line 10808
+    .line 11031
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->cachedSize:I
 
-    .line 10718
+    .line 10940
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .registers 2
 
     .prologue
-    .line 10747
+    .line 10969
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->asset_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;
 
     return-object v0
@@ -78,15 +78,15 @@
     .registers 2
 
     .prologue
-    .line 10810
+    .line 11034
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 10812
+    .line 11036
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->getSerializedSize()I
 
-    .line 10814
+    .line 11038
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->cachedSize:I
 
@@ -97,7 +97,7 @@
     .registers 2
 
     .prologue
-    .line 10730
+    .line 10952
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->result_:I
 
     return v0
@@ -107,7 +107,7 @@
     .registers 2
 
     .prologue
-    .line 10766
+    .line 10988
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->resultDetail_:Ljava/lang/String;
 
     return-object v0
@@ -117,10 +117,10 @@
     .registers 4
 
     .prologue
-    .line 10818
+    .line 11043
     const/4 v0, 0x0
 
-    .line 10819
+    .line 11044
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->hasResult()Z
 
@@ -128,7 +128,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 10820
+    .line 11045
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->getResult()I
@@ -141,7 +141,7 @@
 
     add-int/2addr v0, v1
 
-    .line 10823
+    .line 11048
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->hasAsset()Z
 
@@ -149,7 +149,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 10824
+    .line 11049
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->getAsset()Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;
@@ -162,7 +162,7 @@
 
     add-int/2addr v0, v1
 
-    .line 10827
+    .line 11052
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->hasResultDetail()Z
 
@@ -170,7 +170,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 10828
+    .line 11053
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->getResultDetail()Ljava/lang/String;
@@ -183,11 +183,11 @@
 
     add-int/2addr v0, v1
 
-    .line 10831
+    .line 11056
     :cond_31
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->cachedSize:I
 
-    .line 10832
+    .line 11057
     return v0
 .end method
 
@@ -195,7 +195,7 @@
     .registers 2
 
     .prologue
-    .line 10746
+    .line 10968
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->hasAsset:Z
 
     return v0
@@ -205,7 +205,7 @@
     .registers 2
 
     .prologue
-    .line 10729
+    .line 10951
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->hasResult:Z
 
     return v0
@@ -215,7 +215,7 @@
     .registers 2
 
     .prologue
-    .line 10767
+    .line 10989
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->hasResultDetail:Z
 
     return v0
@@ -231,29 +231,29 @@
     .end annotation
 
     .prologue
-    .line 10839
+    .line 11065
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 10840
+    .line 11066
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_2a
 
-    .line 10844
+    .line 11070
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 10845
+    .line 11071
     :sswitch_d
     return-object p0
 
-    .line 10850
+    .line 11076
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -263,22 +263,22 @@
 
     goto :goto_0
 
-    .line 10854
+    .line 11080
     :sswitch_16
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;-><init>()V
 
-    .line 10855
+    .line 11081
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 10856
+    .line 11082
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->setAsset(Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;
 
     goto :goto_0
 
-    .line 10860
+    .line 11086
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;
     :sswitch_22
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -289,7 +289,7 @@
 
     goto :goto_0
 
-    .line 10840
+    .line 11066
     :sswitch_data_2a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -309,7 +309,7 @@
     .end annotation
 
     .prologue
-    .line 10716
+    .line 10938
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;
 
     move-result-object v0
@@ -322,26 +322,26 @@
     .parameter "value"
 
     .prologue
-    .line 10749
+    .line 10971
     if-nez p1, :cond_8
 
-    .line 10750
+    .line 10972
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 10752
+    .line 10974
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->hasAsset:Z
 
-    .line 10753
+    .line 10975
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->asset_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;
 
-    .line 10754
+    .line 10976
     return-object p0
 .end method
 
@@ -350,15 +350,15 @@
     .parameter "value"
 
     .prologue
-    .line 10732
+    .line 10954
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->hasResult:Z
 
-    .line 10733
+    .line 10955
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->result_:I
 
-    .line 10734
+    .line 10956
     return-object p0
 .end method
 
@@ -367,15 +367,15 @@
     .parameter "value"
 
     .prologue
-    .line 10769
+    .line 10991
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->hasResultDetail:Z
 
-    .line 10770
+    .line 10992
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->resultDetail_:Ljava/lang/String;
 
-    .line 10771
+    .line 10993
     return-object p0
 .end method
 
@@ -389,14 +389,14 @@
     .end annotation
 
     .prologue
-    .line 10797
+    .line 11020
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->hasResult()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 10798
+    .line 11021
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->getResult()I
@@ -405,7 +405,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 10800
+    .line 11023
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->hasAsset()Z
 
@@ -413,7 +413,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 10801
+    .line 11024
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->getAsset()Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;
@@ -422,7 +422,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 10803
+    .line 11026
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->hasResultDetail()Z
 
@@ -430,7 +430,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 10804
+    .line 11027
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;->getResultDetail()Ljava/lang/String;
@@ -439,7 +439,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 10806
+    .line 11029
     :cond_2a
     return-void
 .end method

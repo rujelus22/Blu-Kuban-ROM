@@ -80,7 +80,7 @@
 
     .line 831
     :cond_d
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     const-string v1, "_id"
 
@@ -91,7 +91,7 @@
     iput v0, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mConversationIdIndex:I
 
     .line 833
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     const-string v1, "subject"
 
@@ -102,7 +102,7 @@
     iput v0, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mSubjectIndex:I
 
     .line 834
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     const-string v1, "snippet"
 
@@ -113,7 +113,7 @@
     iput v0, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mSnippetIndex:I
 
     .line 835
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     const-string v1, "date"
 
@@ -124,7 +124,7 @@
     iput v0, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mDateIndex:I
 
     .line 836
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     const-string v1, "personalLevel"
 
@@ -171,7 +171,7 @@
     invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 864
-    iget-object v3, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v3, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v3, v0}, Landroid/database/Cursor;->respond(Landroid/os/Bundle;)Landroid/os/Bundle;
 
@@ -227,7 +227,7 @@
 
     .prologue
     .line 876
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     iget v1, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mConversationIdIndex:I
 
@@ -255,7 +255,7 @@
 
     .prologue
     .line 908
-    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     iget v1, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mDateIndex:I
 
@@ -271,7 +271,7 @@
 
     .prologue
     .line 903
-    iget-object v1, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v1, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     iget v2, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mPersonalLevelIndex:I
 
@@ -308,7 +308,7 @@
 
     .prologue
     .line 841
-    iget-object v2, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v2, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v2}, Landroid/database/Cursor;->getExtras()Landroid/os/Bundle;
 
@@ -374,7 +374,7 @@
     invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 850
-    iget-object v3, p0, Lcom/google/android/talk/GmailProviderWrapper$ConversationCursor;->mCursor:Landroid/database/Cursor;
+    iget-object v3, p0, Lcom/google/android/talk/GmailProviderWrapper$MailCursor;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v3, v0}, Landroid/database/Cursor;->respond(Landroid/os/Bundle;)Landroid/os/Bundle;
 

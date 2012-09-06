@@ -29,6 +29,12 @@
         <item>Vain puhelimen ollessa äänetön</item>
         <item>Ei koskaan</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>pois käytöstä</item>
+        <item>matala</item>
+        <item>keskitaso</item>
+        <item>virtuaalinen</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Ei mitään</item>
         <item>Kuvanvakain: Matala</item>

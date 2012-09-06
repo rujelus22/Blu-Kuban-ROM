@@ -147,9 +147,9 @@
 
     .prologue
     .line 136
-    const v3, 0x7f0800fe
+    const v3, 0x7f080124
 
-    const v4, 0x7f0800cf
+    const v4, 0x7f0800d5
 
     move-object v0, p0
 
@@ -406,7 +406,7 @@
     if-eqz p1, :cond_1c
 
     .line 268
-    const v3, 0x7f080045
+    const v3, 0x7f080040
 
     invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -421,7 +421,7 @@
     .line 272
     .end local v2           #textView:Landroid/widget/TextView;
     :cond_1c
-    const v3, 0x7f0800fd
+    const v3, 0x7f080123
 
     invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -491,6 +491,28 @@
 
 
 # virtual methods
+.method public isDataMode()Z
+    .registers 3
+
+    .prologue
+    .line 151
+    iget v0, p0, Lcom/google/android/finsky/layout/LayoutSwitcher;->mMode:I
+
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_7
+
+    const/4 v0, 0x1
+
+    :goto_6
+    return v0
+
+    :cond_7
+    const/4 v0, 0x0
+
+    goto :goto_6
+.end method
+
 .method public switchToBlankMode()V
     .registers 3
 

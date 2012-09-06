@@ -10,22 +10,20 @@
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/youtube/googlemobile/common/io/a/b;)V
-    .registers 3
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/googlemobile/common/io/a/e;-><init>(Lcom/google/android/youtube/googlemobile/common/io/a/b;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/youtube/googlemobile/common/io/a/b;B)V
-    .registers 3
+.method private constructor <init>(Lcom/google/android/youtube/googlemobile/common/io/a/b;)V
+    .registers 2
 
     iput-object p1, p0, Lcom/google/android/youtube/googlemobile/common/io/a/e;->a:Lcom/google/android/youtube/googlemobile/common/io/a/b;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/youtube/googlemobile/common/io/a/b;B)V
+    .registers 3
+
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/googlemobile/common/io/a/e;-><init>(Lcom/google/android/youtube/googlemobile/common/io/a/b;)V
 
     return-void
 .end method

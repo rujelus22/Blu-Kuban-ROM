@@ -4,398 +4,137 @@
 
 
 # instance fields
-.field final a:Ljava/util/ArrayList;
+.field public final a:Ljava/lang/String;
+
+.field public final b:Z
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method private constructor <init>(Ljava/lang/String;Z)V
+    .registers 3
+    .parameter
+    .parameter
 
     .prologue
-    .line 20
+    .line 16
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 21
-    new-instance v0, Ljava/util/ArrayList;
+    .line 17
+    iput-object p1, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/lang/String;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    .line 18
+    iput-boolean p2, p0, Lcom/google/android/youtube/core/utils/m;->b:Z
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/util/ArrayList;
-
-    .line 22
+    .line 19
     return-void
 .end method
 
-.method private b(J)I
-    .registers 7
+.method public static a(Landroid/net/Uri;)Lcom/google/android/youtube/core/utils/m;
+    .registers 5
     .parameter
 
     .prologue
-    .line 29
+    const/4 v1, 0x0
+
     const/4 v0, 0x0
 
-    move v1, v0
-
-    :goto_2
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-ge v1, v0, :cond_23
-
-    .line 30
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/util/Pair;
-
-    .line 31
-    iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    cmp-long v0, p1, v2
-
-    if-gtz v0, :cond_1f
-
     .line 35
-    :goto_1e
-    return v1
+    const-string v2, "uri cannot be null"
 
-    .line 29
-    :cond_1f
-    add-int/lit8 v0, v1, 0x1
+    invoke-static {p0, v2}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move v1, v0
+    .line 36
+    const-string v2, "playnext"
 
-    goto :goto_2
-
-    .line 35
-    :cond_23
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
-
-    goto :goto_1e
-.end method
-
-
-# virtual methods
-.method public final a(J)J
-    .registers 7
-    .parameter
-
-    .prologue
-    .line 74
-    invoke-direct {p0, p1, p2}, Lcom/google/android/youtube/core/utils/m;->b(J)I
-
-    move-result v0
-
-    .line 75
-    iget-object v1, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
-
-    if-ge v0, v1, :cond_20
-
-    .line 76
-    iget-object v1, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/util/Pair;
-
-    .line 77
-    iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/Long;
-
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v1
-
-    cmp-long v1, p1, v1
-
-    if-gez v1, :cond_21
-
-    .line 79
-    :cond_20
-    :goto_20
-    return-wide p1
-
-    .line 77
-    :cond_21
-    iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x1
-
-    add-long p1, v0, v2
-
-    goto :goto_20
-.end method
-
-.method public final a(JJ)J
-    .registers 13
-    .parameter
-    .parameter
-
-    .prologue
-    const-wide/16 v6, 0x1
-
-    .line 43
-    sub-long v0, p1, v6
-
-    invoke-direct {p0, v0, v1}, Lcom/google/android/youtube/core/utils/m;->b(J)I
-
-    move-result v3
-
-    .line 44
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-ge v3, v0, :cond_63
-
-    .line 45
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/util/Pair;
-
-    .line 46
-    iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/Long;
-
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v1
-
-    cmp-long v1, p1, v1
-
-    if-lez v1, :cond_2c
-
-    .line 47
-    iget-object v0, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide p1
-
-    .line 50
-    :cond_2c
-    invoke-direct {p0, p3, p4}, Lcom/google/android/youtube/core/utils/m;->b(J)I
-
-    move-result v2
-
-    .line 51
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-ge v2, v0, :cond_76
-
-    .line 52
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/util/Pair;
-
-    .line 53
-    iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/Long;
-
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    sub-long/2addr v4, v6
-
-    cmp-long v1, p3, v4
-
-    if-ltz v1, :cond_76
-
-    .line 54
-    iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide p3
-
-    .line 55
-    add-int/lit8 v0, v2, 0x1
-
-    .line 60
-    :goto_57
-    add-int/lit8 v0, v0, -0x1
-
-    :goto_59
-    if-lt v0, v3, :cond_63
-
-    .line 61
-    iget-object v1, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
-
-    .line 60
-    add-int/lit8 v0, v0, -0x1
-
-    goto :goto_59
-
-    .line 65
-    :cond_63
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/util/ArrayList;
-
-    new-instance v1, Landroid/util/Pair;
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {p0, v2}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    .line 37
+    if-eqz v2, :cond_16
 
-    move-result-object v4
+    invoke-static {v2, v0}, Lcom/google/android/youtube/core/utils/Util;->a(Ljava/lang/String;I)I
 
-    invoke-direct {v1, v2, v4}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    move-result v2
 
-    invoke-virtual {v0, v3, v1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+    if-eqz v2, :cond_16
 
-    .line 66
-    return-wide p3
+    const/4 v0, 0x1
 
-    :cond_76
-    move v0, v2
+    .line 38
+    :cond_16
+    const-string v2, "list"
 
-    goto :goto_57
-.end method
+    invoke-virtual {p0, v2}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
-.method public final a()V
-    .registers 2
+    move-result-object v2
 
-    .prologue
-    .line 83
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/util/ArrayList;
+    .line 39
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+    move-result v3
 
-    .line 84
-    return-void
-.end method
+    if-nez v3, :cond_38
 
-.method public final toString()Ljava/lang/String;
-    .registers 6
+    .line 40
+    const-string v3, "PL"
 
-    .prologue
-    .line 88
-    new-instance v2, Ljava/lang/StringBuffer;
+    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    invoke-direct {v2}, Ljava/lang/StringBuffer;-><init>()V
+    move-result v3
 
-    .line 89
-    const/4 v0, 0x0
+    if-eqz v3, :cond_36
 
-    move v1, v0
+    .line 42
+    new-instance v1, Lcom/google/android/youtube/core/utils/m;
 
-    :goto_7
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/util/ArrayList;
+    const/4 v3, 0x2
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v2, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result v0
+    move-result-object v2
 
-    if-ge v1, v0, :cond_3b
+    invoke-direct {v1, v2, v0}, Lcom/google/android/youtube/core/utils/m;-><init>(Ljava/lang/String;Z)V
 
-    .line 90
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/util/ArrayList;
+    move-object v0, v1
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/util/Pair;
-
-    .line 91
-    iget-object v3, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
-
-    move-result-object v3
-
-    const-string v4, "-"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    move-result-object v3
-
-    iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
-
-    .line 92
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/m;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    if-ge v1, v0, :cond_37
-
-    .line 93
-    const-string v0, " ... "
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    .line 89
-    :cond_37
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_7
-
-    .line 96
-    :cond_3b
-    invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
+    .line 50
+    :goto_35
     return-object v0
+
+    :cond_36
+    move-object v0, v1
+
+    .line 44
+    goto :goto_35
+
+    .line 46
+    :cond_38
+    const-string v2, "p"
+
+    invoke-virtual {p0, v2}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 47
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_4b
+
+    .line 48
+    new-instance v1, Lcom/google/android/youtube/core/utils/m;
+
+    invoke-direct {v1, v2, v0}, Lcom/google/android/youtube/core/utils/m;-><init>(Ljava/lang/String;Z)V
+
+    move-object v0, v1
+
+    goto :goto_35
+
+    :cond_4b
+    move-object v0, v1
+
+    .line 50
+    goto :goto_35
 .end method

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="general_preference_text_zoom_summary_array">
+        <item>ข้อความขนาดเล็กมาก</item>
+        <item>ข้อความขนาดเล็ก</item>
+        <item>ข้อความขนาดปกติ</item>
+        <item>ข้อความขนาดใหญ่</item>
+        <item>ข้อความขนาดใหญ่</item>
+    </string-array>
+</resources>

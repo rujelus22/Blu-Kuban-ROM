@@ -12,6 +12,8 @@
 
 
 # instance fields
+.field private mContentView:Landroid/widget/TextView;
+
 .field private mCurrentMaxLines:I
 
 .field private mDefaultMaxLines:I
@@ -27,10 +29,10 @@
     .parameter "context"
 
     .prologue
-    .line 32
+    .line 34
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 33
+    .line 35
     return-void
 .end method
 
@@ -40,17 +42,39 @@
     .parameter "attrs"
 
     .prologue
-    .line 36
+    .line 38
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 37
+    .line 39
     return-void
 .end method
 
 
 # virtual methods
+.method protected onFinishInflate()V
+    .registers 2
+
+    .prologue
+    .line 43
+    invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
+
+    .line 45
+    const v0, 0x7f0800f8
+
+    invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/DetailsTextLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mContentView:Landroid/widget/TextView;
+
+    .line 46
+    return-void
+.end method
+
 .method protected onLayout(ZIIII)V
-    .registers 14
+    .registers 13
     .parameter "changed"
     .parameter "l"
     .parameter "t"
@@ -58,127 +82,124 @@
     .parameter "b"
 
     .prologue
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    .line 56
-    iget-object v5, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mMetricsListener:Lcom/google/android/finsky/layout/DetailsTextLayout$MetricsListener;
-
-    if-nez v5, :cond_9
-
-    .line 57
+    .line 64
     invoke-super/range {p0 .. p5}, Landroid/widget/LinearLayout;->onLayout(ZIIII)V
 
-    .line 83
+    .line 65
+    iget-object v4, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mMetricsListener:Lcom/google/android/finsky/layout/DetailsTextLayout$MetricsListener;
+
+    if-nez v4, :cond_9
+
+    .line 88
     :cond_8
     :goto_8
     return-void
 
-    .line 61
+    .line 69
     :cond_9
-    invoke-super/range {p0 .. p5}, Landroid/widget/LinearLayout;->onLayout(ZIIII)V
+    sub-int v2, p4, p2
 
-    .line 62
-    sub-int v3, p4, p2
+    .line 70
+    .local v2, width:I
+    if-lez v2, :cond_8
 
-    .line 63
-    .local v3, width:I
-    if-lez v3, :cond_8
+    iget v4, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mPrevWidth:I
 
-    iget v5, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mPrevWidth:I
+    if-eq v4, v2, :cond_8
 
-    if-eq v5, v3, :cond_8
+    .line 71
+    iget-object v4, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mContentView:Landroid/widget/TextView;
 
-    .line 64
-    const v5, 0x7f0800ec
-
-    invoke-virtual {p0, v5}, Lcom/google/android/finsky/layout/DetailsTextLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    .line 66
-    .local v0, contentView:Landroid/widget/TextView;
     const v5, 0x7fffffff
 
-    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setMaxLines(I)V
+    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 67
-    invoke-virtual {v0}, Landroid/widget/TextView;->getMeasuredWidth()I
+    .line 72
+    iget-object v4, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mContentView:Landroid/widget/TextView;
 
-    move-result v5
-
-    const/high16 v6, 0x4000
-
-    invoke-static {v5, v6}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-virtual {v4}, Landroid/widget/TextView;->getMeasuredWidth()I
 
     move-result v4
 
-    .line 69
-    .local v4, widthSpec:I
-    invoke-virtual {v0, v4, v7}, Landroid/widget/TextView;->measure(II)V
+    const/high16 v5, 0x4000
 
-    .line 70
-    invoke-virtual {v0}, Landroid/widget/TextView;->getMeasuredHeight()I
+    invoke-static {v4, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v3
+
+    .line 74
+    .local v3, widthSpec:I
+    iget-object v4, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mContentView:Landroid/widget/TextView;
+
+    invoke-virtual {v4, v3, v6}, Landroid/widget/TextView;->measure(II)V
+
+    .line 75
+    iget-object v4, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mContentView:Landroid/widget/TextView;
+
+    invoke-virtual {v4}, Landroid/widget/TextView;->getMeasuredHeight()I
+
+    move-result v0
+
+    .line 77
+    .local v0, fullHeight:I
+    iget-object v4, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mContentView:Landroid/widget/TextView;
+
+    iget v5, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mDefaultMaxLines:I
+
+    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setMaxLines(I)V
+
+    .line 78
+    iget-object v4, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mContentView:Landroid/widget/TextView;
+
+    invoke-virtual {v4, v3, v6}, Landroid/widget/TextView;->measure(II)V
+
+    .line 79
+    iget-object v4, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mContentView:Landroid/widget/TextView;
+
+    invoke-virtual {v4}, Landroid/widget/TextView;->getMeasuredHeight()I
 
     move-result v1
 
-    .line 72
-    .local v1, fullHeight:I
-    iget v5, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mDefaultMaxLines:I
+    .line 81
+    .local v1, truncatedHeight:I
+    iget-object v4, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mContentView:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setMaxLines(I)V
-
-    .line 73
-    invoke-virtual {v0, v4, v7}, Landroid/widget/TextView;->measure(II)V
-
-    .line 74
-    invoke-virtual {v0}, Landroid/widget/TextView;->getMeasuredHeight()I
-
-    move-result v2
-
-    .line 76
-    .local v2, truncatedHeight:I
     iget v5, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mCurrentMaxLines:I
 
-    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setMaxLines(I)V
+    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 77
-    invoke-virtual {v0, v4, v7}, Landroid/widget/TextView;->measure(II)V
+    .line 82
+    iget-object v4, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mContentView:Landroid/widget/TextView;
 
-    .line 79
-    iget-object v5, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mMetricsListener:Lcom/google/android/finsky/layout/DetailsTextLayout$MetricsListener;
+    invoke-virtual {v4, v3, v6}, Landroid/widget/TextView;->measure(II)V
 
-    invoke-interface {v5, v1, v2}, Lcom/google/android/finsky/layout/DetailsTextLayout$MetricsListener;->metricsAvailable(II)V
+    .line 84
+    iget-object v4, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mMetricsListener:Lcom/google/android/finsky/layout/DetailsTextLayout$MetricsListener;
 
-    .line 81
-    iput v3, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mPrevWidth:I
+    invoke-interface {v4, v0, v1}, Lcom/google/android/finsky/layout/DetailsTextLayout$MetricsListener;->metricsAvailable(II)V
+
+    .line 86
+    iput v2, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mPrevWidth:I
 
     goto :goto_8
 .end method
 
 .method public setCurrentMaxLines(I)V
-    .registers 4
+    .registers 3
     .parameter "currentMaxLines"
 
     .prologue
-    .line 49
-    const v1, 0x7f0800ec
+    .line 58
+    iget-object v0, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mContentView:Landroid/widget/TextView;
 
-    invoke-virtual {p0, v1}, Lcom/google/android/finsky/layout/DetailsTextLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    .line 50
-    .local v0, contentView:Landroid/widget/TextView;
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 51
+    .line 59
     iput p1, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mCurrentMaxLines:I
 
-    .line 52
+    .line 60
     return-void
 .end method
 
@@ -187,13 +208,13 @@
     .parameter "defaultMaxLines"
 
     .prologue
-    .line 44
+    .line 53
     iput p1, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mDefaultMaxLines:I
 
-    .line 45
+    .line 54
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/layout/DetailsTextLayout;->setCurrentMaxLines(I)V
 
-    .line 46
+    .line 55
     return-void
 .end method
 
@@ -202,9 +223,9 @@
     .parameter "metricsListener"
 
     .prologue
-    .line 40
+    .line 49
     iput-object p1, p0, Lcom/google/android/finsky/layout/DetailsTextLayout;->mMetricsListener:Lcom/google/android/finsky/layout/DetailsTextLayout$MetricsListener;
 
-    .line 41
+    .line 50
     return-void
 .end method

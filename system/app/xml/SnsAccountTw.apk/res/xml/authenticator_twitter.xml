@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<account-authenticator android:label="@string/account_label_twitter" android:icon="@drawable/icon_twitter" android:accountType="com.sec.android.app.snsaccounttwitter.account_type" android:smallIcon="@drawable/icon_twitter" android:accountPreferences="@xml/account_preferences"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

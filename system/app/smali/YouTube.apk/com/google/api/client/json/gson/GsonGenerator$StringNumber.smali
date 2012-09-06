@@ -17,13 +17,13 @@
     .parameter
 
     .prologue
-    .line 128
+    .line 126
     invoke-direct {p0}, Ljava/lang/Number;-><init>()V
 
-    .line 129
+    .line 127
     iput-object p1, p0, Lcom/google/api/client/json/gson/GsonGenerator$StringNumber;->encodedValue:Ljava/lang/String;
 
-    .line 130
+    .line 128
     return-void
 .end method
 
@@ -33,7 +33,7 @@
     .registers 3
 
     .prologue
-    .line 134
+    .line 132
     const-wide/16 v0, 0x0
 
     return-wide v0
@@ -43,7 +43,7 @@
     .registers 2
 
     .prologue
-    .line 139
+    .line 137
     const/4 v0, 0x0
 
     return v0
@@ -53,7 +53,7 @@
     .registers 2
 
     .prologue
-    .line 144
+    .line 142
     const/4 v0, 0x0
 
     return v0
@@ -63,7 +63,7 @@
     .registers 3
 
     .prologue
-    .line 149
+    .line 147
     const-wide/16 v0, 0x0
 
     return-wide v0
@@ -73,7 +73,7 @@
     .registers 2
 
     .prologue
-    .line 154
+    .line 152
     iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator$StringNumber;->encodedValue:Ljava/lang/String;
 
     return-object v0

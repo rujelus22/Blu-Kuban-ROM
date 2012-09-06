@@ -10,7 +10,7 @@
 
     .prologue
     .line 25
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 26
     return-void
@@ -22,22 +22,22 @@
     .parameter "t"
 
     .prologue
-    .line 113
+    .line 107
     if-nez p0, :cond_7
 
     const-string v0, "(null)"
 
-    .line 114
+    .line 108
     .local v0, m:Ljava/lang/String;
     :goto_4
     if-nez p1, :cond_c
 
-    .line 117
+    .line 111
     .end local v0           #m:Ljava/lang/String;
     :goto_6
     return-object v0
 
-    .line 113
+    .line 107
     :cond_7
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -45,7 +45,7 @@
 
     goto :goto_4
 
-    .line 117
+    .line 111
     .restart local v0       #m:Ljava/lang/String;
     :cond_c
     new-instance v1, Ljava/lang/StringBuilder;
@@ -84,18 +84,18 @@
     .parameter "message"
 
     .prologue
-    .line 65
+    .line 63
     invoke-virtual {p0}, Lorg/apache/james/mime4j/Log;->isDebugEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_7
 
-    .line 68
+    .line 65
     :goto_6
     return-void
 
-    .line 67
+    .line 64
     :cond_7
     const-string v0, "Email"
 
@@ -115,7 +115,7 @@
     .parameter "message"
 
     .prologue
-    .line 97
+    .line 91
     const-string v0, "Email"
 
     const/4 v1, 0x0
@@ -126,7 +126,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 98
+    .line 92
     return-void
 .end method
 
@@ -135,18 +135,18 @@
     .parameter "message"
 
     .prologue
-    .line 77
+    .line 73
     invoke-virtual {p0}, Lorg/apache/james/mime4j/Log;->isInfoEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_7
 
-    .line 80
+    .line 75
     :goto_6
     return-void
 
-    .line 79
+    .line 74
     :cond_7
     const-string v0, "Email"
 
@@ -186,7 +186,7 @@
 
     .prologue
     .line 49
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     return v0
 .end method
@@ -196,7 +196,7 @@
     .parameter "message"
 
     .prologue
-    .line 89
+    .line 83
     const-string v0, "Email"
 
     const/4 v1, 0x0
@@ -207,7 +207,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 90
+    .line 84
     return-void
 .end method
 
@@ -217,7 +217,7 @@
     .parameter "t"
 
     .prologue
-    .line 93
+    .line 87
     const-string v0, "Email"
 
     invoke-static {p1, p2}, Lorg/apache/james/mime4j/Log;->toString(Ljava/lang/Object;Ljava/lang/Throwable;)Ljava/lang/String;
@@ -226,6 +226,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 94
+    .line 88
     return-void
 .end method

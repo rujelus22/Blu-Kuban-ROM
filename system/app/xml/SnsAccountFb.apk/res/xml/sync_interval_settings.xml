@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-    <ListPreference android:persistent="false" android:entries="@array/sns_sync_interval_entries" android:title="@string/calendar_sync_interval" android:key="calendar_interval" android:entryValues="@array/sns_sync_interval_values"
-      xmlns:android="http://schemas.android.com/apk/res/android" />
-    <ListPreference android:persistent="false" android:entries="@array/sns_sync_interval_entries" android:title="@string/message_sync_interval" android:key="message_interval" android:entryValues="@array/sns_sync_interval_values"
-      xmlns:android="http://schemas.android.com/apk/res/android" />
-</PreferenceScreen>

@@ -31,7 +31,7 @@
     iput-object p1, p0, Lcom/google/android/talk/fragments/ChatScreenFragment$GalleryAdapter;->this$0:Lcom/google/android/talk/fragments/ChatScreenFragment;
 
     .line 1016
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1017
     iput-object p2, p0, Lcom/google/android/talk/fragments/ChatScreenFragment$GalleryAdapter;->mChatList:Lcom/google/android/talk/util/ChatList;

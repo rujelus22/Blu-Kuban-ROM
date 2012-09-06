@@ -1,63 +1,64 @@
-.class public abstract Lcom/google/android/youtube/core/converter/http/em;
-.super Lcom/google/android/youtube/core/converter/http/ao;
+.class final Lcom/google/android/youtube/core/converter/http/em;
+.super Lcom/google/android/youtube/core/converter/l;
 .source "SourceFile"
 
 
-# instance fields
-.field protected final a:Lcom/google/android/youtube/core/converter/k;
-
-
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/core/converter/k;)V
-    .registers 3
-    .parameter
+.method constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 27
-    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/http/ao;-><init>()V
+    .line 469
+    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
-    .line 28
-    const-string v0, "the parser can\'t be null"
-
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/youtube/core/converter/k;
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/converter/http/em;->a:Lcom/google/android/youtube/core/converter/k;
-
-    .line 29
     return-void
 .end method
 
 
 # virtual methods
-.method protected abstract a()Lcom/google/android/youtube/core/converter/c;
-.end method
-
-.method protected final a(Ljava/io/InputStream;)Ljava/lang/Object;
-    .registers 4
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;)V
+    .registers 6
+    .parameter
     .parameter
 
     .prologue
-    .line 40
-    iget-object v0, p0, Lcom/google/android/youtube/core/converter/http/em;->a:Lcom/google/android/youtube/core/converter/k;
+    const/4 v2, 0x0
 
-    invoke-virtual {p0}, Lcom/google/android/youtube/core/converter/http/em;->a()Lcom/google/android/youtube/core/converter/c;
+    .line 472
+    const-class v0, Lcom/google/android/youtube/core/model/Video$Builder;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->a(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/core/model/Video$Builder;
+
+    .line 473
+    const-string v1, "numLikes"
+
+    invoke-interface {p2, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/youtube/core/converter/k;->a(Ljava/io/InputStream;Lcom/google/android/youtube/core/converter/c;)Ljava/lang/Object;
+    invoke-static {v1, v2}, Lcom/google/android/youtube/core/utils/Util;->a(Ljava/lang/String;I)I
 
-    move-result-object v0
+    move-result v1
 
-    check-cast v0, Lcom/google/android/youtube/core/model/j;
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Video$Builder;->likesCount(I)Lcom/google/android/youtube/core/model/Video$Builder;
 
-    .line 41
-    invoke-interface {v0}, Lcom/google/android/youtube/core/model/j;->build()Ljava/lang/Object;
+    .line 474
+    const-string v1, "numDislikes"
 
-    move-result-object v0
+    invoke-interface {p2, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
 
-    return-object v0
+    move-result-object v1
+
+    invoke-static {v1, v2}, Lcom/google/android/youtube/core/utils/Util;->a(Ljava/lang/String;I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Video$Builder;->dislikesCount(I)Lcom/google/android/youtube/core/model/Video$Builder;
+
+    .line 475
+    return-void
 .end method

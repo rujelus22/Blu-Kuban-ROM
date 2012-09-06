@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 335
+    .line 334
     iput-object p1, p0, Lcom/samsung/client/DMApp$1;->this$0:Lcom/samsung/client/DMApp;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,21 +43,21 @@
     .parameter "service"
 
     .prologue
-    .line 339
+    .line 338
     const-string v1, "DMApp"
 
     const-string v2, "onServiceConnected"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 340
+    .line 339
     invoke-static {p2}, Lcom/samsung/client/ISyncmlService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/samsung/client/ISyncmlService;
 
     move-result-object v1
 
     invoke-static {v1}, Lcom/samsung/client/DMApp;->access$502(Lcom/samsung/client/ISyncmlService;)Lcom/samsung/client/ISyncmlService;
 
-    .line 342
+    .line 341
     :try_start_e
     invoke-static {}, Lcom/samsung/client/DMApp;->access$500()Lcom/samsung/client/ISyncmlService;
 
@@ -72,7 +72,7 @@
 
     invoke-interface {v1, v2}, Lcom/samsung/client/ISyncmlService;->registerDMCallback(Lcom/samsung/client/ISyncmlServiceDMCallback;)V
 
-    .line 343
+    .line 342
     invoke-static {}, Lcom/samsung/client/DMApp;->access$500()Lcom/samsung/client/ISyncmlService;
 
     move-result-object v1
@@ -83,15 +83,15 @@
     :try_end_23
     .catch Ljava/lang/Exception; {:try_start_e .. :try_end_23} :catch_24
 
-    .line 348
+    .line 347
     :goto_23
     return-void
 
-    .line 344
+    .line 343
     :catch_24
     move-exception v0
 
-    .line 345
+    .line 344
     .local v0, e:Ljava/lang/Exception;
     const-string v1, "DMApp"
 
@@ -109,14 +109,14 @@
     .parameter "name"
 
     .prologue
-    .line 352
+    .line 351
     const-string v1, "DMApp"
 
     const-string v2, "onServiceDisConnected"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 354
+    .line 353
     :try_start_7
     invoke-static {}, Lcom/samsung/client/DMApp;->access$500()Lcom/samsung/client/ISyncmlService;
 
@@ -133,20 +133,20 @@
     :try_end_14
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_14} :catch_19
 
-    .line 358
+    .line 357
     :goto_14
     const/4 v1, 0x0
 
     invoke-static {v1}, Lcom/samsung/client/DMApp;->access$502(Lcom/samsung/client/ISyncmlService;)Lcom/samsung/client/ISyncmlService;
 
-    .line 361
+    .line 360
     return-void
 
-    .line 355
+    .line 354
     :catch_19
     move-exception v0
 
-    .line 356
+    .line 355
     .local v0, e:Ljava/lang/Exception;
     const-string v1, "DMApp"
 

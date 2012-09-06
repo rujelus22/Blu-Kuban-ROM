@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/activities/PurchaseFragment;->initializeDcbParams()V
+    value = Lcom/google/android/finsky/activities/PurchaseFragment;->initializeDcb2Provisioning()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 654
+    .line 835
     iput-object p1, p0, Lcom/google/android/finsky/activities/PurchaseFragment$6;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .registers 2
 
     .prologue
-    .line 657
+    .line 838
     iget-object v0, p0, Lcom/google/android/finsky/activities/PurchaseFragment$6;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
-    #calls: Lcom/google/android/finsky/activities/PurchaseFragment;->initializeDcbProvisioning()V
-    invoke-static {v0}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$1400(Lcom/google/android/finsky/activities/PurchaseFragment;)V
+    #calls: Lcom/google/android/finsky/activities/PurchaseFragment;->startOrResumePurchase()V
+    invoke-static {v0}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$2100(Lcom/google/android/finsky/activities/PurchaseFragment;)V
 
-    .line 658
+    .line 839
     return-void
 .end method

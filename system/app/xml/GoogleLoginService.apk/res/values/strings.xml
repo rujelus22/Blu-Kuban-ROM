@@ -245,18 +245,18 @@ question"</b>" "</string>
     <string name="account_intro_recommended_title">Make it Google</string>
     <string name="common_message">"A Google account lets you
 
-"<li><ul>See and organize all your information from anywhere.</ul></li>"
+"<ul><li>See and organize all your information from anywhere.</li></ul>"
 
-"<li><ul>Automatically back up your data.</ul></li>"
+"<ul><li>Automatically back up your data.</li></ul>"
 
-"<li><ul>Use Google services easily from anywhere.</ul></li></string>
+"<ul><li>Use Google services easily from anywhere.</li></ul></string>
     <string name="add_account_message">" You can use more than one Google Account (such as your home and work accounts). Touch "<b>Sign in</b> or <b>Create Account</b>" to add a Google Account "</string>
     <string name="account_intro_default_message">Never lose your stuff again. A Google Account keeps everything safe.</string>
     <string name="account_intro_custom_endtext">Got %s? Sign in now.</string>
     <string name="account_intro_simple_message">Do you want to add an existing account or a create a new one?</string>
     <string name="learn_more_title"><annotation id="learn_more">Learn more</annotation></string>
     <string name="learn_more_account_intro">"A Google account lets you
-"<li><ul>See and organize all your information from anywhere.<li>Automatically back up your data, like email, contacts, music, and pictures.</li><li>Use Google services easily from anywhere—including Contacts, Calendar, Maps, and more.</li></ul></li></string>
+"<ul><li>See and organize all your information from anywhere.<li>Automatically back up your data, like email, contacts, music, and pictures.</li><li>Use Google services easily from anywhere—including Contacts, Calendar, Maps, and more.</li></li></ul></string>
     <string name="learn_more_account_intro_title">About Google accounts</string>
     <string name="learn_more_web_history">"Web History adjusts search results based on what you've searched for and which sites you've visited, providing a personalized Google experience.
 

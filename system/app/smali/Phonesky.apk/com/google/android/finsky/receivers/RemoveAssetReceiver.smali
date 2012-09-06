@@ -1,5 +1,5 @@
 .class public Lcom/google/android/finsky/receivers/RemoveAssetReceiver;
-.super Landroid/content/BroadcastReceiver;
+.super Lcom/google/android/finsky/download/DownloadReceiver;
 .source "RemoveAssetReceiver.java"
 
 
@@ -12,37 +12,103 @@
     .registers 1
 
     .prologue
-    .line 28
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    .line 27
+    invoke-direct {p0}, Lcom/google/android/finsky/download/DownloadReceiver;-><init>()V
 
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/google/android/finsky/receivers/RemoveAssetReceiver;Ljava/lang/String;ZLcom/google/android/finsky/local/LocalAsset;)V
-    .registers 4
+.method static synthetic access$000(Lcom/google/android/finsky/receivers/RemoveAssetReceiver;Landroid/content/Intent;)V
+    .registers 2
     .parameter "x0"
     .parameter "x1"
-    .parameter "x2"
-    .parameter "x3"
 
     .prologue
-    .line 28
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/finsky/receivers/RemoveAssetReceiver;->removeAsset(Ljava/lang/String;ZLcom/google/android/finsky/local/LocalAsset;)V
+    .line 27
+    invoke-direct {p0, p1}, Lcom/google/android/finsky/receivers/RemoveAssetReceiver;->finishOnReceive(Landroid/content/Intent;)V
 
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/google/android/finsky/receivers/RemoveAssetReceiver;Ljava/lang/String;Z)V
-    .registers 3
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
+.method private finishOnReceive(Landroid/content/Intent;)V
+    .registers 8
+    .parameter "intent"
 
     .prologue
-    .line 28
-    invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/receivers/RemoveAssetReceiver;->removePackage(Ljava/lang/String;Z)V
+    .line 69
+    const-string v4, "asset_package"
 
+    invoke-virtual {p1, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 70
+    .local v3, packageName:Ljava/lang/String;
+    const-string v4, "asset_name"
+
+    invoke-virtual {p1, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 71
+    .local v1, assetName:Ljava/lang/String;
+    const-string v4, "asset_malicious"
+
+    invoke-virtual {p1, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
+
+    move-result v2
+
+    .line 74
+    .local v2, isMalicious:Z
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_25
+
+    .line 75
+    const-string v4, "Unexpected empty package name"
+
+    const/4 v5, 0x0
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    invoke-static {v4, v5}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 89
+    :cond_24
+    :goto_24
     return-void
+
+    .line 80
+    :cond_25
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/google/android/finsky/FinskyApp;->getAppStates()Lcom/google/android/finsky/appstate/AppStates;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v3}, Lcom/google/android/finsky/appstate/AppStates;->getApp(Ljava/lang/String;)Lcom/google/android/finsky/appstate/AppStates$AppState;
+
+    move-result-object v0
+
+    .line 83
+    .local v0, appState:Lcom/google/android/finsky/appstate/AppStates$AppState;
+    invoke-direct {p0, v3, v2}, Lcom/google/android/finsky/receivers/RemoveAssetReceiver;->removePackage(Ljava/lang/String;Z)V
+
+    .line 86
+    if-eqz v0, :cond_24
+
+    .line 87
+    invoke-direct {p0, v3, v1, v2, v0}, Lcom/google/android/finsky/receivers/RemoveAssetReceiver;->notifyRemovingKnownApp(Ljava/lang/String;Ljava/lang/String;ZLcom/google/android/finsky/appstate/AppStates$AppState;)V
+
+    goto :goto_24
 .end method
 
 .method public static initialize(Lcom/google/android/finsky/utils/Notifier;)V
@@ -50,73 +116,46 @@
     .parameter "notificationHelper"
 
     .prologue
-    .line 56
+    .line 40
     sput-object p0, Lcom/google/android/finsky/receivers/RemoveAssetReceiver;->sNotificationHelper:Lcom/google/android/finsky/utils/Notifier;
 
-    .line 57
+    .line 41
     return-void
 .end method
 
-.method private removeAsset(Ljava/lang/String;ZLcom/google/android/finsky/local/LocalAsset;)V
+.method private notifyRemovingKnownApp(Ljava/lang/String;Ljava/lang/String;ZLcom/google/android/finsky/appstate/AppStates$AppState;)V
     .registers 6
+    .parameter "packageName"
     .parameter "assetName"
     .parameter "malicious"
-    .parameter "asset"
+    .parameter "appState"
 
     .prologue
-    .line 138
-    invoke-interface {p3}, Lcom/google/android/finsky/local/LocalAsset;->getState()Lcom/google/android/finsky/local/AssetState;
+    .line 97
+    iget-object v0, p4, Lcom/google/android/finsky/appstate/AppStates$AppState;->packageManagerState:Lcom/google/android/finsky/appstate/PackageStateRepository$PackageState;
 
-    move-result-object v0
+    if-eqz v0, :cond_b
 
-    sget-object v1, Lcom/google/android/finsky/local/AssetState;->INSTALLED:Lcom/google/android/finsky/local/AssetState;
+    .line 100
+    if-eqz p3, :cond_c
 
-    if-ne v0, v1, :cond_13
-
-    .line 141
-    if-eqz p2, :cond_24
-
-    .line 142
+    .line 101
     sget-object v0, Lcom/google/android/finsky/receivers/RemoveAssetReceiver;->sNotificationHelper:Lcom/google/android/finsky/utils/Notifier;
 
-    invoke-interface {p3}, Lcom/google/android/finsky/local/LocalAsset;->getPackage()Ljava/lang/String;
+    invoke-interface {v0, p2, p1}, Lcom/google/android/finsky/utils/Notifier;->showMaliciousAssetRemovedMessage(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v1
-
-    invoke-interface {v0, p1, v1}, Lcom/google/android/finsky/utils/Notifier;->showMaliciousAssetRemovedMessage(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 149
-    :cond_13
-    :goto_13
-    const-wide/16 v0, 0x0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-interface {p3, v0}, Lcom/google/android/finsky/local/LocalAsset;->setRefundPeriodEndTime(Ljava/lang/Long;)V
-
-    .line 150
-    invoke-interface {p3}, Lcom/google/android/finsky/local/LocalAsset;->getPackage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0, p2}, Lcom/google/android/finsky/receivers/RemoveAssetReceiver;->removePackage(Ljava/lang/String;Z)V
-
-    .line 151
+    .line 106
+    :cond_b
+    :goto_b
     return-void
 
-    .line 145
-    :cond_24
+    .line 103
+    :cond_c
     sget-object v0, Lcom/google/android/finsky/receivers/RemoveAssetReceiver;->sNotificationHelper:Lcom/google/android/finsky/utils/Notifier;
 
-    invoke-interface {p3}, Lcom/google/android/finsky/local/LocalAsset;->getPackage()Ljava/lang/String;
+    invoke-interface {v0, p2, p1}, Lcom/google/android/finsky/utils/Notifier;->showNormalAssetRemovedMessage(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v1
-
-    invoke-interface {v0, p1, v1}, Lcom/google/android/finsky/utils/Notifier;->showNormalAssetRemovedMessage(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_13
+    goto :goto_b
 .end method
 
 .method private removePackage(Ljava/lang/String;Z)V
@@ -125,7 +164,7 @@
     .parameter "isMalicious"
 
     .prologue
-    .line 154
+    .line 109
     const-string v8, "Removing package \'%s\'. Malicious=\'%s\'"
 
     const/4 v9, 0x2
@@ -146,10 +185,10 @@
 
     invoke-static {v8, v9}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 155
+    .line 110
     if-eqz p2, :cond_51
 
-    .line 157
+    .line 112
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v8
@@ -158,7 +197,7 @@
 
     move-result-object v5
 
-    .line 160
+    .line 115
     .local v5, packageManager:Landroid/content/pm/PackageManager;
     const/4 v8, 0x0
 
@@ -169,7 +208,7 @@
 
     move-result-object v4
 
-    .line 166
+    .line 121
     .local v4, packageInfo:Landroid/content/pm/PackageInfo;
     iget-object v8, v4, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -179,7 +218,7 @@
 
     move-result-object v6
 
-    .line 168
+    .line 123
     .local v6, packages:[Ljava/lang/String;
     move-object v0, v6
 
@@ -195,7 +234,7 @@
 
     aget-object v7, v0, v2
 
-    .line 169
+    .line 124
     .local v7, uidPackageName:Ljava/lang/String;
     const-string v8, "Removing package \'%s\' (child of \'%s\')"
 
@@ -213,15 +252,15 @@
 
     invoke-static {v8, v9}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 171
+    .line 126
     invoke-static {v7}, Lcom/google/android/finsky/utils/PackageManagerHelper;->uninstallPackage(Ljava/lang/String;)V
 
-    .line 168
+    .line 123
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2c
 
-    .line 161
+    .line 116
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v2           #i$:I
     .end local v3           #len$:I
@@ -231,7 +270,7 @@
     :catch_44
     move-exception v1
 
-    .line 162
+    .line 117
     .local v1, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v8, "\'%s\' not found in PM."
 
@@ -245,14 +284,14 @@
 
     invoke-static {v8, v9}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 176
+    .line 131
     .end local v1           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     .end local v5           #packageManager:Landroid/content/pm/PackageManager;
     :cond_50
     :goto_50
     return-void
 
-    .line 174
+    .line 129
     :cond_51
     invoke-static {p1}, Lcom/google/android/finsky/utils/PackageManagerHelper;->uninstallPackage(Ljava/lang/String;)V
 
@@ -262,211 +301,79 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 12
+    .registers 6
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    const/4 v8, 0x1
-
-    const/4 v7, 0x0
-
-    .line 61
+    .line 45
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v5
-
-    const-string v6, "com.google.android.c2dm.intent.RECEIVE"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_f
-
-    .line 135
-    :cond_e
-    :goto_e
-    return-void
-
-    .line 65
-    :cond_f
-    const/4 v5, -0x1
-
-    invoke-virtual {p0, v5}, Lcom/google/android/finsky/receivers/RemoveAssetReceiver;->setResultCode(I)V
-
-    .line 67
-    const-string v5, "google.com"
-
-    const-string v6, "from"
-
-    invoke-virtual {p2, v6}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_e
-
-    invoke-virtual {p2}, Landroid/content/Intent;->getCategories()Ljava/util/Set;
-
-    move-result-object v5
-
-    const-string v6, "REMOVE_ASSET"
-
-    invoke-interface {v5, v6}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_e
-
-    .line 73
-    const-string v5, "asset_package"
-
-    invoke-virtual {p2, v5}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 74
-    .local v4, packageName:Ljava/lang/String;
-    const-string v5, "assetid"
-
-    invoke-virtual {p2, v5}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 75
-    .local v1, assetId:Ljava/lang/String;
-    const-string v5, "asset_name"
+    const-string v2, "com.google.android.c2dm.intent.RECEIVE"
 
-    invoke-virtual {p2, v5}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v2
+    move-result v1
 
-    .line 76
-    .local v2, assetName:Ljava/lang/String;
-    const-string v5, "asset_malicious"
+    if-nez v1, :cond_d
 
-    invoke-virtual {p2, v5}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    .line 65
+    :cond_c
+    :goto_c
+    return-void
 
-    move-result-object v5
+    .line 48
+    :cond_d
+    const/4 v1, -0x1
 
-    invoke-static {v5}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/receivers/RemoveAssetReceiver;->setResultCode(I)V
 
-    move-result v3
+    .line 50
+    const-string v1, "from"
 
-    .line 79
-    .local v3, isMalicious:Z
-    if-nez v1, :cond_55
-
-    if-nez v4, :cond_55
-
-    .line 80
-    const-string v5, "Neither asset ID nor package name received. Ignore tickle."
-
-    new-array v6, v7, [Ljava/lang/Object;
-
-    invoke-static {v5, v6}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_e
-
-    .line 86
-    :cond_55
-    if-eqz v4, :cond_69
-
-    .line 87
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/google/android/finsky/FinskyApp;->getAssetStore()Lcom/google/android/finsky/local/AssetStore;
-
-    move-result-object v5
-
-    invoke-interface {v5, v4}, Lcom/google/android/finsky/local/AssetStore;->getAsset(Ljava/lang/String;)Lcom/google/android/finsky/local/LocalAsset;
+    invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 93
-    .local v0, asset:Lcom/google/android/finsky/local/LocalAsset;
-    :goto_63
-    if-eqz v0, :cond_76
+    .line 51
+    .local v0, fromAddress:Ljava/lang/String;
+    const-string v1, "google.com"
 
-    .line 94
-    invoke-direct {p0, v2, v3, v0}, Lcom/google/android/finsky/receivers/RemoveAssetReceiver;->removeAsset(Ljava/lang/String;ZLcom/google/android/finsky/local/LocalAsset;)V
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    goto :goto_e
+    move-result v1
 
-    .line 89
-    .end local v0           #asset:Lcom/google/android/finsky/local/LocalAsset;
-    :cond_69
+    if-eqz v1, :cond_c
+
+    .line 55
+    invoke-virtual {p2}, Landroid/content/Intent;->getCategories()Ljava/util/Set;
+
+    move-result-object v1
+
+    const-string v2, "REMOVE_ASSET"
+
+    invoke-interface {v1, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_c
+
+    .line 59
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Lcom/google/android/finsky/FinskyApp;->getAssetStore()Lcom/google/android/finsky/local/AssetStore;
+    invoke-virtual {v1}, Lcom/google/android/finsky/FinskyApp;->getAppStates()Lcom/google/android/finsky/appstate/AppStates;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-interface {v5, v1}, Lcom/google/android/finsky/local/AssetStore;->getAssetById(Ljava/lang/String;)Lcom/google/android/finsky/local/LocalAsset;
+    new-instance v2, Lcom/google/android/finsky/receivers/RemoveAssetReceiver$1;
 
-    move-result-object v0
+    invoke-direct {v2, p0, p2}, Lcom/google/android/finsky/receivers/RemoveAssetReceiver$1;-><init>(Lcom/google/android/finsky/receivers/RemoveAssetReceiver;Landroid/content/Intent;)V
 
-    .restart local v0       #asset:Lcom/google/android/finsky/local/LocalAsset;
-    goto :goto_63
+    invoke-virtual {v1, v2}, Lcom/google/android/finsky/appstate/AppStates;->load(Ljava/lang/Runnable;)Z
 
-    .line 98
-    :cond_76
-    if-eqz v4, :cond_88
-
-    .line 99
-    const-string v5, "Could not resolve assetId=%s packageName=%s with local asset. Removing  package by package name."
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    aput-object v1, v6, v7
-
-    aput-object v4, v6, v8
-
-    invoke-static {v5, v6}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 101
-    invoke-direct {p0, v4, v3}, Lcom/google/android/finsky/receivers/RemoveAssetReceiver;->removePackage(Ljava/lang/String;Z)V
-
-    goto :goto_e
-
-    .line 106
-    :cond_88
-    const-string v5, "Cannot associate asset ID %s with local asset and no package name received. Fetching package name from AMAS."
-
-    new-array v6, v8, [Ljava/lang/Object;
-
-    aput-object v1, v6, v7
-
-    invoke-static {v5, v6}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 108
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/google/android/finsky/FinskyApp;->getVendingApi()Lcom/google/android/vending/remoting/api/VendingApi;
-
-    move-result-object v5
-
-    new-instance v6, Lcom/google/android/finsky/receivers/RemoveAssetReceiver$1;
-
-    invoke-direct {v6, p0, v2, v3, v1}, Lcom/google/android/finsky/receivers/RemoveAssetReceiver$1;-><init>(Lcom/google/android/finsky/receivers/RemoveAssetReceiver;Ljava/lang/String;ZLjava/lang/String;)V
-
-    new-instance v7, Lcom/google/android/finsky/receivers/RemoveAssetReceiver$2;
-
-    invoke-direct {v7, p0, v1}, Lcom/google/android/finsky/receivers/RemoveAssetReceiver$2;-><init>(Lcom/google/android/finsky/receivers/RemoveAssetReceiver;Ljava/lang/String;)V
-
-    invoke-virtual {v5, v1, v6, v7}, Lcom/google/android/vending/remoting/api/VendingApi;->fetchAssetInfo(Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
-
-    goto/16 :goto_e
+    goto :goto_c
 .end method

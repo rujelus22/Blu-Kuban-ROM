@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/M;
+.class final Lcom/google/googlenav/ui/m;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/D;
+.field final synthetic a:Landroid/widget/CheckBox;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/D;)V
+.method constructor <init>(Landroid/widget/CheckBox;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/M;->a:Lcom/google/googlenav/ui/D;
+    .prologue
+    .line 432
+    iput-object p1, p0, Lcom/google/googlenav/ui/m;->a:Landroid/widget/CheckBox;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,14 +26,16 @@
 
 
 # virtual methods
-.method public run()V
+.method public onClick(Landroid/view/View;)V
     .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/M;->a:Lcom/google/googlenav/ui/D;
+    .prologue
+    .line 436
+    iget-object v0, p0, Lcom/google/googlenav/ui/m;->a:Landroid/widget/CheckBox;
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Landroid/widget/CheckBox;->toggle()V
 
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/D;->m(Z)V
-
+    .line 437
     return-void
 .end method

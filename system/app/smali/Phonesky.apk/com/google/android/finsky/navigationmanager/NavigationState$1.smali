@@ -32,7 +32,7 @@
     .registers 1
 
     .prologue
-    .line 33
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,20 +41,24 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Lcom/google/android/finsky/navigationmanager/NavigationState;
-    .registers 4
+    .registers 6
     .parameter "in"
 
     .prologue
-    .line 37
-    invoke-static {}, Lcom/google/android/finsky/navigationmanager/NavigationState;->values()[Lcom/google/android/finsky/navigationmanager/NavigationState;
-
-    move-result-object v0
+    .line 59
+    new-instance v0, Lcom/google/android/finsky/navigationmanager/NavigationState;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    aget-object v0, v0, v1
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/finsky/navigationmanager/NavigationState;-><init>(ILjava/lang/String;Lcom/google/android/finsky/navigationmanager/NavigationState$1;)V
 
     return-object v0
 .end method
@@ -64,7 +68,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 55
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/navigationmanager/NavigationState$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/finsky/navigationmanager/NavigationState;
 
     move-result-object v0
@@ -77,7 +81,7 @@
     .parameter "size"
 
     .prologue
-    .line 42
+    .line 64
     new-array v0, p1, [Lcom/google/android/finsky/navigationmanager/NavigationState;
 
     return-object v0
@@ -88,7 +92,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 55
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/navigationmanager/NavigationState$1;->newArray(I)[Lcom/google/android/finsky/navigationmanager/NavigationState;
 
     move-result-object v0

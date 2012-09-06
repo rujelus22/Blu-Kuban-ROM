@@ -29,7 +29,7 @@
 
 .field public static final CHARGING_ICON:I = 0x0
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final HELP_MESSAGE_TEXT:I = 0xd
 

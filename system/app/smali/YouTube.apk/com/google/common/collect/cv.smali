@@ -1,74 +1,120 @@
-.class final Lcom/google/common/collect/cv;
-.super Lcom/google/common/collect/gf;
+.class public abstract Lcom/google/common/collect/cv;
+.super Lcom/google/common/collect/cx;
 .source "SourceFile"
 
-
-# instance fields
-.field a:Z
-
-.field final synthetic b:Ljava/lang/Object;
+# interfaces
+.implements Ljava/util/concurrent/ConcurrentMap;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Object;)V
-    .registers 2
-    .parameter
+.method protected constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 889
-    iput-object p1, p0, Lcom/google/common/collect/cv;->b:Ljava/lang/Object;
-
-    invoke-direct {p0}, Lcom/google/common/collect/gf;-><init>()V
+    .line 37
+    invoke-direct {p0}, Lcom/google/common/collect/cx;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
+.method protected bridge synthetic delegate()Ljava/lang/Object;
     .registers 2
 
     .prologue
-    .line 892
-    iget-boolean v0, p0, Lcom/google/common/collect/cv;->a:Z
+    .line 32
+    invoke-virtual {p0}, Lcom/google/common/collect/cv;->delegate()Ljava/util/concurrent/ConcurrentMap;
 
-    if-nez v0, :cond_6
-
-    const/4 v0, 0x1
-
-    :goto_5
-    return v0
-
-    :cond_6
-    const/4 v0, 0x0
-
-    goto :goto_5
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 895
-    iget-boolean v0, p0, Lcom/google/common/collect/cv;->a:Z
-
-    if-eqz v0, :cond_a
-
-    .line 896
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
-
-    .line 898
-    :cond_a
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/common/collect/cv;->a:Z
-
-    .line 899
-    iget-object v0, p0, Lcom/google/common/collect/cv;->b:Ljava/lang/Object;
+    move-result-object v0
 
     return-object v0
+.end method
+
+.method protected bridge synthetic delegate()Ljava/util/Map;
+    .registers 2
+
+    .prologue
+    .line 32
+    invoke-virtual {p0}, Lcom/google/common/collect/cv;->delegate()Ljava/util/concurrent/ConcurrentMap;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected abstract delegate()Ljava/util/concurrent/ConcurrentMap;
+.end method
+
+.method public putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 43
+    invoke-virtual {p0}, Lcom/google/common/collect/cv;->delegate()Ljava/util/concurrent/ConcurrentMap;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1, p2}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public remove(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 48
+    invoke-virtual {p0}, Lcom/google/common/collect/cv;->delegate()Ljava/util/concurrent/ConcurrentMap;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1, p2}, Ljava/util/concurrent/ConcurrentMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 53
+    invoke-virtual {p0}, Lcom/google/common/collect/cv;->delegate()Ljava/util/concurrent/ConcurrentMap;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1, p2}, Ljava/util/concurrent/ConcurrentMap;->replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public replace(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 58
+    invoke-virtual {p0}, Lcom/google/common/collect/cv;->delegate()Ljava/util/concurrent/ConcurrentMap;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1, p2, p3}, Ljava/util/concurrent/ConcurrentMap;->replace(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
 .end method

@@ -333,7 +333,7 @@
 
     .prologue
     .line 1644
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     if-nez v0, :cond_c
 
@@ -359,7 +359,7 @@
 
     .line 1653
     :try_start_12
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     invoke-interface {v1, v0}, Lcom/google/android/gtalkservice/IImSession;->blockContact(Ljava/lang/String;)V
     :try_end_17
@@ -611,7 +611,7 @@
 
     .prologue
     .line 1769
-    iget-object v2, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v2, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-interface {v2}, Lcom/google/android/talk/IRosterListAdapter;->getActiveCallState()Lcom/google/android/talk/RosterListAdapter$CallState;
 
@@ -847,7 +847,7 @@
 
     .prologue
     .line 1687
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     if-nez v0, :cond_c
 
@@ -877,7 +877,7 @@
 
     .line 1697
     :try_start_14
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     invoke-interface {v1, v0}, Lcom/google/android/gtalkservice/IImSession;->hideContact(Ljava/lang/String;)V
     :try_end_19
@@ -917,7 +917,7 @@
     .line 1699
     :cond_34
     :try_start_34
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     invoke-interface {v1, v0}, Lcom/google/android/gtalkservice/IImSession;->clearContactFlags(Ljava/lang/String;)V
     :try_end_39
@@ -1189,7 +1189,7 @@
 
     .line 1803
     :try_start_3d
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mApp:Lcom/google/android/talk/TalkApp;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mApp:Lcom/google/android/talk/TalkApp;
 
     invoke-virtual {v0}, Lcom/google/android/talk/TalkApp;->getGTalkService()Lcom/google/android/gtalkservice/IGTalkService;
 
@@ -1217,7 +1217,7 @@
     if-nez v0, :cond_5b
 
     .line 1808
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     invoke-interface {v0, v1}, Lcom/google/android/gtalkservice/IImSession;->createChatSession(Ljava/lang/String;)Lcom/google/android/gtalkservice/IChatSession;
 
@@ -1323,7 +1323,7 @@
 
     .prologue
     .line 1930
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     if-nez v0, :cond_5
 
@@ -1363,7 +1363,7 @@
     iput-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mSelfCursor:Lcom/google/android/talk/SelfStatusCursor;
 
     .line 1944
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-interface {v1, v0}, Lcom/google/android/talk/IRosterListAdapter;->setSelfStatusCursor(Landroid/database/Cursor;)V
 
@@ -1386,12 +1386,12 @@
 
     .line 1954
     :try_start_3
-    iget-object v2, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v2, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     if-eqz v2, :cond_d
 
     .line 1955
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     invoke-interface {v0}, Lcom/google/android/gtalkservice/IImSession;->getPresence()Lcom/google/android/gtalkservice/Presence;
     :try_end_c
@@ -1548,17 +1548,17 @@
     .prologue
     .line 1711
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     if-eqz v0, :cond_2b
 
     .line 1712
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     invoke-interface {v0}, Lcom/google/android/gtalkservice/IImSession;->logout()V
 
     .line 1716
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mApp:Lcom/google/android/talk/TalkApp;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mApp:Lcom/google/android/talk/TalkApp;
 
     invoke-virtual {v0}, Lcom/google/android/talk/TalkApp;->getActiveAccount()Lcom/google/android/talk/TalkApp$AccountInfo;
 
@@ -1567,7 +1567,7 @@
     .line 1717
     if-eqz v0, :cond_22
 
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
 
     iget-wide v1, v1, Lcom/google/android/talk/TalkApp$AccountInfo;->accountId:J
 
@@ -1578,9 +1578,9 @@
     if-nez v0, :cond_22
 
     .line 1718
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
 
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mApp:Lcom/google/android/talk/TalkApp;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mApp:Lcom/google/android/talk/TalkApp;
 
     invoke-static {v0, v1}, Lcom/google/android/talk/AccountLoginUtils;->setInactiveAccount(Lcom/google/android/talk/TalkApp$AccountInfo;Lcom/google/android/talk/TalkApp;)V
     :try_end_22
@@ -1688,7 +1688,7 @@
 
     .prologue
     .line 1664
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     if-nez v0, :cond_c
 
@@ -1718,7 +1718,7 @@
 
     .line 1674
     :try_start_14
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     invoke-interface {v1, v0}, Lcom/google/android/gtalkservice/IImSession;->pinContact(Ljava/lang/String;)V
     :try_end_19
@@ -1758,7 +1758,7 @@
     .line 1676
     :cond_34
     :try_start_34
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     invoke-interface {v1, v0}, Lcom/google/android/gtalkservice/IImSession;->clearContactFlags(Ljava/lang/String;)V
     :try_end_39
@@ -1806,7 +1806,7 @@
     iput-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mCallStateUpdateHack:Ljava/lang/Runnable;
 
     .line 1009
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mHandler:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mCallStateUpdateHack:Ljava/lang/Runnable;
 
@@ -1865,11 +1865,11 @@
     iput-boolean p1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mIsOnline:Z
 
     .line 1472
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     if-eqz v1, :cond_19
 
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-interface {v1, p1}, Lcom/google/android/talk/IRosterListAdapter;->setIsOnline(Z)Z
 
@@ -2613,12 +2613,12 @@
     .line 691
     .end local v0           #cache:Lcom/google/android/talk/AvatarCache;
     :cond_1f
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     if-eqz v1, :cond_6
 
     .line 692
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     iget-object v2, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mSelfCursor:Lcom/google/android/talk/SelfStatusCursor;
 
@@ -2635,7 +2635,7 @@
     .prologue
     .line 1534
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     if-eqz v0, :cond_4e
 
@@ -2652,7 +2652,7 @@
     iput-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mConnectionListener:Lcom/google/android/talk/fragments/BuddyListFragment$ConnectionStateListener;
 
     .line 1537
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mConnectionListener:Lcom/google/android/talk/fragments/BuddyListFragment$ConnectionStateListener;
 
@@ -2672,7 +2672,7 @@
     iput-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListener:Lcom/google/android/talk/fragments/BuddyListFragment$RosterListener;
 
     .line 1541
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListener:Lcom/google/android/talk/fragments/BuddyListFragment$RosterListener;
 
@@ -2692,7 +2692,7 @@
     iput-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mChatListener:Lcom/google/android/talk/fragments/BuddyListFragment$ChatListener;
 
     .line 1546
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mChatListener:Lcom/google/android/talk/fragments/BuddyListFragment$ChatListener;
 
@@ -2707,14 +2707,14 @@
     .line 1550
     new-instance v0, Lcom/google/android/talk/fragments/BuddyListFragment$GroupChatInvitationListener;
 
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mApp:Lcom/google/android/talk/TalkApp;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mApp:Lcom/google/android/talk/TalkApp;
 
     invoke-direct {v0, p0, v1}, Lcom/google/android/talk/fragments/BuddyListFragment$GroupChatInvitationListener;-><init>(Lcom/google/android/talk/fragments/BuddyListFragment;Lcom/google/android/talk/TalkApp;)V
 
     iput-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mGroupChatInvitationListener:Lcom/google/android/talk/fragments/BuddyListFragment$GroupChatInvitationListener;
 
     .line 1551
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mGroupChatInvitationListener:Lcom/google/android/talk/fragments/BuddyListFragment$GroupChatInvitationListener;
 
@@ -2725,7 +2725,7 @@
     .line 1558
     :cond_4e
     :goto_4e
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mApp:Lcom/google/android/talk/TalkApp;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mApp:Lcom/google/android/talk/TalkApp;
 
     if-eqz v0, :cond_65
 
@@ -2740,7 +2740,7 @@
     if-eqz v0, :cond_65
 
     .line 1559
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mApp:Lcom/google/android/talk/TalkApp;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mApp:Lcom/google/android/talk/TalkApp;
 
     invoke-virtual {v0}, Lcom/google/android/talk/TalkApp;->getGTalkService()Lcom/google/android/gtalkservice/IGTalkService;
 
@@ -2914,7 +2914,7 @@
 
     .prologue
     .line 207
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
 
     if-nez v0, :cond_16
 
@@ -2935,11 +2935,11 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
+    iput-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
 
     .line 210
     :cond_16
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
 
     return-object v0
 .end method
@@ -3054,10 +3054,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iput-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     .line 922
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     const/4 v1, 0x0
 
@@ -3075,28 +3075,28 @@
     invoke-virtual {p0, v0, v1}, Lcom/google/android/talk/fragments/BuddyListFragment;->setFilterMode(Lcom/google/android/talk/loaders/RosterListLoader$FilterMode;Lcom/google/android/talk/loaders/RosterListLoader$SortMode;)V
 
     .line 924
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-virtual {p0, v0}, Lcom/google/android/talk/fragments/BuddyListFragment;->setListAdapter(Lcom/google/android/talk/IRosterListAdapter;)V
 
     .line 925
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     iget-boolean v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mNarrow:Z
 
     invoke-interface {v0, v1}, Lcom/google/android/talk/IRosterListAdapter;->setNarrowLayout(Z)V
 
     .line 927
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     instance-of v0, v0, Landroid/widget/AbsListView$RecyclerListener;
 
     if-eqz v0, :cond_4f
 
     .line 928
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mList:Landroid/widget/ListView;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mList:Landroid/widget/ListView;
 
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     check-cast v0, Landroid/widget/AbsListView$RecyclerListener;
 
@@ -3141,7 +3141,7 @@
     .line 191
     const/4 v1, 0x0
 
-    iput-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
+    iput-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
 
     .line 192
     return-void
@@ -3985,14 +3985,14 @@
     if-eqz v0, :cond_22
 
     .line 1345
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     if-eqz v0, :cond_23
 
     .line 1346
     iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mCloseAllChatsMenuItem:Landroid/view/MenuItem;
 
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-interface {v1}, Lcom/google/android/talk/IRosterListAdapter;->hasActiveChats()Z
 
@@ -4032,12 +4032,12 @@
 
     .line 952
     .local v0, root:Landroid/view/View;
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mList:Landroid/widget/ListView;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mList:Landroid/widget/ListView;
 
     invoke-virtual {v1, v3}, Landroid/widget/ListView;->setItemsCanFocus(Z)V
 
     .line 953
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-virtual {p0, v1}, Lcom/google/android/talk/fragments/BuddyListFragment;->setListAdapter(Lcom/google/android/talk/IRosterListAdapter;)V
 
@@ -4045,14 +4045,14 @@
     invoke-direct {p0}, Lcom/google/android/talk/fragments/BuddyListFragment;->updateStatus()V
 
     .line 956
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     if-eqz v1, :cond_1d
 
     .line 957
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mList:Landroid/widget/ListView;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mList:Landroid/widget/ListView;
 
-    iget-object v2, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v2, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-virtual {v1, v2}, Landroid/widget/ListView;->setOnScrollListener(Landroid/widget/AbsListView$OnScrollListener;)V
 
@@ -4067,12 +4067,12 @@
     if-eqz v1, :cond_2f
 
     .line 962
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mList:Landroid/widget/ListView;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mList:Landroid/widget/ListView;
 
     invoke-virtual {v1, v3}, Landroid/widget/ListView;->setFocusableInTouchMode(Z)V
 
     .line 963
-    iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mList:Landroid/widget/ListView;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mList:Landroid/widget/ListView;
 
     invoke-virtual {v1}, Landroid/widget/ListView;->requestFocus()Z
 
@@ -4199,7 +4199,7 @@
     invoke-interface {v2, v1}, Lcom/google/android/talk/fragments/BuddyListFragment$Controller;->onOpenChat(Lcom/google/android/talk/fragments/BuddyListFragment$ListItemInfo;)V
 
     .line 1907
-    iget-object v2, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mList:Landroid/widget/ListView;
+    iget-object v2, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mList:Landroid/widget/ListView;
 
     const/4 v3, 0x0
 
@@ -4439,7 +4439,7 @@
     invoke-super {p0, p1}, Lcom/google/android/talk/fragments/RosterListFragment;->onSessionCreated(Lcom/google/android/gtalkservice/IImSession;)V
 
     .line 1503
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mApp:Lcom/google/android/talk/TalkApp;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mApp:Lcom/google/android/talk/TalkApp;
 
     if-eqz v0, :cond_9
 
@@ -4452,7 +4452,7 @@
 
     .line 1508
     :cond_a
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mApp:Lcom/google/android/talk/TalkApp;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mApp:Lcom/google/android/talk/TalkApp;
 
     invoke-virtual {v0, p1}, Lcom/google/android/talk/TalkApp;->asyncPruneOldChatsAndMessages(Lcom/google/android/gtalkservice/IImSession;)V
 
@@ -4633,7 +4633,7 @@
     .prologue
     .line 1566
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     if-eqz v0, :cond_50
 
@@ -4643,7 +4643,7 @@
     if-eqz v0, :cond_17
 
     .line 1568
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mConnectionListener:Lcom/google/android/talk/fragments/BuddyListFragment$ConnectionStateListener;
 
@@ -4666,7 +4666,7 @@
     if-eqz v0, :cond_2a
 
     .line 1574
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListener:Lcom/google/android/talk/fragments/BuddyListFragment$RosterListener;
 
@@ -4689,7 +4689,7 @@
     if-eqz v0, :cond_3d
 
     .line 1580
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mChatListener:Lcom/google/android/talk/fragments/BuddyListFragment$ChatListener;
 
@@ -4712,7 +4712,7 @@
     if-eqz v0, :cond_50
 
     .line 1586
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mGroupChatInvitationListener:Lcom/google/android/talk/fragments/BuddyListFragment$GroupChatInvitationListener;
 
@@ -4767,7 +4767,7 @@
 
     .prologue
     .line 223
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mCurrentSearchString:Ljava/lang/String;
 
@@ -4948,7 +4948,7 @@
     invoke-direct {p0}, Lcom/google/android/talk/fragments/BuddyListFragment;->setQuickContactsMenuItemState()V
 
     .line 1049
-    iget-object v2, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v2, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-virtual {p0}, Lcom/google/android/talk/fragments/BuddyListFragment;->getFilterMode()Lcom/google/android/talk/loaders/RosterListLoader$FilterMode;
 
@@ -5002,12 +5002,12 @@
 
     .prologue
     .line 1986
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     if-eqz v0, :cond_9
 
     .line 1987
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-interface {v0, p1}, Lcom/google/android/talk/IRosterListAdapter;->setFocus(Landroid/content/Intent;)V
 
@@ -5046,12 +5046,12 @@
     iput-boolean p1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mNarrow:Z
 
     .line 2044
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     if-eqz v0, :cond_b
 
     .line 2045
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-interface {v0, p1}, Lcom/google/android/talk/IRosterListAdapter;->setNarrowLayout(Z)V
 
@@ -5106,16 +5106,16 @@
 
     .prologue
     .line 1977
-    iget-boolean v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mCreated:Z
+    iget-boolean v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mCreated:Z
 
     if-eqz v0, :cond_1a
 
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mList:Landroid/widget/ListView;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mList:Landroid/widget/ListView;
 
     if-eqz v0, :cond_1a
 
     .line 1979
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mList:Landroid/widget/ListView;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mList:Landroid/widget/ListView;
 
     const/4 v1, 0x0
 
@@ -5124,10 +5124,10 @@
     .line 1980
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mDontRestoreListViewState:Z
+    iput-boolean v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mDontRestoreListViewState:Z
 
     .line 1981
-    iget-object v0, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mApp:Lcom/google/android/talk/TalkApp;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mApp:Lcom/google/android/talk/TalkApp;
 
     invoke-virtual {v0}, Lcom/google/android/talk/TalkApp;->getGTalkService()Lcom/google/android/gtalkservice/IGTalkService;
 
@@ -5151,7 +5151,7 @@
     invoke-direct {p0, v4}, Lcom/google/android/talk/fragments/BuddyListFragment;->logv(Ljava/lang/String;)V
 
     .line 607
-    iget-boolean v4, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mCreated:Z
+    iget-boolean v4, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mCreated:Z
 
     if-nez v4, :cond_f
 
@@ -5167,7 +5167,7 @@
 
     .line 612
     :cond_f
-    iput-object p1, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
+    iput-object p1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
 
     .line 613
     const/4 v4, 0x1
@@ -5182,7 +5182,7 @@
     .local v3, loader:Lcom/google/android/talk/loaders/RosterListLoader;
     if-eqz v3, :cond_1e
 
-    iget-object v4, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v4, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     if-nez v4, :cond_35
 
@@ -5203,7 +5203,7 @@
 
     .line 617
     :cond_2b
-    iget-object v4, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v4, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     if-nez v4, :cond_e
 
@@ -5223,7 +5223,7 @@
 
     .line 622
     .local v0, accountId:J
-    iget-object v4, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v4, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-interface {v4, v0, v1}, Lcom/google/android/talk/IRosterListAdapter;->setAccountId(J)V
 
@@ -5233,11 +5233,11 @@
     .line 624
     const/4 v4, 0x0
 
-    iput-object v4, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iput-object v4, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     .line 630
     :try_start_46
-    iget-object v4, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mApp:Lcom/google/android/talk/TalkApp;
+    iget-object v4, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mApp:Lcom/google/android/talk/TalkApp;
 
     invoke-virtual {v4}, Lcom/google/android/talk/TalkApp;->getGTalkService()Lcom/google/android/gtalkservice/IGTalkService;
 
@@ -5247,10 +5247,10 @@
 
     move-result-object v4
 
-    iput-object v4, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iput-object v4, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     .line 631
-    iget-object v4, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v4, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     if-eqz v4, :cond_66
 
@@ -5266,7 +5266,7 @@
     invoke-direct {p0, v4}, Lcom/google/android/talk/fragments/BuddyListFragment;->logv(Ljava/lang/String;)V
 
     .line 636
-    iget-object v4, p0, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v4, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     invoke-interface {v4}, Lcom/google/android/gtalkservice/IImSession;->requestBatchedBuddyPresence()V
     :try_end_66

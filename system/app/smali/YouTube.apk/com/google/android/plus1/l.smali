@@ -4,17 +4,6 @@
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 16
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 18
-    return-void
-.end method
-
 .method public static a(Landroid/content/Context;Lcom/google/android/plus1/m;Lcom/google/android/plus1/u;)Ljava/lang/CharSequence;
     .registers 7
     .parameter

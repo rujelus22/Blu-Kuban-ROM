@@ -1,48 +1,49 @@
-.class public final Lcom/google/android/youtube/core/converter/http/l;
-.super Lcom/google/android/youtube/core/converter/http/ad;
+.class final Lcom/google/android/youtube/core/converter/http/l;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/Comparator;
 
 
 # instance fields
-.field private final b:Lcom/google/android/youtube/core/converter/c;
+.field final synthetic a:Lcom/google/android/youtube/core/converter/http/g;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/core/converter/k;)V
-    .registers 3
+.method constructor <init>(Lcom/google/android/youtube/core/converter/http/g;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 22
-    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/converter/http/ad;-><init>(Lcom/google/android/youtube/core/converter/k;)V
+    .line 84
+    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/l;->a:Lcom/google/android/youtube/core/converter/http/g;
 
-    .line 23
-    invoke-static {}, Lcom/google/android/youtube/core/converter/e;->a()Lcom/google/android/youtube/core/converter/d;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
-
-    .line 24
-    invoke-static {v0}, Lcom/google/android/youtube/core/converter/http/n;->a(Lcom/google/android/youtube/core/converter/d;)V
-
-    .line 25
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/converter/d;->a()Lcom/google/android/youtube/core/converter/c;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/converter/http/l;->b:Lcom/google/android/youtube/core/converter/c;
-
-    .line 26
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a()Lcom/google/android/youtube/core/converter/c;
-    .registers 2
+.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .registers 5
+    .parameter
+    .parameter
 
     .prologue
-    .line 30
-    iget-object v0, p0, Lcom/google/android/youtube/core/converter/http/l;->b:Lcom/google/android/youtube/core/converter/c;
+    .line 84
+    check-cast p1, Lcom/google/android/youtube/core/model/Category;
 
-    return-object v0
+    check-cast p2, Lcom/google/android/youtube/core/model/Category;
+
+    iget-object v0, p1, Lcom/google/android/youtube/core/model/Category;->label:Ljava/lang/String;
+
+    iget-object v1, p2, Lcom/google/android/youtube/core/model/Category;->label:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+
+    move-result v0
+
+    return v0
 .end method

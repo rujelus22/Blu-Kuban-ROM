@@ -18,10 +18,12 @@
     .registers 3
 
     .prologue
+    const/4 v2, 0x0
+
     .line 52
     new-instance v0, Lcom/google/android/youtube/core/converter/m;
 
-    invoke-direct {v0}, Lcom/google/android/youtube/core/converter/m;-><init>()V
+    invoke-direct {v0, v2}, Lcom/google/android/youtube/core/converter/m;-><init>(B)V
 
     sput-object v0, Lcom/google/android/youtube/core/converter/k;->a:Lorg/xml/sax/Attributes;
 
@@ -32,8 +34,6 @@
 
     .line 104
     const-string v1, "http://xml.org/sax/features/namespaces"
-
-    const/4 v2, 0x0
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -74,7 +74,7 @@
     .line 134
     const-string v0, "features can\'t be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 136
     :try_start_8
@@ -212,12 +212,12 @@
     .line 162
     const-string v0, "input can\'t be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 163
     const-string v0, "rules can\'t be null"
 
-    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 166
     :try_start_a

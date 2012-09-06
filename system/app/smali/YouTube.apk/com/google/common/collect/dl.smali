@@ -1,57 +1,70 @@
-.class final Lcom/google/common/collect/dl;
-.super Lcom/google/common/collect/p;
+.class public final Lcom/google/common/collect/dl;
+.super Lcom/google/common/collect/dn;
 .source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Ljava/lang/Object;
-
-.field final synthetic b:Lcom/google/common/collect/dk;
-
-
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/dk;Ljava/lang/Object;)V
-    .registers 3
-    .parameter
-    .parameter
+.method public constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 825
-    iput-object p1, p0, Lcom/google/common/collect/dl;->b:Lcom/google/common/collect/dk;
-
-    iput-object p2, p0, Lcom/google/common/collect/dl;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Lcom/google/common/collect/p;-><init>()V
+    .line 161
+    invoke-direct {p0}, Lcom/google/common/collect/dn;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getKey()Ljava/lang/Object;
+.method public final a()Lcom/google/common/collect/ImmutableListMultimap;
     .registers 2
 
     .prologue
-    .line 827
-    iget-object v0, p0, Lcom/google/common/collect/dl;->a:Ljava/lang/Object;
+    .line 221
+    invoke-super {p0}, Lcom/google/common/collect/dn;->b()Lcom/google/common/collect/ImmutableMultimap;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/common/collect/ImmutableListMultimap;
 
     return-object v0
 .end method
 
-.method public final synthetic getValue()Ljava/lang/Object;
+.method public final a(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/dl;
     .registers 3
+    .parameter
+    .parameter
 
     .prologue
-    .line 825
-    iget-object v0, p0, Lcom/google/common/collect/dl;->b:Lcom/google/common/collect/dk;
+    .line 164
+    invoke-super {p0, p1, p2}, Lcom/google/common/collect/dn;->b(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/dn;
 
-    iget-object v0, v0, Lcom/google/common/collect/dk;->b:Lcom/google/common/collect/dj;
+    .line 165
+    return-object p0
+.end method
 
-    iget-object v0, v0, Lcom/google/common/collect/dj;->a:Lcom/google/common/collect/LinkedListMultimap;
+.method public final bridge synthetic b()Lcom/google/common/collect/ImmutableMultimap;
+    .registers 2
 
-    iget-object v1, p0, Lcom/google/common/collect/dl;->a:Ljava/lang/Object;
+    .prologue
+    .line 155
+    invoke-super {p0}, Lcom/google/common/collect/dn;->b()Lcom/google/common/collect/ImmutableMultimap;
 
-    invoke-virtual {v0, v1}, Lcom/google/common/collect/LinkedListMultimap;->get(Ljava/lang/Object;)Ljava/util/List;
+    move-result-object v0
+
+    check-cast v0, Lcom/google/common/collect/ImmutableListMultimap;
+
+    return-object v0
+.end method
+
+.method public final synthetic b(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/dn;
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 155
+    invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/dl;->a(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/dl;
 
     move-result-object v0
 

@@ -14,13 +14,28 @@
     return-void
 .end method
 
-.method public static builder()Lcom/google/common/collect/cp;
+.method public static builder()Lcom/google/common/collect/ea;
     .registers 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .prologue
     .line 49
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public static copyOf([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet;
+    .registers 2
+    .parameter
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    .line 146
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -113,14 +128,20 @@
     throw v0
 .end method
 
-.method public static varargs of([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet;
-    .registers 2
+.method public static varargs of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet;
+    .registers 8
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
     .parameter
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .prologue
-    .line 131
+    .line 133
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

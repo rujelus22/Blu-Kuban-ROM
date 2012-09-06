@@ -1,58 +1,52 @@
-.class Lcom/google/googlenav/bp;
-.super Lax/bu;
+.class public Lcom/google/googlenav/bP;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/bl;
+.field private final a:Ljava/lang/String;
 
-.field private final e:Lcom/google/googlenav/bn;
+.field private final b:Z
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/bl;Lcom/google/googlenav/ui/wizard/hM;Lcom/google/googlenav/android/ac;Lax/bq;Lcom/google/googlenav/bn;)V
-    .registers 6
+.method public constructor <init>(Ljava/lang/String;Z)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/bp;->a:Lcom/google/googlenav/bl;
+    .prologue
+    .line 1089
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2, p3, p4}, Lax/bu;-><init>(Lcom/google/googlenav/ui/wizard/hM;Lcom/google/googlenav/android/ac;Lax/bq;)V
+    .line 1090
+    iput-object p1, p0, Lcom/google/googlenav/bP;->a:Ljava/lang/String;
 
-    iput-object p5, p0, Lcom/google/googlenav/bp;->e:Lcom/google/googlenav/bn;
+    .line 1091
+    iput-boolean p2, p0, Lcom/google/googlenav/bP;->b:Z
 
+    .line 1092
     return-void
-.end method
-
-.method static synthetic a(Lcom/google/googlenav/bp;)Lax/bq;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/bp;->d:Lax/bq;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 5
+.method public a()Ljava/lang/String;
+    .registers 2
 
-    iget-object v0, p0, Lcom/google/googlenav/bp;->b:Lcom/google/googlenav/ui/wizard/hM;
+    .prologue
+    .line 1095
+    iget-object v0, p0, Lcom/google/googlenav/bP;->a:Ljava/lang/String;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hM;->j()V
+    return-object v0
+.end method
 
-    iget-object v0, p0, Lcom/google/googlenav/bp;->b:Lcom/google/googlenav/ui/wizard/hM;
+.method public b()Z
+    .registers 2
 
-    iget-object v1, p0, Lcom/google/googlenav/bp;->e:Lcom/google/googlenav/bn;
+    .prologue
+    .line 1099
+    iget-boolean v0, p0, Lcom/google/googlenav/bP;->b:Z
 
-    iget-object v2, p0, Lcom/google/googlenav/bp;->a:Lcom/google/googlenav/bl;
-
-    invoke-static {v2}, Lcom/google/googlenav/bl;->a(Lcom/google/googlenav/bl;)Lcom/google/googlenav/bo;
-
-    move-result-object v2
-
-    new-instance v3, Lcom/google/googlenav/bq;
-
-    invoke-direct {v3, p0}, Lcom/google/googlenav/bq;-><init>(Lcom/google/googlenav/bp;)V
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/google/googlenav/ui/wizard/hM;->a(Lcom/google/googlenav/bn;Lcom/google/googlenav/bo;Lcom/google/googlenav/ui/wizard/hu;)V
-
-    return-void
+    return v0
 .end method

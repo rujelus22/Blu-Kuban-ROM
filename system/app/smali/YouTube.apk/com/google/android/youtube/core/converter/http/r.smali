@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 67
+    .line 63
     invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
     return-void
@@ -16,24 +16,24 @@
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
     .registers 5
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 70
-    const-class v0, Lcom/google/android/youtube/core/model/c;
+    .line 66
+    const-class v0, Lcom/google/android/youtube/core/model/Channel$Builder;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->a(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/c;
+    check-cast v0, Lcom/google/android/youtube/core/model/Channel$Builder;
 
-    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/c;->b(Ljava/lang/String;)Lcom/google/android/youtube/core/model/c;
+    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/Channel$Builder;->summary(Ljava/lang/String;)Lcom/google/android/youtube/core/model/Channel$Builder;
 
-    .line 71
+    .line 67
     return-void
 .end method

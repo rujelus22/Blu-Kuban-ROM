@@ -53,40 +53,40 @@
         <item quantity="one">Αναμονή λειτουργίας σε %1$d συνομιλία.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> τέθηκαν σε σίγαση</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> τέθηκε σε σίγαση.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> τέθηκαν σε σίγαση</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> τέθηκε σε σίγαση.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> αναφέρθηκαν ως ανεπιθύμητες</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> αναφέρθηκε ως ανεπιθύμητη.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> αναφέρθηκαν ως ανεπιθύμητες</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> αναφέρθηκε ως ανεπιθύμητη.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> αρχειοθετήθηκαν.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> αρχειοθετήθηκαν</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> αρχειοθετήθηκαν.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> αρχειοθετήθηκαν</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> Μεταφέρθηκε στο φάκελο εισερχομένων</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> μεταφέρθηκε στο φάκελο εισερχομένων.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> Μεταφέρθηκε στο φάκελο εισερχομένων</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> μεταφέρθηκε στο φάκελο εισερχομένων.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> διαγράφηκαν</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> διαγράφηκε</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> διαγράφηκαν</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> διαγράφηκε</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> επισημάνθηκαν ως σημαντικές</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> επισημάνθηκε ως σημαντική.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> επισημάνθηκαν ως σημαντικές</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> επισημάνθηκε ως σημαντική.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> επισημάνθηκαν ως μη σημαντικές.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> επισημάνθηκε ως μη σημαντική.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> επισημάνθηκαν ως μη σημαντικές.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> επισημάνθηκε ως μη σημαντική.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> επισημάνθηκαν ως αναγνωσμένες</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> επισημάνθηκε ως αναγνωσμένη.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> επισημάνθηκαν ως αναγνωσμένες</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> επισημάνθηκε ως αναγνωσμένη.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> επισημάνθηκαν ως μη αναγνωσμένες</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> επισημάνθηκε ως μη αναγνωσμένη.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> επισημάνθηκαν ως μη αναγνωσμένες</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> επισημάνθηκε ως μη αναγνωσμένη.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Αλλαγμένες ετικέτες.</item>

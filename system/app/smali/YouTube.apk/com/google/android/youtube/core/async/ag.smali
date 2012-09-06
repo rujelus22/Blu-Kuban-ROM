@@ -1,446 +1,377 @@
 .class public final Lcom/google/android/youtube/core/async/ag;
-.super Ljava/lang/Object;
+.super Lcom/google/android/youtube/core/async/o;
 .source "SourceFile"
-
-# interfaces
-.implements Lcom/google/android/youtube/core/async/ad;
 
 
 # instance fields
-.field private final a:Lcom/google/android/youtube/core/async/ad;
+.field private final a:Lorg/apache/http/client/HttpClient;
 
-.field private final b:Lcom/google/android/youtube/core/utils/i;
-
-.field private final c:Z
-
-.field private final d:Z
-
-.field private final e:Z
-
-.field private final f:Ljava/util/Set;
+.field private b:Z
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/utils/i;ZZZLjava/util/Set;)V
+.method public constructor <init>(Lorg/apache/http/client/HttpClient;Lcom/google/android/youtube/core/converter/a;Lcom/google/android/youtube/core/converter/http/bc;)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 50
+    invoke-direct {p0, p2, p3}, Lcom/google/android/youtube/core/async/o;-><init>(Lcom/google/android/youtube/core/converter/a;Lcom/google/android/youtube/core/converter/b;)V
+
+    .line 45
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/android/youtube/core/async/ag;->b:Z
+
+    .line 51
+    const-string v0, "httpClient may not be null"
+
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/apache/http/client/HttpClient;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/ag;->a:Lorg/apache/http/client/HttpClient;
+
+    .line 52
+    return-void
+.end method
+
+.method private static a(Lorg/apache/http/HttpResponse;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 131
+    invoke-interface {p0}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+
+    move-result-object v0
+
+    .line 132
+    if-eqz v0, :cond_9
+
+    .line 133
+    invoke-interface {v0}, Lorg/apache/http/HttpEntity;->consumeContent()V
+
+    .line 135
+    :cond_9
+    return-void
+.end method
+
+
+# virtual methods
+.method protected final synthetic a(Ljava/lang/Object;Ljava/lang/Object;Lcom/google/android/youtube/core/async/l;Ljava/lang/Exception;)V
     .registers 8
     .parameter
     .parameter
     .parameter
     .parameter
-    .parameter
-    .parameter
 
     .prologue
-    .line 35
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 32
+    check-cast p2, Lorg/apache/http/client/methods/HttpUriRequest;
 
-    .line 36
-    const-string v0, "videoRequester cannot be null"
+    instance-of v0, p4, Lorg/apache/http/client/HttpResponseException;
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz v0, :cond_4e
 
-    move-result-object v0
+    move-object v0, p4
 
-    check-cast v0, Lcom/google/android/youtube/core/async/ad;
+    check-cast v0, Lorg/apache/http/client/HttpResponseException;
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/ag;->a:Lcom/google/android/youtube/core/async/ad;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    .line 37
-    const-string v0, "networkStatus cannot be null"
+    const-string v2, "Http error: request=["
 
-    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object v0
+    invoke-interface {p2}, Lorg/apache/http/client/methods/HttpUriRequest;->getURI()Ljava/net/URI;
 
-    check-cast v0, Lcom/google/android/youtube/core/utils/i;
+    move-result-object v2
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/ag;->b:Lcom/google/android/youtube/core/utils/i;
-
-    .line 38
-    iput-boolean p3, p0, Lcom/google/android/youtube/core/async/ag;->c:Z
-
-    .line 39
-    iput-boolean p4, p0, Lcom/google/android/youtube/core/async/ag;->d:Z
-
-    .line 40
-    iput-boolean p5, p0, Lcom/google/android/youtube/core/async/ag;->e:Z
-
-    .line 41
-    iput-object p6, p0, Lcom/google/android/youtube/core/async/ag;->f:Ljava/util/Set;
-
-    .line 42
-    return-void
-.end method
-
-.method static synthetic a(Lcom/google/android/youtube/core/async/ag;)Z
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 20
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/async/ag;->e:Z
-
-    return v0
-.end method
-
-.method static synthetic a(Lcom/google/android/youtube/core/async/ag;Ljava/util/Set;)Z
-    .registers 6
-    .parameter
-    .parameter
-
-    .prologue
-    .line 20
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    :cond_4
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    const-string v2, "]"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Http error: status=["
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Lorg/apache/http/client/HttpResponseException;->getStatusCode()I
 
     move-result v0
 
-    if-eqz v0, :cond_30
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/Stream;
+    const-string v1, "] msg=["
 
-    iget-boolean v2, v0, Lcom/google/android/youtube/core/model/Stream;->is3D:Z
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v2, :cond_4
+    move-result-object v0
 
-    iget-object v2, v0, Lcom/google/android/youtube/core/model/Stream;->quality:Lcom/google/android/youtube/core/model/Stream$Quality;
+    invoke-virtual {p4}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    sget-object v3, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_720P:Lcom/google/android/youtube/core/model/Stream$Quality;
+    move-result-object v1
 
-    if-eq v2, v3, :cond_20
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v2, v0, Lcom/google/android/youtube/core/model/Stream;->quality:Lcom/google/android/youtube/core/model/Stream$Quality;
+    move-result-object v0
 
-    sget-object v3, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_360P:Lcom/google/android/youtube/core/model/Stream$Quality;
+    const-string v1, "]"
 
-    if-ne v2, v3, :cond_4
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_20
-    iget-object v2, p0, Lcom/google/android/youtube/core/async/ag;->f:Ljava/util/Set;
+    move-result-object v0
 
-    if-eqz v2, :cond_2e
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/youtube/core/async/ag;->f:Ljava/util/Set;
+    move-result-object v0
 
-    iget-object v0, v0, Lcom/google/android/youtube/core/model/Stream;->mimeType:Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/youtube/core/L;->b(Ljava/lang/String;)V
 
-    invoke-interface {v2, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    :cond_4e
+    invoke-super {p0, p1, p2, p3, p4}, Lcom/google/android/youtube/core/async/o;->a(Ljava/lang/Object;Ljava/lang/Object;Lcom/google/android/youtube/core/async/l;Ljava/lang/Exception;)V
 
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    :cond_2e
-    const/4 v0, 0x1
-
-    :goto_2f
-    return v0
-
-    :cond_30
-    const/4 v0, 0x0
-
-    goto :goto_2f
+    return-void
 .end method
 
-.method static synthetic b(Lcom/google/android/youtube/core/async/ag;Ljava/util/Set;)Lcom/google/android/youtube/core/model/Stream;
-    .registers 6
+.method protected final synthetic b(Ljava/lang/Object;Lcom/google/android/youtube/core/async/l;)V
+    .registers 11
     .parameter
     .parameter
 
     .prologue
-    .line 20
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/async/ag;->c:Z
+    .line 32
+    check-cast p1, Lorg/apache/http/client/methods/HttpUriRequest;
 
-    if-eqz v0, :cond_1b
+    const-string v0, "request can\'t be null"
 
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ag;->b:Lcom/google/android/youtube/core/utils/i;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0}, Lcom/google/android/youtube/core/utils/i;->f()Z
+    iget-boolean v0, p0, Lcom/google/android/youtube/core/async/ag;->b:Z
 
-    move-result v0
+    if-eqz v0, :cond_66
 
-    if-eqz v0, :cond_1b
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ag;->f:Ljava/util/Set;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v1, 0x1
+    const-string v0, "curl"
 
-    new-array v1, v1, [Lcom/google/android/youtube/core/model/Stream$Quality;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v2, 0x0
+    invoke-interface {p1}, Lorg/apache/http/client/methods/HttpUriRequest;->getAllHeaders()[Lorg/apache/http/Header;
 
-    sget-object v3, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_720P:Lcom/google/android/youtube/core/model/Stream$Quality;
+    move-result-object v2
 
-    aput-object v3, v1, v2
-
-    invoke-static {p1, v0, v1}, Lcom/google/android/youtube/core/model/Stream;->firstAvailable3DStream(Ljava/util/Set;Ljava/util/Set;[Lcom/google/android/youtube/core/model/Stream$Quality;)Lcom/google/android/youtube/core/model/Stream;
-
-    move-result-object v0
-
-    :goto_1a
-    return-object v0
-
-    :cond_1b
-    const/4 v0, 0x0
-
-    goto :goto_1a
-.end method
-
-.method static synthetic c(Lcom/google/android/youtube/core/async/ag;Ljava/util/Set;)Lcom/google/android/youtube/core/model/Stream;
-    .registers 7
-    .parameter
-    .parameter
-
-    .prologue
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    .line 20
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/async/ag;->d:Z
-
-    if-eqz v0, :cond_8
+    array-length v3, v2
 
     const/4 v0, 0x0
 
-    :goto_7
-    return-object v0
+    :goto_1b
+    if-ge v0, v3, :cond_4f
 
-    :cond_8
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/async/ag;->c:Z
+    aget-object v4, v2, v0
 
-    if-eqz v0, :cond_26
+    const-string v5, " -H \'"
 
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ag;->b:Lcom/google/android/youtube/core/utils/i;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v0}, Lcom/google/android/youtube/core/utils/i;->f()Z
+    invoke-interface {v4}, Lorg/apache/http/Header;->getName()Ljava/lang/String;
 
-    move-result v0
+    move-result-object v5
 
-    if-eqz v0, :cond_26
+    const-string v6, "\'"
 
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ag;->f:Ljava/util/Set;
+    const-string v7, "\\\'"
 
-    const/4 v1, 0x2
+    invoke-virtual {v5, v6, v7}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
-    new-array v1, v1, [Lcom/google/android/youtube/core/model/Stream$Quality;
+    move-result-object v5
 
-    sget-object v2, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_720P:Lcom/google/android/youtube/core/model/Stream$Quality;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aput-object v2, v1, v3
+    const-string v5, ": "
 
-    sget-object v2, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_360P:Lcom/google/android/youtube/core/model/Stream$Quality;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aput-object v2, v1, v4
-
-    invoke-static {p1, v0, v1}, Lcom/google/android/youtube/core/model/Stream;->firstAvailable2DStream(Ljava/util/Set;Ljava/util/Set;[Lcom/google/android/youtube/core/model/Stream$Quality;)Lcom/google/android/youtube/core/model/Stream;
-
-    move-result-object v0
-
-    goto :goto_7
-
-    :cond_26
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ag;->f:Ljava/util/Set;
-
-    new-array v1, v4, [Lcom/google/android/youtube/core/model/Stream$Quality;
-
-    sget-object v2, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_360P:Lcom/google/android/youtube/core/model/Stream$Quality;
-
-    aput-object v2, v1, v3
-
-    invoke-static {p1, v0, v1}, Lcom/google/android/youtube/core/model/Stream;->firstAvailable2DStream(Ljava/util/Set;Ljava/util/Set;[Lcom/google/android/youtube/core/model/Stream$Quality;)Lcom/google/android/youtube/core/model/Stream;
-
-    move-result-object v0
-
-    goto :goto_7
-.end method
-
-.method static synthetic d(Lcom/google/android/youtube/core/async/ag;Ljava/util/Set;)Lcom/google/android/youtube/core/model/Stream;
-    .registers 6
-    .parameter
-    .parameter
-
-    .prologue
-    .line 20
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ag;->f:Ljava/util/Set;
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Lcom/google/android/youtube/core/model/Stream$Quality;
-
-    const/4 v2, 0x0
-
-    sget-object v3, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_360P:Lcom/google/android/youtube/core/model/Stream$Quality;
-
-    aput-object v3, v1, v2
-
-    invoke-static {p1, v0, v1}, Lcom/google/android/youtube/core/model/Stream;->firstAvailable3DStream(Ljava/util/Set;Ljava/util/Set;[Lcom/google/android/youtube/core/model/Stream$Quality;)Lcom/google/android/youtube/core/model/Stream;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic e(Lcom/google/android/youtube/core/async/ag;Ljava/util/Set;)Lcom/google/android/youtube/core/model/Stream;
-    .registers 9
-    .parameter
-    .parameter
-
-    .prologue
-    const/4 v6, 0x3
-
-    const/4 v5, 0x2
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    .line 20
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/async/ag;->c:Z
-
-    if-eqz v0, :cond_4b
-
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ag;->b:Lcom/google/android/youtube/core/utils/i;
-
-    invoke-interface {v0}, Lcom/google/android/youtube/core/utils/i;->f()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4b
-
-    sget-object v3, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_720P:Lcom/google/android/youtube/core/model/Stream$Quality;
-
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v4}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
 
     move-result-object v4
 
-    :cond_16
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    const-string v5, "\'"
 
-    move-result v0
+    const-string v6, "\\\'"
 
-    if-eqz v0, :cond_3e
+    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v4
 
-    move-result-object v0
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    check-cast v0, Lcom/google/android/youtube/core/model/Stream;
+    const-string v4, "\'"
 
-    iget-object v0, v0, Lcom/google/android/youtube/core/model/Stream;->quality:Lcom/google/android/youtube/core/model/Stream$Quality;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-ne v0, v3, :cond_16
+    add-int/lit8 v0, v0, 0x1
 
-    move v0, v1
+    goto :goto_1b
 
-    :goto_27
-    if-eqz v0, :cond_40
+    :cond_4f
+    const-string v0, " \'"
 
-    new-array v0, v6, [Lcom/google/android/youtube/core/model/Stream$Quality;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v3, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_360P:Lcom/google/android/youtube/core/model/Stream$Quality;
-
-    aput-object v3, v0, v2
-
-    sget-object v2, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_240P:Lcom/google/android/youtube/core/model/Stream$Quality;
-
-    aput-object v2, v0, v1
-
-    sget-object v1, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_144P:Lcom/google/android/youtube/core/model/Stream$Quality;
-
-    aput-object v1, v0, v5
-
-    :goto_37
-    iget-object v1, p0, Lcom/google/android/youtube/core/async/ag;->f:Ljava/util/Set;
-
-    invoke-static {p1, v1, v0}, Lcom/google/android/youtube/core/model/Stream;->firstAvailable2DStream(Ljava/util/Set;Ljava/util/Set;[Lcom/google/android/youtube/core/model/Stream$Quality;)Lcom/google/android/youtube/core/model/Stream;
+    invoke-interface {p1}, Lorg/apache/http/client/methods/HttpUriRequest;->getURI()Ljava/net/URI;
 
     move-result-object v0
 
-    :goto_3d
-    return-object v0
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    :cond_3e
-    move v0, v2
+    const-string v0, "\'"
 
-    goto :goto_27
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_40
-    new-array v0, v5, [Lcom/google/android/youtube/core/model/Stream$Quality;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    sget-object v3, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_240P:Lcom/google/android/youtube/core/model/Stream$Quality;
+    invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
 
-    aput-object v3, v0, v2
+    :cond_66
+    const/4 v1, 0x0
 
-    sget-object v2, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_144P:Lcom/google/android/youtube/core/model/Stream$Quality;
+    :try_start_67
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/ag;->a:Lorg/apache/http/client/HttpClient;
 
-    aput-object v2, v0, v1
+    invoke-interface {v0, p1}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
 
-    goto :goto_37
+    move-result-object v1
 
-    :cond_4b
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ag;->f:Ljava/util/Set;
+    invoke-interface {p2, p1, v1}, Lcom/google/android/youtube/core/async/l;->a(Ljava/lang/Object;Ljava/lang/Object;)V
+    :try_end_70
+    .catchall {:try_start_67 .. :try_end_70} :catchall_93
+    .catch Ljava/lang/IllegalStateException; {:try_start_67 .. :try_end_70} :catch_7d
+    .catch Ljava/lang/RuntimeException; {:try_start_67 .. :try_end_70} :catch_8e
+    .catch Ljava/lang/Exception; {:try_start_67 .. :try_end_70} :catch_9a
 
-    new-array v3, v6, [Lcom/google/android/youtube/core/model/Stream$Quality;
+    if-eqz v1, :cond_75
 
-    sget-object v4, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_240P:Lcom/google/android/youtube/core/model/Stream$Quality;
+    :try_start_72
+    invoke-static {v1}, Lcom/google/android/youtube/core/async/ag;->a(Lorg/apache/http/HttpResponse;)V
+    :try_end_75
+    .catch Ljava/io/IOException; {:try_start_72 .. :try_end_75} :catch_76
 
-    aput-object v4, v3, v2
-
-    sget-object v2, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_144P:Lcom/google/android/youtube/core/model/Stream$Quality;
-
-    aput-object v2, v3, v1
-
-    sget-object v1, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_360P:Lcom/google/android/youtube/core/model/Stream$Quality;
-
-    aput-object v1, v3, v5
-
-    invoke-static {p1, v0, v3}, Lcom/google/android/youtube/core/model/Stream;->firstAvailable2DStream(Ljava/util/Set;Ljava/util/Set;[Lcom/google/android/youtube/core/model/Stream$Quality;)Lcom/google/android/youtube/core/model/Stream;
-
-    move-result-object v0
-
-    goto :goto_3d
-.end method
-
-
-# virtual methods
-.method public final a(Lcom/google/android/youtube/core/async/GDataRequest;Lcom/google/android/youtube/core/async/g;)V
-    .registers 5
-    .parameter
-    .parameter
-
-    .prologue
-    .line 45
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ag;->a:Lcom/google/android/youtube/core/async/ad;
-
-    new-instance v1, Lcom/google/android/youtube/core/async/ah;
-
-    invoke-direct {v1, p0, p2}, Lcom/google/android/youtube/core/async/ah;-><init>(Lcom/google/android/youtube/core/async/ag;Lcom/google/android/youtube/core/async/g;)V
-
-    invoke-interface {v0, p1, v1}, Lcom/google/android/youtube/core/async/ad;->a(Ljava/lang/Object;Lcom/google/android/youtube/core/async/g;)V
-
-    .line 46
+    :cond_75
+    :goto_75
     return-void
-.end method
 
-.method public final bridge synthetic a(Ljava/lang/Object;Lcom/google/android/youtube/core/async/g;)V
-    .registers 3
-    .parameter
-    .parameter
+    :catch_76
+    move-exception v0
 
-    .prologue
-    .line 20
-    check-cast p1, Lcom/google/android/youtube/core/async/GDataRequest;
+    const-string v1, "Error consuming content response"
 
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/youtube/core/async/ag;->a(Lcom/google/android/youtube/core/async/GDataRequest;Lcom/google/android/youtube/core/async/g;)V
+    invoke-static {v1, v0}, Lcom/google/android/youtube/core/L;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    return-void
+    goto :goto_75
+
+    :catch_7d
+    move-exception v0
+
+    :try_start_7e
+    invoke-interface {p2, p1, v0}, Lcom/google/android/youtube/core/async/l;->a(Ljava/lang/Object;Ljava/lang/Exception;)V
+    :try_end_81
+    .catchall {:try_start_7e .. :try_end_81} :catchall_93
+
+    if-eqz v1, :cond_75
+
+    :try_start_83
+    invoke-static {v1}, Lcom/google/android/youtube/core/async/ag;->a(Lorg/apache/http/HttpResponse;)V
+    :try_end_86
+    .catch Ljava/io/IOException; {:try_start_83 .. :try_end_86} :catch_87
+
+    goto :goto_75
+
+    :catch_87
+    move-exception v0
+
+    const-string v1, "Error consuming content response"
+
+    invoke-static {v1, v0}, Lcom/google/android/youtube/core/L;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_75
+
+    :catch_8e
+    move-exception v0
+
+    :try_start_8f
+    invoke-interface {p1}, Lorg/apache/http/client/methods/HttpUriRequest;->abort()V
+
+    throw v0
+    :try_end_93
+    .catchall {:try_start_8f .. :try_end_93} :catchall_93
+
+    :catchall_93
+    move-exception v0
+
+    if-eqz v1, :cond_99
+
+    :try_start_96
+    invoke-static {v1}, Lcom/google/android/youtube/core/async/ag;->a(Lorg/apache/http/HttpResponse;)V
+    :try_end_99
+    .catch Ljava/io/IOException; {:try_start_96 .. :try_end_99} :catch_ab
+
+    :cond_99
+    :goto_99
+    throw v0
+
+    :catch_9a
+    move-exception v0
+
+    :try_start_9b
+    invoke-interface {p2, p1, v0}, Lcom/google/android/youtube/core/async/l;->a(Ljava/lang/Object;Ljava/lang/Exception;)V
+    :try_end_9e
+    .catchall {:try_start_9b .. :try_end_9e} :catchall_93
+
+    if-eqz v1, :cond_75
+
+    :try_start_a0
+    invoke-static {v1}, Lcom/google/android/youtube/core/async/ag;->a(Lorg/apache/http/HttpResponse;)V
+    :try_end_a3
+    .catch Ljava/io/IOException; {:try_start_a0 .. :try_end_a3} :catch_a4
+
+    goto :goto_75
+
+    :catch_a4
+    move-exception v0
+
+    const-string v1, "Error consuming content response"
+
+    invoke-static {v1, v0}, Lcom/google/android/youtube/core/L;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_75
+
+    :catch_ab
+    move-exception v1
+
+    const-string v2, "Error consuming content response"
+
+    invoke-static {v2, v1}, Lcom/google/android/youtube/core/L;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_99
 .end method

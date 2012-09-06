@@ -15,62 +15,26 @@
 
 
 # virtual methods
-.method public abstract messageUpdateDB(J)V
+.method public abstract onAdvancingOpAccepted(Ljava/util/Set;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Set",
+            "<",
+            "Ljava/lang/Long;",
+            ">;)V"
+        }
+    .end annotation
 .end method
 
-.method public abstract onAllMessageLoaded(I)V
+.method public abstract onDragEnded()V
 .end method
 
-.method public abstract onComposeFromMessageListFragment()V
+.method public abstract onDragStarted()Z
 .end method
 
-.method public abstract onConversationMoveAlways([J[Ljava/lang/String;I)V
-.end method
-
-.method public abstract onEnterSelectionMode(Z)V
-.end method
-
-.method public abstract onFollowUpViewShown()V
-.end method
-
-.method public abstract onForward(J)V
-.end method
-
-.method public abstract onMailBoxList()V
-.end method
-
-.method public abstract onMailboxNotFound()V
+.method public abstract onMailboxNotFound(Z)V
 .end method
 
 .method public abstract onMessageOpen(JJJI)V
-.end method
-
-.method public abstract onMoveMessages([J)V
-.end method
-
-.method public abstract onOutboxMessageSending()V
-.end method
-
-.method public abstract onRefreshFromMessageListFragment()V
-.end method
-
-.method public abstract onReply(J)V
-.end method
-
-.method public abstract onReplyAll(J)V
-.end method
-
-.method public abstract onSearchFromMessageListFragment()V
-.end method
-
-.method public abstract onWaitTooLong()V
-.end method
-
-.method public abstract refreshAllAccount()V
-.end method
-
-.method public abstract setItemCheckboxPressed(ZLcom/android/email/activity/MessageListItemContainer;)V
-.end method
-
-.method public abstract setSubItemCheckboxPressed(ZLcom/android/email/activity/MessageListItemContainer;)V
 .end method

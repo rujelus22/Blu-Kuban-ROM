@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract sync(Landroid/content/Context;)V
+.method public abstract scheduleSync()V
 .end method

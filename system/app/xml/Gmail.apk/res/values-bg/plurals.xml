@@ -53,40 +53,40 @@
         <item quantity="one">Изчаква се операция с %1$d кореспонденция.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">Спряхте &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Спряхте &amp;lt;b>%1$d&amp;lt;/b&amp;amp;gt.</item>
+        <item quantity="other">Спряхте &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Спряхте &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b&amp;amp;amp;amp;gt.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">Подадохте сигнал за спам за &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Подадохте сигнал за спам за &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Подадохте сигнал за спам за &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Подадохте сигнал за спам за &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">Архивирахте &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Архивирахте &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Архивирахте &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Архивирахте &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">Преместихте &amp;lt;b>%1$d&amp;lt;/b> във „Вх. поща“.</item>
-        <item quantity="one">Преместихте &amp;lt;b>%1$d&amp;lt;/b> във „Вх. поща“.</item>
+        <item quantity="other">Преместихте &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> във „Вх. поща“.</item>
+        <item quantity="one">Преместихте &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> във „Вх. поща“.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">Изтрихте &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Изтрихте &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Изтрихте &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Изтрихте &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">Означихте &amp;lt;b>%1$d&amp;lt;/b> като важни.</item>
-        <item quantity="one">Означихте &amp;lt;b>%1$d&amp;lt;/b> като важна.</item>
+        <item quantity="other">Означихте &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> като важни.</item>
+        <item quantity="one">Означихте &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> като важна.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">Означихте &amp;lt;b>%1$d&amp;lt;/b&amp;amp; като маловажни.</item>
-        <item quantity="one">Означихте &amp;lt;b>%1$d&amp;lt;/b&amp;amp;gt като маловажна.</item>
+        <item quantity="other">Означихте &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b&amp;amp;amp;amp; като маловажни.</item>
+        <item quantity="one">Означихте &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b&amp;amp;amp;amp;gt като маловажна.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">Означихте &amp;lt;b>%1$d&amp;lt;/b> като прочетени.</item>
-        <item quantity="one">Означихте &amp;lt;b>%1$d&amp;lt;/b> като прочетена.</item>
+        <item quantity="other">Означихте &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> като прочетени.</item>
+        <item quantity="one">Означихте &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> като прочетена.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">Означихте &amp;lt;b>%1$d&amp;lt;/b> като непрочетени.</item>
-        <item quantity="one">Означихте &amp;lt;b>%1$d&amp;lt;/b> като непрочетена.</item>
+        <item quantity="other">Означихте &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> като непрочетени.</item>
+        <item quantity="one">Означихте &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> като непрочетена.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Променихте етикетите.</item>

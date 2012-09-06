@@ -1,62 +1,90 @@
-.class Lcom/google/googlenav/android/u;
-.super Lcom/google/googlenav/x;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/android/l;
+.class public Lcom/google/googlenav/android/U;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/android/l;ZZ)V
-    .registers 4
+.method public static a(Landroid/content/Context;)Z
+    .registers 5
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/android/u;->a:Lcom/google/googlenav/android/l;
+    .prologue
+    .line 26
+    const-string v0, "activity"
 
-    invoke-direct {p0, p2, p3}, Lcom/google/googlenav/x;-><init>(ZZ)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public a()V
-    .registers 4
-
-    new-instance v1, Landroid/webkit/WebView;
-
-    iget-object v0, p0, Lcom/google/googlenav/android/u;->a:Lcom/google/googlenav/android/l;
-
-    invoke-static {v0}, Lcom/google/googlenav/android/l;->d(Lcom/google/googlenav/android/l;)Lcom/google/googlenav/android/AndroidGmmApplication;
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-direct {v1, v0}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
+    check-cast v0, Landroid/app/ActivityManager;
 
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
+    .line 29
+    const v1, 0x7fffffff
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/webkit/WebSettings;->getUserAgentString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {}, Laf/b;->a()Laf/b;
+    :try_start_b
+    invoke-virtual {v0, v1}, Landroid/app/ActivityManager;->getRunningServices(I)Ljava/util/List;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Laf/b;->m()Lak/i;
+    .line 31
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_13
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_39
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lal/g;
+    check-cast v0, Landroid/app/ActivityManager$RunningServiceInfo;
 
-    invoke-virtual {v0, v2}, Lal/g;->a(Ljava/lang/String;)V
+    .line 32
+    const-string v2, "com.google.android.maps.driveabout.app.NavigationService"
 
-    const-string v0, "UserAgentPref"
+    iget-object v3, v0, Landroid/app/ActivityManager$RunningServiceInfo;->service:Landroid/content/ComponentName;
 
-    invoke-static {v0, v2}, Laf/l;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v3}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
-    invoke-virtual {v1}, Landroid/webkit/WebView;->destroy()V
+    move-result-object v3
 
-    return-void
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_13
+
+    .line 35
+    iget-boolean v0, v0, Landroid/app/ActivityManager$RunningServiceInfo;->foreground:Z
+    :try_end_2f
+    .catch Ljava/lang/SecurityException; {:try_start_b .. :try_end_2f} :catch_33
+
+    if-eqz v0, :cond_39
+
+    .line 36
+    const/4 v0, 0x1
+
+    .line 45
+    :goto_32
+    return v0
+
+    .line 42
+    :catch_33
+    move-exception v0
+
+    .line 43
+    const-string v1, "PERM"
+
+    invoke-static {v1, v0}, LaT/c;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 45
+    :cond_39
+    const/4 v0, 0x0
+
+    goto :goto_32
 .end method

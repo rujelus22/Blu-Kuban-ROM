@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final g:Ljava/util/Map;
+.field final h:Ljava/util/Map;
 
 
 # direct methods
@@ -20,7 +20,7 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/a/d;->g:Ljava/util/Map;
+    iput-object v0, p0, Lcom/google/android/youtube/core/a/d;->h:Ljava/util/Map;
 
     .line 25
     return-void
@@ -33,7 +33,7 @@
 
     .prologue
     .line 29
-    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->g:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->h:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
@@ -52,7 +52,7 @@
     .line 37
     if-eqz p1, :cond_10
 
-    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->g:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->h:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -61,7 +61,7 @@
     if-nez v0, :cond_10
 
     .line 38
-    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->g:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->h:Ljava/util/Map;
 
     const/4 v1, 0x0
 
@@ -79,7 +79,7 @@
 
     .prologue
     .line 54
-    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->g:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->h:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -88,7 +88,7 @@
     if-eqz v0, :cond_10
 
     .line 55
-    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->g:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->h:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -106,7 +106,7 @@
 
     .prologue
     .line 43
-    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->g:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->h:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -121,7 +121,7 @@
 
     .prologue
     .line 61
-    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->g:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->h:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -130,7 +130,7 @@
     if-eqz v0, :cond_10
 
     .line 62
-    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->g:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->h:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -156,7 +156,7 @@
     return-object v0
 
     :cond_4
-    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->g:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/youtube/core/a/d;->h:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 

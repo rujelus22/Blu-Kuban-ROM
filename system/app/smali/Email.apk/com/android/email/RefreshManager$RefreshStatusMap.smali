@@ -33,10 +33,10 @@
     .registers 2
 
     .prologue
-    .line 159
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 141
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 160
+    .line 142
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -51,7 +51,7 @@
     .parameter "x0"
 
     .prologue
-    .line 159
+    .line 141
     invoke-direct {p0}, Lcom/android/email/RefreshManager$RefreshStatusMap;-><init>()V
 
     return-void
@@ -64,7 +64,7 @@
     .parameter "id"
 
     .prologue
-    .line 167
+    .line 145
     iget-object v1, p0, Lcom/android/email/RefreshManager$RefreshStatusMap;->mMap:Ljava/util/HashMap;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -77,17 +77,17 @@
 
     check-cast v0, Lcom/android/email/RefreshManager$Status;
 
-    .line 168
+    .line 146
     .local v0, s:Lcom/android/email/RefreshManager$Status;
     if-nez v0, :cond_1c
 
-    .line 169
+    .line 147
     new-instance v0, Lcom/android/email/RefreshManager$Status;
 
     .end local v0           #s:Lcom/android/email/RefreshManager$Status;
     invoke-direct {v0}, Lcom/android/email/RefreshManager$Status;-><init>()V
 
-    .line 170
+    .line 148
     .restart local v0       #s:Lcom/android/email/RefreshManager$Status;
     iget-object v1, p0, Lcom/android/email/RefreshManager$RefreshStatusMap;->mMap:Ljava/util/HashMap;
 
@@ -97,7 +97,7 @@
 
     invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 172
+    .line 150
     :cond_1c
     return-object v0
 .end method
@@ -106,7 +106,7 @@
     .registers 4
 
     .prologue
-    .line 176
+    .line 154
     iget-object v2, p0, Lcom/android/email/RefreshManager$RefreshStatusMap;->mMap:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -131,7 +131,7 @@
 
     check-cast v1, Lcom/android/email/RefreshManager$Status;
 
-    .line 177
+    .line 155
     .local v1, s:Lcom/android/email/RefreshManager$Status;
     invoke-virtual {v1}, Lcom/android/email/RefreshManager$Status;->isRefreshing()Z
 
@@ -139,10 +139,10 @@
 
     if-eqz v2, :cond_a
 
-    .line 178
+    .line 156
     const/4 v2, 0x1
 
-    .line 181
+    .line 159
     .end local v1           #s:Lcom/android/email/RefreshManager$Status;
     :goto_1d
     return v2
@@ -151,22 +151,4 @@
     const/4 v2, 0x0
 
     goto :goto_1d
-.end method
-
-.method public remove(J)V
-    .registers 5
-    .parameter "id"
-
-    .prologue
-    .line 163
-    iget-object v0, p0, Lcom/android/email/RefreshManager$RefreshStatusMap;->mMap:Ljava/util/HashMap;
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 164
-    return-void
 .end method

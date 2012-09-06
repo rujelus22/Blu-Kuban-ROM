@@ -42,32 +42,32 @@
     .registers 2
 
     .prologue
-    .line 2545
+    .line 2856
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 2556
+    .line 2867
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->creditType_:I
 
-    .line 2573
+    .line 2884
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->credit_:Ljava/lang/String;
 
-    .line 2589
+    .line 2900
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->name_:Ljava/util/List;
 
-    .line 2647
+    .line 2959
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->cachedSize:I
 
-    .line 2545
+    .line 2856
     return-void
 .end method
 
@@ -78,17 +78,17 @@
     .parameter "value"
 
     .prologue
-    .line 2606
+    .line 2917
     if-nez p1, :cond_8
 
-    .line 2607
+    .line 2918
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2609
+    .line 2920
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->name_:Ljava/util/List;
 
@@ -98,20 +98,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 2610
+    .line 2921
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->name_:Ljava/util/List;
 
-    .line 2612
+    .line 2923
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->name_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2613
+    .line 2924
     return-object p0
 .end method
 
@@ -119,15 +119,15 @@
     .registers 2
 
     .prologue
-    .line 2649
+    .line 2962
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 2651
+    .line 2964
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->getSerializedSize()I
 
-    .line 2653
+    .line 2966
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->cachedSize:I
 
@@ -138,7 +138,7 @@
     .registers 2
 
     .prologue
-    .line 2574
+    .line 2885
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->credit_:Ljava/lang/String;
 
     return-object v0
@@ -148,7 +148,7 @@
     .registers 2
 
     .prologue
-    .line 2558
+    .line 2869
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->creditType_:I
 
     return v0
@@ -167,7 +167,7 @@
     .end annotation
 
     .prologue
-    .line 2592
+    .line 2903
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->name_:Ljava/util/List;
 
     return-object v0
@@ -177,10 +177,10 @@
     .registers 7
 
     .prologue
-    .line 2657
+    .line 2971
     const/4 v3, 0x0
 
-    .line 2658
+    .line 2972
     .local v3, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->hasCreditType()Z
 
@@ -188,7 +188,7 @@
 
     if-eqz v4, :cond_11
 
-    .line 2659
+    .line 2973
     const/4 v4, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->getCreditType()I
@@ -201,7 +201,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2662
+    .line 2976
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->hasCredit()Z
 
@@ -209,7 +209,7 @@
 
     if-eqz v4, :cond_21
 
-    .line 2663
+    .line 2977
     const/4 v4, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->getCredit()Ljava/lang/String;
@@ -222,11 +222,11 @@
 
     add-int/2addr v3, v4
 
-    .line 2667
+    .line 2981
     :cond_21
     const/4 v0, 0x0
 
-    .line 2668
+    .line 2982
     .local v0, dataSize:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->getNameList()Ljava/util/List;
 
@@ -250,7 +250,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 2669
+    .line 2983
     .local v1, element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -260,12 +260,12 @@
 
     goto :goto_2a
 
-    .line 2672
+    .line 2986
     .end local v1           #element:Ljava/lang/String;
     :cond_3c
     add-int/2addr v3, v0
 
-    .line 2673
+    .line 2987
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->getNameList()Ljava/util/List;
 
     move-result-object v4
@@ -278,10 +278,10 @@
 
     add-int/2addr v3, v4
 
-    .line 2675
+    .line 2989
     iput v3, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->cachedSize:I
 
-    .line 2676
+    .line 2990
     return v3
 .end method
 
@@ -289,7 +289,7 @@
     .registers 2
 
     .prologue
-    .line 2575
+    .line 2886
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->hasCredit:Z
 
     return v0
@@ -299,7 +299,7 @@
     .registers 2
 
     .prologue
-    .line 2557
+    .line 2868
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->hasCreditType:Z
 
     return v0
@@ -315,29 +315,29 @@
     .end annotation
 
     .prologue
-    .line 2683
+    .line 2998
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 2684
+    .line 2999
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_26
 
-    .line 2688
+    .line 3003
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 2689
+    .line 3004
     :sswitch_d
     return-object p0
 
-    .line 2694
+    .line 3009
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -347,7 +347,7 @@
 
     goto :goto_0
 
-    .line 2698
+    .line 3013
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -357,7 +357,7 @@
 
     goto :goto_0
 
-    .line 2702
+    .line 3017
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -367,7 +367,7 @@
 
     goto :goto_0
 
-    .line 2684
+    .line 2999
     :sswitch_data_26
     .sparse-switch
         0x0 -> :sswitch_d
@@ -387,7 +387,7 @@
     .end annotation
 
     .prologue
-    .line 2543
+    .line 2853
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;
 
     move-result-object v0
@@ -400,15 +400,15 @@
     .parameter "value"
 
     .prologue
-    .line 2577
+    .line 2888
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->hasCredit:Z
 
-    .line 2578
+    .line 2889
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->credit_:Ljava/lang/String;
 
-    .line 2579
+    .line 2890
     return-object p0
 .end method
 
@@ -417,15 +417,15 @@
     .parameter "value"
 
     .prologue
-    .line 2560
+    .line 2871
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->hasCreditType:Z
 
-    .line 2561
+    .line 2872
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->creditType_:I
 
-    .line 2562
+    .line 2873
     return-object p0
 .end method
 
@@ -439,14 +439,14 @@
     .end annotation
 
     .prologue
-    .line 2636
+    .line 2948
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->hasCreditType()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 2637
+    .line 2949
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->getCreditType()I
@@ -455,7 +455,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 2639
+    .line 2951
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->hasCredit()Z
 
@@ -463,7 +463,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 2640
+    .line 2952
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->getCredit()Ljava/lang/String;
@@ -472,7 +472,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2642
+    .line 2954
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;->getNameList()Ljava/util/List;
 
@@ -496,7 +496,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 2643
+    .line 2955
     .local v0, element:Ljava/lang/String;
     const/4 v2, 0x3
 
@@ -504,7 +504,7 @@
 
     goto :goto_24
 
-    .line 2645
+    .line 2957
     .end local v0           #element:Ljava/lang/String;
     :cond_35
     return-void

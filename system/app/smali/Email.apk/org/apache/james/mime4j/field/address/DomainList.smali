@@ -32,25 +32,25 @@
     .end annotation
 
     .prologue
-    .line 36
-    .local p1, domains:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
     .line 37
-    if-eqz p1, :cond_11
+    .local p1, domains:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 38
+    if-eqz p1, :cond_11
+
+    .line 39
     if-eqz p2, :cond_a
 
     .end local p1           #domains:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     :goto_7
     iput-object p1, p0, Lorg/apache/james/mime4j/field/address/DomainList;->domains:Ljava/util/ArrayList;
 
-    .line 41
+    .line 42
     :goto_9
     return-void
 
-    .line 38
+    .line 39
     .restart local p1       #domains:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     :cond_a
     new-instance v0, Ljava/util/ArrayList;
@@ -61,7 +61,7 @@
 
     goto :goto_7
 
-    .line 40
+    .line 41
     :cond_11
     new-instance v0, Ljava/util/ArrayList;
 
@@ -81,7 +81,7 @@
     .parameter "index"
 
     .prologue
-    .line 56
+    .line 57
     if-ltz p1, :cond_8
 
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/DomainList;->size()I
@@ -90,7 +90,7 @@
 
     if-gt v0, p1, :cond_e
 
-    .line 57
+    .line 58
     :cond_8
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -98,7 +98,7 @@
 
     throw v0
 
-    .line 58
+    .line 59
     :cond_e
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/DomainList;->domains:Ljava/util/ArrayList;
 
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 47
+    .line 48
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/DomainList;->domains:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -129,12 +129,12 @@
     .registers 5
 
     .prologue
-    .line 66
+    .line 67
     new-instance v1, Ljava/lang/StringBuffer;
 
     invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 67
+    .line 68
     .local v1, out:Ljava/lang/StringBuffer;
     const/4 v0, 0x0
 
@@ -148,19 +148,19 @@
 
     if-ge v0, v2, :cond_2c
 
-    .line 68
+    .line 69
     const-string v2, "@"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 69
+    .line 70
     invoke-virtual {p0, v0}, Lorg/apache/james/mime4j/field/address/DomainList;->get(I)Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 70
+    .line 71
     add-int/lit8 v2, v0, 0x1
 
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/DomainList;->domains:Ljava/util/ArrayList;
@@ -171,18 +171,18 @@
 
     if-ge v2, v3, :cond_29
 
-    .line 71
+    .line 72
     const-string v2, ","
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 67
+    .line 68
     :cond_29
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_6
 
-    .line 73
+    .line 74
     :cond_2c
     invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 

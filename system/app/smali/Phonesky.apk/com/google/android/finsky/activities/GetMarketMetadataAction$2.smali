@@ -43,7 +43,7 @@
     .parameter
 
     .prologue
-    .line 104
+    .line 102
     iput-object p1, p0, Lcom/google/android/finsky/activities/GetMarketMetadataAction$2;->this$0:Lcom/google/android/finsky/activities/GetMarketMetadataAction;
 
     iput-object p2, p0, Lcom/google/android/finsky/activities/GetMarketMetadataAction$2;->val$responseProto:[Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;
@@ -62,19 +62,19 @@
     .parameter "response"
 
     .prologue
-    .line 107
+    .line 105
     iget-object v0, p0, Lcom/google/android/finsky/activities/GetMarketMetadataAction$2;->val$responseProto:[Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;
 
     const/4 v1, 0x0
 
     aput-object p1, v0, v1
 
-    .line 108
+    .line 106
     iget-object v0, p0, Lcom/google/android/finsky/activities/GetMarketMetadataAction$2;->val$sem:Ljava/util/concurrent/Semaphore;
 
     invoke-virtual {v0}, Ljava/util/concurrent/Semaphore;->release()V
 
-    .line 109
+    .line 107
     return-void
 .end method
 
@@ -83,7 +83,7 @@
     .parameter "x0"
 
     .prologue
-    .line 104
+    .line 102
     check-cast p1, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;
 
     .end local p1

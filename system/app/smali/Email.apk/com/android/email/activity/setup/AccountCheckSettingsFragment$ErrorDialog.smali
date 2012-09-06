@@ -19,172 +19,190 @@
     .registers 1
 
     .prologue
-    .line 985
+    .line 792
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
+    .line 793
     return-void
 .end method
 
-.method public static varargs newInstance(Lcom/android/email/activity/setup/AccountCheckSettingsFragment;I[Ljava/lang/String;)Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;
-    .registers 6
+.method public static newInstance(Landroid/content/Context;Lcom/android/email/activity/setup/AccountCheckSettingsFragment;Lcom/android/emailcommon/mail/MessagingException;)Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;
+    .registers 7
+    .parameter "context"
     .parameter "target"
-    .parameter "messageId"
-    .parameter "messageArguments"
+    .parameter "ex"
 
     .prologue
-    .line 995
+    .line 797
     new-instance v1, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;
 
     invoke-direct {v1}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;-><init>()V
 
-    .line 996
+    .line 798
     .local v1, fragment:Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 997
+    .line 799
     .local v0, arguments:Landroid/os/Bundle;
-    const-string v2, "ErrorDialog.Message.Id"
+    const-string v2, "ErrorDialog.Message"
 
-    invoke-virtual {v0, v2, p1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    #calls: Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->getErrorString(Landroid/content/Context;Lcom/android/emailcommon/mail/MessagingException;)Ljava/lang/String;
+    invoke-static {p0, p2}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->access$200(Landroid/content/Context;Lcom/android/emailcommon/mail/MessagingException;)Ljava/lang/String;
 
-    .line 998
-    const-string v2, "ErrorDialog.Message.Args"
+    move-result-object v3
 
-    invoke-virtual {v0, v2, p2}, Landroid/os/Bundle;->putStringArray(Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-virtual {v0, v2, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 999
+    .line 800
+    const-string v2, "ErrorDialog.ExceptionId"
+
+    invoke-virtual {p2}, Lcom/android/emailcommon/mail/MessagingException;->getExceptionType()I
+
+    move-result v3
+
+    invoke-virtual {v0, v2, v3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    .line 801
     invoke-virtual {v1, v0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;->setArguments(Landroid/os/Bundle;)V
 
-    .line 1000
+    .line 802
     const/4 v2, 0x0
 
-    invoke-virtual {v1, p0, v2}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;->setTargetFragment(Landroid/app/Fragment;I)V
+    invoke-virtual {v1, p1, v2}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;->setTargetFragment(Landroid/app/Fragment;I)V
 
-    .line 1001
+    .line 803
     return-object v1
 .end method
 
 
 # virtual methods
-.method public onCancel(Landroid/content/DialogInterface;)V
-    .registers 3
-    .parameter "dialog"
-
-    .prologue
-    .line 1034
-    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;->getTargetFragment()Landroid/app/Fragment;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
-
-    .line 1035
-    .local v0, target:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
-    invoke-super {p0, p1}, Landroid/app/DialogFragment;->onCancel(Landroid/content/DialogInterface;)V
-
-    .line 1037
-    #calls: Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->onErrorDialogEditButton()V
-    invoke-static {v0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->access$300(Lcom/android/email/activity/setup/AccountCheckSettingsFragment;)V
-
-    .line 1038
-    return-void
-.end method
-
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .registers 10
     .parameter "savedInstanceState"
 
     .prologue
-    .line 1006
+    .line 808
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;->getActivity()Landroid/app/Activity;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1007
-    .local v1, context:Landroid/content/Context;
+    .line 809
+    .local v2, context:Landroid/content/Context;
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 1008
+    .line 810
     .local v0, arguments:Landroid/os/Bundle;
-    const-string v5, "ErrorDialog.Message.Id"
+    const-string v6, "ErrorDialog.Message"
 
-    invoke-virtual {v0, v5}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
-
-    move-result v3
-
-    .line 1009
-    .local v3, messageId:I
-    const-string v5, "ErrorDialog.Message.Args"
-
-    invoke-virtual {v0, v5}, Landroid/os/Bundle;->getStringArray(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 1010
-    .local v2, messageArguments:[Ljava/lang/Object;
-    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;->getTargetFragment()Landroid/app/Fragment;
+    invoke-virtual {v0, v6}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    check-cast v4, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
+    .line 811
+    .local v4, message:Ljava/lang/String;
+    const-string v6, "ErrorDialog.ExceptionId"
 
-    .line 1012
-    .local v4, target:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
-    new-instance v5, Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v0, v6}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
-    invoke-direct {v5, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    move-result v3
 
-    const v6, 0x1010355
-
-    invoke-virtual {v5, v6}, Landroid/app/AlertDialog$Builder;->setIconAttribute(I)Landroid/app/AlertDialog$Builder;
+    .line 812
+    .local v3, exceptionId:I
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;->getTargetFragment()Landroid/app/Fragment;
 
     move-result-object v5
 
-    const v6, 0x7f080108
+    check-cast v5, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
 
-    invoke-virtual {v1, v6}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    .line 815
+    .local v5, target:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
+    new-instance v6, Landroid/app/AlertDialog$Builder;
+
+    invoke-direct {v6, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    const v7, 0x1010355
+
+    invoke-virtual {v6, v7}, Landroid/app/AlertDialog$Builder;->setIconAttribute(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v6
 
-    invoke-virtual {v5, v6}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    const v7, 0x7f080100
 
-    move-result-object v5
+    invoke-virtual {v2, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v1, v3, v2}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v6
 
-    invoke-virtual {v5, v6}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v6, v4}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v5
+    move-result-object v6
 
-    const/4 v6, 0x1
+    const/4 v7, 0x1
 
-    invoke-virtual {v5, v6}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v6, v7}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v5
+    move-result-object v1
 
-    const v6, 0x7f080126
+    .line 821
+    .local v1, builder:Landroid/app/AlertDialog$Builder;
+    const/16 v6, 0x10
 
-    invoke-virtual {v1, v6}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    if-ne v3, v6, :cond_60
+
+    .line 824
+    const v6, 0x104000a
+
+    invoke-virtual {v2, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
     new-instance v7, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog$1;
 
-    invoke-direct {v7, p0, v4}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog$1;-><init>(Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;Lcom/android/email/activity/setup/AccountCheckSettingsFragment;)V
+    invoke-direct {v7, p0, v5}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog$1;-><init>(Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;Lcom/android/email/activity/setup/AccountCheckSettingsFragment;)V
 
-    invoke-virtual {v5, v6, v7}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v1, v6, v7}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v5
+    .line 832
+    const/high16 v6, 0x104
 
-    invoke-virtual {v5}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+    invoke-virtual {v2, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    return-object v5
+    new-instance v7, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog$2;
+
+    invoke-direct {v7, p0, v5}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog$2;-><init>(Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;Lcom/android/email/activity/setup/AccountCheckSettingsFragment;)V
+
+    invoke-virtual {v1, v6, v7}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    .line 853
+    :goto_5b
+    invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+
+    move-result-object v6
+
+    return-object v6
+
+    .line 843
+    :cond_60
+    const v6, 0x7f080124
+
+    invoke-virtual {v2, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    new-instance v7, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog$3;
+
+    invoke-direct {v7, p0, v5}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog$3;-><init>(Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;Lcom/android/email/activity/setup/AccountCheckSettingsFragment;)V
+
+    invoke-virtual {v1, v6, v7}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    goto :goto_5b
 .end method

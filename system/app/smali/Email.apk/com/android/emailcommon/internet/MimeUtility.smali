@@ -12,7 +12,7 @@
     .registers 1
 
     .prologue
-    .line 52
+    .line 49
     const-string v0, "\r|\n"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -28,14 +28,14 @@
     .registers 1
 
     .prologue
-    .line 49
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 46
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 .method public static collectParts(Lcom/android/emailcommon/mail/Part;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
-    .registers 26
+    .registers 19
     .parameter "part"
     .parameter
     .parameter
@@ -61,419 +61,284 @@
     .end annotation
 
     .prologue
-    .line 542
+    .line 408
     .local p1, viewables:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/mail/Part;>;"
     .local p2, attachments:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/mail/Part;>;"
     invoke-interface/range {p0 .. p0}, Lcom/android/emailcommon/mail/Part;->getDisposition()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v6
 
-    .line 543
-    .local v9, disposition:Ljava/lang/String;
-    const/4 v11, 0x0
+    .line 409
+    .local v6, disposition:Ljava/lang/String;
+    const/4 v8, 0x0
 
-    .line 544
-    .local v11, dispositionType:Ljava/lang/String;
-    const/4 v10, 0x0
+    .line 410
+    .local v8, dispositionType:Ljava/lang/String;
+    const/4 v7, 0x0
 
-    .line 545
-    .local v10, dispositionFilename:Ljava/lang/String;
-    if-eqz v9, :cond_18
+    .line 411
+    .local v7, dispositionFilename:Ljava/lang/String;
+    if-eqz v6, :cond_13
 
-    .line 546
-    const/16 v21, 0x0
+    .line 412
+    const/4 v14, 0x0
 
-    move-object/from16 v0, v21
-
-    invoke-static {v9, v0}, Lcom/android/emailcommon/internet/MimeUtility;->getHeaderParameter(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v11
-
-    .line 547
-    const-string v21, "filename"
-
-    move-object/from16 v0, v21
-
-    invoke-static {v9, v0}, Lcom/android/emailcommon/internet/MimeUtility;->getHeaderParameter(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v10
-
-    .line 554
-    :cond_18
-    if-nez v10, :cond_26
-
-    .line 555
-    invoke-interface/range {p0 .. p0}, Lcom/android/emailcommon/mail/Part;->getContentType()Ljava/lang/String;
+    invoke-static {v6, v14}, Lcom/android/emailcommon/internet/MimeUtility;->getHeaderParameter(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 556
-    .local v8, contentType:Ljava/lang/String;
-    const-string v21, "name"
+    .line 413
+    const-string v14, "filename"
 
-    move-object/from16 v0, v21
+    invoke-static {v6, v14}, Lcom/android/emailcommon/internet/MimeUtility;->getHeaderParameter(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {v8, v0}, Lcom/android/emailcommon/internet/MimeUtility;->getHeaderParameter(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v7
 
-    move-result-object v10
+    .line 418
+    :cond_13
+    if-nez v7, :cond_1f
 
-    .line 558
-    .end local v8           #contentType:Ljava/lang/String;
-    :cond_26
-    const-string v21, "attachment"
+    .line 419
+    invoke-interface/range {p0 .. p0}, Lcom/android/emailcommon/mail/Part;->getContentType()Ljava/lang/String;
 
-    move-object/from16 v0, v21
+    move-result-object v5
 
-    invoke-virtual {v0, v11}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    .line 420
+    .local v5, contentType:Ljava/lang/String;
+    const-string v14, "name"
 
-    move-result v5
+    invoke-static {v5, v14}, Lcom/android/emailcommon/internet/MimeUtility;->getHeaderParameter(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 560
-    .local v5, attachmentDisposition:Z
-    if-eqz v11, :cond_3a
+    move-result-object v7
 
-    const-string v21, "inline"
+    .line 422
+    .end local v5           #contentType:Ljava/lang/String;
+    :cond_1f
+    const-string v14, "attachment"
 
-    move-object/from16 v0, v21
+    invoke-virtual {v14, v8}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    invoke-virtual {v0, v11}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    move-result v3
 
-    move-result v21
+    .line 424
+    .local v3, attachmentDisposition:Z
+    if-eqz v8, :cond_2f
 
-    if-eqz v21, :cond_79
+    const-string v14, "inline"
 
-    :cond_3a
-    const/4 v15, 0x1
+    invoke-virtual {v14, v8}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    .line 564
-    .local v15, inlineDisposition:Z
-    :goto_3b
-    if-nez v5, :cond_41
+    move-result v14
 
-    if-eqz v10, :cond_7b
+    if-eqz v14, :cond_64
 
-    if-nez v15, :cond_7b
+    :cond_2f
+    const/4 v11, 0x1
 
-    :cond_41
+    .line 428
+    .local v11, inlineDisposition:Z
+    :goto_30
+    if-nez v3, :cond_36
+
+    if-eqz v7, :cond_66
+
+    if-nez v11, :cond_66
+
+    :cond_36
+    const/4 v2, 0x1
+
+    .line 432
+    .local v2, attachment:Z
+    :goto_37
+    if-eqz v11, :cond_68
+
+    if-eqz v7, :cond_68
+
+    const/4 v10, 0x1
+
+    .line 435
+    .local v10, inline:Z
+    :goto_3c
+    if-nez v2, :cond_40
+
+    if-eqz v10, :cond_6a
+
+    :cond_40
     const/4 v4, 0x1
 
-    .line 568
-    .local v4, attachment:Z
-    :goto_42
-    if-eqz v15, :cond_7d
-
-    if-eqz v10, :cond_7d
-
-    const/4 v14, 0x1
-
-    .line 571
-    .local v14, inline:Z
-    :goto_47
-    if-nez v4, :cond_4b
-
-    if-eqz v14, :cond_7f
-
-    :cond_4b
-    const/4 v6, 0x1
-
-    .line 573
-    .local v6, attachmentOrInline:Z
-    :goto_4c
+    .line 437
+    .local v4, attachmentOrInline:Z
+    :goto_41
     invoke-interface/range {p0 .. p0}, Lcom/android/emailcommon/mail/Part;->getBody()Lcom/android/emailcommon/mail/Body;
 
-    move-result-object v21
+    move-result-object v14
 
-    move-object/from16 v0, v21
+    instance-of v14, v14, Lcom/android/emailcommon/mail/Multipart;
 
-    instance-of v0, v0, Lcom/android/emailcommon/mail/Multipart;
+    if-eqz v14, :cond_6c
 
-    move/from16 v21, v0
-
-    if-eqz v21, :cond_81
-
-    .line 577
+    .line 441
     invoke-interface/range {p0 .. p0}, Lcom/android/emailcommon/mail/Part;->getBody()Lcom/android/emailcommon/mail/Body;
 
-    move-result-object v18
+    move-result-object v13
 
-    check-cast v18, Lcom/android/emailcommon/mail/Multipart;
+    check-cast v13, Lcom/android/emailcommon/mail/Multipart;
 
-    .line 578
-    .local v18, mp:Lcom/android/emailcommon/mail/Multipart;
-    const/4 v12, 0x0
+    .line 442
+    .local v13, mp:Lcom/android/emailcommon/mail/Multipart;
+    const/4 v9, 0x0
 
-    .local v12, i:I
-    :goto_5f
-    invoke-virtual/range {v18 .. v18}, Lcom/android/emailcommon/mail/Multipart;->getCount()I
+    .local v9, i:I
+    :goto_50
+    invoke-virtual {v13}, Lcom/android/emailcommon/mail/Multipart;->getCount()I
 
-    move-result v21
+    move-result v14
 
-    move/from16 v0, v21
+    if-ge v9, v14, :cond_81
 
-    if-ge v12, v0, :cond_9c
+    .line 443
+    invoke-virtual {v13, v9}, Lcom/android/emailcommon/mail/Multipart;->getBodyPart(I)Lcom/android/emailcommon/mail/BodyPart;
 
-    .line 579
-    move-object/from16 v0, v18
+    move-result-object v14
 
-    invoke-virtual {v0, v12}, Lcom/android/emailcommon/mail/Multipart;->getBodyPart(I)Lcom/android/emailcommon/mail/BodyPart;
+    move-object/from16 v0, p1
 
-    move-result-object v21
+    move-object/from16 v1, p2
 
-    move-object/from16 v0, v21
+    invoke-static {v14, v0, v1}, Lcom/android/emailcommon/internet/MimeUtility;->collectParts(Lcom/android/emailcommon/mail/Part;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
-    move-object/from16 v1, p1
+    .line 442
+    add-int/lit8 v9, v9, 0x1
 
-    move-object/from16 v2, p2
+    goto :goto_50
 
-    invoke-static {v0, v1, v2}, Lcom/android/emailcommon/internet/MimeUtility;->collectParts(Lcom/android/emailcommon/mail/Part;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+    .line 424
+    .end local v2           #attachment:Z
+    .end local v4           #attachmentOrInline:Z
+    .end local v9           #i:I
+    .end local v10           #inline:Z
+    .end local v11           #inlineDisposition:Z
+    .end local v13           #mp:Lcom/android/emailcommon/mail/Multipart;
+    :cond_64
+    const/4 v11, 0x0
 
-    .line 578
-    add-int/lit8 v12, v12, 0x1
+    goto :goto_30
 
-    goto :goto_5f
+    .line 428
+    .restart local v11       #inlineDisposition:Z
+    :cond_66
+    const/4 v2, 0x0
 
-    .line 560
-    .end local v4           #attachment:Z
-    .end local v6           #attachmentOrInline:Z
-    .end local v12           #i:I
-    .end local v14           #inline:Z
-    .end local v15           #inlineDisposition:Z
-    .end local v18           #mp:Lcom/android/emailcommon/mail/Multipart;
-    :cond_79
-    const/4 v15, 0x0
+    goto :goto_37
 
-    goto :goto_3b
+    .line 432
+    .restart local v2       #attachment:Z
+    :cond_68
+    const/4 v10, 0x0
 
-    .line 564
-    .restart local v15       #inlineDisposition:Z
-    :cond_7b
+    goto :goto_3c
+
+    .line 435
+    .restart local v10       #inline:Z
+    :cond_6a
     const/4 v4, 0x0
 
-    goto :goto_42
+    goto :goto_41
 
-    .line 568
-    .restart local v4       #attachment:Z
-    :cond_7d
-    const/4 v14, 0x0
+    .line 445
+    .restart local v4       #attachmentOrInline:Z
+    :cond_6c
+    invoke-interface/range {p0 .. p0}, Lcom/android/emailcommon/mail/Part;->getBody()Lcom/android/emailcommon/mail/Body;
 
-    goto :goto_47
+    move-result-object v14
 
-    .line 571
-    .restart local v14       #inline:Z
-    :cond_7f
-    const/4 v6, 0x0
+    instance-of v14, v14, Lcom/android/emailcommon/mail/Message;
 
-    goto :goto_4c
+    if-eqz v14, :cond_82
 
-    .line 581
-    .restart local v6       #attachmentOrInline:Z
+    .line 448
+    invoke-interface/range {p0 .. p0}, Lcom/android/emailcommon/mail/Part;->getBody()Lcom/android/emailcommon/mail/Body;
+
+    move-result-object v12
+
+    check-cast v12, Lcom/android/emailcommon/mail/Message;
+
+    .line 449
+    .local v12, message:Lcom/android/emailcommon/mail/Message;
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, p2
+
+    invoke-static {v12, v0, v1}, Lcom/android/emailcommon/internet/MimeUtility;->collectParts(Lcom/android/emailcommon/mail/Part;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+
+    .line 460
+    .end local v12           #message:Lcom/android/emailcommon/mail/Message;
     :cond_81
-    invoke-interface/range {p0 .. p0}, Lcom/android/emailcommon/mail/Part;->getBody()Lcom/android/emailcommon/mail/Body;
-
-    move-result-object v21
-
-    move-object/from16 v0, v21
-
-    instance-of v0, v0, Lcom/android/emailcommon/mail/Message;
-
-    move/from16 v21, v0
-
-    if-eqz v21, :cond_9d
-
-    .line 584
-    invoke-interface/range {p0 .. p0}, Lcom/android/emailcommon/mail/Part;->getBody()Lcom/android/emailcommon/mail/Body;
-
-    move-result-object v17
-
-    check-cast v17, Lcom/android/emailcommon/mail/Message;
-
-    .line 585
-    .local v17, message:Lcom/android/emailcommon/mail/Message;
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p1
-
-    move-object/from16 v2, p2
-
-    invoke-static {v0, v1, v2}, Lcom/android/emailcommon/internet/MimeUtility;->collectParts(Lcom/android/emailcommon/mail/Part;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
-
-    .line 619
-    .end local v17           #message:Lcom/android/emailcommon/mail/Message;
-    :cond_9c
-    :goto_9c
+    :goto_81
     return-void
 
-    .line 586
-    :cond_9d
-    if-nez v6, :cond_b3
+    .line 450
+    :cond_82
+    if-nez v4, :cond_98
 
-    const-string v21, "text/html"
+    const-string v14, "text/html"
 
     invoke-interface/range {p0 .. p0}, Lcom/android/emailcommon/mail/Part;->getMimeType()Ljava/lang/String;
 
-    move-result-object v22
+    move-result-object v15
 
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v14, v15}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v21
+    move-result v14
 
-    if-eqz v21, :cond_b3
+    if-eqz v14, :cond_98
 
-    .line 589
+    .line 452
     move-object/from16 v0, p1
 
     move-object/from16 v1, p0
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9c
+    goto :goto_81
 
-    .line 590
-    :cond_b3
-    if-nez v6, :cond_c9
+    .line 453
+    :cond_98
+    if-nez v4, :cond_ae
 
-    const-string v21, "text/plain"
+    const-string v14, "text/plain"
 
     invoke-interface/range {p0 .. p0}, Lcom/android/emailcommon/mail/Part;->getMimeType()Ljava/lang/String;
 
-    move-result-object v22
+    move-result-object v15
 
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v14, v15}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v21
+    move-result v14
 
-    if-eqz v21, :cond_c9
+    if-eqz v14, :cond_ae
 
-    .line 593
+    .line 455
     move-object/from16 v0, p1
 
     move-object/from16 v1, p0
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9c
+    goto :goto_81
 
-    .line 594
-    :cond_c9
-    if-nez v6, :cond_108
+    .line 456
+    :cond_ae
+    if-eqz v4, :cond_81
 
-    invoke-interface/range {p0 .. p0}, Lcom/android/emailcommon/mail/Part;->getMimeType()Ljava/lang/String;
-
-    move-result-object v21
-
-    const-string v22, "text/"
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v21
-
-    if-eqz v21, :cond_108
-
-    .line 595
-    const-string v21, "Content-Type"
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v21
-
-    invoke-interface {v0, v1}, Lcom/android/emailcommon/mail/Part;->getHeader(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v19
-
-    .line 596
-    .local v19, strMime:[Ljava/lang/String;
-    const/4 v7, 0x0
-
-    .line 598
-    .local v7, bAtt:Z
-    move-object/from16 v3, v19
-
-    .local v3, arr$:[Ljava/lang/String;
-    :try_start_e4
-    array-length v0, v3
-
-    move/from16 v16, v0
-
-    .local v16, len$:I
-    const/4 v13, 0x0
-
-    .local v13, i$:I
-    :goto_e8
-    move/from16 v0, v16
-
-    if-ge v13, v0, :cond_fb
-
-    aget-object v20, v3, v13
-
-    .line 599
-    .local v20, tempMime:Ljava/lang/String;
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v21
-
-    const-string v22, "name"
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-    :try_end_f7
-    .catch Ljava/lang/Exception; {:try_start_e4 .. :try_end_f7} :catch_110
-
-    move-result v21
-
-    if-eqz v21, :cond_105
-
-    .line 600
-    const/4 v7, 0x1
-
-    .line 606
-    .end local v13           #i$:I
-    .end local v16           #len$:I
-    .end local v20           #tempMime:Ljava/lang/String;
-    :cond_fb
-    :goto_fb
-    if-eqz v7, :cond_9c
-
-    .line 607
+    .line 458
     move-object/from16 v0, p2
 
     move-object/from16 v1, p0
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9c
-
-    .line 598
-    .restart local v13       #i$:I
-    .restart local v16       #len$:I
-    .restart local v20       #tempMime:Ljava/lang/String;
-    :cond_105
-    add-int/lit8 v13, v13, 0x1
-
-    goto :goto_e8
-
-    .line 617
-    .end local v3           #arr$:[Ljava/lang/String;
-    .end local v7           #bAtt:Z
-    .end local v13           #i$:I
-    .end local v16           #len$:I
-    .end local v19           #strMime:[Ljava/lang/String;
-    .end local v20           #tempMime:Ljava/lang/String;
-    :cond_108
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, p0
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_9c
-
-    .line 604
-    .restart local v3       #arr$:[Ljava/lang/String;
-    .restart local v7       #bAtt:Z
-    .restart local v19       #strMime:[Ljava/lang/String;
-    :catch_110
-    move-exception v21
-
-    goto :goto_fb
+    goto :goto_81
 .end method
 
 .method public static decode(Ljava/lang/String;)Ljava/lang/String;
@@ -481,18 +346,18 @@
     .parameter "s"
 
     .prologue
-    .line 71
+    .line 68
     if-nez p0, :cond_4
 
-    .line 72
+    .line 69
     const/4 v0, 0x0
 
-    .line 78
+    .line 71
     :goto_3
     return-object v0
 
     :cond_4
-    invoke-static {p0}, Lorg/apache/james/mime4j/decoder/DecoderUtil;->decodeGeneric(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0}, Lorg/apache/james/mime4j/decoder/DecoderUtil;->decodeEncodedWords(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -510,64 +375,262 @@
     .end annotation
 
     .prologue
-    .line 511
+    .line 380
     invoke-static {p0, p1}, Lcom/android/emailcommon/internet/MimeUtility;->getInputStreamForContentTransferEncoding(Ljava/io/InputStream;Ljava/lang/String;)Ljava/io/InputStream;
 
     move-result-object p0
 
-    .line 512
+    .line 381
     new-instance v1, Lcom/android/emailcommon/internet/BinaryTempFileBody;
 
     invoke-direct {v1}, Lcom/android/emailcommon/internet/BinaryTempFileBody;-><init>()V
 
-    .line 513
+    .line 382
     .local v1, tempBody:Lcom/android/emailcommon/internet/BinaryTempFileBody;
     invoke-virtual {v1}, Lcom/android/emailcommon/internet/BinaryTempFileBody;->getOutputStream()Ljava/io/OutputStream;
 
     move-result-object v0
 
-    .line 515
+    .line 384
     .local v0, out:Ljava/io/OutputStream;
     :try_start_d
     invoke-static {p0, v0}, Lorg/apache/commons/io/IOUtils;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)I
     :try_end_10
-    .catchall {:try_start_d .. :try_end_10} :catchall_1d
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_10} :catch_16
+    .catchall {:try_start_d .. :try_end_10} :catchall_19
+    .catch Landroid/util/Base64DataException; {:try_start_d .. :try_end_10} :catch_14
 
-    .line 523
-    if-eqz v0, :cond_15
-
-    .line 524
+    .line 390
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
 
-    .line 526
-    :cond_15
-    :goto_15
+    .line 392
+    :goto_13
     return-object v1
 
-    .line 518
-    :catch_16
+    .line 385
+    :catch_14
     move-exception v2
 
-    .line 523
-    if-eqz v0, :cond_15
-
-    .line 524
+    .line 390
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
 
-    goto :goto_15
+    goto :goto_13
 
-    .line 523
-    :catchall_1d
+    :catchall_19
     move-exception v2
 
-    if-eqz v0, :cond_23
-
-    .line 524
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
 
-    :cond_23
     throw v2
+.end method
+
+.method public static findFirstPartByMimeType(Lcom/android/emailcommon/mail/Part;Ljava/lang/String;)Lcom/android/emailcommon/mail/Part;
+    .registers 8
+    .parameter "part"
+    .parameter "mimeType"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/emailcommon/mail/MessagingException;
+        }
+    .end annotation
+
+    .prologue
+    .line 219
+    invoke-interface {p0}, Lcom/android/emailcommon/mail/Part;->getBody()Lcom/android/emailcommon/mail/Body;
+
+    move-result-object v5
+
+    instance-of v5, v5, Lcom/android/emailcommon/mail/Multipart;
+
+    if-eqz v5, :cond_23
+
+    .line 220
+    invoke-interface {p0}, Lcom/android/emailcommon/mail/Part;->getBody()Lcom/android/emailcommon/mail/Body;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/emailcommon/mail/Multipart;
+
+    .line 221
+    .local v3, multipart:Lcom/android/emailcommon/mail/Multipart;
+    const/4 v2, 0x0
+
+    .local v2, i:I
+    invoke-virtual {v3}, Lcom/android/emailcommon/mail/Multipart;->getCount()I
+
+    move-result v1
+
+    .local v1, count:I
+    :goto_13
+    if-ge v2, v1, :cond_2f
+
+    .line 222
+    invoke-virtual {v3, v2}, Lcom/android/emailcommon/mail/Multipart;->getBodyPart(I)Lcom/android/emailcommon/mail/BodyPart;
+
+    move-result-object v0
+
+    .line 223
+    .local v0, bodyPart:Lcom/android/emailcommon/mail/BodyPart;
+    invoke-static {v0, p1}, Lcom/android/emailcommon/internet/MimeUtility;->findFirstPartByMimeType(Lcom/android/emailcommon/mail/Part;Ljava/lang/String;)Lcom/android/emailcommon/mail/Part;
+
+    move-result-object v4
+
+    .line 224
+    .local v4, ret:Lcom/android/emailcommon/mail/Part;
+    if-eqz v4, :cond_20
+
+    .line 232
+    .end local v0           #bodyPart:Lcom/android/emailcommon/mail/BodyPart;
+    .end local v1           #count:I
+    .end local v2           #i:I
+    .end local v3           #multipart:Lcom/android/emailcommon/mail/Multipart;
+    .end local v4           #ret:Lcom/android/emailcommon/mail/Part;
+    :goto_1f
+    return-object v4
+
+    .line 221
+    .restart local v0       #bodyPart:Lcom/android/emailcommon/mail/BodyPart;
+    .restart local v1       #count:I
+    .restart local v2       #i:I
+    .restart local v3       #multipart:Lcom/android/emailcommon/mail/Multipart;
+    .restart local v4       #ret:Lcom/android/emailcommon/mail/Part;
+    :cond_20
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_13
+
+    .line 229
+    .end local v0           #bodyPart:Lcom/android/emailcommon/mail/BodyPart;
+    .end local v1           #count:I
+    .end local v2           #i:I
+    .end local v3           #multipart:Lcom/android/emailcommon/mail/Multipart;
+    .end local v4           #ret:Lcom/android/emailcommon/mail/Part;
+    :cond_23
+    invoke-interface {p0}, Lcom/android/emailcommon/mail/Part;->getMimeType()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2f
+
+    move-object v4, p0
+
+    .line 230
+    goto :goto_1f
+
+    .line 232
+    :cond_2f
+    const/4 v4, 0x0
+
+    goto :goto_1f
+.end method
+
+.method public static findPartByContentId(Lcom/android/emailcommon/mail/Part;Ljava/lang/String;)Lcom/android/emailcommon/mail/Part;
+    .registers 9
+    .parameter "part"
+    .parameter "contentId"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .prologue
+    .line 236
+    invoke-interface {p0}, Lcom/android/emailcommon/mail/Part;->getBody()Lcom/android/emailcommon/mail/Body;
+
+    move-result-object v6
+
+    instance-of v6, v6, Lcom/android/emailcommon/mail/Multipart;
+
+    if-eqz v6, :cond_23
+
+    .line 237
+    invoke-interface {p0}, Lcom/android/emailcommon/mail/Part;->getBody()Lcom/android/emailcommon/mail/Body;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/android/emailcommon/mail/Multipart;
+
+    .line 238
+    .local v4, multipart:Lcom/android/emailcommon/mail/Multipart;
+    const/4 v3, 0x0
+
+    .local v3, i:I
+    invoke-virtual {v4}, Lcom/android/emailcommon/mail/Multipart;->getCount()I
+
+    move-result v2
+
+    .local v2, count:I
+    :goto_13
+    if-ge v3, v2, :cond_23
+
+    .line 239
+    invoke-virtual {v4, v3}, Lcom/android/emailcommon/mail/Multipart;->getBodyPart(I)Lcom/android/emailcommon/mail/BodyPart;
+
+    move-result-object v0
+
+    .line 240
+    .local v0, bodyPart:Lcom/android/emailcommon/mail/BodyPart;
+    invoke-static {v0, p1}, Lcom/android/emailcommon/internet/MimeUtility;->findPartByContentId(Lcom/android/emailcommon/mail/Part;Ljava/lang/String;)Lcom/android/emailcommon/mail/Part;
+
+    move-result-object v5
+
+    .line 241
+    .local v5, ret:Lcom/android/emailcommon/mail/Part;
+    if-eqz v5, :cond_20
+
+    .line 250
+    .end local v0           #bodyPart:Lcom/android/emailcommon/mail/BodyPart;
+    .end local v2           #count:I
+    .end local v3           #i:I
+    .end local v4           #multipart:Lcom/android/emailcommon/mail/Multipart;
+    .end local v5           #ret:Lcom/android/emailcommon/mail/Part;
+    :goto_1f
+    return-object v5
+
+    .line 238
+    .restart local v0       #bodyPart:Lcom/android/emailcommon/mail/BodyPart;
+    .restart local v2       #count:I
+    .restart local v3       #i:I
+    .restart local v4       #multipart:Lcom/android/emailcommon/mail/Multipart;
+    .restart local v5       #ret:Lcom/android/emailcommon/mail/Part;
+    :cond_20
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_13
+
+    .line 246
+    .end local v0           #bodyPart:Lcom/android/emailcommon/mail/BodyPart;
+    .end local v2           #count:I
+    .end local v3           #i:I
+    .end local v4           #multipart:Lcom/android/emailcommon/mail/Multipart;
+    .end local v5           #ret:Lcom/android/emailcommon/mail/Part;
+    :cond_23
+    invoke-interface {p0}, Lcom/android/emailcommon/mail/Part;->getContentId()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 247
+    .local v1, cid:Ljava/lang/String;
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_2f
+
+    move-object v5, p0
+
+    .line 248
+    goto :goto_1f
+
+    .line 250
+    :cond_2f
+    const/4 v5, 0x0
+
+    goto :goto_1f
 .end method
 
 .method public static fold(Ljava/lang/String;I)Ljava/lang/String;
@@ -580,49 +643,49 @@
 
     const/4 v7, 0x0
 
-    .line 144
+    .line 129
     const/16 v2, 0x4c
 
-    .line 146
+    .line 131
     .local v2, maxCharacters:I
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    .line 147
+    .line 132
     .local v1, length:I
     add-int v6, p1, v1
 
     if-gt v6, v8, :cond_e
 
-    .line 157
+    .line 142
     .end local p0
     :goto_d
     return-object p0
 
-    .line 150
+    .line 135
     .restart local p0
     :cond_e
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 152
+    .line 137
     .local v4, sb:Ljava/lang/StringBuilder;
     neg-int v0, p1
 
-    .line 153
+    .line 138
     .local v0, lastLineBreak:I
     invoke-static {p0, v7}, Lcom/android/emailcommon/internet/MimeUtility;->indexOfWsp(Ljava/lang/String;I)I
 
     move-result v5
 
-    .line 155
+    .line 140
     .local v5, wspIdx:I
     :goto_18
     if-ne v5, v1, :cond_2a
 
-    .line 156
+    .line 141
     invoke-static {v7, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v6
@@ -633,14 +696,14 @@
 
     invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 157
+    .line 142
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     goto :goto_d
 
-    .line 160
+    .line 145
     :cond_2a
     add-int/lit8 v6, v5, 0x1
 
@@ -648,13 +711,13 @@
 
     move-result v3
 
-    .line 162
+    .line 147
     .local v3, nextWspIdx:I
     sub-int v6, v3, v0
 
     if-le v6, v8, :cond_45
 
-    .line 163
+    .line 148
     invoke-static {v7, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v6
@@ -665,20 +728,29 @@
 
     invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 164
+    .line 149
     const-string v6, "\r\n"
 
     invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 165
+    .line 150
     move v0, v5
 
-    .line 168
+    .line 153
     :cond_45
     move v5, v3
 
-    .line 169
+    .line 154
     goto :goto_18
+.end method
+
+.method public static foldAndEncode(Ljava/lang/String;)Ljava/lang/String;
+    .registers 1
+    .parameter "s"
+
+    .prologue
+    .line 82
+    return-object p0
 .end method
 
 .method public static foldAndEncode2(Ljava/lang/String;I)Ljava/lang/String;
@@ -687,14 +759,14 @@
     .parameter "usedCharacters"
 
     .prologue
-    .line 121
+    .line 103
     sget-object v1, Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;->TEXT_TOKEN:Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;
 
     invoke-static {p0, v1, p1}, Lorg/apache/james/mime4j/codec/EncoderUtil;->encodeIfNecessary(Ljava/lang/String;Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 124
+    .line 106
     .local v0, encoded:Ljava/lang/String;
     invoke-static {v0, p1}, Lcom/android/emailcommon/internet/MimeUtility;->fold(Ljava/lang/String;I)Ljava/lang/String;
 
@@ -711,19 +783,19 @@
     .prologue
     const/4 v11, 0x2
 
-    const/4 v4, 0x0
-
     const/4 v10, 0x1
 
-    .line 204
+    const/4 v4, 0x0
+
+    .line 192
     if-nez p0, :cond_6
 
-    .line 227
+    .line 214
     :cond_5
     :goto_5
     return-object v4
 
-    .line 207
+    .line 195
     :cond_6
     invoke-static {p0}, Lcom/android/emailcommon/internet/MimeUtility;->unfold(Ljava/lang/String;)Ljava/lang/String;
 
@@ -735,11 +807,11 @@
 
     move-result-object v7
 
-    .line 208
+    .line 196
     .local v7, parts:[Ljava/lang/String;
     if-nez p1, :cond_1a
 
-    .line 209
+    .line 197
     const/4 v8, 0x0
 
     aget-object v8, v7, v8
@@ -750,13 +822,13 @@
 
     goto :goto_5
 
-    .line 211
+    .line 199
     :cond_1a
     invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 212
+    .line 200
     .local v3, lowerCaseName:Ljava/lang/String;
     move-object v0, v7
 
@@ -772,7 +844,7 @@
 
     aget-object v6, v0, v1
 
-    .line 213
+    .line 201
     .local v6, part:Ljava/lang/String;
     invoke-virtual {v6}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -786,29 +858,29 @@
 
     move-result v8
 
-    if-eqz v8, :cond_63
+    if-eqz v8, :cond_5d
 
-    .line 214
+    .line 202
     const-string v8, "="
 
     invoke-virtual {v6, v8, v11}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
     move-result-object v5
 
-    .line 215
+    .line 203
     .local v5, parameterParts:[Ljava/lang/String;
     array-length v8, v5
 
     if-lt v8, v11, :cond_5
 
-    .line 218
+    .line 206
     aget-object v8, v5, v10
 
     invoke-virtual {v8}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 219
+    .line 207
     .local v4, parameter:Ljava/lang/String;
     const-string v8, "\""
 
@@ -826,13 +898,7 @@
 
     if-eqz v8, :cond_5
 
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v8
-
-    if-le v8, v10, :cond_5
-
-    .line 221
+    .line 208
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     move-result v8
@@ -845,10 +911,10 @@
 
     goto :goto_5
 
-    .line 212
+    .line 200
     .end local v4           #parameter:Ljava/lang/String;
     .end local v5           #parameterParts:[Ljava/lang/String;
-    :cond_63
+    :cond_5d
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_21
@@ -860,17 +926,17 @@
     .parameter "contentTransferEncoding"
 
     .prologue
-    .line 490
+    .line 359
     if-eqz p1, :cond_15
 
-    .line 491
+    .line 360
     const/4 v1, 0x0
 
     invoke-static {p1, v1}, Lcom/android/emailcommon/internet/MimeUtility;->getHeaderParameter(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 492
+    .line 362
     const-string v1, "quoted-printable"
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -879,7 +945,7 @@
 
     if-eqz v1, :cond_16
 
-    .line 493
+    .line 363
     new-instance v0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;
 
     invoke-direct {v0, p0}, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;-><init>(Ljava/io/InputStream;)V
@@ -888,14 +954,14 @@
     .local v0, in:Ljava/io/InputStream;
     move-object p0, v0
 
-    .line 500
+    .line 369
     .end local v0           #in:Ljava/io/InputStream;
     .restart local p0
     :cond_15
     :goto_15
     return-object p0
 
-    .line 494
+    .line 365
     :cond_16
     const-string v1, "base64"
 
@@ -905,10 +971,12 @@
 
     if-eqz v1, :cond_15
 
-    .line 497
-    new-instance v0, Lorg/apache/james/mime4j/decoder/Base64InputStream;
+    .line 366
+    new-instance v0, Landroid/util/Base64InputStream;
 
-    invoke-direct {v0, p0}, Lorg/apache/james/mime4j/decoder/Base64InputStream;-><init>(Ljava/io/InputStream;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Landroid/util/Base64InputStream;-><init>(Ljava/io/InputStream;I)V
 
     .end local p0
     .restart local v0       #in:Ljava/io/InputStream;
@@ -919,112 +987,22 @@
     goto :goto_15
 .end method
 
-.method public static getPart(Ljava/util/ArrayList;Ljava/lang/String;)Lcom/android/emailcommon/mail/Part;
-    .registers 6
-    .parameter
-    .parameter "ctype"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/ArrayList",
-            "<",
-            "Lcom/android/emailcommon/mail/Part;",
-            ">;",
-            "Ljava/lang/String;",
-            ")",
-            "Lcom/android/emailcommon/mail/Part;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 623
-    .local p0, viewables:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/mail/Part;>;"
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, i$:Ljava/util/Iterator;
-    :cond_4
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2d
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/emailcommon/mail/Part;
-
-    .line 624
-    .local v1, part:Lcom/android/emailcommon/mail/Part;
-    invoke-interface {v1}, Lcom/android/emailcommon/mail/Part;->getMimeType()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_2c
-
-    invoke-interface {v1}, Lcom/android/emailcommon/mail/Part;->getMimeType()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    .line 629
-    .end local v1           #part:Lcom/android/emailcommon/mail/Part;
-    :cond_2c
-    :goto_2c
-    return-object v1
-
-    :cond_2d
-    const/4 v1, 0x0
-
-    goto :goto_2c
-.end method
-
 .method public static getTextFromPart(Lcom/android/emailcommon/mail/Part;)Ljava/lang/String;
     .registers 11
     .parameter "part"
 
     .prologue
-    .line 274
-    const/4 v2, 0x0
+    .line 262
+    if-eqz p0, :cond_63
 
-    .line 276
-    .local v2, in:Ljava/io/InputStream;
-    if-eqz p0, :cond_64
-
-    :try_start_3
+    :try_start_2
     invoke-interface {p0}, Lcom/android/emailcommon/mail/Part;->getBody()Lcom/android/emailcommon/mail/Body;
 
     move-result-object v7
 
-    if-eqz v7, :cond_64
+    if-eqz v7, :cond_63
 
-    .line 277
+    .line 263
     invoke-interface {p0}, Lcom/android/emailcommon/mail/Part;->getBody()Lcom/android/emailcommon/mail/Body;
 
     move-result-object v7
@@ -1033,14 +1011,15 @@
 
     move-result-object v2
 
-    .line 278
+    .line 264
+    .local v2, in:Ljava/io/InputStream;
     invoke-interface {p0}, Lcom/android/emailcommon/mail/Part;->getMimeType()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 279
+    .line 265
     .local v3, mimeType:Ljava/lang/String;
-    if-eqz v3, :cond_64
+    if-eqz v3, :cond_63
 
     const-string v7, "text/*"
 
@@ -1048,28 +1027,24 @@
 
     move-result v7
 
-    if-eqz v7, :cond_64
+    if-eqz v7, :cond_63
 
-    .line 285
+    .line 270
     new-instance v5, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v5}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 286
+    .line 271
     .local v5, out:Ljava/io/ByteArrayOutputStream;
-    if-eqz v2, :cond_2c
-
-    .line 288
     invoke-static {v2, v5}, Lorg/apache/commons/io/IOUtils;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)I
 
-    .line 289
+    .line 272
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
 
-    .line 291
-    :cond_2c
+    .line 273
     const/4 v2, 0x0
 
-    .line 298
+    .line 278
     invoke-interface {p0}, Lcom/android/emailcommon/mail/Part;->getContentType()Ljava/lang/String;
 
     move-result-object v7
@@ -1080,100 +1055,50 @@
 
     move-result-object v0
 
-    .line 299
+    .line 279
     .local v0, charset:Ljava/lang/String;
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_3a
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v7
-
-    if-eqz v7, :cond_47
-
-    const-string v7, ""
-
-    if-eq v0, v7, :cond_47
-
-    .line 304
+    .line 283
     invoke-static {v0}, Lorg/apache/james/mime4j/util/CharsetUtil;->toJavaCharset(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 310
-    :cond_47
-    if-eqz v0, :cond_53
+    .line 288
+    :cond_3a
+    if-nez v0, :cond_3e
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v7
-
-    if-eqz v7, :cond_53
-
-    const-string v7, ""
-
-    if-ne v0, v7, :cond_57
-
-    .line 311
-    :cond_53
-    invoke-static {}, Lorg/apache/james/mime4j/util/CharsetUtil;->getLocalCharset()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 316
-    :cond_57
-    if-nez v0, :cond_5b
-
-    .line 317
+    .line 289
     const-string v0, "ASCII"
 
-    .line 322
-    :cond_5b
+    .line 294
+    :cond_3e
     invoke-virtual {v5, v0}, Ljava/io/ByteArrayOutputStream;->toString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 323
+    .line 295
     .local v6, result:Ljava/lang/String;
     invoke-virtual {v5}, Ljava/io/ByteArrayOutputStream;->close()V
-    :try_end_62
-    .catchall {:try_start_3 .. :try_end_62} :catchall_af
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_3 .. :try_end_62} :catch_69
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_62} :catch_8c
+    :try_end_45
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_2 .. :try_end_45} :catch_46
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_45} :catch_65
 
-    .line 345
-    :try_start_62
-    throw v2
-    :try_end_63
-    .catch Ljava/lang/Exception; {:try_start_62 .. :try_end_63} :catch_b4
-
-    .line 349
+    .line 315
     .end local v0           #charset:Ljava/lang/String;
+    .end local v2           #in:Ljava/io/InputStream;
     .end local v3           #mimeType:Ljava/lang/String;
     .end local v5           #out:Ljava/io/ByteArrayOutputStream;
     .end local v6           #result:Ljava/lang/String;
-    :goto_63
+    :goto_45
     return-object v6
 
-    .line 345
-    :cond_64
-    :try_start_64
-    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
-    :try_end_67
-    .catch Ljava/lang/Exception; {:try_start_64 .. :try_end_67} :catch_b6
-
-    .line 349
-    :goto_67
-    const/4 v6, 0x0
-
-    goto :goto_63
-
-    .line 328
-    :catch_69
+    .line 301
+    :catch_46
     move-exception v4
 
-    .line 334
+    .line 306
     .local v4, oom:Ljava/lang/OutOfMemoryError;
-    :try_start_6a
     const-string v7, "Email"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1199,31 +1124,21 @@
     move-result-object v8
 
     invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_86
-    .catchall {:try_start_6a .. :try_end_86} :catchall_af
 
-    .line 345
-    :try_start_86
-    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
-    :try_end_89
-    .catch Ljava/lang/Exception; {:try_start_86 .. :try_end_89} :catch_8a
-
-    goto :goto_67
-
-    .line 346
-    :catch_8a
-    move-exception v7
-
-    goto :goto_67
-
-    .line 335
+    .line 315
     .end local v4           #oom:Ljava/lang/OutOfMemoryError;
-    :catch_8c
+    :cond_63
+    :goto_63
+    const/4 v6, 0x0
+
+    goto :goto_45
+
+    .line 308
+    :catch_65
     move-exception v1
 
-    .line 341
+    .line 313
     .local v1, e:Ljava/lang/Exception;
-    :try_start_8d
     const-string v7, "Email"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1249,61 +1164,8 @@
     move-result-object v8
 
     invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_a9
-    .catchall {:try_start_8d .. :try_end_a9} :catchall_af
-
-    .line 345
-    :try_start_a9
-    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
-    :try_end_ac
-    .catch Ljava/lang/Exception; {:try_start_a9 .. :try_end_ac} :catch_ad
-
-    goto :goto_67
-
-    .line 346
-    :catch_ad
-    move-exception v7
-
-    goto :goto_67
-
-    .line 344
-    .end local v1           #e:Ljava/lang/Exception;
-    :catchall_af
-    move-exception v7
-
-    .line 345
-    :try_start_b0
-    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
-    :try_end_b3
-    .catch Ljava/lang/Exception; {:try_start_b0 .. :try_end_b3} :catch_b8
-
-    .line 347
-    :goto_b3
-    throw v7
-
-    .line 346
-    .restart local v0       #charset:Ljava/lang/String;
-    .restart local v3       #mimeType:Ljava/lang/String;
-    .restart local v5       #out:Ljava/io/ByteArrayOutputStream;
-    .restart local v6       #result:Ljava/lang/String;
-    :catch_b4
-    move-exception v7
 
     goto :goto_63
-
-    .end local v0           #charset:Ljava/lang/String;
-    .end local v3           #mimeType:Ljava/lang/String;
-    .end local v5           #out:Ljava/io/ByteArrayOutputStream;
-    .end local v6           #result:Ljava/lang/String;
-    :catch_b6
-    move-exception v7
-
-    goto :goto_67
-
-    :catch_b8
-    move-exception v8
-
-    goto :goto_b3
 .end method
 
 .method private static indexOfWsp(Ljava/lang/String;I)I
@@ -1312,12 +1174,12 @@
     .parameter "fromIndex"
 
     .prologue
-    .line 177
+    .line 164
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    .line 178
+    .line 165
     .local v2, len:I
     move v1, p1
 
@@ -1325,12 +1187,12 @@
     :goto_5
     if-ge v1, v2, :cond_17
 
-    .line 179
+    .line 166
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    .line 180
+    .line 167
     .local v0, c:C
     const/16 v3, 0x20
 
@@ -1340,14 +1202,14 @@
 
     if-ne v0, v3, :cond_14
 
-    .line 183
+    .line 170
     .end local v0           #c:C
     .end local v1           #index:I
     :cond_13
     :goto_13
     return v1
 
-    .line 178
+    .line 165
     .restart local v0       #c:C
     .restart local v1       #index:I
     :cond_14
@@ -1359,7 +1221,7 @@
     :cond_17
     move v1, v2
 
-    .line 183
+    .line 170
     goto :goto_13
 .end method
 
@@ -1369,7 +1231,7 @@
     .parameter "matchAgainst"
 
     .prologue
-    .line 456
+    .line 327
     const-string v1, "\\*"
 
     const-string v2, "\\.\\*"
@@ -1384,7 +1246,7 @@
 
     move-result-object v0
 
-    .line 458
+    .line 329
     .local v0, p:Ljava/util/regex/Pattern;
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
@@ -1403,7 +1265,7 @@
     .parameter "matchAgainst"
 
     .prologue
-    .line 472
+    .line 342
     move-object v0, p1
 
     .local v0, arr$:[Ljava/lang/String;
@@ -1418,7 +1280,7 @@
 
     aget-object v3, v0, v1
 
-    .line 473
+    .line 343
     .local v3, matchType:Ljava/lang/String;
     invoke-static {p0, v3}, Lcom/android/emailcommon/internet/MimeUtility;->mimeTypeMatches(Ljava/lang/String;Ljava/lang/String;)Z
 
@@ -1426,22 +1288,22 @@
 
     if-eqz v4, :cond_f
 
-    .line 474
+    .line 344
     const/4 v4, 0x1
 
-    .line 477
+    .line 347
     .end local v3           #matchType:Ljava/lang/String;
     :goto_e
     return v4
 
-    .line 472
+    .line 342
     .restart local v3       #matchType:Ljava/lang/String;
     :cond_f
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_3
 
-    .line 477
+    .line 347
     .end local v3           #matchType:Ljava/lang/String;
     :cond_12
     const/4 v4, 0x0
@@ -1454,19 +1316,19 @@
     .parameter "s"
 
     .prologue
-    .line 59
+    .line 56
     if-nez p0, :cond_4
 
-    .line 60
+    .line 57
     const/4 p0, 0x0
 
-    .line 67
+    .line 64
     .local v0, patternMatcher:Ljava/util/regex/Matcher;
     :cond_3
     :goto_3
     return-object p0
 
-    .line 62
+    .line 59
     .end local v0           #patternMatcher:Ljava/util/regex/Matcher;
     :cond_4
     sget-object v1, Lcom/android/emailcommon/internet/MimeUtility;->PATTERN_CR_OR_LF:Ljava/util/regex/Pattern;
@@ -1475,7 +1337,7 @@
 
     move-result-object v0
 
-    .line 63
+    .line 60
     .restart local v0       #patternMatcher:Ljava/util/regex/Matcher;
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
@@ -1483,10 +1345,10 @@
 
     if-eqz v1, :cond_3
 
-    .line 64
+    .line 61
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->reset()Ljava/util/regex/Matcher;
 
-    .line 65
+    .line 62
     const-string v1, ""
 
     invoke-virtual {v0, v1}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
@@ -1501,7 +1363,7 @@
     .parameter "s"
 
     .prologue
-    .line 83
+    .line 75
     invoke-static {p0}, Lcom/android/emailcommon/internet/MimeUtility;->unfold(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -1511,56 +1373,4 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public static unfoldAndDecode2(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 5
-    .parameter "s"
-    .parameter "charset"
-
-    .prologue
-    .line 87
-    invoke-static {p0}, Lcom/android/emailcommon/internet/MimeUtility;->unfold(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 88
-    .local v0, s2:Ljava/lang/String;
-    if-nez v0, :cond_8
-
-    .line 89
-    const/4 v1, 0x0
-
-    .line 94
-    :goto_7
-    return-object v1
-
-    .line 91
-    :cond_8
-    const-string v1, "=?"
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v1
-
-    const/4 v2, -0x1
-
-    if-ne v1, v2, :cond_18
-
-    if-eqz p1, :cond_18
-
-    .line 92
-    invoke-static {p0, p1}, Lorg/apache/james/mime4j/decoder/DecoderUtil;->justDecode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    goto :goto_7
-
-    .line 94
-    :cond_18
-    invoke-static {p0}, Lorg/apache/james/mime4j/decoder/DecoderUtil;->decodeGeneric(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    goto :goto_7
 .end method

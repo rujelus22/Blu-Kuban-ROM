@@ -23,40 +23,47 @@
 
 .field private hasInitiationTimestampMsec:Z
 
+.field private hasTrialUntilTimestampMsec:Z
+
 .field private hasValidUntilTimestampMsec:Z
 
 .field private initiationTimestampMsec_:J
+
+.field private trialUntilTimestampMsec_:J
 
 .field private validUntilTimestampMsec_:J
 
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .registers 4
 
     .prologue
-    const-wide/16 v0, 0x0
+    const-wide/16 v1, 0x0
 
-    .line 678
+    .line 694
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 683
-    iput-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->initiationTimestampMsec_:J
+    .line 699
+    iput-wide v1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->initiationTimestampMsec_:J
 
-    .line 700
-    iput-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->validUntilTimestampMsec_:J
+    .line 716
+    iput-wide v1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->validUntilTimestampMsec_:J
 
-    .line 717
+    .line 733
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->autoRenewing_:Z
 
-    .line 756
+    .line 750
+    iput-wide v1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->trialUntilTimestampMsec_:J
+
+    .line 794
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->cachedSize:I
 
-    .line 678
+    .line 694
     return-void
 .end method
 
@@ -66,7 +73,7 @@
     .registers 2
 
     .prologue
-    .line 718
+    .line 734
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->autoRenewing_:Z
 
     return v0
@@ -76,15 +83,15 @@
     .registers 2
 
     .prologue
-    .line 758
+    .line 797
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 760
+    .line 799
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->getSerializedSize()I
 
-    .line 762
+    .line 801
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->cachedSize:I
 
@@ -95,7 +102,7 @@
     .registers 3
 
     .prologue
-    .line 684
+    .line 700
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->initiationTimestampMsec_:J
 
     return-wide v0
@@ -105,10 +112,10 @@
     .registers 5
 
     .prologue
-    .line 766
+    .line 806
     const/4 v0, 0x0
 
-    .line 767
+    .line 807
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->hasInitiationTimestampMsec()Z
 
@@ -116,7 +123,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 768
+    .line 808
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->getInitiationTimestampMsec()J
@@ -129,7 +136,7 @@
 
     add-int/2addr v0, v1
 
-    .line 771
+    .line 811
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->hasValidUntilTimestampMsec()Z
 
@@ -137,7 +144,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 772
+    .line 812
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->getValidUntilTimestampMsec()J
@@ -150,7 +157,7 @@
 
     add-int/2addr v0, v1
 
-    .line 775
+    .line 815
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->hasAutoRenewing()Z
 
@@ -158,7 +165,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 776
+    .line 816
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->getAutoRenewing()Z
@@ -171,19 +178,50 @@
 
     add-int/2addr v0, v1
 
-    .line 779
+    .line 819
     :cond_31
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->hasTrialUntilTimestampMsec()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_41
+
+    .line 820
+    const/4 v1, 0x4
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->getTrialUntilTimestampMsec()J
+
+    move-result-wide v2
+
+    invoke-static {v1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt64Size(IJ)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 823
+    :cond_41
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->cachedSize:I
 
-    .line 780
+    .line 824
     return v0
+.end method
+
+.method public getTrialUntilTimestampMsec()J
+    .registers 3
+
+    .prologue
+    .line 751
+    iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->trialUntilTimestampMsec_:J
+
+    return-wide v0
 .end method
 
 .method public getValidUntilTimestampMsec()J
     .registers 3
 
     .prologue
-    .line 701
+    .line 717
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->validUntilTimestampMsec_:J
 
     return-wide v0
@@ -193,7 +231,7 @@
     .registers 2
 
     .prologue
-    .line 719
+    .line 735
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->hasAutoRenewing:Z
 
     return v0
@@ -203,8 +241,18 @@
     .registers 2
 
     .prologue
-    .line 685
+    .line 701
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->hasInitiationTimestampMsec:Z
+
+    return v0
+.end method
+
+.method public hasTrialUntilTimestampMsec()Z
+    .registers 2
+
+    .prologue
+    .line 752
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->hasTrialUntilTimestampMsec:Z
 
     return v0
 .end method
@@ -213,7 +261,7 @@
     .registers 2
 
     .prologue
-    .line 702
+    .line 718
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->hasValidUntilTimestampMsec:Z
 
     return v0
@@ -229,29 +277,29 @@
     .end annotation
 
     .prologue
-    .line 787
+    .line 832
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 788
+    .line 833
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_26
+    sparse-switch v0, :sswitch_data_2e
 
-    .line 792
+    .line 837
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 793
+    .line 838
     :sswitch_d
     return-object p0
 
-    .line 798
+    .line 843
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -261,7 +309,7 @@
 
     goto :goto_0
 
-    .line 802
+    .line 847
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -271,7 +319,7 @@
 
     goto :goto_0
 
-    .line 806
+    .line 851
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -281,13 +329,24 @@
 
     goto :goto_0
 
-    .line 788
-    :sswitch_data_26
+    .line 855
+    :sswitch_26
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
+
+    move-result-wide v1
+
+    invoke-virtual {p0, v1, v2}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->setTrialUntilTimestampMsec(J)Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;
+
+    goto :goto_0
+
+    .line 833
+    :sswitch_data_2e
     .sparse-switch
         0x0 -> :sswitch_d
         0x8 -> :sswitch_e
         0x10 -> :sswitch_16
         0x18 -> :sswitch_1e
+        0x20 -> :sswitch_26
     .end sparse-switch
 .end method
 
@@ -301,7 +360,7 @@
     .end annotation
 
     .prologue
-    .line 676
+    .line 691
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;
 
     move-result-object v0
@@ -314,15 +373,15 @@
     .parameter "value"
 
     .prologue
-    .line 721
+    .line 737
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->hasAutoRenewing:Z
 
-    .line 722
+    .line 738
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->autoRenewing_:Z
 
-    .line 723
+    .line 739
     return-object p0
 .end method
 
@@ -331,15 +390,32 @@
     .parameter "value"
 
     .prologue
-    .line 687
+    .line 703
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->hasInitiationTimestampMsec:Z
 
-    .line 688
+    .line 704
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->initiationTimestampMsec_:J
 
-    .line 689
+    .line 705
+    return-object p0
+.end method
+
+.method public setTrialUntilTimestampMsec(J)Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;
+    .registers 4
+    .parameter "value"
+
+    .prologue
+    .line 754
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->hasTrialUntilTimestampMsec:Z
+
+    .line 755
+    iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->trialUntilTimestampMsec_:J
+
+    .line 756
     return-object p0
 .end method
 
@@ -348,15 +424,15 @@
     .parameter "value"
 
     .prologue
-    .line 704
+    .line 720
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->hasValidUntilTimestampMsec:Z
 
-    .line 705
+    .line 721
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->validUntilTimestampMsec_:J
 
-    .line 706
+    .line 722
     return-object p0
 .end method
 
@@ -370,14 +446,14 @@
     .end annotation
 
     .prologue
-    .line 745
+    .line 780
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->hasInitiationTimestampMsec()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 746
+    .line 781
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->getInitiationTimestampMsec()J
@@ -386,7 +462,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 748
+    .line 783
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->hasValidUntilTimestampMsec()Z
 
@@ -394,7 +470,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 749
+    .line 784
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->getValidUntilTimestampMsec()J
@@ -403,7 +479,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 751
+    .line 786
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->hasAutoRenewing()Z
 
@@ -411,7 +487,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 752
+    .line 787
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->getAutoRenewing()Z
@@ -420,7 +496,24 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 754
+    .line 789
     :cond_2a
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->hasTrialUntilTimestampMsec()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_38
+
+    .line 790
+    const/4 v0, 0x4
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;->getTrialUntilTimestampMsec()J
+
+    move-result-wide v1
+
+    invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
+
+    .line 792
+    :cond_38
     return-void
 .end method

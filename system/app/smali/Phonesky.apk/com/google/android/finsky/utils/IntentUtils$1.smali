@@ -19,7 +19,7 @@
     .registers 2
 
     .prologue
-    .line 100
+    .line 140
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/android/finsky/utils/IntentUtils$ConsumptionApp;-><init>(Lcom/google/android/finsky/utils/IntentUtils$1;)V
@@ -35,100 +35,144 @@
     .parameter "accountName"
 
     .prologue
-    .line 106
+    .line 147
     const-string v1, "com.google.android.apps.books"
 
     invoke-virtual {p1, v1}, Landroid/content/pm/PackageManager;->getLaunchIntentForPackage(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 107
+    .line 148
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "android.intent.action.MAIN"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 108
+    .line 149
     invoke-static {v0}, Lcom/google/android/finsky/utils/IntentUtils$1;->setDefaultFlags(Landroid/content/Intent;)V
 
-    .line 109
+    .line 150
     const-string v1, "authAccount"
 
     invoke-static {v0, v1, p2}, Lcom/google/android/finsky/utils/IntentUtils$1;->addAccountExtra(Landroid/content/Intent;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 110
+    .line 151
     return-object v0
 .end method
 
 .method public buildViewItemIntent(Landroid/content/pm/PackageManager;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/content/Intent;
-    .registers 9
+    .registers 12
     .parameter "pm"
     .parameter "doc"
     .parameter "accountName"
 
     .prologue
-    .line 125
-    sget-object v2, Lcom/google/android/finsky/config/G;->readBookUrl:Lcom/google/android/finsky/config/GservicesValue;
+    .line 158
+    sget-object v5, Lcom/google/android/finsky/config/G;->readBookUrl:Lcom/google/android/finsky/config/GservicesValue;
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
+    invoke-virtual {v5}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v5
 
-    check-cast v2, Ljava/lang/String;
+    check-cast v5, Ljava/lang/String;
 
-    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v5}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-virtual {v2}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+    invoke-virtual {v5}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
-    move-result-object v2
+    move-result-object v5
 
-    const-string v3, "id"
+    const-string v6, "id"
 
     invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getBackendDocId()Ljava/lang/String;
 
+    move-result-object v7
+
+    invoke-virtual {v5, v6, v7}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
     move-result-object v4
 
-    invoke-virtual {v2, v3, v4}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+    .line 160
+    .local v4, uri:Landroid/net/Uri$Builder;
+    new-instance v1, Landroid/content/Intent;
 
-    move-result-object v1
+    const-string v5, "android.intent.action.VIEW"
 
-    .line 127
-    .local v1, uri:Landroid/net/Uri$Builder;
-    new-instance v0, Landroid/content/Intent;
+    invoke-virtual {v4}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
-    const-string v2, "android.intent.action.VIEW"
+    move-result-object v6
 
-    invoke-virtual {v1}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+    invoke-direct {v1, v5, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+
+    .line 161
+    .local v1, intent:Landroid/content/Intent;
+    const-string v5, "com.google.android.apps.books"
+
+    invoke-virtual {v1, v5}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 162
+    const v5, 0x10004000
+
+    invoke-virtual {v1, v5}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    .line 163
+    const-string v5, "authAccount"
+
+    invoke-static {v1, v5, p3}, Lcom/google/android/finsky/utils/IntentUtils$1;->addAccountExtra(Landroid/content/Intent;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 165
+    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getAvailableOffers()Ljava/util/List;
 
     move-result-object v3
 
-    invoke-direct {v0, v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+    .line 166
+    .local v3, offers:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/remoting/protos/Common$Offer;>;"
+    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    .line 128
-    .local v0, intent:Landroid/content/Intent;
-    const-string v2, "com.google.android.apps.books"
+    move-result-object v0
 
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+    .local v0, i$:Ljava/util/Iterator;
+    :cond_3d
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 129
-    const v2, 0x10004000
+    move-result v5
 
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    if-eqz v5, :cond_58
 
-    .line 130
-    const-string v2, "authAccount"
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-static {v0, v2, p3}, Lcom/google/android/finsky/utils/IntentUtils$1;->addAccountExtra(Landroid/content/Intent;Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v2
 
-    .line 134
-    const-string v2, "books:addToMyEBooks"
+    check-cast v2, Lcom/google/android/finsky/remoting/protos/Common$Offer;
 
-    const/4 v3, 0x0
+    .line 167
+    .local v2, offer:Lcom/google/android/finsky/remoting/protos/Common$Offer;
+    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/Common$Offer;->hasOfferType()Z
 
-    invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    move-result v5
 
-    .line 136
-    return-object v0
+    if-eqz v5, :cond_3d
+
+    .line 168
+    const-string v5, "offerType"
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/Common$Offer;->getOfferType()I
+
+    move-result v6
+
+    invoke-virtual {v1, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    .line 175
+    .end local v2           #offer:Lcom/google/android/finsky/remoting/protos/Common$Offer;
+    :cond_58
+    const-string v5, "books:addToMyEBooks"
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v1, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    .line 177
+    return-object v1
 .end method

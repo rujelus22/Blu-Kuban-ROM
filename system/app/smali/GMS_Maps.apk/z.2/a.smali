@@ -1,291 +1,207 @@
-.class public Lz/a;
+.class public LZ/a;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Comparable;
-
-
-# static fields
-.field public static final a:Lz/a;
-
-.field public static final b:Lz/a;
+.source "SourceFile"
 
 
 # instance fields
+.field private final a:I
+
+.field private final b:I
+
 .field private final c:I
+
+.field private final d:I
+
+.field private final e:Z
+
+.field private final f:J
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(IIIIZ)V
+    .registers 8
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 95
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 96
+    iput p1, p0, LZ/a;->a:I
+
+    .line 97
+    iput p2, p0, LZ/a;->b:I
+
+    .line 98
+    iput p4, p0, LZ/a;->c:I
+
+    .line 99
+    iput p3, p0, LZ/a;->d:I
+
+    .line 100
+    iput-boolean p5, p0, LZ/a;->e:Z
+
+    .line 102
+    invoke-static {}, LZ/a;->f()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, LZ/a;->f:J
+
+    .line 103
+    return-void
+.end method
+
+.method public constructor <init>(IIIZ)V
+    .registers 11
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 79
+    move-object v0, p0
+
+    move v1, p1
+
+    move v2, p2
+
+    move v3, p3
+
+    move v4, p3
+
+    move v5, p4
+
+    invoke-direct/range {v0 .. v5}, LZ/a;-><init>(IIIIZ)V
+
+    .line 80
+    return-void
+.end method
+
+.method private static f()J
     .registers 2
 
-    new-instance v0, Lz/a;
-
-    const/4 v1, -0x1
-
-    invoke-direct {v0, v1}, Lz/a;-><init>(I)V
-
-    sput-object v0, Lz/a;->a:Lz/a;
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [I
-
-    invoke-static {v0}, Lz/a;->a([I)Lz/a;
+    .prologue
+    .line 106
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
 
     move-result-object v0
 
-    sput-object v0, Lz/a;->b:Lz/a;
+    .line 107
+    if-eqz v0, :cond_f
 
-    return-void
-.end method
+    .line 108
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->u()Lcom/google/googlenav/common/a;
 
-.method private constructor <init>(I)V
-    .registers 2
+    move-result-object v0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 109
+    invoke-interface {v0}, Lcom/google/googlenav/common/a;->c()J
 
-    iput p1, p0, Lz/a;->c:I
+    move-result-wide v0
 
-    return-void
-.end method
+    .line 111
+    :goto_e
+    return-wide v0
 
-.method public static a(Lz/a;Lz/a;)Lz/a;
-    .registers 5
+    :cond_f
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    new-instance v0, Lz/a;
+    move-result-wide v0
 
-    iget v1, p0, Lz/a;->c:I
-
-    iget v2, p1, Lz/a;->c:I
-
-    xor-int/lit8 v2, v2, -0x1
-
-    and-int/2addr v1, v2
-
-    invoke-direct {v0, v1}, Lz/a;-><init>(I)V
-
-    return-object v0
-.end method
-
-.method public static varargs a([I)Lz/a;
-    .registers 3
-
-    new-instance v0, Lz/a;
-
-    invoke-static {p0}, Lz/a;->b([I)I
-
-    move-result v1
-
-    invoke-direct {v0, v1}, Lz/a;-><init>(I)V
-
-    return-object v0
-.end method
-
-.method static varargs b([I)I
-    .registers 6
-
-    const/4 v0, 0x0
-
-    array-length v2, p0
-
-    move v1, v0
-
-    :goto_3
-    if-ge v0, v2, :cond_39
-
-    aget v3, p0, v0
-
-    invoke-static {}, Ln/a;->b()Z
-
-    move-result v4
-
-    if-nez v4, :cond_32
-
-    if-ltz v3, :cond_13
-
-    const/16 v4, 0x1f
-
-    if-le v3, v4, :cond_32
-
-    :cond_13
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "value "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " out of range"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_32
-    const/4 v4, 0x1
-
-    shl-int v3, v4, v3
-
-    or-int/2addr v1, v3
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_3
-
-    :cond_39
-    return v1
+    goto :goto_e
 .end method
 
 
 # virtual methods
-.method public a(Lz/a;)I
-    .registers 4
+.method public a()I
+    .registers 2
 
-    iget v0, p0, Lz/a;->c:I
-
-    iget v1, p1, Lz/a;->c:I
-
-    sub-int/2addr v0, v1
+    .prologue
+    .line 128
+    iget v0, p0, LZ/a;->a:I
 
     return v0
 .end method
 
-.method public a(I)Z
-    .registers 5
+.method public b()I
+    .registers 2
 
-    const/4 v0, 0x1
+    .prologue
+    .line 137
+    iget v0, p0, LZ/a;->b:I
 
-    iget v1, p0, Lz/a;->c:I
-
-    shl-int v2, v0, p1
-
-    and-int/2addr v1, v2
-
-    if-eqz v1, :cond_9
-
-    :goto_8
     return v0
-
-    :cond_9
-    const/4 v0, 0x0
-
-    goto :goto_8
 .end method
 
-.method public synthetic compareTo(Ljava/lang/Object;)I
+.method public c()I
+    .registers 2
+
+    .prologue
+    .line 152
+    iget v0, p0, LZ/a;->c:I
+
+    return v0
+.end method
+
+.method public d()Z
+    .registers 2
+
+    .prologue
+    .line 157
+    iget-boolean v0, p0, LZ/a;->e:Z
+
+    return v0
+.end method
+
+.method public e()C
+    .registers 2
+
+    .prologue
+    .line 186
+    iget v0, p0, LZ/a;->b:I
+
+    int-to-char v0, v0
+
+    return v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
     .registers 3
+    .parameter
 
-    check-cast p1, Lz/a;
-
-    invoke-virtual {p0, p1}, Lz/a;->a(Lz/a;)I
+    .prologue
+    .line 240
+    invoke-super {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x0
-
-    instance-of v1, p1, Lz/a;
-
-    if-eqz v1, :cond_e
-
-    check-cast p1, Lz/a;
-
-    iget v1, p1, Lz/a;->c:I
-
-    iget v2, p0, Lz/a;->c:I
-
-    if-ne v1, v2, :cond_e
-
-    const/4 v0, 0x1
-
-    :cond_e
-    return v0
-.end method
-
 .method public hashCode()I
     .registers 2
 
-    iget v0, p0, Lz/a;->c:I
+    .prologue
+    .line 255
+    invoke-super {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .registers 2
 
-    const/4 v1, 0x0
-
-    const/4 v0, 0x1
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "{"
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move v2, v1
-
-    :goto_d
-    const/16 v4, 0x1f
-
-    if-gt v2, v4, :cond_26
-
-    invoke-virtual {p0, v2}, Lz/a;->a(I)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_21
-
-    if-nez v0, :cond_24
-
-    const-string v4, ", "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :goto_1e
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    :cond_21
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_d
-
-    :cond_24
-    move v0, v1
-
-    goto :goto_1e
-
-    :cond_26
-    const-string v0, "}"
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .prologue
+    .line 194
+    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 

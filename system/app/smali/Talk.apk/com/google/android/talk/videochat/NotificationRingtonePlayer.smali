@@ -89,7 +89,7 @@
     const-wide/16 v0, -0x1
 
     .line 63
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 58
     iput-wide v0, p0, Lcom/google/android/talk/videochat/NotificationRingtonePlayer;->mFirstRingEventTime:J

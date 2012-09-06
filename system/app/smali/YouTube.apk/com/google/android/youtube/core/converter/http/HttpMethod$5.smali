@@ -26,13 +26,13 @@
 
     .prologue
     .line 47
-    new-instance v0, Lcom/google/android/youtube/core/converter/http/an;
+    new-instance v0, Lcom/google/android/youtube/core/converter/http/bb;
 
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lcom/google/android/youtube/core/converter/http/an;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/google/android/youtube/core/converter/http/bb;-><init>(Ljava/lang/String;)V
 
     return-object v0
 .end method

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="@string/pref_connect_title" android:key="pref_connect_main">
-        <Preference android:title="@string/pref_connect_privacy" android:key="pref_connect_privacy" />
-        <CheckBoxPreference android:title="@string/pref_enhance_swype" android:key="pref_enhance_swype" android:summary="@string/pref_enhance_swype_desc" />
-    </PreferenceCategory>
-</PreferenceScreen>

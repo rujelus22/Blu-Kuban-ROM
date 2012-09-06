@@ -1,9 +1,6 @@
-.class final Lcom/google/android/finsky/billing/iab/MarketBillingService$1;
+.class synthetic Lcom/google/android/finsky/billing/iab/MarketBillingService$1;
 .super Ljava/lang/Object;
 .source "MarketBillingService.java"
-
-# interfaces
-.implements Lcom/google/android/finsky/local/AssetStore$LocalAssetChangeListener;
 
 
 # annotations
@@ -12,148 +9,135 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x1008
     name = null
 .end annotation
 
 
+# static fields
+.field static final synthetic $SwitchMap$com$google$android$finsky$billing$iab$MarketBillingService$BillingRequest:[I
+
+
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method static constructor <clinit>()V
+    .registers 3
 
     .prologue
-    .line 70
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public onAssetAdded(Lcom/google/android/finsky/local/LocalAsset;)V
-    .registers 6
-    .parameter "asset"
-
-    .prologue
-    .line 80
-    invoke-static {}, Lcom/google/android/finsky/billing/iab/MarketBillingService;->access$000()Ljava/util/Map;
-
-    move-result-object v1
-
-    monitor-enter v1
-
-    .line 81
-    :try_start_5
-    invoke-static {}, Lcom/google/android/finsky/billing/iab/MarketBillingService;->access$000()Ljava/util/Map;
+    .line 229
+    invoke-static {}, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->values()[Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
 
     move-result-object v0
 
-    invoke-interface {p1}, Lcom/google/android/finsky/local/LocalAsset;->getPackage()Ljava/lang/String;
+    array-length v0, v0
 
-    move-result-object v2
+    new-array v0, v0, [I
 
-    invoke-interface {p1}, Lcom/google/android/finsky/local/LocalAsset;->getAccount()Ljava/lang/String;
+    sput-object v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$1;->$SwitchMap$com$google$android$finsky$billing$iab$MarketBillingService$BillingRequest:[I
 
-    move-result-object v3
+    :try_start_9
+    sget-object v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$1;->$SwitchMap$com$google$android$finsky$billing$iab$MarketBillingService$BillingRequest:[I
 
-    invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object v1, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->CHECK_BILLING_SUPPORTED:Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
 
-    .line 82
-    monitor-exit v1
+    invoke-virtual {v1}, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->ordinal()I
 
-    .line 83
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_49
+
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$1;->$SwitchMap$com$google$android$finsky$billing$iab$MarketBillingService$BillingRequest:[I
+
+    sget-object v1, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->REQUEST_PURCHASE:Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_47
+
+    :goto_1f
+    :try_start_1f
+    sget-object v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$1;->$SwitchMap$com$google$android$finsky$billing$iab$MarketBillingService$BillingRequest:[I
+
+    sget-object v1, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->GET_PURCHASE_INFORMATION:Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_45
+
+    :goto_2a
+    :try_start_2a
+    sget-object v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$1;->$SwitchMap$com$google$android$finsky$billing$iab$MarketBillingService$BillingRequest:[I
+
+    sget-object v1, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->RESTORE_TRANSACTIONS:Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_35
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_43
+
+    :goto_35
+    :try_start_35
+    sget-object v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$1;->$SwitchMap$com$google$android$finsky$billing$iab$MarketBillingService$BillingRequest:[I
+
+    sget-object v1, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->CONFIRM_NOTIFICATIONS:Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingRequest;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_40
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_35 .. :try_end_40} :catch_41
+
+    :goto_40
     return-void
 
-    .line 82
-    :catchall_16
+    :catch_41
     move-exception v0
 
-    monitor-exit v1
-    :try_end_18
-    .catchall {:try_start_5 .. :try_end_18} :catchall_16
+    goto :goto_40
 
-    throw v0
-.end method
-
-.method public onAssetChanged(Lcom/google/android/finsky/local/LocalAsset;Lcom/google/android/finsky/local/AssetState;)V
-    .registers 7
-    .parameter "asset"
-    .parameter "previousState"
-
-    .prologue
-    .line 73
-    invoke-static {}, Lcom/google/android/finsky/billing/iab/MarketBillingService;->access$000()Ljava/util/Map;
-
-    move-result-object v1
-
-    monitor-enter v1
-
-    .line 74
-    :try_start_5
-    invoke-static {}, Lcom/google/android/finsky/billing/iab/MarketBillingService;->access$000()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {p1}, Lcom/google/android/finsky/local/LocalAsset;->getPackage()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {p1}, Lcom/google/android/finsky/local/LocalAsset;->getAccount()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 75
-    monitor-exit v1
-
-    .line 76
-    return-void
-
-    .line 75
-    :catchall_16
+    :catch_43
     move-exception v0
 
-    monitor-exit v1
-    :try_end_18
-    .catchall {:try_start_5 .. :try_end_18} :catchall_16
+    goto :goto_35
 
-    throw v0
-.end method
-
-.method public onAssetDeleted(Ljava/lang/String;)V
-    .registers 4
-    .parameter "packageName"
-
-    .prologue
-    .line 87
-    invoke-static {}, Lcom/google/android/finsky/billing/iab/MarketBillingService;->access$000()Ljava/util/Map;
-
-    move-result-object v1
-
-    monitor-enter v1
-
-    .line 88
-    :try_start_5
-    invoke-static {}, Lcom/google/android/finsky/billing/iab/MarketBillingService;->access$000()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 89
-    monitor-exit v1
-
-    .line 90
-    return-void
-
-    .line 89
-    :catchall_e
+    :catch_45
     move-exception v0
 
-    monitor-exit v1
-    :try_end_10
-    .catchall {:try_start_5 .. :try_end_10} :catchall_e
+    goto :goto_2a
 
-    throw v0
+    :catch_47
+    move-exception v0
+
+    goto :goto_1f
+
+    :catch_49
+    move-exception v0
+
+    goto :goto_14
 .end method

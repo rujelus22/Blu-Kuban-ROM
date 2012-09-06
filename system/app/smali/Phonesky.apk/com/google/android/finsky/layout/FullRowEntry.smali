@@ -16,10 +16,10 @@
     .parameter "attrs"
 
     .prologue
-    .line 21
+    .line 22
     invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/layout/OverviewBucketEntry;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 22
+    .line 23
     return-void
 .end method
 
@@ -29,11 +29,11 @@
     .registers 2
 
     .prologue
-    .line 26
+    .line 27
     invoke-super {p0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->onFinishInflate()V
 
-    .line 28
-    const v0, 0x7f08002b
+    .line 29
+    const v0, 0x7f080020
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/FullRowEntry;->findViewById(I)Landroid/view/View;
 
@@ -43,8 +43,8 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/FullRowEntry;->mPlusOne:Landroid/widget/TextView;
 
-    .line 29
-    const v0, 0x7f080087
+    .line 30
+    const v0, 0x7f080083
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/FullRowEntry;->findViewById(I)Landroid/view/View;
 
@@ -52,7 +52,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/FullRowEntry;->mCorpusStrip:Landroid/view/View;
 
-    .line 30
+    .line 31
     return-void
 .end method
 
@@ -65,21 +65,29 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 34
+    .line 35
     invoke-super {p0, p1, p2, p3}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->setDocument(Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/api/model/Document;Z)V
 
-    .line 36
+    .line 37
+    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getDocumentType()I
+
+    move-result v3
+
+    const/4 v4, 0x3
+
+    if-eq v3, v4, :cond_4b
+
     invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->hasPlusOneData()Z
 
     move-result v3
 
-    if-eqz v3, :cond_44
+    if-eqz v3, :cond_4b
 
     iget-object v3, p0, Lcom/google/android/finsky/layout/FullRowEntry;->mPlusOne:Landroid/widget/TextView;
 
-    if-eqz v3, :cond_44
+    if-eqz v3, :cond_4b
 
-    .line 37
+    .line 39
     invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getPlusOneData()Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
 
     move-result-object v3
@@ -88,31 +96,31 @@
 
     move-result-wide v1
 
-    .line 38
+    .line 40
     .local v1, totalPlusOneCount:J
     const-wide/16 v3, 0x0
 
     cmp-long v3, v1, v3
 
-    if-lez v3, :cond_44
+    if-lez v3, :cond_4b
 
-    .line 39
+    .line 41
     iget-object v3, p0, Lcom/google/android/finsky/layout/FullRowEntry;->mPlusOne:Landroid/widget/TextView;
 
     invoke-virtual {v3, v6}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 40
+    .line 42
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/FullRowEntry;->getContext()Landroid/content/Context;
 
     move-result-object v3
 
-    const v4, 0x7f0701f6
+    const v4, 0x7f070230
 
     invoke-static {v3, v1, v2, v4}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->formatPlusOneCount(Landroid/content/Context;JI)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 43
+    .line 45
     .local v0, formatted:Ljava/lang/String;
     iget-object v3, p0, Lcom/google/android/finsky/layout/FullRowEntry;->mPlusOne:Landroid/widget/TextView;
 
@@ -136,20 +144,20 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 47
+    .line 49
     .end local v0           #formatted:Ljava/lang/String;
     .end local v1           #totalPlusOneCount:J
-    :cond_44
+    :cond_4b
     iget-object v3, p0, Lcom/google/android/finsky/layout/FullRowEntry;->mCorpusStrip:Landroid/view/View;
 
-    if-eqz v3, :cond_5e
+    if-eqz v3, :cond_65
 
-    .line 48
+    .line 50
     iget-object v3, p0, Lcom/google/android/finsky/layout/FullRowEntry;->mCorpusStrip:Landroid/view/View;
 
     invoke-virtual {v3, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 49
+    .line 51
     iget-object v3, p0, Lcom/google/android/finsky/layout/FullRowEntry;->mCorpusStrip:Landroid/view/View;
 
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/FullRowEntry;->getContext()Landroid/content/Context;
@@ -166,7 +174,7 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 52
-    :cond_5e
+    .line 54
+    :cond_65
     return-void
 .end method

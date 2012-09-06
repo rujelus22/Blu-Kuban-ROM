@@ -1,54 +1,70 @@
-.class Lp/b;
+.class final LP/b;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public a:Lcom/google/android/maps/driveabout/vector/aU;
+.field final synthetic a:Ljava/lang/String;
 
-.field public b:I
+.field final synthetic b:Landroid/content/Context;
 
-.field public c:I
-
-.field public d:J
+.field final synthetic c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/maps/driveabout/vector/aU;IIJ)V
-    .registers 6
+.method constructor <init>(Ljava/lang/String;Landroid/content/Context;Ljava/lang/String;)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 86
+    iput-object p1, p0, LP/b;->a:Ljava/lang/String;
+
+    iput-object p2, p0, LP/b;->b:Landroid/content/Context;
+
+    iput-object p3, p0, LP/b;->c:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lp/b;->a:Lcom/google/android/maps/driveabout/vector/aU;
-
-    iput p2, p0, Lp/b;->b:I
-
-    iput p3, p0, Lp/b;->c:I
-
-    iput-wide p4, p0, Lp/b;->d:J
 
     return-void
 .end method
 
-.method public constructor <init>(Lp/b;)V
+
+# virtual methods
+.method public run()V
     .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 92
+    invoke-static {}, Lcom/google/android/apps/analytics/i;->a()Lcom/google/android/apps/analytics/i;
 
-    iget-object v0, p1, Lp/b;->a:Lcom/google/android/maps/driveabout/vector/aU;
+    move-result-object v0
 
-    iput-object v0, p0, Lp/b;->a:Lcom/google/android/maps/driveabout/vector/aU;
+    iget-object v1, p0, LP/b;->a:Ljava/lang/String;
 
-    iget v0, p1, Lp/b;->b:I
+    iget-object v2, p0, LP/b;->b:Landroid/content/Context;
 
-    iput v0, p0, Lp/b;->b:I
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/analytics/i;->a(Ljava/lang/String;Landroid/content/Context;)V
 
-    iget v0, p1, Lp/b;->c:I
+    .line 93
+    const/4 v0, 0x1
 
-    iput v0, p0, Lp/b;->c:I
+    invoke-static {v0}, LP/a;->b(Z)Z
 
-    iget-wide v0, p1, Lp/b;->d:J
+    .line 94
+    invoke-static {}, Lcom/google/android/apps/analytics/i;->a()Lcom/google/android/apps/analytics/i;
 
-    iput-wide v0, p0, Lp/b;->d:J
+    move-result-object v0
 
+    iget-object v1, p0, LP/b;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/analytics/i;->a(Ljava/lang/String;)Z
+
+    .line 95
     return-void
 .end method

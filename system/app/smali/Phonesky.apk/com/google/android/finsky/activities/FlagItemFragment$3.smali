@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 180
+    .line 175
     iput-object p1, p0, Lcom/google/android/finsky/activities/FlagItemFragment$3;->this$0:Lcom/google/android/finsky/activities/FlagItemFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "error"
 
     .prologue
-    .line 183
+    .line 178
     iget-object v1, p0, Lcom/google/android/finsky/activities/FlagItemFragment$3;->this$0:Lcom/google/android/finsky/activities/FlagItemFragment;
 
     invoke-virtual {v1}, Lcom/google/android/finsky/activities/FlagItemFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -53,11 +53,11 @@
 
     move-result-object v0
 
-    .line 184
+    .line 179
     .local v0, message:Ljava/lang/String;
     if-eqz v0, :cond_18
 
-    .line 185
+    .line 180
     iget-object v1, p0, Lcom/google/android/finsky/activities/FlagItemFragment$3;->this$0:Lcom/google/android/finsky/activities/FlagItemFragment;
 
     #getter for: Lcom/google/android/finsky/activities/FlagItemFragment;->mPageFragmentHost:Lcom/google/android/finsky/fragments/PageFragmentHost;
@@ -71,11 +71,11 @@
 
     invoke-interface {v1, v2, v0, v3}, Lcom/google/android/finsky/fragments/PageFragmentHost;->showErrorDialog(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 189
+    .line 184
     :goto_17
     return-void
 
-    .line 187
+    .line 182
     :cond_18
     iget-object v1, p0, Lcom/google/android/finsky/activities/FlagItemFragment$3;->this$0:Lcom/google/android/finsky/activities/FlagItemFragment;
 

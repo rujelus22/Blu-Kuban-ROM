@@ -1,20 +1,24 @@
 .class public Lbn/a;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# instance fields
-.field private a:J
+# static fields
+.field public static final a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 7
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    const-wide/16 v0, -0x1
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
 
-    iput-wide v0, p0, Lbn/a;->a:J
+    sput-object v0, Lbn/a;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
+    .line 9
     return-void
 .end method

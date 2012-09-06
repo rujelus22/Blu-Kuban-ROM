@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/view/dialog/aD;
+.class Lcom/google/googlenav/ui/view/dialog/ad;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/aC;
+.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/X;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/aC;)V
+.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/X;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/aD;->a:Lcom/google/googlenav/ui/view/dialog/aC;
+    .prologue
+    .line 312
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/ad;->a:Lcom/google/googlenav/ui/view/dialog/X;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,30 +28,18 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/aD;->a:Lcom/google/googlenav/ui/view/dialog/aC;
+    .prologue
+    .line 315
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/ad;->a:Lcom/google/googlenav/ui/view/dialog/X;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/aC;->a(Lcom/google/googlenav/ui/view/dialog/aC;)Z
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/X;->b(Lcom/google/googlenav/ui/view/dialog/X;)Lcom/google/googlenav/ui/view/dialog/ah;
 
-    move-result v0
+    move-result-object v0
 
-    if-eqz v0, :cond_10
+    invoke-interface {v0}, Lcom/google/googlenav/ui/view/dialog/ah;->c()V
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/aD;->a:Lcom/google/googlenav/ui/view/dialog/aC;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/view/dialog/aC;->a:Lcom/google/googlenav/ui/wizard/hp;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hp;->f()V
-
-    :goto_f
+    .line 316
     return-void
-
-    :cond_10
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/aD;->a:Lcom/google/googlenav/ui/view/dialog/aC;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/view/dialog/aC;->a:Lcom/google/googlenav/ui/wizard/hp;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hp;->e()V
-
-    goto :goto_f
 .end method

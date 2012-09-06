@@ -10,11 +10,9 @@
 # instance fields
 .field private final mAccountColorArray:Landroid/content/res/TypedArray;
 
-.field private final mAccountColorArray2:Landroid/content/res/TypedArray;
+.field private final mAccountColorPaints:[Landroid/graphics/Paint;
 
-.field private final mAccountColorNinePatch:[Landroid/graphics/NinePatch;
-
-.field private final mAccountColors:Landroid/content/res/TypedArray;
+.field private final mAccountColors:[I
 
 .field private final mContext:Landroid/content/Context;
 
@@ -23,21 +21,23 @@
 
 # direct methods
 .method private constructor <init>(Landroid/content/Context;)V
-    .registers 8
+    .registers 6
     .parameter "context"
 
     .prologue
-    .line 51
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    const v3, 0x7f060010
 
-    .line 52
+    .line 38
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 39
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/android/email/ResourceHelper;->mContext:Landroid/content/Context;
 
-    .line 53
+    .line 40
     iget-object v2, p0, Lcom/android/email/ResourceHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -46,12 +46,8 @@
 
     iput-object v2, p0, Lcom/android/email/ResourceHelper;->mResources:Landroid/content/res/Resources;
 
-    .line 54
+    .line 42
     iget-object v2, p0, Lcom/android/email/ResourceHelper;->mResources:Landroid/content/res/Resources;
-
-    invoke-static {}, Lcom/android/email/activity/ActivityResourceInterface;->getId_combined_view_account_colors()I
-
-    move-result v3
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->obtainTypedArray(I)Landroid/content/res/TypedArray;
 
@@ -59,95 +55,61 @@
 
     iput-object v2, p0, Lcom/android/email/ResourceHelper;->mAccountColorArray:Landroid/content/res/TypedArray;
 
-    .line 56
+    .line 43
     iget-object v2, p0, Lcom/android/email/ResourceHelper;->mResources:Landroid/content/res/Resources;
 
-    invoke-static {}, Lcom/android/email/activity/ActivityResourceInterface;->getId_combined_view_account_colors_2()I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->obtainTypedArray(I)Landroid/content/res/TypedArray;
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getIntArray(I)[I
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/email/ResourceHelper;->mAccountColorArray2:Landroid/content/res/TypedArray;
+    iput-object v2, p0, Lcom/android/email/ResourceHelper;->mAccountColors:[I
 
-    .line 61
-    iget-object v2, p0, Lcom/android/email/ResourceHelper;->mResources:Landroid/content/res/Resources;
+    .line 44
+    iget-object v2, p0, Lcom/android/email/ResourceHelper;->mAccountColors:[I
 
-    invoke-static {}, Lcom/android/email/activity/ActivityResourceInterface;->getId_account_colors()I
+    array-length v2, v2
 
-    move-result v3
+    new-array v2, v2, [Landroid/graphics/Paint;
 
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->obtainTypedArray(I)Landroid/content/res/TypedArray;
+    iput-object v2, p0, Lcom/android/email/ResourceHelper;->mAccountColorPaints:[Landroid/graphics/Paint;
 
-    move-result-object v2
+    .line 45
+    const/4 v0, 0x0
 
-    iput-object v2, p0, Lcom/android/email/ResourceHelper;->mAccountColors:Landroid/content/res/TypedArray;
+    .local v0, i:I
+    :goto_2c
+    iget-object v2, p0, Lcom/android/email/ResourceHelper;->mAccountColors:[I
 
-    .line 63
-    iget-object v2, p0, Lcom/android/email/ResourceHelper;->mAccountColors:Landroid/content/res/TypedArray;
+    array-length v2, v2
 
-    invoke-virtual {v2}, Landroid/content/res/TypedArray;->length()I
+    if-ge v0, v2, :cond_44
 
-    move-result v2
+    .line 46
+    new-instance v1, Landroid/graphics/Paint;
 
-    new-array v2, v2, [Landroid/graphics/NinePatch;
+    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v2, p0, Lcom/android/email/ResourceHelper;->mAccountColorNinePatch:[Landroid/graphics/NinePatch;
+    .line 47
+    .local v1, p:Landroid/graphics/Paint;
+    iget-object v2, p0, Lcom/android/email/ResourceHelper;->mAccountColors:[I
 
-    .line 64
-    const/4 v1, 0x0
+    aget v2, v2, v0
 
-    .local v1, i:I
-    :goto_40
-    iget-object v2, p0, Lcom/android/email/ResourceHelper;->mAccountColors:Landroid/content/res/TypedArray;
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    invoke-virtual {v2}, Landroid/content/res/TypedArray;->length()I
+    .line 48
+    iget-object v2, p0, Lcom/android/email/ResourceHelper;->mAccountColorPaints:[Landroid/graphics/Paint;
 
-    move-result v2
+    aput-object v1, v2, v0
 
-    if-ge v1, v2, :cond_66
+    .line 45
+    add-int/lit8 v0, v0, 0x1
 
-    .line 65
-    iget-object v2, p0, Lcom/android/email/ResourceHelper;->mResources:Landroid/content/res/Resources;
+    goto :goto_2c
 
-    iget-object v3, p0, Lcom/android/email/ResourceHelper;->mAccountColorArray:Landroid/content/res/TypedArray;
-
-    const/4 v4, -0x1
-
-    invoke-virtual {v3, v1, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v3
-
-    invoke-static {v2, v3}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 67
-    .local v0, colorBitmap:Landroid/graphics/Bitmap;
-    iget-object v2, p0, Lcom/android/email/ResourceHelper;->mAccountColorNinePatch:[Landroid/graphics/NinePatch;
-
-    new-instance v3, Landroid/graphics/NinePatch;
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getNinePatchChunk()[B
-
-    move-result-object v4
-
-    const/4 v5, 0x0
-
-    invoke-direct {v3, v0, v4, v5}, Landroid/graphics/NinePatch;-><init>(Landroid/graphics/Bitmap;[BLjava/lang/String;)V
-
-    aput-object v3, v2, v1
-
-    .line 64
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_40
-
-    .line 70
-    .end local v0           #colorBitmap:Landroid/graphics/Bitmap;
-    :cond_66
+    .line 50
+    .end local v1           #p:Landroid/graphics/Paint;
+    :cond_44
     return-void
 .end method
 
@@ -156,7 +118,7 @@
     .parameter "context"
 
     .prologue
-    .line 73
+    .line 53
     const-class v1, Lcom/android/email/ResourceHelper;
 
     monitor-enter v1
@@ -166,14 +128,14 @@
 
     if-nez v0, :cond_e
 
-    .line 74
+    .line 54
     new-instance v0, Lcom/android/email/ResourceHelper;
 
     invoke-direct {v0, p0}, Lcom/android/email/ResourceHelper;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/android/email/ResourceHelper;->sInstance:Lcom/android/email/ResourceHelper;
 
-    .line 76
+    .line 56
     :cond_e
     sget-object v0, Lcom/android/email/ResourceHelper;->sInstance:Lcom/android/email/ResourceHelper;
     :try_end_10
@@ -183,7 +145,7 @@
 
     return-object v0
 
-    .line 73
+    .line 53
     :catchall_12
     move-exception v0
 
@@ -195,22 +157,18 @@
 
 # virtual methods
 .method public getAccountColor(J)I
-    .registers 6
+    .registers 5
     .parameter "accountId"
 
     .prologue
-    .line 89
-    iget-object v0, p0, Lcom/android/email/ResourceHelper;->mAccountColors:Landroid/content/res/TypedArray;
+    .line 69
+    iget-object v0, p0, Lcom/android/email/ResourceHelper;->mAccountColors:[I
 
     invoke-virtual {p0, p1, p2}, Lcom/android/email/ResourceHelper;->getAccountColorIndex(J)I
 
     move-result v1
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getColor(II)I
-
-    move-result v0
+    aget v0, v0, v1
 
     return v0
 .end method
@@ -220,8 +178,8 @@
     .parameter "accountId"
 
     .prologue
-    .line 98
-    iget-object v0, p0, Lcom/android/email/ResourceHelper;->mAccountColorArray2:Landroid/content/res/TypedArray;
+    .line 77
+    iget-object v0, p0, Lcom/android/email/ResourceHelper;->mAccountColorArray:Landroid/content/res/TypedArray;
 
     invoke-virtual {p0, p1, p2}, Lcom/android/email/ResourceHelper;->getAccountColorIndex(J)I
 
@@ -237,33 +195,39 @@
 .end method
 
 .method getAccountColorIndex(J)I
-    .registers 5
+    .registers 7
     .parameter "accountId"
 
     .prologue
-    .line 82
-    iget-object v0, p0, Lcom/android/email/ResourceHelper;->mAccountColors:Landroid/content/res/TypedArray;
+    .line 62
+    const-wide/16 v0, 0x1
 
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->length()I
+    sub-long v0, p1, v0
 
-    move-result v0
+    iget-object v2, p0, Lcom/android/email/ResourceHelper;->mAccountColors:[I
 
-    int-to-long v0, v0
+    array-length v2, v2
 
-    rem-long v0, p1, v0
+    int-to-long v2, v2
+
+    rem-long/2addr v0, v2
 
     long-to-int v0, v0
+
+    invoke-static {v0}, Ljava/lang/Math;->abs(I)I
+
+    move-result v0
 
     return v0
 .end method
 
-.method public getAccountColorNinePatch(J)Landroid/graphics/NinePatch;
+.method public getAccountColorPaint(J)Landroid/graphics/Paint;
     .registers 5
     .parameter "accountId"
 
     .prologue
-    .line 111
-    iget-object v0, p0, Lcom/android/email/ResourceHelper;->mAccountColorNinePatch:[Landroid/graphics/NinePatch;
+    .line 85
+    iget-object v0, p0, Lcom/android/email/ResourceHelper;->mAccountColorPaints:[Landroid/graphics/Paint;
 
     invoke-virtual {p0, p1, p2}, Lcom/android/email/ResourceHelper;->getAccountColorIndex(J)I
 

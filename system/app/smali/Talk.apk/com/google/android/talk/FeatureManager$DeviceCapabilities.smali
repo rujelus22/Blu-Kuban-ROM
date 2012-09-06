@@ -33,8 +33,8 @@
     .registers 1
 
     .prologue
-    .line 54
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 57
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -44,7 +44,7 @@
     .parameter "x0"
 
     .prologue
-    .line 54
+    .line 57
     invoke-direct {p0}, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;-><init>()V
 
     return-void

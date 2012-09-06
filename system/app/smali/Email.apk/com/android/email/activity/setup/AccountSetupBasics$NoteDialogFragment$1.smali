@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 2212
+    .line 731
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$NoteDialogFragment$1;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics$NoteDialogFragment;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,32 +43,32 @@
     .parameter "which"
 
     .prologue
-    .line 2214
+    .line 733
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$NoteDialogFragment$1;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics$NoteDialogFragment;
 
     invoke-virtual {v1}, Lcom/android/email/activity/setup/AccountSetupBasics$NoteDialogFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 2215
+    .line 734
     .local v0, a:Landroid/app/Activity;
     instance-of v1, v0, Lcom/android/email/activity/setup/AccountSetupBasics;
 
     if-eqz v1, :cond_f
 
-    .line 2216
+    .line 735
     check-cast v0, Lcom/android/email/activity/setup/AccountSetupBasics;
 
     .end local v0           #a:Landroid/app/Activity;
     #calls: Lcom/android/email/activity/setup/AccountSetupBasics;->finishAutoSetup()V
-    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSetupBasics;->access$800(Lcom/android/email/activity/setup/AccountSetupBasics;)V
+    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSetupBasics;->access$400(Lcom/android/email/activity/setup/AccountSetupBasics;)V
 
-    .line 2218
+    .line 737
     :cond_f
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$NoteDialogFragment$1;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics$NoteDialogFragment;
 
     invoke-virtual {v1}, Lcom/android/email/activity/setup/AccountSetupBasics$NoteDialogFragment;->dismiss()V
 
-    .line 2219
+    .line 738
     return-void
 .end method

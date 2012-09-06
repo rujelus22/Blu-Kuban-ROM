@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="play_on_this_device">이 태블릿에서 재생</string>
+    <string name="this_phone">태블릿</string>
+</resources>

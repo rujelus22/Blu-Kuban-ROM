@@ -53,40 +53,40 @@
         <item quantity="one">انتظار إجراء عملية على %1$d محادثة.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">تم تجاهل &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">تم تجاهل &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">تم تجاهل &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">تم تجاهل &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">تم الإبلاغ عن &amp;lt;b>%1$d&amp;lt;/b> كغير مرغوب فيها.</item>
-        <item quantity="one">تم الإبلاغ عن &amp;lt;b>%1$d&amp;lt;/b> كغير مرغوب فيها.</item>
+        <item quantity="other">تم الإبلاغ عن &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> كغير مرغوب فيها.</item>
+        <item quantity="one">تم الإبلاغ عن &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> كغير مرغوب فيها.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">تم وضع &amp;lt;b>%1$d&amp;lt;/b> في أرشيف.</item>
-        <item quantity="one">تم وضع &amp;lt;b>%1$d&amp;lt;/b> في أرشيف.</item>
+        <item quantity="other">تم وضع &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> في أرشيف.</item>
+        <item quantity="one">تم وضع &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> في أرشيف.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">تم نقل &amp;lt;b>%1$d&amp;lt;/b> إلى البريد الوارد.</item>
-        <item quantity="one">تم نقل &amp;lt;b>%1$d&amp;lt;/b> إلى البريد الوارد.</item>
+        <item quantity="other">تم نقل &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> إلى البريد الوارد.</item>
+        <item quantity="one">تم نقل &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> إلى البريد الوارد.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">تم حذف &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">تم حذف &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">تم حذف &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">تم حذف &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">تم وضع علامة على &amp;lt;b>%1$d&amp;lt;/b> كمهمة.</item>
-        <item quantity="one">تم وضع علامة على &amp;lt;b>%1$d&amp;lt;/b> كمهمة.</item>
+        <item quantity="other">تم وضع علامة على &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> كمهمة.</item>
+        <item quantity="one">تم وضع علامة على &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> كمهمة.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">تم وضع علامة على &amp;lt;b>%1$d&amp;lt;/b> كغير مهمة.</item>
-        <item quantity="one">تم وضع علامة على &amp;lt;b>%1$d&amp;lt;/b> كغير مهمة.</item>
+        <item quantity="other">تم وضع علامة على &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> كغير مهمة.</item>
+        <item quantity="one">تم وضع علامة على &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> كغير مهمة.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">تم وضع علامة على &amp;lt;b>%1$d&amp;lt;/b> كمقروءة.</item>
-        <item quantity="one">تم وضع علامة على &amp;lt;b>%1$d&amp;lt;/b> كمقروءة.</item>
+        <item quantity="other">تم وضع علامة على &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> كمقروءة.</item>
+        <item quantity="one">تم وضع علامة على &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> كمقروءة.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">تم وضع علامة غير مقروءة على &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">تم وضع علامة على &amp;lt;b>%1$d&amp;lt;/b> كغير مقروءة.</item>
+        <item quantity="other">تم وضع علامة غير مقروءة على &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">تم وضع علامة على &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> كغير مقروءة.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">التصنيفات التي تم تغييرها.</item>

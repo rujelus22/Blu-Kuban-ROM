@@ -34,7 +34,7 @@
 
     const/4 v3, 0x0
 
-    .line 45
+    .line 46
     new-instance v0, Lorg/codehaus/jackson/JsonParser$NumberType;
 
     const-string v1, "INT"
@@ -85,7 +85,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/JsonParser$NumberType;->BIG_DECIMAL:Lorg/codehaus/jackson/JsonParser$NumberType;
 
-    .line 44
+    .line 45
     const/4 v0, 0x6
 
     new-array v0, v0, [Lorg/codehaus/jackson/JsonParser$NumberType;
@@ -127,7 +127,7 @@
     .parameter
 
     .prologue
-    .line 44
+    .line 45
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -138,7 +138,7 @@
     .parameter
 
     .prologue
-    .line 44
+    .line 45
     const-class v0, Lorg/codehaus/jackson/JsonParser$NumberType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -154,7 +154,7 @@
     .registers 1
 
     .prologue
-    .line 44
+    .line 45
     sget-object v0, Lorg/codehaus/jackson/JsonParser$NumberType;->$VALUES:[Lorg/codehaus/jackson/JsonParser$NumberType;
 
     invoke-virtual {v0}, [Lorg/codehaus/jackson/JsonParser$NumberType;->clone()Ljava/lang/Object;

@@ -1,35 +1,49 @@
-.class Lcom/google/googlenav/ui/view/android/aM;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class Lcom/google/googlenav/ui/view/android/am;
+.super Lcom/google/googlenav/ui/android/ac;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/android/DistanceView;
+.field final synthetic a:I
+
+.field final synthetic b:Lcom/google/googlenav/ui/view/android/ak;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/DistanceView;)V
-    .registers 2
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/ak;I)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/aM;->a:Lcom/google/googlenav/ui/view/android/DistanceView;
+    .prologue
+    .line 147
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/am;->b:Lcom/google/googlenav/ui/view/android/ak;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lcom/google/googlenav/ui/view/android/am;->a:I
+
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/ac;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .registers 3
+.method public a(Landroid/view/View;)V
+    .registers 4
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aM;->a:Lcom/google/googlenav/ui/view/android/DistanceView;
+    .prologue
+    .line 151
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/am;->b:Lcom/google/googlenav/ui/view/android/ak;
 
-    const/16 v1, 0x8
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/ak;->a(Lcom/google/googlenav/ui/view/android/ak;)Lcom/google/googlenav/ui/view/android/V;
 
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/view/android/DistanceView;->setVisibility(I)V
+    move-result-object v0
 
+    iget v1, p0, Lcom/google/googlenav/ui/view/android/am;->a:I
+
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/view/android/V;->d(I)V
+
+    .line 152
     return-void
 .end method

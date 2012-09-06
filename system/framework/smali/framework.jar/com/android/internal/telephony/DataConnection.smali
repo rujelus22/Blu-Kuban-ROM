@@ -31,7 +31,7 @@
 # static fields
 .field protected static final BASE:I = 0x40000
 
-.field protected static final DBG:Z = true
+.field protected static final DBG:Z = false
 
 .field protected static final EVENT_CONNECT:I = 0x40000
 

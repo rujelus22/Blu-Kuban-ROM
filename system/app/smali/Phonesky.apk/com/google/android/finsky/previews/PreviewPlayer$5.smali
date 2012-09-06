@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 370
+    .line 397
     iput-object p1, p0, Lcom/google/android/finsky/previews/PreviewPlayer$5;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "mp"
 
     .prologue
-    .line 373
+    .line 400
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer$5;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     #getter for: Lcom/google/android/finsky/previews/PreviewPlayer;->mPlayer:Lcom/google/android/finsky/previews/MediaPlayerWrapper;
@@ -52,6 +52,6 @@
 
     invoke-virtual {v0}, Lcom/google/android/finsky/previews/MediaPlayerWrapper;->start()V
 
-    .line 374
+    .line 401
     return-void
 .end method

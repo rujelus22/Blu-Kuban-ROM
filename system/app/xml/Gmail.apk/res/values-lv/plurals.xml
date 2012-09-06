@@ -53,40 +53,40 @@
         <item quantity="one">Notiek darbības gaidīšana saistībā ar %1$d sarunu.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> saruna(-as) ar izslēgtu skaņu</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> saruna ar izslēgtu skaņu.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> saruna(-as) ar izslēgtu skaņu</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> saruna ar izslēgtu skaņu.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">Par &amp;lt;b>%1$d&amp;lt;/b> sarunu(-ām) ziņots kā par mēstuli(-ēm).</item>
-        <item quantity="one">Par &amp;lt;b>%1$d&amp;lt;/b> sarunu ziņots kā par mēstuli.</item>
+        <item quantity="other">Par &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> sarunu(-ām) ziņots kā par mēstuli(-ēm).</item>
+        <item quantity="one">Par &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> sarunu ziņots kā par mēstuli.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">Tika arhivēta(-as) &amp;lt;b>%1$d&amp;lt;/b> saruna(-as).</item>
-        <item quantity="one">Tika arhivēta &amp;lt;b>%1$d&amp;lt;/b> saruna.</item>
+        <item quantity="other">Tika arhivēta(-as) &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> saruna(-as).</item>
+        <item quantity="one">Tika arhivēta &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> saruna.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> saruna(-as) pārvietota(-as) uz iesūtni</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> saruna pārvietota uz iesūtni.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> saruna(-as) pārvietota(-as) uz iesūtni</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> saruna pārvietota uz iesūtni.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">Tika dzēsta(-as) &amp;lt;b>%1$d&amp;lt;/b> saruna(-as).</item>
-        <item quantity="one">Tika dzēsta &amp;lt;b>%1$d&amp;lt;/b> saruna.</item>
+        <item quantity="other">Tika dzēsta(-as) &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> saruna(-as).</item>
+        <item quantity="one">Tika dzēsta &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> saruna.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> saruna(-as) atzīmēta(-as) kā svarīga(-as).</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> saruna atzīmēta kā svarīga.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> saruna(-as) atzīmēta(-as) kā svarīga(-as).</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> saruna atzīmēta kā svarīga.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> saruna(-as) atzīmēta(-as) kā nesvarīga(-as).</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> saruna atzīmēta kā nesvarīga.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> saruna(-as) atzīmēta(-as) kā nesvarīga(-as).</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> saruna atzīmēta kā nesvarīga.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> saruna(-as) atzīmēta(-as) kā izlasīta(-as).</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> saruna atzīmēta kā izlasīta.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> saruna(-as) atzīmēta(-as) kā izlasīta(-as).</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> saruna atzīmēta kā izlasīta.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> saruna(-as) atzīmēta(-as) kā nelasīta(-as).</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> saruna atzīmēta kā nelasīta.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> saruna(-as) atzīmēta(-as) kā nelasīta(-as).</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> saruna atzīmēta kā nelasīta.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Iezīmes ir mainītas.</item>

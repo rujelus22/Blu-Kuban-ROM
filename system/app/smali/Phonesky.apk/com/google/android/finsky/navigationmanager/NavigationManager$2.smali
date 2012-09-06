@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 617
+    .line 531
     iput-object p1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$2;->this$0:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     iput-object p2, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$2;->val$doc:Lcom/google/android/finsky/api/model/Document;
@@ -52,7 +52,7 @@
     .parameter "v"
 
     .prologue
-    .line 620
+    .line 534
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$2;->this$0:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     iget-object v1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$2;->val$doc:Lcom/google/android/finsky/api/model/Document;
@@ -89,6 +89,6 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goBrowse(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Lcom/google/android/finsky/api/model/DfeToc;)V
 
-    .line 622
+    .line 536
     return-void
 .end method

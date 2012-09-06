@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="general_preference_text_zoom_summary_array">
+        <item>Μικροσκοπικό κείμενο</item>
+        <item>Μικρό κείμενο</item>
+        <item>Κείμενο κανονικού μεγέθους</item>
+        <item>Μεγάλο κείμενο</item>
+        <item>Τεράστιο κείμενο</item>
+    </string-array>
+</resources>

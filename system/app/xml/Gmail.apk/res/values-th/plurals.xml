@@ -53,40 +53,40 @@
         <item quantity="one">กำลังรอการทำงานกับบทสนทนา %1$d บท</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">ปิดรับ &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
-        <item quantity="one">ปิดรับ &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
+        <item quantity="other">ปิดรับ &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
+        <item quantity="one">ปิดรับ &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">รายงานว่าเป็นสแปม &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
-        <item quantity="one">รายงานว่าเป็นสแปม &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
+        <item quantity="other">รายงานว่าเป็นสแปม &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
+        <item quantity="one">รายงานว่าเป็นสแปม &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">เก็บ &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
-        <item quantity="one">เก็บ &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
+        <item quantity="other">เก็บ &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
+        <item quantity="one">เก็บ &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">ย้ายไปกล่องจดหมาย &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
-        <item quantity="one">ย้ายไปกล่องจดหมาย &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
+        <item quantity="other">ย้ายไปกล่องจดหมาย &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
+        <item quantity="one">ย้ายไปกล่องจดหมาย &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">ลบ &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
-        <item quantity="one">ลบ &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
+        <item quantity="other">ลบ &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
+        <item quantity="one">ลบ &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">ทำเครื่องหมายว่าสำคัญ &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
-        <item quantity="one">ทำเครื่องหมายว่าสำคัญ &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
+        <item quantity="other">ทำเครื่องหมายว่าสำคัญ &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
+        <item quantity="one">ทำเครื่องหมายว่าสำคัญ &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">ทำเครื่องหมายว่าไม่สำคัญ &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
-        <item quantity="one">ทำเครื่องหมายว่าไม่สำคัญ &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
+        <item quantity="other">ทำเครื่องหมายว่าไม่สำคัญ &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
+        <item quantity="one">ทำเครื่องหมายว่าไม่สำคัญ &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">ทำเครื่องหมายว่าอ่านแล้ว &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
-        <item quantity="one">ทำเครื่องหมายว่าอ่านแล้ว &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
+        <item quantity="other">ทำเครื่องหมายว่าอ่านแล้ว &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
+        <item quantity="one">ทำเครื่องหมายว่าอ่านแล้ว &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">ทำเครื่องหมายว่ายังไม่อ่าน &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
-        <item quantity="one">ทำเครื่องหมายว่ายังไม่อ่าน &amp;lt;b>%1$d&amp;lt;/b> รายการ</item>
+        <item quantity="other">ทำเครื่องหมายว่ายังไม่อ่าน &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
+        <item quantity="one">ทำเครื่องหมายว่ายังไม่อ่าน &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> รายการ</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">เปลี่ยนป้ายกำกับแล้ว</item>

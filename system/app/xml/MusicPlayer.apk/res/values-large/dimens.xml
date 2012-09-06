@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="carousel_font_size">13.0dip</dimen>
+    <dimen name="carousel_radius">20.0px</dimen>
+    <dimen name="carousel_fov">25.0px</dimen>
+    <dimen name="carousel_glow_scale">1.1199951px</dimen>
+    <dimen name="carousel_accelerate_factor">1.6999817px</dimen>
+    <dimen name="carousel_fadeout_left_angle">0.0px</dimen>
+    <dimen name="carousel_eye_x">22.779999px</dimen>
+    <dimen name="carousel_eye_y">2.5599976px</dimen>
+    <dimen name="carousel_eye_z">17.679993px</dimen>
+    <dimen name="carousel_lookat_x">14.589996px</dimen>
+    <dimen name="carousel_lookat_y">-2.149994px</dimen>
+    <dimen name="carousel_lookat_z">-0.07000005px</dimen>
+    <dimen name="carousel_icon_size">30.0dip</dimen>
+    <dimen name="carousel_detail_width">180.0dip</dimen>
+    <dimen name="carousel_detail_height">60.0dip</dimen>
+    <dimen name="carousel_detail_offset_x">5.0px</dimen>
+    <dimen name="carousel_detail_offset_y">0.0px</dimen>
+    <dimen name="carousel_detail_line_offset_x">6.0dip</dimen>
+    <dimen name="carousel_detail_line_offset_y">80.0dip</dimen>
+    <dimen name="normal_list_item_height">80.0dip</dimen>
+    <dimen name="edit_list_item_height">82.0dip</dimen>
+    <dimen name="top_bar_height">56.0dip</dimen>
+    <dimen name="now_playing_bar_height">56.0dip</dimen>
+    <dimen name="now_playing_bar_album_art_height">54.0dip</dimen>
+    <dimen name="now_playing_title_bar_height">100.0dip</dimen>
+    <dimen name="now_playing_right_left_margin">32.0dip</dimen>
+    <dimen name="play_controls_now_playing_page">72.0dip</dimen>
+    <dimen name="shuffle_repeat_controls_now_playing_page">64.0dip</dimen>
+    <dimen name="tab_header_text_size">14.0sp</dimen>
+    <dimen name="tab_strip_height">30.0dip</dimen>
+    <dimen name="tab_strip_text_spacing">190.0dip</dimen>
+    <dimen name="tab_strip_clickable_width">160.0dip</dimen>
+</resources>

@@ -17,7 +17,7 @@
     value = {
         "Ljava/util/ArrayList",
         "<",
-        "Lcom/android/emailcommon/provider/EmailContent$Account;",
+        "Lcom/android/emailcommon/provider/Account;",
         ">;"
     }
 .end annotation
@@ -32,7 +32,7 @@
     .registers 1
 
     .prologue
-    .line 1587
+    .line 537
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
     return-void
@@ -40,26 +40,26 @@
 
 
 # virtual methods
-.method public add(Lcom/android/emailcommon/provider/EmailContent$Account;)Z
+.method public add(Lcom/android/emailcommon/provider/Account;)Z
     .registers 5
     .parameter "account"
 
     .prologue
-    .line 1596
+    .line 543
     new-instance v0, Landroid/accounts/Account;
 
-    iget-object v1, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mEmailAddress:Ljava/lang/String;
+    iget-object v1, p1, Lcom/android/emailcommon/provider/Account;->mEmailAddress:Ljava/lang/String;
 
     const-string v2, "com.android.exchange"
 
     invoke-direct {v0, v1, v2}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    iput-object v0, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mAmAccount:Landroid/accounts/Account;
+    iput-object v0, p1, Lcom/android/emailcommon/provider/Account;->mAmAccount:Landroid/accounts/Account;
 
-    .line 1600
+    .line 545
     invoke-super {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1602
+    .line 546
     const/4 v0, 0x1
 
     return v0
@@ -70,11 +70,11 @@
     .parameter "x0"
 
     .prologue
-    .line 1587
-    check-cast p1, Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 537
+    check-cast p1, Lcom/android/emailcommon/provider/Account;
 
     .end local p1
-    invoke-virtual {p0, p1}, Lcom/android/exchange/ExchangeService$AccountList;->add(Lcom/android/emailcommon/provider/EmailContent$Account;)Z
+    invoke-virtual {p0, p1}, Lcom/android/exchange/ExchangeService$AccountList;->add(Lcom/android/emailcommon/provider/Account;)Z
 
     move-result v0
 
@@ -86,7 +86,7 @@
     .parameter "id"
 
     .prologue
-    .line 1608
+    .line 550
     invoke-virtual {p0}, Lcom/android/exchange/ExchangeService$AccountList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -103,21 +103,21 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/android/emailcommon/provider/EmailContent$Account;
+    check-cast v0, Lcom/android/emailcommon/provider/Account;
 
-    .line 1609
-    .local v0, account:Lcom/android/emailcommon/provider/EmailContent$Account;
-    iget-wide v2, v0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    .line 551
+    .local v0, account:Lcom/android/emailcommon/provider/Account;
+    iget-wide v2, v0, Lcom/android/emailcommon/provider/Account;->mId:J
 
     cmp-long v2, v2, p1
 
     if-nez v2, :cond_4
 
-    .line 1610
+    .line 552
     const/4 v2, 0x1
 
-    .line 1613
-    .end local v0           #account:Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 555
+    .end local v0           #account:Lcom/android/emailcommon/provider/Account;
     :goto_17
     return v2
 
@@ -127,12 +127,12 @@
     goto :goto_17
 .end method
 
-.method public getById(J)Lcom/android/emailcommon/provider/EmailContent$Account;
+.method public getById(J)Lcom/android/emailcommon/provider/Account;
     .registers 7
     .parameter "id"
 
     .prologue
-    .line 1617
+    .line 559
     invoke-virtual {p0}, Lcom/android/exchange/ExchangeService$AccountList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -149,18 +149,18 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/android/emailcommon/provider/EmailContent$Account;
+    check-cast v0, Lcom/android/emailcommon/provider/Account;
 
-    .line 1618
-    .local v0, account:Lcom/android/emailcommon/provider/EmailContent$Account;
-    iget-wide v2, v0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    .line 560
+    .local v0, account:Lcom/android/emailcommon/provider/Account;
+    iget-wide v2, v0, Lcom/android/emailcommon/provider/Account;->mId:J
 
     cmp-long v2, v2, p1
 
     if-nez v2, :cond_4
 
-    .line 1622
-    .end local v0           #account:Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 564
+    .end local v0           #account:Lcom/android/emailcommon/provider/Account;
     :goto_16
     return-object v0
 

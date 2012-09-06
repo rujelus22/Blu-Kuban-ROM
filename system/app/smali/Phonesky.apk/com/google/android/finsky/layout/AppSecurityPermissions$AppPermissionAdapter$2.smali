@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 548
+    .line 566
     iput-object p1, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter$2;->this$1:Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;
 
     iput-object p2, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter$2;->val$expander:Landroid/widget/TextView;
@@ -47,7 +47,7 @@
     .parameter "v"
 
     .prologue
-    .line 553
+    .line 571
     iget-object v0, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter$2;->this$1:Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;
 
     iget-object v1, v0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->this$0:Lcom/google/android/finsky/layout/AppSecurityPermissions;
@@ -57,7 +57,7 @@
     iget-object v0, v0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->this$0:Lcom/google/android/finsky/layout/AppSecurityPermissions;
 
     #calls: Lcom/google/android/finsky/layout/AppSecurityPermissions;->isCollapsed()Z
-    invoke-static {v0}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$800(Lcom/google/android/finsky/layout/AppSecurityPermissions;)Z
+    invoke-static {v0}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$900(Lcom/google/android/finsky/layout/AppSecurityPermissions;)Z
 
     move-result v0
 
@@ -67,27 +67,27 @@
 
     :goto_f
     #setter for: Lcom/google/android/finsky/layout/AppSecurityPermissions;->mExpansionState:I
-    invoke-static {v1, v0}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$702(Lcom/google/android/finsky/layout/AppSecurityPermissions;I)I
+    invoke-static {v1, v0}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$802(Lcom/google/android/finsky/layout/AppSecurityPermissions;I)I
 
-    .line 555
+    .line 573
     iget-object v0, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter$2;->this$1:Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;
 
     iget-object v1, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter$2;->val$expander:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->configureExpanderArrow(Landroid/widget/TextView;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->configureExpander(Landroid/widget/TextView;)V
 
-    .line 556
+    .line 574
     iget-object v0, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter$2;->this$1:Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;
 
     iget-object v0, v0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->this$0:Lcom/google/android/finsky/layout/AppSecurityPermissions;
 
     #calls: Lcom/google/android/finsky/layout/AppSecurityPermissions;->setNormalPermissionsVisibility()V
-    invoke-static {v0}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$900(Lcom/google/android/finsky/layout/AppSecurityPermissions;)V
+    invoke-static {v0}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$1000(Lcom/google/android/finsky/layout/AppSecurityPermissions;)V
 
-    .line 557
+    .line 575
     return-void
 
-    .line 553
+    .line 571
     :cond_21
     const/4 v0, 0x1
 

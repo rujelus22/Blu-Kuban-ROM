@@ -1,20 +1,17 @@
-.class Lcom/google/googlenav/ui/view/dialog/aL;
+.class final Lcom/google/googlenav/ui/view/dialog/al;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/aK;
+.implements Ljava/lang/Runnable;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/aK;)V
-    .registers 2
+.method constructor <init>()V
+    .registers 1
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/aL;->a:Lcom/google/googlenav/ui/view/dialog/aK;
-
+    .prologue
+    .line 195
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -22,37 +19,17 @@
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+.method public run()V
     .registers 3
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/aL;->a:Lcom/google/googlenav/ui/view/dialog/aK;
+    .prologue
+    .line 198
+    const-string v0, "HAS_SHOWN_RATINGS_INPUT_SPLASH_SCREEN"
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/aK;->a(Lcom/google/googlenav/ui/view/dialog/aK;)LaY/aG;
+    const/4 v1, 0x1
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lcom/google/googlenav/common/j;->a(Ljava/lang/String;Z)V
 
-    if-eqz v0, :cond_11
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/aL;->a:Lcom/google/googlenav/ui/view/dialog/aK;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/aK;->a(Lcom/google/googlenav/ui/view/dialog/aK;)LaY/aG;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LaY/aG;->e()V
-
-    :cond_11
-    return-void
-.end method
-
-.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .registers 2
-
-    return-void
-.end method
-
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .registers 2
-
+    .line 199
     return-void
 .end method

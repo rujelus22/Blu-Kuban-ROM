@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="472.0px" android:layout_height="318.0px"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/themeView" android:background="@drawable/project_bg_01" android:paddingLeft="15.0px" android:paddingTop="6.0px" android:paddingRight="15.0px" android:paddingBottom="17.0px" android:layout_width="472.0px" android:layout_height="273.0px" android:scaleType="fitXY" />
-    <ImageView android:id="@id/themeReflView" android:paddingLeft="15.0px" android:paddingRight="15.0px" android:layout_width="472.0px" android:layout_height="64.0px" android:layout_marginTop="-17.0px" android:scaleType="fitXY" android:layout_below="@id/themeView" />
-    <com.sec.android.app.ve.ui.HelveticaTextView android:textSize="26.0px" android:textColor="#ffffffff" android:gravity="center_vertical" android:id="@id/themeName" android:layout_width="wrap_content" android:layout_height="34.0px" android:layout_marginTop="-7.0px" android:text="None" android:singleLine="true" android:layout_below="@id/themeView" android:layout_centerHorizontal="true" />
-</RelativeLayout>

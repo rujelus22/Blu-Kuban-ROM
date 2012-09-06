@@ -13,7 +13,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final MAX_SIZE:I = 0x3d090000
 

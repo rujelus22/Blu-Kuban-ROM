@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 337
+    .line 364
     iput-object p1, p0, Lcom/google/android/finsky/previews/PreviewPlayer$3;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
     .parameter "x0"
 
     .prologue
-    .line 337
+    .line 364
     check-cast p1, Lorg/json/JSONObject;
 
     .end local p1
@@ -70,7 +70,7 @@
 
     const/4 v5, 0x0
 
-    .line 341
+    .line 368
     :try_start_2
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer$3;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
@@ -82,7 +82,7 @@
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_8} :catch_45
     .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_8} :catch_59
 
-    .line 343
+    .line 370
     :try_start_8
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer$3;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
@@ -106,7 +106,7 @@
 
     invoke-virtual {v1, v2}, Lcom/google/android/finsky/previews/MediaPlayerWrapper;->setDataSource(Ljava/lang/String;)V
 
-    .line 344
+    .line 371
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer$3;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     #getter for: Lcom/google/android/finsky/previews/PreviewPlayer;->mPlayer:Lcom/google/android/finsky/previews/MediaPlayerWrapper;
@@ -116,7 +116,7 @@
 
     invoke-virtual {v1}, Lcom/google/android/finsky/previews/MediaPlayerWrapper;->prepareAsync()V
 
-    .line 346
+    .line 373
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer$3;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     #getter for: Lcom/google/android/finsky/previews/PreviewPlayer;->mListenerProxy:Lcom/google/android/finsky/previews/StatusListener;
@@ -130,15 +130,15 @@
     .catch Ljava/io/IOException; {:try_start_8 .. :try_end_2f} :catch_45
     .catch Lorg/json/JSONException; {:try_start_8 .. :try_end_2f} :catch_59
 
-    .line 358
+    .line 385
     :goto_2f
     return-void
 
-    .line 347
+    .line 374
     :catch_30
     move-exception v0
 
-    .line 348
+    .line 375
     .local v0, e:Ljava/lang/IllegalStateException;
     :try_start_31
     const-string v1, "Illegal state while preparing audio. Is Monkey=%b."
@@ -166,12 +166,12 @@
 
     goto :goto_2f
 
-    .line 351
+    .line 378
     .end local v0           #e:Ljava/lang/IllegalStateException;
     :catch_45
     move-exception v0
 
-    .line 352
+    .line 379
     .local v0, e:Ljava/io/IOException;
     const-string v1, "IOException: %s"
 
@@ -185,7 +185,7 @@
 
     invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 353
+    .line 380
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer$3;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     #calls: Lcom/google/android/finsky/previews/PreviewPlayer;->notifyError()V
@@ -193,12 +193,12 @@
 
     goto :goto_2f
 
-    .line 354
+    .line 381
     .end local v0           #e:Ljava/io/IOException;
     :catch_59
     move-exception v0
 
-    .line 355
+    .line 382
     .local v0, e:Lorg/json/JSONException;
     const-string v1, "Unable to decode JSON response"
 
@@ -206,7 +206,7 @@
 
     invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 356
+    .line 383
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer$3;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     #calls: Lcom/google/android/finsky/previews/PreviewPlayer;->notifyError()V

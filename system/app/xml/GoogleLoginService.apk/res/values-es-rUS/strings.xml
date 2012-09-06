@@ -242,18 +242,18 @@ seguridad"</b></string>
     <string name="account_intro_recommended_title">Configura Google</string>
     <string name="common_message">"Una cuenta de Google te permite
 
-"<li><ul>Ver y organizar toda la información desde cualquier lugar.</ul></li>"
+"<ul><li>Ver y organizar toda la información desde cualquier lugar.</li></ul>"
 
-"<li><ul>Realizar copias de seguridad de tus datos automáticamente.</ul></li>"
+"<ul><li>Realizar copias de seguridad de tus datos automáticamente.</li></ul>"
 
-"<li><ul>Utilizar los servicios de Google con facilidad desde cualquier lugar.</ul></li></string>
+"<ul><li>Utilizar los servicios de Google con facilidad desde cualquier lugar.</li></ul></string>
     <string name="add_account_message">" Puedes utilizar más de una cuenta de Google (la de tu casa y la del trabajo). Toca "<b> Acceder </b> o <b> Crear Cuenta </b> para agregar una cuenta de Google.</string>
     <string name="account_intro_default_message">Nunca vuelvas a perder tus cosas. Una cuenta de Google mantiene todo a salvo.</string>
     <string name="account_intro_custom_endtext">¿Tienes %s? Accede ahora.</string>
     <string name="account_intro_simple_message">¿Deseas agregar una cuenta o crear una nueva?</string>
     <string name="learn_more_title"><annotation id="learn_more">Más información</annotation></string>
     <string name="learn_more_account_intro">"Una cuenta de Google te permite
-"<li><ul>Ver y organizar toda tu información desde cualquier lugar.<li>Puedes hacer copias de seguridad automáticamente de tus datos, como tu correo, tus contactos, tu música y tus imágenes.</li><li>Utiliza los servicios de Google fácilmente desde cualquier lugar, incluidos Contactos, Calendario, Mapas y mucho más.</li></ul></li></string>
+"<ul><li>Ver y organizar toda tu información desde cualquier lugar.<li>Puedes hacer copias de seguridad automáticamente de tus datos, como tu correo, tus contactos, tu música y tus imágenes.</li><li>Utiliza los servicios de Google fácilmente desde cualquier lugar, incluidos Contactos, Calendario, Mapas y mucho más.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Acerca de las cuentas de Google</string>
     <string name="learn_more_web_history">"El Historial web adapta los resultados de búsqueda a las búsquedas que realizaste y a los sitios que visitaste previamente. De esta manera, Google te brinda una experiencia personalizada.
 

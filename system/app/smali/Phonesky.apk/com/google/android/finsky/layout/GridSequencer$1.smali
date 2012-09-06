@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 118
+    .line 119
     invoke-static {}, Lcom/google/android/finsky/adapters/UnevenGridItemType;->values()[Lcom/google/android/finsky/adapters/UnevenGridItemType;
 
     move-result-object v0

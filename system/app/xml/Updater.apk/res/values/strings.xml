@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rom">ROM</string>
+    <string name="homepage">Homepage</string>
+    <string name="plugin">Plugin</string>
+    <string name="Themes">Themes</string>
+    <string name="apps">Apps</string>
+    <string name="kernel">Kernel</string>
+    <string name="app_name">The Blu Kuban ROM Updater</string>
+    <string name="app_version">1.4.0</string>
+    <string name="check_rom_update">Check for ROM update</string>
+    <string name="exit">Exit</string>
+    <string name="info">Info</string>
+    <string name="costumization">Costomization</string>
+    <string name="settings">Settings</string>
+    <string name="downloading_file">Downloading file....</string>
+    <string name="md5_ok">MD5 check passed</string>
+    <string name="md5_error">MD5 check failed</string>
+    <string name="file_downloaded">File downloaded to:</string>
+    <string name="reboot_to_recovery">Do you want to reboot to recovery?</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="new_rom">New ROM Version available</string>
+    <string name="download_new_rom">Download new ROM version</string>
+    <string name="changelog">Changelog</string>
+    <string name="reload_apps">Reload apps</string>
+    <string name="check_rom_startup">Check new Rom on startup</string>
+    <string name="choose_download_dir">Choose download dir</string>
+    <string name="reboot_recovery">Reboot to recovery</string>
+    <string name="donate">Donate to RUJELUS22</string>
+    <string name="donate_acquariusoft">Donate to acquariusoft</string>
+    <string name="donate_acquariusoft_desc">Update me creator</string>
+    <string name="no_update_available">No update available</string>
+    <string name="use_light_theme">Use light theme</string>
+    <string name="reboot_to_enable">Reboot the app to enable these settings</string>
+    <string name="reboot_and_install">Reboot and install</string>
+    <string name="downloaded_files">Downloaded files</string>
+    <string name="cwm_flip_sdcard">Flip sdcard name in CWM</string>
+    <string name="cwm_flip_sdcard_desc">Usefull for some CWMs that do not flash zips automatically. Like SGSII</string>
+    <string name="dialog_donate_title">Donate</string>
+    <string name="dialog_donate_text">"If you use this app, support the developer to improve the app's functionality.
+You can donate with PayPal or buy a donation app on the Play Store"</string>
+    <string name="dialog_donate_paypal">Paypal</string>
+    <string name="dialog_donate_market">Market</string>
+    <string name="error">Error</string>
+    <string name="error_on_donwload">There was an error in the file download</string>
+    <string name="install">Install</string>
+    <string name="click_for_update_market" />
+    <string name="reboot_type">Reboot type</string>
+    <string name="alert_no_config">"No configuration available!!
+
+This rom isn't compatible with this app.
+Report to the rom maker to make this ROM compatible or check the compatible ROM list!
+
+THIS IS NOT AN ISSUE OF MY APP, SO DON'T SPAM THE MARKET, PLEASE!"</string>
+    <string name="compatible_rom_list">Compatible ROM list</string>
+    <string name="check_rom_time">Check ROM every (hours)</string>
+    <string name="disable_check_rom">Disable ROM auto-checks</string>
+    <string name="recovery">Recovery</string>
+    <string name="option">Option</string>
+    <string name="other">Other</string>
+    <string name="buy_donated">Buy donation app</string>
+    <string name="buy_donated_desc">hides the ads and gets you more options...</string>
+    <string name="download_script">Download scripts</string>
+    <string name="script_title">Title</string>
+    <string name="script_desc">Desc</string>
+    <string name="script_text">Script</string>
+    <string name="script_create_your">Edit your script</string>
+    <string name="script_insert">Insert</string>
+    <string name="script_inserted">Script inserted</string>
+    <string name="script_create_new">Create new</string>
+    <string name="delete">Delete</string>
+    <string name="share_rom">Share your ROM</string>
+    <string name="full_wipe">Do full wipe when install</string>
+    <string name="full_wipe_recommended">Full wipe recommended</string>
+    <string name="system_app">System app</string>
+    <string name="system_app_desc">"This is a system app, you can damage your system if delete this app!!!
+
+Delete this app?"</string>
+    <string name="installed_apps">Installed apps</string>
+    <string name="view_video_apps">"If you like this app, see this video ads for support us.
+
+This dialog is only showed on update."</string>
+    <string name="download_the_file">Download this file?</string>
+    <string name="dev_name">Acquariusofts ROM Updater</string>
+    <string name="dont_kang_me">DONT KANG ME</string>
+</resources>

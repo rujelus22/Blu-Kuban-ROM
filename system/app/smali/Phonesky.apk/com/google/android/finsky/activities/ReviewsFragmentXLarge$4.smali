@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 161
+    .line 162
     iput-object p1, p0, Lcom/google/android/finsky/activities/ReviewsFragmentXLarge$4;->this$0:Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .parameter "v"
 
     .prologue
-    .line 164
+    .line 165
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragmentXLarge$4;->this$0:Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;
 
     #calls: Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;->expandForm()V
     invoke-static {v0}, Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;->access$300(Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;)V
 
-    .line 165
+    .line 166
     return-void
 .end method

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="18.0sp" android:textColor="@color/color1" android:id="@id/tv_security_code_comment" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="27.5dip" android:layout_marginTop="21.0dip" android:layout_marginRight="27.5dip" android:layout_weight="1.0" />
-    <EditText android:textSize="18.0sp" android:id="@id/et_security_code" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="24.5dip" android:layout_marginRight="26.0dip" android:layout_marginBottom="25.0dip" android:maxLength="4" android:layout_weight="1.0" android:inputType="number" />
-</LinearLayout>

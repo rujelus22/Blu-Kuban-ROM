@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 206
+    .line 158
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupIncomingFragment$1;->this$0:Lcom/android/email/activity/setup/AccountSetupIncomingFragment;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 8
+    .registers 7
     .parameter
     .parameter "arg1"
     .parameter "arg2"
@@ -54,39 +54,15 @@
     .end annotation
 
     .prologue
-    .line 208
+    .line 160
     .local p1, arg0:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupIncomingFragment$1;->this$0:Lcom/android/email/activity/setup/AccountSetupIncomingFragment;
 
-    #getter for: Lcom/android/email/activity/setup/AccountSetupIncomingFragment;->bFirstSelected:Z
-    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSetupIncomingFragment;->access$000(Lcom/android/email/activity/setup/AccountSetupIncomingFragment;)Z
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_10
-
-    .line 209
-    iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupIncomingFragment$1;->this$0:Lcom/android/email/activity/setup/AccountSetupIncomingFragment;
-
-    const/4 v1, 0x0
-
-    #setter for: Lcom/android/email/activity/setup/AccountSetupIncomingFragment;->bFirstSelected:Z
-    invoke-static {v0, v1}, Lcom/android/email/activity/setup/AccountSetupIncomingFragment;->access$002(Lcom/android/email/activity/setup/AccountSetupIncomingFragment;Z)Z
-
-    .line 213
-    :goto_f
-    return-void
-
-    .line 212
-    :cond_10
-    iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupIncomingFragment$1;->this$0:Lcom/android/email/activity/setup/AccountSetupIncomingFragment;
-
     #calls: Lcom/android/email/activity/setup/AccountSetupIncomingFragment;->updatePortFromSecurityType()V
-    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSetupIncomingFragment;->access$100(Lcom/android/email/activity/setup/AccountSetupIncomingFragment;)V
+    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSetupIncomingFragment;->access$000(Lcom/android/email/activity/setup/AccountSetupIncomingFragment;)V
 
-    goto :goto_f
+    .line 161
+    return-void
 .end method
 
 .method public onNothingSelected(Landroid/widget/AdapterView;)V
@@ -101,7 +77,7 @@
     .end annotation
 
     .prologue
-    .line 216
+    .line 163
     .local p1, arg0:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     return-void
 .end method

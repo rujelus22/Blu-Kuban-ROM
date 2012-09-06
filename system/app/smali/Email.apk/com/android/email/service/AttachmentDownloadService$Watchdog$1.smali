@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 182
+    .line 157
     iput-object p1, p0, Lcom/android/email/service/AttachmentDownloadService$Watchdog$1;->this$0:Lcom/android/email/service/AttachmentDownloadService$Watchdog;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,9 +41,9 @@
     .registers 1
 
     .prologue
-    .line 184
+    .line 159
     invoke-static {}, Lcom/android/email/service/AttachmentDownloadService;->watchdogAlarm()V
 
-    .line 185
+    .line 160
     return-void
 .end method

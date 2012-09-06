@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract clearUnsupportedPolicies(Lcom/android/emailcommon/service/PolicySet;)Lcom/android/emailcommon/service/PolicySet;
+.method public abstract clearUnsupportedPolicies(Lcom/android/emailcommon/provider/Policy;)Lcom/android/emailcommon/provider/Policy;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -23,23 +23,7 @@
     .end annotation
 .end method
 
-.method public abstract getAccountPolicy(J)Lcom/android/emailcommon/service/PolicySet;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getAggregatePolicy()Lcom/android/emailcommon/service/PolicySet;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract isActive(Lcom/android/emailcommon/service/PolicySet;)Z
+.method public abstract isActive(Lcom/android/emailcommon/provider/Policy;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -55,7 +39,7 @@
     .end annotation
 .end method
 
-.method public abstract isSupported(Lcom/android/emailcommon/service/PolicySet;)Z
+.method public abstract isSupported(Lcom/android/emailcommon/provider/Policy;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -71,7 +55,7 @@
     .end annotation
 .end method
 
-.method public abstract reducePolicies()V
+.method public abstract policiesUpdated(J)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -88,22 +72,6 @@
 .end method
 
 .method public abstract setAccountHoldFlag(JZ)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setRecoverPasswordState(Z)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract updatePolicies(J)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

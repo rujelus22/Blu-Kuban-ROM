@@ -30,19 +30,19 @@
     .parameter "maxLength"
 
     .prologue
-    .line 89
+    .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 90
+    .line 92
     invoke-virtual {p1, p0}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 91
+    .line 93
     iput-object p1, p0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AutoAdvancer;->mTextView:Landroid/widget/TextView;
 
-    .line 92
+    .line 94
     iput p2, p0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AutoAdvancer;->mMaxLength:I
 
-    .line 93
+    .line 95
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .parameter "x0"
 
     .prologue
-    .line 85
+    .line 87
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AutoAdvancer;->mTextView:Landroid/widget/TextView;
 
     return-object v0
@@ -63,19 +63,19 @@
     .parameter "maxLength"
 
     .prologue
-    .line 125
+    .line 127
     invoke-virtual {p0}, Landroid/widget/TextView;->getTag()Ljava/lang/Object;
 
     move-result-object v0
 
     if-nez v0, :cond_13
 
-    .line 126
+    .line 128
     new-instance v0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AutoAdvancer;
 
     invoke-direct {v0, p0, p1}, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AutoAdvancer;-><init>(Landroid/widget/TextView;I)V
 
-    .line 127
+    .line 129
     const/4 v0, 0x1
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -84,7 +84,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 129
+    .line 131
     :cond_13
     return-void
 .end method
@@ -96,7 +96,7 @@
     .parameter "editable"
 
     .prologue
-    .line 103
+    .line 105
     invoke-interface {p1}, Landroid/text/Editable;->length()I
 
     move-result v1
@@ -105,7 +105,7 @@
 
     if-lt v1, v2, :cond_2b
 
-    .line 106
+    .line 108
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0xe
@@ -120,15 +120,15 @@
 
     move-result-object v0
 
-    .line 110
+    .line 112
     .local v0, nextView:Landroid/view/View;
     :goto_15
     if-eqz v0, :cond_1a
 
-    .line 111
+    .line 113
     invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
 
-    .line 114
+    .line 116
     :cond_1a
     new-instance v1, Landroid/os/Handler;
 
@@ -144,12 +144,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 121
+    .line 123
     .end local v0           #nextView:Landroid/view/View;
     :cond_2b
     return-void
 
-    .line 106
+    .line 108
     :cond_2c
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AutoAdvancer;->mTextView:Landroid/widget/TextView;
 
@@ -170,7 +170,7 @@
     .parameter "i2"
 
     .prologue
-    .line 96
+    .line 98
     return-void
 .end method
 
@@ -182,6 +182,6 @@
     .parameter "i2"
 
     .prologue
-    .line 99
+    .line 101
     return-void
 .end method

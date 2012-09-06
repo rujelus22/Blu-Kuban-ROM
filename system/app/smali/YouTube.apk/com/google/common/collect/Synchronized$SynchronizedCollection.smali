@@ -11,16 +11,33 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Collection;Ljava/lang/Object;)V
+.method private constructor <init>(Ljava/util/Collection;Ljava/lang/Object;)V
     .registers 3
+    .parameter
+    .end parameter
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
+
+    .prologue
+    .line 104
+    invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Synchronized$SynchronizedObject;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 105
+    return-void
+.end method
+
+.method synthetic constructor <init>(Ljava/util/Collection;Ljava/lang/Object;Lcom/google/common/collect/lv;)V
+    .registers 4
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 126
-    invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Synchronized$SynchronizedObject;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    .line 100
+    invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;-><init>(Ljava/util/Collection;Ljava/lang/Object;)V
 
-    .line 127
     return-void
 .end method
 
@@ -31,12 +48,12 @@
     .parameter
 
     .prologue
-    .line 135
+    .line 114
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 136
+    .line 115
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
 
@@ -52,7 +69,7 @@
 
     return v0
 
-    .line 137
+    .line 116
     :catchall_d
     move-exception v0
 
@@ -66,12 +83,12 @@
     .parameter
 
     .prologue
-    .line 141
+    .line 121
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 142
+    .line 122
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
 
@@ -87,7 +104,7 @@
 
     return v0
 
-    .line 143
+    .line 123
     :catchall_d
     move-exception v0
 
@@ -100,12 +117,12 @@
     .registers 3
 
     .prologue
-    .line 147
+    .line 128
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 148
+    .line 129
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
 
@@ -113,7 +130,7 @@
 
     invoke-interface {v0}, Ljava/util/Collection;->clear()V
 
-    .line 149
+    .line 130
     monitor-exit v1
     :try_end_b
     .catchall {:try_start_3 .. :try_end_b} :catchall_c
@@ -133,12 +150,12 @@
     .parameter
 
     .prologue
-    .line 153
+    .line 135
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 154
+    .line 136
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
 
@@ -154,7 +171,7 @@
 
     return v0
 
-    .line 155
+    .line 137
     :catchall_d
     move-exception v0
 
@@ -168,12 +185,12 @@
     .parameter
 
     .prologue
-    .line 159
+    .line 142
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 160
+    .line 143
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
 
@@ -189,7 +206,7 @@
 
     return v0
 
-    .line 161
+    .line 144
     :catchall_d
     move-exception v0
 
@@ -198,11 +215,11 @@
     throw v0
 .end method
 
-.method protected bridge synthetic delegate()Ljava/lang/Object;
+.method bridge synthetic delegate()Ljava/lang/Object;
     .registers 2
 
     .prologue
-    .line 122
+    .line 100
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
 
     move-result-object v0
@@ -210,11 +227,11 @@
     return-object v0
 .end method
 
-.method protected delegate()Ljava/util/Collection;
+.method delegate()Ljava/util/Collection;
     .registers 2
 
     .prologue
-    .line 131
+    .line 109
     invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedObject;->delegate()Ljava/lang/Object;
 
     move-result-object v0
@@ -228,12 +245,12 @@
     .registers 3
 
     .prologue
-    .line 165
+    .line 149
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 166
+    .line 150
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
 
@@ -249,7 +266,7 @@
 
     return v0
 
-    .line 167
+    .line 151
     :catchall_d
     move-exception v0
 
@@ -262,7 +279,7 @@
     .registers 2
 
     .prologue
-    .line 171
+    .line 156
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
 
     move-result-object v0
@@ -279,6 +296,76 @@
     .parameter
 
     .prologue
+    .line 161
+    iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->mutex:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 162
+    :try_start_3
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->remove(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    monitor-exit v1
+    :try_end_c
+    .catchall {:try_start_3 .. :try_end_c} :catchall_d
+
+    return v0
+
+    .line 163
+    :catchall_d
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method public removeAll(Ljava/util/Collection;)Z
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 168
+    iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->mutex:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 169
+    :try_start_3
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->removeAll(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    monitor-exit v1
+    :try_end_c
+    .catchall {:try_start_3 .. :try_end_c} :catchall_d
+
+    return v0
+
+    .line 170
+    :catchall_d
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method public retainAll(Ljava/util/Collection;)Z
+    .registers 4
+    .parameter
+
+    .prologue
     .line 175
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->mutex:Ljava/lang/Object;
 
@@ -290,7 +377,7 @@
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Ljava/util/Collection;->remove(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Ljava/util/Collection;->retainAll(Ljava/util/Collection;)Z
 
     move-result v0
 
@@ -309,86 +396,16 @@
     throw v0
 .end method
 
-.method public removeAll(Ljava/util/Collection;)Z
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 181
-    iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->mutex:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 182
-    :try_start_3
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Collection;->removeAll(Ljava/util/Collection;)Z
-
-    move-result v0
-
-    monitor-exit v1
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_d
-
-    return v0
-
-    .line 183
-    :catchall_d
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-.end method
-
-.method public retainAll(Ljava/util/Collection;)Z
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 187
-    iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->mutex:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 188
-    :try_start_3
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Collection;->retainAll(Ljava/util/Collection;)Z
-
-    move-result v0
-
-    monitor-exit v1
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_d
-
-    return v0
-
-    .line 189
-    :catchall_d
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-.end method
-
 .method public size()I
     .registers 3
 
     .prologue
-    .line 193
+    .line 182
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 194
+    .line 183
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
 
@@ -404,7 +421,7 @@
 
     return v0
 
-    .line 195
+    .line 184
     :catchall_d
     move-exception v0
 
@@ -417,12 +434,12 @@
     .registers 3
 
     .prologue
-    .line 199
+    .line 189
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 200
+    .line 190
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
 
@@ -438,7 +455,7 @@
 
     return-object v0
 
-    .line 201
+    .line 191
     :catchall_d
     move-exception v0
 
@@ -452,12 +469,12 @@
     .parameter
 
     .prologue
-    .line 205
+    .line 196
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 206
+    .line 197
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
 
@@ -473,7 +490,7 @@
 
     return-object v0
 
-    .line 207
+    .line 198
     :catchall_d
     move-exception v0
 

@@ -4,57 +4,30 @@
 
 
 # instance fields
-.field public a:Ljava/lang/String;
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field private a:Ljava/lang/String;
 
-.field public b:Ljava/lang/Object;
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field private final b:Ljava/lang/Object;
 
-.field public c:Lcom/google/api/client/json/c;
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field private final c:Lcom/google/api/client/json/c;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 81
-    invoke-direct {p0}, Lcom/google/api/client/http/a;-><init>()V
-
-    .line 57
-    const-string v0, "application/json"
-
-    iput-object v0, p0, Lcom/google/api/client/http/c/a;->a:Ljava/lang/String;
-
-    .line 82
-    return-void
-.end method
-
 .method public constructor <init>(Lcom/google/api/client/json/c;Ljava/lang/Object;)V
     .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 89
+    .line 66
     invoke-direct {p0}, Lcom/google/api/client/http/a;-><init>()V
 
-    .line 57
+    .line 53
     const-string v0, "application/json"
 
     iput-object v0, p0, Lcom/google/api/client/http/c/a;->a:Ljava/lang/String;
 
-    .line 90
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 67
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -62,14 +35,14 @@
 
     iput-object v0, p0, Lcom/google/api/client/http/c/a;->c:Lcom/google/api/client/json/c;
 
-    .line 91
-    invoke-static {p2}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 68
+    invoke-static {p2}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/api/client/http/c/a;->b:Ljava/lang/Object;
 
-    .line 92
+    .line 69
     return-void
 .end method
 
@@ -80,7 +53,7 @@
     .parameter
 
     .prologue
-    .line 99
+    .line 76
     iget-object v0, p0, Lcom/google/api/client/http/c/a;->c:Lcom/google/api/client/json/c;
 
     sget-object v1, Lcom/google/api/client/json/JsonEncoding;->UTF8:Lcom/google/api/client/json/JsonEncoding;
@@ -89,15 +62,15 @@
 
     move-result-object v0
 
-    .line 100
+    .line 77
     iget-object v1, p0, Lcom/google/api/client/http/c/a;->b:Ljava/lang/Object;
 
     invoke-virtual {v0, v1}, Lcom/google/api/client/json/d;->a(Ljava/lang/Object;)V
 
-    .line 101
+    .line 78
     invoke-virtual {v0}, Lcom/google/api/client/json/d;->a()V
 
-    .line 102
+    .line 79
     return-void
 .end method
 
@@ -105,7 +78,7 @@
     .registers 2
 
     .prologue
-    .line 95
+    .line 72
     iget-object v0, p0, Lcom/google/api/client/http/c/a;->a:Ljava/lang/String;
 
     return-object v0

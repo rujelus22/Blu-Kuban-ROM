@@ -45,7 +45,7 @@
     .line 543
     iput-object p1, p0, Lcom/google/android/talk/AvatarCache$WorkItem;->this$0:Lcom/google/android/talk/AvatarCache;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 544
     iput-object p3, p0, Lcom/google/android/talk/AvatarCache$WorkItem;->mAvatarData:[B

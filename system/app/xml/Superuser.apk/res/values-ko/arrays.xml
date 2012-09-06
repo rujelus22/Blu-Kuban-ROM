@@ -19,7 +19,7 @@
         <item>1 일</item>
     </string-array>
     <string-array name="settings_log_format_items">
-        <item>12월 31일 23시 59분</item>
+        <item>31/12 23:59</item>
         <item>12월 31일 23시 59분</item>
         <item>12월 31일 오후 11시 59분</item>
         <item>12월 31일 오후 11시 59분</item>

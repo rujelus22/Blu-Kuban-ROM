@@ -644,43 +644,43 @@
 
     iget-boolean v1, v1, Lcom/google/android/talk/TalkApp$AccountInfo;->loading:Z
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_1a
 
     const/4 v1, 0x4
 
     :goto_b
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setVisibility(I)V
+    throw v0
 
     .line 154
-    iget-boolean v1, p0, Lcom/google/android/talk/AccountListAdapter;->mIsOnline:Z
+    throw p0
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_1c
 
     const v1, 0x7f0c0008
 
-    :goto_15
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
+    :goto_12
+    throw v0
 
     .line 156
     new-instance v1, Lcom/google/android/talk/AccountListAdapter$1;
 
     invoke-direct {v1, p0, v0, p1}, Lcom/google/android/talk/AccountListAdapter$1;-><init>(Lcom/google/android/talk/AccountListAdapter;Landroid/widget/Button;Landroid/view/View;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    throw v0
 
     goto :goto_3
 
     .line 153
-    :cond_21
+    :cond_1a
     const/4 v1, 0x0
 
     goto :goto_b
 
     .line 154
-    :cond_23
+    :cond_1c
     const v1, 0x7f0c0007
 
-    goto :goto_15
+    goto :goto_12
 .end method
 
 .method private bindUnreadCount(Landroid/view/View;)V

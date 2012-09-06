@@ -8,7 +8,7 @@
     .registers 2
 
     .prologue
-    .line 89
+    .line 45
     const-class v0, Lcom/android/exchange/service/ExchangeBroadcastProcessorService;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -17,12 +17,12 @@
 
     invoke-direct {p0, v0}, Landroid/app/IntentService;-><init>(Ljava/lang/String;)V
 
-    .line 93
+    .line 47
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/service/ExchangeBroadcastProcessorService;->setIntentRedelivery(Z)V
 
-    .line 95
+    .line 48
     return-void
 .end method
 
@@ -30,7 +30,7 @@
     .registers 3
 
     .prologue
-    .line 165
+    .line 83
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/exchange/ExchangeService;
@@ -39,7 +39,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/service/ExchangeBroadcastProcessorService;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 167
+    .line 84
     return-void
 .end method
 
@@ -49,27 +49,27 @@
     .parameter
 
     .prologue
-    .line 107
+    .line 54
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/exchange/service/ExchangeBroadcastProcessorService;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 109
+    .line 55
     const-string v1, "broadcast_receiver"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 111
+    .line 56
     const-string v1, "android.intent.extra.INTENT"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 113
+    .line 57
     invoke-virtual {p0, v0}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 115
+    .line 58
     return-void
 .end method
 
@@ -80,12 +80,12 @@
     .parameter "intent"
 
     .prologue
-    .line 125
+    .line 63
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 127
+    .line 64
     .local v0, action:Ljava/lang/String;
     const-string v3, "broadcast_receiver"
 
@@ -95,7 +95,7 @@
 
     if-eqz v3, :cond_23
 
-    .line 129
+    .line 65
     const-string v3, "android.intent.extra.INTENT"
 
     invoke-virtual {p1, v3}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -104,13 +104,13 @@
 
     check-cast v2, Landroid/content/Intent;
 
-    .line 131
+    .line 66
     .local v2, broadcastIntent:Landroid/content/Intent;
     invoke-virtual {v2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 135
+    .line 68
     .local v1, broadcastAction:Ljava/lang/String;
     const-string v3, "android.intent.action.BOOT_COMPLETED"
 
@@ -120,17 +120,17 @@
 
     if-eqz v3, :cond_24
 
-    .line 137
+    .line 69
     invoke-direct {p0}, Lcom/android/exchange/service/ExchangeBroadcastProcessorService;->onBootCompleted()V
 
-    .line 153
+    .line 77
     .end local v1           #broadcastAction:Ljava/lang/String;
     .end local v2           #broadcastIntent:Landroid/content/Intent;
     :cond_23
     :goto_23
     return-void
 
-    .line 139
+    .line 70
     .restart local v1       #broadcastAction:Ljava/lang/String;
     .restart local v2       #broadcastIntent:Landroid/content/Intent;
     :cond_24
@@ -142,21 +142,21 @@
 
     if-eqz v3, :cond_23
 
-    .line 141
-    sget-boolean v3, Lcom/android/emailcommon/EasRefs;->DEBUG:Z
+    .line 71
+    sget-boolean v3, Lcom/android/exchange/Eas;->USER_LOG:Z
 
     if-eqz v3, :cond_37
 
-    .line 143
+    .line 72
     const-string v3, "Email"
 
     const-string v4, "Login accounts changed; reconciling..."
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 147
+    .line 74
     :cond_37
-    invoke-static {p0}, Lcom/android/exchange/ExchangeService;->reconcileAccounts(Landroid/content/Context;)V
+    invoke-static {p0}, Lcom/android/exchange/ExchangeService;->runAccountReconcilerSync(Landroid/content/Context;)V
 
     goto :goto_23
 .end method

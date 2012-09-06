@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<view android:visibility="gone" class="com.google.android.apps.plus.oob.HiddenFieldLayout" style="@style/Signup.Entry.Layout"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

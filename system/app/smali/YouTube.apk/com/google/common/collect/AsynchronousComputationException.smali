@@ -3,6 +3,11 @@
 .source "SourceFile"
 
 
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
+
 # static fields
 .field private static final serialVersionUID:J
 
@@ -13,9 +18,9 @@
     .parameter
 
     .prologue
-    .line 29
+    .line 34
     invoke-direct {p0, p1}, Lcom/google/common/collect/ComputationException;-><init>(Ljava/lang/Throwable;)V
 
-    .line 30
+    .line 35
     return-void
 .end method

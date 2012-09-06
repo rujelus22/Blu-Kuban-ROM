@@ -1,49 +1,36 @@
-.class final Lcom/google/googlenav/ui/view/android/E;
+.class Lcom/google/googlenav/ui/view/android/e;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/p;
+.field final a:Ljava/lang/String;
+
+.field final b:I
+
+.field final c:I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/p;)V
-    .registers 2
+.method constructor <init>(Ljava/lang/String;II)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/E;->a:Lcom/google/googlenav/ui/p;
-
+    .prologue
+    .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    .line 84
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/e;->a:Ljava/lang/String;
 
+    .line 85
+    iput p2, p0, Lcom/google/googlenav/ui/view/android/e;->b:I
 
-# virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 6
+    .line 86
+    iput p3, p0, Lcom/google/googlenav/ui/view/android/e;->c:I
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/E;->a:Lcom/google/googlenav/ui/p;
-
-    const/16 v1, 0x261
-
-    const/4 v2, -0x1
-
-    const/4 v3, 0x0
-
-    invoke-interface {v0, v1, v2, v3}, Lcom/google/googlenav/ui/p;->a(IILjava/lang/Object;)Z
-
-    const/4 v0, 0x4
-
-    const-string v1, "mb"
-
-    const-string v2, "cn"
-
-    invoke-static {v0, v1, v2}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
-
-    invoke-static {}, Lcom/google/googlenav/ui/view/android/C;->g()V
-
+    .line 87
     return-void
 .end method

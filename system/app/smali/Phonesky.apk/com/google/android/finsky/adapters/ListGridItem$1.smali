@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 124
+    .line 120
     iput-object p1, p0, Lcom/google/android/finsky/adapters/ListGridItem$1;->this$0:Lcom/google/android/finsky/adapters/ListGridItem;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "v"
 
     .prologue
-    .line 127
+    .line 123
     iget-object v0, p0, Lcom/google/android/finsky/adapters/ListGridItem$1;->this$0:Lcom/google/android/finsky/adapters/ListGridItem;
 
     #getter for: Lcom/google/android/finsky/adapters/ListGridItem;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
@@ -52,34 +52,34 @@
 
     iget-object v1, p0, Lcom/google/android/finsky/adapters/ListGridItem$1;->this$0:Lcom/google/android/finsky/adapters/ListGridItem;
 
-    #getter for: Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/model/Bucket;
-    invoke-static {v1}, Lcom/google/android/finsky/adapters/ListGridItem;->access$000(Lcom/google/android/finsky/adapters/ListGridItem;)Lcom/google/android/finsky/model/Bucket;
+    #getter for: Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/api/model/Bucket;
+    invoke-static {v1}, Lcom/google/android/finsky/adapters/ListGridItem;->access$000(Lcom/google/android/finsky/adapters/ListGridItem;)Lcom/google/android/finsky/api/model/Bucket;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/model/Bucket;->getBrowseUrl()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Bucket;->getBrowseUrl()Ljava/lang/String;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/google/android/finsky/adapters/ListGridItem$1;->this$0:Lcom/google/android/finsky/adapters/ListGridItem;
 
-    #getter for: Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/model/Bucket;
-    invoke-static {v2}, Lcom/google/android/finsky/adapters/ListGridItem;->access$000(Lcom/google/android/finsky/adapters/ListGridItem;)Lcom/google/android/finsky/model/Bucket;
+    #getter for: Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/api/model/Bucket;
+    invoke-static {v2}, Lcom/google/android/finsky/adapters/ListGridItem;->access$000(Lcom/google/android/finsky/adapters/ListGridItem;)Lcom/google/android/finsky/api/model/Bucket;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/model/Bucket;->getTitle()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/google/android/finsky/api/model/Bucket;->getTitle()Ljava/lang/String;
 
     move-result-object v2
 
     iget-object v3, p0, Lcom/google/android/finsky/adapters/ListGridItem$1;->this$0:Lcom/google/android/finsky/adapters/ListGridItem;
 
-    #getter for: Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/model/Bucket;
-    invoke-static {v3}, Lcom/google/android/finsky/adapters/ListGridItem;->access$000(Lcom/google/android/finsky/adapters/ListGridItem;)Lcom/google/android/finsky/model/Bucket;
+    #getter for: Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/api/model/Bucket;
+    invoke-static {v3}, Lcom/google/android/finsky/adapters/ListGridItem;->access$000(Lcom/google/android/finsky/adapters/ListGridItem;)Lcom/google/android/finsky/api/model/Bucket;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/google/android/finsky/model/Bucket;->getBackend()I
+    invoke-virtual {v3}, Lcom/google/android/finsky/api/model/Bucket;->getBackend()I
 
     move-result v3
 
@@ -99,6 +99,6 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goBrowse(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Lcom/google/android/finsky/api/model/DfeToc;)V
 
-    .line 129
+    .line 125
     return-void
 .end method

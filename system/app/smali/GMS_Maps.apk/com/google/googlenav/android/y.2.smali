@@ -1,132 +1,92 @@
-.class Lcom/google/googlenav/android/y;
+.class public Lcom/google/googlenav/android/Y;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Landroid/app/ProgressDialog;
+.field private final a:Landroid/os/Handler;
 
-.field final synthetic b:Z
-
-.field final synthetic c:Lcom/google/googlenav/android/C;
-
-.field final synthetic d:Lat/p;
-
-.field final synthetic e:Lcom/google/googlenav/android/l;
+.field private b:Z
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/android/l;Landroid/app/ProgressDialog;ZLcom/google/googlenav/android/C;Lat/p;)V
-    .registers 6
+.method public constructor <init>()V
+    .registers 3
 
-    iput-object p1, p0, Lcom/google/googlenav/android/y;->e:Lcom/google/googlenav/android/l;
-
-    iput-object p2, p0, Lcom/google/googlenav/android/y;->a:Landroid/app/ProgressDialog;
-
-    iput-boolean p3, p0, Lcom/google/googlenav/android/y;->b:Z
-
-    iput-object p4, p0, Lcom/google/googlenav/android/y;->c:Lcom/google/googlenav/android/C;
-
-    iput-object p5, p0, Lcom/google/googlenav/android/y;->d:Lat/p;
-
+    .prologue
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 42
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    iput-object v0, p0, Lcom/google/googlenav/android/Y;->a:Landroid/os/Handler;
+
+    .line 43
     return-void
+.end method
+
+.method static synthetic a(Lcom/google/googlenav/android/Y;)Z
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 27
+    iget-boolean v0, p0, Lcom/google/googlenav/android/Y;->b:Z
+
+    return v0
 .end method
 
 
 # virtual methods
-.method public run()V
-    .registers 4
+.method public a()V
+    .registers 2
 
-    iget-object v0, p0, Lcom/google/googlenav/android/y;->a:Landroid/app/ProgressDialog;
+    .prologue
+    .line 134
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_9
+    iput-boolean v0, p0, Lcom/google/googlenav/android/Y;->b:Z
 
-    iget-object v0, p0, Lcom/google/googlenav/android/y;->a:Landroid/app/ProgressDialog;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/android/u;->a(Landroid/app/Dialog;)V
-
-    :cond_9
-    iget-object v0, p0, Lcom/google/googlenav/android/y;->e:Lcom/google/googlenav/android/l;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->q()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1d
-
-    iget-object v0, p0, Lcom/google/googlenav/android/y;->a:Landroid/app/ProgressDialog;
-
-    if-eqz v0, :cond_1c
-
-    iget-object v0, p0, Lcom/google/googlenav/android/y;->e:Lcom/google/googlenav/android/l;
-
-    const-string v1, "RemoteStrings"
-
-    invoke-static {v0, v1}, Lcom/google/googlenav/android/l;->a(Lcom/google/googlenav/android/l;Ljava/lang/String;)V
-
-    :cond_1c
-    :goto_1c
+    .line 135
     return-void
+.end method
 
-    :cond_1d
-    :try_start_1d
-    iget-boolean v0, p0, Lcom/google/googlenav/android/y;->b:Z
+.method public a(Ljava/lang/Runnable;Z)V
+    .registers 5
+    .parameter
+    .parameter
 
-    if-eqz v0, :cond_2a
+    .prologue
+    .line 124
+    new-instance v0, Lcom/google/googlenav/android/Z;
 
-    iget-object v0, p0, Lcom/google/googlenav/android/y;->e:Lcom/google/googlenav/android/l;
+    invoke-direct {v0, p0, p1, p2}, Lcom/google/googlenav/android/Z;-><init>(Lcom/google/googlenav/android/Y;Ljava/lang/Runnable;Z)V
 
-    invoke-static {v0}, Lcom/google/googlenav/android/l;->e(Lcom/google/googlenav/android/l;)Lat/h;
+    .line 126
+    iget-object v1, p0, Lcom/google/googlenav/android/Y;->a:Landroid/os/Handler;
 
-    move-result-object v0
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    invoke-virtual {v0}, Lat/h;->f()V
+    .line 127
+    return-void
+.end method
 
-    :cond_2a
-    iget-object v0, p0, Lcom/google/googlenav/android/y;->e:Lcom/google/googlenav/android/l;
+.method public b()V
+    .registers 2
 
-    invoke-static {v0}, Lcom/google/googlenav/android/l;->f(Lcom/google/googlenav/android/l;)V
+    .prologue
+    .line 142
+    const/4 v0, 0x1
 
-    iget-object v0, p0, Lcom/google/googlenav/android/y;->c:Lcom/google/googlenav/android/C;
+    iput-boolean v0, p0, Lcom/google/googlenav/android/Y;->b:Z
 
-    invoke-interface {v0}, Lcom/google/googlenav/android/C;->a()V
-
-    iget-object v0, p0, Lcom/google/googlenav/android/y;->e:Lcom/google/googlenav/android/l;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lcom/google/googlenav/android/l;->a(Lcom/google/googlenav/android/l;Z)Z
-    :try_end_3a
-    .catchall {:try_start_1d .. :try_end_3a} :catchall_46
-
-    iget-object v0, p0, Lcom/google/googlenav/android/y;->e:Lcom/google/googlenav/android/l;
-
-    invoke-static {v0}, Lcom/google/googlenav/android/l;->e(Lcom/google/googlenav/android/l;)Lat/h;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/googlenav/android/y;->d:Lat/p;
-
-    invoke-virtual {v0, v1}, Lat/h;->b(Lat/p;)V
-
-    goto :goto_1c
-
-    :catchall_46
-    move-exception v0
-
-    iget-object v1, p0, Lcom/google/googlenav/android/y;->e:Lcom/google/googlenav/android/l;
-
-    invoke-static {v1}, Lcom/google/googlenav/android/l;->e(Lcom/google/googlenav/android/l;)Lat/h;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/google/googlenav/android/y;->d:Lat/p;
-
-    invoke-virtual {v1, v2}, Lat/h;->b(Lat/p;)V
-
-    throw v0
+    .line 143
+    return-void
 .end method

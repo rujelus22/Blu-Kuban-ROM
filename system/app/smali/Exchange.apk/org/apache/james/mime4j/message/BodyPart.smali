@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 30
+    .line 32
     invoke-direct {p0}, Lorg/apache/james/mime4j/message/Entity;-><init>()V
 
     return-void

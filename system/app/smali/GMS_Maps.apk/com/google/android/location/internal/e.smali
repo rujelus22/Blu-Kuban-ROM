@@ -1,199 +1,146 @@
-.class public abstract Lcom/google/android/location/internal/e;
-.super Landroid/os/Binder;
+.class public final enum Lcom/google/android/location/internal/e;
+.super Ljava/lang/Enum;
+.source "SourceFile"
 
-# interfaces
-.implements Lcom/google/android/location/internal/d;
+
+# static fields
+.field public static final enum a:Lcom/google/android/location/internal/e;
+
+.field public static final enum b:Lcom/google/android/location/internal/e;
+
+.field public static final enum c:Lcom/google/android/location/internal/e;
+
+.field private static final synthetic f:[Lcom/google/android/location/internal/e;
+
+
+# instance fields
+.field public final d:Ljava/lang/String;
+
+.field public final e:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 7
 
-    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
+    .prologue
+    const/4 v6, 0x2
 
-    const-string v0, "com.google.android.location.internal.INetworkLocationInternal"
+    const/4 v5, 0x1
 
-    invoke-virtual {p0, p0, v0}, Lcom/google/android/location/internal/e;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    const/4 v4, 0x0
+
+    .line 29
+    new-instance v0, Lcom/google/android/location/internal/e;
+
+    const-string v1, "ANDROID"
+
+    const-string v2, "com.google.android.location"
+
+    const-string v3, "com.google.android.location.internal.server.NetworkLocationService"
+
+    invoke-direct {v0, v1, v4, v2, v3}, Lcom/google/android/location/internal/e;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Lcom/google/android/location/internal/e;->a:Lcom/google/android/location/internal/e;
+
+    .line 31
+    new-instance v0, Lcom/google/android/location/internal/e;
+
+    const-string v1, "GMM"
+
+    const-string v2, "com.google.android.apps.maps"
+
+    const-string v3, "com.google.android.location.internal.server.GoogleLocationService"
+
+    invoke-direct {v0, v1, v5, v2, v3}, Lcom/google/android/location/internal/e;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Lcom/google/android/location/internal/e;->b:Lcom/google/android/location/internal/e;
+
+    .line 33
+    new-instance v0, Lcom/google/android/location/internal/e;
+
+    const-string v1, "NONE"
+
+    const-string v2, ""
+
+    const-string v3, ""
+
+    invoke-direct {v0, v1, v6, v2, v3}, Lcom/google/android/location/internal/e;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Lcom/google/android/location/internal/e;->c:Lcom/google/android/location/internal/e;
+
+    .line 28
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Lcom/google/android/location/internal/e;
+
+    sget-object v1, Lcom/google/android/location/internal/e;->a:Lcom/google/android/location/internal/e;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lcom/google/android/location/internal/e;->b:Lcom/google/android/location/internal/e;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Lcom/google/android/location/internal/e;->c:Lcom/google/android/location/internal/e;
+
+    aput-object v1, v0, v6
+
+    sput-object v0, Lcom/google/android/location/internal/e;->f:[Lcom/google/android/location/internal/e;
 
     return-void
 .end method
 
-.method public static a(Landroid/os/IBinder;)Lcom/google/android/location/internal/d;
-    .registers 3
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    if-nez p0, :cond_4
+    .prologue
+    .line 38
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x0
+    .line 39
+    iput-object p3, p0, Lcom/google/android/location/internal/e;->d:Ljava/lang/String;
 
-    :goto_3
-    return-object v0
+    .line 40
+    iput-object p4, p0, Lcom/google/android/location/internal/e;->e:Ljava/lang/String;
 
-    :cond_4
-    const-string v0, "com.google.android.location.internal.INetworkLocationInternal"
+    .line 41
+    return-void
+.end method
 
-    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+.method public static valueOf(Ljava/lang/String;)Lcom/google/android/location/internal/e;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 28
+    const-class v0, Lcom/google/android/location/internal/e;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object v0
 
-    if-eqz v0, :cond_13
+    check-cast v0, Lcom/google/android/location/internal/e;
 
-    instance-of v1, v0, Lcom/google/android/location/internal/d;
-
-    if-eqz v1, :cond_13
-
-    check-cast v0, Lcom/google/android/location/internal/d;
-
-    goto :goto_3
-
-    :cond_13
-    new-instance v0, Lcom/google/android/location/internal/f;
-
-    invoke-direct {v0, p0}, Lcom/google/android/location/internal/f;-><init>(Landroid/os/IBinder;)V
-
-    goto :goto_3
+    return-object v0
 .end method
 
-
-# virtual methods
-.method public asBinder()Landroid/os/IBinder;
+.method public static values()[Lcom/google/android/location/internal/e;
     .registers 1
 
-    return-object p0
-.end method
+    .prologue
+    .line 28
+    sget-object v0, Lcom/google/android/location/internal/e;->f:[Lcom/google/android/location/internal/e;
 
-.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .registers 9
-
-    const/4 v1, 0x1
-
-    sparse-switch p1, :sswitch_data_74
-
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    move-result v0
-
-    :goto_8
-    return v0
-
-    :sswitch_9
-    const-string v0, "com.google.android.location.internal.INetworkLocationInternal"
-
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    move v0, v1
-
-    goto :goto_8
-
-    :sswitch_10
-    const-string v0, "com.google.android.location.internal.INetworkLocationInternal"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/google/android/location/internal/b;->a(Landroid/os/IBinder;)Lcom/google/android/location/internal/a;
-
-    move-result-object v2
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    invoke-virtual {p0, v0, v2, v3}, Lcom/google/android/location/internal/e;->a(ILcom/google/android/location/internal/a;I)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    move v0, v1
-
-    goto :goto_8
-
-    :sswitch_2d
-    const-string v0, "com.google.android.location.internal.INetworkLocationInternal"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+    invoke-virtual {v0}, [Lcom/google/android/location/internal/e;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/location/internal/b;->a(Landroid/os/IBinder;)Lcom/google/android/location/internal/a;
+    check-cast v0, [Lcom/google/android/location/internal/e;
 
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/google/android/location/internal/e;->a(Lcom/google/android/location/internal/a;)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    move v0, v1
-
-    goto :goto_8
-
-    :sswitch_42
-    const-string v0, "com.google.android.location.internal.INetworkLocationInternal"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    if-eqz v0, :cond_61
-
-    sget-object v0, Landroid/location/Location;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/location/Location;
-
-    :goto_55
-    invoke-virtual {p0, v0}, Lcom/google/android/location/internal/e;->a(Landroid/location/Location;)[B
-
-    move-result-object v0
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeByteArray([B)V
-
-    move v0, v1
-
-    goto :goto_8
-
-    :cond_61
-    const/4 v0, 0x0
-
-    goto :goto_55
-
-    :sswitch_63
-    const-string v0, "com.google.android.location.internal.INetworkLocationInternal"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/google/android/location/internal/e;->a()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    move v0, v1
-
-    goto :goto_8
-
-    :sswitch_data_74
-    .sparse-switch
-        0x1 -> :sswitch_10
-        0x2 -> :sswitch_2d
-        0x3 -> :sswitch_42
-        0x4 -> :sswitch_63
-        0x5f4e5446 -> :sswitch_9
-    .end sparse-switch
+    return-object v0
 .end method

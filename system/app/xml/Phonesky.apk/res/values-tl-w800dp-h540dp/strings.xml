@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="magazine_buy_current">Bumili ng issue %1$s</string>
+    <string name="search_result_title">Mga resulta ng paghahanap para sa \"%1$s\"</string>
+</resources>

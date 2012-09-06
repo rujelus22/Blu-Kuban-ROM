@@ -5,8 +5,8 @@
         <item quantity="one">%1$d resultaat</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">%1$d opdaterings gevind vir %2$s.</item>
-        <item quantity="one">%1$d opdaterings gevind vir %2$s.</item>
+        <item quantity="other">%1$d opdaterings gekry.</item>
+        <item quantity="one">%1$d opdatering gekry.</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">%1$s mense het dit ge-+1.</item>

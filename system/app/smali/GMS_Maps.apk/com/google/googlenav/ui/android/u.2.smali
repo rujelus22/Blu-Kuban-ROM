@@ -1,41 +1,40 @@
-.class public Lcom/google/googlenav/ui/android/u;
+.class Lcom/google/googlenav/ui/android/U;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field final synthetic a:Lcom/google/googlenav/ui/android/FloorPickerView;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
+.method constructor <init>(Lcom/google/googlenav/ui/android/FloorPickerView;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 633
+    iput-object p1, p0, Lcom/google/googlenav/ui/android/U;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Landroid/app/Dialog;)V
-    .registers 3
 
-    :try_start_0
-    invoke-virtual {p0}, Landroid/app/Dialog;->dismiss()V
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_3} :catch_4
+# virtual methods
+.method public run()V
+    .registers 2
 
-    :goto_3
-    return-void
+    .prologue
+    .line 636
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/U;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
 
-    :catch_4
-    move-exception v0
+    invoke-static {v0}, Lcom/google/googlenav/ui/android/FloorPickerView;->e(Lcom/google/googlenav/ui/android/FloorPickerView;)V
 
-    const-string v1, "UIDialogs.dismiss"
-
-    invoke-static {v1, v0}, Laf/f;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_3
-.end method
-
-.method public static b(Landroid/app/Dialog;)V
-    .registers 1
-
-    invoke-virtual {p0}, Landroid/app/Dialog;->show()V
-
+    .line 637
     return-void
 .end method

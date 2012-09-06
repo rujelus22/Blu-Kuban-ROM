@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 30
+    .line 31
     iput-object p1, p0, Lcom/google/android/finsky/receivers/BootCompletedReceiver$1;->this$0:Lcom/google/android/finsky/receivers/BootCompletedReceiver;
 
     iput-object p2, p0, Lcom/google/android/finsky/receivers/BootCompletedReceiver$1;->val$context:Landroid/content/Context;
@@ -46,25 +46,32 @@
     .registers 4
 
     .prologue
-    .line 33
+    .line 34
     new-instance v0, Landroid/content/Intent;
 
     sget-object v1, Lcom/google/android/finsky/billing/iab/PendingNotificationsService;->ACTION_RESTART_ALARM:Ljava/lang/String;
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 34
+    .line 35
     iget-object v1, p0, Lcom/google/android/finsky/receivers/BootCompletedReceiver$1;->val$context:Landroid/content/Context;
 
     const-class v2, Lcom/google/android/finsky/billing/iab/PendingNotificationsService;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
 
-    .line 35
+    .line 36
     iget-object v1, p0, Lcom/google/android/finsky/receivers/BootCompletedReceiver$1;->val$context:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 36
+    .line 37
+    iget-object v0, p0, Lcom/google/android/finsky/receivers/BootCompletedReceiver$1;->val$context:Landroid/content/Context;
+
+    sget-wide v1, Lcom/google/android/finsky/services/DailyHygiene;->BOOT_DELAY_MS:J
+
+    invoke-static {v0, v1, v2}, Lcom/google/android/finsky/services/DailyHygiene;->schedule(Landroid/content/Context;J)V
+
+    .line 38
     return-void
 .end method

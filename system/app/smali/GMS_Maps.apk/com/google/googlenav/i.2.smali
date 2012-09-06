@@ -1,104 +1,167 @@
-.class public final enum Lcom/google/googlenav/i;
-.super Ljava/lang/Enum;
-
-
-# static fields
-.field public static final enum a:Lcom/google/googlenav/i;
-
-.field public static final enum b:Lcom/google/googlenav/i;
-
-.field public static final enum c:Lcom/google/googlenav/i;
-
-.field private static final synthetic d:[Lcom/google/googlenav/i;
+.class public Lcom/google/googlenav/I;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 5
+.method public static a(Ljava/lang/String;IIIII)V
+    .registers 10
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v4, 0x2
+    .prologue
+    .line 26
+    const/4 v0, 0x6
 
-    const/4 v3, 0x1
+    new-array v0, v0, [Ljava/lang/String;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    new-instance v0, Lcom/google/googlenav/i;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v1, "RATED"
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v0, v1, v2}, Lcom/google/googlenav/i;-><init>(Ljava/lang/String;I)V
+    const-string v3, "t="
 
-    sput-object v0, Lcom/google/googlenav/i;->a:Lcom/google/googlenav/i;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance v0, Lcom/google/googlenav/i;
+    move-result-object v2
 
-    const-string v1, "NOT_RATED"
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, v1, v3}, Lcom/google/googlenav/i;-><init>(Ljava/lang/String;I)V
+    move-result-object v2
 
-    sput-object v0, Lcom/google/googlenav/i;->b:Lcom/google/googlenav/i;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    new-instance v0, Lcom/google/googlenav/i;
+    move-result-object v2
 
-    const-string v1, "UNKNOWN"
+    aput-object v2, v0, v1
 
-    invoke-direct {v0, v1, v4}, Lcom/google/googlenav/i;-><init>(Ljava/lang/String;I)V
+    const/4 v1, 0x1
 
-    sput-object v0, Lcom/google/googlenav/i;->c:Lcom/google/googlenav/i;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const/4 v0, 0x3
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-array v0, v0, [Lcom/google/googlenav/i;
+    const-string v3, "tw="
 
-    sget-object v1, Lcom/google/googlenav/i;->a:Lcom/google/googlenav/i;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aput-object v1, v0, v2
+    move-result-object v2
 
-    sget-object v1, Lcom/google/googlenav/i;->b:Lcom/google/googlenav/i;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    aput-object v1, v0, v3
+    move-result-object v2
 
-    sget-object v1, Lcom/google/googlenav/i;->c:Lcom/google/googlenav/i;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    aput-object v1, v0, v4
+    move-result-object v2
 
-    sput-object v0, Lcom/google/googlenav/i;->d:[Lcom/google/googlenav/i;
+    aput-object v2, v0, v1
 
-    return-void
-.end method
+    const/4 v1, 0x2
 
-.method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    return-void
-.end method
+    const-string v3, "tf="
 
-.method public static valueOf(Ljava/lang/String;)Lcom/google/googlenav/i;
-    .registers 2
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-class v0, Lcom/google/googlenav/i;
+    move-result-object v2
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x3
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "tl="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x4
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "n="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x5
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "b="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, LaT/k;->a([Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/googlenav/i;
+    .line 33
+    const/16 v1, 0x16
 
-    return-object v0
-.end method
+    const-string v2, "TL"
 
-.method public static values()[Lcom/google/googlenav/i;
-    .registers 1
+    invoke-static {v1, v2, v0}, LaT/k;->a(ILjava/lang/String;Ljava/lang/String;)V
 
-    sget-object v0, Lcom/google/googlenav/i;->d:[Lcom/google/googlenav/i;
-
-    invoke-virtual {v0}, [Lcom/google/googlenav/i;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lcom/google/googlenav/i;
-
-    return-object v0
+    .line 35
+    return-void
 .end method

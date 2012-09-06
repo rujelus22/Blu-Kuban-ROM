@@ -1,166 +1,61 @@
-.class Lcom/google/googlenav/ui/view/android/bQ;
+.class Lcom/google/googlenav/ui/view/android/bq;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
-
-
-# static fields
-.field static final synthetic e:Z
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # instance fields
-.field a:I
-
-.field b:I
-
-.field c:Lcom/google/googlenav/ah;
-
-.field d:Lcom/google/googlenav/ui/view/android/bN;
-
-.field final synthetic f:Lcom/google/googlenav/ui/view/android/bN;
+.field final synthetic a:Lcom/google/googlenav/ui/view/android/ModalOverlay;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/ModalOverlay;)V
+    .registers 2
+    .parameter
 
-    const-class v0, Lcom/google/googlenav/ui/view/android/bN;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
-
-    move-result v0
-
-    if-nez v0, :cond_c
-
-    const/4 v0, 0x1
-
-    :goto_9
-    sput-boolean v0, Lcom/google/googlenav/ui/view/android/bQ;->e:Z
-
-    return-void
-
-    :cond_c
-    const/4 v0, 0x0
-
-    goto :goto_9
-.end method
-
-.method public constructor <init>(Lcom/google/googlenav/ui/view/android/bN;I)V
-    .registers 4
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/bQ;->f:Lcom/google/googlenav/ui/view/android/bN;
+    .prologue
+    .line 90
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/bq;->a:Lcom/google/googlenav/ui/view/android/ModalOverlay;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lcom/google/googlenav/ui/view/android/bQ;->b:I
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/view/android/bQ;->d:Lcom/google/googlenav/ui/view/android/bN;
-
-    iput p2, p0, Lcom/google/googlenav/ui/view/android/bQ;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 7
+.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+    .registers 4
+    .parameter
 
-    const/16 v4, 0x578
+    .prologue
+    .line 99
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bq;->a:Lcom/google/googlenav/ui/view/android/ModalOverlay;
 
-    sget-boolean v0, Lcom/google/googlenav/ui/view/android/bQ;->e:Z
+    const/4 v1, 0x0
 
-    if-nez v0, :cond_11
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/view/android/ModalOverlay;->setVisibility(I)V
 
-    iget v0, p0, Lcom/google/googlenav/ui/view/android/bQ;->b:I
-
-    const/4 v1, -0x1
-
-    if-ne v0, v1, :cond_11
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    :cond_11
-    sget-boolean v0, Lcom/google/googlenav/ui/view/android/bQ;->e:Z
-
-    if-nez v0, :cond_23
-
-    iget v0, p0, Lcom/google/googlenav/ui/view/android/bQ;->a:I
-
-    if-ne v0, v4, :cond_23
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bQ;->d:Lcom/google/googlenav/ui/view/android/bN;
-
-    if-nez v0, :cond_23
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    :cond_23
-    iget v0, p0, Lcom/google/googlenav/ui/view/android/bQ;->a:I
-
-    if-ne v0, v4, :cond_4d
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bQ;->c:Lcom/google/googlenav/ah;
-
-    :goto_29
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/bQ;->f:Lcom/google/googlenav/ui/view/android/bN;
-
-    iget-object v1, v1, Lcom/google/googlenav/ui/view/android/bN;->F:Lcom/google/googlenav/ui/p;
-
-    iget v2, p0, Lcom/google/googlenav/ui/view/android/bQ;->a:I
-
-    iget v3, p0, Lcom/google/googlenav/ui/view/android/bQ;->b:I
-
-    invoke-interface {v1, v2, v3, v0}, Lcom/google/googlenav/ui/p;->a(IILjava/lang/Object;)Z
-
-    iget v0, p0, Lcom/google/googlenav/ui/view/android/bQ;->a:I
-
-    if-ne v0, v4, :cond_4c
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/bQ;->d:Lcom/google/googlenav/ui/view/android/bN;
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bQ;->d:Lcom/google/googlenav/ui/view/android/bN;
-
-    iget-boolean v0, v0, Lcom/google/googlenav/ui/view/android/bN;->D:Z
-
-    if-nez v0, :cond_4f
-
-    const/4 v0, 0x1
-
-    :goto_41
-    iput-boolean v0, v1, Lcom/google/googlenav/ui/view/android/bN;->D:Z
-
-    check-cast p1, Landroid/widget/CheckBox;
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bQ;->d:Lcom/google/googlenav/ui/view/android/bN;
-
-    iget-boolean v0, v0, Lcom/google/googlenav/ui/view/android/bN;->D:Z
-
-    invoke-virtual {p1, v0}, Landroid/widget/CheckBox;->setChecked(Z)V
-
-    :cond_4c
+    .line 100
     return-void
+.end method
 
-    :cond_4d
-    const/4 v0, 0x0
+.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .registers 2
+    .parameter
 
-    goto :goto_29
+    .prologue
+    .line 96
+    return-void
+.end method
 
-    :cond_4f
-    const/4 v0, 0x0
+.method public onAnimationStart(Landroid/view/animation/Animation;)V
+    .registers 2
+    .parameter
 
-    goto :goto_41
+    .prologue
+    .line 93
+    return-void
 .end method

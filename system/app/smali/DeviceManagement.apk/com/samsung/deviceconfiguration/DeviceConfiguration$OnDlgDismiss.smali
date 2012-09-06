@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 386
+    .line 363
     iput-object p1, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration$OnDlgDismiss;->this$0:Lcom/samsung/deviceconfiguration/DeviceConfiguration;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 386
+    .line 363
     invoke-direct {p0, p1}, Lcom/samsung/deviceconfiguration/DeviceConfiguration$OnDlgDismiss;-><init>(Lcom/samsung/deviceconfiguration/DeviceConfiguration;)V
 
     return-void
@@ -54,19 +54,19 @@
     .parameter "dlg"
 
     .prologue
-    .line 389
+    .line 366
     const-string v0, "DeviceConfiguration"
 
     const-string v1, "OnDlgDismiss : onDismiss"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 390
+    .line 367
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration$OnDlgDismiss;->this$0:Lcom/samsung/deviceconfiguration/DeviceConfiguration;
 
     #calls: Lcom/samsung/deviceconfiguration/DeviceConfiguration;->dcDone()V
     invoke-static {v0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->access$400(Lcom/samsung/deviceconfiguration/DeviceConfiguration;)V
 
-    .line 391
+    .line 368
     return-void
 .end method

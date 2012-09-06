@@ -1,67 +1,185 @@
-.class Lcom/google/googlenav/settings/F;
-.super Ljava/lang/Object;
+.class final enum Lcom/google/googlenav/settings/f;
+.super Ljava/lang/Enum;
+.source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# static fields
+.field public static final enum a:Lcom/google/googlenav/settings/f;
+
+.field public static final enum b:Lcom/google/googlenav/settings/f;
+
+.field public static final enum c:Lcom/google/googlenav/settings/f;
+
+.field private static final synthetic h:[Lcom/google/googlenav/settings/f;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/settings/E;
+.field private d:I
+
+.field private e:I
+
+.field private f:I
+
+.field private g:I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/settings/E;)V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 12
 
-    iput-object p1, p0, Lcom/google/googlenav/settings/F;->a:Lcom/google/googlenav/settings/E;
+    .prologue
+    const/4 v11, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v10, 0x1
+
+    const/4 v2, 0x0
+
+    .line 84
+    new-instance v0, Lcom/google/googlenav/settings/f;
+
+    const-string v1, "AUTOMATIC"
+
+    const/16 v4, 0x4c
+
+    const/16 v5, 0x5eb
+
+    const/16 v6, 0x5ec
+
+    move v3, v2
+
+    invoke-direct/range {v0 .. v6}, Lcom/google/googlenav/settings/f;-><init>(Ljava/lang/String;IIIII)V
+
+    sput-object v0, Lcom/google/googlenav/settings/f;->a:Lcom/google/googlenav/settings/f;
+
+    .line 86
+    new-instance v3, Lcom/google/googlenav/settings/f;
+
+    const-string v4, "METRIC"
+
+    const/16 v7, 0x4d
+
+    const/16 v8, 0x5f0
+
+    const/16 v9, 0x5ee
+
+    move v5, v10
+
+    move v6, v10
+
+    invoke-direct/range {v3 .. v9}, Lcom/google/googlenav/settings/f;-><init>(Ljava/lang/String;IIIII)V
+
+    sput-object v3, Lcom/google/googlenav/settings/f;->b:Lcom/google/googlenav/settings/f;
+
+    .line 88
+    new-instance v3, Lcom/google/googlenav/settings/f;
+
+    const-string v4, "IMPERIAL"
+
+    const/16 v7, 0x4e
+
+    const/16 v8, 0x5ef
+
+    const/16 v9, 0x5ed
+
+    move v5, v11
+
+    move v6, v11
+
+    invoke-direct/range {v3 .. v9}, Lcom/google/googlenav/settings/f;-><init>(Ljava/lang/String;IIIII)V
+
+    sput-object v3, Lcom/google/googlenav/settings/f;->c:Lcom/google/googlenav/settings/f;
+
+    .line 83
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Lcom/google/googlenav/settings/f;
+
+    sget-object v1, Lcom/google/googlenav/settings/f;->a:Lcom/google/googlenav/settings/f;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/google/googlenav/settings/f;->b:Lcom/google/googlenav/settings/f;
+
+    aput-object v1, v0, v10
+
+    sget-object v1, Lcom/google/googlenav/settings/f;->c:Lcom/google/googlenav/settings/f;
+
+    aput-object v1, v0, v11
+
+    sput-object v0, Lcom/google/googlenav/settings/f;->h:[Lcom/google/googlenav/settings/f;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;IIIII)V
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-# virtual methods
-.method public run()V
-    .registers 3
+    .prologue
+    .line 96
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    monitor-enter p0
+    .line 97
+    iput p3, p0, Lcom/google/googlenav/settings/f;->d:I
 
-    :try_start_1
-    iget-object v0, p0, Lcom/google/googlenav/settings/F;->a:Lcom/google/googlenav/settings/E;
+    .line 98
+    iput p4, p0, Lcom/google/googlenav/settings/f;->e:I
 
-    iget-object v0, v0, Lcom/google/googlenav/settings/E;->b:Lcom/google/googlenav/settings/MapTileSettingsActivity;
+    .line 99
+    iput p5, p0, Lcom/google/googlenav/settings/f;->f:I
 
-    invoke-static {v0}, Lcom/google/googlenav/settings/MapTileSettingsActivity;->a(Lcom/google/googlenav/settings/MapTileSettingsActivity;)Z
+    .line 100
+    iput p6, p0, Lcom/google/googlenav/settings/f;->g:I
 
-    move-result v0
-
-    if-nez v0, :cond_d
-
-    monitor-exit p0
-
-    :goto_c
+    .line 101
     return-void
+.end method
 
-    :cond_d
-    iget-object v0, p0, Lcom/google/googlenav/settings/F;->a:Lcom/google/googlenav/settings/E;
+.method static synthetic a(Lcom/google/googlenav/settings/f;)I
+    .registers 2
+    .parameter
 
-    iget-object v0, v0, Lcom/google/googlenav/settings/E;->b:Lcom/google/googlenav/settings/MapTileSettingsActivity;
+    .prologue
+    .line 83
+    iget v0, p0, Lcom/google/googlenav/settings/f;->d:I
 
-    const/4 v1, 0x2
+    return v0
+.end method
 
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/settings/MapTileSettingsActivity;->showDialog(I)V
+.method public static valueOf(Ljava/lang/String;)Lcom/google/googlenav/settings/f;
+    .registers 2
+    .parameter
 
-    monitor-exit p0
+    .prologue
+    .line 83
+    const-class v0, Lcom/google/googlenav/settings/f;
 
-    goto :goto_c
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    :catchall_17
-    move-exception v0
+    move-result-object v0
 
-    monitor-exit p0
-    :try_end_19
-    .catchall {:try_start_1 .. :try_end_19} :catchall_17
+    check-cast v0, Lcom/google/googlenav/settings/f;
 
-    throw v0
+    return-object v0
+.end method
+
+.method public static values()[Lcom/google/googlenav/settings/f;
+    .registers 1
+
+    .prologue
+    .line 83
+    sget-object v0, Lcom/google/googlenav/settings/f;->h:[Lcom/google/googlenav/settings/f;
+
+    invoke-virtual {v0}, [Lcom/google/googlenav/settings/f;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lcom/google/googlenav/settings/f;
+
+    return-object v0
 .end method

@@ -35,20 +35,20 @@
     .parameter "context"
 
     .prologue
-    .line 9710
+    .line 1863
     iput-object p1, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
 
-    .line 9711
+    .line 1864
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 9712
+    .line 1865
     invoke-virtual {p3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->mContentResolver:Landroid/content/ContentResolver;
 
-    .line 9713
+    .line 1866
     new-instance v0, Lcom/android/email/Throttle;
 
     const-string v1, "MessageObserver"
@@ -57,7 +57,7 @@
 
     iput-object v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->mThrottle:Lcom/android/email/Throttle;
 
-    .line 9714
+    .line 1867
     return-void
 .end method
 
@@ -67,7 +67,7 @@
     .registers 2
 
     .prologue
-    .line 9733
+    .line 1886
     const/4 v0, 0x1
 
     return v0
@@ -78,22 +78,18 @@
     .parameter "selfChange"
 
     .prologue
-    .line 9738
-    iget-object v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
+    .line 1891
+    iget-boolean v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->mRegistered:Z
 
-    invoke-virtual {v0}, Lcom/android/email/activity/MessageViewFragmentBase;->IsEAS()Z
+    if-eqz v0, :cond_9
 
-    move-result v0
-
-    if-eqz v0, :cond_d
-
-    .line 9739
+    .line 1892
     iget-object v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->mThrottle:Lcom/android/email/Throttle;
 
     invoke-virtual {v0}, Lcom/android/email/Throttle;->onEvent()V
 
-    .line 9741
-    :cond_d
+    .line 1894
+    :cond_9
     return-void
 .end method
 
@@ -102,119 +98,75 @@
     .parameter "notifyUri"
 
     .prologue
-    .line 9726
+    const/4 v1, 0x1
+
+    .line 1879
     invoke-virtual {p0}, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->unregister()V
 
-    .line 9727
+    .line 1880
     iget-object v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->mContentResolver:Landroid/content/ContentResolver;
-
-    const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 9728
-    const/4 v0, 0x1
+    .line 1881
+    iput-boolean v1, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->mRegistered:Z
 
-    iput-boolean v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->mRegistered:Z
-
-    .line 9729
+    .line 1882
     return-void
 .end method
 
 .method public run()V
-    .registers 5
+    .registers 3
 
     .prologue
-    .line 9750
-    iget-object v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
+    .line 1900
+    iget-boolean v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->mRegistered:Z
 
-    invoke-virtual {v0}, Lcom/android/email/activity/MessageViewFragmentBase;->isMessageSpecified()Z
+    if-eqz v0, :cond_11
 
-    move-result v0
+    .line 1901
+    new-instance v0, Lcom/android/email/activity/MessageViewFragmentBase$ReloadMessageTask;
 
-    if-nez v0, :cond_9
+    iget-object v1, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
 
-    .line 9759
-    :cond_8
-    :goto_8
-    return-void
-
-    .line 9754
-    :cond_9
-    iget-object v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
-
-    invoke-virtual {v0}, Lcom/android/email/activity/MessageViewFragmentBase;->IsEAS()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    .line 9755
-    iget-object v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
-
-    #getter for: Lcom/android/email/activity/MessageViewFragmentBase;->mReloadMessageTask:Lcom/android/email/activity/MessageViewFragmentBase$ReloadMessageTask;
-    invoke-static {v0}, Lcom/android/email/activity/MessageViewFragmentBase;->access$8200(Lcom/android/email/activity/MessageViewFragmentBase;)Lcom/android/email/activity/MessageViewFragmentBase$ReloadMessageTask;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/emailcommon/utility/Utility;->cancelTaskInterrupt(Landroid/os/AsyncTask;)V
-
-    .line 9756
-    iget-object v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
-
-    new-instance v1, Lcom/android/email/activity/MessageViewFragmentBase$ReloadMessageTask;
-
-    iget-object v2, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3}, Lcom/android/email/activity/MessageViewFragmentBase$ReloadMessageTask;-><init>(Lcom/android/email/activity/MessageViewFragmentBase;Lcom/android/email/activity/MessageViewFragmentBase$1;)V
-
-    #setter for: Lcom/android/email/activity/MessageViewFragmentBase;->mReloadMessageTask:Lcom/android/email/activity/MessageViewFragmentBase$ReloadMessageTask;
-    invoke-static {v0, v1}, Lcom/android/email/activity/MessageViewFragmentBase;->access$8202(Lcom/android/email/activity/MessageViewFragmentBase;Lcom/android/email/activity/MessageViewFragmentBase$ReloadMessageTask;)Lcom/android/email/activity/MessageViewFragmentBase$ReloadMessageTask;
-
-    .line 9757
-    iget-object v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
-
-    #getter for: Lcom/android/email/activity/MessageViewFragmentBase;->mReloadMessageTask:Lcom/android/email/activity/MessageViewFragmentBase$ReloadMessageTask;
-    invoke-static {v0}, Lcom/android/email/activity/MessageViewFragmentBase;->access$8200(Lcom/android/email/activity/MessageViewFragmentBase;)Lcom/android/email/activity/MessageViewFragmentBase$ReloadMessageTask;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Lcom/android/email/activity/MessageViewFragmentBase$ReloadMessageTask;-><init>(Lcom/android/email/activity/MessageViewFragmentBase;)V
 
     const/4 v1, 0x0
 
     new-array v1, v1, [Ljava/lang/Void;
 
-    invoke-virtual {v0, v1}, Lcom/android/email/activity/MessageViewFragmentBase$ReloadMessageTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v0, v1}, Lcom/android/email/activity/MessageViewFragmentBase$ReloadMessageTask;->cancelPreviousAndExecuteParallel([Ljava/lang/Object;)Lcom/android/emailcommon/utility/EmailAsyncTask;
 
-    goto :goto_8
+    .line 1903
+    :cond_11
+    return-void
 .end method
 
 .method public unregister()V
     .registers 2
 
     .prologue
-    .line 9717
+    .line 1870
     iget-boolean v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->mRegistered:Z
 
     if-nez v0, :cond_5
 
-    .line 9723
+    .line 1876
     :goto_4
     return-void
 
-    .line 9720
+    .line 1873
     :cond_5
     iget-object v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->mThrottle:Lcom/android/email/Throttle;
 
     invoke-virtual {v0}, Lcom/android/email/Throttle;->cancelScheduledCallback()V
 
-    .line 9721
+    .line 1874
     iget-object v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 9722
+    .line 1875
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$MessageObserver;->mRegistered:Z

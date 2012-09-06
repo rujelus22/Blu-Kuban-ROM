@@ -3,7 +3,7 @@
     <style name="da_BubblePrimary" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0dip</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">#ff000000</item>
+        <item name="android:textColor">#ffffffff</item>
     </style>
     <style name="da_BubbleSecondary" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0dip</item>
@@ -33,11 +33,13 @@
     <style name="da_TravelModePrimaryText" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0dip</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="da_MenuItemText" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
         <item name="android:textColor">#ffdddddd</item>
+        <item name="android:gravity">center_horizontal|clip_horizontal</item>
+        <item name="android:singleLine">true</item>
     </style>
     <style name="da_PickerButtonText" parent="@android:style/TextAppearance">
         <item name="android:textSize">13.0sp</item>
@@ -57,13 +59,6 @@
         <item name="android:windowEnterAnimation">@anim/popup_selector_open</item>
         <item name="android:windowExitAnimation">@anim/popup_selector_close</item>
     </style>
-    <style name="da_PlacePageLinkText" parent="@android:style/TextAppearance">
-        <item name="android:textSize">18.0dip</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-    <style name="da_AttributionText" parent="@android:style/TextAppearance">
-        <item name="android:textColor">#ff208d20</item>
-    </style>
     <style name="da_destinationListItemPrimary" parent="@android:style/TextAppearance">
         <item name="android:textSize">18.0dip</item>
         <item name="android:textStyle">bold</item>
@@ -78,11 +73,11 @@
         <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="da_Theme" parent="@android:style/Theme.NoTitleBar">
-        <item name="android:textColorPrimaryInverse">@android:color/primary_text_light</item>
+        <item name="android:textColorPrimaryInverse">@android:color/primary_text_dark</item>
         <item name="android:windowContentOverlay">@drawable/title_bar_divider</item>
     </style>
-    <style name="da_DestinationPickerTheme" parent="@android:style/Theme.Light.NoTitleBar">
-        <item name="android:textColorPrimaryInverse">@android:color/primary_text_light</item>
+    <style name="da_DestinationPickerTheme" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:textColorPrimaryInverse">@android:color/primary_text_dark</item>
         <item name="android:windowContentOverlay">@drawable/title_bar_divider</item>
     </style>
     <style name="Theme.MapsBase" parent="@android:style/Theme">
@@ -102,8 +97,12 @@
     <style name="Theme.Tests" parent="@android:style/Theme">
         <item name="selectableItemBackground">@drawable/list_item_background</item>
     </style>
-    <style name="Theme.Fullscreen" parent="@android:style/Theme.Light.NoTitleBar">
+    <style name="Theme.Fullscreen" parent="@android:style/Theme.NoTitleBar">
         <item name="selectableItemBackground">@drawable/list_item_background</item>
+    </style>
+    <style name="FullscreenDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/window_enter</item>
+        <item name="android:windowExitAnimation">@anim/window_exit</item>
     </style>
     <style name="Theme.Fullscreen.SearchBarHeader" parent="@style/Theme.Fullscreen">
         <item name="android:windowContentOverlay">@drawable/title_bar_divider</item>
@@ -121,6 +120,11 @@
     <style name="Theme.Floating.RideAboutDialog" parent="@style/Theme.Floating">
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
+    <style name="Theme.SemiTransparent.FullScreen" parent="@android:style/Theme">
+        <item name="android:windowBackground">@drawable/tip_background</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="selectableItemBackground">@drawable/list_item_background</item>
+    </style>
     <style name="Theme.NoDisplay" parent="@android:style/Theme.NoDisplay">
         <item name="selectableItemBackground">@drawable/list_item_background</item>
     </style>
@@ -129,11 +133,11 @@
         <item name="android:windowAnimationStyle">@style/Animation.DirectionsInputDialog</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>
-    <style name="Theme.Light.SearchBarHeader" parent="@android:style/Theme.Light.NoTitleBar">
+    <style name="Theme.Light.SearchBarHeader" parent="@android:style/Theme.NoTitleBar">
         <item name="android:windowContentOverlay">@drawable/title_bar_divider</item>
         <item name="selectableItemBackground">@drawable/list_item_background</item>
     </style>
-    <style name="Theme.Light.NoTitleBar" parent="@android:style/Theme.Light.NoTitleBar">
+    <style name="Theme.Light.NoTitleBar" parent="@android:style/Theme.NoTitleBar">
         <item name="selectableItemBackground">@drawable/list_item_background</item>
     </style>
     <style name="Animation" />
@@ -175,11 +179,11 @@
     </style>
     <style name="Black" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="Gray" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">?android:textColorSecondaryInverse</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
     </style>
     <style name="White" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
@@ -219,16 +223,24 @@
         <item name="android:textSize">16.0sp</item>
         <item name="android:textColor">@color/light_text_grey</item>
     </style>
+    <style name="Orange" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">#ff155496</item>
+    </style>
+    <style name="Red" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
     <style name="SmallGray" parent="@style/Gray">
         <item name="android:textSize">12.0sp</item>
     </style>
     <style name="DetailsEnhancedDataKey" parent="@android:style/TextAppearance">
         <item name="android:textSize">18.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="DetailsEnhancedDataValue" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">?android:textColorSecondaryInverse</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
     </style>
     <style name="UrlLink" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
@@ -245,11 +257,11 @@
     </style>
     <style name="DirectionsSummaryNumber" parent="@android:style/TextAppearance">
         <item name="android:textSize">28.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="DirectionsSummaryLetter" parent="@android:style/TextAppearance">
         <item name="android:textSize">18.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="DirectionsBubbleToll" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
@@ -259,7 +271,7 @@
     <style name="DirectionsBubblePrimary" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="DirectionsBubbleSecondary" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
@@ -278,31 +290,35 @@
     </style>
     <style name="BubbleAddress" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="BubbleSecondaryClickable" parent="@android:style/TextAppearance">
         <item name="android:textSize">12.0sp</item>
         <item name="android:textColor">@color/text_grey</item>
     </style>
-    <style name="BubbleRatings" parent="@android:style/TextAppearance">
-        <item name="android:textSize">12.0sp</item>
-        <item name="android:textColor">@color/text_grey</item>
+    <style name="OnScreenButton" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="ListAction" parent="@android:style/TextAppearance">
         <item name="android:textSize">20.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="ListActionDisabled" parent="@android:style/TextAppearance">
         <item name="android:textSize">20.0sp</item>
         <item name="android:textColor">@color/grey</item>
     </style>
+    <style name="ListItemNotFound" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textColor">@color/light_grey</item>
+    </style>
     <style name="ListPrimary" parent="@android:style/TextAppearance">
         <item name="android:textSize">15.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="ListPrimaryClickable" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">?android:textColorSecondaryInverse</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
     </style>
     <style name="ListRealTimeUpdatingSecondary" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
@@ -310,12 +326,12 @@
     </style>
     <style name="ListSecondaryClickable" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">?android:textColorTertiaryInverse</item>
+        <item name="android:textColor">?android:textColorTertiary</item>
     </style>
     <style name="ListTitle" parent="@android:style/TextAppearance">
         <item name="android:textSize">19.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="ListAdHeadline" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
@@ -330,22 +346,34 @@
         <item name="android:textSize">14.0sp</item>
         <item name="android:textColor">@color/ad_text</item>
     </style>
+    <style name="ListAdPrimaryClickableV2" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/ad_link_text</item>
+    </style>
     <style name="ListHeaderAd" parent="@android:style/TextAppearance">
         <item name="android:textSize">15.0sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="ListHeaderAdTitle" parent="@android:style/TextAppearance">
         <item name="android:textSize">19.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="ListTitleClickable" parent="@android:style/TextAppearance">
         <item name="android:textSize">18.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="ListTitleDisabled" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@color/grey</item>
+    </style>
+    <style name="ListHierarchiesChildren" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="ListPrimaryFriend" parent="@android:style/TextAppearance">
-        <item name="android:textSize">20.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="ListFriendName" parent="@android:style/TextAppearance">
         <item name="android:textSize">18.0sp</item>
@@ -367,7 +395,7 @@
     <style name="RideAboutListSeparator" parent="@android:style/TextAppearance">
         <item name="android:textSize">15.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="MustCallAgency" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
@@ -388,11 +416,15 @@
     </style>
     <style name="SponsoredLinkHeaderText" parent="@android:style/TextAppearance">
         <item name="android:textSize">10.0sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="BannerSponsoredLinkText" parent="@android:style/TextAppearance">
         <item name="android:textSize">9.0sp</item>
-        <item name="android:textColor">?android:textColorSecondaryInverse</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+    <style name="ActionbarSponsoredLinkText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">9.0sp</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
     </style>
     <style name="BannerAdWebsiteText" parent="@android:style/TextAppearance">
         <item name="android:textSize">12.0sp</item>
@@ -405,7 +437,24 @@
     </style>
     <style name="BannerAdText" parent="@android:style/TextAppearance">
         <item name="android:textSize">12.0sp</item>
-        <item name="android:textColor">?android:textColorSecondaryInverse</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+    <style name="BannerAdWebsiteTextLarge" parent="@android:style/TextAppearance">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/banner_ad_website</item>
+    </style>
+    <style name="BannerAdTitleTextLarge" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/banner_ad_title</item>
+    </style>
+    <style name="BannerAdTextLarge" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/promo_banner_creative</item>
+    </style>
+    <style name="AdDialogText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">12.0dip</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="BannerAdPPTitleText" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
@@ -418,30 +467,30 @@
     </style>
     <style name="DialogMediumText" parent="@android:style/TextAppearance">
         <item name="android:textSize">18.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="DialogBoldText" parent="@android:style/TextAppearance">
         <item name="android:textSize">18.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="DialogLargeBoldText" parent="@android:style/TextAppearance">
         <item name="android:textSize">22.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="DialogListPrimary" parent="@android:style/TextAppearance">
         <item name="android:textSize">22.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="DialogListSecondary" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="DialogListSecondaryBold" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="DialogListSecondaryClickable" parent="@style/DialogListSecondary">
         <item name="android:textColor">@color/link_blue</item>
@@ -461,11 +510,11 @@
     <style name="RefinementBanner" parent="@android:style/TextAppearance">
         <item name="android:textSize">13.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="EditableNormalText" parent="@android:style/TextAppearance">
         <item name="android:textSize">18.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="EditableEntityText" parent="@android:style/TextAppearance">
         <item name="android:textSize">18.0sp</item>
@@ -481,29 +530,25 @@
     </style>
     <style name="ActivitiesContent" parent="@android:style/TextAppearance">
         <item name="android:textSize">15.0sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="ActivitiesCheckinContent" parent="@android:style/TextAppearance">
         <item name="android:textSize">15.0sp</item>
         <item name="android:textStyle">italic</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="ActivitiesComment" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="ActivitiesCheckinComment" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
         <item name="android:textStyle">italic</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="ActivitiesDescription" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
         <item name="android:textColor">#ff808080</item>
-    </style>
-    <style name="ActivitiesCurrentLocation" parent="@android:style/TextAppearance">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">@color/black</item>
     </style>
     <style name="GoHomeFieldLabel" parent="@android:style/TextAppearance">
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
@@ -526,7 +571,7 @@
     </style>
     <style name="FriendsAppWidgetLocation" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0dip</item>
-        <item name="android:textColor">#ff000000</item>
+        <item name="android:textColor">#ffffffff</item>
     </style>
     <style name="FriendsAppWidgetSecondary" parent="@android:style/TextAppearance">
         <item name="android:textSize">11.0dip</item>
@@ -548,11 +593,11 @@
     </style>
     <style name="OptionClickable" parent="@android:style/TextAppearance">
         <item name="android:textSize">18.0sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="PlaceListViewPrimary" parent="@android:style/TextAppearance">
         <item name="android:textSize">17.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="PlaceListViewSecondary" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
@@ -561,12 +606,16 @@
     <style name="PlacePageTitle" parent="@android:style/TextAppearance">
         <item name="android:textSize">19.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="LocalPlusPageTitle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">19.0sp</item>
+        <item name="android:textColor">@color/local_plus_tab_text</item>
     </style>
     <style name="PlacePagePrimary" parent="@android:style/TextAppearance">
         <item name="android:textSize">17.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="PlacePagePrimaryLink" parent="@android:style/TextAppearance">
         <item name="android:textSize">17.0sp</item>
@@ -580,12 +629,17 @@
     </style>
     <style name="PlacePageSecondary" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="PlacePageSecondaryZagatBold" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/burgundy</item>
     </style>
     <style name="PlacePageSecondaryBold" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="PlacePageSecondaryClickable" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
@@ -639,25 +693,47 @@
     <style name="PlacePageAttributionSmall" parent="@style/PlacePageAttribution">
         <item name="android:textSize">10.0sp</item>
     </style>
+    <style name="PlacePageAddress" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14.0sp</item>
+    </style>
     <style name="PlacePageAnnotation" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
         <item name="android:textColor">@color/light_text_grey</item>
     </style>
-    <style name="AspectName" parent="@android:style/TextAppearance">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">@color/black</item>
+    <style name="LocalPlusPageButtonText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/local_plus_button_text</item>
     </style>
-    <style name="AspectSnippet" parent="@android:style/TextAppearance">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-    <style name="Price" parent="@android:style/TextAppearance">
-        <item name="android:textSize">14.0sp</item>
+    <style name="LocalPlusPageButtonWhiteText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16.0sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/white</item>
     </style>
-    <style name="PriceCompact" parent="@android:style/TextAppearance">
-        <item name="android:textSize">12.0sp</item>
+    <style name="GoogleReviewTitle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="GoogleReviewTitleAsLink" parent="@style/GoogleReviewTitle">
+        <item name="android:textColor">@color/link_blue</item>
+    </style>
+    <style name="GoogleReviewRatingLabel" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/zagat_rating_label_grey</item>
+    </style>
+    <style name="GoogleReviewZagatRatingBold" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/burgundy</item>
+    </style>
+    <style name="GoogleReviewZagatRatingGrey" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">@color/grey</item>
+    </style>
+    <style name="Price" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14.0sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/white</item>
     </style>
@@ -674,28 +750,51 @@
         <item name="android:textSize">12.0sp</item>
         <item name="android:textColor">@color/grey</item>
     </style>
-    <style name="RefinementButton" parent="@android:style/TextAppearance">
+    <style name="RefinementButton2" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">@color/navy_blue</item>
+        <item name="android:textColor">@color/refinement_button_text</item>
     </style>
-    <style name="OfferHighlightText" parent="@android:style/TextAppearance">
-        <item name="android:textSize">16.0sp</item>
+    <style name="OffersBubbleTitle" parent="@style/OffersSearchListItemTitle">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="OffersBubbleAddress" parent="@android:style/TextAppearance">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/light_text_grey</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:paddingBottom">1.0dip</item>
+    </style>
+    <style name="OffersBubbleSummary" parent="@style/OffersBubbleTitle">
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/offer_highlight_text</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:paddingTop">4.0dip</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:drawablePadding">4.0dip</item>
+    </style>
+    <style name="OffersSearchListItemTitle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/offers_search_list_item_title</item>
     </style>
     <style name="OtherOfferText" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
         <item name="android:textColor">@color/grey</item>
+    </style>
+    <style name="OfferSmallText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14.0sp</item>
     </style>
     <style name="OtherOfferTitle" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/grey</item>
     </style>
+    <style name="OffersSearchListSeparatorText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/offers_search_list_separator</item>
+    </style>
     <style name="realtimeScheduleBold" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="realtimeScheduleCanceled" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
@@ -711,15 +810,6 @@
     </style>
     <style name="DetailsPageSecondary" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
-    </style>
-    <style name="WhatsNewText" parent="@android:style/TextAppearance">
-        <item name="android:textSize">18.0sp</item>
-        <item name="android:textColor">?android:textColorPrimary</item>
-    </style>
-    <style name="WhatsNewBoldText" parent="@android:style/TextAppearance">
-        <item name="android:textSize">18.0sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="ThemedListHeaderTitle" parent="@android:style/TextAppearance">
         <item name="android:textSize">22.0sp</item>
@@ -740,7 +830,7 @@
     </style>
     <style name="PlacesStpAction" parent="@android:style/TextAppearance">
         <item name="android:textSize">17.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="PlacesStpBusiness" parent="@android:style/TextAppearance">
         <item name="android:textSize">15.0sp</item>
@@ -752,38 +842,43 @@
         <item name="android:textColor">@color/white</item>
     </style>
     <style name="PlacesHeading" parent="@android:style/TextAppearance">
-        <item name="android:textSize">13.0sp</item>
+        <item name="android:textSize">14.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/spicy_bluegray</item>
+        <item name="android:textColor">@color/places_dark_gray</item>
+    </style>
+    <style name="PlacesReviewPromptPlaceName" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="PlacesReviewPromptAddress" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/spicy_title</item>
     </style>
     <style name="PlacesCategoryLabel" parent="@android:style/TextAppearance">
-        <item name="android:textSize">12.5sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="PlacesListItemPrimary" parent="@android:style/TextAppearance">
-        <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="PlacesListItemPrimaryBold" parent="@android:style/TextAppearance">
-        <item name="android:textSize">16.0sp</item>
+        <item name="android:textSize">18.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="PlacesListItemSecondary" parent="@android:style/TextAppearance">
-        <item name="android:textSize">12.0sp</item>
+        <item name="android:textSize">14.0sp</item>
         <item name="android:textColor">@color/spicy_light_gray</item>
     </style>
     <style name="PlacesSummaryLine" parent="@android:style/TextAppearance">
-        <item name="android:textSize">12.0sp</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-    <style name="PlacesFooter" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">@color/spicy_blue</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="PlacesGridCaption" parent="@android:style/TextAppearance">
         <item name="android:textSize">18.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="PlacesGridLabel" parent="@android:style/TextAppearance">
         <item name="android:textSize">35.0sp</item>
@@ -803,16 +898,38 @@
     </style>
     <style name="SearchBoxText" parent="@android:style/TextAppearance">
         <item name="android:textSize">18.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="UserReviewsPageTitle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="LatitudeTitle" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">?android:textColorPrimary</item>
     </style>
+    <style name="LatitudeMigrationContinueButton">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/refinement_button2</item>
+        <item name="android:padding">10.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_marginLeft">20.0dip</item>
+        <item name="android:layout_marginTop">10.0dip</item>
+        <item name="android:layout_marginRight">20.0dip</item>
+        <item name="android:layout_marginBottom">10.0dip</item>
+    </style>
     <style name="HeaderBarTitle" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="VehicleFilterText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16.0sp</item>
         <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="PopupSelector" parent="@android:style/Theme.Panel">
@@ -827,7 +944,7 @@
     </style>
     <style name="StationTitleTextAppearance" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
@@ -840,7 +957,7 @@
     <style name="DirectionTextAppearance" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
@@ -849,7 +966,7 @@
     </style>
     <style name="ConnectingTextAppearance" parent="@android:style/TextAppearance">
         <item name="android:textSize">15.0sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:ellipsize">end</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -866,7 +983,7 @@
     <style name="MustCallTextAppearance" parent="@style/TimeTextAppearance" />
     <style name="StationTextAppearance" parent="@android:style/TextAppearance">
         <item name="android:textSize">16.0sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
@@ -901,7 +1018,7 @@
         <item name="android:textColor">@color/blue</item>
     </style>
     <style name="TransitLineStationAheadAppearance" parent="@android:style/TextAppearance">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="TransitLineStationGetOffAppearance" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/red</item>
@@ -913,16 +1030,13 @@
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_weight">1.0</item>
     </style>
-    <style name="FloorPicker.Selected" parent="@style/FloorPicker">
-        <item name="android:textColor">@color/black</item>
-    </style>
     <style name="MerchantRatingTextGrey" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
         <item name="android:textColor">@color/grey</item>
     </style>
     <style name="MerchantRatingText" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="MerchantRatingLink" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
@@ -949,9 +1063,13 @@
         <item name="android:textSize">14.0sp</item>
         <item name="android:textColor">@color/grey</item>
     </style>
+    <style name="ManageCirclesSubtitle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/grey</item>
+    </style>
     <style name="ButtonTextSmall" parent="@android:style/TextAppearance">
         <item name="android:textSize">12.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="ButtonTextSmallDisabled" parent="@android:style/TextAppearance">
         <item name="android:textSize">12.0sp</item>
@@ -965,11 +1083,11 @@
     <style name="UserFeedbackQuestionTitle" parent="@android:style/TextAppearance">
         <item name="android:textSize">15.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="UserFeedbackAnswerTitle" parent="@android:style/TextAppearance">
         <item name="android:textSize">15.0sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="ActionButton">
         <item name="android:textStyle">bold</item>
@@ -993,26 +1111,32 @@
     <style name="DirectionsBannerGrey" parent="@style/DirectionsBannerGreySmall">
         <item name="android:textSize">16.0sp</item>
     </style>
-    <style name="SearchListSmallGrey" parent="@android:style/TextAppearance">
-        <item name="android:textSize">10.0sp</item>
-        <item name="android:textColor">@color/grey</item>
-    </style>
-    <style name="SearchListSmallGreyBold" parent="@style/SearchListSmallGrey">
+    <style name="ZagatRatingBold" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15.0sp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/burgundy</item>
+    </style>
+    <style name="ZagatRatingLabel" parent="@android:style/TextAppearance">
+        <item name="android:textSize">11.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/zagat_rating_label_grey</item>
+    </style>
+    <style name="ZagatRatingLabelSmall" parent="@android:style/TextAppearance">
+        <item name="android:textSize">9.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/zagat_rating_label_grey</item>
+    </style>
+    <style name="ZagatRating" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="SearchListZagatRating" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
         <item name="android:textColor">@color/burgundy</item>
     </style>
-    <style name="SearchListZagatRatingBold" parent="@style/SearchListZagatRating">
-        <item name="android:textStyle">bold</item>
-    </style>
-    <style name="SearchListUserRating" parent="@android:style/TextAppearance">
+    <style name="SearchListGray" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">@color/spicy_orange</item>
-    </style>
-    <style name="SearchListUserRatingBold" parent="@style/SearchListUserRating">
-        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/spicy_gray</item>
     </style>
     <style name="RefinementButtonV2" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
@@ -1033,6 +1157,9 @@
     <style name="CheckinResultTextLink" parent="@android:style/TextAppearance">
         <item name="android:textSize">13.0sp</item>
         <item name="android:textColor">@color/checkin_awards_sky_blue</item>
+    </style>
+    <style name="CheckinResultActionButton" parent="@style/ActionButton">
+        <item name="android:textSize">14.0sp</item>
     </style>
     <style name="CheckinLeaderboardItemRank" parent="@android:style/TextAppearance">
         <item name="android:textSize">14.0sp</item>
@@ -1062,11 +1189,161 @@
     </style>
     <style name="CheckinLeaderboardTitleBarText" parent="@android:style/TextAppearance">
         <item name="android:textSize">12.0sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="CheckinLeaderboardTimeFrame" parent="@android:style/TextAppearance">
         <item name="android:textSize">12.0sp</item>
         <item name="android:textColor">@color/checkin_awards_secondary_text</item>
+    </style>
+    <style name="LineTitleText" parent="@style/Black">
+        <item name="android:textSize">18.0sp</item>
+    </style>
+    <style name="NearbyPrimaryName">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">#ff333333</item>
+    </style>
+    <style name="NearbySecondaryName">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">#ff777777</item>
+    </style>
+    <style name="NearbyLocationName">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="NearbyDirectionName" parent="@style/NearbyPrimaryName">
+        <item name="android:textSize">14.0sp</item>
+    </style>
+    <style name="NearbyDistance">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">#ff999999</item>
+    </style>
+    <style name="NearbyHeader">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/blue_divider</item>
+    </style>
+    <style name="NearbyDepartingTime">
+        <item name="android:textSize">14.0sp</item>
+    </style>
+    <style name="NearbyTabTitle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="NearbySchedule" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">#ff333333</item>
+    </style>
+    <style name="NearbyRealtimeScheduleGray" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">#ff999999</item>
+    </style>
+    <style name="NearbyRealtimeScheduleCanceled" parent="@android:style/TextAppearance">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+    <style name="LocalPlusPageHeading" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffc0c0c0</item>
+    </style>
+    <style name="SpicyOptInButton">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/refinement_button2</item>
+        <item name="android:padding">10.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_marginLeft">20.0dip</item>
+        <item name="android:layout_marginTop">10.0dip</item>
+        <item name="android:layout_marginRight">20.0dip</item>
+        <item name="android:layout_marginBottom">10.0dip</item>
+    </style>
+    <style name="SpicyOptInLink">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/link_text_color</item>
+    </style>
+    <style name="SpicyContentSummary" parent="@android:style/TextAppearance">
+        <item name="android:textSize">17.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:drawablePadding">8.0dip</item>
+    </style>
+    <style name="SpicyContentSummaryInverted" parent="@style/SpicyContentSummary">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="SpicyContentSummaryHelpInvertedBold" parent="@style/SpicyContentSummaryInverted">
+        <item name="android:textSize">14.0sp</item>
+    </style>
+    <style name="SpicyContentSummaryHelpInverted" parent="@style/SpicyContentSummaryHelpInvertedBold">
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="SpicyContentPublic" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/spicy_content_public</item>
+    </style>
+    <style name="SpicyContentPrivate" parent="@style/SpicyContentPublic">
+        <item name="android:textColor">@color/spicy_content_private</item>
+    </style>
+    <style name="SpicyOptinSubtitle" parent="@style/PlacePageSecondary" />
+    <style name="SpicyOptinSubtitleBold" parent="@style/SpicyOptinSubtitle">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="SpicyOptinSubtitleBoldRed" parent="@style/SpicyOptinSubtitleBold">
+        <item name="android:textColor">@color/red</item>
+    </style>
+    <style name="LatitudeViewPagerTitleStyle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="OpaqueAlertDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:background">#ff000000</item>
+    </style>
+    <style name="MyPlacesTitleBarText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16.0dip</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="LocationHistoryListItem">
+        <item name="android:paddingLeft">8.0dip</item>
+        <item name="android:paddingRight">8.0dip</item>
+    </style>
+    <style name="LocationHistoryListItemContent">
+        <item name="android:paddingLeft">8.0dip</item>
+        <item name="android:paddingRight">8.0dip</item>
+    </style>
+    <style name="DirectionsListItem">
+        <item name="android:gravity">left|center</item>
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:paddingLeft">10.0dip</item>
+        <item name="android:paddingTop">3.0dip</item>
+        <item name="android:paddingRight">10.0dip</item>
+        <item name="android:paddingBottom">3.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">?android:listPreferredItemHeight</item>
+    </style>
+    <style name="DirectionsActionItem">
+        <item name="android:gravity">left|center</item>
+        <item name="android:layout_gravity">left|center</item>
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:padding">10.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">?android:listPreferredItemHeight</item>
+    </style>
+    <style name="FileBrowserWizardItem" parent="@android:style/TextAppearance">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="TextListSelectorDialogItem" parent="@android:style/TextAppearance">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="Theme.VoiceSearchDialog" parent="@android:style/Theme.Light.NoTitleBar">
         <item name="android:windowBackground">@android:color/transparent</item>

@@ -1,34 +1,70 @@
-.class public Lcom/google/googlenav/ui/aj;
-.super Ljava/lang/Object;
+.class Lcom/google/googlenav/ui/aj;
+.super Lcom/google/googlenav/ui/ao;
+.source "SourceFile"
 
 
 # instance fields
-.field private a:Lah/f;
+.field final synthetic a:Lcom/google/googlenav/ui/ap;
+
+.field final synthetic b:Lcom/google/googlenav/ui/ah;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
+.method constructor <init>(Lcom/google/googlenav/ui/ah;Ljava/lang/String;Lcom/google/googlenav/ui/ap;)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 108
+    iput-object p1, p0, Lcom/google/googlenav/ui/aj;->b:Lcom/google/googlenav/ui/ah;
+
+    iput-object p3, p0, Lcom/google/googlenav/ui/aj;->a:Lcom/google/googlenav/ui/ap;
+
+    invoke-direct {p0, p1, p2}, Lcom/google/googlenav/ui/ao;-><init>(Lcom/google/googlenav/ui/ah;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lah/f;)V
+.method protected a()I
     .registers 2
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/aj;->a:Lah/f;
+    .prologue
+    .line 112
+    iget-object v0, p0, Lcom/google/googlenav/ui/aj;->a:Lcom/google/googlenav/ui/ap;
 
-    return-void
+    invoke-static {}, Lcom/google/googlenav/ui/ap;->u()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    .line 113
+    const/4 v0, 0x0
+
+    .line 115
+    :goto_9
+    return v0
+
+    :cond_a
+    const/4 v0, 0x1
+
+    goto :goto_9
 .end method
 
-.method public b()Lah/f;
+.method protected b()Ljava/lang/String;
     .registers 2
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/aj;->a:Lah/f;
+    .prologue
+    .line 121
+    const/16 v0, 0x24e
+
+    invoke-static {v0}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

@@ -1,53 +1,115 @@
-.class Lcom/google/googlenav/ui/view/android/u;
-.super Ljava/lang/Object;
+.class public Lcom/google/googlenav/ui/view/android/U;
+.super Lcom/google/googlenav/ui/view/d;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnKeyListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/android/r;
+.field private final a:Lcom/google/googlenav/ui/view/c;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/r;)V
-    .registers 2
+.method public constructor <init>(Landroid/view/View;Lcom/google/googlenav/ui/view/c;)V
+    .registers 5
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/u;->a:Lcom/google/googlenav/ui/view/android/r;
+    .prologue
+    .line 20
+    const/4 v0, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x0
 
+    invoke-direct {p0, p1, v0, v1}, Lcom/google/googlenav/ui/view/d;-><init>(Landroid/view/View;Landroid/view/ViewGroup;Z)V
+
+    .line 21
+    iput-object p2, p0, Lcom/google/googlenav/ui/view/android/U;->a:Lcom/google/googlenav/ui/view/c;
+
+    .line 22
+    invoke-virtual {p1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 23
     return-void
 .end method
 
 
 # virtual methods
-.method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
-    .registers 8
+.method public a(IIII)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    const/16 v0, 0x42
+    .prologue
+    .line 32
+    return-void
+.end method
 
-    if-ne p2, v0, :cond_11
+.method public a(Z)V
+    .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/u;->a:Lcom/google/googlenav/ui/view/android/r;
+    .prologue
+    .line 26
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/U;->d:Landroid/view/View;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/view/android/r;->f:Lcom/google/googlenav/ui/p;
+    invoke-virtual {v0, p1}, Landroid/view/View;->setEnabled(Z)V
 
-    const/16 v1, 0xd6
+    .line 27
+    return-void
+.end method
 
-    const/4 v2, -0x1
+.method public f()[I
+    .registers 4
 
-    const/4 v3, 0x0
+    .prologue
+    .line 41
+    const/4 v0, 0x2
 
-    invoke-interface {v0, v1, v2, v3}, Lcom/google/googlenav/ui/p;->a(IILjava/lang/Object;)Z
+    new-array v0, v0, [I
 
-    const/4 v0, 0x1
+    const/4 v1, 0x0
 
-    :goto_10
-    return v0
+    iget-object v2, p0, Lcom/google/googlenav/ui/view/android/U;->d:Landroid/view/View;
 
-    :cond_11
-    const/4 v0, 0x0
+    invoke-virtual {v2}, Landroid/view/View;->getMeasuredWidth()I
 
-    goto :goto_10
+    move-result v2
+
+    aput v2, v0, v1
+
+    const/4 v1, 0x1
+
+    iget-object v2, p0, Lcom/google/googlenav/ui/view/android/U;->d:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v2
+
+    aput v2, v0, v1
+
+    return-object v0
+.end method
+
+.method public onClick(Landroid/view/View;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 35
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/U;->a:Lcom/google/googlenav/ui/view/c;
+
+    if-eqz v0, :cond_9
+
+    .line 36
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/U;->a:Lcom/google/googlenav/ui/view/c;
+
+    invoke-interface {v0, p0}, Lcom/google/googlenav/ui/view/c;->a(Lcom/google/googlenav/ui/view/J;)Z
+
+    .line 38
+    :cond_9
+    return-void
 .end method

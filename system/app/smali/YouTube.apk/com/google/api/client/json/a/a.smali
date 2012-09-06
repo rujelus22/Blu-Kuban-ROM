@@ -12,17 +12,17 @@
     .registers 4
 
     .prologue
-    .line 40
+    .line 41
     invoke-direct {p0}, Lcom/google/api/client/json/c;-><init>()V
 
-    .line 43
+    .line 44
     new-instance v0, Lorg/codehaus/jackson/a;
 
     invoke-direct {v0}, Lorg/codehaus/jackson/a;-><init>()V
 
     iput-object v0, p0, Lcom/google/api/client/json/a/a;->a:Lorg/codehaus/jackson/a;
 
-    .line 46
+    .line 48
     iget-object v0, p0, Lcom/google/api/client/json/a/a;->a:Lorg/codehaus/jackson/a;
 
     sget-object v1, Lorg/codehaus/jackson/JsonGenerator$Feature;->AUTO_CLOSE_JSON_CONTENT:Lorg/codehaus/jackson/JsonGenerator$Feature;
@@ -31,7 +31,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/codehaus/jackson/a;->a(Lorg/codehaus/jackson/JsonGenerator$Feature;Z)Lorg/codehaus/jackson/a;
 
-    .line 47
+    .line 49
     return-void
 .end method
 
@@ -40,17 +40,17 @@
     .parameter
 
     .prologue
-    .line 76
+    .line 81
     if-nez p0, :cond_4
 
-    .line 77
+    .line 82
     const/4 v0, 0x0
 
-    .line 103
+    .line 108
     :goto_3
     return-object v0
 
-    .line 79
+    .line 84
     :cond_4
     sget-object v0, Lcom/google/api/client/json/a/b;->a:[I
 
@@ -62,78 +62,78 @@
 
     packed-switch v0, :pswitch_data_34
 
-    .line 103
+    .line 108
     sget-object v0, Lcom/google/api/client/json/JsonToken;->NOT_AVAILABLE:Lcom/google/api/client/json/JsonToken;
 
     goto :goto_3
 
-    .line 81
+    .line 86
     :pswitch_12
     sget-object v0, Lcom/google/api/client/json/JsonToken;->END_ARRAY:Lcom/google/api/client/json/JsonToken;
 
     goto :goto_3
 
-    .line 83
+    .line 88
     :pswitch_15
     sget-object v0, Lcom/google/api/client/json/JsonToken;->START_ARRAY:Lcom/google/api/client/json/JsonToken;
 
     goto :goto_3
 
-    .line 85
+    .line 90
     :pswitch_18
     sget-object v0, Lcom/google/api/client/json/JsonToken;->END_OBJECT:Lcom/google/api/client/json/JsonToken;
 
     goto :goto_3
 
-    .line 87
+    .line 92
     :pswitch_1b
     sget-object v0, Lcom/google/api/client/json/JsonToken;->START_OBJECT:Lcom/google/api/client/json/JsonToken;
 
     goto :goto_3
 
-    .line 89
+    .line 94
     :pswitch_1e
     sget-object v0, Lcom/google/api/client/json/JsonToken;->VALUE_FALSE:Lcom/google/api/client/json/JsonToken;
 
     goto :goto_3
 
-    .line 91
+    .line 96
     :pswitch_21
     sget-object v0, Lcom/google/api/client/json/JsonToken;->VALUE_TRUE:Lcom/google/api/client/json/JsonToken;
 
     goto :goto_3
 
-    .line 93
+    .line 98
     :pswitch_24
     sget-object v0, Lcom/google/api/client/json/JsonToken;->VALUE_NULL:Lcom/google/api/client/json/JsonToken;
 
     goto :goto_3
 
-    .line 95
+    .line 100
     :pswitch_27
     sget-object v0, Lcom/google/api/client/json/JsonToken;->VALUE_STRING:Lcom/google/api/client/json/JsonToken;
 
     goto :goto_3
 
-    .line 97
+    .line 102
     :pswitch_2a
     sget-object v0, Lcom/google/api/client/json/JsonToken;->VALUE_NUMBER_FLOAT:Lcom/google/api/client/json/JsonToken;
 
     goto :goto_3
 
-    .line 99
+    .line 104
     :pswitch_2d
     sget-object v0, Lcom/google/api/client/json/JsonToken;->VALUE_NUMBER_INT:Lcom/google/api/client/json/JsonToken;
 
     goto :goto_3
 
-    .line 101
+    .line 106
     :pswitch_30
     sget-object v0, Lcom/google/api/client/json/JsonToken;->FIELD_NAME:Lcom/google/api/client/json/JsonToken;
 
     goto :goto_3
 
-    .line 79
+    .line 84
     nop
 
     :pswitch_data_34
@@ -159,7 +159,7 @@
     .parameter
 
     .prologue
-    .line 51
+    .line 53
     new-instance v0, Lcom/google/api/client/json/a/c;
 
     iget-object v1, p0, Lcom/google/api/client/json/a/a;->a:Lorg/codehaus/jackson/a;
@@ -180,7 +180,10 @@
     .parameter
 
     .prologue
-    .line 67
+    .line 70
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 71
     new-instance v0, Lcom/google/api/client/json/a/d;
 
     iget-object v1, p0, Lcom/google/api/client/json/a/a;->a:Lorg/codehaus/jackson/a;

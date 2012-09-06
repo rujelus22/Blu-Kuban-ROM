@@ -73,57 +73,57 @@
     .prologue
     const-wide/16 v2, 0x0
 
-    .line 106
+    .line 112
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 116
+    .line 122
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->type_:I
 
-    .line 133
+    .line 139
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->starRating_:F
 
-    .line 150
+    .line 156
     iput-wide v2, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->ratingsCount_:J
 
-    .line 167
+    .line 173
     iput-wide v2, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->commentCount_:J
 
-    .line 184
+    .line 190
     iput-wide v2, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->oneStarRatings_:J
 
-    .line 201
+    .line 207
     iput-wide v2, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->twoStarRatings_:J
 
-    .line 218
+    .line 224
     iput-wide v2, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->threeStarRatings_:J
 
-    .line 235
+    .line 241
     iput-wide v2, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->fourStarRatings_:J
 
-    .line 252
+    .line 258
     iput-wide v2, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->fiveStarRatings_:J
 
-    .line 269
+    .line 275
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->bayesianMeanRating_:D
 
-    .line 286
+    .line 292
     iput-wide v2, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->thumbsUpCount_:J
 
-    .line 303
+    .line 309
     iput-wide v2, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->thumbsDownCount_:J
 
-    .line 379
+    .line 386
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->cachedSize:I
 
-    .line 106
+    .line 112
     return-void
 .end method
 
@@ -133,7 +133,7 @@
     .registers 3
 
     .prologue
-    .line 270
+    .line 276
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->bayesianMeanRating_:D
 
     return-wide v0
@@ -143,15 +143,15 @@
     .registers 2
 
     .prologue
-    .line 381
+    .line 389
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 383
+    .line 391
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getSerializedSize()I
 
-    .line 385
+    .line 393
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->cachedSize:I
 
@@ -162,7 +162,7 @@
     .registers 3
 
     .prologue
-    .line 168
+    .line 174
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->commentCount_:J
 
     return-wide v0
@@ -172,7 +172,7 @@
     .registers 3
 
     .prologue
-    .line 253
+    .line 259
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->fiveStarRatings_:J
 
     return-wide v0
@@ -182,7 +182,7 @@
     .registers 3
 
     .prologue
-    .line 236
+    .line 242
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->fourStarRatings_:J
 
     return-wide v0
@@ -192,7 +192,7 @@
     .registers 3
 
     .prologue
-    .line 185
+    .line 191
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->oneStarRatings_:J
 
     return-wide v0
@@ -202,7 +202,7 @@
     .registers 3
 
     .prologue
-    .line 151
+    .line 157
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->ratingsCount_:J
 
     return-wide v0
@@ -212,10 +212,10 @@
     .registers 5
 
     .prologue
-    .line 389
+    .line 398
     const/4 v0, 0x0
 
-    .line 390
+    .line 399
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasType()Z
 
@@ -223,7 +223,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 391
+    .line 400
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getType()I
@@ -236,7 +236,7 @@
 
     add-int/2addr v0, v1
 
-    .line 394
+    .line 403
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasStarRating()Z
 
@@ -244,7 +244,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 395
+    .line 404
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getStarRating()F
@@ -257,7 +257,7 @@
 
     add-int/2addr v0, v1
 
-    .line 398
+    .line 407
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasRatingsCount()Z
 
@@ -265,7 +265,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 399
+    .line 408
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getRatingsCount()J
@@ -278,7 +278,7 @@
 
     add-int/2addr v0, v1
 
-    .line 402
+    .line 411
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasOneStarRatings()Z
 
@@ -286,7 +286,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 403
+    .line 412
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getOneStarRatings()J
@@ -299,7 +299,7 @@
 
     add-int/2addr v0, v1
 
-    .line 406
+    .line 415
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasTwoStarRatings()Z
 
@@ -307,7 +307,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 407
+    .line 416
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getTwoStarRatings()J
@@ -320,7 +320,7 @@
 
     add-int/2addr v0, v1
 
-    .line 410
+    .line 419
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasThreeStarRatings()Z
 
@@ -328,7 +328,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 411
+    .line 420
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getThreeStarRatings()J
@@ -341,7 +341,7 @@
 
     add-int/2addr v0, v1
 
-    .line 414
+    .line 423
     :cond_61
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasFourStarRatings()Z
 
@@ -349,7 +349,7 @@
 
     if-eqz v1, :cond_71
 
-    .line 415
+    .line 424
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getFourStarRatings()J
@@ -362,7 +362,7 @@
 
     add-int/2addr v0, v1
 
-    .line 418
+    .line 427
     :cond_71
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasFiveStarRatings()Z
 
@@ -370,7 +370,7 @@
 
     if-eqz v1, :cond_82
 
-    .line 419
+    .line 428
     const/16 v1, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getFiveStarRatings()J
@@ -383,7 +383,7 @@
 
     add-int/2addr v0, v1
 
-    .line 422
+    .line 431
     :cond_82
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasThumbsUpCount()Z
 
@@ -391,7 +391,7 @@
 
     if-eqz v1, :cond_93
 
-    .line 423
+    .line 432
     const/16 v1, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getThumbsUpCount()J
@@ -404,7 +404,7 @@
 
     add-int/2addr v0, v1
 
-    .line 426
+    .line 435
     :cond_93
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasThumbsDownCount()Z
 
@@ -412,7 +412,7 @@
 
     if-eqz v1, :cond_a4
 
-    .line 427
+    .line 436
     const/16 v1, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getThumbsDownCount()J
@@ -425,7 +425,7 @@
 
     add-int/2addr v0, v1
 
-    .line 430
+    .line 439
     :cond_a4
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasCommentCount()Z
 
@@ -433,7 +433,7 @@
 
     if-eqz v1, :cond_b5
 
-    .line 431
+    .line 440
     const/16 v1, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getCommentCount()J
@@ -446,7 +446,7 @@
 
     add-int/2addr v0, v1
 
-    .line 434
+    .line 443
     :cond_b5
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasBayesianMeanRating()Z
 
@@ -454,7 +454,7 @@
 
     if-eqz v1, :cond_c6
 
-    .line 435
+    .line 444
     const/16 v1, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getBayesianMeanRating()D
@@ -467,11 +467,11 @@
 
     add-int/2addr v0, v1
 
-    .line 438
+    .line 447
     :cond_c6
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->cachedSize:I
 
-    .line 439
+    .line 448
     return v0
 .end method
 
@@ -479,7 +479,7 @@
     .registers 2
 
     .prologue
-    .line 134
+    .line 140
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->starRating_:F
 
     return v0
@@ -489,7 +489,7 @@
     .registers 3
 
     .prologue
-    .line 219
+    .line 225
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->threeStarRatings_:J
 
     return-wide v0
@@ -499,7 +499,7 @@
     .registers 3
 
     .prologue
-    .line 304
+    .line 310
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->thumbsDownCount_:J
 
     return-wide v0
@@ -509,7 +509,7 @@
     .registers 3
 
     .prologue
-    .line 287
+    .line 293
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->thumbsUpCount_:J
 
     return-wide v0
@@ -519,7 +519,7 @@
     .registers 3
 
     .prologue
-    .line 202
+    .line 208
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->twoStarRatings_:J
 
     return-wide v0
@@ -529,7 +529,7 @@
     .registers 2
 
     .prologue
-    .line 118
+    .line 124
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->type_:I
 
     return v0
@@ -539,7 +539,7 @@
     .registers 2
 
     .prologue
-    .line 271
+    .line 277
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasBayesianMeanRating:Z
 
     return v0
@@ -549,7 +549,7 @@
     .registers 2
 
     .prologue
-    .line 169
+    .line 175
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasCommentCount:Z
 
     return v0
@@ -559,7 +559,7 @@
     .registers 2
 
     .prologue
-    .line 254
+    .line 260
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasFiveStarRatings:Z
 
     return v0
@@ -569,7 +569,7 @@
     .registers 2
 
     .prologue
-    .line 237
+    .line 243
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasFourStarRatings:Z
 
     return v0
@@ -579,7 +579,7 @@
     .registers 2
 
     .prologue
-    .line 186
+    .line 192
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasOneStarRatings:Z
 
     return v0
@@ -589,7 +589,7 @@
     .registers 2
 
     .prologue
-    .line 152
+    .line 158
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasRatingsCount:Z
 
     return v0
@@ -599,7 +599,7 @@
     .registers 2
 
     .prologue
-    .line 135
+    .line 141
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasStarRating:Z
 
     return v0
@@ -609,7 +609,7 @@
     .registers 2
 
     .prologue
-    .line 220
+    .line 226
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasThreeStarRatings:Z
 
     return v0
@@ -619,7 +619,7 @@
     .registers 2
 
     .prologue
-    .line 305
+    .line 311
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasThumbsDownCount:Z
 
     return v0
@@ -629,7 +629,7 @@
     .registers 2
 
     .prologue
-    .line 288
+    .line 294
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasThumbsUpCount:Z
 
     return v0
@@ -639,7 +639,7 @@
     .registers 2
 
     .prologue
-    .line 203
+    .line 209
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasTwoStarRatings:Z
 
     return v0
@@ -649,7 +649,7 @@
     .registers 2
 
     .prologue
-    .line 117
+    .line 123
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasType:Z
 
     return v0
@@ -665,29 +665,29 @@
     .end annotation
 
     .prologue
-    .line 446
+    .line 456
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 447
+    .line 457
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_6e
 
-    .line 451
+    .line 461
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 452
+    .line 462
     :sswitch_d
     return-object p0
 
-    .line 457
+    .line 467
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -697,7 +697,7 @@
 
     goto :goto_0
 
-    .line 461
+    .line 471
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFloat()F
 
@@ -707,7 +707,7 @@
 
     goto :goto_0
 
-    .line 465
+    .line 475
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readUInt64()J
 
@@ -717,7 +717,7 @@
 
     goto :goto_0
 
-    .line 469
+    .line 479
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readUInt64()J
 
@@ -727,7 +727,7 @@
 
     goto :goto_0
 
-    .line 473
+    .line 483
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readUInt64()J
 
@@ -737,7 +737,7 @@
 
     goto :goto_0
 
-    .line 477
+    .line 487
     :sswitch_36
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readUInt64()J
 
@@ -747,7 +747,7 @@
 
     goto :goto_0
 
-    .line 481
+    .line 491
     :sswitch_3e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readUInt64()J
 
@@ -757,7 +757,7 @@
 
     goto :goto_0
 
-    .line 485
+    .line 495
     :sswitch_46
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readUInt64()J
 
@@ -767,7 +767,7 @@
 
     goto :goto_0
 
-    .line 489
+    .line 499
     :sswitch_4e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readUInt64()J
 
@@ -777,7 +777,7 @@
 
     goto :goto_0
 
-    .line 493
+    .line 503
     :sswitch_56
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readUInt64()J
 
@@ -787,7 +787,7 @@
 
     goto :goto_0
 
-    .line 497
+    .line 507
     :sswitch_5e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readUInt64()J
 
@@ -797,7 +797,7 @@
 
     goto :goto_0
 
-    .line 501
+    .line 511
     :sswitch_66
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readDouble()D
 
@@ -807,7 +807,7 @@
 
     goto :goto_0
 
-    .line 447
+    .line 457
     :sswitch_data_6e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -836,7 +836,7 @@
     .end annotation
 
     .prologue
-    .line 104
+    .line 109
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;
 
     move-result-object v0
@@ -849,15 +849,15 @@
     .parameter "value"
 
     .prologue
-    .line 273
+    .line 279
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasBayesianMeanRating:Z
 
-    .line 274
+    .line 280
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->bayesianMeanRating_:D
 
-    .line 275
+    .line 281
     return-object p0
 .end method
 
@@ -866,15 +866,15 @@
     .parameter "value"
 
     .prologue
-    .line 171
+    .line 177
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasCommentCount:Z
 
-    .line 172
+    .line 178
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->commentCount_:J
 
-    .line 173
+    .line 179
     return-object p0
 .end method
 
@@ -883,15 +883,15 @@
     .parameter "value"
 
     .prologue
-    .line 256
+    .line 262
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasFiveStarRatings:Z
 
-    .line 257
+    .line 263
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->fiveStarRatings_:J
 
-    .line 258
+    .line 264
     return-object p0
 .end method
 
@@ -900,15 +900,15 @@
     .parameter "value"
 
     .prologue
-    .line 239
+    .line 245
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasFourStarRatings:Z
 
-    .line 240
+    .line 246
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->fourStarRatings_:J
 
-    .line 241
+    .line 247
     return-object p0
 .end method
 
@@ -917,15 +917,15 @@
     .parameter "value"
 
     .prologue
-    .line 188
+    .line 194
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasOneStarRatings:Z
 
-    .line 189
+    .line 195
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->oneStarRatings_:J
 
-    .line 190
+    .line 196
     return-object p0
 .end method
 
@@ -934,15 +934,15 @@
     .parameter "value"
 
     .prologue
-    .line 154
+    .line 160
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasRatingsCount:Z
 
-    .line 155
+    .line 161
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->ratingsCount_:J
 
-    .line 156
+    .line 162
     return-object p0
 .end method
 
@@ -951,15 +951,15 @@
     .parameter "value"
 
     .prologue
-    .line 137
+    .line 143
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasStarRating:Z
 
-    .line 138
+    .line 144
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->starRating_:F
 
-    .line 139
+    .line 145
     return-object p0
 .end method
 
@@ -968,15 +968,15 @@
     .parameter "value"
 
     .prologue
-    .line 222
+    .line 228
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasThreeStarRatings:Z
 
-    .line 223
+    .line 229
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->threeStarRatings_:J
 
-    .line 224
+    .line 230
     return-object p0
 .end method
 
@@ -985,15 +985,15 @@
     .parameter "value"
 
     .prologue
-    .line 307
+    .line 313
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasThumbsDownCount:Z
 
-    .line 308
+    .line 314
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->thumbsDownCount_:J
 
-    .line 309
+    .line 315
     return-object p0
 .end method
 
@@ -1002,15 +1002,15 @@
     .parameter "value"
 
     .prologue
-    .line 290
+    .line 296
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasThumbsUpCount:Z
 
-    .line 291
+    .line 297
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->thumbsUpCount_:J
 
-    .line 292
+    .line 298
     return-object p0
 .end method
 
@@ -1019,15 +1019,15 @@
     .parameter "value"
 
     .prologue
-    .line 205
+    .line 211
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasTwoStarRatings:Z
 
-    .line 206
+    .line 212
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->twoStarRatings_:J
 
-    .line 207
+    .line 213
     return-object p0
 .end method
 
@@ -1036,15 +1036,15 @@
     .parameter "value"
 
     .prologue
-    .line 120
+    .line 126
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasType:Z
 
-    .line 121
+    .line 127
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->type_:I
 
-    .line 122
+    .line 128
     return-object p0
 .end method
 
@@ -1058,14 +1058,14 @@
     .end annotation
 
     .prologue
-    .line 341
+    .line 348
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasType()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 342
+    .line 349
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getType()I
@@ -1074,7 +1074,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 344
+    .line 351
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasStarRating()Z
 
@@ -1082,7 +1082,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 345
+    .line 352
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getStarRating()F
@@ -1091,7 +1091,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFloat(IF)V
 
-    .line 347
+    .line 354
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasRatingsCount()Z
 
@@ -1099,7 +1099,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 348
+    .line 355
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getRatingsCount()J
@@ -1108,7 +1108,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeUInt64(IJ)V
 
-    .line 350
+    .line 357
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasOneStarRatings()Z
 
@@ -1116,7 +1116,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 351
+    .line 358
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getOneStarRatings()J
@@ -1125,7 +1125,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeUInt64(IJ)V
 
-    .line 353
+    .line 360
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasTwoStarRatings()Z
 
@@ -1133,7 +1133,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 354
+    .line 361
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getTwoStarRatings()J
@@ -1142,7 +1142,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeUInt64(IJ)V
 
-    .line 356
+    .line 363
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasThreeStarRatings()Z
 
@@ -1150,7 +1150,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 357
+    .line 364
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getThreeStarRatings()J
@@ -1159,7 +1159,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeUInt64(IJ)V
 
-    .line 359
+    .line 366
     :cond_54
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasFourStarRatings()Z
 
@@ -1167,7 +1167,7 @@
 
     if-eqz v0, :cond_62
 
-    .line 360
+    .line 367
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getFourStarRatings()J
@@ -1176,7 +1176,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeUInt64(IJ)V
 
-    .line 362
+    .line 369
     :cond_62
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasFiveStarRatings()Z
 
@@ -1184,7 +1184,7 @@
 
     if-eqz v0, :cond_71
 
-    .line 363
+    .line 370
     const/16 v0, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getFiveStarRatings()J
@@ -1193,7 +1193,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeUInt64(IJ)V
 
-    .line 365
+    .line 372
     :cond_71
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasThumbsUpCount()Z
 
@@ -1201,7 +1201,7 @@
 
     if-eqz v0, :cond_80
 
-    .line 366
+    .line 373
     const/16 v0, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getThumbsUpCount()J
@@ -1210,7 +1210,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeUInt64(IJ)V
 
-    .line 368
+    .line 375
     :cond_80
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasThumbsDownCount()Z
 
@@ -1218,7 +1218,7 @@
 
     if-eqz v0, :cond_8f
 
-    .line 369
+    .line 376
     const/16 v0, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getThumbsDownCount()J
@@ -1227,7 +1227,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeUInt64(IJ)V
 
-    .line 371
+    .line 378
     :cond_8f
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasCommentCount()Z
 
@@ -1235,7 +1235,7 @@
 
     if-eqz v0, :cond_9e
 
-    .line 372
+    .line 379
     const/16 v0, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getCommentCount()J
@@ -1244,7 +1244,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeUInt64(IJ)V
 
-    .line 374
+    .line 381
     :cond_9e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->hasBayesianMeanRating()Z
 
@@ -1252,7 +1252,7 @@
 
     if-eqz v0, :cond_ad
 
-    .line 375
+    .line 382
     const/16 v0, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;->getBayesianMeanRating()D
@@ -1261,7 +1261,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeDouble(ID)V
 
-    .line 377
+    .line 384
     :cond_ad
     return-void
 .end method

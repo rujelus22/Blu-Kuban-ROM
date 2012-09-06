@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 115
+    .line 117
     iput-object p1, p0, Lcom/google/android/finsky/activities/RateReviewDialog$1;->this$0:Lcom/google/android/finsky/activities/RateReviewDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,18 +43,18 @@
     .parameter "newSelection"
 
     .prologue
-    .line 118
+    .line 120
     iget-object v0, p0, Lcom/google/android/finsky/activities/RateReviewDialog$1;->this$0:Lcom/google/android/finsky/activities/RateReviewDialog;
 
     #calls: Lcom/google/android/finsky/activities/RateReviewDialog;->setRating(I)V
     invoke-static {v0, p2}, Lcom/google/android/finsky/activities/RateReviewDialog;->access$200(Lcom/google/android/finsky/activities/RateReviewDialog;I)V
 
-    .line 119
+    .line 121
     iget-object v0, p0, Lcom/google/android/finsky/activities/RateReviewDialog$1;->this$0:Lcom/google/android/finsky/activities/RateReviewDialog;
 
     #calls: Lcom/google/android/finsky/activities/RateReviewDialog;->syncOkButtonState()V
     invoke-static {v0}, Lcom/google/android/finsky/activities/RateReviewDialog;->access$300(Lcom/google/android/finsky/activities/RateReviewDialog;)V
 
-    .line 120
+    .line 122
     return-void
 .end method

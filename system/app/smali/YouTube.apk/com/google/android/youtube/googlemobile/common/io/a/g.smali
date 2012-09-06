@@ -129,7 +129,9 @@
     :cond_23
     new-instance v0, Lcom/google/android/youtube/googlemobile/common/io/a/h;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/google/android/youtube/googlemobile/common/io/a/h;-><init>(Lcom/google/android/youtube/googlemobile/common/io/a/g;Ljava/lang/String;Z)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, p1, p2, v1}, Lcom/google/android/youtube/googlemobile/common/io/a/h;-><init>(Lcom/google/android/youtube/googlemobile/common/io/a/g;Ljava/lang/String;ZB)V
 
     return-object v0
 .end method

@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 35
+    .line 37
     invoke-direct {p0}, Lorg/apache/james/mime4j/AbstractContentHandler;-><init>()V
 
     return-void

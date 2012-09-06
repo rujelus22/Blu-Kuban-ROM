@@ -79,13 +79,13 @@
 
     move-result-object v2
 
-    const v3, 0x7f0800d0
+    const v3, 0x7f0800b8
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v2
 
-    const v3, 0x7f0800d1
+    const v3, 0x7f0800b9
 
     const/4 v4, 0x1
 
@@ -103,7 +103,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f080042
+    const v3, 0x7f080009
 
     new-instance v4, Lcom/android/email/activity/setup/DuplicateAccountDialogFragment$1;
 

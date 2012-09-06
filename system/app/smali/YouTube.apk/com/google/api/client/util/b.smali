@@ -74,7 +74,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -88,7 +88,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 

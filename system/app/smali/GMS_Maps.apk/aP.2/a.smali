@@ -1,1962 +1,975 @@
-.class public LaP/a;
-.super LaP/h;
+.class public Lap/a;
+.super Lan/b;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/hardware/SensorEventListener;
-
-
-# static fields
-.field private static final M:F
-
-.field private static final N:F
-
-.field private static final O:F
-
-.field private static final P:F
-
-.field private static final a:F
+.implements Landroid/location/LocationListener;
 
 
 # instance fields
-.field private final A:[F
+.field protected a:Lan/C;
 
-.field private final B:[F
+.field protected i:Lan/C;
 
-.field private C:I
+.field private j:Ljava/lang/String;
 
-.field private D:I
+.field private k:Landroid/location/Location;
 
-.field private E:I
+.field private final l:Lcom/google/googlenav/common/a;
 
-.field private F:LaP/e;
+.field private m:J
 
-.field private final G:Laf/a;
+.field private final n:Z
 
-.field private H:J
-
-.field private I:F
-
-.field private final J:Ljava/util/WeakHashMap;
-
-.field private final K:Ljava/util/Map;
-
-.field private L:LaP/d;
-
-.field private Q:Landroid/view/WindowManager;
-
-.field private R:Ljava/lang/reflect/Method;
-
-.field private b:Z
-
-.field private c:LaP/j;
-
-.field private d:Landroid/content/Context;
-
-.field private e:Landroid/hardware/SensorManager;
-
-.field private final f:LaP/f;
-
-.field private g:I
-
-.field private h:F
-
-.field private i:F
-
-.field private j:Landroid/hardware/Sensor;
-
-.field private k:Landroid/hardware/Sensor;
-
-.field private l:Landroid/hardware/Sensor;
-
-.field private m:Landroid/hardware/Sensor;
-
-.field private final n:[F
-
-.field private final o:[F
-
-.field private final p:[F
-
-.field private final q:[F
-
-.field private final r:[F
-
-.field private final s:[F
-
-.field private final t:[F
-
-.field private final u:[F
-
-.field private final v:[F
-
-.field private w:J
-
-.field private x:J
-
-.field private y:J
-
-.field private final z:[F
+.field private final o:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method public constructor <init>(Z)V
+    .registers 4
+    .parameter
 
-    const/high16 v2, 0x4000
+    .prologue
+    const/4 v0, 0x1
 
-    const v1, 0x3c8efa35
+    .line 120
+    invoke-direct {p0, v0}, Lan/b;-><init>(Z)V
 
-    invoke-static {v2}, Landroid/util/FloatMath;->sqrt(F)F
+    .line 95
+    const-string v1, "cell"
 
-    move-result v0
+    iput-object v1, p0, Lap/a;->j:Ljava/lang/String;
 
-    div-float/2addr v0, v2
-
-    sput v0, LaP/a;->a:F
-
-    const v0, 0x3d0efa35
-
-    invoke-static {v0}, Landroid/util/FloatMath;->cos(F)F
-
-    move-result v0
-
-    sput v0, LaP/a;->M:F
-
-    invoke-static {v1}, Landroid/util/FloatMath;->cos(F)F
-
-    move-result v0
-
-    sput v0, LaP/a;->N:F
-
-    invoke-static {v1}, Landroid/util/FloatMath;->cos(F)F
-
-    move-result v0
-
-    sput v0, LaP/a;->O:F
-
-    const v0, 0x3c0efa35
-
-    invoke-static {v0}, Landroid/util/FloatMath;->cos(F)F
-
-    move-result v0
-
-    sput v0, LaP/a;->P:F
-
-    return-void
-.end method
-
-.method public constructor <init>(LaP/e;Laf/a;)V
-    .registers 9
-
-    const/16 v5, 0x9
-
-    const/4 v4, 0x4
-
-    const/4 v3, -0x1
-
-    const/4 v2, 0x3
-
-    invoke-direct {p0}, LaP/h;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, LaP/a;->b:Z
-
-    sget-object v0, LaP/j;->a:LaP/j;
-
-    iput-object v0, p0, LaP/a;->c:LaP/j;
-
-    new-instance v0, LaP/f;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, LaP/f;-><init>(Z)V
-
-    iput-object v0, p0, LaP/a;->f:LaP/f;
-
-    iput v3, p0, LaP/a;->g:I
-
-    const/high16 v0, -0x4080
-
-    iput v0, p0, LaP/a;->h:F
-
-    const/high16 v0, 0x7fc0
-
-    iput v0, p0, LaP/a;->i:F
-
-    new-array v0, v2, [F
-
-    iput-object v0, p0, LaP/a;->n:[F
-
-    new-array v0, v2, [F
-
-    iput-object v0, p0, LaP/a;->o:[F
-
-    new-array v0, v2, [F
-
-    iput-object v0, p0, LaP/a;->p:[F
-
-    new-array v0, v4, [F
-
-    iput-object v0, p0, LaP/a;->q:[F
-
-    new-array v0, v2, [F
-
-    iput-object v0, p0, LaP/a;->r:[F
-
-    new-array v0, v2, [F
-
-    iput-object v0, p0, LaP/a;->s:[F
-
-    new-array v0, v2, [F
-
-    iput-object v0, p0, LaP/a;->t:[F
-
-    new-array v0, v2, [F
-
-    iput-object v0, p0, LaP/a;->u:[F
-
-    new-array v0, v4, [F
-
-    iput-object v0, p0, LaP/a;->v:[F
-
-    const-wide/high16 v0, -0x8000
-
-    iput-wide v0, p0, LaP/a;->w:J
-
-    new-array v0, v5, [F
-
-    iput-object v0, p0, LaP/a;->z:[F
-
-    new-array v0, v5, [F
-
-    iput-object v0, p0, LaP/a;->A:[F
-
-    new-array v0, v2, [F
-
-    iput-object v0, p0, LaP/a;->B:[F
-
-    iput v3, p0, LaP/a;->C:I
-
-    iput v3, p0, LaP/a;->D:I
-
-    iput v3, p0, LaP/a;->E:I
-
-    new-instance v0, Ljava/util/WeakHashMap;
-
-    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
-
-    iput-object v0, p0, LaP/a;->J:Ljava/util/WeakHashMap;
-
-    new-instance v0, Ljava/util/WeakHashMap;
-
-    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
-
-    invoke-static {v0}, Ljava/util/Collections;->synchronizedMap(Ljava/util/Map;)Ljava/util/Map;
-
-    move-result-object v0
-
-    iput-object v0, p0, LaP/a;->K:Ljava/util/Map;
-
-    new-instance v0, LaP/d;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, LaP/d;-><init>(LaP/b;)V
-
-    iput-object v0, p0, LaP/a;->L:LaP/d;
-
-    iput-object p1, p0, LaP/a;->F:LaP/e;
-
-    iput-object p2, p0, LaP/a;->G:Laf/a;
-
-    return-void
-.end method
-
-.method public static a([F)F
-    .registers 5
-
-    const/high16 v3, 0x3f80
-
-    const/4 v1, 0x0
-
-    const/4 v0, 0x0
-
-    :goto_4
-    const/4 v2, 0x3
-
-    if-ge v0, v2, :cond_e
-
-    aget v2, p0, v0
-
-    mul-float/2addr v2, v2
-
-    add-float/2addr v1, v2
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_4
-
-    :cond_e
-    invoke-static {v1, v3}, Ljava/lang/Math;->min(FF)F
-
-    move-result v0
-
-    sub-float v0, v3, v0
-
-    invoke-static {v0}, Landroid/util/FloatMath;->sqrt(F)F
-
-    move-result v0
-
-    return v0
-.end method
-
-.method protected static a([F[F)F
-    .registers 6
-
-    const/4 v1, 0x0
-
-    const/4 v0, 0x0
-
-    :goto_2
-    array-length v2, p0
-
-    if-ge v0, v2, :cond_e
-
-    aget v2, p0, v0
-
-    aget v3, p1, v0
-
-    mul-float/2addr v2, v3
-
-    add-float/2addr v1, v2
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_2
-
-    :cond_e
-    return v1
-.end method
-
-.method public static b([F[F)V
-    .registers 9
-
-    const/4 v6, 0x3
-
-    const/4 v0, 0x0
-
-    const/4 v3, 0x0
-
-    move v1, v0
-
-    move v2, v3
-
-    :goto_5
-    if-ge v1, v6, :cond_10
-
-    aget v4, p0, v1
-
-    aget v5, p0, v1
-
-    mul-float/2addr v4, v5
-
-    add-float/2addr v2, v4
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_5
-
-    :cond_10
-    invoke-static {v2}, Landroid/util/FloatMath;->sqrt(F)F
+    .line 123
+    invoke-static {}, Lap/a;->u()Z
 
     move-result v1
 
-    cmpl-float v2, v1, v3
+    iput-boolean v1, p0, Lap/a;->o:Z
 
-    if-nez v2, :cond_1f
+    .line 124
+    if-eqz p1, :cond_21
 
-    :goto_18
-    if-ge v0, v6, :cond_29
+    iget-boolean v1, p0, Lap/a;->o:Z
 
-    aput v3, p1, v0
+    if-nez v1, :cond_21
 
-    add-int/lit8 v0, v0, 0x1
+    :goto_14
+    iput-boolean v0, p0, Lap/a;->n:Z
 
-    goto :goto_18
-
-    :cond_1f
-    :goto_1f
-    if-ge v0, v6, :cond_29
-
-    aget v2, p0, v0
-
-    div-float/2addr v2, v1
-
-    aput v2, p1, v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1f
-
-    :cond_29
-    return-void
-.end method
-
-.method private j()Landroid/hardware/SensorManager;
-    .registers 3
-
-    iget-object v0, p0, LaP/a;->e:Landroid/hardware/SensorManager;
-
-    if-nez v0, :cond_10
-
-    iget-object v0, p0, LaP/a;->d:Landroid/content/Context;
-
-    const-string v1, "sensor"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    .line 125
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
 
     move-result-object v0
 
-    check-cast v0, Landroid/hardware/SensorManager;
-
-    iput-object v0, p0, LaP/a;->e:Landroid/hardware/SensorManager;
-
-    :cond_10
-    iget-object v0, p0, LaP/a;->e:Landroid/hardware/SensorManager;
-
-    return-object v0
-.end method
-
-.method private k()I
-    .registers 5
-
-    const/4 v1, 0x0
-
-    iget v0, p0, LaP/a;->E:I
-
-    const/4 v2, -0x1
-
-    if-eq v0, v2, :cond_9
-
-    iget v0, p0, LaP/a;->E:I
-
-    :goto_8
-    return v0
-
-    :cond_9
-    iget-object v0, p0, LaP/a;->R:Ljava/lang/reflect/Method;
-
-    if-eqz v0, :cond_24
-
-    iget-object v0, p0, LaP/a;->Q:Landroid/view/WindowManager;
-
-    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->u()Lcom/google/googlenav/common/a;
 
     move-result-object v0
 
-    :try_start_13
-    iget-object v2, p0, LaP/a;->R:Ljava/lang/reflect/Method;
+    iput-object v0, p0, Lap/a;->l:Lcom/google/googlenav/common/a;
 
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-virtual {v2, v0, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-    :try_end_21
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_13 .. :try_end_21} :catch_39
-    .catch Ljava/lang/IllegalAccessException; {:try_start_13 .. :try_end_21} :catch_37
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_13 .. :try_end_21} :catch_23
-
-    move-result v0
-
-    goto :goto_8
-
-    :catch_23
-    move-exception v0
-
-    :cond_24
-    :goto_24
-    iget-object v0, p0, LaP/a;->d:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v0
-
-    iget v0, v0, Landroid/content/res/Configuration;->orientation:I
-
-    const/4 v2, 0x2
-
-    if-ne v0, v2, :cond_35
-
-    const/4 v0, 0x1
-
-    goto :goto_8
-
-    :cond_35
-    move v0, v1
-
-    goto :goto_8
-
-    :catch_37
-    move-exception v0
-
-    goto :goto_24
-
-    :catch_39
-    move-exception v0
-
-    goto :goto_24
-.end method
-
-.method private declared-synchronized l()V
-    .registers 9
-
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v0, p0, LaP/a;->F:LaP/e;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_3d
-
-    if-nez v0, :cond_7
-
-    :cond_5
-    :goto_5
-    monitor-exit p0
-
+    .line 126
     return-void
 
-    :cond_7
-    :try_start_7
-    iget-object v0, p0, LaP/a;->G:Laf/a;
+    .line 124
+    :cond_21
+    const/4 v0, 0x0
 
-    invoke-interface {v0}, Laf/a;->c()J
-
-    move-result-wide v4
-
-    iget-wide v0, p0, LaP/a;->H:J
-
-    sub-long v0, v4, v0
-
-    const-wide/32 v2, 0x927c0
-
-    cmp-long v0, v0, v2
-
-    if-lez v0, :cond_5
-
-    iget-object v0, p0, LaP/a;->F:LaP/e;
-
-    invoke-interface {v0}, LaP/e;->a()Landroid/location/Location;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_5
-
-    iput-wide v4, p0, LaP/a;->H:J
-
-    new-instance v0, Landroid/hardware/GeomagneticField;
-
-    invoke-virtual {v3}, Landroid/location/Location;->getLatitude()D
-
-    move-result-wide v1
-
-    double-to-float v1, v1
-
-    invoke-virtual {v3}, Landroid/location/Location;->getLongitude()D
-
-    move-result-wide v6
-
-    double-to-float v2, v6
-
-    invoke-virtual {v3}, Landroid/location/Location;->getAltitude()D
-
-    move-result-wide v6
-
-    double-to-float v3, v6
-
-    invoke-direct/range {v0 .. v5}, Landroid/hardware/GeomagneticField;-><init>(FFFJ)V
-
-    invoke-virtual {v0}, Landroid/hardware/GeomagneticField;->getDeclination()F
-
-    move-result v0
-
-    iput v0, p0, LaP/a;->I:F
-    :try_end_3c
-    .catchall {:try_start_7 .. :try_end_3c} :catchall_3d
-
-    goto :goto_5
-
-    :catchall_3d
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+    goto :goto_14
 .end method
 
-.method private declared-synchronized m()V
-    .registers 6
+.method public static a(Landroid/location/Location;)Ljava/lang/String;
+    .registers 4
+    .parameter
 
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v2, p0, LaP/a;->K:Ljava/util/Map;
-
-    monitor-enter v2
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_40
-
-    :try_start_4
-    iget-object v0, p0, LaP/a;->K:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    .prologue
+    .line 385
+    invoke-virtual {p0}, Landroid/location/Location;->getProvider()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    .line 386
+    const-string v1, "network"
 
-    move-result-object v3
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    :cond_e
-    :goto_e
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    move-result v1
 
-    move-result v0
+    if-eqz v1, :cond_20
 
-    if-eqz v0, :cond_49
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    .line 390
+    invoke-virtual {p0}, Landroid/location/Location;->getExtras()Landroid/os/Bundle;
 
     move-result-object v1
 
-    check-cast v1, LaP/i;
+    .line 391
+    if-eqz v1, :cond_20
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    const-string v2, "networkLocationType"
+
+    invoke-virtual {v1, v2}, Landroid/os/Bundle;->getSerializable(Ljava/lang/String;)Ljava/io/Serializable;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_20
+
+    .line 392
+    const-string v0, "networkLocationType"
+
+    invoke-virtual {v1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, LaP/c;
+    .line 395
+    :cond_20
+    return-object v0
+.end method
 
-    if-eqz v1, :cond_e
+.method private a(Landroid/location/Location;Z)V
+    .registers 10
+    .parameter
+    .parameter
 
-    if-eqz v0, :cond_e
+    .prologue
+    .line 246
+    if-eqz p1, :cond_a3
 
-    sget-object v4, LaP/b;->a:[I
+    .line 247
+    if-eqz p2, :cond_83
 
-    invoke-virtual {v0}, LaP/c;->ordinal()I
+    iget-object v0, p0, Lap/a;->i:Lan/C;
+
+    :goto_6
+    invoke-virtual {v0, p1}, Lan/C;->a(Landroid/location/Location;)V
+
+    .line 248
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lap/a;->e:Z
+
+    .line 252
+    iget-object v0, p0, Lap/a;->l:Lcom/google/googlenav/common/a;
+
+    invoke-interface {v0}, Lcom/google/googlenav/common/a;->b()J
+
+    move-result-wide v3
+
+    .line 257
+    const/4 v2, 0x0
+
+    .line 266
+    if-eqz p2, :cond_89
+
+    .line 267
+    const-string v0, "gps"
+
+    iput-object v0, p0, Lap/a;->j:Ljava/lang/String;
+
+    .line 268
+    iput-wide v3, p0, Lap/a;->m:J
+
+    .line 286
+    iget-object v0, p0, Lap/a;->c:Lan/s;
+
+    if-eqz v0, :cond_86
+
+    iget-object v0, p0, Lap/a;->c:Lan/s;
+
+    invoke-virtual {v0}, Lan/s;->getTime()J
+
+    move-result-wide v0
+
+    .line 287
+    :goto_25
+    invoke-virtual {p0}, Lap/a;->j()I
+
+    move-result v5
+
+    const/4 v6, -0x1
+
+    if-eq v5, v6, :cond_54
+
+    invoke-virtual {p0}, Lap/a;->j()I
+
+    move-result v5
+
+    int-to-float v5, v5
+
+    invoke-virtual {p1}, Landroid/location/Location;->getAccuracy()F
+
+    move-result v6
+
+    cmpl-float v5, v5, v6
+
+    if-gtz v5, :cond_54
+
+    iget-object v5, p0, Lap/a;->k:Landroid/location/Location;
+
+    if-eqz v5, :cond_54
+
+    iget-object v5, p0, Lap/a;->k:Landroid/location/Location;
+
+    invoke-virtual {v5, p1}, Landroid/location/Location;->distanceTo(Landroid/location/Location;)F
+
+    move-result v5
+
+    invoke-virtual {p0}, Lap/a;->j()I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    cmpl-float v5, v5, v6
+
+    if-gtz v5, :cond_54
+
+    sub-long v0, v3, v0
+
+    const-wide/16 v3, 0x1770
+
+    cmp-long v0, v0, v3
+
+    if-lez v0, :cond_5f
+
+    .line 294
+    :cond_54
+    iget-boolean v0, p0, Lap/a;->o:Z
+
+    if-eqz v0, :cond_b1
+
+    .line 295
+    invoke-static {p1}, Lap/a;->b(Landroid/location/Location;)Ln/B;
+
+    move-result-object v0
+
+    .line 298
+    :goto_5c
+    iput-object p1, p0, Lap/a;->k:Landroid/location/Location;
+
+    move-object v2, v0
+
+    .line 302
+    :cond_5f
+    iget-object v0, p0, Lap/a;->c:Lan/s;
+
+    invoke-static {v0}, Lan/s;->a(Lan/s;)Lat/B;
+
+    .line 316
+    :cond_64
+    :goto_64
+    new-instance v0, Lan/u;
+
+    invoke-direct {v0}, Lan/u;-><init>()V
+
+    invoke-virtual {v0, p1}, Lan/u;->a(Landroid/location/Location;)Lan/u;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lap/a;->j:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lan/u;->a(Ljava/lang/String;)Lan/u;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Lan/u;->a(Ln/B;)Lan/u;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lan/u;->a()Lan/u;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lan/u;->b()Lan/s;
+
+    move-result-object v0
+
+    .line 322
+    invoke-virtual {p0, v0}, Lap/a;->b(Lan/s;)V
+
+    .line 331
+    :cond_82
+    :goto_82
+    return-void
+
+    .line 247
+    :cond_83
+    iget-object v0, p0, Lap/a;->a:Lan/C;
+
+    goto :goto_6
+
+    .line 286
+    :cond_86
+    const-wide/16 v0, 0x0
+
+    goto :goto_25
+
+    .line 304
+    :cond_89
+    iget-wide v0, p0, Lap/a;->m:J
+
+    const-wide/32 v5, 0xea60
+
+    add-long/2addr v0, v5
+
+    cmp-long v0, v3, v0
+
+    if-lez v0, :cond_64
+
+    .line 305
+    invoke-static {p1}, Lap/a;->a(Landroid/location/Location;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lap/a;->j:Ljava/lang/String;
+
+    .line 312
+    iget-object v0, p0, Lap/a;->c:Lan/s;
+
+    if-eqz v0, :cond_64
+
+    iget-object v0, p0, Lap/a;->c:Lan/s;
+
+    invoke-virtual {v0}, Lan/s;->a()Lat/B;
+
+    goto :goto_64
+
+    .line 325
+    :cond_a3
+    invoke-virtual {p0}, Lap/a;->o()Z
 
     move-result v0
 
-    aget v0, v4, v0
+    if-nez v0, :cond_82
 
-    packed-switch v0, :pswitch_data_52
+    .line 327
+    const/4 v0, 0x5
 
-    goto :goto_e
+    invoke-virtual {p0, v0}, Lap/a;->a(I)V
 
-    :pswitch_36
-    iget-object v0, p0, LaP/a;->J:Ljava/util/WeakHashMap;
+    .line 328
+    const/4 v0, 0x0
 
-    const/4 v4, 0x0
+    iput-boolean v0, p0, Lap/a;->e:Z
 
-    invoke-virtual {v0, v1, v4}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    goto :goto_82
 
-    goto :goto_e
+    :cond_b1
+    move-object v0, v2
 
-    :catchall_3d
-    move-exception v0
+    goto :goto_5c
+.end method
 
-    monitor-exit v2
-    :try_end_3f
-    .catchall {:try_start_4 .. :try_end_3f} :catchall_3d
+.method public static a(Ljava/lang/String;)Z
+    .registers 2
+    .parameter
 
-    :try_start_3f
-    throw v0
-    :try_end_40
-    .catchall {:try_start_3f .. :try_end_40} :catchall_40
+    .prologue
+    .line 418
+    const-string v0, "network"
 
-    :catchall_40
-    move-exception v0
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    monitor-exit p0
+    move-result v0
 
-    throw v0
+    if-nez v0, :cond_10
 
-    :pswitch_43
-    :try_start_43
-    iget-object v0, p0, LaP/a;->J:Ljava/util/WeakHashMap;
+    const-string v0, "cell"
 
-    invoke-virtual {v0, v1}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    goto :goto_e
+    move-result v0
 
-    :cond_49
-    iget-object v0, p0, LaP/a;->K:Ljava/util/Map;
+    if-eqz v0, :cond_12
 
-    invoke-interface {v0}, Ljava/util/Map;->clear()V
+    :cond_10
+    const/4 v0, 0x1
 
-    monitor-exit v2
-    :try_end_4f
-    .catchall {:try_start_43 .. :try_end_4f} :catchall_3d
+    :goto_11
+    return v0
 
-    monitor-exit p0
+    :cond_12
+    const/4 v0, 0x0
 
+    goto :goto_11
+.end method
+
+.method public static b(Ljava/lang/String;)Z
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 426
+    const-string v0, "wifi"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static u()Z
+    .registers 2
+
+    .prologue
+    .line 409
+    const-string v0, "debug.gmm.usegpsonly"
+
+    const-string v1, "false"
+
+    invoke-static {v0, v1}, Lcom/google/googlenav/common/j;->b(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method private v()V
+    .registers 6
+
+    .prologue
+    .line 214
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lap/a;->m:J
+
+    .line 225
+    const/4 v0, 0x0
+
+    .line 226
+    iget-boolean v1, p0, Lap/a;->n:Z
+
+    if-eqz v1, :cond_1f
+
+    iget-object v1, p0, Lap/a;->b:Landroid/location/LocationManager;
+
+    invoke-virtual {v1}, Landroid/location/LocationManager;->getAllProviders()Ljava/util/List;
+
+    move-result-object v1
+
+    const-string v2, "network"
+
+    invoke-interface {v1, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1f
+
+    .line 228
+    iget-object v0, p0, Lap/a;->b:Landroid/location/LocationManager;
+
+    const-string v1, "network"
+
+    invoke-virtual {v0, v1}, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
+
+    move-result-object v0
+
+    .line 230
+    :cond_1f
+    iget-object v1, p0, Lap/a;->l:Lcom/google/googlenav/common/a;
+
+    invoke-interface {v1}, Lcom/google/googlenav/common/a;->b()J
+
+    move-result-wide v1
+
+    .line 235
+    if-eqz v0, :cond_44
+
+    iget-object v3, p0, Lap/a;->b:Landroid/location/LocationManager;
+
+    invoke-virtual {v0}, Landroid/location/Location;->getProvider()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Landroid/location/LocationManager;->isProviderEnabled(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_44
+
+    invoke-virtual {v0}, Landroid/location/Location;->getTime()J
+
+    move-result-wide v3
+
+    sub-long/2addr v1, v3
+
+    const-wide/32 v3, 0xafc80
+
+    cmp-long v1, v1, v3
+
+    if-gtz v1, :cond_44
+
+    .line 238
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lap/a;->a(Landroid/location/Location;Z)V
+
+    .line 243
+    :goto_43
     return-void
 
-    nop
+    .line 241
+    :cond_44
+    invoke-virtual {p0}, Lap/a;->k()V
 
-    :pswitch_data_52
-    .packed-switch 0x1
-        :pswitch_36
-        :pswitch_43
-    .end packed-switch
+    goto :goto_43
 .end method
 
 
 # virtual methods
-.method public a(LaP/i;)V
-    .registers 4
+.method public a()Ljava/lang/String;
+    .registers 2
 
-    iget-object v0, p0, LaP/a;->K:Ljava/util/Map;
+    .prologue
+    .line 135
+    iget-object v0, p0, Lap/a;->j:Ljava/lang/String;
 
-    sget-object v1, LaP/c;->a:LaP/c;
+    return-object v0
+.end method
 
-    invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public a(Lan/q;)V
+    .registers 2
+    .parameter
 
+    .prologue
+    .line 130
+    invoke-super {p0, p1}, Lan/b;->a(Lan/q;)V
+
+    .line 131
     return-void
 .end method
 
-.method public a(LaP/j;)V
-    .registers 7
+.method protected b()V
+    .registers 2
 
-    const/4 v2, 0x2
+    .prologue
+    .line 151
+    iget-object v0, p0, Lap/a;->b:Landroid/location/LocationManager;
 
-    const/4 v1, 0x3
+    invoke-virtual {v0, p0}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
-    invoke-static {}, Lcom/google/googlenav/android/a;->g()Z
+    .line 152
+    return-void
+.end method
+
+.method protected c()V
+    .registers 8
+
+    .prologue
+    const-wide/16 v2, 0x0
+
+    const/4 v4, 0x0
+
+    .line 160
+    new-instance v0, Lan/C;
+
+    const-string v1, "n"
+
+    invoke-direct {v0, v1}, Lan/C;-><init>(Ljava/lang/String;)V
+
+    iput-object v0, p0, Lap/a;->a:Lan/C;
+
+    .line 161
+    new-instance v0, Lan/C;
+
+    const-string v1, "g"
+
+    invoke-direct {v0, v1}, Lan/C;-><init>(Ljava/lang/String;)V
+
+    iput-object v0, p0, Lap/a;->i:Lan/C;
+
+    .line 163
+    invoke-direct {p0}, Lap/a;->v()V
+
+    .line 165
+    iget-boolean v0, p0, Lap/a;->d:Z
+
+    if-nez v0, :cond_36
+
+    iget-object v0, p0, Lap/a;->b:Landroid/location/LocationManager;
+
+    invoke-virtual {v0}, Landroid/location/LocationManager;->getAllProviders()Ljava/util/List;
+
+    move-result-object v0
+
+    const-string v1, "gps"
+
+    invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v0
+
+    if-eqz v0, :cond_36
+
+    .line 166
+    iget-object v0, p0, Lap/a;->b:Landroid/location/LocationManager;
+
+    const-string v1, "gps"
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v6
+
+    move-object v5, p0
+
+    invoke-virtual/range {v0 .. v6}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;Landroid/os/Looper;)V
+
+    .line 170
+    :cond_36
+    iget-boolean v0, p0, Lap/a;->n:Z
+
+    if-eqz v0, :cond_54
+
+    iget-object v0, p0, Lap/a;->b:Landroid/location/LocationManager;
+
+    invoke-virtual {v0}, Landroid/location/LocationManager;->getAllProviders()Ljava/util/List;
+
+    move-result-object v0
+
+    const-string v1, "network"
+
+    invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_54
+
+    .line 172
+    iget-object v0, p0, Lap/a;->b:Landroid/location/LocationManager;
+
+    const-string v1, "network"
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v6
+
+    move-object v5, p0
+
+    invoke-virtual/range {v0 .. v6}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;Landroid/os/Looper;)V
+
+    .line 176
+    :cond_54
+    return-void
+.end method
+
+.method public d()Lan/s;
+    .registers 4
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 431
+    iget-object v1, p0, Lap/a;->b:Landroid/location/LocationManager;
+
+    if-eqz v1, :cond_36
+
+    iget-boolean v1, p0, Lap/a;->n:Z
+
+    if-eqz v1, :cond_36
+
+    .line 433
+    iget-object v1, p0, Lap/a;->b:Landroid/location/LocationManager;
+
+    invoke-virtual {v1}, Landroid/location/LocationManager;->getAllProviders()Ljava/util/List;
+
+    move-result-object v1
+
+    const-string v2, "network"
+
+    invoke-interface {v1, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_37
+
+    .line 434
+    iget-object v1, p0, Lap/a;->b:Landroid/location/LocationManager;
+
+    const-string v2, "network"
+
+    invoke-virtual {v1, v2}, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
+
+    move-result-object v1
+
+    .line 436
+    :goto_1f
+    if-eqz v1, :cond_36
+
+    .line 437
+    new-instance v0, Lan/u;
+
+    invoke-direct {v0}, Lan/u;-><init>()V
+
+    invoke-virtual {v0, v1}, Lan/u;->a(Landroid/location/Location;)Lan/u;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lap/a;->a()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lan/u;->a(Ljava/lang/String;)Lan/u;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lan/u;->b()Lan/s;
+
+    move-result-object v0
+
+    .line 440
+    :cond_36
+    return-object v0
+
+    :cond_37
+    move-object v1, v0
+
+    goto :goto_1f
+.end method
+
+.method public g()Z
+    .registers 2
+
+    .prologue
+    .line 368
+    iget-boolean v0, p0, Lap/a;->n:Z
 
     if-eqz v0, :cond_9
 
-    :cond_8
-    :goto_8
-    return-void
-
-    :cond_9
-    iget-boolean v0, p0, LaP/a;->b:Z
-
-    if-eqz v0, :cond_8
-
-    iget-object v0, p0, LaP/a;->c:LaP/j;
-
-    if-eq v0, p1, :cond_8
-
-    iput-object p1, p0, LaP/a;->c:LaP/j;
-
-    invoke-static {}, Lcom/google/googlenav/android/a;->d()Z
+    .line 369
+    invoke-super {p0}, Lan/b;->g()Z
 
     move-result v0
 
-    if-eqz v0, :cond_38
-
-    iget v0, p1, LaP/j;->d:I
-
-    if-nez v0, :cond_35
-
-    move v0, v1
-
-    :goto_1e
-    invoke-direct {p0}, LaP/a;->j()Landroid/hardware/SensorManager;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p0}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
-
-    sget-boolean v4, Lcom/google/googlenav/android/I;->e:Z
-
-    if-eqz v4, :cond_40
-
-    invoke-virtual {v3, v1}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
-
-    move-result-object v1
-
-    iput-object v1, p0, LaP/a;->l:Landroid/hardware/Sensor;
-
-    iget-object v1, p0, LaP/a;->l:Landroid/hardware/Sensor;
-
-    invoke-virtual {v3, p0, v1, v0}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
-
-    goto :goto_8
-
-    :cond_35
-    iget v0, p1, LaP/j;->d:I
-
-    goto :goto_1e
-
-    :cond_38
-    sget-object v0, LaP/j;->c:LaP/j;
-
-    if-ne p1, v0, :cond_3e
-
-    move v0, v2
-
-    goto :goto_1e
-
-    :cond_3e
-    move v0, v1
-
-    goto :goto_1e
-
-    :cond_40
-    invoke-static {}, Lcom/google/googlenav/android/a;->d()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_58
-
-    sget-boolean v1, Lcom/google/googlenav/android/I;->f:Z
-
-    if-nez v1, :cond_58
-
-    const/16 v1, 0xb
-
-    invoke-virtual {v3, v1}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
-
-    move-result-object v1
-
-    iput-object v1, p0, LaP/a;->m:Landroid/hardware/Sensor;
-
-    iget-object v1, p0, LaP/a;->m:Landroid/hardware/Sensor;
-
-    invoke-virtual {v3, p0, v1, v0}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
-
-    goto :goto_8
-
-    :cond_58
-    invoke-virtual {v3, v2}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
-
-    move-result-object v1
-
-    iput-object v1, p0, LaP/a;->j:Landroid/hardware/Sensor;
-
-    iget-object v1, p0, LaP/a;->j:Landroid/hardware/Sensor;
-
-    invoke-virtual {v3, p0, v1, v0}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v3, v1}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
-
-    move-result-object v1
-
-    iput-object v1, p0, LaP/a;->k:Landroid/hardware/Sensor;
-
-    iget-object v1, p0, LaP/a;->k:Landroid/hardware/Sensor;
-
-    invoke-virtual {v3, p0, v1, v0}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
-
-    goto :goto_8
-.end method
-
-.method public a(Landroid/content/Context;)V
-    .registers 6
-
-    const/4 v3, 0x0
-
-    iget-object v0, p0, LaP/a;->d:Landroid/content/Context;
-
-    if-eq v0, p1, :cond_28
-
-    iput-object p1, p0, LaP/a;->d:Landroid/content/Context;
-
-    iput-object v3, p0, LaP/a;->e:Landroid/hardware/SensorManager;
-
-    const-string v0, "window"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/WindowManager;
-
-    iput-object v0, p0, LaP/a;->Q:Landroid/view/WindowManager;
-
-    iget-object v0, p0, LaP/a;->Q:Landroid/view/WindowManager;
-
-    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    :try_start_1d
-    const-string v1, "getRotation"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Class;
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    iput-object v0, p0, LaP/a;->R:Ljava/lang/reflect/Method;
-    :try_end_28
-    .catch Ljava/lang/SecurityException; {:try_start_1d .. :try_end_28} :catch_29
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_1d .. :try_end_28} :catch_2d
-
-    :cond_28
-    :goto_28
-    return-void
-
-    :catch_29
-    move-exception v0
-
-    iput-object v3, p0, LaP/a;->R:Ljava/lang/reflect/Method;
-
-    goto :goto_28
-
-    :catch_2d
-    move-exception v0
-
-    iput-object v3, p0, LaP/a;->R:Ljava/lang/reflect/Method;
-
-    goto :goto_28
-.end method
-
-.method public declared-synchronized a()Z
-    .registers 3
-
-    monitor-enter p0
-
-    :try_start_1
-    iget v0, p0, LaP/a;->g:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_b
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_9
-
-    const/4 v0, 0x1
-
-    :goto_7
-    monitor-exit p0
-
+    .line 372
+    :goto_8
     return v0
 
     :cond_9
-    const/4 v0, 0x0
+    invoke-virtual {p0}, Lap/a;->i()Z
 
-    goto :goto_7
+    move-result v0
 
-    :catchall_b
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized a(JZZ)Z
-    .registers 13
-
-    const/4 v1, 0x0
+    if-nez v0, :cond_11
 
     const/4 v0, 0x1
 
-    monitor-enter p0
+    goto :goto_8
 
-    if-eqz p3, :cond_7
+    :cond_11
+    const/4 v0, 0x0
 
-    :cond_5
-    :goto_5
-    monitor-exit p0
+    goto :goto_8
+.end method
 
-    return v0
+.method public l()Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+    .registers 9
 
-    :cond_7
-    if-nez p4, :cond_1a
+    .prologue
+    const/4 v7, 0x2
 
-    :try_start_9
-    iget-wide v2, p0, LaP/a;->x:J
+    const/4 v6, 0x1
 
-    iget-wide v4, p0, LaP/a;->y:J
+    const-wide v4, 0x416312d000000000L
 
-    sub-long/2addr v2, v4
+    .line 194
+    iget-object v0, p0, Lap/a;->k:Landroid/location/Location;
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->abs(J)J
+    if-nez v0, :cond_d
+
+    .line 195
+    const/4 v0, 0x0
+
+    .line 210
+    :goto_c
+    return-object v0
+
+    .line 197
+    :cond_d
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    sget-object v1, Lbf/R;->c:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-direct {v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;-><init>(Lcom/google/googlenav/common/io/protocol/ProtoBufType;)V
+
+    .line 198
+    const-string v1, "gps"
+
+    invoke-virtual {v0, v7, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->setString(ILjava/lang/String;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    .line 199
+    const/4 v1, 0x3
+
+    iget-object v2, p0, Lap/a;->k:Landroid/location/Location;
+
+    invoke-virtual {v2}, Landroid/location/Location;->getAccuracy()F
+
+    move-result v2
+
+    float-to-int v2, v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->setInt(II)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    .line 200
+    const/4 v1, 0x6
+
+    iget-object v2, p0, Lap/a;->k:Landroid/location/Location;
+
+    invoke-virtual {v2}, Landroid/location/Location;->getTime()J
 
     move-result-wide v2
 
-    const-wide/16 v4, 0x1388
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->setLong(IJ)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    cmp-long v2, v2, v4
+    .line 201
+    const/16 v1, 0xc
 
-    if-lez v2, :cond_1a
+    iget-object v2, p0, Lap/a;->k:Landroid/location/Location;
 
-    move v0, v1
+    invoke-virtual {v2}, Landroid/location/Location;->getSpeed()F
 
-    goto :goto_5
+    move-result v2
 
-    :cond_1a
-    iget-object v2, p0, LaP/a;->c:LaP/j;
+    float-to-int v2, v2
 
-    sget-object v3, LaP/j;->c:LaP/j;
+    invoke-virtual {v0, v1, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->setInt(II)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    if-ne v2, v3, :cond_47
+    .line 202
+    const/16 v1, 0xd
 
-    const-wide/high16 v2, 0x4049
+    iget-object v2, p0, Lap/a;->k:Landroid/location/Location;
 
-    :goto_22
-    iget-wide v4, p0, LaP/a;->w:J
+    invoke-virtual {v2}, Landroid/location/Location;->getBearing()F
 
-    const-wide/high16 v6, -0x8000
+    move-result v2
 
-    cmp-long v4, v4, v6
+    float-to-int v2, v2
 
-    if-eqz v4, :cond_33
+    invoke-virtual {v0, v1, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->setInt(II)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    iget-wide v4, p0, LaP/a;->w:J
+    .line 204
+    new-instance v1, Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    sub-long v4, p1, v4
+    sget-object v2, Lbf/P;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    long-to-double v4, v4
+    invoke-direct {v1, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;-><init>(Lcom/google/googlenav/common/io/protocol/ProtoBufType;)V
 
-    cmpl-double v2, v4, v2
+    .line 205
+    iget-object v2, p0, Lap/a;->k:Landroid/location/Location;
 
-    if-lez v2, :cond_4a
+    invoke-virtual {v2}, Landroid/location/Location;->getLatitude()D
 
-    :cond_33
-    if-nez p4, :cond_5
+    move-result-wide v2
 
-    iget-object v1, p0, LaP/a;->n:[F
+    mul-double/2addr v2, v4
 
-    iget-object v2, p0, LaP/a;->r:[F
+    double-to-int v2, v2
 
-    invoke-static {v1, v2}, LaP/a;->b([F[F)V
+    invoke-virtual {v1, v6, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->setInt(II)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    iget-object v1, p0, LaP/a;->o:[F
+    .line 206
+    iget-object v2, p0, Lap/a;->k:Landroid/location/Location;
 
-    iget-object v2, p0, LaP/a;->s:[F
+    invoke-virtual {v2}, Landroid/location/Location;->getLongitude()D
 
-    invoke-static {v1, v2}, LaP/a;->b([F[F)V
-    :try_end_43
-    .catchall {:try_start_9 .. :try_end_43} :catchall_44
+    move-result-wide v2
 
-    goto :goto_5
+    mul-double/2addr v2, v4
 
-    :catchall_44
-    move-exception v0
+    double-to-int v2, v2
 
-    monitor-exit p0
+    invoke-virtual {v1, v7, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->setInt(II)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    throw v0
+    .line 207
+    invoke-virtual {v0, v6, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->setProtoBuf(ILcom/google/googlenav/common/io/protocol/ProtoBuf;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    :cond_47
-    const-wide/high16 v2, 0x4059
+    .line 208
+    const/16 v1, 0x8
 
-    goto :goto_22
+    const/4 v2, 0x0
 
-    :cond_4a
-    if-eqz p4, :cond_6c
+    invoke-virtual {v0, v1, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->setInt(II)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    :try_start_4c
-    iget-object v2, p0, LaP/a;->c:LaP/j;
-
-    sget-object v3, LaP/j;->c:LaP/j;
-
-    if-ne v2, v3, :cond_68
-
-    sget v2, LaP/a;->P:F
-
-    float-to-double v2, v2
-
-    :goto_55
-    iget-object v4, p0, LaP/a;->q:[F
-
-    iget-object v5, p0, LaP/a;->v:[F
-
-    invoke-static {v4, v5}, LaP/a;->a([F[F)F
-
-    move-result v4
-
-    invoke-static {v4}, Ljava/lang/Math;->abs(F)F
-
-    move-result v4
-
-    float-to-double v4, v4
-
-    cmpg-double v2, v4, v2
-
-    if-ltz v2, :cond_5
-
-    :cond_66
-    move v0, v1
-
-    goto :goto_5
-
-    :cond_68
-    sget v2, LaP/a;->O:F
-
-    float-to-double v2, v2
-
-    goto :goto_55
-
-    :cond_6c
-    iget-object v2, p0, LaP/a;->c:LaP/j;
-
-    sget-object v3, LaP/j;->c:LaP/j;
-
-    if-ne v2, v3, :cond_9f
-
-    sget v2, LaP/a;->N:F
-
-    float-to-double v2, v2
-
-    :goto_75
-    iget-object v4, p0, LaP/a;->n:[F
-
-    iget-object v5, p0, LaP/a;->r:[F
-
-    invoke-static {v4, v5}, LaP/a;->b([F[F)V
-
-    iget-object v4, p0, LaP/a;->o:[F
-
-    iget-object v5, p0, LaP/a;->s:[F
-
-    invoke-static {v4, v5}, LaP/a;->b([F[F)V
-
-    iget-object v4, p0, LaP/a;->r:[F
-
-    iget-object v5, p0, LaP/a;->t:[F
-
-    invoke-static {v4, v5}, LaP/a;->a([F[F)F
-
-    move-result v4
-
-    float-to-double v4, v4
-
-    cmpg-double v4, v4, v2
-
-    if-ltz v4, :cond_5
-
-    iget-object v4, p0, LaP/a;->s:[F
-
-    iget-object v5, p0, LaP/a;->u:[F
-
-    invoke-static {v4, v5}, LaP/a;->a([F[F)F
-
-    move-result v4
-
-    float-to-double v4, v4
-
-    cmpg-double v2, v4, v2
-
-    if-gez v2, :cond_66
-
-    goto/16 :goto_5
-
-    :cond_9f
-    sget v2, LaP/a;->M:F
-    :try_end_a1
-    .catchall {:try_start_4c .. :try_end_a1} :catchall_44
-
-    float-to-double v2, v2
-
-    goto :goto_75
+    goto :goto_c
 .end method
 
-.method public declared-synchronized b()I
-    .registers 2
-
-    monitor-enter p0
-
-    :try_start_1
-    iget v0, p0, LaP/a;->g:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_5
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized b(JZZ)V
-    .registers 14
-
-    const/high16 v7, 0x42b4
-
-    const v6, 0x42652ee0
-
-    const/4 v0, 0x1
-
-    monitor-enter p0
-
-    if-eqz p3, :cond_66
-
-    :try_start_9
-    iget-object v0, p0, LaP/a;->p:[F
-
-    const/4 v1, 0x0
-
-    aget v0, v0, v1
-
-    invoke-direct {p0}, LaP/a;->k()I
-
-    move-result v1
-
-    packed-switch v1, :pswitch_data_fe
-
-    :goto_15
-    invoke-static {v0}, Lar/i;->a(F)F
-
-    move-result v0
-
-    invoke-direct {p0}, LaP/a;->l()V
-
-    iget v1, p0, LaP/a;->I:F
-
-    add-float/2addr v0, v1
-
-    invoke-static {v0}, Lar/i;->a(F)F
-
-    move-result v0
-
-    iget-object v1, p0, LaP/a;->f:LaP/f;
-
-    invoke-virtual {v1, p1, p2, v0}, LaP/f;->a(JF)F
-
-    move-result v0
-
-    iput v0, p0, LaP/a;->h:F
-
-    invoke-direct {p0}, LaP/a;->m()V
-
-    iget-object v0, p0, LaP/a;->L:LaP/d;
-
-    iget v3, p0, LaP/a;->h:F
-
-    iget v4, p0, LaP/a;->i:F
-
-    iget-object v5, p0, LaP/a;->c:LaP/j;
-
-    move-wide v1, p1
-
-    invoke-static/range {v0 .. v5}, LaP/d;->a(LaP/d;JFFLaP/j;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_e0
-
-    iget-object v0, p0, LaP/a;->J:Ljava/util/WeakHashMap;
-
-    invoke-virtual {v0}, Ljava/util/WeakHashMap;->keySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_47
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_e0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, LaP/i;
-
-    iget v2, p0, LaP/a;->h:F
-
-    iget v3, p0, LaP/a;->i:F
-
-    invoke-interface {v0, v2, v3}, LaP/i;->a(FF)V
-    :try_end_5a
-    .catchall {:try_start_9 .. :try_end_5a} :catchall_5b
-
-    goto :goto_47
-
-    :catchall_5b
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-
-    :pswitch_5e
-    add-float/2addr v0, v7
-
-    goto :goto_15
-
-    :pswitch_60
-    sub-float/2addr v0, v7
-
-    goto :goto_15
-
-    :pswitch_62
-    const/high16 v1, 0x4334
-
-    add-float/2addr v0, v1
-
-    goto :goto_15
-
-    :cond_66
-    :try_start_66
-    iput-wide p1, p0, LaP/a;->w:J
-
-    if-eqz p4, :cond_bf
-
-    iget-object v1, p0, LaP/a;->q:[F
-
-    const/4 v2, 0x0
-
-    iget-object v3, p0, LaP/a;->v:[F
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x4
-
-    invoke-static {v1, v2, v3, v4, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iget-object v1, p0, LaP/a;->z:[F
-
-    iget-object v2, p0, LaP/a;->q:[F
-
-    invoke-static {v1, v2}, Landroid/hardware/SensorManager;->getRotationMatrixFromVector([F[F)V
-
-    :cond_7b
-    invoke-direct {p0}, LaP/a;->k()I
-
-    move-result v1
-
-    packed-switch v1, :pswitch_data_108
-
-    const/4 v1, 0x2
-
-    move v8, v1
-
-    move v1, v0
-
-    move v0, v8
-
-    :goto_86
-    iget-object v2, p0, LaP/a;->z:[F
-
-    iget-object v3, p0, LaP/a;->A:[F
-
-    invoke-static {v2, v1, v0, v3}, Landroid/hardware/SensorManager;->remapCoordinateSystem([FII[F)Z
-
-    move-result v0
-
-    if-nez v0, :cond_90
-
-    :cond_90
-    iget-object v0, p0, LaP/a;->A:[F
-
-    const/4 v1, 0x7
-
-    aget v0, v0, v1
-
-    sget v1, LaP/a;->a:F
-
-    cmpl-float v0, v0, v1
-
-    if-lez v0, :cond_ee
-
-    iget-object v0, p0, LaP/a;->A:[F
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x3
-
-    iget-object v3, p0, LaP/a;->z:[F
-
-    invoke-static {v0, v1, v2, v3}, Landroid/hardware/SensorManager;->remapCoordinateSystem([FII[F)Z
-
-    move-result v0
-
-    if-nez v0, :cond_a7
-
-    :cond_a7
-    iget-object v0, p0, LaP/a;->z:[F
-
-    iget-object v1, p0, LaP/a;->B:[F
-
-    invoke-static {v0, v1}, Landroid/hardware/SensorManager;->getOrientation([F[F)[F
-
-    iget-object v0, p0, LaP/a;->B:[F
-
-    const/4 v1, 0x1
-
-    aget v0, v0, v1
-
-    mul-float/2addr v0, v6
-
-    sub-float/2addr v0, v7
-
-    iput v0, p0, LaP/a;->i:F
-
-    :goto_b7
-    iget-object v0, p0, LaP/a;->B:[F
-
-    const/4 v1, 0x0
-
-    aget v0, v0, v1
-
-    mul-float/2addr v0, v6
-
-    goto/16 :goto_15
-
-    :cond_bf
-    iget-object v1, p0, LaP/a;->r:[F
-
-    const/4 v2, 0x0
-
-    iget-object v3, p0, LaP/a;->t:[F
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x3
-
-    invoke-static {v1, v2, v3, v4, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iget-object v1, p0, LaP/a;->s:[F
-
-    const/4 v2, 0x0
-
-    iget-object v3, p0, LaP/a;->u:[F
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x3
-
-    invoke-static {v1, v2, v3, v4, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iget-object v1, p0, LaP/a;->z:[F
-
-    const/4 v2, 0x0
-
-    iget-object v3, p0, LaP/a;->o:[F
-
-    iget-object v4, p0, LaP/a;->n:[F
-
-    invoke-static {v1, v2, v3, v4}, Landroid/hardware/SensorManager;->getRotationMatrix([F[F[F[F)Z
-    :try_end_dd
-    .catchall {:try_start_66 .. :try_end_dd} :catchall_5b
-
-    move-result v1
-
-    if-nez v1, :cond_7b
-
-    :cond_e0
-    monitor-exit p0
-
-    return-void
-
-    :pswitch_e2
-    const/4 v1, 0x2
-
-    const/16 v0, 0x81
-
-    goto :goto_86
-
-    :pswitch_e6
-    const/16 v1, 0x82
-
-    goto :goto_86
-
-    :pswitch_e9
-    const/16 v1, 0x81
-
-    const/16 v0, 0x82
-
-    goto :goto_86
-
-    :cond_ee
-    :try_start_ee
-    iget-object v0, p0, LaP/a;->A:[F
-
-    iget-object v1, p0, LaP/a;->B:[F
-
-    invoke-static {v0, v1}, Landroid/hardware/SensorManager;->getOrientation([F[F)[F
-
-    iget-object v0, p0, LaP/a;->B:[F
-
-    const/4 v1, 0x1
-
-    aget v0, v0, v1
-
-    mul-float/2addr v0, v6
-
-    iput v0, p0, LaP/a;->i:F
-    :try_end_fd
-    .catchall {:try_start_ee .. :try_end_fd} :catchall_5b
-
-    goto :goto_b7
-
-    :pswitch_data_fe
-    .packed-switch 0x1
-        :pswitch_5e
-        :pswitch_62
-        :pswitch_60
-    .end packed-switch
-
-    :pswitch_data_108
-    .packed-switch 0x1
-        :pswitch_e2
-        :pswitch_e9
-        :pswitch_e6
-    .end packed-switch
-.end method
-
-.method public b(LaP/i;)V
+.method public onLocationChanged(Landroid/location/Location;)V
     .registers 4
+    .parameter
 
-    iget-object v0, p0, LaP/a;->K:Ljava/util/Map;
-
-    sget-object v1, LaP/c;->b:LaP/c;
-
-    invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public declared-synchronized c()Z
-    .registers 3
-
-    monitor-enter p0
-
-    :try_start_1
-    iget v0, p0, LaP/a;->h:F
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_d
-
-    const/4 v1, 0x0
-
-    cmpl-float v0, v0, v1
-
-    if-ltz v0, :cond_b
-
-    const/4 v0, 0x1
-
-    :goto_9
-    monitor-exit p0
-
-    return v0
-
-    :cond_b
-    const/4 v0, 0x0
-
-    goto :goto_9
-
-    :catchall_d
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized d()F
-    .registers 2
-
-    monitor-enter p0
-
-    :try_start_1
-    iget v0, p0, LaP/a;->h:F
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_5
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method protected declared-synchronized e()V
-    .registers 3
-
-    monitor-enter p0
-
-    const/4 v0, 0x1
-
-    :try_start_2
-    iput-boolean v0, p0, LaP/a;->b:Z
-
-    const-wide/16 v0, 0x0
-
-    iput-wide v0, p0, LaP/a;->x:J
-
-    const-wide/16 v0, 0x0
-
-    iput-wide v0, p0, LaP/a;->y:J
-
-    sget-object v0, LaP/j;->b:LaP/j;
-
-    invoke-virtual {p0, v0}, LaP/a;->a(LaP/j;)V
-    :try_end_11
-    .catchall {:try_start_2 .. :try_end_11} :catchall_13
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_13
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method protected declared-synchronized f()V
-    .registers 2
-
-    monitor-enter p0
-
-    :try_start_1
-    invoke-direct {p0}, LaP/a;->j()Landroid/hardware/SensorManager;
+    .prologue
+    .line 335
+    invoke-virtual {p1}, Landroid/location/Location;->getProvider()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
+    const-string v1, "gps"
 
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, LaP/a;->b:Z
-
-    sget-object v0, LaP/j;->a:LaP/j;
-
-    iput-object v0, p0, LaP/a;->c:LaP/j;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, LaP/a;->j:Landroid/hardware/Sensor;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, LaP/a;->k:Landroid/hardware/Sensor;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, LaP/a;->l:Landroid/hardware/Sensor;
-    :try_end_18
-    .catchall {:try_start_1 .. :try_end_18} :catchall_1a
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_1a
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized onAccuracyChanged(Landroid/hardware/Sensor;I)V
-    .registers 5
-
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v0, p0, LaP/a;->k:Landroid/hardware/Sensor;
-
-    if-ne p1, v0, :cond_35
-
-    iput p2, p0, LaP/a;->D:I
-
-    :cond_7
-    :goto_7
-    iget-object v0, p0, LaP/a;->l:Landroid/hardware/Sensor;
-
-    if-eq p1, v0, :cond_f
-
-    iget-object v0, p0, LaP/a;->m:Landroid/hardware/Sensor;
-
-    if-ne p1, v0, :cond_3c
-
-    :cond_f
-    :goto_f
-    iget v0, p0, LaP/a;->g:I
-
-    if-eq p2, v0, :cond_45
-
-    iput p2, p0, LaP/a;->g:I
-
-    invoke-direct {p0}, LaP/a;->m()V
-
-    iget-object v0, p0, LaP/a;->J:Ljava/util/WeakHashMap;
-
-    invoke-virtual {v0}, Ljava/util/WeakHashMap;->keySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_22
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_45
+    invoke-direct {p0, p1, v0}, Lap/a;->a(Landroid/location/Location;Z)V
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, LaP/i;
-
-    invoke-interface {v0, p2}, LaP/i;->a(I)V
-    :try_end_31
-    .catchall {:try_start_1 .. :try_end_31} :catchall_32
-
-    goto :goto_22
-
-    :catchall_32
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-
-    :cond_35
-    :try_start_35
-    iget-object v0, p0, LaP/a;->j:Landroid/hardware/Sensor;
-
-    if-ne p1, v0, :cond_7
-
-    iput p2, p0, LaP/a;->C:I
-
-    goto :goto_7
-
-    :cond_3c
-    iget v0, p0, LaP/a;->D:I
-
-    iget v1, p0, LaP/a;->C:I
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
-    :try_end_43
-    .catchall {:try_start_35 .. :try_end_43} :catchall_32
-
-    move-result p2
-
-    goto :goto_f
-
-    :cond_45
-    monitor-exit p0
-
+    .line 337
     return-void
 .end method
 
-.method public declared-synchronized onSensorChanged(Landroid/hardware/SensorEvent;)V
-    .registers 12
+.method public onProviderDisabled(Ljava/lang/String;)V
+    .registers 3
+    .parameter
 
-    const/4 v0, 0x1
+    .prologue
+    .line 357
+    const-string v0, "gps"
 
-    const/4 v9, 0x3
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const/4 v1, 0x0
+    move-result v0
 
-    monitor-enter p0
+    if-eqz v0, :cond_b
 
-    :try_start_4
-    iget-object v2, p0, LaP/a;->G:Laf/a;
+    .line 362
+    invoke-direct {p0}, Lap/a;->v()V
 
-    invoke-interface {v2}, Laf/a;->c()J
-
-    move-result-wide v3
-
-    iget-object v2, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
-
-    iget-object v5, p0, LaP/a;->l:Landroid/hardware/Sensor;
-
-    if-ne v2, v5, :cond_34
-
-    move v2, v0
-
-    :goto_11
-    iget-object v5, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
-
-    iget-object v6, p0, LaP/a;->m:Landroid/hardware/Sensor;
-
-    if-ne v5, v6, :cond_36
-
-    :goto_17
-    iget-object v1, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
-
-    iget-object v5, p0, LaP/a;->j:Landroid/hardware/Sensor;
-
-    if-ne v1, v5, :cond_38
-
-    iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
-
-    const/4 v5, 0x0
-
-    iget-object v6, p0, LaP/a;->n:[F
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x3
-
-    invoke-static {v1, v5, v6, v7, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iput-wide v3, p0, LaP/a;->x:J
-
-    :cond_29
-    :goto_29
-    invoke-virtual {p0, v3, v4, v2, v0}, LaP/a;->a(JZZ)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_32
-
-    invoke-virtual {p0, v3, v4, v2, v0}, LaP/a;->b(JZZ)V
-    :try_end_32
-    .catchall {:try_start_4 .. :try_end_32} :catchall_4b
-
-    :cond_32
-    monitor-exit p0
-
+    .line 364
+    :cond_b
     return-void
+.end method
 
-    :cond_34
-    move v2, v1
+.method public onProviderEnabled(Ljava/lang/String;)V
+    .registers 2
+    .parameter
 
-    goto :goto_11
+    .prologue
+    .line 353
+    return-void
+.end method
 
-    :cond_36
-    move v0, v1
+.method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
 
-    goto :goto_17
+    .prologue
+    .line 341
+    const-string v0, "gps"
 
-    :cond_38
-    :try_start_38
-    iget-object v1, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iget-object v5, p0, LaP/a;->k:Landroid/hardware/Sensor;
+    move-result v0
 
-    if-ne v1, v5, :cond_4e
+    if-eqz v0, :cond_d
 
-    iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
+    if-nez p2, :cond_d
 
-    const/4 v5, 0x0
+    .line 344
+    invoke-direct {p0}, Lap/a;->v()V
 
-    iget-object v6, p0, LaP/a;->o:[F
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x3
-
-    invoke-static {v1, v5, v6, v7, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iput-wide v3, p0, LaP/a;->y:J
-    :try_end_4a
-    .catchall {:try_start_38 .. :try_end_4a} :catchall_4b
-
-    goto :goto_29
-
-    :catchall_4b
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-
-    :cond_4e
-    if-eqz v2, :cond_5b
-
-    :try_start_50
-    iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
-
-    const/4 v5, 0x0
-
-    iget-object v6, p0, LaP/a;->p:[F
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x3
-
-    invoke-static {v1, v5, v6, v7, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    goto :goto_29
-
-    :cond_5b
-    if-eqz v0, :cond_29
-
-    iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
-
-    const/4 v5, 0x0
-
-    iget-object v6, p0, LaP/a;->q:[F
-
-    const/4 v7, 0x0
-
-    iget-object v8, p1, Landroid/hardware/SensorEvent;->values:[F
-
-    array-length v8, v8
-
-    invoke-static {v1, v5, v6, v7, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
-
-    array-length v1, v1
-
-    if-ne v1, v9, :cond_29
-
-    iget-object v1, p0, LaP/a;->q:[F
-
-    const/4 v5, 0x3
-
-    iget-object v6, p0, LaP/a;->q:[F
-
-    invoke-static {v6}, LaP/a;->a([F)F
-
-    move-result v6
-
-    aput v6, v1, v5
-    :try_end_79
-    .catchall {:try_start_50 .. :try_end_79} :catchall_4b
-
-    goto :goto_29
+    .line 347
+    :cond_d
+    return-void
 .end method

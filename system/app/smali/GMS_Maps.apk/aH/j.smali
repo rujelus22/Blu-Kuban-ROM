@@ -1,129 +1,211 @@
-.class public LaH/j;
-.super LaE/a;
-
-# interfaces
-.implements Landroid/location/LocationListener;
-
-
-# static fields
-.field protected static h:LaH/g;
+.class Lah/j;
+.super LY/b;
+.source "SourceFile"
 
 
 # instance fields
-.field private volatile i:Z
+.field private final a:Ljava/util/Vector;
+
+.field private final b:Lah/k;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+.method public constructor <init>(LY/c;Ljava/util/Vector;Lah/k;)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0, p1}, LaE/a;-><init>(Landroid/content/Context;)V
+    .prologue
+    .line 774
+    invoke-direct {p0, p1}, LY/b;-><init>(LY/c;)V
 
-    const/4 v0, 0x0
+    .line 775
+    iput-object p2, p0, Lah/j;->a:Ljava/util/Vector;
 
-    iput-boolean v0, p0, LaH/j;->i:Z
+    .line 776
+    iput-object p3, p0, Lah/j;->b:Lah/k;
 
-    new-instance v0, LaH/g;
-
-    invoke-direct {v0, p0, p1}, LaH/g;-><init>(LaH/j;Landroid/content/Context;)V
-
-    sput-object v0, LaH/j;->h:LaH/g;
-
+    .line 777
     return-void
 .end method
 
 
 # virtual methods
-.method protected b()V
-    .registers 2
+.method public a()V
+    .registers 8
 
-    invoke-super {p0}, LaE/a;->b()V
-
-    monitor-enter p0
-
-    :try_start_4
-    sget-object v0, LaH/j;->h:LaH/g;
-
-    invoke-virtual {v0}, LaH/g;->b()V
-
-    monitor-exit p0
-    :try_end_a
-    .catchall {:try_start_4 .. :try_end_a} :catchall_e
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, LaH/j;->i:Z
-
-    return-void
-
-    :catchall_e
-    move-exception v0
-
-    :try_start_f
-    monitor-exit p0
-    :try_end_10
-    .catchall {:try_start_f .. :try_end_10} :catchall_e
-
-    throw v0
-.end method
-
-.method protected c()V
-    .registers 2
-
-    sget-object v0, LaH/j;->h:LaH/g;
-
-    invoke-virtual {v0}, LaH/g;->a()V
-
-    iget-boolean v0, p0, LaH/j;->i:Z
-
-    if-nez v0, :cond_c
-
-    invoke-super {p0}, LaE/a;->c()V
-
-    :cond_c
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, LaH/j;->i:Z
-
-    return-void
-.end method
-
-.method protected c(Landroid/location/Location;)V
-    .registers 3
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0}, LaH/j;->a(Landroid/location/Location;Z)V
-
-    return-void
-.end method
-
-.method protected d(Landroid/location/Location;)V
-    .registers 3
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, p1, v0}, LaH/j;->a(Landroid/location/Location;Z)V
-
-    return-void
-.end method
-
-.method public onLocationChanged(Landroid/location/Location;)V
-    .registers 4
-
-    if-nez p1, :cond_3
-
-    :goto_2
-    return-void
-
-    :cond_3
-    invoke-static {p1}, LaH/j;->b(Landroid/location/Location;)Lt/y;
+    .prologue
+    .line 787
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
 
     move-result-object v0
 
-    sget-object v1, LaH/j;->h:LaH/g;
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->m()Lcom/google/googlenav/common/io/j;
 
-    invoke-virtual {v1, p1, v0}, LaH/g;->a(Landroid/location/Location;Lt/y;)V
+    move-result-object v2
 
-    goto :goto_2
+    .line 788
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lah/j;->a:Ljava/util/Vector;
+
+    invoke-virtual {v1}, Ljava/util/Vector;->size()I
+
+    move-result v3
+
+    move v1, v0
+
+    :goto_10
+    if-ge v1, v3, :cond_89
+
+    .line 789
+    iget-object v0, p0, Lah/j;->a:Ljava/util/Vector;
+
+    invoke-virtual {v0, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lah/m;
+
+    .line 792
+    invoke-virtual {v0}, Lah/m;->h()Z
+
+    move-result v4
+
+    if-nez v4, :cond_24
+
+    .line 788
+    :goto_20
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_10
+
+    .line 796
+    :cond_24
+    :try_start_24
+    invoke-virtual {v0}, Lah/m;->g()Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    move-result-object v4
+
+    .line 797
+    invoke-virtual {v4}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->toByteArray()[B
+
+    move-result-object v4
+
+    .line 798
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "PHOTO_"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v0}, Lah/m;->a()Ljava/lang/Long;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-interface {v2, v4, v5}, Lcom/google/googlenav/common/io/j;->b([BLjava/lang/String;)I
+
+    move-result v4
+
+    .line 801
+    if-gtz v4, :cond_83
+
+    .line 802
+    new-instance v1, Ljava/io/IOException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "write failed, error Code:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+    :try_end_62
+    .catch Ljava/io/IOException; {:try_start_24 .. :try_end_62} :catch_62
+
+    .line 806
+    :catch_62
+    move-exception v1
+
+    .line 811
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "FLASH-PhotoSaveToDiskTask can\'t savePHOTO_"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Lah/m;->a()Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0, v1}, LaT/c;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 815
+    iget-object v0, p0, Lah/j;->b:Lah/k;
+
+    invoke-interface {v0}, Lah/k;->b()V
+
+    .line 820
+    :goto_82
+    return-void
+
+    .line 804
+    :cond_83
+    :try_start_83
+    iget-object v4, p0, Lah/j;->b:Lah/k;
+
+    invoke-interface {v4, v0}, Lah/k;->a(Lah/m;)V
+    :try_end_88
+    .catch Ljava/io/IOException; {:try_start_83 .. :try_end_88} :catch_62
+
+    goto :goto_20
+
+    .line 819
+    :cond_89
+    iget-object v0, p0, Lah/j;->b:Lah/k;
+
+    invoke-interface {v0}, Lah/k;->a()V
+
+    goto :goto_82
 .end method

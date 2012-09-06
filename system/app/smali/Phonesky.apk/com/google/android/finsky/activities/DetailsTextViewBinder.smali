@@ -44,7 +44,7 @@
 
     iput v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mExpansionState:I
 
-    .line 142
+    .line 143
     return-void
 .end method
 
@@ -155,17 +155,17 @@
     .parameter "isUserOperation"
 
     .prologue
-    .line 228
+    .line 229
     if-eqz p1, :cond_3c
 
     iget-boolean v6, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mShouldScrollWhenCollapsing:Z
 
     if-eqz v6, :cond_3c
 
-    .line 233
+    .line 234
     const/4 v5, 0x0
 
-    .line 234
+    .line 235
     .local v5, scrollParent:Lcom/google/android/finsky/layout/ObservableScrollView;
     iget-object v6, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mLayout:Landroid/view/View;
 
@@ -173,7 +173,7 @@
 
     move-result v0
 
-    .line 235
+    .line 236
     .local v0, contentTopOffset:I
     iget-object v6, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mLayout:Landroid/view/View;
 
@@ -183,7 +183,7 @@
 
     check-cast v3, Landroid/view/View;
 
-    .line 237
+    .line 238
     .local v3, parent:Landroid/view/View;
     :goto_15
     instance-of v6, v3, Lcom/google/android/finsky/layout/ObservableScrollView;
@@ -192,23 +192,23 @@
 
     move-object v5, v3
 
-    .line 238
+    .line 239
     check-cast v5, Lcom/google/android/finsky/layout/ObservableScrollView;
 
-    .line 249
+    .line 250
     :cond_1c
     if-eqz v5, :cond_3c
 
-    .line 250
-    invoke-virtual {v5}, Lcom/google/android/finsky/layout/ObservableScrollView;->getViewportTop()I
+    .line 251
+    invoke-virtual {v5}, Lcom/google/android/finsky/layout/ObservableScrollView;->getScrollY()I
 
     move-result v1
 
-    .line 253
+    .line 254
     .local v1, currentViewportTop:I
     if-ge v0, v1, :cond_3c
 
-    .line 255
+    .line 256
     iget-object v6, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mContentView:Landroid/widget/TextView;
 
     invoke-virtual {v6}, Landroid/widget/TextView;->getHeight()I
@@ -225,21 +225,21 @@
 
     if-ge v6, v7, :cond_5b
 
-    .line 260
+    .line 261
     iget v6, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mTruncatedHeight:I
 
     iget v7, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mFullHeight:I
 
     sub-int v4, v6, v7
 
-    .line 266
+    .line 267
     .local v4, scrollDelta:I
     :goto_38
     const/4 v6, 0x0
 
     invoke-virtual {v5, v6, v4}, Lcom/google/android/finsky/layout/ObservableScrollView;->scrollBy(II)V
 
-    .line 272
+    .line 273
     .end local v0           #contentTopOffset:I
     .end local v1           #currentViewportTop:I
     .end local v3           #parent:Landroid/view/View;
@@ -252,18 +252,18 @@
 
     invoke-virtual {v6, v7}, Lcom/google/android/finsky/layout/DetailsTextLayout;->setCurrentMaxLines(I)V
 
-    .line 273
+    .line 274
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->showMoreIndicator()V
 
-    .line 275
+    .line 276
     const/4 v6, 0x1
 
     iput v6, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mExpansionState:I
 
-    .line 276
+    .line 277
     return-void
 
-    .line 241
+    .line 242
     .restart local v0       #contentTopOffset:I
     .restart local v3       #parent:Landroid/view/View;
     .restart local v5       #scrollParent:Lcom/google/android/finsky/layout/ObservableScrollView;
@@ -274,12 +274,12 @@
 
     add-int/2addr v0, v6
 
-    .line 242
+    .line 243
     invoke-virtual {v3}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
 
-    .line 243
+    .line 244
     .local v2, nextParent:Landroid/view/ViewParent;
     instance-of v6, v2, Landroid/view/View;
 
@@ -287,13 +287,13 @@
 
     move-object v3, v2
 
-    .line 246
+    .line 247
     check-cast v3, Landroid/view/View;
 
-    .line 247
+    .line 248
     goto :goto_15
 
-    .line 264
+    .line 265
     .end local v2           #nextParent:Landroid/view/ViewParent;
     .restart local v1       #currentViewportTop:I
     :cond_5b
@@ -307,17 +307,17 @@
     .registers 3
 
     .prologue
-    .line 180
+    .line 181
     iget v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mExpansionState:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_1d
 
-    .line 181
+    .line 182
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->expandContent()V
 
-    .line 186
+    .line 187
     :goto_8
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mContentLayout:Lcom/google/android/finsky/layout/DetailsTextLayout;
 
@@ -327,7 +327,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/DetailsTextLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 195
+    .line 196
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mContentView:Landroid/widget/TextView;
 
     new-instance v1, Lcom/google/android/finsky/activities/DetailsTextViewBinder$3;
@@ -336,10 +336,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 201
+    .line 202
     return-void
 
-    .line 183
+    .line 184
     :cond_1d
     const/4 v0, 0x0
 
@@ -352,22 +352,22 @@
     .registers 3
 
     .prologue
-    .line 222
+    .line 223
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mContentLayout:Lcom/google/android/finsky/layout/DetailsTextLayout;
 
     const v1, 0x7fffffff
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/DetailsTextLayout;->setCurrentMaxLines(I)V
 
-    .line 223
+    .line 224
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->showLessIndicator()V
 
-    .line 224
+    .line 225
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mExpansionState:I
 
-    .line 225
+    .line 226
     return-void
 .end method
 
@@ -377,24 +377,24 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 205
+    .line 206
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mContentView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1, v1}, Landroid/widget/TextView;->scrollTo(II)V
 
-    .line 207
+    .line 208
     iget-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mUrlSpanClicked:Z
 
     if-eqz v0, :cond_d
 
-    .line 209
+    .line 210
     iput-boolean v1, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mUrlSpanClicked:Z
 
-    .line 218
+    .line 219
     :goto_c
     return-void
 
-    .line 213
+    .line 214
     :cond_d
     iget v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mExpansionState:I
 
@@ -402,14 +402,14 @@
 
     if-ne v0, v1, :cond_17
 
-    .line 214
+    .line 215
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->collapseContent(Z)V
 
     goto :goto_c
 
-    .line 216
+    .line 217
     :cond_17
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->expandContent()V
 
@@ -423,20 +423,20 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 125
+    .line 126
     instance-of v0, p1, Landroid/text/Spannable;
 
     if-nez v0, :cond_6
 
-    .line 136
+    .line 137
     :cond_5
     return-void
 
-    .line 128
+    .line 129
     :cond_6
     check-cast p1, Landroid/text/Spannable;
 
-    .line 129
+    .line 130
     invoke-interface {p1}, Landroid/text/Spannable;->length()I
 
     move-result v0
@@ -449,7 +449,7 @@
 
     check-cast v0, [Landroid/text/style/URLSpan;
 
-    .line 130
+    .line 131
     array-length v3, v0
 
     move v1, v2
@@ -459,20 +459,20 @@
 
     aget-object v4, v0, v1
 
-    .line 131
+    .line 132
     invoke-interface {p1, v4}, Landroid/text/Spannable;->getSpanStart(Ljava/lang/Object;)I
 
     move-result v5
 
-    .line 132
+    .line 133
     invoke-interface {p1, v4}, Landroid/text/Spannable;->getSpanEnd(Ljava/lang/Object;)I
 
     move-result v6
 
-    .line 133
+    .line 134
     invoke-interface {p1, v4}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
 
-    .line 134
+    .line 135
     new-instance v7, Lcom/google/android/finsky/activities/DetailsTextViewBinder$SelfishUrlSpan;
 
     invoke-virtual {v4}, Landroid/text/style/URLSpan;->getURL()Ljava/lang/String;
@@ -483,7 +483,7 @@
 
     invoke-interface {p1, v7, v5, v6, v2}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
-    .line 130
+    .line 131
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_16
@@ -493,14 +493,14 @@
     .registers 3
 
     .prologue
-    .line 176
+    .line 177
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mFooterIcon:Landroid/widget/ImageView;
 
-    const v1, 0x7f020067
+    const v1, 0x7f020090
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 177
+    .line 178
     return-void
 .end method
 
@@ -508,14 +508,14 @@
     .registers 3
 
     .prologue
-    .line 172
+    .line 173
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mFooterIcon:Landroid/widget/ImageView;
 
-    const v1, 0x7f020064
+    const v1, 0x7f02008c
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 173
+    .line 174
     return-void
 .end method
 
@@ -549,7 +549,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 117
+    .line 118
     :goto_11
     return-void
 
@@ -564,7 +564,7 @@
     .line 81
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mLayout:Landroid/view/View;
 
-    const v1, 0x7f0800eb
+    const v1, 0x7f0800f7
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -577,7 +577,7 @@
     .line 82
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mLayout:Landroid/view/View;
 
-    const v1, 0x7f0800ec
+    const v1, 0x7f0800f8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -599,7 +599,7 @@
     .line 84
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mLayout:Landroid/view/View;
 
-    const v1, 0x7f0800ed
+    const v1, 0x7f0800f9
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -626,7 +626,7 @@
     .line 94
     iget v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mExpansionState:I
 
-    if-gez v0, :cond_68
+    if-gez v0, :cond_69
 
     .line 95
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mLayout:Landroid/view/View;
@@ -639,39 +639,41 @@
 
     move-result-object v0
 
-    invoke-static {p5, v0}, Lcom/google/android/finsky/utils/ExpandableUtils;->getSavedExpansionState(Landroid/os/Bundle;Ljava/lang/String;)I
+    const/4 v1, 0x1
+
+    invoke-static {p5, v0, v1}, Lcom/google/android/finsky/utils/ExpandableUtils;->getSavedExpansionState(Landroid/os/Bundle;Ljava/lang/String;I)I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mExpansionState:I
 
-    .line 99
-    :cond_68
+    .line 100
+    :cond_69
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mContentLayout:Lcom/google/android/finsky/layout/DetailsTextLayout;
 
     iget v1, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mDefaultMaxLines:I
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/DetailsTextLayout;->setDefaultMaxLines(I)V
 
-    .line 100
+    .line 101
     iget v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mExpansionState:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_7f
+    if-ne v0, v1, :cond_80
 
-    .line 101
+    .line 102
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mContentLayout:Lcom/google/android/finsky/layout/DetailsTextLayout;
 
     const v1, 0x7fffffff
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/DetailsTextLayout;->setCurrentMaxLines(I)V
 
-    .line 102
+    .line 103
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->showLessIndicator()V
 
-    .line 104
-    :cond_7f
+    .line 105
+    :cond_80
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mContentLayout:Lcom/google/android/finsky/layout/DetailsTextLayout;
 
     new-instance v1, Lcom/google/android/finsky/activities/DetailsTextViewBinder$1;
@@ -736,7 +738,7 @@
     .registers 1
 
     .prologue
-    .line 295
+    .line 296
     return-void
 .end method
 
@@ -745,12 +747,12 @@
     .parameter "bundle"
 
     .prologue
-    .line 279
+    .line 280
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mLayout:Landroid/view/View;
 
     if-eqz v0, :cond_13
 
-    .line 280
+    .line 281
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mLayout:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getId()I
@@ -765,7 +767,7 @@
 
     invoke-static {p1, v0, v1}, Lcom/google/android/finsky/utils/ExpandableUtils;->saveExpansionState(Landroid/os/Bundle;Ljava/lang/String;I)V
 
-    .line 283
+    .line 284
     :cond_13
     return-void
 .end method
@@ -775,20 +777,20 @@
     .parameter "defaultMaxLines"
 
     .prologue
-    .line 286
-    iput p1, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mDefaultMaxLines:I
-
     .line 287
-    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mContentLayout:Lcom/google/android/finsky/layout/DetailsTextLayout;
-
-    if-eqz v0, :cond_b
+    iput p1, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mDefaultMaxLines:I
 
     .line 288
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mContentLayout:Lcom/google/android/finsky/layout/DetailsTextLayout;
 
+    if-eqz v0, :cond_b
+
+    .line 289
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mContentLayout:Lcom/google/android/finsky/layout/DetailsTextLayout;
+
     invoke-virtual {v0, p1}, Lcom/google/android/finsky/layout/DetailsTextLayout;->setDefaultMaxLines(I)V
 
-    .line 290
+    .line 291
     :cond_b
     return-void
 .end method

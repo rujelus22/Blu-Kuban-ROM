@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="device_width">480.0px</dimen>
-    <dimen name="device_height">800.0px</dimen>
-    <dimen name="recipients_layout_left_margin">68.0px</dimen>
-    <dimen name="recipients_button_height">54.0px</dimen>
-    <dimen name="recipients_button_margin_ext">20.0px</dimen>
-</resources>

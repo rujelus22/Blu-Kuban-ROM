@@ -1,19 +1,28 @@
-.class Lcom/google/android/maps/driveabout/app/F;
+.class Lcom/google/android/maps/driveabout/app/f;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/maps/driveabout/app/eV;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+.field final synthetic a:I
+
+.field final synthetic b:Lcom/google/android/maps/driveabout/app/e;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/DestinationActivity;)V
-    .registers 2
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/e;I)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/F;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+    .prologue
+    .line 370
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/f;->b:Lcom/google/android/maps/driveabout/app/e;
+
+    iput p2, p0, Lcom/google/android/maps/driveabout/app/f;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,34 +31,19 @@
 
 
 # virtual methods
-.method public a()V
-    .registers 2
+.method public run()V
+    .registers 3
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/F;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+    .prologue
+    .line 373
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/f;->b:Lcom/google/android/maps/driveabout/app/e;
 
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->h(Lcom/google/android/maps/driveabout/app/DestinationActivity;)V
+    iget-object v0, v0, Lcom/google/android/maps/driveabout/app/e;->a:Lcom/google/android/maps/driveabout/app/a;
 
-    return-void
-.end method
+    iget v1, p0, Lcom/google/android/maps/driveabout/app/f;->a:I
 
-.method public a(Lu/P;)V
-    .registers 4
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/a;->a(I)V
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/F;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
-
-    const/4 v1, 0x4
-
-    invoke-static {v0, p1, v1}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->a(Lcom/google/android/maps/driveabout/app/DestinationActivity;Lu/P;I)V
-
-    return-void
-.end method
-
-.method public b()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/F;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
-
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->h(Lcom/google/android/maps/driveabout/app/DestinationActivity;)V
-
+    .line 374
     return-void
 .end method

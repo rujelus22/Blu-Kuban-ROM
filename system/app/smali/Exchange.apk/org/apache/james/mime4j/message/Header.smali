@@ -35,24 +35,24 @@
     .registers 2
 
     .prologue
-    .line 51
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 53
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
+    .line 47
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Lorg/apache/james/mime4j/message/Header;->fields:Ljava/util/List;
 
-    .line 46
+    .line 48
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/apache/james/mime4j/message/Header;->fieldMap:Ljava/util/HashMap;
 
-    .line 52
+    .line 54
     return-void
 .end method
 
@@ -63,7 +63,7 @@
     .parameter "field"
 
     .prologue
-    .line 81
+    .line 82
     iget-object v1, p0, Lorg/apache/james/mime4j/message/Header;->fieldMap:Ljava/util/HashMap;
 
     invoke-virtual {p1}, Lorg/apache/james/mime4j/field/Field;->getName()Ljava/lang/String;
@@ -80,17 +80,17 @@
 
     check-cast v0, Ljava/util/List;
 
-    .line 82
+    .line 83
     .local v0, values:Ljava/util/List;,"Ljava/util/List<Lorg/apache/james/mime4j/field/Field;>;"
     if-nez v0, :cond_24
 
-    .line 83
+    .line 84
     new-instance v0, Ljava/util/LinkedList;
 
     .end local v0           #values:Ljava/util/List;,"Ljava/util/List<Lorg/apache/james/mime4j/field/Field;>;"
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    .line 84
+    .line 85
     .restart local v0       #values:Ljava/util/List;,"Ljava/util/List<Lorg/apache/james/mime4j/field/Field;>;"
     iget-object v1, p0, Lorg/apache/james/mime4j/message/Header;->fieldMap:Ljava/util/HashMap;
 
@@ -104,16 +104,16 @@
 
     invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 86
+    .line 87
     :cond_24
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 87
+    .line 88
     iget-object v1, p0, Lorg/apache/james/mime4j/message/Header;->fields:Ljava/util/List;
 
     invoke-interface {v1, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 88
+    .line 89
     return-void
 .end method
 
@@ -121,12 +121,12 @@
     .registers 4
 
     .prologue
-    .line 133
+    .line 135
     new-instance v1, Ljava/lang/StringBuffer;
 
     invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 134
+    .line 136
     .local v1, str:Ljava/lang/StringBuffer;
     iget-object v2, p0, Lorg/apache/james/mime4j/message/Header;->fields:Ljava/util/List;
 
@@ -142,7 +142,7 @@
 
     if-eqz v2, :cond_24
 
-    .line 135
+    .line 137
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
@@ -155,14 +155,14 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 136
+    .line 138
     const-string v2, "\r\n"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     goto :goto_b
 
-    .line 138
+    .line 140
     :cond_24
     invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 

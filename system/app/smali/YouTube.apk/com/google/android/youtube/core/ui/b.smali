@@ -4,8 +4,8 @@
 
 
 # virtual methods
-.method public abstract a(Lcom/google/android/youtube/core/ui/AbstractWorkspace$SelectionMethod;)V
+.method public abstract a(ILcom/google/android/youtube/core/ui/AbstractWorkspace$SelectionMethod;)V
 .end method
 
-.method public abstract c(I)V
+.method public abstract d(I)V
 .end method

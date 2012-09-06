@@ -27,8 +27,5 @@
 .method public abstract showBeforeProvisioning()Z
 .end method
 
-.method public abstract showConditional()Z
-.end method
-
 .method public abstract showDuringKeyguard()Z
 .end method

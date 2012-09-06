@@ -12,22 +12,22 @@
 
 # instance fields
 .field private displayName:Ljava/lang/String;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
     .end annotation
 .end field
 
 .field private id:Ljava/lang/String;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
     .end annotation
 .end field
 
 .field private profileUrl:Ljava/lang/String;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
     .end annotation
 .end field
 
 .field private thumbnailUrl:Ljava/lang/String;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
     .end annotation
 .end field
 
@@ -143,7 +143,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -157,7 +157,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -171,7 +171,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -185,7 +185,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -353,7 +353,7 @@
 
     .prologue
     .line 121
-    invoke-static {p0}, Lcom/google/common/base/p;->a(Ljava/lang/Object;)Lcom/google/common/base/q;
+    invoke-static {p0}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;)Lcom/google/common/base/ab;
 
     move-result-object v0
 
@@ -361,7 +361,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/common/base/q;->a(Ljava/lang/Object;)Lcom/google/common/base/q;
+    invoke-virtual {v0, v1}, Lcom/google/common/base/ab;->a(Ljava/lang/Object;)Lcom/google/common/base/ab;
 
     move-result-object v0
 
@@ -369,11 +369,11 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/common/base/q;->a(Ljava/lang/Object;)Lcom/google/common/base/q;
+    invoke-virtual {v0, v1}, Lcom/google/common/base/ab;->a(Ljava/lang/Object;)Lcom/google/common/base/ab;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/common/base/q;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/common/base/ab;->toString()Ljava/lang/String;
 
     move-result-object v0
 

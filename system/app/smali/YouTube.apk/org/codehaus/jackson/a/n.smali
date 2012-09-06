@@ -1,227 +1,153 @@
-.class public abstract Lorg/codehaus/jackson/a/n;
-.super Lorg/codehaus/jackson/a/d;
+.class final synthetic Lorg/codehaus/jackson/a/n;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field protected H:Ljava/io/InputStream;
-
-.field protected I:[B
-
-.field protected J:Z
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method protected constructor <init>(Lorg/codehaus/jackson/b/c;ILjava/io/InputStream;[BIIZ)V
-    .registers 8
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 66
-    invoke-direct {p0, p1, p2}, Lorg/codehaus/jackson/a/d;-><init>(Lorg/codehaus/jackson/b/c;I)V
-
-    .line 67
-    iput-object p3, p0, Lorg/codehaus/jackson/a/n;->H:Ljava/io/InputStream;
-
-    .line 68
-    iput-object p4, p0, Lorg/codehaus/jackson/a/n;->I:[B
-
-    .line 69
-    iput p5, p0, Lorg/codehaus/jackson/a/n;->s:I
-
-    .line 70
-    iput p6, p0, Lorg/codehaus/jackson/a/n;->t:I
-
-    .line 71
-    iput-boolean p7, p0, Lorg/codehaus/jackson/a/n;->J:Z
-
-    .line 72
-    return-void
-.end method
-
-
-# virtual methods
-.method protected final p()Z
-    .registers 6
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 108
-    iget-wide v1, p0, Lorg/codehaus/jackson/a/n;->u:J
-
-    iget v3, p0, Lorg/codehaus/jackson/a/n;->t:I
-
-    int-to-long v3, v3
-
-    add-long/2addr v1, v3
-
-    iput-wide v1, p0, Lorg/codehaus/jackson/a/n;->u:J
-
-    .line 109
-    iget v1, p0, Lorg/codehaus/jackson/a/n;->w:I
-
-    iget v2, p0, Lorg/codehaus/jackson/a/n;->t:I
-
-    sub-int/2addr v1, v2
-
-    iput v1, p0, Lorg/codehaus/jackson/a/n;->w:I
-
-    .line 111
-    iget-object v1, p0, Lorg/codehaus/jackson/a/n;->H:Ljava/io/InputStream;
-
-    if-eqz v1, :cond_26
-
-    .line 112
-    iget-object v1, p0, Lorg/codehaus/jackson/a/n;->H:Ljava/io/InputStream;
-
-    iget-object v2, p0, Lorg/codehaus/jackson/a/n;->I:[B
-
-    iget-object v3, p0, Lorg/codehaus/jackson/a/n;->I:[B
-
-    array-length v3, v3
-
-    invoke-virtual {v1, v2, v0, v3}, Ljava/io/InputStream;->read([BII)I
-
-    move-result v1
-
-    .line 113
-    if-lez v1, :cond_27
-
-    .line 114
-    iput v0, p0, Lorg/codehaus/jackson/a/n;->s:I
-
-    .line 115
-    iput v1, p0, Lorg/codehaus/jackson/a/n;->t:I
-
-    .line 116
-    const/4 v0, 0x1
-
-    .line 125
-    :cond_26
-    return v0
-
-    .line 119
-    :cond_27
-    invoke-virtual {p0}, Lorg/codehaus/jackson/a/n;->q()V
-
-    .line 121
-    if-nez v1, :cond_26
-
-    .line 122
-    new-instance v0, Ljava/io/IOException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "InputStream.read() returned 0 characters when trying to read "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lorg/codehaus/jackson/a/n;->I:[B
-
-    array-length v2, v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " bytes"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method protected final q()V
-    .registers 2
-
-    .prologue
-    .line 175
-    iget-object v0, p0, Lorg/codehaus/jackson/a/n;->H:Ljava/io/InputStream;
-
-    if-eqz v0, :cond_1c
-
-    .line 176
-    iget-object v0, p0, Lorg/codehaus/jackson/a/n;->q:Lorg/codehaus/jackson/b/c;
-
-    invoke-virtual {v0}, Lorg/codehaus/jackson/b/c;->c()Z
-
-    move-result v0
-
-    if-nez v0, :cond_14
-
-    sget-object v0, Lorg/codehaus/jackson/JsonParser$Feature;->AUTO_CLOSE_SOURCE:Lorg/codehaus/jackson/JsonParser$Feature;
-
-    invoke-virtual {p0, v0}, Lorg/codehaus/jackson/a/n;->a(Lorg/codehaus/jackson/JsonParser$Feature;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_19
-
-    .line 177
-    :cond_14
-    iget-object v0, p0, Lorg/codehaus/jackson/a/n;->H:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
-
-    .line 179
-    :cond_19
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lorg/codehaus/jackson/a/n;->H:Ljava/io/InputStream;
-
-    .line 181
-    :cond_1c
-    return-void
-.end method
-
-.method protected final r()V
+.method static constructor <clinit>()V
     .registers 3
 
     .prologue
-    .line 192
-    invoke-super {p0}, Lorg/codehaus/jackson/a/d;->r()V
+    .line 288
+    invoke-static {}, Lorg/codehaus/jackson/JsonToken;->values()[Lorg/codehaus/jackson/JsonToken;
 
-    .line 193
-    iget-boolean v0, p0, Lorg/codehaus/jackson/a/n;->J:Z
+    move-result-object v0
 
-    if-eqz v0, :cond_13
+    array-length v0, v0
 
-    .line 194
-    iget-object v0, p0, Lorg/codehaus/jackson/a/n;->I:[B
+    new-array v0, v0, [I
 
-    .line 195
-    if-eqz v0, :cond_13
+    sput-object v0, Lorg/codehaus/jackson/a/n;->a:[I
 
-    .line 196
-    const/4 v1, 0x0
+    :try_start_9
+    sget-object v0, Lorg/codehaus/jackson/a/n;->a:[I
 
-    iput-object v1, p0, Lorg/codehaus/jackson/a/n;->I:[B
+    sget-object v1, Lorg/codehaus/jackson/JsonToken;->FIELD_NAME:Lorg/codehaus/jackson/JsonToken;
 
-    .line 197
-    iget-object v1, p0, Lorg/codehaus/jackson/a/n;->q:Lorg/codehaus/jackson/b/c;
+    invoke-virtual {v1}, Lorg/codehaus/jackson/JsonToken;->ordinal()I
 
-    invoke-virtual {v1, v0}, Lorg/codehaus/jackson/b/c;->a([B)V
+    move-result v1
 
-    .line 200
-    :cond_13
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_56
+
+    :goto_14
+    :try_start_14
+    sget-object v0, Lorg/codehaus/jackson/a/n;->a:[I
+
+    sget-object v1, Lorg/codehaus/jackson/JsonToken;->VALUE_STRING:Lorg/codehaus/jackson/JsonToken;
+
+    invoke-virtual {v1}, Lorg/codehaus/jackson/JsonToken;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_54
+
+    :goto_1f
+    :try_start_1f
+    sget-object v0, Lorg/codehaus/jackson/a/n;->a:[I
+
+    sget-object v1, Lorg/codehaus/jackson/JsonToken;->VALUE_NUMBER_INT:Lorg/codehaus/jackson/JsonToken;
+
+    invoke-virtual {v1}, Lorg/codehaus/jackson/JsonToken;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_52
+
+    :goto_2a
+    :try_start_2a
+    sget-object v0, Lorg/codehaus/jackson/a/n;->a:[I
+
+    sget-object v1, Lorg/codehaus/jackson/JsonToken;->VALUE_NUMBER_FLOAT:Lorg/codehaus/jackson/JsonToken;
+
+    invoke-virtual {v1}, Lorg/codehaus/jackson/JsonToken;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_35
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_50
+
+    :goto_35
+    :try_start_35
+    sget-object v0, Lorg/codehaus/jackson/a/n;->a:[I
+
+    sget-object v1, Lorg/codehaus/jackson/JsonToken;->VALUE_TRUE:Lorg/codehaus/jackson/JsonToken;
+
+    invoke-virtual {v1}, Lorg/codehaus/jackson/JsonToken;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_40
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_35 .. :try_end_40} :catch_4e
+
+    :goto_40
+    :try_start_40
+    sget-object v0, Lorg/codehaus/jackson/a/n;->a:[I
+
+    sget-object v1, Lorg/codehaus/jackson/JsonToken;->VALUE_FALSE:Lorg/codehaus/jackson/JsonToken;
+
+    invoke-virtual {v1}, Lorg/codehaus/jackson/JsonToken;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_4b
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_40 .. :try_end_4b} :catch_4c
+
+    :goto_4b
     return-void
+
+    :catch_4c
+    move-exception v0
+
+    goto :goto_4b
+
+    :catch_4e
+    move-exception v0
+
+    goto :goto_40
+
+    :catch_50
+    move-exception v0
+
+    goto :goto_35
+
+    :catch_52
+    move-exception v0
+
+    goto :goto_2a
+
+    :catch_54
+    move-exception v0
+
+    goto :goto_1f
+
+    :catch_56
+    move-exception v0
+
+    goto :goto_14
 .end method

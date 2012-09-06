@@ -26,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 239
+    .line 127
     new-instance v0, Lcom/android/email/activity/MessageViewFragment$EmptyCallback;
 
     invoke-direct {v0}, Lcom/android/email/activity/MessageViewFragment$EmptyCallback;-><init>()V
@@ -40,7 +40,7 @@
     .registers 1
 
     .prologue
-    .line 237
+    .line 124
     invoke-direct {p0}, Lcom/android/email/activity/MessageViewFragmentBase$EmptyCallback;-><init>()V
 
     return-void
@@ -48,27 +48,11 @@
 
 
 # virtual methods
-.method public moveToNewerView()V
+.method public onBeforeMessageGone()V
     .registers 1
 
     .prologue
-    .line 275
-    return-void
-.end method
-
-.method public moveToOlderView()V
-    .registers 1
-
-    .prologue
-    .line 271
-    return-void
-.end method
-
-.method public onBeforeMessageDelete()V
-    .registers 1
-
-    .prologue
-    .line 255
+    .line 132
     return-void
 .end method
 
@@ -77,15 +61,7 @@
     .parameter "epochEventStartTime"
 
     .prologue
-    .line 243
-    return-void
-.end method
-
-.method public onCompose()V
-    .registers 1
-
-    .prologue
-    .line 267
+    .line 129
     return-void
 .end method
 
@@ -93,7 +69,7 @@
     .registers 1
 
     .prologue
-    .line 263
+    .line 133
     return-void
 .end method
 
@@ -101,15 +77,7 @@
     .registers 1
 
     .prologue
-    .line 247
-    return-void
-.end method
-
-.method public onMoveMessage()V
-    .registers 1
-
-    .prologue
-    .line 259
+    .line 130
     return-void
 .end method
 
@@ -117,7 +85,7 @@
     .registers 1
 
     .prologue
-    .line 283
+    .line 134
     return-void
 .end method
 
@@ -125,7 +93,7 @@
     .registers 1
 
     .prologue
-    .line 287
+    .line 135
     return-void
 .end method
 
@@ -134,15 +102,6 @@
     .parameter "response"
 
     .prologue
-    .line 251
-    return-void
-.end method
-
-.method public removeIrmProtection(J)V
-    .registers 3
-    .parameter "messageId"
-
-    .prologue
-    .line 291
+    .line 131
     return-void
 .end method

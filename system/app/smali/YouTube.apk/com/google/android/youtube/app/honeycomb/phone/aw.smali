@@ -3,24 +3,24 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/app/ui/p;
+.implements Lcom/google/android/youtube/app/ui/v;
 
 
 # instance fields
 .field final synthetic a:I
 
-.field final synthetic b:Lcom/google/android/youtube/app/honeycomb/phone/WatchLaterActivity;
+.field final synthetic b:Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/WatchLaterActivity;I)V
+.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;I)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 88
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/aw;->b:Lcom/google/android/youtube/app/honeycomb/phone/WatchLaterActivity;
+    .line 91
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/aw;->b:Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;
 
     iput p2, p0, Lcom/google/android/youtube/app/honeycomb/phone/aw;->a:I
 
@@ -37,26 +37,26 @@
     .parameter
 
     .prologue
-    .line 88
+    .line 91
     check-cast p2, Lcom/google/android/youtube/core/model/Video;
 
     iget v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/aw;->a:I
 
     if-ne p1, v0, :cond_18
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/aw;->b:Lcom/google/android/youtube/app/honeycomb/phone/WatchLaterActivity;
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/aw;->b:Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchLaterActivity;->n()Lcom/google/android/youtube/core/Analytics;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;->v()Lcom/google/android/youtube/core/Analytics;
 
     move-result-object v0
 
-    const-string v1, "RemoveWatchLater"
+    const-string v1, "Unfavorite"
 
     invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/Analytics;->b(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/aw;->b:Lcom/google/android/youtube/app/honeycomb/phone/WatchLaterActivity;
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/aw;->b:Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;
 
-    invoke-static {v0, p2}, Lcom/google/android/youtube/app/honeycomb/phone/WatchLaterActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/WatchLaterActivity;Lcom/google/android/youtube/core/model/Video;)V
+    invoke-static {v0, p2}, Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;Lcom/google/android/youtube/core/model/Video;)V
 
     const/4 v0, 0x1
 

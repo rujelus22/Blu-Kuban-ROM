@@ -55,7 +55,7 @@
 
     .prologue
     .line 29
-    const v0, 0x7f080059
+    const v0, 0x7f08005d
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -113,7 +113,7 @@
     .line 37
     iget-object v0, p0, Lcom/google/android/finsky/fragments/DfeSearchBinder;->mListView:Landroid/widget/ListView;
 
-    const v1, 0x7f080144
+    const v1, 0x7f08010f
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -156,5 +156,8 @@
     iput-object v1, p0, Lcom/google/android/finsky/fragments/DfeSearchBinder;->mListView:Landroid/widget/ListView;
 
     .line 47
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/fragments/DfeSearchBinder;->setData(Ljava/lang/Object;)V
+
+    .line 48
     return-void
 .end method

@@ -21,6 +21,8 @@
 
 
 # instance fields
+.field private mAddInstrumentHint:Landroid/widget/TextView;
+
 .field private mCheckoutPurchase:Lcom/google/android/finsky/billing/CheckoutPurchase;
 
 .field private mFragment:Landroid/support/v4/app/Fragment;
@@ -45,7 +47,7 @@
 
 .field private mPriceTableSummaryRow:Landroid/view/ViewGroup;
 
-.field private final mSelectAddInstrumentByDefault:Z
+.field private mShowInstrumentAndPrice:Z
 
 .field private purchaseSpinnerDescriptionBottomPadding:I
 
@@ -63,7 +65,7 @@
     .registers 1
 
     .prologue
-    .line 43
+    .line 41
     const/4 v0, 0x1
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -75,28 +77,23 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$OnInstrumentSelectedListener;Lcom/google/android/finsky/experiments/Experiments;)V
-    .registers 4
+.method public constructor <init>(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$OnInstrumentSelectedListener;)V
+    .registers 3
     .parameter "listener"
-    .parameter "experiments"
 
     .prologue
-    .line 284
+    .line 285
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 285
-    iput-object p1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mOnInstrumentSelectedListener:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$OnInstrumentSelectedListener;
+    .line 47
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mShowInstrumentAndPrice:Z
 
     .line 286
-    const-string v0, "cl:billing.select_add_instrument_by_default"
+    iput-object p1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mOnInstrumentSelectedListener:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$OnInstrumentSelectedListener;
 
-    invoke-interface {p2, v0}, Lcom/google/android/finsky/experiments/Experiments;->isEnabled(Ljava/lang/String;)Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mSelectAddInstrumentByDefault:Z
-
-    .line 288
+    .line 287
     return-void
 .end method
 
@@ -105,7 +102,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 39
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mFragment:Landroid/support/v4/app/Fragment;
 
     return-object v0
@@ -116,7 +113,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 39
     iget v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->purchaseSpinnerLeftPadding:I
 
     return v0
@@ -127,7 +124,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 39
     iget-boolean v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mIsUserInitiatedSelection:Z
 
     return v0
@@ -139,36 +136,36 @@
     .parameter "x1"
 
     .prologue
-    .line 41
+    .line 39
     iput-boolean p1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mIsUserInitiatedSelection:Z
 
     return p1
 .end method
 
-.method static synthetic access$1202(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Z)Z
+.method static synthetic access$1302(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Z)Z
     .registers 2
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 41
+    .line 39
     iput-boolean p1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTableExpanded:Z
 
     return p1
 .end method
 
-.method static synthetic access$1300(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;)Landroid/widget/TableLayout;
+.method static synthetic access$1400(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;)Landroid/widget/TableLayout;
     .registers 2
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 39
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTable:Landroid/widget/TableLayout;
 
     return-object v0
 .end method
 
-.method static synthetic access$1400(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Ljava/util/List;Lcom/google/android/finsky/remoting/protos/Buy$LineItem;Lcom/google/android/finsky/remoting/protos/Buy$LineItem;)V
+.method static synthetic access$1500(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Ljava/util/List;Lcom/google/android/finsky/remoting/protos/Buy$LineItem;Lcom/google/android/finsky/remoting/protos/Buy$LineItem;)V
     .registers 4
     .parameter "x0"
     .parameter "x1"
@@ -176,18 +173,18 @@
     .parameter "x3"
 
     .prologue
-    .line 41
+    .line 39
     invoke-direct {p0, p1, p2, p3}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->setupPriceTable(Ljava/util/List;Lcom/google/android/finsky/remoting/protos/Buy$LineItem;Lcom/google/android/finsky/remoting/protos/Buy$LineItem;)V
 
     return-void
 .end method
 
-.method static synthetic access$1500(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;)Landroid/view/ViewGroup;
+.method static synthetic access$1600(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;)Landroid/view/ViewGroup;
     .registers 2
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 39
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTableSummaryRow:Landroid/view/ViewGroup;
 
     return-object v0
@@ -198,7 +195,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 39
     iget v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->purchaseSpinnerRightPadding:I
 
     return v0
@@ -209,7 +206,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 39
     iget v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->purchaseSpinnerDescriptionTopPadding:I
 
     return v0
@@ -220,7 +217,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 39
     iget v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->purchaseSpinnerDescriptionRightPadding:I
 
     return v0
@@ -231,7 +228,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 39
     iget v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->purchaseSpinnerDescriptionBottomPadding:I
 
     return v0
@@ -243,7 +240,7 @@
     .parameter "x1"
 
     .prologue
-    .line 41
+    .line 39
     invoke-direct {p0, p1}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->updatePriceFromInstrument(Lcom/google/android/finsky/billing/Instrument;)V
 
     return-void
@@ -254,7 +251,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 39
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mOnInstrumentSelectedListener:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$OnInstrumentSelectedListener;
 
     return-object v0
@@ -265,7 +262,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 39
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentFactory:Lcom/google/android/finsky/billing/InstrumentFactory;
 
     return-object v0
@@ -276,83 +273,48 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 39
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentSpinnerAdapter:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;
 
     return-object v0
 .end method
 
 .method private addInstrumentsWithSpecificFamilyFirst(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;Lcom/google/android/finsky/billing/CheckoutPurchase;I)I
-    .registers 14
+    .registers 12
     .parameter "adapter"
     .parameter "checkoutPurchase"
     .parameter "familyFirst"
 
     .prologue
-    .line 408
+    .line 425
     invoke-virtual {p2}, Lcom/google/android/finsky/billing/CheckoutPurchase;->getInstruments()Ljava/util/List;
 
     move-result-object v5
 
-    .line 409
+    .line 426
     .local v5, instruments:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/billing/Instrument;>;"
     invoke-virtual {p2}, Lcom/google/android/finsky/billing/CheckoutPurchase;->getDefaultInstrument()Lcom/google/android/finsky/billing/Instrument;
 
     move-result-object v0
 
-    .line 412
+    .line 427
     .local v0, defaultInstrument:Lcom/google/android/finsky/billing/Instrument;
-    if-nez v0, :cond_29
-
-    iget-boolean v7, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mSelectAddInstrumentByDefault:Z
-
-    if-nez v7, :cond_29
-
-    .line 413
-    invoke-interface {v5}, Ljava/util/List;->isEmpty()Z
-
-    move-result v7
-
-    if-nez v7, :cond_52
-
-    .line 415
-    new-instance v7, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$PlaceholderInstrumentSelectorItem;
-
-    iget-object v8, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mFragment:Landroid/support/v4/app/Fragment;
-
-    invoke-virtual {v8}, Landroid/support/v4/app/Fragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v8
-
-    const v9, 0x7f07005d
-
-    invoke-virtual {v8, v9}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-direct {v7, p0, v8}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$PlaceholderInstrumentSelectorItem;-><init>(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Ljava/lang/String;)V
-
-    invoke-virtual {p1, v7}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->add(Ljava/lang/Object;)V
-
-    .line 423
-    :cond_29
-    :goto_29
     const/4 v1, 0x0
 
-    .line 426
+    .line 430
     .local v1, defaultItem:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;
     invoke-interface {v5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
     .local v3, i$:Ljava/util/Iterator;
-    :cond_2e
-    :goto_2e
+    :cond_d
+    :goto_d
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v7
 
-    if-eqz v7, :cond_68
+    if-eqz v7, :cond_31
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -360,67 +322,41 @@
 
     check-cast v4, Lcom/google/android/finsky/billing/Instrument;
 
-    .line 427
+    .line 431
     .local v4, instrument:Lcom/google/android/finsky/billing/Instrument;
     invoke-virtual {v4}, Lcom/google/android/finsky/billing/Instrument;->getInstrumentFamily()I
 
     move-result v7
 
-    if-ne v7, p3, :cond_2e
+    if-ne v7, p3, :cond_d
 
-    .line 428
+    .line 432
     new-instance v6, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$ExistingInstrumentSelectorItem;
 
     invoke-direct {v6, p0, v4}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$ExistingInstrumentSelectorItem;-><init>(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Lcom/google/android/finsky/billing/Instrument;)V
 
-    .line 430
+    .line 434
     .local v6, item:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$ExistingInstrumentSelectorItem;
     invoke-virtual {p1, v6}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->add(Ljava/lang/Object;)V
 
-    .line 432
-    if-eqz v0, :cond_2e
+    .line 436
+    if-eqz v0, :cond_d
 
     invoke-virtual {v4, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_2e
+    if-eqz v7, :cond_d
 
-    .line 433
+    .line 437
     move-object v1, v6
 
-    goto :goto_2e
+    goto :goto_d
 
-    .line 419
-    .end local v1           #defaultItem:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;
-    .end local v3           #i$:Ljava/util/Iterator;
+    .line 442
     .end local v4           #instrument:Lcom/google/android/finsky/billing/Instrument;
     .end local v6           #item:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$ExistingInstrumentSelectorItem;
-    :cond_52
-    new-instance v7, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$PlaceholderInstrumentSelectorItem;
-
-    iget-object v8, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mFragment:Landroid/support/v4/app/Fragment;
-
-    invoke-virtual {v8}, Landroid/support/v4/app/Fragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v8
-
-    const v9, 0x7f07005e
-
-    invoke-virtual {v8, v9}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-direct {v7, p0, v8}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$PlaceholderInstrumentSelectorItem;-><init>(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Ljava/lang/String;)V
-
-    invoke-virtual {p1, v7}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->add(Ljava/lang/Object;)V
-
-    goto :goto_29
-
-    .line 438
-    .restart local v1       #defaultItem:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;
-    .restart local v3       #i$:Ljava/util/Iterator;
-    :cond_68
+    :cond_31
     invoke-virtual {p2}, Lcom/google/android/finsky/billing/CheckoutPurchase;->getEligibleInstrumentFamilies()Ljava/util/List;
 
     move-result-object v7
@@ -429,13 +365,13 @@
 
     move-result-object v3
 
-    :cond_70
-    :goto_70
+    :cond_39
+    :goto_39
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v7
 
-    if-eqz v7, :cond_92
+    if-eqz v7, :cond_5d
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -447,46 +383,48 @@
 
     move-result v2
 
-    .line 439
+    .line 443
     .local v2, eligibleInstrumentFamily:I
-    if-ne v2, p3, :cond_70
+    if-ne v2, p3, :cond_39
 
-    .line 440
+    .line 444
     new-instance v6, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;
 
     invoke-direct {v6, p0, v2}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;-><init>(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;I)V
 
-    .line 442
+    .line 446
     .local v6, item:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;
     invoke-virtual {p1, v6}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->add(Ljava/lang/Object;)V
 
-    .line 444
-    if-nez v1, :cond_70
+    .line 448
+    if-nez v1, :cond_39
 
-    iget-boolean v7, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mSelectAddInstrumentByDefault:Z
+    invoke-virtual {v6}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;->isEnabled()Z
 
-    if-eqz v7, :cond_70
+    move-result v7
 
-    .line 445
+    if-eqz v7, :cond_39
+
+    .line 449
     move-object v1, v6
 
-    goto :goto_70
+    goto :goto_39
 
-    .line 450
+    .line 454
     .end local v2           #eligibleInstrumentFamily:I
     .end local v6           #item:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;
-    :cond_92
+    :cond_5d
     invoke-interface {v5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    :cond_96
-    :goto_96
+    :cond_61
+    :goto_61
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v7
 
-    if-eqz v7, :cond_ba
+    if-eqz v7, :cond_85
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -494,41 +432,41 @@
 
     check-cast v4, Lcom/google/android/finsky/billing/Instrument;
 
-    .line 451
+    .line 455
     .restart local v4       #instrument:Lcom/google/android/finsky/billing/Instrument;
     invoke-virtual {v4}, Lcom/google/android/finsky/billing/Instrument;->getInstrumentFamily()I
 
     move-result v7
 
-    if-eq v7, p3, :cond_96
+    if-eq v7, p3, :cond_61
 
-    .line 452
+    .line 456
     new-instance v6, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$ExistingInstrumentSelectorItem;
 
     invoke-direct {v6, p0, v4}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$ExistingInstrumentSelectorItem;-><init>(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Lcom/google/android/finsky/billing/Instrument;)V
 
-    .line 454
+    .line 458
     .local v6, item:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$ExistingInstrumentSelectorItem;
     invoke-virtual {p1, v6}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->add(Ljava/lang/Object;)V
 
-    .line 456
-    if-eqz v0, :cond_96
+    .line 460
+    if-eqz v0, :cond_61
 
     invoke-virtual {v4, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_96
+    if-eqz v7, :cond_61
 
-    .line 457
+    .line 461
     move-object v1, v6
 
-    goto :goto_96
+    goto :goto_61
 
-    .line 462
+    .line 466
     .end local v4           #instrument:Lcom/google/android/finsky/billing/Instrument;
     .end local v6           #item:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$ExistingInstrumentSelectorItem;
-    :cond_ba
+    :cond_85
     invoke-virtual {p2}, Lcom/google/android/finsky/billing/CheckoutPurchase;->getEligibleInstrumentFamilies()Ljava/util/List;
 
     move-result-object v7
@@ -537,13 +475,13 @@
 
     move-result-object v3
 
-    :cond_c2
-    :goto_c2
+    :cond_8d
+    :goto_8d
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v7
 
-    if-eqz v7, :cond_e4
+    if-eqz v7, :cond_ab
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -555,57 +493,53 @@
 
     move-result v2
 
-    .line 463
+    .line 467
     .restart local v2       #eligibleInstrumentFamily:I
-    if-eq v2, p3, :cond_c2
+    if-eq v2, p3, :cond_8d
 
-    .line 464
+    .line 468
     new-instance v6, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;
 
     invoke-direct {v6, p0, v2}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;-><init>(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;I)V
 
-    .line 466
+    .line 470
     .local v6, item:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;
     invoke-virtual {p1, v6}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->add(Ljava/lang/Object;)V
 
-    .line 467
-    if-nez v1, :cond_c2
+    .line 471
+    if-nez v1, :cond_8d
 
-    iget-boolean v7, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mSelectAddInstrumentByDefault:Z
-
-    if-eqz v7, :cond_c2
-
-    .line 468
+    .line 472
     move-object v1, v6
 
-    goto :goto_c2
+    goto :goto_8d
 
-    .line 473
+    .line 477
     .end local v2           #eligibleInstrumentFamily:I
     .end local v6           #item:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;
-    :cond_e4
-    if-eqz v1, :cond_eb
+    :cond_ab
+    if-eqz v1, :cond_b2
 
-    .line 474
+    .line 478
     invoke-virtual {p1, v1}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->getPosition(Ljava/lang/Object;)I
 
     move-result v7
 
-    .line 476
-    :goto_ea
+    .line 480
+    :goto_b1
     return v7
 
-    :cond_eb
+    :cond_b2
     const/4 v7, -0x1
 
-    goto :goto_ea
+    goto :goto_b1
 .end method
 
 .method private initPurchaseSpinnerDimens()V
     .registers 3
 
     .prologue
-    .line 302
+    .line 301
     iget-object v1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mFragment:Landroid/support/v4/app/Fragment;
 
     invoke-virtual {v1}, Landroid/support/v4/app/Fragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -616,9 +550,9 @@
 
     move-result-object v0
 
-    .line 303
+    .line 302
     .local v0, res:Landroid/content/res/Resources;
-    const v1, 0x7f0b003f
+    const v1, 0x7f0b0030
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -626,8 +560,8 @@
 
     iput v1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->purchaseSpinnerLeftPadding:I
 
-    .line 305
-    const v1, 0x7f0b0040
+    .line 304
+    const v1, 0x7f0b0031
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -635,8 +569,8 @@
 
     iput v1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->purchaseSpinnerRightPadding:I
 
-    .line 307
-    const v1, 0x7f0b0041
+    .line 306
+    const v1, 0x7f0b0032
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -644,8 +578,8 @@
 
     iput v1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->purchaseSpinnerDescriptionTopPadding:I
 
-    .line 309
-    const v1, 0x7f0b0042
+    .line 308
+    const v1, 0x7f0b0033
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -653,8 +587,8 @@
 
     iput v1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->purchaseSpinnerDescriptionRightPadding:I
 
-    .line 311
-    const v1, 0x7f0b0043
+    .line 310
+    const v1, 0x7f0b0034
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -662,7 +596,7 @@
 
     iput v1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->purchaseSpinnerDescriptionBottomPadding:I
 
-    .line 313
+    .line 312
     return-void
 .end method
 
@@ -670,12 +604,12 @@
     .registers 7
 
     .prologue
-    .line 484
+    .line 488
     invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 485
+    .line 489
     .local v1, dynamicRows:Ljava/util/List;,"Ljava/util/List<Landroid/view/View;>;"
     const/4 v2, 0x0
 
@@ -689,7 +623,7 @@
 
     if-ge v2, v4, :cond_27
 
-    .line 486
+    .line 490
     iget-object v4, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTable:Landroid/widget/TableLayout;
 
     invoke-virtual {v4, v2}, Landroid/widget/TableLayout;->getChildAt(I)Landroid/view/View;
@@ -704,7 +638,7 @@
 
     if-ne v4, v5, :cond_24
 
-    .line 487
+    .line 491
     iget-object v4, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTable:Landroid/widget/TableLayout;
 
     invoke-virtual {v4, v2}, Landroid/widget/TableLayout;->getChildAt(I)Landroid/view/View;
@@ -713,13 +647,13 @@
 
     invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 485
+    .line 489
     :cond_24
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_5
 
-    .line 490
+    .line 494
     :cond_27
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -739,7 +673,7 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 491
+    .line 495
     .local v0, dynamicRow:Landroid/view/View;
     iget-object v4, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTable:Landroid/widget/TableLayout;
 
@@ -747,7 +681,7 @@
 
     goto :goto_2b
 
-    .line 493
+    .line 497
     .end local v0           #dynamicRow:Landroid/view/View;
     :cond_3d
     return-void
@@ -758,17 +692,17 @@
     .parameter "i"
 
     .prologue
-    .line 385
+    .line 402
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mIsUserInitiatedSelection:Z
 
-    .line 386
+    .line 403
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentSpinner:Landroid/widget/Spinner;
 
     invoke-virtual {v0, p1}, Landroid/widget/Spinner;->setSelection(I)V
 
-    .line 387
+    .line 404
     return-void
 .end method
 
@@ -784,8 +718,8 @@
 
     const/4 v3, 0x1
 
-    .line 564
-    const v2, 0x7f08014d
+    .line 568
+    const v2, 0x7f0801a7
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -793,7 +727,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 565
+    .line 569
     .local v0, label:Landroid/widget/TextView;
     invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->getName()Ljava/lang/String;
 
@@ -801,8 +735,8 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 566
-    const v2, 0x7f08014e
+    .line 570
+    const v2, 0x7f0801a8
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -810,7 +744,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 567
+    .line 571
     .local v1, price:Landroid/widget/TextView;
     invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasAmount()Z
 
@@ -818,7 +752,7 @@
 
     if-eqz v2, :cond_2c
 
-    .line 568
+    .line 572
     invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->getAmount()Lcom/google/android/finsky/remoting/protos/Buy$Money;
 
     move-result-object v2
@@ -829,7 +763,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 570
+    .line 574
     :cond_2c
     invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasOffer()Z
 
@@ -837,7 +771,7 @@
 
     if-eqz v2, :cond_3d
 
-    .line 571
+    .line 575
     invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->getOffer()Lcom/google/android/finsky/remoting/protos/Common$Offer;
 
     move-result-object v2
@@ -848,28 +782,28 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 573
+    .line 577
     :cond_3d
     if-eqz p3, :cond_45
 
-    .line 574
+    .line 578
     invoke-virtual {v0, v4, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
 
-    .line 575
+    .line 579
     invoke-virtual {v1, v4, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
 
-    .line 577
+    .line 581
     :cond_45
     if-nez p3, :cond_4f
 
     if-nez p4, :cond_4f
 
-    .line 580
-    const v2, 0x7f02003e
+    .line 584
+    const v2, 0x7f020059
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
-    .line 582
+    .line 586
     :cond_4f
     return-void
 .end method
@@ -891,11 +825,11 @@
     .end annotation
 
     .prologue
-    .line 496
+    .line 500
     .local p1, lineItems:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/remoting/protos/Buy$LineItem;>;"
     invoke-direct {p0, p1, p2, p2}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->setupPriceTable(Ljava/util/List;Lcom/google/android/finsky/remoting/protos/Buy$LineItem;Lcom/google/android/finsky/remoting/protos/Buy$LineItem;)V
 
-    .line 497
+    .line 501
     return-void
 .end method
 
@@ -925,30 +859,30 @@
 
     const/4 v6, 0x0
 
-    .line 501
+    .line 505
     iget-boolean v5, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTableExpanded:Z
 
     if-eqz v5, :cond_5e
 
-    .line 502
+    .line 506
     iget-object v5, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTable:Landroid/widget/TableLayout;
 
     invoke-virtual {v5, v6}, Landroid/widget/TableLayout;->setVisibility(I)V
 
-    .line 503
+    .line 507
     iget-object v5, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTableSummaryRow:Landroid/view/ViewGroup;
 
     invoke-virtual {v5, v7}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 505
+    .line 509
     invoke-direct {p0}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->resetPriceTable()V
 
-    .line 506
+    .line 510
     new-instance v2, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$2;
 
     invoke-direct {v2, p0, p1, p2, p3}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$2;-><init>(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Ljava/util/List;Lcom/google/android/finsky/remoting/protos/Buy$LineItem;Lcom/google/android/finsky/remoting/protos/Buy$LineItem;)V
 
-    .line 518
+    .line 522
     .local v2, rowClickListener:Landroid/view/View$OnClickListener;
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -960,7 +894,7 @@
     :goto_20
     if-ltz v0, :cond_4e
 
-    .line 519
+    .line 523
     iget-object v5, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mFragment:Landroid/support/v4/app/Fragment;
 
     invoke-virtual {v5}, Landroid/support/v4/app/Fragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -971,7 +905,7 @@
 
     move-result-object v5
 
-    const v7, 0x7f04009c
+    const v7, 0x7f0400cd
 
     iget-object v8, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTable:Landroid/widget/TableLayout;
 
@@ -979,13 +913,13 @@
 
     move-result-object v1
 
-    .line 521
+    .line 525
     .local v1, row:Landroid/view/View;
     sget-object v5, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->TAG_DYNAMIC_ROW:Ljava/lang/Integer;
 
     invoke-virtual {v1, v5}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 522
+    .line 526
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -994,56 +928,56 @@
 
     invoke-direct {p0, v5, v1, v6, v6}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->setupPriceRow(Lcom/google/android/finsky/remoting/protos/Buy$LineItem;Landroid/view/View;ZZ)V
 
-    .line 523
+    .line 527
     invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 525
+    .line 529
     iget-object v5, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTable:Landroid/widget/TableLayout;
 
     invoke-virtual {v5, v1, v6}, Landroid/widget/TableLayout;->addView(Landroid/view/View;I)V
 
-    .line 518
+    .line 522
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_20
 
-    .line 528
+    .line 532
     .end local v1           #row:Landroid/view/View;
     :cond_4e
     iget-object v5, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTable:Landroid/widget/TableLayout;
 
-    const v7, 0x7f08014c
+    const v7, 0x7f0801a6
 
     invoke-virtual {v5, v7}, Landroid/widget/TableLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 529
+    .line 533
     .local v4, totalRow:Landroid/view/View;
     invoke-direct {p0, p2, v4, v3, v6}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->setupPriceRow(Lcom/google/android/finsky/remoting/protos/Buy$LineItem;Landroid/view/View;ZZ)V
 
-    .line 530
+    .line 534
     invoke-virtual {v4, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 561
+    .line 565
     .end local v0           #i:I
     .end local v2           #rowClickListener:Landroid/view/View$OnClickListener;
     .end local v4           #totalRow:Landroid/view/View;
     :goto_5d
     return-void
 
-    .line 532
+    .line 536
     :cond_5e
     iget-object v5, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTable:Landroid/widget/TableLayout;
 
     invoke-virtual {v5, v7}, Landroid/widget/TableLayout;->setVisibility(I)V
 
-    .line 533
+    .line 537
     iget-object v5, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTableSummaryRow:Landroid/view/ViewGroup;
 
     invoke-virtual {v5, v6}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 537
+    .line 541
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v5
@@ -1052,12 +986,12 @@
 
     if-lt v5, v7, :cond_86
 
-    .line 538
+    .line 542
     .local v3, showLineItems:Z
     :goto_6f
     if-eqz v3, :cond_88
 
-    .line 539
+    .line 543
     iget-object v5, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTableSummaryRow:Landroid/view/ViewGroup;
 
     new-instance v7, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$3;
@@ -1066,13 +1000,13 @@
 
     invoke-virtual {v5, v7}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 557
+    .line 561
     :goto_7b
     iget-object v5, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTableSummaryRow:Landroid/view/ViewGroup;
 
     invoke-virtual {v5, v3}, Landroid/view/ViewGroup;->setClickable(Z)V
 
-    .line 559
+    .line 563
     iget-object v5, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTableSummaryRow:Landroid/view/ViewGroup;
 
     invoke-direct {p0, p3, v5, v6, v3}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->setupPriceRow(Lcom/google/android/finsky/remoting/protos/Buy$LineItem;Landroid/view/View;ZZ)V
@@ -1083,10 +1017,10 @@
     :cond_86
     move v3, v6
 
-    .line 537
+    .line 541
     goto :goto_6f
 
-    .line 555
+    .line 559
     .restart local v3       #showLineItems:Z
     :cond_88
     iget-object v5, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTableSummaryRow:Landroid/view/ViewGroup;
@@ -1103,15 +1037,15 @@
     .parameter "instrument"
 
     .prologue
-    .line 585
+    .line 589
     if-eqz p1, :cond_2c
 
-    .line 586
+    .line 590
     invoke-virtual {p1}, Lcom/google/android/finsky/billing/Instrument;->getCheckoutOption()Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;
 
     move-result-object v2
 
-    .line 587
+    .line 591
     .local v2, option:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;
     if-eqz v2, :cond_2b
 
@@ -1121,12 +1055,12 @@
 
     if-eqz v4, :cond_2b
 
-    .line 588
+    .line 592
     invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 589
+    .line 593
     .local v1, lineItems:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/remoting/protos/Buy$LineItem;>;"
     invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;->getItemList()Ljava/util/List;
 
@@ -1134,14 +1068,14 @@
 
     invoke-interface {v1, v4}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 590
+    .line 594
     invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;->getSubItemList()Ljava/util/List;
 
     move-result-object v4
 
     invoke-interface {v1, v4}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 591
+    .line 595
     invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;->getTotal()Lcom/google/android/finsky/remoting/protos/Buy$LineItem;
 
     move-result-object v4
@@ -1152,14 +1086,14 @@
 
     invoke-direct {p0, v1, v4, v5}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->setupPriceTable(Ljava/util/List;Lcom/google/android/finsky/remoting/protos/Buy$LineItem;Lcom/google/android/finsky/remoting/protos/Buy$LineItem;)V
 
-    .line 604
+    .line 609
     .end local v1           #lineItems:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/remoting/protos/Buy$LineItem;>;"
     .end local v2           #option:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo$CheckoutOption;
     :cond_2b
     :goto_2b
     return-void
 
-    .line 594
+    .line 598
     :cond_2c
     iget-object v4, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mCheckoutPurchase:Lcom/google/android/finsky/billing/CheckoutPurchase;
 
@@ -1171,7 +1105,15 @@
 
     if-ne v4, v5, :cond_2b
 
-    .line 595
+    iget-object v4, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mCheckoutPurchase:Lcom/google/android/finsky/billing/CheckoutPurchase;
+
+    invoke-virtual {v4}, Lcom/google/android/finsky/billing/CheckoutPurchase;->hasAddInstrumentHintText()Z
+
+    move-result v4
+
+    if-nez v4, :cond_2b
+
+    .line 600
     iget-object v4, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mCheckoutPurchase:Lcom/google/android/finsky/billing/CheckoutPurchase;
 
     invoke-virtual {v4}, Lcom/google/android/finsky/billing/CheckoutPurchase;->getCheckoutInfo()Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo;
@@ -1182,19 +1124,19 @@
 
     move-result-object v0
 
-    .line 596
+    .line 601
     .local v0, item:Lcom/google/android/finsky/remoting/protos/Buy$LineItem;
     new-instance v3, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;
 
     invoke-direct {v3}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;-><init>()V
 
-    .line 598
+    .line 603
     .local v3, total:Lcom/google/android/finsky/remoting/protos/Buy$LineItem;
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasAmount()Z
 
     move-result v4
 
-    if-eqz v4, :cond_52
+    if-eqz v4, :cond_5a
 
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->getAmount()Lcom/google/android/finsky/remoting/protos/Buy$Money;
 
@@ -1202,13 +1144,13 @@
 
     invoke-virtual {v3, v4}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->setAmount(Lcom/google/android/finsky/remoting/protos/Buy$Money;)Lcom/google/android/finsky/remoting/protos/Buy$LineItem;
 
-    .line 599
-    :cond_52
+    .line 604
+    :cond_5a
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->hasOffer()Z
 
     move-result v4
 
-    if-eqz v4, :cond_5f
+    if-eqz v4, :cond_67
 
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->getOffer()Lcom/google/android/finsky/remoting/protos/Common$Offer;
 
@@ -1216,15 +1158,15 @@
 
     invoke-virtual {v3, v4}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->setOffer(Lcom/google/android/finsky/remoting/protos/Common$Offer;)Lcom/google/android/finsky/remoting/protos/Buy$LineItem;
 
-    .line 601
-    :cond_5f
+    .line 606
+    :cond_67
     iget-object v4, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mFragment:Landroid/support/v4/app/Fragment;
 
     invoke-virtual {v4}, Landroid/support/v4/app/Fragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v4
 
-    const v5, 0x7f07016c
+    const v5, 0x7f0701a3
 
     invoke-virtual {v4, v5}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -1232,7 +1174,7 @@
 
     invoke-virtual {v3, v4}, Lcom/google/android/finsky/remoting/protos/Buy$LineItem;->setName(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Buy$LineItem;
 
-    .line 602
+    .line 607
     const/4 v4, 0x1
 
     new-array v4, v4, [Lcom/google/android/finsky/remoting/protos/Buy$LineItem;
@@ -1253,16 +1195,26 @@
 
 # virtual methods
 .method public bind(Landroid/view/ViewGroup;Lcom/google/android/finsky/billing/CheckoutPurchase;)V
-    .registers 7
+    .registers 12
     .parameter "parent"
     .parameter "checkoutPurchase"
 
     .prologue
-    .line 316
+    const/4 v8, 0x0
+
+    const/4 v7, 0x1
+
+    const/16 v6, 0x8
+
+    const/4 v5, 0x4
+
+    const/4 v4, 0x0
+
+    .line 315
     iput-object p2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mCheckoutPurchase:Lcom/google/android/finsky/billing/CheckoutPurchase;
 
-    .line 317
-    const v2, 0x7f08015a
+    .line 316
+    const v2, 0x7f0801be
 
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1270,8 +1222,8 @@
 
     iput-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentAndPrice:Landroid/view/View;
 
-    .line 318
-    const v2, 0x7f0800cf
+    .line 317
+    const v2, 0x7f0800d5
 
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1279,8 +1231,8 @@
 
     iput-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mLoadingIndicator:Landroid/view/View;
 
-    .line 319
-    const v2, 0x7f08015d
+    .line 318
+    const v2, 0x7f0801c1
 
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1290,8 +1242,8 @@
 
     iput-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTable:Landroid/widget/TableLayout;
 
-    .line 320
-    const v2, 0x7f08015c
+    .line 319
+    const v2, 0x7f0801c0
 
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1301,8 +1253,8 @@
 
     iput-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTableSummaryRow:Landroid/view/ViewGroup;
 
-    .line 321
-    const v2, 0x7f08015b
+    .line 320
+    const v2, 0x7f0801bf
 
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1312,7 +1264,7 @@
 
     iput-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentSpinner:Landroid/widget/Spinner;
 
-    .line 323
+    .line 321
     new-instance v2, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;
 
     iget-object v3, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentSpinner:Landroid/widget/Spinner;
@@ -1321,38 +1273,122 @@
 
     iput-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentSpinnerAdapter:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;
 
-    .line 325
+    .line 322
+    const v2, 0x7f0801bd
+
+    invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mAddInstrumentHint:Landroid/widget/TextView;
+
+    .line 324
     iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mCheckoutPurchase:Lcom/google/android/finsky/billing/CheckoutPurchase;
 
-    if-eqz v2, :cond_78
+    if-eqz v2, :cond_cd
 
-    .line 326
+    .line 325
     iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mCheckoutPurchase:Lcom/google/android/finsky/billing/CheckoutPurchase;
 
     invoke-virtual {v2}, Lcom/google/android/finsky/billing/CheckoutPurchase;->isInstrumentRequired()Z
 
     move-result v2
 
-    if-nez v2, :cond_56
+    if-nez v2, :cond_66
 
-    .line 328
+    .line 327
     iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentSpinner:Landroid/widget/Spinner;
 
-    const/16 v3, 0x8
+    invoke-virtual {v2, v6}, Landroid/widget/Spinner;->setVisibility(I)V
 
-    invoke-virtual {v2, v3}, Landroid/widget/Spinner;->setVisibility(I)V
+    .line 328
+    iput-boolean v7, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mShowInstrumentAndPrice:Z
 
     .line 329
-    const/4 v2, 0x0
+    invoke-direct {p0, v8}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->updatePriceFromInstrument(Lcom/google/android/finsky/billing/Instrument;)V
 
-    invoke-direct {p0, v2}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->updatePriceFromInstrument(Lcom/google/android/finsky/billing/Instrument;)V
-
-    .line 367
-    :goto_55
+    .line 380
+    :goto_65
     return-void
 
+    .line 330
+    :cond_66
+    iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mCheckoutPurchase:Lcom/google/android/finsky/billing/CheckoutPurchase;
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/billing/CheckoutPurchase;->hasAddInstrumentHintText()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_95
+
     .line 331
-    :cond_56
+    iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mAddInstrumentHint:Landroid/widget/TextView;
+
+    iget-object v3, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mCheckoutPurchase:Lcom/google/android/finsky/billing/CheckoutPurchase;
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/billing/CheckoutPurchase;->getAddInstrumentHintText()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 332
+    iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mAddInstrumentHint:Landroid/widget/TextView;
+
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 333
+    iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentAndPrice:Landroid/view/View;
+
+    invoke-virtual {v2, v5}, Landroid/view/View;->setVisibility(I)V
+
+    .line 334
+    iput-boolean v4, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mShowInstrumentAndPrice:Z
+
+    .line 335
+    iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentSpinner:Landroid/widget/Spinner;
+
+    invoke-virtual {v2, v5}, Landroid/widget/Spinner;->setVisibility(I)V
+
+    .line 336
+    iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTable:Landroid/widget/TableLayout;
+
+    invoke-virtual {v2, v6}, Landroid/widget/TableLayout;->setVisibility(I)V
+
+    .line 337
+    iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTableSummaryRow:Landroid/view/ViewGroup;
+
+    invoke-virtual {v2, v5}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    goto :goto_65
+
+    .line 339
+    :cond_95
+    iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mAddInstrumentHint:Landroid/widget/TextView;
+
+    invoke-virtual {v2, v6}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 340
+    iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentAndPrice:Landroid/view/View;
+
+    invoke-virtual {v2, v4}, Landroid/view/View;->setVisibility(I)V
+
+    .line 341
+    iput-boolean v7, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mShowInstrumentAndPrice:Z
+
+    .line 342
+    iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentSpinner:Landroid/widget/Spinner;
+
+    invoke-virtual {v2, v4}, Landroid/widget/Spinner;->setVisibility(I)V
+
+    .line 343
+    iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTableSummaryRow:Landroid/view/ViewGroup;
+
+    invoke-virtual {v2, v4}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    .line 344
     iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentSpinnerAdapter:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;
 
     const/4 v3, 0x2
@@ -1361,7 +1397,7 @@
 
     move-result v1
 
-    .line 333
+    .line 346
     .local v1, position:I
     iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentSpinner:Landroid/widget/Spinner;
 
@@ -1369,7 +1405,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
 
-    .line 336
+    .line 349
     iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentSpinner:Landroid/widget/Spinner;
 
     new-instance v3, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$1;
@@ -1378,51 +1414,49 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
 
-    .line 353
-    if-gez v1, :cond_71
+    .line 366
+    if-gez v1, :cond_c6
 
-    .line 354
+    .line 367
     const/4 v1, 0x0
 
-    .line 356
-    :cond_71
+    .line 369
+    :cond_c6
     invoke-direct {p0, v1}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->setSpinnerSelection(I)V
 
-    .line 357
+    .line 370
     invoke-virtual {p0}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->showInstrumentAndPrice()V
 
-    goto :goto_55
+    goto :goto_65
 
-    .line 362
+    .line 375
     .end local v1           #position:I
-    :cond_78
+    :cond_cd
     new-instance v0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;
 
     iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentSpinner:Landroid/widget/Spinner;
 
     invoke-direct {v0, p0, v2}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;-><init>(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Landroid/widget/Spinner;)V
 
-    .line 363
+    .line 376
     .local v0, dummyAdapter:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;
     new-instance v2, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$PlaceholderInstrumentSelectorItem;
 
-    const-string v3, ""
-
-    invoke-direct {v2, p0, v3}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$PlaceholderInstrumentSelectorItem;-><init>(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Ljava/lang/String;)V
+    invoke-direct {v2, p0, v8}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$PlaceholderInstrumentSelectorItem;-><init>(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$1;)V
 
     invoke-virtual {v0, v2}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->add(Ljava/lang/Object;)V
 
-    .line 364
+    .line 377
     iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentSpinner:Landroid/widget/Spinner;
 
     invoke-virtual {v2, v0}, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
 
-    .line 365
+    .line 378
     const/4 v2, -0x1
 
     invoke-virtual {p0, v2}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->switchToLoading(I)V
 
-    goto :goto_55
+    goto :goto_65
 .end method
 
 .method public init(Landroid/support/v4/app/Fragment;Lcom/google/android/finsky/billing/InstrumentFactory;Landroid/os/Bundle;)V
@@ -1432,13 +1466,13 @@
     .parameter "savedState"
 
     .prologue
-    .line 291
+    .line 290
     iput-object p1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mFragment:Landroid/support/v4/app/Fragment;
 
-    .line 292
+    .line 291
     iput-object p2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentFactory:Lcom/google/android/finsky/billing/InstrumentFactory;
 
-    .line 293
+    .line 292
     if-eqz p3, :cond_15
 
     const-string v0, "expanded"
@@ -1454,13 +1488,13 @@
     :goto_f
     iput-boolean v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTableExpanded:Z
 
-    .line 294
+    .line 293
     invoke-direct {p0}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->initPurchaseSpinnerDimens()V
 
-    .line 295
+    .line 294
     return-void
 
-    .line 293
+    .line 292
     :cond_15
     const/4 v0, 0x0
 
@@ -1472,14 +1506,14 @@
     .parameter "outState"
 
     .prologue
-    .line 298
+    .line 297
     const-string v0, "expanded"
 
     iget-boolean v1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mPriceTableExpanded:Z
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 299
+    .line 298
     return-void
 .end method
 
@@ -1488,7 +1522,7 @@
     .parameter "instrumentFamily"
 
     .prologue
-    .line 393
+    .line 410
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -1501,7 +1535,7 @@
 
     if-ge v1, v3, :cond_21
 
-    .line 394
+    .line 411
     iget-object v3, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentSpinnerAdapter:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;
 
     invoke-virtual {v3, v1}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->getItem(I)Ljava/lang/Object;
@@ -1510,7 +1544,7 @@
 
     check-cast v2, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;
 
-    .line 395
+    .line 412
     .local v2, item:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;
     instance-of v3, v2, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;
 
@@ -1518,28 +1552,28 @@
 
     move-object v0, v2
 
-    .line 396
+    .line 413
     check-cast v0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;
 
-    .line 397
+    .line 414
     .local v0, addInstrumentItem:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;
     #getter for: Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;->mFamilyType:I
-    invoke-static {v0}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;->access$1100(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;)I
+    invoke-static {v0}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;->access$1200(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;)I
 
     move-result v3
 
     if-ne v3, p1, :cond_22
 
-    .line 398
+    .line 415
     invoke-direct {p0, v1}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->setSpinnerSelection(I)V
 
-    .line 403
+    .line 420
     .end local v0           #addInstrumentItem:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;
     .end local v2           #item:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;
     :cond_21
     return-void
 
-    .line 393
+    .line 410
     .restart local v2       #item:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;
     :cond_22
     add-int/lit8 v1, v1, 0x1
@@ -1548,24 +1582,37 @@
 .end method
 
 .method public selectInstrument(Ljava/lang/String;)V
-    .registers 5
+    .registers 6
     .parameter "instrumentId"
 
     .prologue
-    .line 373
+    const/4 v3, 0x0
+
+    .line 386
+    if-nez p1, :cond_7
+
+    .line 387
+    invoke-direct {p0, v3}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->setSpinnerSelection(I)V
+
+    .line 399
+    :goto_6
+    return-void
+
+    .line 390
+    :cond_7
     const/4 v0, 0x0
 
     .local v0, i:I
-    :goto_1
+    :goto_8
     iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentSpinnerAdapter:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;
 
     invoke-virtual {v2}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->getCount()I
 
     move-result v2
 
-    if-ge v0, v2, :cond_2c
+    if-ge v0, v2, :cond_33
 
-    .line 374
+    .line 391
     iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentSpinnerAdapter:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;
 
     invoke-virtual {v2, v0}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->getItem(I)Ljava/lang/Object;
@@ -1574,13 +1621,13 @@
 
     check-cast v1, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;
 
-    .line 375
+    .line 392
     .local v1, selectorItem:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;
     invoke-interface {v1}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;->getInstrument()Lcom/google/android/finsky/billing/Instrument;
 
     move-result-object v2
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_30
 
     invoke-interface {v1}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;->getInstrument()Lcom/google/android/finsky/billing/Instrument;
 
@@ -1594,52 +1641,52 @@
 
     move-result v2
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_30
 
-    .line 377
+    .line 394
     invoke-direct {p0, v0}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->setSpinnerSelection(I)V
 
-    .line 382
-    .end local v1           #selectorItem:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;
-    :goto_28
-    return-void
+    goto :goto_6
 
-    .line 373
-    .restart local v1       #selectorItem:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;
-    :cond_29
+    .line 390
+    :cond_30
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_8
 
-    .line 381
+    .line 398
     .end local v1           #selectorItem:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;
-    :cond_2c
-    const/4 v2, 0x0
+    :cond_33
+    invoke-direct {p0, v3}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->setSpinnerSelection(I)V
 
-    invoke-direct {p0, v2}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->setSpinnerSelection(I)V
-
-    goto :goto_28
+    goto :goto_6
 .end method
 
 .method public showInstrumentAndPrice()V
     .registers 3
 
     .prologue
-    .line 624
+    .line 630
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mLoadingIndicator:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 625
+    .line 631
+    iget-boolean v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mShowInstrumentAndPrice:Z
+
+    if-eqz v0, :cond_11
+
+    .line 632
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentAndPrice:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 626
+    .line 634
+    :cond_11
     return-void
 .end method
 
@@ -1668,13 +1715,13 @@
     .parameter "loadingLabel"
 
     .prologue
-    .line 612
+    .line 617
     if-ltz p1, :cond_10
 
-    .line 613
+    .line 618
     iget-object v1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mLoadingIndicator:Landroid/view/View;
 
-    const v2, 0x7f080164
+    const v2, 0x7f0801c3
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1682,11 +1729,11 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 614
+    .line 619
     .local v0, label:Landroid/widget/TextView;
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 616
+    .line 621
     .end local v0           #label:Landroid/widget/TextView;
     :cond_10
     iget-object v1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mLoadingIndicator:Landroid/view/View;
@@ -1695,13 +1742,20 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 617
+    .line 622
     iget-object v1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentAndPrice:Landroid/view/View;
 
     const/4 v2, 0x4
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 618
+    .line 623
+    iget-object v1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mAddInstrumentHint:Landroid/widget/TextView;
+
+    const/16 v2, 0x8
+
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 624
     return-void
 .end method

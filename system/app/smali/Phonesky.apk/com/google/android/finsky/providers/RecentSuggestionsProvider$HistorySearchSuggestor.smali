@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
+    accessFlags = 0x8
     name = "HistorySearchSuggestor"
 .end annotation
 
@@ -17,27 +17,22 @@
 # instance fields
 .field private final mCursor:Landroid/database/Cursor;
 
-.field final synthetic this$0:Lcom/google/android/finsky/providers/RecentSuggestionsProvider;
-
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/finsky/providers/RecentSuggestionsProvider;Ljava/lang/String;Landroid/database/Cursor;)V
+.method public constructor <init>(Ljava/lang/String;Landroid/database/Cursor;Landroid/content/Context;)V
     .registers 4
-    .parameter
     .parameter "query"
     .parameter "historyCursor"
+    .parameter "context"
 
     .prologue
-    .line 228
-    iput-object p1, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->this$0:Lcom/google/android/finsky/providers/RecentSuggestionsProvider;
+    .line 438
+    invoke-direct {p0, p1, p3}, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AsyncSuggestionAuthority;-><init>(Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 229
-    invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AsyncSuggestionAuthority;-><init>(Lcom/google/android/finsky/providers/RecentSuggestionsProvider;Ljava/lang/String;)V
+    .line 439
+    iput-object p2, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mCursor:Landroid/database/Cursor;
 
-    .line 230
-    iput-object p3, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mCursor:Landroid/database/Cursor;
-
-    .line 231
+    .line 440
     return-void
 .end method
 
@@ -48,22 +43,22 @@
     .parameter "listener"
 
     .prologue
-    .line 235
+    .line 444
     const/4 v1, 0x0
 
-    .line 236
+    .line 445
     .local v1, col:I
     const/4 v4, 0x0
 
-    .line 237
+    .line 446
     .local v4, idColumn:I
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    .line 238
-    .local v6, textColumn:I
-    iget-object v7, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mCursor:Landroid/database/Cursor;
+    .line 447
+    .local v7, textColumn:I
+    iget-object v8, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mCursor:Landroid/database/Cursor;
 
-    invoke-interface {v7}, Landroid/database/Cursor;->getColumnNames()[Ljava/lang/String;
+    invoke-interface {v8}, Landroid/database/Cursor;->getColumnNames()[Ljava/lang/String;
 
     move-result-object v0
 
@@ -79,96 +74,113 @@
 
     aget-object v2, v0, v3
 
-    .line 239
+    .line 448
     .local v2, historyCol:Ljava/lang/String;
-    const-string v7, "_id"
+    const-string v8, "_id"
 
-    invoke-virtual {v2, v7}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v2, v8}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_1d
+    if-eqz v8, :cond_1d
 
-    .line 240
+    .line 449
     move v4, v1
 
-    .line 244
+    .line 453
     :cond_18
     :goto_18
     add-int/lit8 v1, v1, 0x1
 
-    .line 238
+    .line 447
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_b
 
-    .line 241
+    .line 450
     :cond_1d
-    const-string v7, "suggest_text_1"
+    const-string v8, "suggest_text_1"
 
-    invoke-virtual {v2, v7}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v2, v8}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_18
+    if-eqz v8, :cond_18
 
-    .line 242
-    move v6, v1
+    .line 451
+    move v7, v1
 
     goto :goto_18
 
-    .line 246
+    .line 455
     .end local v2           #historyCol:Ljava/lang/String;
     :cond_27
-    iget-object v7, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mCursor:Landroid/database/Cursor;
+    iget-object v8, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mCursor:Landroid/database/Cursor;
 
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
-    invoke-interface {v7, v8}, Landroid/database/Cursor;->moveToPosition(I)Z
+    invoke-interface {v8, v9}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    .line 247
+    .line 456
     :goto_2d
-    iget-object v7, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mCursor:Landroid/database/Cursor;
+    iget-object v8, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mCursor:Landroid/database/Cursor;
 
-    invoke-interface {v7}, Landroid/database/Cursor;->isAfterLast()Z
+    invoke-interface {v8}, Landroid/database/Cursor;->isAfterLast()Z
 
-    move-result v7
+    move-result v8
 
-    if-nez v7, :cond_4d
+    if-nez v8, :cond_59
 
-    .line 248
-    iget-object v7, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mCursor:Landroid/database/Cursor;
+    .line 458
+    iget-object v8, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mCursor:Landroid/database/Cursor;
 
-    invoke-interface {v7, v4}, Landroid/database/Cursor;->getInt(I)I
+    invoke-interface {v8, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result v7
+    move-result-object v6
 
-    const v8, 0x108004a
+    .line 459
+    .local v6, suggestion:Ljava/lang/String;
+    iget-object v8, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mQuery:Ljava/lang/String;
 
-    iget-object v9, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mCursor:Landroid/database/Cursor;
+    invoke-virtual {v6, v8}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    invoke-interface {v9, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    move-result v8
+
+    if-eqz v8, :cond_53
+
+    .line 460
+    iget-object v8, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mCursor:Landroid/database/Cursor;
+
+    invoke-interface {v8, v4}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v8
+
+    const v9, 0x108004a
+
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
 
-    invoke-virtual {p0, v7, v8, v9}, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->addRow(IILjava/lang/String;)V
+    invoke-virtual {p0, v8, v9, v6}, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->addRow(ILjava/lang/Object;Ljava/lang/String;)V
 
-    .line 250
-    iget-object v7, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mCursor:Landroid/database/Cursor;
+    .line 463
+    :cond_53
+    iget-object v8, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mCursor:Landroid/database/Cursor;
 
-    invoke-interface {v7}, Landroid/database/Cursor;->moveToNext()Z
+    invoke-interface {v8}, Landroid/database/Cursor;->moveToNext()Z
 
     goto :goto_2d
 
-    .line 252
-    :cond_4d
-    iget-object v7, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mCursor:Landroid/database/Cursor;
+    .line 465
+    .end local v6           #suggestion:Ljava/lang/String;
+    :cond_59
+    iget-object v8, p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;->mCursor:Landroid/database/Cursor;
 
-    invoke-interface {v7}, Landroid/database/Cursor;->close()V
+    invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 253
+    .line 466
     invoke-interface {p1}, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$OnCompleteListener;->onComplete()V
 
-    .line 254
+    .line 467
     return-void
 .end method

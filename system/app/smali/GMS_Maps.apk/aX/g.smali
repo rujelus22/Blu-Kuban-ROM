@@ -1,163 +1,490 @@
-.class public LaX/g;
+.class public Lax/g;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lax/N;
 
 
 # instance fields
-.field private a:Ljava/lang/Boolean;
+.field private final a:Ljava/util/Map;
 
-.field private b:B
-
-.field private c:J
-
-.field private d:I
-
-.field private e:I
+.field private final b:Ljava/util/List;
 
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .registers 2
 
-    const/4 v2, -0x1
-
+    .prologue
+    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    .line 38
+    invoke-static {}, Lcom/google/common/collect/Maps;->a()Ljava/util/HashMap;
 
-    iput-byte v0, p0, LaX/g;->b:B
+    move-result-object v0
 
-    const-wide/16 v0, -0x1
+    iput-object v0, p0, Lax/g;->a:Ljava/util/Map;
 
-    iput-wide v0, p0, LaX/g;->c:J
+    .line 44
+    invoke-static {}, Lcom/google/common/collect/cx;->a()Ljava/util/ArrayList;
 
-    iput v2, p0, LaX/g;->d:I
+    move-result-object v0
 
-    iput v2, p0, LaX/g;->e:I
+    iput-object v0, p0, Lax/g;->b:Ljava/util/List;
 
+    .line 47
     return-void
+.end method
+
+.method private b(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)Lax/N;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 54
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
+
+    move-result v0
+
+    .line 55
+    invoke-virtual {p0, v0}, Lax/g;->a(I)Lax/P;
+
+    move-result-object v0
+
+    .line 56
+    invoke-virtual {v0, p1}, Lax/P;->a(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+
+    .line 57
+    return-object v0
+.end method
+
+.method private d(I)Lax/P;
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 66
+    new-instance v1, Lax/P;
+
+    invoke-direct {v1, p1}, Lax/P;-><init>(I)V
+
+    .line 67
+    iget-object v0, p0, Lax/g;->a:Ljava/util/Map;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 70
+    iget-object v0, p0, Lax/g;->b:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_14
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_24
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lax/Q;
+
+    .line 71
+    invoke-virtual {v1, v0}, Lax/P;->a(Lax/Q;)V
+
+    goto :goto_14
+
+    .line 73
+    :cond_24
+    return-object v1
+.end method
+
+.method private e(I)Lax/P;
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 77
+    iget-object v0, p0, Lax/g;->a:Ljava/util/Map;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lax/P;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public a()B
-    .registers 2
-
-    iget-byte v0, p0, LaX/g;->b:B
-
-    return v0
-.end method
-
-.method public a(B)V
-    .registers 2
-
-    iput-byte p1, p0, LaX/g;->b:B
-
-    return-void
-.end method
-
-.method public a(I)V
-    .registers 2
-
-    iput p1, p0, LaX/g;->e:I
-
-    return-void
-.end method
-
-.method public a(J)V
+.method public a(I)Lax/P;
     .registers 3
+    .parameter
 
-    iput-wide p1, p0, LaX/g;->c:J
+    .prologue
+    .line 94
+    invoke-direct {p0, p1}, Lax/g;->e(I)Lax/P;
 
+    move-result-object v0
+
+    .line 95
+    if-eqz v0, :cond_7
+
+    :goto_6
+    return-object v0
+
+    :cond_7
+    invoke-direct {p0, p1}, Lax/g;->d(I)Lax/P;
+
+    move-result-object v0
+
+    goto :goto_6
+.end method
+
+.method public a(ILjava/lang/String;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 100
+    invoke-direct {p0, p1}, Lax/g;->e(I)Lax/P;
+
+    move-result-object v0
+
+    .line 101
+    if-eqz v0, :cond_b
+
+    .line 102
+    invoke-interface {v0, p1, p2}, Lax/N;->a(ILjava/lang/String;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    move-result-object v0
+
+    .line 104
+    :goto_a
+    return-object v0
+
+    :cond_b
+    const/4 v0, 0x0
+
+    goto :goto_a
+.end method
+
+.method public a()Ljava/util/Collection;
+    .registers 2
+
+    .prologue
+    .line 84
+    iget-object v0, p0, Lax/g;->a:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public a(ILax/O;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 120
+    invoke-virtual {p0, p1}, Lax/g;->a(I)Lax/P;
+
+    move-result-object v0
+
+    .line 121
+    invoke-interface {v0, p1, p2}, Lax/N;->a(ILax/O;)V
+
+    .line 122
     return-void
 .end method
 
-.method public declared-synchronized a(Ljava/lang/Boolean;Z)V
-    .registers 6
+.method public a(Lax/Q;)V
+    .registers 4
+    .parameter
 
-    monitor-enter p0
+    .prologue
+    .line 146
+    iget-object v0, p0, Lax/g;->b:Ljava/util/List;
 
-    :try_start_1
-    iput-object p1, p0, LaX/g;->a:Ljava/lang/Boolean;
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    if-eqz p2, :cond_12
+    .line 149
+    iget-object v0, p0, Lax/g;->a:Ljava/util/Map;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_f
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1f
 
-    const/4 v0, 0x1
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    :goto_c
-    const-string v1, "WIFI_DETECTION_ALERT_ALLOWED"
+    move-result-object v0
 
-    const/4 v2, 0x0
+    check-cast v0, Lax/P;
 
-    invoke-static {v1, v0, v2}, Lax/be;->a(Ljava/lang/String;ILax/bk;)V
-    :try_end_12
-    .catchall {:try_start_1 .. :try_end_12} :catchall_16
+    .line 150
+    invoke-virtual {v0, p1}, Lax/P;->a(Lax/Q;)V
 
-    :cond_12
-    monitor-exit p0
+    goto :goto_f
 
+    .line 152
+    :cond_1f
     return-void
+.end method
 
-    :cond_14
+.method public a(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+    .registers 6
+    .parameter
+
+    .prologue
+    const/4 v3, 0x1
+
+    .line 200
+    invoke-virtual {p1, v3}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getCount(I)I
+
+    move-result v1
+
+    .line 201
     const/4 v0, 0x0
 
-    goto :goto_c
+    :goto_6
+    if-ge v0, v1, :cond_12
 
-    :catchall_16
-    move-exception v0
+    .line 202
+    invoke-virtual {p1, v3, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getProtoBuf(II)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    monitor-exit p0
+    move-result-object v2
 
-    throw v0
-.end method
+    invoke-direct {p0, v2}, Lax/g;->b(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)Lax/N;
 
-.method public b()J
-    .registers 3
+    .line 201
+    add-int/lit8 v0, v0, 0x1
 
-    iget-wide v0, p0, LaX/g;->c:J
+    goto :goto_6
 
-    return-wide v0
-.end method
-
-.method public b(I)V
-    .registers 2
-
-    iput p1, p0, LaX/g;->d:I
-
+    .line 204
+    :cond_12
     return-void
 .end method
 
-.method public c()I
-    .registers 2
+.method public a(ILcom/google/googlenav/common/io/protocol/ProtoBuf;)Z
+    .registers 4
+    .parameter
+    .parameter
 
-    iget v0, p0, LaX/g;->d:I
+    .prologue
+    .line 126
+    invoke-virtual {p0, p1}, Lax/g;->a(I)Lax/P;
+
+    move-result-object v0
+
+    .line 127
+    invoke-interface {v0, p1, p2}, Lax/N;->a(ILcom/google/googlenav/common/io/protocol/ProtoBuf;)Z
+
+    move-result v0
 
     return v0
 .end method
 
-.method public declared-synchronized d()Ljava/lang/Boolean;
-    .registers 2
+.method public b(I)Ljava/util/List;
+    .registers 3
+    .parameter
 
-    monitor-enter p0
+    .prologue
+    .line 110
+    invoke-direct {p0, p1}, Lax/g;->e(I)Lax/P;
 
-    :try_start_1
-    iget-object v0, p0, LaX/g;->a:Ljava/lang/Boolean;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    move-result-object v0
 
-    monitor-exit p0
+    .line 111
+    if-eqz v0, :cond_b
 
+    .line 112
+    invoke-interface {v0, p1}, Lax/N;->b(I)Ljava/util/List;
+
+    move-result-object v0
+
+    .line 114
+    :goto_a
     return-object v0
 
-    :catchall_5
-    move-exception v0
+    :cond_b
+    invoke-static {}, Lcom/google/common/collect/cx;->a()Ljava/util/ArrayList;
 
-    monitor-exit p0
+    move-result-object v0
 
-    throw v0
+    goto :goto_a
+.end method
+
+.method public b()V
+    .registers 3
+
+    .prologue
+    .line 169
+    iget-object v0, p0, Lax/g;->a:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_a
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1a
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lax/P;
+
+    .line 170
+    invoke-virtual {v0}, Lax/P;->a()V
+
+    goto :goto_a
+
+    .line 172
+    :cond_1a
+    return-void
+.end method
+
+.method public b(ILjava/lang/String;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 137
+    invoke-virtual {p0, p1}, Lax/g;->a(I)Lax/P;
+
+    move-result-object v0
+
+    .line 138
+    invoke-interface {v0, p1, p2}, Lax/N;->b(ILjava/lang/String;)V
+
+    .line 139
+    return-void
+.end method
+
+.method public b(ILcom/google/googlenav/common/io/protocol/ProtoBuf;)Z
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 132
+    invoke-virtual {p0, p1, p2}, Lax/g;->a(ILcom/google/googlenav/common/io/protocol/ProtoBuf;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public c()Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+    .registers 5
+
+    .prologue
+    .line 187
+    new-instance v1, Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    sget-object v0, Lbo/j;->b:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-direct {v1, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;-><init>(Lcom/google/googlenav/common/io/protocol/ProtoBufType;)V
+
+    .line 188
+    iget-object v0, p0, Lax/g;->a:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_11
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_26
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lax/P;
+
+    .line 189
+    const/4 v3, 0x1
+
+    invoke-virtual {v0}, Lax/P;->b()Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v3, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->addProtoBuf(ILcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+
+    goto :goto_11
+
+    .line 191
+    :cond_26
+    return-object v1
+.end method
+
+.method public c(I)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 176
+    invoke-direct {p0, p1}, Lax/g;->e(I)Lax/P;
+
+    move-result-object v0
+
+    .line 177
+    if-eqz v0, :cond_9
+
+    .line 178
+    invoke-interface {v0, p1}, Lax/N;->c(I)V
+
+    .line 180
+    :cond_9
+    return-void
 .end method

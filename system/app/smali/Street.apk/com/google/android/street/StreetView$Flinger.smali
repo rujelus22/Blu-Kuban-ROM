@@ -43,12 +43,12 @@
 
     const/4 v1, 0x0
 
-    .line 256
+    .line 258
     iput-object p1, p0, Lcom/google/android/street/StreetView$Flinger;->this$0:Lcom/google/android/street/StreetView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 257
+    .line 259
     cmpl-float v0, p2, v1
 
     if-lez v0, :cond_25
@@ -58,7 +58,7 @@
     :goto_d
     iput-boolean v0, p0, Lcom/google/android/street/StreetView$Flinger;->mIsDxPositive:Z
 
-    .line 258
+    .line 260
     iget-boolean v0, p0, Lcom/google/android/street/StreetView$Flinger;->mIsDxPositive:Z
 
     if-eqz v0, :cond_27
@@ -68,7 +68,7 @@
     :goto_14
     iput v0, p0, Lcom/google/android/street/StreetView$Flinger;->mAbsDx:F
 
-    .line 260
+    .line 262
     cmpl-float v0, p3, v1
 
     if-lez v0, :cond_29
@@ -78,7 +78,7 @@
     :goto_1b
     iput-boolean v0, p0, Lcom/google/android/street/StreetView$Flinger;->mIsDyPositive:Z
 
-    .line 261
+    .line 263
     iget-boolean v0, p0, Lcom/google/android/street/StreetView$Flinger;->mIsDyPositive:Z
 
     if-eqz v0, :cond_2b
@@ -88,16 +88,16 @@
     :goto_22
     iput v0, p0, Lcom/google/android/street/StreetView$Flinger;->mAbsDy:F
 
-    .line 262
+    .line 264
     return-void
 
     :cond_25
     move v0, v2
 
-    .line 257
+    .line 259
     goto :goto_d
 
-    .line 258
+    .line 260
     :cond_27
     neg-float v0, p2
 
@@ -106,10 +106,10 @@
     :cond_29
     move v0, v2
 
-    .line 260
+    .line 262
     goto :goto_1b
 
-    .line 261
+    .line 263
     :cond_2b
     neg-float v0, p3
 
@@ -128,7 +128,7 @@
 
     const/4 v4, 0x0
 
-    .line 266
+    .line 268
     iget-object v0, p0, Lcom/google/android/street/StreetView$Flinger;->this$0:Lcom/google/android/street/StreetView;
 
     #getter for: Lcom/google/android/street/StreetView;->mFlingerLock:Ljava/lang/Object;
@@ -138,7 +138,7 @@
 
     monitor-enter v0
 
-    .line 269
+    .line 271
     :goto_e
     :try_start_e
     iget-object v1, p0, Lcom/google/android/street/StreetView$Flinger;->this$0:Lcom/google/android/street/StreetView;
@@ -155,7 +155,7 @@
     .catchall {:try_start_e .. :try_end_19} :catchall_57
     .catch Ljava/lang/InterruptedException; {:try_start_e .. :try_end_19} :catch_62
 
-    .line 273
+    .line 275
     :goto_19
     :try_start_19
     iget-object v1, p0, Lcom/google/android/street/StreetView$Flinger;->this$0:Lcom/google/android/street/StreetView;
@@ -167,14 +167,14 @@
 
     if-nez v1, :cond_23
 
-    .line 284
+    .line 286
     :cond_21
     monitor-exit v0
 
-    .line 285
+    .line 287
     return-void
 
-    .line 276
+    .line 278
     :cond_23
     iget v1, p0, Lcom/google/android/street/StreetView$Flinger;->mAbsDx:F
 
@@ -188,7 +188,7 @@
 
     if-lez v1, :cond_21
 
-    .line 279
+    .line 281
     :cond_2f
     iget-object v1, p0, Lcom/google/android/street/StreetView$Flinger;->this$0:Lcom/google/android/street/StreetView;
 
@@ -208,7 +208,7 @@
     :goto_3d
     invoke-virtual {v1, v2, v3}, Lcom/google/android/street/StreetView;->yawTilt(FF)V
 
-    .line 281
+    .line 283
     iget v1, p0, Lcom/google/android/street/StreetView$Flinger;->mAbsDx:F
 
     mul-float/2addr v1, v6
@@ -223,7 +223,7 @@
 
     iput v1, p0, Lcom/google/android/street/StreetView$Flinger;->mAbsDx:F
 
-    .line 282
+    .line 284
     iget v1, p0, Lcom/google/android/street/StreetView$Flinger;->mAbsDy:F
 
     mul-float/2addr v1, v6
@@ -240,7 +240,7 @@
 
     goto :goto_e
 
-    .line 284
+    .line 286
     :catchall_57
     move-exception v1
 
@@ -250,7 +250,7 @@
 
     throw v1
 
-    .line 279
+    .line 281
     :cond_5a
     :try_start_5a
     iget v2, p0, Lcom/google/android/street/StreetView$Flinger;->mAbsDx:F
@@ -268,7 +268,7 @@
 
     goto :goto_3d
 
-    .line 270
+    .line 272
     :catch_62
     move-exception v1
 
@@ -279,7 +279,7 @@
     .registers 3
 
     .prologue
-    .line 288
+    .line 290
     iget-object v0, p0, Lcom/google/android/street/StreetView$Flinger;->this$0:Lcom/google/android/street/StreetView;
 
     #getter for: Lcom/google/android/street/StreetView;->mFlingerLock:Ljava/lang/Object;
@@ -289,18 +289,18 @@
 
     monitor-enter v0
 
-    .line 289
+    .line 291
     const/4 v1, 0x0
 
     :try_start_8
     iput v1, p0, Lcom/google/android/street/StreetView$Flinger;->mAbsDx:F
 
-    .line 290
+    .line 292
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/google/android/street/StreetView$Flinger;->mAbsDy:F
 
-    .line 291
+    .line 293
     iget-object v1, p0, Lcom/google/android/street/StreetView$Flinger;->this$0:Lcom/google/android/street/StreetView;
 
     #getter for: Lcom/google/android/street/StreetView;->mFlingerLock:Ljava/lang/Object;
@@ -310,13 +310,13 @@
 
     invoke-virtual {v1}, Ljava/lang/Object;->notify()V
 
-    .line 292
+    .line 294
     monitor-exit v0
 
-    .line 293
+    .line 295
     return-void
 
-    .line 292
+    .line 294
     :catchall_18
     move-exception v1
 

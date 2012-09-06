@@ -13,19 +13,6 @@
 .field d:Lcom/google/wireless/gdata2/a/a/b;
 
 
-# direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 15
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 16
-    return-void
-.end method
-
-
 # virtual methods
 .method public final toString()Ljava/lang/String;
     .registers 4

@@ -1,5 +1,5 @@
-.class final Lcom/google/common/collect/cw;
-.super Ljava/lang/Object;
+.class public abstract Lcom/google/common/collect/cw;
+.super Lcom/google/common/collect/db;
 .source "SourceFile"
 
 # interfaces
@@ -7,48 +7,76 @@
 
 
 # direct methods
-.method constructor <init>()V
+.method protected constructor <init>()V
     .registers 1
 
     .prologue
-    .line 77
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 37
+    invoke-direct {p0}, Lcom/google/common/collect/db;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
+.method protected abstract a()Ljava/util/Iterator;
+.end method
+
+.method protected synthetic delegate()Ljava/lang/Object;
     .registers 2
 
     .prologue
-    .line 79
-    const/4 v0, 0x0
+    .line 32
+    invoke-virtual {p0}, Lcom/google/common/collect/cw;->a()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public hasNext()Z
+    .registers 2
+
+    .prologue
+    .line 43
+    invoke-virtual {p0}, Lcom/google/common/collect/cw;->a()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
 
     return v0
 .end method
 
-.method public final next()Ljava/lang/Object;
+.method public next()Ljava/lang/Object;
     .registers 2
 
     .prologue
-    .line 83
-    new-instance v0, Ljava/util/NoSuchElementException;
+    .line 48
+    invoke-virtual {p0}, Lcom/google/common/collect/cw;->a()Ljava/util/Iterator;
 
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+    move-result-object v0
 
-    throw v0
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
-.method public final remove()V
+.method public remove()V
     .registers 2
 
     .prologue
-    .line 87
-    new-instance v0, Ljava/lang/IllegalStateException;
+    .line 53
+    invoke-virtual {p0}, Lcom/google/common/collect/cw;->a()Ljava/util/Iterator;
 
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+    move-result-object v0
 
-    throw v0
+    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+
+    .line 54
+    return-void
 .end method

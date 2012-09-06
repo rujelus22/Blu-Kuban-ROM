@@ -1,29 +1,24 @@
-.class public interface abstract Lcom/google/android/plus1/ar;
+.class public final Lcom/google/android/plus1/ar;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lcom/google/android/plus1/am;
+
+# instance fields
+.field public a:Ljava/lang/Boolean;
+
+.field public b:Ljava/lang/String;
+
+.field public c:Ljava/lang/String;
 
 
-# virtual methods
-.method public abstract a(Landroid/net/Uri;Lcom/google/android/plus1/u;)V
-.end method
+# direct methods
+.method public constructor <init>()V
+    .registers 1
 
-.method public abstract a(Lcom/google/android/plus1/ap;)V
-.end method
+    .prologue
+    .line 66
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract a(Lcom/google/android/plus1/as;)V
-.end method
-
-.method public abstract a(Ljava/util/List;)V
-.end method
-
-.method public abstract b()Ljava/util/Map;
-.end method
-
-.method public abstract b(Lcom/google/android/plus1/as;)V
-.end method
-
-.method public abstract c()Ljava/util/List;
+    .line 67
+    return-void
 .end method

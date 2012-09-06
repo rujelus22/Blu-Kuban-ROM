@@ -242,18 +242,18 @@
     <string name="account_intro_recommended_title">Google 계정 설정</string>
     <string name="common_message">"Google 계정을 사용하면
 
-"<li><ul>어디서든 모든 정보를 보고 관리할 수 있습니다.</ul></li>"
+"<ul><li>어디서든 모든 정보를 보고 관리할 수 있습니다.</li></ul>"
 
-"<li><ul>데이터가 자동으로 백업됩니다.</ul></li>"
+"<ul><li>데이터가 자동으로 백업됩니다.</li></ul>"
 
-"<li><ul>어디서나 쉽게 Google 서비스를 이용할 수 있습니다.</ul></li></string>
+"<ul><li>어디서나 쉽게 Google 서비스를 이용할 수 있습니다.</li></ul></string>
     <string name="add_account_message">" 두 개 이상의 Google 계정(예: 가정용, 직장용)을 사용할 수 있습니다. Google 계정을 추가하려면 "<b>로그인</b> 또는 <b>계정 만들기</b>를 터치하세요.</string>
     <string name="account_intro_default_message">데이터를 잃을까 걱정하지 마세요. 모든 데이터가 Google 계정에 안전하게 보관됩니다.</string>
     <string name="account_intro_custom_endtext">%s 사용자이십니까? 지금 로그인하세요.</string>
     <string name="account_intro_simple_message">기존 계정을 추가하시겠습니까 아니면 새 계정을 만드시겠습니까?</string>
     <string name="learn_more_title"><annotation id="learn_more">자세히 알아보기</annotation></string>
     <string name="learn_more_account_intro">"Google 계정을 사용하면 
-"<li><ul>어디서든 모든 정보를 보고 관리할 수 있습니다.<li>이메일, 연락처, 음악 및 사진과 같은 데이터는 자동으로 백업합니다.</li><li>어디서나 쉽게 주소록, 캘린더, 지도 등과 같은 Google 서비스를 이용하세요.</li></ul></li></string>
+"<ul><li>어디서든 모든 정보를 보고 관리할 수 있습니다.<li>이메일, 연락처, 음악 및 사진과 같은 데이터는 자동으로 백업합니다.</li><li>어디서나 쉽게 주소록, 캘린더, 지도 등과 같은 Google 서비스를 이용하세요.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Google 계정 정보</string>
     <string name="learn_more_web_history">"웹 기록은 사용자의 검색기록과 방문 사이트를 토대로 개인화된 Google 검색결과를 제공합니다.
 

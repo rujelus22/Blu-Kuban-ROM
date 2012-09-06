@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item type="drawable" name="transparent_bg">#00000000</item>
-    <item type="drawable" name="popup_option_selection">#ff2d5a8c</item>
-    <item type="drawable" name="title_bg">#26262600</item>
-</resources>

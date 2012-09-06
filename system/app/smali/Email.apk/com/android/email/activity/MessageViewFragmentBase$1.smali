@@ -1,14 +1,11 @@
 .class Lcom/android/email/activity/MessageViewFragmentBase$1;
-.super Ljava/lang/Object;
+.super Lcom/android/emailcommon/utility/EmailAsyncTask;
 .source "MessageViewFragmentBase.java"
-
-# interfaces
-.implements Landroid/view/View$OnLongClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MessageViewFragmentBase;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
+    value = Lcom/android/email/activity/MessageViewFragmentBase;->onLoadAttachment(Lcom/android/email/activity/MessageViewFragmentBase$MessageViewAttachmentInfo;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,165 +13,128 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/android/emailcommon/utility/EmailAsyncTask",
+        "<",
+        "Ljava/lang/Void;",
+        "Ljava/lang/Void;",
+        "Ljava/lang/Void;",
+        ">;"
+    }
+.end annotation
+
 
 # instance fields
 .field final synthetic this$0:Lcom/android/email/activity/MessageViewFragmentBase;
 
+.field final synthetic val$attachment:Lcom/android/email/activity/MessageViewFragmentBase$MessageViewAttachmentInfo;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/email/activity/MessageViewFragmentBase;)V
-    .registers 2
+.method constructor <init>(Lcom/android/email/activity/MessageViewFragmentBase;Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;Lcom/android/email/activity/MessageViewFragmentBase$MessageViewAttachmentInfo;)V
+    .registers 4
+    .parameter
+    .parameter "x0"
     .parameter
 
     .prologue
-    .line 863
+    .line 862
     iput-object p1, p0, Lcom/android/email/activity/MessageViewFragmentBase$1;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    iput-object p3, p0, Lcom/android/email/activity/MessageViewFragmentBase$1;->val$attachment:Lcom/android/email/activity/MessageViewFragmentBase$MessageViewAttachmentInfo;
+
+    invoke-direct {p0, p2}, Lcom/android/emailcommon/utility/EmailAsyncTask;-><init>(Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onLongClick(Landroid/view/View;)Z
-    .registers 9
-    .parameter "v"
+.method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+    .parameter "x0"
 
     .prologue
-    const/4 v4, 0x0
+    .line 862
+    check-cast p1, [Ljava/lang/Void;
 
-    const/4 v3, 0x1
-
-    .line 865
-    iget-object v5, p0, Lcom/android/email/activity/MessageViewFragmentBase$1;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
-
-    iget-object v5, v5, Lcom/android/email/activity/MessageViewFragmentBase;->mMessageWebView:Lcom/android/email/activity/MessageWebView;
-
-    if-eqz v5, :cond_12
-
-    .line 866
-    iget-object v5, p0, Lcom/android/email/activity/MessageViewFragmentBase$1;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
-
-    iget-object v5, v5, Lcom/android/email/activity/MessageViewFragmentBase;->mMessageWebView:Lcom/android/email/activity/MessageWebView;
-
-    invoke-virtual {v5}, Lcom/android/email/activity/MessageWebView;->getHitTestResult()Landroid/webkit/WebView$HitTestResult;
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/android/email/activity/MessageViewFragmentBase$1;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
 
     move-result-object v0
 
+    return-object v0
+.end method
+
+.method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
+    .registers 4
+    .parameter "params"
+
+    .prologue
+    .line 866
+    const-wide/16 v0, 0x3e8
+
+    :try_start_2
+    invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
+    :try_end_5
+    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_5} :catch_7
+
+    .line 868
+    :goto_5
+    const/4 v0, 0x0
+
+    return-object v0
+
     .line 867
-    .local v0, result:Landroid/webkit/WebView$HitTestResult;
-    if-nez v0, :cond_13
+    :catch_7
+    move-exception v0
 
-    .line 904
-    .end local v0           #result:Landroid/webkit/WebView$HitTestResult;
-    :cond_12
-    :goto_12
-    return v3
+    goto :goto_5
+.end method
 
-    .line 870
-    .restart local v0       #result:Landroid/webkit/WebView$HitTestResult;
-    :cond_13
-    invoke-virtual {v0}, Landroid/webkit/WebView$HitTestResult;->getType()I
+.method protected bridge synthetic onSuccess(Ljava/lang/Object;)V
+    .registers 2
+    .parameter "x0"
 
-    move-result v1
+    .prologue
+    .line 862
+    check-cast p1, Ljava/lang/Void;
 
-    .line 871
-    .local v1, type:I
-    iget-object v5, p0, Lcom/android/email/activity/MessageViewFragmentBase$1;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/android/email/activity/MessageViewFragmentBase$1;->onSuccess(Ljava/lang/Void;)V
 
-    iget-object v5, v5, Lcom/android/email/activity/MessageViewFragmentBase;->mMessageWebView:Lcom/android/email/activity/MessageWebView;
+    return-void
+.end method
 
-    invoke-virtual {v5}, Lcom/android/email/activity/MessageWebView;->getSettings()Landroid/webkit/WebSettings;
+.method protected onSuccess(Ljava/lang/Void;)V
+    .registers 4
+    .parameter "result"
 
-    move-result-object v2
-
+    .prologue
     .line 873
-    .local v2, webSettings:Landroid/webkit/WebSettings;
-    if-nez v1, :cond_29
+    iget-object v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$1;->val$attachment:Lcom/android/email/activity/MessageViewFragmentBase$MessageViewAttachmentInfo;
+
+    #getter for: Lcom/android/email/activity/MessageViewFragmentBase$MessageViewAttachmentInfo;->loaded:Z
+    invoke-static {v0}, Lcom/android/email/activity/MessageViewFragmentBase$MessageViewAttachmentInfo;->access$1000(Lcom/android/email/activity/MessageViewFragmentBase$MessageViewAttachmentInfo;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_12
 
     .line 874
-    invoke-virtual {v2}, Landroid/webkit/WebSettings;->getAdvancedCopyPasteFeature()Z
+    iget-object v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$1;->val$attachment:Lcom/android/email/activity/MessageViewFragmentBase$MessageViewAttachmentInfo;
 
-    move-result v5
+    #getter for: Lcom/android/email/activity/MessageViewFragmentBase$MessageViewAttachmentInfo;->cancelButton:Landroid/widget/Button;
+    invoke-static {v0}, Lcom/android/email/activity/MessageViewFragmentBase$MessageViewAttachmentInfo;->access$900(Lcom/android/email/activity/MessageViewFragmentBase$MessageViewAttachmentInfo;)Landroid/widget/Button;
 
-    if-ne v5, v3, :cond_12
+    move-result-object v0
 
-    move v3, v4
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setVisibility(I)V
 
     .line 876
-    goto :goto_12
-
-    .line 882
-    :cond_29
-    const/16 v5, 0x9
-
-    if-eq v1, v5, :cond_12
-
-    .line 885
-    const/4 v5, 0x7
-
-    if-eq v1, v5, :cond_36
-
-    const/4 v5, 0x4
-
-    if-eq v1, v5, :cond_36
-
-    const/4 v5, 0x2
-
-    if-ne v1, v5, :cond_4c
-
-    .line 888
-    :cond_36
-    invoke-virtual {v2}, Landroid/webkit/WebSettings;->getAdvancedCopyPasteFeature()Z
-
-    move-result v4
-
-    if-ne v4, v3, :cond_44
-
-    .line 889
-    iget-object v4, p0, Lcom/android/email/activity/MessageViewFragmentBase$1;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
-
-    iget-object v4, v4, Lcom/android/email/activity/MessageViewFragmentBase;->mMessageWebView:Lcom/android/email/activity/MessageWebView;
-
-    invoke-virtual {v4}, Lcom/android/email/activity/MessageWebView;->selectLastTouchText()Z
-
-    goto :goto_12
-
-    .line 891
-    :cond_44
-    iget-object v4, p0, Lcom/android/email/activity/MessageViewFragmentBase$1;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
-
-    iget-object v4, v4, Lcom/android/email/activity/MessageViewFragmentBase;->mMessageWebView:Lcom/android/email/activity/MessageWebView;
-
-    invoke-virtual {v4}, Lcom/android/email/activity/MessageWebView;->selectText()Z
-
-    goto :goto_12
-
-    .line 895
-    :cond_4c
-    const/4 v5, 0x5
-
-    if-ne v1, v5, :cond_12
-
-    .line 896
-    const-string v5, "Email"
-
-    const-string v6, "HANATHEONE congrats"
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 898
-    iget-object v5, p0, Lcom/android/email/activity/MessageViewFragmentBase$1;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
-
-    iget-object v5, v5, Lcom/android/email/activity/MessageViewFragmentBase;->mMessageWebView:Lcom/android/email/activity/MessageWebView;
-
-    invoke-virtual {v5, v4, v3}, Lcom/android/email/activity/MessageWebView;->performHapticFeedback(II)Z
-
-    .line 901
-    iget-object v4, p0, Lcom/android/email/activity/MessageViewFragmentBase$1;->this$0:Lcom/android/email/activity/MessageViewFragmentBase;
-
-    invoke-virtual {v4, v3}, Lcom/android/email/activity/MessageViewFragmentBase;->showPopUpOnImage(I)Landroid/app/Dialog;
-
-    goto :goto_12
+    :cond_12
+    return-void
 .end method

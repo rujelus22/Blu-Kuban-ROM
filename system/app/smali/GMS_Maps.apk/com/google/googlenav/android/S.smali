@@ -1,50 +1,49 @@
-.class Lcom/google/googlenav/android/S;
-.super Lcom/google/googlenav/android/ae;
+.class Lcom/google/googlenav/android/s;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field final synthetic a:Landroid/os/Handler;
+
+.field final synthetic b:Lcom/google/googlenav/android/i;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 6
+.method constructor <init>(Lcom/google/googlenav/android/i;Landroid/os/Handler;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    const/4 v4, 0x2
+    .prologue
+    .line 731
+    iput-object p1, p0, Lcom/google/googlenav/android/s;->b:Lcom/google/googlenav/android/i;
 
-    const/4 v3, 0x1
+    iput-object p2, p0, Lcom/google/googlenav/android/s;->a:Landroid/os/Handler;
 
-    const/4 v2, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcom/google/googlenav/android/ae;-><init>()V
+    return-void
+.end method
 
-    new-array v0, v4, [Ljava/lang/String;
 
-    const-string v1, "q"
+# virtual methods
+.method public run()V
+    .registers 3
 
-    aput-object v1, v0, v2
+    .prologue
+    .line 734
+    iget-object v0, p0, Lcom/google/googlenav/android/s;->a:Landroid/os/Handler;
 
-    const-string v1, "ck"
+    new-instance v1, Lcom/google/googlenav/android/t;
 
-    aput-object v1, v0, v3
+    invoke-direct {v1, p0}, Lcom/google/googlenav/android/t;-><init>(Lcom/google/googlenav/android/s;)V
 
-    invoke-static {}, Landroid/net/UrlQuerySanitizer;->getAllButNulAndAngleBracketsLegal()Landroid/net/UrlQuerySanitizer$ValueSanitizer;
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    move-result-object v1
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/googlenav/android/S;->registerParameters([Ljava/lang/String;Landroid/net/UrlQuerySanitizer$ValueSanitizer;)V
-
-    new-array v0, v4, [Ljava/lang/String;
-
-    const-string v1, "cbp"
-
-    aput-object v1, v0, v2
-
-    const-string v1, "z"
-
-    aput-object v1, v0, v3
-
-    invoke-static {}, Landroid/net/UrlQuerySanitizer;->getAllIllegal()Landroid/net/UrlQuerySanitizer$ValueSanitizer;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/googlenav/android/S;->registerParameters([Ljava/lang/String;Landroid/net/UrlQuerySanitizer$ValueSanitizer;)V
-
+    .line 740
     return-void
 .end method

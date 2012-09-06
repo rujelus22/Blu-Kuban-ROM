@@ -17,7 +17,7 @@
 
     .prologue
     .line 26
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 27
     iput-object p1, p0, Lcom/google/android/videochat/StanzaInjector;->mService:Lcom/google/android/videochat/VideoChatService;

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <drawable name="agenda_item_declined">@color/tw_color001_dim</drawable>
-    <item type="drawable" name="divider">#ffd3cebd</item>
-</resources>

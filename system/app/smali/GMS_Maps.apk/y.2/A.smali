@@ -1,53 +1,71 @@
-.class Ly/A;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/maps/driveabout/app/cV;
+.class public abstract Ly/a;
+.super Lcom/google/android/maps/driveabout/vector/aD;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Ly/z;
+.field private a:Ly/b;
 
 
 # direct methods
-.method constructor <init>(Ly/z;)V
-    .registers 2
+.method public constructor <init>()V
+    .registers 1
 
-    iput-object p1, p0, Ly/A;->a:Ly/z;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 12
+    invoke-direct {p0}, Lcom/google/android/maps/driveabout/vector/aD;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 1
+.method public a(Ly/b;)V
+    .registers 2
+    .parameter
 
+    .prologue
+    .line 35
+    iput-object p1, p0, Ly/a;->a:Ly/b;
+
+    .line 36
     return-void
 .end method
 
-.method public a(Lu/P;)V
-    .registers 4
+.method public e()Z
+    .registers 2
 
-    iget-object v0, p0, Ly/A;->a:Ly/z;
+    .prologue
+    .line 31
+    const/4 v0, 0x0
 
-    const/4 v1, 0x1
+    return v0
+.end method
 
-    invoke-static {v0, v1}, Ly/z;->a(Ly/z;Z)Z
+.method public h()Ly/b;
+    .registers 2
 
-    iget-object v0, p0, Ly/A;->a:Ly/z;
+    .prologue
+    .line 39
+    iget-object v0, p0, Ly/a;->a:Ly/b;
 
-    iget-object v0, v0, Ly/z;->d:Lcom/google/android/maps/driveabout/app/cU;
+    return-object v0
+.end method
 
-    invoke-interface {v0}, Lcom/google/android/maps/driveabout/app/cU;->i()V
+.method public i()V
+    .registers 1
 
-    iget-object v0, p0, Ly/A;->a:Ly/z;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p1, v1}, Ly/z;->a(Lu/P;Z)V
-
+    .prologue
+    .line 45
     return-void
+.end method
+
+.method public u_()I
+    .registers 2
+
+    .prologue
+    .line 23
+    const v0, 0xdbba0
+
+    return v0
 .end method

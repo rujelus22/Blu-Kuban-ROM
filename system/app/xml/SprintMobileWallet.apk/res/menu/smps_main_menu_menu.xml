@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:icon="@drawable/ic_menu_pin" android:id="@id/changePin" android:title="Change PIN" />
-    <item android:icon="@drawable/ic_menu_security" android:id="@id/changeSecurityQuestions" android:title="Change Hint" />
-    <item android:icon="@drawable/ic_menu_help" android:id="@id/help" android:title="Help" />
-    <item android:icon="@drawable/ic_delete" android:id="@id/deleteAccount" android:title="Delete All Accounts" />
-    <item android:icon="@drawable/ic_menu_close_clear_cancel" android:id="@id/logout" android:title="Logout" />
-</menu>

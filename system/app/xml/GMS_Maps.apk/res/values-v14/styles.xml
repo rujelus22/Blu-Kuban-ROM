@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Maps" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+    <style name="Theme.Maps" parent="@android:style/Theme.Holo">
         <item name="android:windowBackground">@color/map_default_background</item>
         <item name="android:windowActionBar">true</item>
         <item name="android:windowActionBarOverlay">true</item>
@@ -9,16 +9,21 @@
     <style name="Theme.Tests" parent="@android:style/Theme">
         <item name="selectableItemBackground">?android:selectableItemBackground</item>
     </style>
-    <style name="Theme.Fullscreen" parent="@android:style/Theme.Holo.Light.DarkActionBar">
-        <item name="android:windowBackground">@android:drawable/screen_background_light</item>
+    <style name="Theme.Fullscreen" parent="@android:style/Theme.Holo">
+        <item name="android:windowBackground">@android:drawable/screen_background_dark</item>
+        <item name="android:windowAnimationStyle">@style/FullscreenDialogAnimation</item>
         <item name="android:windowActionBar">true</item>
         <item name="android:windowActionBarOverlay">false</item>
         <item name="selectableItemBackground">?android:selectableItemBackground</item>
     </style>
+    <style name="FullscreenDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/window_enter</item>
+        <item name="android:windowExitAnimation">@anim/window_exit</item>
+    </style>
     <style name="Theme.Fullscreen.SearchBarHeader" parent="@style/Theme.Fullscreen">
         <item name="android:windowContentOverlay">@drawable/title_bar_divider</item>
     </style>
-    <style name="Theme.Floating" parent="@android:style/Theme.Holo.Light.Dialog">
+    <style name="Theme.Floating" parent="@android:style/Theme.Holo.Dialog">
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentOverlay">@drawable/title_bar_divider</item>
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
@@ -27,13 +32,18 @@
         <item name="selectableItemBackground">?android:selectableItemBackground</item>
     </style>
     <style name="Theme.Floating.RideAboutDialog" parent="@style/Theme.Floating">
-        <item name="android:windowBackground">@android:drawable/screen_background_light</item>
+        <item name="android:windowBackground">@android:drawable/screen_background_dark</item>
     </style>
-    <style name="Theme.Light.SearchBarHeader" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+    <style name="Theme.SemiTransparent.FullScreen" parent="@android:style/Theme">
+        <item name="android:windowBackground">@drawable/tip_background</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="selectableItemBackground">?android:selectableItemBackground</item>
+    </style>
+    <style name="Theme.Light.SearchBarHeader" parent="@android:style/Theme.Holo">
         <item name="android:windowContentOverlay">@drawable/title_bar_divider</item>
         <item name="selectableItemBackground">?android:selectableItemBackground</item>
     </style>
-    <style name="Theme.Light.NoTitleBar" parent="@android:style/Theme.Light.NoTitleBar">
+    <style name="Theme.Light.NoTitleBar" parent="@android:style/Theme.NoTitleBar">
         <item name="selectableItemBackground">?android:selectableItemBackground</item>
     </style>
     <style name="ListSeparator" parent="@android:style/TextAppearance">
@@ -42,10 +52,6 @@
         <item name="android:textColor">@android:color/holo_blue_light</item>
     </style>
     <style name="DetailsPageSecondary" />
-    <style name="WhatsNewText" parent="@android:style/TextAppearance">
-        <item name="android:textSize">18.0sp</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
-    </style>
     <style name="DirectionsBannerWhiteBold" parent="@style/WhiteBold">
         <item name="android:textSize">13.0sp</item>
     </style>
@@ -58,6 +64,14 @@
     <style name="DirectionsBannerGrey" parent="@style/DirectionsBannerGreySmall">
         <item name="android:textSize">13.0sp</item>
     </style>
+    <style name="FileBrowserWizardItem" parent="@android:style/TextAppearance">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="TextListSelectorDialogItem" parent="@android:style/TextAppearance">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
     <style name="Theme.VoiceSearchDialog" parent="@android:style/Theme.Holo.Dialog">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
@@ -65,10 +79,10 @@
     <style name="Theme.Maps.Navigation" parent="@style/Theme.Maps">
         <item name="android:actionBarSize">@dimen/navigation_action_bar_height</item>
     </style>
-    <style name="Theme.Light.Dialog" parent="@android:style/Theme.Light">
-        <item name="android:colorForeground">@color/black</item>
-        <item name="android:colorBackground">@color/white</item>
-        <item name="android:windowBackground">@android:drawable/screen_background_light</item>
+    <style name="Theme.Light.Dialog" parent="@android:style/Theme">
+        <item name="android:colorForeground">@color/white</item>
+        <item name="android:colorBackground">@color/black</item>
+        <item name="android:windowBackground">@android:drawable/screen_background_dark</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentOverlay">@drawable/title_bar_divider</item>
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>

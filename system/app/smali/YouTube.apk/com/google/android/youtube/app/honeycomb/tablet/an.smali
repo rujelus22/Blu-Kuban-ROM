@@ -1,434 +1,691 @@
-.class public abstract Lcom/google/android/youtube/app/honeycomb/tablet/an;
-.super Lcom/google/android/youtube/coreicecream/a;
+.class final Lcom/google/android/youtube/app/honeycomb/tablet/an;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field private final a:Landroid/content/SharedPreferences;
+.field public final a:Landroid/view/View;
 
-.field protected final b:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
+.field public final b:Landroid/widget/LinearLayout;
 
-.field protected final c:Lcom/google/android/youtube/app/YouTubeApplication;
+.field public final c:Landroid/widget/LinearLayout;
 
-.field protected final d:Lcom/google/android/youtube/app/o;
+.field public final d:Lcom/google/android/youtube/core/player/PlayerView;
 
-.field protected final e:Lcom/google/android/youtube/app/aa;
+.field public final e:Landroid/view/View;
 
-.field private final h:Lcom/google/android/youtube/app/ui/af;
+.field public final f:Landroid/view/View;
 
-.field private final i:Lcom/google/android/youtube/app/ui/bb;
+.field public final g:Landroid/view/View;
+
+.field public final h:Lcom/google/android/youtube/core/ui/PagedGridView;
+
+.field final synthetic i:Lcom/google/android/youtube/app/honeycomb/tablet/ag;
+
+.field private final j:F
+
+.field private k:[I
 
 
 # direct methods
-.method protected constructor <init>(Lcom/google/android/youtube/app/YouTubeApplication;Landroid/app/Activity;Lcom/google/android/youtube/app/o;Landroid/os/Bundle;Ljava/lang/String;)V
-    .registers 9
-    .parameter
-    .parameter
+.method public constructor <init>(Lcom/google/android/youtube/app/honeycomb/tablet/ag;Landroid/view/View;F)V
+    .registers 6
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 50
-    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->J()Lcom/google/android/youtube/core/Analytics;
+    .line 1036
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->i:Lcom/google/android/youtube/app/honeycomb/tablet/ag;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 1037
+    iput-object p2, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a:Landroid/view/View;
+
+    .line 1038
+    const v0, 0x7f08012a
+
+    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    invoke-direct {p0, p1, v0, p2, p4}, Lcom/google/android/youtube/coreicecream/a;-><init>(Landroid/app/Application;Lcom/google/android/youtube/core/Analytics;Landroid/app/Activity;Landroid/os/Bundle;)V
+    check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 51
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->c:Lcom/google/android/youtube/app/YouTubeApplication;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->b:Landroid/widget/LinearLayout;
 
-    .line 52
-    iput-object p3, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->d:Lcom/google/android/youtube/app/o;
+    .line 1039
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->b:Landroid/widget/LinearLayout;
 
-    .line 53
-    new-instance v0, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
+    const v1, 0x7f08012b
 
-    invoke-direct {v0, p2, p3, p5}, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/app/o;Ljava/lang/String;)V
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->b:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
-
-    .line 54
-    const-string v0, "youtube"
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p2, v0, v1}, Landroid/app/Activity;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a:Landroid/content/SharedPreferences;
+    check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 55
-    new-instance v0, Lcom/google/android/youtube/app/ui/af;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->c:Landroid/widget/LinearLayout;
 
-    invoke-direct {v0, p2}, Lcom/google/android/youtube/app/ui/af;-><init>(Landroid/app/Activity;)V
+    .line 1040
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->b:Landroid/widget/LinearLayout;
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->h:Lcom/google/android/youtube/app/ui/af;
+    const v1, 0x7f0800d7
 
-    .line 56
-    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->h()Lcom/google/android/youtube/app/aa;
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->e:Lcom/google/android/youtube/app/aa;
+    check-cast v0, Lcom/google/android/youtube/core/player/PlayerView;
 
-    .line 58
-    new-instance v0, Lcom/google/android/youtube/app/ui/bb;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->d:Lcom/google/android/youtube/core/player/PlayerView;
 
-    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->p()Lcom/google/android/youtube/app/p;
+    .line 1041
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->b:Landroid/widget/LinearLayout;
 
-    move-result-object v1
+    const v1, 0x7f0800dc
 
-    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->J()Lcom/google/android/youtube/core/Analytics;
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-direct {v0, p2, v1, v2}, Lcom/google/android/youtube/app/ui/bb;-><init>(Landroid/content/Context;Lcom/google/android/youtube/app/p;Lcom/google/android/youtube/core/Analytics;)V
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->e:Landroid/view/View;
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->i:Lcom/google/android/youtube/app/ui/bb;
+    .line 1042
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->b:Landroid/widget/LinearLayout;
 
-    .line 60
+    const v1, 0x7f0800db
+
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->f:Landroid/view/View;
+
+    .line 1043
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->b:Landroid/widget/LinearLayout;
+
+    const v1, 0x1020012
+
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->g:Landroid/view/View;
+
+    .line 1044
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->b:Landroid/widget/LinearLayout;
+
+    const v1, 0x7f0800d8
+
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/core/ui/PagedGridView;
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->h:Lcom/google/android/youtube/core/ui/PagedGridView;
+
+    .line 1046
+    iput p3, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->j:F
+
+    .line 1047
     return-void
+.end method
+
+.method private a(I)I
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 1152
+    int-to-float v0, p1
+
+    iget v1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->j:F
+
+    mul-float/2addr v0, v1
+
+    float-to-int v0, v0
+
+    return v0
 .end method
 
 
 # virtual methods
-.method protected final a(ILandroid/os/Bundle;)Landroid/app/Dialog;
-    .registers 5
-    .parameter
-    .parameter
-
-    .prologue
-    .line 103
-    sparse-switch p1, :sswitch_data_18
-
-    .line 109
-    invoke-super {p0, p1, p2}, Lcom/google/android/youtube/coreicecream/a;->a(ILandroid/os/Bundle;)Landroid/app/Dialog;
-
-    move-result-object v0
-
-    :goto_7
-    return-object v0
-
-    .line 105
-    :sswitch_8
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->h:Lcom/google/android/youtube/app/ui/af;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/af;->a()Landroid/app/Dialog;
-
-    move-result-object v0
-
-    goto :goto_7
-
-    .line 107
-    :sswitch_f
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->e:Lcom/google/android/youtube/app/aa;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->g:Landroid/app/Activity;
-
-    invoke-virtual {v0, v1, p2}, Lcom/google/android/youtube/app/aa;->a(Landroid/app/Activity;Landroid/os/Bundle;)Landroid/app/Dialog;
-
-    move-result-object v0
-
-    goto :goto_7
-
-    .line 103
-    :sswitch_data_18
-    .sparse-switch
-        0x3eb -> :sswitch_f
-        0x3f1 -> :sswitch_8
-    .end sparse-switch
-.end method
-
-.method protected a(Landroid/view/Menu;Landroid/view/MenuInflater;)V
-    .registers 4
-    .parameter
-    .parameter
-
-    .prologue
-    .line 89
-    invoke-super {p0, p1, p2}, Lcom/google/android/youtube/coreicecream/a;->a(Landroid/view/Menu;Landroid/view/MenuInflater;)V
-
-    .line 90
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->b:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;->a(Landroid/view/Menu;)Z
-
-    .line 91
-    return-void
-.end method
-
-.method protected a(Landroid/view/View;Landroid/os/Bundle;)V
+.method public final a()V
     .registers 7
-    .parameter
-    .parameter
 
     .prologue
-    .line 64
-    invoke-super {p0, p1, p2}, Lcom/google/android/youtube/coreicecream/a;->a(Landroid/view/View;Landroid/os/Bundle;)V
+    const/16 v5, 0x8
 
-    .line 66
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->g:Landroid/app/Activity;
+    const/4 v4, -0x1
 
-    invoke-virtual {v0}, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
+    const/4 v3, 0x0
 
-    move-result-object v0
+    .line 1126
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->k:[I
 
-    const v1, 0x7f04001b
+    if-nez v0, :cond_30
 
-    const/4 v2, 0x0
+    .line 1128
+    const/4 v0, 0x4
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    new-array v0, v0, [I
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a:Landroid/view/View;
 
-    .line 67
-    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/tablet/an;->m()Landroid/app/ActionBar;
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingLeft()I
 
-    move-result-object v1
+    move-result v1
 
-    .line 68
-    if-eqz v1, :cond_21
+    aput v1, v0, v3
 
-    .line 69
-    new-instance v2, Landroid/app/ActionBar$LayoutParams;
-
-    const/16 v3, 0x15
-
-    invoke-direct {v2, v3}, Landroid/app/ActionBar$LayoutParams;-><init>(I)V
-
-    .line 71
-    invoke-virtual {v1, v0, v2}, Landroid/app/ActionBar;->setCustomView(Landroid/view/View;Landroid/app/ActionBar$LayoutParams;)V
-
-    .line 73
-    :cond_21
-    return-void
-.end method
-
-.method protected a(IILandroid/content/Intent;)Z
-    .registers 7
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    const/4 v2, 0x1
-
-    .line 132
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->c:Lcom/google/android/youtube/app/YouTubeApplication;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->D()Lcom/google/android/youtube/core/async/UserAuthorizer;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->g:Landroid/app/Activity;
-
-    invoke-virtual {v0, v1, p1, p2, p3}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Landroid/app/Activity;IILandroid/content/Intent;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    .line 139
-    :goto_f
-    return v2
-
-    .line 136
-    :cond_10
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->g:Landroid/app/Activity;
-
-    invoke-static {v0, p1, p2, p3}, Lcom/google/android/youtube/core/utils/g;->a(Landroid/app/Activity;IILandroid/content/Intent;)Z
-
-    goto :goto_f
-.end method
-
-.method public final a(ILandroid/view/KeyEvent;)Z
-    .registers 4
-    .parameter
-    .parameter
-
-    .prologue
-    .line 147
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->i:Lcom/google/android/youtube/app/ui/bb;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/app/ui/bb;->a(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_a
-
-    .line 148
-    const/4 v0, 0x1
-
-    .line 150
-    :goto_9
-    return v0
-
-    :cond_a
-    invoke-super {p0, p1, p2}, Lcom/google/android/youtube/coreicecream/a;->a(ILandroid/view/KeyEvent;)Z
-
-    move-result v0
-
-    goto :goto_9
-.end method
-
-.method protected a(Landroid/view/MenuItem;)Z
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 95
-    invoke-super {p0, p1}, Lcom/google/android/youtube/coreicecream/a;->a(Landroid/view/MenuItem;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_d
-
-    .line 96
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->b:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;->a(Landroid/view/MenuItem;)Z
-
-    move-result v0
-
-    .line 98
-    :goto_c
-    return v0
-
-    :cond_d
-    const/4 v0, 0x0
-
-    goto :goto_c
-.end method
-
-.method public b(Landroid/os/Bundle;)V
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 143
-    return-void
-.end method
-
-.method public final b(ILandroid/view/KeyEvent;)Z
-    .registers 4
-    .parameter
-    .parameter
-
-    .prologue
-    .line 155
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->i:Lcom/google/android/youtube/app/ui/bb;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/app/ui/bb;->b(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_a
-
-    .line 156
-    const/4 v0, 0x1
-
-    .line 158
-    :goto_9
-    return v0
-
-    :cond_a
-    invoke-super {p0, p1, p2}, Lcom/google/android/youtube/coreicecream/a;->b(ILandroid/view/KeyEvent;)Z
-
-    move-result v0
-
-    goto :goto_9
-.end method
-
-.method protected h_()V
-    .registers 2
-
-    .prologue
-    .line 83
-    invoke-super {p0}, Lcom/google/android/youtube/coreicecream/a;->h_()V
-
-    .line 84
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->b:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;->a()V
-
-    .line 85
-    return-void
-.end method
-
-.method protected i_()V
-    .registers 3
-
-    .prologue
-    .line 77
-    invoke-super {p0}, Lcom/google/android/youtube/coreicecream/a;->i_()V
-
-    .line 78
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->b:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
-
-    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/tablet/an;->k()Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;->a(Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;)V
-
-    .line 79
-    return-void
-.end method
-
-.method protected final j()Z
-    .registers 3
-
-    .prologue
     const/4 v1, 0x1
 
-    .line 116
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->b:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a:Landroid/view/View;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;->a(Z)V
+    invoke-virtual {v2}, Landroid/view/View;->getPaddingTop()I
 
-    .line 117
-    return v1
+    move-result v2
+
+    aput v2, v0, v1
+
+    const/4 v1, 0x2
+
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getPaddingRight()I
+
+    move-result v2
+
+    aput v2, v0, v1
+
+    const/4 v1, 0x3
+
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getPaddingBottom()I
+
+    move-result v2
+
+    aput v2, v0, v1
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->k:[I
+
+    .line 1132
+    :cond_30
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a:Landroid/view/View;
+
+    invoke-virtual {v0, v3, v3, v3, v3}, Landroid/view/View;->setPadding(IIII)V
+
+    .line 1134
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->c:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    .line 1136
+    iput v4, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+
+    .line 1137
+    iput v4, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
+
+    .line 1139
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->d:Lcom/google/android/youtube/core/player/PlayerView;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/player/PlayerView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    .line 1140
+    iput v4, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+
+    .line 1141
+    iput v4, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
+
+    .line 1143
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->c:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v0, v3, v3, v3, v3}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+
+    .line 1144
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->d:Lcom/google/android/youtube/core/player/PlayerView;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/player/PlayerView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    .line 1145
+    invoke-virtual {v0, v3, v3, v3, v3}, Landroid/widget/LinearLayout$LayoutParams;->setMargins(IIII)V
+
+    .line 1147
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->e:Landroid/view/View;
+
+    invoke-virtual {v0, v5}, Landroid/view/View;->setVisibility(I)V
+
+    .line 1148
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->g:Landroid/view/View;
+
+    invoke-virtual {v0, v5}, Landroid/view/View;->setVisibility(I)V
+
+    .line 1149
+    return-void
 .end method
 
-.method protected final k()Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;
-    .registers 3
+.method public final a(Z)V
+    .registers 13
+    .parameter
 
     .prologue
-    .line 121
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->g:Landroid/app/Activity;
+    const/4 v10, 0x0
 
-    instance-of v0, v0, Lcom/google/android/youtube/coreicecream/TabbedControllersActivity;
+    const/16 v9, 0x10
 
-    if-eqz v0, :cond_18
+    const/16 v7, 0x20
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->g:Landroid/app/Activity;
+    const/4 v8, -0x1
+
+    const/4 v1, 0x0
+
+    .line 1050
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->b:Landroid/widget/LinearLayout;
+
+    if-eqz p1, :cond_ec
+
+    move v0, v1
+
+    :goto_c
+    invoke-virtual {v2, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
+
+    .line 1051
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->k:[I
+
+    if-eqz v0, :cond_2e
+
+    .line 1053
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a:Landroid/view/View;
+
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->k:[I
+
+    aget v2, v2, v1
+
+    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->k:[I
+
+    const/4 v4, 0x1
+
+    aget v3, v3, v4
+
+    iget-object v4, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->k:[I
+
+    const/4 v5, 0x2
+
+    aget v4, v4, v5
+
+    iget-object v5, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->k:[I
+
+    const/4 v6, 0x3
+
+    aget v5, v5, v6
+
+    invoke-virtual {v0, v2, v3, v4, v5}, Landroid/view/View;->setPadding(IIII)V
+
+    .line 1055
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->k:[I
+
+    .line 1058
+    :cond_2e
+    new-instance v2, Landroid/util/DisplayMetrics;
+
+    invoke-direct {v2}, Landroid/util/DisplayMetrics;-><init>()V
+
+    .line 1059
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->i:Lcom/google/android/youtube/app/honeycomb/tablet/ag;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/ag;->j(Lcom/google/android/youtube/app/honeycomb/tablet/ag;)Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+
+    .line 1061
+    if-eqz p1, :cond_ef
+
+    .line 1062
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->i:Lcom/google/android/youtube/app/honeycomb/tablet/ag;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/ag;->k(Lcom/google/android/youtube/app/honeycomb/tablet/ag;)Landroid/app/Activity;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    const v3, 0x7f0a0078
+
+    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+
+    move-result v3
+
+    .line 1063
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->i:Lcom/google/android/youtube/app/honeycomb/tablet/ag;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/ag;->l(Lcom/google/android/youtube/app/honeycomb/tablet/ag;)Landroid/app/Activity;
 
     move-result-object v0
 
-    iget v0, v0, Landroid/content/res/Configuration;->orientation:I
+    invoke-virtual {v0}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
 
-    const/4 v1, 0x1
+    move-result-object v0
 
-    if-ne v0, v1, :cond_18
+    const v4, 0x7f0a0079
 
-    .line 124
-    sget-object v0, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;->ICONIFIED:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;
+    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
-    .line 126
-    :goto_17
-    return-object v0
+    move-result v4
 
-    :cond_18
-    sget-object v0, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;->EXPANDED:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;
+    .line 1065
+    invoke-direct {p0, v9}, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a(I)I
 
-    goto :goto_17
+    move-result v5
+
+    .line 1066
+    invoke-direct {p0, v9}, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a(I)I
+
+    move-result v6
+
+    .line 1068
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->c:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    .line 1070
+    const/high16 v7, 0x3f00
+
+    iget v2, v2, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    int-to-float v2, v2
+
+    mul-float/2addr v2, v7
+
+    float-to-int v2, v2
+
+    add-int/2addr v2, v3
+
+    add-int/2addr v2, v5
+
+    add-int/2addr v2, v6
+
+    iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+
+    .line 1072
+    iput v8, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
+
+    .line 1073
+    iput v10, v0, Landroid/widget/LinearLayout$LayoutParams;->weight:F
+
+    .line 1075
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->g:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    .line 1076
+    iput v8, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+
+    .line 1077
+    iput v8, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
+
+    .line 1078
+    iput v10, v0, Landroid/widget/LinearLayout$LayoutParams;->weight:F
+
+    .line 1080
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->c:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v0, v3, v4, v1, v1}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+
+    .line 1082
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->d:Lcom/google/android/youtube/core/player/PlayerView;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/player/PlayerView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    .line 1083
+    invoke-virtual {v0, v5, v1, v6, v1}, Landroid/widget/LinearLayout$LayoutParams;->setMargins(IIII)V
+
+    .line 1084
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->f:Landroid/view/View;
+
+    invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/View;->setPadding(IIII)V
+
+    .line 1085
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->e:Landroid/view/View;
+
+    invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/View;->setPadding(IIII)V
+
+    .line 1086
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->g:Landroid/view/View;
+
+    const/16 v2, 0x8
+
+    invoke-direct {p0, v2}, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a(I)I
+
+    move-result v2
+
+    invoke-direct {p0, v9}, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a(I)I
+
+    move-result v4
+
+    sub-int/2addr v3, v4
+
+    invoke-virtual {v0, v1, v2, v3, v1}, Landroid/view/View;->setPadding(IIII)V
+
+    .line 1114
+    :goto_c0
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->h:Lcom/google/android/youtube/core/ui/PagedGridView;
+
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->i:Lcom/google/android/youtube/app/honeycomb/tablet/ag;
+
+    invoke-static {v2}, Lcom/google/android/youtube/app/honeycomb/tablet/ag;->m(Lcom/google/android/youtube/app/honeycomb/tablet/ag;)Landroid/app/Activity;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x7f0d0012
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v2
+
+    invoke-virtual {v0, v2}, Lcom/google/android/youtube/core/ui/PagedGridView;->setNumColumns(I)V
+
+    .line 1117
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->d:Lcom/google/android/youtube/core/player/PlayerView;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/player/PlayerView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    .line 1118
+    iput v8, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    .line 1119
+    const/4 v2, -0x2
+
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    .line 1121
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->e:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 1122
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->g:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 1123
+    return-void
+
+    .line 1050
+    :cond_ec
+    const/4 v0, 0x1
+
+    goto/16 :goto_c
+
+    .line 1088
+    :cond_ef
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->c:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    .line 1090
+    iput v8, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+
+    .line 1094
+    iget v2, v2, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    int-to-float v2, v2
+
+    const/high16 v3, 0x3f10
+
+    mul-float/2addr v2, v3
+
+    float-to-int v2, v2
+
+    .line 1098
+    const/16 v3, 0x60
+
+    invoke-direct {p0, v3}, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a(I)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
+
+    .line 1099
+    const/high16 v2, 0x420c
+
+    iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->weight:F
+
+    .line 1100
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->g:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    .line 1101
+    iput v8, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+
+    .line 1102
+    iput v1, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
+
+    .line 1103
+    const/high16 v2, 0x4282
+
+    iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->weight:F
+
+    .line 1105
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->c:Landroid/widget/LinearLayout;
+
+    invoke-direct {p0, v9}, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a(I)I
+
+    move-result v2
+
+    invoke-virtual {v0, v1, v2, v1, v1}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+
+    .line 1106
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->d:Lcom/google/android/youtube/core/player/PlayerView;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/player/PlayerView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    .line 1107
+    invoke-virtual {v0, v1, v1, v1, v1}, Landroid/widget/LinearLayout$LayoutParams;->setMargins(IIII)V
+
+    .line 1109
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->f:Landroid/view/View;
+
+    invoke-direct {p0, v7}, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a(I)I
+
+    move-result v2
+
+    invoke-direct {p0, v7}, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a(I)I
+
+    move-result v3
+
+    invoke-virtual {v0, v2, v1, v3, v1}, Landroid/view/View;->setPadding(IIII)V
+
+    .line 1110
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->e:Landroid/view/View;
+
+    invoke-direct {p0, v7}, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a(I)I
+
+    move-result v2
+
+    invoke-direct {p0, v7}, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a(I)I
+
+    move-result v3
+
+    invoke-virtual {v0, v2, v1, v3, v1}, Landroid/view/View;->setPadding(IIII)V
+
+    .line 1111
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/an;->g:Landroid/view/View;
+
+    invoke-direct {p0, v7}, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a(I)I
+
+    move-result v2
+
+    invoke-direct {p0, v9}, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a(I)I
+
+    move-result v3
+
+    invoke-direct {p0, v7}, Lcom/google/android/youtube/app/honeycomb/tablet/an;->a(I)I
+
+    move-result v4
+
+    invoke-virtual {v0, v2, v3, v4, v1}, Landroid/view/View;->setPadding(IIII)V
+
+    goto/16 :goto_c0
 .end method

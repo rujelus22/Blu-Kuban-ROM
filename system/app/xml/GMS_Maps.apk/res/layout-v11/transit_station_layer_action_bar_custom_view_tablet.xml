@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.googlenav.ui.view.android.TransitActionBarForTabletLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" app:spinner_max_width="@dimen/maximum_spinner_width"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res/com.google.android.apps.maps">
+    <SearchView android:layout_gravity="center_vertical" android:id="@id/search_box" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+    <com.google.googlenav.ui.android.ListPopupSpinnerSdk11 android:textAppearance="@style/White" android:ellipsize="end" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/transit_type" android:background="@drawable/spinner_dir_holo_dark" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+</com.google.googlenav.ui.view.android.TransitActionBarForTabletLayout>

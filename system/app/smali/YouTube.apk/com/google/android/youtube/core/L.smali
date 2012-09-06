@@ -27,7 +27,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_24
 
     const/4 v0, 0x1
 
@@ -40,11 +40,7 @@
     sput-object v0, Lcom/google/android/youtube/core/L;->b:Ljava/lang/String;
 
     .line 37
-    const-string v0, "com.google.android."
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v0
+    const/16 v0, 0x13
 
     sput v0, Lcom/google/android/youtube/core/L;->c:I
 
@@ -69,7 +65,7 @@
     return-void
 
     .line 18
-    :cond_28
+    :cond_24
     const/4 v0, 0x0
 
     goto :goto_9

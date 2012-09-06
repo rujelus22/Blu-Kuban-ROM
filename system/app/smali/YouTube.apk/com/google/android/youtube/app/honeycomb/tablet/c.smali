@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/app/ui/al;
+.implements Lcom/google/android/youtube/app/ui/as;
 
 
 # instance fields
@@ -16,7 +16,7 @@
     .parameter
 
     .prologue
-    .line 115
+    .line 117
     iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/c;->a:Lcom/google/android/youtube/app/honeycomb/tablet/a;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 115
+    .line 117
     iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/c;->a:Lcom/google/android/youtube/app/honeycomb/tablet/a;
 
     invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/a;->a(Lcom/google/android/youtube/app/honeycomb/tablet/a;)V

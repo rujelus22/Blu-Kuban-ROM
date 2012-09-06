@@ -29,6 +29,12 @@
         <item>Tikai klusuma režīmā</item>
         <item>Nekad</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>izslēgta</item>
+        <item>zema</item>
+        <item>vidēja</item>
+        <item>virtuāla</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Nav</item>
         <item>Attēla stabilizācija: zema</item>

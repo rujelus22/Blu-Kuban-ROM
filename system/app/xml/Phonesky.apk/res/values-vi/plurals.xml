@@ -5,8 +5,8 @@
         <item quantity="one">%1$d kết quả</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">Đã tìm thấy %1$d cập nhật cho %2$s.</item>
-        <item quantity="one">Đã tìm thấy %1$d cập nhật cho %2$s.</item>
+        <item quantity="other">Đã tìm thấy %1$d bản cập nhật.</item>
+        <item quantity="one">Đã tìm thấy %1$d bản cập nhật.</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">%1$s người đã +1 mục này.</item>

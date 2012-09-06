@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s, %2$s</string>
+    <string name="no_network_connection">Ühendus puudub</string>
+    <string name="authentication_failure_no_network">Teenuse Music konto autentimiseks ühendatakse teid Internetti.</string>
+    <string name="authentication_failure">Autentimata</string>
+    <string name="authentication_failure_error">Teenuse Music kontot ei saanud autentida.</string>
+    <string name="positive_button_text">OK</string>
+    <string name="negative_button_text">Tühista</string>
+    <string name="save_button_text">Salvesta</string>
+    <string name="not_save_button_text">Ära salvesta</string>
+    <string name="offline_music_not_available_message">Muusika säilitamiseks seadmes kuvage valik Albumid, Esitusloendid või Esitaja kuvad.</string>
+    <string name="view_albums_button_text">Ava albumite kuva</string>
+    <string name="shuffle_all">Kõik juhuesituses</string>
+    <string name="play_all">Esita kõik</string>
+    <string name="songs_all">Kõik lood</string>
+    <string name="shuffle">Juhuesitus</string>
+    <string name="search">Otsing</string>
+    <string name="settings">Seaded</string>
+    <string name="library_options">Kuvamise valikud</string>
+    <string name="manage_music">Muusikavalik seadmes</string>
+    <string name="available_offline">Säilita seadmes</string>
+    <string name="options">Valikud</string>
+    <string name="clear_queue">Tühjenda järjekord</string>
+    <string name="queue_cleared">Järjekord kustutatud</string>
+    <string name="add_to_queue">Lisa järjekorda</string>
+    <string name="add_to_athome_queue">Lisa rühma %s</string>
+    <string name="shop_artist">Osta artiste</string>
+    <string name="show_offline_music_only">Ainult seadmest</string>
+    <string name="show_all_music">Kuva kogu muusikavalikut</string>
+    <string name="new_playlist_title">Esitusloendi nimi</string>
+    <string name="add_to_playlist_title">Esitusloendi nimi</string>
+    <string name="rename_playlist_title">„%s” ümbernimetamine:</string>
+    <string name="search_section_header_artists">ARTISTID</string>
+    <string name="search_section_header_albums">ALBUMID</string>
+    <string name="search_section_header_songs">LAULUD</string>
+    <string name="search_section_header_playlists">ESITUSLOENDID</string>
+    <string name="shuffle_all_songs">Kõik juhuesituses</string>
+    <string name="stream_settings">Muusikaseaded</string>
+    <string name="refresh_title">Värskendamine</string>
+    <string name="refresh_summary">Värskenda muusikat teenusest Google Play</string>
+    <string name="account_settings_title">"Google'i konto"</string>
+    <string name="no_account_selected_summary">Puudutage konto valimiseks</string>
+    <string name="account_selected_summary">Loo Google Playga ühendus, kasutades kontot %s</string>
+    <string name="hide_when_not_connected_title">Peida mittesaadav muusika</string>
+    <string name="hide_when_not_connected_summary">Ainult võrguühenduseta olekus saadaoleva muusika kuvamine</string>
+    <string name="stream_only_on_wifi_title">Voogesitamine ainult WiFi kaudu</string>
+    <string name="stream_only_on_wifi_summary">Operaatori andmetasude vähendamiseks ärge kasutage voogesitust mobiilsidevõrgu kaudu</string>
+    <string name="stream_only_hq_title">Kvalit. voogesitus</string>
+    <string name="stream_only_hq_summary">Voogesitage alati parima kvaliteediga muusikat.</string>
+    <string name="athome_title">Android@Home</string>
+    <string name="athome_summary">Otsige rakenduse Android@Home seadmeid.</string>
+    <string name="athome_not_remote">Kui soovite seda kuulata seadmes Nexus Q, siis laadige see esmalt oma Google Play muusikakogusse.</string>
+    <string name="athome_move_top_menu">Esita järgmine</string>
+    <string name="athome_remove_menu">Eemalda järjekorrast</string>
+    <string name="lock_screen_controls_title">Ekr. lukust. juhtel.</string>
+    <string name="lock_screen_controls_summary">Muusika juhtelementide kuvamine lukustusekraani ülaosas</string>
+    <string name="debug_logs_title">Silumislogid</string>
+    <string name="debug_logs_summary">Kasuta silumislogisid</string>
+    <string name="debug_logs_enable_warning_message">"Kas soovite kindlasti silumislogid keelata?
+On võimalik, et välises salvestusruumis on tundlikku teavet. Valiku muutmisel lakkab rakendus töötamast."</string>
+    <string name="debug_logs_disable_warning_message">"Kas soovite kindlasti silumislogid keelata?
+Valiku muutmisel lakkab rakendus töötamast."</string>
+    <string name="tungsten_settings">Nexus Q seaded</string>
+    <string name="offlinedl_only_on_wifi_title">Allalaadimine ainult WiFi kaudu</string>
+    <string name="offlinedl_only_on_wifi_summary">Operaatori andmetasude vähendamiseks ärge laadige alla mobiilsidevõrkude kaudu</string>
+    <string name="cache_streamed_title">Automaat. vahemällu</string>
+    <string name="cache_streamed_summary">Muusika ajutiselt salvestamine ilma küsimata</string>
+    <string name="download_queue_title">Järjekorra allalaadimine</string>
+    <string name="download_queue_summary">Näita praegu allalaaditavaid laule</string>
+    <string name="help_title">Abi</string>
+    <string name="show_no_downloads_title">Allalaadimise järjekorras ei ole ühtegi laulu</string>
+    <string name="music_version_title">Muusika versioon</string>
+    <string name="music_version_summary">Tundmatu versioon</string>
+    <string name="nowplaying_title">Esitamine kestab</string>
+    <string name="artists_title">Artistid</string>
+    <string name="albums_title">Albumid</string>
+    <string name="genres_title">Žanrid</string>
+    <string name="tracks_title">Laulud</string>
+    <string name="playlists_title">Esitusloendid</string>
+    <string name="recent_title">Hiljutised</string>
+    <string name="search_title">Otsing</string>
+    <string name="no_tracks_title">Laulud puuduvad</string>
+    <string name="delete_playlist_menu">Kustuta</string>
+    <string name="edit_playlist_menu">Muuda</string>
+    <string name="rename_playlist_menu">Nimeta ümber</string>
+    <string name="playlist_delete_confirmation">Kas soovite esitusloendi „%s” kustutada?</string>
+    <string name="delete_playlist_button_confirm">Kustuta</string>
+    <string name="playlist_deleted_message">Esitusloend on kustutatud.</string>
+    <string name="playlist_created_message">Esitusloend „%s” on loodud.</string>
+    <string name="playlist_renamed_message">Esitusloend on ümber nimetatud: „%s”.</string>
+    <string name="recentlyadded">Viimati lisatud</string>
+    <string name="recentlyadded_title">Viimati lisatud</string>
+    <string name="all_songs_list">Kõik laulud</string>
+    <string name="all_songs_list_title">Kõik laulud</string>
+    <string name="storemusic_list">Tasuta ja ostetud</string>
+    <string name="storemusic_list_title">Tasuta ja ostetud</string>
+    <string name="freemusic_list">Tasuta laulud</string>
+    <string name="freemusic_list_title">Tasuta laulud</string>
+    <string name="thumbsup_list">Head laulud</string>
+    <string name="thumbsup_list_title">Head laulud</string>
+    <string name="unknown_artist_name">Tundmatu artist</string>
+    <string name="unknown_album_name">Tundmatu album</string>
+    <string name="unknown_playlist_name">Tundmatu esitusloend</string>
+    <string name="unknown_submitter_name">Tundmatu</string>
+    <string name="ringtone_menu">Kasuta helinana</string>
+    <string name="ringtone_set">„%s” on määratud helinaks.</string>
+    <string name="ringtone_set_failed">Helinat ei saanud luua.</string>
+    <string name="ringtone_needs_download">Helin määratakse pärast allalaadimist.</string>
+    <string name="play_selection">Esita</string>
+    <string name="add_to_playlist">Lisa esitusloendisse</string>
+    <string name="rename_playlist_menu_item">Nimeta ümber</string>
+    <string name="add_to_playlist_selector_title">Esitlusloendisse lisamine</string>
+    <string name="queue">Praegune esitusloend</string>
+    <string name="save_play_queue_as_playlist">Salvesta järjekord</string>
+    <string name="new_playlist_for_content">Uus esitusloend</string>
+    <string name="new_empty_playlist">Uus esitusloend</string>
+    <string name="new_playlist_name_template">Esitusloend %d</string>
+    <string name="removed_from_playlist">„%1$s” eemaldati esitusloendist.</string>
+    <string name="removed_from_play_queue">„%1$s” on esitamisjärjekorrast eemaldatud.</string>
+    <string name="playlist_too_many_songs">Liiga palju laule. Piirang on %d esitusloendi kohta.</string>
+    <string name="emptyplaylist">Valitud esitusloend on tühi.</string>
+    <string name="widget_nowplaying_small_title">Muusika (4 x 1)</string>
+    <string name="widget_nowplaying_large_title">Muusika (4 x 4)</string>
+    <string name="appwidget_text_separator">,</string>
+    <string name="playlist_edit_label">NIMI</string>
+    <string name="create_playlist_create_text">OK</string>
+    <string name="rename_playlist_rename_text">Nimeta ümber</string>
+    <string name="service_start_error_title">Taasesituse probleem</string>
+    <string name="service_start_error_msg">Laulu ei saa esitada.</string>
+    <string name="service_start_error_button">OK</string>
+    <string name="weekpicker_set">Valmis</string>
+    <string name="weekpicker_title">Kellaaja määramine</string>
+    <string name="musicshortcutlabel">Muusika esitusloend</string>
+    <string name="app_name">Google Play muusika</string>
+    <string name="launcher_name">Play muusika</string>
+    <string name="actionbar_title">Google Play</string>
+    <string name="playback_failed_title">Muusika taasesituse viga.</string>
+    <string name="playback_failed">Teie soovitud lugu ei saanud esitada.</string>
+    <string name="cancel">Tühista</string>
+    <string name="remove_from_playlist">Eemalda esitusloendist</string>
+    <string name="streamloadingtext">Ühendamine vooga %s …</string>
+    <string name="search_hint">Otsige muusikat</string>
+    <string name="working_artists">Artistid ...</string>
+    <string name="working_albums">Albumid ...</string>
+    <string name="loading">Laadimine ...</string>
+    <string name="sort_by_track">Rajad</string>
+    <string name="music_picker_title">Muusikaraja valimine</string>
+    <string name="fail_to_start_stream">Teie soovitud voogu ei saanud esitada.</string>
+    <string name="search_settings_description">Artistid, albumid ja rajad</string>
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSŠZŽTUVWÕÄÖÜXY"</string>
+    <string name="title_tv">Muusika</string>
+    <string name="music_library">Muusikateek</string>
+    <string name="playlist_label">Esitusloend</string>
+    <string name="faux_art_all_songs_label">Kõik laulud</string>
+    <string name="faux_art_playlist_label">Esitusloend</string>
+    <string name="faux_art_playlist_instant_mix_label">Kiirmiks</string>
+    <string name="faux_art_playlist_auto_playlist_label">Automaatne esitusloend</string>
+    <string name="buffering">Puhverdamine ...</string>
+    <string name="keep_on_phone">Säilita seadmes</string>
+    <string name="no_music_add_music_header">MUUSIKA LISAMISE VÕIMALUSED</string>
+    <string name="no_music_shop_body">Müügil on miljoneid laule, sealhulgas sadu tasuta lugusid.</string>
+    <string name="no_music_shop_button">POOD</string>
+    <string name="no_music_upload_body">Laadige teenusesse Google Play Music tasuta üles 20 000 laulu.</string>
+    <string name="no_music_upload_button">LISATEAVE</string>
+    <string name="no_music_usb_copy_body">Kasutage muusika arvutist seadmesse kopeerimiseks USB-kaablit.</string>
+    <string name="no_music_usb_copy_button">LISATEAVE</string>
+    <string name="no_music_heading">Teie muusikakogu on tühi.</string>
+    <string name="no_music_setup_uploader_heading">Muusika traadita voogesitus.</string>
+    <string name="no_music_setup_uploader_body">Teenusega Google Play Music saate voogesitada oma isiklikku muusikakogu.</string>
+    <string name="no_music_setup_usb_heading">Muusika kopeerimine seadmesse.</string>
+    <string name="no_music_setup_usb_body">Muusika kopeerimiseks arvutist seadmesse kasutage USB-juhet.</string>
+    <string name="no_local_music_heading">Seadmesse pole muusikat salvestatud</string>
+    <string name="no_local_music_body">"Terve kogu näitamiseks avage menüü ja tühjendage märkeruut valiku „Ainult seadmest” ees.
+
+Seadmesse salvestatava muusika valimiseks avage menüü ja puudutage valikut „Muusikavalik seadmes”."</string>
+    <string name="no_music_learn_more">Lisateave</string>
+    <string name="no_music_syncing_heading">Muusikat sünkroonitakse.</string>
+    <string name="no_music_syncing_body">Muusikat sünkroonitakse serverist ja see peaks kohe ilmuma.</string>
+    <string name="no_music_scanning_heading">Seadmes oleva muusika skannimine.</string>
+    <string name="no_music_scanning_body">Seadet skannitakse muusika leidmiseks.</string>
+    <string name="sync_disabled">Enne kui muusika saab teenusest Google Play Music ilmuda, tuleb seadistada sünkroonimine. Kas soovite seda kohe teha?</string>
+    <string name="tutorial_welcome_heading">Tere tulemast teenusesse Google Play Music</string>
+    <string name="tutorial_welcome_body">"Laadige oma isiklikust muusikakogust üles kuni 20 000 lugu.
+
+Esitage viivituseta Google Playst ostetud muusikat.
+
+Kuulake oma muusikat veebis või ükskõik millisest telefonist või tahvelarvutist. Saate muusikat lihtsalt alla laadida, et kuulata seda ka võrguühenduseta.
+
+Kõik see on saadaval tasuta."</string>
+    <string name="tutorial_select_account_heading">Konto valimine</string>
+    <string name="tutorial_select_account_body">"Linkige konto rakendusega Google Play muusika ning saate kuulata oma muusikakogu ja salvestada ostetud lugusid.
+
+Millist kontot soovite kasutada?"</string>
+    <string name="tutorial_sign_in">Linkige konto rakendusega Google Play muusika ning saate kuulata oma muusikakogu ja salvestada ostetud lugusid.</string>
+    <string name="tutorial_free_music_heading">Tasuta muusika hankimine</string>
+    <string name="tutorial_free_music_body">Sirvige Google Plays sadu tasuta lugusid suurimatelt roki- ja hiphopitähtedelt ning teistelt artistidelt.</string>
+    <string name="tutorial_account_heading">Tere tulemast!</string>
+    <string name="tutorial_account_body">Teid kutsuti teenusesse Google Play Music. Saate selle mängija abil pääseda kohe juurde lauludele, mille lisate teenusesse Google Play Music, ja muule muusikale, mille olete kopeerinud oma Android-seadmesse.</string>
+    <string name="tutorial_account_list_header">"Selle mängija linkimiseks teenusega Google Play Music valige esmalt Google'i konto:"</string>
+    <string name="tutorial_done_heading">Nauding</string>
+    <string name="tutorial_done_body">"Mängija on nüüd seotud teie Google'i kontoga.
+
+Kui olete oma muusikakogu juba teenusesse Google Play Music lisanud, kuvatakse need mängijas.
+
+Kui soovite teenusesse Google Play Music veel muusikat lisada, külastage kõigepealt oma arvuti kaudu meie veebisaiti:"</string>
+    <string name="tutorial_skip">Jäta vahele</string>
+    <string name="tutorial_next">Edasi</string>
+    <string name="tutorial_done">Valmis</string>
+    <string name="tutorial_add_account">Lisa konto</string>
+    <string name="tutorial_free_music">Hangi tasuta lugusid</string>
+    <string name="spinner_carousel">Hiljutine</string>
+    <string name="spinner_album">Albumid</string>
+    <string name="spinner_artist">Artistid</string>
+    <string name="spinner_songs">Laulud</string>
+    <string name="spinner_playlists">Esitusloendid</string>
+    <string name="spinner_genres">Žanrid</string>
+    <string name="sort_by_title">Sortimine A-Z</string>
+    <string name="sort_by_artist">Sordi artisti järgi</string>
+    <string name="sort_by_album">Sorteeri albumi järgi</string>
+    <string name="sort_by_date">Sordi lisamiskuupäeva järgi</string>
+    <string name="more_by_artist">Veel sellelt artistilt</string>
+    <string name="make_available_offline">Säilitamine seadmes</string>
+    <string name="search_web">Otsi veebist</string>
+    <string name="manage_done">Valmis</string>
+    <string name="too_many_items_title">Liiga palju üksusi</string>
+    <string name="too_many_items_body">Kõigi valitud üksuste salvestamiseks pole piisavalt ruumi. Ruumi tegemiseks eemaldage valikust mõni üksus.</string>
+    <string name="save_manage_music_change_title">Salvestamata muudatused</string>
+    <string name="save_manage_music_change_body">Kas soovite valitud muusika seadmes säilitada?</string>
+    <string name="not_all_items_can_be_kept_body">Kõigi valitud üksuste salvestamiseks pole piisavalt ruumi. Kõiki üksusi ei laadita alla.</string>
+    <string name="free_space_overfull">Mäluruum täis (%s ületatud)</string>
+    <string name="free_space">%s TASUTA</string>
+    <string name="stream_error_title">Muusika pole ajutiselt saadaval.</string>
+    <string name="stream_error_no_space_available">Vaba ruumi pole.</string>
+    <string name="stream_error_only_on_wifi">Selle laulu esitamiseks on vajalik WiFi-ühendus.</string>
+    <string name="stream_error_no_connection">Selle laulu esitamiseks on vajalik võrguühendus.</string>
+    <string name="stream_error_unauthorized_title">Volitamise viga.</string>
+    <string name="stream_error_unauthorized">Vale kasutajanimi või parool.</string>
+    <string name="stream_error_another_stream_being_played">Muusika peatati, kuna kuulate kogu mõnes teises seadmes.</string>
+    <string name="stream_error_rate_limit_reached">Muusika ei ole ajutiselt saadaval. Veenduge, et esitate kogu ainult ühes seadmes korraga.</string>
+    <string name="stream_error_device_not_authorized">Saate oma muusikateeki kasutada kuni kümnes seadmes. Enne uue seadme lisamist peate mõne olemasoleva seadme loa tühistama.</string>
+    <string name="stream_error_device_not_authorized_link">https://play.google.com/music/listen?view=settings_pl</string>
+    <string name="market_uri_link">market://details?id=com.google.android.music</string>
+    <string name="stream_error_device_not_authorized_not_now_button">Mitte praegu</string>
+    <string name="stream_error_device_not_authorized_manage_devices_button">Halda seadmeid</string>
+    <string name="stream_error_learn_more">Lisateave</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/music/bin/answer.py?answer=1230356</string>
+    <string name="stream_error_another_stream_being_played_short">Muusika on peatatud.</string>
+    <string name="stream_error_rate_limit_reached_short">Muusika pole ajutiselt saadaval.</string>
+    <string name="stream_error_device_not_authorized_short">Muusikakoguga kasutatakse liiga palju seadmeid.</string>
+    <string name="stream_error_another_stream_being_played_notification">Kuulate teises seadmes.</string>
+    <string name="stream_error_rate_limit_reached_notification">Kuulate teises seadmes.</string>
+    <string name="stream_error_device_not_authorized_notification">Maksimaalselt 10 seadet kogu kohta.</string>
+    <string name="stream_error_another_stream_being_played_notification_short">Muusika on peatatud.</string>
+    <string name="stream_error_rate_limit_reached_notification_short">Muusika pole praegu saadaval.</string>
+    <string name="stream_error_device_not_authorized_notification_short">Muusikaseadmete limiit täis.</string>
+    <string name="athome_error_place_disconnected_short">Nexus Q-ga ei saa ühendust.</string>
+    <string name="athome_error_controller_too_old_short">Nexus Q vajab uusimat Google Play muusikarakendust.</string>
+    <string name="athome_error_controller_too_old">Nexus Q kasutamiseks värskendage esmalt oma Google Play muusikarakendust.</string>
+    <string name="athome_error_controller_too_old_notification_short">Värsk. Google Play muus. rak.</string>
+    <string name="athome_error_controller_too_old_notification">Nexus Q-ga töötamiseks.</string>
+    <string name="athome_error_controller_too_old_update_button">Värskenda</string>
+    <string name="athome_error_controller_too_new_short">Nexus Q vajab uut tarkvara.</string>
+    <string name="athome_error_controller_too_new">Nexus Q tarkvara on liiga vana. Automaatseks värskendamiseks ühendage Nexus Q Etherneti või WiFi kaudu Internetiga.</string>
+    <string name="athome_error_controller_too_new_notification_short">Nexus Q vajab uut tarkvara.</string>
+    <string name="athome_error_controller_too_new_notification">Automaatseks värskendamiseks ühendage Nexus Q Internetiga.</string>
+    <string name="athome_error_generic_short">Nexus Q võrgu viga.</string>
+    <string name="athome_error_generic">Võrguühendus Nexus Q-ga katkes.</string>
+    <string name="athome_error_generic_notification_short">Nexus Q võrgu viga</string>
+    <string name="athome_error_generic_notification">Nexus Q-ga ei saa ühendust. Võimalik, et võrguühendus on halb või seadmes on probleem.</string>
+    <string name="athome_error_device_setup_short">Nexus Q tuleb lähtestada tehase vaikeseadetele.</string>
+    <string name="athome_error_device_setup">Nexus Q seadistus ei ole valmis. Uuesti alustamiseks lähtestage Nexus Q tehase vaikeseadetele.</string>
+    <string name="athome_error_device_setup_notification_short">Nexus Q seadistus ei ole valmis.</string>
+    <string name="athome_error_device_setup_notification">Uuesti alustamiseks lähtestage Nexus Q tehase vaikeseadetele.</string>
+    <string name="athome_error_unauthorized_account_short">Volituseta konto</string>
+    <string name="athome_error_unauthorized_account">Valitud kontol ei ole lubatud koos Nexus Q-ga töötada</string>
+    <string name="athome_error_unauthorized_account_notification_short">Volituseta konto</string>
+    <string name="athome_error_unauthorized_account_notification">Valitud kontol ei ole lubatud koos Nexus Q-ga töötada.</string>
+    <string name="athome_error_incompatible_tgs_version">Seadmes Nexus Q töötab rühmitusteenuse ühildumatu versioon.</string>
+    <string name="athome_error_incompatible_tgs_version_short">Nexus Q rühmateenuse viga</string>
+    <string name="athome_error_incompatible_tgs_version_notification">Seadmes Nexus Q töötab rühmitusteenuse ühildumatu versioon.</string>
+    <string name="athome_error_incompatible_tgs_version_notification_short">Nexus Q rühmateenuse viga</string>
+    <string name="athome_error_unreachable_tgs">Nexus Q-ga ei saa ühendust. Kui probleem püsib, siis tuleb teil võib-olla Nexus Q taaskäivitada.</string>
+    <string name="athome_error_unreachable_tgs_short">Nexus Q-ga ei saa ühendust</string>
+    <string name="athome_error_unreachable_tgs_notification">Nexus Q-ga ei saa ühendust. Kui probleem püsib, siis tuleb teil võib-olla Nexus Q taaskäivitada.</string>
+    <string name="athome_error_unreachable_tgs_notification_short">Nexus Q-ga ei saa ühendust</string>
+    <string name="athome_error_server_network_short">Võrgu viga</string>
+    <string name="athome_error_server_network">Serveriga ei saa ühendust luua</string>
+    <string name="hide_now_playing_bar">Peida esitamisel olev riba</string>
+    <string name="show_now_playing_bar">Kuva esitamisel olev riba</string>
+    <string name="show_options">Näita valikuid</string>
+    <string name="hide_options">Peida valikud</string>
+    <string name="all_songs_in_genre">"Kõik laulud žanrist 
+%s"</string>
+    <string name="preview_header">JAGATUD TEENUSES GOOGLE+</string>
+    <string name="shared_playback_full">TASUTA TÄIELIK ESITUS</string>
+    <string name="shared_playback_partial">NÄIDIS</string>
+    <string name="btn_buy">Osta</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">Taotletud muusika säilitamine ...</string>
+    <string name="notification_downloading_when_on_wifi">Taotletud muusika säilitamine jätkub järgmine kord, kui seadmel on võrgu- ja WiFi-ühendus</string>
+    <string name="notification_downloading_excessive_errors">Laule ei saa praegu alla laadida. Kontrollige Interneti-ühendust.</string>
+    <string name="notification_downloading_done">Taotletud muusika on alla laaditud</string>
+    <string name="notification_ticker_ringtone_set">Helinaks on määratud „%s”</string>
+    <string name="notification_title_ringtone_set">Helinaks on määratud „%s”</string>
+    <string name="notification_content_ringtone_set">Puudutage helina muutmiseks.</string>
+    <string name="notification_ticker_ringtone_set_failed">Helinat ei saanud luua.</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s – %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s – %s</string>
+    <string name="notification_newsongs_songcount">%d – uued lood</string>
+    <string name="notification_newsongs_subtitle">Lisatud teenusesse Google Play Music</string>
+    <string name="carousel_label_shuffle_all">Kõik juhuesituses</string>
+    <string name="song_label">LAUL</string>
+    <string name="artist_label">ARTIST</string>
+    <string name="album_label">ALBUM</string>
+    <string name="effectspanel">Ekvalaiser</string>
+    <string name="menu_make_instant_mix">Loo kiirmiks</string>
+    <string name="instant_mix_default_name">%s miks</string>
+    <string name="creating_instant_mix">"Kiirmiksi lisamine
+esitusloenditesse."</string>
+    <string name="creating_instant_mix_with_seed">"Valikul
+%s põhineva kiirmiksi
+lisamine esitusloenditesse."</string>
+    <string name="create_instant_mix_failed">Kiirmiksi ei saanud luua. Proovige uuesti.</string>
+    <string name="create_instant_mix_failed_insufficient_results">Teie kogus polnud asukohast „%s” kiirmiksi loomiseks piisavalt sarnaseid laule. Proovige teha kiirmiks mõnest muust laulust.</string>
+    <string name="create_instant_mix_sync_timeout">"Kiirmiks on
+loodud ja ilmub
+varsti teie esitusloendisse."</string>
+    <string name="create_instant_mix_btn_ok">OK</string>
+    <string name="delete">Kustuta</string>
+    <string name="confirm_delete_local_only">Kas soovite üksuse „%s” kustutada?</string>
+    <string name="confirm_delete_has_remote">„%s” on teenusesse Google Music külglaaditud ja üles laaditud. Ainult külglaaditud üksused kustutatakse. Kas soovite need kustutada?</string>
+    <string name="waiting_share">Jagab lugu/albumit „%s”</string>
+    <string name="share">Jaga</string>
+    <string name="share_failure">Teie muusika jagamisel ilmnes probleem.</string>
+    <string name="share_google_plus_footer">Jagamine võimaldab teie suhtlusringi kuulujatel kõiki lugusid tasuta kuulata.</string>
+    <string name="accessibility_play">Esita</string>
+    <string name="accessibility_pause">Peata</string>
+    <string name="accessibility_stop">Lõpeta</string>
+    <string name="accessibility_next">Järgmine</string>
+    <string name="accessibility_prev">Eelmine</string>
+    <string name="accessibility_shuffle">Juhuesitus</string>
+    <string name="accessibility_repeat">Korda</string>
+    <string name="accessibility_thumbsUp">Pöidlad üles</string>
+    <string name="accessibility_thumbsDown">Pöidlad alla</string>
+    <string name="accessibility_star1">Üks tärn</string>
+    <string name="accessibility_star2">Kaks tärni</string>
+    <string name="accessibility_star3">Kolm tärni</string>
+    <string name="accessibility_star4">Neli tärni</string>
+    <string name="accessibility_star5">Viis tärni</string>
+    <string name="accessibility_contractor">Laienda laulu teavet</string>
+    <string name="accessibility_back">Tagasi</string>
+    <string name="accessibility_contextMenu">Laulumenüü</string>
+    <string name="accessibility_home">Muusika avaleht</string>
+    <string name="accessibility_search">Otsing</string>
+    <string name="accessibility_search_cancel">Tühista praegune otsing</string>
+    <string name="accessibility_current">Praegune laul</string>
+    <string name="accessibility_createnewplaylist">Loo uus esitusloend</string>
+    <string name="accessibility_menu">Rohkem valikuid</string>
+    <string name="accessibility_shop">Ostke muusikat</string>
+    <string name="accessibility_volume">Helitugevus</string>
+    <string name="accessibility_at_home_volume">Helitugevus</string>
+    <string name="accessibility_select_output">Vali heliväljund</string>
+    <string name="accessibility_close_social_mix_mode">Sulge lugude valiku režiim</string>
+    <string name="header_help_add_songs">Sotsiaalmiksi loomiseks lisage lugusid oma kogust</string>
+    <string name="ringtone_replace_alert_button">Asenda</string>
+    <string name="ringtone_replace_alert_title">Helina asendamine</string>
+    <string name="ringtone_replace_alert_message">Selle nimega helin on juba olemas. Kas soovite selle asendada?</string>
+    <string name="legal_information">Juriidiline teave</string>
+    <string name="license_title">Avatud allika litsentsid</string>
+    <string name="license_error">Litsentse ei õnnestunud laadida.</string>
+    <string name="market_wrong_account" formatted="false">"Muusika, mida püüate esitada, osteti kontolt %s.
+
+Olete praegu teenusesse Google Play Music sisse logitud kontoga %s.
+
+Ostetud muusika kuulamiseks minge teisele kontole."</string>
+    <string name="gplus_wrong_account" formatted="false">"Muusikat, mida proovite esitada, jagati kontoga %s.
+
+Olete teenusesse Google Play Music praegu sisse logitud kontoga %s.
+
+Jagatud muusika kuulamiseks minge kõigepealt teisele kontole."</string>
+    <string name="switch_account_button">Konto muutmine</string>
+    <string name="switch_account_warning_message">"Kas soovite kindlasti kontot vahetada?
+Seadmes talletatav muusika eemaldatakse."</string>
+    <string name="switch_account_warning_button">Vaheta kontot</string>
+    <string name="retry_button">Proovi uuesti</string>
+    <string name="wait_for_item">Muusika sünkroonimise ootel.</string>
+    <string name="wait_for_item_failure">Teie muusikat lisatakse. Oodake pisut ja proovige uuesti.</string>
+    <string name="ringtone_title">Helina hindamine</string>
+    <string name="edit_ringtone">Helina muutmine</string>
+    <string name="ringtone_done">VALMIS</string>
+    <string name="ringtone_file_edited_name">Laulu %1$s klipp</string>
+    <string name="progress_dialog_saving">Salvestamine ...</string>
+    <string name="start_handle">Käivituspide</string>
+    <string name="resize_handle">Pideme suuruse muutmine</string>
+    <string name="menu_reset">Lähtesta</string>
+    <string name="save_success_message">%1$s salvestati vaikehelinana.</string>
+    <string name="save_failure_message">Lugu %1$s ei õnnestunud helinaks salvestada.</string>
+    <string name="play_error">Seda meediumifaili ei saanud esitada.</string>
+    <string name="write_error">Failile ei saanud kirjutada.</string>
+    <string name="read_error">Faili ei õnnestunud lugeda.</string>
+    <string name="no_space_error">SD-kaardil pole selle faili salvestamiseks piisavalt ruumi.</string>
+    <string name="bad_extension_error">Seda tüüpi faile ei saa muuta.</string>
+    <string name="no_extension_error">Ei saa muuta faili, mille laiend on .mp3 või .wav.</string>
+    <string name="alert_ok_button">OK</string>
+    <string name="athome_playback_title">Praegu esitusel</string>
+    <string name="store_tutorial_title">Ostke ja kuulake kohe</string>
+    <string name="store_tutorial_content">Ostke Google Playst miljoneid MP3-vormingus lugusid ja hankige sadu tasuta laule.</string>
+    <string name="store_tutorial_instruction">Poe külastamiseks puudutage poekoti ikooni</string>
+    <string name="athome_added_by">Lisas:</string>
+    <string name="athome_tutorial_title">Esitage muusikat kus aga soovite</string>
+    <string name="athome_tutorial_content">Puudutage voogesituse ikooni ja valige, kust muusikat esitatakse</string>
+    <string name="athome_party_mode_disclamer">Sotsiaalmiksi kasutamise ajal võib teie avalik profiilipilt teistele kasutajatele nähtav olla</string>
+    <string name="athome_party_mode_disclamer_save_preference">Ära seda enam näita</string>
+    <string name="no_song_added">Esitamisjärjekord on täis. Järjekorras võib olla kuni %1$d lugu.</string>
+    <string name="recent_added">Lisatud</string>
+    <string name="recent_purchased">Ostetud</string>
+    <string name="recent_played">Esitatud</string>
+    <string name="now_playing_tab_now_playing">PRAEGU ESITATAKSE</string>
+    <string name="now_playing_tab_queue">ESITUSJÄRJEKORD</string>
+</resources>

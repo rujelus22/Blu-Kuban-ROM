@@ -56,7 +56,7 @@
 
     const/4 v3, 0x0
 
-    .line 43
+    .line 45
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
 
     const-string v1, "ADDRESS_SNIPPET"
@@ -65,7 +65,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;->ADDRESS_SNIPPET:Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
 
-    .line 44
+    .line 46
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
 
     const-string v1, "ADDRESS_SNIPPET_AND_TOS"
@@ -74,7 +74,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;->ADDRESS_SNIPPET_AND_TOS:Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
 
-    .line 45
+    .line 47
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
 
     const-string v1, "FULL_ADDRESS"
@@ -83,7 +83,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;->FULL_ADDRESS:Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
 
-    .line 46
+    .line 48
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
 
     const-string v1, "FULL_ADDRESS_AND_TOS"
@@ -92,7 +92,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;->FULL_ADDRESS_AND_TOS:Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
 
-    .line 47
+    .line 49
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
 
     const-string v1, "MINIMAL_ADDRESS"
@@ -101,7 +101,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;->MINIMAL_ADDRESS:Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
 
-    .line 48
+    .line 50
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
 
     const-string v1, "MINIMAL_ADDRESS_AND_TOS"
@@ -112,7 +112,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;->MINIMAL_ADDRESS_AND_TOS:Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
 
-    .line 49
+    .line 51
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
 
     const-string v1, "TOS"
@@ -123,7 +123,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;->TOS:Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
 
-    .line 42
+    .line 44
     const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
@@ -176,7 +176,7 @@
     .end annotation
 
     .prologue
-    .line 42
+    .line 44
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -187,7 +187,7 @@
     .parameter
 
     .prologue
-    .line 42
+    .line 44
     const-class v0, Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -203,7 +203,7 @@
     .registers 1
 
     .prologue
-    .line 42
+    .line 44
     sget-object v0, Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;->$VALUES:[Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;
 
     invoke-virtual {v0}, [Lcom/google/android/finsky/billing/carrierbilling/fragment/AddCarrierBillingFragment$Type;->clone()Ljava/lang/Object;

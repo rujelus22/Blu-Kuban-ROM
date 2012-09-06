@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="type1_width">320.0dip</dimen>
-    <dimen name="type1_height">100.0dip</dimen>
-    <dimen name="type2_width">320.0dip</dimen>
-    <dimen name="type2_height">200.0dip</dimen>
-    <dimen name="type3_width">320.0dip</dimen>
-    <dimen name="type3_height">300.0dip</dimen>
-</resources>

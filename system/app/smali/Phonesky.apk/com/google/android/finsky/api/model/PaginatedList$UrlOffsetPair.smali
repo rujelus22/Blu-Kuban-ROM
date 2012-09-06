@@ -27,15 +27,15 @@
     .parameter "url"
 
     .prologue
-    .line 334
+    .line 356
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 335
+    .line 357
     iput p1, p0, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;->offset:I
 
-    .line 336
+    .line 358
     iput-object p2, p0, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;->url:Ljava/lang/String;
 
-    .line 337
+    .line 359
     return-void
 .end method

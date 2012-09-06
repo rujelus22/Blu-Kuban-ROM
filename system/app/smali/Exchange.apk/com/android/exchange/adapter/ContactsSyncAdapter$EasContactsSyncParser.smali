@@ -23,66 +23,12 @@
 # instance fields
 .field mBindArgument:[Ljava/lang/String;
 
-.field mMailboxIdAsString:Ljava/lang/String;
-
 .field ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
 
 .field final synthetic this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/exchange/adapter/ContactsSyncAdapter;Lcom/android/exchange/adapter/Parser;Lcom/android/exchange/adapter/ContactsSyncAdapter;Z)V
-    .registers 8
-    .parameter
-    .parameter "parse"
-    .parameter "adapter"
-    .parameter "resumeParser"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 463
-    iput-object p1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
-
-    .line 464
-    invoke-direct {p0, p2, p3, p4}, Lcom/android/exchange/adapter/AbstractSyncParser;-><init>(Lcom/android/exchange/adapter/Parser;Lcom/android/exchange/adapter/AbstractSyncAdapter;Z)V
-
-    .line 451
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    iput-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mBindArgument:[Ljava/lang/String;
-
-    .line 455
-    new-instance v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
-
-    iget-object v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;-><init>(Lcom/android/exchange/adapter/ContactsSyncAdapter;Lcom/android/exchange/adapter/ContactsSyncAdapter$1;)V
-
-    iput-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
-
-    .line 465
-    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget-wide v0, v0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mMailboxIdAsString:Ljava/lang/String;
-
-    .line 466
-    return-void
-.end method
-
 .method public constructor <init>(Lcom/android/exchange/adapter/ContactsSyncAdapter;Ljava/io/InputStream;Lcom/android/exchange/adapter/ContactsSyncAdapter;)V
     .registers 7
     .parameter
@@ -95,20 +41,20 @@
     .end annotation
 
     .prologue
-    .line 458
+    .line 349
     iput-object p1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
 
-    .line 459
+    .line 350
     invoke-direct {p0, p2, p3}, Lcom/android/exchange/adapter/AbstractSyncParser;-><init>(Ljava/io/InputStream;Lcom/android/exchange/adapter/AbstractSyncAdapter;)V
 
-    .line 451
+    .line 344
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mBindArgument:[Ljava/lang/String;
 
-    .line 455
+    .line 346
     new-instance v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
 
     iget-object v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
@@ -119,7 +65,7 @@
 
     iput-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
 
-    .line 460
+    .line 351
     return-void
 .end method
 
@@ -132,10 +78,10 @@
     .end annotation
 
     .prologue
-    .line 812
+    .line 669
     const/4 v0, 0x0
 
-    .line 813
+    .line 670
     .local v0, body:Ljava/lang/String;
     :goto_1
     const/16 v1, 0x44a
@@ -148,30 +94,30 @@
 
     if-eq v1, v2, :cond_18
 
-    .line 814
-    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 671
+    iget v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
 
     packed-switch v1, :pswitch_data_1a
 
-    .line 819
+    .line 676
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->skipTag()V
 
     goto :goto_1
 
-    .line 816
+    .line 673
     :pswitch_13
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 817
+    .line 674
     goto :goto_1
 
-    .line 822
+    .line 679
     :cond_18
     return-object v0
 
-    .line 814
+    .line 671
     nop
 
     :pswitch_data_1a
@@ -191,7 +137,7 @@
     .end annotation
 
     .prologue
-    .line 786
+    .line 643
     :goto_0
     const/16 v0, 0x55
 
@@ -203,17 +149,17 @@
 
     if-eq v0, v1, :cond_1a
 
-    .line 787
-    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 644
+    iget v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
 
     packed-switch v0, :pswitch_data_1c
 
-    .line 792
+    .line 649
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->skipTag()V
 
     goto :goto_0
 
-    .line 789
+    .line 646
     :pswitch_12
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
@@ -223,11 +169,11 @@
 
     goto :goto_0
 
-    .line 795
+    .line 652
     :cond_1a
     return-void
 
-    .line 787
+    .line 644
     nop
 
     :pswitch_data_1c
@@ -256,7 +202,7 @@
     .end annotation
 
     .prologue
-    .line 798
+    .line 655
     .local p1, children:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     :cond_0
     :goto_0
@@ -270,17 +216,17 @@
 
     if-eq v0, v1, :cond_22
 
-    .line 799
-    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 656
+    iget v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
 
     packed-switch v0, :pswitch_data_24
 
-    .line 806
+    .line 663
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->skipTag()V
 
     goto :goto_0
 
-    .line 801
+    .line 658
     :pswitch_12
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -290,7 +236,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 802
+    .line 659
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v0
@@ -299,11 +245,11 @@
 
     goto :goto_0
 
-    .line 809
+    .line 666
     :cond_22
     return-void
 
-    .line 799
+    .line 656
     nop
 
     :pswitch_data_24
@@ -317,15 +263,15 @@
     .parameter "clientId"
 
     .prologue
-    .line 848
+    .line 705
     iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mBindArgument:[Ljava/lang/String;
 
     const/4 v1, 0x0
 
     aput-object p1, v0, v1
 
-    .line 849
-    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    .line 706
+    iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
 
@@ -356,15 +302,15 @@
     .parameter "serverId"
 
     .prologue
-    .line 842
+    .line 699
     iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mBindArgument:[Ljava/lang/String;
 
     const/4 v1, 0x0
 
     aput-object p1, v0, v1
 
-    .line 843
-    iget-object v0, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    .line 700
+    iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
 
@@ -393,7 +339,7 @@
 
 # virtual methods
 .method public addData(Ljava/lang/String;Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;Landroid/content/Entity;)V
-    .registers 49
+    .registers 47
     .parameter "serverId"
     .parameter "ops"
     .parameter "entity"
@@ -404,137 +350,131 @@
     .end annotation
 
     .prologue
-    .line 471
+    .line 355
     const/4 v13, 0x0
 
-    .line 472
+    .line 356
     .local v13, fileAs:Ljava/lang/String;
     const/4 v5, 0x0
 
-    .line 473
+    .line 357
     .local v5, prefix:Ljava/lang/String;
     const/4 v6, 0x0
 
-    .line 474
+    .line 358
     .local v6, firstName:Ljava/lang/String;
     const/4 v7, 0x0
 
-    .line 475
+    .line 359
     .local v7, lastName:Ljava/lang/String;
     const/4 v8, 0x0
 
-    .line 476
+    .line 360
     .local v8, middleName:Ljava/lang/String;
     const/4 v9, 0x0
 
-    .line 477
+    .line 361
     .local v9, suffix:Ljava/lang/String;
     const/16 v27, 0x0
 
-    .line 478
+    .line 362
     .local v27, companyName:Ljava/lang/String;
     const/4 v11, 0x0
 
-    .line 479
+    .line 363
     .local v11, yomiFirstName:Ljava/lang/String;
     const/4 v12, 0x0
 
-    .line 480
+    .line 364
     .local v12, yomiLastName:Ljava/lang/String;
-    const/16 v44, 0x0
+    const/16 v42, 0x0
 
-    .line 481
-    .local v44, yomiCompanyName:Ljava/lang/String;
-    const/16 v40, 0x0
+    .line 365
+    .local v42, yomiCompanyName:Ljava/lang/String;
+    const/16 v38, 0x0
 
-    .line 482
-    .local v40, title:Ljava/lang/String;
+    .line 366
+    .local v38, title:Ljava/lang/String;
     const/16 v28, 0x0
 
-    .line 483
+    .line 367
     .local v28, department:Ljava/lang/String;
-    const/16 v37, 0x0
+    const/16 v35, 0x0
 
-    .line 484
-    .local v37, officeLocation:Ljava/lang/String;
-    new-instance v30, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;
+    .line 368
+    .local v35, officeLocation:Ljava/lang/String;
+    new-instance v29, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;
 
-    invoke-direct/range {v30 .. v30}, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;-><init>()V
+    invoke-direct/range {v29 .. v29}, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;-><init>()V
 
-    .line 485
-    .local v30, home:Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;
-    new-instance v42, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;
+    .line 369
+    .local v29, home:Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;
+    new-instance v40, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;
 
-    invoke-direct/range {v42 .. v42}, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;-><init>()V
+    invoke-direct/range {v40 .. v40}, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;-><init>()V
 
-    .line 486
-    .local v42, work:Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;
-    new-instance v38, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;
+    .line 370
+    .local v40, work:Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;
+    new-instance v36, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;
 
-    invoke-direct/range {v38 .. v38}, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;-><init>()V
+    invoke-direct/range {v36 .. v36}, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;-><init>()V
 
-    .line 487
-    .local v38, other:Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;
+    .line 371
+    .local v36, other:Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;
     new-instance v25, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasBusiness;
 
     invoke-direct/range {v25 .. v25}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasBusiness;-><init>()V
 
-    .line 488
+    .line 372
     .local v25, business:Lcom/android/exchange/adapter/ContactsSyncAdapter$EasBusiness;
-    new-instance v39, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasPersonal;
+    new-instance v37, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasPersonal;
 
-    invoke-direct/range {v39 .. v39}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasPersonal;-><init>()V
+    invoke-direct/range {v37 .. v37}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasPersonal;-><init>()V
 
-    .line 489
-    .local v39, personal:Lcom/android/exchange/adapter/ContactsSyncAdapter$EasPersonal;
+    .line 373
+    .local v37, personal:Lcom/android/exchange/adapter/ContactsSyncAdapter$EasPersonal;
     new-instance v26, Ljava/util/ArrayList;
 
     invoke-direct/range {v26 .. v26}, Ljava/util/ArrayList;-><init>()V
 
-    .line 490
+    .line 374
     .local v26, children:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     new-instance v16, Ljava/util/ArrayList;
 
     invoke-direct/range {v16 .. v16}, Ljava/util/ArrayList;-><init>()V
 
-    .line 491
+    .line 375
     .local v16, emails:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/exchange/adapter/ContactsSyncAdapter$UntypedRow;>;"
-    new-instance v33, Ljava/util/ArrayList;
+    new-instance v32, Ljava/util/ArrayList;
 
-    invoke-direct/range {v33 .. v33}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct/range {v32 .. v32}, Ljava/util/ArrayList;-><init>()V
 
-    .line 492
-    .local v33, ims:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/exchange/adapter/ContactsSyncAdapter$UntypedRow;>;"
-    new-instance v31, Ljava/util/ArrayList;
+    .line 376
+    .local v32, ims:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/exchange/adapter/ContactsSyncAdapter$UntypedRow;>;"
+    new-instance v30, Ljava/util/ArrayList;
 
-    invoke-direct/range {v31 .. v31}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct/range {v30 .. v30}, Ljava/util/ArrayList;-><init>()V
 
-    .line 493
-    .local v31, homePhones:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/exchange/adapter/ContactsSyncAdapter$UntypedRow;>;"
-    new-instance v43, Ljava/util/ArrayList;
+    .line 377
+    .local v30, homePhones:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/exchange/adapter/ContactsSyncAdapter$UntypedRow;>;"
+    new-instance v41, Ljava/util/ArrayList;
 
-    invoke-direct/range {v43 .. v43}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct/range {v41 .. v41}, Ljava/util/ArrayList;-><init>()V
 
-    .line 494
-    .local v43, workPhones:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/exchange/adapter/ContactsSyncAdapter$UntypedRow;>;"
+    .line 378
+    .local v41, workPhones:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/exchange/adapter/ContactsSyncAdapter$UntypedRow;>;"
     if-nez p3, :cond_4d
 
-    .line 495
+    .line 379
     move-object/from16 v0, p2
 
     move-object/from16 v1, p1
 
     invoke-virtual {v0, v1}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->newContact(Ljava/lang/String;)V
 
-    .line 516
+    .line 382
     :cond_4d
-    new-instance v29, Ljava/util/ArrayList;
-
-    invoke-direct/range {v29 .. v29}, Ljava/util/ArrayList;-><init>()V
-
-    .line 518
-    .local v29, faxNumber:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser$1FaxNumberSet;>;"
-    :goto_52
+    :goto_4d
     const/16 v3, 0x1d
 
     move-object/from16 v0, p0
@@ -545,85 +485,85 @@
 
     const/4 v4, 0x3
 
-    if-eq v3, v4, :cond_2e2
+    if-eq v3, v4, :cond_2d3
 
-    .line 519
+    .line 383
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/exchange/adapter/Parser;->tag:I
+    iget v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
 
-    sparse-switch v3, :sswitch_data_45e
+    sparse-switch v3, :sswitch_data_430
 
-    .line 716
+    .line 577
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->skipTag()V
 
-    goto :goto_52
+    goto :goto_4d
 
-    .line 521
-    :sswitch_68
+    .line 385
+    :sswitch_63
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 522
-    goto :goto_52
+    .line 386
+    goto :goto_4d
 
-    .line 524
-    :sswitch_6d
+    .line 388
+    :sswitch_68
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 525
-    goto :goto_52
+    .line 389
+    goto :goto_4d
 
-    .line 527
-    :sswitch_72
+    .line 391
+    :sswitch_6d
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 528
-    goto :goto_52
+    .line 392
+    goto :goto_4d
 
-    .line 530
-    :sswitch_77
+    .line 394
+    :sswitch_72
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v13
 
-    .line 531
-    goto :goto_52
+    .line 395
+    goto :goto_4d
 
-    .line 533
-    :sswitch_7c
+    .line 397
+    :sswitch_77
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 534
-    goto :goto_52
+    .line 398
+    goto :goto_4d
 
-    .line 536
-    :sswitch_81
+    .line 400
+    :sswitch_7c
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v27
 
-    .line 537
-    goto :goto_52
+    .line 401
+    goto :goto_4d
 
-    .line 539
-    :sswitch_86
+    .line 403
+    :sswitch_81
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
-    move-result-object v40
+    move-result-object v38
 
-    .line 540
-    goto :goto_52
+    .line 404
+    goto :goto_4d
 
-    .line 544
-    :sswitch_8b
+    .line 408
+    :sswitch_86
     new-instance v3, Lcom/android/exchange/adapter/ContactsSyncAdapter$EmailRow;
 
     move-object/from16 v0, p0
@@ -640,10 +580,10 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_52
+    goto :goto_4d
 
-    .line 548
-    :sswitch_9e
+    .line 412
+    :sswitch_99
     new-instance v3, Lcom/android/exchange/adapter/ContactsSyncAdapter$PhoneRow;
 
     move-object/from16 v0, p0
@@ -658,14 +598,14 @@
 
     invoke-direct {v3, v4, v14, v15}, Lcom/android/exchange/adapter/ContactsSyncAdapter$PhoneRow;-><init>(Lcom/android/exchange/adapter/ContactsSyncAdapter;Ljava/lang/String;I)V
 
-    move-object/from16 v0, v43
+    move-object/from16 v0, v41
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_52
+    goto :goto_4d
 
-    .line 551
-    :sswitch_b2
+    .line 415
+    :sswitch_ad
     const/16 v3, 0x14
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
@@ -678,30 +618,26 @@
 
     invoke-virtual {v0, v1, v3, v4}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPhone(Landroid/content/Entity;ILjava/lang/String;)V
 
-    goto :goto_52
+    goto :goto_4d
 
-    .line 554
-    :sswitch_c0
-    new-instance v3, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser$1FaxNumberSet;
-
-    const/4 v4, 0x4
+    .line 418
+    :sswitch_bb
+    const/4 v3, 0x4
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v4
 
-    move-object/from16 v0, p0
+    move-object/from16 v0, p2
 
-    invoke-direct {v3, v0, v4, v14}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser$1FaxNumberSet;-><init>(Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;ILjava/lang/String;)V
+    move-object/from16 v1, p3
 
-    move-object/from16 v0, v29
+    invoke-virtual {v0, v1, v3, v4}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPhone(Landroid/content/Entity;ILjava/lang/String;)V
 
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    goto :goto_4d
 
-    goto :goto_52
-
-    .line 558
-    :sswitch_d2
+    .line 421
+    :sswitch_c8
     const/16 v3, 0xa
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
@@ -714,30 +650,26 @@
 
     invoke-virtual {v0, v1, v3, v4}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPhone(Landroid/content/Entity;ILjava/lang/String;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 561
-    :sswitch_e1
-    new-instance v3, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser$1FaxNumberSet;
-
-    const/4 v4, 0x5
+    .line 424
+    :sswitch_d7
+    const/4 v3, 0x5
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v4
 
-    move-object/from16 v0, p0
+    move-object/from16 v0, p2
 
-    invoke-direct {v3, v0, v4, v14}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser$1FaxNumberSet;-><init>(Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;ILjava/lang/String;)V
+    move-object/from16 v1, p3
 
-    move-object/from16 v0, v29
+    invoke-virtual {v0, v1, v3, v4}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPhone(Landroid/content/Entity;ILjava/lang/String;)V
 
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    goto/16 :goto_4d
 
-    goto/16 :goto_52
-
-    .line 566
-    :sswitch_f4
+    .line 428
+    :sswitch_e5
     new-instance v3, Lcom/android/exchange/adapter/ContactsSyncAdapter$PhoneRow;
 
     move-object/from16 v0, p0
@@ -752,14 +684,14 @@
 
     invoke-direct {v3, v4, v14, v15}, Lcom/android/exchange/adapter/ContactsSyncAdapter$PhoneRow;-><init>(Lcom/android/exchange/adapter/ContactsSyncAdapter;Ljava/lang/String;I)V
 
-    move-object/from16 v0, v31
+    move-object/from16 v0, v30
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 569
-    :sswitch_109
+    .line 431
+    :sswitch_fa
     const/4 v3, 0x2
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
@@ -772,10 +704,10 @@
 
     invoke-virtual {v0, v1, v3, v4}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPhone(Landroid/content/Entity;ILjava/lang/String;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 572
-    :sswitch_117
+    .line 434
+    :sswitch_108
     const/16 v3, 0x9
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
@@ -788,10 +720,10 @@
 
     invoke-virtual {v0, v1, v3, v4}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPhone(Landroid/content/Entity;ILjava/lang/String;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 575
-    :sswitch_126
+    .line 437
+    :sswitch_117
     const/16 v3, 0xe
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
@@ -804,10 +736,10 @@
 
     invoke-virtual {v0, v1, v3, v4}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPhone(Landroid/content/Entity;ILjava/lang/String;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 578
-    :sswitch_135
+    .line 440
+    :sswitch_126
     const/4 v3, 0x6
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
@@ -820,10 +752,10 @@
 
     invoke-virtual {v0, v1, v3, v4}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPhone(Landroid/content/Entity;ILjava/lang/String;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 581
-    :sswitch_143
+    .line 443
+    :sswitch_134
     const/16 v3, 0x13
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
@@ -836,10 +768,10 @@
 
     invoke-virtual {v0, v1, v3, v4}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPhone(Landroid/content/Entity;ILjava/lang/String;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 586
-    :sswitch_152
+    .line 448
+    :sswitch_143
     new-instance v3, Lcom/android/exchange/adapter/ContactsSyncAdapter$ImRow;
 
     move-object/from16 v0, p0
@@ -852,231 +784,231 @@
 
     invoke-direct {v3, v4, v14}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ImRow;-><init>(Lcom/android/exchange/adapter/ContactsSyncAdapter;Ljava/lang/String;)V
 
-    move-object/from16 v0, v33
+    move-object/from16 v0, v32
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 589
-    :sswitch_166
+    .line 451
+    :sswitch_157
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v42
+    move-object/from16 v0, v40
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->city:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 592
-    :sswitch_170
+    .line 454
+    :sswitch_161
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v42
+    move-object/from16 v0, v40
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->country:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 595
-    :sswitch_17a
+    .line 457
+    :sswitch_16b
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v42
+    move-object/from16 v0, v40
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->code:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 598
-    :sswitch_184
+    .line 460
+    :sswitch_175
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v42
+    move-object/from16 v0, v40
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->state:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 601
-    :sswitch_18e
+    .line 463
+    :sswitch_17f
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v42
+    move-object/from16 v0, v40
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->street:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 604
-    :sswitch_198
+    .line 466
+    :sswitch_189
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v30
+    move-object/from16 v0, v29
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->city:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 607
-    :sswitch_1a2
+    .line 469
+    :sswitch_193
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v30
+    move-object/from16 v0, v29
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->country:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 610
-    :sswitch_1ac
+    .line 472
+    :sswitch_19d
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v30
+    move-object/from16 v0, v29
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->code:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 613
-    :sswitch_1b6
+    .line 475
+    :sswitch_1a7
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v30
+    move-object/from16 v0, v29
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->state:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 616
-    :sswitch_1c0
+    .line 478
+    :sswitch_1b1
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v30
+    move-object/from16 v0, v29
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->street:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 619
-    :sswitch_1ca
+    .line 481
+    :sswitch_1bb
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v38
+    move-object/from16 v0, v36
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->city:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 622
-    :sswitch_1d4
+    .line 484
+    :sswitch_1c5
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v38
+    move-object/from16 v0, v36
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->country:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 625
-    :sswitch_1de
+    .line 487
+    :sswitch_1cf
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v38
+    move-object/from16 v0, v36
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->code:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 628
-    :sswitch_1e8
+    .line 490
+    :sswitch_1d9
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v38
+    move-object/from16 v0, v36
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->state:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 631
-    :sswitch_1f2
+    .line 493
+    :sswitch_1e3
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v38
+    move-object/from16 v0, v36
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->street:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 635
-    :sswitch_1fc
+    .line 497
+    :sswitch_1ed
     move-object/from16 v0, p0
 
     move-object/from16 v1, v26
 
     invoke-direct {v0, v1}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->childrenParser(Ljava/util/ArrayList;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 639
-    :sswitch_205
+    .line 501
+    :sswitch_1f6
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
-    move-result-object v44
+    move-result-object v42
 
-    .line 640
-    goto/16 :goto_52
+    .line 502
+    goto/16 :goto_4d
 
-    .line 642
-    :sswitch_20b
+    .line 504
+    :sswitch_1fc
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v11
 
-    .line 643
-    goto/16 :goto_52
+    .line 505
+    goto/16 :goto_4d
 
-    .line 645
-    :sswitch_211
+    .line 507
+    :sswitch_202
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v12
 
-    .line 646
-    goto/16 :goto_52
+    .line 508
+    goto/16 :goto_4d
 
-    .line 649
-    :sswitch_217
+    .line 511
+    :sswitch_208
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
@@ -1087,10 +1019,10 @@
 
     invoke-virtual {v0, v1, v3}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addNickname(Landroid/content/Entity;Ljava/lang/String;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 653
-    :sswitch_224
+    .line 515
+    :sswitch_215
     const/4 v3, 0x1
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
@@ -1103,10 +1035,10 @@
 
     invoke-virtual {v0, v1, v3, v4}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addRelation(Landroid/content/Entity;ILjava/lang/String;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 656
-    :sswitch_232
+    .line 518
+    :sswitch_223
     const/4 v3, 0x7
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
@@ -1119,10 +1051,10 @@
 
     invoke-virtual {v0, v1, v3, v4}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addRelation(Landroid/content/Entity;ILjava/lang/String;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 659
-    :sswitch_240
+    .line 521
+    :sswitch_231
     const/16 v3, 0xe
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
@@ -1135,37 +1067,37 @@
 
     invoke-virtual {v0, v1, v3, v4}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addRelation(Landroid/content/Entity;ILjava/lang/String;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 662
-    :sswitch_24f
+    .line 524
+    :sswitch_240
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v28
 
-    .line 663
-    goto/16 :goto_52
+    .line 525
+    goto/16 :goto_4d
 
-    .line 665
-    :sswitch_255
+    .line 527
+    :sswitch_246
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 666
-    goto/16 :goto_52
+    .line 528
+    goto/16 :goto_4d
 
-    .line 670
-    :sswitch_25b
+    .line 532
+    :sswitch_24c
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
-    move-result-object v37
+    move-result-object v35
 
-    .line 671
-    goto/16 :goto_52
+    .line 533
+    goto/16 :goto_4d
 
-    .line 673
-    :sswitch_261
+    .line 535
+    :sswitch_252
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
@@ -1174,10 +1106,10 @@
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasBusiness;->customerId:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 676
-    :sswitch_26b
+    .line 538
+    :sswitch_25c
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
@@ -1186,10 +1118,10 @@
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasBusiness;->governmentId:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 679
-    :sswitch_275
+    .line 541
+    :sswitch_266
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
@@ -1198,22 +1130,22 @@
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasBusiness;->accountName:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 684
-    :sswitch_27f
+    .line 546
+    :sswitch_270
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v39
+    move-object/from16 v0, v37
 
     iput-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasPersonal;->anniversary:Ljava/lang/String;
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 687
-    :sswitch_289
+    .line 549
+    :sswitch_27a
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
@@ -1224,10 +1156,10 @@
 
     invoke-virtual {v0, v1, v3}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addBirthday(Landroid/content/Entity;Ljava/lang/String;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 690
-    :sswitch_296
+    .line 552
+    :sswitch_287
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
@@ -1238,10 +1170,10 @@
 
     invoke-virtual {v0, v1, v3}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addWebpage(Landroid/content/Entity;Ljava/lang/String;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 694
-    :sswitch_2a3
+    .line 556
+    :sswitch_294
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
@@ -1252,10 +1184,10 @@
 
     invoke-virtual {v0, v1, v3}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPhoto(Landroid/content/Entity;Ljava/lang/String;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 698
-    :sswitch_2b0
+    .line 560
+    :sswitch_2a1
     invoke-direct/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->bodyParser()Ljava/lang/String;
 
     move-result-object v3
@@ -1266,10 +1198,10 @@
 
     invoke-virtual {v0, v1, v3}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addNote(Landroid/content/Entity;Ljava/lang/String;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 701
-    :sswitch_2bd
+    .line 563
+    :sswitch_2ae
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
@@ -1280,10 +1212,10 @@
 
     invoke-virtual {v0, v1, v3}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addNote(Landroid/content/Entity;Ljava/lang/String;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 705
-    :sswitch_2ca
+    .line 567
+    :sswitch_2bb
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
@@ -1293,7 +1225,7 @@
     #setter for: Lcom/android/exchange/adapter/ContactsSyncAdapter;->mGroupsUsed:Z
     invoke-static {v3, v4}, Lcom/android/exchange/adapter/ContactsSyncAdapter;->access$102(Lcom/android/exchange/adapter/ContactsSyncAdapter;Z)Z
 
-    .line 706
+    .line 568
     move-object/from16 v0, p0
 
     move-object/from16 v1, p2
@@ -1302,41 +1234,41 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->categoriesParser(Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;Landroid/content/Entity;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 712
-    :sswitch_2dd
+    .line 573
+    :sswitch_2ce
     invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->skipTag()V
 
-    goto/16 :goto_52
+    goto/16 :goto_4d
 
-    .line 721
-    :cond_2e2
+    .line 582
+    :cond_2d3
     const/4 v10, 0x0
 
-    .line 722
+    .line 583
     .local v10, name:Ljava/lang/String;
-    if-nez v6, :cond_2e7
+    if-nez v6, :cond_2d8
 
-    if-eqz v7, :cond_37a
+    if-eqz v7, :cond_429
 
-    .line 723
-    :cond_2e7
-    if-nez v6, :cond_35d
+    .line 584
+    :cond_2d8
+    if-nez v6, :cond_40b
 
-    .line 724
+    .line 585
     move-object v10, v7
 
-    :cond_2ea
-    :goto_2ea
+    :cond_2db
+    :goto_2db
     move-object/from16 v3, p2
 
     move-object/from16 v4, p3
 
-    .line 734
+    .line 595
     invoke-virtual/range {v3 .. v13}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addName(Landroid/content/Entity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 736
+    .line 597
     move-object/from16 v0, p2
 
     move-object/from16 v1, p3
@@ -1345,16 +1277,16 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addBusiness(Landroid/content/Entity;Lcom/android/exchange/adapter/ContactsSyncAdapter$EasBusiness;)V
 
-    .line 737
+    .line 598
     move-object/from16 v0, p2
 
     move-object/from16 v1, p3
 
-    move-object/from16 v2, v39
+    move-object/from16 v2, v37
 
     invoke-virtual {v0, v1, v2}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPersonal(Landroid/content/Entity;Lcom/android/exchange/adapter/ContactsSyncAdapter$EasPersonal;)V
 
-    .line 739
+    .line 600
     const-string v17, "vnd.android.cursor.item/email_v2"
 
     const/16 v18, -0x1
@@ -1367,7 +1299,7 @@
 
     invoke-virtual/range {v14 .. v19}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addUntyped(Landroid/content/Entity;Ljava/util/ArrayList;Ljava/lang/String;II)V
 
-    .line 740
+    .line 601
     const-string v20, "vnd.android.cursor.item/im"
 
     const/16 v21, -0x1
@@ -1378,11 +1310,11 @@
 
     move-object/from16 v18, p3
 
-    move-object/from16 v19, v33
+    move-object/from16 v19, v32
 
     invoke-virtual/range {v17 .. v22}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addUntyped(Landroid/content/Entity;Ljava/util/ArrayList;Ljava/lang/String;II)V
 
-    .line 741
+    .line 602
     const-string v20, "vnd.android.cursor.item/phone_v2"
 
     const/16 v21, 0x1
@@ -1393,11 +1325,11 @@
 
     move-object/from16 v18, p3
 
-    move-object/from16 v19, v31
+    move-object/from16 v19, v30
 
     invoke-virtual/range {v17 .. v22}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addUntyped(Landroid/content/Entity;Ljava/util/ArrayList;Ljava/lang/String;II)V
 
-    .line 743
+    .line 604
     const-string v20, "vnd.android.cursor.item/phone_v2"
 
     const/16 v21, 0x3
@@ -1408,60 +1340,266 @@
 
     move-object/from16 v18, p3
 
-    move-object/from16 v19, v43
+    move-object/from16 v19, v41
 
     invoke-virtual/range {v17 .. v22}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addUntyped(Landroid/content/Entity;Ljava/util/ArrayList;Ljava/lang/String;II)V
 
-    .line 746
-    invoke-virtual/range {v29 .. v29}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v32
-
-    .local v32, i$:Ljava/util/Iterator;
-    :goto_341
-    invoke-interface/range {v32 .. v32}, Ljava/util/Iterator;->hasNext()Z
+    .line 607
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v3
 
-    if-eqz v3, :cond_380
+    if-nez v3, :cond_33d
 
-    invoke-interface/range {v32 .. v32}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v36
-
-    check-cast v36, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser$1FaxNumberSet;
-
-    .line 747
-    .local v36, number:Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser$1FaxNumberSet;
-    invoke-virtual/range {v36 .. v36}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser$1FaxNumberSet;->getType()I
-
-    move-result v3
-
-    invoke-virtual/range {v36 .. v36}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser$1FaxNumberSet;->getNumber()Ljava/lang/String;
-
-    move-result-object v4
-
+    .line 608
     move-object/from16 v0, p2
 
     move-object/from16 v1, p3
 
-    invoke-virtual {v0, v1, v3, v4}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPhone(Landroid/content/Entity;ILjava/lang/String;)V
+    move-object/from16 v2, v26
 
-    goto :goto_341
+    invoke-virtual {v0, v1, v2}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addChildren(Landroid/content/Entity;Ljava/util/ArrayList;)V
 
-    .line 725
-    .end local v32           #i$:Ljava/util/Iterator;
-    .end local v36           #number:Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser$1FaxNumberSet;
-    :cond_35d
-    if-nez v7, :cond_361
+    .line 611
+    :cond_33d
+    invoke-virtual/range {v40 .. v40}, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->hasData()Z
 
-    .line 726
+    move-result v3
+
+    if-eqz v3, :cond_36a
+
+    .line 612
+    const/16 v19, 0x2
+
+    move-object/from16 v0, v40
+
+    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->street:Ljava/lang/String;
+
+    move-object/from16 v20, v0
+
+    move-object/from16 v0, v40
+
+    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->city:Ljava/lang/String;
+
+    move-object/from16 v21, v0
+
+    move-object/from16 v0, v40
+
+    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->state:Ljava/lang/String;
+
+    move-object/from16 v22, v0
+
+    move-object/from16 v0, v40
+
+    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->country:Ljava/lang/String;
+
+    move-object/from16 v23, v0
+
+    move-object/from16 v0, v40
+
+    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->code:Ljava/lang/String;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v17, p2
+
+    move-object/from16 v18, p3
+
+    invoke-virtual/range {v17 .. v24}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPostal(Landroid/content/Entity;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 615
+    :cond_36a
+    invoke-virtual/range {v29 .. v29}, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->hasData()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_397
+
+    .line 616
+    const/16 v19, 0x1
+
+    move-object/from16 v0, v29
+
+    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->street:Ljava/lang/String;
+
+    move-object/from16 v20, v0
+
+    move-object/from16 v0, v29
+
+    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->city:Ljava/lang/String;
+
+    move-object/from16 v21, v0
+
+    move-object/from16 v0, v29
+
+    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->state:Ljava/lang/String;
+
+    move-object/from16 v22, v0
+
+    move-object/from16 v0, v29
+
+    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->country:Ljava/lang/String;
+
+    move-object/from16 v23, v0
+
+    move-object/from16 v0, v29
+
+    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->code:Ljava/lang/String;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v17, p2
+
+    move-object/from16 v18, p3
+
+    invoke-virtual/range {v17 .. v24}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPostal(Landroid/content/Entity;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 619
+    :cond_397
+    invoke-virtual/range {v36 .. v36}, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->hasData()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3c4
+
+    .line 620
+    const/16 v19, 0x3
+
+    move-object/from16 v0, v36
+
+    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->street:Ljava/lang/String;
+
+    move-object/from16 v20, v0
+
+    move-object/from16 v0, v36
+
+    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->city:Ljava/lang/String;
+
+    move-object/from16 v21, v0
+
+    move-object/from16 v0, v36
+
+    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->state:Ljava/lang/String;
+
+    move-object/from16 v22, v0
+
+    move-object/from16 v0, v36
+
+    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->country:Ljava/lang/String;
+
+    move-object/from16 v23, v0
+
+    move-object/from16 v0, v36
+
+    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->code:Ljava/lang/String;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v17, p2
+
+    move-object/from16 v18, p3
+
+    invoke-virtual/range {v17 .. v24}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPostal(Landroid/content/Entity;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 624
+    :cond_3c4
+    if-eqz v27, :cond_3d9
+
+    .line 625
+    const/16 v19, 0x1
+
+    move-object/from16 v17, p2
+
+    move-object/from16 v18, p3
+
+    move-object/from16 v20, v27
+
+    move-object/from16 v21, v38
+
+    move-object/from16 v22, v28
+
+    move-object/from16 v23, v42
+
+    move-object/from16 v24, v35
+
+    invoke-virtual/range {v17 .. v24}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addOrganization(Landroid/content/Entity;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 629
+    :cond_3d9
+    if-eqz p3, :cond_42f
+
+    .line 632
+    invoke-virtual/range {p3 .. p3}, Landroid/content/Entity;->getSubValues()Ljava/util/ArrayList;
+
+    move-result-object v34
+
+    .line 633
+    .local v34, ncvList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/Entity$NamedContentValues;>;"
+    invoke-virtual/range {v34 .. v34}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v31
+
+    .local v31, i$:Ljava/util/Iterator;
+    :goto_3e3
+    invoke-interface/range {v31 .. v31}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_42f
+
+    invoke-interface/range {v31 .. v31}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v33
+
+    check-cast v33, Landroid/content/Entity$NamedContentValues;
+
+    .line 635
+    .local v33, ncv:Landroid/content/Entity$NamedContentValues;
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
+
+    move-object/from16 v0, v33
+
+    invoke-virtual {v3, v0}, Lcom/android/exchange/adapter/ContactsSyncAdapter;->dataUriFromNamedContentValues(Landroid/content/Entity$NamedContentValues;)Landroid/net/Uri;
+
+    move-result-object v39
+
+    .line 636
+    .local v39, u:Landroid/net/Uri;
+    invoke-static/range {v39 .. v39}, Lcom/android/exchange/adapter/ContactsSyncAdapter;->addCallerIsSyncAdapterParameter(Landroid/net/Uri;)Landroid/net/Uri;
+
+    move-result-object v3
+
+    invoke-static {v3}, Landroid/content/ContentProviderOperation;->newDelete(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
+
+    move-result-object v3
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v3}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->add(Landroid/content/ContentProviderOperation;)Z
+
+    goto :goto_3e3
+
+    .line 586
+    .end local v31           #i$:Ljava/util/Iterator;
+    .end local v33           #ncv:Landroid/content/Entity$NamedContentValues;
+    .end local v34           #ncvList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/Entity$NamedContentValues;>;"
+    .end local v39           #u:Landroid/net/Uri;
+    :cond_40b
+    if-nez v7, :cond_410
+
+    .line 587
     move-object v10, v6
 
-    goto :goto_2ea
+    goto/16 :goto_2db
 
-    .line 728
-    :cond_361
+    .line 589
+    :cond_410
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1484,332 +1622,87 @@
 
     move-result-object v10
 
-    goto/16 :goto_2ea
+    goto/16 :goto_2db
 
-    .line 730
-    :cond_37a
-    if-eqz v27, :cond_2ea
+    .line 591
+    :cond_429
+    if-eqz v27, :cond_2db
 
-    .line 731
+    .line 592
     move-object/from16 v10, v27
 
-    goto/16 :goto_2ea
+    goto/16 :goto_2db
 
-    .line 749
-    .restart local v32       #i$:Ljava/util/Iterator;
-    :cond_380
-    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v3
-
-    if-nez v3, :cond_38f
-
-    .line 750
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, p3
-
-    move-object/from16 v2, v26
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addChildren(Landroid/content/Entity;Ljava/util/ArrayList;)V
-
-    .line 753
-    :cond_38f
-    invoke-virtual/range {v42 .. v42}, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->hasData()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3bc
-
-    .line 754
-    const/16 v19, 0x2
-
-    move-object/from16 v0, v42
-
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->street:Ljava/lang/String;
-
-    move-object/from16 v20, v0
-
-    move-object/from16 v0, v42
-
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->city:Ljava/lang/String;
-
-    move-object/from16 v21, v0
-
-    move-object/from16 v0, v42
-
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->state:Ljava/lang/String;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v42
-
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->country:Ljava/lang/String;
-
-    move-object/from16 v23, v0
-
-    move-object/from16 v0, v42
-
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->code:Ljava/lang/String;
-
-    move-object/from16 v24, v0
-
-    move-object/from16 v17, p2
-
-    move-object/from16 v18, p3
-
-    invoke-virtual/range {v17 .. v24}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPostal(Landroid/content/Entity;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 757
-    :cond_3bc
-    invoke-virtual/range {v30 .. v30}, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->hasData()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3e9
-
-    .line 758
-    const/16 v19, 0x1
-
-    move-object/from16 v0, v30
-
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->street:Ljava/lang/String;
-
-    move-object/from16 v20, v0
-
-    move-object/from16 v0, v30
-
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->city:Ljava/lang/String;
-
-    move-object/from16 v21, v0
-
-    move-object/from16 v0, v30
-
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->state:Ljava/lang/String;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v30
-
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->country:Ljava/lang/String;
-
-    move-object/from16 v23, v0
-
-    move-object/from16 v0, v30
-
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->code:Ljava/lang/String;
-
-    move-object/from16 v24, v0
-
-    move-object/from16 v17, p2
-
-    move-object/from16 v18, p3
-
-    invoke-virtual/range {v17 .. v24}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPostal(Landroid/content/Entity;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 761
-    :cond_3e9
-    invoke-virtual/range {v38 .. v38}, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->hasData()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_416
-
-    .line 762
-    const/16 v19, 0x3
-
-    move-object/from16 v0, v38
-
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->street:Ljava/lang/String;
-
-    move-object/from16 v20, v0
-
-    move-object/from16 v0, v38
-
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->city:Ljava/lang/String;
-
-    move-object/from16 v21, v0
-
-    move-object/from16 v0, v38
-
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->state:Ljava/lang/String;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v38
-
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->country:Ljava/lang/String;
-
-    move-object/from16 v23, v0
-
-    move-object/from16 v0, v38
-
-    iget-object v0, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$Address;->code:Ljava/lang/String;
-
-    move-object/from16 v24, v0
-
-    move-object/from16 v17, p2
-
-    move-object/from16 v18, p3
-
-    invoke-virtual/range {v17 .. v24}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addPostal(Landroid/content/Entity;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 766
-    :cond_416
-    if-eqz v27, :cond_42b
-
-    .line 767
-    const/16 v19, 0x1
-
-    move-object/from16 v17, p2
-
-    move-object/from16 v18, p3
-
-    move-object/from16 v20, v27
-
-    move-object/from16 v21, v40
-
-    move-object/from16 v22, v28
-
-    move-object/from16 v23, v44
-
-    move-object/from16 v24, v37
-
-    invoke-virtual/range {v17 .. v24}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->addOrganization(Landroid/content/Entity;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 771
-    :cond_42b
-    if-eqz p3, :cond_45d
-
-    .line 775
-    invoke-virtual/range {p3 .. p3}, Landroid/content/Entity;->getSubValues()Ljava/util/ArrayList;
-
-    move-result-object v35
-
-    .line 776
-    .local v35, ncvList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/Entity$NamedContentValues;>;"
-    invoke-virtual/range {v35 .. v35}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v32
-
-    :goto_435
-    invoke-interface/range {v32 .. v32}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_45d
-
-    invoke-interface/range {v32 .. v32}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v34
-
-    check-cast v34, Landroid/content/Entity$NamedContentValues;
-
-    .line 778
-    .local v34, ncv:Landroid/content/Entity$NamedContentValues;
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
-
-    move-object/from16 v0, v34
-
-    invoke-virtual {v3, v0}, Lcom/android/exchange/adapter/ContactsSyncAdapter;->dataUriFromNamedContentValues(Landroid/content/Entity$NamedContentValues;)Landroid/net/Uri;
-
-    move-result-object v41
-
-    .line 779
-    .local v41, u:Landroid/net/Uri;
-    invoke-static/range {v41 .. v41}, Lcom/android/exchange/adapter/ContactsSyncAdapter;->addCallerIsSyncAdapterParameter(Landroid/net/Uri;)Landroid/net/Uri;
-
-    move-result-object v3
-
-    invoke-static {v3}, Landroid/content/ContentProviderOperation;->newDelete(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
-
-    move-result-object v3
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v3}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->add(Landroid/content/ContentProviderOperation;)Z
-
-    goto :goto_435
-
-    .line 783
-    .end local v34           #ncv:Landroid/content/Entity$NamedContentValues;
-    .end local v35           #ncvList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/Entity$NamedContentValues;>;"
-    .end local v41           #u:Landroid/net/Uri;
-    :cond_45d
+    .line 640
+    :cond_42f
     return-void
 
-    .line 519
-    :sswitch_data_45e
+    .line 383
+    :sswitch_data_430
     .sparse-switch
-        0x45 -> :sswitch_27f
-        0x46 -> :sswitch_224
-        0x47 -> :sswitch_143
-        0x48 -> :sswitch_289
-        0x49 -> :sswitch_2bd
-        0x4c -> :sswitch_9e
-        0x4d -> :sswitch_166
-        0x4e -> :sswitch_170
-        0x4f -> :sswitch_17a
-        0x50 -> :sswitch_184
-        0x51 -> :sswitch_18e
-        0x52 -> :sswitch_c0
-        0x53 -> :sswitch_9e
-        0x54 -> :sswitch_117
-        0x55 -> :sswitch_2ca
-        0x57 -> :sswitch_1fc
-        0x59 -> :sswitch_81
-        0x5a -> :sswitch_24f
-        0x5b -> :sswitch_8b
-        0x5c -> :sswitch_8b
-        0x5d -> :sswitch_8b
-        0x5e -> :sswitch_77
-        0x5f -> :sswitch_68
-        0x60 -> :sswitch_f4
-        0x61 -> :sswitch_198
-        0x62 -> :sswitch_1a2
-        0x63 -> :sswitch_1ac
-        0x64 -> :sswitch_1b6
-        0x65 -> :sswitch_1c0
-        0x66 -> :sswitch_e1
-        0x67 -> :sswitch_f4
-        0x68 -> :sswitch_86
-        0x69 -> :sswitch_6d
-        0x6a -> :sswitch_72
-        0x6b -> :sswitch_109
-        0x6c -> :sswitch_25b
-        0x6d -> :sswitch_1ca
-        0x6e -> :sswitch_1d4
-        0x6f -> :sswitch_1de
-        0x70 -> :sswitch_1e8
-        0x71 -> :sswitch_1f2
-        0x72 -> :sswitch_135
-        0x73 -> :sswitch_126
-        0x74 -> :sswitch_240
-        0x75 -> :sswitch_7c
-        0x76 -> :sswitch_255
-        0x77 -> :sswitch_296
-        0x78 -> :sswitch_205
-        0x79 -> :sswitch_20b
-        0x7a -> :sswitch_211
-        0x7b -> :sswitch_2dd
-        0x7c -> :sswitch_2a3
-        0x305 -> :sswitch_261
-        0x306 -> :sswitch_26b
-        0x307 -> :sswitch_152
-        0x308 -> :sswitch_152
-        0x309 -> :sswitch_152
-        0x30a -> :sswitch_232
-        0x30b -> :sswitch_d2
-        0x30c -> :sswitch_275
-        0x30d -> :sswitch_217
-        0x30e -> :sswitch_b2
-        0x44a -> :sswitch_2b0
+        0x45 -> :sswitch_270
+        0x46 -> :sswitch_215
+        0x47 -> :sswitch_134
+        0x48 -> :sswitch_27a
+        0x49 -> :sswitch_2ae
+        0x4c -> :sswitch_99
+        0x4d -> :sswitch_157
+        0x4e -> :sswitch_161
+        0x4f -> :sswitch_16b
+        0x50 -> :sswitch_175
+        0x51 -> :sswitch_17f
+        0x52 -> :sswitch_bb
+        0x53 -> :sswitch_99
+        0x54 -> :sswitch_108
+        0x55 -> :sswitch_2bb
+        0x57 -> :sswitch_1ed
+        0x59 -> :sswitch_7c
+        0x5a -> :sswitch_240
+        0x5b -> :sswitch_86
+        0x5c -> :sswitch_86
+        0x5d -> :sswitch_86
+        0x5e -> :sswitch_72
+        0x5f -> :sswitch_63
+        0x60 -> :sswitch_e5
+        0x61 -> :sswitch_189
+        0x62 -> :sswitch_193
+        0x63 -> :sswitch_19d
+        0x64 -> :sswitch_1a7
+        0x65 -> :sswitch_1b1
+        0x66 -> :sswitch_d7
+        0x67 -> :sswitch_e5
+        0x68 -> :sswitch_81
+        0x69 -> :sswitch_68
+        0x6a -> :sswitch_6d
+        0x6b -> :sswitch_fa
+        0x6c -> :sswitch_24c
+        0x6d -> :sswitch_1bb
+        0x6e -> :sswitch_1c5
+        0x6f -> :sswitch_1cf
+        0x70 -> :sswitch_1d9
+        0x71 -> :sswitch_1e3
+        0x72 -> :sswitch_126
+        0x73 -> :sswitch_117
+        0x74 -> :sswitch_231
+        0x75 -> :sswitch_77
+        0x76 -> :sswitch_246
+        0x77 -> :sswitch_287
+        0x78 -> :sswitch_1f6
+        0x79 -> :sswitch_1fc
+        0x7a -> :sswitch_202
+        0x7b -> :sswitch_2ce
+        0x7c -> :sswitch_294
+        0x305 -> :sswitch_252
+        0x306 -> :sswitch_25c
+        0x307 -> :sswitch_143
+        0x308 -> :sswitch_143
+        0x309 -> :sswitch_143
+        0x30a -> :sswitch_223
+        0x30b -> :sswitch_c8
+        0x30c -> :sswitch_266
+        0x30d -> :sswitch_208
+        0x30e -> :sswitch_ad
+        0x44a -> :sswitch_2a1
     .end sparse-switch
 .end method
 
@@ -1823,10 +1716,10 @@
     .end annotation
 
     .prologue
-    .line 826
+    .line 683
     const/4 v0, 0x0
 
-    .line 827
+    .line 684
     .local v0, serverId:Ljava/lang/String;
     :goto_1
     const/4 v1, 0x7
@@ -1839,26 +1732,26 @@
 
     if-eq v1, v2, :cond_1c
 
-    .line 828
-    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 685
+    iget v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
 
     sparse-switch v1, :sswitch_data_1e
 
-    .line 836
+    .line 693
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->skipTag()V
 
     goto :goto_1
 
-    .line 830
+    .line 687
     :sswitch_12
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 831
+    .line 688
     goto :goto_1
 
-    .line 833
+    .line 690
     :sswitch_17
     const/4 v1, 0x0
 
@@ -1866,11 +1759,11 @@
 
     goto :goto_1
 
-    .line 839
+    .line 696
     :cond_1c
     return-void
 
-    .line 828
+    .line 685
     nop
 
     :sswitch_data_1e
@@ -1889,20 +1782,20 @@
     .end annotation
 
     .prologue
-    .line 991
+    .line 826
     const/4 v3, 0x0
 
-    .line 992
+    .line 827
     .local v3, serverId:Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 993
+    .line 828
     .local v1, clientId:Ljava/lang/String;
     new-instance v2, Landroid/content/ContentValues;
 
     invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
 
-    .line 994
+    .line 829
     .local v2, cv:Landroid/content/ContentValues;
     :goto_7
     const/4 v4, 0x7
@@ -1915,58 +1808,58 @@
 
     if-eq v4, v5, :cond_26
 
-    .line 995
-    iget v4, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 830
+    iget v4, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
 
     packed-switch v4, :pswitch_data_94
 
-    .line 1006
+    .line 841
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->skipTag()V
 
     goto :goto_7
 
-    .line 997
+    .line 832
     :pswitch_18
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 998
+    .line 833
     goto :goto_7
 
-    .line 1000
+    .line 835
     :pswitch_1d
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1001
+    .line 836
     goto :goto_7
 
-    .line 1003
+    .line 838
     :pswitch_22
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     goto :goto_7
 
-    .line 1011
+    .line 846
     :cond_26
     if-eqz v1, :cond_2a
 
     if-nez v3, :cond_2b
 
-    .line 1028
+    .line 864
     :cond_2a
     :goto_2a
     return-void
 
-    .line 1014
+    .line 848
     :cond_2b
     invoke-direct {p0, v1}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getClientIdCursor(Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 1016
+    .line 850
     .local v0, c:Landroid/database/Cursor;
     :try_start_2f
     invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
@@ -1975,12 +1868,12 @@
 
     if-eqz v4, :cond_8a
 
-    .line 1017
+    .line 851
     const-string v4, "sourceid"
 
     invoke-virtual {v2, v4, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1018
+    .line 852
     const-string v4, "dirty"
 
     const/4 v5, 0x0
@@ -1991,7 +1884,7 @@
 
     invoke-virtual {v2, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1019
+    .line 853
     iget-object v4, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
 
     sget-object v5, Landroid/provider/ContactsContract$RawContacts;->CONTENT_URI:Landroid/net/Uri;
@@ -2024,7 +1917,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->add(Landroid/content/ContentProviderOperation;)Z
 
-    .line 1023
+    .line 859
     const/4 v4, 0x1
 
     new-array v4, v4, [Ljava/lang/String;
@@ -2065,7 +1958,7 @@
     :try_end_8a
     .catchall {:try_start_2f .. :try_end_8a} :catchall_8e
 
-    .line 1026
+    .line 862
     :cond_8a
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
@@ -2078,7 +1971,7 @@
 
     throw v4
 
-    .line 995
+    .line 830
     nop
 
     :pswitch_data_94
@@ -2090,7 +1983,7 @@
 .end method
 
 .method public changeParser(Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;)V
-    .registers 14
+    .registers 13
     .parameter "ops"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -2099,16 +1992,15 @@
     .end annotation
 
     .prologue
-    .line 895
-    const/4 v11, 0x0
+    .line 748
+    const/4 v10, 0x0
 
-    .line 896
-    .local v11, serverId:Ljava/lang/String;
-    const/4 v9, 0x0
+    .line 749
+    .local v10, serverId:Ljava/lang/String;
+    const/4 v8, 0x0
 
-    .line 897
-    .local v9, entity:Landroid/content/Entity;
-    :cond_2
+    .line 750
+    .local v8, entity:Landroid/content/Entity;
     :goto_2
     const/16 v1, 0x8
 
@@ -2118,41 +2010,39 @@
 
     const/4 v3, 0x3
 
-    if-eq v1, v3, :cond_77
+    if-eq v1, v3, :cond_6a
 
-    .line 898
-    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 751
+    iget v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
 
-    sparse-switch v1, :sswitch_data_78
+    sparse-switch v1, :sswitch_data_6c
 
-    .line 929
+    .line 777
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->skipTag()V
 
     goto :goto_2
 
-    .line 900
+    .line 753
     :sswitch_14
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v10
 
-    .line 901
-    invoke-direct {p0, v11}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getServerIdCursor(Ljava/lang/String;)Landroid/database/Cursor;
+    .line 754
+    invoke-direct {p0, v10}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getServerIdCursor(Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v7
 
-    .line 903
+    .line 756
     .local v7, c:Landroid/database/Cursor;
-    if-eqz v7, :cond_5f
-
-    :try_start_1e
+    :try_start_1c
     invoke-interface {v7}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v1
 
-    if-eqz v1, :cond_5f
+    if-eqz v1, :cond_5d
 
-    .line 905
+    .line 758
     sget-object v1, Landroid/provider/ContactsContract$RawContacts;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v3, 0x0
@@ -2165,7 +2055,7 @@
 
     move-result-object v2
 
-    .line 907
+    .line 760
     .local v2, uri:Landroid/net/Uri;
     const-string v1, "entity"
 
@@ -2173,8 +2063,8 @@
 
     move-result-object v2
 
-    .line 909
-    iget-object v1, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    .line 762
+    iget-object v1, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
     const/4 v3, 0x0
 
@@ -2190,18 +2080,18 @@
 
     invoke-static {v1}, Landroid/provider/ContactsContract$RawContacts;->newEntityIterator(Landroid/database/Cursor;)Landroid/content/EntityIterator;
 
-    move-result-object v10
+    move-result-object v9
 
-    .line 912
-    .local v10, entityIterator:Landroid/content/EntityIterator;
-    invoke-interface {v10}, Landroid/content/EntityIterator;->hasNext()Z
+    .line 764
+    .local v9, entityIterator:Landroid/content/EntityIterator;
+    invoke-interface {v9}, Landroid/content/EntityIterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_4f
 
-    .line 913
-    invoke-interface {v10}, Landroid/content/EntityIterator;->next()Ljava/lang/Object;
+    .line 765
+    invoke-interface {v9}, Landroid/content/EntityIterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -2209,10 +2099,10 @@
 
     check-cast v0, Landroid/content/Entity;
 
-    move-object v9, v0
+    move-object v8, v0
 
-    .line 915
-    :cond_51
+    .line 767
+    :cond_4f
     const/4 v1, 0x2
 
     new-array v1, v1, [Ljava/lang/String;
@@ -2225,70 +2115,45 @@
 
     const/4 v3, 0x1
 
-    aput-object v11, v1, v3
+    aput-object v10, v1, v3
 
     invoke-virtual {p0, v1}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->userLog([Ljava/lang/String;)V
-    :try_end_5f
-    .catchall {:try_start_1e .. :try_end_5f} :catchall_6c
-    .catch Ljava/lang/NullPointerException; {:try_start_1e .. :try_end_5f} :catch_65
+    :try_end_5d
+    .catchall {:try_start_1c .. :try_end_5d} :catchall_61
 
-    .line 920
+    .line 770
     .end local v2           #uri:Landroid/net/Uri;
-    .end local v10           #entityIterator:Landroid/content/EntityIterator;
-    :cond_5f
-    if-eqz v7, :cond_2
-
-    .line 921
-    :goto_61
+    .end local v9           #entityIterator:Landroid/content/EntityIterator;
+    :cond_5d
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
     goto :goto_2
 
-    .line 917
-    :catch_65
-    move-exception v8
-
-    .line 918
-    .local v8, e:Ljava/lang/NullPointerException;
-    :try_start_66
-    invoke-virtual {v8}, Ljava/lang/NullPointerException;->printStackTrace()V
-    :try_end_69
-    .catchall {:try_start_66 .. :try_end_69} :catchall_6c
-
-    .line 920
-    if-eqz v7, :cond_2
-
-    goto :goto_61
-
-    .end local v8           #e:Ljava/lang/NullPointerException;
-    :catchall_6c
+    :catchall_61
     move-exception v1
 
-    if-eqz v7, :cond_72
-
-    .line 921
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 920
-    :cond_72
     throw v1
 
-    .line 926
+    .line 774
     .end local v7           #c:Landroid/database/Cursor;
-    :sswitch_73
-    invoke-virtual {p0, v11, p1, v9}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->addData(Ljava/lang/String;Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;Landroid/content/Entity;)V
+    :sswitch_66
+    invoke-virtual {p0, v10, p1, v8}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->addData(Ljava/lang/String;Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;Landroid/content/Entity;)V
 
     goto :goto_2
 
-    .line 932
-    :cond_77
+    .line 780
+    :cond_6a
     return-void
 
-    .line 898
-    :sswitch_data_78
+    .line 751
+    nop
+
+    :sswitch_data_6c
     .sparse-switch
         0xd -> :sswitch_14
-        0x1d -> :sswitch_73
+        0x1d -> :sswitch_66
     .end sparse-switch
 .end method
 
@@ -2301,14 +2166,14 @@
     .end annotation
 
     .prologue
-    .line 1031
+    .line 867
     const/4 v0, 0x0
 
-    .line 1032
+    .line 868
     .local v0, serverId:Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 1033
+    .line 869
     .local v1, status:Ljava/lang/String;
     :goto_2
     const/16 v2, 0x8
@@ -2321,41 +2186,41 @@
 
     if-eq v2, v3, :cond_1e
 
-    .line 1034
-    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 870
+    iget v2, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
 
     packed-switch v2, :pswitch_data_4a
 
-    .line 1042
+    .line 878
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->skipTag()V
 
     goto :goto_2
 
-    .line 1036
+    .line 872
     :pswitch_14
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1037
+    .line 873
     goto :goto_2
 
-    .line 1039
+    .line 875
     :pswitch_19
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1040
+    .line 876
     goto :goto_2
 
-    .line 1045
+    .line 881
     :cond_1e
     if-eqz v0, :cond_48
 
     if-eqz v1, :cond_48
 
-    .line 1046
+    .line 882
     const/4 v2, 0x1
 
     new-array v2, v2, [Ljava/lang/String;
@@ -2394,11 +2259,11 @@
 
     invoke-virtual {p0, v2}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->userLog([Ljava/lang/String;)V
 
-    .line 1048
+    .line 884
     :cond_48
     return-void
 
-    .line 1034
+    .line 870
     nop
 
     :pswitch_data_4a
@@ -2417,7 +2282,7 @@
     .end annotation
 
     .prologue
-    .line 936
+    .line 784
     :goto_0
     const/16 v0, 0x16
 
@@ -2429,78 +2294,78 @@
 
     if-eq v0, v1, :cond_3f
 
-    .line 937
-    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 785
+    iget v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
 
     const/4 v1, 0x7
 
     if-ne v0, v1, :cond_19
 
-    .line 938
+    .line 786
     iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->addParser(Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;)V
 
-    .line 939
+    .line 787
     iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
 
     invoke-virtual {v0}, Lcom/android/exchange/adapter/ContactsSyncAdapter;->incrementChangeCount()V
 
     goto :goto_0
 
-    .line 940
+    .line 788
     :cond_19
-    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
 
     const/16 v1, 0x9
 
     if-ne v0, v1, :cond_2a
 
-    .line 941
+    .line 789
     iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->deleteParser(Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;)V
 
-    .line 942
+    .line 790
     iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
 
     invoke-virtual {v0}, Lcom/android/exchange/adapter/ContactsSyncAdapter;->incrementChangeCount()V
 
     goto :goto_0
 
-    .line 943
+    .line 791
     :cond_2a
-    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
 
     const/16 v1, 0x8
 
     if-ne v0, v1, :cond_3b
 
-    .line 944
+    .line 792
     iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
 
     invoke-virtual {p0, v0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->changeParser(Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;)V
 
-    .line 945
+    .line 793
     iget-object v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
 
     invoke-virtual {v0}, Lcom/android/exchange/adapter/ContactsSyncAdapter;->incrementChangeCount()V
 
     goto :goto_0
 
-    .line 947
+    .line 795
     :cond_3b
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->skipTag()V
 
     goto :goto_0
 
-    .line 949
+    .line 797
     :cond_3f
     return-void
 .end method
 
 .method public commit()V
-    .registers 12
+    .registers 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2508,186 +2373,171 @@
     .end annotation
 
     .prologue
-    const/4 v10, 0x0
+    const/4 v9, 0x0
 
-    .line 955
-    const/4 v6, 0x2
+    .line 802
+    const/4 v5, 0x2
 
-    new-array v6, v6, [Ljava/lang/String;
+    new-array v5, v5, [Ljava/lang/String;
 
-    const-string v7, "Contacts SyncKey saved as: "
+    const-string v6, "Contacts SyncKey saved as: "
 
-    aput-object v7, v6, v10
+    aput-object v6, v5, v9
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    iget-object v8, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    iget-object v7, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mMailbox:Lcom/android/emailcommon/provider/Mailbox;
 
-    iget-object v8, v8, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
+    iget-object v7, v7, Lcom/android/emailcommon/provider/Mailbox;->mSyncKey:Ljava/lang/String;
 
-    aput-object v8, v6, v7
+    aput-object v7, v5, v6
 
-    invoke-virtual {p0, v6}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->userLog([Ljava/lang/String;)V
+    invoke-virtual {p0, v5}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->userLog([Ljava/lang/String;)V
 
-    .line 956
-    iget-object v6, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
+    .line 803
+    iget-object v5, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
 
-    sget-object v7, Landroid/provider/ContactsContract$SyncState;->CONTENT_URI:Landroid/net/Uri;
+    sget-object v6, Landroid/provider/ContactsContract$SyncState;->CONTENT_URI:Landroid/net/Uri;
 
-    iget-object v8, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
+    iget-object v7, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->this$0:Lcom/android/exchange/adapter/ContactsSyncAdapter;
 
-    iget-object v8, v8, Lcom/android/exchange/adapter/AbstractSyncAdapter;->mAccountManagerAccount:Landroid/accounts/Account;
+    iget-object v7, v7, Lcom/android/exchange/adapter/ContactsSyncAdapter;->mAccountManagerAccount:Landroid/accounts/Account;
 
-    iget-object v9, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    iget-object v8, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mMailbox:Lcom/android/emailcommon/provider/Mailbox;
 
-    iget-object v9, v9, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mSyncKey:Ljava/lang/String;
+    iget-object v8, v8, Lcom/android/emailcommon/provider/Mailbox;->mSyncKey:Ljava/lang/String;
 
-    invoke-virtual {v9}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v9
-
-    invoke-static {v7, v8, v9}, Landroid/provider/SyncStateContract$Helpers;->newSetOperation(Landroid/net/Uri;Landroid/accounts/Account;[B)Landroid/content/ContentProviderOperation;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->add(Landroid/content/ContentProviderOperation;)Z
-
-    .line 960
-    iget-object v6, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
-
-    invoke-virtual {v6}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->execute()V
-
-    .line 962
-    iget-object v6, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
-
-    #getter for: Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->mResults:[Landroid/content/ContentProviderResult;
-    invoke-static {v6}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->access$400(Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;)[Landroid/content/ContentProviderResult;
-
-    move-result-object v6
-
-    if-eqz v6, :cond_93
-
-    .line 963
-    new-instance v1, Landroid/content/ContentValues;
-
-    invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
-
-    .line 964
-    .local v1, cv:Landroid/content/ContentValues;
-    const-string v6, "dirty"
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    invoke-virtual {v1, v6, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 966
-    new-instance v0, Ljava/lang/StringBuffer;
-
-    invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
-
-    .line 968
-    .local v0, argTemp:Ljava/lang/StringBuffer;
-    const/4 v2, 0x0
-
-    .local v2, i:I
-    :goto_4a
-    iget-object v6, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
-
-    #getter for: Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->mContactIndexCount:I
-    invoke-static {v6}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->access$500(Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;)I
-
-    move-result v6
-
-    if-ge v2, v6, :cond_93
-
-    .line 969
-    iget-object v6, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
-
-    #getter for: Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->mContactIndexArray:[I
-    invoke-static {v6}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->access$600(Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;)[I
-
-    move-result-object v6
-
-    aget v4, v6, v2
-
-    .line 970
-    .local v4, index:I
-    iget-object v6, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
-
-    #getter for: Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->mResults:[Landroid/content/ContentProviderResult;
-    invoke-static {v6}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->access$400(Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;)[Landroid/content/ContentProviderResult;
-
-    move-result-object v6
-
-    aget-object v6, v6, v4
-
-    iget-object v5, v6, Landroid/content/ContentProviderResult;->uri:Landroid/net/Uri;
-
-    .line 971
-    .local v5, u:Landroid/net/Uri;
-    if-eqz v5, :cond_90
-
-    .line 972
-    invoke-virtual {v5}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 974
-    .local v3, idString:Ljava/lang/String;
-    const-string v6, "_id"
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    move-result-object v6
-
-    const/16 v7, 0x3d
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    .line 978
-    iget-object v6, p0, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
-
-    sget-object v7, Landroid/provider/ContactsContract$RawContacts;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-static {v7}, Lcom/android/exchange/adapter/ContactsSyncAdapter;->addCallerIsSyncAdapterParameter(Landroid/net/Uri;)Landroid/net/Uri;
-
-    move-result-object v7
-
-    invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/String;->getBytes()[B
 
     move-result-object v8
 
-    const/4 v9, 0x0
+    invoke-static {v6, v7, v8}, Landroid/provider/SyncStateContract$Helpers;->newSetOperation(Landroid/net/Uri;Landroid/accounts/Account;[B)Landroid/content/ContentProviderOperation;
 
-    invoke-virtual {v6, v7, v1, v8, v9}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+    move-result-object v6
 
-    .line 983
-    invoke-virtual {v0}, Ljava/lang/StringBuffer;->length()I
+    invoke-virtual {v5, v6}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->add(Landroid/content/ContentProviderOperation;)Z
 
-    move-result v6
+    .line 807
+    iget-object v5, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
 
-    invoke-virtual {v0, v10, v6}, Ljava/lang/StringBuffer;->delete(II)Ljava/lang/StringBuffer;
+    invoke-virtual {v5}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->execute()V
 
-    .line 968
-    .end local v3           #idString:Ljava/lang/String;
-    :cond_90
-    add-int/lit8 v2, v2, 0x1
+    .line 809
+    iget-object v5, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
 
-    goto :goto_4a
+    #getter for: Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->mResults:[Landroid/content/ContentProviderResult;
+    invoke-static {v5}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->access$400(Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;)[Landroid/content/ContentProviderResult;
 
-    .line 988
-    .end local v0           #argTemp:Ljava/lang/StringBuffer;
-    .end local v1           #cv:Landroid/content/ContentValues;
-    .end local v2           #i:I
-    .end local v4           #index:I
-    .end local v5           #u:Landroid/net/Uri;
-    :cond_93
+    move-result-object v5
+
+    if-eqz v5, :cond_87
+
+    .line 810
+    new-instance v0, Landroid/content/ContentValues;
+
+    invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
+
+    .line 811
+    .local v0, cv:Landroid/content/ContentValues;
+    const-string v5, "dirty"
+
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v0, v5, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    .line 812
+    const/4 v1, 0x0
+
+    .local v1, i:I
+    :goto_45
+    iget-object v5, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
+
+    #getter for: Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->mContactIndexCount:I
+    invoke-static {v5}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->access$500(Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;)I
+
+    move-result v5
+
+    if-ge v1, v5, :cond_87
+
+    .line 813
+    iget-object v5, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
+
+    #getter for: Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->mContactIndexArray:[I
+    invoke-static {v5}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->access$600(Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;)[I
+
+    move-result-object v5
+
+    aget v3, v5, v1
+
+    .line 814
+    .local v3, index:I
+    iget-object v5, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->ops:Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;
+
+    #getter for: Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->mResults:[Landroid/content/ContentProviderResult;
+    invoke-static {v5}, Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;->access$400(Lcom/android/exchange/adapter/ContactsSyncAdapter$ContactOperations;)[Landroid/content/ContentProviderResult;
+
+    move-result-object v5
+
+    aget-object v5, v5, v3
+
+    iget-object v4, v5, Landroid/content/ContentProviderResult;->uri:Landroid/net/Uri;
+
+    .line 815
+    .local v4, u:Landroid/net/Uri;
+    if-eqz v4, :cond_84
+
+    .line 816
+    invoke-virtual {v4}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 817
+    .local v2, idString:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+
+    sget-object v6, Landroid/provider/ContactsContract$RawContacts;->CONTENT_URI:Landroid/net/Uri;
+
+    invoke-static {v6}, Lcom/android/exchange/adapter/ContactsSyncAdapter;->addCallerIsSyncAdapterParameter(Landroid/net/Uri;)Landroid/net/Uri;
+
+    move-result-object v6
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "_id="
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    const/4 v8, 0x0
+
+    invoke-virtual {v5, v6, v0, v7, v8}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+
+    .line 812
+    .end local v2           #idString:Ljava/lang/String;
+    :cond_84
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_45
+
+    .line 823
+    .end local v0           #cv:Landroid/content/ContentValues;
+    .end local v1           #i:I
+    .end local v3           #index:I
+    .end local v4           #u:Landroid/net/Uri;
+    :cond_87
     return-void
 .end method
 
@@ -2701,7 +2551,7 @@
     .end annotation
 
     .prologue
-    .line 854
+    .line 711
     :goto_0
     const/16 v2, 0x9
 
@@ -2713,29 +2563,29 @@
 
     if-eq v2, v3, :cond_3f
 
-    .line 855
-    iget v2, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 712
+    iget v2, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
 
     packed-switch v2, :pswitch_data_40
 
-    .line 871
+    .line 727
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->skipTag()V
 
     goto :goto_0
 
-    .line 857
+    .line 714
     :pswitch_12
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getValue()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 860
+    .line 716
     .local v1, serverId:Ljava/lang/String;
     invoke-direct {p0, v1}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->getServerIdCursor(Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 862
+    .line 718
     .local v0, c:Landroid/database/Cursor;
     :try_start_1a
     invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
@@ -2744,7 +2594,7 @@
 
     if-eqz v2, :cond_36
 
-    .line 863
+    .line 719
     const/4 v2, 0x2
 
     new-array v2, v2, [Ljava/lang/String;
@@ -2761,7 +2611,7 @@
 
     invoke-virtual {p0, v2}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->userLog([Ljava/lang/String;)V
 
-    .line 864
+    .line 720
     const/4 v2, 0x0
 
     invoke-interface {v0, v2}, Landroid/database/Cursor;->getLong(I)J
@@ -2772,7 +2622,7 @@
     :try_end_36
     .catchall {:try_start_1a .. :try_end_36} :catchall_3a
 
-    .line 867
+    .line 723
     :cond_36
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
@@ -2785,13 +2635,13 @@
 
     throw v2
 
-    .line 874
+    .line 730
     .end local v0           #c:Landroid/database/Cursor;
     .end local v1           #serverId:Ljava/lang/String;
     :cond_3f
     return-void
 
-    .line 855
+    .line 712
     :pswitch_data_40
     .packed-switch 0xd
         :pswitch_12
@@ -2807,7 +2657,7 @@
     .end annotation
 
     .prologue
-    .line 1053
+    .line 890
     :goto_0
     const/4 v0, 0x6
 
@@ -2819,38 +2669,38 @@
 
     if-eq v0, v1, :cond_1f
 
-    .line 1054
-    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 891
+    iget v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
 
     const/4 v1, 0x7
 
     if-ne v0, v1, :cond_11
 
-    .line 1055
+    .line 892
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->addResponsesParser()V
 
     goto :goto_0
 
-    .line 1056
+    .line 893
     :cond_11
-    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    iget v0, p0, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->tag:I
 
     const/16 v1, 0x8
 
     if-ne v0, v1, :cond_1b
 
-    .line 1057
+    .line 894
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->changeResponsesParser()V
 
     goto :goto_0
 
-    .line 1059
+    .line 896
     :cond_1b
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ContactsSyncAdapter$EasContactsSyncParser;->skipTag()V
 
     goto :goto_0
 
-    .line 1061
+    .line 898
     :cond_1f
     return-void
 .end method

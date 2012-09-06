@@ -20,10 +20,10 @@
     .registers 1
 
     .prologue
-    .line 95
+    .line 94
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 96
+    .line 95
     return-void
 .end method
 
@@ -32,35 +32,35 @@
     .parameter
 
     .prologue
-    .line 97
+    .line 96
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 98
+    .line 97
     iget-object v0, p1, Lcom/google/android/plus1/u;->a:Landroid/net/Uri;
 
     iput-object v0, p0, Lcom/google/android/plus1/v;->a:Landroid/net/Uri;
 
-    .line 99
+    .line 98
     iget-object v0, p1, Lcom/google/android/plus1/u;->b:Ljava/lang/Boolean;
 
     iput-object v0, p0, Lcom/google/android/plus1/v;->b:Ljava/lang/Boolean;
 
-    .line 100
+    .line 99
     iget-object v0, p1, Lcom/google/android/plus1/u;->c:Ljava/util/Set;
 
     iput-object v0, p0, Lcom/google/android/plus1/v;->c:Ljava/util/Set;
 
-    .line 101
+    .line 100
     iget v0, p1, Lcom/google/android/plus1/u;->d:I
 
     iput v0, p0, Lcom/google/android/plus1/v;->d:I
 
-    .line 102
+    .line 101
     iget-object v0, p1, Lcom/google/android/plus1/u;->e:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/google/android/plus1/v;->e:Ljava/lang/String;
 
-    .line 103
+    .line 102
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .registers 7
 
     .prologue
-    .line 105
+    .line 104
     new-instance v0, Lcom/google/android/plus1/u;
 
     iget-object v1, p0, Lcom/google/android/plus1/v;->a:Landroid/net/Uri;

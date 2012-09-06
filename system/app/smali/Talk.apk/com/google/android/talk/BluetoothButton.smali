@@ -24,17 +24,17 @@
     .line 36
     const/16 v0, 0x37
 
-    iput v0, p0, Lcom/google/android/talk/BluetoothButton;->mStartAlpha:I
+    iput v0, p0, Lcom/google/android/talk/AnimatedBackgroundImageButton;->mStartAlpha:I
 
     .line 37
     const/16 v0, 0xff
 
-    iput v0, p0, Lcom/google/android/talk/BluetoothButton;->mEndAlpha:I
+    iput v0, p0, Lcom/google/android/talk/AnimatedBackgroundImageButton;->mEndAlpha:I
 
     .line 38
     const/16 v0, 0x15e
 
-    iput v0, p0, Lcom/google/android/talk/BluetoothButton;->mDurationMs:I
+    iput v0, p0, Lcom/google/android/talk/AnimatedBackgroundImageButton;->mDurationMs:I
 
     .line 39
     return-void

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 876
+    .line 871
     iput-object p1, p0, Lcom/cooliris/media/CropImage$21;->this$0:Lcom/cooliris/media/CropImage;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,13 +43,13 @@
     .parameter "isChacked"
 
     .prologue
-    .line 879
+    .line 874
     iget-object v2, p0, Lcom/cooliris/media/CropImage$21;->this$0:Lcom/cooliris/media/CropImage;
 
     #setter for: Lcom/cooliris/media/CropImage;->bLockScreenDialogOff:Z
     invoke-static {v2, p2}, Lcom/cooliris/media/CropImage;->access$2102(Lcom/cooliris/media/CropImage;Z)Z
 
-    .line 880
+    .line 875
     iget-object v2, p0, Lcom/cooliris/media/CropImage$21;->this$0:Lcom/cooliris/media/CropImage;
 
     const-string v3, "com.cooliris.media"
@@ -60,13 +60,13 @@
 
     move-result-object v1
 
-    .line 881
+    .line 876
     .local v1, settings:Landroid/content/SharedPreferences;
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 882
+    .line 877
     .local v0, editor:Landroid/content/SharedPreferences$Editor;
     const-string v2, "LockScreenDialogUse"
 
@@ -79,9 +79,9 @@
 
     invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 883
+    .line 878
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 884
+    .line 879
     return-void
 .end method

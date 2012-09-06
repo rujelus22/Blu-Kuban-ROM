@@ -12,7 +12,7 @@
         "Lcom/google/android/finsky/api/model/DfeModel;",
         "Lcom/android/volley/Response$Listener",
         "<",
-        "Lcom/google/android/finsky/remoting/protos/ReviewResponse;",
+        "Lcom/google/android/finsky/remoting/protos/Rev$ReviewResponse;",
         ">;"
     }
 .end annotation
@@ -47,7 +47,7 @@
     move-object v5, p0
 
     .line 27
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/api/DfeApi;->rateReview(Ljava/lang/String;Ljava/lang/String;ILcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
+    invoke-interface/range {v0 .. v5}, Lcom/google/android/finsky/api/DfeApi;->rateReview(Ljava/lang/String;Ljava/lang/String;ILcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
 
     .line 28
     return-void
@@ -55,6 +55,16 @@
 
 
 # virtual methods
+.method public isReady()Z
+    .registers 2
+
+    .prologue
+    .line 32
+    iget-boolean v0, p0, Lcom/google/android/finsky/api/model/DfeRateReview;->mResponseRecieved:Z
+
+    return v0
+.end method
+
 .method public onErrorResponse(Lcom/android/volley/VolleyError;)V
     .registers 3
     .parameter "error"
@@ -75,7 +85,7 @@
     return-void
 .end method
 
-.method public onResponse(Lcom/google/android/finsky/remoting/protos/ReviewResponse;)V
+.method public onResponse(Lcom/google/android/finsky/remoting/protos/Rev$ReviewResponse;)V
     .registers 3
     .parameter "response"
 
@@ -101,10 +111,10 @@
 
     .prologue
     .line 12
-    check-cast p1, Lcom/google/android/finsky/remoting/protos/ReviewResponse;
+    check-cast p1, Lcom/google/android/finsky/remoting/protos/Rev$ReviewResponse;
 
     .end local p1
-    invoke-virtual {p0, p1}, Lcom/google/android/finsky/api/model/DfeRateReview;->onResponse(Lcom/google/android/finsky/remoting/protos/ReviewResponse;)V
+    invoke-virtual {p0, p1}, Lcom/google/android/finsky/api/model/DfeRateReview;->onResponse(Lcom/google/android/finsky/remoting/protos/Rev$ReviewResponse;)V
 
     return-void
 .end method

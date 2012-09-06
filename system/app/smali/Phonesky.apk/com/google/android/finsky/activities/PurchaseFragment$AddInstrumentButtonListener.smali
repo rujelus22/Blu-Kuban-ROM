@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 152
+    .line 169
     iput-object p1, p0, Lcom/google/android/finsky/activities/PurchaseFragment$AddInstrumentButtonListener;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 152
+    .line 169
     invoke-direct {p0, p1}, Lcom/google/android/finsky/activities/PurchaseFragment$AddInstrumentButtonListener;-><init>(Lcom/google/android/finsky/activities/PurchaseFragment;)V
 
     return-void
@@ -54,7 +54,7 @@
     .parameter "view"
 
     .prologue
-    .line 155
+    .line 172
     iget-object v0, p0, Lcom/google/android/finsky/activities/PurchaseFragment$AddInstrumentButtonListener;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
     #getter for: Lcom/google/android/finsky/activities/PurchaseFragment;->mSelectedAddInstrumentFamily:I
@@ -66,7 +66,7 @@
 
     if-ne v0, v1, :cond_11
 
-    .line 156
+    .line 173
     const-string v0, "No add instrument item selected."
 
     const/4 v1, 0x0
@@ -75,7 +75,7 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 158
+    .line 175
     :cond_11
     iget-object v0, p0, Lcom/google/android/finsky/activities/PurchaseFragment$AddInstrumentButtonListener;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
@@ -89,6 +89,6 @@
     #calls: Lcom/google/android/finsky/activities/PurchaseFragment;->showAddInstrumentScreen(I)V
     invoke-static {v0, v1}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$500(Lcom/google/android/finsky/activities/PurchaseFragment;I)V
 
-    .line 159
+    .line 176
     return-void
 .end method

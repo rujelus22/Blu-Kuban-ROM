@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 42
+    .line 43
     const-class v0, Lorg/apache/james/mime4j/message/TempFileBinaryBody;
 
     invoke-static {v0}, Lorg/apache/james/mime4j/LogFactory;->getLog(Ljava/lang/Class;)Lorg/apache/james/mime4j/Log;
@@ -38,9 +38,9 @@
     .parameter "parent"
 
     .prologue
-    .line 74
+    .line 75
     iput-object p1, p0, Lorg/apache/james/mime4j/message/TempFileBinaryBody;->parent:Lorg/apache/james/mime4j/message/Entity;
 
-    .line 75
+    .line 76
     return-void
 .end method

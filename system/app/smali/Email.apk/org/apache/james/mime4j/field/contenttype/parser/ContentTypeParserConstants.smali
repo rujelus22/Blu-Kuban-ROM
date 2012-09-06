@@ -12,7 +12,7 @@
     .registers 3
 
     .prologue
-    .line 36
+    .line 35
     const/16 v0, 0x18
 
     new-array v0, v0, [Ljava/lang/String;

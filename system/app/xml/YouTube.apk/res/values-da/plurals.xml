@@ -28,6 +28,14 @@
         <item quantity="other">%1$d sekunder siden</item>
         <item quantity="one">For 1 sekund siden</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Udløber om %1$d dage</item>
+        <item quantity="one">Udløber om én dag</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Udløber om %1$d timer</item>
+        <item quantity="one">Udløber om én time</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">nye uploads</item>
         <item quantity="one">nyt upload</item>

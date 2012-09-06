@@ -1,346 +1,462 @@
-.class Lo/E;
-.super Lat/a;
+.class public Lo/e;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lo/B;
+.field private final a:I
 
-.field private final b:Ljava/util/Locale;
+.field private final b:Ljava/lang/String;
 
 .field private final c:I
 
-.field private final d:Ljava/lang/String;
+.field private final d:I
 
-.field private final e:Lo/C;
+.field private final e:[Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lo/B;Ljava/util/Locale;ILjava/lang/String;Lo/C;)V
+.method private constructor <init>(ILjava/lang/String;II[Ljava/lang/String;)V
     .registers 6
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lo/E;->a:Lo/B;
+    .prologue
+    .line 442
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lat/a;-><init>()V
+    .line 443
+    iput p1, p0, Lo/e;->a:I
 
-    iput-object p2, p0, Lo/E;->b:Ljava/util/Locale;
+    .line 444
+    iput-object p2, p0, Lo/e;->b:Ljava/lang/String;
 
-    iput p3, p0, Lo/E;->c:I
+    .line 445
+    iput p3, p0, Lo/e;->c:I
 
-    iput-object p4, p0, Lo/E;->d:Ljava/lang/String;
+    .line 446
+    iput p4, p0, Lo/e;->d:I
 
-    iput-object p5, p0, Lo/E;->e:Lo/C;
+    .line 447
+    iput-object p5, p0, Lo/e;->e:[Ljava/lang/String;
 
+    .line 448
     return-void
 .end method
 
-.method public constructor <init>(Lo/B;Ljava/util/Locale;ILo/C;)V
-    .registers 11
-
-    invoke-static {p3}, Lo/B;->a(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move v3, p3
-
-    move-object v5, p4
-
-    invoke-direct/range {v0 .. v5}, Lo/E;-><init>(Lo/B;Ljava/util/Locale;ILjava/lang/String;Lo/C;)V
-
-    return-void
-.end method
-
-.method static synthetic a(Lo/E;)I
+.method static synthetic a(Lo/e;)I
     .registers 2
+    .parameter
 
-    iget v0, p0, Lo/E;->c:I
+    .prologue
+    .line 416
+    iget v0, p0, Lo/e;->a:I
 
     return v0
 .end method
 
-.method static synthetic b(Lo/E;)Ljava/util/Locale;
-    .registers 2
+.method public static a(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)Lo/e;
+    .registers 11
+    .parameter
 
-    iget-object v0, p0, Lo/E;->b:Ljava/util/Locale;
+    .prologue
+    const/4 v9, 0x4
+
+    const/4 v0, -0x1
+
+    const/4 v2, 0x1
+
+    .line 472
+    invoke-virtual {p0, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
+
+    move-result v1
+
+    .line 473
+    const/4 v3, 0x3
+
+    invoke-virtual {p0, v3}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
+
+    move-result v3
+
+    .line 474
+    const/4 v4, 0x7
+
+    invoke-virtual {p0, v4}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
+
+    move-result v4
+
+    .line 476
+    const/4 v5, 0x0
+
+    .line 478
+    if-eqz v3, :cond_17
+
+    if-eq v3, v2, :cond_17
+
+    move v3, v0
+
+    .line 481
+    :cond_17
+    if-ne v3, v2, :cond_20
+
+    .line 482
+    invoke-virtual {p0, v9}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getCount(I)I
+
+    move-result v6
+
+    .line 484
+    if-nez v6, :cond_30
+
+    move v3, v0
+
+    .line 498
+    :cond_20
+    :goto_20
+    if-ltz v4, :cond_24
+
+    if-le v4, v2, :cond_25
+
+    :cond_24
+    move v3, v0
+
+    .line 502
+    :cond_25
+    new-instance v0, Lo/e;
+
+    const/4 v2, 0x2
+
+    invoke-virtual {p0, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct/range {v0 .. v5}, Lo/e;-><init>(ILjava/lang/String;II[Ljava/lang/String;)V
 
     return-object v0
+
+    .line 487
+    :cond_30
+    new-array v5, v6, [Ljava/lang/String;
+
+    .line 488
+    const/4 v2, 0x0
+
+    :goto_33
+    if-ge v2, v6, :cond_43
+
+    .line 489
+    invoke-virtual {p0, v9, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getProtoBuf(II)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    move-result-object v7
+
+    .line 491
+    const/4 v8, 0x6
+
+    invoke-virtual {v7, v8}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getString(I)Ljava/lang/String;
+
+    move-result-object v7
+
+    aput-object v7, v5, v2
+
+    .line 488
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_33
+
+    .line 494
+    :cond_43
+    add-int/lit8 v2, v6, -0x1
+
+    goto :goto_20
 .end method
 
-.method static synthetic c(Lo/E;)Lo/C;
+.method static synthetic b(Lo/e;)I
     .registers 2
+    .parameter
 
-    iget-object v0, p0, Lo/E;->e:Lo/C;
+    .prologue
+    .line 416
+    iget v0, p0, Lo/e;->c:I
 
-    return-object v0
+    return v0
 .end method
 
 
 # virtual methods
-.method public a()I
+.method public a()Ljava/lang/String;
     .registers 2
 
-    const/16 v0, 0x27
+    .prologue
+    .line 531
+    iget-object v0, p0, Lo/e;->b:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public b()I
+    .registers 2
+
+    .prologue
+    .line 535
+    iget v0, p0, Lo/e;->c:I
 
     return v0
 .end method
 
-.method public a(Ljava/io/DataOutput;)V
+.method public equals(Ljava/lang/Object;)Z
     .registers 6
+    .parameter
 
-    new-instance v0, Lam/b;
+    .prologue
+    const/4 v1, 0x0
 
-    sget-object v1, LbD/es;->a:Lam/e;
+    const/4 v0, 0x1
 
-    invoke-direct {v0, v1}, Lam/b;-><init>(Lam/e;)V
+    .line 511
+    if-ne p1, p0, :cond_5
 
-    const/4 v1, 0x4
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "/file/"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lo/E;->d:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lam/b;->b(ILjava/lang/String;)V
-
-    iget-object v1, p0, Lo/E;->e:Lo/C;
-
-    if-eqz v1, :cond_2e
-
-    const/4 v1, 0x2
-
-    iget-object v2, p0, Lo/E;->e:Lo/C;
-
-    invoke-virtual {v2}, Lo/C;->b()J
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v1, v2, v3}, Lam/b;->b(IJ)V
-
-    :cond_2e
-    invoke-virtual {v0}, Lam/b;->f()[B
-
-    move-result-object v0
-
-    array-length v1, v0
-
-    invoke-interface {p1, v1}, Ljava/io/DataOutput;->writeInt(I)V
-
-    invoke-interface {p1, v0}, Ljava/io/DataOutput;->write([B)V
-
-    return-void
-.end method
-
-.method public a(Ljava/io/DataInput;)Z
-    .registers 9
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    sget-object v2, LbD/es;->b:Lam/e;
-
-    invoke-static {v2, p1}, Lam/g;->a(Lam/e;Ljava/io/DataInput;)Lam/b;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Lam/b;->l(I)I
-
-    move-result v3
-
-    if-nez v3, :cond_2f
-
-    const-string v1, "CannedSpeechManager"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Empty response for "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lo/E;->b:Ljava/util/Locale;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " voice bundle"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Ln/b;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    :goto_2e
+    .line 523
+    :cond_4
+    :goto_4
     return v0
 
-    :cond_2f
-    invoke-virtual {v2, v1, v0}, Lam/b;->e(II)Lam/b;
+    .line 514
+    :cond_5
+    instance-of v2, p1, Lo/e;
 
-    move-result-object v0
+    if-eqz v2, :cond_37
 
-    const/4 v2, 0x3
+    .line 515
+    check-cast p1, Lo/e;
 
-    invoke-virtual {v0, v2}, Lam/b;->d(I)I
+    .line 516
+    iget v2, p1, Lo/e;->a:I
+
+    iget v3, p0, Lo/e;->a:I
+
+    if-ne v2, v3, :cond_35
+
+    iget-object v2, p1, Lo/e;->b:Ljava/lang/String;
+
+    iget-object v3, p0, Lo/e;->b:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    const/16 v3, 0xc8
+    if-eqz v2, :cond_35
 
-    if-ne v2, v3, :cond_5b
+    iget v2, p1, Lo/e;->c:I
 
-    iget-object v2, p0, Lo/E;->b:Ljava/util/Locale;
+    iget v3, p0, Lo/e;->c:I
 
-    iget v3, p0, Lo/E;->c:I
+    if-ne v2, v3, :cond_35
 
-    const/4 v4, 0x4
+    iget v2, p1, Lo/e;->d:I
 
-    invoke-virtual {v0, v4}, Lam/b;->e(I)J
+    iget v3, p1, Lo/e;->d:I
 
-    move-result-wide v4
+    if-ne v2, v3, :cond_35
 
-    iget-object v6, p0, Lo/E;->a:Lo/B;
+    iget v2, p0, Lo/e;->c:I
 
-    invoke-static {v6}, Lo/B;->a(Lo/B;)Ljava/lang/String;
+    if-ne v2, v0, :cond_4
 
-    move-result-object v6
+    iget-object v2, p1, Lo/e;->e:[Ljava/lang/String;
 
-    invoke-static {v2, v3, v4, v5, v6}, Lo/C;->a(Ljava/util/Locale;IJLjava/lang/String;)Lo/C;
+    iget-object v3, p0, Lo/e;->e:[Ljava/lang/String;
 
-    move-result-object v2
+    invoke-static {v2, v3}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
 
-    iget-object v3, p0, Lo/E;->a:Lo/B;
+    move-result v2
 
-    const/4 v4, 0x6
+    if-nez v2, :cond_4
 
-    invoke-virtual {v0, v4}, Lam/b;->c(I)[B
+    :cond_35
+    move v0, v1
+
+    goto :goto_4
+
+    :cond_37
+    move v0, v1
+
+    .line 523
+    goto :goto_4
+.end method
+
+.method public hashCode()I
+    .registers 2
+
+    .prologue
+    .line 550
+    iget v0, p0, Lo/e;->a:I
+
+    return v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .registers 7
+
+    .prologue
+    const/4 v3, 0x1
+
+    .line 556
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v0, "[option "
+
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 557
+    const-string v0, "id="
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-static {v3, p0, v2, v0}, Lo/B;->a(Lo/B;Lo/E;Lo/C;[B)V
+    iget v2, p0, Lo/e;->a:I
 
-    :goto_59
-    move v0, v1
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    goto :goto_2e
+    move-result-object v0
 
-    :cond_5b
-    const/16 v0, 0x130
+    const-string v2, ", "
 
-    if-ne v2, v0, :cond_74
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lo/E;->e:Lo/C;
+    .line 558
+    const-string v0, "text="
 
-    if-eqz v0, :cond_6e
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lo/E;->e:Lo/C;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lo/C;->h()V
+    iget-object v2, p0, Lo/e;->b:Ljava/lang/String;
 
-    iget-object v0, p0, Lo/E;->a:Lo/B;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0}, Lo/B;->b(Lo/B;)V
+    move-result-object v0
 
-    goto :goto_59
+    const-string v2, ", "
 
-    :cond_6e
-    iget-object v0, p0, Lo/E;->a:Lo/B;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p0}, Lo/B;->a(Lo/B;Lo/E;)V
+    .line 559
+    const-string v0, "type="
 
-    goto :goto_59
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_74
-    const/16 v0, 0x194
+    .line 560
+    iget v0, p0, Lo/e;->c:I
 
-    if-ne v2, v0, :cond_98
+    if-nez v0, :cond_65
 
-    const-string v0, "CannedSpeechManager"
+    .line 561
+    const-string v0, "boolean"
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    .line 567
+    :cond_38
+    :goto_38
+    const-string v0, ", "
 
-    const-string v3, "Failed to get voice bundle for "
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 568
+    const-string v0, "default="
 
-    move-result-object v2
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v3, p0, Lo/E;->b:Ljava/util/Locale;
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget v2, p0, Lo/e;->d:I
 
-    move-result-object v2
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 570
+    iget v0, p0, Lo/e;->c:I
 
-    move-result-object v2
+    if-ne v0, v3, :cond_7f
 
-    invoke-static {v0, v2}, Ln/b;->b(Ljava/lang/String;Ljava/lang/String;)V
+    .line 571
+    const-string v0, ", choices={ "
 
-    iget-object v0, p0, Lo/E;->a:Lo/B;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p0}, Lo/B;->b(Lo/B;Lo/E;)V
+    .line 572
+    iget-object v2, p0, Lo/e;->e:[Ljava/lang/String;
 
-    goto :goto_59
+    array-length v3, v2
 
-    :cond_98
-    const-string v0, "CannedSpeechManager"
+    const/4 v0, 0x0
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    :goto_55
+    if-ge v0, v3, :cond_7a
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    aget-object v4, v2, v0
 
-    const-string v3, "Failed to get voice bundle for "
+    .line 573
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v4
 
-    move-result-object v2
+    const-string v5, " "
 
-    iget-object v3, p0, Lo/E;->b:Ljava/util/Locale;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    .line 572
+    add-int/lit8 v0, v0, 0x1
 
-    move-result-object v2
+    goto :goto_55
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 562
+    :cond_65
+    iget v0, p0, Lo/e;->c:I
 
-    move-result-object v2
+    if-ne v0, v3, :cond_6f
 
-    invoke-static {v0, v2}, Ln/b;->b(Ljava/lang/String;Ljava/lang/String;)V
+    .line 563
+    const-string v0, "choice"
 
-    iget-object v0, p0, Lo/E;->a:Lo/B;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p0}, Lo/B;->a(Lo/B;Lo/E;)V
+    goto :goto_38
 
-    goto :goto_59
+    .line 564
+    :cond_6f
+    iget v0, p0, Lo/e;->c:I
+
+    const/4 v2, -0x1
+
+    if-ne v0, v2, :cond_38
+
+    .line 565
+    const-string v0, "invalid"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_38
+
+    .line 575
+    :cond_7a
+    const-string v0, "}"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 577
+    :cond_7f
+    const-string v0, ")"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

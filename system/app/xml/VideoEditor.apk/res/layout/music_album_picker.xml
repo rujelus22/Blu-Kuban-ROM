@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/MusicAlbumThumbnailLayout" android:layout_width="640.0px" android:layout_height="340.0px"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.sec.android.app.ve.view.addmedia.AddMusicAlbumPickerView android:layout_gravity="center_horizontal" android:id="@id/MusicAlbumThumbnail" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="49.0px" android:divider="@color/music_list_divider" android:dividerHeight="1.0px"
-      xmlns:android="http://schemas.android.com/apk/res/android" />
-    <ImageView android:layout_gravity="center_horizontal" android:id="@id/no_music_img" android:visibility="invisible" android:layout_width="174.0px" android:layout_height="174.0px" android:layout_marginTop="80.0px" android:src="@drawable/no_items_music" android:scaleType="fitXY" />
-    <TextView android:textSize="33.0px" android:textColor="@color/novideo" android:layout_gravity="center_horizontal" android:id="@id/no_music_text" android:paddingTop="257.0px" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_music" />
-    <include layout="@layout/selected_addmedia_title" />
-</FrameLayout>

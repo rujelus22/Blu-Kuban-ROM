@@ -73,7 +73,7 @@
     .parameter "c"
 
     .prologue
-    .line 212
+    .line 213
     const/16 v0, 0x30
 
     if-lt p1, v0, :cond_c
@@ -82,16 +82,16 @@
 
     if-gt p1, v0, :cond_c
 
-    .line 213
+    .line 214
     add-int/lit8 v0, p1, -0x30
 
     int-to-byte v0, v0
 
-    .line 217
+    .line 218
     :goto_b
     return v0
 
-    .line 214
+    .line 215
     :cond_c
     const/16 v0, 0x41
 
@@ -101,7 +101,7 @@
 
     if-gt p1, v0, :cond_1a
 
-    .line 215
+    .line 216
     add-int/lit8 v0, p1, -0x41
 
     add-int/lit8 v0, v0, 0xa
@@ -110,7 +110,7 @@
 
     goto :goto_b
 
-    .line 216
+    .line 217
     :cond_1a
     const/16 v0, 0x61
 
@@ -120,7 +120,7 @@
 
     if-gt p1, v0, :cond_28
 
-    .line 217
+    .line 218
     add-int/lit8 v0, p1, -0x61
 
     add-int/lit8 v0, v0, 0xa
@@ -129,7 +129,7 @@
 
     goto :goto_b
 
-    .line 223
+    .line 224
     :cond_28
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -177,10 +177,10 @@
 
     const/4 v7, 0x0
 
-    .line 117
+    .line 118
     const/4 v3, 0x0
 
-    .line 118
+    .line 119
     .local v3, msdChar:B
     :goto_a
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->byteq:Lorg/apache/james/mime4j/decoder/ByteQueue;
@@ -191,7 +191,7 @@
 
     if-nez v4, :cond_25
 
-    .line 119
+    .line 120
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->pushbackq:Lorg/apache/james/mime4j/decoder/ByteQueue;
 
     invoke-virtual {v4}, Lorg/apache/james/mime4j/decoder/ByteQueue;->count()I
@@ -199,11 +199,11 @@
     move-result v4
 
     if-nez v4, :cond_26
-
-    .line 120
-    invoke-direct {p0}, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->populatePushbackQueue()V
 
     .line 121
+    invoke-direct {p0}, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->populatePushbackQueue()V
+
+    .line 122
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->pushbackq:Lorg/apache/james/mime4j/decoder/ByteQueue;
 
     invoke-virtual {v4}, Lorg/apache/james/mime4j/decoder/ByteQueue;->count()I
@@ -212,11 +212,11 @@
 
     if-nez v4, :cond_26
 
-    .line 203
+    .line 205
     :cond_25
     return-void
 
-    .line 125
+    .line 126
     :cond_26
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->pushbackq:Lorg/apache/james/mime4j/decoder/ByteQueue;
 
@@ -224,13 +224,13 @@
 
     move-result v0
 
-    .line 127
+    .line 128
     .local v0, b:B
     iget-byte v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->state:B
 
     packed-switch v4, :pswitch_data_15c
 
-    .line 197
+    .line 199
     sget-object v4, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->log:Lorg/apache/james/mime4j/Log;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -255,28 +255,28 @@
 
     invoke-virtual {v4, v5}, Lorg/apache/james/mime4j/Log;->error(Ljava/lang/Object;)V
 
-    .line 198
+    .line 200
     iput-byte v7, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->state:B
 
-    .line 199
+    .line 201
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->byteq:Lorg/apache/james/mime4j/decoder/ByteQueue;
 
     invoke-virtual {v4, v0}, Lorg/apache/james/mime4j/decoder/ByteQueue;->enqueue(B)V
 
     goto :goto_a
 
-    .line 129
+    .line 130
     :pswitch_53
     if-eq v0, v8, :cond_5b
 
-    .line 130
+    .line 131
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->byteq:Lorg/apache/james/mime4j/decoder/ByteQueue;
 
     invoke-virtual {v4, v0}, Lorg/apache/james/mime4j/decoder/ByteQueue;->enqueue(B)V
 
     goto :goto_a
 
-    .line 133
+    .line 134
     :cond_5b
     const/4 v4, 0x1
 
@@ -284,18 +284,18 @@
 
     goto :goto_a
 
-    .line 137
+    .line 138
     :pswitch_5f
     if-ne v0, v9, :cond_65
 
-    .line 138
+    .line 139
     const/4 v4, 0x2
 
     iput-byte v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->state:B
 
     goto :goto_a
 
-    .line 140
+    .line 141
     :cond_65
     if-lt v0, v10, :cond_69
 
@@ -392,34 +392,34 @@
 
     invoke-virtual {v4, v5}, Lorg/apache/james/mime4j/Log;->warn(Ljava/lang/Object;)V
 
-    .line 159
+    .line 160
     :cond_b6
     iput-byte v7, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->state:B
 
-    .line 160
+    .line 161
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->byteq:Lorg/apache/james/mime4j/decoder/ByteQueue;
 
     invoke-virtual {v4, v8}, Lorg/apache/james/mime4j/decoder/ByteQueue;->enqueue(B)V
 
-    .line 161
+    .line 162
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->byteq:Lorg/apache/james/mime4j/decoder/ByteQueue;
 
     invoke-virtual {v4, v0}, Lorg/apache/james/mime4j/decoder/ByteQueue;->enqueue(B)V
 
     goto/16 :goto_a
 
-    .line 165
+    .line 166
     :pswitch_c4
     const/16 v4, 0xa
 
     if-ne v0, v4, :cond_cc
 
-    .line 166
+    .line 167
     iput-byte v7, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->state:B
 
     goto/16 :goto_a
 
-    .line 169
+    .line 170
     :cond_cc
     sget-object v4, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->log:Lorg/apache/james/mime4j/Log;
 
@@ -429,7 +429,7 @@
 
     if-eqz v4, :cond_ec
 
-    .line 170
+    .line 171
     sget-object v4, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->log:Lorg/apache/james/mime4j/Log;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -452,28 +452,28 @@
 
     invoke-virtual {v4, v5}, Lorg/apache/james/mime4j/Log;->warn(Ljava/lang/Object;)V
 
-    .line 172
+    .line 174
     :cond_ec
     iput-byte v7, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->state:B
 
-    .line 173
+    .line 175
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->byteq:Lorg/apache/james/mime4j/decoder/ByteQueue;
 
     invoke-virtual {v4, v8}, Lorg/apache/james/mime4j/decoder/ByteQueue;->enqueue(B)V
 
-    .line 174
+    .line 176
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->byteq:Lorg/apache/james/mime4j/decoder/ByteQueue;
 
     invoke-virtual {v4, v9}, Lorg/apache/james/mime4j/decoder/ByteQueue;->enqueue(B)V
 
-    .line 175
+    .line 177
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->byteq:Lorg/apache/james/mime4j/decoder/ByteQueue;
 
     invoke-virtual {v4, v0}, Lorg/apache/james/mime4j/decoder/ByteQueue;->enqueue(B)V
 
     goto/16 :goto_a
 
-    .line 180
+    .line 181
     :pswitch_ff
     if-lt v0, v10, :cond_103
 
@@ -497,23 +497,23 @@
 
     if-gt v0, v4, :cond_128
 
-    .line 181
+    .line 182
     :cond_113
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->asciiCharToNumericValue(B)B
 
     move-result v2
 
-    .line 182
+    .line 183
     .local v2, msd:B
     invoke-direct {p0, v0}, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->asciiCharToNumericValue(B)B
 
     move-result v1
 
-    .line 183
+    .line 184
     .local v1, low:B
     iput-byte v7, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->state:B
 
-    .line 184
+    .line 185
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->byteq:Lorg/apache/james/mime4j/decoder/ByteQueue;
 
     shl-int/lit8 v5, v2, 0x4
@@ -526,7 +526,7 @@
 
     goto/16 :goto_a
 
-    .line 187
+    .line 188
     .end local v1           #low:B
     .end local v2           #msd:B
     :cond_128
@@ -538,7 +538,7 @@
 
     if-eqz v4, :cond_148
 
-    .line 188
+    .line 189
     sget-object v4, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->log:Lorg/apache/james/mime4j/Log;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -561,28 +561,28 @@
 
     invoke-virtual {v4, v5}, Lorg/apache/james/mime4j/Log;->warn(Ljava/lang/Object;)V
 
-    .line 190
+    .line 192
     :cond_148
     iput-byte v7, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->state:B
 
-    .line 191
+    .line 193
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->byteq:Lorg/apache/james/mime4j/decoder/ByteQueue;
 
     invoke-virtual {v4, v8}, Lorg/apache/james/mime4j/decoder/ByteQueue;->enqueue(B)V
 
-    .line 192
+    .line 194
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->byteq:Lorg/apache/james/mime4j/decoder/ByteQueue;
 
     invoke-virtual {v4, v3}, Lorg/apache/james/mime4j/decoder/ByteQueue;->enqueue(B)V
 
-    .line 193
+    .line 195
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;->byteq:Lorg/apache/james/mime4j/decoder/ByteQueue;
 
     invoke-virtual {v4, v0}, Lorg/apache/james/mime4j/decoder/ByteQueue;->enqueue(B)V
 
     goto/16 :goto_a
 
-    .line 127
+    .line 128
     nop
 
     :pswitch_data_15c

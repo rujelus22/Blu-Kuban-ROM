@@ -1,87 +1,53 @@
-.class synthetic Lcom/google/googlenav/p;
+.class public Lcom/google/googlenav/P;
 .super Ljava/lang/Object;
-
-
-# static fields
-.field static final synthetic a:[I
+.source "SourceFile"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method protected constructor <init>()V
+    .registers 1
 
-    invoke-static {}, Lax/aN;->values()[Lax/aN;
+    .prologue
+    .line 114
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/google/googlenav/p;->a:[I
-
-    :try_start_9
-    sget-object v0, Lcom/google/googlenav/p;->a:[I
-
-    sget-object v1, Lax/aN;->b:Lax/aN;
-
-    invoke-virtual {v1}, Lax/aN;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_2f
-
-    :goto_14
-    :try_start_14
-    sget-object v0, Lcom/google/googlenav/p;->a:[I
-
-    sget-object v1, Lax/aN;->a:Lax/aN;
-
-    invoke-virtual {v1}, Lax/aN;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_2d
-
-    :goto_1f
-    :try_start_1f
-    sget-object v0, Lcom/google/googlenav/p;->a:[I
-
-    sget-object v1, Lax/aN;->c:Lax/aN;
-
-    invoke-virtual {v1}, Lax/aN;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_2b
-
-    :goto_2a
     return-void
+.end method
 
-    :catch_2b
-    move-exception v0
 
-    goto :goto_2a
+# virtual methods
+.method protected a()Z
+    .registers 2
 
-    :catch_2d
-    move-exception v0
+    .prologue
+    .line 117
+    invoke-static {}, Lcom/google/googlenav/friend/aJ;->a()Z
 
-    goto :goto_1f
+    move-result v0
 
-    :catch_2f
-    move-exception v0
+    return v0
+.end method
 
-    goto :goto_14
+.method protected b()Z
+    .registers 2
+
+    .prologue
+    .line 121
+    invoke-static {}, Lcom/google/googlenav/friend/au;->k()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method protected c()Z
+    .registers 2
+
+    .prologue
+    .line 125
+    invoke-static {}, Lcom/google/googlenav/friend/E;->k()Z
+
+    move-result v0
+
+    return v0
 .end method

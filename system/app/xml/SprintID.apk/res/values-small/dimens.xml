@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="text_size_xsmall">11.0sp</dimen>
-    <dimen name="text_size_small">13.0sp</dimen>
-    <dimen name="text_size_medium">17.0sp</dimen>
-    <dimen name="text_size_large">19.0sp</dimen>
-    <dimen name="text_size_xlarge">21.0sp</dimen>
-</resources>

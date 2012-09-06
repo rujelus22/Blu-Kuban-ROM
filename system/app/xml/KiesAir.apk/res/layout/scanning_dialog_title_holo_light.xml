@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="22.0dip" android:textColor="@android:color/black" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/ScanKiesAirTitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="26.0dip" android:layout_marginTop="18.0dip" android:layout_marginRight="80.0dip" android:layout_marginBottom="13.0dip" android:text="@string/scan_kies_air_server" android:singleLine="true" android:layout_alignParentLeft="true" />
-    <RelativeLayout android:id="@id/title_refresh_menu" android:background="@drawable/title_menu_pressed" android:clickable="true" android:layout_width="65.0dip" android:layout_height="65.0dip" android:layout_alignParentRight="true">
-        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_menu_refresh_holo" android:layout_centerInParent="true" />
-    </RelativeLayout>
-</RelativeLayout>

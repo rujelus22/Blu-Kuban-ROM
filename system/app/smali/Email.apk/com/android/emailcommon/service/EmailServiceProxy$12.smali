@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/emailcommon/service/EmailServiceProxy;->sendMeetingEditedResponse(JJI)V
+    value = Lcom/android/emailcommon/service/EmailServiceProxy;->searchMessages(JLcom/android/emailcommon/service/SearchParams;J)I
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
-.field final synthetic val$draftMessageId:J
+.field final synthetic val$accountId:J
 
-.field final synthetic val$messageId:J
+.field final synthetic val$destMailboxId:J
 
-.field final synthetic val$response:I
+.field final synthetic val$searchParams:Lcom/android/emailcommon/service/SearchParams;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/emailcommon/service/EmailServiceProxy;JJI)V
+.method constructor <init>(Lcom/android/emailcommon/service/EmailServiceProxy;JLcom/android/emailcommon/service/SearchParams;J)V
     .registers 7
     .parameter
     .parameter
@@ -36,16 +36,16 @@
     .parameter
 
     .prologue
-    .line 278
+    .line 390
     iput-object p1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
-    iput-wide p2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->val$messageId:J
+    iput-wide p2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->val$accountId:J
 
-    iput-wide p4, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->val$draftMessageId:J
+    iput-object p4, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->val$searchParams:Lcom/android/emailcommon/service/SearchParams;
 
-    iput p6, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->val$response:I
+    iput-wide p5, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->val$destMailboxId:J
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 7
+    .registers 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -61,7 +61,7 @@
     .end annotation
 
     .prologue
-    .line 282
+    .line 392
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mCallback:Lcom/android/emailcommon/service/IEmailServiceCallback;
@@ -71,7 +71,6 @@
 
     if-eqz v0, :cond_17
 
-    .line 283
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mService:Lcom/android/emailcommon/service/IEmailService;
@@ -88,8 +87,10 @@
 
     invoke-interface {v0, v1}, Lcom/android/emailcommon/service/IEmailService;->setCallback(Lcom/android/emailcommon/service/IEmailServiceCallback;)V
 
-    .line 285
+    .line 393
     :cond_17
+    iget-object v6, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
+
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mService:Lcom/android/emailcommon/service/IEmailService;
@@ -97,14 +98,23 @@
 
     move-result-object v0
 
-    iget-wide v1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->val$messageId:J
+    iget-wide v1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->val$accountId:J
 
-    iget-wide v3, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->val$draftMessageId:J
+    iget-object v3, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->val$searchParams:Lcom/android/emailcommon/service/SearchParams;
 
-    iget v5, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->val$response:I
+    iget-wide v4, p0, Lcom/android/emailcommon/service/EmailServiceProxy$12;->val$destMailboxId:J
 
-    invoke-interface/range {v0 .. v5}, Lcom/android/emailcommon/service/IEmailService;->sendMeetingEditedResponse(JJI)V
+    invoke-interface/range {v0 .. v5}, Lcom/android/emailcommon/service/IEmailService;->searchMessages(JLcom/android/emailcommon/service/SearchParams;J)I
 
-    .line 287
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    #setter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mReturn:Ljava/lang/Object;
+    invoke-static {v6, v0}, Lcom/android/emailcommon/service/EmailServiceProxy;->access$202(Lcom/android/emailcommon/service/EmailServiceProxy;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 394
     return-void
 .end method

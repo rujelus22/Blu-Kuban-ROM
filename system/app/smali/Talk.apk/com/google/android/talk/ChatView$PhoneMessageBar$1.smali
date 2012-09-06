@@ -30,7 +30,7 @@
     .line 3557
     iput-object p1, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar$1;->this$1:Lcom/google/android/talk/ChatView$PhoneMessageBar;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -44,7 +44,7 @@
     .line 3560
     iget-object v0, p0, Lcom/google/android/talk/ChatView$PhoneMessageBar$1;->this$1:Lcom/google/android/talk/ChatView$PhoneMessageBar;
 
-    iget-object v0, v0, Lcom/google/android/talk/ChatView$PhoneMessageBar;->mMessageBarContainer:Landroid/view/View;
+    iget-object v0, v0, Lcom/google/android/talk/ChatView$MessageBar;->mMessageBarContainer:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 

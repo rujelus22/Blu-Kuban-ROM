@@ -741,7 +741,7 @@
     if-nez v2, :cond_12
 
     .line 74
-    const v2, 0x1030119
+    const v2, 0x103006b
 
     invoke-virtual {p0, v2}, Lcom/google/android/talk/AddBuddyScreen;->setTheme(I)V
 

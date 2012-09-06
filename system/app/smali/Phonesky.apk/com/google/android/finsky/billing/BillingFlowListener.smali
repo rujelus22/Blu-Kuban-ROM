@@ -7,5 +7,5 @@
 .method public abstract onError(Lcom/google/android/finsky/billing/BillingFlow;Ljava/lang/String;)V
 .end method
 
-.method public abstract onFinished(Lcom/google/android/finsky/billing/BillingFlow;Z)V
+.method public abstract onFinished(Lcom/google/android/finsky/billing/BillingFlow;ZLandroid/os/Bundle;)V
 .end method

@@ -1,149 +1,88 @@
-.class Lcom/google/googlenav/ui/wizard/dT;
+.class Lcom/google/googlenav/ui/wizard/dt;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/googlenav/login/j;
+.implements Lan/y;
 
 
 # instance fields
-.field private a:Z
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/dQ;
+
+.field final synthetic b:Lcom/google/googlenav/ui/wizard/dp;
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 2
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/dp;Lcom/google/googlenav/ui/wizard/dQ;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 426
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/dt;->b:Lcom/google/googlenav/ui/wizard/dp;
+
+    iput-object p2, p0, Lcom/google/googlenav/ui/wizard/dt;->a:Lcom/google/googlenav/ui/wizard/dQ;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/google/googlenav/ui/wizard/dT;->a:Z
-
     return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/google/googlenav/ui/wizard/dP;)V
-    .registers 2
-
-    invoke-direct {p0}, Lcom/google/googlenav/ui/wizard/dT;-><init>()V
-
-    return-void
-.end method
-
-.method private declared-synchronized b()V
-    .registers 2
-
-    monitor-enter p0
-
-    const/4 v0, 0x1
-
-    :try_start_2
-    iput-boolean v0, p0, Lcom/google/googlenav/ui/wizard/dT;->a:Z
-
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-    :try_end_7
-    .catchall {:try_start_2 .. :try_end_7} :catchall_9
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_9
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method
 
 
 # virtual methods
-.method public declared-synchronized a()V
-    .registers 2
+.method public a(ILan/h;)V
+    .registers 6
+    .parameter
+    .parameter
 
-    monitor-enter p0
-
-    :goto_1
-    :try_start_1
-    iget-boolean v0, p0, Lcom/google/googlenav/ui/wizard/dT;->a:Z
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_10
-
-    if-nez v0, :cond_b
-
-    :try_start_5
-    invoke-virtual {p0}, Ljava/lang/Object;->wait()V
-    :try_end_8
-    .catchall {:try_start_5 .. :try_end_8} :catchall_10
-    .catch Ljava/lang/InterruptedException; {:try_start_5 .. :try_end_8} :catch_9
-
-    goto :goto_1
-
-    :catch_9
-    move-exception v0
-
-    goto :goto_1
-
-    :cond_b
+    .prologue
+    .line 442
     const/4 v0, 0x0
 
-    :try_start_c
-    iput-boolean v0, p0, Lcom/google/googlenav/ui/wizard/dT;->a:Z
-    :try_end_e
-    .catchall {:try_start_c .. :try_end_e} :catchall_10
+    .line 443
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/dt;->b:Lcom/google/googlenav/ui/wizard/dp;
 
-    monitor-exit p0
+    iget-object v1, v1, Lcom/google/googlenav/ui/wizard/dp;->d:Lcom/google/googlenav/ui/wizard/ju;
 
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/wizard/ju;->A()Lcom/google/googlenav/android/Y;
+
+    move-result-object v1
+
+    new-instance v2, Lcom/google/googlenav/ui/wizard/dv;
+
+    invoke-direct {v2, p0}, Lcom/google/googlenav/ui/wizard/dv;-><init>(Lcom/google/googlenav/ui/wizard/dt;)V
+
+    invoke-virtual {v1, v2, v0}, Lcom/google/googlenav/android/Y;->a(Ljava/lang/Runnable;Z)V
+
+    .line 451
     return-void
-
-    :catchall_10
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method
 
-.method public declared-synchronized o()V
-    .registers 2
+.method public a(Lat/B;Lan/h;)V
+    .registers 6
+    .parameter
+    .parameter
 
-    monitor-enter p0
+    .prologue
+    .line 429
+    const/4 v0, 0x0
 
-    :try_start_1
-    invoke-direct {p0}, Lcom/google/googlenav/ui/wizard/dT;->b()V
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_6
+    .line 430
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/dt;->b:Lcom/google/googlenav/ui/wizard/dp;
 
-    monitor-exit p0
+    iget-object v1, v1, Lcom/google/googlenav/ui/wizard/dp;->d:Lcom/google/googlenav/ui/wizard/ju;
 
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/wizard/ju;->A()Lcom/google/googlenav/android/Y;
+
+    move-result-object v1
+
+    new-instance v2, Lcom/google/googlenav/ui/wizard/du;
+
+    invoke-direct {v2, p0}, Lcom/google/googlenav/ui/wizard/du;-><init>(Lcom/google/googlenav/ui/wizard/dt;)V
+
+    invoke-virtual {v1, v2, v0}, Lcom/google/googlenav/android/Y;->a(Ljava/lang/Runnable;Z)V
+
+    .line 438
     return-void
-
-    :catchall_6
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized p()V
-    .registers 2
-
-    monitor-enter p0
-
-    :try_start_1
-    invoke-direct {p0}, Lcom/google/googlenav/ui/wizard/dT;->b()V
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_6
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_6
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method

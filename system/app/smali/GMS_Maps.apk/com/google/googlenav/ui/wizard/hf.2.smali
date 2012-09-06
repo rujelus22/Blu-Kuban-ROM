@@ -1,66 +1,41 @@
-.class synthetic Lcom/google/googlenav/ui/wizard/hf;
+.class Lcom/google/googlenav/ui/wizard/hF;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
-# static fields
-.field static final synthetic a:[I
+# instance fields
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/hE;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/hE;)V
+    .registers 2
+    .parameter
 
-    invoke-static {}, Lcom/google/googlenav/ui/wizard/hh;->values()[Lcom/google/googlenav/ui/wizard/hh;
+    .prologue
+    .line 41
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/hF;->a:Lcom/google/googlenav/ui/wizard/hE;
 
-    move-result-object v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/google/googlenav/ui/wizard/hf;->a:[I
-
-    :try_start_9
-    sget-object v0, Lcom/google/googlenav/ui/wizard/hf;->a:[I
-
-    sget-object v1, Lcom/google/googlenav/ui/wizard/hh;->b:Lcom/google/googlenav/ui/wizard/hh;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/wizard/hh;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
-
-    :goto_14
-    :try_start_14
-    sget-object v0, Lcom/google/googlenav/ui/wizard/hf;->a:[I
-
-    sget-object v1, Lcom/google/googlenav/ui/wizard/hh;->a:Lcom/google/googlenav/ui/wizard/hh;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/wizard/hh;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
-
-    :goto_1f
     return-void
+.end method
 
-    :catch_20
-    move-exception v0
 
-    goto :goto_1f
+# virtual methods
+.method public onClick(Landroid/view/View;)V
+    .registers 3
+    .parameter
 
-    :catch_22
-    move-exception v0
+    .prologue
+    .line 44
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hF;->a:Lcom/google/googlenav/ui/wizard/hE;
 
-    goto :goto_14
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/hE;->a(Lcom/google/googlenav/ui/wizard/hE;)V
+
+    .line 45
+    return-void
 .end method

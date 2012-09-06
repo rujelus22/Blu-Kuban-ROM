@@ -7,45 +7,27 @@
 
 
 # instance fields
-.field final a:Ljava/util/Iterator;
+.field a:Ljava/util/Map$Entry;
 
-.field b:Ljava/util/Map$Entry;
+.field final synthetic b:Ljava/util/Iterator;
 
-.field c:I
-
-.field d:Z
-
-.field final synthetic e:Lcom/google/common/collect/AbstractMapBasedMultiset;
+.field final synthetic c:Lcom/google/common/collect/n;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/AbstractMapBasedMultiset;)V
+.method constructor <init>(Lcom/google/common/collect/n;Ljava/util/Iterator;)V
     .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 193
-    iput-object p1, p0, Lcom/google/common/collect/o;->e:Lcom/google/common/collect/AbstractMapBasedMultiset;
+    .line 343
+    iput-object p1, p0, Lcom/google/common/collect/o;->c:Lcom/google/common/collect/n;
+
+    iput-object p2, p0, Lcom/google/common/collect/o;->b:Ljava/util/Iterator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 194
-    #getter for: Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
-    invoke-static {p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->access$100(Lcom/google/common/collect/AbstractMapBasedMultiset;)Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/common/collect/o;->a:Ljava/util/Iterator;
-
-    .line 195
     return-void
 .end method
 
@@ -55,42 +37,22 @@
     .registers 2
 
     .prologue
-    .line 198
-    iget v0, p0, Lcom/google/common/collect/o;->c:I
-
-    if-gtz v0, :cond_c
-
-    iget-object v0, p0, Lcom/google/common/collect/o;->a:Ljava/util/Iterator;
+    .line 348
+    iget-object v0, p0, Lcom/google/common/collect/o;->b:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_e
-
-    :cond_c
-    const/4 v0, 0x1
-
-    :goto_d
     return v0
-
-    :cond_e
-    const/4 v0, 0x0
-
-    goto :goto_d
 .end method
 
 .method public final next()Ljava/lang/Object;
     .registers 2
 
     .prologue
-    .line 202
-    iget v0, p0, Lcom/google/common/collect/o;->c:I
-
-    if-nez v0, :cond_1c
-
-    .line 203
-    iget-object v0, p0, Lcom/google/common/collect/o;->a:Ljava/util/Iterator;
+    .line 353
+    iget-object v0, p0, Lcom/google/common/collect/o;->b:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -98,38 +60,10 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    iput-object v0, p0, Lcom/google/common/collect/o;->b:Ljava/util/Map$Entry;
+    iput-object v0, p0, Lcom/google/common/collect/o;->a:Ljava/util/Map$Entry;
 
-    .line 204
-    iget-object v0, p0, Lcom/google/common/collect/o;->b:Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
-
-    move-result v0
-
-    iput v0, p0, Lcom/google/common/collect/o;->c:I
-
-    .line 206
-    :cond_1c
-    iget v0, p0, Lcom/google/common/collect/o;->c:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, Lcom/google/common/collect/o;->c:I
-
-    .line 207
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/common/collect/o;->d:Z
-
-    .line 208
-    iget-object v0, p0, Lcom/google/common/collect/o;->b:Ljava/util/Map$Entry;
+    .line 354
+    iget-object v0, p0, Lcom/google/common/collect/o;->a:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -139,73 +73,60 @@
 .end method
 
 .method public final remove()V
-    .registers 3
+    .registers 4
 
     .prologue
-    .line 212
-    iget-boolean v0, p0, Lcom/google/common/collect/o;->d:Z
+    const/4 v1, 0x0
 
-    const-string v1, "no calls to next() since the last call to remove()"
+    .line 359
+    iget-object v0, p0, Lcom/google/common/collect/o;->a:Ljava/util/Map$Entry;
 
-    invoke-static {v0, v1}, Lcom/google/common/base/t;->b(ZLjava/lang/Object;)V
+    if-eqz v0, :cond_28
 
-    .line 214
-    iget-object v0, p0, Lcom/google/common/collect/o;->b:Ljava/util/Map$Entry;
+    const/4 v0, 0x1
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    :goto_6
+    const-string v2, "no calls to next() since the last call to remove()"
 
-    move-result-object v0
+    invoke-static {v0, v2}, Lcom/google/common/base/ag;->b(ZLjava/lang/Object;)V
 
-    check-cast v0, Ljava/util/concurrent/atomic/AtomicInteger;
+    .line 361
+    iget-object v0, p0, Lcom/google/common/collect/o;->c:Lcom/google/common/collect/n;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+    iget-object v2, v0, Lcom/google/common/collect/n;->a:Lcom/google/common/collect/AbstractMapBasedMultiset;
 
-    move-result v0
-
-    .line 215
-    if-gtz v0, :cond_1b
-
-    .line 216
-    new-instance v0, Ljava/util/ConcurrentModificationException;
-
-    invoke-direct {v0}, Ljava/util/ConcurrentModificationException;-><init>()V
-
-    throw v0
-
-    .line 218
-    :cond_1b
-    iget-object v0, p0, Lcom/google/common/collect/o;->b:Ljava/util/Map$Entry;
+    iget-object v0, p0, Lcom/google/common/collect/o;->a:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/concurrent/atomic/AtomicInteger;
+    check-cast v0, Lcom/google/common/collect/Count;
 
-    const/4 v1, -0x1
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->addAndGet(I)I
+    invoke-virtual {v0, v1}, Lcom/google/common/collect/Count;->getAndSet(I)I
 
     move-result v0
 
-    if-nez v0, :cond_2f
+    int-to-long v0, v0
 
-    .line 219
-    iget-object v0, p0, Lcom/google/common/collect/o;->a:Ljava/util/Iterator;
+    invoke-static {v2, v0, v1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->access$122(Lcom/google/common/collect/AbstractMapBasedMultiset;J)J
+
+    .line 362
+    iget-object v0, p0, Lcom/google/common/collect/o;->b:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    .line 221
-    :cond_2f
-    iget-object v0, p0, Lcom/google/common/collect/o;->e:Lcom/google/common/collect/AbstractMapBasedMultiset;
-
-    invoke-static {v0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->access$210(Lcom/google/common/collect/AbstractMapBasedMultiset;)J
-
-    .line 222
+    .line 363
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/common/collect/o;->d:Z
+    iput-object v0, p0, Lcom/google/common/collect/o;->a:Ljava/util/Map$Entry;
 
-    .line 223
+    .line 364
     return-void
+
+    :cond_28
+    move v0, v1
+
+    .line 359
+    goto :goto_6
 .end method

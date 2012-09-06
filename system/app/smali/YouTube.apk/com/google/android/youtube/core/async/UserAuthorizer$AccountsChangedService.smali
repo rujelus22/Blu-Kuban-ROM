@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 833
+    .line 529
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
     return-void
@@ -21,7 +21,7 @@
     .parameter
 
     .prologue
-    .line 845
+    .line 541
     const/4 v0, 0x0
 
     return-object v0
@@ -34,24 +34,24 @@
     .parameter
 
     .prologue
-    .line 837
+    .line 533
     invoke-virtual {p0}, Lcom/google/android/youtube/core/async/UserAuthorizer$AccountsChangedService;->getApplication()Landroid/app/Application;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/youtube/core/BaseApplication;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/BaseApplication;->D()Lcom/google/android/youtube/core/async/UserAuthorizer;
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/BaseApplication;->Q()Lcom/google/android/youtube/core/async/UserAuthorizer;
 
     move-result-object v0
 
-    .line 838
-    invoke-static {v0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->e(Lcom/google/android/youtube/core/async/UserAuthorizer;)V
+    .line 534
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->b()V
 
-    .line 839
+    .line 535
     invoke-virtual {p0}, Lcom/google/android/youtube/core/async/UserAuthorizer$AccountsChangedService;->stopSelf()V
 
-    .line 840
+    .line 536
     const/4 v0, 0x2
 
     return v0

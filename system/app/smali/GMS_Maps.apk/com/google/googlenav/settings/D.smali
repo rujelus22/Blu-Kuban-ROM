@@ -1,151 +1,127 @@
-.class Lcom/google/googlenav/settings/D;
+.class Lcom/google/googlenav/settings/d;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/preference/Preference$OnPreferenceChangeListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/settings/LegalActivity;
+.field final synthetic a:Landroid/preference/ListPreference;
 
-.field private b:[B
-
-.field private c:Ljava/lang/String;
+.field final synthetic b:Lcom/google/googlenav/settings/DisplaySettingsActivity;
 
 
 # direct methods
-.method private constructor <init>(Lcom/google/googlenav/settings/LegalActivity;Ljava/lang/String;[B)V
-    .registers 4
+.method constructor <init>(Lcom/google/googlenav/settings/DisplaySettingsActivity;Landroid/preference/ListPreference;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/settings/D;->a:Lcom/google/googlenav/settings/LegalActivity;
+    .prologue
+    .line 273
+    iput-object p1, p0, Lcom/google/googlenav/settings/d;->b:Lcom/google/googlenav/settings/DisplaySettingsActivity;
+
+    iput-object p2, p0, Lcom/google/googlenav/settings/d;->a:Landroid/preference/ListPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p3, p0, Lcom/google/googlenav/settings/D;->b:[B
-
-    iput-object p2, p0, Lcom/google/googlenav/settings/D;->c:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/google/googlenav/settings/LegalActivity;Ljava/lang/String;[BLcom/google/googlenav/settings/C;)V
-    .registers 5
-
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/googlenav/settings/D;-><init>(Lcom/google/googlenav/settings/LegalActivity;Ljava/lang/String;[B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .registers 5
+.method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
+    .registers 10
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/settings/D;->a:Lcom/google/googlenav/settings/LegalActivity;
+    .prologue
+    const/4 v6, 0x0
 
-    invoke-static {v0}, Lcom/google/googlenav/settings/LegalActivity;->a(Lcom/google/googlenav/settings/LegalActivity;)Landroid/app/ProgressDialog;
+    const/4 v5, 0x1
 
-    move-result-object v0
+    .line 276
+    check-cast p2, Ljava/lang/String;
 
-    if-eqz v0, :cond_1d
-
-    iget-object v0, p0, Lcom/google/googlenav/settings/D;->a:Lcom/google/googlenav/settings/LegalActivity;
-
-    invoke-static {v0}, Lcom/google/googlenav/settings/LegalActivity;->a(Lcom/google/googlenav/settings/LegalActivity;)Landroid/app/ProgressDialog;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->isShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1d
-
-    iget-object v0, p0, Lcom/google/googlenav/settings/D;->a:Lcom/google/googlenav/settings/LegalActivity;
-
-    invoke-static {v0}, Lcom/google/googlenav/settings/LegalActivity;->a(Lcom/google/googlenav/settings/LegalActivity;)Landroid/app/ProgressDialog;
+    invoke-static {p2}, Lcom/google/googlenav/settings/e;->valueOf(Ljava/lang/String;)Lcom/google/googlenav/settings/e;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
+    .line 277
+    iget-object v1, p0, Lcom/google/googlenav/settings/d;->a:Landroid/preference/ListPreference;
 
-    :cond_1d
-    iget-object v0, p0, Lcom/google/googlenav/settings/D;->b:[B
+    const/16 v2, 0x61
 
-    if-nez v0, :cond_29
-
-    const-string v0, "FileCompleteHandler"
-
-    iget-object v1, p0, Lcom/google/googlenav/settings/D;->c:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Laf/m;->a(Ljava/lang/String;Ljava/lang/String;)Z
-
-    :goto_28
-    return-void
-
-    :cond_29
-    :try_start_29
-    new-instance v0, Ljava/lang/String;
-
-    iget-object v1, p0, Lcom/google/googlenav/settings/D;->b:[B
-
-    const-string v2, "UTF-8"
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
-    :try_end_32
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_29 .. :try_end_32} :catch_5d
-
-    :goto_32
-    new-instance v1, Landroid/content/Intent;
-
-    const-string v2, "android.intent.action.MAIN"
-
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    invoke-static {}, Lcom/google/googlenav/ui/bw;->e()Landroid/content/Context;
+    invoke-static {v2}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const-class v3, Lcom/google/googlenav/android/WebViewActivity;
+    new-array v3, v5, [Ljava/lang/String;
 
-    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
+    invoke-virtual {v0}, Lcom/google/googlenav/settings/e;->a()Ljava/lang/String;
+
+    move-result-object v4
+
+    aput-object v4, v3, v6
+
+    invoke-static {v2, v3}, Laa/b;->a(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/preference/ListPreference;->setSummary(Ljava/lang/CharSequence;)V
+
+    .line 280
+    invoke-static {}, Lcom/google/googlenav/K;->a()Lcom/google/googlenav/K;
 
     move-result-object v1
 
-    const-string v2, "title"
+    invoke-virtual {v1, v0}, Lcom/google/googlenav/K;->a(Lcom/google/googlenav/settings/e;)V
 
-    iget-object v3, p0, Lcom/google/googlenav/settings/D;->a:Lcom/google/googlenav/settings/LegalActivity;
+    .line 281
+    const/4 v1, 0x2
 
-    invoke-static {v3}, Lcom/google/googlenav/settings/LegalActivity;->b(Lcom/google/googlenav/settings/LegalActivity;)Ljava/lang/String;
+    new-array v1, v1, [Ljava/lang/String;
 
-    move-result-object v3
+    const-string v2, "a=s"
 
-    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    aput-object v2, v1, v6
 
-    move-result-object v1
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v2, "html_string"
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    const-string v3, "i="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-static {v0}, Lcom/google/googlenav/settings/e;->a(Lcom/google/googlenav/settings/e;)I
+
+    move-result v0
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-static {}, Lcom/google/googlenav/android/U;->a()Lcom/google/googlenav/android/U;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, v0}, Lcom/google/googlenav/android/U;->a(Landroid/content/Intent;)V
+    aput-object v0, v1, v5
 
-    goto :goto_28
+    invoke-static {v1}, LaT/k;->a([Ljava/lang/String;)Ljava/lang/String;
 
-    :catch_5d
-    move-exception v0
+    move-result-object v0
 
-    new-instance v0, Ljava/lang/String;
+    .line 284
+    const/16 v1, 0x10
 
-    iget-object v1, p0, Lcom/google/googlenav/settings/D;->b:[B
+    const-string v2, "s"
 
-    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([B)V
+    invoke-static {v1, v2, v0}, LaT/k;->a(ILjava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_32
+    .line 286
+    return v5
 .end method

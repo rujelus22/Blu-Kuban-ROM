@@ -1,106 +1,52 @@
-.class public Lcom/google/googlenav/ui/view/dialog/ak;
+.class Lcom/google/googlenav/ui/view/dialog/aK;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field private a:Ljava/lang/String;
+.field private final a:Lcom/google/googlenav/friend/history/I;
 
-.field private b:Ljava/lang/String;
-
-.field private c:Ljava/lang/String;
-
-.field private d:Ljava/lang/String;
-
-.field private e:Ljava/lang/String;
+.field private final b:Landroid/view/View;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
+.method public constructor <init>(Lcom/google/googlenav/friend/history/I;Landroid/view/View;)V
+    .registers 3
+    .parameter
+    .parameter
 
+    .prologue
+    .line 528
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 529
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/aK;->a:Lcom/google/googlenav/friend/history/I;
+
+    .line 530
+    iput-object p2, p0, Lcom/google/googlenav/ui/view/dialog/aK;->b:Landroid/view/View;
+
+    .line 531
     return-void
 .end method
 
-
-# virtual methods
-.method public a(Ljava/lang/String;)Lcom/google/googlenav/ui/view/dialog/ak;
+.method static synthetic a(Lcom/google/googlenav/ui/view/dialog/aK;)Lcom/google/googlenav/friend/history/I;
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/ak;->a:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method public a()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/ak;->a:Ljava/lang/String;
+    .prologue
+    .line 516
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/aK;->a:Lcom/google/googlenav/friend/history/I;
 
     return-object v0
 .end method
 
-.method public b(Ljava/lang/String;)Lcom/google/googlenav/ui/view/dialog/ak;
+.method static synthetic b(Lcom/google/googlenav/ui/view/dialog/aK;)Landroid/view/View;
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/ak;->b:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method public b()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/ak;->b:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public c(Ljava/lang/String;)Lcom/google/googlenav/ui/view/dialog/ak;
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/ak;->c:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method public c()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/ak;->c:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public d(Ljava/lang/String;)Lcom/google/googlenav/ui/view/dialog/ak;
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/ak;->d:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method public d()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/ak;->d:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public e(Ljava/lang/String;)Lcom/google/googlenav/ui/view/dialog/ak;
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/ak;->e:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method public e()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/ak;->e:Ljava/lang/String;
+    .prologue
+    .line 516
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/aK;->b:Landroid/view/View;
 
     return-object v0
 .end method

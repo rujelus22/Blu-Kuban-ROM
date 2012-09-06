@@ -28,7 +28,7 @@
     .registers 1
 
     .prologue
-    .line 161
+    .line 159
     new-instance v0, Lcom/google/android/gtalkservice/ConnectionError$1;
 
     invoke-direct {v0}, Lcom/google/android/gtalkservice/ConnectionError$1;-><init>()V
@@ -43,17 +43,17 @@
     .parameter "source"
 
     .prologue
-    .line 71
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 69
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 72
+    .line 70
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/gtalkservice/ConnectionError;->mError:I
 
-    .line 73
+    .line 71
     return-void
 .end method
 
@@ -64,7 +64,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 104
+    .line 102
     if-eq p0, v0, :cond_d
 
     const/4 v1, 0x2
@@ -94,71 +94,71 @@
     .parameter "state"
 
     .prologue
-    .line 115
+    .line 113
     packed-switch p0, :pswitch_data_22
 
-    .line 144
+    .line 142
     :pswitch_3
     const-string v0, "NO ERROR"
 
     :goto_5
     return-object v0
 
-    .line 117
+    .line 115
     :pswitch_6
     const-string v0, "NO NETWORK"
 
     goto :goto_5
 
-    .line 120
+    .line 118
     :pswitch_9
     const-string v0, "CONNECTION FAILED"
 
     goto :goto_5
 
-    .line 123
+    .line 121
     :pswitch_c
     const-string v0, "UNKNOWN HOST"
 
     goto :goto_5
 
-    .line 126
+    .line 124
     :pswitch_f
     const-string v0, "AUTH FAILED"
 
     goto :goto_5
 
-    .line 129
+    .line 127
     :pswitch_12
     const-string v0, "AUTH EXPIRED"
 
     goto :goto_5
 
-    .line 132
+    .line 130
     :pswitch_15
     const-string v0, "HEARTBEAT TIMEOUT"
 
     goto :goto_5
 
-    .line 135
+    .line 133
     :pswitch_18
     const-string v0, "SERVER FAILED"
 
     goto :goto_5
 
-    .line 138
+    .line 136
     :pswitch_1b
     const-string v0, "SERVER REJECT - RATE LIMIT"
 
     goto :goto_5
 
-    .line 141
+    .line 139
     :pswitch_1e
     const-string v0, "UNKNOWN"
 
     goto :goto_5
 
-    .line 115
+    .line 113
     nop
 
     :pswitch_data_22
@@ -182,7 +182,7 @@
     .registers 2
 
     .prologue
-    .line 158
+    .line 156
     const/4 v0, 0x0
 
     return v0
@@ -192,7 +192,7 @@
     .registers 2
 
     .prologue
-    .line 76
+    .line 74
     iget v0, p0, Lcom/google/android/gtalkservice/ConnectionError;->mError:I
 
     return v0
@@ -202,7 +202,7 @@
     .registers 2
 
     .prologue
-    .line 100
+    .line 98
     iget v0, p0, Lcom/google/android/gtalkservice/ConnectionError;->mError:I
 
     invoke-static {v0}, Lcom/google/android/gtalkservice/ConnectionError;->toString(I)Ljava/lang/String;
@@ -218,11 +218,11 @@
     .parameter "flags"
 
     .prologue
-    .line 154
+    .line 152
     iget v0, p0, Lcom/google/android/gtalkservice/ConnectionError;->mError:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 155
+    .line 153
     return-void
 .end method

@@ -1,30 +1,27 @@
 .class final Lcom/google/common/collect/dk;
-.super Ljava/lang/Object;
+.super Lcom/google/common/collect/mu;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/Iterator;
+.field final synthetic a:Lcom/google/common/collect/mu;
 
-.field final synthetic b:Lcom/google/common/collect/dj;
+.field final synthetic b:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/dj;Ljava/util/Iterator;)V
+.method constructor <init>(Lcom/google/common/collect/ImmutableList$ReverseImmutableList;Lcom/google/common/collect/mu;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 818
-    iput-object p1, p0, Lcom/google/common/collect/dk;->b:Lcom/google/common/collect/dj;
+    .line 458
+    iput-object p1, p0, Lcom/google/common/collect/dk;->b:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;
 
-    iput-object p2, p0, Lcom/google/common/collect/dk;->a:Ljava/util/Iterator;
+    iput-object p2, p0, Lcom/google/common/collect/dk;->a:Lcom/google/common/collect/mu;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/common/collect/mu;-><init>()V
 
     return-void
 .end method
@@ -35,43 +32,96 @@
     .registers 2
 
     .prologue
-    .line 820
-    iget-object v0, p0, Lcom/google/common/collect/dk;->a:Ljava/util/Iterator;
+    .line 460
+    iget-object v0, p0, Lcom/google/common/collect/dk;->a:Lcom/google/common/collect/mu;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v0}, Lcom/google/common/collect/mu;->hasPrevious()Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final synthetic next()Ljava/lang/Object;
-    .registers 3
-
-    .prologue
-    .line 818
-    iget-object v0, p0, Lcom/google/common/collect/dk;->a:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/google/common/collect/dl;
-
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/dl;-><init>(Lcom/google/common/collect/dk;Ljava/lang/Object;)V
-
-    return-object v1
-.end method
-
-.method public final remove()V
+.method public final hasPrevious()Z
     .registers 2
 
     .prologue
-    .line 837
-    iget-object v0, p0, Lcom/google/common/collect/dk;->a:Ljava/util/Iterator;
+    .line 464
+    iget-object v0, p0, Lcom/google/common/collect/dk;->a:Lcom/google/common/collect/mu;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+    invoke-virtual {v0}, Lcom/google/common/collect/mu;->hasNext()Z
 
-    .line 838
-    return-void
+    move-result v0
+
+    return v0
+.end method
+
+.method public final next()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 468
+    iget-object v0, p0, Lcom/google/common/collect/dk;->a:Lcom/google/common/collect/mu;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/mu;->previous()Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final nextIndex()I
+    .registers 3
+
+    .prologue
+    .line 472
+    iget-object v0, p0, Lcom/google/common/collect/dk;->b:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;
+
+    iget-object v1, p0, Lcom/google/common/collect/dk;->a:Lcom/google/common/collect/mu;
+
+    invoke-virtual {v1}, Lcom/google/common/collect/mu;->previousIndex()I
+
+    move-result v1
+
+    #calls: Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->reverseIndex(I)I
+    invoke-static {v0, v1}, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->access$000(Lcom/google/common/collect/ImmutableList$ReverseImmutableList;I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final previous()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 476
+    iget-object v0, p0, Lcom/google/common/collect/dk;->a:Lcom/google/common/collect/mu;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/mu;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final previousIndex()I
+    .registers 3
+
+    .prologue
+    .line 480
+    iget-object v0, p0, Lcom/google/common/collect/dk;->b:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;
+
+    iget-object v1, p0, Lcom/google/common/collect/dk;->a:Lcom/google/common/collect/mu;
+
+    invoke-virtual {v1}, Lcom/google/common/collect/mu;->nextIndex()I
+
+    move-result v1
+
+    #calls: Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->reverseIndex(I)I
+    invoke-static {v0, v1}, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->access$000(Lcom/google/common/collect/ImmutableList$ReverseImmutableList;I)I
+
+    move-result v0
+
+    return v0
 .end method

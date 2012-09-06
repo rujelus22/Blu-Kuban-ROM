@@ -46,7 +46,7 @@
     .parameter
 
     .prologue
-    .line 70
+    .line 69
     iput-object p1, p0, Lcom/google/android/finsky/activities/GetMarketMetadataAction$1;->this$0:Lcom/google/android/finsky/activities/GetMarketMetadataAction;
 
     iput-object p2, p0, Lcom/google/android/finsky/activities/GetMarketMetadataAction$1;->val$account:Ljava/lang/String;
@@ -67,7 +67,7 @@
     .parameter "response"
 
     .prologue
-    .line 76
+    .line 75
     iget-object v0, p0, Lcom/google/android/finsky/activities/GetMarketMetadataAction$1;->val$account:Ljava/lang/String;
 
     invoke-virtual {p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getInAppBillingEnabled()Z
@@ -76,7 +76,7 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/billing/InAppBillingSetting;->setEnabled(Ljava/lang/String;Z)V
 
-    .line 77
+    .line 76
     sget-object v0, Lcom/google/android/finsky/billing/BillingPreferences;->LOG_BILLING_EVENTS:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
     invoke-virtual {p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getBillingEventsEnabled()Z
@@ -90,11 +90,6 @@
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->put(Ljava/lang/Object;)V
 
     .line 78
-    iget-object v0, p0, Lcom/google/android/finsky/activities/GetMarketMetadataAction$1;->val$context:Landroid/content/Context;
-
-    invoke-static {v0}, Lcom/google/android/finsky/services/ReconstructDatabaseService;->reconstructIfNecessary(Landroid/content/Context;)V
-
-    .line 80
     sget-object v0, Lcom/google/android/finsky/config/G;->vendingHideWarningMessage:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
@@ -107,15 +102,15 @@
 
     move-result v0
 
-    if-nez v0, :cond_36
+    if-nez v0, :cond_31
 
     invoke-virtual {p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasWarningMessage()Z
 
     move-result v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_31
 
-    .line 81
+    .line 79
     iget-object v0, p0, Lcom/google/android/finsky/activities/GetMarketMetadataAction$1;->this$0:Lcom/google/android/finsky/activities/GetMarketMetadataAction;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/GetMarketMetadataAction$1;->val$context:Landroid/content/Context;
@@ -123,19 +118,19 @@
     #calls: Lcom/google/android/finsky/activities/GetMarketMetadataAction;->showWarningIfNecessary(Landroid/content/Context;Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;)V
     invoke-static {v0, v1, p1}, Lcom/google/android/finsky/activities/GetMarketMetadataAction;->access$000(Lcom/google/android/finsky/activities/GetMarketMetadataAction;Landroid/content/Context;Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;)V
 
-    .line 84
-    :cond_36
+    .line 82
+    :cond_31
     iget-object v0, p0, Lcom/google/android/finsky/activities/GetMarketMetadataAction$1;->val$listener:Lcom/android/volley/Response$Listener;
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_3a
 
-    .line 85
+    .line 83
     iget-object v0, p0, Lcom/google/android/finsky/activities/GetMarketMetadataAction$1;->val$listener:Lcom/android/volley/Response$Listener;
 
     invoke-interface {v0, p1}, Lcom/android/volley/Response$Listener;->onResponse(Ljava/lang/Object;)V
 
-    .line 87
-    :cond_3f
+    .line 85
+    :cond_3a
     return-void
 .end method
 
@@ -144,7 +139,7 @@
     .parameter "x0"
 
     .prologue
-    .line 70
+    .line 69
     check-cast p1, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;
 
     .end local p1

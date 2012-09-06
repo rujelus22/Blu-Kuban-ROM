@@ -13,10 +13,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 42
+    .line 44
     invoke-direct {p0, p1}, Lcom/google/android/plus1/a/a;-><init>(Lcom/google/android/plus1/a/b;)V
 
-    .line 43
+    .line 45
     new-instance v1, Landroid/accounts/Account;
 
     const-string v0, "com.google"
@@ -25,7 +25,9 @@
 
     new-instance v5, Lcom/google/android/plus1/a/d;
 
-    invoke-direct {v5, p0}, Lcom/google/android/plus1/a/d;-><init>(Lcom/google/android/plus1/a/c;)V
+    const/4 v0, 0x0
+
+    invoke-direct {v5, p0, v0}, Lcom/google/android/plus1/a/d;-><init>(Lcom/google/android/plus1/a/c;B)V
 
     iget-object v0, p0, Lcom/google/android/plus1/a/c;->a:Lcom/google/android/plus1/a/b;
 
@@ -49,6 +51,6 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/accounts/AccountManager;->getAuthToken(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;Landroid/app/Activity;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
 
-    .line 44
+    .line 46
     return-void
 .end method

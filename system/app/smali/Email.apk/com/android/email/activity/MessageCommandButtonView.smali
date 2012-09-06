@@ -20,9 +20,9 @@
 
 .field private mMessagePosition:Landroid/widget/TextView;
 
-.field private mMoveToNewerButton:Landroid/widget/ImageButton;
+.field private mMoveToNewerButton:Landroid/view/View;
 
-.field private mMoveToOlderButton:Landroid/widget/ImageButton;
+.field private mMoveToOlderButton:Landroid/view/View;
 
 .field private mShowPanel:Z
 
@@ -33,15 +33,15 @@
     .parameter "context"
 
     .prologue
-    .line 76
+    .line 67
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 47
+    .line 45
     sget-object v0, Lcom/android/email/activity/MessageCommandButtonView$EmptyCallback;->INSTANCE:Lcom/android/email/activity/MessageCommandButtonView$Callback;
 
     iput-object v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mCallback:Lcom/android/email/activity/MessageCommandButtonView$Callback;
 
-    .line 77
+    .line 68
     return-void
 .end method
 
@@ -51,15 +51,15 @@
     .parameter "attrs"
 
     .prologue
-    .line 72
+    .line 63
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 47
+    .line 45
     sget-object v0, Lcom/android/email/activity/MessageCommandButtonView$EmptyCallback;->INSTANCE:Lcom/android/email/activity/MessageCommandButtonView$Callback;
 
     iput-object v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mCallback:Lcom/android/email/activity/MessageCommandButtonView$Callback;
 
-    .line 73
+    .line 64
     return-void
 .end method
 
@@ -70,69 +70,145 @@
     .parameter "defStyle"
 
     .prologue
-    .line 68
+    .line 59
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 47
+    .line 45
     sget-object v0, Lcom/android/email/activity/MessageCommandButtonView$EmptyCallback;->INSTANCE:Lcom/android/email/activity/MessageCommandButtonView$Callback;
 
     iput-object v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mCallback:Lcom/android/email/activity/MessageCommandButtonView$Callback;
 
-    .line 69
+    .line 60
     return-void
 .end method
 
 
 # virtual methods
+.method public enableNavigationButtons(ZZII)V
+    .registers 11
+    .parameter "enableMoveToNewer"
+    .parameter "enableMoveToOlder"
+    .parameter "currentPosition"
+    .parameter "countMessages"
+
+    .prologue
+    .line 93
+    iget-boolean v1, p0, Lcom/android/email/activity/MessageCommandButtonView;->mShowPanel:Z
+
+    if-nez v1, :cond_5
+
+    .line 108
+    :goto_4
+    return-void
+
+    .line 96
+    :cond_5
+    iget-object v1, p0, Lcom/android/email/activity/MessageCommandButtonView;->mMoveToNewerButton:Landroid/view/View;
+
+    invoke-virtual {v1, p1}, Landroid/view/View;->setEnabled(Z)V
+
+    .line 97
+    iget-object v1, p0, Lcom/android/email/activity/MessageCommandButtonView;->mMoveToOlderButton:Landroid/view/View;
+
+    invoke-virtual {v1, p2}, Landroid/view/View;->setEnabled(Z)V
+
+    .line 101
+    if-nez p4, :cond_19
+
+    .line 102
+    const-string v0, ""
+
+    .line 107
+    .local v0, positionOfCount:Ljava/lang/String;
+    :goto_13
+    iget-object v1, p0, Lcom/android/email/activity/MessageCommandButtonView;->mMessagePosition:Landroid/widget/TextView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_4
+
+    .line 104
+    .end local v0           #positionOfCount:Ljava/lang/String;
+    :cond_19
+    invoke-virtual {p0}, Lcom/android/email/activity/MessageCommandButtonView;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f08017f
+
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    add-int/lit8 v5, p3, 0x1
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x1
+
+    invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    invoke-virtual {v1, v2, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .restart local v0       #positionOfCount:Ljava/lang/String;
+    goto :goto_13
+.end method
+
 .method public onClick(Landroid/view/View;)V
-    .registers 4
+    .registers 3
     .parameter "v"
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 145
+    .line 112
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_1a
+    packed-switch v0, :pswitch_data_14
 
-    .line 155
-    :goto_8
-    :pswitch_8
+    .line 120
+    :goto_7
+    :pswitch_7
     return-void
 
-    .line 147
-    :pswitch_9
-    sput-boolean v1, Lcom/android/email/activity/MessageViewFragmentBase;->mLoadMoreDialogCancelled:Z
-
-    .line 148
+    .line 114
+    :pswitch_8
     iget-object v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mCallback:Lcom/android/email/activity/MessageCommandButtonView$Callback;
 
     invoke-interface {v0}, Lcom/android/email/activity/MessageCommandButtonView$Callback;->onMoveToNewer()V
 
-    goto :goto_8
+    goto :goto_7
 
-    .line 151
-    :pswitch_11
-    sput-boolean v1, Lcom/android/email/activity/MessageViewFragmentBase;->mLoadMoreDialogCancelled:Z
-
-    .line 152
+    .line 117
+    :pswitch_e
     iget-object v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mCallback:Lcom/android/email/activity/MessageCommandButtonView$Callback;
 
     invoke-interface {v0}, Lcom/android/email/activity/MessageCommandButtonView$Callback;->onMoveToOlder()V
 
-    goto :goto_8
+    goto :goto_7
 
-    .line 145
-    nop
-
-    :pswitch_data_1a
-    .packed-switch 0x7f100174
-        :pswitch_9
+    .line 112
+    :pswitch_data_14
+    .packed-switch 0x7f0e0076
         :pswitch_8
-        :pswitch_11
+        :pswitch_7
+        :pswitch_e
     .end packed-switch
 .end method
 
@@ -140,53 +216,49 @@
     .registers 2
 
     .prologue
-    .line 81
+    .line 72
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
-    .line 83
-    const v0, 0x7f100174
+    .line 74
+    const v0, 0x7f0e0076
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/MessageCommandButtonView;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/ImageButton;
+    iput-object v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mMoveToNewerButton:Landroid/view/View;
 
-    iput-object v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mMoveToNewerButton:Landroid/widget/ImageButton;
+    .line 75
+    iget-object v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mMoveToNewerButton:Landroid/view/View;
 
-    .line 84
-    iget-object v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mMoveToNewerButton:Landroid/widget/ImageButton;
+    if-nez v0, :cond_14
 
-    if-nez v0, :cond_16
-
-    .line 85
+    .line 76
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mShowPanel:Z
 
-    .line 94
-    :goto_15
+    .line 85
+    :goto_13
     return-void
 
-    .line 88
-    :cond_16
+    .line 79
+    :cond_14
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mShowPanel:Z
 
-    .line 89
-    const v0, 0x7f100176
+    .line 80
+    const v0, 0x7f0e0078
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/MessageCommandButtonView;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/ImageButton;
+    iput-object v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mMoveToOlderButton:Landroid/view/View;
 
-    iput-object v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mMoveToOlderButton:Landroid/widget/ImageButton;
-
-    .line 90
-    const v0, 0x7f100175
+    .line 81
+    const v0, 0x7f0e0077
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/MessageCommandButtonView;->findViewById(I)Landroid/view/View;
 
@@ -196,17 +268,17 @@
 
     iput-object v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mMessagePosition:Landroid/widget/TextView;
 
-    .line 92
-    iget-object v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mMoveToNewerButton:Landroid/widget/ImageButton;
+    .line 83
+    iget-object v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mMoveToNewerButton:Landroid/view/View;
 
-    invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 93
-    iget-object v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mMoveToOlderButton:Landroid/widget/ImageButton;
+    .line 84
+    iget-object v0, p0, Lcom/android/email/activity/MessageCommandButtonView;->mMoveToOlderButton:Landroid/view/View;
 
-    invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    goto :goto_15
+    goto :goto_13
 .end method
 
 .method public setCallback(Lcom/android/email/activity/MessageCommandButtonView$Callback;)V
@@ -214,7 +286,7 @@
     .parameter "callback"
 
     .prologue
-    .line 97
+    .line 88
     if-nez p1, :cond_4
 
     sget-object p1, Lcom/android/email/activity/MessageCommandButtonView$EmptyCallback;->INSTANCE:Lcom/android/email/activity/MessageCommandButtonView$Callback;
@@ -223,6 +295,6 @@
     :cond_4
     iput-object p1, p0, Lcom/android/email/activity/MessageCommandButtonView;->mCallback:Lcom/android/email/activity/MessageCommandButtonView$Callback;
 
-    .line 98
+    .line 89
     return-void
 .end method

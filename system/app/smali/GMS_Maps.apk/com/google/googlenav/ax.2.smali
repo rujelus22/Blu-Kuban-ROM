@@ -1,294 +1,174 @@
 .class public Lcom/google/googlenav/ax;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# instance fields
+.field private final a:Ljava/util/List;
+
+.field private b:Z
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
+.method public constructor <init>()V
+    .registers 2
 
+    .prologue
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 32
+    invoke-static {}, Lcom/google/common/collect/cx;->a()Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/googlenav/ax;->a:Ljava/util/List;
+
+    .line 43
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)J
-    .registers 7
 
-    if-nez p0, :cond_a
+# virtual methods
+.method public a()V
+    .registers 2
 
-    new-instance v0, Ljava/lang/NumberFormatException;
+    .prologue
+    .line 177
+    iget-object v0, p0, Lcom/google/googlenav/ax;->a:Ljava/util/List;
 
-    const-string v1, "null string"
+    invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    invoke-direct {v0, v1}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
+    .line 178
+    return-void
+.end method
 
-    throw v0
+.method public a(Z)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 207
+    iput-boolean p1, p0, Lcom/google/googlenav/ax;->b:Z
+
+    .line 208
+    return-void
+.end method
+
+.method public a(Lcom/google/googlenav/ay;)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 185
+    iget-object v0, p0, Lcom/google/googlenav/ax;->a:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public b()Z
+    .registers 2
+
+    .prologue
+    .line 181
+    iget-object v0, p0, Lcom/google/googlenav/ax;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_a
+
+    const/4 v0, 0x1
+
+    :goto_9
+    return v0
 
     :cond_a
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    const/4 v0, 0x0
+
+    goto :goto_9
+.end method
+
+.method public b(Lcom/google/googlenav/ay;)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 189
+    iget-object v0, p0, Lcom/google/googlenav/ax;->a:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_18
-
-    new-instance v0, Ljava/lang/NumberFormatException;
-
-    const-string v1, "empty string"
-
-    invoke-direct {v0, v1}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_18
-    const-wide/16 v1, 0x0
-
-    const/4 v0, 0x0
-
-    :goto_1b
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    if-ge v0, v3, :cond_3c
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
-
-    move-result v3
-
-    const/16 v4, 0xa
-
-    invoke-static {v3, v4}, Ljava/lang/Character;->digit(CI)I
-
-    move-result v3
-
-    const/4 v4, -0x1
-
-    if-ne v3, v4, :cond_34
-
-    new-instance v0, Ljava/lang/NumberFormatException;
-
-    invoke-direct {v0, p0}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_34
-    const-wide/16 v4, 0xa
-
-    mul-long/2addr v1, v4
-
-    int-to-long v3, v3
-
-    add-long/2addr v1, v3
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1b
-
-    :cond_3c
-    return-wide v1
+    return v0
 .end method
 
-.method public static a(J)Ljava/lang/String;
-    .registers 10
+.method public c()Ljava/util/List;
+    .registers 2
 
-    const-wide/16 v0, 0x0
+    .prologue
+    .line 193
+    iget-object v0, p0, Lcom/google/googlenav/ax;->a:Ljava/util/List;
 
-    cmp-long v0, p0, v0
-
-    if-ltz v0, :cond_b
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_a
     return-object v0
+.end method
 
-    :cond_b
-    const-wide v0, 0x7fffffffffffffffL
+.method public d()Z
+    .registers 2
 
-    and-long/2addr v0, p0
+    .prologue
+    .line 203
+    iget-boolean v0, p0, Lcom/google/googlenav/ax;->b:Z
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+    return v0
+.end method
 
-    move-result-object v4
+.method public e()Z
+    .registers 3
 
-    const-string v5, "9223372036854775808"
+    .prologue
+    .line 217
+    iget-object v0, p0, Lcom/google/googlenav/ax;->a:Ljava/util/List;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v1
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    add-int/lit8 v1, v0, -0x1
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    move v3, v2
-
-    move v2, v1
-
-    move v1, v0
-
-    :goto_2c
-    if-ltz v2, :cond_51
-
-    if-ltz v1, :cond_4e
-
-    invoke-virtual {v4, v1}, Ljava/lang/String;->charAt(I)C
+    :cond_6
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    :goto_34
-    add-int/lit8 v0, v0, -0x30
+    if-eqz v0, :cond_1a
 
-    invoke-virtual {v5, v2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v7
-
-    add-int/lit8 v7, v7, -0x30
-
-    add-int/2addr v0, v7
-
-    add-int/2addr v0, v3
-
-    rem-int/lit8 v3, v0, 0xa
-
-    add-int/lit8 v3, v3, 0x30
-
-    int-to-char v3, v3
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    div-int/lit8 v3, v0, 0xa
-
-    add-int/lit8 v2, v2, -0x1
-
-    add-int/lit8 v0, v1, -0x1
-
-    move v1, v0
-
-    goto :goto_2c
-
-    :cond_4e
-    const/16 v0, 0x30
-
-    goto :goto_34
-
-    :cond_51
-    if-eqz v3, :cond_56
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    :cond_56
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->reverse()Ljava/lang/StringBuilder;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    check-cast v0, Lcom/google/googlenav/ay;
 
-    move-result-object v0
-
-    goto :goto_a
-.end method
-
-.method public static a(Lam/b;Lam/b;)Z
-    .registers 7
-
-    const/16 v3, 0x10
-
-    const/4 v4, 0x2
-
-    const/4 v0, 0x1
-
-    invoke-static {p0, v3}, Lam/g;->h(Lam/b;I)Z
-
-    move-result v1
-
-    invoke-static {p0, v4}, Lam/g;->b(Lam/b;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {p1, v3}, Lam/g;->h(Lam/b;I)Z
-
-    move-result v3
-
-    invoke-static {p1, v4}, Lam/g;->b(Lam/b;I)Ljava/lang/String;
-
-    move-result-object v4
-
-    if-ne v3, v0, :cond_19
-
-    if-ne v1, v0, :cond_19
-
-    :goto_18
-    return v0
-
-    :cond_19
-    if-eqz v4, :cond_1d
-
-    if-nez v2, :cond_1f
-
-    :cond_1d
-    const/4 v0, 0x0
-
-    goto :goto_18
-
-    :cond_1f
-    invoke-virtual {v4, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 218
+    invoke-virtual {v0}, Lcom/google/googlenav/ay;->d()Z
 
     move-result v0
 
-    goto :goto_18
-.end method
+    if-nez v0, :cond_6
 
-.method public static a(Lam/b;ZLjava/lang/String;)Z
-    .registers 6
-
+    .line 219
     const/4 v0, 0x1
 
-    const/16 v1, 0x10
-
-    invoke-static {p0, v1}, Lam/g;->h(Lam/b;I)Z
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    invoke-static {p0, v2}, Lam/g;->b(Lam/b;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    if-ne p1, v0, :cond_11
-
-    if-ne v1, v0, :cond_11
-
-    :goto_10
+    .line 223
+    :goto_19
     return v0
 
-    :cond_11
-    if-eqz p2, :cond_15
-
-    if-nez v2, :cond_17
-
-    :cond_15
+    :cond_1a
     const/4 v0, 0x0
 
-    goto :goto_10
-
-    :cond_17
-    invoke-virtual {p2, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    goto :goto_10
+    goto :goto_19
 .end method

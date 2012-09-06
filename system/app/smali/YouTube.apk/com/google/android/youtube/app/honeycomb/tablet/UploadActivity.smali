@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method protected final a(Landroid/os/Bundle;)Lcom/google/android/youtube/coreicecream/a;
+.method protected final a(Landroid/os/Bundle;)Lcom/google/android/youtube/coreicecream/Controller;
     .registers 5
     .parameter
 
@@ -29,13 +29,13 @@
     check-cast v0, Lcom/google/android/youtube/app/YouTubeApplication;
 
     .line 26
-    new-instance v1, Lcom/google/android/youtube/app/honeycomb/tablet/af;
+    new-instance v1, Lcom/google/android/youtube/app/honeycomb/tablet/ae;
 
-    new-instance v2, Lcom/google/android/youtube/app/honeycomb/tablet/ae;
+    new-instance v2, Lcom/google/android/youtube/app/honeycomb/tablet/ad;
 
-    invoke-direct {v2, p0}, Lcom/google/android/youtube/app/honeycomb/tablet/ae;-><init>(Landroid/app/Activity;)V
+    invoke-direct {v2, p0}, Lcom/google/android/youtube/app/honeycomb/tablet/ad;-><init>(Landroid/app/Activity;)V
 
-    invoke-direct {v1, v0, p0, v2, p1}, Lcom/google/android/youtube/app/honeycomb/tablet/af;-><init>(Lcom/google/android/youtube/app/YouTubeApplication;Landroid/app/Activity;Lcom/google/android/youtube/app/o;Landroid/os/Bundle;)V
+    invoke-direct {v1, v0, p0, v2, p1}, Lcom/google/android/youtube/app/honeycomb/tablet/ae;-><init>(Lcom/google/android/youtube/app/YouTubeApplication;Landroid/app/Activity;Lcom/google/android/youtube/app/a;Landroid/os/Bundle;)V
 
     return-object v1
 .end method

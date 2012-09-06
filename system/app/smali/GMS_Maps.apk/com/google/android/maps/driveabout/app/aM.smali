@@ -1,19 +1,23 @@
-.class Lcom/google/android/maps/driveabout/app/aM;
+.class Lcom/google/android/maps/driveabout/app/am;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/content/DialogInterface$OnDismissListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/aL;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/al;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/aL;)V
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/al;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aM;->a:Lcom/google/android/maps/driveabout/app/aL;
+    .prologue
+    .line 222
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/am;->a:Lcom/google/android/maps/driveabout/app/al;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,14 +26,18 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 2
+.method public onDismiss(Landroid/content/DialogInterface;)V
+    .registers 4
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aM;->a:Lcom/google/android/maps/driveabout/app/aL;
+    .prologue
+    .line 225
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/am;->a:Lcom/google/android/maps/driveabout/app/al;
 
-    iget-object v0, v0, Lcom/google/android/maps/driveabout/app/aL;->b:Lcom/google/android/maps/driveabout/app/NavigationService;
+    const/4 v1, 0x0
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/NavigationService;->g()V
+    invoke-static {v0, v1}, Lcom/google/android/maps/driveabout/app/al;->a(Lcom/google/android/maps/driveabout/app/al;Landroid/app/ProgressDialog;)Landroid/app/ProgressDialog;
 
+    .line 226
     return-void
 .end method

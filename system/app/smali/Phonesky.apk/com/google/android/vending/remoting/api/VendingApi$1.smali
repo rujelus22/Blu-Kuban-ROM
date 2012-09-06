@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 224
+    .line 163
     iput-object p1, p0, Lcom/google/android/vending/remoting/api/VendingApi$1;->this$0:Lcom/google/android/vending/remoting/api/VendingApi;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
     .parameter "response"
 
     .prologue
-    .line 228
+    .line 167
     return-void
 .end method
 
@@ -61,7 +61,7 @@
     .parameter "x0"
 
     .prologue
-    .line 224
+    .line 163
     check-cast p1, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;
 
     .end local p1

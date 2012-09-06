@@ -27,18 +27,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_1d
 
     .line 374
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "(CTRL-CHAR, code "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -55,25 +51,21 @@
     move-result-object v0
 
     .line 379
-    :goto_20
+    :goto_1c
     return-object v0
 
     .line 376
-    :cond_21
+    :cond_1d
     const/16 v1, 0xff
 
-    if-le p0, v1, :cond_57
+    if-le p0, v1, :cond_4f
 
     .line 377
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "\'"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
@@ -113,19 +105,15 @@
 
     move-result-object v0
 
-    goto :goto_20
+    goto :goto_1c
 
     .line 379
-    :cond_57
+    :cond_4f
     new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "\'"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
@@ -151,10 +139,10 @@
 
     move-result-object v0
 
-    goto :goto_20
+    goto :goto_1c
 .end method
 
-.method protected static v()V
+.method protected static w()V
     .registers 2
 
     .prologue
@@ -206,13 +194,9 @@
     :cond_15
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "Unrecognized character escape "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-static {p1}, Lorg/codehaus/jackson/a/f;->b(I)Ljava/lang/String;
 
@@ -247,13 +231,9 @@
     .line 330
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Illegal character ("
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-static {v0}, Lorg/codehaus/jackson/a/f;->b(I)Ljava/lang/String;
 
@@ -387,13 +367,9 @@
     .line 302
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "Unexpected character ("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-static {p1}, Lorg/codehaus/jackson/a/f;->b(I)Ljava/lang/String;
 
@@ -414,7 +390,7 @@
     move-result-object v0
 
     .line 303
-    if-eqz p2, :cond_36
+    if-eqz p2, :cond_32
 
     .line 304
     new-instance v1, Ljava/lang/StringBuilder;
@@ -440,7 +416,7 @@
     move-result-object v0
 
     .line 306
-    :cond_36
+    :cond_32
     invoke-virtual {p0, v0}, Lorg/codehaus/jackson/a/f;->a(Ljava/lang/String;)Lorg/codehaus/jackson/JsonParseException;
 
     move-result-object v0
@@ -465,7 +441,7 @@
 
     const/16 v0, 0x20
 
-    if-lt p1, v0, :cond_33
+    if-lt p1, v0, :cond_2f
 
     .line 344
     :cond_c
@@ -474,13 +450,9 @@
     .line 345
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Illegal unquoted character ("
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-static {v0}, Lorg/codehaus/jackson/a/f;->b(I)Ljava/lang/String;
 
@@ -512,7 +484,7 @@
     throw v0
 
     .line 348
-    :cond_33
+    :cond_2f
     return-void
 .end method
 
@@ -524,13 +496,9 @@
     .line 318
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "Unexpected end-of-input"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -566,20 +534,16 @@
 .method protected abstract s()V
 .end method
 
-.method protected final t()V
+.method protected final u()V
     .registers 3
 
     .prologue
     .line 312
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, " in "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, p0, Lorg/codehaus/jackson/a/f;->b:Lorg/codehaus/jackson/JsonToken;
 
@@ -597,7 +561,7 @@
     return-void
 .end method
 
-.method protected final u()V
+.method protected final v()V
     .registers 2
 
     .prologue

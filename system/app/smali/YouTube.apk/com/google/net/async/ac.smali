@@ -7,21 +7,8 @@
 
 
 # direct methods
-.method synthetic constructor <init>()V
-    .registers 2
-
-    .prologue
-    .line 35
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lcom/google/net/async/ac;-><init>(B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(B)V
-    .registers 2
-    .parameter
+.method private constructor <init>()V
+    .registers 1
 
     .prologue
     .line 35
@@ -30,15 +17,24 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(C)V
-    .registers 3
+.method synthetic constructor <init>(B)V
+    .registers 2
     .parameter
 
     .prologue
     .line 35
-    const/4 v0, 0x0
+    invoke-direct {p0}, Lcom/google/net/async/ac;-><init>()V
 
-    invoke-direct {p0, v0}, Lcom/google/net/async/ac;-><init>(B)V
+    return-void
+.end method
+
+.method synthetic constructor <init>(C)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 35
+    invoke-direct {p0}, Lcom/google/net/async/ac;-><init>()V
 
     return-void
 .end method

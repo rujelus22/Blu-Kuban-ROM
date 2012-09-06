@@ -85,7 +85,7 @@
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     .line 46
-    iput-boolean v4, p0, Lcom/android/internal/policy/impl/CircleMissedEventWidget;->DEBUG:Z
+    iput-boolean v3, p0, Lcom/android/internal/policy/impl/CircleMissedEventWidget;->DEBUG:Z
 
     .line 61
     const-string v2, "com.android.phone"

@@ -17,14 +17,14 @@
     .registers 2
 
     .prologue
-    .line 56
+    .line 58
     new-instance v0, Lorg/apache/commons/io/filefilter/CanWriteFileFilter;
 
     invoke-direct {v0}, Lorg/apache/commons/io/filefilter/CanWriteFileFilter;-><init>()V
 
     sput-object v0, Lorg/apache/commons/io/filefilter/CanWriteFileFilter;->CAN_WRITE:Lorg/apache/commons/io/filefilter/IOFileFilter;
 
-    .line 59
+    .line 61
     new-instance v0, Lorg/apache/commons/io/filefilter/NotFileFilter;
 
     sget-object v1, Lorg/apache/commons/io/filefilter/CanWriteFileFilter;->CAN_WRITE:Lorg/apache/commons/io/filefilter/IOFileFilter;
@@ -40,10 +40,10 @@
     .registers 1
 
     .prologue
-    .line 64
+    .line 66
     invoke-direct {p0}, Lorg/apache/commons/io/filefilter/AbstractFileFilter;-><init>()V
 
-    .line 65
+    .line 67
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .parameter "file"
 
     .prologue
-    .line 75
+    .line 77
     invoke-virtual {p1}, Ljava/io/File;->canWrite()Z
 
     move-result v0

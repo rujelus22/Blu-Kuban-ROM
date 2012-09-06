@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="18.0sp" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/help_drawer_tabs_title" />
+            <TextView android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/help_drawer_tabs_summary" />
+            <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:src="@drawable/help_drawer_tabs" />
+            <TextView android:textColor="@android:color/white" android:id="@id/help_drawer_tabs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" />
+        </LinearLayout>
+    </ScrollView>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="18.0sp" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/help_unread_count_title" />
+            <TextView android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/help_unread_count_summary" />
+            <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:src="@drawable/help_unread_count" />
+            <TextView android:textColor="@android:color/white" android:id="@id/help_unread_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" />
+        </LinearLayout>
+    </ScrollView>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="18.0sp" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/help_dock_gestures_title" />
+            <TextView android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/help_dock_gestures_summary" />
+            <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:src="@drawable/help_dock_gestures" />
+            <TextView android:textColor="@android:color/white" android:id="@id/help_dock_gestures" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" />
+        </LinearLayout>
+    </ScrollView>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="18.0sp" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/help_two_finger_gestures_title" />
+            <TextView android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/help_two_finger_gestures_summary" />
+            <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:src="@drawable/help_two_finger_gestures" />
+            <TextView android:textColor="@android:color/white" android:id="@id/help_two_finger_gestures" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" />
+        </LinearLayout>
+    </ScrollView>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="18.0sp" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/help_transition_effects_title" />
+            <TextView android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/help_transition_effects_summary" />
+            <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:src="@drawable/help_transition_effects" />
+            <TextView android:textColor="@android:color/white" android:id="@id/help_transition_effects" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" />
+        </LinearLayout>
+    </ScrollView>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="18.0sp" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/help_enhanced_folder_title" />
+            <TextView android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/help_folder_batch_add_summary" />
+            <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:src="@drawable/help_folder_batch_add" />
+            <TextView android:textColor="@android:color/white" android:id="@id/help_folder_batch_add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" />
+            <TextView android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/help_folder_merge_summary" />
+            <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:src="@drawable/help_folder_merge" />
+            <TextView android:textColor="@android:color/white" android:id="@id/help_folder_merge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" />
+        </LinearLayout>
+    </ScrollView>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="18.0sp" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/help_advanced_widgets_title" />
+            <TextView android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/help_advanced_widgets_summary" />
+            <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:src="@drawable/help_widgets_in_dock" />
+            <TextView android:textColor="@android:color/white" android:id="@id/help_advanced_widgets" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" />
+        </LinearLayout>
+    </ScrollView>
+</merge>

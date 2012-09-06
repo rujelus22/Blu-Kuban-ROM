@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:latin="http://schemas.android.com/apk/res/inputmethod.latin.ported">
+    <include latin:keyboardLayout="@xml/kbd_key_styles" />
+    <Row latin:keyWidth="10.000002%p">
+        <Key latin:moreKeys="@string/more_keys_for_a" latin:keyLabel="a" latin:keyHintLabel="1" />
+        <Key latin:moreKeys="@string/more_keys_for_z" latin:keyLabel="z" latin:keyHintLabel="2" />
+        <Key latin:moreKeys="@string/more_keys_for_e" latin:keyLabel="e" latin:keyHintLabel="3" />
+        <Key latin:moreKeys="@string/more_keys_for_r" latin:keyLabel="r" latin:keyHintLabel="4" />
+        <Key latin:moreKeys="@string/more_keys_for_t" latin:keyLabel="t" latin:keyHintLabel="5" />
+        <Key latin:moreKeys="@string/more_keys_for_y" latin:keyLabel="y" latin:keyHintLabel="6" />
+        <Key latin:moreKeys="@string/more_keys_for_u" latin:keyLabel="u" latin:keyHintLabel="7" />
+        <Key latin:moreKeys="@string/more_keys_for_i" latin:keyLabel="i" latin:keyHintLabel="8" />
+        <Key latin:moreKeys="@string/more_keys_for_o" latin:keyLabel="o" latin:keyHintLabel="9" />
+        <Key latin:moreKeys="@string/more_keys_for_p" latin:keyLabel="p" latin:keyHintLabel="0" latin:keyWidth="fillRight" />
+    </Row>
+    <Row latin:keyWidth="10.000002%p">
+        <Key latin:moreKeys="@string/more_keys_for_q" latin:keyLabel="q" />
+        <Key latin:moreKeys="@string/more_keys_for_s" latin:keyLabel="s" />
+        <Key latin:moreKeys="@string/more_keys_for_d" latin:keyLabel="d" />
+        <Key latin:keyLabel="f" />
+        <Key latin:moreKeys="@string/more_keys_for_g" latin:keyLabel="g" />
+        <Key latin:keyLabel="h" />
+        <Key latin:keyLabel="j" />
+        <Key latin:moreKeys="@string/more_keys_for_k" latin:keyLabel="k" />
+        <Key latin:moreKeys="@string/more_keys_for_l" latin:keyLabel="l" />
+        <Key latin:keyLabel="m" latin:keyWidth="fillRight" />
+    </Row>
+    <Row latin:keyWidth="10.000002%p">
+        <Key latin:keyStyle="shiftKeyStyle" latin:visualInsetsRight="0.99999905%p" latin:keyWidth="14.999998%p" />
+        <Key latin:moreKeys="@string/more_keys_for_w" latin:keyLabel="w" />
+        <Key latin:keyLabel="x" />
+        <Key latin:moreKeys="@string/more_keys_for_c" latin:keyLabel="c" />
+        <Key latin:moreKeys="@string/more_keys_for_v" latin:keyLabel="v" />
+        <Key latin:keyLabel="b" />
+        <Key latin:moreKeys="@string/more_keys_for_n" latin:keyLabel="n" />
+        <Key latin:moreKeys="‘,’,‚,‛" latin:keyLabel="'" />
+        <Key latin:keyStyle="deleteKeyStyle" latin:visualInsetsLeft="0.99999905%p" latin:keyWidth="fillRight" />
+    </Row>
+    <include latin:keyboardLayout="@xml/kbd_qwerty_row4" />
+</merge>

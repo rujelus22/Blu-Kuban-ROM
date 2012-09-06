@@ -8,7 +8,7 @@
 
 .field public final bytesTotal:J
 
-.field final mStatusId:I
+.field public final statusCode:I
 
 
 # direct methods
@@ -19,19 +19,19 @@
     .parameter "statusId"
 
     .prologue
-    .line 25
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 26
+    .line 25
     iput-wide p1, p0, Lcom/google/android/finsky/download/DownloadProgress;->bytesCompleted:J
 
-    .line 27
+    .line 26
     iput-wide p3, p0, Lcom/google/android/finsky/download/DownloadProgress;->bytesTotal:J
 
-    .line 28
-    iput p5, p0, Lcom/google/android/finsky/download/DownloadProgress;->mStatusId:I
+    .line 27
+    iput p5, p0, Lcom/google/android/finsky/download/DownloadProgress;->statusCode:I
 
-    .line 29
+    .line 28
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 38
+    .line 37
     if-eqz p1, :cond_21
 
     instance-of v2, p1, Lcom/google/android/finsky/download/DownloadProgress;
@@ -53,10 +53,10 @@
 
     move-object v0, p1
 
-    .line 39
+    .line 38
     check-cast v0, Lcom/google/android/finsky/download/DownloadProgress;
 
-    .line 40
+    .line 39
     .local v0, other:Lcom/google/android/finsky/download/DownloadProgress;
     iget-wide v2, p0, Lcom/google/android/finsky/download/DownloadProgress;->bytesCompleted:J
 
@@ -74,15 +74,15 @@
 
     if-nez v2, :cond_21
 
-    iget v2, p0, Lcom/google/android/finsky/download/DownloadProgress;->mStatusId:I
+    iget v2, p0, Lcom/google/android/finsky/download/DownloadProgress;->statusCode:I
 
-    iget v3, v0, Lcom/google/android/finsky/download/DownloadProgress;->mStatusId:I
+    iget v3, v0, Lcom/google/android/finsky/download/DownloadProgress;->statusCode:I
 
     if-ne v2, v3, :cond_21
 
     const/4 v1, 0x1
 
-    .line 43
+    .line 42
     .end local v0           #other:Lcom/google/android/finsky/download/DownloadProgress;
     :cond_21
     return v1
@@ -92,7 +92,7 @@
     .registers 2
 
     .prologue
-    .line 52
+    .line 51
     const/16 v0, 0x2a
 
     return v0
@@ -102,7 +102,7 @@
     .registers 4
 
     .prologue
-    .line 33
+    .line 32
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -131,7 +131,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Lcom/google/android/finsky/download/DownloadProgress;->mStatusId:I
+    iget v1, p0, Lcom/google/android/finsky/download/DownloadProgress;->statusCode:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

@@ -14,8 +14,8 @@
     <string name="toast_unknown">desconhecido</string>
     <string name="toast_granted">permitido</string>
     <string name="toast_denied">negado</string>
-    <string name="toast_package" formatted="false">%s (%s) foi %s permissões de superusuário</string>
-    <string name="toast_name" formatted="false">%s foi %s permissões de superusuário</string>
+    <string name="toast_package" formatted="false">%s (%s) %s as permissões de superusuário</string>
+    <string name="toast_name" formatted="false">%s %s as permissões de superusuário</string>
     <string name="toast_interactive">para um terminal interativo</string>
     <string name="tab_apps">Aplicativos</string>
     <string name="tab_logs">Historico</string>
@@ -44,8 +44,8 @@
     <string name="settings_root">Habilitar Superusuário</string>
     <string name="settings_root_enabled">Superusuário habilitado</string>
     <string name="settings_root_disabled">Superusuário desabilitado e oculto</string>
-    <string name="settings_survival">Modo de sobrevivência</string>
-    <string name="settings_survival_enabled">SuperSU tentará ativamente manter o acesso de superusuário, mesmo através das atualizações do OTA. Desativar antes do NANDROID!</string>
+    <string name="settings_survival">Modo sobrevivência</string>
+    <string name="settings_survival_enabled">SuperSU tentará manter o acesso de superusuário, até mesmo nas atualizações OTA. Disabilite antes do NANDROID !</string>
     <string name="settings_survival_disabled">Nenhuma ação especial será tomada para certificar que o acesso de superusuário será mentido</string>
     <string name="settings_reauth">Re-autenticação</string>
     <string name="settings_reauth_enabled">Peça permissão novamente se o app for reinstalado ou atualizado</string>
@@ -103,9 +103,9 @@
     <string name="follow_gplus">Google Plus</string>
     <string name="follow_twitter">Twitter</string>
     <string name="follow_nothanks">Não, obrigado</string>
-    <string name="settings_category_language">Language</string>
-    <string name="settings_language_title">Sobreposição de idioma</string>
-    <string name="settings_language_popup">Selecione o idioma</string>
-    <string name="settings_language_default">Idioma padrão</string>
+    <string name="settings_category_language">Γλωσσα</string>
+    <string name="settings_language_title">Παρακαμψη Γλωσσας</string>
+    <string name="settings_language_popup">Επιλογη Γλωσσας</string>
+    <string name="settings_language_default">Προεπιλογη Γλωσσας</string>
     <string name="settings_language_restart">É necessário re-iniciar o SuperSU para que a troca de idioma seja ativada (Se o idioma escolhido for suportado)</string>
 </resources>

@@ -42,26 +42,27 @@
     .parameter "error"
 
     .prologue
-    .line 126
+    .line 129
     iget-object v0, p0, Lcom/google/android/finsky/billing/BillingFlow;->mListener:Lcom/google/android/finsky/billing/BillingFlowListener;
 
     invoke-interface {v0, p0, p1}, Lcom/google/android/finsky/billing/BillingFlowListener;->onError(Lcom/google/android/finsky/billing/BillingFlow;Ljava/lang/String;)V
 
-    .line 127
+    .line 130
     return-void
 .end method
 
-.method private notifyFinished(Z)V
-    .registers 3
+.method private notifyFinished(ZLandroid/os/Bundle;)V
+    .registers 4
     .parameter "canceled"
+    .parameter "result"
 
     .prologue
-    .line 118
+    .line 121
     iget-object v0, p0, Lcom/google/android/finsky/billing/BillingFlow;->mListener:Lcom/google/android/finsky/billing/BillingFlowListener;
 
-    invoke-interface {v0, p0, p1}, Lcom/google/android/finsky/billing/BillingFlowListener;->onFinished(Lcom/google/android/finsky/billing/BillingFlow;Z)V
+    invoke-interface {v0, p0, p1, p2}, Lcom/google/android/finsky/billing/BillingFlowListener;->onFinished(Lcom/google/android/finsky/billing/BillingFlow;ZLandroid/os/Bundle;)V
 
-    .line 119
+    .line 122
     return-void
 .end method
 
@@ -71,7 +72,7 @@
     .registers 2
 
     .prologue
-    .line 77
+    .line 73
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -83,25 +84,27 @@
     .registers 2
 
     .prologue
-    .line 86
+    .line 82
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public cancel()V
-    .registers 2
+    .registers 3
 
     .prologue
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    .line 55
-    iput-boolean v0, p0, Lcom/google/android/finsky/billing/BillingFlow;->mFinished:Z
+    .line 51
+    iput-boolean v1, p0, Lcom/google/android/finsky/billing/BillingFlow;->mFinished:Z
 
-    .line 56
-    invoke-direct {p0, v0}, Lcom/google/android/finsky/billing/BillingFlow;->notifyFinished(Z)V
+    .line 52
+    const/4 v0, 0x0
 
-    .line 57
+    invoke-direct {p0, v1, v0}, Lcom/google/android/finsky/billing/BillingFlow;->notifyFinished(ZLandroid/os/Bundle;)V
+
+    .line 53
     return-void
 .end method
 
@@ -110,15 +113,15 @@
     .parameter "error"
 
     .prologue
-    .line 109
+    .line 112
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/billing/BillingFlow;->mFinished:Z
 
-    .line 110
+    .line 113
     invoke-direct {p0, p1}, Lcom/google/android/finsky/billing/BillingFlow;->notifyError(Ljava/lang/String;)V
 
-    .line 111
+    .line 114
     return-void
 .end method
 
@@ -126,44 +129,38 @@
     .registers 2
 
     .prologue
-    .line 101
+    .line 97
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/BillingFlow;->finish(Landroid/os/Bundle;)V
+
+    .line 98
+    return-void
+.end method
+
+.method protected finish(Landroid/os/Bundle;)V
+    .registers 3
+    .parameter "result"
+
+    .prologue
+    .line 104
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/billing/BillingFlow;->mFinished:Z
 
-    .line 102
+    .line 105
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcom/google/android/finsky/billing/BillingFlow;->notifyFinished(Z)V
+    invoke-direct {p0, v0, p1}, Lcom/google/android/finsky/billing/BillingFlow;->notifyFinished(ZLandroid/os/Bundle;)V
 
-    .line 103
+    .line 106
     return-void
 .end method
 
-.method public resumeFromSavedState(Landroid/os/Bundle;)V
-    .registers 3
-    .parameter "bundle"
-
-    .prologue
-    .line 41
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
+.method public abstract resumeFromSavedState(Landroid/os/Bundle;)V
 .end method
 
-.method public saveState(Landroid/os/Bundle;)V
-    .registers 3
-    .parameter "bundle"
-
-    .prologue
-    .line 48
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
+.method public abstract saveState(Landroid/os/Bundle;)V
 .end method
 
 .method public abstract start()V

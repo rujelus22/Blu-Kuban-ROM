@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 73
+    .line 51
     invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
     return-void
@@ -16,19 +16,24 @@
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;)V
-    .registers 4
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
+    .registers 5
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 76
-    new-instance v0, Lcom/google/android/youtube/core/model/LiveEvent$Builder;
+    .line 54
+    const-class v0, Lcom/google/android/youtube/core/model/f;
 
-    invoke-direct {v0}, Lcom/google/android/youtube/core/model/LiveEvent$Builder;-><init>()V
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->a(Ljava/lang/Class;)Ljava/lang/Object;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->offer(Ljava/lang/Object;)Z
+    move-result-object v0
 
-    .line 77
+    check-cast v0, Lcom/google/android/youtube/core/model/f;
+
+    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/f;->a(Ljava/lang/String;)Lcom/google/android/youtube/core/model/f;
+
+    .line 55
     return-void
 .end method

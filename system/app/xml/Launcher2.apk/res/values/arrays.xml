@@ -1,17 +1,382 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="extra_wallpapers" />
+    <array name="app_group_type_entries">
+        <item>@string/tab_all_label</item>
+        <item>@string/tab_system_label</item>
+        <item>@string/tab_downloaded_label</item>
+        <item>@string/tab_new_label</item>
+        <item>@string/tab_ungrouped_label</item>
+        <item>@string/tab_custom_label</item>
+    </array>
+    <string-array name="app_group_type_values">
+        <item>LIST_ALL</item>
+        <item>LIST_SYSTEM</item>
+        <item>LIST_DOWNLOADED</item>
+        <item>LIST_NEW</item>
+        <item>LIST_UNGROUPED</item>
+        <item>LIST_CUSTOM</item>
+    </string-array>
+    <array name="widget_group_type_entries">
+        <item>@string/tab_all_label</item>
+        <item>@string/tab_custom_label</item>
+    </array>
+    <string-array name="widget_group_type_values">
+        <item>LIST_ALL</item>
+        <item>LIST_CUSTOM</item>
+    </string-array>
+    <array name="margin_entries">
+        <item>@string/none</item>
+        <item>@string/small</item>
+        <item>@string/medium</item>
+        <item>@string/large</item>
+    </array>
+    <string-array name="margin_values">
+        <item>NONE</item>
+        <item>SMALL</item>
+        <item>MEDIUM</item>
+        <item>LARGE</item>
+    </string-array>
+    <array name="animation_entries">
+        <item>@string/none</item>
+        <item>@string/fly_in_out</item>
+        <item>@string/fade_in_out</item>
+        <item>@string/scale_in_out</item>
+    </array>
+    <string-array name="animation_values">
+        <item>NONE</item>
+        <item>FLY</item>
+        <item>FADE</item>
+        <item>SCALE</item>
+    </string-array>
+    <array name="infinite_scrolling_entries">
+        <item>@string/none</item>
+        <item>@string/jump</item>
+        <item>@string/bounce</item>
+    </array>
+    <string-array name="infinite_scrolling_values">
+        <item>NONE</item>
+        <item>JUMP</item>
+        <item>BOUNCE</item>
+    </string-array>
+    <array name="transition_effect_entries">
+        <item>@string/none</item>
+        <item>@string/tablet</item>
+        <item>@string/card_stack</item>
+        <item>@string/cube_in</item>
+        <item>@string/cube_out</item>
+        <item>@string/accordion</item>
+        <item>@string/cross</item>
+        <item>@string/flip</item>
+        <item>@string/overlap</item>
+        <item>@string/rotate</item>
+        <item>@string/scale</item>
+        <item>@string/wheel</item>
+    </array>
+    <string-array name="transition_effect_values">
+        <item>NONE</item>
+        <item>TABLET</item>
+        <item>CARD_STACK</item>
+        <item>CUBE_IN</item>
+        <item>CUBE</item>
+        <item>ACCORDION</item>
+        <item>CROSS</item>
+        <item>FLIP</item>
+        <item>OVERLAP</item>
+        <item>ROTATE</item>
+        <item>SCALE</item>
+        <item>WHEEL</item>
+    </string-array>
+    <array name="wallpaper_mode_entries">
+        <item>@string/single_screen_mode</item>
+        <item>@string/multiple_screen_non_scrolling_mode</item>
+        <item>@string/multiple_screen_mode</item>
+    </array>
+    <string-array name="wallpaper_mode_values">
+        <item>SINGLE_SCREEN</item>
+        <item>MULTIPLE_SCREEN_NON_SCROLLING</item>
+        <item>MULTIPLE_SCREEN</item>
+    </string-array>
+    <array name="homescreen_indicator_position_entries">
+        <item>@string/auto</item>
+        <item>@string/top_of_screen</item>
+        <item>@string/bottom_of_screen</item>
+    </array>
+    <string-array name="homescreen_indicator_position_values">
+        <item>AUTO</item>
+        <item>TOP</item>
+        <item>BOTTOM</item>
+    </string-array>
+    <array name="show_persistent_search_bar_entries">
+        <item>@string/always</item>
+        <item>@string/landscape_only</item>
+        <item>@string/never</item>
+    </array>
+    <string-array name="show_persistent_search_bar_values">
+        <item>ALWAYS</item>
+        <item>LANDSCAPE_ONLY</item>
+        <item>NEVER</item>
+    </string-array>
+    <array name="search_bar_style_entries">
+        <item>@string/ice_cream_sandwich</item>
+        <item>@string/jelly_bean</item>
+    </array>
+    <string-array name="search_bar_style_values">
+        <item>ICE_CREAM_SANDWICH</item>
+        <item>JELLY_BEAN</item>
+    </string-array>
+    <array name="drawer_apps_sorting_entries">
+        <item>@string/title</item>
+        <item>@string/install_date_desc</item>
+        <item>@string/install_date_asc</item>
+        <item>@string/mostly_used</item>
+    </array>
+    <string-array name="drawer_apps_sorting_values">
+        <item>APP_TITLE</item>
+        <item>INSTALL_DATE</item>
+        <item>INSTALL_DATE_ASC</item>
+        <item>MOSTLY_USED</item>
+    </string-array>
+    <array name="drawer_style_entries">
+        <item>@string/horizontal_paginated</item>
+        <item>@string/vertical_paginated</item>
+        <item>@string/vertical_continuous</item>
+    </array>
+    <string-array name="drawer_style_values">
+        <item>HORIZONTAL_PAGINATED</item>
+        <item>VERTICAL_PAGINATED</item>
+        <item>VERTICAL_CONTINUOUS</item>
+    </string-array>
+    <array name="drawer_tab_icon_entries">
+        <item>@string/none</item>
+        <item>@string/play_store</item>
+        <item>@string/apex_menu</item>
+        <item>@string/launch_app</item>
+    </array>
+    <string-array name="drawer_tab_icon_values">
+        <item>NONE</item>
+        <item>SHOP</item>
+        <item>MENU</item>
+        <item>APP</item>
+    </string-array>
+    <array name="drawer_action_entries">
+        <item>@string/do_nothing</item>
+        <item>@string/show_notifications</item>
+        <item>@string/toggle_status_bar</item>
+        <item>@string/next_group</item>
+        <item>@string/previous_group</item>
+        <item>@string/next_tab</item>
+        <item>@string/previous_tab</item>
+        <item>@string/quit_drawer</item>
+    </array>
+    <string-array name="drawer_action_values">
+        <item>DO_NOTHING</item>
+        <item>SHOW_NOTIFICATIONS</item>
+        <item>TOGGLE_STATUS_BAR</item>
+        <item>NEXT_GROUP</item>
+        <item>PREVIOUS_GROUP</item>
+        <item>NEXT_TAB</item>
+        <item>PREVIOUS_TAB</item>
+        <item>APP_DRAWER</item>
+    </string-array>
+    <array name="drawer_indicator_position_entries">
+        <item>@string/top</item>
+        <item>@string/bottom</item>
+    </array>
+    <string-array name="drawer_indicator_position_values">
+        <item>TOP</item>
+        <item>BOTTOM</item>
+    </string-array>
+    <array name="folder_preview_entries">
+        <item>@string/folder_stack</item>
+        <item>@string/folder_fan</item>
+        <item>@string/folder_grid</item>
+        <item>@string/folder_ios</item>
+    </array>
+    <string-array name="folder_preview_values">
+        <item>STACK</item>
+        <item>FAN</item>
+        <item>GRID</item>
+        <item>IOS</item>
+    </string-array>
+    <array name="folder_preview_icons">
+        <item>@drawable/ic_folder_preview_stack</item>
+        <item>@drawable/ic_folder_preview_fan</item>
+        <item>@drawable/ic_folder_preview_grid</item>
+        <item>@drawable/ic_folder_preview_ios</item>
+    </array>
+    <array name="folder_background_entries">
+        <item>@string/none</item>
+        <item>@string/folder_ring</item>
+        <item>@string/folder_square</item>
+        <item>@string/folder_ios</item>
+        <item>@string/folder_custom</item>
+    </array>
+    <string-array name="folder_background_values">
+        <item>NONE</item>
+        <item>RING</item>
+        <item>SQUARE</item>
+        <item>IOS</item>
+        <item>CUSTOM</item>
+    </string-array>
+    <array name="folder_background_icons">
+        <item></item>
+        <item>@drawable/portal_ring_inner_holo</item>
+        <item>@drawable/portal_square_inner_holo</item>
+        <item>@drawable/portal_ios_inner_holo</item>
+        <item></item>
+    </array>
+    <array name="screen_orientation_entries">
+        <item>@string/default_title</item>
+        <item>@string/auto_rotate</item>
+        <item>@string/always_portrait</item>
+        <item>@string/always_landscape</item>
+    </array>
+    <string-array name="screen_orientation_values">
+        <item>DEFAULT</item>
+        <item>ROTATE</item>
+        <item>PORTRAIT</item>
+        <item>LANDSCAPE</item>
+    </string-array>
+    <array name="action_entries">
+        <item>@string/do_nothing</item>
+        <item>@string/show_app_drawer</item>
+        <item>@string/show_previews</item>
+        <item>@string/goto_default_screen</item>
+        <item>@string/show_notifications</item>
+        <item>@string/toggle_status_bar</item>
+        <item>@string/toggle_dock</item>
+        <item>@string/recent_apps</item>
+        <item>@string/show_apex_menu</item>
+        <item>@string/show_apex_settings</item>
+        <item>@string/menu_lock_desktop</item>
+        <item>@string/launch_app</item>
+        <item>@string/launch_shortcut</item>
+    </array>
+    <string-array name="action_values">
+        <item>DO_NOTHING</item>
+        <item>APP_DRAWER</item>
+        <item>SHOW_PREVIEWS</item>
+        <item>GOTO_DEFAULT_SCREEN</item>
+        <item>SHOW_NOTIFICATIONS</item>
+        <item>TOGGLE_STATUS_BAR</item>
+        <item>TOGGLE_DOCK</item>
+        <item>RECENT_APPS</item>
+        <item>APEX_MENU</item>
+        <item>APEX_SETTINGS</item>
+        <item>LOCK_DESKTOP</item>
+        <item>LAUNCH_APP</item>
+        <item>LAUNCH_SHORTCUT</item>
+    </string-array>
+    <array name="desktop_long_press_entries">
+        <item>@string/do_nothing</item>
+        <item>@string/show_add_dialog</item>
+        <item>@string/show_wallpaper_chooser</item>
+        <item>@string/show_apex_menu</item>
+    </array>
+    <string-array name="desktop_long_press_values">
+        <item>DO_NOTHING</item>
+        <item>ADD_DIALOG</item>
+        <item>WALLPAPER</item>
+        <item>APEX_MENU</item>
+    </string-array>
+    <string-array name="phone_apps">
+        <item>com.android.contacts.DialtactsActivity</item>
+        <item>com.android.contacts.activities.DialtactsActivity</item>
+        <item>com.android.htccontacts.DialerTabActivity</item>
+        <item>com.android.htcdialer.Dialer</item>
+        <item>com.sec.android.app.contacts.DialerEntryActivity</item>
+        <item>com.sec.android.app.dialertab.DialerTabActivity</item>
+        <item>com.sonyericsson.android.socialphonebook.DialerEntryActivity</item>
+    </string-array>
+    <string-array name="sms_apps">
+        <item>com.android.mms.ui.ConversationList</item>
+        <item>com.android.mms.ui.ConversationComposer</item>
+        <item>com.sonyericsson.conversations.ui.ConversationListActivity</item>
+    </string-array>
+    <array name="app_locale_entries">
+        <item>@string/default_title</item>
+        <item>العربية‬</item>
+        <item>‪български</item>
+        <item>‪Català</item>
+        <item>‪Čeština‬</item>
+        <item>‪Dansk‬</item>
+        <item>‪Deutsch‬</item>
+        <item>‪Ελληνικά‬</item>
+        <item>‪English‬</item>
+        <item>‪Español</item>
+        <item>‪Suomi</item>
+        <item>‪Français‬</item>
+        <item>Hrvatski</item>
+        <item>Magyar</item>
+        <item>‪Italiano‬</item>
+        <item>עִבְרִית</item>
+        <item>日本語</item>
+        <item>‪ქართული</item>
+        <item>‪한국어</item>
+        <item>Norsk</item>
+        <item>‪Nederlands‬</item>
+        <item>‪Polski‬</item>
+        <item>‪Português</item>
+        <item>‪Română‬</item>
+        <item>‪Русский‬</item>
+        <item>Slovenčina</item>
+        <item>Slovenščina</item>
+        <item>‪Svenska‬</item>
+        <item>‪ไทย‬</item>
+        <item>‪Türkçe‬</item>
+        <item>Українська</item>
+        <item>Việt</item>
+        <item>简体中文</item>
+        <item>繁體中文</item>
+    </array>
+    <string-array name="app_locale_values">
+        <item></item>
+        <item>ar</item>
+        <item>bg</item>
+        <item>ca</item>
+        <item>cs</item>
+        <item>da</item>
+        <item>de</item>
+        <item>el</item>
+        <item>en</item>
+        <item>es</item>
+        <item>fi</item>
+        <item>fr</item>
+        <item>hr</item>
+        <item>hu</item>
+        <item>it</item>
+        <item>iw</item>
+        <item>ja</item>
+        <item>ka</item>
+        <item>ko</item>
+        <item>nb</item>
+        <item>nl</item>
+        <item>pl</item>
+        <item>pt</item>
+        <item>ro</item>
+        <item>ru</item>
+        <item>sk</item>
+        <item>sl</item>
+        <item>sv</item>
+        <item>th</item>
+        <item>tr</item>
+        <item>uk</item>
+        <item>vi</item>
+        <item>zh_CN</item>
+        <item>zh_TW</item>
+    </string-array>
+    <array name="check_updates_entries">
+        <item>@string/never</item>
+        <item>@string/stable_version</item>
+        <item>@string/beta_version</item>
+    </array>
+    <string-array name="check_updates_values">
+        <item>NEVER</item>
+        <item>STABLE</item>
+        <item>BETA</item>
+    </string-array>
     <string-array name="wallpapers">
-        <item>wallpaper_architecture</item>
-        <item>wallpaper_bubblegum</item>
-        <item>wallpaper_canyon</item>
-        <item>wallpaper_chroma</item>
-        <item>wallpaper_escape</item>
-        <item>wallpaper_fidelity</item>
-        <item>wallpaper_flora</item>
-        <item>wallpaper_kepler</item>
-        <item>wallpaper_leaf</item>
-        <item>wallpaper_noir</item>
-        <item>wallpaper_outofthebox</item>
+        <item>wallpaper_01</item>
+        <item>wallpaper_11</item>
     </string-array>
 </resources>

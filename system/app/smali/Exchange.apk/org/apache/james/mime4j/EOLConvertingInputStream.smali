@@ -32,7 +32,7 @@
     .parameter "flags"
 
     .prologue
-    .line 66
+    .line 65
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
     .line 42
@@ -50,7 +50,7 @@
 
     iput v0, p0, Lorg/apache/james/mime4j/EOLConvertingInputStream;->flags:I
 
-    .line 68
+    .line 67
     new-instance v0, Ljava/io/PushbackInputStream;
 
     const/4 v1, 0x2
@@ -59,10 +59,10 @@
 
     iput-object v0, p0, Lorg/apache/james/mime4j/EOLConvertingInputStream;->in:Ljava/io/PushbackInputStream;
 
-    .line 69
+    .line 68
     iput p2, p0, Lorg/apache/james/mime4j/EOLConvertingInputStream;->flags:I
 
-    .line 70
+    .line 69
     return-void
 .end method
 
@@ -77,12 +77,12 @@
     .end annotation
 
     .prologue
-    .line 78
+    .line 77
     iget-object v0, p0, Lorg/apache/james/mime4j/EOLConvertingInputStream;->in:Ljava/io/PushbackInputStream;
 
     invoke-virtual {v0}, Ljava/io/PushbackInputStream;->close()V
 
-    .line 79
+    .line 78
     return-void
 .end method
 
@@ -101,22 +101,22 @@
 
     const/16 v4, 0xa
 
-    .line 85
+    .line 84
     iget-object v3, p0, Lorg/apache/james/mime4j/EOLConvertingInputStream;->in:Ljava/io/PushbackInputStream;
 
     invoke-virtual {v3}, Ljava/io/PushbackInputStream;->read()I
 
     move-result v0
 
-    .line 87
+    .line 86
     .local v0, b:I
     if-ne v0, v2, :cond_e
 
-    .line 106
+    .line 105
     :goto_d
     return v2
 
-    .line 91
+    .line 90
     :cond_e
     iget v3, p0, Lorg/apache/james/mime4j/EOLConvertingInputStream;->flags:I
 
@@ -126,32 +126,32 @@
 
     if-ne v0, v5, :cond_2e
 
-    .line 92
+    .line 91
     iget-object v3, p0, Lorg/apache/james/mime4j/EOLConvertingInputStream;->in:Ljava/io/PushbackInputStream;
 
     invoke-virtual {v3}, Ljava/io/PushbackInputStream;->read()I
 
     move-result v1
 
-    .line 93
+    .line 92
     .local v1, c:I
     if-eq v1, v2, :cond_23
 
-    .line 94
+    .line 93
     iget-object v2, p0, Lorg/apache/james/mime4j/EOLConvertingInputStream;->in:Ljava/io/PushbackInputStream;
 
     invoke-virtual {v2, v1}, Ljava/io/PushbackInputStream;->unread(I)V
 
-    .line 96
+    .line 95
     :cond_23
     if-eq v1, v4, :cond_2a
 
-    .line 97
+    .line 96
     iget-object v2, p0, Lorg/apache/james/mime4j/EOLConvertingInputStream;->in:Ljava/io/PushbackInputStream;
 
     invoke-virtual {v2, v4}, Ljava/io/PushbackInputStream;->unread(I)V
 
-    .line 104
+    .line 103
     .end local v1           #c:I
     :cond_2a
     :goto_2a
@@ -159,10 +159,10 @@
 
     move v2, v0
 
-    .line 106
+    .line 105
     goto :goto_d
 
-    .line 99
+    .line 98
     :cond_2e
     iget v2, p0, Lorg/apache/james/mime4j/EOLConvertingInputStream;->flags:I
 
@@ -176,10 +176,10 @@
 
     if-eq v2, v5, :cond_2a
 
-    .line 100
+    .line 99
     const/16 v0, 0xd
 
-    .line 101
+    .line 100
     iget-object v2, p0, Lorg/apache/james/mime4j/EOLConvertingInputStream;->in:Ljava/io/PushbackInputStream;
 
     invoke-virtual {v2, v4}, Ljava/io/PushbackInputStream;->unread(I)V

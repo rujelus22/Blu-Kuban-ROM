@@ -5,8 +5,8 @@
         <item quantity="one">Tokeo %1$d</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">%1$d sasishi za %2$s zimepatikana.</item>
-        <item quantity="one">%1$d sasishi za %2$s zimepataka.</item>
+        <item quantity="other">Visasisho %1$d vimepatikana.</item>
+        <item quantity="one">Sasisho %1$d limepatikana.</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">Watu %1$s wali+1 hii.</item>

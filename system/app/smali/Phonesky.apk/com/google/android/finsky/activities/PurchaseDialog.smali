@@ -1,5 +1,5 @@
 .class public Lcom/google/android/finsky/activities/PurchaseDialog;
-.super Lcom/google/android/finsky/activities/PhoneskyActivity;
+.super Lcom/google/android/finsky/activities/AuthenticatedActivity;
 .source "PurchaseDialog.java"
 
 # interfaces
@@ -7,13 +7,15 @@
 
 
 # instance fields
+.field private mAccount:Landroid/accounts/Account;
+
 .field private mActionBar:Lcom/google/android/finsky/layout/CustomActionBar;
+
+.field private mContinueUrl:Ljava/lang/String;
 
 .field private mDocIdToPurchase:Ljava/lang/String;
 
 .field private mExternalReferrer:Ljava/lang/String;
-
-.field private mIsDirectLink:Z
 
 .field private mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
@@ -31,10 +33,10 @@
     .registers 2
 
     .prologue
-    .line 25
-    invoke-direct {p0}, Lcom/google/android/finsky/activities/PhoneskyActivity;-><init>()V
+    .line 28
+    invoke-direct {p0}, Lcom/google/android/finsky/activities/AuthenticatedActivity;-><init>()V
 
-    .line 44
+    .line 48
     new-instance v0, Lcom/google/android/finsky/activities/FakeNavigationManager;
 
     invoke-direct {v0, p0}, Lcom/google/android/finsky/activities/FakeNavigationManager;-><init>(Landroid/app/Activity;)V
@@ -44,8 +46,9 @@
     return-void
 .end method
 
-.method public static show(Landroid/content/Context;Ljava/lang/String;IZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 10
+.method public static show(Landroid/content/Context;Landroid/accounts/Account;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 11
+    .parameter
     .parameter
     .parameter
     .parameter
@@ -56,57 +59,62 @@
     .parameter
 
     .prologue
-    .line 67
+    .line 72
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/google/android/finsky/activities/PurchaseDialog;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 68
+    .line 73
+    const-string v1, "account"
+
+    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    .line 74
     const-string v1, "url"
 
-    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 69
+    .line 75
     const-string v1, "offer"
 
-    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 70
+    .line 76
     const-string v1, "referrer"
 
     invoke-virtual {v0, v1, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 71
+    .line 77
     const-string v1, "referrer_cookie"
 
     invoke-virtual {v0, v1, p5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 72
-    const-string v1, "is_direct_link"
-
-    invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 73
+    .line 78
     const-string v1, "ext_referrer"
 
     invoke-virtual {v0, v1, p6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 74
-    const-string v1, "docId_to_purchase"
+    .line 79
+    const-string v1, "continue_url"
 
     invoke-virtual {v0, v1, p7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 75
+    .line 80
+    const-string v1, "docId_to_purchase"
+
+    invoke-virtual {v0, v1, p8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 81
     const/high16 v1, 0x2001
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 76
+    .line 82
     invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 77
+    .line 83
     return-void
 .end method
 
@@ -116,7 +124,7 @@
     .registers 2
 
     .prologue
-    .line 93
+    .line 100
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
@@ -132,7 +140,7 @@
     .registers 2
 
     .prologue
-    .line 98
+    .line 105
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
@@ -148,7 +156,7 @@
     .registers 2
 
     .prologue
-    .line 103
+    .line 110
     const/4 v0, 0x0
 
     return-object v0
@@ -158,10 +166,10 @@
     .registers 1
 
     .prologue
-    .line 108
+    .line 115
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/PurchaseDialog;->finish()V
 
-    .line 109
+    .line 116
     return-void
 .end method
 
@@ -169,8 +177,8 @@
     .registers 3
 
     .prologue
-    .line 143
-    const v0, 0x7f0800cf
+    .line 150
+    const v0, 0x7f0800d5
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/activities/PurchaseDialog;->findViewById(I)Landroid/view/View;
 
@@ -180,7 +188,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 144
+    .line 151
     return-void
 .end method
 
@@ -189,21 +197,32 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 48
-    const v1, 0x7f04005d
+    .line 52
+    const v1, 0x7f04005f
 
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/activities/PurchaseDialog;->setContentView(I)V
 
-    .line 49
-    invoke-super {p0, p1}, Lcom/google/android/finsky/activities/PhoneskyActivity;->onCreate(Landroid/os/Bundle;)V
+    .line 53
+    invoke-super {p0, p1}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 51
+    .line 55
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/PurchaseDialog;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 52
+    .line 56
     .local v0, intent:Landroid/content/Intent;
+    const-string v1, "account"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/accounts/Account;
+
+    iput-object v1, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mAccount:Landroid/accounts/Account;
+
+    .line 57
     const-string v1, "url"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -212,7 +231,7 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mUrl:Ljava/lang/String;
 
-    .line 53
+    .line 58
     const-string v1, "offer"
 
     const/4 v2, -0x1
@@ -223,7 +242,7 @@
 
     iput v1, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mOfferType:I
 
-    .line 54
+    .line 59
     const-string v1, "referrer"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -232,7 +251,7 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mReferrerUrl:Ljava/lang/String;
 
-    .line 55
+    .line 60
     const-string v1, "referrer_cookie"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -241,7 +260,7 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mReferrerCookie:Ljava/lang/String;
 
-    .line 56
+    .line 61
     const-string v1, "ext_referrer"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -250,18 +269,16 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mExternalReferrer:Ljava/lang/String;
 
-    .line 57
-    const-string v1, "is_direct_link"
+    .line 62
+    const-string v1, "continue_url"
 
-    const/4 v2, 0x0
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    move-result-object v1
 
-    move-result v1
+    iput-object v1, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mContinueUrl:Ljava/lang/String;
 
-    iput-boolean v1, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mIsDirectLink:Z
-
-    .line 58
+    .line 63
     const-string v1, "docId_to_purchase"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -270,21 +287,21 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mDocIdToPurchase:Ljava/lang/String;
 
-    .line 60
+    .line 65
     invoke-static {p0}, Lcom/google/android/finsky/layout/CustomActionBarFactory;->getInstance(Landroid/app/Activity;)Lcom/google/android/finsky/layout/CustomActionBar;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mActionBar:Lcom/google/android/finsky/layout/CustomActionBar;
 
-    .line 61
+    .line 66
     iget-object v1, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mActionBar:Lcom/google/android/finsky/layout/CustomActionBar;
 
     iget-object v2, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     invoke-interface {v1, v2, p0}, Lcom/google/android/finsky/layout/CustomActionBar;->initialize(Lcom/google/android/finsky/navigationmanager/NavigationManager;Landroid/app/Activity;)V
 
-    .line 62
+    .line 67
     return-void
 .end method
 
@@ -293,7 +310,7 @@
     .parameter "item"
 
     .prologue
-    .line 128
+    .line 135
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v0
@@ -302,18 +319,18 @@
 
     if-ne v0, v1, :cond_e
 
-    .line 129
+    .line 136
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/PurchaseDialog;->finish()V
 
-    .line 130
+    .line 137
     const/4 v0, 0x1
 
-    .line 132
+    .line 139
     :goto_d
     return v0
 
     :cond_e
-    invoke-super {p0, p1}, Lcom/google/android/finsky/activities/PhoneskyActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    invoke-super {p0, p1}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v0
 
@@ -321,63 +338,67 @@
 .end method
 
 .method protected onReady(Z)V
-    .registers 12
+    .registers 14
     .parameter "shouldHandleIntent"
 
     .prologue
-    const v9, 0x7f08003e
+    const v11, 0x7f080033
 
-    .line 81
+    .line 87
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/PurchaseDialog;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v0
 
-    invoke-virtual {v0, v9}, Landroid/support/v4/app/FragmentManager;->findFragmentById(I)Landroid/support/v4/app/Fragment;
+    invoke-virtual {v0, v11}, Landroid/support/v4/app/FragmentManager;->findFragmentById(I)Landroid/support/v4/app/Fragment;
 
     move-result-object v0
 
     if-eqz v0, :cond_e
 
-    .line 89
+    .line 96
     :goto_d
     return-void
 
-    .line 84
+    .line 90
     :cond_e
-    iget-object v0, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mUrl:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mAccount:Landroid/accounts/Account;
 
-    iget v1, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mOfferType:I
+    iget-object v1, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mUrl:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mReferrerUrl:Ljava/lang/String;
+    iget v2, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mOfferType:I
 
-    iget-object v3, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mReferrerCookie:Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mReferrerUrl:Ljava/lang/String;
 
-    iget-boolean v4, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mIsDirectLink:Z
+    iget-object v4, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mReferrerCookie:Ljava/lang/String;
 
-    iget-object v5, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mExternalReferrer:Ljava/lang/String;
+    const/4 v5, 0x0
 
-    iget-object v6, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mDocIdToPurchase:Ljava/lang/String;
+    iget-object v6, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mExternalReferrer:Ljava/lang/String;
 
-    invoke-static/range {v0 .. v6}, Lcom/google/android/finsky/activities/PurchaseFragment;->newInstance(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/activities/PurchaseFragment;
+    iget-object v7, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mContinueUrl:Ljava/lang/String;
 
-    move-result-object v7
+    iget-object v8, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mDocIdToPurchase:Ljava/lang/String;
 
-    .line 86
-    .local v7, fragment:Lcom/google/android/finsky/activities/PurchaseFragment;
+    invoke-static/range {v0 .. v8}, Lcom/google/android/finsky/activities/PurchaseFragment;->newInstance(Landroid/accounts/Account;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/activities/PurchaseFragment;
+
+    move-result-object v9
+
+    .line 93
+    .local v9, fragment:Lcom/google/android/finsky/activities/PurchaseFragment;
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/PurchaseDialog;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
 
-    move-result-object v8
+    move-result-object v10
 
-    .line 87
-    .local v8, ft:Landroid/support/v4/app/FragmentTransaction;
-    invoke-virtual {v8, v9, v7}, Landroid/support/v4/app/FragmentTransaction;->add(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
+    .line 94
+    .local v10, ft:Landroid/support/v4/app/FragmentTransaction;
+    invoke-virtual {v10, v11, v9}, Landroid/support/v4/app/FragmentTransaction;->add(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 
-    .line 88
-    invoke-virtual {v8}, Landroid/support/v4/app/FragmentTransaction;->commit()I
+    .line 95
+    invoke-virtual {v10}, Landroid/support/v4/app/FragmentTransaction;->commit()I
 
     goto :goto_d
 .end method
@@ -387,15 +408,15 @@
     .parameter "outState"
 
     .prologue
-    .line 137
+    .line 144
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mStateSaved:Z
 
-    .line 138
-    invoke-super {p0, p1}, Lcom/google/android/finsky/activities/PhoneskyActivity;->onSaveInstanceState(Landroid/os/Bundle;)V
+    .line 145
+    invoke-super {p0, p1}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 139
+    .line 146
     return-void
 .end method
 
@@ -406,14 +427,14 @@
     .parameter "goBack"
 
     .prologue
-    .line 113
+    .line 120
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/PurchaseDialog;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v0
 
     invoke-static {v0, p1, p2, p3}, Lcom/google/android/finsky/activities/ErrorDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;Ljava/lang/String;Z)Lcom/google/android/finsky/activities/ErrorDialog;
 
-    .line 114
+    .line 121
     return-void
 .end method
 
@@ -422,12 +443,12 @@
     .parameter "breadcrumb"
 
     .prologue
-    .line 118
+    .line 125
     iget-object v0, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mActionBar:Lcom/google/android/finsky/layout/CustomActionBar;
 
     invoke-interface {v0, p1}, Lcom/google/android/finsky/layout/CustomActionBar;->updateBreadcrumb(Ljava/lang/String;)V
 
-    .line 119
+    .line 126
     return-void
 .end method
 
@@ -436,11 +457,11 @@
     .parameter "backend"
 
     .prologue
-    .line 123
+    .line 130
     iget-object v0, p0, Lcom/google/android/finsky/activities/PurchaseDialog;->mActionBar:Lcom/google/android/finsky/layout/CustomActionBar;
 
     invoke-interface {v0, p1}, Lcom/google/android/finsky/layout/CustomActionBar;->updateCurrentBackendId(I)V
 
-    .line 124
+    .line 131
     return-void
 .end method

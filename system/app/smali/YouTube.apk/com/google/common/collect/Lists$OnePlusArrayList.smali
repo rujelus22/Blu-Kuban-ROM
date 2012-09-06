@@ -21,17 +21,21 @@
 .method constructor <init>(Ljava/lang/Object;[Ljava/lang/Object;)V
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+    .end parameter
 
     .prologue
-    .line 243
+    .line 249
     invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
 
-    .line 244
+    .line 250
     iput-object p1, p0, Lcom/google/common/collect/Lists$OnePlusArrayList;->first:Ljava/lang/Object;
 
-    .line 245
-    invoke-static {p2}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 251
+    invoke-static {p2}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -39,7 +43,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Lists$OnePlusArrayList;->rest:[Ljava/lang/Object;
 
-    .line 246
+    .line 252
     return-void
 .end method
 
@@ -50,14 +54,14 @@
     .parameter
 
     .prologue
-    .line 252
+    .line 258
     invoke-virtual {p0}, Lcom/google/common/collect/Lists$OnePlusArrayList;->size()I
 
     move-result v0
 
-    invoke-static {p1, v0}, Lcom/google/common/base/t;->a(II)I
+    invoke-static {p1, v0}, Lcom/google/common/base/ag;->a(II)I
 
-    .line 253
+    .line 259
     if-nez p1, :cond_c
 
     iget-object v0, p0, Lcom/google/common/collect/Lists$OnePlusArrayList;->first:Ljava/lang/Object;
@@ -79,7 +83,7 @@
     .registers 2
 
     .prologue
-    .line 248
+    .line 254
     iget-object v0, p0, Lcom/google/common/collect/Lists$OnePlusArrayList;->rest:[Ljava/lang/Object;
 
     array-length v0, v0

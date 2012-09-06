@@ -18,19 +18,19 @@
     .parameter "file"
 
     .prologue
-    .line 73
+    .line 72
     iget-object v0, p0, Lorg/apache/commons/io/filefilter/DelegateFileFilter;->fileFilter:Ljava/io/FileFilter;
 
     if-eqz v0, :cond_b
 
-    .line 74
+    .line 73
     iget-object v0, p0, Lorg/apache/commons/io/filefilter/DelegateFileFilter;->fileFilter:Ljava/io/FileFilter;
 
     invoke-interface {v0, p1}, Ljava/io/FileFilter;->accept(Ljava/io/File;)Z
 
     move-result v0
 
-    .line 76
+    .line 75
     :goto_a
     return v0
 
@@ -48,19 +48,19 @@
     .parameter "name"
 
     .prologue
-    .line 88
+    .line 87
     iget-object v0, p0, Lorg/apache/commons/io/filefilter/DelegateFileFilter;->filenameFilter:Ljava/io/FilenameFilter;
 
     if-eqz v0, :cond_b
 
-    .line 89
+    .line 88
     iget-object v0, p0, Lorg/apache/commons/io/filefilter/DelegateFileFilter;->filenameFilter:Ljava/io/FilenameFilter;
 
     invoke-interface {v0, p1, p2}, Ljava/io/FilenameFilter;->accept(Ljava/io/File;Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 91
+    .line 90
     :goto_a
     return v0
 
@@ -76,7 +76,7 @@
     .registers 4
 
     .prologue
-    .line 101
+    .line 100
     iget-object v1, p0, Lorg/apache/commons/io/filefilter/DelegateFileFilter;->fileFilter:Ljava/io/FileFilter;
 
     if-eqz v1, :cond_2c
@@ -87,7 +87,7 @@
 
     move-result-object v0
 
-    .line 102
+    .line 101
     .local v0, delegate:Ljava/lang/String;
     :goto_a
     new-instance v1, Ljava/lang/StringBuilder;
@@ -124,7 +124,7 @@
 
     return-object v1
 
-    .line 101
+    .line 100
     .end local v0           #delegate:Ljava/lang/String;
     :cond_2c
     iget-object v1, p0, Lorg/apache/commons/io/filefilter/DelegateFileFilter;->filenameFilter:Ljava/io/FilenameFilter;

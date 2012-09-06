@@ -21,7 +21,7 @@
     .registers 1
 
     .prologue
-    .line 43
+    .line 44
     const-class v0, Lorg/apache/james/mime4j/message/MemoryBinaryBody;
 
     invoke-static {v0}, Lorg/apache/james/mime4j/LogFactory;->getLog(Ljava/lang/Class;)Lorg/apache/james/mime4j/Log;
@@ -45,16 +45,16 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 54
+    .line 55
     invoke-direct {p0}, Lorg/apache/james/mime4j/message/AbstractBody;-><init>()V
 
-    .line 45
+    .line 46
     iput-object v2, p0, Lorg/apache/james/mime4j/message/MemoryBinaryBody;->parent:Lorg/apache/james/mime4j/message/Entity;
 
-    .line 46
+    .line 47
     iput-object v2, p0, Lorg/apache/james/mime4j/message/MemoryBinaryBody;->tempFile:[B
 
-    .line 56
+    .line 57
     invoke-static {}, Lorg/apache/james/mime4j/util/TempStorage;->getInstance()Lorg/apache/james/mime4j/util/TempStorage;
 
     move-result-object v2
@@ -63,27 +63,27 @@
 
     move-result-object v1
 
-    .line 58
+    .line 59
     .local v1, tempPath:Lorg/apache/james/mime4j/util/TempPath;
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 59
+    .line 60
     .local v0, out:Ljava/io/ByteArrayOutputStream;
     invoke-static {p1, v0}, Lorg/apache/commons/io/IOUtils;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)I
 
-    .line 60
+    .line 61
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->close()V
 
-    .line 61
+    .line 62
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v2
 
     iput-object v2, p0, Lorg/apache/james/mime4j/message/MemoryBinaryBody;->tempFile:[B
 
-    .line 62
+    .line 63
     return-void
 .end method
 
@@ -94,9 +94,9 @@
     .parameter "parent"
 
     .prologue
-    .line 75
+    .line 76
     iput-object p1, p0, Lorg/apache/james/mime4j/message/MemoryBinaryBody;->parent:Lorg/apache/james/mime4j/message/Entity;
 
-    .line 76
+    .line 77
     return-void
 .end method

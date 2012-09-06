@@ -75,36 +75,36 @@
     .end annotation
 
     .prologue
-    .line 58
+    .line 43
     instance-of v0, p1, Lcom/android/volley/AuthFailureError;
 
     if-eqz v0, :cond_13
 
-    .line 59
+    .line 44
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/api/VendingRetryPolicy;->mHadAuthException:Z
 
     if-eqz v0, :cond_9
 
-    .line 60
+    .line 45
     throw p1
 
-    .line 62
+    .line 47
     :cond_9
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/api/VendingRetryPolicy;->mHadAuthException:Z
 
-    .line 63
+    .line 48
     iget-object v0, p0, Lcom/google/android/vending/remoting/api/VendingRetryPolicy;->mVendingApiContext:Lcom/google/android/vending/remoting/api/VendingApiContext;
 
     iget-boolean v1, p0, Lcom/google/android/vending/remoting/api/VendingRetryPolicy;->mUseSecureToken:Z
 
     invoke-virtual {v0, v1}, Lcom/google/android/vending/remoting/api/VendingApiContext;->invalidateAuthToken(Z)V
 
-    .line 65
+    .line 50
     :cond_13
     invoke-super {p0, p1}, Lcom/android/volley/DefaultRetryPolicy;->retry(Lcom/android/volley/VolleyError;)V
 
-    .line 66
+    .line 51
     return-void
 .end method

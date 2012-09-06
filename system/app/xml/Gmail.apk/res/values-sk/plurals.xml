@@ -53,40 +53,40 @@
         <item quantity="one">Vykonáva sa operácia s %1$d konverzáciou. Čakajte.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">Konverzácie boli ignorované (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
-        <item quantity="one">Konverzácie boli ignorované (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
+        <item quantity="other">Konverzácie boli ignorované (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
+        <item quantity="one">Konverzácie boli ignorované (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">Konverzácie boli nahlásené ako spam (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
-        <item quantity="one">Konverzácie boli nahlásené ako spam (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
+        <item quantity="other">Konverzácie boli nahlásené ako spam (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
+        <item quantity="one">Konverzácie boli nahlásené ako spam (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">Konverzácie boli archivované (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
-        <item quantity="one">Konverzácie boli archivované (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
+        <item quantity="other">Konverzácie boli archivované (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
+        <item quantity="one">Konverzácie boli archivované (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">Konverzácie boli presunuté do Doručenej pošty (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
-        <item quantity="one">Konverzácie boli presunuté do Doručenej pošty (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
+        <item quantity="other">Konverzácie boli presunuté do Doručenej pošty (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
+        <item quantity="one">Konverzácie boli presunuté do Doručenej pošty (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">Konverzácie boli odstránené (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
-        <item quantity="one">Konverzácie boli odstránené (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
+        <item quantity="other">Konverzácie boli odstránené (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
+        <item quantity="one">Konverzácie boli odstránené (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">Konverzácie boli označené ako dôležité (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
-        <item quantity="one">Konverzácie boli označené ako dôležité (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
+        <item quantity="other">Konverzácie boli označené ako dôležité (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
+        <item quantity="one">Konverzácie boli označené ako dôležité (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">Konverzácie boli označené ako nedôležité (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
-        <item quantity="one">Konverzácie boli označené ako nedôležité (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
+        <item quantity="other">Konverzácie boli označené ako nedôležité (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
+        <item quantity="one">Konverzácie boli označené ako nedôležité (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">Konverzácie boli označené ako prečítané (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
-        <item quantity="one">Konverzácie boli označené ako prečítané (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
+        <item quantity="other">Konverzácie boli označené ako prečítané (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
+        <item quantity="one">Konverzácie boli označené ako prečítané (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">Konverzácie boli označené ako neprečítané (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
-        <item quantity="one">Konverzácie boli označené ako neprečítané (počet: &amp;lt;b>%1$d&amp;lt;/b>)</item>
+        <item quantity="other">Konverzácie boli označené ako neprečítané (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
+        <item quantity="one">Konverzácie boli označené ako neprečítané (počet: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Zmenené menovky.</item>

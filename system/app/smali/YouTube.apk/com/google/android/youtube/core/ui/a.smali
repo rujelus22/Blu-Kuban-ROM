@@ -16,7 +16,7 @@
     .parameter
 
     .prologue
-    .line 736
+    .line 742
     iput-object p1, p0, Lcom/google/android/youtube/core/ui/a;->a:Lcom/google/android/youtube/core/ui/AbstractWorkspace;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
     .registers 3
 
     .prologue
-    .line 739
+    .line 745
     iget-object v0, p0, Lcom/google/android/youtube/core/ui/a;->a:Lcom/google/android/youtube/core/ui/AbstractWorkspace;
 
     iget-object v1, p0, Lcom/google/android/youtube/core/ui/a;->a:Lcom/google/android/youtube/core/ui/AbstractWorkspace;
@@ -47,6 +47,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->dispatchDisplayHint(I)V
 
-    .line 740
+    .line 746
     return-void
 .end method

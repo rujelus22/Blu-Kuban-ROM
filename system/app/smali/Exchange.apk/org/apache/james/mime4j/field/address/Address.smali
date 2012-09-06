@@ -8,8 +8,8 @@
     .registers 1
 
     .prologue
-    .line 29
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 32
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -30,11 +30,11 @@
     .end annotation
 
     .prologue
-    .line 37
+    .line 42
     .local p1, results:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lorg/apache/james/mime4j/field/address/Address;>;"
     invoke-virtual {p0, p1}, Lorg/apache/james/mime4j/field/address/Address;->doAddMailboxesTo(Ljava/util/ArrayList;)V
 
-    .line 38
+    .line 43
     return-void
 .end method
 

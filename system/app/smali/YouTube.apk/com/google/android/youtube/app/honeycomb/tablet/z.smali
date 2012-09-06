@@ -1,22 +1,23 @@
-.class final Lcom/google/android/youtube/app/honeycomb/tablet/z;
-.super Lcom/google/android/youtube/app/ui/cv;
+.class public final Lcom/google/android/youtube/app/honeycomb/tablet/z;
+.super Lcom/google/android/youtube/core/ui/j;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/tablet/y;
+.field private final a:Lcom/google/android/youtube/app/adapter/as;
+
+.field private final b:Lcom/google/android/youtube/core/async/ar;
+
+.field private final h:Lcom/google/android/youtube/core/async/ar;
+
+.field private final i:Lcom/google/android/youtube/core/b/ag;
+
+.field private final j:Lcom/google/android/youtube/core/async/c;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/tablet/y;Landroid/app/Activity;Lcom/google/android/youtube/app/o;Lcom/google/android/youtube/core/ui/h;Lcom/google/android/youtube/app/a/x;Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/client/af;Lcom/google/android/youtube/core/client/ag;ZZLcom/google/android/youtube/core/Analytics;Lcom/google/android/youtube/core/Analytics$VideoCategory;Lcom/google/android/youtube/core/client/al;Lcom/google/android/youtube/core/e;)V
-    .registers 29
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
+.method public constructor <init>(Landroid/app/Activity;Lcom/google/android/youtube/core/ui/g;Lcom/google/android/youtube/app/adapter/as;Lcom/google/android/youtube/core/async/ar;Lcom/google/android/youtube/core/async/ar;Lcom/google/android/youtube/core/b/ag;Lcom/google/android/youtube/core/d;)V
+    .registers 14
     .parameter
     .parameter
     .parameter
@@ -26,72 +27,138 @@
     .parameter
 
     .prologue
-    .line 135
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/z;->a:Lcom/google/android/youtube/app/honeycomb/tablet/y;
-
-    const/4 v8, 0x1
-
     move-object v0, p0
 
-    move-object/from16 v1, p2
+    move-object v1, p1
 
-    move-object/from16 v2, p3
+    move-object v2, p2
 
-    move-object/from16 v3, p4
+    move-object v3, p3
 
-    move-object/from16 v4, p5
+    move-object v4, p4
 
-    move-object/from16 v5, p6
+    move-object v5, p7
 
-    move-object/from16 v6, p7
+    .line 50
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/youtube/core/ui/j;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/ui/g;Lcom/google/android/youtube/core/a/a;Lcom/google/android/youtube/core/async/ar;Lcom/google/android/youtube/core/d;)V
 
-    move-object/from16 v7, p8
+    .line 52
+    const-string v0, "imageClient may not be null"
 
-    move/from16 v9, p10
+    invoke-static {p6, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object/from16 v10, p11
+    move-result-object v0
 
-    move-object/from16 v11, p12
+    check-cast v0, Lcom/google/android/youtube/core/b/ag;
 
-    move-object/from16 v12, p13
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/z;->i:Lcom/google/android/youtube/core/b/ag;
 
-    move-object/from16 v13, p14
+    .line 53
+    iput-object p3, p0, Lcom/google/android/youtube/app/honeycomb/tablet/z;->a:Lcom/google/android/youtube/app/adapter/as;
 
-    invoke-direct/range {v0 .. v13}, Lcom/google/android/youtube/app/ui/cv;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/app/o;Lcom/google/android/youtube/core/ui/h;Lcom/google/android/youtube/app/a/x;Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/client/af;Lcom/google/android/youtube/core/client/ag;ZZLcom/google/android/youtube/core/Analytics;Lcom/google/android/youtube/core/Analytics$VideoCategory;Lcom/google/android/youtube/core/client/al;Lcom/google/android/youtube/core/e;)V
+    .line 54
+    iput-object p5, p0, Lcom/google/android/youtube/app/honeycomb/tablet/z;->h:Lcom/google/android/youtube/core/async/ar;
 
+    .line 55
+    new-instance v0, Lcom/google/android/youtube/app/honeycomb/tablet/aa;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/google/android/youtube/app/honeycomb/tablet/aa;-><init>(Lcom/google/android/youtube/app/honeycomb/tablet/z;B)V
+
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/async/c;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/l;)Lcom/google/android/youtube/core/async/c;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/z;->j:Lcom/google/android/youtube/core/async/c;
+
+    .line 56
+    invoke-virtual {p1}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/google/android/youtube/core/async/i;
+
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/tablet/z;->i:Lcom/google/android/youtube/core/b/ag;
+
+    new-instance v3, Lcom/google/android/youtube/app/ui/cf;
+
+    invoke-direct {v3, v0}, Lcom/google/android/youtube/app/ui/cf;-><init>(Landroid/content/res/Resources;)V
+
+    invoke-direct {v1, v2, v3}, Lcom/google/android/youtube/core/async/i;-><init>(Lcom/google/android/youtube/core/b/ag;Lcom/google/android/youtube/core/async/k;)V
+
+    new-instance v0, Lcom/google/android/youtube/core/async/ao;
+
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/tablet/z;->h:Lcom/google/android/youtube/core/async/ar;
+
+    invoke-direct {v0, v2, v1}, Lcom/google/android/youtube/core/async/ao;-><init>(Lcom/google/android/youtube/core/async/ar;Lcom/google/android/youtube/core/async/ar;)V
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/z;->b:Lcom/google/android/youtube/core/async/ar;
+
+    .line 57
     return-void
+.end method
+
+.method static synthetic a(Lcom/google/android/youtube/app/honeycomb/tablet/z;)Lcom/google/android/youtube/app/adapter/as;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 33
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/z;->a:Lcom/google/android/youtube/app/adapter/as;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method protected final a(Landroid/view/View;Lcom/google/android/youtube/core/model/Video;I)V
-    .registers 8
-    .parameter
+.method protected final a(Lcom/google/android/youtube/core/async/GDataRequest;Ljava/util/List;)V
+    .registers 7
     .parameter
     .parameter
 
     .prologue
-    .line 138
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/z;->a:Lcom/google/android/youtube/app/honeycomb/tablet/y;
+    .line 71
+    invoke-super {p0, p1, p2}, Lcom/google/android/youtube/core/ui/j;->a(Lcom/google/android/youtube/core/async/GDataRequest;Ljava/util/List;)V
 
-    iget-object v0, v0, Lcom/google/android/youtube/app/honeycomb/tablet/y;->d:Lcom/google/android/youtube/app/o;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/z;->a:Lcom/google/android/youtube/app/honeycomb/tablet/y;
-
-    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/tablet/y;->a(Lcom/google/android/youtube/app/honeycomb/tablet/y;)Landroid/net/Uri;
+    .line 72
+    invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/tablet/z;->a:Lcom/google/android/youtube/app/honeycomb/tablet/y;
+    :goto_7
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-static {v2}, Lcom/google/android/youtube/app/honeycomb/tablet/y;->b(Lcom/google/android/youtube/app/honeycomb/tablet/y;)Z
+    move-result v0
 
-    move-result v2
+    if-eqz v0, :cond_25
 
-    sget-object v3, Lcom/google/android/youtube/core/client/DefaultVideoStatsClient$Referrers;->PLAYLIST:Lcom/google/android/youtube/core/client/DefaultVideoStatsClient$Referrers;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-interface {v0, v1, p3, v2, v3}, Lcom/google/android/youtube/app/o;->a(Landroid/net/Uri;IZLcom/google/android/youtube/core/client/al;)V
+    move-result-object v0
 
-    .line 139
+    check-cast v0, Lcom/google/android/youtube/core/model/Playlist;
+
+    .line 73
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/tablet/z;->b:Lcom/google/android/youtube/core/async/ar;
+
+    iget-object v0, v0, Lcom/google/android/youtube/core/model/Playlist;->contentUri:Landroid/net/Uri;
+
+    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/tablet/z;->g()Lcom/google/android/youtube/core/async/GDataRequest;
+
+    move-result-object v3
+
+    invoke-static {v0, v3}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/async/GDataRequest;)Lcom/google/android/youtube/core/async/GDataRequest;
+
+    move-result-object v0
+
+    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/tablet/z;->j:Lcom/google/android/youtube/core/async/c;
+
+    invoke-interface {v2, v0, v3}, Lcom/google/android/youtube/core/async/ar;->a(Ljava/lang/Object;Lcom/google/android/youtube/core/async/l;)V
+
+    goto :goto_7
+
+    .line 76
+    :cond_25
     return-void
 .end method

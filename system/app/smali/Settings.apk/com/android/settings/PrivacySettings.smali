@@ -553,8 +553,6 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 93
     invoke-direct {p0}, Lcom/android/settings/PrivacySettings;->updateToggles()V
 

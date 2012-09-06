@@ -346,40 +346,6 @@
     return-void
 .end method
 
-.method public isPartitionEmpty(I)Z
-    .registers 4
-    .parameter "partition"
-
-    .prologue
-    .line 229
-    iget-object v1, p0, Lcom/android/common/widget/CompositeCursorAdapter;->mPartitions:[Lcom/android/common/widget/CompositeCursorAdapter$Partition;
-
-    aget-object v1, v1, p1
-
-    iget-object v0, v1, Lcom/android/common/widget/CompositeCursorAdapter$Partition;->cursor:Landroid/database/Cursor;
-
-    .line 230
-    .local v0, cursor:Landroid/database/Cursor;
-    if-eqz v0, :cond_e
-
-    invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
-
-    move-result v1
-
-    if-nez v1, :cond_10
-
-    :cond_e
-    const/4 v1, 0x1
-
-    :goto_f
-    return v1
-
-    :cond_10
-    const/4 v1, 0x0
-
-    goto :goto_f
-.end method
-
 .method public notifyDataSetChanged()V
     .registers 2
 

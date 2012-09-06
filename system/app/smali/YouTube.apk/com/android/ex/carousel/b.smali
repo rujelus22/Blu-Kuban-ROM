@@ -842,13 +842,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "setCard("
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -877,6 +873,104 @@
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_6
+.end method
+
+.method private static b([F)Landroid/renderscript/Matrix4f;
+    .registers 7
+    .parameter
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 329
+    if-eqz p0, :cond_6
+
+    array-length v0, p0
+
+    if-nez v0, :cond_1d
+
+    :cond_6
+    move v0, v1
+
+    .line 339
+    :goto_7
+    new-instance v4, Landroid/renderscript/Matrix4f;
+
+    invoke-direct {v4}, Landroid/renderscript/Matrix4f;-><init>()V
+
+    move v3, v1
+
+    .line 340
+    :goto_d
+    if-ge v3, v0, :cond_37
+
+    move v2, v1
+
+    .line 341
+    :goto_10
+    if-ge v2, v0, :cond_33
+
+    .line 342
+    mul-int v5, v3, v0
+
+    add-int/2addr v5, v2
+
+    aget v5, p0, v5
+
+    invoke-virtual {v4, v3, v2, v5}, Landroid/renderscript/Matrix4f;->set(IIF)V
+
+    .line 341
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_10
+
+    .line 331
+    :cond_1d
+    array-length v0, p0
+
+    const/16 v2, 0x10
+
+    if-ne v0, v2, :cond_24
+
+    .line 332
+    const/4 v0, 0x4
+
+    goto :goto_7
+
+    .line 333
+    :cond_24
+    array-length v0, p0
+
+    const/16 v2, 0x9
+
+    if-ne v0, v2, :cond_2b
+
+    .line 334
+    const/4 v0, 0x3
+
+    goto :goto_7
+
+    .line 336
+    :cond_2b
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "matrix length not 0,9 or 16"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 340
+    :cond_33
+    add-int/lit8 v2, v3, 0x1
+
+    move v3, v2
+
+    goto :goto_d
+
+    .line 346
+    :cond_37
+    return-object v4
 .end method
 
 .method private c()V
@@ -1379,17 +1473,14 @@
     move-result-object v0
 
     .line 814
-    iget-object v1, v0, Lcom/android/ex/carousel/i;->f:Landroid/renderscript/Mesh;
+    if-eqz p2, :cond_1f
 
-    if-eqz v1, :cond_16
-
-    .line 820
-    const/4 v1, 0x0
-
-    iput-object v1, v0, Lcom/android/ex/carousel/i;->f:Landroid/renderscript/Mesh;
+    .line 815
+    iput-object p2, v0, Lcom/android/ex/carousel/i;->f:Landroid/renderscript/Mesh;
 
     .line 823
-    :cond_16
+    :cond_13
+    :goto_13
     invoke-direct {p0, p1, v0}, Lcom/android/ex/carousel/b;->a(ILcom/android/ex/carousel/i;)V
 
     .line 824
@@ -1401,12 +1492,26 @@
 
     .line 825
     monitor-exit p0
-    :try_end_21
-    .catchall {:try_start_b .. :try_end_21} :catchall_22
 
     return-void
 
-    :catchall_22
+    .line 818
+    :cond_1f
+    iget-object v1, v0, Lcom/android/ex/carousel/i;->f:Landroid/renderscript/Mesh;
+
+    if-eqz v1, :cond_13
+
+    .line 820
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Lcom/android/ex/carousel/i;->f:Landroid/renderscript/Mesh;
+    :try_end_26
+    .catchall {:try_start_b .. :try_end_26} :catchall_27
+
+    goto :goto_13
+
+    .line 825
+    :catchall_27
     move-exception v0
 
     monitor-exit p0
@@ -1486,6 +1591,78 @@
     goto :goto_12
 
     :catchall_2b
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final a(I[F)V
+    .registers 5
+    .parameter
+    .parameter
+
+    .prologue
+    .line 829
+    if-gez p1, :cond_a
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "Index cannot be negative"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 831
+    :cond_a
+    monitor-enter p0
+
+    .line 832
+    :try_start_b
+    invoke-direct {p0, p1}, Lcom/android/ex/carousel/b;->m(I)Lcom/android/ex/carousel/i;
+
+    move-result-object v0
+
+    .line 834
+    if-eqz p2, :cond_23
+
+    .line 835
+    invoke-static {p2}, Lcom/android/ex/carousel/b;->b([F)Landroid/renderscript/Matrix4f;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcom/android/ex/carousel/i;->g:Landroid/renderscript/Matrix4f;
+
+    .line 840
+    :goto_17
+    invoke-direct {p0, p1, v0}, Lcom/android/ex/carousel/b;->a(ILcom/android/ex/carousel/i;)V
+
+    .line 841
+    iget-object v1, p0, Lcom/android/ex/carousel/b;->d:Lcom/android/ex/carousel/g;
+
+    iget-object v0, v0, Lcom/android/ex/carousel/i;->g:Landroid/renderscript/Matrix4f;
+
+    invoke-virtual {v1, p1, v0}, Lcom/android/ex/carousel/g;->a(ILandroid/renderscript/Matrix4f;)V
+
+    .line 842
+    monitor-exit p0
+
+    return-void
+
+    .line 838
+    :cond_23
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Lcom/android/ex/carousel/i;->g:Landroid/renderscript/Matrix4f;
+    :try_end_26
+    .catchall {:try_start_b .. :try_end_26} :catchall_27
+
+    goto :goto_17
+
+    .line 842
+    :catchall_27
     move-exception v0
 
     monitor-exit p0
@@ -1584,91 +1761,18 @@
 .end method
 
 .method public final a([F)V
-    .registers 9
+    .registers 4
     .parameter
 
     .prologue
-    const/4 v1, 0x0
-
     .line 350
-    iget-object v4, p0, Lcom/android/ex/carousel/b;->d:Lcom/android/ex/carousel/g;
+    iget-object v0, p0, Lcom/android/ex/carousel/b;->d:Lcom/android/ex/carousel/g;
 
-    if-eqz p1, :cond_8
+    invoke-static {p1}, Lcom/android/ex/carousel/b;->b([F)Landroid/renderscript/Matrix4f;
 
-    array-length v0, p1
+    move-result-object v1
 
-    if-nez v0, :cond_1f
-
-    :cond_8
-    move v0, v1
-
-    :goto_9
-    new-instance v5, Landroid/renderscript/Matrix4f;
-
-    invoke-direct {v5}, Landroid/renderscript/Matrix4f;-><init>()V
-
-    move v3, v1
-
-    :goto_f
-    if-ge v3, v0, :cond_39
-
-    move v2, v1
-
-    :goto_12
-    if-ge v2, v0, :cond_35
-
-    mul-int v6, v3, v0
-
-    add-int/2addr v6, v2
-
-    aget v6, p1, v6
-
-    invoke-virtual {v5, v3, v2, v6}, Landroid/renderscript/Matrix4f;->set(IIF)V
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_12
-
-    :cond_1f
-    array-length v0, p1
-
-    const/16 v2, 0x10
-
-    if-ne v0, v2, :cond_26
-
-    const/4 v0, 0x4
-
-    goto :goto_9
-
-    :cond_26
-    array-length v0, p1
-
-    const/16 v2, 0x9
-
-    if-ne v0, v2, :cond_2d
-
-    const/4 v0, 0x3
-
-    goto :goto_9
-
-    :cond_2d
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "matrix length not 0,9 or 16"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_35
-    add-int/lit8 v2, v3, 0x1
-
-    move v3, v2
-
-    goto :goto_f
-
-    :cond_39
-    invoke-virtual {v4, v5}, Lcom/android/ex/carousel/g;->a(Landroid/renderscript/Matrix4f;)V
+    invoke-virtual {v0, v1}, Lcom/android/ex/carousel/g;->a(Landroid/renderscript/Matrix4f;)V
 
     .line 351
     return-void

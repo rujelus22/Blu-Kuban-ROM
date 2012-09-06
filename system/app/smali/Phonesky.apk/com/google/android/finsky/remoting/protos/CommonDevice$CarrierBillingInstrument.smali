@@ -57,49 +57,49 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 511
+    .line 896
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 516
+    .line 901
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->instrumentKey_:Ljava/lang/String;
 
-    .line 533
+    .line 918
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->accountType_:Ljava/lang/String;
 
-    .line 550
+    .line 935
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->currencyCode_:Ljava/lang/String;
 
-    .line 567
+    .line 952
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->transactionLimit_:J
 
-    .line 584
+    .line 969
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->subscriberIdentifier_:Ljava/lang/String;
 
-    .line 601
+    .line 986
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->encryptedSubscriberInfo_:Lcom/google/android/finsky/remoting/protos/EncryptedSubscriberInfo;
 
-    .line 621
+    .line 1006
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->credentials_:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingCredentials;
 
-    .line 641
+    .line 1026
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->acceptedCarrierTos_:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;
 
-    .line 703
+    .line 1089
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->cachedSize:I
 
-    .line 511
+    .line 896
     return-void
 .end method
 
@@ -109,7 +109,7 @@
     .registers 2
 
     .prologue
-    .line 643
+    .line 1028
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->acceptedCarrierTos_:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;
 
     return-object v0
@@ -119,7 +119,7 @@
     .registers 2
 
     .prologue
-    .line 534
+    .line 919
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->accountType_:Ljava/lang/String;
 
     return-object v0
@@ -129,15 +129,15 @@
     .registers 2
 
     .prologue
-    .line 705
+    .line 1092
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 707
+    .line 1094
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getSerializedSize()I
 
-    .line 709
+    .line 1096
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->cachedSize:I
 
@@ -148,7 +148,7 @@
     .registers 2
 
     .prologue
-    .line 623
+    .line 1008
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->credentials_:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingCredentials;
 
     return-object v0
@@ -158,7 +158,7 @@
     .registers 2
 
     .prologue
-    .line 551
+    .line 936
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->currencyCode_:Ljava/lang/String;
 
     return-object v0
@@ -168,7 +168,7 @@
     .registers 2
 
     .prologue
-    .line 603
+    .line 988
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->encryptedSubscriberInfo_:Lcom/google/android/finsky/remoting/protos/EncryptedSubscriberInfo;
 
     return-object v0
@@ -178,7 +178,7 @@
     .registers 2
 
     .prologue
-    .line 517
+    .line 902
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->instrumentKey_:Ljava/lang/String;
 
     return-object v0
@@ -188,10 +188,10 @@
     .registers 5
 
     .prologue
-    .line 713
+    .line 1101
     const/4 v0, 0x0
 
-    .line 714
+    .line 1102
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasInstrumentKey()Z
 
@@ -199,7 +199,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 715
+    .line 1103
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getInstrumentKey()Ljava/lang/String;
@@ -212,7 +212,7 @@
 
     add-int/2addr v0, v1
 
-    .line 718
+    .line 1106
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasAccountType()Z
 
@@ -220,7 +220,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 719
+    .line 1107
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getAccountType()Ljava/lang/String;
@@ -233,7 +233,7 @@
 
     add-int/2addr v0, v1
 
-    .line 722
+    .line 1110
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasCurrencyCode()Z
 
@@ -241,7 +241,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 723
+    .line 1111
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getCurrencyCode()Ljava/lang/String;
@@ -254,7 +254,7 @@
 
     add-int/2addr v0, v1
 
-    .line 726
+    .line 1114
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasTransactionLimit()Z
 
@@ -262,7 +262,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 727
+    .line 1115
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getTransactionLimit()J
@@ -275,7 +275,7 @@
 
     add-int/2addr v0, v1
 
-    .line 730
+    .line 1118
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasSubscriberIdentifier()Z
 
@@ -283,7 +283,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 731
+    .line 1119
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getSubscriberIdentifier()Ljava/lang/String;
@@ -296,7 +296,7 @@
 
     add-int/2addr v0, v1
 
-    .line 734
+    .line 1122
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasEncryptedSubscriberInfo()Z
 
@@ -304,7 +304,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 735
+    .line 1123
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getEncryptedSubscriberInfo()Lcom/google/android/finsky/remoting/protos/EncryptedSubscriberInfo;
@@ -317,7 +317,7 @@
 
     add-int/2addr v0, v1
 
-    .line 738
+    .line 1126
     :cond_61
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasCredentials()Z
 
@@ -325,7 +325,7 @@
 
     if-eqz v1, :cond_71
 
-    .line 739
+    .line 1127
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getCredentials()Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingCredentials;
@@ -338,7 +338,7 @@
 
     add-int/2addr v0, v1
 
-    .line 742
+    .line 1130
     :cond_71
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasAcceptedCarrierTos()Z
 
@@ -346,7 +346,7 @@
 
     if-eqz v1, :cond_82
 
-    .line 743
+    .line 1131
     const/16 v1, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getAcceptedCarrierTos()Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;
@@ -359,11 +359,11 @@
 
     add-int/2addr v0, v1
 
-    .line 746
+    .line 1134
     :cond_82
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->cachedSize:I
 
-    .line 747
+    .line 1135
     return v0
 .end method
 
@@ -371,7 +371,7 @@
     .registers 2
 
     .prologue
-    .line 585
+    .line 970
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->subscriberIdentifier_:Ljava/lang/String;
 
     return-object v0
@@ -381,7 +381,7 @@
     .registers 3
 
     .prologue
-    .line 568
+    .line 953
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->transactionLimit_:J
 
     return-wide v0
@@ -391,7 +391,7 @@
     .registers 2
 
     .prologue
-    .line 642
+    .line 1027
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasAcceptedCarrierTos:Z
 
     return v0
@@ -401,7 +401,7 @@
     .registers 2
 
     .prologue
-    .line 535
+    .line 920
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasAccountType:Z
 
     return v0
@@ -411,7 +411,7 @@
     .registers 2
 
     .prologue
-    .line 622
+    .line 1007
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasCredentials:Z
 
     return v0
@@ -421,7 +421,7 @@
     .registers 2
 
     .prologue
-    .line 552
+    .line 937
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasCurrencyCode:Z
 
     return v0
@@ -431,7 +431,7 @@
     .registers 2
 
     .prologue
-    .line 602
+    .line 987
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasEncryptedSubscriberInfo:Z
 
     return v0
@@ -441,7 +441,7 @@
     .registers 2
 
     .prologue
-    .line 518
+    .line 903
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasInstrumentKey:Z
 
     return v0
@@ -451,7 +451,7 @@
     .registers 2
 
     .prologue
-    .line 586
+    .line 971
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasSubscriberIdentifier:Z
 
     return v0
@@ -461,7 +461,7 @@
     .registers 2
 
     .prologue
-    .line 569
+    .line 954
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasTransactionLimit:Z
 
     return v0
@@ -477,29 +477,29 @@
     .end annotation
 
     .prologue
-    .line 754
+    .line 1143
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 755
+    .line 1144
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_5a
 
-    .line 759
+    .line 1148
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 760
+    .line 1149
     :sswitch_d
     return-object p0
 
-    .line 765
+    .line 1154
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -509,7 +509,7 @@
 
     goto :goto_0
 
-    .line 769
+    .line 1158
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -519,7 +519,7 @@
 
     goto :goto_0
 
-    .line 773
+    .line 1162
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -529,7 +529,7 @@
 
     goto :goto_0
 
-    .line 777
+    .line 1166
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -539,7 +539,7 @@
 
     goto :goto_0
 
-    .line 781
+    .line 1170
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -549,54 +549,54 @@
 
     goto :goto_0
 
-    .line 785
+    .line 1174
     :sswitch_36
     new-instance v1, Lcom/google/android/finsky/remoting/protos/EncryptedSubscriberInfo;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/EncryptedSubscriberInfo;-><init>()V
 
-    .line 786
+    .line 1175
     .local v1, value:Lcom/google/android/finsky/remoting/protos/EncryptedSubscriberInfo;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 787
+    .line 1176
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->setEncryptedSubscriberInfo(Lcom/google/android/finsky/remoting/protos/EncryptedSubscriberInfo;)Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;
 
     goto :goto_0
 
-    .line 791
+    .line 1180
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/EncryptedSubscriberInfo;
     :sswitch_42
     new-instance v1, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingCredentials;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingCredentials;-><init>()V
 
-    .line 792
+    .line 1181
     .local v1, value:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingCredentials;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 793
+    .line 1182
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->setCredentials(Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingCredentials;)Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;
 
     goto :goto_0
 
-    .line 797
+    .line 1186
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingCredentials;
     :sswitch_4e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;-><init>()V
 
-    .line 798
+    .line 1187
     .local v1, value:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 799
+    .line 1188
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->setAcceptedCarrierTos(Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;)Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;
 
     goto :goto_0
 
-    .line 755
+    .line 1144
     :sswitch_data_5a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -621,7 +621,7 @@
     .end annotation
 
     .prologue
-    .line 509
+    .line 893
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;
 
     move-result-object v0
@@ -634,26 +634,26 @@
     .parameter "value"
 
     .prologue
-    .line 645
+    .line 1030
     if-nez p1, :cond_8
 
-    .line 646
+    .line 1031
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 648
+    .line 1033
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasAcceptedCarrierTos:Z
 
-    .line 649
+    .line 1034
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->acceptedCarrierTos_:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;
 
-    .line 650
+    .line 1035
     return-object p0
 .end method
 
@@ -662,15 +662,15 @@
     .parameter "value"
 
     .prologue
-    .line 537
+    .line 922
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasAccountType:Z
 
-    .line 538
+    .line 923
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->accountType_:Ljava/lang/String;
 
-    .line 539
+    .line 924
     return-object p0
 .end method
 
@@ -679,26 +679,26 @@
     .parameter "value"
 
     .prologue
-    .line 625
+    .line 1010
     if-nez p1, :cond_8
 
-    .line 626
+    .line 1011
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 628
+    .line 1013
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasCredentials:Z
 
-    .line 629
+    .line 1014
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->credentials_:Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingCredentials;
 
-    .line 630
+    .line 1015
     return-object p0
 .end method
 
@@ -707,15 +707,15 @@
     .parameter "value"
 
     .prologue
-    .line 554
+    .line 939
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasCurrencyCode:Z
 
-    .line 555
+    .line 940
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->currencyCode_:Ljava/lang/String;
 
-    .line 556
+    .line 941
     return-object p0
 .end method
 
@@ -724,26 +724,26 @@
     .parameter "value"
 
     .prologue
-    .line 605
+    .line 990
     if-nez p1, :cond_8
 
-    .line 606
+    .line 991
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 608
+    .line 993
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasEncryptedSubscriberInfo:Z
 
-    .line 609
+    .line 994
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->encryptedSubscriberInfo_:Lcom/google/android/finsky/remoting/protos/EncryptedSubscriberInfo;
 
-    .line 610
+    .line 995
     return-object p0
 .end method
 
@@ -752,15 +752,15 @@
     .parameter "value"
 
     .prologue
-    .line 520
+    .line 905
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasInstrumentKey:Z
 
-    .line 521
+    .line 906
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->instrumentKey_:Ljava/lang/String;
 
-    .line 522
+    .line 907
     return-object p0
 .end method
 
@@ -769,15 +769,15 @@
     .parameter "value"
 
     .prologue
-    .line 588
+    .line 973
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasSubscriberIdentifier:Z
 
-    .line 589
+    .line 974
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->subscriberIdentifier_:Ljava/lang/String;
 
-    .line 590
+    .line 975
     return-object p0
 .end method
 
@@ -786,15 +786,15 @@
     .parameter "value"
 
     .prologue
-    .line 571
+    .line 956
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasTransactionLimit:Z
 
-    .line 572
+    .line 957
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->transactionLimit_:J
 
-    .line 573
+    .line 958
     return-object p0
 .end method
 
@@ -808,14 +808,14 @@
     .end annotation
 
     .prologue
-    .line 677
+    .line 1063
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasInstrumentKey()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 678
+    .line 1064
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getInstrumentKey()Ljava/lang/String;
@@ -824,7 +824,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 680
+    .line 1066
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasAccountType()Z
 
@@ -832,7 +832,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 681
+    .line 1067
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getAccountType()Ljava/lang/String;
@@ -841,7 +841,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 683
+    .line 1069
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasCurrencyCode()Z
 
@@ -849,7 +849,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 684
+    .line 1070
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getCurrencyCode()Ljava/lang/String;
@@ -858,7 +858,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 686
+    .line 1072
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasTransactionLimit()Z
 
@@ -866,7 +866,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 687
+    .line 1073
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getTransactionLimit()J
@@ -875,7 +875,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 689
+    .line 1075
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasSubscriberIdentifier()Z
 
@@ -883,7 +883,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 690
+    .line 1076
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getSubscriberIdentifier()Ljava/lang/String;
@@ -892,7 +892,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 692
+    .line 1078
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasEncryptedSubscriberInfo()Z
 
@@ -900,7 +900,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 693
+    .line 1079
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getEncryptedSubscriberInfo()Lcom/google/android/finsky/remoting/protos/EncryptedSubscriberInfo;
@@ -909,7 +909,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 695
+    .line 1081
     :cond_54
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasCredentials()Z
 
@@ -917,7 +917,7 @@
 
     if-eqz v0, :cond_62
 
-    .line 696
+    .line 1082
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getCredentials()Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingCredentials;
@@ -926,7 +926,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 698
+    .line 1084
     :cond_62
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->hasAcceptedCarrierTos()Z
 
@@ -934,7 +934,7 @@
 
     if-eqz v0, :cond_71
 
-    .line 699
+    .line 1085
     const/16 v0, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;->getAcceptedCarrierTos()Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;
@@ -943,7 +943,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 701
+    .line 1087
     :cond_71
     return-void
 .end method

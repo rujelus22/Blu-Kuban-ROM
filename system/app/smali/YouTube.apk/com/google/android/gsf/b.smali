@@ -24,16 +24,6 @@
     return-void
 .end method
 
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 51
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method static a(I)Ljava/lang/String;
     .registers 2
     .parameter

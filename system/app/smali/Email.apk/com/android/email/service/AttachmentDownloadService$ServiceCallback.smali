@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 744
+    .line 647
     iput-object p1, p0, Lcom/android/email/service/AttachmentDownloadService$ServiceCallback;->this$0:Lcom/android/email/service/AttachmentDownloadService;
 
     invoke-direct {p0}, Lcom/android/emailcommon/service/IEmailServiceCallback$Stub;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 744
+    .line 647
     invoke-direct {p0, p1}, Lcom/android/email/service/AttachmentDownloadService$ServiceCallback;-><init>(Lcom/android/email/service/AttachmentDownloadService;)V
 
     return-void
@@ -46,69 +46,15 @@
 
 
 # virtual methods
-.method public deviceInfoStatus(I)V
-    .registers 2
-    .parameter "status"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 843
-    return-void
-.end method
-
-.method public emptyTrashStatus(JII)V
-    .registers 5
-    .parameter "accountId"
-    .parameter "statusCode"
-    .parameter "progress"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 820
-    return-void
-.end method
-
-.method public folderCommandStatus(IJI)V
-    .registers 5
-    .parameter "command"
-    .parameter "mailboxId"
-    .parameter "statusCode"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 814
-    return-void
-.end method
-
 .method public loadAttachmentStatus(JJII)V
-    .registers 13
+    .registers 12
     .parameter "messageId"
     .parameter "attachmentId"
     .parameter "statusCode"
     .parameter "progress"
 
     .prologue
-    .line 748
-    iget-object v2, p0, Lcom/android/email/service/AttachmentDownloadService$ServiceCallback;->this$0:Lcom/android/email/service/AttachmentDownloadService;
-
-    iget-object v3, v2, Lcom/android/email/service/AttachmentDownloadService;->mDownloadSet:Lcom/android/email/service/AttachmentDownloadService$DownloadSet;
-
-    monitor-enter v3
-
-    .line 749
-    :try_start_5
+    .line 651
     iget-object v2, p0, Lcom/android/email/service/AttachmentDownloadService$ServiceCallback;->this$0:Lcom/android/email/service/AttachmentDownloadService;
 
     iget-object v2, v2, Lcom/android/email/service/AttachmentDownloadService;->mDownloadSet:Lcom/android/email/service/AttachmentDownloadService$DownloadSet;
@@ -118,291 +64,174 @@
 
     move-result-object v1
 
-    .line 750
+    .line 652
     .local v1, req:Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_44
 
-    .line 751
+    .line 653
     sget-boolean v2, Lcom/android/email/Email;->DEBUG:Z
 
-    if-eqz v2, :cond_3f
+    if-eqz v2, :cond_3a
 
-    .line 753
-    packed-switch p5, :pswitch_data_8e
+    .line 655
+    packed-switch p5, :pswitch_data_84
 
-    .line 761
+    .line 658
     invoke-static {p5}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 764
+    .line 660
     .local v0, code:Ljava/lang/String;
-    :goto_1a
+    :goto_15
     const/4 v2, 0x1
 
-    if-eq p5, v2, :cond_5b
+    if-eq p5, v2, :cond_55
 
-    .line 765
+    .line 661
     const-string v2, "AttachmentService"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, ">> Attachment "
+    const-string v4, ">> Attachment "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, p3, p4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p3, p4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string v5, ": "
+    const-string v4, ": "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 770
+    .line 666
     .end local v0           #code:Ljava/lang/String;
-    :cond_3f
-    :goto_3f
+    :cond_3a
+    :goto_3a
     iput p5, v1, Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;->lastStatusCode:I
 
-    .line 771
+    .line 667
     iput p6, v1, Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;->lastProgress:I
 
-    .line 772
+    .line 668
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    iput-wide v4, v1, Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;->lastCallbackTime:J
+    iput-wide v2, v1, Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;->lastCallbackTime:J
 
-    .line 774
-    :cond_49
-    packed-switch p5, :pswitch_data_96
+    .line 670
+    :cond_44
+    packed-switch p5, :pswitch_data_8c
 
-    .line 778
+    .line 674
     iget-object v2, p0, Lcom/android/email/service/AttachmentDownloadService$ServiceCallback;->this$0:Lcom/android/email/service/AttachmentDownloadService;
 
     iget-object v2, v2, Lcom/android/email/service/AttachmentDownloadService;->mDownloadSet:Lcom/android/email/service/AttachmentDownloadService$DownloadSet;
 
     invoke-virtual {v2, p3, p4, p5}, Lcom/android/email/service/AttachmentDownloadService$DownloadSet;->endDownload(JI)V
 
-    .line 781
-    :pswitch_53
-    monitor-exit v3
-
-    .line 782
+    .line 677
+    :pswitch_4e
     return-void
 
-    .line 755
-    :pswitch_55
+    .line 656
+    :pswitch_4f
     const-string v0, "Success"
 
-    .line 756
     .restart local v0       #code:Ljava/lang/String;
-    goto :goto_1a
+    goto :goto_15
 
-    .line 758
+    .line 657
     .end local v0           #code:Ljava/lang/String;
-    :pswitch_58
+    :pswitch_52
     const-string v0, "In progress"
 
-    .line 759
     .restart local v0       #code:Ljava/lang/String;
-    goto :goto_1a
+    goto :goto_15
 
-    .line 766
-    :cond_5b
+    .line 662
+    :cond_55
     iget v2, v1, Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;->lastProgress:I
 
     add-int/lit8 v2, v2, 0xf
 
-    if-lt p6, v2, :cond_3f
+    if-lt p6, v2, :cond_3a
 
-    .line 767
+    .line 663
     const-string v2, "AttachmentService"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, ">> Attachment "
+    const-string v4, ">> Attachment "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, p3, p4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p3, p4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string v5, ": "
+    const-string v4, ": "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, p6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string v5, "%"
+    const-string v4, "%"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_3f
+    goto :goto_3a
 
-    .line 781
-    .end local v0           #code:Ljava/lang/String;
-    .end local v1           #req:Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;
-    :catchall_8a
-    move-exception v2
-
-    monitor-exit v3
-    :try_end_8c
-    .catchall {:try_start_5 .. :try_end_8c} :catchall_8a
-
-    throw v2
-
-    .line 753
-    nop
-
-    :pswitch_data_8e
+    .line 655
+    :pswitch_data_84
     .packed-switch 0x0
-        :pswitch_55
-        :pswitch_58
+        :pswitch_4f
+        :pswitch_52
     .end packed-switch
 
-    .line 774
-    :pswitch_data_96
+    .line 670
+    :pswitch_data_8c
     .packed-switch 0x1
-        :pswitch_53
+        :pswitch_4e
     .end packed-switch
 .end method
 
-.method public loadMoreStatus(JII)V
-    .registers 5
-    .parameter "messageId"
-    .parameter "statusCode"
-    .parameter "progress"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 826
-    return-void
-.end method
-
-.method public moveConvAlwaysStatus([BIII)V
-    .registers 5
-    .parameter "convId"
-    .parameter "statusCode"
-    .parameter "progress"
-    .parameter "ignore"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 832
-    return-void
-.end method
-
-.method public moveItemStatus(JI)V
-    .registers 4
-    .parameter "mailboxId"
-    .parameter "statusCode"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 802
-    return-void
-.end method
-
-.method public oOOfStatus(JIILandroid/os/Bundle;)V
+.method public sendMessageStatus(JLjava/lang/String;II)V
     .registers 6
-    .parameter "accountId"
-    .parameter "statusCode"
-    .parameter "progress"
-    .parameter "oooResults"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 808
-    return-void
-.end method
-
-.method public refreshIRMTemplatesStatus(JII)V
-    .registers 5
-    .parameter "accountId"
-    .parameter "Status"
-    .parameter "Progress"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 852
-    return-void
-.end method
-
-.method public sendMeetingEditedResponseCallback(ZJJ)V
-    .registers 6
-    .parameter "success"
-    .parameter "messageId"
-    .parameter "draftId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 860
-    return-void
-.end method
-
-.method public sendMessageStatus(JJLjava/lang/String;II)V
-    .registers 8
-    .parameter "accountId"
     .parameter "messageId"
     .parameter "subject"
     .parameter "statusCode"
@@ -414,23 +243,7 @@
     .end annotation
 
     .prologue
-    .line 787
-    return-void
-.end method
-
-.method public setDeviceInfoStatus(JII)V
-    .registers 5
-    .parameter "accountId"
-    .parameter "statusCode"
-    .parameter "progress"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 838
+    .line 682
     return-void
 .end method
 
@@ -446,7 +259,7 @@
     .end annotation
 
     .prologue
-    .line 792
+    .line 687
     return-void
 .end method
 
@@ -462,6 +275,6 @@
     .end annotation
 
     .prologue
-    .line 797
+    .line 692
     return-void
 .end method

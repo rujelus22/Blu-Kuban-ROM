@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="?android:listDivider" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <RelativeLayout android:id="@id/listItemAction" android:background="?selectableItemBackground" android:paddingLeft="@dimen/place_page_padding_left" android:paddingTop="@dimen/action_list_item_padding_top" android:paddingBottom="@dimen/action_list_item_padding_top" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight">
+        <ImageView android:layout_gravity="left|center" android:id="@id/left_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" android:layout_marginRight="7.0dip" android:layout_alignParentLeft="true" />
+        <TextView android:layout_gravity="center_vertical" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_toRightOf="@id/left_image" style="@style/ListPrimaryFriend" />
+        <TextView android:id="@id/desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_toRightOf="@id/left_image" android:layout_below="@id/title" android:layout_alignParentBottom="true" style="@style/ListSecondaryFriend" />
+    </RelativeLayout>
+</LinearLayout>

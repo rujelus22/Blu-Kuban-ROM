@@ -1,52 +1,57 @@
-.class Lcom/google/android/maps/driveabout/app/aq;
+.class Lcom/google/android/maps/driveabout/app/aQ;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Lm/t;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/aC;
-
-.field final synthetic b:[Lu/b;
-
-.field final synthetic c:Lcom/google/android/maps/driveabout/app/am;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/aN;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/am;Lcom/google/android/maps/driveabout/app/aC;[Lu/b;)V
-    .registers 4
+.method private constructor <init>(Lcom/google/android/maps/driveabout/app/aN;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aq;->c:Lcom/google/android/maps/driveabout/app/am;
-
-    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/aq;->a:Lcom/google/android/maps/driveabout/app/aC;
-
-    iput-object p3, p0, Lcom/google/android/maps/driveabout/app/aq;->b:[Lu/b;
+    .prologue
+    .line 1195
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aQ;->a:Lcom/google/android/maps/driveabout/app/aN;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method synthetic constructor <init>(Lcom/google/android/maps/driveabout/app/aN;Lcom/google/android/maps/driveabout/app/aO;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 1195
+    invoke-direct {p0, p1}, Lcom/google/android/maps/driveabout/app/aQ;-><init>(Lcom/google/android/maps/driveabout/app/aN;)V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 5
+.method public a(I)V
+    .registers 4
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aq;->c:Lcom/google/android/maps/driveabout/app/am;
+    .prologue
+    .line 1198
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aQ;->a:Lcom/google/android/maps/driveabout/app/aN;
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/am;->o()V
+    new-instance v1, Lcom/google/android/maps/driveabout/app/aR;
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aq;->a:Lcom/google/android/maps/driveabout/app/aC;
+    invoke-direct {v1, p0, p1}, Lcom/google/android/maps/driveabout/app/aR;-><init>(Lcom/google/android/maps/driveabout/app/aQ;I)V
 
-    if-eqz v0, :cond_10
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/aN;->a(Ljava/lang/Runnable;)V
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aq;->a:Lcom/google/android/maps/driveabout/app/aC;
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/aq;->b:[Lu/b;
-
-    invoke-interface {v0, v1}, Lcom/google/android/maps/driveabout/app/aC;->a([Lu/b;)V
-
-    :cond_10
+    .line 1202
     return-void
 .end method

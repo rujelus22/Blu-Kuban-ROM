@@ -17,12 +17,15 @@
 
 .field public final keywords:Ljava/lang/String;
 
+.field public final largeBannerUri:Landroid/net/Uri;
+
 .field public final title:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Landroid/net/Uri;Ljava/lang/String;)V
-    .registers 7
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Ljava/lang/String;)V
+    .registers 8
+    .parameter
     .parameter
     .parameter
     .parameter
@@ -31,28 +34,31 @@
     .parameter
 
     .prologue
-    .line 36
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
+    .line 40
     iput-object p1, p0, Lcom/google/android/youtube/core/model/Branding;->title:Ljava/lang/String;
 
-    .line 39
+    .line 41
     iput-object p2, p0, Lcom/google/android/youtube/core/model/Branding;->description:Ljava/lang/String;
 
-    .line 40
+    .line 42
     iput-object p3, p0, Lcom/google/android/youtube/core/model/Branding;->keywords:Ljava/lang/String;
 
-    .line 41
+    .line 43
     iput-object p4, p0, Lcom/google/android/youtube/core/model/Branding;->bannerUri:Landroid/net/Uri;
 
-    .line 42
-    iput-object p5, p0, Lcom/google/android/youtube/core/model/Branding;->bannerTargetUri:Landroid/net/Uri;
-
-    .line 43
-    iput-object p6, p0, Lcom/google/android/youtube/core/model/Branding;->featuredPlaylistId:Ljava/lang/String;
-
     .line 44
+    iput-object p5, p0, Lcom/google/android/youtube/core/model/Branding;->largeBannerUri:Landroid/net/Uri;
+
+    .line 45
+    iput-object p6, p0, Lcom/google/android/youtube/core/model/Branding;->bannerTargetUri:Landroid/net/Uri;
+
+    .line 46
+    iput-object p7, p0, Lcom/google/android/youtube/core/model/Branding;->featuredPlaylistId:Ljava/lang/String;
+
+    .line 47
     return-void
 .end method
 
@@ -61,7 +67,7 @@
     .parameter
 
     .prologue
-    .line 51
+    .line 54
     new-instance v0, Ljava/io/InvalidObjectException;
 
     const-string v1, "builder required"
@@ -75,7 +81,7 @@
     .registers 2
 
     .prologue
-    .line 47
+    .line 50
     invoke-virtual {p0}, Lcom/google/android/youtube/core/model/Branding;->buildUpon()Lcom/google/android/youtube/core/model/Branding$Builder;
 
     move-result-object v0
@@ -89,7 +95,7 @@
     .registers 3
 
     .prologue
-    .line 55
+    .line 58
     new-instance v0, Lcom/google/android/youtube/core/model/Branding$Builder;
 
     invoke-direct {v0}, Lcom/google/android/youtube/core/model/Branding$Builder;-><init>()V
@@ -115,6 +121,12 @@
     iget-object v1, p0, Lcom/google/android/youtube/core/model/Branding;->bannerUri:Landroid/net/Uri;
 
     invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Branding$Builder;->bannerUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Branding$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/Branding;->largeBannerUri:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Branding$Builder;->largeBannerUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Branding$Builder;
 
     move-result-object v0
 

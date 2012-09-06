@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="da_units">
+        <item>@string/da_units_setting_automatic</item>
+        <item>@string/da_units_setting_metric</item>
+        <item>@string/da_units_setting_imperial</item>
+    </array>
+    <array name="da_units_descriptions">
+        <item>@string/da_units_setting_description_automatic</item>
+        <item>@string/da_units_setting_description_metric</item>
+        <item>@string/da_units_setting_description_imperial</item>
+    </array>
+</resources>

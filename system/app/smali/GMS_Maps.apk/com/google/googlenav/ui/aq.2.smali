@@ -1,113 +1,229 @@
-.class Lcom/google/googlenav/ui/aq;
+.class public abstract Lcom/google/googlenav/ui/aQ;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/googlenav/ui/wizard/aX;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/ap;
+.field private final a:I
+
+.field private final b:I
+
+.field private c:I
+
+.field private d:I
+
+.field private final e:I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/ap;)V
-    .registers 2
+.method public constructor <init>(IIIII)V
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/aq;->a:Lcom/google/googlenav/ui/ap;
-
+    .prologue
+    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 52
+    iput p1, p0, Lcom/google/googlenav/ui/aQ;->a:I
+
+    .line 53
+    iput p2, p0, Lcom/google/googlenav/ui/aQ;->b:I
+
+    .line 54
+    iput p3, p0, Lcom/google/googlenav/ui/aQ;->c:I
+
+    .line 55
+    iput p4, p0, Lcom/google/googlenav/ui/aQ;->d:I
+
+    .line 56
+    iput p5, p0, Lcom/google/googlenav/ui/aQ;->e:I
+
+    .line 57
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Z)V
-    .registers 5
+.method public a()Z
+    .registers 3
 
-    const/16 v0, 0x5f
+    .prologue
+    .line 63
+    iget v0, p0, Lcom/google/googlenav/ui/aQ;->a:I
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/aq;->a:Lcom/google/googlenav/ui/ap;
+    const/4 v1, -0x1
 
-    iget-object v1, v1, Lcom/google/googlenav/ui/ap;->c:Ljava/lang/String;
+    if-eq v0, v1, :cond_7
 
-    const-string v2, "2"
+    const/4 v0, 0x1
 
-    invoke-static {v0, v1, v2}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
+    :goto_6
+    return v0
 
-    if-eqz p1, :cond_13
+    :cond_7
+    const/4 v0, 0x0
 
-    const-string v0, "LBS_GO_AWAY_AND_DONT_COME_BACK"
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lax/be;->b(Ljava/lang/String;I)V
-
-    :cond_13
-    const-string v0, "IS_COMING_FROM_SETTINGS_PAGE"
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lax/be;->b(Ljava/lang/String;I)V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/aq;->a:Lcom/google/googlenav/ui/ap;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/ap;->d:Lcom/google/googlenav/ui/ak;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/ak;->e(Lcom/google/googlenav/ui/ak;)Lcom/google/googlenav/ay;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/aq;->a:Lcom/google/googlenav/ui/ap;
-
-    iget-object v1, v1, Lcom/google/googlenav/ui/ap;->d:Lcom/google/googlenav/ui/ak;
-
-    invoke-static {v1}, Lcom/google/googlenav/ui/ak;->d(Lcom/google/googlenav/ui/ak;)Lcom/google/googlenav/ui/at;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/google/googlenav/ay;->a(Lcom/google/googlenav/ui/at;)V
-
-    return-void
+    goto :goto_6
 .end method
 
-.method public b(Z)V
-    .registers 5
+.method public b()Z
+    .registers 3
 
-    if-eqz p1, :cond_9
+    .prologue
+    .line 70
+    iget v0, p0, Lcom/google/googlenav/ui/aQ;->c:I
 
-    const-string v0, "LBS_GO_AWAY_AND_DONT_COME_BACK"
+    const/4 v1, -0x1
 
-    const/4 v1, 0x0
+    if-eq v0, v1, :cond_7
 
-    const/4 v2, 0x0
+    const/4 v0, 0x1
 
-    invoke-static {v0, v1, v2}, Lax/be;->a(Ljava/lang/String;ILax/bk;)V
+    :goto_6
+    return v0
 
-    :cond_9
-    iget-object v0, p0, Lcom/google/googlenav/ui/aq;->a:Lcom/google/googlenav/ui/ap;
+    :cond_7
+    const/4 v0, 0x0
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/ap;->d:Lcom/google/googlenav/ui/ak;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/ak;->b(Lcom/google/googlenav/ui/ak;)V
-
-    const/16 v0, 0x5f
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/aq;->a:Lcom/google/googlenav/ui/ap;
-
-    iget-object v1, v1, Lcom/google/googlenav/ui/ap;->c:Ljava/lang/String;
-
-    const-string v2, "3"
-
-    invoke-static {v0, v1, v2}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
-
-    return-void
+    goto :goto_6
 .end method
 
-.method public c(Z)V
+.method public c()Z
+    .registers 3
+
+    .prologue
+    .line 77
+    iget v0, p0, Lcom/google/googlenav/ui/aQ;->b:I
+
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_7
+
+    const/4 v0, 0x1
+
+    :goto_6
+    return v0
+
+    :cond_7
+    const/4 v0, 0x0
+
+    goto :goto_6
+.end method
+
+.method public d()Z
+    .registers 3
+
+    .prologue
+    .line 84
+    iget v0, p0, Lcom/google/googlenav/ui/aQ;->d:I
+
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_7
+
+    const/4 v0, 0x1
+
+    :goto_6
+    return v0
+
+    :cond_7
+    const/4 v0, 0x0
+
+    goto :goto_6
+.end method
+
+.method public e()Z
     .registers 2
 
-    invoke-virtual {p0, p1}, Lcom/google/googlenav/ui/aq;->b(Z)V
+    .prologue
+    .line 91
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/aQ;->a()Z
 
-    return-void
+    move-result v0
+
+    if-nez v0, :cond_18
+
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/aQ;->b()Z
+
+    move-result v0
+
+    if-nez v0, :cond_18
+
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/aQ;->c()Z
+
+    move-result v0
+
+    if-nez v0, :cond_18
+
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/aQ;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1a
+
+    :cond_18
+    const/4 v0, 0x1
+
+    :goto_19
+    return v0
+
+    :cond_1a
+    const/4 v0, 0x0
+
+    goto :goto_19
+.end method
+
+.method public f()I
+    .registers 2
+
+    .prologue
+    .line 99
+    iget v0, p0, Lcom/google/googlenav/ui/aQ;->a:I
+
+    return v0
+.end method
+
+.method public g()I
+    .registers 2
+
+    .prologue
+    .line 107
+    iget v0, p0, Lcom/google/googlenav/ui/aQ;->b:I
+
+    return v0
+.end method
+
+.method public h()I
+    .registers 2
+
+    .prologue
+    .line 115
+    iget v0, p0, Lcom/google/googlenav/ui/aQ;->c:I
+
+    return v0
+.end method
+
+.method public i()I
+    .registers 2
+
+    .prologue
+    .line 123
+    iget v0, p0, Lcom/google/googlenav/ui/aQ;->d:I
+
+    return v0
+.end method
+
+.method public j()I
+    .registers 2
+
+    .prologue
+    .line 132
+    iget v0, p0, Lcom/google/googlenav/ui/aQ;->e:I
+
+    return v0
 .end method

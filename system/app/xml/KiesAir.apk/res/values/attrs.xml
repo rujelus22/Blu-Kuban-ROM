@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <attr name="entries" format="string" />
-    <attr name="entryValues" format="string" />
-</resources>

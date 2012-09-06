@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s, %2$s</string>
+    <string name="no_network_connection">Haijaunganishwa</string>
+    <string name="authentication_failure_no_network">Utaunganishwa kwenye mtandao ili kuthibitisha akaunti yako ya Muziki.</string>
+    <string name="authentication_failure">Haijathibitishwa</string>
+    <string name="authentication_failure_error">Haikuweza kuthibitisha akaunti yako ya Muziki.</string>
+    <string name="positive_button_text">Sawa</string>
+    <string name="negative_button_text">Ghairi</string>
+    <string name="save_button_text">Hifadhi</string>
+    <string name="not_save_button_text">Usihifadhi</string>
+    <string name="offline_music_not_available_message">Ili kuweka muziki kwenye kifaa, nenda kwenye mitazamo ya Albamu, Orodha za kucheza, au Wasanii.</string>
+    <string name="view_albums_button_text">Nenda kwenye Albamu</string>
+    <string name="shuffle_all">Changanya zote</string>
+    <string name="play_all">Cheza zote</string>
+    <string name="songs_all">Nyimbo zote</string>
+    <string name="shuffle">Changanya</string>
+    <string name="search">Tafuta</string>
+    <string name="settings">Mipangilio</string>
+    <string name="library_options">Chaguo za onyesho</string>
+    <string name="manage_music">Chagua muziki ulio kwenye kifaa</string>
+    <string name="available_offline">Weka kwenye kifaa</string>
+    <string name="options">Chaguo</string>
+    <string name="clear_queue">Futa foleni</string>
+    <string name="queue_cleared">Foleni imeondolewa</string>
+    <string name="add_to_queue">Ongeza kwenye foleni</string>
+    <string name="add_to_athome_queue">Ongeza kwenye %s</string>
+    <string name="shop_artist">Duka la msanii</string>
+    <string name="show_offline_music_only">Kwenye kifaa tu</string>
+    <string name="show_all_music">Onyesha miziki yote</string>
+    <string name="new_playlist_title">Jina la orodha ya kucheza</string>
+    <string name="add_to_playlist_title">Jina la orodha ya kucheza</string>
+    <string name="rename_playlist_title">Ipe jina jipya \"%s\" kuwa</string>
+    <string name="search_section_header_artists">WASANII</string>
+    <string name="search_section_header_albums">ALBAMU</string>
+    <string name="search_section_header_songs">NYIMBO</string>
+    <string name="search_section_header_playlists">ORODHA ZA NYIMBO</string>
+    <string name="shuffle_all_songs">Changanya zote</string>
+    <string name="stream_settings">Mipangilio ya muziki</string>
+    <string name="refresh_title">Onyesha upya</string>
+    <string name="refresh_summary">Onyesha upya muziki kutoka Google Play</string>
+    <string name="account_settings_title">Akaunti ya Google</string>
+    <string name="no_account_selected_summary">Gusa ili kuchagua akaunti</string>
+    <string name="account_selected_summary">Unganishwa kwa Google Play kwa kutumia %s</string>
+    <string name="hide_when_not_connected_title">Ficha muziki usiopatikana</string>
+    <string name="hide_when_not_connected_summary">Onyesha tu muziki unaopatikana wakati uko nje ya mkondo</string>
+    <string name="stream_only_on_wifi_title">Tiririsha kupitia Wi-Fi tu</string>
+    <string name="stream_only_on_wifi_summary">Ili kupunguza gharama ya data ya mtoa huduma, usitiririshe kupitia kwa mtandao wa simu</string>
+    <string name="stream_only_hq_title">Tiririsha ubora wa juu</string>
+    <string name="stream_only_hq_summary">Fululiza muziki kila wakati kwa ubora wa juu zaidi</string>
+    <string name="athome_title">Androidi @ Nyumbani</string>
+    <string name="athome_summary">Tafuta Android @ vifaa Nyumbani.</string>
+    <string name="athome_not_remote">Ili kusikiliza wimbo huu kwenye Nexus Q, kwanza upakie kwenye maktaba yako ya muziki ya Google Play.</string>
+    <string name="athome_move_top_menu">Cheza ifuatayo</string>
+    <string name="athome_remove_menu">Ondoa kwenye foleni</string>
+    <string name="lock_screen_controls_title">Funga vidhibiti vya skrini</string>
+    <string name="lock_screen_controls_summary">Onyesha vidhibiti vya muziki juu ya skrini ya kufunga.</string>
+    <string name="debug_logs_title">Kumbukumbu za utatuaji</string>
+    <string name="debug_logs_summary">Tumia kumbukumbu za utatuaji</string>
+    <string name="debug_logs_enable_warning_message">"Una uhakika unataka kulemaza kumbukumbu za utatuaji? 
+Maelezo nyeti yanaweza kuhifadhiwa kwenye hifadhi ya nje. Kubadilisha chaguo hili kutaua programu."</string>
+    <string name="debug_logs_disable_warning_message">"Una uhakika unataka kulemaza kumbukumbu za utatuaji? 
+ Kubadilisha chaguo hili kutaua programu."</string>
+    <string name="tungsten_settings">Mipangilio ya Nexus Q</string>
+    <string name="offlinedl_only_on_wifi_title">Pakua kupitia Mtandao hewa pekee</string>
+    <string name="offlinedl_only_on_wifi_summary">Ili kupunguza gharama ya data ya mtoa huduma, usipakue kupitia kwa mitandao ya simu.</string>
+    <string name="cache_streamed_title">Akibisha kiotomatiki</string>
+    <string name="cache_streamed_summary">Hifadhi muziki kwa muda mfupi bila kuuliza</string>
+    <string name="download_queue_title">Foleni ya kupakua</string>
+    <string name="download_queue_summary">Onyesha nyimbo zinazopakuliwa kwa sasa</string>
+    <string name="help_title">Msaada</string>
+    <string name="show_no_downloads_title">Hakuna nyimbo zilizowekwa kwenye foleni ya kucheza</string>
+    <string name="music_version_title">Toleo la Muziki</string>
+    <string name="music_version_summary">Toleo lisilojulikana</string>
+    <string name="nowplaying_title">Inacheza sasa hivi</string>
+    <string name="artists_title">Wasanii</string>
+    <string name="albums_title">Albamu</string>
+    <string name="genres_title">Aina</string>
+    <string name="tracks_title">Nyimbo</string>
+    <string name="playlists_title">Orodha za kucheza</string>
+    <string name="recent_title">Za hivi karibuni</string>
+    <string name="search_title">Tafuta</string>
+    <string name="no_tracks_title">Hakuna nyimbo</string>
+    <string name="delete_playlist_menu">Futa</string>
+    <string name="edit_playlist_menu">Hariri</string>
+    <string name="rename_playlist_menu">Ipe jina jipya</string>
+    <string name="playlist_delete_confirmation">Unataka kufuta orodha ya muziki \"%s\"?</string>
+    <string name="delete_playlist_button_confirm">Futa</string>
+    <string name="playlist_deleted_message">Orodha ya kucheza imefutwa</string>
+    <string name="playlist_created_message">Orodha ya kucheza \"%s\" imeundwa.</string>
+    <string name="playlist_renamed_message">Orodha ya kucheza imepewa jina jipya la \"%s\".</string>
+    <string name="recentlyadded">Mwisho kuongezwa</string>
+    <string name="recentlyadded_title">Mwisho kuongezwa</string>
+    <string name="all_songs_list">Nyimbo zote</string>
+    <string name="all_songs_list_title">Nyimbo zote</string>
+    <string name="storemusic_list">Bure na imenunuliwa</string>
+    <string name="storemusic_list_title">Bure na imenunuliwa</string>
+    <string name="freemusic_list">Nyimbo za bure</string>
+    <string name="freemusic_list_title">Nyimbo za bure</string>
+    <string name="thumbsup_list">Hii ni nzuri</string>
+    <string name="thumbsup_list_title">Hii ni nzuri</string>
+    <string name="unknown_artist_name">Msanii Asiyejulikana</string>
+    <string name="unknown_album_name">Allbamu isiyojulikana</string>
+    <string name="unknown_playlist_name">Orodha ya kucheza isiyojulikana</string>
+    <string name="unknown_submitter_name">Hajulikani</string>
+    <string name="ringtone_menu">Tumia kama mlio</string>
+    <string name="ringtone_set">\"%s\" weka kama mlio wa simu.</string>
+    <string name="ringtone_set_failed">Haikuweza kuunda mlio wa simu.</string>
+    <string name="ringtone_needs_download">Toni mlio itawekwa wakati itakapopakuliwa.</string>
+    <string name="play_selection">Cheza</string>
+    <string name="add_to_playlist">Ongeza kwenye Orodha ya kucheza</string>
+    <string name="rename_playlist_menu_item">Ipe jina jipya</string>
+    <string name="add_to_playlist_selector_title">Ongeza kwenye Orodha ya kucheza</string>
+    <string name="queue">Orodha ya kucheza ya sasa</string>
+    <string name="save_play_queue_as_playlist">Hifadhi foleni</string>
+    <string name="new_playlist_for_content">Orodha mpya ya kucheza</string>
+    <string name="new_empty_playlist">Orodha Mpya ya Kucheza</string>
+    <string name="new_playlist_name_template">orodha ya muziki %d</string>
+    <string name="removed_from_playlist">\"%1$s\"umeondolewa kukoka kwa orodha ya kucheza.</string>
+    <string name="removed_from_play_queue">\"%1$s\" umeondolewa kwenye foleni ya kucheza.</string>
+    <string name="playlist_too_many_songs">Nyimbo nyingi zaidi. Kiwango ni %dkwa kila orodha ya kucheza.</string>
+    <string name="emptyplaylist">Orodha ya kucheza uliyocchagua haina chochote</string>
+    <string name="widget_nowplaying_small_title">Muziki (4x1)</string>
+    <string name="widget_nowplaying_large_title">Muziki (4x4)</string>
+    <string name="appwidget_text_separator">-</string>
+    <string name="playlist_edit_label">JINA</string>
+    <string name="create_playlist_create_text">Sawa</string>
+    <string name="rename_playlist_rename_text">Ipe jina jipya</string>
+    <string name="service_start_error_title">Hitalafu ya kucheza tena</string>
+    <string name="service_start_error_msg">Haikuweza kucheza wimbo.</string>
+    <string name="service_start_error_button">Sawa</string>
+    <string name="weekpicker_set">Kwisha</string>
+    <string name="weekpicker_title">Rekebisha muda</string>
+    <string name="musicshortcutlabel">Orodha ya kucheza muziki</string>
+    <string name="app_name">Muziki wa Google Play</string>
+    <string name="launcher_name">Muziki wa Google Play</string>
+    <string name="actionbar_title">Google Play</string>
+    <string name="playback_failed_title">Hitilafu ya kucheza tena muziki.</string>
+    <string name="playback_failed">Haikuweza kucheza wimbo ulioitisha.</string>
+    <string name="cancel">Ghairi</string>
+    <string name="remove_from_playlist">Ondoa kutoka kwa orodha ya kucheza</string>
+    <string name="streamloadingtext">Inaunganisha kwa %s…</string>
+    <string name="search_hint">Tafuta Muziki</string>
+    <string name="working_artists">Wasanii...</string>
+    <string name="working_albums">Albamu…</string>
+    <string name="loading">Inapakia…</string>
+    <string name="sort_by_track">Traki</string>
+    <string name="music_picker_title">Chagua wimbo</string>
+    <string name="fail_to_start_stream">Haikuweza kucheza mtiririko ulioitisha.</string>
+    <string name="search_settings_description">Wasanii, albamu na traki</string>
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+    <string name="title_tv">Muziki</string>
+    <string name="music_library">Maktaba ya muziki</string>
+    <string name="playlist_label">Orodha ya kucheza</string>
+    <string name="faux_art_all_songs_label">Nyimbo zote</string>
+    <string name="faux_art_playlist_label">Orodha ya kucheza</string>
+    <string name="faux_art_playlist_instant_mix_label">Mchanganyo wa papo hapo</string>
+    <string name="faux_art_playlist_auto_playlist_label">Orodha oto ya kucheza</string>
+    <string name="buffering">Inabafa...</string>
+    <string name="keep_on_phone">Weka kwenye kifaa</string>
+    <string name="no_music_add_music_header">NJIA ZA KUONGEZA MUZIKI</string>
+    <string name="no_music_shop_body">Nunua mamilioni ya nyimbo, ikiwa ni pamoja na mamia ya nyimbo zisizo na malipo.</string>
+    <string name="no_music_shop_button">DUKA</string>
+    <string name="no_music_upload_body">Pakia nyimbo 20,000 kwa Google Play bila malipo.</string>
+    <string name="no_music_upload_button">PATA MAELEZO ZAIDI</string>
+    <string name="no_music_usb_copy_body">Ili kunakili muziki kutoka kwenye kompyuta yako hadi kwenye kifaa chako, tumia kebo ya USB.</string>
+    <string name="no_music_usb_copy_button">PATA MAELEZO ZAIDI</string>
+    <string name="no_music_heading">Maktaba yako ya muziki ni tupu.</string>
+    <string name="no_music_setup_uploader_heading">Fululiza muziki wako pasiwaya.</string>
+    <string name="no_music_setup_uploader_body">Unaweza kufululiza mkusanyiko wako wa muziki wa kibinafsi na Muziki wa Google Play.</string>
+    <string name="no_music_setup_usb_heading">Nakili muziki kwenye kifaa chako.</string>
+    <string name="no_music_setup_usb_body">Ili kunakili muziki kutoka kwenye kompyuta yako hadi kwenye kifaa chako, tumia kebo ya USB.</string>
+    <string name="no_local_music_heading">Hakuna muziki uliowekwa kwenye kifaa</string>
+    <string name="no_local_music_body">"Ili kuonyesha maktaba yako kamili, fungua menyu na ubatilishe uteuzi wa \"Kwenye kifaa tu.\"
+
+Ili kuchagua muziki wa kuhifadhi kwenye kifaa, fungua menyu na ugonge \"\"Chagua muziki ulio kwenye kifaa.\""</string>
+    <string name="no_music_learn_more">Pata maelezo zaidi</string>
+    <string name="no_music_syncing_heading">Muziki sasa unalandanisha.</string>
+    <string name="no_music_syncing_body">Muziki unalandanishwa kutoka kwenye seva na unafaa kuonekana kwa muda.</string>
+    <string name="no_music_scanning_heading">Inachanganua muziki kwenye kifaa.</string>
+    <string name="no_music_scanning_body">Kifaa chako kinachanganuliwa ili kupata muziki.</string>
+    <string name="sync_disabled">Unahitaji kusanidi ulandanishi kabla ya muziki kutokea kwenye Google Play. Je, unataka kufanya hivyo sasa?</string>
+    <string name="tutorial_welcome_heading">Karibu kwa Muziki wa Google Play</string>
+    <string name="tutorial_welcome_body">"Pakia hadi nyimbo 20,000 kutoka kwa mkusanyiko wako wa kibinafsi wa muziki. 
+
+Cheza mara moja muziki unaonunuliwa kutoka Google Play.
+ 
+Sikiliza muziki wako wote katika wavuti au simu yoyote au kompyuta kibao. Pakua kwa urahisi ili ucheze muziki wako nje ya mtandao. 
+
+ Zote bila malipo."</string>
+    <string name="tutorial_select_account_heading">Chagua akaunti</string>
+    <string name="tutorial_select_account_body">"Unganisha akaunti yako kwa Muziki wa Google Play ili uweze kucheza muziki wako ulio kwenye maktaba na uhifadhi ununuzi.
+
+ Unataka kutumia akaunti gani?"</string>
+    <string name="tutorial_sign_in">Unganisha akaunti yako kwa Muziki wa Google Play ndio uweze kucheza muziki kutoka kwa maktaba yako na uhifadhi ununuzi.</string>
+    <string name="tutorial_free_music_heading">Pata muziki wa bure</string>
+    <string name="tutorial_free_music_body">Vinjari mamia ya nyimbo bila malipo kwenye Google Play za baadhi ya waimbaji maarufu katika rock, hip-hop, na zaidi.</string>
+    <string name="tutorial_account_heading">Karibu</string>
+    <string name="tutorial_account_body">Umealikwa kwenye Muziki wa Google Play. Unaweza kutumia kichezaji hiki kufikia mara moja nyimbo unazoongeza kwenye Muziki wa Google Play na muziki mwingine ulionakili kwenye kifaa chako cha Android.</string>
+    <string name="tutorial_account_list_header">Anza kwa kuchagua Akaunti Google ili kuunganisha kichezaji hiki na Muziki wa Google Play.</string>
+    <string name="tutorial_done_heading">Furahia</string>
+    <string name="tutorial_done_body">"Kichezaji cha Muziki kimeunganishwa sasa kwenye Akaunti Google Yako. 
+ 
+ Ikiwa tayari umeongeza mkusanyiko wako wa muziki kwenye Muziki wa Google Play, utaanza kutokea kwenye kichezaji hiki.
+ 
+ Ikiwa bado unahitaji kuongeza muziki wako kwenye Muziki wa Google Play, anza kwa kutembelea tovuti yetu kutoka kwenye kompyuta yako:"</string>
+    <string name="tutorial_skip">Ruka</string>
+    <string name="tutorial_next">Ifuatayo</string>
+    <string name="tutorial_done">Kwisha</string>
+    <string name="tutorial_add_account">Ongeza akaunti</string>
+    <string name="tutorial_free_music">Pata nyimbo za bure</string>
+    <string name="spinner_carousel">Za hivi karibuni</string>
+    <string name="spinner_album">Albamu</string>
+    <string name="spinner_artist">Wasanii</string>
+    <string name="spinner_songs">Nyimbo</string>
+    <string name="spinner_playlists">Orodha za kucheza</string>
+    <string name="spinner_genres">Aina</string>
+    <string name="sort_by_title">Panga A hadi Z</string>
+    <string name="sort_by_artist">Panga kwa msanii</string>
+    <string name="sort_by_album">Panga kwa albamu</string>
+    <string name="sort_by_date">Panga kwa tarehe iliyoongezwa</string>
+    <string name="more_by_artist">Zaidi kutoka kwa msanii</string>
+    <string name="make_available_offline">Weka kwenye kifaa</string>
+    <string name="search_web">Tafuta kwenye wavuti</string>
+    <string name="manage_done">Kwisha</string>
+    <string name="too_many_items_title">Vipengee vingi mno</string>
+    <string name="too_many_items_body">Hakuna nafasi ya kutosha kuhifadhi vipengee vyote ulivyo chagua. Batilisha uteuzi wa baadhi ya vipengee ili kutengeneza nafasi.</string>
+    <string name="save_manage_music_change_title">Mabadiliko ambayo hayajahifadhiwa</string>
+    <string name="save_manage_music_change_body">Je, unataka kuweka muziki uliyochaguliwa kwenye kifaa?</string>
+    <string name="not_all_items_can_be_kept_body">Hakuna nafasi ya kutosha ya kuhifadhi vipengee vyote ulivyochaguwa. Si vipengee hivi vyote vitapakuliwa.</string>
+    <string name="free_space_overfull">Hifadhi imejaa(%s zaidi)</string>
+    <string name="free_space">%s BILA MALIPO</string>
+    <string name="stream_error_title">Muziki haupatikani kwa muda.</string>
+    <string name="stream_error_no_space_available">Hakuna nafasi inayopatikana.</string>
+    <string name="stream_error_only_on_wifi">Unahitaji kuwa kwenye mtandao wa Wi-Fi ili kucheza wimbo huu.</string>
+    <string name="stream_error_no_connection">Unahitaji kuwa mtandaoni ili kucheza wimbo huu.</string>
+    <string name="stream_error_unauthorized_title">Hitilafu ya uidhinishaji.</string>
+    <string name="stream_error_unauthorized">Jina la mtumiaji au nenosiri si sahihi.</string>
+    <string name="stream_error_another_stream_being_played">Muziki umesitishwa kwa sababu unasikiliza muziki ulioukusanya kwenye kifaa kingine.</string>
+    <string name="stream_error_rate_limit_reached">Muziki haupatikani kwa muda. Hakikisha unacheza mkusanyiko wako kwenye kifaa kimoja tu kwa wakati.</string>
+    <string name="stream_error_device_not_authorized">Maktaba yako ya muziki inaweza kutumiwa na hadi vifaa 10. Utahitaji kubatilisha uidhinishaji wa mojawapo ya vifaa vyako kabla ya kuongeza kingine.</string>
+    <string name="stream_error_device_not_authorized_link">https://play.google.com/music/listen?view=settings_pl</string>
+    <string name="market_uri_link">market://details?id=com.google.android.music</string>
+    <string name="stream_error_device_not_authorized_not_now_button">Sio sasa</string>
+    <string name="stream_error_device_not_authorized_manage_devices_button">Dhibiti vifaa</string>
+    <string name="stream_error_learn_more">Pata maelezo zaidi</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/music/bin/answer.py?answer=1230356</string>
+    <string name="stream_error_another_stream_being_played_short">Muziki umesitishwa.</string>
+    <string name="stream_error_rate_limit_reached_short">Muziki haupatikani kwa muda.</string>
+    <string name="stream_error_device_not_authorized_short">Vifaa vingi sana vinatumika na maktaba ya muziki.</string>
+    <string name="stream_error_another_stream_being_played_notification">Unasikiliza kwenye kifaa kingine.</string>
+    <string name="stream_error_rate_limit_reached_notification">Unasikiliza kwenye kifaa kingine.</string>
+    <string name="stream_error_device_not_authorized_notification">Upeo wa vifaa 10 kwa maktaba.</string>
+    <string name="stream_error_another_stream_being_played_notification_short">Muziki umesitishwa.</string>
+    <string name="stream_error_rate_limit_reached_notification_short">Muziki haupatikani kwa muda.</string>
+    <string name="stream_error_device_not_authorized_notification_short">Kikomo cha kifaa cha muziki kimefikiwa.</string>
+    <string name="athome_error_place_disconnected_short">Imeshindwa kuwasiliana na Nexus Q.</string>
+    <string name="athome_error_controller_too_old_short">"Nexus Q inahitaji programu ya kisasa ya Muziki wa  Google Play."</string>
+    <string name="athome_error_controller_too_old">Ili kutumia Nexus Q, kwanza sasisha programu yako ya Muziki wa Google Play.</string>
+    <string name="athome_error_controller_too_old_notification_short">Sasisha programu ya Muziki wa Google Play</string>
+    <string name="athome_error_controller_too_old_notification">ili kutumia Nexus Q.</string>
+    <string name="athome_error_controller_too_old_update_button">Sasisha</string>
+    <string name="athome_error_controller_too_new_short">Nexus Q inahitaji programu mpya.</string>
+    <string name="athome_error_controller_too_new">Programu ya Nexus Q ni nzee sana. Ili kusasisha kiotomatiki, unganisha Nexus Q kwenye mtandao kupitia kwa Ethernet au Wi-Fi.</string>
+    <string name="athome_error_controller_too_new_notification_short">Nexus Q inahitaji programu mpya.</string>
+    <string name="athome_error_controller_too_new_notification">Ili kusasisha kiotomatiki, unganisha Nexus Q kwenye mtandao.</string>
+    <string name="athome_error_generic_short">Hitilafu ya Mtandao ya Nexus Q.</string>
+    <string name="athome_error_generic">Imepoteza muunganisho wa mtandao na Nexus Q.</string>
+    <string name="athome_error_generic_notification_short">Hitilafu ya Mtandao ya Nexus Q</string>
+    <string name="athome_error_generic_notification">Imeshindwa kuwasiliana na Nexus Q labda kwa sababu ya muunganisho mbaya wa mtandao au matatizo kwenye kifaa.</string>
+    <string name="athome_error_device_setup_short">Nexus Q inahitaji kuwekwa upya kwa mpangilio ya kiwanda.</string>
+    <string name="athome_error_device_setup">Usanidi wa Nexus Q haujakamilika. Ili kuanza upya, weka upya mipangilio ya kiwanda ya Nexus Q yako.</string>
+    <string name="athome_error_device_setup_notification_short">Usanidi wa Nexus Q haujakamilika.</string>
+    <string name="athome_error_device_setup_notification">Ili kuanza upya, weka upya mipangilio ya kiwanda ya Nexus Q yako.</string>
+    <string name="athome_error_unauthorized_account_short">Akaunti haijaidhinishwa</string>
+    <string name="athome_error_unauthorized_account">Akaunti iliyochaguliwa haijaidhinishwa kutumiwa kwa Nexus Q.</string>
+    <string name="athome_error_unauthorized_account_notification_short">Akaunti haijaidhinishwa</string>
+    <string name="athome_error_unauthorized_account_notification">Akaunti iliyochaguliwa haijaidhinishwa kutumia kwa Nexus Q.</string>
+    <string name="athome_error_incompatible_tgs_version">Toleo lisiloambatana la huduma ya kuweka kwenye vikundi linaendeshwa kwenye Nexus Q.</string>
+    <string name="athome_error_incompatible_tgs_version_short">Hitilafu ya huduma ya kikundi ya Nexus Q</string>
+    <string name="athome_error_incompatible_tgs_version_notification">Toleo lisiloambatana la huduma ya kuweka kwenye vikundi linaendeshwa kwenye Nexus Q.</string>
+    <string name="athome_error_incompatible_tgs_version_notification_short">Hitilafu ya huduma ya kikundi ya Nexus Q</string>
+    <string name="athome_error_unreachable_tgs">Imeshindwa kuwasiliana na Nexus Q. Kama tatizo hili litaendelea, huenda Nexus Q inahitaji kuwashwa upya.</string>
+    <string name="athome_error_unreachable_tgs_short">Imeshindwa kuwasiliana na Nexus Q</string>
+    <string name="athome_error_unreachable_tgs_notification">Haiwezi kuwasiliana na Nexus Q. Kama tatizo hili litaendelea, huenda Nexus Q inahitaji kuwashwa upya.</string>
+    <string name="athome_error_unreachable_tgs_notification_short">Imeshindwa kuwasiliana na Nexus Q</string>
+    <string name="athome_error_server_network_short">Hitilafu ya Mtandao</string>
+    <string name="athome_error_server_network">Haiwezi kuwasiliana na seva</string>
+    <string name="hide_now_playing_bar">Ficha mwambaa wa inayocheza sasa</string>
+    <string name="show_now_playing_bar">Onyesha mwambaa wa inayocheza sasa</string>
+    <string name="show_options">Onyesha chaguo</string>
+    <string name="hide_options">Ficha chaguo</string>
+    <string name="all_songs_in_genre">"Nyimbo zote kutoka aina ya 
+%s"</string>
+    <string name="preview_header">ZILIZOSHIRIKISHWA KWENYE GOOGLE+</string>
+    <string name="shared_playback_full">UCHEZAJI KAMILI USIOKUWA NA MALIPO</string>
+    <string name="shared_playback_partial">SAMPULI</string>
+    <string name="btn_buy">Nunua</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">Inaweka muziki ulioombwa…</string>
+    <string name="notification_downloading_when_on_wifi">Kuweka muziki ulioombwa kutaendelea wakati kifaa kitakuwa tena mtandaoni na kimeunganishwa kwa Wi-Fi</string>
+    <string name="notification_downloading_excessive_errors">Haiwezi kupakua nyimbo sasa hivi. Angalia muunganisho wa mtandao wako.</string>
+    <string name="notification_downloading_done">Muziki ulioombwa umepakuliwa</string>
+    <string name="notification_ticker_ringtone_set">Mlio wa simu umewekwa kwa \"%s\".</string>
+    <string name="notification_title_ringtone_set">Toni mlio imewekwa kwa \"%s\"</string>
+    <string name="notification_content_ringtone_set">Gusa ili kuhariri mlio huu wa simu.</string>
+    <string name="notification_ticker_ringtone_set_failed">Haikuweza kuunda mlio wa simu.</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_songcount">Nyimbo mpya za %d</string>
+    <string name="notification_newsongs_subtitle">Imeongezwa kwenye Muziki wa Google Play</string>
+    <string name="carousel_label_shuffle_all">Changanya zote</string>
+    <string name="song_label">WIMBO</string>
+    <string name="artist_label">MSANII</string>
+    <string name="album_label">ALBAMU</string>
+    <string name="effectspanel">Kisawazishi</string>
+    <string name="menu_make_instant_mix">Fanya mchanganyiko wa moja kwa moja</string>
+    <string name="instant_mix_default_name">%s Changanya</string>
+    <string name="creating_instant_mix">"Inaongeza mchanganyiko wa papo hapo
+kwa orodha za muziki."</string>
+    <string name="creating_instant_mix_with_seed">"Inaongeza mchanganyiko wa papo hapo
+ kwenye orodha za kucheza kwa msingi wa 
+%s."</string>
+    <string name="create_instant_mix_failed">Haikuweza kuunda mchanganyiko wa papo hapo. Jaribu tena.</string>
+    <string name="create_instant_mix_failed_insufficient_results">Hakukuwa na nyimbo za kutosha zinazofanana kwenye mkusanyiko wako ili kuunda mchanganyiko wa papo hapo kutoka \"%s.\" Jaribu kutengeneza mmchanganyiko wa papo hapo kutoka kwa wimbo tofauti.</string>
+    <string name="create_instant_mix_sync_timeout">"Kichanganya papo kime
+undwa na kitaonekana katika
+ orodha zako za muziki kwa muda mchache"</string>
+    <string name="create_instant_mix_btn_ok">Sawa</string>
+    <string name="delete">Futa</string>
+    <string name="confirm_delete_local_only">Unataka kufuta \"%s\"?</string>
+    <string name="confirm_delete_has_remote">\"%s\" imepakiwa kati ya vifaa na Kupakiwa kwenye Muziki wa Google Play. Vipengee vilivyopakiwa kati ya vifaa tu ndivyo vitafutwa. Je, unataka kuvivuta?</string>
+    <string name="waiting_share">Kushiriki %s</string>
+    <string name="share">Shiriki</string>
+    <string name="share_failure">Kulikuwa na tatizo la kushiriki muziki wako.</string>
+    <string name="share_google_plus_footer">Kushiriki huwezesha uchezaji kamili usiokuwa na malipo kwa watu walio kwenye miduara yako.</string>
+    <string name="accessibility_play">Cheza</string>
+    <string name="accessibility_pause">Pumzisha</string>
+    <string name="accessibility_stop">Komesha</string>
+    <string name="accessibility_next">Ifuatayo</string>
+    <string name="accessibility_prev">Iliyotangulia</string>
+    <string name="accessibility_shuffle">Changa kiholela</string>
+    <string name="accessibility_repeat">Rudia</string>
+    <string name="accessibility_thumbsUp">Kidole gumba juu</string>
+    <string name="accessibility_thumbsDown">Kidole gumba chini</string>
+    <string name="accessibility_star1">Nyota moja</string>
+    <string name="accessibility_star2">Nyota mbili</string>
+    <string name="accessibility_star3">Nyota tatu</string>
+    <string name="accessibility_star4">Nyota nne</string>
+    <string name="accessibility_star5">Nyota tano</string>
+    <string name="accessibility_contractor">Panua taarifa ya wimbo</string>
+    <string name="accessibility_back">Nyuma</string>
+    <string name="accessibility_contextMenu">Menyu ya wimbo</string>
+    <string name="accessibility_home">Maskani ya muziki</string>
+    <string name="accessibility_search">Tafuta</string>
+    <string name="accessibility_search_cancel">Sitisha utafutaji wa sasa</string>
+    <string name="accessibility_current">Wimbo wa sasa</string>
+    <string name="accessibility_createnewplaylist">Unda orodha mpya ya kucheza</string>
+    <string name="accessibility_menu">Chaguo zaidi</string>
+    <string name="accessibility_shop">Duka la muziki</string>
+    <string name="accessibility_volume">Kiwango</string>
+    <string name="accessibility_at_home_volume">Kiwango</string>
+    <string name="accessibility_select_output">Chagua kifaa cha kutoa nje sauti</string>
+    <string name="accessibility_close_social_mix_mode">Funga hali ya mchanganyiko wa kijamii</string>
+    <string name="header_help_add_songs">Ongeza nyimbo kutoka kwa maktaba yako ili kuanza mchanganyiko wa jamii</string>
+    <string name="ringtone_replace_alert_button">Weka upya</string>
+    <string name="ringtone_replace_alert_title">Badilisha mlio wa simu</string>
+    <string name="ringtone_replace_alert_message">Mlio wa simu kwa jina hili tayari upo.Unataka kuubadilisha?</string>
+    <string name="legal_information">Maelezo ya kisheria</string>
+    <string name="license_title">Leseni za programu huru za kompyuta</string>
+    <string name="license_error">Haikuweza kupakia leseni.</string>
+    <string name="market_wrong_account" formatted="false">"Muziki unaojaribu kucheza ulinunuliwa kwa akaunti %s
+
+Kwa sasa umeingia kwenye Muziki wa Google Play kwa akaunti %s
+
+Ili kusikiliza muziki ulioununua, kwanza badilisha akaunti."</string>
+    <string name="gplus_wrong_account" formatted="false">"Muziki unaojaribu kucheza ulishirikiwa na akaunti %s
+
+Kwa sasa umeingia kwenye Muziki wa Google Play kwa akaunti %s
+
+Ili kusikiliza muziki wako ulioshirikiwa, kwanza badilisha akaunti."</string>
+    <string name="switch_account_button">Badilisha akaunti</string>
+    <string name="switch_account_warning_message">"Una uhakika unataka kubadilisha akaunti?
+Muziki uliowekwa kwenye kifaa hiki utaondolewa."</string>
+    <string name="switch_account_warning_button">Badili akaunti</string>
+    <string name="retry_button">Jaribu tena</string>
+    <string name="wait_for_item">Inasubiri muziki ulandanike.</string>
+    <string name="wait_for_item_failure">Muziki wako unaongezwa sasa. Tafadhali subiri kidogo na ujaribu tena.</string>
+    <string name="ringtone_title">Hakiki toni ya mlio</string>
+    <string name="edit_ringtone">Haririi toni ya mlio</string>
+    <string name="ringtone_done">IMEFANYWA</string>
+    <string name="ringtone_file_edited_name">Klipu ya %1$s</string>
+    <string name="progress_dialog_saving">Inahifadhi…</string>
+    <string name="start_handle">Kishiko cha kuanza</string>
+    <string name="resize_handle">Badilisha ukubwa wa kishiko</string>
+    <string name="menu_reset">Seti upya</string>
+    <string name="save_success_message">%1$s imehifadhiwa kama chaguo-msingi la mlio wa simu.</string>
+    <string name="save_failure_message">Haikuweza kuhifadhi %1$s kama mlio wa simu.</string>
+    <string name="play_error">Haikuweza kucheza faili hii ya vyombo vya habari.</string>
+    <string name="write_error">Haikuweza kuandikia faili.</string>
+    <string name="read_error">Haikuweza kusoma faili.</string>
+    <string name="no_space_error">Hakuna nafasi ya kutosha kwa kadi yako ya SD kuhifadhi faili hii.</string>
+    <string name="bad_extension_error">Haiwezi kuhariri faili za aina hii.</string>
+    <string name="no_extension_error">Haiwezi kuhariri faili ambayo haina kiendelezi cha .mp3 au .wav.</string>
+    <string name="alert_ok_button">Sawa</string>
+    <string name="athome_playback_title">Inayocheza sasa</string>
+    <string name="store_tutorial_title">Nunua na ucheze papo hapo</string>
+    <string name="store_tutorial_content">Nunua mamilioni ya nyimbo za MP3 katika Google Play, ikiwa ni pamoja na nyimbo zisizokuwa na malipo.</string>
+    <string name="store_tutorial_instruction">Ili kutembelea duka, gusa ikoni ya mfuko wa ununuzi</string>
+    <string name="athome_added_by">Imeongezwa na</string>
+    <string name="athome_tutorial_title">Cheza muziki mahali unapoutaka</string>
+    <string name="athome_tutorial_content">Gusa ikoni ya mtiririko ili uchague mahali muziki wako utacheza</string>
+    <string name="athome_party_mode_disclamer">Picha yako ya maelezo mafupi huenda ionekane kwa watumiaji wengine unapotumia Mchanganyiko wa Jamii</string>
+    <string name="athome_party_mode_disclamer_save_preference">Usionyeshe hii tena</string>
+    <string name="no_song_added">Foleni ya kucheza imejaa. Upeo ni nyimbo %1$d.</string>
+    <string name="recent_added">Imeongezwa</string>
+    <string name="recent_purchased">Imenunuliwa</string>
+    <string name="recent_played">Imechezwa</string>
+    <string name="now_playing_tab_now_playing">INAYOCHEZA SASA</string>
+    <string name="now_playing_tab_queue">FOLENI YA MCHEZO</string>
+</resources>

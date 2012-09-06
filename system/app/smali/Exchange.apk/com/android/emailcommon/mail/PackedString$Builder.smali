@@ -33,17 +33,17 @@
     .registers 2
 
     .prologue
-    .line 134
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 126
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 135
+    .line 127
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/emailcommon/mail/PackedString$Builder;->mMap:Ljava/util/HashMap;
 
-    .line 136
+    .line 128
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .parameter "tag"
 
     .prologue
-    .line 169
+    .line 156
     iget-object v0, p0, Lcom/android/emailcommon/mail/PackedString$Builder;->mMap:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -72,19 +72,19 @@
     .parameter "value"
 
     .prologue
-    .line 154
+    .line 143
     if-nez p2, :cond_8
 
-    .line 155
+    .line 144
     iget-object v0, p0, Lcom/android/emailcommon/mail/PackedString$Builder;->mMap:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 159
+    .line 148
     :goto_7
     return-void
 
-    .line 157
+    .line 146
     :cond_8
     iget-object v0, p0, Lcom/android/emailcommon/mail/PackedString$Builder;->mMap:Ljava/util/HashMap;
 
@@ -97,12 +97,12 @@
     .registers 5
 
     .prologue
-    .line 177
+    .line 164
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 178
+    .line 165
     .local v2, sb:Ljava/lang/StringBuilder;
     iget-object v3, p0, Lcom/android/emailcommon/mail/PackedString$Builder;->mMap:Ljava/util/HashMap;
 
@@ -128,7 +128,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 179
+    .line 166
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
@@ -136,12 +136,12 @@
 
     if-lez v3, :cond_25
 
-    .line 180
+    .line 167
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 182
+    .line 169
     :cond_25
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -151,12 +151,12 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 183
+    .line 170
     const/4 v3, 0x2
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 184
+    .line 171
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -167,7 +167,7 @@
 
     goto :goto_f
 
-    .line 186
+    .line 173
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     :cond_3c
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;

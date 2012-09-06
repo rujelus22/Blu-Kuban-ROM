@@ -14,21 +14,21 @@
 # instance fields
 .field final fromList:Ljava/util/List;
 
-.field final function:Lcom/google/common/base/k;
+.field final function:Lcom/google/common/base/v;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/List;Lcom/google/common/base/k;)V
+.method constructor <init>(Ljava/util/List;Lcom/google/common/base/v;)V
     .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 425
+    .line 443
     invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
 
-    .line 426
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 444
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -36,16 +36,16 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Lists$TransformingRandomAccessList;->fromList:Ljava/util/List;
 
-    .line 427
-    invoke-static {p2}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 445
+    invoke-static {p2}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/common/base/k;
+    check-cast v0, Lcom/google/common/base/v;
 
-    iput-object v0, p0, Lcom/google/common/collect/Lists$TransformingRandomAccessList;->function:Lcom/google/common/base/k;
+    iput-object v0, p0, Lcom/google/common/collect/Lists$TransformingRandomAccessList;->function:Lcom/google/common/base/v;
 
-    .line 428
+    .line 446
     return-void
 .end method
 
@@ -55,12 +55,12 @@
     .registers 2
 
     .prologue
-    .line 430
+    .line 448
     iget-object v0, p0, Lcom/google/common/collect/Lists$TransformingRandomAccessList;->fromList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 431
+    .line 449
     return-void
 .end method
 
@@ -69,8 +69,8 @@
     .parameter
 
     .prologue
-    .line 433
-    iget-object v0, p0, Lcom/google/common/collect/Lists$TransformingRandomAccessList;->function:Lcom/google/common/base/k;
+    .line 451
+    iget-object v0, p0, Lcom/google/common/collect/Lists$TransformingRandomAccessList;->function:Lcom/google/common/base/v;
 
     iget-object v1, p0, Lcom/google/common/collect/Lists$TransformingRandomAccessList;->fromList:Ljava/util/List;
 
@@ -78,7 +78,7 @@
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lcom/google/common/base/k;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v1}, Lcom/google/common/base/v;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -89,7 +89,7 @@
     .registers 2
 
     .prologue
-    .line 436
+    .line 454
     iget-object v0, p0, Lcom/google/common/collect/Lists$TransformingRandomAccessList;->fromList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -104,8 +104,8 @@
     .parameter
 
     .prologue
-    .line 439
-    iget-object v0, p0, Lcom/google/common/collect/Lists$TransformingRandomAccessList;->function:Lcom/google/common/base/k;
+    .line 457
+    iget-object v0, p0, Lcom/google/common/collect/Lists$TransformingRandomAccessList;->function:Lcom/google/common/base/v;
 
     iget-object v1, p0, Lcom/google/common/collect/Lists$TransformingRandomAccessList;->fromList:Ljava/util/List;
 
@@ -113,7 +113,7 @@
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lcom/google/common/base/k;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v1}, Lcom/google/common/base/v;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -124,7 +124,7 @@
     .registers 2
 
     .prologue
-    .line 442
+    .line 460
     iget-object v0, p0, Lcom/google/common/collect/Lists$TransformingRandomAccessList;->fromList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I

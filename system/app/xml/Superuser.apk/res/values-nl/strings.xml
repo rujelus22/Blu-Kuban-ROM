@@ -12,10 +12,10 @@
     <string name="generic_grant">Toestaan</string>
     <string name="generic_deny">Weigeren</string>
     <string name="toast_unknown">Onbekend</string>
-    <string name="toast_granted">toegestaan</string>
+    <string name="toast_granted">gekregen</string>
     <string name="toast_denied">geweigerd</string>
-    <string name="toast_package" formatted="false">%s (%s) is superuser toegang %s</string>
-    <string name="toast_name" formatted="false">%s is superuser toegang %s</string>
+    <string name="toast_package" formatted="false">%s (%s) heeft superuser toegang %s</string>
+    <string name="toast_name" formatted="false">%s heeft superuser toegang %s</string>
     <string name="toast_interactive">voor een interactieve shell</string>
     <string name="tab_apps">Apps</string>
     <string name="tab_logs">Logs</string>
@@ -89,17 +89,17 @@
     <string name="appdetail_access">Toegang</string>
     <string name="appdetail_logging">Loggen</string>
     <string name="appdetail_notification">Notificaties</string>
-    <string name="appdetail_force_user">Dwing gebruiker</string>
+    <string name="appdetail_force_user">Forceer gebruiker</string>
     <string name="appdetail_pro_required">( alleen voor Pro )</string>
     <string name="logdetail_no_log">"Superuser commando's zijn niet opgeslagen voor deze entry. Volledig loggen kan worden ingeschakeld voor alle apps door te kiezen voor Instellingen --> Loggen --> Volledige inhoud, of per app door een app te selecteren in de app-lijst"</string>
     <string name="pin_title">Voer PIN code in</string>
-    <string name="pin_wrong">De ingevoerde PIN code was niet correct</string>
+    <string name="pin_wrong">De ingevoerde PIN code was niet juist</string>
     <string name="pin_title_verify">Voer PIN code nogmaals in</string>
     <string name="pin_verify_wrong">De twee ingevoerde PIN codes waren niet gelijk</string>
     <string name="follow_pref_title">Volg me op Twitter of G+</string>
     <string name="follow_pref_desc">Blijf up to date over mijn ontwikkelingen</string>
     <string name="follow_popup_title">Volg me</string>
-    <string name="follow_popup_desc">Blijf up to date over mijn ontwikkelingen, volg me op Twitter of Google Plus</string>
+    <string name="follow_popup_desc">Blijf up to date over mijn ontwikkelingen, volg mij op Twitter of Google Plus</string>
     <string name="follow_gplus">Google Plus</string>
     <string name="follow_twitter">Twitter</string>
     <string name="follow_nothanks">Nee, dank je</string>

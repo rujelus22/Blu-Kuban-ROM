@@ -275,7 +275,7 @@
 
     const/high16 v4, 0x432c
 
-    const v5, 0x7f02017f
+    const v5, 0x7f02017e
 
     invoke-direct {v1, v2, v3, v4, v5}, Lcom/sec/android/glview/TwGLImage;-><init>(Lcom/sec/android/glview/TwGLContext;FFI)V
 
@@ -458,7 +458,7 @@
     .line 200
     iget-object v1, p0, Lcom/sec/android/app/camera/glwidget/TwGLSliderMenu;->mSlider:Lcom/sec/android/glview/TwGLSlider;
 
-    const v2, 0x7f02017e
+    const v2, 0x7f02017d
 
     const/high16 v3, 0x41f8
 
@@ -480,7 +480,7 @@
     .line 202
     iget-object v1, p0, Lcom/sec/android/app/camera/glwidget/TwGLSliderMenu;->mMenu:Lcom/sec/android/glview/TwGLViewGroup;
 
-    const v2, 0x7f02017d
+    const v2, 0x7f02017c
 
     invoke-virtual {v1, v2}, Lcom/sec/android/glview/TwGLViewGroup;->setBackground(I)Z
 
@@ -684,7 +684,7 @@
     .line 233
     iget-object v1, p0, Lcom/sec/android/app/camera/glwidget/TwGLSliderMenu;->mSlider:Lcom/sec/android/glview/TwGLSlider;
 
-    const v2, 0x7f020184
+    const v2, 0x7f020183
 
     const/high16 v3, 0x41f8
 
@@ -706,7 +706,7 @@
     .line 235
     iget-object v1, p0, Lcom/sec/android/app/camera/glwidget/TwGLSliderMenu;->mMenu:Lcom/sec/android/glview/TwGLViewGroup;
 
-    const v2, 0x7f020183
+    const v2, 0x7f020182
 
     invoke-virtual {v1, v2}, Lcom/sec/android/glview/TwGLViewGroup;->setBackground(I)Z
 

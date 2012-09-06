@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/base/k;
+.implements Lcom/google/common/base/v;
 
 
 # static fields
@@ -19,7 +19,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 75
+    .line 80
     new-instance v0, Lcom/google/common/base/Functions$IdentityFunction;
 
     const-string v1, "INSTANCE"
@@ -28,7 +28,7 @@
 
     sput-object v0, Lcom/google/common/base/Functions$IdentityFunction;->INSTANCE:Lcom/google/common/base/Functions$IdentityFunction;
 
-    .line 74
+    .line 79
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/common/base/Functions$IdentityFunction;
@@ -48,7 +48,7 @@
     .parameter
 
     .prologue
-    .line 74
+    .line 79
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -59,7 +59,7 @@
     .parameter
 
     .prologue
-    .line 74
+    .line 79
     const-class v0, Lcom/google/common/base/Functions$IdentityFunction;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -75,7 +75,7 @@
     .registers 1
 
     .prologue
-    .line 74
+    .line 79
     sget-object v0, Lcom/google/common/base/Functions$IdentityFunction;->$VALUES:[Lcom/google/common/base/Functions$IdentityFunction;
 
     invoke-virtual {v0}, [Lcom/google/common/base/Functions$IdentityFunction;->clone()Ljava/lang/Object;
@@ -94,7 +94,7 @@
     .parameter
 
     .prologue
-    .line 78
+    .line 84
     return-object p1
 .end method
 
@@ -102,7 +102,7 @@
     .registers 2
 
     .prologue
-    .line 82
+    .line 88
     const-string v0, "identity"
 
     return-object v0

@@ -21,13 +21,17 @@
 
 .field public genericLayer:Lcom/google/android/finsky/layout/OverviewBucketEntry;
 
+.field public magazineLayer:Lcom/google/android/finsky/layout/MagazineBucketEntry;
+
+.field public magazineStub:Landroid/view/ViewStub;
+
 
 # direct methods
 .method private constructor <init>()V
     .registers 1
 
     .prologue
-    .line 428
+    .line 442
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +42,7 @@
     .parameter "x0"
 
     .prologue
-    .line 428
+    .line 442
     invoke-direct {p0}, Lcom/google/android/finsky/adapters/BucketedListAdapter$DocumentViewHolder;-><init>()V
 
     return-void

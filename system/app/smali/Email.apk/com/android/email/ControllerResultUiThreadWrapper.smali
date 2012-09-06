@@ -60,7 +60,7 @@
     .parameter "x0"
 
     .prologue
-    .line 32
+    .line 33
     iget-object v0, p0, Lcom/android/email/ControllerResultUiThreadWrapper;->mWrappee:Lcom/android/email/Controller$Result;
 
     return-object v0
@@ -75,152 +75,26 @@
     .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
     iget-object v0, p0, Lcom/android/email/ControllerResultUiThreadWrapper;->mHandler:Landroid/os/Handler;
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_8
 
     .line 54
-    monitor-enter p1
-
-    .line 55
-    :try_start_5
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 56
-    monitor-exit p1
-
-    .line 60
-    :goto_9
+    .line 58
+    :goto_7
     return-void
 
     .line 56
-    :catchall_a
-    move-exception v0
-
-    monitor-exit p1
-    :try_end_c
-    .catchall {:try_start_5 .. :try_end_c} :catchall_a
-
-    throw v0
-
-    .line 58
-    :cond_d
+    :cond_8
     iget-object v0, p0, Lcom/android/email/ControllerResultUiThreadWrapper;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    goto :goto_9
+    goto :goto_7
 .end method
 
 
 # virtual methods
-.method public OoOCallback(Lcom/android/emailcommon/mail/MessagingException;JILandroid/os/Bundle;)V
-    .registers 13
-    .parameter "result"
-    .parameter "accountId"
-    .parameter "progress"
-    .parameter "oooResults"
-
-    .prologue
-    .line 187
-    .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
-    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$10;
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-wide v3, p2
-
-    move v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v6}, Lcom/android/email/ControllerResultUiThreadWrapper$10;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JILandroid/os/Bundle;)V
-
-    invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
-
-    .line 194
-    return-void
-.end method
-
-.method public deleteAccountCallback(Landroid/os/Bundle;J)V
-    .registers 5
-    .parameter "status"
-    .parameter "accountId"
-
-    .prologue
-    .line 158
-    .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
-    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$8;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Lcom/android/email/ControllerResultUiThreadWrapper$8;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Landroid/os/Bundle;J)V
-
-    invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
-
-    .line 165
-    return-void
-.end method
-
-.method public deviceInfoCallback(I)V
-    .registers 3
-    .parameter "status"
-
-    .prologue
-    .line 214
-    .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
-    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$12;
-
-    invoke-direct {v0, p0, p1}, Lcom/android/email/ControllerResultUiThreadWrapper$12;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;I)V
-
-    invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
-
-    .line 221
-    return-void
-.end method
-
-.method public emptyTrashCallback(Lcom/android/emailcommon/mail/MessagingException;JI)V
-    .registers 11
-    .parameter "result"
-    .parameter "accountId"
-    .parameter "progress"
-
-    .prologue
-    .line 172
-    .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
-    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$9;
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-wide v3, p2
-
-    move v5, p4
-
-    invoke-direct/range {v0 .. v5}, Lcom/android/email/ControllerResultUiThreadWrapper$9;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JI)V
-
-    invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
-
-    .line 179
-    return-void
-.end method
-
-.method public folderCommandCallback(ILcom/android/emailcommon/mail/MessagingException;J)V
-    .registers 6
-    .parameter "command"
-    .parameter "result"
-    .parameter "mailboxId"
-
-    .prologue
-    .line 279
-    .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
-    iget-object v0, p0, Lcom/android/email/ControllerResultUiThreadWrapper;->mWrappee:Lcom/android/email/Controller$Result;
-
-    invoke-virtual {v0, p1, p2, p3, p4}, Lcom/android/email/Controller$Result;->folderCommandCallback(ILcom/android/emailcommon/mail/MessagingException;J)V
-
-    .line 280
-    return-void
-.end method
-
 .method public getWrappee()Lcom/android/email/Controller$Result;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
@@ -246,9 +120,9 @@
     .parameter "progress"
 
     .prologue
-    .line 77
+    .line 63
     .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
-    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$2;
+    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$1;
 
     move-object v1, p0
 
@@ -262,11 +136,11 @@
 
     move/from16 v9, p8
 
-    invoke-direct/range {v0 .. v9}, Lcom/android/email/ControllerResultUiThreadWrapper$2;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JJJI)V
+    invoke-direct/range {v0 .. v9}, Lcom/android/email/ControllerResultUiThreadWrapper$1;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JJJI)V
 
     invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
 
-    .line 91
+    .line 74
     return-void
 .end method
 
@@ -278,7 +152,37 @@
     .parameter "progress"
 
     .prologue
-    .line 96
+    .line 79
+    .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
+    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$2;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-wide v3, p2
+
+    move-wide v5, p4
+
+    move v7, p6
+
+    invoke-direct/range {v0 .. v7}, Lcom/android/email/ControllerResultUiThreadWrapper$2;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JJI)V
+
+    invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
+
+    .line 85
+    return-void
+.end method
+
+.method public sendMailCallback(Lcom/android/emailcommon/mail/MessagingException;JJI)V
+    .registers 15
+    .parameter "result"
+    .parameter "accountId"
+    .parameter "messageId"
+    .parameter "progress"
+
+    .prologue
+    .line 90
     .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
     new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$3;
 
@@ -296,153 +200,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
 
-    .line 103
-    return-void
-.end method
-
-.method public loadMoreCallback(Lcom/android/emailcommon/mail/MessagingException;JI)V
-    .registers 11
-    .parameter "result"
-    .parameter "messageId"
-    .parameter "progress"
-
-    .prologue
-    .line 65
-    .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
-    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$1;
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-wide v3, p2
-
-    move v5, p4
-
-    invoke-direct/range {v0 .. v5}, Lcom/android/email/ControllerResultUiThreadWrapper$1;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JI)V
-
-    invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
-
-    .line 72
-    return-void
-.end method
-
-.method public modifyUserAccountCallback(Landroid/os/Bundle;)V
-    .registers 3
-    .parameter "bundle"
-
-    .prologue
-    .line 241
-    .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
-    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$14;
-
-    invoke-direct {v0, p0, p1}, Lcom/android/email/ControllerResultUiThreadWrapper$14;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Landroid/os/Bundle;)V
-
-    invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
-
-    .line 248
-    return-void
-.end method
-
-.method public moveMessageCallback(Lcom/android/emailcommon/mail/MessagingException;J)V
-    .registers 5
-    .parameter "result"
-    .parameter "mailboxId"
-
-    .prologue
-    .line 268
-    .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
-    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$16;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Lcom/android/email/ControllerResultUiThreadWrapper$16;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;J)V
-
-    invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
-
-    .line 275
-    return-void
-.end method
-
-.method public refreshIRMTemplatesCallback(Lcom/android/emailcommon/mail/MessagingException;JI)V
-    .registers 11
-    .parameter "result"
-    .parameter "accountId"
-    .parameter "progress"
-
-    .prologue
-    .line 202
-    .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
-    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$11;
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-wide v3, p2
-
-    move v5, p4
-
-    invoke-direct/range {v0 .. v5}, Lcom/android/email/ControllerResultUiThreadWrapper$11;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JI)V
-
-    invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
-
-    .line 209
-    return-void
-.end method
-
-.method public sendMailCallback(Lcom/android/emailcommon/mail/MessagingException;JJI)V
-    .registers 15
-    .parameter "result"
-    .parameter "accountId"
-    .parameter "messageId"
-    .parameter "progress"
-
-    .prologue
-    .line 108
-    .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
-    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$4;
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-wide v3, p2
-
-    move-wide v5, p4
-
-    move v7, p6
-
-    invoke-direct/range {v0 .. v7}, Lcom/android/email/ControllerResultUiThreadWrapper$4;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JJI)V
-
-    invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
-
-    .line 115
-    return-void
-.end method
-
-.method public sendMeetingEditedResponseCallback(ZJJ)V
-    .registers 13
-    .parameter "success"
-    .parameter "messageId"
-    .parameter "draftId"
-
-    .prologue
-    .line 255
-    .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
-    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$15;
-
-    move-object v1, p0
-
-    move v2, p1
-
-    move-wide v3, p2
-
-    move-wide v5, p4
-
-    invoke-direct/range {v0 .. v6}, Lcom/android/email/ControllerResultUiThreadWrapper$15;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;ZJJ)V
-
-    invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
-
-    .line 262
+    .line 96
     return-void
 .end method
 
@@ -455,9 +213,9 @@
     .parameter "tag"
 
     .prologue
-    .line 120
+    .line 101
     .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
-    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$5;
+    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$4;
 
     move-object v1, p0
 
@@ -471,11 +229,11 @@
 
     move-wide/from16 v8, p7
 
-    invoke-direct/range {v0 .. v9}, Lcom/android/email/ControllerResultUiThreadWrapper$5;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JJIJ)V
+    invoke-direct/range {v0 .. v9}, Lcom/android/email/ControllerResultUiThreadWrapper$4;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JJIJ)V
 
     invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
 
-    .line 127
+    .line 107
     return-void
 .end method
 
@@ -497,35 +255,31 @@
     return-void
 .end method
 
-.method public setupAccountCallback(Landroid/os/Bundle;)V
-    .registers 3
-    .parameter "bundle"
-
-    .prologue
-    .line 228
-    .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
-    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$13;
-
-    invoke-direct {v0, p0, p1}, Lcom/android/email/ControllerResultUiThreadWrapper$13;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Landroid/os/Bundle;)V
-
-    invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
-
-    .line 235
-    return-void
-.end method
-
-.method public updateMailboxCallback(Lcom/android/emailcommon/mail/MessagingException;JJII)V
-    .registers 17
+.method public updateMailboxCallback(Lcom/android/emailcommon/mail/MessagingException;JJIILjava/util/ArrayList;)V
+    .registers 19
     .parameter "result"
     .parameter "accountId"
     .parameter "mailboxId"
     .parameter "progress"
     .parameter "numNewMessages"
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/android/emailcommon/mail/MessagingException;",
+            "JJII",
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/Long;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 132
+    .line 113
     .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
-    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$6;
+    .local p8, addedMessages:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
+    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$5;
 
     move-object v1, p0
 
@@ -535,15 +289,17 @@
 
     move-wide v5, p4
 
-    move v7, p6
+    move/from16 v7, p6
 
     move/from16 v8, p7
 
-    invoke-direct/range {v0 .. v8}, Lcom/android/email/ControllerResultUiThreadWrapper$6;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JJII)V
+    move-object/from16 v9, p8
+
+    invoke-direct/range {v0 .. v9}, Lcom/android/email/ControllerResultUiThreadWrapper$5;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JJIILjava/util/ArrayList;)V
 
     invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
 
-    .line 140
+    .line 120
     return-void
 .end method
 
@@ -554,9 +310,9 @@
     .parameter "progress"
 
     .prologue
-    .line 145
+    .line 125
     .local p0, this:Lcom/android/email/ControllerResultUiThreadWrapper;,"Lcom/android/email/ControllerResultUiThreadWrapper<TT;>;"
-    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$7;
+    new-instance v0, Lcom/android/email/ControllerResultUiThreadWrapper$6;
 
     move-object v1, p0
 
@@ -566,10 +322,10 @@
 
     move v5, p4
 
-    invoke-direct/range {v0 .. v5}, Lcom/android/email/ControllerResultUiThreadWrapper$7;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JI)V
+    invoke-direct/range {v0 .. v5}, Lcom/android/email/ControllerResultUiThreadWrapper$6;-><init>(Lcom/android/email/ControllerResultUiThreadWrapper;Lcom/android/emailcommon/mail/MessagingException;JI)V
 
     invoke-direct {p0, v0}, Lcom/android/email/ControllerResultUiThreadWrapper;->run(Ljava/lang/Runnable;)V
 
-    .line 152
+    .line 131
     return-void
 .end method

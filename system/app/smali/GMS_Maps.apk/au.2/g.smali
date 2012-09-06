@@ -1,56 +1,69 @@
-.class public Lau/g;
+.class Lau/g;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Ljava/lang/String;
+.field final synthetic a:Ljava/util/List;
 
-.field private final b:Ljava/lang/String;
+.field final synthetic b:Lau/f;
 
 
 # direct methods
-.method public constructor <init>(Lam/b;)V
-    .registers 4
+.method constructor <init>(Lau/f;Ljava/util/List;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    const/4 v1, 0x2
+    .prologue
+    .line 107
+    iput-object p1, p0, Lau/g;->b:Lau/f;
+
+    iput-object p2, p0, Lau/g;->a:Ljava/util/List;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
-
-    invoke-virtual {p1, v0}, Lam/b;->i(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lau/g;->a:Ljava/lang/String;
-
-    invoke-virtual {p1, v1}, Lam/b;->k(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_18
-
-    invoke-virtual {p1, v1}, Lam/b;->i(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_15
-    iput-object v0, p0, Lau/g;->b:Ljava/lang/String;
-
     return-void
-
-    :cond_18
-    const/4 v0, 0x0
-
-    goto :goto_15
 .end method
 
 
 # virtual methods
-.method public a()Ljava/lang/String;
-    .registers 2
+.method public run()V
+    .registers 3
 
-    iget-object v0, p0, Lau/g;->a:Ljava/lang/String;
+    .prologue
+    .line 110
+    iget-object v0, p0, Lau/g;->b:Lau/f;
 
-    return-object v0
+    iget-object v0, v0, Lau/f;->a:Lau/e;
+
+    invoke-static {v0}, Lau/e;->a(Lau/e;)Lau/a;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lau/g;->a:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Lau/a;->a(Ljava/util/List;)V
+
+    .line 111
+    iget-object v0, p0, Lau/g;->b:Lau/f;
+
+    iget-object v0, v0, Lau/f;->a:Lau/e;
+
+    invoke-static {v0}, Lau/e;->b(Lau/e;)V
+
+    .line 114
+    iget-object v0, p0, Lau/g;->b:Lau/f;
+
+    iget-object v0, v0, Lau/f;->a:Lau/e;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lau/e;->a(Lau/e;Lau/i;)Lau/i;
+
+    .line 115
+    return-void
 .end method

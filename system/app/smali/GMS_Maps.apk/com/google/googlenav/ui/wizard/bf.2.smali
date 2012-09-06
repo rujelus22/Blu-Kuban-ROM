@@ -1,162 +1,177 @@
-.class public Lcom/google/googlenav/ui/wizard/bf;
-.super Lcom/google/googlenav/ui/wizard/z;
+.class public Lcom/google/googlenav/ui/wizard/bF;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LaQ/H;
 
 
 # instance fields
-.field protected a:Lau/b;
+.field private final a:Ljava/lang/String;
 
-.field protected g:Lcom/google/googlenav/bN;
+.field private final b:LT/f;
 
 
 # direct methods
-.method protected constructor <init>(Lcom/google/googlenav/ui/wizard/hM;)V
+.method constructor <init>(Ljava/lang/String;)V
     .registers 3
+    .parameter
 
+    .prologue
+    .line 246
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 247
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/bF;->a:Ljava/lang/String;
+
+    .line 248
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/wizard/z;-><init>(Lcom/google/googlenav/ui/wizard/hM;)V
+    iput-object v0, p0, Lcom/google/googlenav/ui/wizard/bF;->b:LT/f;
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/wizard/bf;->a:Lau/b;
+    .line 249
+    return-void
+.end method
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/wizard/bf;->g:Lcom/google/googlenav/bN;
+.method constructor <init>(Ljava/lang/String;LT/f;)V
+    .registers 3
+    .parameter
+    .parameter
 
+    .prologue
+    .line 241
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 242
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/bF;->a:Ljava/lang/String;
+
+    .line 243
+    iput-object p2, p0, Lcom/google/googlenav/ui/wizard/bF;->b:LT/f;
+
+    .line 244
     return-void
 .end method
 
 
 # virtual methods
-.method public W_()V
-    .registers 3
+.method public a(Landroid/view/View;)LaQ/bE;
+    .registers 4
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/bf;->a:Lau/b;
+    .prologue
+    .line 268
+    new-instance v1, Lcom/google/googlenav/ui/wizard/bG;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/bf;->g:Lcom/google/googlenav/bN;
+    invoke-direct {v1, p0}, Lcom/google/googlenav/ui/wizard/bG;-><init>(Lcom/google/googlenav/ui/wizard/bF;)V
 
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/wizard/bf;->a()V
+    .line 269
+    const v0, 0x7f100034
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/wizard/bf;->a:Lau/b;
-
-    iput-object v1, p0, Lcom/google/googlenav/ui/wizard/bf;->g:Lcom/google/googlenav/bN;
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/wizard/bf;->l()V
-
-    return-void
-.end method
-
-.method public a(Lau/b;)V
-    .registers 2
-
-    invoke-virtual {p0, p1}, Lcom/google/googlenav/ui/wizard/bf;->b(Lau/b;)V
-
-    invoke-super {p0}, Lcom/google/googlenav/ui/wizard/z;->l()V
-
-    return-void
-.end method
-
-.method public a(Lcom/google/googlenav/bN;)V
-    .registers 2
-
-    invoke-virtual {p0, p1}, Lcom/google/googlenav/ui/wizard/bf;->b(Lcom/google/googlenav/bN;)V
-
-    invoke-super {p0}, Lcom/google/googlenav/ui/wizard/z;->l()V
-
-    return-void
-.end method
-
-.method protected a(Ljava/lang/String;)V
-    .registers 3
-
-    const-string v0, "al"
-
-    invoke-static {v0}, LaY/G;->b(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/bf;->b:Lcom/google/googlenav/ui/wizard/hM;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hM;->F()Lcom/google/googlenav/ay;
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lcom/google/googlenav/ay;->a(Ljava/lang/String;)V
+    check-cast v0, Landroid/widget/TextView;
 
-    return-void
+    iput-object v0, v1, Lcom/google/googlenav/ui/wizard/bG;->a:Landroid/widget/TextView;
+
+    .line 270
+    const v0, 0x7f10001a
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, v1, Lcom/google/googlenav/ui/wizard/bG;->b:Landroid/widget/ImageView;
+
+    .line 271
+    return-object v1
 .end method
 
-.method protected b()V
-    .registers 2
-
-    new-instance v0, Lcom/google/googlenav/ui/wizard/bi;
-
-    invoke-direct {v0, p0}, Lcom/google/googlenav/ui/wizard/bi;-><init>(Lcom/google/googlenav/ui/wizard/bf;)V
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/wizard/bf;->f:Lcom/google/googlenav/ui/view/android/bs;
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/bf;->f:Lcom/google/googlenav/ui/view/android/bs;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/bs;->show()V
-
-    return-void
-.end method
-
-.method public b(Lau/b;)V
-    .registers 3
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/bf;->a:Lau/b;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/wizard/bf;->g:Lcom/google/googlenav/bN;
-
-    return-void
-.end method
-
-.method public b(Lcom/google/googlenav/bN;)V
-    .registers 3
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/bf;->g:Lcom/google/googlenav/bN;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/wizard/bf;->a:Lau/b;
-
-    return-void
-.end method
-
-.method protected b(Ljava/lang/String;)V
+.method public a(Lcom/google/googlenav/ui/g;LaQ/bE;)V
     .registers 6
+    .parameter
+    .parameter
 
-    const-string v0, "ac"
+    .prologue
+    .line 276
+    check-cast p2, Lcom/google/googlenav/ui/wizard/bG;
 
-    invoke-static {v0}, LaY/G;->b(Ljava/lang/String;)V
+    .line 277
+    iget-object v0, p2, Lcom/google/googlenav/ui/wizard/bG;->a:Landroid/widget/TextView;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/bf;->b:Lcom/google/googlenav/ui/wizard/hM;
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/bF;->a:Ljava/lang/String;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hM;->F()Lcom/google/googlenav/ay;
+    sget-object v2, Lcom/google/googlenav/ui/aV;->N:Lcom/google/googlenav/ui/aV;
 
-    move-result-object v0
+    invoke-static {v0, v1, v2}, Lcom/google/googlenav/ui/bn;->a(Landroid/widget/TextView;Ljava/lang/CharSequence;Lcom/google/googlenav/ui/aV;)V
 
-    invoke-static {p1}, Las/b;->f(Ljava/lang/String;)Ljava/lang/String;
+    .line 278
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/bF;->b:LT/f;
+
+    if-eqz v0, :cond_21
+
+    .line 279
+    iget-object v0, p2, Lcom/google/googlenav/ui/wizard/bG;->b:Landroid/widget/ImageView;
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/bF;->b:LT/f;
+
+    invoke-virtual {v1}, LT/f;->h()Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    const/4 v3, 0x1
+    .line 280
+    iget-object v0, p2, Lcom/google/googlenav/ui/wizard/bG;->b:Landroid/widget/ImageView;
 
-    invoke-interface {v0, v1, v2, v3}, Lcom/google/googlenav/ay;->a(Ljava/lang/String;Lcom/google/googlenav/az;Z)V
+    const/4 v1, 0x0
 
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 284
+    :goto_20
     return-void
+
+    .line 282
+    :cond_21
+    iget-object v0, p2, Lcom/google/googlenav/ui/wizard/bG;->b:Landroid/widget/ImageView;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    goto :goto_20
 .end method
 
-.method protected c()V
+.method public a()Z
     .registers 2
 
+    .prologue
+    .line 258
     const/4 v0, 0x0
 
-    invoke-super {p0}, Lcom/google/googlenav/ui/wizard/z;->c()V
+    return v0
+.end method
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/wizard/bf;->g:Lcom/google/googlenav/bN;
+.method public b()I
+    .registers 2
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/wizard/bf;->a:Lau/b;
+    .prologue
+    .line 263
+    const/4 v0, 0x0
 
-    return-void
+    return v0
+.end method
+
+.method public c()I
+    .registers 2
+
+    .prologue
+    .line 253
+    const v0, 0x7f04005a
+
+    return v0
 .end method

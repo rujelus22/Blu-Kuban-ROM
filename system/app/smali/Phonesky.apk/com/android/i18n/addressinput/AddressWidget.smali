@@ -1021,7 +1021,7 @@
     .line 265
     iget-object v7, p0, Lcom/android/i18n/addressinput/AddressWidget;->mInflater:Landroid/view/LayoutInflater;
 
-    const v8, 0x7f040004
+    const v8, 0x7f040003
 
     invoke-virtual {v7, v8, p1, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -1083,7 +1083,7 @@
     .line 274
     iget-object v7, p0, Lcom/android/i18n/addressinput/AddressWidget;->mInflater:Landroid/view/LayoutInflater;
 
-    const v8, 0x7f040006
+    const v8, 0x7f040005
 
     invoke-virtual {v7, v8, p1, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -1264,20 +1264,20 @@
     .parameter "context"
 
     .prologue
-    .line 879
+    .line 892
     const-string v0, "US"
 
-    .line 882
+    .line 895
     .local v0, defaultRegionCode:Ljava/lang/String;
     if-nez p0, :cond_5
 
-    .line 894
+    .line 907
     .end local v0           #defaultRegionCode:Ljava/lang/String;
     :cond_4
     :goto_4
     return-object v0
 
-    .line 887
+    .line 900
     .restart local v0       #defaultRegionCode:Ljava/lang/String;
     :cond_5
     const-string v2, "phone"
@@ -1296,7 +1296,7 @@
 
     move-result-object v1
 
-    .line 891
+    .line 904
     .local v1, region:Ljava/lang/String;
     if-eqz v1, :cond_4
 
@@ -1310,7 +1310,7 @@
 
     move-object v0, v1
 
-    .line 892
+    .line 905
     goto :goto_4
 .end method
 
@@ -1319,7 +1319,7 @@
     .parameter "field"
 
     .prologue
-    .line 814
+    .line 827
     sget-object v0, Lcom/android/i18n/addressinput/AddressWidget$4;->$SwitchMap$com$android$i18n$addressinput$AddressField:[I
 
     invoke-virtual {p1}, Lcom/android/i18n/addressinput/AddressField;->ordinal()I
@@ -1330,13 +1330,13 @@
 
     packed-switch v0, :pswitch_data_34
 
-    .line 826
+    .line 839
     const v0, 0x7f070014
 
     :goto_e
     return v0
 
-    .line 816
+    .line 829
     :pswitch_f
     sget-object v0, Lcom/android/i18n/addressinput/AddressWidget;->ADMIN_ERROR_MESSAGES:Ljava/util/Map;
 
@@ -1354,19 +1354,19 @@
 
     goto :goto_e
 
-    .line 818
+    .line 831
     :pswitch_1e
     const v0, 0x7f070015
 
     goto :goto_e
 
-    .line 820
+    .line 833
     :pswitch_22
     const v0, 0x7f070016
 
     goto :goto_e
 
-    .line 822
+    .line 835
     :pswitch_26
     iget-object v0, p0, Lcom/android/i18n/addressinput/AddressWidget;->mZipLabel:Lcom/android/i18n/addressinput/AddressWidget$ZipLabel;
 
@@ -1383,7 +1383,7 @@
 
     goto :goto_e
 
-    .line 814
+    .line 827
     :pswitch_data_34
     .packed-switch 0x1
         :pswitch_f
@@ -2039,7 +2039,7 @@
     .parameter "regionCode"
 
     .prologue
-    .line 869
+    .line 882
     invoke-static {}, Lcom/android/i18n/addressinput/RegionDataConstants;->getCountryFormatMap()Ljava/util/Map;
 
     move-result-object v0
@@ -2529,7 +2529,7 @@
     .registers 8
 
     .prologue
-    .line 834
+    .line 847
     iget-object v4, p0, Lcom/android/i18n/addressinput/AddressWidget;->mFormatInterpreter:Lcom/android/i18n/addressinput/FormatInterpreter;
 
     iget-object v5, p0, Lcom/android/i18n/addressinput/AddressWidget;->mScript:Lcom/android/i18n/addressinput/LookupKey$ScriptType;
@@ -2559,7 +2559,7 @@
 
     check-cast v1, Lcom/android/i18n/addressinput/AddressField;
 
-    .line 836
+    .line 849
     .local v1, field:Lcom/android/i18n/addressinput/AddressField;
     iget-object v4, p0, Lcom/android/i18n/addressinput/AddressWidget;->mInputWidgets:Ljava/util/EnumMap;
 
@@ -2569,7 +2569,7 @@
 
     check-cast v0, Lcom/android/i18n/addressinput/AddressUIComponent;
 
-    .line 838
+    .line 851
     .local v0, addressUIComponent:Lcom/android/i18n/addressinput/AddressUIComponent;
     if-eqz v0, :cond_e
 
@@ -2581,25 +2581,25 @@
 
     if-ne v4, v5, :cond_e
 
-    .line 839
+    .line 852
     invoke-virtual {v0}, Lcom/android/i18n/addressinput/AddressUIComponent;->getView()Landroid/view/View;
 
     move-result-object v3
 
     check-cast v3, Landroid/widget/EditText;
 
-    .line 840
+    .line 853
     .local v3, view:Landroid/widget/EditText;
     if-eqz v3, :cond_e
 
-    .line 841
+    .line 854
     const/4 v4, 0x0
 
     invoke-virtual {v3, v4}, Landroid/widget/EditText;->setError(Ljava/lang/CharSequence;)V
 
     goto :goto_e
 
-    .line 845
+    .line 858
     .end local v0           #addressUIComponent:Lcom/android/i18n/addressinput/AddressUIComponent;
     .end local v1           #field:Lcom/android/i18n/addressinput/AddressField;
     .end local v3           #view:Landroid/widget/EditText;
@@ -2612,7 +2612,7 @@
     .parameter "field"
 
     .prologue
-    .line 803
+    .line 816
     iget-object v3, p0, Lcom/android/i18n/addressinput/AddressWidget;->mInputWidgets:Ljava/util/EnumMap;
 
     invoke-virtual {v3, p1}, Ljava/util/EnumMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2621,7 +2621,7 @@
 
     check-cast v0, Lcom/android/i18n/addressinput/AddressUIComponent;
 
-    .line 804
+    .line 817
     .local v0, addressUIComponent:Lcom/android/i18n/addressinput/AddressUIComponent;
     if-eqz v0, :cond_26
 
@@ -2633,12 +2633,12 @@
 
     if-ne v3, v4, :cond_26
 
-    .line 805
+    .line 818
     invoke-direct {p0, p1}, Lcom/android/i18n/addressinput/AddressWidget;->getErrorMessageIdForInvalidEntryIn(Lcom/android/i18n/addressinput/AddressField;)I
 
     move-result v1
 
-    .line 806
+    .line 819
     .local v1, errorMessageId:I
     invoke-virtual {v0}, Lcom/android/i18n/addressinput/AddressUIComponent;->getView()Landroid/view/View;
 
@@ -2646,7 +2646,7 @@
 
     check-cast v2, Landroid/widget/EditText;
 
-    .line 807
+    .line 820
     .local v2, view:Landroid/widget/EditText;
     iget-object v3, p0, Lcom/android/i18n/addressinput/AddressWidget;->mContext:Landroid/content/Context;
 
@@ -2656,7 +2656,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setError(Ljava/lang/CharSequence;)V
 
-    .line 810
+    .line 823
     .end local v1           #errorMessageId:I
     .end local v2           #view:Landroid/widget/EditText;
     :goto_25
@@ -2788,7 +2788,7 @@
 .end method
 
 .method public getAddressProblems()Lcom/android/i18n/addressinput/AddressProblems;
-    .registers 4
+    .registers 5
 
     .prologue
     .line 778
@@ -2808,7 +2808,55 @@
 
     invoke-virtual {v2, v0, v1}, Lcom/android/i18n/addressinput/StandardAddressVerifier;->verify(Lcom/android/i18n/addressinput/AddressData;Lcom/android/i18n/addressinput/AddressProblems;)V
 
-    .line 781
+    .line 784
+    invoke-virtual {v1}, Lcom/android/i18n/addressinput/AddressProblems;->getProblems()Ljava/util/Map;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Map;->keySet()Ljava/util/Set;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/i18n/addressinput/AddressWidget;->mFormOptions:Lcom/android/i18n/addressinput/FormOptions;
+
+    invoke-virtual {v3}, Lcom/android/i18n/addressinput/FormOptions;->getHiddenFields()Ljava/util/EnumSet;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Ljava/util/Set;->removeAll(Ljava/util/Collection;)Z
+
+    .line 789
+    iget-object v2, p0, Lcom/android/i18n/addressinput/AddressWidget;->mFormOptions:Lcom/android/i18n/addressinput/FormOptions;
+
+    sget-object v3, Lcom/android/i18n/addressinput/AddressField;->ADMIN_AREA:Lcom/android/i18n/addressinput/AddressField;
+
+    invoke-virtual {v2, v3}, Lcom/android/i18n/addressinput/FormOptions;->isHidden(Lcom/android/i18n/addressinput/AddressField;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3c
+
+    sget-object v2, Lcom/android/i18n/addressinput/AddressField;->POSTAL_CODE:Lcom/android/i18n/addressinput/AddressField;
+
+    invoke-virtual {v1, v2}, Lcom/android/i18n/addressinput/AddressProblems;->getProblem(Lcom/android/i18n/addressinput/AddressField;)Lcom/android/i18n/addressinput/AddressProblemType;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/android/i18n/addressinput/AddressProblemType;->MISSING_REQUIRED_FIELD:Lcom/android/i18n/addressinput/AddressProblemType;
+
+    if-eq v2, v3, :cond_3c
+
+    .line 792
+    invoke-virtual {v1}, Lcom/android/i18n/addressinput/AddressProblems;->getProblems()Ljava/util/Map;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/android/i18n/addressinput/AddressField;->POSTAL_CODE:Lcom/android/i18n/addressinput/AddressField;
+
+    invoke-interface {v2, v3}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 794
+    :cond_3c
     return-object v1
 .end method
 
@@ -2817,7 +2865,7 @@
     .parameter "field"
 
     .prologue
-    .line 848
+    .line 861
     iget-object v1, p0, Lcom/android/i18n/addressinput/AddressWidget;->mInputWidgets:Ljava/util/EnumMap;
 
     invoke-virtual {v1, p1}, Ljava/util/EnumMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2826,14 +2874,14 @@
 
     check-cast v0, Lcom/android/i18n/addressinput/AddressUIComponent;
 
-    .line 849
+    .line 862
     .local v0, component:Lcom/android/i18n/addressinput/AddressUIComponent;
     if-nez v0, :cond_c
 
-    .line 850
+    .line 863
     const/4 v1, 0x0
 
-    .line 852
+    .line 865
     :goto_b
     return-object v1
 
@@ -2862,11 +2910,11 @@
     .end annotation
 
     .prologue
-    .line 861
+    .line 874
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     invoke-direct {p0, p1, p3}, Lcom/android/i18n/addressinput/AddressWidget;->updateChildNodes(Landroid/widget/AdapterView;I)V
 
-    .line 862
+    .line 875
     return-void
 .end method
 
@@ -2882,7 +2930,7 @@
     .end annotation
 
     .prologue
-    .line 857
+    .line 870
     .local p1, arg0:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     return-void
 .end method
@@ -2945,175 +2993,162 @@
 .end method
 
 .method public restoreInstanceState(Landroid/os/Bundle;)V
-    .registers 10
-    .parameter "inState"
+    .registers 9
+    .parameter
 
     .prologue
-    .line 914
-    const-string v7, "address_data"
+    .line 927
+    const-string v0, "address_data"
 
-    invoke-virtual {p1, v7}, Landroid/os/Bundle;->getSerializable(Ljava/lang/String;)Ljava/io/Serializable;
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getSerializable(Ljava/lang/String;)Ljava/io/Serializable;
 
-    move-result-object v7
+    move-result-object v0
 
-    check-cast v7, Lcom/android/i18n/addressinput/AddressData;
+    check-cast v0, Lcom/android/i18n/addressinput/AddressData;
 
-    iput-object v7, p0, Lcom/android/i18n/addressinput/AddressWidget;->mSavedAddress:Lcom/android/i18n/addressinput/AddressData;
+    iput-object v0, p0, Lcom/android/i18n/addressinput/AddressWidget;->mSavedAddress:Lcom/android/i18n/addressinput/AddressData;
 
-    .line 915
-    iget-object v7, p0, Lcom/android/i18n/addressinput/AddressWidget;->mSavedAddress:Lcom/android/i18n/addressinput/AddressData;
+    .line 928
+    iget-object v0, p0, Lcom/android/i18n/addressinput/AddressWidget;->mSavedAddress:Lcom/android/i18n/addressinput/AddressData;
 
-    invoke-direct {p0, v7}, Lcom/android/i18n/addressinput/AddressWidget;->initializeFieldsWithAddress(Lcom/android/i18n/addressinput/AddressData;)V
+    invoke-direct {p0, v0}, Lcom/android/i18n/addressinput/AddressWidget;->initializeFieldsWithAddress(Lcom/android/i18n/addressinput/AddressData;)V
 
-    .line 918
-    const-string v7, "address_error_fields"
+    .line 931
+    const-string v0, "address_error_fields"
 
-    invoke-virtual {p1, v7}, Landroid/os/Bundle;->getIntegerArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getIntegerArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
-    move-result-object v4
+    move-result-object v2
 
-    .line 919
-    .local v4, keys:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Integer;>;"
-    const-string v7, "address_error_values"
+    .line 932
+    const-string v0, "address_error_values"
 
-    invoke-virtual {p1, v7}, Landroid/os/Bundle;->getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v3
+
+    .line 933
+    if-eqz v2, :cond_4e
+
+    if-eqz v3, :cond_4e
+
+    .line 934
+    new-instance v4, Ljava/util/HashMap;
+
+    invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
+
+    .line 935
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_26
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-ge v1, v0, :cond_49
+
+    .line 936
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v5
+
+    .line 937
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    .line 938
+    invoke-static {}, Lcom/android/i18n/addressinput/AddressField;->values()[Lcom/android/i18n/addressinput/AddressField;
 
     move-result-object v6
 
-    .line 920
-    .local v6, values:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
-    if-eqz v4, :cond_4c
+    aget-object v5, v6, v5
 
-    if-eqz v6, :cond_4c
+    .line 939
+    invoke-virtual {v4, v5, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 921
-    new-instance v0, Ljava/util/HashMap;
+    .line 935
+    add-int/lit8 v0, v1, 0x1
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    move v1, v0
 
-    .line 922
-    .local v0, errors:Ljava/util/HashMap;,"Ljava/util/HashMap<Lcom/android/i18n/addressinput/AddressField;Ljava/lang/String;>;"
-    const/4 v2, 0x0
+    goto :goto_26
 
-    .local v2, i:I
-    :goto_25
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    .line 941
+    :cond_49
+    iput-object v4, p0, Lcom/android/i18n/addressinput/AddressWidget;->mSavedErrors:Ljava/util/Map;
 
-    move-result v7
+    .line 942
+    invoke-direct {p0, v4}, Lcom/android/i18n/addressinput/AddressWidget;->setViewErrors(Ljava/util/Map;)V
 
-    if-ge v2, v7, :cond_47
-
-    .line 923
-    invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Ljava/lang/Integer;
-
-    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
-
-    .line 924
-    .local v3, key:I
-    invoke-virtual {v6, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Ljava/lang/String;
-
-    .line 925
-    .local v5, value:Ljava/lang/String;
-    invoke-static {}, Lcom/android/i18n/addressinput/AddressField;->values()[Lcom/android/i18n/addressinput/AddressField;
-
-    move-result-object v7
-
-    aget-object v1, v7, v3
-
-    .line 926
-    .local v1, field:Lcom/android/i18n/addressinput/AddressField;
-    invoke-virtual {v0, v1, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 922
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_25
-
-    .line 928
-    .end local v1           #field:Lcom/android/i18n/addressinput/AddressField;
-    .end local v3           #key:I
-    .end local v5           #value:Ljava/lang/String;
-    :cond_47
-    iput-object v0, p0, Lcom/android/i18n/addressinput/AddressWidget;->mSavedErrors:Ljava/util/Map;
-
-    .line 929
-    invoke-direct {p0, v0}, Lcom/android/i18n/addressinput/AddressWidget;->setViewErrors(Ljava/util/Map;)V
-
-    .line 931
-    .end local v0           #errors:Ljava/util/HashMap;,"Ljava/util/HashMap<Lcom/android/i18n/addressinput/AddressField;Ljava/lang/String;>;"
-    .end local v2           #i:I
-    :cond_4c
+    .line 944
+    :cond_4e
     return-void
 .end method
 
 .method public saveInstanceState(Landroid/os/Bundle;)V
-    .registers 9
-    .parameter "outState"
+    .registers 8
+    .parameter
 
     .prologue
-    .line 899
-    const-string v5, "address_data"
+    .line 912
+    const-string v0, "address_data"
 
     invoke-virtual {p0}, Lcom/android/i18n/addressinput/AddressWidget;->getAddressData()Lcom/android/i18n/addressinput/AddressData;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {p1, v5, v6}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
 
-    .line 902
+    .line 915
     invoke-direct {p0}, Lcom/android/i18n/addressinput/AddressWidget;->getViewErrors()Ljava/util/Map;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 903
-    .local v0, errors:Ljava/util/Map;,"Ljava/util/Map<Lcom/android/i18n/addressinput/AddressField;Ljava/lang/String;>;"
+    .line 916
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 917
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 904
-    .local v3, keys:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Integer;>;"
-    new-instance v4, Ljava/util/ArrayList;
+    .line 918
+    invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+    move-result-object v0
 
-    .line 905
-    .local v4, values:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
-    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-interface {v5}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    .local v2, i$:Ljava/util/Iterator;
     :goto_1f
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v5
+    move-result v0
 
-    if-eqz v5, :cond_3e
+    if-eqz v0, :cond_3e
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lcom/android/i18n/addressinput/AddressField;
+    check-cast v0, Lcom/android/i18n/addressinput/AddressField;
 
-    .line 906
-    .local v1, field:Lcom/android/i18n/addressinput/AddressField;
-    invoke-virtual {v1}, Lcom/android/i18n/addressinput/AddressField;->ordinal()I
+    .line 919
+    invoke-virtual {v0}, Lcom/android/i18n/addressinput/AddressField;->ordinal()I
 
     move-result v5
 
@@ -3121,30 +3156,83 @@
 
     move-result-object v5
 
-    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 907
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 920
+    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1f
 
-    .line 909
-    .end local v1           #field:Lcom/android/i18n/addressinput/AddressField;
+    .line 922
     :cond_3e
-    const-string v5, "address_error_fields"
+    const-string v0, "address_error_fields"
 
-    invoke-virtual {p1, v5, v3}, Landroid/os/Bundle;->putIntegerArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
+    invoke-virtual {p1, v0, v2}, Landroid/os/Bundle;->putIntegerArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    .line 910
-    const-string v5, "address_error_values"
+    .line 923
+    const-string v0, "address_error_values"
 
-    invoke-virtual {p1, v5, v4}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
+    invoke-virtual {p1, v0, v3}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    .line 911
+    .line 924
+    return-void
+.end method
+
+.method public setEnabled(Z)V
+    .registers 5
+    .parameter "enabled"
+
+    .prologue
+    .line 301
+    iget-object v2, p0, Lcom/android/i18n/addressinput/AddressWidget;->mInputWidgets:Ljava/util/EnumMap;
+
+    invoke-virtual {v2}, Ljava/util/EnumMap;->values()Ljava/util/Collection;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :cond_a
+    :goto_a
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_24
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/i18n/addressinput/AddressUIComponent;
+
+    .line 302
+    .local v0, addressField:Lcom/android/i18n/addressinput/AddressUIComponent;
+    invoke-virtual {v0}, Lcom/android/i18n/addressinput/AddressUIComponent;->getView()Landroid/view/View;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_a
+
+    .line 303
+    invoke-virtual {v0}, Lcom/android/i18n/addressinput/AddressUIComponent;->getView()Landroid/view/View;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Landroid/view/View;->setEnabled(Z)V
+
+    goto :goto_a
+
+    .line 306
+    .end local v0           #addressField:Lcom/android/i18n/addressinput/AddressUIComponent;
+    :cond_24
     return-void
 .end method
 

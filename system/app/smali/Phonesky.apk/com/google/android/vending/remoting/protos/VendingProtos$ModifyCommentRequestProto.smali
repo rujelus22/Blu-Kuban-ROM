@@ -53,44 +53,44 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 5208
+    .line 5314
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 5221
+    .line 5327
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->assetId_:Ljava/lang/String;
 
-    .line 5238
+    .line 5344
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->comment_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;
 
-    .line 5258
+    .line 5364
     iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->deleteComment_:Z
 
-    .line 5275
+    .line 5381
     iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->flagAsset_:Z
 
-    .line 5292
+    .line 5398
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->flagType_:I
 
-    .line 5309
+    .line 5415
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->flagMessage_:Ljava/lang/String;
 
-    .line 5326
+    .line 5432
     iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->nonFlagFlow_:Z
 
-    .line 5382
+    .line 5489
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->cachedSize:I
 
-    .line 5208
+    .line 5314
     return-void
 .end method
 
@@ -100,7 +100,7 @@
     .registers 2
 
     .prologue
-    .line 5222
+    .line 5328
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->assetId_:Ljava/lang/String;
 
     return-object v0
@@ -110,15 +110,15 @@
     .registers 2
 
     .prologue
-    .line 5384
+    .line 5492
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 5386
+    .line 5494
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->getSerializedSize()I
 
-    .line 5388
+    .line 5496
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->cachedSize:I
 
@@ -129,7 +129,7 @@
     .registers 2
 
     .prologue
-    .line 5240
+    .line 5346
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->comment_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;
 
     return-object v0
@@ -139,7 +139,7 @@
     .registers 2
 
     .prologue
-    .line 5259
+    .line 5365
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->deleteComment_:Z
 
     return v0
@@ -149,7 +149,7 @@
     .registers 2
 
     .prologue
-    .line 5276
+    .line 5382
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->flagAsset_:Z
 
     return v0
@@ -159,7 +159,7 @@
     .registers 2
 
     .prologue
-    .line 5310
+    .line 5416
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->flagMessage_:Ljava/lang/String;
 
     return-object v0
@@ -169,7 +169,7 @@
     .registers 2
 
     .prologue
-    .line 5294
+    .line 5400
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->flagType_:I
 
     return v0
@@ -179,7 +179,7 @@
     .registers 2
 
     .prologue
-    .line 5327
+    .line 5433
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->nonFlagFlow_:Z
 
     return v0
@@ -189,10 +189,10 @@
     .registers 4
 
     .prologue
-    .line 5392
+    .line 5501
     const/4 v0, 0x0
 
-    .line 5393
+    .line 5502
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasAssetId()Z
 
@@ -200,7 +200,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 5394
+    .line 5503
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->getAssetId()Ljava/lang/String;
@@ -213,7 +213,7 @@
 
     add-int/2addr v0, v1
 
-    .line 5397
+    .line 5506
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasComment()Z
 
@@ -221,7 +221,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 5398
+    .line 5507
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->getComment()Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;
@@ -234,7 +234,7 @@
 
     add-int/2addr v0, v1
 
-    .line 5401
+    .line 5510
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasDeleteComment()Z
 
@@ -242,7 +242,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 5402
+    .line 5511
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->getDeleteComment()Z
@@ -255,7 +255,7 @@
 
     add-int/2addr v0, v1
 
-    .line 5405
+    .line 5514
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasFlagAsset()Z
 
@@ -263,7 +263,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 5406
+    .line 5515
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->getFlagAsset()Z
@@ -276,7 +276,7 @@
 
     add-int/2addr v0, v1
 
-    .line 5409
+    .line 5518
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasFlagType()Z
 
@@ -284,7 +284,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 5410
+    .line 5519
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->getFlagType()I
@@ -297,7 +297,7 @@
 
     add-int/2addr v0, v1
 
-    .line 5413
+    .line 5522
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasFlagMessage()Z
 
@@ -305,7 +305,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 5414
+    .line 5523
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->getFlagMessage()Ljava/lang/String;
@@ -318,7 +318,7 @@
 
     add-int/2addr v0, v1
 
-    .line 5417
+    .line 5526
     :cond_61
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasNonFlagFlow()Z
 
@@ -326,7 +326,7 @@
 
     if-eqz v1, :cond_71
 
-    .line 5418
+    .line 5527
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->getNonFlagFlow()Z
@@ -339,11 +339,11 @@
 
     add-int/2addr v0, v1
 
-    .line 5421
+    .line 5530
     :cond_71
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->cachedSize:I
 
-    .line 5422
+    .line 5531
     return v0
 .end method
 
@@ -351,7 +351,7 @@
     .registers 2
 
     .prologue
-    .line 5223
+    .line 5329
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasAssetId:Z
 
     return v0
@@ -361,7 +361,7 @@
     .registers 2
 
     .prologue
-    .line 5239
+    .line 5345
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasComment:Z
 
     return v0
@@ -371,7 +371,7 @@
     .registers 2
 
     .prologue
-    .line 5260
+    .line 5366
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasDeleteComment:Z
 
     return v0
@@ -381,7 +381,7 @@
     .registers 2
 
     .prologue
-    .line 5277
+    .line 5383
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasFlagAsset:Z
 
     return v0
@@ -391,7 +391,7 @@
     .registers 2
 
     .prologue
-    .line 5311
+    .line 5417
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasFlagMessage:Z
 
     return v0
@@ -401,7 +401,7 @@
     .registers 2
 
     .prologue
-    .line 5293
+    .line 5399
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasFlagType:Z
 
     return v0
@@ -411,7 +411,7 @@
     .registers 2
 
     .prologue
-    .line 5328
+    .line 5434
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasNonFlagFlow:Z
 
     return v0
@@ -427,29 +427,29 @@
     .end annotation
 
     .prologue
-    .line 5429
+    .line 5539
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 5430
+    .line 5540
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_4a
 
-    .line 5434
+    .line 5544
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 5435
+    .line 5545
     :sswitch_d
     return-object p0
 
-    .line 5440
+    .line 5550
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -459,22 +459,22 @@
 
     goto :goto_0
 
-    .line 5444
+    .line 5554
     :sswitch_16
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;-><init>()V
 
-    .line 5445
+    .line 5555
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 5446
+    .line 5556
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->setComment(Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;
 
     goto :goto_0
 
-    .line 5450
+    .line 5560
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;
     :sswitch_22
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
@@ -485,7 +485,7 @@
 
     goto :goto_0
 
-    .line 5454
+    .line 5564
     :sswitch_2a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -495,7 +495,7 @@
 
     goto :goto_0
 
-    .line 5458
+    .line 5568
     :sswitch_32
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -505,7 +505,7 @@
 
     goto :goto_0
 
-    .line 5462
+    .line 5572
     :sswitch_3a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -515,7 +515,7 @@
 
     goto :goto_0
 
-    .line 5466
+    .line 5576
     :sswitch_42
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -525,7 +525,7 @@
 
     goto :goto_0
 
-    .line 5430
+    .line 5540
     :sswitch_data_4a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -549,7 +549,7 @@
     .end annotation
 
     .prologue
-    .line 5206
+    .line 5312
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;
 
     move-result-object v0
@@ -562,15 +562,15 @@
     .parameter "value"
 
     .prologue
-    .line 5225
+    .line 5331
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasAssetId:Z
 
-    .line 5226
+    .line 5332
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->assetId_:Ljava/lang/String;
 
-    .line 5227
+    .line 5333
     return-object p0
 .end method
 
@@ -579,26 +579,26 @@
     .parameter "value"
 
     .prologue
-    .line 5242
+    .line 5348
     if-nez p1, :cond_8
 
-    .line 5243
+    .line 5349
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 5245
+    .line 5351
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasComment:Z
 
-    .line 5246
+    .line 5352
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->comment_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;
 
-    .line 5247
+    .line 5353
     return-object p0
 .end method
 
@@ -607,15 +607,15 @@
     .parameter "value"
 
     .prologue
-    .line 5262
+    .line 5368
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasDeleteComment:Z
 
-    .line 5263
+    .line 5369
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->deleteComment_:Z
 
-    .line 5264
+    .line 5370
     return-object p0
 .end method
 
@@ -624,15 +624,15 @@
     .parameter "value"
 
     .prologue
-    .line 5279
+    .line 5385
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasFlagAsset:Z
 
-    .line 5280
+    .line 5386
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->flagAsset_:Z
 
-    .line 5281
+    .line 5387
     return-object p0
 .end method
 
@@ -641,15 +641,15 @@
     .parameter "value"
 
     .prologue
-    .line 5313
+    .line 5419
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasFlagMessage:Z
 
-    .line 5314
+    .line 5420
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->flagMessage_:Ljava/lang/String;
 
-    .line 5315
+    .line 5421
     return-object p0
 .end method
 
@@ -658,15 +658,15 @@
     .parameter "value"
 
     .prologue
-    .line 5296
+    .line 5402
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasFlagType:Z
 
-    .line 5297
+    .line 5403
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->flagType_:I
 
-    .line 5298
+    .line 5404
     return-object p0
 .end method
 
@@ -675,15 +675,15 @@
     .parameter "value"
 
     .prologue
-    .line 5330
+    .line 5436
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasNonFlagFlow:Z
 
-    .line 5331
+    .line 5437
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->nonFlagFlow_:Z
 
-    .line 5332
+    .line 5438
     return-object p0
 .end method
 
@@ -697,14 +697,14 @@
     .end annotation
 
     .prologue
-    .line 5359
+    .line 5466
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasAssetId()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 5360
+    .line 5467
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->getAssetId()Ljava/lang/String;
@@ -713,7 +713,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 5362
+    .line 5469
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasComment()Z
 
@@ -721,7 +721,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 5363
+    .line 5470
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->getComment()Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;
@@ -730,7 +730,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 5365
+    .line 5472
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasDeleteComment()Z
 
@@ -738,7 +738,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 5366
+    .line 5473
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->getDeleteComment()Z
@@ -747,7 +747,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 5368
+    .line 5475
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasFlagAsset()Z
 
@@ -755,7 +755,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 5369
+    .line 5476
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->getFlagAsset()Z
@@ -764,7 +764,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 5371
+    .line 5478
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasFlagType()Z
 
@@ -772,7 +772,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 5372
+    .line 5479
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->getFlagType()I
@@ -781,7 +781,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 5374
+    .line 5481
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasFlagMessage()Z
 
@@ -789,7 +789,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 5375
+    .line 5482
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->getFlagMessage()Ljava/lang/String;
@@ -798,7 +798,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 5377
+    .line 5484
     :cond_54
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->hasNonFlagFlow()Z
 
@@ -806,7 +806,7 @@
 
     if-eqz v0, :cond_62
 
-    .line 5378
+    .line 5485
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->getNonFlagFlow()Z
@@ -815,7 +815,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 5380
+    .line 5487
     :cond_62
     return-void
 .end method

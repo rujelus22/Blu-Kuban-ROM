@@ -1,288 +1,136 @@
-.class public LaZ/j;
-.super Lcom/google/android/maps/driveabout/vector/aA;
+.class Laz/j;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field private final d:Ljava/lang/Object;
+.field final synthetic a:Laz/h;
 
-.field private e:Ljava/util/List;
+.field private volatile b:I
 
-.field private final f:I
-
-.field private final g:I
-
-.field private final h:I
+.field private volatile c:Z
 
 
 # direct methods
-.method public constructor <init>(LaY/i;Lcom/google/googlenav/D;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;IIIIZ)V
-    .registers 20
+.method constructor <init>(Laz/h;JLjava/util/List;Lcom/google/googlenav/ui/android/w;)V
+    .registers 15
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-interface {p2}, Lcom/google/googlenav/D;->a()LaJ/B;
+    .prologue
+    .line 171
+    iput-object p1, p0, Laz/j;->a:Laz/h;
 
-    move-result-object v1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v1}, LaJ/B;->c()I
+    .line 172
+    invoke-interface {p4}, Ljava/util/List;->size()I
 
-    move-result v1
+    move-result v0
 
-    invoke-interface {p2}, Lcom/google/googlenav/D;->a()LaJ/B;
+    iput v0, p0, Laz/j;->b:I
 
-    move-result-object v2
+    .line 173
+    const/4 v0, 0x0
 
-    invoke-virtual {v2}, LaJ/B;->e()I
+    iput-boolean v0, p0, Laz/j;->c:Z
 
-    move-result v2
+    .line 174
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/dg;->a:Lcom/google/android/maps/driveabout/vector/dg;
 
-    invoke-static {v1, v2}, Lt/L;->b(II)Lt/L;
+    invoke-static {v0}, Lr/aJ;->c(Lcom/google/android/maps/driveabout/vector/dg;)Lr/aH;
 
-    move-result-object v2
+    move-result-object v7
 
-    const-string v7, ""
+    .line 175
+    invoke-interface {p4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    const/4 v8, 0x0
+    move-result-object v8
+
+    :goto_18
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_32
+
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Ln/am;
+
+    .line 181
+    new-instance v0, Laz/k;
 
     move-object v1, p0
 
-    move-object v3, p3
+    move-object v2, p1
 
-    move-object v4, p4
+    move-wide v3, p2
 
-    move v5, p5
+    move-object v5, p5
 
-    move/from16 v6, p6
+    invoke-direct/range {v0 .. v5}, Laz/k;-><init>(Laz/j;Laz/h;JLcom/google/googlenav/ui/android/w;)V
 
-    move/from16 v9, p9
+    invoke-interface {v7, v6, v0}, Lr/aH;->b(Ln/am;Lr/aF;)V
 
-    invoke-direct/range {v1 .. v9}, Lcom/google/android/maps/driveabout/vector/aA;-><init>(Lt/L;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;IILjava/lang/String;Ljava/lang/String;Z)V
+    goto :goto_18
 
-    invoke-interface {p2}, Lcom/google/googlenav/D;->b()Ljava/util/List;
-
-    move-result-object v1
-
-    iput-object v1, p0, LaZ/j;->e:Ljava/util/List;
-
-    move/from16 v0, p7
-
-    iput v0, p0, LaZ/j;->f:I
-
-    move/from16 v0, p8
-
-    iput v0, p0, LaZ/j;->g:I
-
-    iget v1, p0, LaZ/j;->g:I
-
-    invoke-virtual {p0, v1}, LaZ/j;->a(I)I
-
-    move-result v1
-
-    iput v1, p0, LaZ/j;->h:I
-
-    invoke-interface {p2}, Lcom/google/googlenav/D;->f()Ljava/lang/Object;
-
-    move-result-object v1
-
-    iput-object v1, p0, LaZ/j;->d:Ljava/lang/Object;
-
+    .line 238
+    :cond_32
     return-void
 .end method
 
-
-# virtual methods
-.method public a(Lcom/google/googlenav/e;)Z
-    .registers 6
-
-    const/4 v2, 0x0
-
-    const/4 v1, 0x1
-
-    if-nez p1, :cond_c
-
-    iget-object v0, p0, LaZ/j;->a:Landroid/graphics/Bitmap;
-
-    if-eqz v0, :cond_a
-
-    move v0, v1
-
-    :goto_9
-    return v0
-
-    :cond_a
-    move v0, v2
-
-    goto :goto_9
-
-    :cond_c
-    iget-object v0, p0, LaZ/j;->a:Landroid/graphics/Bitmap;
-
-    if-nez v0, :cond_12
-
-    move v0, v1
-
-    goto :goto_9
-
-    :cond_12
-    iget-object v3, p0, LaZ/j;->a:Landroid/graphics/Bitmap;
-
-    invoke-virtual {p1}, Lcom/google/googlenav/e;->a()Lah/f;
-
-    move-result-object v0
-
-    check-cast v0, Lai/f;
-
-    invoke-virtual {v0}, Lai/f;->h()Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    invoke-virtual {v3, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_34
-
-    iget v0, p0, LaZ/j;->b:I
-
-    invoke-virtual {p1}, Lcom/google/googlenav/e;->b()I
-
-    move-result v3
-
-    if-ne v0, v3, :cond_34
-
-    iget v0, p0, LaZ/j;->c:I
-
-    invoke-virtual {p1}, Lcom/google/googlenav/e;->c()I
-
-    move-result v3
-
-    if-eq v0, v3, :cond_35
-
-    :cond_34
-    move v2, v1
-
-    :cond_35
-    move v0, v2
-
-    goto :goto_9
-.end method
-
-.method public e()Lt/y;
-    .registers 6
-
-    const/4 v0, 0x0
-
-    const/4 v4, 0x0
-
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/googlenav/M;->w()Z
-
-    move-result v1
-
-    if-nez v1, :cond_d
-
-    :goto_c
-    :pswitch_c
-    return-object v0
-
-    :cond_d
-    iget-object v1, p0, LaZ/j;->e:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    packed-switch v1, :pswitch_data_4a
-
-    invoke-static {}, Lr/l;->a()Lr/l;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lr/l;->f()Ljava/util/Set;
-
-    move-result-object v1
-
-    iget-object v0, p0, LaZ/j;->e:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :cond_24
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_40
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lt/y;
-
-    invoke-interface {v1, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_24
-
-    goto :goto_c
-
-    :pswitch_37
-    iget-object v0, p0, LaZ/j;->e:Ljava/util/List;
-
-    invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lt/y;
-
-    goto :goto_c
-
-    :cond_40
-    iget-object v0, p0, LaZ/j;->e:Ljava/util/List;
-
-    invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lt/y;
-
-    goto :goto_c
-
-    nop
-
-    :pswitch_data_4a
-    .packed-switch 0x0
-        :pswitch_c
-        :pswitch_37
-    .end packed-switch
-.end method
-
-.method public f()I
+.method static synthetic a(Laz/j;)I
     .registers 2
+    .parameter
 
-    iget v0, p0, LaZ/j;->h:I
-
-    neg-int v0, v0
+    .prologue
+    .line 166
+    iget v0, p0, Laz/j;->b:I
 
     return v0
 .end method
 
-.method public q_()I
+.method static synthetic a(Laz/j;Z)Z
     .registers 2
+    .parameter
+    .parameter
 
-    iget v0, p0, LaZ/j;->f:I
+    .prologue
+    .line 166
+    iput-boolean p1, p0, Laz/j;->c:Z
+
+    return p1
+.end method
+
+.method static synthetic b(Laz/j;)I
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 166
+    iget v0, p0, Laz/j;->b:I
+
+    add-int/lit8 v1, v0, -0x1
+
+    iput v1, p0, Laz/j;->b:I
 
     return v0
 .end method
 
-.method public r()Ljava/lang/Object;
+.method static synthetic c(Laz/j;)Z
     .registers 2
+    .parameter
 
-    iget-object v0, p0, LaZ/j;->d:Ljava/lang/Object;
+    .prologue
+    .line 166
+    iget-boolean v0, p0, Laz/j;->c:Z
 
-    return-object v0
+    return v0
 .end method

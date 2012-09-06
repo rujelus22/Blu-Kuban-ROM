@@ -1,146 +1,197 @@
 .class public Lcom/google/googlenav/prefetch/android/o;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements LaE/m;
+.implements LaD/c;
+.implements Lcom/google/googlenav/prefetch/android/y;
 
 
 # instance fields
-.field private a:LaJ/B;
+.field private final a:LaD/c;
 
-.field private b:J
+.field private final b:Lcom/google/googlenav/prefetch/android/y;
 
-.field private c:J
-
-.field private d:LaR/i;
+.field private volatile c:I
 
 
 # direct methods
-.method public constructor <init>(LaR/i;)V
-    .registers 2
+.method public constructor <init>(Lcom/google/googlenav/prefetch/android/y;LaD/c;)V
+    .registers 3
+    .parameter
+    .parameter
 
+    .prologue
+    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/googlenav/prefetch/android/o;->d:LaR/i;
+    .line 23
+    iput-object p2, p0, Lcom/google/googlenav/prefetch/android/o;->a:LaD/c;
 
+    .line 24
+    iput-object p1, p0, Lcom/google/googlenav/prefetch/android/o;->b:Lcom/google/googlenav/prefetch/android/y;
+
+    .line 25
+    invoke-virtual {p0}, Lcom/google/googlenav/prefetch/android/o;->b()V
+
+    .line 26
     return-void
 .end method
 
 
 # virtual methods
-.method public a(ILaE/h;)V
-    .registers 3
+.method public a()Ln/am;
+    .registers 2
 
+    .prologue
+    .line 65
+    invoke-virtual {p0}, Lcom/google/googlenav/prefetch/android/o;->d()Z
+
+    move-result v0
+
+    if-nez v0, :cond_15
+
+    iget v0, p0, Lcom/google/googlenav/prefetch/android/o;->c:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Lcom/google/googlenav/prefetch/android/o;->c:I
+
+    if-ltz v0, :cond_15
+
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/o;->b:Lcom/google/googlenav/prefetch/android/y;
+
+    invoke-interface {v0}, Lcom/google/googlenav/prefetch/android/y;->a()Ln/am;
+
+    move-result-object v0
+
+    :goto_14
+    return-object v0
+
+    :cond_15
+    const/4 v0, 0x0
+
+    goto :goto_14
+.end method
+
+.method public a(Ln/am;)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 55
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/o;->b:Lcom/google/googlenav/prefetch/android/y;
+
+    invoke-interface {v0, p1}, Lcom/google/googlenav/prefetch/android/y;->a(Ln/am;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method b()V
+    .registers 2
+
+    .prologue
+    .line 75
+    invoke-static {}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->l()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/googlenav/prefetch/android/o;->c:I
+
+    .line 76
     return-void
 .end method
 
-.method public a(LaJ/B;LaE/h;)V
-    .registers 14
+.method public c()V
+    .registers 2
 
-    const/4 v10, 0x0
+    .prologue
+    .line 35
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/o;->a:LaD/c;
 
-    const/4 v0, 0x1
+    invoke-interface {v0}, LaD/c;->c()V
 
-    const/4 v1, 0x0
-
-    invoke-static {}, Laf/b;->a()Laf/b;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Laf/b;->v()Laf/a;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Laf/a;->c()J
-
-    move-result-wide v2
-
-    iget-wide v4, p0, Lcom/google/googlenav/prefetch/android/o;->c:J
-
-    const-wide/16 v6, 0x7530
-
-    add-long/2addr v4, v6
-
-    cmp-long v4, v4, v2
-
-    if-lez v4, :cond_19
-
-    :cond_18
-    :goto_18
+    .line 36
     return-void
+.end method
 
-    :cond_19
-    iput-wide v2, p0, Lcom/google/googlenav/prefetch/android/o;->c:J
+.method public d()Z
+    .registers 2
 
-    invoke-virtual {p2}, LaE/h;->q()LaJ/B;
+    .prologue
+    .line 40
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/o;->a:LaD/c;
 
-    move-result-object v4
+    invoke-interface {v0}, LaD/c;->d()Z
 
-    if-eqz v4, :cond_18
+    move-result v0
 
-    invoke-virtual {p2}, LaE/h;->i()I
+    return v0
+.end method
 
-    move-result v5
+.method public i()I
+    .registers 2
 
-    const/16 v6, 0x3e8
+    .prologue
+    .line 45
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/o;->b:Lcom/google/googlenav/prefetch/android/y;
 
-    if-ge v5, v6, :cond_18
+    invoke-interface {v0}, Lcom/google/googlenav/prefetch/android/y;->i()I
 
-    iget-object v5, p0, Lcom/google/googlenav/prefetch/android/o;->a:LaJ/B;
+    move-result v0
 
-    if-nez v5, :cond_39
+    return v0
+.end method
 
-    iget-object v5, p0, Lcom/google/googlenav/prefetch/android/o;->d:LaR/i;
+.method public j()I
+    .registers 2
 
-    invoke-interface {v5, v4, v1, v10}, LaR/i;->a(LaJ/B;ILjava/lang/String;)V
+    .prologue
+    .line 50
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/o;->b:Lcom/google/googlenav/prefetch/android/y;
 
-    :goto_32
-    if-eqz v0, :cond_18
+    invoke-interface {v0}, Lcom/google/googlenav/prefetch/android/y;->j()I
 
-    iput-object v4, p0, Lcom/google/googlenav/prefetch/android/o;->a:LaJ/B;
+    move-result v0
 
-    iput-wide v2, p0, Lcom/google/googlenav/prefetch/android/o;->b:J
+    return v0
+.end method
 
-    goto :goto_18
+.method public k()Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+    .registers 2
 
-    :cond_39
-    iget-object v5, p0, Lcom/google/googlenav/prefetch/android/o;->a:LaJ/B;
+    .prologue
+    .line 60
+    const/4 v0, 0x0
 
-    invoke-virtual {v5, v4}, LaJ/B;->b(LaJ/B;)J
+    return-object v0
+.end method
 
-    move-result-wide v5
+.method public l()I
+    .registers 2
 
-    long-to-double v5, v5
+    .prologue
+    .line 71
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/o;->b:Lcom/google/googlenav/prefetch/android/y;
 
-    invoke-static {v5, v6}, Ljava/lang/Math;->sqrt(D)D
+    invoke-interface {v0}, Lcom/google/googlenav/prefetch/android/y;->l()I
 
-    move-result-wide v5
+    move-result v0
 
-    double-to-int v5, v5
+    return v0
+.end method
 
-    iget-wide v6, p0, Lcom/google/googlenav/prefetch/android/o;->b:J
+.method public m()V
+    .registers 2
 
-    sub-long v6, v2, v6
+    .prologue
+    .line 30
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/o;->b:Lcom/google/googlenav/prefetch/android/y;
 
-    const/16 v8, 0x64
+    invoke-interface {v0}, Lcom/google/googlenav/prefetch/android/y;->m()V
 
-    if-ge v5, v8, :cond_54
-
-    const-wide/32 v8, 0xea60
-
-    cmp-long v5, v6, v8
-
-    if-ltz v5, :cond_5a
-
-    :cond_54
-    iget-object v5, p0, Lcom/google/googlenav/prefetch/android/o;->d:LaR/i;
-
-    invoke-interface {v5, v4, v1, v10}, LaR/i;->a(LaJ/B;ILjava/lang/String;)V
-
-    goto :goto_32
-
-    :cond_5a
-    move v0, v1
-
-    goto :goto_32
+    .line 31
+    return-void
 .end method

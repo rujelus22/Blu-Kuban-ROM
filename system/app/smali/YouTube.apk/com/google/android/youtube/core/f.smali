@@ -11,7 +11,7 @@
     .registers 1
 
     .prologue
-    .line 13
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,27 +19,46 @@
 
 
 # virtual methods
+.method public final a()Landroid/graphics/Typeface;
+    .registers 2
+
+    .prologue
+    .line 50
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
 .method public final a(Landroid/content/Context;)Z
     .registers 3
     .parameter
 
     .prologue
-    .line 16
+    .line 22
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final a(Landroid/view/View;)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 46
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public final b(Landroid/content/Context;)Z
-    .registers 7
+    .registers 4
     .parameter
 
     .prologue
-    const/4 v2, 0x1
-
-    const/4 v1, 0x0
-
-    .line 24
+    .line 26
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -48,16 +67,45 @@
 
     move-result-object v0
 
-    .line 25
+    .line 27
     iget v0, v0, Landroid/content/res/Configuration;->screenLayout:I
 
-    and-int/lit8 v3, v0, 0xf
+    and-int/lit8 v0, v0, 0xf
 
-    .line 26
-    new-instance v4, Landroid/util/DisplayMetrics;
+    .line 28
+    invoke-virtual {p0, p1}, Lcom/google/android/youtube/core/f;->c(Landroid/content/Context;)Z
 
-    invoke-direct {v4}, Landroid/util/DisplayMetrics;-><init>()V
+    move-result v1
 
+    if-nez v1, :cond_15
+
+    const/4 v1, 0x3
+
+    if-lt v0, v1, :cond_17
+
+    :cond_15
+    const/4 v0, 0x1
+
+    :goto_16
+    return v0
+
+    :cond_17
+    const/4 v0, 0x0
+
+    goto :goto_16
+.end method
+
+.method public final c(Landroid/content/Context;)Z
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 33
+    new-instance v1, Landroid/util/DisplayMetrics;
+
+    invoke-direct {v1}, Landroid/util/DisplayMetrics;-><init>()V
+
+    .line 34
     const-string v0, "window"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -66,56 +114,44 @@
 
     check-cast v0, Landroid/view/WindowManager;
 
+    .line 36
     invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v0
 
-    invoke-virtual {v0, v4}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+    invoke-virtual {v0, v1}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
-    iget v0, v4, Landroid/util/DisplayMetrics;->widthPixels:I
+    .line 37
+    iget v0, v1, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    iget v4, v4, Landroid/util/DisplayMetrics;->heightPixels:I
+    iget v1, v1, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    invoke-static {v0, v4}, Ljava/lang/Math;->min(II)I
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    const/16 v4, 0x2d0
+    .line 38
+    const/16 v1, 0x2d0
 
-    if-lt v0, v4, :cond_36
+    if-lt v0, v1, :cond_22
 
-    move v0, v2
+    const/4 v0, 0x1
 
-    :goto_2f
-    if-nez v0, :cond_34
-
-    const/4 v0, 0x3
-
-    if-lt v3, v0, :cond_38
-
-    :cond_34
-    move v0, v2
-
-    :goto_35
+    :goto_21
     return v0
 
-    :cond_36
-    move v0, v1
+    :cond_22
+    const/4 v0, 0x0
 
-    goto :goto_2f
-
-    :cond_38
-    move v0, v1
-
-    goto :goto_35
+    goto :goto_21
 .end method
 
-.method public final c(Landroid/content/Context;)Z
+.method public final d(Landroid/content/Context;)Z
     .registers 3
     .parameter
 
     .prologue
-    .line 40
+    .line 42
     const/4 v0, 0x0
 
     return v0

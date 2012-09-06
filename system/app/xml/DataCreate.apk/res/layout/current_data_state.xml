@@ -54,11 +54,6 @@
         </TableRow>
         <View android:background="#ff909090" android:layout_height="2.0dip" />
         <TableRow>
-            <TextView android:text="@string/current_data_state_schedule" />
-            <TextView android:gravity="left" android:id="@id/schedule_num" android:layout_marginLeft="10.0dip" android:layout_column="2" android:text="@string/current_data_state_not_available" />
-        </TableRow>
-        <View android:background="#ff909090" android:layout_height="2.0dip" />
-        <TableRow>
             <TextView android:text="@string/current_data_state_message" />
         </TableRow>
         <TableRow>

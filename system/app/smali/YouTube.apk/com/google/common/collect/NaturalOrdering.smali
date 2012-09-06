@@ -17,7 +17,7 @@
     .registers 1
 
     .prologue
-    .line 31
+    .line 32
     new-instance v0, Lcom/google/common/collect/NaturalOrdering;
 
     invoke-direct {v0}, Lcom/google/common/collect/NaturalOrdering;-><init>()V
@@ -31,7 +31,7 @@
     .registers 1
 
     .prologue
-    .line 73
+    .line 71
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 64
     sget-object v0, Lcom/google/common/collect/NaturalOrdering;->INSTANCE:Lcom/google/common/collect/NaturalOrdering;
 
     return-object v0
@@ -55,7 +55,7 @@
     .parameter
 
     .prologue
-    .line 53
+    .line 51
     invoke-static {p1, p2}, Ljava/util/Collections;->binarySearch(Ljava/util/List;Ljava/lang/Object;)I
 
     move-result v0
@@ -69,7 +69,7 @@
     .parameter
 
     .prologue
-    .line 27
+    .line 28
     check-cast p2, Ljava/lang/Comparable;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/NaturalOrdering;->binarySearch(Ljava/util/List;Ljava/lang/Comparable;)I
@@ -85,26 +85,28 @@
     .parameter
 
     .prologue
-    .line 34
-    invoke-static {p2}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 35
-    if-ne p1, p2, :cond_7
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 36
+    invoke-static {p2}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 37
+    if-ne p1, p2, :cond_a
+
+    .line 38
     const/4 v0, 0x0
 
     .line 41
-    :goto_6
+    :goto_9
     return v0
 
-    .line 40
-    :cond_7
+    :cond_a
     invoke-interface {p1, p2}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
     move-result v0
 
-    goto :goto_6
+    goto :goto_9
 .end method
 
 .method public final bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
@@ -113,7 +115,7 @@
     .parameter
 
     .prologue
-    .line 27
+    .line 28
     check-cast p1, Ljava/lang/Comparable;
 
     check-cast p2, Ljava/lang/Comparable;
@@ -129,7 +131,7 @@
     .registers 2
 
     .prologue
-    .line 46
+    .line 45
     sget-object v0, Lcom/google/common/collect/ReverseNaturalOrdering;->INSTANCE:Lcom/google/common/collect/ReverseNaturalOrdering;
 
     return-object v0
@@ -140,15 +142,15 @@
     .parameter
 
     .prologue
-    .line 59
+    .line 57
     invoke-static {p1}, Lcom/google/common/collect/Lists;->a(Ljava/lang/Iterable;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 60
+    .line 58
     invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 61
+    .line 59
     return-object v0
 .end method
 
@@ -156,7 +158,7 @@
     .registers 2
 
     .prologue
-    .line 70
+    .line 68
     const-string v0, "Ordering.natural()"
 
     return-object v0

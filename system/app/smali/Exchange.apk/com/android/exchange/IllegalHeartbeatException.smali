@@ -17,12 +17,12 @@
     .parameter "legalHeartbeat"
 
     .prologue
-    .line 49
+    .line 24
     invoke-direct {p0}, Lcom/android/exchange/EasException;-><init>()V
 
-    .line 51
+    .line 25
     iput p1, p0, Lcom/android/exchange/IllegalHeartbeatException;->mLegalHeartbeat:I
 
-    .line 53
+    .line 26
     return-void
 .end method

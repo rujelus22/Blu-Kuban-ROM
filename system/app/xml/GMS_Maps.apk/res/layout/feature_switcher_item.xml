@@ -3,8 +3,8 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <ImageView android:layout_gravity="center_vertical" android:id="@id/image" android:layout_width="42.0dip" android:layout_height="42.0dip" android:layout_marginLeft="6.0dip" android:layout_marginTop="6.0dip" android:layout_marginRight="6.0dip" android:layout_marginBottom="6.0dip" android:scaleType="center" android:maxWidth="42.0dip" android:maxHeight="42.0dip" />
     <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <TextView android:textSize="18.0sp" android:textColor="@color/black" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-        <TextView android:textSize="14.0sp" android:textColor="@color/grey" android:id="@id/subtitle" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/white" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="14.0sp" android:textColor="#ffc0c0c0" android:id="@id/subtitle" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
     </LinearLayout>
     <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:layout_gravity="right|center" android:id="@id/notificationCount" android:background="@drawable/notification_count_background" android:visibility="gone" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="8.0dip" android:scaleType="center" />
 </LinearLayout>

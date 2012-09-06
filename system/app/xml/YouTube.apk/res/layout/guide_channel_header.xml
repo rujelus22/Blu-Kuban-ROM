@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/subscribe_button" android:background="?android:selectableItemBackground" android:paddingRight="@dimen/list_item_padding" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+        <ProgressBar android:layout_gravity="center" android:id="@id/subscribe_progress" android:visibility="visible" android:layout_width="@dimen/status_spinner_width" android:layout_height="@dimen/status_spinner_height" />
+        <TextView android:gravity="center_vertical" android:layout_gravity="center" android:id="@id/subscribe_text" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="@dimen/guide_small_avatar_height" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/subscribe" />
+    </FrameLayout>
+    <RelativeLayout android:id="@id/to_channel" android:background="?android:selectableItemBackground" android:paddingLeft="@dimen/list_item_padding" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/subscribe_button" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+        <FrameLayout android:id="@id/channel_avatar_layout" android:background="@drawable/bg_avatar" android:layout_width="@dimen/guide_small_avatar_width" android:layout_height="@dimen/guide_small_avatar_height" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+            <ImageView android:id="@id/channel_avatar" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+        </FrameLayout>
+        <TextView android:textSize="@dimen/large_font_size" android:textColor="@color/primary_font" android:ellipsize="end" android:id="@id/channel_title" android:paddingLeft="@dimen/list_item_padding" android:paddingRight="@dimen/list_item_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_toRightOf="@id/channel_avatar_layout" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

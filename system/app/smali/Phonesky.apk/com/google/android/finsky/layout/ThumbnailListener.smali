@@ -11,30 +11,45 @@
 
 .field protected final mImageView:Landroid/widget/ImageView;
 
-.field private final mViewToBeUpdated:Landroid/view/View;
+.field protected final mViewToFadeIn:Landroid/view/View;
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/ImageView;Landroid/view/View;Z)V
+.method public constructor <init>(Landroid/widget/ImageView;Z)V
     .registers 4
     .parameter "imageView"
-    .parameter "viewToBeUpdated"
     .parameter "fadeIn"
 
     .prologue
-    .line 47
+    .line 36
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/finsky/layout/ThumbnailListener;-><init>(Landroid/widget/ImageView;ZLandroid/view/View;)V
+
+    .line 37
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/widget/ImageView;ZLandroid/view/View;)V
+    .registers 4
+    .parameter "imageView"
+    .parameter "fadeIn"
+    .parameter "viewToFadeIn"
+
+    .prologue
+    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
+    .line 46
     iput-object p1, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mImageView:Landroid/widget/ImageView;
 
+    .line 47
+    iput-boolean p2, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mFadeIn:Z
+
+    .line 48
+    iput-object p3, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mViewToFadeIn:Landroid/view/View;
+
     .line 49
-    iput-object p2, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mViewToBeUpdated:Landroid/view/View;
-
-    .line 50
-    iput-boolean p3, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mFadeIn:Z
-
-    .line 51
     return-void
 .end method
 
@@ -44,7 +59,7 @@
     .registers 1
 
     .prologue
-    .line 86
+    .line 82
     return-void
 .end method
 
@@ -53,97 +68,82 @@
     .parameter "bitmapContainer"
 
     .prologue
-    const/4 v2, -0x2
+    .line 58
+    invoke-virtual {p1}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
+
+    move-result-object v1
 
     .line 60
-    invoke-virtual {p1}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
+    .local v1, response:Landroid/graphics/Bitmap;
+    if-nez v1, :cond_a
+
+    .line 61
+    invoke-virtual {p0}, Lcom/google/android/finsky/layout/ThumbnailListener;->onImageFailed()V
+
+    .line 78
+    :goto_9
+    return-void
+
+    .line 65
+    :cond_a
+    iget-boolean v2, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mFadeIn:Z
+
+    if-eqz v2, :cond_36
+
+    .line 66
+    iget-object v2, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mViewToFadeIn:Landroid/view/View;
+
+    if-eqz v2, :cond_30
+
+    .line 67
+    iget-object v2, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mImageView:Landroid/widget/ImageView;
+
+    invoke-virtual {v2}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    const v3, 0x7f050002
+
+    invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
     move-result-object v0
 
-    .line 62
-    .local v0, response:Landroid/graphics/Bitmap;
-    if-nez v0, :cond_b
-
-    .line 63
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/ThumbnailListener;->onImageFailed()V
-
-    .line 82
-    :goto_a
-    return-void
-
-    .line 67
-    :cond_b
-    iget-object v1, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mViewToBeUpdated:Landroid/view/View;
-
-    if-eqz v1, :cond_39
-
     .line 69
-    iget-object v1, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mImageView:Landroid/widget/ImageView;
+    .local v0, fadeInAnimation:Landroid/view/animation/Animation;
+    iget-object v2, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mImageView:Landroid/widget/ImageView;
 
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v1
-
-    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
+    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
     .line 70
-    iget-object v1, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mImageView:Landroid/widget/ImageView;
+    iget-object v2, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mViewToFadeIn:Landroid/view/View;
 
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v2, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    move-result-object v1
+    .line 71
+    iget-object v2, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mViewToFadeIn:Landroid/view/View;
 
-    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
+
+    goto :goto_9
 
     .line 73
-    iget-object v1, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mViewToBeUpdated:Landroid/view/View;
+    .end local v0           #fadeInAnimation:Landroid/view/animation/Animation;
+    :cond_30
+    iget-object v2, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mImageView:Landroid/widget/ImageView;
 
-    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-static {v2, v1}, Lcom/google/android/finsky/utils/ThumbnailUtils;->setImageBitmapWithFade(Landroid/widget/ImageView;Landroid/graphics/Bitmap;)V
 
-    move-result-object v1
+    goto :goto_9
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+    .line 76
+    :cond_36
+    iget-object v2, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mImageView:Landroid/widget/ImageView;
 
-    move-result v2
+    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    iget-object v3, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mImageView:Landroid/widget/ImageView;
-
-    invoke-virtual {v3}, Landroid/widget/ImageView;->getPaddingLeft()I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    iget-object v3, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mImageView:Landroid/widget/ImageView;
-
-    invoke-virtual {v3}, Landroid/widget/ImageView;->getPaddingRight()I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    .line 77
-    :cond_39
-    iget-boolean v1, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mFadeIn:Z
-
-    if-eqz v1, :cond_43
-
-    .line 78
-    iget-object v1, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mImageView:Landroid/widget/ImageView;
-
-    invoke-static {v1, v0}, Lcom/google/android/finsky/utils/ThumbnailUtils;->setImageBitmapWithFade(Landroid/widget/ImageView;Landroid/graphics/Bitmap;)V
-
-    goto :goto_a
-
-    .line 80
-    :cond_43
-    iget-object v1, p0, Lcom/google/android/finsky/layout/ThumbnailListener;->mImageView:Landroid/widget/ImageView;
-
-    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
-
-    goto :goto_a
+    goto :goto_9
 .end method
 
 .method public bridge synthetic onResponse(Ljava/lang/Object;)V
@@ -151,7 +151,7 @@
     .parameter "x0"
 
     .prologue
-    .line 23
+    .line 25
     check-cast p1, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
 
     .end local p1

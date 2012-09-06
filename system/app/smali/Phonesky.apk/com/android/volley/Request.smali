@@ -32,8 +32,6 @@
 
 .field private mCanceled:Z
 
-.field private mDrainable:Z
-
 .field private final mErrorListener:Lcom/android/volley/Response$ErrorListener;
 
 .field private final mEventLog:Lcom/android/volley/VolleyLog$MarkerLog;
@@ -50,6 +48,8 @@
 
 .field private mShouldCache:Z
 
+.field private mTag:Ljava/lang/Object;
+
 .field private final mUrl:Ljava/lang/String;
 
 
@@ -63,8 +63,6 @@
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     const/4 v1, 0x0
 
-    const/4 v3, 0x1
-
     const/4 v2, 0x0
 
     .line 89
@@ -73,33 +71,32 @@
     .line 41
     sget-boolean v0, Lcom/android/volley/VolleyLog$MarkerLog;->ENABLED:Z
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2a
 
     new-instance v0, Lcom/android/volley/VolleyLog$MarkerLog;
 
     invoke-direct {v0}, Lcom/android/volley/VolleyLog$MarkerLog;-><init>()V
 
-    :goto_f
+    :goto_e
     iput-object v0, p0, Lcom/android/volley/Request;->mEventLog:Lcom/android/volley/VolleyLog$MarkerLog;
 
     .line 56
-    iput-boolean v3, p0, Lcom/android/volley/Request;->mShouldCache:Z
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/volley/Request;->mShouldCache:Z
 
     .line 59
     iput-boolean v2, p0, Lcom/android/volley/Request;->mCanceled:Z
 
     .line 62
-    iput-boolean v3, p0, Lcom/android/volley/Request;->mDrainable:Z
-
-    .line 65
     iput-boolean v2, p0, Lcom/android/volley/Request;->mResponseDelivered:Z
 
-    .line 68
+    .line 65
     const-wide/16 v2, 0x0
 
     iput-wide v2, p0, Lcom/android/volley/Request;->mRequestBirthTime:J
 
-    .line 81
+    .line 78
     iput-object v1, p0, Lcom/android/volley/Request;->mCacheEntry:Lcom/android/volley/Cache$Entry;
 
     .line 90
@@ -118,11 +115,11 @@
     .line 93
     return-void
 
-    :cond_2c
+    :cond_2a
     move-object v0, v1
 
     .line 41
-    goto :goto_f
+    goto :goto_e
 .end method
 
 .method static synthetic access$000(Lcom/android/volley/Request;)Lcom/android/volley/VolleyLog$MarkerLog;
@@ -154,14 +151,14 @@
     .end annotation
 
     .prologue
-    .line 290
+    .line 292
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     .local p1, postParams:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 292
+    .line 294
     .local v0, encodedParams:Ljava/lang/StringBuilder;
     :try_start_5
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -186,7 +183,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 293
+    .line 295
     .local v1, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -200,12 +197,12 @@
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 294
+    .line 296
     const/16 v4, 0x3d
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 295
+    .line 297
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
@@ -218,7 +215,7 @@
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 296
+    .line 298
     const/16 v4, 0x26
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -227,13 +224,13 @@
 
     goto :goto_d
 
-    .line 299
+    .line 301
     .end local v1           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     .end local v2           #i$:Ljava/util/Iterator;
     :catch_3e
     move-exception v3
 
-    .line 300
+    .line 302
     .local v3, uee:Ljava/io/UnsupportedEncodingException;
     new-instance v4, Ljava/lang/RuntimeException;
 
@@ -259,7 +256,7 @@
 
     throw v4
 
-    .line 298
+    .line 300
     .end local v3           #uee:Ljava/io/UnsupportedEncodingException;
     .restart local v2       #i$:Ljava/util/Iterator;
     :cond_58
@@ -284,13 +281,13 @@
     .parameter "tag"
 
     .prologue
-    .line 106
+    .line 122
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     sget-boolean v0, Lcom/android/volley/VolleyLog$MarkerLog;->ENABLED:Z
 
     if-eqz v0, :cond_12
 
-    .line 107
+    .line 123
     iget-object v0, p0, Lcom/android/volley/Request;->mEventLog:Lcom/android/volley/VolleyLog$MarkerLog;
 
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
@@ -303,12 +300,12 @@
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/android/volley/VolleyLog$MarkerLog;->add(Ljava/lang/String;J)V
 
-    .line 111
+    .line 127
     :cond_11
     :goto_11
     return-void
 
-    .line 108
+    .line 124
     :cond_12
     iget-wide v0, p0, Lcom/android/volley/Request;->mRequestBirthTime:J
 
@@ -318,7 +315,7 @@
 
     if-nez v0, :cond_11
 
-    .line 109
+    .line 125
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -332,13 +329,13 @@
     .registers 2
 
     .prologue
-    .line 220
+    .line 222
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/volley/Request;->mCanceled:Z
 
-    .line 221
+    .line 223
     return-void
 .end method
 
@@ -354,20 +351,20 @@
     .end annotation
 
     .prologue
-    .line 416
+    .line 418
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     .local p1, other:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     invoke-virtual {p0}, Lcom/android/volley/Request;->getPriority()Lcom/android/volley/Request$Priority;
 
     move-result-object v0
 
-    .line 417
+    .line 419
     .local v0, left:Lcom/android/volley/Request$Priority;
     invoke-virtual {p1}, Lcom/android/volley/Request;->getPriority()Lcom/android/volley/Request$Priority;
 
     move-result-object v1
 
-    .line 421
+    .line 423
     .local v1, right:Lcom/android/volley/Request$Priority;
     if-ne v0, v1, :cond_18
 
@@ -424,18 +421,18 @@
     .parameter "error"
 
     .prologue
-    .line 405
+    .line 407
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     iget-object v0, p0, Lcom/android/volley/Request;->mErrorListener:Lcom/android/volley/Response$ErrorListener;
 
     if-eqz v0, :cond_9
 
-    .line 406
+    .line 408
     iget-object v0, p0, Lcom/android/volley/Request;->mErrorListener:Lcom/android/volley/Response$ErrorListener;
 
     invoke-interface {v0, p1}, Lcom/android/volley/Response$ErrorListener;->onErrorResponse(Lcom/android/volley/VolleyError;)V
 
-    .line 408
+    .line 410
     :cond_9
     return-void
 .end method
@@ -453,24 +450,24 @@
     .parameter "tag"
 
     .prologue
-    .line 119
+    .line 135
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     iget-object v5, p0, Lcom/android/volley/Request;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     if-eqz v5, :cond_9
 
-    .line 120
+    .line 136
     iget-object v5, p0, Lcom/android/volley/Request;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     invoke-virtual {v5, p0}, Lcom/android/volley/RequestQueue;->finish(Lcom/android/volley/Request;)V
 
-    .line 122
+    .line 138
     :cond_9
     sget-boolean v5, Lcom/android/volley/VolleyLog$MarkerLog;->ENABLED:Z
 
     if-eqz v5, :cond_40
 
-    .line 123
+    .line 139
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v5
@@ -479,7 +476,7 @@
 
     move-result-wide v3
 
-    .line 124
+    .line 140
     .local v3, threadId:J
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
@@ -491,7 +488,7 @@
 
     if-eq v5, v6, :cond_31
 
-    .line 127
+    .line 143
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -500,7 +497,7 @@
 
     invoke-direct {v0, v5}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 128
+    .line 144
     .local v0, mainThread:Landroid/os/Handler;
     new-instance v5, Lcom/android/volley/Request$1;
 
@@ -508,21 +505,21 @@
 
     invoke-virtual {v0, v5}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 146
+    .line 162
     .end local v0           #mainThread:Landroid/os/Handler;
     .end local v3           #threadId:J
     :cond_30
     :goto_30
     return-void
 
-    .line 138
+    .line 154
     .restart local v3       #threadId:J
     :cond_31
     iget-object v5, p0, Lcom/android/volley/Request;->mEventLog:Lcom/android/volley/VolleyLog$MarkerLog;
 
     invoke-virtual {v5, p1, v3, v4}, Lcom/android/volley/VolleyLog$MarkerLog;->add(Ljava/lang/String;J)V
 
-    .line 139
+    .line 155
     iget-object v5, p0, Lcom/android/volley/Request;->mEventLog:Lcom/android/volley/VolleyLog$MarkerLog;
 
     invoke-virtual {p0}, Lcom/android/volley/Request;->toString()Ljava/lang/String;
@@ -533,7 +530,7 @@
 
     goto :goto_30
 
-    .line 141
+    .line 157
     .end local v3           #threadId:J
     :cond_40
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -544,7 +541,7 @@
 
     sub-long v1, v5, v7
 
-    .line 142
+    .line 158
     .local v1, requestTime:J
     const-wide/16 v5, 0xbb8
 
@@ -552,7 +549,7 @@
 
     if-ltz v5, :cond_30
 
-    .line 143
+    .line 159
     const-string v5, "%d ms: %s"
 
     const/4 v6, 0x2
@@ -584,7 +581,7 @@
     .registers 2
 
     .prologue
-    .line 213
+    .line 215
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     iget-object v0, p0, Lcom/android/volley/Request;->mCacheEntry:Lcom/android/volley/Cache$Entry;
 
@@ -595,7 +592,7 @@
     .registers 2
 
     .prologue
-    .line 198
+    .line 200
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     invoke-virtual {p0}, Lcom/android/volley/Request;->getUrl()Ljava/lang/String;
 
@@ -624,7 +621,7 @@
     .end annotation
 
     .prologue
-    .line 237
+    .line 239
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
@@ -642,13 +639,13 @@
     .end annotation
 
     .prologue
-    .line 279
+    .line 281
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     invoke-virtual {p0}, Lcom/android/volley/Request;->getPostParams()Ljava/util/Map;
 
     move-result-object v0
 
-    .line 280
+    .line 282
     .local v0, postParams:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     if-eqz v0, :cond_15
 
@@ -658,7 +655,7 @@
 
     if-lez v1, :cond_15
 
-    .line 281
+    .line 283
     invoke-virtual {p0}, Lcom/android/volley/Request;->getPostParamsEncoding()Ljava/lang/String;
 
     move-result-object v1
@@ -667,7 +664,7 @@
 
     move-result-object v1
 
-    .line 283
+    .line 285
     :goto_14
     return-object v1
 
@@ -681,7 +678,7 @@
     .registers 3
 
     .prologue
-    .line 270
+    .line 272
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -728,7 +725,7 @@
     .end annotation
 
     .prologue
-    .line 250
+    .line 252
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     const/4 v0, 0x0
 
@@ -739,7 +736,7 @@
     .registers 2
 
     .prologue
-    .line 266
+    .line 268
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     const-string v0, "UTF-8"
 
@@ -750,7 +747,7 @@
     .registers 2
 
     .prologue
-    .line 333
+    .line 335
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     sget-object v0, Lcom/android/volley/Request$Priority;->NORMAL:Lcom/android/volley/Request$Priority;
 
@@ -761,7 +758,7 @@
     .registers 2
 
     .prologue
-    .line 349
+    .line 351
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     iget-object v0, p0, Lcom/android/volley/Request;->mRetryPolicy:Lcom/android/volley/RetryPolicy;
 
@@ -772,13 +769,13 @@
     .registers 3
 
     .prologue
-    .line 167
+    .line 183
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     iget-object v0, p0, Lcom/android/volley/Request;->mSequence:Ljava/lang/Integer;
 
     if-nez v0, :cond_c
 
-    .line 168
+    .line 184
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "getSequence called before setSequence"
@@ -787,7 +784,7 @@
 
     throw v0
 
-    .line 170
+    .line 186
     :cond_c
     iget-object v0, p0, Lcom/android/volley/Request;->mSequence:Ljava/lang/Integer;
 
@@ -798,11 +795,22 @@
     return v0
 .end method
 
+.method public getTag()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 108
+    .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
+    iget-object v0, p0, Lcom/android/volley/Request;->mTag:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
 .method public final getTimeoutMs()I
     .registers 2
 
     .prologue
-    .line 342
+    .line 344
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     iget-object v0, p0, Lcom/android/volley/Request;->mRetryPolicy:Lcom/android/volley/RetryPolicy;
 
@@ -817,7 +825,7 @@
     .registers 2
 
     .prologue
-    .line 191
+    .line 193
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     iget-object v0, p0, Lcom/android/volley/Request;->mUrl:Ljava/lang/String;
 
@@ -828,7 +836,7 @@
     .registers 2
 
     .prologue
-    .line 364
+    .line 366
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     iget-boolean v0, p0, Lcom/android/volley/Request;->mResponseDelivered:Z
 
@@ -839,20 +847,9 @@
     .registers 2
 
     .prologue
-    .line 227
+    .line 229
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     iget-boolean v0, p0, Lcom/android/volley/Request;->mCanceled:Z
-
-    return v0
-.end method
-
-.method public isDrainable()Z
-    .registers 2
-
-    .prologue
-    .line 184
-    .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
-    iget-boolean v0, p0, Lcom/android/volley/Request;->mDrainable:Z
 
     return v0
 .end method
@@ -861,13 +858,13 @@
     .registers 2
 
     .prologue
-    .line 357
+    .line 359
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/volley/Request;->mResponseDelivered:Z
 
-    .line 358
+    .line 360
     return-void
 .end method
 
@@ -876,7 +873,7 @@
     .parameter "volleyError"
 
     .prologue
-    .line 386
+    .line 388
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     return-object p1
 .end method
@@ -898,24 +895,11 @@
     .parameter "entry"
 
     .prologue
-    .line 206
+    .line 208
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     iput-object p1, p0, Lcom/android/volley/Request;->mCacheEntry:Lcom/android/volley/Cache$Entry;
 
-    .line 207
-    return-void
-.end method
-
-.method public setDrainable(Z)V
-    .registers 2
-    .parameter "drainable"
-
-    .prologue
-    .line 177
-    .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
-    iput-boolean p1, p0, Lcom/android/volley/Request;->mDrainable:Z
-
-    .line 178
+    .line 209
     return-void
 .end method
 
@@ -924,11 +908,11 @@
     .parameter "requestQueue"
 
     .prologue
-    .line 153
+    .line 169
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     iput-object p1, p0, Lcom/android/volley/Request;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
-    .line 154
+    .line 170
     return-void
 .end method
 
@@ -937,11 +921,11 @@
     .parameter "retryPolicy"
 
     .prologue
-    .line 99
+    .line 115
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     iput-object p1, p0, Lcom/android/volley/Request;->mRetryPolicy:Lcom/android/volley/RetryPolicy;
 
-    .line 100
+    .line 116
     return-void
 .end method
 
@@ -950,7 +934,7 @@
     .parameter "sequence"
 
     .prologue
-    .line 160
+    .line 176
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -958,7 +942,7 @@
 
     iput-object v0, p0, Lcom/android/volley/Request;->mSequence:Ljava/lang/Integer;
 
-    .line 161
+    .line 177
     return-void
 .end method
 
@@ -967,11 +951,24 @@
     .parameter "shouldCache"
 
     .prologue
-    .line 308
+    .line 310
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     iput-boolean p1, p0, Lcom/android/volley/Request;->mShouldCache:Z
 
-    .line 309
+    .line 311
+    return-void
+.end method
+
+.method public setTag(Ljava/lang/Object;)V
+    .registers 2
+    .parameter "tag"
+
+    .prologue
+    .line 100
+    .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
+    iput-object p1, p0, Lcom/android/volley/Request;->mTag:Ljava/lang/Object;
+
+    .line 101
     return-void
 .end method
 
@@ -979,7 +976,7 @@
     .registers 2
 
     .prologue
-    .line 315
+    .line 317
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     iget-boolean v0, p0, Lcom/android/volley/Request;->mShouldCache:Z
 
@@ -990,7 +987,7 @@
     .registers 3
 
     .prologue
-    .line 428
+    .line 430
     .local p0, this:Lcom/android/volley/Request;,"Lcom/android/volley/Request<TT;>;"
     new-instance v1, Ljava/lang/StringBuilder;
 

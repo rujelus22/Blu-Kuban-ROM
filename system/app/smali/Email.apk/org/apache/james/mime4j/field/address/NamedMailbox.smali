@@ -14,7 +14,7 @@
     .parameter "baseMailbox"
 
     .prologue
-    .line 48
+    .line 50
     invoke-virtual {p2}, Lorg/apache/james/mime4j/field/address/Mailbox;->getRoute()Lorg/apache/james/mime4j/field/address/DomainList;
 
     move-result-object v0
@@ -29,10 +29,10 @@
 
     invoke-direct {p0, v0, v1, v2}, Lorg/apache/james/mime4j/field/address/Mailbox;-><init>(Lorg/apache/james/mime4j/field/address/DomainList;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 49
+    .line 51
     iput-object p1, p0, Lorg/apache/james/mime4j/field/address/NamedMailbox;->name:Ljava/lang/String;
 
-    .line 50
+    .line 52
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .parameter "includeRoute"
 
     .prologue
-    .line 67
+    .line 69
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V

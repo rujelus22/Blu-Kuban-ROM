@@ -130,7 +130,7 @@
 
     .line 45
     :cond_36
-    iget v4, p0, Lcom/google/android/talk/loaders/GroupChatInviteeListLoader;->mLogLevel:I
+    iget v4, p0, Lcom/google/android/talk/loaders/RosterListLoader;->mLogLevel:I
 
     const/4 v5, 0x2
 

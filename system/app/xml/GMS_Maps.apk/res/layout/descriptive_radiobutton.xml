@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerVertical="true"
+<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <RadioButton android:id="@id/checkable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
-    <TextView android:textAppearance="?android:textAppearanceLarge" android:gravity="center_vertical" android:id="@id/primaryText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/checkable" android:layout_alignParentLeft="true" android:layout_alignWithParentIfMissing="true" />
-    <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/secondaryText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/checkable" android:layout_below="@id/primaryText" android:layout_alignParentLeft="true" />
-</RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RadioButton android:id="@id/checkable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:id="@id/primaryText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/checkable" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:layout_alignWithParentIfMissing="true" />
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/secondaryText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/checkable" android:layout_below="@id/primaryText" android:layout_alignParentLeft="true" />
+    </RelativeLayout>
+</LinearLayout>

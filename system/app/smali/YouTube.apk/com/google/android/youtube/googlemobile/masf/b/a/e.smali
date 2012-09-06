@@ -39,13 +39,9 @@
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "ResumeService.removeClientTicketMap("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -59,20 +55,20 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_1c
 
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/e;->a:Lcom/google/android/youtube/googlemobile/masf/b/a/a;
 
     invoke-virtual {v0, p1}, Lcom/google/android/youtube/googlemobile/masf/b/a/a;->a(Ljava/lang/String;)V
-    :try_end_20
-    .catchall {:try_start_1 .. :try_end_20} :catchall_22
+    :try_end_1c
+    .catchall {:try_start_1 .. :try_end_1c} :catchall_1e
 
-    :cond_20
+    :cond_1c
     monitor-exit p0
 
     return-void
 
-    :catchall_22
+    :catchall_1e
     move-exception v0
 
     monitor-exit p0
@@ -88,13 +84,9 @@
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "ResumeService.addClientTicketMap("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -108,20 +100,20 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_1c
 
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/e;->a:Lcom/google/android/youtube/googlemobile/masf/b/a/a;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/youtube/googlemobile/masf/b/a/a;->a(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_20
-    .catchall {:try_start_1 .. :try_end_20} :catchall_22
+    :try_end_1c
+    .catchall {:try_start_1 .. :try_end_1c} :catchall_1e
 
-    :cond_20
+    :cond_1c
     monitor-exit p0
 
     return-void
 
-    :catchall_22
+    :catchall_1e
     move-exception v0
 
     monitor-exit p0

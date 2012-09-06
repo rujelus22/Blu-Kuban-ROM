@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_see_map" android:id="@id/seeMap" />
+    <item android:icon="@drawable/ic_menu_invite" android:id="@id/add_friends" />
+    <item android:icon="@drawable/ic_menu_latitude_checkin" android:id="@id/checkin" />
+    <item android:icon="@drawable/ic_menu_refresh" android:id="@id/refresh" />
+    <item android:icon="@drawable/ic_menu_stale_friends" android:id="@id/show_hide_stale_friends" />
+    <item android:icon="@drawable/ic_lock_lock" android:id="@id/location_settings" />
+    <item android:icon="@drawable/ic_menu_help" android:id="@id/help" />
+</menu>

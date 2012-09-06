@@ -14,8 +14,8 @@
     <string name="toast_unknown">tundmatu</string>
     <string name="toast_granted">lubatud</string>
     <string name="toast_denied">keelatud</string>
-    <string name="toast_package" formatted="false">%s (%s) on %s administraatori õigused</string>
-    <string name="toast_name" formatted="false">%s on lubatud %s administraatori õigused</string>
+    <string name="toast_package" formatted="false">%s (%s) on %s administraatoriõigused</string>
+    <string name="toast_name" formatted="false">%s on %s administraatoriõigused</string>
     <string name="toast_interactive">interaktiivse raamistiku jaoks</string>
     <string name="tab_apps">Aplikatsioonid</string>
     <string name="tab_logs">Logid</string>

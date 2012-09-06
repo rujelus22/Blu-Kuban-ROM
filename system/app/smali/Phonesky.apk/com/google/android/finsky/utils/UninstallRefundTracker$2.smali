@@ -3,7 +3,7 @@
 .source "UninstallRefundTracker.java"
 
 # interfaces
-.implements Lcom/android/volley/Response$ErrorListener;
+.implements Lcom/google/android/finsky/utils/AppSupport$RefundListener;
 
 
 # annotations
@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/utils/UninstallRefundTracker;
 
-.field final synthetic val$localAsset:Lcom/google/android/finsky/local/LocalAsset;
-
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/utils/UninstallRefundTracker;Lcom/google/android/finsky/local/LocalAsset;)V
-    .registers 3
-    .parameter
+.method constructor <init>(Lcom/google/android/finsky/utils/UninstallRefundTracker;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 111
+    .line 73
     iput-object p1, p0, Lcom/google/android/finsky/utils/UninstallRefundTracker$2;->this$0:Lcom/google/android/finsky/utils/UninstallRefundTracker;
-
-    iput-object p2, p0, Lcom/google/android/finsky/utils/UninstallRefundTracker$2;->val$localAsset:Lcom/google/android/finsky/local/LocalAsset;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,34 +37,75 @@
 
 
 # virtual methods
-.method public onErrorResponse(Lcom/android/volley/VolleyError;)V
-    .registers 6
-    .parameter "error"
+.method public onRefundComplete(Lcom/google/android/finsky/utils/AppSupport$RefundResult;Ljava/lang/String;)V
+    .registers 7
+    .parameter "result"
+    .parameter "packageName"
 
     .prologue
-    .line 114
-    const-string v0, "Refund failed for asset %s: %s"
+    .line 80
+    sget-object v1, Lcom/google/android/finsky/utils/UninstallRefundTracker$3;->$SwitchMap$com$google$android$finsky$utils$AppSupport$RefundResult:[I
 
-    const/4 v1, 0x2
+    invoke-virtual {p1}, Lcom/google/android/finsky/utils/AppSupport$RefundResult;->ordinal()I
 
-    new-array v1, v1, [Ljava/lang/Object;
+    move-result v2
 
-    const/4 v2, 0x0
+    aget v1, v1, v2
 
-    iget-object v3, p0, Lcom/google/android/finsky/utils/UninstallRefundTracker$2;->val$localAsset:Lcom/google/android/finsky/local/LocalAsset;
+    packed-switch v1, :pswitch_data_2c
 
-    invoke-interface {v3}, Lcom/google/android/finsky/local/LocalAsset;->getPackage()Ljava/lang/String;
+    .line 93
+    const-string v1, "Refund failed for %s: %s"
 
-    move-result-object v3
+    const/4 v2, 0x2
 
-    aput-object v3, v1, v2
+    new-array v2, v2, [Ljava/lang/Object;
 
-    const/4 v2, 0x1
+    const/4 v3, 0x0
 
-    aput-object p1, v1, v2
+    aput-object p2, v2, v3
 
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    const/4 v3, 0x1
 
-    .line 115
+    aput-object p1, v2, v3
+
+    invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 95
+    :goto_19
+    return-void
+
+    .line 83
+    :pswitch_1a
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    .line 84
+    .local v0, handler:Landroid/os/Handler;
+    new-instance v1, Lcom/google/android/finsky/utils/UninstallRefundTracker$2$1;
+
+    invoke-direct {v1, p0}, Lcom/google/android/finsky/utils/UninstallRefundTracker$2$1;-><init>(Lcom/google/android/finsky/utils/UninstallRefundTracker$2;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    goto :goto_19
+
+    .line 80
+    :pswitch_data_2c
+    .packed-switch 0x1
+        :pswitch_1a
+    .end packed-switch
+.end method
+
+.method public onRefundStart()V
+    .registers 1
+
+    .prologue
+    .line 76
     return-void
 .end method

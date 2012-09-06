@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingTop="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="36.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Spinner android:gravity="top|left|center" android:entries="@array/reminder_minutes_labels" android:id="@id/reminder_minutes_value" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="0.0dip" android:layout_weight="1.0" android:contentDescription="@string/accessibility_reminder_time" style="@style/TextAppearance.EditEvent_Value" />
+    <Spinner android:gravity="top|left|center" android:entries="@array/reminder_methods_labels" android:id="@id/reminder_method_value" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="0.0dip" android:layout_weight="1.0" android:contentDescription="@string/accessibility_reminder_type" style="@style/TextAppearance.EditEvent_Value" />
+    <ImageButton android:gravity="center_vertical" android:id="@id/reminder_remove" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="@string/accessibility_remove_reminder" style="@style/MinusButton" />
+</LinearLayout>

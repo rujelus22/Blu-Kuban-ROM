@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+<com.google.android.youtube.core.ui.AntiInterceptScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:yt="http://schemas.android.com/apk/res/com.google.android.youtube">
-    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
-        <include layout="@layout/my_uploads_button" />
-        <include layout="@layout/my_favorites_button" />
-        <include layout="@layout/my_watch_history_button" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.google.android.youtube.app.ui.StackButton android:gravity="center" android:orientation="vertical" android:id="@id/watch_history_button" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" yt:fontSize="16.0dip" yt:missingThumbnail="@drawable/ic_stack_history" />
+        <com.google.android.youtube.app.ui.StackButton android:gravity="center" android:orientation="vertical" android:id="@id/favorites_button" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" yt:fontSize="16.0dip" yt:missingThumbnail="@drawable/ic_stack_favorites" />
+        <com.google.android.youtube.app.ui.StackButton android:gravity="center" android:orientation="vertical" android:id="@id/watch_later_button" android:layout_width="wrap_content" android:layout_height="wrap_content" yt:fontSize="16.0dip" yt:missingThumbnail="@drawable/ic_stack_watchlater" />
+        <com.google.android.youtube.app.ui.StackButton android:gravity="center" android:orientation="vertical" android:id="@id/playlists_button" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" yt:fontSize="16.0dip" yt:missingThumbnail="@drawable/ic_stack_playlists" />
+        <com.google.android.youtube.app.ui.StackButton android:gravity="center" android:orientation="vertical" android:id="@id/uploads_button" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" yt:fontSize="16.0dip" yt:missingThumbnail="@drawable/ic_stack_uploads" />
     </LinearLayout>
-    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
-        <include layout="@layout/my_playlists_button" />
-        <include layout="@layout/my_subscriptions_button" />
-    </LinearLayout>
-</LinearLayout>
+</com.google.android.youtube.core.ui.AntiInterceptScrollView>

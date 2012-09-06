@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="general_preference_text_zoom_summary_array">
+        <item>Maandishi madogo sana</item>
+        <item>Maandishi madogo</item>
+        <item>Maandishi-ukubwa wa kawaida</item>
+        <item>Maandishi makubwa</item>
+        <item>Maandishi kubwa</item>
+    </string-array>
+</resources>

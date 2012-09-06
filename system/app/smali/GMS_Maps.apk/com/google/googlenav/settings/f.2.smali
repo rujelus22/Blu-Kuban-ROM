@@ -1,19 +1,28 @@
-.class Lcom/google/googlenav/settings/f;
+.class Lcom/google/googlenav/settings/F;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/preference/Preference$OnPreferenceClickListener;
+.implements Lcom/google/googlenav/prefetch/android/w;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/settings/LatitudeSettingsActivity;
+.field final synthetic a:Lcom/google/googlenav/ui/v;
+
+.field final synthetic b:Lcom/google/googlenav/settings/MapTileSettingsActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/settings/LatitudeSettingsActivity;)V
-    .registers 2
+.method constructor <init>(Lcom/google/googlenav/settings/MapTileSettingsActivity;Lcom/google/googlenav/ui/v;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/settings/f;->a:Lcom/google/googlenav/settings/LatitudeSettingsActivity;
+    .prologue
+    .line 397
+    iput-object p1, p0, Lcom/google/googlenav/settings/F;->b:Lcom/google/googlenav/settings/MapTileSettingsActivity;
+
+    iput-object p2, p0, Lcom/google/googlenav/settings/F;->a:Lcom/google/googlenav/ui/v;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,32 +31,26 @@
 
 
 # virtual methods
-.method public onPreferenceClick(Landroid/preference/Preference;)Z
-    .registers 3
+.method public a()V
+    .registers 4
 
-    iget-object v0, p0, Lcom/google/googlenav/settings/f;->a:Lcom/google/googlenav/settings/LatitudeSettingsActivity;
-
-    invoke-static {v0}, Lcom/google/googlenav/settings/LatitudeSettingsActivity;->a(Lcom/google/googlenav/settings/LatitudeSettingsActivity;)Lcom/google/googlenav/settings/o;
-
-    move-result-object v0
-
-    if-nez v0, :cond_a
-
+    .prologue
+    .line 401
     const/4 v0, 0x0
 
-    :goto_9
-    return v0
+    .line 404
+    iget-object v1, p0, Lcom/google/googlenav/settings/F;->a:Lcom/google/googlenav/ui/v;
 
-    :cond_a
-    iget-object v0, p0, Lcom/google/googlenav/settings/f;->a:Lcom/google/googlenav/settings/LatitudeSettingsActivity;
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/v;->aa()Lcom/google/googlenav/android/Y;
 
-    invoke-static {v0}, Lcom/google/googlenav/settings/LatitudeSettingsActivity;->a(Lcom/google/googlenav/settings/LatitudeSettingsActivity;)Lcom/google/googlenav/settings/o;
+    move-result-object v1
 
-    move-result-object v0
+    new-instance v2, Lcom/google/googlenav/settings/G;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/settings/o;->d()V
+    invoke-direct {v2, p0}, Lcom/google/googlenav/settings/G;-><init>(Lcom/google/googlenav/settings/F;)V
 
-    const/4 v0, 0x1
+    invoke-virtual {v1, v2, v0}, Lcom/google/googlenav/android/Y;->a(Ljava/lang/Runnable;Z)V
 
-    goto :goto_9
+    .line 417
+    return-void
 .end method

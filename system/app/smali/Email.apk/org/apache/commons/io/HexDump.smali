@@ -16,7 +16,7 @@
     .registers 1
 
     .prologue
-    .line 104
+    .line 108
     const-string v0, "line.separator"
 
     invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -25,7 +25,7 @@
 
     sput-object v0, Lorg/apache/commons/io/HexDump;->EOL:Ljava/lang/String;
 
-    .line 105
+    .line 110
     const/16 v0, 0x10
 
     new-array v0, v0, [C
@@ -34,7 +34,7 @@
 
     sput-object v0, Lorg/apache/commons/io/HexDump;->_hexcodes:[C
 
-    .line 108
+    .line 115
     const/16 v0, 0x8
 
     new-array v0, v0, [I
@@ -45,7 +45,7 @@
 
     return-void
 
-    .line 105
+    .line 110
     nop
 
     :array_1c
@@ -68,7 +68,7 @@
         0x46t 0x0t
     .end array-data
 
-    .line 108
+    .line 115
     :array_30
     .array-data 0x4
         0x1ct 0x0t 0x0t 0x0t
@@ -86,9 +86,9 @@
     .registers 1
 
     .prologue
-    .line 41
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 40
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
+    .line 41
     return-void
 .end method

@@ -45,34 +45,34 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 34
+    .line 35
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 39
+    .line 40
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->id_:Ljava/lang/String;
 
-    .line 56
+    .line 57
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->name_:Ljava/lang/String;
 
-    .line 73
+    .line 74
     iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->isInvalid_:Z
 
-    .line 90
+    .line 91
     iput v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->instrumentType_:I
 
-    .line 107
+    .line 108
     iput v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->instrumentStatus_:I
 
-    .line 156
+    .line 158
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->cachedSize:I
 
-    .line 34
+    .line 35
     return-void
 .end method
 
@@ -82,15 +82,15 @@
     .registers 2
 
     .prologue
-    .line 158
+    .line 161
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 160
+    .line 163
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->getSerializedSize()I
 
-    .line 162
+    .line 165
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->cachedSize:I
 
@@ -101,7 +101,7 @@
     .registers 2
 
     .prologue
-    .line 40
+    .line 41
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->id_:Ljava/lang/String;
 
     return-object v0
@@ -111,7 +111,7 @@
     .registers 2
 
     .prologue
-    .line 109
+    .line 110
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->instrumentStatus_:I
 
     return v0
@@ -121,7 +121,7 @@
     .registers 2
 
     .prologue
-    .line 92
+    .line 93
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->instrumentType_:I
 
     return v0
@@ -131,7 +131,7 @@
     .registers 2
 
     .prologue
-    .line 74
+    .line 75
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->isInvalid_:Z
 
     return v0
@@ -141,7 +141,7 @@
     .registers 2
 
     .prologue
-    .line 57
+    .line 58
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->name_:Ljava/lang/String;
 
     return-object v0
@@ -151,10 +151,10 @@
     .registers 4
 
     .prologue
-    .line 166
+    .line 170
     const/4 v0, 0x0
 
-    .line 167
+    .line 171
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasId()Z
 
@@ -162,7 +162,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 168
+    .line 172
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->getId()Ljava/lang/String;
@@ -175,7 +175,7 @@
 
     add-int/2addr v0, v1
 
-    .line 171
+    .line 175
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasName()Z
 
@@ -183,7 +183,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 172
+    .line 176
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->getName()Ljava/lang/String;
@@ -196,7 +196,7 @@
 
     add-int/2addr v0, v1
 
-    .line 175
+    .line 179
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasIsInvalid()Z
 
@@ -204,7 +204,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 176
+    .line 180
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->getIsInvalid()Z
@@ -217,7 +217,7 @@
 
     add-int/2addr v0, v1
 
-    .line 179
+    .line 183
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasInstrumentType()Z
 
@@ -225,7 +225,7 @@
 
     if-eqz v1, :cond_42
 
-    .line 180
+    .line 184
     const/16 v1, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->getInstrumentType()I
@@ -238,7 +238,7 @@
 
     add-int/2addr v0, v1
 
-    .line 183
+    .line 187
     :cond_42
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasInstrumentStatus()Z
 
@@ -246,7 +246,7 @@
 
     if-eqz v1, :cond_53
 
-    .line 184
+    .line 188
     const/16 v1, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->getInstrumentStatus()I
@@ -259,11 +259,11 @@
 
     add-int/2addr v0, v1
 
-    .line 187
+    .line 191
     :cond_53
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->cachedSize:I
 
-    .line 188
+    .line 192
     return v0
 .end method
 
@@ -271,7 +271,7 @@
     .registers 2
 
     .prologue
-    .line 41
+    .line 42
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasId:Z
 
     return v0
@@ -281,7 +281,7 @@
     .registers 2
 
     .prologue
-    .line 108
+    .line 109
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasInstrumentStatus:Z
 
     return v0
@@ -291,7 +291,7 @@
     .registers 2
 
     .prologue
-    .line 91
+    .line 92
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasInstrumentType:Z
 
     return v0
@@ -301,7 +301,7 @@
     .registers 2
 
     .prologue
-    .line 75
+    .line 76
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasIsInvalid:Z
 
     return v0
@@ -311,7 +311,7 @@
     .registers 2
 
     .prologue
-    .line 58
+    .line 59
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasName:Z
 
     return v0
@@ -327,29 +327,29 @@
     .end annotation
 
     .prologue
-    .line 195
+    .line 200
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 196
+    .line 201
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_36
 
-    .line 200
+    .line 205
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 201
+    .line 206
     :sswitch_d
     return-object p0
 
-    .line 206
+    .line 211
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -359,7 +359,7 @@
 
     goto :goto_0
 
-    .line 210
+    .line 215
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -369,7 +369,7 @@
 
     goto :goto_0
 
-    .line 214
+    .line 219
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -379,7 +379,7 @@
 
     goto :goto_0
 
-    .line 218
+    .line 223
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -389,7 +389,7 @@
 
     goto :goto_0
 
-    .line 222
+    .line 227
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -399,7 +399,7 @@
 
     goto :goto_0
 
-    .line 196
+    .line 201
     :sswitch_data_36
     .sparse-switch
         0x0 -> :sswitch_d
@@ -421,7 +421,7 @@
     .end annotation
 
     .prologue
-    .line 32
+    .line 33
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;
 
     move-result-object v0
@@ -434,15 +434,15 @@
     .parameter "value"
 
     .prologue
-    .line 43
+    .line 44
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasId:Z
 
-    .line 44
+    .line 45
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->id_:Ljava/lang/String;
 
-    .line 45
+    .line 46
     return-object p0
 .end method
 
@@ -451,15 +451,15 @@
     .parameter "value"
 
     .prologue
-    .line 111
+    .line 112
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasInstrumentStatus:Z
 
-    .line 112
+    .line 113
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->instrumentStatus_:I
 
-    .line 113
+    .line 114
     return-object p0
 .end method
 
@@ -468,15 +468,15 @@
     .parameter "value"
 
     .prologue
-    .line 94
+    .line 95
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasInstrumentType:Z
 
-    .line 95
+    .line 96
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->instrumentType_:I
 
-    .line 96
+    .line 97
     return-object p0
 .end method
 
@@ -485,15 +485,15 @@
     .parameter "value"
 
     .prologue
-    .line 77
+    .line 78
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasIsInvalid:Z
 
-    .line 78
+    .line 79
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->isInvalid_:Z
 
-    .line 79
+    .line 80
     return-object p0
 .end method
 
@@ -502,15 +502,15 @@
     .parameter "value"
 
     .prologue
-    .line 60
+    .line 61
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasName:Z
 
-    .line 61
+    .line 62
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->name_:Ljava/lang/String;
 
-    .line 62
+    .line 63
     return-object p0
 .end method
 
@@ -524,14 +524,14 @@
     .end annotation
 
     .prologue
-    .line 139
+    .line 141
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasId()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 140
+    .line 142
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->getId()Ljava/lang/String;
@@ -540,7 +540,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 142
+    .line 144
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasName()Z
 
@@ -548,7 +548,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 143
+    .line 145
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->getName()Ljava/lang/String;
@@ -557,7 +557,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 145
+    .line 147
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasIsInvalid()Z
 
@@ -565,7 +565,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 146
+    .line 148
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->getIsInvalid()Z
@@ -574,7 +574,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 148
+    .line 150
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasInstrumentType()Z
 
@@ -582,7 +582,7 @@
 
     if-eqz v0, :cond_39
 
-    .line 149
+    .line 151
     const/16 v0, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->getInstrumentType()I
@@ -591,7 +591,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 151
+    .line 153
     :cond_39
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->hasInstrumentStatus()Z
 
@@ -599,7 +599,7 @@
 
     if-eqz v0, :cond_48
 
-    .line 152
+    .line 154
     const/16 v0, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseInfoProto$BillingInstruments$BillingInstrument;->getInstrumentStatus()I
@@ -608,7 +608,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 154
+    .line 156
     :cond_48
     return-void
 .end method

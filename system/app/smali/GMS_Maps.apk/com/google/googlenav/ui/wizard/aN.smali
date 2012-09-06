@@ -1,43 +1,48 @@
-.class Lcom/google/googlenav/ui/wizard/aN;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class Lcom/google/googlenav/ui/wizard/an;
+.super Lag/g;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/aM;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/am;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/aM;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/am;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/aN;->a:Lcom/google/googlenav/ui/wizard/aM;
+    .prologue
+    .line 277
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/an;->a:Lcom/google/googlenav/ui/wizard/am;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lag/g;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public a(Lag/c;)V
     .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/aN;->a:Lcom/google/googlenav/ui/wizard/aM;
+    .prologue
+    .line 280
+    sget-object v0, Lag/b;->i:Lag/c;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/aM;->b:Lcom/google/googlenav/ui/wizard/aS;
+    if-eq p1, v0, :cond_d
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/aN;->a:Lcom/google/googlenav/ui/wizard/aM;
+    .line 281
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/an;->a:Lcom/google/googlenav/ui/wizard/am;
 
-    iget-object v1, v1, Lcom/google/googlenav/ui/wizard/aM;->a:Lcom/google/googlenav/h;
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/am;->a(Lcom/google/googlenav/ui/wizard/am;)Lcom/google/googlenav/ui/wizard/aB;
 
-    invoke-virtual {v1}, Lcom/google/googlenav/h;->b()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-interface {v0}, Lcom/google/googlenav/ui/wizard/aB;->h()V
 
-    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/wizard/aS;->a(Ljava/lang/String;)V
-
+    .line 283
+    :cond_d
     return-void
 .end method

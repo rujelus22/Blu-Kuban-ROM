@@ -1,50 +1,47 @@
-.class Lcom/google/googlenav/ui/j;
-.super Lbb/b;
+.class Lcom/google/googlenav/ui/J;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/f;
+.field final synthetic a:Lat/B;
+
+.field final synthetic b:Lcom/google/googlenav/ui/v;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/f;)V
-    .registers 2
+.method constructor <init>(Lcom/google/googlenav/ui/v;Lat/B;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/j;->a:Lcom/google/googlenav/ui/f;
+    .prologue
+    .line 4786
+    iput-object p1, p0, Lcom/google/googlenav/ui/J;->b:Lcom/google/googlenav/ui/v;
 
-    invoke-direct {p0}, Lbb/b;-><init>()V
+    iput-object p2, p0, Lcom/google/googlenav/ui/J;->a:Lat/B;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lbb/E;)Z
-    .registers 5
+.method public run()V
+    .registers 3
 
-    const/4 v2, 0x1
+    .prologue
+    .line 4789
+    iget-object v0, p0, Lcom/google/googlenav/ui/J;->b:Lcom/google/googlenav/ui/v;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/j;->a:Lcom/google/googlenav/ui/f;
+    iget-object v1, p0, Lcom/google/googlenav/ui/J;->a:Lat/B;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/f;->a(Lcom/google/googlenav/ui/f;)Lcom/google/googlenav/ui/D;
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/v;->b(Lat/B;)V
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/D;->aC()Lcom/google/googlenav/ui/wizard/hM;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/j;->a:Lcom/google/googlenav/ui/f;
-
-    invoke-static {v1}, Lcom/google/googlenav/ui/f;->a(Lcom/google/googlenav/ui/f;)Lcom/google/googlenav/ui/D;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/D;->ar()LaY/Y;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/googlenav/ui/wizard/hM;->a(LaY/Y;Z)V
-
-    return v2
+    .line 4790
+    return-void
 .end method

@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="top" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip"
+<RelativeLayout android:gravity="top" android:id="@id/offers" android:paddingTop="@dimen/offers_search_list_vertical_padding" android:paddingBottom="@dimen/offers_search_list_vertical_padding" android:layout_width="fill_parent" android:layout_height="wrap_content"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <TableLayout android:id="@id/offers" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="1" android:shrinkColumns="1">
-        <TableRow>
-            <LinearLayout android:id="@id/map_marker_wrapper" android:layout_width="wrap_content" android:layout_height="fill_parent">
-                <ImageView android:id="@id/left_image" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" />
-            </LinearLayout>
-            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <LinearLayout android:gravity="center" android:layout_gravity="top|right|center" android:id="@id/right_image_border" android:background="@color/photo_border" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="2.0dip" android:layout_alignParentRight="true">
-                    <ImageView android:id="@id/right_image" android:visibility="gone" android:layout_width="72.0dip" android:layout_height="54.0dip" android:layout_margin="1.0px" android:scaleType="centerCrop" />
-                </LinearLayout>
-                <TextView android:id="@id/offers_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_toLeftOf="@id/right_image_border" style="@style/OfferHighlightText" />
-                <TextView android:ellipsize="end" android:id="@id/offers_details_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" android:layout_toLeftOf="@id/right_image_border" android:layout_below="@id/offers_text" style="@style/PlacePageSecondaryGreyBold" />
-            </RelativeLayout>
-        </TableRow>
-        <TableRow>
-            <ImageView android:gravity="right" android:id="@id/placemark_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/places_icon" />
-            <TextView android:id="@id/addressLine1" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/PlacePageSecondaryGrey" />
-        </TableRow>
-    </TableLayout>
-    <TextView android:gravity="right" android:id="@id/more_offers_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@style/PlacePageSecondaryClickable" />
-</LinearLayout>
+    <ImageView android:id="@id/photo" android:paddingTop="1.0px" android:paddingBottom="1.0px" android:visibility="gone" android:layout_width="@dimen/offers_search_list_photo_width" android:layout_height="@dimen/offers_search_list_photo_height" android:layout_marginLeft="@dimen/offers_search_list_photo_left_padding" android:scaleType="centerCrop" />
+    <RelativeLayout android:id="@id/main_fields" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/photo" android:layout_alignParentRight="true">
+        <LinearLayout android:id="@id/map_marker_wrapper" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true">
+            <ImageView android:id="@id/left_image" android:paddingLeft="8.0dip" android:paddingTop="3.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView android:id="@id/title" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_toLeftOf="@id/map_marker_wrapper" />
+        <TextView android:id="@id/offers_text" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_toLeftOf="@id/map_marker_wrapper" android:layout_below="@id/title" style="@style/DetailsPagePrimary" />
+    </RelativeLayout>
+    <com.google.googlenav.ui.view.android.DistanceView android:id="@id/distance" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:layout_below="@id/main_fields" android:layout_alignParentRight="true" style="@style/LightTextGrey" />
+    <com.google.googlenav.ui.view.android.HeadingView android:id="@id/heading" android:visibility="gone" android:layout_width="14.0dip" android:layout_height="14.0dip" android:layout_marginLeft="3.0dip" android:layout_marginTop="4.0dip" android:layout_marginRight="3.0dip" android:layout_toLeftOf="@id/distance" android:layout_below="@id/main_fields" android:layout_alignBaseline="@id/distance" style="@style/LightTextGrey" />
+    <TextView android:ellipsize="end" android:id="@id/addressLine1" android:paddingLeft="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_toLeftOf="@id/heading" android:layout_toRightOf="@id/photo" android:layout_below="@id/main_fields" android:layout_alignBaseline="@id/distance" style="@style/LightTextGrey" />
+</RelativeLayout>

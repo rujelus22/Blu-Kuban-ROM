@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Reloj</string>
-    <string name="classic">Reloj clásico</string>
-    <string name="simple">Reloj sencillo</string>
-    <string name="unique">Reloj funky</string>
-    <string name="modern">Reloj moderno</string>
-</resources>

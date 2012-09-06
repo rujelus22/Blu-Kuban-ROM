@@ -242,18 +242,18 @@ segurança"</b></string>
     <string name="account_intro_recommended_title">Configurar o Google</string>
     <string name="common_message">"A Conta do Google permite que você
 
-"<li><ul>Veja e organize todas as suas informações de qualquer lugar.</ul></li>"
+"<ul><li>Veja e organize todas as suas informações de qualquer lugar.</li></ul>"
 
-"<li><ul>"Faça backup de seus dados  automaticamente."</ul></li>"
+"<ul><li>"Faça backup de seus dados  automaticamente."</li></ul>"
 
-"<li><ul>Use os serviços do Google com facilidade de qualquer lugar.</ul></li></string>
+"<ul><li>Use os serviços do Google com facilidade de qualquer lugar.</li></ul></string>
     <string name="add_account_message">" Você pode usar mais de uma Conta do Google (como suas contas pessoais e profissionais). Toque em "<b>Fazer login</b> ou <b>Criar conta</b> para adicionar uma Conta do Google</string>
     <string name="account_intro_default_message">Nunca mais perca suas coisas. A Conta do Google mantém tudo a salvo.</string>
     <string name="account_intro_custom_endtext">Tem %s? Faça login agora.</string>
     <string name="account_intro_simple_message">Deseja adicionar uma conta existente ou criar uma nova?</string>
     <string name="learn_more_title"><annotation id="learn_more">Saiba mais</annotation></string>
     <string name="learn_more_account_intro">"Uma Conta do Google permite que você
-"<li><ul>Veja e organize todas suas informações em qualquer lugar.<li>Faça backup de seus dados automaticamente, como e-mails, contatos, músicas e imagens.</li><li>Utilize os serviços do Google facilmente de qualquer lugar, incluindo Contatos, Agenda, Google Maps e muito mais.</li></ul></li>1</string>
+"<ul><li>Veja e organize todas suas informações em qualquer lugar.<li>Faça backup de seus dados automaticamente, como e-mails, contatos, músicas e imagens.</li><li>Utilize os serviços do Google facilmente de qualquer lugar, incluindo Contatos, Agenda, Google Maps e muito mais.</li></li></ul>1</string>
     <string name="learn_more_account_intro_title">Sobre as Contas do Google</string>
     <string name="learn_more_web_history">"O Histórico da web ajusta os resultados de pesquisa com base no que você pesquisou e nos sites visitados, oferecendo uma experiência personalizada no Google.
 

@@ -1,113 +1,80 @@
-.class final Lcom/google/common/collect/di;
-.super Ljava/util/AbstractMap;
+.class public abstract Lcom/google/common/collect/di;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field a:Ljava/util/Set;
-
-.field final synthetic b:Lcom/google/common/collect/LinkedListMultimap;
-
-
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/LinkedListMultimap;)V
-    .registers 2
-    .parameter
+.method constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 848
-    iput-object p1, p0, Lcom/google/common/collect/di;->b:Lcom/google/common/collect/LinkedListMultimap;
+    .line 276
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljava/util/AbstractMap;-><init>()V
-
+    .line 277
     return-void
 .end method
 
 
 # virtual methods
-.method public final containsKey(Ljava/lang/Object;)Z
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 862
-    iget-object v0, p0, Lcom/google/common/collect/di;->b:Lcom/google/common/collect/LinkedListMultimap;
-
-    invoke-virtual {v0, p1}, Lcom/google/common/collect/LinkedListMultimap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final entrySet()Ljava/util/Set;
-    .registers 3
-
-    .prologue
-    .line 852
-    iget-object v0, p0, Lcom/google/common/collect/di;->a:Ljava/util/Set;
-
-    .line 853
-    if-nez v0, :cond_d
-
-    .line 854
-    new-instance v0, Lcom/google/common/collect/dj;
-
-    iget-object v1, p0, Lcom/google/common/collect/di;->b:Lcom/google/common/collect/LinkedListMultimap;
-
-    invoke-direct {v0, v1}, Lcom/google/common/collect/dj;-><init>(Lcom/google/common/collect/LinkedListMultimap;)V
-
-    iput-object v0, p0, Lcom/google/common/collect/di;->a:Ljava/util/Set;
-
-    .line 856
-    :cond_d
-    return-object v0
-.end method
-
-.method public final synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
+.method public a(Ljava/lang/Iterable;)Lcom/google/common/collect/di;
     .registers 4
     .parameter
 
     .prologue
-    .line 848
-    iget-object v0, p0, Lcom/google/common/collect/di;->b:Lcom/google/common/collect/LinkedListMultimap;
-
-    invoke-virtual {v0, p1}, Lcom/google/common/collect/LinkedListMultimap;->get(Ljava/lang/Object;)Ljava/util/List;
+    .line 323
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
+    :goto_4
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_12
 
-    const/4 v0, 0x0
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    :cond_d
-    return-object v0
+    move-result-object v1
+
+    .line 324
+    invoke-virtual {p0, v1}, Lcom/google/common/collect/di;->a(Ljava/lang/Object;)Lcom/google/common/collect/di;
+
+    goto :goto_4
+
+    .line 326
+    :cond_12
+    return-object p0
 .end method
 
-.method public final synthetic remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+.method public abstract a(Ljava/lang/Object;)Lcom/google/common/collect/di;
+.end method
+
+.method public varargs a([Ljava/lang/Object;)Lcom/google/common/collect/di;
+    .registers 5
     .parameter
 
     .prologue
-    .line 848
-    iget-object v0, p0, Lcom/google/common/collect/di;->b:Lcom/google/common/collect/LinkedListMultimap;
-
-    invoke-virtual {v0, p1}, Lcom/google/common/collect/LinkedListMultimap;->removeAll(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_d
+    .line 304
+    array-length v1, p1
 
     const/4 v0, 0x0
 
-    :cond_d
-    return-object v0
+    :goto_2
+    if-ge v0, v1, :cond_c
+
+    aget-object v2, p1, v0
+
+    .line 305
+    invoke-virtual {p0, v2}, Lcom/google/common/collect/di;->a(Ljava/lang/Object;)Lcom/google/common/collect/di;
+
+    .line 304
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    .line 307
+    :cond_c
+    return-object p0
 .end method

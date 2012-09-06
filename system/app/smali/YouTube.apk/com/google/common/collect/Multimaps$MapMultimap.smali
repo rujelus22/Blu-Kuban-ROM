@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/collect/fz;
+.implements Lcom/google/common/collect/jv;
 .implements Ljava/io/Serializable;
 
 
 # static fields
-.field private static final joiner:Lcom/google/common/base/o; = null
+.field private static final JOINER:Lcom/google/common/base/z; = null
 
 .field private static final serialVersionUID:J = 0x6cdfd44a398c560fL
 
@@ -24,26 +24,26 @@
     .registers 2
 
     .prologue
-    .line 1082
+    .line 1181
     const-string v0, "], "
 
-    invoke-static {v0}, Lcom/google/common/base/m;->a(Ljava/lang/String;)Lcom/google/common/base/m;
+    invoke-static {v0}, Lcom/google/common/base/x;->a(Ljava/lang/String;)Lcom/google/common/base/x;
 
     move-result-object v0
 
     const-string v1, "=["
 
-    invoke-virtual {v0, v1}, Lcom/google/common/base/m;->c(Ljava/lang/String;)Lcom/google/common/base/o;
+    invoke-virtual {v0, v1}, Lcom/google/common/base/x;->c(Ljava/lang/String;)Lcom/google/common/base/z;
 
     move-result-object v0
 
     const-string v1, "null"
 
-    invoke-virtual {v0, v1}, Lcom/google/common/base/o;->a(Ljava/lang/String;)Lcom/google/common/base/o;
+    invoke-virtual {v0, v1}, Lcom/google/common/base/z;->a(Ljava/lang/String;)Lcom/google/common/base/z;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/common/collect/Multimaps$MapMultimap;->joiner:Lcom/google/common/base/o;
+    sput-object v0, Lcom/google/common/collect/Multimaps$MapMultimap;->JOINER:Lcom/google/common/base/z;
 
     return-void
 .end method
@@ -53,11 +53,11 @@
     .parameter
 
     .prologue
-    .line 954
+    .line 1032
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 955
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 1033
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -65,7 +65,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
-    .line 956
+    .line 1034
     return-void
 .end method
 
@@ -75,20 +75,20 @@
     .registers 2
 
     .prologue
-    .line 1060
+    .line 1159
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->asMap:Ljava/util/Map;
 
-    .line 1061
+    .line 1160
     if-nez v0, :cond_b
 
-    .line 1062
-    new-instance v0, Lcom/google/common/collect/fa;
+    .line 1161
+    new-instance v0, Lcom/google/common/collect/if;
 
-    invoke-direct {v0, p0}, Lcom/google/common/collect/fa;-><init>(Lcom/google/common/collect/Multimaps$MapMultimap;)V
+    invoke-direct {v0, p0}, Lcom/google/common/collect/if;-><init>(Lcom/google/common/collect/Multimaps$MapMultimap;)V
 
     iput-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->asMap:Ljava/util/Map;
 
-    .line 1064
+    .line 1163
     :cond_b
     return-object v0
 .end method
@@ -97,12 +97,12 @@
     .registers 2
 
     .prologue
-    .line 1040
+    .line 1134
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 1041
+    .line 1135
     return-void
 .end method
 
@@ -112,7 +112,7 @@
     .parameter
 
     .prologue
-    .line 975
+    .line 1058
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -135,7 +135,7 @@
     .parameter
 
     .prologue
-    .line 967
+    .line 1048
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -150,7 +150,7 @@
     .parameter
 
     .prologue
-    .line 971
+    .line 1053
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsValue(Ljava/lang/Object;)Z
@@ -164,7 +164,7 @@
     .registers 2
 
     .prologue
-    .line 949
+    .line 1027
     invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$MapMultimap;->entries()Ljava/util/Set;
 
     move-result-object v0
@@ -176,7 +176,7 @@
     .registers 2
 
     .prologue
-    .line 1056
+    .line 1154
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -189,35 +189,38 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 6
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    .line 1068
+    .line 1167
     if-ne p1, p0, :cond_5
 
-    .line 1075
+    .line 1174
     :cond_4
     :goto_4
     return v0
 
-    .line 1071
+    .line 1170
     :cond_5
-    instance-of v2, p1, Lcom/google/common/collect/ew;
+    instance-of v2, p1, Lcom/google/common/collect/hu;
 
     if-eqz v2, :cond_25
 
-    .line 1072
-    check-cast p1, Lcom/google/common/collect/ew;
+    .line 1171
+    check-cast p1, Lcom/google/common/collect/hu;
 
-    .line 1073
+    .line 1172
     invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$MapMultimap;->size()I
 
     move-result v2
 
-    invoke-interface {p1}, Lcom/google/common/collect/ew;->size()I
+    invoke-interface {p1}, Lcom/google/common/collect/hu;->size()I
 
     move-result v3
 
@@ -227,7 +230,7 @@
 
     move-result-object v2
 
-    invoke-interface {p1}, Lcom/google/common/collect/ew;->asMap()Ljava/util/Map;
+    invoke-interface {p1}, Lcom/google/common/collect/hu;->asMap()Ljava/util/Map;
 
     move-result-object v3
 
@@ -245,7 +248,7 @@
     :cond_25
     move v0, v1
 
-    .line 1075
+    .line 1174
     goto :goto_4
 .end method
 
@@ -254,7 +257,7 @@
     .parameter
 
     .prologue
-    .line 949
+    .line 1027
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multimaps$MapMultimap;->get(Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v0
@@ -267,10 +270,10 @@
     .parameter
 
     .prologue
-    .line 979
-    new-instance v0, Lcom/google/common/collect/ey;
+    .line 1063
+    new-instance v0, Lcom/google/common/collect/id;
 
-    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/ey;-><init>(Lcom/google/common/collect/Multimaps$MapMultimap;Ljava/lang/Object;)V
+    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/id;-><init>(Lcom/google/common/collect/Multimaps$MapMultimap;Ljava/lang/Object;)V
 
     return-object v0
 .end method
@@ -279,7 +282,7 @@
     .registers 2
 
     .prologue
-    .line 1079
+    .line 1178
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -293,7 +296,7 @@
     .registers 2
 
     .prologue
-    .line 963
+    .line 1043
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
@@ -307,7 +310,7 @@
     .registers 2
 
     .prologue
-    .line 1044
+    .line 1139
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
@@ -317,22 +320,22 @@
     return-object v0
 .end method
 
-.method public keys()Lcom/google/common/collect/fj;
-    .registers 3
+.method public keys()Lcom/google/common/collect/iq;
+    .registers 2
 
     .prologue
-    .line 1048
+    .line 1144
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
-    new-instance v1, Lcom/google/common/collect/Multisets$SetMultiset;
+    invoke-static {v0}, Lcom/google/common/collect/Multisets;->a(Ljava/util/Set;)Lcom/google/common/collect/iq;
 
-    invoke-direct {v1, v0}, Lcom/google/common/collect/Multisets$SetMultiset;-><init>(Ljava/util/Set;)V
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public put(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -341,7 +344,7 @@
     .parameter
 
     .prologue
-    .line 1011
+    .line 1099
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -349,12 +352,12 @@
     throw v0
 .end method
 
-.method public putAll(Lcom/google/common/collect/ew;)Z
+.method public putAll(Lcom/google/common/collect/hu;)Z
     .registers 3
     .parameter
 
     .prologue
-    .line 1019
+    .line 1109
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -368,7 +371,7 @@
     .parameter
 
     .prologue
-    .line 1015
+    .line 1104
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -382,7 +385,7 @@
     .parameter
 
     .prologue
-    .line 1027
+    .line 1119
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -405,7 +408,7 @@
     .parameter
 
     .prologue
-    .line 949
+    .line 1027
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multimaps$MapMultimap;->removeAll(Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v0
@@ -418,14 +421,14 @@
     .parameter
 
     .prologue
-    .line 1031
+    .line 1124
     new-instance v0, Ljava/util/HashSet;
 
     const/4 v1, 0x2
 
     invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 1032
+    .line 1125
     iget-object v1, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -434,11 +437,11 @@
 
     if-nez v1, :cond_f
 
-    .line 1036
+    .line 1129
     :goto_e
     return-object v0
 
-    .line 1035
+    .line 1128
     :cond_f
     iget-object v1, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
@@ -457,7 +460,7 @@
     .parameter
 
     .prologue
-    .line 949
+    .line 1027
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/Multimaps$MapMultimap;->replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/Set;
 
     move-result-object v0
@@ -471,7 +474,7 @@
     .parameter
 
     .prologue
-    .line 1023
+    .line 1114
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -483,7 +486,7 @@
     .registers 2
 
     .prologue
-    .line 959
+    .line 1038
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->size()I
@@ -497,7 +500,7 @@
     .registers 4
 
     .prologue
-    .line 1086
+    .line 1185
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
@@ -506,26 +509,24 @@
 
     if-eqz v0, :cond_b
 
-    .line 1087
+    .line 1186
     const-string v0, "{}"
 
-    .line 1091
+    .line 1191
     :goto_a
     return-object v0
 
-    .line 1089
+    .line 1188
     :cond_b
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
-    iget-object v1, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
+    invoke-interface {v0}, Ljava/util/Map;->size()I
 
-    invoke-interface {v1}, Ljava/util/Map;->size()I
+    move-result v0
 
-    move-result v1
+    invoke-static {v0}, Lcom/google/common/collect/cf;->a(I)Ljava/lang/StringBuilder;
 
-    mul-int/lit8 v1, v1, 0x10
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    move-result-object v0
 
     const/16 v1, 0x7b
 
@@ -533,14 +534,14 @@
 
     move-result-object v0
 
-    .line 1090
-    sget-object v1, Lcom/google/common/collect/Multimaps$MapMultimap;->joiner:Lcom/google/common/base/o;
+    .line 1190
+    sget-object v1, Lcom/google/common/collect/Multimaps$MapMultimap;->JOINER:Lcom/google/common/base/z;
 
     iget-object v2, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
-    invoke-virtual {v1, v0, v2}, Lcom/google/common/base/o;->a(Ljava/lang/StringBuilder;Ljava/util/Map;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0, v2}, Lcom/google/common/base/z;->a(Ljava/lang/StringBuilder;Ljava/util/Map;)Ljava/lang/StringBuilder;
 
-    .line 1091
+    .line 1191
     const-string v1, "]}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -558,7 +559,7 @@
     .registers 2
 
     .prologue
-    .line 1052
+    .line 1149
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;

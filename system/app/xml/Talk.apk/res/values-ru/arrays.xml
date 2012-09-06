@@ -29,6 +29,12 @@
         <item>Только в режиме без звука</item>
         <item>Никогда</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>выкл.</item>
+        <item>низкий</item>
+        <item>средний</item>
+        <item>виртуальная</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Нет</item>
         <item>Уровень стабилизации изображения: низкий</item>

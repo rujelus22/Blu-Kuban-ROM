@@ -27,64 +27,36 @@
     .parameter "status"
 
     .prologue
-    .line 149
+    .line 136
     invoke-direct {p0}, Lcom/android/exchange/EasException;-><init>()V
 
-    .line 150
-    const/4 v0, 0x6
+    .line 137
+    iput p1, p0, Lcom/android/exchange/CommandStatusException;->mStatus:I
 
-    if-ne p1, v0, :cond_e
-
-    .line 151
-    const/16 v0, 0xb1
-
-    iput v0, p0, Lcom/android/exchange/CommandStatusException;->mStatus:I
-
-    .line 154
-    :goto_a
+    .line 138
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/exchange/CommandStatusException;->mItemId:Ljava/lang/String;
 
-    .line 155
+    .line 139
     return-void
-
-    .line 153
-    :cond_e
-    iput p1, p0, Lcom/android/exchange/CommandStatusException;->mStatus:I
-
-    goto :goto_a
 .end method
 
 .method public constructor <init>(ILjava/lang/String;)V
-    .registers 4
+    .registers 3
     .parameter "status"
     .parameter "itemId"
 
     .prologue
-    .line 157
+    .line 141
     invoke-direct {p0}, Lcom/android/exchange/EasException;-><init>()V
 
-    .line 158
-    const/4 v0, 0x6
-
-    if-ne p1, v0, :cond_d
-
-    .line 159
-    const/16 v0, 0xb1
-
-    iput v0, p0, Lcom/android/exchange/CommandStatusException;->mStatus:I
-
-    .line 162
-    :goto_a
-    iput-object p2, p0, Lcom/android/exchange/CommandStatusException;->mItemId:Ljava/lang/String;
-
-    .line 163
-    return-void
-
-    .line 161
-    :cond_d
+    .line 142
     iput p1, p0, Lcom/android/exchange/CommandStatusException;->mStatus:I
 
-    goto :goto_a
+    .line 143
+    iput-object p2, p0, Lcom/android/exchange/CommandStatusException;->mItemId:Ljava/lang/String;
+
+    .line 144
+    return-void
 .end method

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="magazine_buy_current">Beli isu %1$s</string>
+    <string name="search_result_title">Hasil carian untuk \"%1$s\"</string>
+</resources>

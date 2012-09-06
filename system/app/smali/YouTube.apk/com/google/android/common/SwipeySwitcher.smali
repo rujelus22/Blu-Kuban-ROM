@@ -91,6 +91,83 @@
     .end array-data
 .end method
 
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 487
+    invoke-direct {p0, p1}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
+
+    .line 61
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Lcom/google/android/common/h;
+
+    iput-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->f:[Lcom/google/android/common/h;
+
+    .line 75
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/common/SwipeySwitcher;->k:Z
+
+    .line 76
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->l:Landroid/os/Handler;
+
+    .line 132
+    new-instance v0, Lcom/google/android/common/k;
+
+    new-instance v1, Lcom/google/android/common/b;
+
+    invoke-direct {v1, p0}, Lcom/google/android/common/b;-><init>(Lcom/google/android/common/SwipeySwitcher;)V
+
+    invoke-direct {v0, p0, v1}, Lcom/google/android/common/k;-><init>(Lcom/google/android/common/SwipeySwitcher;Lcom/google/android/common/g;)V
+
+    iput-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->u:Lcom/google/android/common/k;
+
+    .line 138
+    new-instance v0, Lcom/google/android/common/k;
+
+    new-instance v1, Lcom/google/android/common/c;
+
+    invoke-direct {v1, p0}, Lcom/google/android/common/c;-><init>(Lcom/google/android/common/SwipeySwitcher;)V
+
+    invoke-direct {v0, p0, v1}, Lcom/google/android/common/k;-><init>(Lcom/google/android/common/SwipeySwitcher;Lcom/google/android/common/g;)V
+
+    iput-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->v:Lcom/google/android/common/k;
+
+    .line 553
+    new-instance v0, Lcom/google/android/common/e;
+
+    invoke-direct {v0, p0}, Lcom/google/android/common/e;-><init>(Lcom/google/android/common/SwipeySwitcher;)V
+
+    iput-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->a:Ljava/lang/Runnable;
+
+    .line 601
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->d:Ljava/util/HashMap;
+
+    .line 774
+    new-instance v0, Lcom/google/android/common/j;
+
+    invoke-direct {v0, p0}, Lcom/google/android/common/j;-><init>(Lcom/google/android/common/SwipeySwitcher;)V
+
+    iput-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->e:Lcom/google/android/common/j;
+
+    .line 488
+    invoke-direct {p0, p1}, Lcom/google/android/common/SwipeySwitcher;->a(Landroid/content/Context;)V
+
+    .line 489
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 5
     .parameter
@@ -167,6 +244,49 @@
 
     .line 484
     return-void
+.end method
+
+.method private a(I)I
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 282
+    iget-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->g:Lcom/google/android/common/f;
+
+    if-nez v0, :cond_5
+
+    .line 294
+    :cond_4
+    :goto_4
+    return p1
+
+    .line 285
+    :cond_5
+    iget-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->g:Lcom/google/android/common/f;
+
+    invoke-interface {v0}, Lcom/google/android/common/f;->c()I
+
+    move-result v0
+
+    .line 286
+    if-eqz v0, :cond_4
+
+    .line 289
+    if-gez p1, :cond_13
+
+    .line 290
+    neg-int v1, p1
+
+    rem-int/2addr v1, v0
+
+    sub-int p1, v0, v1
+
+    .line 292
+    :cond_13
+    rem-int/2addr p1, v0
+
+    goto :goto_4
 .end method
 
 .method static synthetic a(Lcom/google/android/common/SwipeySwitcher;I)I
@@ -443,49 +563,6 @@
     goto :goto_28
 .end method
 
-.method private b(I)I
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 282
-    iget-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->g:Lcom/google/android/common/f;
-
-    if-nez v0, :cond_5
-
-    .line 294
-    :cond_4
-    :goto_4
-    return p1
-
-    .line 285
-    :cond_5
-    iget-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->g:Lcom/google/android/common/f;
-
-    invoke-interface {v0}, Lcom/google/android/common/f;->c()I
-
-    move-result v0
-
-    .line 286
-    if-eqz v0, :cond_4
-
-    .line 289
-    if-gez p1, :cond_13
-
-    .line 290
-    neg-int v1, p1
-
-    rem-int/2addr v1, v0
-
-    sub-int p1, v0, v1
-
-    .line 292
-    :cond_13
-    rem-int/2addr p1, v0
-
-    goto :goto_4
-.end method
-
 .method static synthetic b(Lcom/google/android/common/SwipeySwitcher;I)I
     .registers 3
     .parameter
@@ -493,7 +570,7 @@
 
     .prologue
     .line 55
-    invoke-direct {p0, p1}, Lcom/google/android/common/SwipeySwitcher;->b(I)I
+    invoke-direct {p0, p1}, Lcom/google/android/common/SwipeySwitcher;->a(I)I
 
     move-result v0
 
@@ -807,48 +884,6 @@
 
 
 # virtual methods
-.method public final a(I)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 975
-    iget-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->g:Lcom/google/android/common/f;
-
-    if-nez v0, :cond_5
-
-    .line 985
-    :cond_4
-    :goto_4
-    return-void
-
-    .line 978
-    :cond_5
-    iput p1, p0, Lcom/google/android/common/SwipeySwitcher;->j:I
-
-    .line 979
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/android/common/SwipeySwitcher;->k:Z
-
-    .line 980
-    invoke-virtual {p0}, Lcom/google/android/common/SwipeySwitcher;->requestLayout()V
-
-    .line 982
-    iget-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->o:Lcom/google/android/common/i;
-
-    if-eqz v0, :cond_4
-
-    .line 983
-    iget-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->o:Lcom/google/android/common/i;
-
-    iget-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->g:Lcom/google/android/common/f;
-
-    invoke-direct {p0, p1}, Lcom/google/android/common/SwipeySwitcher;->b(I)I
-
-    goto :goto_4
-.end method
-
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
     .registers 4
     .parameter
@@ -1139,7 +1174,7 @@
     .line 647
     iget-object v7, p0, Lcom/google/android/common/SwipeySwitcher;->g:Lcom/google/android/common/f;
 
-    invoke-direct {p0, v0}, Lcom/google/android/common/SwipeySwitcher;->b(I)I
+    invoke-direct {p0, v0}, Lcom/google/android/common/SwipeySwitcher;->a(I)I
 
     invoke-interface {v7}, Lcom/google/android/common/f;->b()Landroid/content/Intent;
 
@@ -1397,7 +1432,7 @@
 
     add-int/2addr v0, v3
 
-    invoke-direct {p0, v0}, Lcom/google/android/common/SwipeySwitcher;->b(I)I
+    invoke-direct {p0, v0}, Lcom/google/android/common/SwipeySwitcher;->a(I)I
 
     .line 710
     if-nez v3, :cond_152
@@ -1744,4 +1779,126 @@
         :pswitch_23
         :pswitch_3c
     .end packed-switch
+.end method
+
+.method public setAdapter(Lcom/google/android/common/f;)V
+    .registers 6
+    .parameter
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 952
+    iput-object p1, p0, Lcom/google/android/common/SwipeySwitcher;->g:Lcom/google/android/common/f;
+
+    .line 955
+    if-nez p1, :cond_1e
+
+    move v0, v1
+
+    .line 956
+    :goto_6
+    const/4 v2, 0x3
+
+    if-ge v0, v2, :cond_1e
+
+    .line 957
+    iget-object v2, p0, Lcom/google/android/common/SwipeySwitcher;->f:[Lcom/google/android/common/h;
+
+    aget-object v2, v2, v0
+
+    if-eqz v2, :cond_1b
+
+    .line 958
+    iget-object v2, p0, Lcom/google/android/common/SwipeySwitcher;->f:[Lcom/google/android/common/h;
+
+    aget-object v2, v2, v0
+
+    invoke-interface {v2}, Lcom/google/android/common/h;->a()V
+
+    .line 959
+    iget-object v2, p0, Lcom/google/android/common/SwipeySwitcher;->f:[Lcom/google/android/common/h;
+
+    const/4 v3, 0x0
+
+    aput-object v3, v2, v0
+
+    .line 956
+    :cond_1b
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_6
+
+    .line 963
+    :cond_1e
+    iput v1, p0, Lcom/google/android/common/SwipeySwitcher;->j:I
+
+    iput v1, p0, Lcom/google/android/common/SwipeySwitcher;->h:I
+
+    .line 964
+    invoke-virtual {p0}, Lcom/google/android/common/SwipeySwitcher;->requestLayout()V
+
+    .line 967
+    iget-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->l:Landroid/os/Handler;
+
+    iget-object v1, p0, Lcom/google/android/common/SwipeySwitcher;->e:Lcom/google/android/common/j;
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    .line 968
+    return-void
+.end method
+
+.method public setOnTouchCallback(Lcom/google/android/common/i;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 501
+    iput-object p1, p0, Lcom/google/android/common/SwipeySwitcher;->o:Lcom/google/android/common/i;
+
+    .line 502
+    return-void
+.end method
+
+.method public setSelection(I)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 975
+    iget-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->g:Lcom/google/android/common/f;
+
+    if-nez v0, :cond_5
+
+    .line 985
+    :cond_4
+    :goto_4
+    return-void
+
+    .line 978
+    :cond_5
+    iput p1, p0, Lcom/google/android/common/SwipeySwitcher;->j:I
+
+    .line 979
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/common/SwipeySwitcher;->k:Z
+
+    .line 980
+    invoke-virtual {p0}, Lcom/google/android/common/SwipeySwitcher;->requestLayout()V
+
+    .line 982
+    iget-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->o:Lcom/google/android/common/i;
+
+    if-eqz v0, :cond_4
+
+    .line 983
+    iget-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->o:Lcom/google/android/common/i;
+
+    iget-object v0, p0, Lcom/google/android/common/SwipeySwitcher;->g:Lcom/google/android/common/f;
+
+    invoke-direct {p0, p1}, Lcom/google/android/common/SwipeySwitcher;->a(I)I
+
+    goto :goto_4
 .end method

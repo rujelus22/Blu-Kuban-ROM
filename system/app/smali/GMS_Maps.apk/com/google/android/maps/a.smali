@@ -1,5 +1,6 @@
 .class Lcom/google/android/maps/a;
 .super Landroid/content/BroadcastReceiver;
+.source "SourceFile"
 
 
 # instance fields
@@ -9,7 +10,10 @@
 # direct methods
 .method constructor <init>(Lcom/google/android/maps/MapsActivity;)V
     .registers 2
+    .parameter
 
+    .prologue
+    .line 242
     iput-object p1, p0, Lcom/google/android/maps/a;->a:Lcom/google/android/maps/MapsActivity;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -20,41 +24,12 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 6
+    .registers 5
+    .parameter
+    .parameter
 
-    const/4 v2, 0x0
-
-    const-string v0, "android.intent.action.DOCK_EVENT"
-
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1b
-
-    const-string v0, "android.intent.extra.DOCK_STATE"
-
-    const/4 v1, -0x1
-
-    invoke-virtual {p2, v0, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v0
-
-    const/4 v1, 0x2
-
-    if-ne v0, v1, :cond_1a
-
-    invoke-virtual {p0, v2}, Lcom/google/android/maps/a;->setResultCode(I)V
-
-    :cond_1a
-    :goto_1a
-    return-void
-
-    :cond_1b
+    .prologue
+    .line 245
     const-string v0, "android.app.action.ENTER_CAR_MODE"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -65,9 +40,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_10
 
-    invoke-virtual {p0, v2}, Lcom/google/android/maps/a;->setResultCode(I)V
+    .line 246
+    const/4 v0, 0x0
 
-    goto :goto_1a
+    invoke-virtual {p0, v0}, Lcom/google/android/maps/a;->setResultCode(I)V
+
+    .line 248
+    :cond_10
+    return-void
 .end method

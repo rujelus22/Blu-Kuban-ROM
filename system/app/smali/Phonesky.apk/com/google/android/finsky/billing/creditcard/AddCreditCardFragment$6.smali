@@ -25,7 +25,7 @@
     .registers 3
 
     .prologue
-    .line 528
+    .line 526
     invoke-static {}, Lcom/google/android/finsky/billing/creditcard/CreditCardValidator$InputField;->values()[Lcom/google/android/finsky/billing/creditcard/CreditCardValidator$InputField;
 
     move-result-object v0
@@ -99,7 +99,7 @@
     :try_end_35
     .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_66
 
-    .line 206
+    .line 211
     :goto_35
     invoke-static {}, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->values()[Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
 
@@ -130,7 +130,7 @@
     :try_start_49
     sget-object v0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$6;->$SwitchMap$com$google$android$finsky$billing$BillingUtils$CreateInstrumentUiMode:[I
 
-    sget-object v1, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->EXTERNAL:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
+    sget-object v1, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->PROMO_OFFER:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
 
     invoke-virtual {v1}, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->ordinal()I
 
@@ -146,7 +146,7 @@
     :try_start_54
     sget-object v0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$6;->$SwitchMap$com$google$android$finsky$billing$BillingUtils$CreateInstrumentUiMode:[I
 
-    sget-object v1, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->REMINDER:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
+    sget-object v1, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->SETUP_WIZARD:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
 
     invoke-virtual {v1}, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->ordinal()I
 
@@ -176,7 +176,7 @@
 
     goto :goto_49
 
-    .line 528
+    .line 526
     :catch_66
     move-exception v0
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/get_directions" android:showAsAction="always" />
+    <item android:id="@id/clear_map" android:showAsAction="never" />
+    <item android:id="@id/save_map" android:showAsAction="never" />
+    <item android:id="@id/show_offline" android:showAsAction="never" />
+    <item android:id="@id/layers" android:showAsAction="never" />
+    <item android:id="@id/settings" android:showAsAction="never" />
+    <item android:id="@id/help" android:showAsAction="never" />
+</menu>

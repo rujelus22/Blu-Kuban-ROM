@@ -21,9 +21,13 @@
 
 .field private hasQuery:Z
 
+.field private hasSubjectId:Z
+
 .field private name_:Ljava/lang/String;
 
 .field private query_:Ljava/lang/String;
+
+.field private subjectId_:Ljava/lang/String;
 
 
 # direct methods
@@ -31,25 +35,30 @@
     .registers 2
 
     .prologue
-    .line 9
+    .line 10
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 14
+    .line 15
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->name_:Ljava/lang/String;
 
-    .line 31
+    .line 32
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->query_:Ljava/lang/String;
 
-    .line 68
+    .line 49
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->subjectId_:Ljava/lang/String;
+
+    .line 91
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->cachedSize:I
 
-    .line 9
+    .line 10
     return-void
 .end method
 
@@ -59,15 +68,15 @@
     .registers 2
 
     .prologue
-    .line 70
+    .line 94
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 72
+    .line 96
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->getSerializedSize()I
 
-    .line 74
+    .line 98
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->cachedSize:I
 
@@ -78,7 +87,7 @@
     .registers 2
 
     .prologue
-    .line 15
+    .line 16
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->name_:Ljava/lang/String;
 
     return-object v0
@@ -88,7 +97,7 @@
     .registers 2
 
     .prologue
-    .line 32
+    .line 33
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->query_:Ljava/lang/String;
 
     return-object v0
@@ -98,10 +107,10 @@
     .registers 4
 
     .prologue
-    .line 78
+    .line 103
     const/4 v0, 0x0
 
-    .line 79
+    .line 104
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->hasName()Z
 
@@ -109,7 +118,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 80
+    .line 105
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->getName()Ljava/lang/String;
@@ -122,7 +131,7 @@
 
     add-int/2addr v0, v1
 
-    .line 83
+    .line 108
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->hasQuery()Z
 
@@ -130,7 +139,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 84
+    .line 109
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->getQuery()Ljava/lang/String;
@@ -143,19 +152,50 @@
 
     add-int/2addr v0, v1
 
-    .line 87
+    .line 112
     :cond_21
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->hasSubjectId()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_31
+
+    .line 113
+    const/4 v1, 0x3
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->getSubjectId()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 116
+    :cond_31
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->cachedSize:I
 
-    .line 88
+    .line 117
     return v0
+.end method
+
+.method public getSubjectId()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 50
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->subjectId_:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method public hasName()Z
     .registers 2
 
     .prologue
-    .line 16
+    .line 17
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->hasName:Z
 
     return v0
@@ -165,8 +205,18 @@
     .registers 2
 
     .prologue
-    .line 33
+    .line 34
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->hasQuery:Z
+
+    return v0
+.end method
+
+.method public hasSubjectId()Z
+    .registers 2
+
+    .prologue
+    .line 51
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->hasSubjectId:Z
 
     return v0
 .end method
@@ -181,29 +231,29 @@
     .end annotation
 
     .prologue
-    .line 95
+    .line 125
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 96
+    .line 126
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_1e
+    sparse-switch v0, :sswitch_data_26
 
-    .line 100
+    .line 130
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 101
+    .line 131
     :sswitch_d
     return-object p0
 
-    .line 106
+    .line 136
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -213,7 +263,7 @@
 
     goto :goto_0
 
-    .line 110
+    .line 140
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -223,12 +273,23 @@
 
     goto :goto_0
 
-    .line 96
-    :sswitch_data_1e
+    .line 144
+    :sswitch_1e
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->setSubjectId(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;
+
+    goto :goto_0
+
+    .line 126
+    :sswitch_data_26
     .sparse-switch
         0x0 -> :sswitch_d
         0xa -> :sswitch_e
         0x12 -> :sswitch_16
+        0x1a -> :sswitch_1e
     .end sparse-switch
 .end method
 
@@ -255,15 +316,15 @@
     .parameter "value"
 
     .prologue
-    .line 18
+    .line 19
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->hasName:Z
 
-    .line 19
+    .line 20
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->name_:Ljava/lang/String;
 
-    .line 20
+    .line 21
     return-object p0
 .end method
 
@@ -272,15 +333,32 @@
     .parameter "value"
 
     .prologue
-    .line 35
+    .line 36
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->hasQuery:Z
 
-    .line 36
+    .line 37
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->query_:Ljava/lang/String;
 
-    .line 37
+    .line 38
+    return-object p0
+.end method
+
+.method public setSubjectId(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 53
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->hasSubjectId:Z
+
+    .line 54
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->subjectId_:Ljava/lang/String;
+
+    .line 55
     return-object p0
 .end method
 
@@ -294,14 +372,14 @@
     .end annotation
 
     .prologue
-    .line 60
+    .line 80
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->hasName()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 61
+    .line 81
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->getName()Ljava/lang/String;
@@ -310,7 +388,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 63
+    .line 83
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->hasQuery()Z
 
@@ -318,7 +396,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 64
+    .line 84
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->getQuery()Ljava/lang/String;
@@ -327,7 +405,24 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 66
+    .line 86
     :cond_1c
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->hasSubjectId()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2a
+
+    .line 87
+    const/4 v0, 0x3
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookSubject;->getSubjectId()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    .line 89
+    :cond_2a
     return-void
 .end method

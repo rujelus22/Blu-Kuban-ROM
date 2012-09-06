@@ -1,2 +1,3 @@
-.class synthetic La/B;
+.class public interface abstract La/b;
 .super Ljava/lang/Object;
+.source "SourceFile"

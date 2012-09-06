@@ -23,11 +23,15 @@
 
 .field private docV2_:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
+.field private footerHtml_:Ljava/lang/String;
+
 .field private hasAnalyticsCookie:Z
 
 .field private hasDocV1:Z
 
 .field private hasDocV2:Z
+
+.field private hasFooterHtml:Z
 
 .field private hasUserReview:Z
 
@@ -41,29 +45,34 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 9
+    .line 10
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 14
+    .line 15
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->docV1_:Lcom/google/android/finsky/remoting/protos/DocumentV1$DocV1;
 
-    .line 34
+    .line 35
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->docV2_:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
-    .line 54
+    .line 55
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->analyticsCookie_:Ljava/lang/String;
 
-    .line 71
+    .line 72
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->userReview_:Lcom/google/android/finsky/remoting/protos/Rev$Review;
 
-    .line 126
+    .line 92
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->footerHtml_:Ljava/lang/String;
+
+    .line 146
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->cachedSize:I
 
-    .line 9
+    .line 10
     return-void
 .end method
 
@@ -73,7 +82,7 @@
     .registers 2
 
     .prologue
-    .line 55
+    .line 56
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->analyticsCookie_:Ljava/lang/String;
 
     return-object v0
@@ -83,15 +92,15 @@
     .registers 2
 
     .prologue
-    .line 128
+    .line 149
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 130
+    .line 151
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->getSerializedSize()I
 
-    .line 132
+    .line 153
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->cachedSize:I
 
@@ -102,7 +111,7 @@
     .registers 2
 
     .prologue
-    .line 16
+    .line 17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->docV1_:Lcom/google/android/finsky/remoting/protos/DocumentV1$DocV1;
 
     return-object v0
@@ -112,8 +121,18 @@
     .registers 2
 
     .prologue
-    .line 36
+    .line 37
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->docV2_:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
+
+    return-object v0
+.end method
+
+.method public getFooterHtml()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 93
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->footerHtml_:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -122,10 +141,10 @@
     .registers 4
 
     .prologue
-    .line 136
+    .line 158
     const/4 v0, 0x0
 
-    .line 137
+    .line 159
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasDocV1()Z
 
@@ -133,7 +152,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 138
+    .line 160
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->getDocV1()Lcom/google/android/finsky/remoting/protos/DocumentV1$DocV1;
@@ -146,7 +165,7 @@
 
     add-int/2addr v0, v1
 
-    .line 141
+    .line 163
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasAnalyticsCookie()Z
 
@@ -154,7 +173,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 142
+    .line 164
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->getAnalyticsCookie()Ljava/lang/String;
@@ -167,7 +186,7 @@
 
     add-int/2addr v0, v1
 
-    .line 145
+    .line 167
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasUserReview()Z
 
@@ -175,7 +194,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 146
+    .line 168
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->getUserReview()Lcom/google/android/finsky/remoting/protos/Rev$Review;
@@ -188,7 +207,7 @@
 
     add-int/2addr v0, v1
 
-    .line 149
+    .line 171
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasDocV2()Z
 
@@ -196,7 +215,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 150
+    .line 172
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->getDocV2()Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
@@ -209,11 +228,32 @@
 
     add-int/2addr v0, v1
 
-    .line 153
+    .line 175
     :cond_41
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasFooterHtml()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_51
+
+    .line 176
+    const/4 v1, 0x5
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->getFooterHtml()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 179
+    :cond_51
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->cachedSize:I
 
-    .line 154
+    .line 180
     return v0
 .end method
 
@@ -221,7 +261,7 @@
     .registers 2
 
     .prologue
-    .line 73
+    .line 74
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->userReview_:Lcom/google/android/finsky/remoting/protos/Rev$Review;
 
     return-object v0
@@ -231,7 +271,7 @@
     .registers 2
 
     .prologue
-    .line 56
+    .line 57
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasAnalyticsCookie:Z
 
     return v0
@@ -241,7 +281,7 @@
     .registers 2
 
     .prologue
-    .line 15
+    .line 16
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasDocV1:Z
 
     return v0
@@ -251,8 +291,18 @@
     .registers 2
 
     .prologue
-    .line 35
+    .line 36
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasDocV2:Z
+
+    return v0
+.end method
+
+.method public hasFooterHtml()Z
+    .registers 2
+
+    .prologue
+    .line 94
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasFooterHtml:Z
 
     return v0
 .end method
@@ -261,7 +311,7 @@
     .registers 2
 
     .prologue
-    .line 72
+    .line 73
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasUserReview:Z
 
     return v0
@@ -277,44 +327,44 @@
     .end annotation
 
     .prologue
-    .line 161
+    .line 188
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 162
+    .line 189
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_3a
+    sparse-switch v0, :sswitch_data_42
 
-    .line 166
+    .line 193
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 167
+    .line 194
     :sswitch_d
     return-object p0
 
-    .line 172
+    .line 199
     :sswitch_e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocumentV1$DocV1;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocumentV1$DocV1;-><init>()V
 
-    .line 173
+    .line 200
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocumentV1$DocV1;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 174
+    .line 201
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->setDocV1(Lcom/google/android/finsky/remoting/protos/DocumentV1$DocV1;)Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;
 
     goto :goto_0
 
-    .line 178
+    .line 205
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocumentV1$DocV1;
     :sswitch_1a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -325,45 +375,57 @@
 
     goto :goto_0
 
-    .line 182
+    .line 209
     :sswitch_22
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Rev$Review;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Rev$Review;-><init>()V
 
-    .line 183
+    .line 210
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Rev$Review;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 184
+    .line 211
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->setUserReview(Lcom/google/android/finsky/remoting/protos/Rev$Review;)Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;
 
     goto :goto_0
 
-    .line 188
+    .line 215
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Rev$Review;
     :sswitch_2e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;-><init>()V
 
-    .line 189
+    .line 216
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 190
+    .line 217
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->setDocV2(Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;)Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;
 
     goto :goto_0
 
-    .line 162
-    :sswitch_data_3a
+    .line 221
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
+    :sswitch_3a
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->setFooterHtml(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;
+
+    goto :goto_0
+
+    .line 189
+    :sswitch_data_42
     .sparse-switch
         0x0 -> :sswitch_d
         0xa -> :sswitch_e
         0x12 -> :sswitch_1a
         0x1a -> :sswitch_22
         0x22 -> :sswitch_2e
+        0x2a -> :sswitch_3a
     .end sparse-switch
 .end method
 
@@ -390,15 +452,15 @@
     .parameter "value"
 
     .prologue
-    .line 58
+    .line 59
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasAnalyticsCookie:Z
 
-    .line 59
+    .line 60
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->analyticsCookie_:Ljava/lang/String;
 
-    .line 60
+    .line 61
     return-object p0
 .end method
 
@@ -407,26 +469,26 @@
     .parameter "value"
 
     .prologue
-    .line 18
+    .line 19
     if-nez p1, :cond_8
 
-    .line 19
+    .line 20
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 21
+    .line 22
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasDocV1:Z
 
-    .line 22
+    .line 23
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->docV1_:Lcom/google/android/finsky/remoting/protos/DocumentV1$DocV1;
 
-    .line 23
+    .line 24
     return-object p0
 .end method
 
@@ -435,26 +497,43 @@
     .parameter "value"
 
     .prologue
-    .line 38
+    .line 39
     if-nez p1, :cond_8
 
-    .line 39
+    .line 40
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 41
+    .line 42
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasDocV2:Z
 
-    .line 42
+    .line 43
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->docV2_:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
-    .line 43
+    .line 44
+    return-object p0
+.end method
+
+.method public setFooterHtml(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 96
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasFooterHtml:Z
+
+    .line 97
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->footerHtml_:Ljava/lang/String;
+
+    .line 98
     return-object p0
 .end method
 
@@ -463,26 +542,26 @@
     .parameter "value"
 
     .prologue
-    .line 75
+    .line 76
     if-nez p1, :cond_8
 
-    .line 76
+    .line 77
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 78
+    .line 79
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasUserReview:Z
 
-    .line 79
+    .line 80
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->userReview_:Lcom/google/android/finsky/remoting/protos/Rev$Review;
 
-    .line 80
+    .line 81
     return-object p0
 .end method
 
@@ -496,14 +575,14 @@
     .end annotation
 
     .prologue
-    .line 112
+    .line 129
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasDocV1()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 113
+    .line 130
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->getDocV1()Lcom/google/android/finsky/remoting/protos/DocumentV1$DocV1;
@@ -512,7 +591,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 115
+    .line 132
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasAnalyticsCookie()Z
 
@@ -520,7 +599,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 116
+    .line 133
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->getAnalyticsCookie()Ljava/lang/String;
@@ -529,7 +608,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 118
+    .line 135
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasUserReview()Z
 
@@ -537,7 +616,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 119
+    .line 136
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->getUserReview()Lcom/google/android/finsky/remoting/protos/Rev$Review;
@@ -546,7 +625,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 121
+    .line 138
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasDocV2()Z
 
@@ -554,7 +633,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 122
+    .line 139
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->getDocV2()Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
@@ -563,7 +642,24 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 124
+    .line 141
     :cond_38
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasFooterHtml()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_46
+
+    .line 142
+    const/4 v0, 0x5
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->getFooterHtml()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    .line 144
+    :cond_46
     return-void
 .end method

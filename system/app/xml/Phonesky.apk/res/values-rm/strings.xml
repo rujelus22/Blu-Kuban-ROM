@@ -2,7 +2,6 @@
 <resources>
     <string name="address_data_loading">Vegn chargià…</string>
     <string name="tos_locale_replacement" />
-    <string name="apps_launcher_icon_name">Applicaziuns</string>
     <string name="background_data_error">Las datas dal fund davos ston esser activadas per pudair activar Market.</string>
     <string name="flagging_title">Marcar sco incommensurà.</string>
     <string name="flag_sexual_content">Cuntegn sexual</string>

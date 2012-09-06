@@ -1,108 +1,127 @@
-.class synthetic Lcom/google/googlenav/ui/wizard/gy;
+.class Lcom/google/googlenav/ui/wizard/gY;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/text/TextWatcher;
 
 
-# static fields
-.field static final synthetic a:[I
+# instance fields
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/gT;
+
+.field private b:Lcom/google/googlenav/ui/wizard/gZ;
+
+.field private c:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method private constructor <init>(Lcom/google/googlenav/ui/wizard/gT;)V
+    .registers 4
+    .parameter
 
-    invoke-static {}, LaN/d;->values()[LaN/d;
+    .prologue
+    .line 220
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/gY;->a:Lcom/google/googlenav/ui/wizard/gT;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 222
+    new-instance v0, Lcom/google/googlenav/ui/wizard/gZ;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/google/googlenav/ui/wizard/gZ;-><init>(Lcom/google/googlenav/ui/wizard/gY;Lcom/google/googlenav/ui/wizard/gU;)V
+
+    iput-object v0, p0, Lcom/google/googlenav/ui/wizard/gY;->b:Lcom/google/googlenav/ui/wizard/gZ;
+
+    .line 246
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/googlenav/ui/wizard/gT;Lcom/google/googlenav/ui/wizard/gU;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 220
+    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/wizard/gY;-><init>(Lcom/google/googlenav/ui/wizard/gT;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public afterTextChanged(Landroid/text/Editable;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 240
+    return-void
+.end method
+
+.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 227
+    return-void
+.end method
+
+.method public onTextChanged(Ljava/lang/CharSequence;III)V
+    .registers 8
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 231
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/gY;->a:Lcom/google/googlenav/ui/wizard/gT;
+
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/gT;->c(Lcom/google/googlenav/ui/wizard/gT;)Lcom/google/googlenav/ui/wizard/gB;
 
     move-result-object v0
 
-    array-length v0, v0
+    if-nez v0, :cond_9
 
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/google/googlenav/ui/wizard/gy;->a:[I
-
-    :try_start_9
-    sget-object v0, Lcom/google/googlenav/ui/wizard/gy;->a:[I
-
-    sget-object v1, LaN/d;->a:LaN/d;
-
-    invoke-virtual {v1}, LaN/d;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_3c
-
-    :goto_14
-    :try_start_14
-    sget-object v0, Lcom/google/googlenav/ui/wizard/gy;->a:[I
-
-    sget-object v1, LaN/d;->b:LaN/d;
-
-    invoke-virtual {v1}, LaN/d;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_3a
-
-    :goto_1f
-    :try_start_1f
-    sget-object v0, Lcom/google/googlenav/ui/wizard/gy;->a:[I
-
-    sget-object v1, LaN/d;->d:LaN/d;
-
-    invoke-virtual {v1}, LaN/d;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_38
-
-    :goto_2a
-    :try_start_2a
-    sget-object v0, Lcom/google/googlenav/ui/wizard/gy;->a:[I
-
-    sget-object v1, LaN/d;->c:LaN/d;
-
-    invoke-virtual {v1}, LaN/d;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_35
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_36
-
-    :goto_35
+    .line 236
+    :goto_8
     return-void
 
-    :catch_36
-    move-exception v0
+    .line 234
+    :cond_9
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    goto :goto_35
+    move-result-object v0
 
-    :catch_38
-    move-exception v0
+    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    goto :goto_2a
+    move-result-object v0
 
-    :catch_3a
-    move-exception v0
+    iput-object v0, p0, Lcom/google/googlenav/ui/wizard/gY;->c:Ljava/lang/String;
 
-    goto :goto_1f
+    .line 235
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/gY;->a:Lcom/google/googlenav/ui/wizard/gT;
 
-    :catch_3c
-    move-exception v0
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/gT;->c(Lcom/google/googlenav/ui/wizard/gT;)Lcom/google/googlenav/ui/wizard/gB;
 
-    goto :goto_14
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/gB;->getFilter()Landroid/widget/Filter;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/gY;->c:Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/google/googlenav/ui/wizard/gY;->b:Lcom/google/googlenav/ui/wizard/gZ;
+
+    invoke-virtual {v0, v1, v2}, Landroid/widget/Filter;->filter(Ljava/lang/CharSequence;Landroid/widget/Filter$FilterListener;)V
+
+    goto :goto_8
 .end method

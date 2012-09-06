@@ -29,6 +29,12 @@
         <item>仅在静音时</item>
         <item>一律不</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>关闭</item>
+        <item>低</item>
+        <item>中</item>
+        <item>虚拟</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>无</item>
         <item>防抖：低</item>

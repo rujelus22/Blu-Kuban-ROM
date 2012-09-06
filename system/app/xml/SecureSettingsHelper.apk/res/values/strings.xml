@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Secure Settings Helper</string>
+    <string name="invalid_install_location">"The Helper is not installed to the System partition!
+
+Please fix this by reinstalling the Helper through the Secure Settings app."</string>
+    <string name="write_settings">Write Secure Settings</string>
+    <string name="write_settings_desc">Allows the application to write to the secure settings of the device which includes toggling the pattern lock and android debugging bridge.</string>
+</resources>

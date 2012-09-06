@@ -1,30 +1,27 @@
 .class final Lcom/google/android/youtube/app/e;
-.super Ljava/lang/Object;
+.super Ljava/lang/Thread;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/s;
+.field final synthetic a:[Ljava/io/File;
 
-.field final synthetic b:Lcom/google/android/youtube/app/a;
+.field final synthetic b:Lcom/google/android/youtube/app/YouTubeApplication;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/a;Lcom/google/android/youtube/app/s;)V
+.method constructor <init>(Lcom/google/android/youtube/app/YouTubeApplication;[Ljava/io/File;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 265
-    iput-object p1, p0, Lcom/google/android/youtube/app/e;->b:Lcom/google/android/youtube/app/a;
+    .line 414
+    iput-object p1, p0, Lcom/google/android/youtube/app/e;->b:Lcom/google/android/youtube/app/YouTubeApplication;
 
-    iput-object p2, p0, Lcom/google/android/youtube/app/e;->a:Lcom/google/android/youtube/app/s;
+    iput-object p2, p0, Lcom/google/android/youtube/app/e;->a:[Ljava/io/File;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
     return-void
 .end method
@@ -32,41 +29,33 @@
 
 # virtual methods
 .method public final run()V
-    .registers 4
+    .registers 5
 
     .prologue
-    .line 267
-    iget-object v0, p0, Lcom/google/android/youtube/app/e;->b:Lcom/google/android/youtube/app/a;
+    .line 417
+    invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/a;->d(Lcom/google/android/youtube/app/a;)Ljava/util/List;
+    .line 418
+    iget-object v1, p0, Lcom/google/android/youtube/app/e;->a:[Ljava/io/File;
 
-    move-result-object v0
+    array-length v2, v1
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    const/4 v0, 0x0
 
-    move-result-object v1
+    :goto_7
+    if-ge v0, v2, :cond_11
 
-    :goto_a
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    aget-object v3, v1, v0
 
-    move-result v0
+    .line 419
+    invoke-virtual {v3}, Ljava/io/File;->delete()Z
 
-    if-eqz v0, :cond_1c
+    .line 418
+    add-int/lit8 v0, v0, 0x1
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    goto :goto_7
 
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/youtube/app/r;
-
-    .line 268
-    iget-object v2, p0, Lcom/google/android/youtube/app/e;->a:Lcom/google/android/youtube/app/s;
-
-    invoke-interface {v0, v2}, Lcom/google/android/youtube/app/r;->a(Lcom/google/android/youtube/app/s;)V
-
-    goto :goto_a
-
-    .line 270
-    :cond_1c
+    .line 421
+    :cond_11
     return-void
 .end method

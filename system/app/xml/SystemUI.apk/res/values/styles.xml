@@ -22,7 +22,7 @@
         <item name="android:textColor">#ffbebebe</item>
     </style>
     <style name="TextAppearance.StatusBar.Date" parent="@android:style/TextAppearance.StatusBar.Icon">
-        <item name="android:textSize">11.0sp</item>
+        <item name="android:textSize">13.0sp</item>
         <item name="android:textStyle">normal</item>
     </style>
     <style name="Animation" />

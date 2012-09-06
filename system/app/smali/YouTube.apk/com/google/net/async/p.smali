@@ -886,17 +886,16 @@
     .prologue
     const/4 v2, 0x1
 
+    const/4 v1, 0x0
+
     .line 972
     invoke-direct {p0}, Lcom/google/net/async/p;->h()V
-
-    .line 974
-    const/4 v1, 0x0
 
     .line 976
     :try_start_5
     monitor-enter p1
     :try_end_6
-    .catchall {:try_start_5 .. :try_end_6} :catchall_28
+    .catchall {:try_start_5 .. :try_end_6} :catchall_29
 
     .line 977
     :try_start_6
@@ -904,12 +903,12 @@
 
     invoke-virtual {p1, v0}, Ljava/nio/channels/SelectableChannel;->keyFor(Ljava/nio/channels/Selector;)Ljava/nio/channels/SelectionKey;
     :try_end_b
-    .catchall {:try_start_6 .. :try_end_b} :catchall_34
+    .catchall {:try_start_6 .. :try_end_b} :catchall_35
 
     move-result-object v0
 
     .line 978
-    if-nez v0, :cond_cc
+    if-nez v0, :cond_cd
 
     .line 980
     :try_start_e
@@ -917,12 +916,14 @@
 
     new-instance v1, Lcom/google/net/async/t;
 
-    invoke-direct {v1}, Lcom/google/net/async/t;-><init>()V
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v3}, Lcom/google/net/async/t;-><init>(B)V
 
     invoke-virtual {p1, v0, p2, v1}, Ljava/nio/channels/SelectableChannel;->register(Ljava/nio/channels/Selector;ILjava/lang/Object;)Ljava/nio/channels/SelectionKey;
-    :try_end_18
-    .catchall {:try_start_e .. :try_end_18} :catchall_34
-    .catch Ljava/nio/channels/ClosedChannelException; {:try_start_e .. :try_end_18} :catch_2d
+    :try_end_19
+    .catchall {:try_start_e .. :try_end_19} :catchall_35
+    .catch Ljava/nio/channels/ClosedChannelException; {:try_start_e .. :try_end_19} :catch_2e
 
     move-result-object v0
 
@@ -931,30 +932,30 @@
     move v0, v2
 
     .line 976
-    :goto_1b
-    :try_start_1b
+    :goto_1c
+    :try_start_1c
     monitor-exit p1
-    :try_end_1c
-    .catchall {:try_start_1b .. :try_end_1c} :catchall_34
+    :try_end_1d
+    .catchall {:try_start_1c .. :try_end_1d} :catchall_35
 
     .line 987
-    :try_start_1c
+    :try_start_1d
     sget-boolean v3, Lcom/google/net/async/p;->a:Z
 
-    if-nez v3, :cond_37
+    if-nez v3, :cond_38
 
-    if-nez v1, :cond_37
+    if-nez v1, :cond_38
 
     new-instance v0, Ljava/lang/AssertionError;
 
     invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
     throw v0
-    :try_end_28
-    .catchall {:try_start_1c .. :try_end_28} :catchall_28
+    :try_end_29
+    .catchall {:try_start_1d .. :try_end_29} :catchall_29
 
     .line 1022
-    :catchall_28
+    :catchall_29
     move-exception v0
 
     .line 1023
@@ -964,39 +965,39 @@
     throw v0
 
     .line 981
-    :catch_2d
+    :catch_2e
     move-exception v0
 
     .line 982
-    :try_start_2e
+    :try_start_2f
     new-instance v1, Lcom/google/net/async/IORuntimeException;
 
     invoke-direct {v1, v0}, Lcom/google/net/async/IORuntimeException;-><init>(Ljava/lang/Throwable;)V
 
     throw v1
-    :try_end_34
-    .catchall {:try_start_2e .. :try_end_34} :catchall_34
+    :try_end_35
+    .catchall {:try_start_2f .. :try_end_35} :catchall_35
 
     .line 976
-    :catchall_34
+    :catchall_35
     move-exception v0
 
-    :try_start_35
+    :try_start_36
     monitor-exit p1
 
     throw v0
 
     .line 994
-    :cond_37
+    :cond_38
     monitor-enter v1
-    :try_end_38
-    .catchall {:try_start_35 .. :try_end_38} :catchall_28
+    :try_end_39
+    .catchall {:try_start_36 .. :try_end_39} :catchall_29
 
     .line 997
-    if-nez v0, :cond_42
+    if-nez v0, :cond_43
 
     .line 998
-    :try_start_3a
+    :try_start_3b
     invoke-virtual {v1}, Ljava/nio/channels/SelectionKey;->interestOps()I
 
     move-result v0
@@ -1006,7 +1007,7 @@
     invoke-virtual {v1, v0}, Ljava/nio/channels/SelectionKey;->interestOps(I)Ljava/nio/channels/SelectionKey;
 
     .line 1001
-    :cond_42
+    :cond_43
     invoke-virtual {v1}, Ljava/nio/channels/SelectionKey;->attachment()Ljava/lang/Object;
 
     move-result-object v0
@@ -1016,37 +1017,37 @@
     .line 1002
     const/16 v3, 0x10
 
-    if-ne p2, v3, :cond_68
+    if-ne p2, v3, :cond_69
 
     .line 1003
     sget-boolean v2, Lcom/google/net/async/p;->a:Z
 
-    if-nez v2, :cond_59
+    if-nez v2, :cond_5a
 
     new-instance v0, Ljava/lang/AssertionError;
 
     invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
     throw v0
-    :try_end_56
-    .catchall {:try_start_3a .. :try_end_56} :catchall_56
+    :try_end_57
+    .catchall {:try_start_3b .. :try_end_57} :catchall_57
 
     .line 994
-    :catchall_56
+    :catchall_57
     move-exception v0
 
-    :try_start_57
+    :try_start_58
     monitor-exit v1
 
     throw v0
-    :try_end_59
-    .catchall {:try_start_57 .. :try_end_59} :catchall_28
+    :try_end_5a
+    .catchall {:try_start_58 .. :try_end_5a} :catchall_29
 
     .line 1004
-    :cond_59
+    :cond_5a
     const/4 v2, 0x0
 
-    :try_start_5a
+    :try_start_5b
     iput-object v2, v0, Lcom/google/net/async/t;->a:Lcom/google/net/async/a;
 
     .line 1005
@@ -1057,10 +1058,10 @@
     invoke-virtual {v0, v2}, Ljava/util/logging/Logger;->finer(Ljava/lang/String;)V
 
     .line 994
-    :goto_63
+    :goto_64
     monitor-exit v1
-    :try_end_64
-    .catchall {:try_start_5a .. :try_end_64} :catchall_56
+    :try_end_65
+    .catchall {:try_start_5b .. :try_end_65} :catchall_57
 
     .line 1023
     invoke-direct {p0}, Lcom/google/net/async/p;->i()V
@@ -1069,18 +1070,18 @@
     return-void
 
     .line 1006
-    :cond_68
+    :cond_69
     const/16 v3, 0x8
 
-    if-ne p2, v3, :cond_82
+    if-ne p2, v3, :cond_83
 
     .line 1007
-    :try_start_6c
+    :try_start_6d
     sget-boolean v2, Lcom/google/net/async/p;->a:Z
 
-    if-nez v2, :cond_78
+    if-nez v2, :cond_79
 
-    if-nez p4, :cond_78
+    if-nez p4, :cond_79
 
     new-instance v0, Ljava/lang/AssertionError;
 
@@ -1089,7 +1090,7 @@
     throw v0
 
     .line 1008
-    :cond_78
+    :cond_79
     iput-object p4, v0, Lcom/google/net/async/t;->b:Lcom/google/net/async/o;
 
     .line 1009
@@ -1099,18 +1100,18 @@
 
     invoke-virtual {v0, v2}, Ljava/util/logging/Logger;->finer(Ljava/lang/String;)V
 
-    goto :goto_63
+    goto :goto_64
 
     .line 1010
-    :cond_82
-    if-ne p2, v2, :cond_9a
+    :cond_83
+    if-ne p2, v2, :cond_9b
 
     .line 1011
     sget-boolean v2, Lcom/google/net/async/p;->a:Z
 
-    if-nez v2, :cond_90
+    if-nez v2, :cond_91
 
-    if-nez p5, :cond_90
+    if-nez p5, :cond_91
 
     new-instance v0, Ljava/lang/AssertionError;
 
@@ -1119,7 +1120,7 @@
     throw v0
 
     .line 1012
-    :cond_90
+    :cond_91
     iput-object p5, v0, Lcom/google/net/async/t;->c:Lcom/google/net/async/af;
 
     .line 1013
@@ -1129,20 +1130,20 @@
 
     invoke-virtual {v0, v2}, Ljava/util/logging/Logger;->finer(Ljava/lang/String;)V
 
-    goto :goto_63
+    goto :goto_64
 
     .line 1014
-    :cond_9a
+    :cond_9b
     const/4 v2, 0x4
 
-    if-ne p2, v2, :cond_b3
+    if-ne p2, v2, :cond_b4
 
     .line 1015
     sget-boolean v2, Lcom/google/net/async/p;->a:Z
 
-    if-nez v2, :cond_a9
+    if-nez v2, :cond_aa
 
-    if-nez p6, :cond_a9
+    if-nez p6, :cond_aa
 
     new-instance v0, Ljava/lang/AssertionError;
 
@@ -1151,7 +1152,7 @@
     throw v0
 
     .line 1016
-    :cond_a9
+    :cond_aa
     iput-object p6, v0, Lcom/google/net/async/t;->d:Lcom/google/net/async/an;
 
     .line 1017
@@ -1161,10 +1162,10 @@
 
     invoke-virtual {v0, v2}, Ljava/util/logging/Logger;->finer(Ljava/lang/String;)V
 
-    goto :goto_63
+    goto :goto_64
 
     .line 1019
-    :cond_b3
+    :cond_b4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1188,17 +1189,17 @@
     invoke-direct {v0, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
-    :try_end_cc
-    .catchall {:try_start_6c .. :try_end_cc} :catchall_56
+    :try_end_cd
+    .catchall {:try_start_6d .. :try_end_cd} :catchall_57
 
-    :cond_cc
+    :cond_cd
     move-object v4, v0
 
     move v0, v1
 
     move-object v1, v4
 
-    goto/16 :goto_1b
+    goto/16 :goto_1c
 .end method
 
 .method private static a(Ljava/nio/channels/SelectableChannel;Ljava/lang/Object;)V

@@ -27,20 +27,20 @@
     .registers 2
 
     .prologue
-    .line 16706
+    .line 17175
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 16711
+    .line 17180
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;->ifNoneMatch_:Ljava/lang/String;
 
-    .line 16742
+    .line 17212
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;->cachedSize:I
 
-    .line 16706
+    .line 17175
     return-void
 .end method
 
@@ -50,15 +50,15 @@
     .registers 2
 
     .prologue
-    .line 16744
+    .line 17215
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 16746
+    .line 17217
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;->getSerializedSize()I
 
-    .line 16748
+    .line 17219
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;->cachedSize:I
 
@@ -69,7 +69,7 @@
     .registers 2
 
     .prologue
-    .line 16712
+    .line 17181
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;->ifNoneMatch_:Ljava/lang/String;
 
     return-object v0
@@ -79,10 +79,10 @@
     .registers 4
 
     .prologue
-    .line 16752
+    .line 17224
     const/4 v0, 0x0
 
-    .line 16753
+    .line 17225
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;->hasIfNoneMatch()Z
 
@@ -90,7 +90,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 16754
+    .line 17226
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;->getIfNoneMatch()Ljava/lang/String;
@@ -103,11 +103,11 @@
 
     add-int/2addr v0, v1
 
-    .line 16757
+    .line 17229
     :cond_11
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;->cachedSize:I
 
-    .line 16758
+    .line 17230
     return v0
 .end method
 
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 16713
+    .line 17182
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;->hasIfNoneMatch:Z
 
     return v0
@@ -131,29 +131,29 @@
     .end annotation
 
     .prologue
-    .line 16765
+    .line 17238
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 16766
+    .line 17239
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_16
 
-    .line 16770
+    .line 17243
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 16771
+    .line 17244
     :sswitch_d
     return-object p0
 
-    .line 16776
+    .line 17249
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 16766
+    .line 17239
     :sswitch_data_16
     .sparse-switch
         0x0 -> :sswitch_d
@@ -181,7 +181,7 @@
     .end annotation
 
     .prologue
-    .line 16704
+    .line 17173
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;
 
     move-result-object v0
@@ -194,15 +194,15 @@
     .parameter "value"
 
     .prologue
-    .line 16715
+    .line 17184
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;->hasIfNoneMatch:Z
 
-    .line 16716
+    .line 17185
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;->ifNoneMatch_:Ljava/lang/String;
 
-    .line 16717
+    .line 17186
     return-object p0
 .end method
 
@@ -216,14 +216,14 @@
     .end annotation
 
     .prologue
-    .line 16737
+    .line 17207
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;->hasIfNoneMatch()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 16738
+    .line 17208
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestSpecificPropertiesProto;->getIfNoneMatch()Ljava/lang/String;
@@ -232,7 +232,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 16740
+    .line 17210
     :cond_e
     return-void
 .end method

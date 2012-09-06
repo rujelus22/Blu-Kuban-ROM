@@ -1,5 +1,6 @@
 .class public Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;
 .super Lcom/google/googlenav/ui/view/android/rideabout/RouteSegment;
+.source "SourceFile"
 
 
 # instance fields
@@ -9,9 +10,15 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/google/googlenav/ui/view/android/rideabout/i;Lcom/google/googlenav/ui/view/android/rideabout/i;I)V
+.method public constructor <init>(Landroid/content/Context;Lcom/google/googlenav/ui/view/android/rideabout/m;Lcom/google/googlenav/ui/view/android/rideabout/m;I)V
     .registers 11
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 31
     move-object v0, p0
 
     move-object v1, p1
@@ -24,29 +31,34 @@
 
     move v5, p4
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;-><init>(Landroid/content/Context;Lcom/google/googlenav/ui/view/android/rideabout/i;Lcom/google/googlenav/ui/view/android/rideabout/i;II)V
+    invoke-direct/range {v0 .. v5}, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;-><init>(Landroid/content/Context;Lcom/google/googlenav/ui/view/android/rideabout/m;Lcom/google/googlenav/ui/view/android/rideabout/m;II)V
 
+    .line 32
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lcom/google/googlenav/ui/view/android/rideabout/i;Lcom/google/googlenav/ui/view/android/rideabout/i;II)V
+.method public constructor <init>(Landroid/content/Context;Lcom/google/googlenav/ui/view/android/rideabout/m;Lcom/google/googlenav/ui/view/android/rideabout/m;II)V
     .registers 8
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegment;-><init>(Landroid/content/Context;)V
+    .prologue
+    .line 36
+    invoke-direct {p0, p1, p2, p3, p5}, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegment;-><init>(Landroid/content/Context;Lcom/google/googlenav/ui/view/android/rideabout/m;Lcom/google/googlenav/ui/view/android/rideabout/m;I)V
 
-    iput p5, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->f:I
-
+    .line 37
     iput p4, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->k:I
 
-    iput-object p2, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->d:Lcom/google/googlenav/ui/view/android/rideabout/i;
-
-    iput-object p3, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->e:Lcom/google/googlenav/ui/view/android/rideabout/i;
-
+    .line 39
     invoke-virtual {p0}, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f020353
+    .line 40
+    const v1, 0x7f0203c8
 
     invoke-static {v0, v1}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -54,14 +66,17 @@
 
     iput-object v0, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->j:Landroid/graphics/Bitmap;
 
+    .line 43
     iget v0, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->a:I
 
     iput v0, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->g:I
 
-    sget-object v0, Lcom/google/googlenav/ui/view/android/rideabout/i;->c:Lcom/google/googlenav/ui/view/android/rideabout/i;
+    .line 44
+    sget-object v0, Lcom/google/googlenav/ui/view/android/rideabout/m;->c:Lcom/google/googlenav/ui/view/android/rideabout/m;
 
-    if-ne p3, v0, :cond_29
+    if-ne p3, v0, :cond_23
 
+    .line 45
     iget v0, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->g:I
 
     iget v1, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->b:I
@@ -72,7 +87,8 @@
 
     iput v0, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->g:I
 
-    :cond_29
+    .line 47
+    :cond_23
     return-void
 .end method
 
@@ -80,13 +96,17 @@
 # virtual methods
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .registers 8
+    .parameter
 
+    .prologue
+    .line 53
     iget v0, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->f:I
 
     iget v1, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->k:I
 
     if-ne v0, v1, :cond_2b
 
+    .line 54
     iget v0, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->a:I
 
     iget v1, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->f:I
@@ -95,19 +115,22 @@
 
     invoke-virtual {p0, p1, v0, v1, v2}, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->a(Landroid/graphics/Canvas;IILandroid/graphics/Bitmap;)V
 
+    .line 58
     :goto_f
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->d:Lcom/google/googlenav/ui/view/android/rideabout/i;
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->d:Lcom/google/googlenav/ui/view/android/rideabout/m;
 
-    sget-object v1, Lcom/google/googlenav/ui/view/android/rideabout/i;->c:Lcom/google/googlenav/ui/view/android/rideabout/i;
+    sget-object v1, Lcom/google/googlenav/ui/view/android/rideabout/m;->c:Lcom/google/googlenav/ui/view/android/rideabout/m;
 
     if-eq v0, v1, :cond_1c
 
+    .line 59
     iget v0, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->a:I
 
     iget v1, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->k:I
 
     invoke-virtual {p0, p1, v0, v1}, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->a(Landroid/graphics/Canvas;II)V
 
+    .line 61
     :cond_1c
     iget v0, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->g:I
 
@@ -119,10 +142,13 @@
 
     invoke-virtual {p0, p1, v0, v1, v2}, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->a(Landroid/graphics/Canvas;III)V
 
+    .line 62
     invoke-super {p0, p1}, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegment;->onDraw(Landroid/graphics/Canvas;)V
 
+    .line 63
     return-void
 
+    .line 56
     :cond_2b
     iget v2, p0, Lcom/google/googlenav/ui/view/android/rideabout/RouteSegmentStation;->a:I
 

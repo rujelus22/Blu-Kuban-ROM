@@ -15,26 +15,8 @@
 
 
 # virtual methods
-.method public abstract needRefreshList()V
+.method public abstract onAdapterFavoriteChanged(Lcom/android/email/activity/MessageListItem;Z)V
 .end method
 
-.method public abstract onAdapterFavoriteChanged(Lcom/android/email/activity/MessageListItemContainer;Z)V
-.end method
-
-.method public abstract onAdapterFollowUpChanged(Lcom/android/email/activity/MessageListItemContainer;I)V
-.end method
-
-.method public abstract onAdapterSelectedAllChanged()V
-.end method
-
-.method public abstract onAdapterSelectedChanged(Lcom/android/email/activity/MessageListItemContainer;ZI)V
-.end method
-
-.method public abstract onReDrawList()V
-.end method
-
-.method public abstract setItemCheckboxPressed(ZLcom/android/email/activity/MessageListItemContainer;)V
-.end method
-
-.method public abstract setSubItemCheckboxPressed(ZLcom/android/email/activity/MessageListItemContainer;)V
+.method public abstract onAdapterSelectedChanged(Lcom/android/email/activity/MessageListItem;ZI)V
 .end method

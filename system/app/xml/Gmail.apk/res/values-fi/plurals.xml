@@ -53,40 +53,40 @@
         <item quantity="one">%1$d keskustelu odottaa toimenpiteitä.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> ohitettu.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> ohitettu.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ohitettu.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ohitettu.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> merkitty roskapostiksi.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> merkitty roskapostiksi.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> merkitty roskapostiksi.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> merkitty roskapostiksi.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> arkistoitu.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> arkistoitu.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> arkistoitu.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> arkistoitu.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> siirretty postilaatikkoon.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> siirretty postilaatikkoon.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> siirretty postilaatikkoon.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> siirretty postilaatikkoon.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> poistettu.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> poistettu.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> poistettu.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> poistettu.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> merkitty tärkeiksi.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> merkitty tärkeäksi.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> merkitty tärkeiksi.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> merkitty tärkeäksi.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> merkitty ei-tärkeiksi.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> merkitty ei-tärkeäksi.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> merkitty ei-tärkeiksi.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> merkitty ei-tärkeäksi.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> merkitty luetuiksi.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> merkitty luetuksi.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> merkitty luetuiksi.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> merkitty luetuksi.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> merkitty lukemattomiksi.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> merkitty lukemattomaksi.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> merkitty lukemattomiksi.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> merkitty lukemattomaksi.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Tunnisteet muutettu</item>

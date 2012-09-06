@@ -40,7 +40,7 @@
 
     iput-object p3, p0, Lcom/google/android/talk/fragments/BuddyListFragment$LocalCallStateClient$2;->val$remoteBareJid:Ljava/lang/String;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -68,7 +68,7 @@
 
     iget-object v1, v1, Lcom/google/android/talk/fragments/BuddyListFragment$LocalCallStateClient;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    iget-object v1, v1, Lcom/google/android/talk/fragments/BuddyListFragment;->mHandler:Landroid/os/Handler;
+    iget-object v1, v1, Lcom/google/android/talk/fragments/RosterListFragment;->mHandler:Landroid/os/Handler;
 
     iget-object v2, p0, Lcom/google/android/talk/fragments/BuddyListFragment$LocalCallStateClient$2;->this$1:Lcom/google/android/talk/fragments/BuddyListFragment$LocalCallStateClient;
 
@@ -118,7 +118,7 @@
 
     iget-object v1, v1, Lcom/google/android/talk/fragments/BuddyListFragment$LocalCallStateClient;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    iget-object v1, v1, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v1, v1, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-interface {v1, v0}, Lcom/google/android/talk/IRosterListAdapter;->setActiveCallState(Lcom/google/android/talk/RosterListAdapter$CallState;)V
 

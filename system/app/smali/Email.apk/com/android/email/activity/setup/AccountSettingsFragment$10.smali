@@ -3,7 +3,7 @@
 .source "AccountSettingsFragment.java"
 
 # interfaces
-.implements Landroid/preference/Preference$OnPreferenceChangeListener;
+.implements Landroid/preference/Preference$OnPreferenceClickListener;
 
 
 # annotations
@@ -27,82 +27,60 @@
     .parameter
 
     .prologue
-    .line 1437
+    .line 603
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSettingsFragment$10;->this$0:Lcom/android/email/activity/setup/AccountSettingsFragment;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
-    .registers 7
+.method public onPreferenceClick(Landroid/preference/Preference;)Z
+    .registers 6
     .parameter "preference"
-    .parameter "newValue"
 
     .prologue
-    .line 1439
-    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 1440
-    .local v1, summary:Ljava/lang/String;
+    .line 605
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettingsFragment$10;->this$0:Lcom/android/email/activity/setup/AccountSettingsFragment;
 
-    #getter for: Lcom/android/email/activity/setup/AccountSettingsFragment;->mAmountToSynchronize:Landroid/preference/ListPreference;
-    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettingsFragment;->access$2200(Lcom/android/email/activity/setup/AccountSettingsFragment;)Landroid/preference/ListPreference;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Landroid/preference/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
-
-    move-result v0
-
-    .line 1441
-    .local v0, index:I
-    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettingsFragment$10;->this$0:Lcom/android/email/activity/setup/AccountSettingsFragment;
-
-    #getter for: Lcom/android/email/activity/setup/AccountSettingsFragment;->mAmountToSynchronize:Landroid/preference/ListPreference;
-    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettingsFragment;->access$2200(Lcom/android/email/activity/setup/AccountSettingsFragment;)Landroid/preference/ListPreference;
+    #getter for: Lcom/android/email/activity/setup/AccountSettingsFragment;->mAccount:Lcom/android/emailcommon/provider/Account;
+    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettingsFragment;->access$400(Lcom/android/email/activity/setup/AccountSettingsFragment;)Lcom/android/emailcommon/provider/Account;
 
     move-result-object v2
 
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSettingsFragment$10;->this$0:Lcom/android/email/activity/setup/AccountSettingsFragment;
 
-    #getter for: Lcom/android/email/activity/setup/AccountSettingsFragment;->mAmountToSynchronize:Landroid/preference/ListPreference;
-    invoke-static {v3}, Lcom/android/email/activity/setup/AccountSettingsFragment;->access$2200(Lcom/android/email/activity/setup/AccountSettingsFragment;)Landroid/preference/ListPreference;
+    invoke-static {v2, v3}, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;->newInstance(Lcom/android/emailcommon/provider/Account;Landroid/app/Fragment;)Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
-
-    move-result-object v3
-
-    aget-object v3, v3, v0
-
-    invoke-virtual {v2, v3}, Landroid/preference/ListPreference;->setSummary(Ljava/lang/CharSequence;)V
-
-    .line 1442
+    .line 607
+    .local v0, dialogFragment:Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;
     iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettingsFragment$10;->this$0:Lcom/android/email/activity/setup/AccountSettingsFragment;
 
-    #getter for: Lcom/android/email/activity/setup/AccountSettingsFragment;->mAmountToSynchronize:Landroid/preference/ListPreference;
-    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettingsFragment;->access$2200(Lcom/android/email/activity/setup/AccountSettingsFragment;)Landroid/preference/ListPreference;
+    invoke-virtual {v2}, Lcom/android/email/activity/setup/AccountSettingsFragment;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Landroid/preference/ListPreference;->setValue(Ljava/lang/String;)V
+    invoke-virtual {v2}, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
 
-    .line 1443
-    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSettingsFragment$10;->this$0:Lcom/android/email/activity/setup/AccountSettingsFragment;
+    move-result-object v1
 
-    #calls: Lcom/android/email/activity/setup/AccountSettingsFragment;->onPreferenceChanged()V
-    invoke-static {v2}, Lcom/android/email/activity/setup/AccountSettingsFragment;->access$2000(Lcom/android/email/activity/setup/AccountSettingsFragment;)V
-
-    .line 1444
+    .line 608
+    .local v1, ft:Landroid/app/FragmentTransaction;
     const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/app/FragmentTransaction;->addToBackStack(Ljava/lang/String;)Landroid/app/FragmentTransaction;
+
+    .line 609
+    const-string v2, "DeleteAccountFragment"
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/email/activity/setup/AccountSettingsFragment$DeleteAccountFragment;->show(Landroid/app/FragmentTransaction;Ljava/lang/String;)I
+
+    .line 610
+    const/4 v2, 0x1
 
     return v2
 .end method

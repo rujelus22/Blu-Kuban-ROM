@@ -31,25 +31,25 @@
     .registers 2
 
     .prologue
-    .line 149
+    .line 156
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 154
+    .line 161
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->titleLocalized_:Ljava/lang/String;
 
-    .line 171
+    .line 178
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->url_:Ljava/lang/String;
 
-    .line 206
+    .line 214
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->cachedSize:I
 
-    .line 149
+    .line 156
     return-void
 .end method
 
@@ -59,15 +59,15 @@
     .registers 2
 
     .prologue
-    .line 208
+    .line 217
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 210
+    .line 219
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->getSerializedSize()I
 
-    .line 212
+    .line 221
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->cachedSize:I
 
@@ -78,10 +78,10 @@
     .registers 4
 
     .prologue
-    .line 216
+    .line 226
     const/4 v0, 0x0
 
-    .line 217
+    .line 227
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->hasTitleLocalized()Z
 
@@ -89,7 +89,7 @@
 
     if-eqz v1, :cond_12
 
-    .line 218
+    .line 228
     const/16 v1, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->getTitleLocalized()Ljava/lang/String;
@@ -102,7 +102,7 @@
 
     add-int/2addr v0, v1
 
-    .line 221
+    .line 231
     :cond_12
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->hasUrl()Z
 
@@ -110,7 +110,7 @@
 
     if-eqz v1, :cond_23
 
-    .line 222
+    .line 232
     const/16 v1, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->getUrl()Ljava/lang/String;
@@ -123,11 +123,11 @@
 
     add-int/2addr v0, v1
 
-    .line 225
+    .line 235
     :cond_23
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->cachedSize:I
 
-    .line 226
+    .line 236
     return v0
 .end method
 
@@ -135,7 +135,7 @@
     .registers 2
 
     .prologue
-    .line 155
+    .line 162
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->titleLocalized_:Ljava/lang/String;
 
     return-object v0
@@ -145,7 +145,7 @@
     .registers 2
 
     .prologue
-    .line 172
+    .line 179
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->url_:Ljava/lang/String;
 
     return-object v0
@@ -155,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 156
+    .line 163
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->hasTitleLocalized:Z
 
     return v0
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 173
+    .line 180
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->hasUrl:Z
 
     return v0
@@ -181,29 +181,29 @@
     .end annotation
 
     .prologue
-    .line 233
+    .line 244
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 234
+    .line 245
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 238
+    .line 249
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 239
+    .line 250
     :sswitch_d
     return-object p0
 
-    .line 244
+    .line 255
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 248
+    .line 259
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 234
+    .line 245
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -242,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 147
+    .line 153
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;
 
     move-result-object v0
@@ -255,15 +255,15 @@
     .parameter "value"
 
     .prologue
-    .line 158
+    .line 165
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->hasTitleLocalized:Z
 
-    .line 159
+    .line 166
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->titleLocalized_:Ljava/lang/String;
 
-    .line 160
+    .line 167
     return-object p0
 .end method
 
@@ -272,15 +272,15 @@
     .parameter "value"
 
     .prologue
-    .line 175
+    .line 182
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->hasUrl:Z
 
-    .line 176
+    .line 183
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->url_:Ljava/lang/String;
 
-    .line 177
+    .line 184
     return-object p0
 .end method
 
@@ -294,14 +294,14 @@
     .end annotation
 
     .prologue
-    .line 198
+    .line 206
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->hasTitleLocalized()Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    .line 199
+    .line 207
     const/16 v0, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->getTitleLocalized()Ljava/lang/String;
@@ -310,7 +310,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 201
+    .line 209
     :cond_f
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->hasUrl()Z
 
@@ -318,7 +318,7 @@
 
     if-eqz v0, :cond_1e
 
-    .line 202
+    .line 210
     const/16 v0, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;->getUrl()Ljava/lang/String;
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 204
+    .line 212
     :cond_1e
     return-void
 .end method

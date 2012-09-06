@@ -1,19 +1,23 @@
-.class Lcom/google/android/maps/driveabout/app/bO;
+.class Lcom/google/android/maps/driveabout/app/bo;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/maps/driveabout/app/bu;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/bn;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;)V
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/bn;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/bO;->a:Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;
+    .prologue
+    .line 75
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/bo;->a:Lcom/google/android/maps/driveabout/app/bn;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,22 +26,16 @@
 
 
 # virtual methods
-.method public a(Lcom/google/android/maps/driveabout/app/bt;)V
+.method public onClick(Landroid/view/View;)V
     .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/bO;->a:Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;
+    .prologue
+    .line 78
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/bo;->a:Lcom/google/android/maps/driveabout/app/bn;
 
-    invoke-static {v0, p1}, Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;->a(Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;Lcom/google/android/maps/driveabout/app/bt;)V
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/bn;->dismiss()V
 
-    return-void
-.end method
-
-.method public b(Lcom/google/android/maps/driveabout/app/bt;)V
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/bO;->a:Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;
-
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;->d(Lcom/google/android/maps/driveabout/app/MarkerDetailsActivity;)V
-
+    .line 79
     return-void
 .end method

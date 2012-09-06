@@ -1,289 +1,501 @@
-.class public abstract LZ/a;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements LZ/d;
+.class public Lz/A;
+.super Lz/m;
+.source "SourceFile"
 
 
 # instance fields
-.field protected final a:Ljava/util/Vector;
+.field g:[I
+
+.field h:Lz/s;
+
+.field private i:Lz/q;
+
+.field private volatile j:I
+
+.field private volatile k:I
+
+.field private volatile l:Z
+
+.field private volatile m:I
+
+.field private volatile n:I
+
+.field private volatile o:Z
+
+.field private final p:I
+
+.field private q:Z
 
 
 # direct methods
 .method protected constructor <init>()V
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 108
+    const/4 v0, 0x0
 
-    new-instance v0, Ljava/util/Vector;
+    invoke-direct {p0, v0}, Lz/A;-><init>(Lz/q;)V
 
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
-
-    iput-object v0, p0, LZ/a;->a:Ljava/util/Vector;
-
+    .line 109
     return-void
+.end method
+
+.method public constructor <init>(Lz/q;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 100
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lz/A;-><init>(Lz/q;I)V
+
+    .line 101
+    return-void
+.end method
+
+.method public constructor <init>(Lz/q;I)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 115
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, p2, v0}, Lz/A;-><init>(Lz/q;IZ)V
+
+    .line 116
+    return-void
+.end method
+
+.method public constructor <init>(Lz/q;IZ)V
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    const/16 v2, 0x2901
+
+    const/4 v1, 0x0
+
+    .line 126
+    invoke-static {p2}, Lz/A;->a(I)Lz/n;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lz/m;-><init>(Lz/n;)V
+
+    .line 21
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lz/A;->i:Lz/q;
+
+    .line 26
+    const/4 v0, 0x1
+
+    new-array v0, v0, [I
+
+    iput-object v0, p0, Lz/A;->g:[I
+
+    .line 52
+    const/16 v0, 0x2600
+
+    iput v0, p0, Lz/A;->j:I
+
+    .line 57
+    const/16 v0, 0x2601
+
+    iput v0, p0, Lz/A;->k:I
+
+    .line 62
+    iput-boolean v1, p0, Lz/A;->l:Z
+
+    .line 67
+    iput v2, p0, Lz/A;->m:I
+
+    .line 72
+    iput v2, p0, Lz/A;->n:I
+
+    .line 77
+    iput-boolean v1, p0, Lz/A;->o:Z
+
+    .line 87
+    iput-boolean v1, p0, Lz/A;->q:Z
+
+    .line 92
+    new-instance v0, Lz/s;
+
+    invoke-direct {v0}, Lz/s;-><init>()V
+
+    iput-object v0, p0, Lz/A;->h:Lz/s;
+
+    .line 127
+    iput-object p1, p0, Lz/A;->i:Lz/q;
+
+    .line 128
+    iput-boolean p3, p0, Lz/A;->q:Z
+
+    .line 130
+    packed-switch p2, :pswitch_data_58
+
+    .line 138
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Unsupported texture unit "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 132
+    :pswitch_4b
+    const v0, 0x84c0
+
+    iput v0, p0, Lz/A;->p:I
+
+    .line 140
+    :goto_50
+    return-void
+
+    .line 135
+    :pswitch_51
+    const v0, 0x84c1
+
+    iput v0, p0, Lz/A;->p:I
+
+    goto :goto_50
+
+    .line 130
+    nop
+
+    :pswitch_data_58
+    .packed-switch 0x0
+        :pswitch_4b
+        :pswitch_51
+    .end packed-switch
+.end method
+
+.method private static a(I)Lz/n;
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 156
+    packed-switch p0, :pswitch_data_22
+
+    .line 162
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Unsupported texture unit "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 158
+    :pswitch_1c
+    sget-object v0, Lz/n;->b:Lz/n;
+
+    .line 160
+    :goto_1e
+    return-object v0
+
+    :pswitch_1f
+    sget-object v0, Lz/n;->c:Lz/n;
+
+    goto :goto_1e
+
+    .line 156
+    :pswitch_data_22
+    .packed-switch 0x0
+        :pswitch_1c
+        :pswitch_1f
+    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public a(LZ/e;)V
+.method a(Lz/j;Lz/m;)V
     .registers 5
+    .parameter
+    .parameter
 
-    iget-object v1, p0, LZ/a;->a:Ljava/util/Vector;
+    .prologue
+    .line 222
+    iget-object v0, p0, Lz/A;->i:Lz/q;
 
-    monitor-enter v1
+    if-nez v0, :cond_5
 
-    :try_start_3
-    invoke-virtual {p0, p1}, LZ/a;->b(LZ/e;)I
-
-    move-result v0
-
-    const/4 v2, -0x1
-
-    if-ne v0, v2, :cond_11
-
-    iget-object v0, p0, LZ/a;->a:Ljava/util/Vector;
-
-    invoke-virtual {v0, p1}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
-
-    :goto_f
-    monitor-exit v1
-
+    .line 230
+    :cond_4
+    :goto_4
     return-void
 
-    :cond_11
-    iget-object v2, p0, LZ/a;->a:Ljava/util/Vector;
+    .line 226
+    :cond_5
+    if-nez p2, :cond_4
 
-    invoke-virtual {v2, p1, v0}, Ljava/util/Vector;->setElementAt(Ljava/lang/Object;I)V
+    .line 227
+    iget v0, p0, Lz/A;->p:I
 
-    goto :goto_f
+    invoke-static {v0}, Landroid/opengl/GLES20;->glActiveTexture(I)V
 
-    :catchall_17
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_19
-    .catchall {:try_start_3 .. :try_end_19} :catchall_17
-
-    throw v0
-.end method
-
-.method public a(Ljava/lang/Object;)V
-    .registers 5
-
-    invoke-virtual {p0}, LZ/a;->h()[LZ/e;
-
-    move-result-object v1
-
-    const/4 v0, 0x0
-
-    :goto_5
-    array-length v2, v1
-
-    if-ge v0, v2, :cond_10
-
-    aget-object v2, v1, v0
-
-    invoke-interface {v2, p0, p1}, LZ/e;->a(LZ/d;Ljava/lang/Object;)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_5
-
-    :cond_10
-    return-void
-.end method
-
-.method protected b(LZ/e;)I
-    .registers 6
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_2
-    iget-object v0, p0, LZ/a;->a:Ljava/util/Vector;
-
-    invoke-virtual {v0}, Ljava/util/Vector;->size()I
-
-    move-result v0
-
-    if-ge v1, v0, :cond_29
-
-    iget-object v0, p0, LZ/a;->a:Ljava/util/Vector;
-
-    invoke-virtual {v0, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    const-class v3, Ljava/lang/ref/WeakReference;
-
-    if-ne v2, v3, :cond_1e
-
-    check-cast v0, Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    :cond_1e
-    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_25
-
-    :goto_24
-    return v1
-
-    :cond_25
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_2
-
-    :cond_29
-    const/4 v1, -0x1
-
-    goto :goto_24
-.end method
-
-.method public h()[LZ/e;
-    .registers 8
+    .line 228
+    const/16 v0, 0xde1
 
     const/4 v1, 0x0
 
-    iget-object v4, p0, LZ/a;->a:Ljava/util/Vector;
+    invoke-static {v0, v1}, Landroid/opengl/GLES20;->glBindTexture(II)V
 
-    monitor-enter v4
+    goto :goto_4
+.end method
 
-    :try_start_4
-    iget-object v0, p0, LZ/a;->a:Ljava/util/Vector;
+.method protected a(Lz/q;Z)V
+    .registers 5
+    .parameter
+    .parameter
 
-    invoke-virtual {v0}, Ljava/util/Vector;->size()I
+    .prologue
+    .line 148
+    iget-boolean v0, p0, Lz/A;->c:Z
 
-    move-result v0
+    if-eqz v0, :cond_c
 
-    new-array v2, v0, [LZ/e;
+    .line 149
+    new-instance v0, Ljava/lang/RuntimeException;
 
-    iget-object v0, p0, LZ/a;->a:Ljava/util/Vector;
+    const-string v1, "Must be called BEFORE set live"
 
-    invoke-virtual {v0}, Ljava/util/Vector;->size()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    move v3, v0
-
-    :goto_15
-    if-ltz v3, :cond_49
-
-    iget-object v0, p0, LZ/a;->a:Ljava/util/Vector;
-
-    invoke-virtual {v0, v3}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v5
-
-    const-class v6, Ljava/lang/ref/WeakReference;
-
-    if-ne v5, v6, :cond_41
-
-    check-cast v0, Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_39
-
-    add-int v5, v3, v1
-
-    check-cast v0, LZ/e;
-
-    aput-object v0, v2, v5
-
-    move v0, v1
-
-    :goto_34
-    add-int/lit8 v1, v3, -0x1
-
-    move v3, v1
-
-    move v1, v0
-
-    goto :goto_15
-
-    :cond_39
-    iget-object v0, p0, LZ/a;->a:Ljava/util/Vector;
-
-    invoke-virtual {v0, v3}, Ljava/util/Vector;->removeElementAt(I)V
-
-    add-int/lit8 v0, v1, 0x1
-
-    goto :goto_34
-
-    :cond_41
-    add-int v5, v3, v1
-
-    check-cast v0, LZ/e;
-
-    aput-object v0, v2, v5
-
-    move v0, v1
-
-    goto :goto_34
-
-    :cond_49
-    if-lez v1, :cond_59
-
-    array-length v0, v2
-
-    sub-int/2addr v0, v1
-
-    new-array v0, v0, [LZ/e;
-
-    const/4 v3, 0x0
-
-    array-length v5, v0
-
-    invoke-static {v2, v1, v0, v3, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    :goto_54
-    monitor-exit v4
-
-    return-object v0
-
-    :catchall_56
-    move-exception v0
-
-    monitor-exit v4
-    :try_end_58
-    .catchall {:try_start_4 .. :try_end_58} :catchall_56
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    :cond_59
-    move-object v0, v2
+    .line 151
+    :cond_c
+    iput-boolean p2, p0, Lz/A;->q:Z
 
-    goto :goto_54
+    .line 152
+    iput-object p1, p0, Lz/A;->i:Lz/q;
+
+    .line 153
+    return-void
 .end method
 
-.method public i()V
-    .registers 2
+.method a(Lz/j;Lz/i;)Z
+    .registers 8
+    .parameter
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    const/4 v4, 0x1
 
-    invoke-virtual {p0, v0}, LZ/a;->a(Ljava/lang/Object;)V
+    const/4 v2, 0x0
 
+    const/16 v3, 0xde1
+
+    .line 169
+    invoke-super {p0, p1, p2}, Lz/m;->a(Lz/j;Lz/i;)Z
+
+    move-result v0
+
+    .line 171
+    if-eqz v0, :cond_42
+
+    .line 172
+    iget-boolean v1, p2, Lz/i;->e:Z
+
+    if-eqz v1, :cond_43
+
+    .line 173
+    iget-object v1, p0, Lz/A;->g:[I
+
+    invoke-static {v4, v1, v2}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
+
+    .line 174
+    iget-object v1, p0, Lz/A;->g:[I
+
+    aget v1, v1, v2
+
+    invoke-static {v3, v1}, Landroid/opengl/GLES20;->glBindTexture(II)V
+
+    .line 175
+    iget-object v1, p0, Lz/A;->i:Lz/q;
+
+    invoke-virtual {v1, p1, p2}, Lz/q;->a(Lz/j;Lz/i;)Z
+
+    .line 177
+    const/16 v1, 0x2801
+
+    iget v2, p0, Lz/A;->j:I
+
+    invoke-static {v3, v1, v2}, Landroid/opengl/GLES20;->glTexParameteri(III)V
+
+    .line 178
+    const/16 v1, 0x2800
+
+    iget v2, p0, Lz/A;->k:I
+
+    invoke-static {v3, v1, v2}, Landroid/opengl/GLES20;->glTexParameteri(III)V
+
+    .line 180
+    const/16 v1, 0x2802
+
+    iget v2, p0, Lz/A;->m:I
+
+    invoke-static {v3, v1, v2}, Landroid/opengl/GLES20;->glTexParameteri(III)V
+
+    .line 181
+    const/16 v1, 0x2803
+
+    iget v2, p0, Lz/A;->n:I
+
+    invoke-static {v3, v1, v2}, Landroid/opengl/GLES20;->glTexParameteri(III)V
+
+    .line 182
+    iget-boolean v1, p0, Lz/A;->q:Z
+
+    if-eqz v1, :cond_42
+
+    .line 183
+    invoke-static {v3}, Landroid/opengl/GLES20;->glGenerateMipmap(I)V
+
+    .line 191
+    :cond_42
+    :goto_42
+    return v0
+
+    .line 186
+    :cond_43
+    iget-object v1, p0, Lz/A;->i:Lz/q;
+
+    invoke-virtual {v1, p1, p2}, Lz/q;->a(Lz/j;Lz/i;)Z
+
+    .line 187
+    iget-object v1, p0, Lz/A;->g:[I
+
+    invoke-static {v4, v1, v2}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
+
+    goto :goto_42
+.end method
+
+.method public b(II)V
+    .registers 7
+    .parameter
+    .parameter
+
+    .prologue
+    const v3, 0x8370
+
+    const v2, 0x812f
+
+    const/16 v1, 0x2901
+
+    .line 238
+    iget-boolean v0, p0, Lz/A;->c:Z
+
+    if-eqz v0, :cond_f
+
+    .line 239
+    invoke-static {}, Lz/j;->c()V
+
+    .line 242
+    :cond_f
+    if-eq p1, v1, :cond_15
+
+    if-eq p1, v2, :cond_15
+
+    if-ne p1, v3, :cond_1b
+
+    :cond_15
+    if-eq p2, v1, :cond_3e
+
+    if-eq p2, v2, :cond_3e
+
+    if-eq p2, v3, :cond_3e
+
+    .line 248
+    :cond_1b
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Illegal Wrap Mode: wrapS = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " wrapT = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 252
+    :cond_3e
+    iput p1, p0, Lz/A;->m:I
+
+    .line 253
+    iput p2, p0, Lz/A;->n:I
+
+    .line 254
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lz/A;->o:Z
+
+    .line 255
     return-void
 .end method

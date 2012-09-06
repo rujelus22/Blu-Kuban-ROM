@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 31
+    .line 29
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
     .line 32
@@ -38,7 +38,7 @@
     .registers 2
 
     .prologue
-    .line 81
+    .line 91
     iget-object v0, p0, Lorg/apache/commons/io/input/DemuxInputStream;->m_streams:Ljava/lang/InheritableThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/InheritableThreadLocal;->get()Ljava/lang/Object;
@@ -61,19 +61,19 @@
     .end annotation
 
     .prologue
-    .line 53
+    .line 56
     invoke-direct {p0}, Lorg/apache/commons/io/input/DemuxInputStream;->getStream()Ljava/io/InputStream;
 
     move-result-object v0
 
-    .line 54
+    .line 57
     .local v0, input:Ljava/io/InputStream;
     if-eqz v0, :cond_9
 
-    .line 55
+    .line 59
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
 
-    .line 57
+    .line 61
     :cond_9
     return-void
 .end method
@@ -87,21 +87,21 @@
     .end annotation
 
     .prologue
-    .line 67
+    .line 73
     invoke-direct {p0}, Lorg/apache/commons/io/input/DemuxInputStream;->getStream()Ljava/io/InputStream;
 
     move-result-object v0
 
-    .line 68
+    .line 74
     .local v0, input:Ljava/io/InputStream;
     if-eqz v0, :cond_b
 
-    .line 69
+    .line 76
     invoke-virtual {v0}, Ljava/io/InputStream;->read()I
 
     move-result v1
 
-    .line 71
+    .line 80
     :goto_a
     return v1
 

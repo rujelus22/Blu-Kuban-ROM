@@ -18,16 +18,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 34
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
     .line 35
-    iput-object v0, p0, Lorg/apache/james/mime4j/message/Entity;->header:Lorg/apache/james/mime4j/message/Header;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 36
-    iput-object v0, p0, Lorg/apache/james/mime4j/message/Entity;->body:Lorg/apache/james/mime4j/message/Body;
+    iput-object v0, p0, Lorg/apache/james/mime4j/message/Entity;->header:Lorg/apache/james/mime4j/message/Header;
 
     .line 37
+    iput-object v0, p0, Lorg/apache/james/mime4j/message/Entity;->body:Lorg/apache/james/mime4j/message/Body;
+
+    .line 38
     iput-object v0, p0, Lorg/apache/james/mime4j/message/Entity;->parent:Lorg/apache/james/mime4j/message/Entity;
 
     return-void
@@ -40,13 +40,13 @@
     .parameter "body"
 
     .prologue
-    .line 92
+    .line 93
     iput-object p1, p0, Lorg/apache/james/mime4j/message/Entity;->body:Lorg/apache/james/mime4j/message/Body;
 
-    .line 93
+    .line 94
     invoke-interface {p1, p0}, Lorg/apache/james/mime4j/message/Body;->setParent(Lorg/apache/james/mime4j/message/Entity;)V
 
-    .line 94
+    .line 95
     return-void
 .end method
 
@@ -55,10 +55,10 @@
     .parameter "header"
 
     .prologue
-    .line 74
+    .line 75
     iput-object p1, p0, Lorg/apache/james/mime4j/message/Entity;->header:Lorg/apache/james/mime4j/message/Header;
 
-    .line 75
+    .line 76
     return-void
 .end method
 
@@ -67,9 +67,9 @@
     .parameter "parent"
 
     .prologue
-    .line 56
+    .line 57
     iput-object p1, p0, Lorg/apache/james/mime4j/message/Entity;->parent:Lorg/apache/james/mime4j/message/Entity;
 
-    .line 57
+    .line 58
     return-void
 .end method

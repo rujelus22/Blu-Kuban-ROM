@@ -75,14 +75,14 @@
     .registers 2
 
     .prologue
-    .line 59
+    .line 55
     new-instance v0, Lorg/apache/commons/io/comparator/SizeFileComparator;
 
     invoke-direct {v0}, Lorg/apache/commons/io/comparator/SizeFileComparator;-><init>()V
 
     sput-object v0, Lorg/apache/commons/io/comparator/SizeFileComparator;->SIZE_COMPARATOR:Ljava/util/Comparator;
 
-    .line 62
+    .line 58
     new-instance v0, Lorg/apache/commons/io/comparator/ReverseComparator;
 
     sget-object v1, Lorg/apache/commons/io/comparator/SizeFileComparator;->SIZE_COMPARATOR:Ljava/util/Comparator;
@@ -91,7 +91,7 @@
 
     sput-object v0, Lorg/apache/commons/io/comparator/SizeFileComparator;->SIZE_REVERSE:Ljava/util/Comparator;
 
-    .line 68
+    .line 64
     new-instance v0, Lorg/apache/commons/io/comparator/SizeFileComparator;
 
     const/4 v1, 0x1
@@ -100,7 +100,7 @@
 
     sput-object v0, Lorg/apache/commons/io/comparator/SizeFileComparator;->SIZE_SUMDIR_COMPARATOR:Ljava/util/Comparator;
 
-    .line 74
+    .line 70
     new-instance v0, Lorg/apache/commons/io/comparator/ReverseComparator;
 
     sget-object v1, Lorg/apache/commons/io/comparator/SizeFileComparator;->SIZE_SUMDIR_COMPARATOR:Ljava/util/Comparator;
@@ -116,15 +116,15 @@
     .registers 2
 
     .prologue
-    .line 84
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 78
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 85
+    .line 79
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/apache/commons/io/comparator/SizeFileComparator;->sumDirectoryContents:Z
 
-    .line 86
+    .line 80
     return-void
 .end method
 
@@ -133,13 +133,13 @@
     .parameter "sumDirectoryContents"
 
     .prologue
-    .line 100
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 93
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 101
+    .line 94
     iput-boolean p1, p0, Lorg/apache/commons/io/comparator/SizeFileComparator;->sumDirectoryContents:Z
 
-    .line 102
+    .line 95
     return-void
 .end method
 
@@ -153,10 +153,10 @@
     .prologue
     const-wide/16 v6, 0x0
 
-    .line 114
+    .line 109
     const-wide/16 v2, 0x0
 
-    .line 115
+    .line 110
     .local v2, size1:J
     invoke-virtual {p1}, Ljava/io/File;->isDirectory()Z
 
@@ -164,7 +164,7 @@
 
     if-eqz v8, :cond_38
 
-    .line 116
+    .line 111
     iget-boolean v8, p0, Lorg/apache/commons/io/comparator/SizeFileComparator;->sumDirectoryContents:Z
 
     if-eqz v8, :cond_36
@@ -179,11 +179,11 @@
 
     move-result-wide v2
 
-    .line 120
+    .line 115
     :goto_18
     const-wide/16 v4, 0x0
 
-    .line 121
+    .line 116
     .local v4, size2:J
     invoke-virtual {p2}, Ljava/io/File;->isDirectory()Z
 
@@ -191,7 +191,7 @@
 
     if-eqz v8, :cond_3f
 
-    .line 122
+    .line 117
     iget-boolean v8, p0, Lorg/apache/commons/io/comparator/SizeFileComparator;->sumDirectoryContents:Z
 
     if-eqz v8, :cond_3d
@@ -206,20 +206,20 @@
 
     move-result-wide v4
 
-    .line 126
+    .line 121
     :goto_2e
     sub-long v0, v2, v4
 
-    .line 127
+    .line 122
     .local v0, result:J
     cmp-long v8, v0, v6
 
     if-gez v8, :cond_44
 
-    .line 128
+    .line 123
     const/4 v6, -0x1
 
-    .line 132
+    .line 127
     :goto_35
     return v6
 
@@ -228,10 +228,10 @@
     :cond_36
     move-wide v2, v6
 
-    .line 116
+    .line 111
     goto :goto_18
 
-    .line 118
+    .line 113
     :cond_38
     invoke-virtual {p1}, Ljava/io/File;->length()J
 
@@ -243,10 +243,10 @@
     :cond_3d
     move-wide v4, v6
 
-    .line 122
+    .line 117
     goto :goto_2e
 
-    .line 124
+    .line 119
     :cond_3f
     invoke-virtual {p2}, Ljava/io/File;->length()J
 
@@ -254,19 +254,19 @@
 
     goto :goto_2e
 
-    .line 129
+    .line 124
     .restart local v0       #result:J
     :cond_44
     cmp-long v6, v0, v6
 
     if-lez v6, :cond_4a
 
-    .line 130
+    .line 125
     const/4 v6, 0x1
 
     goto :goto_35
 
-    .line 132
+    .line 127
     :cond_4a
     const/4 v6, 0x0
 
@@ -279,7 +279,7 @@
     .parameter "x1"
 
     .prologue
-    .line 56
+    .line 52
     check-cast p1, Ljava/io/File;
 
     .end local p1

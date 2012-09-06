@@ -17,17 +17,17 @@
     .parameter
 
     .prologue
-    .line 679
+    .line 750
     invoke-direct {p0, p1}, Lcom/google/common/collect/ImmutableMap$SerializedForm;-><init>(Lcom/google/common/collect/ImmutableMap;)V
 
-    .line 680
+    .line 751
     invoke-virtual {p1}, Lcom/google/common/collect/ImmutableSortedMap;->comparator()Ljava/util/Comparator;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap$SerializedForm;->comparator:Ljava/util/Comparator;
 
-    .line 681
+    .line 752
     return-void
 .end method
 
@@ -37,15 +37,15 @@
     .registers 3
 
     .prologue
-    .line 683
-    new-instance v0, Lcom/google/common/collect/cn;
+    .line 754
+    new-instance v0, Lcom/google/common/collect/dy;
 
     iget-object v1, p0, Lcom/google/common/collect/ImmutableSortedMap$SerializedForm;->comparator:Ljava/util/Comparator;
 
-    invoke-direct {v0, v1}, Lcom/google/common/collect/cn;-><init>(Ljava/util/Comparator;)V
+    invoke-direct {v0, v1}, Lcom/google/common/collect/dy;-><init>(Ljava/util/Comparator;)V
 
-    .line 684
-    invoke-virtual {p0, v0}, Lcom/google/common/collect/ImmutableSortedMap$SerializedForm;->createMap(Lcom/google/common/collect/ca;)Ljava/lang/Object;
+    .line 755
+    invoke-virtual {p0, v0}, Lcom/google/common/collect/ImmutableSortedMap$SerializedForm;->createMap(Lcom/google/common/collect/dm;)Ljava/lang/Object;
 
     move-result-object v0
 

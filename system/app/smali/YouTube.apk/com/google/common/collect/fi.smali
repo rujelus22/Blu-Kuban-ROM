@@ -1,153 +1,77 @@
 .class final Lcom/google/common/collect/fi;
-.super Lcom/google/common/collect/bo;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field a:Ljava/util/Set;
+.field final synthetic a:Ljava/util/Iterator;
 
-.field b:Ljava/util/Collection;
-
-.field final synthetic c:Ljava/util/Map;
-
-.field final synthetic d:Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;
+.field final synthetic b:Lcom/google/common/collect/fh;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;Ljava/util/Map;)V
+.method constructor <init>(Lcom/google/common/collect/fh;Ljava/util/Iterator;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 471
-    iput-object p1, p0, Lcom/google/common/collect/fi;->d:Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;
+    .line 790
+    iput-object p1, p0, Lcom/google/common/collect/fi;->b:Lcom/google/common/collect/fh;
 
-    iput-object p2, p0, Lcom/google/common/collect/fi;->c:Ljava/util/Map;
+    iput-object p2, p0, Lcom/google/common/collect/fi;->a:Ljava/util/Iterator;
 
-    invoke-direct {p0}, Lcom/google/common/collect/bo;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final containsValue(Ljava/lang/Object;)Z
-    .registers 3
-    .parameter
+.method public final hasNext()Z
+    .registers 2
 
     .prologue
-    .line 503
-    invoke-virtual {p0}, Lcom/google/common/collect/fi;->values()Ljava/util/Collection;
+    .line 793
+    iget-object v0, p0, Lcom/google/common/collect/fi;->a:Ljava/util/Iterator;
 
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     return v0
 .end method
 
-.method protected final bridge synthetic delegate()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 471
-    invoke-virtual {p0}, Lcom/google/common/collect/fi;->delegate()Ljava/util/Map;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected final delegate()Ljava/util/Map;
-    .registers 2
-
-    .prologue
-    .line 473
-    iget-object v0, p0, Lcom/google/common/collect/fi;->c:Ljava/util/Map;
-
-    return-object v0
-.end method
-
-.method public final entrySet()Ljava/util/Set;
-    .registers 2
-
-    .prologue
-    .line 479
-    iget-object v0, p0, Lcom/google/common/collect/fi;->a:Ljava/util/Set;
-
-    .line 480
-    if-nez v0, :cond_10
-
-    iget-object v0, p0, Lcom/google/common/collect/fi;->c:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/common/collect/Multimaps;->a(Ljava/util/Set;)Ljava/util/Set;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/common/collect/fi;->a:Ljava/util/Set;
-
-    :cond_10
-    return-object v0
-.end method
-
-.method public final synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 471
-    iget-object v0, p0, Lcom/google/common/collect/fi;->c:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Collection;
-
-    if-nez v0, :cond_c
-
-    const/4 v0, 0x0
-
-    :goto_b
-    return-object v0
-
-    :cond_c
-    invoke-static {v0}, Lcom/google/common/collect/Multimaps;->a(Ljava/util/Collection;)Ljava/util/Collection;
-
-    move-result-object v0
-
-    goto :goto_b
-.end method
-
-.method public final values()Ljava/util/Collection;
+.method public final synthetic next()Ljava/lang/Object;
     .registers 3
 
     .prologue
-    .line 495
-    iget-object v0, p0, Lcom/google/common/collect/fi;->b:Ljava/util/Collection;
+    .line 790
+    iget-object v0, p0, Lcom/google/common/collect/fi;->a:Ljava/util/Iterator;
 
-    .line 496
-    if-nez v0, :cond_11
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    new-instance v0, Lcom/google/common/collect/fg;
+    move-result-object v0
 
-    iget-object v1, p0, Lcom/google/common/collect/fi;->c:Ljava/util/Map;
+    new-instance v1, Lcom/google/common/collect/fj;
 
-    invoke-interface {v1}, Ljava/util/Map;->values()Ljava/util/Collection;
+    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/fj;-><init>(Lcom/google/common/collect/fi;Ljava/lang/Object;)V
 
-    move-result-object v1
+    return-object v1
+.end method
 
-    invoke-direct {v0, v1}, Lcom/google/common/collect/fg;-><init>(Ljava/util/Collection;)V
+.method public final remove()V
+    .registers 2
 
-    iput-object v0, p0, Lcom/google/common/collect/fi;->b:Ljava/util/Collection;
+    .prologue
+    .line 811
+    iget-object v0, p0, Lcom/google/common/collect/fi;->a:Ljava/util/Iterator;
 
-    :cond_11
-    return-object v0
+    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+
+    .line 812
+    return-void
 .end method

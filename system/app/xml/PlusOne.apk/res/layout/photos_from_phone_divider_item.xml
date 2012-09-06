@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:background="@color/album_divider_background_color" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/album_date_text_size" android:textStyle="bold" android:textColor="@color/album_date_color" android:gravity="bottom" android:layout_gravity="left" android:id="@id/date" android:paddingLeft="@dimen/album_date_left_padding" android:paddingBottom="@dimen/album_date_bottom_padding" android:layout_width="wrap_content" android:layout_height="@dimen/album_date_height" />
-    <TextView android:textSize="@dimen/album_photo_count_text_size" android:textColor="@color/album_photo_count_color" android:gravity="bottom" android:layout_gravity="right" android:id="@id/count" android:paddingRight="@dimen/album_photo_count_right_padding" android:paddingBottom="@dimen/album_photo_count_bottom_padding" android:layout_width="wrap_content" android:layout_height="@dimen/album_photo_count_height" />
-    <ImageView android:layout_gravity="bottom|right|center" android:id="@id/divider" android:layout_width="fill_parent" android:layout_height="@dimen/album_divider_line_height" android:src="@color/album_divider_line_color" />
-</FrameLayout>

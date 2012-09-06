@@ -1,195 +1,104 @@
-.class public Lcom/google/googlenav/ui/view/android/bE;
+.class Lcom/google/googlenav/ui/view/android/be;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lbd/k;
+.implements Landroid/view/View$OnClickListener;
+
+
+# static fields
+.field static final synthetic b:Z
 
 
 # instance fields
-.field a:Ljava/lang/String;
+.field a:I
 
-.field b:Ljava/lang/String;
-
-.field c:Ljava/lang/String;
-
-.field d:Ljava/lang/String;
-
-.field e:Ljava/lang/String;
-
-.field f:Lcom/google/googlenav/ui/p;
+.field final synthetic c:Lcom/google/googlenav/ui/view/android/bc;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/ui/p;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
+.method static constructor <clinit>()V
+    .registers 1
+
+    .prologue
+    .line 86
+    const-class v0, Lcom/google/googlenav/ui/view/android/bc;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+
+    move-result v0
+
+    if-nez v0, :cond_c
+
+    const/4 v0, 0x1
+
+    :goto_9
+    sput-boolean v0, Lcom/google/googlenav/ui/view/android/be;->b:Z
+
+    return-void
+
+    :cond_c
+    const/4 v0, 0x0
+
+    goto :goto_9
+.end method
+
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/bc;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 86
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/be;->c:Lcom/google/googlenav/ui/view/android/bc;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/bE;->f:Lcom/google/googlenav/ui/p;
+    .line 89
+    const/4 v0, -0x1
 
-    iput-object p2, p0, Lcom/google/googlenav/ui/view/android/bE;->a:Ljava/lang/String;
-
-    iput-object p3, p0, Lcom/google/googlenav/ui/view/android/bE;->b:Ljava/lang/String;
-
-    iput-object p4, p0, Lcom/google/googlenav/ui/view/android/bE;->c:Ljava/lang/String;
-
-    iput-object p5, p0, Lcom/google/googlenav/ui/view/android/bE;->d:Ljava/lang/String;
-
-    iput-object p6, p0, Lcom/google/googlenav/ui/view/android/bE;->e:Ljava/lang/String;
+    iput v0, p0, Lcom/google/googlenav/ui/view/android/be;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/view/View;)Lbd/aJ;
-    .registers 5
+.method public onClick(Landroid/view/View;)V
+    .registers 6
+    .parameter
 
-    new-instance v1, Lcom/google/googlenav/ui/view/android/bG;
+    .prologue
+    .line 95
+    sget-boolean v0, Lcom/google/googlenav/ui/view/android/be;->b:Z
 
-    invoke-direct {v1}, Lcom/google/googlenav/ui/view/android/bG;-><init>()V
+    if-nez v0, :cond_f
 
-    iput-object p1, v1, Lcom/google/googlenav/ui/view/android/bG;->a:Landroid/view/View;
+    iget v0, p0, Lcom/google/googlenav/ui/view/android/be;->a:I
 
-    const v0, 0x7f0f0372
+    const/4 v1, -0x1
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    if-ne v0, v1, :cond_f
 
-    move-result-object v0
+    new-instance v0, Ljava/lang/AssertionError;
 
-    check-cast v0, Landroid/widget/TextView;
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
-    iput-object v0, v1, Lcom/google/googlenav/ui/view/android/bG;->b:Landroid/widget/TextView;
+    throw v0
 
-    const v0, 0x7f0f0373
+    .line 97
+    :cond_f
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/be;->c:Lcom/google/googlenav/ui/view/android/bc;
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    iget-object v0, v0, Lcom/google/googlenav/ui/view/android/bc;->a:LaM/bj;
 
-    move-result-object v0
+    const/16 v1, 0x2bc
 
-    check-cast v0, Landroid/widget/TextView;
+    iget v2, p0, Lcom/google/googlenav/ui/view/android/be;->a:I
 
-    iput-object v0, v1, Lcom/google/googlenav/ui/view/android/bG;->c:Landroid/widget/TextView;
+    const/4 v3, 0x0
 
-    const v0, 0x7f0f0374
+    invoke-virtual {v0, v1, v2, v3}, LaM/bj;->a(IILjava/lang/Object;)Z
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, v1, Lcom/google/googlenav/ui/view/android/bG;->d:Landroid/widget/TextView;
-
-    const v0, 0x7f0f0375
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, v1, Lcom/google/googlenav/ui/view/android/bG;->e:Landroid/widget/TextView;
-
-    new-instance v0, Lcom/google/googlenav/ui/view/android/bH;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, p0, v2}, Lcom/google/googlenav/ui/view/android/bH;-><init>(Lcom/google/googlenav/ui/view/android/bE;Lcom/google/googlenav/ui/view/android/bF;)V
-
-    iput-object v0, v1, Lcom/google/googlenav/ui/view/android/bG;->f:Lcom/google/googlenav/ui/view/android/bH;
-
-    return-object v1
-.end method
-
-.method public a(Lcom/google/googlenav/ui/p;Lbd/aJ;)V
-    .registers 5
-
-    check-cast p2, Lcom/google/googlenav/ui/view/android/bG;
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bE;->a:Ljava/lang/String;
-
-    if-nez v0, :cond_34
-
-    iget-object v0, p2, Lcom/google/googlenav/ui/view/android/bG;->b:Landroid/widget/TextView;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :goto_d
-    iget-object v0, p2, Lcom/google/googlenav/ui/view/android/bG;->c:Landroid/widget/TextView;
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/bE;->b:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lbd/l;->a(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
-
-    iget-object v0, p2, Lcom/google/googlenav/ui/view/android/bG;->d:Landroid/widget/TextView;
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/bE;->c:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lbd/l;->a(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
-
-    iget-object v0, p2, Lcom/google/googlenav/ui/view/android/bG;->e:Landroid/widget/TextView;
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/bE;->d:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lbd/l;->a(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
-
-    iget-object v0, p2, Lcom/google/googlenav/ui/view/android/bG;->f:Lcom/google/googlenav/ui/view/android/bH;
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/bE;->e:Ljava/lang/String;
-
-    iput-object v1, v0, Lcom/google/googlenav/ui/view/android/bH;->a:Ljava/lang/String;
-
-    iget-object v0, p2, Lcom/google/googlenav/ui/view/android/bG;->f:Lcom/google/googlenav/ui/view/android/bH;
-
-    iput-object p1, v0, Lcom/google/googlenav/ui/view/android/bH;->b:Lcom/google/googlenav/ui/p;
-
-    iget-object v0, p2, Lcom/google/googlenav/ui/view/android/bG;->a:Landroid/view/View;
-
-    iget-object v1, p2, Lcom/google/googlenav/ui/view/android/bG;->f:Lcom/google/googlenav/ui/view/android/bH;
-
-    invoke-static {v0, v1}, Lcom/google/googlenav/ui/view/android/h;->a(Landroid/view/View;Landroid/view/View$OnClickListener;)V
-
+    .line 98
     return-void
-
-    :cond_34
-    iget-object v0, p2, Lcom/google/googlenav/ui/view/android/bG;->b:Landroid/widget/TextView;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    iget-object v0, p2, Lcom/google/googlenav/ui/view/android/bG;->b:Landroid/widget/TextView;
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/bE;->a:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lbd/l;->a(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
-
-    goto :goto_d
-.end method
-
-.method public b()I
-    .registers 2
-
-    const v0, 0x7f03013e
-
-    return v0
-.end method
-
-.method public c()I
-    .registers 2
-
-    const/16 v0, 0xc
-
-    return v0
-.end method
-
-.method public d()Z
-    .registers 2
-
-    const/4 v0, 0x0
-
-    return v0
 .end method

@@ -31,25 +31,25 @@
     .registers 2
 
     .prologue
-    .line 12272
+    .line 12542
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 12277
+    .line 12547
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->assetId_:Ljava/lang/String;
 
-    .line 12294
+    .line 12564
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->directDownloadKey_:Ljava/lang/String;
 
-    .line 12330
+    .line 12601
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->cachedSize:I
 
-    .line 12272
+    .line 12542
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .registers 2
 
     .prologue
-    .line 12278
+    .line 12548
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->assetId_:Ljava/lang/String;
 
     return-object v0
@@ -69,15 +69,15 @@
     .registers 2
 
     .prologue
-    .line 12332
+    .line 12604
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 12334
+    .line 12606
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->getSerializedSize()I
 
-    .line 12336
+    .line 12608
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->cachedSize:I
 
@@ -88,7 +88,7 @@
     .registers 2
 
     .prologue
-    .line 12295
+    .line 12565
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->directDownloadKey_:Ljava/lang/String;
 
     return-object v0
@@ -98,10 +98,10 @@
     .registers 4
 
     .prologue
-    .line 12340
+    .line 12613
     const/4 v0, 0x0
 
-    .line 12341
+    .line 12614
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->hasAssetId()Z
 
@@ -109,7 +109,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 12342
+    .line 12615
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->getAssetId()Ljava/lang/String;
@@ -122,7 +122,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12345
+    .line 12618
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->hasDirectDownloadKey()Z
 
@@ -130,7 +130,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 12346
+    .line 12619
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->getDirectDownloadKey()Ljava/lang/String;
@@ -143,11 +143,11 @@
 
     add-int/2addr v0, v1
 
-    .line 12349
+    .line 12622
     :cond_21
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->cachedSize:I
 
-    .line 12350
+    .line 12623
     return v0
 .end method
 
@@ -155,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 12279
+    .line 12549
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->hasAssetId:Z
 
     return v0
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 12296
+    .line 12566
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->hasDirectDownloadKey:Z
 
     return v0
@@ -181,29 +181,29 @@
     .end annotation
 
     .prologue
-    .line 12357
+    .line 12631
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 12358
+    .line 12632
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 12362
+    .line 12636
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 12363
+    .line 12637
     :sswitch_d
     return-object p0
 
-    .line 12368
+    .line 12642
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 12372
+    .line 12646
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 12358
+    .line 12632
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -242,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 12270
+    .line 12540
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;
 
     move-result-object v0
@@ -255,15 +255,15 @@
     .parameter "value"
 
     .prologue
-    .line 12281
+    .line 12551
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->hasAssetId:Z
 
-    .line 12282
+    .line 12552
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->assetId_:Ljava/lang/String;
 
-    .line 12283
+    .line 12553
     return-object p0
 .end method
 
@@ -272,15 +272,15 @@
     .parameter "value"
 
     .prologue
-    .line 12298
+    .line 12568
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->hasDirectDownloadKey:Z
 
-    .line 12299
+    .line 12569
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->directDownloadKey_:Ljava/lang/String;
 
-    .line 12300
+    .line 12570
     return-object p0
 .end method
 
@@ -294,14 +294,14 @@
     .end annotation
 
     .prologue
-    .line 12322
+    .line 12593
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->hasAssetId()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 12323
+    .line 12594
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->getAssetId()Ljava/lang/String;
@@ -310,7 +310,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 12325
+    .line 12596
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->hasDirectDownloadKey()Z
 
@@ -318,7 +318,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 12326
+    .line 12597
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->getDirectDownloadKey()Ljava/lang/String;
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 12328
+    .line 12599
     :cond_1c
     return-void
 .end method

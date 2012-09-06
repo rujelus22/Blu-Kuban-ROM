@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/activities/MainActivity;->setupDebugMenu(Landroid/view/Menu;)V
+    value = Lcom/google/android/finsky/activities/MainActivity;->setupDcbDebugMenu(Landroid/view/Menu;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 665
+    .line 837
     iput-object p1, p0, Lcom/google/android/finsky/activities/MainActivity$7;->this$0:Lcom/google/android/finsky/activities/MainActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,22 +38,25 @@
 
 # virtual methods
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
-    .registers 4
-    .parameter "item"
+    .registers 5
+    .parameter
 
     .prologue
-    .line 668
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+    .line 840
+    new-instance v0, Landroid/content/Intent;
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/google/android/finsky/activities/MainActivity$7;->this$0:Lcom/google/android/finsky/activities/MainActivity;
 
-    new-instance v1, Lcom/google/android/finsky/activities/MainActivity$7$1;
+    const-class v2, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;
 
-    invoke-direct {v1, p0}, Lcom/google/android/finsky/activities/MainActivity$7$1;-><init>(Lcom/google/android/finsky/activities/MainActivity$7;)V
+    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/FinskyApp;->clearCacheAsync(Ljava/lang/Runnable;)V
+    .line 841
+    iget-object v1, p0, Lcom/google/android/finsky/activities/MainActivity$7;->this$0:Lcom/google/android/finsky/activities/MainActivity;
 
-    .line 674
+    invoke-virtual {v1, v0}, Lcom/google/android/finsky/activities/MainActivity;->startActivity(Landroid/content/Intent;)V
+
+    .line 842
     const/4 v0, 0x1
 
     return v0

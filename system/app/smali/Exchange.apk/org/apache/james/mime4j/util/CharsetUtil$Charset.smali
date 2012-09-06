@@ -45,28 +45,28 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 809
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 801
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 805
+    .line 797
     iput-object v0, p0, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->canonical:Ljava/lang/String;
 
-    .line 806
+    .line 798
     iput-object v0, p0, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->mime:Ljava/lang/String;
 
-    .line 807
+    .line 799
     iput-object v0, p0, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->aliases:[Ljava/lang/String;
 
-    .line 810
+    .line 802
     iput-object p1, p0, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->canonical:Ljava/lang/String;
 
-    .line 811
+    .line 803
     iput-object p2, p0, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->mime:Ljava/lang/String;
 
-    .line 812
+    .line 804
     iput-object p3, p0, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->aliases:[Ljava/lang/String;
 
-    .line 813
+    .line 805
     return-void
 .end method
 
@@ -78,7 +78,7 @@
     .parameter "x3"
 
     .prologue
-    .line 804
+    .line 796
     invoke-direct {p0, p1, p2, p3}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
 
     return-void
@@ -89,7 +89,7 @@
     .parameter "x0"
 
     .prologue
-    .line 804
+    .line 796
     iget-object v0, p0, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->canonical:Ljava/lang/String;
 
     return-object v0
@@ -100,7 +100,7 @@
     .parameter "x0"
 
     .prologue
-    .line 804
+    .line 796
     iget-object v0, p0, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->mime:Ljava/lang/String;
 
     return-object v0
@@ -111,7 +111,7 @@
     .parameter "x0"
 
     .prologue
-    .line 804
+    .line 796
     iget-object v0, p0, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->aliases:[Ljava/lang/String;
 
     return-object v0
@@ -124,7 +124,7 @@
     .parameter "x0"
 
     .prologue
-    .line 804
+    .line 796
     check-cast p1, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
     .end local p1
@@ -140,7 +140,7 @@
     .parameter "c"
 
     .prologue
-    .line 816
+    .line 808
     iget-object v0, p0, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->canonical:Ljava/lang/String;
 
     iget-object v1, p1, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->canonical:Ljava/lang/String;

@@ -41,7 +41,7 @@
 
     if-eqz v0, :cond_11
 
-    const/4 v0, -0x3
+    const/4 v0, -0x2
 
     :goto_e
     iput v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$FastBitmapDrawable;->mOpacity:I
@@ -51,7 +51,7 @@
 
     .line 1446
     :cond_11
-    const/4 v0, -0x1
+    const/4 v0, -0x2
 
     goto :goto_e
 .end method

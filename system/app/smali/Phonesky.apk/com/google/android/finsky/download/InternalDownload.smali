@@ -10,52 +10,22 @@
 .method public abstract createDownloadRequest(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/download/DownloadRequest;
 .end method
 
-.method public abstract getActiveObbDownloads()Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/android/finsky/download/InternalDownload;",
-            ">;"
-        }
-    .end annotation
-.end method
-
 .method public abstract getHttpStatus()I
 .end method
 
-.method public abstract getNext()Lcom/google/android/finsky/download/InternalDownload;
+.method public abstract getMaximumSize()J
 .end method
 
 .method public abstract getObb()Lcom/google/android/finsky/download/obb/Obb;
 .end method
 
+.method public abstract getPackageName()Ljava/lang/String;
+.end method
+
 .method public abstract getRequestedDestination()Landroid/net/Uri;
 .end method
 
-.method public abstract getSize()J
-.end method
-
 .method public abstract getState()Lcom/google/android/finsky/download/Download$DownloadState;
-.end method
-
-.method public abstract getWrappedObb(Lcom/google/android/finsky/download/Download;)Lcom/google/android/finsky/download/obb/Obb;
-.end method
-
-.method public abstract getWrappedObbDownloads()Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/android/finsky/download/InternalDownload;",
-            ">;"
-        }
-    .end annotation
-.end method
-
-.method public abstract internalGetContentUri()Landroid/net/Uri;
 .end method
 
 .method public abstract isObb()Z
@@ -65,9 +35,6 @@
 .end method
 
 .method public abstract setHttpStatus(I)V
-.end method
-
-.method public abstract setNext(Lcom/google/android/finsky/download/InternalDownload;)V
 .end method
 
 .method public abstract setProgress(Lcom/google/android/finsky/download/DownloadProgress;)V

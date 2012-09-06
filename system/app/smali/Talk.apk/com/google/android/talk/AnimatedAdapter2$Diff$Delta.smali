@@ -33,7 +33,7 @@
     .line 778
     iput-object p1, p0, Lcom/google/android/talk/AnimatedAdapter2$Diff$Delta;->this$1:Lcom/google/android/talk/AnimatedAdapter2$Diff;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 779
     iput-object p2, p0, Lcom/google/android/talk/AnimatedAdapter2$Diff$Delta;->mOrig:Lcom/google/android/talk/AnimatedAdapter2$Diff$Chunk;

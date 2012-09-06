@@ -4,211 +4,289 @@
 
 
 # static fields
-.field private static final a:Landroid/content/Intent;
+.field private static final a:Ljava/util/Map;
+
+.field private static final b:Ljava/util/Set;
+
+
+# instance fields
+.field private final c:Landroid/content/Context;
+
+.field private final d:Lcom/google/android/a/a;
+
+.field private final e:Lcom/google/android/youtube/core/player/an;
+
+.field private final f:Ljava/lang/String;
+
+.field private g:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .registers 3
 
     .prologue
-    .line 31
-    new-instance v0, Landroid/content/Intent;
+    .line 40
+    new-instance v0, Ljava/util/HashMap;
 
-    const-string v1, "android.intent.action.BUG_REPORT"
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    .line 41
+    sget-object v1, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_144P:Lcom/google/android/youtube/core/model/Stream$Quality;
 
-    sput-object v0, Lcom/google/android/youtube/core/utils/a;->a:Landroid/content/Intent;
+    const/16 v2, 0x11
 
-    return-void
-.end method
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.method private constructor <init>()V
-    .registers 1
+    move-result-object v2
 
-    .prologue
-    .line 35
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 36
-    return-void
-.end method
+    .line 42
+    sget-object v1, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_240P:Lcom/google/android/youtube/core/model/Stream$Quality;
 
-.method public static a(Landroid/app/Activity;)V
-    .registers 4
-    .parameter
+    const/16 v2, 0x24
 
-    .prologue
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 43
-    new-instance v0, Lcom/google/android/youtube/core/utils/b;
+    sget-object v1, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_360P:Lcom/google/android/youtube/core/model/Stream$Quality;
 
-    invoke-direct {v0, p0}, Lcom/google/android/youtube/core/utils/b;-><init>(Landroid/app/Activity;)V
+    const/16 v2, 0x12
 
-    .line 61
-    sget-object v1, Lcom/google/android/youtube/core/utils/a;->a:Landroid/content/Intent;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/4 v2, 0x1
+    move-result-object v2
 
-    invoke-virtual {p0, v1, v0, v2}, Landroid/app/Activity;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 62
-    return-void
-.end method
+    .line 44
+    sget-object v1, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_720P:Lcom/google/android/youtube/core/model/Stream$Quality;
 
-.method public static a(Landroid/content/Context;)Z
-    .registers 4
-    .parameter
+    const/16 v2, 0x16
 
-    .prologue
-    .line 39
-    sget-object v0, Lcom/google/android/youtube/core/utils/a;->a:Landroid/content/Intent;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 45
+    sget-object v1, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_1080P:Lcom/google/android/youtube/core/model/Stream$Quality;
+
+    const/16 v2, 0x25
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 46
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v1
 
-    const/high16 v2, 0x1
+    sput-object v1, Lcom/google/android/youtube/core/utils/a;->a:Ljava/util/Map;
 
-    invoke-virtual {v1, v0, v2}, Landroid/content/pm/PackageManager;->queryIntentServices(Landroid/content/Intent;I)Ljava/util/List;
+    .line 47
+    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/youtube/core/utils/a;->b:Ljava/util/Set;
+
+    .line 48
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Lcom/google/android/youtube/core/player/an;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 8
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 62
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 63
+    const-string v0, "clientVersion cannot be null or empty"
+
+    invoke-static {p3, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    .line 64
+    const-string v0, "adSenseUrlDomain cannot be null or empty"
+
+    invoke-static {p4, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    .line 65
+    const-string v0, "adSenseUrlPath cannot be null or empty"
+
+    invoke-static {p5, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    .line 67
+    invoke-static {p2}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/core/player/an;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/utils/a;->e:Lcom/google/android/youtube/core/player/an;
+
+    .line 68
+    const-string v0, "context cannot be null"
+
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/Context;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/utils/a;->c:Landroid/content/Context;
+
+    .line 69
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "a."
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/utils/a;->f:Ljava/lang/String;
+
+    .line 70
+    new-instance v0, Lcom/google/android/a/a;
+
+    invoke-direct {v0, p4, p5}, Lcom/google/android/a/a;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/utils/a;->d:Lcom/google/android/a/a;
+
+    .line 71
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Landroid/net/Uri;)Landroid/net/Uri;
+    .registers 6
+    .parameter
+
+    .prologue
+    .line 82
+    iget-object v0, p0, Lcom/google/android/youtube/core/utils/a;->d:Lcom/google/android/a/a;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/a/a;->a(Landroid/net/Uri;)Z
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-eqz v0, :cond_4d
 
-    const/4 v0, 0x1
+    .line 83
+    iget-object v0, p0, Lcom/google/android/youtube/core/utils/a;->e:Lcom/google/android/youtube/core/player/an;
 
-    :goto_13
-    return v0
+    sget-object v1, Lcom/google/android/youtube/core/utils/a;->b:Ljava/util/Set;
 
-    :cond_14
-    const/4 v0, 0x0
+    iget-boolean v2, p0, Lcom/google/android/youtube/core/utils/a;->g:Z
 
-    goto :goto_13
+    invoke-interface {v0, v1, v2}, Lcom/google/android/youtube/core/player/an;->a(Ljava/util/Set;Z)Lcom/google/android/youtube/core/model/Stream$Quality;
+
+    move-result-object v0
+
+    .line 84
+    if-nez v0, :cond_1b
+
+    .line 85
+    const-string v0, "Could not select a stream, defaulting to 240p "
+
+    invoke-static {v0}, Lcom/google/android/youtube/core/L;->b(Ljava/lang/String;)V
+
+    .line 86
+    sget-object v0, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_240P:Lcom/google/android/youtube/core/model/Stream$Quality;
+
+    .line 89
+    :cond_1b
+    iget-object v1, p0, Lcom/google/android/youtube/core/utils/a;->d:Lcom/google/android/a/a;
+
+    iget-object v2, p0, Lcom/google/android/youtube/core/utils/a;->c:Landroid/content/Context;
+
+    invoke-virtual {v1, p1, v2}, Lcom/google/android/a/a;->a(Landroid/net/Uri;Landroid/content/Context;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    .line 90
+    invoke-virtual {v1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v1
+
+    const-string v2, "sdkv"
+
+    iget-object v3, p0, Lcom/google/android/youtube/core/utils/a;->f:Ljava/lang/String;
+
+    invoke-virtual {v1, v2, v3}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v1
+
+    const-string v2, "video_format"
+
+    sget-object v3, Lcom/google/android/youtube/core/utils/a;->a:Ljava/util/Map;
+
+    invoke-interface {v3, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v2, v0}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "output"
+
+    const-string v2, "xml_vast2"
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object p1
+
+    .line 96
+    :cond_4d
+    return-object p1
 .end method
 
-.method static synthetic b(Landroid/app/Activity;)Landroid/graphics/Bitmap;
+.method public final a(Z)V
     .registers 2
     .parameter
 
     .prologue
-    .line 29
-    invoke-static {p0}, Lcom/google/android/youtube/core/utils/a;->c(Landroid/app/Activity;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private static c(Landroid/app/Activity;)Landroid/graphics/Bitmap;
-    .registers 8
-    .parameter
-
-    .prologue
-    .line 66
-    :try_start_0
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/View;->getRootView()Landroid/view/View;
-
-    move-result-object v3
-
-    .line 67
-    invoke-virtual {v3}, Landroid/view/View;->isDrawingCacheEnabled()Z
-
-    move-result v4
-
-    .line 68
-    const/4 v0, 0x1
-
-    invoke-virtual {v3, v0}, Landroid/view/View;->setDrawingCacheEnabled(Z)V
-
-    .line 69
-    invoke-virtual {v3}, Landroid/view/View;->getDrawingCache()Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 70
-    if-eqz v0, :cond_41
-
-    .line 71
-    sget-object v1, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v2
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v1
-
-    :goto_29
-    mul-int v5, v2, v1
-
-    mul-int/lit8 v5, v5, 0x2
-
-    const/high16 v6, 0x10
-
-    if-le v5, v6, :cond_36
-
-    div-int/lit8 v2, v2, 0x2
-
-    div-int/lit8 v1, v1, 0x2
-
-    goto :goto_29
-
-    :cond_36
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v5
-
-    if-eq v2, v5, :cond_41
-
-    const/4 v5, 0x1
-
-    invoke-static {v0, v2, v1, v5}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 73
-    :cond_41
-    if-nez v4, :cond_4a
-
     .line 74
-    const/4 v1, 0x0
-
-    invoke-virtual {v3, v1}, Landroid/view/View;->setDrawingCacheEnabled(Z)V
+    iput-boolean p1, p0, Lcom/google/android/youtube/core/utils/a;->g:Z
 
     .line 75
-    invoke-virtual {v3}, Landroid/view/View;->destroyDrawingCache()V
-    :try_end_4a
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_4a} :catch_4b
-
-    .line 79
-    :cond_4a
-    :goto_4a
-    return-object v0
-
-    :catch_4b
-    move-exception v0
-
-    const/4 v0, 0x0
-
-    goto :goto_4a
+    return-void
 .end method

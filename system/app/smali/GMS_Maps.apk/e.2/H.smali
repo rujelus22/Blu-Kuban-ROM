@@ -1,272 +1,265 @@
-.class public Le/H;
-.super Le/x;
-
-
-# static fields
-.field public static final j:Le/H;
-
-.field public static final k:Le/w;
+.class public LE/h;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field public final h:I
+.field private a:LE/k;
 
-.field public final i:Le/J;
+.field private b:LE/n;
+
+.field private c:Ljava/lang/Thread;
+
+.field private d:LE/j;
+
+.field private e:LaP/d;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(LaP/d;LC/x;Lcom/google/android/maps/rideabout/app/j;)V
     .registers 6
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v1, 0x0
+    .prologue
+    .line 33
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Le/H;
-
-    const/4 v3, -0x2
-
-    move v2, v1
-
-    move v4, v1
-
-    move v5, v1
-
-    invoke-direct/range {v0 .. v5}, Le/H;-><init>(IIIII)V
-
-    sput-object v0, Le/H;->j:Le/H;
-
-    new-instance v0, Le/I;
-
-    invoke-direct {v0}, Le/I;-><init>()V
-
-    sput-object v0, Le/H;->k:Le/w;
-
-    return-void
-.end method
-
-.method public constructor <init>(III)V
-    .registers 10
-
-    const/16 v4, 0x55
-
-    const v5, 0x9c40
-
-    move-object v0, p0
-
-    move v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    invoke-direct/range {v0 .. v5}, Le/H;-><init>(IIIII)V
-
-    return-void
-.end method
-
-.method public constructor <init>(IIIII)V
-    .registers 7
-
-    invoke-direct {p0, p1, p2, p3, p4}, Le/x;-><init>(IIII)V
-
-    iput p5, p0, Le/H;->h:I
-
-    invoke-virtual {p0, p4}, Le/H;->a(I)Le/J;
+    .line 34
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
 
-    iput-object v0, p0, Le/H;->i:Le/J;
+    iput-object v0, p0, LE/h;->c:Ljava/lang/Thread;
 
+    .line 35
+    new-instance v0, LE/j;
+
+    sget-object v1, Lcom/google/android/maps/rideabout/app/c;->h:Lcom/google/android/maps/rideabout/app/c;
+
+    invoke-direct {v0, p1, v1, p0, p3}, LE/j;-><init>(LaP/d;Lcom/google/android/maps/rideabout/app/c;LE/h;Lcom/google/android/maps/rideabout/app/j;)V
+
+    iput-object v0, p0, LE/h;->d:LE/j;
+
+    .line 37
+    iput-object p1, p0, LE/h;->e:LaP/d;
+
+    .line 38
+    iget-object v0, p0, LE/h;->d:LE/j;
+
+    invoke-static {p0, p1, p2, v0}, LE/k;->a(LE/h;LaP/d;LC/x;LE/j;)V
+
+    .line 39
+    sget-object v0, LE/n;->b:LE/n;
+
+    invoke-virtual {p0, v0}, LE/h;->a(LE/n;)LE/k;
+
+    .line 40
     return-void
-.end method
-
-.method public static a(Ljava/io/PrintWriter;Le/H;)V
-    .registers 3
-
-    if-nez p1, :cond_8
-
-    const-string v0, "null"
-
-    invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    :goto_7
-    return-void
-
-    :cond_8
-    const-string v0, "["
-
-    invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    invoke-static {p0, p1}, Le/x;->a(Ljava/io/PrintWriter;Le/x;)V
-
-    const-string v0, ", Uncert="
-
-    invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    iget v0, p1, Le/H;->h:I
-
-    invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(I)V
-
-    const-string v0, "mm, "
-
-    invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    iget-object v0, p1, Le/H;->i:Le/J;
-
-    invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
-
-    const-string v0, "]"
-
-    invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    goto :goto_7
-.end method
-
-.method public static a(Ljava/lang/StringBuilder;Le/H;)V
-    .registers 3
-
-    if-nez p1, :cond_8
-
-    const-string v0, "null"
-
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :goto_7
-    return-void
-
-    :cond_8
-    const-string v0, "["
-
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {p0, p1}, Le/x;->a(Ljava/lang/StringBuilder;Le/x;)V
-
-    const-string v0, ", Uncert="
-
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v0, p1, Le/H;->h:I
-
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, "mm, "
-
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v0, p1, Le/H;->i:Le/J;
-
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, "]"
-
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_7
 .end method
 
 
 # virtual methods
-.method protected a(I)Le/J;
-    .registers 3
+.method public a(LE/n;)LE/k;
+    .registers 4
+    .parameter
 
-    const/16 v0, 0x50
+    .prologue
+    .line 49
+    invoke-virtual {p0}, LE/h;->a()V
 
-    if-lt p1, v0, :cond_b
+    .line 50
+    iget-object v0, p0, LE/h;->b:LE/n;
 
-    const/16 v0, 0x54
+    if-eq p1, v0, :cond_2e
 
-    if-gt p1, v0, :cond_b
+    .line 51
+    iget-object v0, p0, LE/h;->a:LE/k;
 
-    sget-object v0, Le/J;->b:Le/J;
+    if-eqz v0, :cond_10
 
-    :goto_a
+    .line 52
+    iget-object v0, p0, LE/h;->a:LE/k;
+
+    invoke-virtual {v0}, LE/k;->g()V
+
+    .line 54
+    :cond_10
+    iput-object p1, p0, LE/h;->b:LE/n;
+
+    .line 55
+    sget-object v0, LE/i;->a:[I
+
+    invoke-virtual {p1}, LE/n;->ordinal()I
+
+    move-result v1
+
+    aget v0, v0, v1
+
+    packed-switch v0, :pswitch_data_3c
+
+    .line 66
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Invalid state"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 57
+    :pswitch_25
+    sget-object v0, LE/e;->a:LE/e;
+
+    iput-object v0, p0, LE/h;->a:LE/k;
+
+    .line 68
+    :goto_29
+    iget-object v0, p0, LE/h;->a:LE/k;
+
+    invoke-virtual {v0}, LE/k;->b()V
+
+    .line 70
+    :cond_2e
+    iget-object v0, p0, LE/h;->a:LE/k;
+
     return-object v0
 
-    :cond_b
-    const/16 v0, 0x55
+    .line 60
+    :pswitch_31
+    sget-object v0, LE/f;->a:LE/f;
 
-    if-lt p1, v0, :cond_16
+    iput-object v0, p0, LE/h;->a:LE/k;
 
-    const/16 v0, 0x59
+    goto :goto_29
 
-    if-gt p1, v0, :cond_16
+    .line 63
+    :pswitch_36
+    sget-object v0, LE/a;->a:LE/a;
 
-    sget-object v0, Le/J;->c:Le/J;
+    iput-object v0, p0, LE/h;->a:LE/k;
 
-    goto :goto_a
+    goto :goto_29
 
-    :cond_16
-    const/16 v0, 0x5a
+    .line 55
+    nop
 
-    if-lt p1, v0, :cond_21
-
-    const/16 v0, 0x5e
-
-    if-gt p1, v0, :cond_21
-
-    sget-object v0, Le/J;->d:Le/J;
-
-    goto :goto_a
-
-    :cond_21
-    sget-object v0, Le/J;->a:Le/J;
-
-    goto :goto_a
+    :pswitch_data_3c
+    .packed-switch 0x1
+        :pswitch_25
+        :pswitch_31
+        :pswitch_36
+    .end packed-switch
 .end method
 
-.method public toString()Ljava/lang/String;
+.method public final a()V
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "WifiApPosition ["
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .prologue
+    .line 96
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
 
-    invoke-super {p0}, Le/x;->toString()Ljava/lang/String;
+    iget-object v1, p0, LE/h;->c:Ljava/lang/Thread;
 
-    move-result-object v1
+    if-eq v0, v1, :cond_10
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 97
+    new-instance v0, Ljava/lang/RuntimeException;
 
-    move-result-object v0
+    const-string v1, "Operation must be called on main (UI) thread"
 
-    const-string v1, ", horizontalUncertaintyMm="
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    throw v0
 
-    move-result-object v0
+    .line 99
+    :cond_10
+    return-void
+.end method
 
-    iget v1, p0, Le/H;->h:I
+.method public a(LC/z;)Z
+    .registers 4
+    .parameter
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    .prologue
+    .line 81
+    invoke-virtual {p0}, LE/h;->a()V
 
-    move-result-object v0
+    .line 82
+    iget-object v0, p0, LE/h;->d:LE/j;
 
-    const-string v1, ", positionType="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Le/H;->i:Le/J;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, LE/j;->a()LC/z;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 83
+    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result v0
+
+    if-nez v0, :cond_1d
+
+    iget-object v0, p1, LC/z;->c:LaP/a;
+
+    if-eqz v0, :cond_1f
+
+    iget-object v0, p0, LE/h;->e:LaP/d;
+
+    iget-object v1, p1, LC/z;->c:LaP/a;
+
+    invoke-virtual {v0, v1}, LaP/d;->a(LaP/a;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1f
+
+    .line 85
+    :cond_1d
+    const/4 v0, 0x0
+
+    .line 89
+    :goto_1e
+    return v0
+
+    .line 87
+    :cond_1f
+    iget-object v0, p0, LE/h;->d:LE/j;
+
+    invoke-virtual {v0, p1}, LE/j;->a(LC/z;)V
+
+    .line 88
+    iget-object v0, p0, LE/h;->d:LE/j;
+
+    invoke-virtual {v0, p1}, LE/j;->b(LC/z;)V
+
+    .line 89
+    const/4 v0, 0x1
+
+    goto :goto_1e
+.end method
+
+.method public b()LE/k;
+    .registers 2
+
+    .prologue
+    .line 102
+    invoke-virtual {p0}, LE/h;->a()V
+
+    .line 103
+    iget-object v0, p0, LE/h;->a:LE/k;
+
+    return-object v0
+.end method
+
+.method public c()LE/j;
+    .registers 2
+
+    .prologue
+    .line 108
+    iget-object v0, p0, LE/h;->d:LE/j;
 
     return-object v0
 .end method

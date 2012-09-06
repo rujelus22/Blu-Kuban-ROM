@@ -12,7 +12,7 @@
     .registers 1
 
     .prologue
-    .line 38
+    .line 37
     new-instance v0, Lorg/apache/commons/io/input/ClosedInputStream;
 
     invoke-direct {v0}, Lorg/apache/commons/io/input/ClosedInputStream;-><init>()V
@@ -26,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 33
+    .line 32
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
     .registers 2
 
     .prologue
-    .line 46
+    .line 45
     const/4 v0, -0x1
 
     return v0

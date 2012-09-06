@@ -34,13 +34,15 @@
 # instance fields
 .field private mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
+.field private mFilteredDocId:Ljava/lang/String;
+
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 1
 
     .prologue
-    .line 99
+    .line 115
     new-instance v0, Lcom/google/android/finsky/api/model/DfeList$1;
 
     invoke-direct {v0}, Lcom/google/android/finsky/api/model/DfeList$1;-><init>()V
@@ -51,24 +53,29 @@
 .end method
 
 .method public constructor <init>(Lcom/google/android/finsky/api/DfeApi;Ljava/lang/String;Z)V
-    .registers 4
+    .registers 5
     .parameter "api"
     .parameter "url"
     .parameter "autoLoadNextPage"
 
     .prologue
-    .line 45
+    .line 47
     invoke-direct {p0, p2, p3}, Lcom/google/android/finsky/api/model/BucketedList;-><init>(Ljava/lang/String;Z)V
 
-    .line 46
+    .line 24
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/finsky/api/model/DfeList;->mFilteredDocId:Ljava/lang/String;
+
+    .line 48
     iput-object p1, p0, Lcom/google/android/finsky/api/model/DfeList;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
-    .line 47
+    .line 49
     return-void
 .end method
 
 .method private constructor <init>(Ljava/util/List;IZ)V
-    .registers 4
+    .registers 5
     .parameter
     .parameter "currentCount"
     .parameter "autoLoadNextPage"
@@ -83,11 +90,16 @@
     .end annotation
 
     .prologue
-    .line 32
+    .line 34
     .local p1, urlList:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;>;"
     invoke-direct {p0, p1, p2, p3}, Lcom/google/android/finsky/api/model/BucketedList;-><init>(Ljava/util/List;IZ)V
 
-    .line 33
+    .line 24
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/finsky/api/model/DfeList;->mFilteredDocId:Ljava/lang/String;
+
+    .line 35
     return-void
 .end method
 
@@ -111,14 +123,26 @@
     .registers 2
 
     .prologue
-    .line 85
+    .line 101
     const/4 v0, 0x0
 
     return v0
 .end method
 
+.method public filterDocId(Ljava/lang/String;)V
+    .registers 2
+    .parameter "docId"
+
+    .prologue
+    .line 96
+    iput-object p1, p0, Lcom/google/android/finsky/api/model/DfeList;->mFilteredDocId:Ljava/lang/String;
+
+    .line 97
+    return-void
+.end method
+
 .method protected getItemsFromResponse(Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;)Ljava/util/List;
-    .registers 11
+    .registers 12
     .parameter "response"
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -133,156 +157,182 @@
     .end annotation
 
     .prologue
-    const/4 v8, 0x0
-
-    .line 56
-    invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
-
-    move-result-object v4
+    const/4 v9, 0x0
 
     .line 58
-    .local v4, items:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/api/model/Document;>;"
-    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->getDocCount()I
+    new-instance v5, Ljava/util/ArrayList;
 
-    move-result v6
-
-    const/4 v7, 0x1
-
-    if-ne v6, v7, :cond_51
-
-    .line 59
-    invoke-virtual {p1, v8}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->getDoc(I)Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
-
-    move-result-object v5
+    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
     .line 60
-    .local v5, rootDoc:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
-    invoke-virtual {v5}, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;->hasContainerMetadata()Z
+    .local v5, items:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/api/model/Document;>;"
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->getDocCount()I
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_3b
+    const/4 v8, 0x1
 
-    invoke-virtual {v5}, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;->getContainerMetadata()Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;
+    if-ne v7, v8, :cond_66
+
+    .line 61
+    invoke-virtual {p1, v9}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->getDoc(I)Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
     move-result-object v6
 
-    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->getAnalyticsCookie()Ljava/lang/String;
+    .line 62
+    .local v6, rootDoc:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
+    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;->hasContainerMetadata()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_50
+
+    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;->getContainerMetadata()Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->getAnalyticsCookie()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 62
+    .line 64
     .local v0, cookie:Ljava/lang/String;
-    :goto_1e
-    invoke-virtual {v5}, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;->getChildList()Ljava/util/List;
+    :goto_1f
+    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;->getChildList()Ljava/util/List;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    .local v2, i$:Ljava/util/Iterator;
-    :goto_26
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_3d
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    check-cast v3, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
+    .local v3, i$:Ljava/util/Iterator;
+    :cond_27
+    :goto_27
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 63
-    .local v3, item:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
-    new-instance v6, Lcom/google/android/finsky/api/model/Document;
+    move-result v7
 
-    invoke-direct {v6, v3, v0}, Lcom/google/android/finsky/api/model/Document;-><init>(Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;Ljava/lang/String;)V
+    if-eqz v7, :cond_52
 
-    invoke-interface {v4, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    goto :goto_26
+    move-result-object v4
 
-    .line 60
-    .end local v0           #cookie:Ljava/lang/String;
-    .end local v2           #i$:Ljava/util/Iterator;
-    .end local v3           #item:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
-    :cond_3b
-    const/4 v0, 0x0
-
-    goto :goto_1e
+    check-cast v4, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
     .line 65
-    .restart local v0       #cookie:Ljava/lang/String;
-    .restart local v2       #i$:Ljava/util/Iterator;
-    :cond_3d
-    iget-object v6, p0, Lcom/google/android/finsky/api/model/DfeList;->mBuckets:Ljava/util/List;
+    .local v4, item:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
+    new-instance v2, Lcom/google/android/finsky/api/model/Document;
 
-    invoke-interface {v6}, Ljava/util/List;->clear()V
+    invoke-direct {v2, v4, v0}, Lcom/google/android/finsky/api/model/Document;-><init>(Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;Ljava/lang/String;)V
 
     .line 66
-    iget-object v6, p0, Lcom/google/android/finsky/api/model/DfeList;->mBuckets:Ljava/util/List;
+    .local v2, document:Lcom/google/android/finsky/api/model/Document;
+    iget-object v7, p0, Lcom/google/android/finsky/api/model/DfeList;->mFilteredDocId:Ljava/lang/String;
 
-    new-instance v7, Lcom/google/android/finsky/model/Bucket;
+    invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    invoke-virtual {p1, v8}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->getDoc(I)Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
+    move-result v7
 
-    move-result-object v8
+    if-nez v7, :cond_4c
 
-    invoke-direct {v7, v8}, Lcom/google/android/finsky/model/Bucket;-><init>(Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;)V
+    invoke-virtual {v2}, Lcom/google/android/finsky/api/model/Document;->getDocId()Ljava/lang/String;
 
-    invoke-interface {v6, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    move-result-object v7
+
+    iget-object v8, p0, Lcom/google/android/finsky/api/model/DfeList;->mFilteredDocId:Ljava/lang/String;
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_27
+
+    .line 71
+    :cond_4c
+    invoke-interface {v5, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_27
+
+    .line 62
+    .end local v0           #cookie:Ljava/lang/String;
+    .end local v2           #document:Lcom/google/android/finsky/api/model/Document;
+    .end local v3           #i$:Ljava/util/Iterator;
+    .end local v4           #item:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
+    :cond_50
+    const/4 v0, 0x0
+
+    goto :goto_1f
 
     .line 73
+    .restart local v0       #cookie:Ljava/lang/String;
+    .restart local v3       #i$:Ljava/util/Iterator;
+    :cond_52
+    iget-object v7, p0, Lcom/google/android/finsky/api/model/DfeList;->mBuckets:Ljava/util/List;
+
+    invoke-interface {v7}, Ljava/util/List;->clear()V
+
+    .line 74
+    iget-object v7, p0, Lcom/google/android/finsky/api/model/DfeList;->mBuckets:Ljava/util/List;
+
+    new-instance v8, Lcom/google/android/finsky/api/model/Bucket;
+
+    invoke-virtual {p1, v9}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->getDoc(I)Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
+
+    move-result-object v9
+
+    invoke-direct {v8, v9}, Lcom/google/android/finsky/api/model/Bucket;-><init>(Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;)V
+
+    invoke-interface {v7, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 81
     .end local v0           #cookie:Ljava/lang/String;
-    .end local v5           #rootDoc:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
-    :cond_50
-    return-object v4
+    .end local v6           #rootDoc:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
+    :cond_65
+    return-object v5
 
-    .line 68
-    .end local v2           #i$:Ljava/util/Iterator;
-    :cond_51
-    iget-object v6, p0, Lcom/google/android/finsky/api/model/DfeList;->mBuckets:Ljava/util/List;
+    .line 76
+    .end local v3           #i$:Ljava/util/Iterator;
+    :cond_66
+    iget-object v7, p0, Lcom/google/android/finsky/api/model/DfeList;->mBuckets:Ljava/util/List;
 
-    invoke-interface {v6}, Ljava/util/List;->clear()V
+    invoke-interface {v7}, Ljava/util/List;->clear()V
 
-    .line 69
+    .line 77
     invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->getDocList()Ljava/util/List;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v3
 
-    .restart local v2       #i$:Ljava/util/Iterator;
-    :goto_5e
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    .restart local v3       #i$:Ljava/util/Iterator;
+    :goto_73
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_50
+    if-eqz v7, :cond_65
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
-    .line 70
+    .line 78
     .local v1, doc:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
-    iget-object v6, p0, Lcom/google/android/finsky/api/model/DfeList;->mBuckets:Ljava/util/List;
+    iget-object v7, p0, Lcom/google/android/finsky/api/model/DfeList;->mBuckets:Ljava/util/List;
 
-    new-instance v7, Lcom/google/android/finsky/model/Bucket;
+    new-instance v8, Lcom/google/android/finsky/api/model/Bucket;
 
-    invoke-direct {v7, v1}, Lcom/google/android/finsky/model/Bucket;-><init>(Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;)V
+    invoke-direct {v8, v1}, Lcom/google/android/finsky/api/model/Bucket;-><init>(Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;)V
 
-    invoke-interface {v6, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v7, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_5e
+    goto :goto_73
 .end method
 
 .method protected bridge synthetic getItemsFromResponse(Ljava/lang/Object;)Ljava/util/List;
@@ -306,10 +356,10 @@
     .parameter "response"
 
     .prologue
-    .line 120
+    .line 136
     const/4 v1, 0x0
 
-    .line 122
+    .line 138
     .local v1, nextPageUrl:Ljava/lang/String;
     invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->getDocCount()I
 
@@ -317,30 +367,24 @@
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_21
+    if-ne v2, v3, :cond_1b
 
-    .line 124
+    .line 140
     const/4 v2, 0x0
 
     invoke-virtual {p1, v2}, Lcom/google/android/finsky/remoting/protos/DocList$ListResponse;->getDoc(I)Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
     move-result-object v0
 
-    .line 125
+    .line 141
     .local v0, dfeDoc:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
-    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;->hasAnnotations()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_21
-
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;->hasContainerMetadata()Z
 
     move-result v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1b
 
-    .line 126
+    .line 142
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;->getContainerMetadata()Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;
 
     move-result-object v2
@@ -349,9 +393,9 @@
 
     move-result-object v1
 
-    .line 129
+    .line 145
     .end local v0           #dfeDoc:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
-    :cond_21
+    :cond_1b
     return-object v1
 .end method
 
@@ -385,10 +429,10 @@
     .end annotation
 
     .prologue
-    .line 51
+    .line 53
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeList;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
-    invoke-virtual {v0, p1, p0, p0}, Lcom/google/android/finsky/api/DfeApi;->getList(Ljava/lang/String;Lcom/google/android/finsky/api/PaginatedDfeRequest$PaginatedListener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
+    invoke-interface {v0, p1, p0, p0}, Lcom/google/android/finsky/api/DfeApi;->getList(Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
 
     move-result-object v0
 
@@ -400,10 +444,10 @@
     .parameter "api"
 
     .prologue
-    .line 80
+    .line 88
     iput-object p1, p0, Lcom/google/android/finsky/api/model/DfeList;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
-    .line 81
+    .line 89
     return-void
 .end method
 
@@ -413,7 +457,7 @@
     .parameter "flags"
 
     .prologue
-    .line 90
+    .line 106
     iget-object v2, p0, Lcom/google/android/finsky/api/model/DfeList;->mUrlOffsetList:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
@@ -422,7 +466,7 @@
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 91
+    .line 107
     iget-object v2, p0, Lcom/google/android/finsky/api/model/DfeList;->mUrlOffsetList:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -443,20 +487,20 @@
 
     check-cast v1, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
 
-    .line 92
+    .line 108
     .local v1, wrapper:Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
     iget v2, v1, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;->offset:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 93
+    .line 109
     iget-object v2, v1, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;->url:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     goto :goto_f
 
-    .line 95
+    .line 111
     .end local v1           #wrapper:Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
     :cond_26
     invoke-virtual {p0}, Lcom/google/android/finsky/api/model/DfeList;->getCount()I
@@ -465,7 +509,7 @@
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 96
+    .line 112
     iget-boolean v2, p0, Lcom/google/android/finsky/api/model/DfeList;->mAutoLoadNextPage:Z
 
     if-eqz v2, :cond_36
@@ -475,10 +519,10 @@
     :goto_32
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 97
+    .line 113
     return-void
 
-    .line 96
+    .line 112
     :cond_36
     const/4 v2, 0x0
 

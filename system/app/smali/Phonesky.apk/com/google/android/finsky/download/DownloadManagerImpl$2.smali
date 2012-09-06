@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 54
+    .line 52
     iput-object p1, p0, Lcom/google/android/finsky/download/DownloadManagerImpl$2;->this$0:Lcom/google/android/finsky/download/DownloadManagerImpl;
 
     iput-object p2, p0, Lcom/google/android/finsky/download/DownloadManagerImpl$2;->val$uri:Landroid/net/Uri;
@@ -46,7 +46,7 @@
     .registers 3
 
     .prologue
-    .line 57
+    .line 55
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadManagerImpl$2;->this$0:Lcom/google/android/finsky/download/DownloadManagerImpl;
 
     iget-object v1, p0, Lcom/google/android/finsky/download/DownloadManagerImpl$2;->val$uri:Landroid/net/Uri;
@@ -54,6 +54,6 @@
     #calls: Lcom/google/android/finsky/download/DownloadManagerImpl;->synchronousRemove(Landroid/net/Uri;)V
     invoke-static {v0, v1}, Lcom/google/android/finsky/download/DownloadManagerImpl;->access$100(Lcom/google/android/finsky/download/DownloadManagerImpl;Landroid/net/Uri;)V
 
-    .line 58
+    .line 56
     return-void
 .end method

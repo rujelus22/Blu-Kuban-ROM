@@ -1,212 +1,177 @@
-.class Lcom/google/googlenav/ui/android/m;
-.super Lcom/google/android/maps/driveabout/vector/VectorMapView;
+.class public Lcom/google/googlenav/ui/android/M;
+.super Lcom/google/googlenav/ui/view/d;
+.source "SourceFile"
+
+
+# static fields
+.field private static a:Lcom/google/googlenav/ui/android/aC;
 
 
 # instance fields
-.field final synthetic b:Lcom/google/googlenav/ui/android/AndroidVectorView;
-
-.field private c:LaK/a;
-
-.field private d:Lcom/google/android/maps/driveabout/vector/bx;
+.field private final b:Lcom/google/googlenav/ui/android/ElevationChartView;
 
 
 # direct methods
-.method private constructor <init>(Lcom/google/googlenav/ui/android/AndroidVectorView;Landroid/content/Context;LaK/a;)V
-    .registers 7
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/android/m;->b:Lcom/google/googlenav/ui/android/AndroidVectorView;
+    .prologue
+    .line 24
+    const/4 v0, 0x0
 
-    invoke-direct {p0, p2}, Lcom/google/android/maps/driveabout/vector/VectorMapView;-><init>(Landroid/content/Context;)V
+    sput-object v0, Lcom/google/googlenav/ui/android/M;->a:Lcom/google/googlenav/ui/android/aC;
 
-    iput-object p3, p0, Lcom/google/googlenav/ui/android/m;->c:LaK/a;
-
-    invoke-direct {p0}, Lcom/google/googlenav/ui/android/m;->a()Lcom/google/android/maps/driveabout/vector/bG;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/google/googlenav/ui/android/m;->b(Lcom/google/android/maps/driveabout/vector/bG;)V
-
-    invoke-direct {p0}, Lcom/google/googlenav/ui/android/m;->C()V
-
-    const/4 v0, -0x4
-
-    invoke-virtual {p0, v0}, Lcom/google/googlenav/ui/android/m;->e(I)V
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/android/m;->y()Lcom/google/android/maps/driveabout/vector/bs;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/maps/driveabout/vector/ce;
-
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/ce;->n()Lcom/google/android/maps/driveabout/vector/cI;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/cI;->o()Lcom/google/android/maps/driveabout/vector/cB;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/google/android/maps/driveabout/vector/cU;->a:Lcom/google/android/maps/driveabout/vector/cU;
-
-    invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    invoke-static {v0, v1, v2}, Lcom/google/android/maps/driveabout/vector/cI;->a(Lcom/google/android/maps/driveabout/vector/cB;Lcom/google/android/maps/driveabout/vector/cU;Landroid/content/res/Resources;)Lcom/google/android/maps/driveabout/vector/cI;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/google/googlenav/ui/android/m;->a(Lcom/google/android/maps/driveabout/vector/aE;)V
-
-    invoke-static {}, Lcom/google/android/maps/driveabout/vector/cS;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_46
-
-    invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-static {}, Lr/l;->a()Lr/l;
-
-    move-result-object v1
-
-    invoke-static {p2, v0, v1}, Lcom/google/android/maps/driveabout/vector/cI;->a(Landroid/content/Context;Landroid/content/res/Resources;Lr/l;)Lcom/google/android/maps/driveabout/vector/cI;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/maps/driveabout/vector/bx;
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/m;->d:Lcom/google/android/maps/driveabout/vector/bx;
-
-    :cond_46
+    .line 29
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/google/googlenav/ui/android/AndroidVectorView;Landroid/content/Context;LaK/a;Lcom/google/googlenav/ui/android/g;)V
+.method public constructor <init>(Lcom/google/googlenav/ui/android/ButtonContainer;I)V
     .registers 5
+    .parameter
+    .parameter
 
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/googlenav/ui/android/m;-><init>(Lcom/google/googlenav/ui/android/AndroidVectorView;Landroid/content/Context;LaK/a;)V
+    .prologue
+    .line 34
+    invoke-static {p1, p2}, Lcom/google/googlenav/ui/android/M;->a(Lcom/google/googlenav/ui/android/ButtonContainer;I)Landroid/view/View;
 
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, p1, v1}, Lcom/google/googlenav/ui/view/d;-><init>(Landroid/view/View;Landroid/view/ViewGroup;Z)V
+
+    .line 36
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/M;->d:Landroid/view/View;
+
+    const v1, 0x7f10018a
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlenav/ui/android/ElevationChartView;
+
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/M;->b:Lcom/google/googlenav/ui/android/ElevationChartView;
+
+    .line 37
     return-void
 .end method
 
-.method private C()V
-    .registers 6
+.method private static a(Lcom/google/googlenav/ui/android/ButtonContainer;I)Landroid/view/View;
+    .registers 4
+    .parameter
+    .parameter
 
-    sget-object v0, LaB/a;->a:LaB/a;
-
-    invoke-virtual {v0}, LaB/a;->e()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1b
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/android/m;->A()Lcom/google/android/maps/driveabout/vector/bG;
+    .prologue
+    .line 40
+    invoke-virtual {p0, p1}, Lcom/google/googlenav/ui/android/ButtonContainer;->a(I)Landroid/view/View;
 
     move-result-object v0
 
-    const/4 v1, 0x2
+    .line 42
+    const/4 v1, 0x1
 
-    const v2, 0x3e4ccccd
+    invoke-virtual {v0, v1}, Landroid/view/View;->setClickable(Z)V
 
-    const/4 v3, 0x0
-
-    sget-object v4, LaB/a;->b:Lcom/google/android/maps/driveabout/vector/cu;
-
-    invoke-static {v0, v1, v2, v3, v4}, Lcom/google/android/maps/driveabout/vector/bG;->a(Lcom/google/android/maps/driveabout/vector/bG;IFFLcom/google/android/maps/driveabout/vector/cu;)Lcom/google/android/maps/driveabout/vector/bG;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/google/googlenav/ui/android/m;->a(Lcom/google/android/maps/driveabout/vector/bG;)V
-
-    :goto_1a
-    return-void
-
-    :cond_1b
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/android/m;->A()Lcom/google/android/maps/driveabout/vector/bG;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/google/googlenav/ui/android/m;->a(Lcom/google/android/maps/driveabout/vector/bG;)V
-
-    goto :goto_1a
-.end method
-
-.method private a()Lcom/google/android/maps/driveabout/vector/bG;
-    .registers 5
-
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->ak()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_d
-
-    sget-object v0, Lcom/google/android/maps/driveabout/vector/bG;->s:Lcom/google/android/maps/driveabout/vector/bG;
-
-    :goto_c
+    .line 43
     return-object v0
-
-    :cond_d
-    invoke-static {}, Laf/b;->a()Laf/b;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Laf/b;->x()D
-
-    move-result-wide v0
-
-    const-wide/high16 v2, 0x3ff0
-
-    cmpg-double v0, v0, v2
-
-    if-gez v0, :cond_1e
-
-    sget-object v0, Lcom/google/android/maps/driveabout/vector/bG;->t:Lcom/google/android/maps/driveabout/vector/bG;
-
-    goto :goto_c
-
-    :cond_1e
-    sget-object v0, Lcom/google/android/maps/driveabout/vector/bG;->r:Lcom/google/android/maps/driveabout/vector/bG;
-
-    goto :goto_c
 .end method
 
 
 # virtual methods
-.method public B()Lcom/google/android/maps/driveabout/vector/bx;
-    .registers 2
+.method public a()V
+    .registers 4
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/m;->d:Lcom/google/android/maps/driveabout/vector/bx;
+    .prologue
+    .line 68
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/M;->b:Lcom/google/googlenav/ui/android/ElevationChartView;
 
-    return-object v0
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/android/ElevationChartView;->setVisibility(I)V
+
+    .line 69
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/M;->b:Lcom/google/googlenav/ui/android/ElevationChartView;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/googlenav/ui/android/ElevationChartView;->a(Ljava/util/List;Z)V
+
+    .line 70
+    return-void
 .end method
 
-.method public d()V
-    .registers 3
+.method public a(Ljava/lang/CharSequence;)V
+    .registers 4
+    .parameter
 
-    invoke-super {p0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->d()V
+    .prologue
+    .line 50
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/M;->d:Landroid/view/View;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/m;->c:LaK/a;
+    const v1, 0x7f100189
 
-    invoke-virtual {v0}, LaK/a;->v()V
-
-    invoke-static {}, Lcom/google/googlenav/login/g;->j()Lcom/google/googlenav/login/g;
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/m;->b:Lcom/google/googlenav/ui/android/AndroidVectorView;
+    check-cast v0, Landroid/widget/TextView;
 
-    invoke-static {v1}, Lcom/google/googlenav/ui/android/AndroidVectorView;->a(Lcom/google/googlenav/ui/android/AndroidVectorView;)Lcom/google/googlenav/login/i;
+    .line 51
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    move-result-object v1
+    .line 52
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/android/M;->b()V
 
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/login/g;->b(Lcom/google/googlenav/login/i;)V
+    .line 53
+    return-void
+.end method
 
+.method public a(Ljava/util/List;Z)V
+    .registers 5
+    .parameter
+    .parameter
+
+    .prologue
+    .line 59
+    invoke-static {p1}, Lcom/google/common/base/P;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 60
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/M;->b:Lcom/google/googlenav/ui/android/ElevationChartView;
+
+    invoke-virtual {v0, p1, p2}, Lcom/google/googlenav/ui/android/ElevationChartView;->a(Ljava/util/List;Z)V
+
+    .line 61
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/M;->b:Lcom/google/googlenav/ui/android/ElevationChartView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/android/ElevationChartView;->setVisibility(I)V
+
+    .line 62
+    return-void
+.end method
+
+.method public b()V
+    .registers 1
+
+    .prologue
+    .line 74
+    invoke-super {p0}, Lcom/google/googlenav/ui/view/d;->b()V
+
+    .line 79
+    return-void
+.end method
+
+.method public c()V
+    .registers 1
+
+    .prologue
+    .line 83
+    invoke-super {p0}, Lcom/google/googlenav/ui/view/d;->c()V
+
+    .line 88
     return-void
 .end method

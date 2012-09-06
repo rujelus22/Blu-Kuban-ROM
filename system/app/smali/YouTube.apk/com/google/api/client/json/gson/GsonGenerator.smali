@@ -1,11 +1,6 @@
-.class public final Lcom/google/api/client/json/gson/GsonGenerator;
+.class final Lcom/google/api/client/json/gson/GsonGenerator;
 .super Lcom/google/api/client/json/d;
 .source "SourceFile"
-
-
-# annotations
-.annotation runtime Ljava/lang/Deprecated;
-.end annotation
 
 
 # instance fields
@@ -17,12 +12,12 @@
     .registers 2
 
     .prologue
-    .line 50
+    .line 48
     iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator;->a:Lcom/google/gson/stream/JsonWriter;
 
     invoke-virtual {v0}, Lcom/google/gson/stream/JsonWriter;->flush()V
 
-    .line 51
+    .line 49
     return-void
 .end method
 
@@ -31,12 +26,12 @@
     .parameter
 
     .prologue
-    .line 105
+    .line 103
     iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator;->a:Lcom/google/gson/stream/JsonWriter;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/gson/stream/JsonWriter;->value(D)Lcom/google/gson/stream/JsonWriter;
 
-    .line 106
+    .line 104
     return-void
 .end method
 
@@ -45,14 +40,14 @@
     .parameter
 
     .prologue
-    .line 110
+    .line 108
     iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator;->a:Lcom/google/gson/stream/JsonWriter;
 
     float-to-double v1, p1
 
     invoke-virtual {v0, v1, v2}, Lcom/google/gson/stream/JsonWriter;->value(D)Lcom/google/gson/stream/JsonWriter;
 
-    .line 111
+    .line 109
     return-void
 .end method
 
@@ -61,14 +56,14 @@
     .parameter
 
     .prologue
-    .line 90
+    .line 88
     iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator;->a:Lcom/google/gson/stream/JsonWriter;
 
     int-to-long v1, p1
 
     invoke-virtual {v0, v1, v2}, Lcom/google/gson/stream/JsonWriter;->value(J)Lcom/google/gson/stream/JsonWriter;
 
-    .line 91
+    .line 89
     return-void
 .end method
 
@@ -77,12 +72,12 @@
     .parameter
 
     .prologue
-    .line 95
+    .line 93
     iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator;->a:Lcom/google/gson/stream/JsonWriter;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/gson/stream/JsonWriter;->value(J)Lcom/google/gson/stream/JsonWriter;
 
-    .line 96
+    .line 94
     return-void
 .end method
 
@@ -91,12 +86,12 @@
     .parameter
 
     .prologue
-    .line 80
+    .line 78
     iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator;->a:Lcom/google/gson/stream/JsonWriter;
 
     invoke-virtual {v0, p1}, Lcom/google/gson/stream/JsonWriter;->name(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
 
-    .line 81
+    .line 79
     return-void
 .end method
 
@@ -105,12 +100,12 @@
     .parameter
 
     .prologue
-    .line 115
+    .line 113
     iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator;->a:Lcom/google/gson/stream/JsonWriter;
 
     invoke-virtual {v0, p1}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/Number;)Lcom/google/gson/stream/JsonWriter;
 
-    .line 116
+    .line 114
     return-void
 .end method
 
@@ -119,12 +114,12 @@
     .parameter
 
     .prologue
-    .line 100
+    .line 98
     iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator;->a:Lcom/google/gson/stream/JsonWriter;
 
     invoke-virtual {v0, p1}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/Number;)Lcom/google/gson/stream/JsonWriter;
 
-    .line 101
+    .line 99
     return-void
 .end method
 
@@ -133,12 +128,12 @@
     .parameter
 
     .prologue
-    .line 65
+    .line 63
     iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator;->a:Lcom/google/gson/stream/JsonWriter;
 
     invoke-virtual {v0, p1}, Lcom/google/gson/stream/JsonWriter;->value(Z)Lcom/google/gson/stream/JsonWriter;
 
-    .line 66
+    .line 64
     return-void
 .end method
 
@@ -146,12 +141,12 @@
     .registers 2
 
     .prologue
-    .line 165
+    .line 163
     iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator;->a:Lcom/google/gson/stream/JsonWriter;
 
     invoke-virtual {v0}, Lcom/google/gson/stream/JsonWriter;->beginArray()Lcom/google/gson/stream/JsonWriter;
 
-    .line 166
+    .line 164
     return-void
 .end method
 
@@ -160,12 +155,12 @@
     .parameter
 
     .prologue
-    .line 175
+    .line 173
     iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator;->a:Lcom/google/gson/stream/JsonWriter;
 
     invoke-virtual {v0, p1}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
 
-    .line 176
+    .line 174
     return-void
 .end method
 
@@ -173,12 +168,12 @@
     .registers 2
 
     .prologue
-    .line 70
+    .line 68
     iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator;->a:Lcom/google/gson/stream/JsonWriter;
 
     invoke-virtual {v0}, Lcom/google/gson/stream/JsonWriter;->endArray()Lcom/google/gson/stream/JsonWriter;
 
-    .line 71
+    .line 69
     return-void
 .end method
 
@@ -186,12 +181,12 @@
     .registers 2
 
     .prologue
-    .line 170
+    .line 168
     iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator;->a:Lcom/google/gson/stream/JsonWriter;
 
     invoke-virtual {v0}, Lcom/google/gson/stream/JsonWriter;->beginObject()Lcom/google/gson/stream/JsonWriter;
 
-    .line 171
+    .line 169
     return-void
 .end method
 
@@ -199,12 +194,12 @@
     .registers 2
 
     .prologue
-    .line 75
+    .line 73
     iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator;->a:Lcom/google/gson/stream/JsonWriter;
 
     invoke-virtual {v0}, Lcom/google/gson/stream/JsonWriter;->endObject()Lcom/google/gson/stream/JsonWriter;
 
-    .line 76
+    .line 74
     return-void
 .end method
 
@@ -212,11 +207,26 @@
     .registers 2
 
     .prologue
-    .line 85
+    .line 83
     iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator;->a:Lcom/google/gson/stream/JsonWriter;
 
     invoke-virtual {v0}, Lcom/google/gson/stream/JsonWriter;->nullValue()Lcom/google/gson/stream/JsonWriter;
 
-    .line 86
+    .line 84
+    return-void
+.end method
+
+.method public final g()V
+    .registers 3
+
+    .prologue
+    .line 178
+    iget-object v0, p0, Lcom/google/api/client/json/gson/GsonGenerator;->a:Lcom/google/gson/stream/JsonWriter;
+
+    const-string v1, "  "
+
+    invoke-virtual {v0, v1}, Lcom/google/gson/stream/JsonWriter;->setIndent(Ljava/lang/String;)V
+
+    .line 179
     return-void
 .end method

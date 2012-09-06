@@ -1,174 +1,165 @@
-.class public Lcom/google/googlenav/ui/aN;
+.class Lcom/google/googlenav/ui/an;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/googlenav/aR;
+.implements Lcom/google/googlenav/ui/wizard/bn;
+
+
+# instance fields
+.field final synthetic a:Lcom/google/googlenav/ui/am;
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
+.method constructor <init>(Lcom/google/googlenav/ui/am;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 226
+    iput-object p1, p0, Lcom/google/googlenav/ui/an;->a:Lcom/google/googlenav/ui/am;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)V
-    .registers 4
 
-    const-string v0, "hosted_images/"
+# virtual methods
+.method public a(Z)V
+    .registers 5
+    .parameter
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .prologue
+    .line 228
+    const/16 v0, 0x5f
 
-    move-result v0
+    iget-object v1, p0, Lcom/google/googlenav/ui/an;->a:Lcom/google/googlenav/ui/am;
 
-    if-nez v0, :cond_10
+    iget-object v1, v1, Lcom/google/googlenav/ui/am;->c:Ljava/lang/String;
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    const-string v2, "2"
 
-    const-string v1, "File not in hosted_images/"
+    invoke-static {v0, v1, v2}, LaT/k;->a(ILjava/lang/String;Ljava/lang/String;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    .line 234
+    if-eqz p1, :cond_13
 
-    throw v0
+    .line 235
+    const-string v0, "LBS_GO_AWAY_AND_DONT_COME_BACK"
 
-    :cond_10
-    invoke-static {p0}, Lcom/google/googlenav/ui/aN;->c(Ljava/lang/String;)Lah/f;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lcom/google/googlenav/friend/aW;->b(Ljava/lang/String;I)V
 
-    if-eqz v0, :cond_2b
-
-    const/4 v0, 0x1
-
-    :goto_17
-    if-nez v0, :cond_2a
-
-    invoke-static {}, Lat/h;->a()Lat/h;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/google/googlenav/aP;
-
-    new-instance v2, Lcom/google/googlenav/ui/aN;
-
-    invoke-direct {v2}, Lcom/google/googlenav/ui/aN;-><init>()V
-
-    invoke-direct {v1, p0, v2}, Lcom/google/googlenav/aP;-><init>(Ljava/lang/String;Lcom/google/googlenav/aR;)V
-
-    invoke-virtual {v0, v1}, Lat/h;->c(Lat/g;)V
-
-    :cond_2a
-    return-void
-
-    :cond_2b
-    const/4 v0, 0x0
-
-    goto :goto_17
-.end method
-
-.method protected static b(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "I_"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 240
+    :cond_13
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
 
     move-result-object v0
 
-    const-string v1, "hosted_images/"
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->D()Landroid/content/Context;
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    move-result-object v0
+
+    .line 241
+    invoke-static {v0}, Lan/p;->a(Landroid/content/Context;)Z
 
     move-result v1
 
-    invoke-virtual {p0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    if-eqz v1, :cond_2b
+
+    invoke-static {v0}, Lan/p;->b(Landroid/content/Context;)I
+
+    move-result v1
+
+    if-nez v1, :cond_2b
+
+    .line 244
+    invoke-static {v0}, Lan/p;->c(Landroid/content/Context;)V
+
+    .line 250
+    :goto_2a
+    return-void
+
+    .line 248
+    :cond_2b
+    const-string v0, "IS_COMING_FROM_SETTINGS_PAGE"
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/google/googlenav/friend/aW;->b(Ljava/lang/String;I)V
+
+    .line 249
+    iget-object v0, p0, Lcom/google/googlenav/ui/an;->a:Lcom/google/googlenav/ui/am;
+
+    iget-object v0, v0, Lcom/google/googlenav/ui/am;->d:Lcom/google/googlenav/ui/ah;
+
+    invoke-static {v0}, Lcom/google/googlenav/ui/ah;->e(Lcom/google/googlenav/ui/ah;)Lcom/google/googlenav/aA;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/an;->a:Lcom/google/googlenav/ui/am;
+
+    iget-object v1, v1, Lcom/google/googlenav/ui/am;->d:Lcom/google/googlenav/ui/ah;
+
+    invoke-static {v1}, Lcom/google/googlenav/ui/ah;->d(Lcom/google/googlenav/ui/ah;)Lcom/google/googlenav/ui/ap;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v0, v1}, Lcom/google/googlenav/aA;->a(Lcom/google/googlenav/ui/ap;)V
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_2a
 .end method
 
-.method public static c(Ljava/lang/String;)Lah/f;
+.method public b(Z)V
     .registers 5
+    .parameter
 
-    invoke-static {}, Laf/b;->a()Laf/b;
+    .prologue
+    .line 256
+    if-eqz p1, :cond_9
 
-    move-result-object v0
+    .line 259
+    const-string v0, "LBS_GO_AWAY_AND_DONT_COME_BACK"
 
-    invoke-virtual {v0}, Laf/b;->n()Lak/m;
-
-    move-result-object v0
-
-    invoke-static {p0}, Lcom/google/googlenav/ui/aN;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lak/m;->d(Ljava/lang/String;)[B
-
-    move-result-object v0
-
-    if-eqz v0, :cond_21
-
-    invoke-static {}, Laf/b;->a()Laf/b;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Laf/b;->o()Lah/h;
-
-    move-result-object v1
+    const/4 v1, 0x0
 
     const/4 v2, 0x0
 
-    array-length v3, v0
+    invoke-static {v0, v1, v2}, Lcom/google/googlenav/friend/aW;->a(Ljava/lang/String;ILcom/google/googlenav/friend/be;)V
 
-    invoke-interface {v1, v0, v2, v3}, Lah/h;->a([BII)Lah/f;
+    .line 263
+    :cond_9
+    iget-object v0, p0, Lcom/google/googlenav/ui/an;->a:Lcom/google/googlenav/ui/am;
 
-    move-result-object v0
+    iget-object v0, v0, Lcom/google/googlenav/ui/am;->d:Lcom/google/googlenav/ui/ah;
 
-    :goto_20
-    return-object v0
+    invoke-static {v0}, Lcom/google/googlenav/ui/ah;->b(Lcom/google/googlenav/ui/ah;)V
 
-    :cond_21
-    const/4 v0, 0x0
+    .line 264
+    const/16 v0, 0x5f
 
-    goto :goto_20
+    iget-object v1, p0, Lcom/google/googlenav/ui/an;->a:Lcom/google/googlenav/ui/am;
+
+    iget-object v1, v1, Lcom/google/googlenav/ui/am;->c:Ljava/lang/String;
+
+    const-string v2, "3"
+
+    invoke-static {v0, v1, v2}, LaT/k;->a(ILjava/lang/String;Ljava/lang/String;)V
+
+    .line 266
+    return-void
 .end method
 
+.method public c(Z)V
+    .registers 2
+    .parameter
 
-# virtual methods
-.method public a(Ljava/lang/String;[B)V
-    .registers 5
+    .prologue
+    .line 272
+    invoke-virtual {p0, p1}, Lcom/google/googlenav/ui/an;->b(Z)V
 
-    if-eqz p2, :cond_11
-
-    invoke-static {}, Laf/b;->a()Laf/b;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Laf/b;->n()Lak/m;
-
-    move-result-object v0
-
-    invoke-static {p1}, Lcom/google/googlenav/ui/aN;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, p2, v1}, Lak/m;->b([BLjava/lang/String;)I
-
-    :cond_11
+    .line 273
     return-void
 .end method

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:background="@color/selectable_background" android:paddingLeft="@dimen/myplaces_list_item_left_padding" android:paddingRight="@dimen/myplaces_list_item_right_padding" android:layout_width="fill_parent" android:layout_height="@dimen/myplaces_list_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:ellipsize="marquee" android:gravity="center_vertical" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="@dimen/myplaces_list_item_title_height" android:layout_marginTop="@dimen/myplaces_list_item_margin_top" android:singleLine="true" android:layout_alignParentTop="true" android:layout_alignWithParentIfMissing="true" />
+    <TextView android:ellipsize="end" android:id="@id/desc" android:layout_width="wrap_content" android:layout_height="@dimen/myplaces_list_item_desc_height" android:layout_marginBottom="@dimen/myplaces_list_item_margin_bottom" android:singleLine="true" android:layout_alignParentBottom="true" />
+</RelativeLayout>

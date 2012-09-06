@@ -1,28 +1,26 @@
 .class public interface abstract Lcom/google/googlenav/E;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # virtual methods
-.method public abstract a(B)V
+.method public abstract a()Lat/B;
 .end method
 
-.method public abstract a(I)V
+.method public abstract b()Ljava/util/List;
 .end method
 
-.method public abstract b(I)Lcom/google/googlenav/D;
+.method public abstract c()B
 .end method
 
-.method public abstract c()I
+.method public abstract d()I
 .end method
 
-.method public abstract c(I)I
+.method public abstract e()Z
 .end method
 
-.method public abstract d()B
+.method public abstract f()Ljava/lang/Object;
 .end method
 
-.method public abstract e()Lcom/google/googlenav/D;
-.end method
-
-.method public abstract f()I
+.method public abstract g()Lcom/google/googlenav/common/util/l;
 .end method

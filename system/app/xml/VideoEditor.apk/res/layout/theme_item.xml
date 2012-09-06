@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/ThemeItemLinLay" android:layout_width="191.0px" android:layout_height="132.0px"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:id="@id/ThemeItemFraLay" android:background="@drawable/theme_bg" android:paddingLeft="3.0px" android:paddingTop="4.0px" android:paddingRight="7.0px" android:paddingBottom="7.0px" android:layout_width="191.0px" android:layout_height="114.0px">
-        <ImageView android:id="@id/ThemeItemImg" android:layout_width="191.0px" android:layout_height="114.0px" android:scaleType="center" />
-        <ImageView android:layout_gravity="bottom" android:id="@id/SelectedTheme" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/grid_check_on" />
-    </FrameLayout>
-    <TextView android:textSize="16.0px" android:gravity="center" android:id="@id/ThemeItemText" android:paddingLeft="65.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Movie" />
-</LinearLayout>

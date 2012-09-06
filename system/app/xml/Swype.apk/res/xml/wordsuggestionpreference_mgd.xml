@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <CheckBoxPreference android:title="@string/pref_word_completion" android:key="wordCompletion" android:summary="@string/pref_word_completion_summary" />
-    <CheckBoxPreference android:title="@string/pref_show_suggested_word" android:key="showSuggestedWordMGD" android:summary="@string/pref_show_suggested_word_summary" android:dependency="wordCompletion" />
-</PreferenceScreen>

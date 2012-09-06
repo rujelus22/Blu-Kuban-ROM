@@ -29,6 +29,12 @@
         <item>Hanya saat senyap</item>
         <item>Tidak pernah</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>mati</item>
+        <item>rendah</item>
+        <item>sedang</item>
+        <item>maya</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Tak Satu Pun</item>
         <item>Stabilisasi gambar: Rendah</item>

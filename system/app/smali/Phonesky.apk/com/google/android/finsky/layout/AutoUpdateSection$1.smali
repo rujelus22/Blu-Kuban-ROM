@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/layout/AutoUpdateSection;->setApplicationPackageName(Ljava/lang/String;Landroid/support/v4/app/Fragment;)V
+    value = Lcom/google/android/finsky/layout/AutoUpdateSection;->bind(Ljava/lang/String;Landroid/support/v4/app/Fragment;Lcom/google/android/finsky/library/Libraries;Lcom/google/android/finsky/appstate/AppStates;Lcom/google/android/finsky/receivers/Installer;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 79
+    .line 128
     iput-object p1, p0, Lcom/google/android/finsky/layout/AutoUpdateSection$1;->this$0:Lcom/google/android/finsky/layout/AutoUpdateSection;
 
     iput-boolean p2, p0, Lcom/google/android/finsky/layout/AutoUpdateSection$1;->val$isAutoUpdateEnabled:Z
@@ -46,7 +46,7 @@
     .registers 3
 
     .prologue
-    .line 82
+    .line 131
     iget-object v0, p0, Lcom/google/android/finsky/layout/AutoUpdateSection$1;->this$0:Lcom/google/android/finsky/layout/AutoUpdateSection;
 
     #getter for: Lcom/google/android/finsky/layout/AutoUpdateSection;->mCheckBox:Landroid/widget/CheckBox;
@@ -58,6 +58,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 83
+    .line 132
     return-void
 .end method

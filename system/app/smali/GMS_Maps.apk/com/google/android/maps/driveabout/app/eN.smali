@@ -1,94 +1,53 @@
-.class Lcom/google/android/maps/driveabout/app/eN;
-.super Landroid/os/CountDownTimer;
+.class Lcom/google/android/maps/driveabout/app/en;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/eM;
-
-.field private b:Z
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/dD;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/eM;JJ)V
-    .registers 6
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/dD;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/eN;->a:Lcom/google/android/maps/driveabout/app/eM;
+    .prologue
+    .line 777
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/en;->a:Lcom/google/android/maps/driveabout/app/dD;
 
-    invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public declared-synchronized onFinish()V
-    .registers 2
+.method public onClick(Landroid/view/View;)V
+    .registers 5
+    .parameter
 
-    monitor-enter p0
+    .prologue
+    .line 780
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/en;->a:Lcom/google/android/maps/driveabout/app/dD;
 
-    :try_start_1
-    iget-boolean v0, p0, Lcom/google/android/maps/driveabout/app/eN;->b:Z
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/en;->a:Lcom/google/android/maps/driveabout/app/dD;
 
-    if-nez v0, :cond_c
+    invoke-static {v1}, Lcom/google/android/maps/driveabout/app/dD;->d(Lcom/google/android/maps/driveabout/app/dD;)Lcom/google/android/maps/driveabout/app/cK;
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/eN;->a:Lcom/google/android/maps/driveabout/app/eM;
+    move-result-object v1
 
-    iget-object v0, v0, Lcom/google/android/maps/driveabout/app/eM;->c:Lcom/google/android/maps/driveabout/app/eH;
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/app/cK;->b()Lo/I;
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/eH;->a()V
+    move-result-object v1
 
-    :cond_c
-    const/4 v0, 0x1
+    const/4 v2, 0x0
 
-    iput-boolean v0, p0, Lcom/google/android/maps/driveabout/app/eN;->b:Z
-    :try_end_f
-    .catchall {:try_start_1 .. :try_end_f} :catchall_11
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/maps/driveabout/app/dD;->a(Lo/I;Z)V
 
-    monitor-exit p0
-
+    .line 781
     return-void
-
-    :catchall_11
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized onTick(J)V
-    .registers 4
-
-    monitor-enter p0
-
-    :try_start_1
-    iget-boolean v0, p0, Lcom/google/android/maps/driveabout/app/eN;->b:Z
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_f
-
-    if-eqz v0, :cond_7
-
-    :goto_5
-    monitor-exit p0
-
-    return-void
-
-    :cond_7
-    :try_start_7
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/eN;->a:Lcom/google/android/maps/driveabout/app/eM;
-
-    iget-object v0, v0, Lcom/google/android/maps/driveabout/app/eM;->c:Lcom/google/android/maps/driveabout/app/eH;
-
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/maps/driveabout/app/eH;->a(J)V
-    :try_end_e
-    .catchall {:try_start_7 .. :try_end_e} :catchall_f
-
-    goto :goto_5
-
-    :catchall_f
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method

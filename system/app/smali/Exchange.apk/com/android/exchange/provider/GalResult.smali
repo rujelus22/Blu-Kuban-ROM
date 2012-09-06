@@ -13,8 +13,6 @@
 
 
 # instance fields
-.field public endRange:I
-
 .field public galData:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -26,10 +24,6 @@
     .end annotation
 .end field
 
-.field public protocolVerison:D
-
-.field public startRange:I
-
 .field public total:I
 
 
@@ -38,25 +32,17 @@
     .registers 2
 
     .prologue
-    const/4 v0, 0x0
+    .line 31
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 91
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
-    .line 63
-    iput v0, p0, Lcom/android/exchange/provider/GalResult;->startRange:I
-
-    .line 67
-    iput v0, p0, Lcom/android/exchange/provider/GalResult;->endRange:I
-
-    .line 87
+    .line 29
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/exchange/provider/GalResult;->galData:Ljava/util/ArrayList;
 
-    .line 93
+    .line 32
     return-void
 .end method
 
@@ -69,7 +55,7 @@
     .parameter "emailAddress"
 
     .prologue
-    .line 105
+    .line 38
     iget-object v6, p0, Lcom/android/exchange/provider/GalResult;->galData:Ljava/util/ArrayList;
 
     new-instance v0, Lcom/android/exchange/provider/GalResult$GalData;
@@ -86,7 +72,7 @@
 
     invoke-virtual {v6, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 107
+    .line 39
     return-void
 .end method
 
@@ -95,11 +81,11 @@
     .parameter "data"
 
     .prologue
-    .line 125
+    .line 42
     iget-object v0, p0, Lcom/android/exchange/provider/GalResult;->galData:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 127
+    .line 43
     return-void
 .end method

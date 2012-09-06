@@ -7,8 +7,6 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/emailcommon/mail/Folder$MessageUpdateCallbacks;,
-        Lcom/android/emailcommon/mail/Folder$PersistentDataCallbacks;,
-        Lcom/android/emailcommon/mail/Folder$IdleMessageUpdateListener;,
         Lcom/android/emailcommon/mail/Folder$MessageRetrievalListener;,
         Lcom/android/emailcommon/mail/Folder$FolderRole;,
         Lcom/android/emailcommon/mail/Folder$FolderType;,
@@ -22,10 +20,10 @@
     .registers 1
 
     .prologue
-    .line 25
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 23
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 357
+    .line 188
     return-void
 .end method
 
@@ -34,11 +32,16 @@
 .method public abstract getName()Ljava/lang/String;
 .end method
 
+.method public abstract isOpen()Z
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+.end method
+
 .method public toString()Ljava/lang/String;
     .registers 2
 
     .prologue
-    .line 393
+    .line 207
     invoke-virtual {p0}, Lcom/android/emailcommon/mail/Folder;->getName()Ljava/lang/String;
 
     move-result-object v0

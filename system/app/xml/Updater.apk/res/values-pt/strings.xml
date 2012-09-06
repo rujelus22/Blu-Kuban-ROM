@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rom">ROM</string>
+    <string name="homepage">Página na Internet</string>
+    <string name="plugin">Plugin</string>
+    <string name="Themes">Temas</string>
+    <string name="apps">Aplicações</string>
+    <string name="kernel">Kernel</string>
+    <string name="check_rom_update">Verificar actualização da ROM</string>
+    <string name="exit">Sair</string>
+    <string name="info">Informação</string>
+    <string name="costumization">Personalização</string>
+    <string name="settings">Definições</string>
+    <string name="downloading_file">A transferir ficheiro...</string>
+    <string name="md5_ok">Verificação MD5 confirmada</string>
+    <string name="md5_error">Verificação MD5 não confirmada</string>
+    <string name="file_downloaded">Ficheiro transferido para:</string>
+    <string name="reboot_to_recovery">Deseja reiniciar em modo recovery?</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancelar</string>
+    <string name="new_rom">Disponível nova versão de ROM</string>
+    <string name="download_new_rom">Transferir nova versão de ROM</string>
+    <string name="changelog">Alterações</string>
+    <string name="reload_apps">Actualizar aplicações</string>
+    <string name="check_rom_startup">Verificar Rom no arranque</string>
+    <string name="choose_download_dir">Definir pasta de download</string>
+    <string name="reboot_recovery">Reiniciar para modo recovery</string>
+    <string name="donate">Donativo para criador da ROM</string>
+    <string name="donate_acquariusoft">Donativo para acquariusoft</string>
+    <string name="donate_acquariusoft_desc">Criador de Update me</string>
+    <string name="no_update_available">Nenhuma actualização disponível</string>
+    <string name="use_light_theme">Usar tema light</string>
+    <string name="reboot_to_enable">Reiniciar a aplicação para activar as definições</string>
+    <string name="reboot_and_install">Reiniciar e instalar</string>
+    <string name="downloaded_files">Ficheiros transferidos</string>
+    <string name="cwm_flip_sdcard">Mudar nome do sdcard na CWM</string>
+    <string name="cwm_flip_sdcard_desc">Útil para algumas CWM que não instalam os ficheiros automáticamente, como o SGSII</string>
+    <string name="dialog_donate_title">Fazer donativo</string>
+    <string name="dialog_donate_text">"Se usar esta aplicação, suporte o autor para melhorar as funcionalidades da aplicação.
+Pode efectuar o seu donativo via Paypal ou comprar a aplicação donativo na Play Store"</string>
+    <string name="dialog_donate_paypal">Paypal</string>
+    <string name="dialog_donate_market">Play Store</string>
+    <string name="error">Erro</string>
+    <string name="error_on_donwload">Ocorreu um erro na transferência do ficheiro</string>
+    <string name="install">Instalar</string>
+    <string name="click_for_update_market">Verificar actualizações na Play Store</string>
+    <string name="reboot_type">Tipo de reinicio</string>
+    <string name="alert_no_config">"Nenhuma configuração disponível!
+
+Esta rom não é compatível com esta aplicação.
+Comunique ao autor da ROM para tornar a ROM compatível. Verifique a lista de ROM's compatíveis!
+
+Isto não é um problema da aplicação! Por favor não faça SPAM na Play Store!"</string>
+    <string name="compatible_rom_list">Lista de ROMs compatíveis</string>
+    <string name="check_rom_time">Verificar ROM a todas (horas)</string>
+    <string name="disable_check_rom">Inibir auto-verificação</string>
+    <string name="recovery">Recovery</string>
+    <string name="option">Opções</string>
+    <string name="other">Outros</string>
+    <string name="buy_donated">Comprar aplicação donativo</string>
+    <string name="buy_donated_desc">Contém funcionalidades extra.</string>
+    <string name="download_script">Transferir scripts</string>
+    <string name="script_title">Titulo</string>
+    <string name="script_desc">Descrição</string>
+    <string name="script_text">Script</string>
+    <string name="script_create_your">Editar o script</string>
+    <string name="script_insert">Inserir</string>
+    <string name="script_inserted">Script inserido</string>
+    <string name="script_create_new">Criar novo</string>
+    <string name="delete">Apagar</string>
+    <string name="share_rom">Partilhar a sua ROM</string>
+    <string name="full_wipe">Fazer limpeza total e depois instalar</string>
+    <string name="full_wipe_recommended">Limpeza total recomendada</string>
+    <string name="system_app">Aplicação de sistema</string>
+    <string name="system_app_desc">"Esta é uma aplicação de sistema e o sistema pode ficar danificado se a apagar!
+
+Apagar aplicação?"</string>
+    <string name="installed_apps">Aplicações instaladas</string>
+    <string name="view_video_apps">"Se gosta desta aplicação, veja este video para nos suportar.
+
+Este diálogo só é mostrado na actualização."</string>
+    <string name="download_the_file">Transferir o ficheiro?</string>
+    <string name="disable_apps">Inibir Aplicações instaladas</string>
+    <string name="disable_scripts">Inibir Scripts</string>
+    <string name="scripts">Scripts</string>
+    <string name="my_scripts">Meus scripts</string>
+</resources>

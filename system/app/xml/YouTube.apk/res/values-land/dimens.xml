@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="account_avatar_width">40.0dip</dimen>
+    <dimen name="account_avatar_height">40.0dip</dimen>
+    <dimen name="default_video_item_title_font_size">@dimen/medium_font_size</dimen>
+    <dimen name="default_video_item_duration_font_size">@dimen/small_font_size</dimen>
+</resources>

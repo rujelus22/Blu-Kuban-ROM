@@ -28,6 +28,14 @@
         <item quantity="other">%1$d másodperce</item>
         <item quantity="one">1 másodperce</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">%1$d nap múlva lejár</item>
+        <item quantity="one">Lejár 1 nap múlva</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">%1$d óra múlva lejár</item>
+        <item quantity="one">1 óra múlva lejár</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">új feltöltések</item>
         <item quantity="one">új feltöltés</item>

@@ -57,49 +57,49 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2397
+    .line 2282
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 2408
+    .line 2293
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->status_:I
 
-    .line 2425
+    .line 2310
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->statusMsg_:Ljava/lang/String;
 
-    .line 2442
+    .line 2327
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->statusTitle_:Ljava/lang/String;
 
-    .line 2459
+    .line 2344
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->briefMessage_:Ljava/lang/String;
 
-    .line 2476
+    .line 2361
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->infoUrl_:Ljava/lang/String;
 
-    .line 2493
+    .line 2378
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->libraryUpdate_:Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
 
-    .line 2513
+    .line 2398
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->rejectedInstrument_:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
-    .line 2533
+    .line 2418
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->appDeliveryData_:Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;
 
-    .line 2605
+    .line 2491
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->cachedSize:I
 
-    .line 2397
+    .line 2282
     return-void
 .end method
 
@@ -109,7 +109,7 @@
     .registers 2
 
     .prologue
-    .line 2535
+    .line 2420
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->appDeliveryData_:Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;
 
     return-object v0
@@ -119,7 +119,7 @@
     .registers 2
 
     .prologue
-    .line 2460
+    .line 2345
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->briefMessage_:Ljava/lang/String;
 
     return-object v0
@@ -129,15 +129,15 @@
     .registers 2
 
     .prologue
-    .line 2607
+    .line 2494
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 2609
+    .line 2496
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getSerializedSize()I
 
-    .line 2611
+    .line 2498
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->cachedSize:I
 
@@ -148,7 +148,7 @@
     .registers 2
 
     .prologue
-    .line 2477
+    .line 2362
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->infoUrl_:Ljava/lang/String;
 
     return-object v0
@@ -158,7 +158,7 @@
     .registers 2
 
     .prologue
-    .line 2495
+    .line 2380
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->libraryUpdate_:Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
 
     return-object v0
@@ -168,7 +168,7 @@
     .registers 2
 
     .prologue
-    .line 2515
+    .line 2400
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->rejectedInstrument_:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
     return-object v0
@@ -178,10 +178,10 @@
     .registers 4
 
     .prologue
-    .line 2615
+    .line 2503
     const/4 v0, 0x0
 
-    .line 2616
+    .line 2504
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasStatus()Z
 
@@ -189,7 +189,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 2617
+    .line 2505
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getStatus()I
@@ -202,7 +202,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2620
+    .line 2508
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasStatusMsg()Z
 
@@ -210,7 +210,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 2621
+    .line 2509
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getStatusMsg()Ljava/lang/String;
@@ -223,7 +223,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2624
+    .line 2512
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasStatusTitle()Z
 
@@ -231,7 +231,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 2625
+    .line 2513
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getStatusTitle()Ljava/lang/String;
@@ -244,7 +244,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2628
+    .line 2516
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasBriefMessage()Z
 
@@ -252,7 +252,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 2629
+    .line 2517
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getBriefMessage()Ljava/lang/String;
@@ -265,7 +265,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2632
+    .line 2520
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasInfoUrl()Z
 
@@ -273,7 +273,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 2633
+    .line 2521
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getInfoUrl()Ljava/lang/String;
@@ -286,7 +286,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2636
+    .line 2524
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasLibraryUpdate()Z
 
@@ -294,7 +294,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 2637
+    .line 2525
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getLibraryUpdate()Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
@@ -307,7 +307,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2640
+    .line 2528
     :cond_61
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasRejectedInstrument()Z
 
@@ -315,7 +315,7 @@
 
     if-eqz v1, :cond_71
 
-    .line 2641
+    .line 2529
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getRejectedInstrument()Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
@@ -328,7 +328,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2644
+    .line 2532
     :cond_71
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasAppDeliveryData()Z
 
@@ -336,7 +336,7 @@
 
     if-eqz v1, :cond_82
 
-    .line 2645
+    .line 2533
     const/16 v1, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getAppDeliveryData()Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;
@@ -349,11 +349,11 @@
 
     add-int/2addr v0, v1
 
-    .line 2648
+    .line 2536
     :cond_82
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->cachedSize:I
 
-    .line 2649
+    .line 2537
     return v0
 .end method
 
@@ -361,7 +361,7 @@
     .registers 2
 
     .prologue
-    .line 2410
+    .line 2295
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->status_:I
 
     return v0
@@ -371,7 +371,7 @@
     .registers 2
 
     .prologue
-    .line 2426
+    .line 2311
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->statusMsg_:Ljava/lang/String;
 
     return-object v0
@@ -381,7 +381,7 @@
     .registers 2
 
     .prologue
-    .line 2443
+    .line 2328
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->statusTitle_:Ljava/lang/String;
 
     return-object v0
@@ -391,7 +391,7 @@
     .registers 2
 
     .prologue
-    .line 2534
+    .line 2419
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasAppDeliveryData:Z
 
     return v0
@@ -401,7 +401,7 @@
     .registers 2
 
     .prologue
-    .line 2461
+    .line 2346
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasBriefMessage:Z
 
     return v0
@@ -411,7 +411,7 @@
     .registers 2
 
     .prologue
-    .line 2478
+    .line 2363
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasInfoUrl:Z
 
     return v0
@@ -421,7 +421,7 @@
     .registers 2
 
     .prologue
-    .line 2494
+    .line 2379
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasLibraryUpdate:Z
 
     return v0
@@ -431,7 +431,7 @@
     .registers 2
 
     .prologue
-    .line 2514
+    .line 2399
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasRejectedInstrument:Z
 
     return v0
@@ -441,7 +441,7 @@
     .registers 2
 
     .prologue
-    .line 2409
+    .line 2294
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasStatus:Z
 
     return v0
@@ -451,7 +451,7 @@
     .registers 2
 
     .prologue
-    .line 2427
+    .line 2312
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasStatusMsg:Z
 
     return v0
@@ -461,7 +461,7 @@
     .registers 2
 
     .prologue
-    .line 2444
+    .line 2329
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasStatusTitle:Z
 
     return v0
@@ -477,29 +477,29 @@
     .end annotation
 
     .prologue
-    .line 2656
+    .line 2545
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 2657
+    .line 2546
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_5a
 
-    .line 2661
+    .line 2550
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 2662
+    .line 2551
     :sswitch_d
     return-object p0
 
-    .line 2667
+    .line 2556
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -509,7 +509,7 @@
 
     goto :goto_0
 
-    .line 2671
+    .line 2560
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -519,7 +519,7 @@
 
     goto :goto_0
 
-    .line 2675
+    .line 2564
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -529,7 +529,7 @@
 
     goto :goto_0
 
-    .line 2679
+    .line 2568
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -539,7 +539,7 @@
 
     goto :goto_0
 
-    .line 2683
+    .line 2572
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -549,54 +549,54 @@
 
     goto :goto_0
 
-    .line 2687
+    .line 2576
     :sswitch_36
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;-><init>()V
 
-    .line 2688
+    .line 2577
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2689
+    .line 2578
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->setLibraryUpdate(Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;)Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;
 
     goto :goto_0
 
-    .line 2693
+    .line 2582
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
     :sswitch_42
     new-instance v1, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;-><init>()V
 
-    .line 2694
+    .line 2583
     .local v1, value:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2695
+    .line 2584
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->setRejectedInstrument(Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;)Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;
 
     goto :goto_0
 
-    .line 2699
+    .line 2588
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
     :sswitch_4e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;-><init>()V
 
-    .line 2700
+    .line 2589
     .local v1, value:Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2701
+    .line 2590
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->setAppDeliveryData(Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;)Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;
 
     goto :goto_0
 
-    .line 2657
+    .line 2546
     :sswitch_data_5a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -621,7 +621,7 @@
     .end annotation
 
     .prologue
-    .line 2395
+    .line 2279
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;
 
     move-result-object v0
@@ -634,26 +634,26 @@
     .parameter "value"
 
     .prologue
-    .line 2537
+    .line 2422
     if-nez p1, :cond_8
 
-    .line 2538
+    .line 2423
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2540
+    .line 2425
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasAppDeliveryData:Z
 
-    .line 2541
+    .line 2426
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->appDeliveryData_:Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;
 
-    .line 2542
+    .line 2427
     return-object p0
 .end method
 
@@ -662,15 +662,15 @@
     .parameter "value"
 
     .prologue
-    .line 2463
+    .line 2348
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasBriefMessage:Z
 
-    .line 2464
+    .line 2349
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->briefMessage_:Ljava/lang/String;
 
-    .line 2465
+    .line 2350
     return-object p0
 .end method
 
@@ -679,15 +679,15 @@
     .parameter "value"
 
     .prologue
-    .line 2480
+    .line 2365
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasInfoUrl:Z
 
-    .line 2481
+    .line 2366
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->infoUrl_:Ljava/lang/String;
 
-    .line 2482
+    .line 2367
     return-object p0
 .end method
 
@@ -696,26 +696,26 @@
     .parameter "value"
 
     .prologue
-    .line 2497
+    .line 2382
     if-nez p1, :cond_8
 
-    .line 2498
+    .line 2383
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2500
+    .line 2385
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasLibraryUpdate:Z
 
-    .line 2501
+    .line 2386
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->libraryUpdate_:Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
 
-    .line 2502
+    .line 2387
     return-object p0
 .end method
 
@@ -724,26 +724,26 @@
     .parameter "value"
 
     .prologue
-    .line 2517
+    .line 2402
     if-nez p1, :cond_8
 
-    .line 2518
+    .line 2403
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2520
+    .line 2405
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasRejectedInstrument:Z
 
-    .line 2521
+    .line 2406
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->rejectedInstrument_:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
-    .line 2522
+    .line 2407
     return-object p0
 .end method
 
@@ -752,15 +752,15 @@
     .parameter "value"
 
     .prologue
-    .line 2412
+    .line 2297
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasStatus:Z
 
-    .line 2413
+    .line 2298
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->status_:I
 
-    .line 2414
+    .line 2299
     return-object p0
 .end method
 
@@ -769,15 +769,15 @@
     .parameter "value"
 
     .prologue
-    .line 2429
+    .line 2314
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasStatusMsg:Z
 
-    .line 2430
+    .line 2315
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->statusMsg_:Ljava/lang/String;
 
-    .line 2431
+    .line 2316
     return-object p0
 .end method
 
@@ -786,15 +786,15 @@
     .parameter "value"
 
     .prologue
-    .line 2446
+    .line 2331
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasStatusTitle:Z
 
-    .line 2447
+    .line 2332
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->statusTitle_:Ljava/lang/String;
 
-    .line 2448
+    .line 2333
     return-object p0
 .end method
 
@@ -808,14 +808,14 @@
     .end annotation
 
     .prologue
-    .line 2579
+    .line 2465
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasStatus()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 2580
+    .line 2466
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getStatus()I
@@ -824,7 +824,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 2582
+    .line 2468
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasStatusMsg()Z
 
@@ -832,7 +832,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 2583
+    .line 2469
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getStatusMsg()Ljava/lang/String;
@@ -841,7 +841,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2585
+    .line 2471
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasStatusTitle()Z
 
@@ -849,7 +849,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 2586
+    .line 2472
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getStatusTitle()Ljava/lang/String;
@@ -858,7 +858,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2588
+    .line 2474
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasBriefMessage()Z
 
@@ -866,7 +866,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 2589
+    .line 2475
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getBriefMessage()Ljava/lang/String;
@@ -875,7 +875,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2591
+    .line 2477
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasInfoUrl()Z
 
@@ -883,7 +883,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 2592
+    .line 2478
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getInfoUrl()Ljava/lang/String;
@@ -892,7 +892,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2594
+    .line 2480
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasLibraryUpdate()Z
 
@@ -900,7 +900,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 2595
+    .line 2481
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getLibraryUpdate()Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
@@ -909,7 +909,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2597
+    .line 2483
     :cond_54
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasRejectedInstrument()Z
 
@@ -917,7 +917,7 @@
 
     if-eqz v0, :cond_62
 
-    .line 2598
+    .line 2484
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getRejectedInstrument()Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
@@ -926,7 +926,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2600
+    .line 2486
     :cond_62
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->hasAppDeliveryData()Z
 
@@ -934,7 +934,7 @@
 
     if-eqz v0, :cond_71
 
-    .line 2601
+    .line 2487
     const/16 v0, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;->getAppDeliveryData()Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;
@@ -943,7 +943,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2603
+    .line 2489
     :cond_71
     return-void
 .end method

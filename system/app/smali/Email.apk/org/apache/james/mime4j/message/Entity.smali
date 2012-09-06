@@ -18,16 +18,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 34
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
     .line 35
-    iput-object v0, p0, Lorg/apache/james/mime4j/message/Entity;->header:Lorg/apache/james/mime4j/message/Header;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 36
-    iput-object v0, p0, Lorg/apache/james/mime4j/message/Entity;->body:Lorg/apache/james/mime4j/message/Body;
+    iput-object v0, p0, Lorg/apache/james/mime4j/message/Entity;->header:Lorg/apache/james/mime4j/message/Header;
 
     .line 37
+    iput-object v0, p0, Lorg/apache/james/mime4j/message/Entity;->body:Lorg/apache/james/mime4j/message/Body;
+
+    .line 38
     iput-object v0, p0, Lorg/apache/james/mime4j/message/Entity;->parent:Lorg/apache/james/mime4j/message/Entity;
 
     return-void
@@ -39,7 +39,7 @@
     .registers 2
 
     .prologue
-    .line 83
+    .line 84
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Entity;->body:Lorg/apache/james/mime4j/message/Body;
 
     return-object v0
@@ -49,7 +49,7 @@
     .registers 3
 
     .prologue
-    .line 117
+    .line 121
     invoke-virtual {p0}, Lorg/apache/james/mime4j/message/Entity;->getHeader()Lorg/apache/james/mime4j/message/Header;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .registers 4
 
     .prologue
-    .line 127
+    .line 131
     invoke-virtual {p0}, Lorg/apache/james/mime4j/message/Entity;->getHeader()Lorg/apache/james/mime4j/message/Header;
 
     move-result-object v1
@@ -86,7 +86,7 @@
 
     check-cast v0, Lorg/apache/james/mime4j/field/ContentTransferEncodingField;
 
-    .line 130
+    .line 134
     .local v0, f:Lorg/apache/james/mime4j/field/ContentTransferEncodingField;
     invoke-static {v0}, Lorg/apache/james/mime4j/field/ContentTransferEncodingField;->getEncoding(Lorg/apache/james/mime4j/field/ContentTransferEncodingField;)Ljava/lang/String;
 
@@ -99,7 +99,7 @@
     .registers 2
 
     .prologue
-    .line 65
+    .line 66
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Entity;->header:Lorg/apache/james/mime4j/message/Header;
 
     return-object v0
@@ -109,7 +109,7 @@
     .registers 5
 
     .prologue
-    .line 104
+    .line 105
     invoke-virtual {p0}, Lorg/apache/james/mime4j/message/Entity;->getHeader()Lorg/apache/james/mime4j/message/Header;
 
     move-result-object v2
@@ -122,7 +122,7 @@
 
     check-cast v0, Lorg/apache/james/mime4j/field/ContentTypeField;
 
-    .line 105
+    .line 107
     .local v0, child:Lorg/apache/james/mime4j/field/ContentTypeField;
     invoke-virtual {p0}, Lorg/apache/james/mime4j/message/Entity;->getParent()Lorg/apache/james/mime4j/message/Entity;
 
@@ -148,7 +148,7 @@
 
     move-object v1, v2
 
-    .line 108
+    .line 112
     .local v1, parent:Lorg/apache/james/mime4j/field/ContentTypeField;
     :goto_23
     invoke-static {v0, v1}, Lorg/apache/james/mime4j/field/ContentTypeField;->getMimeType(Lorg/apache/james/mime4j/field/ContentTypeField;Lorg/apache/james/mime4j/field/ContentTypeField;)Ljava/lang/String;
@@ -157,7 +157,7 @@
 
     return-object v2
 
-    .line 105
+    .line 107
     .end local v1           #parent:Lorg/apache/james/mime4j/field/ContentTypeField;
     :cond_28
     const/4 v1, 0x0
@@ -169,7 +169,7 @@
     .registers 2
 
     .prologue
-    .line 46
+    .line 47
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Entity;->parent:Lorg/apache/james/mime4j/message/Entity;
 
     return-object v0
@@ -180,7 +180,7 @@
     .parameter "type"
 
     .prologue
-    .line 141
+    .line 145
     invoke-virtual {p0}, Lorg/apache/james/mime4j/message/Entity;->getMimeType()Ljava/lang/String;
 
     move-result-object v0
@@ -196,7 +196,7 @@
     .registers 4
 
     .prologue
-    .line 153
+    .line 157
     invoke-virtual {p0}, Lorg/apache/james/mime4j/message/Entity;->getHeader()Lorg/apache/james/mime4j/message/Header;
 
     move-result-object v1
@@ -209,7 +209,7 @@
 
     check-cast v0, Lorg/apache/james/mime4j/field/ContentTypeField;
 
-    .line 154
+    .line 159
     .local v0, f:Lorg/apache/james/mime4j/field/ContentTypeField;
     if-eqz v0, :cond_22
 
@@ -247,13 +247,13 @@
     .parameter "body"
 
     .prologue
-    .line 92
+    .line 93
     iput-object p1, p0, Lorg/apache/james/mime4j/message/Entity;->body:Lorg/apache/james/mime4j/message/Body;
 
-    .line 93
+    .line 94
     invoke-interface {p1, p0}, Lorg/apache/james/mime4j/message/Body;->setParent(Lorg/apache/james/mime4j/message/Entity;)V
 
-    .line 94
+    .line 95
     return-void
 .end method
 
@@ -262,10 +262,10 @@
     .parameter "header"
 
     .prologue
-    .line 74
+    .line 75
     iput-object p1, p0, Lorg/apache/james/mime4j/message/Entity;->header:Lorg/apache/james/mime4j/message/Header;
 
-    .line 75
+    .line 76
     return-void
 .end method
 
@@ -274,10 +274,10 @@
     .parameter "parent"
 
     .prologue
-    .line 56
+    .line 57
     iput-object p1, p0, Lorg/apache/james/mime4j/message/Entity;->parent:Lorg/apache/james/mime4j/message/Entity;
 
-    .line 57
+    .line 58
     return-void
 .end method
 

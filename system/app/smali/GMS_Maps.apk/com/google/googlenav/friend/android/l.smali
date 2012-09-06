@@ -1,5 +1,6 @@
 .class Lcom/google/googlenav/friend/android/l;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
 .implements Landroid/content/DialogInterface$OnCancelListener;
@@ -12,7 +13,10 @@
 # direct methods
 .method constructor <init>(Lcom/google/googlenav/friend/android/InviteActivity;)V
     .registers 2
+    .parameter
 
+    .prologue
+    .line 384
     iput-object p1, p0, Lcom/google/googlenav/friend/android/l;->a:Lcom/google/googlenav/friend/android/InviteActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -24,7 +28,10 @@
 # virtual methods
 .method public onCancel(Landroid/content/DialogInterface;)V
     .registers 3
+    .parameter
 
+    .prologue
+    .line 387
     iget-object v0, p0, Lcom/google/googlenav/friend/android/l;->a:Lcom/google/googlenav/friend/android/InviteActivity;
 
     invoke-static {v0}, Lcom/google/googlenav/friend/android/InviteActivity;->c(Lcom/google/googlenav/friend/android/InviteActivity;)Lcom/google/googlenav/friend/android/o;
@@ -35,6 +42,7 @@
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
+    .line 388
     iget-object v0, p0, Lcom/google/googlenav/friend/android/l;->a:Lcom/google/googlenav/friend/android/InviteActivity;
 
     invoke-static {v0}, Lcom/google/googlenav/friend/android/InviteActivity;->d(Lcom/google/googlenav/friend/android/InviteActivity;)I
@@ -43,10 +51,12 @@
 
     if-nez v0, :cond_18
 
+    .line 389
     iget-object v0, p0, Lcom/google/googlenav/friend/android/l;->a:Lcom/google/googlenav/friend/android/InviteActivity;
 
     invoke-virtual {v0}, Lcom/google/googlenav/friend/android/InviteActivity;->finish()V
 
+    .line 391
     :cond_18
     return-void
 .end method

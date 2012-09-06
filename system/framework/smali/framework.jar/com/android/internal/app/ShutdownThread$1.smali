@@ -22,8 +22,8 @@
     .registers 1
 
     .prologue
-    .line 211
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 134
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -31,24 +31,19 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 5
+    .registers 4
     .parameter "dialog"
     .parameter "which"
 
     .prologue
-    const/4 v1, 0x0
+    .line 136
+    const/4 v0, 0x0
 
-    .line 213
-    invoke-static {v1}, Lcom/android/internal/app/ShutdownThread;->access$002(Z)Z
+    invoke-static {v0}, Lcom/android/internal/app/ShutdownThread;->access$002(Z)Z
 
-    .line 214
-    const-string v0, ""
+    .line 137
+    invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    invoke-static {v0}, Lcom/android/internal/app/ShutdownThread;->access$102(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 215
-    invoke-static {v1}, Lcom/android/internal/app/ShutdownThread;->access$202(Z)Z
-
-    .line 216
+    .line 138
     return-void
 .end method

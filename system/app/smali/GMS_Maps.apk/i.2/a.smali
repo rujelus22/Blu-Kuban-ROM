@@ -1,61 +1,69 @@
-.class public interface abstract Li/a;
+.class public LI/a;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# virtual methods
-.method public abstract a()V
-.end method
+# static fields
+.field public static final a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-.method public abstract a(I)V
-.end method
+.field public static final b:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-.method public abstract a(IIZ)V
-.end method
 
-.method public abstract a(IZ)V
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .registers 6
 
-.method public abstract a(LW/a;)V
-.end method
+    .prologue
+    const/16 v5, 0x218
 
-.method public abstract a(Le/L;)V
-.end method
+    const/4 v4, 0x1
 
-.method public abstract a(Le/b;)V
-.end method
+    const/4 v1, 0x0
 
-.method public abstract a(Li/B;)V
-.end method
+    .line 13
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-.method public abstract a(Li/C;)V
-.end method
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
 
-.method public abstract a(Z)V
-.end method
+    sput-object v0, LI/a;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-.method public abstract a(ZZ)V
-.end method
+    .line 14
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-.method public abstract b(I)V
-.end method
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
 
-.method public abstract b(LW/a;)V
-.end method
+    sput-object v0, LI/a;->b:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-.method public abstract b(Z)V
-.end method
+    .line 16
+    sget-object v2, LI/a;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-.method public abstract c(LW/a;)V
-.end method
+    const/16 v3, 0x215
 
-.method public abstract c(Z)V
-.end method
+    move-object v0, v1
 
-.method public abstract d(LW/a;)V
-.end method
+    check-cast v0, LI/c;
 
-.method public abstract d(Z)V
-.end method
+    invoke-virtual {v2, v3, v4, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-.method public abstract e(Z)V
+    move-result-object v2
+
+    move-object v0, v1
+
+    check-cast v0, LI/c;
+
+    const/4 v0, 0x2
+
+    invoke-virtual {v2, v5, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    .line 24
+    sget-object v2, LI/a;->b:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-object v0, v1
+
+    check-cast v0, LI/b;
+
+    invoke-virtual {v2, v5, v4, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    .line 29
+    return-void
 .end method

@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 571
+    .line 318
     iput-object p1, p0, Lcom/android/exchange/ExchangeService$1$4;->this$0:Lcom/android/exchange/ExchangeService$1;
 
     iput-wide p2, p0, Lcom/android/exchange/ExchangeService$1$4;->val$mailboxId:J
@@ -45,7 +45,7 @@
 
     iput p5, p0, Lcom/android/exchange/ExchangeService$1$4;->val$progress:I
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -62,7 +62,7 @@
     .end annotation
 
     .prologue
-    .line 574
+    .line 321
     iget-wide v0, p0, Lcom/android/exchange/ExchangeService$1$4;->val$mailboxId:J
 
     iget v2, p0, Lcom/android/exchange/ExchangeService$1$4;->val$status:I
@@ -71,6 +71,6 @@
 
     invoke-interface {p1, v0, v1, v2, v3}, Lcom/android/emailcommon/service/IEmailServiceCallback;->syncMailboxStatus(JII)V
 
-    .line 575
+    .line 322
     return-void
 .end method

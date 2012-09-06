@@ -1,94 +1,68 @@
-.class Lcom/google/android/maps/driveabout/app/aE;
-.super Lcom/google/android/maps/driveabout/app/aF;
+.class Lcom/google/android/maps/driveabout/app/ae;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
-
-# instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/aD;
-
-.field private final c:I
-
-.field private final d:Ljava/lang/String;
+# interfaces
+.implements Lcom/google/android/maps/driveabout/app/aj;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/maps/driveabout/app/aD;FILjava/lang/String;)V
-    .registers 6
+.method constructor <init>()V
+    .registers 1
 
-    float-to-int v0, p2
-
-    invoke-direct {p0, p1, v0, p3, p4}, Lcom/google/android/maps/driveabout/app/aE;-><init>(Lcom/google/android/maps/driveabout/app/aD;IILjava/lang/String;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/android/maps/driveabout/app/aD;IILjava/lang/String;)V
-    .registers 5
-
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aE;->a:Lcom/google/android/maps/driveabout/app/aD;
-
-    invoke-direct {p0, p2}, Lcom/google/android/maps/driveabout/app/aF;-><init>(I)V
-
-    iput p3, p0, Lcom/google/android/maps/driveabout/app/aE;->c:I
-
-    iput-object p4, p0, Lcom/google/android/maps/driveabout/app/aE;->d:Ljava/lang/String;
+    .prologue
+    .line 295
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected a(ILjava/lang/String;)Ljava/lang/String;
-    .registers 9
+.method public a()J
+    .registers 3
 
-    const/4 v5, 0x1
+    .prologue
+    .line 298
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    const/4 v4, 0x0
+    move-result-wide v0
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aE;->d:Ljava/lang/String;
+    return-wide v0
+.end method
 
-    if-nez v0, :cond_17
+.method public b()I
+    .registers 3
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aE;->a:Lcom/google/android/maps/driveabout/app/aD;
-
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/aD;->a(Lcom/google/android/maps/driveabout/app/aD;)Landroid/content/Context;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/google/android/maps/driveabout/app/aE;->c:I
-
-    new-array v2, v5, [Ljava/lang/Object;
-
-    aput-object p2, v2, v4
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    .prologue
+    .line 302
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    :goto_16
-    return-object v0
+    const/4 v1, 0x7
 
-    :cond_17
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aE;->a:Lcom/google/android/maps/driveabout/app/aD;
+    invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
 
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/aD;->a(Lcom/google/android/maps/driveabout/app/aD;)Landroid/content/Context;
+    move-result v0
 
-    move-result-object v0
+    return v0
+.end method
 
-    iget v1, p0, Lcom/google/android/maps/driveabout/app/aE;->c:I
+.method public c()I
+    .registers 3
 
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    iget-object v3, p0, Lcom/google/android/maps/driveabout/app/aE;->d:Ljava/lang/String;
-
-    aput-object v3, v2, v4
-
-    aput-object p2, v2, v5
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    .prologue
+    .line 306
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    goto :goto_16
+    const/16 v1, 0xb
+
+    invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
+
+    move-result v0
+
+    return v0
 .end method

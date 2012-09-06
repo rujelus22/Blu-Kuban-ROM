@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="left" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/placeName" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/OffersBubbleTitle" />
+    <TextView android:id="@id/address" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/OffersBubbleAddress" />
+    <include layout="@layout/zagat_review_summary" />
+    <com.google.googlenav.ui.android.multilinetextview.MultilineTextView android:id="@id/summary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/offers_bubble_minimum_width" style="@style/OffersBubbleSummary" />
+</LinearLayout>

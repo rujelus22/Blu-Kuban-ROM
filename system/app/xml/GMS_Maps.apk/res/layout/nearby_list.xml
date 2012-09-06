@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableLayout android:id="@id/header_bar_with_extra_items" android:background="@drawable/header_bar_background" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="0" android:shrinkColumns="1">
+        <TableRow android:id="@id/header_bar_first_row">
+            <include android:layout_width="150.0dip" android:layout_height="@dimen/action_bar_height" layout="@layout/header_bar_with_feature_switcher" />
+            <com.google.googlenav.ui.android.ListPopupSpinnerSdk5 android:orientation="horizontal" android:id="@id/vehicle_type_spinner" android:paddingLeft="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" app:dialogResource="@layout/vehicle_selector" app:arrowOnLeft="false"
+              xmlns:app="http://schemas.android.com/apk/res/com.google.android.apps.maps" />
+        </TableRow>
+    </TableLayout>
+    <TextView android:ellipsize="end" android:gravity="center" android:id="@id/location" android:background="@color/black" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="30.0dip" android:singleLine="true" style="@style/NearbyLocationName" />
+    <com.google.googlenav.ui.android.GmmListView android:scrollbarStyle="outsideOverlay" android:id="@id/listView" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:focusableInTouchMode="true" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" android:headerDividersEnabled="false" />
+</LinearLayout>

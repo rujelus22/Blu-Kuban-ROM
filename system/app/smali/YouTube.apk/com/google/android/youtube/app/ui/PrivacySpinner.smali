@@ -26,7 +26,7 @@
 
     sget-object v1, Lcom/google/android/youtube/core/model/Video$Privacy;->PRIVATE:Lcom/google/android/youtube/core/model/Video$Privacy;
 
-    const v2, 0x7f0a010d
+    const v2, 0x7f0b014e
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -39,7 +39,7 @@
 
     sget-object v1, Lcom/google/android/youtube/core/model/Video$Privacy;->PUBLIC:Lcom/google/android/youtube/core/model/Video$Privacy;
 
-    const v2, 0x7f0a010c
+    const v2, 0x7f0b014d
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -52,7 +52,7 @@
 
     sget-object v1, Lcom/google/android/youtube/core/model/Video$Privacy;->UNLISTED:Lcom/google/android/youtube/core/model/Video$Privacy;
 
-    const v2, 0x7f0a010e
+    const v2, 0x7f0b014f
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -81,9 +81,9 @@
     iput-object v0, p0, Lcom/google/android/youtube/app/ui/PrivacySpinner;->b:Landroid/view/LayoutInflater;
 
     .line 41
-    new-instance v0, Lcom/google/android/youtube/app/ui/aq;
+    new-instance v0, Lcom/google/android/youtube/app/ui/ba;
 
-    invoke-direct {v0, p0}, Lcom/google/android/youtube/app/ui/aq;-><init>(Lcom/google/android/youtube/app/ui/PrivacySpinner;)V
+    invoke-direct {v0, p0}, Lcom/google/android/youtube/app/ui/ba;-><init>(Lcom/google/android/youtube/app/ui/PrivacySpinner;)V
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/ui/PrivacySpinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
 
@@ -128,7 +128,7 @@
     return-object v0
 .end method
 
-.method public final a(Lcom/google/android/youtube/core/model/Video$Privacy;)V
+.method public setPrivacy(Lcom/google/android/youtube/core/model/Video$Privacy;)V
     .registers 3
     .parameter
 
@@ -136,7 +136,7 @@
     .line 45
     const-string v0, "privacy may not be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 46
     invoke-virtual {p1}, Lcom/google/android/youtube/core/model/Video$Privacy;->ordinal()I

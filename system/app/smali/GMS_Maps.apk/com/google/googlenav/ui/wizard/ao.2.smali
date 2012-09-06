@@ -1,75 +1,113 @@
-.class Lcom/google/googlenav/ui/wizard/ao;
+.class public Lcom/google/googlenav/ui/wizard/aO;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/aj;
+.field private final a:LaM/a;
+
+.field private final b:Lcom/google/googlenav/android/Y;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/aj;)V
-    .registers 2
+.method public constructor <init>(LaM/a;Lcom/google/googlenav/android/Y;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/ao;->a:Lcom/google/googlenav/ui/wizard/aj;
-
+    .prologue
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 32
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/aO;->a:LaM/a;
+
+    .line 33
+    iput-object p2, p0, Lcom/google/googlenav/ui/wizard/aO;->b:Lcom/google/googlenav/android/Y;
+
+    .line 34
+    return-void
+.end method
+
+.method static synthetic a(Lcom/google/googlenav/ui/wizard/aO;)Lcom/google/googlenav/android/Y;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 25
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/aO;->b:Lcom/google/googlenav/android/Y;
+
+    return-object v0
+.end method
+
+.method static synthetic a(Lcom/google/googlenav/ui/wizard/aO;Lcom/google/googlenav/ui/wizard/aV;)V
+    .registers 2
+    .parameter
+    .parameter
+
+    .prologue
+    .line 25
+    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/wizard/aO;->a(Lcom/google/googlenav/ui/wizard/aV;)V
 
     return-void
 .end method
 
+.method private a(Lcom/google/googlenav/ui/wizard/aV;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 150
+    const/4 v0, 0x0
+
+    .line 151
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/aO;->b:Lcom/google/googlenav/android/Y;
+
+    new-instance v2, Lcom/google/googlenav/ui/wizard/aU;
+
+    invoke-direct {v2, p0, p1}, Lcom/google/googlenav/ui/wizard/aU;-><init>(Lcom/google/googlenav/ui/wizard/aO;Lcom/google/googlenav/ui/wizard/aV;)V
+
+    invoke-virtual {v1, v2, v0}, Lcom/google/googlenav/android/Y;->a(Ljava/lang/Runnable;Z)V
+
+    .line 157
+    return-void
+.end method
+
+.method static synthetic b(Lcom/google/googlenav/ui/wizard/aO;)LaM/a;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 25
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/aO;->a:LaM/a;
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 4
+.method public a(Lcom/google/googlenav/h;Lcom/google/googlenav/ui/wizard/aV;)V
+    .registers 7
+    .parameter
+    .parameter
 
-    invoke-static {}, Lcom/google/googlenav/android/a;->f()Z
+    .prologue
+    .line 75
+    invoke-static {}, Lcom/google/googlenav/friend/af;->B()V
 
-    move-result v0
+    .line 77
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/aO;->a:LaM/a;
 
-    if-nez v0, :cond_1e
+    const/4 v1, 0x3
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/ao;->a:Lcom/google/googlenav/ui/wizard/aj;
+    iget-object v2, p0, Lcom/google/googlenav/ui/wizard/aO;->b:Lcom/google/googlenav/android/Y;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/aj;->a(Lcom/google/googlenav/ui/wizard/aj;)Lcom/google/googlenav/ui/wizard/ay;
+    new-instance v3, Lcom/google/googlenav/ui/wizard/aP;
 
-    move-result-object v0
+    invoke-direct {v3, p0, p1, p2}, Lcom/google/googlenav/ui/wizard/aP;-><init>(Lcom/google/googlenav/ui/wizard/aO;Lcom/google/googlenav/h;Lcom/google/googlenav/ui/wizard/aV;)V
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/ao;->a:Lcom/google/googlenav/ui/wizard/aj;
+    invoke-virtual {v0, v1, v2, v3}, LaM/a;->a(ILcom/google/googlenav/android/Y;LaM/f;)V
 
-    invoke-static {v1}, Lcom/google/googlenav/ui/wizard/aj;->b(Lcom/google/googlenav/ui/wizard/aj;)Landroid/widget/EditText;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/wizard/ay;->b(Ljava/lang/String;)V
-
-    :goto_1d
+    .line 147
     return-void
-
-    :cond_1e
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/ao;->a:Lcom/google/googlenav/ui/wizard/aj;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/aj;->a(Lcom/google/googlenav/ui/wizard/aj;)Lcom/google/googlenav/ui/wizard/ay;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/ao;->a:Lcom/google/googlenav/ui/wizard/aj;
-
-    invoke-static {v1}, Lcom/google/googlenav/ui/wizard/aj;->e(Lcom/google/googlenav/ui/wizard/aj;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/wizard/ay;->b(Ljava/lang/String;)V
-
-    goto :goto_1d
 .end method

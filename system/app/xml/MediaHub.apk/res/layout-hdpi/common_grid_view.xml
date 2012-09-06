@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<GridView android:id="@id/gv_common" android:paddingLeft="0.6700001dip" android:paddingTop="3.3299866dip" android:paddingRight="0.6700001dip" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/list_selector" android:horizontalSpacing="1.3399963dip" android:verticalSpacing="1.3399963dip" android:stretchMode="none" android:numColumns="auto_fit"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -29,6 +29,12 @@
         <item>マナーモード時のみ</item>
         <item>使用しない</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>OFF</item>
+        <item>弱</item>
+        <item>中</item>
+        <item>バーチャル</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>OFF</item>
         <item>手振れ補正: 弱</item>

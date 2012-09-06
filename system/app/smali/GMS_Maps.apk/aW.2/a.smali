@@ -1,192 +1,319 @@
-.class public LaW/a;
-.super Landroid/view/animation/Animation;
+.class public Law/a;
+.super Lac/a;
+.source "SourceFile"
 
 
 # instance fields
-.field private final a:Landroid/view/View;
+.field private a:[Law/c;
 
-.field private final b:F
+.field private b:[Law/c;
 
-.field private final c:F
+.field private c:I
 
-.field private final d:F
-
-.field private final e:F
-
-.field private final f:Landroid/graphics/Camera;
-
-.field private g:F
-
-.field private h:F
-
-.field private i:Ljava/util/List;
+.field private d:Law/b;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;FFFF)V
-    .registers 7
+.method public constructor <init>()V
+    .registers 2
 
-    invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
+    .prologue
+    .line 48
+    invoke-direct {p0}, Lac/a;-><init>()V
 
-    iput-object p1, p0, LaW/a;->a:Landroid/view/View;
+    .line 31
+    const/4 v0, 0x0
 
-    iput p2, p0, LaW/a;->g:F
+    iput v0, p0, Law/a;->c:I
 
-    iput p2, p0, LaW/a;->b:F
+    .line 46
+    const/4 v0, 0x0
 
-    iput p3, p0, LaW/a;->c:F
+    iput-object v0, p0, Law/a;->d:Law/b;
 
-    iput p4, p0, LaW/a;->h:F
-
-    iput p4, p0, LaW/a;->d:F
-
-    iput p5, p0, LaW/a;->e:F
-
-    new-instance v0, Landroid/graphics/Camera;
-
-    invoke-direct {v0}, Landroid/graphics/Camera;-><init>()V
-
-    iput-object v0, p0, LaW/a;->f:Landroid/graphics/Camera;
-
-    invoke-static {}, LK/bR;->a()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    iput-object v0, p0, LaW/a;->i:Ljava/util/List;
-
+    .line 49
     return-void
 .end method
 
 
 # virtual methods
-.method public a(FFLjava/lang/Runnable;)V
-    .registers 6
+.method public a()I
+    .registers 2
 
-    iget-object v0, p0, LaW/a;->i:Ljava/util/List;
+    .prologue
+    .line 53
+    const/16 v0, 0x3c
 
-    new-instance v1, LaW/b;
+    return v0
+.end method
 
-    invoke-direct {v1, p1, p2, p3}, LaW/b;-><init>(FFLjava/lang/Runnable;)V
+.method public a(Law/b;)V
+    .registers 2
+    .parameter
 
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    .prologue
+    .line 121
+    iput-object p1, p0, Law/a;->d:Law/b;
 
+    .line 122
     return-void
 .end method
 
-.method protected applyTransformation(FLandroid/view/animation/Transformation;)V
+.method public a(Ljava/io/DataOutput;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 63
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    sget-object v1, Lcom/google/wireless/googlenav/proto/j2me/iv;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-direct {v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;-><init>(Lcom/google/googlenav/common/io/protocol/ProtoBufType;)V
+
+    .line 65
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->setInt(II)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    .line 68
+    check-cast p1, Ljava/io/OutputStream;
+
+    invoke-virtual {v0, p1}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->outputWithSizeTo(Ljava/io/OutputStream;)V
+
+    .line 69
+    return-void
+.end method
+
+.method public a(Ljava/io/DataInput;)Z
     .registers 11
+    .parameter
 
-    const/high16 v4, 0x4000
+    .prologue
+    const/4 v2, 0x0
 
-    iget v0, p0, LaW/a;->b:F
+    const/4 v8, 0x4
 
-    iget v1, p0, LaW/a;->c:F
+    const/4 v7, 0x1
 
-    iget v2, p0, LaW/a;->b:F
+    .line 73
+    sget-object v0, Lcom/google/wireless/googlenav/proto/j2me/iv;->b:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    sub-float/2addr v1, v2
+    invoke-static {v0, p1}, Lcom/google/googlenav/common/io/protocol/b;->a(Lcom/google/googlenav/common/io/protocol/ProtoBufType;Ljava/io/DataInput;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    mul-float/2addr v1, p1
+    move-result-object v1
 
-    add-float/2addr v1, v0
+    .line 77
+    iput-object v2, p0, Law/a;->a:[Law/c;
 
-    iget v0, p0, LaW/a;->d:F
+    .line 78
+    iput-object v2, p0, Law/a;->b:[Law/c;
 
-    iget v2, p0, LaW/a;->e:F
-
-    iget v3, p0, LaW/a;->d:F
-
-    sub-float/2addr v2, v3
-
-    mul-float/2addr v2, p1
-
-    add-float/2addr v2, v0
-
-    iget-object v0, p0, LaW/a;->a:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
+    .line 80
+    invoke-virtual {v1, v7}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
 
     move-result v0
 
-    int-to-float v0, v0
+    iput v0, p0, Law/a;->c:I
 
-    div-float/2addr v0, v4
+    .line 81
+    iget v0, p0, Law/a;->c:I
 
-    iget-object v3, p0, LaW/a;->a:Landroid/view/View;
+    if-eqz v0, :cond_18
 
-    invoke-virtual {v3}, Landroid/view/View;->getHeight()I
+    .line 106
+    :goto_17
+    return v7
 
-    move-result v3
+    .line 87
+    :cond_18
+    new-instance v2, Ljava/util/ArrayList;
 
-    int-to-float v3, v3
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    div-float/2addr v3, v4
+    .line 88
+    new-instance v3, Ljava/util/ArrayList;
 
-    iget-object v4, p0, LaW/a;->f:Landroid/graphics/Camera;
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p2}, Landroid/view/animation/Transformation;->getMatrix()Landroid/graphics/Matrix;
+    .line 89
+    invoke-virtual {v1, v8}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getCount(I)I
 
-    move-result-object v5
+    move-result v4
 
-    invoke-virtual {v4}, Landroid/graphics/Camera;->save()V
+    .line 91
+    const/4 v0, 0x0
 
-    :try_start_2d
-    invoke-virtual {v4, v1}, Landroid/graphics/Camera;->rotateX(F)V
+    :goto_27
+    if-ge v0, v4, :cond_48
 
-    invoke-virtual {v4, v2}, Landroid/graphics/Camera;->rotateY(F)V
+    .line 92
+    new-instance v5, Law/c;
 
-    invoke-virtual {v4, v5}, Landroid/graphics/Camera;->getMatrix(Landroid/graphics/Matrix;)V
+    invoke-virtual {v1, v8, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getProtoBuf(II)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    neg-float v6, v0
+    move-result-object v6
 
-    neg-float v7, v3
+    invoke-direct {v5, v6}, Law/c;-><init>(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
 
-    invoke-virtual {v5, v6, v7}, Landroid/graphics/Matrix;->preTranslate(FF)Z
+    .line 94
+    invoke-virtual {v5}, Law/c;->d()Z
 
-    invoke-virtual {v5, v0, v3}, Landroid/graphics/Matrix;->postTranslate(FF)Z
-    :try_end_3e
-    .catchall {:try_start_2d .. :try_end_3e} :catchall_5b
+    move-result v6
 
-    invoke-virtual {v4}, Landroid/graphics/Camera;->restore()V
+    if-eqz v6, :cond_3e
 
-    iget-object v0, p0, LaW/a;->i:Ljava/util/List;
+    .line 95
+    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    .line 91
+    :cond_3b
+    :goto_3b
+    add-int/lit8 v0, v0, 0x1
 
-    move-result-object v3
+    goto :goto_27
 
-    :goto_47
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    .line 96
+    :cond_3e
+    invoke-virtual {v5}, Law/c;->e()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_3b
+
+    .line 97
+    invoke-interface {v3, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_3b
+
+    .line 103
+    :cond_48
+    invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-eqz v0, :cond_60
+    new-array v0, v0, [Law/c;
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, LaW/b;
+    check-cast v0, [Law/c;
 
-    iget v4, p0, LaW/a;->g:F
+    iput-object v0, p0, Law/a;->a:[Law/c;
 
-    iget v5, p0, LaW/a;->h:F
+    .line 104
+    invoke-interface {v3}, Ljava/util/List;->size()I
 
-    invoke-virtual {v0, v4, v1, v5, v2}, LaW/b;->a(FFFF)Z
+    move-result v0
 
-    goto :goto_47
+    new-array v0, v0, [Law/c;
 
-    :catchall_5b
-    move-exception v0
+    invoke-interface {v3, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    invoke-virtual {v4}, Landroid/graphics/Camera;->restore()V
+    move-result-object v0
 
-    throw v0
+    check-cast v0, [Law/c;
 
-    :cond_60
-    iput v1, p0, LaW/a;->g:F
+    iput-object v0, p0, Law/a;->b:[Law/c;
 
-    iput v2, p0, LaW/a;->h:F
+    goto :goto_17
+.end method
 
+.method public i_()Z
+    .registers 2
+
+    .prologue
+    .line 58
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public k()Z
+    .registers 3
+
+    .prologue
+    .line 125
+    iget v0, p0, Law/a;->c:I
+
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_7
+
+    const/4 v0, 0x1
+
+    :goto_6
+    return v0
+
+    :cond_7
+    const/4 v0, 0x0
+
+    goto :goto_6
+.end method
+
+.method public l()Z
+    .registers 3
+
+    .prologue
+    .line 136
+    iget v0, p0, Law/a;->c:I
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_7
+
+    const/4 v0, 0x1
+
+    :goto_6
+    return v0
+
+    :cond_7
+    const/4 v0, 0x0
+
+    goto :goto_6
+.end method
+
+.method public l_()V
+    .registers 4
+
+    .prologue
+    .line 111
+    iget-object v0, p0, Law/a;->d:Law/b;
+
+    if-eqz v0, :cond_11
+
+    .line 112
+    iget-object v0, p0, Law/a;->a:[Law/c;
+
+    if-eqz v0, :cond_c
+
+    iget-object v0, p0, Law/a;->b:[Law/c;
+
+    if-nez v0, :cond_12
+
+    .line 113
+    :cond_c
+    iget-object v0, p0, Law/a;->d:Law/b;
+
+    invoke-interface {v0}, Law/b;->d()V
+
+    .line 118
+    :cond_11
+    :goto_11
     return-void
+
+    .line 115
+    :cond_12
+    iget-object v0, p0, Law/a;->d:Law/b;
+
+    iget-object v1, p0, Law/a;->a:[Law/c;
+
+    iget-object v2, p0, Law/a;->b:[Law/c;
+
+    invoke-interface {v0, v1, v2}, Law/b;->a([Law/c;[Law/c;)V
+
+    goto :goto_11
 .end method

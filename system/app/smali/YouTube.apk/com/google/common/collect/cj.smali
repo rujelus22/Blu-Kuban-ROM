@@ -1,156 +1,93 @@
-.class public Lcom/google/common/collect/cj;
-.super Lcom/google/common/collect/bx;
+.class final Lcom/google/common/collect/cj;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lcom/google/common/collect/gs;
 
 
 # instance fields
-.field final a:Ljava/util/ArrayList;
+.field final a:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Ljava/lang/Object;)V
     .registers 2
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 471
-    invoke-direct {p0}, Lcom/google/common/collect/bx;-><init>()V
+    .line 252
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 465
-    new-instance v0, Ljava/util/ArrayList;
+    .line 253
+    iput-object p1, p0, Lcom/google/common/collect/cj;->a:Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/google/common/collect/cj;->a:Ljava/util/ArrayList;
-
-    .line 471
+    .line 254
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic a(Ljava/lang/Iterable;)Lcom/google/common/collect/bx;
+.method public final a()Lcom/google/common/collect/gg;
+    .registers 2
+
+    .prologue
+    .line 263
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public final a(Ljava/lang/ref/ReferenceQueue;Lcom/google/common/collect/gg;)Lcom/google/common/collect/gs;
     .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 463
-    invoke-virtual {p0, p1}, Lcom/google/common/collect/cj;->b(Ljava/lang/Iterable;)Lcom/google/common/collect/cj;
+    .line 268
+    return-object p0
+.end method
+
+.method public final a(Lcom/google/common/collect/gs;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 282
+    return-void
+.end method
+
+.method public final b()Z
+    .registers 2
+
+    .prologue
+    .line 273
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final c()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 278
+    invoke-virtual {p0}, Lcom/google/common/collect/cj;->get()Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public synthetic a(Ljava/lang/Object;)Lcom/google/common/collect/bx;
-    .registers 3
-    .parameter
+.method public final get()Ljava/lang/Object;
+    .registers 2
 
     .prologue
-    .line 463
-    invoke-virtual {p0, p1}, Lcom/google/common/collect/cj;->b(Ljava/lang/Object;)Lcom/google/common/collect/cj;
-
-    move-result-object v0
+    .line 258
+    iget-object v0, p0, Lcom/google/common/collect/cj;->a:Ljava/lang/Object;
 
     return-object v0
-.end method
-
-.method public synthetic a([Ljava/lang/Object;)Lcom/google/common/collect/bx;
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 463
-    invoke-virtual {p0, p1}, Lcom/google/common/collect/cj;->b([Ljava/lang/Object;)Lcom/google/common/collect/cj;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public b(Ljava/lang/Iterable;)Lcom/google/common/collect/cj;
-    .registers 5
-    .parameter
-
-    .prologue
-    .line 513
-    instance-of v0, p1, Ljava/util/Collection;
-
-    if-eqz v0, :cond_17
-
-    move-object v0, p1
-
-    .line 514
-    check-cast v0, Ljava/util/Collection;
-
-    .line 515
-    iget-object v1, p0, Lcom/google/common/collect/cj;->a:Ljava/util/ArrayList;
-
-    iget-object v2, p0, Lcom/google/common/collect/cj;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    invoke-interface {v0}, Ljava/util/Collection;->size()I
-
-    move-result v0
-
-    add-int/2addr v0, v2
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->ensureCapacity(I)V
-
-    .line 517
-    :cond_17
-    invoke-super {p0, p1}, Lcom/google/common/collect/bx;->a(Ljava/lang/Iterable;)Lcom/google/common/collect/bx;
-
-    .line 518
-    return-object p0
-.end method
-
-.method public b(Ljava/lang/Object;)Lcom/google/common/collect/cj;
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 483
-    iget-object v0, p0, Lcom/google/common/collect/cj;->a:Ljava/util/ArrayList;
-
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 484
-    return-object p0
-.end method
-
-.method public varargs b([Ljava/lang/Object;)Lcom/google/common/collect/cj;
-    .registers 5
-    .parameter
-
-    .prologue
-    .line 497
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 498
-    iget-object v0, p0, Lcom/google/common/collect/cj;->a:Ljava/util/ArrayList;
-
-    iget-object v1, p0, Lcom/google/common/collect/cj;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
-
-    array-length v2, p1
-
-    add-int/2addr v1, v2
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->ensureCapacity(I)V
-
-    .line 499
-    invoke-super {p0, p1}, Lcom/google/common/collect/bx;->a([Ljava/lang/Object;)Lcom/google/common/collect/bx;
-
-    .line 500
-    return-object p0
 .end method

@@ -242,18 +242,18 @@
     <string name="account_intro_recommended_title">تنظیم Google</string>
     <string name="common_message">"یک حساب Google به شما اجازه میدهد 
 
-"<li><ul>همه اطلاعات خود را از هر جایی مشاهده کرده و سازماندهی کنید.</ul></li>"
+"<ul><li>همه اطلاعات خود را از هر جایی مشاهده کرده و سازماندهی کنید.</li></ul>"
 
-"<li><ul> بطور خودکار از داده‌های خود نسخه پشتیبان بگیرید.</ul></li>"
+"<ul><li> بطور خودکار از داده‌های خود نسخه پشتیبان بگیرید.</li></ul>"
 
-"<li><ul>از سرویس‌های Google به راحتی از هر جایی استفاده کنید.</ul></li></string>
+"<ul><li>از سرویس‌های Google به راحتی از هر جایی استفاده کنید.</li></ul></string>
     <string name="add_account_message">" شما می‌توانید بیش از یک حساب Google (مانند حساب خانه یا کار) استفاده کنید. برای اضافه کردن یک حساب Google، "<b>ثبت نام</b> یا <b>ایجاد حساب</b> را لمس کنید.</string>
     <string name="account_intro_default_message">دیگر چیزهای خود را از دست نخواهید داد. یک حساب Google همه چیز را امن نگه میدارد.</string>
     <string name="account_intro_custom_endtext">%s دارید؟ اکنون وارد سیستم شوید.</string>
     <string name="account_intro_simple_message">آیا می‌خواهید یک حساب موجود اضافه کنید یا یک حساب جدید ایجاد کنید؟</string>
     <string name="learn_more_title"><annotation id="learn_more">بیشتر بیاموزید</annotation></string>
     <string name="learn_more_account_intro">"یک حساب Google به شما امکان می‌دهد تا
-"<li><ul>تمام اطلاعاتتان را از هرکجا سازماندهی و مشاهده نمایید.<li>به صورت خودکار از داده‌های شما مانند ایمیل، مخاطبین، موسیقی، و تصاویر، نسخه پشتیبان تهیه می‌کند.</li><li>از سرویس‌های Google از جمله مخاطبین، تقویم، نقشه‌ها، و موارد دیگر به راحتی در همه‌ جا استفاده کنید.</li></ul></li></string>
+"<ul><li>تمام اطلاعاتتان را از هرکجا سازماندهی و مشاهده نمایید.<li>به صورت خودکار از داده‌های شما مانند ایمیل، مخاطبین، موسیقی، و تصاویر، نسخه پشتیبان تهیه می‌کند.</li><li>از سرویس‌های Google از جمله مخاطبین، تقویم، نقشه‌ها، و موارد دیگر به راحتی در همه‌ جا استفاده کنید.</li></li></ul></string>
     <string name="learn_more_account_intro_title">درباره حساب Google</string>
     <string name="learn_more_web_history">"Web History نتایج جستجو را بر اساس آنچه که شما جستجو کرده‌اید و سایت‌هایی که بازدید کرده‌اید تنظیم می‌کند، و یک تجربه شخصی Google ارائه می‌دهد.
 

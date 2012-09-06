@@ -1,33 +1,49 @@
-.class LaM/h;
+.class public abstract LaM/h;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements LaM/w;
+
+
+# static fields
+.field protected static a:Landroid/view/ViewGroup;
+
+.field protected static b:Lcom/google/googlenav/ui/android/BaseAndroidView;
 
 
 # instance fields
-.field final synthetic a:LaM/g;
+.field protected final c:LaM/i;
 
 
 # direct methods
-.method constructor <init>(LaM/g;)V
+.method public constructor <init>(LaM/i;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, LaM/h;->a:LaM/g;
-
+    .prologue
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 40
+    iput-object p1, p0, LaM/h;->c:LaM/i;
+
+    .line 41
     return-void
 .end method
 
-
-# virtual methods
-.method public run()V
+.method public static a(Landroid/view/ViewGroup;Lcom/google/googlenav/ui/android/BaseAndroidView;)V
     .registers 2
+    .parameter
+    .parameter
 
-    iget-object v0, p0, LaM/h;->a:LaM/g;
+    .prologue
+    .line 35
+    sput-object p0, LaM/h;->a:Landroid/view/ViewGroup;
 
-    invoke-static {v0}, LaM/g;->a(LaM/g;)V
+    .line 36
+    sput-object p1, LaM/h;->b:Lcom/google/googlenav/ui/android/BaseAndroidView;
 
+    .line 37
     return-void
 .end method

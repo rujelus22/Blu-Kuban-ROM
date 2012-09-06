@@ -32,7 +32,7 @@
     .registers 1
 
     .prologue
-    .line 99
+    .line 115
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,26 +47,26 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 102
+    .line 118
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
-    .line 103
+    .line 119
     .local v3, urlMapCount:I
-    invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
+    new-instance v4, Ljava/util/ArrayList;
 
-    move-result-object v4
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 104
+    .line 120
     .local v4, urls:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;>;"
     const/4 v2, 0x0
 
     .local v2, i:I
-    :goto_a
-    if-ge v2, v3, :cond_1f
+    :goto_b
+    if-ge v2, v3, :cond_20
 
-    .line 105
+    .line 121
     new-instance v5, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -81,28 +81,28 @@
 
     invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 104
+    .line 120
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_a
+    goto :goto_b
 
-    .line 107
-    :cond_1f
+    .line 123
+    :cond_20
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 108
+    .line 124
     .local v1, count:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    if-ne v5, v0, :cond_30
+    if-ne v5, v0, :cond_31
 
-    .line 109
+    .line 125
     .local v0, autoLoadNextPage:Z
-    :goto_29
+    :goto_2a
     new-instance v5, Lcom/google/android/finsky/api/model/DfeList;
 
     const/4 v6, 0x0
@@ -111,12 +111,12 @@
 
     return-object v5
 
-    .line 108
+    .line 124
     .end local v0           #autoLoadNextPage:Z
-    :cond_30
+    :cond_31
     const/4 v0, 0x0
 
-    goto :goto_29
+    goto :goto_2a
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -124,7 +124,7 @@
     .parameter "x0"
 
     .prologue
-    .line 99
+    .line 115
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/api/model/DfeList$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/finsky/api/model/DfeList;
 
     move-result-object v0
@@ -137,7 +137,7 @@
     .parameter "size"
 
     .prologue
-    .line 114
+    .line 130
     new-array v0, p1, [Lcom/google/android/finsky/api/model/DfeList;
 
     return-object v0
@@ -148,7 +148,7 @@
     .parameter "x0"
 
     .prologue
-    .line 99
+    .line 115
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/api/model/DfeList$1;->newArray(I)[Lcom/google/android/finsky/api/model/DfeList;
 
     move-result-object v0

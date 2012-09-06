@@ -58,7 +58,7 @@
     <string name="prefDefaultTitlePrefix_language">Predeterminado - %s</string>
     <string name="general_category">General</string>
     <string name="language_selection_title">Idiomas de entrada</string>
-    <string name="select_language">Seleccionar idiomas de entrada</string>
+    <string name="select_language">Seleccionar los idiomas de entrada.</string>
     <string name="voice_ime_language_af_za">Afrikáans (Sudáfrica)</string>
     <string name="voice_ime_language_ar_dz">Árabe (Argelia)</string>
     <string name="voice_ime_language_ar_eg">Árabe (Egipto)</string>
@@ -194,7 +194,7 @@
     <string name="voice_ime_language_vi_vn">Vietnamita (Vietnam)</string>
     <string name="voice_ime_language_ts_za">Xitsonga (Sudáfrica)</string>
     <string name="prefTitle_safeSearch">SafeSearch</string>
-    <string name="prefSummary_safeSearchOff">Desactivado — No filtrar mis resultados de búsqueda</string>
+    <string name="prefSummary_safeSearchOff">Apagado — No filtrar mis resultados de búsqueda</string>
     <string name="prefSummary_safeSearchModerate">Moderado — Filtrar imágenes explícitas solamente</string>
     <string name="prefSummary_safeSearchStrict">Estricto: Se filtran el texto explícito y las imágenes explícitas.</string>
     <string name="prefSummary_safeSearchSuffix">Solo se aplica a la Búsqueda por voz de Google.</string>
@@ -274,5 +274,5 @@ Visita el sitio web que aparece a continuación para obtener una lista con más 
     <string name="ime_language_option_title">Seleccionar idioma de dictado</string>
     <string name="ime_option_add_more_languages">Agregar más idiomas</string>
     <string name="ime_option_add_remove_languages">Agregar o eliminar idiomas</string>
-    <string name="voice_ime_language_auto">Automático</string>
+    <string name="voice_ime_language_auto">Automática</string>
 </resources>

@@ -12,10 +12,10 @@
     .parameter "input"
 
     .prologue
-    .line 46
+    .line 47
     invoke-direct {p0, p1}, Lorg/apache/commons/io/input/ProxyInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 47
+    .line 48
     return-void
 .end method
 
@@ -31,7 +31,7 @@
     .end annotation
 
     .prologue
-    .line 57
+    .line 59
     invoke-virtual {p0}, Lorg/apache/commons/io/input/SwappedDataInputStream;->readByte()B
 
     move-result v0
@@ -59,7 +59,7 @@
     .end annotation
 
     .prologue
-    .line 68
+    .line 71
     iget-object v0, p0, Lorg/apache/commons/io/input/SwappedDataInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->read()I
@@ -81,7 +81,7 @@
     .end annotation
 
     .prologue
-    .line 79
+    .line 83
     invoke-virtual {p0}, Lorg/apache/commons/io/input/SwappedDataInputStream;->readShort()S
 
     move-result v0
@@ -101,7 +101,7 @@
     .end annotation
 
     .prologue
-    .line 90
+    .line 95
     iget-object v0, p0, Lorg/apache/commons/io/input/SwappedDataInputStream;->in:Ljava/io/InputStream;
 
     invoke-static {v0}, Lorg/apache/commons/io/EndianUtils;->readSwappedDouble(Ljava/io/InputStream;)D
@@ -121,7 +121,7 @@
     .end annotation
 
     .prologue
-    .line 101
+    .line 107
     iget-object v0, p0, Lorg/apache/commons/io/input/SwappedDataInputStream;->in:Ljava/io/InputStream;
 
     invoke-static {v0}, Lorg/apache/commons/io/EndianUtils;->readSwappedFloat(Ljava/io/InputStream;)F
@@ -142,14 +142,14 @@
     .end annotation
 
     .prologue
-    .line 112
+    .line 120
     const/4 v0, 0x0
 
     array-length v1, p1
 
     invoke-virtual {p0, p1, v0, v1}, Lorg/apache/commons/io/input/SwappedDataInputStream;->readFully([BII)V
 
-    .line 113
+    .line 121
     return-void
 .end method
 
@@ -166,46 +166,46 @@
     .end annotation
 
     .prologue
-    .line 125
+    .line 136
     move v2, p3
 
-    .line 127
+    .line 138
     .local v2, remaining:I
     :goto_1
     if-lez v2, :cond_16
 
-    .line 128
+    .line 140
     sub-int v3, p3, v2
 
     add-int v1, p2, v3
 
-    .line 129
+    .line 141
     .local v1, location:I
     invoke-virtual {p0, p1, v1, v2}, Lorg/apache/commons/io/input/SwappedDataInputStream;->read([BII)I
 
     move-result v0
 
-    .line 131
+    .line 143
     .local v0, count:I
     const/4 v3, -0x1
 
     if-ne v3, v0, :cond_14
 
-    .line 132
+    .line 145
     new-instance v3, Ljava/io/EOFException;
 
     invoke-direct {v3}, Ljava/io/EOFException;-><init>()V
 
     throw v3
 
-    .line 135
+    .line 148
     :cond_14
     sub-int/2addr v2, v0
 
-    .line 136
+    .line 149
     goto :goto_1
 
-    .line 137
+    .line 150
     .end local v0           #count:I
     .end local v1           #location:I
     :cond_16
@@ -222,7 +222,7 @@
     .end annotation
 
     .prologue
-    .line 147
+    .line 161
     iget-object v0, p0, Lorg/apache/commons/io/input/SwappedDataInputStream;->in:Ljava/io/InputStream;
 
     invoke-static {v0}, Lorg/apache/commons/io/EndianUtils;->readSwappedInteger(Ljava/io/InputStream;)I
@@ -242,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 158
+    .line 173
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Operation not supported: readLine()"
@@ -262,7 +262,7 @@
     .end annotation
 
     .prologue
-    .line 169
+    .line 186
     iget-object v0, p0, Lorg/apache/commons/io/input/SwappedDataInputStream;->in:Ljava/io/InputStream;
 
     invoke-static {v0}, Lorg/apache/commons/io/EndianUtils;->readSwappedLong(Ljava/io/InputStream;)J
@@ -282,7 +282,7 @@
     .end annotation
 
     .prologue
-    .line 180
+    .line 198
     iget-object v0, p0, Lorg/apache/commons/io/input/SwappedDataInputStream;->in:Ljava/io/InputStream;
 
     invoke-static {v0}, Lorg/apache/commons/io/EndianUtils;->readSwappedShort(Ljava/io/InputStream;)S
@@ -302,7 +302,7 @@
     .end annotation
 
     .prologue
-    .line 213
+    .line 234
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Operation not supported: readUTF()"
@@ -322,7 +322,7 @@
     .end annotation
 
     .prologue
-    .line 191
+    .line 210
     iget-object v0, p0, Lorg/apache/commons/io/input/SwappedDataInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->read()I
@@ -342,7 +342,7 @@
     .end annotation
 
     .prologue
-    .line 202
+    .line 222
     iget-object v0, p0, Lorg/apache/commons/io/input/SwappedDataInputStream;->in:Ljava/io/InputStream;
 
     invoke-static {v0}, Lorg/apache/commons/io/EndianUtils;->readSwappedUnsignedShort(Ljava/io/InputStream;)I
@@ -363,7 +363,7 @@
     .end annotation
 
     .prologue
-    .line 225
+    .line 248
     iget-object v0, p0, Lorg/apache/commons/io/input/SwappedDataInputStream;->in:Ljava/io/InputStream;
 
     int-to-long v1, p1

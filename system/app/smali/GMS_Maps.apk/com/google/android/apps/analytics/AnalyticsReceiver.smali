@@ -2,12 +2,6 @@
 .super Landroid/content/BroadcastReceiver;
 
 
-# static fields
-.field static final INSTALL_ACTION:Ljava/lang/String; = "com.android.vending.INSTALL_REFERRER"
-
-.field static final REFERRER_KEY:Ljava/lang/String; = "referrer"
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -69,11 +63,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v1, Lcom/google/android/apps/analytics/PersistentHitStore;
+    new-instance v1, Lcom/google/android/apps/analytics/x;
 
-    invoke-direct {v1, p1}, Lcom/google/android/apps/analytics/PersistentHitStore;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, p1}, Lcom/google/android/apps/analytics/x;-><init>(Landroid/content/Context;)V
 
-    invoke-interface {v1, v0}, Lcom/google/android/apps/analytics/HitStore;->setReferrer(Ljava/lang/String;)Z
+    invoke-interface {v1, v0}, Lcom/google/android/apps/analytics/o;->a(Ljava/lang/String;)Z
 
     move-result v0
 

@@ -1,55 +1,124 @@
-.class Lcom/google/googlenav/ui/wizard/hc;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lbd/as;
+.class final Lcom/google/googlenav/ui/wizard/hC;
+.super Landroid/widget/ArrayAdapter;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/gY;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/hx;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/gY;)V
-    .registers 2
+.method private constructor <init>(Lcom/google/googlenav/ui/wizard/hx;Landroid/content/Context;)V
+    .registers 4
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/hc;->a:Lcom/google/googlenav/ui/wizard/gY;
+    .prologue
+    .line 264
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/hC;->a:Lcom/google/googlenav/ui/wizard/hx;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 265
+    const v0, 0x1020014
+
+    invoke-direct {p0, p2, v0}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I)V
+
+    .line 266
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/googlenav/ui/wizard/hx;Landroid/content/Context;Lcom/google/googlenav/ui/wizard/hy;)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 262
+    invoke-direct {p0, p1, p2}, Lcom/google/googlenav/ui/wizard/hC;-><init>(Lcom/google/googlenav/ui/wizard/hx;Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/location/Address;)V
-    .registers 10
+.method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
 
-    const-wide v6, 0x416312d000000000L
+    .prologue
+    .line 272
+    if-nez p2, :cond_39
 
-    invoke-static {p1}, Lbd/aq;->a(Landroid/location/Address;)Ljava/lang/String;
+    .line 273
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hC;->a:Lcom/google/googlenav/ui/wizard/hx;
 
-    move-result-object v1
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/hx;->a(Lcom/google/googlenav/ui/wizard/hx;)Landroid/view/LayoutInflater;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hc;->a:Lcom/google/googlenav/ui/wizard/gY;
+    move-result-object v0
 
-    invoke-virtual {p1}, Landroid/location/Address;->getLatitude()D
+    const v1, 0x1090003
 
-    move-result-wide v2
+    const/4 v2, 0x0
 
-    mul-double/2addr v2, v6
+    invoke-virtual {v0, v1, p3, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    double-to-long v2, v2
+    move-result-object p2
 
-    invoke-virtual {p1}, Landroid/location/Address;->getLongitude()D
+    .line 274
+    new-instance v1, Lcom/google/googlenav/ui/wizard/hD;
 
-    move-result-wide v4
+    const/4 v0, 0x0
 
-    mul-double/2addr v4, v6
+    invoke-direct {v1, v0}, Lcom/google/googlenav/ui/wizard/hD;-><init>(Lcom/google/googlenav/ui/wizard/hy;)V
 
-    double-to-long v4, v4
+    .line 275
+    const v0, 0x1020014
 
-    invoke-static/range {v0 .. v5}, Lcom/google/googlenav/ui/wizard/gY;->a(Lcom/google/googlenav/ui/wizard/gY;Ljava/lang/String;JJ)V
+    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    return-void
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, v1, Lcom/google/googlenav/ui/wizard/hD;->a:Landroid/widget/TextView;
+
+    .line 277
+    invoke-virtual {p2, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    move-object v0, v1
+
+    .line 282
+    :goto_25
+    iget-object v1, v0, Lcom/google/googlenav/ui/wizard/hD;->a:Landroid/widget/TextView;
+
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hC;->a:Lcom/google/googlenav/ui/wizard/hx;
+
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/hx;->c(Lcom/google/googlenav/ui/wizard/hx;)Landroid/widget/ArrayAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/widget/ArrayAdapter;->getItem(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlenav/ui/wizard/hz;
+
+    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/hz;->a:Ljava/lang/CharSequence;
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 284
+    return-object p2
+
+    .line 279
+    :cond_39
+    invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlenav/ui/wizard/hD;
+
+    goto :goto_25
 .end method

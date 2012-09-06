@@ -29,6 +29,12 @@
         <item>Alleen indien stil</item>
         <item>Nooit</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>uit</item>
+        <item>laag</item>
+        <item>gemiddeld</item>
+        <item>virtueel</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Geen</item>
         <item>Beeldstabilisatie: laag</item>

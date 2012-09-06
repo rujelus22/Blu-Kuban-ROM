@@ -22,7 +22,7 @@
     iput-object p1, p0, Lcom/google/common/collect/RegularImmutableBiMap;->delegate:Lcom/google/common/collect/ImmutableMap;
 
     .line 35
-    invoke-static {}, Lcom/google/common/collect/ImmutableMap;->builder()Lcom/google/common/collect/ca;
+    invoke-static {}, Lcom/google/common/collect/ImmutableMap;->builder()Lcom/google/common/collect/dm;
 
     move-result-object v1
 
@@ -57,13 +57,13 @@
 
     move-result-object v0
 
-    invoke-virtual {v1, v3, v0}, Lcom/google/common/collect/ca;->a(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ca;
+    invoke-virtual {v1, v3, v0}, Lcom/google/common/collect/dm;->a(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/dm;
 
     goto :goto_11
 
     .line 39
     :cond_29
-    invoke-virtual {v1}, Lcom/google/common/collect/ca;->a()Lcom/google/common/collect/ImmutableMap;
+    invoke-virtual {v1}, Lcom/google/common/collect/dm;->a()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
 
@@ -119,7 +119,7 @@
     return-object v0
 .end method
 
-.method public bridge synthetic inverse()Lcom/google/common/collect/as;
+.method public bridge synthetic inverse()Lcom/google/common/collect/bj;
     .registers 2
 
     .prologue
@@ -129,4 +129,41 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method isPartialView()Z
+    .registers 2
+
+    .prologue
+    .line 58
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableBiMap;->delegate:Lcom/google/common/collect/ImmutableMap;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->isPartialView()Z
+
+    move-result v0
+
+    if-nez v0, :cond_14
+
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableBiMap;->inverse:Lcom/google/common/collect/ImmutableBiMap;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->isPartialView()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_16
+
+    :cond_14
+    const/4 v0, 0x1
+
+    :goto_15
+    return v0
+
+    :cond_16
+    const/4 v0, 0x0
+
+    goto :goto_15
 .end method

@@ -28,7 +28,7 @@
 
     const/4 v2, 0x0
 
-    .line 66
+    .line 72
     new-instance v0, Lcom/google/common/collect/AbstractIterator$State;
 
     const-string v1, "READY"
@@ -37,7 +37,7 @@
 
     sput-object v0, Lcom/google/common/collect/AbstractIterator$State;->READY:Lcom/google/common/collect/AbstractIterator$State;
 
-    .line 69
+    .line 75
     new-instance v0, Lcom/google/common/collect/AbstractIterator$State;
 
     const-string v1, "NOT_READY"
@@ -46,7 +46,7 @@
 
     sput-object v0, Lcom/google/common/collect/AbstractIterator$State;->NOT_READY:Lcom/google/common/collect/AbstractIterator$State;
 
-    .line 72
+    .line 78
     new-instance v0, Lcom/google/common/collect/AbstractIterator$State;
 
     const-string v1, "DONE"
@@ -55,7 +55,7 @@
 
     sput-object v0, Lcom/google/common/collect/AbstractIterator$State;->DONE:Lcom/google/common/collect/AbstractIterator$State;
 
-    .line 75
+    .line 81
     new-instance v0, Lcom/google/common/collect/AbstractIterator$State;
 
     const-string v1, "FAILED"
@@ -64,7 +64,7 @@
 
     sput-object v0, Lcom/google/common/collect/AbstractIterator$State;->FAILED:Lcom/google/common/collect/AbstractIterator$State;
 
-    .line 64
+    .line 70
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/google/common/collect/AbstractIterator$State;
@@ -96,7 +96,7 @@
     .parameter
 
     .prologue
-    .line 64
+    .line 70
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -107,7 +107,7 @@
     .parameter
 
     .prologue
-    .line 64
+    .line 70
     const-class v0, Lcom/google/common/collect/AbstractIterator$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -123,7 +123,7 @@
     .registers 1
 
     .prologue
-    .line 64
+    .line 70
     sget-object v0, Lcom/google/common/collect/AbstractIterator$State;->$VALUES:[Lcom/google/common/collect/AbstractIterator$State;
 
     invoke-virtual {v0}, [Lcom/google/common/collect/AbstractIterator$State;->clone()Ljava/lang/Object;

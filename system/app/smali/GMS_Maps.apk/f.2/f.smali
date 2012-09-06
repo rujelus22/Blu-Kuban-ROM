@@ -1,165 +1,140 @@
-.class Lf/f;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/content/ServiceConnection;
+.class public Lf/f;
+.super Lorg/apache/http/entity/HttpEntityWrapper;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lf/c;
+.field private final a:Ljava/lang/String;
 
-.field private b:Lcom/google/android/location/internal/d;
+.field private final b:I
+
+.field private final c:J
+
+.field private final d:J
+
+.field private final e:J
+
+.field private final f:J
 
 
 # direct methods
-.method private constructor <init>(Lf/c;)V
-    .registers 2
+.method public constructor <init>(Lorg/apache/http/HttpEntity;Ljava/lang/String;IJJJJ)V
+    .registers 12
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lf/f;->a:Lf/c;
+    .prologue
+    .line 65
+    invoke-direct {p0, p1}, Lorg/apache/http/entity/HttpEntityWrapper;-><init>(Lorg/apache/http/HttpEntity;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 66
+    iput-object p2, p0, Lf/f;->a:Ljava/lang/String;
 
+    .line 67
+    iput p3, p0, Lf/f;->b:I
+
+    .line 68
+    iput-wide p4, p0, Lf/f;->c:J
+
+    .line 69
+    iput-wide p6, p0, Lf/f;->d:J
+
+    .line 70
+    iput-wide p8, p0, Lf/f;->e:J
+
+    .line 71
+    iput-wide p10, p0, Lf/f;->f:J
+
+    .line 72
     return-void
 .end method
 
-.method synthetic constructor <init>(Lf/c;Lf/d;)V
+.method static synthetic a(Lf/f;)J
     .registers 3
+    .parameter
 
-    invoke-direct {p0, p1}, Lf/f;-><init>(Lf/c;)V
+    .prologue
+    .line 30
+    iget-wide v0, p0, Lf/f;->f:J
 
-    return-void
+    return-wide v0
 .end method
 
-.method static synthetic a(Lf/f;)Lcom/google/android/location/internal/d;
+.method static synthetic b(Lf/f;)I
     .registers 2
+    .parameter
 
-    iget-object v0, p0, Lf/f;->b:Lcom/google/android/location/internal/d;
+    .prologue
+    .line 30
+    iget v0, p0, Lf/f;->b:I
+
+    return v0
+.end method
+
+.method static synthetic c(Lf/f;)Ljava/lang/String;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 30
+    iget-object v0, p0, Lf/f;->a:Ljava/lang/String;
 
     return-object v0
 .end method
 
+.method static synthetic d(Lf/f;)J
+    .registers 3
+    .parameter
 
-# virtual methods
-.method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .registers 6
+    .prologue
+    .line 30
+    iget-wide v0, p0, Lf/f;->e:J
 
-    iget-object v0, p0, Lf/f;->a:Lf/c;
-
-    invoke-static {v0}, Lf/c;->b(Lf/c;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    monitor-enter v1
-
-    :try_start_7
-    iget-object v0, p0, Lf/f;->a:Lf/c;
-
-    invoke-static {v0}, Lf/c;->c(Lf/c;)Lf/f;
-
-    move-result-object v0
-
-    if-eq p0, v0, :cond_1f
-
-    iget-object v0, p0, Lf/f;->a:Lf/c;
-
-    invoke-static {v0}, Lf/c;->d(Lf/c;)Lf/e;
-
-    move-result-object v0
-
-    const/4 v2, 0x2
-
-    invoke-static {v0, v2, p0}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    monitor-exit v1
-
-    :goto_1e
-    return-void
-
-    :cond_1f
-    iget-object v0, p0, Lf/f;->a:Lf/c;
-
-    invoke-static {v0}, Lf/c;->e(Lf/c;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2c
-
-    :goto_27
-    monitor-exit v1
-
-    goto :goto_1e
-
-    :catchall_29
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_2b
-    .catchall {:try_start_7 .. :try_end_2b} :catchall_29
-
-    throw v0
-
-    :cond_2c
-    :try_start_2c
-    iget-object v0, p0, Lf/f;->b:Lcom/google/android/location/internal/d;
-
-    if-eqz v0, :cond_30
-
-    :cond_30
-    invoke-static {p2}, Lcom/google/android/location/internal/e;->a(Landroid/os/IBinder;)Lcom/google/android/location/internal/d;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lf/f;->b:Lcom/google/android/location/internal/d;
-
-    iget-object v0, p0, Lf/f;->a:Lf/c;
-
-    invoke-static {v0}, Lf/c;->d(Lf/c;)Lf/e;
-
-    move-result-object v0
-
-    const/4 v2, 0x1
-
-    invoke-static {v0, v2, p0}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-    :try_end_44
-    .catchall {:try_start_2c .. :try_end_44} :catchall_29
-
-    goto :goto_27
+    return-wide v0
 .end method
 
-.method public onServiceDisconnected(Landroid/content/ComponentName;)V
-    .registers 4
+.method static synthetic e(Lf/f;)J
+    .registers 3
+    .parameter
 
-    iget-object v0, p0, Lf/f;->a:Lf/c;
+    .prologue
+    .line 30
+    iget-wide v0, p0, Lf/f;->c:J
 
-    invoke-static {v0}, Lf/c;->b(Lf/c;)Ljava/lang/Object;
+    return-wide v0
+.end method
 
-    move-result-object v1
+.method static synthetic f(Lf/f;)J
+    .registers 3
+    .parameter
 
-    monitor-enter v1
+    .prologue
+    .line 30
+    iget-wide v0, p0, Lf/f;->d:J
 
-    const/4 v0, 0x0
+    return-wide v0
+.end method
 
-    :try_start_8
-    iput-object v0, p0, Lf/f;->b:Lcom/google/android/location/internal/d;
 
-    monitor-exit v1
+# virtual methods
+.method public getContent()Ljava/io/InputStream;
+    .registers 3
 
-    return-void
+    .prologue
+    .line 76
+    invoke-super {p0}, Lorg/apache/http/entity/HttpEntityWrapper;->getContent()Ljava/io/InputStream;
 
-    :catchall_c
-    move-exception v0
+    move-result-object v0
 
-    monitor-exit v1
-    :try_end_e
-    .catchall {:try_start_8 .. :try_end_e} :catchall_c
+    .line 77
+    new-instance v1, Lf/g;
 
-    throw v0
+    invoke-direct {v1, p0, v0}, Lf/g;-><init>(Lf/f;Ljava/io/InputStream;)V
+
+    return-object v1
 .end method

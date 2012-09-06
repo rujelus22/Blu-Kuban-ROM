@@ -1,45 +1,61 @@
 .class final Lcom/google/common/collect/ev;
-.super Lcom/google/common/collect/et;
+.super Ljava/util/AbstractSequentialList;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/Set;
+
+# instance fields
+.field final synthetic a:Lcom/google/common/collect/LinkedListMultimap;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/Set;)V
+.method constructor <init>(Lcom/google/common/collect/LinkedListMultimap;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 586
-    invoke-direct {p0, p1}, Lcom/google/common/collect/et;-><init>(Ljava/util/Collection;)V
+    .line 846
+    iput-object p1, p0, Lcom/google/common/collect/ev;->a:Lcom/google/common/collect/LinkedListMultimap;
 
-    .line 587
+    invoke-direct {p0}, Ljava/util/AbstractSequentialList;-><init>()V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final listIterator(I)Ljava/util/ListIterator;
+    .registers 4
     .parameter
 
     .prologue
-    .line 592
-    invoke-static {p0, p1}, Lcom/google/common/collect/at;->a(Ljava/util/Set;Ljava/lang/Object;)Z
+    .line 852
+    new-instance v0, Lcom/google/common/collect/fl;
 
-    move-result v0
+    iget-object v1, p0, Lcom/google/common/collect/ev;->a:Lcom/google/common/collect/LinkedListMultimap;
 
-    return v0
+    invoke-direct {v0, v1, p1}, Lcom/google/common/collect/fl;-><init>(Lcom/google/common/collect/LinkedListMultimap;I)V
+
+    .line 853
+    new-instance v1, Lcom/google/common/collect/ew;
+
+    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/ew;-><init>(Lcom/google/common/collect/ev;Lcom/google/common/collect/fl;)V
+
+    return-object v1
 .end method
 
-.method public final hashCode()I
+.method public final size()I
     .registers 2
 
     .prologue
-    .line 596
-    invoke-static {p0}, Lcom/google/common/collect/Sets;->a(Ljava/util/Set;)I
+    .line 848
+    iget-object v0, p0, Lcom/google/common/collect/ev;->a:Lcom/google/common/collect/LinkedListMultimap;
+
+    #getter for: Lcom/google/common/collect/LinkedListMultimap;->keyCount:Lcom/google/common/collect/iq;
+    invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$600(Lcom/google/common/collect/LinkedListMultimap;)Lcom/google/common/collect/iq;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/common/collect/iq;->size()I
 
     move-result v0
 

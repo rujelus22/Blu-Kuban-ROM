@@ -1,54 +1,84 @@
-.class Lcom/google/googlenav/ui/android/A;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/android/FloorPickerView;
+.class public Lcom/google/googlenav/ui/android/a;
+.super Lcom/google/googlenav/t;
+.source "SourceFile"
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/android/FloorPickerView;)V
-    .registers 2
+.method public constructor <init>(Ljava/lang/String;)V
+    .registers 4
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/android/A;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
+    .prologue
+    .line 23
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-static {}, Lcom/google/googlenav/K;->a()Lcom/google/googlenav/K;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/googlenav/K;->b()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, v0}, Lcom/google/googlenav/t;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 7
+.method protected a(I)V
+    .registers 5
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/A;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
+    .prologue
+    .line 30
+    const/16 v0, 0x46
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/android/FloorPickerView;->a(Lcom/google/googlenav/ui/android/FloorPickerView;)I
+    const-string v1, "e"
 
-    move-result v0
+    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    if-eq p3, v0, :cond_11
+    move-result-object v2
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/A;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
+    invoke-static {v0, v1, v2}, LaT/k;->a(ILjava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/android/FloorPickerView;->d(Lcom/google/googlenav/ui/android/FloorPickerView;)Lcom/google/googlenav/ui/D;
+    .line 32
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/android/a;->c()V
 
-    move-result-object v0
+    .line 33
+    return-void
+.end method
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/D;->F()V
+.method public d()V
+    .registers 3
 
-    :cond_11
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/A;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
+    .prologue
+    .line 37
+    const/16 v0, 0x46
 
-    invoke-static {v0, p3}, Lcom/google/googlenav/ui/android/FloorPickerView;->a(Lcom/google/googlenav/ui/android/FloorPickerView;I)V
+    const-string v1, "c"
 
-    sget-object v0, Lcom/google/googlenav/android/D;->a:Lcom/google/googlenav/android/D;
+    invoke-static {v0, v1}, LaT/k;->a(ILjava/lang/String;)V
 
-    invoke-virtual {v0}, Lcom/google/googlenav/android/D;->h()V
+    .line 39
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/android/a;->c()V
 
+    .line 40
     return-void
 .end method

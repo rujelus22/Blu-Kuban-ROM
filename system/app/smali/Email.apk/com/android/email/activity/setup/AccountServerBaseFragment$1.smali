@@ -1,11 +1,14 @@
 .class Lcom/android/email/activity/setup/AccountServerBaseFragment$1;
-.super Landroid/os/AsyncTask;
+.super Ljava/lang/Object;
 .source "AccountServerBaseFragment.java"
+
+# interfaces
+.implements Landroid/view/View$OnFocusChangeListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/setup/AccountServerBaseFragment;->onCheckSettingsComplete(I)V
+    value = Lcom/android/email/activity/setup/AccountServerBaseFragment;->makeTextViewUneditable(Landroid/widget/TextView;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -13,131 +16,94 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Landroid/os/AsyncTask",
-        "<",
-        "Ljava/lang/Void;",
-        "Ljava/lang/Void;",
-        "Ljava/lang/Void;",
-        ">;"
-    }
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Lcom/android/email/activity/setup/AccountServerBaseFragment;
 
-.field final synthetic val$settingsResult:I
+.field final synthetic val$errorMessage:Ljava/lang/String;
+
+.field final synthetic val$view:Landroid/widget/TextView;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/email/activity/setup/AccountServerBaseFragment;I)V
-    .registers 3
+.method constructor <init>(Lcom/android/email/activity/setup/AccountServerBaseFragment;Landroid/widget/TextView;Ljava/lang/String;)V
+    .registers 4
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 344
+    .line 261
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->this$0:Lcom/android/email/activity/setup/AccountServerBaseFragment;
 
-    iput p2, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->val$settingsResult:I
+    iput-object p2, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->val$view:Landroid/widget/TextView;
 
-    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
+    iput-object p3, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->val$errorMessage:Ljava/lang/String;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-    .parameter "x0"
+.method public onFocusChange(Landroid/view/View;Z)V
+    .registers 6
+    .parameter "v"
+    .parameter "hasFocus"
 
     .prologue
-    .line 344
-    check-cast p1, [Ljava/lang/Void;
+    .line 264
+    if-eqz p2, :cond_24
 
-    .end local p1
-    invoke-virtual {p0, p1}, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
+    .line 266
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->this$0:Lcom/android/email/activity/setup/AccountServerBaseFragment;
+
+    iget-object v1, v1, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mContext:Landroid/content/Context;
+
+    const-string v2, "input_method"
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-.method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
-    .registers 4
-    .parameter "params"
+    .line 268
+    .local v0, imm:Landroid/view/inputmethod/InputMethodManager;
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->this$0:Lcom/android/email/activity/setup/AccountServerBaseFragment;
 
-    .prologue
-    .line 347
-    iget v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->val$settingsResult:I
+    invoke-virtual {v1}, Lcom/android/email/activity/setup/AccountServerBaseFragment;->getView()Landroid/view/View;
 
-    if-nez v0, :cond_10
+    move-result-object v1
 
-    .line 348
-    invoke-static {}, Lcom/android/email/activity/setup/SetupData;->getFlowMode()I
+    invoke-virtual {v1}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
-    move-result v0
+    move-result-object v1
 
-    const/4 v1, 0x3
+    const/4 v2, 0x0
 
-    if-ne v0, v1, :cond_12
+    invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 349
-    iget-object v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->this$0:Lcom/android/email/activity/setup/AccountServerBaseFragment;
+    .line 269
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->val$view:Landroid/widget/TextView;
 
-    invoke-virtual {v0}, Lcom/android/email/activity/setup/AccountServerBaseFragment;->saveSettingsAfterEdit()V
+    iget-object v2, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->val$errorMessage:Ljava/lang/String;
 
-    .line 354
-    :cond_10
-    :goto_10
-    const/4 v0, 0x0
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setError(Ljava/lang/CharSequence;)V
 
-    return-object v0
-
-    .line 351
-    :cond_12
-    iget-object v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->this$0:Lcom/android/email/activity/setup/AccountServerBaseFragment;
-
-    invoke-virtual {v0}, Lcom/android/email/activity/setup/AccountServerBaseFragment;->saveSettingsAfterSetup()V
-
-    goto :goto_10
-.end method
-
-.method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
-    .registers 2
-    .parameter "x0"
-
-    .prologue
-    .line 344
-    check-cast p1, Ljava/lang/Void;
-
-    .end local p1
-    invoke-virtual {p0, p1}, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->onPostExecute(Ljava/lang/Void;)V
-
+    .line 273
+    .end local v0           #imm:Landroid/view/inputmethod/InputMethodManager;
+    :goto_23
     return-void
-.end method
 
-.method protected onPostExecute(Ljava/lang/Void;)V
-    .registers 5
-    .parameter "result"
+    .line 271
+    :cond_24
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->val$view:Landroid/widget/TextView;
 
-    .prologue
-    .line 360
-    iget-object v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->this$0:Lcom/android/email/activity/setup/AccountServerBaseFragment;
+    const/4 v2, 0x0
 
-    iget-object v0, v0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCallback:Lcom/android/email/activity/setup/AccountServerBaseFragment$Callback;
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setError(Ljava/lang/CharSequence;)V
 
-    iget v1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->val$settingsResult:I
-
-    invoke-static {}, Lcom/android/email/activity/setup/SetupData;->getFlowMode()I
-
-    move-result v2
-
-    invoke-interface {v0, v1, v2}, Lcom/android/email/activity/setup/AccountServerBaseFragment$Callback;->onCheckSettingsComplete(II)V
-
-    .line 361
-    return-void
+    goto :goto_23
 .end method

@@ -6,6 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/android/finsky/remoting/protos/BuyInstruments$RedeemGiftCardResponse;,
+        Lcom/google/android/finsky/remoting/protos/BuyInstruments$RedeemGiftCardRequest;,
+        Lcom/google/android/finsky/remoting/protos/BuyInstruments$InstrumentSetupInfoResponse;,
         Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;,
         Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;,
         Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentRequest;

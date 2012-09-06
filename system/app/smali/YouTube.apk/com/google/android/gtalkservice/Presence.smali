@@ -871,7 +871,7 @@
     .line 550
     iget-object v0, p0, Lcom/google/android/gtalkservice/Presence;->mStatus:Ljava/lang/String;
 
-    if-nez v0, :cond_74
+    if-nez v0, :cond_70
 
     const-string v0, ""
 
@@ -881,13 +881,9 @@
     .line 551
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, ", invisible="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-boolean v1, p0, Lcom/google/android/gtalkservice/Presence;->mInvisible:Z
 
@@ -919,7 +915,7 @@
     .line 557
     iget-object v0, p0, Lcom/google/android/gtalkservice/Presence;->mDefaultStatusList:Ljava/util/List;
 
-    if-eqz v0, :cond_77
+    if-eqz v0, :cond_73
 
     .line 558
     iget-object v0, p0, Lcom/google/android/gtalkservice/Presence;->mDefaultStatusList:Ljava/util/List;
@@ -930,12 +926,12 @@
 
     move v1, v2
 
-    :goto_5a
+    :goto_56
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_77
+    if-eqz v0, :cond_73
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -946,7 +942,7 @@
     .line 559
     add-int/lit8 v3, v1, 0x1
 
-    if-lez v1, :cond_6f
+    if-lez v1, :cond_6b
 
     .line 560
     const-string v1, ", "
@@ -954,21 +950,21 @@
     invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 562
-    :cond_6f
+    :cond_6b
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move v1, v3
 
-    goto :goto_5a
+    goto :goto_56
 
     .line 550
-    :cond_74
+    :cond_70
     iget-object v0, p0, Lcom/google/android/gtalkservice/Presence;->mStatus:Ljava/lang/String;
 
     goto :goto_25
 
     .line 566
-    :cond_77
+    :cond_73
     const-string v0, "}, dnd={"
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -976,7 +972,7 @@
     .line 568
     iget-object v0, p0, Lcom/google/android/gtalkservice/Presence;->mDndStatusList:Ljava/util/List;
 
-    if-eqz v0, :cond_a0
+    if-eqz v0, :cond_9c
 
     .line 570
     iget-object v0, p0, Lcom/google/android/gtalkservice/Presence;->mDndStatusList:Ljava/util/List;
@@ -985,12 +981,12 @@
 
     move-result-object v3
 
-    :goto_86
+    :goto_82
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a0
+    if-eqz v0, :cond_9c
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1001,7 +997,7 @@
     .line 571
     add-int/lit8 v1, v2, 0x1
 
-    if-lez v2, :cond_9b
+    if-lez v2, :cond_97
 
     .line 572
     const-string v2, ", "
@@ -1009,15 +1005,15 @@
     invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 574
-    :cond_9b
+    :cond_97
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move v2, v1
 
-    goto :goto_86
+    goto :goto_82
 
     .line 578
-    :cond_a0
+    :cond_9c
     const-string v0, "}"
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;

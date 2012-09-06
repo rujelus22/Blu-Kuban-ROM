@@ -1,74 +1,36 @@
-.class Lcom/google/googlenav/android/x;
-.super Ljava/lang/Thread;
+.class public Lcom/google/googlenav/android/X;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/android/b;
+# static fields
+.field public static final a:Ljava/util/regex/Pattern;
 
-.field final synthetic b:Landroid/os/Handler;
-
-.field final synthetic c:Lcom/google/googlenav/android/C;
-
-.field final synthetic d:Landroid/app/ProgressDialog;
-
-.field final synthetic e:Z
-
-.field final synthetic f:Lcom/google/googlenav/android/l;
+.field public static final b:Ljava/util/regex/Pattern;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/android/l;Ljava/lang/String;Lcom/google/googlenav/ui/android/b;Landroid/os/Handler;Lcom/google/googlenav/android/C;Landroid/app/ProgressDialog;Z)V
-    .registers 8
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput-object p1, p0, Lcom/google/googlenav/android/x;->f:Lcom/google/googlenav/android/l;
+    .prologue
+    .line 30
+    const-string v0, "(\\+[0-9]+[\\- \\.]*)?(\\([0-9]+\\)[\\- \\.]*)?([0-9][0-9\\- \\.][0-9\\- \\.]+[0-9])"
 
-    iput-object p3, p0, Lcom/google/googlenav/android/x;->a:Lcom/google/googlenav/ui/android/b;
-
-    iput-object p4, p0, Lcom/google/googlenav/android/x;->b:Landroid/os/Handler;
-
-    iput-object p5, p0, Lcom/google/googlenav/android/x;->c:Lcom/google/googlenav/android/C;
-
-    iput-object p6, p0, Lcom/google/googlenav/android/x;->d:Landroid/app/ProgressDialog;
-
-    iput-boolean p7, p0, Lcom/google/googlenav/android/x;->e:Z
-
-    invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public run()V
-    .registers 7
-
-    invoke-static {}, Laf/b;->a()Laf/b;
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/googlenav/android/x;->a:Lcom/google/googlenav/ui/android/b;
+    sput-object v0, Lcom/google/googlenav/android/X;->a:Ljava/util/regex/Pattern;
 
-    const/4 v2, 0x1
+    .line 84
+    const-string v0, "((?:(http|https|Http|Https|rtsp|Rtsp):\\/\\/(?:(?:[a-zA-Z0-9\\$\\-\\_\\.\\+\\!\\*\\\'\\(\\)\\,\\;\\?\\&\\=]|(?:\\%[a-fA-F0-9]{2})){1,64}(?:\\:(?:[a-zA-Z0-9\\$\\-\\_\\.\\+\\!\\*\\\'\\(\\)\\,\\;\\?\\&\\=]|(?:\\%[a-fA-F0-9]{2})){1,25})?\\@)?)?((?:(?:[a-zA-Z0-9\u00a0-\ud7ff\uf900-\ufdcf\ufdf0-\uffef][a-zA-Z0-9\u00a0-\ud7ff\uf900-\ufdcf\ufdf0-\uffef\\-]{0,64}\\.)+(?:(?:aero|arpa|asia|a[cdefgilmnoqrstuwxz])|(?:biz|b[abdefghijmnorstvwyz])|(?:cat|com|coop|c[acdfghiklmnoruvxyz])|d[ejkmoz]|(?:edu|e[cegrstu])|f[ijkmor]|(?:gov|g[abdefghilmnpqrstuwy])|h[kmnrtu]|(?:info|int|i[delmnoqrst])|(?:jobs|j[emop])|k[eghimnprwyz]|l[abcikrstuvy]|(?:mil|mobi|museum|m[acdeghklmnopqrstuvwxyz])|(?:name|net|n[acefgilopruz])|(?:org|om)|(?:pro|p[aefghklmnrstwy])|qa|r[eosuw]|s[abcdeghijklmnortuvyz]|(?:tel|travel|t[cdfghjklmnoprtvwz])|u[agksyz]|v[aceginu]|w[fs]|(?:xn\\-\\-0zwm56d|xn\\-\\-11b5bs3a9aj6g|xn\\-\\-80akhbyknj4f|xn\\-\\-9t4b11yi5a|xn\\-\\-deba0ad|xn\\-\\-g6w251d|xn\\-\\-hgbk6aj7f53bba|xn\\-\\-hlcj6aya9esc7a|xn\\-\\-jxalpdlp|xn\\-\\-kgbechtv|xn\\-\\-mgbaam7a8h|xn\\-\\-mgberp4a5d4ar|xn\\-\\-wgbh1c|xn\\-\\-zckzah)|y[et]|z[amw]))|(?:(?:25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9])\\.(?:25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9]|0)\\.(?:25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9]|0)\\.(?:25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[0-9])))(?:\\:\\d{1,5})?)(\\/(?:(?:[a-zA-Z0-9\u00a0-\ud7ff\uf900-\ufdcf\ufdf0-\uffef\\;\\/\\?\\:\\@\\&\\=\\#\\~\\-\\.\\+\\!\\*\\\'\\(\\)\\,\\_])|(?:\\%[a-fA-F0-9]{2}))*)?(?:\\b|$)"
 
-    invoke-virtual {v1, v2}, Lcom/google/googlenav/ui/android/b;->a(Z)[Ljava/lang/String;
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Laf/b;->a([Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/google/googlenav/android/x;->f:Lcom/google/googlenav/android/l;
-
-    iget-object v1, p0, Lcom/google/googlenav/android/x;->b:Landroid/os/Handler;
-
-    iget-object v2, p0, Lcom/google/googlenav/android/x;->c:Lcom/google/googlenav/android/C;
-
-    iget-object v3, p0, Lcom/google/googlenav/android/x;->d:Landroid/app/ProgressDialog;
-
-    iget-boolean v4, p0, Lcom/google/googlenav/android/x;->e:Z
-
-    iget-object v5, p0, Lcom/google/googlenav/android/x;->a:Lcom/google/googlenav/ui/android/b;
-
-    invoke-static/range {v0 .. v5}, Lcom/google/googlenav/android/l;->a(Lcom/google/googlenav/android/l;Landroid/os/Handler;Lcom/google/googlenav/android/C;Landroid/app/ProgressDialog;ZLat/p;)V
+    sput-object v0, Lcom/google/googlenav/android/X;->b:Ljava/util/regex/Pattern;
 
     return-void
 .end method

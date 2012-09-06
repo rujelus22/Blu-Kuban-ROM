@@ -15,27 +15,22 @@
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;Lcom/android/emailcommon/mail/Folder;)V
+.method constructor <init>(Ljava/lang/String;Lcom/android/email/mail/store/ImapFolder;)V
     .registers 3
     .parameter "uid"
     .parameter "folder"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
 
     .prologue
-    .line 2468
+    .line 587
     invoke-direct {p0}, Lcom/android/emailcommon/internet/MimeMessage;-><init>()V
 
-    .line 2469
-    iput-object p1, p0, Lcom/android/emailcommon/mail/Message;->mUid:Ljava/lang/String;
+    .line 588
+    iput-object p1, p0, Lcom/android/email/mail/store/ImapStore$ImapMessage;->mUid:Ljava/lang/String;
 
-    .line 2470
-    iput-object p2, p0, Lcom/android/emailcommon/mail/Message;->mFolder:Lcom/android/emailcommon/mail/Folder;
+    .line 589
+    iput-object p2, p0, Lcom/android/email/mail/store/ImapStore$ImapMessage;->mFolder:Lcom/android/emailcommon/mail/Folder;
 
-    .line 2471
+    .line 590
     return-void
 .end method
 
@@ -52,10 +47,10 @@
     .end annotation
 
     .prologue
-    .line 2479
+    .line 598
     invoke-super {p0, p1}, Lcom/android/emailcommon/internet/MimeMessage;->parse(Ljava/io/InputStream;)V
 
-    .line 2480
+    .line 599
     return-void
 .end method
 
@@ -74,11 +69,11 @@
 
     const/4 v3, 0x0
 
-    .line 2488
+    .line 607
     invoke-super {p0, p1, p2}, Lcom/android/emailcommon/internet/MimeMessage;->setFlag(Lcom/android/emailcommon/mail/Flag;Z)V
 
-    .line 2489
-    iget-object v0, p0, Lcom/android/emailcommon/mail/Message;->mFolder:Lcom/android/emailcommon/mail/Folder;
+    .line 608
+    iget-object v0, p0, Lcom/android/email/mail/store/ImapStore$ImapMessage;->mFolder:Lcom/android/emailcommon/mail/Folder;
 
     new-array v1, v2, [Lcom/android/emailcommon/mail/Message;
 
@@ -90,7 +85,7 @@
 
     invoke-virtual {v0, v1, v2, p2}, Lcom/android/emailcommon/mail/Folder;->setFlags([Lcom/android/emailcommon/mail/Message;[Lcom/android/emailcommon/mail/Flag;Z)V
 
-    .line 2494
+    .line 609
     return-void
 .end method
 
@@ -105,10 +100,10 @@
     .end annotation
 
     .prologue
-    .line 2483
+    .line 602
     invoke-super {p0, p1, p2}, Lcom/android/emailcommon/internet/MimeMessage;->setFlag(Lcom/android/emailcommon/mail/Flag;Z)V
 
-    .line 2484
+    .line 603
     return-void
 .end method
 
@@ -117,9 +112,9 @@
     .parameter "size"
 
     .prologue
-    .line 2474
-    iput p1, p0, Lcom/android/emailcommon/internet/MimeMessage;->mSize:I
+    .line 593
+    iput p1, p0, Lcom/android/email/mail/store/ImapStore$ImapMessage;->mSize:I
 
-    .line 2475
+    .line 594
     return-void
 .end method

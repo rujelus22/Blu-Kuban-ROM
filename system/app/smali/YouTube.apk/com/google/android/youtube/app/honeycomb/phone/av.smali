@@ -1,9 +1,6 @@
 .class final Lcom/google/android/youtube/app/honeycomb/phone/av;
-.super Ljava/lang/Object;
+.super Lcom/android/athome/picker/media/c;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -11,58 +8,57 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/au;)V
+.method private constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/au;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 786
+    .line 111
     iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/av;->a:Lcom/google/android/youtube/app/honeycomb/phone/au;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/android/athome/picker/media/c;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/au;B)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 111
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/av;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/au;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 2
+.method public final a(Ljava/lang/Object;)V
+    .registers 3
+    .parameter
 
     .prologue
-    .line 788
+    .line 115
     iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/av;->a:Lcom/google/android/youtube/app/honeycomb/phone/au;
 
-    iget-object v0, v0, Lcom/google/android/youtube/app/honeycomb/phone/au;->a:Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/au;->a(Lcom/google/android/youtube/app/honeycomb/phone/au;)V
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;->b(Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;)Lcom/google/android/youtube/core/player/aq;
+    .line 116
+    return-void
+.end method
 
-    move-result-object v0
+.method public final b(Ljava/lang/Object;)V
+    .registers 3
+    .parameter
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/player/aq;->f()V
-
-    .line 789
+    .prologue
+    .line 120
     iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/av;->a:Lcom/google/android/youtube/app/honeycomb/phone/au;
 
-    iget-object v0, v0, Lcom/google/android/youtube/app/honeycomb/phone/au;->a:Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/au;->a(Lcom/google/android/youtube/app/honeycomb/phone/au;)V
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;->c(Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;)Lcom/google/android/youtube/core/player/p;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/player/p;->v()V
-
-    .line 790
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/av;->a:Lcom/google/android/youtube/app/honeycomb/phone/au;
-
-    iget-object v0, v0, Lcom/google/android/youtube/app/honeycomb/phone/au;->a:Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;)Lcom/google/android/youtube/core/player/ControllerOverlay;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/google/android/youtube/core/player/ControllerOverlay;->d()V
-
-    .line 791
+    .line 121
     return-void
 .end method

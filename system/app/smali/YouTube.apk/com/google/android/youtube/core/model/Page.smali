@@ -51,7 +51,7 @@
     iput-object p5, p0, Lcom/google/android/youtube/core/model/Page;->nextUri:Landroid/net/Uri;
 
     .line 69
-    invoke-static {p6}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p6}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

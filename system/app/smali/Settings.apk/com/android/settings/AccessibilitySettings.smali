@@ -743,7 +743,7 @@
 
     move-result v19
 
-    if-nez v19, :cond_b4
+    if-nez v19, :cond_b1
 
     .line 525
     :cond_a5
@@ -759,10 +759,8 @@
 
     move-object/from16 v20, v0
 
-    invoke-virtual/range {v19 .. v20}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
     .line 529
-    :cond_b4
+    :cond_b1
     const-string v19, "toggle_auto_rotate_screen_preference"
 
     move-object/from16 v0, p0
@@ -860,7 +858,7 @@
 
     move-result v19
 
-    if-nez v19, :cond_151
+    if-nez v19, :cond_14e
 
     .line 544
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/AccessibilitySettings;->getResources()Landroid/content/res/Resources;
@@ -913,10 +911,10 @@
     const/4 v4, 0x0
 
     .local v4, i:I
-    :goto_13d
+    :goto_13a
     move/from16 v0, v17
 
-    if-ge v4, v0, :cond_151
+    if-ge v4, v0, :cond_14e
 
     .line 551
     move-object/from16 v0, p0
@@ -934,14 +932,14 @@
     .line 550
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_13d
+    goto :goto_13a
 
     .line 556
     .end local v4           #i:I
     .end local v16           #timeoutTitles:[Ljava/lang/String;
     .end local v17           #timeoutValueCount:I
     .end local v18           #timeoutValues:[Ljava/lang/String;
-    :cond_151
+    :cond_14e
     const-string v19, "toggle_script_injection_preference"
 
     move-object/from16 v0, p0
@@ -1200,7 +1198,7 @@
 
     move-result v19
 
-    if-nez v19, :cond_2c4
+    if-nez v19, :cond_2b2
 
     .line 579
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/AccessibilitySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -1239,8 +1237,6 @@
 
     move-object/from16 v20, v0
 
-    invoke-virtual/range {v19 .. v20}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 582
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/AccessibilitySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
@@ -1251,8 +1247,6 @@
     iget-object v0, v0, Lcom/android/settings/AccessibilitySettings;->mAudioCategory:Landroid/preference/PreferenceCategory;
 
     move-object/from16 v20, v0
-
-    invoke-virtual/range {v19 .. v20}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     .line 584
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/AccessibilitySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -1265,8 +1259,6 @@
 
     move-object/from16 v20, v0
 
-    invoke-virtual/range {v19 .. v20}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 585
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/AccessibilitySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
@@ -1277,8 +1269,6 @@
     iget-object v0, v0, Lcom/android/settings/AccessibilitySettings;->mCallAnsweringEnding:Landroid/preference/PreferenceScreen;
 
     move-object/from16 v20, v0
-
-    invoke-virtual/range {v19 .. v20}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     .line 586
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/AccessibilitySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -1321,10 +1311,8 @@
 
     move-object/from16 v20, v0
 
-    invoke-virtual/range {v19 .. v20}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
     .line 593
-    :cond_2c4
+    :cond_2b2
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/AccessibilitySettings;->getResources()Landroid/content/res/Resources;
 
     move-result-object v19
@@ -1341,7 +1329,7 @@
 
     move/from16 v1, v20
 
-    if-ne v0, v1, :cond_4ae
+    if-ne v0, v1, :cond_496
 
     .line 594
     move-object/from16 v0, p0
@@ -1356,8 +1344,6 @@
 
     move-object/from16 v20, v0
 
-    invoke-virtual/range {v19 .. v20}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
     .line 596
     move-object/from16 v0, p0
 
@@ -1370,8 +1356,6 @@
     iget-object v0, v0, Lcom/android/settings/AccessibilitySettings;->mToggleLargeTextPreference:Landroid/preference/CheckBoxPreference;
 
     move-object/from16 v20, v0
-
-    invoke-virtual/range {v19 .. v20}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
     .line 597
     move-object/from16 v0, p0
@@ -1398,11 +1382,11 @@
 
     move-result v19
 
-    if-eqz v19, :cond_4af
+    if-eqz v19, :cond_497
 
     const/16 v19, 0x1
 
-    :goto_311
+    :goto_2f9
     move-object/from16 v0, v20
 
     move/from16 v1, v19
@@ -1434,11 +1418,11 @@
 
     move-result v19
 
-    if-eqz v19, :cond_4b3
+    if-eqz v19, :cond_49b
 
     const/16 v19, 0x1
 
-    :goto_334
+    :goto_31c
     move-object/from16 v0, v20
 
     move/from16 v1, v19
@@ -1470,11 +1454,11 @@
 
     move-result v19
 
-    if-eqz v19, :cond_4b7
+    if-eqz v19, :cond_49f
 
     const/16 v19, 0x1
 
-    :goto_357
+    :goto_33f
     move-object/from16 v0, v20
 
     move/from16 v1, v19
@@ -1506,11 +1490,11 @@
 
     move-result v19
 
-    if-eqz v19, :cond_4bb
+    if-eqz v19, :cond_4a3
 
     const/16 v19, 0x1
 
-    :goto_37a
+    :goto_362
     move-object/from16 v0, v20
 
     move/from16 v1, v19
@@ -1542,11 +1526,11 @@
 
     move-result v19
 
-    if-eqz v19, :cond_4bf
+    if-eqz v19, :cond_4a7
 
     const/16 v19, 0x1
 
-    :goto_39d
+    :goto_385
     move-object/from16 v0, v20
 
     move/from16 v1, v19
@@ -1562,7 +1546,7 @@
 
     move-result v19
 
-    if-nez v19, :cond_3b8
+    if-nez v19, :cond_3a0
 
     const-string v19, "SPH-D710"
 
@@ -1572,10 +1556,10 @@
 
     move-result v19
 
-    if-eqz v19, :cond_4f5
+    if-eqz v19, :cond_4dd
 
     .line 611
-    :cond_3b8
+    :cond_3a0
     const-string v10, "com.android.calendar"
 
     .line 612
@@ -1624,7 +1608,7 @@
     .local v9, info_5:Landroid/content/pm/ApplicationInfo;
     const/16 v19, 0x0
 
-    :try_start_3cd
+    :try_start_3b5
     move/from16 v0, v19
 
     invoke-virtual {v15, v10, v0}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
@@ -1664,24 +1648,24 @@
     move/from16 v0, v19
 
     invoke-virtual {v15, v14, v0}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
-    :try_end_3f2
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_3cd .. :try_end_3f2} :catch_4c3
+    :try_end_3da
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_3b5 .. :try_end_3da} :catch_4ab
 
     move-result-object v9
 
     .line 635
-    if-eqz v5, :cond_4ae
+    if-eqz v5, :cond_496
 
-    if-eqz v6, :cond_4ae
+    if-eqz v6, :cond_496
 
-    if-eqz v7, :cond_4ae
+    if-eqz v7, :cond_496
 
-    if-eqz v8, :cond_4ae
+    if-eqz v8, :cond_496
 
-    if-eqz v9, :cond_4ae
+    if-eqz v9, :cond_496
 
     .line 637
-    :try_start_3fd
+    :try_start_3e5
     const-string v19, "font_size"
 
     move-object/from16 v0, p0
@@ -1854,8 +1838,8 @@
     move-result-object v20
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_4ae
-    .catch Ljava/lang/RuntimeException; {:try_start_3fd .. :try_end_4ae} :catch_4d0
+    :try_end_496
+    .catch Ljava/lang/RuntimeException; {:try_start_3e5 .. :try_end_496} :catch_4b8
 
     .line 655
     .end local v5           #info_1:Landroid/content/pm/ApplicationInfo;
@@ -1869,39 +1853,39 @@
     .end local v13           #mPackageName_4:Ljava/lang/String;
     .end local v14           #mPackageName_5:Ljava/lang/String;
     .end local v15           #mPm:Landroid/content/pm/PackageManager;
-    :cond_4ae
-    :goto_4ae
+    :cond_496
+    :goto_496
     return-void
 
     .line 597
-    :cond_4af
+    :cond_497
     const/16 v19, 0x0
 
-    goto/16 :goto_311
+    goto/16 :goto_2f9
 
     .line 599
-    :cond_4b3
+    :cond_49b
     const/16 v19, 0x0
 
-    goto/16 :goto_334
+    goto/16 :goto_31c
 
     .line 601
-    :cond_4b7
+    :cond_49f
     const/16 v19, 0x0
 
-    goto/16 :goto_357
+    goto/16 :goto_33f
 
     .line 603
-    :cond_4bb
+    :cond_4a3
     const/16 v19, 0x0
 
-    goto/16 :goto_37a
+    goto/16 :goto_362
 
     .line 605
-    :cond_4bf
+    :cond_4a7
     const/16 v19, 0x0
 
-    goto/16 :goto_39d
+    goto/16 :goto_385
 
     .line 630
     .restart local v5       #info_1:Landroid/content/pm/ApplicationInfo;
@@ -1915,7 +1899,7 @@
     .restart local v13       #mPackageName_4:Ljava/lang/String;
     .restart local v14       #mPackageName_5:Ljava/lang/String;
     .restart local v15       #mPm:Landroid/content/pm/PackageManager;
-    :catch_4c3
+    :catch_4ab
     move-exception v3
 
     .line 632
@@ -1930,11 +1914,11 @@
 
     invoke-static {v0, v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_4ae
+    goto :goto_496
 
     .line 640
     .end local v3           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    :catch_4d0
+    :catch_4b8
     move-exception v3
 
     .line 641
@@ -1972,7 +1956,7 @@
 
     invoke-static {v0, v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_4ae
+    goto :goto_496
 
     .line 651
     .end local v3           #e:Ljava/lang/RuntimeException;
@@ -1987,7 +1971,7 @@
     .end local v13           #mPackageName_4:Ljava/lang/String;
     .end local v14           #mPackageName_5:Ljava/lang/String;
     .end local v15           #mPm:Landroid/content/pm/PackageManager;
-    :cond_4f5
+    :cond_4dd
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/AccessibilitySettings;->mSystemsCategory:Landroid/preference/PreferenceCategory;
@@ -2000,9 +1984,7 @@
 
     move-object/from16 v20, v0
 
-    invoke-virtual/range {v19 .. v20}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
-    goto :goto_4ae
+    goto :goto_496
 .end method
 
 .method private loadInstalledServices()V
@@ -2873,7 +2855,7 @@
 
     move-result v0
 
-    if-ne v0, v1, :cond_13a
+    if-ne v0, v1, :cond_137
 
     .line 891
     :goto_e1
@@ -2983,11 +2965,9 @@
 
     iget-object v3, p0, Lcom/android/settings/AccessibilitySettings;->mToggleTouchExplorationPreference:Landroid/preference/Preference;
 
-    invoke-virtual {v0, v3}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
     goto/16 :goto_b3
 
-    :cond_13a
+    :cond_137
     move v1, v2
 
     .line 889

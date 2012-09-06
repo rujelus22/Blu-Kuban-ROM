@@ -329,6 +329,35 @@
     return-void
 .end method
 
+.method public final declared-synchronized evictAll()V
+    .registers 2
+
+    .prologue
+    .line 219
+    .local p0, this:Lcom/google/android/finsky/utils/LruCache;,"Lcom/google/android/finsky/utils/LruCache<TK;TV;>;"
+    monitor-enter p0
+
+    const/4 v0, -0x1
+
+    :try_start_2
+    invoke-direct {p0, v0}, Lcom/google/android/finsky/utils/LruCache;->trimToSize(I)V
+    :try_end_5
+    .catchall {:try_start_2 .. :try_end_5} :catchall_7
+
+    .line 220
+    monitor-exit p0
+
+    return-void
+
+    .line 219
+    :catchall_7
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
 .method public final declared-synchronized get(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 6
     .parameter
@@ -549,6 +578,76 @@
     .catchall {:try_start_10 .. :try_end_35} :catchall_d
 
     .line 137
+    monitor-exit p0
+
+    return-object v0
+.end method
+
+.method public final declared-synchronized remove(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TK;)TV;"
+        }
+    .end annotation
+
+    .prologue
+    .line 170
+    .local p0, this:Lcom/google/android/finsky/utils/LruCache;,"Lcom/google/android/finsky/utils/LruCache<TK;TV;>;"
+    .local p1, key:Ljava/lang/Object;,"TK;"
+    monitor-enter p0
+
+    if-nez p1, :cond_e
+
+    .line 171
+    :try_start_3
+    new-instance v1, Ljava/lang/NullPointerException;
+
+    const-string v2, "key == null"
+
+    invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+    :try_end_b
+    .catchall {:try_start_3 .. :try_end_b} :catchall_b
+
+    .line 170
+    :catchall_b
+    move-exception v1
+
+    monitor-exit p0
+
+    throw v1
+
+    .line 174
+    :cond_e
+    :try_start_e
+    iget-object v1, p0, Lcom/google/android/finsky/utils/LruCache;->map:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v1, p1}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 175
+    .local v0, previous:Ljava/lang/Object;,"TV;"
+    if-eqz v0, :cond_1f
+
+    .line 176
+    iget v1, p0, Lcom/google/android/finsky/utils/LruCache;->size:I
+
+    invoke-direct {p0, p1, v0}, Lcom/google/android/finsky/utils/LruCache;->safeSizeOf(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result v2
+
+    sub-int/2addr v1, v2
+
+    iput v1, p0, Lcom/google/android/finsky/utils/LruCache;->size:I
+    :try_end_1f
+    .catchall {:try_start_e .. :try_end_1f} :catchall_b
+
+    .line 178
+    :cond_1f
     monitor-exit p0
 
     return-object v0

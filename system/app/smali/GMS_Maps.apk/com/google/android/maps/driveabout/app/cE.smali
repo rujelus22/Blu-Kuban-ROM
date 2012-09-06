@@ -1,57 +1,59 @@
-.class Lcom/google/android/maps/driveabout/app/cE;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/maps/driveabout/power/i;
+.class Lcom/google/android/maps/driveabout/app/ce;
+.super Lag/g;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/NavigationActivity;
+.field final synthetic a:Lag/a;
 
-.field final synthetic b:Lcom/google/android/maps/driveabout/app/NavigationService;
+.field final synthetic b:Lag/g;
+
+.field final synthetic c:Lcom/google/android/maps/driveabout/app/cd;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/NavigationService;Lcom/google/android/maps/driveabout/app/NavigationActivity;)V
-    .registers 3
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/cd;Lag/a;Lag/g;)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/cE;->b:Lcom/google/android/maps/driveabout/app/NavigationService;
+    .prologue
+    .line 182
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/ce;->c:Lcom/google/android/maps/driveabout/app/cd;
 
-    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/cE;->a:Lcom/google/android/maps/driveabout/app/NavigationActivity;
+    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/ce;->a:Lag/a;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p3, p0, Lcom/google/android/maps/driveabout/app/ce;->b:Lag/g;
+
+    invoke-direct {p0}, Lag/g;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/Runnable;)V
+.method public a(Lag/c;)V
     .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/cE;->a:Lcom/google/android/maps/driveabout/app/NavigationActivity;
+    .prologue
+    .line 185
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ce;->a:Lag/a;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/maps/driveabout/app/NavigationActivity;->runOnUiThread(Ljava/lang/Runnable;)V
+    invoke-interface {v0}, Lag/a;->c()V
 
-    return-void
-.end method
+    .line 186
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ce;->b:Lag/g;
 
-.method public a(Ljava/lang/Runnable;J)V
-    .registers 5
+    if-eqz v0, :cond_e
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/cE;->a:Lcom/google/android/maps/driveabout/app/NavigationActivity;
+    .line 187
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ce;->b:Lag/g;
 
-    invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/maps/driveabout/app/NavigationActivity;->a(Ljava/lang/Runnable;J)V
+    invoke-virtual {v0, p1}, Lag/g;->a(Lag/c;)V
 
-    return-void
-.end method
-
-.method public b(Ljava/lang/Runnable;)V
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/cE;->a:Lcom/google/android/maps/driveabout/app/NavigationActivity;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/maps/driveabout/app/NavigationActivity;->a(Ljava/lang/Runnable;)V
-
+    .line 189
+    :cond_e
     return-void
 .end method

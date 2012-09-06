@@ -3,88 +3,151 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ljava/nio/charset/Charset;
-
-.field public static final b:Ljava/nio/charset/Charset;
-
-.field public static final c:Ljava/nio/charset/Charset;
-
-.field public static final d:Ljava/nio/charset/Charset;
-
-.field public static final e:Ljava/nio/charset/Charset;
-
-.field public static final f:Ljava/nio/charset/Charset;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public static a(C)C
+    .registers 2
+    .parameter
 
     .prologue
-    .line 36
-    const-string v0, "US-ASCII"
+    .line 446
+    const/16 v0, 0x61
 
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+    if-lt p0, v0, :cond_f
 
-    move-result-object v0
+    const/16 v0, 0x7a
 
-    sput-object v0, Lcom/google/common/base/b;->a:Ljava/nio/charset/Charset;
+    if-gt p0, v0, :cond_f
 
-    .line 41
-    const-string v0, "ISO-8859-1"
+    const/4 v0, 0x1
 
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+    :goto_9
+    if-eqz v0, :cond_e
 
-    move-result-object v0
+    and-int/lit8 v0, p0, 0x5f
 
-    sput-object v0, Lcom/google/common/base/b;->b:Ljava/nio/charset/Charset;
+    int-to-char p0, v0
 
-    .line 46
-    const-string v0, "UTF-8"
+    :cond_e
+    return p0
 
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+    :cond_f
+    const/4 v0, 0x0
 
-    move-result-object v0
-
-    sput-object v0, Lcom/google/common/base/b;->c:Ljava/nio/charset/Charset;
-
-    .line 51
-    const-string v0, "UTF-16BE"
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/common/base/b;->d:Ljava/nio/charset/Charset;
-
-    .line 56
-    const-string v0, "UTF-16LE"
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/common/base/b;->e:Ljava/nio/charset/Charset;
-
-    .line 62
-    const-string v0, "UTF-16"
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/common/base/b;->f:Ljava/nio/charset/Charset;
-
-    return-void
+    goto :goto_9
 .end method
 
-.method private constructor <init>()V
-    .registers 1
+.method public static a(Ljava/lang/String;)Ljava/lang/String;
+    .registers 7
+    .parameter
 
     .prologue
-    .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v2, 0x0
 
-    return-void
+    .line 411
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    .line 412
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    move v3, v2
+
+    .line 413
+    :goto_b
+    if-ge v3, v4, :cond_28
+
+    .line 414
+    invoke-virtual {p0, v3}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
+
+    const/16 v1, 0x41
+
+    if-lt v0, v1, :cond_26
+
+    const/16 v1, 0x5a
+
+    if-gt v0, v1, :cond_26
+
+    const/4 v1, 0x1
+
+    :goto_1a
+    if-eqz v1, :cond_1f
+
+    xor-int/lit8 v0, v0, 0x20
+
+    int-to-char v0, v0
+
+    :cond_1f
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 413
+    add-int/lit8 v0, v3, 0x1
+
+    move v3, v0
+
+    goto :goto_b
+
+    :cond_26
+    move v1, v2
+
+    .line 414
+    goto :goto_1a
+
+    .line 416
+    :cond_28
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static b(Ljava/lang/String;)Ljava/lang/String;
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 433
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    .line 434
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    .line 435
+    const/4 v0, 0x0
+
+    :goto_a
+    if-ge v0, v1, :cond_1a
+
+    .line 436
+    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
+
+    move-result v3
+
+    invoke-static {v3}, Lcom/google/common/base/b;->a(C)C
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 435
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_a
+
+    .line 438
+    :cond_1a
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

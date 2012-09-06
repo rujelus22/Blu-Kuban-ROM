@@ -19,19 +19,19 @@
     .parameter "domain"
 
     .prologue
-    .line 50
+    .line 49
     invoke-direct {p0}, Lorg/apache/james/mime4j/field/address/Address;-><init>()V
 
-    .line 51
+    .line 50
     iput-object p1, p0, Lorg/apache/james/mime4j/field/address/Mailbox;->route:Lorg/apache/james/mime4j/field/address/DomainList;
 
-    .line 52
+    .line 51
     iput-object p2, p0, Lorg/apache/james/mime4j/field/address/Mailbox;->localPart:Ljava/lang/String;
 
-    .line 53
+    .line 52
     iput-object p3, p0, Lorg/apache/james/mime4j/field/address/Mailbox;->domain:Ljava/lang/String;
 
-    .line 54
+    .line 53
     return-void
 .end method
 
@@ -51,11 +51,11 @@
     .end annotation
 
     .prologue
-    .line 102
+    .line 114
     .local p1, results:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lorg/apache/james/mime4j/field/address/Address;>;"
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 103
+    .line 115
     return-void
 .end method
 
@@ -63,7 +63,7 @@
     .registers 2
 
     .prologue
-    .line 83
+    .line 85
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lorg/apache/james/mime4j/field/address/Mailbox;->getAddressString(Z)Ljava/lang/String;
@@ -78,7 +78,7 @@
     .parameter "includeRoute"
 
     .prologue
-    .line 96
+    .line 106
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -175,7 +175,7 @@
     .registers 2
 
     .prologue
-    .line 74
+    .line 75
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/Mailbox;->domain:Ljava/lang/String;
 
     return-object v0
@@ -195,7 +195,7 @@
     .registers 2
 
     .prologue
-    .line 60
+    .line 59
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/Mailbox;->route:Lorg/apache/james/mime4j/field/address/DomainList;
 
     return-object v0
@@ -205,7 +205,7 @@
     .registers 2
 
     .prologue
-    .line 107
+    .line 119
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/Mailbox;->getAddressString()Ljava/lang/String;
 
     move-result-object v0

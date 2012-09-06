@@ -41,25 +41,25 @@
     .parameter "simpleNode"
 
     .prologue
-    .line 203
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 220
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 204
+    .line 221
     iput-object p1, p0, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->simpleNode:Lorg/apache/james/mime4j/field/address/parser/SimpleNode;
 
-    .line 205
+    .line 222
     invoke-virtual {p1}, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->jjtGetNumChildren()I
 
     move-result v0
 
     iput v0, p0, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->len:I
 
-    .line 206
+    .line 223
     const/4 v0, 0x0
 
     iput v0, p0, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->index:I
 
-    .line 207
+    .line 224
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .registers 3
 
     .prologue
-    .line 214
+    .line 231
     iget v0, p0, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->index:I
 
     iget v1, p0, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->len:I
@@ -91,7 +91,7 @@
     .registers 2
 
     .prologue
-    .line 197
+    .line 214
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->next()Lorg/apache/james/mime4j/field/address/parser/Node;
 
     move-result-object v0
@@ -103,7 +103,7 @@
     .registers 2
 
     .prologue
-    .line 218
+    .line 235
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->nextNode()Lorg/apache/james/mime4j/field/address/parser/Node;
 
     move-result-object v0
@@ -115,7 +115,7 @@
     .registers 4
 
     .prologue
-    .line 222
+    .line 239
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->simpleNode:Lorg/apache/james/mime4j/field/address/parser/SimpleNode;
 
     iget v1, p0, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->index:I
@@ -135,7 +135,7 @@
     .registers 2
 
     .prologue
-    .line 210
+    .line 227
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

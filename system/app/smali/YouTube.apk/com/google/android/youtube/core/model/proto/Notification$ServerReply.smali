@@ -23,15 +23,12 @@
     .line 2094
     new-instance v0, Lcom/google/android/youtube/core/model/proto/Notification$ServerReply;
 
-    invoke-direct {v0}, Lcom/google/android/youtube/core/model/proto/Notification$ServerReply;-><init>()V
+    const/4 v1, 0x0
 
-    sput-object v0, Lcom/google/android/youtube/core/model/proto/Notification$ServerReply;->a:Lcom/google/android/youtube/core/model/proto/Notification$ServerReply;
+    invoke-direct {v0, v1}, Lcom/google/android/youtube/core/model/proto/Notification$ServerReply;-><init>(B)V
 
     .line 2095
-    invoke-static {}, Lcom/google/android/youtube/core/model/proto/Notification;->a()V
-
-    .line 2096
-    sget-object v0, Lcom/google/android/youtube/core/model/proto/Notification$ServerReply;->a:Lcom/google/android/youtube/core/model/proto/Notification$ServerReply;
+    sput-object v0, Lcom/google/android/youtube/core/model/proto/Notification$ServerReply;->a:Lcom/google/android/youtube/core/model/proto/Notification$ServerReply;
 
     sget-object v1, Lcom/google/android/youtube/core/model/proto/Notification$ServerReply$ErrorCode;->BAD_TOKEN:Lcom/google/android/youtube/core/model/proto/Notification$ServerReply$ErrorCode;
 
@@ -43,6 +40,28 @@
 
 .method private constructor <init>()V
     .registers 2
+
+    .prologue
+    .line 1800
+    invoke-direct {p0}, Lcom/google/protobuf/f;-><init>()V
+
+    .line 1876
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/google/android/youtube/core/model/proto/Notification$ServerReply;->d:I
+
+    .line 1801
+    sget-object v0, Lcom/google/android/youtube/core/model/proto/Notification$ServerReply$ErrorCode;->BAD_TOKEN:Lcom/google/android/youtube/core/model/proto/Notification$ServerReply$ErrorCode;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/model/proto/Notification$ServerReply;->c:Lcom/google/android/youtube/core/model/proto/Notification$ServerReply$ErrorCode;
+
+    .line 1802
+    return-void
+.end method
+
+.method private constructor <init>(B)V
+    .registers 3
+    .parameter
 
     .prologue
     .line 1803

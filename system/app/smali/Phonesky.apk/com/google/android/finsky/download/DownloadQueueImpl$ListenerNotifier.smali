@@ -30,15 +30,15 @@
     .parameter "type"
 
     .prologue
-    .line 243
+    .line 184
     iput-object p1, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$ListenerNotifier;->this$0:Lcom/google/android/finsky/download/DownloadQueueImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 244
+    .line 185
     iput-object p2, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$ListenerNotifier;->mType:Lcom/google/android/finsky/download/DownloadQueueImpl$UpdateListenerType;
 
-    .line 245
+    .line 186
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .registers 6
 
     .prologue
-    .line 249
+    .line 190
     iget-object v3, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$ListenerNotifier;->this$0:Lcom/google/android/finsky/download/DownloadQueueImpl;
 
     #getter for: Lcom/google/android/finsky/download/DownloadQueueImpl;->mListeners:Ljava/util/LinkedList;
@@ -74,7 +74,7 @@
 
     check-cast v2, Lcom/google/android/finsky/download/DownloadQueueListener;
 
-    .line 251
+    .line 192
     .local v2, listener:Lcom/google/android/finsky/download/DownloadQueueListener;
     :try_start_16
     invoke-virtual {p0, v2}, Lcom/google/android/finsky/download/DownloadQueueImpl$ListenerNotifier;->updateListener(Lcom/google/android/finsky/download/DownloadQueueListener;)V
@@ -83,11 +83,11 @@
 
     goto :goto_a
 
-    .line 252
+    .line 193
     :catch_1a
     move-exception v0
 
-    .line 253
+    .line 194
     .local v0, e:Ljava/lang/Exception;
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -117,7 +117,7 @@
 
     goto :goto_a
 
-    .line 256
+    .line 197
     .end local v0           #e:Ljava/lang/Exception;
     .end local v2           #listener:Lcom/google/android/finsky/download/DownloadQueueListener;
     :cond_37

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">DSMForwarding</string>
-    <string name="via_samsungdive">Via SamsungDive</string>
-    <string name="call_forwarded">Call Forwarded</string>
-    <string name="sms_forwarded">SMS Forwarded</string>
-</resources>

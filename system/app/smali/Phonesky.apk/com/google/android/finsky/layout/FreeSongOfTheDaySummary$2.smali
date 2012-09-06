@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 74
+    .line 80
     iput-object p1, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary$2;->this$0:Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;
 
     iput-object p2, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary$2;->val$song:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
@@ -47,7 +47,7 @@
     .parameter "v"
 
     .prologue
-    .line 77
+    .line 83
     iget-object v0, p0, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary$2;->this$0:Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;
 
     #getter for: Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->mConnection:Lcom/google/android/finsky/previews/PreviewController;
@@ -59,6 +59,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/previews/PreviewController;->togglePlayback(Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;)V
 
-    .line 78
+    .line 84
     return-void
 .end method

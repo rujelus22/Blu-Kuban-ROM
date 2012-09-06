@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 741
+    .line 561
     iput-object p1, p0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
 
     iput-object p2, p0, Lcom/android/exchange/adapter/FolderSyncParser$1;->val$addMailboxes:Ljava/util/ArrayList;
@@ -45,7 +45,7 @@
 
     iput-object p4, p0, Lcom/android/exchange/adapter/FolderSyncParser$1;->val$ops:Ljava/util/ArrayList;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -53,157 +53,100 @@
 
 # virtual methods
 .method public run()V
-    .registers 18
+    .registers 19
 
     .prologue
-    .line 746
+    .line 566
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
 
-    move-object/from16 v16, v0
+    move-object/from16 v17, v0
 
-    monitor-enter v16
+    monitor-enter v17
 
-    .line 748
+    .line 568
     :try_start_7
+    new-instance v16, Ljava/util/ArrayList;
+
+    invoke-direct/range {v16 .. v16}, Ljava/util/ArrayList;-><init>()V
+
+    .line 570
+    .local v16, validMailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/provider/Mailbox;>;"
     new-instance v15, Ljava/util/ArrayList;
 
     invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
 
-    .line 750
-    .local v15, validMailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/provider/EmailContent$Mailbox;>;"
-    new-instance v14, Ljava/util/ArrayList;
+    .line 572
+    .local v15, userMailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/provider/Mailbox;>;"
+    new-instance v13, Ljava/util/HashMap;
 
-    invoke-direct {v14}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v13}, Ljava/util/HashMap;-><init>()V
 
-    .line 752
-    .local v14, userMailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/provider/EmailContent$Mailbox;>;"
-    new-instance v12, Ljava/util/HashMap;
+    .line 573
+    .local v13, mailboxMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Lcom/android/emailcommon/provider/Mailbox;>;"
+    const/4 v12, 0x0
 
-    invoke-direct {v12}, Ljava/util/HashMap;-><init>()V
-
-    .line 753
-    .local v12, mailboxMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Lcom/android/emailcommon/provider/EmailContent$Mailbox;>;"
+    .line 574
+    .local v12, mailboxCommitCount:I
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->val$addMailboxes:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result-object v9
+    move-result-object v10
 
-    .local v9, i$:Ljava/util/Iterator;
-    :goto_1e
-    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
+    .local v10, i$:Ljava/util/Iterator;
+    :cond_1f
+    :goto_1f
+    invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_33
+    if-eqz v1, :cond_7c
 
-    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v11
 
-    check-cast v10, Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    check-cast v11, Lcom/android/emailcommon/provider/Mailbox;
 
-    .line 754
-    .local v10, mailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    iget-object v1, v10, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mServerId:Ljava/lang/String;
+    .line 576
+    .local v11, mailbox:Lcom/android/emailcommon/provider/Mailbox;
+    iget-object v1, v11, Lcom/android/emailcommon/provider/Mailbox;->mServerId:Ljava/lang/String;
 
-    invoke-virtual {v12, v1, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v13, v1, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_1e
-
-    .line 816
-    .end local v9           #i$:Ljava/util/Iterator;
-    .end local v10           #mailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    .end local v12           #mailboxMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Lcom/android/emailcommon/provider/EmailContent$Mailbox;>;"
-    .end local v14           #userMailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/provider/EmailContent$Mailbox;>;"
-    .end local v15           #validMailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/provider/EmailContent$Mailbox;>;"
-    :catchall_30
-    move-exception v1
-
-    monitor-exit v16
-    :try_end_32
-    .catchall {:try_start_7 .. :try_end_32} :catchall_30
-
-    throw v1
-
-    .line 757
-    .restart local v9       #i$:Ljava/util/Iterator;
-    .restart local v12       #mailboxMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Lcom/android/emailcommon/provider/EmailContent$Mailbox;>;"
-    .restart local v14       #userMailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/provider/EmailContent$Mailbox;>;"
-    .restart local v15       #validMailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/provider/EmailContent$Mailbox;>;"
-    :cond_33
-    const/4 v11, 0x0
-
-    .line 758
-    .local v11, mailboxCommitCount:I
-    :try_start_34
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->val$addMailboxes:Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v9
-
-    :cond_3c
-    :goto_3c
-    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_96
-
-    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    .line 760
-    .restart local v10       #mailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    .line 578
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
 
-    iget v1, v1, Lcom/android/exchange/adapter/Parser;->type:I
+    iget v1, v1, Lcom/android/exchange/adapter/FolderSyncParser;->type:I
 
     const/16 v2, 0xc
 
-    if-eq v1, v2, :cond_5b
+    if-ne v1, v2, :cond_64
 
-    move-object/from16 v0, p0
+    .line 579
+    invoke-virtual {v15, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    iget-object v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
-
-    iget v1, v1, Lcom/android/exchange/adapter/Parser;->type:I
-
-    const/4 v2, 0x1
-
-    if-ne v1, v2, :cond_83
-
-    .line 761
-    :cond_5b
-    invoke-virtual {v14, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 767
-    :goto_5e
+    .line 584
+    :goto_3d
     move-object/from16 v0, p0
 
     iget-boolean v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->val$initialSync:Z
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_1f
 
-    add-int/lit8 v11, v11, 0x1
+    add-int/lit8 v12, v12, 0x1
 
     const/16 v1, 0x14
 
-    if-ne v11, v1, :cond_3c
+    if-ne v12, v1, :cond_1f
 
-    .line 768
+    .line 585
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
@@ -212,91 +155,118 @@
 
     iget-object v2, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->val$ops:Ljava/util/ArrayList;
 
+    move-object/from16 v0, v16
+
     #calls: Lcom/android/exchange/adapter/FolderSyncParser;->commitMailboxes(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/HashMap;Ljava/util/ArrayList;)Z
-    invoke-static {v1, v15, v14, v12, v2}, Lcom/android/exchange/adapter/FolderSyncParser;->access$500(Lcom/android/exchange/adapter/FolderSyncParser;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/HashMap;Ljava/util/ArrayList;)Z
+    invoke-static {v1, v0, v15, v13, v2}, Lcom/android/exchange/adapter/FolderSyncParser;->access$300(Lcom/android/exchange/adapter/FolderSyncParser;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/HashMap;Ljava/util/ArrayList;)Z
 
     move-result v1
 
-    if-nez v1, :cond_87
+    if-nez v1, :cond_6d
 
-    .line 769
+    .line 586
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
 
-    iget-object v1, v1, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v1, v1, Lcom/android/exchange/adapter/FolderSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     invoke-virtual {v1}, Lcom/android/exchange/EasSyncService;->stop()V
 
-    .line 770
-    monitor-exit v16
+    .line 587
+    monitor-exit v17
 
-    .line 817
-    .end local v10           #mailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    :goto_82
+    .line 629
+    .end local v11           #mailbox:Lcom/android/emailcommon/provider/Mailbox;
+    :goto_63
     return-void
 
-    .line 763
-    .restart local v10       #mailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    :cond_83
-    invoke-virtual {v15, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 581
+    .restart local v11       #mailbox:Lcom/android/emailcommon/provider/Mailbox;
+    :cond_64
+    move-object/from16 v0, v16
 
-    goto :goto_5e
+    invoke-virtual {v0, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 773
-    :cond_87
-    invoke-virtual {v14}, Ljava/util/ArrayList;->clear()V
+    goto :goto_3d
 
-    .line 774
+    .line 628
+    .end local v10           #i$:Ljava/util/Iterator;
+    .end local v11           #mailbox:Lcom/android/emailcommon/provider/Mailbox;
+    .end local v12           #mailboxCommitCount:I
+    .end local v13           #mailboxMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Lcom/android/emailcommon/provider/Mailbox;>;"
+    .end local v15           #userMailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/provider/Mailbox;>;"
+    .end local v16           #validMailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/provider/Mailbox;>;"
+    :catchall_6a
+    move-exception v1
+
+    monitor-exit v17
+    :try_end_6c
+    .catchall {:try_start_7 .. :try_end_6c} :catchall_6a
+
+    throw v1
+
+    .line 590
+    .restart local v10       #i$:Ljava/util/Iterator;
+    .restart local v11       #mailbox:Lcom/android/emailcommon/provider/Mailbox;
+    .restart local v12       #mailboxCommitCount:I
+    .restart local v13       #mailboxMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Lcom/android/emailcommon/provider/Mailbox;>;"
+    .restart local v15       #userMailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/provider/Mailbox;>;"
+    .restart local v16       #validMailboxes:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/provider/Mailbox;>;"
+    :cond_6d
+    :try_start_6d
     invoke-virtual {v15}, Ljava/util/ArrayList;->clear()V
 
-    .line 775
+    .line 591
+    invoke-virtual/range {v16 .. v16}, Ljava/util/ArrayList;->clear()V
+
+    .line 592
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->val$ops:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 776
-    const/4 v11, 0x0
+    .line 593
+    const/4 v12, 0x0
 
-    goto :goto_3c
+    goto :goto_1f
 
-    .line 780
-    .end local v10           #mailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    :cond_96
-    new-instance v8, Landroid/content/ContentValues;
+    .line 597
+    .end local v11           #mailbox:Lcom/android/emailcommon/provider/Mailbox;
+    :cond_7c
+    new-instance v9, Landroid/content/ContentValues;
 
-    invoke-direct {v8}, Landroid/content/ContentValues;-><init>()V
+    invoke-direct {v9}, Landroid/content/ContentValues;-><init>()V
 
-    .line 781
-    .local v8, cv:Landroid/content/ContentValues;
+    .line 598
+    .local v9, cv:Landroid/content/ContentValues;
     const-string v1, "syncKey"
 
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
 
-    iget-object v2, v2, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
+    iget-object v2, v2, Lcom/android/exchange/adapter/FolderSyncParser;->mAccount:Lcom/android/emailcommon/provider/Account;
 
-    iget-object v2, v2, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncKey:Ljava/lang/String;
+    iget-object v2, v2, Lcom/android/emailcommon/provider/Account;->mSyncKey:Ljava/lang/String;
 
-    invoke-virtual {v8, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v9, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 782
+    .line 599
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->val$ops:Ljava/util/ArrayList;
 
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
+    sget-object v2, Lcom/android/emailcommon/provider/Account;->CONTENT_URI:Landroid/net/Uri;
 
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
 
-    iget-object v3, v3, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
+    iget-object v3, v3, Lcom/android/exchange/adapter/FolderSyncParser;->mAccount:Lcom/android/emailcommon/provider/Account;
 
-    iget-wide v3, v3, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v3, v3, Lcom/android/emailcommon/provider/Account;->mId:J
 
     invoke-static {v2, v3, v4}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
@@ -306,7 +276,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v8}, Landroid/content/ContentProviderOperation$Builder;->withValues(Landroid/content/ContentValues;)Landroid/content/ContentProviderOperation$Builder;
+    invoke-virtual {v2, v9}, Landroid/content/ContentProviderOperation$Builder;->withValues(Landroid/content/ContentValues;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v2
 
@@ -316,7 +286,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 786
+    .line 603
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
@@ -325,114 +295,113 @@
 
     iget-object v2, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->val$ops:Ljava/util/ArrayList;
 
+    move-object/from16 v0, v16
+
     #calls: Lcom/android/exchange/adapter/FolderSyncParser;->commitMailboxes(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/HashMap;Ljava/util/ArrayList;)Z
-    invoke-static {v1, v15, v14, v12, v2}, Lcom/android/exchange/adapter/FolderSyncParser;->access$500(Lcom/android/exchange/adapter/FolderSyncParser;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/HashMap;Ljava/util/ArrayList;)Z
+    invoke-static {v1, v0, v15, v13, v2}, Lcom/android/exchange/adapter/FolderSyncParser;->access$300(Lcom/android/exchange/adapter/FolderSyncParser;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/HashMap;Ljava/util/ArrayList;)Z
 
     move-result v1
 
-    if-nez v1, :cond_e2
+    if-nez v1, :cond_c8
 
-    .line 787
+    .line 604
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
 
-    iget-object v1, v1, Lcom/android/exchange/adapter/AbstractSyncParser;->mService:Lcom/android/exchange/EasSyncService;
+    iget-object v1, v1, Lcom/android/exchange/adapter/FolderSyncParser;->mService:Lcom/android/exchange/EasSyncService;
 
     invoke-virtual {v1}, Lcom/android/exchange/EasSyncService;->stop()V
 
-    .line 788
-    monitor-exit v16
+    .line 606
+    :cond_c8
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    goto :goto_82
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 791
-    :cond_e2
+    const-string v2, "accountKey="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
+
+    iget-object v2, v2, Lcom/android/exchange/adapter/FolderSyncParser;->mAccount:Lcom/android/emailcommon/provider/Account;
+
+    iget-wide v2, v2, Lcom/android/emailcommon/provider/Account;->mId:J
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 608
+    .local v7, accountSelector:Ljava/lang/String;
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
 
     #getter for: Lcom/android/exchange/adapter/FolderSyncParser;->mFixupUninitializedNeeded:Z
-    invoke-static {v1}, Lcom/android/exchange/adapter/FolderSyncParser;->access$600(Lcom/android/exchange/adapter/FolderSyncParser;)Z
+    invoke-static {v1}, Lcom/android/exchange/adapter/FolderSyncParser;->access$400(Lcom/android/exchange/adapter/FolderSyncParser;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_110
+    if-eqz v1, :cond_f6
 
-    .line 793
+    .line 609
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
 
-    iget-object v1, v1, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
+    iget-object v1, v1, Lcom/android/exchange/adapter/FolderSyncParser;->mContext:Landroid/content/Context;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-static {v1, v7}, Lcom/android/exchange/provider/MailboxUtilities;->fixupUninitializedParentKeys(Landroid/content/Context;Ljava/lang/String;)V
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "accountKey="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
-
-    iget-object v3, v3, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iget-wide v3, v3, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/android/exchange/provider/MailboxUtilities;->fixupUninitializedParentKeys(Landroid/content/Context;Ljava/lang/String;)V
-
-    .line 798
-    :cond_110
+    .line 612
+    :cond_f6
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
 
     #getter for: Lcom/android/exchange/adapter/FolderSyncParser;->mParentFixupsNeeded:Ljava/util/ArrayList;
-    invoke-static {v1}, Lcom/android/exchange/adapter/FolderSyncParser;->access$700(Lcom/android/exchange/adapter/FolderSyncParser;)Ljava/util/ArrayList;
+    invoke-static {v1}, Lcom/android/exchange/adapter/FolderSyncParser;->access$500(Lcom/android/exchange/adapter/FolderSyncParser;)Ljava/util/ArrayList;
 
     move-result-object v1
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result-object v9
+    move-result-object v10
 
-    :goto_11c
-    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
+    :goto_102
+    invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_157
+    if-eqz v1, :cond_13d
 
-    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v13
+    move-result-object v14
 
-    check-cast v13, Ljava/lang/String;
+    check-cast v14, Ljava/lang/String;
 
-    .line 799
-    .local v13, parentServerId:Ljava/lang/String;
+    .line 613
+    .local v14, parentServerId:Ljava/lang/String;
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
 
-    iget-object v1, v1, Lcom/android/exchange/adapter/AbstractSyncParser;->mContentResolver:Landroid/content/ContentResolver;
+    iget-object v1, v1, Lcom/android/exchange/adapter/FolderSyncParser;->mContentResolver:Landroid/content/ContentResolver;
 
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
+    sget-object v2, Lcom/android/emailcommon/provider/Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
-    sget-object v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_PROJECTION:[Ljava/lang/String;
+    sget-object v3, Lcom/android/emailcommon/provider/Mailbox;->CONTENT_PROJECTION:[Ljava/lang/String;
 
     const-string v4, "parentServerId=?"
 
@@ -442,74 +411,74 @@
 
     const/4 v6, 0x0
 
-    aput-object v13, v5, v6
+    aput-object v14, v5, v6
 
     const/4 v6, 0x0
 
     invoke-virtual/range {v1 .. v6}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_13e
-    .catchall {:try_start_34 .. :try_end_13e} :catchall_30
+    :try_end_124
+    .catchall {:try_start_6d .. :try_end_124} :catchall_6a
 
-    move-result-object v7
+    move-result-object v8
 
-    .line 805
-    .local v7, c:Landroid/database/Cursor;
-    :try_start_13f
-    invoke-interface {v7}, Landroid/database/Cursor;->moveToFirst()Z
+    .line 617
+    .local v8, c:Landroid/database/Cursor;
+    :try_start_125
+    invoke-interface {v8}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v1
 
-    if-eqz v1, :cond_14e
+    if-eqz v1, :cond_134
 
-    .line 806
+    .line 618
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
 
-    iget-object v1, v1, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
+    iget-object v1, v1, Lcom/android/exchange/adapter/FolderSyncParser;->mContext:Landroid/content/Context;
 
-    invoke-static {v1, v7}, Lcom/android/exchange/provider/MailboxUtilities;->setFlagsAndChildrensParentKey(Landroid/content/Context;Landroid/database/Cursor;)V
-    :try_end_14e
-    .catchall {:try_start_13f .. :try_end_14e} :catchall_152
+    invoke-static {v1, v8, v7}, Lcom/android/exchange/provider/MailboxUtilities;->setFlagsAndChildrensParentKey(Landroid/content/Context;Landroid/database/Cursor;Ljava/lang/String;)V
+    :try_end_134
+    .catchall {:try_start_125 .. :try_end_134} :catchall_138
 
-    .line 809
-    :cond_14e
-    :try_start_14e
-    invoke-interface {v7}, Landroid/database/Cursor;->close()V
+    .line 622
+    :cond_134
+    :try_start_134
+    invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    goto :goto_11c
+    goto :goto_102
 
-    :catchall_152
+    :catchall_138
     move-exception v1
 
-    invoke-interface {v7}, Landroid/database/Cursor;->close()V
+    invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
     throw v1
 
-    .line 815
-    .end local v7           #c:Landroid/database/Cursor;
-    .end local v13           #parentServerId:Ljava/lang/String;
-    :cond_157
+    .line 627
+    .end local v8           #c:Landroid/database/Cursor;
+    .end local v14           #parentServerId:Ljava/lang/String;
+    :cond_13d
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
 
-    iget-object v1, v1, Lcom/android/exchange/adapter/AbstractSyncParser;->mContext:Landroid/content/Context;
+    iget-object v1, v1, Lcom/android/exchange/adapter/FolderSyncParser;->mContext:Landroid/content/Context;
 
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/exchange/adapter/FolderSyncParser$1;->this$0:Lcom/android/exchange/adapter/FolderSyncParser;
 
-    iget-object v2, v2, Lcom/android/exchange/adapter/AbstractSyncParser;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
+    iget-object v2, v2, Lcom/android/exchange/adapter/FolderSyncParser;->mAccount:Lcom/android/emailcommon/provider/Account;
 
-    iget-wide v2, v2, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v2, v2, Lcom/android/emailcommon/provider/Account;->mId:J
 
     invoke-static {v1, v2, v3}, Lcom/android/exchange/provider/MailboxUtilities;->endMailboxChanges(Landroid/content/Context;J)V
 
-    .line 816
-    monitor-exit v16
-    :try_end_169
-    .catchall {:try_start_14e .. :try_end_169} :catchall_30
+    .line 628
+    monitor-exit v17
+    :try_end_14f
+    .catchall {:try_start_134 .. :try_end_14f} :catchall_6a
 
-    goto/16 :goto_82
+    goto/16 :goto_63
 .end method

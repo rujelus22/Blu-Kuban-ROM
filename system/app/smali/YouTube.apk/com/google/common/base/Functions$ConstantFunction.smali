@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/base/k;
+.implements Lcom/google/common/base/v;
 .implements Ljava/io/Serializable;
 
 
@@ -19,15 +19,18 @@
 .method public constructor <init>(Ljava/lang/Object;)V
     .registers 2
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 265
+    .line 282
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 266
+    .line 283
     iput-object p1, p0, Lcom/google/common/base/Functions$ConstantFunction;->value:Ljava/lang/Object;
 
-    .line 267
+    .line 284
     return-void
 .end method
 
@@ -36,9 +39,12 @@
 .method public apply(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 269
+    .line 288
     iget-object v0, p0, Lcom/google/common/base/Functions$ConstantFunction;->value:Ljava/lang/Object;
 
     return-object v0
@@ -47,26 +53,29 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 272
+    .line 292
     instance-of v0, p1, Lcom/google/common/base/Functions$ConstantFunction;
 
     if-eqz v0, :cond_f
 
-    .line 273
+    .line 293
     check-cast p1, Lcom/google/common/base/Functions$ConstantFunction;
 
-    .line 274
+    .line 294
     iget-object v0, p0, Lcom/google/common/base/Functions$ConstantFunction;->value:Ljava/lang/Object;
 
     iget-object v1, p1, Lcom/google/common/base/Functions$ConstantFunction;->value:Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 276
+    .line 296
     :goto_e
     return v0
 
@@ -80,7 +89,7 @@
     .registers 2
 
     .prologue
-    .line 279
+    .line 300
     iget-object v0, p0, Lcom/google/common/base/Functions$ConstantFunction;->value:Ljava/lang/Object;
 
     if-nez v0, :cond_6
@@ -104,16 +113,12 @@
     .registers 3
 
     .prologue
-    .line 282
+    .line 304
     new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "constant("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/common/base/Functions$ConstantFunction;->value:Ljava/lang/Object;
 

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1026
+    .line 1304
     iput-object p1, p0, Lcom/google/android/finsky/activities/PurchaseFragment$10;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,14 +41,14 @@
     .registers 3
 
     .prologue
-    .line 1029
+    .line 1307
     iget-object v0, p0, Lcom/google/android/finsky/activities/PurchaseFragment$10;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
     const/4 v1, 0x0
 
     #setter for: Lcom/google/android/finsky/activities/PurchaseFragment;->mAddInstrumentScreenShown:Z
-    invoke-static {v0, v1}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$2002(Lcom/google/android/finsky/activities/PurchaseFragment;Z)Z
+    invoke-static {v0, v1}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$2802(Lcom/google/android/finsky/activities/PurchaseFragment;Z)Z
 
-    .line 1030
+    .line 1308
     return-void
 .end method

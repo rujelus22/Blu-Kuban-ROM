@@ -13,7 +13,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field public static final ERI_FROM_FILE_SYSTEM:I = 0x1
 

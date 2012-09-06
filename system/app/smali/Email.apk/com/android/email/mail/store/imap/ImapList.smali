@@ -42,7 +42,7 @@
     .line 24
     invoke-direct {p0}, Lcom/android/email/mail/store/imap/ImapElement;-><init>()V
 
-    .line 42
+    .line 39
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -57,12 +57,12 @@
     .parameter "sb"
 
     .prologue
-    .line 205
+    .line 203
     const/16 v2, 0x5b
 
     invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 206
+    .line 204
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -75,21 +75,21 @@
 
     if-ge v1, v2, :cond_3b
 
-    .line 207
+    .line 205
     if-lez v1, :cond_15
 
-    .line 208
+    .line 206
     const/16 v2, 0x2c
 
     invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 210
+    .line 208
     :cond_15
     invoke-virtual {p0, v1}, Lcom/android/email/mail/store/imap/ImapList;->getElementOrNone(I)Lcom/android/email/mail/store/imap/ImapElement;
 
     move-result-object v0
 
-    .line 211
+    .line 209
     .local v0, e:Lcom/android/email/mail/store/imap/ImapElement;
     invoke-virtual {v0}, Lcom/android/email/mail/store/imap/ImapElement;->isList()Z
 
@@ -97,21 +97,21 @@
 
     if-eqz v2, :cond_29
 
-    .line 212
+    .line 210
     invoke-virtual {p0, v1}, Lcom/android/email/mail/store/imap/ImapList;->getListOrEmpty(I)Lcom/android/email/mail/store/imap/ImapList;
 
     move-result-object v2
 
     invoke-direct {v2, p1}, Lcom/android/email/mail/store/imap/ImapList;->flatten(Ljava/lang/StringBuilder;)Ljava/lang/StringBuilder;
 
-    .line 206
+    .line 204
     :cond_26
     :goto_26
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_6
 
-    .line 213
+    .line 211
     :cond_29
     invoke-virtual {v0}, Lcom/android/email/mail/store/imap/ImapElement;->isString()Z
 
@@ -119,7 +119,7 @@
 
     if-eqz v2, :cond_26
 
-    .line 214
+    .line 212
     invoke-virtual {p0, v1}, Lcom/android/email/mail/store/imap/ImapList;->getStringOrEmpty(I)Lcom/android/email/mail/store/imap/ImapString;
 
     move-result-object v2
@@ -132,14 +132,14 @@
 
     goto :goto_26
 
-    .line 217
+    .line 215
     .end local v0           #e:Lcom/android/email/mail/store/imap/ImapElement;
     :cond_3b
     const/16 v2, 0x5d
 
     invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 218
+    .line 216
     return-object p1
 .end method
 
@@ -150,10 +150,10 @@
     .parameter "e"
 
     .prologue
-    .line 45
+    .line 42
     if-nez p1, :cond_a
 
-    .line 46
+    .line 43
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Can\'t add null"
@@ -162,13 +162,13 @@
 
     throw v0
 
-    .line 48
+    .line 45
     :cond_a
     iget-object v0, p0, Lcom/android/email/mail/store/imap/ImapList;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 49
+    .line 46
     return-void
 .end method
 
@@ -177,7 +177,7 @@
     .parameter "s"
 
     .prologue
-    .line 166
+    .line 162
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -188,7 +188,7 @@
 
     if-ge v0, v1, :cond_16
 
-    .line 167
+    .line 163
     invoke-virtual {p0, v0}, Lcom/android/email/mail/store/imap/ImapList;->getStringOrEmpty(I)Lcom/android/email/mail/store/imap/ImapString;
 
     move-result-object v1
@@ -199,20 +199,20 @@
 
     if-eqz v1, :cond_13
 
-    .line 168
+    .line 164
     const/4 v1, 0x1
 
-    .line 171
+    .line 167
     :goto_12
     return v1
 
-    .line 166
+    .line 162
     :cond_13
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 171
+    .line 167
     :cond_16
     const/4 v1, 0x0
 
@@ -223,12 +223,12 @@
     .registers 4
 
     .prologue
-    .line 176
+    .line 172
     iget-object v2, p0, Lcom/android/email/mail/store/imap/ImapList;->mList:Ljava/util/ArrayList;
 
     if-eqz v2, :cond_1d
 
-    .line 177
+    .line 173
     iget-object v2, p0, Lcom/android/email/mail/store/imap/ImapList;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -249,25 +249,25 @@
 
     check-cast v0, Lcom/android/email/mail/store/imap/ImapElement;
 
-    .line 178
+    .line 174
     .local v0, e:Lcom/android/email/mail/store/imap/ImapElement;
     invoke-virtual {v0}, Lcom/android/email/mail/store/imap/ImapElement;->destroy()V
 
     goto :goto_a
 
-    .line 180
+    .line 176
     .end local v0           #e:Lcom/android/email/mail/store/imap/ImapElement;
     :cond_1a
     const/4 v2, 0x0
 
     iput-object v2, p0, Lcom/android/email/mail/store/imap/ImapList;->mList:Ljava/util/ArrayList;
 
-    .line 182
+    .line 178
     .end local v1           #i$:Ljava/util/Iterator;
     :cond_1d
     invoke-super {p0}, Lcom/android/email/mail/store/imap/ImapElement;->destroy()V
 
-    .line 183
+    .line 179
     return-void
 .end method
 
@@ -278,7 +278,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 223
+    .line 221
     invoke-super {p0, p1}, Lcom/android/email/mail/store/imap/ImapElement;->equalsForTest(Lcom/android/email/mail/store/imap/ImapElement;)Z
 
     move-result v2
@@ -287,17 +287,17 @@
 
     move v2, v3
 
-    .line 235
+    .line 233
     :goto_8
     return v2
 
     :cond_9
     move-object v1, p1
 
-    .line 226
+    .line 224
     check-cast v1, Lcom/android/email/mail/store/imap/ImapList;
 
-    .line 227
+    .line 225
     .local v1, thatList:Lcom/android/email/mail/store/imap/ImapList;
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapList;->size()I
 
@@ -311,10 +311,10 @@
 
     move v2, v3
 
-    .line 228
+    .line 226
     goto :goto_8
 
-    .line 230
+    .line 228
     :cond_18
     const/4 v0, 0x0
 
@@ -326,7 +326,7 @@
 
     if-ge v0, v2, :cond_36
 
-    .line 231
+    .line 229
     iget-object v2, p0, Lcom/android/email/mail/store/imap/ImapList;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -347,16 +347,16 @@
 
     move v2, v3
 
-    .line 232
+    .line 230
     goto :goto_8
 
-    .line 230
+    .line 228
     :cond_33
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_19
 
-    .line 235
+    .line 233
     :cond_36
     const/4 v2, 0x1
 
@@ -367,7 +367,7 @@
     .registers 2
 
     .prologue
-    .line 194
+    .line 190
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -388,7 +388,7 @@
     .parameter "index"
 
     .prologue
-    .line 94
+    .line 90
     iget-object v0, p0, Lcom/android/email/mail/store/imap/ImapList;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -420,7 +420,7 @@
     .parameter "prefixMatch"
 
     .prologue
-    .line 120
+    .line 116
     const/4 v0, 0x1
 
     .local v0, i:I
@@ -431,7 +431,7 @@
 
     if-ge v0, v1, :cond_1b
 
-    .line 121
+    .line 117
     add-int/lit8 v1, v0, -0x1
 
     invoke-virtual {p0, v1, p1, p2}, Lcom/android/email/mail/store/imap/ImapList;->is(ILjava/lang/String;Z)Z
@@ -440,7 +440,7 @@
 
     if-eqz v1, :cond_18
 
-    .line 122
+    .line 118
     iget-object v1, p0, Lcom/android/email/mail/store/imap/ImapList;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -449,17 +449,17 @@
 
     check-cast v1, Lcom/android/email/mail/store/imap/ImapElement;
 
-    .line 125
+    .line 121
     :goto_17
     return-object v1
 
-    .line 120
+    .line 116
     :cond_18
     add-int/lit8 v0, v0, 0x2
 
     goto :goto_1
 
-    .line 125
+    .line 121
     :cond_1b
     const/4 v1, 0x0
 
@@ -471,7 +471,7 @@
     .parameter "key"
 
     .prologue
-    .line 133
+    .line 129
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/email/mail/store/imap/ImapList;->getKeyedListOrEmpty(Ljava/lang/String;Z)Lcom/android/email/mail/store/imap/ImapList;
@@ -487,12 +487,12 @@
     .parameter "prefixMatch"
 
     .prologue
-    .line 141
+    .line 137
     invoke-virtual {p0, p1, p2}, Lcom/android/email/mail/store/imap/ImapList;->getKeyedElementOrNull(Ljava/lang/String;Z)Lcom/android/email/mail/store/imap/ImapElement;
 
     move-result-object v0
 
-    .line 142
+    .line 138
     .local v0, e:Lcom/android/email/mail/store/imap/ImapElement;
     if-eqz v0, :cond_9
 
@@ -514,7 +514,7 @@
     .parameter "key"
 
     .prologue
-    .line 150
+    .line 146
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/email/mail/store/imap/ImapList;->getKeyedStringOrEmpty(Ljava/lang/String;Z)Lcom/android/email/mail/store/imap/ImapString;
@@ -530,12 +530,12 @@
     .parameter "prefixMatch"
 
     .prologue
-    .line 158
+    .line 154
     invoke-virtual {p0, p1, p2}, Lcom/android/email/mail/store/imap/ImapList;->getKeyedElementOrNull(Ljava/lang/String;Z)Lcom/android/email/mail/store/imap/ImapElement;
 
     move-result-object v0
 
-    .line 159
+    .line 155
     .local v0, e:Lcom/android/email/mail/store/imap/ImapElement;
     if-eqz v0, :cond_9
 
@@ -557,12 +557,12 @@
     .parameter "index"
 
     .prologue
-    .line 102
+    .line 98
     invoke-virtual {p0, p1}, Lcom/android/email/mail/store/imap/ImapList;->getElementOrNone(I)Lcom/android/email/mail/store/imap/ImapElement;
 
     move-result-object v0
 
-    .line 103
+    .line 99
     .local v0, el:Lcom/android/email/mail/store/imap/ImapElement;
     invoke-virtual {v0}, Lcom/android/email/mail/store/imap/ImapElement;->isList()Z
 
@@ -588,12 +588,12 @@
     .parameter "index"
 
     .prologue
-    .line 111
+    .line 107
     invoke-virtual {p0, p1}, Lcom/android/email/mail/store/imap/ImapList;->getElementOrNone(I)Lcom/android/email/mail/store/imap/ImapElement;
 
     move-result-object v0
 
-    .line 112
+    .line 108
     .local v0, el:Lcom/android/email/mail/store/imap/ImapElement;
     invoke-virtual {v0}, Lcom/android/email/mail/store/imap/ImapElement;->isString()Z
 
@@ -620,7 +620,7 @@
     .parameter "s"
 
     .prologue
-    .line 74
+    .line 71
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/android/email/mail/store/imap/ImapList;->is(ILjava/lang/String;Z)Z
@@ -637,10 +637,10 @@
     .parameter "prefixMatch"
 
     .prologue
-    .line 82
+    .line 78
     if-nez p3, :cond_b
 
-    .line 83
+    .line 79
     invoke-virtual {p0, p1}, Lcom/android/email/mail/store/imap/ImapList;->getStringOrEmpty(I)Lcom/android/email/mail/store/imap/ImapString;
 
     move-result-object v0
@@ -649,7 +649,7 @@
 
     move-result v0
 
-    .line 85
+    .line 81
     :goto_a
     return v0
 
@@ -669,7 +669,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 63
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapList;->size()I
 
     move-result v0
@@ -691,7 +691,7 @@
     .registers 2
 
     .prologue
-    .line 58
+    .line 55
     const/4 v0, 0x1
 
     return v0
@@ -701,7 +701,7 @@
     .registers 2
 
     .prologue
-    .line 53
+    .line 50
     const/4 v0, 0x0
 
     return v0
@@ -711,7 +711,7 @@
     .registers 2
 
     .prologue
-    .line 62
+    .line 59
     iget-object v0, p0, Lcom/android/email/mail/store/imap/ImapList;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -725,7 +725,7 @@
     .registers 2
 
     .prologue
-    .line 187
+    .line 183
     iget-object v0, p0, Lcom/android/email/mail/store/imap/ImapList;->mList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->toString()Ljava/lang/String;

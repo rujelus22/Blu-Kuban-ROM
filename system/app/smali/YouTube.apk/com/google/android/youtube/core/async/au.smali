@@ -1,218 +1,133 @@
-.class abstract Lcom/google/android/youtube/core/async/au;
+.class public final Lcom/google/android/youtube/core/async/au;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/accounts/AccountManagerCallback;
+.implements Lcom/google/android/youtube/core/async/bc;
 
 
 # instance fields
-.field final synthetic b:Lcom/google/android/youtube/core/async/UserAuthorizer;
+.field private final a:Landroid/os/ConditionVariable;
+
+.field private volatile b:Lcom/google/android/youtube/core/model/UserAuth;
+
+.field private volatile c:Ljava/lang/Exception;
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/youtube/core/async/UserAuthorizer;)V
+.method public constructor <init>()V
     .registers 3
-    .parameter
 
     .prologue
-    .line 617
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/core/async/au;-><init>(Lcom/google/android/youtube/core/async/UserAuthorizer;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/youtube/core/async/UserAuthorizer;B)V
-    .registers 3
-    .parameter
-    .parameter
-
-    .prologue
-    .line 617
-    iput-object p1, p0, Lcom/google/android/youtube/core/async/au;->b:Lcom/google/android/youtube/core/async/UserAuthorizer;
-
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 24
+    new-instance v0, Landroid/os/ConditionVariable;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Landroid/os/ConditionVariable;-><init>(Z)V
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/au;->a:Landroid/os/ConditionVariable;
+
+    .line 25
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()V
-.end method
-
-.method public abstract a(Ljava/lang/Exception;)V
-.end method
-
-.method public abstract a(Ljava/lang/String;Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;Ljava/lang/String;)V
-.end method
-
-.method public run(Landroid/accounts/AccountManagerFuture;)V
-    .registers 6
+.method public final a(Lcom/google/android/youtube/core/model/UserAuth;)V
+    .registers 3
     .parameter
 
     .prologue
-    .line 621
-    :try_start_0
-    invoke-interface {p1}, Landroid/accounts/AccountManagerFuture;->getResult()Ljava/lang/Object;
+    .line 28
+    iput-object p1, p0, Lcom/google/android/youtube/core/async/au;->b:Lcom/google/android/youtube/core/model/UserAuth;
 
-    move-result-object v0
+    .line 29
+    const/4 v0, 0x0
 
-    check-cast v0, Landroid/os/Bundle;
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/au;->c:Ljava/lang/Exception;
 
-    .line 623
-    const-string v1, "intent"
+    .line 30
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/au;->a:Landroid/os/ConditionVariable;
 
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+    invoke-virtual {v0}, Landroid/os/ConditionVariable;->open()V
 
-    move-result v1
-
-    if-eqz v1, :cond_12
-
-    .line 626
-    invoke-virtual {p0}, Lcom/google/android/youtube/core/async/au;->a()V
-
-    .line 649
-    :goto_11
+    .line 31
     return-void
+.end method
 
-    .line 628
-    :cond_12
-    iget-object v1, p0, Lcom/google/android/youtube/core/async/au;->b:Lcom/google/android/youtube/core/async/UserAuthorizer;
+.method public final a(Ljava/lang/Exception;)V
+    .registers 3
+    .parameter
 
-    const-string v2, "authAccount"
+    .prologue
+    .line 40
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/au;->b:Lcom/google/android/youtube/core/model/UserAuth;
 
-    move-result-object v2
+    .line 41
+    iput-object p1, p0, Lcom/google/android/youtube/core/async/au;->c:Ljava/lang/Exception;
 
-    invoke-virtual {v1, v2}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Ljava/lang/String;)Landroid/accounts/Account;
+    .line 42
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/au;->a:Landroid/os/ConditionVariable;
 
-    move-result-object v1
+    invoke-virtual {v0}, Landroid/os/ConditionVariable;->open()V
 
-    .line 629
-    const-string v2, "authtoken"
+    .line 43
+    return-void
+.end method
 
-    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+.method public final b()Lcom/google/android/youtube/core/model/UserAuth;
+    .registers 3
 
-    move-result-object v0
+    .prologue
+    .line 46
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/au;->a:Landroid/os/ConditionVariable;
 
-    .line 630
-    if-eqz v0, :cond_4f
+    invoke-virtual {v0}, Landroid/os/ConditionVariable;->block()V
 
-    .line 631
-    new-instance v2, Ljava/lang/StringBuilder;
+    .line 47
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/au;->c:Ljava/lang/Exception;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    if-eqz v0, :cond_11
 
-    const-string v3, "got authToken for "
+    .line 48
+    new-instance v0, Ljava/util/concurrent/ExecutionException;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lcom/google/android/youtube/core/async/au;->c:Ljava/lang/Exception;
 
-    move-result-object v2
+    invoke-direct {v0, v1}, Ljava/util/concurrent/ExecutionException;-><init>(Ljava/lang/Throwable;)V
 
-    iget-object v3, v1, Landroid/accounts/Account;->name:Ljava/lang/String;
+    throw v0
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 50
+    :cond_11
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/au;->b:Lcom/google/android/youtube/core/model/UserAuth;
 
-    move-result-object v2
+    return-object v0
+.end method
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+.method public final e_()V
+    .registers 2
 
-    invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
+    .prologue
+    const/4 v0, 0x0
 
-    .line 632
-    iget-object v1, v1, Landroid/accounts/Account;->name:Ljava/lang/String;
+    .line 34
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/au;->b:Lcom/google/android/youtube/core/model/UserAuth;
 
-    iget-object v2, p0, Lcom/google/android/youtube/core/async/au;->b:Lcom/google/android/youtube/core/async/UserAuthorizer;
+    .line 35
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/au;->c:Ljava/lang/Exception;
 
-    iget-object v2, v2, Lcom/google/android/youtube/core/async/UserAuthorizer;->a:Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;
+    .line 36
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/au;->a:Landroid/os/ConditionVariable;
 
-    invoke-virtual {p0, v1, v2, v0}, Lcom/google/android/youtube/core/async/au;->a(Ljava/lang/String;Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;Ljava/lang/String;)V
-    :try_end_46
-    .catch Landroid/accounts/OperationCanceledException; {:try_start_0 .. :try_end_46} :catch_47
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_46} :catch_70
-    .catch Landroid/accounts/AuthenticatorException; {:try_start_0 .. :try_end_46} :catch_7a
+    invoke-virtual {v0}, Landroid/os/ConditionVariable;->open()V
 
-    goto :goto_11
-
-    .line 639
-    :catch_47
-    move-exception v0
-
-    .line 640
-    invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
-
-    .line 641
-    invoke-virtual {p0}, Lcom/google/android/youtube/core/async/au;->a()V
-
-    goto :goto_11
-
-    .line 634
-    :cond_4f
-    :try_start_4f
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "got null authToken for "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, v1, Landroid/accounts/Account;->name:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/L;->b(Ljava/lang/String;)V
-
-    .line 635
-    new-instance v0, Landroid/accounts/AuthenticatorException;
-
-    invoke-direct {v0}, Landroid/accounts/AuthenticatorException;-><init>()V
-
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/core/async/au;->a(Ljava/lang/Exception;)V
-    :try_end_6f
-    .catch Landroid/accounts/OperationCanceledException; {:try_start_4f .. :try_end_6f} :catch_47
-    .catch Ljava/io/IOException; {:try_start_4f .. :try_end_6f} :catch_70
-    .catch Landroid/accounts/AuthenticatorException; {:try_start_4f .. :try_end_6f} :catch_7a
-
-    goto :goto_11
-
-    .line 642
-    :catch_70
-    move-exception v0
-
-    .line 643
-    const-string v1, "login IOException"
-
-    invoke-static {v1}, Lcom/google/android/youtube/core/L;->b(Ljava/lang/String;)V
-
-    .line 644
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/core/async/au;->a(Ljava/lang/Exception;)V
-
-    goto :goto_11
-
-    .line 645
-    :catch_7a
-    move-exception v0
-
-    .line 646
-    const-string v1, "login AuthenticatorException"
-
-    invoke-static {v1}, Lcom/google/android/youtube/core/L;->b(Ljava/lang/String;)V
-
-    .line 647
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/core/async/au;->a(Ljava/lang/Exception;)V
-
-    goto :goto_11
+    .line 37
+    return-void
 .end method

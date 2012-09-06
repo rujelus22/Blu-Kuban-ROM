@@ -1,133 +1,193 @@
 .class public Lcom/google/googlenav/ui/android/AndroidView;
 .super Lcom/google/googlenav/ui/android/BaseAndroidView;
+.source "SourceFile"
 
 # interfaces
-.implements LaA/m;
+.implements Laj/m;
 .implements Landroid/view/GestureDetector$OnDoubleTapListener;
 .implements Landroid/view/GestureDetector$OnGestureListener;
 .implements Lcom/google/googlenav/ui/c;
 
 
 # instance fields
-.field private final e:Lai/e;
+.field private final f:LT/e;
 
-.field private f:LaP/h;
+.field private g:LaB/h;
 
-.field private g:Lcom/google/googlenav/ui/android/t;
+.field private h:Lcom/google/googlenav/ui/android/F;
 
-.field private h:Lcom/google/googlenav/ui/android/p;
+.field private i:Lcom/google/googlenav/ui/android/o;
 
-.field private i:Lcom/google/googlenav/ui/android/p;
+.field private j:Lcom/google/googlenav/ui/android/o;
 
-.field private final j:Landroid/graphics/Point;
+.field private final k:Landroid/graphics/Point;
 
-.field private k:Z
+.field private l:Z
 
-.field private l:Landroid/graphics/Canvas;
+.field private m:Landroid/graphics/Canvas;
 
-.field private final m:LaA/g;
+.field private final n:Laj/g;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 6
+    .parameter
+    .parameter
 
+    .prologue
     const/4 v2, 0x1
 
+    .line 114
     invoke-direct {p0, p1, p2}, Lcom/google/googlenav/ui/android/BaseAndroidView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    new-instance v0, Lai/e;
+    .line 72
+    new-instance v0, LT/e;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lai/e;-><init>(Landroid/graphics/Canvas;)V
+    invoke-direct {v0, v1}, LT/e;-><init>(Landroid/graphics/Canvas;)V
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->e:Lai/e;
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->f:LT/e;
 
+    .line 93
     new-instance v0, Landroid/graphics/Point;
 
     invoke-direct {v0}, Landroid/graphics/Point;-><init>()V
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->j:Landroid/graphics/Point;
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->k:Landroid/graphics/Point;
 
+    .line 115
     invoke-virtual {p0, v2}, Lcom/google/googlenav/ui/android/AndroidView;->setFocusable(Z)V
 
+    .line 116
     invoke-virtual {p0, v2}, Lcom/google/googlenav/ui/android/AndroidView;->setFocusableInTouchMode(Z)V
 
+    .line 117
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/google/googlenav/ui/android/AndroidView;->setWillNotDraw(Z)V
 
-    new-instance v0, LaA/g;
+    .line 119
+    new-instance v0, Laj/g;
 
-    invoke-direct {v0}, LaA/g;-><init>()V
+    invoke-direct {v0}, Laj/g;-><init>()V
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->m:LaA/g;
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->n:Laj/g;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->m:LaA/g;
+    .line 120
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->n:Laj/g;
 
-    invoke-virtual {v0, p1, p0, p0}, LaA/g;->a(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;Landroid/view/GestureDetector$OnDoubleTapListener;)V
+    invoke-virtual {v0, p1, p0, p0}, Laj/g;->a(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;Landroid/view/GestureDetector$OnDoubleTapListener;)V
 
-    invoke-static {}, LaA/i;->a()LaA/i;
+    .line 121
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->e:Laj/i;
 
-    move-result-object v0
+    invoke-virtual {v0, p1, p0}, Laj/i;->a(Landroid/content/Context;Laj/m;)V
 
-    invoke-virtual {v0, p1, p0}, LaA/i;->a(Landroid/content/Context;LaA/m;)V
+    .line 123
+    sget-object v0, Lcom/google/googlenav/android/A;->a:Lcom/google/googlenav/android/A;
 
-    sget-object v0, Lcom/google/googlenav/android/D;->a:Lcom/google/googlenav/android/D;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/D;->b()Z
+    invoke-virtual {v0}, Lcom/google/googlenav/android/A;->b()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_39
 
-    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidView;->i()V
+    .line 124
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidView;->a()V
 
-    :cond_3b
+    .line 126
+    :cond_39
     return-void
 .end method
 
 .method static synthetic a(Lcom/google/googlenav/ui/android/AndroidView;)F
     .registers 2
+    .parameter
 
-    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidView;->l()F
+    .prologue
+    .line 69
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidView;->k()F
 
     move-result v0
 
     return v0
 .end method
 
-.method private a(Landroid/view/MotionEvent;IIJ)V
-    .registers 14
+.method private a()V
+    .registers 2
 
-    const/4 v7, 0x0
-
-    invoke-static {}, LaA/i;->a()LaA/i;
+    .prologue
+    .line 161
+    invoke-static {}, LaB/h;->i()LaB/h;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LaA/i;->c()V
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->g:LaB/h;
 
+    .line 162
+    new-instance v0, Lcom/google/googlenav/ui/android/F;
+
+    invoke-direct {v0}, Lcom/google/googlenav/ui/android/F;-><init>()V
+
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->h:Lcom/google/googlenav/ui/android/F;
+
+    .line 163
+    new-instance v0, Lcom/google/googlenav/ui/android/o;
+
+    invoke-direct {v0, p0}, Lcom/google/googlenav/ui/android/o;-><init>(Lcom/google/googlenav/ui/android/AndroidView;)V
+
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->i:Lcom/google/googlenav/ui/android/o;
+
+    .line 164
+    new-instance v0, Lcom/google/googlenav/ui/android/o;
+
+    invoke-direct {v0, p0}, Lcom/google/googlenav/ui/android/o;-><init>(Lcom/google/googlenav/ui/android/AndroidView;)V
+
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->j:Lcom/google/googlenav/ui/android/o;
+
+    .line 165
+    return-void
+.end method
+
+.method private a(Landroid/view/MotionEvent;IIJ)V
+    .registers 14
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    const/4 v7, 0x0
+
+    .line 222
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->e:Laj/i;
+
+    invoke-virtual {v0}, Laj/i;->b()V
+
+    .line 223
     invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidView;->j()Z
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_2e
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->h:Lcom/google/googlenav/ui/android/p;
+    .line 224
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->i:Lcom/google/googlenav/ui/android/o;
 
-    invoke-virtual {v0, p1}, Lcom/google/googlenav/ui/android/p;->a(Landroid/view/MotionEvent;)V
+    invoke-virtual {v0, p1}, Lcom/google/googlenav/ui/android/o;->a(Landroid/view/MotionEvent;)V
 
-    new-instance v0, Laq/c;
+    .line 225
+    new-instance v0, LZ/b;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->h:Lcom/google/googlenav/ui/android/p;
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->i:Lcom/google/googlenav/ui/android/o;
 
-    iget v3, v1, Lcom/google/googlenav/ui/android/p;->a:I
+    iget v3, v1, Lcom/google/googlenav/ui/android/o;->a:I
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->h:Lcom/google/googlenav/ui/android/p;
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->i:Lcom/google/googlenav/ui/android/o;
 
-    iget v4, v1, Lcom/google/googlenav/ui/android/p;->b:I
+    iget v4, v1, Lcom/google/googlenav/ui/android/o;->b:I
 
     move v1, p2
 
@@ -135,23 +195,27 @@
 
     move-wide v5, p4
 
-    invoke-direct/range {v0 .. v7}, Laq/c;-><init>(IIIIJLandroid/graphics/Point;)V
+    invoke-direct/range {v0 .. v7}, LZ/b;-><init>(IIIIJLandroid/graphics/Point;)V
 
-    :goto_23
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->b:Lcom/google/googlenav/android/l;
+    .line 233
+    :goto_21
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->b:Lcom/google/googlenav/android/i;
 
-    invoke-virtual {v1}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
+    invoke-virtual {v1}, Lcom/google/googlenav/android/i;->i()Lcom/google/googlenav/ui/v;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lcom/google/googlenav/ui/D;->a(Laq/c;)V
+    invoke-virtual {v1, v0}, Lcom/google/googlenav/ui/v;->a(LZ/b;)V
 
+    .line 234
     invoke-virtual {p0}, Lcom/google/googlenav/ui/android/AndroidView;->invalidate()V
 
+    .line 235
     return-void
 
-    :cond_30
-    new-instance v0, Laq/c;
+    .line 230
+    :cond_2e
+    new-instance v0, LZ/b;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -175,63 +239,35 @@
 
     move-wide v5, p4
 
-    invoke-direct/range {v0 .. v7}, Laq/c;-><init>(IIIIJLandroid/graphics/Point;)V
+    invoke-direct/range {v0 .. v7}, LZ/b;-><init>(IIIIJLandroid/graphics/Point;)V
 
-    goto :goto_23
-.end method
-
-.method private i()V
-    .registers 2
-
-    invoke-static {}, LaP/h;->i()LaP/h;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->f:LaP/h;
-
-    new-instance v0, Lcom/google/googlenav/ui/android/t;
-
-    invoke-direct {v0}, Lcom/google/googlenav/ui/android/t;-><init>()V
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->g:Lcom/google/googlenav/ui/android/t;
-
-    new-instance v0, Lcom/google/googlenav/ui/android/p;
-
-    invoke-direct {v0, p0}, Lcom/google/googlenav/ui/android/p;-><init>(Lcom/google/googlenav/ui/android/AndroidView;)V
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->h:Lcom/google/googlenav/ui/android/p;
-
-    new-instance v0, Lcom/google/googlenav/ui/android/p;
-
-    invoke-direct {v0, p0}, Lcom/google/googlenav/ui/android/p;-><init>(Lcom/google/googlenav/ui/android/AndroidView;)V
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->i:Lcom/google/googlenav/ui/android/p;
-
-    return-void
+    goto :goto_21
 .end method
 
 .method private j()Z
     .registers 2
 
-    sget-object v0, Lcom/google/googlenav/android/D;->a:Lcom/google/googlenav/android/D;
+    .prologue
+    .line 191
+    sget-object v0, Lcom/google/googlenav/android/A;->a:Lcom/google/googlenav/android/A;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/android/D;->b()Z
+    invoke-virtual {v0}, Lcom/google/googlenav/android/A;->b()Z
 
     move-result v0
 
     if-eqz v0, :cond_1a
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->b:Lcom/google/googlenav/android/l;
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->b:Lcom/google/googlenav/android/i;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/D;->aw()Lcom/google/googlenav/ui/at;
+    invoke-virtual {v0}, Lcom/google/googlenav/android/i;->i()Lcom/google/googlenav/ui/v;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/at;->o()Z
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/v;->p()Lcom/google/googlenav/ui/ap;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/ap;->j()Z
 
     move-result v0
 
@@ -248,26 +284,30 @@
     goto :goto_19
 .end method
 
-.method private l()F
+.method private k()F
     .registers 2
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->f:LaP/h;
+    .prologue
+    .line 410
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->g:LaB/h;
 
-    invoke-virtual {v0}, LaP/h;->c()Z
+    invoke-virtual {v0}, LaB/h;->c()Z
 
     move-result v0
 
     if-nez v0, :cond_a
 
+    .line 411
     const/4 v0, 0x0
 
+    .line 413
     :goto_9
     return v0
 
     :cond_a
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->f:LaP/h;
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->g:LaB/h;
 
-    invoke-virtual {v0}, LaP/h;->d()F
+    invoke-virtual {v0}, LaB/h;->d()F
 
     move-result v0
 
@@ -276,75 +316,75 @@
 
 
 # virtual methods
-.method public a()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->m:LaA/g;
-
-    invoke-virtual {v0}, LaA/g;->a()V
-
-    invoke-static {}, LaA/i;->a()LaA/i;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LaA/i;->d()V
-
-    return-void
-.end method
-
-.method public a(Lcom/google/googlenav/android/l;Lcom/google/googlenav/ui/android/ButtonContainer;)V
+.method public a(Lcom/google/googlenav/android/i;Lcom/google/googlenav/ui/android/ButtonContainer;)V
     .registers 4
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/android/AndroidView;->b:Lcom/google/googlenav/android/l;
+    .prologue
+    .line 130
+    iput-object p1, p0, Lcom/google/googlenav/ui/android/AndroidView;->b:Lcom/google/googlenav/android/i;
 
-    new-instance v0, Lcom/google/googlenav/ui/android/c;
+    .line 131
+    new-instance v0, Lcom/google/googlenav/ui/android/b;
 
-    invoke-direct {v0, p1}, Lcom/google/googlenav/ui/android/c;-><init>(Lcom/google/googlenav/android/l;)V
+    invoke-direct {v0, p1}, Lcom/google/googlenav/ui/android/b;-><init>(Lcom/google/googlenav/android/i;)V
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->c:Lcom/google/googlenav/ui/android/c;
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->c:Lcom/google/googlenav/ui/android/b;
 
+    .line 132
     return-void
 .end method
 
-.method public a(Lcom/google/googlenav/ui/C;)V
+.method public a(Lcom/google/googlenav/ui/u;)V
     .registers 7
+    .parameter
 
+    .prologue
     const/high16 v4, 0x3f00
 
     const/4 v2, 0x0
 
-    iget-boolean v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->k:Z
+    .line 385
+    iget-boolean v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->l:Z
 
     if-eqz v0, :cond_47
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->f:LaP/h;
+    .line 386
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->g:LaB/h;
 
     if-nez v0, :cond_e
 
-    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidView;->i()V
+    .line 389
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidView;->a()V
 
+    .line 392
     :cond_e
-    invoke-virtual {p1}, Lcom/google/googlenav/ui/C;->b()Lah/e;
+    invoke-virtual {p1}, Lcom/google/googlenav/ui/u;->b()LS/e;
 
     move-result-object v0
 
-    check-cast v0, Lai/e;
+    check-cast v0, LT/e;
 
-    invoke-virtual {v0}, Lai/e;->f()Landroid/graphics/Canvas;
+    invoke-virtual {v0}, LT/e;->f()Landroid/graphics/Canvas;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->l:Landroid/graphics/Canvas;
+    .line 393
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->m:Landroid/graphics/Canvas;
 
+    .line 397
     const/16 v1, 0xff
 
     invoke-virtual {v0, v1, v2, v2, v2}, Landroid/graphics/Canvas;->drawARGB(IIII)V
 
+    .line 398
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->save(I)I
 
-    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidView;->l()F
+    .line 399
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidView;->k()F
 
     move-result v1
 
@@ -368,93 +408,141 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->g:Lcom/google/googlenav/ui/android/t;
+    .line 400
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->h:Lcom/google/googlenav/ui/android/F;
 
-    invoke-virtual {v1, v0}, Lcom/google/googlenav/ui/android/t;->a(Landroid/graphics/Canvas;)V
+    invoke-virtual {v1, v0}, Lcom/google/googlenav/ui/android/F;->a(Landroid/graphics/Canvas;)V
 
-    invoke-virtual {p1}, Lcom/google/googlenav/ui/C;->b()Lah/e;
+    .line 401
+    invoke-virtual {p1}, Lcom/google/googlenav/ui/u;->b()LS/e;
 
     move-result-object v0
 
-    check-cast v0, Lai/e;
+    check-cast v0, LT/e;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->g:Lcom/google/googlenav/ui/android/t;
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->h:Lcom/google/googlenav/ui/android/F;
 
-    invoke-virtual {v0, v1}, Lai/e;->a(Landroid/graphics/Canvas;)V
+    invoke-virtual {v0, v1}, LT/e;->a(Landroid/graphics/Canvas;)V
 
+    .line 403
     :cond_47
     return-void
 .end method
 
-.method public a(LaA/r;)Z
+.method public a(Laj/r;)Z
     .registers 3
+    .parameter
 
+    .prologue
+    .line 338
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public a(LaA/t;)Z
+.method public a(Laj/t;)Z
     .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->b:Lcom/google/googlenav/android/l;
+    .prologue
+    .line 330
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->e:Laj/i;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/google/googlenav/ui/D;->a(LaA/t;)Z
+    invoke-virtual {v0}, Laj/i;->a()Z
 
     move-result v0
 
+    if-eqz v0, :cond_16
+
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->b:Lcom/google/googlenav/android/i;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/android/i;->i()Lcom/google/googlenav/ui/v;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/google/googlenav/ui/v;->a(Laj/t;)Z
+
+    move-result v0
+
+    .line 332
+    :goto_12
     invoke-virtual {p0}, Lcom/google/googlenav/ui/android/AndroidView;->invalidate()V
 
+    .line 333
     return v0
+
+    .line 330
+    :cond_16
+    const/4 v0, 0x0
+
+    goto :goto_12
 .end method
 
-.method public a(LaA/z;)Z
+.method public a(Laj/z;)Z
     .registers 3
+    .parameter
 
+    .prologue
+    .line 325
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public b()V
-    .registers 1
+    .registers 2
 
+    .prologue
+    .line 136
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->n:Laj/g;
+
+    invoke-virtual {v0}, Laj/g;->a()V
+
+    .line 137
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->e:Laj/i;
+
+    invoke-virtual {v0}, Laj/i;->c()V
+
+    .line 138
     return-void
 .end method
 
-.method public b(Lcom/google/googlenav/ui/C;)V
+.method public b(Lcom/google/googlenav/ui/u;)V
     .registers 4
+    .parameter
 
-    iget-boolean v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->k:Z
+    .prologue
+    .line 418
+    iget-boolean v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->l:Z
 
     if-eqz v0, :cond_1c
 
-    invoke-virtual {p1}, Lcom/google/googlenav/ui/C;->b()Lah/e;
+    .line 419
+    invoke-virtual {p1}, Lcom/google/googlenav/ui/u;->b()LS/e;
 
     move-result-object v0
 
-    check-cast v0, Lai/e;
+    check-cast v0, LT/e;
 
-    invoke-virtual {v0}, Lai/e;->f()Landroid/graphics/Canvas;
+    invoke-virtual {v0}, LT/e;->f()Landroid/graphics/Canvas;
 
     move-result-object v0
 
+    .line 420
     invoke-virtual {v0}, Landroid/graphics/Canvas;->restore()V
 
-    invoke-virtual {p1}, Lcom/google/googlenav/ui/C;->b()Lah/e;
+    .line 421
+    invoke-virtual {p1}, Lcom/google/googlenav/ui/u;->b()LS/e;
 
     move-result-object v0
 
-    check-cast v0, Lai/e;
+    check-cast v0, LT/e;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->l:Landroid/graphics/Canvas;
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->m:Landroid/graphics/Canvas;
 
-    invoke-virtual {v0, v1}, Lai/e;->a(Landroid/graphics/Canvas;)V
+    invoke-virtual {v0, v1}, LT/e;->a(Landroid/graphics/Canvas;)V
 
+    .line 423
     :cond_1c
     return-void
 .end method
@@ -462,37 +550,54 @@
 .method public c()V
     .registers 1
 
+    .prologue
+    .line 148
     return-void
 .end method
 
 .method public d()V
     .registers 1
 
+    .prologue
+    .line 153
     return-void
 .end method
 
-.method public f()V
+.method public e()V
     .registers 1
 
+    .prologue
+    .line 143
+    return-void
+.end method
+
+.method public g()V
+    .registers 1
+
+    .prologue
+    .line 158
     return-void
 .end method
 
 .method public onDoubleTap(Landroid/view/MotionEvent;)Z
     .registers 8
+    .parameter
 
+    .prologue
+    .line 246
     const/4 v2, -0x1
 
     const/4 v3, 0x2
 
-    invoke-static {}, Laf/b;->a()Laf/b;
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Laf/b;->v()Laf/a;
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->u()Lcom/google/googlenav/common/a;
 
     move-result-object v0
 
-    invoke-interface {v0}, Laf/a;->c()J
+    invoke-interface {v0}, Lcom/google/googlenav/common/a;->c()J
 
     move-result-wide v4
 
@@ -502,6 +607,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/google/googlenav/ui/android/AndroidView;->a(Landroid/view/MotionEvent;IIJ)V
 
+    .line 248
     const/4 v0, 0x1
 
     return v0
@@ -509,7 +615,10 @@
 
 .method public onDoubleTapEvent(Landroid/view/MotionEvent;)Z
     .registers 3
+    .parameter
 
+    .prologue
+    .line 257
     const/4 v0, 0x1
 
     return v0
@@ -517,9 +626,12 @@
 
 .method public onDown(Landroid/view/MotionEvent;)Z
     .registers 8
+    .parameter
 
+    .prologue
     const/4 v2, 0x0
 
+    .line 262
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getEventTime()J
 
     move-result-wide v4
@@ -532,6 +644,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/google/googlenav/ui/android/AndroidView;->a(Landroid/view/MotionEvent;IIJ)V
 
+    .line 264
     const/4 v0, 0x1
 
     return v0
@@ -539,76 +652,98 @@
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .registers 5
+    .parameter
 
+    .prologue
+    .line 169
     invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidView;->j()Z
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->k:Z
+    iput-boolean v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->l:Z
 
-    iget-boolean v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->k:Z
+    .line 170
+    iget-boolean v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->l:Z
 
     if-eqz v0, :cond_13
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->b:Lcom/google/googlenav/android/l;
+    .line 171
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->b:Lcom/google/googlenav/android/i;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
+    invoke-virtual {v0}, Lcom/google/googlenav/android/i;->i()Lcom/google/googlenav/ui/v;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Lcom/google/googlenav/ui/D;->a(Lcom/google/googlenav/ui/c;)V
+    invoke-virtual {v0, p0}, Lcom/google/googlenav/ui/v;->a(Lcom/google/googlenav/ui/c;)V
 
+    .line 173
     :cond_13
     iget-boolean v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->d:Z
 
+    .line 174
     iget-boolean v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->d:Z
 
     if-eqz v1, :cond_1f
 
+    .line 175
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->d:Z
 
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/android/AndroidView;->k()V
+    .line 176
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/android/AndroidView;->n()V
 
+    .line 179
     :cond_1f
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->e:Lai/e;
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->f:LT/e;
 
-    invoke-virtual {v1, p1}, Lai/e;->a(Landroid/graphics/Canvas;)V
+    invoke-virtual {v1, p1}, LT/e;->a(Landroid/graphics/Canvas;)V
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->b:Lcom/google/googlenav/android/l;
+    .line 180
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->b:Lcom/google/googlenav/android/i;
 
-    invoke-virtual {v1}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
+    invoke-virtual {v1}, Lcom/google/googlenav/android/i;->i()Lcom/google/googlenav/ui/v;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/android/AndroidView;->e:Lai/e;
+    iget-object v2, p0, Lcom/google/googlenav/ui/android/AndroidView;->f:LT/e;
 
-    invoke-virtual {v1, v2}, Lcom/google/googlenav/ui/D;->a(Lah/e;)V
+    invoke-virtual {v1, v2}, Lcom/google/googlenav/ui/v;->a(LS/e;)V
 
+    .line 181
     invoke-super {p0, p1}, Lcom/google/googlenav/ui/android/BaseAndroidView;->onDraw(Landroid/graphics/Canvas;)V
 
+    .line 183
     if-nez v0, :cond_3d
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->b:Lcom/google/googlenav/android/l;
+    .line 184
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->b:Lcom/google/googlenav/android/i;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->h()Lcom/google/android/maps/MapsActivity;
+    invoke-virtual {v0}, Lcom/google/googlenav/android/i;->f()Lcom/google/android/maps/MapsActivity;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/maps/MapsActivity;->q()V
+    invoke-virtual {v0}, Lcom/google/android/maps/MapsActivity;->screenDrawn()V
 
+    .line 186
     :cond_3d
     return-void
 .end method
 
 .method public onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .registers 6
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    sget-object v0, Lcom/google/googlenav/android/D;->a:Lcom/google/googlenav/android/D;
+    .prologue
+    .line 319
+    sget-object v0, Lcom/google/googlenav/android/A;->a:Lcom/google/googlenav/android/A;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/android/D;->h()V
+    invoke-virtual {v0}, Lcom/google/googlenav/android/A;->h()V
 
+    .line 320
     const/4 v0, 0x0
 
     return v0
@@ -616,20 +751,23 @@
 
 .method public onLongPress(Landroid/view/MotionEvent;)V
     .registers 8
+    .parameter
 
+    .prologue
+    .line 313
     const/4 v2, -0x1
 
     const/4 v3, 0x7
 
-    invoke-static {}, Laf/b;->a()Laf/b;
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Laf/b;->v()Laf/a;
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->u()Lcom/google/googlenav/common/a;
 
     move-result-object v0
 
-    invoke-interface {v0}, Laf/a;->c()J
+    invoke-interface {v0}, Lcom/google/googlenav/common/a;->c()J
 
     move-result-wide v4
 
@@ -639,108 +777,125 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/google/googlenav/ui/android/AndroidView;->a(Landroid/view/MotionEvent;IIJ)V
 
+    .line 315
     return-void
 .end method
 
 .method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .registers 13
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
     const/4 v1, 0x2
 
     const/4 v2, 0x0
 
-    sget-object v0, Lcom/google/googlenav/android/D;->a:Lcom/google/googlenav/android/D;
+    .line 281
+    sget-object v0, Lcom/google/googlenav/android/A;->a:Lcom/google/googlenav/android/A;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/android/D;->h()V
+    invoke-virtual {v0}, Lcom/google/googlenav/android/A;->h()V
 
+    .line 283
     if-eqz p1, :cond_b
 
     if-nez p2, :cond_c
 
+    .line 308
     :cond_b
     :goto_b
     return v2
 
+    .line 290
     :cond_c
-    invoke-static {}, LaA/i;->a()LaA/i;
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->e:Laj/i;
 
-    move-result-object v0
+    invoke-virtual {v0}, Laj/i;->b()V
 
-    invoke-virtual {v0}, LaA/i;->c()V
-
+    .line 293
     invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidView;->j()Z
 
     move-result v0
 
-    if-eqz v0, :cond_5b
+    if-eqz v0, :cond_59
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->h:Lcom/google/googlenav/ui/android/p;
+    .line 294
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->i:Lcom/google/googlenav/ui/android/o;
 
-    invoke-virtual {v0, p1}, Lcom/google/googlenav/ui/android/p;->a(Landroid/view/MotionEvent;)V
+    invoke-virtual {v0, p1}, Lcom/google/googlenav/ui/android/o;->a(Landroid/view/MotionEvent;)V
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->i:Lcom/google/googlenav/ui/android/p;
+    .line 295
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->j:Lcom/google/googlenav/ui/android/o;
 
-    invoke-virtual {v0, p2}, Lcom/google/googlenav/ui/android/p;->a(Landroid/view/MotionEvent;)V
+    invoke-virtual {v0, p2}, Lcom/google/googlenav/ui/android/o;->a(Landroid/view/MotionEvent;)V
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->j:Landroid/graphics/Point;
+    .line 296
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->k:Landroid/graphics/Point;
 
-    iget-object v3, p0, Lcom/google/googlenav/ui/android/AndroidView;->h:Lcom/google/googlenav/ui/android/p;
+    iget-object v3, p0, Lcom/google/googlenav/ui/android/AndroidView;->i:Lcom/google/googlenav/ui/android/o;
 
-    iget v3, v3, Lcom/google/googlenav/ui/android/p;->a:I
+    iget v3, v3, Lcom/google/googlenav/ui/android/o;->a:I
 
-    iget-object v4, p0, Lcom/google/googlenav/ui/android/AndroidView;->i:Lcom/google/googlenav/ui/android/p;
+    iget-object v4, p0, Lcom/google/googlenav/ui/android/AndroidView;->j:Lcom/google/googlenav/ui/android/o;
 
-    iget v4, v4, Lcom/google/googlenav/ui/android/p;->a:I
+    iget v4, v4, Lcom/google/googlenav/ui/android/o;->a:I
 
     sub-int/2addr v3, v4
 
-    iget-object v4, p0, Lcom/google/googlenav/ui/android/AndroidView;->h:Lcom/google/googlenav/ui/android/p;
+    iget-object v4, p0, Lcom/google/googlenav/ui/android/AndroidView;->i:Lcom/google/googlenav/ui/android/o;
 
-    iget v4, v4, Lcom/google/googlenav/ui/android/p;->b:I
+    iget v4, v4, Lcom/google/googlenav/ui/android/o;->b:I
 
-    iget-object v5, p0, Lcom/google/googlenav/ui/android/AndroidView;->i:Lcom/google/googlenav/ui/android/p;
+    iget-object v5, p0, Lcom/google/googlenav/ui/android/AndroidView;->j:Lcom/google/googlenav/ui/android/o;
 
-    iget v5, v5, Lcom/google/googlenav/ui/android/p;->b:I
+    iget v5, v5, Lcom/google/googlenav/ui/android/o;->b:I
 
     sub-int/2addr v4, v5
 
     invoke-virtual {v0, v3, v4}, Landroid/graphics/Point;->set(II)V
 
-    new-instance v0, Laq/c;
+    .line 298
+    new-instance v0, LZ/b;
 
-    iget-object v3, p0, Lcom/google/googlenav/ui/android/AndroidView;->i:Lcom/google/googlenav/ui/android/p;
+    iget-object v3, p0, Lcom/google/googlenav/ui/android/AndroidView;->j:Lcom/google/googlenav/ui/android/o;
 
-    iget v3, v3, Lcom/google/googlenav/ui/android/p;->a:I
+    iget v3, v3, Lcom/google/googlenav/ui/android/o;->a:I
 
-    iget-object v4, p0, Lcom/google/googlenav/ui/android/AndroidView;->i:Lcom/google/googlenav/ui/android/p;
+    iget-object v4, p0, Lcom/google/googlenav/ui/android/AndroidView;->j:Lcom/google/googlenav/ui/android/o;
 
-    iget v4, v4, Lcom/google/googlenav/ui/android/p;->b:I
+    iget v4, v4, Lcom/google/googlenav/ui/android/o;->b:I
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getEventTime()J
 
     move-result-wide v5
 
-    iget-object v7, p0, Lcom/google/googlenav/ui/android/AndroidView;->j:Landroid/graphics/Point;
+    iget-object v7, p0, Lcom/google/googlenav/ui/android/AndroidView;->k:Landroid/graphics/Point;
 
-    invoke-direct/range {v0 .. v7}, Laq/c;-><init>(IIIIJLandroid/graphics/Point;)V
+    invoke-direct/range {v0 .. v7}, LZ/b;-><init>(IIIIJLandroid/graphics/Point;)V
 
-    :goto_4d
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->b:Lcom/google/googlenav/android/l;
+    .line 306
+    :goto_4b
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidView;->b:Lcom/google/googlenav/android/i;
 
-    invoke-virtual {v1}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
+    invoke-virtual {v1}, Lcom/google/googlenav/android/i;->i()Lcom/google/googlenav/ui/v;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lcom/google/googlenav/ui/D;->a(Laq/c;)V
+    invoke-virtual {v1, v0}, Lcom/google/googlenav/ui/v;->a(LZ/b;)V
 
+    .line 307
     invoke-virtual {p0}, Lcom/google/googlenav/ui/android/AndroidView;->invalidate()V
 
+    .line 308
     const/4 v2, 0x1
 
     goto :goto_b
 
-    :cond_5b
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->j:Landroid/graphics/Point;
+    .line 301
+    :cond_59
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->k:Landroid/graphics/Point;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -768,7 +923,8 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/graphics/Point;->set(II)V
 
-    new-instance v0, Laq/c;
+    .line 303
+    new-instance v0, LZ/b;
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
 
@@ -790,35 +946,41 @@
 
     move-result-wide v5
 
-    iget-object v7, p0, Lcom/google/googlenav/ui/android/AndroidView;->j:Landroid/graphics/Point;
+    iget-object v7, p0, Lcom/google/googlenav/ui/android/AndroidView;->k:Landroid/graphics/Point;
 
-    invoke-direct/range {v0 .. v7}, Laq/c;-><init>(IIIIJLandroid/graphics/Point;)V
+    invoke-direct/range {v0 .. v7}, LZ/b;-><init>(IIIIJLandroid/graphics/Point;)V
 
-    goto :goto_4d
+    goto :goto_4b
 .end method
 
 .method public onShowPress(Landroid/view/MotionEvent;)V
     .registers 2
+    .parameter
 
+    .prologue
+    .line 269
     return-void
 .end method
 
 .method public onSingleTapConfirmed(Landroid/view/MotionEvent;)Z
     .registers 8
+    .parameter
 
+    .prologue
     const/4 v3, 0x1
 
+    .line 239
     const/4 v2, -0x1
 
-    invoke-static {}, Laf/b;->a()Laf/b;
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Laf/b;->v()Laf/a;
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->u()Lcom/google/googlenav/common/a;
 
     move-result-object v0
 
-    invoke-interface {v0}, Laf/a;->c()J
+    invoke-interface {v0}, Lcom/google/googlenav/common/a;->c()J
 
     move-result-wide v4
 
@@ -828,14 +990,18 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/google/googlenav/ui/android/AndroidView;->a(Landroid/view/MotionEvent;IIJ)V
 
+    .line 241
     return v3
 .end method
 
 .method public onSingleTapUp(Landroid/view/MotionEvent;)Z
     .registers 8
+    .parameter
 
+    .prologue
     const/4 v2, 0x1
 
+    .line 273
     const/4 v3, 0x0
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getEventTime()J
@@ -848,56 +1014,60 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/google/googlenav/ui/android/AndroidView;->a(Landroid/view/MotionEvent;IIJ)V
 
+    .line 275
     return v2
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .registers 8
+    .parameter
 
+    .prologue
     const/4 v3, 0x0
 
     const/4 v2, 0x1
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->m:LaA/g;
+    .line 200
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->n:Laj/g;
 
-    invoke-virtual {v0, p1}, LaA/g;->a(Landroid/view/MotionEvent;)Z
+    invoke-virtual {v0, p1}, Laj/g;->a(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
     if-eqz v0, :cond_b
 
+    .line 217
     :cond_a
     :goto_a
     return v2
 
+    .line 206
     :cond_b
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->e:Laj/i;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->aC()Z
+    invoke-virtual {v0}, Laj/i;->a()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1b
 
-    invoke-static {}, LaA/i;->a()LaA/i;
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidView;->e:Laj/i;
 
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, LaA/i;->b(Landroid/view/MotionEvent;)Z
+    invoke-virtual {v0, p1}, Laj/i;->b(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
     if-nez v0, :cond_a
 
-    :cond_1f
+    .line 211
+    :cond_1b
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    if-ne v0, v2, :cond_2f
+    if-ne v0, v2, :cond_2b
 
+    .line 212
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getEventTime()J
 
     move-result-wide v4
@@ -910,8 +1080,9 @@
 
     goto :goto_a
 
-    :cond_2f
+    :cond_2b
     move v2, v3
 
+    .line 217
     goto :goto_a
 .end method

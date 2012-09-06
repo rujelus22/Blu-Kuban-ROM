@@ -19,7 +19,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 381
+    .line 396
     new-instance v0, Lcom/google/common/primitives/Chars$LexicographicalComparator;
 
     const-string v1, "INSTANCE"
@@ -28,7 +28,7 @@
 
     sput-object v0, Lcom/google/common/primitives/Chars$LexicographicalComparator;->INSTANCE:Lcom/google/common/primitives/Chars$LexicographicalComparator;
 
-    .line 380
+    .line 395
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/common/primitives/Chars$LexicographicalComparator;
@@ -48,7 +48,7 @@
     .parameter
 
     .prologue
-    .line 380
+    .line 395
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -59,7 +59,7 @@
     .parameter
 
     .prologue
-    .line 380
+    .line 395
     const-class v0, Lcom/google/common/primitives/Chars$LexicographicalComparator;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -75,7 +75,7 @@
     .registers 1
 
     .prologue
-    .line 380
+    .line 395
     sget-object v0, Lcom/google/common/primitives/Chars$LexicographicalComparator;->$VALUES:[Lcom/google/common/primitives/Chars$LexicographicalComparator;
 
     invoke-virtual {v0}, [Lcom/google/common/primitives/Chars$LexicographicalComparator;->clone()Ljava/lang/Object;
@@ -95,7 +95,7 @@
     .parameter
 
     .prologue
-    .line 380
+    .line 395
     check-cast p1, [C
 
     check-cast p2, [C
@@ -113,7 +113,7 @@
     .parameter
 
     .prologue
-    .line 384
+    .line 400
     array-length v0, p1
 
     array-length v1, p2
@@ -122,7 +122,7 @@
 
     move-result v2
 
-    .line 385
+    .line 401
     const/4 v0, 0x0
 
     move v1, v0
@@ -130,21 +130,21 @@
     :goto_8
     if-ge v1, v2, :cond_16
 
-    .line 386
+    .line 402
     aget-char v0, p1, v1
 
     aget-char v3, p2, v1
 
     sub-int/2addr v0, v3
 
-    .line 387
+    .line 403
     if-eqz v0, :cond_12
 
-    .line 391
+    .line 407
     :goto_11
     return v0
 
-    .line 385
+    .line 401
     :cond_12
     add-int/lit8 v0, v1, 0x1
 
@@ -152,7 +152,7 @@
 
     goto :goto_8
 
-    .line 391
+    .line 407
     :cond_16
     array-length v0, p1
 

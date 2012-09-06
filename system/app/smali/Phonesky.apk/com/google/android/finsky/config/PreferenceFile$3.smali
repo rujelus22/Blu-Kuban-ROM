@@ -36,7 +36,7 @@
     .parameter "x2"
 
     .prologue
-    .line 156
+    .line 120
     iput-object p1, p0, Lcom/google/android/finsky/config/PreferenceFile$3;->this$0:Lcom/google/android/finsky/config/PreferenceFile;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;-><init>(Lcom/google/android/finsky/config/PreferenceFile;Ljava/lang/String;Ljava/lang/Object;)V
@@ -47,40 +47,40 @@
 
 # virtual methods
 .method protected read(Landroid/content/SharedPreferences;)Ljava/lang/Boolean;
-    .registers 5
+    .registers 4
     .parameter "sp"
 
     .prologue
-    .line 159
+    .line 123
     iget-object v0, p0, Lcom/google/android/finsky/config/PreferenceFile$3;->mKey:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_14
 
-    new-instance v0, Ljava/lang/Boolean;
+    iget-object v0, p0, Lcom/google/android/finsky/config/PreferenceFile$3;->mKey:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/google/android/finsky/config/PreferenceFile$3;->mKey:Ljava/lang/String;
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    invoke-interface {p1, v0, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    invoke-interface {p1, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    move-result v0
 
-    move-result v1
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-direct {v0, v1}, Ljava/lang/Boolean;-><init>(Z)V
+    move-result-object v0
 
-    :goto_14
+    :goto_13
     return-object v0
 
-    :cond_15
+    :cond_14
     iget-object v0, p0, Lcom/google/android/finsky/config/PreferenceFile$3;->mDefaultValue:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Boolean;
 
-    goto :goto_14
+    goto :goto_13
 .end method
 
 .method protected bridge synthetic read(Landroid/content/SharedPreferences;)Ljava/lang/Object;
@@ -88,7 +88,7 @@
     .parameter "x0"
 
     .prologue
-    .line 156
+    .line 120
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/config/PreferenceFile$3;->read(Landroid/content/SharedPreferences;)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -102,10 +102,10 @@
     .parameter "value"
 
     .prologue
-    .line 164
+    .line 130
     if-nez p2, :cond_a
 
-    .line 165
+    .line 131
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "null cannot be written for <Boolean>"
@@ -114,7 +114,7 @@
 
     throw v0
 
-    .line 167
+    .line 133
     :cond_a
     iget-object v0, p0, Lcom/google/android/finsky/config/PreferenceFile$3;->mKey:Ljava/lang/String;
 
@@ -124,7 +124,7 @@
 
     invoke-interface {p1, v0, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 168
+    .line 134
     return-void
 .end method
 
@@ -134,7 +134,7 @@
     .parameter "x1"
 
     .prologue
-    .line 156
+    .line 120
     check-cast p2, Ljava/lang/Boolean;
 
     .end local p2

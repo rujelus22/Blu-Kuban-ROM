@@ -1,5 +1,6 @@
 .class synthetic Lcom/google/android/maps/driveabout/vector/ag;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # static fields
@@ -10,7 +11,9 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    invoke-static {}, Lcom/google/android/maps/driveabout/vector/I;->values()[Lcom/google/android/maps/driveabout/vector/I;
+    .prologue
+    .line 268
+    invoke-static {}, Lcom/google/android/maps/driveabout/vector/am;->values()[Lcom/google/android/maps/driveabout/vector/am;
 
     move-result-object v0
 
@@ -23,9 +26,9 @@
     :try_start_9
     sget-object v0, Lcom/google/android/maps/driveabout/vector/ag;->a:[I
 
-    sget-object v1, Lcom/google/android/maps/driveabout/vector/I;->b:Lcom/google/android/maps/driveabout/vector/I;
+    sget-object v1, Lcom/google/android/maps/driveabout/vector/am;->b:Lcom/google/android/maps/driveabout/vector/am;
 
-    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/I;->ordinal()I
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/am;->ordinal()I
 
     move-result v1
 
@@ -33,15 +36,15 @@
 
     aput v2, v0, v1
     :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_2f
 
     :goto_14
     :try_start_14
     sget-object v0, Lcom/google/android/maps/driveabout/vector/ag;->a:[I
 
-    sget-object v1, Lcom/google/android/maps/driveabout/vector/I;->c:Lcom/google/android/maps/driveabout/vector/I;
+    sget-object v1, Lcom/google/android/maps/driveabout/vector/am;->c:Lcom/google/android/maps/driveabout/vector/am;
 
-    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/I;->ordinal()I
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/am;->ordinal()I
 
     move-result v1
 
@@ -49,17 +52,38 @@
 
     aput v2, v0, v1
     :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_2d
 
     :goto_1f
+    :try_start_1f
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/ag;->a:[I
+
+    sget-object v1, Lcom/google/android/maps/driveabout/vector/am;->a:Lcom/google/android/maps/driveabout/vector/am;
+
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/am;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_2b
+
+    :goto_2a
     return-void
 
-    :catch_20
+    :catch_2b
+    move-exception v0
+
+    goto :goto_2a
+
+    :catch_2d
     move-exception v0
 
     goto :goto_1f
 
-    :catch_22
+    :catch_2f
     move-exception v0
 
     goto :goto_14

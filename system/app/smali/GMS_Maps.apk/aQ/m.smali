@@ -1,66 +1,114 @@
 .class public LaQ/m;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LaQ/H;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field private final a:I
 
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/lang/String;
-
-.field public final d:Ljava/lang/String;
-
-.field public final e:Z
-
-.field public final f:J
-
-.field public final g:Ljava/lang/String;
-
-.field public final h:Z
-
-.field public final i:I
-
-.field public final j:I
-
-.field public final k:I
+.field private final b:Ljava/lang/CharSequence;
 
 
 # direct methods
-.method private constructor <init>(Ljava/lang/String;Ljava/lang/String;ZJLjava/lang/String;ZIIILjava/lang/String;Ljava/lang/String;)V
-    .registers 13
+.method public constructor <init>(Ljava/lang/CharSequence;I)V
+    .registers 3
+    .parameter
+    .parameter
 
+    .prologue
+    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, LaQ/m;->a:Ljava/lang/String;
+    .line 26
+    iput-object p1, p0, LaQ/m;->b:Ljava/lang/CharSequence;
 
-    iput-object p2, p0, LaQ/m;->d:Ljava/lang/String;
+    .line 27
+    iput p2, p0, LaQ/m;->a:I
 
-    iput-boolean p3, p0, LaQ/m;->e:Z
-
-    iput-wide p4, p0, LaQ/m;->f:J
-
-    iput-object p6, p0, LaQ/m;->g:Ljava/lang/String;
-
-    iput-boolean p7, p0, LaQ/m;->h:Z
-
-    iput p8, p0, LaQ/m;->i:I
-
-    iput p9, p0, LaQ/m;->j:I
-
-    iput p10, p0, LaQ/m;->k:I
-
-    iput-object p11, p0, LaQ/m;->b:Ljava/lang/String;
-
-    iput-object p12, p0, LaQ/m;->c:Ljava/lang/String;
-
+    .line 28
     return-void
 .end method
 
-.method synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;ZJLjava/lang/String;ZIIILjava/lang/String;Ljava/lang/String;LaQ/n;)V
-    .registers 14
 
-    invoke-direct/range {p0 .. p12}, LaQ/m;-><init>(Ljava/lang/String;Ljava/lang/String;ZJLjava/lang/String;ZIIILjava/lang/String;Ljava/lang/String;)V
+# virtual methods
+.method public a(Landroid/view/View;)LaQ/bE;
+    .registers 4
+    .parameter
 
+    .prologue
+    .line 47
+    new-instance v1, LaQ/o;
+
+    const/4 v0, 0x0
+
+    invoke-direct {v1, v0}, LaQ/o;-><init>(LaQ/n;)V
+
+    .line 48
+    const v0, 0x7f100034
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    invoke-static {v1, v0}, LaQ/o;->a(LaQ/o;Landroid/widget/TextView;)Landroid/widget/TextView;
+
+    .line 49
+    return-object v1
+.end method
+
+.method public a(Lcom/google/googlenav/ui/g;LaQ/bE;)V
+    .registers 5
+    .parameter
+    .parameter
+
+    .prologue
+    .line 54
+    check-cast p2, LaQ/o;
+
+    .line 55
+    invoke-static {p2}, LaQ/o;->a(LaQ/o;)Landroid/widget/TextView;
+
+    move-result-object v0
+
+    iget-object v1, p0, LaQ/m;->b:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 56
     return-void
+.end method
+
+.method public a()Z
+    .registers 2
+
+    .prologue
+    .line 37
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public b()I
+    .registers 2
+
+    .prologue
+    .line 42
+    iget v0, p0, LaQ/m;->a:I
+
+    return v0
+.end method
+
+.method public c()I
+    .registers 2
+
+    .prologue
+    .line 32
+    const v0, 0x7f0401e1
+
+    return v0
 .end method

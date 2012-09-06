@@ -1,404 +1,689 @@
-.class public LE/a;
-.super Lcom/google/googlenav/ui/view/android/ap;
+.class public abstract Le/a;
+.super Landroid/widget/BaseAdapter;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/widget/Filterable;
+.implements Le/f;
 
 
 # instance fields
-.field private final a:Lau/v;
+.field protected a:Z
 
-.field private final b:LaN/b;
+.field protected b:Z
 
-.field private final c:Lbc/d;
+.field protected c:Landroid/database/Cursor;
+
+.field protected d:Landroid/content/Context;
+
+.field protected e:I
+
+.field protected f:Le/c;
+
+.field protected g:Landroid/database/DataSetObserver;
+
+.field protected h:Le/e;
+
+.field protected i:Landroid/widget/FilterQueryProvider;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/ui/p;[Laq/a;)V
+.method public constructor <init>(Landroid/content/Context;Landroid/database/Cursor;I)V
     .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-static {}, LE/a;->b()I
+    .prologue
+    .line 150
+    invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    move-result v0
+    .line 151
+    invoke-virtual {p0, p1, p2, p3}, Le/a;->a(Landroid/content/Context;Landroid/database/Cursor;I)V
 
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/googlenav/ui/view/android/ap;-><init>(Lcom/google/googlenav/ui/p;[Laq/a;I)V
-
-    invoke-static {}, Lcom/google/android/maps/rideabout/app/s;->z()LaN/b;
-
-    move-result-object v0
-
-    iput-object v0, p0, LE/a;->b:LaN/b;
-
-    iget-object v0, p0, LE/a;->b:LaN/b;
-
-    invoke-virtual {v0}, LaN/b;->o()Lau/v;
-
-    move-result-object v0
-
-    iput-object v0, p0, LE/a;->a:Lau/v;
-
-    iget-object v0, p0, LE/a;->b:LaN/b;
-
-    invoke-virtual {v0}, LaN/b;->p()Lbc/d;
-
-    move-result-object v0
-
-    iput-object v0, p0, LE/a;->c:Lbc/d;
-
+    .line 152
     return-void
-.end method
-
-.method private a(I)V
-    .registers 6
-
-    const/4 v3, -0x1
-
-    invoke-virtual {p0}, LE/a;->getLayoutInflater()Landroid/view/LayoutInflater;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p1, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ViewSwitcher;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/widget/ViewSwitcher;->setVisibility(I)V
-
-    invoke-virtual {p0}, LE/a;->getActionBar()Landroid/app/ActionBar;
-
-    move-result-object v1
-
-    new-instance v2, Landroid/app/ActionBar$LayoutParams;
-
-    invoke-direct {v2, v3, v3}, Landroid/app/ActionBar$LayoutParams;-><init>(II)V
-
-    invoke-virtual {v1, v0, v2}, Landroid/app/ActionBar;->setCustomView(Landroid/view/View;Landroid/app/ActionBar$LayoutParams;)V
-
-    invoke-static {}, Lcom/google/googlenav/ui/view/android/ce;->a()Lcom/google/googlenav/ui/view/android/ce;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/view/android/ce;->k()Lcom/google/android/maps/rideabout/view/j;
-
-    move-result-object v1
-
-    new-instance v2, LE/b;
-
-    invoke-direct {v2, p0}, LE/b;-><init>(LE/a;)V
-
-    invoke-interface {v1, v0, v2}, Lcom/google/android/maps/rideabout/view/j;->a(Landroid/widget/ViewSwitcher;Lcom/google/android/maps/rideabout/view/l;)V
-
-    return-void
-.end method
-
-.method public static b()I
-    .registers 1
-
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->ap()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_e
-
-    const v0, 0x7f0d00fc
-
-    :goto_d
-    return v0
-
-    :cond_e
-    const v0, 0x7f0d001a
-
-    goto :goto_d
 .end method
 
 
 # virtual methods
-.method protected N_()V
+.method public a()Landroid/database/Cursor;
     .registers 2
 
-    invoke-virtual {p0}, LE/a;->L_()Z
+    .prologue
+    .line 194
+    iget-object v0, p0, Le/a;->c:Landroid/database/Cursor;
+
+    return-object v0
+.end method
+
+.method public a(Ljava/lang/CharSequence;)Landroid/database/Cursor;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 396
+    iget-object v0, p0, Le/a;->i:Landroid/widget/FilterQueryProvider;
+
+    if-eqz v0, :cond_b
+
+    .line 397
+    iget-object v0, p0, Le/a;->i:Landroid/widget/FilterQueryProvider;
+
+    invoke-interface {v0, p1}, Landroid/widget/FilterQueryProvider;->runQuery(Ljava/lang/CharSequence;)Landroid/database/Cursor;
+
+    move-result-object v0
+
+    .line 400
+    :goto_a
+    return-object v0
+
+    :cond_b
+    iget-object v0, p0, Le/a;->c:Landroid/database/Cursor;
+
+    goto :goto_a
+.end method
+
+.method public abstract a(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
+.end method
+
+.method a(Landroid/content/Context;Landroid/database/Cursor;I)V
+    .registers 8
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    const/4 v1, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v0, 0x1
+
+    .line 164
+    and-int/lit8 v2, p3, 0x1
+
+    if-ne v2, v0, :cond_45
+
+    .line 165
+    or-int/lit8 p3, p3, 0x2
+
+    .line 166
+    iput-boolean v0, p0, Le/a;->b:Z
+
+    .line 170
+    :goto_b
+    if-eqz p2, :cond_48
+
+    .line 171
+    :goto_d
+    iput-object p2, p0, Le/a;->c:Landroid/database/Cursor;
+
+    .line 172
+    iput-boolean v0, p0, Le/a;->a:Z
+
+    .line 173
+    iput-object p1, p0, Le/a;->d:Landroid/content/Context;
+
+    .line 174
+    if-eqz v0, :cond_4a
+
+    const-string v1, "_id"
+
+    invoke-interface {p2, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+
+    move-result v1
+
+    :goto_1b
+    iput v1, p0, Le/a;->e:I
+
+    .line 175
+    and-int/lit8 v1, p3, 0x2
+
+    const/4 v2, 0x2
+
+    if-ne v1, v2, :cond_4c
+
+    .line 176
+    new-instance v1, Le/c;
+
+    invoke-direct {v1, p0}, Le/c;-><init>(Le/a;)V
+
+    iput-object v1, p0, Le/a;->f:Le/c;
+
+    .line 177
+    new-instance v1, Le/d;
+
+    invoke-direct {v1, p0, v3}, Le/d;-><init>(Le/a;Le/b;)V
+
+    iput-object v1, p0, Le/a;->g:Landroid/database/DataSetObserver;
+
+    .line 183
+    :goto_30
+    if-eqz v0, :cond_44
+
+    .line 184
+    iget-object v0, p0, Le/a;->f:Le/c;
+
+    if-eqz v0, :cond_3b
+
+    iget-object v0, p0, Le/a;->f:Le/c;
+
+    invoke-interface {p2, v0}, Landroid/database/Cursor;->registerContentObserver(Landroid/database/ContentObserver;)V
+
+    .line 185
+    :cond_3b
+    iget-object v0, p0, Le/a;->g:Landroid/database/DataSetObserver;
+
+    if-eqz v0, :cond_44
+
+    iget-object v0, p0, Le/a;->g:Landroid/database/DataSetObserver;
+
+    invoke-interface {p2, v0}, Landroid/database/Cursor;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
+
+    .line 187
+    :cond_44
+    return-void
+
+    .line 168
+    :cond_45
+    iput-boolean v1, p0, Le/a;->b:Z
+
+    goto :goto_b
+
+    :cond_48
+    move v0, v1
+
+    .line 170
+    goto :goto_d
+
+    .line 174
+    :cond_4a
+    const/4 v1, -0x1
+
+    goto :goto_1b
+
+    .line 179
+    :cond_4c
+    iput-object v3, p0, Le/a;->f:Le/c;
+
+    .line 180
+    iput-object v3, p0, Le/a;->g:Landroid/database/DataSetObserver;
+
+    goto :goto_30
+.end method
+
+.method public a(Landroid/database/Cursor;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 315
+    invoke-virtual {p0, p1}, Le/a;->b(Landroid/database/Cursor;)Landroid/database/Cursor;
+
+    move-result-object v0
+
+    .line 316
+    if-eqz v0, :cond_9
+
+    .line 317
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
+
+    .line 319
+    :cond_9
+    return-void
+.end method
+
+.method public abstract a(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V
+.end method
+
+.method public a(Landroid/widget/FilterQueryProvider;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 436
+    iput-object p1, p0, Le/a;->i:Landroid/widget/FilterQueryProvider;
+
+    .line 437
+    return-void
+.end method
+
+.method public b(Landroid/database/Cursor;)Landroid/database/Cursor;
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 332
+    iget-object v0, p0, Le/a;->c:Landroid/database/Cursor;
+
+    if-ne p1, v0, :cond_6
+
+    .line 333
+    const/4 v0, 0x0
+
+    .line 354
+    :goto_5
+    return-object v0
+
+    .line 335
+    :cond_6
+    iget-object v0, p0, Le/a;->c:Landroid/database/Cursor;
+
+    .line 336
+    if-eqz v0, :cond_1c
+
+    .line 337
+    iget-object v1, p0, Le/a;->f:Le/c;
+
+    if-eqz v1, :cond_13
+
+    iget-object v1, p0, Le/a;->f:Le/c;
+
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->unregisterContentObserver(Landroid/database/ContentObserver;)V
+
+    .line 338
+    :cond_13
+    iget-object v1, p0, Le/a;->g:Landroid/database/DataSetObserver;
+
+    if-eqz v1, :cond_1c
+
+    iget-object v1, p0, Le/a;->g:Landroid/database/DataSetObserver;
+
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
+
+    .line 340
+    :cond_1c
+    iput-object p1, p0, Le/a;->c:Landroid/database/Cursor;
+
+    .line 341
+    if-eqz p1, :cond_41
+
+    .line 342
+    iget-object v1, p0, Le/a;->f:Le/c;
+
+    if-eqz v1, :cond_29
+
+    iget-object v1, p0, Le/a;->f:Le/c;
+
+    invoke-interface {p1, v1}, Landroid/database/Cursor;->registerContentObserver(Landroid/database/ContentObserver;)V
+
+    .line 343
+    :cond_29
+    iget-object v1, p0, Le/a;->g:Landroid/database/DataSetObserver;
+
+    if-eqz v1, :cond_32
+
+    iget-object v1, p0, Le/a;->g:Landroid/database/DataSetObserver;
+
+    invoke-interface {p1, v1}, Landroid/database/Cursor;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
+
+    .line 344
+    :cond_32
+    const-string v1, "_id"
+
+    invoke-interface {p1, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+
+    move-result v1
+
+    iput v1, p0, Le/a;->e:I
+
+    .line 345
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Le/a;->a:Z
+
+    .line 347
+    invoke-virtual {p0}, Le/a;->notifyDataSetChanged()V
+
+    goto :goto_5
+
+    .line 349
+    :cond_41
+    const/4 v1, -0x1
+
+    iput v1, p0, Le/a;->e:I
+
+    .line 350
+    const/4 v1, 0x0
+
+    iput-boolean v1, p0, Le/a;->a:Z
+
+    .line 352
+    invoke-virtual {p0}, Le/a;->notifyDataSetInvalidated()V
+
+    goto :goto_5
+.end method
+
+.method public b(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 296
+    invoke-virtual {p0, p1, p2, p3}, Le/a;->a(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected b()V
+    .registers 2
+
+    .prologue
+    .line 447
+    iget-boolean v0, p0, Le/a;->b:Z
+
+    if-eqz v0, :cond_18
+
+    iget-object v0, p0, Le/a;->c:Landroid/database/Cursor;
+
+    if-eqz v0, :cond_18
+
+    iget-object v0, p0, Le/a;->c:Landroid/database/Cursor;
+
+    invoke-interface {v0}, Landroid/database/Cursor;->isClosed()Z
 
     move-result v0
+
+    if-nez v0, :cond_18
+
+    .line 449
+    iget-object v0, p0, Le/a;->c:Landroid/database/Cursor;
+
+    invoke-interface {v0}, Landroid/database/Cursor;->requery()Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Le/a;->a:Z
+
+    .line 451
+    :cond_18
+    return-void
+.end method
+
+.method public c(Landroid/database/Cursor;)Ljava/lang/CharSequence;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 367
+    if-nez p1, :cond_5
+
+    const-string v0, ""
+
+    :goto_4
+    return-object v0
+
+    :cond_5
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_4
+.end method
+
+.method public getCount()I
+    .registers 2
+
+    .prologue
+    .line 201
+    iget-boolean v0, p0, Le/a;->a:Z
+
+    if-eqz v0, :cond_f
+
+    iget-object v0, p0, Le/a;->c:Landroid/database/Cursor;
+
+    if-eqz v0, :cond_f
+
+    .line 202
+    iget-object v0, p0, Le/a;->c:Landroid/database/Cursor;
+
+    invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
+
+    move-result v0
+
+    .line 204
+    :goto_e
+    return v0
+
+    :cond_f
+    const/4 v0, 0x0
+
+    goto :goto_e
+.end method
+
+.method public getDropDownView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 262
+    iget-boolean v0, p0, Le/a;->a:Z
+
+    if-eqz v0, :cond_1b
+
+    .line 263
+    iget-object v0, p0, Le/a;->c:Landroid/database/Cursor;
+
+    invoke-interface {v0, p1}, Landroid/database/Cursor;->moveToPosition(I)Z
+
+    .line 265
+    if-nez p2, :cond_13
+
+    .line 266
+    iget-object v0, p0, Le/a;->d:Landroid/content/Context;
+
+    iget-object v1, p0, Le/a;->c:Landroid/database/Cursor;
+
+    invoke-virtual {p0, v0, v1, p3}, Le/a;->b(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object p2
+
+    .line 270
+    :cond_13
+    iget-object v0, p0, Le/a;->d:Landroid/content/Context;
+
+    iget-object v1, p0, Le/a;->c:Landroid/database/Cursor;
+
+    invoke-virtual {p0, p2, v0, v1}, Le/a;->a(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V
+
+    .line 273
+    :goto_1a
+    return-object p2
+
+    :cond_1b
+    const/4 p2, 0x0
+
+    goto :goto_1a
+.end method
+
+.method public getFilter()Landroid/widget/Filter;
+    .registers 2
+
+    .prologue
+    .line 404
+    iget-object v0, p0, Le/a;->h:Le/e;
+
+    if-nez v0, :cond_b
+
+    .line 405
+    new-instance v0, Le/e;
+
+    invoke-direct {v0, p0}, Le/e;-><init>(Le/f;)V
+
+    iput-object v0, p0, Le/a;->h:Le/e;
+
+    .line 407
+    :cond_b
+    iget-object v0, p0, Le/a;->h:Le/e;
+
+    return-object v0
+.end method
+
+.method public getItem(I)Ljava/lang/Object;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 212
+    iget-boolean v0, p0, Le/a;->a:Z
 
     if-eqz v0, :cond_10
 
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
+    iget-object v0, p0, Le/a;->c:Landroid/database/Cursor;
 
-    move-result-object v0
+    if-eqz v0, :cond_10
 
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->ap()Z
+    .line 213
+    iget-object v0, p0, Le/a;->c:Landroid/database/Cursor;
 
-    move-result v0
+    invoke-interface {v0, p1}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    if-nez v0, :cond_14
+    .line 214
+    iget-object v0, p0, Le/a;->c:Landroid/database/Cursor;
 
-    :cond_10
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, LE/a;->requestWindowFeature(I)Z
-
-    :cond_14
-    return-void
-.end method
-
-.method protected a(Landroid/app/ActionBar;)V
-    .registers 3
-
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->ap()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_15
-
-    const/16 v0, 0x10
-
-    invoke-virtual {p1, v0}, Landroid/app/ActionBar;->setDisplayOptions(I)V
-
-    const v0, 0x7f030181
-
-    invoke-direct {p0, v0}, LE/a;->a(I)V
-
-    :cond_15
-    return-void
-.end method
-
-.method public a(Landroid/content/res/Configuration;)V
-    .registers 3
-
-    iget-object v0, p0, LE/a;->h:Landroid/view/View;
-
-    check-cast v0, Lcom/google/android/maps/rideabout/view/NavigationView;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/maps/rideabout/view/NavigationView;->a(Landroid/content/res/Configuration;)V
-
-    return-void
-.end method
-
-.method protected a(ILandroid/view/MenuItem;)Z
-    .registers 9
-
-    const/16 v5, 0x61
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0}, LE/a;->q()[Laq/a;
-
-    move-result-object v0
-
-    invoke-interface {p2}, Landroid/view/MenuItem;->getItemId()I
-
-    move-result v2
-
-    invoke-virtual {p0, v0, v2}, LE/a;->a([Laq/a;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-nez v0, :cond_13
-
-    move v0, v1
-
-    :goto_12
-    return v0
-
-    :cond_13
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    iget-object v2, p0, LE/a;->f:Lcom/google/googlenav/ui/p;
-
-    const/4 v3, -0x1
-
-    const/4 v4, 0x0
-
-    invoke-interface {v2, v0, v3, v4}, Lcom/google/googlenav/ui/p;->a(IILjava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_38
-
-    packed-switch v0, :pswitch_data_3a
-
-    :goto_26
-    :pswitch_26
-    const/4 v0, 0x1
-
-    goto :goto_12
-
-    :pswitch_28
-    const-string v0, "e"
-
-    const-string v1, "m"
-
-    invoke-static {v5, v0, v1}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
-
-    goto :goto_26
-
-    :pswitch_30
-    const-string v0, "f"
-
-    const-string v1, "m"
-
-    invoke-static {v5, v0, v1}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
-
-    goto :goto_26
-
-    :cond_38
-    move v0, v1
-
-    goto :goto_12
-
-    :pswitch_data_3a
-    .packed-switch 0xb55
-        :pswitch_28
-        :pswitch_26
-        :pswitch_26
-        :pswitch_30
-    .end packed-switch
-.end method
-
-.method protected c()Landroid/view/View;
-    .registers 8
-
-    invoke-static {}, Lcom/google/googlenav/ui/view/android/ce;->a()Lcom/google/googlenav/ui/view/android/ce;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Lcom/google/googlenav/ui/view/android/ce;->k()Lcom/google/android/maps/rideabout/view/j;
-
-    move-result-object v0
-
-    instance-of v1, v0, Lcom/google/android/maps/rideabout/view/NavigationView;
-
-    if-eqz v1, :cond_1e
-
-    check-cast v0, Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_1d
-
-    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/view/ViewGroup;
-
-    invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
-
-    :cond_1d
-    :goto_1d
+    .line 216
+    :goto_f
     return-object v0
 
-    :cond_1e
-    new-instance v0, Lcom/google/android/maps/rideabout/view/NavigationView;
+    :cond_10
+    const/4 v0, 0x0
 
-    invoke-virtual {p0}, LE/a;->getContext()Landroid/content/Context;
+    goto :goto_f
+.end method
+
+.method public getItemId(I)J
+    .registers 5
+    .parameter
+
+    .prologue
+    const-wide/16 v0, 0x0
+
+    .line 224
+    iget-boolean v2, p0, Le/a;->a:Z
+
+    if-eqz v2, :cond_1a
+
+    iget-object v2, p0, Le/a;->c:Landroid/database/Cursor;
+
+    if-eqz v2, :cond_1a
+
+    .line 225
+    iget-object v2, p0, Le/a;->c:Landroid/database/Cursor;
+
+    invoke-interface {v2, p1}, Landroid/database/Cursor;->moveToPosition(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1a
+
+    .line 226
+    iget-object v0, p0, Le/a;->c:Landroid/database/Cursor;
+
+    iget v1, p0, Le/a;->e:I
+
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v0
+
+    .line 231
+    :cond_1a
+    return-wide v0
+.end method
+
+.method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 244
+    iget-boolean v0, p0, Le/a;->a:Z
+
+    if-nez v0, :cond_c
+
+    .line 245
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "this should only be called when the cursor is valid"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 247
+    :cond_c
+    iget-object v0, p0, Le/a;->c:Landroid/database/Cursor;
+
+    invoke-interface {v0, p1}, Landroid/database/Cursor;->moveToPosition(I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2d
+
+    .line 248
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "couldn\'t move cursor to position "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    iget-object v2, p0, LE/a;->a:Lau/v;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-object v3, p0, LE/a;->c:Lbc/d;
+    move-result-object v1
 
-    iget-object v4, p0, LE/a;->f:Lcom/google/googlenav/ui/p;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-static {}, Lcom/google/googlenav/ui/bw;->d()Lcom/google/googlenav/ui/bw;
+    move-result-object v1
 
-    move-result-object v5
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v5}, Lcom/google/googlenav/ui/bw;->aa()Lcom/google/googlenav/ui/x;
+    throw v0
 
-    move-result-object v5
+    .line 251
+    :cond_2d
+    if-nez p2, :cond_37
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/maps/rideabout/view/NavigationView;-><init>(Landroid/content/Context;Lau/v;Lbc/d;Lcom/google/googlenav/ui/p;Lcom/google/googlenav/ui/x;)V
+    .line 252
+    iget-object v0, p0, Le/a;->d:Landroid/content/Context;
 
-    invoke-virtual {v6, v0}, Lcom/google/googlenav/ui/view/android/ce;->a(Lcom/google/android/maps/rideabout/view/j;)V
+    iget-object v1, p0, Le/a;->c:Landroid/database/Cursor;
 
-    invoke-virtual {v6}, Lcom/google/googlenav/ui/view/android/ce;->b()V
+    invoke-virtual {p0, v0, v1, p3}, Le/a;->a(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
 
-    goto :goto_1d
+    move-result-object p2
+
+    .line 256
+    :cond_37
+    iget-object v0, p0, Le/a;->d:Landroid/content/Context;
+
+    iget-object v1, p0, Le/a;->c:Landroid/database/Cursor;
+
+    invoke-virtual {p0, p2, v0, v1}, Le/a;->a(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V
+
+    .line 257
+    return-object p2
 .end method
 
-.method protected d()V
+.method public hasStableIds()Z
     .registers 2
 
-    invoke-super {p0}, Lcom/google/googlenav/ui/view/android/ap;->d()V
-
-    invoke-virtual {p0}, LE/a;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, LE/a;->a(Landroid/content/res/Configuration;)V
-
-    return-void
-.end method
-
-.method protected e()Z
-    .registers 2
-
+    .prologue
+    .line 237
     const/4 v0, 0x1
 
     return v0
-.end method
-
-.method public onKeyDown(ILandroid/view/KeyEvent;)Z
-    .registers 6
-
-    invoke-static {}, LaN/b;->z()LaN/b;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, LaN/b;->a(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_c
-
-    const/4 v0, 0x1
-
-    :goto_b
-    return v0
-
-    :cond_c
-    const/4 v0, 0x4
-
-    if-ne p1, v0, :cond_18
-
-    const/16 v0, 0x61
-
-    const-string v1, "e"
-
-    const-string v2, "b"
-
-    invoke-static {v0, v1, v2}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
-
-    :cond_18
-    invoke-super {p0, p1, p2}, Lcom/google/googlenav/ui/view/android/ap;->onKeyDown(ILandroid/view/KeyEvent;)Z
-
-    move-result v0
-
-    goto :goto_b
 .end method

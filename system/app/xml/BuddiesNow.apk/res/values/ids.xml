@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item type="id" name="contact_image">false</item>
-    <item type="id" name="outline">false</item>
-    <item type="id" name="contact_name">false</item>
-    <item type="id" name="tap_to_add">false</item>
-    <item type="id" name="event_icon">false</item>
-</resources>

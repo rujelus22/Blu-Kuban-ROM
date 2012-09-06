@@ -68,7 +68,7 @@
 
     .line 69
     .local v0, res:Landroid/content/res/Resources;
-    const v1, 0x7f0c0004
+    const v1, 0x7f0c0005
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -77,7 +77,7 @@
     iput v1, p0, Lcom/google/android/finsky/activities/AntennaFragment;->mMaxRelatedItemsPerRow:I
 
     .line 70
-    const v1, 0x7f0c000a
+    const v1, 0x7f0c000b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -95,7 +95,7 @@
     iput v1, p0, Lcom/google/android/finsky/activities/AntennaFragment;->mDefaultDescriptionLines:I
 
     .line 72
-    const v1, 0x7f090009
+    const v1, 0x7f090007
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -156,7 +156,7 @@
 
     .prologue
     .line 87
-    const v0, 0x7f040061
+    const v0, 0x7f040066
 
     return v0
 .end method
@@ -165,33 +165,33 @@
     .registers 2
 
     .prologue
-    .line 179
+    .line 183
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/AntennaFragment;->recordState()V
 
-    .line 181
+    .line 185
     iget-object v0, p0, Lcom/google/android/finsky/activities/AntennaFragment;->mDescriptionViewBinder:Lcom/google/android/finsky/activities/DetailsTextViewBinder;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->onDestroyView()V
 
-    .line 182
+    .line 186
     iget-object v0, p0, Lcom/google/android/finsky/activities/AntennaFragment;->mSongListViewBinder:Lcom/google/android/finsky/activities/SongListViewBinder;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/activities/SongListViewBinder;->onDestroyView()V
 
-    .line 183
+    .line 187
     iget-object v0, p0, Lcom/google/android/finsky/activities/AntennaFragment;->mBodyOfWorkViewBinder:Lcom/google/android/finsky/activities/DetailsPackViewBinder;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->onDestroyView()V
 
-    .line 184
+    .line 188
     iget-object v0, p0, Lcom/google/android/finsky/activities/AntennaFragment;->mSummaryPlusOneViewBinder:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->onDestroyView()V
 
-    .line 186
+    .line 190
     invoke-super {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->onDestroyView()V
 
-    .line 187
+    .line 191
     return-void
 .end method
 
@@ -269,30 +269,30 @@
     .registers 4
 
     .prologue
-    .line 166
+    .line 170
     iget-object v1, p0, Lcom/google/android/finsky/activities/AntennaFragment;->mPageFragmentHost:Lcom/google/android/finsky/fragments/PageFragmentHost;
 
     const/4 v2, 0x0
 
     invoke-interface {v1, v2}, Lcom/google/android/finsky/fragments/PageFragmentHost;->updateBreadcrumb(Ljava/lang/String;)V
 
-    .line 167
+    .line 171
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/AntennaFragment;->getDocument()Lcom/google/android/finsky/api/model/Document;
 
     move-result-object v1
 
     if-eqz v1, :cond_1b
 
-    .line 168
+    .line 172
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/AntennaFragment;->getDocument()Lcom/google/android/finsky/api/model/Document;
 
     move-result-object v0
 
-    .line 169
+    .line 173
     .local v0, doc:Lcom/google/android/finsky/api/model/Document;
     if-eqz v0, :cond_1b
 
-    .line 170
+    .line 174
     iget-object v1, p0, Lcom/google/android/finsky/activities/AntennaFragment;->mPageFragmentHost:Lcom/google/android/finsky/fragments/PageFragmentHost;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
@@ -301,7 +301,7 @@
 
     invoke-interface {v1, v2}, Lcom/google/android/finsky/fragments/PageFragmentHost;->updateCurrentBackendId(I)V
 
-    .line 173
+    .line 177
     .end local v0           #doc:Lcom/google/android/finsky/api/model/Document;
     :cond_1b
     return-void
@@ -334,7 +334,7 @@
 
     .line 98
     .local v24, fragmentView:Landroid/view/View;
-    const v2, 0x7f0800f6
+    const v2, 0x7f08010d
 
     move-object/from16 v0, v24
 
@@ -346,6 +346,9 @@
 
     .line 100
     .local v25, headerHero:Lcom/google/android/finsky/layout/HeroGraphicView;
+    invoke-virtual/range {v25 .. v25}, Lcom/google/android/finsky/layout/HeroGraphicView;->hideAccessibilityOverlay()V
+
+    .line 101
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/android/finsky/activities/AntennaFragment;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
@@ -366,10 +369,10 @@
 
     move-object/from16 v0, v25
 
-    invoke-virtual {v0, v2, v5, v7}, Lcom/google/android/finsky/layout/HeroGraphicView;->load(Lcom/google/android/finsky/utils/BitmapLoader;Ljava/lang/String;Z)V
+    invoke-virtual {v0, v2, v4, v5, v7}, Lcom/google/android/finsky/layout/HeroGraphicView;->load(Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Z)V
 
-    .line 104
-    const v2, 0x7f0800f7
+    .line 105
+    const v2, 0x7f08010e
 
     move-object/from16 v0, v24
 
@@ -379,7 +382,7 @@
 
     check-cast v21, Lcom/google/android/finsky/layout/EditorialPageHeader;
 
-    .line 106
+    .line 107
     .local v21, antennaHeader:Lcom/google/android/finsky/layout/EditorialPageHeader;
     invoke-virtual/range {v22 .. v22}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SeriesAntenna;->getSeriesTitle()Ljava/lang/String;
 
@@ -401,15 +404,15 @@
 
     invoke-virtual {v0, v2, v5, v7}, Lcom/google/android/finsky/layout/EditorialPageHeader;->showSeriesInfo(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 108
+    .line 109
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/google/android/finsky/activities/AntennaFragment;->mUseWideHeaderImage:Z
 
-    if-eqz v2, :cond_6c
+    if-eqz v2, :cond_6f
 
-    .line 109
-    const v2, 0x7f0800f3
+    .line 110
+    const v2, 0x7f08010a
 
     move-object/from16 v0, v24
 
@@ -417,7 +420,7 @@
 
     move-result-object v23
 
-    .line 110
+    .line 111
     .local v23, bottomStripWide:Landroid/view/View;
     invoke-virtual/range {v22 .. v22}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SeriesAntenna;->getColorThemeArgb()Ljava/lang/String;
 
@@ -427,7 +430,7 @@
 
     move-result v19
 
-    .line 111
+    .line 112
     .local v19, antennaColor:I
     move-object/from16 v0, v23
 
@@ -435,11 +438,11 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 114
+    .line 115
     .end local v19           #antennaColor:I
     .end local v23           #bottomStripWide:Landroid/view/View;
-    :cond_6c
-    const v2, 0x7f0800f5
+    :cond_6f
+    const v2, 0x7f08010c
 
     move-object/from16 v0, v24
 
@@ -449,7 +452,7 @@
 
     check-cast v20, Lcom/google/android/finsky/layout/DescriptionEditorialHeader;
 
-    .line 116
+    .line 117
     .local v20, antennaEpisodeHeader:Lcom/google/android/finsky/layout/DescriptionEditorialHeader;
     invoke-virtual/range {v22 .. v22}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SeriesAntenna;->getEpisodeTitle()Ljava/lang/String;
 
@@ -467,8 +470,8 @@
 
     invoke-virtual {v0, v2, v5}, Lcom/google/android/finsky/layout/DescriptionEditorialHeader;->showEpisodeInfo(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 120
-    const v2, 0x7f0800d7
+    .line 121
+    const v2, 0x7f080091
 
     move-object/from16 v0, v24
 
@@ -476,11 +479,11 @@
 
     move-result-object v3
 
-    .line 121
-    .local v3, descriptionPanel:Landroid/view/View;
-    if-eqz v3, :cond_a8
-
     .line 122
+    .local v3, descriptionPanel:Landroid/view/View;
+    if-eqz v3, :cond_ab
+
+    .line 123
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/android/finsky/activities/AntennaFragment;->mDescriptionViewBinder:Lcom/google/android/finsky/activities/DetailsTextViewBinder;
@@ -495,16 +498,16 @@
 
     invoke-virtual/range {v2 .. v7}, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->bind(Landroid/view/View;Lcom/google/android/finsky/api/model/Document;ILjava/lang/CharSequence;Landroid/os/Bundle;)V
 
-    .line 124
+    .line 125
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/android/finsky/activities/AntennaFragment;->mDescriptionViewBinder:Lcom/google/android/finsky/activities/DetailsTextViewBinder;
 
     invoke-virtual {v2}, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->hideHeader()V
 
-    .line 127
-    :cond_a8
-    const v2, 0x7f0800f4
+    .line 128
+    :cond_ab
+    const v2, 0x7f08010b
 
     move-object/from16 v0, v24
 
@@ -514,7 +517,7 @@
 
     check-cast v28, Lcom/google/android/finsky/layout/HeroGraphicView;
 
-    .line 129
+    .line 130
     .local v28, videoHero:Lcom/google/android/finsky/layout/HeroGraphicView;
     const/4 v2, 0x3
 
@@ -522,15 +525,15 @@
 
     move-result-object v29
 
-    .line 130
+    .line 131
     .local v29, videoLinks:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/remoting/protos/Doc$Image;>;"
-    if-eqz v29, :cond_17f
+    if-eqz v29, :cond_190
 
     invoke-interface/range {v29 .. v29}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-lez v2, :cond_17f
+    if-lez v2, :cond_190
 
     const/4 v2, 0x0
 
@@ -550,9 +553,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_17f
+    if-nez v2, :cond_190
 
-    .line 132
+    .line 133
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/android/finsky/activities/AntennaFragment;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
@@ -569,9 +572,9 @@
 
     move-object/from16 v0, v28
 
-    invoke-virtual {v0, v2, v5, v7}, Lcom/google/android/finsky/layout/HeroGraphicView;->load(Lcom/google/android/finsky/utils/BitmapLoader;Ljava/lang/String;Z)V
+    invoke-virtual {v0, v2, v4, v5, v7}, Lcom/google/android/finsky/layout/HeroGraphicView;->load(Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Z)V
 
-    .line 134
+    .line 135
     const/4 v2, 0x0
 
     move-object/from16 v0, v29
@@ -590,16 +593,23 @@
 
     invoke-virtual {v0, v2}, Lcom/google/android/finsky/layout/HeroGraphicView;->showPlayIcon(Ljava/lang/String;)V
 
-    .line 135
+    .line 136
+    const v2, 0x7f07016a
+
+    move-object/from16 v0, v28
+
+    invoke-virtual {v0, v2}, Lcom/google/android/finsky/layout/HeroGraphicView;->setContentDescription(I)V
+
+    .line 137
     const/4 v2, 0x0
 
     move-object/from16 v0, v28
 
     invoke-virtual {v0, v2}, Lcom/google/android/finsky/layout/HeroGraphicView;->setVisibility(I)V
 
-    .line 140
-    :goto_fb
-    const v2, 0x7f080096
+    .line 142
+    :goto_106
+    const v2, 0x7f080093
 
     move-object/from16 v0, v24
 
@@ -609,16 +619,16 @@
 
     check-cast v6, Lcom/google/android/finsky/layout/SongList;
 
-    .line 141
+    .line 143
     .local v6, songList:Lcom/google/android/finsky/layout/SongList;
-    if-eqz v6, :cond_12f
+    if-eqz v6, :cond_13e
 
-    .line 142
+    .line 144
     invoke-virtual/range {v22 .. v22}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SeriesAntenna;->getSectionTracks()Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;
 
     move-result-object v26
 
-    .line 143
+    .line 145
     .local v26, sectionTracks:Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;
     move-object/from16 v0, p0
 
@@ -630,7 +640,7 @@
 
     move-result-object v2
 
-    const v9, 0x7f070200
+    const v9, 0x7f070239
 
     invoke-virtual {v2, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -652,12 +662,16 @@
 
     move-result v13
 
-    invoke-virtual/range {v5 .. v13}, Lcom/google/android/finsky/activities/SongListViewBinder;->bind(Lcom/google/android/finsky/layout/SongList;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZIZ)V
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/finsky/activities/AntennaFragment;->getLibraries()Lcom/google/android/finsky/library/Libraries;
 
-    .line 149
+    move-result-object v14
+
+    invoke-virtual/range {v5 .. v14}, Lcom/google/android/finsky/activities/SongListViewBinder;->bind(Lcom/google/android/finsky/layout/SongList;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZIZLcom/google/android/finsky/library/Libraries;)V
+
+    .line 152
     .end local v26           #sectionTracks:Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;
-    :cond_12f
-    const v2, 0x7f080097
+    :cond_13e
+    const v2, 0x7f080095
 
     move-object/from16 v0, v24
 
@@ -665,16 +679,16 @@
 
     move-result-object v8
 
-    .line 150
+    .line 153
     .local v8, bodyOfWorkPanel:Landroid/view/View;
-    if-eqz v8, :cond_166
+    if-eqz v8, :cond_175
 
-    .line 151
+    .line 154
     invoke-virtual/range {v22 .. v22}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SeriesAntenna;->getSectionAlbums()Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;
 
     move-result-object v18
 
-    .line 152
+    .line 155
     .local v18, albumMetadata:Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;
     move-object/from16 v0, p0
 
@@ -716,10 +730,10 @@
 
     invoke-virtual/range {v7 .. v17}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->bind(Landroid/view/View;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)V
 
-    .line 158
+    .line 161
     .end local v18           #albumMetadata:Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;
-    :cond_166
-    const v2, 0x7f080090
+    :cond_175
+    const v2, 0x7f0800ee
 
     move-object/from16 v0, v24
 
@@ -727,11 +741,11 @@
 
     move-result-object v27
 
-    .line 159
+    .line 162
     .local v27, summaryPlusOnePanel:Landroid/view/View;
-    if-eqz v27, :cond_17e
+    if-eqz v27, :cond_18f
 
-    .line 160
+    .line 163
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/android/finsky/activities/AntennaFragment;->mSummaryPlusOneViewBinder:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;
@@ -742,61 +756,80 @@
 
     move-object/from16 v0, v27
 
-    invoke-virtual {v2, v0, v4, v5}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->bind(Landroid/view/View;Lcom/google/android/finsky/api/model/Document;Z)V
+    move-object/from16 v1, p1
 
-    .line 162
-    :cond_17e
+    invoke-virtual {v2, v0, v4, v5, v1}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->bind(Landroid/view/View;Lcom/google/android/finsky/api/model/Document;ZLandroid/os/Bundle;)V
+
+    .line 166
+    :cond_18f
     return-void
 
-    .line 137
+    .line 139
     .end local v6           #songList:Lcom/google/android/finsky/layout/SongList;
     .end local v8           #bodyOfWorkPanel:Landroid/view/View;
     .end local v27           #summaryPlusOnePanel:Landroid/view/View;
-    :cond_17f
+    :cond_190
     const/16 v2, 0x8
 
     move-object/from16 v0, v28
 
     invoke-virtual {v0, v2}, Lcom/google/android/finsky/layout/HeroGraphicView;->setVisibility(I)V
 
-    goto/16 :goto_fb
+    goto/16 :goto_106
 .end method
 
 .method protected recordState(Landroid/os/Bundle;)V
-    .registers 5
+    .registers 6
     .parameter "savedInstanceState"
 
     .prologue
-    .line 191
+    .line 195
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/AntennaFragment;->getView()Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 192
-    .local v1, view:Landroid/view/View;
-    if-nez v1, :cond_7
+    .line 196
+    .local v2, view:Landroid/view/View;
+    if-nez v2, :cond_7
 
-    .line 200
+    .line 209
     :cond_6
     :goto_6
     return-void
 
-    .line 196
+    .line 200
     :cond_7
-    const v2, 0x7f0800d7
+    const v3, 0x7f080091
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 197
+    .line 201
     .local v0, descriptionPanel:Landroid/view/View;
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_15
 
-    .line 198
-    iget-object v2, p0, Lcom/google/android/finsky/activities/AntennaFragment;->mDescriptionViewBinder:Lcom/google/android/finsky/activities/DetailsTextViewBinder;
+    .line 202
+    iget-object v3, p0, Lcom/google/android/finsky/activities/AntennaFragment;->mDescriptionViewBinder:Lcom/google/android/finsky/activities/DetailsTextViewBinder;
 
-    invoke-virtual {v2, p1}, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->saveInstanceState(Landroid/os/Bundle;)V
+    invoke-virtual {v3, p1}, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->saveInstanceState(Landroid/os/Bundle;)V
+
+    .line 205
+    :cond_15
+    const v3, 0x7f0800ee
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    .line 206
+    .local v1, summaryPlusOnePanel:Landroid/view/View;
+    if-eqz v1, :cond_6
+
+    .line 207
+    iget-object v3, p0, Lcom/google/android/finsky/activities/AntennaFragment;->mSummaryPlusOneViewBinder:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;
+
+    invoke-virtual {v3, p1}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->saveInstanceState(Landroid/os/Bundle;)V
 
     goto :goto_6
 .end method

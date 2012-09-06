@@ -12,7 +12,7 @@
     <string name="loading">Загрузка</string>
     <string name="no_panorama_data">Не заданы данные панорамы.</string>
     <string name="invalid_panorama_data">Недействительные данные панорамы.</string>
-    <string name="click_to_go_toast">Перетащите человечека на карту.</string>
+    <string name="click_to_go_toast">Перетащите человечка на карту.</string>
     <string name="street_range_name_format">%1$s %2$s</string>
     <string name="network_unavailable">Программа будет автоматически пытаться установить соединение. Возможно, нет сигнала, включен режим полета или заблокирован роуминг.</string>
     <string name="whats_new_header">Новое в Просмотре улиц</string>

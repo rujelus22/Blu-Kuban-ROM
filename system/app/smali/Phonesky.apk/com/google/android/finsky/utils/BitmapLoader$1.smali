@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 248
+    .line 279
     iput-object p1, p0, Lcom/google/android/finsky/utils/BitmapLoader$1;->this$0:Lcom/google/android/finsky/utils/BitmapLoader;
 
     iput-object p2, p0, Lcom/google/android/finsky/utils/BitmapLoader$1;->val$requestUrl:Ljava/lang/String;
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public create()Lcom/android/volley/Request;
-    .registers 9
+    .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -68,28 +68,26 @@
     .end annotation
 
     .prologue
-    .line 251
+    .line 282
     new-instance v0, Lcom/google/android/finsky/utils/BitmapLoader$DebugImageRequest;
 
-    iget-object v1, p0, Lcom/google/android/finsky/utils/BitmapLoader$1;->this$0:Lcom/google/android/finsky/utils/BitmapLoader;
+    iget-object v1, p0, Lcom/google/android/finsky/utils/BitmapLoader$1;->val$requestUrl:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/finsky/utils/BitmapLoader$1;->val$requestUrl:Ljava/lang/String;
+    new-instance v2, Lcom/google/android/finsky/utils/BitmapLoader$1$1;
 
-    new-instance v3, Lcom/google/android/finsky/utils/BitmapLoader$1$1;
+    invoke-direct {v2, p0}, Lcom/google/android/finsky/utils/BitmapLoader$1$1;-><init>(Lcom/google/android/finsky/utils/BitmapLoader$1;)V
 
-    invoke-direct {v3, p0}, Lcom/google/android/finsky/utils/BitmapLoader$1$1;-><init>(Lcom/google/android/finsky/utils/BitmapLoader$1;)V
+    iget v3, p0, Lcom/google/android/finsky/utils/BitmapLoader$1;->val$maxWidth:I
 
-    iget v4, p0, Lcom/google/android/finsky/utils/BitmapLoader$1;->val$maxWidth:I
+    iget v4, p0, Lcom/google/android/finsky/utils/BitmapLoader$1;->val$maxHeight:I
 
-    iget v5, p0, Lcom/google/android/finsky/utils/BitmapLoader$1;->val$maxHeight:I
+    sget-object v5, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    sget-object v6, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
+    new-instance v6, Lcom/google/android/finsky/utils/BitmapLoader$1$2;
 
-    new-instance v7, Lcom/google/android/finsky/utils/BitmapLoader$1$2;
+    invoke-direct {v6, p0}, Lcom/google/android/finsky/utils/BitmapLoader$1$2;-><init>(Lcom/google/android/finsky/utils/BitmapLoader$1;)V
 
-    invoke-direct {v7, p0}, Lcom/google/android/finsky/utils/BitmapLoader$1$2;-><init>(Lcom/google/android/finsky/utils/BitmapLoader$1;)V
-
-    invoke-direct/range {v0 .. v7}, Lcom/google/android/finsky/utils/BitmapLoader$DebugImageRequest;-><init>(Lcom/google/android/finsky/utils/BitmapLoader;Ljava/lang/String;Lcom/android/volley/Response$Listener;IILandroid/graphics/Bitmap$Config;Lcom/android/volley/Response$ErrorListener;)V
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/finsky/utils/BitmapLoader$DebugImageRequest;-><init>(Ljava/lang/String;Lcom/android/volley/Response$Listener;IILandroid/graphics/Bitmap$Config;Lcom/android/volley/Response$ErrorListener;)V
 
     return-object v0
 .end method

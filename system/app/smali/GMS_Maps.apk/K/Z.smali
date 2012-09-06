@@ -1,40 +1,104 @@
-.class final enum LK/Z;
-.super LK/S;
+.class public Lk/z;
+.super LA/j;
+.source "SourceFile"
+
+
+# instance fields
+.field private final a:Ls/q;
+
+.field private final b:Ls/q;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;I)V
-    .registers 4
+.method public constructor <init>(Ls/q;Ls/q;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    .line 359
+    invoke-direct {p0}, LA/j;-><init>()V
 
-    invoke-direct {p0, p1, p2, v0}, LK/S;-><init>(Ljava/lang/String;ILK/Q;)V
+    .line 360
+    iput-object p1, p0, Lk/z;->a:Ls/q;
 
+    .line 361
+    iput-object p2, p0, Lk/z;->b:Ls/q;
+
+    .line 362
     return-void
 .end method
 
 
 # virtual methods
-.method a(LK/P;LK/am;LK/am;)LK/am;
-    .registers 5
+.method a()Ljava/lang/String;
+    .registers 2
 
-    invoke-super {p0, p1, p2, p3}, LK/S;->a(LK/P;LK/am;LK/am;)LK/am;
+    .prologue
+    .line 365
+    iget-object v0, p0, Lk/z;->b:Ls/q;
+
+    invoke-virtual {v0}, Ls/q;->D()Ljava/lang/String;
 
     move-result-object v0
-
-    invoke-virtual {p0, p2, v0}, LK/Z;->a(LK/am;LK/am;)V
-
-    invoke-virtual {p0, p2, v0}, LK/Z;->b(LK/am;LK/am;)V
 
     return-object v0
 .end method
 
-.method a(LK/P;Ljava/lang/Object;ILK/am;)LK/am;
-    .registers 6
+.method protected a(Ljava/io/Writer;)V
+    .registers 4
+    .parameter
 
-    new-instance v0, LK/aH;
+    .prologue
+    .line 369
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, p1, p2, p3, p4}, LK/aH;-><init>(LK/P;Ljava/lang/Object;ILK/am;)V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    return-object v0
+    const-string v1, "<stateTransition from=\'"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lk/z;->a:Ls/q;
+
+    invoke-virtual {v1}, Ls/q;->D()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\' to=\'"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lk/z;->b:Ls/q;
+
+    invoke-virtual {v1}, Ls/q;->D()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\'/>"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+    .line 371
+    return-void
 .end method

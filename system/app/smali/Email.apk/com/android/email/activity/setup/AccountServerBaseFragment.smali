@@ -18,10 +18,6 @@
 
 
 # static fields
-.field private static CHECK_MODE_NONE:I
-
-.field public static mProceedButtonPressed:Z
-
 .field protected static sDefaultUri:Ljava/net/URI;
 
 .field public static sSetupModeArgs:Landroid/os/Bundle;
@@ -30,21 +26,19 @@
 # instance fields
 .field mBaseScheme:Ljava/lang/String;
 
-.field private mCallOnProceedNext:Z
-
 .field protected mCallback:Lcom/android/email/activity/setup/AccountServerBaseFragment$Callback;
-
-.field private mCheckSettingsModeFromTask:I
 
 .field protected mContext:Landroid/content/Context;
 
-.field mLoadedRecvAuth:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
+.field protected final mDismissImeOnDoneListener:Landroid/widget/TextView$OnEditorActionListener;
 
-.field mLoadedSendAuth:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
+.field mLoadedRecvAuth:Lcom/android/emailcommon/provider/HostAuth;
 
-.field protected mLoadedUri:Ljava/net/URI;
+.field mLoadedSendAuth:Lcom/android/emailcommon/provider/HostAuth;
 
-.field public mProceedButton:Landroid/widget/Button;
+.field private mProceedButton:Landroid/widget/Button;
+
+.field private mProceedButtonPressed:Z
 
 .field protected mSettingsMode:Z
 
@@ -54,15 +48,10 @@
     .registers 1
 
     .prologue
-    .line 48
+    .line 54
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->sSetupModeArgs:Landroid/os/Bundle;
-
-    .line 56
-    const/4 v0, 0x0
-
-    sput v0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->CHECK_MODE_NONE:I
 
     return-void
 .end method
@@ -71,35 +60,32 @@
     .registers 3
 
     .prologue
-    .line 143
+    .line 123
     invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
-    .line 55
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCallOnProceedNext:Z
-
-    .line 57
-    sget v0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->CHECK_MODE_NONE:I
-
-    iput v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCheckSettingsModeFromTask:I
-
-    .line 62
+    .line 61
     sget-object v0, Lcom/android/email/activity/setup/AccountServerBaseFragment$EmptyCallback;->INSTANCE:Lcom/android/email/activity/setup/AccountServerBaseFragment$Callback;
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCallback:Lcom/android/email/activity/setup/AccountServerBaseFragment$Callback;
 
-    .line 80
+    .line 76
     const-string v0, "protocol"
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mBaseScheme:Ljava/lang/String;
 
-    .line 144
+    .line 293
+    new-instance v0, Lcom/android/email/activity/setup/AccountServerBaseFragment$3;
+
+    invoke-direct {v0, p0}, Lcom/android/email/activity/setup/AccountServerBaseFragment$3;-><init>(Lcom/android/email/activity/setup/AccountServerBaseFragment;)V
+
+    iput-object v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mDismissImeOnDoneListener:Landroid/widget/TextView$OnEditorActionListener;
+
+    .line 124
     sget-object v0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->sDefaultUri:Ljava/net/URI;
 
     if-nez v0, :cond_1f
 
-    .line 146
+    .line 126
     :try_start_16
     new-instance v0, Ljava/net/URI;
 
@@ -111,47 +97,47 @@
     :try_end_1f
     .catch Ljava/net/URISyntaxException; {:try_start_16 .. :try_end_1f} :catch_20
 
-    .line 151
+    .line 131
     :cond_1f
     :goto_1f
     return-void
 
-    .line 147
+    .line 127
     :catch_20
     move-exception v0
 
     goto :goto_1f
 .end method
 
-.method static synthetic access$002(Lcom/android/email/activity/setup/AccountServerBaseFragment;Z)Z
-    .registers 2
+.method static synthetic access$000(Lcom/android/email/activity/setup/AccountServerBaseFragment;)V
+    .registers 1
     .parameter "x0"
-    .parameter "x1"
 
     .prologue
-    .line 45
-    iput-boolean p1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCallOnProceedNext:Z
+    .line 51
+    invoke-direct {p0}, Lcom/android/email/activity/setup/AccountServerBaseFragment;->clearButtonBounce()V
 
-    return p1
+    return-void
 .end method
 
-.method static synthetic access$102(Lcom/android/email/activity/setup/AccountServerBaseFragment;I)I
+.method private clearButtonBounce()V
     .registers 2
-    .parameter "x0"
-    .parameter "x1"
 
     .prologue
-    .line 45
-    iput p1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCheckSettingsModeFromTask:I
+    .line 318
+    const/4 v0, 0x0
 
-    return p1
+    iput-boolean v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mProceedButtonPressed:Z
+
+    .line 319
+    return-void
 .end method
 
 .method public static declared-synchronized getSettingsModeArgs()Landroid/os/Bundle;
     .registers 4
 
     .prologue
-    .line 136
+    .line 116
     const-class v1, Lcom/android/email/activity/setup/AccountServerBaseFragment;
 
     monitor-enter v1
@@ -161,14 +147,14 @@
 
     if-nez v0, :cond_16
 
-    .line 137
+    .line 117
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     sput-object v0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->sSetupModeArgs:Landroid/os/Bundle;
 
-    .line 138
+    .line 118
     sget-object v0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->sSetupModeArgs:Landroid/os/Bundle;
 
     const-string v2, "AccountServerBaseFragment.settings"
@@ -177,7 +163,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 140
+    .line 120
     :cond_16
     sget-object v0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->sSetupModeArgs:Landroid/os/Bundle;
     :try_end_18
@@ -187,7 +173,7 @@
 
     return-object v0
 
-    .line 136
+    .line 116
     :catchall_1a
     move-exception v0
 
@@ -198,44 +184,31 @@
 
 
 # virtual methods
-.method clearButtonBounce()V
-    .registers 2
-
-    .prologue
-    .line 266
-    const/4 v0, 0x0
-
-    sput-boolean v0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mProceedButtonPressed:Z
-
-    .line 267
-    return-void
-.end method
-
 .method public enableNextButton(Z)V
     .registers 3
     .parameter "enable"
 
     .prologue
-    .line 252
+    .line 231
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mProceedButton:Landroid/widget/Button;
 
     if-eqz v0, :cond_9
 
-    .line 253
+    .line 232
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mProceedButton:Landroid/widget/Button;
 
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 256
+    .line 234
     :cond_9
-    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountServerBaseFragment;->clearButtonBounce()V
+    invoke-direct {p0}, Lcom/android/email/activity/setup/AccountServerBaseFragment;->clearButtonBounce()V
 
-    .line 259
+    .line 237
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCallback:Lcom/android/email/activity/setup/AccountServerBaseFragment$Callback;
 
     invoke-interface {v0, p1}, Lcom/android/email/activity/setup/AccountServerBaseFragment$Callback;->onEnableProceedButtons(Z)V
 
-    .line 260
+    .line 238
     return-void
 .end method
 
@@ -247,28 +220,28 @@
 
     const/4 v6, 0x0
 
-    .line 378
-    invoke-static {}, Lcom/android/email/activity/setup/SetupData;->getAccount()Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 402
+    invoke-static {}, Lcom/android/email/activity/setup/SetupData;->getAccount()Lcom/android/emailcommon/provider/Account;
 
     move-result-object v0
 
-    .line 380
-    .local v0, account:Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 404
+    .local v0, account:Lcom/android/emailcommon/provider/Account;
     iget-object v7, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0, v7}, Lcom/android/emailcommon/provider/EmailContent$Account;->getOrCreateHostAuthSend(Landroid/content/Context;)Lcom/android/emailcommon/provider/EmailContent$HostAuth;
+    invoke-virtual {v0, v7}, Lcom/android/emailcommon/provider/Account;->getOrCreateHostAuthSend(Landroid/content/Context;)Lcom/android/emailcommon/provider/HostAuth;
 
     move-result-object v3
 
-    .line 381
-    .local v3, sendAuth:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
-    iget-object v7, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mLoadedSendAuth:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
+    .line 405
+    .local v3, sendAuth:Lcom/android/emailcommon/provider/HostAuth;
+    iget-object v7, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mLoadedSendAuth:Lcom/android/emailcommon/provider/HostAuth;
 
     if-eqz v7, :cond_32
 
-    iget-object v7, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mLoadedSendAuth:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
+    iget-object v7, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mLoadedSendAuth:Lcom/android/emailcommon/provider/HostAuth;
 
-    invoke-virtual {v7, v3}, Lcom/android/emailcommon/provider/EmailContent$HostAuth;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v3}, Lcom/android/emailcommon/provider/HostAuth;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
@@ -276,24 +249,24 @@
 
     move v4, v5
 
-    .line 383
+    .line 407
     .local v4, sendChanged:Z
     :goto_19
     iget-object v7, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0, v7}, Lcom/android/emailcommon/provider/EmailContent$Account;->getOrCreateHostAuthRecv(Landroid/content/Context;)Lcom/android/emailcommon/provider/EmailContent$HostAuth;
+    invoke-virtual {v0, v7}, Lcom/android/emailcommon/provider/Account;->getOrCreateHostAuthRecv(Landroid/content/Context;)Lcom/android/emailcommon/provider/HostAuth;
 
     move-result-object v1
 
-    .line 384
-    .local v1, recvAuth:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
-    iget-object v7, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mLoadedRecvAuth:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
+    .line 408
+    .local v1, recvAuth:Lcom/android/emailcommon/provider/HostAuth;
+    iget-object v7, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mLoadedRecvAuth:Lcom/android/emailcommon/provider/HostAuth;
 
     if-eqz v7, :cond_34
 
-    iget-object v7, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mLoadedRecvAuth:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
+    iget-object v7, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mLoadedRecvAuth:Lcom/android/emailcommon/provider/HostAuth;
 
-    invoke-virtual {v7, v1}, Lcom/android/emailcommon/provider/EmailContent$HostAuth;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v1}, Lcom/android/emailcommon/provider/HostAuth;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
@@ -301,7 +274,7 @@
 
     move v2, v5
 
-    .line 386
+    .line 410
     .local v2, recvChanged:Z
     :goto_2c
     if-nez v4, :cond_30
@@ -314,58 +287,119 @@
     :cond_31
     return v6
 
-    .end local v1           #recvAuth:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
+    .end local v1           #recvAuth:Lcom/android/emailcommon/provider/HostAuth;
     .end local v2           #recvChanged:Z
     .end local v4           #sendChanged:Z
     :cond_32
     move v4, v6
 
-    .line 381
+    .line 405
     goto :goto_19
 
-    .restart local v1       #recvAuth:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
+    .restart local v1       #recvAuth:Lcom/android/emailcommon/provider/HostAuth;
     .restart local v4       #sendChanged:Z
     :cond_34
     move v2, v6
 
-    .line 384
+    .line 408
     goto :goto_2c
 .end method
 
-.method public onAttach(Landroid/app/Activity;)V
-    .registers 3
-    .parameter "activity"
+.method protected makeTextViewUneditable(Landroid/widget/TextView;Ljava/lang/String;)V
+    .registers 4
+    .parameter "view"
+    .parameter "errorMessage"
 
     .prologue
-    .line 205
-    invoke-super {p0, p1}, Landroid/app/Fragment;->onAttach(Landroid/app/Activity;)V
+    .line 258
+    iget-boolean v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mSettingsMode:Z
 
-    .line 206
-    iput-object p1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mContext:Landroid/content/Context;
+    if-eqz v0, :cond_1c
 
-    .line 209
-    instance-of v0, p1, Lcom/android/email/activity/setup/AccountSettingsXL;
+    .line 259
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_e
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setKeyListener(Landroid/text/method/KeyListener;)V
 
-    .line 210
-    check-cast p1, Lcom/android/email/activity/setup/AccountSettingsXL;
+    .line 260
+    const/4 v0, 0x1
 
-    .end local p1
-    invoke-virtual {p1, p0}, Lcom/android/email/activity/setup/AccountSettingsXL;->onAttach(Landroid/app/Fragment;)V
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setFocusable(Z)V
 
-    .line 212
-    :cond_e
+    .line 261
+    new-instance v0, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;
+
+    invoke-direct {v0, p0, p1, p2}, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;-><init>(Lcom/android/email/activity/setup/AccountServerBaseFragment;Landroid/widget/TextView;Ljava/lang/String;)V
+
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
+
+    .line 275
+    new-instance v0, Lcom/android/email/activity/setup/AccountServerBaseFragment$2;
+
+    invoke-direct {v0, p0, p1, p2}, Lcom/android/email/activity/setup/AccountServerBaseFragment$2;-><init>(Lcom/android/email/activity/setup/AccountServerBaseFragment;Landroid/widget/TextView;Ljava/lang/String;)V
+
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 286
+    :cond_1c
     return-void
 .end method
 
-.method public onAutoDiscoverComplete(ILcom/android/emailcommon/provider/EmailContent$HostAuth;)V
+.method public onActivityCreated(Landroid/os/Bundle;)V
+    .registers 4
+    .parameter "savedInstanceState"
+
+    .prologue
+    .line 163
+    iget-boolean v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mSettingsMode:Z
+
+    if-eqz v0, :cond_13
+
+    if-eqz p1, :cond_13
+
+    .line 164
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountServerBaseFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    const-string v1, "AccountServerBaseFragment.title"
+
+    invoke-virtual {p1, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->setTitle(Ljava/lang/CharSequence;)V
+
+    .line 166
+    :cond_13
+    invoke-super {p0, p1}, Landroid/app/Fragment;->onActivityCreated(Landroid/os/Bundle;)V
+
+    .line 167
+    return-void
+.end method
+
+.method public onAttach(Landroid/app/Activity;)V
+    .registers 2
+    .parameter "activity"
+
+    .prologue
+    .line 176
+    invoke-super {p0, p1}, Landroid/app/Fragment;->onAttach(Landroid/app/Activity;)V
+
+    .line 177
+    iput-object p1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mContext:Landroid/content/Context;
+
+    .line 178
+    return-void
+.end method
+
+.method public onAutoDiscoverComplete(ILcom/android/emailcommon/provider/HostAuth;)V
     .registers 4
     .parameter "result"
     .parameter "hostAuth"
 
     .prologue
-    .line 371
+    .line 395
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
@@ -374,22 +408,24 @@
 .end method
 
 .method public onCheckSettingsComplete(I)V
-    .registers 4
+    .registers 5
     .parameter "settingsResult"
 
     .prologue
-    .line 344
-    new-instance v0, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;
+    .line 368
+    new-instance v0, Lcom/android/email/activity/setup/AccountServerBaseFragment$4;
 
-    invoke-direct {v0, p0, p1}, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;-><init>(Lcom/android/email/activity/setup/AccountServerBaseFragment;I)V
+    invoke-direct {v0, p0, p1}, Lcom/android/email/activity/setup/AccountServerBaseFragment$4;-><init>(Lcom/android/email/activity/setup/AccountServerBaseFragment;I)V
 
-    const/4 v1, 0x0
+    sget-object v1, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
-    new-array v1, v1, [Ljava/lang/Void;
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/android/email/activity/setup/AccountServerBaseFragment$1;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+    new-array v2, v2, [Ljava/lang/Void;
 
-    .line 363
+    invoke-virtual {v0, v1, v2}, Lcom/android/email/activity/setup/AccountServerBaseFragment$4;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    .line 387
     return-void
 .end method
 
@@ -398,64 +434,75 @@
     .parameter "v"
 
     .prologue
-    .line 225
+    .line 202
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_14
+    packed-switch v0, :pswitch_data_1c
 
-    .line 235
+    .line 215
     :cond_7
     :goto_7
     return-void
 
-    .line 228
+    .line 204
     :pswitch_8
-    sget-boolean v0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mProceedButtonPressed:Z
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountServerBaseFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->onBackPressed()V
+
+    goto :goto_7
+
+    .line 208
+    :pswitch_10
+    iget-boolean v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mProceedButtonPressed:Z
 
     if-nez v0, :cond_7
 
-    .line 231
+    .line 211
     const/4 v0, 0x1
 
-    sput-boolean v0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mProceedButtonPressed:Z
+    iput-boolean v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mProceedButtonPressed:Z
 
-    .line 232
+    .line 212
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountServerBaseFragment;->onNext()V
 
     goto :goto_7
 
-    .line 225
+    .line 202
     nop
 
-    :pswitch_data_14
-    .packed-switch 0x7f10001e
+    :pswitch_data_1c
+    .packed-switch 0x7f0e0001
         :pswitch_8
+        :pswitch_10
     .end packed-switch
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .registers 5
+    .registers 4
     .parameter "savedInstanceState"
 
     .prologue
-    const/4 v2, 0x0
-
-    .line 158
+    .line 138
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 162
-    iput-boolean v2, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mSettingsMode:Z
+    .line 141
+    const/4 v0, 0x0
 
-    .line 163
+    iput-boolean v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mSettingsMode:Z
+
+    .line 142
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountServerBaseFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
     if-eqz v0, :cond_18
 
-    .line 164
+    .line 143
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountServerBaseFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -468,11 +515,8 @@
 
     iput-boolean v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mSettingsMode:Z
 
-    .line 167
+    .line 145
     :cond_18
-    sput-boolean v2, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mProceedButtonPressed:Z
-
-    .line 168
     return-void
 .end method
 
@@ -481,15 +525,24 @@
     .parameter "view"
 
     .prologue
-    .line 174
+    .line 151
     iget-boolean v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mSettingsMode:Z
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_24
 
-    .line 176
-    const v0, 0x7f10001e
+    .line 152
+    const v0, 0x7f0e0001
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {p1, v0}, Lcom/android/email/activity/UiUtilities;->getView(Landroid/view/View;I)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 153
+    const v0, 0x7f0e0002
+
+    invoke-static {p1, v0}, Lcom/android/email/activity/UiUtilities;->getView(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v0
 
@@ -497,115 +550,100 @@
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mProceedButton:Landroid/widget/Button;
 
-    .line 177
+    .line 154
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mProceedButton:Landroid/widget/Button;
 
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 178
+    .line 155
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mProceedButton:Landroid/widget/Button;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 180
-    :cond_1a
+    .line 157
+    :cond_24
     return-void
 .end method
 
 .method public onDetach()V
-    .registers 1
+    .registers 2
 
     .prologue
-    .line 217
+    .line 182
     invoke-super {p0}, Landroid/app/Fragment;->onDetach()V
 
-    .line 218
+    .line 185
+    sget-object v0, Lcom/android/email/activity/setup/AccountServerBaseFragment$EmptyCallback;->INSTANCE:Lcom/android/email/activity/setup/AccountServerBaseFragment$Callback;
+
+    iput-object v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCallback:Lcom/android/email/activity/setup/AccountServerBaseFragment$Callback;
+
+    .line 186
     return-void
 .end method
 
 .method public abstract onNext()V
 .end method
 
-.method public onResume()V
-    .registers 5
+.method public onPause()V
+    .registers 4
 
     .prologue
-    const/4 v3, 0x0
+    .line 191
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mContext:Landroid/content/Context;
 
-    .line 185
-    invoke-super {p0}, Landroid/app/Fragment;->onResume()V
+    const-string v2, "input_method"
 
-    .line 186
-    iget-boolean v1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCallOnProceedNext:Z
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    if-eqz v1, :cond_1b
+    move-result-object v0
 
-    iget v1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCheckSettingsModeFromTask:I
-
-    sget v2, Lcom/android/email/activity/setup/AccountServerBaseFragment;->CHECK_MODE_NONE:I
-
-    if-eq v1, v2, :cond_1b
-
-    .line 188
-    :try_start_e
-    iget-object v1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCallback:Lcom/android/email/activity/setup/AccountServerBaseFragment$Callback;
-
-    iget v2, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCheckSettingsModeFromTask:I
-
-    invoke-interface {v1, v2, p0}, Lcom/android/email/activity/setup/AccountServerBaseFragment$Callback;->onProceedNext(ILcom/android/email/activity/setup/AccountServerBaseFragment;)V
-    :try_end_15
-    .catchall {:try_start_e .. :try_end_15} :catchall_27
-    .catch Ljava/lang/IllegalStateException; {:try_start_e .. :try_end_15} :catch_1c
-
-    .line 192
-    iput-boolean v3, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCallOnProceedNext:Z
+    check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
     .line 193
-    sget v1, Lcom/android/email/activity/setup/AccountServerBaseFragment;->CHECK_MODE_NONE:I
+    .local v0, imm:Landroid/view/inputmethod/InputMethodManager;
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountServerBaseFragment;->getView()Landroid/view/View;
 
-    iput v1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCheckSettingsModeFromTask:I
+    move-result-object v1
 
-    .line 196
-    :cond_1b
-    :goto_1b
+    invoke-virtual {v1}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
+
+    .line 194
+    invoke-super {p0}, Landroid/app/Fragment;->onPause()V
+
+    .line 195
     return-void
+.end method
 
-    .line 189
-    :catch_1c
-    move-exception v0
+.method public onSaveInstanceState(Landroid/os/Bundle;)V
+    .registers 4
+    .parameter "outState"
 
-    .line 190
-    .local v0, e:Ljava/lang/IllegalStateException;
-    :try_start_1d
-    invoke-virtual {v0}, Ljava/lang/IllegalStateException;->printStackTrace()V
-    :try_end_20
-    .catchall {:try_start_1d .. :try_end_20} :catchall_27
+    .prologue
+    .line 171
+    const-string v1, "AccountServerBaseFragment.title"
 
-    .line 192
-    iput-boolean v3, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCallOnProceedNext:Z
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountServerBaseFragment;->getActivity()Landroid/app/Activity;
 
-    .line 193
-    sget v1, Lcom/android/email/activity/setup/AccountServerBaseFragment;->CHECK_MODE_NONE:I
+    move-result-object v0
 
-    iput v1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCheckSettingsModeFromTask:I
+    invoke-virtual {v0}, Landroid/app/Activity;->getTitle()Ljava/lang/CharSequence;
 
-    goto :goto_1b
+    move-result-object v0
 
-    .line 192
-    .end local v0           #e:Ljava/lang/IllegalStateException;
-    :catchall_27
-    move-exception v1
+    check-cast v0, Ljava/lang/String;
 
-    iput-boolean v3, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCallOnProceedNext:Z
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 193
-    sget v2, Lcom/android/email/activity/setup/AccountServerBaseFragment;->CHECK_MODE_NONE:I
-
-    iput v2, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCheckSettingsModeFromTask:I
-
-    throw v1
+    .line 172
+    return-void
 .end method
 
 .method public abstract saveSettingsAfterEdit()V
@@ -619,7 +657,7 @@
     .parameter "callback"
 
     .prologue
-    .line 241
+    .line 221
     if-nez p1, :cond_4
 
     sget-object p1, Lcom/android/email/activity/setup/AccountServerBaseFragment$EmptyCallback;->INSTANCE:Lcom/android/email/activity/setup/AccountServerBaseFragment$Callback;
@@ -628,27 +666,26 @@
     :cond_4
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mCallback:Lcom/android/email/activity/setup/AccountServerBaseFragment$Callback;
 
-    .line 242
+    .line 222
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountServerBaseFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountServerBaseFragment;->mContext:Landroid/content/Context;
 
-    .line 243
+    .line 223
     return-void
 .end method
 
-.method protected startDuplicateTaskCheck(JLjava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
-    .registers 15
+.method protected startDuplicateTaskCheck(JLjava/lang/String;Ljava/lang/String;I)V
+    .registers 13
     .parameter "accountId"
     .parameter "checkHost"
     .parameter "checkLogin"
     .parameter "checkSettingsMode"
-    .parameter "email"
 
     .prologue
-    .line 276
+    .line 248
     new-instance v0, Lcom/android/email/activity/setup/AccountServerBaseFragment$DuplicateCheckTask;
 
     move-object v1, p0
@@ -661,16 +698,16 @@
 
     move v6, p5
 
-    move-object v7, p6
-
-    invoke-direct/range {v0 .. v7}, Lcom/android/email/activity/setup/AccountServerBaseFragment$DuplicateCheckTask;-><init>(Lcom/android/email/activity/setup/AccountServerBaseFragment;JLjava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct/range {v0 .. v6}, Lcom/android/email/activity/setup/AccountServerBaseFragment$DuplicateCheckTask;-><init>(Lcom/android/email/activity/setup/AccountServerBaseFragment;JLjava/lang/String;Ljava/lang/String;I)V
 
     sget-object v1, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     const/4 v2, 0x0
 
+    new-array v2, v2, [Ljava/lang/Void;
+
     invoke-virtual {v0, v1, v2}, Lcom/android/email/activity/setup/AccountServerBaseFragment$DuplicateCheckTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 277
+    .line 250
     return-void
 .end method

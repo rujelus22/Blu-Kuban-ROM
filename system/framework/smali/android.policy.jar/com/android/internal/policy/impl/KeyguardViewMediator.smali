@@ -21,9 +21,9 @@
 
 .field protected static final AWAKE_INTERVAL_DEFAULT_MS:I = 0x2710
 
-.field private static final DBG_WAKE:Z = true
+.field private static final DBG_WAKE:Z = false
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final DELAYED_KEYGUARD_ACTION:Ljava/lang/String; = "com.android.internal.policy.impl.PhoneWindowManager.DELAYED_KEYGUARD"
 

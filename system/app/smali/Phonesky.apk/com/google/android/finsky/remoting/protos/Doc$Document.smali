@@ -79,6 +79,8 @@
 
 .field private hasPriceDeprecated:Z
 
+.field private hasPrivacyPolicyUrl:Z
+
 .field private hasSampleDocid:Z
 
 .field private hasTitle:Z
@@ -107,7 +109,20 @@
     .end annotation
 .end field
 
+.field private parent_:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/android/finsky/remoting/protos/Doc$Document;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private priceDeprecated_:Lcom/google/android/finsky/remoting/protos/Common$Offer;
+
+.field private privacyPolicyUrl_:Ljava/lang/String;
 
 .field private sampleDocid_:Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
@@ -145,99 +160,111 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1192
+    .line 1374
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1197
+    .line 1379
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->docid_:Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
-    .line 1217
+    .line 1399
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->fetchDocid_:Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
-    .line 1237
+    .line 1419
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->sampleDocid_:Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
-    .line 1257
+    .line 1439
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->title_:Ljava/lang/String;
 
-    .line 1274
+    .line 1456
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->url_:Ljava/lang/String;
 
-    .line 1290
+    .line 1472
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->snippet_:Ljava/util/List;
 
-    .line 1323
+    .line 1505
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->categoryId_:Ljava/util/List;
 
-    .line 1356
+    .line 1538
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->translatedSnippet_:Ljava/util/List;
 
-    .line 1390
+    .line 1572
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->priceDeprecated_:Lcom/google/android/finsky/remoting/protos/Common$Offer;
 
-    .line 1409
+    .line 1591
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->offer_:Ljava/util/List;
 
-    .line 1443
+    .line 1625
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->availability_:Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
 
-    .line 1462
+    .line 1644
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->image_:Ljava/util/List;
 
-    .line 1495
+    .line 1677
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->child_:Ljava/util/List;
 
-    .line 1528
+    .line 1710
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->parent_:Ljava/util/List;
+
+    .line 1743
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->decoration_:Ljava/util/List;
 
-    .line 1562
+    .line 1777
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->aggregateRating_:Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;
 
-    .line 1581
+    .line 1796
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->documentVariant_:Ljava/util/List;
 
-    .line 1724
+    .line 1830
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->privacyPolicyUrl_:Ljava/lang/String;
+
+    .line 1968
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->cachedSize:I
 
-    .line 1192
+    .line 1374
     return-void
 .end method
 
@@ -248,17 +275,17 @@
     .parameter "value"
 
     .prologue
-    .line 1340
+    .line 1522
     if-nez p1, :cond_8
 
-    .line 1341
+    .line 1523
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1343
+    .line 1525
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->categoryId_:Ljava/util/List;
 
@@ -268,20 +295,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 1344
+    .line 1526
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->categoryId_:Ljava/util/List;
 
-    .line 1346
+    .line 1528
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->categoryId_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1347
+    .line 1529
     return-object p0
 .end method
 
@@ -290,17 +317,17 @@
     .parameter "value"
 
     .prologue
-    .line 1512
+    .line 1694
     if-nez p1, :cond_8
 
-    .line 1513
+    .line 1695
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1515
+    .line 1697
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->child_:Ljava/util/List;
 
@@ -310,20 +337,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 1516
+    .line 1698
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->child_:Ljava/util/List;
 
-    .line 1518
+    .line 1700
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->child_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1519
+    .line 1701
     return-object p0
 .end method
 
@@ -332,17 +359,17 @@
     .parameter "value"
 
     .prologue
-    .line 1545
+    .line 1760
     if-nez p1, :cond_8
 
-    .line 1546
+    .line 1761
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1548
+    .line 1763
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->decoration_:Ljava/util/List;
 
@@ -352,20 +379,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 1549
+    .line 1764
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->decoration_:Ljava/util/List;
 
-    .line 1551
+    .line 1766
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->decoration_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1552
+    .line 1767
     return-object p0
 .end method
 
@@ -374,17 +401,17 @@
     .parameter "value"
 
     .prologue
-    .line 1598
+    .line 1813
     if-nez p1, :cond_8
 
-    .line 1599
+    .line 1814
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1601
+    .line 1816
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->documentVariant_:Ljava/util/List;
 
@@ -394,20 +421,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 1602
+    .line 1817
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->documentVariant_:Ljava/util/List;
 
-    .line 1604
+    .line 1819
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->documentVariant_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1605
+    .line 1820
     return-object p0
 .end method
 
@@ -416,17 +443,17 @@
     .parameter "value"
 
     .prologue
-    .line 1479
+    .line 1661
     if-nez p1, :cond_8
 
-    .line 1480
+    .line 1662
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1482
+    .line 1664
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->image_:Ljava/util/List;
 
@@ -436,20 +463,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 1483
+    .line 1665
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->image_:Ljava/util/List;
 
-    .line 1485
+    .line 1667
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->image_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1486
+    .line 1668
     return-object p0
 .end method
 
@@ -458,17 +485,17 @@
     .parameter "value"
 
     .prologue
-    .line 1426
+    .line 1608
     if-nez p1, :cond_8
 
-    .line 1427
+    .line 1609
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1429
+    .line 1611
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->offer_:Ljava/util/List;
 
@@ -478,20 +505,62 @@
 
     if-eqz v0, :cond_17
 
-    .line 1430
+    .line 1612
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->offer_:Ljava/util/List;
 
-    .line 1432
+    .line 1614
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->offer_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1433
+    .line 1615
+    return-object p0
+.end method
+
+.method public addParent(Lcom/google/android/finsky/remoting/protos/Doc$Document;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 1727
+    if-nez p1, :cond_8
+
+    .line 1728
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 1730
+    :cond_8
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->parent_:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_17
+
+    .line 1731
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->parent_:Ljava/util/List;
+
+    .line 1733
+    :cond_17
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->parent_:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 1734
     return-object p0
 .end method
 
@@ -500,17 +569,17 @@
     .parameter "value"
 
     .prologue
-    .line 1307
+    .line 1489
     if-nez p1, :cond_8
 
-    .line 1308
+    .line 1490
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1310
+    .line 1492
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->snippet_:Ljava/util/List;
 
@@ -520,20 +589,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 1311
+    .line 1493
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->snippet_:Ljava/util/List;
 
-    .line 1313
+    .line 1495
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->snippet_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1314
+    .line 1496
     return-object p0
 .end method
 
@@ -542,17 +611,17 @@
     .parameter "value"
 
     .prologue
-    .line 1373
+    .line 1555
     if-nez p1, :cond_8
 
-    .line 1374
+    .line 1556
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1376
+    .line 1558
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->translatedSnippet_:Ljava/util/List;
 
@@ -562,20 +631,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 1377
+    .line 1559
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->translatedSnippet_:Ljava/util/List;
 
-    .line 1379
+    .line 1561
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->translatedSnippet_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1380
+    .line 1562
     return-object p0
 .end method
 
@@ -583,7 +652,7 @@
     .registers 2
 
     .prologue
-    .line 1564
+    .line 1779
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->aggregateRating_:Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;
 
     return-object v0
@@ -593,7 +662,7 @@
     .registers 2
 
     .prologue
-    .line 1445
+    .line 1627
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->availability_:Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
 
     return-object v0
@@ -603,15 +672,15 @@
     .registers 2
 
     .prologue
-    .line 1726
+    .line 1971
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 1728
+    .line 1973
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getSerializedSize()I
 
-    .line 1730
+    .line 1975
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->cachedSize:I
 
@@ -631,7 +700,7 @@
     .end annotation
 
     .prologue
-    .line 1326
+    .line 1508
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->categoryId_:Ljava/util/List;
 
     return-object v0
@@ -650,7 +719,7 @@
     .end annotation
 
     .prologue
-    .line 1498
+    .line 1680
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->child_:Ljava/util/List;
 
     return-object v0
@@ -669,7 +738,7 @@
     .end annotation
 
     .prologue
-    .line 1531
+    .line 1746
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->decoration_:Ljava/util/List;
 
     return-object v0
@@ -679,7 +748,7 @@
     .registers 2
 
     .prologue
-    .line 1199
+    .line 1381
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->docid_:Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
     return-object v0
@@ -698,7 +767,7 @@
     .end annotation
 
     .prologue
-    .line 1584
+    .line 1799
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->documentVariant_:Ljava/util/List;
 
     return-object v0
@@ -708,7 +777,7 @@
     .registers 2
 
     .prologue
-    .line 1219
+    .line 1401
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->fetchDocid_:Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
     return-object v0
@@ -727,7 +796,7 @@
     .end annotation
 
     .prologue
-    .line 1465
+    .line 1647
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->image_:Ljava/util/List;
 
     return-object v0
@@ -746,8 +815,27 @@
     .end annotation
 
     .prologue
-    .line 1412
+    .line 1594
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->offer_:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public getParentList()Ljava/util/List;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/android/finsky/remoting/protos/Doc$Document;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 1713
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->parent_:Ljava/util/List;
 
     return-object v0
 .end method
@@ -756,8 +844,18 @@
     .registers 2
 
     .prologue
-    .line 1392
+    .line 1574
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->priceDeprecated_:Lcom/google/android/finsky/remoting/protos/Common$Offer;
+
+    return-object v0
+.end method
+
+.method public getPrivacyPolicyUrl()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 1831
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->privacyPolicyUrl_:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -766,7 +864,7 @@
     .registers 2
 
     .prologue
-    .line 1239
+    .line 1421
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->sampleDocid_:Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
     return-object v0
@@ -776,10 +874,10 @@
     .registers 7
 
     .prologue
-    .line 1734
+    .line 1980
     const/4 v3, 0x0
 
-    .line 1735
+    .line 1981
     .local v3, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasDocid()Z
 
@@ -787,7 +885,7 @@
 
     if-eqz v4, :cond_11
 
-    .line 1736
+    .line 1982
     const/4 v4, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getDocid()Lcom/google/android/finsky/remoting/protos/Common$Docid;
@@ -800,7 +898,7 @@
 
     add-int/2addr v3, v4
 
-    .line 1739
+    .line 1985
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasFetchDocid()Z
 
@@ -808,7 +906,7 @@
 
     if-eqz v4, :cond_21
 
-    .line 1740
+    .line 1986
     const/4 v4, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getFetchDocid()Lcom/google/android/finsky/remoting/protos/Common$Docid;
@@ -821,7 +919,7 @@
 
     add-int/2addr v3, v4
 
-    .line 1743
+    .line 1989
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasSampleDocid()Z
 
@@ -829,7 +927,7 @@
 
     if-eqz v4, :cond_31
 
-    .line 1744
+    .line 1990
     const/4 v4, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getSampleDocid()Lcom/google/android/finsky/remoting/protos/Common$Docid;
@@ -842,7 +940,7 @@
 
     add-int/2addr v3, v4
 
-    .line 1747
+    .line 1993
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasTitle()Z
 
@@ -850,7 +948,7 @@
 
     if-eqz v4, :cond_41
 
-    .line 1748
+    .line 1994
     const/4 v4, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getTitle()Ljava/lang/String;
@@ -863,7 +961,7 @@
 
     add-int/2addr v3, v4
 
-    .line 1751
+    .line 1997
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasUrl()Z
 
@@ -871,7 +969,7 @@
 
     if-eqz v4, :cond_51
 
-    .line 1752
+    .line 1998
     const/4 v4, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getUrl()Ljava/lang/String;
@@ -884,11 +982,11 @@
 
     add-int/2addr v3, v4
 
-    .line 1756
+    .line 2002
     :cond_51
     const/4 v0, 0x0
 
-    .line 1757
+    .line 2003
     .local v0, dataSize:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getSnippetList()Ljava/util/List;
 
@@ -912,7 +1010,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 1758
+    .line 2004
     .local v1, element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -922,12 +1020,12 @@
 
     goto :goto_5a
 
-    .line 1761
+    .line 2007
     .end local v1           #element:Ljava/lang/String;
     :cond_6c
     add-int/2addr v3, v0
 
-    .line 1762
+    .line 2008
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getSnippetList()Ljava/util/List;
 
     move-result-object v4
@@ -940,14 +1038,14 @@
 
     add-int/2addr v3, v4
 
-    .line 1764
+    .line 2010
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasPriceDeprecated()Z
 
     move-result v4
 
     if-eqz v4, :cond_88
 
-    .line 1765
+    .line 2011
     const/4 v4, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getPriceDeprecated()Lcom/google/android/finsky/remoting/protos/Common$Offer;
@@ -960,7 +1058,7 @@
 
     add-int/2addr v3, v4
 
-    .line 1768
+    .line 2014
     :cond_88
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasAvailability()Z
 
@@ -968,7 +1066,7 @@
 
     if-eqz v4, :cond_99
 
-    .line 1769
+    .line 2015
     const/16 v4, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getAvailability()Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
@@ -981,7 +1079,7 @@
 
     add-int/2addr v3, v4
 
-    .line 1772
+    .line 2018
     :cond_99
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getImageList()Ljava/util/List;
 
@@ -1004,7 +1102,7 @@
 
     check-cast v1, Lcom/google/android/finsky/remoting/protos/Doc$Image;
 
-    .line 1773
+    .line 2019
     .local v1, element:Lcom/google/android/finsky/remoting/protos/Doc$Image;
     const/16 v4, 0xa
 
@@ -1016,7 +1114,7 @@
 
     goto :goto_a1
 
-    .line 1776
+    .line 2022
     .end local v1           #element:Lcom/google/android/finsky/remoting/protos/Doc$Image;
     :cond_b5
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getChildList()Ljava/util/List;
@@ -1040,7 +1138,7 @@
 
     check-cast v1, Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
-    .line 1777
+    .line 2023
     .local v1, element:Lcom/google/android/finsky/remoting/protos/Doc$Document;
     const/16 v4, 0xb
 
@@ -1052,7 +1150,7 @@
 
     goto :goto_bd
 
-    .line 1780
+    .line 2026
     .end local v1           #element:Lcom/google/android/finsky/remoting/protos/Doc$Document;
     :cond_d1
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasAggregateRating()Z
@@ -1061,7 +1159,7 @@
 
     if-eqz v4, :cond_e2
 
-    .line 1781
+    .line 2027
     const/16 v4, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getAggregateRating()Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;
@@ -1074,7 +1172,7 @@
 
     add-int/2addr v3, v4
 
-    .line 1784
+    .line 2030
     :cond_e2
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getOfferList()Ljava/util/List;
 
@@ -1097,7 +1195,7 @@
 
     check-cast v1, Lcom/google/android/finsky/remoting/protos/Common$Offer;
 
-    .line 1785
+    .line 2031
     .local v1, element:Lcom/google/android/finsky/remoting/protos/Common$Offer;
     const/16 v4, 0xe
 
@@ -1109,7 +1207,7 @@
 
     goto :goto_ea
 
-    .line 1788
+    .line 2034
     .end local v1           #element:Lcom/google/android/finsky/remoting/protos/Common$Offer;
     :cond_fe
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getTranslatedSnippetList()Ljava/util/List;
@@ -1133,7 +1231,7 @@
 
     check-cast v1, Lcom/google/android/finsky/remoting/protos/Doc$TranslatedText;
 
-    .line 1789
+    .line 2035
     .local v1, element:Lcom/google/android/finsky/remoting/protos/Doc$TranslatedText;
     const/16 v4, 0xf
 
@@ -1145,7 +1243,7 @@
 
     goto :goto_106
 
-    .line 1792
+    .line 2038
     .end local v1           #element:Lcom/google/android/finsky/remoting/protos/Doc$TranslatedText;
     :cond_11a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getDocumentVariantList()Ljava/util/List;
@@ -1169,7 +1267,7 @@
 
     check-cast v1, Lcom/google/android/finsky/remoting/protos/Doc$DocumentVariant;
 
-    .line 1793
+    .line 2039
     .local v1, element:Lcom/google/android/finsky/remoting/protos/Doc$DocumentVariant;
     const/16 v4, 0x10
 
@@ -1181,12 +1279,12 @@
 
     goto :goto_122
 
-    .line 1797
+    .line 2043
     .end local v1           #element:Lcom/google/android/finsky/remoting/protos/Doc$DocumentVariant;
     :cond_136
     const/4 v0, 0x0
 
-    .line 1798
+    .line 2044
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getCategoryIdList()Ljava/util/List;
 
     move-result-object v4
@@ -1208,7 +1306,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 1799
+    .line 2045
     .local v1, element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -1218,12 +1316,12 @@
 
     goto :goto_13f
 
-    .line 1802
+    .line 2048
     .end local v1           #element:Ljava/lang/String;
     :cond_151
     add-int/2addr v3, v0
 
-    .line 1803
+    .line 2049
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getCategoryIdList()Ljava/util/List;
 
     move-result-object v4
@@ -1236,7 +1334,7 @@
 
     add-int/2addr v3, v4
 
-    .line 1805
+    .line 2051
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getDecorationList()Ljava/util/List;
 
     move-result-object v4
@@ -1258,7 +1356,7 @@
 
     check-cast v1, Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
-    .line 1806
+    .line 2052
     .local v1, element:Lcom/google/android/finsky/remoting/protos/Doc$Document;
     const/16 v4, 0x12
 
@@ -1270,12 +1368,69 @@
 
     goto :goto_165
 
-    .line 1809
+    .line 2055
     .end local v1           #element:Lcom/google/android/finsky/remoting/protos/Doc$Document;
     :cond_179
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getParentList()Ljava/util/List;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_181
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_195
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/finsky/remoting/protos/Doc$Document;
+
+    .line 2056
+    .restart local v1       #element:Lcom/google/android/finsky/remoting/protos/Doc$Document;
+    const/16 v4, 0x13
+
+    invoke-static {v4, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    goto :goto_181
+
+    .line 2059
+    .end local v1           #element:Lcom/google/android/finsky/remoting/protos/Doc$Document;
+    :cond_195
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasPrivacyPolicyUrl()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1a6
+
+    .line 2060
+    const/16 v4, 0x14
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getPrivacyPolicyUrl()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    .line 2063
+    :cond_1a6
     iput v3, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->cachedSize:I
 
-    .line 1810
+    .line 2064
     return v3
 .end method
 
@@ -1292,7 +1447,7 @@
     .end annotation
 
     .prologue
-    .line 1293
+    .line 1475
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->snippet_:Ljava/util/List;
 
     return-object v0
@@ -1302,7 +1457,7 @@
     .registers 2
 
     .prologue
-    .line 1258
+    .line 1440
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->title_:Ljava/lang/String;
 
     return-object v0
@@ -1321,7 +1476,7 @@
     .end annotation
 
     .prologue
-    .line 1359
+    .line 1541
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->translatedSnippet_:Ljava/util/List;
 
     return-object v0
@@ -1331,7 +1486,7 @@
     .registers 2
 
     .prologue
-    .line 1275
+    .line 1457
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->url_:Ljava/lang/String;
 
     return-object v0
@@ -1341,7 +1496,7 @@
     .registers 2
 
     .prologue
-    .line 1563
+    .line 1778
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasAggregateRating:Z
 
     return v0
@@ -1351,7 +1506,7 @@
     .registers 2
 
     .prologue
-    .line 1444
+    .line 1626
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasAvailability:Z
 
     return v0
@@ -1361,7 +1516,7 @@
     .registers 2
 
     .prologue
-    .line 1198
+    .line 1380
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasDocid:Z
 
     return v0
@@ -1371,7 +1526,7 @@
     .registers 2
 
     .prologue
-    .line 1218
+    .line 1400
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasFetchDocid:Z
 
     return v0
@@ -1381,8 +1536,18 @@
     .registers 2
 
     .prologue
-    .line 1391
+    .line 1573
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasPriceDeprecated:Z
+
+    return v0
+.end method
+
+.method public hasPrivacyPolicyUrl()Z
+    .registers 2
+
+    .prologue
+    .line 1832
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasPrivacyPolicyUrl:Z
 
     return v0
 .end method
@@ -1391,7 +1556,7 @@
     .registers 2
 
     .prologue
-    .line 1238
+    .line 1420
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasSampleDocid:Z
 
     return v0
@@ -1401,7 +1566,7 @@
     .registers 2
 
     .prologue
-    .line 1259
+    .line 1441
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasTitle:Z
 
     return v0
@@ -1411,7 +1576,7 @@
     .registers 2
 
     .prologue
-    .line 1276
+    .line 1458
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasUrl:Z
 
     return v0
@@ -1427,76 +1592,76 @@
     .end annotation
 
     .prologue
-    .line 1817
+    .line 2072
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1818
+    .line 2073
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_c4
+    sparse-switch v0, :sswitch_data_da
 
-    .line 1822
+    .line 2077
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 1823
+    .line 2078
     :sswitch_d
     return-object p0
 
-    .line 1828
+    .line 2083
     :sswitch_e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Common$Docid;-><init>()V
 
-    .line 1829
+    .line 2084
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Common$Docid;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1830
+    .line 2085
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->setDocid(Lcom/google/android/finsky/remoting/protos/Common$Docid;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
     goto :goto_0
 
-    .line 1834
+    .line 2089
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Common$Docid;
     :sswitch_1a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Common$Docid;-><init>()V
 
-    .line 1835
+    .line 2090
     .restart local v1       #value:Lcom/google/android/finsky/remoting/protos/Common$Docid;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1836
+    .line 2091
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->setFetchDocid(Lcom/google/android/finsky/remoting/protos/Common$Docid;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
     goto :goto_0
 
-    .line 1840
+    .line 2095
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Common$Docid;
     :sswitch_26
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Common$Docid;-><init>()V
 
-    .line 1841
+    .line 2096
     .restart local v1       #value:Lcom/google/android/finsky/remoting/protos/Common$Docid;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1842
+    .line 2097
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->setSampleDocid(Lcom/google/android/finsky/remoting/protos/Common$Docid;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
     goto :goto_0
 
-    .line 1846
+    .line 2101
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Common$Docid;
     :sswitch_32
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -1507,7 +1672,7 @@
 
     goto :goto_0
 
-    .line 1850
+    .line 2105
     :sswitch_3a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1517,7 +1682,7 @@
 
     goto :goto_0
 
-    .line 1854
+    .line 2109
     :sswitch_42
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1527,134 +1692,134 @@
 
     goto :goto_0
 
-    .line 1858
+    .line 2113
     :sswitch_4a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Common$Offer;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Common$Offer;-><init>()V
 
-    .line 1859
+    .line 2114
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Common$Offer;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1860
+    .line 2115
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->setPriceDeprecated(Lcom/google/android/finsky/remoting/protos/Common$Offer;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
     goto :goto_0
 
-    .line 1864
+    .line 2119
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Common$Offer;
     :sswitch_56
     new-instance v1, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;-><init>()V
 
-    .line 1865
+    .line 2120
     .local v1, value:Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1866
+    .line 2121
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->setAvailability(Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
     goto :goto_0
 
-    .line 1870
+    .line 2125
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
     :sswitch_62
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Doc$Image;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Doc$Image;-><init>()V
 
-    .line 1871
+    .line 2126
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Doc$Image;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1872
+    .line 2127
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->addImage(Lcom/google/android/finsky/remoting/protos/Doc$Image;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
     goto :goto_0
 
-    .line 1876
+    .line 2131
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Doc$Image;
     :sswitch_6e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;-><init>()V
 
-    .line 1877
+    .line 2132
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Doc$Document;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1878
+    .line 2133
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->addChild(Lcom/google/android/finsky/remoting/protos/Doc$Document;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
     goto :goto_0
 
-    .line 1882
+    .line 2137
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Doc$Document;
     :sswitch_7a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;-><init>()V
 
-    .line 1883
+    .line 2138
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1884
+    .line 2139
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->setAggregateRating(Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
     goto/16 :goto_0
 
-    .line 1888
+    .line 2143
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;
     :sswitch_87
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Common$Offer;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Common$Offer;-><init>()V
 
-    .line 1889
+    .line 2144
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Common$Offer;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1890
+    .line 2145
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->addOffer(Lcom/google/android/finsky/remoting/protos/Common$Offer;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
     goto/16 :goto_0
 
-    .line 1894
+    .line 2149
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Common$Offer;
     :sswitch_94
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Doc$TranslatedText;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Doc$TranslatedText;-><init>()V
 
-    .line 1895
+    .line 2150
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Doc$TranslatedText;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1896
+    .line 2151
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->addTranslatedSnippet(Lcom/google/android/finsky/remoting/protos/Doc$TranslatedText;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
     goto/16 :goto_0
 
-    .line 1900
+    .line 2155
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Doc$TranslatedText;
     :sswitch_a1
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Doc$DocumentVariant;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Doc$DocumentVariant;-><init>()V
 
-    .line 1901
+    .line 2156
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Doc$DocumentVariant;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1902
+    .line 2157
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->addDocumentVariant(Lcom/google/android/finsky/remoting/protos/Doc$DocumentVariant;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
     goto/16 :goto_0
 
-    .line 1906
+    .line 2161
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Doc$DocumentVariant;
     :sswitch_ae
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -1665,23 +1830,50 @@
 
     goto/16 :goto_0
 
-    .line 1910
+    .line 2165
     :sswitch_b7
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;-><init>()V
 
-    .line 1911
+    .line 2166
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Doc$Document;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1912
+    .line 2167
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->addDecoration(Lcom/google/android/finsky/remoting/protos/Doc$Document;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
     goto/16 :goto_0
 
-    .line 1818
-    :sswitch_data_c4
+    .line 2171
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Doc$Document;
+    :sswitch_c4
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/Doc$Document;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;-><init>()V
+
+    .line 2172
+    .restart local v1       #value:Lcom/google/android/finsky/remoting/protos/Doc$Document;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 2173
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->addParent(Lcom/google/android/finsky/remoting/protos/Doc$Document;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
+
+    goto/16 :goto_0
+
+    .line 2177
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Doc$Document;
+    :sswitch_d1
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->setPrivacyPolicyUrl(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
+
+    goto/16 :goto_0
+
+    .line 2073
+    :sswitch_data_da
     .sparse-switch
         0x0 -> :sswitch_d
         0xa -> :sswitch_e
@@ -1700,6 +1892,8 @@
         0x82 -> :sswitch_a1
         0x8a -> :sswitch_ae
         0x92 -> :sswitch_b7
+        0x9a -> :sswitch_c4
+        0xa2 -> :sswitch_d1
     .end sparse-switch
 .end method
 
@@ -1713,7 +1907,7 @@
     .end annotation
 
     .prologue
-    .line 1190
+    .line 1371
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
     move-result-object v0
@@ -1726,26 +1920,26 @@
     .parameter "value"
 
     .prologue
-    .line 1566
+    .line 1781
     if-nez p1, :cond_8
 
-    .line 1567
+    .line 1782
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1569
+    .line 1784
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasAggregateRating:Z
 
-    .line 1570
+    .line 1785
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->aggregateRating_:Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;
 
-    .line 1571
+    .line 1786
     return-object p0
 .end method
 
@@ -1754,26 +1948,26 @@
     .parameter "value"
 
     .prologue
-    .line 1447
+    .line 1629
     if-nez p1, :cond_8
 
-    .line 1448
+    .line 1630
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1450
+    .line 1632
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasAvailability:Z
 
-    .line 1451
+    .line 1633
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->availability_:Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
 
-    .line 1452
+    .line 1634
     return-object p0
 .end method
 
@@ -1782,26 +1976,26 @@
     .parameter "value"
 
     .prologue
-    .line 1201
+    .line 1383
     if-nez p1, :cond_8
 
-    .line 1202
+    .line 1384
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1204
+    .line 1386
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasDocid:Z
 
-    .line 1205
+    .line 1387
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->docid_:Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
-    .line 1206
+    .line 1388
     return-object p0
 .end method
 
@@ -1810,26 +2004,26 @@
     .parameter "value"
 
     .prologue
-    .line 1221
+    .line 1403
     if-nez p1, :cond_8
 
-    .line 1222
+    .line 1404
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1224
+    .line 1406
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasFetchDocid:Z
 
-    .line 1225
+    .line 1407
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->fetchDocid_:Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
-    .line 1226
+    .line 1408
     return-object p0
 .end method
 
@@ -1838,26 +2032,43 @@
     .parameter "value"
 
     .prologue
-    .line 1394
+    .line 1576
     if-nez p1, :cond_8
 
-    .line 1395
+    .line 1577
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1397
+    .line 1579
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasPriceDeprecated:Z
 
-    .line 1398
+    .line 1580
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->priceDeprecated_:Lcom/google/android/finsky/remoting/protos/Common$Offer;
 
-    .line 1399
+    .line 1581
+    return-object p0
+.end method
+
+.method public setPrivacyPolicyUrl(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Doc$Document;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 1834
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasPrivacyPolicyUrl:Z
+
+    .line 1835
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->privacyPolicyUrl_:Ljava/lang/String;
+
+    .line 1836
     return-object p0
 .end method
 
@@ -1866,26 +2077,26 @@
     .parameter "value"
 
     .prologue
-    .line 1241
+    .line 1423
     if-nez p1, :cond_8
 
-    .line 1242
+    .line 1424
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1244
+    .line 1426
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasSampleDocid:Z
 
-    .line 1245
+    .line 1427
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->sampleDocid_:Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
-    .line 1246
+    .line 1428
     return-object p0
 .end method
 
@@ -1894,15 +2105,15 @@
     .parameter "value"
 
     .prologue
-    .line 1261
+    .line 1443
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasTitle:Z
 
-    .line 1262
+    .line 1444
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->title_:Ljava/lang/String;
 
-    .line 1263
+    .line 1445
     return-object p0
 .end method
 
@@ -1911,15 +2122,15 @@
     .parameter "value"
 
     .prologue
-    .line 1278
+    .line 1460
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasUrl:Z
 
-    .line 1279
+    .line 1461
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Document;->url_:Ljava/lang/String;
 
-    .line 1280
+    .line 1462
     return-object p0
 .end method
 
@@ -1933,14 +2144,14 @@
     .end annotation
 
     .prologue
-    .line 1674
+    .line 1912
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasDocid()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 1675
+    .line 1913
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getDocid()Lcom/google/android/finsky/remoting/protos/Common$Docid;
@@ -1949,7 +2160,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1677
+    .line 1915
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasFetchDocid()Z
 
@@ -1957,7 +2168,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 1678
+    .line 1916
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getFetchDocid()Lcom/google/android/finsky/remoting/protos/Common$Docid;
@@ -1966,7 +2177,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1680
+    .line 1918
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasSampleDocid()Z
 
@@ -1974,7 +2185,7 @@
 
     if-eqz v2, :cond_2a
 
-    .line 1681
+    .line 1919
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getSampleDocid()Lcom/google/android/finsky/remoting/protos/Common$Docid;
@@ -1983,7 +2194,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1683
+    .line 1921
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasTitle()Z
 
@@ -1991,7 +2202,7 @@
 
     if-eqz v2, :cond_38
 
-    .line 1684
+    .line 1922
     const/4 v2, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getTitle()Ljava/lang/String;
@@ -2000,7 +2211,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1686
+    .line 1924
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasUrl()Z
 
@@ -2008,7 +2219,7 @@
 
     if-eqz v2, :cond_46
 
-    .line 1687
+    .line 1925
     const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getUrl()Ljava/lang/String;
@@ -2017,7 +2228,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1689
+    .line 1927
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getSnippetList()Ljava/util/List;
 
@@ -2041,7 +2252,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 1690
+    .line 1928
     .local v0, element:Ljava/lang/String;
     const/4 v2, 0x6
 
@@ -2049,7 +2260,7 @@
 
     goto :goto_4e
 
-    .line 1692
+    .line 1930
     .end local v0           #element:Ljava/lang/String;
     :cond_5f
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasPriceDeprecated()Z
@@ -2058,7 +2269,7 @@
 
     if-eqz v2, :cond_6d
 
-    .line 1693
+    .line 1931
     const/4 v2, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getPriceDeprecated()Lcom/google/android/finsky/remoting/protos/Common$Offer;
@@ -2067,7 +2278,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1695
+    .line 1933
     :cond_6d
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasAvailability()Z
 
@@ -2075,7 +2286,7 @@
 
     if-eqz v2, :cond_7c
 
-    .line 1696
+    .line 1934
     const/16 v2, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getAvailability()Lcom/google/android/finsky/remoting/protos/FilterRules$Availability;
@@ -2084,7 +2295,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1698
+    .line 1936
     :cond_7c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getImageList()Ljava/util/List;
 
@@ -2107,7 +2318,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Doc$Image;
 
-    .line 1699
+    .line 1937
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Doc$Image;
     const/16 v2, 0xa
 
@@ -2115,7 +2326,7 @@
 
     goto :goto_84
 
-    .line 1701
+    .line 1939
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Doc$Image;
     :cond_96
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getChildList()Ljava/util/List;
@@ -2139,7 +2350,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
-    .line 1702
+    .line 1940
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Doc$Document;
     const/16 v2, 0xb
 
@@ -2147,7 +2358,7 @@
 
     goto :goto_9e
 
-    .line 1704
+    .line 1942
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Doc$Document;
     :cond_b0
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasAggregateRating()Z
@@ -2156,7 +2367,7 @@
 
     if-eqz v2, :cond_bf
 
-    .line 1705
+    .line 1943
     const/16 v2, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getAggregateRating()Lcom/google/android/finsky/remoting/protos/Rating$AggregateRating;
@@ -2165,7 +2376,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1707
+    .line 1945
     :cond_bf
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getOfferList()Ljava/util/List;
 
@@ -2188,7 +2399,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Common$Offer;
 
-    .line 1708
+    .line 1946
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Common$Offer;
     const/16 v2, 0xe
 
@@ -2196,7 +2407,7 @@
 
     goto :goto_c7
 
-    .line 1710
+    .line 1948
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Common$Offer;
     :cond_d9
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getTranslatedSnippetList()Ljava/util/List;
@@ -2220,7 +2431,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Doc$TranslatedText;
 
-    .line 1711
+    .line 1949
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Doc$TranslatedText;
     const/16 v2, 0xf
 
@@ -2228,7 +2439,7 @@
 
     goto :goto_e1
 
-    .line 1713
+    .line 1951
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Doc$TranslatedText;
     :cond_f3
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getDocumentVariantList()Ljava/util/List;
@@ -2252,7 +2463,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Doc$DocumentVariant;
 
-    .line 1714
+    .line 1952
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Doc$DocumentVariant;
     const/16 v2, 0x10
 
@@ -2260,7 +2471,7 @@
 
     goto :goto_fb
 
-    .line 1716
+    .line 1954
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Doc$DocumentVariant;
     :cond_10d
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getCategoryIdList()Ljava/util/List;
@@ -2284,7 +2495,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 1717
+    .line 1955
     .local v0, element:Ljava/lang/String;
     const/16 v2, 0x11
 
@@ -2292,7 +2503,7 @@
 
     goto :goto_115
 
-    .line 1719
+    .line 1957
     .end local v0           #element:Ljava/lang/String;
     :cond_127
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getDecorationList()Ljava/util/List;
@@ -2316,7 +2527,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Doc$Document;
 
-    .line 1720
+    .line 1958
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Doc$Document;
     const/16 v2, 0x12
 
@@ -2324,8 +2535,57 @@
 
     goto :goto_12f
 
-    .line 1722
+    .line 1960
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Doc$Document;
     :cond_141
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getParentList()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_149
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_15b
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/remoting/protos/Doc$Document;
+
+    .line 1961
+    .restart local v0       #element:Lcom/google/android/finsky/remoting/protos/Doc$Document;
+    const/16 v2, 0x13
+
+    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    goto :goto_149
+
+    .line 1963
+    .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Doc$Document;
+    :cond_15b
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->hasPrivacyPolicyUrl()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_16a
+
+    .line 1964
+    const/16 v2, 0x14
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Document;->getPrivacyPolicyUrl()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    .line 1966
+    :cond_16a
     return-void
 .end method

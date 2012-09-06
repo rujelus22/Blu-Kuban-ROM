@@ -1,5 +1,6 @@
 .class synthetic Lcom/google/android/maps/rideabout/view/p;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # static fields
@@ -10,6 +11,8 @@
 .method static constructor <clinit>()V
     .registers 3
 
+    .prologue
+    .line 81
     invoke-static {}, Lcom/google/android/maps/rideabout/app/c;->values()[Lcom/google/android/maps/rideabout/app/c;
 
     move-result-object v0

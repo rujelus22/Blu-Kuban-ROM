@@ -24,12 +24,12 @@
     .parameter "value"
 
     .prologue
-    .line 33
+    .line 35
     invoke-direct {p0, p1, p2, p3}, Lorg/apache/james/mime4j/field/Field;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 34
+    .line 36
     iput-object p4, p0, Lorg/apache/james/mime4j/field/UnstructuredField;->value:Ljava/lang/String;
 
-    .line 35
+    .line 37
     return-void
 .end method

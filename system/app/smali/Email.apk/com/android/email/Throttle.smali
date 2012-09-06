@@ -43,7 +43,7 @@
     .registers 1
 
     .prologue
-    .line 45
+    .line 43
     new-instance v0, Ljava/util/Timer;
 
     invoke-direct {v0}, Ljava/util/Timer;-><init>()V
@@ -60,7 +60,7 @@
     .parameter "handler"
 
     .prologue
-    .line 76
+    .line 73
     const/16 v4, 0x96
 
     const/16 v5, 0x9c4
@@ -75,7 +75,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/email/Throttle;-><init>(Ljava/lang/String;Ljava/lang/Runnable;Landroid/os/Handler;II)V
 
-    .line 77
+    .line 74
     return-void
 .end method
 
@@ -88,7 +88,7 @@
     .parameter "maxTimeout"
 
     .prologue
-    .line 81
+    .line 79
     sget-object v6, Lcom/android/email/Clock;->INSTANCE:Lcom/android/email/Clock;
 
     sget-object v7, Lcom/android/email/Throttle;->TIMER:Ljava/util/Timer;
@@ -107,7 +107,7 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/email/Throttle;-><init>(Ljava/lang/String;Ljava/lang/Runnable;Landroid/os/Handler;IILcom/android/email/Clock;Ljava/util/Timer;)V
 
-    .line 82
+    .line 80
     return-void
 .end method
 
@@ -122,47 +122,47 @@
     .parameter "timer"
 
     .prologue
-    .line 86
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 84
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 87
+    .line 85
     if-ge p5, p4, :cond_b
 
-    .line 88
-    new-instance v0, Ljava/security/InvalidParameterException;
+    .line 86
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {v0}, Ljava/security/InvalidParameterException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
 
-    .line 90
+    .line 88
     :cond_b
     iput-object p1, p0, Lcom/android/email/Throttle;->mName:Ljava/lang/String;
 
-    .line 91
+    .line 89
     iput-object p2, p0, Lcom/android/email/Throttle;->mCallback:Ljava/lang/Runnable;
 
-    .line 92
+    .line 90
     iput-object p6, p0, Lcom/android/email/Throttle;->mClock:Lcom/android/email/Clock;
 
-    .line 93
+    .line 91
     iput-object p7, p0, Lcom/android/email/Throttle;->mTimer:Ljava/util/Timer;
 
-    .line 94
+    .line 92
     iput-object p3, p0, Lcom/android/email/Throttle;->mHandler:Landroid/os/Handler;
 
-    .line 95
+    .line 93
     iput p4, p0, Lcom/android/email/Throttle;->mMinTimeout:I
 
-    .line 96
+    .line 94
     iput p5, p0, Lcom/android/email/Throttle;->mMaxTimeout:I
 
-    .line 97
+    .line 95
     iget v0, p0, Lcom/android/email/Throttle;->mMinTimeout:I
 
     iput v0, p0, Lcom/android/email/Throttle;->mTimeout:I
 
-    .line 98
+    .line 96
     return-void
 .end method
 
@@ -189,7 +189,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$400(Lcom/android/email/Throttle;)Ljava/lang/Runnable;
+.method static synthetic access$500(Lcom/android/email/Throttle;)Ljava/lang/Runnable;
     .registers 2
     .parameter "x0"
 
@@ -204,7 +204,7 @@
     .registers 2
 
     .prologue
-    .line 105
+    .line 103
     iget-object v0, p0, Lcom/android/email/Throttle;->mRunningTimerTask:Lcom/android/email/Throttle$MyTimerTask;
 
     if-eqz v0, :cond_6
@@ -226,22 +226,22 @@
     .registers 2
 
     .prologue
-    .line 109
+    .line 107
     iget-object v0, p0, Lcom/android/email/Throttle;->mRunningTimerTask:Lcom/android/email/Throttle$MyTimerTask;
 
     if-eqz v0, :cond_c
 
-    .line 112
+    .line 109
     iget-object v0, p0, Lcom/android/email/Throttle;->mRunningTimerTask:Lcom/android/email/Throttle$MyTimerTask;
 
     invoke-virtual {v0}, Lcom/android/email/Throttle$MyTimerTask;->cancel()Z
 
-    .line 113
+    .line 110
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/email/Throttle;->mRunningTimerTask:Lcom/android/email/Throttle$MyTimerTask;
 
-    .line 115
+    .line 112
     :cond_c
     return-void
 .end method
@@ -250,7 +250,7 @@
     .registers 3
 
     .prologue
-    .line 190
+    .line 178
     iget-wide v0, p0, Lcom/android/email/Throttle;->mLastEventTime:J
 
     return-wide v0
@@ -260,7 +260,7 @@
     .registers 2
 
     .prologue
-    .line 186
+    .line 174
     iget v0, p0, Lcom/android/email/Throttle;->mTimeout:I
 
     return v0
@@ -270,21 +270,21 @@
     .registers 5
 
     .prologue
-    .line 139
+    .line 133
     invoke-virtual {p0}, Lcom/android/email/Throttle;->updateTimeout()V
 
-    .line 141
+    .line 135
     invoke-direct {p0}, Lcom/android/email/Throttle;->isCallbackScheduled()Z
 
     move-result v0
 
     if-eqz v0, :cond_a
 
-    .line 150
+    .line 142
     :goto_9
     return-void
 
-    .line 147
+    .line 139
     :cond_a
     new-instance v0, Lcom/android/email/Throttle$MyTimerTask;
 
@@ -294,7 +294,7 @@
 
     iput-object v0, p0, Lcom/android/email/Throttle;->mRunningTimerTask:Lcom/android/email/Throttle$MyTimerTask;
 
-    .line 148
+    .line 140
     iget-object v0, p0, Lcom/android/email/Throttle;->mTimer:Ljava/util/Timer;
 
     iget-object v1, p0, Lcom/android/email/Throttle;->mRunningTimerTask:Lcom/android/email/Throttle$MyTimerTask;
@@ -312,14 +312,14 @@
     .registers 7
 
     .prologue
-    .line 118
+    .line 115
     iget-object v2, p0, Lcom/android/email/Throttle;->mClock:Lcom/android/email/Clock;
 
     invoke-virtual {v2}, Lcom/android/email/Clock;->getTime()J
 
     move-result-wide v0
 
-    .line 119
+    .line 116
     .local v0, now:J
     iget-wide v2, p0, Lcom/android/email/Throttle;->mLastEventTime:J
 
@@ -331,34 +331,34 @@
 
     if-gtz v2, :cond_23
 
-    .line 120
+    .line 117
     iget v2, p0, Lcom/android/email/Throttle;->mTimeout:I
 
     mul-int/lit8 v2, v2, 0x2
 
     iput v2, p0, Lcom/android/email/Throttle;->mTimeout:I
 
-    .line 121
+    .line 118
     iget v2, p0, Lcom/android/email/Throttle;->mTimeout:I
 
     iget v3, p0, Lcom/android/email/Throttle;->mMaxTimeout:I
 
     if-lt v2, v3, :cond_20
 
-    .line 122
+    .line 119
     iget v2, p0, Lcom/android/email/Throttle;->mMaxTimeout:I
 
     iput v2, p0, Lcom/android/email/Throttle;->mTimeout:I
 
-    .line 132
+    .line 127
     :cond_20
     :goto_20
     iput-wide v0, p0, Lcom/android/email/Throttle;->mLastEventTime:J
 
-    .line 133
+    .line 128
     return-void
 
-    .line 127
+    .line 123
     :cond_23
     iget v2, p0, Lcom/android/email/Throttle;->mMinTimeout:I
 

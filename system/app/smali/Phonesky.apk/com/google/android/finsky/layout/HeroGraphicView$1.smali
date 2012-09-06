@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/layout/HeroGraphicView;->showPlayIcon(Ljava/lang/String;)V
+    value = Lcom/google/android/finsky/layout/HeroGraphicView;->bindLightboxImage(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/navigationmanager/NavigationManager;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,30 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/layout/HeroGraphicView;
 
-.field final synthetic val$youtubeUrl:Ljava/lang/String;
+.field final synthetic val$doc:Lcom/google/android/finsky/api/model/Document;
+
+.field final synthetic val$navigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+
+.field final synthetic val$usePromoImage:Z
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/layout/HeroGraphicView;Ljava/lang/String;)V
-    .registers 3
+.method constructor <init>(Lcom/google/android/finsky/layout/HeroGraphicView;ZLcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/api/model/Document;)V
+    .registers 5
+    .parameter
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 86
+    .line 72
     iput-object p1, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->this$0:Lcom/google/android/finsky/layout/HeroGraphicView;
 
-    iput-object p2, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->val$youtubeUrl:Ljava/lang/String;
+    iput-boolean p2, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->val$usePromoImage:Z
+
+    iput-object p3, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->val$navigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+
+    iput-object p4, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->val$doc:Lcom/google/android/finsky/api/model/Document;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,45 +57,64 @@
     .parameter "v"
 
     .prologue
-    .line 89
-    iget-object v1, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->this$0:Lcom/google/android/finsky/layout/HeroGraphicView;
+    const/4 v2, 0x4
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/layout/HeroGraphicView;->getContext()Landroid/content/Context;
+    const/4 v3, 0x0
 
-    move-result-object v1
+    .line 75
+    iget-boolean v0, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->val$usePromoImage:Z
 
-    invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    if-eqz v0, :cond_f
 
-    move-result-object v1
+    .line 76
+    iget-object v0, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->val$navigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
-    iget-object v2, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->val$youtubeUrl:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->val$doc:Lcom/google/android/finsky/api/model/Document;
 
-    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    const/4 v2, 0x2
 
-    move-result-object v2
+    invoke-virtual {v0, v1, v3, v2}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToImagesLightbox(Lcom/google/android/finsky/api/model/Document;II)V
 
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+    .line 82
+    :cond_e
+    :goto_e
+    return-void
 
-    move-result-object v3
+    .line 77
+    :cond_f
+    iget-object v0, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->val$doc:Lcom/google/android/finsky/api/model/Document;
 
-    invoke-virtual {v3}, Lcom/google/android/finsky/FinskyApp;->getCurrentAccountName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v1, v2, v3}, Lcom/google/android/finsky/utils/IntentUtils;->createYouTubeIntentForUrl(Landroid/content/pm/PackageManager;Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v2}, Lcom/google/android/finsky/api/model/Document;->getImages(I)Ljava/util/List;
 
     move-result-object v0
 
-    .line 94
-    .local v0, intent:Landroid/content/Intent;
-    iget-object v1, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->this$0:Lcom/google/android/finsky/layout/HeroGraphicView;
+    if-eqz v0, :cond_1f
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/layout/HeroGraphicView;->getContext()Landroid/content/Context;
+    .line 78
+    iget-object v0, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->val$navigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
-    move-result-object v1
+    iget-object v1, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->val$doc:Lcom/google/android/finsky/api/model/Document;
 
-    invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {v0, v1, v3, v2}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToImagesLightbox(Lcom/google/android/finsky/api/model/Document;II)V
 
-    .line 95
-    return-void
+    goto :goto_e
+
+    .line 79
+    :cond_1f
+    iget-object v0, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->val$doc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-virtual {v0, v3}, Lcom/google/android/finsky/api/model/Document;->getImages(I)Ljava/util/List;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_e
+
+    .line 80
+    iget-object v0, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->val$navigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+
+    iget-object v1, p0, Lcom/google/android/finsky/layout/HeroGraphicView$1;->val$doc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-virtual {v0, v1, v3, v3}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToImagesLightbox(Lcom/google/android/finsky/api/model/Document;II)V
+
+    goto :goto_e
 .end method

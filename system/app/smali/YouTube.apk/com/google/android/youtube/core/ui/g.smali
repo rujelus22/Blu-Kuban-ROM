@@ -1,164 +1,47 @@
-.class public final Lcom/google/android/youtube/core/ui/g;
+.class public interface abstract Lcom/google/android/youtube/core/ui/g;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lcom/google/android/youtube/core/ui/j;
-
-
-# instance fields
-.field private final a:Landroid/view/View;
-
-.field private final b:Landroid/view/View;
-
-.field private final c:Landroid/view/View;
-
-.field private final d:Landroid/widget/TextView;
-
-.field private final e:Landroid/widget/Button;
-
-
-# direct methods
-.method public constructor <init>(Landroid/view/View;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 29
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 30
-    iput-object p1, p0, Lcom/google/android/youtube/core/ui/g;->a:Landroid/view/View;
-
-    .line 31
-    const-string v0, "progressbar"
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/ui/g;->b:Landroid/view/View;
-
-    .line 32
-    const-string v0, "error"
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/ui/g;->c:Landroid/view/View;
-
-    .line 33
-    const-string v0, "error_message"
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/ui/g;->d:Landroid/widget/TextView;
-
-    .line 34
-    const-string v0, "retry_button"
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/Button;
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/ui/g;->e:Landroid/widget/Button;
-
-    .line 35
-    return-void
-.end method
-
 
 # virtual methods
-.method public final a()Landroid/view/View;
-    .registers 2
-
-    .prologue
-    .line 38
-    iget-object v0, p0, Lcom/google/android/youtube/core/ui/g;->a:Landroid/view/View;
-
-    return-object v0
+.method public abstract a()V
 .end method
 
-.method public final a(Landroid/view/View$OnClickListener;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 42
-    iget-object v0, p0, Lcom/google/android/youtube/core/ui/g;->e:Landroid/widget/Button;
-
-    invoke-virtual {v0, p1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 43
-    return-void
+.method public abstract b(Ljava/lang/String;)V
 .end method
 
-.method public final a(Ljava/lang/String;)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 46
-    iget-object v0, p0, Lcom/google/android/youtube/core/ui/g;->b:Landroid/view/View;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 47
-    iget-object v0, p0, Lcom/google/android/youtube/core/ui/g;->c:Landroid/view/View;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 48
-    iget-object v0, p0, Lcom/google/android/youtube/core/ui/g;->d:Landroid/widget/TextView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 49
-    return-void
+.method public abstract c()I
 .end method
 
-.method public final b()V
-    .registers 3
-
-    .prologue
-    .line 52
-    iget-object v0, p0, Lcom/google/android/youtube/core/ui/g;->b:Landroid/view/View;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 53
-    iget-object v0, p0, Lcom/google/android/youtube/core/ui/g;->c:Landroid/view/View;
-
-    const/4 v1, 0x4
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 54
-    return-void
+.method public abstract c(Ljava/lang/String;)V
 .end method
 
-.method public final c()V
-    .registers 2
+.method public abstract d()I
+.end method
 
-    .prologue
-    .line 57
-    iget-object v0, p0, Lcom/google/android/youtube/core/ui/g;->a:Landroid/view/View;
+.method public abstract e()V
+.end method
 
-    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
+.method public abstract f()V
+.end method
 
-    .line 58
-    return-void
+.method public abstract h()Lcom/google/android/youtube/core/ui/i;
+.end method
+
+.method public abstract j()V
+.end method
+
+.method public abstract setAdapter(Landroid/widget/ListAdapter;)V
+.end method
+
+.method public abstract setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+.end method
+
+.method public abstract setOnItemLongClickListener(Landroid/widget/AdapterView$OnItemLongClickListener;)V
+.end method
+
+.method public abstract setOnRetryClickListener(Landroid/view/View$OnClickListener;)V
+.end method
+
+.method public abstract setOnScrollListener(Lcom/google/android/youtube/core/ui/h;)V
 .end method

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 80
+    .line 77
     iput-object p1, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder$1;->this$0:Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .registers 2
 
     .prologue
-    .line 83
+    .line 80
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder$1;->this$0:Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;
 
     #calls: Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->retryRequest()V
     invoke-static {v0}, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->access$000(Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;)V
 
-    .line 84
+    .line 81
     return-void
 .end method

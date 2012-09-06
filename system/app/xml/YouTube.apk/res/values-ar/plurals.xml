@@ -28,6 +28,14 @@
         <item quantity="other">قبل %1$d ثانية</item>
         <item quantity="one">قبل ثانية واحدة</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">تنتهي الصلاحية في %1$d يوم</item>
+        <item quantity="one">تنتهي الصلاحية في يوم واحد</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">تنتهي الصلاحية في %1$d ساعة</item>
+        <item quantity="one">تنتهي الصلاحية في ساعة واحدة</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">تحميلات جديدة</item>
         <item quantity="one">تحميل جديد</item>

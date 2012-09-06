@@ -1,198 +1,136 @@
-.class Lcom/google/googlenav/ui/view/android/bP;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lbd/aJ;
+.class Lcom/google/googlenav/ui/view/android/bp;
+.super Lcom/google/googlenav/ui/ba;
+.source "SourceFile"
 
 
 # instance fields
-.field A:Landroid/widget/TextView;
-
-.field B:Landroid/widget/TextView;
-
-.field C:Landroid/widget/ImageView;
-
-.field D:Landroid/widget/ImageView;
-
-.field E:Landroid/widget/LinearLayout;
-
-.field F:Landroid/widget/ImageView;
-
-.field G:Lcom/google/googlenav/ui/view/android/bQ;
-
-.field H:Lcom/google/googlenav/ui/view/android/bQ;
-
-.field I:Lcom/google/googlenav/ui/view/android/bQ;
-
-.field J:Lcom/google/googlenav/ui/view/android/bR;
-
-.field K:Lcom/google/googlenav/ui/view/android/bS;
-
-.field L:Lcom/google/googlenav/ui/view/android/bT;
-
-.field M:Lcom/google/googlenav/ui/view/android/bT;
-
-.field b:Landroid/view/View;
-
-.field c:Landroid/widget/TextView;
-
-.field d:Landroid/widget/CheckBox;
-
-.field e:[Landroid/widget/TextView;
-
-.field f:[Landroid/widget/TextView;
-
-.field g:[Landroid/widget/TextView;
-
-.field h:Lcom/google/googlenav/ui/view/android/DistanceView;
-
-.field i:Lcom/google/googlenav/ui/view/android/HeadingView;
-
-.field j:Landroid/widget/TextView;
-
-.field k:Landroid/widget/TextView;
-
-.field l:Landroid/widget/TextView;
-
-.field m:Landroid/widget/TextView;
-
-.field n:[Landroid/widget/TextView;
-
-.field o:[Landroid/widget/TextView;
-
-.field p:Landroid/widget/TextView;
-
-.field q:Landroid/widget/ImageView;
-
-.field r:Landroid/widget/LinearLayout;
-
-.field s:Landroid/widget/TextView;
-
-.field t:Landroid/widget/TextView;
-
-.field u:Landroid/view/View;
-
-.field v:Landroid/widget/TextView;
-
-.field w:Landroid/widget/TextView;
-
-.field x:Landroid/widget/TextView;
-
-.field y:Landroid/widget/TextView;
-
-.field z:Landroid/widget/TextView;
+.field final synthetic a:Lcom/google/googlenav/ui/view/android/bm;
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 4
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/bm;Landroid/content/Context;Lcom/google/googlenav/ui/view/android/InstrumentableTabHost;Landroid/support/v4/view/ViewPager;Landroid/view/LayoutInflater;Lcom/google/googlenav/ui/bc;)V
+    .registers 13
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v2, 0x4
+    .prologue
+    .line 208
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/bp;->a:Lcom/google/googlenav/ui/view/android/bm;
 
-    const/4 v1, 0x2
+    move-object v0, p0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v1, p2
 
-    const/4 v0, 0x3
+    move-object v2, p3
 
-    new-array v0, v0, [Landroid/widget/TextView;
+    move-object v3, p4
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->e:[Landroid/widget/TextView;
+    move-object v4, p5
 
-    new-array v0, v1, [Landroid/widget/TextView;
+    move-object v5, p6
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->f:[Landroid/widget/TextView;
-
-    new-array v0, v1, [Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->g:[Landroid/widget/TextView;
-
-    new-array v0, v2, [Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->n:[Landroid/widget/TextView;
-
-    new-array v0, v2, [Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->o:[Landroid/widget/TextView;
+    invoke-direct/range {v0 .. v5}, Lcom/google/googlenav/ui/ba;-><init>(Landroid/content/Context;Lcom/google/googlenav/ui/view/android/InstrumentableTabHost;Landroid/support/v4/view/ViewPager;Landroid/view/LayoutInflater;Lcom/google/googlenav/ui/bc;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 4
+.method public onTabChanged(Ljava/lang/String;)V
+    .registers 9
+    .parameter
 
-    const/4 v2, -0x1
+    .prologue
+    .line 211
+    invoke-super {p0, p1}, Lcom/google/googlenav/ui/ba;->onTabChanged(Ljava/lang/String;)V
 
-    const/4 v1, 0x0
+    .line 212
+    const-string v0, ""
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->G:Lcom/google/googlenav/ui/view/android/bQ;
+    .line 213
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/bp;->a:Lcom/google/googlenav/ui/view/android/bm;
 
-    if-eqz v0, :cond_a
+    invoke-static {v1}, Lcom/google/googlenav/ui/view/android/bm;->c(Lcom/google/googlenav/ui/view/android/bm;)Lcom/google/googlenav/ui/view/android/InstrumentableTabHost;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->G:Lcom/google/googlenav/ui/view/android/bQ;
+    move-result-object v1
 
-    iput v2, v0, Lcom/google/googlenav/ui/view/android/bQ;->b:I
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/view/android/InstrumentableTabHost;->getCurrentTab()I
 
-    :cond_a
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->H:Lcom/google/googlenav/ui/view/android/bQ;
+    move-result v1
 
-    if-eqz v0, :cond_16
+    .line 214
+    packed-switch v1, :pswitch_data_40
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->H:Lcom/google/googlenav/ui/view/android/bQ;
+    .line 223
+    :goto_12
+    const/4 v1, 0x5
 
-    iput v2, v0, Lcom/google/googlenav/ui/view/android/bQ;->b:I
+    const-string v2, "t"
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->H:Lcom/google/googlenav/ui/view/android/bQ;
+    const/4 v3, 0x1
 
-    iput-object v1, v0, Lcom/google/googlenav/ui/view/android/bQ;->d:Lcom/google/googlenav/ui/view/android/bN;
+    new-array v3, v3, [Ljava/lang/String;
 
-    :cond_16
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->I:Lcom/google/googlenav/ui/view/android/bQ;
+    const/4 v4, 0x0
 
-    if-eqz v0, :cond_1e
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->I:Lcom/google/googlenav/ui/view/android/bQ;
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    iput v2, v0, Lcom/google/googlenav/ui/view/android/bQ;->b:I
+    const-string v6, "t="
 
-    :cond_1e
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->J:Lcom/google/googlenav/ui/view/android/bR;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v0, :cond_26
+    move-result-object v5
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->J:Lcom/google/googlenav/ui/view/android/bR;
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput-object v1, v0, Lcom/google/googlenav/ui/view/android/bR;->a:Ljava/lang/String;
+    move-result-object v0
 
-    :cond_26
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->K:Lcom/google/googlenav/ui/view/android/bS;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    if-eqz v0, :cond_2e
+    move-result-object v0
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->K:Lcom/google/googlenav/ui/view/android/bS;
+    aput-object v0, v3, v4
 
-    iput-object v1, v0, Lcom/google/googlenav/ui/view/android/bS;->a:Lbb/a;
+    invoke-static {v3}, LaT/k;->a([Ljava/lang/String;)Ljava/lang/String;
 
-    :cond_2e
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->L:Lcom/google/googlenav/ui/view/android/bT;
+    move-result-object v0
 
-    if-eqz v0, :cond_36
+    invoke-static {v1, v2, v0}, LaT/k;->a(ILjava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->L:Lcom/google/googlenav/ui/view/android/bT;
-
-    iput-object v1, v0, Lcom/google/googlenav/ui/view/android/bT;->a:Ljava/lang/String;
-
-    :cond_36
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->M:Lcom/google/googlenav/ui/view/android/bT;
-
-    if-eqz v0, :cond_3e
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bP;->M:Lcom/google/googlenav/ui/view/android/bT;
-
-    iput-object v1, v0, Lcom/google/googlenav/ui/view/android/bT;->a:Ljava/lang/String;
-
-    :cond_3e
+    .line 226
     return-void
+
+    .line 215
+    :pswitch_36
+    const-string v0, "ab"
+
+    goto :goto_12
+
+    .line 217
+    :pswitch_39
+    const-string v0, "ph"
+
+    goto :goto_12
+
+    .line 219
+    :pswitch_3c
+    const-string v0, "po"
+
+    goto :goto_12
+
+    .line 214
+    nop
+
+    :pswitch_data_40
+    .packed-switch 0x0
+        :pswitch_36
+        :pswitch_39
+        :pswitch_3c
+    .end packed-switch
 .end method

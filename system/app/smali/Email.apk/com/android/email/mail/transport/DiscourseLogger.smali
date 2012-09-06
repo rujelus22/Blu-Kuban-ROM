@@ -10,8 +10,6 @@
 
 .field private mPos:I
 
-.field private mPrefixDate:Z
-
 .field private final mReceivingLine:Ljava/lang/StringBuilder;
 
 
@@ -21,10 +19,10 @@
     .parameter "bufferSize"
 
     .prologue
-    .line 49
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 37
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 47
+    .line 35
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x64
@@ -33,146 +31,49 @@
 
     iput-object v0, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mReceivingLine:Ljava/lang/StringBuilder;
 
-    .line 50
+    .line 38
     iput p1, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mBufferSize:I
 
-    .line 51
+    .line 39
     invoke-direct {p0}, Lcom/android/email/mail/transport/DiscourseLogger;->initBuffer()V
 
-    .line 52
-    return-void
-.end method
-
-.method public constructor <init>(IZ)V
-    .registers 5
-    .parameter "bufferSize"
-    .parameter "prefixDate"
-
-    .prologue
-    .line 54
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
-    .line 47
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x64
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    iput-object v0, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mReceivingLine:Ljava/lang/StringBuilder;
-
-    .line 55
-    iput-boolean p2, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mPrefixDate:Z
-
-    .line 56
-    iput p1, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mBufferSize:I
-
-    .line 57
-    invoke-direct {p0}, Lcom/android/email/mail/transport/DiscourseLogger;->initBuffer()V
-
-    .line 58
+    .line 40
     return-void
 .end method
 
 .method private addLine(Ljava/lang/String;)V
-    .registers 6
+    .registers 4
     .parameter "s"
 
     .prologue
-    .line 66
-    iget-boolean v2, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mPrefixDate:Z
+    .line 48
+    iget-object v0, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mBuffer:[Ljava/lang/String;
 
-    if-eqz v2, :cond_3b
+    iget v1, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mPos:I
 
-    .line 67
-    new-instance v1, Ljava/text/SimpleDateFormat;
+    aput-object p1, v0, v1
 
-    const-string v2, "yyyy-MM-dd hh:mm:ss"
+    .line 49
+    iget v0, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mPos:I
 
-    invoke-direct {v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+    add-int/lit8 v0, v0, 0x1
 
-    .line 68
-    .local v1, sdf:Ljava/text/SimpleDateFormat;
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+    iput v0, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mPos:I
 
-    move-result-object v0
+    .line 50
+    iget v0, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mPos:I
 
-    .line 69
-    .local v0, cal:Ljava/util/Calendar;
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    iget v1, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mBufferSize:I
 
-    move-result-wide v2
+    if-lt v0, v1, :cond_15
 
-    invoke-virtual {v0, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
+    .line 51
+    const/4 v0, 0x0
 
-    .line 70
-    new-instance v2, Ljava/lang/StringBuilder;
+    iput v0, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mPos:I
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " ["
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "]"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 73
-    .end local v0           #cal:Ljava/util/Calendar;
-    .end local v1           #sdf:Ljava/text/SimpleDateFormat;
-    :cond_3b
-    iget-object v2, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mBuffer:[Ljava/lang/String;
-
-    iget v3, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mPos:I
-
-    aput-object p1, v2, v3
-
-    .line 74
-    iget v2, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mPos:I
-
-    add-int/lit8 v2, v2, 0x1
-
-    iput v2, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mPos:I
-
-    .line 75
-    iget v2, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mPos:I
-
-    iget v3, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mBufferSize:I
-
-    if-lt v2, v3, :cond_50
-
-    .line 76
-    const/4 v2, 0x0
-
-    iput v2, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mPos:I
-
-    .line 78
-    :cond_50
+    .line 53
+    :cond_15
     return-void
 .end method
 
@@ -180,7 +81,7 @@
     .registers 4
 
     .prologue
-    .line 81
+    .line 56
     iget-object v0, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mReceivingLine:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
@@ -189,7 +90,7 @@
 
     if-lez v0, :cond_1a
 
-    .line 82
+    .line 57
     iget-object v0, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mReceivingLine:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -198,7 +99,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/email/mail/transport/DiscourseLogger;->addLine(Ljava/lang/String;)V
 
-    .line 83
+    .line 58
     iget-object v0, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mReceivingLine:Ljava/lang/StringBuilder;
 
     const/4 v1, 0x0
@@ -207,7 +108,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
-    .line 85
+    .line 60
     :cond_1a
     return-void
 .end method
@@ -216,14 +117,14 @@
     .registers 2
 
     .prologue
-    .line 61
+    .line 43
     iget v0, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mBufferSize:I
 
     new-array v0, v0, [Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mBuffer:[Ljava/lang/String;
 
-    .line 62
+    .line 44
     return-void
 .end method
 
@@ -234,7 +135,7 @@
     .parameter "b"
 
     .prologue
-    .line 93
+    .line 67
     const/16 v1, 0x20
 
     if-gt v1, p1, :cond_f
@@ -243,36 +144,36 @@
 
     if-gt p1, v1, :cond_f
 
-    .line 94
+    .line 68
     iget-object v1, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mReceivingLine:Ljava/lang/StringBuilder;
 
     int-to-char v2, p1
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 102
+    .line 76
     :cond_e
     :goto_e
     return-void
 
-    .line 95
+    .line 69
     :cond_f
     const/16 v1, 0xa
 
     if-ne p1, v1, :cond_17
 
-    .line 96
+    .line 70
     invoke-direct {p0}, Lcom/android/email/mail/transport/DiscourseLogger;->addReceivingLineToBuffer()V
 
     goto :goto_e
 
-    .line 97
+    .line 71
     :cond_17
     const/16 v1, 0xd
 
     if-eq p1, v1, :cond_e
 
-    .line 99
+    .line 73
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -295,7 +196,7 @@
 
     move-result-object v0
 
-    .line 100
+    .line 74
     .local v0, hex:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mReceivingLine:Ljava/lang/StringBuilder;
 
@@ -341,10 +242,10 @@
     .parameter "command"
 
     .prologue
-    .line 106
+    .line 80
     invoke-direct {p0, p1}, Lcom/android/email/mail/transport/DiscourseLogger;->addLine(Ljava/lang/String;)V
 
-    .line 107
+    .line 81
     return-void
 .end method
 
@@ -352,37 +253,37 @@
     .registers 8
 
     .prologue
-    .line 115
+    .line 85
     invoke-direct {p0}, Lcom/android/email/mail/transport/DiscourseLogger;->addReceivingLineToBuffer()V
 
-    .line 117
+    .line 87
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 119
+    .line 89
     .local v0, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     iget v4, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mPos:I
 
-    .line 120
+    .line 90
     .local v4, start:I
     iget v1, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mPos:I
 
-    .line 122
+    .line 92
     .local v1, pos:I
     :cond_c
     iget-object v5, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mBuffer:[Ljava/lang/String;
 
     aget-object v3, v5, v1
 
-    .line 123
+    .line 93
     .local v3, s:Ljava/lang/String;
     if-eqz v3, :cond_15
 
-    .line 124
+    .line 94
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 126
+    .line 96
     :cond_15
     add-int/lit8 v5, v1, 0x1
 
@@ -390,142 +291,83 @@
 
     rem-int v1, v5, v6
 
-    .line 127
+    .line 97
     if-ne v1, v4, :cond_c
 
-    .line 129
+    .line 99
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
     new-array v2, v5, [Ljava/lang/String;
 
-    .line 130
+    .line 100
     .local v2, ret:[Ljava/lang/String;
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    .line 131
+    .line 101
     return-object v2
 .end method
 
 .method public logLastDiscourse()V
-    .registers 2
+    .registers 8
 
     .prologue
-    .line 140
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lcom/android/email/mail/transport/DiscourseLogger;->logLastDiscourse(Z)V
-
-    .line 142
-    return-void
-.end method
-
-.method public logLastDiscourse(Z)V
-    .registers 11
-    .parameter "useError"
-
-    .prologue
-    .line 150
-    const-string v6, "DiscourseLogger"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "Last activities: [Current Position - "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget v8, p0, Lcom/android/email/mail/transport/DiscourseLogger;->mPos:I
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, "]"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 151
+    .line 109
     invoke-virtual {p0}, Lcom/android/email/mail/transport/DiscourseLogger;->getLines()[Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    .line 152
-    .local v4, lines:[Ljava/lang/String;
-    array-length v6, v4
+    .line 110
+    .local v3, lines:[Ljava/lang/String;
+    array-length v5, v3
 
-    if-nez v6, :cond_28
+    if-nez v5, :cond_8
 
-    .line 165
-    :cond_27
+    .line 119
+    :goto_7
     return-void
 
-    .line 155
-    :cond_28
-    const/4 v1, 0x0
+    .line 114
+    :cond_8
+    const-string v5, "Email"
 
-    .line 156
-    .local v1, i:I
+    const-string v6, "Last network activities:"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 115
     invoke-virtual {p0}, Lcom/android/email/mail/transport/DiscourseLogger;->getLines()[Ljava/lang/String;
 
     move-result-object v0
 
     .local v0, arr$:[Ljava/lang/String;
-    array-length v3, v0
+    array-length v2, v0
 
-    .local v3, len$:I
-    const/4 v2, 0x0
+    .local v2, len$:I
+    const/4 v1, 0x0
 
-    .local v2, i$:I
-    :goto_2f
-    if-ge v2, v3, :cond_27
+    .local v1, i$:I
+    :goto_15
+    if-ge v1, v2, :cond_21
 
-    aget-object v5, v0, v2
+    aget-object v4, v0, v1
 
-    .line 157
-    .local v5, r:Ljava/lang/String;
-    if-eqz p1, :cond_3d
+    .line 116
+    .local v4, r:Ljava/lang/String;
+    const-string v5, "Email"
 
-    .line 158
-    const-string v6, "DiscourseLogger"
+    invoke-static {v5, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v6, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    .line 115
+    add-int/lit8 v1, v1, 0x1
 
-    .line 156
-    :goto_3a
-    add-int/lit8 v2, v2, 0x1
+    goto :goto_15
 
-    goto :goto_2f
+    .line 118
+    .end local v4           #r:Ljava/lang/String;
+    :cond_21
+    invoke-direct {p0}, Lcom/android/email/mail/transport/DiscourseLogger;->initBuffer()V
 
-    .line 161
-    :cond_3d
-    const-string v6, "DiscourseLogger"
-
-    invoke-static {v6, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_3a
-.end method
-
-.method public logString(Ljava/lang/String;)V
-    .registers 2
-    .parameter "s"
-
-    .prologue
-    .line 110
-    invoke-direct {p0, p1}, Lcom/android/email/mail/transport/DiscourseLogger;->addLine(Ljava/lang/String;)V
-
-    .line 111
-    return-void
+    goto :goto_7
 .end method

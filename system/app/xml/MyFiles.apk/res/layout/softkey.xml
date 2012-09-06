@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:id="@id/mx_soft_key" android:background="@drawable/gray" android:layout_width="fill_parent" android:layout_height="55.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <Button android:textSize="15.0sp" android:id="@id/left_softkey_button" android:layout_width="fill_parent" android:layout_height="51.0dip" android:layout_marginLeft="1.0dip" android:layout_marginTop="1.0dip" android:layout_marginRight="1.0dip" android:layout_marginBottom="-2.0dip" android:layout_weight="1.0" />
-    <Button android:textSize="15.0sp" android:id="@id/right_softkey_button" android:layout_width="fill_parent" android:layout_height="51.0dip" android:layout_marginLeft="1.0dip" android:layout_marginTop="1.0dip" android:layout_marginRight="1.0dip" android:layout_marginBottom="-2.0dip" android:layout_weight="1.0" />
-</LinearLayout>

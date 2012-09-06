@@ -30,7 +30,7 @@
     .line 265
     iput-object p1, p0, Lcom/google/android/talk/videochat/VideoAnimator$1;->this$0:Lcom/google/android/talk/videochat/VideoAnimator;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

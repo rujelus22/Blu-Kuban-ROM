@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<wallpaper android:label="@string/app_name" android:description="@string/wallpaper_description" android:settingsActivity="com.sec.ccl.csp.app.secretwallpaper.themeone.SecretWallpaperSetting" android:thumbnail="@drawable/icon_sea"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

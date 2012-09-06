@@ -135,115 +135,115 @@
 
     const/4 v1, 0x0
 
-    .line 2124
+    .line 2198
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 2251
+    .line 2329
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->description_:Ljava/lang/String;
 
-    .line 2268
+    .line 2346
     iput-wide v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->downloadCount_:J
 
-    .line 2284
+    .line 2362
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->applicationPermissionId_:Ljava/util/List;
 
-    .line 2318
+    .line 2396
     iput-wide v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->requiredInstallationSize_:J
 
-    .line 2335
+    .line 2413
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->packageName_:Ljava/lang/String;
 
-    .line 2352
+    .line 2430
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->category_:Ljava/lang/String;
 
-    .line 2369
+    .line 2447
     iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->forwardLocked_:Z
 
-    .line 2386
+    .line 2464
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->contactEmail_:Ljava/lang/String;
 
-    .line 2403
+    .line 2481
     iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->everInstalledByUser_:Z
 
-    .line 2420
+    .line 2498
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->downloadCountString_:Ljava/lang/String;
 
-    .line 2437
+    .line 2515
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->contactPhone_:Ljava/lang/String;
 
-    .line 2454
+    .line 2532
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->contactWebsite_:Ljava/lang/String;
 
-    .line 2471
+    .line 2549
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->videoLink_:Ljava/lang/String;
 
-    .line 2488
+    .line 2566
     iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->nextPurchaseRefundable_:Z
 
-    .line 2505
+    .line 2583
     iput v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->numScreenshots_:I
 
-    .line 2522
+    .line 2600
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->promotionalDescription_:Ljava/lang/String;
 
-    .line 2539
+    .line 2617
     iput v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->contentRatingLevel_:I
 
-    .line 2556
+    .line 2634
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->contentRatingString_:Ljava/lang/String;
 
-    .line 2573
+    .line 2651
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->recentChanges_:Ljava/lang/String;
 
-    .line 2590
+    .line 2668
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->serverAssetState_:I
 
-    .line 2606
+    .line 2684
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->packageDependency_:Ljava/util/List;
 
-    .line 2640
+    .line 2718
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->downloadInfo_:Lcom/google/android/vending/remoting/protos/VendingProtos$DownloadInfoProto;
 
-    .line 2768
+    .line 2847
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->cachedSize:I
 
-    .line 2124
+    .line 2198
     return-void
 .end method
 
@@ -254,17 +254,17 @@
     .parameter "value"
 
     .prologue
-    .line 2301
+    .line 2379
     if-nez p1, :cond_8
 
-    .line 2302
+    .line 2380
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2304
+    .line 2382
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->applicationPermissionId_:Ljava/util/List;
 
@@ -274,20 +274,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 2305
+    .line 2383
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->applicationPermissionId_:Ljava/util/List;
 
-    .line 2307
+    .line 2385
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->applicationPermissionId_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2308
+    .line 2386
     return-object p0
 .end method
 
@@ -296,17 +296,17 @@
     .parameter "value"
 
     .prologue
-    .line 2623
+    .line 2701
     if-nez p1, :cond_8
 
-    .line 2624
+    .line 2702
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2626
+    .line 2704
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->packageDependency_:Ljava/util/List;
 
@@ -316,20 +316,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 2627
+    .line 2705
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->packageDependency_:Ljava/util/List;
 
-    .line 2629
+    .line 2707
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->packageDependency_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2630
+    .line 2708
     return-object p0
 .end method
 
@@ -346,7 +346,7 @@
     .end annotation
 
     .prologue
-    .line 2287
+    .line 2365
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->applicationPermissionId_:Ljava/util/List;
 
     return-object v0
@@ -356,15 +356,15 @@
     .registers 2
 
     .prologue
-    .line 2770
+    .line 2850
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 2772
+    .line 2852
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getSerializedSize()I
 
-    .line 2774
+    .line 2854
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->cachedSize:I
 
@@ -375,7 +375,7 @@
     .registers 2
 
     .prologue
-    .line 2353
+    .line 2431
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->category_:Ljava/lang/String;
 
     return-object v0
@@ -385,7 +385,7 @@
     .registers 2
 
     .prologue
-    .line 2387
+    .line 2465
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->contactEmail_:Ljava/lang/String;
 
     return-object v0
@@ -395,7 +395,7 @@
     .registers 2
 
     .prologue
-    .line 2438
+    .line 2516
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->contactPhone_:Ljava/lang/String;
 
     return-object v0
@@ -405,7 +405,7 @@
     .registers 2
 
     .prologue
-    .line 2455
+    .line 2533
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->contactWebsite_:Ljava/lang/String;
 
     return-object v0
@@ -415,7 +415,7 @@
     .registers 2
 
     .prologue
-    .line 2540
+    .line 2618
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->contentRatingLevel_:I
 
     return v0
@@ -425,7 +425,7 @@
     .registers 2
 
     .prologue
-    .line 2557
+    .line 2635
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->contentRatingString_:Ljava/lang/String;
 
     return-object v0
@@ -435,7 +435,7 @@
     .registers 2
 
     .prologue
-    .line 2252
+    .line 2330
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->description_:Ljava/lang/String;
 
     return-object v0
@@ -445,7 +445,7 @@
     .registers 3
 
     .prologue
-    .line 2269
+    .line 2347
     iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->downloadCount_:J
 
     return-wide v0
@@ -455,7 +455,7 @@
     .registers 2
 
     .prologue
-    .line 2421
+    .line 2499
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->downloadCountString_:Ljava/lang/String;
 
     return-object v0
@@ -465,7 +465,7 @@
     .registers 2
 
     .prologue
-    .line 2642
+    .line 2720
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->downloadInfo_:Lcom/google/android/vending/remoting/protos/VendingProtos$DownloadInfoProto;
 
     return-object v0
@@ -475,7 +475,7 @@
     .registers 2
 
     .prologue
-    .line 2404
+    .line 2482
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->everInstalledByUser_:Z
 
     return v0
@@ -485,7 +485,7 @@
     .registers 2
 
     .prologue
-    .line 2370
+    .line 2448
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->forwardLocked_:Z
 
     return v0
@@ -495,7 +495,7 @@
     .registers 2
 
     .prologue
-    .line 2489
+    .line 2567
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->nextPurchaseRefundable_:Z
 
     return v0
@@ -505,7 +505,7 @@
     .registers 2
 
     .prologue
-    .line 2506
+    .line 2584
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->numScreenshots_:I
 
     return v0
@@ -524,7 +524,7 @@
     .end annotation
 
     .prologue
-    .line 2609
+    .line 2687
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->packageDependency_:Ljava/util/List;
 
     return-object v0
@@ -534,7 +534,7 @@
     .registers 2
 
     .prologue
-    .line 2336
+    .line 2414
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->packageName_:Ljava/lang/String;
 
     return-object v0
@@ -544,7 +544,7 @@
     .registers 2
 
     .prologue
-    .line 2523
+    .line 2601
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->promotionalDescription_:Ljava/lang/String;
 
     return-object v0
@@ -554,7 +554,7 @@
     .registers 2
 
     .prologue
-    .line 2574
+    .line 2652
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->recentChanges_:Ljava/lang/String;
 
     return-object v0
@@ -564,7 +564,7 @@
     .registers 3
 
     .prologue
-    .line 2319
+    .line 2397
     iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->requiredInstallationSize_:J
 
     return-wide v0
@@ -574,10 +574,10 @@
     .registers 8
 
     .prologue
-    .line 2778
+    .line 2859
     const/4 v3, 0x0
 
-    .line 2779
+    .line 2860
     .local v3, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasDescription()Z
 
@@ -585,7 +585,7 @@
 
     if-eqz v4, :cond_12
 
-    .line 2780
+    .line 2861
     const/16 v4, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getDescription()Ljava/lang/String;
@@ -598,7 +598,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2783
+    .line 2864
     :cond_12
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasDownloadCount()Z
 
@@ -606,7 +606,7 @@
 
     if-eqz v4, :cond_23
 
-    .line 2784
+    .line 2865
     const/16 v4, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getDownloadCount()J
@@ -619,11 +619,11 @@
 
     add-int/2addr v3, v4
 
-    .line 2788
+    .line 2869
     :cond_23
     const/4 v0, 0x0
 
-    .line 2789
+    .line 2870
     .local v0, dataSize:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getApplicationPermissionIdList()Ljava/util/List;
 
@@ -647,7 +647,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 2790
+    .line 2871
     .local v1, element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -657,12 +657,12 @@
 
     goto :goto_2c
 
-    .line 2793
+    .line 2874
     .end local v1           #element:Ljava/lang/String;
     :cond_3e
     add-int/2addr v3, v0
 
-    .line 2794
+    .line 2875
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getApplicationPermissionIdList()Ljava/util/List;
 
     move-result-object v4
@@ -675,14 +675,14 @@
 
     add-int/2addr v3, v4
 
-    .line 2796
+    .line 2877
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasRequiredInstallationSize()Z
 
     move-result v4
 
     if-eqz v4, :cond_5b
 
-    .line 2797
+    .line 2878
     const/16 v4, 0x10
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getRequiredInstallationSize()J
@@ -695,7 +695,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2800
+    .line 2881
     :cond_5b
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasPackageName()Z
 
@@ -703,7 +703,7 @@
 
     if-eqz v4, :cond_6c
 
-    .line 2801
+    .line 2882
     const/16 v4, 0x11
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getPackageName()Ljava/lang/String;
@@ -716,7 +716,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2804
+    .line 2885
     :cond_6c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasCategory()Z
 
@@ -724,7 +724,7 @@
 
     if-eqz v4, :cond_7d
 
-    .line 2805
+    .line 2886
     const/16 v4, 0x12
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getCategory()Ljava/lang/String;
@@ -737,7 +737,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2808
+    .line 2889
     :cond_7d
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasForwardLocked()Z
 
@@ -745,7 +745,7 @@
 
     if-eqz v4, :cond_8e
 
-    .line 2809
+    .line 2890
     const/16 v4, 0x13
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getForwardLocked()Z
@@ -758,7 +758,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2812
+    .line 2893
     :cond_8e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContactEmail()Z
 
@@ -766,7 +766,7 @@
 
     if-eqz v4, :cond_9f
 
-    .line 2813
+    .line 2894
     const/16 v4, 0x14
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getContactEmail()Ljava/lang/String;
@@ -779,7 +779,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2816
+    .line 2897
     :cond_9f
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasEverInstalledByUser()Z
 
@@ -787,7 +787,7 @@
 
     if-eqz v4, :cond_b0
 
-    .line 2817
+    .line 2898
     const/16 v4, 0x15
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getEverInstalledByUser()Z
@@ -800,7 +800,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2820
+    .line 2901
     :cond_b0
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasDownloadCountString()Z
 
@@ -808,7 +808,7 @@
 
     if-eqz v4, :cond_c1
 
-    .line 2821
+    .line 2902
     const/16 v4, 0x17
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getDownloadCountString()Ljava/lang/String;
@@ -821,7 +821,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2824
+    .line 2905
     :cond_c1
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContactPhone()Z
 
@@ -829,7 +829,7 @@
 
     if-eqz v4, :cond_d2
 
-    .line 2825
+    .line 2906
     const/16 v4, 0x1a
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getContactPhone()Ljava/lang/String;
@@ -842,7 +842,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2828
+    .line 2909
     :cond_d2
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContactWebsite()Z
 
@@ -850,7 +850,7 @@
 
     if-eqz v4, :cond_e3
 
-    .line 2829
+    .line 2910
     const/16 v4, 0x1b
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getContactWebsite()Ljava/lang/String;
@@ -863,7 +863,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2832
+    .line 2913
     :cond_e3
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasNextPurchaseRefundable()Z
 
@@ -871,7 +871,7 @@
 
     if-eqz v4, :cond_f4
 
-    .line 2833
+    .line 2914
     const/16 v4, 0x1c
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getNextPurchaseRefundable()Z
@@ -884,7 +884,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2836
+    .line 2917
     :cond_f4
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasNumScreenshots()Z
 
@@ -892,7 +892,7 @@
 
     if-eqz v4, :cond_105
 
-    .line 2837
+    .line 2918
     const/16 v4, 0x1e
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getNumScreenshots()I
@@ -905,7 +905,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2840
+    .line 2921
     :cond_105
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasPromotionalDescription()Z
 
@@ -913,7 +913,7 @@
 
     if-eqz v4, :cond_116
 
-    .line 2841
+    .line 2922
     const/16 v4, 0x1f
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getPromotionalDescription()Ljava/lang/String;
@@ -926,7 +926,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2844
+    .line 2925
     :cond_116
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasServerAssetState()Z
 
@@ -934,7 +934,7 @@
 
     if-eqz v4, :cond_127
 
-    .line 2845
+    .line 2926
     const/16 v4, 0x22
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getServerAssetState()I
@@ -947,7 +947,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2848
+    .line 2929
     :cond_127
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContentRatingLevel()Z
 
@@ -955,7 +955,7 @@
 
     if-eqz v4, :cond_138
 
-    .line 2849
+    .line 2930
     const/16 v4, 0x24
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getContentRatingLevel()I
@@ -968,7 +968,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2852
+    .line 2933
     :cond_138
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContentRatingString()Z
 
@@ -976,7 +976,7 @@
 
     if-eqz v4, :cond_149
 
-    .line 2853
+    .line 2934
     const/16 v4, 0x25
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getContentRatingString()Ljava/lang/String;
@@ -989,7 +989,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2856
+    .line 2937
     :cond_149
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasRecentChanges()Z
 
@@ -997,7 +997,7 @@
 
     if-eqz v4, :cond_15a
 
-    .line 2857
+    .line 2938
     const/16 v4, 0x26
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getRecentChanges()Ljava/lang/String;
@@ -1010,7 +1010,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2860
+    .line 2941
     :cond_15a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getPackageDependencyList()Ljava/util/List;
 
@@ -1033,7 +1033,7 @@
 
     check-cast v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo$PackageDependency;
 
-    .line 2861
+    .line 2942
     .local v1, element:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo$PackageDependency;
     const/16 v4, 0x27
 
@@ -1045,7 +1045,7 @@
 
     goto :goto_162
 
-    .line 2864
+    .line 2945
     .end local v1           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo$PackageDependency;
     :cond_176
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasVideoLink()Z
@@ -1054,7 +1054,7 @@
 
     if-eqz v4, :cond_187
 
-    .line 2865
+    .line 2946
     const/16 v4, 0x2b
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getVideoLink()Ljava/lang/String;
@@ -1067,7 +1067,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2868
+    .line 2949
     :cond_187
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasDownloadInfo()Z
 
@@ -1075,7 +1075,7 @@
 
     if-eqz v4, :cond_198
 
-    .line 2869
+    .line 2950
     const/16 v4, 0x31
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getDownloadInfo()Lcom/google/android/vending/remoting/protos/VendingProtos$DownloadInfoProto;
@@ -1088,11 +1088,11 @@
 
     add-int/2addr v3, v4
 
-    .line 2872
+    .line 2953
     :cond_198
     iput v3, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->cachedSize:I
 
-    .line 2873
+    .line 2954
     return v3
 .end method
 
@@ -1100,7 +1100,7 @@
     .registers 2
 
     .prologue
-    .line 2592
+    .line 2670
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->serverAssetState_:I
 
     return v0
@@ -1110,7 +1110,7 @@
     .registers 2
 
     .prologue
-    .line 2472
+    .line 2550
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->videoLink_:Ljava/lang/String;
 
     return-object v0
@@ -1120,7 +1120,7 @@
     .registers 2
 
     .prologue
-    .line 2354
+    .line 2432
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasCategory:Z
 
     return v0
@@ -1130,7 +1130,7 @@
     .registers 2
 
     .prologue
-    .line 2388
+    .line 2466
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContactEmail:Z
 
     return v0
@@ -1140,7 +1140,7 @@
     .registers 2
 
     .prologue
-    .line 2439
+    .line 2517
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContactPhone:Z
 
     return v0
@@ -1150,7 +1150,7 @@
     .registers 2
 
     .prologue
-    .line 2456
+    .line 2534
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContactWebsite:Z
 
     return v0
@@ -1160,7 +1160,7 @@
     .registers 2
 
     .prologue
-    .line 2541
+    .line 2619
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContentRatingLevel:Z
 
     return v0
@@ -1170,7 +1170,7 @@
     .registers 2
 
     .prologue
-    .line 2558
+    .line 2636
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContentRatingString:Z
 
     return v0
@@ -1180,7 +1180,7 @@
     .registers 2
 
     .prologue
-    .line 2253
+    .line 2331
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasDescription:Z
 
     return v0
@@ -1190,7 +1190,7 @@
     .registers 2
 
     .prologue
-    .line 2270
+    .line 2348
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasDownloadCount:Z
 
     return v0
@@ -1200,7 +1200,7 @@
     .registers 2
 
     .prologue
-    .line 2422
+    .line 2500
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasDownloadCountString:Z
 
     return v0
@@ -1210,7 +1210,7 @@
     .registers 2
 
     .prologue
-    .line 2641
+    .line 2719
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasDownloadInfo:Z
 
     return v0
@@ -1220,7 +1220,7 @@
     .registers 2
 
     .prologue
-    .line 2405
+    .line 2483
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasEverInstalledByUser:Z
 
     return v0
@@ -1230,7 +1230,7 @@
     .registers 2
 
     .prologue
-    .line 2371
+    .line 2449
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasForwardLocked:Z
 
     return v0
@@ -1240,7 +1240,7 @@
     .registers 2
 
     .prologue
-    .line 2490
+    .line 2568
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasNextPurchaseRefundable:Z
 
     return v0
@@ -1250,7 +1250,7 @@
     .registers 2
 
     .prologue
-    .line 2507
+    .line 2585
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasNumScreenshots:Z
 
     return v0
@@ -1260,7 +1260,7 @@
     .registers 2
 
     .prologue
-    .line 2337
+    .line 2415
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasPackageName:Z
 
     return v0
@@ -1270,7 +1270,7 @@
     .registers 2
 
     .prologue
-    .line 2524
+    .line 2602
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasPromotionalDescription:Z
 
     return v0
@@ -1280,7 +1280,7 @@
     .registers 2
 
     .prologue
-    .line 2575
+    .line 2653
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasRecentChanges:Z
 
     return v0
@@ -1290,7 +1290,7 @@
     .registers 2
 
     .prologue
-    .line 2320
+    .line 2398
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasRequiredInstallationSize:Z
 
     return v0
@@ -1300,7 +1300,7 @@
     .registers 2
 
     .prologue
-    .line 2591
+    .line 2669
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasServerAssetState:Z
 
     return v0
@@ -1310,7 +1310,7 @@
     .registers 2
 
     .prologue
-    .line 2473
+    .line 2551
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasVideoLink:Z
 
     return v0
@@ -1326,29 +1326,29 @@
     .end annotation
 
     .prologue
-    .line 2880
+    .line 2962
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 2881
+    .line 2963
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_d0
 
-    .line 2885
+    .line 2967
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 2886
+    .line 2968
     :sswitch_d
     return-object p0
 
-    .line 2891
+    .line 2973
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1358,7 +1358,7 @@
 
     goto :goto_0
 
-    .line 2895
+    .line 2977
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -1368,7 +1368,7 @@
 
     goto :goto_0
 
-    .line 2899
+    .line 2981
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1378,7 +1378,7 @@
 
     goto :goto_0
 
-    .line 2903
+    .line 2985
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -1388,7 +1388,7 @@
 
     goto :goto_0
 
-    .line 2907
+    .line 2989
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1398,7 +1398,7 @@
 
     goto :goto_0
 
-    .line 2911
+    .line 2993
     :sswitch_36
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1408,7 +1408,7 @@
 
     goto :goto_0
 
-    .line 2915
+    .line 2997
     :sswitch_3e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -1418,7 +1418,7 @@
 
     goto :goto_0
 
-    .line 2919
+    .line 3001
     :sswitch_46
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1428,7 +1428,7 @@
 
     goto :goto_0
 
-    .line 2923
+    .line 3005
     :sswitch_4e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -1438,7 +1438,7 @@
 
     goto :goto_0
 
-    .line 2927
+    .line 3009
     :sswitch_56
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1448,7 +1448,7 @@
 
     goto :goto_0
 
-    .line 2931
+    .line 3013
     :sswitch_5e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1458,7 +1458,7 @@
 
     goto :goto_0
 
-    .line 2935
+    .line 3017
     :sswitch_66
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1468,7 +1468,7 @@
 
     goto :goto_0
 
-    .line 2939
+    .line 3021
     :sswitch_6e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -1478,7 +1478,7 @@
 
     goto :goto_0
 
-    .line 2943
+    .line 3025
     :sswitch_76
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -1488,7 +1488,7 @@
 
     goto :goto_0
 
-    .line 2947
+    .line 3029
     :sswitch_7e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1498,7 +1498,7 @@
 
     goto/16 :goto_0
 
-    .line 2951
+    .line 3033
     :sswitch_87
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -1508,7 +1508,7 @@
 
     goto/16 :goto_0
 
-    .line 2955
+    .line 3037
     :sswitch_90
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -1518,7 +1518,7 @@
 
     goto/16 :goto_0
 
-    .line 2959
+    .line 3041
     :sswitch_99
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1528,7 +1528,7 @@
 
     goto/16 :goto_0
 
-    .line 2963
+    .line 3045
     :sswitch_a2
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -1538,24 +1538,24 @@
 
     goto/16 :goto_0
 
-    .line 2967
+    .line 3049
     :sswitch_ab
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo$PackageDependency;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo$PackageDependency;-><init>()V
 
-    .line 2968
+    .line 3050
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo$PackageDependency;
     const/16 v2, 0x27
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readGroup(Lcom/google/protobuf/micro/MessageMicro;I)V
 
-    .line 2969
+    .line 3051
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->addPackageDependency(Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo$PackageDependency;)Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;
 
     goto/16 :goto_0
 
-    .line 2973
+    .line 3055
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo$PackageDependency;
     :sswitch_ba
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -1566,22 +1566,22 @@
 
     goto/16 :goto_0
 
-    .line 2977
+    .line 3059
     :sswitch_c3
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$DownloadInfoProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$DownloadInfoProto;-><init>()V
 
-    .line 2978
+    .line 3060
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$DownloadInfoProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2979
+    .line 3061
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->setDownloadInfo(Lcom/google/android/vending/remoting/protos/VendingProtos$DownloadInfoProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;
 
     goto/16 :goto_0
 
-    .line 2881
+    .line 2963
     :sswitch_data_d0
     .sparse-switch
         0x0 -> :sswitch_d
@@ -1620,7 +1620,7 @@
     .end annotation
 
     .prologue
-    .line 2122
+    .line 2196
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;
 
     move-result-object v0
@@ -1633,15 +1633,15 @@
     .parameter "value"
 
     .prologue
-    .line 2356
+    .line 2434
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasCategory:Z
 
-    .line 2357
+    .line 2435
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->category_:Ljava/lang/String;
 
-    .line 2358
+    .line 2436
     return-object p0
 .end method
 
@@ -1650,15 +1650,15 @@
     .parameter "value"
 
     .prologue
-    .line 2390
+    .line 2468
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContactEmail:Z
 
-    .line 2391
+    .line 2469
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->contactEmail_:Ljava/lang/String;
 
-    .line 2392
+    .line 2470
     return-object p0
 .end method
 
@@ -1667,15 +1667,15 @@
     .parameter "value"
 
     .prologue
-    .line 2441
+    .line 2519
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContactPhone:Z
 
-    .line 2442
+    .line 2520
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->contactPhone_:Ljava/lang/String;
 
-    .line 2443
+    .line 2521
     return-object p0
 .end method
 
@@ -1684,15 +1684,15 @@
     .parameter "value"
 
     .prologue
-    .line 2458
+    .line 2536
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContactWebsite:Z
 
-    .line 2459
+    .line 2537
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->contactWebsite_:Ljava/lang/String;
 
-    .line 2460
+    .line 2538
     return-object p0
 .end method
 
@@ -1701,15 +1701,15 @@
     .parameter "value"
 
     .prologue
-    .line 2543
+    .line 2621
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContentRatingLevel:Z
 
-    .line 2544
+    .line 2622
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->contentRatingLevel_:I
 
-    .line 2545
+    .line 2623
     return-object p0
 .end method
 
@@ -1718,15 +1718,15 @@
     .parameter "value"
 
     .prologue
-    .line 2560
+    .line 2638
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContentRatingString:Z
 
-    .line 2561
+    .line 2639
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->contentRatingString_:Ljava/lang/String;
 
-    .line 2562
+    .line 2640
     return-object p0
 .end method
 
@@ -1735,15 +1735,15 @@
     .parameter "value"
 
     .prologue
-    .line 2255
+    .line 2333
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasDescription:Z
 
-    .line 2256
+    .line 2334
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->description_:Ljava/lang/String;
 
-    .line 2257
+    .line 2335
     return-object p0
 .end method
 
@@ -1752,15 +1752,15 @@
     .parameter "value"
 
     .prologue
-    .line 2272
+    .line 2350
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasDownloadCount:Z
 
-    .line 2273
+    .line 2351
     iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->downloadCount_:J
 
-    .line 2274
+    .line 2352
     return-object p0
 .end method
 
@@ -1769,15 +1769,15 @@
     .parameter "value"
 
     .prologue
-    .line 2424
+    .line 2502
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasDownloadCountString:Z
 
-    .line 2425
+    .line 2503
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->downloadCountString_:Ljava/lang/String;
 
-    .line 2426
+    .line 2504
     return-object p0
 .end method
 
@@ -1786,26 +1786,26 @@
     .parameter "value"
 
     .prologue
-    .line 2644
+    .line 2722
     if-nez p1, :cond_8
 
-    .line 2645
+    .line 2723
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2647
+    .line 2725
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasDownloadInfo:Z
 
-    .line 2648
+    .line 2726
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->downloadInfo_:Lcom/google/android/vending/remoting/protos/VendingProtos$DownloadInfoProto;
 
-    .line 2649
+    .line 2727
     return-object p0
 .end method
 
@@ -1814,15 +1814,15 @@
     .parameter "value"
 
     .prologue
-    .line 2407
+    .line 2485
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasEverInstalledByUser:Z
 
-    .line 2408
+    .line 2486
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->everInstalledByUser_:Z
 
-    .line 2409
+    .line 2487
     return-object p0
 .end method
 
@@ -1831,15 +1831,15 @@
     .parameter "value"
 
     .prologue
-    .line 2373
+    .line 2451
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasForwardLocked:Z
 
-    .line 2374
+    .line 2452
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->forwardLocked_:Z
 
-    .line 2375
+    .line 2453
     return-object p0
 .end method
 
@@ -1848,15 +1848,15 @@
     .parameter "value"
 
     .prologue
-    .line 2492
+    .line 2570
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasNextPurchaseRefundable:Z
 
-    .line 2493
+    .line 2571
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->nextPurchaseRefundable_:Z
 
-    .line 2494
+    .line 2572
     return-object p0
 .end method
 
@@ -1865,15 +1865,15 @@
     .parameter "value"
 
     .prologue
-    .line 2509
+    .line 2587
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasNumScreenshots:Z
 
-    .line 2510
+    .line 2588
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->numScreenshots_:I
 
-    .line 2511
+    .line 2589
     return-object p0
 .end method
 
@@ -1882,15 +1882,15 @@
     .parameter "value"
 
     .prologue
-    .line 2339
+    .line 2417
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasPackageName:Z
 
-    .line 2340
+    .line 2418
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->packageName_:Ljava/lang/String;
 
-    .line 2341
+    .line 2419
     return-object p0
 .end method
 
@@ -1899,15 +1899,15 @@
     .parameter "value"
 
     .prologue
-    .line 2526
+    .line 2604
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasPromotionalDescription:Z
 
-    .line 2527
+    .line 2605
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->promotionalDescription_:Ljava/lang/String;
 
-    .line 2528
+    .line 2606
     return-object p0
 .end method
 
@@ -1916,15 +1916,15 @@
     .parameter "value"
 
     .prologue
-    .line 2577
+    .line 2655
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasRecentChanges:Z
 
-    .line 2578
+    .line 2656
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->recentChanges_:Ljava/lang/String;
 
-    .line 2579
+    .line 2657
     return-object p0
 .end method
 
@@ -1933,15 +1933,15 @@
     .parameter "value"
 
     .prologue
-    .line 2322
+    .line 2400
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasRequiredInstallationSize:Z
 
-    .line 2323
+    .line 2401
     iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->requiredInstallationSize_:J
 
-    .line 2324
+    .line 2402
     return-object p0
 .end method
 
@@ -1950,15 +1950,15 @@
     .parameter "value"
 
     .prologue
-    .line 2594
+    .line 2672
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasServerAssetState:Z
 
-    .line 2595
+    .line 2673
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->serverAssetState_:I
 
-    .line 2596
+    .line 2674
     return-object p0
 .end method
 
@@ -1967,15 +1967,15 @@
     .parameter "value"
 
     .prologue
-    .line 2475
+    .line 2553
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasVideoLink:Z
 
-    .line 2476
+    .line 2554
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->videoLink_:Ljava/lang/String;
 
-    .line 2477
+    .line 2555
     return-object p0
 .end method
 
@@ -1989,14 +1989,14 @@
     .end annotation
 
     .prologue
-    .line 2700
+    .line 2779
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasDescription()Z
 
     move-result v2
 
     if-eqz v2, :cond_f
 
-    .line 2701
+    .line 2780
     const/16 v2, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getDescription()Ljava/lang/String;
@@ -2005,7 +2005,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2703
+    .line 2782
     :cond_f
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasDownloadCount()Z
 
@@ -2013,7 +2013,7 @@
 
     if-eqz v2, :cond_1e
 
-    .line 2704
+    .line 2783
     const/16 v2, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getDownloadCount()J
@@ -2022,7 +2022,7 @@
 
     invoke-virtual {p1, v2, v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 2706
+    .line 2785
     :cond_1e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getApplicationPermissionIdList()Ljava/util/List;
 
@@ -2046,7 +2046,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 2707
+    .line 2786
     .local v0, element:Ljava/lang/String;
     const/16 v2, 0xf
 
@@ -2054,7 +2054,7 @@
 
     goto :goto_26
 
-    .line 2709
+    .line 2788
     .end local v0           #element:Ljava/lang/String;
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasRequiredInstallationSize()Z
@@ -2063,7 +2063,7 @@
 
     if-eqz v2, :cond_47
 
-    .line 2710
+    .line 2789
     const/16 v2, 0x10
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getRequiredInstallationSize()J
@@ -2072,7 +2072,7 @@
 
     invoke-virtual {p1, v2, v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 2712
+    .line 2791
     :cond_47
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasPackageName()Z
 
@@ -2080,7 +2080,7 @@
 
     if-eqz v2, :cond_56
 
-    .line 2713
+    .line 2792
     const/16 v2, 0x11
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getPackageName()Ljava/lang/String;
@@ -2089,7 +2089,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2715
+    .line 2794
     :cond_56
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasCategory()Z
 
@@ -2097,7 +2097,7 @@
 
     if-eqz v2, :cond_65
 
-    .line 2716
+    .line 2795
     const/16 v2, 0x12
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getCategory()Ljava/lang/String;
@@ -2106,7 +2106,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2718
+    .line 2797
     :cond_65
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasForwardLocked()Z
 
@@ -2114,7 +2114,7 @@
 
     if-eqz v2, :cond_74
 
-    .line 2719
+    .line 2798
     const/16 v2, 0x13
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getForwardLocked()Z
@@ -2123,7 +2123,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 2721
+    .line 2800
     :cond_74
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContactEmail()Z
 
@@ -2131,7 +2131,7 @@
 
     if-eqz v2, :cond_83
 
-    .line 2722
+    .line 2801
     const/16 v2, 0x14
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getContactEmail()Ljava/lang/String;
@@ -2140,7 +2140,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2724
+    .line 2803
     :cond_83
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasEverInstalledByUser()Z
 
@@ -2148,7 +2148,7 @@
 
     if-eqz v2, :cond_92
 
-    .line 2725
+    .line 2804
     const/16 v2, 0x15
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getEverInstalledByUser()Z
@@ -2157,7 +2157,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 2727
+    .line 2806
     :cond_92
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasDownloadCountString()Z
 
@@ -2165,7 +2165,7 @@
 
     if-eqz v2, :cond_a1
 
-    .line 2728
+    .line 2807
     const/16 v2, 0x17
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getDownloadCountString()Ljava/lang/String;
@@ -2174,7 +2174,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2730
+    .line 2809
     :cond_a1
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContactPhone()Z
 
@@ -2182,7 +2182,7 @@
 
     if-eqz v2, :cond_b0
 
-    .line 2731
+    .line 2810
     const/16 v2, 0x1a
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getContactPhone()Ljava/lang/String;
@@ -2191,7 +2191,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2733
+    .line 2812
     :cond_b0
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContactWebsite()Z
 
@@ -2199,7 +2199,7 @@
 
     if-eqz v2, :cond_bf
 
-    .line 2734
+    .line 2813
     const/16 v2, 0x1b
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getContactWebsite()Ljava/lang/String;
@@ -2208,7 +2208,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2736
+    .line 2815
     :cond_bf
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasNextPurchaseRefundable()Z
 
@@ -2216,7 +2216,7 @@
 
     if-eqz v2, :cond_ce
 
-    .line 2737
+    .line 2816
     const/16 v2, 0x1c
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getNextPurchaseRefundable()Z
@@ -2225,7 +2225,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 2739
+    .line 2818
     :cond_ce
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasNumScreenshots()Z
 
@@ -2233,7 +2233,7 @@
 
     if-eqz v2, :cond_dd
 
-    .line 2740
+    .line 2819
     const/16 v2, 0x1e
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getNumScreenshots()I
@@ -2242,7 +2242,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 2742
+    .line 2821
     :cond_dd
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasPromotionalDescription()Z
 
@@ -2250,7 +2250,7 @@
 
     if-eqz v2, :cond_ec
 
-    .line 2743
+    .line 2822
     const/16 v2, 0x1f
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getPromotionalDescription()Ljava/lang/String;
@@ -2259,7 +2259,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2745
+    .line 2824
     :cond_ec
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasServerAssetState()Z
 
@@ -2267,7 +2267,7 @@
 
     if-eqz v2, :cond_fb
 
-    .line 2746
+    .line 2825
     const/16 v2, 0x22
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getServerAssetState()I
@@ -2276,7 +2276,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 2748
+    .line 2827
     :cond_fb
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContentRatingLevel()Z
 
@@ -2284,7 +2284,7 @@
 
     if-eqz v2, :cond_10a
 
-    .line 2749
+    .line 2828
     const/16 v2, 0x24
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getContentRatingLevel()I
@@ -2293,7 +2293,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 2751
+    .line 2830
     :cond_10a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasContentRatingString()Z
 
@@ -2301,7 +2301,7 @@
 
     if-eqz v2, :cond_119
 
-    .line 2752
+    .line 2831
     const/16 v2, 0x25
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getContentRatingString()Ljava/lang/String;
@@ -2310,7 +2310,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2754
+    .line 2833
     :cond_119
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasRecentChanges()Z
 
@@ -2318,7 +2318,7 @@
 
     if-eqz v2, :cond_128
 
-    .line 2755
+    .line 2834
     const/16 v2, 0x26
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getRecentChanges()Ljava/lang/String;
@@ -2327,7 +2327,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2757
+    .line 2836
     :cond_128
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getPackageDependencyList()Ljava/util/List;
 
@@ -2350,7 +2350,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo$PackageDependency;
 
-    .line 2758
+    .line 2837
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo$PackageDependency;
     const/16 v2, 0x27
 
@@ -2358,7 +2358,7 @@
 
     goto :goto_130
 
-    .line 2760
+    .line 2839
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo$PackageDependency;
     :cond_142
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasVideoLink()Z
@@ -2367,7 +2367,7 @@
 
     if-eqz v2, :cond_151
 
-    .line 2761
+    .line 2840
     const/16 v2, 0x2b
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getVideoLink()Ljava/lang/String;
@@ -2376,7 +2376,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2763
+    .line 2842
     :cond_151
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->hasDownloadInfo()Z
 
@@ -2384,7 +2384,7 @@
 
     if-eqz v2, :cond_160
 
-    .line 2764
+    .line 2843
     const/16 v2, 0x31
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$ExtendedInfo;->getDownloadInfo()Lcom/google/android/vending/remoting/protos/VendingProtos$DownloadInfoProto;
@@ -2393,7 +2393,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2766
+    .line 2845
     :cond_160
     return-void
 .end method

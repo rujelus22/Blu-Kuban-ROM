@@ -28,6 +28,14 @@
         <item quantity="other">%1$d 秒前</item>
         <item quantity="one">1 秒钟前</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">%1$d 天后过期</item>
+        <item quantity="one">1 天后过期</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">%1$d 小时后过期</item>
+        <item quantity="one">1 小时后过期</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">最新上传</item>
         <item quantity="one">最新上传</item>

@@ -19,7 +19,7 @@
 
 .field private static final ACTION_RESET:Ljava/lang/String; = "com.android.server.ThorottleManager.action.RESET"
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final EVENT_IFACE_UP:I = 0x4
 

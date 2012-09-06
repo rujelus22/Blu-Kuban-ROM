@@ -1,43 +1,56 @@
 .class LaQ/r;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements LaQ/bE;
 
 
 # instance fields
-.field final synthetic a:LaQ/p;
+.field private a:Landroid/widget/TextView;
 
 
 # direct methods
-.method constructor <init>(LaQ/p;)V
-    .registers 2
+.method private constructor <init>()V
+    .registers 1
 
-    iput-object p1, p0, LaQ/r;->a:LaQ/p;
-
+    .prologue
+    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method synthetic constructor <init>(LaQ/q;)V
+    .registers 2
+    .parameter
 
-# virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 4
-
-    iget-object v0, p0, LaQ/r;->a:LaQ/p;
-
-    invoke-static {v0}, LaQ/p;->b(LaQ/p;)LaQ/s;
-
-    move-result-object v0
-
-    iget-object v1, p0, LaQ/r;->a:LaQ/p;
-
-    invoke-static {v1}, LaQ/p;->a(LaQ/p;)LaQ/m;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, LaQ/s;->b(LaQ/m;)V
+    .prologue
+    .line 20
+    invoke-direct {p0}, LaQ/r;-><init>()V
 
     return-void
+.end method
+
+.method static synthetic a(LaQ/r;)Landroid/widget/TextView;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 20
+    iget-object v0, p0, LaQ/r;->a:Landroid/widget/TextView;
+
+    return-object v0
+.end method
+
+.method static synthetic a(LaQ/r;Landroid/widget/TextView;)Landroid/widget/TextView;
+    .registers 2
+    .parameter
+    .parameter
+
+    .prologue
+    .line 20
+    iput-object p1, p0, LaQ/r;->a:Landroid/widget/TextView;
+
+    return-object p1
 .end method

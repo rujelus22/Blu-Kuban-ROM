@@ -1,88 +1,107 @@
-.class final enum Lg/d;
-.super Ljava/lang/Enum;
+.class Lg/d;
+.super Lcom/google/android/location/internal/a;
+.source "SourceFile"
 
 
-# static fields
-.field public static final enum a:Lg/d;
-
-.field public static final enum b:Lg/d;
-
-.field private static final synthetic c:[Lg/d;
+# instance fields
+.field final synthetic a:Lg/c;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method constructor <init>(Lg/c;)V
+    .registers 2
+    .parameter
 
-    const/4 v3, 0x1
+    .prologue
+    .line 111
+    iput-object p1, p0, Lg/d;->a:Lg/c;
 
-    const/4 v2, 0x0
-
-    new-instance v0, Lg/d;
-
-    const-string v1, "LEAF"
-
-    invoke-direct {v0, v1, v2}, Lg/d;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lg/d;->a:Lg/d;
-
-    new-instance v0, Lg/d;
-
-    const-string v1, "INNER"
-
-    invoke-direct {v0, v1, v3}, Lg/d;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lg/d;->b:Lg/d;
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Lg/d;
-
-    sget-object v1, Lg/d;->a:Lg/d;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lg/d;->b:Lg/d;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lg/d;->c:[Lg/d;
+    invoke-direct {p0}, Lcom/google/android/location/internal/a;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
+
+# virtual methods
+.method public onLocationChanged(Landroid/location/Location;)V
     .registers 3
+    .parameter
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    .prologue
+    .line 114
+    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
+    .line 115
+    iget-object v0, p0, Lg/d;->a:Lg/c;
+
+    invoke-static {v0}, Lg/c;->a(Lg/c;)Lg/a;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lg/a;->a(Landroid/location/Location;)V
+
+    .line 116
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lg/d;
+.method public onProviderDisabled()V
     .registers 2
 
-    const-class v0, Lg/d;
+    .prologue
+    .line 132
+    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    .line 133
+    iget-object v0, p0, Lg/d;->a:Lg/c;
+
+    invoke-static {v0}, Lg/c;->a(Lg/c;)Lg/a;
 
     move-result-object v0
 
-    check-cast v0, Lg/d;
+    invoke-virtual {v0}, Lg/a;->b()V
 
-    return-object v0
+    .line 134
+    return-void
 .end method
 
-.method public static values()[Lg/d;
-    .registers 1
+.method public onProviderEnabled()V
+    .registers 2
 
-    sget-object v0, Lg/d;->c:[Lg/d;
+    .prologue
+    .line 126
+    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    invoke-virtual {v0}, [Lg/d;->clone()Ljava/lang/Object;
+    .line 127
+    iget-object v0, p0, Lg/d;->a:Lg/c;
+
+    invoke-static {v0}, Lg/c;->a(Lg/c;)Lg/a;
 
     move-result-object v0
 
-    check-cast v0, [Lg/d;
+    invoke-virtual {v0}, Lg/a;->a()V
 
-    return-object v0
+    .line 128
+    return-void
+.end method
+
+.method public onStatusChanged(ILandroid/os/Bundle;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 120
+    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
+
+    .line 121
+    iget-object v0, p0, Lg/d;->a:Lg/c;
+
+    invoke-static {v0}, Lg/c;->a(Lg/c;)Lg/a;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1, p2}, Lg/a;->a(ILandroid/os/Bundle;)V
+
+    .line 122
+    return-void
 .end method

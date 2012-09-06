@@ -1,511 +1,739 @@
 .class public Lbg/a;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # static fields
-.field private static final a:Landroid/net/Uri;
+.field public static final a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+.field public static final b:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+.field public static final c:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+.field public static final d:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+.field public static final e:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+.field public static final f:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+.field public static final g:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+.field public static final h:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+.field public static final i:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+.field public static final j:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+.field public static final k:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+.field public static final l:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .registers 10
 
-    const-string v0, "content://com.google.android.apps.genie.geniewidget.weather/weather/daily/0"
+    .prologue
+    const/4 v9, 0x3
 
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    const/4 v8, 0x2
 
-    move-result-object v0
+    const/4 v7, 0x1
 
-    sput-object v0, Lbg/a;->a:Landroid/net/Uri;
+    const/16 v6, 0x215
 
-    return-void
-.end method
+    const/4 v1, 0x0
 
-.method public constructor <init>()V
-    .registers 1
+    .line 167
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
 
-    return-void
-.end method
+    sput-object v0, Lbg/a;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-.method public static a(Landroid/content/Context;)Lbg/b;
-    .registers 15
+    .line 168
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    const/4 v6, 0x0
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
 
-    sget-object v0, Lbg/c;->a:Lbg/c;
+    sput-object v0, Lbg/a;->b:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    :try_start_3
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    .line 169
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-result-object v0
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
 
-    sget-object v1, Lbg/a;->a:Landroid/net/Uri;
+    sput-object v0, Lbg/a;->c:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    const/4 v2, 0x0
+    .line 170
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    const/4 v3, 0x0
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
 
-    const/4 v4, 0x0
+    sput-object v0, Lbg/a;->d:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    const/4 v5, 0x0
+    .line 171
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_10
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_10} :catch_72
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
 
-    move-result-object v1
+    sput-object v0, Lbg/a;->e:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    if-eqz v1, :cond_79
+    .line 172
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    :try_start_13
-    invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
 
-    move-result v0
+    sput-object v0, Lbg/a;->f:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    if-eqz v0, :cond_79
+    .line 173
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    const-string v0, "timestamp"
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
 
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+    sput-object v0, Lbg/a;->g:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-result v7
+    .line 174
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    const-string v0, "iconUrl"
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
 
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+    sput-object v0, Lbg/a;->h:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-result v8
+    .line 175
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    const-string v0, "temperature"
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
 
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+    sput-object v0, Lbg/a;->i:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-result v9
+    .line 176
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    const-string v0, "location"
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
 
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+    sput-object v0, Lbg/a;->j:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-result v10
+    .line 177
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    const-wide/16 v2, -0x1
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
 
-    move-object v0, v6
+    sput-object v0, Lbg/a;->k:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-wide v4, v2
+    .line 178
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-object v3, v6
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
 
-    move-object v2, v6
+    sput-object v0, Lbg/a;->l:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    :goto_37
-    invoke-interface {v1, v7}, Landroid/database/Cursor;->getLong(I)J
+    .line 180
+    sget-object v2, Lbg/a;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-result-wide v11
-
-    cmp-long v11, v11, v4
-
-    if-lez v11, :cond_7e
-
-    invoke-interface {v1, v7}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v4
-
-    invoke-interface {v1, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-interface {v1, v9}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "\u00b0"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v1, v10}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    :goto_62
-    invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
-
-    move-result v11
-
-    if-nez v11, :cond_83
-
-    invoke-static {v0}, Lbg/a;->a(Ljava/lang/String;)Lbg/c;
-
-    move-result-object v4
-
-    new-instance v0, Lbg/b;
-
-    invoke-direct {v0, v4, v3, v2}, Lbg/b;-><init>(Lbg/c;Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_71
-    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_71} :catch_7b
-
-    :goto_71
-    return-object v0
-
-    :catch_72
-    move-exception v0
-
-    move-object v0, v6
-
-    :goto_74
-    if-eqz v0, :cond_79
-
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
-
-    :cond_79
-    move-object v0, v6
-
-    goto :goto_71
-
-    :catch_7b
-    move-exception v0
+    const/16 v3, 0x224
 
     move-object v0, v1
 
-    goto :goto_74
+    check-cast v0, Lbg/m;
 
-    :cond_7e
-    move-object v13, v0
+    const-string v0, ""
 
-    move-object v0, v3
+    invoke-virtual {v2, v3, v7, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-object v3, v2
+    move-result-object v2
 
-    move-object v2, v13
+    const/16 v3, 0x224
 
-    goto :goto_62
+    move-object v0, v1
 
-    :cond_83
-    move-object v13, v2
+    check-cast v0, Lbg/m;
 
-    move-object v2, v3
+    invoke-virtual {v2, v3, v8, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-object v3, v0
+    move-result-object v2
 
-    move-object v0, v13
+    const/16 v3, 0x224
 
-    goto :goto_37
-.end method
+    move-object v0, v1
 
-.method private static a(Ljava/lang/String;)Lbg/c;
-    .registers 2
+    check-cast v0, Lbg/m;
 
-    if-nez p0, :cond_5
+    invoke-virtual {v2, v3, v9, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    sget-object v0, Lbg/c;->a:Lbg/c;
+    move-result-object v2
 
-    :goto_4
-    return-object v0
+    const/16 v3, 0x11e
 
-    :cond_5
-    const-string v0, "chance_of_rain"
+    move-object v0, v1
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    check-cast v0, Lbg/m;
 
-    move-result v0
+    const/4 v0, 0x4
 
-    if-eqz v0, :cond_10
+    invoke-virtual {v2, v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    sget-object v0, Lbg/c;->b:Lbg/c;
+    move-result-object v2
 
-    goto :goto_4
+    const/16 v3, 0x224
 
-    :cond_10
-    const-string v0, "chance_snow"
+    move-object v0, v1
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    check-cast v0, Lbg/m;
 
-    move-result v0
+    const/4 v0, 0x5
 
-    if-eqz v0, :cond_1b
+    invoke-virtual {v2, v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    sget-object v0, Lbg/c;->c:Lbg/c;
+    .line 197
+    sget-object v2, Lbg/a;->b:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    goto :goto_4
+    const/16 v3, 0x124
 
-    :cond_1b
-    const-string v0, "chance_storm"
+    move-object v0, v1
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    check-cast v0, Lbg/k;
 
-    move-result v0
+    invoke-virtual {v2, v3, v7, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    if-eqz v0, :cond_26
+    move-result-object v2
 
-    sget-object v0, Lbg/c;->d:Lbg/c;
+    const/16 v3, 0x224
 
-    goto :goto_4
+    move-object v0, v1
 
-    :cond_26
-    const-string v0, "clear_day"
+    check-cast v0, Lbg/k;
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v2, v3, v8, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-result v0
+    move-result-object v2
 
-    if-eqz v0, :cond_31
+    move-object v0, v1
 
-    sget-object v0, Lbg/c;->e:Lbg/c;
+    check-cast v0, Lbg/k;
 
-    goto :goto_4
+    invoke-virtual {v2, v6, v9, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    :cond_31
-    const-string v0, "clear_night"
+    move-result-object v2
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    move-object v0, v1
 
-    move-result v0
+    check-cast v0, Lbg/k;
 
-    if-eqz v0, :cond_3c
+    const/4 v0, 0x4
 
-    sget-object v0, Lbg/c;->g:Lbg/c;
+    invoke-virtual {v2, v6, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    goto :goto_4
+    move-result-object v2
 
-    :cond_3c
-    const-string v0, "heavy_rain"
+    move-object v0, v1
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    check-cast v0, Lbg/k;
 
-    move-result v0
+    const/4 v0, 0x5
 
-    if-eqz v0, :cond_47
+    invoke-virtual {v2, v6, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    sget-object v0, Lbg/c;->k:Lbg/c;
+    move-result-object v2
 
-    goto :goto_4
+    const/16 v3, 0x21b
 
-    :cond_47
-    const-string v0, "icy_sleet"
+    move-object v0, v1
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    check-cast v0, Lbg/k;
 
-    move-result v0
+    const/4 v0, 0x6
 
-    if-eqz v0, :cond_52
+    sget-object v4, Lbf/bg;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    sget-object v0, Lbg/c;->l:Lbg/c;
+    invoke-virtual {v2, v3, v0, v4}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    goto :goto_4
+    move-result-object v2
 
-    :cond_52
-    const-string v0, "partly_cloudy"
+    const/16 v3, 0x218
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    move-object v0, v1
 
-    move-result v0
+    check-cast v0, Lbg/k;
 
-    if-eqz v0, :cond_5d
+    const/4 v0, 0x7
 
-    sget-object v0, Lbg/c;->n:Lbg/c;
+    invoke-virtual {v2, v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    goto :goto_4
+    move-result-object v2
 
-    :cond_5d
-    const-string v0, "rain_day"
+    move-object v0, v1
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    check-cast v0, Lbg/k;
 
-    move-result v0
+    const/16 v0, 0x8
 
-    if-eqz v0, :cond_68
+    invoke-virtual {v2, v6, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    sget-object v0, Lbg/c;->o:Lbg/c;
+    move-result-object v2
 
-    goto :goto_4
+    const/16 v3, 0x21e
 
-    :cond_68
-    const-string v0, "rain_night"
+    move-object v0, v1
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    check-cast v0, Lbg/k;
 
-    move-result v0
+    const/16 v0, 0x9
 
-    if-eqz v0, :cond_73
+    const-wide/16 v4, 0x0
 
-    sget-object v0, Lbg/c;->q:Lbg/c;
+    invoke-static {v4, v5}, Lcom/google/googlenav/common/util/p;->a(J)Ljava/lang/Long;
 
-    goto :goto_4
+    move-result-object v4
 
-    :cond_73
-    const-string v0, "snow_rain"
+    invoke-virtual {v2, v3, v0, v4}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    move-result-object v2
 
-    move-result v0
+    const/16 v3, 0x218
 
-    if-eqz v0, :cond_7e
+    move-object v0, v1
 
-    sget-object v0, Lbg/c;->s:Lbg/c;
+    check-cast v0, Lbg/k;
 
-    goto :goto_4
+    const/16 v0, 0xa
 
-    :cond_7e
-    const-string v0, "unknown"
+    invoke-virtual {v2, v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    .line 229
+    sget-object v2, Lbg/a;->c:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-result v0
+    const/16 v3, 0x124
 
-    if-eqz v0, :cond_8a
+    move-object v0, v1
 
-    sget-object v0, Lbg/c;->a:Lbg/c;
+    check-cast v0, Lbg/f;
 
-    goto/16 :goto_4
+    invoke-virtual {v2, v3, v7, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    :cond_8a
-    const-string v0, "flurries"
+    move-result-object v2
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    move-object v0, v1
 
-    move-result v0
+    check-cast v0, Lbg/f;
 
-    if-eqz v0, :cond_96
+    invoke-virtual {v2, v6, v8, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    sget-object v0, Lbg/c;->i:Lbg/c;
+    .line 237
+    sget-object v2, Lbg/a;->d:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    goto/16 :goto_4
+    move-object v0, v1
 
-    :cond_96
-    const-string v0, "windy"
+    check-cast v0, Lbg/j;
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v2, v6, v7, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-result v0
+    move-result-object v2
 
-    if-eqz v0, :cond_a2
+    move-object v0, v1
 
-    sget-object v0, Lbg/c;->v:Lbg/c;
+    check-cast v0, Lbg/j;
 
-    goto/16 :goto_4
+    invoke-virtual {v2, v6, v8, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    :cond_a2
-    const-string v0, "clear"
+    move-result-object v2
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    const/16 v3, 0x224
 
-    move-result v0
+    move-object v0, v1
 
-    if-eqz v0, :cond_ae
+    check-cast v0, Lbg/j;
 
-    sget-object v0, Lbg/c;->f:Lbg/c;
+    invoke-virtual {v2, v3, v9, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    goto/16 :goto_4
+    move-result-object v2
 
-    :cond_ae
-    const-string v0, "cloudy"
+    const/16 v3, 0x11e
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    move-object v0, v1
 
-    move-result v0
+    check-cast v0, Lbg/j;
 
-    if-eqz v0, :cond_ba
+    const/4 v0, 0x4
 
-    sget-object v0, Lbg/c;->h:Lbg/c;
+    invoke-virtual {v2, v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    goto/16 :goto_4
+    move-result-object v2
 
-    :cond_ba
-    const-string v0, "fog"
+    move-object v0, v1
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    check-cast v0, Lbg/j;
 
-    move-result v0
+    const/4 v0, 0x5
 
-    if-eqz v0, :cond_c6
+    invoke-virtual {v2, v6, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    sget-object v0, Lbg/c;->j:Lbg/c;
+    move-result-object v2
 
-    goto/16 :goto_4
+    move-object v0, v1
 
-    :cond_c6
-    const-string v0, "snow"
+    check-cast v0, Lbg/j;
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    const/4 v0, 0x6
 
-    move-result v0
+    invoke-virtual {v2, v6, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    if-eqz v0, :cond_d2
+    move-result-object v2
 
-    sget-object v0, Lbg/c;->r:Lbg/c;
+    move-object v0, v1
 
-    goto/16 :goto_4
+    check-cast v0, Lbg/j;
 
-    :cond_d2
-    const-string v0, "sunny"
+    const/4 v0, 0x7
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v2, v6, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-result v0
+    move-result-object v2
 
-    if-eqz v0, :cond_de
+    const/16 v3, 0x212
 
-    sget-object v0, Lbg/c;->t:Lbg/c;
+    move-object v0, v1
 
-    goto/16 :goto_4
+    check-cast v0, Lbg/j;
 
-    :cond_de
-    const-string v0, "thunderstorm"
+    const/16 v0, 0x8
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v2, v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-result v0
+    move-result-object v2
 
-    if-eqz v0, :cond_ea
+    const/16 v3, 0x214
 
-    sget-object v0, Lbg/c;->u:Lbg/c;
+    move-object v0, v1
 
-    goto/16 :goto_4
+    check-cast v0, Lbg/j;
 
-    :cond_ea
-    const-string v0, "rain"
+    const/16 v0, 0x64
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v2, v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-result v0
+    .line 266
+    sget-object v2, Lbg/a;->e:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    if-eqz v0, :cond_f6
+    const/16 v3, 0x113
 
-    sget-object v0, Lbg/c;->p:Lbg/c;
+    move-object v0, v1
 
-    goto/16 :goto_4
+    check-cast v0, Lbg/l;
 
-    :cond_f6
-    const-string v0, "mist"
+    invoke-virtual {v2, v3, v7, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    move-result-object v2
 
-    move-result v0
+    const/16 v3, 0x11b
 
-    if-eqz v0, :cond_102
+    move-object v0, v1
 
-    sget-object v0, Lbg/c;->m:Lbg/c;
+    check-cast v0, Lbg/l;
 
-    goto/16 :goto_4
+    sget-object v0, Lbg/a;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    :cond_102
-    sget-object v0, Lbg/c;->a:Lbg/c;
+    invoke-virtual {v2, v3, v8, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    goto/16 :goto_4
+    move-result-object v2
+
+    const/16 v3, 0x21b
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/l;
+
+    sget-object v0, Lbg/a;->d:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-virtual {v2, v3, v9, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    const/16 v3, 0x41b
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/l;
+
+    const/4 v0, 0x4
+
+    sget-object v4, Lbg/a;->b:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-virtual {v2, v3, v0, v4}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    const/16 v3, 0x217
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/l;
+
+    const/4 v0, 0x5
+
+    invoke-virtual {v2, v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    .line 283
+    sget-object v2, Lbg/a;->f:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    const/16 v3, 0x11e
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/e;
+
+    invoke-virtual {v2, v3, v7, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/e;
+
+    const-wide/16 v3, 0x0
+
+    invoke-static {v3, v4}, Lcom/google/googlenav/common/util/p;->a(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v6, v8, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    const/16 v3, 0x21e
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/e;
+
+    const-wide/16 v4, 0x0
+
+    invoke-static {v4, v5}, Lcom/google/googlenav/common/util/p;->a(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v3, v9, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/e;
+
+    const/4 v0, 0x4
+
+    invoke-virtual {v2, v6, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    .line 297
+    sget-object v2, Lbg/a;->g:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    const/16 v3, 0x124
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/g;
+
+    invoke-virtual {v2, v3, v7, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    const/16 v3, 0x117
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/g;
+
+    invoke-virtual {v2, v3, v8, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    const/16 v3, 0x41b
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/g;
+
+    sget-object v0, Lbg/a;->d:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-virtual {v2, v3, v9, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    .line 308
+    sget-object v2, Lbg/a;->h:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    const/16 v3, 0x224
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/h;
+
+    invoke-virtual {v2, v3, v7, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    const/16 v3, 0x113
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/h;
+
+    invoke-virtual {v2, v3, v8, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    const/16 v3, 0x424
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/h;
+
+    invoke-virtual {v2, v3, v9, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    .line 319
+    sget-object v2, Lbg/a;->i:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    const/16 v3, 0x21b
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/c;
+
+    sget-object v0, Lbg/a;->h:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-virtual {v2, v3, v7, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    const/16 v3, 0x21b
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/c;
+
+    sget-object v0, Lbg/a;->b:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-virtual {v2, v3, v8, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    const/16 v3, 0x21b
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/c;
+
+    sget-object v0, Lbg/a;->d:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-virtual {v2, v3, v9, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    .line 330
+    sget-object v2, Lbg/a;->j:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    const/16 v3, 0x124
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/d;
+
+    invoke-virtual {v2, v3, v7, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    const/16 v3, 0x117
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/d;
+
+    invoke-virtual {v2, v3, v8, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    const/16 v3, 0x21b
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/d;
+
+    sget-object v0, Lbf/bg;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-virtual {v2, v3, v9, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/d;
+
+    const/4 v0, 0x4
+
+    invoke-virtual {v2, v6, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/d;
+
+    const/4 v0, 0x5
+
+    invoke-virtual {v2, v6, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    const/16 v3, 0x424
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/d;
+
+    const/4 v0, 0x6
+
+    invoke-virtual {v2, v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    const/16 v3, 0x424
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/d;
+
+    const/4 v0, 0x7
+
+    invoke-virtual {v2, v3, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    .line 353
+    sget-object v2, Lbg/a;->k:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    const/16 v3, 0x414
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/b;
+
+    invoke-virtual {v2, v3, v7, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    .line 358
+    sget-object v2, Lbg/a;->l:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    const/16 v3, 0x213
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/i;
+
+    invoke-virtual {v2, v3, v7, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    const/16 v3, 0x213
+
+    move-object v0, v1
+
+    check-cast v0, Lbg/i;
+
+    invoke-virtual {v2, v3, v8, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    .line 366
+    return-void
 .end method

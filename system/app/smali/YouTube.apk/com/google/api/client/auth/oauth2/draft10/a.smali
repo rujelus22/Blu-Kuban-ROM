@@ -12,7 +12,7 @@
     .registers 3
 
     .prologue
-    .line 290
+    .line 298
     invoke-static {}, Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource$Method;->values()[Lcom/google/api/client/auth/oauth2/draft10/AccessProtectedResource$Method;
 
     move-result-object v0

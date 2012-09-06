@@ -18,16 +18,16 @@
     .parameter "length"
 
     .prologue
-    .line 35
+    .line 32
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
-    .line 36
+    .line 33
     iput-object p1, p0, Lcom/android/email/FixedLengthInputStream;->mIn:Ljava/io/InputStream;
 
-    .line 37
+    .line 34
     iput p2, p0, Lcom/android/email/FixedLengthInputStream;->mLength:I
 
-    .line 38
+    .line 35
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .end annotation
 
     .prologue
-    .line 42
+    .line 39
     iget v0, p0, Lcom/android/email/FixedLengthInputStream;->mLength:I
 
     iget v1, p0, Lcom/android/email/FixedLengthInputStream;->mCount:I
@@ -56,7 +56,7 @@
     .registers 2
 
     .prologue
-    .line 76
+    .line 73
     iget v0, p0, Lcom/android/email/FixedLengthInputStream;->mLength:I
 
     return v0
@@ -71,28 +71,28 @@
     .end annotation
 
     .prologue
-    .line 47
+    .line 44
     iget v0, p0, Lcom/android/email/FixedLengthInputStream;->mCount:I
 
     iget v1, p0, Lcom/android/email/FixedLengthInputStream;->mLength:I
 
     if-ge v0, v1, :cond_13
 
-    .line 48
+    .line 45
     iget v0, p0, Lcom/android/email/FixedLengthInputStream;->mCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/email/FixedLengthInputStream;->mCount:I
 
-    .line 49
+    .line 46
     iget-object v0, p0, Lcom/android/email/FixedLengthInputStream;->mIn:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->read()I
 
     move-result v0
 
-    .line 51
+    .line 48
     :goto_12
     return v0
 
@@ -112,7 +112,7 @@
     .end annotation
 
     .prologue
-    .line 72
+    .line 69
     const/4 v0, 0x0
 
     array-length v1, p1
@@ -138,14 +138,14 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 57
+    .line 54
     iget v2, p0, Lcom/android/email/FixedLengthInputStream;->mCount:I
 
     iget v3, p0, Lcom/android/email/FixedLengthInputStream;->mLength:I
 
     if-ge v2, v3, :cond_20
 
-    .line 58
+    .line 55
     iget-object v2, p0, Lcom/android/email/FixedLengthInputStream;->mIn:Ljava/io/InputStream;
 
     iget v3, p0, Lcom/android/email/FixedLengthInputStream;->mLength:I
@@ -162,18 +162,18 @@
 
     move-result v0
 
-    .line 59
+    .line 56
     .local v0, d:I
     if-ne v0, v1, :cond_1a
 
     move v0, v1
 
-    .line 66
+    .line 63
     .end local v0           #d:I
     :goto_19
     return v0
 
-    .line 62
+    .line 59
     .restart local v0       #d:I
     :cond_1a
     iget v1, p0, Lcom/android/email/FixedLengthInputStream;->mCount:I
@@ -188,7 +188,7 @@
     :cond_20
     move v0, v1
 
-    .line 66
+    .line 63
     goto :goto_19
 .end method
 
@@ -196,7 +196,7 @@
     .registers 5
 
     .prologue
-    .line 81
+    .line 78
     const-string v0, "FixedLengthInputStream(in=%s, length=%d)"
 
     const/4 v1, 0x2

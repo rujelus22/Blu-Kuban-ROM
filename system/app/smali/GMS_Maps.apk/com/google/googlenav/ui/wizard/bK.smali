@@ -1,73 +1,56 @@
-.class Lcom/google/googlenav/ui/wizard/bK;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class Lcom/google/googlenav/ui/wizard/bk;
+.super Lcom/google/googlenav/ui/android/ac;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Landroid/widget/ImageView;
-
-.field final synthetic b:[B
-
-.field final synthetic c:Lcom/google/googlenav/ui/wizard/bI;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/bj;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/bI;Landroid/widget/ImageView;[B)V
-    .registers 4
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/bj;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/bK;->c:Lcom/google/googlenav/ui/wizard/bI;
+    .prologue
+    .line 162
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/bk;->a:Lcom/google/googlenav/ui/wizard/bj;
 
-    iput-object p2, p0, Lcom/google/googlenav/ui/wizard/bK;->a:Landroid/widget/ImageView;
-
-    iput-object p3, p0, Lcom/google/googlenav/ui/wizard/bK;->b:[B
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/ac;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .registers 6
+.method public a(Landroid/view/View;)V
+    .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/bK;->a:Landroid/widget/ImageView;
+    .prologue
+    .line 165
+    const/4 v0, 0x0
 
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
+    invoke-virtual {p1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+    .line 168
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/bk;->a:Lcom/google/googlenav/ui/wizard/bj;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/bK;->a:Landroid/widget/ImageView;
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/bj;->o()Z
 
-    invoke-static {}, Laf/b;->a()Laf/b;
+    move-result v0
 
-    move-result-object v0
+    if-nez v0, :cond_d
 
-    invoke-virtual {v0}, Laf/b;->o()Lah/h;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lcom/google/googlenav/ui/wizard/bK;->b:[B
-
-    const/4 v3, 0x0
-
-    iget-object v4, p0, Lcom/google/googlenav/ui/wizard/bK;->b:[B
-
-    array-length v4, v4
-
-    invoke-interface {v0, v2, v3, v4}, Lah/h;->a([BII)Lah/f;
-
-    move-result-object v0
-
-    check-cast v0, Lai/f;
-
-    invoke-virtual {v0}, Lai/f;->h()Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
-
+    .line 172
+    :goto_c
     return-void
+
+    .line 171
+    :cond_d
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/bk;->a:Lcom/google/googlenav/ui/wizard/bj;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/bj;->f()V
+
+    goto :goto_c
 .end method

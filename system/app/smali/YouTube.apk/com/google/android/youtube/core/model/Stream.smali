@@ -27,7 +27,11 @@
 
 .field public static final FORMAT_36_OVER_HTTP:I = 0x9
 
+.field public static final FORMAT_37_OVER_HTTP:I = 0x1e
+
 .field public static final FORMAT_62_OVER_HTTP:I = 0xe
+
+.field public static final FORMAT_64_OVER_HTTP:I = 0x1f
 
 .field public static final FORMAT_80_OVER_HTTP:I = 0xb
 
@@ -69,12 +73,12 @@
     .registers 2
 
     .prologue
-    .line 124
+    .line 133
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    .line 125
+    .line 134
     const/16 v1, 0x15
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -83,7 +87,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 126
+    .line 135
     const/16 v1, 0x16
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -92,7 +96,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 127
+    .line 136
     const/16 v1, 0x17
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -101,7 +105,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 128
+    .line 137
     const/16 v1, 0x18
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -110,7 +114,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 129
+    .line 138
     const/16 v1, 0x19
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -119,7 +123,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 130
+    .line 139
     const/16 v1, 0x1a
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -128,14 +132,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 131
+    .line 140
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/android/youtube/core/model/Stream;->STREAMS_3D:Ljava/util/Set;
 
-    .line 132
+    .line 141
     return-void
 .end method
 
@@ -144,11 +148,11 @@
     .parameter
 
     .prologue
-    .line 181
+    .line 190
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 182
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 191
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -156,34 +160,34 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Stream;->uri:Landroid/net/Uri;
 
-    .line 183
+    .line 192
     sget-object v0, Lcom/google/android/youtube/core/model/Stream$Quality;->UNKNOWN:Lcom/google/android/youtube/core/model/Stream$Quality;
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Stream;->quality:Lcom/google/android/youtube/core/model/Stream$Quality;
 
-    .line 184
+    .line 193
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Stream;->mimeType:Ljava/lang/String;
 
-    .line 185
+    .line 194
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/youtube/core/model/Stream;->gdataFormat:I
 
-    .line 186
+    .line 195
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/youtube/core/model/Stream;->sizeInBytes:J
 
-    .line 187
+    .line 196
     invoke-static {p1}, Lcom/google/android/youtube/core/utils/Util;->c(Landroid/net/Uri;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Stream;->isOffline:Z
 
-    .line 188
+    .line 197
     const-string v0, "video/wvm"
 
     iget-object v1, p0, Lcom/google/android/youtube/core/model/Stream;->mimeType:Ljava/lang/String;
@@ -194,7 +198,7 @@
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Stream;->isEncrypted:Z
 
-    .line 189
+    .line 198
     sget-object v0, Lcom/google/android/youtube/core/model/Stream;->STREAMS_3D:Ljava/util/Set;
 
     iget v1, p0, Lcom/google/android/youtube/core/model/Stream;->gdataFormat:I
@@ -209,7 +213,7 @@
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Stream;->is3D:Z
 
-    .line 190
+    .line 199
     return-void
 .end method
 
@@ -219,11 +223,11 @@
     .parameter
 
     .prologue
-    .line 170
+    .line 179
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 171
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 180
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -231,8 +235,8 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Stream;->uri:Landroid/net/Uri;
 
-    .line 172
-    invoke-static {p2}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 181
+    invoke-static {p2}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -240,29 +244,29 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Stream;->quality:Lcom/google/android/youtube/core/model/Stream$Quality;
 
-    .line 173
+    .line 182
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Stream;->mimeType:Ljava/lang/String;
 
-    .line 174
+    .line 183
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/youtube/core/model/Stream;->gdataFormat:I
 
-    .line 175
+    .line 184
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/youtube/core/model/Stream;->sizeInBytes:J
 
-    .line 176
+    .line 185
     invoke-static {p1}, Lcom/google/android/youtube/core/utils/Util;->c(Landroid/net/Uri;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Stream;->isOffline:Z
 
-    .line 177
+    .line 186
     const-string v0, "video/wvm"
 
     iget-object v1, p0, Lcom/google/android/youtube/core/model/Stream;->mimeType:Ljava/lang/String;
@@ -273,7 +277,7 @@
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Stream;->isEncrypted:Z
 
-    .line 178
+    .line 187
     sget-object v0, Lcom/google/android/youtube/core/model/Stream;->STREAMS_3D:Ljava/util/Set;
 
     iget v1, p0, Lcom/google/android/youtube/core/model/Stream;->gdataFormat:I
@@ -288,7 +292,7 @@
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Stream;->is3D:Z
 
-    .line 179
+    .line 188
     return-void
 .end method
 
@@ -300,11 +304,11 @@
     .parameter
 
     .prologue
-    .line 159
+    .line 168
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 160
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 169
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -312,8 +316,8 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Stream;->uri:Landroid/net/Uri;
 
-    .line 161
-    invoke-static {p2}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 170
+    invoke-static {p2}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -321,25 +325,25 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Stream;->quality:Lcom/google/android/youtube/core/model/Stream$Quality;
 
-    .line 162
+    .line 171
     iput-object p3, p0, Lcom/google/android/youtube/core/model/Stream;->mimeType:Ljava/lang/String;
 
-    .line 163
+    .line 172
     iput p4, p0, Lcom/google/android/youtube/core/model/Stream;->gdataFormat:I
 
-    .line 164
+    .line 173
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/youtube/core/model/Stream;->sizeInBytes:J
 
-    .line 165
+    .line 174
     invoke-static {p1}, Lcom/google/android/youtube/core/utils/Util;->c(Landroid/net/Uri;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Stream;->isOffline:Z
 
-    .line 166
+    .line 175
     const-string v0, "video/wvm"
 
     invoke-virtual {v0, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -348,7 +352,7 @@
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Stream;->isEncrypted:Z
 
-    .line 167
+    .line 176
     sget-object v0, Lcom/google/android/youtube/core/model/Stream;->STREAMS_3D:Ljava/util/Set;
 
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -361,7 +365,7 @@
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Stream;->is3D:Z
 
-    .line 168
+    .line 177
     return-void
 .end method
 
@@ -374,11 +378,11 @@
     .parameter
 
     .prologue
-    .line 147
+    .line 156
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 148
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 157
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -386,8 +390,8 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Stream;->uri:Landroid/net/Uri;
 
-    .line 149
-    invoke-static {p2}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 158
+    invoke-static {p2}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -395,8 +399,8 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Stream;->quality:Lcom/google/android/youtube/core/model/Stream$Quality;
 
-    .line 150
-    invoke-static {p3}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 159
+    invoke-static {p3}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -404,10 +408,10 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Stream;->mimeType:Ljava/lang/String;
 
-    .line 151
+    .line 160
     iput p4, p0, Lcom/google/android/youtube/core/model/Stream;->gdataFormat:I
 
-    .line 152
+    .line 161
     const-wide/16 v0, 0x0
 
     cmp-long v0, p5, v0
@@ -417,19 +421,19 @@
     const/4 v0, 0x1
 
     :goto_24
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/k;->a(Z)V
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/n;->a(Z)V
 
-    .line 153
+    .line 162
     iput-wide p5, p0, Lcom/google/android/youtube/core/model/Stream;->sizeInBytes:J
 
-    .line 154
+    .line 163
     invoke-static {p1}, Lcom/google/android/youtube/core/utils/Util;->c(Landroid/net/Uri;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Stream;->isOffline:Z
 
-    .line 155
+    .line 164
     const-string v0, "video/wvm"
 
     invoke-virtual {v0, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -438,7 +442,7 @@
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Stream;->isEncrypted:Z
 
-    .line 156
+    .line 165
     sget-object v0, Lcom/google/android/youtube/core/model/Stream;->STREAMS_3D:Ljava/util/Set;
 
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -451,95 +455,14 @@
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Stream;->is3D:Z
 
-    .line 157
+    .line 166
     return-void
 
-    .line 152
+    .line 161
     :cond_44
     const/4 v0, 0x0
 
     goto :goto_24
-.end method
-
-.method public static varargs firstAvailable2DStream(Ljava/util/Set;Ljava/util/Set;[Lcom/google/android/youtube/core/model/Stream$Quality;)Lcom/google/android/youtube/core/model/Stream;
-    .registers 4
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 362
-    const/4 v0, 0x0
-
-    invoke-static {p0, v0, p1, p2}, Lcom/google/android/youtube/core/model/Stream;->firstAvailableStream(Ljava/util/Set;ZLjava/util/Set;[Lcom/google/android/youtube/core/model/Stream$Quality;)Lcom/google/android/youtube/core/model/Stream;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static varargs firstAvailable3DStream(Ljava/util/Set;Ljava/util/Set;[Lcom/google/android/youtube/core/model/Stream$Quality;)Lcom/google/android/youtube/core/model/Stream;
-    .registers 4
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 372
-    const/4 v0, 0x1
-
-    invoke-static {p0, v0, p1, p2}, Lcom/google/android/youtube/core/model/Stream;->firstAvailableStream(Ljava/util/Set;ZLjava/util/Set;[Lcom/google/android/youtube/core/model/Stream$Quality;)Lcom/google/android/youtube/core/model/Stream;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private static varargs firstAvailableStream(Ljava/util/Set;ZLjava/util/Set;[Lcom/google/android/youtube/core/model/Stream$Quality;)Lcom/google/android/youtube/core/model/Stream;
-    .registers 7
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 346
-    array-length v2, p3
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_3
-    if-ge v1, v2, :cond_12
-
-    aget-object v0, p3, v1
-
-    .line 347
-    invoke-static {p0, v0, p1, p2}, Lcom/google/android/youtube/core/model/Stream;->getMatchingStream(Ljava/util/Set;Lcom/google/android/youtube/core/model/Stream$Quality;ZLjava/util/Set;)Lcom/google/android/youtube/core/model/Stream;
-
-    move-result-object v0
-
-    .line 348
-    if-eqz v0, :cond_e
-
-    .line 352
-    :goto_d
-    return-object v0
-
-    .line 346
-    :cond_e
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_3
-
-    .line 352
-    :cond_12
-    const/4 v0, 0x0
-
-    goto :goto_d
 .end method
 
 .method public static getFirstAvailableFormat(Ljava/util/List;Ljava/util/Map;)Lcom/google/android/youtube/core/model/Stream;
@@ -548,7 +471,7 @@
     .parameter
 
     .prologue
-    .line 314
+    .line 324
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -566,17 +489,17 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 315
+    .line 325
     invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/youtube/core/model/Stream;
 
-    .line 316
+    .line 326
     if-eqz v0, :cond_4
 
-    .line 320
+    .line 330
     :goto_18
     return-object v0
 
@@ -586,68 +509,12 @@
     goto :goto_18
 .end method
 
-.method public static getMatchingStream(Ljava/util/Set;Lcom/google/android/youtube/core/model/Stream$Quality;ZLjava/util/Set;)Lcom/google/android/youtube/core/model/Stream;
-    .registers 7
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 330
-    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :cond_4
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_23
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/youtube/core/model/Stream;
-
-    .line 331
-    iget-boolean v2, v0, Lcom/google/android/youtube/core/model/Stream;->is3D:Z
-
-    if-ne v2, p2, :cond_4
-
-    iget-object v2, v0, Lcom/google/android/youtube/core/model/Stream;->quality:Lcom/google/android/youtube/core/model/Stream$Quality;
-
-    if-ne v2, p1, :cond_4
-
-    if-eqz p3, :cond_22
-
-    iget-object v2, v0, Lcom/google/android/youtube/core/model/Stream;->mimeType:Ljava/lang/String;
-
-    invoke-interface {p3, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    .line 336
-    :cond_22
-    :goto_22
-    return-object v0
-
-    :cond_23
-    const/4 v0, 0x0
-
-    goto :goto_22
-.end method
-
 .method private readObject(Ljava/io/ObjectInputStream;)V
     .registers 4
     .parameter
 
     .prologue
-    .line 243
+    .line 253
     new-instance v0, Ljava/io/InvalidObjectException;
 
     const-string v1, "builder required"
@@ -661,7 +528,7 @@
     .registers 2
 
     .prologue
-    .line 239
+    .line 249
     invoke-virtual {p0}, Lcom/google/android/youtube/core/model/Stream;->buildUpon()Lcom/google/android/youtube/core/model/Stream$Builder;
 
     move-result-object v0
@@ -675,7 +542,7 @@
     .registers 4
 
     .prologue
-    .line 230
+    .line 240
     new-instance v0, Lcom/google/android/youtube/core/model/Stream$Builder;
 
     invoke-direct {v0}, Lcom/google/android/youtube/core/model/Stream$Builder;-><init>()V
@@ -718,32 +585,32 @@
     .parameter
 
     .prologue
-    .line 204
+    .line 214
     if-ne p0, p1, :cond_4
 
-    .line 205
+    .line 215
     const/4 v0, 0x1
 
-    .line 211
+    .line 221
     :goto_3
     return v0
 
-    .line 207
+    .line 217
     :cond_4
     instance-of v0, p1, Lcom/google/android/youtube/core/model/Stream;
 
     if-nez v0, :cond_a
 
-    .line 208
+    .line 218
     const/4 v0, 0x0
 
     goto :goto_3
 
-    .line 210
+    .line 220
     :cond_a
     check-cast p1, Lcom/google/android/youtube/core/model/Stream;
 
-    .line 211
+    .line 221
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Stream;->uri:Landroid/net/Uri;
 
     iget-object v1, p1, Lcom/google/android/youtube/core/model/Stream;->uri:Landroid/net/Uri;
@@ -759,7 +626,7 @@
     .registers 2
 
     .prologue
-    .line 216
+    .line 226
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Stream;->uri:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->hashCode()I
@@ -773,8 +640,8 @@
     .registers 3
 
     .prologue
-    .line 193
-    sget-object v0, Lcom/google/android/youtube/core/model/k;->a:[I
+    .line 202
+    sget-object v0, Lcom/google/android/youtube/core/model/j;->a:[I
 
     iget-object v1, p0, Lcom/google/android/youtube/core/model/Stream;->quality:Lcom/google/android/youtube/core/model/Stream$Quality;
 
@@ -786,23 +653,24 @@
 
     packed-switch v0, :pswitch_data_12
 
-    .line 199
+    .line 209
     const/4 v0, 0x0
 
     :goto_e
     return v0
 
-    .line 197
+    .line 207
     :pswitch_f
     const/4 v0, 0x1
 
     goto :goto_e
 
-    .line 193
+    .line 202
     nop
 
     :pswitch_data_12
     .packed-switch 0x1
+        :pswitch_f
         :pswitch_f
         :pswitch_f
         :pswitch_f
@@ -813,16 +681,12 @@
     .registers 4
 
     .prologue
-    .line 221
+    .line 231
     new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "["
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/android/youtube/core/model/Stream;->uri:Landroid/net/Uri;
 

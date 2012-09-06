@@ -17,7 +17,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field static final LOW_BATTERY_THRESHOLD:I = 0x14
 

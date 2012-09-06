@@ -15,11 +15,8 @@
 
 
 # virtual methods
-.method public abstract getField(JLandroid/database/Cursor;)Z
+.method public abstract getField(Landroid/database/Cursor;)Z
 .end method
 
-.method public abstract setField([JLandroid/database/Cursor;Z)Z
-.end method
-
-.method public abstract setIntField([JLandroid/database/Cursor;I)Z
+.method public abstract setField(JZ)V
 .end method

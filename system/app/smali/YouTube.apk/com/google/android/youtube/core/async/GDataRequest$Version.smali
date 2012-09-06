@@ -24,7 +24,7 @@
 
     const/4 v3, 0x0
 
-    .line 21
+    .line 23
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequest$Version;
 
     const-string v1, "V_2"
@@ -35,7 +35,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequest$Version;->V_2:Lcom/google/android/youtube/core/async/GDataRequest$Version;
 
-    .line 22
+    .line 24
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequest$Version;
 
     const-string v1, "V_2_1"
@@ -46,7 +46,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequest$Version;->V_2_1:Lcom/google/android/youtube/core/async/GDataRequest$Version;
 
-    .line 19
+    .line 21
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/android/youtube/core/async/GDataRequest$Version;
@@ -71,13 +71,13 @@
     .parameter
 
     .prologue
-    .line 26
+    .line 28
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 27
+    .line 29
     iput-object p3, p0, Lcom/google/android/youtube/core/async/GDataRequest$Version;->headerValue:Ljava/lang/String;
 
-    .line 28
+    .line 30
     return-void
 .end method
 
@@ -86,7 +86,7 @@
     .parameter
 
     .prologue
-    .line 36
+    .line 38
     const-string v0, "2.1"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -95,10 +95,10 @@
 
     if-eqz v0, :cond_b
 
-    .line 37
+    .line 39
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequest$Version;->V_2_1:Lcom/google/android/youtube/core/async/GDataRequest$Version;
 
-    .line 39
+    .line 41
     :goto_a
     return-object v0
 
@@ -113,7 +113,7 @@
     .parameter
 
     .prologue
-    .line 19
+    .line 21
     const-class v0, Lcom/google/android/youtube/core/async/GDataRequest$Version;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -129,7 +129,7 @@
     .registers 1
 
     .prologue
-    .line 19
+    .line 21
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequest$Version;->$VALUES:[Lcom/google/android/youtube/core/async/GDataRequest$Version;
 
     invoke-virtual {v0}, [Lcom/google/android/youtube/core/async/GDataRequest$Version;->clone()Ljava/lang/Object;
@@ -147,7 +147,7 @@
     .registers 2
 
     .prologue
-    .line 32
+    .line 34
     iget-object v0, p0, Lcom/google/android/youtube/core/async/GDataRequest$Version;->headerValue:Ljava/lang/String;
 
     return-object v0

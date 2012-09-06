@@ -59,7 +59,7 @@
     .line 462
     iput-object p1, p0, Lcom/google/android/talk/fragments/ChatScreenFragment$SimpleActiveChats;->this$0:Lcom/google/android/talk/fragments/ChatScreenFragment;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 457
     const/4 v0, -0x1

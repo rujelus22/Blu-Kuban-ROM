@@ -36,19 +36,19 @@
 
     const/4 v7, 0x0
 
-    .line 41
+    .line 42
     const/4 v4, 0x0
 
-    .line 42
+    .line 43
     .local v4, proto:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
     if-nez p1, :cond_7
 
-    .line 75
+    .line 80
     :cond_6
     :goto_6
     return-object v3
 
-    .line 45
+    .line 46
     :cond_7
     invoke-virtual {p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getBillingParameterList()Ljava/util/List;
 
@@ -72,7 +72,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
 
-    .line 46
+    .line 47
     .local v0, candidate:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
     invoke-virtual {v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getBillingInstrumentType()I
 
@@ -80,15 +80,15 @@
 
     if-ne v5, v6, :cond_f
 
-    .line 48
+    .line 49
     move-object v4, v0
 
-    .line 52
+    .line 53
     .end local v0           #candidate:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
     :cond_22
     if-eqz v4, :cond_6
 
-    .line 58
+    .line 59
     :try_start_24
     new-instance v5, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
 
@@ -178,21 +178,53 @@
 
     move-result-object v5
 
+    invoke-virtual {v4}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getDeviceAssociationMethod()I
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->setAssociationMethod(I)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+
+    move-result-object v5
+
+    invoke-virtual {v4}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getUserTokenRequestMessage()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->setRequestUserTokenText(Ljava/lang/String;)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+
+    move-result-object v5
+
+    invoke-virtual {v4}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getUserTokenRequestAddress()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->setRequestUserTokenTo(Ljava/lang/String;)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+
+    move-result-object v5
+
+    invoke-virtual {v4}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;->getPassphraseRequired()Z
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->setPasswordRequired(Z)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+
+    move-result-object v5
+
     invoke-virtual {v5}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->build()Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
-    :try_end_7e
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_24 .. :try_end_7e} :catch_80
+    :try_end_9e
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_24 .. :try_end_9e} :catch_a1
 
     move-result-object v3
 
     .local v3, params:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
-    goto :goto_6
+    goto/16 :goto_6
 
-    .line 71
+    .line 76
     .end local v3           #params:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
-    :catch_80
+    :catch_a1
     move-exception v2
 
-    .line 72
+    .line 77
     .local v2, iae:Ljava/lang/IllegalArgumentException;
     const-string v5, "Missing fields for creating carrier billing parameters"
 
@@ -200,7 +232,7 @@
 
     invoke-static {v5, v6}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 73
+    .line 78
     const/4 v3, 0x0
 
     .restart local v3       #params:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
@@ -230,11 +262,11 @@
 
     invoke-virtual {v1, v0}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;->setParams(Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;)V
 
-    .line 34
+    .line 35
     :goto_f
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 35
+    .line 36
     return-void
 
     .line 32
@@ -246,6 +278,13 @@
     new-array v2, v2, [Ljava/lang/Object;
 
     invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 33
+    invoke-static {}, Lcom/google/android/finsky/billing/BillingLocator;->getCarrierBillingStorage()Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;->clearParams()V
 
     goto :goto_f
 .end method

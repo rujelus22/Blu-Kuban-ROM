@@ -1,129 +1,156 @@
-.class public abstract Lcom/google/googlenav/ui/view/dialog/c;
-.super Lcom/google/googlenav/ui/view/android/ap;
+.class Lcom/google/googlenav/ui/view/dialog/c;
+.super Landroid/webkit/WebViewClient;
+.source "SourceFile"
+
+
+# instance fields
+.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/a;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/a;)V
     .registers 2
+    .parameter
 
-    const v0, 0x7f0d001c
+    .prologue
+    .line 174
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/c;->a:Lcom/google/googlenav/ui/view/dialog/a;
 
-    invoke-direct {p0, v0}, Lcom/google/googlenav/ui/view/android/ap;-><init>(I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/googlenav/ui/p;)V
-    .registers 3
-
-    const v0, 0x7f0d001c
-
-    invoke-direct {p0, p1, v0}, Lcom/google/googlenav/ui/view/android/ap;-><init>(Lcom/google/googlenav/ui/p;I)V
+    invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public L_()Z
-    .registers 2
+.method public onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
+    .registers 5
+    .parameter
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    .line 196
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/c;->a:Lcom/google/googlenav/ui/view/dialog/a;
 
-    return v0
+    iget-object v0, v0, Lcom/google/googlenav/ui/view/dialog/a;->m:Landroid/widget/ScrollView;
+
+    invoke-virtual {v0}, Landroid/widget/ScrollView;->requestLayout()V
+
+    .line 197
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/c;->a:Lcom/google/googlenav/ui/view/dialog/a;
+
+    iget-object v0, v0, Lcom/google/googlenav/ui/view/dialog/a;->c:Landroid/widget/TextView;
+
+    invoke-virtual {v0, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 198
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/c;->a:Lcom/google/googlenav/ui/view/dialog/a;
+
+    iget-object v0, v0, Lcom/google/googlenav/ui/view/dialog/a;->m:Landroid/widget/ScrollView;
+
+    new-instance v1, Lcom/google/googlenav/ui/view/dialog/d;
+
+    invoke-direct {v1, p0}, Lcom/google/googlenav/ui/view/dialog/d;-><init>(Lcom/google/googlenav/ui/view/dialog/c;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/ScrollView;->post(Ljava/lang/Runnable;)Z
+
+    .line 205
+    return-void
 .end method
 
-.method protected N_()V
-    .registers 3
+.method public onScaleChanged(Landroid/webkit/WebView;FF)V
+    .registers 13
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-static {}, Lcom/google/googlenav/android/a;->f()Z
+    .prologue
+    .line 187
+    new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    const/4 v1, -0x1
+
+    invoke-virtual {p1}, Landroid/webkit/WebView;->getContentHeight()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    mul-float/2addr v2, p3
+
+    float-to-int v2, v2
+
+    invoke-direct {v0, v1, v2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+
+    invoke-virtual {p1, v0}, Landroid/webkit/WebView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 190
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/c;->a:Lcom/google/googlenav/ui/view/dialog/a;
+
+    iget-object v7, v0, Lcom/google/googlenav/ui/view/dialog/a;->m:Landroid/widget/ScrollView;
+
+    const/4 v8, 0x0
+
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/c;->a:Lcom/google/googlenav/ui/view/dialog/a;
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/c;->a:Lcom/google/googlenav/ui/view/dialog/a;
+
+    iget-object v1, v1, Lcom/google/googlenav/ui/view/dialog/a;->m:Landroid/widget/ScrollView;
+
+    invoke-virtual {v1}, Landroid/widget/ScrollView;->getScrollY()I
+
+    move-result v2
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/c;->a:Lcom/google/googlenav/ui/view/dialog/a;
+
+    iget-object v1, v1, Lcom/google/googlenav/ui/view/dialog/a;->d:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getHeight()I
+
+    move-result v3
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/c;->a:Lcom/google/googlenav/ui/view/dialog/a;
+
+    iget-object v1, v1, Lcom/google/googlenav/ui/view/dialog/a;->m:Landroid/widget/ScrollView;
+
+    invoke-virtual {v1}, Landroid/widget/ScrollView;->getHeight()I
+
+    move-result v4
+
+    move-object v1, p1
+
+    move v5, p2
+
+    move v6, p3
+
+    invoke-virtual/range {v0 .. v6}, Lcom/google/googlenav/ui/view/dialog/a;->a(Landroid/webkit/WebView;IIIFF)I
 
     move-result v0
 
-    if-nez v0, :cond_e
+    invoke-virtual {v7, v8, v0}, Landroid/widget/ScrollView;->scrollTo(II)V
 
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/c;->getWindow()Landroid/view/Window;
+    .line 192
+    return-void
+.end method
 
-    move-result-object v0
+.method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
+    .registers 5
+    .parameter
+    .parameter
+
+    .prologue
+    .line 177
+    invoke-virtual {p1, p2}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
+
+    .line 180
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/c;->a:Lcom/google/googlenav/ui/view/dialog/a;
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Landroid/view/Window;->requestFeature(I)Z
+    invoke-static {v0, v1}, Lcom/google/googlenav/ui/view/dialog/a;->a(Lcom/google/googlenav/ui/view/dialog/a;Z)V
 
-    :cond_e
-    return-void
-.end method
-
-.method protected e()Z
-    .registers 2
-
+    .line 181
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method protected g()V
-    .registers 3
-
-    invoke-static {}, Lcom/google/googlenav/android/a;->f()Z
-
-    move-result v0
-
-    if-nez v0, :cond_10
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/c;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    const v1, 0x7f020171
-
-    invoke-virtual {v0, v1}, Landroid/view/Window;->setBackgroundDrawableResource(I)V
-
-    :cond_10
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/c;->f()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Las/b;->b(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_27
-
-    invoke-static {}, Lcom/google/googlenav/android/a;->f()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_28
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/c;->f()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/google/googlenav/ui/view/dialog/c;->setTitle(Ljava/lang/CharSequence;)V
-
-    :cond_27
-    :goto_27
-    return-void
-
-    :cond_28
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/c;->h:Landroid/view/View;
-
-    const v1, 0x7f0f02ce
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    if-eqz v0, :cond_27
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/c;->f()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    goto :goto_27
 .end method

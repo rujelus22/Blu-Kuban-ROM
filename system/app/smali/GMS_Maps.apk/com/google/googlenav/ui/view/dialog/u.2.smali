@@ -1,50 +1,73 @@
-.class Lcom/google/googlenav/ui/view/dialog/u;
-.super Lcom/google/googlenav/ui/view/dialog/B;
+.class Lcom/google/googlenav/ui/view/dialog/U;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/q;
+.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/R;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/q;)V
-    .registers 3
+.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/R;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/u;->a:Lcom/google/googlenav/ui/view/dialog/q;
+    .prologue
+    .line 151
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/U;->a:Lcom/google/googlenav/ui/view/dialog/R;
 
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lcom/google/googlenav/ui/view/dialog/B;-><init>(Lcom/google/googlenav/ui/view/dialog/r;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .registers 3
+.method public onClick(Landroid/view/View;)V
+    .registers 5
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/u;->a:Lcom/google/googlenav/ui/view/dialog/q;
+    .prologue
+    .line 155
+    new-instance v0, Landroid/app/AlertDialog$Builder;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/dialog/q;->d()V
+    invoke-static {}, Lcom/google/googlenav/ui/bn;->e()Landroid/content/Context;
 
-    return-void
-.end method
+    move-result-object v1
 
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .registers 4
+    invoke-static {v1}, Lcom/google/android/maps/MapsActivity;->getMapsActivity(Landroid/content/Context;)Lcom/google/android/maps/MapsActivity;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/u;->a:Lcom/google/googlenav/ui/view/dialog/q;
+    move-result-object v1
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/q;->a(Lcom/google/googlenav/ui/view/dialog/q;)Lcom/google/googlenav/ui/view/dialog/G;
+    invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    const/16 v1, 0x257
+
+    invoke-static {v1}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/view/dialog/G;->c:Landroid/view/View;
+    const/16 v1, 0x362
 
-    const/4 v1, 0x0
+    invoke-static {v1}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    move-result-object v1
 
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+
+    .line 159
     return-void
 .end method

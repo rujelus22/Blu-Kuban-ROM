@@ -753,6 +753,16 @@
     return-void
 .end method
 
+.method public static getFrameDelay()J
+    .registers 2
+
+    .prologue
+    .line 709
+    sget-wide v0, Landroid/animation/ValueAnimator;->sFrameDelay:J
+
+    return-wide v0
+.end method
+
 .method public static varargs ofFloat([F)Landroid/animation/ValueAnimator;
     .registers 2
     .parameter "values"

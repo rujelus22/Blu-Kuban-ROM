@@ -41,8 +41,8 @@
     <string name="da_distance_format_separator">,</string>
     <string name="da_distance_format_mode">metric</string>
     <string name="da_time_format_days">%1$s j %2$s h</string>
-    <string name="da_time_format_hours">%1$s h %2$s mn</string>
-    <string name="da_time_format_minutes">%1$s mn</string>
+    <string name="da_time_format_hours">%1$s h %2$s min</string>
+    <string name="da_time_format_minutes">%1$s min</string>
     <string name="da_time_format_clock">%1$s:%2$s</string>
     <string name="da_notification_step_format">%1$s - %2$s</string>
     <string name="da_navigation">Navigation</string>
@@ -53,28 +53,35 @@
 N'utilisez pas cette application en conduisant. Les infos trafic ne sont pas fournies en temps réel et les itinéraires peuvent être erronés, dangereux, interdits ou peuvent contenir des trajets en ferry. Il est également possible que les itinéraires à pied empruntent des chemins non piétonniers. Merci de respecter les lois en vigueur.
 
 Ne quittez pas la route des yeux !"</string>
+    <string name="da_agreement_with_walking_and_biking">"Google Maps Navigation est disponible en version bêta. Nous vous recommandons de l'utiliser avec précaution.
+
+N'utilisez pas cette application en conduisant. Les infos trafic ne sont pas fournies en temps réel et les itinéraires peuvent être erronés, dangereux, interdits ou peuvent contenir des trajets en ferry. Il est également possible que les itinéraires à pied empruntent des chemins non piétonniers. De même, certains itinéraires à vélo peuvent comporter des pistes non cyclables. Merci de respecter les lois en vigueur.
+
+Ne quittez pas la route des yeux !"</string>
     <string name="da_disclaimer_checkbox">Afficher ce message la prochaine fois</string>
-    <string name="da_show_list">Itinéraire</string>
-    <string name="da_route_overview">"Infos sur l'itinéraire"</string>
-    <string name="da_show_map">Afficher plan</string>
+    <string name="da_show_list">Liste des étapes</string>
+    <string name="da_route_and_alternates">Itinéraire et alternatives</string>
+    <string name="da_show_map">Afficher le plan</string>
+    <string name="da_menu_more">Plus</string>
     <string name="da_satellite">Satellite</string>
     <string name="da_traffic_view">Trafic</string>
     <string name="da_no_traffic_here">Aucune info sur le trafic</string>
     <string name="da_traffic">Infos trafic</string>
     <string name="da_area_view">Afficher toute la zone</string>
-    <string name="da_mute">Silencieux</string>
-    <string name="da_unmute">Vocal</string>
     <string name="da_settings">Paramètres</string>
     <string name="da_help">Aide</string>
     <string name="da_terms_privacy_notices">Conditions et confidentialité</string>
     <string name="da_terms_and_conditions">"Conditions d'utilisation"</string>
     <string name="da_privacy_policy">Règles de confidentialité</string>
-    <string name="da_legal_notices">Notices juridiques</string>
+    <string name="da_legal_notices">Mentions légales</string>
     <string name="da_navigation_suspended">Mode Navigation suspendu</string>
     <string name="da_exit_navigation">Quitter la navigation</string>
+    <string name="da_save">Enregistrer</string>
     <string name="da_power_settings_category">"Paramètres d'alimentation"</string>
     <string name="da_screen_dimming_setting_title">"Luminosité de l'écran"</string>
     <string name="da_screen_dimming_setting_summary">"Atténuation de la luminosité de l'écran entre les instructions, pour économiser la batterie"</string>
+    <string name="da_home_setting_set_address">"Définir l'adresse de mon domicile"</string>
+    <string name="da_home_setting_set_address_hint">Saisissez une adresse.</string>
     <string name="da_info_settings_category">Informations</string>
     <string name="da_email_me_when_resolved">"M'envoyer un e-mail une fois le problème résolu"</string>
     <string name="da_problem_reported">Problème signalé</string>
@@ -109,6 +116,8 @@ Dans les paramètres de l'application, vous pouvez activer un raccourci permetta
     <string name="da_turn_on_gps">Afficher paramètres localisation ?</string>
     <string name="da_voice_guidance">Assistant vocal</string>
     <string name="da_install_voice_guidance_prompt">Pour utiliser la navigation par guidage vocal, vous devez installer la prise en charge de la synthèse vocale disponible sur le site Android Market.</string>
+    <string name="da_voice_off">Désactiver la voix</string>
+    <string name="da_voice_on">Activer le guidage vocal</string>
     <string name="da_voice_guidance_on">Guidage vocal activé</string>
     <string name="da_voice_guidance_off">Guidage vocal désactivé</string>
     <string name="da_dialog_ok">OK</string>
@@ -119,9 +128,9 @@ Dans les paramètres de l'application, vous pouvez activer un raccourci permetta
     <string name="da_dialog_install">Installer</string>
     <string name="da_dialog_dont_accept">Refuser</string>
     <string name="da_dialog_go">OK</string>
-    <string name="da_dialog_get_directions">Calculer itinéraire</string>
+    <string name="da_dialog_get_directions">Itinéraire</string>
     <string name="da_map">Plan</string>
-    <string name="da_clear_layers">Effacer résultats</string>
+    <string name="da_clear_layers">Effacer les résultats</string>
     <string name="da_layer_name_parking">Parking</string>
     <string name="da_layer_name_attractions">Attractions</string>
     <string name="da_layer_name_gas_stations">Stations-service</string>
@@ -136,7 +145,7 @@ Dans les paramètres de l'application, vous pouvez activer un raccourci permetta
     <string name="da_via_name_separator">" &amp; "</string>
     <string name="da_record_feedback">Enregistrez vos commentaires</string>
     <string name="da_destination_not_here">Destination incorrecte</string>
-    <string name="da_new_destination">Destination suiv.</string>
+    <string name="da_new_destination">Destination suivante</string>
     <string name="da_reroute_to_destination">Retour à la destination</string>
     <string name="da_change_destination">Définir destination</string>
     <string name="da_search_for_destination">Rechercher...</string>
@@ -188,9 +197,12 @@ Dans les paramètres de l'application, vous pouvez activer un raccourci permetta
     <string name="da_picker_speak_destination">Énoncer destination</string>
     <string name="da_picker_contacts">Contacts</string>
     <string name="da_picker_starred_items">Adresses enregistrées</string>
+    <string name="da_picker_starred">FAVORIS</string>
     <string name="da_picker_new_contact">Nouveau contact</string>
+    <string name="da_go_home">Rentrer à la maison</string>
     <string name="da_picker_saved_destinations">Destinations enregistrées</string>
     <string name="da_picker_recent_destinations">Destinations récentes</string>
+    <string name="da_picker_shortcuts">RACCOURCIS</string>
     <string name="da_navigate_to">Atteindre</string>
     <string name="da_return_to">Revenir à</string>
     <string name="da_picker_search_hint">Destination</string>
@@ -208,7 +220,6 @@ Vous pouvez ajouter de nouveaux contacts ou définir des adresses pour des conta
     <string name="da_walking">À pied</string>
     <string name="da_bicycling">À vélo</string>
     <string name="da_quoted_text">\"%1$s\"</string>
-    <string name="da_more_info">"Plus d'infos"</string>
     <string name="da_walking_warning">À pied (bêta) : à utiliser avec précaution</string>
     <string name="da_bicycling_warning">À vélo (bêta) : itinéraires à utiliser avec précaution</string>
     <string name="da_calibrate_compass_title">Étalonnage de la boussole</string>
@@ -216,7 +227,6 @@ Vous pouvez ajouter de nouveaux contacts ou définir des adresses pour des conta
     <string name="da_confirm_exit_title">Quitter le mode Navigation ?</string>
     <string name="da_confirm_exit_text">"Vous n'allez plus être guidé."</string>
     <string name="da_route_includes_tolls">"L'itinéraire comporte des péages."</string>
-    <string name="da_avoid_tolls">Éviter les péages</string>
     <string name="da_avoiding_tolls">Itinéraire sans péages</string>
     <string name="da_avoiding_highways">Itinéraire sans autoroutes</string>
     <string name="da_route_includes_unavoidable_tolls">Cet itinéraire comporte des péages.</string>
@@ -272,17 +282,19 @@ Vous pouvez ajouter de nouveaux contacts ou définir des adresses pour des conta
     <string name="DIRECTIONS_TITLE">Itinéraire</string>
     <string name="EXIT_COMMAND">Quitter</string>
     <string name="FEATURE_SWITCHER_LATITUDE_SUBTITLE">Trouvez les membres de votre famille et vos amis</string>
-    <string name="FEATURE_SWITCHER_LOCAL">Google Adresses</string>
+    <string name="FEATURE_SWITCHER_LOCAL">Local</string>
     <string name="FEATURE_SWITCHER_LOCAL_SUBTITLE">"Trouvez des restaurants, des bars et d'autres lieux"</string>
     <string name="FEATURE_SWITCHER_MAP">Plan</string>
     <string name="FEATURE_SWITCHER_NAV">Navigation GPS</string>
     <string name="FEATURE_SWITCHER_TRAFFIC">Trafic</string>
     <string name="FRIENDS_COMMAND_ACTIVATE">Latitude</string>
     <string name="FRIENDS_COMMAND_JOIN">Activer Latitude</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE">Profil Google+</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE_DESCRIPTION">"Voir le profil d'un ami sur Google+"</string>
     <string name="FRIENDS_HISTORY_SUMMARY_TITLE">Historique Latitude</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TICKER">{0} souhaiterait que vous fassiez votre check-in</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TITLE">Demande de check-in Latitude</string>
-    <string name="GOHOME_DESTINATION_HINT">Entrer une adresse</string>
+    <string name="GOHOME_DESTINATION_HINT">Saisir une adresse</string>
     <string name="GOHOME_PICK_SHORTCUT_IMAGE">Icône de raccourci</string>
     <string name="GOHOME_SAVE_SHORTCUT">Enregistrer</string>
     <string name="GOHOME_SHORTCUT_DESTINATION">Destination</string>
@@ -298,10 +310,26 @@ Vous pouvez ajouter de nouveaux contacts ou définir des adresses pour des conta
     <string name="LATITUDE_WIDGET_FRIENDS_ACTIVATE">Appuyez pour vous connecter à Latitude.</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LAST_UPDATED_TIME_ABSOLUTE">Dernière mise à jour : {0}</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LOCATION_UNKNOWN">Position inconnue</string>
+    <string name="LATITUDE_WIDGET_START">Appuyez pour lancer Google Latitude.</string>
     <string name="LOADING">Chargement...</string>
-    <string name="LOCAL_APP_NAME">Google Local</string>
     <string name="MAPS_APP_NAME">Maps</string>
     <string name="MY_PLACES_COMMAND">Mes adresses</string>
+    <string name="MY_PLACES_DELETE_CONFIRM">&lt;b>{0}&lt;/ b> sera retiré de Mes adresses.</string>
+    <string name="MY_PLACES_DELETE_CONFIRM_TITLE">Supprimer</string>
+    <string name="MY_PLACES_DELETE_ITEM_COMMAND">Supprimer</string>
+    <string name="MY_PLACES_DELETE_OWNED_MAP_CONFIRM">La carte &lt;b>{0}&lt;/b> sera retirée de Mes adresses et supprimée définitivement.</string>
+    <string name="MY_PLACES_DELETE_PLACE_CONFIRM">"L'adresse &lt;b>{0}&lt;/b> sera retirée de Mes adresses, et les activités qui lui sont associées seront supprimées définitivement : "</string>
+    <string name="MY_PLACES_DELETE_SERVICE_UNAVAILABLE">Service indisponible. Veuillez réessayer ultérieurement.</string>
+    <string name="MY_PLACES_ITEM_IS_BOOKMARKED_MY_MAP">Favoris</string>
+    <string name="MY_PLACES_ITEM_IS_MY_MAP">Ma carte</string>
+    <string name="MY_PLACES_ITEM_IS_REVIEWED">Avis disponible</string>
+    <string name="MY_PLACES_ITEM_IS_STARRED">Favori</string>
+    <string name="MY_PLACES_LINK_ON_SUGGEST">Personnalisé avec Mes adresses</string>
+    <string name="MY_PLACES_NO_DIRECTIONS_ITEM_MESSAGE">"Aucun historique d'itinéraires."</string>
+    <string name="MY_PLACES_NO_MY_MAP_ITEM_MESSAGE">"Vous n'avez pas de cartes."</string>
+    <string name="MY_PLACES_NO_STARRED_ITEM_MESSAGE">Aucune adresse enregistrée.</string>
+    <string name="MY_PLACES_SEE_ON_MAP_COMMAND">Carte</string>
+    <string name="MY_PLACES_SHOW_DETAIL_PAGE_COMMAND">Détails</string>
     <string name="NAVIGATE_MODE_NAVIGATION">Navigation</string>
     <string name="NEED_NET_BODY">"Pour utiliser cette application, vous devez d'abord l'autoriser à envoyer et à recevoir des données sur le réseau."</string>
     <string name="NEED_NET_TITLE">Accès au réseau requis</string>
@@ -309,8 +337,11 @@ Vous pouvez ajouter de nouveaux contacts ou définir des adresses pour des conta
     <string name="NET_FAIL_BODY">Cette application requiert une connexion de données active.</string>
     <string name="NET_FAIL_TITLE">Échec de connexion au réseau</string>
     <string name="NET_UNAVAILABLE_TITLE">Réseau inaccessible</string>
-    <string name="PLACES_APP_NAME">Adresses</string>
-    <string name="RATINGS_CUSTOM_ASPECT_EXAMPLE_TEXT">Exemples : spaghettis bolognaise, cocktails, musique</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_PLURAL">{0} offres à proximité</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_SINGLE">1 offre à proximité</string>
+    <string name="OFFERS_FEATURE_SWITCHER_TITLE">Offres</string>
+    <string name="PLACES_APP_NAME">Local</string>
+    <string name="RATINGS_CORRECT_CATEGORY">Sélectionner la catégorie correspondant à ce lieu</string>
     <string name="RATINGS_CUSTOM_ASPECT_HINT_TEXT">Quelles sont les spécificités de ce lieu ?</string>
     <string name="RATINGS_OPTIN_CANCEL">Annuler</string>
     <string name="RATINGS_OPTIN_CLOSE">Fermer</string>
@@ -326,6 +357,7 @@ Vous pouvez ajouter de nouveaux contacts ou définir des adresses pour des conta
     <string name="RATINGS_RATE_PLACES">Pourquoi donner votre avis sur des adresses ?</string>
     <string name="RATINGS_SET_APPEARANCE">"Définir l'apparence"</string>
     <string name="RATINGS_WAIT">Veuillez patienter...</string>
+    <string name="RATINGS_WRONG_LABELS">Libellés incorrects ?</string>
     <string name="SEARCH_HINT">Rechercher</string>
     <string name="SHORT_APP_NAME">Google Maps</string>
     <string name="TRAFFIC_WIDGET_END_LOCATION">Point d’arrivée</string>
@@ -335,7 +367,12 @@ Vous pouvez ajouter de nouveaux contacts ou définir des adresses pour des conta
     <string name="TRAFFIC_WIDGET_START_LOCATION">Point de départ</string>
     <string name="TRANSIT_NAVIGATION">Navigation en transports en commun</string>
     <string name="TRANSIT_TITLE">Transports en commun</string>
-    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">"Erreur grave.  Veuillez quitter l'application et redémarrer."</string>
+    <string name="TRANSIT_TYPE_FILTER_ALL">Tout</string>
+    <string name="TRANSIT_TYPE_FILTER_BUS">Bus</string>
+    <string name="TRANSIT_TYPE_FILTER_SUBWAY">Métro</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAIN">Train</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAM">Tramway</string>
+    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">Un problème est survenu. Veuillez réessayer dans quelques minutes.</string>
     <string name="UNKNOWN_COMMUNICATION_FAILURE_TITLE">Erreur inconnue</string>
     <string name="UPGRADE_BODY">Pour utiliser cette application, vous devez installer une version récente.</string>
     <string name="UPGRADE_TITLE">Mise à jour du logiciel</string>

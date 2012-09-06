@@ -1,66 +1,47 @@
 .class final Lcom/google/common/collect/eh;
-.super Ljava/util/TimerTask;
+.super Lcom/google/common/collect/i;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/ref/WeakReference;
+.field final synthetic a:[Ljava/lang/Object;
 
-.field final synthetic b:Ljava/lang/ref/WeakReference;
-
-.field final synthetic c:Lcom/google/common/collect/MapMaker$StrategyImpl;
+.field final synthetic b:I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/MapMaker$StrategyImpl;Ljava/lang/ref/WeakReference;Ljava/lang/ref/WeakReference;)V
+.method constructor <init>(I[Ljava/lang/Object;I)V
     .registers 4
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 509
-    iput-object p1, p0, Lcom/google/common/collect/eh;->c:Lcom/google/common/collect/MapMaker$StrategyImpl;
+    .line 1072
+    iput-object p2, p0, Lcom/google/common/collect/eh;->a:[Ljava/lang/Object;
 
-    iput-object p2, p0, Lcom/google/common/collect/eh;->a:Ljava/lang/ref/WeakReference;
+    iput p3, p0, Lcom/google/common/collect/eh;->b:I
 
-    iput-object p3, p0, Lcom/google/common/collect/eh;->b:Ljava/lang/ref/WeakReference;
-
-    invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
+    invoke-direct {p0, p1}, Lcom/google/common/collect/i;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method protected final a(I)Ljava/lang/Object;
     .registers 4
+    .parameter
 
     .prologue
-    .line 511
-    iget-object v0, p0, Lcom/google/common/collect/eh;->a:Ljava/lang/ref/WeakReference;
+    .line 1074
+    iget-object v0, p0, Lcom/google/common/collect/eh;->a:[Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    iget v1, p0, Lcom/google/common/collect/eh;->b:I
 
-    move-result-object v0
+    add-int/2addr v1, p1
 
-    .line 512
-    if-eqz v0, :cond_15
+    aget-object v0, v0, v1
 
-    .line 514
-    iget-object v1, p0, Lcom/google/common/collect/eh;->c:Lcom/google/common/collect/MapMaker$StrategyImpl;
-
-    iget-object v1, v1, Lcom/google/common/collect/MapMaker$StrategyImpl;->map:Ljava/util/concurrent/ConcurrentMap;
-
-    iget-object v2, p0, Lcom/google/common/collect/eh;->b:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-interface {v1, v0, v2}, Ljava/util/concurrent/ConcurrentMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 516
-    :cond_15
-    return-void
+    return-object v0
 .end method

@@ -1,85 +1,69 @@
-.class abstract Lcom/google/common/collect/bx;
+.class final synthetic Lcom/google/common/collect/bx;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field static final synthetic a:[I
+
+
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method static constructor <clinit>()V
+    .registers 3
 
     .prologue
-    .line 264
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public a(Ljava/lang/Iterable;)Lcom/google/common/collect/bx;
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 310
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 311
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    .line 82
+    invoke-static {}, Lcom/google/common/collect/BstSide;->values()[Lcom/google/common/collect/BstSide;
 
     move-result-object v0
 
-    :goto_7
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    sput-object v0, Lcom/google/common/collect/bx;->a:[I
+
+    :try_start_9
+    sget-object v0, Lcom/google/common/collect/bx;->a:[I
+
+    sget-object v1, Lcom/google/common/collect/BstSide;->LEFT:Lcom/google/common/collect/BstSide;
+
+    invoke-virtual {v1}, Lcom/google/common/collect/BstSide;->ordinal()I
 
     move-result v1
 
-    if-eqz v1, :cond_15
+    const/4 v2, 0x1
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
 
-    move-result-object v1
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/common/collect/bx;->a:[I
 
-    .line 312
-    invoke-virtual {p0, v1}, Lcom/google/common/collect/bx;->a(Ljava/lang/Object;)Lcom/google/common/collect/bx;
+    sget-object v1, Lcom/google/common/collect/BstSide;->RIGHT:Lcom/google/common/collect/BstSide;
 
-    goto :goto_7
+    invoke-virtual {v1}, Lcom/google/common/collect/BstSide;->ordinal()I
 
-    .line 314
-    :cond_15
-    return-object p0
-.end method
+    move-result v1
 
-.method public abstract a(Ljava/lang/Object;)Lcom/google/common/collect/bx;
-.end method
+    const/4 v2, 0x2
 
-.method public varargs a([Ljava/lang/Object;)Lcom/google/common/collect/bx;
-    .registers 5
-    .parameter
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
 
-    .prologue
-    .line 290
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    :goto_1f
+    return-void
 
-    .line 291
-    array-length v1, p1
+    :catch_20
+    move-exception v0
 
-    const/4 v0, 0x0
+    goto :goto_1f
 
-    :goto_5
-    if-ge v0, v1, :cond_f
+    :catch_22
+    move-exception v0
 
-    aget-object v2, p1, v0
-
-    .line 292
-    invoke-virtual {p0, v2}, Lcom/google/common/collect/bx;->a(Ljava/lang/Object;)Lcom/google/common/collect/bx;
-
-    .line 291
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_5
-
-    .line 294
-    :cond_f
-    return-object p0
+    goto :goto_14
 .end method

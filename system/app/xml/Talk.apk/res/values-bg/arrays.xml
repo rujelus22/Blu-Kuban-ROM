@@ -29,6 +29,12 @@
         <item>Само при тих режим</item>
         <item>Никога</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>изкл.</item>
+        <item>ниска</item>
+        <item>средна</item>
+        <item>виртуално</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Няма</item>
         <item>Стабилизация на изображението: Ниска</item>

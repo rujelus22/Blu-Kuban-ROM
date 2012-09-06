@@ -29,7 +29,7 @@
     .registers 1
 
     .prologue
-    .line 44
+    .line 45
     const/16 v0, 0x40
 
     new-array v0, v0, [B
@@ -38,7 +38,7 @@
 
     sput-object v0, Lorg/apache/james/mime4j/codec/EncoderUtil;->BASE64_TABLE:[B
 
-    .line 54
+    .line 55
     const-string v0, "=_?"
 
     invoke-static {v0}, Lorg/apache/james/mime4j/codec/EncoderUtil;->initChars(Ljava/lang/String;)Ljava/util/BitSet;
@@ -47,7 +47,7 @@
 
     sput-object v0, Lorg/apache/james/mime4j/codec/EncoderUtil;->Q_REGULAR_CHARS:Ljava/util/BitSet;
 
-    .line 56
+    .line 57
     const-string v0, "=_?\"#$%&\'(),.:;<>@[\\]^`{|}~"
 
     invoke-static {v0}, Lorg/apache/james/mime4j/codec/EncoderUtil;->initChars(Ljava/lang/String;)Ljava/util/BitSet;
@@ -56,7 +56,7 @@
 
     sput-object v0, Lorg/apache/james/mime4j/codec/EncoderUtil;->Q_RESTRICTED_CHARS:Ljava/util/BitSet;
 
-    .line 65
+    .line 66
     const-string v0, "()<>@,;:\\\"/[]?="
 
     invoke-static {v0}, Lorg/apache/james/mime4j/codec/EncoderUtil;->initChars(Ljava/lang/String;)Ljava/util/BitSet;
@@ -65,7 +65,7 @@
 
     sput-object v0, Lorg/apache/james/mime4j/codec/EncoderUtil;->TOKEN_CHARS:Ljava/util/BitSet;
 
-    .line 67
+    .line 68
     const-string v0, "()<>@.,;:\\\"[]"
 
     invoke-static {v0}, Lorg/apache/james/mime4j/codec/EncoderUtil;->initChars(Ljava/lang/String;)Ljava/util/BitSet;
@@ -76,7 +76,7 @@
 
     return-void
 
-    .line 44
+    .line 45
     :array_2a
     .array-data 0x1
         0x41t
@@ -150,10 +150,10 @@
     .registers 1
 
     .prologue
-    .line 106
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
     .line 107
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 108
     return-void
 .end method
 
@@ -162,7 +162,7 @@
     .parameter "bytes"
 
     .prologue
-    .line 512
+    .line 537
     array-length v0, p0
 
     add-int/lit8 v0, v0, 0x2
@@ -179,16 +179,16 @@
     .parameter "text"
 
     .prologue
-    .line 566
+    .line 594
     const/4 v0, 0x1
 
-    .line 567
+    .line 595
     .local v0, ascii:Z
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    .line 568
+    .line 596
     .local v3, len:I
     const/4 v2, 0x0
 
@@ -196,42 +196,42 @@
     :goto_6
     if-ge v2, v3, :cond_1b
 
-    .line 569
+    .line 597
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v1
 
-    .line 570
+    .line 598
     .local v1, ch:C
     const/16 v4, 0xff
 
     if-le v1, v4, :cond_13
 
-    .line 571
+    .line 599
     sget-object v4, Lorg/apache/james/mime4j/util/CharsetUtil;->UTF_8:Ljava/nio/charset/Charset;
 
-    .line 577
+    .line 605
     .end local v1           #ch:C
     :goto_12
     return-object v4
 
-    .line 573
+    .line 601
     .restart local v1       #ch:C
     :cond_13
     const/16 v4, 0x7f
 
     if-le v1, v4, :cond_18
 
-    .line 574
+    .line 602
     const/4 v0, 0x0
 
-    .line 568
+    .line 596
     :cond_18
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_6
 
-    .line 577
+    .line 605
     .end local v1           #ch:C
     :cond_1b
     if-eqz v0, :cond_20
@@ -252,19 +252,19 @@
     .parameter "usage"
 
     .prologue
-    .line 581
+    .line 609
     array-length v5, p0
 
     if-nez v5, :cond_6
 
-    .line 582
+    .line 610
     sget-object v5, Lorg/apache/james/mime4j/codec/EncoderUtil$Encoding;->Q:Lorg/apache/james/mime4j/codec/EncoderUtil$Encoding;
 
-    .line 595
+    .line 624
     :goto_5
     return-object v5
 
-    .line 584
+    .line 612
     :cond_6
     sget-object v5, Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;->TEXT_TOKEN:Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;
 
@@ -272,12 +272,12 @@
 
     sget-object v2, Lorg/apache/james/mime4j/codec/EncoderUtil;->Q_REGULAR_CHARS:Ljava/util/BitSet;
 
-    .line 586
+    .line 615
     .local v2, qChars:Ljava/util/BitSet;
     :goto_c
     const/4 v3, 0x0
 
-    .line 587
+    .line 616
     .local v3, qEncoded:I
     const/4 v0, 0x0
 
@@ -287,12 +287,12 @@
 
     if-ge v0, v5, :cond_27
 
-    .line 588
+    .line 617
     aget-byte v5, p0, v0
 
     and-int/lit16 v4, v5, 0xff
 
-    .line 589
+    .line 618
     .local v4, v:I
     const/16 v5, 0x20
 
@@ -304,16 +304,16 @@
 
     if-nez v5, :cond_21
 
-    .line 590
+    .line 619
     add-int/lit8 v3, v3, 0x1
 
-    .line 587
+    .line 616
     :cond_21
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_e
 
-    .line 584
+    .line 612
     .end local v0           #i:I
     .end local v2           #qChars:Ljava/util/BitSet;
     .end local v3           #qEncoded:I
@@ -323,7 +323,7 @@
 
     goto :goto_c
 
-    .line 594
+    .line 623
     .restart local v0       #i:I
     .restart local v2       #qChars:Ljava/util/BitSet;
     .restart local v3       #qEncoded:I
@@ -334,7 +334,7 @@
 
     div-int v1, v5, v6
 
-    .line 595
+    .line 624
     .local v1, percentage:I
     const/16 v5, 0x1e
 
@@ -356,12 +356,12 @@
     .parameter "charset"
 
     .prologue
-    .line 557
+    .line 585
     invoke-virtual {p1, p0}, Ljava/nio/charset/Charset;->encode(Ljava/lang/String;)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 558
+    .line 586
     .local v0, buffer:Ljava/nio/ByteBuffer;
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->limit()I
 
@@ -369,11 +369,11 @@
 
     new-array v1, v2, [B
 
-    .line 559
+    .line 587
     .local v1, bytes:[B
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
 
-    .line 560
+    .line 588
     return-object v1
 .end method
 
@@ -382,19 +382,19 @@
     .parameter "displayName"
 
     .prologue
-    .line 125
+    .line 127
     invoke-static {p0}, Lorg/apache/james/mime4j/codec/EncoderUtil;->isAtomPhrase(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_7
 
-    .line 130
+    .line 132
     .end local p0
     :goto_6
     return-object p0
 
-    .line 127
+    .line 129
     .restart local p0
     :cond_7
     const/4 v0, 0x0
@@ -405,7 +405,7 @@
 
     if-eqz v0, :cond_15
 
-    .line 128
+    .line 130
     sget-object v0, Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;->WORD_ENTITY:Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;
 
     invoke-static {p0, v0}, Lorg/apache/james/mime4j/codec/EncoderUtil;->encodeEncodedWord(Ljava/lang/String;Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;)Ljava/lang/String;
@@ -414,7 +414,7 @@
 
     goto :goto_6
 
-    .line 130
+    .line 132
     :cond_15
     invoke-static {p0}, Lorg/apache/james/mime4j/codec/EncoderUtil;->quote(Ljava/lang/String;)Ljava/lang/String;
 
@@ -432,12 +432,12 @@
     .parameter "bytes"
 
     .prologue
-    .line 491
+    .line 514
     invoke-static {p4}, Lorg/apache/james/mime4j/codec/EncoderUtil;->bEncodedLength([B)I
 
     move-result v2
 
-    .line 493
+    .line 516
     .local v2, encodedLength:I
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -453,13 +453,13 @@
 
     add-int v6, v9, v10
 
-    .line 494
+    .line 518
     .local v6, totalLength:I
     rsub-int/lit8 v9, p2, 0x4b
 
     if-gt v6, v9, :cond_31
 
-    .line 495
+    .line 519
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -486,11 +486,11 @@
 
     move-result-object v9
 
-    .line 507
+    .line 532
     :goto_30
     return-object v9
 
-    .line 497
+    .line 521
     :cond_31
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -504,7 +504,7 @@
 
     move-result v5
 
-    .line 499
+    .line 523
     .local v5, splitOffset:I
     const/4 v9, 0x0
 
@@ -512,31 +512,31 @@
 
     move-result-object v3
 
-    .line 500
+    .line 524
     .local v3, part1:Ljava/lang/String;
     invoke-static {v3, p3}, Lorg/apache/james/mime4j/codec/EncoderUtil;->encode(Ljava/lang/String;Ljava/nio/charset/Charset;)[B
 
     move-result-object v0
 
-    .line 501
+    .line 525
     .local v0, bytes1:[B
     invoke-static {p0, v3, p2, p3, v0}, Lorg/apache/james/mime4j/codec/EncoderUtil;->encodeB(Ljava/lang/String;Ljava/lang/String;ILjava/nio/charset/Charset;[B)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 503
+    .line 528
     .local v7, word1:Ljava/lang/String;
     invoke-virtual {p1, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 504
+    .line 529
     .local v4, part2:Ljava/lang/String;
     invoke-static {v4, p3}, Lorg/apache/james/mime4j/codec/EncoderUtil;->encode(Ljava/lang/String;Ljava/nio/charset/Charset;)[B
 
     move-result-object v1
 
-    .line 505
+    .line 530
     .local v1, bytes2:[B
     const/4 v9, 0x0
 
@@ -544,7 +544,7 @@
 
     move-result-object v8
 
-    .line 507
+    .line 532
     .local v8, word2:Ljava/lang/String;
     new-instance v9, Ljava/lang/StringBuilder;
 
@@ -578,27 +578,27 @@
     .prologue
     const/16 v6, 0x3d
 
-    .line 340
+    .line 359
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 342
+    .line 361
     .local v3, sb:Ljava/lang/StringBuilder;
     const/4 v2, 0x0
 
-    .line 343
+    .line 362
     .local v2, idx:I
     array-length v1, p0
 
-    .line 344
+    .line 363
     .local v1, end:I
     :goto_9
     add-int/lit8 v4, v1, -0x2
 
     if-ge v2, v4, :cond_55
 
-    .line 345
+    .line 364
     aget-byte v4, p0, v2
 
     and-int/lit16 v4, v4, 0xff
@@ -623,7 +623,7 @@
 
     or-int v0, v4, v5
 
-    .line 347
+    .line 366
     .local v0, data:I
     sget-object v4, Lorg/apache/james/mime4j/codec/EncoderUtil;->BASE64_TABLE:[B
 
@@ -637,7 +637,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 348
+    .line 367
     sget-object v4, Lorg/apache/james/mime4j/codec/EncoderUtil;->BASE64_TABLE:[B
 
     shr-int/lit8 v5, v0, 0xc
@@ -650,7 +650,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 349
+    .line 368
     sget-object v4, Lorg/apache/james/mime4j/codec/EncoderUtil;->BASE64_TABLE:[B
 
     shr-int/lit8 v5, v0, 0x6
@@ -663,7 +663,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 350
+    .line 369
     sget-object v4, Lorg/apache/james/mime4j/codec/EncoderUtil;->BASE64_TABLE:[B
 
     and-int/lit8 v5, v0, 0x3f
@@ -674,19 +674,19 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 344
+    .line 363
     add-int/lit8 v2, v2, 0x3
 
     goto :goto_9
 
-    .line 353
+    .line 372
     .end local v0           #data:I
     :cond_55
     add-int/lit8 v4, v1, -0x2
 
     if-ne v2, v4, :cond_95
 
-    .line 354
+    .line 373
     aget-byte v4, p0, v2
 
     and-int/lit16 v4, v4, 0xff
@@ -703,7 +703,7 @@
 
     or-int v0, v4, v5
 
-    .line 355
+    .line 374
     .restart local v0       #data:I
     sget-object v4, Lorg/apache/james/mime4j/codec/EncoderUtil;->BASE64_TABLE:[B
 
@@ -717,7 +717,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 356
+    .line 375
     sget-object v4, Lorg/apache/james/mime4j/codec/EncoderUtil;->BASE64_TABLE:[B
 
     shr-int/lit8 v5, v0, 0xc
@@ -730,7 +730,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 357
+    .line 376
     sget-object v4, Lorg/apache/james/mime4j/codec/EncoderUtil;->BASE64_TABLE:[B
 
     shr-int/lit8 v5, v0, 0x6
@@ -743,10 +743,10 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 358
+    .line 377
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 368
+    .line 387
     .end local v0           #data:I
     :cond_90
     :goto_90
@@ -756,20 +756,20 @@
 
     return-object v4
 
-    .line 360
+    .line 379
     :cond_95
     add-int/lit8 v4, v1, -0x1
 
     if-ne v2, v4, :cond_90
 
-    .line 361
+    .line 380
     aget-byte v4, p0, v2
 
     and-int/lit16 v4, v4, 0xff
 
     shl-int/lit8 v0, v4, 0x10
 
-    .line 362
+    .line 381
     .restart local v0       #data:I
     sget-object v4, Lorg/apache/james/mime4j/codec/EncoderUtil;->BASE64_TABLE:[B
 
@@ -783,7 +783,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 363
+    .line 382
     sget-object v4, Lorg/apache/james/mime4j/codec/EncoderUtil;->BASE64_TABLE:[B
 
     shr-int/lit8 v5, v0, 0xc
@@ -796,10 +796,10 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 364
+    .line 383
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 365
+    .line 384
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_90
@@ -813,7 +813,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 258
+    .line 269
     const/4 v0, 0x0
 
     invoke-static {p0, p1, v0, v1, v1}, Lorg/apache/james/mime4j/codec/EncoderUtil;->encodeEncodedWord(Ljava/lang/String;Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;ILjava/nio/charset/Charset;Lorg/apache/james/mime4j/codec/EncoderUtil$Encoding;)Ljava/lang/String;
@@ -832,7 +832,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 279
+    .line 293
     invoke-static {p0, p1, p2, v0, v0}, Lorg/apache/james/mime4j/codec/EncoderUtil;->encodeEncodedWord(Ljava/lang/String;Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;ILjava/nio/charset/Charset;Lorg/apache/james/mime4j/codec/EncoderUtil$Encoding;)Ljava/lang/String;
 
     move-result-object v0
@@ -849,17 +849,17 @@
     .parameter "encoding"
 
     .prologue
-    .line 304
+    .line 322
     if-nez p0, :cond_8
 
-    .line 305
+    .line 323
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v1}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v1
 
-    .line 306
+    .line 324
     :cond_8
     if-ltz p2, :cond_e
 
@@ -867,7 +867,7 @@
 
     if-le p2, v1, :cond_14
 
-    .line 307
+    .line 325
     :cond_e
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -875,16 +875,16 @@
 
     throw v1
 
-    .line 309
+    .line 327
     :cond_14
     if-nez p3, :cond_1a
 
-    .line 310
+    .line 328
     invoke-static {p0}, Lorg/apache/james/mime4j/codec/EncoderUtil;->determineCharset(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
     move-result-object p3
 
-    .line 312
+    .line 330
     :cond_1a
     invoke-virtual {p3}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
 
@@ -894,11 +894,11 @@
 
     move-result-object v6
 
-    .line 313
+    .line 331
     .local v6, mimeCharset:Ljava/lang/String;
     if-nez v6, :cond_2c
 
-    .line 315
+    .line 333
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "Unsupported charset"
@@ -907,28 +907,28 @@
 
     throw v1
 
-    .line 318
+    .line 336
     :cond_2c
     invoke-static {p0, p3}, Lorg/apache/james/mime4j/codec/EncoderUtil;->encode(Ljava/lang/String;Ljava/nio/charset/Charset;)[B
 
     move-result-object v5
 
-    .line 320
+    .line 338
     .local v5, bytes:[B
     if-nez p4, :cond_36
 
-    .line 321
+    .line 339
     invoke-static {v5, p1}, Lorg/apache/james/mime4j/codec/EncoderUtil;->determineEncoding([BLorg/apache/james/mime4j/codec/EncoderUtil$Usage;)Lorg/apache/james/mime4j/codec/EncoderUtil$Encoding;
 
     move-result-object p4
 
-    .line 323
+    .line 341
     :cond_36
     sget-object v1, Lorg/apache/james/mime4j/codec/EncoderUtil$Encoding;->B:Lorg/apache/james/mime4j/codec/EncoderUtil$Encoding;
 
     if-ne p4, v1, :cond_58
 
-    .line 324
+    .line 342
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -953,17 +953,17 @@
 
     move-result-object v0
 
-    .line 325
+    .line 343
     .local v0, prefix:Ljava/lang/String;
     invoke-static {v0, p0, p2, p3, v5}, Lorg/apache/james/mime4j/codec/EncoderUtil;->encodeB(Ljava/lang/String;Ljava/lang/String;ILjava/nio/charset/Charset;[B)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 328
+    .line 346
     :goto_57
     return-object v1
 
-    .line 327
+    .line 345
     .end local v0           #prefix:Ljava/lang/String;
     :cond_58
     new-instance v1, Ljava/lang/StringBuilder;
@@ -999,7 +999,7 @@
 
     move-object v4, p3
 
-    .line 328
+    .line 346
     invoke-static/range {v0 .. v5}, Lorg/apache/james/mime4j/codec/EncoderUtil;->encodeQ(Ljava/lang/String;Ljava/lang/String;Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;ILjava/nio/charset/Charset;[B)Ljava/lang/String;
 
     move-result-object v1
@@ -1014,19 +1014,19 @@
     .parameter "usedCharacters"
 
     .prologue
-    .line 188
+    .line 196
     invoke-static {p0, p2}, Lorg/apache/james/mime4j/codec/EncoderUtil;->hasToBeEncoded(Ljava/lang/String;I)Z
 
     move-result v0
 
     if-eqz v0, :cond_a
 
-    .line 189
+    .line 197
     invoke-static {p0, p1, p2}, Lorg/apache/james/mime4j/codec/EncoderUtil;->encodeEncodedWord(Ljava/lang/String;Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;I)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 191
+    .line 199
     .end local p0
     :cond_a
     return-object p0
@@ -1042,7 +1042,7 @@
     .parameter "bytes"
 
     .prologue
-    .line 517
+    .line 542
     move-object/from16 v0, p5
 
     move-object/from16 v1, p2
@@ -1051,7 +1051,7 @@
 
     move-result v14
 
-    .line 519
+    .line 544
     .local v14, encodedLength:I
     invoke-virtual/range {p0 .. p0}, Ljava/lang/String;->length()I
 
@@ -1067,7 +1067,7 @@
 
     add-int v16, v2, v4
 
-    .line 520
+    .line 546
     .local v16, totalLength:I
     rsub-int/lit8 v2, p3, 0x4b
 
@@ -1075,7 +1075,7 @@
 
     if-gt v0, v2, :cond_3d
 
-    .line 521
+    .line 547
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1108,11 +1108,11 @@
 
     move-result-object v2
 
-    .line 533
+    .line 560
     :goto_3c
     return-object v2
 
-    .line 523
+    .line 549
     :cond_3d
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
 
@@ -1128,7 +1128,7 @@
 
     move-result v15
 
-    .line 525
+    .line 551
     .local v15, splitOffset:I
     const/4 v2, 0x0
 
@@ -1138,7 +1138,7 @@
 
     move-result-object v3
 
-    .line 526
+    .line 552
     .local v3, part1:Ljava/lang/String;
     move-object/from16 v0, p4
 
@@ -1155,12 +1155,12 @@
 
     move-object/from16 v6, p4
 
-    .line 527
+    .line 553
     invoke-static/range {v2 .. v7}, Lorg/apache/james/mime4j/codec/EncoderUtil;->encodeQ(Ljava/lang/String;Ljava/lang/String;Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;ILjava/nio/charset/Charset;[B)Ljava/lang/String;
 
     move-result-object v17
 
-    .line 529
+    .line 556
     .local v17, word1:Ljava/lang/String;
     move-object/from16 v0, p1
 
@@ -1168,7 +1168,7 @@
 
     move-result-object v9
 
-    .line 530
+    .line 557
     .local v9, part2:Ljava/lang/String;
     move-object/from16 v0, p4
 
@@ -1176,7 +1176,7 @@
 
     move-result-object v13
 
-    .line 531
+    .line 558
     .local v13, bytes2:[B
     const/4 v11, 0x0
 
@@ -1190,7 +1190,7 @@
 
     move-result-object v18
 
-    .line 533
+    .line 560
     .local v18, word2:Ljava/lang/String;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1227,25 +1227,25 @@
     .parameter "usage"
 
     .prologue
-    .line 381
+    .line 402
     sget-object v5, Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;->TEXT_TOKEN:Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;
 
     if-ne p1, v5, :cond_1f
 
     sget-object v2, Lorg/apache/james/mime4j/codec/EncoderUtil;->Q_REGULAR_CHARS:Ljava/util/BitSet;
 
-    .line 383
+    .line 405
     .local v2, qChars:Ljava/util/BitSet;
     :goto_6
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 385
+    .line 407
     .local v3, sb:Ljava/lang/StringBuilder;
     array-length v0, p0
 
-    .line 386
+    .line 408
     .local v0, end:I
     const/4 v1, 0x0
 
@@ -1253,29 +1253,29 @@
     :goto_d
     if-ge v1, v0, :cond_45
 
-    .line 387
+    .line 409
     aget-byte v5, p0, v1
 
     and-int/lit16 v4, v5, 0xff
 
-    .line 388
+    .line 410
     .local v4, v:I
     const/16 v5, 0x20
 
     if-ne v4, v5, :cond_22
 
-    .line 389
+    .line 411
     const/16 v5, 0x5f
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 386
+    .line 408
     :goto_1c
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_d
 
-    .line 381
+    .line 402
     .end local v0           #end:I
     .end local v1           #idx:I
     .end local v2           #qChars:Ljava/util/BitSet;
@@ -1286,7 +1286,7 @@
 
     goto :goto_6
 
-    .line 390
+    .line 412
     .restart local v0       #end:I
     .restart local v1       #idx:I
     .restart local v2       #qChars:Ljava/util/BitSet;
@@ -1299,12 +1299,12 @@
 
     if-nez v5, :cond_40
 
-    .line 391
+    .line 413
     const/16 v5, 0x3d
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 392
+    .line 414
     ushr-int/lit8 v5, v4, 0x4
 
     invoke-static {v5}, Lorg/apache/james/mime4j/codec/EncoderUtil;->hexDigit(I)C
@@ -1313,7 +1313,7 @@
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 393
+    .line 415
     and-int/lit8 v5, v4, 0xf
 
     invoke-static {v5}, Lorg/apache/james/mime4j/codec/EncoderUtil;->hexDigit(I)C
@@ -1324,7 +1324,7 @@
 
     goto :goto_1c
 
-    .line 395
+    .line 417
     :cond_40
     int-to-char v5, v4
 
@@ -1332,7 +1332,7 @@
 
     goto :goto_1c
 
-    .line 399
+    .line 421
     .end local v4           #v:I
     :cond_45
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1352,17 +1352,17 @@
 
     const/4 v3, 0x1
 
-    .line 208
+    .line 217
     if-nez p0, :cond_b
 
-    .line 209
+    .line 218
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v3}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v3
 
-    .line 210
+    .line 219
     :cond_b
     if-ltz p1, :cond_11
 
@@ -1370,7 +1370,7 @@
 
     if-le p1, v4, :cond_17
 
-    .line 211
+    .line 220
     :cond_11
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -1378,11 +1378,11 @@
 
     throw v3
 
-    .line 213
+    .line 222
     :cond_17
     move v2, p1
 
-    .line 215
+    .line 224
     .local v2, nonWhiteSpaceCount:I
     const/4 v1, 0x0
 
@@ -1394,12 +1394,12 @@
 
     if-ge v1, v4, :cond_3b
 
-    .line 216
+    .line 225
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    .line 217
+    .line 226
     .local v0, ch:C
     const/16 v4, 0x9
 
@@ -1407,32 +1407,32 @@
 
     if-ne v0, v5, :cond_2d
 
-    .line 218
+    .line 227
     :cond_29
     const/4 v2, 0x0
 
-    .line 215
+    .line 224
     :cond_2a
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_19
 
-    .line 220
+    .line 229
     :cond_2d
     add-int/lit8 v2, v2, 0x1
 
-    .line 221
+    .line 230
     const/16 v4, 0x4d
 
     if-le v2, v4, :cond_34
 
-    .line 236
+    .line 245
     .end local v0           #ch:C
     :cond_33
     :goto_33
     return v3
 
-    .line 229
+    .line 238
     .restart local v0       #ch:C
     :cond_34
     if-lt v0, v5, :cond_33
@@ -1443,7 +1443,7 @@
 
     goto :goto_33
 
-    .line 236
+    .line 245
     .end local v0           #ch:C
     :cond_3b
     const/4 v3, 0x0
@@ -1456,7 +1456,7 @@
     .parameter "i"
 
     .prologue
-    .line 599
+    .line 628
     const/16 v0, 0xa
 
     if-ge p0, v0, :cond_8
@@ -1483,14 +1483,14 @@
     .parameter "specials"
 
     .prologue
-    .line 70
+    .line 71
     new-instance v0, Ljava/util/BitSet;
 
     const/16 v2, 0x80
 
     invoke-direct {v0, v2}, Ljava/util/BitSet;-><init>(I)V
 
-    .line 71
+    .line 72
     .local v0, bs:Ljava/util/BitSet;
     const/16 v1, 0x21
 
@@ -1500,7 +1500,7 @@
 
     if-ge v1, v2, :cond_1b
 
-    .line 72
+    .line 73
     invoke-virtual {p0, v1}, Ljava/lang/String;->indexOf(I)I
 
     move-result v2
@@ -1509,10 +1509,10 @@
 
     if-ne v2, v3, :cond_17
 
-    .line 73
+    .line 74
     invoke-virtual {v0, v1}, Ljava/util/BitSet;->set(I)V
 
-    .line 71
+    .line 72
     :cond_17
     add-int/lit8 v2, v1, 0x1
 
@@ -1520,7 +1520,7 @@
 
     goto :goto_9
 
-    .line 76
+    .line 77
     :cond_1b
     return-object v0
 .end method
@@ -1530,16 +1530,16 @@
     .parameter "str"
 
     .prologue
-    .line 432
+    .line 455
     const/4 v1, 0x0
 
-    .line 434
+    .line 457
     .local v1, containsAText:Z
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    .line 435
+    .line 458
     .local v3, length:I
     const/4 v2, 0x0
 
@@ -1547,12 +1547,12 @@
     :goto_6
     if-ge v2, v3, :cond_1f
 
-    .line 436
+    .line 459
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    .line 437
+    .line 460
     .local v0, ch:C
     sget-object v4, Lorg/apache/james/mime4j/codec/EncoderUtil;->ATEXT_CHARS:Ljava/util/BitSet;
 
@@ -1562,16 +1562,16 @@
 
     if-eqz v4, :cond_18
 
-    .line 438
+    .line 461
     const/4 v1, 0x1
 
-    .line 435
+    .line 458
     :cond_15
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_6
 
-    .line 439
+    .line 462
     :cond_18
     invoke-static {v0}, Lorg/apache/james/mime4j/util/CharsetUtil;->isWhitespace(C)Z
 
@@ -1579,10 +1579,10 @@
 
     if-nez v4, :cond_15
 
-    .line 440
+    .line 463
     const/4 v1, 0x0
 
-    .line 444
+    .line 467
     .end local v0           #ch:C
     .end local v1           #containsAText:Z
     :cond_1f
@@ -1595,19 +1595,19 @@
     .parameter "usage"
 
     .prologue
-    .line 538
+    .line 565
     sget-object v4, Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;->TEXT_TOKEN:Lorg/apache/james/mime4j/codec/EncoderUtil$Usage;
 
     if-ne p1, v4, :cond_18
 
     sget-object v2, Lorg/apache/james/mime4j/codec/EncoderUtil;->Q_REGULAR_CHARS:Ljava/util/BitSet;
 
-    .line 540
+    .line 568
     .local v2, qChars:Ljava/util/BitSet;
     :goto_6
     const/4 v0, 0x0
 
-    .line 542
+    .line 570
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -1617,27 +1617,27 @@
 
     if-ge v1, v4, :cond_27
 
-    .line 543
+    .line 571
     aget-byte v4, p0, v1
 
     and-int/lit16 v3, v4, 0xff
 
-    .line 544
+    .line 572
     .local v3, v:I
     const/16 v4, 0x20
 
     if-ne v3, v4, :cond_1b
 
-    .line 545
+    .line 573
     add-int/lit8 v0, v0, 0x1
 
-    .line 542
+    .line 570
     :goto_15
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_8
 
-    .line 538
+    .line 565
     .end local v0           #count:I
     .end local v1           #idx:I
     .end local v2           #qChars:Ljava/util/BitSet;
@@ -1647,7 +1647,7 @@
 
     goto :goto_6
 
-    .line 546
+    .line 574
     .restart local v0       #count:I
     .restart local v1       #idx:I
     .restart local v2       #qChars:Ljava/util/BitSet;
@@ -1659,18 +1659,18 @@
 
     if-nez v4, :cond_24
 
-    .line 547
+    .line 575
     add-int/lit8 v0, v0, 0x3
 
     goto :goto_15
 
-    .line 549
+    .line 577
     :cond_24
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_15
 
-    .line 553
+    .line 581
     .end local v3           #v:I
     :cond_27
     return v0
@@ -1681,7 +1681,7 @@
     .parameter "str"
 
     .prologue
-    .line 485
+    .line 508
     const-string v1, "[\\\\\"]"
 
     const-string v2, "\\\\$0"
@@ -1690,7 +1690,7 @@
 
     move-result-object v0
 
-    .line 486
+    .line 509
     .local v0, escaped:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 

@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 246
+    .line 96
     invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
     return-void
@@ -16,55 +16,27 @@
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;)V
-    .registers 4
-    .parameter
-    .parameter
-
-    .prologue
-    .line 249
-    new-instance v0, Lcom/google/android/youtube/core/model/Video$Builder;
-
-    invoke-direct {v0}, Lcom/google/android/youtube/core/model/Video$Builder;-><init>()V
-
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->offer(Ljava/lang/Object;)Z
-
-    .line 250
-    return-void
-.end method
-
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
     .registers 6
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 253
-    const-class v0, Lcom/google/android/youtube/core/model/Video$Builder;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->b(Ljava/lang/Class;)Ljava/lang/Object;
+    .line 99
+    invoke-virtual {p1}, Lcom/google/android/youtube/core/utils/x;->peek()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/Video$Builder;
+    check-cast v0, Lcom/google/android/youtube/core/model/UserProfile$Builder;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/model/Video$Builder;->build()Lcom/google/android/youtube/core/model/Video;
+    .line 100
+    invoke-static {p3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 254
-    const-class v0, Lcom/google/android/youtube/core/model/Page$Builder;
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->uri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->a(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/youtube/core/model/Page$Builder;
-
-    .line 255
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Page$Builder;->addEntry(Ljava/lang/Object;)Lcom/google/android/youtube/core/model/Page$Builder;
-
-    .line 256
+    .line 101
     return-void
 .end method

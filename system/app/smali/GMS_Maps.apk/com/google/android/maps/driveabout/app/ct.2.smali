@@ -1,19 +1,23 @@
-.class Lcom/google/android/maps/driveabout/app/ct;
+.class Lcom/google/android/maps/driveabout/app/cT;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/NavigationImageView;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/RmiPreference;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/NavigationImageView;)V
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/RmiPreference;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/ct;->a:Lcom/google/android/maps/driveabout/app/NavigationImageView;
+    .prologue
+    .line 123
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/cT;->a:Lcom/google/android/maps/driveabout/app/RmiPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,20 +26,24 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 4
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .registers 5
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ct;->a:Lcom/google/android/maps/driveabout/app/NavigationImageView;
+    .prologue
+    .line 126
+    const-string v0, "1"
 
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/ct;->a:Lcom/google/android/maps/driveabout/app/NavigationImageView;
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/dh;->a(Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/google/android/maps/driveabout/app/NavigationImageView;->a(Lcom/google/android/maps/driveabout/app/NavigationImageView;)Lu/I;
+    .line 127
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/cT;->a:Lcom/google/android/maps/driveabout/app/RmiPreference;
 
-    move-result-object v1
+    const/4 v1, 0x1
 
-    const/4 v2, 0x0
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/RmiPreference;->setChecked(Z)V
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/maps/driveabout/app/NavigationImageView;->a(Lcom/google/android/maps/driveabout/app/NavigationImageView;Lu/I;Z)V
-
+    .line 128
     return-void
 .end method

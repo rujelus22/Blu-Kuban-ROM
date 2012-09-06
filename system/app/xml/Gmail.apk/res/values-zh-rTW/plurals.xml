@@ -53,40 +53,40 @@
         <item quantity="one">正在等待系統處理 %1$d 個會話群組。</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">已略過 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組。</item>
-        <item quantity="one">已略過 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組。</item>
+        <item quantity="other">已略過 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組。</item>
+        <item quantity="one">已略過 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組。</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">已將 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組回報為垃圾郵件。</item>
-        <item quantity="one">已將 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組回報為垃圾郵件。</item>
+        <item quantity="other">已將 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組回報為垃圾郵件。</item>
+        <item quantity="one">已將 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組回報為垃圾郵件。</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">已封存 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組。</item>
-        <item quantity="one">已封存 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組。</item>
+        <item quantity="other">已封存 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組。</item>
+        <item quantity="one">已封存 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組。</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">已將 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組移至收件匣。</item>
-        <item quantity="one">已將 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組移至收件匣。</item>
+        <item quantity="other">已將 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組移至收件匣。</item>
+        <item quantity="one">已將 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組移至收件匣。</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">已刪除 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組。</item>
-        <item quantity="one">已刪除 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組。</item>
+        <item quantity="other">已刪除 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組。</item>
+        <item quantity="one">已刪除 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組。</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">已將 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組標示為重要。</item>
-        <item quantity="one">已將 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組標示為重要。</item>
+        <item quantity="other">已將 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組標示為重要。</item>
+        <item quantity="one">已將 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組標示為重要。</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">已將 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組標示為不重要。</item>
-        <item quantity="one">已將 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組標示為不重要。</item>
+        <item quantity="other">已將 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組標示為不重要。</item>
+        <item quantity="one">已將 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組標示為不重要。</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">已將 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組標示為已讀取。</item>
-        <item quantity="one">已將 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組標示為已讀取。</item>
+        <item quantity="other">已將 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組標示為已讀取。</item>
+        <item quantity="one">已將 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組標示為已讀取。</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">已將 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組標示為未讀取。</item>
-        <item quantity="one">已將 &amp;lt;b>%1$d&amp;lt;/b> 個會話群組標示為未讀取。</item>
+        <item quantity="other">已將 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組標示為未讀取。</item>
+        <item quantity="one">已將 &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> 個會話群組標示為未讀取。</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">已變更標籤</item>

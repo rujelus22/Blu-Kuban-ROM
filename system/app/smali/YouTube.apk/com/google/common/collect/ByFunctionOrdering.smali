@@ -11,32 +11,32 @@
 
 
 # instance fields
-.field final function:Lcom/google/common/base/k;
+.field final function:Lcom/google/common/base/v;
 
 .field final ordering:Lcom/google/common/collect/Ordering;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/base/k;Lcom/google/common/collect/Ordering;)V
+.method constructor <init>(Lcom/google/common/base/v;Lcom/google/common/collect/Ordering;)V
     .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 39
+    .line 40
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
-    .line 40
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 41
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/common/base/k;
+    check-cast v0, Lcom/google/common/base/v;
 
-    iput-object v0, p0, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/k;
+    iput-object v0, p0, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/v;
 
-    .line 41
-    invoke-static {p2}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 42
+    invoke-static {p2}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -44,7 +44,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/ByFunctionOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
-    .line 42
+    .line 43
     return-void
 .end method
 
@@ -56,18 +56,18 @@
     .parameter
 
     .prologue
-    .line 45
+    .line 46
     iget-object v0, p0, Lcom/google/common/collect/ByFunctionOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
-    iget-object v1, p0, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/k;
+    iget-object v1, p0, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/v;
 
-    invoke-interface {v1, p1}, Lcom/google/common/base/k;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, p1}, Lcom/google/common/base/v;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/k;
+    iget-object v2, p0, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/v;
 
-    invoke-interface {v2, p2}, Lcom/google/common/base/k;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v2, p2}, Lcom/google/common/base/v;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -81,33 +81,36 @@
 .method public final equals(Ljava/lang/Object;)Z
     .registers 6
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    .line 49
+    .line 50
     if-ne p1, p0, :cond_5
 
-    .line 57
+    .line 58
     :cond_4
     :goto_4
     return v0
 
-    .line 52
+    .line 53
     :cond_5
     instance-of v2, p1, Lcom/google/common/collect/ByFunctionOrdering;
 
     if-eqz v2, :cond_21
 
-    .line 53
+    .line 54
     check-cast p1, Lcom/google/common/collect/ByFunctionOrdering;
 
-    .line 54
-    iget-object v2, p0, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/k;
+    .line 55
+    iget-object v2, p0, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/v;
 
-    iget-object v3, p1, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/k;
+    iget-object v3, p1, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/v;
 
     invoke-virtual {v2, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -133,7 +136,7 @@
     :cond_21
     move v0, v1
 
-    .line 57
+    .line 58
     goto :goto_4
 .end method
 
@@ -141,14 +144,14 @@
     .registers 4
 
     .prologue
-    .line 61
+    .line 62
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
 
     const/4 v1, 0x0
 
-    iget-object v2, p0, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/k;
+    iget-object v2, p0, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/v;
 
     aput-object v2, v0, v1
 
@@ -169,7 +172,7 @@
     .registers 3
 
     .prologue
-    .line 65
+    .line 66
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -186,7 +189,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/k;
+    iget-object v1, p0, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/v;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

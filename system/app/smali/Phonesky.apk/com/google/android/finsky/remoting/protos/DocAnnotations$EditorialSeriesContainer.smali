@@ -43,40 +43,40 @@
     .registers 2
 
     .prologue
-    .line 2582
+    .line 2106
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 2587
+    .line 2111
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->seriesTitle_:Ljava/lang/String;
 
-    .line 2604
+    .line 2128
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->seriesSubtitle_:Ljava/lang/String;
 
-    .line 2621
+    .line 2145
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->episodeTitle_:Ljava/lang/String;
 
-    .line 2638
+    .line 2162
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->episodeSubtitle_:Ljava/lang/String;
 
-    .line 2655
+    .line 2179
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->colorThemeArgb_:Ljava/lang/String;
 
-    .line 2702
+    .line 2227
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->cachedSize:I
 
-    .line 2582
+    .line 2106
     return-void
 .end method
 
@@ -86,15 +86,15 @@
     .registers 2
 
     .prologue
-    .line 2704
+    .line 2230
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 2706
+    .line 2232
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->getSerializedSize()I
 
-    .line 2708
+    .line 2234
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->cachedSize:I
 
@@ -105,7 +105,7 @@
     .registers 2
 
     .prologue
-    .line 2656
+    .line 2180
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->colorThemeArgb_:Ljava/lang/String;
 
     return-object v0
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 2639
+    .line 2163
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->episodeSubtitle_:Ljava/lang/String;
 
     return-object v0
@@ -125,7 +125,7 @@
     .registers 2
 
     .prologue
-    .line 2622
+    .line 2146
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->episodeTitle_:Ljava/lang/String;
 
     return-object v0
@@ -135,10 +135,10 @@
     .registers 4
 
     .prologue
-    .line 2712
+    .line 2239
     const/4 v0, 0x0
 
-    .line 2713
+    .line 2240
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasSeriesTitle()Z
 
@@ -146,7 +146,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 2714
+    .line 2241
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->getSeriesTitle()Ljava/lang/String;
@@ -159,7 +159,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2717
+    .line 2244
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasSeriesSubtitle()Z
 
@@ -167,7 +167,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 2718
+    .line 2245
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->getSeriesSubtitle()Ljava/lang/String;
@@ -180,7 +180,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2721
+    .line 2248
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasEpisodeTitle()Z
 
@@ -188,7 +188,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 2722
+    .line 2249
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->getEpisodeTitle()Ljava/lang/String;
@@ -201,7 +201,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2725
+    .line 2252
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasEpisodeSubtitle()Z
 
@@ -209,7 +209,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 2726
+    .line 2253
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->getEpisodeSubtitle()Ljava/lang/String;
@@ -222,7 +222,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2729
+    .line 2256
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasColorThemeArgb()Z
 
@@ -230,7 +230,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 2730
+    .line 2257
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->getColorThemeArgb()Ljava/lang/String;
@@ -243,11 +243,11 @@
 
     add-int/2addr v0, v1
 
-    .line 2733
+    .line 2260
     :cond_51
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->cachedSize:I
 
-    .line 2734
+    .line 2261
     return v0
 .end method
 
@@ -255,7 +255,7 @@
     .registers 2
 
     .prologue
-    .line 2605
+    .line 2129
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->seriesSubtitle_:Ljava/lang/String;
 
     return-object v0
@@ -265,7 +265,7 @@
     .registers 2
 
     .prologue
-    .line 2588
+    .line 2112
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->seriesTitle_:Ljava/lang/String;
 
     return-object v0
@@ -275,7 +275,7 @@
     .registers 2
 
     .prologue
-    .line 2657
+    .line 2181
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasColorThemeArgb:Z
 
     return v0
@@ -285,7 +285,7 @@
     .registers 2
 
     .prologue
-    .line 2640
+    .line 2164
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasEpisodeSubtitle:Z
 
     return v0
@@ -295,7 +295,7 @@
     .registers 2
 
     .prologue
-    .line 2623
+    .line 2147
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasEpisodeTitle:Z
 
     return v0
@@ -305,7 +305,7 @@
     .registers 2
 
     .prologue
-    .line 2606
+    .line 2130
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasSeriesSubtitle:Z
 
     return v0
@@ -315,7 +315,7 @@
     .registers 2
 
     .prologue
-    .line 2589
+    .line 2113
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasSeriesTitle:Z
 
     return v0
@@ -331,29 +331,29 @@
     .end annotation
 
     .prologue
-    .line 2741
+    .line 2269
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 2742
+    .line 2270
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_36
 
-    .line 2746
+    .line 2274
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 2747
+    .line 2275
     :sswitch_d
     return-object p0
 
-    .line 2752
+    .line 2280
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -363,7 +363,7 @@
 
     goto :goto_0
 
-    .line 2756
+    .line 2284
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -373,7 +373,7 @@
 
     goto :goto_0
 
-    .line 2760
+    .line 2288
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -383,7 +383,7 @@
 
     goto :goto_0
 
-    .line 2764
+    .line 2292
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -393,7 +393,7 @@
 
     goto :goto_0
 
-    .line 2768
+    .line 2296
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -403,7 +403,7 @@
 
     goto :goto_0
 
-    .line 2742
+    .line 2270
     :sswitch_data_36
     .sparse-switch
         0x0 -> :sswitch_d
@@ -425,7 +425,7 @@
     .end annotation
 
     .prologue
-    .line 2580
+    .line 2103
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;
 
     move-result-object v0
@@ -438,15 +438,15 @@
     .parameter "value"
 
     .prologue
-    .line 2659
+    .line 2183
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasColorThemeArgb:Z
 
-    .line 2660
+    .line 2184
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->colorThemeArgb_:Ljava/lang/String;
 
-    .line 2661
+    .line 2185
     return-object p0
 .end method
 
@@ -455,15 +455,15 @@
     .parameter "value"
 
     .prologue
-    .line 2642
+    .line 2166
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasEpisodeSubtitle:Z
 
-    .line 2643
+    .line 2167
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->episodeSubtitle_:Ljava/lang/String;
 
-    .line 2644
+    .line 2168
     return-object p0
 .end method
 
@@ -472,15 +472,15 @@
     .parameter "value"
 
     .prologue
-    .line 2625
+    .line 2149
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasEpisodeTitle:Z
 
-    .line 2626
+    .line 2150
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->episodeTitle_:Ljava/lang/String;
 
-    .line 2627
+    .line 2151
     return-object p0
 .end method
 
@@ -489,15 +489,15 @@
     .parameter "value"
 
     .prologue
-    .line 2608
+    .line 2132
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasSeriesSubtitle:Z
 
-    .line 2609
+    .line 2133
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->seriesSubtitle_:Ljava/lang/String;
 
-    .line 2610
+    .line 2134
     return-object p0
 .end method
 
@@ -506,15 +506,15 @@
     .parameter "value"
 
     .prologue
-    .line 2591
+    .line 2115
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasSeriesTitle:Z
 
-    .line 2592
+    .line 2116
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->seriesTitle_:Ljava/lang/String;
 
-    .line 2593
+    .line 2117
     return-object p0
 .end method
 
@@ -528,14 +528,14 @@
     .end annotation
 
     .prologue
-    .line 2685
+    .line 2210
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasSeriesTitle()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 2686
+    .line 2211
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->getSeriesTitle()Ljava/lang/String;
@@ -544,7 +544,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2688
+    .line 2213
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasSeriesSubtitle()Z
 
@@ -552,7 +552,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 2689
+    .line 2214
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->getSeriesSubtitle()Ljava/lang/String;
@@ -561,7 +561,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2691
+    .line 2216
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasEpisodeTitle()Z
 
@@ -569,7 +569,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 2692
+    .line 2217
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->getEpisodeTitle()Ljava/lang/String;
@@ -578,7 +578,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2694
+    .line 2219
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasEpisodeSubtitle()Z
 
@@ -586,7 +586,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 2695
+    .line 2220
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->getEpisodeSubtitle()Ljava/lang/String;
@@ -595,7 +595,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2697
+    .line 2222
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->hasColorThemeArgb()Z
 
@@ -603,7 +603,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 2698
+    .line 2223
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;->getColorThemeArgb()Ljava/lang/String;
@@ -612,7 +612,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2700
+    .line 2225
     :cond_46
     return-void
 .end method

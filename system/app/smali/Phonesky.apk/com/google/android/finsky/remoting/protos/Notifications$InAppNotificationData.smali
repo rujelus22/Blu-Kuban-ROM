@@ -31,25 +31,25 @@
     .registers 2
 
     .prologue
-    .line 558
+    .line 579
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 563
+    .line 584
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->checkoutOrderId_:Ljava/lang/String;
 
-    .line 580
+    .line 601
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->inAppNotificationId_:Ljava/lang/String;
 
-    .line 616
+    .line 638
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->cachedSize:I
 
-    .line 558
+    .line 579
     return-void
 .end method
 
@@ -59,15 +59,15 @@
     .registers 2
 
     .prologue
-    .line 618
+    .line 641
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 620
+    .line 643
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->getSerializedSize()I
 
-    .line 622
+    .line 645
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->cachedSize:I
 
@@ -78,7 +78,7 @@
     .registers 2
 
     .prologue
-    .line 564
+    .line 585
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->checkoutOrderId_:Ljava/lang/String;
 
     return-object v0
@@ -88,7 +88,7 @@
     .registers 2
 
     .prologue
-    .line 581
+    .line 602
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->inAppNotificationId_:Ljava/lang/String;
 
     return-object v0
@@ -98,10 +98,10 @@
     .registers 4
 
     .prologue
-    .line 626
+    .line 650
     const/4 v0, 0x0
 
-    .line 627
+    .line 651
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->hasCheckoutOrderId()Z
 
@@ -109,7 +109,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 628
+    .line 652
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->getCheckoutOrderId()Ljava/lang/String;
@@ -122,7 +122,7 @@
 
     add-int/2addr v0, v1
 
-    .line 631
+    .line 655
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->hasInAppNotificationId()Z
 
@@ -130,7 +130,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 632
+    .line 656
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->getInAppNotificationId()Ljava/lang/String;
@@ -143,11 +143,11 @@
 
     add-int/2addr v0, v1
 
-    .line 635
+    .line 659
     :cond_21
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->cachedSize:I
 
-    .line 636
+    .line 660
     return v0
 .end method
 
@@ -155,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 565
+    .line 586
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->hasCheckoutOrderId:Z
 
     return v0
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 582
+    .line 603
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->hasInAppNotificationId:Z
 
     return v0
@@ -181,29 +181,29 @@
     .end annotation
 
     .prologue
-    .line 643
+    .line 668
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 644
+    .line 669
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 648
+    .line 673
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 649
+    .line 674
     :sswitch_d
     return-object p0
 
-    .line 654
+    .line 679
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 658
+    .line 683
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 644
+    .line 669
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -242,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 556
+    .line 576
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;
 
     move-result-object v0
@@ -255,15 +255,15 @@
     .parameter "value"
 
     .prologue
-    .line 567
+    .line 588
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->hasCheckoutOrderId:Z
 
-    .line 568
+    .line 589
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->checkoutOrderId_:Ljava/lang/String;
 
-    .line 569
+    .line 590
     return-object p0
 .end method
 
@@ -272,15 +272,15 @@
     .parameter "value"
 
     .prologue
-    .line 584
+    .line 605
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->hasInAppNotificationId:Z
 
-    .line 585
+    .line 606
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->inAppNotificationId_:Ljava/lang/String;
 
-    .line 586
+    .line 607
     return-object p0
 .end method
 
@@ -294,14 +294,14 @@
     .end annotation
 
     .prologue
-    .line 608
+    .line 630
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->hasCheckoutOrderId()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 609
+    .line 631
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->getCheckoutOrderId()Ljava/lang/String;
@@ -310,7 +310,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 611
+    .line 633
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->hasInAppNotificationId()Z
 
@@ -318,7 +318,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 612
+    .line 634
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;->getInAppNotificationId()Ljava/lang/String;
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 614
+    .line 636
     :cond_1c
     return-void
 .end method

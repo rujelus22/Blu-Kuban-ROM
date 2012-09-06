@@ -81,68 +81,94 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 772
+    .line 832
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 785
+    .line 846
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->notificationType_:I
 
-    .line 802
+    .line 863
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->notificationId_:Ljava/lang/String;
 
-    .line 819
+    .line 880
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->timestamp_:J
 
-    .line 836
+    .line 897
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->docid_:Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
-    .line 856
+    .line 917
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->docTitle_:Ljava/lang/String;
 
-    .line 873
+    .line 934
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->userEmail_:Ljava/lang/String;
 
-    .line 890
+    .line 951
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->libraryUpdate_:Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
 
-    .line 910
+    .line 971
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->appData_:Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;
 
-    .line 930
+    .line 991
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->appDeliveryData_:Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;
 
-    .line 950
+    .line 1011
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->purchaseRemovalData_:Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;
 
-    .line 970
+    .line 1031
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->purchaseDeclinedData_:Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;
 
-    .line 990
+    .line 1051
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->userNotificationData_:Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;
 
-    .line 1010
+    .line 1071
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->inAppNotificationData_:Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;
 
-    .line 1030
+    .line 1091
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->libraryDirtyData_:Lcom/google/android/finsky/remoting/protos/Notifications$LibraryDirtyData;
 
-    .line 1129
+    .line 1191
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->cachedSize:I
 
-    .line 772
+    .line 832
     return-void
+.end method
+
+.method public static parseFrom([B)Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
+    .registers 2
+    .parameter "data"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/protobuf/micro/InvalidProtocolBufferMicroException;
+        }
+    .end annotation
+
+    .prologue
+    .line 1359
+    new-instance v0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
+
+    invoke-direct {v0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;-><init>()V
+
+    invoke-virtual {v0, p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->mergeFrom([B)Lcom/google/protobuf/micro/MessageMicro;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
+
+    check-cast v0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
+
+    return-object v0
 .end method
 
 
@@ -151,7 +177,7 @@
     .registers 2
 
     .prologue
-    .line 912
+    .line 973
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->appData_:Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;
 
     return-object v0
@@ -161,7 +187,7 @@
     .registers 2
 
     .prologue
-    .line 932
+    .line 993
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->appDeliveryData_:Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;
 
     return-object v0
@@ -171,15 +197,15 @@
     .registers 2
 
     .prologue
-    .line 1131
+    .line 1194
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 1133
+    .line 1196
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getSerializedSize()I
 
-    .line 1135
+    .line 1198
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->cachedSize:I
 
@@ -190,7 +216,7 @@
     .registers 2
 
     .prologue
-    .line 857
+    .line 918
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->docTitle_:Ljava/lang/String;
 
     return-object v0
@@ -200,7 +226,7 @@
     .registers 2
 
     .prologue
-    .line 838
+    .line 899
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->docid_:Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
     return-object v0
@@ -210,7 +236,7 @@
     .registers 2
 
     .prologue
-    .line 1012
+    .line 1073
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->inAppNotificationData_:Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;
 
     return-object v0
@@ -220,7 +246,7 @@
     .registers 2
 
     .prologue
-    .line 1032
+    .line 1093
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->libraryDirtyData_:Lcom/google/android/finsky/remoting/protos/Notifications$LibraryDirtyData;
 
     return-object v0
@@ -230,7 +256,7 @@
     .registers 2
 
     .prologue
-    .line 892
+    .line 953
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->libraryUpdate_:Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
 
     return-object v0
@@ -240,7 +266,7 @@
     .registers 2
 
     .prologue
-    .line 803
+    .line 864
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->notificationId_:Ljava/lang/String;
 
     return-object v0
@@ -250,7 +276,7 @@
     .registers 2
 
     .prologue
-    .line 787
+    .line 848
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->notificationType_:I
 
     return v0
@@ -260,7 +286,7 @@
     .registers 2
 
     .prologue
-    .line 972
+    .line 1033
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->purchaseDeclinedData_:Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;
 
     return-object v0
@@ -270,7 +296,7 @@
     .registers 2
 
     .prologue
-    .line 952
+    .line 1013
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->purchaseRemovalData_:Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;
 
     return-object v0
@@ -280,10 +306,10 @@
     .registers 5
 
     .prologue
-    .line 1139
+    .line 1203
     const/4 v0, 0x0
 
-    .line 1140
+    .line 1204
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasNotificationType()Z
 
@@ -291,7 +317,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 1141
+    .line 1205
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getNotificationType()I
@@ -304,7 +330,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1144
+    .line 1208
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasTimestamp()Z
 
@@ -312,7 +338,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 1145
+    .line 1209
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getTimestamp()J
@@ -325,7 +351,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1148
+    .line 1212
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasDocid()Z
 
@@ -333,7 +359,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 1149
+    .line 1213
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getDocid()Lcom/google/android/finsky/remoting/protos/Common$Docid;
@@ -346,7 +372,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1152
+    .line 1216
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasDocTitle()Z
 
@@ -354,7 +380,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 1153
+    .line 1217
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getDocTitle()Ljava/lang/String;
@@ -367,7 +393,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1156
+    .line 1220
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasUserEmail()Z
 
@@ -375,7 +401,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 1157
+    .line 1221
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getUserEmail()Ljava/lang/String;
@@ -388,7 +414,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1160
+    .line 1224
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasAppData()Z
 
@@ -396,7 +422,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 1161
+    .line 1225
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getAppData()Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;
@@ -409,7 +435,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1164
+    .line 1228
     :cond_61
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasAppDeliveryData()Z
 
@@ -417,7 +443,7 @@
 
     if-eqz v1, :cond_72
 
-    .line 1165
+    .line 1229
     const/16 v1, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getAppDeliveryData()Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;
@@ -430,7 +456,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1168
+    .line 1232
     :cond_72
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasPurchaseRemovalData()Z
 
@@ -438,7 +464,7 @@
 
     if-eqz v1, :cond_83
 
-    .line 1169
+    .line 1233
     const/16 v1, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getPurchaseRemovalData()Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;
@@ -451,7 +477,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1172
+    .line 1236
     :cond_83
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasUserNotificationData()Z
 
@@ -459,7 +485,7 @@
 
     if-eqz v1, :cond_94
 
-    .line 1173
+    .line 1237
     const/16 v1, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getUserNotificationData()Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;
@@ -472,7 +498,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1176
+    .line 1240
     :cond_94
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasInAppNotificationData()Z
 
@@ -480,7 +506,7 @@
 
     if-eqz v1, :cond_a5
 
-    .line 1177
+    .line 1241
     const/16 v1, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getInAppNotificationData()Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;
@@ -493,7 +519,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1180
+    .line 1244
     :cond_a5
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasPurchaseDeclinedData()Z
 
@@ -501,7 +527,7 @@
 
     if-eqz v1, :cond_b6
 
-    .line 1181
+    .line 1245
     const/16 v1, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getPurchaseDeclinedData()Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;
@@ -514,7 +540,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1184
+    .line 1248
     :cond_b6
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasNotificationId()Z
 
@@ -522,7 +548,7 @@
 
     if-eqz v1, :cond_c7
 
-    .line 1185
+    .line 1249
     const/16 v1, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getNotificationId()Ljava/lang/String;
@@ -535,7 +561,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1188
+    .line 1252
     :cond_c7
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasLibraryUpdate()Z
 
@@ -543,7 +569,7 @@
 
     if-eqz v1, :cond_d8
 
-    .line 1189
+    .line 1253
     const/16 v1, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getLibraryUpdate()Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
@@ -556,7 +582,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1192
+    .line 1256
     :cond_d8
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasLibraryDirtyData()Z
 
@@ -564,7 +590,7 @@
 
     if-eqz v1, :cond_e9
 
-    .line 1193
+    .line 1257
     const/16 v1, 0xf
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getLibraryDirtyData()Lcom/google/android/finsky/remoting/protos/Notifications$LibraryDirtyData;
@@ -577,11 +603,11 @@
 
     add-int/2addr v0, v1
 
-    .line 1196
+    .line 1260
     :cond_e9
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->cachedSize:I
 
-    .line 1197
+    .line 1261
     return v0
 .end method
 
@@ -589,7 +615,7 @@
     .registers 3
 
     .prologue
-    .line 820
+    .line 881
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->timestamp_:J
 
     return-wide v0
@@ -599,7 +625,7 @@
     .registers 2
 
     .prologue
-    .line 874
+    .line 935
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->userEmail_:Ljava/lang/String;
 
     return-object v0
@@ -609,7 +635,7 @@
     .registers 2
 
     .prologue
-    .line 992
+    .line 1053
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->userNotificationData_:Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;
 
     return-object v0
@@ -619,7 +645,7 @@
     .registers 2
 
     .prologue
-    .line 911
+    .line 972
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasAppData:Z
 
     return v0
@@ -629,7 +655,7 @@
     .registers 2
 
     .prologue
-    .line 931
+    .line 992
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasAppDeliveryData:Z
 
     return v0
@@ -639,7 +665,7 @@
     .registers 2
 
     .prologue
-    .line 858
+    .line 919
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasDocTitle:Z
 
     return v0
@@ -649,7 +675,7 @@
     .registers 2
 
     .prologue
-    .line 837
+    .line 898
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasDocid:Z
 
     return v0
@@ -659,7 +685,7 @@
     .registers 2
 
     .prologue
-    .line 1011
+    .line 1072
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasInAppNotificationData:Z
 
     return v0
@@ -669,7 +695,7 @@
     .registers 2
 
     .prologue
-    .line 1031
+    .line 1092
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasLibraryDirtyData:Z
 
     return v0
@@ -679,7 +705,7 @@
     .registers 2
 
     .prologue
-    .line 891
+    .line 952
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasLibraryUpdate:Z
 
     return v0
@@ -689,7 +715,7 @@
     .registers 2
 
     .prologue
-    .line 804
+    .line 865
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasNotificationId:Z
 
     return v0
@@ -699,7 +725,7 @@
     .registers 2
 
     .prologue
-    .line 786
+    .line 847
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasNotificationType:Z
 
     return v0
@@ -709,7 +735,7 @@
     .registers 2
 
     .prologue
-    .line 971
+    .line 1032
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasPurchaseDeclinedData:Z
 
     return v0
@@ -719,7 +745,7 @@
     .registers 2
 
     .prologue
-    .line 951
+    .line 1012
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasPurchaseRemovalData:Z
 
     return v0
@@ -729,7 +755,7 @@
     .registers 2
 
     .prologue
-    .line 821
+    .line 882
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasTimestamp:Z
 
     return v0
@@ -739,7 +765,7 @@
     .registers 2
 
     .prologue
-    .line 875
+    .line 936
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasUserEmail:Z
 
     return v0
@@ -749,7 +775,7 @@
     .registers 2
 
     .prologue
-    .line 991
+    .line 1052
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasUserNotificationData:Z
 
     return v0
@@ -765,29 +791,29 @@
     .end annotation
 
     .prologue
-    .line 1204
+    .line 1269
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1205
+    .line 1270
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_a6
 
-    .line 1209
+    .line 1274
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 1210
+    .line 1275
     :sswitch_d
     return-object p0
 
-    .line 1215
+    .line 1280
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -797,7 +823,7 @@
 
     goto :goto_0
 
-    .line 1219
+    .line 1284
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -807,22 +833,22 @@
 
     goto :goto_0
 
-    .line 1223
+    .line 1288
     :sswitch_1e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Common$Docid;-><init>()V
 
-    .line 1224
+    .line 1289
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Common$Docid;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1225
+    .line 1290
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->setDocid(Lcom/google/android/finsky/remoting/protos/Common$Docid;)Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
 
     goto :goto_0
 
-    .line 1229
+    .line 1294
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Common$Docid;
     :sswitch_2a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -833,7 +859,7 @@
 
     goto :goto_0
 
-    .line 1233
+    .line 1298
     :sswitch_32
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -843,102 +869,102 @@
 
     goto :goto_0
 
-    .line 1237
+    .line 1302
     :sswitch_3a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;-><init>()V
 
-    .line 1238
+    .line 1303
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1239
+    .line 1304
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->setAppData(Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;)Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
 
     goto :goto_0
 
-    .line 1243
+    .line 1308
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;
     :sswitch_46
     new-instance v1, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;-><init>()V
 
-    .line 1244
+    .line 1309
     .local v1, value:Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1245
+    .line 1310
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->setAppDeliveryData(Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;)Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
 
     goto :goto_0
 
-    .line 1249
+    .line 1314
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;
     :sswitch_52
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;-><init>()V
 
-    .line 1250
+    .line 1315
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1251
+    .line 1316
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->setPurchaseRemovalData(Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;)Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
 
     goto :goto_0
 
-    .line 1255
+    .line 1320
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;
     :sswitch_5e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;-><init>()V
 
-    .line 1256
+    .line 1321
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1257
+    .line 1322
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->setUserNotificationData(Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;)Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
 
     goto :goto_0
 
-    .line 1261
+    .line 1326
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;
     :sswitch_6a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;-><init>()V
 
-    .line 1262
+    .line 1327
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1263
+    .line 1328
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->setInAppNotificationData(Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;)Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
 
     goto :goto_0
 
-    .line 1267
+    .line 1332
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;
     :sswitch_76
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;-><init>()V
 
-    .line 1268
+    .line 1333
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1269
+    .line 1334
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->setPurchaseDeclinedData(Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;)Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
 
     goto/16 :goto_0
 
-    .line 1273
+    .line 1338
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;
     :sswitch_83
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -949,38 +975,38 @@
 
     goto/16 :goto_0
 
-    .line 1277
+    .line 1342
     :sswitch_8c
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;-><init>()V
 
-    .line 1278
+    .line 1343
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1279
+    .line 1344
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->setLibraryUpdate(Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;)Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
 
     goto/16 :goto_0
 
-    .line 1283
+    .line 1348
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
     :sswitch_99
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Notifications$LibraryDirtyData;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Notifications$LibraryDirtyData;-><init>()V
 
-    .line 1284
+    .line 1349
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Notifications$LibraryDirtyData;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1285
+    .line 1350
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->setLibraryDirtyData(Lcom/google/android/finsky/remoting/protos/Notifications$LibraryDirtyData;)Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
 
     goto/16 :goto_0
 
-    .line 1205
+    .line 1270
     :sswitch_data_a6
     .sparse-switch
         0x0 -> :sswitch_d
@@ -1011,7 +1037,7 @@
     .end annotation
 
     .prologue
-    .line 770
+    .line 829
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
 
     move-result-object v0
@@ -1024,26 +1050,26 @@
     .parameter "value"
 
     .prologue
-    .line 914
+    .line 975
     if-nez p1, :cond_8
 
-    .line 915
+    .line 976
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 917
+    .line 978
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasAppData:Z
 
-    .line 918
+    .line 979
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->appData_:Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;
 
-    .line 919
+    .line 980
     return-object p0
 .end method
 
@@ -1052,26 +1078,26 @@
     .parameter "value"
 
     .prologue
-    .line 934
+    .line 995
     if-nez p1, :cond_8
 
-    .line 935
+    .line 996
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 937
+    .line 998
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasAppDeliveryData:Z
 
-    .line 938
+    .line 999
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->appDeliveryData_:Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;
 
-    .line 939
+    .line 1000
     return-object p0
 .end method
 
@@ -1080,15 +1106,15 @@
     .parameter "value"
 
     .prologue
-    .line 860
+    .line 921
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasDocTitle:Z
 
-    .line 861
+    .line 922
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->docTitle_:Ljava/lang/String;
 
-    .line 862
+    .line 923
     return-object p0
 .end method
 
@@ -1097,26 +1123,26 @@
     .parameter "value"
 
     .prologue
-    .line 840
+    .line 901
     if-nez p1, :cond_8
 
-    .line 841
+    .line 902
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 843
+    .line 904
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasDocid:Z
 
-    .line 844
+    .line 905
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->docid_:Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
-    .line 845
+    .line 906
     return-object p0
 .end method
 
@@ -1125,26 +1151,26 @@
     .parameter "value"
 
     .prologue
-    .line 1014
+    .line 1075
     if-nez p1, :cond_8
 
-    .line 1015
+    .line 1076
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1017
+    .line 1078
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasInAppNotificationData:Z
 
-    .line 1018
+    .line 1079
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->inAppNotificationData_:Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;
 
-    .line 1019
+    .line 1080
     return-object p0
 .end method
 
@@ -1153,26 +1179,26 @@
     .parameter "value"
 
     .prologue
-    .line 1034
+    .line 1095
     if-nez p1, :cond_8
 
-    .line 1035
+    .line 1096
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1037
+    .line 1098
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasLibraryDirtyData:Z
 
-    .line 1038
+    .line 1099
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->libraryDirtyData_:Lcom/google/android/finsky/remoting/protos/Notifications$LibraryDirtyData;
 
-    .line 1039
+    .line 1100
     return-object p0
 .end method
 
@@ -1181,26 +1207,26 @@
     .parameter "value"
 
     .prologue
-    .line 894
+    .line 955
     if-nez p1, :cond_8
 
-    .line 895
+    .line 956
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 897
+    .line 958
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasLibraryUpdate:Z
 
-    .line 898
+    .line 959
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->libraryUpdate_:Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
 
-    .line 899
+    .line 960
     return-object p0
 .end method
 
@@ -1209,15 +1235,15 @@
     .parameter "value"
 
     .prologue
-    .line 806
+    .line 867
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasNotificationId:Z
 
-    .line 807
+    .line 868
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->notificationId_:Ljava/lang/String;
 
-    .line 808
+    .line 869
     return-object p0
 .end method
 
@@ -1226,15 +1252,15 @@
     .parameter "value"
 
     .prologue
-    .line 789
+    .line 850
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasNotificationType:Z
 
-    .line 790
+    .line 851
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->notificationType_:I
 
-    .line 791
+    .line 852
     return-object p0
 .end method
 
@@ -1243,26 +1269,26 @@
     .parameter "value"
 
     .prologue
-    .line 974
+    .line 1035
     if-nez p1, :cond_8
 
-    .line 975
+    .line 1036
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 977
+    .line 1038
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasPurchaseDeclinedData:Z
 
-    .line 978
+    .line 1039
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->purchaseDeclinedData_:Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;
 
-    .line 979
+    .line 1040
     return-object p0
 .end method
 
@@ -1271,26 +1297,26 @@
     .parameter "value"
 
     .prologue
-    .line 954
+    .line 1015
     if-nez p1, :cond_8
 
-    .line 955
+    .line 1016
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 957
+    .line 1018
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasPurchaseRemovalData:Z
 
-    .line 958
+    .line 1019
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->purchaseRemovalData_:Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;
 
-    .line 959
+    .line 1020
     return-object p0
 .end method
 
@@ -1299,15 +1325,15 @@
     .parameter "value"
 
     .prologue
-    .line 823
+    .line 884
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasTimestamp:Z
 
-    .line 824
+    .line 885
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->timestamp_:J
 
-    .line 825
+    .line 886
     return-object p0
 .end method
 
@@ -1316,15 +1342,15 @@
     .parameter "value"
 
     .prologue
-    .line 877
+    .line 938
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasUserEmail:Z
 
-    .line 878
+    .line 939
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->userEmail_:Ljava/lang/String;
 
-    .line 879
+    .line 940
     return-object p0
 .end method
 
@@ -1333,26 +1359,26 @@
     .parameter "value"
 
     .prologue
-    .line 994
+    .line 1055
     if-nez p1, :cond_8
 
-    .line 995
+    .line 1056
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 997
+    .line 1058
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasUserNotificationData:Z
 
-    .line 998
+    .line 1059
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->userNotificationData_:Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;
 
-    .line 999
+    .line 1060
     return-object p0
 .end method
 
@@ -1366,14 +1392,14 @@
     .end annotation
 
     .prologue
-    .line 1085
+    .line 1147
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasNotificationType()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 1086
+    .line 1148
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getNotificationType()I
@@ -1382,7 +1408,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 1088
+    .line 1150
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasTimestamp()Z
 
@@ -1390,7 +1416,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 1089
+    .line 1151
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getTimestamp()J
@@ -1399,7 +1425,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 1091
+    .line 1153
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasDocid()Z
 
@@ -1407,7 +1433,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 1092
+    .line 1154
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getDocid()Lcom/google/android/finsky/remoting/protos/Common$Docid;
@@ -1416,7 +1442,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1094
+    .line 1156
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasDocTitle()Z
 
@@ -1424,7 +1450,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 1095
+    .line 1157
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getDocTitle()Ljava/lang/String;
@@ -1433,7 +1459,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1097
+    .line 1159
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasUserEmail()Z
 
@@ -1441,7 +1467,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 1098
+    .line 1160
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getUserEmail()Ljava/lang/String;
@@ -1450,7 +1476,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1100
+    .line 1162
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasAppData()Z
 
@@ -1458,7 +1484,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 1101
+    .line 1163
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getAppData()Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;
@@ -1467,7 +1493,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1103
+    .line 1165
     :cond_54
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasAppDeliveryData()Z
 
@@ -1475,7 +1501,7 @@
 
     if-eqz v0, :cond_63
 
-    .line 1104
+    .line 1166
     const/16 v0, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getAppDeliveryData()Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;
@@ -1484,7 +1510,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1106
+    .line 1168
     :cond_63
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasPurchaseRemovalData()Z
 
@@ -1492,7 +1518,7 @@
 
     if-eqz v0, :cond_72
 
-    .line 1107
+    .line 1169
     const/16 v0, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getPurchaseRemovalData()Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;
@@ -1501,7 +1527,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1109
+    .line 1171
     :cond_72
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasUserNotificationData()Z
 
@@ -1509,7 +1535,7 @@
 
     if-eqz v0, :cond_81
 
-    .line 1110
+    .line 1172
     const/16 v0, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getUserNotificationData()Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;
@@ -1518,7 +1544,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1112
+    .line 1174
     :cond_81
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasInAppNotificationData()Z
 
@@ -1526,7 +1552,7 @@
 
     if-eqz v0, :cond_90
 
-    .line 1113
+    .line 1175
     const/16 v0, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getInAppNotificationData()Lcom/google/android/finsky/remoting/protos/Notifications$InAppNotificationData;
@@ -1535,7 +1561,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1115
+    .line 1177
     :cond_90
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasPurchaseDeclinedData()Z
 
@@ -1543,7 +1569,7 @@
 
     if-eqz v0, :cond_9f
 
-    .line 1116
+    .line 1178
     const/16 v0, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getPurchaseDeclinedData()Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;
@@ -1552,7 +1578,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1118
+    .line 1180
     :cond_9f
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasNotificationId()Z
 
@@ -1560,7 +1586,7 @@
 
     if-eqz v0, :cond_ae
 
-    .line 1119
+    .line 1181
     const/16 v0, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getNotificationId()Ljava/lang/String;
@@ -1569,7 +1595,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1121
+    .line 1183
     :cond_ae
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasLibraryUpdate()Z
 
@@ -1577,7 +1603,7 @@
 
     if-eqz v0, :cond_bd
 
-    .line 1122
+    .line 1184
     const/16 v0, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getLibraryUpdate()Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
@@ -1586,7 +1612,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1124
+    .line 1186
     :cond_bd
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->hasLibraryDirtyData()Z
 
@@ -1594,7 +1620,7 @@
 
     if-eqz v0, :cond_cc
 
-    .line 1125
+    .line 1187
     const/16 v0, 0xf
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;->getLibraryDirtyData()Lcom/google/android/finsky/remoting/protos/Notifications$LibraryDirtyData;
@@ -1603,7 +1629,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1127
+    .line 1189
     :cond_cc
     return-void
 .end method

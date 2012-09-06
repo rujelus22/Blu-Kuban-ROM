@@ -1,106 +1,50 @@
-.class public Lcom/google/android/maps/driveabout/app/ds;
+.class Lcom/google/android/maps/driveabout/app/dS;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/maps/driveabout/vector/f;
 
 
-# static fields
-.field private static a:Z
+# instance fields
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/dD;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/dD;)V
+    .registers 2
+    .parameter
 
-    const/4 v0, 0x0
-
-    sput-boolean v0, Lcom/google/android/maps/driveabout/app/ds;->a:Z
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .registers 1
+    .prologue
+    .line 926
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/dS;->a:Lcom/google/android/maps/driveabout/app/dD;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)V
-    .registers 2
 
-    const-string v0, ""
+# virtual methods
+.method public a(Lcom/google/android/maps/driveabout/vector/e;Lcom/google/android/maps/driveabout/vector/d;)V
+    .registers 4
+    .parameter
+    .parameter
 
-    invoke-static {p0, v0}, Lcom/google/android/maps/driveabout/app/ds;->a(Ljava/lang/String;Ljava/lang/String;)V
+    .prologue
+    .line 929
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/dS;->a:Lcom/google/android/maps/driveabout/app/dD;
 
-    return-void
-.end method
-
-.method public static a(Ljava/lang/String;I)V
-    .registers 3
-
-    invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/dD;->a(Lcom/google/android/maps/driveabout/app/dD;)Ls/n;
 
     move-result-object v0
 
-    invoke-static {p0, v0}, Lcom/google/android/maps/driveabout/app/ds;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static a(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
-
-    sget-boolean v0, Lcom/google/android/maps/driveabout/app/ds;->a:Z
-
-    if-eqz v0, :cond_9
-
-    const/16 v0, 0x45
-
-    invoke-static {v0, p0, p1}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
-
-    :cond_9
-    return-void
-.end method
-
-.method public static a(Ljava/lang/String;Z)V
-    .registers 3
-
-    if-eqz p1, :cond_8
-
-    const-string v0, "t"
-
-    :goto_4
-    invoke-static {p0, v0}, Lcom/google/android/maps/driveabout/app/ds;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-
-    :cond_8
-    const-string v0, "f"
-
-    goto :goto_4
-.end method
-
-.method public static a(Z)V
-    .registers 1
-
-    sput-boolean p0, Lcom/google/android/maps/driveabout/app/ds;->a:Z
-
-    return-void
-.end method
-
-.method public static b(Z)V
-    .registers 2
-
-    sget-boolean v0, Lcom/google/android/maps/driveabout/app/ds;->a:Z
-
-    if-eqz v0, :cond_b
-
-    invoke-static {}, Laf/m;->a()Laf/m;
+    invoke-virtual {v0}, Ls/n;->g()Ls/q;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Laf/m;->a(Z)V
+    invoke-virtual {v0, p2}, Ls/q;->b(Lcom/google/android/maps/driveabout/vector/d;)V
 
-    :cond_b
+    .line 930
     return-void
 .end method

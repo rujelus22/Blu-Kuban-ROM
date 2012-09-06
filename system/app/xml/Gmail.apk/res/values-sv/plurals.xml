@@ -53,40 +53,40 @@
         <item quantity="one">%1$d konversationer väntar på åtgärd.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> har ignorerats.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> har ignorerats.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har ignorerats.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har ignorerats.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> har rapporterats som skräppost.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> har rapporterats som skräppost.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har rapporterats som skräppost.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har rapporterats som skräppost.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> har arkiverats.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> har arkiverats.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har arkiverats.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har arkiverats.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> har flyttats till inkorgen.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> har flyttats till inkorgen.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har flyttats till inkorgen.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har flyttats till inkorgen.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> har tagits bort.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> har tagits bort.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har tagits bort.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har tagits bort.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> har markerats som viktiga.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> har markerats som viktig.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har markerats som viktiga.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har markerats som viktig.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> har markerats som oviktiga.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> har markerats som oviktig.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har markerats som oviktiga.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har markerats som oviktig.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> har markerats som lästa.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> har markerats som läst.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har markerats som lästa.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har markerats som läst.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> har markerats som olästa.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> har markerats som oläst.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har markerats som olästa.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> har markerats som oläst.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Etiketterna har ändrats.</item>

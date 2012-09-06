@@ -7,8 +7,6 @@
 
 
 # instance fields
-.field private mArtistImageHeight:I
-
 .field private mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
 
 .field private mCurrentPageUrl:Ljava/lang/String;
@@ -47,7 +45,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 36
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
     return-object v0
@@ -58,7 +56,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 36
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mMoreUrl:Ljava/lang/String;
 
     return-object v0
@@ -69,7 +67,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 36
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
 
     return-object v0
@@ -80,7 +78,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 36
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
 
     return-object v0
@@ -91,7 +89,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 36
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mCurrentPageUrl:Ljava/lang/String;
 
     return-object v0
@@ -102,7 +100,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 36
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mToc:Lcom/google/android/finsky/api/model/DfeToc;
 
     return-object v0
@@ -113,7 +111,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 36
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     return-object v0
@@ -123,12 +121,12 @@
     .registers 4
 
     .prologue
-    .line 233
+    .line 268
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
     if-nez v0, :cond_c
 
-    .line 234
+    .line 269
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Cannot attach when no request is held internally"
@@ -137,18 +135,18 @@
 
     throw v0
 
-    .line 237
+    .line 272
     :cond_c
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeList;->addDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 238
+    .line 273
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeList;->addErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 242
+    .line 277
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeList;->getCount()I
@@ -157,27 +155,27 @@
 
     if-eqz v0, :cond_2d
 
-    .line 243
+    .line 278
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayout:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 244
+    .line 279
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayoutSwitcher:Lcom/google/android/finsky/layout/LayoutSwitcher;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/layout/LayoutSwitcher;->switchToDataMode()V
 
-    .line 245
+    .line 280
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->prepareAndPopulateContent()V
 
-    .line 257
+    .line 292
     :cond_2c
     :goto_2c
     return-void
 
-    .line 247
+    .line 282
     :cond_2d
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
@@ -187,12 +185,12 @@
 
     if-nez v0, :cond_39
 
-    .line 248
+    .line 283
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->handleEmptyData()V
 
     goto :goto_2c
 
-    .line 249
+    .line 284
     :cond_39
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
@@ -202,7 +200,7 @@
 
     if-eqz v0, :cond_2c
 
-    .line 254
+    .line 289
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayoutSwitcher:Lcom/google/android/finsky/layout/LayoutSwitcher;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mContext:Landroid/content/Context;
@@ -226,22 +224,22 @@
     .registers 2
 
     .prologue
-    .line 143
+    .line 141
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
     if-eqz v0, :cond_e
 
-    .line 144
+    .line 142
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeList;->removeDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 145
+    .line 143
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeList;->removeErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 147
+    .line 145
     :cond_e
     return-void
 .end method
@@ -250,7 +248,7 @@
     .registers 7
 
     .prologue
-    .line 290
+    .line 325
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
     if-eqz v0, :cond_46
@@ -275,7 +273,7 @@
 
     if-nez v0, :cond_46
 
-    .line 292
+    .line 327
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
@@ -313,24 +311,24 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/finsky/model/Bucket;
+    check-cast v0, Lcom/google/android/finsky/api/model/Bucket;
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/model/Bucket;->getAnalyticsCookie()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/finsky/api/model/Bucket;->getAnalyticsCookie()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-interface {v2, v3, v1, v4, v0}, Lcom/google/android/finsky/analytics/Analytics;->logListViewOnPage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 295
+    .line 330
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mHaveLoggedBefore:Z
 
-    .line 297
+    .line 332
     :cond_46
     return-void
 
-    .line 292
+    .line 327
     :cond_47
     const/4 v0, 0x0
 
@@ -339,20 +337,136 @@
     goto :goto_2d
 .end method
 
+.method private populateArtistCell(Landroid/view/ViewGroup;Lcom/google/android/finsky/api/model/Document;)V
+    .registers 8
+    .parameter "rowView"
+    .parameter "data"
+
+    .prologue
+    .line 225
+    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mInflater:Landroid/view/LayoutInflater;
+
+    const v3, 0x7f040006
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v2, v3, p1, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v0
+
+    .line 227
+    .local v0, artistEntry:Landroid/view/View;
+    const v2, 0x7f080011
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/finsky/layout/ArtistBucketEntry;
+
+    .line 229
+    .local v1, artistLayer:Lcom/google/android/finsky/layout/ArtistBucketEntry;
+    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
+
+    invoke-virtual {v1, v2, p2}, Lcom/google/android/finsky/layout/ArtistBucketEntry;->setDocument(Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/api/model/Document;)V
+
+    .line 230
+    const v2, 0x7f080014
+
+    invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/ArtistBucketEntry;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+
+    iget-object v4, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mCurrentPageUrl:Ljava/lang/String;
+
+    invoke-virtual {v3, p2, v4}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getClickListener(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/view/View$OnClickListener;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 232
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 233
+    return-void
+.end method
+
+.method private populateMagazineCell(Landroid/view/ViewGroup;Lcom/google/android/finsky/api/model/Document;)V
+    .registers 8
+    .parameter "rowView"
+    .parameter "data"
+
+    .prologue
+    .line 237
+    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mInflater:Landroid/view/LayoutInflater;
+
+    const v3, 0x7f040097
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v2, v3, p1, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v0
+
+    .line 239
+    .local v0, magazineEntry:Landroid/view/View;
+    const v2, 0x7f080170
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/finsky/layout/MagazineBucketEntry;
+
+    .line 241
+    .local v1, magazineLayer:Lcom/google/android/finsky/layout/MagazineBucketEntry;
+    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
+
+    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-virtual {v1, v2, v3, p2}, Lcom/google/android/finsky/layout/MagazineBucketEntry;->setDocument(Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/api/model/Document;)V
+
+    .line 242
+    const v2, 0x7f080014
+
+    invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/MagazineBucketEntry;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+
+    iget-object v4, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mCurrentPageUrl:Ljava/lang/String;
+
+    invoke-virtual {v3, p2, v4}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getClickListener(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/view/View$OnClickListener;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 244
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 245
+    return-void
+.end method
+
 .method private prepareAndPopulateContent()V
     .registers 4
 
     .prologue
-    .line 276
+    .line 311
     iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayout:Landroid/view/View;
 
-    const v2, 0x7f0800cd
+    const v2, 0x7f0800d3
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 277
+    .line 312
     .local v0, packHeader:Landroid/view/View;
     new-instance v1, Lcom/google/android/finsky/activities/DetailsPackViewBinder$2;
 
@@ -360,10 +474,10 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 286
+    .line 321
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->populateContent()V
 
-    .line 287
+    .line 322
     return-void
 .end method
 
@@ -371,10 +485,10 @@
     .registers 5
 
     .prologue
-    .line 264
+    .line 299
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->detachListeners()V
 
-    .line 265
+    .line 300
     new-instance v0, Lcom/google/android/finsky/api/model/DfeList;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
@@ -387,20 +501,20 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
-    .line 267
+    .line 302
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->attachToInternalRequest()V
 
-    .line 268
+    .line 303
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeList;->addErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 269
+    .line 304
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeList;->startLoadItems()V
 
-    .line 270
+    .line 305
     return-void
 .end method
 
@@ -408,21 +522,21 @@
     .registers 3
 
     .prologue
-    .line 214
+    .line 249
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
     if-eqz v0, :cond_9
 
-    .line 215
+    .line 250
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeList;->clearTransientState()V
 
-    .line 218
+    .line 253
     :cond_9
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayout:Landroid/view/View;
 
-    const v1, 0x7f080114
+    const v1, 0x7f08014c
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -430,18 +544,18 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f0700e5
+    const v1, 0x7f0700f4
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 219
+    .line 254
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayoutSwitcher:Lcom/google/android/finsky/layout/LayoutSwitcher;
 
     const/16 v1, 0x15e
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/LayoutSwitcher;->switchToLoadingDelayed(I)V
 
-    .line 224
+    .line 259
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mUrl:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -450,21 +564,21 @@
 
     if-nez v0, :cond_33
 
-    .line 225
+    .line 260
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayout:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 226
+    .line 261
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->setupItemListRequest()V
 
-    .line 230
+    .line 265
     :goto_32
     return-void
 
-    .line 228
+    .line 263
     :cond_33
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->handleEmptyData()V
 
@@ -487,13 +601,13 @@
     .parameter "referrerUrl"
 
     .prologue
-    .line 111
+    .line 109
     invoke-super {p0, p1, p2, p3}, Lcom/google/android/finsky/fragments/DetailsViewBinder;->bind(Landroid/view/View;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)V
 
-    .line 113
+    .line 111
     iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayout:Landroid/view/View;
 
-    const v2, 0x7f0800a3
+    const v2, 0x7f0800a9
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -501,7 +615,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 114
+    .line 112
     .local v0, subheaderView:Landroid/widget/TextView;
     invoke-static {p4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -509,41 +623,41 @@
 
     if-eqz v1, :cond_3e
 
-    .line 115
+    .line 113
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 121
+    .line 119
     :goto_19
     iput-object p5, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mUrl:Ljava/lang/String;
 
-    .line 122
+    .line 120
     iput-object p6, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mMoreUrl:Ljava/lang/String;
 
-    .line 123
+    .line 121
     iput-object p9, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mCurrentPageUrl:Ljava/lang/String;
 
-    .line 124
+    .line 122
     iput-object p10, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mReferrerUrl:Ljava/lang/String;
 
-    .line 125
+    .line 123
     iput p7, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mMaxItemsPerRow:I
 
-    .line 126
+    .line 124
     iput p8, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mMaxItemsCount:I
 
-    .line 128
+    .line 126
     iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayoutSwitcher:Lcom/google/android/finsky/layout/LayoutSwitcher;
 
     if-nez v1, :cond_3a
 
-    .line 130
+    .line 128
     new-instance v1, Lcom/google/android/finsky/layout/LayoutSwitcher;
 
     iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayout:Landroid/view/View;
 
-    const v3, 0x7f0800c6
+    const v3, 0x7f0800cf
 
     new-instance v4, Lcom/google/android/finsky/activities/DetailsPackViewBinder$1;
 
@@ -553,20 +667,20 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayoutSwitcher:Lcom/google/android/finsky/layout/LayoutSwitcher;
 
-    .line 139
+    .line 137
     :cond_3a
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->setupView()V
 
-    .line 140
+    .line 138
     return-void
 
-    .line 117
+    .line 115
     :cond_3e
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 118
+    .line 116
     invoke-static {p4}, Landroid/text/Html;->fromHtml(Ljava/lang/String;)Landroid/text/Spanned;
 
     move-result-object v1
@@ -580,19 +694,19 @@
     .registers 3
 
     .prologue
-    .line 260
+    .line 295
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayout:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 261
+    .line 296
     return-void
 .end method
 
 .method public init(Landroid/content/Context;Lcom/google/android/finsky/api/DfeApi;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/api/model/DfeToc;)V
-    .registers 8
+    .registers 6
     .parameter "context"
     .parameter "api"
     .parameter "navManager"
@@ -610,19 +724,6 @@
     iput-object p5, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mToc:Lcom/google/android/finsky/api/model/DfeToc;
 
     .line 94
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f0c0016
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v0
-
-    iput v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mArtistImageHeight:I
-
-    .line 96
     return-void
 .end method
 
@@ -630,12 +731,12 @@
     .registers 3
 
     .prologue
-    .line 305
+    .line 340
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayoutSwitcher:Lcom/google/android/finsky/layout/LayoutSwitcher;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/layout/LayoutSwitcher;->switchToDataMode()V
 
-    .line 307
+    .line 342
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeList;->getCount()I
@@ -644,25 +745,25 @@
 
     if-nez v0, :cond_11
 
-    .line 308
+    .line 343
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->handleEmptyData()V
 
-    .line 314
+    .line 349
     :goto_10
     return-void
 
-    .line 310
+    .line 345
     :cond_11
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->logListView()V
 
-    .line 311
+    .line 346
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayout:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 312
+    .line 347
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->prepareAndPopulateContent()V
 
     goto :goto_10
@@ -672,375 +773,482 @@
     .registers 2
 
     .prologue
-    .line 319
+    .line 354
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mHaveLoggedBefore:Z
 
-    .line 320
+    .line 355
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->detachListeners()V
 
-    .line 321
+    .line 356
     return-void
 .end method
 
 .method protected populateContent()V
-    .registers 18
+    .registers 22
 
     .prologue
-    .line 153
+    .line 151
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayout:Landroid/view/View;
+    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayout:Landroid/view/View;
 
-    const v15, 0x7f0800c6
+    move-object/from16 v18, v0
 
-    invoke-virtual {v14, v15}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    const v19, 0x7f0800cf
 
-    move-result-object v10
+    invoke-virtual/range {v18 .. v19}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v10, Landroid/widget/LinearLayout;
+    move-result-object v14
 
-    .line 154
-    .local v10, linearLayout:Landroid/widget/LinearLayout;
-    invoke-virtual {v10}, Landroid/widget/LinearLayout;->removeAllViews()V
+    check-cast v14, Landroid/widget/LinearLayout;
+
+    .line 152
+    .local v14, linearLayout:Landroid/widget/LinearLayout;
+    invoke-virtual {v14}, Landroid/widget/LinearLayout;->removeAllViews()V
+
+    .line 158
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Lcom/google/android/finsky/api/model/DfeList;->getCount()I
+
+    move-result v18
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mMaxItemsCount:I
+
+    move/from16 v19, v0
+
+    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->min(II)I
+
+    move-result v12
+
+    .line 159
+    .local v12, itemCount:I
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mMaxItemsPerRow:I
+
+    move/from16 v18, v0
+
+    add-int v18, v18, v12
+
+    add-int/lit8 v18, v18, -0x1
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mMaxItemsPerRow:I
+
+    move/from16 v19, v0
+
+    div-int v15, v18, v19
 
     .line 160
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
-
-    invoke-virtual {v14}, Lcom/google/android/finsky/api/model/DfeList;->getCount()I
-
-    move-result v14
-
-    move-object/from16 v0, p0
-
-    iget v15, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mMaxItemsCount:I
-
-    invoke-static {v14, v15}, Ljava/lang/Math;->min(II)I
-
-    move-result v8
-
-    .line 161
-    .local v8, itemCount:I
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mMaxItemsPerRow:I
-
-    add-int/2addr v14, v8
-
-    add-int/lit8 v14, v14, -0x1
-
-    move-object/from16 v0, p0
-
-    iget v15, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mMaxItemsPerRow:I
-
-    div-int v11, v14, v15
+    .local v15, rowCount:I
+    const/4 v13, 0x0
 
     .line 162
-    .local v11, rowCount:I
-    const/4 v9, 0x0
+    .local v13, itemIndex:I
+    if-nez v15, :cond_3f
 
-    .line 164
-    .local v9, itemIndex:I
-    if-nez v11, :cond_34
-
-    .line 165
+    .line 163
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->handleEmptyData()V
 
-    .line 210
-    :cond_33
+    .line 221
+    :cond_3e
     return-void
 
+    .line 167
+    :cond_3f
+    const/16 v18, 0x1
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->setHeaderNavigable(Z)V
+
     .line 169
-    :cond_34
-    const/4 v14, 0x1
-
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v14}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->setHeaderNavigable(Z)V
+    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayout:Landroid/view/View;
 
-    .line 171
+    move-object/from16 v18, v0
+
+    const v19, 0x7f0800d4
+
+    invoke-virtual/range {v18 .. v19}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v18
+
+    const/16 v19, 0x0
+
+    invoke-virtual/range {v18 .. v19}, Landroid/view/View;->setVisibility(I)V
+
+    .line 170
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayout:Landroid/view/View;
+    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayout:Landroid/view/View;
 
-    const v15, 0x7f0800ce
+    move-object/from16 v18, v0
 
-    invoke-virtual {v14, v15}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    const v19, 0x7f0800ce
 
-    move-result-object v14
+    invoke-virtual/range {v18 .. v19}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    const/4 v15, 0x0
+    move-result-object v18
 
-    invoke-virtual {v14, v15}, Landroid/view/View;->setVisibility(I)V
+    const/16 v19, 0x0
+
+    invoke-virtual/range {v18 .. v19}, Landroid/view/View;->setVisibility(I)V
 
     .line 172
-    move-object/from16 v0, p0
+    const/16 v16, 0x0
 
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mLayout:Landroid/view/View;
+    .local v16, rowNum:I
+    :goto_6e
+    move/from16 v0, v16
 
-    const v15, 0x7f0800c5
+    if-ge v0, v15, :cond_3e
 
-    invoke-virtual {v14, v15}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    .line 173
+    add-int/lit8 v18, v15, -0x1
 
-    move-result-object v14
+    move/from16 v0, v16
 
-    const/4 v15, 0x0
+    move/from16 v1, v18
 
-    invoke-virtual {v14, v15}, Landroid/view/View;->setVisibility(I)V
+    if-ne v0, v1, :cond_13a
+
+    const/4 v10, 0x1
 
     .line 174
-    const/4 v12, 0x0
+    .local v10, isLastRow:Z
+    :goto_7b
+    move-object/from16 v0, p0
 
-    .local v12, rowNum:I
-    :goto_59
-    if-ge v12, v11, :cond_33
+    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 175
-    add-int/lit8 v14, v11, -0x1
+    move-object/from16 v18, v0
 
-    if-ne v12, v14, :cond_d2
+    const v19, 0x7f04001f
 
-    const/4 v7, 0x1
+    const/16 v20, 0x0
+
+    move-object/from16 v0, v18
+
+    move/from16 v1, v19
+
+    move/from16 v2, v20
+
+    invoke-virtual {v0, v1, v14, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v17
+
+    check-cast v17, Lcom/google/android/finsky/layout/BucketRow;
 
     .line 176
-    .local v7, isLastRow:Z
-    :goto_60
+    .local v17, rowView:Lcom/google/android/finsky/layout/BucketRow;
+    const/16 v18, 0x1
+
+    invoke-virtual/range {v17 .. v18}, Lcom/google/android/finsky/layout/BucketRow;->setCompact(Z)V
+
+    .line 178
+    const/4 v5, 0x0
+
+    .local v5, colNum:I
+    :goto_98
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mInflater:Landroid/view/LayoutInflater;
+    iget v0, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mMaxItemsPerRow:I
 
-    const v15, 0x7f040044
+    move/from16 v18, v0
 
-    const/16 v16, 0x0
+    move/from16 v0, v18
 
-    move/from16 v0, v16
-
-    invoke-virtual {v14, v15, v10, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v13
-
-    check-cast v13, Landroid/view/ViewGroup;
+    if-ge v5, v0, :cond_162
 
     .line 179
-    .local v13, rowView:Landroid/view/ViewGroup;
-    const/4 v4, 0x0
-
-    .local v4, colNum:I
-    :goto_72
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mMaxItemsPerRow:I
-
-    if-ge v4, v14, :cond_112
-
-    .line 180
-    if-ge v9, v8, :cond_d4
+    if-ge v13, v12, :cond_13d
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
+    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
 
-    invoke-virtual {v14, v9}, Lcom/google/android/finsky/api/model/DfeList;->getItem(I)Ljava/lang/Object;
+    move-object/from16 v18, v0
 
-    move-result-object v14
+    move-object/from16 v0, v18
 
-    check-cast v14, Lcom/google/android/finsky/api/model/Document;
+    invoke-virtual {v0, v13}, Lcom/google/android/finsky/api/model/DfeList;->getItem(I)Ljava/lang/Object;
 
-    move-object v5, v14
+    move-result-object v18
+
+    check-cast v18, Lcom/google/android/finsky/api/model/Document;
+
+    move-object/from16 v6, v18
+
+    .line 181
+    .local v6, data:Lcom/google/android/finsky/api/model/Document;
+    :goto_b4
+    const/4 v9, 0x0
 
     .line 182
-    .local v5, data:Lcom/google/android/finsky/api/model/Document;
-    :goto_85
-    if-eqz v5, :cond_d6
+    .local v9, isCellHandled:Z
+    if-eqz v6, :cond_d2
 
-    invoke-virtual {v5}, Lcom/google/android/finsky/api/model/Document;->getArtistDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
+    .line 183
+    invoke-virtual {v6}, Lcom/google/android/finsky/api/model/Document;->getDocumentType()I
 
-    move-result-object v14
-
-    if-eqz v14, :cond_d6
+    move-result v7
 
     .line 184
-    move-object/from16 v0, p0
+    .local v7, documentType:I
+    const/16 v18, 0x10
 
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mInflater:Landroid/view/LayoutInflater;
+    move/from16 v0, v18
 
-    const v15, 0x7f040007
+    if-eq v7, v0, :cond_c7
 
-    const/16 v16, 0x0
+    const/16 v18, 0x11
 
-    move/from16 v0, v16
+    move/from16 v0, v18
 
-    invoke-virtual {v14, v15, v13, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    if-ne v7, v0, :cond_140
 
-    move-result-object v1
+    :cond_c7
+    const/4 v11, 0x1
 
     .line 186
-    .local v1, artistEntry:Landroid/view/View;
-    const v14, 0x7f08000e
+    .local v11, isMagazine:Z
+    :goto_c8
+    if-eqz v11, :cond_142
 
-    invoke-virtual {v1, v14}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    .line 187
+    move-object/from16 v0, p0
 
-    move-result-object v2
+    move-object/from16 v1, v17
 
-    check-cast v2, Lcom/google/android/finsky/layout/ArtistBucketEntry;
+    invoke-direct {v0, v1, v6}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->populateMagazineCell(Landroid/view/ViewGroup;Lcom/google/android/finsky/api/model/Document;)V
 
     .line 188
-    .local v2, artistLayer:Lcom/google/android/finsky/layout/ArtistBucketEntry;
+    const/4 v9, 0x1
+
+    .line 194
+    .end local v7           #documentType:I
+    .end local v11           #isMagazine:Z
+    :cond_d2
+    :goto_d2
+    if-nez v9, :cond_134
+
+    .line 196
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
+    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mInflater:Landroid/view/LayoutInflater;
 
+    move-object/from16 v18, v0
+
+    const v19, 0x7f0400c3
+
+    const/16 v20, 0x0
+
+    move-object/from16 v0, v18
+
+    move/from16 v1, v19
+
+    move-object/from16 v2, v17
+
+    move/from16 v3, v20
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v4
+
+    .line 198
+    .local v4, cellView:Landroid/view/View;
+    const v18, 0x7f08001a
+
+    move/from16 v0, v18
+
+    invoke-virtual {v4, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v8
+
+    check-cast v8, Lcom/google/android/finsky/layout/OverviewBucketEntry;
+
+    .line 200
+    .local v8, genericEntry:Lcom/google/android/finsky/layout/OverviewBucketEntry;
+    if-eqz v6, :cond_154
+
+    .line 201
     move-object/from16 v0, p0
 
-    iget v15, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mArtistImageHeight:I
+    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
 
-    invoke-virtual {v2, v14, v5, v15}, Lcom/google/android/finsky/layout/ArtistBucketEntry;->setDocument(Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/api/model/Document;I)V
+    move-object/from16 v18, v0
 
-    .line 189
-    const v14, 0x7f080011
+    move-object/from16 v0, v18
 
-    invoke-virtual {v2, v14}, Lcom/google/android/finsky/layout/ArtistBucketEntry;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v8, v0, v6, v10}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->setDocument(Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/api/model/Document;Z)V
 
-    move-result-object v14
-
+    .line 202
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+
+    move-object/from16 v18, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mCurrentPageUrl:Ljava/lang/String;
 
-    move-object/from16 v16, v0
+    move-object/from16 v19, v0
 
-    move-object/from16 v0, v16
+    move-object/from16 v0, v18
 
-    invoke-virtual {v15, v5, v0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getClickListener(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/view/View$OnClickListener;
+    move-object/from16 v1, v19
 
-    move-result-object v15
+    invoke-virtual {v0, v6, v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getClickListener(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/view/View$OnClickListener;
 
-    invoke-virtual {v14, v15}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    move-result-object v18
 
-    .line 191
-    invoke-virtual {v13, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    move-object/from16 v0, v18
 
-    .line 206
-    .end local v1           #artistEntry:Landroid/view/View;
-    .end local v2           #artistLayer:Lcom/google/android/finsky/layout/ArtistBucketEntry;
-    :goto_cd
-    add-int/lit8 v9, v9, 0x1
-
-    .line 179
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_72
-
-    .line 175
-    .end local v4           #colNum:I
-    .end local v5           #data:Lcom/google/android/finsky/api/model/Document;
-    .end local v7           #isLastRow:Z
-    .end local v13           #rowView:Landroid/view/ViewGroup;
-    :cond_d2
-    const/4 v7, 0x0
-
-    goto :goto_60
-
-    .line 180
-    .restart local v4       #colNum:I
-    .restart local v7       #isLastRow:Z
-    .restart local v13       #rowView:Landroid/view/ViewGroup;
-    :cond_d4
-    const/4 v5, 0x0
-
-    goto :goto_85
-
-    .line 194
-    .restart local v5       #data:Lcom/google/android/finsky/api/model/Document;
-    :cond_d6
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mInflater:Landroid/view/LayoutInflater;
-
-    const v15, 0x7f040095
-
-    const/16 v16, 0x0
-
-    move/from16 v0, v16
-
-    invoke-virtual {v14, v15, v13, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v3
-
-    .line 196
-    .local v3, cellView:Landroid/view/View;
-    if-eqz v5, :cond_10c
-
-    .line 197
-    const v14, 0x7f080029
-
-    invoke-virtual {v3, v14}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v6
-
-    check-cast v6, Lcom/google/android/finsky/layout/OverviewBucketEntry;
-
-    .line 199
-    .local v6, genericEntry:Lcom/google/android/finsky/layout/OverviewBucketEntry;
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
-
-    invoke-virtual {v6, v14, v5, v7}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->setDocument(Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/api/model/Document;Z)V
-
-    .line 200
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mCurrentPageUrl:Ljava/lang/String;
-
-    invoke-virtual {v14, v5, v15}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getClickListener(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/view/View$OnClickListener;
-
-    move-result-object v14
-
-    invoke-virtual {v6, v14}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 202
-    if-lez v4, :cond_110
-
-    const/4 v14, 0x1
-
-    :goto_109
-    invoke-virtual {v6, v14}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->setLeftSeparatorVisibility(Z)V
+    invoke-virtual {v8, v0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 204
-    .end local v6           #genericEntry:Lcom/google/android/finsky/layout/OverviewBucketEntry;
-    :cond_10c
-    invoke-virtual {v13, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    move-object/from16 v0, p0
 
-    goto :goto_cd
+    iget v0, v0, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mMaxItemsPerRow:I
 
-    .line 202
-    .restart local v6       #genericEntry:Lcom/google/android/finsky/layout/OverviewBucketEntry;
-    :cond_110
-    const/4 v14, 0x0
+    move/from16 v18, v0
 
-    goto :goto_109
+    add-int/lit8 v18, v18, -0x1
+
+    move/from16 v0, v18
+
+    if-ge v5, v0, :cond_151
+
+    const/16 v18, 0x1
+
+    :goto_12a
+    move/from16 v0, v18
+
+    invoke-virtual {v8, v0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->setRightSeparatorVisibility(Z)V
+
+    .line 215
+    :goto_12f
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v4}, Lcom/google/android/finsky/layout/BucketRow;->addView(Landroid/view/View;)V
+
+    .line 217
+    .end local v4           #cellView:Landroid/view/View;
+    .end local v8           #genericEntry:Lcom/google/android/finsky/layout/OverviewBucketEntry;
+    :cond_134
+    add-int/lit8 v13, v13, 0x1
+
+    .line 178
+    add-int/lit8 v5, v5, 0x1
+
+    goto/16 :goto_98
+
+    .line 173
+    .end local v5           #colNum:I
+    .end local v6           #data:Lcom/google/android/finsky/api/model/Document;
+    .end local v9           #isCellHandled:Z
+    .end local v10           #isLastRow:Z
+    .end local v17           #rowView:Lcom/google/android/finsky/layout/BucketRow;
+    :cond_13a
+    const/4 v10, 0x0
+
+    goto/16 :goto_7b
+
+    .line 179
+    .restart local v5       #colNum:I
+    .restart local v10       #isLastRow:Z
+    .restart local v17       #rowView:Lcom/google/android/finsky/layout/BucketRow;
+    :cond_13d
+    const/4 v6, 0x0
+
+    goto/16 :goto_b4
+
+    .line 184
+    .restart local v6       #data:Lcom/google/android/finsky/api/model/Document;
+    .restart local v7       #documentType:I
+    .restart local v9       #isCellHandled:Z
+    :cond_140
+    const/4 v11, 0x0
+
+    goto :goto_c8
+
+    .line 189
+    .restart local v11       #isMagazine:Z
+    :cond_142
+    invoke-virtual {v6}, Lcom/google/android/finsky/api/model/Document;->getArtistDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
+
+    move-result-object v18
+
+    if-eqz v18, :cond_d2
+
+    .line 190
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v17
+
+    invoke-direct {v0, v1, v6}, Lcom/google/android/finsky/activities/DetailsPackViewBinder;->populateArtistCell(Landroid/view/ViewGroup;Lcom/google/android/finsky/api/model/Document;)V
+
+    .line 191
+    const/4 v9, 0x1
+
+    goto :goto_d2
+
+    .line 204
+    .end local v7           #documentType:I
+    .end local v11           #isMagazine:Z
+    .restart local v4       #cellView:Landroid/view/View;
+    .restart local v8       #genericEntry:Lcom/google/android/finsky/layout/OverviewBucketEntry;
+    :cond_151
+    const/16 v18, 0x0
+
+    goto :goto_12a
 
     .line 208
-    .end local v3           #cellView:Landroid/view/View;
-    .end local v5           #data:Lcom/google/android/finsky/api/model/Document;
-    .end local v6           #genericEntry:Lcom/google/android/finsky/layout/OverviewBucketEntry;
-    :cond_112
-    invoke-virtual {v10, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    :cond_154
+    if-ne v13, v12, :cond_15a
 
-    .line 174
-    add-int/lit8 v12, v12, 0x1
+    .line 209
+    invoke-virtual {v8}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->setNoDocument()V
 
-    goto/16 :goto_59
+    goto :goto_12f
+
+    .line 211
+    :cond_15a
+    const/16 v18, 0x4
+
+    move/from16 v0, v18
+
+    invoke-virtual {v8, v0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->setVisibility(I)V
+
+    goto :goto_12f
+
+    .line 219
+    .end local v4           #cellView:Landroid/view/View;
+    .end local v6           #data:Lcom/google/android/finsky/api/model/Document;
+    .end local v8           #genericEntry:Lcom/google/android/finsky/layout/OverviewBucketEntry;
+    .end local v9           #isCellHandled:Z
+    :cond_162
+    move-object/from16 v0, v17
+
+    invoke-virtual {v14, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 172
+    add-int/lit8 v16, v16, 0x1
+
+    goto/16 :goto_6e
 .end method

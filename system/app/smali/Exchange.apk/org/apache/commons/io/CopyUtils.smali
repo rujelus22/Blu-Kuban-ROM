@@ -8,9 +8,8 @@
     .registers 1
 
     .prologue
-    .line 125
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 124
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 126
     return-void
 .end method

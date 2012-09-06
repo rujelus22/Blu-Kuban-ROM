@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/sidebar_album_info"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:music="http://schemas.android.com/apk/res/com.google.android.music">
+    <com.google.android.music.AsyncAlbumArtImageView android:id="@id/albumartthumb" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="@dimen/album_art_thumb_size" android:layout_height="@dimen/album_art_thumb_size" android:scaleType="fitCenter" android:layout_alignParentTop="true" />
+    <com.google.android.music.KeepOnCheckBox android:id="@id/keeponselector" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_toRightOf="@id/albumartthumb" android:layout_alignBottom="@id/albumartthumb" android:onClick="onKeepOnCheckBoxClicked" android.clickable="true" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/context_menu" android:background="@drawable/menuitem_background" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/sidebar_item_height" android:layout_below="@id/albumartthumb" android:layout_alignParentLeft="true" android:layout_alignParentRight="true">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textStyle="bold" android:id="@id/primaryLabel" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:layout_alignParentTop="true" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="@color/secondary_text_color" android:id="@id/secondaryLabel" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:layout_below="@id/primaryLabel" />
+            <ImageView android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_context_menu" android:layout_alignBottom="@id/secondaryLabel" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

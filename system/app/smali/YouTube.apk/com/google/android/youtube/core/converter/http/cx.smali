@@ -1,142 +1,224 @@
-.class final Lcom/google/android/youtube/core/converter/http/cx;
-.super Lcom/google/android/youtube/core/converter/l;
+.class public final Lcom/google/android/youtube/core/converter/http/cx;
+.super Lcom/google/android/youtube/core/converter/http/fn;
 .source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/youtube/core/converter/a;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/converter/http/cv;
+.field private final b:Lcom/google/android/youtube/core/converter/c;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/core/converter/http/cv;)V
-    .registers 2
+.method public constructor <init>(Lcom/google/android/youtube/core/converter/k;)V
+    .registers 5
     .parameter
 
     .prologue
-    .line 126
-    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/cx;->a:Lcom/google/android/youtube/core/converter/http/cv;
+    .line 36
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/converter/http/fn;-><init>(Lcom/google/android/youtube/core/converter/k;)V
 
-    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
+    .line 37
+    new-instance v0, Lcom/google/android/youtube/core/converter/d;
 
+    invoke-direct {v0}, Lcom/google/android/youtube/core/converter/d;-><init>()V
+
+    const-string v1, "/transcript"
+
+    new-instance v2, Lcom/google/android/youtube/core/converter/http/cz;
+
+    invoke-direct {v2, p0}, Lcom/google/android/youtube/core/converter/http/cz;-><init>(Lcom/google/android/youtube/core/converter/http/cx;)V
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/converter/d;->a(Ljava/lang/String;Lcom/google/android/youtube/core/converter/o;)Lcom/google/android/youtube/core/converter/d;
+
+    move-result-object v0
+
+    const-string v1, "/transcript/text"
+
+    new-instance v2, Lcom/google/android/youtube/core/converter/http/cy;
+
+    invoke-direct {v2, p0}, Lcom/google/android/youtube/core/converter/http/cy;-><init>(Lcom/google/android/youtube/core/converter/http/cx;)V
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/converter/d;->a(Ljava/lang/String;Lcom/google/android/youtube/core/converter/o;)Lcom/google/android/youtube/core/converter/d;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/converter/d;->a()Lcom/google/android/youtube/core/converter/c;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/converter/http/cx;->b:Lcom/google/android/youtube/core/converter/c;
+
+    .line 62
     return-void
+.end method
+
+.method static synthetic a(Ljava/lang/String;)I
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 28
+    if-nez p0, :cond_4
+
+    const/4 v0, 0x0
+
+    :goto_3
+    return v0
+
+    :cond_4
+    invoke-static {p0}, Ljava/lang/Double;->valueOf(Ljava/lang/String;)Ljava/lang/Double;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v0
+
+    const-wide v2, 0x408f400000000000L
+
+    mul-double/2addr v0, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->round(D)J
+
+    move-result-wide v0
+
+    long-to-int v0, v0
+
+    goto :goto_3
+.end method
+
+.method private static a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 82
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "http://video.google.com/timedtext?hl="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "&v="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "&type=track&lang="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "&name="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-static {p2}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "&format=1"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
-    .registers 8
-    .parameter
-    .parameter
+.method protected final a()Lcom/google/android/youtube/core/converter/c;
+    .registers 2
+
+    .prologue
+    .line 66
+    iget-object v0, p0, Lcom/google/android/youtube/core/converter/http/cx;->b:Lcom/google/android/youtube/core/converter/c;
+
+    return-object v0
+.end method
+
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
     .parameter
 
     .prologue
-    .line 129
-    const-class v0, Lcom/google/android/youtube/core/model/p;
+    .line 28
+    check-cast p1, Lcom/google/android/youtube/core/model/SubtitleTrack;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    iget-object v0, p1, Lcom/google/android/youtube/core/model/SubtitleTrack;->videoId:Ljava/lang/String;
+
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/p;
-
-    .line 130
-    const-string v1, "id"
-
-    invoke-interface {p2, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 132
-    :try_start_e
-    const-string v2, "engagedView"
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1}, Lcom/google/android/youtube/core/model/SubtitleTrack;->isAutoTranslated()Z
 
     move-result v1
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_2b
 
-    .line 133
-    invoke-virtual {p3}, Ljava/lang/String;->trim()Ljava/lang/String;
+    iget-object v1, p1, Lcom/google/android/youtube/core/model/SubtitleTrack;->sourceLanguageCode:Ljava/lang/String;
+
+    iget-object v2, p1, Lcom/google/android/youtube/core/model/SubtitleTrack;->trackName:Ljava/lang/String;
+
+    invoke-static {v0, v1, v2}, Lcom/google/android/youtube/core/converter/http/cx;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "&tlang="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->c(Ljava/lang/String;)Landroid/net/Uri;
+    iget-object v2, p1, Lcom/google/android/youtube/core/model/SubtitleTrack;->languageCode:Ljava/lang/String;
 
-    move-result-object v1
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/p;->g(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/p;
-
-    .line 149
-    :cond_21
     :goto_21
-    return-void
+    new-instance v1, Lorg/apache/http/client/methods/HttpGet;
 
-    .line 134
-    :cond_22
-    invoke-virtual {p3}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string v2, "SKIPPABLE_AD"
+    invoke-direct {v1, v0}, Lorg/apache/http/client/methods/HttpGet;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    return-object v1
 
-    move-result v1
+    :cond_2b
+    iget-object v1, p1, Lcom/google/android/youtube/core/model/SubtitleTrack;->languageCode:Ljava/lang/String;
 
-    if-eqz v1, :cond_21
+    iget-object v2, p1, Lcom/google/android/youtube/core/model/SubtitleTrack;->trackName:Ljava/lang/String;
 
-    .line 136
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/model/p;->a()Lcom/google/android/youtube/core/model/p;
+    invoke-static {v0, v1, v2}, Lcom/google/android/youtube/core/converter/http/cx;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 138
-    const-string v1, "(?i)SKIPPABLE_AD"
-
-    invoke-virtual {p3, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 139
-    array-length v2, v1
-
-    const/4 v3, 0x2
-
-    if-lt v2, v3, :cond_21
-
-    .line 140
-    const/4 v2, 0x1
-
-    aget-object v1, v1, v2
-
-    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 141
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_21
-
-    .line 142
-    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->c(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/p;->f(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/p;
-    :try_end_4f
-    .catch Ljava/net/MalformedURLException; {:try_start_e .. :try_end_4f} :catch_50
-
-    goto :goto_21
-
-    .line 147
-    :catch_50
-    move-exception v0
-
-    const-string v0, "Badly formed custom click tracking uri - ignoring"
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/L;->c(Ljava/lang/String;)V
+    move-result-object v0
 
     goto :goto_21
 .end method

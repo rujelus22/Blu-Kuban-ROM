@@ -29,7 +29,7 @@
     .registers 2
 
     .prologue
-    .line 262
+    .line 105
     const-wide/16 v0, 0x1
 
     sput-wide v0, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->dataId:J
@@ -48,20 +48,20 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 265
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 108
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 266
+    .line 109
     iput-object p1, p0, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->mProjection:Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalProjection;
 
-    .line 267
+    .line 110
     iget v0, p1, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalProjection;->size:I
 
     new-array v0, v0, [Ljava/lang/Object;
 
     iput-object v0, p0, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->row:[Ljava/lang/Object;
 
-    .line 268
+    .line 112
     const-string v0, "contact_id"
 
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -70,7 +70,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 271
+    .line 115
     const-string v0, "raw_contact_id"
 
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -79,7 +79,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 272
+    .line 116
     const-string v0, "data_id"
 
     sget-wide v1, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->dataId:J
@@ -96,29 +96,29 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 273
+    .line 118
     const-string v0, "display_name"
 
     invoke-virtual {p0, v0, p6}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 275
+    .line 121
     const-string v0, "display_name_alt"
 
     invoke-virtual {p0, v0, p6}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 276
+    .line 123
     const-string v0, "account_type"
 
     const-string v1, "com.android.exchange"
 
     invoke-virtual {p0, v0, v1}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 277
+    .line 124
     const-string v0, "account_name"
 
     invoke-virtual {p0, v0, p5}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 278
+    .line 125
     const-string v0, "raw_contact_is_read_only"
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -127,7 +127,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 279
+    .line 126
     const-string v0, "is_read_only"
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -136,184 +136,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 280
-    return-void
-.end method
-
-.method public static addDataRow(Landroid/database/MatrixCursor;Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalProjection;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/android/emailcommon/mail/PackedString;)V
-    .registers 15
-    .parameter "cursor"
-    .parameter "galProjection"
-    .parameter "contactId"
-    .parameter "lookupKey"
-    .parameter "accountName"
-    .parameter "displayName"
-    .parameter "ps"
-
-    .prologue
-    .line 335
-    new-instance v0, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;
-
-    move-object v1, p1
-
-    move-wide v2, p2
-
-    move-object v4, p4
-
-    move-object v5, p5
-
-    move-object v6, p6
-
-    invoke-direct/range {v0 .. v6}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;-><init>(Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalProjection;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 337
-    .local v0, r:Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;
-    const-string v1, "mimetype"
-
-    const-string v2, "com.android.exchange.directory.provider"
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 338
-    const-string v1, "displayName"
-
-    const-string v2, "displayName"
-
-    invoke-virtual {p7, v2}, Lcom/android/emailcommon/mail/PackedString;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 339
-    const-string v1, "emailAddress"
-
-    const-string v2, "emailAddress"
-
-    invoke-virtual {p7, v2}, Lcom/android/emailcommon/mail/PackedString;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 340
-    const-string v1, "workPhone"
-
-    const-string v2, "workPhone"
-
-    invoke-virtual {p7, v2}, Lcom/android/emailcommon/mail/PackedString;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 341
-    const-string v1, "homePhone"
-
-    const-string v2, "homePhone"
-
-    invoke-virtual {p7, v2}, Lcom/android/emailcommon/mail/PackedString;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 342
-    const-string v1, "mobilePhone"
-
-    const-string v2, "mobilePhone"
-
-    invoke-virtual {p7, v2}, Lcom/android/emailcommon/mail/PackedString;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 343
-    const-string v1, "firstName"
-
-    const-string v2, "firstName"
-
-    invoke-virtual {p7, v2}, Lcom/android/emailcommon/mail/PackedString;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 344
-    const-string v1, "lastName"
-
-    const-string v2, "lastName"
-
-    invoke-virtual {p7, v2}, Lcom/android/emailcommon/mail/PackedString;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 345
-    const-string v1, "company"
-
-    const-string v2, "company"
-
-    invoke-virtual {p7, v2}, Lcom/android/emailcommon/mail/PackedString;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 346
-    const-string v1, "title"
-
-    const-string v2, "title"
-
-    invoke-virtual {p7, v2}, Lcom/android/emailcommon/mail/PackedString;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 347
-    const-string v1, "office"
-
-    const-string v2, "office"
-
-    invoke-virtual {p7, v2}, Lcom/android/emailcommon/mail/PackedString;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 348
-    const-string v1, "alias"
-
-    const-string v2, "alias"
-
-    invoke-virtual {p7, v2}, Lcom/android/emailcommon/mail/PackedString;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 349
-    const-string v1, "pictureData"
-
-    const-string v2, "picture"
-
-    invoke-virtual {p7, v2}, Lcom/android/emailcommon/mail/PackedString;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 350
-    invoke-virtual {v0}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->getRow()[Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
-
-    .line 351
+    .line 127
     return-void
 .end method
 
@@ -328,14 +151,14 @@
     .parameter "address"
 
     .prologue
-    .line 298
+    .line 145
     invoke-static {p7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_2d
 
-    .line 299
+    .line 146
     new-instance v0, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;
 
     move-object v1, p1
@@ -350,7 +173,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;-><init>(Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalProjection;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 301
+    .line 148
     .local v0, r:Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;
     const-string v1, "mimetype"
 
@@ -358,7 +181,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 302
+    .line 149
     const-string v1, "data2"
 
     const/4 v2, 0x2
@@ -369,19 +192,19 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 303
+    .line 150
     const-string v1, "data1"
 
     invoke-virtual {v0, v1, p7}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 304
+    .line 151
     invoke-virtual {v0}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->getRow()[Ljava/lang/Object;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    .line 306
+    .line 153
     .end local v0           #r:Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;
     :cond_2d
     return-void
@@ -399,7 +222,7 @@
     .parameter "lastName"
 
     .prologue
-    .line 323
+    .line 170
     new-instance v0, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;
 
     move-object v1, p1
@@ -414,7 +237,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;-><init>(Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalProjection;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 325
+    .line 172
     .local v0, r:Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;
     const-string v1, "mimetype"
 
@@ -422,29 +245,29 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 326
+    .line 173
     const-string v1, "data2"
 
     invoke-virtual {v0, v1, p7}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 327
+    .line 174
     const-string v1, "data3"
 
     invoke-virtual {v0, v1, p8}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 328
+    .line 175
     const-string v1, "data1"
 
     invoke-virtual {v0, v1, p6}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 329
+    .line 176
     invoke-virtual {v0}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->getRow()[Ljava/lang/Object;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    .line 330
+    .line 177
     return-void
 .end method
 
@@ -460,14 +283,14 @@
     .parameter "number"
 
     .prologue
-    .line 310
+    .line 157
     invoke-static {p8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_2c
 
-    .line 311
+    .line 158
     new-instance v0, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;
 
     move-object v1, p1
@@ -482,7 +305,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;-><init>(Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalProjection;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 313
+    .line 160
     .local v0, r:Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;
     const-string v1, "mimetype"
 
@@ -490,7 +313,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 314
+    .line 161
     const-string v1, "data2"
 
     invoke-static {p7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -499,19 +322,19 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 315
+    .line 162
     const-string v1, "data1"
 
     invoke-virtual {v0, v1, p8}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 316
+    .line 163
     invoke-virtual {v0}, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->getRow()[Ljava/lang/Object;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    .line 318
+    .line 165
     .end local v0           #r:Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;
     :cond_2c
     return-void
@@ -523,7 +346,7 @@
     .registers 2
 
     .prologue
-    .line 283
+    .line 130
     iget-object v0, p0, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->row:[Ljava/lang/Object;
 
     return-object v0
@@ -535,7 +358,7 @@
     .parameter "value"
 
     .prologue
-    .line 287
+    .line 134
     iget-object v1, p0, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->mProjection:Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalProjection;
 
     iget-object v1, v1, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalProjection;->columnMap:Ljava/util/HashMap;
@@ -546,11 +369,11 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 288
+    .line 135
     .local v0, integer:Ljava/lang/Integer;
     if-eqz v0, :cond_15
 
-    .line 289
+    .line 136
     iget-object v1, p0, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalContactRow;->row:[Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -559,13 +382,13 @@
 
     aput-object p2, v1, v2
 
-    .line 293
+    .line 140
     :goto_14
     return-void
 
-    .line 291
+    .line 138
     :cond_15
-    const-string v1, "[ExchagneDirectoryProvider]"
+    sget-object v1, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -585,7 +408,7 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v1, v2}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
     goto :goto_14
 .end method

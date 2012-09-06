@@ -3,12 +3,12 @@
 .source "RestoreService.java"
 
 # interfaces
-.implements Lcom/android/volley/Response$ErrorListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/services/RestoreService;->restore(JLjava/lang/String;)V
+    value = Lcom/google/android/finsky/services/RestoreService;->restore(Ljava/lang/String;Landroid/accounts/Account;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,17 +18,29 @@
 
 
 # instance fields
+.field private mLoaded:I
+
 .field final synthetic this$0:Lcom/google/android/finsky/services/RestoreService;
+
+.field final synthetic val$account:Landroid/accounts/Account;
+
+.field final synthetic val$aid:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/services/RestoreService;)V
-    .registers 2
+.method constructor <init>(Lcom/google/android/finsky/services/RestoreService;Ljava/lang/String;Landroid/accounts/Account;)V
+    .registers 4
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 348
+    .line 383
     iput-object p1, p0, Lcom/google/android/finsky/services/RestoreService$1;->this$0:Lcom/google/android/finsky/services/RestoreService;
+
+    iput-object p2, p0, Lcom/google/android/finsky/services/RestoreService$1;->val$aid:Ljava/lang/String;
+
+    iput-object p3, p0, Lcom/google/android/finsky/services/RestoreService$1;->val$account:Landroid/accounts/Account;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,24 +49,37 @@
 
 
 # virtual methods
-.method public onErrorResponse(Lcom/android/volley/VolleyError;)V
-    .registers 5
-    .parameter "error"
+.method public run()V
+    .registers 4
 
     .prologue
-    .line 351
-    const-string v0, "Error while getting list of applications to restore from server: %s"
+    .line 387
+    iget v0, p0, Lcom/google/android/finsky/services/RestoreService$1;->mLoaded:I
 
-    const/4 v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    new-array v1, v1, [Ljava/lang/Object;
+    iput v0, p0, Lcom/google/android/finsky/services/RestoreService$1;->mLoaded:I
 
-    const/4 v2, 0x0
+    .line 388
+    iget v0, p0, Lcom/google/android/finsky/services/RestoreService$1;->mLoaded:I
 
-    aput-object p1, v1, v2
+    const/4 v1, 0x3
 
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    if-ne v0, v1, :cond_16
 
-    .line 353
+    .line 389
+    iget-object v0, p0, Lcom/google/android/finsky/services/RestoreService$1;->this$0:Lcom/google/android/finsky/services/RestoreService;
+
+    iget-object v1, p0, Lcom/google/android/finsky/services/RestoreService$1;->val$aid:Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/google/android/finsky/services/RestoreService$1;->val$account:Landroid/accounts/Account;
+
+    iget-object v2, v2, Landroid/accounts/Account;->name:Ljava/lang/String;
+
+    #calls: Lcom/google/android/finsky/services/RestoreService;->doRestore(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lcom/google/android/finsky/services/RestoreService;->access$700(Lcom/google/android/finsky/services/RestoreService;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 391
+    :cond_16
     return-void
 .end method

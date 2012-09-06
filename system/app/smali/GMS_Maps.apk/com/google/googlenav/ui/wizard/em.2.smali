@@ -1,46 +1,85 @@
-.class public Lcom/google/googlenav/ui/wizard/em;
+.class Lcom/google/googlenav/ui/wizard/eM;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field a:LaJ/B;
+.field final a:I
 
-.field b:Lt/y;
-
-.field c:Ljava/lang/String;
-
-.field d:LaJ/H;
-
-.field e:I
-
-.field f:I
-
-.field g:I
-
-.field h:Ljava/lang/String;
-
-.field i:Ljava/lang/String;
-
-.field j:Lcom/google/googlenav/ui/e;
-
-.field k:LaJ/B;
-
-.field l:Lcom/google/googlenav/ui/e;
-
-.field final synthetic m:Lcom/google/googlenav/ui/wizard/ej;
+.field final synthetic b:Lcom/google/googlenav/ui/wizard/eE;
 
 
 # direct methods
-.method protected constructor <init>(Lcom/google/googlenav/ui/wizard/ej;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/eE;I)V
     .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/em;->m:Lcom/google/googlenav/ui/wizard/ej;
+    .prologue
+    .line 146
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/eM;->b:Lcom/google/googlenav/ui/wizard/eE;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, -0x1
+    .line 147
+    iput p2, p0, Lcom/google/googlenav/ui/wizard/eM;->a:I
 
-    iput v0, p0, Lcom/google/googlenav/ui/wizard/em;->g:I
+    .line 148
+    return-void
+.end method
 
+
+# virtual methods
+.method public onClick(Landroid/view/View;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 152
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/eM;->b:Lcom/google/googlenav/ui/wizard/eE;
+
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/eE;->a(Lcom/google/googlenav/ui/wizard/eE;)Landroid/support/v4/view/ViewPager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->c()I
+
+    move-result v0
+
+    iget v1, p0, Lcom/google/googlenav/ui/wizard/eM;->a:I
+
+    add-int/2addr v0, v1
+
+    .line 153
+    if-ltz v0, :cond_25
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/eM;->b:Lcom/google/googlenav/ui/wizard/eE;
+
+    invoke-static {v1}, Lcom/google/googlenav/ui/wizard/eE;->b(Lcom/google/googlenav/ui/wizard/eE;)Lcom/google/googlenav/ui/wizard/eK;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/wizard/eK;->a()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_25
+
+    .line 154
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/eM;->b:Lcom/google/googlenav/ui/wizard/eE;
+
+    invoke-static {v1}, Lcom/google/googlenav/ui/wizard/eE;->a(Lcom/google/googlenav/ui/wizard/eE;)Landroid/support/v4/view/ViewPager;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v0, v2}, Landroid/support/v4/view/ViewPager;->setCurrentItem(IZ)V
+
+    .line 156
+    :cond_25
     return-void
 .end method

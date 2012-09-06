@@ -36,7 +36,7 @@
     .line 41
     const-string v0, "view may not be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -47,7 +47,7 @@
     .line 42
     const-string v0, "adapter may not be null"
 
-    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -58,7 +58,7 @@
     .line 43
     const-string v0, "retryListener may not be null"
 
-    invoke-static {p3, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -67,7 +67,7 @@
     iput-object v0, p0, Lcom/google/android/youtube/app/ui/a;->a:Lcom/google/android/youtube/core/ui/m;
 
     .line 45
-    const v0, 0x7f09006f
+    const v0, 0x7f0800bf
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -75,7 +75,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -84,7 +84,7 @@
     iput-object v0, p0, Lcom/google/android/youtube/app/ui/a;->d:Landroid/widget/TextView;
 
     .line 46
-    const v0, 0x7f090079
+    const v0, 0x7f0800be
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -92,7 +92,7 @@
 
     check-cast v0, Landroid/widget/ProgressBar;
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -101,7 +101,7 @@
     iput-object v0, p0, Lcom/google/android/youtube/app/ui/a;->e:Landroid/widget/ProgressBar;
 
     .line 48
-    const v0, 0x7f09007a
+    const v0, 0x7f0800c0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -109,7 +109,7 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -118,13 +118,13 @@
     iput-object v0, p0, Lcom/google/android/youtube/app/ui/a;->f:Landroid/widget/Button;
 
     .line 49
-    const v0, 0x7f090078
+    const v0, 0x7f0800bd
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -281,7 +281,7 @@
     .line 57
     iget-object v0, p0, Lcom/google/android/youtube/app/ui/a;->a:Lcom/google/android/youtube/core/ui/m;
 
-    invoke-interface {v0}, Lcom/google/android/youtube/core/ui/m;->f_()V
+    invoke-interface {v0}, Lcom/google/android/youtube/core/ui/m;->h()V
 
     .line 58
     return-void

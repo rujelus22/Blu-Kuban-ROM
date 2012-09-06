@@ -42,22 +42,22 @@
     .line 717
     iget-object v0, p1, Lcom/google/android/talk/TalkApp$AccountInfo;->username:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;->username:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/talk/TalkApp$AccountInfo;->username:Ljava/lang/String;
 
     .line 718
     iget-wide v0, p1, Lcom/google/android/talk/TalkApp$AccountInfo;->accountId:J
 
-    iput-wide v0, p0, Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;->accountId:J
+    iput-wide v0, p0, Lcom/google/android/talk/TalkApp$AccountInfo;->accountId:J
 
     .line 719
     iget-boolean v0, p1, Lcom/google/android/talk/TalkApp$AccountInfo;->signedIn:Z
 
-    iput-boolean v0, p0, Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;->signedIn:Z
+    iput-boolean v0, p0, Lcom/google/android/talk/TalkApp$AccountInfo;->signedIn:Z
 
     .line 720
     iget-boolean v0, p1, Lcom/google/android/talk/TalkApp$AccountInfo;->active:Z
 
-    iput-boolean v0, p0, Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;->active:Z
+    iput-boolean v0, p0, Lcom/google/android/talk/TalkApp$AccountInfo;->active:Z
 
     .line 721
     iput-boolean p2, p0, Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;->mHasTargetUser:Z

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/widget" android:background="@color/clear" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/widget_margin_left" android:layout_marginTop="@dimen/widget_margin_top" android:layout_marginRight="@dimen/widget_margin_right" android:layout_marginBottom="@dimen/widget_margin_bottom"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/widget_header" />
-    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <ListView android:gravity="center" android:id="@id/list_view" android:background="@color/widget_list_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/stream_list_selector" android:drawSelectorOnTop="true" />
-        <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/solid_black" android:gravity="center" android:id="@id/empty_view" android:background="@color/solid_white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/loading" />
-    </FrameLayout>
-</LinearLayout>

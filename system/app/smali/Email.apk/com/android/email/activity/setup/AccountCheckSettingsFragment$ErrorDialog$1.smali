@@ -30,12 +30,12 @@
     .parameter
 
     .prologue
-    .line 1019
+    .line 826
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog$1;->this$0:Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;
 
     iput-object p2, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog$1;->val$target:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,48 +43,22 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 6
+    .registers 4
     .parameter "dialog"
     .parameter "which"
 
     .prologue
-    .line 1021
-    iget-object v1, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog$1;->this$0:Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;
+    .line 828
+    iget-object v0, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog$1;->this$0:Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;
 
-    invoke-virtual {v1}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;->dismiss()V
+    invoke-virtual {v0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog;->dismiss()V
 
-    .line 1023
-    :try_start_5
-    iget-object v1, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog$1;->val$target:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
+    .line 829
+    iget-object v0, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog$1;->val$target:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
 
-    if-eqz v1, :cond_e
+    #calls: Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->onEditCertificateOk()V
+    invoke-static {v0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->access$300(Lcom/android/email/activity/setup/AccountCheckSettingsFragment;)V
 
-    .line 1024
-    iget-object v1, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$ErrorDialog$1;->val$target:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
-
-    #calls: Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->onErrorDialogEditButton()V
-    invoke-static {v1}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->access$300(Lcom/android/email/activity/setup/AccountCheckSettingsFragment;)V
-    :try_end_e
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_e} :catch_f
-
-    .line 1029
-    :cond_e
-    :goto_e
+    .line 830
     return-void
-
-    .line 1026
-    :catch_f
-    move-exception v0
-
-    .line 1027
-    .local v0, e:Ljava/lang/Exception;
-    const-string v1, "ErrorDialog"
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_e
 .end method

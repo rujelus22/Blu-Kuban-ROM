@@ -5,8 +5,8 @@
         <item quantity="one">Broj rezultata: %1$d</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">Broj ažuriranja pronađenih za %2$s: %1$d.</item>
-        <item quantity="one">Broj ažuriranja pronađenih za %2$s: %1$d.</item>
+        <item quantity="other">Pronađeno je ovoliko ažuriranja: %1$d.</item>
+        <item quantity="one">Pronađeno je ovoliko ažuriranja: %1$d.</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">Osobe koje su ovome dale +1: %1$s</item>

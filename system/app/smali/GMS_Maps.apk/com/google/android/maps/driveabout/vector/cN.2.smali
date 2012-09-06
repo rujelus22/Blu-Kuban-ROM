@@ -1,114 +1,103 @@
-.class public Lcom/google/android/maps/driveabout/vector/cN;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field private static final a:Lt/L;
-
-.field private static final b:Lt/L;
+.class public final Lcom/google/android/maps/driveabout/vector/cN;
+.super Lcom/google/android/maps/driveabout/vector/cM;
+.source "SourceFile"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>([I)V
+    .registers 3
+    .parameter
 
-    new-instance v0, Lt/L;
+    .prologue
+    .line 461
+    invoke-direct {p0}, Lcom/google/android/maps/driveabout/vector/cM;-><init>()V
 
-    invoke-direct {v0}, Lt/L;-><init>()V
+    .line 462
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/vector/cN;->b:[I
 
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/cN;->a:Lt/L;
+    .line 463
+    array-length v0, p1
 
-    new-instance v0, Lt/L;
+    div-int/lit8 v0, v0, 0x2
 
-    invoke-direct {v0}, Lt/L;-><init>()V
+    iput v0, p0, Lcom/google/android/maps/driveabout/vector/cN;->c:I
 
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/cN;->b:Lt/L;
+    .line 464
+    iget v0, p0, Lcom/google/android/maps/driveabout/vector/cN;->c:I
 
+    iput v0, p0, Lcom/google/android/maps/driveabout/vector/cN;->d:I
+
+    .line 465
+    array-length v0, p1
+
+    iput v0, p0, Lcom/google/android/maps/driveabout/vector/cN;->i:I
+
+    .line 466
     return-void
 .end method
 
-.method private constructor <init>()V
-    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public a(FF)V
+    .registers 5
+    .parameter
+    .parameter
 
-    return-void
+    .prologue
+    .line 473
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "Immutable"
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
-.method public static a(Ljavax/microedition/khronos/opengles/GL10;Lcom/google/android/maps/driveabout/vector/t;)V
+.method public a(II)V
+    .registers 5
+    .parameter
+    .parameter
+
+    .prologue
+    .line 469
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "Immutable"
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public a(Lcom/google/android/maps/driveabout/vector/aU;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 481
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "Immutable"
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public a([III)V
     .registers 6
+    .parameter
+    .parameter
+    .parameter
 
-    const/high16 v3, 0x3f80
+    .prologue
+    .line 477
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    const/4 v2, 0x0
+    const-string v1, "Immutable"
 
-    invoke-virtual {p1}, Lcom/google/android/maps/driveabout/vector/t;->i()F
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    move-result v0
-
-    neg-float v0, v0
-
-    invoke-interface {p0, v0, v2, v2, v3}, Ljavax/microedition/khronos/opengles/GL10;->glRotatef(FFFF)V
-
-    invoke-virtual {p1}, Lcom/google/android/maps/driveabout/vector/t;->j()F
-
-    move-result v0
-
-    const/high16 v1, 0x42b4
-
-    sub-float/2addr v0, v1
-
-    invoke-interface {p0, v0, v3, v2, v2}, Ljavax/microedition/khronos/opengles/GL10;->glRotatef(FFFF)V
-
-    return-void
-.end method
-
-.method public static a(Ljavax/microedition/khronos/opengles/GL10;Lcom/google/android/maps/driveabout/vector/t;Lt/L;F)V
-    .registers 8
-
-    sget-object v0, Lcom/google/android/maps/driveabout/vector/cN;->a:Lt/L;
-
-    sget-object v1, Lcom/google/android/maps/driveabout/vector/cN;->b:Lt/L;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/maps/driveabout/vector/t;->a(Lt/L;)V
-
-    invoke-static {p2, v0, v1}, Lt/L;->b(Lt/L;Lt/L;Lt/L;)V
-
-    invoke-virtual {v1, v1}, Lt/L;->i(Lt/L;)V
-
-    invoke-virtual {p1}, Lcom/google/android/maps/driveabout/vector/t;->p()F
-
-    move-result v0
-
-    invoke-virtual {v1}, Lt/L;->f()I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    mul-float/2addr v2, v0
-
-    invoke-virtual {v1}, Lt/L;->g()I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    mul-float/2addr v3, v0
-
-    invoke-virtual {v1}, Lt/L;->h()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    mul-float/2addr v1, v0
-
-    invoke-interface {p0, v2, v3, v1}, Ljavax/microedition/khronos/opengles/GL10;->glTranslatef(FFF)V
-
-    mul-float/2addr v0, p3
-
-    invoke-interface {p0, v0, v0, v0}, Ljavax/microedition/khronos/opengles/GL10;->glScalef(FFF)V
-
-    return-void
+    throw v0
 .end method

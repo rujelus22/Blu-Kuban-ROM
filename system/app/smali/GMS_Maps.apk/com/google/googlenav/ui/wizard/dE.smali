@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/wizard/dE;
+.class Lcom/google/googlenav/ui/wizard/de;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Law/f;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/dD;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/dd;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/dD;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/dd;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/dE;->a:Lcom/google/googlenav/ui/wizard/dD;
+    .prologue
+    .line 101
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/de;->a:Lcom/google/googlenav/ui/wizard/dd;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,19 +26,25 @@
 
 
 # virtual methods
-.method public a(Law/c;)V
+.method public run()V
     .registers 3
 
-    sget-object v0, Law/b;->h:Law/c;
+    .prologue
+    .line 104
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/de;->a:Lcom/google/googlenav/ui/wizard/dd;
 
-    if-eq p1, v0, :cond_b
+    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/dd;->b:Lcom/google/googlenav/ui/wizard/dc;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/dE;->a:Lcom/google/googlenav/ui/wizard/dD;
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/dc;->a(Lcom/google/googlenav/ui/wizard/dc;)Lcom/google/googlenav/ui/wizard/dh;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/dD;->a:Lcom/google/googlenav/ui/wizard/dB;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/dB;->a()V
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/de;->a:Lcom/google/googlenav/ui/wizard/dd;
 
-    :cond_b
+    iget-object v1, v1, Lcom/google/googlenav/ui/wizard/dd;->a:Lcom/google/googlenav/friend/ah;
+
+    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/wizard/dh;->a(Lcom/google/googlenav/friend/ah;)V
+
+    .line 105
     return-void
 .end method

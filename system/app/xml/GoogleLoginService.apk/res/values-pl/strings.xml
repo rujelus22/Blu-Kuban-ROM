@@ -242,18 +242,18 @@ ochronne"</b></string>
     <string name="account_intro_recommended_title">Dołącz do Google</string>
     <string name="common_message">"Konto Google umożliwia
 
-"<li><ul>wyświetlanie i porządkowanie wszystkich Twoich informacji z dowolnego miejsca,</ul></li>"
+"<ul><li>wyświetlanie i porządkowanie wszystkich Twoich informacji z dowolnego miejsca,</li></ul>"
 
-"<li><ul>automatyczne tworzenie zapasowych kopii danych,</ul></li>"
+"<ul><li>automatyczne tworzenie zapasowych kopii danych,</li></ul>"
 
-"<li><ul>łatwe korzystanie z usług Google z dowolnego miejsca.</ul></li></string>
+"<ul><li>łatwe korzystanie z usług Google z dowolnego miejsca.</li></ul></string>
     <string name="add_account_message">" Możesz korzystać z więcej niż jednego konta Google (na przykład z konta domowego i służbowego). Dotknij opcję "<b>Zaloguj się</b> lub <b>Utwórz konto</b>, aby dodać konto Google.</string>
     <string name="account_intro_default_message">Nigdy już nie stracisz swoich danych. Na koncie Google wszystko będzie bezpieczne.</string>
     <string name="account_intro_custom_endtext">Masz konto %s? Zaloguj się.</string>
     <string name="account_intro_simple_message">Chcesz dodać istniejące konto, czy utworzyć nowe?</string>
     <string name="learn_more_title"><annotation id="learn_more">Więcej informacji</annotation></string>
     <string name="learn_more_account_intro">"Konto Google umożliwia:
-"<li><ul>Przeglądanie i organizowanie wszystkich informacji z dowolnego miejsca.<li>Automatyczne tworzenie kopii zapasowych danych, takich jak e-maile, kontakty, muzyka i zdjęcia.</li><li>Wygodne korzystanie z usług Google (takich jak Kontakty, Kalendarz, Mapy Google i inne) z dowolnego miejsca.</li></ul></li></string>
+"<ul><li>Przeglądanie i organizowanie wszystkich informacji z dowolnego miejsca.<li>Automatyczne tworzenie kopii zapasowych danych, takich jak e-maile, kontakty, muzyka i zdjęcia.</li><li>Wygodne korzystanie z usług Google (takich jak Kontakty, Kalendarz, Mapy Google i inne) z dowolnego miejsca.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Konta Google – informacje</string>
     <string name="learn_more_web_history">"Historia online personalizuje działanie Google, dostosowując wyniki wyszukiwania na podstawie poprzednio wpisanych haseł i odwiedzonych witryn.
 

@@ -110,15 +110,15 @@
 
     new-array v2, v7, [Landroid/view/View;
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mMuteUnmuteButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMuteUnmuteButton:Landroid/view/View;
 
     aput-object v3, v2, v4
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mEndAudioButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mEndAudioButton:Landroid/view/View;
 
     aput-object v3, v2, v5
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
 
     aput-object v3, v2, v6
 
@@ -129,19 +129,19 @@
 
     new-array v2, v8, [Landroid/view/View;
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mResumeVideoChatButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mResumeVideoChatButton:Landroid/view/View;
 
     aput-object v3, v2, v4
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mMuteUnmuteButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMuteUnmuteButton:Landroid/view/View;
 
     aput-object v3, v2, v5
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mEndVideoButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mEndVideoButton:Landroid/view/View;
 
     aput-object v3, v2, v6
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
 
     aput-object v3, v2, v7
 
@@ -152,19 +152,19 @@
 
     new-array v2, v8, [Landroid/view/View;
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mResumeVideoChatButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mResumeVideoChatButton:Landroid/view/View;
 
     aput-object v3, v2, v4
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mMuteUnmuteButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMuteUnmuteButton:Landroid/view/View;
 
     aput-object v3, v2, v5
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mEndVideoButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mEndVideoButton:Landroid/view/View;
 
     aput-object v3, v2, v6
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
 
     aput-object v3, v2, v7
 
@@ -175,15 +175,15 @@
 
     new-array v2, v7, [Landroid/view/View;
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mMuteUnmuteButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMuteUnmuteButton:Landroid/view/View;
 
     aput-object v3, v2, v4
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mEndAudioButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mEndAudioButton:Landroid/view/View;
 
     aput-object v3, v2, v5
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
 
     aput-object v3, v2, v6
 
@@ -194,7 +194,7 @@
 
     new-array v2, v5, [Landroid/view/View;
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mCancelAudioButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mCancelAudioButton:Landroid/view/View;
 
     aput-object v3, v2, v4
 
@@ -205,7 +205,7 @@
 
     new-array v2, v5, [Landroid/view/View;
 
-    iget-object v3, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mCancelVideoButton:Landroid/view/View;
+    iget-object v3, p0, Lcom/google/android/talk/ChatView$MessageBar;->mCancelVideoButton:Landroid/view/View;
 
     aput-object v3, v2, v4
 
@@ -220,7 +220,7 @@
 
     .prologue
     .line 3322
-    iget-object v9, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mMessageBarContainer:Landroid/view/View;
+    iget-object v9, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMessageBarContainer:Landroid/view/View;
 
     if-nez v9, :cond_c
 
@@ -317,7 +317,7 @@
     .line 3338
     iget-object v9, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mVisibleMap:Ljava/util/HashMap;
 
-    iget-object v10, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mMessageBarState:Lcom/google/android/talk/ChatView$VideoChatState;
+    iget-object v10, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMessageBarState:Lcom/google/android/talk/ChatView$VideoChatState;
 
     invoke-virtual {v9, v10}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -361,7 +361,7 @@
     .local v5, muteButtonResource:I
     sget-object v9, Lcom/google/android/talk/ChatView$23;->$SwitchMap$com$google$android$talk$ChatView$VideoChatState:[I
 
-    iget-object v10, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mMessageBarState:Lcom/google/android/talk/ChatView$VideoChatState;
+    iget-object v10, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMessageBarState:Lcom/google/android/talk/ChatView$VideoChatState;
 
     invoke-virtual {v10}, Lcom/google/android/talk/ChatView$VideoChatState;->ordinal()I
 
@@ -373,7 +373,7 @@
 
     .line 3360
     :goto_76
-    iget-object v4, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mMuteUnmuteButton:Landroid/view/View;
+    iget-object v4, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMuteUnmuteButton:Landroid/view/View;
 
     check-cast v4, Landroid/widget/ImageButton;
 
@@ -386,7 +386,7 @@
 
     .line 3367
     :goto_7f
-    iget-object v9, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mMessageBarState:Lcom/google/android/talk/ChatView$VideoChatState;
+    iget-object v9, p0, Lcom/google/android/talk/ChatView$MessageBar;->mMessageBarState:Lcom/google/android/talk/ChatView$VideoChatState;
 
     sget-object v10, Lcom/google/android/talk/ChatView$VideoChatState;->IDLE:Lcom/google/android/talk/ChatView$VideoChatState;
 
@@ -424,7 +424,7 @@
     .line 3372
     iget-object v9, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mVisible:Ljava/util/HashSet;
 
-    iget-object v10, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mVideoChatButton:Landroid/view/View;
+    iget-object v10, p0, Lcom/google/android/talk/ChatView$MessageBar;->mVideoChatButton:Landroid/view/View;
 
     invoke-virtual {v9, v10}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
@@ -435,7 +435,7 @@
     .line 3375
     iget-object v9, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mVisible:Ljava/util/HashSet;
 
-    iget-object v10, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mAudioChatButton:Landroid/view/View;
+    iget-object v10, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAudioChatButton:Landroid/view/View;
 
     invoke-virtual {v9, v10}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
@@ -443,19 +443,19 @@
     .end local v1           #audioCapable:Z
     .end local v7           #videoCapable:Z
     :cond_ab
-    iget-object v9, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
+    iget-object v9, p0, Lcom/google/android/talk/ChatView$MessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
 
     if-eqz v9, :cond_c7
 
     .line 3380
-    iget-object v9, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
+    iget-object v9, p0, Lcom/google/android/talk/ChatView$MessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
 
-    iget-object v10, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mAudioDeviceState:Lcom/google/android/videochat/CallState$AudioDeviceState;
+    iget-object v10, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAudioDeviceState:Lcom/google/android/videochat/CallState$AudioDeviceState;
 
     invoke-virtual {v9, v10}, Lcom/google/android/talk/BluetoothButton;->handleBluetoothStateChange(Lcom/google/android/videochat/CallState$AudioDeviceState;)V
 
     .line 3381
-    iget-object v9, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mAudioDevices:Ljava/util/Set;
+    iget-object v9, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAudioDevices:Ljava/util/Set;
 
     sget-object v10, Lcom/google/android/videochat/CallSession$AudioDevice;->BLUETOOTH_HEADSET:Lcom/google/android/videochat/CallSession$AudioDevice;
 
@@ -468,13 +468,13 @@
     .line 3382
     iget-object v9, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mVisible:Ljava/util/HashSet;
 
-    iget-object v10, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
+    iget-object v10, p0, Lcom/google/android/talk/ChatView$MessageBar;->mBluetoothButton:Lcom/google/android/talk/BluetoothButton;
 
     invoke-virtual {v9, v10}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
     .line 3386
     :cond_c7
-    iget-object v0, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mAllViews:[Landroid/view/View;
+    iget-object v0, p0, Lcom/google/android/talk/ChatView$MessageBar;->mAllViews:[Landroid/view/View;
 
     array-length v3, v0
 
@@ -550,7 +550,7 @@
     .line 3396
     .end local v6           #v:Landroid/view/View;
     :cond_f1
-    iget-object v0, p0, Lcom/google/android/talk/ChatView$TabletMessageBar;->mOkToShowWhileOfflineViews:[Landroid/view/View;
+    iget-object v0, p0, Lcom/google/android/talk/ChatView$MessageBar;->mOkToShowWhileOfflineViews:[Landroid/view/View;
 
     array-length v3, v0
 

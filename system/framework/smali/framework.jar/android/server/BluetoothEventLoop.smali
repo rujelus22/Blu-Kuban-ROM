@@ -14,7 +14,7 @@
 
 .field private static final CREATE_DEVICE_SUCCESS:I = 0x0
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final EVENT_AGENT_CANCEL:I = 0x2
 

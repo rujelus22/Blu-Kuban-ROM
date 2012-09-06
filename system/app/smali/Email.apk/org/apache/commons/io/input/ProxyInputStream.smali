@@ -27,7 +27,7 @@
     .end annotation
 
     .prologue
-    .line 99
+    .line 94
     iget-object v0, p0, Lorg/apache/commons/io/input/ProxyInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->available()I
@@ -46,12 +46,12 @@
     .end annotation
 
     .prologue
-    .line 108
+    .line 102
     iget-object v0, p0, Lorg/apache/commons/io/input/ProxyInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
 
-    .line 109
+    .line 103
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .parameter "idx"
 
     .prologue
-    .line 117
+    .line 110
     monitor-enter p0
 
     :try_start_1
@@ -70,12 +70,12 @@
     :try_end_6
     .catchall {:try_start_1 .. :try_end_6} :catchall_8
 
-    .line 118
+    .line 111
     monitor-exit p0
 
     return-void
 
-    .line 117
+    .line 110
     :catchall_8
     move-exception v0
 
@@ -88,7 +88,7 @@
     .registers 2
 
     .prologue
-    .line 135
+    .line 126
     iget-object v0, p0, Lorg/apache/commons/io/input/ProxyInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->markSupported()Z
@@ -107,7 +107,7 @@
     .end annotation
 
     .prologue
-    .line 54
+    .line 53
     iget-object v0, p0, Lorg/apache/commons/io/input/ProxyInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->read()I
@@ -127,7 +127,7 @@
     .end annotation
 
     .prologue
-    .line 65
+    .line 63
     iget-object v0, p0, Lorg/apache/commons/io/input/ProxyInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0, p1}, Ljava/io/InputStream;->read([B)I
@@ -149,7 +149,7 @@
     .end annotation
 
     .prologue
-    .line 78
+    .line 75
     iget-object v0, p0, Lorg/apache/commons/io/input/ProxyInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
@@ -168,7 +168,7 @@
     .end annotation
 
     .prologue
-    .line 126
+    .line 118
     monitor-enter p0
 
     :try_start_1
@@ -178,12 +178,12 @@
     :try_end_6
     .catchall {:try_start_1 .. :try_end_6} :catchall_8
 
-    .line 127
+    .line 119
     monitor-exit p0
 
     return-void
 
-    .line 126
+    .line 118
     :catchall_8
     move-exception v0
 
@@ -202,7 +202,7 @@
     .end annotation
 
     .prologue
-    .line 89
+    .line 85
     iget-object v0, p0, Lorg/apache/commons/io/input/ProxyInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0, p1, p2}, Ljava/io/InputStream;->skip(J)J

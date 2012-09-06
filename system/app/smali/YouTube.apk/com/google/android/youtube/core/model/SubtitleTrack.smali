@@ -49,7 +49,7 @@
     iput-object v0, p0, Lcom/google/android/youtube/core/model/SubtitleTrack;->trackName:Ljava/lang/String;
 
     .line 66
-    invoke-static {p2}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -72,7 +72,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 45
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -84,7 +84,7 @@
     iput-object p1, p0, Lcom/google/android/youtube/core/model/SubtitleTrack;->sourceLanguageCode:Ljava/lang/String;
 
     .line 47
-    invoke-static {p2}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -93,7 +93,7 @@
     iput-object v0, p0, Lcom/google/android/youtube/core/model/SubtitleTrack;->languageName:Ljava/lang/String;
 
     .line 48
-    invoke-static {p3}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -122,7 +122,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -131,7 +131,7 @@
     iput-object v0, p0, Lcom/google/android/youtube/core/model/SubtitleTrack;->languageCode:Ljava/lang/String;
 
     .line 55
-    invoke-static {p2}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -145,7 +145,7 @@
     iput-object v0, p0, Lcom/google/android/youtube/core/model/SubtitleTrack;->languageName:Ljava/lang/String;
 
     .line 57
-    invoke-static {p3}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -154,7 +154,7 @@
     iput-object v0, p0, Lcom/google/android/youtube/core/model/SubtitleTrack;->trackName:Ljava/lang/String;
 
     .line 58
-    invoke-static {p4}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p4}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

@@ -32,17 +32,17 @@
     .parameter
 
     .prologue
-    .line 639
+    .line 551
     iput-object p1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->this$1:Lcom/android/email/mail/store/Pop3Store$Pop3Folder;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 640
+    .line 552
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->mErr:Z
 
-    .line 641
+    .line 553
     return-void
 .end method
 
@@ -57,10 +57,10 @@
 
     const/4 v4, 0x0
 
-    .line 687
+    .line 596
     iput-boolean v4, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->mErr:Z
 
-    .line 688
+    .line 597
     if-eqz p1, :cond_c
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -72,28 +72,28 @@
     :cond_c
     move v3, v4
 
-    .line 708
+    .line 617
     :goto_d
     return v3
 
-    .line 691
+    .line 600
     :cond_e
     invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    .line 692
+    .line 601
     .local v0, first:C
     const/16 v5, 0x2e
 
     if-ne v0, v5, :cond_19
 
-    .line 693
+    .line 602
     iput-boolean v3, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->mEndOfMessage:Z
 
     goto :goto_d
 
-    .line 696
+    .line 605
     :cond_19
     const-string v5, " +"
 
@@ -101,7 +101,7 @@
 
     move-result-object v2
 
-    .line 697
+    .line 606
     .local v2, uidParts:[Ljava/lang/String;
     array-length v5, v2
 
@@ -109,7 +109,7 @@
 
     if-lt v5, v6, :cond_36
 
-    .line 699
+    .line 608
     const/4 v5, 0x0
 
     :try_start_24
@@ -123,31 +123,31 @@
     :try_end_2c
     .catch Ljava/lang/NumberFormatException; {:try_start_24 .. :try_end_2c} :catch_33
 
-    .line 703
+    .line 612
     aget-object v5, v2, v3
 
     iput-object v5, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->mUniqueId:Ljava/lang/String;
 
-    .line 704
+    .line 613
     iput-boolean v4, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->mEndOfMessage:Z
 
     goto :goto_d
 
-    .line 700
+    .line 609
     :catch_33
     move-exception v1
 
     .local v1, nfe:Ljava/lang/NumberFormatException;
     move v3, v4
 
-    .line 701
+    .line 610
     goto :goto_d
 
     .end local v1           #nfe:Ljava/lang/NumberFormatException;
     :cond_36
     move v3, v4
 
-    .line 708
+    .line 617
     goto :goto_d
 .end method
 
@@ -160,10 +160,10 @@
 
     const/4 v4, 0x0
 
-    .line 653
+    .line 564
     iput-boolean v4, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->mErr:Z
 
-    .line 654
+    .line 565
     if-eqz p1, :cond_c
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -175,30 +175,30 @@
     :cond_c
     move v3, v4
 
-    .line 674
+    .line 585
     :goto_d
     return v3
 
-    .line 657
+    .line 568
     :cond_e
     invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    .line 658
+    .line 569
     .local v0, first:C
     const/16 v5, 0x2b
 
     if-ne v0, v5, :cond_34
 
-    .line 659
+    .line 570
     const-string v5, " +"
 
     invoke-virtual {p1, v5}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v2
 
-    .line 660
+    .line 571
     .local v2, uidParts:[Ljava/lang/String;
     array-length v5, v2
 
@@ -206,7 +206,7 @@
 
     if-lt v5, v6, :cond_3b
 
-    .line 662
+    .line 573
     const/4 v5, 0x1
 
     :try_start_21
@@ -220,29 +220,29 @@
     :try_end_29
     .catch Ljava/lang/NumberFormatException; {:try_start_21 .. :try_end_29} :catch_31
 
-    .line 666
+    .line 577
     const/4 v4, 0x2
 
     aget-object v4, v2, v4
 
     iput-object v4, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->mUniqueId:Ljava/lang/String;
 
-    .line 667
+    .line 578
     iput-boolean v3, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->mEndOfMessage:Z
 
     goto :goto_d
 
-    .line 663
+    .line 574
     :catch_31
     move-exception v1
 
     .local v1, nfe:Ljava/lang/NumberFormatException;
     move v3, v4
 
-    .line 664
+    .line 575
     goto :goto_d
 
-    .line 670
+    .line 581
     .end local v1           #nfe:Ljava/lang/NumberFormatException;
     .end local v2           #uidParts:[Ljava/lang/String;
     :cond_34
@@ -250,7 +250,7 @@
 
     if-ne v0, v5, :cond_3b
 
-    .line 671
+    .line 582
     iput-boolean v3, p0, Lcom/android/email/mail/store/Pop3Store$Pop3Folder$UidlParser;->mErr:Z
 
     goto :goto_d
@@ -258,6 +258,6 @@
     :cond_3b
     move v3, v4
 
-    .line 674
+    .line 585
     goto :goto_d
 .end method

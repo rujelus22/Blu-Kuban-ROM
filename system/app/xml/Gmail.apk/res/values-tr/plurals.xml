@@ -53,40 +53,40 @@
         <item quantity="one">%1$d ileti dizisinde yapılan işlem için bekleniyor.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi kapatıldı.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi kapatıldı.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi kapatıldı.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi kapatıldı.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi spam olarak bildirildi.</item>
-        <item quantity="one">"&amp;lt;b>%1$d&amp;lt;/b>  ileti dizisi spam olarak bildirildi."</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi spam olarak bildirildi.</item>
+        <item quantity="one">"&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>  ileti dizisi spam olarak bildirildi."</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi arşivlendi.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi arşivlendi.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi arşivlendi.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi arşivlendi.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">"&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi Gelen Kutusu'na taşındı."</item>
-        <item quantity="one">"&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi Gelen Kutusu'na taşındı."</item>
+        <item quantity="other">"&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi Gelen Kutusu'na taşındı."</item>
+        <item quantity="one">"&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi Gelen Kutusu'na taşındı."</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi silindi.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi silindi.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi silindi.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi silindi.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi önemli olarak işaretlendi.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi önemli olarak işaretlendi.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi önemli olarak işaretlendi.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi önemli olarak işaretlendi.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi önemsiz olarak işaretlendi.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi önemsiz olarak işaretlendi.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi önemsiz olarak işaretlendi.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi önemsiz olarak işaretlendi.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi okundu olarak işaretlendi.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi okundu olarak işaretlendi.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi okundu olarak işaretlendi.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi okundu olarak işaretlendi.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi okunmadı olarak işaretlendi.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> ileti dizisi okunmadı olarak işaretlendi.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi okunmadı olarak işaretlendi.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ileti dizisi okunmadı olarak işaretlendi.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Değişen etiketler.</item>

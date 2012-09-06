@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tlv="http://schemas.android.com/apk/res/com.acquariusoft.UpdateMe">
+    <LinearLayout android:orientation="horizontal" android:id="@id/buttons" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <Button android:id="@id/buttonDownload" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Ok" android:layout_weight="2.0" />
+    </LinearLayout>
+    <com.commonsware.cwac.tlv.TouchListView android:id="@id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:drawSelectorOnTop="false" android:layout_above="@id/buttons" tlv:normal_height="70.0sp" tlv:grabber="@id/icon" tlv:remove_mode="slide" />
+</RelativeLayout>

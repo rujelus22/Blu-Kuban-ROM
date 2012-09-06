@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget">
+        <item name="android:textAppearance">?android:textAppearance</item>
+    </style>
+    <style name="Widget.Button" parent="@style/Widget">
+        <item name="android:textAppearance">?android:textAppearanceSmallInverse</item>
+        <item name="android:textColor">@android:color/primary_text_light</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@android:drawable/btn_default</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="Widget.Button.Transparent" parent="@style/Widget.Button">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/btn_default_transparent</item>
+    </style>
+    <style name="TextAppearance.SlidingTabNormal" parent="@android:attr/textAppearanceMedium">
+        <item name="android:textSize">28.0sp</item>
+        <item name="android:textColor">?android:textColorTertiary</item>
+        <item name="android:shadowColor">@color/sliding_tab_text_color_shadow</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">5.0</item>
+    </style>
+    <style name="TextAppearance.SlidingTabActive" parent="@android:attr/textAppearanceMedium">
+        <item name="android:textSize">28.0sp</item>
+        <item name="android:textColor">@color/sliding_tab_text_color_active</item>
+    </style>
+    <style name="SweepBarText">
+        <item name="android:textSize">28.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+    <style name="TextAppearance.Preference" parent="@android:style/TextAppearance" />
+    <style name="TextAppearance.Preference.PrimaryItem" parent="@style/TextAppearance.Preference">
+        <item name="android:textSize">@dimen/preference_primary_text_size</item>
+        <item name="android:textColor">@color/preference_primary_text</item>
+    </style>
+    <style name="TextAppearance.Preference.SecondaryItem" parent="@style/TextAppearance.Preference">
+        <item name="android:textSize">@dimen/preference_secondary_text_size</item>
+        <item name="android:textColor">@color/preference_secondary_text</item>
+    </style>
+    <style name="TextAppearance.Preference.Category" parent="@style/TextAppearance.Preference">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/preference_category_text</item>
+    </style>
+    <style name="Preference">
+        <item name="android:layout">@layout/preference</item>
+    </style>
+    <style name="Preference.Information" parent="@style/Preference">
+        <item name="android:enabled">false</item>
+        <item name="android:layout">@layout/preference_information</item>
+        <item name="android:shouldDisableView">false</item>
+    </style>
+    <style name="Preference.Category" parent="@style/Preference">
+        <item name="android:layout">@layout/preference_category</item>
+        <item name="android:selectable">false</item>
+        <item name="android:shouldDisableView">false</item>
+    </style>
+    <style name="Preference.CheckBoxPreference" parent="@style/Preference">
+        <item name="android:widgetLayout">@layout/preference_widget_checkbox</item>
+    </style>
+    <style name="Preference.PreferenceScreen" parent="@style/Preference" />
+    <style name="Preference.DialogPreference" parent="@style/Preference">
+        <item name="android:widgetLayout">@layout/preference_dialog</item>
+        <item name="android:positiveButtonText">@android:string/ok</item>
+        <item name="android:negativeButtonText">@android:string/cancel</item>
+    </style>
+    <style name="Preference.DialogPreference.YesNoPreference" parent="@style/Preference.DialogPreference">
+        <item name="android:positiveButtonText">@android:string/yes</item>
+        <item name="android:negativeButtonText">@android:string/no</item>
+    </style>
+    <style name="Preference.RingtonePreference" parent="@style/Preference">
+        <item name="android:widgetLayout">@layout/preference_dialog</item>
+        <item name="android:ringtoneType">ringtone</item>
+        <item name="android:showDefault">true</item>
+        <item name="android:showSilent">true</item>
+    </style>
+    <style name="Theme.Preference" parent="@android:style/Theme">
+        <item name="android:windowBackground">@drawable/settings_background</item>
+        <item name="android:preferenceScreenStyle">@style/Preference.PreferenceScreen</item>
+        <item name="android:preferenceCategoryStyle">@style/Preference.Category</item>
+        <item name="android:preferenceInformationStyle">@style/Preference.Information</item>
+        <item name="android:preferenceStyle">@style/Preference</item>
+        <item name="android:checkBoxPreferenceStyle">@style/Preference.CheckBoxPreference</item>
+        <item name="android:yesNoPreferenceStyle">@style/Preference.DialogPreference.YesNoPreference</item>
+        <item name="android:dialogPreferenceStyle">@style/Preference.DialogPreference</item>
+        <item name="android:ringtonePreferenceStyle">@style/Preference.RingtonePreference</item>
+        <item name="android:preferenceLayoutChild">@layout/preference_child</item>
+        <item name="android:listSelector">@android:color/transparent</item>
+    </style>
+    <style name="Theme.Preference.NoTitleBar" parent="@style/Theme.Preference">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>

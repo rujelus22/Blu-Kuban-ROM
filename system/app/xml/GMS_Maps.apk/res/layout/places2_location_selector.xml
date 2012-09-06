@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:id="@id/locationBar" android:background="@drawable/secondary_background" android:layout_width="fill_parent" android:layout_height="@dimen/locationSelectorWidth"
+<LinearLayout android:gravity="center_vertical" android:id="@id/locationBar" android:background="@drawable/places_location_bar_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/locationSelectorHeight"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <TableLayout android:layout_gravity="left" android:background="@color/selectable_background" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="@dimen/locationSelectorWidth" android:stretchColumns="2" android:shrinkColumns="1">
+    <TableLayout android:layout_gravity="left" android:background="@color/selectable_background" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="@dimen/locationSelectorHeight" android:stretchColumns="2" android:shrinkColumns="1">
         <TableRow>
-            <ImageView android:layout_gravity="left" android:id="@id/locationIndicator" android:paddingLeft="8.0dip" android:layout_width="wrap_content" android:layout_height="@dimen/locationSelectorWidth" android:src="@drawable/gray_location" android:scaleType="center" />
-            <TextView android:textColor="@color/white" android:ellipsize="end" android:gravity="left|center" android:id="@id/locationLabel" android:paddingLeft="8.0dip" android:layout_width="wrap_content" android:layout_height="@dimen/locationSelectorWidth" android:singleLine="true" />
+            <ImageView android:gravity="left|center" android:id="@id/locationIndicator" android:paddingLeft="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/gray_location" android:scaleType="center" android:minHeight="@dimen/locationSelectorHeight" />
+            <TextView android:textSize="16.0sp" android:textColor="@color/white" android:ellipsize="end" android:gravity="left|center" android:id="@id/locationLabel" android:paddingLeft="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="@dimen/locationSelectorHeight" android:singleLine="true" />
             <ImageView android:layout_gravity="bottom|left|center" android:id="@id/expanderTriangle" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:paddingBottom="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/locationbar_triangle" />
         </TableRow>
     </TableLayout>

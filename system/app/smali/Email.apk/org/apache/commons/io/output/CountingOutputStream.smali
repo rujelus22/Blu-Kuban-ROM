@@ -13,10 +13,10 @@
     .parameter "out"
 
     .prologue
-    .line 43
+    .line 42
     invoke-direct {p0, p1}, Lorg/apache/commons/io/output/ProxyOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    .line 44
+    .line 43
     return-void
 .end method
 
@@ -32,7 +32,7 @@
     .end annotation
 
     .prologue
-    .line 84
+    .line 83
     iget-wide v0, p0, Lorg/apache/commons/io/output/CountingOutputStream;->count:J
 
     const-wide/16 v2, 0x1
@@ -41,10 +41,10 @@
 
     iput-wide v0, p0, Lorg/apache/commons/io/output/CountingOutputStream;->count:J
 
-    .line 85
+    .line 84
     invoke-super {p0, p1}, Lorg/apache/commons/io/output/ProxyOutputStream;->write(I)V
 
-    .line 86
+    .line 85
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .end annotation
 
     .prologue
-    .line 56
+    .line 55
     iget-wide v0, p0, Lorg/apache/commons/io/output/CountingOutputStream;->count:J
 
     array-length v2, p1
@@ -69,10 +69,10 @@
 
     iput-wide v0, p0, Lorg/apache/commons/io/output/CountingOutputStream;->count:J
 
-    .line 57
+    .line 56
     invoke-super {p0, p1}, Lorg/apache/commons/io/output/ProxyOutputStream;->write([B)V
 
-    .line 58
+    .line 57
     return-void
 .end method
 
@@ -88,7 +88,7 @@
     .end annotation
 
     .prologue
-    .line 71
+    .line 70
     iget-wide v0, p0, Lorg/apache/commons/io/output/CountingOutputStream;->count:J
 
     int-to-long v2, p3
@@ -97,9 +97,9 @@
 
     iput-wide v0, p0, Lorg/apache/commons/io/output/CountingOutputStream;->count:J
 
-    .line 72
+    .line 71
     invoke-super {p0, p1, p2, p3}, Lorg/apache/commons/io/output/ProxyOutputStream;->write([BII)V
 
-    .line 73
+    .line 72
     return-void
 .end method

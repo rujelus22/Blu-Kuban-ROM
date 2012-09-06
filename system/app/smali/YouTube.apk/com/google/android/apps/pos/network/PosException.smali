@@ -5,7 +5,7 @@
 
 # instance fields
 .field protected posError:Lcom/google/android/apps/pos/model/PlusoneError;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
     .end annotation
 .end field
 

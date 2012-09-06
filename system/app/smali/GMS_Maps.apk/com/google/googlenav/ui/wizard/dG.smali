@@ -1,37 +1,14 @@
-.class Lcom/google/googlenav/ui/wizard/dG;
+.class public interface abstract Lcom/google/googlenav/ui/wizard/dG;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/googlenav/ui/bM;
-
-
-# instance fields
-.field final synthetic a:Landroid/widget/TabHost;
-
-.field final synthetic b:Lcom/google/googlenav/ui/wizard/dD;
-
-
-# direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/dD;Landroid/widget/TabHost;)V
-    .registers 3
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/dG;->b:Lcom/google/googlenav/ui/wizard/dD;
-
-    iput-object p2, p0, Lcom/google/googlenav/ui/wizard/dG;->a:Landroid/widget/TabHost;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.source "SourceFile"
 
 
 # virtual methods
-.method public a(II)V
-    .registers 4
+.method public abstract R_()Z
+.end method
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/dG;->a:Landroid/widget/TabHost;
+.method public abstract S_()V
+.end method
 
-    invoke-virtual {v0, p1}, Landroid/widget/TabHost;->setCurrentTab(I)V
-
-    return-void
+.method public abstract a(Lad/y;Ljava/lang/Long;Lcom/google/googlenav/common/io/protocol/ProtoBuf;Lcom/google/googlenav/aW;)V
 .end method

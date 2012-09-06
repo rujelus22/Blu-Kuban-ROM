@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="app_icon_size">48.0dip</dimen>
-    <dimen name="thumbnail_height">120.0dip</dimen>
-    <dimen name="thumbnail_width">120.0dip</dimen>
+    <dimen name="thumbnail_height">229.0dip</dimen>
+    <dimen name="thumbnail_width">144.0dip</dimen>
     <item type="dimen" name="dialog_min_width_major">65.0%</item>
     <item type="dimen" name="dialog_min_width_minor">94.99999%</item>
     <dimen name="notification_large_icon_width">64.0dip</dimen>
@@ -27,8 +27,8 @@
     <dimen name="password_keyboard_spacebar_vertical_correction">4.0dip</dimen>
     <dimen name="password_keyboard_horizontalGap">3.0dip</dimen>
     <dimen name="password_keyboard_verticalGap">9.0dip</dimen>
-    <dimen name="keyguard_lockscreen_outerring_diameter">270.0dip</dimen>
-    <dimen name="multiwaveview_target_placement_radius">135.0dip</dimen>
+    <dimen name="keyguard_lockscreen_outerring_diameter">220.0dip</dimen>
+    <dimen name="multiwaveview_target_placement_radius">120.0dip</dimen>
     <dimen name="multiwaveview_snap_margin">20.0dip</dimen>
     <dimen name="multiwaveview_hit_radius">60.0dip</dimen>
     <dimen name="preference_screen_side_margin">0.0dip</dimen>
@@ -56,8 +56,8 @@
     <dimen name="alert_dialog_button_bar_height">48.0dip</dimen>
     <dimen name="action_bar_default_height">48.0dip</dimen>
     <dimen name="action_bar_icon_vertical_padding">8.0dip</dimen>
-    <dimen name="action_bar_title_text_size">18.0dip</dimen>
-    <dimen name="action_bar_subtitle_text_size">14.0dip</dimen>
+    <dimen name="action_bar_title_text_size">17.0dip</dimen>
+    <dimen name="action_bar_subtitle_text_size">13.0dip</dimen>
     <dimen name="action_bar_subtitle_top_margin">-3.0dip</dimen>
     <dimen name="action_bar_subtitle_bottom_margin">5.0dip</dimen>
     <dimen name="keyguard_lockscreen_clock_font_size">80.0dip</dimen>
@@ -78,6 +78,7 @@
     <dimen name="default_app_widget_padding_right">8.0dip</dimen>
     <dimen name="default_app_widget_padding_bottom">8.0dip</dimen>
     <dimen name="action_button_min_width">56.0dip</dimen>
+    <item type="dimen" name="APKTOOL_DUMMY_004e">false</item>
     <dimen name="webselect_port_content_height">221.33398dip</dimen>
     <dimen name="webselect_land_content_height">192.0dip</dimen>
     <dimen name="webmagnifier_width">133.29999dip</dimen>
@@ -87,5 +88,4 @@
     <dimen name="tw_action_bar_title_text_size">17.0dip</dimen>
     <dimen name="tw_compactmenu_list_height">56.0dip</dimen>
     <dimen name="tw_compactmenu_width">280.0dip</dimen>
-    <item type="dimen" name="APKTOOL_DUMMY_004e">false</item>
 </resources>

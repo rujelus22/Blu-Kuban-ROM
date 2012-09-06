@@ -50,28 +50,28 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 17893
+    .line 18394
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 18034
+    .line 18539
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->suggestion_:Ljava/util/List;
 
-    .line 18068
+    .line 18573
     iput v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->estimatedNumAppSuggestions_:I
 
-    .line 18085
+    .line 18590
     iput v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->estimatedNumQuerySuggestions_:I
 
-    .line 18127
+    .line 18633
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->cachedSize:I
 
-    .line 17893
+    .line 18394
     return-void
 .end method
 
@@ -82,17 +82,17 @@
     .parameter "value"
 
     .prologue
-    .line 18051
+    .line 18556
     if-nez p1, :cond_8
 
-    .line 18052
+    .line 18557
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 18054
+    .line 18559
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->suggestion_:Ljava/util/List;
 
@@ -102,20 +102,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 18055
+    .line 18560
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->suggestion_:Ljava/util/List;
 
-    .line 18057
+    .line 18562
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->suggestion_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 18058
+    .line 18563
     return-object p0
 .end method
 
@@ -123,15 +123,15 @@
     .registers 2
 
     .prologue
-    .line 18129
+    .line 18636
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 18131
+    .line 18638
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->getSerializedSize()I
 
-    .line 18133
+    .line 18640
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->cachedSize:I
 
@@ -142,7 +142,7 @@
     .registers 2
 
     .prologue
-    .line 18069
+    .line 18574
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->estimatedNumAppSuggestions_:I
 
     return v0
@@ -152,7 +152,7 @@
     .registers 2
 
     .prologue
-    .line 18086
+    .line 18591
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->estimatedNumQuerySuggestions_:I
 
     return v0
@@ -162,10 +162,10 @@
     .registers 6
 
     .prologue
-    .line 18137
+    .line 18645
     const/4 v2, 0x0
 
-    .line 18138
+    .line 18646
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->getSuggestionList()Ljava/util/List;
 
@@ -189,7 +189,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto$Suggestion;
 
-    .line 18139
+    .line 18647
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto$Suggestion;
     const/4 v3, 0x1
 
@@ -201,7 +201,7 @@
 
     goto :goto_9
 
-    .line 18142
+    .line 18650
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto$Suggestion;
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->hasEstimatedNumAppSuggestions()Z
@@ -210,7 +210,7 @@
 
     if-eqz v3, :cond_2c
 
-    .line 18143
+    .line 18651
     const/4 v3, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->getEstimatedNumAppSuggestions()I
@@ -223,7 +223,7 @@
 
     add-int/2addr v2, v3
 
-    .line 18146
+    .line 18654
     :cond_2c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->hasEstimatedNumQuerySuggestions()Z
 
@@ -231,7 +231,7 @@
 
     if-eqz v3, :cond_3c
 
-    .line 18147
+    .line 18655
     const/4 v3, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->getEstimatedNumQuerySuggestions()I
@@ -244,11 +244,11 @@
 
     add-int/2addr v2, v3
 
-    .line 18150
+    .line 18658
     :cond_3c
     iput v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->cachedSize:I
 
-    .line 18151
+    .line 18659
     return v2
 .end method
 
@@ -265,7 +265,7 @@
     .end annotation
 
     .prologue
-    .line 18037
+    .line 18542
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->suggestion_:Ljava/util/List;
 
     return-object v0
@@ -275,7 +275,7 @@
     .registers 2
 
     .prologue
-    .line 18070
+    .line 18575
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->hasEstimatedNumAppSuggestions:Z
 
     return v0
@@ -285,7 +285,7 @@
     .registers 2
 
     .prologue
-    .line 18087
+    .line 18592
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->hasEstimatedNumQuerySuggestions:Z
 
     return v0
@@ -301,46 +301,46 @@
     .end annotation
 
     .prologue
-    .line 18158
+    .line 18667
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 18159
+    .line 18668
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_2c
 
-    .line 18163
+    .line 18672
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 18164
+    .line 18673
     :sswitch_d
     return-object p0
 
-    .line 18169
+    .line 18678
     :sswitch_e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto$Suggestion;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto$Suggestion;-><init>()V
 
-    .line 18170
+    .line 18679
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto$Suggestion;
     const/4 v2, 0x1
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readGroup(Lcom/google/protobuf/micro/MessageMicro;I)V
 
-    .line 18171
+    .line 18680
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->addSuggestion(Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto$Suggestion;)Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;
 
     goto :goto_0
 
-    .line 18175
+    .line 18684
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto$Suggestion;
     :sswitch_1b
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
@@ -351,7 +351,7 @@
 
     goto :goto_0
 
-    .line 18179
+    .line 18688
     :sswitch_23
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -361,7 +361,7 @@
 
     goto :goto_0
 
-    .line 18159
+    .line 18668
     nop
 
     :sswitch_data_2c
@@ -383,7 +383,7 @@
     .end annotation
 
     .prologue
-    .line 17891
+    .line 18392
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;
 
     move-result-object v0
@@ -396,15 +396,15 @@
     .parameter "value"
 
     .prologue
-    .line 18072
+    .line 18577
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->hasEstimatedNumAppSuggestions:Z
 
-    .line 18073
+    .line 18578
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->estimatedNumAppSuggestions_:I
 
-    .line 18074
+    .line 18579
     return-object p0
 .end method
 
@@ -413,15 +413,15 @@
     .parameter "value"
 
     .prologue
-    .line 18089
+    .line 18594
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->hasEstimatedNumQuerySuggestions:Z
 
-    .line 18090
+    .line 18595
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->estimatedNumQuerySuggestions_:I
 
-    .line 18091
+    .line 18596
     return-object p0
 .end method
 
@@ -435,7 +435,7 @@
     .end annotation
 
     .prologue
-    .line 18116
+    .line 18622
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->getSuggestionList()Ljava/util/List;
 
     move-result-object v2
@@ -458,7 +458,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto$Suggestion;
 
-    .line 18117
+    .line 18623
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto$Suggestion;
     const/4 v2, 0x1
 
@@ -466,7 +466,7 @@
 
     goto :goto_8
 
-    .line 18119
+    .line 18625
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto$Suggestion;
     :cond_19
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->hasEstimatedNumAppSuggestions()Z
@@ -475,7 +475,7 @@
 
     if-eqz v2, :cond_27
 
-    .line 18120
+    .line 18626
     const/4 v2, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->getEstimatedNumAppSuggestions()I
@@ -484,7 +484,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 18122
+    .line 18628
     :cond_27
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->hasEstimatedNumQuerySuggestions()Z
 
@@ -492,7 +492,7 @@
 
     if-eqz v2, :cond_35
 
-    .line 18123
+    .line 18629
     const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionResponseProto;->getEstimatedNumQuerySuggestions()I
@@ -501,7 +501,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 18125
+    .line 18631
     :cond_35
     return-void
 .end method

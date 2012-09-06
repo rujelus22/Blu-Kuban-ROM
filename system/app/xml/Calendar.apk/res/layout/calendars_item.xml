@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0sp" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/calendar_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="?android:attr/spinnerItemStyle" />
+    <TextView android:textSize="14.0sp" android:textColor="#ffffffff" android:ellipsize="marquee" android:id="@id/account_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_below="@id/calendar_name" android:layout_alignLeft="@id/calendar_name" style="?android:attr/spinnerItemStyle" />
+</LinearLayout>

@@ -1,186 +1,184 @@
-.class public abstract Lak/a;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lak/e;
+.class public Lak/a;
+.super Lak/i;
+.source "SourceFile"
 
 
-# instance fields
-.field protected final a:Lak/m;
+# static fields
+.field public static final a:Lak/a;
 
-.field private b:Z
-
-.field private c:Z
-
-.field private d:Z
-
-.field private final e:Ljava/lang/String;
+.field public static final b:Lcom/google/android/maps/driveabout/vector/cT;
 
 
 # direct methods
-.method protected constructor <init>(Ljava/lang/String;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    const/4 v0, 0x0
+    .prologue
+    .line 20
+    new-instance v0, Lak/a;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Lak/a;-><init>()V
 
-    iput-boolean v0, p0, Lak/a;->b:Z
+    sput-object v0, Lak/a;->a:Lak/a;
 
-    iput-boolean v0, p0, Lak/a;->c:Z
+    .line 26
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/cR;->d:Lcom/google/android/maps/driveabout/vector/cT;
 
-    iput-boolean v0, p0, Lak/a;->d:Z
-
-    iput-object p1, p0, Lak/a;->e:Ljava/lang/String;
-
-    invoke-static {}, Laf/b;->a()Laf/b;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Laf/b;->n()Lak/m;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lak/a;->a:Lak/m;
+    sput-object v0, Lak/a;->b:Lcom/google/android/maps/driveabout/vector/cT;
 
     return-void
 .end method
 
-.method private b(Z)V
-    .registers 3
+.method public constructor <init>()V
+    .registers 1
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lak/a;->d:Z
-
-    iput-boolean p1, p0, Lak/a;->c:Z
+    .prologue
+    .line 18
+    invoke-direct {p0}, Lak/i;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected a()V
-    .registers 3
+.method public a()Ljava/lang/String;
+    .registers 2
 
-    iget-object v0, p0, Lak/a;->a:Lak/m;
+    .prologue
+    .line 30
+    const-string v0, "David D."
 
-    iget-object v1, p0, Lak/a;->e:Ljava/lang/String;
+    return-object v0
+.end method
 
-    invoke-interface {v0, v1}, Lak/m;->a_(Ljava/lang/String;)[B
+.method public a(Lcom/google/googlenav/ui/v;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 63
+    invoke-super {p0, p1}, Lak/i;->a(Lcom/google/googlenav/ui/v;)V
+
+    .line 64
+    invoke-static {}, Lcom/google/googlenav/ui/bn;->e()Landroid/content/Context;
 
     move-result-object v0
 
-    if-eqz v0, :cond_f
+    invoke-static {v0}, Lcom/google/android/maps/MapsActivity;->getMapsActivity(Landroid/content/Context;)Lcom/google/android/maps/MapsActivity;
 
-    const/4 v0, 0x1
+    move-result-object v0
 
-    :goto_b
-    invoke-direct {p0, v0}, Lak/a;->b(Z)V
+    .line 65
+    invoke-virtual {v0}, Lcom/google/android/maps/MapsActivity;->getBaseAndroidView()Lcom/google/googlenav/ui/android/BaseAndroidView;
 
+    move-result-object v1
+
+    instance-of v1, v1, Lcom/google/googlenav/ui/android/AndroidVectorView;
+
+    if-eqz v1, :cond_1c
+
+    .line 66
+    invoke-virtual {v0}, Lcom/google/android/maps/MapsActivity;->getBaseAndroidView()Lcom/google/googlenav/ui/android/BaseAndroidView;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlenav/ui/android/AndroidVectorView;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->l()V
+
+    .line 68
+    :cond_1c
     return-void
-
-    :cond_f
-    const/4 v0, 0x0
-
-    goto :goto_b
 .end method
 
-.method public declared-synchronized a(Z)Z
+.method public a(Lcom/google/googlenav/ui/v;Z)V
     .registers 8
+    .parameter
+    .parameter
 
+    .prologue
+    .line 50
     const/4 v0, 0x0
 
-    const/4 v1, 0x1
+    invoke-super {p0, p1, v0}, Lak/i;->a(Lcom/google/googlenav/ui/v;Z)V
 
-    monitor-enter p0
+    .line 51
+    if-nez p2, :cond_26
 
-    const/4 v2, 0x1
+    .line 52
+    invoke-static {}, Lcom/google/googlenav/ui/bn;->e()Landroid/content/Context;
 
-    :try_start_4
-    iput-boolean v2, p0, Lak/a;->b:Z
+    move-result-object v0
 
-    invoke-virtual {p0}, Lak/a;->d()Z
+    invoke-static {v0}, Lcom/google/android/maps/MapsActivity;->getMapsActivity(Landroid/content/Context;)Lcom/google/android/maps/MapsActivity;
 
-    move-result v2
+    move-result-object v0
 
-    if-eqz v2, :cond_e
+    .line 53
+    invoke-virtual {v0}, Lcom/google/android/maps/MapsActivity;->getBaseAndroidView()Lcom/google/googlenav/ui/android/BaseAndroidView;
 
-    if-eqz p1, :cond_23
+    move-result-object v1
 
-    :cond_e
-    const/4 v0, 0x1
+    instance-of v1, v1, Lcom/google/googlenav/ui/android/AndroidVectorView;
 
-    iput-boolean v0, p0, Lak/a;->c:Z
+    if-eqz v1, :cond_26
 
-    iget-object v0, p0, Lak/a;->a:Lak/m;
+    .line 54
+    invoke-virtual {v0}, Lcom/google/android/maps/MapsActivity;->getBaseAndroidView()Lcom/google/googlenav/ui/android/BaseAndroidView;
 
-    iget-object v2, p0, Lak/a;->e:Ljava/lang/String;
+    move-result-object v0
 
-    const/4 v3, 0x1
+    check-cast v0, Lcom/google/googlenav/ui/android/AndroidVectorView;
 
-    new-array v3, v3, [B
+    const/4 v1, 0x2
 
-    const/4 v4, 0x0
+    const v2, 0x3e4ccccd
 
-    invoke-virtual {p0}, Lak/a;->b()B
+    const/4 v3, 0x0
 
-    move-result v5
+    sget-object v4, Lak/a;->b:Lcom/google/android/maps/driveabout/vector/cT;
 
-    aput-byte v5, v3, v4
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/googlenav/ui/android/AndroidVectorView;->a(IFFLcom/google/android/maps/driveabout/vector/cT;)V
 
-    invoke-interface {v0, v2, v3}, Lak/m;->a(Ljava/lang/String;[B)Z
-    :try_end_22
-    .catchall {:try_start_4 .. :try_end_22} :catchall_25
-
-    move v0, v1
-
-    :cond_23
-    monitor-exit p0
-
-    return v0
-
-    :catchall_25
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method protected b()B
-    .registers 2
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public c()V
-    .registers 1
-
+    .line 59
+    :cond_26
     return-void
 .end method
 
-.method public d()Z
+.method public b()Ljava/lang/String;
     .registers 2
 
-    iget-boolean v0, p0, Lak/a;->d:Z
+    .prologue
+    .line 35
+    const/16 v0, 0x5c
 
-    if-nez v0, :cond_7
+    invoke-static {v0}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
 
-    invoke-virtual {p0}, Lak/a;->a()V
+    move-result-object v0
 
-    :cond_7
-    iget-boolean v0, p0, Lak/a;->c:Z
-
-    return v0
+    return-object v0
 .end method
 
-.method public e()Z
+.method public c()Ljava/lang/String;
     .registers 2
 
-    iget-boolean v0, p0, Lak/a;->b:Z
+    .prologue
+    .line 40
+    const/16 v0, 0x5b
+
+    invoke-static {v0}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public d()I
+    .registers 2
+
+    .prologue
+    .line 45
+    const/16 v0, 0x21
 
     return v0
 .end method

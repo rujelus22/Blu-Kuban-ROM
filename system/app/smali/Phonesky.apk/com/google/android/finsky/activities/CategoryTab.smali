@@ -30,10 +30,10 @@
     .parameter "toc"
 
     .prologue
-    .line 39
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
+    .line 42
     if-eqz p5, :cond_b
 
     invoke-virtual {p5}, Lcom/google/android/finsky/api/model/DfeBrowse;->isReady()Z
@@ -42,7 +42,7 @@
 
     if-nez v0, :cond_13
 
-    .line 41
+    .line 43
     :cond_b
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -52,34 +52,34 @@
 
     throw v0
 
-    .line 44
+    .line 46
     :cond_13
     iput-object p2, p0, Lcom/google/android/finsky/activities/CategoryTab;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    .line 45
+    .line 47
     iput-object p6, p0, Lcom/google/android/finsky/activities/CategoryTab;->mCurrentBrowseUrl:Ljava/lang/String;
 
-    .line 46
+    .line 48
     new-instance v0, Lcom/google/android/finsky/activities/CategoryViewBinder;
 
     invoke-direct {v0}, Lcom/google/android/finsky/activities/CategoryViewBinder;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/CategoryTab;->mCategoryBinder:Lcom/google/android/finsky/activities/CategoryViewBinder;
 
-    .line 47
+    .line 49
     iget-object v0, p0, Lcom/google/android/finsky/activities/CategoryTab;->mCategoryBinder:Lcom/google/android/finsky/activities/CategoryViewBinder;
 
     invoke-virtual {v0, p1, p3, p4}, Lcom/google/android/finsky/activities/CategoryViewBinder;->init(Landroid/content/Context;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/utils/BitmapLoader;)V
 
-    .line 48
+    .line 50
     iget-object v0, p0, Lcom/google/android/finsky/activities/CategoryTab;->mCategoryBinder:Lcom/google/android/finsky/activities/CategoryViewBinder;
 
     invoke-virtual {v0, p5}, Lcom/google/android/finsky/activities/CategoryViewBinder;->setData(Ljava/lang/Object;)V
 
-    .line 49
+    .line 51
     iput-object p7, p0, Lcom/google/android/finsky/activities/CategoryTab;->mToc:Lcom/google/android/finsky/api/model/DfeToc;
 
-    .line 50
+    .line 52
     return-void
 .end method
 
@@ -90,15 +90,15 @@
     .parameter "backendId"
 
     .prologue
-    .line 54
+    .line 56
     iget-object v0, p0, Lcom/google/android/finsky/activities/CategoryTab;->mCategoryView:Landroid/view/ViewGroup;
 
     if-nez v0, :cond_38
 
-    .line 55
+    .line 57
     iget-object v0, p0, Lcom/google/android/finsky/activities/CategoryTab;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f040022
+    const v1, 0x7f040027
 
     const/4 v2, 0x0
 
@@ -110,10 +110,10 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/CategoryTab;->mCategoryView:Landroid/view/ViewGroup;
 
-    .line 56
+    .line 58
     iget-object v0, p0, Lcom/google/android/finsky/activities/CategoryTab;->mCategoryView:Landroid/view/ViewGroup;
 
-    const v1, 0x7f080076
+    const v1, 0x7f080079
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -123,10 +123,10 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 57
+    .line 59
     iget-object v0, p0, Lcom/google/android/finsky/activities/CategoryTab;->mCategoryView:Landroid/view/ViewGroup;
 
-    const v1, 0x7f080059
+    const v1, 0x7f08005d
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -136,7 +136,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 58
+    .line 60
     iget-object v0, p0, Lcom/google/android/finsky/activities/CategoryTab;->mCategoryBinder:Lcom/google/android/finsky/activities/CategoryViewBinder;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/CategoryTab;->mCategoryView:Landroid/view/ViewGroup;
@@ -147,7 +147,7 @@
 
     invoke-virtual {v0, v1, p1, v2, v3}, Lcom/google/android/finsky/activities/CategoryViewBinder;->bind(Landroid/view/ViewGroup;ILjava/lang/String;Lcom/google/android/finsky/api/model/DfeToc;)V
 
-    .line 60
+    .line 62
     :cond_38
     iget-object v0, p0, Lcom/google/android/finsky/activities/CategoryTab;->mCategoryView:Landroid/view/ViewGroup;
 
@@ -158,17 +158,17 @@
     .registers 2
 
     .prologue
-    .line 65
+    .line 67
     iget-object v0, p0, Lcom/google/android/finsky/activities/CategoryTab;->mCategoryBinder:Lcom/google/android/finsky/activities/CategoryViewBinder;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/activities/CategoryViewBinder;->onDestroy()V
 
-    .line 66
+    .line 68
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/CategoryTab;->mCategoryView:Landroid/view/ViewGroup;
 
-    .line 67
+    .line 69
     return-void
 .end method
 
@@ -177,7 +177,7 @@
     .parameter "state"
 
     .prologue
-    .line 81
+    .line 83
     return-void
 .end method
 
@@ -185,7 +185,7 @@
     .registers 2
 
     .prologue
-    .line 77
+    .line 79
     const/4 v0, 0x0
 
     return-object v0
@@ -196,6 +196,6 @@
     .parameter "isSelected"
 
     .prologue
-    .line 72
+    .line 74
     return-void
 .end method

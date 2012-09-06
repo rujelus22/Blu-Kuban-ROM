@@ -26,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 173
+    .line 130
     new-instance v0, Lcom/android/email/activity/ThreePaneLayout$EmptyCallback;
 
     invoke-direct {v0}, Lcom/android/email/activity/ThreePaneLayout$EmptyCallback;-><init>()V
@@ -40,63 +40,19 @@
     .registers 1
 
     .prologue
-    .line 172
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 129
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public makeMessageView()V
-    .registers 1
-
-    .prologue
-    .line 185
-    return-void
-.end method
-
-.method public onLookChanged(Z)V
-    .registers 2
-    .parameter "b"
-
-    .prologue
-    .line 181
-    return-void
-.end method
-
-.method public onLookChangedAfterAni()V
-    .registers 1
-
-    .prologue
-    .line 197
-    return-void
-.end method
-
 .method public onVisiblePanesChanged(I)V
     .registers 2
     .parameter "previousVisiblePanes"
 
     .prologue
-    .line 177
-    return-void
-.end method
-
-.method public setLeftSplitType(I)V
-    .registers 2
-    .parameter "splitTypeNormal"
-
-    .prologue
-    .line 189
-    return-void
-.end method
-
-.method public setRightSplitType(II)V
-    .registers 3
-    .parameter "splitTypeNormal"
-    .parameter "sLeftPaneLandWidthConst"
-
-    .prologue
-    .line 193
+    .line 132
     return-void
 .end method

@@ -15,7 +15,7 @@
     <string name="click_to_go_toast">Povlecite Pegmana, kamor želite iti.</string>
     <string name="street_range_name_format">%1$s %2$s</string>
     <string name="network_unavailable">Ta program potrebuje podatkovno povezavo in jo bo samodejno znova poskusil vzpostaviti. Preverite moč signala. Ali je morda vklopljen letalski način ali izklopljeno podatkovno gostovanje?</string>
-    <string name="whats_new_header">Kaj je novega v Pogledu ulic?</string>
+    <string name="whats_new_header">Novosti v Pogledu ulic</string>
     <string name="whats_new_c2g">Poletite, kamor vam seže pogled. Možica povlecite s spodnjega levega kota in ga spustite na želenem cilju.</string>
     <string name="terms_and_privacy">Določila in zasebnost</string>
     <string name="terms_and_conditions">Določila in pogoji</string>

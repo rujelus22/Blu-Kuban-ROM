@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field public static final DIRECTION_INCOMING:I = 0x1
 

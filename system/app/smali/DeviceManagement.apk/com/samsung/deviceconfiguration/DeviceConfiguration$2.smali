@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 141
+    .line 137
     iput-object p1, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration$2;->this$0:Lcom/samsung/deviceconfiguration/DeviceConfiguration;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "whichButton"
 
     .prologue
-    .line 145
+    .line 141
     const-string v0, "DeviceConfiguration"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -66,12 +66,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 148
+    .line 144
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration$2;->this$0:Lcom/samsung/deviceconfiguration/DeviceConfiguration;
 
     #calls: Lcom/samsung/deviceconfiguration/DeviceConfiguration;->cancelSession()V
     invoke-static {v0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->access$300(Lcom/samsung/deviceconfiguration/DeviceConfiguration;)V
 
-    .line 149
+    .line 145
     return-void
 .end method

@@ -147,7 +147,7 @@
     monitor-enter p0
 
     :try_start_1
-    invoke-virtual {p0}, Lcom/google/android/youtube/googlemobile/common/async/d;->l_()Z
+    invoke-virtual {p0}, Lcom/google/android/youtube/googlemobile/common/async/d;->i_()Z
 
     move-result v0
 
@@ -284,13 +284,37 @@
     throw v0
 .end method
 
+.method public final declared-synchronized g_()I
+    .registers 2
+
+    monitor-enter p0
+
+    :try_start_1
+    invoke-virtual {p0}, Lcom/google/android/youtube/googlemobile/common/async/d;->a()V
+
+    iget v0, p0, Lcom/google/android/youtube/googlemobile/common/async/d;->k:I
+    :try_end_6
+    .catchall {:try_start_1 .. :try_end_6} :catchall_8
+
+    monitor-exit p0
+
+    return v0
+
+    :catchall_8
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
 .method public final declared-synchronized i()V
     .registers 3
 
     monitor-enter p0
 
     :try_start_1
-    invoke-virtual {p0}, Lcom/google/android/youtube/googlemobile/common/async/d;->k_()I
+    invoke-virtual {p0}, Lcom/google/android/youtube/googlemobile/common/async/d;->h_()I
 
     move-result v0
 
@@ -312,30 +336,6 @@
     return-void
 
     :catchall_12
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized j_()I
-    .registers 2
-
-    monitor-enter p0
-
-    :try_start_1
-    invoke-virtual {p0}, Lcom/google/android/youtube/googlemobile/common/async/d;->a()V
-
-    iget v0, p0, Lcom/google/android/youtube/googlemobile/common/async/d;->k:I
-    :try_end_6
-    .catchall {:try_start_1 .. :try_end_6} :catchall_8
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_8
     move-exception v0
 
     monitor-exit p0
@@ -377,7 +377,7 @@
     .catch Ljava/lang/Exception; {:try_start_1a .. :try_end_1b} :catch_8c
 
     :try_start_1b
-    invoke-virtual {p0}, Lcom/google/android/youtube/googlemobile/common/async/d;->m_()V
+    invoke-virtual {p0}, Lcom/google/android/youtube/googlemobile/common/async/d;->j_()V
 
     iget-object v2, p0, Lcom/google/android/youtube/googlemobile/common/async/d;->e:Ljava/lang/String;
 
@@ -477,7 +477,7 @@
     .catch Ljava/lang/Exception; {:try_start_51 .. :try_end_73} :catch_8c
 
     :try_start_73
-    invoke-virtual {p0}, Lcom/google/android/youtube/googlemobile/common/async/d;->k_()I
+    invoke-virtual {p0}, Lcom/google/android/youtube/googlemobile/common/async/d;->h_()I
 
     move-result v6
 
@@ -527,7 +527,7 @@
     .catchall {:try_start_8d .. :try_end_93} :catchall_a9
 
     :try_start_93
-    invoke-virtual {p0}, Lcom/google/android/youtube/googlemobile/common/async/d;->k_()I
+    invoke-virtual {p0}, Lcom/google/android/youtube/googlemobile/common/async/d;->h_()I
 
     move-result v2
 
@@ -536,7 +536,7 @@
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/googlemobile/common/async/d;->a(Ljava/lang/Exception;)V
 
     :cond_9c
-    invoke-virtual {p0}, Lcom/google/android/youtube/googlemobile/common/async/d;->k_()I
+    invoke-virtual {p0}, Lcom/google/android/youtube/googlemobile/common/async/d;->h_()I
 
     monitor-exit p0
     :try_end_a0

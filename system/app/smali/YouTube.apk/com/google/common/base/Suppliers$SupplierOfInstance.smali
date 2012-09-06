@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/base/w;
+.implements Lcom/google/common/base/am;
 .implements Ljava/io/Serializable;
 
 
@@ -19,15 +19,18 @@
 .method constructor <init>(Ljava/lang/Object;)V
     .registers 2
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 165
+    .line 200
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 166
+    .line 201
     iput-object p1, p0, Lcom/google/common/base/Suppliers$SupplierOfInstance;->instance:Ljava/lang/Object;
 
-    .line 167
+    .line 202
     return-void
 .end method
 
@@ -37,7 +40,7 @@
     .registers 2
 
     .prologue
-    .line 169
+    .line 205
     iget-object v0, p0, Lcom/google/common/base/Suppliers$SupplierOfInstance;->instance:Ljava/lang/Object;
 
     return-object v0

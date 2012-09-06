@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/collect/dv;
+.implements Lcom/google/common/collect/fn;
 
 
 # static fields
@@ -11,40 +11,40 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/dv;)V
+.method constructor <init>(Lcom/google/common/collect/fn;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 616
-    invoke-direct {p0, p1}, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;-><init>(Lcom/google/common/collect/ew;)V
+    .line 660
+    invoke-direct {p0, p1}, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;-><init>(Lcom/google/common/collect/hu;)V
 
-    .line 617
+    .line 661
     return-void
 .end method
 
 
 # virtual methods
-.method public delegate()Lcom/google/common/collect/dv;
+.method public delegate()Lcom/google/common/collect/fn;
     .registers 2
 
     .prologue
-    .line 619
-    invoke-super {p0}, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate()Lcom/google/common/collect/ew;
+    .line 663
+    invoke-super {p0}, Lcom/google/common/collect/Multimaps$UnmodifiableMultimap;->delegate()Lcom/google/common/collect/hu;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/common/collect/dv;
+    check-cast v0, Lcom/google/common/collect/fn;
 
     return-object v0
 .end method
 
-.method public bridge synthetic delegate()Lcom/google/common/collect/ew;
+.method public bridge synthetic delegate()Lcom/google/common/collect/hu;
     .registers 2
 
     .prologue
-    .line 613
-    invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$UnmodifiableListMultimap;->delegate()Lcom/google/common/collect/dv;
+    .line 657
+    invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$UnmodifiableListMultimap;->delegate()Lcom/google/common/collect/fn;
 
     move-result-object v0
 
@@ -55,8 +55,8 @@
     .registers 2
 
     .prologue
-    .line 613
-    invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$UnmodifiableListMultimap;->delegate()Lcom/google/common/collect/dv;
+    .line 657
+    invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$UnmodifiableListMultimap;->delegate()Lcom/google/common/collect/fn;
 
     move-result-object v0
 
@@ -68,7 +68,7 @@
     .parameter
 
     .prologue
-    .line 613
+    .line 657
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multimaps$UnmodifiableListMultimap;->get(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
@@ -81,12 +81,12 @@
     .parameter
 
     .prologue
-    .line 622
-    invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$UnmodifiableListMultimap;->delegate()Lcom/google/common/collect/dv;
+    .line 666
+    invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$UnmodifiableListMultimap;->delegate()Lcom/google/common/collect/fn;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lcom/google/common/collect/dv;->get(Ljava/lang/Object;)Ljava/util/List;
+    invoke-interface {v0, p1}, Lcom/google/common/collect/fn;->get(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
@@ -102,7 +102,7 @@
     .parameter
 
     .prologue
-    .line 613
+    .line 657
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multimaps$UnmodifiableListMultimap;->removeAll(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
@@ -115,7 +115,7 @@
     .parameter
 
     .prologue
-    .line 625
+    .line 669
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -129,7 +129,7 @@
     .parameter
 
     .prologue
-    .line 613
+    .line 657
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/Multimaps$UnmodifiableListMultimap;->replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object v0
@@ -143,7 +143,7 @@
     .parameter
 
     .prologue
-    .line 629
+    .line 673
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

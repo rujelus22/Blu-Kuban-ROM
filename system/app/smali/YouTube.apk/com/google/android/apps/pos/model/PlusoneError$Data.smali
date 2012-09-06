@@ -12,27 +12,27 @@
 
 # instance fields
 .field private domain:Ljava/lang/String;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
     .end annotation
 .end field
 
 .field private location:Ljava/lang/String;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
     .end annotation
 .end field
 
 .field private locationType:Ljava/lang/String;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
     .end annotation
 .end field
 
 .field private message:Ljava/lang/String;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
     .end annotation
 .end field
 
 .field private reason:Ljava/lang/String;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
     .end annotation
 .end field
 
@@ -155,7 +155,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -169,7 +169,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -183,7 +183,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -197,7 +197,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -211,7 +211,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 

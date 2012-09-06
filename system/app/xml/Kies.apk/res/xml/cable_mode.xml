@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ListPreference android:entries="@array/entries_list_preference" android:title="@string/cable_basic" android:key="list_preference" android:summary="@string/cable_list_samsungkies" android:defaultValue="@string/cable_list_samsungkies" android:entryValues="@array/entryvalues_list_preference" />
-    <CheckBoxPreference android:title="@string/cable_lock" android:key="cable_lock" android:summary="@string/cable_lock_info" android:defaultValue="false" />
-</PreferenceScreen>

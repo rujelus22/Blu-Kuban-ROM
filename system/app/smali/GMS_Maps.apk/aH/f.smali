@@ -1,195 +1,151 @@
-.class public LaH/f;
-.super Ljava/lang/Object;
+.class Lah/f;
+.super LY/b;
+.source "SourceFile"
 
 
 # instance fields
-.field private a:Lbq/c;
+.field final synthetic a:Ljava/util/Vector;
 
-.field private b:Ljava/lang/Object;
+.field final synthetic b:Lah/a;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method constructor <init>(Lah/a;LY/c;Ljava/util/Vector;)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 536
+    iput-object p1, p0, Lah/f;->b:Lah/a;
 
-    new-instance v0, Ljava/lang/Object;
+    iput-object p3, p0, Lah/f;->a:Ljava/util/Vector;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, LaH/f;->b:Ljava/lang/Object;
+    invoke-direct {p0, p2}, LY/b;-><init>(LY/c;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(J)Lbp/b;
-    .registers 5
+.method public a()V
+    .registers 7
 
-    iget-object v1, p0, LaH/f;->b:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_3
-    iget-object v0, p0, LaH/f;->a:Lbq/c;
-
-    if-eqz v0, :cond_f
-
-    iget-object v0, p0, LaH/f;->a:Lbq/c;
-
-    invoke-virtual {v0, p1, p2}, Lbq/c;->a(J)Lbp/b;
+    .prologue
+    .line 539
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
 
     move-result-object v0
 
-    monitor-exit v1
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->m()Lcom/google/googlenav/common/io/j;
 
-    :goto_e
-    return-object v0
+    move-result-object v2
 
-    :cond_f
-    monitor-exit v1
+    .line 541
+    :try_start_8
+    new-instance v3, Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
+    sget-object v0, Lcom/google/wireless/googlenav/proto/j2me/ag;->u:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-direct {v3, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;-><init>(Lcom/google/googlenav/common/io/protocol/ProtoBufType;)V
+
+    .line 542
     const/4 v0, 0x0
 
-    goto :goto_e
+    iget-object v1, p0, Lah/f;->a:Ljava/util/Vector;
 
-    :catchall_12
-    move-exception v0
+    invoke-virtual {v1}, Ljava/util/Vector;->size()I
 
-    monitor-exit v1
-    :try_end_14
-    .catchall {:try_start_3 .. :try_end_14} :catchall_12
+    move-result v4
 
-    throw v0
-.end method
+    move v1, v0
 
-.method public a()V
-    .registers 3
+    :goto_17
+    if-ge v1, v4, :cond_2d
 
-    iget-object v1, p0, LaH/f;->b:Ljava/lang/Object;
+    .line 543
+    iget-object v0, p0, Lah/f;->a:Ljava/util/Vector;
 
-    monitor-enter v1
+    invoke-virtual {v0, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
-    :try_start_3
-    iget-object v0, p0, LaH/f;->a:Lbq/c;
+    move-result-object v0
 
-    if-nez v0, :cond_e
+    check-cast v0, Lah/n;
 
-    new-instance v0, Lbq/c;
+    .line 544
+    const/4 v5, 0x1
 
-    invoke-direct {v0}, Lbq/c;-><init>()V
+    invoke-virtual {v0}, Lah/n;->c()Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    iput-object v0, p0, LaH/f;->a:Lbq/c;
+    move-result-object v0
 
-    :cond_e
-    monitor-exit v1
+    invoke-virtual {v3, v5, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->addProtoBuf(ILcom/google/googlenav/common/io/protocol/ProtoBuf;)V
 
+    .line 542
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_17
+
+    .line 546
+    :cond_2d
+    invoke-virtual {v3}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->toByteArray()[B
+
+    move-result-object v0
+
+    const-string v1, "PROTO_CLIENT_SAVED_PHOTO_CACHE"
+
+    invoke-interface {v2, v0, v1}, Lcom/google/googlenav/common/io/j;->b([BLjava/lang/String;)I
+    :try_end_36
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_36} :catch_37
+
+    .line 554
+    :goto_36
     return-void
 
-    :catchall_10
+    .line 547
+    :catch_37
     move-exception v0
 
-    monitor-exit v1
-    :try_end_12
-    .catchall {:try_start_3 .. :try_end_12} :catchall_10
+    .line 548
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    throw v0
-.end method
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-.method public a(JFFF)V
-    .registers 13
+    const-string v2, "SOURCE_PROFILE_PHOTO_MANAGER_IMP-"
 
-    iget-object v6, p0, LaH/f;->b:Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    monitor-enter v6
+    move-result-object v1
 
-    :try_start_3
-    iget-object v0, p0, LaH/f;->a:Lbq/c;
+    const-class v2, Lah/a;
 
-    if-eqz v0, :cond_10
+    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    iget-object v0, p0, LaH/f;->a:Lbq/c;
+    move-result-object v2
 
-    move-wide v1, p1
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move v3, p3
+    move-result-object v1
 
-    move v4, p4
+    const-string v2, " can\'t save photo index"
 
-    move v5, p5
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {v0 .. v5}, Lbq/c;->a(JFFF)V
+    move-result-object v1
 
-    :cond_10
-    monitor-exit v6
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    return-void
+    move-result-object v1
 
-    :catchall_12
-    move-exception v0
+    invoke-static {v1, v0}, LaT/c;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    monitor-exit v6
-    :try_end_14
-    .catchall {:try_start_3 .. :try_end_14} :catchall_12
+    .line 552
+    iget-object v0, p0, Lah/f;->b:Lah/a;
 
-    throw v0
-.end method
+    invoke-static {v0}, Lah/a;->e(Lah/a;)V
 
-.method public a(JLbp/b;)V
-    .registers 6
-
-    iget-object v1, p0, LaH/f;->b:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_3
-    iget-object v0, p0, LaH/f;->a:Lbq/c;
-
-    if-eqz v0, :cond_c
-
-    iget-object v0, p0, LaH/f;->a:Lbq/c;
-
-    invoke-virtual {v0, p1, p2, p3}, Lbq/c;->a(JLbp/b;)V
-
-    :cond_c
-    monitor-exit v1
-
-    return-void
-
-    :catchall_e
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_10
-    .catchall {:try_start_3 .. :try_end_10} :catchall_e
-
-    throw v0
-.end method
-
-.method public b()V
-    .registers 3
-
-    iget-object v1, p0, LaH/f;->b:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    const/4 v0, 0x0
-
-    :try_start_4
-    iput-object v0, p0, LaH/f;->a:Lbq/c;
-
-    monitor-exit v1
-
-    return-void
-
-    :catchall_8
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_a
-    .catchall {:try_start_4 .. :try_end_a} :catchall_8
-
-    throw v0
+    goto :goto_36
 .end method

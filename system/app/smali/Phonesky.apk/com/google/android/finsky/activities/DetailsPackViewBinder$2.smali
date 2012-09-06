@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 277
+    .line 312
     iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder$2;->this$0:Lcom/google/android/finsky/activities/DetailsPackViewBinder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "v"
 
     .prologue
-    .line 280
+    .line 315
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder$2;->this$0:Lcom/google/android/finsky/activities/DetailsPackViewBinder;
 
     #getter for: Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
@@ -95,6 +95,6 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goBrowse(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Lcom/google/android/finsky/api/model/DfeToc;)V
 
-    .line 282
+    .line 317
     return-void
 .end method

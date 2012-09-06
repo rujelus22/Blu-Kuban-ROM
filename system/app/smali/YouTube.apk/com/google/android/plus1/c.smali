@@ -4,16 +4,6 @@
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 554
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method public static a(Ljava/lang/String;)V
     .registers 3
     .parameter
@@ -24,7 +14,7 @@
 
     const/4 v1, 0x3
 
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v1}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v0
 
@@ -51,7 +41,7 @@
 
     const/4 v1, 0x6
 
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v1}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v0
 
@@ -77,7 +67,7 @@
 
     const/4 v1, 0x4
 
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v1}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v0
 

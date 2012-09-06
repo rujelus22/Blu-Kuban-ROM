@@ -27,20 +27,20 @@
     .registers 2
 
     .prologue
-    .line 575
+    .line 10
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 580
+    .line 15
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;->uri_:Ljava/lang/String;
 
-    .line 611
+    .line 47
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;->cachedSize:I
 
-    .line 575
+    .line 10
     return-void
 .end method
 
@@ -50,15 +50,15 @@
     .registers 2
 
     .prologue
-    .line 613
+    .line 50
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 615
+    .line 52
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;->getSerializedSize()I
 
-    .line 617
+    .line 54
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;->cachedSize:I
 
@@ -69,10 +69,10 @@
     .registers 4
 
     .prologue
-    .line 621
+    .line 59
     const/4 v0, 0x0
 
-    .line 622
+    .line 60
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;->hasUri()Z
 
@@ -80,7 +80,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 623
+    .line 61
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;->getUri()Ljava/lang/String;
@@ -93,11 +93,11 @@
 
     add-int/2addr v0, v1
 
-    .line 626
+    .line 64
     :cond_11
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;->cachedSize:I
 
-    .line 627
+    .line 65
     return v0
 .end method
 
@@ -105,7 +105,7 @@
     .registers 2
 
     .prologue
-    .line 581
+    .line 16
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;->uri_:Ljava/lang/String;
 
     return-object v0
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 582
+    .line 17
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;->hasUri:Z
 
     return v0
@@ -131,29 +131,29 @@
     .end annotation
 
     .prologue
-    .line 634
+    .line 73
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 635
+    .line 74
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_16
 
-    .line 639
+    .line 78
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 640
+    .line 79
     :sswitch_d
     return-object p0
 
-    .line 645
+    .line 84
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 635
+    .line 74
     :sswitch_data_16
     .sparse-switch
         0x0 -> :sswitch_d
@@ -181,7 +181,7 @@
     .end annotation
 
     .prologue
-    .line 573
+    .line 7
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;
 
     move-result-object v0
@@ -194,15 +194,15 @@
     .parameter "value"
 
     .prologue
-    .line 584
+    .line 19
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;->hasUri:Z
 
-    .line 585
+    .line 20
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;->uri_:Ljava/lang/String;
 
-    .line 586
+    .line 21
     return-object p0
 .end method
 
@@ -216,14 +216,14 @@
     .end annotation
 
     .prologue
-    .line 606
+    .line 42
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;->hasUri()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 607
+    .line 43
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Link;->getUri()Ljava/lang/String;
@@ -232,7 +232,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 609
+    .line 45
     :cond_e
     return-void
 .end method

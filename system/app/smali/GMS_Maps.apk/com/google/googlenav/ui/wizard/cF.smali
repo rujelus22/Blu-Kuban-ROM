@@ -1,51 +1,37 @@
-.class Lcom/google/googlenav/ui/wizard/cF;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class Lcom/google/googlenav/ui/wizard/cf;
+.super Lac/c;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/cE;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/ce;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/cE;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/ce;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/cF;->a:Lcom/google/googlenav/ui/wizard/cE;
+    .prologue
+    .line 93
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/cf;->a:Lcom/google/googlenav/ui/wizard/ce;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lac/c;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .registers 3
+.method public a()V
+    .registers 2
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/cF;->a:Lcom/google/googlenav/ui/wizard/cE;
+    .prologue
+    .line 96
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/cf;->a:Lcom/google/googlenav/ui/wizard/ce;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/cE;->b:Lcom/google/googlenav/ui/wizard/cA;
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/ce;->a()V
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/cA;->b(Lcom/google/googlenav/ui/wizard/cA;)V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/cF;->a:Lcom/google/googlenav/ui/wizard/cE;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/cE;->b:Lcom/google/googlenav/ui/wizard/cA;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/cA;->b:Lcom/google/googlenav/ui/wizard/hM;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hM;->j()V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/cF;->a:Lcom/google/googlenav/ui/wizard/cE;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/cE;->a:Lcom/google/googlenav/ui/wizard/db;
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/wizard/db;->a(Z)V
-
+    .line 97
     return-void
 .end method

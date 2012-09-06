@@ -1,58 +1,23 @@
-.class public Lcom/google/android/maps/driveabout/app/bS;
+.class public interface abstract Lcom/google/android/maps/driveabout/app/bs;
 .super Ljava/lang/Object;
-
-
-# instance fields
-.field private final a:Landroid/view/Menu;
-
-
-# direct methods
-.method public constructor <init>(Landroid/view/Menu;)V
-    .registers 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/bS;->a:Landroid/view/Menu;
-
-    return-void
-.end method
+.source "SourceFile"
 
 
 # virtual methods
-.method public a(I)V
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/bS;->a:Landroid/view/Menu;
-
-    invoke-interface {v0, p1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_c
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
-
-    :cond_c
-    return-void
+.method public abstract a()V
 .end method
 
-.method public b(I)V
-    .registers 4
+.method public abstract a(Lcom/google/android/maps/driveabout/app/by;)V
+.end method
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/bS;->a:Landroid/view/Menu;
+.method public abstract a(Z)V
+.end method
 
-    invoke-interface {v0, p1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+.method public abstract b(Z)V
+.end method
 
-    move-result-object v0
+.method public abstract c(Z)V
+.end method
 
-    if-eqz v0, :cond_c
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
-
-    :cond_c
-    return-void
+.method public abstract d(Z)V
 .end method

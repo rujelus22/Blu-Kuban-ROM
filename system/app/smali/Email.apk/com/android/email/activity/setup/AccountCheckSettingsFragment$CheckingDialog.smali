@@ -25,10 +25,10 @@
     .registers 2
 
     .prologue
-    .line 842
+    .line 681
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
-    .line 846
+    .line 686
     const-string v0, "CheckProgressDialog.Progress"
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;->EXTRA_PROGRESS_STRING:Ljava/lang/String;
@@ -41,14 +41,14 @@
     .parameter "progress"
 
     .prologue
-    .line 943
+    .line 760
     const/4 v0, 0x0
 
-    .line 944
+    .line 761
     .local v0, stringId:I
     packed-switch p1, :pswitch_data_1a
 
-    .line 955
+    .line 772
     :goto_4
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;->getActivity()Landroid/app/Activity;
 
@@ -60,27 +60,27 @@
 
     return-object v1
 
-    .line 946
+    .line 763
     :pswitch_d
-    const v0, 0x7f0800d3
+    const v0, 0x7f0800bb
 
-    .line 947
+    .line 764
     goto :goto_4
 
-    .line 949
+    .line 766
     :pswitch_11
-    const v0, 0x7f0800d4
+    const v0, 0x7f0800bc
 
-    .line 950
+    .line 767
     goto :goto_4
 
-    .line 952
+    .line 769
     :pswitch_15
-    const v0, 0x7f0800d5
+    const v0, 0x7f0800bd
 
     goto :goto_4
 
-    .line 944
+    .line 761
     nop
 
     :pswitch_data_1a
@@ -97,81 +97,43 @@
     .parameter "progress"
 
     .prologue
-    .line 858
+    .line 697
     new-instance v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;
 
     invoke-direct {v0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;-><init>()V
 
-    .line 859
+    .line 698
     .local v0, f:Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;
     invoke-virtual {v0, p0, p1}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;->setTargetFragment(Landroid/app/Fragment;I)V
 
-    .line 860
+    .line 699
     return-object v0
 .end method
 
 
 # virtual methods
 .method public onCancel(Landroid/content/DialogInterface;)V
-    .registers 7
+    .registers 3
     .parameter "dialog"
 
     .prologue
-    .line 920
+    .line 744
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;->getTargetFragment()Landroid/app/Fragment;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
-
-    .line 921
-    .local v2, target:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
-    #calls: Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->onCheckingDialogCancel()V
-    invoke-static {v2}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->access$100(Lcom/android/email/activity/setup/AccountCheckSettingsFragment;)V
-
-    .line 922
-    invoke-super {p0, p1}, Landroid/app/DialogFragment;->onCancel(Landroid/content/DialogInterface;)V
-
-    .line 923
-    const/4 v0, 0x0
-
-    .line 925
-    .local v0, callbackTarget:Lcom/android/email/activity/setup/AccountCheckSettingsFragment$Callbacks;
-    :try_start_d
-    #calls: Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->getCallbackTarget()Lcom/android/email/activity/setup/AccountCheckSettingsFragment$Callbacks;
-    invoke-static {v2}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->access$200(Lcom/android/email/activity/setup/AccountCheckSettingsFragment;)Lcom/android/email/activity/setup/AccountCheckSettingsFragment$Callbacks;
-    :try_end_10
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_10} :catch_19
 
     move-result-object v0
 
-    .line 930
-    :goto_11
-    if-eqz v0, :cond_18
+    check-cast v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
 
-    const/16 v3, 0x9
+    .line 746
+    .local v0, target:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
+    #calls: Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->onCheckingDialogCancel()V
+    invoke-static {v0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->access$100(Lcom/android/email/activity/setup/AccountCheckSettingsFragment;)V
 
-    invoke-interface {v0, v3}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$Callbacks;->onCheckSettingsComplete(I)V
+    .line 747
+    invoke-super {p0, p1}, Landroid/app/DialogFragment;->onCancel(Landroid/content/DialogInterface;)V
 
-    .line 931
-    :cond_18
+    .line 748
     return-void
-
-    .line 926
-    :catch_19
-    move-exception v1
-
-    .line 927
-    .local v1, e:Ljava/lang/Exception;
-    const-string v3, "CheckProgressDialog"
-
-    invoke-virtual {v1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_11
 .end method
 
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
@@ -179,16 +141,16 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 877
+    .line 714
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 878
+    .line 715
     .local v0, context:Landroid/content/Context;
     if-eqz p1, :cond_e
 
-    .line 879
+    .line 716
     const-string v3, "CheckProgressDialog.Progress"
 
     invoke-virtual {p1, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -197,13 +159,13 @@
 
     iput-object v3, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;->mProgressString:Ljava/lang/String;
 
-    .line 881
+    .line 718
     :cond_e
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;->mProgressString:Ljava/lang/String;
 
     if-nez v3, :cond_1c
 
-    .line 882
+    .line 719
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;->getTargetRequestCode()I
 
     move-result v3
@@ -214,7 +176,7 @@
 
     iput-object v3, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;->mProgressString:Ljava/lang/String;
 
-    .line 884
+    .line 721
     :cond_1c
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;->getTargetFragment()Landroid/app/Fragment;
 
@@ -222,44 +184,29 @@
 
     check-cast v2, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
 
-    .line 886
+    .line 724
     .local v2, target:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
     new-instance v1, Landroid/app/ProgressDialog;
 
     invoke-direct {v1, v0}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
 
-    .line 887
+    .line 725
     .local v1, dialog:Landroid/app/ProgressDialog;
     const/4 v3, 0x1
 
     invoke-virtual {v1, v3}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
 
-    .line 888
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v3}, Landroid/app/ProgressDialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 889
-    const v3, 0x1010355
-
-    invoke-virtual {v1, v3}, Landroid/app/ProgressDialog;->setIconAttribute(I)V
-
-    .line 890
-    const v3, 0x7f0800d6
-
-    invoke-virtual {v1, v3}, Landroid/app/ProgressDialog;->setTitle(I)V
-
-    .line 891
+    .line 726
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;->mProgressString:Ljava/lang/String;
 
     invoke-virtual {v1, v3}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 892
+    .line 727
     const/4 v3, -0x2
 
-    const v4, 0x7f080043
+    const v4, 0x7f08000a
 
-    invoke-virtual {v0, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -269,7 +216,7 @@
 
     invoke-virtual {v1, v3, v4, v5}, Landroid/app/ProgressDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
-    .line 910
+    .line 735
     return-object v1
 .end method
 
@@ -278,17 +225,17 @@
     .parameter "outState"
 
     .prologue
-    .line 935
+    .line 752
     invoke-super {p0, p1}, Landroid/app/DialogFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 936
+    .line 753
     const-string v0, "CheckProgressDialog.Progress"
 
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;->mProgressString:Ljava/lang/String;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 937
+    .line 754
     return-void
 .end method
 
@@ -297,30 +244,26 @@
     .parameter "progress"
 
     .prologue
-    .line 869
+    .line 707
     invoke-direct {p0, p1}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;->getProgressString(I)Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;->mProgressString:Ljava/lang/String;
 
-    .line 870
+    .line 708
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;->getDialog()Landroid/app/Dialog;
 
     move-result-object v0
 
     check-cast v0, Landroid/app/AlertDialog;
 
-    .line 871
+    .line 709
     .local v0, dialog:Landroid/app/AlertDialog;
-    if-eqz v0, :cond_13
-
-    .line 872
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$CheckingDialog;->mProgressString:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 873
-    :cond_13
+    .line 710
     return-void
 .end method

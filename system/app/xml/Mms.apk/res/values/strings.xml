@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_label">Messaging</string>
+    <string name="app_label">Mms</string>
     <string name="new_message">Messaging</string>
     <string name="create_new_message">Compose new message</string>
     <string name="menu_call_back">Call %s</string>

@@ -22,19 +22,19 @@
     .parameter "phoneFeature"
 
     .prologue
-    .line 31
+    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 32
+    .line 31
     iput p2, p0, Lcom/google/android/finsky/remoting/RadioConnectionImpl;->mConnectionType:I
 
-    .line 33
+    .line 32
     iput-object p3, p0, Lcom/google/android/finsky/remoting/RadioConnectionImpl;->mPhoneFeature:Lcom/google/android/finsky/remoting/PhoneFeature;
 
-    .line 34
+    .line 33
     iput-object p1, p0, Lcom/google/android/finsky/remoting/RadioConnectionImpl;->mConnMgr:Landroid/net/ConnectivityManager;
 
-    .line 35
+    .line 34
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .registers 4
 
     .prologue
-    .line 129
+    .line 128
     iget-object v1, p0, Lcom/google/android/finsky/remoting/RadioConnectionImpl;->mConnMgr:Landroid/net/ConnectivityManager;
 
     iget v2, p0, Lcom/google/android/finsky/remoting/RadioConnectionImpl;->mConnectionType:I
@@ -51,7 +51,7 @@
 
     move-result-object v0
 
-    .line 130
+    .line 129
     .local v0, info:Landroid/net/NetworkInfo;
     invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
 
@@ -71,7 +71,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 44
+    .line 43
     iget-object v1, p0, Lcom/google/android/finsky/remoting/RadioConnectionImpl;->mConnMgr:Landroid/net/ConnectivityManager;
 
     iget-object v2, p0, Lcom/google/android/finsky/remoting/RadioConnectionImpl;->mPhoneFeature:Lcom/google/android/finsky/remoting/PhoneFeature;
@@ -84,11 +84,11 @@
 
     move-result v0
 
-    .line 46
+    .line 45
     .local v0, result:I
     packed-switch v0, :pswitch_data_56
 
-    .line 55
+    .line 54
     new-instance v1, Lcom/google/android/finsky/remoting/RadioConnectionException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -119,13 +119,13 @@
 
     throw v1
 
-    .line 50
+    .line 49
     :pswitch_2f
     sget-boolean v1, Lcom/google/android/finsky/utils/FinskyLog;->DEBUG:Z
 
     if-eqz v1, :cond_55
 
-    .line 51
+    .line 50
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -158,12 +158,12 @@
 
     invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 53
+    .line 52
     :cond_55
     :pswitch_55
     return-void
 
-    .line 46
+    .line 45
     :pswitch_data_56
     .packed-switch 0x0
         :pswitch_55
@@ -186,12 +186,12 @@
 
     const/4 v4, 0x0
 
-    .line 71
+    .line 70
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 72
+    .line 71
     .local v1, startTime:J
     :cond_6
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -206,7 +206,7 @@
 
     if-gez v5, :cond_46
 
-    .line 74
+    .line 73
     int-to-long v5, p2
 
     :try_start_11
@@ -214,19 +214,19 @@
     :try_end_14
     .catch Ljava/lang/InterruptedException; {:try_start_11 .. :try_end_14} :catch_3f
 
-    .line 78
+    .line 77
     invoke-direct {p0}, Lcom/google/android/finsky/remoting/RadioConnectionImpl;->isRadioActive()Z
 
     move-result v5
 
     if-eqz v5, :cond_6
 
-    .line 79
+    .line 78
     sget-boolean v5, Lcom/google/android/finsky/utils/FinskyLog;->DEBUG:Z
 
     if-eqz v5, :cond_3e
 
-    .line 80
+    .line 79
     const-string v5, "Radio came up after %dms (timeoutMs=%d, pollIntervalMs=%d)."
 
     const/4 v6, 0x3
@@ -261,16 +261,16 @@
 
     invoke-static {v5, v6}, Lcom/google/android/finsky/utils/FinskyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 86
+    .line 85
     :cond_3e
     :goto_3e
     return v3
 
-    .line 75
+    .line 74
     :catch_3f
     move-exception v0
 
-    .line 76
+    .line 75
     .local v0, e:Ljava/lang/InterruptedException;
     new-instance v3, Lcom/google/android/finsky/remoting/RadioConnectionException;
 
@@ -282,7 +282,7 @@
     :cond_46
     move v3, v4
 
-    .line 86
+    .line 85
     goto :goto_3e
 .end method
 
@@ -298,7 +298,7 @@
     .end annotation
 
     .prologue
-    .line 97
+    .line 96
     const-string v6, "http://"
 
     invoke-virtual {p1, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -315,7 +315,7 @@
 
     if-nez v6, :cond_23
 
-    .line 99
+    .line 98
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -334,13 +334,13 @@
 
     move-result-object p1
 
-    .line 101
+    .line 100
     :cond_23
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v5
 
-    .line 105
+    .line 104
     .local v5, uri:Landroid/net/Uri;
     :try_start_27
     invoke-virtual {v5}, Landroid/net/Uri;->getHost()Ljava/lang/String;
@@ -353,13 +353,13 @@
 
     move-result-object v3
 
-    .line 111
+    .line 110
     .local v3, inetAddr:Ljava/net/InetAddress;
     invoke-virtual {v3}, Ljava/net/InetAddress;->getAddress()[B
 
     move-result-object v1
 
-    .line 112
+    .line 111
     .local v1, addrBytes:[B
     const/4 v6, 0x3
 
@@ -397,7 +397,7 @@
 
     or-int v0, v6, v7
 
-    .line 117
+    .line 116
     .local v0, addrAsInt:I
     iget-object v6, p0, Lcom/google/android/finsky/remoting/RadioConnectionImpl;->mConnMgr:Landroid/net/ConnectivityManager;
 
@@ -407,11 +407,11 @@
 
     move-result v4
 
-    .line 119
+    .line 118
     .local v4, routeToHost:Z
     if-nez v4, :cond_9e
 
-    .line 120
+    .line 119
     new-instance v6, Lcom/google/android/finsky/remoting/RadioConnectionException;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -446,7 +446,7 @@
 
     throw v6
 
-    .line 106
+    .line 105
     .end local v0           #addrAsInt:I
     .end local v1           #addrBytes:[B
     .end local v3           #inetAddr:Ljava/net/InetAddress;
@@ -454,7 +454,7 @@
     :catch_7e
     move-exception v2
 
-    .line 107
+    .line 106
     .local v2, e:Ljava/net/UnknownHostException;
     new-instance v6, Lcom/google/android/finsky/remoting/RadioConnectionException;
 
@@ -486,7 +486,7 @@
 
     throw v6
 
-    .line 123
+    .line 122
     .end local v2           #e:Ljava/net/UnknownHostException;
     .restart local v0       #addrAsInt:I
     .restart local v1       #addrBytes:[B
@@ -505,14 +505,14 @@
     .end annotation
 
     .prologue
-    .line 136
+    .line 135
     invoke-direct {p0}, Lcom/google/android/finsky/remoting/RadioConnectionImpl;->isRadioActive()Z
 
     move-result v0
 
     if-eqz v0, :cond_13
 
-    .line 139
+    .line 138
     iget-object v0, p0, Lcom/google/android/finsky/remoting/RadioConnectionImpl;->mConnMgr:Landroid/net/ConnectivityManager;
 
     const/4 v1, 0x0
@@ -525,15 +525,15 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/net/ConnectivityManager;->startUsingNetworkFeature(ILjava/lang/String;)I
 
-    .line 150
+    .line 149
     :cond_12
     return-void
 
-    .line 144
+    .line 143
     :cond_13
     invoke-direct {p0}, Lcom/google/android/finsky/remoting/RadioConnectionImpl;->startRadio()V
 
-    .line 147
+    .line 146
     sget-object v0, Lcom/google/android/finsky/config/G;->vendingDcbPollTimeoutMs:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
@@ -554,7 +554,7 @@
 
     if-nez v0, :cond_12
 
-    .line 148
+    .line 147
     new-instance v0, Lcom/google/android/finsky/remoting/RadioConnectionException;
 
     const-string v1, "Timeout waiting for radio to come up"
@@ -570,14 +570,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 154
+    .line 153
     const-string v0, "Giving back radio."
 
     new-array v1, v2, [Ljava/lang/Object;
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 155
+    .line 154
     iget-object v0, p0, Lcom/google/android/finsky/remoting/RadioConnectionImpl;->mConnMgr:Landroid/net/ConnectivityManager;
 
     iget-object v1, p0, Lcom/google/android/finsky/remoting/RadioConnectionImpl;->mPhoneFeature:Lcom/google/android/finsky/remoting/PhoneFeature;
@@ -588,6 +588,6 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/net/ConnectivityManager;->stopUsingNetworkFeature(ILjava/lang/String;)I
 
-    .line 156
+    .line 155
     return-void
 .end method

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="@android:color/white" android:autoLink="web" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="20.0dip" android:text="@string/license_key_note" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:text="@string/enter_license_key" />
+            <EditText android:id="@id/license_key" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:hint="@string/license_key" android:maxLines="1" android:singleLine="true" android:maxLength="20" android:inputType="textVisiblePassword|textCapCharacters" android:imeOptions="actionGo" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="@android:color/white" android:autoLink="web" android:id="@id/note" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="5.0dip" android:text="@string/license_key_msg" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

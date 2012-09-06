@@ -1,312 +1,149 @@
 .class final Lcom/google/android/youtube/core/transfer/t;
-.super Ljava/lang/Object;
+.super Landroid/content/BroadcastReceiver;
 .source "SourceFile"
 
 
 # instance fields
-.field private a:Ljava/lang/String;
+.field final synthetic a:Lcom/google/android/youtube/core/transfer/TransfersExecutor;
 
-.field private b:Ljava/lang/String;
-
-.field private c:Lcom/google/android/youtube/core/model/UserAuth;
-
-.field private d:Lcom/google/android/youtube/core/model/Video$Privacy;
-
-.field private e:Ljava/lang/String;
-
-.field private f:Ljava/lang/String;
-
-.field private g:Ljava/lang/String;
-
-.field private h:Ljava/lang/String;
-
-.field private i:Landroid/util/Pair;
-
-.field private j:Ljava/lang/String;
-
-.field private k:Lcom/google/android/youtube/core/transfer/b;
+.field private volatile b:Z
 
 
 # direct methods
-.method synthetic constructor <init>()V
-    .registers 2
+.method public constructor <init>(Lcom/google/android/youtube/core/transfer/TransfersExecutor;)V
+    .registers 4
+    .parameter
 
     .prologue
-    .line 367
-    const/4 v0, 0x0
+    .line 621
+    iput-object p1, p0, Lcom/google/android/youtube/core/transfer/t;->a:Lcom/google/android/youtube/core/transfer/TransfersExecutor;
 
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/core/transfer/t;-><init>(B)V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
+    .line 622
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageState()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "mounted"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/google/android/youtube/core/transfer/t;->b:Z
+
+    .line 623
     return-void
 .end method
 
-.method private constructor <init>(B)V
+
+# virtual methods
+.method public final a()Z
+    .registers 2
+
+    .prologue
+    .line 626
+    iget-boolean v0, p0, Lcom/google/android/youtube/core/transfer/t;->b:Z
+
+    return v0
+.end method
+
+.method public final b()V
     .registers 3
-    .parameter
 
     .prologue
-    .line 367
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 630
+    new-instance v0, Landroid/content/IntentFilter;
 
-    .line 378
-    new-instance v0, Lcom/google/android/youtube/core/transfer/b;
+    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    invoke-direct {v0}, Lcom/google/android/youtube/core/transfer/b;-><init>()V
+    .line 631
+    const-string v1, "android.intent.action.MEDIA_MOUNTED"
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/transfer/t;->k:Lcom/google/android/youtube/core/transfer/b;
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    .line 632
+    const-string v1, "android.intent.action.MEDIA_UNMOUNTED"
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    .line 633
+    const-string v1, "file"
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
+
+    .line 634
+    iget-object v1, p0, Lcom/google/android/youtube/core/transfer/t;->a:Lcom/google/android/youtube/core/transfer/TransfersExecutor;
+
+    invoke-static {v1}, Lcom/google/android/youtube/core/transfer/TransfersExecutor;->b(Lcom/google/android/youtube/core/transfer/TransfersExecutor;)Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+    .line 635
     return-void
 .end method
 
-.method static synthetic a(Lcom/google/android/youtube/core/transfer/t;Landroid/util/Pair;)Landroid/util/Pair;
+.method public final c()V
     .registers 2
-    .parameter
-    .parameter
 
     .prologue
-    .line 367
-    iput-object p1, p0, Lcom/google/android/youtube/core/transfer/t;->i:Landroid/util/Pair;
+    .line 638
+    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/t;->a:Lcom/google/android/youtube/core/transfer/TransfersExecutor;
 
-    return-object p1
+    invoke-static {v0}, Lcom/google/android/youtube/core/transfer/TransfersExecutor;->b(Lcom/google/android/youtube/core/transfer/TransfersExecutor;)Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+
+    .line 639
+    return-void
 .end method
 
-.method static synthetic a(Lcom/google/android/youtube/core/transfer/t;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/model/UserAuth;
-    .registers 2
+.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .registers 5
     .parameter
     .parameter
 
     .prologue
-    .line 367
-    iput-object p1, p0, Lcom/google/android/youtube/core/transfer/t;->c:Lcom/google/android/youtube/core/model/UserAuth;
+    .line 643
+    const-string v0, "android.intent.action.MEDIA_MOUNTED"
 
-    return-object p1
-.end method
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-.method static synthetic a(Lcom/google/android/youtube/core/transfer/t;Lcom/google/android/youtube/core/model/Video$Privacy;)Lcom/google/android/youtube/core/model/Video$Privacy;
-    .registers 2
-    .parameter
-    .parameter
+    move-result-object v1
 
-    .prologue
-    .line 367
-    iput-object p1, p0, Lcom/google/android/youtube/core/transfer/t;->d:Lcom/google/android/youtube/core/model/Video$Privacy;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    return-object p1
-.end method
+    move-result v0
 
-.method static synthetic a(Lcom/google/android/youtube/core/transfer/t;)Lcom/google/android/youtube/core/transfer/b;
-    .registers 2
-    .parameter
+    iput-boolean v0, p0, Lcom/google/android/youtube/core/transfer/t;->b:Z
 
-    .prologue
-    .line 367
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/t;->k:Lcom/google/android/youtube/core/transfer/b;
+    .line 644
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    return-object v0
-.end method
+    const-string v1, "media mounted "
 
-.method static synthetic a(Lcom/google/android/youtube/core/transfer/t;Lcom/google/android/youtube/core/transfer/b;)Lcom/google/android/youtube/core/transfer/b;
-    .registers 2
-    .parameter
-    .parameter
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .prologue
-    .line 367
-    iput-object p1, p0, Lcom/google/android/youtube/core/transfer/t;->k:Lcom/google/android/youtube/core/transfer/b;
+    iget-boolean v1, p0, Lcom/google/android/youtube/core/transfer/t;->b:Z
 
-    return-object p1
-.end method
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-.method static synthetic a(Lcom/google/android/youtube/core/transfer/t;Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
-    .parameter
-    .parameter
+    move-result-object v0
 
-    .prologue
-    .line 367
-    iput-object p1, p0, Lcom/google/android/youtube/core/transfer/t;->a:Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    return-object p1
-.end method
+    invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
 
-.method static synthetic b(Lcom/google/android/youtube/core/transfer/t;)Ljava/lang/String;
-    .registers 2
-    .parameter
+    .line 645
+    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/t;->a:Lcom/google/android/youtube/core/transfer/TransfersExecutor;
 
-    .prologue
-    .line 367
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/t;->a:Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/youtube/core/transfer/TransfersExecutor;->c(Lcom/google/android/youtube/core/transfer/TransfersExecutor;)V
 
-    return-object v0
-.end method
-
-.method static synthetic b(Lcom/google/android/youtube/core/transfer/t;Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
-    .parameter
-    .parameter
-
-    .prologue
-    .line 367
-    iput-object p1, p0, Lcom/google/android/youtube/core/transfer/t;->b:Ljava/lang/String;
-
-    return-object p1
-.end method
-
-.method static synthetic c(Lcom/google/android/youtube/core/transfer/t;)Ljava/lang/String;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 367
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/t;->j:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic c(Lcom/google/android/youtube/core/transfer/t;Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
-    .parameter
-    .parameter
-
-    .prologue
-    .line 367
-    iput-object p1, p0, Lcom/google/android/youtube/core/transfer/t;->e:Ljava/lang/String;
-
-    return-object p1
-.end method
-
-.method static synthetic d(Lcom/google/android/youtube/core/transfer/t;)Ljava/lang/String;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 367
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/t;->b:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic d(Lcom/google/android/youtube/core/transfer/t;Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
-    .parameter
-    .parameter
-
-    .prologue
-    .line 367
-    iput-object p1, p0, Lcom/google/android/youtube/core/transfer/t;->f:Ljava/lang/String;
-
-    return-object p1
-.end method
-
-.method static synthetic e(Lcom/google/android/youtube/core/transfer/t;)Lcom/google/android/youtube/core/model/UserAuth;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 367
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/t;->c:Lcom/google/android/youtube/core/model/UserAuth;
-
-    return-object v0
-.end method
-
-.method static synthetic e(Lcom/google/android/youtube/core/transfer/t;Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
-    .parameter
-    .parameter
-
-    .prologue
-    .line 367
-    iput-object p1, p0, Lcom/google/android/youtube/core/transfer/t;->g:Ljava/lang/String;
-
-    return-object p1
-.end method
-
-.method static synthetic f(Lcom/google/android/youtube/core/transfer/t;)Lcom/google/android/youtube/core/model/Video$Privacy;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 367
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/t;->d:Lcom/google/android/youtube/core/model/Video$Privacy;
-
-    return-object v0
-.end method
-
-.method static synthetic f(Lcom/google/android/youtube/core/transfer/t;Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
-    .parameter
-    .parameter
-
-    .prologue
-    .line 367
-    iput-object p1, p0, Lcom/google/android/youtube/core/transfer/t;->h:Ljava/lang/String;
-
-    return-object p1
-.end method
-
-.method static synthetic g(Lcom/google/android/youtube/core/transfer/t;)Ljava/lang/String;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 367
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/t;->e:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic g(Lcom/google/android/youtube/core/transfer/t;Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
-    .parameter
-    .parameter
-
-    .prologue
-    .line 367
-    iput-object p1, p0, Lcom/google/android/youtube/core/transfer/t;->j:Ljava/lang/String;
-
-    return-object p1
-.end method
-
-.method static synthetic h(Lcom/google/android/youtube/core/transfer/t;)Ljava/lang/String;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 367
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/t;->f:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic i(Lcom/google/android/youtube/core/transfer/t;)Ljava/lang/String;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 367
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/t;->g:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic j(Lcom/google/android/youtube/core/transfer/t;)Ljava/lang/String;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 367
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/t;->h:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic k(Lcom/google/android/youtube/core/transfer/t;)Landroid/util/Pair;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 367
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/t;->i:Landroid/util/Pair;
-
-    return-object v0
+    .line 646
+    return-void
 .end method

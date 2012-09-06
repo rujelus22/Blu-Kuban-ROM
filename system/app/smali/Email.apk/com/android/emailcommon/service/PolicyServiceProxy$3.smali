@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/emailcommon/service/PolicyServiceProxy;->getAccountPolicy(J)Lcom/android/emailcommon/service/PolicySet;
+    value = Lcom/android/emailcommon/service/PolicyServiceProxy;->isActiveAdmin()Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,22 +20,17 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
 
-.field final synthetic val$accountId:J
-
 
 # direct methods
-.method constructor <init>(Lcom/android/emailcommon/service/PolicyServiceProxy;J)V
-    .registers 4
-    .parameter
+.method constructor <init>(Lcom/android/emailcommon/service/PolicyServiceProxy;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 93
+    .line 89
     iput-object p1, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$3;->this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
 
-    iput-wide p2, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$3;->val$accountId:J
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,7 +38,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .registers 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -51,7 +46,7 @@
     .end annotation
 
     .prologue
-    .line 95
+    .line 91
     iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$3;->this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
 
     iget-object v1, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$3;->this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
@@ -61,15 +56,17 @@
 
     move-result-object v1
 
-    iget-wide v2, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$3;->val$accountId:J
+    invoke-interface {v1}, Lcom/android/emailcommon/service/IPolicyService;->isActiveAdmin()Z
 
-    invoke-interface {v1, v2, v3}, Lcom/android/emailcommon/service/IPolicyService;->getAccountPolicy(J)Lcom/android/emailcommon/service/PolicySet;
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
     #setter for: Lcom/android/emailcommon/service/PolicyServiceProxy;->mReturn:Ljava/lang/Object;
     invoke-static {v0, v1}, Lcom/android/emailcommon/service/PolicyServiceProxy;->access$002(Lcom/android/emailcommon/service/PolicyServiceProxy;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 96
+    .line 92
     return-void
 .end method

@@ -42,7 +42,7 @@
     .registers 1
 
     .prologue
-    .line 144
+    .line 155
     new-instance v0, Lcom/google/android/finsky/api/model/DfeToc$1;
 
     invoke-direct {v0}, Lcom/google/android/finsky/api/model/DfeToc$1;-><init>()V
@@ -57,7 +57,7 @@
     .parameter "response"
 
     .prologue
-    .line 34
+    .line 35
     invoke-direct {p0}, Lcom/google/android/finsky/api/model/DfeModel;-><init>()V
 
     .line 26
@@ -66,16 +66,16 @@
     iput v2, p0, Lcom/google/android/finsky/api/model/DfeToc;->mSelectedBackendId:I
 
     .line 28
-    invoke-static {}, Lcom/google/android/finsky/utils/Maps;->newLinkedHashMap()Ljava/util/LinkedHashMap;
+    new-instance v2, Ljava/util/LinkedHashMap;
 
-    move-result-object v2
+    invoke-direct {v2}, Ljava/util/LinkedHashMap;-><init>()V
 
     iput-object v2, p0, Lcom/google/android/finsky/api/model/DfeToc;->mCorpusMap:Ljava/util/Map;
 
-    .line 35
+    .line 36
     iput-object p1, p0, Lcom/google/android/finsky/api/model/DfeToc;->mToc:Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;
 
-    .line 36
+    .line 37
     iget-object v2, p0, Lcom/google/android/finsky/api/model/DfeToc;->mToc:Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;
 
     invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getCorpusList()Ljava/util/List;
@@ -87,12 +87,12 @@
     move-result-object v0
 
     .local v0, i$:Ljava/util/Iterator;
-    :goto_18
+    :goto_19
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_33
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -100,7 +100,7 @@
 
     check-cast v1, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
 
-    .line 37
+    .line 38
     .local v1, metadata:Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
     iget-object v2, p0, Lcom/google/android/finsky/api/model/DfeToc;->mCorpusMap:Ljava/util/Map;
 
@@ -114,11 +114,11 @@
 
     invoke-interface {v2, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_18
+    goto :goto_19
 
-    .line 39
+    .line 40
     .end local v1           #metadata:Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
-    :cond_32
+    :cond_33
     return-void
 .end method
 
@@ -128,7 +128,7 @@
     .registers 2
 
     .prologue
-    .line 136
+    .line 147
     const/4 v0, 0x0
 
     return v0
@@ -139,7 +139,7 @@
     .parameter "backendId"
 
     .prologue
-    .line 47
+    .line 48
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeToc;->mCorpusMap:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -168,12 +168,12 @@
     .end annotation
 
     .prologue
-    .line 55
-    invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
-
-    move-result-object v0
-
     .line 56
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    .line 57
     .local v0, list:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;>;"
     iget-object v1, p0, Lcom/google/android/finsky/api/model/DfeToc;->mCorpusMap:Ljava/util/Map;
 
@@ -183,7 +183,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 57
+    .line 58
     return-object v0
 .end method
 
@@ -191,10 +191,24 @@
     .registers 2
 
     .prologue
-    .line 115
+    .line 116
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeToc;->mToc:Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getHomeUrl()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getIconOverrideUrl()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 126
+    iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeToc;->mToc:Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getIconOverrideUrl()Ljava/lang/String;
 
     move-result-object v0
 
@@ -205,7 +219,7 @@
     .registers 2
 
     .prologue
-    .line 104
+    .line 105
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeToc;->mToc:Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getTosCheckboxTextMarketingEmails()Ljava/lang/String;
@@ -219,7 +233,7 @@
     .registers 2
 
     .prologue
-    .line 90
+    .line 91
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeToc;->mToc:Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getTosContent()Ljava/lang/String;
@@ -233,7 +247,7 @@
     .registers 2
 
     .prologue
-    .line 97
+    .line 98
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeToc;->mToc:Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getTosToken()Ljava/lang/String;
@@ -247,7 +261,7 @@
     .registers 2
 
     .prologue
-    .line 111
+    .line 112
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeToc;->mToc:Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getUserSettings()Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;
@@ -261,13 +275,37 @@
     return v0
 .end method
 
+.method public hasIconOverrideUrl()Z
+    .registers 2
+
+    .prologue
+    .line 121
+    iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeToc;->mToc:Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasIconOverrideUrl()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isReady()Z
+    .registers 2
+
+    .prologue
+    .line 142
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .registers 5
     .parameter "dest"
     .parameter "flags"
 
     .prologue
-    .line 141
+    .line 152
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeToc;->mToc:Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;
 
     invoke-static {v0}, Lcom/google/android/finsky/utils/ParcelableProto;->forProto(Lcom/google/protobuf/micro/MessageMicro;)Lcom/google/android/finsky/utils/ParcelableProto;
@@ -278,6 +316,6 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 142
+    .line 153
     return-void
 .end method

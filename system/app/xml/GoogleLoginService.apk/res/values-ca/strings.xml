@@ -242,11 +242,11 @@ seguretat"</b></string>
     <string name="account_intro_recommended_title">Fes que sigui Google</string>
     <string name="common_message">"Un Compte de Google et permet
 
-"<li><ul>Veure i organitzar tota la informació des de qualsevol lloc.</ul></li>"
+"<ul><li>Veure i organitzar tota la informació des de qualsevol lloc.</li></ul>"
 
-"<li><ul>Fer una còpia de seguretat automàtica de les teves dades.</ul></li>"
+"<ul><li>Fer una còpia de seguretat automàtica de les teves dades.</li></ul>"
 
-"<li><ul>Fer servir els serveis de Google fàcilment des de qualsevol lloc.</ul></li></string>
+"<ul><li>Fer servir els serveis de Google fàcilment des de qualsevol lloc.</li></ul></string>
     <string name="add_account_message">" Pots fer servir més d'un Compte de Google (com ara els comptes de casa i de la feina). Toca "<b>Inicia la sessió</b> o <b>Crea un compte</b> per afegir un Compte de Google.</string>
     <string name="account_intro_default_message">No perdis les teves coses mai més. Un Compte de Google fa que tot estigui segur.</string>
     <string name="account_intro_custom_endtext">Tens %s? Inicia la sessió ara.</string>

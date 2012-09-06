@@ -1,87 +1,64 @@
-.class synthetic Lcom/google/googlenav/ui/view/android/G;
+.class Lcom/google/googlenav/ui/view/android/G;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LH/e;
 
 
-# static fields
-.field static final synthetic a:[I
+# instance fields
+.field final synthetic a:Landroid/net/Uri;
+
+.field final synthetic b:Lcom/google/googlenav/ui/view/android/F;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/F;Landroid/net/Uri;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 119
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/G;->b:Lcom/google/googlenav/ui/view/android/F;
+
+    iput-object p2, p0, Lcom/google/googlenav/ui/view/android/G;->a:Landroid/net/Uri;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()Ljava/io/InputStream;
     .registers 3
 
-    invoke-static {}, Lau/f;->values()[Lau/f;
+    .prologue
+    .line 122
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/G;->b:Lcom/google/googlenav/ui/view/android/F;
+
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/F;->a(Lcom/google/googlenav/ui/view/android/F;)Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    array-length v0, v0
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/G;->a:Landroid/net/Uri;
 
-    new-array v0, v0, [I
+    invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
 
-    sput-object v0, Lcom/google/googlenav/ui/view/android/G;->a:[I
+    move-result-object v0
 
-    :try_start_9
-    sget-object v0, Lcom/google/googlenav/ui/view/android/G;->a:[I
+    return-object v0
+.end method
 
-    sget-object v1, Lau/f;->c:Lau/f;
+.method public synthetic b()Ljava/lang/Object;
+    .registers 2
 
-    invoke-virtual {v1}, Lau/f;->ordinal()I
+    .prologue
+    .line 119
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/android/G;->a()Ljava/io/InputStream;
 
-    move-result v1
+    move-result-object v0
 
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_2f
-
-    :goto_14
-    :try_start_14
-    sget-object v0, Lcom/google/googlenav/ui/view/android/G;->a:[I
-
-    sget-object v1, Lau/f;->a:Lau/f;
-
-    invoke-virtual {v1}, Lau/f;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_2d
-
-    :goto_1f
-    :try_start_1f
-    sget-object v0, Lcom/google/googlenav/ui/view/android/G;->a:[I
-
-    sget-object v1, Lau/f;->b:Lau/f;
-
-    invoke-virtual {v1}, Lau/f;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_2b
-
-    :goto_2a
-    return-void
-
-    :catch_2b
-    move-exception v0
-
-    goto :goto_2a
-
-    :catch_2d
-    move-exception v0
-
-    goto :goto_1f
-
-    :catch_2f
-    move-exception v0
-
-    goto :goto_14
+    return-object v0
 .end method

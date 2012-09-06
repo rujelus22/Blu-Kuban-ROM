@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/top" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/popup_header" />
+    <LinearLayout android:orientation="vertical" android:background="@drawable/popup_center_bright" android:paddingLeft="20.0dip" android:paddingTop="9.0dip" android:paddingRight="20.0dip" android:paddingBottom="9.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:id="@id/camera_pick" android:background="@drawable/selectable_list_item_bg" android:paddingLeft="0.0dip" android:paddingTop="15.0dip" android:paddingRight="10.0dip" android:paddingBottom="15.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" style="@style/FileBrowserWizardItem" />
+        <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/horizontal_line_minor" android:scaleType="fitXY" />
+        <TextView android:id="@id/gallery_pick" android:background="@drawable/selectable_list_item_bg" android:paddingLeft="0.0dip" android:paddingTop="15.0dip" android:paddingRight="10.0dip" android:paddingBottom="15.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" style="@style/FileBrowserWizardItem" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,78 +1,73 @@
-.class final Lcom/google/android/youtube/app/ui/az;
-.super Landroid/os/Handler;
+.class public final Lcom/google/android/youtube/app/ui/az;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/ui/at;
+# interfaces
+.implements Lcom/google/android/youtube/core/utils/o;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/ui/at;)V
-    .registers 2
-    .parameter
+.method public constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 290
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/az;->a:Lcom/google/android/youtube/app/ui/at;
-
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    .line 11
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
-    .registers 4
+.method public static a(Lcom/google/android/youtube/core/model/Video;)Z
+    .registers 3
     .parameter
 
     .prologue
-    .line 293
-    iget v0, p1, Landroid/os/Message;->what:I
+    .line 14
+    if-eqz p0, :cond_16
 
-    packed-switch v0, :pswitch_data_22
+    iget-object v0, p0, Lcom/google/android/youtube/core/model/Video;->state:Lcom/google/android/youtube/core/model/Video$State;
 
-    .line 302
-    :cond_5
-    :goto_5
-    return-void
+    sget-object v1, Lcom/google/android/youtube/core/model/Video$State;->PLAYABLE:Lcom/google/android/youtube/core/model/Video$State;
 
-    .line 295
-    :pswitch_6
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/az;->a:Lcom/google/android/youtube/app/ui/at;
+    if-eq v0, v1, :cond_14
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/at;->e(Lcom/google/android/youtube/app/ui/at;)Lcom/google/android/youtube/app/p;
+    iget-object v0, p0, Lcom/google/android/youtube/core/model/Video;->state:Lcom/google/android/youtube/core/model/Video$State;
 
-    move-result-object v0
+    sget-object v1, Lcom/google/android/youtube/core/model/Video$State;->PROCESSING:Lcom/google/android/youtube/core/model/Video$State;
 
-    invoke-interface {v0}, Lcom/google/android/youtube/app/p;->d()Lcom/google/android/youtube/app/t;
+    if-ne v0, v1, :cond_16
 
-    move-result-object v0
+    invoke-virtual {p0}, Lcom/google/android/youtube/core/model/Video;->isLive()Z
 
-    .line 296
-    sget-object v1, Lcom/google/android/youtube/app/t;->a:Lcom/google/android/youtube/app/t;
+    move-result v0
 
-    if-eq v0, v1, :cond_5
+    if-eqz v0, :cond_16
 
-    sget-object v1, Lcom/google/android/youtube/app/t;->d:Lcom/google/android/youtube/app/t;
+    :cond_14
+    const/4 v0, 0x1
 
-    if-eq v0, v1, :cond_5
+    :goto_15
+    return v0
 
-    .line 298
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/az;->a:Lcom/google/android/youtube/app/ui/at;
+    :cond_16
+    const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/at;->f(Lcom/google/android/youtube/app/ui/at;)Lcom/google/android/youtube/core/player/aq;
+    goto :goto_15
+.end method
 
-    move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/player/aq;->e()V
+# virtual methods
+.method public final bridge synthetic a(Ljava/lang/Object;)Z
+    .registers 3
+    .parameter
 
-    goto :goto_5
+    .prologue
+    .line 11
+    check-cast p1, Lcom/google/android/youtube/core/model/Video;
 
-    .line 293
-    :pswitch_data_22
-    .packed-switch 0x2
-        :pswitch_6
-    .end packed-switch
+    invoke-static {p1}, Lcom/google/android/youtube/app/ui/az;->a(Lcom/google/android/youtube/core/model/Video;)Z
+
+    move-result v0
+
+    return v0
 .end method

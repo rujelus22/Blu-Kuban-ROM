@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:background="@color/compose_update_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <com.google.android.apps.plus.views.AudienceView android:id="@id/audience_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" />
-        <com.google.android.apps.plus.views.MentionMultiAutoCompleteTextView android:id="@id/reshare_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" style="@style/ComposeUpdate.Editor" />
-        <fragment android:id="@id/preview_fragment" android:layout_width="fill_parent" android:layout_height="wrap_content" class="com.google.android.apps.plus.fragments.StreamRowFragment" />
-    </LinearLayout>
-</ScrollView>

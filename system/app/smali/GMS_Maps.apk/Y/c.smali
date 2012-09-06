@@ -1,5 +1,6 @@
 .class public LY/c;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
 .implements Ljava/lang/Runnable;
@@ -12,9 +13,9 @@
 
 .field protected c:Ljava/lang/Object;
 
-.field protected final d:LP/a;
+.field protected final d:Lcom/google/googlenav/common/a;
 
-.field protected e:LX/c;
+.field protected e:LX/d;
 
 .field protected f:[Ljava/lang/Thread;
 
@@ -22,108 +23,110 @@
 
 .field protected h:Z
 
-.field private final i:Lcom/google/gmm/debug/c;
+.field private i:I
 
 .field private j:I
 
 .field private k:I
 
-.field private l:I
-
-.field private final m:Ljava/util/Hashtable;
-
-.field private final n:Ljava/util/Hashtable;
+.field private final l:Ljava/util/Hashtable;
 
 
 # direct methods
-.method public constructor <init>(LX/c;Ljava/lang/String;I)V
-    .registers 7
+.method public constructor <init>(LX/d;)V
+    .registers 4
+    .parameter
 
-    const/4 v2, 0x0
+    .prologue
+    .line 56
+    const-string v0, "TaskRunner"
 
+    const/4 v1, 0x1
+
+    invoke-direct {p0, p1, v0, v1}, LY/c;-><init>(LX/d;Ljava/lang/String;I)V
+
+    .line 57
+    return-void
+.end method
+
+.method public constructor <init>(LX/d;Ljava/lang/String;I)V
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
     const/4 v1, 0x0
 
+    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 31
     new-instance v0, Ljava/util/Vector;
 
     invoke-direct {v0}, Ljava/util/Vector;-><init>()V
 
     iput-object v0, p0, LY/c;->a:Ljava/util/Vector;
 
+    .line 32
     new-instance v0, Ljava/util/Vector;
 
     invoke-direct {v0}, Ljava/util/Vector;-><init>()V
 
     iput-object v0, p0, LY/c;->b:Ljava/util/Vector;
 
+    .line 33
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, LY/c;->c:Ljava/lang/Object;
 
+    .line 40
     const/16 v0, 0x7f
+
+    iput v0, p0, LY/c;->i:I
+
+    .line 41
+    const/16 v0, 0xff
 
     iput v0, p0, LY/c;->j:I
 
-    const/16 v0, 0xff
+    .line 42
+    iput v1, p0, LY/c;->k:I
 
-    iput v0, p0, LY/c;->k:I
-
-    iput v1, p0, LY/c;->l:I
-
+    .line 52
     iput-boolean v1, p0, LY/c;->h:Z
 
-    iput-object p1, p0, LY/c;->e:LX/c;
+    .line 66
+    iput-object p1, p0, LY/c;->e:LX/d;
 
+    .line 67
     iput-object p2, p0, LY/c;->g:Ljava/lang/String;
 
+    .line 68
     new-array v0, p3, [Ljava/lang/Thread;
 
     iput-object v0, p0, LY/c;->f:[Ljava/lang/Thread;
 
-    invoke-static {}, LP/b;->a()LP/b;
+    .line 69
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LP/b;->i()LP/a;
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->u()Lcom/google/googlenav/common/a;
 
     move-result-object v0
 
-    iput-object v0, p0, LY/c;->d:LP/a;
+    iput-object v0, p0, LY/c;->d:Lcom/google/googlenav/common/a;
 
-    iput-object v2, p0, LY/c;->m:Ljava/util/Hashtable;
+    .line 77
+    const/4 v0, 0x0
 
-    iput-object v2, p0, LY/c;->n:Ljava/util/Hashtable;
+    iput-object v0, p0, LY/c;->l:Ljava/util/Hashtable;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/gmm/debug/c;->a(Ljava/lang/Class;)Lcom/google/gmm/debug/c;
-
-    move-result-object v0
-
-    iput-object v0, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
+    .line 79
     return-void
-.end method
-
-.method private d(LY/a;)Ljava/lang/String;
-    .registers 3
-
-    const-string v0, ""
-
-    return-object v0
-.end method
-
-.method private e(LY/a;)Ljava/lang/String;
-    .registers 3
-
-    const-string v0, ""
-
-    return-object v0
 .end method
 
 
@@ -131,95 +134,112 @@
 .method a()I
     .registers 2
 
-    iget v0, p0, LY/c;->j:I
+    .prologue
+    .line 88
+    iget v0, p0, LY/c;->i:I
 
     return v0
 .end method
 
 .method a(LY/a;)V
     .registers 4
+    .parameter
 
-    invoke-virtual {p1}, LY/a;->i()V
-
+    .prologue
+    .line 158
     iget-object v1, p0, LY/c;->c:Ljava/lang/Object;
 
     monitor-enter v1
 
-    :try_start_6
-    invoke-virtual {p1}, LY/a;->e()I
+    .line 159
+    :try_start_3
+    invoke-virtual {p1}, LY/a;->f()I
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_1c
+    packed-switch v0, :pswitch_data_18
 
-    :goto_d
-    :pswitch_d
+    .line 171
+    :goto_a
+    :pswitch_a
     monitor-exit v1
 
+    .line 172
     return-void
 
-    :pswitch_f
-    invoke-virtual {p1}, LY/a;->g()V
+    .line 161
+    :pswitch_c
+    invoke-virtual {p1}, LY/a;->h()V
 
-    goto :goto_d
+    goto :goto_a
 
-    :catchall_13
+    .line 171
+    :catchall_10
     move-exception v0
 
     monitor-exit v1
-    :try_end_15
-    .catchall {:try_start_6 .. :try_end_15} :catchall_13
+    :try_end_12
+    .catchall {:try_start_3 .. :try_end_12} :catchall_10
 
     throw v0
 
-    :pswitch_16
+    .line 165
+    :pswitch_13
     const/4 v0, 0x4
 
-    :try_start_17
+    :try_start_14
     invoke-virtual {p1, v0}, LY/a;->a(I)V
-    :try_end_1a
-    .catchall {:try_start_17 .. :try_end_1a} :catchall_13
+    :try_end_17
+    .catchall {:try_start_14 .. :try_end_17} :catchall_10
 
-    goto :goto_d
+    goto :goto_a
 
-    nop
-
-    :pswitch_data_1c
+    .line 159
+    :pswitch_data_18
     .packed-switch 0x0
-        :pswitch_f
-        :pswitch_d
-        :pswitch_d
-        :pswitch_16
+        :pswitch_c
+        :pswitch_a
+        :pswitch_a
+        :pswitch_13
     .end packed-switch
 .end method
 
 .method a(LY/b;)V
     .registers 9
+    .parameter
 
+    .prologue
+    .line 182
     iget-object v4, p0, LY/c;->c:Ljava/lang/Object;
 
     monitor-enter v4
 
+    .line 184
     :try_start_3
-    invoke-virtual {p1}, LY/b;->m()I
+    invoke-virtual {p1}, LY/b;->j()I
 
     move-result v5
 
+    .line 185
     const/4 v3, 0x0
 
+    .line 186
     iget-object v0, p0, LY/c;->a:Ljava/util/Vector;
 
     invoke-virtual {v0}, Ljava/util/Vector;->size()I
 
     move-result v1
 
+    .line 187
     :goto_e
     if-ge v3, v1, :cond_2d
 
+    .line 188
     add-int v0, v3, v1
 
     div-int/lit8 v2, v0, 0x2
 
+    .line 189
     iget-object v0, p0, LY/c;->a:Ljava/util/Vector;
 
     invoke-virtual {v0, v2}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
@@ -228,12 +248,13 @@
 
     check-cast v0, LY/b;
 
-    invoke-virtual {v0}, LY/b;->m()I
+    invoke-virtual {v0}, LY/b;->j()I
 
     move-result v0
 
     if-gt v5, v0, :cond_2a
 
+    .line 190
     add-int/lit8 v0, v2, 0x1
 
     move v6, v1
@@ -247,6 +268,7 @@
 
     move v1, v0
 
+    .line 194
     goto :goto_e
 
     :cond_2a
@@ -254,64 +276,78 @@
 
     move v1, v3
 
+    .line 192
     goto :goto_27
 
+    .line 196
     :cond_2d
     iget-object v0, p0, LY/c;->a:Ljava/util/Vector;
 
     invoke-virtual {v0, p1, v3}, Ljava/util/Vector;->insertElementAt(Ljava/lang/Object;I)V
 
-    invoke-virtual {p1}, LY/b;->j()V
-
+    .line 197
     const/4 v0, 0x2
 
     invoke-virtual {p1, v0}, LY/b;->a(I)V
 
+    .line 198
     iget-object v0, p0, LY/c;->c:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
+    .line 199
     monitor-exit v4
 
+    .line 200
     return-void
 
-    :catchall_40
+    .line 199
+    :catchall_3d
     move-exception v0
 
     monitor-exit v4
-    :try_end_42
-    .catchall {:try_start_3 .. :try_end_42} :catchall_40
+    :try_end_3f
+    .catchall {:try_start_3 .. :try_end_3f} :catchall_3d
 
     throw v0
 .end method
 
 .method a(LY/d;)V
     .registers 12
+    .parameter
 
+    .prologue
+    .line 210
     iget-object v4, p0, LY/c;->c:Ljava/lang/Object;
 
     monitor-enter v4
 
+    .line 213
     :try_start_3
-    invoke-virtual {p1}, LY/d;->n()J
+    invoke-virtual {p1}, LY/d;->k()J
 
     move-result-wide v5
 
+    .line 214
     const/4 v3, 0x0
 
+    .line 215
     iget-object v0, p0, LY/c;->b:Ljava/util/Vector;
 
     invoke-virtual {v0}, Ljava/util/Vector;->size()I
 
     move-result v1
 
+    .line 216
     :goto_e
     if-ge v3, v1, :cond_2f
 
+    .line 217
     add-int v0, v3, v1
 
     div-int/lit8 v2, v0, 0x2
 
+    .line 218
     iget-object v0, p0, LY/c;->b:Ljava/util/Vector;
 
     invoke-virtual {v0, v2}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
@@ -320,7 +356,7 @@
 
     check-cast v0, LY/d;
 
-    invoke-virtual {v0}, LY/d;->n()J
+    invoke-virtual {v0}, LY/d;->k()J
 
     move-result-wide v7
 
@@ -328,6 +364,7 @@
 
     if-ltz v0, :cond_2c
 
+    .line 219
     add-int/lit8 v0, v2, 0x1
 
     move v9, v1
@@ -341,6 +378,7 @@
 
     move v1, v0
 
+    .line 223
     goto :goto_e
 
     :cond_2c
@@ -348,25 +386,32 @@
 
     move v1, v3
 
+    .line 221
     goto :goto_29
 
+    .line 225
     :cond_2f
     iget-object v0, p0, LY/c;->b:Ljava/util/Vector;
 
     invoke-virtual {v0, p1, v3}, Ljava/util/Vector;->insertElementAt(Ljava/lang/Object;I)V
 
+    .line 226
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, LY/d;->a(I)V
 
+    .line 227
     iget-object v0, p0, LY/c;->c:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
+    .line 228
     monitor-exit v4
 
+    .line 229
     return-void
 
+    .line 228
     :catchall_3f
     move-exception v0
 
@@ -379,13 +424,17 @@
 
 .method public b(LY/a;)I
     .registers 4
+    .parameter
 
+    .prologue
+    .line 243
     iget-object v1, p0, LY/c;->c:Ljava/lang/Object;
 
     monitor-enter v1
 
+    .line 244
     :try_start_3
-    invoke-virtual {p1}, LY/a;->c()I
+    invoke-virtual {p1}, LY/a;->d()I
 
     move-result v0
 
@@ -393,6 +442,7 @@
 
     return v0
 
+    .line 245
     :catchall_9
     move-exception v0
 
@@ -404,13 +454,13 @@
 .end method
 
 .method protected b()Z
-    .registers 6
+    .registers 5
 
-    const/4 v1, 0x3
-
+    .prologue
+    .line 296
     iget-boolean v0, p0, LY/c;->h:Z
 
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_19
 
     iget-object v0, p0, LY/c;->a:Ljava/util/Vector;
 
@@ -418,85 +468,35 @@
 
     move-result v0
 
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_19
 
-    iget-object v0, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    invoke-virtual {v0, v1}, Lcom/google/gmm/debug/c;->a(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_33
-
-    iget-object v0, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "waitForSomethingToDo(): task queue empty @"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, LY/c;->d:LP/a;
-
-    invoke-interface {v2}, LP/a;->a()J
-
-    move-result-wide v2
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    :cond_33
-    :try_start_33
+    .line 298
+    :try_start_c
     iget-object v0, p0, LY/c;->b:Ljava/util/Vector;
 
     invoke-virtual {v0}, Ljava/util/Vector;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_53
+    if-eqz v0, :cond_1c
 
-    iget-object v0, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    const/4 v1, 0x3
-
-    invoke-virtual {v0, v1}, Lcom/google/gmm/debug/c;->a(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4b
-
-    iget-object v0, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    const-string v1, "waitForSomethingToDo(): timer task queue empty"
-
-    invoke-virtual {v0, v1}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    :cond_4b
+    .line 299
     iget-object v0, p0, LY/c;->c:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->wait()V
-    :try_end_50
-    .catch Ljava/lang/InterruptedException; {:try_start_33 .. :try_end_50} :catch_b9
+    :try_end_19
+    .catch Ljava/lang/InterruptedException; {:try_start_c .. :try_end_19} :catch_3c
 
-    :cond_50
-    :goto_50
+    .line 311
+    :cond_19
+    :goto_19
     iget-boolean v0, p0, LY/c;->h:Z
 
     return v0
 
-    :cond_53
-    :try_start_53
+    .line 301
+    :cond_1c
+    :try_start_1c
     iget-object v0, p0, LY/c;->b:Ljava/util/Vector;
 
     const/4 v1, 0x0
@@ -507,455 +507,165 @@
 
     check-cast v0, LY/d;
 
-    iget-object v1, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    const/4 v2, 0x3
-
-    invoke-virtual {v1, v2}, Lcom/google/gmm/debug/c;->a(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_81
-
-    iget-object v1, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "waitForSomethingToDo(): scheduled = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v0}, LY/d;->n()J
-
-    move-result-wide v3
-
-    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    :cond_81
-    invoke-virtual {v0}, LY/d;->n()J
+    .line 302
+    invoke-virtual {v0}, LY/d;->k()J
 
     move-result-wide v0
 
-    iget-object v2, p0, LY/c;->d:LP/a;
+    iget-object v2, p0, LY/c;->d:Lcom/google/googlenav/common/a;
 
-    invoke-interface {v2}, LP/a;->a()J
+    invoke-interface {v2}, Lcom/google/googlenav/common/a;->b()J
 
     move-result-wide v2
 
     sub-long/2addr v0, v2
 
-    iget-object v2, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    const/4 v3, 0x3
-
-    invoke-virtual {v2, v3}, Lcom/google/gmm/debug/c;->a(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_ad
-
-    iget-object v2, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "waitForSomethingToDo(): #1 delta = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    :cond_ad
+    .line 303
     const-wide/16 v2, 0x0
 
     cmp-long v2, v0, v2
 
-    if-lez v2, :cond_50
+    if-lez v2, :cond_19
 
+    .line 304
     iget-object v2, p0, LY/c;->c:Ljava/lang/Object;
 
     invoke-virtual {v2, v0, v1}, Ljava/lang/Object;->wait(J)V
-    :try_end_b8
-    .catch Ljava/lang/InterruptedException; {:try_start_53 .. :try_end_b8} :catch_b9
+    :try_end_3b
+    .catch Ljava/lang/InterruptedException; {:try_start_1c .. :try_end_3b} :catch_3c
 
-    goto :goto_50
+    goto :goto_19
 
-    :catch_b9
+    .line 307
+    :catch_3c
     move-exception v0
 
-    iget-object v1, p0, LY/c;->i:Lcom/google/gmm/debug/c;
+    .line 308
+    invoke-virtual {v0}, Ljava/lang/InterruptedException;->printStackTrace()V
 
-    const-string v2, "exception thrown while waiting"
-
-    invoke-virtual {v1, v2, v0}, Lcom/google/gmm/debug/c;->a(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    goto :goto_50
+    goto :goto_19
 .end method
 
 .method protected c()LY/b;
-    .registers 11
+    .registers 8
 
-    const/4 v9, 0x0
+    .prologue
+    const/4 v6, 0x0
 
-    const/4 v8, 0x3
-
+    .line 319
     const/4 v1, 0x0
 
-    iget-object v0, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    invoke-virtual {v0, v8}, Lcom/google/gmm/debug/c;->a(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_65
-
-    iget-object v0, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "getNextTaskToRun(): moving expired tasks @"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, LY/c;->d:LP/a;
-
-    invoke-interface {v3}, LP/a;->a()J
-
-    move-result-wide v3
-
-    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    iget-object v0, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "getNextTaskToRun(): timer queue length = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, LY/c;->b:Ljava/util/Vector;
-
-    invoke-virtual {v3}, Ljava/util/Vector;->size()I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    iget-object v0, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "getNextTaskToRun(): priority queue length = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, LY/c;->a:Ljava/util/Vector;
-
-    invoke-virtual {v3}, Ljava/util/Vector;->size()I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    :cond_65
-    :goto_65
+    .line 322
+    :goto_2
     iget-object v0, p0, LY/c;->b:Ljava/util/Vector;
 
     invoke-virtual {v0}, Ljava/util/Vector;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_101
+    if-nez v0, :cond_2c
 
+    .line 323
     iget-object v0, p0, LY/c;->b:Ljava/util/Vector;
 
-    invoke-virtual {v0, v9}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    invoke-virtual {v0, v6}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, LY/d;
 
-    iget-object v2, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    invoke-virtual {v2, v8}, Lcom/google/gmm/debug/c;->a(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_84
-
-    iget-object v2, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    const-string v3, "getNextTaskToRun(): timerTask = "
-
-    invoke-virtual {v2, v3, v0}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    :cond_84
-    invoke-virtual {v0}, LY/d;->n()J
+    .line 324
+    invoke-virtual {v0}, LY/d;->k()J
 
     move-result-wide v2
 
-    iget-object v4, p0, LY/c;->d:LP/a;
+    iget-object v4, p0, LY/c;->d:Lcom/google/googlenav/common/a;
 
-    invoke-interface {v4}, LP/a;->a()J
+    invoke-interface {v4}, Lcom/google/googlenav/common/a;->b()J
 
     move-result-wide v4
 
     sub-long/2addr v2, v4
 
-    iget-object v4, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    invoke-virtual {v4, v8}, Lcom/google/gmm/debug/c;->a(I)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_d1
-
-    iget-object v4, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "getNextTaskToRun(): current = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget-object v6, p0, LY/c;->d:LP/a;
-
-    invoke-interface {v6}, LP/a;->a()J
-
-    move-result-wide v6
-
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    iget-object v4, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "getNextTaskToRun(): scheduled = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v0}, LY/d;->n()J
-
-    move-result-wide v6
-
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    :cond_d1
+    .line 325
     const-wide/16 v4, 0x0
 
-    cmp-long v4, v2, v4
+    cmp-long v2, v2, v4
 
-    if-gtz v4, :cond_101
+    if-gtz v2, :cond_2c
 
-    iget-object v4, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    invoke-virtual {v4, v8}, Lcom/google/gmm/debug/c;->a(I)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_f7
-
-    iget-object v4, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "gettNextTaskToRun(): #2 delta = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v4, v2}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    :cond_f7
+    .line 326
     iget-object v2, p0, LY/c;->b:Ljava/util/Vector;
 
-    invoke-virtual {v2, v9}, Ljava/util/Vector;->removeElementAt(I)V
+    invoke-virtual {v2, v6}, Ljava/util/Vector;->removeElementAt(I)V
 
+    .line 327
     invoke-virtual {p0, v0}, LY/c;->a(LY/b;)V
 
-    goto/16 :goto_65
+    goto :goto_2
 
-    :cond_101
-    iget-object v0, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    invoke-virtual {v0, v8}, Lcom/google/gmm/debug/c;->a(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_127
-
-    iget-object v0, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "getNextTask(): getting available task @"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, LY/c;->d:LP/a;
-
-    invoke-interface {v3}, LP/a;->a()J
-
-    move-result-wide v3
-
-    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    :cond_127
+    .line 334
+    :cond_2c
     iget-object v0, p0, LY/c;->a:Ljava/util/Vector;
 
     invoke-virtual {v0}, Ljava/util/Vector;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_140
+    if-nez v0, :cond_46
 
+    .line 335
     iget-object v0, p0, LY/c;->a:Ljava/util/Vector;
 
-    invoke-virtual {v0, v9}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    invoke-virtual {v0, v6}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, LY/b;
 
-    invoke-virtual {v0, v8}, LY/b;->a(I)V
+    .line 336
+    const/4 v1, 0x3
 
+    invoke-virtual {v0, v1}, LY/b;->a(I)V
+
+    .line 337
     iget-object v1, p0, LY/c;->a:Ljava/util/Vector;
 
-    invoke-virtual {v1, v9}, Ljava/util/Vector;->removeElementAt(I)V
+    invoke-virtual {v1, v6}, Ljava/util/Vector;->removeElementAt(I)V
 
-    :goto_13f
+    .line 340
+    :goto_45
     return-object v0
 
-    :cond_140
+    :cond_46
     move-object v0, v1
 
-    goto :goto_13f
+    goto :goto_45
 .end method
 
 .method c(LY/a;)Z
     .registers 6
+    .parameter
 
+    .prologue
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
+    .line 254
     iget-object v2, p0, LY/c;->c:Ljava/lang/Object;
 
     monitor-enter v2
 
+    .line 255
     :try_start_5
-    invoke-virtual {p1}, LY/a;->e()I
+    invoke-virtual {p1}, LY/a;->f()I
 
     move-result v3
 
     packed-switch v3, :pswitch_data_3a
 
+    .line 276
     monitor-exit v2
 
     move v0, v1
@@ -963,23 +673,28 @@
     :goto_e
     return v0
 
+    .line 258
     :pswitch_f
     iget-object v1, p0, LY/c;->b:Ljava/util/Vector;
 
     invoke-virtual {v1, p1}, Ljava/util/Vector;->removeElement(Ljava/lang/Object;)Z
 
+    .line 259
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, LY/a;->a(I)V
 
+    .line 260
     iget-object v1, p0, LY/c;->c:Ljava/lang/Object;
 
     invoke-virtual {v1}, Ljava/lang/Object;->notifyAll()V
 
+    .line 261
     monitor-exit v2
 
     goto :goto_e
 
+    .line 278
     :catchall_1f
     move-exception v0
 
@@ -989,29 +704,35 @@
 
     throw v0
 
+    .line 265
     :pswitch_22
     :try_start_22
     iget-object v1, p0, LY/c;->a:Ljava/util/Vector;
 
     invoke-virtual {v1, p1}, Ljava/util/Vector;->removeElement(Ljava/lang/Object;)Z
 
+    .line 266
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, LY/a;->a(I)V
 
+    .line 267
     iget-object v1, p0, LY/c;->c:Ljava/lang/Object;
 
     invoke-virtual {v1}, Ljava/lang/Object;->notifyAll()V
 
+    .line 268
     monitor-exit v2
 
     goto :goto_e
 
+    .line 272
     :pswitch_32
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, LY/a;->a(I)V
 
+    .line 273
     monitor-exit v2
     :try_end_37
     .catchall {:try_start_22 .. :try_end_37} :catchall_1f
@@ -1020,6 +741,7 @@
 
     goto :goto_e
 
+    .line 255
     nop
 
     :pswitch_data_3a
@@ -1034,19 +756,24 @@
 .method public d()V
     .registers 7
 
+    .prologue
+    .line 390
     iget-object v1, p0, LY/c;->c:Ljava/lang/Object;
 
     monitor-enter v1
 
+    .line 391
     :try_start_3
     iget-boolean v0, p0, LY/c;->h:Z
 
     if-nez v0, :cond_3d
 
+    .line 392
     const/4 v0, 0x1
 
     iput-boolean v0, p0, LY/c;->h:Z
 
+    .line 393
     const/4 v0, 0x0
 
     :goto_b
@@ -1056,9 +783,10 @@
 
     if-ge v0, v2, :cond_3d
 
+    .line 394
     iget-object v2, p0, LY/c;->f:[Ljava/lang/Thread;
 
-    iget-object v3, p0, LY/c;->e:LX/c;
+    iget-object v3, p0, LY/c;->e:LX/d;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -1084,27 +812,32 @@
 
     move-result-object v4
 
-    invoke-interface {v3, v4, p0}, LX/c;->a(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Thread;
+    invoke-interface {v3, v4, p0}, LX/d;->a(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Thread;
 
     move-result-object v3
 
     aput-object v3, v2, v0
 
+    .line 395
     iget-object v2, p0, LY/c;->f:[Ljava/lang/Thread;
 
     aget-object v2, v2, v0
 
     invoke-virtual {v2}, Ljava/lang/Thread;->start()V
 
+    .line 393
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_b
 
+    .line 398
     :cond_3d
     monitor-exit v1
 
+    .line 399
     return-void
 
+    .line 398
     :catchall_3f
     move-exception v0
 
@@ -1115,301 +848,189 @@
     throw v0
 .end method
 
-.method public run()V
-    .registers 7
+.method public e()V
+    .registers 5
 
-    const/4 v5, 0x3
-
+    .prologue
     const/4 v0, 0x0
 
-    :cond_2
-    :goto_2
-    iget-object v1, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    invoke-virtual {v1, v5}, Lcom/google/gmm/debug/c;->a(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2a
-
-    iget-object v1, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "run(): loop [running="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-boolean v3, p0, LY/c;->h:Z
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "]"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    :cond_2a
+    .line 409
     iget-object v1, p0, LY/c;->c:Ljava/lang/Object;
 
     monitor-enter v1
 
-    if-eqz v0, :cond_4d
+    .line 410
+    :try_start_4
+    iget-boolean v2, p0, LY/c;->h:Z
 
-    :try_start_2f
-    iget-object v2, p0, LY/c;->i:Lcom/google/gmm/debug/c;
+    const/4 v3, 0x1
 
-    const/4 v3, 0x3
+    if-ne v2, v3, :cond_1e
 
-    invoke-virtual {v2, v3}, Lcom/google/gmm/debug/c;->a(I)Z
+    .line 411
+    const/4 v2, 0x0
 
-    move-result v2
+    iput-boolean v2, p0, LY/c;->h:Z
 
-    if-eqz v2, :cond_3f
+    .line 412
+    :goto_c
+    iget-object v2, p0, LY/c;->f:[Ljava/lang/Thread;
 
-    iget-object v2, p0, LY/c;->i:Lcom/google/gmm/debug/c;
+    array-length v2, v2
 
-    const-string v3, "run(): clean up"
+    if-ge v0, v2, :cond_19
 
-    invoke-virtual {v2, v3}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
+    .line 413
+    iget-object v2, p0, LY/c;->f:[Ljava/lang/Thread;
 
-    :cond_3f
-    invoke-virtual {v0}, LY/b;->e()I
+    const/4 v3, 0x0
+
+    aput-object v3, v2, v0
+
+    .line 412
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_c
+
+    .line 415
+    :cond_19
+    iget-object v0, p0, LY/c;->c:Ljava/lang/Object;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
+
+    .line 417
+    :cond_1e
+    monitor-exit v1
+
+    .line 418
+    return-void
+
+    .line 417
+    :catchall_20
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_22
+    .catchall {:try_start_4 .. :try_end_22} :catchall_20
+
+    throw v0
+.end method
+
+.method public run()V
+    .registers 5
+
+    .prologue
+    .line 348
+    const/4 v0, 0x0
+
+    .line 353
+    :cond_1
+    :goto_1
+    iget-object v1, p0, LY/c;->c:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 356
+    if-eqz v0, :cond_14
+
+    .line 357
+    :try_start_6
+    invoke-virtual {v0}, LY/b;->f()I
 
     move-result v2
 
     const/4 v3, 0x4
 
-    if-ne v2, v3, :cond_78
+    if-ne v2, v3, :cond_1c
 
+    .line 358
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, LY/b;->a(I)V
 
-    invoke-virtual {v0}, LY/b;->g()V
+    .line 359
+    invoke-virtual {v0}, LY/b;->h()V
 
-    :cond_4d
-    :goto_4d
+    .line 366
+    :cond_14
+    :goto_14
     invoke-virtual {p0}, LY/c;->b()Z
 
     move-result v0
 
-    if-nez v0, :cond_86
+    if-nez v0, :cond_2b
 
-    iget-object v0, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    const/4 v2, 0x3
-
-    invoke-virtual {v0, v2}, Lcom/google/gmm/debug/c;->a(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_63
-
-    iget-object v0, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    const-string v2, "run(): exiting loop"
-
-    invoke-virtual {v0, v2}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    :cond_63
+    .line 367
     monitor-exit v1
-    :try_end_64
-    .catchall {:try_start_2f .. :try_end_64} :catchall_83
 
-    iget-object v0, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    invoke-virtual {v0, v5}, Lcom/google/gmm/debug/c;->a(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_77
-
-    iget-object v0, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    const-string v1, "run(): end "
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    :cond_77
+    .line 381
     return-void
 
-    :cond_78
-    :try_start_78
-    invoke-virtual {v0}, LY/b;->e()I
+    .line 360
+    :cond_1c
+    invoke-virtual {v0}, LY/b;->f()I
 
     move-result v2
 
-    if-ne v2, v5, :cond_4d
+    const/4 v3, 0x3
 
+    if-ne v2, v3, :cond_14
+
+    .line 361
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, LY/b;->a(I)V
 
-    goto :goto_4d
+    goto :goto_14
 
-    :catchall_83
+    .line 371
+    :catchall_28
     move-exception v0
 
     monitor-exit v1
-    :try_end_85
-    .catchall {:try_start_78 .. :try_end_85} :catchall_83
+    :try_end_2a
+    .catchall {:try_start_6 .. :try_end_2a} :catchall_28
 
     throw v0
 
-    :cond_86
-    :try_start_86
+    .line 370
+    :cond_2b
+    :try_start_2b
     invoke-virtual {p0}, LY/c;->c()LY/b;
 
     move-result-object v0
 
-    iget-object v2, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    const/4 v3, 0x3
-
-    invoke-virtual {v2, v3}, Lcom/google/gmm/debug/c;->a(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_9c
-
-    iget-object v2, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    invoke-direct {p0, v0}, LY/c;->d(LY/a;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    :cond_9c
+    .line 371
     monitor-exit v1
-    :try_end_9d
-    .catchall {:try_start_86 .. :try_end_9d} :catchall_83
+    :try_end_30
+    .catchall {:try_start_2b .. :try_end_30} :catchall_28
 
-    iget-object v1, p0, LY/c;->i:Lcom/google/gmm/debug/c;
+    .line 373
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v1, v5}, Lcom/google/gmm/debug/c;->a(I)Z
+    .line 375
+    :try_start_32
+    invoke-virtual {v0}, LY/b;->i()V
+    :try_end_35
+    .catch Ljava/lang/Throwable; {:try_start_32 .. :try_end_35} :catch_36
 
-    move-result v1
+    goto :goto_1
 
-    if-eqz v1, :cond_c3
-
-    iget-object v1, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "run(): running task @"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, LY/c;->d:LP/a;
-
-    invoke-interface {v3}, LP/a;->a()J
-
-    move-result-wide v3
-
-    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    :cond_c3
-    if-eqz v0, :cond_2
-
-    invoke-virtual {v0}, LY/b;->k()V
-
-    :try_start_c8
-    invoke-virtual {v0}, LY/b;->h()V
-    :try_end_cb
-    .catch Ljava/lang/Throwable; {:try_start_c8 .. :try_end_cb} :catch_e1
-
-    :goto_cb
-    iget-object v1, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    invoke-virtual {v1, v5}, Lcom/google/gmm/debug/c;->a(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_dc
-
-    iget-object v1, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    invoke-direct {p0, v0}, LY/c;->e(LY/a;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/google/gmm/debug/c;->c(Ljava/lang/Object;)V
-
-    :cond_dc
-    invoke-virtual {v0}, LY/b;->l()V
-
-    goto/16 :goto_2
-
-    :catch_e1
+    .line 376
+    :catch_36
     move-exception v1
 
-    iget-object v2, p0, LY/c;->i:Lcom/google/gmm/debug/c;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "runtime exception thrown by task ["
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "]"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3, v1}, Lcom/google/gmm/debug/c;->a(Ljava/lang/Object;Ljava/lang/Object;)V
-
+    .line 377
     invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
-    goto :goto_cb
+    goto :goto_1
 .end method
 
 .method public toString()Ljava/lang/String;
     .registers 2
 
+    .prologue
+    .line 479
     invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0

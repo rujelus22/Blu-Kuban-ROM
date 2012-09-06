@@ -38,11 +38,11 @@
         <item name="android:textColor">?android:textColorPrimary</item>
     </style>
     <style name="da_DestinationPickerActionBarStyle" parent="@android:style/Widget.Holo.ActionBar">
-        <item name="android:background">@drawable/da_destination_action_bar_bg</item>
-        <item name="android:backgroundSplit">@drawable/da_destination_action_bar_bg</item>
+        <item name="android:background">@color/da_destination_action_bar_bg_color</item>
+        <item name="android:backgroundSplit">@color/da_destination_action_bar_bg_color</item>
     </style>
     <style name="da_DestinationPickerPagerTitleStyle" parent="@android:style/TextAppearance">
         <item name="android:textSize">12.0sp</item>
-        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:textColor">@color/da_destination_picker_pager_title_item_color</item>
     </style>
 </resources>

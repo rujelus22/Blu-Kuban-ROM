@@ -1,106 +1,44 @@
-.class public Lcom/google/googlenav/bL;
+.class Lcom/google/googlenav/bl;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lac/d;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/bJ;
-
-.field private final b:Ljava/lang/String;
-
-.field private final c:[I
-
-.field private final d:I
-
-.field private final e:Lcom/google/googlenav/bV;
+.field final synthetic a:Lcom/google/googlenav/bj;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/bJ;Ljava/lang/String;Lcom/google/googlenav/bV;[II)V
-    .registers 6
+.method constructor <init>(Lcom/google/googlenav/bj;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/bL;->a:Lcom/google/googlenav/bJ;
+    .prologue
+    .line 158
+    iput-object p1, p0, Lcom/google/googlenav/bl;->a:Lcom/google/googlenav/bj;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Lcom/google/googlenav/bL;->b:Ljava/lang/String;
-
-    iput-object p3, p0, Lcom/google/googlenav/bL;->e:Lcom/google/googlenav/bV;
-
-    iput-object p4, p0, Lcom/google/googlenav/bL;->c:[I
-
-    iput p5, p0, Lcom/google/googlenav/bL;->d:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()I
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/bL;->c:[I
-
-    array-length v0, v0
-
-    return v0
-.end method
-
-.method public a(I)I
+.method public Z()V
     .registers 3
 
-    iget-object v0, p0, Lcom/google/googlenav/bL;->c:[I
-
-    aget v0, v0, p1
-
-    return v0
-.end method
-
-.method public b(I)Lcom/google/googlenav/bN;
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/bL;->a:Lcom/google/googlenav/bJ;
-
-    invoke-static {v0}, Lcom/google/googlenav/bJ;->a(Lcom/google/googlenav/bJ;)LK/bn;
+    .prologue
+    .line 166
+    invoke-static {}, Las/f;->j()Las/f;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/googlenav/bL;->c:[I
+    iget-object v1, p0, Lcom/google/googlenav/bl;->a:Lcom/google/googlenav/bj;
 
-    aget v1, v1, p1
+    invoke-virtual {v0, v1}, Las/f;->c(Las/g;)V
 
-    invoke-virtual {v0, v1}, LK/bn;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlenav/bW;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/bW;->av()Lcom/google/googlenav/bN;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public b()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/bL;->b:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public c()I
-    .registers 2
-
-    iget v0, p0, Lcom/google/googlenav/bL;->d:I
-
-    return v0
-.end method
-
-.method public d()Lcom/google/googlenav/bV;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/bL;->e:Lcom/google/googlenav/bV;
-
-    return-object v0
+    .line 167
+    return-void
 .end method

@@ -1,195 +1,115 @@
-.class final Lcom/google/common/collect/dm;
+.class public Lcom/google/common/collect/dm;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/Iterator;
-
 
 # instance fields
-.field final a:Ljava/util/Set;
-
-.field b:Lcom/google/common/collect/ds;
-
-.field c:Lcom/google/common/collect/ds;
-
-.field final synthetic d:Lcom/google/common/collect/LinkedListMultimap;
+.field final a:Ljava/util/ArrayList;
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/common/collect/LinkedListMultimap;)V
-    .registers 3
-    .parameter
+.method public constructor <init>()V
+    .registers 2
 
     .prologue
-    .line 294
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/common/collect/dm;-><init>(Lcom/google/common/collect/LinkedListMultimap;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/common/collect/LinkedListMultimap;B)V
-    .registers 5
-    .parameter
-    .parameter
-
-    .prologue
-    .line 294
-    iput-object p1, p0, Lcom/google/common/collect/dm;->d:Lcom/google/common/collect/LinkedListMultimap;
-
+    .line 171
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 295
-    new-instance v0, Ljava/util/HashSet;
+    .line 165
+    new-instance v0, Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/google/common/collect/dm;->d:Lcom/google/common/collect/LinkedListMultimap;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {v1}, Lcom/google/common/collect/LinkedListMultimap;->keySet()Ljava/util/Set;
+    iput-object v0, p0, Lcom/google/common/collect/dm;->a:Ljava/util/ArrayList;
 
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Set;->size()I
-
-    move-result v1
-
-    invoke-static {v1}, Lcom/google/common/collect/Maps;->b(I)I
-
-    move-result v1
-
-    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(I)V
-
-    iput-object v0, p0, Lcom/google/common/collect/dm;->a:Ljava/util/Set;
-
-    .line 296
-    iget-object v0, p0, Lcom/google/common/collect/dm;->d:Lcom/google/common/collect/LinkedListMultimap;
-
-    #getter for: Lcom/google/common/collect/LinkedListMultimap;->head:Lcom/google/common/collect/ds;
-    invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$000(Lcom/google/common/collect/LinkedListMultimap;)Lcom/google/common/collect/ds;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/common/collect/dm;->b:Lcom/google/common/collect/ds;
-
+    .line 171
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .registers 2
-
-    .prologue
-    .line 300
-    iget-object v0, p0, Lcom/google/common/collect/dm;->b:Lcom/google/common/collect/ds;
-
-    if-eqz v0, :cond_6
-
-    const/4 v0, 0x1
-
-    :goto_5
-    return v0
-
-    :cond_6
-    const/4 v0, 0x0
-
-    goto :goto_5
-.end method
-
-.method public final next()Ljava/lang/Object;
+.method public a()Lcom/google/common/collect/ImmutableMap;
     .registers 3
 
     .prologue
-    .line 303
-    iget-object v0, p0, Lcom/google/common/collect/dm;->b:Lcom/google/common/collect/ds;
+    .line 231
+    iget-object v0, p0, Lcom/google/common/collect/dm;->a:Ljava/util/ArrayList;
 
-    #calls: Lcom/google/common/collect/LinkedListMultimap;->checkElement(Ljava/lang/Object;)V
-    invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$100(Ljava/lang/Object;)V
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    .line 304
-    iget-object v0, p0, Lcom/google/common/collect/dm;->b:Lcom/google/common/collect/ds;
+    move-result v1
 
-    iput-object v0, p0, Lcom/google/common/collect/dm;->c:Lcom/google/common/collect/ds;
+    packed-switch v1, :pswitch_data_32
 
-    .line 305
-    iget-object v0, p0, Lcom/google/common/collect/dm;->a:Ljava/util/Set;
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    iget-object v1, p0, Lcom/google/common/collect/dm;->c:Lcom/google/common/collect/ds;
+    move-result v1
 
-    iget-object v1, v1, Lcom/google/common/collect/ds;->a:Ljava/lang/Object;
+    new-array v1, v1, [Ljava/util/Map$Entry;
 
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v1}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    .line 307
-    :cond_12
-    iget-object v0, p0, Lcom/google/common/collect/dm;->b:Lcom/google/common/collect/ds;
+    move-result-object v0
 
-    iget-object v0, v0, Lcom/google/common/collect/ds;->c:Lcom/google/common/collect/ds;
+    check-cast v0, [Ljava/util/Map$Entry;
 
-    iput-object v0, p0, Lcom/google/common/collect/dm;->b:Lcom/google/common/collect/ds;
+    new-instance v1, Lcom/google/common/collect/RegularImmutableMap;
 
-    .line 308
-    iget-object v0, p0, Lcom/google/common/collect/dm;->b:Lcom/google/common/collect/ds;
+    invoke-direct {v1, v0}, Lcom/google/common/collect/RegularImmutableMap;-><init>([Ljava/util/Map$Entry;)V
 
-    if-eqz v0, :cond_28
+    move-object v0, v1
 
-    iget-object v0, p0, Lcom/google/common/collect/dm;->a:Ljava/util/Set;
-
-    iget-object v1, p0, Lcom/google/common/collect/dm;->b:Lcom/google/common/collect/ds;
-
-    iget-object v1, v1, Lcom/google/common/collect/ds;->a:Ljava/lang/Object;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_12
-
-    .line 309
-    :cond_28
-    iget-object v0, p0, Lcom/google/common/collect/dm;->c:Lcom/google/common/collect/ds;
-
-    iget-object v0, v0, Lcom/google/common/collect/ds;->a:Ljava/lang/Object;
-
+    :goto_1b
     return-object v0
+
+    :pswitch_1c
+    invoke-static {}, Lcom/google/common/collect/ImmutableMap;->of()Lcom/google/common/collect/ImmutableMap;
+
+    move-result-object v0
+
+    goto :goto_1b
+
+    :pswitch_21
+    new-instance v1, Lcom/google/common/collect/SingletonImmutableMap;
+
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/common/collect/ee;->d(Ljava/util/Iterator;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-direct {v1, v0}, Lcom/google/common/collect/SingletonImmutableMap;-><init>(Ljava/util/Map$Entry;)V
+
+    move-object v0, v1
+
+    goto :goto_1b
+
+    :pswitch_data_32
+    .packed-switch 0x0
+        :pswitch_1c
+        :pswitch_21
+    .end packed-switch
 .end method
 
-.method public final remove()V
-    .registers 3
+.method public a(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/dm;
+    .registers 5
+    .parameter
+    .parameter
 
     .prologue
-    .line 312
-    iget-object v0, p0, Lcom/google/common/collect/dm;->c:Lcom/google/common/collect/ds;
+    .line 178
+    iget-object v0, p0, Lcom/google/common/collect/dm;->a:Ljava/util/ArrayList;
 
-    if-eqz v0, :cond_15
+    invoke-static {p1, p2}, Lcom/google/common/collect/ImmutableMap;->entryOf(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
 
-    const/4 v0, 0x1
+    move-result-object v1
 
-    :goto_5
-    invoke-static {v0}, Lcom/google/common/base/t;->b(Z)V
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 313
-    iget-object v0, p0, Lcom/google/common/collect/dm;->d:Lcom/google/common/collect/LinkedListMultimap;
-
-    iget-object v1, p0, Lcom/google/common/collect/dm;->c:Lcom/google/common/collect/ds;
-
-    iget-object v1, v1, Lcom/google/common/collect/ds;->a:Ljava/lang/Object;
-
-    #calls: Lcom/google/common/collect/LinkedListMultimap;->removeAllNodes(Ljava/lang/Object;)V
-    invoke-static {v0, v1}, Lcom/google/common/collect/LinkedListMultimap;->access$300(Lcom/google/common/collect/LinkedListMultimap;Ljava/lang/Object;)V
-
-    .line 314
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/common/collect/dm;->c:Lcom/google/common/collect/ds;
-
-    .line 315
-    return-void
-
-    .line 312
-    :cond_15
-    const/4 v0, 0x0
-
-    goto :goto_5
+    .line 179
+    return-object p0
 .end method

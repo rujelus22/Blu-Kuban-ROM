@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="quickpanel_scroll_threshold_port">6</integer>
+    <integer name="quickpanel_scroll_threshold_land">8</integer>
+</resources>

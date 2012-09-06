@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/popup_check" android:layout_width="200.0dip" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="18.0dip" android:textColor="@touchwiz:color/tw_color001" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:layout_marginRight="5.0dip" android:text="@string/Mobile_Use_Toast" />
-    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/do_not_ask_again_area" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <CheckedTextView android:gravity="center_vertical" android:id="@id/check_popup" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="2.0dip" android:checkMark="?android:listChoiceIndicatorMultiple" />
-        <TextView android:textSize="18.0dip" android:gravity="center" android:id="@id/do_not_ask_again" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/check_do_not_used_popup" />
-    </LinearLayout>
-</LinearLayout>

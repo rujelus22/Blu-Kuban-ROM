@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector
+<layer-list
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true" android:drawable="@drawable/da_action_button_up" />
-    <item android:drawable="@drawable/da_action_button_normal" />
-</selector>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/da_destination_picker_button_bg" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/da_selectable_item" />
+</layer-list>

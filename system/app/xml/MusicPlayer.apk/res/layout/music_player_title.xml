@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/music_player_title_main" android:textStyle="bold" android:textColor="@color/music_player_title_main" android:ellipsize="marquee" android:gravity="center" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_centerInParent="true" android:marqueeRepeatLimit="marquee_forever" />
-    <TextView android:textSize="@dimen/music_player_title_sub" android:textColor="@color/music_player_title_sub" android:ellipsize="marquee" android:gravity="center" android:id="@id/artist" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_above="@id/title" android:layout_centerHorizontal="true" android:marqueeRepeatLimit="marquee_forever" />
-    <TextView android:textSize="@dimen/music_player_title_sub" android:textColor="@color/music_player_title_sub" android:ellipsize="marquee" android:gravity="center" android:id="@id/album" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_below="@id/title" android:layout_centerHorizontal="true" android:marqueeRepeatLimit="marquee_forever" />
-</merge>

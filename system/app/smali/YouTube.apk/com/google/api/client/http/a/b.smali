@@ -1,5 +1,5 @@
 .class final Lcom/google/api/client/http/a/b;
-.super Lcom/google/api/client/http/t;
+.super Lcom/google/api/client/http/v;
 .source "SourceFile"
 
 
@@ -19,7 +19,7 @@
 
     .prologue
     .line 34
-    invoke-direct {p0}, Lcom/google/api/client/http/t;-><init>()V
+    invoke-direct {p0}, Lcom/google/api/client/http/v;-><init>()V
 
     .line 35
     iput-object p1, p0, Lcom/google/api/client/http/a/b;->a:Lorg/apache/http/client/methods/HttpRequestBase;

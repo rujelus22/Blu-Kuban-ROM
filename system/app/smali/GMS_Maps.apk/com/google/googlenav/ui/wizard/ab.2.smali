@@ -1,75 +1,41 @@
-.class Lcom/google/googlenav/ui/wizard/ab;
+.class public interface abstract Lcom/google/googlenav/ui/wizard/aB;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/googlenav/ui/view/dialog/H;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/P;
-
-
-# direct methods
-.method private constructor <init>(Lcom/google/googlenav/ui/wizard/P;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/ab;->a:Lcom/google/googlenav/ui/wizard/P;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/google/googlenav/ui/wizard/P;Lcom/google/googlenav/ui/wizard/Q;)V
-    .registers 3
-
-    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/wizard/ab;-><init>(Lcom/google/googlenav/ui/wizard/P;)V
-
-    return-void
-.end method
+.source "SourceFile"
 
 
 # virtual methods
-.method public a()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/ab;->a:Lcom/google/googlenav/ui/wizard/P;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/P;->k(Lcom/google/googlenav/ui/wizard/P;)V
-
-    return-void
+.method public abstract a()V
 .end method
 
-.method public b()V
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/ab;->a:Lcom/google/googlenav/ui/wizard/P;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/P;->d(Lcom/google/googlenav/ui/wizard/P;)Lcom/google/googlenav/ui/wizard/hM;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/ab;->a:Lcom/google/googlenav/ui/wizard/P;
-
-    invoke-static {v1}, Lcom/google/googlenav/ui/wizard/P;->l(Lcom/google/googlenav/ui/wizard/P;)LaD/i;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/wizard/hM;->a(LaD/i;)V
-
-    return-void
+.method public abstract a(Lcom/google/googlenav/h;)V
 .end method
 
-.method public c()V
-    .registers 2
+.method public abstract a(Ljava/lang/String;)V
+.end method
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/ab;->a:Lcom/google/googlenav/ui/wizard/P;
+.method public abstract a(Z)V
+.end method
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/P;->f(Lcom/google/googlenav/ui/wizard/P;)Lcom/google/googlenav/ui/wizard/Z;
+.method public abstract b()V
+.end method
 
-    move-result-object v0
+.method public abstract b(Ljava/lang/String;)V
+.end method
 
-    invoke-interface {v0}, Lcom/google/googlenav/ui/wizard/Z;->b()V
+.method public abstract c()V
+.end method
 
-    return-void
+.method public abstract d()V
+.end method
+
+.method public abstract e()V
+.end method
+
+.method public abstract f()V
+.end method
+
+.method public abstract g()V
+.end method
+
+.method public abstract h()V
 .end method

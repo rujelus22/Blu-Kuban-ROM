@@ -3,12 +3,12 @@
 .source "AuthenticatedActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/content/DialogInterface$OnKeyListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/activities/AuthenticatedActivity;->fireOnReadyRunnable(Z)V
+    value = Lcom/google/android/finsky/activities/AuthenticatedActivity;->setupAccountCreationDialog()Landroid/app/Dialog;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
 
-.field final synthetic val$shouldHandleIntent:Z
-
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/activities/AuthenticatedActivity;Z)V
-    .registers 3
-    .parameter
+.method constructor <init>(Lcom/google/android/finsky/activities/AuthenticatedActivity;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 585
+    .line 637
     iput-object p1, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$3;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
-
-    iput-boolean p2, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$3;->val$shouldHandleIntent:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,37 +37,25 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 3
+.method public onKey(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z
+    .registers 5
+    .parameter "dialog"
+    .parameter "keyCode"
+    .parameter "event"
 
     .prologue
-    .line 589
-    iget-object v0, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$3;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
+    .line 641
+    const/16 v0, 0x54
 
-    iget-boolean v0, v0, Lcom/google/android/finsky/activities/AuthenticatedActivity;->mStateSaved:Z
+    if-ne p2, v0, :cond_6
 
-    if-eqz v0, :cond_f
+    const/4 v0, 0x1
 
-    .line 590
-    const-string v0, "onSaveInstanceState() called, not firing onReady()."
+    :goto_5
+    return v0
 
-    const/4 v1, 0x0
+    :cond_6
+    const/4 v0, 0x0
 
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 594
-    :goto_e
-    return-void
-
-    .line 592
-    :cond_f
-    iget-object v0, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$3;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
-
-    iget-boolean v1, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$3;->val$shouldHandleIntent:Z
-
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->onReady(Z)V
-
-    goto :goto_e
+    goto :goto_5
 .end method

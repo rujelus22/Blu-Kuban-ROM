@@ -53,28 +53,35 @@
 Не користите ову апликацију у току вожње. Подаци о саобраћају нису у реалном времену, а упутства могу да буду погрешна, опасна, забрањена или да укључују употребу трајекта. На путањама за пешачење можда нема плочника или стаза за пешаке. Поштујте примењиве законе.
 
 Не скрећите поглед са пута!"</string>
+    <string name="da_agreement_with_walking_and_biking">"Навигација у Google мапама је у beta фази. Будите опрезни.
+
+Немојте да управљате овом апликацијом у току вожње. Подаци о саобраћају нису у реалном времену, а упутства могу да буду погрешна, опасна, забрањена или да обухватају употребу трајекта. На путањама за пешачење можда нема тротоара или стаза за пешаке. Упутства за вожњу бицикала могу да обухватају путање које нису погодне за вожњу бицикала. Поштујте важеће законе.
+
+Не скрећите поглед са пута!"</string>
     <string name="da_disclaimer_checkbox">Прикажи ову поруку следећи пут</string>
-    <string name="da_show_list">Листа упутстава</string>
-    <string name="da_route_overview">Информације о путањи</string>
+    <string name="da_show_list">Детаљна упутства</string>
+    <string name="da_route_and_alternates">Путања и алтернативе</string>
     <string name="da_show_map">Прикажи мапу</string>
+    <string name="da_menu_more">Jош</string>
     <string name="da_satellite">Сателит</string>
     <string name="da_traffic_view">Приказ саобраћаја</string>
     <string name="da_no_traffic_here">Овде нема информација о саобраћају</string>
     <string name="da_traffic">Саобраћај</string>
-    <string name="da_area_view">Приказ области</string>
-    <string name="da_mute">Искључи звук</string>
-    <string name="da_unmute">Укључи звук</string>
+    <string name="da_area_view">Прикажи област</string>
     <string name="da_settings">Подешавања</string>
     <string name="da_help">Помоћ</string>
-    <string name="da_terms_privacy_notices">Услови и приватност</string>
+    <string name="da_terms_privacy_notices">Услови, прив. и обавешт.</string>
     <string name="da_terms_and_conditions">Услови и одредбе</string>
     <string name="da_privacy_policy">Политика приватности</string>
     <string name="da_legal_notices">Правна обавештења</string>
     <string name="da_navigation_suspended">Навигација је обустављена</string>
     <string name="da_exit_navigation">Изађи из навигације</string>
+    <string name="da_save">Сачувај</string>
     <string name="da_power_settings_category">Подешавања напајања</string>
     <string name="da_screen_dimming_setting_title">Затамњивање екрана</string>
     <string name="da_screen_dimming_setting_summary">Екран се затамњује између упутстава ради уштеде напајања</string>
+    <string name="da_home_setting_set_address">Подесите кућну адресу</string>
+    <string name="da_home_setting_set_address_hint">Унесите адресу.</string>
     <string name="da_info_settings_category">Информације</string>
     <string name="da_email_me_when_resolved">Пошаљи ми поруку е-поште када проблем буде решен</string>
     <string name="da_problem_reported">Проблем је пријављен</string>
@@ -109,6 +116,8 @@
     <string name="da_turn_on_gps">Желите ли да прикажете подешавања локације?</string>
     <string name="da_voice_guidance">Гласовна упутства</string>
     <string name="da_install_voice_guidance_prompt">За навигацију гласом треба да инсталирате подршку за пребацивање текста у говор са Android Market-а.</string>
+    <string name="da_voice_off">Искључи глас</string>
+    <string name="da_voice_on">Укључи глас</string>
     <string name="da_voice_guidance_on">Гласовно навођење је укључено</string>
     <string name="da_voice_guidance_off">Гласовно навођење је искључено</string>
     <string name="da_dialog_ok">Потврди</string>
@@ -119,7 +128,7 @@
     <string name="da_dialog_install">Инсталирај</string>
     <string name="da_dialog_dont_accept">Не прихватам</string>
     <string name="da_dialog_go">Иди</string>
-    <string name="da_dialog_get_directions">Преузми упутства</string>
+    <string name="da_dialog_get_directions">Потражи упутства</string>
     <string name="da_map">Мапа</string>
     <string name="da_clear_layers">Обриши мапу</string>
     <string name="da_layer_name_parking">Паркинг</string>
@@ -188,9 +197,12 @@
     <string name="da_picker_speak_destination">Изговорите одредиште</string>
     <string name="da_picker_contacts">Контакти</string>
     <string name="da_picker_starred_items">Места са звездицом</string>
+    <string name="da_picker_starred">СА ЗВЕЗДИЦОМ</string>
     <string name="da_picker_new_contact">Нови контакт</string>
+    <string name="da_go_home">Иди на почетну</string>
     <string name="da_picker_saved_destinations">Сачувана одредишта</string>
     <string name="da_picker_recent_destinations">Недавна одредишта</string>
+    <string name="da_picker_shortcuts">ПРЕЧИЦЕ</string>
     <string name="da_navigate_to">Навигација до</string>
     <string name="da_return_to">Назад на</string>
     <string name="da_picker_search_hint">Одредиште</string>
@@ -208,7 +220,6 @@
     <string name="da_walking">Пешице</string>
     <string name="da_bicycling">Вожња бициклом</string>
     <string name="da_quoted_text">„%1$s“</string>
-    <string name="da_more_info">Више информација</string>
     <string name="da_walking_warning">Ходање (beta): будите опрезни</string>
     <string name="da_bicycling_warning">Вожња бициклом (beta): будите опрезни</string>
     <string name="da_calibrate_compass_title">Калибрација компаса</string>
@@ -216,7 +227,6 @@
     <string name="da_confirm_exit_title">Напуштате навигацију?</string>
     <string name="da_confirm_exit_text">Овим ће се прекинути свако навођење путањом.</string>
     <string name="da_route_includes_tolls">Путања обухвата наплатне рампе</string>
-    <string name="da_avoid_tolls">Избегавај наплатне рампе</string>
     <string name="da_avoiding_tolls">Избегаване су наплатне рампе</string>
     <string name="da_avoiding_highways">Избегавани су аутопутеви</string>
     <string name="da_route_includes_unavoidable_tolls">Ова путања обухвата наплатне рампе.</string>
@@ -272,13 +282,15 @@
     <string name="DIRECTIONS_TITLE">Упутства</string>
     <string name="EXIT_COMMAND">Изађи</string>
     <string name="FEATURE_SWITCHER_LATITUDE_SUBTITLE">Пронађите породицу и пријатеље</string>
-    <string name="FEATURE_SWITCHER_LOCAL">Места</string>
+    <string name="FEATURE_SWITCHER_LOCAL">Локално</string>
     <string name="FEATURE_SWITCHER_LOCAL_SUBTITLE">Пронађите ресторане, барове и још много тога</string>
     <string name="FEATURE_SWITCHER_MAP">Мапа</string>
     <string name="FEATURE_SWITCHER_NAV">GPS навигација</string>
     <string name="FEATURE_SWITCHER_TRAFFIC">Саобраћај</string>
     <string name="FRIENDS_COMMAND_ACTIVATE">Latitude</string>
     <string name="FRIENDS_COMMAND_JOIN">Омогући Latitude</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE">Google+ профил</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE_DESCRIPTION">Погледајte профил пријатеља на Google+</string>
     <string name="FRIENDS_HISTORY_SUMMARY_TITLE">Историја локација</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TICKER">{0} жели да се чекирате</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TITLE">Latitude захтев за чекирање</string>
@@ -298,10 +310,26 @@
     <string name="LATITUDE_WIDGET_FRIENDS_ACTIVATE">Додирните да бисте се пријавили у Latitude</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LAST_UPDATED_TIME_ABSOLUTE">Последње ажурирање: {0}</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LOCATION_UNKNOWN">Непозната локација</string>
+    <string name="LATITUDE_WIDGET_START">Додирните да бисте покренули Latitude</string>
     <string name="LOADING">Учитавање</string>
-    <string name="LOCAL_APP_NAME">Google Local</string>
     <string name="MAPS_APP_NAME">Мапе</string>
     <string name="MY_PLACES_COMMAND">Моја места</string>
+    <string name="MY_PLACES_DELETE_CONFIRM">Ставка &lt;b>{0}&lt;/b> ће бити уклоњена из Мојих места.</string>
+    <string name="MY_PLACES_DELETE_CONFIRM_TITLE">Брисање</string>
+    <string name="MY_PLACES_DELETE_ITEM_COMMAND">Избриши</string>
+    <string name="MY_PLACES_DELETE_OWNED_MAP_CONFIRM">Ставка &lt;b>{0}&lt;/b> ће бити уклоњена из Мојих места и трајно избрисана.</string>
+    <string name="MY_PLACES_DELETE_PLACE_CONFIRM">Ставка &lt;b>{0}&lt;/b> ће бити уклоњена из Мојих места и активности у вези са овим местом ће бити трајно избрисане.</string>
+    <string name="MY_PLACES_DELETE_SERVICE_UNAVAILABLE">Услуга је недоступна. Покушајте поново касније.</string>
+    <string name="MY_PLACES_ITEM_IS_BOOKMARKED_MY_MAP">Обележена мапа</string>
+    <string name="MY_PLACES_ITEM_IS_MY_MAP">Моја мапа</string>
+    <string name="MY_PLACES_ITEM_IS_REVIEWED">Рецензија</string>
+    <string name="MY_PLACES_ITEM_IS_STARRED">Звездица</string>
+    <string name="MY_PLACES_LINK_ON_SUGGEST">Персонализовано помоћу Мојих места</string>
+    <string name="MY_PLACES_NO_DIRECTIONS_ITEM_MESSAGE">Немате историје упутстава.</string>
+    <string name="MY_PLACES_NO_MY_MAP_ITEM_MESSAGE">Немате мапе.</string>
+    <string name="MY_PLACES_NO_STARRED_ITEM_MESSAGE">Немате места са звездицом.</string>
+    <string name="MY_PLACES_SEE_ON_MAP_COMMAND">Мапа</string>
+    <string name="MY_PLACES_SHOW_DETAIL_PAGE_COMMAND">Детаљи</string>
     <string name="NAVIGATE_MODE_NAVIGATION">Навигација</string>
     <string name="NEED_NET_BODY">Ова апликација не може да се користи док не гарантујете одобрење за слање и примање података преко мреже.</string>
     <string name="NEED_NET_TITLE">Потребан је приступ мрежи</string>
@@ -309,8 +337,11 @@
     <string name="NET_FAIL_BODY">Ова апликација захтева активну везу за пренос података.</string>
     <string name="NET_FAIL_TITLE">Повезивање на мрежу није успело</string>
     <string name="NET_UNAVAILABLE_TITLE">Мрежа није доступна</string>
-    <string name="PLACES_APP_NAME">Места</string>
-    <string name="RATINGS_CUSTOM_ASPECT_EXAMPLE_TEXT">нпр. лесковачки роштиљ, коктели, музика</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_PLURAL">Понуда за вас у околини: {0}</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_SINGLE">1 понуда за вас у околини</string>
+    <string name="OFFERS_FEATURE_SWITCHER_TITLE">Понуде</string>
+    <string name="PLACES_APP_NAME">Локално</string>
+    <string name="RATINGS_CORRECT_CATEGORY">Бирање тачне категорије за ово место</string>
     <string name="RATINGS_CUSTOM_ASPECT_HINT_TEXT">Шта се издваја?</string>
     <string name="RATINGS_OPTIN_CANCEL">Откажи</string>
     <string name="RATINGS_OPTIN_CLOSE">Затвори</string>
@@ -326,6 +357,7 @@
     <string name="RATINGS_RATE_PLACES">Зашто бисте оцењивали места?</string>
     <string name="RATINGS_SET_APPEARANCE">Подешавање изгледа</string>
     <string name="RATINGS_WAIT">Сачекајте...</string>
+    <string name="RATINGS_WRONG_LABELS">Погрешне ознаке?</string>
     <string name="SEARCH_HINT">Претражите мапе</string>
     <string name="SHORT_APP_NAME">Google мапе</string>
     <string name="TRAFFIC_WIDGET_END_LOCATION">Крајња тачка</string>
@@ -335,7 +367,12 @@
     <string name="TRAFFIC_WIDGET_START_LOCATION">Почетна тачка</string>
     <string name="TRANSIT_NAVIGATION">Навигација за превоз</string>
     <string name="TRANSIT_TITLE">Превоз</string>
-    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">"Озбиљна грешка.  Изађите и поново покрените."</string>
+    <string name="TRANSIT_TYPE_FILTER_ALL">Све</string>
+    <string name="TRANSIT_TYPE_FILTER_BUS">Аутобус</string>
+    <string name="TRANSIT_TYPE_FILTER_SUBWAY">Метро</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAIN">Воз</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAM">Трамвај</string>
+    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">Нешто је пошло наопако... Покушајте поново за неколико минута.</string>
     <string name="UNKNOWN_COMMUNICATION_FAILURE_TITLE">Непозната грешка</string>
     <string name="UPGRADE_BODY">Да бисте користили ову апликацију морате да инсталирате њену нову верзију.</string>
     <string name="UPGRADE_TITLE">Надоградња софтвера</string>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:descendantFocusability="afterDescendants" android:layout_width="fill_parent" android:layout_height="?android:listPreferredItemHeight"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <CheckBox android:id="@id/checkbox" android:focusable="false" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="15.0dip" android:layout_marginBottom="5.0dip" android:layout_alignParentRight="true" />
-    <ImageView android:id="@id/expander" android:background="@color/expander_bg" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_centerVertical="true" />
-    <ImageView android:id="@id/category_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:layout_toRightOf="@id/expander" />
-    <TextView android:id="@id/item_name" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:layout_toLeftOf="@id/checkbox" android:layout_toRightOf="@id/category_icon" style="@style/ActionBarCompatText" />
-    <TextView android:textSize="16.0sp" android:id="@id/sp_name" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_toLeftOf="@id/checkbox" android:layout_toRightOf="@id/category_icon" android:layout_below="@id/item_name" style="@style/ActionBarCompatSubText" />
-</RelativeLayout>

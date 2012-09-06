@@ -489,7 +489,7 @@
 
     invoke-virtual/range {v16 .. v18}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
     :try_end_133
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_124 .. :try_end_133} :catch_1bc
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_124 .. :try_end_133} :catch_1b9
 
     .line 163
     :goto_133
@@ -530,7 +530,7 @@
 
     move-result v16
 
-    if-nez v16, :cond_1c0
+    if-nez v16, :cond_1bd
 
     .line 171
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/WirelessSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -590,18 +590,16 @@
 
     move-object/from16 v0, v16
 
-    invoke-virtual {v0, v9}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 188
     invoke-virtual {v8}, Landroid/app/admin/DevicePolicyManager;->getGlobalProxyAdmin()Landroid/content/ComponentName;
 
     move-result-object v16
 
-    if-nez v16, :cond_1d7
+    if-nez v16, :cond_1d4
 
     const/16 v16, 0x1
 
-    :goto_195
+    :goto_192
     move/from16 v0, v16
 
     invoke-virtual {v9, v0}, Landroid/preference/Preference;->setEnabled(Z)V
@@ -623,7 +621,7 @@
 
     move-result v16
 
-    if-nez v16, :cond_1da
+    if-nez v16, :cond_1d7
 
     .line 194
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/WirelessSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -643,7 +641,7 @@
     invoke-virtual/range {v16 .. v17}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     .line 199
-    :goto_1bb
+    :goto_1b8
     return-void
 
     .line 159
@@ -651,7 +649,7 @@
     .end local v8           #mDPM:Landroid/app/admin/DevicePolicyManager;
     .end local v9           #mGlobalProxy:Landroid/preference/Preference;
     .end local v12           #p2p:Landroid/net/wifi/p2p/WifiP2pManager;
-    :catch_1bc
+    :catch_1b9
     move-exception v5
 
     .line 160
@@ -663,7 +661,7 @@
     .line 174
     .end local v5           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     .restart local v12       #p2p:Landroid/net/wifi/p2p/WifiP2pManager;
-    :cond_1c0
+    :cond_1bd
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/WirelessSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v16
@@ -690,14 +688,14 @@
     .line 188
     .restart local v8       #mDPM:Landroid/app/admin/DevicePolicyManager;
     .restart local v9       #mGlobalProxy:Landroid/preference/Preference;
-    :cond_1d7
+    :cond_1d4
     const/16 v16, 0x0
 
-    goto :goto_195
+    goto :goto_192
 
     .line 196
     .restart local v4       #cm:Landroid/net/ConnectivityManager;
-    :cond_1da
+    :cond_1d7
     const-string v16, "tether_settings"
 
     move-object/from16 v0, p0
@@ -718,7 +716,7 @@
 
     invoke-virtual {v11, v0}, Landroid/preference/Preference;->setTitle(I)V
 
-    goto :goto_1bb
+    goto :goto_1b8
 .end method
 
 .method public onPause()V

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@drawable/task_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
-        <ListView android:id="@id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:drawSelectorOnTop="false" android:layout_weight="1.0" style="@style/TaskList_Seperator_Color" />
-        <include android:id="@id/emptylayout_2" layout="@layout/task_empty_2" />
-        <include android:id="@id/emptylayout" layout="@layout/task_empty" />
-    </FrameLayout>
-</LinearLayout>

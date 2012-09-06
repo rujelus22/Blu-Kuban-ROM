@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <bool name="config_largeHeap">true</bool>
+    <bool name="config_isScreenLarge">true</bool>
     <bool name="config_useDropTargetDownTransition">true</bool>
     <bool name="config_workspaceFadeAdjacentScreens">true</bool>
+    <bool name="pref_hide_shadows_default">true</bool>
+    <bool name="pref_hide_dock_default">true</bool>
 </resources>

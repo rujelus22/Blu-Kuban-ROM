@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.sec.android.app.ve.view.timeline.VideoClipViewGroup android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:id="@id/thumbImageParent" android:paddingLeft="4.0px" android:paddingRight="4.0px" android:layout_width="wrap_content" android:layout_height="76.0px">
-        <com.sec.android.app.ve.view.timeline.ThumbImageParent android:gravity="center_horizontal" android:id="@id/thumnailImg" android:layout_width="wrap_content" android:layout_height="fill_parent" />
-        <ImageView android:id="@id/retouchIcon" android:paddingLeft="4.0px" android:paddingTop="45.0px" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/clip_effect_02" />
-        <LinearLayout android:id="@id/thumnailFrame" android:background="@drawable/videoframe_n" android:layout_width="wrap_content" android:layout_height="fill_parent" />
-    </FrameLayout>
-</com.sec.android.app.ve.view.timeline.VideoClipViewGroup>

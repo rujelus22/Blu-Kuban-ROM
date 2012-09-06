@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/android/finsky/remoting/protos/Rev$ReviewResponse;,
         Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;,
         Lcom/google/android/finsky/remoting/protos/Rev$Review;
     }

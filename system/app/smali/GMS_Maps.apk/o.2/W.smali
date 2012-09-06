@@ -1,79 +1,104 @@
-.class public Lo/W;
-.super Ljava/lang/Object;
+.class Lo/w;
+.super Lt/t;
+.source "SourceFile"
+
+
+# instance fields
+.field final synthetic a:Lo/r;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
+.method private constructor <init>(Lo/r;)V
+    .registers 2
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 87
+    iput-object p1, p0, Lo/w;->a:Lo/r;
+
+    invoke-direct {p0}, Lt/t;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)Lo/W;
+.method synthetic constructor <init>(Lo/r;Lo/s;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 87
+    invoke-direct {p0, p1}, Lo/w;-><init>(Lo/r;)V
+
+    return-void
+.end method
+
+.method private a(Landroid/content/Context;)V
     .registers 2
+    .parameter
 
-    if-eqz p0, :cond_a
+    .prologue
+    .line 90
+    invoke-virtual {p0, p1}, Lo/w;->c(Landroid/content/Context;)V
 
-    const-string v0, "com.svox.pico"
+    .line 91
+    return-void
+.end method
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+.method static synthetic a(Lo/w;)V
+    .registers 1
+    .parameter
 
-    move-result v0
+    .prologue
+    .line 87
+    invoke-direct {p0}, Lo/w;->b()V
 
-    if-eqz v0, :cond_10
+    return-void
+.end method
 
-    :cond_a
-    new-instance v0, Lo/V;
+.method static synthetic a(Lo/w;Landroid/content/Context;)V
+    .registers 2
+    .parameter
+    .parameter
 
-    invoke-direct {v0}, Lo/V;-><init>()V
+    .prologue
+    .line 87
+    invoke-direct {p0, p1}, Lo/w;->a(Landroid/content/Context;)V
 
-    :goto_f
-    return-object v0
+    return-void
+.end method
 
-    :cond_10
-    const-string v0, "com.google.android.apps.networktts"
+.method private b()V
+    .registers 1
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .prologue
+    .line 94
+    invoke-super {p0}, Lt/t;->d()V
 
-    move-result v0
-
-    if-eqz v0, :cond_1e
-
-    new-instance v0, Lo/O;
-
-    invoke-direct {v0}, Lo/O;-><init>()V
-
-    goto :goto_f
-
-    :cond_1e
-    const-string v0, "com.google.android.tts"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2c
-
-    new-instance v0, Lo/T;
-
-    invoke-direct {v0}, Lo/T;-><init>()V
-
-    goto :goto_f
-
-    :cond_2c
-    new-instance v0, Lo/W;
-
-    invoke-direct {v0}, Lo/W;-><init>()V
-
-    goto :goto_f
+    .line 95
+    return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;
-    .registers 3
+.method protected a()V
+    .registers 2
 
-    return-object p1
+    .prologue
+    .line 104
+    iget-object v0, p0, Lo/w;->a:Lo/r;
+
+    invoke-virtual {v0}, Lo/r;->f()V
+
+    .line 105
+    return-void
+.end method
+
+.method protected b(Landroid/content/Context;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 100
+    return-void
 .end method

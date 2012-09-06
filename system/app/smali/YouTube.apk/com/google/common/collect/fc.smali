@@ -7,38 +7,24 @@
 
 
 # instance fields
-.field final a:Ljava/util/Iterator;
+.field final synthetic a:Ljava/util/Iterator;
 
 .field final synthetic b:Lcom/google/common/collect/fb;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/fb;)V
+.method constructor <init>(Lcom/google/common/collect/fb;Ljava/util/Iterator;)V
     .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 1101
+    .line 1003
     iput-object p1, p0, Lcom/google/common/collect/fc;->b:Lcom/google/common/collect/fb;
 
+    iput-object p2, p0, Lcom/google/common/collect/fc;->a:Ljava/util/Iterator;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 1102
-    iget-object v0, p0, Lcom/google/common/collect/fc;->b:Lcom/google/common/collect/fb;
-
-    iget-object v0, v0, Lcom/google/common/collect/fb;->a:Lcom/google/common/collect/Multimaps$MapMultimap;
-
-    iget-object v0, v0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/common/collect/fc;->a:Ljava/util/Iterator;
 
     return-void
 .end method
@@ -49,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 1105
+    .line 1006
     iget-object v0, p0, Lcom/google/common/collect/fc;->a:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -63,7 +49,7 @@
     .registers 3
 
     .prologue
-    .line 1101
+    .line 1003
     iget-object v0, p0, Lcom/google/common/collect/fc;->a:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -81,11 +67,11 @@
     .registers 2
 
     .prologue
-    .line 1119
+    .line 1025
     iget-object v0, p0, Lcom/google/common/collect/fc;->a:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    .line 1120
+    .line 1026
     return-void
 .end method

@@ -22,7 +22,7 @@
 
 .field private static final ACTION_TRAVERSE_GIVEN_AXIS:I = 0x2
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final LOG_TAG:Ljava/lang/String; = "AccessibilityInjector"
 

@@ -53,40 +53,40 @@
         <item quantity="one">Ilinde umsebenzi %1$d engxoxweni</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> Ithulisiwe</item>
-        <item quantity="one">&amp;lt;b>%1$dUNT&amp;lt;/b> Ithulisiwe</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> Ithulisiwe</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$dUNT&amp;amp;amp;lt;/b> Ithulisiwe</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;amp;i-lt;/i-b> Ibikwe njengogaxekile</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;amp;i-lt;/i-b> Ibikwe njengogaxekile</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;amp;i-lt;/i-b> Ibikwe njengogaxekile</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;amp;i-lt;/i-b> Ibikwe njengogaxekile</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> i-Archived</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> i-Archived</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> i-Archived</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> i-Archived</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;amp;i-lt;i--b>%1$d&amp;amp;i-lt;/i-b> Ithuthelwe ebhokisini lemiyalezo engenayo</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> Ithuthelwe ebhokisini lemiyalezo engenayo</item>
+        <item quantity="other">&amp;amp;amp;amp;i-lt;i--b>%1$d&amp;amp;amp;amp;i-lt;/i-b> Ithuthelwe ebhokisini lemiyalezo engenayo</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> Ithuthelwe ebhokisini lemiyalezo engenayo</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> Isusiwe</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> Isusiwe</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> Isusiwe</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> Isusiwe</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> Iphawulwe njengebalulekile</item>
-        <item quantity="one">&amp;amp;-lt;b>%1$d&amp;lt;/b> Iphawulwe njengebalulekile</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> Iphawulwe njengebalulekile</item>
+        <item quantity="one">&amp;amp;amp;amp;-lt;b>%1$d&amp;amp;amp;lt;/b> Iphawulwe njengebalulekile</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> Imakwe njengengabalulekile</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> Imakwe njengengabalulekile</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> Imakwe njengengabalulekile</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> Imakwe njengengabalulekile</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> Iphawulwe njengefundiwe</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> Iphawulwe njengefundiwe</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> Iphawulwe njengefundiwe</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> Iphawulwe njengefundiwe</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> Iphawulwe njengengafundwanga</item>
-        <item quantity="one">&amp;amp;i-lt;b>%1$d&amp;lt;/b> Iphawulwe njengengafundwanga</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> Iphawulwe njengengafundwanga</item>
+        <item quantity="one">&amp;amp;amp;amp;i-lt;b>%1$d&amp;amp;amp;lt;/b> Iphawulwe njengengafundwanga</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Amalebula ashintshiwe</item>

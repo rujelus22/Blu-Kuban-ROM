@@ -17,7 +17,7 @@
 # instance fields
 .field accessibilityOverlay:Landroid/view/View;
 
-.field imageView:Landroid/widget/ImageView;
+.field imageView:Lcom/google/android/finsky/layout/SmartThumbnailView;
 
 .field title:Landroid/widget/TextView;
 
@@ -27,7 +27,7 @@
     .registers 1
 
     .prologue
-    .line 110
+    .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
     .parameter "x0"
 
     .prologue
-    .line 110
+    .line 101
     invoke-direct {p0}, Lcom/google/android/finsky/adapters/Graphic2x1TitleTopLeft$ViewHolder;-><init>()V
 
     return-void

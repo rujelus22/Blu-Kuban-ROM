@@ -36,7 +36,7 @@
     .line 890
     iput-object p1, p0, Lcom/google/android/talk/AnimatedAdapter2$Diff$Mapping$TransformationData;->this$2:Lcom/google/android/talk/AnimatedAdapter2$Diff$Mapping;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 891
     iput p2, p0, Lcom/google/android/talk/AnimatedAdapter2$Diff$Mapping$TransformationData;->mRowPosition:I

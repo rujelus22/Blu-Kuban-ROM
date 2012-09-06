@@ -15,7 +15,7 @@
 
 
 # static fields
-.field private static final FEEDBACK_URI:Landroid/net/Uri;
+.field static final FEEDBACK_URI:Landroid/net/Uri;
 
 
 # direct methods
@@ -42,7 +42,7 @@
 
     .prologue
     .line 55
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

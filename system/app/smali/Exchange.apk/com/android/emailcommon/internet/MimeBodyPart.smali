@@ -152,49 +152,6 @@
     return-object v0
 .end method
 
-.method public getContentId()Ljava/lang/String;
-    .registers 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 119
-    const-string v1, "Content-ID"
-
-    invoke-virtual {p0, v1}, Lcom/android/emailcommon/internet/MimeBodyPart;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 120
-    .local v0, contentId:Ljava/lang/String;
-    if-nez v0, :cond_a
-
-    .line 121
-    const/4 v1, 0x0
-
-    .line 124
-    :goto_9
-    return-object v1
-
-    :cond_a
-    sget-object v1, Lcom/android/emailcommon/internet/MimeBodyPart;->REMOVE_OPTIONAL_BRACKETS:Ljava/util/regex/Pattern;
-
-    invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v1
-
-    const-string v2, "$1"
-
-    invoke-virtual {v1, v2}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    goto :goto_9
-.end method
-
 .method public getContentType()Ljava/lang/String;
     .registers 3
     .annotation system Ldalvik/annotation/Throws;
@@ -204,21 +161,21 @@
     .end annotation
 
     .prologue
-    .line 101
+    .line 103
     const-string v1, "Content-Type"
 
     invoke-virtual {p0, v1}, Lcom/android/emailcommon/internet/MimeBodyPart;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 102
+    .line 104
     .local v0, contentType:Ljava/lang/String;
     if-nez v0, :cond_a
 
-    .line 103
+    .line 105
     const-string v0, "text/plain"
 
-    .line 105
+    .line 107
     .end local v0           #contentType:Ljava/lang/String;
     :cond_a
     return-object v0
@@ -233,21 +190,21 @@
     .end annotation
 
     .prologue
-    .line 110
+    .line 112
     const-string v1, "Content-Disposition"
 
     invoke-virtual {p0, v1}, Lcom/android/emailcommon/internet/MimeBodyPart;->getFirstHeader(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 111
+    .line 113
     .local v0, contentDisposition:Ljava/lang/String;
     if-nez v0, :cond_9
 
-    .line 112
+    .line 114
     const/4 v0, 0x0
 
-    .line 114
+    .line 116
     .end local v0           #contentDisposition:Ljava/lang/String;
     :cond_9
     return-object v0
@@ -302,7 +259,7 @@
     .end annotation
 
     .prologue
-    .line 129
+    .line 131
     invoke-virtual {p0}, Lcom/android/emailcommon/internet/MimeBodyPart;->getContentType()Ljava/lang/String;
 
     move-result-object v0
@@ -343,11 +300,11 @@
     .line 86
     check-cast v1, Lcom/android/emailcommon/mail/Multipart;
 
-    .line 87
+    .line 88
     .local v1, multipart:Lcom/android/emailcommon/mail/Multipart;
     invoke-virtual {v1, p0}, Lcom/android/emailcommon/mail/Multipart;->setParent(Lcom/android/emailcommon/mail/Part;)V
 
-    .line 88
+    .line 89
     const-string v3, "Content-Type"
 
     invoke-virtual {v1}, Lcom/android/emailcommon/mail/Multipart;->getContentType()Ljava/lang/String;
@@ -356,19 +313,19 @@
 
     invoke-virtual {p0, v3, v4}, Lcom/android/emailcommon/internet/MimeBodyPart;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 98
+    .line 100
     .end local v1           #multipart:Lcom/android/emailcommon/mail/Multipart;
     :cond_17
     :goto_17
     return-void
 
-    .line 89
+    .line 91
     :cond_18
     instance-of v3, p1, Lcom/android/emailcommon/internet/TextBody;
 
     if-eqz v3, :cond_17
 
-    .line 90
+    .line 92
     const-string v3, "%s;\n charset=utf-8"
 
     new-array v4, v7, [Ljava/lang/Object;
@@ -383,7 +340,7 @@
 
     move-result-object v0
 
-    .line 91
+    .line 93
     .local v0, contentType:Ljava/lang/String;
     invoke-virtual {p0}, Lcom/android/emailcommon/internet/MimeBodyPart;->getContentType()Ljava/lang/String;
 
@@ -395,11 +352,11 @@
 
     move-result-object v2
 
-    .line 92
+    .line 94
     .local v2, name:Ljava/lang/String;
     if-eqz v2, :cond_51
 
-    .line 93
+    .line 95
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -426,13 +383,13 @@
 
     move-result-object v0
 
-    .line 95
+    .line 97
     :cond_51
     const-string v3, "Content-Type"
 
     invoke-virtual {p0, v3, v0}, Lcom/android/emailcommon/internet/MimeBodyPart;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 96
+    .line 98
     const-string v3, "Content-Transfer-Encoding"
 
     const-string v4, "base64"

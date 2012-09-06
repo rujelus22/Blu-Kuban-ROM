@@ -1,54 +1,61 @@
-.class Lcom/google/googlenav/ui/view/android/bR;
+.class Lcom/google/googlenav/ui/view/android/br;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # instance fields
-.field a:Ljava/lang/String;
-
-.field final synthetic b:Lcom/google/googlenav/ui/view/android/bN;
+.field final synthetic a:Lcom/google/googlenav/ui/view/android/ModalOverlay;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/ui/view/android/bN;Ljava/lang/String;)V
-    .registers 3
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/ModalOverlay;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/bR;->b:Lcom/google/googlenav/ui/view/android/bN;
+    .prologue
+    .line 108
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/br;->a:Lcom/google/googlenav/ui/view/android/ModalOverlay;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Lcom/google/googlenav/ui/view/android/bR;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 6
+.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+    .registers 4
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bR;->a:Ljava/lang/String;
+    .prologue
+    .line 117
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/br;->a:Lcom/google/googlenav/ui/view/android/ModalOverlay;
 
-    invoke-static {v0}, Las/b;->b(Ljava/lang/String;)Z
+    const/16 v1, 0x8
 
-    move-result v0
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/view/android/ModalOverlay;->setVisibility(I)V
 
-    if-nez v0, :cond_14
+    .line 118
+    return-void
+.end method
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bR;->b:Lcom/google/googlenav/ui/view/android/bN;
+.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .registers 2
+    .parameter
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/view/android/bN;->F:Lcom/google/googlenav/ui/p;
+    .prologue
+    .line 114
+    return-void
+.end method
 
-    const/16 v1, 0x10
+.method public onAnimationStart(Landroid/view/animation/Animation;)V
+    .registers 2
+    .parameter
 
-    const/4 v2, -0x1
-
-    iget-object v3, p0, Lcom/google/googlenav/ui/view/android/bR;->a:Ljava/lang/String;
-
-    invoke-interface {v0, v1, v2, v3}, Lcom/google/googlenav/ui/p;->a(IILjava/lang/Object;)Z
-
-    :cond_14
+    .prologue
+    .line 111
     return-void
 .end method

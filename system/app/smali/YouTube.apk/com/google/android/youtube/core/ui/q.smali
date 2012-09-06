@@ -1,18 +1,18 @@
 .class public abstract Lcom/google/android/youtube/core/ui/q;
-.super Lcom/google/android/youtube/core/ui/k;
+.super Lcom/google/android/youtube/core/ui/j;
 .source "SourceFile"
 
 
 # instance fields
-.field protected final e:Lcom/google/android/youtube/core/a/d;
+.field protected final h:Lcom/google/android/youtube/core/a/d;
 
-.field protected final f:Lcom/google/android/youtube/core/client/af;
+.field protected final i:Lcom/google/android/youtube/core/b/ag;
 
-.field protected final g:Lcom/google/android/youtube/core/async/a;
+.field protected final j:Lcom/google/android/youtube/core/async/c;
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/Activity;Lcom/google/android/youtube/core/ui/h;Lcom/google/android/youtube/core/a/d;Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/client/af;Lcom/google/android/youtube/core/e;)V
+.method public constructor <init>(Landroid/app/Activity;Lcom/google/android/youtube/core/ui/g;Lcom/google/android/youtube/core/a/d;Lcom/google/android/youtube/core/async/ar;Lcom/google/android/youtube/core/b/ag;Lcom/google/android/youtube/core/d;)V
     .registers 13
     .parameter
     .parameter
@@ -35,40 +35,40 @@
     move-object v5, p6
 
     .line 46
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/youtube/core/ui/k;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/ui/h;Lcom/google/android/youtube/core/a/a;Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/e;)V
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/youtube/core/ui/j;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/ui/g;Lcom/google/android/youtube/core/a/a;Lcom/google/android/youtube/core/async/ar;Lcom/google/android/youtube/core/d;)V
 
     .line 47
     const-string v0, "imageClient may not be null"
 
-    invoke-static {p5, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p5, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/client/af;
+    check-cast v0, Lcom/google/android/youtube/core/b/ag;
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/ui/q;->f:Lcom/google/android/youtube/core/client/af;
+    iput-object v0, p0, Lcom/google/android/youtube/core/ui/q;->i:Lcom/google/android/youtube/core/b/ag;
 
     .line 48
     const-string v0, "adapter may not be null"
 
-    invoke-static {p3, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/youtube/core/a/d;
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/ui/q;->e:Lcom/google/android/youtube/core/a/d;
+    iput-object v0, p0, Lcom/google/android/youtube/core/ui/q;->h:Lcom/google/android/youtube/core/a/d;
 
     .line 49
     new-instance v0, Lcom/google/android/youtube/core/ui/r;
 
     invoke-direct {v0, p0}, Lcom/google/android/youtube/core/ui/r;-><init>(Lcom/google/android/youtube/core/ui/q;)V
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/async/a;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/g;)Lcom/google/android/youtube/core/async/a;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/async/c;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/l;)Lcom/google/android/youtube/core/async/c;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/ui/q;->g:Lcom/google/android/youtube/core/async/a;
+    iput-object v0, p0, Lcom/google/android/youtube/core/ui/q;->j:Lcom/google/android/youtube/core/async/c;
 
     .line 51
     return-void
@@ -82,21 +82,21 @@
 
     .prologue
     .line 67
-    iget-object v0, p0, Lcom/google/android/youtube/core/ui/q;->g:Lcom/google/android/youtube/core/async/a;
+    iget-object v0, p0, Lcom/google/android/youtube/core/ui/q;->j:Lcom/google/android/youtube/core/async/c;
 
     const-string v1, "callback can\'t be null"
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     if-eqz p1, :cond_13
 
-    iget-object v1, p0, Lcom/google/android/youtube/core/ui/q;->e:Lcom/google/android/youtube/core/a/d;
+    iget-object v1, p0, Lcom/google/android/youtube/core/ui/q;->h:Lcom/google/android/youtube/core/a/d;
 
     invoke-virtual {v1, p1}, Lcom/google/android/youtube/core/a/d;->a(Landroid/net/Uri;)V
 
-    iget-object v1, p0, Lcom/google/android/youtube/core/ui/q;->f:Lcom/google/android/youtube/core/client/af;
+    iget-object v1, p0, Lcom/google/android/youtube/core/ui/q;->i:Lcom/google/android/youtube/core/b/ag;
 
-    invoke-interface {v1, p1, v0}, Lcom/google/android/youtube/core/client/af;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/async/g;)V
+    invoke-interface {v1, p1, v0}, Lcom/google/android/youtube/core/b/ag;->b(Landroid/net/Uri;Lcom/google/android/youtube/core/async/l;)V
 
     .line 68
     :cond_13

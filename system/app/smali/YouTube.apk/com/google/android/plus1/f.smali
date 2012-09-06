@@ -11,22 +11,8 @@
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/plus1/BasePlusOneButton;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 478
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/plus1/f;-><init>(Lcom/google/android/plus1/BasePlusOneButton;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/plus1/BasePlusOneButton;B)V
-    .registers 3
-    .parameter
+.method private constructor <init>(Lcom/google/android/plus1/BasePlusOneButton;)V
+    .registers 2
     .parameter
 
     .prologue
@@ -34,6 +20,18 @@
     iput-object p1, p0, Lcom/google/android/plus1/f;->a:Lcom/google/android/plus1/BasePlusOneButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/plus1/BasePlusOneButton;B)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 478
+    invoke-direct {p0, p1}, Lcom/google/android/plus1/f;-><init>(Lcom/google/android/plus1/BasePlusOneButton;)V
 
     return-void
 .end method
@@ -48,13 +46,9 @@
     .line 489
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "Error receiving account status: "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
@@ -97,11 +91,11 @@
     .line 492
     iget-object v0, p0, Lcom/google/android/plus1/f;->a:Lcom/google/android/plus1/BasePlusOneButton;
 
-    invoke-static {v0}, Lcom/google/android/plus1/BasePlusOneButton;->d(Lcom/google/android/plus1/BasePlusOneButton;)Lcom/google/android/plus1/ap;
+    invoke-static {v0}, Lcom/google/android/plus1/BasePlusOneButton;->d(Lcom/google/android/plus1/BasePlusOneButton;)Lcom/google/android/plus1/aq;
 
     move-result-object v0
 
-    if-nez v0, :cond_4d
+    if-nez v0, :cond_49
 
     iget-object v0, p0, Lcom/google/android/plus1/f;->a:Lcom/google/android/plus1/BasePlusOneButton;
 
@@ -109,7 +103,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_4d
+    if-nez v0, :cond_49
 
     .line 493
     iget-object v0, p0, Lcom/google/android/plus1/f;->a:Lcom/google/android/plus1/BasePlusOneButton;
@@ -124,7 +118,7 @@
     invoke-static {v0, p1}, Lcom/google/android/plus1/BasePlusOneButton;->a(Lcom/google/android/plus1/BasePlusOneButton;Ljava/lang/Exception;)V
 
     .line 496
-    :cond_4d
+    :cond_49
     return-void
 .end method
 
@@ -134,17 +128,13 @@
 
     .prologue
     .line 478
-    check-cast p1, Lcom/google/android/plus1/ap;
+    check-cast p1, Lcom/google/android/plus1/aq;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "Received account status: "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -158,7 +148,7 @@
 
     iget-object v0, p0, Lcom/google/android/plus1/f;->a:Lcom/google/android/plus1/BasePlusOneButton;
 
-    invoke-static {v0, p1}, Lcom/google/android/plus1/BasePlusOneButton;->a(Lcom/google/android/plus1/BasePlusOneButton;Lcom/google/android/plus1/ap;)Lcom/google/android/plus1/ap;
+    invoke-static {v0, p1}, Lcom/google/android/plus1/BasePlusOneButton;->a(Lcom/google/android/plus1/BasePlusOneButton;Lcom/google/android/plus1/aq;)Lcom/google/android/plus1/aq;
 
     iget-object v0, p0, Lcom/google/android/plus1/f;->a:Lcom/google/android/plus1/BasePlusOneButton;
 

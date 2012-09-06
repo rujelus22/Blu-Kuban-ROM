@@ -55,35 +55,35 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 9
+    .line 10
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 14
+    .line 15
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->payload_:Lcom/google/android/finsky/remoting/protos/Response$Payload;
 
-    .line 34
+    .line 35
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->commands_:Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;
 
-    .line 53
+    .line 54
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->preFetch_:Ljava/util/List;
 
-    .line 86
+    .line 87
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->notification_:Ljava/util/List;
 
-    .line 152
+    .line 154
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->cachedSize:I
 
-    .line 9
+    .line 10
     return-void
 .end method
 
@@ -97,7 +97,7 @@
     .end annotation
 
     .prologue
-    .line 233
+    .line 238
     new-instance v0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
 
     invoke-direct {v0}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;-><init>()V
@@ -119,7 +119,7 @@
     .end annotation
 
     .prologue
-    .line 227
+    .line 232
     new-instance v0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
 
     invoke-direct {v0}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;-><init>()V
@@ -142,17 +142,17 @@
     .parameter "value"
 
     .prologue
-    .line 103
+    .line 104
     if-nez p1, :cond_8
 
-    .line 104
+    .line 105
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 106
+    .line 107
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->notification_:Ljava/util/List;
 
@@ -162,20 +162,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 107
+    .line 108
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->notification_:Ljava/util/List;
 
-    .line 109
+    .line 110
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->notification_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 110
+    .line 111
     return-object p0
 .end method
 
@@ -184,17 +184,17 @@
     .parameter "value"
 
     .prologue
-    .line 70
+    .line 71
     if-nez p1, :cond_8
 
-    .line 71
+    .line 72
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 73
+    .line 74
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->preFetch_:Ljava/util/List;
 
@@ -204,20 +204,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 74
+    .line 75
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->preFetch_:Ljava/util/List;
 
-    .line 76
+    .line 77
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->preFetch_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 77
+    .line 78
     return-object p0
 .end method
 
@@ -225,17 +225,32 @@
     .registers 2
 
     .prologue
-    .line 46
+    .line 47
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->hasCommands:Z
 
-    .line 47
+    .line 48
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->commands_:Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;
 
-    .line 48
+    .line 49
+    return-object p0
+.end method
+
+.method public clearNotification()Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
+    .registers 2
+
+    .prologue
+    .line 114
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->notification_:Ljava/util/List;
+
+    .line 115
     return-object p0
 .end method
 
@@ -243,14 +258,14 @@
     .registers 2
 
     .prologue
-    .line 80
+    .line 81
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->preFetch_:Ljava/util/List;
 
-    .line 81
+    .line 82
     return-object p0
 .end method
 
@@ -258,15 +273,15 @@
     .registers 2
 
     .prologue
-    .line 154
+    .line 157
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 156
+    .line 159
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getSerializedSize()I
 
-    .line 158
+    .line 161
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->cachedSize:I
 
@@ -277,10 +292,24 @@
     .registers 2
 
     .prologue
-    .line 36
+    .line 37
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->commands_:Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;
 
     return-object v0
+.end method
+
+.method public getNotificationCount()I
+    .registers 2
+
+    .prologue
+    .line 92
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->notification_:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public getNotificationList()Ljava/util/List;
@@ -296,7 +325,7 @@
     .end annotation
 
     .prologue
-    .line 89
+    .line 90
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->notification_:Ljava/util/List;
 
     return-object v0
@@ -306,7 +335,7 @@
     .registers 2
 
     .prologue
-    .line 16
+    .line 17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->payload_:Lcom/google/android/finsky/remoting/protos/Response$Payload;
 
     return-object v0
@@ -316,7 +345,7 @@
     .registers 2
 
     .prologue
-    .line 58
+    .line 59
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->preFetch_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -339,7 +368,7 @@
     .end annotation
 
     .prologue
-    .line 56
+    .line 57
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->preFetch_:Ljava/util/List;
 
     return-object v0
@@ -349,10 +378,10 @@
     .registers 6
 
     .prologue
-    .line 162
+    .line 166
     const/4 v2, 0x0
 
-    .line 163
+    .line 167
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->hasPayload()Z
 
@@ -360,7 +389,7 @@
 
     if-eqz v3, :cond_11
 
-    .line 164
+    .line 168
     const/4 v3, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getPayload()Lcom/google/android/finsky/remoting/protos/Response$Payload;
@@ -373,7 +402,7 @@
 
     add-int/2addr v2, v3
 
-    .line 167
+    .line 171
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->hasCommands()Z
 
@@ -381,7 +410,7 @@
 
     if-eqz v3, :cond_21
 
-    .line 168
+    .line 172
     const/4 v3, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getCommands()Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;
@@ -394,7 +423,7 @@
 
     add-int/2addr v2, v3
 
-    .line 171
+    .line 175
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getPreFetchList()Ljava/util/List;
 
@@ -418,7 +447,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Response$PreFetch;
 
-    .line 172
+    .line 176
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Response$PreFetch;
     const/4 v3, 0x3
 
@@ -430,7 +459,7 @@
 
     goto :goto_29
 
-    .line 175
+    .line 179
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Response$PreFetch;
     :cond_3c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getNotificationList()Ljava/util/List;
@@ -454,7 +483,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
 
-    .line 176
+    .line 180
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
     const/4 v3, 0x4
 
@@ -466,12 +495,12 @@
 
     goto :goto_44
 
-    .line 179
+    .line 183
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
     :cond_57
     iput v2, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->cachedSize:I
 
-    .line 180
+    .line 184
     return v2
 .end method
 
@@ -479,7 +508,7 @@
     .registers 2
 
     .prologue
-    .line 35
+    .line 36
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->hasCommands:Z
 
     return v0
@@ -489,7 +518,7 @@
     .registers 2
 
     .prologue
-    .line 15
+    .line 16
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->hasPayload:Z
 
     return v0
@@ -505,92 +534,92 @@
     .end annotation
 
     .prologue
-    .line 187
+    .line 192
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 188
+    .line 193
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_3e
 
-    .line 192
+    .line 197
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 193
+    .line 198
     :sswitch_d
     return-object p0
 
-    .line 198
+    .line 203
     :sswitch_e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Response$Payload;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Response$Payload;-><init>()V
 
-    .line 199
+    .line 204
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Response$Payload;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 200
+    .line 205
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->setPayload(Lcom/google/android/finsky/remoting/protos/Response$Payload;)Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
 
     goto :goto_0
 
-    .line 204
+    .line 209
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Response$Payload;
     :sswitch_1a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;-><init>()V
 
-    .line 205
+    .line 210
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 206
+    .line 211
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->setCommands(Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;)Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
 
     goto :goto_0
 
-    .line 210
+    .line 215
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;
     :sswitch_26
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Response$PreFetch;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Response$PreFetch;-><init>()V
 
-    .line 211
+    .line 216
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Response$PreFetch;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 212
+    .line 217
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->addPreFetch(Lcom/google/android/finsky/remoting/protos/Response$PreFetch;)Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
 
     goto :goto_0
 
-    .line 216
+    .line 221
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Response$PreFetch;
     :sswitch_32
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;-><init>()V
 
-    .line 217
+    .line 222
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 218
+    .line 223
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->addNotification(Lcom/google/android/finsky/remoting/protos/Notifications$Notification;)Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
 
     goto :goto_0
 
-    .line 188
+    .line 193
     :sswitch_data_3e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -624,26 +653,26 @@
     .parameter "value"
 
     .prologue
-    .line 38
+    .line 39
     if-nez p1, :cond_8
 
-    .line 39
+    .line 40
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 41
+    .line 42
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->hasCommands:Z
 
-    .line 42
+    .line 43
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->commands_:Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;
 
-    .line 43
+    .line 44
     return-object p0
 .end method
 
@@ -652,26 +681,26 @@
     .parameter "value"
 
     .prologue
-    .line 18
+    .line 19
     if-nez p1, :cond_8
 
-    .line 19
+    .line 20
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 21
+    .line 22
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->hasPayload:Z
 
-    .line 22
+    .line 23
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->payload_:Lcom/google/android/finsky/remoting/protos/Response$Payload;
 
-    .line 23
+    .line 24
     return-object p0
 .end method
 
@@ -685,14 +714,14 @@
     .end annotation
 
     .prologue
-    .line 138
+    .line 140
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->hasPayload()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 139
+    .line 141
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getPayload()Lcom/google/android/finsky/remoting/protos/Response$Payload;
@@ -701,7 +730,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 141
+    .line 143
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->hasCommands()Z
 
@@ -709,7 +738,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 142
+    .line 144
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getCommands()Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;
@@ -718,7 +747,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 144
+    .line 146
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getPreFetchList()Ljava/util/List;
 
@@ -742,7 +771,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Response$PreFetch;
 
-    .line 145
+    .line 147
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Response$PreFetch;
     const/4 v2, 0x3
 
@@ -750,7 +779,7 @@
 
     goto :goto_24
 
-    .line 147
+    .line 149
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Response$PreFetch;
     :cond_35
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getNotificationList()Ljava/util/List;
@@ -774,7 +803,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
 
-    .line 148
+    .line 150
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
     const/4 v2, 0x4
 
@@ -782,7 +811,7 @@
 
     goto :goto_3d
 
-    .line 150
+    .line 152
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
     :cond_4e
     return-void

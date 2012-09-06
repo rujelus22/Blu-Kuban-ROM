@@ -1,38 +1,15 @@
-.class public interface abstract Lcom/google/common/collect/bk;
+.class interface abstract Lcom/google/common/collect/bk;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # virtual methods
-.method public abstract copyEntry(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public abstract a(Lcom/google/common/collect/bw;)J
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 .end method
 
-.method public abstract equalKeys(Ljava/lang/Object;Ljava/lang/Object;)Z
-.end method
-
-.method public abstract equalValues(Ljava/lang/Object;Ljava/lang/Object;)Z
-.end method
-
-.method public abstract getHash(Ljava/lang/Object;)I
-.end method
-
-.method public abstract getKey(Ljava/lang/Object;)Ljava/lang/Object;
-.end method
-
-.method public abstract getNext(Ljava/lang/Object;)Ljava/lang/Object;
-.end method
-
-.method public abstract getValue(Ljava/lang/Object;)Ljava/lang/Object;
-.end method
-
-.method public abstract hashKey(Ljava/lang/Object;)I
-.end method
-
-.method public abstract newEntry(Ljava/lang/Object;ILjava/lang/Object;)Ljava/lang/Object;
-.end method
-
-.method public abstract setInternals(Lcom/google/common/collect/bj;)V
-.end method
-
-.method public abstract setValue(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public abstract b(Lcom/google/common/collect/bw;)I
 .end method

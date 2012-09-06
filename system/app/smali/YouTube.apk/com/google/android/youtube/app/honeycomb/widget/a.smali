@@ -4,16 +4,6 @@
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 17
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method public static a(Landroid/content/Context;)Landroid/app/PendingIntent;
     .registers 4
     .parameter

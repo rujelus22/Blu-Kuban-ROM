@@ -145,49 +145,49 @@
     .line 106
     const-string v1, "from"
 
-    iget-object v2, p0, Lcom/google/android/talk/AlertNotificationActivity;->mRemoteJid:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/talk/AlertNotificationFullScreenActivity;->mRemoteJid:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 107
     const-string v1, "accountId"
 
-    iget-wide v2, p0, Lcom/google/android/talk/AlertNotificationActivity;->mAccountId:J
+    iget-wide v2, p0, Lcom/google/android/talk/AlertNotificationFullScreenActivity;->mAccountId:J
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
     .line 108
     const-string v1, "message"
 
-    iget-object v2, p0, Lcom/google/android/talk/AlertNotificationActivity;->mMessage:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/talk/AlertNotificationFullScreenActivity;->mMessage:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 109
     const-string v1, "android.intent.extra.INTENT"
 
-    iget-object v2, p0, Lcom/google/android/talk/AlertNotificationActivity;->mShowChatIntent:Landroid/content/Intent;
+    iget-object v2, p0, Lcom/google/android/talk/AlertNotificationFullScreenActivity;->mShowChatIntent:Landroid/content/Intent;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
     .line 110
     const-string v1, "timestamp"
 
-    iget-wide v2, p0, Lcom/google/android/talk/AlertNotificationActivity;->mTimestamp:J
+    iget-wide v2, p0, Lcom/google/android/talk/AlertNotificationFullScreenActivity;->mTimestamp:J
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
     .line 111
     const-string v1, "incoming_call"
 
-    iget-boolean v2, p0, Lcom/google/android/talk/AlertNotificationActivity;->mIsIncomingCall:Z
+    iget-boolean v2, p0, Lcom/google/android/talk/AlertNotificationFullScreenActivity;->mIsIncomingCall:Z
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
     .line 112
     const-string v1, "isvideo"
 
-    iget-boolean v2, p0, Lcom/google/android/talk/AlertNotificationActivity;->mIsVideo:Z
+    iget-boolean v2, p0, Lcom/google/android/talk/AlertNotificationFullScreenActivity;->mIsVideo:Z
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 

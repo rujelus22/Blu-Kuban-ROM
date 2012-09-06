@@ -29,6 +29,12 @@
         <item>Csak néma üzemmódban</item>
         <item>Soha</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>kikapcsolva</item>
+        <item>alacsony</item>
+        <item>közepes</item>
+        <item>virtuális</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Nincs</item>
         <item>Képstabilizálás: alacsony</item>

@@ -1,85 +1,45 @@
-.class public final Lcom/google/android/youtube/core/converter/http/cg;
-.super Lcom/google/android/youtube/core/converter/http/ao;
+.class final Lcom/google/android/youtube/core/converter/http/cg;
+.super Lcom/google/android/youtube/core/converter/l;
 .source "SourceFile"
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>()V
     .registers 1
 
     .prologue
-    .line 19
-    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/http/ao;-><init>()V
+    .line 123
+    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
     return-void
 .end method
 
-.method private d(Lorg/apache/http/HttpResponse;)Landroid/net/Uri;
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 23
-    invoke-virtual {p0, p1}, Lcom/google/android/youtube/core/converter/http/cg;->c(Lorg/apache/http/HttpResponse;)V
-
-    .line 24
-    const-string v0, "Location"
-
-    invoke-interface {p1, v0}, Lorg/apache/http/HttpResponse;->getFirstHeader(Ljava/lang/String;)Lorg/apache/http/Header;
-
-    move-result-object v0
-
-    .line 25
-    if-nez v0, :cond_13
-
-    .line 26
-    new-instance v0, Lcom/google/android/youtube/core/converter/ConverterException;
-
-    const-string v1, "Location header not present"
-
-    invoke-direct {v0, v1}, Lcom/google/android/youtube/core/converter/ConverterException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 28
-    :cond_13
-    invoke-interface {v0}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a(Lorg/apache/http/HttpResponse;)Ljava/lang/Object;
-    .registers 3
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
+    .registers 6
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 19
-    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/converter/http/cg;->d(Lorg/apache/http/HttpResponse;)Landroid/net/Uri;
+    .line 126
+    const-class v0, Lcom/google/android/youtube/core/model/Playlist$Builder;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->a(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Lcom/google/android/youtube/core/model/Playlist$Builder;
 
-.method public final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-    .parameter
+    const/4 v1, 0x0
 
-    .prologue
-    .line 19
-    check-cast p1, Lorg/apache/http/HttpResponse;
+    invoke-static {p3, v1}, Lcom/google/android/youtube/core/utils/Util;->a(Ljava/lang/String;I)I
 
-    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/converter/http/cg;->d(Lorg/apache/http/HttpResponse;)Landroid/net/Uri;
+    move-result v1
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Playlist$Builder;->size(I)Lcom/google/android/youtube/core/model/Playlist$Builder;
 
-    return-object v0
+    .line 127
+    return-void
 .end method

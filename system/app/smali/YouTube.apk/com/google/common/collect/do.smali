@@ -1,30 +1,31 @@
 .class final Lcom/google/common/collect/do;
-.super Ljava/lang/Object;
+.super Lcom/google/common/collect/mt;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/Iterator;
+.field a:Ljava/lang/Object;
 
-.field final synthetic b:Lcom/google/common/collect/dn;
+.field b:Ljava/util/Iterator;
+
+.field final synthetic c:Ljava/util/Iterator;
+
+.field final synthetic d:Lcom/google/common/collect/ImmutableMultimap$EntryCollection;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/dn;Ljava/util/Iterator;)V
+.method constructor <init>(Lcom/google/common/collect/ImmutableMultimap$EntryCollection;Ljava/util/Iterator;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 618
-    iput-object p1, p0, Lcom/google/common/collect/do;->b:Lcom/google/common/collect/dn;
+    .line 515
+    iput-object p1, p0, Lcom/google/common/collect/do;->d:Lcom/google/common/collect/ImmutableMultimap$EntryCollection;
 
-    iput-object p2, p0, Lcom/google/common/collect/do;->a:Ljava/util/Iterator;
+    iput-object p2, p0, Lcom/google/common/collect/do;->c:Ljava/util/Iterator;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/common/collect/mt;-><init>()V
 
     return-void
 .end method
@@ -35,43 +36,96 @@
     .registers 2
 
     .prologue
-    .line 620
-    iget-object v0, p0, Lcom/google/common/collect/do;->a:Ljava/util/Iterator;
+    .line 521
+    iget-object v0, p0, Lcom/google/common/collect/do;->a:Ljava/lang/Object;
+
+    if-eqz v0, :cond_c
+
+    iget-object v0, p0, Lcom/google/common/collect/do;->b:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
+    if-nez v0, :cond_14
+
+    :cond_c
+    iget-object v0, p0, Lcom/google/common/collect/do;->c:Ljava/util/Iterator;
+
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_16
+
+    :cond_14
+    const/4 v0, 0x1
+
+    :goto_15
     return v0
+
+    :cond_16
+    const/4 v0, 0x0
+
+    goto :goto_15
 .end method
 
-.method public final next()Ljava/lang/Object;
-    .registers 2
+.method public final synthetic next()Ljava/lang/Object;
+    .registers 3
 
     .prologue
-    .line 623
-    iget-object v0, p0, Lcom/google/common/collect/do;->a:Ljava/util/Iterator;
+    .line 515
+    iget-object v0, p0, Lcom/google/common/collect/do;->a:Ljava/lang/Object;
+
+    if-eqz v0, :cond_c
+
+    iget-object v0, p0, Lcom/google/common/collect/do;->b:Ljava/util/Iterator;
+
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-nez v0, :cond_26
+
+    :cond_c
+    iget-object v0, p0, Lcom/google/common/collect/do;->c:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/common/collect/ds;
+    check-cast v0, Ljava/util/Map$Entry;
 
-    iget-object v0, v0, Lcom/google/common/collect/ds;->a:Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/google/common/collect/do;->a:Ljava/lang/Object;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/common/collect/ImmutableCollection;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableCollection;->iterator()Lcom/google/common/collect/mt;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/common/collect/do;->b:Ljava/util/Iterator;
+
+    :cond_26
+    iget-object v0, p0, Lcom/google/common/collect/do;->a:Ljava/lang/Object;
+
+    iget-object v1, p0, Lcom/google/common/collect/do;->b:Ljava/util/Iterator;
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/google/common/collect/Maps;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object v0
 
     return-object v0
-.end method
-
-.method public final remove()V
-    .registers 2
-
-    .prologue
-    .line 626
-    iget-object v0, p0, Lcom/google/common/collect/do;->a:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
-
-    .line 627
-    return-void
 .end method

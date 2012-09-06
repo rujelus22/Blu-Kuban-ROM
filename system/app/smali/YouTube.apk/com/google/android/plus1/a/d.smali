@@ -11,26 +11,12 @@
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/plus1/a/c;)V
-    .registers 3
+.method private constructor <init>(Lcom/google/android/plus1/a/c;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 74
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/plus1/a/d;-><init>(Lcom/google/android/plus1/a/c;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/plus1/a/c;B)V
-    .registers 3
-    .parameter
-    .parameter
-
-    .prologue
-    .line 74
+    .line 76
     iput-object p1, p0, Lcom/google/android/plus1/a/d;->a:Lcom/google/android/plus1/a/c;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,19 +24,30 @@
     return-void
 .end method
 
-
-# virtual methods
-.method public final run(Landroid/accounts/AccountManagerFuture;)V
-    .registers 7
+.method synthetic constructor <init>(Lcom/google/android/plus1/a/c;B)V
+    .registers 3
+    .parameter
     .parameter
 
     .prologue
-    const/4 v4, 0x6
-
     .line 76
+    invoke-direct {p0, p1}, Lcom/google/android/plus1/a/d;-><init>(Lcom/google/android/plus1/a/c;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run(Landroid/accounts/AccountManagerFuture;)V
+    .registers 8
+    .parameter
+
+    .prologue
     const/4 v1, 0x0
 
-    .line 77
+    const/4 v4, 0x6
+
+    .line 81
     :try_start_2
     invoke-interface {p1}, Landroid/accounts/AccountManagerFuture;->getResult()Ljava/lang/Object;
 
@@ -64,7 +61,7 @@
 
     move-result-object v0
 
-    .line 81
+    .line 83
     iget-object v2, p0, Lcom/google/android/plus1/a/d;->a:Lcom/google/android/plus1/a/c;
 
     iget-object v2, v2, Lcom/google/android/plus1/a/c;->a:Lcom/google/android/plus1/a/b;
@@ -81,124 +78,116 @@
 
     invoke-virtual {v2, v3, v0}, Landroid/accounts/AccountManager;->invalidateAuthToken(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 83
+    .line 85
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
     :try_end_22
-    .catch Landroid/accounts/OperationCanceledException; {:try_start_2 .. :try_end_22} :catch_31
-    .catch Landroid/accounts/AuthenticatorException; {:try_start_2 .. :try_end_22} :catch_43
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_22} :catch_55
+    .catch Landroid/accounts/OperationCanceledException; {:try_start_2 .. :try_end_22} :catch_34
+    .catch Landroid/accounts/AuthenticatorException; {:try_start_2 .. :try_end_22} :catch_45
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_22} :catch_56
 
     move-result-object v0
 
-    .line 98
-    :goto_23
-    iget-object v1, p0, Lcom/google/android/plus1/a/d;->a:Lcom/google/android/plus1/a/c;
+    move-object v5, v1
 
-    iget-object v1, v1, Lcom/google/android/plus1/a/c;->a:Lcom/google/android/plus1/a/b;
+    move-object v1, v0
 
-    if-eqz v1, :cond_30
+    move-object v0, v5
 
-    .line 101
-    iget-object v1, p0, Lcom/google/android/plus1/a/d;->a:Lcom/google/android/plus1/a/c;
+    .line 102
+    :cond_26
+    :goto_26
+    iget-object v2, p0, Lcom/google/android/plus1/a/d;->a:Lcom/google/android/plus1/a/c;
 
-    iget-object v1, v1, Lcom/google/android/plus1/a/c;->a:Lcom/google/android/plus1/a/b;
+    iget-object v2, v2, Lcom/google/android/plus1/a/c;->a:Lcom/google/android/plus1/a/b;
 
-    invoke-interface {v1, v0}, Lcom/google/android/plus1/a/b;->a(Landroid/net/Uri;)V
+    if-eqz v2, :cond_33
 
     .line 103
-    :cond_30
+    iget-object v2, p0, Lcom/google/android/plus1/a/d;->a:Lcom/google/android/plus1/a/c;
+
+    iget-object v2, v2, Lcom/google/android/plus1/a/c;->a:Lcom/google/android/plus1/a/b;
+
+    invoke-interface {v2, v1, v0}, Lcom/google/android/plus1/a/b;->a(Landroid/net/Uri;Ljava/lang/Exception;)V
+
+    .line 105
+    :cond_33
     return-void
 
-    .line 84
-    :catch_31
+    .line 86
+    :catch_34
     move-exception v0
 
-    .line 85
+    .line 87
     const-string v2, "WebloginAuthHelper"
 
-    invoke-static {v2, v4}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v2, v4}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v2
 
-    if-eqz v2, :cond_41
+    if-eqz v2, :cond_26
 
-    .line 86
+    .line 88
     const-string v2, "WebloginAuthHelper"
 
     const-string v3, "Cancelled while acquiring token: "
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :cond_41
-    move-object v0, v1
+    goto :goto_26
 
-    .line 88
-    goto :goto_23
-
-    .line 89
-    :catch_43
+    .line 91
+    :catch_45
     move-exception v0
 
-    .line 90
+    .line 92
     const-string v2, "WebloginAuthHelper"
 
-    invoke-static {v2, v4}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v2, v4}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v2
 
-    if-eqz v2, :cond_53
+    if-eqz v2, :cond_26
 
-    .line 91
+    .line 93
     const-string v2, "WebloginAuthHelper"
 
     const-string v3, "Authentication error while acquiring token: "
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :cond_53
-    move-object v0, v1
+    goto :goto_26
 
-    .line 93
-    goto :goto_23
-
-    .line 94
-    :catch_55
+    .line 96
+    :catch_56
     move-exception v0
 
-    .line 95
+    .line 97
     const-string v2, "WebloginAuthHelper"
 
-    invoke-static {v2, v4}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v2, v4}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v2
 
-    if-eqz v2, :cond_76
+    if-eqz v2, :cond_26
 
-    .line 96
+    .line 98
     const-string v2, "WebloginAuthHelper"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "IO error while acquiring token: "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v3
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v3
 
-    invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_76
-    move-object v0, v1
-
-    goto :goto_23
+    goto :goto_26
 .end method

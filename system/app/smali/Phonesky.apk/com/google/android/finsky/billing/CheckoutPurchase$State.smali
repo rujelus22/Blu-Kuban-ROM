@@ -28,13 +28,19 @@
 
 .field public static final enum COMPLETED:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
+.field public static final enum COMPLETE_CHALLENGE_REQUIRED:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+
 .field public static final enum COMPLETING:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+
+.field public static final enum COMPLETING_POLLING_STATUS:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
 .field public static final enum ERROR:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
 .field public static final enum INIT:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
 .field public static final enum PREPARED:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+
+.field public static final enum PREPARE_CHALLENGE_REQUIRED:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
 .field public static final enum PREPARING:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
@@ -54,7 +60,7 @@
 
     const/4 v3, 0x0
 
-    .line 97
+    .line 125
     new-instance v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
     const-string v1, "INIT"
@@ -63,7 +69,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->INIT:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
-    .line 104
+    .line 132
     new-instance v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
     const-string v1, "PREPARING"
@@ -72,46 +78,79 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->PREPARING:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
-    .line 111
+    .line 142
+    new-instance v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+
+    const-string v1, "PREPARE_CHALLENGE_REQUIRED"
+
+    invoke-direct {v0, v1, v5}, Lcom/google/android/finsky/billing/CheckoutPurchase$State;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->PREPARE_CHALLENGE_REQUIRED:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+
+    .line 149
     new-instance v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
     const-string v1, "PREPARED"
 
-    invoke-direct {v0, v1, v5}, Lcom/google/android/finsky/billing/CheckoutPurchase$State;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v6}, Lcom/google/android/finsky/billing/CheckoutPurchase$State;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->PREPARED:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
-    .line 118
+    .line 158
     new-instance v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
     const-string v1, "COMPLETING"
 
-    invoke-direct {v0, v1, v6}, Lcom/google/android/finsky/billing/CheckoutPurchase$State;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v7}, Lcom/google/android/finsky/billing/CheckoutPurchase$State;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->COMPLETING:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
-    .line 125
+    .line 168
     new-instance v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
-    const-string v1, "COMPLETED"
-
-    invoke-direct {v0, v1, v7}, Lcom/google/android/finsky/billing/CheckoutPurchase$State;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->COMPLETED:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
-
-    .line 127
-    new-instance v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;
-
-    const-string v1, "ERROR"
+    const-string v1, "COMPLETE_CHALLENGE_REQUIRED"
 
     const/4 v2, 0x5
 
     invoke-direct {v0, v1, v2}, Lcom/google/android/finsky/billing/CheckoutPurchase$State;-><init>(Ljava/lang/String;I)V
 
+    sput-object v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->COMPLETE_CHALLENGE_REQUIRED:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+
+    .line 179
+    new-instance v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+
+    const-string v1, "COMPLETING_POLLING_STATUS"
+
+    const/4 v2, 0x6
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/finsky/billing/CheckoutPurchase$State;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->COMPLETING_POLLING_STATUS:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+
+    .line 183
+    new-instance v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+
+    const-string v1, "COMPLETED"
+
+    const/4 v2, 0x7
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/finsky/billing/CheckoutPurchase$State;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->COMPLETED:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+
+    .line 185
+    new-instance v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+
+    const-string v1, "ERROR"
+
+    const/16 v2, 0x8
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/finsky/billing/CheckoutPurchase$State;-><init>(Ljava/lang/String;I)V
+
     sput-object v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->ERROR:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
-    .line 95
-    const/4 v0, 0x6
+    .line 123
+    const/16 v0, 0x9
 
     new-array v0, v0, [Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
@@ -123,19 +162,37 @@
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->PREPARED:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+    sget-object v1, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->PREPARE_CHALLENGE_REQUIRED:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->COMPLETING:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+    sget-object v1, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->PREPARED:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
     aput-object v1, v0, v6
 
-    sget-object v1, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->COMPLETED:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+    sget-object v1, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->COMPLETING:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
     aput-object v1, v0, v7
 
     const/4 v1, 0x5
+
+    sget-object v2, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->COMPLETE_CHALLENGE_REQUIRED:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    sget-object v2, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->COMPLETING_POLLING_STATUS:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
+
+    sget-object v2, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->COMPLETED:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x8
 
     sget-object v2, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->ERROR:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
@@ -157,7 +214,7 @@
     .end annotation
 
     .prologue
-    .line 95
+    .line 123
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -168,7 +225,7 @@
     .parameter
 
     .prologue
-    .line 95
+    .line 123
     const-class v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -184,7 +241,7 @@
     .registers 1
 
     .prologue
-    .line 95
+    .line 123
     sget-object v0, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->$VALUES:[Lcom/google/android/finsky/billing/CheckoutPurchase$State;
 
     invoke-virtual {v0}, [Lcom/google/android/finsky/billing/CheckoutPurchase$State;->clone()Ljava/lang/Object;

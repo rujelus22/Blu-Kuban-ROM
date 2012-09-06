@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:background="#ff1f1f1f" android:layout_width="800.0px" android:layout_height="480.0px"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.sec.android.app.ve.view.addmedia.AddMediaViewGroup android:layout_width="800.0px" android:layout_height="340.0px" />
-    <com.sec.android.app.ve.view.VideoClipBarView android:id="@id/VideoClipLayoutView" android:paddingTop="301.0px" android:layout_width="800.0px" android:layout_height="348.0px" />
-</FrameLayout>

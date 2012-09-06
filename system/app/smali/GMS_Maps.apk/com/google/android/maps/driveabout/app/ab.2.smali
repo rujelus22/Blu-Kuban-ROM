@@ -1,50 +1,40 @@
-.class Lcom/google/android/maps/driveabout/app/ab;
-.super Ljava/lang/Thread;
+.class Lcom/google/android/maps/driveabout/app/aB;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lt/o;
-
-.field final synthetic b:Lu/P;
-
-.field final synthetic c:Ljava/util/ArrayList;
-
-.field final synthetic d:Lcom/google/android/maps/driveabout/app/Z;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/al;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/Z;Lt/o;Lu/P;Ljava/util/ArrayList;)V
-    .registers 5
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/al;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/ab;->d:Lcom/google/android/maps/driveabout/app/Z;
+    .prologue
+    .line 644
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aB;->a:Lcom/google/android/maps/driveabout/app/al;
 
-    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/ab;->a:Lt/o;
-
-    iput-object p3, p0, Lcom/google/android/maps/driveabout/app/ab;->b:Lu/P;
-
-    iput-object p4, p0, Lcom/google/android/maps/driveabout/app/ab;->c:Ljava/util/ArrayList;
-
-    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .registers 5
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .registers 3
+    .parameter
+    .parameter
 
-    invoke-static {}, Lcom/google/android/maps/driveabout/app/S;->a()V
+    .prologue
+    .line 647
+    invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ab;->d:Lcom/google/android/maps/driveabout/app/Z;
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/ab;->a:Lt/o;
-
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/ab;->b:Lu/P;
-
-    iget-object v3, p0, Lcom/google/android/maps/driveabout/app/ab;->c:Ljava/util/ArrayList;
-
-    invoke-static {v0, v1, v2, v3}, Lcom/google/android/maps/driveabout/app/Z;->a(Lcom/google/android/maps/driveabout/app/Z;Lt/o;Lu/P;Ljava/util/ArrayList;)V
-
+    .line 648
     return-void
 .end method

@@ -14,7 +14,7 @@
 # static fields
 .field static final CANCEL_ECM_TIMER:I = 0x1
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final DEFAULT_ECM_EXIT_TIMER_VALUE:I = 0x493e0
 

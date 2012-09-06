@@ -44,7 +44,7 @@
 
     .prologue
     .line 712
-    const v1, 0x7f06002a
+    const v1, 0x7f060029
 
     if-ne p2, v1, :cond_1c
 
@@ -89,7 +89,7 @@
     .line 728
     .end local v0           #e:Ljava/lang/Exception;
     :cond_1c
-    const v1, 0x7f06002b
+    const v1, 0x7f06002a
 
     if-ne p2, v1, :cond_14
 

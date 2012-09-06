@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="driving_mode">U vožnji</string>
-    <string name="app_name">Glasovne naredbe</string>
-    <string name="incar">Glasovni razgovor</string>
-    <string name="incar_icon">Glasovni razgovor</string>
-    <string name="Vlingo">Glasovne naredbe</string>
-    <string name="widget_name">Glas</string>
-</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/bg_remote_drawable" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/small_font_size" android:textColor="@color/white" android:gravity="center" android:id="@id/screen_name_text" android:layout_width="fill_parent" android:layout_height="24.0dip" android:layout_alignParentTop="true" android:alpha="0.5" />
+    <include android:id="@id/screen_bottom_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="24.0dip" android:layout_alignParentBottom="true" layout="@layout/screen_bottom_layout" />
+    <RelativeLayout android:id="@id/video_thumbnail_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="60.0dip" android:layout_marginRight="60.0dip" android:layout_above="@id/screen_bottom_layout" android:layout_below="@id/screen_name_text">
+        <ImageView android:id="@id/video_thumbnail" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="3.0dip" android:scaleType="centerCrop" />
+        <include android:gravity="center" android:id="@id/ad_panel" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true" layout="@layout/remote_ad_panel" />
+        <ImageView android:id="@id/screen_frame" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/now_playing_on_top" android:scaleType="fitXY" android:layout_alignParentTop="true" />
+    </RelativeLayout>
+</RelativeLayout>

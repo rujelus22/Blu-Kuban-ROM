@@ -1,252 +1,104 @@
-.class public Lcom/google/googlenav/ui/view/android/ca;
-.super Landroid/widget/CursorAdapter;
+.class Lcom/google/googlenav/ui/view/android/ca;
+.super Lcom/google/googlenav/ui/view/b;
+.source "SourceFile"
 
 
 # instance fields
-.field private final a:Landroid/content/Context;
+.field final synthetic a:Lcom/google/googlenav/ui/view/android/bZ;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/database/Cursor;)V
-    .registers 3
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/bZ;)V
+    .registers 2
+    .parameter
 
-    invoke-direct {p0, p1, p2}, Landroid/widget/CursorAdapter;-><init>(Landroid/content/Context;Landroid/database/Cursor;)V
+    .prologue
+    .line 376
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/ca;->a:Lcom/google/googlenav/ui/view/android/bZ;
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/ca;->a:Landroid/content/Context;
+    invoke-direct {p0}, Lcom/google/googlenav/ui/view/b;-><init>()V
 
     return-void
-.end method
-
-.method public static a(Landroid/content/Context;)Lcom/google/googlenav/ui/view/android/ca;
-    .registers 7
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/google/googlenav/provider/LocalSuggestionProvider;->a:Landroid/net/Uri;
-
-    const/4 v3, 0x1
-
-    new-array v4, v3, [Ljava/lang/String;
-
-    const/4 v3, 0x0
-
-    const-string v5, ""
-
-    aput-object v5, v4, v3
-
-    const-string v5, ""
-
-    move-object v3, v2
-
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/google/googlenav/ui/view/android/ca;
-
-    invoke-direct {v1, p0, v0}, Lcom/google/googlenav/ui/view/android/ca;-><init>(Landroid/content/Context;Landroid/database/Cursor;)V
-
-    return-object v1
 .end method
 
 
 # virtual methods
-.method public a()J
-    .registers 3
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/android/ca;->getCursor()Landroid/database/Cursor;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public a(Landroid/database/Cursor;)Ljava/lang/String;
-    .registers 3
-
-    const/4 v0, 0x3
-
-    invoke-interface {p1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public b()Ljava/lang/String;
-    .registers 3
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/android/ca;->c()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/android/ca;->getCursor()Landroid/database/Cursor;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_f
-    return-object v0
-
-    :cond_10
-    const-string v0, ""
-
-    goto :goto_f
-.end method
-
-.method public bindView(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V
+.method public a(Lcom/google/googlenav/ui/view/J;)Z
     .registers 6
+    .parameter
 
-    const v0, 0x1020014
+    .prologue
+    .line 380
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/ca;->a:Lcom/google/googlenav/ui/view/android/bZ;
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    const/4 v1, 0x1
-
-    invoke-interface {p3, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    const v0, 0x1020015
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/bZ;->a(Lcom/google/googlenav/ui/view/android/bZ;)Lcom/google/googlenav/ui/g;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/TextView;
+    sget-object v1, Lcom/google/googlenav/ui/view/android/V;->j:Lcom/google/googlenav/ui/g;
 
-    const/4 v1, 0x2
+    if-ne v0, v1, :cond_24
 
-    invoke-interface {p3, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    .line 381
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/ca;->a:Lcom/google/googlenav/ui/view/android/bZ;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    return-void
-.end method
-
-.method public c()Z
-    .registers 4
-
-    sget-object v0, Landroid/provider/Contacts$ContactMethods;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/bZ;->b(Lcom/google/googlenav/ui/view/android/bZ;)Landroid/app/Dialog;
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/android/ca;->getCursor()Landroid/database/Cursor;
+    if-eqz v0, :cond_1b
 
-    move-result-object v1
+    .line 382
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/ca;->a:Lcom/google/googlenav/ui/view/android/bZ;
 
-    const/4 v2, 0x4
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/bZ;->b(Lcom/google/googlenav/ui/view/android/bZ;)Landroid/app/Dialog;
 
-    invoke-interface {v1, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 388
+    :cond_1b
+    :goto_1b
+    const/16 v0, 0x64
 
-    move-result v0
+    const-string v1, "x"
+
+    invoke-static {v0, v1}, LaT/k;->a(ILjava/lang/String;)V
+
+    .line 390
+    const/4 v0, 0x1
 
     return v0
-.end method
 
-.method public synthetic convertToString(Landroid/database/Cursor;)Ljava/lang/CharSequence;
-    .registers 3
+    .line 384
+    :cond_24
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/ca;->a:Lcom/google/googlenav/ui/view/android/bZ;
 
-    invoke-virtual {p0, p1}, Lcom/google/googlenav/ui/view/android/ca;->a(Landroid/database/Cursor;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public newView(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 7
-
-    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/bZ;->a(Lcom/google/googlenav/ui/view/android/bZ;)Lcom/google/googlenav/ui/g;
 
     move-result-object v0
 
-    const v1, 0x7f030135
+    const/16 v1, 0x3f9
 
-    const/4 v2, 0x0
+    const/4 v2, -0x1
 
-    invoke-virtual {v0, v1, p3, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    const/4 v3, 0x0
 
-    move-result-object v0
+    invoke-interface {v0, v1, v2, v3}, Lcom/google/googlenav/ui/g;->a(IILjava/lang/Object;)Z
 
-    return-object v0
-.end method
+    move-result v0
 
-.method public runQueryOnBackgroundThread(Ljava/lang/CharSequence;)Landroid/database/Cursor;
-    .registers 8
+    if-nez v0, :cond_1b
 
-    const/4 v2, 0x0
+    .line 386
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/ca;->a:Lcom/google/googlenav/ui/view/android/bZ;
 
-    const-string v0, ""
-
-    if-eqz p1, :cond_1f
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/bZ;->a(Lcom/google/googlenav/ui/view/android/bZ;)Lcom/google/googlenav/ui/g;
 
     move-result-object v0
 
-    move-object v3, v0
+    invoke-interface {v0}, Lcom/google/googlenav/ui/g;->h()V
 
-    :goto_a
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/ca;->a:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/google/googlenav/provider/LocalSuggestionProvider;->a:Landroid/net/Uri;
-
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/String;
-
-    const/4 v5, 0x0
-
-    aput-object v3, v4, v5
-
-    move-object v3, v2
-
-    move-object v5, v2
-
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_1f
-    move-object v3, v0
-
-    goto :goto_a
+    goto :goto_1b
 .end method

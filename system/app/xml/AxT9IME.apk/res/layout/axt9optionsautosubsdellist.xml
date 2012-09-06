@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="22.0sp" android:textColor="@drawable/color_in_xt9" android:gravity="center_vertical" android:id="@id/delete_shortcut" android:layout_width="140.0dip" android:layout_height="64.66699dip" android:layout_marginLeft="10.0px" android:singleLine="true" android:layout_weight="3.0" />
-    <TextView android:textSize="22.0sp" android:textColor="@drawable/color_in_xt9" android:gravity="center_vertical" android:id="@id/delete_substitution" android:layout_width="140.0dip" android:layout_height="64.66699dip" android:layout_marginLeft="10.0px" android:singleLine="true" android:layout_weight="3.0" />
-    <CheckBox android:layout_gravity="center_vertical" android:id="@id/delete_checkbox" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" />
-</LinearLayout>

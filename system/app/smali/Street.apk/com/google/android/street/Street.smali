@@ -26,11 +26,11 @@
 
 
 # instance fields
+.field private mActionBarInUse:Z
+
 .field private mDefaultDisplay:Landroid/view/Display;
 
 .field private volatile mDrdNetworkError:I
-
-.field private mHardShutdown:Z
 
 .field private mHasCompass:Z
 
@@ -68,26 +68,26 @@
     .registers 2
 
     .prologue
-    .line 61
+    .line 58
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/google/android/street/Street;->sStartFrameLock:Ljava/lang/Object;
 
-    .line 64
+    .line 61
     const-string v0, "Cold start"
 
     sput-object v0, Lcom/google/android/street/Street;->sStartFrameReason:Ljava/lang/String;
 
-    .line 79
+    .line 76
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
     sput-wide v0, Lcom/google/android/street/Street;->sStartFrameTimestampMs:J
 
-    .line 184
+    .line 181
     invoke-static {}, Lcom/google/android/street/Street;->inEmulator()Z
 
     move-result v0
@@ -101,30 +101,30 @@
     .registers 2
 
     .prologue
-    .line 45
+    .line 42
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 235
+    .line 231
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/street/Street;->mDrdNetworkError:I
 
-    .line 242
+    .line 238
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/street/Street;->mMapZoom:I
 
-    .line 244
+    .line 240
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/street/Street;->timer:Lcom/google/android/street/Timer;
 
-    .line 264
+    .line 263
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/street/Street;->mHasCompass:Z
 
-    .line 266
+    .line 265
     return-void
 .end method
 
@@ -133,7 +133,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 42
     iget v0, p0, Lcom/google/android/street/Street;->mDrdNetworkError:I
 
     return v0
@@ -145,7 +145,7 @@
     .parameter "x1"
 
     .prologue
-    .line 45
+    .line 42
     iput p1, p0, Lcom/google/android/street/Street;->mDrdNetworkError:I
 
     return p1
@@ -156,7 +156,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 42
     iget-object v0, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
     return-object v0
@@ -167,7 +167,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 42
     invoke-direct {p0}, Lcom/google/android/street/Street;->checkNetworkAvailability()Z
 
     move-result v0
@@ -181,7 +181,7 @@
     .parameter "x1"
 
     .prologue
-    .line 45
+    .line 42
     invoke-direct {p0, p1}, Lcom/google/android/street/Street;->onNetworkToggle(Z)V
 
     return-void
@@ -191,7 +191,7 @@
     .registers 2
 
     .prologue
-    .line 1115
+    .line 1095
     const-string v0, "connectivity"
 
     invoke-virtual {p0, v0}, Lcom/google/android/street/Street;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -200,12 +200,12 @@
 
     check-cast p0, Landroid/net/ConnectivityManager;
 
-    .line 1117
+    .line 1097
     invoke-virtual {p0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v0
 
-    .line 1127
+    .line 1107
     if-eqz v0, :cond_16
 
     invoke-virtual {v0}, Landroid/net/NetworkInfo;->isAvailable()Z
@@ -230,12 +230,12 @@
     .parameter "useNewStyleOrientation"
 
     .prologue
-    .line 806
+    .line 787
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 807
+    .line 788
     .local v1, sb:Ljava/lang/StringBuilder;
     iget-object v2, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
@@ -243,11 +243,11 @@
 
     move-result-object v0
 
-    .line 808
+    .line 789
     .local v0, panoramaConfig:Lcom/google/android/street/PanoramaConfig;
     if-eqz v0, :cond_38
 
-    .line 809
+    .line 790
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -274,7 +274,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 810
+    .line 791
     iget-object v2, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
     invoke-virtual {v2}, Lcom/google/android/street/StreetView;->getUserOrientation()Lcom/google/android/street/UserOrientation;
@@ -283,14 +283,14 @@
 
     if-eqz v2, :cond_38
 
-    .line 811
+    .line 792
     invoke-direct {p0, p1}, Lcom/google/android/street/Street;->getOrientation(Z)Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 814
+    .line 795
     :cond_38
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -306,12 +306,12 @@
     .prologue
     const/high16 v5, 0x4230
 
-    .line 818
+    .line 799
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 819
+    .line 800
     .local v1, sb:Ljava/lang/StringBuilder;
     iget-object v3, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
@@ -319,7 +319,7 @@
 
     move-result-object v2
 
-    .line 821
+    .line 802
     .local v2, userOrientation:Lcom/google/android/street/UserOrientation;
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -345,10 +345,10 @@
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 822
+    .line 803
     if-eqz p1, :cond_5d
 
-    .line 824
+    .line 805
     invoke-virtual {v2}, Lcom/google/android/street/UserOrientation;->getTilt()F
 
     move-result v3
@@ -361,7 +361,7 @@
 
     mul-float v0, v3, v4
 
-    .line 825
+    .line 806
     .local v0, pitch:F
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -397,7 +397,7 @@
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 831
+    .line 812
     .end local v0           #pitch:F
     :goto_58
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -406,7 +406,7 @@
 
     return-object v3
 
-    .line 827
+    .line 808
     :cond_5d
     invoke-virtual {v2}, Lcom/google/android/street/UserOrientation;->getTilt()F
 
@@ -432,18 +432,18 @@
     .parameter "useNewStyleOrientation"
 
     .prologue
-    .line 841
+    .line 822
     invoke-direct {p0, p1}, Lcom/google/android/street/Street;->getLatLonAndOrientation(Z)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 842
+    .line 823
     .local v0, state:Ljava/lang/String;
     iget v1, p0, Lcom/google/android/street/Street;->mMapZoom:I
 
     if-eqz v1, :cond_21
 
-    .line 843
+    .line 824
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -468,7 +468,7 @@
 
     move-result-object v0
 
-    .line 845
+    .line 826
     :cond_21
     return-object v0
 .end method
@@ -477,27 +477,27 @@
     .registers 4
 
     .prologue
-    .line 1037
+    .line 1017
     iget-object v0, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
     invoke-virtual {v0}, Lcom/google/android/street/StreetView;->getPanoramaConfig()Lcom/google/android/street/PanoramaConfig;
 
     move-result-object v0
 
-    .line 1038
+    .line 1018
     if-eqz v0, :cond_70
 
-    .line 1039
+    .line 1019
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1040
+    .line 1020
     const-string v2, "geo:"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1041
+    .line 1021
     iget-object v0, v0, Lcom/google/android/street/PanoramaConfig;->mLatLng:Lcom/google/android/street/MapPoint;
 
     invoke-virtual {v0}, Lcom/google/android/street/MapPoint;->toString()Ljava/lang/String;
@@ -506,84 +506,84 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1042
+    .line 1022
     iget-object v0, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
     invoke-virtual {v0}, Lcom/google/android/street/StreetView;->getUserOrientation()Lcom/google/android/street/UserOrientation;
 
     move-result-object v0
 
-    .line 1043
+    .line 1023
     const/4 v2, 0x0
 
-    .line 1044
+    .line 1024
     if-eqz v0, :cond_77
 
-    .line 1045
+    .line 1025
     const-string v2, "?cbp=1,"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1046
+    .line 1026
     invoke-virtual {v0}, Lcom/google/android/street/UserOrientation;->getYaw()F
 
     move-result v2
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    .line 1047
+    .line 1027
     const-string v2, ",,"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1048
+    .line 1028
     invoke-virtual {v0}, Lcom/google/android/street/UserOrientation;->getZoom()F
 
     move-result v2
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    .line 1049
+    .line 1029
     const/16 v2, 0x2c
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 1050
+    .line 1030
     invoke-virtual {v0}, Lcom/google/android/street/UserOrientation;->getTilt()F
 
     move-result v0
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    .line 1051
+    .line 1031
     const/4 v0, 0x1
 
-    .line 1053
+    .line 1033
     :goto_49
     iget v2, p0, Lcom/google/android/street/Street;->mMapZoom:I
 
     if-eqz v2, :cond_5e
 
-    .line 1054
+    .line 1034
     if-nez v0, :cond_71
 
-    .line 1055
+    .line 1035
     const/16 v0, 0x3f
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 1060
+    .line 1040
     :goto_54
     const-string v0, "z="
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1061
+    .line 1041
     iget v0, p0, Lcom/google/android/street/Street;->mMapZoom:I
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 1063
+    .line 1043
     :cond_5e
     new-instance v0, Landroid/content/Intent;
 
@@ -599,14 +599,14 @@
 
     invoke-direct {v0, v2, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 1065
+    .line 1045
     invoke-virtual {p0, v0}, Lcom/google/android/street/Street;->startActivity(Landroid/content/Intent;)V
 
-    .line 1067
+    .line 1047
     :cond_70
     return-void
 
-    .line 1058
+    .line 1038
     :cond_71
     const/16 v0, 0x26
 
@@ -624,14 +624,14 @@
     .registers 2
 
     .prologue
-    .line 300
+    .line 299
     const-string v1, "QEMU"
 
     invoke-static {v1}, Ljava/lang/System;->getenv(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 301
+    .line 300
     .local v0, p:Ljava/lang/String;
     const-string v1, "1"
 
@@ -647,12 +647,12 @@
     .parameter "msg"
 
     .prologue
-    .line 932
+    .line 909
     const-string v0, "StreetView"
 
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 933
+    .line 910
     return-void
 .end method
 
@@ -661,12 +661,12 @@
     .parameter
 
     .prologue
-    .line 1198
+    .line 1178
     sget-object v0, Lcom/google/android/street/Street;->sStartFrameLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1199
+    .line 1179
     :try_start_3
     sget-object v1, Lcom/google/android/street/Street;->sStartFrameReason:Ljava/lang/String;
 
@@ -676,12 +676,12 @@
 
     if-eq v1, p0, :cond_3a
 
-    .line 1201
+    .line 1181
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
 
-    .line 1202
+    .line 1182
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -718,24 +718,24 @@
 
     invoke-static {v1}, Lcom/google/android/street/Street;->log(Ljava/lang/String;)V
 
-    .line 1204
+    .line 1184
     const/4 v1, 0x0
 
     sput-object v1, Lcom/google/android/street/Street;->sStartFrameReason:Ljava/lang/String;
 
-    .line 1205
+    .line 1185
     const/4 v1, 0x0
 
     sput-object v1, Lcom/google/android/street/Street;->sStartFrameConfig:Lcom/google/android/street/PanoramaConfig;
 
-    .line 1207
+    .line 1187
     :cond_3a
     monitor-exit v0
 
-    .line 1208
+    .line 1188
     return-void
 
-    .line 1207
+    .line 1187
     :catchall_3c
     move-exception v1
 
@@ -751,12 +751,12 @@
     .parameter "msg"
 
     .prologue
-    .line 937
+    .line 914
     const-string v0, "StreetView"
 
     invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 938
+    .line 915
     return-void
 .end method
 
@@ -766,12 +766,12 @@
     .parameter "t"
 
     .prologue
-    .line 942
+    .line 919
     const-string v0, "StreetView"
 
     invoke-static {v0, p0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 943
+    .line 920
     return-void
 .end method
 
@@ -780,12 +780,12 @@
     .parameter "reason"
 
     .prologue
-    .line 1160
+    .line 1140
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/google/android/street/Street;->noteStartFrame(Ljava/lang/String;Lcom/google/android/street/PanoramaConfig;)V
 
-    .line 1161
+    .line 1141
     return-void
 .end method
 
@@ -795,38 +795,38 @@
     .parameter "currentPanoramaConfig"
 
     .prologue
-    .line 1179
+    .line 1159
     sget-object v0, Lcom/google/android/street/Street;->sStartFrameLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1180
+    .line 1160
     :try_start_3
     sget-object v1, Lcom/google/android/street/Street;->sStartFrameReason:Ljava/lang/String;
 
     if-nez v1, :cond_11
 
-    .line 1181
+    .line 1161
     sput-object p0, Lcom/google/android/street/Street;->sStartFrameReason:Ljava/lang/String;
 
-    .line 1182
+    .line 1162
     sput-object p1, Lcom/google/android/street/Street;->sStartFrameConfig:Lcom/google/android/street/PanoramaConfig;
 
-    .line 1183
+    .line 1163
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
 
     sput-wide v1, Lcom/google/android/street/Street;->sStartFrameTimestampMs:J
 
-    .line 1185
+    .line 1165
     :cond_11
     monitor-exit v0
 
-    .line 1186
+    .line 1166
     return-void
 
-    .line 1185
+    .line 1165
     :catchall_13
     move-exception v1
 
@@ -842,30 +842,30 @@
     .parameter "isUp"
 
     .prologue
-    .line 1089
+    .line 1069
     iget-boolean v0, p0, Lcom/google/android/street/Street;->mRegisteredForNetworkConnectivity:Z
 
     if-eqz v0, :cond_13
 
-    .line 1090
+    .line 1070
     iget-boolean v0, p0, Lcom/google/android/street/Street;->mNetworkAvailable:Z
 
     if-eq v0, p1, :cond_13
 
-    .line 1091
+    .line 1071
     iput-boolean p1, p0, Lcom/google/android/street/Street;->mNetworkAvailable:Z
 
-    .line 1095
+    .line 1075
     iget-object v0, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
     if-eqz v0, :cond_13
 
-    .line 1096
+    .line 1076
     iget-object v0, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
     invoke-virtual {v0}, Lcom/google/android/street/StreetView;->invalidate()V
 
-    .line 1100
+    .line 1080
     :cond_13
     return-void
 .end method
@@ -875,7 +875,7 @@
     .parameter "string"
 
     .prologue
-    .line 771
+    .line 752
     :try_start_0
     invoke-static {p0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
     :try_end_3
@@ -885,15 +885,15 @@
 
     double-to-float v1, v1
 
-    .line 773
+    .line 754
     :goto_5
     return v1
 
-    .line 772
+    .line 753
     :catch_6
     move-exception v0
 
-    .line 773
+    .line 754
     .local v0, n:Ljava/lang/NumberFormatException;
     const/4 v1, 0x0
 
@@ -905,58 +905,58 @@
     .parameter "icicle"
 
     .prologue
-    .line 558
+    .line 541
     const/16 v36, 0x0
 
-    .line 559
+    .line 542
     .local v36, schemeSpecificPart:Ljava/lang/String;
     const/16 v26, 0x0
 
-    .line 560
+    .line 543
     .local v26, latLng:Lcom/google/android/street/MapPoint;
     const/16 v32, 0x0
 
-    .line 561
+    .line 544
     .local v32, panoID:Ljava/lang/String;
     const/16 v29, 0x0
 
-    .line 562
+    .line 545
     .local v29, orientation:Lcom/google/android/street/UserOrientation;
     const/16 v24, 0x0
 
-    .line 563
+    .line 546
     .local v24, inputOK:Z
     const/16 v21, 0x0
 
-    .line 564
+    .line 547
     .local v21, faceToLatLng:Lcom/google/android/street/MapPoint;
     const/4 v15, 0x0
 
-    .line 565
+    .line 548
     .local v15, bNewIntentActionView:Z
     const/16 v16, 0x0
 
-    .line 566
+    .line 549
     .local v16, config:Lcom/google/android/street/PanoramaConfig;
     const/4 v13, 0x0
 
-    .line 567
+    .line 550
     .local v13, action:Ljava/lang/String;
     const/16 v22, 0x0
 
-    .line 568
+    .line 551
     .local v22, hasDrivingDirectionsArrow:Z
     const/high16 v23, -0x4080
 
-    .line 569
+    .line 552
     .local v23, incomingRouteYaw:F
     const/high16 v30, -0x4080
 
-    .line 570
+    .line 553
     .local v30, outgoingRouteYaw:F
     const/16 v33, 0x0
 
-    .line 572
+    .line 555
     .local v33, panoramaTitle:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -966,17 +966,17 @@
 
     if-eqz v5, :cond_2d
 
-    .line 573
+    .line 556
     if-nez p1, :cond_27
 
-    .line 574
+    .line 557
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/android/street/Street;->mSavedInstanceState:Landroid/os/Bundle;
 
     move-object/from16 p1, v0
 
-    .line 576
+    .line 559
     :cond_27
     const/4 v5, 0x0
 
@@ -986,17 +986,17 @@
 
     iput-object v0, v1, Lcom/google/android/street/Street;->mSavedInstanceState:Landroid/os/Bundle;
 
-    .line 579
+    .line 562
     :cond_2d
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/street/Street;->getIntent()Landroid/content/Intent;
 
     move-result-object v25
 
-    .line 580
+    .line 563
     .local v25, intent:Landroid/content/Intent;
     if-eqz v25, :cond_83
 
-    .line 581
+    .line 564
     const/4 v5, 0x0
 
     move-object/from16 v0, p0
@@ -1005,12 +1005,12 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/street/Street;->setIntent(Landroid/content/Intent;)V
 
-    .line 583
+    .line 566
     invoke-virtual/range {v25 .. v25}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v13
 
-    .line 584
+    .line 567
     const-string v5, "android.intent.action.VIEW"
 
     invoke-virtual {v5, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1019,15 +1019,15 @@
 
     if-eqz v5, :cond_5b
 
-    .line 585
+    .line 568
     const/4 v15, 0x1
 
-    .line 586
+    .line 569
     invoke-virtual/range {v25 .. v25}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v18
 
-    .line 587
+    .line 570
     .local v18, data:Landroid/net/Uri;
     const-string v5, "google.streetview"
 
@@ -1041,12 +1041,12 @@
 
     if-eqz v5, :cond_5b
 
-    .line 588
+    .line 571
     invoke-virtual/range {v18 .. v18}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
 
     move-result-object v36
 
-    .line 596
+    .line 579
     .end local v18           #data:Landroid/net/Uri;
     :cond_5b
     move-object/from16 v0, p0
@@ -1063,7 +1063,7 @@
 
     if-nez v15, :cond_90
 
-    .line 597
+    .line 580
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
@@ -1072,7 +1072,7 @@
 
     invoke-virtual {v5}, Lcom/google/android/street/StreetView;->reloadPanorama()V
 
-    .line 598
+    .line 581
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
@@ -1099,13 +1099,13 @@
     .local v6, panoID:Ljava/lang/String;
     move-object/from16 v7, v26
 
-    .line 767
+    .line 748
     .end local v26           #latLng:Lcom/google/android/street/MapPoint;
     .local v7, latLng:Lcom/google/android/street/MapPoint;
     :goto_82
     return-void
 
-    .line 591
+    .line 574
     .end local v6           #panoID:Ljava/lang/String;
     .end local v7           #latLng:Lcom/google/android/street/MapPoint;
     .end local v8           #orientation:Lcom/google/android/street/UserOrientation;
@@ -1137,12 +1137,12 @@
     .restart local v6       #panoID:Ljava/lang/String;
     move-object/from16 v7, v26
 
-    .line 592
+    .line 575
     .end local v26           #latLng:Lcom/google/android/street/MapPoint;
     .restart local v7       #latLng:Lcom/google/android/street/MapPoint;
     goto :goto_82
 
-    .line 602
+    .line 585
     .end local v6           #panoID:Ljava/lang/String;
     .end local v7           #latLng:Lcom/google/android/street/MapPoint;
     .end local v8           #orientation:Lcom/google/android/street/UserOrientation;
@@ -1164,7 +1164,7 @@
 
     if-eqz v5, :cond_d7
 
-    .line 606
+    .line 589
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
@@ -1177,7 +1177,7 @@
 
     invoke-virtual {v5, v6, v7}, Lcom/google/android/street/StreetView;->toggleCompassMode(ZZ)V
 
-    .line 610
+    .line 593
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
@@ -1208,7 +1208,7 @@
 
     invoke-virtual/range {v5 .. v10}, Lcom/google/android/street/StreetView;->loadPanorama(Ljava/lang/String;Lcom/google/android/street/MapPoint;Lcom/google/android/street/UserOrientation;Lcom/google/android/street/MapPoint;Lcom/google/android/street/PanoramaConfig;)V
 
-    .line 612
+    .line 595
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
@@ -1235,12 +1235,12 @@
     .restart local v6       #panoID:Ljava/lang/String;
     move-object/from16 v7, v26
 
-    .line 613
+    .line 596
     .end local v26           #latLng:Lcom/google/android/street/MapPoint;
     .restart local v7       #latLng:Lcom/google/android/street/MapPoint;
     goto :goto_82
 
-    .line 616
+    .line 599
     .end local v6           #panoID:Ljava/lang/String;
     .end local v7           #latLng:Lcom/google/android/street/MapPoint;
     .end local v8           #orientation:Lcom/google/android/street/UserOrientation;
@@ -1252,9 +1252,9 @@
     .restart local v29       #orientation:Lcom/google/android/street/UserOrientation;
     .restart local v32       #panoID:Ljava/lang/String;
     :cond_d7
-    if-nez v36, :cond_30e
+    if-nez v36, :cond_308
 
-    if-eqz p1, :cond_30e
+    if-eqz p1, :cond_308
 
     const-string v5, "streetview"
 
@@ -1266,9 +1266,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_30e
+    if-eqz v5, :cond_308
 
-    .line 618
+    .line 601
     const-string v5, "streetview"
 
     move-object/from16 v0, p1
@@ -1279,7 +1279,7 @@
 
     move-result-object v36
 
-    .line 619
+    .line 602
     const-string v5, "panoramaConfig"
 
     move-object/from16 v0, p1
@@ -1290,9 +1290,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_30e
+    if-eqz v5, :cond_308
 
-    .line 621
+    .line 604
     :try_start_fa
     const-string v5, "panoramaConfig"
 
@@ -1306,22 +1306,22 @@
 
     check-cast v10, Lcom/google/android/street/PanoramaConfig;
     :try_end_105
-    .catch Ljava/lang/ClassCastException; {:try_start_fa .. :try_end_105} :catch_27e
+    .catch Ljava/lang/ClassCastException; {:try_start_fa .. :try_end_105} :catch_27c
 
-    .line 629
+    .line 612
     .end local v16           #config:Lcom/google/android/street/PanoramaConfig;
     .restart local v10       #config:Lcom/google/android/street/PanoramaConfig;
     :goto_105
-    if-eqz v36, :cond_304
+    if-eqz v36, :cond_2fe
 
-    .line 634
+    .line 617
     const/16 v11, 0x2c
 
-    .line 635
+    .line 618
     .local v11, COMMA:C
     const/16 v12, 0x5f
 
-    .line 637
+    .line 620
     .local v12, LEGAL_SEP:C
     const/16 v5, 0x2c
 
@@ -1338,7 +1338,7 @@
 
     move-result-object v35
 
-    .line 642
+    .line 625
     .local v35, s2:Ljava/lang/String;
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -1366,7 +1366,7 @@
 
     move-result-object v19
 
-    .line 646
+    .line 629
     .local v19, data2:Landroid/net/Uri;
     const-string v5, "cbll"
 
@@ -1378,11 +1378,11 @@
 
     move-result-object v27
 
-    .line 647
+    .line 630
     .local v27, latLngStr:Ljava/lang/String;
-    if-eqz v27, :cond_300
+    if-eqz v27, :cond_2fa
 
-    .line 648
+    .line 631
     const/16 v5, 0x5f
 
     const/16 v6, 0x2c
@@ -1399,25 +1399,22 @@
 
     invoke-static {v5}, Lcom/google/android/street/MapPoint;->parse(Ljava/lang/String;)Lcom/google/android/street/MapPoint;
     :try_end_14b
-    .catch Ljava/lang/NumberFormatException; {:try_start_10f .. :try_end_14b} :catch_2d6
+    .catch Ljava/lang/NumberFormatException; {:try_start_10f .. :try_end_14b} :catch_2d4
 
     move-result-object v7
 
-    .line 649
+    .line 632
     .end local v26           #latLng:Lcom/google/android/street/MapPoint;
     .restart local v7       #latLng:Lcom/google/android/street/MapPoint;
     if-eqz v7, :cond_150
 
-    .line 651
+    .line 634
     const/16 v24, 0x1
 
-    .line 654
+    .line 637
     :cond_150
     :goto_150
-    if-nez v24, :cond_2fc
-
-    .line 655
-    :try_start_152
+    :try_start_150
     const-string v5, "panoid"
 
     move-object/from16 v0, v19
@@ -1425,23 +1422,22 @@
     move-object v1, v5
 
     invoke-virtual {v0, v1}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
-    :try_end_15a
-    .catch Ljava/lang/NumberFormatException; {:try_start_152 .. :try_end_15a} :catch_2e1
+    :try_end_158
+    .catch Ljava/lang/NumberFormatException; {:try_start_150 .. :try_end_158} :catch_2df
 
     move-result-object v6
 
-    .line 656
+    .line 638
     .end local v32           #panoID:Ljava/lang/String;
     .restart local v6       #panoID:Ljava/lang/String;
-    if-eqz v6, :cond_15f
+    if-eqz v6, :cond_15d
 
-    .line 658
+    .line 640
     const/16 v24, 0x1
 
-    .line 665
-    :cond_15f
-    :goto_15f
-    :try_start_15f
+    .line 646
+    :cond_15d
+    :try_start_15d
     const-string v5, "cbp"
 
     move-object/from16 v0, v19
@@ -1452,11 +1448,11 @@
 
     move-result-object v31
 
-    .line 666
+    .line 647
     .local v31, p:Ljava/lang/String;
-    if-eqz v31, :cond_2f8
+    if-eqz v31, :cond_2f6
 
-    .line 667
+    .line 648
     const-string v5, "_"
 
     move-object/from16 v0, v31
@@ -1467,32 +1463,32 @@
 
     move-result-object v14
 
-    .line 668
+    .line 649
     .local v14, args:[Ljava/lang/String;
     array-length v5, v14
 
     const/4 v8, 0x4
 
-    if-lt v5, v8, :cond_2f8
+    if-lt v5, v8, :cond_2f6
 
-    .line 669
+    .line 650
     new-instance v8, Lcom/google/android/street/UserOrientation;
 
     invoke-direct {v8}, Lcom/google/android/street/UserOrientation;-><init>()V
-    :try_end_17c
-    .catch Ljava/lang/NumberFormatException; {:try_start_15f .. :try_end_17c} :catch_2ea
+    :try_end_17a
+    .catch Ljava/lang/NumberFormatException; {:try_start_15d .. :try_end_17a} :catch_2e8
 
-    .line 673
+    .line 654
     .end local v29           #orientation:Lcom/google/android/street/UserOrientation;
     .restart local v8       #orientation:Lcom/google/android/street/UserOrientation;
-    :try_start_17c
+    :try_start_17a
     array-length v5, v14
 
     const/4 v9, 0x4
 
-    if-ne v5, v9, :cond_283
+    if-ne v5, v9, :cond_281
 
-    .line 675
+    .line 656
     const/4 v5, 0x1
 
     aget-object v5, v14, v5
@@ -1503,7 +1499,7 @@
 
     invoke-virtual {v8, v5}, Lcom/google/android/street/UserOrientation;->setYaw(F)V
 
-    .line 676
+    .line 657
     const/4 v5, 0x2
 
     aget-object v5, v14, v5
@@ -1514,7 +1510,7 @@
 
     invoke-virtual {v8, v5}, Lcom/google/android/street/UserOrientation;->setTilt(F)V
 
-    .line 677
+    .line 658
     const/4 v5, 0x3
 
     aget-object v5, v14, v5
@@ -1525,10 +1521,10 @@
 
     invoke-virtual {v8, v5}, Lcom/google/android/street/UserOrientation;->setZoom(F)V
 
-    .line 696
+    .line 677
     .end local v11           #COMMA:C
     .end local v14           #args:[Ljava/lang/String;
-    :goto_19e
+    :goto_19c
     const/4 v5, 0x0
 
     move v0, v5
@@ -1537,7 +1533,7 @@
 
     iput v0, v1, Lcom/google/android/street/Street;->mMapZoom:I
 
-    .line 697
+    .line 678
     const-string v5, "mz"
 
     move-object/from16 v0, v19
@@ -1548,11 +1544,11 @@
 
     move-result-object v28
 
-    .line 698
+    .line 679
     .local v28, mapZoomValue:Ljava/lang/String;
-    if-eqz v28, :cond_1bd
+    if-eqz v28, :cond_1bb
 
-    .line 699
+    .line 680
     const/4 v5, 0x1
 
     invoke-static/range {v28 .. v28}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1569,8 +1565,8 @@
 
     iput v0, v1, Lcom/google/android/street/Street;->mMapZoom:I
 
-    .line 705
-    :cond_1bd
+    .line 686
+    :cond_1bb
     const-string v5, "faceto_ll"
 
     move-object/from16 v0, v19
@@ -1581,17 +1577,17 @@
 
     move-result-object v20
 
-    .line 706
+    .line 687
     .local v20, f:Ljava/lang/String;
-    if-eqz v20, :cond_2f4
+    if-eqz v20, :cond_2f2
 
     invoke-virtual/range {v20 .. v20}, Ljava/lang/String;->length()I
 
     move-result v5
 
-    if-lez v5, :cond_2f4
+    if-lez v5, :cond_2f2
 
-    .line 707
+    .line 688
     const/16 v5, 0x5f
 
     const/16 v9, 0x2c
@@ -1607,16 +1603,16 @@
     move-result-object v5
 
     invoke-static {v5}, Lcom/google/android/street/MapPoint;->parse(Ljava/lang/String;)Lcom/google/android/street/MapPoint;
-    :try_end_1dd
-    .catch Ljava/lang/NumberFormatException; {:try_start_17c .. :try_end_1dd} :catch_2b6
+    :try_end_1db
+    .catch Ljava/lang/NumberFormatException; {:try_start_17a .. :try_end_1db} :catch_2b4
 
     move-result-object v9
 
-    .line 713
+    .line 694
     .end local v21           #faceToLatLng:Lcom/google/android/street/MapPoint;
     .restart local v9       #faceToLatLng:Lcom/google/android/street/MapPoint;
-    :goto_1de
-    :try_start_1de
+    :goto_1dc
+    :try_start_1dc
     const-string v5, "title"
 
     move-object/from16 v0, v19
@@ -1627,17 +1623,17 @@
 
     move-result-object v37
 
-    .line 714
+    .line 695
     .local v37, t:Ljava/lang/String;
-    if-eqz v37, :cond_1fb
+    if-eqz v37, :cond_1f9
 
     invoke-virtual/range {v37 .. v37}, Ljava/lang/String;->length()I
 
     move-result v5
 
-    if-lez v5, :cond_1fb
+    if-lez v5, :cond_1f9
 
-    .line 715
+    .line 696
     const/16 v5, 0x5f
 
     const/16 v11, 0x2c
@@ -1652,8 +1648,8 @@
 
     move-result-object v33
 
-    .line 721
-    :cond_1fb
+    .line 702
+    :cond_1f9
     const-string v5, "dir_arrow"
 
     move-object/from16 v0, v19
@@ -1664,17 +1660,17 @@
 
     move-result-object v17
 
-    .line 722
+    .line 703
     .local v17, d:Ljava/lang/String;
-    if-eqz v17, :cond_229
+    if-eqz v17, :cond_227
 
     invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->length()I
 
     move-result v5
 
-    if-lez v5, :cond_229
+    if-lez v5, :cond_227
 
-    .line 723
+    .line 704
     const-string v5, "_"
 
     move-object/from16 v0, v17
@@ -1685,18 +1681,18 @@
 
     move-result-object v14
 
-    .line 724
+    .line 705
     .restart local v14       #args:[Ljava/lang/String;
     array-length v5, v14
 
     const/4 v11, 0x2
 
-    if-ne v5, v11, :cond_229
+    if-ne v5, v11, :cond_227
 
-    .line 725
+    .line 706
     const/16 v22, 0x1
 
-    .line 726
+    .line 707
     const/4 v5, 0x0
 
     aget-object v5, v14, v5
@@ -1705,18 +1701,18 @@
 
     move-result v23
 
-    .line 727
+    .line 708
     const/4 v5, 0x1
 
     aget-object v5, v14, v5
 
     invoke-static {v5}, Lcom/google/android/street/Street;->parseFloat(Ljava/lang/String;)F
-    :try_end_228
-    .catch Ljava/lang/NumberFormatException; {:try_start_1de .. :try_end_228} :catch_2f1
+    :try_end_226
+    .catch Ljava/lang/NumberFormatException; {:try_start_1dc .. :try_end_226} :catch_2ef
 
     move-result v30
 
-    .line 738
+    .line 719
     .end local v14           #args:[Ljava/lang/String;
     .end local v17           #d:Ljava/lang/String;
     .end local v19           #data2:Landroid/net/Uri;
@@ -1726,11 +1722,11 @@
     .end local v31           #p:Ljava/lang/String;
     .end local v35           #s2:Ljava/lang/String;
     .end local v37           #t:Ljava/lang/String;
-    :cond_229
-    :goto_229
-    if-nez v24, :cond_244
+    :cond_227
+    :goto_227
+    if-nez v24, :cond_242
 
-    .line 739
+    .line 720
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1755,13 +1751,13 @@
 
     invoke-static {v5}, Lcom/google/android/street/Street;->logI(Ljava/lang/String;)V
 
-    .line 743
+    .line 724
     .end local v12           #LEGAL_SEP:C
-    :cond_244
-    :goto_244
-    if-eqz v24, :cond_2cd
+    :cond_242
+    :goto_242
+    if-eqz v24, :cond_2cb
 
-    .line 747
+    .line 728
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
@@ -1774,7 +1770,7 @@
 
     invoke-virtual {v5, v11, v12}, Lcom/google/android/street/StreetView;->toggleCompassMode(ZZ)V
 
-    .line 749
+    .line 730
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
@@ -1783,10 +1779,10 @@
 
     invoke-virtual/range {v5 .. v10}, Lcom/google/android/street/StreetView;->loadPanorama(Ljava/lang/String;Lcom/google/android/street/MapPoint;Lcom/google/android/street/UserOrientation;Lcom/google/android/street/MapPoint;Lcom/google/android/street/PanoramaConfig;)V
 
-    .line 751
-    if-eqz v33, :cond_2bb
+    .line 732
+    if-eqz v33, :cond_2b9
 
-    .line 752
+    .line 733
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
@@ -1799,11 +1795,11 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/street/StreetView;->setStatusOverride(Ljava/lang/String;)V
 
-    .line 756
-    :goto_265
-    if-eqz v22, :cond_2c4
+    .line 737
+    :goto_263
+    if-eqz v22, :cond_2c2
 
-    .line 757
+    .line 738
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
@@ -1818,8 +1814,8 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/street/StreetView;->setDirectionsArrowParams(FF)V
 
-    .line 766
-    :goto_274
+    .line 747
+    :goto_272
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
@@ -1830,7 +1826,7 @@
 
     goto/16 :goto_82
 
-    .line 623
+    .line 606
     .end local v6           #panoID:Ljava/lang/String;
     .end local v7           #latLng:Lcom/google/android/street/MapPoint;
     .end local v8           #orientation:Lcom/google/android/street/UserOrientation;
@@ -1841,7 +1837,7 @@
     .restart local v26       #latLng:Lcom/google/android/street/MapPoint;
     .restart local v29       #orientation:Lcom/google/android/street/UserOrientation;
     .restart local v32       #panoID:Ljava/lang/String;
-    :catch_27e
+    :catch_27c
     move-exception v5
 
     move-object/from16 v10, v16
@@ -1850,7 +1846,7 @@
     .restart local v10       #config:Lcom/google/android/street/PanoramaConfig;
     goto/16 :goto_105
 
-    .line 680
+    .line 661
     .end local v26           #latLng:Lcom/google/android/street/MapPoint;
     .end local v29           #orientation:Lcom/google/android/street/UserOrientation;
     .end local v32           #panoID:Ljava/lang/String;
@@ -1864,10 +1860,10 @@
     .restart local v27       #latLngStr:Ljava/lang/String;
     .restart local v31       #p:Ljava/lang/String;
     .restart local v35       #s2:Ljava/lang/String;
-    :cond_283
+    :cond_281
     const/4 v5, 0x1
 
-    :try_start_284
+    :try_start_282
     aget-object v5, v14, v5
 
     invoke-static {v5}, Lcom/google/android/street/Street;->parseFloat(Ljava/lang/String;)F
@@ -1876,7 +1872,7 @@
 
     invoke-virtual {v8, v5}, Lcom/google/android/street/UserOrientation;->setYaw(F)V
 
-    .line 682
+    .line 663
     const/4 v5, 0x3
 
     aget-object v5, v14, v5
@@ -1887,7 +1883,7 @@
 
     invoke-virtual {v8, v5}, Lcom/google/android/street/UserOrientation;->setZoom(F)V
 
-    .line 685
+    .line 666
     const/4 v5, 0x4
 
     aget-object v5, v14, v5
@@ -1905,7 +1901,7 @@
     .end local v11           #COMMA:C
     move-result v34
 
-    .line 687
+    .line 668
     .local v34, pitch:F
     const/high16 v5, 0x42b4
 
@@ -1915,38 +1911,38 @@
 
     div-float v38, v5, v9
 
-    .line 688
+    .line 669
     .local v38, tilt:F
     move-object v0, v8
 
     move/from16 v1, v38
 
     invoke-virtual {v0, v1}, Lcom/google/android/street/UserOrientation;->setTilt(F)V
-    :try_end_2b4
-    .catch Ljava/lang/NumberFormatException; {:try_start_284 .. :try_end_2b4} :catch_2b6
+    :try_end_2b2
+    .catch Ljava/lang/NumberFormatException; {:try_start_282 .. :try_end_2b2} :catch_2b4
 
-    goto/16 :goto_19e
+    goto/16 :goto_19c
 
-    .line 732
+    .line 713
     .end local v14           #args:[Ljava/lang/String;
     .end local v34           #pitch:F
     .end local v38           #tilt:F
-    :catch_2b6
+    :catch_2b4
     move-exception v5
 
     move-object/from16 v9, v21
 
     .end local v21           #faceToLatLng:Lcom/google/android/street/MapPoint;
     .restart local v9       #faceToLatLng:Lcom/google/android/street/MapPoint;
-    goto/16 :goto_229
+    goto/16 :goto_227
 
-    .line 754
+    .line 735
     .end local v12           #LEGAL_SEP:C
     .end local v19           #data2:Landroid/net/Uri;
     .end local v27           #latLngStr:Ljava/lang/String;
     .end local v31           #p:Ljava/lang/String;
     .end local v35           #s2:Ljava/lang/String;
-    :cond_2bb
+    :cond_2b9
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
@@ -1955,10 +1951,10 @@
 
     invoke-virtual {v5}, Lcom/google/android/street/StreetView;->clearStatusOverride()V
 
-    goto :goto_265
+    goto :goto_263
 
-    .line 760
-    :cond_2c4
+    .line 741
+    :cond_2c2
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
@@ -1967,20 +1963,20 @@
 
     invoke-virtual {v5}, Lcom/google/android/street/StreetView;->clearDirectionsArrowParams()V
 
-    goto :goto_274
+    goto :goto_272
 
-    .line 763
-    :cond_2cd
+    .line 744
+    :cond_2cb
     const-string v5, "Got a bad Intent. Exiting."
 
     invoke-static {v5}, Lcom/google/android/street/Street;->logI(Ljava/lang/String;)V
 
-    .line 764
+    .line 745
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/street/Street;->finish()V
 
-    goto :goto_274
+    goto :goto_272
 
-    .line 732
+    .line 713
     .end local v6           #panoID:Ljava/lang/String;
     .end local v7           #latLng:Lcom/google/android/street/MapPoint;
     .end local v8           #orientation:Lcom/google/android/street/UserOrientation;
@@ -1991,7 +1987,7 @@
     .restart local v26       #latLng:Lcom/google/android/street/MapPoint;
     .restart local v29       #orientation:Lcom/google/android/street/UserOrientation;
     .restart local v32       #panoID:Ljava/lang/String;
-    :catch_2d6
+    :catch_2d4
     move-exception v5
 
     move-object/from16 v9, v21
@@ -2010,7 +2006,7 @@
 
     .end local v26           #latLng:Lcom/google/android/street/MapPoint;
     .restart local v7       #latLng:Lcom/google/android/street/MapPoint;
-    goto/16 :goto_229
+    goto/16 :goto_227
 
     .end local v6           #panoID:Ljava/lang/String;
     .end local v8           #orientation:Lcom/google/android/street/UserOrientation;
@@ -2021,7 +2017,7 @@
     .restart local v29       #orientation:Lcom/google/android/street/UserOrientation;
     .restart local v32       #panoID:Ljava/lang/String;
     .restart local v35       #s2:Ljava/lang/String;
-    :catch_2e1
+    :catch_2df
     move-exception v5
 
     move-object/from16 v9, v21
@@ -2036,13 +2032,13 @@
 
     .end local v32           #panoID:Ljava/lang/String;
     .restart local v6       #panoID:Ljava/lang/String;
-    goto/16 :goto_229
+    goto/16 :goto_227
 
     .end local v8           #orientation:Lcom/google/android/street/UserOrientation;
     .end local v9           #faceToLatLng:Lcom/google/android/street/MapPoint;
     .restart local v21       #faceToLatLng:Lcom/google/android/street/MapPoint;
     .restart local v29       #orientation:Lcom/google/android/street/UserOrientation;
-    :catch_2ea
+    :catch_2e8
     move-exception v5
 
     move-object/from16 v9, v21
@@ -2053,25 +2049,25 @@
 
     .end local v29           #orientation:Lcom/google/android/street/UserOrientation;
     .restart local v8       #orientation:Lcom/google/android/street/UserOrientation;
-    goto/16 :goto_229
+    goto/16 :goto_227
 
     .end local v11           #COMMA:C
     .restart local v20       #f:Ljava/lang/String;
     .restart local v28       #mapZoomValue:Ljava/lang/String;
     .restart local v31       #p:Ljava/lang/String;
-    :catch_2f1
+    :catch_2ef
     move-exception v5
 
-    goto/16 :goto_229
+    goto/16 :goto_227
 
     .end local v9           #faceToLatLng:Lcom/google/android/street/MapPoint;
     .restart local v21       #faceToLatLng:Lcom/google/android/street/MapPoint;
-    :cond_2f4
+    :cond_2f2
     move-object/from16 v9, v21
 
     .end local v21           #faceToLatLng:Lcom/google/android/street/MapPoint;
     .restart local v9       #faceToLatLng:Lcom/google/android/street/MapPoint;
-    goto/16 :goto_1de
+    goto/16 :goto_1dc
 
     .end local v8           #orientation:Lcom/google/android/street/UserOrientation;
     .end local v9           #faceToLatLng:Lcom/google/android/street/MapPoint;
@@ -2080,30 +2076,21 @@
     .restart local v11       #COMMA:C
     .restart local v21       #faceToLatLng:Lcom/google/android/street/MapPoint;
     .restart local v29       #orientation:Lcom/google/android/street/UserOrientation;
-    :cond_2f8
+    :cond_2f6
     move-object/from16 v8, v29
 
     .end local v29           #orientation:Lcom/google/android/street/UserOrientation;
     .restart local v8       #orientation:Lcom/google/android/street/UserOrientation;
-    goto/16 :goto_19e
-
-    .end local v6           #panoID:Ljava/lang/String;
-    .end local v8           #orientation:Lcom/google/android/street/UserOrientation;
-    .end local v31           #p:Ljava/lang/String;
-    .restart local v29       #orientation:Lcom/google/android/street/UserOrientation;
-    .restart local v32       #panoID:Ljava/lang/String;
-    :cond_2fc
-    move-object/from16 v6, v32
-
-    .end local v32           #panoID:Ljava/lang/String;
-    .restart local v6       #panoID:Ljava/lang/String;
-    goto/16 :goto_15f
+    goto/16 :goto_19c
 
     .end local v6           #panoID:Ljava/lang/String;
     .end local v7           #latLng:Lcom/google/android/street/MapPoint;
+    .end local v8           #orientation:Lcom/google/android/street/UserOrientation;
+    .end local v31           #p:Ljava/lang/String;
     .restart local v26       #latLng:Lcom/google/android/street/MapPoint;
+    .restart local v29       #orientation:Lcom/google/android/street/UserOrientation;
     .restart local v32       #panoID:Ljava/lang/String;
-    :cond_300
+    :cond_2fa
     move-object/from16 v7, v26
 
     .end local v26           #latLng:Lcom/google/android/street/MapPoint;
@@ -2117,7 +2104,7 @@
     .end local v27           #latLngStr:Ljava/lang/String;
     .end local v35           #s2:Ljava/lang/String;
     .restart local v26       #latLng:Lcom/google/android/street/MapPoint;
-    :cond_304
+    :cond_2fe
     move-object/from16 v9, v21
 
     .end local v21           #faceToLatLng:Lcom/google/android/street/MapPoint;
@@ -2134,7 +2121,7 @@
 
     .end local v26           #latLng:Lcom/google/android/street/MapPoint;
     .restart local v7       #latLng:Lcom/google/android/street/MapPoint;
-    goto/16 :goto_244
+    goto/16 :goto_242
 
     .end local v6           #panoID:Ljava/lang/String;
     .end local v7           #latLng:Lcom/google/android/street/MapPoint;
@@ -2146,7 +2133,7 @@
     .restart local v26       #latLng:Lcom/google/android/street/MapPoint;
     .restart local v29       #orientation:Lcom/google/android/street/UserOrientation;
     .restart local v32       #panoID:Ljava/lang/String;
-    :cond_30e
+    :cond_308
     move-object/from16 v10, v16
 
     .end local v16           #config:Lcom/google/android/street/PanoramaConfig;
@@ -2158,25 +2145,25 @@
     .registers 5
 
     .prologue
-    .line 1070
+    .line 1050
     iget-object v3, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
     invoke-virtual {v3}, Lcom/google/android/street/StreetView;->getPanoramaConfig()Lcom/google/android/street/PanoramaConfig;
 
     move-result-object v1
 
-    .line 1071
+    .line 1051
     .local v1, panoramaConfig:Lcom/google/android/street/PanoramaConfig;
     if-eqz v1, :cond_16
 
-    .line 1072
+    .line 1052
     const/4 v3, 0x1
 
     invoke-direct {p0, v3}, Lcom/google/android/street/Street;->getOrientation(Z)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1073
+    .line 1053
     .local v0, panoArgs:Ljava/lang/String;
     iget-object v3, v1, Lcom/google/android/street/PanoramaConfig;->mPanoId:Ljava/lang/String;
 
@@ -2184,141 +2171,15 @@
 
     move-result-object v2
 
-    .line 1076
+    .line 1056
     .local v2, reportUrl:Ljava/lang/String;
     invoke-direct {p0, v2}, Lcom/google/android/street/Street;->showUrl(Ljava/lang/String;)V
 
-    .line 1078
+    .line 1058
     .end local v0           #panoArgs:Ljava/lang/String;
     .end local v2           #reportUrl:Ljava/lang/String;
     :cond_16
     return-void
-.end method
-
-.method private setActionBarTitle(Ljava/lang/CharSequence;)V
-    .registers 8
-    .parameter
-
-    .prologue
-    .line 518
-    :try_start_0
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    const-string v1, "getActionBar"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Class;
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    .line 519
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 520
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    const-string v2, "setDisplayOptions"
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Class;
-
-    const/4 v4, 0x0
-
-    sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object v5, v3, v4
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v1
-
-    .line 522
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    const-string v3, "DISPLAY_SHOW_TITLE"
-
-    invoke-virtual {v2, v3}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v2
-
-    .line 523
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v5
-
-    invoke-virtual {v2, v5}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    aput-object v2, v3, v4
-
-    invoke-virtual {v1, v0, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 524
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    const-string v2, "setTitle"
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Class;
-
-    const/4 v4, 0x0
-
-    const-class v5, Ljava/lang/CharSequence;
-
-    aput-object v5, v3, v4
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v1
-
-    .line 525
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    aput-object p1, v2, v3
-
-    invoke-virtual {v1, v0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_5c
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_5c} :catch_5d
-
-    .line 529
-    :goto_5c
-    return-void
-
-    .line 526
-    :catch_5d
-    move-exception v0
-
-    goto :goto_5c
 .end method
 
 .method private showUrl(Ljava/lang/String;)V
@@ -2326,7 +2187,7 @@
     .parameter
 
     .prologue
-    .line 1003
+    .line 983
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.VIEW"
@@ -2337,21 +2198,21 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 1006
+    .line 986
     :try_start_b
     invoke-virtual {p0, v0}, Lcom/google/android/street/Street;->startActivity(Landroid/content/Intent;)V
     :try_end_e
     .catch Landroid/content/ActivityNotFoundException; {:try_start_b .. :try_end_e} :catch_f
 
-    .line 1010
+    .line 990
     :goto_e
     return-void
 
-    .line 1007
+    .line 987
     :catch_f
     move-exception v0
 
-    .line 1008
+    .line 988
     const-string v1, "Could not start activty"
 
     invoke-static {v1, v0}, Lcom/google/android/street/Street;->logI(Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -2365,7 +2226,7 @@
     .registers 2
 
     .prologue
-    .line 1243
+    .line 1223
     iget-object v0, p0, Lcom/google/android/street/Street;->mLocation:Landroid/location/Location;
 
     return-object v0
@@ -2375,12 +2236,12 @@
     .registers 2
 
     .prologue
-    .line 1230
+    .line 1210
     iget-object v0, p0, Lcom/google/android/street/Street;->mDefaultDisplay:Landroid/view/Display;
 
     if-nez v0, :cond_12
 
-    .line 1231
+    .line 1211
     const-string v0, "window"
 
     invoke-virtual {p0, v0}, Lcom/google/android/street/Street;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -2395,7 +2256,7 @@
 
     iput-object v0, p0, Lcom/google/android/street/Street;->mDefaultDisplay:Landroid/view/Display;
 
-    .line 1235
+    .line 1215
     :cond_12
     iget-object v0, p0, Lcom/google/android/street/Street;->mDefaultDisplay:Landroid/view/Display;
 
@@ -2406,12 +2267,12 @@
     .registers 2
 
     .prologue
-    .line 1218
+    .line 1198
     iget-object v0, p0, Lcom/google/android/street/Street;->mSensorManager:Landroid/hardware/SensorManager;
 
     if-nez v0, :cond_e
 
-    .line 1219
+    .line 1199
     const-string v0, "sensor"
 
     invoke-virtual {p0, v0}, Lcom/google/android/street/Street;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -2422,7 +2283,7 @@
 
     iput-object v0, p0, Lcom/google/android/street/Street;->mSensorManager:Landroid/hardware/SensorManager;
 
-    .line 1222
+    .line 1202
     :cond_e
     iget-object v0, p0, Lcom/google/android/street/Street;->mSensorManager:Landroid/hardware/SensorManager;
 
@@ -2440,23 +2301,23 @@
 
     const/4 v10, 0x1
 
-    .line 365
+    .line 364
     const-string v7, "Warm start onCreate()"
 
     invoke-static {v7}, Lcom/google/android/street/Street;->noteStartFrame(Ljava/lang/String;)V
 
-    .line 366
+    .line 365
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 383
+    .line 382
     sget-boolean v7, Lcom/google/android/street/Street;->mGlobalStateInitialized:Z
 
     if-nez v7, :cond_11
 
-    .line 384
+    .line 383
     sput-boolean v10, Lcom/google/android/street/Street;->mGlobalStateInitialized:Z
 
-    .line 388
+    .line 387
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/street/Street;->getResources()Landroid/content/res/Resources;
 
@@ -2466,40 +2327,47 @@
 
     move-result-object v1
 
-    .line 389
+    .line 388
     .local v1, config:Landroid/content/res/Configuration;
     iget v7, v1, Landroid/content/res/Configuration;->screenLayout:I
 
     and-int/lit8 v4, v7, 0xf
 
-    .line 390
+    .line 389
     .local v4, screenLayoutSize:I
     const/4 v7, 0x4
 
-    if-ne v4, v7, :cond_fc
+    if-ne v4, v7, :cond_102
 
     move v2, v10
 
-    .line 391
+    .line 390
     .local v2, isTabletLayoutSize:Z
     :goto_21
     invoke-static {}, Lcom/google/mobile/googlenav/android/AndroidBuilds;->isHoneycombSdk()Z
 
     move-result v7
 
-    if-eqz v7, :cond_ff
+    if-eqz v7, :cond_105
 
-    if-eqz v2, :cond_ff
+    if-eqz v2, :cond_105
 
     move v7, v10
 
     :goto_2a
     iput-boolean v7, p0, Lcom/google/android/street/Street;->mIsTablet:Z
 
-    .line 398
-    iget-boolean v7, p0, Lcom/google/android/street/Street;->mIsTablet:Z
+    .line 391
+    invoke-static {}, Lcom/google/mobile/googlenav/android/AndroidBuilds;->isHoneycombSdk()Z
 
-    if-eqz v7, :cond_102
+    move-result v7
+
+    iput-boolean v7, p0, Lcom/google/android/street/Street;->mActionBarInUse:Z
+
+    .line 398
+    iget-boolean v7, p0, Lcom/google/android/street/Street;->mActionBarInUse:Z
+
+    if-eqz v7, :cond_108
 
     .line 399
     const/high16 v7, 0x7f06
@@ -2507,15 +2375,15 @@
     invoke-virtual {p0, v7}, Lcom/google/android/street/Street;->setTheme(I)V
 
     .line 404
-    :goto_35
+    :goto_3b
     const v7, 0x7f030002
 
     invoke-virtual {p0, v7}, Lcom/google/android/street/Street;->setContentView(I)V
 
     .line 406
-    iget-boolean v7, p0, Lcom/google/android/street/Street;->mIsTablet:Z
+    iget-boolean v7, p0, Lcom/google/android/street/Street;->mActionBarInUse:Z
 
-    if-nez v7, :cond_53
+    if-nez v7, :cond_59
 
     .line 407
     invoke-virtual {p0}, Lcom/google/android/street/Street;->getWindow()Landroid/view/Window;
@@ -2538,7 +2406,7 @@
     iput-object v7, p0, Lcom/google/android/street/Street;->mTitleText:Landroid/widget/TextView;
 
     .line 418
-    :cond_53
+    :cond_59
     invoke-virtual {p0}, Lcom/google/android/street/Street;->getCacheDir()Ljava/io/File;
 
     move-result-object v7
@@ -2601,7 +2469,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_9b
+    if-eqz v7, :cond_a1
 
     .line 448
     invoke-virtual {p0}, Lcom/google/android/street/Street;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -2617,7 +2485,7 @@
     iput-boolean v7, p0, Lcom/google/android/street/Street;->mHasCompass:Z
 
     .line 451
-    :cond_9b
+    :cond_a1
     const/4 v7, -0x1
 
     iput v7, p0, Lcom/google/android/street/Street;->mDrdNetworkError:I
@@ -2643,7 +2511,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_ba
+    if-eqz v7, :cond_c0
 
     .line 458
     const-string v7, "network"
@@ -2655,7 +2523,7 @@
     iput-object v7, p0, Lcom/google/android/street/Street;->mLocation:Landroid/location/Location;
 
     .line 462
-    :cond_ba
+    :cond_c0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v5
@@ -2709,48 +2577,48 @@
 
     move-result v7
 
-    if-eqz v7, :cond_f2
+    if-eqz v7, :cond_f8
 
     .line 477
     invoke-virtual {p0, v10}, Lcom/google/android/street/Street;->showDialog(I)V
 
     .line 480
-    :cond_f2
+    :cond_f8
     invoke-virtual {p0}, Lcom/google/android/street/Street;->getIntent()Landroid/content/Intent;
 
     move-result-object v7
 
-    if-nez v7, :cond_fb
+    if-nez v7, :cond_101
 
     .line 483
     invoke-direct {p0, p1}, Lcom/google/android/street/Street;->processIntent(Landroid/os/Bundle;)V
 
     .line 504
-    :cond_fb
+    :cond_101
     return-void
 
     .end local v0           #cacheDirPath:Ljava/lang/String;
     .end local v2           #isTabletLayoutSize:Z
     .end local v3           #locationManager:Landroid/location/LocationManager;
     .end local v5           #t0:J
-    :cond_fc
+    :cond_102
     move v2, v8
 
-    .line 390
+    .line 389
     goto/16 :goto_21
 
     .restart local v2       #isTabletLayoutSize:Z
-    :cond_ff
+    :cond_105
     move v7, v8
 
-    .line 391
+    .line 390
     goto/16 :goto_2a
 
     .line 401
-    :cond_102
+    :cond_108
     invoke-virtual {p0, v9}, Lcom/google/android/street/Street;->requestWindowFeature(I)Z
 
-    goto/16 :goto_35
+    goto/16 :goto_3b
 .end method
 
 .method protected onCreateDialog(I)Landroid/app/Dialog;
@@ -2758,16 +2626,16 @@
     .parameter "id"
 
     .prologue
-    .line 956
+    .line 933
     packed-switch p1, :pswitch_data_c
 
-    .line 960
+    .line 937
     const/4 v0, 0x0
 
     :goto_4
     return-object v0
 
-    .line 958
+    .line 935
     :pswitch_5
     new-instance v0, Lcom/google/android/street/WhatsNewDialog;
 
@@ -2775,7 +2643,7 @@
 
     goto :goto_4
 
-    .line 956
+    .line 933
     nop
 
     :pswitch_data_c
@@ -2786,10 +2654,10 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;)Z
     .registers 4
-    .parameter
+    .parameter "menu"
 
     .prologue
-    .line 947
+    .line 924
     invoke-virtual {p0}, Lcom/google/android/street/Street;->getMenuInflater()Landroid/view/MenuInflater;
 
     move-result-object v0
@@ -2798,17 +2666,17 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
-    .line 948
+    .line 925
     iget-boolean v0, p0, Lcom/google/android/street/Street;->mHasCompass:Z
 
     if-nez v0, :cond_13
 
-    .line 949
+    .line 926
     const v0, 0x7f080010
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->removeItem(I)V
 
-    .line 951
+    .line 928
     :cond_13
     const/4 v0, 0x1
 
@@ -2819,13 +2687,13 @@
     .registers 1
 
     .prologue
-    .line 908
+    .line 885
     invoke-static {}, Lcom/google/android/common/datarequest/ConfigAndDrdUtil;->cleanupConfigAndDrd()V
 
-    .line 909
+    .line 886
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
-    .line 913
+    .line 890
     return-void
 .end method
 
@@ -2835,10 +2703,10 @@
     .parameter "event"
 
     .prologue
-    .line 1014
+    .line 994
     const/4 v0, 0x0
 
-    .line 1016
+    .line 996
     .local v0, handled:Z
     iget-object v3, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
@@ -2846,7 +2714,7 @@
 
     move-result-object v2
 
-    .line 1017
+    .line 997
     .local v2, panoramaConfig:Lcom/google/android/street/PanoramaConfig;
     if-eqz v2, :cond_16
 
@@ -2854,26 +2722,26 @@
 
     move v1, v3
 
-    .line 1019
+    .line 999
     .local v1, okToAct:Z
     :goto_b
     packed-switch p1, :pswitch_data_26
 
-    .line 1028
+    .line 1008
     :cond_e
     :goto_e
     if-eqz v0, :cond_20
 
-    .line 1029
+    .line 1009
     iget-object v3, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
     invoke-virtual {v3}, Lcom/google/android/street/StreetView;->invalidate()V
 
-    .line 1033
+    .line 1013
     :goto_15
     return v0
 
-    .line 1017
+    .line 997
     .end local v1           #okToAct:Z
     :cond_16
     const/4 v3, 0x0
@@ -2882,20 +2750,20 @@
 
     goto :goto_b
 
-    .line 1021
+    .line 1001
     .restart local v1       #okToAct:Z
     :pswitch_19
     if-eqz v1, :cond_e
 
-    .line 1022
+    .line 1002
     invoke-direct {p0}, Lcom/google/android/street/Street;->gotoMap()V
 
-    .line 1023
+    .line 1003
     const/4 v0, 0x1
 
     goto :goto_e
 
-    .line 1031
+    .line 1011
     :cond_20
     invoke-super {p0, p1, p2}, Landroid/app/Activity;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
@@ -2903,7 +2771,7 @@
 
     goto :goto_15
 
-    .line 1019
+    .line 999
     nop
 
     :pswitch_data_26
@@ -2917,105 +2785,117 @@
     .parameter "newIntent"
 
     .prologue
-    .line 923
+    .line 900
     invoke-super {p0, p1}, Landroid/app/Activity;->onNewIntent(Landroid/content/Intent;)V
 
-    .line 927
+    .line 904
     invoke-virtual {p0, p1}, Lcom/google/android/street/Street;->setIntent(Landroid/content/Intent;)V
 
-    .line 928
+    .line 905
     return-void
 .end method
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
-    .registers 5
+    .registers 6
     .parameter
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    .line 965
-    .line 966
+    .line 942
+    .line 943
     iget-object v0, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
     invoke-virtual {v0}, Lcom/google/android/street/StreetView;->getPanoramaConfig()Lcom/google/android/street/PanoramaConfig;
 
     move-result-object v0
 
-    .line 967
-    if-eqz v0, :cond_20
+    .line 944
+    if-eqz v0, :cond_2a
 
-    move v0, v2
+    move v0, v3
 
-    .line 969
+    .line 946
     :goto_b
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
-    .line 971
-    if-eqz v0, :cond_70
+    move-result v1
 
-    .line 972
-    invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
+    .line 948
+    if-eqz v0, :cond_7c
+
+    .line 949
+    packed-switch v1, :pswitch_data_7e
+
+    .line 966
+    :pswitch_14
+    iget-boolean v0, p0, Lcom/google/android/street/Street;->mActionBarInUse:Z
+
+    if-eqz v0, :cond_75
+
+    invoke-static {v1}, Lcom/google/android/street/ActionBarUtil;->isHomeId(I)Z
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_72
+    if-eqz v0, :cond_75
 
-    :pswitch_17
-    move v0, v1
+    .line 967
+    invoke-virtual {p0}, Lcom/google/android/street/Street;->finish()V
 
-    .line 994
-    :goto_18
-    if-eqz v0, :cond_6b
+    move v0, v3
 
-    .line 995
+    .line 974
+    :goto_22
+    if-eqz v0, :cond_77
+
+    .line 975
     iget-object v1, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
     invoke-virtual {v1}, Lcom/google/android/street/StreetView;->invalidate()V
 
-    .line 999
-    :goto_1f
+    .line 979
+    :goto_29
     return v0
 
-    :cond_20
-    move v0, v1
+    :cond_2a
+    move v0, v2
 
-    .line 967
+    .line 944
     goto :goto_b
 
-    .line 974
-    :pswitch_22
+    .line 951
+    :pswitch_2c
     invoke-direct {p0}, Lcom/google/android/street/Street;->gotoMap()V
 
-    move v0, v2
+    move v0, v3
 
-    .line 975
-    goto :goto_18
+    .line 952
+    goto :goto_22
 
-    .line 977
-    :pswitch_27
+    .line 954
+    :pswitch_31
     invoke-direct {p0}, Lcom/google/android/street/Street;->reportInappropriateImage()V
 
-    move v0, v2
+    move v0, v3
 
-    .line 978
-    goto :goto_18
+    .line 955
+    goto :goto_22
 
-    .line 980
-    :pswitch_2c
+    .line 957
+    :pswitch_36
     iget-object v0, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
     invoke-virtual {v0}, Lcom/google/android/street/StreetView;->toggleCompassMode()V
 
-    move v0, v2
+    move v0, v3
 
-    .line 981
-    goto :goto_18
+    .line 958
+    goto :goto_22
 
-    .line 983
-    :pswitch_33
+    .line 960
+    :pswitch_3d
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3040,13 +2920,13 @@
 
     invoke-direct {p0, v0}, Lcom/google/android/street/Street;->showUrl(Ljava/lang/String;)V
 
-    move v0, v2
+    move v0, v3
 
-    .line 985
-    goto :goto_18
+    .line 961
+    goto :goto_22
 
-    .line 987
-    :pswitch_4f
+    .line 963
+    :pswitch_59
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3071,33 +2951,39 @@
 
     invoke-direct {p0, v0}, Lcom/google/android/street/Street;->showUrl(Ljava/lang/String;)V
 
+    move v0, v3
+
+    .line 964
+    goto :goto_22
+
+    :cond_75
     move v0, v2
 
-    .line 988
-    goto :goto_18
+    .line 969
+    goto :goto_22
 
-    .line 997
-    :cond_6b
+    .line 977
+    :cond_77
     invoke-super {p0, p1}, Landroid/app/Activity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v0
 
-    goto :goto_1f
+    goto :goto_29
 
-    :cond_70
-    move v0, v2
+    :cond_7c
+    move v0, v3
 
-    goto :goto_18
+    goto :goto_22
 
-    .line 972
-    :pswitch_data_72
+    .line 949
+    :pswitch_data_7e
     .packed-switch 0x7f08000e
-        :pswitch_22
-        :pswitch_27
         :pswitch_2c
-        :pswitch_17
-        :pswitch_33
-        :pswitch_4f
+        :pswitch_31
+        :pswitch_36
+        :pswitch_14
+        :pswitch_3d
+        :pswitch_59
     .end packed-switch
 .end method
 
@@ -3105,25 +2991,25 @@
     .registers 2
 
     .prologue
-    .line 850
+    .line 831
     invoke-super {p0}, Landroid/app/Activity;->onPause()V
 
-    .line 854
+    .line 835
     iget-object v0, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
     invoke-virtual {v0}, Lcom/google/android/street/StreetView;->onPause()V
 
-    .line 855
+    .line 836
     iget-object v0, p0, Lcom/google/android/street/Street;->mNetworkStateIntentReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v0}, Lcom/google/android/street/Street;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 856
+    .line 837
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/street/Street;->mRegisteredForNetworkConnectivity:Z
 
-    .line 857
+    .line 838
     return-void
 .end method
 
@@ -3131,20 +3017,15 @@
     .registers 2
 
     .prologue
-    .line 886
+    .line 867
     const-string v0, "Warm start onRestart()"
 
     invoke-static {v0}, Lcom/google/android/street/Street;->noteStartFrame(Ljava/lang/String;)V
 
-    .line 887
+    .line 868
     invoke-super {p0}, Landroid/app/Activity;->onRestart()V
 
-    .line 892
-    iget-object v0, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
-
-    invoke-virtual {v0}, Lcom/google/android/street/StreetView;->onRestart()V
-
-    .line 893
+    .line 873
     return-void
 .end method
 
@@ -3153,13 +3034,13 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 797
+    .line 778
     invoke-super {p0, p1}, Landroid/app/Activity;->onRestoreInstanceState(Landroid/os/Bundle;)V
 
-    .line 802
+    .line 783
     iput-object p1, p0, Lcom/google/android/street/Street;->mSavedInstanceState:Landroid/os/Bundle;
 
-    .line 803
+    .line 784
     return-void
 .end method
 
@@ -3167,37 +3048,37 @@
     .registers 3
 
     .prologue
-    .line 861
+    .line 842
     const-string v0, "Warm start onResume()"
 
     invoke-static {v0}, Lcom/google/android/street/Street;->noteStartFrame(Ljava/lang/String;)V
 
-    .line 862
+    .line 843
     invoke-super {p0}, Landroid/app/Activity;->onResume()V
 
-    .line 867
+    .line 848
     iget-object v0, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
     invoke-virtual {v0}, Lcom/google/android/street/StreetView;->onResume()V
 
-    .line 868
+    .line 849
     iget-object v0, p0, Lcom/google/android/street/Street;->mNetworkStateIntentReceiver:Landroid/content/BroadcastReceiver;
 
     iget-object v1, p0, Lcom/google/android/street/Street;->mNetworkStateChangedFilter:Landroid/content/IntentFilter;
 
     invoke-virtual {p0, v0, v1}, Lcom/google/android/street/Street;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 870
+    .line 851
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/street/Street;->mRegisteredForNetworkConnectivity:Z
 
-    .line 871
+    .line 852
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/android/street/Street;->processIntent(Landroid/os/Bundle;)V
 
-    .line 872
+    .line 853
     return-void
 .end method
 
@@ -3206,39 +3087,39 @@
     .parameter "outState"
 
     .prologue
-    .line 779
+    .line 760
     invoke-super {p0, p1}, Landroid/app/Activity;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 783
+    .line 764
     iget-object v2, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
 
     invoke-virtual {v2}, Lcom/google/android/street/StreetView;->getPanoramaConfig()Lcom/google/android/street/PanoramaConfig;
 
     move-result-object v1
 
-    .line 784
+    .line 765
     .local v1, panoramaConfig:Lcom/google/android/street/PanoramaConfig;
     if-eqz v1, :cond_1a
 
-    .line 785
+    .line 766
     const/4 v2, 0x0
 
     invoke-direct {p0, v2}, Lcom/google/android/street/Street;->getStateString(Z)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 789
+    .line 770
     .local v0, out:Ljava/lang/String;
     const-string v2, "streetview"
 
     invoke-virtual {p1, v2, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 790
+    .line 771
     const-string v2, "panoramaConfig"
 
     invoke-virtual {p1, v2, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 793
+    .line 774
     .end local v0           #out:Ljava/lang/String;
     :cond_1a
     return-void
@@ -3248,37 +3129,26 @@
     .registers 2
 
     .prologue
-    .line 876
+    .line 857
     const-string v0, "Warm start onStart()"
 
     invoke-static {v0}, Lcom/google/android/street/Street;->noteStartFrame(Ljava/lang/String;)V
 
-    .line 877
+    .line 858
     invoke-super {p0}, Landroid/app/Activity;->onStart()V
 
-    .line 882
+    .line 863
     return-void
 .end method
 
 .method protected onStop()V
-    .registers 2
+    .registers 1
 
     .prologue
-    .line 897
+    .line 877
     invoke-super {p0}, Landroid/app/Activity;->onStop()V
 
-    .line 901
-    iget-boolean v0, p0, Lcom/google/android/street/Street;->mHardShutdown:Z
-
-    if-nez v0, :cond_c
-
-    .line 902
-    iget-object v0, p0, Lcom/google/android/street/Street;->mStreetView:Lcom/google/android/street/StreetView;
-
-    invoke-virtual {v0}, Lcom/google/android/street/StreetView;->onStop()V
-
-    .line 904
-    :cond_c
+    .line 881
     return-void
 .end method
 
@@ -3287,7 +3157,7 @@
     .parameter "progress"
 
     .prologue
-    .line 541
+    .line 524
     return-void
 .end method
 
@@ -3296,7 +3166,7 @@
     .parameter "progress"
 
     .prologue
-    .line 546
+    .line 529
     const/16 v1, 0x4e20
 
     if-le p1, v1, :cond_11
@@ -3305,7 +3175,7 @@
 
     move v0, v1
 
-    .line 548
+    .line 531
     .local v0, visibility:I
     :goto_6
     const v1, 0x7f080007
@@ -3316,10 +3186,10 @@
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 549
+    .line 532
     return-void
 
-    .line 546
+    .line 529
     .end local v0           #visibility:I
     :cond_11
     const/16 v1, 0x8
@@ -3335,12 +3205,12 @@
 
     .prologue
     .line 507
-    iget-boolean v0, p0, Lcom/google/android/street/Street;->mIsTablet:Z
+    iget-boolean v0, p0, Lcom/google/android/street/Street;->mActionBarInUse:Z
 
     if-eqz v0, :cond_8
 
     .line 508
-    invoke-direct {p0, p1}, Lcom/google/android/street/Street;->setActionBarTitle(Ljava/lang/CharSequence;)V
+    invoke-static {p0, p1}, Lcom/google/android/street/ActionBarUtil;->setActionBarTitle(Landroid/app/Activity;Ljava/lang/CharSequence;)V
 
     .line 512
     :goto_7
@@ -3359,7 +3229,7 @@
     .registers 3
 
     .prologue
-    .line 1104
+    .line 1084
     iget-boolean v0, p0, Lcom/google/android/street/Street;->mNetworkAvailable:Z
 
     if-eqz v0, :cond_b

@@ -52,15 +52,15 @@
     .end annotation
 
     .prologue
-    .line 107
+    .line 112
     .local p0, this:Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask<TParams2;TProgress2;TResult2;>;"
     .local p1, owner:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<TParams2;TProgress2;TResult2;>;"
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 108
+    .line 113
     iput-object p1, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;->mOwner:Lcom/android/emailcommon/utility/EmailAsyncTask;
 
-    .line 109
+    .line 114
     return-void
 .end method
 
@@ -76,7 +76,7 @@
     .end annotation
 
     .prologue
-    .line 113
+    .line 118
     .local p0, this:Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask<TParams2;TProgress2;TResult2;>;"
     .local p1, params:[Ljava/lang/Object;,"[TParams2;"
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;->mOwner:Lcom/android/emailcommon/utility/EmailAsyncTask;
@@ -98,19 +98,19 @@
     .end annotation
 
     .prologue
-    .line 118
+    .line 123
     .local p0, this:Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask<TParams2;TProgress2;TResult2;>;"
     .local p1, result:Ljava/lang/Object;,"TResult2;"
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;->mOwner:Lcom/android/emailcommon/utility/EmailAsyncTask;
 
     invoke-virtual {v0}, Lcom/android/emailcommon/utility/EmailAsyncTask;->unregisterSelf()V
 
-    .line 119
+    .line 124
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;->mOwner:Lcom/android/emailcommon/utility/EmailAsyncTask;
 
     invoke-virtual {v0, p1}, Lcom/android/emailcommon/utility/EmailAsyncTask;->onCancelled(Ljava/lang/Object;)V
 
-    .line 120
+    .line 125
     return-void
 .end method
 
@@ -124,14 +124,14 @@
     .end annotation
 
     .prologue
-    .line 124
+    .line 129
     .local p0, this:Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask<TParams2;TProgress2;TResult2;>;"
     .local p1, result:Ljava/lang/Object;,"TResult2;"
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;->mOwner:Lcom/android/emailcommon/utility/EmailAsyncTask;
 
     invoke-virtual {v0}, Lcom/android/emailcommon/utility/EmailAsyncTask;->unregisterSelf()V
 
-    .line 125
+    .line 130
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;->mOwner:Lcom/android/emailcommon/utility/EmailAsyncTask;
 
     #getter for: Lcom/android/emailcommon/utility/EmailAsyncTask;->mCancelled:Z
@@ -141,16 +141,16 @@
 
     if-eqz v0, :cond_13
 
-    .line 126
+    .line 131
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;->mOwner:Lcom/android/emailcommon/utility/EmailAsyncTask;
 
     invoke-virtual {v0, p1}, Lcom/android/emailcommon/utility/EmailAsyncTask;->onCancelled(Ljava/lang/Object;)V
 
-    .line 130
+    .line 135
     :goto_12
     return-void
 
-    .line 128
+    .line 133
     :cond_13
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;->mOwner:Lcom/android/emailcommon/utility/EmailAsyncTask;
 

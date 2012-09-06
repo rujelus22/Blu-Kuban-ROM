@@ -1,127 +1,56 @@
-.class public LaM/s;
-.super Lat/a;
+.class LaM/s;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:LaM/t;
+.field final synthetic a:Lax/r;
 
-.field private b:Lam/b;
+.field final synthetic b:Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-.field private c:Lam/b;
-
-.field private d:Z
+.field final synthetic c:LaM/m;
 
 
 # direct methods
-.method public constructor <init>(Lam/b;)V
-    .registers 3
+.method constructor <init>(LaM/m;Lax/r;Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Lat/a;-><init>()V
+    .prologue
+    .line 1703
+    iput-object p1, p0, LaM/s;->c:LaM/m;
 
-    const/4 v0, 0x0
+    iput-object p2, p0, LaM/s;->a:Lax/r;
 
-    iput-boolean v0, p0, LaM/s;->d:Z
+    iput-object p3, p0, LaM/s;->b:Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    iput-object p1, p0, LaM/s;->c:Lam/b;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()I
-    .registers 2
-
-    const/16 v0, 0x4d
-
-    return v0
-.end method
-
-.method public a(LaM/t;)V
-    .registers 2
-
-    iput-object p1, p0, LaM/s;->a:LaM/t;
-
-    return-void
-.end method
-
-.method public a(Ljava/io/DataOutput;)V
+.method public run()V
     .registers 3
 
-    iget-object v0, p0, LaM/s;->c:Lam/b;
+    .prologue
+    .line 1707
+    iget-object v0, p0, LaM/s;->a:Lax/r;
 
-    check-cast p1, Ljava/io/OutputStream;
+    iget-object v1, p0, LaM/s;->b:Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    invoke-virtual {v0, p1}, Lam/b;->a(Ljava/io/OutputStream;)V
+    invoke-static {v1}, Lax/E;->a(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)Lax/E;
 
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lax/r;->a(Lax/E;)V
+
+    .line 1708
     return-void
-.end method
-
-.method public a(Ljava/io/DataInput;)Z
-    .registers 3
-
-    sget-object v0, LbD/go;->h:Lam/e;
-
-    invoke-static {v0, p1}, Lam/g;->a(Lam/e;Ljava/io/DataInput;)Lam/b;
-
-    move-result-object v0
-
-    iput-object v0, p0, LaM/s;->b:Lam/b;
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public b()V
-    .registers 3
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, LaM/s;->d:Z
-
-    iget-object v0, p0, LaM/s;->b:Lam/b;
-
-    if-eqz v0, :cond_b
-
-    iget-object v0, p0, LaM/s;->a:LaM/t;
-
-    if-nez v0, :cond_c
-
-    :cond_b
-    :goto_b
-    return-void
-
-    :cond_c
-    iget-object v0, p0, LaM/s;->a:LaM/t;
-
-    iget-object v1, p0, LaM/s;->b:Lam/b;
-
-    invoke-interface {v0, v1}, LaM/t;->a(Lam/b;)V
-
-    goto :goto_b
-.end method
-
-.method public g_()Z
-    .registers 2
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public k()Z
-    .registers 2
-
-    iget-boolean v0, p0, LaM/s;->d:Z
-
-    return v0
-.end method
-
-.method public z_()Z
-    .registers 2
-
-    const/4 v0, 0x0
-
-    return v0
 .end method

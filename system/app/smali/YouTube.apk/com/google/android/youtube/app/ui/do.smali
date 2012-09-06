@@ -1,104 +1,111 @@
-.class final Lcom/google/android/youtube/app/ui/do;
+.class final synthetic Lcom/google/android/youtube/app/ui/do;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lcom/google/android/youtube/core/async/g;
 
-
-# instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/ui/dm;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/ui/dm;)V
-    .registers 2
-    .parameter
+.method static constructor <clinit>()V
+    .registers 3
 
     .prologue
-    .line 213
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/do;->a:Lcom/google/android/youtube/app/ui/dm;
+    .line 181
+    invoke-static {}, Lcom/google/android/youtube/core/model/Video$State;->values()[Lcom/google/android/youtube/core/model/Video$State;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
 
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    sput-object v0, Lcom/google/android/youtube/app/ui/do;->a:[I
+
+    :try_start_9
+    sget-object v0, Lcom/google/android/youtube/app/ui/do;->a:[I
+
+    sget-object v1, Lcom/google/android/youtube/core/model/Video$State;->PLAYABLE:Lcom/google/android/youtube/core/model/Video$State;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/Video$State;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_3c
+
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/android/youtube/app/ui/do;->a:[I
+
+    sget-object v1, Lcom/google/android/youtube/core/model/Video$State;->COUNTRY_RESTRICTED:Lcom/google/android/youtube/core/model/Video$State;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/Video$State;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_3a
+
+    :goto_1f
+    :try_start_1f
+    sget-object v0, Lcom/google/android/youtube/app/ui/do;->a:[I
+
+    sget-object v1, Lcom/google/android/youtube/core/model/Video$State;->NOT_AVAILABLE_ON_MOBILE:Lcom/google/android/youtube/core/model/Video$State;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/Video$State;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_38
+
+    :goto_2a
+    :try_start_2a
+    sget-object v0, Lcom/google/android/youtube/app/ui/do;->a:[I
+
+    sget-object v1, Lcom/google/android/youtube/core/model/Video$State;->PROCESSING:Lcom/google/android/youtube/core/model/Video$State;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/Video$State;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_35
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_36
+
+    :goto_35
     return-void
-.end method
 
+    :catch_36
+    move-exception v0
 
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
-    .registers 5
-    .parameter
-    .parameter
+    goto :goto_35
 
-    .prologue
-    .line 213
-    check-cast p1, Ljava/lang/String;
+    :catch_38
+    move-exception v0
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    goto :goto_2a
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    :catch_3a
+    move-exception v0
 
-    const-string v1, "failed to get disco results for ID "
+    goto :goto_1f
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :catch_3c
+    move-exception v0
 
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " : "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/L;->c(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 5
-    .parameter
-    .parameter
-
-    .prologue
-    .line 213
-    check-cast p2, Lcom/google/android/youtube/core/async/Optional;
-
-    invoke-interface {p2}, Lcom/google/android/youtube/core/async/Optional;->get()Ljava/io/Serializable;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/youtube/core/model/MusicVideo;
-
-    if-eqz v0, :cond_1b
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/do;->a:Lcom/google/android/youtube/app/ui/dm;
-
-    invoke-static {v1, v0}, Lcom/google/android/youtube/app/ui/dm;->a(Lcom/google/android/youtube/app/ui/dm;Lcom/google/android/youtube/core/model/MusicVideo;)Lcom/google/android/youtube/core/model/MusicVideo;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/do;->a:Lcom/google/android/youtube/app/ui/dm;
-
-    invoke-static {v1}, Lcom/google/android/youtube/app/ui/dm;->e(Lcom/google/android/youtube/app/ui/dm;)V
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/do;->a:Lcom/google/android/youtube/app/ui/dm;
-
-    iget-object v0, v0, Lcom/google/android/youtube/core/model/MusicVideo;->artistId:Ljava/lang/String;
-
-    invoke-static {v1, v0}, Lcom/google/android/youtube/app/ui/dm;->a(Lcom/google/android/youtube/app/ui/dm;Ljava/lang/String;)V
-
-    :cond_1b
-    return-void
+    goto :goto_14
 .end method

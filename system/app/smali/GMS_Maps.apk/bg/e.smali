@@ -1,2 +1,3 @@
-.class synthetic Lbg/e;
+.class public interface abstract Lbg/e;
 .super Ljava/lang/Object;
+.source "SourceFile"

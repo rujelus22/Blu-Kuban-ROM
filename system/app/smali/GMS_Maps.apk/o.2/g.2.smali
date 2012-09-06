@@ -1,152 +1,125 @@
-.class Lo/g;
-.super Lo/a;
+.class Lo/G;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lac/q;
 
 
 # instance fields
-.field private a:Lo/a;
-
-.field private b:Ljava/lang/String;
-
-.field private c:Ljava/io/File;
-
-.field private final d:Landroid/os/Handler;
-
-.field private e:I
-
-.field private f:Landroid/content/Context;
+.field final synthetic a:Lo/E;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;Landroid/os/Handler;)V
-    .registers 5
+.method private constructor <init>(Lo/E;)V
+    .registers 2
+    .parameter
 
-    invoke-direct {p0}, Lo/a;-><init>()V
+    .prologue
+    .line 87
+    iput-object p1, p0, Lo/G;->a:Lo/E;
 
-    iput-object p1, p0, Lo/g;->f:Landroid/content/Context;
-
-    iput-object p2, p0, Lo/g;->b:Ljava/lang/String;
-
-    iput-object p3, p0, Lo/g;->c:Ljava/io/File;
-
-    iput-object p4, p0, Lo/g;->d:Landroid/os/Handler;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method static synthetic a(Lo/g;Lo/a;)Lo/a;
-    .registers 2
+.method synthetic constructor <init>(Lo/E;Lo/F;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lo/g;->a:Lo/a;
+    .prologue
+    .line 87
+    invoke-direct {p0, p1}, Lo/G;-><init>(Lo/E;)V
 
-    return-object p1
+    return-void
 .end method
 
 
 # virtual methods
 .method public a()V
-    .registers 2
+    .registers 1
 
-    iget-object v0, p0, Lo/g;->a:Lo/a;
-
-    if-eqz v0, :cond_9
-
-    iget-object v0, p0, Lo/g;->a:Lo/a;
-
-    invoke-virtual {v0}, Lo/a;->a()V
-
-    :cond_9
+    .prologue
+    .line 116
     return-void
 .end method
 
-.method public a(Lo/b;)V
+.method public a(IZLjava/lang/String;)V
     .registers 5
+    .parameter
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lo/g;->c:Ljava/io/File;
+    .prologue
+    .line 98
+    iget-object v0, p0, Lo/G;->a:Lo/E;
 
-    if-nez v0, :cond_f
-
-    const-string v0, "AlertGenerator"
-
-    const-string v1, "mFile=null"
-
-    invoke-static {v0, v1}, Ln/b;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-interface {p1, p0}, Lo/b;->a(Lo/a;)V
-
-    :goto_e
-    return-void
-
-    :cond_f
-    iget-object v0, p0, Lo/g;->f:Landroid/content/Context;
-
-    iget-object v1, p0, Lo/g;->c:Ljava/io/File;
-
-    iget-object v2, p0, Lo/g;->d:Landroid/os/Handler;
-
-    invoke-static {v0, v1, v2}, Lo/L;->a(Landroid/content/Context;Ljava/io/File;Landroid/os/Handler;)Lo/a;
+    invoke-static {v0}, Lo/E;->a(Lo/E;)Lo/r;
 
     move-result-object v0
 
-    iput-object v0, p0, Lo/g;->a:Lo/a;
+    invoke-virtual {v0, p1, p2}, Lo/r;->a(IZ)V
 
-    iget-object v0, p0, Lo/g;->a:Lo/a;
-
-    if-nez v0, :cond_29
-
-    invoke-interface {p1, p0}, Lo/b;->a(Lo/a;)V
-
-    :goto_22
-    iget v0, p0, Lo/g;->e:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lo/g;->e:I
-
-    goto :goto_e
-
-    :cond_29
-    iget-object v0, p0, Lo/g;->a:Lo/a;
-
-    new-instance v1, Lo/h;
-
-    invoke-direct {v1, p0, p1}, Lo/h;-><init>(Lo/g;Lo/b;)V
-
-    invoke-virtual {v0, v1}, Lo/a;->a(Lo/b;)V
-
-    goto :goto_22
-.end method
-
-.method public b()V
-    .registers 2
-
-    iget-object v0, p0, Lo/g;->a:Lo/a;
-
-    if-eqz v0, :cond_9
-
-    iget-object v0, p0, Lo/g;->a:Lo/a;
-
-    invoke-virtual {v0}, Lo/a;->b()V
-
-    :cond_9
+    .line 99
     return-void
 .end method
 
-.method public d()V
-    .registers 2
+.method public a(Lac/g;)V
+    .registers 3
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    .line 90
+    instance-of v0, p1, Lo/g;
 
-    iput-object v0, p0, Lo/g;->c:Ljava/io/File;
+    if-eqz v0, :cond_f
 
-    iput-object v0, p0, Lo/g;->b:Ljava/lang/String;
+    .line 91
+    iget-object v0, p0, Lo/G;->a:Lo/E;
 
+    invoke-static {v0}, Lo/E;->a(Lo/E;)Lo/r;
+
+    move-result-object v0
+
+    check-cast p1, Lo/g;
+
+    invoke-virtual {v0, p1}, Lo/r;->a(Lo/g;)V
+
+    .line 93
+    :cond_f
     return-void
 .end method
 
-.method public e()Ljava/lang/String;
-    .registers 2
+.method public b(Lac/g;)V
+    .registers 3
+    .parameter
 
-    iget-object v0, p0, Lo/g;->b:Ljava/lang/String;
+    .prologue
+    .line 105
+    instance-of v0, p1, Lo/g;
 
-    return-object v0
+    if-eqz v0, :cond_13
+
+    .line 106
+    check-cast p1, Lo/g;
+
+    .line 107
+    const/4 v0, 0x4
+
+    invoke-virtual {p1, v0}, Lo/g;->a(I)V
+
+    .line 109
+    iget-object v0, p0, Lo/G;->a:Lo/E;
+
+    invoke-static {v0}, Lo/E;->a(Lo/E;)Lo/r;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lo/r;->a(Lo/g;)V
+
+    .line 111
+    :cond_13
+    return-void
 .end method

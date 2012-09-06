@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Social Hub</string>
-    <string name="str_no_hitory">No history</string>
-    <string name="widget_input_text">"What's on your mind?"</string>
-    <string name="empty">Empty</string>
-    <string name="comment">Comment</string>
-    <string name="retweeted_by">by %s</string>
-</resources>

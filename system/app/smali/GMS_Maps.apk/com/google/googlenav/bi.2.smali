@@ -1,16 +1,17 @@
-.class public Lcom/google/googlenav/bi;
+.class public Lcom/google/googlenav/bI;
 .super Ljava/lang/Object;
-
-
-# instance fields
-.field public a:Z
+.source "SourceFile"
 
 
 # direct methods
-.method public constructor <init>()V
+.method public static a()LY/c;
     .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 41
+    invoke-static {}, Lcom/google/googlenav/bJ;->a()LY/c;
 
-    return-void
+    move-result-object v0
+
+    return-object v0
 .end method

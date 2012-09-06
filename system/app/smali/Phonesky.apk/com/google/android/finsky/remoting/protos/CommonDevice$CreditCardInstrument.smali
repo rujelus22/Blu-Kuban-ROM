@@ -17,6 +17,17 @@
 # instance fields
 .field private cachedSize:I
 
+.field private escrowEfeParam_:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/android/finsky/remoting/protos/CommonDevice$EfeParam;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private escrowHandle_:Ljava/lang/String;
 
 .field private expirationMonth_:I
@@ -45,63 +56,131 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 303
+    .line 633
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 308
+    .line 638
     iput v1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->type_:I
 
-    .line 325
+    .line 655
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->escrowHandle_:Ljava/lang/String;
 
-    .line 342
+    .line 672
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->lastDigits_:Ljava/lang/String;
 
-    .line 359
+    .line 689
     iput v1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->expirationMonth_:I
 
-    .line 376
+    .line 706
     iput v1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->expirationYear_:I
 
-    .line 423
+    .line 722
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->escrowEfeParam_:Ljava/util/List;
+
+    .line 794
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->cachedSize:I
 
-    .line 303
+    .line 633
     return-void
 .end method
 
 
 # virtual methods
+.method public addEscrowEfeParam(Lcom/google/android/finsky/remoting/protos/CommonDevice$EfeParam;)Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 739
+    if-nez p1, :cond_8
+
+    .line 740
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 742
+    :cond_8
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->escrowEfeParam_:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_17
+
+    .line 743
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->escrowEfeParam_:Ljava/util/List;
+
+    .line 745
+    :cond_17
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->escrowEfeParam_:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 746
+    return-object p0
+.end method
+
 .method public getCachedSize()I
     .registers 2
 
     .prologue
-    .line 425
+    .line 797
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 427
+    .line 799
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->getSerializedSize()I
 
-    .line 429
+    .line 801
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->cachedSize:I
 
     return v0
 .end method
 
+.method public getEscrowEfeParamList()Ljava/util/List;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/android/finsky/remoting/protos/CommonDevice$EfeParam;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 725
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->escrowEfeParam_:Ljava/util/List;
+
+    return-object v0
+.end method
+
 .method public getEscrowHandle()Ljava/lang/String;
     .registers 2
 
     .prologue
-    .line 326
+    .line 656
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->escrowHandle_:Ljava/lang/String;
 
     return-object v0
@@ -111,7 +190,7 @@
     .registers 2
 
     .prologue
-    .line 360
+    .line 690
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->expirationMonth_:I
 
     return v0
@@ -121,7 +200,7 @@
     .registers 2
 
     .prologue
-    .line 377
+    .line 707
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->expirationYear_:I
 
     return v0
@@ -131,137 +210,174 @@
     .registers 2
 
     .prologue
-    .line 343
+    .line 673
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->lastDigits_:Ljava/lang/String;
 
     return-object v0
 .end method
 
 .method public getSerializedSize()I
-    .registers 4
+    .registers 6
 
     .prologue
-    .line 433
-    const/4 v0, 0x0
+    .line 806
+    const/4 v2, 0x0
 
-    .line 434
-    .local v0, size:I
+    .line 807
+    .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasType()Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_11
+    if-eqz v3, :cond_11
 
-    .line 435
-    const/4 v1, 0x1
+    .line 808
+    const/4 v3, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->getType()I
 
-    move-result v2
+    move-result v4
 
-    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
-    move-result v1
+    move-result v3
 
-    add-int/2addr v0, v1
+    add-int/2addr v2, v3
 
-    .line 438
+    .line 811
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasEscrowHandle()Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_21
+    if-eqz v3, :cond_21
 
-    .line 439
-    const/4 v1, 0x2
+    .line 812
+    const/4 v3, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->getEscrowHandle()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
-    move-result v1
+    move-result v3
 
-    add-int/2addr v0, v1
+    add-int/2addr v2, v3
 
-    .line 442
+    .line 815
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasLastDigits()Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_31
+    if-eqz v3, :cond_31
 
-    .line 443
-    const/4 v1, 0x3
+    .line 816
+    const/4 v3, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->getLastDigits()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
 
-    move-result v1
+    move-result v3
 
-    add-int/2addr v0, v1
+    add-int/2addr v2, v3
 
-    .line 446
+    .line 819
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasExpirationMonth()Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_41
+    if-eqz v3, :cond_41
 
-    .line 447
-    const/4 v1, 0x4
+    .line 820
+    const/4 v3, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->getExpirationMonth()I
 
-    move-result v2
+    move-result v4
 
-    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
-    move-result v1
+    move-result v3
 
-    add-int/2addr v0, v1
+    add-int/2addr v2, v3
 
-    .line 450
+    .line 823
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasExpirationYear()Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_51
+    if-eqz v3, :cond_51
 
-    .line 451
-    const/4 v1, 0x5
+    .line 824
+    const/4 v3, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->getExpirationYear()I
 
-    move-result v2
+    move-result v4
 
-    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+    invoke-static {v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
 
-    move-result v1
+    move-result v3
 
-    add-int/2addr v0, v1
+    add-int/2addr v2, v3
 
-    .line 454
+    .line 827
     :cond_51
-    iput v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->cachedSize:I
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->getEscrowEfeParamList()Ljava/util/List;
 
-    .line 455
-    return v0
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :goto_59
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_6c
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/remoting/protos/CommonDevice$EfeParam;
+
+    .line 828
+    .local v0, element:Lcom/google/android/finsky/remoting/protos/CommonDevice$EfeParam;
+    const/4 v3, 0x6
+
+    invoke-static {v3, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    goto :goto_59
+
+    .line 831
+    .end local v0           #element:Lcom/google/android/finsky/remoting/protos/CommonDevice$EfeParam;
+    :cond_6c
+    iput v2, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->cachedSize:I
+
+    .line 832
+    return v2
 .end method
 
 .method public getType()I
     .registers 2
 
     .prologue
-    .line 310
+    .line 640
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->type_:I
 
     return v0
@@ -271,7 +387,7 @@
     .registers 2
 
     .prologue
-    .line 327
+    .line 657
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasEscrowHandle:Z
 
     return v0
@@ -281,7 +397,7 @@
     .registers 2
 
     .prologue
-    .line 361
+    .line 691
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasExpirationMonth:Z
 
     return v0
@@ -291,7 +407,7 @@
     .registers 2
 
     .prologue
-    .line 378
+    .line 708
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasExpirationYear:Z
 
     return v0
@@ -301,7 +417,7 @@
     .registers 2
 
     .prologue
-    .line 344
+    .line 674
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasLastDigits:Z
 
     return v0
@@ -311,14 +427,14 @@
     .registers 2
 
     .prologue
-    .line 309
+    .line 639
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasType:Z
 
     return v0
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;
-    .registers 4
+    .registers 5
     .parameter "input"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -327,80 +443,95 @@
     .end annotation
 
     .prologue
-    .line 462
+    .line 840
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 463
+    .line 841
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_36
+    sparse-switch v0, :sswitch_data_42
 
-    .line 467
+    .line 845
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
-    move-result v1
+    move-result v2
 
-    if-nez v1, :cond_0
+    if-nez v2, :cond_0
 
-    .line 468
+    .line 846
     :sswitch_d
     return-object p0
 
-    .line 473
+    .line 851
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
-    move-result v1
+    move-result v2
 
-    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->setType(I)Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->setType(I)Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;
 
     goto :goto_0
 
-    .line 477
+    .line 855
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->setEscrowHandle(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->setEscrowHandle(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;
 
     goto :goto_0
 
-    .line 481
+    .line 859
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->setLastDigits(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->setLastDigits(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;
 
     goto :goto_0
 
-    .line 485
+    .line 863
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
-    move-result v1
+    move-result v2
 
-    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->setExpirationMonth(I)Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->setExpirationMonth(I)Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;
 
     goto :goto_0
 
-    .line 489
+    .line 867
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
-    move-result v1
+    move-result v2
 
-    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->setExpirationYear(I)Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->setExpirationYear(I)Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;
 
     goto :goto_0
 
-    .line 463
-    :sswitch_data_36
+    .line 871
+    :sswitch_36
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/CommonDevice$EfeParam;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$EfeParam;-><init>()V
+
+    .line 872
+    .local v1, value:Lcom/google/android/finsky/remoting/protos/CommonDevice$EfeParam;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 873
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->addEscrowEfeParam(Lcom/google/android/finsky/remoting/protos/CommonDevice$EfeParam;)Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;
+
+    goto :goto_0
+
+    .line 841
+    :sswitch_data_42
     .sparse-switch
         0x0 -> :sswitch_d
         0x8 -> :sswitch_e
@@ -408,6 +539,7 @@
         0x1a -> :sswitch_1e
         0x20 -> :sswitch_26
         0x28 -> :sswitch_2e
+        0x32 -> :sswitch_36
     .end sparse-switch
 .end method
 
@@ -421,7 +553,7 @@
     .end annotation
 
     .prologue
-    .line 301
+    .line 630
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;
 
     move-result-object v0
@@ -434,15 +566,15 @@
     .parameter "value"
 
     .prologue
-    .line 329
+    .line 659
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasEscrowHandle:Z
 
-    .line 330
+    .line 660
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->escrowHandle_:Ljava/lang/String;
 
-    .line 331
+    .line 661
     return-object p0
 .end method
 
@@ -451,15 +583,15 @@
     .parameter "value"
 
     .prologue
-    .line 363
+    .line 693
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasExpirationMonth:Z
 
-    .line 364
+    .line 694
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->expirationMonth_:I
 
-    .line 365
+    .line 695
     return-object p0
 .end method
 
@@ -468,15 +600,15 @@
     .parameter "value"
 
     .prologue
-    .line 380
+    .line 710
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasExpirationYear:Z
 
-    .line 381
+    .line 711
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->expirationYear_:I
 
-    .line 382
+    .line 712
     return-object p0
 .end method
 
@@ -485,15 +617,15 @@
     .parameter "value"
 
     .prologue
-    .line 346
+    .line 676
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasLastDigits:Z
 
-    .line 347
+    .line 677
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->lastDigits_:Ljava/lang/String;
 
-    .line 348
+    .line 678
     return-object p0
 .end method
 
@@ -502,20 +634,20 @@
     .parameter "value"
 
     .prologue
-    .line 312
+    .line 642
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasType:Z
 
-    .line 313
+    .line 643
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->type_:I
 
-    .line 314
+    .line 644
     return-object p0
 .end method
 
 .method public writeTo(Lcom/google/protobuf/micro/CodedOutputStreamMicro;)V
-    .registers 4
+    .registers 6
     .parameter "output"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -524,91 +656,124 @@
     .end annotation
 
     .prologue
-    .line 406
+    .line 774
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasType()Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_e
+    if-eqz v2, :cond_e
 
-    .line 407
-    const/4 v0, 0x1
+    .line 775
+    const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->getType()I
 
-    move-result v1
+    move-result v3
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 409
+    .line 777
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasEscrowHandle()Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_1c
+    if-eqz v2, :cond_1c
 
-    .line 410
-    const/4 v0, 0x2
+    .line 778
+    const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->getEscrowHandle()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 412
+    .line 780
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasLastDigits()Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_2a
+    if-eqz v2, :cond_2a
 
-    .line 413
-    const/4 v0, 0x3
+    .line 781
+    const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->getLastDigits()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 415
+    .line 783
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasExpirationMonth()Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_38
+    if-eqz v2, :cond_38
 
-    .line 416
-    const/4 v0, 0x4
+    .line 784
+    const/4 v2, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->getExpirationMonth()I
 
-    move-result v1
+    move-result v3
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 418
+    .line 786
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->hasExpirationYear()Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_46
+    if-eqz v2, :cond_46
 
-    .line 419
-    const/4 v0, 0x5
+    .line 787
+    const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->getExpirationYear()I
 
-    move-result v1
+    move-result v3
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 421
+    .line 789
     :cond_46
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;->getEscrowEfeParamList()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :goto_4e
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5f
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/remoting/protos/CommonDevice$EfeParam;
+
+    .line 790
+    .local v0, element:Lcom/google/android/finsky/remoting/protos/CommonDevice$EfeParam;
+    const/4 v2, 0x6
+
+    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    goto :goto_4e
+
+    .line 792
+    .end local v0           #element:Lcom/google/android/finsky/remoting/protos/CommonDevice$EfeParam;
+    :cond_5f
     return-void
 .end method

@@ -1,37 +1,31 @@
-.class Lcom/google/googlenav/ui/H;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class public Lcom/google/googlenav/ui/h;
+.super Lcom/google/googlenav/ui/bd;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/D;
+.field public a:Lad/t;
+
+.field public b:Z
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/D;)V
-    .registers 2
+.method public constructor <init>(Lcom/google/googlenav/ui/bd;Lad/t;Z)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/H;->a:Lcom/google/googlenav/ui/D;
+    .prologue
+    .line 21
+    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/bd;-><init>(Lcom/google/googlenav/ui/bd;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 22
+    iput-object p2, p0, Lcom/google/googlenav/ui/h;->a:Lad/t;
 
-    return-void
-.end method
+    .line 23
+    iput-boolean p3, p0, Lcom/google/googlenav/ui/h;->b:Z
 
-
-# virtual methods
-.method public run()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/H;->a:Lcom/google/googlenav/ui/D;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/D;->d(Lcom/google/googlenav/ui/D;)LaY/Y;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LaY/Y;->aa()V
-
+    .line 24
     return-void
 .end method

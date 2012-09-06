@@ -6,7 +6,7 @@
     </FrameLayout>
     <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip">
         <TextView android:textSize="@dimen/large_font_size" android:textStyle="bold" android:textColor="@color/primary_text" android:ellipsize="end" android:id="@id/channel_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
-        <TextView android:textSize="@dimen/extra_small_font_size" android:textColor="@color/secondary_font" android:id="@id/channel_views" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/channel_stats_views_empty" />
+        <TextView android:textSize="@dimen/extra_small_font_size" android:textColor="@color/secondary_font" android:id="@id/channel_video_views" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/channel_stats_video_views_empty" />
         <TextView android:textSize="@dimen/extra_small_font_size" android:textColor="@color/secondary_font" android:id="@id/channel_uploaded" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/channel_stats_uploaded_empty" />
         <TextView android:textSize="@dimen/extra_small_font_size" android:textColor="@color/secondary_font" android:id="@id/channel_subscribers" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/channel_stats_subscribers_empty" />
     </LinearLayout>

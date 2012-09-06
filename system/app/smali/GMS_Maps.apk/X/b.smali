@@ -1,122 +1,172 @@
 .class public LX/b;
-.super Ljava/lang/Thread;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LX/d;
 
 
 # instance fields
-.field final synthetic a:LX/a;
+.field private a:I
 
-.field private b:Ljava/lang/String;
-
-.field private c:Ljava/lang/Runnable;
+.field private b:I
 
 
 # direct methods
-.method public constructor <init>(LX/a;Ljava/lang/String;Ljava/lang/Runnable;)V
-    .registers 4
+.method public constructor <init>()V
+    .registers 2
 
-    iput-object p1, p0, LX/b;->a:LX/a;
+    .prologue
+    const/4 v0, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
+    .line 25
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, LX/a;->a(LX/a;)V
+    .line 28
+    iput v0, p0, LX/b;->a:I
 
-    iput-object p2, p0, LX/b;->b:Ljava/lang/String;
+    .line 29
+    iput v0, p0, LX/b;->b:I
 
-    iput-object p3, p0, LX/b;->c:Ljava/lang/Runnable;
+    .line 79
+    return-void
+.end method
+
+.method private declared-synchronized a()V
+    .registers 2
+
+    .prologue
+    .line 67
+    monitor-enter p0
+
+    :try_start_1
+    iget v0, p0, LX/b;->a:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, LX/b;->a:I
+    :try_end_7
+    .catchall {:try_start_1 .. :try_end_7} :catchall_9
+
+    .line 68
+    monitor-exit p0
+
+    return-void
+
+    .line 67
+    :catchall_9
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method static synthetic a(LX/b;)V
+    .registers 1
+    .parameter
+
+    .prologue
+    .line 25
+    invoke-direct {p0}, LX/b;->a()V
+
+    return-void
+.end method
+
+.method private declared-synchronized b()V
+    .registers 2
+
+    .prologue
+    .line 71
+    monitor-enter p0
+
+    :try_start_1
+    iget v0, p0, LX/b;->b:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, LX/b;->b:I
+    :try_end_7
+    .catchall {:try_start_1 .. :try_end_7} :catchall_9
+
+    .line 72
+    monitor-exit p0
+
+    return-void
+
+    .line 71
+    :catchall_9
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method static synthetic b(LX/b;)V
+    .registers 1
+    .parameter
+
+    .prologue
+    .line 25
+    invoke-direct {p0}, LX/b;->b()V
+
+    return-void
+.end method
+
+.method private declared-synchronized c()V
+    .registers 2
+
+    .prologue
+    .line 75
+    monitor-enter p0
+
+    :try_start_1
+    iget v0, p0, LX/b;->b:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, LX/b;->b:I
+    :try_end_7
+    .catchall {:try_start_1 .. :try_end_7} :catchall_9
+
+    .line 76
+    monitor-exit p0
+
+    return-void
+
+    .line 75
+    :catchall_9
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method static synthetic c(LX/b;)V
+    .registers 1
+    .parameter
+
+    .prologue
+    .line 25
+    invoke-direct {p0}, LX/b;->c()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .registers 3
+.method public a(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Thread;
+    .registers 4
+    .parameter
+    .parameter
 
-    :try_start_0
-    iget-object v0, p0, LX/b;->a:LX/a;
+    .prologue
+    .line 39
+    new-instance v0, LX/c;
 
-    invoke-static {v0}, LX/a;->b(LX/a;)V
-
-    iget-object v0, p0, LX/b;->c:Ljava/lang/Runnable;
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-    :try_end_a
-    .catchall {:try_start_0 .. :try_end_a} :catchall_1a
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_a} :catch_10
-
-    iget-object v0, p0, LX/b;->a:LX/a;
-
-    invoke-static {v0}, LX/a;->c(LX/a;)V
-
-    :goto_f
-    return-void
-
-    :catch_10
-    move-exception v0
-
-    :try_start_11
-    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
-    :try_end_14
-    .catchall {:try_start_11 .. :try_end_14} :catchall_1a
-
-    iget-object v0, p0, LX/b;->a:LX/a;
-
-    invoke-static {v0}, LX/a;->c(LX/a;)V
-
-    goto :goto_f
-
-    :catchall_1a
-    move-exception v0
-
-    iget-object v1, p0, LX/b;->a:LX/a;
-
-    invoke-static {v1}, LX/a;->c(LX/a;)V
-
-    throw v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Thread["
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, LX/b;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ","
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, LX/b;->getPriority()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    invoke-direct {v0, p0, p1, p2}, LX/c;-><init>(LX/b;Ljava/lang/String;Ljava/lang/Runnable;)V
 
     return-object v0
 .end method

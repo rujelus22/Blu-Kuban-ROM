@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/emailcommon/service/EmailServiceProxy;->getAliasFromMap(J)Ljava/lang/String;
+    value = Lcom/android/emailcommon/service/EmailServiceProxy;->startSync(JZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,22 +20,27 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
-.field final synthetic val$tId:J
+.field final synthetic val$mailboxId:J
+
+.field final synthetic val$userRequest:Z
 
 
 # direct methods
-.method constructor <init>(Lcom/android/emailcommon/service/EmailServiceProxy;J)V
-    .registers 4
+.method constructor <init>(Lcom/android/emailcommon/service/EmailServiceProxy;JZ)V
+    .registers 5
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 144
+    .line 157
     iput-object p1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$2;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
-    iput-wide p2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$2;->val$tId:J
+    iput-wide p2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$2;->val$mailboxId:J
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    iput-boolean p4, p0, Lcom/android/emailcommon/service/EmailServiceProxy$2;->val$userRequest:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -51,7 +56,7 @@
     .end annotation
 
     .prologue
-    .line 146
+    .line 159
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$2;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mCallback:Lcom/android/emailcommon/service/IEmailServiceCallback;
@@ -61,7 +66,6 @@
 
     if-eqz v0, :cond_17
 
-    .line 147
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$2;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mService:Lcom/android/emailcommon/service/IEmailService;
@@ -78,26 +82,21 @@
 
     invoke-interface {v0, v1}, Lcom/android/emailcommon/service/IEmailService;->setCallback(Lcom/android/emailcommon/service/IEmailServiceCallback;)V
 
-    .line 148
+    .line 160
     :cond_17
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$2;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
-    iget-object v1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$2;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
-
     #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mService:Lcom/android/emailcommon/service/IEmailService;
-    invoke-static {v1}, Lcom/android/emailcommon/service/EmailServiceProxy;->access$100(Lcom/android/emailcommon/service/EmailServiceProxy;)Lcom/android/emailcommon/service/IEmailService;
+    invoke-static {v0}, Lcom/android/emailcommon/service/EmailServiceProxy;->access$100(Lcom/android/emailcommon/service/EmailServiceProxy;)Lcom/android/emailcommon/service/IEmailService;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-wide v2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$2;->val$tId:J
+    iget-wide v1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$2;->val$mailboxId:J
 
-    invoke-interface {v1, v2, v3}, Lcom/android/emailcommon/service/IEmailService;->getAliasFromMap(J)Ljava/lang/String;
+    iget-boolean v3, p0, Lcom/android/emailcommon/service/EmailServiceProxy$2;->val$userRequest:Z
 
-    move-result-object v1
+    invoke-interface {v0, v1, v2, v3}, Lcom/android/emailcommon/service/IEmailService;->startSync(JZ)V
 
-    #setter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mAlias:Ljava/lang/String;
-    invoke-static {v0, v1}, Lcom/android/emailcommon/service/EmailServiceProxy;->access$202(Lcom/android/emailcommon/service/EmailServiceProxy;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 149
+    .line 161
     return-void
 .end method

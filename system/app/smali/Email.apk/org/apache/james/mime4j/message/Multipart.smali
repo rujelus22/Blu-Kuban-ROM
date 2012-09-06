@@ -32,37 +32,37 @@
     .registers 2
 
     .prologue
-    .line 54
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
-    .line 45
-    const-string v0, ""
-
-    iput-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->preamble:Ljava/lang/String;
+    .line 55
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     const-string v0, ""
 
-    iput-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->epilogue:Ljava/lang/String;
+    iput-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->preamble:Ljava/lang/String;
 
     .line 47
+    const-string v0, ""
+
+    iput-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->epilogue:Ljava/lang/String;
+
+    .line 48
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->bodyParts:Ljava/util/List;
 
-    .line 48
+    .line 49
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->parent:Lorg/apache/james/mime4j/message/Entity;
 
-    .line 49
+    .line 50
     const-string v0, "alternative"
 
     iput-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->subType:Ljava/lang/String;
 
-    .line 55
+    .line 56
     return-void
 .end method
 
@@ -70,12 +70,12 @@
     .registers 5
 
     .prologue
-    .line 191
+    .line 192
     invoke-virtual {p0}, Lorg/apache/james/mime4j/message/Multipart;->getParent()Lorg/apache/james/mime4j/message/Entity;
 
     move-result-object v1
 
-    .line 192
+    .line 193
     .local v1, e:Lorg/apache/james/mime4j/message/Entity;
     invoke-virtual {v1}, Lorg/apache/james/mime4j/message/Entity;->getHeader()Lorg/apache/james/mime4j/message/Header;
 
@@ -89,7 +89,7 @@
 
     check-cast v0, Lorg/apache/james/mime4j/field/ContentTypeField;
 
-    .line 193
+    .line 195
     .local v0, cField:Lorg/apache/james/mime4j/field/ContentTypeField;
     invoke-virtual {v0}, Lorg/apache/james/mime4j/field/ContentTypeField;->getBoundary()Ljava/lang/String;
 
@@ -102,12 +102,12 @@
     .registers 5
 
     .prologue
-    .line 197
+    .line 199
     invoke-virtual {p0}, Lorg/apache/james/mime4j/message/Multipart;->getParent()Lorg/apache/james/mime4j/message/Entity;
 
     move-result-object v1
 
-    .line 198
+    .line 200
     .local v1, e:Lorg/apache/james/mime4j/message/Entity;
     invoke-virtual {v1}, Lorg/apache/james/mime4j/message/Entity;->getHeader()Lorg/apache/james/mime4j/message/Header;
 
@@ -125,7 +125,7 @@
 
     move-result-object v0
 
-    .line 200
+    .line 201
     .local v0, charString:Ljava/lang/String;
     return-object v0
 .end method
@@ -137,17 +137,17 @@
     .parameter "bodyPart"
 
     .prologue
-    .line 141
+    .line 142
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->bodyParts:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 142
+    .line 143
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->parent:Lorg/apache/james/mime4j/message/Entity;
 
     invoke-virtual {p1, v0}, Lorg/apache/james/mime4j/message/BodyPart;->setParent(Lorg/apache/james/mime4j/message/Entity;)V
 
-    .line 143
+    .line 144
     return-void
 .end method
 
@@ -164,7 +164,7 @@
     .end annotation
 
     .prologue
-    .line 120
+    .line 121
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->bodyParts:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -178,7 +178,7 @@
     .registers 2
 
     .prologue
-    .line 102
+    .line 103
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->epilogue:Ljava/lang/String;
 
     return-object v0
@@ -188,7 +188,7 @@
     .registers 2
 
     .prologue
-    .line 83
+    .line 84
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->parent:Lorg/apache/james/mime4j/message/Entity;
 
     return-object v0
@@ -198,7 +198,7 @@
     .registers 2
 
     .prologue
-    .line 151
+    .line 152
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->preamble:Ljava/lang/String;
 
     return-object v0
@@ -209,10 +209,10 @@
     .parameter "epilogue"
 
     .prologue
-    .line 111
+    .line 112
     iput-object p1, p0, Lorg/apache/james/mime4j/message/Multipart;->epilogue:Ljava/lang/String;
 
-    .line 112
+    .line 113
     return-void
 .end method
 
@@ -221,10 +221,10 @@
     .parameter "parent"
 
     .prologue
-    .line 90
+    .line 91
     iput-object p1, p0, Lorg/apache/james/mime4j/message/Multipart;->parent:Lorg/apache/james/mime4j/message/Entity;
 
-    .line 91
+    .line 92
     iget-object v1, p0, Lorg/apache/james/mime4j/message/Multipart;->bodyParts:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -239,7 +239,7 @@
 
     if-eqz v1, :cond_18
 
-    .line 92
+    .line 93
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
@@ -250,7 +250,7 @@
 
     goto :goto_8
 
-    .line 94
+    .line 95
     :cond_18
     return-void
 .end method
@@ -260,10 +260,10 @@
     .parameter "preamble"
 
     .prologue
-    .line 160
+    .line 161
     iput-object p1, p0, Lorg/apache/james/mime4j/message/Multipart;->preamble:Ljava/lang/String;
 
-    .line 161
+    .line 162
     return-void
 .end method
 
@@ -277,18 +277,18 @@
     .end annotation
 
     .prologue
-    .line 167
+    .line 169
     invoke-direct {p0}, Lorg/apache/james/mime4j/message/Multipart;->getBoundary()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 168
+    .line 170
     .local v1, boundary:Ljava/lang/String;
     invoke-virtual {p0}, Lorg/apache/james/mime4j/message/Multipart;->getBodyParts()Ljava/util/List;
 
     move-result-object v0
 
-    .line 170
+    .line 172
     .local v0, bodyParts:Ljava/util/List;,"Ljava/util/List<Lorg/apache/james/mime4j/message/BodyPart;>;"
     new-instance v3, Ljava/io/BufferedWriter;
 
@@ -308,7 +308,7 @@
 
     invoke-direct {v3, v4, v5}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
 
-    .line 173
+    .line 174
     .local v3, writer:Ljava/io/BufferedWriter;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -334,7 +334,7 @@
 
     invoke-virtual {v3, v4}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
-    .line 175
+    .line 176
     const/4 v2, 0x0
 
     .local v2, i:I
@@ -345,7 +345,7 @@
 
     if-ge v2, v4, :cond_5f
 
-    .line 176
+    .line 177
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -366,7 +366,7 @@
 
     invoke-virtual {v3, v4}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
-    .line 177
+    .line 178
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -375,12 +375,12 @@
 
     invoke-virtual {v4, p1}, Lorg/apache/james/mime4j/message/BodyPart;->writeTo(Ljava/io/OutputStream;)V
 
-    .line 175
+    .line 176
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_37
 
-    .line 180
+    .line 181
     :cond_5f
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -406,7 +406,7 @@
 
     invoke-virtual {v3, v4}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
-    .line 181
+    .line 182
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -433,6 +433,6 @@
 
     invoke-virtual {v3, v4}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
-    .line 183
+    .line 184
     return-void
 .end method

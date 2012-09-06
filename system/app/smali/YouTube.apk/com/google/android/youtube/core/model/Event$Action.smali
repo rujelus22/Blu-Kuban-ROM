@@ -10,6 +10,8 @@
 
 .field public static final enum USER_SUBSCRIPTION_ADDED:Lcom/google/android/youtube/core/model/Event$Action;
 
+.field public static final enum VIDEO_ADDED_TO_PLAYLIST:Lcom/google/android/youtube/core/model/Event$Action;
+
 .field public static final enum VIDEO_COMMENTED:Lcom/google/android/youtube/core/model/Event$Action;
 
 .field public static final enum VIDEO_FAVORITED:Lcom/google/android/youtube/core/model/Event$Action;
@@ -42,89 +44,102 @@
 
     const/4 v4, 0x1
 
-    .line 24
+    .line 29
     new-instance v0, Lcom/google/android/youtube/core/model/Event$Action;
 
     const-string v1, "VIDEO_RATED"
 
-    const v2, 0x7f0a0049
+    const v2, 0x7f0b0056
 
     invoke-direct {v0, v1, v5, v2, v4}, Lcom/google/android/youtube/core/model/Event$Action;-><init>(Ljava/lang/String;IIZ)V
 
     sput-object v0, Lcom/google/android/youtube/core/model/Event$Action;->VIDEO_RATED:Lcom/google/android/youtube/core/model/Event$Action;
 
-    .line 25
+    .line 30
     new-instance v0, Lcom/google/android/youtube/core/model/Event$Action;
 
     const-string v1, "VIDEO_SHARED"
 
-    const v2, 0x7f0a004a
+    const v2, 0x7f0b0057
 
     invoke-direct {v0, v1, v4, v2, v4}, Lcom/google/android/youtube/core/model/Event$Action;-><init>(Ljava/lang/String;IIZ)V
 
     sput-object v0, Lcom/google/android/youtube/core/model/Event$Action;->VIDEO_SHARED:Lcom/google/android/youtube/core/model/Event$Action;
 
-    .line 26
+    .line 31
     new-instance v0, Lcom/google/android/youtube/core/model/Event$Action;
 
     const-string v1, "VIDEO_FAVORITED"
 
-    const v2, 0x7f0a004b
+    const v2, 0x7f0b0058
 
     invoke-direct {v0, v1, v6, v2, v4}, Lcom/google/android/youtube/core/model/Event$Action;-><init>(Ljava/lang/String;IIZ)V
 
     sput-object v0, Lcom/google/android/youtube/core/model/Event$Action;->VIDEO_FAVORITED:Lcom/google/android/youtube/core/model/Event$Action;
 
-    .line 27
+    .line 32
     new-instance v0, Lcom/google/android/youtube/core/model/Event$Action;
 
     const-string v1, "VIDEO_COMMENTED"
 
-    const v2, 0x7f0a004c
+    const v2, 0x7f0b0059
 
     invoke-direct {v0, v1, v7, v2, v4}, Lcom/google/android/youtube/core/model/Event$Action;-><init>(Ljava/lang/String;IIZ)V
 
     sput-object v0, Lcom/google/android/youtube/core/model/Event$Action;->VIDEO_COMMENTED:Lcom/google/android/youtube/core/model/Event$Action;
 
-    .line 28
+    .line 33
     new-instance v0, Lcom/google/android/youtube/core/model/Event$Action;
 
     const-string v1, "VIDEO_UPLOADED"
 
-    const v2, 0x7f0a004d
+    const v2, 0x7f0b005a
 
     invoke-direct {v0, v1, v8, v2, v4}, Lcom/google/android/youtube/core/model/Event$Action;-><init>(Ljava/lang/String;IIZ)V
 
     sput-object v0, Lcom/google/android/youtube/core/model/Event$Action;->VIDEO_UPLOADED:Lcom/google/android/youtube/core/model/Event$Action;
 
-    .line 29
+    .line 34
+    new-instance v0, Lcom/google/android/youtube/core/model/Event$Action;
+
+    const-string v1, "VIDEO_ADDED_TO_PLAYLIST"
+
+    const/4 v2, 0x5
+
+    const v3, 0x7f0b005b
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/android/youtube/core/model/Event$Action;-><init>(Ljava/lang/String;IIZ)V
+
+    sput-object v0, Lcom/google/android/youtube/core/model/Event$Action;->VIDEO_ADDED_TO_PLAYLIST:Lcom/google/android/youtube/core/model/Event$Action;
+
+    .line 35
     new-instance v0, Lcom/google/android/youtube/core/model/Event$Action;
 
     const-string v1, "FRIEND_ADDED"
 
-    const/4 v2, 0x5
+    const/4 v2, 0x6
 
-    const v3, 0x7f0a004e
+    const v3, 0x7f0b005c
 
     invoke-direct {v0, v1, v2, v3, v5}, Lcom/google/android/youtube/core/model/Event$Action;-><init>(Ljava/lang/String;IIZ)V
 
     sput-object v0, Lcom/google/android/youtube/core/model/Event$Action;->FRIEND_ADDED:Lcom/google/android/youtube/core/model/Event$Action;
 
-    .line 30
+    .line 36
     new-instance v0, Lcom/google/android/youtube/core/model/Event$Action;
 
     const-string v1, "USER_SUBSCRIPTION_ADDED"
 
-    const/4 v2, 0x6
+    const/4 v2, 0x7
 
-    const v3, 0x7f0a004f
+    const v3, 0x7f0b005d
 
     invoke-direct {v0, v1, v2, v3, v5}, Lcom/google/android/youtube/core/model/Event$Action;-><init>(Ljava/lang/String;IIZ)V
 
     sput-object v0, Lcom/google/android/youtube/core/model/Event$Action;->USER_SUBSCRIPTION_ADDED:Lcom/google/android/youtube/core/model/Event$Action;
 
-    .line 23
-    const/4 v0, 0x7
+    .line 28
+    const/16 v0, 0x8
 
     new-array v0, v0, [Lcom/google/android/youtube/core/model/Event$Action;
 
@@ -150,11 +165,17 @@
 
     const/4 v1, 0x5
 
-    sget-object v2, Lcom/google/android/youtube/core/model/Event$Action;->FRIEND_ADDED:Lcom/google/android/youtube/core/model/Event$Action;
+    sget-object v2, Lcom/google/android/youtube/core/model/Event$Action;->VIDEO_ADDED_TO_PLAYLIST:Lcom/google/android/youtube/core/model/Event$Action;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
+
+    sget-object v2, Lcom/google/android/youtube/core/model/Event$Action;->FRIEND_ADDED:Lcom/google/android/youtube/core/model/Event$Action;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
 
     sget-object v2, Lcom/google/android/youtube/core/model/Event$Action;->USER_SUBSCRIPTION_ADDED:Lcom/google/android/youtube/core/model/Event$Action;
 
@@ -173,16 +194,16 @@
     .parameter
 
     .prologue
-    .line 38
+    .line 44
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 39
+    .line 45
     iput p3, p0, Lcom/google/android/youtube/core/model/Event$Action;->stringId:I
 
-    .line 40
+    .line 46
     iput-boolean p4, p0, Lcom/google/android/youtube/core/model/Event$Action;->targetsVideo:Z
 
-    .line 41
+    .line 47
     return-void
 .end method
 
@@ -191,7 +212,7 @@
     .parameter
 
     .prologue
-    .line 23
+    .line 28
     const-class v0, Lcom/google/android/youtube/core/model/Event$Action;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -207,7 +228,7 @@
     .registers 1
 
     .prologue
-    .line 23
+    .line 28
     sget-object v0, Lcom/google/android/youtube/core/model/Event$Action;->$VALUES:[Lcom/google/android/youtube/core/model/Event$Action;
 
     invoke-virtual {v0}, [Lcom/google/android/youtube/core/model/Event$Action;->clone()Ljava/lang/Object;

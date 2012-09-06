@@ -1,677 +1,530 @@
-.class public Ls/b;
-.super Landroid/location/Location;
+.class public Ls/B;
+.super Ls/D;
+.source "SourceFile"
 
 
 # instance fields
-.field private a:Z
+.field public c:Z
 
-.field private b:Z
-
-.field private c:Z
-
-.field private d:Lt/X;
-
-.field private e:Lt/L;
-
-.field private f:Lu/B;
-
-.field private g:D
-
-.field private h:I
-
-.field private i:I
-
-.field private j:J
-
-.field private k:Z
+.field private final d:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public constructor <init>(Landroid/location/Location;)V
-    .registers 5
+.method public constructor <init>()V
+    .registers 2
 
-    const/4 v2, 0x0
+    .prologue
+    .line 31
+    invoke-direct {p0}, Ls/D;-><init>()V
 
-    invoke-direct {p0, p1}, Landroid/location/Location;-><init>(Landroid/location/Location;)V
+    .line 32
+    const/4 v0, 0x0
 
-    const-wide/high16 v0, -0x4010
+    iput-boolean v0, p0, Ls/B;->c:Z
 
-    iput-wide v0, p0, Ls/b;->g:D
+    .line 39
+    new-instance v0, Ls/C;
 
-    const/4 v0, -0x1
+    invoke-direct {v0, p0}, Ls/C;-><init>(Ls/B;)V
 
-    iput v0, p0, Ls/b;->h:I
+    iput-object v0, p0, Ls/B;->d:Ljava/lang/Runnable;
 
-    iput v2, p0, Ls/b;->i:I
-
-    iput-boolean v2, p0, Ls/b;->k:Z
-
-    instance-of v0, p1, Ls/b;
-
-    if-eqz v0, :cond_4e
-
-    check-cast p1, Ls/b;
-
-    invoke-virtual {p1}, Ls/b;->a()Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Ls/b;->a:Z
-
-    invoke-virtual {p1}, Ls/b;->b()Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Ls/b;->b:Z
-
-    invoke-virtual {p1}, Ls/b;->e()Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Ls/b;->c:Z
-
-    invoke-virtual {p1}, Ls/b;->h()Lt/X;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ls/b;->d:Lt/X;
-
-    iget-object v0, p1, Ls/b;->e:Lt/L;
-
-    iput-object v0, p0, Ls/b;->e:Lt/L;
-
-    invoke-virtual {p1}, Ls/b;->j()Lu/B;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ls/b;->f:Lu/B;
-
-    invoke-virtual {p1}, Ls/b;->l()D
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Ls/b;->g:D
-
-    iget v0, p1, Ls/b;->h:I
-
-    iput v0, p0, Ls/b;->h:I
-
-    iget v0, p1, Ls/b;->i:I
-
-    iput v0, p0, Ls/b;->i:I
-
-    iget-wide v0, p1, Ls/b;->j:J
-
-    iput-wide v0, p0, Ls/b;->j:J
-
-    iget-boolean v0, p1, Ls/b;->k:Z
-
-    iput-boolean v0, p0, Ls/b;->k:Z
-
-    :goto_4d
     return-void
-
-    :cond_4e
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Ls/b;->j:J
-
-    goto :goto_4d
 .end method
 
-.method public constructor <init>(Ljava/lang/String;)V
+.method private static a(Lcom/google/android/maps/driveabout/app/aN;)Landroid/content/Intent;
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 143
+    new-instance v0, Landroid/content/Intent;
+
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+
+    .line 144
+    const-string v1, "com.google.android.apps.maps"
+
+    const-string v2, "com.google.android.maps.MapsActivity"
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 145
+    const/high16 v1, 0x1000
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    .line 146
+    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/app/aN;->C()Lo/P;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_8e
+
+    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/app/aN;->C()Lo/P;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lo/P;->d()Lo/Q;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_8e
+
+    .line 148
+    const-string v1, "android.intent.action.VIEW"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 149
+    new-instance v1, Landroid/net/Uri$Builder;
+
+    invoke-direct {v1}, Landroid/net/Uri$Builder;-><init>()V
+
+    const-string v2, "http"
+
+    invoke-virtual {v1, v2}, Landroid/net/Uri$Builder;->scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v1
+
+    const-string v2, "maps.google.com"
+
+    invoke-virtual {v1, v2}, Landroid/net/Uri$Builder;->authority(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v1
+
+    const-string v2, "/"
+
+    invoke-virtual {v1, v2}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v1
+
+    const-string v2, ""
+
+    invoke-virtual {v1, v2}, Landroid/net/Uri$Builder;->fragment(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v1
+
+    .line 154
+    const-string v2, "myl"
+
+    const-string v3, "saddr"
+
+    invoke-virtual {v1, v2, v3}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    .line 155
+    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/app/aN;->F()I
+
+    move-result v2
+
+    if-nez v2, :cond_70
+
+    .line 156
+    const-string v2, "dirflg"
+
+    const-string v3, "d"
+
+    invoke-virtual {v1, v2, v3}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    .line 162
+    :cond_57
+    :goto_57
+    const-string v2, "daddr"
+
+    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/app/aN;->C()Lo/P;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lo/P;->d()Lo/Q;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lo/Q;->b()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v2, v3}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    .line 164
+    invoke-virtual {v1}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    .line 168
+    :goto_6f
+    return-object v0
+
+    .line 157
+    :cond_70
+    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/app/aN;->F()I
+
+    move-result v2
+
+    const/4 v3, 0x2
+
+    if-ne v2, v3, :cond_7f
+
+    .line 158
+    const-string v2, "dirflg"
+
+    const-string v3, "w"
+
+    invoke-virtual {v1, v2, v3}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    goto :goto_57
+
+    .line 159
+    :cond_7f
+    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/app/aN;->F()I
+
+    move-result v2
+
+    const/4 v3, 0x3
+
+    if-ne v2, v3, :cond_57
+
+    .line 160
+    const-string v2, "dirflg"
+
+    const-string v3, "b"
+
+    invoke-virtual {v1, v2, v3}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    goto :goto_57
+
+    .line 166
+    :cond_8e
+    const-string v1, "android.intent.action.MAIN"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    goto :goto_6f
+.end method
+
+.method static synthetic a(Ls/B;)Z
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 31
+    invoke-direct {p0}, Ls/B;->al()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method private ai()V
+    .registers 6
+
+    .prologue
+    .line 88
+    invoke-direct {p0}, Ls/B;->ak()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2c
+
+    .line 89
+    iget-object v0, p0, Ls/B;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->c()Lcom/google/android/maps/driveabout/app/cK;
+
+    move-result-object v0
+
+    const v1, 0x7f0d006b
+
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/cK;->a(I)V
+
+    .line 94
+    iget-object v0, p0, Ls/B;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    instance-of v0, v0, Lcom/google/android/maps/driveabout/app/NavigationView;
+
+    if-eqz v0, :cond_2b
+
+    .line 95
+    iget-object v0, p0, Ls/B;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/maps/driveabout/app/NavigationView;
+
+    iget-object v1, p0, Ls/B;->d:Ljava/lang/Runnable;
+
+    const-wide/16 v2, 0xc8
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/maps/driveabout/app/NavigationView;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 103
+    :cond_2b
+    :goto_2b
+    return-void
+
+    .line 98
+    :cond_2c
+    iget-object v0, p0, Ls/B;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->c()Lcom/google/android/maps/driveabout/app/cK;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/cK;->c()V
+
+    .line 99
+    iget-object v0, p0, Ls/B;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    const v1, 0x7f0d005a
+
+    const v2, 0x7f0d00bf
+
+    const v3, 0x7f0d00c0
+
+    iget-object v4, p0, Ls/B;->a:Ls/n;
+
+    invoke-virtual {v4}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
+
+    move-result-object v4
+
+    invoke-static {v4}, Ls/B;->a(Lcom/google/android/maps/driveabout/app/aN;)Landroid/content/Intent;
+
+    move-result-object v4
+
+    invoke-interface {v0, v1, v2, v3, v4}, Lcom/google/android/maps/driveabout/app/cI;->a(IIILandroid/content/Intent;)V
+
+    goto :goto_2b
+.end method
+
+.method private aj()I
+    .registers 4
+
+    .prologue
+    .line 111
+    const/4 v0, 0x1
+
+    .line 112
+    iget-object v1, p0, Ls/B;->a:Ls/n;
+
+    invoke-virtual {v1}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/app/aN;->F()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    if-ne v1, v2, :cond_f
+
+    .line 113
+    const/4 v0, 0x3
+
+    .line 115
+    :cond_f
+    return v0
+.end method
+
+.method private ak()Z
+    .registers 3
+
+    .prologue
+    .line 120
+    invoke-static {}, Lcom/google/android/maps/driveabout/app/ca;->a()Lcom/google/android/maps/driveabout/app/ca;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/ca;->h()Lcom/google/googlenav/j;
+
+    move-result-object v0
+
+    .line 122
+    invoke-direct {p0}, Ls/B;->aj()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/j;->a(I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method private al()Z
     .registers 5
 
-    const/4 v2, 0x0
+    .prologue
+    const/4 v0, 0x0
 
-    invoke-direct {p0, p1}, Landroid/location/Location;-><init>(Ljava/lang/String;)V
+    .line 129
+    invoke-static {}, Lcom/google/android/maps/driveabout/app/ca;->a()Lcom/google/android/maps/driveabout/app/ca;
 
-    const-wide/high16 v0, -0x4010
+    move-result-object v1
 
-    iput-wide v0, p0, Ls/b;->g:D
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/app/ca;->h()Lcom/google/googlenav/j;
 
-    const/4 v0, -0x1
+    move-result-object v1
 
-    iput v0, p0, Ls/b;->h:I
+    .line 131
+    iget-object v2, p0, Ls/B;->a:Ls/n;
 
-    iput v2, p0, Ls/b;->i:I
+    invoke-virtual {v2}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
 
-    iput-boolean v2, p0, Ls/b;->k:Z
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/google/android/maps/driveabout/app/aN;->b()Lm/b;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lt/e;->a(Landroid/location/Location;)Lat/B;
+
+    move-result-object v2
+
+    .line 133
+    invoke-direct {p0}, Ls/B;->aj()I
+
+    move-result v3
+
+    invoke-virtual {v1, v3, v2, v0}, Lcom/google/googlenav/j;->a(ILat/B;Z)Z
+
+    move-result v1
+
+    if-nez v1, :cond_22
+
+    :goto_21
+    return v0
+
+    :cond_22
+    const/4 v0, 0x1
+
+    goto :goto_21
+.end method
+
+.method static synthetic b(Ls/B;)V
+    .registers 1
+    .parameter
+
+    .prologue
+    .line 31
+    invoke-direct {p0}, Ls/B;->ai()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lt/L;)F
-    .registers 11
+.method protected ab()V
+    .registers 1
 
-    const/4 v0, 0x1
-
-    new-array v8, v0, [F
-
-    invoke-virtual {p0}, Ls/b;->getLatitude()D
-
-    move-result-wide v0
-
-    invoke-virtual {p0}, Ls/b;->getLongitude()D
-
-    move-result-wide v2
-
-    invoke-virtual {p1}, Lt/L;->b()D
-
-    move-result-wide v4
-
-    invoke-virtual {p1}, Lt/L;->d()D
-
-    move-result-wide v6
-
-    invoke-static/range {v0 .. v8}, Ls/b;->distanceBetween(DDDD[F)V
-
-    const/4 v0, 0x0
-
-    aget v0, v8, v0
-
-    return v0
-.end method
-
-.method public a(Lt/o;)F
-    .registers 13
-
-    const-wide v9, 0x3eb0c6f7a0b5ed8dL
-
-    const/4 v0, 0x2
-
-    new-array v8, v0, [F
-
-    invoke-virtual {p0}, Ls/b;->getLatitude()D
-
-    move-result-wide v0
-
-    invoke-virtual {p0}, Ls/b;->getLongitude()D
-
-    move-result-wide v2
-
-    invoke-virtual {p1}, Lt/o;->a()I
-
-    move-result v4
-
-    int-to-double v4, v4
-
-    mul-double/2addr v4, v9
-
-    invoke-virtual {p1}, Lt/o;->b()I
-
-    move-result v6
-
-    int-to-double v6, v6
-
-    mul-double/2addr v6, v9
-
-    invoke-static/range {v0 .. v8}, Ls/b;->distanceBetween(DDDD[F)V
-
-    const/4 v0, 0x1
-
-    aget v0, v8, v0
-
-    return v0
-.end method
-
-.method public a(D)V
-    .registers 3
-
-    iput-wide p1, p0, Ls/b;->g:D
-
+    .prologue
+    .line 80
     return-void
 .end method
 
-.method public a(I)V
-    .registers 2
-
-    iput p1, p0, Ls/b;->h:I
-
-    return-void
-.end method
-
-.method public a(J)V
-    .registers 3
-
-    iput-wide p1, p0, Ls/b;->j:J
-
-    return-void
-.end method
-
-.method public a(Lt/X;Lt/L;)V
-    .registers 3
-
-    iput-object p1, p0, Ls/b;->d:Lt/X;
-
-    if-nez p1, :cond_5
-
-    const/4 p2, 0x0
-
-    :cond_5
-    iput-object p2, p0, Ls/b;->e:Lt/L;
-
-    return-void
-.end method
-
-.method public a(Lu/B;)V
-    .registers 2
-
-    iput-object p1, p0, Ls/b;->f:Lu/B;
-
-    return-void
-.end method
-
-.method public a(Z)V
-    .registers 2
-
-    iput-boolean p1, p0, Ls/b;->a:Z
-
-    return-void
-.end method
-
-.method public a()Z
-    .registers 2
-
-    iget-boolean v0, p0, Ls/b;->a:Z
-
-    return v0
-.end method
-
-.method public b(Lt/o;)F
-    .registers 13
-
-    const-wide v9, 0x3eb0c6f7a0b5ed8dL
-
-    const/4 v0, 0x1
-
-    new-array v8, v0, [F
-
-    invoke-virtual {p0}, Ls/b;->getLatitude()D
-
-    move-result-wide v0
-
-    invoke-virtual {p0}, Ls/b;->getLongitude()D
-
-    move-result-wide v2
-
-    invoke-virtual {p1}, Lt/o;->a()I
-
-    move-result v4
-
-    int-to-double v4, v4
-
-    mul-double/2addr v4, v9
-
-    invoke-virtual {p1}, Lt/o;->b()I
-
-    move-result v6
-
-    int-to-double v6, v6
-
-    mul-double/2addr v6, v9
-
-    invoke-static/range {v0 .. v8}, Ls/b;->distanceBetween(DDDD[F)V
-
-    const/4 v0, 0x0
-
-    aget v0, v8, v0
-
-    return v0
-.end method
-
-.method public b(I)V
-    .registers 2
-
-    iput p1, p0, Ls/b;->i:I
-
-    return-void
-.end method
-
-.method public b(Z)V
-    .registers 2
-
-    iput-boolean p1, p0, Ls/b;->b:Z
-
-    return-void
-.end method
-
-.method public b()Z
-    .registers 2
-
-    iget-boolean v0, p0, Ls/b;->a:Z
-
-    if-eqz v0, :cond_a
-
-    iget-boolean v0, p0, Ls/b;->b:Z
-
-    if-eqz v0, :cond_a
-
-    const/4 v0, 0x1
-
-    :goto_9
-    return v0
-
-    :cond_a
-    const/4 v0, 0x0
-
-    goto :goto_9
-.end method
-
-.method public c(Z)V
-    .registers 2
-
-    iput-boolean p1, p0, Ls/b;->c:Z
-
-    return-void
-.end method
-
-.method public c()Z
-    .registers 2
-
-    iget v0, p0, Ls/b;->h:I
-
-    if-ltz v0, :cond_6
-
-    const/4 v0, 0x1
-
-    :goto_5
-    return v0
-
-    :cond_6
-    const/4 v0, 0x0
-
-    goto :goto_5
-.end method
-
-.method public d()I
-    .registers 2
-
-    iget v0, p0, Ls/b;->h:I
-
-    return v0
-.end method
-
-.method public d(Z)V
-    .registers 2
-
-    iput-boolean p1, p0, Ls/b;->k:Z
-
-    return-void
-.end method
-
-.method public e()Z
-    .registers 2
-
-    iget-boolean v0, p0, Ls/b;->c:Z
-
-    return v0
-.end method
-
-.method public f()I
-    .registers 2
-
-    iget v0, p0, Ls/b;->i:I
-
-    return v0
-.end method
-
-.method public g()Z
-    .registers 2
-
-    iget-boolean v0, p0, Ls/b;->k:Z
-
-    return v0
-.end method
-
-.method public h()Lt/X;
-    .registers 2
-
-    iget-object v0, p0, Ls/b;->d:Lt/X;
-
-    return-object v0
-.end method
-
-.method public i()Lt/L;
-    .registers 2
-
-    iget-object v0, p0, Ls/b;->e:Lt/L;
-
-    return-object v0
-.end method
-
-.method public j()Lu/B;
-    .registers 2
-
-    iget-object v0, p0, Ls/b;->f:Lu/B;
-
-    return-object v0
-.end method
-
-.method public k()Z
-    .registers 5
-
-    iget-wide v0, p0, Ls/b;->g:D
-
-    const-wide/16 v2, 0x0
-
-    cmpl-double v0, v0, v2
-
-    if-ltz v0, :cond_a
-
-    const/4 v0, 0x1
-
-    :goto_9
-    return v0
-
-    :cond_a
-    const/4 v0, 0x0
-
-    goto :goto_9
-.end method
-
-.method public l()D
-    .registers 3
-
-    iget-wide v0, p0, Ls/b;->g:D
-
-    return-wide v0
-.end method
-
-.method public m()Lt/o;
-    .registers 9
-
-    const-wide v6, 0x412e848000000000L
-
-    const-wide/high16 v4, 0x3fe0
-
-    new-instance v0, Lt/o;
-
-    invoke-virtual {p0}, Ls/b;->getLatitude()D
-
-    move-result-wide v1
-
-    mul-double/2addr v1, v6
-
-    add-double/2addr v1, v4
-
-    double-to-int v1, v1
-
-    invoke-virtual {p0}, Ls/b;->getLongitude()D
-
-    move-result-wide v2
-
-    mul-double/2addr v2, v6
-
-    add-double/2addr v2, v4
-
-    double-to-int v2, v2
-
-    invoke-direct {v0, v1, v2}, Lt/o;-><init>(II)V
-
-    return-object v0
-.end method
-
-.method public n()LaJ/B;
-    .registers 9
-
-    const-wide v6, 0x412e848000000000L
-
-    const-wide/high16 v4, 0x3fe0
-
-    new-instance v0, LaJ/B;
-
-    invoke-virtual {p0}, Ls/b;->getLatitude()D
-
-    move-result-wide v1
-
-    mul-double/2addr v1, v6
-
-    add-double/2addr v1, v4
-
-    double-to-int v1, v1
-
-    invoke-virtual {p0}, Ls/b;->getLongitude()D
-
-    move-result-wide v2
-
-    mul-double/2addr v2, v6
-
-    add-double/2addr v2, v4
-
-    double-to-int v2, v2
-
-    invoke-direct {v0, v1, v2}, LaJ/B;-><init>(II)V
-
-    return-object v0
-.end method
-
-.method public o()J
-    .registers 3
-
-    iget-wide v0, p0, Ls/b;->j:J
-
-    return-wide v0
-.end method
-
-.method public toString()Ljava/lang/String;
+.method public b()V
     .registers 4
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    .prologue
+    .line 55
+    iget-object v0, p0, Ls/B;->a:Ls/n;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "DriveAboutLocation[mIsGps:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
 
     move-result-object v0
 
-    iget-boolean v1, p0, Ls/b;->a:Z
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/aN;->F()I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    move-result v0
 
-    move-result-object v0
+    const/4 v1, 0x3
 
-    const-string v1, ", mIsGpsAccurate:"
+    if-ne v0, v1, :cond_2c
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {}, Lo/O;->a()Z
 
-    move-result-object v0
+    move-result v0
 
-    iget-boolean v1, p0, Ls/b;->b:Z
+    if-nez v0, :cond_2c
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    .line 57
+    iget-object v0, p0, Ls/B;->a:Ls/n;
 
-    move-result-object v0
-
-    const-string v1, ", mOnRoad:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ls/n;->c()Lcom/google/android/maps/driveabout/app/cK;
 
     move-result-object v0
 
-    iget-boolean v1, p0, Ls/b;->c:Z
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/cK;->c()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    .line 58
+    iget-object v0, p0, Ls/B;->a:Ls/n;
 
-    move-result-object v0
-
-    const-string v1, ", mOnRteCon:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
 
     move-result-object v0
 
-    iget-wide v1, p0, Ls/b;->g:D
+    const v1, 0x7f0d005a
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    const v2, 0x7f0d00bf
 
-    move-result-object v0
+    invoke-interface {v0, v1, v2}, Lcom/google/android/maps/driveabout/app/cI;->a(II)V
 
-    const-string v1, ", mNumSatInFix:"
+    .line 68
+    :goto_2b
+    return-void
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 63
+    :cond_2c
+    invoke-direct {p0}, Ls/B;->al()Z
 
-    move-result-object v0
+    move-result v0
 
-    iget v1, p0, Ls/b;->h:I
+    if-eqz v0, :cond_36
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    .line 64
+    const/4 v0, 0x1
 
-    move-result-object v0
+    iput-boolean v0, p0, Ls/B;->c:Z
 
-    const-string v1, ", ["
+    goto :goto_2b
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 66
+    :cond_36
+    invoke-direct {p0}, Ls/B;->ai()V
 
-    move-result-object v0
+    goto :goto_2b
+.end method
 
-    invoke-super {p0}, Landroid/location/Location;->toString()Ljava/lang/String;
+.method public c()V
+    .registers 4
 
-    move-result-object v1
+    .prologue
+    .line 73
+    iget-boolean v0, p0, Ls/B;->c:Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_c
 
-    move-result-object v0
+    .line 74
+    iget-object v0, p0, Ls/B;->a:Ls/n;
 
-    const-string v1, "]"
+    sget-object v1, Ls/w;->d:Ls/w;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v2, 0x1
 
-    move-result-object v0
+    invoke-virtual {v0, v1, v2}, Ls/n;->a(Ls/w;Z)Z
 
-    const-string v1, ", mFixTime:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v1, p0, Ls/b;->j:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", mIsProjected:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Ls/b;->k:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    .line 76
+    :cond_c
+    return-void
 .end method

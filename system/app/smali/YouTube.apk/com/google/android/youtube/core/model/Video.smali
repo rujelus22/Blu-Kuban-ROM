@@ -27,6 +27,8 @@
 
 .field public final contentRatings:Ljava/util/List;
 
+.field public final defaultThumbnailUri:Landroid/net/Uri;
+
 .field public final description:Ljava/lang/String;
 
 .field public final dislikesCount:I
@@ -61,15 +63,19 @@
 
 .field public final movie:Lcom/google/android/youtube/core/model/Video$Movie;
 
+.field public final mqThumbnailUri:Landroid/net/Uri;
+
 .field public final owner:Ljava/lang/String;
 
 .field public final ownerDisplayName:Ljava/lang/String;
+
+.field public final ownerUri:Landroid/net/Uri;
 
 .field public final pricing:Ljava/util/List;
 
 .field public final privacy:Lcom/google/android/youtube/core/model/Video$Privacy;
 
-.field public final pro:Lcom/google/android/youtube/core/model/s;
+.field public final pro:Lcom/google/android/youtube/core/model/r;
 
 .field public final publishedDate:Ljava/util/Date;
 
@@ -92,10 +98,13 @@
 .field public final threeDSource:Lcom/google/android/youtube/core/model/Video$ThreeDSource;
 
 .field public final thumbnailUri:Landroid/net/Uri;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public final title:Ljava/lang/String;
 
-.field public final trailer:Lcom/google/android/youtube/core/model/t;
+.field public final trailer:Lcom/google/android/youtube/core/model/s;
 
 .field public final uploadedDate:Ljava/util/Date;
 
@@ -111,7 +120,7 @@
     .registers 1
 
     .prologue
-    .line 695
+    .line 715
     const-string v0, "yt:cc_default_lang=([a-zA-Z]{2})"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -123,8 +132,11 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/util/Set;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Ljava/lang/String;IIIIILjava/lang/String;Ljava/util/Date;Ljava/util/Date;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/youtube/core/model/Video$Privacy;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;ZLjava/util/List;Lcom/google/android/youtube/core/model/Video$State;Ljava/util/Set;ZZLjava/util/Set;ZLcom/google/android/youtube/core/model/s;Ljava/util/List;Landroid/net/Uri;ZLcom/google/android/youtube/core/model/Video$ThreeDSource;Ljava/lang/String;)V
-    .registers 44
+.method public constructor <init>(Ljava/lang/String;Ljava/util/Set;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;Ljava/lang/String;IIIIILjava/lang/String;Landroid/net/Uri;Ljava/util/Date;Ljava/util/Date;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/youtube/core/model/Video$Privacy;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;ZLjava/util/List;Lcom/google/android/youtube/core/model/Video$State;Ljava/util/Set;ZZLjava/util/Set;ZLcom/google/android/youtube/core/model/r;Ljava/util/List;Landroid/net/Uri;ZLcom/google/android/youtube/core/model/Video$ThreeDSource;Ljava/lang/String;)V
+    .registers 47
+    .parameter
+    .parameter
+    .parameter
     .parameter
     .parameter
     .parameter
@@ -168,22 +180,22 @@
     .parameter
 
     .prologue
-    .line 556
+    .line 573
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 558
+    .line 575
     const-string v1, "youTubeId can\'t be empty"
 
-    invoke-static {p1, v1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/android/youtube/core/model/Video;->id:Ljava/lang/String;
 
-    .line 559
+    .line 576
     const-string v1, "streams can\'t be null"
 
-    invoke-static {p2, v1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -195,120 +207,135 @@
 
     iput-object v1, p0, Lcom/google/android/youtube/core/model/Video;->streams:Ljava/util/Set;
 
-    .line 560
+    .line 577
     iput-object p3, p0, Lcom/google/android/youtube/core/model/Video;->watchUri:Landroid/net/Uri;
 
-    .line 561
+    .line 578
     iput-object p4, p0, Lcom/google/android/youtube/core/model/Video;->thumbnailUri:Landroid/net/Uri;
 
-    .line 562
-    iput-object p5, p0, Lcom/google/android/youtube/core/model/Video;->hqThumbnailUri:Landroid/net/Uri;
+    .line 579
+    iput-object p5, p0, Lcom/google/android/youtube/core/model/Video;->defaultThumbnailUri:Landroid/net/Uri;
 
-    .line 563
-    iput-object p6, p0, Lcom/google/android/youtube/core/model/Video;->editUri:Landroid/net/Uri;
+    .line 580
+    iput-object p6, p0, Lcom/google/android/youtube/core/model/Video;->mqThumbnailUri:Landroid/net/Uri;
 
-    .line 564
-    iput-object p7, p0, Lcom/google/android/youtube/core/model/Video;->commentsUri:Landroid/net/Uri;
+    .line 581
+    iput-object p7, p0, Lcom/google/android/youtube/core/model/Video;->hqThumbnailUri:Landroid/net/Uri;
 
-    .line 565
-    iput-object p8, p0, Lcom/google/android/youtube/core/model/Video;->relatedUri:Landroid/net/Uri;
+    .line 582
+    iput-object p8, p0, Lcom/google/android/youtube/core/model/Video;->editUri:Landroid/net/Uri;
 
-    .line 566
-    iput-object p9, p0, Lcom/google/android/youtube/core/model/Video;->rateUri:Landroid/net/Uri;
+    .line 583
+    iput-object p9, p0, Lcom/google/android/youtube/core/model/Video;->commentsUri:Landroid/net/Uri;
 
-    .line 567
-    iput-object p10, p0, Lcom/google/android/youtube/core/model/Video;->captionTracksUri:Landroid/net/Uri;
+    .line 584
+    iput-object p10, p0, Lcom/google/android/youtube/core/model/Video;->relatedUri:Landroid/net/Uri;
 
-    .line 568
-    iput-object p11, p0, Lcom/google/android/youtube/core/model/Video;->title:Ljava/lang/String;
+    .line 585
+    iput-object p11, p0, Lcom/google/android/youtube/core/model/Video;->rateUri:Landroid/net/Uri;
 
-    .line 569
-    iput p12, p0, Lcom/google/android/youtube/core/model/Video;->duration:I
+    .line 586
+    iput-object p12, p0, Lcom/google/android/youtube/core/model/Video;->captionTracksUri:Landroid/net/Uri;
 
-    .line 570
-    iput p13, p0, Lcom/google/android/youtube/core/model/Video;->viewCount:I
+    .line 587
+    iput-object p13, p0, Lcom/google/android/youtube/core/model/Video;->title:Ljava/lang/String;
 
-    .line 571
+    .line 588
     move/from16 v0, p14
+
+    iput v0, p0, Lcom/google/android/youtube/core/model/Video;->duration:I
+
+    .line 589
+    move/from16 v0, p15
+
+    iput v0, p0, Lcom/google/android/youtube/core/model/Video;->viewCount:I
+
+    .line 590
+    move/from16 v0, p16
 
     iput v0, p0, Lcom/google/android/youtube/core/model/Video;->favoriteCount:I
 
-    .line 572
-    move/from16 v0, p15
+    .line 591
+    move/from16 v0, p17
 
     iput v0, p0, Lcom/google/android/youtube/core/model/Video;->likesCount:I
 
-    .line 573
-    move/from16 v0, p16
+    .line 592
+    move/from16 v0, p18
 
     iput v0, p0, Lcom/google/android/youtube/core/model/Video;->dislikesCount:I
 
-    .line 574
-    move-object/from16 v0, p17
+    .line 593
+    move-object/from16 v0, p19
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->owner:Ljava/lang/String;
 
-    .line 575
-    move-object/from16 v0, p18
+    .line 594
+    move-object/from16 v0, p20
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->ownerUri:Landroid/net/Uri;
+
+    .line 595
+    move-object/from16 v0, p21
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->uploadedDate:Ljava/util/Date;
 
-    .line 576
-    move-object/from16 v0, p19
+    .line 596
+    move-object/from16 v0, p22
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->publishedDate:Ljava/util/Date;
 
-    .line 577
-    move-object/from16 v0, p20
+    .line 597
+    move-object/from16 v0, p23
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->categoryTerm:Ljava/lang/String;
 
-    .line 578
-    move-object/from16 v0, p21
+    .line 598
+    move-object/from16 v0, p24
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->categoryLabel:Ljava/lang/String;
 
-    .line 579
-    move-object/from16 v0, p22
+    .line 599
+    move-object/from16 v0, p25
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->tags:Ljava/lang/String;
 
-    .line 580
-    move-object/from16 v0, p23
+    .line 600
+    move-object/from16 v0, p26
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->description:Ljava/lang/String;
 
-    .line 581
-    move-object/from16 v0, p24
+    .line 601
+    move-object/from16 v0, p27
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->privacy:Lcom/google/android/youtube/core/model/Video$Privacy;
 
-    .line 582
-    move-object/from16 v0, p25
+    .line 602
+    move-object/from16 v0, p28
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->accessControl:Ljava/util/Map;
 
-    .line 583
-    move-object/from16 v0, p26
+    .line 603
+    move-object/from16 v0, p29
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->location:Ljava/lang/String;
 
-    .line 584
-    move-object/from16 v0, p27
+    .line 604
+    move-object/from16 v0, p30
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->where:Ljava/lang/String;
 
-    .line 585
-    move/from16 v0, p28
+    .line 605
+    move/from16 v0, p31
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Video;->adultContent:Z
 
-    .line 586
+    .line 606
     const-string v1, "contentRatings can\'t be null"
 
-    move-object/from16 v0, p29
+    move-object/from16 v0, p32
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -320,12 +347,12 @@
 
     iput-object v1, p0, Lcom/google/android/youtube/core/model/Video;->contentRatings:Ljava/util/List;
 
-    .line 588
+    .line 608
     const-string v1, "state can\'t be null"
 
-    move-object/from16 v0, p30
+    move-object/from16 v0, p33
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -333,12 +360,12 @@
 
     iput-object v1, p0, Lcom/google/android/youtube/core/model/Video;->state:Lcom/google/android/youtube/core/model/Video$State;
 
-    .line 589
+    .line 609
     const-string v1, "restrictedCountries can\'t be null"
 
-    move-object/from16 v0, p31
+    move-object/from16 v0, p34
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -350,28 +377,28 @@
 
     iput-object v1, p0, Lcom/google/android/youtube/core/model/Video;->restrictedCountries:Ljava/util/Set;
 
-    .line 591
-    move/from16 v0, p32
+    .line 611
+    move/from16 v0, p35
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Video;->claimed:Z
 
-    .line 592
-    move/from16 v0, p33
+    .line 612
+    move/from16 v0, p36
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Video;->monetize:Z
 
-    .line 593
-    move/from16 v0, p35
+    .line 613
+    move/from16 v0, p38
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Video;->moderatedAutoplay:Z
 
-    .line 594
-    move-object/from16 v0, p34
+    .line 614
+    move-object/from16 v0, p37
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->monetizeExceptionCountries:Ljava/util/Set;
 
-    .line 596
-    if-nez p39, :cond_125
+    .line 616
+    if-nez p42, :cond_131
 
     sget-object v1, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_720P:Lcom/google/android/youtube/core/model/Stream$Quality;
 
@@ -379,107 +406,107 @@
 
     move-result v1
 
-    if-eqz v1, :cond_125
+    if-eqz v1, :cond_131
 
     const/4 v1, 0x1
 
-    :goto_b2
+    :goto_be
     iput-boolean v1, p0, Lcom/google/android/youtube/core/model/Video;->isHd:Z
 
-    .line 597
-    if-eqz p22, :cond_127
+    .line 617
+    if-eqz p25, :cond_133
 
     const-string v1, "yt:cc=alwayson"
 
-    move-object/from16 v0, p22
+    move-object/from16 v0, p25
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_127
+    if-eqz v1, :cond_133
 
     const/4 v1, 0x1
 
-    :goto_c1
+    :goto_cd
     iput-boolean v1, p0, Lcom/google/android/youtube/core/model/Video;->showSubtitlesAlways:Z
 
-    .line 598
+    .line 618
     iget-boolean v1, p0, Lcom/google/android/youtube/core/model/Video;->showSubtitlesAlways:Z
 
-    if-nez v1, :cond_d3
+    if-nez v1, :cond_df
 
-    if-eqz p22, :cond_129
+    if-eqz p25, :cond_135
 
     const-string v1, "yt:cc=on"
 
-    move-object/from16 v0, p22
+    move-object/from16 v0, p25
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_129
+    if-eqz v1, :cond_135
 
-    :cond_d3
+    :cond_df
     const/4 v1, 0x1
 
-    :goto_d4
+    :goto_e0
     iput-boolean v1, p0, Lcom/google/android/youtube/core/model/Video;->showSubtitlesByDefault:Z
 
-    .line 600
-    move-object/from16 v0, p36
+    .line 620
+    move-object/from16 v0, p39
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->pro:Lcom/google/android/youtube/core/model/s;
+    iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->pro:Lcom/google/android/youtube/core/model/r;
 
-    .line 601
-    move-object/from16 v0, p36
+    .line 621
+    move-object/from16 v0, p39
 
     instance-of v1, v0, Lcom/google/android/youtube/core/model/Video$Movie;
 
-    if-eqz v1, :cond_12b
+    if-eqz v1, :cond_137
 
-    move-object/from16 v1, p36
+    move-object/from16 v1, p39
 
     check-cast v1, Lcom/google/android/youtube/core/model/Video$Movie;
 
-    :goto_e4
+    :goto_f0
     iput-object v1, p0, Lcom/google/android/youtube/core/model/Video;->movie:Lcom/google/android/youtube/core/model/Video$Movie;
 
-    .line 602
-    move-object/from16 v0, p36
+    .line 622
+    move-object/from16 v0, p39
 
-    instance-of v1, v0, Lcom/google/android/youtube/core/model/t;
+    instance-of v1, v0, Lcom/google/android/youtube/core/model/s;
 
-    if-eqz v1, :cond_12d
+    if-eqz v1, :cond_139
 
-    move-object/from16 v1, p36
+    move-object/from16 v1, p39
 
-    check-cast v1, Lcom/google/android/youtube/core/model/t;
+    check-cast v1, Lcom/google/android/youtube/core/model/s;
 
-    :goto_f0
-    iput-object v1, p0, Lcom/google/android/youtube/core/model/Video;->trailer:Lcom/google/android/youtube/core/model/t;
+    :goto_fc
+    iput-object v1, p0, Lcom/google/android/youtube/core/model/Video;->trailer:Lcom/google/android/youtube/core/model/s;
 
-    .line 603
-    move-object/from16 v0, p36
+    .line 623
+    move-object/from16 v0, p39
 
     instance-of v1, v0, Lcom/google/android/youtube/core/model/Video$Episode;
 
-    if-eqz v1, :cond_12f
+    if-eqz v1, :cond_13b
 
-    check-cast p36, Lcom/google/android/youtube/core/model/Video$Episode;
+    check-cast p39, Lcom/google/android/youtube/core/model/Video$Episode;
 
-    :goto_fa
-    move-object/from16 v0, p36
+    :goto_106
+    move-object/from16 v0, p39
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->episode:Lcom/google/android/youtube/core/model/Video$Episode;
 
-    .line 604
+    .line 624
     const-string v1, "pricing can\'t be null"
 
-    move-object/from16 v0, p37
+    move-object/from16 v0, p40
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -491,77 +518,77 @@
 
     iput-object v1, p0, Lcom/google/android/youtube/core/model/Video;->pricing:Ljava/util/List;
 
-    .line 605
-    move-object/from16 v0, p38
+    .line 625
+    move-object/from16 v0, p41
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->liveEventUri:Landroid/net/Uri;
 
-    .line 606
-    move/from16 v0, p39
+    .line 626
+    move/from16 v0, p42
 
     iput-boolean v0, p0, Lcom/google/android/youtube/core/model/Video;->is3d:Z
 
-    .line 607
-    move-object/from16 v0, p40
+    .line 627
+    move-object/from16 v0, p43
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->threeDSource:Lcom/google/android/youtube/core/model/Video$ThreeDSource;
 
-    .line 608
-    invoke-static/range {p41 .. p41}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    .line 628
+    invoke-static/range {p44 .. p44}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_132
+    if-eqz v1, :cond_13e
 
-    :goto_120
-    move-object/from16 v0, p17
+    :goto_12c
+    move-object/from16 v0, p19
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Video;->ownerDisplayName:Ljava/lang/String;
 
-    .line 609
+    .line 629
     return-void
 
-    .line 596
-    :cond_125
+    .line 616
+    :cond_131
     const/4 v1, 0x0
 
-    goto :goto_b2
+    goto :goto_be
 
-    .line 597
-    :cond_127
+    .line 617
+    :cond_133
     const/4 v1, 0x0
 
-    goto :goto_c1
+    goto :goto_cd
 
-    .line 598
-    :cond_129
+    .line 618
+    :cond_135
     const/4 v1, 0x0
 
-    goto :goto_d4
+    goto :goto_e0
 
-    .line 601
-    :cond_12b
-    const/4 v1, 0x0
-
-    goto :goto_e4
-
-    .line 602
-    :cond_12d
+    .line 621
+    :cond_137
     const/4 v1, 0x0
 
     goto :goto_f0
 
-    .line 603
-    :cond_12f
-    const/16 p36, 0x0
+    .line 622
+    :cond_139
+    const/4 v1, 0x0
 
-    goto :goto_fa
+    goto :goto_fc
 
-    :cond_132
-    move-object/from16 p17, p41
+    .line 623
+    :cond_13b
+    const/16 p39, 0x0
 
-    .line 608
-    goto :goto_120
+    goto :goto_106
+
+    :cond_13e
+    move-object/from16 p19, p44
+
+    .line 628
+    goto :goto_12c
 .end method
 
 .method static synthetic access$000(Ljava/util/List;)Ljava/util/List;
@@ -596,7 +623,7 @@
     .parameter
 
     .prologue
-    .line 612
+    .line 632
     invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -614,15 +641,15 @@
 
     check-cast v0, Lcom/google/android/youtube/core/model/Stream;
 
-    .line 613
+    .line 633
     iget-object v0, v0, Lcom/google/android/youtube/core/model/Stream;->quality:Lcom/google/android/youtube/core/model/Stream$Quality;
 
     if-ne v0, p2, :cond_4
 
-    .line 614
+    .line 634
     const/4 v0, 0x1
 
-    .line 617
+    .line 637
     :goto_15
     return v0
 
@@ -637,7 +664,7 @@
     .parameter
 
     .prologue
-    .line 712
+    .line 732
     new-instance v0, Ljava/io/InvalidObjectException;
 
     const-string v1, "builder required"
@@ -652,7 +679,7 @@
     .parameter
 
     .prologue
-    .line 1464
+    .line 1515
     sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     if-ne p0, v0, :cond_5
@@ -673,7 +700,7 @@
     .parameter
 
     .prologue
-    .line 1468
+    .line 1519
     sget-object v0, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;
 
     if-ne p0, v0, :cond_5
@@ -694,7 +721,7 @@
     .parameter
 
     .prologue
-    .line 1472
+    .line 1523
     sget-object v0, Ljava/util/Collections;->EMPTY_SET:Ljava/util/Set;
 
     if-ne p0, v0, :cond_5
@@ -714,7 +741,7 @@
     .registers 2
 
     .prologue
-    .line 708
+    .line 728
     invoke-virtual {p0}, Lcom/google/android/youtube/core/model/Video;->buildUpon()Lcom/google/android/youtube/core/model/Video$Builder;
 
     move-result-object v0
@@ -728,7 +755,7 @@
     .registers 5
 
     .prologue
-    .line 716
+    .line 736
     new-instance v0, Lcom/google/android/youtube/core/model/Video$Builder;
 
     invoke-direct {v0}, Lcom/google/android/youtube/core/model/Video$Builder;-><init>()V
@@ -758,6 +785,18 @@
     iget-object v1, p0, Lcom/google/android/youtube/core/model/Video;->thumbnailUri:Landroid/net/Uri;
 
     invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Video$Builder;->thumbnailUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Video$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/Video;->defaultThumbnailUri:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Video$Builder;->defaultThumbnailUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Video$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/Video;->mqThumbnailUri:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Video$Builder;->mqThumbnailUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Video$Builder;
 
     move-result-object v0
 
@@ -836,6 +875,12 @@
     iget-object v1, p0, Lcom/google/android/youtube/core/model/Video;->owner:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Video$Builder;->owner(Ljava/lang/String;)Lcom/google/android/youtube/core/model/Video$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/Video;->ownerUri:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Video$Builder;->ownerUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Video$Builder;
 
     move-result-object v0
 
@@ -977,91 +1022,91 @@
 
     move-result-object v2
 
-    .line 759
+    .line 782
     invoke-virtual {p0}, Lcom/google/android/youtube/core/model/Video;->isMovie()Z
 
     move-result v0
 
-    if-eqz v0, :cond_174
+    if-eqz v0, :cond_186
 
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Video;->movie:Lcom/google/android/youtube/core/model/Video$Movie;
 
     move-object v1, v0
 
-    .line 760
-    :goto_103
-    if-eqz v1, :cond_140
+    .line 783
+    :goto_115
+    if-eqz v1, :cond_152
 
-    .line 761
+    .line 784
     invoke-virtual {p0}, Lcom/google/android/youtube/core/model/Video;->isMovie()Z
 
     move-result v0
 
-    if-eqz v0, :cond_18d
+    if-eqz v0, :cond_19f
 
     sget-object v0, Lcom/google/android/youtube/core/model/Video$MediaType;->MOVIE:Lcom/google/android/youtube/core/model/Video$MediaType;
 
-    .line 763
-    :goto_10d
+    .line 786
+    :goto_11f
     invoke-virtual {v2, v0}, Lcom/google/android/youtube/core/model/Video$Builder;->mediaType(Lcom/google/android/youtube/core/model/Video$MediaType;)Lcom/google/android/youtube/core/model/Video$Builder;
 
     move-result-object v0
 
-    iget-object v3, v1, Lcom/google/android/youtube/core/model/s;->f:Ljava/util/List;
+    iget-object v3, v1, Lcom/google/android/youtube/core/model/r;->f:Ljava/util/List;
 
     invoke-virtual {v0, v3}, Lcom/google/android/youtube/core/model/Video$Builder;->releaseMediums(Ljava/util/List;)Lcom/google/android/youtube/core/model/Video$Builder;
 
     move-result-object v0
 
-    iget-object v3, v1, Lcom/google/android/youtube/core/model/s;->g:Ljava/util/List;
+    iget-object v3, v1, Lcom/google/android/youtube/core/model/r;->g:Ljava/util/List;
 
     invoke-virtual {v0, v3}, Lcom/google/android/youtube/core/model/Video$Builder;->genres(Ljava/util/List;)Lcom/google/android/youtube/core/model/Video$Builder;
 
     move-result-object v0
 
-    iget-object v3, v1, Lcom/google/android/youtube/core/model/s;->h:Ljava/util/Map;
+    iget-object v3, v1, Lcom/google/android/youtube/core/model/r;->h:Ljava/util/Map;
 
     invoke-virtual {v0, v3}, Lcom/google/android/youtube/core/model/Video$Builder;->credits(Ljava/util/Map;)Lcom/google/android/youtube/core/model/Video$Builder;
 
     move-result-object v0
 
-    iget-object v3, v1, Lcom/google/android/youtube/core/model/s;->i:Ljava/util/Date;
+    iget-object v3, v1, Lcom/google/android/youtube/core/model/r;->i:Ljava/util/Date;
 
     invoke-virtual {v0, v3}, Lcom/google/android/youtube/core/model/Video$Builder;->releaseDate(Ljava/util/Date;)Lcom/google/android/youtube/core/model/Video$Builder;
 
     move-result-object v0
 
-    iget-object v3, v1, Lcom/google/android/youtube/core/model/s;->j:Ljava/util/Date;
+    iget-object v3, v1, Lcom/google/android/youtube/core/model/r;->j:Ljava/util/Date;
 
     invoke-virtual {v0, v3}, Lcom/google/android/youtube/core/model/Video$Builder;->availabilityStart(Ljava/util/Date;)Lcom/google/android/youtube/core/model/Video$Builder;
 
     move-result-object v0
 
-    iget-object v3, v1, Lcom/google/android/youtube/core/model/s;->k:Ljava/util/Date;
+    iget-object v3, v1, Lcom/google/android/youtube/core/model/r;->k:Ljava/util/Date;
 
     invoke-virtual {v0, v3}, Lcom/google/android/youtube/core/model/Video$Builder;->availabilityEnd(Ljava/util/Date;)Lcom/google/android/youtube/core/model/Video$Builder;
 
     move-result-object v0
 
-    iget-object v3, v1, Lcom/google/android/youtube/core/model/s;->l:Landroid/net/Uri;
+    iget-object v3, v1, Lcom/google/android/youtube/core/model/r;->l:Landroid/net/Uri;
 
     invoke-virtual {v0, v3}, Lcom/google/android/youtube/core/model/Video$Builder;->posterUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Video$Builder;
 
     move-result-object v0
 
-    iget-object v1, v1, Lcom/google/android/youtube/core/model/s;->m:Landroid/net/Uri;
+    iget-object v1, v1, Lcom/google/android/youtube/core/model/r;->m:Landroid/net/Uri;
 
     invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Video$Builder;->trailersUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Video$Builder;
 
-    .line 774
-    :cond_140
+    .line 797
+    :cond_152
     invoke-virtual {p0}, Lcom/google/android/youtube/core/model/Video;->isEpisode()Z
 
     move-result v0
 
-    if-eqz v0, :cond_19b
+    if-eqz v0, :cond_1ad
 
-    .line 775
+    .line 798
     sget-object v0, Lcom/google/android/youtube/core/model/Video$MediaType;->EPISODE:Lcom/google/android/youtube/core/model/Video$MediaType;
 
     invoke-virtual {v2, v0}, Lcom/google/android/youtube/core/model/Video$Builder;->mediaType(Lcom/google/android/youtube/core/model/Video$MediaType;)Lcom/google/android/youtube/core/model/Video$Builder;
@@ -1106,91 +1151,91 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Video$Builder;->episodeNumber(Ljava/lang/String;)Lcom/google/android/youtube/core/model/Video$Builder;
 
-    .line 787
-    :cond_173
-    :goto_173
+    .line 810
+    :cond_185
+    :goto_185
     return-object v2
 
-    .line 759
-    :cond_174
+    .line 782
+    :cond_186
     invoke-virtual {p0}, Lcom/google/android/youtube/core/model/Video;->isTrailer()Z
 
     move-result v0
 
-    if-eqz v0, :cond_17e
+    if-eqz v0, :cond_190
 
-    iget-object v0, p0, Lcom/google/android/youtube/core/model/Video;->trailer:Lcom/google/android/youtube/core/model/t;
+    iget-object v0, p0, Lcom/google/android/youtube/core/model/Video;->trailer:Lcom/google/android/youtube/core/model/s;
 
     move-object v1, v0
 
-    goto :goto_103
+    goto :goto_115
 
-    :cond_17e
+    :cond_190
     invoke-virtual {p0}, Lcom/google/android/youtube/core/model/Video;->isEpisode()Z
 
     move-result v0
 
-    if-eqz v0, :cond_189
+    if-eqz v0, :cond_19b
 
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Video;->episode:Lcom/google/android/youtube/core/model/Video$Episode;
 
     move-object v1, v0
 
-    goto/16 :goto_103
+    goto/16 :goto_115
 
-    :cond_189
+    :cond_19b
     const/4 v0, 0x0
 
     move-object v1, v0
 
-    goto/16 :goto_103
+    goto/16 :goto_115
 
-    .line 761
-    :cond_18d
+    .line 784
+    :cond_19f
     invoke-virtual {p0}, Lcom/google/android/youtube/core/model/Video;->isTrailer()Z
 
     move-result v0
 
-    if-eqz v0, :cond_197
+    if-eqz v0, :cond_1a9
 
     sget-object v0, Lcom/google/android/youtube/core/model/Video$MediaType;->TRAILER:Lcom/google/android/youtube/core/model/Video$MediaType;
 
-    goto/16 :goto_10d
+    goto/16 :goto_11f
 
-    :cond_197
+    :cond_1a9
     sget-object v0, Lcom/google/android/youtube/core/model/Video$MediaType;->EPISODE:Lcom/google/android/youtube/core/model/Video$MediaType;
 
-    goto/16 :goto_10d
+    goto/16 :goto_11f
 
-    .line 782
-    :cond_19b
+    .line 805
+    :cond_1ad
     invoke-virtual {p0}, Lcom/google/android/youtube/core/model/Video;->isTrailer()Z
 
     move-result v0
 
-    if-eqz v0, :cond_173
+    if-eqz v0, :cond_185
 
-    .line 783
+    .line 806
     sget-object v0, Lcom/google/android/youtube/core/model/Video$MediaType;->TRAILER:Lcom/google/android/youtube/core/model/Video$MediaType;
 
     invoke-virtual {v2, v0}, Lcom/google/android/youtube/core/model/Video$Builder;->mediaType(Lcom/google/android/youtube/core/model/Video$MediaType;)Lcom/google/android/youtube/core/model/Video$Builder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/youtube/core/model/Video;->trailer:Lcom/google/android/youtube/core/model/t;
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/Video;->trailer:Lcom/google/android/youtube/core/model/s;
 
-    iget-object v1, v1, Lcom/google/android/youtube/core/model/t;->a:Landroid/net/Uri;
+    iget-object v1, v1, Lcom/google/android/youtube/core/model/s;->a:Landroid/net/Uri;
 
     invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Video$Builder;->trailerForUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Video$Builder;
 
-    goto :goto_173
+    goto :goto_185
 .end method
 
 .method public final couldBeMusicVideo()Z
     .registers 3
 
     .prologue
-    .line 657
+    .line 677
     const-string v0, "Music"
 
     iget-object v1, p0, Lcom/google/android/youtube/core/model/Video;->categoryTerm:Ljava/lang/String;
@@ -1206,7 +1251,7 @@
     .registers 2
 
     .prologue
-    .line 664
+    .line 684
     iget-boolean v0, p0, Lcom/google/android/youtube/core/model/Video;->claimed:Z
 
     return v0
@@ -1217,23 +1262,23 @@
     .parameter
 
     .prologue
-    .line 627
+    .line 647
     instance-of v0, p1, Lcom/google/android/youtube/core/model/Video;
 
     if-nez v0, :cond_6
 
-    .line 628
+    .line 648
     const/4 v0, 0x0
 
-    .line 631
+    .line 651
     :goto_5
     return v0
 
-    .line 630
+    .line 650
     :cond_6
     check-cast p1, Lcom/google/android/youtube/core/model/Video;
 
-    .line 631
+    .line 651
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Video;->id:Ljava/lang/String;
 
     iget-object v1, p1, Lcom/google/android/youtube/core/model/Video;->id:Ljava/lang/String;
@@ -1249,12 +1294,12 @@
     .registers 3
 
     .prologue
-    .line 698
+    .line 718
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Video;->tags:Ljava/lang/String;
 
     if-eqz v0, :cond_18
 
-    .line 699
+    .line 719
     sget-object v0, Lcom/google/android/youtube/core/model/Video;->DEFAULT_LANG_REGEX:Ljava/util/regex/Pattern;
 
     iget-object v1, p0, Lcom/google/android/youtube/core/model/Video;->tags:Ljava/lang/String;
@@ -1263,21 +1308,21 @@
 
     move-result-object v0
 
-    .line 700
+    .line 720
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v1
 
     if-eqz v1, :cond_18
 
-    .line 701
+    .line 721
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 704
+    .line 724
     :goto_17
     return-object v0
 
@@ -1291,7 +1336,7 @@
     .registers 2
 
     .prologue
-    .line 622
+    .line 642
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Video;->id:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -1306,7 +1351,7 @@
     .parameter
 
     .prologue
-    .line 640
+    .line 660
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Video;->restrictedCountries:Ljava/util/Set;
 
     if-eqz v0, :cond_e
@@ -1334,7 +1379,7 @@
     .registers 2
 
     .prologue
-    .line 685
+    .line 705
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Video;->episode:Lcom/google/android/youtube/core/model/Video$Episode;
 
     if-eqz v0, :cond_6
@@ -1354,24 +1399,20 @@
     .registers 2
 
     .prologue
-    .line 692
+    .line 712
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Video;->liveEventUri:Landroid/net/Uri;
 
-    if-eqz v0, :cond_a
-
-    iget v0, p0, Lcom/google/android/youtube/core/model/Video;->duration:I
-
-    if-nez v0, :cond_a
+    if-eqz v0, :cond_6
 
     const/4 v0, 0x1
 
-    :goto_9
+    :goto_5
     return v0
 
-    :cond_a
+    :cond_6
     const/4 v0, 0x0
 
-    goto :goto_9
+    goto :goto_5
 .end method
 
 .method public final isMonetized(Ljava/lang/String;)Z
@@ -1379,12 +1420,12 @@
     .parameter
 
     .prologue
-    .line 644
+    .line 664
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Video;->monetizeExceptionCountries:Ljava/util/Set;
 
     if-eqz v0, :cond_12
 
-    .line 645
+    .line 665
     iget-boolean v0, p0, Lcom/google/android/youtube/core/model/Video;->monetize:Z
 
     iget-object v1, p0, Lcom/google/android/youtube/core/model/Video;->monetizeExceptionCountries:Ljava/util/Set;
@@ -1397,17 +1438,17 @@
 
     const/4 v0, 0x1
 
-    .line 647
+    .line 667
     :goto_f
     return v0
 
-    .line 645
+    .line 665
     :cond_10
     const/4 v0, 0x0
 
     goto :goto_f
 
-    .line 647
+    .line 667
     :cond_12
     iget-boolean v0, p0, Lcom/google/android/youtube/core/model/Video;->monetize:Z
 
@@ -1418,7 +1459,7 @@
     .registers 2
 
     .prologue
-    .line 671
+    .line 691
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Video;->movie:Lcom/google/android/youtube/core/model/Video$Movie;
 
     if-eqz v0, :cond_6
@@ -1438,8 +1479,8 @@
     .registers 2
 
     .prologue
-    .line 678
-    iget-object v0, p0, Lcom/google/android/youtube/core/model/Video;->trailer:Lcom/google/android/youtube/core/model/t;
+    .line 698
+    iget-object v0, p0, Lcom/google/android/youtube/core/model/Video;->trailer:Lcom/google/android/youtube/core/model/s;
 
     if-eqz v0, :cond_6
 
@@ -1458,16 +1499,12 @@
     .registers 3
 
     .prologue
-    .line 636
+    .line 656
     new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "Video[id = \'"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/android/youtube/core/model/Video;->id:Ljava/lang/String;
 

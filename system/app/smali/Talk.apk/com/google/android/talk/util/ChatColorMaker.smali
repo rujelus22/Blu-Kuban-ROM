@@ -32,7 +32,7 @@
     const/4 v1, 0x3
 
     .line 37
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 25
     new-array v0, v1, [F

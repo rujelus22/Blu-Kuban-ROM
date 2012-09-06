@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu
   xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/menu_media_route" android:title="@string/play_on_label" android:showAsAction="always" android:actionLayout="@layout/mediaroutebutton2" />
+    <item android:id="@id/menu_media_route_overflow" android:title="@string/play_on_label" android:showAsAction="never" />
     <item android:icon="@drawable/ic_menu_search" android:id="@id/menu_search" android:orderInCategory="50" android:title="@string/menu_search" android:imeOptions="actionSearch" android:showAsAction="always|collapseActionView" android:actionViewClass="android.widget.SearchView" />
     <item android:icon="@drawable/ic_menu_settings" android:id="@id/menu_settings" android:orderInCategory="100" android:title="@string/menu_settings" android:showAsAction="never" />
     <item android:id="@id/menu_feedback" android:orderInCategory="101" android:title="@string/menu_feedback" android:showAsAction="never" />

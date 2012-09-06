@@ -1,5 +1,6 @@
 .class Lcom/google/android/maps/rideabout/view/o;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
@@ -12,7 +13,10 @@
 # direct methods
 .method constructor <init>(Lcom/google/android/maps/rideabout/view/TransitStepDescriptionView;)V
     .registers 2
+    .parameter
 
+    .prologue
+    .line 200
     iput-object p1, p0, Lcom/google/android/maps/rideabout/view/o;->a:Lcom/google/android/maps/rideabout/view/TransitStepDescriptionView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -24,7 +28,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .registers 3
+    .parameter
 
+    .prologue
+    .line 203
     iget-object v0, p0, Lcom/google/android/maps/rideabout/view/o;->a:Lcom/google/android/maps/rideabout/view/TransitStepDescriptionView;
 
     invoke-static {v0}, Lcom/google/android/maps/rideabout/view/TransitStepDescriptionView;->a(Lcom/google/android/maps/rideabout/view/TransitStepDescriptionView;)Lcom/google/android/maps/rideabout/view/c;
@@ -33,6 +40,7 @@
 
     if-eqz v0, :cond_11
 
+    .line 204
     iget-object v0, p0, Lcom/google/android/maps/rideabout/view/o;->a:Lcom/google/android/maps/rideabout/view/TransitStepDescriptionView;
 
     invoke-static {v0}, Lcom/google/android/maps/rideabout/view/TransitStepDescriptionView;->a(Lcom/google/android/maps/rideabout/view/TransitStepDescriptionView;)Lcom/google/android/maps/rideabout/view/c;
@@ -41,6 +49,7 @@
 
     invoke-virtual {v0}, Lcom/google/android/maps/rideabout/view/c;->c()V
 
+    .line 206
     :cond_11
     return-void
 .end method

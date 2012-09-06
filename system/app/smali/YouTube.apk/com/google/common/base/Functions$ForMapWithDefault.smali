@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/base/k;
+.implements Lcom/google/common/base/v;
 .implements Ljava/io/Serializable;
 
 
@@ -21,14 +21,18 @@
 .method constructor <init>(Ljava/util/Map;Ljava/lang/Object;)V
     .registers 4
     .parameter
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 144
+    .line 151
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 145
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 152
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -36,60 +40,67 @@
 
     iput-object v0, p0, Lcom/google/common/base/Functions$ForMapWithDefault;->map:Ljava/util/Map;
 
-    .line 146
+    .line 153
     iput-object p2, p0, Lcom/google/common/base/Functions$ForMapWithDefault;->defaultValue:Ljava/lang/Object;
 
-    .line 147
+    .line 154
     return-void
 .end method
 
 
 # virtual methods
 .method public apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .registers 4
     .parameter
 
     .prologue
-    .line 149
-    iget-object v0, p0, Lcom/google/common/base/Functions$ForMapWithDefault;->map:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_f
-
+    .line 158
     iget-object v0, p0, Lcom/google/common/base/Functions$ForMapWithDefault;->map:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_e
+    .line 159
+    if-nez v0, :cond_10
+
+    iget-object v1, p0, Lcom/google/common/base/Functions$ForMapWithDefault;->map:Ljava/util/Map;
+
+    invoke-interface {v1, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_11
+
+    :cond_10
+    :goto_10
     return-object v0
 
-    :cond_f
+    :cond_11
     iget-object v0, p0, Lcom/google/common/base/Functions$ForMapWithDefault;->defaultValue:Ljava/lang/Object;
 
-    goto :goto_e
+    goto :goto_10
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
     .registers 5
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     const/4 v0, 0x0
 
-    .line 152
+    .line 163
     instance-of v1, p1, Lcom/google/common/base/Functions$ForMapWithDefault;
 
     if-eqz v1, :cond_1c
 
-    .line 153
+    .line 164
     check-cast p1, Lcom/google/common/base/Functions$ForMapWithDefault;
 
-    .line 154
+    .line 165
     iget-object v1, p0, Lcom/google/common/base/Functions$ForMapWithDefault;->map:Ljava/util/Map;
 
     iget-object v2, p1, Lcom/google/common/base/Functions$ForMapWithDefault;->map:Ljava/util/Map;
@@ -104,7 +115,7 @@
 
     iget-object v2, p1, Lcom/google/common/base/Functions$ForMapWithDefault;->defaultValue:Ljava/lang/Object;
 
-    invoke-static {v1, v2}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v2}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -112,7 +123,7 @@
 
     const/4 v0, 0x1
 
-    .line 157
+    .line 167
     :cond_1c
     return v0
 .end method
@@ -121,7 +132,7 @@
     .registers 4
 
     .prologue
-    .line 160
+    .line 171
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -149,16 +160,12 @@
     .registers 3
 
     .prologue
-    .line 163
+    .line 175
     new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "forMap("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/common/base/Functions$ForMapWithDefault;->map:Ljava/util/Map;
 

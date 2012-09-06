@@ -8,29 +8,29 @@
 
 
 # instance fields
-.field transient factory:Lcom/google/common/base/w;
+.field transient factory:Lcom/google/common/base/am;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/Map;Lcom/google/common/base/w;)V
+.method constructor <init>(Ljava/util/Map;Lcom/google/common/base/am;)V
     .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 107
+    .line 117
     invoke-direct {p0, p1}, Lcom/google/common/collect/AbstractMultimap;-><init>(Ljava/util/Map;)V
 
-    .line 108
-    invoke-static {p2}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 118
+    invoke-static {p2}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/common/base/w;
+    check-cast v0, Lcom/google/common/base/am;
 
-    iput-object v0, p0, Lcom/google/common/collect/Multimaps$CustomMultimap;->factory:Lcom/google/common/base/w;
+    iput-object v0, p0, Lcom/google/common/collect/Multimaps$CustomMultimap;->factory:Lcom/google/common/base/am;
 
-    .line 109
+    .line 119
     return-void
 .end method
 
@@ -39,29 +39,29 @@
     .parameter
 
     .prologue
-    .line 128
+    .line 140
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 129
+    .line 141
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/common/base/w;
+    check-cast v0, Lcom/google/common/base/am;
 
-    iput-object v0, p0, Lcom/google/common/collect/Multimaps$CustomMultimap;->factory:Lcom/google/common/base/w;
+    iput-object v0, p0, Lcom/google/common/collect/Multimaps$CustomMultimap;->factory:Lcom/google/common/base/am;
 
-    .line 130
+    .line 142
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map;
 
-    .line 131
+    .line 143
     invoke-virtual {p0, v0}, Lcom/google/common/collect/Multimaps$CustomMultimap;->setMap(Ljava/util/Map;)V
 
-    .line 132
+    .line 144
     return-void
 .end method
 
@@ -70,22 +70,22 @@
     .parameter
 
     .prologue
-    .line 120
+    .line 131
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 121
-    iget-object v0, p0, Lcom/google/common/collect/Multimaps$CustomMultimap;->factory:Lcom/google/common/base/w;
+    .line 132
+    iget-object v0, p0, Lcom/google/common/collect/Multimaps$CustomMultimap;->factory:Lcom/google/common/base/am;
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 122
+    .line 133
     invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$CustomMultimap;->backingMap()Ljava/util/Map;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 123
+    .line 134
     return-void
 .end method
 
@@ -95,10 +95,10 @@
     .registers 2
 
     .prologue
-    .line 112
-    iget-object v0, p0, Lcom/google/common/collect/Multimaps$CustomMultimap;->factory:Lcom/google/common/base/w;
+    .line 122
+    iget-object v0, p0, Lcom/google/common/collect/Multimaps$CustomMultimap;->factory:Lcom/google/common/base/am;
 
-    invoke-interface {v0}, Lcom/google/common/base/w;->get()Ljava/lang/Object;
+    invoke-interface {v0}, Lcom/google/common/base/am;->get()Ljava/lang/Object;
 
     move-result-object v0
 

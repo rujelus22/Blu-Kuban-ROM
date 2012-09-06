@@ -3,12 +3,12 @@
 .source "PurchaseInitiator.java"
 
 # interfaces
-.implements Lcom/android/volley/Response$ErrorListener;
+.implements Lcom/android/volley/Response$Listener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/utils/PurchaseInitiator;->makeFreePurchase(Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;)V
+    value = Lcom/google/android/finsky/utils/PurchaseInitiator;->createFreePurchaseListener(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;)Lcom/android/volley/Response$Listener;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,19 +16,29 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/android/volley/Response$Listener",
+        "<",
+        "Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;",
+        ">;"
+    }
+.end annotation
+
 
 # instance fields
+.field final synthetic val$account:Landroid/accounts/Account;
+
+.field final synthetic val$continueUrl:Ljava/lang/String;
+
 .field final synthetic val$doc:Lcom/google/android/finsky/api/model/Document;
 
-.field final synthetic val$docId:Ljava/lang/String;
-
-.field final synthetic val$packageName:Ljava/lang/String;
-
-.field final synthetic val$tracker:Lcom/google/android/finsky/model/PurchaseStatusTracker;
+.field final synthetic val$externalReferrer:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/model/PurchaseStatusTracker;Ljava/lang/String;)V
+.method constructor <init>(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;)V
     .registers 5
     .parameter
     .parameter
@@ -36,14 +46,14 @@
     .parameter
 
     .prologue
-    .line 61
-    iput-object p1, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$packageName:Ljava/lang/String;
+    .line 37
+    iput-object p1, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$account:Landroid/accounts/Account;
 
     iput-object p2, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$doc:Lcom/google/android/finsky/api/model/Document;
 
-    iput-object p3, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$tracker:Lcom/google/android/finsky/model/PurchaseStatusTracker;
+    iput-object p3, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$externalReferrer:Ljava/lang/String;
 
-    iput-object p4, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$docId:Ljava/lang/String;
+    iput-object p4, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$continueUrl:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -52,73 +62,145 @@
 
 
 # virtual methods
-.method public onErrorResponse(Lcom/android/volley/VolleyError;)V
-    .registers 7
-    .parameter "error"
+.method public onResponse(Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;)V
+    .registers 10
+    .parameter "buyResponse"
 
     .prologue
-    .line 64
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/finsky/FinskyApp;->getAnalytics()Lcom/google/android/finsky/analytics/Analytics;
-
-    move-result-object v1
-
-    const-string v2, "install.getAssetError"
-
-    iget-object v3, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$packageName:Ljava/lang/String;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-interface {v1, v2, v3, v4}, Lcom/google/android/finsky/analytics/Analytics;->logTagAndPackage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 67
-    const-string v1, "Error when attempting direct download of asset [%s]. Error=[%s]"
-
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
     const/4 v3, 0x0
 
-    iget-object v4, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$packageName:Ljava/lang/String;
+    .line 40
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseResponse()Z
 
-    aput-object v4, v2, v3
+    move-result v0
 
-    const/4 v3, 0x1
+    if-eqz v0, :cond_5a
 
-    aput-object p1, v2, v3
+    .line 41
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getPurchaseResponse()Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;
 
-    invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    move-result-object v7
 
-    .line 69
+    .line 43
+    .local v7, purchaseResponse:Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;
+    invoke-virtual {v7}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;->getStatus()I
+
+    move-result v0
+
+    if-nez v0, :cond_32
+
+    .line 44
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseStatusResponse()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2a
+
+    .line 45
+    iget-object v0, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$account:Landroid/accounts/Account;
+
     iget-object v1, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$doc:Lcom/google/android/finsky/api/model/Document;
 
-    const/16 v2, -0x65
+    iget-object v2, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$externalReferrer:Ljava/lang/String;
 
-    #calls: Lcom/google/android/finsky/utils/PurchaseInitiator;->createFreeAppDownloadError(Lcom/google/android/finsky/api/model/Document;I)Lcom/google/android/finsky/model/PurchaseStatusTracker$Error;
-    invoke-static {v1, v2}, Lcom/google/android/finsky/utils/PurchaseInitiator;->access$000(Lcom/google/android/finsky/api/model/Document;I)Lcom/google/android/finsky/model/PurchaseStatusTracker$Error;
+    iget-object v3, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$continueUrl:Ljava/lang/String;
+
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getPurchaseStatusResponse()Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;
+
+    move-result-object v4
+
+    const/4 v5, 0x1
+
+    const-string v6, "free_purchase"
+
+    invoke-static/range {v0 .. v6}, Lcom/google/android/finsky/utils/PurchaseInitiator;->processPurchaseStatusResponse(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;ZLjava/lang/String;)V
+
+    .line 62
+    .end local v7           #purchaseResponse:Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;
+    :goto_29
+    return-void
+
+    .line 51
+    .restart local v7       #purchaseResponse:Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;
+    :cond_2a
+    const-string v0, "Expected PurchaseStatusResponse."
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    invoke-static {v0, v3}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    goto :goto_29
+
+    .line 54
+    :cond_32
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
 
-    .line 70
-    .local v0, purchaseError:Lcom/google/android/finsky/model/PurchaseStatusTracker$Error;
-    iget-object v1, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$tracker:Lcom/google/android/finsky/model/PurchaseStatusTracker;
+    const v3, 0x7f0700fe
 
-    iget-object v2, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$docId:Ljava/lang/String;
+    invoke-virtual {v0, v3}, Lcom/google/android/finsky/FinskyApp;->getString(I)Ljava/lang/String;
 
-    const/4 v3, -0x1
+    move-result-object v1
 
-    invoke-virtual {v1, v2, v3, v0}, Lcom/google/android/finsky/model/PurchaseStatusTracker;->switchToError(Ljava/lang/String;ILcom/google/android/finsky/model/PurchaseStatusTracker$Error;)V
+    .line 55
+    .local v1, error:Ljava/lang/String;
+    invoke-virtual {v7}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;->getLocalizedErrorMessage()Ljava/lang/String;
 
-    .line 72
+    move-result-object v2
+
+    .line 56
+    .local v2, errorMessage:Ljava/lang/String;
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getNotifier()Lcom/google/android/finsky/utils/Notifier;
+
+    move-result-object v0
+
+    iget-object v3, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$doc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/api/model/Document;->getDocId()Ljava/lang/String;
+
+    move-result-object v4
+
+    iget-object v3, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->val$doc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/api/model/Document;->getDetailsUrl()Ljava/lang/String;
+
+    move-result-object v5
+
+    move-object v3, v2
+
+    invoke-interface/range {v0 .. v5}, Lcom/google/android/finsky/utils/Notifier;->showPurchaseErrorMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_29
+
+    .line 60
+    .end local v1           #error:Ljava/lang/String;
+    .end local v2           #errorMessage:Ljava/lang/String;
+    .end local v7           #purchaseResponse:Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;
+    :cond_5a
+    const-string v0, "Expected PurchaseResponse."
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    invoke-static {v0, v3}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    goto :goto_29
+.end method
+
+.method public bridge synthetic onResponse(Ljava/lang/Object;)V
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 37
+    check-cast p1, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
+
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/google/android/finsky/utils/PurchaseInitiator$1;->onResponse(Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;)V
+
     return-void
 .end method

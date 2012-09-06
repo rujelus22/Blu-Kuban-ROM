@@ -1,177 +1,77 @@
-.class public abstract Lcom/google/android/youtube/core/converter/http/ao;
-.super Ljava/lang/Object;
+.class final Lcom/google/android/youtube/core/converter/http/ao;
+.super Lcom/google/android/youtube/core/converter/l;
 .source "SourceFile"
 
-# interfaces
-.implements Lcom/google/android/youtube/core/converter/b;
+
+# instance fields
+.field final synthetic a:Lcom/google/android/youtube/core/converter/http/ag;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
+.method constructor <init>(Lcom/google/android/youtube/core/converter/http/ag;)V
+    .registers 2
+    .parameter
 
     .prologue
-    .line 33
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 39
+    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/ao;->a:Lcom/google/android/youtube/core/converter/http/ag;
+
+    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
     return-void
 .end method
 
-.method public static c()Lcom/google/android/youtube/core/converter/http/ao;
-    .registers 1
-
-    .prologue
-    .line 91
-    new-instance v0, Lcom/google/android/youtube/core/converter/http/ap;
-
-    invoke-direct {v0}, Lcom/google/android/youtube/core/converter/http/ap;-><init>()V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method protected a(Ljava/io/InputStream;)Ljava/lang/Object;
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 65
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method protected a(Lorg/apache/http/HttpEntity;)Ljava/lang/Object;
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;)V
     .registers 4
     .parameter
-
-    .prologue
-    .line 53
-    if-nez p1, :cond_a
-
-    .line 54
-    new-instance v0, Ljava/io/IOException;
-
-    const-string v1, "Empty response body"
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 56
-    :cond_a
-    invoke-interface {p1}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/core/converter/http/ao;->a(Ljava/io/InputStream;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public a(Lorg/apache/http/HttpResponse;)Ljava/lang/Object;
-    .registers 3
     .parameter
 
     .prologue
     .line 42
-    invoke-virtual {p0, p1}, Lcom/google/android/youtube/core/converter/http/ao;->c(Lorg/apache/http/HttpResponse;)V
+    new-instance v0, Lcom/google/android/youtube/core/model/Event$Builder;
+
+    invoke-direct {v0}, Lcom/google/android/youtube/core/model/Event$Builder;-><init>()V
+
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->offer(Ljava/lang/Object;)Z
 
     .line 43
-    invoke-interface {p1}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/core/converter/http/ao;->a(Lorg/apache/http/HttpEntity;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method
 
-.method public synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
+    .registers 6
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 33
-    check-cast p1, Lorg/apache/http/HttpResponse;
+    .line 47
+    const-class v0, Lcom/google/android/youtube/core/model/Event$Builder;
 
-    invoke-virtual {p0, p1}, Lcom/google/android/youtube/core/converter/http/ao;->a(Lorg/apache/http/HttpResponse;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected b(Lorg/apache/http/HttpResponse;)Lorg/apache/http/client/HttpResponseException;
-    .registers 5
-    .parameter
-
-    .prologue
-    .line 80
-    invoke-interface {p1}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->b(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 81
-    invoke-interface {v0}, Lorg/apache/http/StatusLine;->getStatusCode()I
+    check-cast v0, Lcom/google/android/youtube/core/model/Event$Builder;
 
-    move-result v1
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/model/Event$Builder;->build()Lcom/google/android/youtube/core/model/Event;
 
-    .line 82
-    invoke-interface {v0}, Lorg/apache/http/StatusLine;->getReasonPhrase()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v0
+    .line 48
+    const-class v0, Lcom/google/android/youtube/core/model/Page$Builder;
 
-    .line 83
-    new-instance v2, Lorg/apache/http/client/HttpResponseException;
-
-    invoke-direct {v2, v1, v0}, Lorg/apache/http/client/HttpResponseException;-><init>(ILjava/lang/String;)V
-
-    return-object v2
-.end method
-
-.method protected final c(Lorg/apache/http/HttpResponse;)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 69
-    invoke-interface {p1}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->a(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lorg/apache/http/StatusLine;->getStatusCode()I
+    check-cast v0, Lcom/google/android/youtube/core/model/Page$Builder;
 
-    move-result v0
+    .line 49
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Page$Builder;->addEntry(Ljava/lang/Object;)Lcom/google/android/youtube/core/model/Page$Builder;
 
-    const/16 v1, 0x12c
-
-    if-lt v0, v1, :cond_14
-
-    const/4 v0, 0x1
-
-    :goto_d
-    if-eqz v0, :cond_16
-
-    .line 70
-    invoke-virtual {p0, p1}, Lcom/google/android/youtube/core/converter/http/ao;->b(Lorg/apache/http/HttpResponse;)Lorg/apache/http/client/HttpResponseException;
-
-    move-result-object v0
-
-    throw v0
-
-    .line 69
-    :cond_14
-    const/4 v0, 0x0
-
-    goto :goto_d
-
-    .line 72
-    :cond_16
+    .line 50
     return-void
 .end method

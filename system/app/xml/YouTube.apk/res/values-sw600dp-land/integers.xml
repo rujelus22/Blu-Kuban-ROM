@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="detailed_channel_item_num_columns">3</integer>
+    <integer name="channel_store_num_columns">8</integer>
+</resources>

@@ -25,7 +25,7 @@
 
     .prologue
     .line 27
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,7 +48,7 @@
 
     throw v0
 
-    .line 39
+    .line 40
     :cond_c
     sget-object v0, Lcom/android/emailcommon/TempDirectory;->sTempDirectory:Ljava/io/File;
 

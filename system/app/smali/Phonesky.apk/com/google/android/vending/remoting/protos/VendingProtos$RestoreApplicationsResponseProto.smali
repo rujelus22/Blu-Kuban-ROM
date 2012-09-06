@@ -34,22 +34,22 @@
     .registers 2
 
     .prologue
-    .line 17253
+    .line 17734
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 17257
+    .line 17738
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;->asset_:Ljava/util/List;
 
-    .line 17308
+    .line 17790
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;->cachedSize:I
 
-    .line 17253
+    .line 17734
     return-void
 .end method
 
@@ -60,17 +60,17 @@
     .parameter "value"
 
     .prologue
-    .line 17274
+    .line 17755
     if-nez p1, :cond_8
 
-    .line 17275
+    .line 17756
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 17277
+    .line 17758
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;->asset_:Ljava/util/List;
 
@@ -80,20 +80,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 17278
+    .line 17759
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;->asset_:Ljava/util/List;
 
-    .line 17280
+    .line 17761
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;->asset_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 17281
+    .line 17762
     return-object p0
 .end method
 
@@ -110,7 +110,7 @@
     .end annotation
 
     .prologue
-    .line 17260
+    .line 17741
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;->asset_:Ljava/util/List;
 
     return-object v0
@@ -120,15 +120,15 @@
     .registers 2
 
     .prologue
-    .line 17310
+    .line 17793
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 17312
+    .line 17795
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;->getSerializedSize()I
 
-    .line 17314
+    .line 17797
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;->cachedSize:I
 
@@ -139,10 +139,10 @@
     .registers 5
 
     .prologue
-    .line 17318
+    .line 17802
     const/4 v2, 0x0
 
-    .line 17319
+    .line 17803
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;->getAssetList()Ljava/util/List;
 
@@ -166,7 +166,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;
 
-    .line 17320
+    .line 17804
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;
     const/4 v3, 0x1
 
@@ -178,12 +178,12 @@
 
     goto :goto_9
 
-    .line 17323
+    .line 17807
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;
     :cond_1c
     iput v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;->cachedSize:I
 
-    .line 17324
+    .line 17808
     return v2
 .end method
 
@@ -197,44 +197,44 @@
     .end annotation
 
     .prologue
-    .line 17331
+    .line 17816
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 17332
+    .line 17817
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1a
 
-    .line 17336
+    .line 17821
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 17337
+    .line 17822
     :sswitch_d
     return-object p0
 
-    .line 17342
+    .line 17827
     :sswitch_e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;-><init>()V
 
-    .line 17343
+    .line 17828
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 17344
+    .line 17829
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;->addAsset(Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;
 
     goto :goto_0
 
-    .line 17332
+    .line 17817
     :sswitch_data_1a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -252,7 +252,7 @@
     .end annotation
 
     .prologue
-    .line 17251
+    .line 17732
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;
 
     move-result-object v0
@@ -270,7 +270,7 @@
     .end annotation
 
     .prologue
-    .line 17303
+    .line 17785
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsResponseProto;->getAssetList()Ljava/util/List;
 
     move-result-object v2
@@ -293,7 +293,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;
 
-    .line 17304
+    .line 17786
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;
     const/4 v2, 0x1
 
@@ -301,7 +301,7 @@
 
     goto :goto_8
 
-    .line 17306
+    .line 17788
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;
     :cond_19
     return-void

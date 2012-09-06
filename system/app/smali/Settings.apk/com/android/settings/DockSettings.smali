@@ -284,7 +284,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_69
+    if-eqz v1, :cond_63
 
     move v1, v2
 
@@ -302,8 +302,6 @@
 
     move-result-object v4
 
-    invoke-virtual {v1, v4}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 94
     invoke-virtual {p0}, Lcom/android/settings/DockSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
@@ -314,8 +312,6 @@
     invoke-virtual {p0, v4}, Lcom/android/settings/DockSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v4
-
-    invoke-virtual {v1, v4}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     .line 96
     const-string v1, "cradle_enable"
@@ -337,25 +333,25 @@
 
     move-result v4
 
-    if-ne v4, v2, :cond_6b
+    if-ne v4, v2, :cond_65
 
-    :goto_65
+    :goto_5f
     invoke-virtual {v1, v2}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 99
     return-void
 
-    :cond_69
+    :cond_63
     move v1, v3
 
     .line 90
     goto :goto_34
 
-    :cond_6b
+    :cond_65
     move v2, v3
 
     .line 97
-    goto :goto_65
+    goto :goto_5f
 .end method
 
 

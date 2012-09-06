@@ -1,27 +1,23 @@
-.class Lcom/google/android/maps/driveabout/app/ap;
+.class Lcom/google/android/maps/driveabout/app/aP;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnMultiChoiceClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/ArrayList;
-
-.field final synthetic b:[Lu/b;
-
-.field final synthetic c:Lcom/google/android/maps/driveabout/app/am;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/aN;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/am;Ljava/util/ArrayList;[Lu/b;)V
-    .registers 4
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/aN;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/ap;->c:Lcom/google/android/maps/driveabout/app/am;
-
-    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/ap;->a:Ljava/util/ArrayList;
-
-    iput-object p3, p0, Lcom/google/android/maps/driveabout/app/ap;->b:[Lu/b;
+    .prologue
+    .line 592
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aP;->a:Lcom/google/android/maps/driveabout/app/aN;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -30,42 +26,15 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;IZ)V
-    .registers 8
+.method public run()V
+    .registers 2
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ap;->a:Ljava/util/ArrayList;
+    .prologue
+    .line 596
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aP;->a:Lcom/google/android/maps/driveabout/app/aN;
 
-    invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/aN;->S()V
 
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/ap;->b:[Lu/b;
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ap;->b:[Lu/b;
-
-    aget-object v3, v0, v1
-
-    if-eqz p3, :cond_1c
-
-    const/4 v0, 0x1
-
-    :goto_15
-    invoke-virtual {v3, v0}, Lu/b;->a(I)Lu/b;
-
-    move-result-object v0
-
-    aput-object v0, v2, v1
-
+    .line 597
     return-void
-
-    :cond_1c
-    const/4 v0, 0x0
-
-    goto :goto_15
 .end method

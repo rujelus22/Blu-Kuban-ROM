@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/collect/ew;
+.implements Lcom/google/common/collect/hu;
 .implements Ljava/io/Serializable;
 
 
@@ -20,7 +20,7 @@
 
 .field private transient map:Ljava/util/Map;
 
-.field private transient multiset:Lcom/google/common/collect/fj;
+.field private transient multiset:Lcom/google/common/collect/iq;
 
 .field private transient totalSize:I
 
@@ -33,20 +33,20 @@
     .parameter
 
     .prologue
-    .line 117
+    .line 118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 118
+    .line 119
     invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/common/base/t;->a(Z)V
-
-    .line 119
-    iput-object p1, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
+    invoke-static {v0}, Lcom/google/common/base/ag;->a(Z)V
 
     .line 120
+    iput-object p1, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
+
+    .line 121
     return-void
 .end method
 
@@ -55,7 +55,7 @@
     .parameter
 
     .prologue
-    .line 87
+    .line 88
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     return-object v0
@@ -67,7 +67,7 @@
     .parameter
 
     .prologue
-    .line 87
+    .line 88
     invoke-direct {p0, p1}, Lcom/google/common/collect/AbstractMultimap;->iteratorOrListIterator(Ljava/util/Collection;)Ljava/util/Iterator;
 
     move-result-object v0
@@ -75,38 +75,12 @@
     return-object v0
 .end method
 
-.method static synthetic access$1300(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;
-    .registers 4
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 87
-    invoke-direct {p0, p1, p2}, Lcom/google/common/collect/AbstractMultimap;->wrapCollection(Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic access$200(Lcom/google/common/collect/AbstractMultimap;)I
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 87
-    iget v0, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
-
-    return v0
-.end method
-
 .method static synthetic access$208(Lcom/google/common/collect/AbstractMultimap;)I
     .registers 3
     .parameter
 
     .prologue
-    .line 87
+    .line 88
     iget v0, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
     add-int/lit8 v1, v0, 0x1
@@ -121,7 +95,7 @@
     .parameter
 
     .prologue
-    .line 87
+    .line 88
     iget v0, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
     add-int/lit8 v1, v0, -0x1
@@ -137,7 +111,7 @@
     .parameter
 
     .prologue
-    .line 87
+    .line 88
     iget v0, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
     add-int/2addr v0, p1
@@ -153,7 +127,7 @@
     .parameter
 
     .prologue
-    .line 87
+    .line 88
     iget v0, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
     sub-int/2addr v0, p1
@@ -163,7 +137,7 @@
     return v0
 .end method
 
-.method static synthetic access$300(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/List;Lcom/google/common/collect/ai;)Ljava/util/List;
+.method static synthetic access$300(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/List;Lcom/google/common/collect/ae;)Ljava/util/List;
     .registers 5
     .parameter
     .parameter
@@ -171,8 +145,23 @@
     .parameter
 
     .prologue
-    .line 87
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/common/collect/AbstractMultimap;->wrapList(Ljava/lang/Object;Ljava/util/List;Lcom/google/common/collect/ai;)Ljava/util/List;
+    .line 88
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/common/collect/AbstractMultimap;->wrapList(Ljava/lang/Object;Ljava/util/List;Lcom/google/common/collect/ae;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static synthetic access$400(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 88
+    invoke-direct {p0, p1, p2}, Lcom/google/common/collect/AbstractMultimap;->wrapCollection(Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;
 
     move-result-object v0
 
@@ -185,7 +174,7 @@
     .parameter
 
     .prologue
-    .line 87
+    .line 88
     invoke-direct {p0, p1}, Lcom/google/common/collect/AbstractMultimap;->removeValuesForKey(Ljava/lang/Object;)I
 
     move-result v0
@@ -197,20 +186,20 @@
     .registers 3
 
     .prologue
-    .line 1294
+    .line 1162
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     instance-of v0, v0, Ljava/util/SortedMap;
 
     if-eqz v0, :cond_11
 
-    new-instance v1, Lcom/google/common/collect/ae;
+    new-instance v1, Lcom/google/common/collect/ac;
 
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     check-cast v0, Ljava/util/SortedMap;
 
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/ae;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/util/SortedMap;)V
+    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/ac;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/util/SortedMap;)V
 
     move-object v0, v1
 
@@ -218,57 +207,33 @@
     return-object v0
 
     :cond_11
-    new-instance v0, Lcom/google/common/collect/q;
+    new-instance v0, Lcom/google/common/collect/v;
 
     iget-object v1, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
-    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/q;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/util/Map;)V
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/v;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/util/Map;)V
 
     goto :goto_10
-.end method
-
-.method private createEntries()Ljava/util/Collection;
-    .registers 2
-
-    .prologue
-    .line 1186
-    instance-of v0, p0, Lcom/google/common/collect/fz;
-
-    if-eqz v0, :cond_a
-
-    new-instance v0, Lcom/google/common/collect/v;
-
-    invoke-direct {v0, p0}, Lcom/google/common/collect/v;-><init>(Lcom/google/common/collect/AbstractMultimap;)V
-
-    :goto_9
-    return-object v0
-
-    :cond_a
-    new-instance v0, Lcom/google/common/collect/t;
-
-    invoke-direct {v0, p0}, Lcom/google/common/collect/t;-><init>(Lcom/google/common/collect/AbstractMultimap;)V
-
-    goto :goto_9
 .end method
 
 .method private createKeySet()Ljava/util/Set;
     .registers 3
 
     .prologue
-    .line 832
+    .line 871
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     instance-of v0, v0, Ljava/util/SortedMap;
 
     if-eqz v0, :cond_11
 
-    new-instance v1, Lcom/google/common/collect/af;
+    new-instance v1, Lcom/google/common/collect/ad;
 
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     check-cast v0, Ljava/util/SortedMap;
 
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/af;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/util/SortedMap;)V
+    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/ad;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/util/SortedMap;)V
 
     move-object v0, v1
 
@@ -276,11 +241,11 @@
     return-object v0
 
     :cond_11
-    new-instance v0, Lcom/google/common/collect/w;
+    new-instance v0, Lcom/google/common/collect/z;
 
     iget-object v1, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
-    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/w;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/util/Map;)V
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/z;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/util/Map;)V
 
     goto :goto_10
 .end method
@@ -288,9 +253,12 @@
 .method private getOrCreateCollection(Ljava/lang/Object;)Ljava/util/Collection;
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 205
+    .line 212
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -299,20 +267,20 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 206
+    .line 213
     if-nez v0, :cond_13
 
-    .line 207
+    .line 214
     invoke-virtual {p0, p1}, Lcom/google/common/collect/AbstractMultimap;->createCollection(Ljava/lang/Object;)Ljava/util/Collection;
 
     move-result-object v0
 
-    .line 208
+    .line 215
     iget-object v1, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 210
+    .line 217
     :cond_13
     return-object v0
 .end method
@@ -322,7 +290,7 @@
     .parameter
 
     .prologue
-    .line 624
+    .line 640
     instance-of v0, p1, Ljava/util/List;
 
     if-eqz v0, :cond_b
@@ -351,7 +319,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1055
+    .line 1012
     :try_start_1
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
@@ -364,18 +332,18 @@
     .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_9} :catch_1c
     .catch Ljava/lang/ClassCastException; {:try_start_1 .. :try_end_9} :catch_1a
 
-    .line 1063
+    .line 1020
     if-eqz v0, :cond_17
 
-    .line 1064
+    .line 1021
     invoke-interface {v0}, Ljava/util/Collection;->size()I
 
     move-result v1
 
-    .line 1065
+    .line 1022
     invoke-interface {v0}, Ljava/util/Collection;->clear()V
 
-    .line 1066
+    .line 1023
     iget v0, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
     sub-int/2addr v0, v1
@@ -387,17 +355,17 @@
 
     move v1, v0
 
-    .line 1068
+    .line 1025
     :goto_19
     return v1
 
-    .line 1059
+    .line 1016
     :catch_1a
     move-exception v0
 
     goto :goto_19
 
-    .line 1057
+    .line 1014
     :catch_1c
     move-exception v0
 
@@ -409,29 +377,29 @@
     .parameter
 
     .prologue
-    .line 309
+    .line 320
     instance-of v0, p1, Ljava/util/SortedSet;
 
     if-eqz v0, :cond_b
 
-    .line 310
+    .line 321
     check-cast p1, Ljava/util/SortedSet;
 
     invoke-static {p1}, Ljava/util/Collections;->unmodifiableSortedSet(Ljava/util/SortedSet;)Ljava/util/SortedSet;
 
     move-result-object v0
 
-    .line 316
+    .line 327
     :goto_a
     return-object v0
 
-    .line 311
+    .line 322
     :cond_b
     instance-of v0, p1, Ljava/util/Set;
 
     if-eqz v0, :cond_16
 
-    .line 312
+    .line 323
     check-cast p1, Ljava/util/Set;
 
     invoke-static {p1}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
@@ -440,13 +408,13 @@
 
     goto :goto_a
 
-    .line 313
+    .line 324
     :cond_16
     instance-of v0, p1, Ljava/util/List;
 
     if-eqz v0, :cond_21
 
-    .line 314
+    .line 325
     check-cast p1, Ljava/util/List;
 
     invoke-static {p1}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -455,7 +423,7 @@
 
     goto :goto_a
 
-    .line 316
+    .line 327
     :cond_21
     invoke-static {p1}, Ljava/util/Collections;->unmodifiableCollection(Ljava/util/Collection;)Ljava/util/Collection;
 
@@ -467,89 +435,100 @@
 .method private wrapCollection(Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;
     .registers 5
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+    .end parameter
 
     .prologue
     const/4 v1, 0x0
 
-    .line 351
+    .line 364
     instance-of v0, p2, Ljava/util/SortedSet;
 
     if-eqz v0, :cond_d
 
-    .line 352
-    new-instance v0, Lcom/google/common/collect/an;
+    .line 365
+    new-instance v0, Lcom/google/common/collect/aj;
 
     check-cast p2, Ljava/util/SortedSet;
 
-    invoke-direct {v0, p0, p1, p2, v1}, Lcom/google/common/collect/an;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/SortedSet;Lcom/google/common/collect/ai;)V
+    invoke-direct {v0, p0, p1, p2, v1}, Lcom/google/common/collect/aj;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/SortedSet;Lcom/google/common/collect/ae;)V
 
-    .line 358
+    .line 371
     :goto_c
     return-object v0
 
-    .line 353
+    .line 366
     :cond_d
     instance-of v0, p2, Ljava/util/Set;
 
     if-eqz v0, :cond_19
 
-    .line 354
-    new-instance v0, Lcom/google/common/collect/am;
+    .line 367
+    new-instance v0, Lcom/google/common/collect/ai;
 
     check-cast p2, Ljava/util/Set;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/google/common/collect/am;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/Set;)V
+    invoke-direct {v0, p0, p1, p2}, Lcom/google/common/collect/ai;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/Set;)V
 
     goto :goto_c
 
-    .line 355
+    .line 368
     :cond_19
     instance-of v0, p2, Ljava/util/List;
 
     if-eqz v0, :cond_24
 
-    .line 356
+    .line 369
     check-cast p2, Ljava/util/List;
 
-    invoke-direct {p0, p1, p2, v1}, Lcom/google/common/collect/AbstractMultimap;->wrapList(Ljava/lang/Object;Ljava/util/List;Lcom/google/common/collect/ai;)Ljava/util/List;
+    invoke-direct {p0, p1, p2, v1}, Lcom/google/common/collect/AbstractMultimap;->wrapList(Ljava/lang/Object;Ljava/util/List;Lcom/google/common/collect/ae;)Ljava/util/List;
 
     move-result-object v0
 
     goto :goto_c
 
-    .line 358
+    .line 371
     :cond_24
-    new-instance v0, Lcom/google/common/collect/ai;
+    new-instance v0, Lcom/google/common/collect/ae;
 
-    invoke-direct {v0, p0, p1, p2, v1}, Lcom/google/common/collect/ai;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/Collection;Lcom/google/common/collect/ai;)V
+    invoke-direct {v0, p0, p1, p2, v1}, Lcom/google/common/collect/ae;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/Collection;Lcom/google/common/collect/ae;)V
 
     goto :goto_c
 .end method
 
-.method private wrapList(Ljava/lang/Object;Ljava/util/List;Lcom/google/common/collect/ai;)Ljava/util/List;
+.method private wrapList(Ljava/lang/Object;Ljava/util/List;Lcom/google/common/collect/ae;)Ljava/util/List;
     .registers 5
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 364
+    .line 377
     instance-of v0, p2, Ljava/util/RandomAccess;
 
     if-eqz v0, :cond_a
 
-    new-instance v0, Lcom/google/common/collect/ad;
+    new-instance v0, Lcom/google/common/collect/ab;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lcom/google/common/collect/ad;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/List;Lcom/google/common/collect/ai;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lcom/google/common/collect/ab;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/List;Lcom/google/common/collect/ae;)V
 
     :goto_9
     return-object v0
 
     :cond_a
-    new-instance v0, Lcom/google/common/collect/ak;
+    new-instance v0, Lcom/google/common/collect/ag;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lcom/google/common/collect/ak;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/List;Lcom/google/common/collect/ai;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lcom/google/common/collect/ag;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/List;Lcom/google/common/collect/ae;)V
 
     goto :goto_9
 .end method
@@ -560,10 +539,10 @@
     .registers 2
 
     .prologue
-    .line 1289
+    .line 1157
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->asMap:Ljava/util/Map;
 
-    .line 1290
+    .line 1158
     if-nez v0, :cond_a
 
     invoke-direct {p0}, Lcom/google/common/collect/AbstractMultimap;->createAsMap()Ljava/util/Map;
@@ -580,7 +559,7 @@
     .registers 2
 
     .prologue
-    .line 159
+    .line 160
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     return-object v0
@@ -590,7 +569,7 @@
     .registers 3
 
     .prologue
-    .line 322
+    .line 334
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -614,33 +593,39 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 323
+    .line 335
     invoke-interface {v0}, Ljava/util/Collection;->clear()V
 
     goto :goto_a
 
-    .line 325
+    .line 337
     :cond_1a
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 326
+    .line 338
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
-    .line 327
+    .line 339
     return-void
 .end method
 
 .method public containsEntry(Ljava/lang/Object;Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 187
+    .line 193
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -649,7 +634,7 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 188
+    .line 194
     if-eqz v0, :cond_12
 
     invoke-interface {v0, p2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
@@ -672,9 +657,12 @@
 .method public containsKey(Ljava/lang/Object;)Z
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 173
+    .line 177
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -687,9 +675,12 @@
 .method public containsValue(Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 177
+    .line 182
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -713,17 +704,17 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 178
+    .line 183
     invoke-interface {v0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_a
 
-    .line 179
+    .line 184
     const/4 v0, 0x1
 
-    .line 183
+    .line 188
     :goto_1d
     return v0
 
@@ -739,9 +730,12 @@
 .method createCollection(Ljava/lang/Object;)Ljava/util/Collection;
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 155
+    .line 156
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMultimap;->createCollection()Ljava/util/Collection;
 
     move-result-object v0
@@ -749,68 +743,95 @@
     return-object v0
 .end method
 
+.method createEntries()Ljava/util/Collection;
+    .registers 2
+
+    .prologue
+    .line 1073
+    instance-of v0, p0, Lcom/google/common/collect/jv;
+
+    if-eqz v0, :cond_a
+
+    .line 1074
+    new-instance v0, Lcom/google/common/collect/t;
+
+    invoke-direct {v0, p0}, Lcom/google/common/collect/t;-><init>(Lcom/google/common/collect/AbstractMultimap;)V
+
+    .line 1084
+    :goto_9
+    return-object v0
+
+    :cond_a
+    new-instance v0, Lcom/google/common/collect/u;
+
+    invoke-direct {v0, p0}, Lcom/google/common/collect/u;-><init>(Lcom/google/common/collect/AbstractMultimap;)V
+
+    goto :goto_9
+.end method
+
 .method createEntryIterator()Ljava/util/Iterator;
     .registers 2
 
     .prologue
-    .line 1230
-    new-instance v0, Lcom/google/common/collect/u;
+    .line 1104
+    new-instance v0, Lcom/google/common/collect/y;
 
-    invoke-direct {v0, p0}, Lcom/google/common/collect/u;-><init>(Lcom/google/common/collect/AbstractMultimap;)V
+    invoke-direct {v0, p0}, Lcom/google/common/collect/y;-><init>(Lcom/google/common/collect/AbstractMultimap;)V
 
     return-object v0
 .end method
 
 .method public entries()Ljava/util/Collection;
-    .registers 3
+    .registers 2
 
     .prologue
-    .line 1180
+    .line 1068
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->entries:Ljava/util/Collection;
 
-    .line 1181
-    iget-object v1, p0, Lcom/google/common/collect/AbstractMultimap;->entries:Ljava/util/Collection;
+    .line 1069
+    if-nez v0, :cond_a
 
-    if-nez v1, :cond_c
-
-    invoke-direct {p0}, Lcom/google/common/collect/AbstractMultimap;->createEntries()Ljava/util/Collection;
+    invoke-virtual {p0}, Lcom/google/common/collect/AbstractMultimap;->createEntries()Ljava/util/Collection;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->entries:Ljava/util/Collection;
 
-    :cond_c
+    :cond_a
     return-object v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 1459
+    .line 1352
     if-ne p1, p0, :cond_4
 
-    .line 1460
+    .line 1353
     const/4 v0, 0x1
 
-    .line 1466
+    .line 1359
     :goto_3
     return v0
 
-    .line 1462
+    .line 1355
     :cond_4
-    instance-of v0, p1, Lcom/google/common/collect/ew;
+    instance-of v0, p1, Lcom/google/common/collect/hu;
 
     if-eqz v0, :cond_15
 
-    .line 1463
-    check-cast p1, Lcom/google/common/collect/ew;
+    .line 1356
+    check-cast p1, Lcom/google/common/collect/hu;
 
-    .line 1464
+    .line 1357
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
-    invoke-interface {p1}, Lcom/google/common/collect/ew;->asMap()Ljava/util/Map;
+    invoke-interface {p1}, Lcom/google/common/collect/hu;->asMap()Ljava/util/Map;
 
     move-result-object v1
 
@@ -820,7 +841,7 @@
 
     goto :goto_3
 
-    .line 1466
+    .line 1359
     :cond_15
     const/4 v0, 0x0
 
@@ -830,9 +851,12 @@
 .method public get(Ljava/lang/Object;)Ljava/util/Collection;
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 337
+    .line 350
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -841,15 +865,15 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 338
+    .line 351
     if-nez v0, :cond_e
 
-    .line 339
+    .line 352
     invoke-virtual {p0, p1}, Lcom/google/common/collect/AbstractMultimap;->createCollection(Ljava/lang/Object;)Ljava/util/Collection;
 
     move-result-object v0
 
-    .line 341
+    .line 354
     :cond_e
     invoke-direct {p0, p1, v0}, Lcom/google/common/collect/AbstractMultimap;->wrapCollection(Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;
 
@@ -862,7 +886,7 @@
     .registers 2
 
     .prologue
-    .line 1478
+    .line 1371
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -876,7 +900,7 @@
     .registers 2
 
     .prologue
-    .line 169
+    .line 172
     iget v0, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
     if-nez v0, :cond_6
@@ -896,10 +920,10 @@
     .registers 2
 
     .prologue
-    .line 827
+    .line 866
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->keySet:Ljava/util/Set;
 
-    .line 828
+    .line 867
     if-nez v0, :cond_a
 
     invoke-direct {p0}, Lcom/google/common/collect/AbstractMultimap;->createKeySet()Ljava/util/Set;
@@ -912,22 +936,24 @@
     return-object v0
 .end method
 
-.method public keys()Lcom/google/common/collect/fj;
+.method public keys()Lcom/google/common/collect/iq;
     .registers 2
 
     .prologue
-    .line 943
-    iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->multiset:Lcom/google/common/collect/fj;
+    .line 994
+    iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->multiset:Lcom/google/common/collect/iq;
 
-    .line 944
+    .line 995
     if-nez v0, :cond_b
 
-    new-instance v0, Lcom/google/common/collect/ab;
+    .line 996
+    new-instance v0, Lcom/google/common/collect/r;
 
-    invoke-direct {v0, p0}, Lcom/google/common/collect/ab;-><init>(Lcom/google/common/collect/AbstractMultimap;)V
+    invoke-direct {v0, p0}, Lcom/google/common/collect/r;-><init>(Lcom/google/common/collect/AbstractMultimap;)V
 
-    iput-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->multiset:Lcom/google/common/collect/fj;
+    iput-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->multiset:Lcom/google/common/collect/iq;
 
+    .line 1002
     :cond_b
     return-object v0
 .end method
@@ -935,32 +961,38 @@
 .method public put(Ljava/lang/Object;Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 194
+    .line 201
     invoke-direct {p0, p1}, Lcom/google/common/collect/AbstractMultimap;->getOrCreateCollection(Ljava/lang/Object;)Ljava/util/Collection;
 
     move-result-object v0
 
-    .line 196
+    .line 203
     invoke-interface {v0, p2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_12
 
-    .line 197
+    .line 204
     iget v0, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
-    .line 198
+    .line 205
     const/4 v0, 0x1
 
-    .line 200
+    .line 207
     :goto_11
     return v0
 
@@ -970,16 +1002,16 @@
     goto :goto_11
 .end method
 
-.method public putAll(Lcom/google/common/collect/ew;)Z
+.method public putAll(Lcom/google/common/collect/hu;)Z
     .registers 6
     .parameter
 
     .prologue
-    .line 254
+    .line 263
     const/4 v0, 0x0
 
-    .line 255
-    invoke-interface {p1}, Lcom/google/common/collect/ew;->entries()Ljava/util/Collection;
+    .line 264
+    invoke-interface {p1}, Lcom/google/common/collect/hu;->entries()Ljava/util/Collection;
 
     move-result-object v1
 
@@ -1002,7 +1034,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 256
+    .line 265
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -1021,7 +1053,7 @@
 
     goto :goto_a
 
-    .line 258
+    .line 267
     :cond_25
     return v1
 .end method
@@ -1029,12 +1061,16 @@
 .method public putAll(Ljava/lang/Object;Ljava/lang/Iterable;)Z
     .registers 8
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+    .end parameter
 
     .prologue
     const/4 v0, 0x0
 
-    .line 232
+    .line 241
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -1045,36 +1081,38 @@
 
     if-nez v1, :cond_c
 
-    .line 250
+    .line 258
     :goto_b
     return v0
 
-    .line 235
+    .line 244
     :cond_c
     invoke-direct {p0, p1}, Lcom/google/common/collect/AbstractMultimap;->getOrCreateCollection(Ljava/lang/Object;)Ljava/util/Collection;
 
     move-result-object v1
 
-    .line 236
+    .line 245
     invoke-interface {v1}, Ljava/util/Collection;->size()I
 
     move-result v2
 
-    .line 239
+    .line 248
     instance-of v3, p2, Ljava/util/Collection;
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_2b
 
-    .line 241
-    check-cast p2, Ljava/util/Collection;
+    .line 249
+    invoke-static {p2}, Lcom/google/common/collect/cf;->a(Ljava/lang/Iterable;)Ljava/util/Collection;
 
-    .line 242
-    invoke-interface {v1, p2}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
+    move-result-object v0
+
+    .line 250
+    invoke-interface {v1, v0}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
 
     move-result v0
 
-    .line 249
-    :cond_1e
+    .line 257
+    :cond_20
     iget v3, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
     invoke-interface {v1}, Ljava/util/Collection;->size()I
@@ -1089,40 +1127,46 @@
 
     goto :goto_b
 
-    .line 244
-    :cond_29
+    .line 252
+    :cond_2b
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    :goto_2d
+    :goto_2f
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_1e
+    if-eqz v4, :cond_20
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 245
+    .line 253
     invoke-interface {v1, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     move-result v4
 
     or-int/2addr v0, v4
 
-    goto :goto_2d
+    goto :goto_2f
 .end method
 
 .method public remove(Ljava/lang/Object;Ljava/lang/Object;)Z
     .registers 6
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 214
+    .line 222
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1131,40 +1175,40 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 215
+    .line 223
     if-nez v0, :cond_c
 
-    .line 216
+    .line 224
     const/4 v0, 0x0
 
-    .line 226
+    .line 234
     :goto_b
     return v0
 
-    .line 219
+    .line 227
     :cond_c
     invoke-interface {v0, p2}, Ljava/util/Collection;->remove(Ljava/lang/Object;)Z
 
     move-result v1
 
-    .line 220
+    .line 228
     if-eqz v1, :cond_23
 
-    .line 221
+    .line 229
     iget v2, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
     add-int/lit8 v2, v2, -0x1
 
     iput v2, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
-    .line 222
+    .line 230
     invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
 
     if-eqz v0, :cond_23
 
-    .line 223
+    .line 231
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1172,16 +1216,19 @@
     :cond_23
     move v0, v1
 
-    .line 226
+    .line 234
     goto :goto_b
 .end method
 
 .method public removeAll(Ljava/lang/Object;)Ljava/util/Collection;
     .registers 6
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 295
+    .line 306
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1190,18 +1237,18 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 296
+    .line 307
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMultimap;->createCollection()Ljava/util/Collection;
 
     move-result-object v1
 
-    .line 298
+    .line 309
     if-eqz v0, :cond_1d
 
-    .line 299
+    .line 310
     invoke-interface {v1, v0}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
 
-    .line 300
+    .line 311
     iget v2, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
     invoke-interface {v0}, Ljava/util/Collection;->size()I
@@ -1212,10 +1259,10 @@
 
     iput v2, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
-    .line 301
+    .line 312
     invoke-interface {v0}, Ljava/util/Collection;->clear()V
 
-    .line 304
+    .line 315
     :cond_1d
     invoke-direct {p0, v1}, Lcom/google/common/collect/AbstractMultimap;->unmodifiableCollectionSubclass(Ljava/util/Collection;)Ljava/util/Collection;
 
@@ -1227,45 +1274,49 @@
 .method public replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/Collection;
     .registers 8
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+    .end parameter
 
     .prologue
-    .line 268
+    .line 278
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 269
+    .line 279
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
     if-nez v1, :cond_f
 
-    .line 270
+    .line 280
     invoke-virtual {p0, p1}, Lcom/google/common/collect/AbstractMultimap;->removeAll(Ljava/lang/Object;)Ljava/util/Collection;
 
     move-result-object v0
 
-    .line 286
+    .line 296
     :goto_e
     return-object v0
 
-    .line 273
+    .line 283
     :cond_f
     invoke-direct {p0, p1}, Lcom/google/common/collect/AbstractMultimap;->getOrCreateCollection(Ljava/lang/Object;)Ljava/util/Collection;
 
     move-result-object v1
 
-    .line 274
+    .line 284
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMultimap;->createCollection()Ljava/util/Collection;
 
     move-result-object v2
 
-    .line 275
+    .line 285
     invoke-interface {v2, v1}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
 
-    .line 277
+    .line 287
     iget v3, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
     invoke-interface {v1}, Ljava/util/Collection;->size()I
@@ -1276,10 +1327,10 @@
 
     iput v3, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
-    .line 278
+    .line 288
     invoke-interface {v1}, Ljava/util/Collection;->clear()V
 
-    .line 280
+    .line 290
     :cond_26
     :goto_26
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -1288,7 +1339,7 @@
 
     if-eqz v3, :cond_3d
 
-    .line 281
+    .line 291
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
@@ -1299,7 +1350,7 @@
 
     if-eqz v3, :cond_26
 
-    .line 282
+    .line 292
     iget v3, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
     add-int/lit8 v3, v3, 0x1
@@ -1308,7 +1359,7 @@
 
     goto :goto_26
 
-    .line 286
+    .line 296
     :cond_3d
     invoke-direct {p0, v2}, Lcom/google/common/collect/AbstractMultimap;->unmodifiableCollectionSubclass(Ljava/util/Collection;)Ljava/util/Collection;
 
@@ -1324,13 +1375,13 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 124
+    .line 125
     iput-object p1, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
-    .line 125
+    .line 126
     iput v2, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
-    .line 126
+    .line 127
     invoke-interface {p1}, Ljava/util/Map;->values()Ljava/util/Collection;
 
     move-result-object v0
@@ -1352,7 +1403,7 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 127
+    .line 128
     invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v1
@@ -1362,9 +1413,9 @@
     const/4 v1, 0x1
 
     :goto_20
-    invoke-static {v1}, Lcom/google/common/base/t;->a(Z)V
+    invoke-static {v1}, Lcom/google/common/base/ag;->a(Z)V
 
-    .line 128
+    .line 129
     iget v1, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
     invoke-interface {v0}, Ljava/util/Collection;->size()I
@@ -1380,10 +1431,10 @@
     :cond_2d
     move v1, v2
 
-    .line 127
+    .line 128
     goto :goto_20
 
-    .line 130
+    .line 131
     :cond_2f
     return-void
 .end method
@@ -1392,7 +1443,7 @@
     .registers 2
 
     .prologue
-    .line 165
+    .line 167
     iget v0, p0, Lcom/google/common/collect/AbstractMultimap;->totalSize:I
 
     return v0
@@ -1402,7 +1453,7 @@
     .registers 2
 
     .prologue
-    .line 1488
+    .line 1382
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -1416,18 +1467,20 @@
     .registers 2
 
     .prologue
-    .line 1125
+    .line 1037
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->valuesCollection:Ljava/util/Collection;
 
-    .line 1126
+    .line 1038
     if-nez v0, :cond_b
 
-    new-instance v0, Lcom/google/common/collect/ah;
+    .line 1039
+    new-instance v0, Lcom/google/common/collect/s;
 
-    invoke-direct {v0, p0}, Lcom/google/common/collect/ah;-><init>(Lcom/google/common/collect/AbstractMultimap;)V
+    invoke-direct {v0, p0}, Lcom/google/common/collect/s;-><init>(Lcom/google/common/collect/AbstractMultimap;)V
 
     iput-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->valuesCollection:Ljava/util/Collection;
 
+    .line 1045
     :cond_b
     return-object v0
 .end method

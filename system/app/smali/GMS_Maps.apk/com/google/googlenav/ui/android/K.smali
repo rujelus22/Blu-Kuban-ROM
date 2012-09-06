@@ -1,88 +1,66 @@
-.class public final enum Lcom/google/googlenav/ui/android/K;
-.super Ljava/lang/Enum;
+.class Lcom/google/googlenav/ui/android/k;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/maps/driveabout/vector/T;
 
 
-# static fields
-.field public static final enum a:Lcom/google/googlenav/ui/android/K;
+# instance fields
+.field final synthetic a:Lcom/google/googlenav/ui/view/c;
 
-.field public static final enum b:Lcom/google/googlenav/ui/android/K;
+.field final synthetic b:Lcom/google/googlenav/ui/view/d;
 
-.field private static final synthetic c:[Lcom/google/googlenav/ui/android/K;
+.field final synthetic c:Lcom/google/googlenav/ui/android/AndroidVectorView;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method constructor <init>(Lcom/google/googlenav/ui/android/AndroidVectorView;Lcom/google/googlenav/ui/view/c;Lcom/google/googlenav/ui/view/d;)V
     .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v3, 0x1
+    .prologue
+    .line 690
+    iput-object p1, p0, Lcom/google/googlenav/ui/android/k;->c:Lcom/google/googlenav/ui/android/AndroidVectorView;
 
-    const/4 v2, 0x0
+    iput-object p2, p0, Lcom/google/googlenav/ui/android/k;->a:Lcom/google/googlenav/ui/view/c;
 
-    new-instance v0, Lcom/google/googlenav/ui/android/K;
+    iput-object p3, p0, Lcom/google/googlenav/ui/android/k;->b:Lcom/google/googlenav/ui/view/d;
 
-    const-string v1, "NONE"
-
-    invoke-direct {v0, v1, v2}, Lcom/google/googlenav/ui/android/K;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/googlenav/ui/android/K;->a:Lcom/google/googlenav/ui/android/K;
-
-    new-instance v0, Lcom/google/googlenav/ui/android/K;
-
-    const-string v1, "SHOW_ALWAYS"
-
-    invoke-direct {v0, v1, v3}, Lcom/google/googlenav/ui/android/K;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/googlenav/ui/android/K;->b:Lcom/google/googlenav/ui/android/K;
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Lcom/google/googlenav/ui/android/K;
-
-    sget-object v1, Lcom/google/googlenav/ui/android/K;->a:Lcom/google/googlenav/ui/android/K;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/googlenav/ui/android/K;->b:Lcom/google/googlenav/ui/android/K;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/google/googlenav/ui/android/K;->c:[Lcom/google/googlenav/ui/android/K;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+# virtual methods
+.method public a(Lcom/google/android/maps/driveabout/vector/d;)V
+    .registers 4
+    .parameter
 
+    .prologue
+    .line 695
+    if-eqz p1, :cond_9
+
+    .line 696
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/k;->a:Lcom/google/googlenav/ui/view/c;
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/k;->b:Lcom/google/googlenav/ui/view/d;
+
+    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/view/c;->a(Lcom/google/googlenav/ui/view/J;)Z
+
+    .line 698
+    :cond_9
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lcom/google/googlenav/ui/android/K;
+.method public b(Lcom/google/android/maps/driveabout/vector/d;)V
     .registers 2
+    .parameter
 
-    const-class v0, Lcom/google/googlenav/ui/android/K;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlenav/ui/android/K;
-
-    return-object v0
-.end method
-
-.method public static values()[Lcom/google/googlenav/ui/android/K;
-    .registers 1
-
-    sget-object v0, Lcom/google/googlenav/ui/android/K;->c:[Lcom/google/googlenav/ui/android/K;
-
-    invoke-virtual {v0}, [Lcom/google/googlenav/ui/android/K;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lcom/google/googlenav/ui/android/K;
-
-    return-object v0
+    .prologue
+    .line 702
+    return-void
 .end method

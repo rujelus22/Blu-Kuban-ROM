@@ -1,85 +1,118 @@
-.class public Lcom/google/googlenav/android/Y;
+.class public Lcom/google/googlenav/android/y;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # direct methods
-.method private constructor <init>()V
+.method public constructor <init>()V
     .registers 1
 
+    .prologue
+    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;)Z
+.method private a(J)V
+    .registers 7
+    .parameter
+
+    .prologue
+    .line 59
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->u()Lcom/google/googlenav/common/a;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/googlenav/common/a;->b()J
+
+    move-result-wide v0
+
+    .line 60
+    invoke-static {}, Lcom/google/googlenav/clientparam/f;->c()Lcom/google/googlenav/clientparam/e;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/google/googlenav/clientparam/e;->g()J
+
+    move-result-wide v2
+
+    .line 62
+    sub-long/2addr v0, v2
+
+    cmp-long v0, v0, p1
+
+    if-lez v0, :cond_34
+
+    .line 65
+    invoke-static {}, Lcom/google/googlenav/prefetch/android/B;->d()Lcom/google/googlenav/prefetch/android/B;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/B;->e()V
+
+    .line 66
+    invoke-static {}, Lcom/google/android/maps/driveabout/vector/dD;->f()V
+
+    .line 67
+    invoke-static {}, Lcom/google/googlenav/prefetch/android/p;->c()Lcom/google/googlenav/prefetch/android/p;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/p;->b()V
+
+    .line 68
+    sget-object v0, Lcom/google/googlenav/prefetch/android/g;->b:Lcom/google/googlenav/prefetch/android/g;
+
+    invoke-static {v0}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->a(Lcom/google/googlenav/prefetch/android/g;)V
+
+    .line 72
+    const-string v0, "LAST_NETWORK_CONNECTED"
+
+    invoke-static {v0}, LaT/d;->b(Ljava/lang/String;)V
+
+    .line 74
+    :cond_34
+    return-void
+.end method
+
+.method static synthetic a(Lcom/google/googlenav/android/y;J)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 25
+    invoke-direct {p0, p1, p2}, Lcom/google/googlenav/android/y;->a(J)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()V
     .registers 5
 
-    const-string v0, "activity"
+    .prologue
+    .line 32
+    sget-object v0, Lcom/google/googlenav/z;->a:Lcom/google/googlenav/z;
 
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    new-instance v1, Lcom/google/googlenav/android/z;
 
-    move-result-object v0
+    const/4 v2, 0x0
 
-    check-cast v0, Landroid/app/ActivityManager;
+    const/4 v3, 0x1
 
-    const v1, 0x7fffffff
+    invoke-direct {v1, p0, v2, v3}, Lcom/google/googlenav/android/z;-><init>(Lcom/google/googlenav/android/y;ZZ)V
 
-    :try_start_b
-    invoke-virtual {v0, v1}, Landroid/app/ActivityManager;->getRunningServices(I)Ljava/util/List;
+    const/4 v2, -0x1
 
-    move-result-object v0
+    invoke-static {v0, v1, v2}, Lcom/google/googlenav/u;->a(Lcom/google/googlenav/z;Lcom/google/googlenav/x;I)V
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :cond_13
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_39
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/ActivityManager$RunningServiceInfo;
-
-    const-string v2, "com.google.android.maps.driveabout.app.NavigationService"
-
-    iget-object v3, v0, Landroid/app/ActivityManager$RunningServiceInfo;->service:Landroid/content/ComponentName;
-
-    invoke-virtual {v3}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_13
-
-    iget-boolean v0, v0, Landroid/app/ActivityManager$RunningServiceInfo;->foreground:Z
-    :try_end_2f
-    .catch Ljava/lang/SecurityException; {:try_start_b .. :try_end_2f} :catch_33
-
-    if-eqz v0, :cond_39
-
-    const/4 v0, 0x1
-
-    :goto_32
-    return v0
-
-    :catch_33
-    move-exception v0
-
-    const-string v1, "PERM"
-
-    invoke-static {v1, v0}, Laf/f;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_39
-    const/4 v0, 0x0
-
-    goto :goto_32
+    .line 50
+    return-void
 .end method

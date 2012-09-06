@@ -1,19 +1,23 @@
 .class Lcom/google/googlenav/suggest/android/e;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/suggest/android/SuggestView;
+.field final synthetic a:Lcom/google/googlenav/suggest/android/BaseSuggestView;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/suggest/android/SuggestView;)V
+.method constructor <init>(Lcom/google/googlenav/suggest/android/BaseSuggestView;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/suggest/android/e;->a:Lcom/google/googlenav/suggest/android/SuggestView;
+    .prologue
+    .line 84
+    iput-object p1, p0, Lcom/google/googlenav/suggest/android/e;->a:Lcom/google/googlenav/suggest/android/BaseSuggestView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,11 +29,27 @@
 .method public run()V
     .registers 3
 
-    iget-object v0, p0, Lcom/google/googlenav/suggest/android/e;->a:Lcom/google/googlenav/suggest/android/SuggestView;
+    .prologue
+    .line 87
+    iget-object v0, p0, Lcom/google/googlenav/suggest/android/e;->a:Lcom/google/googlenav/suggest/android/BaseSuggestView;
 
-    const/4 v1, 0x1
+    invoke-virtual {v0}, Lcom/google/googlenav/suggest/android/BaseSuggestView;->getAdapter()Landroid/widget/ListAdapter;
 
-    invoke-static {v0, v1}, Lcom/google/googlenav/suggest/android/SuggestView;->a(Lcom/google/googlenav/suggest/android/SuggestView;Z)V
+    move-result-object v0
 
+    .line 88
+    if-eqz v0, :cond_11
+
+    .line 89
+    iget-object v1, p0, Lcom/google/googlenav/suggest/android/e;->a:Lcom/google/googlenav/suggest/android/BaseSuggestView;
+
+    invoke-interface {v0}, Landroid/widget/ListAdapter;->getCount()I
+
+    move-result v0
+
+    invoke-virtual {v1, v0}, Lcom/google/googlenav/suggest/android/BaseSuggestView;->onFilterComplete(I)V
+
+    .line 91
+    :cond_11
     return-void
 .end method

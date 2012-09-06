@@ -19,7 +19,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 366
+    .line 388
     new-instance v0, Lcom/google/common/primitives/Longs$LexicographicalComparator;
 
     const-string v1, "INSTANCE"
@@ -28,7 +28,7 @@
 
     sput-object v0, Lcom/google/common/primitives/Longs$LexicographicalComparator;->INSTANCE:Lcom/google/common/primitives/Longs$LexicographicalComparator;
 
-    .line 365
+    .line 387
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/common/primitives/Longs$LexicographicalComparator;
@@ -48,7 +48,7 @@
     .parameter
 
     .prologue
-    .line 365
+    .line 387
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -59,7 +59,7 @@
     .parameter
 
     .prologue
-    .line 365
+    .line 387
     const-class v0, Lcom/google/common/primitives/Longs$LexicographicalComparator;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -75,7 +75,7 @@
     .registers 1
 
     .prologue
-    .line 365
+    .line 387
     sget-object v0, Lcom/google/common/primitives/Longs$LexicographicalComparator;->$VALUES:[Lcom/google/common/primitives/Longs$LexicographicalComparator;
 
     invoke-virtual {v0}, [Lcom/google/common/primitives/Longs$LexicographicalComparator;->clone()Ljava/lang/Object;
@@ -95,7 +95,7 @@
     .parameter
 
     .prologue
-    .line 365
+    .line 387
     check-cast p1, [J
 
     check-cast p2, [J
@@ -108,77 +108,59 @@
 .end method
 
 .method public final compare([J[J)I
-    .registers 11
+    .registers 10
     .parameter
     .parameter
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 369
+    .line 392
     array-length v0, p1
 
-    array-length v2, p2
+    array-length v1, p2
 
-    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
-    move-result v3
+    move-result v2
 
-    move v2, v1
+    .line 393
+    const/4 v0, 0x0
 
-    .line 370
+    move v1, v0
+
     :goto_8
-    if-ge v2, v3, :cond_22
+    if-ge v1, v2, :cond_19
 
-    .line 371
-    aget-wide v4, p1, v2
+    .line 394
+    aget-wide v3, p1, v1
 
-    aget-wide v6, p2, v2
+    aget-wide v5, p2, v1
 
-    cmp-long v0, v4, v6
+    invoke-static {v3, v4, v5, v6}, Lcom/google/common/primitives/Longs;->a(JJ)I
 
-    if-gez v0, :cond_16
+    move-result v0
 
-    const/4 v0, -0x1
+    .line 395
+    if-eqz v0, :cond_15
 
-    .line 372
-    :goto_13
-    if-eqz v0, :cond_1e
-
-    .line 376
-    :goto_15
+    .line 399
+    :goto_14
     return v0
 
-    .line 371
-    :cond_16
-    cmp-long v0, v4, v6
+    .line 393
+    :cond_15
+    add-int/lit8 v0, v1, 0x1
 
-    if-lez v0, :cond_1c
-
-    const/4 v0, 0x1
-
-    goto :goto_13
-
-    :cond_1c
-    move v0, v1
-
-    goto :goto_13
-
-    .line 370
-    :cond_1e
-    add-int/lit8 v0, v2, 0x1
-
-    move v2, v0
+    move v1, v0
 
     goto :goto_8
 
-    .line 376
-    :cond_22
+    .line 399
+    :cond_19
     array-length v0, p1
 
     array-length v1, p2
 
     sub-int/2addr v0, v1
 
-    goto :goto_15
+    goto :goto_14
 .end method

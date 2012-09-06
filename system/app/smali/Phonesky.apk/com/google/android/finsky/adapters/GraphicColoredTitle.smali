@@ -355,7 +355,7 @@
 
     .line 125
     .local v0, holder:Lcom/google/android/finsky/adapters/GraphicColoredTitle$ViewHolder;
-    const v1, 0x7f08011f
+    const v1, 0x7f080155
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -364,7 +364,7 @@
     iput-object v1, v0, Lcom/google/android/finsky/adapters/GraphicColoredTitle$ViewHolder;->cellContent:Landroid/view/View;
 
     .line 126
-    const v1, 0x7f080120
+    const v1, 0x7f080156
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -375,7 +375,7 @@
     iput-object v1, v0, Lcom/google/android/finsky/adapters/GraphicColoredTitle$ViewHolder;->imageView:Landroid/widget/ImageView;
 
     .line 127
-    const v1, 0x7f080010
+    const v1, 0x7f080013
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -386,7 +386,7 @@
     iput-object v1, v0, Lcom/google/android/finsky/adapters/GraphicColoredTitle$ViewHolder;->titleOverlay:Lcom/google/android/finsky/layout/CellTitleOverlay;
 
     .line 128
-    const v1, 0x7f080011
+    const v1, 0x7f080014
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -395,7 +395,7 @@
     iput-object v1, v0, Lcom/google/android/finsky/adapters/GraphicColoredTitle$ViewHolder;->accessibilityOverlay:Landroid/view/View;
 
     .line 129
-    const v1, 0x7f080087
+    const v1, 0x7f080083
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -502,7 +502,7 @@
 
     .prologue
     .line 113
-    const v0, 0x7f04007c
+    const v0, 0x7f040087
 
     return v0
 .end method

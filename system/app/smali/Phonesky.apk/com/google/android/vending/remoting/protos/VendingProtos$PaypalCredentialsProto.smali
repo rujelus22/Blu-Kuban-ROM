@@ -31,25 +31,25 @@
     .registers 2
 
     .prologue
-    .line 6663
+    .line 6789
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 6668
+    .line 6794
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->preapprovalKey_:Ljava/lang/String;
 
-    .line 6685
+    .line 6811
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->paypalEmail_:Ljava/lang/String;
 
-    .line 6722
+    .line 6849
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->cachedSize:I
 
-    .line 6663
+    .line 6789
     return-void
 .end method
 
@@ -59,15 +59,15 @@
     .registers 2
 
     .prologue
-    .line 6724
+    .line 6852
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 6726
+    .line 6854
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->getSerializedSize()I
 
-    .line 6728
+    .line 6856
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->cachedSize:I
 
@@ -78,7 +78,7 @@
     .registers 2
 
     .prologue
-    .line 6686
+    .line 6812
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->paypalEmail_:Ljava/lang/String;
 
     return-object v0
@@ -88,7 +88,7 @@
     .registers 2
 
     .prologue
-    .line 6669
+    .line 6795
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->preapprovalKey_:Ljava/lang/String;
 
     return-object v0
@@ -98,10 +98,10 @@
     .registers 4
 
     .prologue
-    .line 6732
+    .line 6861
     const/4 v0, 0x0
 
-    .line 6733
+    .line 6862
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->hasPreapprovalKey()Z
 
@@ -109,7 +109,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 6734
+    .line 6863
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->getPreapprovalKey()Ljava/lang/String;
@@ -122,7 +122,7 @@
 
     add-int/2addr v0, v1
 
-    .line 6737
+    .line 6866
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->hasPaypalEmail()Z
 
@@ -130,7 +130,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 6738
+    .line 6867
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->getPaypalEmail()Ljava/lang/String;
@@ -143,11 +143,11 @@
 
     add-int/2addr v0, v1
 
-    .line 6741
+    .line 6870
     :cond_21
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->cachedSize:I
 
-    .line 6742
+    .line 6871
     return v0
 .end method
 
@@ -155,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 6687
+    .line 6813
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->hasPaypalEmail:Z
 
     return v0
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 6670
+    .line 6796
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->hasPreapprovalKey:Z
 
     return v0
@@ -181,29 +181,29 @@
     .end annotation
 
     .prologue
-    .line 6749
+    .line 6879
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 6750
+    .line 6880
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 6754
+    .line 6884
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 6755
+    .line 6885
     :sswitch_d
     return-object p0
 
-    .line 6760
+    .line 6890
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 6764
+    .line 6894
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 6750
+    .line 6880
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -242,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 6661
+    .line 6787
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;
 
     move-result-object v0
@@ -255,15 +255,15 @@
     .parameter "value"
 
     .prologue
-    .line 6689
+    .line 6815
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->hasPaypalEmail:Z
 
-    .line 6690
+    .line 6816
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->paypalEmail_:Ljava/lang/String;
 
-    .line 6691
+    .line 6817
     return-object p0
 .end method
 
@@ -272,15 +272,15 @@
     .parameter "value"
 
     .prologue
-    .line 6672
+    .line 6798
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->hasPreapprovalKey:Z
 
-    .line 6673
+    .line 6799
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->preapprovalKey_:Ljava/lang/String;
 
-    .line 6674
+    .line 6800
     return-object p0
 .end method
 
@@ -294,14 +294,14 @@
     .end annotation
 
     .prologue
-    .line 6714
+    .line 6841
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->hasPreapprovalKey()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 6715
+    .line 6842
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->getPreapprovalKey()Ljava/lang/String;
@@ -310,7 +310,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 6717
+    .line 6844
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->hasPaypalEmail()Z
 
@@ -318,7 +318,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 6718
+    .line 6845
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;->getPaypalEmail()Ljava/lang/String;
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 6720
+    .line 6847
     :cond_1c
     return-void
 .end method

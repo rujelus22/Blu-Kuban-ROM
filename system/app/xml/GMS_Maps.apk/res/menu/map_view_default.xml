@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:icon="@drawable/ic_menu_search" android:id="@id/search" android:showAsAction="always|collapseActionView" android:actionViewClass="android.widget.SearchView" />
-    <item android:icon="@drawable/ic_menu_directions" android:id="@id/directions" android:showAsAction="always" />
-    <item android:icon="@drawable/ic_menu_places" android:id="@id/places" android:showAsAction="always" />
-    <item android:icon="@drawable/ic_menu_layers" android:id="@id/layers" android:showAsAction="always" />
-    <item android:id="@id/clear_map" android:showAsAction="never" />
-    <item android:id="@id/settings" android:showAsAction="never" />
-    <item android:id="@id/help" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_search" android:id="@id/search" />
+    <item android:icon="@drawable/ic_menu_directions" android:id="@id/directions" />
+    <item android:icon="@drawable/ic_menu_revert" android:id="@id/clear_map" />
+    <item android:icon="@drawable/ic_menu_offline" android:id="@id/save_map" />
+    <item android:icon="@drawable/ic_menu_offline" android:id="@id/show_offline" />
+    <item android:icon="@drawable/ic_menu_preferences" android:id="@id/settings" />
+    <item android:icon="@drawable/ic_menu_help" android:id="@id/help" />
 </menu>

@@ -1827,7 +1827,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f020182
+    const v4, 0x7f020181
 
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/sec/android/glview/TwGLImage;-><init>(Lcom/sec/android/glview/TwGLContext;FFI)V
 
@@ -1940,7 +1940,7 @@
 
     .line 232
     :pswitch_40
-    const v3, 0x7f020182
+    const v3, 0x7f020181
 
     invoke-virtual {v2, v3}, Lcom/samsung/dmc/ux/db/PersonalSettingInfo;->setIconResID(I)V
 
@@ -1972,7 +1972,7 @@
     .line 250
     iget-object v0, p0, Lcom/sec/android/app/camera/glwidget/TwGLUserProfile;->mMenuWrapper:Lcom/sec/android/glview/TwGLTitleDecorator;
 
-    const v1, 0x7f020179
+    const v1, 0x7f020178
 
     invoke-virtual {v0, v1}, Lcom/sec/android/glview/TwGLTitleDecorator;->setNinePatchBackground(I)Z
 

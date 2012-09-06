@@ -3,25 +3,35 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/av;
+.implements Lcom/google/android/youtube/core/async/bc;
 
 
 # instance fields
-.field private a:Lcom/google/android/youtube/core/async/ad;
+.field private m:Landroid/content/res/Resources;
 
-.field private b:Lcom/google/android/youtube/core/client/ad;
+.field private n:Lcom/google/android/youtube/core/async/ar;
 
-.field private c:Lcom/google/android/youtube/core/client/af;
+.field private o:Lcom/google/android/youtube/core/b/ae;
 
-.field private d:Lcom/google/android/youtube/core/client/ag;
+.field private p:Lcom/google/android/youtube/core/b/ag;
 
-.field private e:Lcom/google/android/youtube/core/async/UserAuthorizer;
+.field private q:Lcom/google/android/youtube/core/b/ai;
 
-.field private f:Lcom/google/android/youtube/core/e;
+.field private r:Lcom/google/android/youtube/core/async/UserAuthorizer;
 
-.field private g:Lcom/google/android/youtube/app/ui/cv;
+.field private s:Lcom/google/android/youtube/core/model/UserAuth;
 
-.field private h:Lcom/google/android/youtube/app/a/x;
+.field private t:Lcom/google/android/youtube/core/d;
+
+.field private u:Lcom/google/android/youtube/core/j;
+
+.field private v:Lcom/google/android/youtube/app/ui/br;
+
+.field private w:Lcom/google/android/youtube/app/ui/eh;
+
+.field private x:Lcom/google/android/youtube/core/a/a;
+
+.field private y:Lcom/google/android/youtube/app/ui/p;
 
 
 # direct methods
@@ -29,7 +39,7 @@
     .registers 1
 
     .prologue
-    .line 33
+    .line 48
     invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;-><init>()V
 
     return-void
@@ -40,7 +50,7 @@
     .parameter
 
     .prologue
-    .line 46
+    .line 67
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;
@@ -56,102 +66,150 @@
     return-object v0
 .end method
 
-
-# virtual methods
-.method protected final a(I)Landroid/app/Dialog;
-    .registers 3
+.method static synthetic a(Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;)Lcom/google/android/youtube/core/a/a;
+    .registers 2
     .parameter
 
     .prologue
-    .line 110
-    packed-switch p1, :pswitch_data_c
+    .line 48
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->x:Lcom/google/android/youtube/core/a/a;
 
-    .line 116
-    const/4 v0, 0x0
-
-    :goto_4
     return-object v0
+.end method
 
-    .line 113
-    :pswitch_5
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->e:Lcom/google/android/youtube/core/async/UserAuthorizer;
+.method static synthetic a(Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;Lcom/google/android/youtube/core/model/Video;)V
+    .registers 6
+    .parameter
+    .parameter
 
-    invoke-virtual {v0, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->b(Landroid/app/Activity;)Landroid/app/Dialog;
+    .prologue
+    .line 48
+    new-instance v0, Lcom/google/android/youtube/app/honeycomb/phone/ci;
+
+    invoke-direct {v0, p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/ci;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;Lcom/google/android/youtube/core/model/Video;)V
+
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/async/c;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/l;)Lcom/google/android/youtube/core/async/c;
 
     move-result-object v0
 
-    goto :goto_4
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->o:Lcom/google/android/youtube/core/b/ae;
 
-    .line 110
-    :pswitch_data_c
-    .packed-switch 0x1
-        :pswitch_5
-    .end packed-switch
+    iget-object v2, p1, Lcom/google/android/youtube/core/model/Video;->editUri:Landroid/net/Uri;
+
+    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->s:Lcom/google/android/youtube/core/model/UserAuth;
+
+    invoke-interface {v1, v2, v3, v0}, Lcom/google/android/youtube/core/b/ae;->e(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;Lcom/google/android/youtube/core/async/l;)V
+
+    return-void
 .end method
 
-.method protected final a()Ljava/lang/String;
+.method static synthetic b(Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;)Lcom/google/android/youtube/core/d;
     .registers 2
+    .parameter
 
     .prologue
-    .line 122
-    const-string v0, "yt_your_channel"
+    .line 48
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->t:Lcom/google/android/youtube/core/d;
 
     return-object v0
 .end method
 
+.method private g()V
+    .registers 4
+
+    .prologue
+    .line 200
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->v:Lcom/google/android/youtube/app/ui/br;
+
+    if-eqz v0, :cond_12
+
+    .line 201
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->v:Lcom/google/android/youtube/app/ui/br;
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->m:Landroid/content/res/Resources;
+
+    const v2, 0x7f0d000a
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/br;->a(I)V
+
+    .line 203
+    :cond_12
+    return-void
+.end method
+
+
+# virtual methods
 .method protected final a(Lcom/google/android/youtube/app/YouTubeApplication;)V
     .registers 3
     .parameter
 
     .prologue
-    .line 51
+    .line 72
     invoke-super {p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->a(Lcom/google/android/youtube/app/YouTubeApplication;)V
 
-    .line 52
-    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->D()Lcom/google/android/youtube/core/async/UserAuthorizer;
+    .line 73
+    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->e:Lcom/google/android/youtube/core/async/UserAuthorizer;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->m:Landroid/content/res/Resources;
 
-    .line 53
-    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->i()Lcom/google/android/youtube/core/client/ad;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->b:Lcom/google/android/youtube/core/client/ad;
-
-    .line 54
-    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->o()Lcom/google/android/youtube/core/client/af;
+    .line 74
+    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->Q()Lcom/google/android/youtube/core/async/UserAuthorizer;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->c:Lcom/google/android/youtube/core/client/af;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->r:Lcom/google/android/youtube/core/async/UserAuthorizer;
 
-    .line 55
-    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->m()Lcom/google/android/youtube/core/client/ag;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->d:Lcom/google/android/youtube/core/client/ag;
-
-    .line 56
-    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->B()Lcom/google/android/youtube/core/e;
+    .line 75
+    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->j()Lcom/google/android/youtube/core/b/ae;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->f:Lcom/google/android/youtube/core/e;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->o:Lcom/google/android/youtube/core/b/ae;
 
-    .line 57
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->b:Lcom/google/android/youtube/core/client/ad;
-
-    invoke-interface {v0}, Lcom/google/android/youtube/core/client/ad;->o()Lcom/google/android/youtube/core/async/ad;
+    .line 76
+    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->p()Lcom/google/android/youtube/core/b/ag;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->a:Lcom/google/android/youtube/core/async/ad;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->p:Lcom/google/android/youtube/core/b/ag;
 
-    .line 58
+    .line 77
+    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->n()Lcom/google/android/youtube/core/b/ai;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->q:Lcom/google/android/youtube/core/b/ai;
+
+    .line 78
+    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->N()Lcom/google/android/youtube/core/d;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->t:Lcom/google/android/youtube/core/d;
+
+    .line 79
+    invoke-virtual {p1}, Lcom/google/android/youtube/app/YouTubeApplication;->Y()Lcom/google/android/youtube/core/j;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->u:Lcom/google/android/youtube/core/j;
+
+    .line 80
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->o:Lcom/google/android/youtube/core/b/ae;
+
+    invoke-interface {v0}, Lcom/google/android/youtube/core/b/ae;->q()Lcom/google/android/youtube/core/async/ar;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->n:Lcom/google/android/youtube/core/async/ar;
+
+    .line 81
     return-void
 .end method
 
@@ -160,8 +218,11 @@
     .parameter
 
     .prologue
-    .line 96
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->g:Lcom/google/android/youtube/app/ui/cv;
+    .line 145
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->s:Lcom/google/android/youtube/core/model/UserAuth;
+
+    .line 146
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->w:Lcom/google/android/youtube/app/ui/eh;
 
     const/4 v1, 0x1
 
@@ -169,21 +230,21 @@
 
     const/4 v2, 0x0
 
-    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->b:Lcom/google/android/youtube/core/client/ad;
+    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->o:Lcom/google/android/youtube/core/b/ae;
 
-    invoke-interface {v3}, Lcom/google/android/youtube/core/client/ad;->a()Lcom/google/android/youtube/core/async/GDataRequestFactory;
+    invoke-interface {v3}, Lcom/google/android/youtube/core/b/ae;->a()Lcom/google/android/youtube/core/async/GDataRequestFactory;
 
     move-result-object v3
 
-    invoke-virtual {v3, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->f(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+    invoke-virtual {v3, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v3
 
     aput-object v3, v1, v2
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/cv;->a([Lcom/google/android/youtube/core/async/GDataRequest;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/eh;->a([Lcom/google/android/youtube/core/async/GDataRequest;)V
 
-    .line 98
+    .line 148
     return-void
 .end method
 
@@ -192,91 +253,261 @@
     .parameter
 
     .prologue
-    .line 105
+    .line 155
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->finish()V
 
-    .line 106
+    .line 156
     return-void
 .end method
 
-.method public final d_()V
+.method protected final b(I)Landroid/app/Dialog;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 160
+    packed-switch p1, :pswitch_data_c
+
+    .line 166
+    const/4 v0, 0x0
+
+    :goto_4
+    return-object v0
+
+    .line 163
+    :pswitch_5
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->y:Lcom/google/android/youtube/app/ui/p;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/p;->b()Landroid/app/Dialog;
+
+    move-result-object v0
+
+    goto :goto_4
+
+    .line 160
+    :pswitch_data_c
+    .packed-switch 0x402
+        :pswitch_5
+    .end packed-switch
+.end method
+
+.method protected final e()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 172
+    const-string v0, "yt_your_channel"
+
+    return-object v0
+.end method
+
+.method public final e_()V
     .registers 1
 
     .prologue
-    .line 101
+    .line 151
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->finish()V
 
-    .line 102
+    .line 152
+    return-void
+.end method
+
+.method public onConfigurationChanged(Landroid/content/res/Configuration;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 194
+    invoke-super {p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+
+    .line 195
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->y:Lcom/google/android/youtube/app/ui/p;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/p;->a()V
+
+    .line 196
+    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->g()V
+
+    .line 197
     return-void
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .registers 15
+    .registers 14
     .parameter
 
     .prologue
-    .line 62
+    const v5, 0x7f0a0056
+
+    const/4 v6, 0x1
+
+    .line 85
     invoke-super {p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 64
-    const v0, 0x7f04005b
+    .line 87
+    const v0, 0x7f04009f
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->setContentView(I)V
 
-    .line 65
-    const v0, 0x7f0a011e
+    .line 88
+    const v0, 0x7f0b016f
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->d(I)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->e(I)V
 
-    .line 67
-    invoke-static {p0}, Lcom/google/android/youtube/app/a/x;->b(Landroid/app/Activity;)Lcom/google/android/youtube/app/a/x;
+    .line 90
+    new-instance v0, Lcom/google/android/youtube/app/ui/p;
 
-    move-result-object v0
+    const/16 v1, 0x402
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->h:Lcom/google/android/youtube/app/a/x;
+    invoke-direct {v0, p0, v1}, Lcom/google/android/youtube/app/ui/p;-><init>(Landroid/app/Activity;I)V
 
-    .line 68
-    new-instance v0, Lcom/google/android/youtube/app/ui/cv;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->y:Lcom/google/android/youtube/app/ui/p;
 
-    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->l()Lcom/google/android/youtube/app/o;
+    .line 92
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->y:Lcom/google/android/youtube/app/ui/p;
 
-    move-result-object v2
+    const v1, 0x7f0b01cc
 
-    const v1, 0x7f0900a9
+    const v2, 0x7f02006f
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/app/ui/p;->a(II)I
+
+    move-result v0
+
+    .line 94
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->y:Lcom/google/android/youtube/app/ui/p;
+
+    new-instance v2, Lcom/google/android/youtube/app/honeycomb/phone/ch;
+
+    invoke-direct {v2, p0, v0}, Lcom/google/android/youtube/app/honeycomb/phone/ch;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;I)V
+
+    invoke-virtual {v1, v2}, Lcom/google/android/youtube/app/ui/p;->a(Lcom/google/android/youtube/app/ui/v;)V
+
+    .line 105
+    new-instance v0, Lcom/google/android/youtube/app/adapter/bi;
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->p:Lcom/google/android/youtube/core/b/ag;
+
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->q:Lcom/google/android/youtube/core/b/ai;
+
+    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->u:Lcom/google/android/youtube/core/j;
+
+    iget-object v4, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->y:Lcom/google/android/youtube/app/ui/p;
+
+    invoke-static {p0, v1, v2, v3, v4}, Lcom/google/android/youtube/app/adapter/bb;->a(Landroid/content/Context;Lcom/google/android/youtube/core/b/ag;Lcom/google/android/youtube/core/b/ai;Lcom/google/android/youtube/core/j;Lcom/google/android/youtube/app/ui/p;)Lcom/google/android/youtube/app/adapter/ba;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/google/android/youtube/app/adapter/bi;-><init>(Lcom/google/android/youtube/core/a/a;)V
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->x:Lcom/google/android/youtube/core/a/a;
+
+    .line 108
+    new-instance v0, Lcom/google/android/youtube/app/honeycomb/ui/a;
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->x:Lcom/google/android/youtube/core/a/a;
+
+    invoke-direct {v0, p0, v1}, Lcom/google/android/youtube/app/honeycomb/ui/a;-><init>(Landroid/content/Context;Lcom/google/android/youtube/core/a/a;)V
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->v:Lcom/google/android/youtube/app/ui/br;
+
+    .line 109
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->v:Lcom/google/android/youtube/app/ui/br;
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->m:Landroid/content/res/Resources;
+
+    const v2, 0x7f0a004e
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/ui/br;->b(I)V
+
+    .line 111
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->v:Lcom/google/android/youtube/app/ui/br;
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->m:Landroid/content/res/Resources;
+
+    const v2, 0x7f0a0054
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->m:Landroid/content/res/Resources;
+
+    invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v2
+
+    float-to-int v2, v2
+
+    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->m:Landroid/content/res/Resources;
+
+    const v4, 0x7f0a0055
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v3
+
+    float-to-int v3, v3
+
+    iget-object v4, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->m:Landroid/content/res/Resources;
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v4
+
+    float-to-int v4, v4
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/android/youtube/app/ui/br;->a(IIII)V
+
+    .line 116
+    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->g()V
+
+    .line 118
+    new-instance v0, Lcom/google/android/youtube/app/ui/eh;
+
+    const v1, 0x7f08012d
 
     invoke-virtual {p0, v1}, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->findViewById(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Lcom/google/android/youtube/core/ui/h;
+    check-cast v2, Lcom/google/android/youtube/core/ui/g;
 
-    iget-object v4, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->h:Lcom/google/android/youtube/app/a/x;
+    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->v:Lcom/google/android/youtube/app/ui/br;
 
-    iget-object v5, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->a:Lcom/google/android/youtube/core/async/ad;
+    iget-object v4, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->n:Lcom/google/android/youtube/core/async/ar;
 
-    iget-object v6, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->c:Lcom/google/android/youtube/core/client/af;
+    iget-object v5, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->t:Lcom/google/android/youtube/core/d;
 
-    iget-object v7, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->d:Lcom/google/android/youtube/core/client/ag;
+    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->t()Lcom/google/android/youtube/app/a;
 
-    const/4 v8, 0x1
+    move-result-object v7
 
-    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->n()Lcom/google/android/youtube/core/Analytics;
+    sget-object v9, Lcom/google/android/youtube/app/m;->Q:Lcom/google/android/youtube/core/b/aj;
 
-    move-result-object v9
+    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->v()Lcom/google/android/youtube/core/Analytics;
 
-    sget-object v10, Lcom/google/android/youtube/core/Analytics$VideoCategory;->WatchHistory:Lcom/google/android/youtube/core/Analytics$VideoCategory;
+    move-result-object v10
 
-    sget-object v11, Lcom/google/android/youtube/core/client/DefaultVideoStatsClient$Referrers;->WATCH_HISTORY:Lcom/google/android/youtube/core/client/DefaultVideoStatsClient$Referrers;
-
-    iget-object v12, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->f:Lcom/google/android/youtube/core/e;
+    sget-object v11, Lcom/google/android/youtube/core/Analytics$VideoCategory;->WatchHistory:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     move-object v1, p0
 
-    invoke-direct/range {v0 .. v12}, Lcom/google/android/youtube/app/ui/cv;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/app/o;Lcom/google/android/youtube/core/ui/h;Lcom/google/android/youtube/app/a/x;Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/client/af;Lcom/google/android/youtube/core/client/ag;ZLcom/google/android/youtube/core/Analytics;Lcom/google/android/youtube/core/Analytics$VideoCategory;Lcom/google/android/youtube/core/client/al;Lcom/google/android/youtube/core/e;)V
+    move v8, v6
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->g:Lcom/google/android/youtube/app/ui/cv;
+    invoke-direct/range {v0 .. v11}, Lcom/google/android/youtube/app/ui/eh;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/ui/g;Lcom/google/android/youtube/core/a/a;Lcom/google/android/youtube/core/async/ar;Lcom/google/android/youtube/core/d;ZLcom/google/android/youtube/app/a;ZLcom/google/android/youtube/core/b/aj;Lcom/google/android/youtube/core/Analytics;Lcom/google/android/youtube/core/Analytics$VideoCategory;)V
 
-    .line 81
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->w:Lcom/google/android/youtube/app/ui/eh;
+
+    .line 130
     return-void
 .end method
 
@@ -284,15 +515,15 @@
     .registers 2
 
     .prologue
-    .line 91
+    .line 140
     invoke-super {p0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->onResume()V
 
-    .line 92
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->e:Lcom/google/android/youtube/core/async/UserAuthorizer;
+    .line 141
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->r:Lcom/google/android/youtube/core/async/UserAuthorizer;
 
-    invoke-virtual {v0, p0, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/av;)V
+    invoke-virtual {v0, p0, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/bc;)V
 
-    .line 93
+    .line 142
     return-void
 .end method
 
@@ -300,14 +531,14 @@
     .registers 2
 
     .prologue
-    .line 85
+    .line 134
     invoke-super {p0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->onStop()V
 
-    .line 86
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->g:Lcom/google/android/youtube/app/ui/cv;
+    .line 135
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->w:Lcom/google/android/youtube/app/ui/eh;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/cv;->e()V
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/eh;->e()V
 
-    .line 87
+    .line 136
     return-void
 .end method

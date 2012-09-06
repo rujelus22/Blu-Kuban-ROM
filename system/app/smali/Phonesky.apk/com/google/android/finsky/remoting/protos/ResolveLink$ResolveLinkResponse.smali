@@ -29,45 +29,61 @@
 
 .field private hasDirectPurchase:Z
 
+.field private hasHomeUrl:Z
+
+.field private hasRedeemGiftCard:Z
+
 .field private hasSearchUrl:Z
+
+.field private homeUrl_:Ljava/lang/String;
+
+.field private redeemGiftCard_:Lcom/google/android/finsky/remoting/protos/ResolveLink$RedeemGiftCard;
 
 .field private searchUrl_:Ljava/lang/String;
 
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .registers 3
 
     .prologue
-    .line 9
+    const/4 v1, 0x0
+
+    .line 10
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 14
+    .line 15
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->detailsUrl_:Ljava/lang/String;
 
-    .line 31
+    .line 32
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->browseUrl_:Ljava/lang/String;
 
-    .line 48
+    .line 49
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->searchUrl_:Ljava/lang/String;
 
-    .line 65
-    const/4 v0, 0x0
+    .line 66
+    iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->directPurchase_:Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;
 
-    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->directPurchase_:Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;
+    .line 86
+    const-string v0, ""
 
-    .line 111
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->homeUrl_:Ljava/lang/String;
+
+    .line 103
+    iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->redeemGiftCard_:Lcom/google/android/finsky/remoting/protos/ResolveLink$RedeemGiftCard;
+
+    .line 158
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->cachedSize:I
 
-    .line 9
+    .line 10
     return-void
 .end method
 
@@ -77,7 +93,7 @@
     .registers 2
 
     .prologue
-    .line 32
+    .line 33
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->browseUrl_:Ljava/lang/String;
 
     return-object v0
@@ -87,15 +103,15 @@
     .registers 2
 
     .prologue
-    .line 113
+    .line 161
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 115
+    .line 163
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->getSerializedSize()I
 
-    .line 117
+    .line 165
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->cachedSize:I
 
@@ -106,7 +122,7 @@
     .registers 2
 
     .prologue
-    .line 15
+    .line 16
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->detailsUrl_:Ljava/lang/String;
 
     return-object v0
@@ -116,8 +132,28 @@
     .registers 2
 
     .prologue
-    .line 67
+    .line 68
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->directPurchase_:Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;
+
+    return-object v0
+.end method
+
+.method public getHomeUrl()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 87
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->homeUrl_:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getRedeemGiftCard()Lcom/google/android/finsky/remoting/protos/ResolveLink$RedeemGiftCard;
+    .registers 2
+
+    .prologue
+    .line 105
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->redeemGiftCard_:Lcom/google/android/finsky/remoting/protos/ResolveLink$RedeemGiftCard;
 
     return-object v0
 .end method
@@ -126,7 +162,7 @@
     .registers 2
 
     .prologue
-    .line 49
+    .line 50
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->searchUrl_:Ljava/lang/String;
 
     return-object v0
@@ -136,10 +172,10 @@
     .registers 4
 
     .prologue
-    .line 121
+    .line 170
     const/4 v0, 0x0
 
-    .line 122
+    .line 171
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasDetailsUrl()Z
 
@@ -147,7 +183,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 123
+    .line 172
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->getDetailsUrl()Ljava/lang/String;
@@ -160,7 +196,7 @@
 
     add-int/2addr v0, v1
 
-    .line 126
+    .line 175
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasBrowseUrl()Z
 
@@ -168,7 +204,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 127
+    .line 176
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->getBrowseUrl()Ljava/lang/String;
@@ -181,7 +217,7 @@
 
     add-int/2addr v0, v1
 
-    .line 130
+    .line 179
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasSearchUrl()Z
 
@@ -189,7 +225,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 131
+    .line 180
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->getSearchUrl()Ljava/lang/String;
@@ -202,7 +238,7 @@
 
     add-int/2addr v0, v1
 
-    .line 134
+    .line 183
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasDirectPurchase()Z
 
@@ -210,7 +246,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 135
+    .line 184
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->getDirectPurchase()Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;
@@ -223,11 +259,53 @@
 
     add-int/2addr v0, v1
 
-    .line 138
+    .line 187
     :cond_41
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasHomeUrl()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_51
+
+    .line 188
+    const/4 v1, 0x5
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->getHomeUrl()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 191
+    :cond_51
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasRedeemGiftCard()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_61
+
+    .line 192
+    const/4 v1, 0x6
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->getRedeemGiftCard()Lcom/google/android/finsky/remoting/protos/ResolveLink$RedeemGiftCard;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 195
+    :cond_61
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->cachedSize:I
 
-    .line 139
+    .line 196
     return v0
 .end method
 
@@ -235,7 +313,7 @@
     .registers 2
 
     .prologue
-    .line 33
+    .line 34
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasBrowseUrl:Z
 
     return v0
@@ -245,7 +323,7 @@
     .registers 2
 
     .prologue
-    .line 16
+    .line 17
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasDetailsUrl:Z
 
     return v0
@@ -255,8 +333,28 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 67
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasDirectPurchase:Z
+
+    return v0
+.end method
+
+.method public hasHomeUrl()Z
+    .registers 2
+
+    .prologue
+    .line 88
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasHomeUrl:Z
+
+    return v0
+.end method
+
+.method public hasRedeemGiftCard()Z
+    .registers 2
+
+    .prologue
+    .line 104
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasRedeemGiftCard:Z
 
     return v0
 .end method
@@ -265,7 +363,7 @@
     .registers 2
 
     .prologue
-    .line 50
+    .line 51
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasSearchUrl:Z
 
     return v0
@@ -281,29 +379,29 @@
     .end annotation
 
     .prologue
-    .line 146
+    .line 204
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 147
+    .line 205
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_32
+    sparse-switch v0, :sswitch_data_46
 
-    .line 151
+    .line 209
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 152
+    .line 210
     :sswitch_d
     return-object p0
 
-    .line 157
+    .line 215
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -313,7 +411,7 @@
 
     goto :goto_0
 
-    .line 161
+    .line 219
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -323,7 +421,7 @@
 
     goto :goto_0
 
-    .line 165
+    .line 223
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -333,29 +431,57 @@
 
     goto :goto_0
 
-    .line 169
+    .line 227
     :sswitch_26
     new-instance v1, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;-><init>()V
 
-    .line 170
+    .line 228
     .local v1, value:Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 171
+    .line 229
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->setDirectPurchase(Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;)Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;
 
     goto :goto_0
 
-    .line 147
-    :sswitch_data_32
+    .line 233
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;
+    :sswitch_32
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->setHomeUrl(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;
+
+    goto :goto_0
+
+    .line 237
+    :sswitch_3a
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/ResolveLink$RedeemGiftCard;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/ResolveLink$RedeemGiftCard;-><init>()V
+
+    .line 238
+    .local v1, value:Lcom/google/android/finsky/remoting/protos/ResolveLink$RedeemGiftCard;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 239
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->setRedeemGiftCard(Lcom/google/android/finsky/remoting/protos/ResolveLink$RedeemGiftCard;)Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;
+
+    goto :goto_0
+
+    .line 205
+    :sswitch_data_46
     .sparse-switch
         0x0 -> :sswitch_d
         0xa -> :sswitch_e
         0x12 -> :sswitch_16
         0x1a -> :sswitch_1e
         0x22 -> :sswitch_26
+        0x2a -> :sswitch_32
+        0x32 -> :sswitch_3a
     .end sparse-switch
 .end method
 
@@ -382,15 +508,15 @@
     .parameter "value"
 
     .prologue
-    .line 35
+    .line 36
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasBrowseUrl:Z
 
-    .line 36
+    .line 37
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->browseUrl_:Ljava/lang/String;
 
-    .line 37
+    .line 38
     return-object p0
 .end method
 
@@ -399,15 +525,15 @@
     .parameter "value"
 
     .prologue
-    .line 18
+    .line 19
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasDetailsUrl:Z
 
-    .line 19
+    .line 20
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->detailsUrl_:Ljava/lang/String;
 
-    .line 20
+    .line 21
     return-object p0
 .end method
 
@@ -416,26 +542,71 @@
     .parameter "value"
 
     .prologue
-    .line 69
+    .line 70
     if-nez p1, :cond_8
 
-    .line 70
+    .line 71
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 72
+    .line 73
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasDirectPurchase:Z
 
-    .line 73
+    .line 74
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->directPurchase_:Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;
 
-    .line 74
+    .line 75
+    return-object p0
+.end method
+
+.method public setHomeUrl(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 90
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasHomeUrl:Z
+
+    .line 91
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->homeUrl_:Ljava/lang/String;
+
+    .line 92
+    return-object p0
+.end method
+
+.method public setRedeemGiftCard(Lcom/google/android/finsky/remoting/protos/ResolveLink$RedeemGiftCard;)Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 107
+    if-nez p1, :cond_8
+
+    .line 108
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 110
+    :cond_8
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasRedeemGiftCard:Z
+
+    .line 111
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->redeemGiftCard_:Lcom/google/android/finsky/remoting/protos/ResolveLink$RedeemGiftCard;
+
+    .line 112
     return-object p0
 .end method
 
@@ -444,15 +615,15 @@
     .parameter "value"
 
     .prologue
-    .line 52
+    .line 53
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasSearchUrl:Z
 
-    .line 53
+    .line 54
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->searchUrl_:Ljava/lang/String;
 
-    .line 54
+    .line 55
     return-object p0
 .end method
 
@@ -466,14 +637,14 @@
     .end annotation
 
     .prologue
-    .line 97
+    .line 138
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasDetailsUrl()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 98
+    .line 139
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->getDetailsUrl()Ljava/lang/String;
@@ -482,7 +653,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 100
+    .line 141
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasBrowseUrl()Z
 
@@ -490,7 +661,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 101
+    .line 142
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->getBrowseUrl()Ljava/lang/String;
@@ -499,7 +670,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 103
+    .line 144
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasSearchUrl()Z
 
@@ -507,7 +678,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 104
+    .line 145
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->getSearchUrl()Ljava/lang/String;
@@ -516,7 +687,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 106
+    .line 147
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasDirectPurchase()Z
 
@@ -524,7 +695,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 107
+    .line 148
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->getDirectPurchase()Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;
@@ -533,7 +704,41 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 109
+    .line 150
     :cond_38
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasHomeUrl()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_46
+
+    .line 151
+    const/4 v0, 0x5
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->getHomeUrl()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    .line 153
+    :cond_46
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->hasRedeemGiftCard()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_54
+
+    .line 154
+    const/4 v0, 0x6
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;->getRedeemGiftCard()Lcom/google/android/finsky/remoting/protos/ResolveLink$RedeemGiftCard;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 156
+    :cond_54
     return-void
 .end method

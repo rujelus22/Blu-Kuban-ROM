@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 33
+    .line 34
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -21,12 +21,12 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 69
+    .line 60
     invoke-static {p1}, Lcom/google/android/finsky/api/AccountHandler;->getAccounts(Landroid/content/Context;)[Landroid/accounts/Account;
 
     move-result-object v0
 
-    .line 71
+    .line 62
     .local v0, accounts:[Landroid/accounts/Account;
     sget-object v3, Lcom/google/android/finsky/utils/VendingPreferences;->RESTORED_ANDROID_ID:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
@@ -36,26 +36,26 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 72
+    .line 63
     .local v2, sourceAndroidId:Ljava/lang/String;
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    if-nez v3, :cond_3d
+    if-nez v3, :cond_2e
 
-    .line 73
+    .line 64
     invoke-static {v0}, Lcom/google/android/finsky/utils/VendingPreferences;->getNewAccounts([Landroid/accounts/Account;)[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 74
+    .line 65
     .local v1, newAccountNames:[Ljava/lang/String;
     array-length v3, v1
 
-    if-lez v3, :cond_3d
+    if-lez v3, :cond_2e
 
-    .line 75
+    .line 66
     const-string v3, "Restoring apps for %d new accounts."
 
     const/4 v4, 0x1
@@ -72,33 +72,17 @@
 
     invoke-static {v3, v4}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 76
-    sget-object v3, Lcom/google/android/finsky/utils/VendingPreferences;->PENDING_RESTORE_AID:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
+    .line 67
+    aget-object v3, v1, v6
 
-    invoke-virtual {v3}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->get()Ljava/lang/Object;
+    invoke-static {p1, v2, v3}, Lcom/google/android/finsky/services/RestoreService;->start(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v3
-
-    if-nez v3, :cond_3d
-
-    .line 78
-    sget-object v3, Lcom/google/android/finsky/utils/VendingPreferences;->PENDING_RESTORE_AID:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    invoke-virtual {v3, v2}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->put(Ljava/lang/Object;)V
-
-    .line 79
-    sget-object v3, Lcom/google/android/finsky/utils/VendingPreferences;->PENDING_RESTORE_ACCOUNT:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    aget-object v4, v1, v6
-
-    invoke-virtual {v3, v4}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->put(Ljava/lang/Object;)V
-
-    .line 87
+    .line 72
     .end local v1           #newAccountNames:[Ljava/lang/String;
-    :cond_3d
+    :cond_2e
     invoke-static {v0}, Lcom/google/android/finsky/utils/VendingPreferences;->saveCurrentAccountList([Landroid/accounts/Account;)V
 
-    .line 88
+    .line 73
     return-void
 .end method
 
@@ -110,11 +94,13 @@
     .parameter "intent"
 
     .prologue
-    .line 36
+    .line 37
     invoke-direct {p0, p1}, Lcom/google/android/finsky/receivers/AccountsChangedReceiver;->restoreNewAccountApps(Landroid/content/Context;)V
 
     .line 38
-    invoke-static {}, Lcom/google/android/finsky/services/ReconstructDatabaseService;->resetDatabaseSyncStatus()V
+    sget-wide v0, Lcom/google/android/finsky/services/DailyHygiene;->IMMEDIATE_DELAY_MS:J
+
+    invoke-static {p1, v0, v1}, Lcom/google/android/finsky/services/DailyHygiene;->schedule(Landroid/content/Context;J)V
 
     .line 39
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;

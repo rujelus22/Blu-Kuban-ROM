@@ -28,6 +28,14 @@
         <item quantity="other">%1$d giây trước</item>
         <item quantity="one">1 giây trước</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">H.hạn sau %1$d ngày</item>
+        <item quantity="one">Hết hạn sau 1 ngày</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Hết hạn sau %1$d giờ</item>
+        <item quantity="one">Hết hạn sau 1 giờ</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">Video tải lên mới</item>
         <item quantity="one">Video tải lên mới</item>

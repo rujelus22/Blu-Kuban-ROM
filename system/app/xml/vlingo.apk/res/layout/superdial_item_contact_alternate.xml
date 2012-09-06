@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.vlingo.client.superdialer.items.SDItemContactView android:paddingLeft="14.0dip" android:paddingTop="6.0dip" android:paddingRight="14.0dip" android:paddingBottom="6.0dip" android:descendantFocusability="beforeDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="55.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textAppearance="@style/ListCellContactTextAlt" android:gravity="center_vertical" android:id="@id/contact_name" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/auto_dial_dialog_contact_name" />
-</com.vlingo.client.superdialer.items.SDItemContactView>

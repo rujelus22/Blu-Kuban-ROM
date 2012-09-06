@@ -3,7 +3,7 @@
 .source "SelfUpdateScheduler.java"
 
 # interfaces
-.implements Lcom/android/volley/toolbox/AndroidAuthenticator$AuthTokenListener;
+.implements Lcom/google/android/finsky/billing/AsyncAuthenticator$Listener;
 
 
 # annotations
@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 103
+    .line 108
     iput-object p1, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler$1;->this$0:Lcom/google/android/finsky/utils/SelfUpdateScheduler;
 
     iput-object p2, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler$1;->val$response:Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;
@@ -43,12 +43,10 @@
 
 # virtual methods
 .method public onAuthTokenReceived(Ljava/lang/String;)V
-    .registers 12
+    .registers 17
     .parameter "authToken"
 
     .prologue
-    const/4 v3, 0x0
-
     .line 112
     new-instance v0, Lcom/google/android/finsky/download/DownloadImpl;
 
@@ -60,26 +58,36 @@
 
     const-string v2, ""
 
-    const-string v4, "ANDROIDSECURE"
+    const/4 v3, 0x0
 
-    const-wide/16 v7, -0x1
+    const/4 v4, 0x0
 
-    move-object v5, p1
+    const-string v5, "ANDROIDSECURE"
 
-    move-object v6, v3
+    const/4 v7, 0x0
 
-    move-object v9, v3
+    const-wide/16 v8, -0x1
 
-    invoke-direct/range {v0 .. v9}, Lcom/google/android/finsky/download/DownloadImpl;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/google/android/finsky/download/Download$PackageProperties;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;JLcom/google/android/finsky/download/obb/Obb;)V
+    const-wide/16 v10, -0x1
 
-    .line 114
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x1
+
+    move-object/from16 v6, p1
+
+    invoke-direct/range {v0 .. v14}, Lcom/google/android/finsky/download/DownloadImpl;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Landroid/net/Uri;JJLcom/google/android/finsky/download/obb/Obb;ZZ)V
+
+    .line 115
     .local v0, download:Lcom/google/android/finsky/download/InternalDownload;
     iget-object v1, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler$1;->this$0:Lcom/google/android/finsky/utils/SelfUpdateScheduler;
 
     #setter for: Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mUpdateDownload:Lcom/google/android/finsky/download/Download;
     invoke-static {v1, v0}, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->access$002(Lcom/google/android/finsky/utils/SelfUpdateScheduler;Lcom/google/android/finsky/download/Download;)Lcom/google/android/finsky/download/Download;
 
-    .line 115
+    .line 116
     iget-object v1, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler$1;->this$0:Lcom/google/android/finsky/utils/SelfUpdateScheduler;
 
     #getter for: Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mDownloadQueue:Lcom/google/android/finsky/download/DownloadQueue;
@@ -91,7 +99,7 @@
 
     invoke-interface {v1, v2}, Lcom/google/android/finsky/download/DownloadQueue;->addListener(Lcom/google/android/finsky/download/DownloadQueueListener;)V
 
-    .line 116
+    .line 117
     iget-object v1, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler$1;->this$0:Lcom/google/android/finsky/utils/SelfUpdateScheduler;
 
     #getter for: Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mDownloadQueue:Lcom/google/android/finsky/download/DownloadQueue;
@@ -101,16 +109,33 @@
 
     invoke-interface {v1, v0}, Lcom/google/android/finsky/download/DownloadQueue;->add(Lcom/google/android/finsky/download/InternalDownload;)V
 
-    .line 117
+    .line 118
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/FinskyApp;->getAnalytics()Lcom/google/android/finsky/analytics/Analytics;
+
+    move-result-object v1
+
+    const-string v2, "install.downloadQueued"
+
+    const-string v3, "self-update-download"
+
+    const/4 v4, 0x0
+
+    invoke-interface {v1, v2, v3, v4}, Lcom/google/android/finsky/analytics/Analytics;->logTagAndPackage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 120
     return-void
 .end method
 
-.method public onErrorReceived(Lcom/android/volley/AuthFailureError;)V
+.method public onError(Lcom/android/volley/AuthFailureError;)V
     .registers 5
     .parameter "error"
 
     .prologue
-    .line 106
+    .line 124
     const-string v0, "Exception occured while getting auth token."
 
     const/4 v1, 0x1
@@ -123,6 +148,6 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 107
+    .line 125
     return-void
 .end method

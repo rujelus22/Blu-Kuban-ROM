@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 231
+    .line 264
     iput-object p1, p0, Lcom/google/android/finsky/layout/SongSnippet$4;->this$0:Lcom/google/android/finsky/layout/SongSnippet;
 
     invoke-direct {p0}, Lcom/google/android/finsky/previews/SongSnippetStatusListener;-><init>()V
@@ -38,27 +38,27 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 248
+    .line 282
     iget-object v3, p0, Lcom/google/android/finsky/layout/SongSnippet$4;->this$0:Lcom/google/android/finsky/layout/SongSnippet;
 
     #getter for: Lcom/google/android/finsky/layout/SongSnippet;->mSongDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
-    invoke-static {v3}, Lcom/google/android/finsky/layout/SongSnippet;->access$300(Lcom/google/android/finsky/layout/SongSnippet;)Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
+    invoke-static {v3}, Lcom/google/android/finsky/layout/SongSnippet;->access$200(Lcom/google/android/finsky/layout/SongSnippet;)Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
     move-result-object v3
 
     if-nez v3, :cond_a
 
-    .line 255
+    .line 289
     :cond_9
     :goto_9
     return v2
 
-    .line 252
+    .line 286
     :cond_a
     iget-object v3, p0, Lcom/google/android/finsky/layout/SongSnippet$4;->this$0:Lcom/google/android/finsky/layout/SongSnippet;
 
     #getter for: Lcom/google/android/finsky/layout/SongSnippet;->mConnection:Lcom/google/android/finsky/previews/PreviewController;
-    invoke-static {v3}, Lcom/google/android/finsky/layout/SongSnippet;->access$400(Lcom/google/android/finsky/layout/SongSnippet;)Lcom/google/android/finsky/previews/PreviewController;
+    invoke-static {v3}, Lcom/google/android/finsky/layout/SongSnippet;->access$300(Lcom/google/android/finsky/layout/SongSnippet;)Lcom/google/android/finsky/previews/PreviewController;
 
     move-result-object v3
 
@@ -66,12 +66,12 @@
 
     move-result-object v1
 
-    .line 254
+    .line 288
     .local v1, trackToCheck:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
     iget-object v3, p0, Lcom/google/android/finsky/layout/SongSnippet$4;->this$0:Lcom/google/android/finsky/layout/SongSnippet;
 
     #getter for: Lcom/google/android/finsky/layout/SongSnippet;->mSongDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
-    invoke-static {v3}, Lcom/google/android/finsky/layout/SongSnippet;->access$300(Lcom/google/android/finsky/layout/SongSnippet;)Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
+    invoke-static {v3}, Lcom/google/android/finsky/layout/SongSnippet;->access$200(Lcom/google/android/finsky/layout/SongSnippet;)Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
     move-result-object v3
 
@@ -79,7 +79,7 @@
 
     move-result-object v0
 
-    .line 255
+    .line 289
     .local v0, previewUrl:Ljava/lang/String;
     if-eqz v1, :cond_9
 
@@ -103,30 +103,38 @@
 
 # virtual methods
 .method protected update(IZ)V
-    .registers 4
+    .registers 5
     .parameter "state"
     .parameter "highlight"
 
     .prologue
-    .line 234
+    .line 267
+    iget-object v0, p0, Lcom/google/android/finsky/layout/SongSnippet$4;->this$0:Lcom/google/android/finsky/layout/SongSnippet;
+
+    const/4 v1, 0x1
+
+    #setter for: Lcom/google/android/finsky/layout/SongSnippet;->mInitialized:Z
+    invoke-static {v0, v1}, Lcom/google/android/finsky/layout/SongSnippet;->access$402(Lcom/google/android/finsky/layout/SongSnippet;Z)Z
+
+    .line 268
     invoke-direct {p0}, Lcom/google/android/finsky/layout/SongSnippet$4;->isSameAsSnippetSong()Z
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_12
 
-    .line 235
+    .line 269
     iget-object v0, p0, Lcom/google/android/finsky/layout/SongSnippet$4;->this$0:Lcom/google/android/finsky/layout/SongSnippet;
 
     #calls: Lcom/google/android/finsky/layout/SongSnippet;->resetUI()V
     invoke-static {v0}, Lcom/google/android/finsky/layout/SongSnippet;->access$500(Lcom/google/android/finsky/layout/SongSnippet;)V
 
-    .line 241
-    :goto_b
+    .line 275
+    :goto_11
     return-void
 
-    .line 239
-    :cond_c
+    .line 273
+    :cond_12
     iget-object v0, p0, Lcom/google/android/finsky/layout/SongSnippet$4;->this$0:Lcom/google/android/finsky/layout/SongSnippet;
 
     #getter for: Lcom/google/android/finsky/layout/SongSnippet;->mSongIndex:Lcom/google/android/finsky/layout/SongIndex;
@@ -136,11 +144,11 @@
 
     invoke-virtual {v0, p1}, Lcom/google/android/finsky/layout/SongIndex;->setState(I)V
 
-    .line 240
+    .line 274
     iget-object v0, p0, Lcom/google/android/finsky/layout/SongSnippet$4;->this$0:Lcom/google/android/finsky/layout/SongSnippet;
 
     #calls: Lcom/google/android/finsky/layout/SongSnippet;->setHighlighted(Z)V
     invoke-static {v0, p2}, Lcom/google/android/finsky/layout/SongSnippet;->access$700(Lcom/google/android/finsky/layout/SongSnippet;Z)V
 
-    goto :goto_b
+    goto :goto_11
 .end method

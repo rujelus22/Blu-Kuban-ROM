@@ -18,28 +18,16 @@
 
 
 # virtual methods
-.method public abstract moveToNewerView()V
-.end method
-
-.method public abstract moveToOlderView()V
-.end method
-
-.method public abstract onBeforeMessageDelete()V
+.method public abstract onBeforeMessageGone()V
 .end method
 
 .method public abstract onCalendarLinkClicked(J)V
-.end method
-
-.method public abstract onCompose()V
 .end method
 
 .method public abstract onForward()V
 .end method
 
 .method public abstract onMessageSetUnread()V
-.end method
-
-.method public abstract onMoveMessage()V
 .end method
 
 .method public abstract onReply()V
@@ -49,7 +37,4 @@
 .end method
 
 .method public abstract onRespondedToInvite(I)V
-.end method
-
-.method public abstract removeIrmProtection(J)V
 .end method

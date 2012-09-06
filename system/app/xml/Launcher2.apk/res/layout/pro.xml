@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.anddoes.launcher.CircleIndicator android:id="@id/indicator" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="5.0dip" />
+    <com.anddoes.launcher.SimplePagedView android:id="@id/pages" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/indicator">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/apex_launcher_pro_title" android:maxLines="1" android:singleLine="true" />
+                    <TextView android:textSize="14.0sp" android:textColor="@android:color/white" android:id="@id/info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="10.0dip" android:lineSpacingMultiplier="1.1" />
+                    <TextView android:textSize="14.0sp" android:textColor="@android:color/white" android:autoLink="web" android:id="@id/faq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:lineSpacingMultiplier="1.1" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+        <include layout="@layout/help_content" />
+    </com.anddoes.launcher.SimplePagedView>
+</RelativeLayout>

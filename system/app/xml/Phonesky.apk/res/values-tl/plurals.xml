@@ -5,8 +5,8 @@
         <item quantity="one">%1$d (na) resulta</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">%1$d (na) update ang natagpuan para sa %2$s.</item>
-        <item quantity="one">%1$d (na) update ang natagpuan para sa %2$s.</item>
+        <item quantity="other">Nakita ang %1$d (na) update.</item>
+        <item quantity="one">Nakita ang %1$d (na) pag-update.</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">%1$s (na) tao ang nag-+1 nito.</item>

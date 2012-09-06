@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="top|left|center" android:orientation="horizontal" android:background="@color/disabled_background_grey" android:paddingLeft="@dimen/local_plus_page_padding_left" android:paddingTop="@dimen/local_plus_page_padding_left" android:paddingRight="@dimen/local_plus_page_padding_left" android:paddingBottom="@dimen/local_plus_page_padding_left" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/photo" android:layout_width="49.0dip" android:layout_height="49.0dip" android:src="@drawable/placeholder_photo" android:scaleType="centerCrop" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip">
+            <TextView android:ellipsize="end" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_marginBottom="2.0dip" android:singleLine="true" android:layout_alignParentLeft="true" />
+            <TextView android:id="@id/addressLine1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <include layout="@layout/zagat_review_summary" />
+        </LinearLayout>
+    </LinearLayout>
+    <View android:background="@color/verylight_grey" android:layout_width="fill_parent" android:layout_height="2.0dip" android:scaleType="fitXY" />
+</LinearLayout>

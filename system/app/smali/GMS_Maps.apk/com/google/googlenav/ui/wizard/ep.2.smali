@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/wizard/ep;
+.class Lcom/google/googlenav/ui/wizard/eP;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/googlenav/login/i;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/eo;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/eO;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/eo;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/eO;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/ep;->a:Lcom/google/googlenav/ui/wizard/eo;
+    .prologue
+    .line 136
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/eP;->a:Lcom/google/googlenav/ui/wizard/eO;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,50 +26,19 @@
 
 
 # virtual methods
-.method public B_()V
-    .registers 1
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    return-void
-.end method
+    .prologue
+    .line 140
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/eP;->a:Lcom/google/googlenav/ui/wizard/eO;
 
-.method public C_()V
-    .registers 1
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/eO;->a()V
 
-    return-void
-.end method
-
-.method public E_()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/ep;->a:Lcom/google/googlenav/ui/wizard/eo;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/eo;->b:Lcom/google/googlenav/ui/wizard/hM;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hM;->j()V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/ep;->a:Lcom/google/googlenav/ui/wizard/eo;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/eo;->a(Lcom/google/googlenav/ui/wizard/eo;)V
-
-    return-void
-.end method
-
-.method public F_()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/ep;->a:Lcom/google/googlenav/ui/wizard/eo;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/eo;->a()V
-
-    return-void
-.end method
-
-.method public i()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/ep;->a:Lcom/google/googlenav/ui/wizard/eo;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/eo;->a()V
-
+    .line 141
     return-void
 .end method

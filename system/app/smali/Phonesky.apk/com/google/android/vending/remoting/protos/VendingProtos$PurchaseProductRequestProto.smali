@@ -35,30 +35,30 @@
     .registers 2
 
     .prologue
-    .line 9134
+    .line 9304
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 9139
+    .line 9309
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->productType_:I
 
-    .line 9156
+    .line 9326
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->productId_:Ljava/lang/String;
 
-    .line 9173
+    .line 9343
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->signatureHash_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
 
-    .line 9220
+    .line 9391
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->cachedSize:I
 
-    .line 9134
+    .line 9304
     return-void
 .end method
 
@@ -68,15 +68,15 @@
     .registers 2
 
     .prologue
-    .line 9222
+    .line 9394
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 9224
+    .line 9396
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->getSerializedSize()I
 
-    .line 9226
+    .line 9398
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->cachedSize:I
 
@@ -87,7 +87,7 @@
     .registers 2
 
     .prologue
-    .line 9157
+    .line 9327
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->productId_:Ljava/lang/String;
 
     return-object v0
@@ -97,7 +97,7 @@
     .registers 2
 
     .prologue
-    .line 9141
+    .line 9311
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->productType_:I
 
     return v0
@@ -107,10 +107,10 @@
     .registers 4
 
     .prologue
-    .line 9230
+    .line 9403
     const/4 v0, 0x0
 
-    .line 9231
+    .line 9404
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->hasProductType()Z
 
@@ -118,7 +118,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 9232
+    .line 9405
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->getProductType()I
@@ -131,7 +131,7 @@
 
     add-int/2addr v0, v1
 
-    .line 9235
+    .line 9408
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->hasProductId()Z
 
@@ -139,7 +139,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 9236
+    .line 9409
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->getProductId()Ljava/lang/String;
@@ -152,7 +152,7 @@
 
     add-int/2addr v0, v1
 
-    .line 9239
+    .line 9412
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->hasSignatureHash()Z
 
@@ -160,7 +160,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 9240
+    .line 9413
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->getSignatureHash()Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
@@ -173,11 +173,11 @@
 
     add-int/2addr v0, v1
 
-    .line 9243
+    .line 9416
     :cond_31
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->cachedSize:I
 
-    .line 9244
+    .line 9417
     return v0
 .end method
 
@@ -185,7 +185,7 @@
     .registers 2
 
     .prologue
-    .line 9175
+    .line 9345
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->signatureHash_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
 
     return-object v0
@@ -195,7 +195,7 @@
     .registers 2
 
     .prologue
-    .line 9158
+    .line 9328
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->hasProductId:Z
 
     return v0
@@ -205,7 +205,7 @@
     .registers 2
 
     .prologue
-    .line 9140
+    .line 9310
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->hasProductType:Z
 
     return v0
@@ -215,7 +215,7 @@
     .registers 2
 
     .prologue
-    .line 9174
+    .line 9344
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->hasSignatureHash:Z
 
     return v0
@@ -231,29 +231,29 @@
     .end annotation
 
     .prologue
-    .line 9251
+    .line 9425
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 9252
+    .line 9426
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_2a
 
-    .line 9256
+    .line 9430
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 9257
+    .line 9431
     :sswitch_d
     return-object p0
 
-    .line 9262
+    .line 9436
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -263,7 +263,7 @@
 
     goto :goto_0
 
-    .line 9266
+    .line 9440
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -273,22 +273,22 @@
 
     goto :goto_0
 
-    .line 9270
+    .line 9444
     :sswitch_1e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;-><init>()V
 
-    .line 9271
+    .line 9445
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 9272
+    .line 9446
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->setSignatureHash(Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;
 
     goto :goto_0
 
-    .line 9252
+    .line 9426
     :sswitch_data_2a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -308,7 +308,7 @@
     .end annotation
 
     .prologue
-    .line 9132
+    .line 9302
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;
 
     move-result-object v0
@@ -321,15 +321,15 @@
     .parameter "value"
 
     .prologue
-    .line 9160
+    .line 9330
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->hasProductId:Z
 
-    .line 9161
+    .line 9331
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->productId_:Ljava/lang/String;
 
-    .line 9162
+    .line 9332
     return-object p0
 .end method
 
@@ -338,15 +338,15 @@
     .parameter "value"
 
     .prologue
-    .line 9143
+    .line 9313
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->hasProductType:Z
 
-    .line 9144
+    .line 9314
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->productType_:I
 
-    .line 9145
+    .line 9315
     return-object p0
 .end method
 
@@ -355,26 +355,26 @@
     .parameter "value"
 
     .prologue
-    .line 9177
+    .line 9347
     if-nez p1, :cond_8
 
-    .line 9178
+    .line 9348
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 9180
+    .line 9350
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->hasSignatureHash:Z
 
-    .line 9181
+    .line 9351
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->signatureHash_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
 
-    .line 9182
+    .line 9352
     return-object p0
 .end method
 
@@ -388,14 +388,14 @@
     .end annotation
 
     .prologue
-    .line 9209
+    .line 9380
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->hasProductType()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 9210
+    .line 9381
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->getProductType()I
@@ -404,7 +404,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 9212
+    .line 9383
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->hasProductId()Z
 
@@ -412,7 +412,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 9213
+    .line 9384
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->getProductId()Ljava/lang/String;
@@ -421,7 +421,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 9215
+    .line 9386
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->hasSignatureHash()Z
 
@@ -429,7 +429,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 9216
+    .line 9387
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseProductRequestProto;->getSignatureHash()Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
@@ -438,7 +438,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 9218
+    .line 9389
     :cond_2a
     return-void
 .end method

@@ -28,8 +28,8 @@
     .registers 1
 
     .prologue
-    .line 37
-    sget-object v0, Lcom/google/android/finsky/config/G;->purchaseStatusTimeoutMs:Lcom/google/android/finsky/config/GservicesValue;
+    .line 38
+    sget-object v0, Lcom/google/android/finsky/api/DfeApiConfig;->purchaseStatusTimeoutMs:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 
@@ -52,16 +52,16 @@
     .parameter "dcbContext"
 
     .prologue
-    .line 48
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
+    .line 50
     iput-object p1, p0, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
-    .line 50
+    .line 51
     iput-object p2, p0, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->mDcbContext:Lcom/google/android/finsky/billing/carrierbilling/api/DcbApiContext;
 
-    .line 51
+    .line 52
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 30
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     return-object v0
@@ -83,20 +83,20 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 257
+    .line 258
     :try_start_1
     invoke-static {p0}, Lcom/google/android/finsky/billing/carrierbilling/JsonUtils;->toLowerCase(Lorg/json/JSONObject;)Lorg/json/JSONObject;
 
     move-result-object p0
 
-    .line 258
+    .line 259
     const-string v5, "version"
 
     invoke-static {p0, v5}, Lcom/google/android/finsky/billing/carrierbilling/JsonUtils;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 259
+    .line 260
     .local v0, apiVersion:Ljava/lang/Integer;
     const-string v5, "credentialexpirationtime"
 
@@ -104,7 +104,7 @@
 
     move-result-object v1
 
-    .line 260
+    .line 261
     .local v1, expirationTime:Ljava/lang/Long;
     const-string v5, "isprovisioned"
 
@@ -112,7 +112,7 @@
 
     move-result-object v2
 
-    .line 261
+    .line 262
     .local v2, isProvisioned:Ljava/lang/Boolean;
     const-string v5, "passwordinvalid"
 
@@ -120,7 +120,7 @@
 
     move-result-object v4
 
-    .line 263
+    .line 264
     .local v4, passwordInvalid:Ljava/lang/Boolean;
     new-instance v7, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingCredentials$Builder;
 
@@ -186,7 +186,7 @@
 
     move-result-object v5
 
-    .line 272
+    .line 273
     .end local v0           #apiVersion:Ljava/lang/Integer;
     .end local v1           #expirationTime:Ljava/lang/Long;
     .end local v2           #isProvisioned:Ljava/lang/Boolean;
@@ -201,7 +201,7 @@
     :cond_59
     move v5, v6
 
-    .line 263
+    .line 264
     goto :goto_28
 
     :cond_5b
@@ -219,7 +219,7 @@
 
     goto :goto_50
 
-    .line 270
+    .line 271
     .end local v0           #apiVersion:Ljava/lang/Integer;
     .end local v1           #expirationTime:Ljava/lang/Long;
     .end local v2           #isProvisioned:Ljava/lang/Boolean;
@@ -227,7 +227,7 @@
     :catch_62
     move-exception v3
 
-    .line 271
+    .line 272
     .local v3, jsone:Lorg/json/JSONException;
     const-string v5, "JSON Exception while building credentials"
 
@@ -235,7 +235,7 @@
 
     invoke-static {v5, v6}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 272
+    .line 273
     const/4 v5, 0x0
 
     goto :goto_58
@@ -248,17 +248,17 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 295
+    .line 296
     if-nez p0, :cond_5
 
-    .line 296
+    .line 297
     const/4 v2, 0x0
 
-    .line 302
+    .line 303
     :goto_4
     return-object v2
 
-    .line 299
+    .line 300
     :cond_5
     const-string v2, "googlekeyversion"
 
@@ -266,7 +266,7 @@
 
     move-result-object v1
 
-    .line 300
+    .line 301
     .local v1, googleKeyVersion:Ljava/lang/Integer;
     const-string v2, "carrierkeyversion"
 
@@ -274,7 +274,7 @@
 
     move-result-object v0
 
-    .line 302
+    .line 303
     .local v0, carrierKeyVersion:Ljava/lang/Integer;
     new-instance v2, Lcom/google/android/finsky/billing/carrierbilling/model/EncryptedSubscriberInfo$Builder;
 
@@ -361,20 +361,20 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 217
+    .line 218
     :try_start_1
     invoke-static {p0}, Lcom/google/android/finsky/billing/carrierbilling/JsonUtils;->toLowerCase(Lorg/json/JSONObject;)Lorg/json/JSONObject;
 
     move-result-object p0
 
-    .line 219
+    .line 220
     const-string v6, "isprovisioned"
 
     invoke-static {p0, v6}, Lcom/google/android/finsky/billing/carrierbilling/JsonUtils;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
     move-result-object v1
 
-    .line 220
+    .line 221
     .local v1, isProvisioned:Ljava/lang/Boolean;
     const-string v6, "transactionlimit"
 
@@ -382,7 +382,7 @@
 
     move-result-object v5
 
-    .line 221
+    .line 222
     .local v5, transactionLimit:Ljava/lang/Long;
     const-string v6, "passwordrequired"
 
@@ -390,7 +390,7 @@
 
     move-result-object v3
 
-    .line 223
+    .line 224
     .local v3, passwordRequired:Ljava/lang/Boolean;
     const-string v6, "subscribername"
 
@@ -414,7 +414,7 @@
 
     move-result-object v4
 
-    .line 227
+    .line 228
     .local v4, subscriberInfo:Lcom/google/android/finsky/billing/carrierbilling/model/SubscriberInfo;
     const-string v6, "encryptedsubscriberinfo"
 
@@ -426,7 +426,7 @@
 
     move-result-object v0
 
-    .line 230
+    .line 231
     .local v0, encryptedSubscriberInfo:Lcom/google/android/finsky/billing/carrierbilling/model/EncryptedSubscriberInfo;
     new-instance v6, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingProvisioning$Builder;
 
@@ -591,7 +591,7 @@
 
     move-result-object v6
 
-    .line 250
+    .line 251
     .end local v0           #encryptedSubscriberInfo:Lcom/google/android/finsky/billing/carrierbilling/model/EncryptedSubscriberInfo;
     .end local v1           #isProvisioned:Ljava/lang/Boolean;
     .end local v3           #passwordRequired:Ljava/lang/Boolean;
@@ -608,7 +608,7 @@
     :cond_d7
     move v6, v7
 
-    .line 230
+    .line 231
     goto/16 :goto_50
 
     :cond_da
@@ -621,7 +621,7 @@
 
     goto :goto_a2
 
-    .line 248
+    .line 249
     .end local v0           #encryptedSubscriberInfo:Lcom/google/android/finsky/billing/carrierbilling/model/EncryptedSubscriberInfo;
     .end local v1           #isProvisioned:Ljava/lang/Boolean;
     .end local v3           #passwordRequired:Ljava/lang/Boolean;
@@ -630,7 +630,7 @@
     :catch_df
     move-exception v2
 
-    .line 249
+    .line 250
     .local v2, jsone:Lorg/json/JSONException;
     const-string v6, "JSON Exception while building provisioning"
 
@@ -638,7 +638,7 @@
 
     invoke-static {v6, v7}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 250
+    .line 251
     const/4 v6, 0x0
 
     goto :goto_d6
@@ -651,13 +651,13 @@
     .parameter "object"
 
     .prologue
-    .line 278
+    .line 279
     if-nez p2, :cond_4
 
-    .line 279
+    .line 280
     const/4 v0, 0x0
 
-    .line 282
+    .line 283
     :goto_3
     return-object v0
 
@@ -752,20 +752,20 @@
     .end annotation
 
     .prologue
-    .line 189
+    .line 190
     iget-object v5, p0, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->mDcbContext:Lcom/google/android/finsky/billing/carrierbilling/api/DcbApiContext;
 
     invoke-virtual {v5}, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApiContext;->getCarrierBillingParameters()Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
 
     move-result-object v3
 
-    .line 191
+    .line 192
     .local v3, params:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
     new-instance v1, Lorg/json/JSONObject;
 
     invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
 
-    .line 192
+    .line 193
     .local v1, jsonObject:Lorg/json/JSONObject;
     const-string v5, "format"
 
@@ -773,7 +773,7 @@
 
     invoke-virtual {v1, v5, v6}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 194
+    .line 195
     invoke-virtual {v3}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;->getCarrierApiVersion()I
 
     move-result v5
@@ -782,7 +782,7 @@
 
     move-result-object v0
 
-    .line 195
+    .line 196
     .local v0, apiVersion:Ljava/lang/Integer;
     if-eqz v0, :cond_22
 
@@ -792,7 +792,7 @@
 
     if-gtz v5, :cond_27
 
-    .line 196
+    .line 197
     :cond_22
     const/4 v5, 0x1
 
@@ -800,27 +800,27 @@
 
     move-result-object v0
 
-    .line 198
+    .line 199
     :cond_27
     const-string v5, "version"
 
     invoke-virtual {v1, v5, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 200
+    .line 201
     invoke-virtual {v3}, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;->sendSubscriberInfoWithCarrierRequests()Z
 
     move-result v5
 
     if-eqz v5, :cond_54
 
-    .line 201
+    .line 202
     iget-object v5, p0, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->mDcbContext:Lcom/google/android/finsky/billing/carrierbilling/api/DcbApiContext;
 
     invoke-virtual {v5}, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApiContext;->getLine1Number()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 202
+    .line 203
     .local v2, line1Number:Ljava/lang/String;
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -828,12 +828,12 @@
 
     if-nez v5, :cond_43
 
-    .line 203
+    .line 204
     const-string v5, "line1Number"
 
     invoke-virtual {v1, v5, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 205
+    .line 206
     :cond_43
     iget-object v5, p0, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->mDcbContext:Lcom/google/android/finsky/billing/carrierbilling/api/DcbApiContext;
 
@@ -841,7 +841,7 @@
 
     move-result-object v4
 
-    .line 206
+    .line 207
     .local v4, subscriberId:Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -849,12 +849,12 @@
 
     if-nez v5, :cond_54
 
-    .line 207
+    .line 208
     const-string v5, "subscriberId"
 
     invoke-virtual {v1, v5, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 211
+    .line 212
     .end local v2           #line1Number:Ljava/lang/String;
     .end local v4           #subscriberId:Ljava/lang/String;
     :cond_54
@@ -884,7 +884,7 @@
     .end annotation
 
     .prologue
-    .line 96
+    .line 97
     .local p3, listener:Lcom/android/volley/Response$Listener;,"Lcom/android/volley/Response$Listener<Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingCredentials;>;"
     iget-object v3, p0, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->mDcbContext:Lcom/google/android/finsky/billing/carrierbilling/api/DcbApiContext;
 
@@ -892,13 +892,13 @@
 
     move-result-object v1
 
-    .line 97
+    .line 98
     .local v1, params:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
     invoke-virtual {p0, p1, p2}, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->getCredentialsParametersAsJsonObject(Ljava/lang/String;Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 99
+    .line 100
     .local v0, jsonRequest:Lorg/json/JSONObject;
     new-instance v2, Lcom/android/volley/toolbox/JsonObjectRequest;
 
@@ -916,7 +916,7 @@
 
     invoke-direct {v2, v3, v0, v4, v5}, Lcom/android/volley/toolbox/JsonObjectRequest;-><init>(Ljava/lang/String;Lorg/json/JSONObject;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 102
+    .line 103
     .local v2, request:Lcom/android/volley/toolbox/JsonObjectRequest;
     new-instance v3, Lcom/android/volley/DefaultRetryPolicy;
 
@@ -930,12 +930,12 @@
 
     invoke-virtual {v2, v3}, Lcom/android/volley/toolbox/JsonObjectRequest;->setRetryPolicy(Lcom/android/volley/RetryPolicy;)V
 
-    .line 104
+    .line 105
     iget-object v3, p0, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     invoke-virtual {v3}, Lcom/android/volley/RequestQueue;->start()V
 
-    .line 105
+    .line 106
     iget-object v3, p0, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     invoke-virtual {v3, v2}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
@@ -951,22 +951,22 @@
     .parameter "password"
 
     .prologue
-    .line 171
+    .line 172
     :try_start_0
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->getBaseParametersAsJsonObject()Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 173
+    .line 174
     .local v0, jsonObject:Lorg/json/JSONObject;
     if-eqz p1, :cond_b
 
-    .line 174
+    .line 175
     const-string v2, "provisioningId"
 
     invoke-virtual {v0, v2, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 176
+    .line 177
     :cond_b
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -974,24 +974,24 @@
 
     if-nez v2, :cond_16
 
-    .line 177
+    .line 178
     const-string v2, "password"
 
     invoke-virtual {v0, v2, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     :try_end_16
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_16} :catch_17
 
-    .line 183
+    .line 184
     .end local v0           #jsonObject:Lorg/json/JSONObject;
     :cond_16
     :goto_16
     return-object v0
 
-    .line 181
+    .line 182
     :catch_17
     move-exception v1
 
-    .line 182
+    .line 183
     .local v1, jsone:Lorg/json/JSONException;
     const-string v2, "JSONException while creating credentials request: %s"
 
@@ -1005,7 +1005,7 @@
 
     invoke-static {v2, v3}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 183
+    .line 184
     const/4 v0, 0x0
 
     goto :goto_16
@@ -1032,7 +1032,7 @@
     .end annotation
 
     .prologue
-    .line 65
+    .line 66
     .local p2, listener:Lcom/android/volley/Response$Listener;,"Lcom/android/volley/Response$Listener<Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingProvisioning;>;"
     iget-object v3, p0, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->mDcbContext:Lcom/google/android/finsky/billing/carrierbilling/api/DcbApiContext;
 
@@ -1040,7 +1040,7 @@
 
     move-result-object v1
 
-    .line 67
+    .line 68
     .local v1, params:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
     sget-object v3, Lcom/google/android/finsky/config/G;->vendingCarrierProvisioningUseTosVersion:Lcom/google/android/finsky/config/GservicesValue;
 
@@ -1056,12 +1056,12 @@
 
     if-eqz v3, :cond_43
 
-    .line 68
+    .line 69
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->getProvisioningParametersAsJsonObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 73
+    .line 74
     .local v0, jsonRequest:Lorg/json/JSONObject;
     :goto_18
     new-instance v2, Lcom/android/volley/toolbox/JsonObjectRequest;
@@ -1080,7 +1080,7 @@
 
     invoke-direct {v2, v3, v0, v4, v5}, Lcom/android/volley/toolbox/JsonObjectRequest;-><init>(Ljava/lang/String;Lorg/json/JSONObject;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 76
+    .line 77
     .local v2, request:Lcom/android/volley/toolbox/JsonObjectRequest;
     new-instance v3, Lcom/android/volley/DefaultRetryPolicy;
 
@@ -1094,12 +1094,12 @@
 
     invoke-virtual {v2, v3}, Lcom/android/volley/toolbox/JsonObjectRequest;->setRetryPolicy(Lcom/android/volley/RetryPolicy;)V
 
-    .line 78
+    .line 79
     iget-object v3, p0, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     invoke-virtual {v3}, Lcom/android/volley/RequestQueue;->start()V
 
-    .line 79
+    .line 80
     iget-object v3, p0, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     invoke-virtual {v3, v2}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
@@ -1108,7 +1108,7 @@
 
     return-object v3
 
-    .line 70
+    .line 71
     .end local v0           #jsonRequest:Lorg/json/JSONObject;
     .end local v2           #request:Lcom/android/volley/toolbox/JsonObjectRequest;
     :cond_43
@@ -1127,34 +1127,34 @@
     .parameter "acceptedTosVersion"
 
     .prologue
-    .line 155
+    .line 156
     :try_start_0
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/api/DcbApi;->getBaseParametersAsJsonObject()Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 157
+    .line 158
     .local v0, jsonObject:Lorg/json/JSONObject;
     if-eqz p1, :cond_b
 
-    .line 158
+    .line 159
     const-string v2, "acceptedTosVersion"
 
     invoke-virtual {v0, v2, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     :try_end_b
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_b} :catch_c
 
-    .line 164
+    .line 165
     .end local v0           #jsonObject:Lorg/json/JSONObject;
     :cond_b
     :goto_b
     return-object v0
 
-    .line 162
+    .line 163
     :catch_c
     move-exception v1
 
-    .line 163
+    .line 164
     .local v1, jsone:Lorg/json/JSONException;
     const-string v2, "JSONException while creating provisioning request: %s"
 
@@ -1168,7 +1168,7 @@
 
     invoke-static {v2, v3}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 164
+    .line 165
     const/4 v0, 0x0
 
     goto :goto_b

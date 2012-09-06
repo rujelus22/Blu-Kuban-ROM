@@ -30,24 +30,24 @@
     .parameter "path"
 
     .prologue
-    .line 122
+    .line 124
     iput-object p1, p0, Lorg/apache/james/mime4j/util/SimpleTempStorage$SimpleTempPath;->this$0:Lorg/apache/james/mime4j/util/SimpleTempStorage;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 120
+    .line 122
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/apache/james/mime4j/util/SimpleTempStorage$SimpleTempPath;->path:Ljava/io/File;
 
-    .line 123
+    .line 125
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     iput-object v0, p0, Lorg/apache/james/mime4j/util/SimpleTempStorage$SimpleTempPath;->path:Ljava/io/File;
 
-    .line 124
+    .line 126
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .parameter "x2"
 
     .prologue
-    .line 119
+    .line 121
     invoke-direct {p0, p1, p2}, Lorg/apache/james/mime4j/util/SimpleTempStorage$SimpleTempPath;-><init>(Lorg/apache/james/mime4j/util/SimpleTempStorage;Ljava/lang/String;)V
 
     return-void

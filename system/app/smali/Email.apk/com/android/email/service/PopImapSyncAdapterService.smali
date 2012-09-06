@@ -27,10 +27,10 @@
 
     sput-object v0, Lcom/android/email/service/PopImapSyncAdapterService;->sSyncAdapter:Lcom/android/email/service/PopImapSyncAdapterService$SyncAdapterImpl;
 
-    .line 42
+    .line 41
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/android/email/service/PopImapSyncAdapterService;->sSyncAdapterLock:Ljava/lang/Object;
 
@@ -41,10 +41,10 @@
     .registers 1
 
     .prologue
-    .line 45
+    .line 44
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 46
+    .line 45
     return-void
 .end method
 
@@ -63,7 +63,7 @@
     .end annotation
 
     .prologue
-    .line 37
+    .line 38
     invoke-static/range {p0 .. p5}, Lcom/android/email/service/PopImapSyncAdapterService;->performSync(Landroid/content/Context;Landroid/accounts/Account;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/ContentProviderClient;Landroid/content/SyncResult;)V
 
     return-void
@@ -84,27 +84,27 @@
     .end annotation
 
     .prologue
-    const/4 v8, 0x0
-
-    .line 89
+    .line 87
     const-string v0, "force"
 
-    invoke-virtual {p2, v0, v8}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+    const/4 v5, 0x0
+
+    invoke-virtual {p2, v0, v5}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5a
+    if-eqz v0, :cond_56
 
-    .line 90
+    .line 88
     iget-object v7, p1, Landroid/accounts/Account;->name:Ljava/lang/String;
 
-    .line 92
+    .line 90
     .local v7, emailAddress:Ljava/lang/String;
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
+    sget-object v1, Lcom/android/emailcommon/provider/Account;->CONTENT_URI:Landroid/net/Uri;
 
     sget-object v2, Lcom/android/emailcommon/provider/EmailContent;->ID_PROJECTION:[Ljava/lang/String;
 
@@ -114,7 +114,9 @@
 
     new-array v4, v5, [Ljava/lang/String;
 
-    aput-object v7, v4, v8
+    const/4 v5, 0x0
+
+    aput-object v7, v4, v5
 
     const/4 v5, 0x0
 
@@ -122,39 +124,38 @@
 
     move-result-object v6
 
-    .line 98
+    .line 94
     .local v6, c:Landroid/database/Cursor;
-    :try_start_1f
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_56
 
-    .line 100
+    .line 96
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v1
 
-    .line 101
+    .line 97
     .local v1, accountId:J
     const/4 v0, 0x0
 
-    invoke-static {p0, v1, v2, v0}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->findMailboxOfType(Landroid/content/Context;JI)J
+    invoke-static {p0, v1, v2, v0}, Lcom/android/emailcommon/provider/Mailbox;->findMailboxOfType(Landroid/content/Context;JI)J
 
     move-result-wide v3
 
-    .line 103
+    .line 99
     .local v3, mailboxId:J
     const-wide/16 v8, 0x0
 
     cmp-long v0, v3, v8
 
-    if-lez v0, :cond_55
+    if-lez v0, :cond_56
 
-    .line 104
+    .line 100
     const-string v0, "PopImapSyncAdapterService"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -177,7 +178,7 @@
 
     invoke-static {v0, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 105
+    .line 101
     invoke-static {p0}, Lcom/android/email/Controller;->getInstance(Landroid/content/Context;)Lcom/android/email/Controller;
 
     move-result-object v0
@@ -185,37 +186,14 @@
     const/4 v5, 0x0
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/email/Controller;->updateMailbox(JJZ)V
-    :try_end_55
-    .catchall {:try_start_1f .. :try_end_55} :catchall_5b
 
-    .line 109
+    .line 105
     .end local v1           #accountId:J
     .end local v3           #mailboxId:J
-    :cond_55
-    if-eqz v6, :cond_5a
-
-    .line 110
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    .line 114
     .end local v6           #c:Landroid/database/Cursor;
     .end local v7           #emailAddress:Ljava/lang/String;
-    :cond_5a
+    :cond_56
     return-void
-
-    .line 109
-    .restart local v6       #c:Landroid/database/Cursor;
-    .restart local v7       #emailAddress:Ljava/lang/String;
-    :catchall_5b
-    move-exception v0
-
-    if-eqz v6, :cond_61
-
-    .line 110
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    :cond_61
-    throw v0
 .end method
 
 
@@ -225,7 +203,7 @@
     .parameter "intent"
 
     .prologue
-    .line 79
+    .line 78
     sget-object v0, Lcom/android/email/service/PopImapSyncAdapterService;->sSyncAdapter:Lcom/android/email/service/PopImapSyncAdapterService$SyncAdapterImpl;
 
     invoke-virtual {v0}, Lcom/android/email/service/PopImapSyncAdapterService$SyncAdapterImpl;->getSyncAdapterBinder()Landroid/os/IBinder;
@@ -239,21 +217,21 @@
     .registers 4
 
     .prologue
-    .line 69
+    .line 68
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
-    .line 70
+    .line 69
     sget-object v1, Lcom/android/email/service/PopImapSyncAdapterService;->sSyncAdapterLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 71
+    .line 70
     :try_start_6
     sget-object v0, Lcom/android/email/service/PopImapSyncAdapterService;->sSyncAdapter:Lcom/android/email/service/PopImapSyncAdapterService$SyncAdapterImpl;
 
     if-nez v0, :cond_15
 
-    .line 72
+    .line 71
     new-instance v0, Lcom/android/email/service/PopImapSyncAdapterService$SyncAdapterImpl;
 
     invoke-virtual {p0}, Lcom/android/email/service/PopImapSyncAdapterService;->getApplicationContext()Landroid/content/Context;
@@ -264,14 +242,14 @@
 
     sput-object v0, Lcom/android/email/service/PopImapSyncAdapterService;->sSyncAdapter:Lcom/android/email/service/PopImapSyncAdapterService$SyncAdapterImpl;
 
-    .line 74
+    .line 73
     :cond_15
     monitor-exit v1
 
-    .line 75
+    .line 74
     return-void
 
-    .line 74
+    .line 73
     :catchall_17
     move-exception v0
 

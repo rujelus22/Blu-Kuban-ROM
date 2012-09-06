@@ -28,6 +28,14 @@
         <item quantity="other">%1$d sekuntia sitten</item>
         <item quantity="one">1 sekunti sitten</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Päättyy %1$d pv kuluttua</item>
+        <item quantity="one">Päättyy 1 pv kuluttua</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Päättyy %1$d h kuluttua</item>
+        <item quantity="one">Päättyy 1 t kuluttua</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">uusia latauksia</item>
         <item quantity="one">uusi lataus</item>

@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/android/o;
+.class Lcom/google/googlenav/ui/android/O;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/android/n;
+.field final synthetic a:Lcom/google/googlenav/ui/android/N;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/android/n;)V
+.method constructor <init>(Lcom/google/googlenav/ui/android/N;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/android/o;->a:Lcom/google/googlenav/ui/android/n;
+    .prologue
+    .line 53
+    iput-object p1, p0, Lcom/google/googlenav/ui/android/O;->a:Lcom/google/googlenav/ui/android/N;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,58 +26,51 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 10
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/o;->a:Lcom/google/googlenav/ui/android/n;
+    .prologue
+    .line 57
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/O;->a:Lcom/google/googlenav/ui/android/N;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/android/n;->a:Lcom/google/googlenav/ui/android/AndroidVectorView;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->getRootView()Landroid/view/View;
-
-    move-result-object v0
-
-    const v1, 0x7f0f026e
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v0}, Lcom/google/googlenav/ui/android/N;->a(Lcom/google/googlenav/ui/android/N;)Lcom/google/googlenav/ui/android/FloorPickerView;
 
     move-result-object v0
 
-    const/16 v1, 0x8
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/android/FloorPickerView;->a()I
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    move-result v0
 
-    sget-object v0, Lcom/google/googlenav/z;->a:Lcom/google/googlenav/z;
+    if-eq p3, v0, :cond_15
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/o;->a:Lcom/google/googlenav/ui/android/n;
+    .line 58
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/O;->a:Lcom/google/googlenav/ui/android/N;
 
-    iget-object v1, v1, Lcom/google/googlenav/ui/android/n;->a:Lcom/google/googlenav/ui/android/AndroidVectorView;
+    invoke-static {v0}, Lcom/google/googlenav/ui/android/N;->b(Lcom/google/googlenav/ui/android/N;)Lcom/google/googlenav/ui/v;
 
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/android/AndroidVectorView;->getHandler()Landroid/os/Handler;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/v;->D()V
 
-    const-wide/16 v2, 0xc8
+    .line 60
+    :cond_15
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/O;->a:Lcom/google/googlenav/ui/android/N;
 
-    const-wide/16 v4, 0x14
+    invoke-static {v0}, Lcom/google/googlenav/ui/android/N;->a(Lcom/google/googlenav/ui/android/N;)Lcom/google/googlenav/ui/android/FloorPickerView;
 
-    iget-object v6, p0, Lcom/google/googlenav/ui/android/o;->a:Lcom/google/googlenav/ui/android/n;
+    move-result-object v0
 
-    iget-object v6, v6, Lcom/google/googlenav/ui/android/n;->a:Lcom/google/googlenav/ui/android/AndroidVectorView;
+    invoke-virtual {v0, p3}, Lcom/google/googlenav/ui/android/FloorPickerView;->setSelectedPosition(I)V
 
-    iget-object v6, v6, Lcom/google/googlenav/ui/android/AndroidVectorView;->b:Lcom/google/googlenav/android/l;
+    .line 61
+    sget-object v0, Lcom/google/googlenav/android/A;->a:Lcom/google/googlenav/android/A;
 
-    invoke-virtual {v6}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
+    invoke-virtual {v0}, Lcom/google/googlenav/android/A;->h()V
 
-    move-result-object v6
-
-    invoke-virtual {v6}, Lcom/google/googlenav/ui/D;->aq()Lap/c;
-
-    move-result-object v6
-
-    const-wide/16 v7, 0x0
-
-    invoke-static/range {v0 .. v8}, Lcom/google/googlenav/u;->a(Lcom/google/googlenav/z;Landroid/os/Handler;JJLap/c;J)V
-
+    .line 62
     return-void
 .end method

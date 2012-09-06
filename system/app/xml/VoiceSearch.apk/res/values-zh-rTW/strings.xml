@@ -196,7 +196,7 @@
     <string name="prefTitle_safeSearch">安全搜尋</string>
     <string name="prefSummary_safeSearchOff">關閉 — 不要過濾搜尋結果</string>
     <string name="prefSummary_safeSearchModerate">中安全性 — 只過濾限制級的圖片</string>
-    <string name="prefSummary_safeSearchStrict">嚴格篩選 — 網頁篩選：過濾限制級的文字及圖片</string>
+    <string name="prefSummary_safeSearchStrict">高安全性 — 網頁篩選：過濾限制級的文字及圖片</string>
     <string name="prefSummary_safeSearchSuffix">僅適用於 Google 語音搜尋</string>
     <string name="prefDialogTitle_safeSearch">安全搜尋</string>
     <string name="prefTitle_profanityFilter">封鎖粗俗字眼</string>
@@ -258,7 +258,7 @@
     <string name="contacts_slot_placeholder">輕觸即可新增聯絡人</string>
     <string name="text_slot_placeholder">輕觸即可新增文字</string>
     <string name="time_slot_placeholder">輕觸即可設定時間</string>
-    <string name="required_field_missing">必要欄位仍未填寫</string>
+    <string name="required_field_missing">必填欄位未填寫</string>
     <string name="no_video_available">沒有可觀看的影片。</string>
     <string name="permission_label_set_alarm">在鬧鐘應用程式中設定鬧鐘</string>
     <string name="permission_description_set_alarm">允許應用程式在安裝的鬧鐘應用程式中設定鬧鐘，某些鬧鐘應用程式可能無法執行這項功能。</string>

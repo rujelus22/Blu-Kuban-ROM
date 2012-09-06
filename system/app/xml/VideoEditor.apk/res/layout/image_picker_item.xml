@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/ImageThumbLayout" android:layout_width="142.0px" android:layout_height="100.0px"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:id="@id/ImageFrameLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <ImageView android:id="@id/ImageThumb" android:background="@drawable/thumbnail_bg_normal" android:padding="1.0px" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="center" />
-        <ImageView android:layout_gravity="bottom" android:id="@id/SelectedImageClip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/grid_check_on" />
-    </FrameLayout>
-</LinearLayout>

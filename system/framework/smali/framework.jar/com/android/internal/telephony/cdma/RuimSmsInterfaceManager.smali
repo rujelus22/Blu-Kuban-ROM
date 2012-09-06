@@ -4,7 +4,7 @@
 
 
 # static fields
-.field static final DBG:Z = true
+.field static final DBG:Z = false
 
 .field private static final EVENT_LOAD_DONE:I = 0x1
 

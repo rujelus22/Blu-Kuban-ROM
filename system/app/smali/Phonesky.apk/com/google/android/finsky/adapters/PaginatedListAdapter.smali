@@ -140,7 +140,7 @@
     if-nez p1, :cond_18
 
     .line 111
-    const v2, 0x7f040067
+    const v2, 0x7f04006e
 
     const/4 v3, 0x0
 
@@ -149,7 +149,7 @@
     move-result-object p1
 
     .line 113
-    const v2, 0x7f0800fd
+    const v2, 0x7f080123
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -166,7 +166,7 @@
     .line 117
     .end local v0           #retryButton:Landroid/widget/Button;
     :cond_18
-    const v2, 0x7f080045
+    const v2, 0x7f080040
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -226,7 +226,7 @@
 
     .restart local p1
     :cond_3
-    const v0, 0x7f04008a
+    const v0, 0x7f040096
 
     const/4 v1, 0x0
 

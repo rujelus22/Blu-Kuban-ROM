@@ -9,10 +9,10 @@
     .parameter "service"
 
     .prologue
-    .line 23
+    .line 11
     invoke-direct {p0, p1}, Lcom/android/exchange/adapter/AbstractSyncAdapter;-><init>(Lcom/android/exchange/EasSyncService;)V
 
-    .line 25
+    .line 12
     return-void
 .end method
 
@@ -22,7 +22,7 @@
     .registers 1
 
     .prologue
-    .line 33
+    .line 16
     return-void
 .end method
 
@@ -30,7 +30,7 @@
     .registers 2
 
     .prologue
-    .line 49
+    .line 24
     const/4 v0, 0x0
 
     return-object v0
@@ -40,7 +40,7 @@
     .registers 2
 
     .prologue
-    .line 79
+    .line 39
     const/4 v0, 0x1
 
     return v0
@@ -56,7 +56,7 @@
     .end annotation
 
     .prologue
-    .line 59
+    .line 29
     const/4 v0, 0x0
 
     return v0
@@ -72,16 +72,31 @@
     .end annotation
 
     .prologue
-    .line 69
+    .line 34
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public sendSyncOptions(Ljava/lang/Double;Lcom/android/exchange/adapter/Serializer;)V
+    .registers 3
+    .parameter "protocolVersion"
+    .parameter "s"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 44
+    return-void
 .end method
 
 .method public wipe()V
     .registers 1
 
     .prologue
-    .line 41
+    .line 20
     return-void
 .end method

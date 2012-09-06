@@ -1,19 +1,23 @@
-.class Lcom/google/android/maps/driveabout/app/dr;
+.class Lcom/google/android/maps/driveabout/app/dR;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/preference/Preference$OnPreferenceClickListener;
+.implements Lcom/google/android/maps/driveabout/vector/f;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/SettingsActivity;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/dD;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/SettingsActivity;)V
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/dD;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/dr;->a:Lcom/google/android/maps/driveabout/app/SettingsActivity;
+    .prologue
+    .line 919
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/dR;->a:Lcom/google/android/maps/driveabout/app/dD;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,28 +26,25 @@
 
 
 # virtual methods
-.method public onPreferenceClick(Landroid/preference/Preference;)Z
-    .registers 6
+.method public a(Lcom/google/android/maps/driveabout/vector/e;Lcom/google/android/maps/driveabout/vector/d;)V
+    .registers 4
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/dr;->a:Lcom/google/android/maps/driveabout/app/SettingsActivity;
+    .prologue
+    .line 922
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/dR;->a:Lcom/google/android/maps/driveabout/app/dD;
 
-    new-instance v1, Landroid/content/Intent;
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/dD;->a(Lcom/google/android/maps/driveabout/app/dD;)Ls/n;
 
-    const-string v2, "android.intent.action.VIEW"
+    move-result-object v0
 
-    invoke-static {}, Lcom/google/googlenav/M;->U()Ljava/lang/String;
+    invoke-virtual {v0}, Ls/n;->g()Ls/q;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-static {v3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-virtual {v0, p2}, Ls/q;->b(Lcom/google/android/maps/driveabout/vector/d;)V
 
-    move-result-object v3
-
-    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
-
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/SettingsActivity;->startActivity(Landroid/content/Intent;)V
-
-    const/4 v0, 0x1
-
-    return v0
+    .line 923
+    return-void
 .end method

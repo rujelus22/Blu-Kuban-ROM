@@ -26,13 +26,13 @@
     .parameter "textEntryStringId"
 
     .prologue
-    .line 455
+    .line 445
     invoke-direct {p0, p2, p3}, Lcom/google/android/finsky/activities/FlagItemFragment$FlagType;-><init>(II)V
 
-    .line 456
+    .line 446
     iput p1, p0, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;->mContentFlagType:I
 
-    .line 457
+    .line 447
     return-void
 .end method
 
@@ -49,81 +49,81 @@
     .end annotation
 
     .prologue
-    const v4, 0x7f0701c1
+    const v4, 0x7f0701fd
 
-    .line 434
+    .line 424
     invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 435
+    .line 425
     .local v0, output:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/activities/FlagItemFragment$FlagType;>;"
     new-instance v1, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;
 
     const/4 v2, 0x5
 
-    const v3, 0x7f0701c0
+    const v3, 0x7f0701fc
+
+    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;-><init>(III)V
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 427
+    new-instance v1, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;
+
+    const/4 v2, 0x1
+
+    const v3, 0x7f0701f4
+
+    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;-><init>(III)V
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 429
+    new-instance v1, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;
+
+    const/4 v2, 0x4
+
+    const v3, 0x7f0701f6
+
+    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;-><init>(III)V
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 431
+    new-instance v1, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;
+
+    const/4 v2, 0x6
+
+    const v3, 0x7f0701fb
+
+    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;-><init>(III)V
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 433
+    new-instance v1, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;
+
+    const/4 v2, 0x2
+
+    const v3, 0x7f0701fa
+
+    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;-><init>(III)V
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 435
+    new-instance v1, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;
+
+    const/16 v2, 0x8
+
+    const v3, 0x7f0701f9
 
     invoke-direct {v1, v2, v3, v4}, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;-><init>(III)V
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 437
-    new-instance v1, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;
-
-    const/4 v2, 0x1
-
-    const v3, 0x7f0701b7
-
-    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;-><init>(III)V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 439
-    new-instance v1, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;
-
-    const/4 v2, 0x4
-
-    const v3, 0x7f0701b9
-
-    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;-><init>(III)V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 441
-    new-instance v1, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;
-
-    const/4 v2, 0x6
-
-    const v3, 0x7f0701bf
-
-    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;-><init>(III)V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 443
-    new-instance v1, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;
-
-    const/4 v2, 0x2
-
-    const v3, 0x7f0701be
-
-    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;-><init>(III)V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 445
-    new-instance v1, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;
-
-    const/16 v2, 0x8
-
-    const v3, 0x7f0701bc
-
-    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/finsky/activities/FlagItemFragment$MusicFlagType;-><init>(III)V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 447
     return-object v0
 .end method
 
@@ -136,7 +136,7 @@
     .parameter "flagMessage"
 
     .prologue
-    .line 461
+    .line 451
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v1
@@ -145,7 +145,7 @@
 
     move-result-object v0
 
-    .line 462
+    .line 452
     .local v0, dfeApi:Lcom/google/android/finsky/api/DfeApi;
     invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getDocId()Ljava/lang/String;
 
@@ -163,8 +163,8 @@
 
     move-object v3, p3
 
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/api/DfeApi;->flagContent(Ljava/lang/String;ILjava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
+    invoke-interface/range {v0 .. v5}, Lcom/google/android/finsky/api/DfeApi;->flagContent(Ljava/lang/String;ILjava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
 
-    .line 473
+    .line 463
     return-void
 .end method

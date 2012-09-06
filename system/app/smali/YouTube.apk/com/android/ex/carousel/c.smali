@@ -55,20 +55,16 @@
     :cond_e
     iget v0, p0, Lcom/android/ex/carousel/c;->mID:I
 
-    sparse-switch v0, :sswitch_data_10a
+    sparse-switch v0, :sswitch_data_104
 
     .line 258
     const-string v0, "CarouselRS"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Unknown RSMessage: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget v2, p0, Lcom/android/ex/carousel/c;->mID:I
 
@@ -85,7 +81,7 @@
     goto :goto_d
 
     .line 205
-    :sswitch_2e
+    :sswitch_2a
     iget-object v0, p0, Lcom/android/ex/carousel/c;->a:Lcom/android/ex/carousel/b;
 
     invoke-static {v0}, Lcom/android/ex/carousel/b;->a(Lcom/android/ex/carousel/b;)Lcom/android/ex/carousel/d;
@@ -101,7 +97,7 @@
     goto :goto_d
 
     .line 209
-    :sswitch_3c
+    :sswitch_38
     iget-object v0, p0, Lcom/android/ex/carousel/c;->a:Lcom/android/ex/carousel/b;
 
     invoke-static {v0}, Lcom/android/ex/carousel/b;->a(Lcom/android/ex/carousel/b;)Lcom/android/ex/carousel/d;
@@ -121,7 +117,7 @@
     goto :goto_d
 
     .line 213
-    :sswitch_4e
+    :sswitch_4a
     new-array v0, v4, [I
 
     iget-object v1, p0, Lcom/android/ex/carousel/c;->mData:[I
@@ -181,7 +177,7 @@
     goto :goto_d
 
     .line 219
-    :sswitch_83
+    :sswitch_7f
     iget-object v0, p0, Lcom/android/ex/carousel/c;->a:Lcom/android/ex/carousel/b;
 
     invoke-static {v0}, Lcom/android/ex/carousel/b;->a(Lcom/android/ex/carousel/b;)Lcom/android/ex/carousel/d;
@@ -194,10 +190,10 @@
 
     invoke-interface {v0, v1}, Lcom/android/ex/carousel/d;->c(I)V
 
-    goto/16 :goto_d
+    goto :goto_d
 
     .line 223
-    :sswitch_92
+    :sswitch_8d
     iget-object v0, p0, Lcom/android/ex/carousel/c;->a:Lcom/android/ex/carousel/b;
 
     iget-object v1, p0, Lcom/android/ex/carousel/c;->mData:[I
@@ -222,7 +218,7 @@
     goto/16 :goto_d
 
     .line 228
-    :sswitch_aa
+    :sswitch_a5
     iget-object v0, p0, Lcom/android/ex/carousel/c;->a:Lcom/android/ex/carousel/b;
 
     invoke-static {v0}, Lcom/android/ex/carousel/b;->a(Lcom/android/ex/carousel/b;)Lcom/android/ex/carousel/d;
@@ -238,7 +234,7 @@
     goto/16 :goto_d
 
     .line 232
-    :sswitch_b9
+    :sswitch_b4
     iget-object v0, p0, Lcom/android/ex/carousel/c;->a:Lcom/android/ex/carousel/b;
 
     iget-object v1, p0, Lcom/android/ex/carousel/c;->mData:[I
@@ -269,7 +265,7 @@
     goto/16 :goto_d
 
     .line 237
-    :sswitch_d4
+    :sswitch_cf
     iget-object v0, p0, Lcom/android/ex/carousel/c;->a:Lcom/android/ex/carousel/b;
 
     invoke-static {v0}, Lcom/android/ex/carousel/b;->a(Lcom/android/ex/carousel/b;)Lcom/android/ex/carousel/d;
@@ -279,7 +275,7 @@
     goto/16 :goto_d
 
     .line 241
-    :sswitch_dd
+    :sswitch_d8
     iget-object v0, p0, Lcom/android/ex/carousel/c;->a:Lcom/android/ex/carousel/b;
 
     iget-object v1, p0, Lcom/android/ex/carousel/c;->mData:[I
@@ -298,7 +294,7 @@
     goto/16 :goto_d
 
     .line 246
-    :sswitch_ef
+    :sswitch_ea
     iget-object v0, p0, Lcom/android/ex/carousel/c;->a:Lcom/android/ex/carousel/b;
 
     invoke-static {v0}, Lcom/android/ex/carousel/b;->a(Lcom/android/ex/carousel/b;)Lcom/android/ex/carousel/d;
@@ -306,7 +302,7 @@
     goto/16 :goto_d
 
     .line 250
-    :sswitch_f6
+    :sswitch_f1
     iget-object v0, p0, Lcom/android/ex/carousel/c;->a:Lcom/android/ex/carousel/b;
 
     invoke-static {v0}, Lcom/android/ex/carousel/b;->a(Lcom/android/ex/carousel/b;)Lcom/android/ex/carousel/d;
@@ -326,21 +322,19 @@
     goto/16 :goto_d
 
     .line 203
-    nop
-
-    :sswitch_data_10a
+    :sswitch_data_104
     .sparse-switch
-        0x64 -> :sswitch_2e
-        0x69 -> :sswitch_3c
-        0x6e -> :sswitch_4e
-        0xc8 -> :sswitch_83
-        0xd2 -> :sswitch_92
-        0x12c -> :sswitch_d4
-        0x136 -> :sswitch_dd
-        0x190 -> :sswitch_ef
-        0x1f4 -> :sswitch_f6
-        0x258 -> :sswitch_aa
-        0x262 -> :sswitch_b9
+        0x64 -> :sswitch_2a
+        0x69 -> :sswitch_38
+        0x6e -> :sswitch_4a
+        0xc8 -> :sswitch_7f
+        0xd2 -> :sswitch_8d
+        0x12c -> :sswitch_cf
+        0x136 -> :sswitch_d8
+        0x190 -> :sswitch_ea
+        0x1f4 -> :sswitch_f1
+        0x258 -> :sswitch_a5
+        0x262 -> :sswitch_b4
         0x3e8 -> :sswitch_d
     .end sparse-switch
 .end method

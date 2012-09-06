@@ -1,73 +1,30 @@
 .class public Lcom/google/android/youtube/app/ui/dh;
-.super Ljava/lang/Object;
+.super Lcom/google/android/youtube/app/ui/ec;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
-.implements Lcom/google/android/youtube/core/async/av;
+.implements Lcom/google/android/youtube/core/async/bc;
+.implements Lcom/google/android/youtube/core/transfer/i;
 
 
 # instance fields
-.field private final A:Landroid/widget/ImageButton;
+.field private final a:Lcom/google/android/youtube/app/adapter/br;
 
-.field private B:Lcom/google/android/youtube/core/model/Video;
+.field private final b:Lcom/google/android/youtube/core/async/UserAuthorizer;
 
-.field private final a:Landroid/app/Activity;
+.field private final k:Lcom/google/android/youtube/core/b/ae;
 
-.field private final b:Lcom/google/android/youtube/core/Analytics;
+.field private l:Lcom/google/android/youtube/core/utils/v;
 
-.field private final c:Lcom/google/android/youtube/app/o;
-
-.field private final d:Lcom/google/android/youtube/core/async/UserAuthorizer;
-
-.field private final e:Lcom/google/android/youtube/core/client/ad;
-
-.field private final f:Lcom/google/android/youtube/core/client/af;
-
-.field private final g:Lcom/google/android/youtube/core/utils/i;
-
-.field private h:Lcom/google/android/youtube/app/ui/ch;
-
-.field private final i:Lcom/google/android/youtube/app/ui/dl;
-
-.field private final j:Lcom/google/android/youtube/app/ui/dk;
-
-.field private final k:Landroid/view/View;
-
-.field private final l:Lcom/google/android/youtube/core/ui/l;
-
-.field private final m:Landroid/widget/ImageView;
-
-.field private final n:Landroid/widget/TextView;
-
-.field private final o:Landroid/widget/TextView;
-
-.field private final p:Landroid/widget/TextView;
-
-.field private final q:Landroid/widget/TextView;
-
-.field private final r:Landroid/widget/ImageView;
-
-.field private final s:Landroid/view/View;
-
-.field private final t:Landroid/widget/TextView;
-
-.field private final u:Lcom/google/android/youtube/plus1/f;
-
-.field private final v:Lcom/google/android/youtube/plus1/PlusOneButton;
-
-.field private final w:Landroid/widget/TextView;
-
-.field private final x:Landroid/widget/TextView;
-
-.field private final y:Landroid/widget/TextView;
-
-.field private final z:Landroid/widget/ImageButton;
+.field private m:Lcom/google/android/youtube/core/model/UserAuth;
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/Activity;Landroid/view/View;Lcom/google/android/youtube/core/Analytics;Lcom/google/android/youtube/app/o;Lcom/google/android/youtube/core/client/ad;Lcom/google/android/youtube/core/client/af;Lcom/google/android/youtube/core/ui/m;Lcom/google/android/youtube/core/async/UserAuthorizer;Lcom/google/android/youtube/plus1/f;Lcom/google/android/youtube/core/utils/i;)V
-    .registers 13
+.method public constructor <init>(Landroid/app/Activity;Lcom/google/android/youtube/core/async/UserAuthorizer;Lcom/google/android/youtube/app/a;Lcom/google/android/youtube/core/ui/g;Lcom/google/android/youtube/app/adapter/br;Lcom/google/android/youtube/core/async/ar;Lcom/google/android/youtube/core/b/ae;Lcom/google/android/youtube/core/b/ag;Lcom/google/android/youtube/core/b/ai;Lcom/google/android/youtube/core/Analytics;Lcom/google/android/youtube/core/Analytics$VideoCategory;Lcom/google/android/youtube/core/b/aj;Lcom/google/android/youtube/core/d;)V
+    .registers 29
+    .parameter
+    .parameter
+    .parameter
     .parameter
     .parameter
     .parameter
@@ -80,563 +37,269 @@
     .parameter
 
     .prologue
+    .line 75
+    const/4 v9, 0x1
+
+    const/4 v10, 0x1
+
+    move-object v1, p0
+
+    move-object/from16 v2, p1
+
+    move-object/from16 v3, p3
+
+    move-object/from16 v4, p4
+
+    move-object/from16 v5, p5
+
+    move-object/from16 v6, p6
+
+    move-object/from16 v7, p8
+
+    move-object/from16 v8, p9
+
+    move-object/from16 v11, p10
+
+    move-object/from16 v12, p11
+
+    move-object/from16 v13, p12
+
+    move-object/from16 v14, p13
+
+    invoke-direct/range {v1 .. v14}, Lcom/google/android/youtube/app/ui/ec;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/app/a;Lcom/google/android/youtube/core/ui/g;Lcom/google/android/youtube/app/adapter/bt;Lcom/google/android/youtube/core/async/ar;Lcom/google/android/youtube/core/b/ag;Lcom/google/android/youtube/core/b/ai;ZZLcom/google/android/youtube/core/Analytics;Lcom/google/android/youtube/core/Analytics$VideoCategory;Lcom/google/android/youtube/core/b/aj;Lcom/google/android/youtube/core/d;)V
+
     .line 89
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v1, "gDataClient may not be null"
+
+    move-object/from16 v0, p7
+
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/youtube/core/b/ae;
+
+    iput-object v1, p0, Lcom/google/android/youtube/app/ui/dh;->k:Lcom/google/android/youtube/core/b/ae;
 
     .line 91
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/dh;->a:Landroid/app/Activity;
+    const-string v1, "adapter may not be null"
+
+    move-object/from16 v0, p5
+
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/youtube/app/adapter/br;
+
+    iput-object v1, p0, Lcom/google/android/youtube/app/ui/dh;->a:Lcom/google/android/youtube/app/adapter/br;
 
     .line 92
-    iput-object p3, p0, Lcom/google/android/youtube/app/ui/dh;->b:Lcom/google/android/youtube/core/Analytics;
+    const-string v1, "userAuthorizer may not be null"
 
-    .line 93
-    iput-object p4, p0, Lcom/google/android/youtube/app/ui/dh;->c:Lcom/google/android/youtube/app/o;
+    move-object/from16 v0, p2
+
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/youtube/core/async/UserAuthorizer;
+
+    iput-object v1, p0, Lcom/google/android/youtube/app/ui/dh;->b:Lcom/google/android/youtube/core/async/UserAuthorizer;
 
     .line 94
-    iput-object p8, p0, Lcom/google/android/youtube/app/ui/dh;->d:Lcom/google/android/youtube/core/async/UserAuthorizer;
-
-    .line 95
-    iput-object p5, p0, Lcom/google/android/youtube/app/ui/dh;->e:Lcom/google/android/youtube/core/client/ad;
-
-    .line 96
-    iput-object p6, p0, Lcom/google/android/youtube/app/ui/dh;->f:Lcom/google/android/youtube/core/client/af;
-
-    .line 97
-    iput-object p10, p0, Lcom/google/android/youtube/app/ui/dh;->g:Lcom/google/android/youtube/core/utils/i;
-
-    .line 99
-    new-instance v0, Lcom/google/android/youtube/app/ui/dl;
-
-    invoke-direct {v0, p0}, Lcom/google/android/youtube/app/ui/dl;-><init>(Lcom/google/android/youtube/app/ui/dh;)V
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->i:Lcom/google/android/youtube/app/ui/dl;
-
-    .line 100
-    new-instance v0, Lcom/google/android/youtube/app/ui/dk;
-
-    invoke-direct {v0, p0}, Lcom/google/android/youtube/app/ui/dk;-><init>(Lcom/google/android/youtube/app/ui/dh;)V
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->j:Lcom/google/android/youtube/app/ui/dk;
-
-    .line 102
-    const v0, 0x7f0900ab
-
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-static {p1, v0, p7}, Lcom/google/android/youtube/core/ui/l;->a(Landroid/content/Context;Landroid/view/View;Lcom/google/android/youtube/core/ui/m;)Lcom/google/android/youtube/core/ui/l;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->l:Lcom/google/android/youtube/core/ui/l;
-
-    .line 104
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->l:Lcom/google/android/youtube/core/ui/l;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/ui/l;->a()V
-
-    .line 106
-    const v0, 0x7f0900a7
-
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->k:Landroid/view/View;
-
-    .line 107
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->k:Landroid/view/View;
-
-    const v1, 0x7f0900ac
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ImageView;
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->m:Landroid/widget/ImageView;
-
-    .line 109
-    const v0, 0x7f09001c
-
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/app/ui/dh;->a(I)Landroid/widget/TextView;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->n:Landroid/widget/TextView;
-
-    .line 110
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->k:Landroid/view/View;
-
-    const-string v1, "title_extended"
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->o:Landroid/widget/TextView;
-
-    .line 112
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->k:Landroid/view/View;
-
-    const v1, 0x7f090031
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ImageView;
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->r:Landroid/widget/ImageView;
-
-    .line 114
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->k:Landroid/view/View;
-
-    const v1, 0x7f0900b5
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->s:Landroid/view/View;
-
-    .line 115
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->s:Landroid/view/View;
-
-    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 117
-    const v0, 0x7f0900b6
-
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/app/ui/dh;->a(I)Landroid/widget/TextView;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->t:Landroid/widget/TextView;
-
-    .line 119
-    iput-object p9, p0, Lcom/google/android/youtube/app/ui/dh;->u:Lcom/google/android/youtube/plus1/f;
-
-    .line 120
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->k:Landroid/view/View;
-
-    const v1, 0x7f0900b0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/youtube/plus1/PlusOneButton;
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->v:Lcom/google/android/youtube/plus1/PlusOneButton;
-
-    .line 121
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->v:Lcom/google/android/youtube/plus1/PlusOneButton;
-
-    if-eqz v0, :cond_9a
-
-    .line 122
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->v:Lcom/google/android/youtube/plus1/PlusOneButton;
-
-    invoke-virtual {v0, p1, p9}, Lcom/google/android/youtube/plus1/PlusOneButton;->a(Landroid/app/Activity;Lcom/google/android/youtube/plus1/f;)V
-
-    .line 125
-    :cond_9a
-    const v0, 0x7f090044
-
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/app/ui/dh;->a(I)Landroid/widget/TextView;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->w:Landroid/widget/TextView;
-
-    .line 126
-    const v0, 0x7f0900ad
-
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/app/ui/dh;->a(I)Landroid/widget/TextView;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->p:Landroid/widget/TextView;
-
-    .line 127
-    const v0, 0x7f0900b7
-
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/app/ui/dh;->a(I)Landroid/widget/TextView;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->x:Landroid/widget/TextView;
-
-    .line 128
-    const v0, 0x7f0900b8
-
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/app/ui/dh;->a(I)Landroid/widget/TextView;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->y:Landroid/widget/TextView;
-
-    .line 129
-    const v0, 0x7f0900ae
-
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/app/ui/dh;->a(I)Landroid/widget/TextView;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->q:Landroid/widget/TextView;
-
-    .line 131
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->k:Landroid/view/View;
-
-    const-string v1, "like_button"
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ImageButton;
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->z:Landroid/widget/ImageButton;
-
-    .line 132
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->z:Landroid/widget/ImageButton;
-
-    if-eqz v0, :cond_dc
-
-    .line 133
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->z:Landroid/widget/ImageButton;
-
-    invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 135
-    :cond_dc
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->k:Landroid/view/View;
-
-    const-string v1, "dislike_button"
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ImageButton;
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->A:Landroid/widget/ImageButton;
-
-    .line 136
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->A:Landroid/widget/ImageButton;
-
-    if-eqz v0, :cond_f1
-
-    .line 137
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->A:Landroid/widget/ImageButton;
-
-    invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 139
-    :cond_f1
     return-void
 .end method
 
-.method static synthetic a(Lcom/google/android/youtube/app/ui/dh;)Landroid/widget/ImageView;
+.method static synthetic a(Lcom/google/android/youtube/app/ui/dh;)Lcom/google/android/youtube/app/adapter/br;
     .registers 2
     .parameter
 
     .prologue
-    .line 43
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->m:Landroid/widget/ImageView;
+    .line 52
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->a:Lcom/google/android/youtube/app/adapter/br;
 
     return-object v0
 .end method
 
-.method private a(I)Landroid/widget/TextView;
-    .registers 3
+.method static synthetic a(Lcom/google/android/youtube/app/ui/dh;Lcom/google/android/youtube/core/model/Video;Lcom/google/android/youtube/core/transfer/Transfer;)Lcom/google/android/youtube/core/model/Video;
+    .registers 9
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 298
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->k:Landroid/view/View;
+    .line 52
+    iget-object v0, p2, Lcom/google/android/youtube/core/transfer/Transfer;->g:Lcom/google/android/youtube/core/transfer/d;
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    const-string v1, "upload_file_duration"
+
+    iget v2, p1, Lcom/google/android/youtube/core/model/Video;->duration:I
+
+    int-to-long v2, v2
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/youtube/core/transfer/d;->b(Ljava/lang/String;J)J
+
+    move-result-wide v0
+
+    long-to-int v0, v0
+
+    new-instance v1, Ljava/util/Date;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    const-wide/16 v4, 0x1388
+
+    sub-long/2addr v2, v4
+
+    invoke-direct {v1, v2, v3}, Ljava/util/Date;-><init>(J)V
+
+    invoke-virtual {p1}, Lcom/google/android/youtube/core/model/Video;->buildUpon()Lcom/google/android/youtube/core/model/Video$Builder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Lcom/google/android/youtube/core/model/Video$Builder;->duration(I)Lcom/google/android/youtube/core/model/Video$Builder;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/TextView;
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Video$Builder;->uploadedDate(Ljava/util/Date;)Lcom/google/android/youtube/core/model/Video$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/model/Video$Builder;->build()Lcom/google/android/youtube/core/model/Video;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method private a(III)V
-    .registers 10
-    .parameter
+.method static synthetic a(Lcom/google/android/youtube/app/ui/dh;Landroid/net/Uri;)V
+    .registers 2
     .parameter
     .parameter
 
     .prologue
-    .line 278
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->q:Landroid/widget/TextView;
+    .line 52
+    invoke-virtual {p0, p1}, Lcom/google/android/youtube/app/ui/dh;->a(Landroid/net/Uri;)V
 
-    if-eqz v0, :cond_2a
-
-    .line 279
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->q:Landroid/widget/TextView;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/dh;->a:Landroid/app/Activity;
-
-    const v2, 0x7f0a0160
-
-    const/4 v3, 0x3
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    const/4 v4, 0x1
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    const/4 v4, 0x2
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    invoke-virtual {v1, v2, v3}, Landroid/app/Activity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 285
-    :cond_2a
     return-void
 .end method
 
-.method static synthetic b(Lcom/google/android/youtube/app/ui/dh;)Landroid/app/Activity;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 43
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->a:Landroid/app/Activity;
-
-    return-object v0
-.end method
-
-.method private b(Ljava/lang/String;)V
-    .registers 5
-    .parameter
-
-    .prologue
-    .line 217
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->g:Lcom/google/android/youtube/core/utils/i;
-
-    invoke-interface {v0}, Lcom/google/android/youtube/core/utils/i;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_37
-
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->u:Lcom/google/android/youtube/plus1/f;
-
-    invoke-interface {v0, p1}, Lcom/google/android/youtube/plus1/f;->c(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_37
-
-    .line 218
-    invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
-
-    .line 219
-    invoke-virtual {p0}, Lcom/google/android/youtube/app/ui/dh;->b()V
-
-    .line 221
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->v:Lcom/google/android/youtube/plus1/PlusOneButton;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "http://www.youtube.com/watch?v="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/google/android/youtube/app/ui/dh;->B:Lcom/google/android/youtube/core/model/Video;
-
-    iget-object v2, v2, Lcom/google/android/youtube/core/model/Video;->id:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/plus1/PlusOneButton;->a(Landroid/net/Uri;)V
-
-    .line 226
-    :goto_36
-    return-void
-
-    .line 223
-    :cond_37
-    invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
-
-    .line 224
-    invoke-virtual {p0}, Lcom/google/android/youtube/app/ui/dh;->c()V
-
-    goto :goto_36
-.end method
-
-.method static synthetic c(Lcom/google/android/youtube/app/ui/dh;)Lcom/google/android/youtube/app/ui/dk;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 43
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->j:Lcom/google/android/youtube/app/ui/dk;
-
-    return-object v0
-.end method
-
-.method static synthetic d(Lcom/google/android/youtube/app/ui/dh;)Lcom/google/android/youtube/core/client/af;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 43
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->f:Lcom/google/android/youtube/core/client/af;
-
-    return-object v0
-.end method
-
-.method static synthetic e(Lcom/google/android/youtube/app/ui/dh;)V
+.method private g(Lcom/google/android/youtube/core/transfer/Transfer;)V
     .registers 4
     .parameter
 
     .prologue
-    .line 43
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->r:Landroid/widget/ImageView;
+    .line 196
+    iget-object v0, p1, Lcom/google/android/youtube/core/transfer/Transfer;->c:Lcom/google/android/youtube/core/transfer/Transfer$Status;
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/dh;->a:Landroid/app/Activity;
+    sget-object v1, Lcom/google/android/youtube/core/transfer/Transfer$Status;->COMPLETED:Lcom/google/android/youtube/core/transfer/Transfer$Status;
 
-    invoke-virtual {v1}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+    if-eq v0, v1, :cond_1d
 
-    move-result-object v1
+    .line 197
+    iget-object v0, p1, Lcom/google/android/youtube/core/transfer/Transfer;->g:Lcom/google/android/youtube/core/transfer/d;
 
-    const v2, 0x7f020008
+    const-string v1, "authAccount"
 
-    invoke-static {v1, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/transfer/d;->b(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+    .line 198
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/dh;->m:Lcom/google/android/youtube/core/model/UserAuth;
 
+    iget-object v1, v1, Lcom/google/android/youtube/core/model/UserAuth;->a:Ljava/lang/String;
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1d
+
+    .line 199
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->a:Lcom/google/android/youtube/app/adapter/br;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/youtube/app/adapter/br;->a(Lcom/google/android/youtube/core/transfer/Transfer;)V
+
+    .line 202
+    :cond_1d
     return-void
-.end method
-
-.method static synthetic f(Lcom/google/android/youtube/app/ui/dh;)Landroid/widget/ImageView;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 43
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->r:Landroid/widget/ImageView;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/app/ui/ch;)V
-    .registers 4
+.method protected final a(Lcom/google/android/youtube/core/model/Video;)Landroid/net/Uri;
+    .registers 3
     .parameter
 
     .prologue
-    .line 142
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/dh;->h:Lcom/google/android/youtube/app/ui/ch;
+    .line 98
+    if-nez p1, :cond_4
 
-    .line 143
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->z:Landroid/widget/ImageButton;
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_11
+    :goto_3
+    return-object v0
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->A:Landroid/widget/ImageButton;
+    :cond_4
+    iget-object v0, p1, Lcom/google/android/youtube/core/model/Video;->thumbnailUri:Landroid/net/Uri;
 
-    if-eqz v0, :cond_11
+    goto :goto_3
+.end method
 
-    .line 144
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->z:Landroid/widget/ImageButton;
+.method protected final a()V
+    .registers 2
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/dh;->A:Landroid/widget/ImageButton;
+    .prologue
+    .line 109
+    invoke-super {p0}, Lcom/google/android/youtube/app/ui/ec;->a()V
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/youtube/app/ui/ch;->a(Landroid/view/View;Landroid/view/View;)V
+    .line 110
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->b:Lcom/google/android/youtube/core/async/UserAuthorizer;
 
-    .line 146
-    :cond_11
+    invoke-virtual {v0, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Lcom/google/android/youtube/core/async/bc;)V
+
+    .line 111
     return-void
 .end method
 
-.method public final a(Lcom/google/android/youtube/core/model/Branding;)V
-    .registers 6
+.method protected a(Landroid/view/View;Lcom/google/android/youtube/core/model/Video;I)V
+    .registers 4
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 244
-    if-eqz p1, :cond_6
+    .line 131
+    if-eqz p2, :cond_5
 
-    iget-object v0, p1, Lcom/google/android/youtube/core/model/Branding;->bannerUri:Landroid/net/Uri;
+    .line 132
+    invoke-super {p0, p1, p2, p3}, Lcom/google/android/youtube/app/ui/ec;->a(Landroid/view/View;Lcom/google/android/youtube/core/model/Video;I)V
 
-    if-nez v0, :cond_7
-
-    .line 264
-    :cond_6
-    :goto_6
+    .line 134
+    :cond_5
     return-void
+.end method
 
-    .line 248
-    :cond_7
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->f:Lcom/google/android/youtube/core/client/af;
+.method protected final a(Lcom/google/android/youtube/core/async/GDataRequest;Ljava/util/List;)V
+    .registers 4
+    .parameter
+    .parameter
 
-    iget-object v1, p1, Lcom/google/android/youtube/core/model/Branding;->bannerUri:Landroid/net/Uri;
+    .prologue
+    .line 103
+    invoke-super {p0, p1, p2}, Lcom/google/android/youtube/app/ui/ec;->a(Lcom/google/android/youtube/core/async/GDataRequest;Ljava/util/List;)V
 
-    iget-object v2, p0, Lcom/google/android/youtube/app/ui/dh;->a:Landroid/app/Activity;
+    .line 104
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->b:Lcom/google/android/youtube/core/async/UserAuthorizer;
 
-    new-instance v3, Lcom/google/android/youtube/app/ui/di;
+    invoke-virtual {v0, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Lcom/google/android/youtube/core/async/bc;)V
 
-    invoke-direct {v3, p0, p1}, Lcom/google/android/youtube/app/ui/di;-><init>(Lcom/google/android/youtube/app/ui/dh;Lcom/google/android/youtube/core/model/Branding;)V
-
-    invoke-static {v2, v3}, Lcom/google/android/youtube/core/async/a;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/g;)Lcom/google/android/youtube/core/async/a;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Lcom/google/android/youtube/core/client/af;->f(Landroid/net/Uri;Lcom/google/android/youtube/core/async/g;)V
-
-    goto :goto_6
+    .line 105
+    return-void
 .end method
 
 .method public final a(Lcom/google/android/youtube/core/model/UserAuth;)V
@@ -644,253 +307,86 @@
     .parameter
 
     .prologue
-    .line 213
-    iget-object v0, p1, Lcom/google/android/youtube/core/model/UserAuth;->a:Ljava/lang/String;
+    .line 205
+    iput-object p1, p0, Lcom/google/android/youtube/app/ui/dh;->m:Lcom/google/android/youtube/core/model/UserAuth;
 
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/app/ui/dh;->b(Ljava/lang/String;)V
+    .line 206
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->l:Lcom/google/android/youtube/core/utils/v;
 
-    .line 214
+    if-nez v0, :cond_12
+
+    .line 207
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->c:Landroid/app/Activity;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0, p0}, Lcom/google/android/youtube/core/transfer/UploadService;->a(Landroid/content/Context;Lcom/google/android/youtube/core/transfer/i;)Lcom/google/android/youtube/core/utils/v;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->l:Lcom/google/android/youtube/core/utils/v;
+
+    .line 209
+    :cond_12
     return-void
 .end method
 
-.method public final a(Lcom/google/android/youtube/core/model/Video;)V
+.method public a(Lcom/google/android/youtube/core/transfer/Transfer;)V
     .registers 6
     .parameter
 
     .prologue
-    const/16 v3, 0x8
+    .line 163
+    iget-object v0, p1, Lcom/google/android/youtube/core/transfer/Transfer;->c:Lcom/google/android/youtube/core/transfer/Transfer$Status;
 
-    const/4 v1, 0x0
+    sget-object v1, Lcom/google/android/youtube/core/transfer/Transfer$Status;->COMPLETED:Lcom/google/android/youtube/core/transfer/Transfer$Status;
 
-    .line 159
-    const-string v0, "video can\'t be null"
+    if-ne v0, v1, :cond_23
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 164
+    iget-object v0, p1, Lcom/google/android/youtube/core/transfer/Transfer;->h:Lcom/google/android/youtube/core/transfer/d;
+
+    const-string v1, "video_id"
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/transfer/d;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/Video;
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->B:Lcom/google/android/youtube/core/model/Video;
-
-    .line 161
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->m:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 163
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->n:Landroid/widget/TextView;
-
-    iget-object v2, p1, Lcom/google/android/youtube/core/model/Video;->title:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 167
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->o:Landroid/widget/TextView;
-
+    .line 165
     if-eqz v0, :cond_24
 
+    .line 166
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/dh;->c:Landroid/app/Activity;
+
+    new-instance v2, Lcom/google/android/youtube/app/ui/di;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, p0, p1, v3}, Lcom/google/android/youtube/app/ui/di;-><init>(Lcom/google/android/youtube/app/ui/dh;Lcom/google/android/youtube/core/transfer/Transfer;B)V
+
+    invoke-static {v1, v2}, Lcom/google/android/youtube/core/async/c;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/l;)Lcom/google/android/youtube/core/async/c;
+
+    move-result-object v1
+
     .line 168
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->o:Landroid/widget/TextView;
+    iget-object v2, p0, Lcom/google/android/youtube/app/ui/dh;->k:Lcom/google/android/youtube/core/b/ae;
 
-    iget-object v2, p1, Lcom/google/android/youtube/core/model/Video;->title:Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/android/youtube/app/ui/dh;->m:Lcom/google/android/youtube/core/model/UserAuth;
 
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 171
-    :cond_24
-    iget-object v0, p1, Lcom/google/android/youtube/core/model/Video;->uploadedDate:Ljava/util/Date;
-
-    if-eqz v0, :cond_c2
-
-    .line 172
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->p:Landroid/widget/TextView;
-
-    iget-object v2, p0, Lcom/google/android/youtube/app/ui/dh;->a:Landroid/app/Activity;
-
-    invoke-static {v2}, Landroid/text/format/DateFormat;->getLongDateFormat(Landroid/content/Context;)Ljava/text/DateFormat;
-
-    move-result-object v2
-
-    iget-object v3, p1, Lcom/google/android/youtube/core/model/Video;->uploadedDate:Ljava/util/Date;
-
-    invoke-virtual {v2, v3}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-interface {v2, v0, v3, v1}, Lcom/google/android/youtube/core/b/ae;->c(Ljava/lang/String;Lcom/google/android/youtube/core/model/UserAuth;Lcom/google/android/youtube/core/async/l;)V
 
     .line 173
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->p:Landroid/widget/TextView;
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 178
-    :goto_3e
-    iget v0, p1, Lcom/google/android/youtube/core/model/Video;->viewCount:I
-
-    iget v2, p1, Lcom/google/android/youtube/core/model/Video;->likesCount:I
-
-    iget v3, p1, Lcom/google/android/youtube/core/model/Video;->dislikesCount:I
-
-    invoke-direct {p0, v0, v2, v3}, Lcom/google/android/youtube/app/ui/dh;->a(III)V
-
-    .line 180
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->t:Landroid/widget/TextView;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, " "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p1, Lcom/google/android/youtube/core/model/Video;->ownerDisplayName:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 182
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->v:Lcom/google/android/youtube/plus1/PlusOneButton;
-
-    if-eqz v0, :cond_6a
-
-    .line 185
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->d:Lcom/google/android/youtube/core/async/UserAuthorizer;
-
-    invoke-virtual {v0, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Lcom/google/android/youtube/core/async/av;)V
-
-    .line 188
-    :cond_6a
-    const-string v0, "video can\'t be null"
-
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v0, Lcom/google/android/youtube/app/ui/cj;->a:[I
-
-    iget-object v2, p1, Lcom/google/android/youtube/core/model/Video;->state:Lcom/google/android/youtube/core/model/Video$State;
-
-    invoke-virtual {v2}, Lcom/google/android/youtube/core/model/Video$State;->ordinal()I
-
-    move-result v2
-
-    aget v0, v0, v2
-
-    packed-switch v0, :pswitch_data_d0
-
-    move v0, v1
-
-    :goto_7d
-    iget-object v2, p0, Lcom/google/android/youtube/app/ui/dh;->z:Landroid/widget/ImageButton;
-
-    if-eqz v2, :cond_8f
-
-    iget-object v2, p0, Lcom/google/android/youtube/app/ui/dh;->A:Landroid/widget/ImageButton;
-
-    if-eqz v2, :cond_8f
-
-    iget-object v2, p0, Lcom/google/android/youtube/app/ui/dh;->z:Landroid/widget/ImageButton;
-
-    invoke-virtual {v2, v0}, Landroid/widget/ImageButton;->setEnabled(Z)V
-
-    iget-object v2, p0, Lcom/google/android/youtube/app/ui/dh;->A:Landroid/widget/ImageButton;
-
-    invoke-virtual {v2, v0}, Landroid/widget/ImageButton;->setEnabled(Z)V
-
-    .line 190
-    :cond_8f
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->w:Landroid/widget/TextView;
-
-    iget-object v2, p1, Lcom/google/android/youtube/core/model/Video;->description:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 191
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->x:Landroid/widget/TextView;
-
-    iget-object v2, p1, Lcom/google/android/youtube/core/model/Video;->categoryLabel:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 192
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->y:Landroid/widget/TextView;
-
-    iget-object v2, p1, Lcom/google/android/youtube/core/model/Video;->tags:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 194
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->k:Landroid/view/View;
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 195
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->l:Lcom/google/android/youtube/core/ui/l;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/ui/l;->b()V
-
-    .line 197
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->r:Landroid/widget/ImageView;
-
-    if-eqz v0, :cond_c1
-
-    .line 198
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->e:Lcom/google/android/youtube/core/client/ad;
-
-    iget-object v1, p1, Lcom/google/android/youtube/core/model/Video;->owner:Ljava/lang/String;
-
-    iget-object v2, p0, Lcom/google/android/youtube/app/ui/dh;->a:Landroid/app/Activity;
-
-    iget-object v3, p0, Lcom/google/android/youtube/app/ui/dh;->i:Lcom/google/android/youtube/app/ui/dl;
-
-    invoke-static {v2, v3}, Lcom/google/android/youtube/core/async/a;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/g;)Lcom/google/android/youtube/core/async/a;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Lcom/google/android/youtube/core/client/ad;->e(Ljava/lang/String;Lcom/google/android/youtube/core/async/g;)V
-
-    .line 202
-    :cond_c1
+    :cond_23
+    :goto_23
     return-void
 
-    .line 175
-    :cond_c2
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->p:Landroid/widget/TextView;
+    .line 170
+    :cond_24
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/ui/dh;->g(Lcom/google/android/youtube/core/transfer/Transfer;)V
 
-    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
-
-    goto/16 :goto_3e
-
-    .line 188
-    :pswitch_c9
-    const/4 v0, 0x1
-
-    goto :goto_7d
-
-    :pswitch_cb
-    invoke-virtual {p1}, Lcom/google/android/youtube/core/model/Video;->isLive()Z
-
-    move-result v0
-
-    goto :goto_7d
-
-    :pswitch_data_d0
-    .packed-switch 0x1
-        :pswitch_c9
-        :pswitch_c9
-        :pswitch_c9
-        :pswitch_cb
-    .end packed-switch
+    goto :goto_23
 .end method
 
 .method public final a(Ljava/lang/Exception;)V
@@ -898,222 +394,228 @@
     .parameter
 
     .prologue
-    .line 209
+    .line 212
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/app/ui/dh;->b(Ljava/lang/String;)V
+    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->m:Lcom/google/android/youtube/core/model/UserAuth;
 
-    .line 210
+    .line 213
     return-void
 .end method
 
-.method public final a(Ljava/lang/String;)V
-    .registers 4
+.method protected final synthetic b(Ljava/lang/Object;)Landroid/net/Uri;
+    .registers 3
     .parameter
 
     .prologue
-    .line 154
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->k:Landroid/view/View;
+    .line 52
+    check-cast p1, Lcom/google/android/youtube/core/model/Video;
 
-    const/16 v1, 0x8
+    invoke-virtual {p0, p1}, Lcom/google/android/youtube/app/ui/dh;->a(Lcom/google/android/youtube/core/model/Video;)Landroid/net/Uri;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    move-result-object v0
 
-    .line 155
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->l:Lcom/google/android/youtube/core/ui/l;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/youtube/core/ui/l;->a(Ljava/lang/String;Z)V
-
-    .line 156
-    return-void
+    return-object v0
 .end method
 
-.method public final a(Z)V
-    .registers 7
+.method public b(Lcom/google/android/youtube/core/transfer/Transfer;)V
+    .registers 3
     .parameter
 
     .prologue
-    const/4 v1, 0x1
+    .line 137
+    invoke-virtual {p1}, Lcom/google/android/youtube/core/transfer/Transfer;->a()Z
 
-    const/4 v2, 0x0
+    move-result v0
 
-    .line 288
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->B:Lcom/google/android/youtube/core/model/Video;
+    if-eqz v0, :cond_b
 
-    iget v3, v0, Lcom/google/android/youtube/core/model/Video;->viewCount:I
+    .line 138
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->a:Lcom/google/android/youtube/app/adapter/br;
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->B:Lcom/google/android/youtube/core/model/Video;
+    invoke-virtual {v0, p1}, Lcom/google/android/youtube/app/adapter/br;->a(Lcom/google/android/youtube/core/transfer/Transfer;)V
 
-    iget v4, v0, Lcom/google/android/youtube/core/model/Video;->likesCount:I
-
-    if-eqz p1, :cond_1a
-
-    move v0, v1
-
-    :goto_d
-    add-int/2addr v0, v4
-
-    iget-object v4, p0, Lcom/google/android/youtube/app/ui/dh;->B:Lcom/google/android/youtube/core/model/Video;
-
-    iget v4, v4, Lcom/google/android/youtube/core/model/Video;->dislikesCount:I
-
-    if-eqz p1, :cond_1c
-
-    :goto_14
-    add-int v1, v4, v2
-
-    invoke-direct {p0, v3, v0, v1}, Lcom/google/android/youtube/app/ui/dh;->a(III)V
-
-    .line 290
+    .line 140
+    :cond_b
     return-void
-
-    :cond_1a
-    move v0, v2
-
-    .line 288
-    goto :goto_d
-
-    :cond_1c
-    move v2, v1
-
-    goto :goto_14
 .end method
 
-.method protected b()V
+.method public final c()V
     .registers 3
 
     .prologue
-    .line 233
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->v:Lcom/google/android/youtube/plus1/PlusOneButton;
+    .line 115
+    invoke-super {p0}, Lcom/google/android/youtube/app/ui/ec;->c()V
 
-    const/4 v1, 0x0
+    .line 116
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->l:Lcom/google/android/youtube/core/utils/v;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/plus1/PlusOneButton;->setVisibility(I)V
+    if-eqz v0, :cond_15
 
-    .line 234
+    .line 117
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->l:Lcom/google/android/youtube/core/utils/v;
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/dh;->c:Landroid/app/Activity;
+
+    invoke-virtual {v1}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/utils/v;->b(Landroid/content/Context;)V
+
+    .line 118
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->l:Lcom/google/android/youtube/core/utils/v;
+
+    .line 120
+    :cond_15
     return-void
 .end method
 
-.method protected c()V
-    .registers 3
+.method public final c(Lcom/google/android/youtube/core/transfer/Transfer;)V
+    .registers 2
+    .parameter
 
     .prologue
-    .line 229
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->v:Lcom/google/android/youtube/plus1/PlusOneButton;
+    .line 159
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/ui/dh;->g(Lcom/google/android/youtube/core/transfer/Transfer;)V
 
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/plus1/PlusOneButton;->setVisibility(I)V
-
-    .line 230
+    .line 160
     return-void
 .end method
 
-.method public final d()V
-    .registers 4
+.method public final d(Lcom/google/android/youtube/core/transfer/Transfer;)V
+    .registers 5
+    .parameter
 
     .prologue
-    .line 149
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->k:Landroid/view/View;
+    .line 143
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->a:Lcom/google/android/youtube/app/adapter/br;
 
-    const/16 v1, 0x8
+    invoke-virtual {v0, p1}, Lcom/google/android/youtube/app/adapter/br;->b(Lcom/google/android/youtube/core/transfer/Transfer;)V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    .line 144
+    iget-object v0, p1, Lcom/google/android/youtube/core/transfer/Transfer;->c:Lcom/google/android/youtube/core/transfer/Transfer$Status;
 
-    .line 150
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->l:Lcom/google/android/youtube/core/ui/l;
+    sget-object v1, Lcom/google/android/youtube/core/transfer/Transfer$Status;->COMPLETED:Lcom/google/android/youtube/core/transfer/Transfer$Status;
 
-    const v1, 0x7f0a00d7
+    if-eq v0, v1, :cond_14
+
+    .line 145
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->c:Landroid/app/Activity;
+
+    const v1, 0x7f0b01dd
 
     const/4 v2, 0x1
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/ui/l;->a(IZ)V
+    invoke-static {v0, v1, v2}, Lcom/google/android/youtube/core/utils/Util;->a(Landroid/content/Context;II)V
 
-    .line 151
+    .line 147
+    :cond_14
     return-void
 .end method
 
-.method public final d_()V
+.method public final e(Lcom/google/android/youtube/core/transfer/Transfer;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 177
+    return-void
+.end method
+
+.method public final e_()V
     .registers 2
 
     .prologue
-    .line 205
+    .line 216
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/app/ui/dh;->b(Ljava/lang/String;)V
+    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->m:Lcom/google/android/youtube/core/model/UserAuth;
 
-    .line 206
+    .line 217
     return-void
 .end method
 
-.method public onClick(Landroid/view/View;)V
+.method public final f(Lcom/google/android/youtube/core/transfer/Transfer;)V
     .registers 4
     .parameter
 
     .prologue
-    .line 267
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->s:Landroid/view/View;
+    .line 123
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->l:Lcom/google/android/youtube/core/utils/v;
 
-    if-ne p1, v0, :cond_19
+    if-eqz v0, :cond_11
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->B:Lcom/google/android/youtube/core/model/Video;
+    .line 124
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->l:Lcom/google/android/youtube/core/utils/v;
 
-    if-eqz v0, :cond_19
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/utils/v;->a()Landroid/os/Binder;
 
-    .line 268
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->b:Lcom/google/android/youtube/core/Analytics;
+    move-result-object v0
 
-    const-string v1, "WatchChannel"
+    check-cast v0, Lcom/google/android/youtube/core/transfer/l;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/Analytics;->b(Ljava/lang/String;)V
+    iget-object v1, p1, Lcom/google/android/youtube/core/transfer/Transfer;->a:Ljava/lang/String;
 
-    .line 269
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->c:Lcom/google/android/youtube/app/o;
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/transfer/l;->a(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/dh;->B:Lcom/google/android/youtube/core/model/Video;
-
-    iget-object v1, v1, Lcom/google/android/youtube/core/model/Video;->owner:Ljava/lang/String;
-
-    invoke-interface {v0, v1}, Lcom/google/android/youtube/app/o;->a(Ljava/lang/String;)V
-
-    .line 275
-    :cond_18
-    :goto_18
+    .line 126
+    :cond_11
     return-void
+.end method
 
-    .line 270
-    :cond_19
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->z:Landroid/widget/ImageButton;
+.method public final f_()V
+    .registers 3
 
-    if-ne p1, v0, :cond_27
+    .prologue
+    .line 150
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->l:Lcom/google/android/youtube/core/utils/v;
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->h:Lcom/google/android/youtube/app/ui/ch;
+    if-eqz v0, :cond_28
 
-    if-eqz v0, :cond_27
+    .line 151
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->l:Lcom/google/android/youtube/core/utils/v;
 
-    .line 271
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->h:Lcom/google/android/youtube/app/ui/ch;
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/utils/v;->a()Landroid/os/Binder;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/ch;->a()V
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/core/transfer/l;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/transfer/l;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    .line 152
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_18
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_28
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/core/transfer/Transfer;
+
+    .line 153
+    invoke-direct {p0, v0}, Lcom/google/android/youtube/app/ui/dh;->g(Lcom/google/android/youtube/core/transfer/Transfer;)V
 
     goto :goto_18
 
-    .line 272
-    :cond_27
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->A:Landroid/widget/ImageButton;
-
-    if-ne p1, v0, :cond_18
-
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->h:Lcom/google/android/youtube/app/ui/ch;
-
-    if-eqz v0, :cond_18
-
-    .line 273
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dh;->h:Lcom/google/android/youtube/app/ui/ch;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/ch;->b()V
-
-    goto :goto_18
+    .line 156
+    :cond_28
+    return-void
 .end method

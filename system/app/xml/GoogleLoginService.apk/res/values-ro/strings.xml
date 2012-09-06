@@ -242,18 +242,18 @@ de securitate"</b></string>
     <string name="account_intro_recommended_title">Configuraţi Google</string>
     <string name="common_message">"Un Cont Google vă permite
 
-"<li><ul>să vedeţi şi să organizaţi toate informaţiile dvs. de pretutindeni;</ul></li>"
+"<ul><li>să vedeţi şi să organizaţi toate informaţiile dvs. de pretutindeni;</li></ul>"
 
-"<li><ul>să creaţi în mod automat copii de rezervă ale datelor;</ul></li>"
+"<ul><li>să creaţi în mod automat copii de rezervă ale datelor;</li></ul>"
 
-"<li><ul>să utilizaţi serviciile Google cu uşurinţă, de oriunde.</ul></li></string>
+"<ul><li>să utilizaţi serviciile Google cu uşurinţă, de oriunde.</li></ul></string>
     <string name="add_account_message">" Puteţi utiliza mai mult de un Cont Google (cum ar fi contul dvs. personal şi cel de la birou). Atingeţi "<b>Conectaţi-vă</b> sau <b>Creaţi un cont</b> pentru a adăuga un Cont Google</string>
     <string name="account_intro_default_message">Nu mai pierdeţi niciodată lucrurile importante. Un Cont Google păstrează totul în condiţii de siguranţă.</string>
     <string name="account_intro_custom_endtext">Aveţi un cont %s? Conectaţi-vă acum.</string>
     <string name="account_intro_simple_message">Doriţi să adăugaţi un cont existent sau să creaţi unul nou?</string>
     <string name="learn_more_title"><annotation id="learn_more">Aflaţi mai multe</annotation></string>
     <string name="learn_more_account_intro">"Un Cont Google vă permite să
-"<li><ul>afişaţi şi să organizaţi toate informaţiile dvs., de oriunde;<li>creaţi automat copii de rezervă pentru datele dvs., cum ar fi e-mailurile, agenda, muzica şi fotografiile;</li><li>utilizaţi serviciile Google cu uşurinţă, de oriunde, inclusiv Agenda Google, Google Calendar, Hărţi Google şi altele.</li></ul></li></string>
+"<ul><li>afişaţi şi să organizaţi toate informaţiile dvs., de oriunde;<li>creaţi automat copii de rezervă pentru datele dvs., cum ar fi e-mailurile, agenda, muzica şi fotografiile;</li><li>utilizaţi serviciile Google cu uşurinţă, de oriunde, inclusiv Agenda Google, Google Calendar, Hărţi Google şi altele.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Despre conturile Google</string>
     <string name="learn_more_web_history">"Istoricul web ajustează rezultatele căutării pe baza interogărilor dvs. de căutare şi a site-urilor pe care le-aţi accesat, oferindu-vă o experienţă Google personalizată.
 

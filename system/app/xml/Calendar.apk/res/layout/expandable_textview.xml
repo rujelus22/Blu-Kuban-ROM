@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.calendar.ExpandableTextView android:orientation="vertical" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/event_info_desc_margin_left" android:layout_marginTop="8.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/event_info_text_size" android:textColor="@color/event_info_description_color" android:ellipsize="end" android:autoLink="all" android:id="@id/expandable_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/event_info_desc_margin_right" style="?android:attr/textAppearanceSmall" />
+    <ImageButton android:textColor="@color/event_info_description_color" android:gravity="right|center" android:layout_gravity="right" android:id="@id/expand_collapse" android:background="#00000000" android:paddingRight="0.0dip" android:visibility="gone" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginBottom="0.0dip" android:src="@drawable/ic_expand_small_holo_light" style="?android:attr/textAppearanceSmall" />
+</com.android.calendar.ExpandableTextView>

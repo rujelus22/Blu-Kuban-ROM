@@ -12,7 +12,7 @@
     .registers 3
 
     .prologue
-    .line 72
+    .line 73
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -23,35 +23,27 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/common/collect/AbstractBiMap;-><init>(Ljava/util/Map;Ljava/util/Map;)V
 
-    .line 73
+    .line 74
     return-void
 .end method
 
 .method private constructor <init>(I)V
-    .registers 5
+    .registers 4
     .parameter
 
     .prologue
-    .line 76
-    new-instance v0, Ljava/util/HashMap;
+    .line 77
+    invoke-static {p1}, Lcom/google/common/collect/Maps;->a(I)Ljava/util/HashMap;
 
-    invoke-static {p1}, Lcom/google/common/collect/Maps;->b(I)I
+    move-result-object v0
 
-    move-result v1
+    invoke-static {p1}, Lcom/google/common/collect/Maps;->a(I)Ljava/util/HashMap;
 
-    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
-
-    new-instance v1, Ljava/util/HashMap;
-
-    invoke-static {p1}, Lcom/google/common/collect/Maps;->b(I)I
-
-    move-result v2
-
-    invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
+    move-result-object v1
 
     invoke-direct {p0, v0, v1}, Lcom/google/common/collect/AbstractBiMap;-><init>(Ljava/util/Map;Ljava/util/Map;)V
 
-    .line 78
+    .line 80
     return-void
 .end method
 
@@ -59,7 +51,7 @@
     .registers 1
 
     .prologue
-    .line 45
+    .line 46
     new-instance v0, Lcom/google/common/collect/HashBiMap;
 
     invoke-direct {v0}, Lcom/google/common/collect/HashBiMap;-><init>()V
@@ -72,7 +64,7 @@
     .parameter
 
     .prologue
-    .line 56
+    .line 57
     new-instance v0, Lcom/google/common/collect/HashBiMap;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/HashBiMap;-><init>(I)V
@@ -85,7 +77,7 @@
     .parameter
 
     .prologue
-    .line 66
+    .line 67
     invoke-interface {p0}, Ljava/util/Map;->size()I
 
     move-result v0
@@ -94,10 +86,10 @@
 
     move-result-object v0
 
-    .line 67
+    .line 68
     invoke-super {v0, p0}, Lcom/google/common/collect/AbstractBiMap;->putAll(Ljava/util/Map;)V
 
-    .line 68
+    .line 69
     return-object v0
 .end method
 
@@ -106,15 +98,15 @@
     .parameter
 
     .prologue
-    .line 101
+    .line 105
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 102
+    .line 106
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
 
     move-result v0
 
-    .line 103
+    .line 107
     invoke-static {v0}, Lcom/google/common/collect/Maps;->a(I)Ljava/util/HashMap;
 
     move-result-object v1
@@ -125,10 +117,10 @@
 
     invoke-virtual {p0, v1, v2}, Lcom/google/common/collect/HashBiMap;->setDelegates(Ljava/util/Map;Ljava/util/Map;)V
 
-    .line 105
-    invoke-static {p0, p1, v0}, Lcom/google/common/collect/fx;->a(Ljava/util/Map;Ljava/io/ObjectInputStream;I)V
+    .line 109
+    invoke-static {p0, p1, v0}, Lcom/google/common/collect/jt;->a(Ljava/util/Map;Ljava/io/ObjectInputStream;I)V
 
-    .line 106
+    .line 110
     return-void
 .end method
 
@@ -137,13 +129,13 @@
     .parameter
 
     .prologue
-    .line 95
+    .line 98
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 96
-    invoke-static {p0, p1}, Lcom/google/common/collect/fx;->a(Ljava/util/Map;Ljava/io/ObjectOutputStream;)V
+    .line 99
+    invoke-static {p0, p1}, Lcom/google/common/collect/jt;->a(Ljava/util/Map;Ljava/io/ObjectOutputStream;)V
 
-    .line 97
+    .line 100
     return-void
 .end method
 
@@ -153,7 +145,7 @@
     .registers 1
 
     .prologue
-    .line 37
+    .line 38
     invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->clear()V
 
     return-void
@@ -164,7 +156,7 @@
     .parameter
 
     .prologue
-    .line 37
+    .line 38
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractBiMap;->containsValue(Ljava/lang/Object;)Z
 
     move-result v0
@@ -176,7 +168,7 @@
     .registers 2
 
     .prologue
-    .line 37
+    .line 38
     invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -187,10 +179,16 @@
 .method public final forcePut(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 87
+    .line 89
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractBiMap;->forcePut(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -198,12 +196,12 @@
     return-object v0
 .end method
 
-.method public final bridge synthetic inverse()Lcom/google/common/collect/as;
+.method public final bridge synthetic inverse()Lcom/google/common/collect/bj;
     .registers 2
 
     .prologue
-    .line 37
-    invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->inverse()Lcom/google/common/collect/as;
+    .line 38
+    invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->inverse()Lcom/google/common/collect/bj;
 
     move-result-object v0
 
@@ -214,7 +212,7 @@
     .registers 2
 
     .prologue
-    .line 37
+    .line 38
     invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->keySet()Ljava/util/Set;
 
     move-result-object v0
@@ -225,10 +223,16 @@
 .method public final put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 83
+    .line 85
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractBiMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -241,7 +245,7 @@
     .parameter
 
     .prologue
-    .line 37
+    .line 38
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractBiMap;->putAll(Ljava/util/Map;)V
 
     return-void
@@ -252,7 +256,7 @@
     .parameter
 
     .prologue
-    .line 37
+    .line 38
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractBiMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -264,7 +268,7 @@
     .registers 2
 
     .prologue
-    .line 37
+    .line 38
     invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->values()Ljava/util/Set;
 
     move-result-object v0

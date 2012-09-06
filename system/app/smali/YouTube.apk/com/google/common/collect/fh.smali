@@ -1,78 +1,72 @@
 .class final Lcom/google/common/collect/fh;
-.super Ljava/lang/Object;
+.super Ljava/util/AbstractSet;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/Iterator;
-
-.field final synthetic b:Lcom/google/common/collect/fg;
+.field final synthetic a:Lcom/google/common/collect/ff;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/fg;Ljava/util/Iterator;)V
-    .registers 3
-    .parameter
+.method constructor <init>(Lcom/google/common/collect/ff;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 587
-    iput-object p1, p0, Lcom/google/common/collect/fh;->b:Lcom/google/common/collect/fg;
+    .line 783
+    iput-object p1, p0, Lcom/google/common/collect/fh;->a:Lcom/google/common/collect/ff;
 
-    iput-object p2, p0, Lcom/google/common/collect/fh;->a:Ljava/util/Iterator;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
+.method public final iterator()Ljava/util/Iterator;
+    .registers 4
+
+    .prologue
+    .line 789
+    new-instance v0, Lcom/google/common/collect/fe;
+
+    iget-object v1, p0, Lcom/google/common/collect/fh;->a:Lcom/google/common/collect/ff;
+
+    iget-object v1, v1, Lcom/google/common/collect/ff;->a:Lcom/google/common/collect/LinkedListMultimap;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lcom/google/common/collect/fe;-><init>(Lcom/google/common/collect/LinkedListMultimap;B)V
+
+    .line 790
+    new-instance v1, Lcom/google/common/collect/fi;
+
+    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/fi;-><init>(Lcom/google/common/collect/fh;Ljava/util/Iterator;)V
+
+    return-object v1
+.end method
+
+.method public final size()I
     .registers 2
 
     .prologue
-    .line 589
-    iget-object v0, p0, Lcom/google/common/collect/fh;->a:Ljava/util/Iterator;
+    .line 785
+    iget-object v0, p0, Lcom/google/common/collect/fh;->a:Lcom/google/common/collect/ff;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v0, v0, Lcom/google/common/collect/ff;->a:Lcom/google/common/collect/LinkedListMultimap;
+
+    #getter for: Lcom/google/common/collect/LinkedListMultimap;->keyCount:Lcom/google/common/collect/iq;
+    invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$600(Lcom/google/common/collect/LinkedListMultimap;)Lcom/google/common/collect/iq;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/common/collect/iq;->elementSet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->size()I
 
     move-result v0
 
     return v0
-.end method
-
-.method public final synthetic next()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 587
-    iget-object v0, p0, Lcom/google/common/collect/fh;->a:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Collection;
-
-    invoke-static {v0}, Lcom/google/common/collect/Multimaps;->a(Ljava/util/Collection;)Ljava/util/Collection;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final remove()V
-    .registers 2
-
-    .prologue
-    .line 595
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
 .end method

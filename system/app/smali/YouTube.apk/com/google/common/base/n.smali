@@ -1,71 +1,86 @@
 .class final Lcom/google/common/base/n;
-.super Lcom/google/common/base/m;
+.super Lcom/google/common/base/d;
 .source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Ljava/lang/String;
-
-.field final synthetic b:Lcom/google/common/base/m;
-
-
 # direct methods
-.method constructor <init>(Lcom/google/common/base/m;Lcom/google/common/base/m;Ljava/lang/String;)V
-    .registers 4
-    .parameter
-    .parameter
-    .parameter
+.method constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 183
-    iput-object p1, p0, Lcom/google/common/base/n;->b:Lcom/google/common/base/m;
-
-    iput-object p3, p0, Lcom/google/common/base/n;->a:Ljava/lang/String;
-
-    invoke-direct {p0, p2}, Lcom/google/common/base/m;-><init>(Lcom/google/common/base/m;)V
+    .line 218
+    invoke-direct {p0}, Lcom/google/common/base/d;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a(Ljava/lang/Object;)Ljava/lang/CharSequence;
+.method public final a(Ljava/lang/CharSequence;I)I
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 228
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    .line 229
+    invoke-static {p2, v0}, Lcom/google/common/base/ag;->b(II)I
+
+    .line 230
+    if-ne p2, v0, :cond_a
+
+    const/4 p2, -0x1
+
+    :cond_a
+    return p2
+.end method
+
+.method public final a()Lcom/google/common/base/d;
+    .registers 1
+
+    .prologue
+    .line 292
+    return-object p0
+.end method
+
+.method public final a(Lcom/google/common/base/d;)Lcom/google/common/base/d;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 283
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 284
+    return-object p0
+.end method
+
+.method public final synthetic apply(Ljava/lang/Object;)Z
     .registers 3
     .parameter
 
     .prologue
-    .line 185
-    if-nez p1, :cond_5
+    .line 218
+    check-cast p1, Ljava/lang/Character;
 
-    iget-object v0, p0, Lcom/google/common/base/n;->a:Ljava/lang/String;
+    invoke-super {p0, p1}, Lcom/google/common/base/d;->a(Ljava/lang/Character;)Z
 
-    :goto_4
-    return-object v0
+    move-result v0
 
-    :cond_5
-    iget-object v0, p0, Lcom/google/common/base/n;->b:Lcom/google/common/base/m;
-
-    invoke-virtual {v0, p1}, Lcom/google/common/base/m;->a(Ljava/lang/Object;)Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    goto :goto_4
+    return v0
 .end method
 
-.method public final b(Ljava/lang/String;)Lcom/google/common/base/m;
-    .registers 4
+.method public final b(C)Z
+    .registers 3
     .parameter
 
     .prologue
-    .line 188
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 220
+    const/4 v0, 0x1
 
-    .line 190
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "already specified useForNull"
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return v0
 .end method

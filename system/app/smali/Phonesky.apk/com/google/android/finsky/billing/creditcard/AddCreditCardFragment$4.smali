@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 359
+    .line 354
     iput-object p1, p0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$4;->this$0:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,24 +38,22 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 7
+    .registers 6
     .parameter "view"
 
     .prologue
-    .line 362
-    const v1, 0x7f070035
+    .line 357
+    const v1, 0x7f04000c
 
-    const v2, 0x7f04000e
+    const v2, 0x7f070197
 
-    const v3, 0x7f070162
+    const/4 v3, -0x1
 
-    const/4 v4, -0x1
-
-    invoke-static {v1, v2, v3, v4}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->newInstanceWithLayout(IIII)Lcom/google/android/finsky/activities/SimpleAlertDialog;
+    invoke-static {v1, v2, v3}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->newInstanceWithLayout(III)Lcom/google/android/finsky/activities/SimpleAlertDialog;
 
     move-result-object v0
 
-    .line 365
+    .line 360
     .local v0, dialog:Lcom/google/android/finsky/activities/SimpleAlertDialog;
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$4;->this$0:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
 
@@ -67,6 +65,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 366
+    .line 361
     return-void
 .end method

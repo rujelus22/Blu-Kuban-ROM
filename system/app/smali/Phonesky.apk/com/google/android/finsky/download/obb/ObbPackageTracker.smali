@@ -56,6 +56,15 @@
     return-void
 .end method
 
+.method public onPackageFirstLaunch(Ljava/lang/String;)V
+    .registers 2
+    .parameter "packageName"
+
+    .prologue
+    .line 46
+    return-void
+.end method
+
 .method public onPackageRemoved(Ljava/lang/String;Z)V
     .registers 10
     .parameter "packageName"

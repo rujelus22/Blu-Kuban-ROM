@@ -29,13 +29,13 @@
     .parameter "alertText"
 
     .prologue
-    .line 2508
+    .line 623
     invoke-direct {p0, p1}, Lcom/android/emailcommon/mail/MessagingException;-><init>(Ljava/lang/String;)V
 
-    .line 2509
+    .line 624
     iput-object p2, p0, Lcom/android/email/mail/store/ImapStore$ImapException;->mAlertText:Ljava/lang/String;
 
-    .line 2510
+    .line 625
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .registers 2
 
     .prologue
-    .line 2513
+    .line 628
     iget-object v0, p0, Lcom/android/email/mail/store/ImapStore$ImapException;->mAlertText:Ljava/lang/String;
 
     return-object v0

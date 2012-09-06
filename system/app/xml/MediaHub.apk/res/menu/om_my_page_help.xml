@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@id/om_my_page" android:title="@string/my_page" />
-    <item android:id="@id/om_help" android:title="@string/help" />
-    <item android:id="@id/om_search" android:title="@string/search" />
-</menu>

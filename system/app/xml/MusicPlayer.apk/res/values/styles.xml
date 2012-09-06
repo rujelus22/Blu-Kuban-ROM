@@ -1,33 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="MusicDefault.NoActionBar" parent="@android:style/Theme.DeviceDefault">
+    <style name="PlaybackControl">
+        <item name="android:background">@null</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+    <style name="PlaybackControl.Previous" parent="@style/PlaybackControl">
+        <item name="android:src">@drawable/btn_playback_rew_normal_jb_dark</item>
+        <item name="android:contentDescription">@string/accessibility_prev</item>
+    </style>
+    <style name="PlaybackControl.Next" parent="@style/PlaybackControl">
+        <item name="android:src">@drawable/btn_playback_ff_normal_jb_dark</item>
+        <item name="android:contentDescription">@string/accessibility_next</item>
+    </style>
+    <style name="PlaybackControl.Play" parent="@style/PlaybackControl">
+        <item name="android:contentDescription">@string/accessibility_pause</item>
+        <item name="pauseImage">@drawable/btn_playback_pause_normal_jb_dark</item>
+        <item name="playImage">@drawable/btn_playback_play_normal_jb_dark</item>
+        <item name="stopImage">@drawable/btn_playback_stop_normal_jb_dark</item>
+    </style>
+    <style name="NowPlayingTime">
+        <item name="android:textAppearance">@style/TextAppearanceExtraExtraSmall</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">@dimen/now_playing_time_width</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="RootTheme" parent="@android:style/Theme" />
+    <style name="NoTitleBarNoShadowTheme" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="DialogTheme" parent="@android:style/Theme.Dialog" />
+    <style name="DialogTheme.NoActionBar" parent="@style/DialogTheme" />
+    <style name="TextShadow">
+        <item name="android:shadowColor">#bf000000</item>
+        <item name="android:shadowRadius">2.0</item>
+    </style>
+    <style name="MusicMenuView">
+        <item name="rowHeight">66.0dip</item>
+        <item name="maxItemsPerRow">3</item>
+        <item name="maxRows">2</item>
+    </style>
+    <style name="PopupMenuAnimation">
+        <item name="android:windowEnterAnimation">@anim/popupmenu_enter</item>
+        <item name="android:windowExitAnimation">@anim/popupmenu_exit</item>
+    </style>
+    <style name="OptionsMenuAnimation">
+        <item name="android:windowEnterAnimation">@anim/options_panel_enter</item>
+        <item name="android:windowExitAnimation">@anim/options_panel_exit</item>
+    </style>
+    <style name="AnimationDropDownDown">
+        <item name="android:windowEnterAnimation">@anim/grow_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/shrink_fade_out</item>
+    </style>
+    <style name="AnimationDropDownUp">
+        <item name="android:windowEnterAnimation">@anim/grow_fade_in_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/shrink_fade_out_from_bottom</item>
+    </style>
+    <style name="TextAppearanceExtraSmall" parent="@android:style/TextAppearance.Small">
+        <item name="android:textSize">12.0sp</item>
+    </style>
+    <style name="TextAppearanceExtraExtraSmall" parent="@android:style/TextAppearance.Small">
+        <item name="android:textSize">10.0sp</item>
+    </style>
+    <style name="TextAppearance.SideBarTv" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">17.0sp</item>
+    </style>
+    <style name="Widget.SideBarTv_ButtonText" parent="@android:style/Widget">
+        <item name="android:textAppearance">@style/TextAppearance.SideBarTv</item>
+        <item name="android:textColor">@color/sidebar_tv_text</item>
+    </style>
+    <style name="PrimaryTitle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@color/primary_text_color</item>
+    </style>
+    <style name="SecondaryTitle" parent="@android:style/TextAppearance.Small">
+        <item name="android:textColor">@color/secondary_text_color</item>
+    </style>
+    <style name="NowPlayingBarText">
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="NowPlayingBarText.Primary" parent="@style/NowPlayingBarText">
+        <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/secondary_text_color</item>
+    </style>
+    <style name="NowPlayingBarText.Secondary" parent="@style/NowPlayingBarText">
+        <item name="android:textAppearance">@style/TextAppearanceExtraSmall</item>
+        <item name="android:textColor">@color/tertiary_text</item>
+    </style>
+    <style name="AudioFileInfoOverlayText">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:paddingLeft">4.0px</item>
+        <item name="android:paddingBottom">4.0px</item>
+        <item name="android:focusable">true</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <style name="ToolbarBackground">
+        <item name="android:background">#ff222233</item>
+    </style>
+    <style name="VerticalDividerLeft">
+        <item name="android:background">#ff666677</item>
+        <item name="android:layout_width">1.0px</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_marginLeft">4.0px</item>
+    </style>
+    <style name="VerticalDividerRight">
+        <item name="android:background">#ff000022</item>
+        <item name="android:layout_width">1.0px</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_marginRight">4.0px</item>
+    </style>
+    <style name="HorizontalDividerTop">
+        <item name="android:background">#ff666677</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0px</item>
+    </style>
+    <style name="HorizontalDividerBottom">
+        <item name="android:background">#ff000022</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0px</item>
+    </style>
+    <style name="SetupDivider">
+        <item name="android:background">@color/divider_color</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">3.0dip</item>
+        <item name="android:layout_marginTop">6.0dip</item>
+        <item name="android:layout_marginBottom">7.0dip</item>
+    </style>
+    <style name="Theme.Base" parent="@android:style/Theme" />
+    <style name="Theme" parent="@style/Theme.Base" />
+    <style name="Theme.Base.Dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:alertDialogStyle">@style/Theme.AlertDialog</item>
+    </style>
+    <style name="Theme.Dialog" parent="@style/Theme.Base.Dialog">
+        <item name="android:windowBackground">@drawable/dialog_full_holo_dark</item>
+        <item name="android:windowFrame">@null</item>
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowActionBar">false</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
     </style>
-    <style name="music_player_progressbar">
-        <item name="android:maxHeight">8.0dip</item>
+    <style name="Theme.AlertDialog" parent="@style/Theme">
+        <item name="android:fullDark">@drawable/dialog_full_holo_dark</item>
+        <item name="android:topDark">@drawable/dialog_top_holo_dark</item>
+        <item name="android:centerDark">@drawable/dialog_middle_holo_dark</item>
+        <item name="android:bottomDark">@drawable/dialog_bottom_holo_dark</item>
+        <item name="android:fullBright">@drawable/dialog_full_holo_dark</item>
+        <item name="android:topBright">@drawable/dialog_top_holo_dark</item>
+        <item name="android:centerBright">@drawable/dialog_middle_holo_dark</item>
+        <item name="android:bottomBright">@drawable/dialog_bottom_holo_dark</item>
+        <item name="android:bottomMedium">@drawable/dialog_bottom_holo_dark</item>
+        <item name="android:centerMedium">@drawable/dialog_middle_holo_dark</item>
+    </style>
+    <style name="SeekBarStyle" parent="@android:style/Widget.SeekBar" />
+    <style name="SeekBar">
+        <item name="android:paddingLeft">16.0dip</item>
+        <item name="android:paddingRight">16.0dip</item>
+        <item name="android:focusable">true</item>
         <item name="android:indeterminateOnly">false</item>
-        <item name="android:progressDrawable">@drawable/music_play_tw3_horizontal_seekbar</item>
-        <item name="android:minHeight">8.0dip</item>
-        <item name="android:thumb">@drawable/music_play_tw3_progressive_point</item>
-        <item name="android:thumbOffset">19.0dip</item>
+        <item name="android:indeterminateDrawable">@drawable/scrubber_progress_horizontal_holo_dark</item>
+        <item name="android:progressDrawable">@drawable/scrubber_progress_horizontal_holo_dark</item>
+        <item name="android:thumb">@drawable/scrubber_control_selector_holo</item>
+        <item name="android:thumbOffset">16.0dip</item>
+        <item name="android:height">13.0dip</item>
     </style>
-    <style name="volume_seekbar" parent="@touchwiz:style/TwSeekBar">
-        <item name="touchwiz:twMax">15</item>
-        <item name="touchwiz:progress">12</item>
-        <item name="touchwiz:twProgressDrawable">@drawable/volume_slider_bar</item>
-        <item name="touchwiz:twIndicatorThickness">10.0dip</item>
-        <item name="touchwiz:twProgressOrientation">vertical</item>
-        <item name="touchwiz:twSeekBarThumb">@drawable/music_play_tw3_volume_progressive_point</item>
-        <item name="touchwiz:twSeekThumbFontSize">24.0dip</item>
+    <style name="SectionTitle">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffcccccc</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">#10ffffff</item>
+        <item name="android:paddingLeft">@dimen/section_title_padding</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/section_title_height</item>
     </style>
-    <style name="eq_progress_bar">
-        <item name="touchwiz:twMax">12</item>
-        <item name="touchwiz:progress">6</item>
-        <item name="touchwiz:twBackgroundDrawable">@drawable/music_play_set_eq_progressive_bg</item>
-        <item name="touchwiz:twProgressDrawable">@drawable/music_play_set_eq_progressive_bar</item>
-        <item name="touchwiz:twIndicatorThickness">10.0dip</item>
-        <item name="touchwiz:twProgressOrientation">vertical</item>
-        <item name="touchwiz:twSeekBarThumb">@drawable/music_play_tw3_setting_equlizer_custom_seek_thumb</item>
+    <style name="SectionDivider">
+        <item name="android:background">@color/holo_blue_light</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0dip</item>
+    </style>
+    <style name="MediaRouteButton">
+        <item name="android:background">@drawable/item_background_holo_dark</item>
+        <item name="android:minWidth">56.0dip</item>
+        <item name="android:minHeight">48.0dip</item>
+        <item name="externalRouteEnabledDrawableFallback">@drawable/ic_media_route_holo_dark</item>
     </style>
 </resources>

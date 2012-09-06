@@ -1,5 +1,6 @@
 .class Lcom/google/googlenav/friend/android/g;
 .super Lcom/google/googlenav/friend/android/f;
+.source "SourceFile"
 
 
 # instance fields
@@ -9,11 +10,17 @@
 # direct methods
 .method public constructor <init>(Lcom/google/googlenav/friend/android/ContactsAccessorSdk5;Landroid/database/Cursor;)V
     .registers 3
+    .parameter
+    .parameter
 
+    .prologue
+    .line 29
     iput-object p1, p0, Lcom/google/googlenav/friend/android/g;->c:Lcom/google/googlenav/friend/android/ContactsAccessorSdk5;
 
+    .line 30
     invoke-direct {p0, p1, p2}, Lcom/google/googlenav/friend/android/f;-><init>(Lcom/google/googlenav/friend/android/e;Landroid/database/Cursor;)V
 
+    .line 31
     return-void
 .end method
 
@@ -21,7 +28,10 @@
 # virtual methods
 .method public a(Ljava/lang/String;)Ljava/lang/String;
     .registers 3
+    .parameter
 
+    .prologue
+    .line 46
     invoke-static {}, Lcom/google/googlenav/friend/android/ContactsAccessorSdk5;->c()Ljava/util/HashMap;
 
     move-result-object v0

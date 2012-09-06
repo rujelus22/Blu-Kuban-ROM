@@ -33,22 +33,24 @@
 
     sput-object v0, Lcom/google/net/async/Connection$ConnectionMode;->UNKNOWN:Lcom/google/net/async/Connection$ConnectionMode;
 
-    .line 105
+    .line 104
     new-instance v0, Lcom/google/net/async/Connection$ConnectionMode;
 
     const-string v1, "CLIENT"
 
     invoke-direct {v0, v1, v3}, Lcom/google/net/async/Connection$ConnectionMode;-><init>(Ljava/lang/String;I)V
 
+    .line 105
     sput-object v0, Lcom/google/net/async/Connection$ConnectionMode;->CLIENT:Lcom/google/net/async/Connection$ConnectionMode;
 
-    .line 107
+    .line 106
     new-instance v0, Lcom/google/net/async/Connection$ConnectionMode;
 
     const-string v1, "SERVER"
 
     invoke-direct {v0, v1, v4}, Lcom/google/net/async/Connection$ConnectionMode;-><init>(Ljava/lang/String;I)V
 
+    .line 107
     sput-object v0, Lcom/google/net/async/Connection$ConnectionMode;->SERVER:Lcom/google/net/async/Connection$ConnectionMode;
 
     .line 102

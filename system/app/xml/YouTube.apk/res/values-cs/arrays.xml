@@ -2,10 +2,10 @@
 <resources>
     <string-array name="safe_search_levels">
         <item>Nefiltrovat</item>
-        <item>Střední</item>
+        <item>Mírné</item>
         <item>Přísné</item>
     </string-array>
-    <string-array name="prefetch_quota_entries">
+    <string-array name="preload_quota_entries">
         <item>128 MB</item>
         <item>256 MB</item>
         <item>512 MB</item>
@@ -14,9 +14,9 @@
         <item>4 GB</item>
     </string-array>
     <string-array name="subtitles_size_entries">
-        <item>Malá</item>
+        <item>Malé</item>
         <item>Střední</item>
-        <item>Velká</item>
+        <item>Velké</item>
         <item>Velmi velké</item>
     </string-array>
 </resources>

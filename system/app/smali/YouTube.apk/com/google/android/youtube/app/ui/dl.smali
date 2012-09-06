@@ -1,102 +1,80 @@
-.class final Lcom/google/android/youtube/app/ui/dl;
+.class public final Lcom/google/android/youtube/app/ui/dl;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/g;
+.implements Landroid/text/method/TransformationMethod;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/ui/dh;
+.field private final a:Ljava/util/Locale;
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/youtube/app/ui/dh;)V
+.method public constructor <init>(Landroid/content/Context;)V
     .registers 3
     .parameter
 
     .prologue
-    .line 303
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/app/ui/dl;-><init>(Lcom/google/android/youtube/app/ui/dh;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/youtube/app/ui/dh;B)V
-    .registers 3
-    .parameter
-    .parameter
-
-    .prologue
-    .line 303
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/dl;->a:Lcom/google/android/youtube/app/ui/dh;
-
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 24
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v0
+
+    iget-object v0, v0, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/ui/dl;->a:Ljava/util/Locale;
+
+    .line 25
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
-    .registers 4
+.method public final getTransformation(Ljava/lang/CharSequence;Landroid/view/View;)Ljava/lang/CharSequence;
+    .registers 5
     .parameter
     .parameter
 
     .prologue
-    .line 303
-    const-string v0, "Error retrieving user profile"
+    .line 28
+    if-eqz p1, :cond_d
 
-    invoke-static {v0, p2}, Lcom/google/android/youtube/core/L;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dl;->a:Lcom/google/android/youtube/app/ui/dh;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/dh;->e(Lcom/google/android/youtube/app/ui/dh;)V
-
-    return-void
-.end method
-
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 7
-    .parameter
-    .parameter
-
-    .prologue
-    .line 303
-    check-cast p2, Lcom/google/android/youtube/core/model/UserProfile;
-
-    iget-object v0, p2, Lcom/google/android/youtube/core/model/UserProfile;->thumbnailUri:Landroid/net/Uri;
-
-    if-eqz v0, :cond_21
-
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dl;->a:Lcom/google/android/youtube/app/ui/dh;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/dh;->d(Lcom/google/android/youtube/app/ui/dh;)Lcom/google/android/youtube/core/client/af;
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v1, p2, Lcom/google/android/youtube/core/model/UserProfile;->thumbnailUri:Landroid/net/Uri;
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/dl;->a:Ljava/util/Locale;
 
-    iget-object v2, p0, Lcom/google/android/youtube/app/ui/dl;->a:Lcom/google/android/youtube/app/ui/dh;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
-    invoke-static {v2}, Lcom/google/android/youtube/app/ui/dh;->b(Lcom/google/android/youtube/app/ui/dh;)Landroid/app/Activity;
+    move-result-object v0
 
-    move-result-object v2
+    :goto_c
+    return-object v0
 
-    iget-object v3, p0, Lcom/google/android/youtube/app/ui/dl;->a:Lcom/google/android/youtube/app/ui/dh;
+    :cond_d
+    const/4 v0, 0x0
 
-    invoke-static {v3}, Lcom/google/android/youtube/app/ui/dh;->c(Lcom/google/android/youtube/app/ui/dh;)Lcom/google/android/youtube/app/ui/dk;
+    goto :goto_c
+.end method
 
-    move-result-object v3
+.method public final onFocusChanged(Landroid/view/View;Ljava/lang/CharSequence;ZILandroid/graphics/Rect;)V
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-static {v2, v3}, Lcom/google/android/youtube/core/async/a;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/g;)Lcom/google/android/youtube/core/async/a;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Lcom/google/android/youtube/core/client/af;->e(Landroid/net/Uri;Lcom/google/android/youtube/core/async/g;)V
-
-    :cond_21
+    .prologue
+    .line 34
     return-void
 .end method

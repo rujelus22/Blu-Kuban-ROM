@@ -159,7 +159,7 @@
 
 # virtual methods
 .method public final a(Lcom/google/android/apps/analytics/g;)V
-    .registers 4
+    .registers 5
 
     iget-object v0, p0, Lcom/google/android/apps/analytics/r;->c:Lcom/google/android/apps/analytics/s;
 
@@ -190,7 +190,9 @@
 
     iget-object v1, p0, Lcom/google/android/apps/analytics/r;->a:Ljava/lang/String;
 
-    invoke-direct {v0, p1, v1, p0}, Lcom/google/android/apps/analytics/s;-><init>(Lcom/google/android/apps/analytics/g;Ljava/lang/String;Lcom/google/android/apps/analytics/r;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, p1, v1, p0, v2}, Lcom/google/android/apps/analytics/s;-><init>(Lcom/google/android/apps/analytics/g;Ljava/lang/String;Lcom/google/android/apps/analytics/r;B)V
 
     iput-object v0, p0, Lcom/google/android/apps/analytics/r;->c:Lcom/google/android/apps/analytics/s;
 

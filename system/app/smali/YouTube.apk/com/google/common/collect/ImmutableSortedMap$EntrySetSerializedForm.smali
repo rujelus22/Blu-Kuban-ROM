@@ -20,13 +20,13 @@
     .parameter
 
     .prologue
-    .line 492
+    .line 512
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 493
+    .line 513
     iput-object p1, p0, Lcom/google/common/collect/ImmutableSortedMap$EntrySetSerializedForm;->map:Lcom/google/common/collect/ImmutableSortedMap;
 
-    .line 494
+    .line 514
     return-void
 .end method
 
@@ -36,7 +36,7 @@
     .registers 2
 
     .prologue
-    .line 496
+    .line 516
     iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap$EntrySetSerializedForm;->map:Lcom/google/common/collect/ImmutableSortedMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedMap;->entrySet()Lcom/google/common/collect/ImmutableSet;

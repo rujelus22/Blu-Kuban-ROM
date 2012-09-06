@@ -8,7 +8,7 @@
 
 .field protected mEnforceRatio:Z
 
-.field protected mImageView:Landroid/widget/ImageView;
+.field protected mImageView:Lcom/google/android/finsky/layout/SmartThumbnailView;
 
 .field protected mRatio:F
 
@@ -19,14 +19,14 @@
     .parameter "context"
 
     .prologue
-    .line 38
+    .line 33
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, v0, v1}, Lcom/google/android/finsky/layout/ArtistBucketEntry;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 39
+    .line 34
     return-void
 .end method
 
@@ -36,12 +36,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 42
+    .line 37
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/android/finsky/layout/ArtistBucketEntry;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 43
+    .line 38
     return-void
 .end method
 
@@ -52,17 +52,17 @@
     .parameter "defStyle"
 
     .prologue
-    .line 46
+    .line 41
     invoke-direct {p0, p1, p2, p3}, Lcom/google/android/finsky/layout/CellWithOverlay;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 48
+    .line 43
     sget-object v1, Lcom/android/vending/R$styleable;->ArtistBucketEntry:[I
 
     invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 50
+    .line 45
     .local v0, attrArray:Landroid/content/res/TypedArray;
     const/4 v1, 0x0
 
@@ -74,10 +74,10 @@
 
     iput v1, p0, Lcom/google/android/finsky/layout/ArtistBucketEntry;->mRatio:F
 
-    .line 53
+    .line 48
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 54
+    .line 49
     return-void
 .end method
 
@@ -87,22 +87,22 @@
     .registers 2
 
     .prologue
-    .line 58
+    .line 53
     invoke-super {p0}, Lcom/google/android/finsky/layout/CellWithOverlay;->onFinishInflate()V
 
-    .line 60
-    const v0, 0x7f08000f
+    .line 55
+    const v0, 0x7f080012
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/ArtistBucketEntry;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/ImageView;
+    check-cast v0, Lcom/google/android/finsky/layout/SmartThumbnailView;
 
-    iput-object v0, p0, Lcom/google/android/finsky/layout/ArtistBucketEntry;->mImageView:Landroid/widget/ImageView;
+    iput-object v0, p0, Lcom/google/android/finsky/layout/ArtistBucketEntry;->mImageView:Lcom/google/android/finsky/layout/SmartThumbnailView;
 
-    .line 61
-    const v0, 0x7f080011
+    .line 56
+    const v0, 0x7f080014
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/ArtistBucketEntry;->findViewById(I)Landroid/view/View;
 
@@ -110,7 +110,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/ArtistBucketEntry;->mAccessibilityOverlay:Landroid/view/View;
 
-    .line 62
+    .line 57
     return-void
 .end method
 
@@ -120,25 +120,25 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 66
+    .line 61
     iget-boolean v2, p0, Lcom/google/android/finsky/layout/ArtistBucketEntry;->mEnforceRatio:Z
 
     if-nez v2, :cond_8
 
-    .line 67
+    .line 62
     invoke-super {p0, p1, p2}, Lcom/google/android/finsky/layout/CellWithOverlay;->onMeasure(II)V
 
-    .line 74
+    .line 69
     :goto_7
     return-void
 
-    .line 69
+    .line 64
     :cond_8
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
 
-    .line 70
+    .line 65
     .local v1, width:I
     int-to-float v2, v1
 
@@ -148,7 +148,7 @@
 
     float-to-int v0, v2
 
-    .line 71
+    .line 66
     .local v0, height:I
     const/high16 v2, 0x4000
 
@@ -161,93 +161,46 @@
     goto :goto_7
 .end method
 
-.method public setDocument(Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/api/model/Document;I)V
-    .registers 13
+.method public setDocument(Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/api/model/Document;)V
+    .registers 5
     .parameter "bitmapLoader"
     .parameter "document"
-    .parameter "minImageHeight"
 
     .prologue
-    const/4 v8, 0x1
-
-    const/4 v7, 0x0
-
-    .line 83
-    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
-
-    move-result v4
-
-    invoke-static {v4}, Lcom/google/android/finsky/utils/CorpusResourceUtils;->getCorpusCellContentDescriptionResource(I)I
-
-    move-result v1
-
-    .line 85
-    .local v1, descriptionStringId:I
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/ArtistBucketEntry;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    const/4 v5, 0x2
-
-    new-array v5, v5, [Ljava/lang/Object;
+    .line 78
+    iget-object v0, p0, Lcom/google/android/finsky/layout/ArtistBucketEntry;->mAccessibilityOverlay:Landroid/view/View;
 
     invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v1
 
-    aput-object v6, v5, v7
+    invoke-virtual {v0, v1}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getCreator()Ljava/lang/String;
-
-    move-result-object v6
-
-    aput-object v6, v5, v8
-
-    invoke-virtual {v4, v1, v5}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {p0, v4}, Lcom/google/android/finsky/layout/ArtistBucketEntry;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    .line 88
+    .line 79
     invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {p0, v4}, Lcom/google/android/finsky/layout/ArtistBucketEntry;->setOverlayCaption(Ljava/lang/String;)V
-
-    .line 90
-    iput-boolean v8, p0, Lcom/google/android/finsky/layout/ArtistBucketEntry;->mEnforceRatio:Z
-
-    .line 91
-    new-instance v2, Lcom/google/android/finsky/layout/ArtistBucketEntry$1;
-
-    invoke-direct {v2, p0}, Lcom/google/android/finsky/layout/ArtistBucketEntry$1;-><init>(Lcom/google/android/finsky/layout/ArtistBucketEntry;)V
-
-    .line 105
-    .local v2, handler:Lcom/google/android/finsky/utils/BitmapLoader$BitmapLoadedHandler;
-    invoke-static {p2, v7, p3}, Lcom/google/android/finsky/utils/ThumbnailUtils;->getIconUrlFromDocument(Lcom/google/android/finsky/api/model/Document;II)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 106
-    .local v3, imageUrl:Ljava/lang/String;
-    const/4 v4, 0x0
-
-    invoke-virtual {p1, v3, v4, v2}, Lcom/google/android/finsky/utils/BitmapLoader;->get(Ljava/lang/String;Landroid/graphics/Bitmap;Lcom/google/android/finsky/utils/BitmapLoader$BitmapLoadedHandler;)Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
 
     move-result-object v0
 
-    .line 107
-    .local v0, container:Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-    invoke-interface {v2, v0}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapLoadedHandler;->onResponse(Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/ArtistBucketEntry;->setOverlayCaption(Ljava/lang/String;)V
 
-    .line 109
-    iget-object v4, p0, Lcom/google/android/finsky/layout/ArtistBucketEntry;->mAccessibilityOverlay:Landroid/view/View;
+    .line 81
+    const/4 v0, 0x1
 
-    invoke-virtual {v4, v7}, Landroid/view/View;->setVisibility(I)V
+    iput-boolean v0, p0, Lcom/google/android/finsky/layout/ArtistBucketEntry;->mEnforceRatio:Z
 
-    .line 110
+    .line 82
+    iget-object v0, p0, Lcom/google/android/finsky/layout/ArtistBucketEntry;->mImageView:Lcom/google/android/finsky/layout/SmartThumbnailView;
+
+    invoke-virtual {v0, p2, p1}, Lcom/google/android/finsky/layout/SmartThumbnailView;->bind(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/utils/BitmapLoader;)V
+
+    .line 84
+    iget-object v0, p0, Lcom/google/android/finsky/layout/ArtistBucketEntry;->mAccessibilityOverlay:Landroid/view/View;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 85
     return-void
 .end method
 
@@ -256,11 +209,11 @@
     .parameter "clickListener"
 
     .prologue
-    .line 78
+    .line 73
     iget-object v0, p0, Lcom/google/android/finsky/layout/ArtistBucketEntry;->mAccessibilityOverlay:Landroid/view/View;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 79
+    .line 74
     return-void
 .end method

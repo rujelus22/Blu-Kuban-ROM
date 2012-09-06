@@ -46,37 +46,37 @@
     .registers 2
 
     .prologue
-    .line 1585
+    .line 1647
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1590
+    .line 1652
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->localizedTitle_:Ljava/lang/String;
 
-    .line 1607
+    .line 1669
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->localizedDescription_:Ljava/lang/String;
 
-    .line 1623
+    .line 1685
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->badgeImage_:Ljava/util/List;
 
-    .line 1657
+    .line 1719
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->searchId_:Ljava/lang/String;
 
-    .line 1703
+    .line 1766
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->cachedSize:I
 
-    .line 1585
+    .line 1647
     return-void
 .end method
 
@@ -87,17 +87,17 @@
     .parameter "value"
 
     .prologue
-    .line 1640
+    .line 1702
     if-nez p1, :cond_8
 
-    .line 1641
+    .line 1703
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1643
+    .line 1705
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->badgeImage_:Ljava/util/List;
 
@@ -107,20 +107,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 1644
+    .line 1706
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->badgeImage_:Ljava/util/List;
 
-    .line 1646
+    .line 1708
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->badgeImage_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1647
+    .line 1709
     return-object p0
 .end method
 
@@ -137,7 +137,7 @@
     .end annotation
 
     .prologue
-    .line 1626
+    .line 1688
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->badgeImage_:Ljava/util/List;
 
     return-object v0
@@ -147,15 +147,15 @@
     .registers 2
 
     .prologue
-    .line 1705
+    .line 1769
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 1707
+    .line 1771
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->getSerializedSize()I
 
-    .line 1709
+    .line 1773
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->cachedSize:I
 
@@ -166,7 +166,7 @@
     .registers 2
 
     .prologue
-    .line 1608
+    .line 1670
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->localizedDescription_:Ljava/lang/String;
 
     return-object v0
@@ -176,7 +176,7 @@
     .registers 2
 
     .prologue
-    .line 1591
+    .line 1653
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->localizedTitle_:Ljava/lang/String;
 
     return-object v0
@@ -186,7 +186,7 @@
     .registers 2
 
     .prologue
-    .line 1658
+    .line 1720
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->searchId_:Ljava/lang/String;
 
     return-object v0
@@ -196,10 +196,10 @@
     .registers 6
 
     .prologue
-    .line 1713
+    .line 1778
     const/4 v2, 0x0
 
-    .line 1714
+    .line 1779
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->hasLocalizedTitle()Z
 
@@ -207,7 +207,7 @@
 
     if-eqz v3, :cond_11
 
-    .line 1715
+    .line 1780
     const/4 v3, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->getLocalizedTitle()Ljava/lang/String;
@@ -220,7 +220,7 @@
 
     add-int/2addr v2, v3
 
-    .line 1718
+    .line 1783
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->hasLocalizedDescription()Z
 
@@ -228,7 +228,7 @@
 
     if-eqz v3, :cond_21
 
-    .line 1719
+    .line 1784
     const/4 v3, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->getLocalizedDescription()Ljava/lang/String;
@@ -241,7 +241,7 @@
 
     add-int/2addr v2, v3
 
-    .line 1722
+    .line 1787
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->getBadgeImageList()Ljava/util/List;
 
@@ -265,7 +265,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeImageProto;
 
-    .line 1723
+    .line 1788
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeImageProto;
     const/4 v3, 0x3
 
@@ -277,7 +277,7 @@
 
     goto :goto_29
 
-    .line 1726
+    .line 1791
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeImageProto;
     :cond_3c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->hasSearchId()Z
@@ -286,7 +286,7 @@
 
     if-eqz v3, :cond_4c
 
-    .line 1727
+    .line 1792
     const/4 v3, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->getSearchId()Ljava/lang/String;
@@ -299,11 +299,11 @@
 
     add-int/2addr v2, v3
 
-    .line 1730
+    .line 1795
     :cond_4c
     iput v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->cachedSize:I
 
-    .line 1731
+    .line 1796
     return v2
 .end method
 
@@ -311,7 +311,7 @@
     .registers 2
 
     .prologue
-    .line 1609
+    .line 1671
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->hasLocalizedDescription:Z
 
     return v0
@@ -321,7 +321,7 @@
     .registers 2
 
     .prologue
-    .line 1592
+    .line 1654
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->hasLocalizedTitle:Z
 
     return v0
@@ -331,7 +331,7 @@
     .registers 2
 
     .prologue
-    .line 1659
+    .line 1721
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->hasSearchId:Z
 
     return v0
@@ -347,29 +347,29 @@
     .end annotation
 
     .prologue
-    .line 1738
+    .line 1804
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1739
+    .line 1805
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_32
 
-    .line 1743
+    .line 1809
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 1744
+    .line 1810
     :sswitch_d
     return-object p0
 
-    .line 1749
+    .line 1815
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -379,7 +379,7 @@
 
     goto :goto_0
 
-    .line 1753
+    .line 1819
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -389,22 +389,22 @@
 
     goto :goto_0
 
-    .line 1757
+    .line 1823
     :sswitch_1e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeImageProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeImageProto;-><init>()V
 
-    .line 1758
+    .line 1824
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeImageProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1759
+    .line 1825
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->addBadgeImage(Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeImageProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;
 
     goto :goto_0
 
-    .line 1763
+    .line 1829
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeImageProto;
     :sswitch_2a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -415,7 +415,7 @@
 
     goto :goto_0
 
-    .line 1739
+    .line 1805
     :sswitch_data_32
     .sparse-switch
         0x0 -> :sswitch_d
@@ -436,7 +436,7 @@
     .end annotation
 
     .prologue
-    .line 1583
+    .line 1645
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;
 
     move-result-object v0
@@ -449,15 +449,15 @@
     .parameter "value"
 
     .prologue
-    .line 1611
+    .line 1673
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->hasLocalizedDescription:Z
 
-    .line 1612
+    .line 1674
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->localizedDescription_:Ljava/lang/String;
 
-    .line 1613
+    .line 1675
     return-object p0
 .end method
 
@@ -466,15 +466,15 @@
     .parameter "value"
 
     .prologue
-    .line 1594
+    .line 1656
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->hasLocalizedTitle:Z
 
-    .line 1595
+    .line 1657
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->localizedTitle_:Ljava/lang/String;
 
-    .line 1596
+    .line 1658
     return-object p0
 .end method
 
@@ -483,15 +483,15 @@
     .parameter "value"
 
     .prologue
-    .line 1661
+    .line 1723
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->hasSearchId:Z
 
-    .line 1662
+    .line 1724
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->searchId_:Ljava/lang/String;
 
-    .line 1663
+    .line 1725
     return-object p0
 .end method
 
@@ -505,14 +505,14 @@
     .end annotation
 
     .prologue
-    .line 1689
+    .line 1752
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->hasLocalizedTitle()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 1690
+    .line 1753
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->getLocalizedTitle()Ljava/lang/String;
@@ -521,7 +521,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1692
+    .line 1755
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->hasLocalizedDescription()Z
 
@@ -529,7 +529,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 1693
+    .line 1756
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->getLocalizedDescription()Ljava/lang/String;
@@ -538,7 +538,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1695
+    .line 1758
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->getBadgeImageList()Ljava/util/List;
 
@@ -562,7 +562,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeImageProto;
 
-    .line 1696
+    .line 1759
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeImageProto;
     const/4 v2, 0x3
 
@@ -570,7 +570,7 @@
 
     goto :goto_24
 
-    .line 1698
+    .line 1761
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeImageProto;
     :cond_35
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->hasSearchId()Z
@@ -579,7 +579,7 @@
 
     if-eqz v2, :cond_43
 
-    .line 1699
+    .line 1762
     const/4 v2, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalBadgeProto;->getSearchId()Ljava/lang/String;
@@ -588,7 +588,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1701
+    .line 1764
     :cond_43
     return-void
 .end method

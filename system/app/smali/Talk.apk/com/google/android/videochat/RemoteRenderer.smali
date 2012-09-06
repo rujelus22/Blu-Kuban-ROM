@@ -56,13 +56,13 @@
     iput-object v0, p0, Lcom/google/android/videochat/RemoteRenderer;->mStats:Lcom/google/android/videochat/util/CircularArray;
 
     .line 49
-    iput-object p1, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iput-object p1, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     .line 50
     iput-object p2, p0, Lcom/google/android/videochat/RemoteRenderer;->mCallback:Lcom/google/android/videochat/Renderer$RendererThreadCallback;
 
     .line 51
-    iget-object v0, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     const/4 v1, 0x3
 
@@ -70,7 +70,7 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererID:I
+    iput v0, p0, Lcom/google/android/videochat/Renderer;->mRendererID:I
 
     .line 52
     const-string v0, "vclib:RemoteRenderer"
@@ -85,7 +85,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererID:I
+    iget v2, p0, Lcom/google/android/videochat/Renderer;->mRendererID:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -98,7 +98,7 @@
     invoke-static {v0, v1}, Lcom/google/android/videochat/util/LogUtil;->LOGV(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 53
-    iget-object v0, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     invoke-virtual {v0, p0}, Lcom/google/android/videochat/RendererManager;->registerRendererForStats(Lcom/google/android/videochat/Renderer;)V
 
@@ -123,9 +123,9 @@
 
     .line 103
     .local v0, remoteDrawOutParams:Lcom/google/android/videochat/RemoteRenderer$RendererFrameOutputData;
-    iget-object v4, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v4, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
-    iget v5, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererID:I
+    iget v5, p0, Lcom/google/android/videochat/Renderer;->mRendererID:I
 
     invoke-virtual {v4, v5, v8, p2}, Lcom/google/android/videochat/RendererManager;->renderFrame(ILjava/lang/Object;Ljava/lang/Object;)V
 
@@ -182,9 +182,9 @@
     iput-wide v2, v1, Lcom/google/android/videochat/RemoteRenderer$Stats;->time:J
 
     .line 114
-    iget-object v4, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v4, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
-    iget v5, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererID:I
+    iget v5, p0, Lcom/google/android/videochat/Renderer;->mRendererID:I
 
     const-string v6, "yuv_dropped"
 
@@ -195,9 +195,9 @@
     iput v4, v1, Lcom/google/android/videochat/RemoteRenderer$Stats;->dropped:I
 
     .line 116
-    iget-object v4, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v4, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
-    iget v5, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererID:I
+    iget v5, p0, Lcom/google/android/videochat/Renderer;->mRendererID:I
 
     const-string v6, "yuv_pushed"
 
@@ -208,9 +208,9 @@
     iput v4, v1, Lcom/google/android/videochat/RemoteRenderer$Stats;->pushed:I
 
     .line 118
-    iget-object v4, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v4, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
-    iget v5, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererID:I
+    iget v5, p0, Lcom/google/android/videochat/Renderer;->mRendererID:I
 
     const-string v6, "yuv_rendered"
 
@@ -221,9 +221,9 @@
     iput v4, v1, Lcom/google/android/videochat/RemoteRenderer$Stats;->renderered:I
 
     .line 120
-    iget-object v4, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v4, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
-    iget v5, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererID:I
+    iget v5, p0, Lcom/google/android/videochat/Renderer;->mRendererID:I
 
     const-string v6, "sub_renderedframes"
 
@@ -503,7 +503,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererID:I
+    iget v2, p0, Lcom/google/android/videochat/Renderer;->mRendererID:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -516,16 +516,16 @@
     invoke-static {v0, v1}, Lcom/google/android/videochat/util/LogUtil;->LOGV(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 81
-    iget-object v0, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
-    iget v1, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererID:I
+    iget v1, p0, Lcom/google/android/videochat/Renderer;->mRendererID:I
 
     invoke-virtual {v0, v1}, Lcom/google/android/videochat/RendererManager;->initializeGLContext(I)Z
 
     .line 82
-    iget-object v0, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
-    iget v1, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererID:I
+    iget v1, p0, Lcom/google/android/videochat/Renderer;->mRendererID:I
 
     const-string v2, "sub_outtex"
 
@@ -570,7 +570,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererID:I
+    iget v2, p0, Lcom/google/android/videochat/Renderer;->mRendererID:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -583,14 +583,14 @@
     invoke-static {v0, v1}, Lcom/google/android/videochat/util/LogUtil;->LOGV(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 96
-    iget-object v0, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     invoke-virtual {v0, p0}, Lcom/google/android/videochat/RendererManager;->unregisterRendererForStats(Lcom/google/android/videochat/Renderer;)V
 
     .line 97
-    iget-object v0, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
-    iget v1, p0, Lcom/google/android/videochat/RemoteRenderer;->mRendererID:I
+    iget v1, p0, Lcom/google/android/videochat/Renderer;->mRendererID:I
 
     invoke-virtual {v0, v1}, Lcom/google/android/videochat/RendererManager;->releaseRenderer(I)V
 

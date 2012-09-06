@@ -1,250 +1,319 @@
-.class Lcom/google/googlenav/ui/android/ak;
-.super Lcom/google/googlenav/ui/android/ab;
+.class public Lcom/google/googlenav/ui/android/ak;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Laz/m;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;
+.field private final a:Landroid/content/Context;
 
-.field private final b:Ljava/util/ArrayList;
+.field private final b:Landroid/app/NotificationManager;
+
+.field private c:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;Ljava/util/ArrayList;)V
+.method public constructor <init>(Landroid/content/Context;)V
     .registers 3
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/android/ak;->a:Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;
+    .prologue
+    .line 41
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcom/google/googlenav/ui/android/ab;-><init>()V
+    .line 39
+    const/4 v0, 0x4
 
-    iput-object p2, p0, Lcom/google/googlenav/ui/android/ak;->b:Ljava/util/ArrayList;
+    iput v0, p0, Lcom/google/googlenav/ui/android/ak;->c:I
 
+    .line 42
+    iput-object p1, p0, Lcom/google/googlenav/ui/android/ak;->a:Landroid/content/Context;
+
+    .line 43
+    const-string v0, "notification"
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/NotificationManager;
+
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/ak;->b:Landroid/app/NotificationManager;
+
+    .line 45
     return-void
-.end method
-
-.method private a(Lcom/google/googlenav/bV;Landroid/widget/LinearLayout;Z)V
-    .registers 9
-
-    const/4 v4, 0x0
-
-    new-instance v0, Landroid/widget/TextView;
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/ak;->a:Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
-
-    invoke-virtual {p1}, Lcom/google/googlenav/bV;->d()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    if-eqz p3, :cond_4b
-
-    new-instance v1, Landroid/widget/LinearLayout;
-
-    iget-object v2, p0, Lcom/google/googlenav/ui/android/ak;->a:Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;
-
-    invoke-virtual {v2}, Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
-
-    new-instance v2, Landroid/widget/LinearLayout$LayoutParams;
-
-    const/4 v3, -0x2
-
-    invoke-direct {v2, v4, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
-
-    const/high16 v3, 0x3f80
-
-    iput v3, v2, Landroid/widget/LinearLayout$LayoutParams;->weight:F
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    invoke-virtual {v1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    new-instance v0, Landroid/widget/TextView;
-
-    iget-object v2, p0, Lcom/google/googlenav/ui/android/ak;->a:Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;
-
-    invoke-virtual {v2}, Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-direct {v0, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
-
-    iget-object v2, p0, Lcom/google/googlenav/ui/android/ak;->a:Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;
-
-    invoke-static {v2, p1, v4}, Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;->a(Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;Lcom/google/googlenav/bV;Z)Ljava/lang/CharSequence;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {v1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    invoke-virtual {p2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    :goto_4a
-    return-void
-
-    :cond_4b
-    invoke-virtual {p2, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    new-instance v0, Landroid/widget/TextView;
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/ak;->a:Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/ak;->a:Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;
-
-    const/4 v2, 0x1
-
-    invoke-static {v1, p1, v2}, Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;->a(Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;Lcom/google/googlenav/bV;Z)Ljava/lang/CharSequence;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {p2, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    goto :goto_4a
 .end method
 
 
 # virtual methods
-.method public getCount()I
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/ak;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getItem(I)Ljava/lang/Object;
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/ak;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getItemId(I)J
-    .registers 4
-
-    const-wide/16 v0, 0x0
-
-    return-wide v0
-.end method
-
-.method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+.method public onOfflineDataUpdate(Laz/l;)V
     .registers 11
+    .parameter
 
-    const/4 v5, 0x1
+    .prologue
+    const v4, 0x1080082
+
+    const/4 v1, 0x1
+
+    const/16 v8, 0x33a
 
     const/4 v2, 0x0
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/ak;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlenav/bS;
-
-    new-instance v3, Landroid/widget/LinearLayout;
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/ak;->a:Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-direct {v3, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
-
-    invoke-virtual {v3, v5}, Landroid/widget/LinearLayout;->setOrientation(I)V
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/ak;->a:Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;
-
-    invoke-static {v1, v0, v5}, Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;->a(Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;Lcom/google/googlenav/bS;Z)Landroid/widget/TextView;
-
-    move-result-object v1
-
-    invoke-virtual {v3, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    new-instance v4, Landroid/widget/LinearLayout;
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/ak;->a:Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-direct {v4, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
-
-    invoke-virtual {v4, v5}, Landroid/widget/LinearLayout;->setOrientation(I)V
-
-    move v1, v2
-
-    :goto_30
-    invoke-virtual {v0}, Lcom/google/googlenav/bS;->h()I
-
-    move-result v5
-
-    if-ge v1, v5, :cond_44
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/bS;->a(I)Lcom/google/googlenav/bV;
-
-    move-result-object v5
-
-    invoke-virtual {v0}, Lcom/google/googlenav/bS;->g()Z
-
-    move-result v6
-
-    invoke-direct {p0, v5, v4, v6}, Lcom/google/googlenav/ui/android/ak;->a(Lcom/google/googlenav/bV;Landroid/widget/LinearLayout;Z)V
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_30
-
-    :cond_44
-    invoke-virtual {v3, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/ak;->a:Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;->b(Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;)I
+    .line 51
+    invoke-virtual {p1}, Laz/l;->j()Z
 
     move-result v0
 
-    invoke-static {}, Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;->i()I
+    if-eqz v0, :cond_1f
+
+    invoke-virtual {p1}, Laz/l;->k()Z
+
+    move-result v0
+
+    if-nez v0, :cond_20
+
+    invoke-virtual {p1}, Laz/l;->l()Z
+
+    move-result v0
+
+    if-nez v0, :cond_20
+
+    invoke-virtual {p1}, Laz/l;->m()Z
+
+    move-result v0
+
+    if-nez v0, :cond_20
+
+    .line 134
+    :cond_1f
+    :goto_1f
+    return-void
+
+    .line 66
+    :cond_20
+    invoke-virtual {p1}, Laz/l;->k()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3c
+
+    invoke-virtual {p1}, Laz/l;->c()I
+
+    move-result v0
+
+    const/16 v3, 0x64
+
+    if-ne v0, v3, :cond_3c
+
+    move v0, v1
+
+    .line 69
+    :goto_2f
+    invoke-virtual {p1}, Laz/l;->b()I
+
+    move-result v3
+
+    packed-switch v3, :pswitch_data_da
+
+    .line 99
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/ak;->b:Landroid/app/NotificationManager;
+
+    invoke-virtual {v0, v8}, Landroid/app/NotificationManager;->cancel(I)V
+
+    goto :goto_1f
+
+    :cond_3c
+    move v0, v2
+
+    .line 66
+    goto :goto_2f
+
+    .line 71
+    :pswitch_3e
+    if-nez v0, :cond_c2
+
+    .line 72
+    const v4, 0x1080081
+
+    .line 73
+    invoke-static {v8}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 74
+    invoke-virtual {p1}, Laz/l;->k()Z
 
     move-result v1
 
-    add-int/2addr v0, v1
+    if-eqz v1, :cond_bf
 
-    invoke-virtual {v4, v0, v2, v2, v2}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    sget v0, Lcom/google/googlenav/ui/android/TemplateViewRealtimeScheduleTransitStation;->a:I
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v3, v2, v0, v2, v2}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+    invoke-virtual {p1}, Laz/l;->c()I
 
-    return-object v3
+    move-result v5
+
+    invoke-static {v5}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v5, "%"
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 108
+    :goto_68
+    new-instance v5, Landroid/app/Notification;
+
+    const-wide/16 v6, 0x0
+
+    invoke-direct {v5, v4, v3, v6, v7}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
+
+    .line 111
+    new-instance v4, Landroid/content/Intent;
+
+    iget-object v6, p0, Lcom/google/googlenav/ui/android/ak;->a:Landroid/content/Context;
+
+    const-class v7, Lcom/google/android/maps/MapsActivity;
+
+    invoke-direct {v4, v6, v7}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 112
+    new-instance v6, Landroid/net/Uri$Builder;
+
+    invoke-direct {v6}, Landroid/net/Uri$Builder;-><init>()V
+
+    const-string v7, "http"
+
+    invoke-virtual {v6, v7}, Landroid/net/Uri$Builder;->scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v6
+
+    const-string v7, "maps.google.com"
+
+    invoke-virtual {v6, v7}, Landroid/net/Uri$Builder;->authority(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v6
+
+    const-string v7, "/my-places"
+
+    invoke-virtual {v6, v7}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v6
+
+    const-string v7, "offline"
+
+    invoke-virtual {v6, v7}, Landroid/net/Uri$Builder;->fragment(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v6
+
+    .line 117
+    invoke-virtual {v6}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v6
+
+    invoke-virtual {v4, v6}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    .line 118
+    const-string v6, "android.intent.action.VIEW"
+
+    invoke-virtual {v4, v6}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 120
+    iget-object v6, p0, Lcom/google/googlenav/ui/android/ak;->a:Landroid/content/Context;
+
+    invoke-static {v6, v2, v4, v2}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v2
+
+    .line 122
+    iget-object v4, p0, Lcom/google/googlenav/ui/android/ak;->a:Landroid/content/Context;
+
+    invoke-virtual {v5, v4, v3, v1, v2}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
+
+    .line 126
+    if-eqz v0, :cond_d8
+
+    const/16 v0, 0x10
+
+    :goto_b0
+    iput v0, v5, Landroid/app/Notification;->flags:I
+
+    .line 130
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/ak;->b:Landroid/app/NotificationManager;
+
+    invoke-virtual {v0, v8, v5}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
+
+    .line 133
+    invoke-virtual {p1}, Laz/l;->b()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/googlenav/ui/android/ak;->c:I
+
+    goto/16 :goto_1f
+
+    .line 74
+    :cond_bf
+    const-string v1, ""
+
+    goto :goto_68
+
+    .line 79
+    :cond_c2
+    const/16 v1, 0x338
+
+    invoke-static {v1}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 80
+    const-string v1, ""
+
+    goto :goto_68
+
+    .line 85
+    :pswitch_cb
+    iget v3, p0, Lcom/google/googlenav/ui/android/ak;->c:I
+
+    if-ne v3, v1, :cond_1f
+
+    .line 93
+    const/16 v1, 0x33b
+
+    invoke-static {v1}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 94
+    const-string v1, ""
+
+    goto :goto_68
+
+    .line 126
+    :cond_d8
+    const/4 v0, 0x2
+
+    goto :goto_b0
+
+    .line 69
+    :pswitch_data_da
+    .packed-switch 0x0
+        :pswitch_cb
+        :pswitch_3e
+    .end packed-switch
 .end method

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 152
+    .line 215
     iput-object p1, p0, Lcom/google/android/finsky/activities/MainActivity$2;->this$0:Lcom/google/android/finsky/activities/MainActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,9 +41,9 @@
     .registers 1
 
     .prologue
-    .line 155
+    .line 218
     invoke-static {}, Lcom/google/android/finsky/previews/PreviewController;->reset()V
 
-    .line 156
+    .line 219
     return-void
 .end method

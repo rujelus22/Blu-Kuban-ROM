@@ -59,13 +59,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "CREATE TABLE events ("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v1, " \'%s\' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
 
@@ -299,13 +295,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "CREATE TABLE IF NOT EXISTS session ("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v1, " \'%s\' INTEGER PRIMARY KEY,"
 
@@ -395,13 +387,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "CREATE TABLE custom_variables ("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v1, " \'%s\' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
 
@@ -507,13 +495,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "CREATE TABLE IF NOT EXISTS custom_var_cache ("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v1, " \'%s\' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
 
@@ -619,13 +603,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "CREATE TABLE transaction_events ("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v1, " \'%s\' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
 
@@ -747,13 +727,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "CREATE TABLE item_events ("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v1, " \'%s\' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
 
@@ -891,13 +867,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "CREATE TABLE IF NOT EXISTS hits ("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v1, " \'%s\' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
 
@@ -1059,8 +1031,8 @@
 
     invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
     :try_end_17
-    .catchall {:try_start_1 .. :try_end_17} :catchall_84
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1 .. :try_end_17} :catch_73
+    .catchall {:try_start_1 .. :try_end_17} :catchall_85
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1 .. :try_end_17} :catch_74
 
     move-result-object v1
 
@@ -1069,7 +1041,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6c
+    if-eqz v0, :cond_6d
 
     new-instance v0, Lcom/google/android/apps/analytics/ab;
 
@@ -1139,37 +1111,39 @@
 
     new-instance v0, Lcom/google/android/apps/analytics/aa;
 
-    invoke-direct {v0, v2}, Lcom/google/android/apps/analytics/aa;-><init>(Lcom/google/android/apps/analytics/ab;)V
-    :try_end_66
-    .catchall {:try_start_18 .. :try_end_66} :catchall_8c
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_18 .. :try_end_66} :catch_8e
+    const/4 v3, 0x0
 
-    if-eqz v1, :cond_6b
+    invoke-direct {v0, v2, v3}, Lcom/google/android/apps/analytics/aa;-><init>(Lcom/google/android/apps/analytics/ab;B)V
+    :try_end_67
+    .catchall {:try_start_18 .. :try_end_67} :catchall_8d
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_18 .. :try_end_67} :catch_8f
+
+    if-eqz v1, :cond_6c
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    :cond_6b
-    :goto_6b
-    return-object v0
 
     :cond_6c
-    if-eqz v1, :cond_71
+    :goto_6c
+    return-object v0
+
+    :cond_6d
+    if-eqz v1, :cond_72
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    :cond_71
-    :goto_71
+    :cond_72
+    :goto_72
     move-object v0, v8
 
-    goto :goto_6b
+    goto :goto_6c
 
-    :catch_73
+    :catch_74
     move-exception v0
 
     move-object v1, v8
 
-    :goto_75
-    :try_start_75
+    :goto_76
+    :try_start_76
     const-string v2, "GoogleAnalyticsTracker"
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteException;->toString()Ljava/lang/String;
@@ -1177,37 +1151,37 @@
     move-result-object v0
 
     invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_7e
-    .catchall {:try_start_75 .. :try_end_7e} :catchall_8c
+    :try_end_7f
+    .catchall {:try_start_76 .. :try_end_7f} :catchall_8d
 
-    if-eqz v1, :cond_71
+    if-eqz v1, :cond_72
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    goto :goto_71
+    goto :goto_72
 
-    :catchall_84
+    :catchall_85
     move-exception v0
 
     move-object v1, v8
 
-    :goto_86
-    if-eqz v1, :cond_8b
+    :goto_87
+    if-eqz v1, :cond_8c
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    :cond_8b
+    :cond_8c
     throw v0
 
-    :catchall_8c
+    :catchall_8d
     move-exception v0
 
-    goto :goto_86
+    goto :goto_87
 
-    :catch_8e
+    :catch_8f
     move-exception v0
 
-    goto :goto_75
+    goto :goto_76
 .end method
 
 .method static a(Landroid/database/sqlite/SQLiteDatabase;)Lcom/google/android/apps/analytics/e;
@@ -1966,8 +1940,8 @@
 
     invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
     :try_end_17
-    .catchall {:try_start_1 .. :try_end_17} :catchall_8a
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1 .. :try_end_17} :catch_79
+    .catchall {:try_start_1 .. :try_end_17} :catchall_8b
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1 .. :try_end_17} :catch_7a
 
     move-result-object v7
 
@@ -1976,7 +1950,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_72
+    if-eqz v0, :cond_73
 
     new-instance v0, Lcom/google/android/apps/analytics/q;
 
@@ -2052,37 +2026,39 @@
 
     new-instance v0, Lcom/google/android/apps/analytics/p;
 
-    invoke-direct {v0, v1}, Lcom/google/android/apps/analytics/p;-><init>(Lcom/google/android/apps/analytics/q;)V
-    :try_end_6c
-    .catchall {:try_start_18 .. :try_end_6c} :catchall_92
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_18 .. :try_end_6c} :catch_97
+    const/4 v2, 0x0
 
-    if-eqz v7, :cond_71
+    invoke-direct {v0, v1, v2}, Lcom/google/android/apps/analytics/p;-><init>(Lcom/google/android/apps/analytics/q;B)V
+    :try_end_6d
+    .catchall {:try_start_18 .. :try_end_6d} :catchall_93
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_18 .. :try_end_6d} :catch_98
+
+    if-eqz v7, :cond_72
 
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
-
-    :cond_71
-    :goto_71
-    return-object v0
 
     :cond_72
-    if-eqz v7, :cond_77
+    :goto_72
+    return-object v0
+
+    :cond_73
+    if-eqz v7, :cond_78
 
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    :cond_77
-    :goto_77
+    :cond_78
+    :goto_78
     move-object v0, v8
 
-    goto :goto_71
+    goto :goto_72
 
-    :catch_79
+    :catch_7a
     move-exception v0
 
     move-object v1, v8
 
-    :goto_7b
-    :try_start_7b
+    :goto_7c
+    :try_start_7c
     const-string v2, "GoogleAnalyticsTracker"
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteException;->toString()Ljava/lang/String;
@@ -2090,46 +2066,46 @@
     move-result-object v0
 
     invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_84
-    .catchall {:try_start_7b .. :try_end_84} :catchall_94
+    :try_end_85
+    .catchall {:try_start_7c .. :try_end_85} :catchall_95
 
-    if-eqz v1, :cond_77
+    if-eqz v1, :cond_78
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    goto :goto_77
+    goto :goto_78
 
-    :catchall_8a
+    :catchall_8b
     move-exception v0
 
     move-object v7, v8
 
-    :goto_8c
-    if-eqz v7, :cond_91
+    :goto_8d
+    if-eqz v7, :cond_92
 
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    :cond_91
+    :cond_92
     throw v0
 
-    :catchall_92
+    :catchall_93
     move-exception v0
 
-    goto :goto_8c
+    goto :goto_8d
 
-    :catchall_94
+    :catchall_95
     move-exception v0
 
     move-object v7, v1
 
-    goto :goto_8c
+    goto :goto_8d
 
-    :catch_97
+    :catch_98
     move-exception v0
 
     move-object v1, v7
 
-    goto :goto_7b
+    goto :goto_7c
 .end method
 
 .method private static b(Ljava/lang/String;)Ljava/lang/String;
@@ -2887,13 +2863,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "exception ending transaction:"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteException;->toString()Ljava/lang/String;
 
@@ -3450,7 +3422,7 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_ea
+    if-nez v2, :cond_e6
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -3542,8 +3514,8 @@
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_bb
-    .catchall {:try_start_43 .. :try_end_bb} :catchall_135
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_43 .. :try_end_bb} :catch_10e
+    .catchall {:try_start_43 .. :try_end_bb} :catchall_12d
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_43 .. :try_end_bb} :catch_10a
 
     :try_start_bb
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->inTransaction()Z
@@ -3577,13 +3549,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Can\'t get db: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteException;->toString()Ljava/lang/String;
 
@@ -3600,13 +3568,13 @@
     invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     monitor-exit p0
-    :try_end_e8
-    .catchall {:try_start_cb .. :try_end_e8} :catchall_c7
+    :try_end_e4
+    .catchall {:try_start_cb .. :try_end_e4} :catchall_c7
 
     goto/16 :goto_d
 
-    :cond_ea
-    :try_start_ea
+    :cond_e6
+    :try_start_e6
     iget-wide v2, p0, Lcom/google/android/apps/analytics/v;->e:J
 
     iput-wide v2, p0, Lcom/google/android/apps/analytics/v;->d:J
@@ -3627,7 +3595,7 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_106
+    if-nez v2, :cond_102
 
     iget-wide v2, p0, Lcom/google/android/apps/analytics/v;->e:J
 
@@ -3637,33 +3605,29 @@
 
     iput-wide v2, p0, Lcom/google/android/apps/analytics/v;->e:J
 
-    :cond_106
+    :cond_102
     iget v2, p0, Lcom/google/android/apps/analytics/v;->f:I
 
     add-int/lit8 v2, v2, 0x1
 
     iput v2, p0, Lcom/google/android/apps/analytics/v;->f:I
-    :try_end_10c
-    .catchall {:try_start_ea .. :try_end_10c} :catchall_135
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_ea .. :try_end_10c} :catch_10e
+    :try_end_108
+    .catchall {:try_start_e6 .. :try_end_108} :catchall_12d
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_e6 .. :try_end_108} :catch_10a
 
     goto/16 :goto_6f
 
-    :catch_10e
+    :catch_10a
     move-exception v0
 
-    :try_start_10f
+    :try_start_10b
     const-string v2, "GoogleAnalyticsTracker"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "putEventOuter:"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteException;->toString()Ljava/lang/String;
 
@@ -3678,10 +3642,10 @@
     move-result-object v0
 
     invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_12b
-    .catchall {:try_start_10f .. :try_end_12b} :catchall_135
+    :try_end_123
+    .catchall {:try_start_10b .. :try_end_123} :catchall_12d
 
-    :try_start_12b
+    :try_start_123
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->inTransaction()Z
 
     move-result v0
@@ -3692,21 +3656,21 @@
 
     goto :goto_c4
 
-    :catchall_135
+    :catchall_12d
     move-exception v0
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->inTransaction()Z
 
     move-result v2
 
-    if-eqz v2, :cond_13f
+    if-eqz v2, :cond_137
 
     invoke-static {v1}, Lcom/google/android/apps/analytics/v;->d(Landroid/database/sqlite/SQLiteDatabase;)Z
 
-    :cond_13f
+    :cond_137
     throw v0
-    :try_end_140
-    .catchall {:try_start_12b .. :try_end_140} :catchall_c7
+    :try_end_138
+    .catchall {:try_start_123 .. :try_end_138} :catchall_c7
 .end method
 
 .method public final a(Z)V
@@ -3875,8 +3839,8 @@
 
     invoke-virtual/range {v1 .. v9}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
     :try_end_1a
-    .catchall {:try_start_6 .. :try_end_1a} :catchall_145
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_6 .. :try_end_1a} :catch_14d
+    .catchall {:try_start_6 .. :try_end_1a} :catchall_13d
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_6 .. :try_end_1a} :catch_145
 
     move-result-object v16
 
@@ -3886,7 +3850,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_131
+    if-eqz v1, :cond_129
 
     new-instance v1, Lcom/google/android/apps/analytics/h;
 
@@ -4028,7 +3992,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_e8
+    if-eqz v4, :cond_e4
 
     move-object/from16 v0, p2
 
@@ -4036,19 +4000,15 @@
 
     move-result-object v4
 
-    if-nez v4, :cond_c9
+    if-nez v4, :cond_c5
 
     const-string v5, "GoogleAnalyticsTracker"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v7, "missing expected transaction for event "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v6, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -4060,26 +4020,26 @@
 
     invoke-static {v5, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_c9
+    :cond_c5
     invoke-virtual {v1, v4}, Lcom/google/android/apps/analytics/h;->a(Lcom/google/android/apps/analytics/aa;)V
 
-    :goto_cc
+    :goto_c8
     move-object/from16 v0, v17
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_d1
-    .catchall {:try_start_1b .. :try_end_d1} :catchall_116
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1b .. :try_end_d1} :catch_d3
+    :try_end_cd
+    .catchall {:try_start_1b .. :try_end_cd} :catchall_10e
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1b .. :try_end_cd} :catch_cf
 
     goto/16 :goto_1b
 
-    :catch_d3
+    :catch_cf
     move-exception v1
 
     move-object/from16 v2, v16
 
-    :goto_d6
-    :try_start_d6
+    :goto_d2
+    :try_start_d2
     const-string v3, "GoogleAnalyticsTracker"
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteException;->toString()Ljava/lang/String;
@@ -4091,19 +4051,19 @@
     const/4 v1, 0x0
 
     new-array v1, v1, [Lcom/google/android/apps/analytics/h;
-    :try_end_e2
-    .catchall {:try_start_d6 .. :try_end_e2} :catchall_149
+    :try_end_de
+    .catchall {:try_start_d2 .. :try_end_de} :catchall_141
 
-    if-eqz v2, :cond_e7
+    if-eqz v2, :cond_e3
 
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
-    :cond_e7
-    :goto_e7
+    :cond_e3
+    :goto_e3
     return-object v1
 
-    :cond_e8
-    :try_start_e8
+    :cond_e4
+    :try_start_e4
     const-string v4, "__##GOOGLEITEM##__"
 
     iget-object v5, v1, Lcom/google/android/apps/analytics/h;->c:Ljava/lang/String;
@@ -4112,7 +4072,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_11d
+    if-eqz v4, :cond_115
 
     move-object/from16 v0, p2
 
@@ -4120,19 +4080,15 @@
 
     move-result-object v4
 
-    if-nez v4, :cond_112
+    if-nez v4, :cond_10a
 
     const-string v5, "GoogleAnalyticsTracker"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v7, "missing expected item for event "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v6, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -4144,60 +4100,60 @@
 
     invoke-static {v5, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_112
+    :cond_10a
     invoke-virtual {v1, v4}, Lcom/google/android/apps/analytics/h;->a(Lcom/google/android/apps/analytics/p;)V
-    :try_end_115
-    .catchall {:try_start_e8 .. :try_end_115} :catchall_116
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_e8 .. :try_end_115} :catch_d3
+    :try_end_10d
+    .catchall {:try_start_e4 .. :try_end_10d} :catchall_10e
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_e4 .. :try_end_10d} :catch_cf
 
-    goto :goto_cc
+    goto :goto_c8
 
-    :catchall_116
+    :catchall_10e
     move-exception v1
 
-    :goto_117
-    if-eqz v16, :cond_11c
+    :goto_10f
+    if-eqz v16, :cond_114
 
     invoke-interface/range {v16 .. v16}, Landroid/database/Cursor;->close()V
 
-    :cond_11c
+    :cond_114
     throw v1
 
-    :cond_11d
+    :cond_115
     const/4 v4, 0x1
 
     move/from16 v0, p3
 
-    if-le v0, v4, :cond_12b
+    if-le v0, v4, :cond_123
 
-    :try_start_122
+    :try_start_11a
     move-object/from16 v0, p2
 
     invoke-static {v2, v3, v0}, Lcom/google/android/apps/analytics/v;->c(JLandroid/database/sqlite/SQLiteDatabase;)Lcom/google/android/apps/analytics/e;
 
     move-result-object v2
 
-    :goto_128
+    :goto_120
     iput-object v2, v1, Lcom/google/android/apps/analytics/h;->i:Lcom/google/android/apps/analytics/e;
 
-    goto :goto_cc
+    goto :goto_c8
 
-    :cond_12b
+    :cond_123
     new-instance v2, Lcom/google/android/apps/analytics/e;
 
     invoke-direct {v2}, Lcom/google/android/apps/analytics/e;-><init>()V
-    :try_end_130
-    .catchall {:try_start_122 .. :try_end_130} :catchall_116
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_122 .. :try_end_130} :catch_d3
+    :try_end_128
+    .catchall {:try_start_11a .. :try_end_128} :catchall_10e
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_11a .. :try_end_128} :catch_cf
 
-    goto :goto_128
+    goto :goto_120
 
-    :cond_131
-    if-eqz v16, :cond_136
+    :cond_129
+    if-eqz v16, :cond_12e
 
     invoke-interface/range {v16 .. v16}, Landroid/database/Cursor;->close()V
 
-    :cond_136
+    :cond_12e
     invoke-interface/range {v17 .. v17}, Ljava/util/List;->size()I
 
     move-result v1
@@ -4212,28 +4168,28 @@
 
     check-cast v1, [Lcom/google/android/apps/analytics/h;
 
-    goto :goto_e7
+    goto :goto_e3
 
-    :catchall_145
+    :catchall_13d
     move-exception v1
 
     move-object/from16 v16, v10
 
-    goto :goto_117
+    goto :goto_10f
 
-    :catchall_149
+    :catchall_141
     move-exception v1
 
     move-object/from16 v16, v2
 
-    goto :goto_117
+    goto :goto_10f
 
-    :catch_14d
+    :catch_145
     move-exception v1
 
     move-object v2, v10
 
-    goto :goto_d6
+    goto :goto_d2
 .end method
 
 .method public final a()[Lcom/google/android/apps/analytics/m;

@@ -15,14 +15,6 @@
 
 
 # virtual methods
-.method public abstract accountDeleted()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getAccountColor(J)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -47,14 +39,6 @@
     .end annotation
 .end method
 
-.method public abstract getDeviceIdForWifi(Ljava/lang/String;)Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract notifyLoginFailed(J)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -71,39 +55,7 @@
     .end annotation
 .end method
 
-.method public abstract notifyNewMessages(JJI)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract notifySendFailedOutOfMemoryError(JJ)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract notifySendResult(JJZLjava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract resetNewMessageCount(J)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract restoreAccountsIfNeeded()V
+.method public abstract reconcileAccounts(Ljava/lang/String;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -28,6 +28,20 @@
 
 .field private final mApiContext:Lcom/google/android/finsky/api/DfeApiContext;
 
+.field private mAvoidBulkCancel:Z
+
+.field private mExtraHeaders:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private mListener:Lcom/android/volley/Response$Listener;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -54,12 +68,12 @@
     .registers 2
 
     .prologue
-    .line 48
-    sget-boolean v0, Lcom/google/android/finsky/utils/FinskyLog;->DEBUG:Z
+    .line 47
+    sget-boolean v0, Lcom/google/android/finsky/utils/DfeLog;->DEBUG:Z
 
     sput-boolean v0, Lcom/google/android/finsky/api/DfeRequest;->DEBUG:Z
 
-    .line 50
+    .line 49
     const-string v0, "DfeProto"
 
     const/4 v1, 0x2
@@ -74,7 +88,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Lcom/google/android/finsky/api/DfeApiContext;Ljava/lang/Class;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
-    .registers 8
+    .registers 9
     .parameter "url"
     .parameter "apiContext"
     .parameter
@@ -100,7 +114,7 @@
     .local p4, listener:Lcom/android/volley/Response$Listener;,"Lcom/android/volley/Response$Listener<TT;>;"
     const/4 v1, 0x0
 
-    .line 77
+    .line 82
     sget-object v0, Lcom/google/android/finsky/api/DfeApi;->BASE_URI:Landroid/net/Uri;
 
     invoke-static {v0, p1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
@@ -113,42 +127,71 @@
 
     invoke-direct {p0, v0, p5}, Lcom/android/volley/Request;-><init>(Ljava/lang/String;Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 62
+    .line 61
     iput-boolean v1, p0, Lcom/google/android/finsky/api/DfeRequest;->mAllowMultipleResponses:Z
 
-    .line 78
+    .line 70
+    iput-boolean v1, p0, Lcom/google/android/finsky/api/DfeRequest;->mAvoidBulkCancel:Z
+
+    .line 83
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1f
 
-    .line 79
+    .line 84
     const-string v0, "Empty DFE URL"
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v2, v1, [Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v2}, Lcom/google/android/finsky/utils/DfeLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 81
-    :cond_1d
+    .line 86
+    :cond_1f
+    sget-object v0, Lcom/google/android/finsky/api/DfeApiConfig;->skipAllCaches:Lcom/google/android/finsky/config/GservicesValue;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_40
+
+    const/4 v0, 0x1
+
+    :goto_2e
+    invoke-virtual {p0, v0}, Lcom/google/android/finsky/api/DfeRequest;->setShouldCache(Z)V
+
+    .line 87
     new-instance v0, Lcom/google/android/finsky/api/DfeRetryPolicy;
 
     invoke-direct {v0, p2}, Lcom/google/android/finsky/api/DfeRetryPolicy;-><init>(Lcom/google/android/finsky/api/DfeApiContext;)V
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/api/DfeRequest;->setRetryPolicy(Lcom/android/volley/RetryPolicy;)V
 
-    .line 82
+    .line 88
     iput-object p2, p0, Lcom/google/android/finsky/api/DfeRequest;->mApiContext:Lcom/google/android/finsky/api/DfeApiContext;
 
-    .line 83
+    .line 89
     iput-object p4, p0, Lcom/google/android/finsky/api/DfeRequest;->mListener:Lcom/android/volley/Response$Listener;
 
-    .line 84
+    .line 90
     iput-object p3, p0, Lcom/google/android/finsky/api/DfeRequest;->mResponseClass:Ljava/lang/Class;
 
-    .line 85
+    .line 91
     return-void
+
+    :cond_40
+    move v0, v1
+
+    .line 86
+    goto :goto_2e
 .end method
 
 .method private handleServerCommands(Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;)Lcom/android/volley/Response;
@@ -170,25 +213,25 @@
     .local p0, this:Lcom/google/android/finsky/api/DfeRequest;,"Lcom/google/android/finsky/api/DfeRequest<TT;>;"
     const/4 v1, 0x0
 
-    .line 268
+    .line 323
     invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->hasCommands()Z
 
     move-result v2
 
     if-nez v2, :cond_8
 
-    .line 287
+    .line 342
     :cond_7
     :goto_7
     return-object v1
 
-    .line 272
+    .line 327
     :cond_8
     invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getCommands()Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;
 
     move-result-object v0
 
-    .line 275
+    .line 330
     .local v0, commands:Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;->hasLogErrorStacktrace()Z
 
@@ -196,7 +239,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 276
+    .line 331
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;->getLogErrorStacktrace()Ljava/lang/String;
 
     move-result-object v2
@@ -205,9 +248,9 @@
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    invoke-static {v2, v3}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, v3}, Lcom/google/android/finsky/utils/DfeLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 280
+    .line 335
     :cond_1c
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;->getClearCache()Z
 
@@ -215,7 +258,7 @@
 
     if-eqz v2, :cond_2b
 
-    .line 281
+    .line 336
     iget-object v2, p0, Lcom/google/android/finsky/api/DfeRequest;->mApiContext:Lcom/google/android/finsky/api/DfeApiContext;
 
     invoke-virtual {v2}, Lcom/google/android/finsky/api/DfeApiContext;->getCache()Lcom/android/volley/Cache;
@@ -224,7 +267,7 @@
 
     invoke-interface {v2}, Lcom/android/volley/Cache;->clear()V
 
-    .line 284
+    .line 339
     :cond_2b
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;->hasDisplayErrorMessage()Z
 
@@ -232,7 +275,7 @@
 
     if-eqz v2, :cond_7
 
-    .line 285
+    .line 340
     new-instance v1, Lcom/google/android/finsky/api/DfeServerError;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Response$ServerCommands;->getDisplayErrorMessage()Ljava/lang/String;
@@ -253,8 +296,8 @@
     .parameter
 
     .prologue
-    .line 150
-    sget-object v0, Lcom/google/android/finsky/config/G;->protoLogUrlRegexp:Lcom/google/android/finsky/config/GservicesValue;
+    .line 200
+    sget-object v0, Lcom/google/android/finsky/api/DfeApiConfig;->protoLogUrlRegexp:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 
@@ -262,7 +305,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 151
+    .line 201
     invoke-virtual {p0}, Lcom/google/android/finsky/api/DfeRequest;->getUrl()Ljava/lang/String;
 
     move-result-object v1
@@ -273,12 +316,12 @@
 
     if-eqz v1, :cond_65
 
-    .line 152
+    .line 202
     const-class v1, Lcom/google/android/volley/MicroProtoPrinter;
 
     monitor-enter v1
 
-    .line 153
+    .line 203
     :try_start_15
     const-string v0, "DfeProto"
 
@@ -306,7 +349,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 154
+    .line 204
     const-string v0, "ResponseWrapper"
 
     const-class v2, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
@@ -315,7 +358,7 @@
 
     move-result-object v0
 
-    .line 156
+    .line 206
     const-string v2, "\n"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -331,7 +374,7 @@
 
     aget-object v4, v2, v0
 
-    .line 158
+    .line 208
     const-string v5, "DfeProto"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -354,20 +397,20 @@
 
     invoke-static {v5, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 156
+    .line 206
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_41
 
-    .line 160
+    .line 210
     :cond_60
     monitor-exit v1
 
-    .line 165
+    .line 215
     :goto_61
     return-void
 
-    .line 160
+    .line 210
     :catchall_62
     move-exception v0
 
@@ -377,7 +420,7 @@
 
     throw v0
 
-    .line 162
+    .line 212
     :cond_65
     const-string v1, "DfeProto"
 
@@ -423,11 +466,13 @@
     .parameter "url"
 
     .prologue
-    .line 323
+    .line 393
     .local p0, this:Lcom/google/android/finsky/api/DfeRequest;,"Lcom/google/android/finsky/api/DfeRequest<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v1, 0x100
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -463,31 +508,31 @@
     .prologue
     const-wide/16 v10, 0x0
 
-    .line 219
+    .line 274
     invoke-static {p0}, Lcom/android/volley/toolbox/HttpHeaderParser;->parseCacheHeaders(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Cache$Entry;
 
     move-result-object v1
 
-    .line 220
+    .line 275
     .local v1, entry:Lcom/android/volley/Cache$Entry;
     if-nez v1, :cond_a
 
-    .line 221
+    .line 276
     const/4 v1, 0x0
 
-    .line 247
+    .line 302
     .end local v1           #entry:Lcom/android/volley/Cache$Entry;
     :goto_9
     return-object v1
 
-    .line 224
+    .line 279
     .restart local v1       #entry:Lcom/android/volley/Cache$Entry;
     :cond_a
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
-    .line 229
+    .line 284
     .local v3, now:J
     :try_start_e
     iget-object v6, p0, Lcom/android/volley/NetworkResponse;->headers:Ljava/util/Map;
@@ -500,11 +545,11 @@
 
     check-cast v5, Ljava/lang/String;
 
-    .line 230
+    .line 285
     .local v5, softTtlHeader:Ljava/lang/String;
     if-eqz v5, :cond_21
 
-    .line 231
+    .line 286
     invoke-static {v5}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v6
@@ -513,7 +558,7 @@
 
     iput-wide v6, v1, Lcom/android/volley/Cache$Entry;->softTtl:J
 
-    .line 234
+    .line 289
     :cond_21
     iget-object v6, p0, Lcom/android/volley/NetworkResponse;->headers:Ljava/util/Map;
 
@@ -525,11 +570,11 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 235
+    .line 290
     .local v2, hardTtlHeader:Ljava/lang/String;
     if-eqz v2, :cond_34
 
-    .line 236
+    .line 291
     invoke-static {v2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v6
@@ -540,7 +585,7 @@
     :try_end_34
     .catch Ljava/lang/NumberFormatException; {:try_start_e .. :try_end_34} :catch_3f
 
-    .line 245
+    .line 300
     .end local v2           #hardTtlHeader:Ljava/lang/String;
     .end local v5           #softTtlHeader:Ljava/lang/String;
     :cond_34
@@ -557,11 +602,11 @@
 
     goto :goto_9
 
-    .line 238
+    .line 293
     :catch_3f
     move-exception v0
 
-    .line 239
+    .line 294
     .local v0, e:Ljava/lang/NumberFormatException;
     const-string v6, "Invalid TTL: %s"
 
@@ -575,12 +620,12 @@
 
     aput-object v9, v7, v8
 
-    invoke-static {v6, v7}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v6, v7}, Lcom/google/android/finsky/utils/DfeLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 240
+    .line 295
     iput-wide v10, v1, Lcom/android/volley/Cache$Entry;->softTtl:J
 
-    .line 241
+    .line 296
     iput-wide v10, v1, Lcom/android/volley/Cache$Entry;->ttl:J
 
     goto :goto_34
@@ -594,10 +639,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 198
+    .line 253
     if-eqz p1, :cond_18
 
-    .line 199
+    .line 254
     :try_start_3
     new-instance v1, Ljava/util/zip/GZIPInputStream;
 
@@ -609,7 +654,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/zip/GZIPInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 200
+    .line 255
     .local v1, is:Ljava/io/InputStream;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->newInstance(Ljava/io/InputStream;)Lcom/google/protobuf/micro/CodedInputStreamMicro;
 
@@ -619,47 +664,33 @@
 
     move-result-object v2
 
-    .line 213
+    .line 268
     .end local v1           #is:Ljava/io/InputStream;
     :goto_17
     return-object v2
 
-    .line 202
+    .line 257
     :cond_18
     iget-object v2, p0, Lcom/android/volley/NetworkResponse;->data:[B
 
     invoke-static {v2}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->parseFrom([B)Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
     :try_end_1d
     .catch Lcom/google/protobuf/micro/InvalidProtocolBufferMicroException; {:try_start_3 .. :try_end_1d} :catch_1f
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_1d} :catch_3f
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_1d} :catch_31
 
     move-result-object v2
 
     goto :goto_17
 
-    .line 204
+    .line 259
     :catch_1f
     move-exception v0
 
-    .line 205
+    .line 260
     .local v0, e:Lcom/google/protobuf/micro/InvalidProtocolBufferMicroException;
-    if-nez p1, :cond_36
+    if-nez p1, :cond_28
 
-    sget-object v2, Lcom/google/android/finsky/config/G;->debugOptionsEnabled:Lcom/google/android/finsky/config/GservicesValue;
-
-    invoke-virtual {v2}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Boolean;
-
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_36
-
-    .line 206
+    .line 261
     const/4 v2, 0x1
 
     invoke-static {p0, v2}, Lcom/google/android/finsky/api/DfeRequest;->parseWrapper(Lcom/android/volley/NetworkResponse;Z)Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
@@ -668,225 +699,97 @@
 
     goto :goto_17
 
-    .line 208
-    :cond_36
+    .line 263
+    :cond_28
     const-string v2, "Cannot parse response as ResponseWrapper proto."
 
     new-array v3, v4, [Ljava/lang/Object;
 
-    invoke-static {v2, v3}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, v3}, Lcom/google/android/finsky/utils/DfeLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 213
+    .line 268
     .end local v0           #e:Lcom/google/protobuf/micro/InvalidProtocolBufferMicroException;
-    :goto_3d
+    :goto_2f
     const/4 v2, 0x0
 
     goto :goto_17
 
-    .line 210
-    :catch_3f
+    .line 265
+    :catch_31
     move-exception v0
 
-    .line 211
+    .line 266
     .local v0, e:Ljava/io/IOException;
     const-string v2, "IOException while manually unzipping request."
 
     new-array v3, v4, [Ljava/lang/Object;
 
-    invoke-static {v2, v3}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, v3}, Lcom/google/android/finsky/utils/DfeLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    goto :goto_3d
-.end method
-
-.method private stripForCache(Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;Lcom/android/volley/Cache$Entry;)V
-    .registers 12
-    .parameter "wrapper"
-    .parameter "rootEntry"
-
-    .prologue
-    .line 170
-    .local p0, this:Lcom/google/android/finsky/api/DfeRequest;,"Lcom/google/android/finsky/api/DfeRequest<TT;>;"
-    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getPreFetchCount()I
-
-    move-result v7
-
-    const/4 v8, 0x1
-
-    if-ge v7, v8, :cond_e
-
-    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->hasCommands()Z
-
-    move-result v7
-
-    if-nez v7, :cond_e
-
-    .line 194
-    :goto_d
-    return-void
-
-    .line 175
-    :cond_e
-    iget-object v7, p0, Lcom/google/android/finsky/api/DfeRequest;->mApiContext:Lcom/google/android/finsky/api/DfeApiContext;
-
-    invoke-virtual {v7}, Lcom/google/android/finsky/api/DfeApiContext;->getCache()Lcom/android/volley/Cache;
-
-    move-result-object v0
-
-    .line 176
-    .local v0, cache:Lcom/android/volley/Cache;
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v4
-
-    .line 177
-    .local v4, now:J
-    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getPreFetchList()Ljava/util/List;
-
-    move-result-object v7
-
-    invoke-interface {v7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    .local v3, i$:Ljava/util/Iterator;
-    :goto_20
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_69
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lcom/google/android/finsky/remoting/protos/Response$PreFetch;
-
-    .line 178
-    .local v6, prefetch:Lcom/google/android/finsky/remoting/protos/Response$PreFetch;
-    new-instance v1, Lcom/android/volley/Cache$Entry;
-
-    invoke-direct {v1}, Lcom/android/volley/Cache$Entry;-><init>()V
-
-    .line 179
-    .local v1, entry:Lcom/android/volley/Cache$Entry;
-    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/Response$PreFetch;->getResponse()Lcom/google/protobuf/micro/ByteStringMicro;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lcom/google/protobuf/micro/ByteStringMicro;->toByteArray()[B
-
-    move-result-object v7
-
-    iput-object v7, v1, Lcom/android/volley/Cache$Entry;->data:[B
-
-    .line 180
-    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/Response$PreFetch;->getEtag()Ljava/lang/String;
-
-    move-result-object v7
-
-    iput-object v7, v1, Lcom/android/volley/Cache$Entry;->etag:Ljava/lang/String;
-
-    .line 181
-    iget-wide v7, p2, Lcom/android/volley/Cache$Entry;->serverDate:J
-
-    iput-wide v7, v1, Lcom/android/volley/Cache$Entry;->serverDate:J
-
-    .line 182
-    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/Response$PreFetch;->getTtl()J
-
-    move-result-wide v7
-
-    add-long/2addr v7, v4
-
-    iput-wide v7, v1, Lcom/android/volley/Cache$Entry;->ttl:J
-
-    .line 183
-    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/Response$PreFetch;->getSoftTtl()J
-
-    move-result-wide v7
-
-    add-long/2addr v7, v4
-
-    iput-wide v7, v1, Lcom/android/volley/Cache$Entry;->softTtl:J
-
-    .line 184
-    sget-object v7, Lcom/google/android/finsky/api/DfeApi;->BASE_URI:Landroid/net/Uri;
-
-    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/Response$PreFetch;->getUrl()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 186
-    .local v2, fullCacheUrl:Ljava/lang/String;
-    invoke-direct {p0, v2}, Lcom/google/android/finsky/api/DfeRequest;->makeCacheKey(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-interface {v0, v7, v1}, Lcom/android/volley/Cache;->put(Ljava/lang/String;Lcom/android/volley/Cache$Entry;)V
-
-    goto :goto_20
-
-    .line 190
-    .end local v1           #entry:Lcom/android/volley/Cache$Entry;
-    .end local v2           #fullCacheUrl:Ljava/lang/String;
-    .end local v6           #prefetch:Lcom/google/android/finsky/remoting/protos/Response$PreFetch;
-    :cond_69
-    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->clearPreFetch()Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
-
-    .line 192
-    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->clearCommands()Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
-
-    .line 193
-    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->toByteArray()[B
-
-    move-result-object v7
-
-    iput-object v7, p2, Lcom/android/volley/Cache$Entry;->data:[B
-
-    goto :goto_d
+    goto :goto_2f
 .end method
 
 
 # virtual methods
+.method public addExtraHeader(Ljava/lang/String;Ljava/lang/String;)V
+    .registers 4
+    .parameter "header"
+    .parameter "value"
+
+    .prologue
+    .line 153
+    .local p0, this:Lcom/google/android/finsky/api/DfeRequest;,"Lcom/google/android/finsky/api/DfeRequest<TT;>;"
+    iget-object v0, p0, Lcom/google/android/finsky/api/DfeRequest;->mExtraHeaders:Ljava/util/Map;
+
+    if-nez v0, :cond_b
+
+    .line 154
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/finsky/api/DfeRequest;->mExtraHeaders:Ljava/util/Map;
+
+    .line 156
+    :cond_b
+    iget-object v0, p0, Lcom/google/android/finsky/api/DfeRequest;->mExtraHeaders:Ljava/util/Map;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 157
+    return-void
+.end method
+
 .method public deliverError(Lcom/android/volley/VolleyError;)V
     .registers 5
     .parameter "error"
 
     .prologue
-    .line 311
+    .line 381
     .local p0, this:Lcom/google/android/finsky/api/DfeRequest;,"Lcom/google/android/finsky/api/DfeRequest<TT;>;"
     instance-of v0, p1, Lcom/android/volley/AuthFailureError;
 
     if-eqz v0, :cond_9
 
-    .line 312
+    .line 382
     iget-object v0, p0, Lcom/google/android/finsky/api/DfeRequest;->mApiContext:Lcom/google/android/finsky/api/DfeApiContext;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/DfeApiContext;->invalidateAuthToken()V
 
-    .line 314
+    .line 384
     :cond_9
     iget-boolean v0, p0, Lcom/google/android/finsky/api/DfeRequest;->mResponseDelivered:Z
 
     if-nez v0, :cond_11
 
-    .line 315
+    .line 385
     invoke-super {p0, p1}, Lcom/android/volley/Request;->deliverError(Lcom/android/volley/VolleyError;)V
 
-    .line 320
+    .line 390
     :goto_10
     return-void
 
-    .line 317
+    .line 387
     :cond_11
     const-string v0, "Not delivering error response for request=[%s], error=[%s] because response already delivered."
 
@@ -902,7 +805,7 @@
 
     aput-object p1, v1, v2
 
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/DfeLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_10
 .end method
@@ -916,7 +819,7 @@
 
     const/4 v3, 0x1
 
-    .line 293
+    .line 363
     invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getPayload()Lcom/google/android/finsky/remoting/protos/Response$Payload;
 
     move-result-object v0
@@ -929,10 +832,10 @@
 
     move-result-object v0
 
-    .line 295
+    .line 365
     if-eqz v0, :cond_2a
 
-    .line 296
+    .line 366
     iget-boolean v1, p0, Lcom/google/android/finsky/api/DfeRequest;->mAllowMultipleResponses:Z
 
     if-nez v1, :cond_18
@@ -941,20 +844,20 @@
 
     if-nez v1, :cond_20
 
-    .line 297
+    .line 367
     :cond_18
     iget-object v1, p0, Lcom/google/android/finsky/api/DfeRequest;->mListener:Lcom/android/volley/Response$Listener;
 
     invoke-interface {v1, v0}, Lcom/android/volley/Response$Listener;->onResponse(Ljava/lang/Object;)V
 
-    .line 298
+    .line 368
     iput-boolean v3, p0, Lcom/google/android/finsky/api/DfeRequest;->mResponseDelivered:Z
 
-    .line 306
+    .line 376
     :goto_1f
     return-void
 
-    .line 300
+    .line 370
     :cond_20
     const-string v0, "Not delivering second response for request=[%s]"
 
@@ -962,11 +865,11 @@
 
     aput-object p0, v1, v4
 
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/DfeLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_1f
 
-    .line 303
+    .line 373
     :cond_2a
     const-string v0, "Null parsed response for request=[%s]"
 
@@ -974,9 +877,9 @@
 
     aput-object p0, v1, v4
 
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/DfeLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 304
+    .line 374
     new-instance v0, Lcom/android/volley/VolleyError;
 
     invoke-direct {v0}, Lcom/android/volley/VolleyError;-><init>()V
@@ -991,7 +894,7 @@
     .parameter "x0"
 
     .prologue
-    .line 47
+    .line 46
     .local p0, this:Lcom/google/android/finsky/api/DfeRequest;,"Lcom/google/android/finsky/api/DfeRequest<TT;>;"
     check-cast p1, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
 
@@ -1001,11 +904,22 @@
     return-void
 .end method
 
+.method public getAvoidBulkCancel()Z
+    .registers 2
+
+    .prologue
+    .line 105
+    .local p0, this:Lcom/google/android/finsky/api/DfeRequest;,"Lcom/google/android/finsky/api/DfeRequest<TT;>;"
+    iget-boolean v0, p0, Lcom/google/android/finsky/api/DfeRequest;->mAvoidBulkCancel:Z
+
+    return v0
+.end method
+
 .method public getCacheKey()Ljava/lang/String;
     .registers 2
 
     .prologue
-    .line 331
+    .line 405
     .local p0, this:Lcom/google/android/finsky/api/DfeRequest;,"Lcom/google/android/finsky/api/DfeRequest<TT;>;"
     invoke-super {p0}, Lcom/android/volley/Request;->getUrl()Ljava/lang/String;
 
@@ -1019,7 +933,7 @@
 .end method
 
 .method public getHeaders()Ljava/util/Map;
-    .registers 2
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1038,32 +952,116 @@
     .end annotation
 
     .prologue
-    .line 122
+    .line 166
     .local p0, this:Lcom/google/android/finsky/api/DfeRequest;,"Lcom/google/android/finsky/api/DfeRequest<TT;>;"
-    iget-object v0, p0, Lcom/google/android/finsky/api/DfeRequest;->mApiContext:Lcom/google/android/finsky/api/DfeApiContext;
+    iget-object v1, p0, Lcom/google/android/finsky/api/DfeRequest;->mApiContext:Lcom/google/android/finsky/api/DfeApiContext;
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/api/DfeApiContext;->getHeaders()Ljava/util/Map;
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/DfeApiContext;->getHeaders()Ljava/util/Map;
 
     move-result-object v0
 
+    .line 167
+    .local v0, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+    iget-object v1, p0, Lcom/google/android/finsky/api/DfeRequest;->mExtraHeaders:Ljava/util/Map;
+
+    if-eqz v1, :cond_f
+
+    .line 168
+    iget-object v1, p0, Lcom/google/android/finsky/api/DfeRequest;->mExtraHeaders:Ljava/util/Map;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+
+    .line 170
+    :cond_f
     return-object v0
 .end method
 
 .method public getUrl()Ljava/lang/String;
-    .registers 7
+    .registers 9
 
     .prologue
     .local p0, this:Lcom/google/android/finsky/api/DfeRequest;,"Lcom/google/android/finsky/api/DfeRequest<TT;>;"
-    const/16 v2, 0x3f
+    const/16 v4, 0x26
 
-    .line 106
+    const/4 v7, -0x1
+
+    const/16 v5, 0x3f
+
+    .line 127
     invoke-super {p0}, Lcom/android/volley/Request;->getUrl()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 128
+    .local v2, url:Ljava/lang/String;
+    sget-object v3, Lcom/google/android/finsky/api/DfeApiConfig;->ipCountryOverride:Lcom/google/android/finsky/config/GservicesValue;
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 107
-    .local v1, url:Ljava/lang/String;
-    sget-object v3, Lcom/google/android/finsky/config/G;->ipCountryOverride:Lcom/google/android/finsky/config/GservicesValue;
+    check-cast v1, Ljava/lang/String;
+
+    .line 129
+    .local v1, overrideCountry:Ljava/lang/String;
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_46
+
+    .line 130
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v5}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v3
+
+    if-eq v3, v7, :cond_f5
+
+    move v3, v4
+
+    :goto_27
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 131
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v6, "ipCountryOverride="
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 133
+    :cond_46
+    sget-object v3, Lcom/google/android/finsky/api/DfeApiConfig;->mccMncOverride:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v3}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 
@@ -1071,64 +1069,274 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 108
-    .local v0, overrideCountry:Ljava/lang/String;
-    if-eqz v0, :cond_41
+    .line 134
+    .local v0, mccmnc:Ljava/lang/String;
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    .line 109
+    move-result v3
+
+    if-nez v3, :cond_83
+
+    .line 135
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v5}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v3
+
+    if-eq v3, v7, :cond_f8
+
+    move v3, v4
+
+    :goto_64
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v4
-
-    const/4 v5, -0x1
-
-    if-eq v4, v5, :cond_22
-
-    const/16 v2, 0x26
-
-    :cond_22
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 136
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v6, "mccmncOverride="
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 138
+    :cond_83
+    sget-object v3, Lcom/google/android/finsky/api/DfeApiConfig;->skipAllCaches:Lcom/google/android/finsky/config/GservicesValue;
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Boolean;
+
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_bc
+
+    .line 139
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v5}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v3
+
+    if-eq v3, v7, :cond_fb
+
+    move v3, v4
+
+    :goto_a1
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 140
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v6, "skipCache=true"
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 142
+    :cond_bc
+    sget-object v3, Lcom/google/android/finsky/api/DfeApiConfig;->showStagingData:Lcom/google/android/finsky/config/GservicesValue;
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Boolean;
+
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_f4
+
+    .line 143
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v5}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v6
+
+    if-eq v6, v7, :cond_fd
+
+    :goto_d9
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 144
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "showStagingData=true"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 146
+    :cond_f4
+    return-object v2
+
+    .end local v0           #mccmnc:Ljava/lang/String;
+    :cond_f5
+    move v3, v5
+
+    .line 130
+    goto/16 :goto_27
+
+    .restart local v0       #mccmnc:Ljava/lang/String;
+    :cond_f8
+    move v3, v5
+
+    .line 135
+    goto/16 :goto_64
+
+    :cond_fb
+    move v3, v5
+
+    .line 139
+    goto :goto_a1
+
+    :cond_fd
+    move v4, v5
+
+    .line 143
+    goto :goto_d9
+.end method
+
+.method public handleNotifications(Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;)V
+    .registers 5
+    .parameter "wrapper"
+
+    .prologue
+    .line 351
+    .local p0, this:Lcom/google/android/finsky/api/DfeRequest;,"Lcom/google/android/finsky/api/DfeRequest<TT;>;"
+    iget-object v2, p0, Lcom/google/android/finsky/api/DfeRequest;->mApiContext:Lcom/google/android/finsky/api/DfeApiContext;
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/api/DfeApiContext;->getNotificationManager()Lcom/google/android/finsky/api/DfeNotificationManager;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_e
+
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getNotificationCount()I
+
+    move-result v2
+
+    if-nez v2, :cond_f
+
+    .line 359
+    :cond_e
+    return-void
+
+    .line 355
+    :cond_f
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getNotificationList()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .local v0, i$:Ljava/util/Iterator;
+    :goto_17
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_e
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 110
-    new-instance v2, Ljava/lang/StringBuilder;
+    check-cast v1, Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    .line 357
+    .local v1, notification:Lcom/google/android/finsky/remoting/protos/Notifications$Notification;
+    iget-object v2, p0, Lcom/google/android/finsky/api/DfeRequest;->mApiContext:Lcom/google/android/finsky/api/DfeApiContext;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "ipCountryOverride="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Lcom/google/android/finsky/api/DfeApiContext;->getNotificationManager()Lcom/google/android/finsky/api/DfeNotificationManager;
 
     move-result-object v2
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v2, v1}, Lcom/google/android/finsky/api/DfeNotificationManager;->processNotification(Lcom/google/android/finsky/remoting/protos/Notifications$Notification;)V
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 112
-    :cond_41
-    return-object v1
+    goto :goto_17
 .end method
 
 .method protected parseNetworkError(Lcom/android/volley/VolleyError;)Lcom/android/volley/VolleyError;
@@ -1136,7 +1344,7 @@
     .parameter "volleyError"
 
     .prologue
-    .line 252
+    .line 307
     .local p0, this:Lcom/google/android/finsky/api/DfeRequest;,"Lcom/google/android/finsky/api/DfeRequest<TT;>;"
     instance-of v2, p1, Lcom/android/volley/ServerError;
 
@@ -1146,7 +1354,7 @@
 
     if-eqz v2, :cond_17
 
-    .line 253
+    .line 308
     iget-object v2, p1, Lcom/android/volley/VolleyError;->networkResponse:Lcom/android/volley/NetworkResponse;
 
     const/4 v3, 0x0
@@ -1155,20 +1363,20 @@
 
     move-result-object v1
 
-    .line 254
+    .line 309
     .local v1, wrapper:Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
     if-eqz v1, :cond_17
 
-    .line 255
+    .line 310
     invoke-direct {p0, v1}, Lcom/google/android/finsky/api/DfeRequest;->handleServerCommands(Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;)Lcom/android/volley/Response;
 
     move-result-object v0
 
-    .line 256
+    .line 311
     .local v0, response:Lcom/android/volley/Response;,"Lcom/android/volley/Response<Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;>;"
     iget-object p1, v0, Lcom/android/volley/Response;->error:Lcom/android/volley/VolleyError;
 
-    .line 259
+    .line 314
     .end local v0           #response:Lcom/android/volley/Response;,"Lcom/android/volley/Response<Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;>;"
     .end local v1           #wrapper:Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
     .end local p1
@@ -1197,7 +1405,7 @@
 
     const/4 v7, 0x0
 
-    .line 127
+    .line 175
     sget-boolean v4, Lcom/google/android/finsky/api/DfeRequest;->DEBUG:Z
 
     if-eqz v4, :cond_16
@@ -1216,19 +1424,19 @@
 
     aput-object v6, v5, v7
 
-    invoke-static {v4, v5}, Lcom/google/android/finsky/utils/FinskyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v4, v5}, Lcom/google/android/finsky/utils/DfeLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 128
+    .line 176
     :cond_16
     invoke-static {p1, v7}, Lcom/google/android/finsky/api/DfeRequest;->parseWrapper(Lcom/android/volley/NetworkResponse;Z)Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
 
     move-result-object v3
 
-    .line 129
+    .line 177
     .local v3, wrapper:Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
     if-nez v3, :cond_26
 
-    .line 130
+    .line 178
     new-instance v4, Lcom/android/volley/ParseError;
 
     invoke-direct {v4, p1}, Lcom/android/volley/ParseError;-><init>(Lcom/android/volley/NetworkResponse;)V
@@ -1237,49 +1445,52 @@
 
     move-result-object v1
 
-    .line 146
+    .line 196
     :cond_25
     :goto_25
     return-object v1
 
-    .line 131
+    .line 179
     :cond_26
     sget-boolean v4, Lcom/google/android/finsky/api/DfeRequest;->PROTO_DEBUG:Z
 
     if-eqz v4, :cond_2d
 
-    .line 132
+    .line 180
     invoke-direct {p0, v3}, Lcom/google/android/finsky/api/DfeRequest;->logProtoResponse(Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;)V
 
-    .line 134
+    .line 182
     :cond_2d
     invoke-direct {p0, v3}, Lcom/google/android/finsky/api/DfeRequest;->handleServerCommands(Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;)Lcom/android/volley/Response;
 
     move-result-object v1
 
-    .line 135
+    .line 183
     .local v1, error:Lcom/android/volley/Response;,"Lcom/android/volley/Response<Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;>;"
     if-nez v1, :cond_25
 
-    .line 139
+    .line 187
+    invoke-virtual {p0, v3}, Lcom/google/android/finsky/api/DfeRequest;->handleNotifications(Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;)V
+
+    .line 189
     invoke-static {p1}, Lcom/google/android/finsky/api/DfeRequest;->parseCacheHeaders(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Cache$Entry;
 
     move-result-object v0
 
-    .line 140
+    .line 190
     .local v0, cacheEntry:Lcom/android/volley/Cache$Entry;
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_3f
 
-    .line 141
-    invoke-direct {p0, v3, v0}, Lcom/google/android/finsky/api/DfeRequest;->stripForCache(Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;Lcom/android/volley/Cache$Entry;)V
+    .line 191
+    invoke-virtual {p0, v3, v0}, Lcom/google/android/finsky/api/DfeRequest;->stripForCache(Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;Lcom/android/volley/Cache$Entry;)V
 
-    .line 144
-    :cond_3c
+    .line 194
+    :cond_3f
     invoke-static {v3, v0}, Lcom/android/volley/Response;->success(Ljava/lang/Object;Lcom/android/volley/Cache$Entry;)Lcom/android/volley/Response;
 
     move-result-object v2
 
-    .line 145
+    .line 195
     .local v2, wrappedResponse:Lcom/android/volley/Response;,"Lcom/android/volley/Response<Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;>;"
     const-string v4, "DFE response %s"
 
@@ -1291,11 +1502,11 @@
 
     aput-object v6, v5, v7
 
-    invoke-static {v4, v5}, Lcom/google/android/finsky/utils/FinskyLog;->logTiming(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v4, v5}, Lcom/google/android/finsky/utils/DfeLog;->logTiming(Ljava/lang/String;[Ljava/lang/Object;)V
 
     move-object v1, v2
 
-    .line 146
+    .line 196
     goto :goto_25
 .end method
 
@@ -1304,31 +1515,190 @@
     .parameter "allow"
 
     .prologue
-    .line 98
+    .line 119
     .local p0, this:Lcom/google/android/finsky/api/DfeRequest;,"Lcom/google/android/finsky/api/DfeRequest<TT;>;"
     iput-boolean p1, p0, Lcom/google/android/finsky/api/DfeRequest;->mAllowMultipleResponses:Z
+
+    .line 120
+    return-void
+.end method
+
+.method public setAvoidBulkCancel()V
+    .registers 2
+
+    .prologue
+    .line 98
+    .local p0, this:Lcom/google/android/finsky/api/DfeRequest;,"Lcom/google/android/finsky/api/DfeRequest<TT;>;"
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/api/DfeRequest;->mAvoidBulkCancel:Z
 
     .line 99
     return-void
 .end method
 
-.method public setListener(Lcom/android/volley/Response$Listener;)V
-    .registers 2
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/android/volley/Response$Listener",
-            "<TT;>;)V"
-        }
-    .end annotation
+.method stripForCache(Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;Lcom/android/volley/Cache$Entry;)V
+    .registers 12
+    .parameter "wrapper"
+    .parameter "rootEntry"
 
     .prologue
-    .line 91
     .local p0, this:Lcom/google/android/finsky/api/DfeRequest;,"Lcom/google/android/finsky/api/DfeRequest<TT;>;"
-    .local p1, listener:Lcom/android/volley/Response$Listener;,"Lcom/android/volley/Response$Listener<TT;>;"
-    iput-object p1, p0, Lcom/google/android/finsky/api/DfeRequest;->mListener:Lcom/android/volley/Response$Listener;
+    const/4 v8, 0x1
 
-    .line 92
+    .line 221
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getPreFetchCount()I
+
+    move-result v7
+
+    if-ge v7, v8, :cond_14
+
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->hasCommands()Z
+
+    move-result v7
+
+    if-nez v7, :cond_14
+
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getNotificationCount()I
+
+    move-result v7
+
+    if-ge v7, v8, :cond_14
+
+    .line 249
+    :goto_13
     return-void
+
+    .line 227
+    :cond_14
+    iget-object v7, p0, Lcom/google/android/finsky/api/DfeRequest;->mApiContext:Lcom/google/android/finsky/api/DfeApiContext;
+
+    invoke-virtual {v7}, Lcom/google/android/finsky/api/DfeApiContext;->getCache()Lcom/android/volley/Cache;
+
+    move-result-object v0
+
+    .line 228
+    .local v0, cache:Lcom/android/volley/Cache;
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v4
+
+    .line 229
+    .local v4, now:J
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->getPreFetchList()Ljava/util/List;
+
+    move-result-object v7
+
+    invoke-interface {v7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    .local v3, i$:Ljava/util/Iterator;
+    :goto_26
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_6f
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lcom/google/android/finsky/remoting/protos/Response$PreFetch;
+
+    .line 230
+    .local v6, prefetch:Lcom/google/android/finsky/remoting/protos/Response$PreFetch;
+    new-instance v1, Lcom/android/volley/Cache$Entry;
+
+    invoke-direct {v1}, Lcom/android/volley/Cache$Entry;-><init>()V
+
+    .line 231
+    .local v1, entry:Lcom/android/volley/Cache$Entry;
+    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/Response$PreFetch;->getResponse()Lcom/google/protobuf/micro/ByteStringMicro;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Lcom/google/protobuf/micro/ByteStringMicro;->toByteArray()[B
+
+    move-result-object v7
+
+    iput-object v7, v1, Lcom/android/volley/Cache$Entry;->data:[B
+
+    .line 232
+    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/Response$PreFetch;->getEtag()Ljava/lang/String;
+
+    move-result-object v7
+
+    iput-object v7, v1, Lcom/android/volley/Cache$Entry;->etag:Ljava/lang/String;
+
+    .line 233
+    iget-wide v7, p2, Lcom/android/volley/Cache$Entry;->serverDate:J
+
+    iput-wide v7, v1, Lcom/android/volley/Cache$Entry;->serverDate:J
+
+    .line 234
+    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/Response$PreFetch;->getTtl()J
+
+    move-result-wide v7
+
+    add-long/2addr v7, v4
+
+    iput-wide v7, v1, Lcom/android/volley/Cache$Entry;->ttl:J
+
+    .line 235
+    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/Response$PreFetch;->getSoftTtl()J
+
+    move-result-wide v7
+
+    add-long/2addr v7, v4
+
+    iput-wide v7, v1, Lcom/android/volley/Cache$Entry;->softTtl:J
+
+    .line 236
+    sget-object v7, Lcom/google/android/finsky/api/DfeApi;->BASE_URI:Landroid/net/Uri;
+
+    invoke-virtual {v6}, Lcom/google/android/finsky/remoting/protos/Response$PreFetch;->getUrl()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 238
+    .local v2, fullCacheUrl:Ljava/lang/String;
+    invoke-direct {p0, v2}, Lcom/google/android/finsky/api/DfeRequest;->makeCacheKey(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-interface {v0, v7, v1}, Lcom/android/volley/Cache;->put(Ljava/lang/String;Lcom/android/volley/Cache$Entry;)V
+
+    goto :goto_26
+
+    .line 242
+    .end local v1           #entry:Lcom/android/volley/Cache$Entry;
+    .end local v2           #fullCacheUrl:Ljava/lang/String;
+    .end local v6           #prefetch:Lcom/google/android/finsky/remoting/protos/Response$PreFetch;
+    :cond_6f
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->clearPreFetch()Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
+
+    .line 244
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->clearCommands()Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
+
+    .line 246
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->clearNotification()Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;
+
+    .line 248
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/Response$ResponseWrapper;->toByteArray()[B
+
+    move-result-object v7
+
+    iput-object v7, p2, Lcom/android/volley/Cache$Entry;->data:[B
+
+    goto :goto_13
 .end method

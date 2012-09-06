@@ -72,7 +72,7 @@
     .registers 4
 
     .prologue
-    .line 82
+    .line 77
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -99,13 +99,13 @@
 
     move-result-object v1
 
-    .line 83
+    .line 78
     .local v1, url:Ljava/lang/String;
     invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 84
+    .line 79
     .local v0, uri:Landroid/net/Uri;
     invoke-virtual {v0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
@@ -131,7 +131,7 @@
 
     if-nez v2, :cond_3f
 
-    .line 85
+    .line 80
     new-instance v2, Ljava/lang/SecurityException;
 
     const-string v3, "Unsafe escrow URL."
@@ -140,7 +140,7 @@
 
     throw v2
 
-    .line 87
+    .line 82
     :cond_3f
     return-object v1
 .end method
@@ -161,12 +161,12 @@
     .end annotation
 
     .prologue
-    .line 74
+    .line 69
     invoke-static {}, Lcom/google/android/finsky/utils/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v0
 
-    .line 75
+    .line 70
     .local v0, params:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     const-string v1, "gid"
 
@@ -178,32 +178,22 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 76
+    .line 71
     const-string v1, "cardNumber"
 
     iget-object v2, p0, Lcom/google/android/finsky/billing/creditcard/EscrowRequest;->mCreditCardNumber:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 77
+    .line 72
     const-string v1, "cvv"
 
     iget-object v2, p0, Lcom/google/android/finsky/billing/creditcard/EscrowRequest;->mCvc:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 78
+    .line 73
     return-object v0
-.end method
-
-.method public isDrainable()Z
-    .registers 2
-
-    .prologue
-    .line 69
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method protected parseNetworkResponse(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Response;
@@ -226,14 +216,14 @@
 
     const/4 v3, 0x0
 
-    .line 92
+    .line 87
     iget-object v0, p1, Lcom/android/volley/NetworkResponse;->data:[B
 
     array-length v0, v0
 
     if-nez v0, :cond_3e
 
-    .line 93
+    .line 88
     sget-object v0, Lcom/google/android/finsky/config/G;->enableSensitiveLogging:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
@@ -248,7 +238,7 @@
 
     if-eqz v0, :cond_25
 
-    .line 94
+    .line 89
     const-string v0, "Empty escrow handle for card number %s cvc %s"
 
     const/4 v1, 0x2
@@ -265,7 +255,7 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 97
+    .line 92
     :cond_25
     const-string v0, "Null response for Escrow string with id %d"
 
@@ -281,7 +271,7 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 98
+    .line 93
     new-instance v0, Lcom/android/volley/ServerError;
 
     invoke-direct {v0, p1}, Lcom/android/volley/ServerError;-><init>(Lcom/android/volley/NetworkResponse;)V
@@ -290,7 +280,7 @@
 
     move-result-object v0
 
-    .line 100
+    .line 95
     :goto_3d
     return-object v0
 

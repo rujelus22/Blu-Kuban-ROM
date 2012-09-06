@@ -88,7 +88,7 @@
         <item name="android:textSize">17.0sp</item>
         <item name="android:textColor">?android:textColorPrimary</item>
     </style>
-    <style name="gls_BrowserTheme" parent="@android:style/Theme.Black">
+    <style name="gls_BrowserTheme" parent="@android:style/Theme.Holo">
         <item name="android:windowNoTitle">true</item>
         <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextView</item>
     </style>

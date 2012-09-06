@@ -29,6 +29,8 @@
 
 .field private hasEditorialSeriesContainer:Z
 
+.field private hasRecommendationsContainer:Z
+
 .field private hasSeriesAntenna:Z
 
 .field private hasTileDetailsReflectedGraphic2X2:Z
@@ -44,6 +46,8 @@
 .field private hasTileGraphicColoredTitle4X2:Z
 
 .field private hasTileGraphicUpperLeftTitle2X1:Z
+
+.field private recommendationsContainer_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$RecommendationsContainer;
 
 .field private seriesAntenna_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$SeriesAntenna;
 
@@ -69,48 +73,51 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1656
+    .line 1126
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1661
+    .line 1131
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->seriesAntenna_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$SeriesAntenna;
 
-    .line 1681
+    .line 1151
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileGraphic2X1_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
-    .line 1701
+    .line 1171
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileGraphic4X2_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
-    .line 1721
+    .line 1191
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileGraphicColoredTitle2X1_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
-    .line 1741
+    .line 1211
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileGraphicUpperLeftTitle2X1_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
-    .line 1761
+    .line 1231
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileDetailsReflectedGraphic2X2_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
-    .line 1781
+    .line 1251
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileFourBlock4X2_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
-    .line 1801
+    .line 1271
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileGraphicColoredTitle4X2_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
-    .line 1821
+    .line 1291
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->containerWithBanner_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$ContainerWithBanner;
 
-    .line 1841
+    .line 1311
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->dealOfTheDay_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$DealOfTheDay;
 
-    .line 1861
+    .line 1331
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->editorialSeriesContainer_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;
 
-    .line 1935
+    .line 1351
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->recommendationsContainer_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$RecommendationsContainer;
+
+    .line 1430
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->cachedSize:I
 
-    .line 1656
+    .line 1126
     return-void
 .end method
 
@@ -120,15 +127,15 @@
     .registers 2
 
     .prologue
-    .line 1937
+    .line 1433
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 1939
+    .line 1435
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getSerializedSize()I
 
-    .line 1941
+    .line 1437
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->cachedSize:I
 
@@ -139,7 +146,7 @@
     .registers 2
 
     .prologue
-    .line 1823
+    .line 1293
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->containerWithBanner_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$ContainerWithBanner;
 
     return-object v0
@@ -149,7 +156,7 @@
     .registers 2
 
     .prologue
-    .line 1843
+    .line 1313
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->dealOfTheDay_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$DealOfTheDay;
 
     return-object v0
@@ -159,8 +166,18 @@
     .registers 2
 
     .prologue
-    .line 1863
+    .line 1333
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->editorialSeriesContainer_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;
+
+    return-object v0
+.end method
+
+.method public getRecommendationsContainer()Lcom/google/android/finsky/remoting/protos/DocAnnotations$RecommendationsContainer;
+    .registers 2
+
+    .prologue
+    .line 1353
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->recommendationsContainer_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$RecommendationsContainer;
 
     return-object v0
 .end method
@@ -169,10 +186,10 @@
     .registers 4
 
     .prologue
-    .line 1945
+    .line 1442
     const/4 v0, 0x0
 
-    .line 1946
+    .line 1443
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasSeriesAntenna()Z
 
@@ -180,7 +197,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 1947
+    .line 1444
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getSeriesAntenna()Lcom/google/android/finsky/remoting/protos/DocAnnotations$SeriesAntenna;
@@ -193,7 +210,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1950
+    .line 1447
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphic2X1()Z
 
@@ -201,7 +218,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 1951
+    .line 1448
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getTileGraphic2X1()Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
@@ -214,7 +231,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1954
+    .line 1451
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphic4X2()Z
 
@@ -222,7 +239,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 1955
+    .line 1452
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getTileGraphic4X2()Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
@@ -235,7 +252,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1958
+    .line 1455
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphicColoredTitle2X1()Z
 
@@ -243,7 +260,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 1959
+    .line 1456
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getTileGraphicColoredTitle2X1()Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
@@ -256,7 +273,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1962
+    .line 1459
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphicUpperLeftTitle2X1()Z
 
@@ -264,7 +281,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 1963
+    .line 1460
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getTileGraphicUpperLeftTitle2X1()Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
@@ -277,7 +294,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1966
+    .line 1463
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileDetailsReflectedGraphic2X2()Z
 
@@ -285,7 +302,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 1967
+    .line 1464
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getTileDetailsReflectedGraphic2X2()Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
@@ -298,7 +315,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1970
+    .line 1467
     :cond_61
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileFourBlock4X2()Z
 
@@ -306,7 +323,7 @@
 
     if-eqz v1, :cond_71
 
-    .line 1971
+    .line 1468
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getTileFourBlock4X2()Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
@@ -319,7 +336,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1974
+    .line 1471
     :cond_71
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasContainerWithBanner()Z
 
@@ -327,7 +344,7 @@
 
     if-eqz v1, :cond_82
 
-    .line 1975
+    .line 1472
     const/16 v1, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getContainerWithBanner()Lcom/google/android/finsky/remoting/protos/DocAnnotations$ContainerWithBanner;
@@ -340,7 +357,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1978
+    .line 1475
     :cond_82
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasDealOfTheDay()Z
 
@@ -348,7 +365,7 @@
 
     if-eqz v1, :cond_93
 
-    .line 1979
+    .line 1476
     const/16 v1, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getDealOfTheDay()Lcom/google/android/finsky/remoting/protos/DocAnnotations$DealOfTheDay;
@@ -361,7 +378,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1982
+    .line 1479
     :cond_93
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphicColoredTitle4X2()Z
 
@@ -369,7 +386,7 @@
 
     if-eqz v1, :cond_a4
 
-    .line 1983
+    .line 1480
     const/16 v1, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getTileGraphicColoredTitle4X2()Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
@@ -382,7 +399,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1986
+    .line 1483
     :cond_a4
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasEditorialSeriesContainer()Z
 
@@ -390,7 +407,7 @@
 
     if-eqz v1, :cond_b5
 
-    .line 1987
+    .line 1484
     const/16 v1, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getEditorialSeriesContainer()Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;
@@ -403,11 +420,32 @@
 
     add-int/2addr v0, v1
 
-    .line 1990
+    .line 1487
     :cond_b5
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasRecommendationsContainer()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_c6
+
+    .line 1488
+    const/16 v1, 0xc
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getRecommendationsContainer()Lcom/google/android/finsky/remoting/protos/DocAnnotations$RecommendationsContainer;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 1491
+    :cond_c6
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->cachedSize:I
 
-    .line 1991
+    .line 1492
     return v0
 .end method
 
@@ -415,7 +453,7 @@
     .registers 2
 
     .prologue
-    .line 1663
+    .line 1133
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->seriesAntenna_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$SeriesAntenna;
 
     return-object v0
@@ -425,7 +463,7 @@
     .registers 2
 
     .prologue
-    .line 1763
+    .line 1233
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileDetailsReflectedGraphic2X2_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
     return-object v0
@@ -435,7 +473,7 @@
     .registers 2
 
     .prologue
-    .line 1783
+    .line 1253
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileFourBlock4X2_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
     return-object v0
@@ -445,7 +483,7 @@
     .registers 2
 
     .prologue
-    .line 1683
+    .line 1153
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileGraphic2X1_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
     return-object v0
@@ -455,7 +493,7 @@
     .registers 2
 
     .prologue
-    .line 1703
+    .line 1173
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileGraphic4X2_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
     return-object v0
@@ -465,7 +503,7 @@
     .registers 2
 
     .prologue
-    .line 1723
+    .line 1193
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileGraphicColoredTitle2X1_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
     return-object v0
@@ -475,7 +513,7 @@
     .registers 2
 
     .prologue
-    .line 1803
+    .line 1273
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileGraphicColoredTitle4X2_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
     return-object v0
@@ -485,7 +523,7 @@
     .registers 2
 
     .prologue
-    .line 1743
+    .line 1213
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileGraphicUpperLeftTitle2X1_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
     return-object v0
@@ -495,7 +533,7 @@
     .registers 2
 
     .prologue
-    .line 1822
+    .line 1292
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasContainerWithBanner:Z
 
     return v0
@@ -505,7 +543,7 @@
     .registers 2
 
     .prologue
-    .line 1842
+    .line 1312
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasDealOfTheDay:Z
 
     return v0
@@ -515,8 +553,18 @@
     .registers 2
 
     .prologue
-    .line 1862
+    .line 1332
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasEditorialSeriesContainer:Z
+
+    return v0
+.end method
+
+.method public hasRecommendationsContainer()Z
+    .registers 2
+
+    .prologue
+    .line 1352
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasRecommendationsContainer:Z
 
     return v0
 .end method
@@ -525,7 +573,7 @@
     .registers 2
 
     .prologue
-    .line 1662
+    .line 1132
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasSeriesAntenna:Z
 
     return v0
@@ -535,7 +583,7 @@
     .registers 2
 
     .prologue
-    .line 1762
+    .line 1232
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileDetailsReflectedGraphic2X2:Z
 
     return v0
@@ -545,7 +593,7 @@
     .registers 2
 
     .prologue
-    .line 1782
+    .line 1252
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileFourBlock4X2:Z
 
     return v0
@@ -555,7 +603,7 @@
     .registers 2
 
     .prologue
-    .line 1682
+    .line 1152
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphic2X1:Z
 
     return v0
@@ -565,7 +613,7 @@
     .registers 2
 
     .prologue
-    .line 1702
+    .line 1172
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphic4X2:Z
 
     return v0
@@ -575,7 +623,7 @@
     .registers 2
 
     .prologue
-    .line 1722
+    .line 1192
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphicColoredTitle2X1:Z
 
     return v0
@@ -585,7 +633,7 @@
     .registers 2
 
     .prologue
-    .line 1802
+    .line 1272
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphicColoredTitle4X2:Z
 
     return v0
@@ -595,7 +643,7 @@
     .registers 2
 
     .prologue
-    .line 1742
+    .line 1212
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphicUpperLeftTitle2X1:Z
 
     return v0
@@ -611,205 +659,223 @@
     .end annotation
 
     .prologue
-    .line 1998
+    .line 1500
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1999
+    .line 1501
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_94
+    sparse-switch v0, :sswitch_data_a2
 
-    .line 2003
+    .line 1505
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 2004
+    .line 1506
     :sswitch_d
     return-object p0
 
-    .line 2009
+    .line 1511
     :sswitch_e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SeriesAntenna;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SeriesAntenna;-><init>()V
 
-    .line 2010
+    .line 1512
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$SeriesAntenna;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2011
+    .line 1513
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->setSeriesAntenna(Lcom/google/android/finsky/remoting/protos/DocAnnotations$SeriesAntenna;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;
 
     goto :goto_0
 
-    .line 2015
+    .line 1517
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$SeriesAntenna;
     :sswitch_1a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;-><init>()V
 
-    .line 2016
+    .line 1518
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2017
+    .line 1519
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->setTileGraphic2X1(Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;
 
     goto :goto_0
 
-    .line 2021
+    .line 1523
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
     :sswitch_26
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;-><init>()V
 
-    .line 2022
+    .line 1524
     .restart local v1       #value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2023
+    .line 1525
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->setTileGraphic4X2(Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;
 
     goto :goto_0
 
-    .line 2027
+    .line 1529
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
     :sswitch_32
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;-><init>()V
 
-    .line 2028
+    .line 1530
     .restart local v1       #value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2029
+    .line 1531
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->setTileGraphicColoredTitle2X1(Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;
 
     goto :goto_0
 
-    .line 2033
+    .line 1535
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
     :sswitch_3e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;-><init>()V
 
-    .line 2034
+    .line 1536
     .restart local v1       #value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2035
+    .line 1537
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->setTileGraphicUpperLeftTitle2X1(Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;
 
     goto :goto_0
 
-    .line 2039
+    .line 1541
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
     :sswitch_4a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;-><init>()V
 
-    .line 2040
+    .line 1542
     .restart local v1       #value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2041
+    .line 1543
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->setTileDetailsReflectedGraphic2X2(Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;
 
     goto :goto_0
 
-    .line 2045
+    .line 1547
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
     :sswitch_56
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;-><init>()V
 
-    .line 2046
+    .line 1548
     .restart local v1       #value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2047
+    .line 1549
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->setTileFourBlock4X2(Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;
 
     goto :goto_0
 
-    .line 2051
+    .line 1553
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
     :sswitch_62
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocAnnotations$ContainerWithBanner;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$ContainerWithBanner;-><init>()V
 
-    .line 2052
+    .line 1554
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$ContainerWithBanner;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2053
+    .line 1555
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->setContainerWithBanner(Lcom/google/android/finsky/remoting/protos/DocAnnotations$ContainerWithBanner;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;
 
     goto :goto_0
 
-    .line 2057
+    .line 1559
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$ContainerWithBanner;
     :sswitch_6e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocAnnotations$DealOfTheDay;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$DealOfTheDay;-><init>()V
 
-    .line 2058
+    .line 1560
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$DealOfTheDay;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2059
+    .line 1561
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->setDealOfTheDay(Lcom/google/android/finsky/remoting/protos/DocAnnotations$DealOfTheDay;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;
 
     goto :goto_0
 
-    .line 2063
+    .line 1565
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$DealOfTheDay;
     :sswitch_7a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;-><init>()V
 
-    .line 2064
+    .line 1566
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2065
+    .line 1567
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->setTileGraphicColoredTitle4X2(Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;
 
     goto/16 :goto_0
 
-    .line 2069
+    .line 1571
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
     :sswitch_87
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;-><init>()V
 
-    .line 2070
+    .line 1572
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2071
+    .line 1573
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->setEditorialSeriesContainer(Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;
 
     goto/16 :goto_0
 
-    .line 1999
-    :sswitch_data_94
+    .line 1577
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;
+    :sswitch_94
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/DocAnnotations$RecommendationsContainer;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$RecommendationsContainer;-><init>()V
+
+    .line 1578
+    .local v1, value:Lcom/google/android/finsky/remoting/protos/DocAnnotations$RecommendationsContainer;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 1579
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->setRecommendationsContainer(Lcom/google/android/finsky/remoting/protos/DocAnnotations$RecommendationsContainer;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;
+
+    goto/16 :goto_0
+
+    .line 1501
+    nop
+
+    :sswitch_data_a2
     .sparse-switch
         0x0 -> :sswitch_d
         0xa -> :sswitch_e
@@ -823,6 +889,7 @@
         0x4a -> :sswitch_6e
         0x52 -> :sswitch_7a
         0x5a -> :sswitch_87
+        0x62 -> :sswitch_94
     .end sparse-switch
 .end method
 
@@ -836,7 +903,7 @@
     .end annotation
 
     .prologue
-    .line 1654
+    .line 1123
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;
 
     move-result-object v0
@@ -849,26 +916,26 @@
     .parameter "value"
 
     .prologue
-    .line 1825
+    .line 1295
     if-nez p1, :cond_8
 
-    .line 1826
+    .line 1296
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1828
+    .line 1298
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasContainerWithBanner:Z
 
-    .line 1829
+    .line 1299
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->containerWithBanner_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$ContainerWithBanner;
 
-    .line 1830
+    .line 1300
     return-object p0
 .end method
 
@@ -877,26 +944,26 @@
     .parameter "value"
 
     .prologue
-    .line 1845
+    .line 1315
     if-nez p1, :cond_8
 
-    .line 1846
+    .line 1316
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1848
+    .line 1318
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasDealOfTheDay:Z
 
-    .line 1849
+    .line 1319
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->dealOfTheDay_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$DealOfTheDay;
 
-    .line 1850
+    .line 1320
     return-object p0
 .end method
 
@@ -905,26 +972,54 @@
     .parameter "value"
 
     .prologue
-    .line 1865
+    .line 1335
     if-nez p1, :cond_8
 
-    .line 1866
+    .line 1336
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1868
+    .line 1338
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasEditorialSeriesContainer:Z
 
-    .line 1869
+    .line 1339
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->editorialSeriesContainer_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;
 
-    .line 1870
+    .line 1340
+    return-object p0
+.end method
+
+.method public setRecommendationsContainer(Lcom/google/android/finsky/remoting/protos/DocAnnotations$RecommendationsContainer;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 1355
+    if-nez p1, :cond_8
+
+    .line 1356
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 1358
+    :cond_8
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasRecommendationsContainer:Z
+
+    .line 1359
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->recommendationsContainer_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$RecommendationsContainer;
+
+    .line 1360
     return-object p0
 .end method
 
@@ -933,26 +1028,26 @@
     .parameter "value"
 
     .prologue
-    .line 1665
+    .line 1135
     if-nez p1, :cond_8
 
-    .line 1666
+    .line 1136
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1668
+    .line 1138
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasSeriesAntenna:Z
 
-    .line 1669
+    .line 1139
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->seriesAntenna_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$SeriesAntenna;
 
-    .line 1670
+    .line 1140
     return-object p0
 .end method
 
@@ -961,26 +1056,26 @@
     .parameter "value"
 
     .prologue
-    .line 1765
+    .line 1235
     if-nez p1, :cond_8
 
-    .line 1766
+    .line 1236
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1768
+    .line 1238
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileDetailsReflectedGraphic2X2:Z
 
-    .line 1769
+    .line 1239
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileDetailsReflectedGraphic2X2_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
-    .line 1770
+    .line 1240
     return-object p0
 .end method
 
@@ -989,26 +1084,26 @@
     .parameter "value"
 
     .prologue
-    .line 1785
+    .line 1255
     if-nez p1, :cond_8
 
-    .line 1786
+    .line 1256
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1788
+    .line 1258
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileFourBlock4X2:Z
 
-    .line 1789
+    .line 1259
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileFourBlock4X2_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
-    .line 1790
+    .line 1260
     return-object p0
 .end method
 
@@ -1017,26 +1112,26 @@
     .parameter "value"
 
     .prologue
-    .line 1685
+    .line 1155
     if-nez p1, :cond_8
 
-    .line 1686
+    .line 1156
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1688
+    .line 1158
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphic2X1:Z
 
-    .line 1689
+    .line 1159
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileGraphic2X1_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
-    .line 1690
+    .line 1160
     return-object p0
 .end method
 
@@ -1045,26 +1140,26 @@
     .parameter "value"
 
     .prologue
-    .line 1705
+    .line 1175
     if-nez p1, :cond_8
 
-    .line 1706
+    .line 1176
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1708
+    .line 1178
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphic4X2:Z
 
-    .line 1709
+    .line 1179
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileGraphic4X2_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
-    .line 1710
+    .line 1180
     return-object p0
 .end method
 
@@ -1073,26 +1168,26 @@
     .parameter "value"
 
     .prologue
-    .line 1725
+    .line 1195
     if-nez p1, :cond_8
 
-    .line 1726
+    .line 1196
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1728
+    .line 1198
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphicColoredTitle2X1:Z
 
-    .line 1729
+    .line 1199
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileGraphicColoredTitle2X1_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
-    .line 1730
+    .line 1200
     return-object p0
 .end method
 
@@ -1101,26 +1196,26 @@
     .parameter "value"
 
     .prologue
-    .line 1805
+    .line 1275
     if-nez p1, :cond_8
 
-    .line 1806
+    .line 1276
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1808
+    .line 1278
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphicColoredTitle4X2:Z
 
-    .line 1809
+    .line 1279
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileGraphicColoredTitle4X2_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
-    .line 1810
+    .line 1280
     return-object p0
 .end method
 
@@ -1129,26 +1224,26 @@
     .parameter "value"
 
     .prologue
-    .line 1745
+    .line 1215
     if-nez p1, :cond_8
 
-    .line 1746
+    .line 1216
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1748
+    .line 1218
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphicUpperLeftTitle2X1:Z
 
-    .line 1749
+    .line 1219
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->tileGraphicUpperLeftTitle2X1_:Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
-    .line 1750
+    .line 1220
     return-object p0
 .end method
 
@@ -1162,14 +1257,14 @@
     .end annotation
 
     .prologue
-    .line 1900
+    .line 1392
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasSeriesAntenna()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 1901
+    .line 1393
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getSeriesAntenna()Lcom/google/android/finsky/remoting/protos/DocAnnotations$SeriesAntenna;
@@ -1178,7 +1273,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1903
+    .line 1395
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphic2X1()Z
 
@@ -1186,7 +1281,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 1904
+    .line 1396
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getTileGraphic2X1()Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
@@ -1195,7 +1290,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1906
+    .line 1398
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphic4X2()Z
 
@@ -1203,7 +1298,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 1907
+    .line 1399
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getTileGraphic4X2()Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
@@ -1212,7 +1307,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1909
+    .line 1401
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphicColoredTitle2X1()Z
 
@@ -1220,7 +1315,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 1910
+    .line 1402
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getTileGraphicColoredTitle2X1()Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
@@ -1229,7 +1324,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1912
+    .line 1404
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphicUpperLeftTitle2X1()Z
 
@@ -1237,7 +1332,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 1913
+    .line 1405
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getTileGraphicUpperLeftTitle2X1()Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
@@ -1246,7 +1341,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1915
+    .line 1407
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileDetailsReflectedGraphic2X2()Z
 
@@ -1254,7 +1349,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 1916
+    .line 1408
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getTileDetailsReflectedGraphic2X2()Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
@@ -1263,7 +1358,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1918
+    .line 1410
     :cond_54
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileFourBlock4X2()Z
 
@@ -1271,7 +1366,7 @@
 
     if-eqz v0, :cond_62
 
-    .line 1919
+    .line 1411
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getTileFourBlock4X2()Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
@@ -1280,7 +1375,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1921
+    .line 1413
     :cond_62
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasContainerWithBanner()Z
 
@@ -1288,7 +1383,7 @@
 
     if-eqz v0, :cond_71
 
-    .line 1922
+    .line 1414
     const/16 v0, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getContainerWithBanner()Lcom/google/android/finsky/remoting/protos/DocAnnotations$ContainerWithBanner;
@@ -1297,7 +1392,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1924
+    .line 1416
     :cond_71
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasDealOfTheDay()Z
 
@@ -1305,7 +1400,7 @@
 
     if-eqz v0, :cond_80
 
-    .line 1925
+    .line 1417
     const/16 v0, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getDealOfTheDay()Lcom/google/android/finsky/remoting/protos/DocAnnotations$DealOfTheDay;
@@ -1314,7 +1409,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1927
+    .line 1419
     :cond_80
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasTileGraphicColoredTitle4X2()Z
 
@@ -1322,7 +1417,7 @@
 
     if-eqz v0, :cond_8f
 
-    .line 1928
+    .line 1420
     const/16 v0, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getTileGraphicColoredTitle4X2()Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
@@ -1331,7 +1426,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1930
+    .line 1422
     :cond_8f
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasEditorialSeriesContainer()Z
 
@@ -1339,7 +1434,7 @@
 
     if-eqz v0, :cond_9e
 
-    .line 1931
+    .line 1423
     const/16 v0, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getEditorialSeriesContainer()Lcom/google/android/finsky/remoting/protos/DocAnnotations$EditorialSeriesContainer;
@@ -1348,7 +1443,24 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1933
+    .line 1425
     :cond_9e
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->hasRecommendationsContainer()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_ad
+
+    .line 1426
+    const/16 v0, 0xc
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$Template;->getRecommendationsContainer()Lcom/google/android/finsky/remoting/protos/DocAnnotations$RecommendationsContainer;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 1428
+    :cond_ad
     return-void
 .end method

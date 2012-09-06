@@ -1,47 +1,62 @@
-.class Lcom/google/googlenav/prefetch/android/q;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/Comparator;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/prefetch/android/p;
+.class final Lcom/google/googlenav/prefetch/android/q;
+.super Lcom/google/googlenav/prefetch/android/p;
+.source "SourceFile"
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/prefetch/android/p;)V
-    .registers 2
+.method constructor <init>()V
+    .registers 1
 
-    iput-object p1, p0, Lcom/google/googlenav/prefetch/android/q;->a:Lcom/google/googlenav/prefetch/android/p;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 57
+    invoke-direct {p0}, Lcom/google/googlenav/prefetch/android/p;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/Long;Ljava/lang/Long;)I
-    .registers 4
+.method public a([Lat/P;)I
+    .registers 3
+    .parameter
 
-    invoke-virtual {p2, p1}, Ljava/lang/Long;->compareTo(Ljava/lang/Long;)I
-
-    move-result v0
+    .prologue
+    .line 71
+    const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 4
+.method public a()V
+    .registers 1
 
-    check-cast p1, Ljava/lang/Long;
+    .prologue
+    .line 77
+    return-void
+.end method
 
-    check-cast p2, Ljava/lang/Long;
+.method public a(J)V
+    .registers 3
+    .parameter
 
-    invoke-virtual {p0, p1, p2}, Lcom/google/googlenav/prefetch/android/q;->a(Ljava/lang/Long;Ljava/lang/Long;)I
+    .prologue
+    .line 74
+    return-void
+.end method
 
-    move-result v0
+.method public a(Ln/am;)V
+    .registers 2
+    .parameter
 
-    return v0
+    .prologue
+    .line 59
+    return-void
+.end method
+
+.method public b()V
+    .registers 1
+
+    .prologue
+    .line 68
+    return-void
 .end method

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@drawable/actionbar_seperator" android:focusable="false" android:layout_width="2.0px" android:layout_height="fill_parent" android:layout_marginTop="2.0dip" />
+    <TextView android:textAppearance="@style/VehicleFilterText" android:textColor="@color/white" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/title" android:paddingLeft="5.0dip" android:paddingRight="2.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/action_bar_icon_height" android:text="All Modes" android:singleLine="true" android:layout_weight="1.0" />
+    <ImageView android:layout_gravity="center_vertical" android:paddingRight="8.0dip" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/switcher_dropdown_triangle" android:scaleType="center" />
+</merge>

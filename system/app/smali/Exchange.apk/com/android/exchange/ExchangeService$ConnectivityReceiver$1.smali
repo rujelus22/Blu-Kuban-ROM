@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 3628
+    .line 1572
     iput-object p1, p0, Lcom/android/exchange/ExchangeService$ConnectivityReceiver$1;->this$1:Lcom/android/exchange/ExchangeService$ConnectivityReceiver;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,60 +41,68 @@
     .registers 7
 
     .prologue
-    .line 3630
-    sget-object v3, Lcom/android/exchange/ExchangeService;->mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
+    .line 1575
+    iget-object v2, p0, Lcom/android/exchange/ExchangeService$ConnectivityReceiver$1;->this$1:Lcom/android/exchange/ExchangeService$ConnectivityReceiver;
+
+    iget-object v2, v2, Lcom/android/exchange/ExchangeService$ConnectivityReceiver;->this$0:Lcom/android/exchange/ExchangeService;
+
+    iget-object v3, v2, Lcom/android/exchange/ExchangeService;->mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
 
     monitor-enter v3
 
-    .line 3631
-    :try_start_3
-    sget-object v2, Lcom/android/exchange/ExchangeService;->mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
+    .line 1576
+    :try_start_7
+    iget-object v2, p0, Lcom/android/exchange/ExchangeService$ConnectivityReceiver$1;->this$1:Lcom/android/exchange/ExchangeService$ConnectivityReceiver;
+
+    iget-object v2, v2, Lcom/android/exchange/ExchangeService$ConnectivityReceiver;->this$0:Lcom/android/exchange/ExchangeService;
+
+    iget-object v2, v2, Lcom/android/exchange/ExchangeService;->mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
 
     invoke-virtual {v2}, Lcom/android/exchange/ExchangeService$AccountList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
     .local v1, i$:Ljava/util/Iterator;
-    :goto_9
+    :goto_11
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_26
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/android/emailcommon/provider/EmailContent$Account;
+    check-cast v0, Lcom/android/emailcommon/provider/Account;
 
-    .line 3632
-    .local v0, account:Lcom/android/emailcommon/provider/EmailContent$Account;
-    iget-wide v4, v0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    .line 1577
+    .local v0, account:Lcom/android/emailcommon/provider/Account;
+    iget-wide v4, v0, Lcom/android/emailcommon/provider/Account;->mId:J
 
     invoke-static {v4, v5}, Lcom/android/exchange/ExchangeService;->stopAccountSyncs(J)V
 
-    goto :goto_9
+    goto :goto_11
 
-    .line 3634
-    .end local v0           #account:Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 1578
+    .end local v0           #account:Lcom/android/emailcommon/provider/Account;
     .end local v1           #i$:Ljava/util/Iterator;
-    :catchall_1b
+    :catchall_23
     move-exception v2
 
     monitor-exit v3
-    :try_end_1d
-    .catchall {:try_start_3 .. :try_end_1d} :catchall_1b
+    :try_end_25
+    .catchall {:try_start_7 .. :try_end_25} :catchall_23
 
     throw v2
 
     .restart local v1       #i$:Ljava/util/Iterator;
-    :cond_1e
-    :try_start_1e
+    :cond_26
+    :try_start_26
     monitor-exit v3
-    :try_end_1f
-    .catchall {:try_start_1e .. :try_end_1f} :catchall_1b
+    :try_end_27
+    .catchall {:try_start_26 .. :try_end_27} :catchall_23
 
-    .line 3635
+    .line 1579
     return-void
 .end method

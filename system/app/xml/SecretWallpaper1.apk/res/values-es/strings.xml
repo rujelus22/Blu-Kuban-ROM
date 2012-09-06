@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Ocean weather</string>
-    <string name="setting_title">Ajustes de actualización automática de meteorología</string>
-    <string name="wallpaper_description">Este fondo de pantalla muestra el tiempo actual con un escenario de océano</string>
-    <string name="ok">Aceptar</string>
-    <string name="cancel">Cancelar</string>
-    <string name="gps_alert_title">GPS</string>
-</resources>

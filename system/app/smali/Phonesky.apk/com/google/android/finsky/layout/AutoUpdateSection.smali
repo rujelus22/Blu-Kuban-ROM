@@ -3,6 +3,14 @@
 .source "AutoUpdateSection.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/android/finsky/layout/AutoUpdateSection$AutoUpdateDialog;
+    }
+.end annotation
+
+
 # instance fields
 .field private mCheckBox:Landroid/widget/CheckBox;
 
@@ -16,10 +24,10 @@
     .parameter "attrs"
 
     .prologue
-    .line 35
+    .line 43
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 36
+    .line 44
     return-void
 .end method
 
@@ -28,7 +36,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 37
     iget-object v0, p0, Lcom/google/android/finsky/layout/AutoUpdateSection;->mCheckBox:Landroid/widget/CheckBox;
 
     return-object v0
@@ -36,107 +44,106 @@
 
 
 # virtual methods
-.method protected onFinishInflate()V
-    .registers 2
-
-    .prologue
-    .line 40
-    invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
-
-    .line 42
-    const v0, 0x7f080025
-
-    invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/AutoUpdateSection;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/CheckBox;
-
-    iput-object v0, p0, Lcom/google/android/finsky/layout/AutoUpdateSection;->mCheckBox:Landroid/widget/CheckBox;
-
-    .line 43
-    const v0, 0x7f080026
-
-    invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/AutoUpdateSection;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcom/google/android/finsky/layout/AutoUpdateSection;->mLabel:Landroid/widget/TextView;
-
-    .line 44
-    return-void
-.end method
-
-.method public setApplicationPackageName(Ljava/lang/String;Landroid/support/v4/app/Fragment;)V
-    .registers 14
+.method public bind(Ljava/lang/String;Landroid/support/v4/app/Fragment;Lcom/google/android/finsky/library/Libraries;Lcom/google/android/finsky/appstate/AppStates;Lcom/google/android/finsky/receivers/Installer;)V
+    .registers 16
     .parameter "packageName"
     .parameter "fragment"
+    .parameter "libraries"
+    .parameter "appStates"
+    .parameter "installer"
 
     .prologue
     const/4 v8, 0x1
 
-    const/4 v9, 0x0
+    .line 96
+    invoke-virtual {p0}, Lcom/google/android/finsky/layout/AutoUpdateSection;->removeAllViews()V
 
-    .line 53
+    .line 97
+    new-instance v6, Landroid/view/ContextThemeWrapper;
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/layout/AutoUpdateSection;->getContext()Landroid/content/Context;
+
+    move-result-object v7
+
+    const v9, 0x7f0e0042
+
+    invoke-direct {v6, v7, v9}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
+
+    .line 99
+    .local v6, themedWrapper:Landroid/view/ContextThemeWrapper;
+    invoke-static {v6}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object v3
+
+    .line 100
+    .local v3, inflater:Landroid/view/LayoutInflater;
+    const v7, 0x7f040008
+
+    invoke-virtual {v3, v7, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    .line 102
+    const v7, 0x7f080016
+
+    invoke-virtual {p0, v7}, Lcom/google/android/finsky/layout/AutoUpdateSection;->findViewById(I)Landroid/view/View;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/widget/CheckBox;
+
+    iput-object v7, p0, Lcom/google/android/finsky/layout/AutoUpdateSection;->mCheckBox:Landroid/widget/CheckBox;
+
+    .line 103
+    const v7, 0x7f080017
+
+    invoke-virtual {p0, v7}, Lcom/google/android/finsky/layout/AutoUpdateSection;->findViewById(I)Landroid/view/View;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/widget/TextView;
+
+    iput-object v7, p0, Lcom/google/android/finsky/layout/AutoUpdateSection;->mLabel:Landroid/widget/TextView;
+
+    .line 105
     invoke-virtual {p2}, Landroid/support/v4/app/Fragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v2
 
-    .line 55
+    .line 107
     .local v2, fragmentManager:Landroid/support/v4/app/FragmentManager;
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+    invoke-virtual {p0, p1, p3, p4, p5}, Lcom/google/android/finsky/layout/AutoUpdateSection;->updateVisibility(Ljava/lang/String;Lcom/google/android/finsky/library/Libraries;Lcom/google/android/finsky/appstate/AppStates;Lcom/google/android/finsky/receivers/Installer;)V
 
-    move-result-object v7
+    .line 108
+    invoke-virtual {p0}, Lcom/google/android/finsky/layout/AutoUpdateSection;->getVisibility()I
 
-    invoke-virtual {v7}, Lcom/google/android/finsky/FinskyApp;->getAssetStore()Lcom/google/android/finsky/local/AssetStore;
+    move-result v7
+
+    if-eqz v7, :cond_3e
+
+    .line 162
+    :goto_3d
+    return-void
+
+    .line 112
+    :cond_3e
+    invoke-virtual {p4, p1}, Lcom/google/android/finsky/appstate/AppStates;->getApp(Ljava/lang/String;)Lcom/google/android/finsky/appstate/AppStates$AppState;
 
     move-result-object v0
 
-    .line 56
-    .local v0, assetStore:Lcom/google/android/finsky/local/AssetStore;
-    invoke-interface {v0, p1}, Lcom/google/android/finsky/local/AssetStore;->getAsset(Ljava/lang/String;)Lcom/google/android/finsky/local/LocalAsset;
+    .line 113
+    .local v0, appState:Lcom/google/android/finsky/appstate/AppStates$AppState;
+    iget-object v7, v0, Lcom/google/android/finsky/appstate/AppStates$AppState;->installerData:Lcom/google/android/finsky/appstate/InstallerDataStore$InstallerData;
 
-    move-result-object v4
+    if-eqz v7, :cond_85
 
-    .line 58
-    .local v4, localAsset:Lcom/google/android/finsky/local/LocalAsset;
-    if-eqz v4, :cond_20
+    iget-object v7, v0, Lcom/google/android/finsky/appstate/AppStates$AppState;->installerData:Lcom/google/android/finsky/appstate/InstallerDataStore$InstallerData;
 
-    invoke-interface {v4}, Lcom/google/android/finsky/local/LocalAsset;->isDownloadingOrInstalling()Z
-
-    move-result v7
-
-    if-nez v7, :cond_26
-
-    invoke-interface {v4}, Lcom/google/android/finsky/local/LocalAsset;->isInstalled()Z
-
-    move-result v7
-
-    if-nez v7, :cond_26
-
-    .line 60
-    :cond_20
-    const/16 v7, 0x8
-
-    invoke-virtual {p0, v7}, Lcom/google/android/finsky/layout/AutoUpdateSection;->setVisibility(I)V
-
-    .line 131
-    :goto_25
-    return-void
-
-    .line 64
-    :cond_26
-    invoke-virtual {p0, v9}, Lcom/google/android/finsky/layout/AutoUpdateSection;->setVisibility(I)V
-
-    .line 65
-    invoke-interface {v4}, Lcom/google/android/finsky/local/LocalAsset;->getAutoUpdateState()Lcom/google/android/finsky/local/AutoUpdateState;
+    invoke-virtual {v7}, Lcom/google/android/finsky/appstate/InstallerDataStore$InstallerData;->getAutoUpdate()Lcom/google/android/finsky/appstate/InstallerDataStore$AutoUpdateState;
 
     move-result-object v1
 
-    .line 67
-    .local v1, autoUpdateState:Lcom/google/android/finsky/local/AutoUpdateState;
+    .line 116
+    .local v1, autoUpdateState:Lcom/google/android/finsky/appstate/InstallerDataStore$AutoUpdateState;
+    :goto_4c
     sget-object v7, Lcom/google/android/finsky/utils/VendingPreferences;->AUTO_UPDATE_BY_DEFAULT:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
     invoke-virtual {v7}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->get()Ljava/lang/Object;
@@ -149,97 +156,197 @@
 
     move-result v5
 
-    .line 68
+    .line 117
     .local v5, stickyAutoUpdateState:Z
-    sget-object v7, Lcom/google/android/finsky/local/AutoUpdateState;->DEFAULT:Lcom/google/android/finsky/local/AutoUpdateState;
+    sget-object v7, Lcom/google/android/finsky/appstate/InstallerDataStore$AutoUpdateState;->DEFAULT:Lcom/google/android/finsky/appstate/InstallerDataStore$AutoUpdateState;
 
-    if-ne v1, v7, :cond_73
+    if-ne v1, v7, :cond_88
 
-    .line 70
-    move v3, v5
+    .line 119
+    move v4, v5
 
-    .line 79
-    .local v3, isAutoUpdateEnabled:Z
-    :goto_3e
+    .line 128
+    .local v4, isAutoUpdateEnabled:Z
+    :goto_5d
     new-instance v7, Landroid/os/Handler;
 
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/AutoUpdateSection;->getContext()Landroid/content/Context;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-virtual {v10}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
+    invoke-virtual {v9}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-direct {v7, v10}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    invoke-direct {v7, v9}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    new-instance v10, Lcom/google/android/finsky/layout/AutoUpdateSection$1;
+    new-instance v9, Lcom/google/android/finsky/layout/AutoUpdateSection$1;
 
-    invoke-direct {v10, p0, v3}, Lcom/google/android/finsky/layout/AutoUpdateSection$1;-><init>(Lcom/google/android/finsky/layout/AutoUpdateSection;Z)V
+    invoke-direct {v9, p0, v4}, Lcom/google/android/finsky/layout/AutoUpdateSection$1;-><init>(Lcom/google/android/finsky/layout/AutoUpdateSection;Z)V
 
-    invoke-virtual {v7, v10}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v7, v9}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 86
-    invoke-interface {v4}, Lcom/google/android/finsky/local/LocalAsset;->isInstalled()Z
-
-    move-result v7
-
-    if-nez v7, :cond_5f
-
-    invoke-interface {v4}, Lcom/google/android/finsky/local/LocalAsset;->isDownloadingOrInstalling()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_7b
-
-    :cond_5f
-    move v6, v8
-
-    .line 89
-    .local v6, toEnableControls:Z
-    :goto_60
+    .line 135
     iget-object v7, p0, Lcom/google/android/finsky/layout/AutoUpdateSection;->mCheckBox:Landroid/widget/CheckBox;
 
-    invoke-virtual {v7, v6}, Landroid/widget/CheckBox;->setEnabled(Z)V
+    invoke-virtual {v7, v8}, Landroid/widget/CheckBox;->setEnabled(Z)V
 
-    .line 90
+    .line 136
     iget-object v7, p0, Lcom/google/android/finsky/layout/AutoUpdateSection;->mLabel:Landroid/widget/TextView;
 
-    invoke-virtual {v7, v6}, Landroid/widget/TextView;->setEnabled(Z)V
+    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 94
+    .line 140
     new-instance v7, Lcom/google/android/finsky/layout/AutoUpdateSection$2;
 
-    invoke-direct {v7, p0, v4, v2, p1}, Lcom/google/android/finsky/layout/AutoUpdateSection$2;-><init>(Lcom/google/android/finsky/layout/AutoUpdateSection;Lcom/google/android/finsky/local/LocalAsset;Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
+    invoke-direct {v7, p0, p4, p1, v2}, Lcom/google/android/finsky/layout/AutoUpdateSection$2;-><init>(Lcom/google/android/finsky/layout/AutoUpdateSection;Lcom/google/android/finsky/appstate/AppStates;Ljava/lang/String;Landroid/support/v4/app/FragmentManager;)V
 
     invoke-virtual {p0, v7}, Lcom/google/android/finsky/layout/AutoUpdateSection;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    goto :goto_25
+    goto :goto_3d
 
-    .line 73
-    .end local v3           #isAutoUpdateEnabled:Z
-    .end local v6           #toEnableControls:Z
-    :cond_73
-    sget-object v7, Lcom/google/android/finsky/local/AutoUpdateState;->ENABLED:Lcom/google/android/finsky/local/AutoUpdateState;
+    .line 113
+    .end local v1           #autoUpdateState:Lcom/google/android/finsky/appstate/InstallerDataStore$AutoUpdateState;
+    .end local v4           #isAutoUpdateEnabled:Z
+    .end local v5           #stickyAutoUpdateState:Z
+    :cond_85
+    sget-object v1, Lcom/google/android/finsky/appstate/InstallerDataStore$AutoUpdateState;->DEFAULT:Lcom/google/android/finsky/appstate/InstallerDataStore$AutoUpdateState;
 
-    if-ne v1, v7, :cond_79
+    goto :goto_4c
 
-    move v3, v8
+    .line 122
+    .restart local v1       #autoUpdateState:Lcom/google/android/finsky/appstate/InstallerDataStore$AutoUpdateState;
+    .restart local v5       #stickyAutoUpdateState:Z
+    :cond_88
+    sget-object v7, Lcom/google/android/finsky/appstate/InstallerDataStore$AutoUpdateState;->ENABLED:Lcom/google/android/finsky/appstate/InstallerDataStore$AutoUpdateState;
 
-    .restart local v3       #isAutoUpdateEnabled:Z
-    :goto_78
-    goto :goto_3e
+    if-ne v1, v7, :cond_8e
 
-    .end local v3           #isAutoUpdateEnabled:Z
-    :cond_79
-    move v3, v9
+    move v4, v8
 
-    goto :goto_78
+    .restart local v4       #isAutoUpdateEnabled:Z
+    :goto_8d
+    goto :goto_5d
 
-    .restart local v3       #isAutoUpdateEnabled:Z
-    :cond_7b
-    move v6, v9
+    .end local v4           #isAutoUpdateEnabled:Z
+    :cond_8e
+    const/4 v4, 0x0
 
-    .line 86
-    goto :goto_60
+    goto :goto_8d
+.end method
+
+.method public updateVisibility(Ljava/lang/String;Lcom/google/android/finsky/library/Libraries;Lcom/google/android/finsky/appstate/AppStates;Lcom/google/android/finsky/receivers/Installer;)V
+    .registers 11
+    .parameter "packageName"
+    .parameter "libraries"
+    .parameter "appStates"
+    .parameter "installer"
+
+    .prologue
+    const/4 v3, 0x0
+
+    const/16 v5, 0x8
+
+    .line 49
+    if-nez p1, :cond_9
+
+    .line 50
+    invoke-virtual {p0, v5}, Lcom/google/android/finsky/layout/AutoUpdateSection;->setVisibility(I)V
+
+    .line 83
+    :goto_8
+    return-void
+
+    .line 55
+    :cond_9
+    invoke-virtual {p2, p1}, Lcom/google/android/finsky/library/Libraries;->getAppOwners(Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Ljava/util/List;->isEmpty()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_17
+
+    .line 56
+    invoke-virtual {p0, v5}, Lcom/google/android/finsky/layout/AutoUpdateSection;->setVisibility(I)V
+
+    goto :goto_8
+
+    .line 62
+    :cond_17
+    invoke-virtual {p3, p1}, Lcom/google/android/finsky/appstate/AppStates;->getApp(Ljava/lang/String;)Lcom/google/android/finsky/appstate/AppStates$AppState;
+
+    move-result-object v0
+
+    .line 63
+    .local v0, appState:Lcom/google/android/finsky/appstate/AppStates$AppState;
+    if-nez v0, :cond_21
+
+    .line 64
+    invoke-virtual {p0, v5}, Lcom/google/android/finsky/layout/AutoUpdateSection;->setVisibility(I)V
+
+    goto :goto_8
+
+    .line 69
+    :cond_21
+    iget-object v4, v0, Lcom/google/android/finsky/appstate/AppStates$AppState;->packageManagerState:Lcom/google/android/finsky/appstate/PackageStateRepository$PackageState;
+
+    if-eqz v4, :cond_36
+
+    const/4 v2, 0x1
+
+    .line 70
+    .local v2, isInstalled:Z
+    :goto_26
+    invoke-interface {p4, p1}, Lcom/google/android/finsky/receivers/Installer;->getState(Ljava/lang/String;)Lcom/google/android/finsky/receivers/Installer$InstallerState;
+
+    move-result-object v1
+
+    .line 71
+    .local v1, installerState:Lcom/google/android/finsky/receivers/Installer$InstallerState;
+    if-nez v2, :cond_38
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/receivers/Installer$InstallerState;->isDownloadingOrInstalling()Z
+
+    move-result v4
+
+    if-nez v4, :cond_38
+
+    .line 72
+    invoke-virtual {p0, v5}, Lcom/google/android/finsky/layout/AutoUpdateSection;->setVisibility(I)V
+
+    goto :goto_8
+
+    .end local v1           #installerState:Lcom/google/android/finsky/receivers/Installer$InstallerState;
+    .end local v2           #isInstalled:Z
+    :cond_36
+    move v2, v3
+
+    .line 69
+    goto :goto_26
+
+    .line 77
+    .restart local v1       #installerState:Lcom/google/android/finsky/receivers/Installer$InstallerState;
+    .restart local v2       #isInstalled:Z
+    :cond_38
+    if-eqz v2, :cond_44
+
+    iget-object v4, v0, Lcom/google/android/finsky/appstate/AppStates$AppState;->packageManagerState:Lcom/google/android/finsky/appstate/PackageStateRepository$PackageState;
+
+    iget-boolean v4, v4, Lcom/google/android/finsky/appstate/PackageStateRepository$PackageState;->isDisabled:Z
+
+    if-eqz v4, :cond_44
+
+    .line 78
+    invoke-virtual {p0, v5}, Lcom/google/android/finsky/layout/AutoUpdateSection;->setVisibility(I)V
+
+    goto :goto_8
+
+    .line 82
+    :cond_44
+    invoke-virtual {p0, v3}, Lcom/google/android/finsky/layout/AutoUpdateSection;->setVisibility(I)V
+
+    goto :goto_8
 .end method

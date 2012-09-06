@@ -141,38 +141,38 @@ Importar/Exportar para importar contactos desde una tarjeta SIM o de memoria
 "</string>
     <string name="noContactsHelpTextWithSync">"No tienes contactos para mostrar.
 
-Para agregar contactos, toca "<b><font fgcolor="#ffffffff">Menú</font></b>", y luego: 
+Para agregar contactos, toca "<font fgcolor="#ffffffff"><b>Menú</b></font>", y luego: 
 
-"<b><font fgcolor="#ffffffff"><li>"Cuentas para agregar o configurar una cuenta con contactos que puedas sincronizar en el teléfono
-"</li></font></b>"
-"<b><font fgcolor="#ffffffff"><li>"Contacto nuevo para crear un nuevo contacto desde cero
-"</li></font></b>"
-"<b><font fgcolor="#ffffffff"><li>"Importar/Exportar para importar contactos de la tarjeta SD
-"</li></font></b></string>
+"<li><font fgcolor="#ffffffff"><b>"Cuentas para agregar o configurar una cuenta con contactos que puedas sincronizar en el teléfono
+"</b></font></li>"
+"<li><font fgcolor="#ffffffff"><b>"Contacto nuevo para crear un nuevo contacto desde cero
+"</b></font></li>"
+"<li><font fgcolor="#ffffffff"><b>"Importar/Exportar para importar contactos de la tarjeta SD
+"</b></font></li></string>
     <string name="noContactsNoSimHelpText">"No tienes contactos para mostrar. (Si agregaste una cuenta, la sincronización de contactos puede demorar algunos minutos).
 
-Para agregar contactos, toca "<b><font fgcolor="#ffffffff">Menú</font></b>", y luego:
+Para agregar contactos, toca "<font fgcolor="#ffffffff"><b>Menú</b></font>", y luego:
  
-"<b><font fgcolor="#ffffffff"><li>"Cuentas para agregar o configurar una cuenta con contactos que puedas sincronizar en el dispositivo
-"</li></font></b>" 
-"<b><font fgcolor="#ffffffff"><li>"Opciones de visualización para cambiar los contactos que sean visibles
-"</li></font></b>" 
-"<b><font fgcolor="#ffffffff"><li>"Contacto nuevo para crear un nuevo contacto desde cero
-"</li></font></b>" 
-"<b><font fgcolor="#ffffffff"><li>"Importar/Exportar para importar contactos de tu tarjeta SD
-"</li></font></b></string>
+"<li><font fgcolor="#ffffffff"><b>"Cuentas para agregar o configurar una cuenta con contactos que puedas sincronizar en el dispositivo
+"</b></font></li>" 
+"<li><font fgcolor="#ffffffff"><b>"Opciones de visualización para cambiar los contactos que sean visibles
+"</b></font></li>" 
+"<li><font fgcolor="#ffffffff"><b>"Contacto nuevo para crear un nuevo contacto desde cero
+"</b></font></li>" 
+"<li><font fgcolor="#ffffffff"><b>"Importar/Exportar para importar contactos de tu tarjeta SD
+"</b></font></li></string>
     <string name="noContactsNoSimHelpTextWithSync">"No tienes ningún contacto para mostrar. (Si has agregado una cuenta, la sincronización de contactos puede demorar algunos minutos).
 
-Para agregar contactos, presiona "<b><font fgcolor="#ffffffff">Menú</font></b>" y toca:
+Para agregar contactos, presiona "<font fgcolor="#ffffffff"><b>Menú</b></font>" y toca:
  
-"<b><font fgcolor="#ffffffff"><li>"Cuentas para agregar y configurar una cuenta con contactos que puedes sincronizar en el teléfono
-"</li></font></b>" 
-"<b><font fgcolor="#ffffffff"><li>"Mostrar opciones para cambiar los contactos que sean visibles
-"</li></font></b>" 
-"<b><font fgcolor="#ffffffff"><li>"Contacto nuevo para crear tú mismo un contacto nuevo
-"</li></font></b>" 
-"<b><font fgcolor="#ffffffff"><li>"Importar/Exportar para importar contactos desde tu tarjeta SD
-"</li></font></b></string>
+"<li><font fgcolor="#ffffffff"><b>"Cuentas para agregar y configurar una cuenta con contactos que puedes sincronizar en el teléfono
+"</b></font></li>" 
+"<li><font fgcolor="#ffffffff"><b>"Mostrar opciones para cambiar los contactos que sean visibles
+"</b></font></li>" 
+"<li><font fgcolor="#ffffffff"><b>"Contacto nuevo para crear tú mismo un contacto nuevo
+"</b></font></li>" 
+"<li><font fgcolor="#ffffffff"><b>"Importar/Exportar para importar contactos desde tu tarjeta SD
+"</b></font></li></string>
     <string name="noFavoritesHelpText">"No tienes ningún favorito.
 
 Para agregar un contacto a tu lista de favoritos:

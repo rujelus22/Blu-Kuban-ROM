@@ -26,136 +26,98 @@
 
 
 # instance fields
-.field private mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
+.field private final mAccount:Lcom/android/emailcommon/provider/Account;
 
-.field private mContext:Landroid/content/Context;
+.field private final mContext:Landroid/content/Context;
 
 .field final synthetic this$0:Lcom/android/email/activity/setup/AccountSetupNames;
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/email/activity/setup/AccountSetupNames;Lcom/android/emailcommon/provider/EmailContent$Account;)V
+.method public constructor <init>(Lcom/android/email/activity/setup/AccountSetupNames;Lcom/android/emailcommon/provider/Account;)V
     .registers 3
     .parameter
     .parameter "account"
 
     .prologue
-    .line 597
+    .line 249
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 598
-    iput-object p2, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 250
+    iput-object p2, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mAccount:Lcom/android/emailcommon/provider/Account;
 
-    .line 599
+    .line 251
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mContext:Landroid/content/Context;
 
-    .line 600
+    .line 252
     return-void
 .end method
 
 
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Boolean;
-    .registers 7
+    .registers 6
     .parameter "params"
 
     .prologue
-    .line 605
+    .line 257
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 606
+    .line 258
     .local v0, cv:Landroid/content/ContentValues;
-    const-string v2, "displayName"
+    const-string v1, "displayName"
 
-    iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mAccount:Lcom/android/emailcommon/provider/Account;
 
-    invoke-virtual {v3}, Lcom/android/emailcommon/provider/EmailContent$Account;->getDisplayName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 607
-    const-string v2, "senderName"
-
-    iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    invoke-virtual {v3}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSenderName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 611
-    :try_start_1b
-    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v2, v3, v0}, Lcom/android/emailcommon/provider/EmailContent$Account;->update(Landroid/content/Context;Landroid/content/ContentValues;)I
-    :try_end_22
-    .catch Ljava/lang/UnsupportedOperationException; {:try_start_1b .. :try_end_22} :catch_36
-
-    .line 618
-    :goto_22
-    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
-
-    invoke-static {v2}, Lcom/android/email/AccountBackupRestore;->backupAccounts(Landroid/content/Context;)V
-
-    .line 620
-    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mContext:Landroid/content/Context;
-
-    iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iget-wide v3, v3, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v2, v3, v4}, Lcom/android/emailcommon/provider/EmailContent$Account;->isSecurityHold(Landroid/content/Context;J)Z
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v2}, Lcom/android/emailcommon/provider/Account;->getDisplayName()Ljava/lang/String;
 
     move-result-object v2
 
-    return-object v2
+    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 612
-    :catch_36
-    move-exception v1
+    .line 259
+    const-string v1, "senderName"
 
-    .line 613
-    .local v1, e:Ljava/lang/UnsupportedOperationException;
-    const-string v2, "AccountSetupNames"
+    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mAccount:Lcom/android/emailcommon/provider/Account;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Lcom/android/emailcommon/provider/Account;->getSenderName()Ljava/lang/String;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v2
 
-    const-string v4, "Exception Occured!!!"
+    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 260
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mAccount:Lcom/android/emailcommon/provider/Account;
 
-    move-result-object v3
+    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v1}, Ljava/lang/UnsupportedOperationException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v1, v2, v0}, Lcom/android/emailcommon/provider/Account;->update(Landroid/content/Context;Landroid/content/ContentValues;)I
 
-    move-result-object v4
+    .line 263
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/email/provider/AccountBackupRestore;->backup(Landroid/content/Context;)V
 
-    move-result-object v3
+    .line 265
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mAccount:Lcom/android/emailcommon/provider/Account;
 
-    move-result-object v3
+    iget-wide v2, v2, Lcom/android/emailcommon/provider/Account;->mId:J
 
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2, v3}, Lcom/android/emailcommon/provider/Account;->isSecurityHold(Landroid/content/Context;J)Z
 
-    goto :goto_22
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    return-object v1
 .end method
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
@@ -163,7 +125,7 @@
     .parameter "x0"
 
     .prologue
-    .line 591
+    .line 244
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -181,94 +143,45 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 625
+    .line 270
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->isCancelled()Z
 
     move-result v1
 
     if-nez v1, :cond_1c
 
-    .line 626
+    .line 271
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
     if-eqz v1, :cond_1d
 
-    .line 627
+    .line 272
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
 
-    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
+    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->mAccount:Lcom/android/emailcommon/provider/Account;
 
-    iget-wide v2, v2, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v2, v2, Lcom/android/emailcommon/provider/Account;->mId:J
 
     invoke-static {v1, v2, v3, v4}, Lcom/android/email/activity/setup/AccountSecurity;->actionUpdateSecurityIntent(Landroid/content/Context;JZ)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 629
+    .line 274
     .local v0, i:Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
 
     invoke-virtual {v1, v0, v4}, Lcom/android/email/activity/setup/AccountSetupNames;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 639
+    .line 279
     .end local v0           #i:Landroid/content/Intent;
     :cond_1c
     :goto_1c
     return-void
 
-    .line 632
+    .line 276
     :cond_1d
-    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
-
-    #getter for: Lcom/android/email/activity/setup/AccountSetupNames;->signonIM:Landroid/widget/CheckBox;
-    invoke-static {v1}, Lcom/android/email/activity/setup/AccountSetupNames;->access$200(Lcom/android/email/activity/setup/AccountSetupNames;)Landroid/widget/CheckBox;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_49
-
-    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
-
-    #getter for: Lcom/android/email/activity/setup/AccountSetupNames;->signonIM:Landroid/widget/CheckBox;
-    invoke-static {v1}, Lcom/android/email/activity/setup/AccountSetupNames;->access$200(Lcom/android/email/activity/setup/AccountSetupNames;)Landroid/widget/CheckBox;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/CheckBox;->isActivated()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_49
-
-    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
-
-    #getter for: Lcom/android/email/activity/setup/AccountSetupNames;->signonIM:Landroid/widget/CheckBox;
-    invoke-static {v1}, Lcom/android/email/activity/setup/AccountSetupNames;->access$200(Lcom/android/email/activity/setup/AccountSetupNames;)Landroid/widget/CheckBox;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/CheckBox;->isChecked()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_49
-
-    .line 633
-    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
-
-    invoke-virtual {v1}, Lcom/android/email/activity/setup/AccountSetupNames;->actionAccountToIM()V
-
-    .line 634
-    const-string v1, "Email"
-
-    const-string v2, "actionAccountToIM "
-
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 636
-    :cond_49
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupNames$FinalSetupTask;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
 
     #calls: Lcom/android/email/activity/setup/AccountSetupNames;->finishActivity()V
@@ -282,7 +195,7 @@
     .parameter "x0"
 
     .prologue
-    .line 591
+    .line 244
     check-cast p1, Ljava/lang/Boolean;
 
     .end local p1

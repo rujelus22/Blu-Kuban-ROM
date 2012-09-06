@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:background="@drawable/view_selector_list" android:paddingRight="@dimen/padding_right_size_1" android:layout_width="fill_parent" android:layout_height="@dimen/view_layout_height_size_2"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include android:id="@id/task_list_item_base" layout="@layout/task_list_item_base" />
-    <CheckBox android:layout_gravity="center" android:id="@id/delete_check" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_top_size_1" android:button="@drawable/task_check_off_select" />
-</LinearLayout>

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 136
+    .line 132
     iput-object p1, p0, Lcom/google/android/finsky/layout/BadgeSection$1;->this$0:Lcom/google/android/finsky/layout/BadgeSection;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .parameter "v"
 
     .prologue
-    .line 139
+    .line 135
     iget-object v0, p0, Lcom/google/android/finsky/layout/BadgeSection$1;->this$0:Lcom/google/android/finsky/layout/BadgeSection;
 
     #calls: Lcom/google/android/finsky/layout/BadgeSection;->expand()V
     invoke-static {v0}, Lcom/google/android/finsky/layout/BadgeSection;->access$000(Lcom/google/android/finsky/layout/BadgeSection;)V
 
-    .line 140
+    .line 136
     return-void
 .end method

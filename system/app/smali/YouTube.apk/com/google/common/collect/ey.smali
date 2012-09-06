@@ -1,69 +1,63 @@
 .class final Lcom/google/common/collect/ey;
-.super Ljava/util/AbstractSet;
+.super Ljava/util/AbstractSequentialList;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Object;
-
-.field final synthetic b:Lcom/google/common/collect/Multimaps$MapMultimap;
+.field final synthetic a:Lcom/google/common/collect/LinkedListMultimap;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/Multimaps$MapMultimap;Ljava/lang/Object;)V
-    .registers 3
-    .parameter
+.method constructor <init>(Lcom/google/common/collect/LinkedListMultimap;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 979
-    iput-object p1, p0, Lcom/google/common/collect/ey;->b:Lcom/google/common/collect/Multimaps$MapMultimap;
+    .line 937
+    iput-object p1, p0, Lcom/google/common/collect/ey;->a:Lcom/google/common/collect/LinkedListMultimap;
 
-    iput-object p2, p0, Lcom/google/common/collect/ey;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
+    invoke-direct {p0}, Ljava/util/AbstractSequentialList;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final iterator()Ljava/util/Iterator;
-    .registers 2
+.method public final listIterator(I)Ljava/util/ListIterator;
+    .registers 4
+    .parameter
 
     .prologue
-    .line 981
-    new-instance v0, Lcom/google/common/collect/ez;
+    .line 943
+    new-instance v0, Lcom/google/common/collect/fl;
 
-    invoke-direct {v0, p0}, Lcom/google/common/collect/ez;-><init>(Lcom/google/common/collect/ey;)V
+    iget-object v1, p0, Lcom/google/common/collect/ey;->a:Lcom/google/common/collect/LinkedListMultimap;
 
-    return-object v0
+    invoke-direct {v0, v1, p1}, Lcom/google/common/collect/fl;-><init>(Lcom/google/common/collect/LinkedListMultimap;I)V
+
+    .line 944
+    new-instance v1, Lcom/google/common/collect/ez;
+
+    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/ez;-><init>(Lcom/google/common/collect/ey;Ljava/util/ListIterator;)V
+
+    return-object v1
 .end method
 
 .method public final size()I
-    .registers 3
+    .registers 2
 
     .prologue
-    .line 1005
-    iget-object v0, p0, Lcom/google/common/collect/ey;->b:Lcom/google/common/collect/Multimaps$MapMultimap;
+    .line 939
+    iget-object v0, p0, Lcom/google/common/collect/ey;->a:Lcom/google/common/collect/LinkedListMultimap;
 
-    iget-object v0, v0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
+    #getter for: Lcom/google/common/collect/LinkedListMultimap;->keyCount:Lcom/google/common/collect/iq;
+    invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$600(Lcom/google/common/collect/LinkedListMultimap;)Lcom/google/common/collect/iq;
 
-    iget-object v1, p0, Lcom/google/common/collect/ey;->a:Ljava/lang/Object;
+    move-result-object v0
 
-    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    invoke-interface {v0}, Lcom/google/common/collect/iq;->size()I
 
     move-result v0
 
-    if-eqz v0, :cond_e
-
-    const/4 v0, 0x1
-
-    :goto_d
     return v0
-
-    :cond_e
-    const/4 v0, 0x0
-
-    goto :goto_d
 .end method

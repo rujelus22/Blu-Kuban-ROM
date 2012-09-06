@@ -28,7 +28,7 @@
     .parameter
 
     .prologue
-    .line 277
+    .line 218
     iput-object p1, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$2;->this$0:Lcom/google/android/finsky/download/DownloadQueueImpl;
 
     iput-object p3, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$2;->val$download:Lcom/google/android/finsky/download/Download;
@@ -45,11 +45,11 @@
     .parameter "listener"
 
     .prologue
-    .line 280
+    .line 221
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$2;->val$download:Lcom/google/android/finsky/download/Download;
 
-    invoke-interface {p1, v0}, Lcom/google/android/finsky/download/DownloadQueueListener;->onAdd(Lcom/google/android/finsky/download/Download;)V
+    invoke-interface {p1, v0}, Lcom/google/android/finsky/download/DownloadQueueListener;->onComplete(Lcom/google/android/finsky/download/Download;)V
 
-    .line 281
+    .line 222
     return-void
 .end method

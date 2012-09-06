@@ -15,9 +15,13 @@
 
 
 # instance fields
+.field private associationMethod:I
+
 .field private carrierApiVersion:I
 
 .field private carrierIconId:Ljava/lang/String;
+
+.field private customerSupport:Ljava/lang/String;
 
 .field private getCredentialsUrl:Ljava/lang/String;
 
@@ -42,6 +46,10 @@
 
 .field private perTransactionCredentialsRequired:Z
 
+.field private requestUserTokenText:Ljava/lang/String;
+
+.field private requestUserTokenTo:Ljava/lang/String;
+
 .field private sendSubscriberInfoWithCarrierRequests:Z
 
 .field private showCarrierTos:Z
@@ -52,7 +60,7 @@
     .registers 1
 
     .prologue
-    .line 142
+    .line 186
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -63,7 +71,7 @@
     .parameter "x0"
 
     .prologue
-    .line 129
+    .line 169
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->id:Ljava/lang/String;
 
     return-object v0
@@ -74,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 129
+    .line 169
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->name:Ljava/lang/String;
 
     return-object v0
@@ -85,10 +93,54 @@
     .parameter "x0"
 
     .prologue
-    .line 129
+    .line 169
     iget-boolean v0, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->passwordRequired:Z
 
     return v0
+.end method
+
+.method static synthetic access$1100(Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;)I
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 169
+    iget v0, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->associationMethod:I
+
+    return v0
+.end method
+
+.method static synthetic access$1200(Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;)Ljava/lang/String;
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 169
+    iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->requestUserTokenTo:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1300(Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;)Ljava/lang/String;
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 169
+    iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->requestUserTokenText:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1400(Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;)Ljava/lang/String;
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 169
+    iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->customerSupport:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method static synthetic access$200(Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;)Ljava/util/List;
@@ -96,7 +148,7 @@
     .parameter "x0"
 
     .prologue
-    .line 129
+    .line 169
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->mncMccs:Ljava/util/List;
 
     return-object v0
@@ -107,7 +159,7 @@
     .parameter "x0"
 
     .prologue
-    .line 129
+    .line 169
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->getProvisioningUrl:Ljava/lang/String;
 
     return-object v0
@@ -118,7 +170,7 @@
     .parameter "x0"
 
     .prologue
-    .line 129
+    .line 169
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->getCredentialsUrl:Ljava/lang/String;
 
     return-object v0
@@ -129,7 +181,7 @@
     .parameter "x0"
 
     .prologue
-    .line 129
+    .line 169
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->carrierIconId:Ljava/lang/String;
 
     return-object v0
@@ -140,7 +192,7 @@
     .parameter "x0"
 
     .prologue
-    .line 129
+    .line 169
     iget-boolean v0, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->showCarrierTos:Z
 
     return v0
@@ -151,7 +203,7 @@
     .parameter "x0"
 
     .prologue
-    .line 129
+    .line 169
     iget v0, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->carrierApiVersion:I
 
     return v0
@@ -162,7 +214,7 @@
     .parameter "x0"
 
     .prologue
-    .line 129
+    .line 169
     iget-boolean v0, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->perTransactionCredentialsRequired:Z
 
     return v0
@@ -173,7 +225,7 @@
     .parameter "x0"
 
     .prologue
-    .line 129
+    .line 169
     iget-boolean v0, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->sendSubscriberInfoWithCarrierRequests:Z
 
     return v0
@@ -185,7 +237,7 @@
     .registers 3
 
     .prologue
-    .line 208
+    .line 272
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters;
 
     const/4 v1, 0x0
@@ -195,15 +247,27 @@
     return-object v0
 .end method
 
+.method public setAssociationMethod(I)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+    .registers 2
+    .parameter "associationMethod"
+
+    .prologue
+    .line 255
+    iput p1, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->associationMethod:I
+
+    .line 256
+    return-object p0
+.end method
+
 .method public setCarrierApiVersion(I)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
     .registers 2
     .parameter "carrierApiVersion"
 
     .prologue
-    .line 189
+    .line 237
     iput p1, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->carrierApiVersion:I
 
-    .line 190
+    .line 238
     return-object p0
 .end method
 
@@ -212,10 +276,22 @@
     .parameter "carrierIconId"
 
     .prologue
-    .line 181
+    .line 229
     iput-object p1, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->carrierIconId:Ljava/lang/String;
 
-    .line 182
+    .line 230
+    return-object p0
+.end method
+
+.method public setCustomerSupport(Ljava/lang/String;)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+    .registers 2
+    .parameter "customerSupport"
+
+    .prologue
+    .line 267
+    iput-object p1, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->customerSupport:Ljava/lang/String;
+
+    .line 268
     return-object p0
 .end method
 
@@ -224,10 +300,10 @@
     .parameter "getCredentialsUrl"
 
     .prologue
-    .line 177
+    .line 225
     iput-object p1, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->getCredentialsUrl:Ljava/lang/String;
 
-    .line 178
+    .line 226
     return-object p0
 .end method
 
@@ -236,10 +312,10 @@
     .parameter "getProvisioningUrl"
 
     .prologue
-    .line 173
+    .line 221
     iput-object p1, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->getProvisioningUrl:Ljava/lang/String;
 
-    .line 174
+    .line 222
     return-object p0
 .end method
 
@@ -248,10 +324,10 @@
     .parameter "id"
 
     .prologue
-    .line 160
+    .line 208
     iput-object p1, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->id:Ljava/lang/String;
 
-    .line 161
+    .line 209
     return-object p0
 .end method
 
@@ -270,11 +346,11 @@
     .end annotation
 
     .prologue
-    .line 169
+    .line 217
     .local p1, mncMccs:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     iput-object p1, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->mncMccs:Ljava/util/List;
 
-    .line 170
+    .line 218
     return-object p0
 .end method
 
@@ -283,10 +359,22 @@
     .parameter "name"
 
     .prologue
-    .line 165
+    .line 213
     iput-object p1, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->name:Ljava/lang/String;
 
-    .line 166
+    .line 214
+    return-object p0
+.end method
+
+.method public setPasswordRequired(Z)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+    .registers 2
+    .parameter "passwordRequired"
+
+    .prologue
+    .line 251
+    iput-boolean p1, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->passwordRequired:Z
+
+    .line 252
     return-object p0
 .end method
 
@@ -295,10 +383,34 @@
     .parameter "perTransactionCredentialsRequired"
 
     .prologue
-    .line 194
+    .line 242
     iput-boolean p1, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->perTransactionCredentialsRequired:Z
 
-    .line 195
+    .line 243
+    return-object p0
+.end method
+
+.method public setRequestUserTokenText(Ljava/lang/String;)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+    .registers 2
+    .parameter "requestUserTokenText"
+
+    .prologue
+    .line 263
+    iput-object p1, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->requestUserTokenText:Ljava/lang/String;
+
+    .line 264
+    return-object p0
+.end method
+
+.method public setRequestUserTokenTo(Ljava/lang/String;)Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;
+    .registers 2
+    .parameter "requestUserTokenTo"
+
+    .prologue
+    .line 259
+    iput-object p1, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->requestUserTokenTo:Ljava/lang/String;
+
+    .line 260
     return-object p0
 .end method
 
@@ -307,10 +419,10 @@
     .parameter "sendSubscriberInfoWithCarrierRequests"
 
     .prologue
-    .line 199
+    .line 247
     iput-boolean p1, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->sendSubscriberInfoWithCarrierRequests:Z
 
-    .line 200
+    .line 248
     return-object p0
 .end method
 
@@ -319,9 +431,9 @@
     .parameter "showCarrierTos"
 
     .prologue
-    .line 185
+    .line 233
     iput-boolean p1, p0, Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingParameters$Builder;->showCarrierTos:Z
 
-    .line 186
+    .line 234
     return-object p0
 .end method

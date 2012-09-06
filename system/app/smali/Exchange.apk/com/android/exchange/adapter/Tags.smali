@@ -22,12 +22,12 @@
 
     const/4 v5, 0x0
 
-    .line 1293
+    .line 616
     const/16 v0, 0x19
 
     new-array v0, v0, [[Ljava/lang/String;
 
-    const/16 v1, 0x25
+    const/16 v1, 0x22
 
     new-array v1, v1, [Ljava/lang/String;
 
@@ -225,27 +225,9 @@
 
     aput-object v3, v1, v2
 
-    const/16 v2, 0x22
-
-    const-string v3, "ConversationMode"
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0x23
-
-    const-string v3, "MaxItems"
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0x24
-
-    const-string v3, "HeartbeatInterval"
-
-    aput-object v3, v1, v2
-
     aput-object v1, v0, v5
 
-    const/16 v1, 0x3a
+    const/16 v1, 0x38
 
     new-array v1, v1, [Ljava/lang/String;
 
@@ -572,18 +554,6 @@
     const/16 v2, 0x37
 
     const-string v3, "Picture"
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0x38
-
-    const-string v3, "Alias"
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0x39
-
-    const-string v3, "WeightedRank"
 
     aput-object v3, v1, v2
 
@@ -939,113 +909,7 @@
 
     aput-object v1, v0, v7
 
-    const/16 v1, 0x13
-
-    new-array v1, v1, [Ljava/lang/String;
-
-    const-string v2, "Notify"
-
-    aput-object v2, v1, v5
-
-    const-string v2, "Notification"
-
-    aput-object v2, v1, v6
-
-    const-string v2, "version"
-
-    aput-object v2, v1, v7
-
-    const-string v2, "lifeTime"
-
-    aput-object v2, v1, v8
-
-    const-string v2, "deviceInfo"
-
-    aput-object v2, v1, v9
-
-    const/4 v2, 0x5
-
-    const-string v3, "enable"
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x6
-
-    const-string v3, "folder"
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x7
-
-    const-string v3, "serverId"
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0x8
-
-    const-string v3, "deviceAddress"
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0x9
-
-    const-string v3, "validCarrierProfiles"
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0xa
-
-    const-string v3, "carrierProfile"
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0xb
-
-    const-string v3, "status"
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0xc
-
-    const-string v3, "responses"
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0xd
-
-    const-string v3, "devices"
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0xe
-
-    const-string v3, "device"
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0xf
-
-    const-string v3, "id"
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0x10
-
-    const-string v3, "expiry"
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0x11
-
-    const-string v3, "notifyGUID"
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0x12
-
-    const-string v3, "devideFriendlyName"
-
-    aput-object v3, v1, v2
+    new-array v1, v5, [Ljava/lang/String;
 
     aput-object v1, v0, v8
 
@@ -1357,19 +1221,19 @@
 
     const/16 v2, 0x34
 
-    const-string v3, "FirstDayOfWeek"
+    const-string v3, "CalFirstDayOfWeek"
 
     aput-object v3, v1, v2
 
     const/16 v2, 0x35
 
-    const-string v3, "OnlineMeetingInternalLink"
+    const-string v3, "CalOnlineMeetingConfLink"
 
     aput-object v3, v1, v2
 
     const/16 v2, 0x36
 
-    const-string v3, "OnlineMeetingExternalLink"
+    const-string v3, "CalOnlineMeetingExternalLink"
 
     aput-object v3, v1, v2
 
@@ -1435,7 +1299,7 @@
 
     aput-object v3, v2, v6
 
-    const-string v3, "Collection"
+    const-string v3, "Collections"
 
     aput-object v3, v2, v7
 
@@ -1651,7 +1515,7 @@
 
     const/16 v1, 0x9
 
-    const/16 v2, 0x22
+    const/16 v2, 0x1f
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -1831,205 +1695,17 @@
 
     aput-object v4, v2, v3
 
-    const/16 v3, 0x1f
-
-    const-string v4, "CalendarType"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x20
-
-    const-string v4, "IsLeapMonth"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x21
-
-    const-string v4, "FirstDayOfWeek"
-
-    aput-object v4, v2, v3
-
     aput-object v2, v0, v1
 
     const/16 v1, 0xa
 
-    const/16 v2, 0x19
-
-    new-array v2, v2, [Ljava/lang/String;
-
-    const-string v3, "resolveRecipients"
-
-    aput-object v3, v2, v5
-
-    const-string v3, "response"
-
-    aput-object v3, v2, v6
-
-    const-string v3, "status"
-
-    aput-object v3, v2, v7
-
-    const-string v3, "type"
-
-    aput-object v3, v2, v8
-
-    const-string v3, "recipient"
-
-    aput-object v3, v2, v9
-
-    const/4 v3, 0x5
-
-    const-string v4, "displayName"
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x6
-
-    const-string v4, "emailAddress"
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x7
-
-    const-string v4, "certificates"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x8
-
-    const-string v4, "certificate"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x9
-
-    const-string v4, "miniCertificate"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0xa
-
-    const-string v4, "options"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0xb
-
-    const-string v4, "to"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0xc
-
-    const-string v4, "certificateRetrieval"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0xd
-
-    const-string v4, "recipientCount"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0xe
-
-    const-string v4, "maxCertificates"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0xf
-
-    const-string v4, "maxAmbigiousRecipients"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x10
-
-    const-string v4, "certificateCount"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x11
-
-    const-string v4, "Availability"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x12
-
-    const-string v4, "StartTime"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x13
-
-    const-string v4, "EndTime"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x14
-
-    const-string v4, "MergedFreeBusy"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x15
-
-    const-string v4, "Picture"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x16
-
-    const-string v4, "MaxSize"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x17
-
-    const-string v4, "Data"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x18
-
-    const-string v4, "MaxPictures"
-
-    aput-object v4, v2, v3
+    new-array v2, v5, [Ljava/lang/String;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb
 
-    const/4 v2, 0x6
-
-    new-array v2, v2, [Ljava/lang/String;
-
-    const-string v3, "validateCert"
-
-    aput-object v3, v2, v5
-
-    const-string v3, "certificates"
-
-    aput-object v3, v2, v6
-
-    const-string v3, "certificate"
-
-    aput-object v3, v2, v7
-
-    const-string v3, "certificateChain"
-
-    aput-object v3, v2, v8
-
-    const-string v3, "checkCRL"
-
-    aput-object v3, v2, v9
-
-    const/4 v3, 0x5
-
-    const-string v4, "status"
-
-    aput-object v4, v2, v3
+    new-array v2, v5, [Ljava/lang/String;
 
     aput-object v2, v0, v1
 
@@ -2177,7 +1853,7 @@
 
     const/4 v3, 0x6
 
-    const-string v4, "Status"
+    const-string v4, "ProvisionStatus"
 
     aput-object v4, v2, v3
 
@@ -2467,7 +2143,7 @@
 
     const/16 v1, 0xf
 
-    const/16 v2, 0x1f
+    const/16 v2, 0x19
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -2611,47 +2287,11 @@
 
     aput-object v4, v2, v3
 
-    const/16 v3, 0x19
-
-    const-string v4, "UserName"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x1a
-
-    const-string v4, "Password"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x1b
-
-    const-string v4, "ConversationId"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x1c
-
-    const-string v4, "Picture"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x1d
-
-    const-string v4, "MaxSize"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x1e
-
-    const-string v4, "MAxPictures"
-
-    aput-object v4, v2, v3
-
     aput-object v2, v0, v1
 
     const/16 v1, 0x10
 
-    const/16 v2, 0xe
+    const/16 v2, 0xb
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -2711,29 +2351,11 @@
 
     aput-object v4, v2, v3
 
-    const/16 v3, 0xb
-
-    const-string v4, "Picture"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0xc
-
-    const-string v4, "Status"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0xd
-
-    const-string v4, "Data"
-
-    aput-object v4, v2, v3
-
     aput-object v2, v0, v1
 
     const/16 v1, 0x11
 
-    const/16 v2, 0x17
+    const/16 v2, 0x13
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -2841,35 +2463,11 @@
 
     aput-object v4, v2, v3
 
-    const/16 v3, 0x13
-
-    const-string v4, "BasePreview"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x14
-
-    const-string v4, "BodyPartPreference"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x15
-
-    const-string v4, "BodyPart"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x16
-
-    const-string v4, "Status"
-
-    aput-object v4, v2, v3
-
     aput-object v2, v0, v1
 
     const/16 v1, 0x12
 
-    const/16 v2, 0x2f
+    const/16 v2, 0x1e
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -2877,7 +2475,7 @@
 
     aput-object v3, v2, v5
 
-    const-string v3, "Status"
+    const-string v3, "SettingsStatus"
 
     aput-object v3, v2, v6
 
@@ -2889,91 +2487,91 @@
 
     aput-object v3, v2, v8
 
-    const-string v3, "oof"
+    const-string v3, "Oof"
 
     aput-object v3, v2, v9
 
     const/4 v3, 0x5
 
-    const-string v4, "oofState"
+    const-string v4, "OofState"
 
     aput-object v4, v2, v3
 
     const/4 v3, 0x6
 
-    const-string v4, "startTime"
+    const-string v4, "SettingsStartTime"
 
     aput-object v4, v2, v3
 
     const/4 v3, 0x7
 
-    const-string v4, "endTime"
+    const-string v4, "SettingsEndTime"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x8
 
-    const-string v4, "oofMessage"
+    const-string v4, "OofMessage"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x9
 
-    const-string v4, "appliedToInternal"
+    const-string v4, "AppliesToInternal"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xa
 
-    const-string v4, "appliesToExtKnown"
+    const-string v4, "AppliesToExternalKnown"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xb
 
-    const-string v4, "appliesToExtUnknown"
+    const-string v4, "AppliesToExternalUnknown"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xc
 
-    const-string v4, "enabled"
+    const-string v4, "Enabled"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xd
 
-    const-string v4, "replyMessage"
+    const-string v4, "ReplyMessage"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xe
 
-    const-string v4, "bodyType"
+    const-string v4, "BodyType"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xf
 
-    const-string v4, "devicePassword"
+    const-string v4, "DevicePassword"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x10
 
-    const-string v4, "password"
+    const-string v4, "Password"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x11
 
-    const-string v4, "deviceInformation"
+    const-string v4, "DeviceInformation"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x12
 
-    const-string v4, "model"
+    const-string v4, "Model"
 
     aput-object v4, v2, v3
 
@@ -2985,7 +2583,7 @@
 
     const/16 v3, 0x14
 
-    const-string v4, "friendlyName"
+    const-string v4, "FriendlyName"
 
     aput-object v4, v2, v3
 
@@ -3003,25 +2601,25 @@
 
     const/16 v3, 0x17
 
-    const-string v4, "phoneNumber"
+    const-string v4, "PhoneNumber"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x18
 
-    const-string v4, "userInformation"
+    const-string v4, "UserInformation"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x19
 
-    const-string v4, "emailAddress"
+    const-string v4, "EmailAddress"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x1a
 
-    const-string v4, "SMTPAddress"
+    const-string v4, "StmpAddress"
 
     aput-object v4, v2, v3
 
@@ -3033,115 +2631,13 @@
 
     const/16 v3, 0x1c
 
-    const-string v4, "outBoundSms"
+    const-string v4, "EnableOutboundSMS"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x1d
 
-    const-string v4, "networkOperator"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x1e
-
-    const-string v4, "PrimarySmtpAddress"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x1f
-
-    const-string v4, "Accounts"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x20
-
-    const-string v4, "Account"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x21
-
-    const-string v4, "AccountId"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x22
-
-    const-string v4, "AccountName"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x23
-
-    const-string v4, "UserDisplayName"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x24
-
-    const-string v4, "SendDisabled"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x25
-
-    const-string v4, "ihsManagementInformation"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x26
-
-    const-string v4, "primarySmtpAddress"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x27
-
-    const-string v4, "Accounts"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x28
-
-    const-string v4, "Account"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x29
-
-    const-string v4, "AccountId"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x2a
-
-    const-string v4, "AccountName"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x2b
-
-    const-string v4, "UserdisplayName"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x2c
-
-    const-string v4, "sendDisabled"
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x2d
-
-    const-string v4, ""
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x2e
-
-    const-string v4, "rightsManagementsInformation"
+    const-string v4, "MobileOperator"
 
     aput-object v4, v2, v3
 
@@ -3149,47 +2645,7 @@
 
     const/16 v1, 0x13
 
-    const/16 v2, 0x8
-
-    new-array v2, v2, [Ljava/lang/String;
-
-    const-string v3, "linkId"
-
-    aput-object v3, v2, v5
-
-    const-string v3, "displayName"
-
-    aput-object v3, v2, v6
-
-    const-string v3, "isFolder"
-
-    aput-object v3, v2, v7
-
-    const-string v3, "creationDate"
-
-    aput-object v3, v2, v8
-
-    const-string v3, "lastModifiedDate"
-
-    aput-object v3, v2, v9
-
-    const/4 v3, 0x5
-
-    const-string v4, "ishidden"
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x6
-
-    const-string v4, "contentLength"
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x7
-
-    const-string v4, "contentType"
-
-    aput-object v4, v2, v3
+    new-array v2, v5, [Ljava/lang/String;
 
     aput-object v2, v0, v1
 
@@ -3199,119 +2655,119 @@
 
     new-array v2, v2, [Ljava/lang/String;
 
-    const-string v3, "ItemOperations"
+    const-string v3, "Items"
 
     aput-object v3, v2, v5
 
-    const-string v3, "Fetch"
+    const-string v3, "ItemsFetch"
 
     aput-object v3, v2, v6
 
-    const-string v3, "Store"
+    const-string v3, "ItemsStore"
 
     aput-object v3, v2, v7
 
-    const-string v3, "Options"
+    const-string v3, "ItemsOptions"
 
     aput-object v3, v2, v8
 
-    const-string v3, "Range"
+    const-string v3, "ItemsRange"
 
     aput-object v3, v2, v9
 
     const/4 v3, 0x5
 
-    const-string v4, "Total"
+    const-string v4, "ItemsTotal"
 
     aput-object v4, v2, v3
 
     const/4 v3, 0x6
 
-    const-string v4, "Properties"
+    const-string v4, "ItemsProperties"
 
     aput-object v4, v2, v3
 
     const/4 v3, 0x7
 
-    const-string v4, "Data"
+    const-string v4, "ItemsData"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x8
 
-    const-string v4, "Status"
+    const-string v4, "ItemsStatus"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x9
 
-    const-string v4, "Response"
+    const-string v4, "ItemsResponse"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xa
 
-    const-string v4, "Version"
+    const-string v4, "ItemsVersion"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xb
 
-    const-string v4, "Schema"
+    const-string v4, "ItemsSchema"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xc
 
-    const-string v4, "Part"
+    const-string v4, "ItemsPart"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xd
 
-    const-string v4, "EmptyFolderContents"
+    const-string v4, "ItemsEmptyFolder"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xe
 
-    const-string v4, "DeleteSubFolders"
+    const-string v4, "ItemsDeleteSubFolders"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xf
 
-    const-string v4, "UserName"
+    const-string v4, "ItemsUserName"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x10
 
-    const-string v4, "Password"
+    const-string v4, "ItemsPassword"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x11
 
-    const-string v4, "Move"
+    const-string v4, "ItemsMove"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x12
 
-    const-string v4, "DstFldId"
+    const-string v4, "ItemsDstFldId"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x13
 
-    const-string v4, "ConversationId"
+    const-string v4, "ItemsConversationId"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x14
 
-    const-string v4, "MoveAlways"
+    const-string v4, "ItemsMoveAlways"
 
     aput-object v4, v2, v3
 
@@ -3345,61 +2801,61 @@
 
     const/4 v3, 0x5
 
-    const-string v4, "Type"
+    const-string v4, "--unused--"
 
     aput-object v4, v2, v3
 
     const/4 v3, 0x6
 
-    const-string v4, "Source"
+    const-string v4, "ComposeSource"
 
     aput-object v4, v2, v3
 
     const/4 v3, 0x7
 
-    const-string v4, "FolderId"
+    const-string v4, "ComposeFolderId"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x8
 
-    const-string v4, "ItemId"
+    const-string v4, "ComposeItemId"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x9
 
-    const-string v4, "LongId"
+    const-string v4, "ComposeLongId"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xa
 
-    const-string v4, "InstanceId"
+    const-string v4, "ComposeInstanceId"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xb
 
-    const-string v4, "MIME"
+    const-string v4, "ComposeMime"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xc
 
-    const-string v4, "ClientId"
+    const-string v4, "ComposeClientId"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xd
 
-    const-string v4, "Status"
+    const-string v4, "ComposeStatus"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xe
 
-    const-string v4, "AccountId"
+    const-string v4, "ComposeAccountId"
 
     aput-object v4, v2, v3
 
@@ -3411,7 +2867,7 @@
 
     new-array v2, v2, [Ljava/lang/String;
 
-    const-string v3, "UmCallerID"
+    const-string v3, "UmCallerId"
 
     aput-object v3, v2, v5
 
@@ -3451,7 +2907,7 @@
 
     const/16 v3, 0x8
 
-    const-string v4, "ReveivedAsBcc"
+    const-string v4, "ReceivedAsBcc"
 
     aput-object v4, v2, v3
 
@@ -3495,29 +2951,7 @@
 
     const/16 v1, 0x17
 
-    const/4 v2, 0x5
-
-    new-array v2, v2, [Ljava/lang/String;
-
-    const-string v3, "Subject"
-
-    aput-object v3, v2, v5
-
-    const-string v3, "MessageClass"
-
-    aput-object v3, v2, v6
-
-    const-string v3, "LastModifiedDate"
-
-    aput-object v3, v2, v7
-
-    const-string v3, "Categories"
-
-    aput-object v3, v2, v8
-
-    const-string v3, "Category"
-
-    aput-object v3, v2, v9
+    new-array v2, v5, [Ljava/lang/String;
 
     aput-object v2, v0, v1
 
@@ -3527,19 +2961,19 @@
 
     new-array v2, v2, [Ljava/lang/String;
 
-    const-string v3, "RightsManagementSupport"
+    const-string v3, "RMSupport"
 
     aput-object v3, v2, v5
 
-    const-string v3, "RightsManagementTemplates"
+    const-string v3, "RMTemplates"
 
     aput-object v3, v2, v6
 
-    const-string v3, "RightsManagementTemplate"
+    const-string v3, "RMTemplate"
 
     aput-object v3, v2, v7
 
-    const-string v3, "RightsManagementLicense"
+    const-string v3, "RMLicense"
 
     aput-object v3, v2, v8
 
@@ -3633,7 +3067,7 @@
 
     const/16 v3, 0x13
 
-    const-string v4, "RemoveRightsManagementDistribution"
+    const-string v4, "RemoveRMDistribution"
 
     aput-object v4, v2, v3
 
@@ -3649,7 +3083,7 @@
 
     .prologue
     .line 29
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -1,77 +1,42 @@
-.class Lcom/google/googlenav/ui/view/android/ax;
+.class Lcom/google/googlenav/ui/view/android/aX;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/view/ViewGroup$OnHierarchyChangeListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
+.field final synthetic a:Lcom/google/googlenav/ui/view/android/HeadingView;
 
 
 # direct methods
-.method private constructor <init>(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;)V
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/HeadingView;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/ax;->a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
+    .prologue
+    .line 130
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/aX;->a:Lcom/google/googlenav/ui/view/android/HeadingView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;Lcom/google/googlenav/ui/view/android/av;)V
-    .registers 3
-
-    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/view/android/ax;-><init>(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;)V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public onChildViewAdded(Landroid/view/View;Landroid/view/View;)V
-    .registers 4
+.method public run()V
+    .registers 3
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/ax;->a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
+    .prologue
+    .line 132
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aX;->a:Lcom/google/googlenav/ui/view/android/HeadingView;
 
-    if-ne p1, v0, :cond_13
+    const/16 v1, 0x8
 
-    instance-of v0, p2, Lcom/google/googlenav/ui/view/android/DescriptiveRadioButton;
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/view/android/HeadingView;->setVisibility(I)V
 
-    if-eqz v0, :cond_13
-
-    check-cast p2, Lcom/google/googlenav/ui/view/android/DescriptiveRadioButton;
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/ax;->a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;->a(Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;)Lcom/google/googlenav/ui/view/android/au;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Lcom/google/googlenav/ui/view/android/DescriptiveRadioButton;->a(Lcom/google/googlenav/ui/view/android/au;)V
-
-    :cond_13
-    return-void
-.end method
-
-.method public onChildViewRemoved(Landroid/view/View;Landroid/view/View;)V
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/ax;->a:Lcom/google/googlenav/ui/view/android/DescriptiveRadioGroup;
-
-    if-ne p1, v0, :cond_e
-
-    instance-of v0, p2, Lcom/google/googlenav/ui/view/android/DescriptiveRadioButton;
-
-    if-eqz v0, :cond_e
-
-    check-cast p2, Lcom/google/googlenav/ui/view/android/DescriptiveRadioButton;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p2, v0}, Lcom/google/googlenav/ui/view/android/DescriptiveRadioButton;->a(Lcom/google/googlenav/ui/view/android/au;)V
-
-    :cond_e
+    .line 133
     return-void
 .end method

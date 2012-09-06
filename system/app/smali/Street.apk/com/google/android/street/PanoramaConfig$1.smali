@@ -32,7 +32,7 @@
     .registers 1
 
     .prologue
-    .line 632
+    .line 626
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "parcel"
 
     .prologue
-    .line 634
+    .line 628
     new-instance v0, Lcom/google/android/street/PanoramaConfig;
 
     invoke-direct {v0, p1}, Lcom/google/android/street/PanoramaConfig;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 632
+    .line 626
     invoke-virtual {p0, p1}, Lcom/google/android/street/PanoramaConfig$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/street/PanoramaConfig;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .parameter "size"
 
     .prologue
-    .line 638
+    .line 632
     new-array v0, p1, [Lcom/google/android/street/PanoramaConfig;
 
     return-object v0
@@ -82,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 632
+    .line 626
     invoke-virtual {p0, p1}, Lcom/google/android/street/PanoramaConfig$1;->newArray(I)[Lcom/google/android/street/PanoramaConfig;
 
     move-result-object v0

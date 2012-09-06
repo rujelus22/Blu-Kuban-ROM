@@ -1,190 +1,136 @@
-.class public LbA/C;
+.class public Lba/c;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# static fields
-.field public static final a:Lam/e;
+# instance fields
+.field private final a:F
 
-.field public static final b:Lam/e;
+.field private final b:F
 
-.field public static final c:Lam/a;
+.field private final c:Lba/d;
+
+.field private d:F
+
+.field private e:F
+
+.field private f:F
+
+.field private g:F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 8
+.method public constructor <init>(Lba/d;FF)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v7, 0x3
+    .prologue
+    .line 24
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v6, 0x2
+    .line 25
+    iput-object p1, p0, Lba/c;->c:Lba/d;
 
-    const/4 v5, 0x1
+    .line 26
+    iput p2, p0, Lba/c;->a:F
 
-    const/16 v4, 0x224
+    .line 27
+    iput p3, p0, Lba/c;->b:F
 
-    const/4 v1, 0x0
-
-    new-instance v0, Lam/e;
-
-    invoke-direct {v0}, Lam/e;-><init>()V
-
-    sput-object v0, LbA/C;->a:Lam/e;
-
-    new-instance v0, Lam/e;
-
-    invoke-direct {v0}, Lam/e;-><init>()V
-
-    sput-object v0, LbA/C;->b:Lam/e;
-
-    new-instance v0, Lam/a;
-
-    const v2, 0x108dcc6
-
-    sget-object v3, LbA/C;->a:Lam/e;
-
-    invoke-direct {v0, v2, v3}, Lam/a;-><init>(ILam/e;)V
-
-    sput-object v0, LbA/C;->c:Lam/a;
-
-    sget-object v2, LbA/C;->a:Lam/e;
-
-    move-object v0, v1
-
-    check-cast v0, LbA/D;
-
-    invoke-virtual {v2, v4, v5, v1}, Lam/e;->a(IILjava/lang/Object;)Lam/e;
-
-    move-result-object v2
-
-    const/16 v3, 0x21b
-
-    move-object v0, v1
-
-    check-cast v0, LbA/D;
-
-    sget-object v0, LbA/ai;->a:Lam/e;
-
-    invoke-virtual {v2, v3, v6, v0}, Lam/e;->a(IILjava/lang/Object;)Lam/e;
-
-    move-result-object v2
-
-    const/16 v3, 0x41b
-
-    move-object v0, v1
-
-    check-cast v0, LbA/D;
-
-    sget-object v0, LbA/C;->b:Lam/e;
-
-    invoke-virtual {v2, v3, v7, v0}, Lam/e;->a(IILjava/lang/Object;)Lam/e;
-
-    sget-object v2, LbA/C;->b:Lam/e;
-
-    move-object v0, v1
-
-    check-cast v0, LbA/E;
-
-    invoke-virtual {v2, v4, v5, v1}, Lam/e;->a(IILjava/lang/Object;)Lam/e;
-
-    move-result-object v2
-
-    const/16 v3, 0x424
-
-    move-object v0, v1
-
-    check-cast v0, LbA/E;
-
-    const/4 v0, 0x6
-
-    invoke-virtual {v2, v3, v0, v1}, Lam/e;->a(IILjava/lang/Object;)Lam/e;
-
-    move-result-object v2
-
-    const/16 v3, 0x21b
-
-    move-object v0, v1
-
-    check-cast v0, LbA/E;
-
-    sget-object v0, LbA/ai;->a:Lam/e;
-
-    invoke-virtual {v2, v3, v6, v0}, Lam/e;->a(IILjava/lang/Object;)Lam/e;
-
-    move-result-object v2
-
-    const/16 v3, 0x21e
-
-    move-object v0, v1
-
-    check-cast v0, LbA/E;
-
-    invoke-virtual {v2, v3, v7, v1}, Lam/e;->a(IILjava/lang/Object;)Lam/e;
-
-    move-result-object v2
-
-    move-object v0, v1
-
-    check-cast v0, LbA/E;
-
-    const/4 v0, 0x4
-
-    invoke-virtual {v2, v4, v0, v1}, Lam/e;->a(IILjava/lang/Object;)Lam/e;
-
-    move-result-object v2
-
-    const/16 v3, 0x211
-
-    move-object v0, v1
-
-    check-cast v0, LbA/E;
-
-    const/4 v0, 0x5
-
-    invoke-virtual {v2, v3, v0, v1}, Lam/e;->a(IILjava/lang/Object;)Lam/e;
-
-    move-result-object v2
-
-    const/16 v3, 0x211
-
-    move-object v0, v1
-
-    check-cast v0, LbA/E;
-
-    const/4 v0, 0x7
-
-    invoke-virtual {v2, v3, v0, v1}, Lam/e;->a(IILjava/lang/Object;)Lam/e;
-
-    move-result-object v2
-
-    const/16 v3, 0x217
-
-    move-object v0, v1
-
-    check-cast v0, LbA/E;
-
-    const/16 v0, 0x8
-
-    invoke-virtual {v2, v3, v0, v1}, Lam/e;->a(IILjava/lang/Object;)Lam/e;
-
-    move-result-object v2
-
-    const/16 v3, 0x217
-
-    move-object v0, v1
-
-    check-cast v0, LbA/E;
-
-    const/16 v0, 0x9
-
-    invoke-virtual {v2, v3, v0, v1}, Lam/e;->a(IILjava/lang/Object;)Lam/e;
-
+    .line 28
     return-void
 .end method
 
-.method public constructor <init>()V
-    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public a()F
+    .registers 2
 
+    .prologue
+    .line 31
+    iget v0, p0, Lba/c;->f:F
+
+    return v0
+.end method
+
+.method public a(F)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 35
+    iput p1, p0, Lba/c;->f:F
+
+    .line 36
     return-void
+.end method
+
+.method a(FF)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 47
+    iput p1, p0, Lba/c;->d:F
+
+    .line 48
+    iput p2, p0, Lba/c;->e:F
+
+    .line 49
+    invoke-virtual {p0}, Lba/c;->b()V
+
+    .line 50
+    return-void
+.end method
+
+.method public b()V
+    .registers 5
+
+    .prologue
+    .line 53
+    iget v0, p0, Lba/c;->d:F
+
+    iget v1, p0, Lba/c;->e:F
+
+    iget-object v2, p0, Lba/c;->c:Lba/d;
+
+    invoke-virtual {v2}, Lba/d;->c()Lbb/f;
+
+    move-result-object v2
+
+    iget v2, v2, Lbb/f;->a:F
+
+    iget-object v3, p0, Lba/c;->c:Lba/d;
+
+    invoke-virtual {v3}, Lba/d;->c()Lbb/f;
+
+    move-result-object v3
+
+    iget v3, v3, Lbb/f;->b:F
+
+    invoke-static {v0, v1, v2, v3}, Lbb/c;->a(FFFF)F
+
+    move-result v0
+
+    const v1, 0x40490fdb
+
+    add-float/2addr v0, v1
+
+    iput v0, p0, Lba/c;->g:F
+
+    .line 55
+    return-void
+.end method
+
+.method public c()F
+    .registers 2
+
+    .prologue
+    .line 58
+    iget v0, p0, Lba/c;->g:F
+
+    return v0
 .end method

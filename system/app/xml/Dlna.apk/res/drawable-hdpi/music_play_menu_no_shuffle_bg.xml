@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_focused="true" android:drawable="@drawable/music_play_menu_no_shuffle_focus" />
-    <item android:state_pressed="true" android:drawable="@drawable/music_play_menu_no_shuffle_press" />
-    <item android:drawable="@drawable/music_play_menu_no_shuffle" />
-</selector>

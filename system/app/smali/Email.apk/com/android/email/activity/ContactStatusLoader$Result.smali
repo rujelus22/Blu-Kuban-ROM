@@ -33,7 +33,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 66
+    .line 65
     new-instance v0, Lcom/android/email/activity/ContactStatusLoader$Result;
 
     const v1, 0x108006a
@@ -52,18 +52,42 @@
     .parameter "lookupUri"
 
     .prologue
-    .line 80
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 76
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 81
+    .line 77
     iput-object p1, p0, Lcom/android/email/activity/ContactStatusLoader$Result;->mPhoto:Landroid/graphics/Bitmap;
 
-    .line 82
+    .line 78
     iput p2, p0, Lcom/android/email/activity/ContactStatusLoader$Result;->mPresenceResId:I
 
-    .line 83
+    .line 79
     iput-object p3, p0, Lcom/android/email/activity/ContactStatusLoader$Result;->mLookupUri:Landroid/net/Uri;
 
-    .line 84
+    .line 80
     return-void
+.end method
+
+
+# virtual methods
+.method public isUnknown()Z
+    .registers 3
+
+    .prologue
+    .line 83
+    const v0, 0x108006a
+
+    iget v1, p0, Lcom/android/email/activity/ContactStatusLoader$Result;->mPresenceResId:I
+
+    if-ne v0, v1, :cond_9
+
+    const/4 v0, 0x1
+
+    :goto_8
+    return v0
+
+    :cond_9
+    const/4 v0, 0x0
+
+    goto :goto_8
 .end method

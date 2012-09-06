@@ -1,126 +1,77 @@
 .class final Lcom/google/common/collect/fg;
-.super Lcom/google/common/collect/bm;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field final a:Ljava/util/Collection;
+.field final synthetic a:Ljava/util/Iterator;
+
+.field final synthetic b:Lcom/google/common/collect/ff;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/Collection;)V
+.method constructor <init>(Lcom/google/common/collect/ff;Ljava/util/Iterator;)V
     .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 579
-    invoke-direct {p0}, Lcom/google/common/collect/bm;-><init>()V
+    .line 719
+    iput-object p1, p0, Lcom/google/common/collect/fg;->b:Lcom/google/common/collect/ff;
 
-    .line 580
-    invoke-static {p1}, Ljava/util/Collections;->unmodifiableCollection(Ljava/util/Collection;)Ljava/util/Collection;
+    iput-object p2, p0, Lcom/google/common/collect/fg;->a:Ljava/util/Iterator;
 
-    move-result-object v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/collect/fg;->a:Ljava/util/Collection;
-
-    .line 581
     return-void
 .end method
 
 
 # virtual methods
-.method public final contains(Ljava/lang/Object;)Z
-    .registers 3
-    .parameter
+.method public final hasNext()Z
+    .registers 2
 
     .prologue
-    .line 606
-    invoke-virtual {p0}, Lcom/google/common/collect/fg;->iterator()Ljava/util/Iterator;
+    .line 722
+    iget-object v0, p0, Lcom/google/common/collect/fg;->a:Ljava/util/Iterator;
 
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lcom/google/common/collect/cr;->a(Ljava/util/Iterator;Ljava/lang/Object;)Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final containsAll(Ljava/util/Collection;)Z
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 609
-    invoke-static {p0, p1}, Lcom/google/common/collect/at;->a(Ljava/util/Collection;Ljava/util/Collection;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method protected final bridge synthetic delegate()Ljava/lang/Object;
+.method public final next()Ljava/lang/Object;
     .registers 2
 
     .prologue
-    .line 576
-    invoke-virtual {p0}, Lcom/google/common/collect/fg;->delegate()Ljava/util/Collection;
+    .line 726
+    iget-object v0, p0, Lcom/google/common/collect/fg;->a:Ljava/util/Iterator;
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, Lcom/google/common/collect/fk;
+
+    iget-object v0, v0, Lcom/google/common/collect/fk;->a:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method protected final delegate()Ljava/util/Collection;
+.method public final remove()V
     .registers 2
 
     .prologue
-    .line 583
-    iget-object v0, p0, Lcom/google/common/collect/fg;->a:Ljava/util/Collection;
+    .line 730
+    iget-object v0, p0, Lcom/google/common/collect/fg;->a:Ljava/util/Iterator;
 
-    return-object v0
-.end method
+    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-.method public final iterator()Ljava/util/Iterator;
-    .registers 3
-
-    .prologue
-    .line 586
-    iget-object v0, p0, Lcom/google/common/collect/fg;->a:Ljava/util/Collection;
-
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .line 587
-    new-instance v1, Lcom/google/common/collect/fh;
-
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/fh;-><init>(Lcom/google/common/collect/fg;Ljava/util/Iterator;)V
-
-    return-object v1
-.end method
-
-.method public final toArray()[Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 600
-    invoke-static {p0}, Lcom/google/common/collect/fq;->a(Ljava/util/Collection;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 603
-    invoke-static {p0, p1}, Lcom/google/common/collect/fq;->a(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
+    .line 731
+    return-void
 .end method

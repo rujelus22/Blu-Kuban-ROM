@@ -38,27 +38,27 @@
     .registers 2
 
     .prologue
-    .line 23748
+    .line 24349
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 23753
+    .line 24354
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->category_:Ljava/lang/String;
 
-    .line 23769
+    .line 24370
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->appData_:Ljava/util/List;
 
-    .line 23825
+    .line 24427
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->cachedSize:I
 
-    .line 23748
+    .line 24349
     return-void
 .end method
 
@@ -69,17 +69,17 @@
     .parameter "value"
 
     .prologue
-    .line 23786
+    .line 24387
     if-nez p1, :cond_8
 
-    .line 23787
+    .line 24388
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 23789
+    .line 24390
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->appData_:Ljava/util/List;
 
@@ -89,20 +89,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 23790
+    .line 24391
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->appData_:Ljava/util/List;
 
-    .line 23792
+    .line 24393
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->appData_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 23793
+    .line 24394
     return-object p0
 .end method
 
@@ -119,7 +119,7 @@
     .end annotation
 
     .prologue
-    .line 23772
+    .line 24373
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->appData_:Ljava/util/List;
 
     return-object v0
@@ -129,15 +129,15 @@
     .registers 2
 
     .prologue
-    .line 23827
+    .line 24430
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 23829
+    .line 24432
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->getSerializedSize()I
 
-    .line 23831
+    .line 24434
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->cachedSize:I
 
@@ -148,7 +148,7 @@
     .registers 2
 
     .prologue
-    .line 23754
+    .line 24355
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->category_:Ljava/lang/String;
 
     return-object v0
@@ -158,10 +158,10 @@
     .registers 6
 
     .prologue
-    .line 23835
+    .line 24439
     const/4 v2, 0x0
 
-    .line 23836
+    .line 24440
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->hasCategory()Z
 
@@ -169,7 +169,7 @@
 
     if-eqz v3, :cond_11
 
-    .line 23837
+    .line 24441
     const/4 v3, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->getCategory()Ljava/lang/String;
@@ -182,7 +182,7 @@
 
     add-int/2addr v2, v3
 
-    .line 23840
+    .line 24444
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->getAppDataList()Ljava/util/List;
 
@@ -206,7 +206,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$AppDataProto;
 
-    .line 23841
+    .line 24445
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$AppDataProto;
     const/4 v3, 0x3
 
@@ -218,12 +218,12 @@
 
     goto :goto_19
 
-    .line 23844
+    .line 24448
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$AppDataProto;
     :cond_2c
     iput v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->cachedSize:I
 
-    .line 23845
+    .line 24449
     return v2
 .end method
 
@@ -231,7 +231,7 @@
     .registers 2
 
     .prologue
-    .line 23755
+    .line 24356
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->hasCategory:Z
 
     return v0
@@ -247,29 +247,29 @@
     .end annotation
 
     .prologue
-    .line 23852
+    .line 24457
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 23853
+    .line 24458
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_22
 
-    .line 23857
+    .line 24462
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 23858
+    .line 24463
     :sswitch_d
     return-object p0
 
-    .line 23863
+    .line 24468
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -279,22 +279,22 @@
 
     goto :goto_0
 
-    .line 23867
+    .line 24472
     :sswitch_16
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$AppDataProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$AppDataProto;-><init>()V
 
-    .line 23868
+    .line 24473
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$AppDataProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 23869
+    .line 24474
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->addAppData(Lcom/google/android/vending/remoting/protos/VendingProtos$AppDataProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;
 
     goto :goto_0
 
-    .line 23853
+    .line 24458
     :sswitch_data_22
     .sparse-switch
         0x0 -> :sswitch_d
@@ -313,7 +313,7 @@
     .end annotation
 
     .prologue
-    .line 23746
+    .line 24347
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;
 
     move-result-object v0
@@ -326,15 +326,15 @@
     .parameter "value"
 
     .prologue
-    .line 23757
+    .line 24358
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->hasCategory:Z
 
-    .line 23758
+    .line 24359
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->category_:Ljava/lang/String;
 
-    .line 23759
+    .line 24360
     return-object p0
 .end method
 
@@ -348,14 +348,14 @@
     .end annotation
 
     .prologue
-    .line 23817
+    .line 24419
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->hasCategory()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 23818
+    .line 24420
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->getCategory()Ljava/lang/String;
@@ -364,7 +364,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 23820
+    .line 24422
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$DataMessageProto;->getAppDataList()Ljava/util/List;
 
@@ -388,7 +388,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$AppDataProto;
 
-    .line 23821
+    .line 24423
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$AppDataProto;
     const/4 v2, 0x3
 
@@ -396,7 +396,7 @@
 
     goto :goto_16
 
-    .line 23823
+    .line 24425
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$AppDataProto;
     :cond_27
     return-void

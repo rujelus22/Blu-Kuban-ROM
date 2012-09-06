@@ -241,13 +241,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Downgrading database version from "
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -321,13 +317,13 @@
 
     move-result-object v1
 
-    :goto_55
-    :try_start_55
+    :goto_51
+    :try_start_51
     invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d7
+    if-eqz v0, :cond_cf
 
     const-string v0, "cv_index"
 
@@ -344,27 +340,23 @@
     move-result-object v0
 
     invoke-interface {v9, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-    :try_end_6c
-    .catchall {:try_start_55 .. :try_end_6c} :catchall_db
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_55 .. :try_end_6c} :catch_6d
+    :try_end_68
+    .catchall {:try_start_51 .. :try_end_68} :catchall_d3
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_51 .. :try_end_68} :catch_69
 
-    goto :goto_55
+    goto :goto_51
 
-    :catch_6d
+    :catch_69
     move-exception v0
 
-    :try_start_6e
+    :try_start_6a
     const-string v2, "GoogleAnalyticsTracker"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Error on downgrade: "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteException;->toString()Ljava/lang/String;
 
@@ -379,22 +371,22 @@
     move-result-object v0
 
     invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_8a
-    .catchall {:try_start_6e .. :try_end_8a} :catchall_db
+    :try_end_82
+    .catchall {:try_start_6a .. :try_end_82} :catchall_d3
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    :goto_8d
+    :goto_85
     const/4 v0, 0x1
 
     move v1, v0
 
-    :goto_8f
+    :goto_87
     const/4 v0, 0x5
 
-    if-gt v1, v0, :cond_fe
+    if-gt v1, v0, :cond_f2
 
-    :try_start_92
+    :try_start_8a
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -403,7 +395,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_d3
+    if-nez v0, :cond_cb
 
     new-instance v0, Landroid/content/ContentValues;
 
@@ -454,43 +446,39 @@
     const-string v3, "event_id"
 
     invoke-virtual {p1, v2, v3, v0}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
-    :try_end_d3
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_92 .. :try_end_d3} :catch_e0
+    :try_end_cb
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_8a .. :try_end_cb} :catch_d8
 
-    :cond_d3
-    :goto_d3
+    :cond_cb
+    :goto_cb
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
-    goto :goto_8f
+    goto :goto_87
 
-    :cond_d7
+    :cond_cf
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    goto :goto_8d
+    goto :goto_85
 
-    :catchall_db
+    :catchall_d3
     move-exception v0
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
     throw v0
 
-    :catch_e0
+    :catch_d8
     move-exception v0
 
     const-string v2, "GoogleAnalyticsTracker"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Error inserting custom variable on downgrade: "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteException;->toString()Ljava/lang/String;
 
@@ -506,9 +494,9 @@
 
     invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_d3
+    goto :goto_cb
 
-    :cond_fe
+    :cond_f2
     return-void
 .end method
 

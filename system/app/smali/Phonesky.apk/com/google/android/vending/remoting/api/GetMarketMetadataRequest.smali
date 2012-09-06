@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;IILcom/android/volley/Response$Listener;Lcom/google/android/vending/remoting/api/VendingApiContext;Lcom/android/volley/Response$ErrorListener;)V
-    .registers 16
+    .registers 15
     .parameter
     .parameter
     .parameter
@@ -48,8 +48,6 @@
     .end annotation
 
     .prologue
-    const/4 v8, 0x0
-
     .line 33
     const-string v1, "https://android.clients.google.com/vending/api/ApiRequest"
 
@@ -70,7 +68,9 @@
     invoke-direct/range {v0 .. v7}, Lcom/google/android/vending/remoting/api/VendingRequest;-><init>(Ljava/lang/String;Ljava/lang/Class;Lcom/google/protobuf/micro/MessageMicro;Ljava/lang/Class;Lcom/android/volley/Response$Listener;Lcom/google/android/vending/remoting/api/VendingApiContext;Lcom/android/volley/Response$ErrorListener;)V
 
     .line 27
-    iput-boolean v8, p0, Lcom/google/android/vending/remoting/api/GetMarketMetadataRequest;->mDelivered:Z
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/android/vending/remoting/api/GetMarketMetadataRequest;->mDelivered:Z
 
     .line 35
     iput p2, p0, Lcom/google/android/vending/remoting/api/GetMarketMetadataRequest;->mDeviceConfigHash:I
@@ -79,7 +79,7 @@
     iput p3, p0, Lcom/google/android/vending/remoting/api/GetMarketMetadataRequest;->mMarketVersion:I
 
     .line 37
-    invoke-virtual {p0, v8}, Lcom/google/android/vending/remoting/api/GetMarketMetadataRequest;->setDrainable(Z)V
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/api/GetMarketMetadataRequest;->setAvoidBulkCancel()V
 
     .line 38
     invoke-virtual {p5}, Lcom/google/android/vending/remoting/api/VendingApiContext;->getAccount()Landroid/accounts/Account;

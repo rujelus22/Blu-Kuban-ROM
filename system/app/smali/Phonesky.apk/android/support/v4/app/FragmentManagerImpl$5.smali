@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/support/v4/app/FragmentManagerImpl;->moveToState(Landroid/support/v4/app/Fragment;III)V
+    value = Landroid/support/v4/app/FragmentManagerImpl;->moveToState(Landroid/support/v4/app/Fragment;IIIZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 980
+    .line 981
     iput-object p1, p0, Landroid/support/v4/app/FragmentManagerImpl$5;->this$0:Landroid/support/v4/app/FragmentManagerImpl;
 
     iput-object p2, p0, Landroid/support/v4/app/FragmentManagerImpl$5;->val$fragment:Landroid/support/v4/app/Fragment;
@@ -43,27 +43,27 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .registers 6
+    .registers 8
     .parameter "animation"
 
     .prologue
     const/4 v3, 0x0
 
-    .line 983
+    .line 984
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$5;->val$fragment:Landroid/support/v4/app/Fragment;
 
     iget-object v0, v0, Landroid/support/v4/app/Fragment;->mAnimatingAway:Landroid/view/View;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_19
 
-    .line 984
+    .line 985
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$5;->val$fragment:Landroid/support/v4/app/Fragment;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/support/v4/app/Fragment;->mAnimatingAway:Landroid/view/View;
 
-    .line 985
+    .line 986
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$5;->this$0:Landroid/support/v4/app/FragmentManagerImpl;
 
     iget-object v1, p0, Landroid/support/v4/app/FragmentManagerImpl$5;->val$fragment:Landroid/support/v4/app/Fragment;
@@ -72,10 +72,14 @@
 
     iget v2, v2, Landroid/support/v4/app/Fragment;->mStateAfterAnimating:I
 
-    invoke-virtual {v0, v1, v2, v3, v3}, Landroid/support/v4/app/FragmentManagerImpl;->moveToState(Landroid/support/v4/app/Fragment;III)V
+    move v4, v3
 
-    .line 988
-    :cond_17
+    move v5, v3
+
+    invoke-virtual/range {v0 .. v5}, Landroid/support/v4/app/FragmentManagerImpl;->moveToState(Landroid/support/v4/app/Fragment;IIIZ)V
+
+    .line 989
+    :cond_19
     return-void
 .end method
 
@@ -84,7 +88,7 @@
     .parameter "animation"
 
     .prologue
-    .line 991
+    .line 992
     return-void
 .end method
 
@@ -93,6 +97,6 @@
     .parameter "animation"
 
     .prologue
-    .line 994
+    .line 995
     return-void
 .end method

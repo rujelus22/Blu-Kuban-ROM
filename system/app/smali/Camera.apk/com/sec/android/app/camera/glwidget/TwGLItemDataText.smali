@@ -34,21 +34,21 @@
     .prologue
     const/16 v3, 0xff
 
-    const/16 v2, 0xdc
+    const/16 v2, 0x96
 
     .line 41
-    const/4 v0, 0x0
+    const/16 v0, 0x15
 
-    const/16 v1, 0xc0
+    const/16 v1, 0x54
 
-    invoke-static {v3, v0, v1, v3}, Landroid/graphics/Color;->argb(IIII)I
+    invoke-static {v3, v0, v1, v2}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v0
 
     sput v0, Lcom/sec/android/app/camera/glwidget/TwGLItemDataText;->BLUE_TEXT_COLOR:I
 
     .line 42
-    invoke-static {v3, v2, v2, v2}, Landroid/graphics/Color;->argb(IIII)I
+    invoke-static {v3, v3, v3, v3}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v0
 

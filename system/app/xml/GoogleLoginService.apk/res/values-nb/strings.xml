@@ -242,18 +242,18 @@ spørsmål"</b></string>
     <string name="account_intro_recommended_title">Gå for Google</string>
     <string name="common_message">"Med Google-konto kan du 
 
-"<li><ul>Se og organisere all informasjonen din, uansett hvor du er.</ul></li>"
+"<ul><li>Se og organisere all informasjonen din, uansett hvor du er.</li></ul>"
 
-"<li><ul>Sikkerhetskopiere dataene dine automatisk.</ul></li>"
+"<ul><li>Sikkerhetskopiere dataene dine automatisk.</li></ul>"
 
-"<li><ul>Bruke Google-tjenestene dine enkelt, uansett hvor du er.</ul></li></string>
+"<ul><li>Bruke Google-tjenestene dine enkelt, uansett hvor du er.</li></ul></string>
     <string name="add_account_message">" Du kan bruke mer enn én Google-konto (for eksempel hjemme- og jobbkontoen). Berør "<b>Logg på</b> eller <b>Opprett konto</b> for å legge til en Google-konto</string>
     <string name="account_intro_default_message">Du trenger aldri å miste ting igjen. En Google-konto holder alt trygt.</string>
     <string name="account_intro_custom_endtext">Har du %s? Logg deg på nå.</string>
     <string name="account_intro_simple_message">Vil du legge til en eksisterende konto eller opprette en ny konto?</string>
     <string name="learn_more_title"><annotation id="learn_more">Les mer</annotation></string>
     <string name="learn_more_account_intro">"Med en Google-konto kan du
-"<li><ul>"Se og organisere all informasjon  overalt."<li>Sikkerhetskopier dataene dine automatisk, for eksempel e-post, kontakter, musikk og bilder.</li><li>Bruke Google-tjenester enkelt hvor som helst, medregnet Kontakter, Kalender, Google Maps og annet.</li></ul></li></string>
+"<ul><li>"Se og organisere all informasjon  overalt."<li>Sikkerhetskopier dataene dine automatisk, for eksempel e-post, kontakter, musikk og bilder.</li><li>Bruke Google-tjenester enkelt hvor som helst, medregnet Kontakter, Kalender, Google Maps og annet.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Om Google-kontoer</string>
     <string name="learn_more_web_history">"Nettloggen justerer søkeresultatene ut fra hva du har søkt etter og hvilke sider du har besøkt. På denne måten blir opplevelsen i Google personlig tilpasset.
 

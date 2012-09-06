@@ -23,15 +23,15 @@
     .registers 2
 
     .prologue
-    .line 327
+    .line 338
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 342
+    .line 353
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Log$LogResponse;->cachedSize:I
 
-    .line 327
+    .line 338
     return-void
 .end method
 
@@ -41,15 +41,15 @@
     .registers 2
 
     .prologue
-    .line 344
+    .line 356
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Log$LogResponse;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 346
+    .line 358
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Log$LogResponse;->getSerializedSize()I
 
-    .line 348
+    .line 360
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Log$LogResponse;->cachedSize:I
 
@@ -60,14 +60,14 @@
     .registers 2
 
     .prologue
-    .line 352
+    .line 365
     const/4 v0, 0x0
 
-    .line 353
+    .line 366
     .local v0, size:I
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Log$LogResponse;->cachedSize:I
 
-    .line 354
+    .line 367
     return v0
 .end method
 
@@ -81,28 +81,28 @@
     .end annotation
 
     .prologue
-    .line 361
+    .line 375
     :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 362
+    .line 376
     .local v0, tag:I
     packed-switch v0, :pswitch_data_e
 
-    .line 366
+    .line 380
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Log$LogResponse;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 367
+    .line 381
     :pswitch_d
     return-object p0
 
-    .line 362
+    .line 376
     :pswitch_data_e
     .packed-switch 0x0
         :pswitch_d
@@ -119,7 +119,7 @@
     .end annotation
 
     .prologue
-    .line 325
+    .line 335
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Log$LogResponse;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Log$LogResponse;
 
     move-result-object v0
@@ -130,13 +130,8 @@
 .method public writeTo(Lcom/google/protobuf/micro/CodedOutputStreamMicro;)V
     .registers 2
     .parameter "output"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
-    .line 340
+    .line 351
     return-void
 .end method

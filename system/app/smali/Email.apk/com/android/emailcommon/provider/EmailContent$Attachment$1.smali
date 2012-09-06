@@ -32,8 +32,8 @@
     .registers 1
 
     .prologue
-    .line 6517
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 1276
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,7 +45,7 @@
     .parameter "in"
 
     .prologue
-    .line 6519
+    .line 1279
     new-instance v0, Lcom/android/emailcommon/provider/EmailContent$Attachment;
 
     invoke-direct {v0, p1}, Lcom/android/emailcommon/provider/EmailContent$Attachment;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 6517
+    .line 1276
     invoke-virtual {p0, p1}, Lcom/android/emailcommon/provider/EmailContent$Attachment$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/emailcommon/provider/EmailContent$Attachment;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .parameter "size"
 
     .prologue
-    .line 6523
+    .line 1284
     new-array v0, p1, [Lcom/android/emailcommon/provider/EmailContent$Attachment;
 
     return-object v0
@@ -82,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 6517
+    .line 1276
     invoke-virtual {p0, p1}, Lcom/android/emailcommon/provider/EmailContent$Attachment$1;->newArray(I)[Lcom/android/emailcommon/provider/EmailContent$Attachment;
 
     move-result-object v0

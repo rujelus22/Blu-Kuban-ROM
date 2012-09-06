@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/Controller;->deleteMessage([JJ)V
+    value = Lcom/android/email/Controller;->moveMessages([JJ)Lcom/android/emailcommon/utility/EmailAsyncTask;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,9 +20,9 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/Controller;
 
-.field final synthetic val$accountId:J
-
 .field final synthetic val$messageIds:[J
+
+.field final synthetic val$newMailboxId:J
 
 
 # direct methods
@@ -33,14 +33,14 @@
     .parameter
 
     .prologue
-    .line 1925
+    .line 836
     iput-object p1, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
 
     iput-object p2, p0, Lcom/android/email/Controller$10;->val$messageIds:[J
 
-    iput-wide p3, p0, Lcom/android/email/Controller$10;->val$accountId:J
+    iput-wide p3, p0, Lcom/android/email/Controller$10;->val$newMailboxId:J
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,222 +48,125 @@
 
 # virtual methods
 .method public run()V
-    .registers 10
+    .registers 14
 
     .prologue
-    .line 1927
-    const/4 v4, 0x0
+    const/4 v12, 0x0
 
-    .line 1928
-    .local v4, msg:Lcom/android/emailcommon/provider/EmailContent$Message;
-    iget-object v5, p0, Lcom/android/email/Controller$10;->val$messageIds:[J
-
-    array-length v5, v5
-
-    add-int/lit8 v1, v5, -0x1
-
-    .local v1, c:I
-    :goto_6
-    if-ltz v1, :cond_4f
-
-    .line 1929
-    iget-object v5, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
-
-    #getter for: Lcom/android/email/Controller;->mContext:Landroid/content/Context;
-    invoke-static {v5}, Lcom/android/email/Controller;->access$100(Lcom/android/email/Controller;)Landroid/content/Context;
-
-    move-result-object v5
-
-    iget-object v6, p0, Lcom/android/email/Controller$10;->val$messageIds:[J
-
-    aget-wide v6, v6, v1
-
-    invoke-static {v5, v6, v7}, Lcom/android/emailcommon/provider/EmailContent$Message;->restoreMessageWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Message;
-
-    move-result-object v4
-
-    .line 1930
-    if-eqz v4, :cond_4c
-
-    .line 1931
-    iget-object v5, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
-
-    #getter for: Lcom/android/email/Controller;->mContext:Landroid/content/Context;
-    invoke-static {v5}, Lcom/android/email/Controller;->access$100(Lcom/android/email/Controller;)Landroid/content/Context;
-
-    move-result-object v5
-
-    iget-wide v6, v4, Lcom/android/emailcommon/provider/EmailContent$Message;->mMailboxKey:J
-
-    invoke-static {v5, v6, v7}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    move-result-object v2
-
-    .line 1932
-    .local v2, m:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    iget v5, v4, Lcom/android/emailcommon/provider/EmailContent$Message;->mFlags:I
-
-    and-int/lit8 v5, v5, 0x8
-
-    if-nez v5, :cond_30
-
-    iget v5, v4, Lcom/android/emailcommon/provider/EmailContent$Message;->mFlags:I
-
-    and-int/lit8 v5, v5, 0x4
-
-    if-eqz v5, :cond_4c
-
-    :cond_30
-    iget v5, v2, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    if-eqz v5, :cond_3a
-
-    iget v5, v2, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    const/16 v6, 0xc
-
-    if-ne v5, v6, :cond_4c
-
-    .line 1934
-    :cond_3a
-    new-instance v3, Lcom/android/emailcommon/mail/PackedString;
-
-    iget-object v5, v4, Lcom/android/emailcommon/provider/EmailContent$Message;->mMeetingInfo:Ljava/lang/String;
-
-    invoke-direct {v3, v5}, Lcom/android/emailcommon/mail/PackedString;-><init>(Ljava/lang/String;)V
-
-    .line 1935
-    .local v3, meetingInfo:Lcom/android/emailcommon/mail/PackedString;
-    iget-object v5, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
-
-    const-string v6, "UID"
-
-    invoke-virtual {v3, v6}, Lcom/android/emailcommon/mail/PackedString;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Lcom/android/email/Controller;->deleteCalendarInvitation(Ljava/lang/String;)Z
-
-    .line 1928
-    .end local v2           #m:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    .end local v3           #meetingInfo:Lcom/android/emailcommon/mail/PackedString;
-    :cond_4c
-    add-int/lit8 v1, v1, -0x1
-
-    goto :goto_6
-
-    .line 1939
-    :cond_4f
-    iget-wide v5, p0, Lcom/android/email/Controller$10;->val$accountId:J
-
-    const-wide/16 v7, -0x1
-
-    cmp-long v5, v5, v7
-
-    if-eqz v5, :cond_a1
-
-    .line 1940
-    iget-object v5, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
+    .line 838
+    iget-object v9, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
 
     #getter for: Lcom/android/email/Controller;->mProviderContext:Landroid/content/Context;
-    invoke-static {v5}, Lcom/android/email/Controller;->access$000(Lcom/android/email/Controller;)Landroid/content/Context;
+    invoke-static {v9}, Lcom/android/email/Controller;->access$400(Lcom/android/email/Controller;)Landroid/content/Context;
 
-    move-result-object v5
+    move-result-object v9
 
-    iget-wide v6, p0, Lcom/android/email/Controller$10;->val$accountId:J
+    iget-object v10, p0, Lcom/android/email/Controller$10;->val$messageIds:[J
 
-    invoke-static {v5, v6, v7}, Lcom/android/emailcommon/provider/EmailContent$Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Account;
+    const/4 v11, 0x0
+
+    aget-wide v10, v10, v11
+
+    invoke-static {v9, v10, v11}, Lcom/android/emailcommon/provider/Account;->getAccountForMessageId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Account;
 
     move-result-object v0
 
-    .line 1942
-    .local v0, account:Lcom/android/emailcommon/provider/EmailContent$Account;
-    sget-boolean v5, Lcom/android/emailcommon/EasRefs;->EAS_LOCAL_DB_OPERATION:Z
+    .line 839
+    .local v0, account:Lcom/android/emailcommon/provider/Account;
+    if-eqz v0, :cond_53
 
-    if-eqz v5, :cond_99
+    .line 840
+    new-instance v2, Landroid/content/ContentValues;
 
-    .line 1943
-    if-eqz v0, :cond_91
+    invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
 
-    iget-boolean v5, v0, Lcom/android/emailcommon/provider/EmailContent$Account;->mEasLocalChangeEnabled:Z
+    .line 841
+    .local v2, cv:Landroid/content/ContentValues;
+    const-string v9, "mailboxKey"
 
-    const/4 v6, 0x1
+    iget-wide v10, p0, Lcom/android/email/Controller$10;->val$newMailboxId:J
 
-    if-ne v5, v6, :cond_91
+    invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    .line 1944
-    iget-object v5, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
+    move-result-object v10
 
-    iget-object v6, p0, Lcom/android/email/Controller$10;->val$messageIds:[J
+    invoke-virtual {v2, v9, v10}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    invoke-virtual {v5, v6}, Lcom/android/email/Controller;->deleteMessageLocal([J)V
+    .line 842
+    iget-object v9, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
 
-    .line 1955
-    .end local v0           #account:Lcom/android/emailcommon/provider/EmailContent$Account;
-    :goto_75
-    iget-object v5, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
+    #getter for: Lcom/android/email/Controller;->mProviderContext:Landroid/content/Context;
+    invoke-static {v9}, Lcom/android/email/Controller;->access$400(Lcom/android/email/Controller;)Landroid/content/Context;
 
-    #getter for: Lcom/android/email/Controller;->mContext:Landroid/content/Context;
-    invoke-static {v5}, Lcom/android/email/Controller;->access$100(Lcom/android/email/Controller;)Landroid/content/Context;
+    move-result-object v9
 
-    move-result-object v5
+    invoke-virtual {v9}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    invoke-virtual {v5}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    move-result-object v7
 
-    move-result-object v5
+    .line 843
+    .local v7, resolver:Landroid/content/ContentResolver;
+    iget-object v1, p0, Lcom/android/email/Controller$10;->val$messageIds:[J
 
-    iget-object v6, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
+    .local v1, arr$:[J
+    array-length v4, v1
 
-    #getter for: Lcom/android/email/Controller;->mContext:Landroid/content/Context;
-    invoke-static {v6}, Lcom/android/email/Controller;->access$100(Lcom/android/email/Controller;)Landroid/content/Context;
+    .local v4, len$:I
+    const/4 v3, 0x0
 
-    move-result-object v6
+    .local v3, i$:I
+    :goto_30
+    if-ge v3, v4, :cond_40
 
-    invoke-virtual {v6}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    aget-wide v5, v1, v3
 
-    move-result-object v6
+    .line 844
+    .local v5, messageId:J
+    sget-object v9, Lcom/android/emailcommon/provider/EmailContent$Message;->SYNCED_CONTENT_URI:Landroid/net/Uri;
 
-    invoke-static {v6}, Lcom/android/email/EmailUtility;->getUnreadTotalCount(Landroid/content/Context;)I
+    invoke-static {v9, v5, v6}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
-    move-result v6
+    move-result-object v8
 
-    invoke-static {v5, v6}, Lcom/android/email/BadgeManager;->updateBadgeProvider(Landroid/content/Context;I)V
+    .line 846
+    .local v8, uri:Landroid/net/Uri;
+    invoke-virtual {v7, v8, v2, v12, v12}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 1957
+    .line 843
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_30
+
+    .line 848
+    .end local v5           #messageId:J
+    .end local v8           #uri:Landroid/net/Uri;
+    :cond_40
+    iget-object v9, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
+
+    invoke-virtual {v9, v0}, Lcom/android/email/Controller;->isMessagingController(Lcom/android/emailcommon/provider/Account;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_53
+
+    .line 849
+    iget-object v9, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
+
+    #getter for: Lcom/android/email/Controller;->mLegacyController:Lcom/android/email/MessagingController;
+    invoke-static {v9}, Lcom/android/email/Controller;->access$300(Lcom/android/email/Controller;)Lcom/android/email/MessagingController;
+
+    move-result-object v9
+
+    iget-wide v10, v0, Lcom/android/emailcommon/provider/Account;->mId:J
+
+    invoke-virtual {v9, v10, v11}, Lcom/android/email/MessagingController;->processPendingActions(J)V
+
+    .line 852
+    .end local v1           #arr$:[J
+    .end local v2           #cv:Landroid/content/ContentValues;
+    .end local v3           #i$:I
+    .end local v4           #len$:I
+    .end local v7           #resolver:Landroid/content/ContentResolver;
+    :cond_53
     return-void
-
-    .line 1946
-    .restart local v0       #account:Lcom/android/emailcommon/provider/EmailContent$Account;
-    :cond_91
-    iget-object v5, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
-
-    iget-object v6, p0, Lcom/android/email/Controller$10;->val$messageIds:[J
-
-    #calls: Lcom/android/email/Controller;->deleteMessageSync([J)V
-    invoke-static {v5, v6}, Lcom/android/email/Controller;->access$300(Lcom/android/email/Controller;[J)V
-
-    goto :goto_75
-
-    .line 1949
-    :cond_99
-    iget-object v5, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
-
-    iget-object v6, p0, Lcom/android/email/Controller$10;->val$messageIds:[J
-
-    #calls: Lcom/android/email/Controller;->deleteMessageSync([J)V
-    invoke-static {v5, v6}, Lcom/android/email/Controller;->access$300(Lcom/android/email/Controller;[J)V
-
-    goto :goto_75
-
-    .line 1952
-    .end local v0           #account:Lcom/android/emailcommon/provider/EmailContent$Account;
-    :cond_a1
-    iget-object v5, p0, Lcom/android/email/Controller$10;->this$0:Lcom/android/email/Controller;
-
-    iget-object v6, p0, Lcom/android/email/Controller$10;->val$messageIds:[J
-
-    #calls: Lcom/android/email/Controller;->deleteMessageSyncForAllAccount([J)V
-    invoke-static {v5, v6}, Lcom/android/email/Controller;->access$400(Lcom/android/email/Controller;[J)V
-
-    goto :goto_75
 .end method

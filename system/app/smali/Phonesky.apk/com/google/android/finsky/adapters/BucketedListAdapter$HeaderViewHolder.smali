@@ -29,7 +29,7 @@
     .registers 1
 
     .prologue
-    .line 522
+    .line 582
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,7 +40,7 @@
     .parameter "x0"
 
     .prologue
-    .line 522
+    .line 582
     invoke-direct {p0}, Lcom/google/android/finsky/adapters/BucketedListAdapter$HeaderViewHolder;-><init>()V
 
     return-void

@@ -104,7 +104,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f04002d
+    const v7, 0x7f040033
 
     invoke-direct {v5, v6, v7, v3}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
@@ -132,7 +132,7 @@
 
     .line 67
     .local v0, builder:Landroid/app/AlertDialog$Builder;
-    const v2, 0x7f070162
+    const v2, 0x7f070197
 
     new-instance v3, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugDetailsFragment$1;
 

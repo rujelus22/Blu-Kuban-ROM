@@ -1,256 +1,383 @@
-.class public Lcom/google/googlenav/ui/view/dialog/P;
-.super Landroid/webkit/WebViewClient;
+.class public Lcom/google/googlenav/ui/view/dialog/p;
+.super Lcom/google/googlenav/ui/view/android/V;
+.source "SourceFile"
 
 
 # instance fields
-.field private final a:Ljava/lang/String;
+.field private final a:I
 
-.field private b:Z
+.field protected b:I
 
-.field private c:Z
+.field protected c:I
 
-.field private d:Z
-
-.field private e:Z
-
-.field private final f:Lcom/google/googlenav/ui/view/dialog/O;
+.field protected d:Landroid/view/View;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/ui/view/dialog/O;)V
-    .registers 3
+.method public constructor <init>(Landroid/content/Context;Landroid/view/View;II)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
+    .prologue
+    .line 51
+    invoke-direct {p0, p4}, Lcom/google/googlenav/ui/view/android/V;-><init>(I)V
 
-    const-string v0, "G+WEBVIEW"
+    .line 52
+    iput p3, p0, Lcom/google/googlenav/ui/view/dialog/p;->a:I
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/view/dialog/P;->a:Ljava/lang/String;
+    .line 53
+    invoke-virtual {p0, p2}, Lcom/google/googlenav/ui/view/dialog/p;->a(Landroid/view/View;)V
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/P;->f:Lcom/google/googlenav/ui/view/dialog/O;
-
+    .line 54
     return-void
 .end method
 
 
 # virtual methods
-.method a(Ljava/lang/String;)Z
-    .registers 3
+.method protected I_()V
+    .registers 1
 
-    const-string v0, "gmm"
+    .prologue
+    .line 110
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/p;->l()V
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1a
-
-    const-string v0, "continue"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1a
-
-    const-string v0, "googleplussignup"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1a
-
-    const/4 v0, 0x1
-
-    :goto_19
-    return v0
-
-    :cond_1a
-    const/4 v0, 0x0
-
-    goto :goto_19
+    .line 111
+    return-void
 .end method
 
-.method public onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
+.method protected N_()V
+    .registers 1
+
+    .prologue
+    .line 115
+    return-void
+.end method
+
+.method public O_()Z
+    .registers 2
+
+    .prologue
+    .line 149
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public a(Landroid/view/View;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 121
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/p;->d:Landroid/view/View;
+
+    .line 122
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/p;->i()V
+
+    .line 123
+    return-void
+.end method
+
+.method protected a(Landroid/view/WindowManager$LayoutParams;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 98
+    const v0, 0x7f100126
+
+    invoke-virtual {p0, v0}, Lcom/google/googlenav/ui/view/dialog/p;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    .line 99
+    iget v1, p0, Lcom/google/googlenav/ui/view/dialog/p;->b:I
+
+    invoke-virtual {v0}, Landroid/view/View;->getRight()I
+
+    move-result v2
+
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
+
+    move-result v0
+
+    add-int/2addr v0, v2
+
+    div-int/lit8 v0, v0, 0x2
+
+    sub-int v0, v1, v0
+
+    iput v0, p1, Landroid/view/WindowManager$LayoutParams;->x:I
+
+    .line 100
+    iget v0, p0, Lcom/google/googlenav/ui/view/dialog/p;->c:I
+
+    iput v0, p1, Landroid/view/WindowManager$LayoutParams;->y:I
+
+    .line 101
+    return-void
+.end method
+
+.method protected c()Landroid/view/View;
+    .registers 4
+
+    .prologue
+    .line 105
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/p;->getLayoutInflater()Landroid/view/LayoutInflater;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/google/googlenav/ui/view/dialog/p;->a:I
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public i()V
+    .registers 4
+
+    .prologue
+    .line 61
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/p;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    .line 62
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/p;->d:Landroid/view/View;
+
+    if-eqz v1, :cond_2f
+
+    .line 63
+    const/4 v0, 0x2
+
+    new-array v0, v0, [I
+
+    .line 64
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/p;->d:Landroid/view/View;
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->getLocationOnScreen([I)V
+
+    .line 65
+    const/4 v1, 0x0
+
+    aget v1, v0, v1
+
+    iget-object v2, p0, Lcom/google/googlenav/ui/view/dialog/p;->d:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
+
+    move-result v2
+
+    div-int/lit8 v2, v2, 0x2
+
+    add-int/2addr v1, v2
+
+    iput v1, p0, Lcom/google/googlenav/ui/view/dialog/p;->b:I
+
+    .line 66
+    const/4 v1, 0x1
+
+    aget v0, v0, v1
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/p;->d:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getHeight()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    iput v0, p0, Lcom/google/googlenav/ui/view/dialog/p;->c:I
+
+    .line 71
+    :goto_2e
+    return-void
+
+    .line 68
+    :cond_2f
+    const v1, 0x7f0b005a
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/google/googlenav/ui/view/dialog/p;->b:I
+
+    .line 69
+    const v1, 0x7f0b004d
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/googlenav/ui/view/dialog/p;->c:I
+
+    goto :goto_2e
+.end method
+
+.method public l()V
     .registers 5
 
-    const/4 v1, 0x1
+    .prologue
+    const/4 v3, 0x0
 
-    iget-boolean v0, p0, Lcom/google/googlenav/ui/view/dialog/P;->d:Z
+    const/4 v1, -0x2
 
-    if-nez v0, :cond_7
+    .line 77
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/p;->i:Landroid/view/View;
 
-    iput-boolean v1, p0, Lcom/google/googlenav/ui/view/dialog/P;->c:Z
+    if-eqz v0, :cond_46
 
-    :cond_7
-    iget-boolean v0, p0, Lcom/google/googlenav/ui/view/dialog/P;->c:Z
+    .line 78
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/p;->i:Landroid/view/View;
 
-    if-eqz v0, :cond_1b
+    invoke-virtual {v0, v1, v1}, Landroid/view/View;->measure(II)V
 
-    iget-boolean v0, p0, Lcom/google/googlenav/ui/view/dialog/P;->d:Z
+    .line 80
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/p;->i:Landroid/view/View;
 
-    if-nez v0, :cond_1b
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/p;->i:Landroid/view/View;
 
-    iget-boolean v0, p0, Lcom/google/googlenav/ui/view/dialog/P;->e:Z
-
-    if-nez v0, :cond_1a
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/P;->f:Lcom/google/googlenav/ui/view/dialog/O;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/dialog/O;->d()V
-
-    iput-boolean v1, p0, Lcom/google/googlenav/ui/view/dialog/P;->e:Z
-
-    :cond_1a
-    :goto_1a
-    return-void
-
-    :cond_1b
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/google/googlenav/ui/view/dialog/P;->d:Z
-
-    goto :goto_1a
-.end method
-
-.method public onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
-    .registers 6
-
-    const/4 v1, 0x1
-
-    iget-boolean v0, p0, Lcom/google/googlenav/ui/view/dialog/P;->b:Z
-
-    if-eqz v0, :cond_1b
-
-    iput-boolean v1, p0, Lcom/google/googlenav/ui/view/dialog/P;->d:Z
-
-    :goto_7
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/google/googlenav/ui/view/dialog/P;->c:Z
-
-    const-string v0, "gmm://googleplussignup?state=confirmed"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result v0
-
-    if-nez v0, :cond_1e
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/P;->f:Lcom/google/googlenav/ui/view/dialog/O;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/dialog/O;->a()V
-
-    invoke-virtual {p1}, Landroid/webkit/WebView;->stopLoading()V
-
-    :cond_1a
-    :goto_1a
-    return-void
-
-    :cond_1b
-    iput-boolean v1, p0, Lcom/google/googlenav/ui/view/dialog/P;->b:Z
-
-    goto :goto_7
-
-    :cond_1e
-    const-string v0, "gmm://googleplussignup?state=cancelled"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result v0
-
-    if-nez v0, :cond_1a
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/P;->f:Lcom/google/googlenav/ui/view/dialog/O;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/dialog/O;->b()V
-
-    invoke-virtual {p1}, Landroid/webkit/WebView;->stopLoading()V
-
-    goto :goto_1a
-.end method
-
-.method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
-    .registers 7
-
-    const/4 v0, 0x1
-
-    const-string v1, "gmm://googleplussignup?state=confirmed"
-
-    invoke-virtual {p2, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
 
-    if-nez v1, :cond_12
+    iget-object v2, p0, Lcom/google/googlenav/ui/view/dialog/p;->i:Landroid/view/View;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/P;->f:Lcom/google/googlenav/ui/view/dialog/O;
+    invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
 
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/view/dialog/O;->a()V
+    move-result v2
 
-    invoke-virtual {p1}, Landroid/webkit/WebView;->stopLoading()V
+    invoke-virtual {v0, v3, v3, v1, v2}, Landroid/view/View;->layout(IIII)V
 
-    :goto_11
+    .line 82
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/p;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    .line 83
+    invoke-virtual {v0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v1
+
+    .line 85
+    iget-object v2, p0, Lcom/google/googlenav/ui/view/dialog/p;->i:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v2
+
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->width:I
+
+    .line 86
+    iget-object v2, p0, Lcom/google/googlenav/ui/view/dialog/p;->i:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v2
+
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->height:I
+
+    .line 87
+    invoke-virtual {p0, v1}, Lcom/google/googlenav/ui/view/dialog/p;->a(Landroid/view/WindowManager$LayoutParams;)V
+
+    .line 88
+    const/16 v2, 0x33
+
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->gravity:I
+
+    .line 91
+    iget v2, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
+
+    const v3, 0x20100
+
+    or-int/2addr v2, v3
+
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
+
+    .line 93
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+
+    .line 95
+    :cond_46
+    return-void
+.end method
+
+.method public onKeyDown(ILandroid/view/KeyEvent;)Z
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 136
+    invoke-super {p0, p1, p2}, Lcom/google/googlenav/ui/view/android/V;->onKeyDown(ILandroid/view/KeyEvent;)Z
+
+    move-result v0
+
+    .line 137
+    if-eqz v0, :cond_7
+
+    .line 144
+    :goto_6
     return v0
 
-    :cond_12
-    const-string v1, "gmm://googleplussignup?state=cancelled"
+    .line 140
+    :cond_7
+    const/16 v0, 0x13
 
-    invoke-virtual {p2, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+    if-ne p1, v0, :cond_10
 
-    move-result v1
+    .line 141
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/p;->cancel()V
 
-    if-nez v1, :cond_23
+    .line 142
+    const/4 v0, 0x1
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/P;->f:Lcom/google/googlenav/ui/view/dialog/O;
+    goto :goto_6
 
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/view/dialog/O;->b()V
-
-    invoke-virtual {p1}, Landroid/webkit/WebView;->stopLoading()V
-
-    goto :goto_11
-
-    :cond_23
-    invoke-virtual {p0, p2}, Lcom/google/googlenav/ui/view/dialog/P;->a(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_44
-
-    iget-boolean v1, p0, Lcom/google/googlenav/ui/view/dialog/P;->c:Z
-
-    if-eqz v1, :cond_44
-
-    iget-boolean v1, p0, Lcom/google/googlenav/ui/view/dialog/P;->d:Z
-
-    if-nez v1, :cond_44
-
-    new-instance v1, Landroid/content/Intent;
-
-    const-string v2, "android.intent.action.VIEW"
-
-    invoke-static {p2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v3
-
-    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
-
-    invoke-static {}, Lcom/google/googlenav/android/U;->a()Lcom/google/googlenav/android/U;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Lcom/google/googlenav/android/U;->a(Landroid/content/Intent;)V
-
-    goto :goto_11
-
-    :cond_44
-    iget-boolean v1, p0, Lcom/google/googlenav/ui/view/dialog/P;->c:Z
-
-    if-nez v1, :cond_4a
-
-    iput-boolean v0, p0, Lcom/google/googlenav/ui/view/dialog/P;->d:Z
-
-    :cond_4a
+    .line 144
+    :cond_10
     const/4 v0, 0x0
 
-    goto :goto_11
+    goto :goto_6
+.end method
+
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 127
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v0
+
+    if-nez v0, :cond_b
+
+    .line 128
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/p;->cancel()V
+
+    .line 129
+    const/4 v0, 0x1
+
+    .line 131
+    :goto_a
+    return v0
+
+    :cond_b
+    const/4 v0, 0x0
+
+    goto :goto_a
 .end method

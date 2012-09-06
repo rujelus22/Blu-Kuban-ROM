@@ -1,93 +1,66 @@
 .class final Lcom/google/common/collect/au;
-.super Lcom/google/common/collect/bt;
+.super Ljava/util/AbstractSet;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Ljava/util/Set;
+.field final a:I
 
-.field final synthetic b:Lcom/google/common/collect/ConcurrentHashMultiset;
+.field final synthetic b:Lcom/google/common/collect/ArrayTable;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/ConcurrentHashMultiset;Ljava/util/Set;)V
+.method constructor <init>(Lcom/google/common/collect/ArrayTable;I)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 348
-    iput-object p1, p0, Lcom/google/common/collect/au;->b:Lcom/google/common/collect/ConcurrentHashMultiset;
+    .line 571
+    iput-object p1, p0, Lcom/google/common/collect/au;->b:Lcom/google/common/collect/ArrayTable;
 
-    iput-object p2, p0, Lcom/google/common/collect/au;->a:Ljava/util/Set;
+    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
 
-    invoke-direct {p0}, Lcom/google/common/collect/bt;-><init>()V
+    .line 572
+    iput p2, p0, Lcom/google/common/collect/au;->a:I
 
+    .line 573
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a()Ljava/util/Set;
-    .registers 2
+.method public final iterator()Ljava/util/Iterator;
+    .registers 3
 
     .prologue
-    .line 350
-    iget-object v0, p0, Lcom/google/common/collect/au;->a:Ljava/util/Set;
+    .line 576
+    new-instance v0, Lcom/google/common/collect/av;
+
+    invoke-virtual {p0}, Lcom/google/common/collect/au;->size()I
+
+    move-result v1
+
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/av;-><init>(Lcom/google/common/collect/au;I)V
 
     return-object v0
 .end method
 
-.method protected final bridge synthetic delegate()Ljava/lang/Object;
+.method public final size()I
     .registers 2
 
     .prologue
-    .line 348
-    iget-object v0, p0, Lcom/google/common/collect/au;->a:Ljava/util/Set;
+    .line 594
+    iget-object v0, p0, Lcom/google/common/collect/au;->b:Lcom/google/common/collect/ArrayTable;
 
-    return-object v0
-.end method
+    #getter for: Lcom/google/common/collect/ArrayTable;->rowList:Lcom/google/common/collect/ImmutableList;
+    invoke-static {v0}, Lcom/google/common/collect/ArrayTable;->access$200(Lcom/google/common/collect/ArrayTable;)Lcom/google/common/collect/ImmutableList;
 
-.method protected final bridge synthetic delegate()Ljava/util/Collection;
-    .registers 2
+    move-result-object v0
 
-    .prologue
-    .line 348
-    iget-object v0, p0, Lcom/google/common/collect/au;->a:Ljava/util/Set;
-
-    return-object v0
-.end method
-
-.method public final remove(Ljava/lang/Object;)Z
-    .registers 4
-    .parameter
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 354
-    :try_start_1
-    iget-object v1, p0, Lcom/google/common/collect/au;->a:Ljava/util/Set;
-
-    invoke-interface {v1, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-    :try_end_6
-    .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_6} :catch_a
-    .catch Ljava/lang/ClassCastException; {:try_start_1 .. :try_end_6} :catch_8
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v0
 
-    .line 358
-    :goto_7
     return v0
-
-    :catch_8
-    move-exception v1
-
-    goto :goto_7
-
-    .line 356
-    :catch_a
-    move-exception v1
-
-    goto :goto_7
 .end method

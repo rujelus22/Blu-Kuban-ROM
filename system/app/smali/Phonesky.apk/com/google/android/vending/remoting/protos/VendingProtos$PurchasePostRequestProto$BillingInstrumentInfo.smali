@@ -41,29 +41,29 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 6913
+    .line 7047
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 6918
+    .line 7052
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->billingInstrumentId_:Ljava/lang/String;
 
-    .line 6935
+    .line 7069
     iput-object v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->creditCard_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCreditCard;
 
-    .line 6955
+    .line 7089
     iput-object v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->carrierInstrument_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;
 
-    .line 6975
+    .line 7109
     iput-object v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->paypalInstrument_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalPaypalInstrumentProto;
 
-    .line 7030
+    .line 7165
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->cachedSize:I
 
-    .line 6913
+    .line 7047
     return-void
 .end method
 
@@ -73,7 +73,7 @@
     .registers 2
 
     .prologue
-    .line 6919
+    .line 7053
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->billingInstrumentId_:Ljava/lang/String;
 
     return-object v0
@@ -83,15 +83,15 @@
     .registers 2
 
     .prologue
-    .line 7032
+    .line 7168
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 7034
+    .line 7170
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->getSerializedSize()I
 
-    .line 7036
+    .line 7172
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->cachedSize:I
 
@@ -102,7 +102,7 @@
     .registers 2
 
     .prologue
-    .line 6957
+    .line 7091
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->carrierInstrument_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;
 
     return-object v0
@@ -112,7 +112,7 @@
     .registers 2
 
     .prologue
-    .line 6937
+    .line 7071
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->creditCard_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCreditCard;
 
     return-object v0
@@ -122,7 +122,7 @@
     .registers 2
 
     .prologue
-    .line 6977
+    .line 7111
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->paypalInstrument_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalPaypalInstrumentProto;
 
     return-object v0
@@ -132,10 +132,10 @@
     .registers 4
 
     .prologue
-    .line 7040
+    .line 7177
     const/4 v0, 0x0
 
-    .line 7041
+    .line 7178
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->hasBillingInstrumentId()Z
 
@@ -143,7 +143,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 7042
+    .line 7179
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->getBillingInstrumentId()Ljava/lang/String;
@@ -156,7 +156,7 @@
 
     add-int/2addr v0, v1
 
-    .line 7045
+    .line 7182
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->hasCreditCard()Z
 
@@ -164,7 +164,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 7046
+    .line 7183
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->getCreditCard()Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCreditCard;
@@ -177,7 +177,7 @@
 
     add-int/2addr v0, v1
 
-    .line 7049
+    .line 7186
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->hasCarrierInstrument()Z
 
@@ -185,7 +185,7 @@
 
     if-eqz v1, :cond_32
 
-    .line 7050
+    .line 7187
     const/16 v1, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->getCarrierInstrument()Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;
@@ -198,7 +198,7 @@
 
     add-int/2addr v0, v1
 
-    .line 7053
+    .line 7190
     :cond_32
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->hasPaypalInstrument()Z
 
@@ -206,7 +206,7 @@
 
     if-eqz v1, :cond_43
 
-    .line 7054
+    .line 7191
     const/16 v1, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->getPaypalInstrument()Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalPaypalInstrumentProto;
@@ -219,11 +219,11 @@
 
     add-int/2addr v0, v1
 
-    .line 7057
+    .line 7194
     :cond_43
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->cachedSize:I
 
-    .line 7058
+    .line 7195
     return v0
 .end method
 
@@ -231,7 +231,7 @@
     .registers 2
 
     .prologue
-    .line 6920
+    .line 7054
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->hasBillingInstrumentId:Z
 
     return v0
@@ -241,7 +241,7 @@
     .registers 2
 
     .prologue
-    .line 6956
+    .line 7090
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->hasCarrierInstrument:Z
 
     return v0
@@ -251,7 +251,7 @@
     .registers 2
 
     .prologue
-    .line 6936
+    .line 7070
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->hasCreditCard:Z
 
     return v0
@@ -261,7 +261,7 @@
     .registers 2
 
     .prologue
-    .line 6976
+    .line 7110
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->hasPaypalInstrument:Z
 
     return v0
@@ -277,29 +277,29 @@
     .end annotation
 
     .prologue
-    .line 7065
+    .line 7203
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 7066
+    .line 7204
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_3a
 
-    .line 7070
+    .line 7208
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 7071
+    .line 7209
     :sswitch_d
     return-object p0
 
-    .line 7076
+    .line 7214
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -309,54 +309,54 @@
 
     goto :goto_0
 
-    .line 7080
+    .line 7218
     :sswitch_16
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCreditCard;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCreditCard;-><init>()V
 
-    .line 7081
+    .line 7219
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCreditCard;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 7082
+    .line 7220
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->setCreditCard(Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCreditCard;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;
 
     goto :goto_0
 
-    .line 7086
+    .line 7224
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCreditCard;
     :sswitch_22
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;-><init>()V
 
-    .line 7087
+    .line 7225
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 7088
+    .line 7226
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->setCarrierInstrument(Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;
 
     goto :goto_0
 
-    .line 7092
+    .line 7230
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;
     :sswitch_2e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalPaypalInstrumentProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalPaypalInstrumentProto;-><init>()V
 
-    .line 7093
+    .line 7231
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalPaypalInstrumentProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 7094
+    .line 7232
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->setPaypalInstrument(Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalPaypalInstrumentProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;
 
     goto :goto_0
 
-    .line 7066
+    .line 7204
     :sswitch_data_3a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -377,7 +377,7 @@
     .end annotation
 
     .prologue
-    .line 6911
+    .line 7045
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;
 
     move-result-object v0
@@ -390,15 +390,15 @@
     .parameter "value"
 
     .prologue
-    .line 6922
+    .line 7056
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->hasBillingInstrumentId:Z
 
-    .line 6923
+    .line 7057
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->billingInstrumentId_:Ljava/lang/String;
 
-    .line 6924
+    .line 7058
     return-object p0
 .end method
 
@@ -407,26 +407,26 @@
     .parameter "value"
 
     .prologue
-    .line 6959
+    .line 7093
     if-nez p1, :cond_8
 
-    .line 6960
+    .line 7094
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 6962
+    .line 7096
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->hasCarrierInstrument:Z
 
-    .line 6963
+    .line 7097
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->carrierInstrument_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;
 
-    .line 6964
+    .line 7098
     return-object p0
 .end method
 
@@ -435,26 +435,26 @@
     .parameter "value"
 
     .prologue
-    .line 6939
+    .line 7073
     if-nez p1, :cond_8
 
-    .line 6940
+    .line 7074
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 6942
+    .line 7076
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->hasCreditCard:Z
 
-    .line 6943
+    .line 7077
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->creditCard_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCreditCard;
 
-    .line 6944
+    .line 7078
     return-object p0
 .end method
 
@@ -463,26 +463,26 @@
     .parameter "value"
 
     .prologue
-    .line 6979
+    .line 7113
     if-nez p1, :cond_8
 
-    .line 6980
+    .line 7114
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 6982
+    .line 7116
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->hasPaypalInstrument:Z
 
-    .line 6983
+    .line 7117
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->paypalInstrument_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalPaypalInstrumentProto;
 
-    .line 6984
+    .line 7118
     return-object p0
 .end method
 
@@ -496,14 +496,14 @@
     .end annotation
 
     .prologue
-    .line 7016
+    .line 7151
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->hasBillingInstrumentId()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 7017
+    .line 7152
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->getBillingInstrumentId()Ljava/lang/String;
@@ -512,7 +512,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 7019
+    .line 7154
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->hasCreditCard()Z
 
@@ -520,7 +520,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 7020
+    .line 7155
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->getCreditCard()Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCreditCard;
@@ -529,7 +529,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 7022
+    .line 7157
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->hasCarrierInstrument()Z
 
@@ -537,7 +537,7 @@
 
     if-eqz v0, :cond_2b
 
-    .line 7023
+    .line 7158
     const/16 v0, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->getCarrierInstrument()Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCarrierBillingInstrumentProto;
@@ -546,7 +546,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 7025
+    .line 7160
     :cond_2b
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->hasPaypalInstrument()Z
 
@@ -554,7 +554,7 @@
 
     if-eqz v0, :cond_3a
 
-    .line 7026
+    .line 7161
     const/16 v0, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchasePostRequestProto$BillingInstrumentInfo;->getPaypalInstrument()Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalPaypalInstrumentProto;
@@ -563,7 +563,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 7028
+    .line 7163
     :cond_3a
     return-void
 .end method

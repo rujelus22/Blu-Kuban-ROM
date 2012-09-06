@@ -63,7 +63,7 @@
 
 .field protected static final DATA_STALL_NO_RECV_POLL_LIMIT:I = 0x1
 
-.field protected static final DBG:Z = true
+.field protected static final DBG:Z = false
 
 .field protected static final DEFALUT_DATA_ON_BOOT_PROP:Ljava/lang/String; = "net.def_data_on_boot"
 

@@ -11,7 +11,7 @@
     .registers 1
 
     .prologue
-    .line 818
+    .line 824
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 818
+    .line 824
     new-instance v0, Lcom/google/android/youtube/core/ui/AbstractWorkspace$SavedState;
 
     const/4 v1, 0x0
@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 818
+    .line 824
     new-array v0, p1, [Lcom/google/android/youtube/core/ui/AbstractWorkspace$SavedState;
 
     return-object v0

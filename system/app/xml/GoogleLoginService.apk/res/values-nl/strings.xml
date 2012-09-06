@@ -242,18 +242,18 @@ vraag"</b></string>
     <string name="account_intro_recommended_title">Google instellen</string>
     <string name="common_message">"Met een Google-account kunt u:
 
-"<li><ul>Al uw gegevens overal weergeven en indelen.</ul></li>"
+"<ul><li>Al uw gegevens overal weergeven en indelen.</li></ul>"
 
-"<li><ul>Een automatische back-up van uw gegevens maken.</ul></li>"
+"<ul><li>Een automatische back-up van uw gegevens maken.</li></ul>"
 
-"<li><ul>Google-services gemakkelijk overal gebruiken.</ul></li></string>
+"<ul><li>Google-services gemakkelijk overal gebruiken.</li></ul></string>
     <string name="add_account_message">" U kunt meerdere Google-accounts gebruiken (zoals uw zakelijke en privé-account). Raak "<b>Aanmelden</b> of <b>Account maken</b> aan om een Google-account toe te voegen</string>
     <string name="account_intro_default_message">U raakt geen gegevens meer kwijt: een Google-account houdt alles veilig bij elkaar.</string>
     <string name="account_intro_custom_endtext">Heeft u %s? Meld u nu aan.</string>
     <string name="account_intro_simple_message">Wilt u een bestaand account toevoegen of een nieuw account maken?</string>
     <string name="learn_more_title"><annotation id="learn_more">Meer informatie</annotation></string>
     <string name="learn_more_account_intro">"Met een Google-account kunt u
-"<li><ul>Al uw gegevens overal bekijken en ordenen.<li>"Automatisch back-ups maken van uw gegevens, zoals e-mails, contacten, muziek en foto's."</li><li>Google-services eenvoudig overal gebruiken—waaronder Google Contactpersonen, Google Agenda, Google Maps en meer.</li></ul></li></string>
+"<ul><li>Al uw gegevens overal bekijken en ordenen.<li>"Automatisch back-ups maken van uw gegevens, zoals e-mails, contacten, muziek en foto's."</li><li>Google-services eenvoudig overal gebruiken—waaronder Google Contactpersonen, Google Agenda, Google Maps en meer.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Over Google-accounts</string>
     <string name="learn_more_web_history">"Webgeschiedenis past uw zoekresultaten aan op basis van wat u eerder heeft gezocht en de sites die u heeft bezocht, zodat uw zoekervaring op Google wordt gepersonaliseerd.
 

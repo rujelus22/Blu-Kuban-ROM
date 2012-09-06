@@ -242,18 +242,18 @@ bảo mật"</b></string>
     <string name="account_intro_recommended_title">Thiết lập Google</string>
     <string name="common_message">"Tài khoản Google cho phép bạn
 
-"<li><ul>Xem và tổ chức tất cả thông tin của bạn ở mọi nơi.</ul></li>"
+"<ul><li>Xem và tổ chức tất cả thông tin của bạn ở mọi nơi.</li></ul>"
 
-"<li><ul>Tự động sao lưu dữ liệu của bạn.</ul></li>"
+"<ul><li>Tự động sao lưu dữ liệu của bạn.</li></ul>"
 
-"<li><ul>Sử dụng các dịch vụ của Google một cách dễ dàng ở mọi nơi.</ul></li></string>
+"<ul><li>Sử dụng các dịch vụ của Google một cách dễ dàng ở mọi nơi.</li></ul></string>
     <string name="add_account_message">" Bạn có thể sử dụng nhiều Tài khoản Google (chẳng hạn như tài khoản tại nhà và nơi làm việc). Bấm vào "<b>Đăng nhập</b> hoặc <b>Tạo tài khoản</b> để thêm Tài khoản Google</string>
     <string name="account_intro_default_message">Không bao giờ bị mất dữ liệu của bạn lần nữa. Tài khoản Google giúp lưu trữ mọi dữ liệu an toàn.</string>
     <string name="account_intro_custom_endtext">Bạn đã có %s? Hãy đăng nhập ngay bây giờ.</string>
     <string name="account_intro_simple_message">Bạn có muốn thêm tài khoản hiện tại hoặc tạo tài khoản mới không?</string>
     <string name="learn_more_title"><annotation id="learn_more">Tìm hiểu thêm</annotation></string>
     <string name="learn_more_account_intro">"Tài khoản Google cho phép bạn
-"<li><ul>Xem và tổ chức tất cả các thông tin của mình ở mọi nơi.<li>Tự động sao lưu dữ liệu của bạn, như email, danh sách liên hệ, nhạc và ảnh.</li><li>Sử dụng các dịch vụ của Google một cách dễ dàng ở bất cứ đâu—bao gồm Danh sách liên hệ, Lịch, Bản đồ và các dịch vụ khác.</li></ul></li></string>
+"<ul><li>Xem và tổ chức tất cả các thông tin của mình ở mọi nơi.<li>Tự động sao lưu dữ liệu của bạn, như email, danh sách liên hệ, nhạc và ảnh.</li><li>Sử dụng các dịch vụ của Google một cách dễ dàng ở bất cứ đâu—bao gồm Danh sách liên hệ, Lịch, Bản đồ và các dịch vụ khác.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Giới thiệu về tài khoản Google</string>
     <string name="learn_more_web_history">"Lịch sử web điều chỉnh kết quả tìm kiếm dựa trên những gì bạn đã tìm kiếm và các trang web mà bạn đã truy cập, cung cấp trải nghiệm Google cá nhân hóa.
 

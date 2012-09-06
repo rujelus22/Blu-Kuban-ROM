@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:versionCode="94" android:versionName="0.94" android:installLocation="internalOnly" package="eu.chainfire.supersu"
+<manifest android:versionCode="96" android:versionName="0.96" android:installLocation="internalOnly" package="eu.chainfire.supersu"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="15" />
     <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:resizeable="true" android:xlargeScreens="true" />

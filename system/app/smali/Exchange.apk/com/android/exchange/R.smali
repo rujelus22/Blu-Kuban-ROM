@@ -9,7 +9,6 @@
         Lcom/android/exchange/R$xml;,
         Lcom/android/exchange/R$string;,
         Lcom/android/exchange/R$mipmap;,
-        Lcom/android/exchange/R$integer;,
         Lcom/android/exchange/R$drawable;,
         Lcom/android/exchange/R$attr;,
         Lcom/android/exchange/R$array;
@@ -23,8 +22,8 @@
 
     .prologue
     .line 10
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1701
+    .line 208
     return-void
 .end method

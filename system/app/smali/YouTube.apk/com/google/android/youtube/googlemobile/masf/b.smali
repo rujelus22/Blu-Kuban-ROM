@@ -30,19 +30,15 @@
 
     iput v0, p0, Lcom/google/android/youtube/googlemobile/masf/b;->c:I
 
-    if-gtz p1, :cond_28
+    if-gtz p1, :cond_24
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "bufferSize "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -56,7 +52,7 @@
 
     throw v0
 
-    :cond_28
+    :cond_24
     new-array v0, p1, [B
 
     iput-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b;->b:[B

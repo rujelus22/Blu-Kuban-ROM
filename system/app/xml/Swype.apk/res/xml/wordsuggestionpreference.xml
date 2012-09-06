@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <CheckBoxPreference android:title="@string/pref_word_suggestion" android:key="wordSuggestionMaster" android:summary="@string/pref_word_suggestion_summary" />
-    <CheckBoxPreference android:title="@string/pref_auto_correction" android:key="autoCorrection" android:summary="@string/pref_auto_correction_summary" android:dependency="wordSuggestionMaster" />
-    <CheckBoxPreference android:title="@string/pref_show_suggested_word" android:key="showSuggestedWordNonMGD" android:summary="@string/pref_show_suggested_word_summary" android:dependency="autoCorrection" />
-    <CheckBoxPreference android:title="Next word prediction- temp string" android:key="nextWordPrediction" android:summary="Predicts the next word-  temp string" android:dependency="wordSuggestionMaster" />
-</PreferenceScreen>

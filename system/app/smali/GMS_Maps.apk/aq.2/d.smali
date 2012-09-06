@@ -1,396 +1,266 @@
 .class public Laq/d;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field private a:[Laq/c;
-
-.field private b:I
-
-.field private c:I
-
-.field private d:I
-
-.field private e:I
+.field private a:Lbe/c;
 
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .registers 1
 
-    const/4 v1, 0x0
-
+    .prologue
+    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v0, 0x8
-
-    new-array v0, v0, [Laq/c;
-
-    iput-object v0, p0, Laq/d;->a:[Laq/c;
-
-    iput v1, p0, Laq/d;->b:I
-
-    iput v1, p0, Laq/d;->c:I
-
+    .line 28
     return-void
-.end method
-
-.method private a(Laq/c;Laq/c;I)V
-    .registers 8
-
-    invoke-virtual {p2}, Laq/c;->k()I
-
-    move-result v0
-
-    invoke-virtual {p1}, Laq/c;->k()I
-
-    move-result v1
-
-    sub-int v1, v0, v1
-
-    invoke-virtual {p2}, Laq/c;->l()I
-
-    move-result v0
-
-    invoke-virtual {p1}, Laq/c;->l()I
-
-    move-result v2
-
-    sub-int v2, v0, v2
-
-    iget v0, p0, Laq/d;->d:I
-
-    if-nez v0, :cond_3c
-
-    iget v0, p0, Laq/d;->e:I
-
-    if-nez v0, :cond_3c
-
-    const/4 v0, 0x1
-
-    :goto_1d
-    iget v3, p0, Laq/d;->d:I
-
-    mul-int/lit16 v1, v1, 0x3e8
-
-    div-int/2addr v1, p3
-
-    add-int/2addr v1, v3
-
-    iput v1, p0, Laq/d;->d:I
-
-    iget v1, p0, Laq/d;->e:I
-
-    mul-int/lit16 v2, v2, 0x3e8
-
-    div-int/2addr v2, p3
-
-    add-int/2addr v1, v2
-
-    iput v1, p0, Laq/d;->e:I
-
-    if-nez v0, :cond_3b
-
-    iget v0, p0, Laq/d;->d:I
-
-    div-int/lit8 v0, v0, 0x2
-
-    iput v0, p0, Laq/d;->d:I
-
-    iget v0, p0, Laq/d;->e:I
-
-    div-int/lit8 v0, v0, 0x2
-
-    iput v0, p0, Laq/d;->e:I
-
-    :cond_3b
-    return-void
-
-    :cond_3c
-    const/4 v0, 0x0
-
-    goto :goto_1d
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 5
+.method public declared-synchronized a(J)Lbd/b;
+    .registers 4
+    .parameter
 
-    const/4 v1, 0x0
+    .prologue
+    .line 64
+    monitor-enter p0
 
-    move v0, v1
+    :try_start_1
+    iget-object v0, p0, Laq/d;->a:Lbe/c;
 
-    :goto_2
-    const/16 v2, 0x8
+    if-eqz v0, :cond_d
 
-    if-ge v0, v2, :cond_e
+    .line 65
+    iget-object v0, p0, Laq/d;->a:Lbe/c;
 
-    iget-object v2, p0, Laq/d;->a:[Laq/c;
+    invoke-virtual {v0, p1, p2}, Lbe/c;->b(J)Lbd/b;
+    :try_end_a
+    .catchall {:try_start_1 .. :try_end_a} :catchall_f
 
-    const/4 v3, 0x0
+    move-result-object v0
 
-    aput-object v3, v2, v0
+    .line 67
+    :goto_b
+    monitor-exit p0
 
-    add-int/lit8 v0, v0, 0x1
+    return-object v0
 
-    goto :goto_2
+    :cond_d
+    const/4 v0, 0x0
 
+    goto :goto_b
+
+    .line 64
+    :catchall_f
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized a()V
+    .registers 2
+
+    .prologue
+    .line 36
+    monitor-enter p0
+
+    const/4 v0, 0x0
+
+    :try_start_2
+    invoke-virtual {p0, v0}, Laq/d;->a(Z)V
+    :try_end_5
+    .catchall {:try_start_2 .. :try_end_5} :catchall_7
+
+    .line 37
+    monitor-exit p0
+
+    return-void
+
+    .line 36
+    :catchall_7
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized a(JFFF)V
+    .registers 12
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 74
+    monitor-enter p0
+
+    :try_start_1
+    iget-object v0, p0, Laq/d;->a:Lbe/c;
+
+    if-eqz v0, :cond_e
+
+    .line 75
+    iget-object v0, p0, Laq/d;->a:Lbe/c;
+
+    move-wide v1, p1
+
+    move v3, p3
+
+    move v4, p4
+
+    move v5, p5
+
+    invoke-virtual/range {v0 .. v5}, Lbe/c;->a(JFFF)V
+    :try_end_e
+    .catchall {:try_start_1 .. :try_end_e} :catchall_10
+
+    .line 77
     :cond_e
-    iput v1, p0, Laq/d;->c:I
-
-    iput v1, p0, Laq/d;->b:I
+    monitor-exit p0
 
     return-void
+
+    .line 74
+    :catchall_10
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method public a(Laq/c;)V
-    .registers 7
+.method public declared-synchronized a(JLbd/b;)V
+    .registers 5
+    .parameter
+    .parameter
 
-    iget v0, p0, Laq/d;->b:I
+    .prologue
+    .line 83
+    monitor-enter p0
 
-    const/16 v1, 0x8
+    :try_start_1
+    iget-object v0, p0, Laq/d;->a:Lbe/c;
 
-    if-ne v0, v1, :cond_14
+    if-eqz v0, :cond_a
 
-    iget v0, p0, Laq/d;->b:I
+    .line 84
+    iget-object v0, p0, Laq/d;->a:Lbe/c;
 
-    add-int/lit8 v0, v0, -0x1
+    invoke-virtual {v0, p1, p2, p3}, Lbe/c;->a(JLbd/b;)V
+    :try_end_a
+    .catchall {:try_start_1 .. :try_end_a} :catchall_c
 
-    iput v0, p0, Laq/d;->b:I
-
-    iget v0, p0, Laq/d;->c:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    rem-int/lit8 v0, v0, 0x8
-
-    iput v0, p0, Laq/d;->c:I
-
-    :cond_14
-    iget v0, p0, Laq/d;->b:I
-
-    if-lez v0, :cond_3c
-
-    iget v0, p0, Laq/d;->c:I
-
-    iget v1, p0, Laq/d;->b:I
-
-    add-int/2addr v0, v1
-
-    add-int/lit8 v0, v0, -0x1
-
-    rem-int/lit8 v0, v0, 0x8
-
-    invoke-virtual {p1}, Laq/c;->n()J
-
-    move-result-wide v1
-
-    iget-object v3, p0, Laq/d;->a:[Laq/c;
-
-    aget-object v0, v3, v0
-
-    invoke-virtual {v0}, Laq/c;->n()J
-
-    move-result-wide v3
-
-    cmp-long v0, v1, v3
-
-    if-ltz v0, :cond_39
-
-    sub-long v0, v1, v3
-
-    const-wide/16 v2, 0xc8
-
-    cmp-long v0, v0, v2
-
-    if-lez v0, :cond_3c
-
-    :cond_39
-    invoke-virtual {p0}, Laq/d;->a()V
-
-    :cond_3c
-    iget v0, p0, Laq/d;->c:I
-
-    iget v1, p0, Laq/d;->b:I
-
-    add-int/2addr v0, v1
-
-    rem-int/lit8 v0, v0, 0x8
-
-    iget-object v1, p0, Laq/d;->a:[Laq/c;
-
-    aput-object p1, v1, v0
-
-    iget v0, p0, Laq/d;->b:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Laq/d;->b:I
+    .line 86
+    :cond_a
+    monitor-exit p0
 
     return-void
+
+    .line 83
+    :catchall_c
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method public b()I
+.method public declared-synchronized a(Z)V
+    .registers 8
+    .parameter
+
+    .prologue
+    .line 43
+    monitor-enter p0
+
+    :try_start_1
+    iget-object v0, p0, Laq/d;->a:Lbe/c;
+
+    if-nez v0, :cond_18
+
+    .line 44
+    if-eqz p1, :cond_1a
+
+    .line 45
+    new-instance v0, Lbe/c;
+
+    const v1, 0x3dcccccd
+
+    const/16 v2, 0x1770
+
+    const/high16 v3, 0x3f40
+
+    const/16 v4, 0x12c
+
+    const/4 v5, 0x1
+
+    invoke-direct/range {v0 .. v5}, Lbe/c;-><init>(FIFIZ)V
+
+    iput-object v0, p0, Laq/d;->a:Lbe/c;
+    :try_end_18
+    .catchall {:try_start_1 .. :try_end_18} :catchall_22
+
+    .line 50
+    :cond_18
+    :goto_18
+    monitor-exit p0
+
+    return-void
+
+    .line 47
+    :cond_1a
+    :try_start_1a
+    new-instance v0, Lbe/c;
+
+    invoke-direct {v0}, Lbe/c;-><init>()V
+
+    iput-object v0, p0, Laq/d;->a:Lbe/c;
+    :try_end_21
+    .catchall {:try_start_1a .. :try_end_21} :catchall_22
+
+    goto :goto_18
+
+    .line 43
+    :catchall_22
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized b()V
     .registers 2
 
-    iget v0, p0, Laq/d;->d:I
-
-    return v0
-.end method
-
-.method public c()I
-    .registers 2
-
-    iget v0, p0, Laq/d;->e:I
-
-    return v0
-.end method
-
-.method public d()V
-    .registers 14
-
-    const/4 v3, 0x0
-
-    const/4 v2, 0x0
-
-    iput v2, p0, Laq/d;->d:I
-
-    iput v2, p0, Laq/d;->e:I
-
-    const-wide/16 v0, 0x0
-
-    iget v4, p0, Laq/d;->b:I
-
-    if-lez v4, :cond_1d
-
-    iget v0, p0, Laq/d;->c:I
-
-    iget v1, p0, Laq/d;->b:I
-
-    add-int/2addr v0, v1
-
-    add-int/lit8 v0, v0, -0x1
-
-    rem-int/lit8 v0, v0, 0x8
-
-    iget-object v1, p0, Laq/d;->a:[Laq/c;
-
-    aget-object v0, v1, v0
-
-    invoke-virtual {v0}, Laq/c;->n()J
-
-    move-result-wide v0
-
-    :cond_1d
-    move v6, v2
-
-    move-object v4, v3
-
-    :goto_1f
-    iget v5, p0, Laq/d;->b:I
-
-    if-ge v6, v5, :cond_51
-
-    iget-object v5, p0, Laq/d;->a:[Laq/c;
-
-    iget v7, p0, Laq/d;->c:I
-
-    add-int/2addr v7, v6
-
-    rem-int/lit8 v7, v7, 0x8
-
-    aget-object v5, v5, v7
-
-    invoke-virtual {v5}, Laq/c;->n()J
-
-    move-result-wide v7
-
-    sub-long v9, v0, v7
-
-    const-wide/16 v11, 0xc8
-
-    cmp-long v9, v9, v11
-
-    if-lez v9, :cond_3c
-
-    :cond_38
-    :goto_38
-    add-int/lit8 v5, v6, 0x1
-
-    move v6, v5
-
-    goto :goto_1f
-
-    :cond_3c
-    if-nez v3, :cond_41
-
-    move-object v3, v4
-
-    move-object v4, v5
-
-    goto :goto_38
-
-    :cond_41
-    invoke-virtual {v3}, Laq/c;->n()J
-
-    move-result-wide v9
-
-    sub-long/2addr v7, v9
-
-    long-to-int v7, v7
-
-    if-eqz v7, :cond_38
-
-    invoke-direct {p0, v3, v5, v7}, Laq/d;->a(Laq/c;Laq/c;I)V
-
-    add-int/lit8 v2, v2, 0x1
-
-    move-object v3, v4
-
-    move-object v4, v5
-
-    goto :goto_38
-
-    :cond_51
-    if-nez v2, :cond_66
-
-    if-eqz v4, :cond_66
-
-    if-eqz v3, :cond_66
-
-    invoke-virtual {v4}, Laq/c;->n()J
-
-    move-result-wide v0
-
-    invoke-virtual {v3}, Laq/c;->n()J
-
-    move-result-wide v5
-
-    sub-long/2addr v0, v5
-
-    long-to-int v0, v0
-
-    if-lez v0, :cond_66
-
-    invoke-direct {p0, v3, v4, v0}, Laq/d;->a(Laq/c;Laq/c;I)V
-
-    :cond_66
-    iget v0, p0, Laq/d;->d:I
-
-    mul-int/lit8 v0, v0, 0x5
-
-    div-int/lit8 v0, v0, 0x9
-
-    iput v0, p0, Laq/d;->d:I
-
-    iget v0, p0, Laq/d;->e:I
-
-    mul-int/lit8 v0, v0, 0x5
-
-    div-int/lit8 v0, v0, 0x9
-
-    iput v0, p0, Laq/d;->e:I
+    .prologue
+    .line 56
+    monitor-enter p0
+
+    const/4 v0, 0x0
+
+    :try_start_2
+    iput-object v0, p0, Laq/d;->a:Lbe/c;
+    :try_end_4
+    .catchall {:try_start_2 .. :try_end_4} :catchall_6
+
+    .line 57
+    monitor-exit p0
 
     return-void
+
+    .line 56
+    :catchall_6
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

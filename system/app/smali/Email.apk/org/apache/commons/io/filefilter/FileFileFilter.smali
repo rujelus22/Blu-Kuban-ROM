@@ -15,7 +15,7 @@
     .registers 1
 
     .prologue
-    .line 44
+    .line 42
     new-instance v0, Lorg/apache/commons/io/filefilter/FileFileFilter;
 
     invoke-direct {v0}, Lorg/apache/commons/io/filefilter/FileFileFilter;-><init>()V
@@ -29,10 +29,10 @@
     .registers 1
 
     .prologue
-    .line 49
+    .line 47
     invoke-direct {p0}, Lorg/apache/commons/io/filefilter/AbstractFileFilter;-><init>()V
 
-    .line 50
+    .line 48
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .parameter "file"
 
     .prologue
-    .line 59
+    .line 57
     invoke-virtual {p1}, Ljava/io/File;->isFile()Z
 
     move-result v0

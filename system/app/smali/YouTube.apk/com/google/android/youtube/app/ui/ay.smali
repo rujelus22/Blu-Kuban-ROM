@@ -1,99 +1,107 @@
-.class final Lcom/google/android/youtube/app/ui/ay;
-.super Ljava/lang/Object;
+.class public final Lcom/google/android/youtube/app/ui/ay;
+.super Lcom/google/android/youtube/app/ui/ep;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/Analytics;
-
-.field final synthetic b:Lcom/google/android/youtube/app/p;
-
-.field final synthetic c:Lcom/google/android/youtube/app/ui/at;
+.field private final a:Landroid/widget/LinearLayout;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/ui/at;Lcom/google/android/youtube/core/Analytics;Lcom/google/android/youtube/app/p;)V
-    .registers 4
+.method public constructor <init>(Landroid/app/Activity;Landroid/view/View;Lcom/google/android/youtube/core/Analytics;Lcom/google/android/youtube/app/a;Lcom/google/android/youtube/core/b/ae;Lcom/google/android/youtube/core/b/ag;Lcom/google/android/youtube/core/ui/m;Lcom/google/android/youtube/core/async/UserAuthorizer;Lcom/google/android/youtube/app/c/g;Lcom/google/android/youtube/core/utils/k;)V
+    .registers 12
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 148
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/ay;->c:Lcom/google/android/youtube/app/ui/at;
+    .line 31
+    invoke-direct/range {p0 .. p10}, Lcom/google/android/youtube/app/ui/ep;-><init>(Landroid/app/Activity;Landroid/view/View;Lcom/google/android/youtube/core/Analytics;Lcom/google/android/youtube/app/a;Lcom/google/android/youtube/core/b/ae;Lcom/google/android/youtube/core/b/ag;Lcom/google/android/youtube/core/ui/m;Lcom/google/android/youtube/core/async/UserAuthorizer;Lcom/google/android/youtube/app/c/g;Lcom/google/android/youtube/core/utils/k;)V
 
-    iput-object p2, p0, Lcom/google/android/youtube/app/ui/ay;->a:Lcom/google/android/youtube/core/Analytics;
+    .line 34
+    const v0, 0x7f0800e1
 
-    iput-object p3, p0, Lcom/google/android/youtube/app/ui/ay;->b:Lcom/google/android/youtube/app/p;
+    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
 
+    check-cast v0, Landroid/widget/LinearLayout;
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/ui/ay;->a:Landroid/widget/LinearLayout;
+
+    .line 35
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 5
-    .parameter
+.method protected final b()V
+    .registers 3
 
     .prologue
-    .line 151
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ay;->c:Lcom/google/android/youtube/app/ui/at;
+    .line 39
+    invoke-super {p0}, Lcom/google/android/youtube/app/ui/ep;->b()V
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/at;->d(Lcom/google/android/youtube/app/ui/at;)Lcom/google/android/youtube/core/model/Video;
+    .line 40
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ay;->a:Landroid/widget/LinearLayout;
 
-    move-result-object v0
+    if-eqz v0, :cond_15
 
-    if-eqz v0, :cond_29
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ay;->a:Landroid/widget/LinearLayout;
 
-    .line 152
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ay;->a:Lcom/google/android/youtube/core/Analytics;
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getVisibility()I
 
-    const-string v1, "RemotePlayVideo"
+    move-result v0
 
-    iget-object v2, p0, Lcom/google/android/youtube/app/ui/ay;->c:Lcom/google/android/youtube/app/ui/at;
+    if-eqz v0, :cond_15
 
-    invoke-static {v2}, Lcom/google/android/youtube/app/ui/at;->d(Lcom/google/android/youtube/app/ui/at;)Lcom/google/android/youtube/core/model/Video;
-
-    move-result-object v2
-
-    iget-object v2, v2, Lcom/google/android/youtube/core/model/Video;->categoryLabel:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/Analytics;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 156
-    :goto_17
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ay;->b:Lcom/google/android/youtube/app/p;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/ay;->c:Lcom/google/android/youtube/app/ui/at;
-
-    invoke-static {v1}, Lcom/google/android/youtube/app/ui/at;->a(Lcom/google/android/youtube/app/ui/at;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/google/android/youtube/app/p;->a(Ljava/lang/String;)V
-
-    .line 157
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ay;->c:Lcom/google/android/youtube/app/ui/at;
+    .line 41
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ay;->a:Landroid/widget/LinearLayout;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/app/ui/at;->a(Lcom/google/android/youtube/app/ui/at;Z)Z
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 158
+    .line 43
+    :cond_15
     return-void
+.end method
 
-    .line 154
-    :cond_29
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ay;->a:Lcom/google/android/youtube/core/Analytics;
+.method protected final c()V
+    .registers 3
 
-    const-string v1, "RemotePlayVideo"
+    .prologue
+    const/16 v1, 0x8
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/Analytics;->b(Ljava/lang/String;)V
+    .line 47
+    invoke-super {p0}, Lcom/google/android/youtube/app/ui/ep;->c()V
 
-    goto :goto_17
+    .line 48
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ay;->a:Landroid/widget/LinearLayout;
+
+    if-eqz v0, :cond_16
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ay;->a:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getVisibility()I
+
+    move-result v0
+
+    if-eq v0, v1, :cond_16
+
+    .line 49
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ay;->a:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+    .line 51
+    :cond_16
+    return-void
 .end method

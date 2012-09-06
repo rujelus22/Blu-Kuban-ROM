@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/exchange/ExchangeService;->reconcileAccounts(Landroid/content/Context;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/exchange/ExchangeService;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,40 +21,24 @@
 .field final synthetic val$context:Landroid/content/Context;
 
 
-# direct methods
-.method constructor <init>(Landroid/content/Context;)V
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 2498
-    iput-object p1, p0, Lcom/android/exchange/ExchangeService$3;->val$context:Landroid/content/Context;
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
 # virtual methods
 .method public run()V
     .registers 3
 
     .prologue
-    .line 2501
+    .line 1155
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    .line 2502
+    .line 1156
     .local v0, exchangeService:Lcom/android/exchange/ExchangeService;
     if-eqz v0, :cond_9
 
-    .line 2503
+    .line 1157
     iget-object v1, p0, Lcom/android/exchange/ExchangeService$3;->val$context:Landroid/content/Context;
 
-    #calls: Lcom/android/exchange/ExchangeService;->runAccountReconcilerSync(Landroid/content/Context;)V
-    invoke-static {v0, v1}, Lcom/android/exchange/ExchangeService;->access$1700(Lcom/android/exchange/ExchangeService;Landroid/content/Context;)V
+    invoke-static {v1}, Lcom/android/exchange/ExchangeService;->runAccountReconcilerSync(Landroid/content/Context;)V
 
-    .line 2505
+    .line 1159
     :cond_9
     return-void
 .end method

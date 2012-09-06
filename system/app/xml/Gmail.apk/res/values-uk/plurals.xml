@@ -53,40 +53,40 @@
         <item quantity="one">Очікування на операцію з бесідами: %1$d.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> проігноровано.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> проігноровано.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> проігноровано.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> проігноровано.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> повідомлено як спам.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> повідомлено як спам.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> повідомлено як спам.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> повідомлено як спам.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> заархівовано.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> заархівовано.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> заархівовано.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> заархівовано.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> переміщено у вхідні.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> переміщено у вхідні.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> переміщено у вхідні.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> переміщено у вхідні.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> видалено.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> видалено.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> видалено.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> видалено.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> позначено як важливі.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> позначено як важливі.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> позначено як важливі.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> позначено як важливі.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> позначено як неважливі.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> позначено як неважливі.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> позначено як неважливі.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> позначено як неважливі.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> позначено як прочитані.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> позначено як прочитані.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> позначено як прочитані.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> позначено як прочитані.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> позначено як непрочитані.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> позначено як непрочитані.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> позначено як непрочитані.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> позначено як непрочитані.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Змінено мітки.</item>

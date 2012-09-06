@@ -1,20 +1,11 @@
-.class public Lcom/google/googlenav/ui/wizard/gA;
+.class public interface abstract Lcom/google/googlenav/ui/wizard/ga;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# instance fields
-.field public a:Lcom/google/googlenav/ui/wizard/gz;
+# virtual methods
+.method public abstract a()V
+.end method
 
-.field public b:Ljava/util/EnumSet;
-
-.field public c:Ljava/util/EnumSet;
-
-
-# direct methods
-.method public constructor <init>()V
-    .registers 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+.method public abstract a(Lcom/google/googlenav/h;)V
 .end method

@@ -1,7 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="Theme.Base" parent="@android:style/Theme" />
+    <style name="Theme" parent="@android:style/Theme.Holo">
+        <item name="android:windowBackground">@color/primary_background</item>
+    </style>
+    <style name="Theme.Base.Dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:alertDialogStyle">@style/Theme.AlertDialog</item>
+    </style>
+    <style name="Theme.Dialog" parent="@style/Theme.Base.Dialog">
+        <item name="android:windowBackground">@drawable/dialog_full_holo_dark</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+    </style>
+    <style name="Theme.AlertDialog" parent="@style/Theme">
+        <item name="android:fullDark">@drawable/dialog_full_holo_dark</item>
+        <item name="android:topDark">@drawable/dialog_top_holo_dark</item>
+        <item name="android:centerDark">@drawable/dialog_middle_holo_dark</item>
+        <item name="android:bottomDark">@drawable/dialog_bottom_holo_dark</item>
+        <item name="android:fullBright">@drawable/dialog_full_holo_dark</item>
+        <item name="android:topBright">@drawable/dialog_top_holo_dark</item>
+        <item name="android:centerBright">@drawable/dialog_middle_holo_dark</item>
+        <item name="android:bottomBright">@drawable/dialog_bottom_holo_dark</item>
+        <item name="android:bottomMedium">@drawable/dialog_bottom_holo_dark</item>
+        <item name="android:centerMedium">@drawable/dialog_middle_holo_dark</item>
+    </style>
+    <style name="SeekBarStyle" parent="@android:style/Widget.SeekBar" />
+    <style name="SeekBar">
+        <item name="android:paddingLeft">16.0dip</item>
+        <item name="android:paddingRight">16.0dip</item>
+        <item name="android:focusable">true</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">@drawable/scrubber_progress_horizontal_holo_dark</item>
+        <item name="android:progressDrawable">@drawable/scrubber_progress_horizontal_holo_dark</item>
+        <item name="android:thumb">@drawable/scrubber_control_selector_holo</item>
+        <item name="android:thumbOffset">16.0dip</item>
+        <item name="android:height">13.0dip</item>
+    </style>
+    <style name="SectionTitle">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffcccccc</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">#10ffffff</item>
+        <item name="android:paddingLeft">@dimen/section_title_padding</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/section_title_height</item>
+    </style>
+    <style name="SectionDivider">
+        <item name="android:background">@color/holo_blue_light</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0dip</item>
+    </style>
+    <style name="MediaRouteButton">
+        <item name="android:background">@drawable/item_background_holo_dark</item>
+        <item name="android:minWidth">56.0dip</item>
+        <item name="android:minHeight">48.0dip</item>
+        <item name="externalRouteEnabledDrawableFallback">@drawable/ic_media_route_holo_dark</item>
+    </style>
     <style name="BasePagedView">
-        <item name="maxItems">150</item>
+        <item name="maxItems">@integer/paged_views_max_items</item>
+        <item name="itemsPerPage">@integer/paged_views_items_per_page</item>
     </style>
     <style name="PagedListView" parent="@style/BasePagedView" />
     <style name="PagedGridView" parent="@style/BasePagedView" />
@@ -22,6 +85,9 @@
     <style name="FullHeightDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowNoTitle">true</item>
     </style>
+    <style name="FullHeightDialog.NoBorder" parent="@style/FullHeightDialog">
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
     <style name="TabRow" parent="@android:style/Widget">
         <item name="android:divider">@drawable/tab_divider_dark</item>
     </style>
@@ -39,6 +105,34 @@
         <item name="android:textColor">@color/primary_font</item>
         <item name="android:paddingBottom">12.0dip</item>
     </style>
+    <style name="TvControllerOverlay">
+        <item name="android:background">@drawable/tv_panel_player</item>
+    </style>
+    <style name="TvControllerOverlayButton">
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">false</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textOn">@null</item>
+        <item name="android:textOff">@null</item>
+        <item name="android:text">@null</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="TvSmallTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/small_font_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_tv_regular</item>
+    </style>
+    <style name="TvMediumTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/medium_font_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_tv_regular</item>
+    </style>
+    <style name="TvLargeTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/large_font_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_tv_regular</item>
+    </style>
     <style name="PlusOneButton">
         <item name="android:textSize">@dimen/plus_one_button_text_size</item>
         <item name="android:lines">@integer/plus_one_button_text_lines</item>
@@ -46,12 +140,13 @@
         <item name="progressBarUseInverseStyle">@bool/plus_one_button_progress_bar_inverse</item>
         <item name="iconTextGap">@dimen/plus_one_button_icon_text_gap</item>
     </style>
-    <style name="Theme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
-        <item name="android:windowBackground">@color/primary_background</item>
+    <style name="BaseTheme" parent="@android:style/Theme.Holo">
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:fadingEdgeLength">0.0dip</item>
         <item name="android:actionBarStyle">@style/ActionBar</item>
         <item name="android:actionBarTabStyle">@style/ActionBarView_TabView</item>
         <item name="android:actionBarTabTextStyle">@style/ActionBarView_TabText</item>
+        <item name="android:requiresFadingEdge">none</item>
         <item name="LiveBadge">@style/LiveBadge</item>
     </style>
     <style name="Theme.Home" parent="@style/Theme">
@@ -61,7 +156,7 @@
     <style name="Theme.Channel" parent="@style/Theme" />
     <style name="Theme.Watch" parent="@style/Theme" />
     <style name="Theme.Videos" parent="@style/Theme" />
-    <style name="Theme.Settings" parent="@style/Theme" />
+    <style name="Theme.Settings" parent="@style/BaseTheme" />
     <style name="Toolbar" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@color/darker_transparent</item>
         <item name="android:windowFrame">@null</item>
@@ -69,7 +164,7 @@
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
-    <style name="ContextualMenu" parent="@android:style/Theme.Holo.Light.Dialog">
+    <style name="ContextualMenu" parent="@android:style/Theme.Holo.Dialog">
         <item name="android:windowBackground">@color/full_transparent</item>
         <item name="android:windowFrame">@null</item>
         <item name="android:windowNoTitle">true</item>
@@ -77,18 +172,27 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:backgroundDimEnabled">false</item>
     </style>
-    <style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+    <style name="ActionBarTitle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="ActionBarSubtitle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Subtitle">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="ActionBar" parent="@android:style/Widget.Holo.ActionBar">
         <item name="android:icon">@drawable/ic_logo_square</item>
-        <item name="android:background">@drawable/bg_stripes_dark_drawable</item>
         <item name="android:divider">@null</item>
-        <item name="android:logo">@drawable/ic_logo_square</item>
+        <item name="android:logo">@drawable/ic_logo_wide</item>
         <item name="android:displayOptions">useLogo|showHome</item>
+        <item name="android:titleTextStyle">@style/ActionBarTitle</item>
+        <item name="android:subtitleTextStyle">@style/ActionBarSubtitle</item>
     </style>
     <style name="ActionBar.TopLevel" parent="@style/ActionBar">
         <item name="android:logo">@null</item>
     </style>
-    <style name="ActionBarView_TabText" parent="@android:style/Widget.Holo.ActionBar.TabText" />
-    <style name="ActionBarView_TabView" parent="@android:style/Widget.Holo.Light.ActionBar.TabView.Inverse">
+    <style name="ActionBarView_TabText" parent="@android:style/Widget.Holo.ActionBar.TabText">
+        <item name="android:textColor">@color/tab_text</item>
+    </style>
+    <style name="ActionBarView_TabView" parent="@android:style/Widget.Holo.ActionBar.TabView">
         <item name="android:background">@drawable/tab_drawable</item>
         <item name="android:paddingLeft">11.0dip</item>
         <item name="android:paddingRight">11.0dip</item>
@@ -117,7 +221,7 @@
         <item name="android:text">@string/live_badge_text</item>
         <item name="android:lines">1</item>
     </style>
-    <style name="LicensesHolo" parent="@android:style/Theme.Holo.Light.Dialog" />
+    <style name="LicensesHolo" parent="@android:style/Theme.Holo.Dialog" />
     <style name="NotificationText" parent="@android:style/TextAppearance.StatusBar.EventContent" />
     <style name="NotificationTitle" parent="@android:style/TextAppearance.StatusBar.EventContent.Title" />
 </resources>

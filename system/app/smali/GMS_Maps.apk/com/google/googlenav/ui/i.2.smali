@@ -1,38 +1,37 @@
-.class Lcom/google/googlenav/ui/i;
-.super Lbb/b;
+.class Lcom/google/googlenav/ui/I;
+.super Lcom/google/googlenav/x;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/f;
+.field final synthetic a:Lcom/google/googlenav/ui/v;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/f;)V
+.method constructor <init>(Lcom/google/googlenav/ui/v;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/i;->a:Lcom/google/googlenav/ui/f;
+    .prologue
+    .line 923
+    iput-object p1, p0, Lcom/google/googlenav/ui/I;->a:Lcom/google/googlenav/ui/v;
 
-    invoke-direct {p0}, Lbb/b;-><init>()V
+    invoke-direct {p0}, Lcom/google/googlenav/x;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lbb/E;)Z
-    .registers 4
+.method public a()V
+    .registers 2
 
-    const/4 v0, 0x2
+    .prologue
+    .line 926
+    iget-object v0, p0, Lcom/google/googlenav/ui/I;->a:Lcom/google/googlenav/ui/v;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/i;->a:Lcom/google/googlenav/ui/f;
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/v;->w()V
 
-    invoke-static {v1}, Lcom/google/googlenav/ui/f;->a(Lcom/google/googlenav/ui/f;)Lcom/google/googlenav/ui/D;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/google/googlenav/ui/D;->b(I)V
-
-    const/4 v0, 0x1
-
-    return v0
+    .line 927
+    return-void
 .end method

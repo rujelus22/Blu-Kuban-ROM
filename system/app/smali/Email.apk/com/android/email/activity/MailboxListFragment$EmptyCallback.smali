@@ -26,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 350
+    .line 254
     new-instance v0, Lcom/android/email/activity/MailboxListFragment$EmptyCallback;
 
     invoke-direct {v0}, Lcom/android/email/activity/MailboxListFragment$EmptyCallback;-><init>()V
@@ -40,8 +40,8 @@
     .registers 1
 
     .prologue
-    .line 349
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 253
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -53,50 +53,25 @@
     .parameter "accountId"
 
     .prologue
-    .line 359
+    .line 257
     return-void
 .end method
 
-.method public onCurrentMailboxUpdated(ILjava/lang/String;II)V
-    .registers 5
-    .parameter "mailboxType"
-    .parameter "mailboxName"
-    .parameter "unreadCount"
-    .parameter "totalCount"
-
-    .prologue
-    .line 363
-    return-void
-.end method
-
-.method public onMailboxSelected(JJLjava/lang/String;II)V
-    .registers 8
+.method public onMailboxSelected(JJZ)V
+    .registers 6
     .parameter "accountId"
     .parameter "mailboxId"
-    .parameter "displayName"
-    .parameter "unreadCount"
-    .parameter "totalCount"
+    .parameter "nestedNavigation"
 
     .prologue
-    .line 355
+    .line 256
     return-void
 .end method
 
-.method public setAllMailboxCursor(Landroid/database/Cursor;)V
-    .registers 2
-    .parameter "cursor"
+.method public onParentMailboxChanged()V
+    .registers 1
 
     .prologue
-    .line 367
-    return-void
-.end method
-
-.method public setTotalCountFromMailbox(IZ)V
-    .registers 3
-    .parameter "totalCount"
-    .parameter "b"
-
-    .prologue
-    .line 371
+    .line 259
     return-void
 .end method

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="reminder_methods_labels">
+        <item>Pemberitahuan</item>
+        <item>Email</item>
+        <item>SMS</item>
+    </string-array>
+    <string-array name="reminder_minutes_labels">
+        <item>0 menit</item>
+        <item>1 menit</item>
+        <item>5 menit</item>
+        <item>10 menit</item>
+        <item>15 menit</item>
+        <item>20 menit</item>
+        <item>25 menit</item>
+        <item>30 menit</item>
+        <item>45 menit</item>
+        <item>1 jam</item>
+        <item>2 jam</item>
+        <item>3 jam</item>
+        <item>12 jam</item>
+        <item>24 jam</item>
+        <item>2 hari</item>
+        <item>1 minggu</item>
+    </string-array>
+    <string-array name="preferences_default_reminder_labels">
+        <item>Tak Satu Pun</item>
+        <item>0 menit</item>
+        <item>1 menit</item>
+        <item>5 menit</item>
+        <item>10 menit</item>
+        <item>15 menit</item>
+        <item>20 menit</item>
+        <item>25 menit</item>
+        <item>30 menit</item>
+        <item>45 menit</item>
+        <item>1 jam</item>
+        <item>2 jam</item>
+        <item>3 jam</item>
+        <item>12 jam</item>
+        <item>24 jam</item>
+        <item>2 hari</item>
+        <item>1 minggu</item>
+    </string-array>
+    <string-array name="preferences_week_start_day_labels">
+        <item>Lokal bawaan</item>
+        <item>Sabtu</item>
+        <item>Minggu</item>
+        <item>Senin</item>
+    </string-array>
+    <string-array name="timezone_labels">
+        <item>Kepulauan Marshall</item>
+        <item>Pulau Midway</item>
+        <item>Hawaii</item>
+        <item>Alaska</item>
+        <item>Waktu Pasifik</item>
+        <item>Tijuana</item>
+        <item>Arizona</item>
+        <item>Chihuahua</item>
+        <item>Waktu Pegunungan</item>
+        <item>Amerika Tengah</item>
+        <item>Waktu Tengah</item>
+        <item>Mexico City</item>
+        <item>Saskatchewan</item>
+        <item>Bogota</item>
+        <item>Waktu Timur</item>
+        <item>Venezuela</item>
+        <item>Waktu Atlantik</item>
+        <item>Manaus</item>
+        <item>Santiago</item>
+        <item>Newfoundland</item>
+        <item>Brasilia</item>
+        <item>Buenos Aires</item>
+        <item>Greenland</item>
+        <item>Montevideo</item>
+        <item>Mid-Atlantic</item>
+        <item>Azores</item>
+        <item>Kepulauan Tanjung Verde</item>
+        <item>Casablanca</item>
+        <item>London, Dublin</item>
+        <item>Amsterdam, Berlin</item>
+        <item>Beograd</item>
+        <item>Brussel</item>
+        <item>Sarajevo</item>
+        <item>Windhoek</item>
+        <item>Waktu Afrika Barat</item>
+        <item>Amman, Jordan</item>
+        <item>Athena, Istanbul</item>
+        <item>Beirut, Lebanon</item>
+        <item>Kairo</item>
+        <item>Helsinki</item>
+        <item>Yerusalem</item>
+        <item>Minsk</item>
+        <item>Harare</item>
+        <item>Bagdad</item>
+        <item>Moskwa</item>
+        <item>Kuwait</item>
+        <item>Nairobi</item>
+        <item>Teheran</item>
+        <item>Baku</item>
+        <item>Tbilisi</item>
+        <item>Yerevan</item>
+        <item>Dubai</item>
+        <item>Kabul</item>
+        <item>Islamabad, Karachi</item>
+        <item>"Ural'sk"</item>
+        <item>Yekaterinburg</item>
+        <item>Kolkata</item>
+        <item>Sri Lanka</item>
+        <item>Kathmandu</item>
+        <item>Astana</item>
+        <item>Yangon</item>
+        <item>Krasnoyarsk</item>
+        <item>Bangkok</item>
+        <item>Beijing</item>
+        <item>Hong Kong</item>
+        <item>Irkutsk</item>
+        <item>Kuala Lumpur</item>
+        <item>Perth</item>
+        <item>Taipei</item>
+        <item>Seoul</item>
+        <item>Tokyo, Osaka</item>
+        <item>Yakutsk</item>
+        <item>Adelaide</item>
+        <item>Darwin</item>
+        <item>Brisbane</item>
+        <item>Hobart</item>
+        <item>Sydney, Canberra</item>
+        <item>Vladivostok</item>
+        <item>Guam</item>
+        <item>Magadan</item>
+        <item>Auckland</item>
+        <item>Fiji</item>
+        <item>Tonga</item>
+    </string-array>
+    <string-array name="availability">
+        <item>Sibuk</item>
+        <item>Senggang</item>
+        <item>Sementara</item>
+    </string-array>
+    <string-array name="visibility">
+        <item>Bawaan</item>
+        <item>Pribadi</item>
+        <item>Umum</item>
+    </string-array>
+    <string-array name="ordinal_labels">
+        <item>pertama</item>
+        <item>kedua</item>
+        <item>ketiga</item>
+        <item>keempat</item>
+        <item>terakhir</item>
+    </string-array>
+    <string-array name="response_labels1">
+        <item>Tidak ada tanggapan</item>
+        <item>Ya</item>
+        <item>" Mungkin hadir"</item>
+        <item>Tidak</item>
+    </string-array>
+    <string-array name="delete_repeating_labels">
+        <item>Hanya acara ini</item>
+        <item>Acara saat ini dan di masa mendatang</item>
+        <item>Semua acara</item>
+    </string-array>
+    <string-array name="delete_repeating_labels_no_selected">
+        <item>Acara &amp;amp;amp; mendatang ini</item>
+        <item>Semua acara</item>
+    </string-array>
+    <string-array name="change_response_labels">
+        <item>Hanya acara ini</item>
+        <item>Semua acara dalam rangkaian</item>
+    </string-array>
+    <string-array name="buttons_list">
+        <item>Hari</item>
+        <item>Minggu</item>
+        <item>Bulan</item>
+        <item>Agenda</item>
+    </string-array>
+    <string-array name="prefEntries_alerts_vibrateWhen">
+        <item>Selalu</item>
+        <item>Hanya saat senyap</item>
+        <item>Tidak pernah</item>
+    </string-array>
+</resources>

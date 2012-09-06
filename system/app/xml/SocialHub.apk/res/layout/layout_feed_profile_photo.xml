@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:id="@id/layout_frame_profile" android:focusable="true" android:clickable="true" android:layout_width="63.0px" android:layout_height="63.0px" android:layout_marginLeft="4.0px" android:layout_marginTop="6.0px" android:layout_marginRight="1.0px">
-        <ImageView android:id="@id/img_actor_photo" android:background="@drawable/hub_view_stroke_selector" android:padding="3.0px" android:duplicateParentState="true" android:layout_width="63.0px" android:layout_height="63.0px" android:src="@drawable/contacts_default_image_medium" android:scaleType="fitXY" />
-        <ImageView android:layout_gravity="bottom|right|center" android:id="@id/img_isp_icon" android:layout_width="16.599976dip" android:layout_height="16.599976dip" android:src="@drawable/contacts_sns_facebook_small" android:scaleType="fitXY" />
-    </FrameLayout>
-</LinearLayout>

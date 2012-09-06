@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <bool name="grid_item_creator_single_line">false</bool>
-    <bool name="full_entry_single_line">false</bool>
-</resources>

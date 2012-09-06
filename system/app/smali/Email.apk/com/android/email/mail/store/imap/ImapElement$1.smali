@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 51
+    .line 50
     invoke-direct {p0}, Lcom/android/email/mail/store/imap/ImapElement;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
     .registers 1
 
     .prologue
-    .line 57
+    .line 54
     return-void
 .end method
 
@@ -40,7 +40,7 @@
     .parameter "that"
 
     .prologue
-    .line 76
+    .line 70
     invoke-super {p0, p1}, Lcom/android/email/mail/store/imap/ImapElement;->equalsForTest(Lcom/android/email/mail/store/imap/ImapElement;)Z
 
     move-result v0
@@ -52,7 +52,7 @@
     .registers 2
 
     .prologue
-    .line 61
+    .line 57
     const/4 v0, 0x0
 
     return v0
@@ -62,7 +62,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 61
     const/4 v0, 0x0
 
     return v0
@@ -72,7 +72,7 @@
     .registers 2
 
     .prologue
-    .line 71
+    .line 65
     const-string v0, "[NO ELEMENT]"
 
     return-object v0

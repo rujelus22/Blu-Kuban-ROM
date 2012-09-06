@@ -1,169 +1,221 @@
 .class Lg/f;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/content/ServiceConnection;
 
 
 # instance fields
-.field public final a:I
+.field final synthetic a:Lg/c;
 
-.field public final b:F
+.field private b:Lcom/google/android/location/internal/INetworkLocationInternal;
 
 
 # direct methods
-.method public constructor <init>(IF)V
-    .registers 3
+.method private constructor <init>(Lg/c;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 364
+    iput-object p1, p0, Lg/f;->a:Lg/c;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lg/f;->a:I
-
-    iput p2, p0, Lg/f;->b:F
 
     return-void
 .end method
 
-.method public static a(Ljava/io/DataInputStream;)Lg/f;
-    .registers 4
+.method synthetic constructor <init>(Lg/c;Lg/d;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    invoke-virtual {p0}, Ljava/io/DataInputStream;->readInt()I
+    .prologue
+    .line 364
+    invoke-direct {p0, p1}, Lg/f;-><init>(Lg/c;)V
 
-    move-result v0
+    return-void
+.end method
 
-    invoke-virtual {p0}, Ljava/io/DataInputStream;->readFloat()F
+.method static synthetic a(Lg/f;)Lcom/google/android/location/internal/INetworkLocationInternal;
+    .registers 2
+    .parameter
 
-    move-result v1
+    .prologue
+    .line 364
+    iget-object v0, p0, Lg/f;->b:Lcom/google/android/location/internal/INetworkLocationInternal;
 
-    new-instance v2, Lg/f;
-
-    invoke-direct {v2, v0, v1}, Lg/f;-><init>(IF)V
-
-    return-object v2
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public equals(Ljava/lang/Object;)Z
+.method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .registers 6
+    .parameter
+    .parameter
 
-    const/4 v0, 0x1
+    .prologue
+    .line 372
+    iget-object v0, p0, Lg/f;->a:Lg/c;
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Lg/c;->b(Lg/c;)Ljava/lang/Object;
 
-    if-ne p0, p1, :cond_5
+    move-result-object v1
 
-    :cond_4
-    :goto_4
-    return v0
+    monitor-enter v1
 
-    :cond_5
-    instance-of v2, p1, Lg/f;
+    .line 373
+    :try_start_7
+    iget-object v0, p0, Lg/f;->a:Lg/c;
 
-    if-nez v2, :cond_b
-
-    move v0, v1
-
-    goto :goto_4
-
-    :cond_b
-    check-cast p1, Lg/f;
-
-    iget v2, p0, Lg/f;->a:I
-
-    iget v3, p1, Lg/f;->a:I
-
-    if-ne v2, v3, :cond_1b
-
-    iget v2, p0, Lg/f;->b:F
-
-    iget v3, p1, Lg/f;->b:F
-
-    cmpl-float v2, v2, v3
-
-    if-eqz v2, :cond_4
-
-    :cond_1b
-    move v0, v1
-
-    goto :goto_4
-.end method
-
-.method public hashCode()I
-    .registers 3
-
-    iget v0, p0, Lg/f;->a:I
-
-    add-int/lit16 v0, v0, 0x20f
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget v1, p0, Lg/f;->b:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .registers 6
-
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    iget v0, p0, Lg/f;->a:I
-
-    const/4 v1, -0x1
-
-    if-ne v0, v1, :cond_18
-
-    const-string v0, "%+.4f"
-
-    new-array v1, v4, [Ljava/lang/Object;
-
-    iget v2, p0, Lg/f;->b:F
-
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v2
-
-    aput-object v2, v1, v3
-
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0}, Lg/c;->c(Lg/c;)Lg/f;
 
     move-result-object v0
 
-    :goto_17
-    return-object v0
+    if-eq p0, v0, :cond_1f
 
-    :cond_18
-    const-string v0, "%+.4f * [%d]"
+    .line 374
+    iget-object v0, p0, Lg/f;->a:Lg/c;
 
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    iget v2, p0, Lg/f;->b:F
-
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v2
-
-    aput-object v2, v1, v3
-
-    iget v2, p0, Lg/f;->a:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    aput-object v2, v1, v4
-
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0}, Lg/c;->d(Lg/c;)Lg/e;
 
     move-result-object v0
 
-    goto :goto_17
+    const/4 v2, 0x2
+
+    invoke-static {v0, v2, p0}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    .line 375
+    monitor-exit v1
+
+    .line 393
+    :goto_1e
+    return-void
+
+    .line 377
+    :cond_1f
+    iget-object v0, p0, Lg/f;->a:Lg/c;
+
+    invoke-static {v0}, Lg/c;->e(Lg/c;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2c
+
+    .line 392
+    :cond_27
+    :goto_27
+    monitor-exit v1
+
+    goto :goto_1e
+
+    :catchall_29
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_2b
+    .catchall {:try_start_7 .. :try_end_2b} :catchall_29
+
+    throw v0
+
+    .line 383
+    :cond_2c
+    :try_start_2c
+    iget-object v0, p0, Lg/f;->b:Lcom/google/android/location/internal/INetworkLocationInternal;
+
+    if-eqz v0, :cond_30
+
+    .line 386
+    :cond_30
+    invoke-static {p2}, Lcom/google/android/location/internal/INetworkLocationInternal$Stub;->a(Landroid/os/IBinder;)Lcom/google/android/location/internal/INetworkLocationInternal;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lg/f;->b:Lcom/google/android/location/internal/INetworkLocationInternal;
+
+    .line 387
+    iget-object v0, p0, Lg/f;->a:Lg/c;
+
+    invoke-static {v0}, Lg/c;->d(Lg/c;)Lg/e;
+
+    move-result-object v0
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v2, p0}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    .line 388
+    iget-object v0, p0, Lg/f;->a:Lg/c;
+
+    invoke-static {v0}, Lg/c;->f(Lg/c;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_27
+
+    .line 389
+    iget-object v0, p0, Lg/f;->a:Lg/c;
+
+    invoke-static {v0}, Lg/c;->d(Lg/c;)Lg/e;
+
+    move-result-object v0
+
+    const/4 v2, 0x5
+
+    invoke-static {v0, v2, p0}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+    :try_end_5a
+    .catchall {:try_start_2c .. :try_end_5a} :catchall_29
+
+    goto :goto_27
+.end method
+
+.method public onServiceDisconnected(Landroid/content/ComponentName;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 398
+    iget-object v0, p0, Lg/f;->a:Lg/c;
+
+    invoke-static {v0}, Lg/c;->b(Lg/c;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    monitor-enter v1
+
+    .line 399
+    const/4 v0, 0x0
+
+    :try_start_8
+    iput-object v0, p0, Lg/f;->b:Lcom/google/android/location/internal/INetworkLocationInternal;
+
+    .line 400
+    monitor-exit v1
+
+    .line 401
+    return-void
+
+    .line 400
+    :catchall_c
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_e
+    .catchall {:try_start_8 .. :try_end_e} :catchall_c
+
+    throw v0
 .end method

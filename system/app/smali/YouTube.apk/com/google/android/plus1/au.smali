@@ -1,229 +1,181 @@
 .class public final Lcom/google/android/plus1/au;
-.super Lcom/google/android/plus1/ao;
+.super Lcom/google/android/plus1/at;
 .source "SourceFile"
-
-# interfaces
-.implements Lcom/google/android/plus1/ar;
 
 
 # instance fields
-.field protected final c:Lcom/google/android/plus1/ar;
+.field final a:Landroid/net/Uri;
+
+.field final b:Ljava/lang/Boolean;
+
+.field final c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/plus1/ar;Lcom/google/android/plus1/ar;)V
-    .registers 3
-    .parameter
-    .parameter
-
-    .prologue
-    .line 24
-    invoke-direct {p0, p1, p2}, Lcom/google/android/plus1/ao;-><init>(Lcom/google/android/plus1/PlusOneReader;Lcom/google/android/plus1/ar;)V
-
-    .line 25
-    iput-object p1, p0, Lcom/google/android/plus1/au;->c:Lcom/google/android/plus1/ar;
-
-    .line 26
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Landroid/net/Uri;Lcom/google/android/plus1/u;)V
-    .registers 4
-    .parameter
-    .parameter
-
-    .prologue
-    .line 95
-    iget-object v0, p0, Lcom/google/android/plus1/au;->c:Lcom/google/android/plus1/ar;
-
-    invoke-interface {v0, p1, p2}, Lcom/google/android/plus1/ar;->a(Landroid/net/Uri;Lcom/google/android/plus1/u;)V
-
-    .line 96
-    return-void
-.end method
-
-.method public final a(Landroid/net/Uri;ZLjava/lang/String;)V
+.method public constructor <init>(Landroid/net/Uri;ZLjava/lang/String;)V
     .registers 5
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 90
-    iget-object v0, p0, Lcom/google/android/plus1/au;->c:Lcom/google/android/plus1/ar;
+    .line 85
+    invoke-direct {p0}, Lcom/google/android/plus1/at;-><init>()V
 
-    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/plus1/ar;->a(Landroid/net/Uri;ZLjava/lang/String;)V
+    .line 86
+    iput-object p1, p0, Lcom/google/android/plus1/au;->a:Landroid/net/Uri;
 
-    .line 91
-    return-void
-.end method
-
-.method public final a(Lcom/google/android/plus1/ap;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 64
-    iget-object v0, p0, Lcom/google/android/plus1/au;->c:Lcom/google/android/plus1/ar;
-
-    invoke-interface {v0, p1}, Lcom/google/android/plus1/ar;->a(Lcom/google/android/plus1/ap;)V
-
-    .line 65
-    return-void
-.end method
-
-.method public final a(Lcom/google/android/plus1/as;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 30
-    iget-object v0, p0, Lcom/google/android/plus1/au;->c:Lcom/google/android/plus1/ar;
-
-    invoke-interface {v0, p1}, Lcom/google/android/plus1/ar;->a(Lcom/google/android/plus1/as;)V
-
-    .line 31
-    return-void
-.end method
-
-.method public final a(Ljava/util/List;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 79
-    iget-object v0, p0, Lcom/google/android/plus1/au;->c:Lcom/google/android/plus1/ar;
-
-    invoke-interface {v0, p1}, Lcom/google/android/plus1/ar;->a(Ljava/util/List;)V
-
-    .line 80
-    return-void
-.end method
-
-.method public final b()Ljava/util/Map;
-    .registers 8
-
-    .prologue
-    .line 40
-    iget-object v0, p0, Lcom/google/android/plus1/au;->c:Lcom/google/android/plus1/ar;
-
-    invoke-interface {v0}, Lcom/google/android/plus1/ar;->b()Ljava/util/Map;
+    .line 87
+    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/common/collect/Maps;->a(Ljava/util/Map;)Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/android/plus1/au;->b:Ljava/lang/Boolean;
 
-    move-result-object v1
+    .line 88
+    iput-object p3, p0, Lcom/google/android/plus1/au;->c:Ljava/lang/String;
 
-    .line 41
-    iget-object v0, p0, Lcom/google/android/plus1/au;->b:Lcom/google/android/plus1/ar;
+    .line 89
+    return-void
+.end method
 
-    invoke-interface {v0}, Lcom/google/android/plus1/ar;->c()Ljava/util/List;
 
-    move-result-object v0
+# virtual methods
+.method public final a(Lcom/google/android/plus1/ak;)V
+    .registers 5
+    .parameter
 
-    .line 42
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    .prologue
+    .line 92
+    iget-object v0, p0, Lcom/google/android/plus1/au;->a:Landroid/net/Uri;
 
-    move-result-object v2
+    iget-object v1, p0, Lcom/google/android/plus1/au;->b:Ljava/lang/Boolean;
 
-    :cond_14
-    :goto_14
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/google/android/plus1/au;->c:Ljava/lang/String;
+
+    invoke-interface {p1, v0, v1, v2}, Lcom/google/android/plus1/ak;->a(Landroid/net/Uri;ZLjava/lang/String;)V
+
+    .line 93
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 101
+    instance-of v0, p1, Lcom/google/android/plus1/au;
+
+    if-eqz v0, :cond_1e
+
+    .line 102
+    check-cast p1, Lcom/google/android/plus1/au;
+
+    .line 104
+    iget-object v0, p0, Lcom/google/android/plus1/au;->a:Landroid/net/Uri;
+
+    iget-object v1, p1, Lcom/google/android/plus1/au;->a:Landroid/net/Uri;
+
+    invoke-static {v0, v1}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4b
+    if-eqz v0, :cond_1c
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/android/plus1/au;->b:Ljava/lang/Boolean;
 
-    move-result-object v0
+    iget-object v1, p1, Lcom/google/android/plus1/au;->b:Ljava/lang/Boolean;
 
-    check-cast v0, Lcom/google/android/plus1/as;
+    invoke-static {v0, v1}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    .line 43
-    instance-of v3, v0, Lcom/google/android/plus1/at;
+    move-result v0
 
-    if-eqz v3, :cond_14
+    if-eqz v0, :cond_1c
 
-    .line 44
-    check-cast v0, Lcom/google/android/plus1/at;
+    const/4 v0, 0x1
 
-    .line 45
-    iget-object v3, v0, Lcom/google/android/plus1/at;->a:Landroid/net/Uri;
+    .line 107
+    :goto_1b
+    return v0
 
-    .line 46
-    iget-object v4, v0, Lcom/google/android/plus1/at;->b:Ljava/lang/Boolean;
+    .line 104
+    :cond_1c
+    const/4 v0, 0x0
 
-    .line 47
-    iget-object v5, v0, Lcom/google/android/plus1/at;->c:Ljava/lang/String;
+    goto :goto_1b
 
-    .line 48
-    invoke-interface {v1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 107
+    :cond_1e
+    invoke-super {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result v0
 
-    check-cast v0, Lcom/google/android/plus1/u;
-
-    .line 50
-    if-nez v0, :cond_3d
-
-    .line 51
-    new-instance v0, Lcom/google/android/plus1/u;
-
-    invoke-direct {v0, v3, v4, v5}, Lcom/google/android/plus1/u;-><init>(Landroid/net/Uri;Ljava/lang/Boolean;Ljava/lang/String;)V
-
-    .line 56
-    :goto_39
-    invoke-interface {v1, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_14
-
-    .line 53
-    :cond_3d
-    new-instance v6, Lcom/google/android/plus1/v;
-
-    invoke-direct {v6, v0}, Lcom/google/android/plus1/v;-><init>(Lcom/google/android/plus1/u;)V
-
-    iput-object v4, v6, Lcom/google/android/plus1/v;->b:Ljava/lang/Boolean;
-
-    iput-object v5, v6, Lcom/google/android/plus1/v;->e:Ljava/lang/String;
-
-    invoke-virtual {v6}, Lcom/google/android/plus1/v;->a()Lcom/google/android/plus1/u;
-
-    move-result-object v0
-
-    goto :goto_39
-
-    .line 59
-    :cond_4b
-    return-object v1
+    goto :goto_1b
 .end method
 
-.method public final b(Lcom/google/android/plus1/as;)V
+.method public final hashCode()I
+    .registers 4
+
+    .prologue
+    .line 97
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lcom/google/android/plus1/au;->a:Landroid/net/Uri;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    iget-object v2, p0, Lcom/google/android/plus1/au;->b:Ljava/lang/Boolean;
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
     .registers 3
-    .parameter
 
     .prologue
-    .line 69
-    iget-object v0, p0, Lcom/google/android/plus1/au;->c:Lcom/google/android/plus1/ar;
+    .line 112
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-interface {v0, p1}, Lcom/google/android/plus1/ar;->b(Lcom/google/android/plus1/as;)V
+    const-string v1, "URI="
 
-    .line 70
-    return-void
-.end method
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-.method public final c()Ljava/util/List;
-    .registers 2
+    iget-object v1, p0, Lcom/google/android/plus1/au;->a:Landroid/net/Uri;
 
-    .prologue
-    .line 35
-    iget-object v0, p0, Lcom/google/android/plus1/au;->c:Lcom/google/android/plus1/ar;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v0}, Lcom/google/android/plus1/ar;->c()Ljava/util/List;
+    move-result-object v0
+
+    const-string v1, ",+1="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/plus1/au;->b:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

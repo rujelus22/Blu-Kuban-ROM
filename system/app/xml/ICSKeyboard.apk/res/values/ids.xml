@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="theword">false</item>
+    <item type="id" name="thelocale">false</item>
+    <item type="id" name="myScrollLayout">false</item>
+    <item type="id" name="emptyText">false</item>
+    <item type="id" name="key_preview_backing">false</item>
+    <item type="id" name="suggestions_container">false</item>
+    <item type="id" name="keyboard_view">false</item>
+    <item type="id" name="suggestions_view">false</item>
+    <item type="id" name="keyboard_value">false</item>
+    <item type="id" name="keyboard_height_settings">false</item>
+    <item type="id" name="mini_keyboard_view">false</item>
+    <item type="id" name="more_suggestions_view">false</item>
+    <item type="id" name="popup_layout">false</item>
+    <item type="id" name="sound_indicator">false</item>
+    <item type="id" name="image">false</item>
+    <item type="id" name="progress">false</item>
+    <item type="id" name="language">false</item>
+    <item type="id" name="button">false</item>
+    <item type="id" name="key">false</item>
+    <item type="id" name="suggestions_strip">false</item>
+    <item type="id" name="vibration_value">false</item>
+    <item type="id" name="vibration_settings">false</item>
+</resources>

@@ -54,7 +54,7 @@
 .end method
 
 .method protected final createHttpProcessor()Lorg/apache/http/protocol/BasicHttpProcessor;
-    .registers 4
+    .registers 5
 
     invoke-super {p0}, Lorg/apache/http/impl/client/DefaultHttpClient;->createHttpProcessor()Lorg/apache/http/protocol/BasicHttpProcessor;
 
@@ -70,7 +70,9 @@
 
     iget-object v2, p0, Lcom/google/android/youtube/googlemobile/common/io/a/d;->a:Lcom/google/android/youtube/googlemobile/common/io/a/b;
 
-    invoke-direct {v1, v2}, Lcom/google/android/youtube/googlemobile/common/io/a/e;-><init>(Lcom/google/android/youtube/googlemobile/common/io/a/b;)V
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v2, v3}, Lcom/google/android/youtube/googlemobile/common/io/a/e;-><init>(Lcom/google/android/youtube/googlemobile/common/io/a/b;B)V
 
     invoke-virtual {v0, v1}, Lorg/apache/http/protocol/BasicHttpProcessor;->addRequestInterceptor(Lorg/apache/http/HttpRequestInterceptor;)V
 

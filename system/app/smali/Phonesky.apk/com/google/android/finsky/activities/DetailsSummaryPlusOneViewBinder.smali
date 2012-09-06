@@ -34,6 +34,8 @@
 
 
 # instance fields
+.field private mCirclesPeopleCount:I
+
 .field private mContext:Landroid/content/Context;
 
 .field private mCookie:Ljava/lang/String;
@@ -42,11 +44,17 @@
 
 .field private mDoc:Lcom/google/android/finsky/api/model/Document;
 
+.field private mFirstFriendName:Ljava/lang/String;
+
+.field private mHasPlusOneData:Z
+
 .field private mIsWaitingServerResponse:Z
 
-.field private mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
-
 .field private mLayout:Landroid/view/View;
+
+.field private mSetByUser:Z
+
+.field private mTotal:J
 
 .field private mUrl:Ljava/lang/String;
 
@@ -58,7 +66,7 @@
     .registers 2
 
     .prologue
-    .line 52
+    .line 65
     new-instance v0, Ljava/text/DecimalFormat;
 
     const-string v1, "@#"
@@ -67,7 +75,7 @@
 
     sput-object v0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->sSingleFractionDigitFormatter:Ljava/text/DecimalFormat;
 
-    .line 58
+    .line 71
     new-instance v0, Ljava/text/DecimalFormat;
 
     const-string v1, "#"
@@ -83,10 +91,10 @@
     .registers 1
 
     .prologue
-    .line 28
+    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
+    .line 73
     return-void
 .end method
 
@@ -95,321 +103,440 @@
     .parameter "x0"
 
     .prologue
-    .line 28
+    .line 29
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->handleClick()V
 
     return-void
 .end method
 
 .method private bindPlusOneButton()V
-    .registers 5
+    .registers 4
 
     .prologue
-    .line 118
-    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
+    .line 166
+    iget-boolean v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mSetByUser:Z
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getSetByUser()Z
+    if-eqz v1, :cond_1d
+
+    sget-object v1, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;->On:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
+
+    :goto_6
+    iput-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mUserState:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
+
+    .line 167
+    invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->syncButtonState()V
+
+    .line 169
+    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLayout:Landroid/view/View;
+
+    const v2, 0x7f0800ef
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    .line 170
+    .local v0, plusOneBar:Landroid/view/View;
+    new-instance v1, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$1;
+
+    invoke-direct {v1, p0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$1;-><init>(Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 176
+    return-void
+
+    .line 166
+    .end local v0           #plusOneBar:Landroid/view/View;
+    :cond_1d
+    sget-object v1, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;->Off:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
+
+    goto :goto_6
+.end method
+
+.method private bindPlusOneData(Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;Landroid/os/Bundle;)V
+    .registers 6
+    .parameter "docData"
+    .parameter "savedInstanceState"
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 101
+    if-eqz p2, :cond_38
+
+    const-string v0, "PlusOneViewBinder.hasPlusOneData"
+
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 119
-    .local v0, isPlusOne:Z
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_38
 
-    sget-object v2, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;->On:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
+    .line 102
+    const-string v0, "PlusOneViewBinder.hasPlusOneData"
 
-    :goto_a
-    iput-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mUserState:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
-    .line 120
-    invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->syncButtonState()V
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mHasPlusOneData:Z
+
+    .line 103
+    iget-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mHasPlusOneData:Z
+
+    if-eqz v0, :cond_37
+
+    .line 104
+    const-string v0, "PlusOneViewBinder.setByUser"
+
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mSetByUser:Z
+
+    .line 105
+    const-string v0, "PlusOneViewBinder.total"
+
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mTotal:J
+
+    .line 106
+    const-string v0, "PlusOneViewBinder.circlesPeopleCount"
+
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mCirclesPeopleCount:I
+
+    .line 107
+    const-string v0, "PlusOneViewBinder.firstFriendName"
+
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mFirstFriendName:Ljava/lang/String;
 
     .line 122
-    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLayout:Landroid/view/View;
-
-    const v3, 0x7f0800e8
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    .line 123
-    .local v1, plusOneBar:Landroid/view/View;
-    new-instance v2, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$1;
-
-    invoke-direct {v2, p0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$1;-><init>(Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;)V
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 129
+    :cond_37
+    :goto_37
     return-void
 
-    .line 119
-    .end local v1           #plusOneBar:Landroid/view/View;
-    :cond_21
-    sget-object v2, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;->Off:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
+    .line 109
+    :cond_38
+    if-nez p1, :cond_3d
 
-    goto :goto_a
+    .line 110
+    iput-boolean v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mHasPlusOneData:Z
+
+    goto :goto_37
+
+    .line 112
+    :cond_3d
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mHasPlusOneData:Z
+
+    .line 113
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getSetByUser()Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mSetByUser:Z
+
+    .line 114
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getTotal()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mTotal:J
+
+    .line 115
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getCirclesPeopleCount()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mCirclesPeopleCount:I
+
+    .line 116
+    iget v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mCirclesPeopleCount:I
+
+    if-gtz v0, :cond_5a
+
+    .line 117
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mFirstFriendName:Ljava/lang/String;
+
+    goto :goto_37
+
+    .line 119
+    :cond_5a
+    invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getCirclesPeopleList()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->getDisplayName()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mFirstFriendName:Ljava/lang/String;
+
+    goto :goto_37
 .end method
 
 .method private bindPlusOneLegend()V
-    .registers 16
+    .registers 14
 
     .prologue
-    const v14, 0x7f0701f5
+    const v12, 0x7f07022f
 
-    const/4 v11, 0x0
+    const/4 v7, 0x0
 
-    const/4 v10, 0x1
+    const/4 v6, 0x1
 
-    .line 192
-    iget-object v9, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLayout:Landroid/view/View;
+    .line 233
+    iget-object v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLayout:Landroid/view/View;
 
-    const v12, 0x7f0800ea
+    const v9, 0x7f0800f1
 
-    invoke-virtual {v9, v12}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v8, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v6
+    move-result-object v5
 
-    check-cast v6, Landroid/widget/TextView;
+    check-cast v5, Landroid/widget/TextView;
 
-    .line 193
-    .local v6, legendView:Landroid/widget/TextView;
-    iget-object v9, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mUserState:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
+    .line 234
+    .local v5, legendView:Landroid/widget/TextView;
+    iget-object v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mUserState:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
 
-    sget-object v12, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;->Error:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
+    sget-object v9, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;->Error:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
 
-    if-ne v9, v12, :cond_1d
+    if-ne v8, v9, :cond_1d
 
-    .line 194
-    const v9, 0x7f0701ed
+    .line 235
+    const v6, 0x7f070227
 
-    invoke-virtual {v6, v9}, Landroid/widget/TextView;->setText(I)V
+    invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 
-    .line 256
+    .line 293
     :goto_1c
     return-void
 
-    .line 198
+    .line 239
     :cond_1d
-    iget-object v9, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mUserState:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
+    iget-object v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mUserState:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
 
-    sget-object v12, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;->On:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
+    sget-object v9, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;->On:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
 
-    if-ne v9, v12, :cond_39
+    if-ne v8, v9, :cond_35
 
-    move v5, v10
+    move v4, v6
 
-    .line 199
-    .local v5, isSetByUser:Z
+    .line 242
+    .local v4, isSetByUser:Z
     :goto_24
-    iget-object v9, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
+    iget-wide v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mTotal:J
 
-    invoke-virtual {v9}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getTotal()J
+    const-wide/16 v10, 0x0
 
-    move-result-wide v7
+    cmp-long v8, v8, v10
 
-    .line 202
-    .local v7, totalCount:J
-    const-wide/16 v12, 0x0
+    if-nez v8, :cond_37
 
-    cmp-long v9, v7, v12
+    if-nez v4, :cond_37
 
-    if-nez v9, :cond_3b
+    .line 243
+    const v6, 0x7f070228
 
-    if-nez v5, :cond_3b
-
-    .line 203
-    const v9, 0x7f0701ee
-
-    invoke-virtual {v6, v9}, Landroid/widget/TextView;->setText(I)V
+    invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_1c
 
-    .end local v5           #isSetByUser:Z
-    .end local v7           #totalCount:J
-    :cond_39
-    move v5, v11
+    .end local v4           #isSetByUser:Z
+    :cond_35
+    move v4, v7
 
-    .line 198
+    .line 239
     goto :goto_24
 
-    .line 208
-    .restart local v5       #isSetByUser:Z
-    .restart local v7       #totalCount:J
-    :cond_3b
-    const-wide/16 v12, 0x1
+    .line 248
+    .restart local v4       #isSetByUser:Z
+    :cond_37
+    iget-wide v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mTotal:J
 
-    cmp-long v9, v7, v12
+    const-wide/16 v10, 0x1
 
-    if-nez v9, :cond_4a
+    cmp-long v8, v8, v10
 
-    if-eqz v5, :cond_4a
+    if-nez v8, :cond_48
 
-    .line 209
-    const v9, 0x7f0701ef
+    if-eqz v4, :cond_48
 
-    invoke-virtual {v6, v9}, Landroid/widget/TextView;->setText(I)V
+    .line 249
+    const v6, 0x7f070229
+
+    invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_1c
 
-    .line 213
-    :cond_4a
-    iget-object v9, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
+    .line 253
+    :cond_48
+    iget v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mCirclesPeopleCount:I
 
-    invoke-virtual {v9}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getCirclesPeopleCount()I
-
-    move-result v0
-
-    .line 214
+    .line 254
     .local v0, countInCircles:I
-    if-nez v0, :cond_6e
+    if-nez v0, :cond_6c
 
-    .line 217
-    iget-object v9, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mContext:Landroid/content/Context;
+    .line 257
+    iget-object v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mContext:Landroid/content/Context;
 
-    invoke-static {v9, v7, v8, v14}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->formatPlusOneCount(Landroid/content/Context;JI)Ljava/lang/String;
+    iget-wide v9, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mTotal:J
 
-    move-result-object v4
-
-    .line 220
-    .local v4, formattedTotalCount:Ljava/lang/String;
-    iget-object v9, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v9}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v9
-
-    const v12, 0x7f0d0002
-
-    long-to-int v13, v7
-
-    new-array v10, v10, [Ljava/lang/Object;
-
-    aput-object v4, v10, v11
-
-    invoke-virtual {v9, v12, v13, v10}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v8, v9, v10, v12}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->formatPlusOneCount(Landroid/content/Context;JI)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 223
-    .local v3, formattedLegend:Ljava/lang/String;
-    invoke-virtual {v6, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    .line 260
+    .local v3, formattedTotalCount:Ljava/lang/String;
+    iget-object v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mContext:Landroid/content/Context;
 
-    goto :goto_1c
+    invoke-virtual {v8}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    .line 228
-    .end local v3           #formattedLegend:Ljava/lang/String;
-    .end local v4           #formattedTotalCount:Ljava/lang/String;
-    :cond_6e
-    iget-object v9, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
+    move-result-object v8
 
-    invoke-virtual {v9}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getCirclesPeopleList()Ljava/util/List;
+    const v9, 0x7f0d0002
 
-    move-result-object v9
+    iget-wide v10, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mTotal:J
 
-    invoke-interface {v9, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    long-to-int v10, v10
 
-    move-result-object v9
+    new-array v6, v6, [Ljava/lang/Object;
 
-    check-cast v9, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;
+    aput-object v3, v6, v7
 
-    invoke-virtual {v9}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->getDisplayName()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 231
-    .local v1, firstPersonInCircles:Ljava/lang/String;
-    if-ne v0, v10, :cond_97
-
-    if-nez v5, :cond_97
-
-    .line 232
-    iget-object v9, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v9}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v9
-
-    const v12, 0x7f0701f0
-
-    new-array v10, v10, [Ljava/lang/Object;
-
-    aput-object v1, v10, v11
-
-    invoke-virtual {v9, v12, v10}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v6, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    goto :goto_1c
-
-    .line 238
-    :cond_97
-    if-ne v0, v10, :cond_b1
-
-    if-eqz v5, :cond_b1
-
-    .line 239
-    iget-object v9, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v9}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v9
-
-    const v12, 0x7f0701f1
-
-    new-array v10, v10, [Ljava/lang/Object;
-
-    aput-object v1, v10, v11
-
-    invoke-virtual {v9, v12, v10}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v6, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    goto/16 :goto_1c
-
-    .line 247
-    :cond_b1
-    add-int/lit8 v0, v0, -0x1
-
-    .line 248
-    iget-object v9, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mContext:Landroid/content/Context;
-
-    int-to-long v12, v0
-
-    invoke-static {v9, v12, v13, v14}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->formatPlusOneCount(Landroid/content/Context;JI)Ljava/lang/String;
+    invoke-virtual {v8, v9, v10, v6}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 251
-    .local v2, formattedCircleCount:Ljava/lang/String;
-    iget-object v9, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mContext:Landroid/content/Context;
+    .line 263
+    .local v2, formattedLegend:Ljava/lang/String;
+    invoke-virtual {v5, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v9}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    goto :goto_1c
 
-    move-result-object v9
+    .line 268
+    .end local v2           #formattedLegend:Ljava/lang/String;
+    .end local v3           #formattedTotalCount:Ljava/lang/String;
+    :cond_6c
+    if-ne v0, v6, :cond_87
 
-    const v12, 0x7f0d0003
+    if-nez v4, :cond_87
 
-    const/4 v13, 0x2
+    .line 269
+    iget-object v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mContext:Landroid/content/Context;
 
-    new-array v13, v13, [Ljava/lang/Object;
+    invoke-virtual {v8}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    aput-object v1, v13, v11
+    move-result-object v8
 
-    aput-object v2, v13, v10
+    const v9, 0x7f07022a
 
-    invoke-virtual {v9, v12, v0, v13}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
+    new-array v6, v6, [Ljava/lang/Object;
 
-    move-result-object v3
+    iget-object v10, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mFirstFriendName:Ljava/lang/String;
 
-    .line 255
-    .restart local v3       #formattedLegend:Ljava/lang/String;
-    invoke-virtual {v6, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    aput-object v10, v6, v7
+
+    invoke-virtual {v8, v9, v6}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_1c
+
+    .line 275
+    :cond_87
+    if-ne v0, v6, :cond_a3
+
+    if-eqz v4, :cond_a3
+
+    .line 276
+    iget-object v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v8}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v8
+
+    const v9, 0x7f07022b
+
+    new-array v6, v6, [Ljava/lang/Object;
+
+    iget-object v10, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mFirstFriendName:Ljava/lang/String;
+
+    aput-object v10, v6, v7
+
+    invoke-virtual {v8, v9, v6}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto/16 :goto_1c
+
+    .line 284
+    :cond_a3
+    add-int/lit8 v0, v0, -0x1
+
+    .line 285
+    iget-object v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mContext:Landroid/content/Context;
+
+    int-to-long v9, v0
+
+    invoke-static {v8, v9, v10, v12}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->formatPlusOneCount(Landroid/content/Context;JI)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 288
+    .local v1, formattedCircleCount:Ljava/lang/String;
+    iget-object v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v8}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v8
+
+    const v9, 0x7f0d0003
+
+    const/4 v10, 0x2
+
+    new-array v10, v10, [Ljava/lang/Object;
+
+    iget-object v11, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mFirstFriendName:Ljava/lang/String;
+
+    aput-object v11, v10, v7
+
+    aput-object v1, v10, v6
+
+    invoke-virtual {v8, v9, v0, v10}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 292
+    .restart local v2       #formattedLegend:Ljava/lang/String;
+    invoke-virtual {v5, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_1c
 .end method
@@ -429,14 +556,14 @@
 
     const/high16 v5, 0x447a
 
-    .line 267
+    .line 304
     const-wide/16 v3, 0x3e8
 
     cmp-long v3, p1, v3
 
     if-gez v3, :cond_20
 
-    .line 268
+    .line 305
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
@@ -457,34 +584,34 @@
 
     move-result-object v3
 
-    .line 286
+    .line 323
     :goto_1f
     return-object v3
 
-    .line 271
+    .line 308
     :cond_20
     long-to-float v0, p1
 
-    .line 272
+    .line 309
     .local v0, result:F
-    const v1, 0x7f0701f3
+    const v1, 0x7f07022d
 
-    .line 273
+    .line 310
     .local v1, suffix:I
     div-float/2addr v0, v5
 
-    .line 275
+    .line 312
     cmpl-float v3, v0, v5
 
     if-lez v3, :cond_2d
 
-    .line 276
-    const v1, 0x7f0701f4
+    .line 313
+    const v1, 0x7f07022e
 
-    .line 277
+    .line 314
     div-float/2addr v0, v5
 
-    .line 280
+    .line 317
     :cond_2d
     const/high16 v3, 0x4120
 
@@ -492,7 +619,7 @@
 
     if-gez v3, :cond_4d
 
-    .line 281
+    .line 318
     sget-object v3, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->sSingleFractionDigitFormatter:Ljava/text/DecimalFormat;
 
     float-to-double v4, v0
@@ -501,7 +628,7 @@
 
     move-result-object v2
 
-    .line 286
+    .line 323
     .local v2, value:Ljava/lang/String;
     :goto_3a
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -524,7 +651,7 @@
 
     goto :goto_1f
 
-    .line 283
+    .line 320
     .end local v2           #value:Ljava/lang/String;
     :cond_4d
     sget-object v3, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->sAllIntegerDigitFormatter:Ljava/text/DecimalFormat;
@@ -543,7 +670,7 @@
     .registers 3
 
     .prologue
-    .line 132
+    .line 179
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -572,149 +699,100 @@
 .end method
 
 .method private handleClick()V
-    .registers 10
+    .registers 8
 
     .prologue
-    const-wide/16 v7, 0x1
+    const-wide/16 v5, 0x1
 
-    const/4 v2, 0x0
+    const/4 v4, 0x1
 
-    const/4 v1, 0x1
-
-    .line 136
+    .line 183
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3}, Lcom/google/android/finsky/FinskyApp;->getAnalytics()Lcom/google/android/finsky/analytics/Analytics;
+    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getAnalytics()Lcom/google/android/finsky/analytics/Analytics;
 
-    move-result-object v3
+    move-result-object v0
 
-    iget-object v4, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mUrl:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mUrl:Ljava/lang/String;
 
-    iget-object v5, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mCookie:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mCookie:Ljava/lang/String;
 
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->getAnalyticsString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-interface {v3, v4, v5, v6}, Lcom/google/android/finsky/analytics/Analytics;->logPageView(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0, v1, v2, v3}, Lcom/google/android/finsky/analytics/Analytics;->logPageView(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 138
-    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
+    .line 185
+    iget-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mSetByUser:Z
 
-    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getSetByUser()Z
+    if-eqz v0, :cond_3e
 
-    move-result v3
+    .line 186
+    iget-wide v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mTotal:J
 
-    if-nez v3, :cond_5b
+    sub-long/2addr v0, v5
 
-    move v0, v1
+    iput-wide v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mTotal:J
 
-    .line 142
-    .local v0, setPlusOne:Z
-    :goto_20
-    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
+    .line 187
+    const/4 v0, 0x0
 
-    if-eqz v3, :cond_3d
+    iput-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mSetByUser:Z
 
-    .line 143
-    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
+    .line 192
+    :goto_22
+    invoke-direct {p0, v4}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->setLoading(Z)V
 
-    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getSetByUser()Z
+    .line 193
+    iget-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mSetByUser:Z
 
-    move-result v3
+    if-eqz v0, :cond_46
 
-    if-eqz v3, :cond_5d
+    sget-object v0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;->On:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
 
-    .line 144
-    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
+    :goto_2b
+    iput-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mUserState:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
 
-    iget-object v4, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
-
-    invoke-virtual {v4}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getTotal()J
-
-    move-result-wide v4
-
-    sub-long/2addr v4, v7
-
-    invoke-virtual {v3, v4, v5}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->setTotal(J)Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
-
-    .line 145
-    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
-
-    invoke-virtual {v3, v2}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->setSetByUser(Z)Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
-
-    .line 151
-    :cond_3d
-    :goto_3d
-    invoke-direct {p0, v1}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->setLoading(Z)V
-
-    .line 152
-    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
-
-    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getSetByUser()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_6f
-
-    sget-object v1, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;->On:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
-
-    :goto_4a
-    iput-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mUserState:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
-
-    .line 153
+    .line 194
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->syncButtonState()V
 
-    .line 154
-    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
+    .line 195
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
-    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/api/model/Document;->getDocId()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Document;->getDocId()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v2, v0, p0, p0}, Lcom/google/android/finsky/api/DfeApi;->setPlusOne(Ljava/lang/String;ZLcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
+    iget-boolean v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mSetByUser:Z
 
-    .line 155
+    invoke-interface {v0, v1, v2, p0, p0}, Lcom/google/android/finsky/api/DfeApi;->setPlusOne(Ljava/lang/String;ZLcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
+
+    .line 196
     return-void
 
-    .end local v0           #setPlusOne:Z
-    :cond_5b
-    move v0, v2
+    .line 189
+    :cond_3e
+    iget-wide v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mTotal:J
 
-    .line 138
-    goto :goto_20
+    add-long/2addr v0, v5
 
-    .line 147
-    .restart local v0       #setPlusOne:Z
-    :cond_5d
-    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
+    iput-wide v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mTotal:J
 
-    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
+    .line 190
+    iput-boolean v4, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mSetByUser:Z
 
-    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->getTotal()J
+    goto :goto_22
 
-    move-result-wide v3
+    .line 193
+    :cond_46
+    sget-object v0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;->Off:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
 
-    add-long/2addr v3, v7
-
-    invoke-virtual {v2, v3, v4}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->setTotal(J)Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
-
-    .line 148
-    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
-
-    invoke-virtual {v2, v1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;->setSetByUser(Z)Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
-
-    goto :goto_3d
-
-    .line 152
-    :cond_6f
-    sget-object v1, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;->Off:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
-
-    goto :goto_4a
+    goto :goto_2b
 .end method
 
 .method private setLoading(Z)V
@@ -722,13 +800,13 @@
     .parameter "isLoading"
 
     .prologue
-    .line 186
+    .line 227
     iput-boolean p1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mIsWaitingServerResponse:Z
 
-    .line 187
+    .line 228
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLayout:Landroid/view/View;
 
-    const v1, 0x7f0800de
+    const v1, 0x7f0800e2
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -743,10 +821,10 @@
     :goto_10
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 189
+    .line 230
     return-void
 
-    .line 187
+    .line 228
     :cond_14
     const/16 v0, 0x8
 
@@ -754,88 +832,88 @@
 .end method
 
 .method private syncButtonState()V
-    .registers 4
+    .registers 5
 
     .prologue
-    .line 95
-    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLayout:Landroid/view/View;
+    const v1, 0x7f0200a6
 
-    const v2, 0x7f0800e9
+    .line 143
+    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLayout:Landroid/view/View;
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    const v3, 0x7f0800f0
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 97
+    .line 145
     .local v0, plusOneButton:Landroid/widget/ImageView;
-    sget-object v1, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$2;->$SwitchMap$com$google$android$finsky$activities$DetailsSummaryPlusOneViewBinder$PlusOneButtonState:[I
+    sget-object v2, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$2;->$SwitchMap$com$google$android$finsky$activities$DetailsSummaryPlusOneViewBinder$PlusOneButtonState:[I
 
-    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mUserState:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
+    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mUserState:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;->ordinal()I
+    invoke-virtual {v3}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;->ordinal()I
 
-    move-result v2
+    move-result v3
 
-    aget v1, v1, v2
+    aget v2, v2, v3
 
-    packed-switch v1, :pswitch_data_3e
+    packed-switch v2, :pswitch_data_3c
 
-    .line 109
-    :goto_18
+    .line 157
+    :goto_1b
     return-void
 
-    .line 99
-    :pswitch_19
-    iget-boolean v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mIsWaitingServerResponse:Z
+    .line 147
+    :pswitch_1c
+    iget-boolean v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mIsWaitingServerResponse:Z
 
-    if-eqz v1, :cond_24
-
-    const v1, 0x7f020072
+    if-eqz v2, :cond_24
 
     :goto_20
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    goto :goto_18
+    goto :goto_1b
 
     :cond_24
-    const v1, 0x7f020071
+    const v1, 0x7f0200a9
 
     goto :goto_20
 
-    .line 103
+    .line 151
     :pswitch_28
-    iget-boolean v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mIsWaitingServerResponse:Z
+    iget-boolean v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mIsWaitingServerResponse:Z
 
-    if-eqz v1, :cond_33
+    if-eqz v2, :cond_30
 
-    const v1, 0x7f020070
-
-    :goto_2f
+    :goto_2c
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    goto :goto_18
+    goto :goto_1b
 
-    :cond_33
-    const v1, 0x7f02006f
+    :cond_30
+    const v1, 0x7f0200a8
 
-    goto :goto_2f
+    goto :goto_2c
 
-    .line 107
-    :pswitch_37
-    const v1, 0x7f02006e
+    .line 155
+    :pswitch_34
+    const v1, 0x7f0200a7
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    goto :goto_18
+    goto :goto_1b
 
-    .line 97
-    :pswitch_data_3e
+    .line 145
+    nop
+
+    :pswitch_data_3c
     .packed-switch 0x1
-        :pswitch_19
+        :pswitch_1c
         :pswitch_28
-        :pswitch_37
+        :pswitch_34
     .end packed-switch
 .end method
 
@@ -843,20 +921,20 @@
     .registers 5
 
     .prologue
-    .line 112
+    .line 160
     iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLayout:Landroid/view/View;
 
-    const v3, 0x7f0800e8
+    const v3, 0x7f0800ef
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 113
+    .line 161
     .local v1, plusOneBar:Landroid/view/View;
     iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLayout:Landroid/view/View;
 
-    const v3, 0x7f0800ea
+    const v3, 0x7f0800f1
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -864,7 +942,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 114
+    .line 162
     .local v0, legendView:Landroid/widget/TextView;
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -872,26 +950,27 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 115
+    .line 163
     return-void
 .end method
 
 
 # virtual methods
-.method public bind(Landroid/view/View;Lcom/google/android/finsky/api/model/Document;Z)V
-    .registers 6
+.method public bind(Landroid/view/View;Lcom/google/android/finsky/api/model/Document;ZLandroid/os/Bundle;)V
+    .registers 7
     .parameter "view"
     .parameter "document"
     .parameter "hasDetailsLoaded"
+    .parameter "savedInstanceState"
 
     .prologue
-    .line 74
+    .line 88
     iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLayout:Landroid/view/View;
 
-    .line 75
+    .line 89
     iput-object p2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
 
-    .line 77
+    .line 91
     if-eqz p3, :cond_16
 
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
@@ -902,18 +981,18 @@
 
     if-nez v0, :cond_16
 
-    .line 78
+    .line 92
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLayout:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 84
+    .line 98
     :goto_15
     return-void
 
-    .line 80
+    .line 94
     :cond_16
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLayout:Landroid/view/View;
 
@@ -921,16 +1000,16 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 81
+    .line 95
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/Document;->getPlusOneData()Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
+    invoke-direct {p0, v0, p4}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->bindPlusOneData(Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;Landroid/os/Bundle;)V
 
-    .line 82
+    .line 96
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->rebindViews()V
 
     goto :goto_15
@@ -944,19 +1023,19 @@
     .parameter "cookie"
 
     .prologue
-    .line 67
+    .line 80
     iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mContext:Landroid/content/Context;
 
-    .line 68
+    .line 81
     iput-object p2, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
-    .line 69
+    .line 82
     iput-object p3, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mUrl:Ljava/lang/String;
 
-    .line 70
+    .line 83
     iput-object p4, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mCookie:Ljava/lang/String;
 
-    .line 71
+    .line 84
     return-void
 .end method
 
@@ -964,12 +1043,12 @@
     .registers 2
 
     .prologue
-    .line 263
+    .line 300
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLayout:Landroid/view/View;
 
-    .line 264
+    .line 301
     return-void
 .end method
 
@@ -978,31 +1057,31 @@
     .parameter "error"
 
     .prologue
-    .line 173
+    .line 214
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLayout:Landroid/view/View;
 
     if-eqz v0, :cond_15
 
-    .line 174
+    .line 215
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->setLoading(Z)V
 
-    .line 176
+    .line 217
     sget-object v0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;->Error:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mUserState:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
 
-    .line 177
+    .line 218
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->syncButtonState()V
 
-    .line 178
+    .line 219
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->bindPlusOneLegend()V
 
-    .line 179
+    .line 220
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->syncContentDescription()V
 
-    .line 182
+    .line 223
     :cond_15
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
@@ -1010,9 +1089,9 @@
 
     const/4 v2, 0x1
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/api/DfeApi;->invalidateDetailsCache(Ljava/lang/String;Z)V
+    invoke-interface {v0, v1, v2}, Lcom/google/android/finsky/api/DfeApi;->invalidateDetailsCache(Ljava/lang/String;Z)V
 
-    .line 183
+    .line 224
     return-void
 .end method
 
@@ -1021,20 +1100,20 @@
     .parameter "response"
 
     .prologue
-    .line 161
+    .line 202
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLayout:Landroid/view/View;
 
     if-eqz v0, :cond_b
 
-    .line 162
+    .line 203
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->setLoading(Z)V
 
-    .line 163
+    .line 204
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->rebindViews()V
 
-    .line 166
+    .line 207
     :cond_b
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
@@ -1042,9 +1121,9 @@
 
     const/4 v2, 0x1
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/api/DfeApi;->invalidateDetailsCache(Ljava/lang/String;Z)V
+    invoke-interface {v0, v1, v2}, Lcom/google/android/finsky/api/DfeApi;->invalidateDetailsCache(Ljava/lang/String;Z)V
 
-    .line 167
+    .line 208
     return-void
 .end method
 
@@ -1053,7 +1132,7 @@
     .parameter "x0"
 
     .prologue
-    .line 28
+    .line 29
     check-cast p1, Lcom/google/android/finsky/remoting/protos/PlusOne$PlusOneResponse;
 
     .end local p1
@@ -1066,21 +1145,71 @@
     .registers 2
 
     .prologue
-    .line 87
-    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mLastPlusOne:Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusOneData;
+    .line 125
+    iget-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mHasPlusOneData:Z
 
     if-eqz v0, :cond_d
 
-    .line 88
+    .line 126
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->bindPlusOneButton()V
 
-    .line 89
+    .line 127
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->bindPlusOneLegend()V
 
-    .line 90
+    .line 128
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->syncContentDescription()V
 
-    .line 92
+    .line 130
     :cond_d
+    return-void
+.end method
+
+.method public saveInstanceState(Landroid/os/Bundle;)V
+    .registers 5
+    .parameter "bundle"
+
+    .prologue
+    .line 133
+    const-string v0, "PlusOneViewBinder.hasPlusOneData"
+
+    iget-boolean v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mHasPlusOneData:Z
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    .line 134
+    iget-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mHasPlusOneData:Z
+
+    if-eqz v0, :cond_27
+
+    .line 135
+    const-string v0, "PlusOneViewBinder.setByUser"
+
+    iget-boolean v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mSetByUser:Z
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    .line 136
+    const-string v0, "PlusOneViewBinder.total"
+
+    iget-wide v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mTotal:J
+
+    invoke-virtual {p1, v0, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+
+    .line 137
+    const-string v0, "PlusOneViewBinder.circlesPeopleCount"
+
+    iget v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mCirclesPeopleCount:I
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    .line 138
+    const-string v0, "PlusOneViewBinder.firstFriendName"
+
+    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->mFirstFriendName:Ljava/lang/String;
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 140
+    :cond_27
     return-void
 .end method

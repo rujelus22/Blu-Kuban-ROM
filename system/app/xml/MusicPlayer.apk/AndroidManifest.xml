@@ -1,65 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:versionCode="2" android:versionName="2" package="com.sec.android.app.music"
+<manifest android:versionCode="609" android:versionName="4.3.609.436083" package="com.google.android.music"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="10" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="14" />
+    <uses-feature android:glEsVersion="131072" />
+    <original-package android:name="com.android.music" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.ACCESS_DRM" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="com.android.email.permission.ACCESS_PROVIDER" />
-    <uses-permission android:name="com.android.email.permission.READ_ATTACHMENT" />
-    <uses-permission android:name="com.google.android.gm.permission.READ_GMAIL" />
-    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
-    <uses-permission android:name="android.permission.ACCESS_DEV_STORAGE" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.INJECT_EVENTS" />
-    <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES" />
-    <uses-permission android:name="android.permission.ACCESS_DEV_STORAGE" />
-    <uses-permission android:name="android.Manifest.permission.KILL_BACKGROUND_PROCESSES" />
-    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
+    <uses-permission android:name="android.permission.ACCOUNT_MANAGER" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SYNC_STATS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <application android:theme="@android:style/Theme.DeviceDefault" android:label="@string/app_name" android:icon="@drawable/homescreen_icon_musicplayer" android:taskAffinity="sec.task.music" android:hardwareAccelerated="false">
-        <uses-library android:name="touchwiz" />
-        <meta-data android:name="android.app.default_searchable" android:value=".QueryBrowserActivity" />
-        <service android:name=".CorePlayerService" android:exported="true" />
-        <activity android:theme="@style/MusicDefault.NoActionBar" android:name=".MusicBrowserTabActivity" android:configChanges="orientation|screenSize" android:windowSoftInputMode="adjustPan">
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.SUBSCRIBED_FEEDS_READ" />
+    <uses-permission android:name="android.permission.SUBSCRIBED_FEEDS_WRITE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <permission android:name="com.google.android.music.store.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="com.google.android.music.store.permission.C2D_MESSAGE" />
+    <application android:theme="@style/RootTheme" android:label="@string/app_name" android:icon="@mipmap/ic_launcher_play_music" android:name="com.google.android.music.MusicApplication" android:persistent="@bool/config_app_persistent" android:process=":main" android:taskAffinity="com.google.android.music.task" android:allowTaskReparenting="true" android:hardwareAccelerated="true">
+        <activity android:theme="@style/NoTitleBarNoShadowTheme" android:label="@string/launcher_name" android:name="com.google.android.music.activitymanagement.TopLevelActivity" android:exported="true" android:process=":ui" android:launchMode="singleTop">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="com.google.android.music.eclipselaunch" />
             </intent-filter>
         </activity>
-        <activity-alias android:name="MusicBrowserActivity" android:targetActivity=".MusicBrowserTabActivity">
+        <activity-alias android:label="@string/launcher_name" android:name="com.android.music.activitymanagement.TopLevelActivity" android:exported="true" android:process=":ui" android:targetActivity="com.google.android.music.activitymanagement.TopLevelActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.MUSIC_PLAYER" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.APP_MUSIC" />
             </intent-filter>
-            <intent-filter android:priority="-1">
+            <intent-filter>
+                <action android:name="com.google.android.music.PLAYBACK_VIEWER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.dir/album" />
-            </intent-filter>
-        </activity-alias>
-        <activity android:name=".TrackBrowserActivity" android:configChanges="orientation|screenSize">
-            <intent-filter android:priority="-1">
-                <action android:name="android.intent.action.PICK" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.google.music.playlist" />
+                <data android:mimeType="vnd.android.cursor.dir/playlist" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.google.music.album" />
                 <data android:mimeType="vnd.android.cursor.dir/artistalbum" />
                 <data android:mimeType="vnd.android.cursor.dir/album" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.google.music.album" />
                 <data android:mimeType="vnd.android.cursor.dir/track" />
             </intent-filter>
-        </activity>
-        <activity android:name=".QueryBrowserActivity" android:exported="true" android:launchMode="singleTask" android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="https" android:host="music.google.com" android:path="/music/listen" />
+                <data android:scheme="http" android:host="music.google.com" android:path="/music/listen" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="content" android:host="media" android:pathPrefix="/external/audio/media/" />
+                <data android:scheme="content" android:host="com.google.android.music.MusicContent" />
+                <data android:mimeType="audio/*" />
+                <data android:mimeType="application/ogg" />
+                <data android:mimeType="application/x-ogg" />
+                <data android:mimeType="application/itunes" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.music.PLAY_FOUND_ITEM" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
                 <action android:name="android.intent.action.MEDIA_SEARCH" />
@@ -67,8 +85,105 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
+        </activity-alias>
+        <activity-alias android:label="@string/launcher_name" android:name="com.android.music.MusicBrowserActivity" android:exported="true" android:process=":ui" android:targetActivity="com.google.android.music.activitymanagement.TopLevelActivity" />
+        <activity android:label="@string/launcher_name" android:name="com.google.android.music.PlaySongsActivity" android:exported="true" android:process=":ui">
+            <intent-filter>
+                <action android:name="com.google.android.music.PLAY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
-        <activity android:name=".MusicPicker" android:exported="true" android:configChanges="orientation|screenSize">
+        <activity android:name="com.google.android.music.SharedSongsActivity" android:exported="true" android:process=":ui">
+            <intent-filter>
+                <action android:name="com.google.android.music.SHARED_PLAY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.google.android.music.GPlusShareActivity" android:exported="false" android:process=":ui" />
+        <activity android:name="com.google.android.music.lockscreen.WaveLockActivity" android:exported="false" android:process=":ui" android:screenOrientation="portrait" android:configChanges="orientation" />
+        <receiver android:name="com.google.android.music.MediaButtonIntentReceiver" android:exported="true" android:process=":main">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+                <action android:name="android.media.AUDIO_BECOMING_NOISY" />
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/stream_settings" android:name="com.google.android.music.MusicSettingsActivity" android:exported="false" android:process=":ui" android:clearTaskOnLaunch="true" />
+        <activity android:theme="@style/DialogTheme.NoActionBar" android:name="com.google.android.music.LicenseActivity" android:exported="false" android:process=":ui">
+            <intent-filter>
+                <action android:name="com.google.android.music.LICENSES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity-alias android:name="com.google.android.music.Settings.NetworkUsage" android:exported="true" android:process=":ui" android:targetActivity="com.google.android.music.MusicSettingsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MANAGE_NETWORK_USAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+        <activity android:label="@string/tutorial_welcome_heading" android:name="com.google.android.music.tutorial.TutorialWelcomeActivity" android:exported="false" android:process=":main" android:clearTaskOnLaunch="true" />
+        <activity android:label="@string/tutorial_select_account_heading" android:name="com.google.android.music.tutorial.TutorialSelectAccountActivity" android:exported="false" android:process=":main" android:clearTaskOnLaunch="true">
+            <intent-filter>
+                <action android:name="com.google.android.music.SELECT_ACCOUNT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/tutorial_free_music_heading" android:name="com.google.android.music.tutorial.TutorialFreeMusicActivity" android:exported="false" android:process=":main" android:clearTaskOnLaunch="true" />
+        <activity android:label="@string/account_settings_title" android:name="com.google.android.music.AccountSettings" android:exported="false" android:process=":main" android:clearTaskOnLaunch="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.google.android.music.ACCOUNT_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/download_queue_title" android:name="com.google.android.music.DownloadQueueActivity" android:exported="false" android:process=":ui" android:clearTaskOnLaunch="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.google.android.music.DOWNLOAD_QUEUE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/DialogTheme" android:name="com.google.android.music.AudioPreview" android:exported="true" android:process=":ui" android:taskAffinity="" android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="file" />
+                <data android:mimeType="audio/*" />
+                <data android:mimeType="application/ogg" />
+                <data android:mimeType="application/x-ogg" />
+                <data android:mimeType="application/itunes" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:mimeType="audio/*" />
+                <data android:mimeType="application/ogg" />
+                <data android:mimeType="application/x-ogg" />
+                <data android:mimeType="application/itunes" />
+            </intent-filter>
+            <intent-filter android:priority="-1">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="content" />
+                <data android:mimeType="audio/*" />
+                <data android:mimeType="application/ogg" />
+                <data android:mimeType="application/x-ogg" />
+                <data android:mimeType="application/itunes" />
+            </intent-filter>
+        </activity>
+        <activity-alias android:label="@string/musicshortcutlabel" android:icon="@mipmap/ic_launcher_shortcut_music_playlist" android:name="com.google.android.music.PlaylistShortcutActivity" android:exported="true" android:process=":ui" android:targetActivity="com.google.android.music.activitymanagement.TopLevelActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.CAR_MODE" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:label="@string/musicshortcutlabel" android:icon="@mipmap/ic_launcher_shortcut_music_playlist" android:name="com.android.music.PlaylistShortcutActivity" android:exported="true" android:process=":ui" android:targetActivity="com.google.android.music.activitymanagement.TopLevelActivity" />
+        <activity android:theme="@style/DialogTheme.NoActionBar" android:name="com.google.android.music.CreateInstantMixActivity" android:exported="false" android:process=":ui" android:configChanges="orientation" />
+        <activity android:label="@string/music_picker_title" android:name="com.google.android.music.MusicPicker" android:exported="true" android:process=":ui">
             <intent-filter>
                 <action android:name="android.intent.action.GET_CONTENT" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -84,146 +199,130 @@
                 <data android:mimeType="vnd.android.cursor.dir/audio" />
             </intent-filter>
         </activity>
-        <activity android:theme="@style/MusicDefault.NoActionBar" android:label="@string/IDS_MP_BODY_SOUND_PLAYER" android:name=".AudioPreview" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|screenSize">
+        <service android:name="com.google.android.music.MusicPlaybackService" android:exported="false" android:process=":main" />
+        <service android:name="com.google.android.music.homewidgets.NowPlayingWidgetProvider$UpdateService" android:exported="false" android:process=":main" />
+        <service android:name="com.google.android.music.store.StoreService$StoreServiceBinder" android:exported="false" android:process=":main">
             <intent-filter>
-                <action android:name="com.android.music.PREVIEW_VIEWER" />
+                <action android:name="com.google.android.music.STORE_SERVICE" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:scheme="content" android:host="com.sec.pcw" android:pathPrefix="/player/music" />
-                <data android:mimeType="application/cloud" />
             </intent-filter>
+        </service>
+        <service android:name="com.google.android.music.store.KeepOnUpdater$UpdateKeepOnTables" android:exported="false" android:process=":main">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+                <action android:name="com.google.android.music.UPDATE_KEEP_ON" />
                 <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.google.android.music.MusicPreferenceService$MusicPreferenceServiceBinder" android:exported="false" android:process=":main">
+            <intent-filter>
+                <action android:name="com.google.android.music.PREFERENCE_SERVICE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <receiver android:name="com.android.music.MediaAppWidgetProvider" android:process=":main">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_nowplaying_small" />
+        </receiver>
+        <provider android:name="com.google.android.music.store.MusicContentProvider" android:exported="true" android:process=":main" android:multiprocess="false" android:authorities="com.google.android.music.MusicContent" />
+        <receiver android:name="com.google.android.music.store.MediaStoreImportService$Receiver" android:exported="true" android:process=":main">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_SCANNER_STARTED" />
                 <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_SCANNER_FINISHED" />
+                <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.action.MTP_SESSION_END" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.music.store.MediaStoreImportService" android:exported="false" android:process=":main" />
+        <service android:name="com.google.android.music.dl.DownloadManager$DownloadManagerService" android:exported="false" android:process=":main" />
+        <service android:name="com.google.android.music.dl.artwork.ArtDownloadService" android:exported="false" android:process=":main">
+            <intent-filter>
+                <action android:name="com.android.music.REMOTE_ALBUM_ART_REQUESTED" />
+            </intent-filter>
+        </service>
+        <receiver android:name="com.google.android.music.dl.MusicCommunicator" android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.music.accountchanged" />
+                <action android:name="com.google.android.music.SYNC_COMPLETE" />
+                <action android:name="com.google.android.music.NEW_SHOULDKEEPON" />
+                <action android:name="com.google.android.music.RINGTONE_REQUEST_START" />
+                <action android:name="com.google.android.music.CLEAN_ORPHANED_FILES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.music.store.KeepOnUpdater$SyncListener" android:exported="false" android:process=":main" />
+        <service android:name="com.google.android.music.tutorial.SignupStatus$SignupCheckService" android:exported="false" android:process=":ui" />
+        <receiver android:name="com.google.android.music.tutorial.SignupStatus$NetworkChangedReceiver" android:enabled="false" android:exported="true" android:process=":main">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.music.sync.SyncAdapterService" android:exported="true" android:process=":main">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/syncadapter" />
+        </service>
+        <receiver android:name="com.google.android.music.sync.google.TickleReceiver" android:exported="true" android:process=":main">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.google.android.music.store" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.google.android.music.tutorial.SignupTickleReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.google.android.music.signup" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.google.android.music.AccountsBroadcastReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="android.accounts.LOGIN_ACCOUNTS_CHANGED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.music.dl.NetworkMonitor" android:process=":main">
+            <intent-filter>
+                <action android:name="com.google.android.music.NETWORK_MONITOR_SERVICE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.google.android.music.athome.AtHomeConnectionService" android:process=":main">
+            <intent-filter>
+                <action android:name="com.google.android.music.athome.CONNECTION_SERVICE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.google.android.music.athome.AtHomeMusicServerService" android:exported="true" android:process=":main">
+            <intent-filter>
+                <action android:name="com.google.android.music.athome.AtHomeMusicServerService" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.athome.START_SERVICE" />
+            </intent-filter>
+            <meta-data android:name="com.android.athome.service" android:resource="@xml/service_info" />
+        </service>
+        <provider android:name="com.google.android.music.athome.AtHomeContentProvider" android:exported="false" android:process=":main" android:multiprocess="false" android:authorities="com.google.android.music.athome" />
+        <activity android:name=".ringtone.RingtoneEditActivity" android:exported="false" android:process=":ui" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT" />
+                <action android:name="com.google.android.music.EDIT_RINGTONE" />
                 <data android:mimeType="audio/*" />
-                <data android:mimeType="application/ogg" />
-                <data android:mimeType="application/x-ogg" />
-                <data android:mimeType="application/x-vorbis" />
-                <data android:mimeType="application/itunes" />
-                <data android:mimeType="text/x-imelody" />
-                <data android:mimeType="text/x-iMelody" />
-                <data android:mimeType="application/x-flac" />
-            </intent-filter>
-            <intent-filter android:priority="-1">
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="content" />
-                <data android:mimeType="audio/*" />
-                <data android:mimeType="application/ogg" />
-                <data android:mimeType="application/x-ogg" />
-                <data android:mimeType="application/x-vorbis" />
-                <data android:mimeType="application/itunes" />
-                <data android:mimeType="text/x-imelody" />
-                <data android:mimeType="text/x-iMelody" />
-                <data android:mimeType="application/x-flac" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="http" />
-                <data android:mimeType="audio/mp3" />
-                <data android:mimeType="audio/x-mp3" />
-                <data android:mimeType="audio/mpeg" />
-                <data android:mimeType="audio/mp4" />
-                <data android:mimeType="audio/mp4a-latm" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="sshttp" />
-                <data android:mimeType="audio/mp3" />
-                <data android:mimeType="audio/x-mp3" />
-                <data android:mimeType="audio/mpeg" />
-                <data android:mimeType="audio/mp4" />
-                <data android:mimeType="audio/mp4a-latm" />
-            </intent-filter>
-        </activity>
-        <receiver android:name=".AudioPreviewMediaButtonIntentReceiver">
-            <intent-filter android:priority="-1">
-                <action android:name="android.intent.action.MEDIA_BUTTON" />
-                <action android:name="android.media.AUDIO_BECOMING_NOISY" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name=".MediaButtonIntentReceiver">
-            <intent-filter>
-                <action android:name="com.android.music.musicservicecommand.play" />
-                <action android:name="com.android.music.musicservicecommand.playprevious" />
-                <action android:name="android.intent.action.MEDIA_BUTTON" />
-                <action android:name="android.media.AUDIO_BECOMING_NOISY" />
-                <action android:name="android.bluetooth.a2dp.profile.action.CONNECTION_STATE_CHANGED" />
-                <action android:name="android.bluetooth.a2dp.profile.action.PLAYING_STATE_CHANGED" />
-            </intent-filter>
-        </receiver>
-        <activity android:name=".common.richinfo.MediaInfoActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|uiMode|screenSize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name=".common.richinfo.FindTagActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|uiMode|screenSize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:theme="@style/MusicDefault.NoActionBar" android:label="@string/app_name" android:name=".MusicPlayer" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|uiMode|screenSize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="sec.musicplayer.PLAYBACK_VIEWER" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <service android:name="com.google.android.music.MusicUserContentBinder$MusicUserContentService" android:exported="true" android:process=":main">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+                <action android:name="com.google.android.play.IUserContentService.BIND" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="com.android.music/launchplayer" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="com.android.music/search" />
-            </intent-filter>
-        </activity>
-        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:label="@string/app_name" android:name=".common.util.DrmPopupActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|uiMode|screenSize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:label="@string/settings" android:name=".common.settings.MusicSettingsActivity" android:configChanges="keyboardHidden|orientation|uiMode|screenSize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:label="@string/effect" android:name=".common.settings.MusicSettingsEqEffect" android:configChanges="keyboardHidden|orientation|uiMode|screenSize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:label="@string/music_menu" android:name=".common.settings.MusicSettingsMusicMenu" android:configChanges="keyboardHidden|orientation|uiMode|screenSize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <receiver android:name=".common.util.MusicGateReceiver">
-            <intent-filter>
-                <action android:name="com.sec.android.gate.GATE" />
-            </intent-filter>
-        </receiver>
-        <activity android:name=".MusicFileEmptyActivity" android:configChanges="keyboardHidden|orientation|uiMode|screenSize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:theme="@android:style/Theme.DeviceDefault.Dialog" android:label="DrmPopup" android:name=".common.util.DrmPopup" />
-        <activity android:label="@string/list_menu_reorder" android:name=".common.settings.MusicSettingsMusicMenuReorderActivity" android:configChanges="keyboardHidden|orientation|uiMode|screenSize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
+        </service>
     </application>
 </manifest>

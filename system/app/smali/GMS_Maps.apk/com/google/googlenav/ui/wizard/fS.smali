@@ -1,79 +1,46 @@
-.class Lcom/google/googlenav/ui/wizard/fS;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.class Lcom/google/googlenav/ui/wizard/fs;
+.super Lag/g;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/fR;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/fp;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/fR;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/fp;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fS;->a:Lcom/google/googlenav/ui/wizard/fR;
+    .prologue
+    .line 137
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fs;->a:Lcom/google/googlenav/ui/wizard/fp;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lag/g;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 11
+.method public a(Lag/c;)V
+    .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fS;->a:Lcom/google/googlenav/ui/wizard/fR;
+    .prologue
+    .line 141
+    sget-object v0, Lag/b;->k:Lag/c;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/fR;->a:Lcom/google/googlenav/ui/wizard/fO;
+    if-eq p1, v0, :cond_b
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/fO;->c(Lcom/google/googlenav/ui/wizard/fO;)Landroid/widget/ArrayAdapter;
+    .line 142
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fs;->a:Lcom/google/googlenav/ui/wizard/fp;
 
-    move-result-object v0
+    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/fp;->a:Lcom/google/googlenav/ui/wizard/fo;
 
-    invoke-virtual {v0, p3}, Landroid/widget/ArrayAdapter;->getItem(I)Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/fo;->a()V
 
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlenav/ui/wizard/fQ;
-
-    iget v0, v0, Lcom/google/googlenav/ui/wizard/fQ;->b:I
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/fS;->a:Lcom/google/googlenav/ui/wizard/fR;
-
-    iget-object v1, v1, Lcom/google/googlenav/ui/wizard/fR;->a:Lcom/google/googlenav/ui/wizard/fO;
-
-    invoke-static {v1}, Lcom/google/googlenav/ui/wizard/fO;->d(Lcom/google/googlenav/ui/wizard/fO;)Lcom/google/googlenav/L;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/google/googlenav/ui/wizard/fS;->a:Lcom/google/googlenav/ui/wizard/fR;
-
-    iget-object v2, v2, Lcom/google/googlenav/ui/wizard/fR;->a:Lcom/google/googlenav/ui/wizard/fO;
-
-    invoke-static {v2}, Lcom/google/googlenav/ui/wizard/fO;->e(Lcom/google/googlenav/ui/wizard/fO;)Lcom/google/googlenav/aV;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/google/googlenav/ui/wizard/fS;->a:Lcom/google/googlenav/ui/wizard/fR;
-
-    iget-object v3, v3, Lcom/google/googlenav/ui/wizard/fR;->a:Lcom/google/googlenav/ui/wizard/fO;
-
-    invoke-static {v3}, Lcom/google/googlenav/ui/wizard/fO;->f(Lcom/google/googlenav/ui/wizard/fO;)Lcom/google/googlenav/aX;
-
-    move-result-object v3
-
-    const-string v4, "w"
-
-    invoke-static {v1, v2, v0, v3, v4}, Lcom/google/googlenav/ui/wizard/fO;->a(Lcom/google/googlenav/L;Lcom/google/googlenav/aV;ILcom/google/googlenav/aX;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fS;->a:Lcom/google/googlenav/ui/wizard/fR;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/fR;->a:Lcom/google/googlenav/ui/wizard/fO;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/fO;->a()V
-
+    .line 144
+    :cond_b
     return-void
 .end method

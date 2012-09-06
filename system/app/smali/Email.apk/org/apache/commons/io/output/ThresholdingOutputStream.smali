@@ -22,7 +22,7 @@
     .end annotation
 
     .prologue
-    .line 182
+    .line 218
     iget-boolean v0, p0, Lorg/apache/commons/io/output/ThresholdingOutputStream;->thresholdExceeded:Z
 
     if-nez v0, :cond_15
@@ -41,15 +41,15 @@
 
     if-lez v0, :cond_15
 
-    .line 183
+    .line 220
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/apache/commons/io/output/ThresholdingOutputStream;->thresholdExceeded:Z
 
-    .line 184
+    .line 221
     invoke-virtual {p0}, Lorg/apache/commons/io/output/ThresholdingOutputStream;->thresholdReached()V
 
-    .line 186
+    .line 223
     :cond_15
     return-void
 .end method
@@ -63,13 +63,13 @@
     .end annotation
 
     .prologue
-    .line 132
+    .line 155
     :try_start_0
     invoke-virtual {p0}, Lorg/apache/commons/io/output/ThresholdingOutputStream;->flush()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_3} :catch_b
 
-    .line 136
+    .line 161
     :goto_3
     invoke-virtual {p0}, Lorg/apache/commons/io/output/ThresholdingOutputStream;->getStream()Ljava/io/OutputStream;
 
@@ -77,10 +77,10 @@
 
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
 
-    .line 137
+    .line 162
     return-void
 
-    .line 133
+    .line 157
     :catch_b
     move-exception v0
 
@@ -96,14 +96,14 @@
     .end annotation
 
     .prologue
-    .line 121
+    .line 141
     invoke-virtual {p0}, Lorg/apache/commons/io/output/ThresholdingOutputStream;->getStream()Ljava/io/OutputStream;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/io/OutputStream;->flush()V
 
-    .line 122
+    .line 142
     return-void
 .end method
 
@@ -133,19 +133,19 @@
     .end annotation
 
     .prologue
-    .line 81
+    .line 93
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lorg/apache/commons/io/output/ThresholdingOutputStream;->checkThreshold(I)V
 
-    .line 82
+    .line 94
     invoke-virtual {p0}, Lorg/apache/commons/io/output/ThresholdingOutputStream;->getStream()Ljava/io/OutputStream;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write(I)V
 
-    .line 83
+    .line 95
     iget-wide v0, p0, Lorg/apache/commons/io/output/ThresholdingOutputStream;->written:J
 
     const-wide/16 v2, 0x1
@@ -154,7 +154,7 @@
 
     iput-wide v0, p0, Lorg/apache/commons/io/output/ThresholdingOutputStream;->written:J
 
-    .line 84
+    .line 96
     return-void
 .end method
 
@@ -168,19 +168,19 @@
     .end annotation
 
     .prologue
-    .line 94
+    .line 109
     array-length v0, p1
 
     invoke-virtual {p0, v0}, Lorg/apache/commons/io/output/ThresholdingOutputStream;->checkThreshold(I)V
 
-    .line 95
+    .line 110
     invoke-virtual {p0}, Lorg/apache/commons/io/output/ThresholdingOutputStream;->getStream()Ljava/io/OutputStream;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write([B)V
 
-    .line 96
+    .line 111
     iget-wide v0, p0, Lorg/apache/commons/io/output/ThresholdingOutputStream;->written:J
 
     array-length v2, p1
@@ -191,7 +191,7 @@
 
     iput-wide v0, p0, Lorg/apache/commons/io/output/ThresholdingOutputStream;->written:J
 
-    .line 97
+    .line 112
     return-void
 .end method
 
@@ -207,17 +207,17 @@
     .end annotation
 
     .prologue
-    .line 109
+    .line 127
     invoke-virtual {p0, p3}, Lorg/apache/commons/io/output/ThresholdingOutputStream;->checkThreshold(I)V
 
-    .line 110
+    .line 128
     invoke-virtual {p0}, Lorg/apache/commons/io/output/ThresholdingOutputStream;->getStream()Ljava/io/OutputStream;
 
     move-result-object v0
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
 
-    .line 111
+    .line 129
     iget-wide v0, p0, Lorg/apache/commons/io/output/ThresholdingOutputStream;->written:J
 
     int-to-long v2, p3
@@ -226,6 +226,6 @@
 
     iput-wide v0, p0, Lorg/apache/commons/io/output/ThresholdingOutputStream;->written:J
 
-    .line 112
+    .line 130
     return-void
 .end method

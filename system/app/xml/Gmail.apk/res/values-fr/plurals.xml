@@ -53,40 +53,40 @@
         <item quantity="one">"Attente d'une opération sur %1$d conversation."</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> conversations ignorées.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> conversation ignorée.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversations ignorées.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversation ignorée.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> conversations marquées comme spam.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> conversation marquée comme spam.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversations marquées comme spam.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversation marquée comme spam.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> conversations archivées.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> conversation archivée.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversations archivées.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversation archivée.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> conversations déplacées vers la boîte de réception.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> conversation déplacée vers la boîte de réception.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversations déplacées vers la boîte de réception.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversation déplacée vers la boîte de réception.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> conversations supprimées.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> conversation supprimée.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversations supprimées.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversation supprimée.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> conversations marquées comme importantes.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> conversation marquée comme importante.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversations marquées comme importantes.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversation marquée comme importante.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> conversations marquées comme non importantes.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> conversation marquée comme non importante.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversations marquées comme non importantes.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversation marquée comme non importante.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> conversations marquées comme lues.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> conversation marquée comme lue.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversations marquées comme lues.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversation marquée comme lue.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> conversations marquées comme non lues.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> conversation marquée comme non lue.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversations marquées comme non lues.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversation marquée comme non lue.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Libellés modifiés.</item>

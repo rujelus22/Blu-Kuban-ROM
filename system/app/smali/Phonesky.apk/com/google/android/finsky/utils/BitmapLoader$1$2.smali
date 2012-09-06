@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 256
+    .line 287
     iput-object p1, p0, Lcom/google/android/finsky/utils/BitmapLoader$1$2;->this$1:Lcom/google/android/finsky/utils/BitmapLoader$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "error"
 
     .prologue
-    .line 259
+    .line 290
     iget-object v0, p0, Lcom/google/android/finsky/utils/BitmapLoader$1$2;->this$1:Lcom/google/android/finsky/utils/BitmapLoader$1;
 
     iget-object v0, v0, Lcom/google/android/finsky/utils/BitmapLoader$1;->this$0:Lcom/google/android/finsky/utils/BitmapLoader;
@@ -54,6 +54,6 @@
     #calls: Lcom/google/android/finsky/utils/BitmapLoader;->onGetImageError(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/BitmapLoader;->access$200(Lcom/google/android/finsky/utils/BitmapLoader;Ljava/lang/String;)V
 
-    .line 260
+    .line 291
     return-void
 .end method

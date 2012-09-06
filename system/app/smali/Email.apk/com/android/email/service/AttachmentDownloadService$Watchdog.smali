@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 179
+    .line 154
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -33,7 +33,7 @@
     .parameter "intent"
 
     .prologue
-    .line 182
+    .line 157
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Lcom/android/email/service/AttachmentDownloadService$Watchdog$1;
@@ -46,6 +46,6 @@
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 187
+    .line 162
     return-void
 .end method

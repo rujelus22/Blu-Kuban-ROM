@@ -1,86 +1,47 @@
-.class public Lcom/google/googlenav/ui/android/r;
-.super Lcom/google/googlenav/ui/bQ;
+.class Lcom/google/googlenav/ui/android/R;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private d:Lcom/google/googlenav/ui/android/q;
+.field final synthetic a:Ll/q;
+
+.field final synthetic b:Lcom/google/googlenav/ui/android/FloorPickerView;
 
 
 # direct methods
-.method public constructor <init>(LaJ/p;Lcom/google/googlenav/ui/android/q;)V
+.method constructor <init>(Lcom/google/googlenav/ui/android/FloorPickerView;Ll/q;)V
     .registers 3
+    .parameter
+    .parameter
 
-    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/bQ;-><init>(LaJ/p;)V
+    .prologue
+    .line 419
+    iput-object p1, p0, Lcom/google/googlenav/ui/android/R;->b:Lcom/google/googlenav/ui/android/FloorPickerView;
 
-    iput-object p2, p0, Lcom/google/googlenav/ui/android/r;->d:Lcom/google/googlenav/ui/android/q;
+    iput-object p2, p0, Lcom/google/googlenav/ui/android/R;->a:Ll/q;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(I)I
+.method public run()V
     .registers 3
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/r;->d:Lcom/google/googlenav/ui/android/q;
+    .prologue
+    .line 422
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/R;->b:Lcom/google/googlenav/ui/android/FloorPickerView;
 
-    invoke-virtual {v0, p1}, Lcom/google/googlenav/ui/android/q;->a(I)I
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/R;->a:Ll/q;
 
-    move-result v0
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/android/FloorPickerView;->c(Ll/q;)V
 
-    return v0
-.end method
-
-.method protected a()V
-    .registers 1
-
+    .line 423
     return-void
-.end method
-
-.method public a(Landroid/graphics/Point;)V
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/r;->d:Lcom/google/googlenav/ui/android/q;
-
-    invoke-virtual {v0, p1}, Lcom/google/googlenav/ui/android/q;->a(Landroid/graphics/Point;)V
-
-    return-void
-.end method
-
-.method public a(Lcom/google/googlenav/ui/bR;)V
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/r;->d:Lcom/google/googlenav/ui/android/q;
-
-    invoke-virtual {v0, p1}, Lcom/google/googlenav/ui/android/q;->a(Lcom/google/googlenav/ui/bR;)V
-
-    return-void
-.end method
-
-.method protected b()V
-    .registers 2
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/google/googlenav/ui/android/r;->c:Z
-
-    return-void
-.end method
-
-.method protected b(LaJ/Y;II)V
-    .registers 5
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/r;->d:Lcom/google/googlenav/ui/android/q;
-
-    invoke-virtual {v0, p1, p2, p3}, Lcom/google/googlenav/ui/android/q;->a(LaJ/Y;II)V
-
-    return-void
-.end method
-
-.method public g()Z
-    .registers 2
-
-    const/4 v0, 0x1
-
-    return v0
 .end method

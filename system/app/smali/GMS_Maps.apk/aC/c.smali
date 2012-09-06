@@ -1,86 +1,64 @@
-.class public LaC/c;
-.super LaB/h;
+.class public abstract Lac/c;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lac/d;
 
 
-# static fields
-.field public static final a:LaC/c;
+# instance fields
+.field private a:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    new-instance v0, LaC/c;
-
-    invoke-direct {v0}, LaC/c;-><init>()V
-
-    sput-object v0, LaC/c;->a:LaC/c;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
-    .registers 1
+    .registers 2
 
-    invoke-direct {p0}, LaB/h;-><init>()V
+    .prologue
+    .line 10
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 12
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lac/c;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Ljava/lang/String;
+.method public Z()V
     .registers 2
 
-    const-string v0, "Ole C."
+    .prologue
+    .line 26
+    iget-boolean v0, p0, Lac/c;->a:Z
 
-    return-object v0
-.end method
+    if-nez v0, :cond_a
 
-.method public a(Lcom/google/googlenav/ui/D;)V
-    .registers 4
+    .line 27
+    const/4 v0, 0x1
 
-    invoke-super {p0, p1}, LaB/h;->a(Lcom/google/googlenav/ui/D;)V
+    iput-boolean v0, p0, Lac/c;->a:Z
 
-    invoke-virtual {p1}, Lcom/google/googlenav/ui/D;->l()LaR/i;
+    .line 28
+    invoke-virtual {p0}, Lac/c;->a()V
 
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, LaR/i;->b(I)V
-
+    .line 30
+    :cond_a
     return-void
 .end method
 
-.method public b()Ljava/lang/String;
-    .registers 2
-
-    const/16 v0, 0x2a6
-
-    invoke-static {v0}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+.method public abstract a()V
 .end method
 
-.method public c()Ljava/lang/String;
+.method public b()Z
     .registers 2
 
-    const/16 v0, 0x2a5
-
-    invoke-static {v0}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public d()I
-    .registers 2
-
-    const/16 v0, 0x1e
+    .prologue
+    .line 21
+    iget-boolean v0, p0, Lac/c;->a:Z
 
     return v0
 .end method

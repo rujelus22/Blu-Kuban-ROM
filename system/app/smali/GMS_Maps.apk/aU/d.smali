@@ -1,602 +1,396 @@
 .class public LaU/d;
-.super Lat/a;
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# static fields
-.field static b:I
-
-.field private static c:I
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field a:Z
+.field private final a:Landroid/content/Context;
 
-.field private final d:I
+.field private b:LaU/b;
 
-.field private final e:LaU/e;
+.field private c:J
 
-.field private final f:Lam/b;
+.field private d:LaU/f;
 
-.field private g:Lam/b;
+.field private e:LaU/c;
 
-.field private h:Z
-
-.field private final i:J
-
-.field private j:J
-
-.field private k:J
-
-.field private l:J
-
-.field private m:Z
+.field private final f:LaV/a;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    const/4 v0, 0x0
-
-    sput v0, LaU/d;->b:I
-
-    return-void
-.end method
-
-.method public constructor <init>(LaU/e;LaJ/B;)V
+.method public constructor <init>(Landroid/content/Context;IILcom/google/googlenav/wallpaper/i;)V
     .registers 7
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v3, 0x1
+    .prologue
+    .line 45
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lat/a;-><init>()V
+    .line 46
+    iput-object p1, p0, LaU/d;->a:Landroid/content/Context;
 
-    iput-boolean v3, p0, LaU/d;->h:Z
+    .line 47
+    new-instance v0, LaU/f;
 
-    invoke-static {}, Laf/b;->a()Laf/b;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    invoke-direct {v0, p0, v1}, LaU/f;-><init>(LaU/d;LaU/e;)V
 
-    invoke-virtual {v0}, Laf/b;->v()Laf/a;
+    iput-object v0, p0, LaU/d;->d:LaU/f;
 
-    move-result-object v0
+    .line 48
+    new-instance v0, LaV/a;
 
-    invoke-interface {v0}, Laf/a;->c()J
+    invoke-direct {v0, p1, p2, p3, p4}, LaV/a;-><init>(Landroid/content/Context;IILcom/google/googlenav/wallpaper/i;)V
 
-    move-result-wide v0
+    iput-object v0, p0, LaU/d;->f:LaV/a;
 
-    iput-wide v0, p0, LaU/d;->i:J
-
-    iput-object p1, p0, LaU/d;->e:LaU/e;
-
-    sget v0, LaU/d;->c:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    sput v1, LaU/d;->c:I
-
-    iput v0, p0, LaU/d;->d:I
-
-    new-instance v0, Lam/b;
-
-    sget-object v1, LbD/fE;->g:Lam/e;
-
-    invoke-direct {v0, v1}, Lam/b;-><init>(Lam/e;)V
-
-    iput-object v0, p0, LaU/d;->f:Lam/b;
-
-    if-eqz p2, :cond_3b
-
-    iget-object v0, p0, LaU/d;->f:Lam/b;
-
-    const/4 v1, 0x2
-
-    invoke-virtual {p2}, LaJ/B;->g()Lam/b;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lam/b;->b(ILam/b;)V
-
-    iget-object v0, p0, LaU/d;->f:Lam/b;
-
-    const/16 v1, 0x33
-
-    invoke-virtual {v0, v1, v3}, Lam/b;->b(IZ)V
-
+    .line 49
     return-void
-
-    :cond_3b
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    throw v0
 .end method
 
-.method private s()V
-    .registers 11
+.method static synthetic a(LaU/d;J)J
+    .registers 3
+    .parameter
+    .parameter
 
-    const/16 v6, 0x16
+    .prologue
+    .line 22
+    iput-wide p1, p0, LaU/d;->c:J
 
-    const/16 v1, 0x11
+    return-wide p1
+.end method
+
+.method static synthetic a(LaU/d;LaU/b;)LaU/b;
+    .registers 2
+    .parameter
+    .parameter
+
+    .prologue
+    .line 22
+    iput-object p1, p0, LaU/d;->b:LaU/b;
+
+    return-object p1
+.end method
+
+.method static synthetic a(LaU/d;)Landroid/content/Context;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 22
+    iget-object v0, p0, LaU/d;->a:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method private a()Z
+    .registers 8
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 114
+    invoke-static {}, Lcom/google/googlenav/common/Config;->a()Lcom/google/googlenav/common/Config;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/common/Config;->u()Lcom/google/googlenav/common/a;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/googlenav/common/a;->d()J
+
+    move-result-wide v3
+
+    iget-wide v5, p0, LaU/d;->c:J
+
+    sub-long/2addr v3, v5
+
+    const-wide/32 v5, 0x927c0
+
+    cmp-long v0, v3, v5
+
+    if-lez v0, :cond_3b
+
+    move v0, v1
+
+    .line 119
+    :goto_19
+    iget-object v3, p0, LaU/d;->d:LaU/f;
+
+    invoke-virtual {v3}, LaU/f;->getStatus()Landroid/os/AsyncTask$Status;
+
+    move-result-object v3
+
+    sget-object v4, Landroid/os/AsyncTask$Status;->RUNNING:Landroid/os/AsyncTask$Status;
+
+    if-eq v3, v4, :cond_3d
+
+    move v3, v1
+
+    .line 122
+    :goto_24
+    iget-object v4, p0, LaU/d;->d:LaU/f;
+
+    invoke-virtual {v4}, LaU/f;->getStatus()Landroid/os/AsyncTask$Status;
+
+    move-result-object v4
+
+    sget-object v5, Landroid/os/AsyncTask$Status;->FINISHED:Landroid/os/AsyncTask$Status;
+
+    if-ne v4, v5, :cond_36
+
+    .line 123
+    new-instance v4, LaU/f;
 
     const/4 v5, 0x0
 
-    iget-object v0, p0, LaU/d;->g:Lam/b;
+    invoke-direct {v4, p0, v5}, LaU/f;-><init>(LaU/d;LaU/e;)V
 
-    invoke-virtual {v0, v1}, Lam/b;->k(I)Z
+    iput-object v4, p0, LaU/d;->d:LaU/f;
+
+    .line 126
+    :cond_36
+    if-eqz v0, :cond_3f
+
+    if-eqz v3, :cond_3f
+
+    :goto_3a
+    return v1
+
+    :cond_3b
+    move v0, v2
+
+    .line 114
+    goto :goto_19
+
+    :cond_3d
+    move v3, v2
+
+    .line 119
+    goto :goto_24
+
+    :cond_3f
+    move v1, v2
+
+    .line 126
+    goto :goto_3a
+.end method
+
+.method static synthetic a(LaU/d;LaU/c;)Z
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 22
+    invoke-direct {p0, p1}, LaU/d;->b(LaU/c;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    return v0
+.end method
 
-    iget-object v0, p0, LaU/d;->g:Lam/b;
+.method static synthetic b(LaU/d;)LaU/c;
+    .registers 2
+    .parameter
 
-    invoke-virtual {v0, v1}, Lam/b;->h(I)Lam/b;
+    .prologue
+    .line 22
+    iget-object v0, p0, LaU/d;->e:LaU/c;
 
-    move-result-object v2
+    return-object v0
+.end method
 
-    invoke-virtual {v2, v6}, Lam/b;->l(I)I
+.method private b(LaU/c;)Z
+    .registers 3
+    .parameter
 
-    move-result v4
+    .prologue
+    .line 101
+    if-eqz p1, :cond_8
 
-    move v0, v5
+    sget-object v0, LaU/c;->a:LaU/c;
 
-    :goto_18
-    if-ge v0, v4, :cond_2c
+    if-eq p1, v0, :cond_8
 
-    invoke-virtual {v2, v6, v0}, Lam/b;->e(II)Lam/b;
+    const/4 v0, 0x1
 
-    move-result-object v1
+    :goto_7
+    return v0
 
-    const/16 v3, 0x19
+    :cond_8
+    const/4 v0, 0x0
 
-    invoke-virtual {v1, v3}, Lam/b;->c(I)[B
+    goto :goto_7
+.end method
 
-    move-result-object v1
+.method static synthetic c(LaU/d;)LaV/a;
+    .registers 2
+    .parameter
 
-    array-length v1, v1
+    .prologue
+    .line 22
+    iget-object v0, p0, LaU/d;->f:LaV/a;
 
-    add-int/2addr v1, v5
-
-    add-int/lit8 v5, v0, 0x1
-
-    move v0, v5
-
-    move v5, v1
-
-    goto :goto_18
-
-    :cond_2b
-    move v4, v5
-
-    :cond_2c
-    if-nez v4, :cond_2f
-
-    :goto_2e
-    return-void
-
-    :cond_2f
-    const-string v0, "sv"
-
-    iget-wide v1, p0, LaU/d;->j:J
-
-    iget-wide v6, p0, LaU/d;->i:J
-
-    sub-long/2addr v1, v6
-
-    long-to-int v1, v1
-
-    iget-wide v2, p0, LaU/d;->k:J
-
-    iget-wide v6, p0, LaU/d;->i:J
-
-    sub-long/2addr v2, v6
-
-    long-to-int v2, v2
-
-    iget-wide v6, p0, LaU/d;->l:J
-
-    iget-wide v8, p0, LaU/d;->i:J
-
-    sub-long/2addr v6, v8
-
-    long-to-int v3, v6
-
-    invoke-static/range {v0 .. v5}, Lcom/google/googlenav/K;->a(Ljava/lang/String;IIIII)V
-
-    goto :goto_2e
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public a()I
-    .registers 2
-
-    const/16 v0, 0x28
-
-    return v0
-.end method
-
-.method public a(II)V
-    .registers 6
-
-    const/16 v2, 0x35
-
-    iget-object v0, p0, LaU/d;->f:Lam/b;
-
-    invoke-virtual {v0, v2}, Lam/b;->a(I)Lam/b;
-
-    move-result-object v0
-
-    const/16 v1, 0x36
-
-    invoke-virtual {v0, v1, p1}, Lam/b;->h(II)V
-
-    const/16 v1, 0x37
-
-    invoke-virtual {v0, v1, p2}, Lam/b;->h(II)V
-
-    iget-object v1, p0, LaU/d;->f:Lam/b;
-
-    invoke-virtual {v1, v2, v0}, Lam/b;->b(ILam/b;)V
-
-    return-void
-.end method
-
-.method public a(Ljava/io/DataOutput;)V
-    .registers 4
-
-    iget-object v0, p0, LaU/d;->f:Lam/b;
-
-    check-cast p1, Ljava/io/OutputStream;
-
-    invoke-virtual {v0, p1}, Lam/b;->a(Ljava/io/OutputStream;)V
-
-    invoke-static {}, Laf/b;->a()Laf/b;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Laf/b;->v()Laf/a;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Laf/a;->c()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, LaU/d;->j:J
-
-    return-void
-.end method
-
-.method public a(Z)V
-    .registers 2
-
-    iput-boolean p1, p0, LaU/d;->h:Z
-
-    return-void
-.end method
-
-.method public a(Ljava/io/DataInput;)Z
-    .registers 7
-
-    const/4 v4, 0x1
-
-    iget-boolean v0, p0, LaU/d;->a:Z
-
-    if-eqz v0, :cond_11
-
-    invoke-interface {p1}, Ljava/io/DataInput;->readInt()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Math;->abs(I)I
-
-    move-result v0
-
-    invoke-interface {p1, v0}, Ljava/io/DataInput;->skipBytes(I)I
-
-    :goto_10
-    return v4
-
-    :cond_11
-    :try_start_11
-    invoke-static {}, Laf/b;->a()Laf/b;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Laf/b;->v()Laf/a;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Laf/a;->c()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, LaU/d;->k:J
-
-    sget-object v0, LbD/fE;->m:Lam/e;
-
-    invoke-static {v0, p1}, Lam/g;->a(Lam/e;Ljava/io/DataInput;)Lam/b;
-
-    move-result-object v0
-
-    iput-object v0, p0, LaU/d;->g:Lam/b;
-
-    invoke-static {}, Laf/b;->a()Laf/b;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Laf/b;->v()Laf/a;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Laf/a;->c()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, LaU/d;->l:J
-
-    invoke-direct {p0}, LaU/d;->s()V
-    :try_end_38
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_11 .. :try_end_38} :catch_39
-
-    goto :goto_10
-
-    :catch_39
-    move-exception v0
-
-    iget-object v1, p0, LaU/d;->f:Lam/b;
-
-    const/16 v2, 0x21
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v3}, Lam/b;->g(II)V
-
-    iput-boolean v4, p0, LaU/d;->a:Z
-
-    throw v0
-.end method
-
-.method public b()V
-    .registers 2
-
-    iget-object v0, p0, LaU/d;->e:LaU/e;
-
-    if-eqz v0, :cond_9
-
-    iget-object v0, p0, LaU/d;->e:LaU/e;
-
-    invoke-interface {v0, p0}, LaU/e;->a(LaU/d;)V
-
-    :cond_9
-    return-void
-.end method
-
-.method public k()Z
+.method public a(F)V
     .registers 3
+    .parameter
 
-    iget-object v0, p0, LaU/d;->g:Lam/b;
+    .prologue
+    .line 52
+    iget-object v0, p0, LaU/d;->f:LaV/a;
 
-    const/4 v1, 0x2
+    invoke-virtual {v0, p1}, LaV/a;->a(F)V
 
-    invoke-static {v0, v1}, Lam/g;->a(Lam/b;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Las/b;->b(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_f
-
-    const/4 v0, 0x1
-
-    :goto_e
-    return v0
-
-    :cond_f
-    const/4 v0, 0x0
-
-    goto :goto_e
+    .line 53
+    return-void
 .end method
 
-.method public l()Z
-    .registers 3
-
-    iget-object v0, p0, LaU/d;->g:Lam/b;
-
-    const/16 v1, 0x23
-
-    invoke-virtual {v0, v1}, Lam/b;->k(I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public l_()Z
-    .registers 2
-
-    iget-boolean v0, p0, LaU/d;->h:Z
-
-    return v0
-.end method
-
-.method public m()Lah/f;
+.method public a(LaU/c;)V
     .registers 5
+    .parameter
 
-    iget-object v0, p0, LaU/d;->g:Lam/b;
-
-    const/16 v1, 0x23
-
-    invoke-virtual {v0, v1}, Lam/b;->k(I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_c
-
-    const/4 v0, 0x0
-
-    :goto_b
-    return-object v0
-
-    :cond_c
-    invoke-virtual {p0}, LaU/d;->n()[B
-
-    move-result-object v0
-
-    invoke-static {}, Laf/b;->a()Laf/b;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Laf/b;->o()Lah/h;
-
-    move-result-object v1
-
+    .prologue
     const/4 v2, 0x0
 
-    array-length v3, v0
+    .line 84
+    iput-object p1, p0, LaU/d;->e:LaU/c;
 
-    invoke-interface {v1, v0, v2, v3}, Lah/h;->a([BII)Lah/f;
-
-    move-result-object v0
-
-    goto :goto_b
-.end method
-
-.method public n()[B
-    .registers 3
-
-    iget-object v0, p0, LaU/d;->g:Lam/b;
-
-    const/16 v1, 0x23
-
-    invoke-virtual {v0, v1}, Lam/b;->h(I)Lam/b;
-
-    move-result-object v0
-
-    const/16 v1, 0x26
-
-    invoke-virtual {v0, v1}, Lam/b;->c(I)[B
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public o()V
-    .registers 4
-
-    sget v0, LaU/d;->b:I
-
-    if-lez v0, :cond_20
-
-    iget-object v0, p0, LaU/d;->f:Lam/b;
-
-    const/16 v1, 0x11
-
-    invoke-virtual {v0, v1}, Lam/b;->k(I)Z
+    .line 85
+    invoke-direct {p0, p1}, LaU/d;->b(LaU/c;)Z
 
     move-result v0
+
+    if-eqz v0, :cond_14
+
+    .line 86
+    iget-object v0, p0, LaU/d;->f:LaV/a;
+
+    new-instance v1, LaU/b;
+
+    invoke-direct {v1, p1, v2, v2}, LaU/b;-><init>(LaU/c;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, LaV/a;->a(LaU/b;)V
+
+    .line 94
+    :goto_13
+    return-void
+
+    .line 88
+    :cond_14
+    iget-object v0, p0, LaU/d;->b:LaU/b;
+
+    if-nez v0, :cond_1e
+
+    .line 89
+    iget-object v0, p0, LaU/d;->f:LaV/a;
+
+    invoke-virtual {v0, v2}, LaV/a;->a(LaU/b;)V
+
+    goto :goto_13
+
+    .line 91
+    :cond_1e
+    iget-object v0, p0, LaU/d;->f:LaV/a;
+
+    iget-object v1, p0, LaU/d;->b:LaU/b;
+
+    invoke-virtual {v0, v1}, LaV/a;->a(LaU/b;)V
+
+    goto :goto_13
+.end method
+
+.method public a(Landroid/graphics/Canvas;IIZ)V
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 60
+    invoke-direct {p0}, LaU/d;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_e
+
+    .line 64
+    iget-object v1, p0, LaU/d;->d:LaU/f;
+
+    const/4 v0, 0x0
+
+    check-cast v0, [Ljava/lang/Void;
+
+    invoke-virtual {v1, v0}, LaU/f;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    .line 67
+    :cond_e
+    iget-object v0, p0, LaU/d;->b:LaU/b;
 
     if-eqz v0, :cond_20
 
-    invoke-virtual {p0}, LaU/d;->q()Lap/d;
+    iget-object v0, p0, LaU/d;->b:LaU/b;
 
-    move-result-object v0
+    iget-object v0, v0, LaU/b;->a:LaU/c;
 
-    const/4 v1, 0x1
+    if-eqz v0, :cond_20
 
-    invoke-virtual {v0, v1}, Lap/d;->b(I)V
+    sget-object v0, LaU/c;->a:LaU/c;
 
-    sget v1, LaU/d;->b:I
+    iget-object v1, p0, LaU/d;->b:LaU/b;
 
-    int-to-long v1, v1
+    iget-object v1, v1, LaU/b;->a:LaU/c;
 
-    invoke-virtual {v0, v1, v2}, Lap/d;->a(J)V
-
-    invoke-virtual {v0}, Lap/d;->g()V
-
-    :goto_1f
-    return-void
+    if-ne v0, v1, :cond_2b
 
     :cond_20
-    invoke-virtual {p0}, LaU/d;->p()V
+    iget-object v0, p0, LaU/d;->e:LaU/c;
 
-    goto :goto_1f
-.end method
+    if-eqz v0, :cond_2a
 
-.method p()V
-    .registers 2
+    sget-object v0, LaU/c;->a:LaU/c;
 
-    const/4 v0, 0x1
+    iget-object v1, p0, LaU/d;->e:LaU/c;
 
-    iput-boolean v0, p0, LaU/d;->m:Z
+    if-ne v0, v1, :cond_2b
 
-    invoke-static {}, Lat/h;->a()Lat/h;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lat/h;->c(Lat/g;)V
-
+    .line 77
+    :cond_2a
+    :goto_2a
     return-void
+
+    .line 76
+    :cond_2b
+    iget-object v0, p0, LaU/d;->f:LaV/a;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, LaV/a;->a(Landroid/graphics/Canvas;IIZ)V
+
+    goto :goto_2a
 .end method
 
-.method q()Lap/d;
+.method public a(Z)V
     .registers 3
+    .parameter
 
-    new-instance v0, Lap/d;
+    .prologue
+    .line 56
+    iget-object v0, p0, LaU/d;->f:LaV/a;
 
-    invoke-static {}, Lcom/google/googlenav/bD;->a()Lap/c;
+    invoke-virtual {v0, p1}, LaV/a;->a(Z)V
 
-    move-result-object v1
-
-    invoke-direct {v0, v1, p0}, Lap/d;-><init>(Lap/c;Ljava/lang/Runnable;)V
-
-    return-object v0
-.end method
-
-.method public run()V
-    .registers 1
-
-    invoke-virtual {p0}, LaU/d;->p()V
-
+    .line 57
     return-void
-.end method
-
-.method public toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "SVR["
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, LaU/d;->d:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

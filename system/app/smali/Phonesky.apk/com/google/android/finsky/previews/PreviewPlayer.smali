@@ -117,35 +117,35 @@
 
     iput v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mAudioFocusState:I
 
-    .line 328
+    .line 355
     new-instance v0, Lcom/google/android/finsky/previews/PreviewPlayer$2;
 
     invoke-direct {v0, p0}, Lcom/google/android/finsky/previews/PreviewPlayer$2;-><init>(Lcom/google/android/finsky/previews/PreviewPlayer;)V
 
     iput-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mUnrollErrorListener:Lcom/android/volley/Response$ErrorListener;
 
-    .line 337
+    .line 364
     new-instance v0, Lcom/google/android/finsky/previews/PreviewPlayer$3;
 
     invoke-direct {v0, p0}, Lcom/google/android/finsky/previews/PreviewPlayer$3;-><init>(Lcom/google/android/finsky/previews/PreviewPlayer;)V
 
     iput-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mJsonListener:Lcom/android/volley/Response$Listener;
 
-    .line 361
+    .line 388
     new-instance v0, Lcom/google/android/finsky/previews/PreviewPlayer$4;
 
     invoke-direct {v0, p0}, Lcom/google/android/finsky/previews/PreviewPlayer$4;-><init>(Lcom/google/android/finsky/previews/PreviewPlayer;)V
 
     iput-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mAudioFocusChangeListener:Landroid/media/AudioManager$OnAudioFocusChangeListener;
 
-    .line 369
+    .line 396
     new-instance v0, Lcom/google/android/finsky/previews/PreviewPlayer$5;
 
     invoke-direct {v0, p0}, Lcom/google/android/finsky/previews/PreviewPlayer$5;-><init>(Lcom/google/android/finsky/previews/PreviewPlayer;)V
 
     iput-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mPreparedListener:Landroid/media/MediaPlayer$OnPreparedListener;
 
-    .line 377
+    .line 404
     new-instance v0, Lcom/google/android/finsky/previews/PreviewPlayer$6;
 
     invoke-direct {v0, p0}, Lcom/google/android/finsky/previews/PreviewPlayer$6;-><init>(Lcom/google/android/finsky/previews/PreviewPlayer;)V
@@ -264,21 +264,21 @@
     .parameter "song"
 
     .prologue
-    .line 317
+    .line 321
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mCurrentTrack:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
     if-nez v0, :cond_8
 
     if-nez p1, :cond_8
 
-    .line 318
+    .line 322
     const/4 v0, 0x1
 
-    .line 325
+    .line 329
     :goto_7
     return v0
 
-    .line 321
+    .line 325
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mCurrentTrack:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
@@ -286,13 +286,13 @@
 
     if-nez p1, :cond_10
 
-    .line 322
+    .line 326
     :cond_e
     const/4 v0, 0x0
 
     goto :goto_7
 
-    .line 325
+    .line 329
     :cond_10
     invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->getPreviewUrl()Ljava/lang/String;
 
@@ -315,20 +315,20 @@
     .registers 2
 
     .prologue
-    .line 311
+    .line 315
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mListenerProxy:Lcom/google/android/finsky/previews/StatusListener;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/previews/StatusListener;->error()V
 
-    .line 312
+    .line 316
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mCurrentTrack:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
-    .line 313
+    .line 317
     invoke-direct {p0}, Lcom/google/android/finsky/previews/PreviewPlayer;->playNextTrack()V
 
-    .line 314
+    .line 318
     return-void
 .end method
 
@@ -336,7 +336,7 @@
     .registers 3
 
     .prologue
-    .line 243
+    .line 245
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mListenerProxy:Lcom/google/android/finsky/previews/StatusListener;
 
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mQueue:Ljava/util/Queue;
@@ -347,7 +347,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/previews/StatusListener;->queueChanged(I)V
 
-    .line 244
+    .line 246
     return-void
 .end method
 
@@ -357,48 +357,51 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 247
+    .line 249
     invoke-static {}, Lcom/google/android/finsky/utils/Utils;->ensureOnMainThread()V
 
-    .line 250
+    .line 251
+    invoke-direct {p0}, Lcom/google/android/finsky/previews/PreviewPlayer;->updateAudioFocus()V
+
+    .line 254
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mPlayer:Lcom/google/android/finsky/previews/MediaPlayerWrapper;
 
     invoke-virtual {v1}, Lcom/google/android/finsky/previews/MediaPlayerWrapper;->reset()V
 
-    .line 253
+    .line 257
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mQueue:Ljava/util/Queue;
 
-    invoke-interface {v1}, Ljava/util/Queue;->size()I
+    invoke-interface {v1}, Ljava/util/Queue;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_14
+    if-eqz v1, :cond_17
 
-    .line 254
+    .line 258
     iput-object v4, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mCurrentTrack:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
-    .line 280
-    :goto_13
+    .line 284
+    :goto_16
     return-void
 
-    .line 259
-    :cond_14
+    .line 263
+    :cond_17
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mListenerProxy:Lcom/google/android/finsky/previews/StatusListener;
 
     invoke-virtual {v1}, Lcom/google/android/finsky/previews/StatusListener;->completed()V
 
-    .line 262
+    .line 266
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mCurrentUnrollRequest:Lcom/android/volley/toolbox/JsonObjectRequest;
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_25
 
-    .line 263
+    .line 267
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mCurrentUnrollRequest:Lcom/android/volley/toolbox/JsonObjectRequest;
 
     invoke-virtual {v1}, Lcom/android/volley/toolbox/JsonObjectRequest;->cancel()V
 
-    .line 267
-    :cond_22
+    .line 271
+    :cond_25
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mQueue:Ljava/util/Queue;
 
     invoke-interface {v1}, Ljava/util/Queue;->remove()Ljava/lang/Object;
@@ -409,23 +412,23 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mCurrentTrack:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
-    .line 269
+    .line 273
     invoke-direct {p0}, Lcom/google/android/finsky/previews/PreviewPlayer;->notifyQueueChanged()V
 
-    .line 271
+    .line 275
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mCurrentTrack:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
     invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->getPreviewUrl()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 272
+    .line 276
     .local v0, previewUrl:Ljava/lang/String;
     invoke-direct {p0, v0}, Lcom/google/android/finsky/previews/PreviewPlayer;->setModeToStreaming(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 273
+    .line 277
     new-instance v1, Lcom/google/android/finsky/api/SkyjamJsonObjectRequest;
 
     iget-object v2, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mJsonListener:Lcom/android/volley/Response$Listener;
@@ -436,24 +439,24 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mCurrentUnrollRequest:Lcom/android/volley/toolbox/JsonObjectRequest;
 
-    .line 276
+    .line 280
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
-    invoke-virtual {v1}, Lcom/android/volley/RequestQueue;->drain()V
+    invoke-static {v1}, Lcom/google/android/finsky/FinskyApp;->drain(Lcom/android/volley/RequestQueue;)V
 
-    .line 277
+    .line 281
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     iget-object v2, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mCurrentUnrollRequest:Lcom/android/volley/toolbox/JsonObjectRequest;
 
     invoke-virtual {v1, v2}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
 
-    .line 279
+    .line 283
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mListenerProxy:Lcom/google/android/finsky/previews/StatusListener;
 
     invoke-virtual {v1}, Lcom/google/android/finsky/previews/StatusListener;->unrolling()V
 
-    goto :goto_13
+    goto :goto_16
 .end method
 
 .method private setModeToStreaming(Ljava/lang/String;)Ljava/lang/String;
@@ -461,36 +464,40 @@
     .parameter "url"
 
     .prologue
-    .line 284
+    .line 288
     invoke-static {p1}, Ljava/net/URI;->create(Ljava/lang/String;)Ljava/net/URI;
 
     move-result-object v5
 
-    .line 285
+    .line 289
     .local v5, uri:Ljava/net/URI;
     const-string v6, "UTF-8"
 
     invoke-static {v5, v6}, Lorg/apache/http/client/utils/URLEncodedUtils;->parse(Ljava/net/URI;Ljava/lang/String;)Ljava/util/List;
 
+    move-result-object v6
+
+    invoke-static {v6}, Lcom/google/android/finsky/utils/Lists;->newArrayList(Ljava/util/Collection;)Ljava/util/ArrayList;
+
     move-result-object v3
 
-    .line 286
+    .line 290
     .local v3, params:Ljava/util/List;,"Ljava/util/List<Lorg/apache/http/NameValuePair;>;"
     const/4 v2, 0x0
 
-    .line 287
+    .line 291
     .local v2, pair:Lorg/apache/http/NameValuePair;
     const/4 v1, 0x0
 
     .local v1, i:I
-    :goto_c
+    :goto_10
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v6
 
-    if-ge v1, v6, :cond_24
+    if-ge v1, v6, :cond_28
 
-    .line 288
+    .line 292
     invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -498,7 +505,7 @@
     .end local v2           #pair:Lorg/apache/http/NameValuePair;
     check-cast v2, Lorg/apache/http/NameValuePair;
 
-    .line 289
+    .line 293
     .restart local v2       #pair:Lorg/apache/http/NameValuePair;
     const-string v6, "mode"
 
@@ -510,17 +517,17 @@
 
     move-result v6
 
-    if-eqz v6, :cond_50
-
-    .line 296
-    :cond_24
-    if-eqz v2, :cond_29
-
-    .line 297
-    invoke-interface {v3, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+    if-eqz v6, :cond_54
 
     .line 300
-    :cond_29
+    :cond_28
+    if-eqz v2, :cond_2d
+
+    .line 301
+    invoke-interface {v3, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    .line 304
+    :cond_2d
     new-instance v6, Lorg/apache/http/message/BasicNameValuePair;
 
     const-string v7, "mode"
@@ -531,14 +538,14 @@
 
     invoke-interface {v3, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 301
+    .line 305
     const-string v6, "UTF-8"
 
     invoke-static {v3, v6}, Lorg/apache/http/client/utils/URLEncodedUtils;->format(Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 302
+    .line 306
     .local v4, query:Ljava/lang/String;
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -552,7 +559,7 @@
 
     move-result-object v0
 
-    .line 303
+    .line 307
     .local v0, builder:Landroid/net/Uri$Builder;
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
@@ -564,16 +571,16 @@
 
     return-object v6
 
-    .line 293
+    .line 297
     .end local v0           #builder:Landroid/net/Uri$Builder;
     .end local v4           #query:Ljava/lang/String;
-    :cond_50
+    :cond_54
     const/4 v2, 0x0
 
-    .line 287
+    .line 291
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_c
+    goto :goto_10
 .end method
 
 .method private updateAudioFocus()V
@@ -584,22 +591,22 @@
 
     const/4 v4, 0x1
 
-    .line 231
-    iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mStatusListeners:Ljava/util/List;
+    .line 233
+    iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mQueue:Ljava/util/Queue;
 
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    invoke-interface {v1}, Ljava/util/Queue;->isEmpty()Z
 
     move-result v0
 
-    .line 232
-    .local v0, numStatusListeners:I
-    if-lez v0, :cond_19
+    .line 234
+    .local v0, queueIsEmpty:Z
+    if-nez v0, :cond_19
 
     iget v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mAudioFocusState:I
 
     if-eq v1, v4, :cond_19
 
-    .line 233
+    .line 235
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mAudioManager:Landroid/media/AudioManager;
 
     iget-object v2, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mAudioFocusChangeListener:Landroid/media/AudioManager$OnAudioFocusChangeListener;
@@ -608,30 +615,30 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/media/AudioManager;->requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
 
-    .line 235
+    .line 237
     iput v4, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mAudioFocusState:I
 
-    .line 240
+    .line 242
     :cond_18
     :goto_18
     return-void
 
-    .line 236
+    .line 238
     :cond_19
-    if-nez v0, :cond_18
+    if-eqz v0, :cond_18
 
     iget v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mAudioFocusState:I
 
     if-eq v1, v3, :cond_18
 
-    .line 237
+    .line 239
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mAudioManager:Landroid/media/AudioManager;
 
     iget-object v2, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mAudioFocusChangeListener:Landroid/media/AudioManager$OnAudioFocusChangeListener;
 
     invoke-virtual {v1, v2}, Landroid/media/AudioManager;->abandonAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;)I
 
-    .line 238
+    .line 240
     iput v3, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mAudioFocusState:I
 
     goto :goto_18
@@ -650,9 +657,6 @@
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 209
-    invoke-direct {p0}, Lcom/google/android/finsky/previews/PreviewPlayer;->updateAudioFocus()V
-
-    .line 210
     return-void
 .end method
 
@@ -672,6 +676,20 @@
     return-void
 .end method
 
+.method public getCurrentQueueSize()I
+    .registers 2
+
+    .prologue
+    .line 229
+    iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mQueue:Ljava/util/Queue;
+
+    invoke-interface {v0}, Ljava/util/Queue;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getCurrentTrack()Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
     .registers 2
 
@@ -682,16 +700,16 @@
     return-object v0
 .end method
 
-.method initialize()V
+.method public initialize()V
     .registers 3
 
     .prologue
-    .line 218
+    .line 216
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     if-nez v0, :cond_e
 
-    .line 219
+    .line 217
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
@@ -702,13 +720,13 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
-    .line 222
+    .line 220
     :cond_e
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mAudioManager:Landroid/media/AudioManager;
 
     if-nez v0, :cond_20
 
-    .line 223
+    .line 221
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
@@ -723,7 +741,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mAudioManager:Landroid/media/AudioManager;
 
-    .line 226
+    .line 224
     :cond_20
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mPlayer:Lcom/google/android/finsky/previews/MediaPlayerWrapper;
 
@@ -731,15 +749,83 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/previews/MediaPlayerWrapper;->setOnPreparedListener(Landroid/media/MediaPlayer$OnPreparedListener;)V
 
-    .line 227
+    .line 225
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mPlayer:Lcom/google/android/finsky/previews/MediaPlayerWrapper;
 
     iget-object v1, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mCompletionListener:Landroid/media/MediaPlayer$OnCompletionListener;
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/previews/MediaPlayerWrapper;->setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
 
-    .line 228
+    .line 226
     return-void
+.end method
+
+.method public notifyListener(Lcom/google/android/finsky/previews/StatusListener;)V
+    .registers 3
+    .parameter "statusListener"
+
+    .prologue
+    .line 333
+    iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mPlayer:Lcom/google/android/finsky/previews/MediaPlayerWrapper;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/previews/MediaPlayerWrapper;->getCurrentState()I
+
+    move-result v0
+
+    packed-switch v0, :pswitch_data_22
+
+    .line 353
+    :goto_9
+    :pswitch_9
+    return-void
+
+    .line 335
+    :pswitch_a
+    invoke-virtual {p1}, Lcom/google/android/finsky/previews/StatusListener;->preparing()V
+
+    goto :goto_9
+
+    .line 338
+    :pswitch_e
+    invoke-virtual {p1}, Lcom/google/android/finsky/previews/StatusListener;->prepared()V
+
+    goto :goto_9
+
+    .line 341
+    :pswitch_12
+    invoke-virtual {p1}, Lcom/google/android/finsky/previews/StatusListener;->playing()V
+
+    goto :goto_9
+
+    .line 344
+    :pswitch_16
+    invoke-virtual {p1}, Lcom/google/android/finsky/previews/StatusListener;->paused()V
+
+    goto :goto_9
+
+    .line 347
+    :pswitch_1a
+    invoke-virtual {p1}, Lcom/google/android/finsky/previews/StatusListener;->completed()V
+
+    goto :goto_9
+
+    .line 350
+    :pswitch_1e
+    invoke-virtual {p1}, Lcom/google/android/finsky/previews/StatusListener;->error()V
+
+    goto :goto_9
+
+    .line 333
+    :pswitch_data_22
+    .packed-switch 0x2
+        :pswitch_a
+        :pswitch_e
+        :pswitch_12
+        :pswitch_16
+        :pswitch_9
+        :pswitch_1a
+        :pswitch_1e
+    .end packed-switch
 .end method
 
 .method public play(Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;)V
@@ -848,15 +934,12 @@
     .parameter "statusListener"
 
     .prologue
-    .line 213
+    .line 212
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer;->mStatusListeners:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 214
-    invoke-direct {p0}, Lcom/google/android/finsky/previews/PreviewPlayer;->updateAudioFocus()V
-
-    .line 215
+    .line 213
     return-void
 .end method
 

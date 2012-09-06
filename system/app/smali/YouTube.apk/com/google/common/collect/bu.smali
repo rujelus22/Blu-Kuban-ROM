@@ -1,87 +1,145 @@
-.class final Lcom/google/common/collect/bu;
+.class final synthetic Lcom/google/common/collect/bu;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field static final synthetic a:[I
+
+.field static final synthetic b:[I
+
+
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method static a(I)I
+.method static constructor <clinit>()V
     .registers 3
-    .parameter
 
     .prologue
-    .line 38
-    ushr-int/lit8 v0, p0, 0x14
+    .line 126
+    invoke-static {}, Lcom/google/common/collect/BstModificationResult$ModificationType;->values()[Lcom/google/common/collect/BstModificationResult$ModificationType;
 
-    ushr-int/lit8 v1, p0, 0xc
+    move-result-object v0
 
-    xor-int/2addr v0, v1
+    array-length v0, v0
 
-    xor-int/2addr v0, p0
+    new-array v0, v0, [I
 
-    .line 39
-    ushr-int/lit8 v1, v0, 0x7
+    sput-object v0, Lcom/google/common/collect/bu;->b:[I
 
-    xor-int/2addr v1, v0
+    :try_start_9
+    sget-object v0, Lcom/google/common/collect/bu;->b:[I
 
-    ushr-int/lit8 v0, v0, 0x4
+    sget-object v1, Lcom/google/common/collect/BstModificationResult$ModificationType;->IDENTITY:Lcom/google/common/collect/BstModificationResult$ModificationType;
 
-    xor-int/2addr v0, v1
+    invoke-virtual {v1}, Lcom/google/common/collect/BstModificationResult$ModificationType;->ordinal()I
 
-    return v0
-.end method
+    move-result v1
 
-.method static b(I)I
-    .registers 4
-    .parameter
+    const/4 v2, 0x1
 
-    .prologue
-    const/high16 v1, 0x4000
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_52
 
-    .line 50
-    const/high16 v0, 0x2000
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/common/collect/bu;->b:[I
 
-    if-ge p0, v0, :cond_d
+    sget-object v1, Lcom/google/common/collect/BstModificationResult$ModificationType;->REBUILDING_CHANGE:Lcom/google/common/collect/BstModificationResult$ModificationType;
 
-    .line 51
-    invoke-static {p0}, Ljava/lang/Integer;->highestOneBit(I)I
+    invoke-virtual {v1}, Lcom/google/common/collect/BstModificationResult$ModificationType;->ordinal()I
 
-    move-result v0
+    move-result v1
 
-    shl-int/lit8 v0, v0, 0x2
+    const/4 v2, 0x2
 
-    .line 56
-    :goto_c
-    return v0
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_50
 
-    .line 55
-    :cond_d
-    if-ge p0, v1, :cond_17
+    :goto_1f
+    :try_start_1f
+    sget-object v0, Lcom/google/common/collect/bu;->b:[I
 
-    const/4 v0, 0x1
+    sget-object v1, Lcom/google/common/collect/BstModificationResult$ModificationType;->REBALANCING_CHANGE:Lcom/google/common/collect/BstModificationResult$ModificationType;
 
-    :goto_10
-    const-string v2, "collection too large"
+    invoke-virtual {v1}, Lcom/google/common/collect/BstModificationResult$ModificationType;->ordinal()I
 
-    invoke-static {v0, v2}, Lcom/google/common/base/t;->a(ZLjava/lang/Object;)V
+    move-result v1
 
-    move v0, v1
+    const/4 v2, 0x3
 
-    .line 56
-    goto :goto_c
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_4e
 
-    .line 55
-    :cond_17
-    const/4 v0, 0x0
+    .line 135
+    :goto_2a
+    invoke-static {}, Lcom/google/common/collect/BstSide;->values()[Lcom/google/common/collect/BstSide;
 
-    goto :goto_10
+    move-result-object v0
+
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    sput-object v0, Lcom/google/common/collect/bu;->a:[I
+
+    :try_start_33
+    sget-object v0, Lcom/google/common/collect/bu;->a:[I
+
+    sget-object v1, Lcom/google/common/collect/BstSide;->LEFT:Lcom/google/common/collect/BstSide;
+
+    invoke-virtual {v1}, Lcom/google/common/collect/BstSide;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_3e
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_33 .. :try_end_3e} :catch_4c
+
+    :goto_3e
+    :try_start_3e
+    sget-object v0, Lcom/google/common/collect/bu;->a:[I
+
+    sget-object v1, Lcom/google/common/collect/BstSide;->RIGHT:Lcom/google/common/collect/BstSide;
+
+    invoke-virtual {v1}, Lcom/google/common/collect/BstSide;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_49
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3e .. :try_end_49} :catch_4a
+
+    :goto_49
+    return-void
+
+    :catch_4a
+    move-exception v0
+
+    goto :goto_49
+
+    :catch_4c
+    move-exception v0
+
+    goto :goto_3e
+
+    :catch_4e
+    move-exception v0
+
+    goto :goto_2a
+
+    :catch_50
+    move-exception v0
+
+    goto :goto_1f
+
+    :catch_52
+    move-exception v0
+
+    goto :goto_14
 .end method

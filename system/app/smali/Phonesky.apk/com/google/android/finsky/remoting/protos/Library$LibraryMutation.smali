@@ -49,39 +49,39 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 244
+    .line 279
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 249
+    .line 284
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->docid_:Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
-    .line 269
+    .line 304
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->offerType_:I
 
-    .line 286
+    .line 321
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->documentHash_:J
 
-    .line 303
+    .line 338
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->deleted_:Z
 
-    .line 320
+    .line 355
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->appDetails_:Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;
 
-    .line 340
+    .line 375
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->subscriptionDetails_:Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;
 
-    .line 397
+    .line 433
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->cachedSize:I
 
-    .line 244
+    .line 279
     return-void
 .end method
 
@@ -91,7 +91,7 @@
     .registers 2
 
     .prologue
-    .line 322
+    .line 357
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->appDetails_:Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;
 
     return-object v0
@@ -101,15 +101,15 @@
     .registers 2
 
     .prologue
-    .line 399
+    .line 436
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 401
+    .line 438
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->getSerializedSize()I
 
-    .line 403
+    .line 440
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->cachedSize:I
 
@@ -120,7 +120,7 @@
     .registers 2
 
     .prologue
-    .line 304
+    .line 339
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->deleted_:Z
 
     return v0
@@ -130,7 +130,7 @@
     .registers 2
 
     .prologue
-    .line 251
+    .line 286
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->docid_:Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
     return-object v0
@@ -140,7 +140,7 @@
     .registers 3
 
     .prologue
-    .line 287
+    .line 322
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->documentHash_:J
 
     return-wide v0
@@ -150,7 +150,7 @@
     .registers 2
 
     .prologue
-    .line 271
+    .line 306
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->offerType_:I
 
     return v0
@@ -160,10 +160,10 @@
     .registers 5
 
     .prologue
-    .line 407
+    .line 445
     const/4 v0, 0x0
 
-    .line 408
+    .line 446
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasDocid()Z
 
@@ -171,7 +171,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 409
+    .line 447
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->getDocid()Lcom/google/android/finsky/remoting/protos/Common$Docid;
@@ -184,7 +184,7 @@
 
     add-int/2addr v0, v1
 
-    .line 412
+    .line 450
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasOfferType()Z
 
@@ -192,7 +192,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 413
+    .line 451
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->getOfferType()I
@@ -205,7 +205,7 @@
 
     add-int/2addr v0, v1
 
-    .line 416
+    .line 454
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasDocumentHash()Z
 
@@ -213,7 +213,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 417
+    .line 455
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->getDocumentHash()J
@@ -226,7 +226,7 @@
 
     add-int/2addr v0, v1
 
-    .line 420
+    .line 458
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasDeleted()Z
 
@@ -234,7 +234,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 421
+    .line 459
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->getDeleted()Z
@@ -247,7 +247,7 @@
 
     add-int/2addr v0, v1
 
-    .line 424
+    .line 462
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasAppDetails()Z
 
@@ -255,7 +255,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 425
+    .line 463
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->getAppDetails()Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;
@@ -268,7 +268,7 @@
 
     add-int/2addr v0, v1
 
-    .line 428
+    .line 466
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasSubscriptionDetails()Z
 
@@ -276,7 +276,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 429
+    .line 467
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->getSubscriptionDetails()Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;
@@ -289,11 +289,11 @@
 
     add-int/2addr v0, v1
 
-    .line 432
+    .line 470
     :cond_61
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->cachedSize:I
 
-    .line 433
+    .line 471
     return v0
 .end method
 
@@ -301,7 +301,7 @@
     .registers 2
 
     .prologue
-    .line 342
+    .line 377
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->subscriptionDetails_:Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;
 
     return-object v0
@@ -311,7 +311,7 @@
     .registers 2
 
     .prologue
-    .line 321
+    .line 356
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasAppDetails:Z
 
     return v0
@@ -321,7 +321,7 @@
     .registers 2
 
     .prologue
-    .line 305
+    .line 340
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasDeleted:Z
 
     return v0
@@ -331,7 +331,7 @@
     .registers 2
 
     .prologue
-    .line 250
+    .line 285
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasDocid:Z
 
     return v0
@@ -341,7 +341,7 @@
     .registers 2
 
     .prologue
-    .line 288
+    .line 323
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasDocumentHash:Z
 
     return v0
@@ -351,7 +351,7 @@
     .registers 2
 
     .prologue
-    .line 270
+    .line 305
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasOfferType:Z
 
     return v0
@@ -361,7 +361,7 @@
     .registers 2
 
     .prologue
-    .line 341
+    .line 376
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasSubscriptionDetails:Z
 
     return v0
@@ -377,44 +377,44 @@
     .end annotation
 
     .prologue
-    .line 440
+    .line 479
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 441
+    .line 480
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_4a
 
-    .line 445
+    .line 484
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 446
+    .line 485
     :sswitch_d
     return-object p0
 
-    .line 451
+    .line 490
     :sswitch_e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Common$Docid;-><init>()V
 
-    .line 452
+    .line 491
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Common$Docid;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 453
+    .line 492
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->setDocid(Lcom/google/android/finsky/remoting/protos/Common$Docid;)Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;
 
     goto :goto_0
 
-    .line 457
+    .line 496
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Common$Docid;
     :sswitch_1a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
@@ -425,7 +425,7 @@
 
     goto :goto_0
 
-    .line 461
+    .line 500
     :sswitch_22
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -435,7 +435,7 @@
 
     goto :goto_0
 
-    .line 465
+    .line 504
     :sswitch_2a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -445,38 +445,38 @@
 
     goto :goto_0
 
-    .line 469
+    .line 508
     :sswitch_32
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;-><init>()V
 
-    .line 470
+    .line 509
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 471
+    .line 510
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->setAppDetails(Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;)Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;
 
     goto :goto_0
 
-    .line 475
+    .line 514
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;
     :sswitch_3e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;-><init>()V
 
-    .line 476
+    .line 515
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 477
+    .line 516
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->setSubscriptionDetails(Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;)Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;
 
     goto :goto_0
 
-    .line 441
+    .line 480
     :sswitch_data_4a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -499,7 +499,7 @@
     .end annotation
 
     .prologue
-    .line 242
+    .line 276
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;
 
     move-result-object v0
@@ -512,26 +512,26 @@
     .parameter "value"
 
     .prologue
-    .line 324
+    .line 359
     if-nez p1, :cond_8
 
-    .line 325
+    .line 360
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 327
+    .line 362
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasAppDetails:Z
 
-    .line 328
+    .line 363
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->appDetails_:Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;
 
-    .line 329
+    .line 364
     return-object p0
 .end method
 
@@ -540,15 +540,15 @@
     .parameter "value"
 
     .prologue
-    .line 307
+    .line 342
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasDeleted:Z
 
-    .line 308
+    .line 343
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->deleted_:Z
 
-    .line 309
+    .line 344
     return-object p0
 .end method
 
@@ -557,26 +557,26 @@
     .parameter "value"
 
     .prologue
-    .line 253
+    .line 288
     if-nez p1, :cond_8
 
-    .line 254
+    .line 289
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 256
+    .line 291
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasDocid:Z
 
-    .line 257
+    .line 292
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->docid_:Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
-    .line 258
+    .line 293
     return-object p0
 .end method
 
@@ -585,15 +585,15 @@
     .parameter "value"
 
     .prologue
-    .line 290
+    .line 325
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasDocumentHash:Z
 
-    .line 291
+    .line 326
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->documentHash_:J
 
-    .line 292
+    .line 327
     return-object p0
 .end method
 
@@ -602,15 +602,15 @@
     .parameter "value"
 
     .prologue
-    .line 273
+    .line 308
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasOfferType:Z
 
-    .line 274
+    .line 309
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->offerType_:I
 
-    .line 275
+    .line 310
     return-object p0
 .end method
 
@@ -619,26 +619,26 @@
     .parameter "value"
 
     .prologue
-    .line 344
+    .line 379
     if-nez p1, :cond_8
 
-    .line 345
+    .line 380
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 347
+    .line 382
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasSubscriptionDetails:Z
 
-    .line 348
+    .line 383
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->subscriptionDetails_:Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;
 
-    .line 349
+    .line 384
     return-object p0
 .end method
 
@@ -652,14 +652,14 @@
     .end annotation
 
     .prologue
-    .line 377
+    .line 413
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasDocid()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 378
+    .line 414
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->getDocid()Lcom/google/android/finsky/remoting/protos/Common$Docid;
@@ -668,7 +668,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 380
+    .line 416
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasOfferType()Z
 
@@ -676,7 +676,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 381
+    .line 417
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->getOfferType()I
@@ -685,7 +685,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 383
+    .line 419
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasDocumentHash()Z
 
@@ -693,7 +693,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 384
+    .line 420
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->getDocumentHash()J
@@ -702,7 +702,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 386
+    .line 422
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasDeleted()Z
 
@@ -710,7 +710,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 387
+    .line 423
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->getDeleted()Z
@@ -719,7 +719,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 389
+    .line 425
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasAppDetails()Z
 
@@ -727,7 +727,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 390
+    .line 426
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->getAppDetails()Lcom/google/android/finsky/remoting/protos/Library$LibraryAppDetails;
@@ -736,7 +736,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 392
+    .line 428
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->hasSubscriptionDetails()Z
 
@@ -744,7 +744,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 393
+    .line 429
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;->getSubscriptionDetails()Lcom/google/android/finsky/remoting/protos/Library$LibrarySubscriptionDetails;
@@ -753,7 +753,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 395
+    .line 431
     :cond_54
     return-void
 .end method

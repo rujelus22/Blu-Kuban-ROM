@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/adapters/BucketedListAdapter;->makeHeaderClickListener(Lcom/google/android/finsky/model/Bucket;)Landroid/view/View$OnClickListener;
+    value = Lcom/google/android/finsky/adapters/BucketedListAdapter;->makeHeaderClickListener(Lcom/google/android/finsky/api/model/Bucket;)Landroid/view/View$OnClickListener;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/adapters/BucketedListAdapter;
 
-.field final synthetic val$bucket:Lcom/google/android/finsky/model/Bucket;
+.field final synthetic val$bucket:Lcom/google/android/finsky/api/model/Bucket;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/adapters/BucketedListAdapter;Lcom/google/android/finsky/model/Bucket;)V
+.method constructor <init>(Lcom/google/android/finsky/adapters/BucketedListAdapter;Lcom/google/android/finsky/api/model/Bucket;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 511
+    .line 571
     iput-object p1, p0, Lcom/google/android/finsky/adapters/BucketedListAdapter$2;->this$0:Lcom/google/android/finsky/adapters/BucketedListAdapter;
 
-    iput-object p2, p0, Lcom/google/android/finsky/adapters/BucketedListAdapter$2;->val$bucket:Lcom/google/android/finsky/model/Bucket;
+    iput-object p2, p0, Lcom/google/android/finsky/adapters/BucketedListAdapter$2;->val$bucket:Lcom/google/android/finsky/api/model/Bucket;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,26 +47,26 @@
     .parameter "v"
 
     .prologue
-    .line 514
+    .line 574
     iget-object v0, p0, Lcom/google/android/finsky/adapters/BucketedListAdapter$2;->this$0:Lcom/google/android/finsky/adapters/BucketedListAdapter;
 
     iget-object v0, v0, Lcom/google/android/finsky/adapters/BucketedListAdapter;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
-    iget-object v1, p0, Lcom/google/android/finsky/adapters/BucketedListAdapter$2;->val$bucket:Lcom/google/android/finsky/model/Bucket;
+    iget-object v1, p0, Lcom/google/android/finsky/adapters/BucketedListAdapter$2;->val$bucket:Lcom/google/android/finsky/api/model/Bucket;
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/model/Bucket;->getBrowseUrl()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Bucket;->getBrowseUrl()Ljava/lang/String;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/finsky/adapters/BucketedListAdapter$2;->val$bucket:Lcom/google/android/finsky/model/Bucket;
+    iget-object v2, p0, Lcom/google/android/finsky/adapters/BucketedListAdapter$2;->val$bucket:Lcom/google/android/finsky/api/model/Bucket;
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/model/Bucket;->getTitle()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/google/android/finsky/api/model/Bucket;->getTitle()Ljava/lang/String;
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/google/android/finsky/adapters/BucketedListAdapter$2;->val$bucket:Lcom/google/android/finsky/model/Bucket;
+    iget-object v3, p0, Lcom/google/android/finsky/adapters/BucketedListAdapter$2;->val$bucket:Lcom/google/android/finsky/api/model/Bucket;
 
-    invoke-virtual {v3}, Lcom/google/android/finsky/model/Bucket;->getBackend()I
+    invoke-virtual {v3}, Lcom/google/android/finsky/api/model/Bucket;->getBackend()I
 
     move-result v3
 
@@ -80,6 +80,6 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goBrowse(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Lcom/google/android/finsky/api/model/DfeToc;)V
 
-    .line 516
+    .line 576
     return-void
 .end method

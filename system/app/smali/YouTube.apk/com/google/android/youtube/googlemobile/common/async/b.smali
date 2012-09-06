@@ -30,5 +30,5 @@
 .method public abstract g()Ljava/io/DataInputStream;
 .end method
 
-.method public abstract j_()I
+.method public abstract g_()I
 .end method

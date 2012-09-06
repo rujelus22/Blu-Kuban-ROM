@@ -1,5 +1,5 @@
 .class public Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;
-.super Lcom/google/android/finsky/activities/PhoneskyActivity;
+.super Landroid/support/v4/app/FragmentActivity;
 .source "DcbDebugActivity.java"
 
 
@@ -41,7 +41,7 @@
     .registers 4
 
     .prologue
-    .line 44
+    .line 43
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDetail;
@@ -123,17 +123,17 @@
     .registers 2
 
     .prologue
-    .line 43
-    invoke-direct {p0}, Lcom/google/android/finsky/activities/PhoneskyActivity;-><init>()V
+    .line 42
+    invoke-direct {p0}, Landroid/support/v4/app/FragmentActivity;-><init>()V
 
-    .line 59
+    .line 58
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity$1;
 
     invoke-direct {v0, p0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity$1;-><init>(Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;)V
 
     iput-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->updateStatusRunnable:Ljava/lang/Runnable;
 
-    .line 66
+    .line 65
     return-void
 .end method
 
@@ -142,7 +142,7 @@
     .parameter "x0"
 
     .prologue
-    .line 43
+    .line 42
     invoke-direct {p0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->updateStatus()V
 
     return-void
@@ -153,7 +153,7 @@
     .parameter "x0"
 
     .prologue
-    .line 43
+    .line 42
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->updateStatusRunnable:Ljava/lang/Runnable;
 
     return-object v0
@@ -166,7 +166,7 @@
     .parameter "x2"
 
     .prologue
-    .line 43
+    .line 42
     invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->refreshCredentials(Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
     return-void
@@ -179,7 +179,7 @@
     .parameter "x2"
 
     .prologue
-    .line 43
+    .line 42
     invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->refreshProvisioning(Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
     return-void
@@ -192,7 +192,7 @@
     .parameter "x2"
 
     .prologue
-    .line 43
+    .line 42
     invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->refreshDcbParams(Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
     return-void
@@ -203,7 +203,7 @@
     .parameter "x0"
 
     .prologue
-    .line 43
+    .line 42
     invoke-direct {p0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->displayProvisioning()V
 
     return-void
@@ -214,7 +214,7 @@
     .parameter "x0"
 
     .prologue
-    .line 43
+    .line 42
     invoke-direct {p0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->displayCredentials()V
 
     return-void
@@ -225,7 +225,7 @@
     .parameter "x0"
 
     .prologue
-    .line 43
+    .line 42
     invoke-direct {p0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->displayDcbParams()V
 
     return-void
@@ -235,7 +235,7 @@
     .registers 1
 
     .prologue
-    .line 43
+    .line 42
     sget-object v0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->GSERVICES_DETAILS:Ljava/util/Collection;
 
     return-object v0
@@ -245,7 +245,7 @@
     .registers 5
 
     .prologue
-    .line 336
+    .line 330
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v2
@@ -254,7 +254,7 @@
 
     move-result-object v1
 
-    .line 338
+    .line 332
     .local v1, ft:Landroid/support/v4/app/FragmentTransaction;
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/debug/ReflectionDcbDetailExtractor;
 
@@ -268,7 +268,7 @@
 
     invoke-direct {v0, v2, v3}, Lcom/google/android/finsky/billing/carrierbilling/debug/ReflectionDcbDetailExtractor;-><init>(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 340
+    .line 334
     .local v0, extractor:Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDetailExtractor;
     new-instance v2, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugDetailsFragment;
 
@@ -280,7 +280,7 @@
 
     invoke-virtual {v2, v1, v3}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugDetailsFragment;->show(Landroid/support/v4/app/FragmentTransaction;Ljava/lang/String;)I
 
-    .line 342
+    .line 336
     return-void
 .end method
 
@@ -288,7 +288,7 @@
     .registers 5
 
     .prologue
-    .line 317
+    .line 311
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v2
@@ -297,7 +297,7 @@
 
     move-result-object v1
 
-    .line 319
+    .line 313
     .local v1, ft:Landroid/support/v4/app/FragmentTransaction;
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/debug/ReflectionDcbDetailExtractor;
 
@@ -311,7 +311,7 @@
 
     invoke-direct {v0, v2, v3}, Lcom/google/android/finsky/billing/carrierbilling/debug/ReflectionDcbDetailExtractor;-><init>(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 321
+    .line 315
     .local v0, extractor:Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDetailExtractor;
     new-instance v2, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugDetailsFragment;
 
@@ -323,7 +323,7 @@
 
     invoke-virtual {v2, v1, v3}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugDetailsFragment;->show(Landroid/support/v4/app/FragmentTransaction;Ljava/lang/String;)I
 
-    .line 323
+    .line 317
     return-void
 .end method
 
@@ -331,7 +331,7 @@
     .registers 5
 
     .prologue
-    .line 326
+    .line 320
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v2
@@ -340,7 +340,7 @@
 
     move-result-object v1
 
-    .line 328
+    .line 322
     .local v1, ft:Landroid/support/v4/app/FragmentTransaction;
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/debug/ReflectionDcbDetailExtractor;
 
@@ -354,7 +354,7 @@
 
     invoke-direct {v0, v2, v3}, Lcom/google/android/finsky/billing/carrierbilling/debug/ReflectionDcbDetailExtractor;-><init>(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 330
+    .line 324
     .local v0, extractor:Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDetailExtractor;
     new-instance v2, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugDetailsFragment;
 
@@ -366,7 +366,7 @@
 
     invoke-virtual {v2, v1, v3}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugDetailsFragment;->show(Landroid/support/v4/app/FragmentTransaction;Ljava/lang/String;)I
 
-    .line 332
+    .line 326
     return-void
 .end method
 
@@ -375,10 +375,10 @@
     .parameter "whichField"
 
     .prologue
-    .line 268
+    .line 262
     sparse-switch p1, :sswitch_data_28
 
-    .line 279
+    .line 273
     const-string v0, "Got unexpected whichField %s"
 
     const/4 v1, 0x1
@@ -395,14 +395,14 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 281
+    .line 275
     :goto_12
     invoke-direct {p0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->updateStatus()V
 
-    .line 282
+    .line 276
     return-void
 
-    .line 270
+    .line 264
     :sswitch_16
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
 
@@ -410,7 +410,7 @@
 
     goto :goto_12
 
-    .line 273
+    .line 267
     :sswitch_1c
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
 
@@ -418,7 +418,7 @@
 
     goto :goto_12
 
-    .line 276
+    .line 270
     :sswitch_22
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
 
@@ -426,7 +426,7 @@
 
     goto :goto_12
 
-    .line 268
+    .line 262
     :sswitch_data_28
     .sparse-switch
         0x10 -> :sswitch_16
@@ -440,10 +440,10 @@
     .parameter "whichField"
 
     .prologue
-    .line 285
+    .line 279
     sparse-switch p1, :sswitch_data_2c
 
-    .line 296
+    .line 290
     const-string v0, "Got unexpected whichField %s"
 
     const/4 v1, 0x1
@@ -460,11 +460,11 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 298
+    .line 292
     :goto_12
     return-void
 
-    .line 287
+    .line 281
     :sswitch_13
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->updateStatusRunnable:Ljava/lang/Runnable;
 
@@ -474,7 +474,7 @@
 
     goto :goto_12
 
-    .line 290
+    .line 284
     :sswitch_1b
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->updateStatusRunnable:Ljava/lang/Runnable;
 
@@ -484,7 +484,7 @@
 
     goto :goto_12
 
-    .line 293
+    .line 287
     :sswitch_23
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->updateStatusRunnable:Ljava/lang/Runnable;
 
@@ -494,7 +494,7 @@
 
     goto :goto_12
 
-    .line 285
+    .line 279
     nop
 
     :sswitch_data_2c
@@ -510,10 +510,10 @@
     .parameter "whichField"
 
     .prologue
-    .line 301
+    .line 295
     sparse-switch p1, :sswitch_data_20
 
-    .line 312
+    .line 306
     const-string v0, "Got unexpected whichField %s"
 
     const/4 v1, 0x1
@@ -530,29 +530,29 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 314
+    .line 308
     :goto_12
     return-void
 
-    .line 303
+    .line 297
     :sswitch_13
     invoke-direct {p0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->displayDcbParams()V
 
     goto :goto_12
 
-    .line 306
+    .line 300
     :sswitch_17
     invoke-direct {p0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->displayProvisioning()V
 
     goto :goto_12
 
-    .line 309
+    .line 303
     :sswitch_1b
     invoke-direct {p0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->displayCredentials()V
 
     goto :goto_12
 
-    .line 301
+    .line 295
     nop
 
     :sswitch_data_20
@@ -567,28 +567,28 @@
     .registers 4
 
     .prologue
-    .line 102
+    .line 101
     new-instance v2, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity$2;
 
     invoke-direct {v2, p0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity$2;-><init>(Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;)V
 
-    .line 109
+    .line 108
     .local v2, postRefreshProvRunnable:Ljava/lang/Runnable;
     new-instance v1, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity$3;
 
     invoke-direct {v1, p0, v2}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity$3;-><init>(Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;Ljava/lang/Runnable;)V
 
-    .line 116
+    .line 115
     .local v1, postRefreshDcbParamsRunnable:Ljava/lang/Runnable;
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity$4;
 
     invoke-direct {v0, p0, v1}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity$4;-><init>(Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;Ljava/lang/Runnable;)V
 
-    .line 125
+    .line 124
     .local v0, postInitStorageRunnable:Ljava/lang/Runnable;
     invoke-static {v0}, Lcom/google/android/finsky/billing/BillingLocator;->initCarrierBillingStorage(Ljava/lang/Runnable;)V
 
-    .line 126
+    .line 125
     return-void
 .end method
 
@@ -598,14 +598,14 @@
     .parameter "errorRunnable"
 
     .prologue
-    .line 354
+    .line 348
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity$ErrorRunnable;
 
     const-string v1, "Error refreshing credentials"
 
     invoke-direct {v0, p0, v1, p2}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity$ErrorRunnable;-><init>(Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;Ljava/lang/String;Ljava/lang/Runnable;)V
 
-    .line 355
+    .line 349
     .local v0, errorRunner:Ljava/lang/Runnable;
     new-instance v1, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierCredentialsAction;
 
@@ -625,7 +625,7 @@
 
     invoke-virtual {v1, v2, v3, p1, v0}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierCredentialsAction;->run(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
-    .line 358
+    .line 352
     return-void
 .end method
 
@@ -635,12 +635,12 @@
     .parameter "errorRunnable"
 
     .prologue
-    .line 366
+    .line 360
     new-instance v0, Lcom/google/android/finsky/activities/GetMarketMetadataAction;
 
     invoke-direct {v0}, Lcom/google/android/finsky/activities/GetMarketMetadataAction;-><init>()V
 
-    .line 367
+    .line 361
     .local v0, sendMetadataAction:Lcom/google/android/finsky/activities/GetMarketMetadataAction;
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
@@ -660,7 +660,7 @@
 
     invoke-virtual {v0, p0, v1, v2, v3}, Lcom/google/android/finsky/activities/GetMarketMetadataAction;->run(Landroid/content/Context;Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 382
+    .line 376
     return-void
 .end method
 
@@ -670,14 +670,14 @@
     .parameter "errorRunnable"
 
     .prologue
-    .line 361
+    .line 355
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity$ErrorRunnable;
 
     const-string v1, "Error refreshing provisioning"
 
     invoke-direct {v0, p0, v1, p2}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity$ErrorRunnable;-><init>(Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;Ljava/lang/String;Ljava/lang/Runnable;)V
 
-    .line 362
+    .line 356
     .local v0, errorRunner:Ljava/lang/Runnable;
     new-instance v1, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;
 
@@ -685,7 +685,7 @@
 
     invoke-virtual {v1, p1, v0}, Lcom/google/android/finsky/billing/carrierbilling/action/CarrierProvisioningAction;->forceRun(Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
-    .line 363
+    .line 357
     return-void
 .end method
 
@@ -697,14 +697,14 @@
 
     const/4 v5, 0x0
 
-    .line 345
+    .line 339
     iget-object v3, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
 
     invoke-static {v3}, Lcom/google/android/finsky/billing/carrierbilling/CarrierBillingUtils;->isProvisioned(Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;)Z
 
     move-result v1
 
-    .line 346
+    .line 340
     .local v1, isProvisioned:Z
     iget-object v3, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
 
@@ -712,7 +712,7 @@
 
     move-result v2
 
-    .line 347
+    .line 341
     .local v2, validCredentials:Z
     iget-object v3, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
 
@@ -724,7 +724,7 @@
 
     const/4 v0, 0x1
 
-    .line 348
+    .line 342
     .local v0, hasDcbParams:Z
     :goto_18
     iget-object v6, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mProvStatus:Landroid/widget/RatingBar;
@@ -736,7 +736,7 @@
     :goto_1d
     invoke-virtual {v6, v3}, Landroid/widget/RatingBar;->setRating(F)V
 
-    .line 349
+    .line 343
     iget-object v6, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mCredStatus:Landroid/widget/RatingBar;
 
     if-eqz v2, :cond_34
@@ -746,7 +746,7 @@
     :goto_25
     invoke-virtual {v6, v3}, Landroid/widget/RatingBar;->setRating(F)V
 
-    .line 350
+    .line 344
     iget-object v3, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mDcbParamStatus:Landroid/widget/RatingBar;
 
     if-eqz v0, :cond_36
@@ -754,10 +754,10 @@
     :goto_2c
     invoke-virtual {v3, v4}, Landroid/widget/RatingBar;->setRating(F)V
 
-    .line 351
+    .line 345
     return-void
 
-    .line 347
+    .line 341
     .end local v0           #hasDcbParams:Z
     :cond_30
     const/4 v0, 0x0
@@ -768,19 +768,19 @@
     :cond_32
     move v3, v5
 
-    .line 348
+    .line 342
     goto :goto_1d
 
     :cond_34
     move v3, v5
 
-    .line 349
+    .line 343
     goto :goto_25
 
     :cond_36
     move v4, v5
 
-    .line 350
+    .line 344
     goto :goto_2c
 .end method
 
@@ -789,14 +789,14 @@
     .parameter "v"
 
     .prologue
-    .line 199
+    .line 193
     invoke-virtual {p0}, Landroid/view/View;->getId()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_26
 
-    .line 210
+    .line 204
     const-string v0, "Unknown view id %d"
 
     const/4 v1, 0x1
@@ -817,35 +817,35 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 211
+    .line 205
     const/4 v0, -0x1
 
     :goto_1b
     return v0
 
-    .line 202
+    .line 196
     :pswitch_1c
     const/16 v0, 0x20
 
     goto :goto_1b
 
-    .line 205
+    .line 199
     :pswitch_1f
     const/16 v0, 0x30
 
     goto :goto_1b
 
-    .line 208
+    .line 202
     :pswitch_22
     const/16 v0, 0x10
 
     goto :goto_1b
 
-    .line 199
+    .line 193
     nop
 
     :pswitch_data_26
-    .packed-switch 0x7f080099
+    .packed-switch 0x7f08009f
         :pswitch_22
         :pswitch_22
         :pswitch_1c
@@ -864,14 +864,14 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 249
+    .line 243
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v3
 
     and-int/lit8 v0, v3, 0xf
 
-    .line 250
+    .line 244
     .local v0, itemId:I
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -879,37 +879,37 @@
 
     and-int/lit16 v1, v3, 0xf0
 
-    .line 252
+    .line 246
     .local v1, whichField:I
     packed-switch v0, :pswitch_data_22
 
-    .line 263
-    invoke-super {p0, p1}, Lcom/google/android/finsky/activities/PhoneskyActivity;->onContextItemSelected(Landroid/view/MenuItem;)Z
+    .line 257
+    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onContextItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v2
 
     :goto_14
     return v2
 
-    .line 254
+    .line 248
     :pswitch_15
     invoke-direct {p0, v1}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->handleMenuViewDetails(I)V
 
     goto :goto_14
 
-    .line 257
+    .line 251
     :pswitch_19
     invoke-direct {p0, v1}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->handleMenuRefreshItem(I)V
 
     goto :goto_14
 
-    .line 260
+    .line 254
     :pswitch_1d
     invoke-direct {p0, v1}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->handleMenuClearItem(I)V
 
     goto :goto_14
 
-    .line 252
+    .line 246
     nop
 
     :pswitch_data_22
@@ -925,25 +925,25 @@
     .parameter "savedInstanceState"
 
     .prologue
-    const v5, 0x7f08009c
+    const v5, 0x7f0800a2
 
-    const v4, 0x7f08009b
+    const v4, 0x7f0800a1
 
-    const v3, 0x7f08009a
+    const v3, 0x7f0800a0
 
-    const v2, 0x7f080099
+    const v2, 0x7f08009f
 
     const/4 v1, 0x0
 
-    .line 130
-    const v0, 0x7f04002c
+    .line 129
+    const v0, 0x7f040032
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->setContentView(I)V
 
-    .line 131
-    invoke-super {p0, p1}, Lcom/google/android/finsky/activities/PhoneskyActivity;->onCreate(Landroid/os/Bundle;)V
+    .line 130
+    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 133
+    .line 132
     invoke-virtual {p0, v4}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -952,13 +952,13 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mProvStatus:Landroid/widget/RatingBar;
 
-    .line 134
+    .line 133
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mProvStatus:Landroid/widget/RatingBar;
 
     invoke-virtual {v0, v1}, Landroid/widget/RatingBar;->setEnabled(Z)V
 
-    .line 135
-    const v0, 0x7f08009d
+    .line 134
+    const v0, 0x7f0800a3
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->findViewById(I)Landroid/view/View;
 
@@ -968,12 +968,12 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mCredStatus:Landroid/widget/RatingBar;
 
-    .line 136
+    .line 135
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mCredStatus:Landroid/widget/RatingBar;
 
     invoke-virtual {v0, v1}, Landroid/widget/RatingBar;->setEnabled(Z)V
 
-    .line 137
+    .line 136
     invoke-virtual {p0, v2}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -982,34 +982,43 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mDcbParamStatus:Landroid/widget/RatingBar;
 
-    .line 138
+    .line 137
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mDcbParamStatus:Landroid/widget/RatingBar;
 
     invoke-virtual {v0, v1}, Landroid/widget/RatingBar;->setEnabled(Z)V
 
-    .line 140
+    .line 139
     invoke-static {}, Lcom/google/android/finsky/billing/BillingLocator;->getCarrierBillingStorage()Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
 
-    .line 142
+    .line 141
     invoke-virtual {p0, v4}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->registerForContextMenu(Landroid/view/View;)V
 
-    .line 143
+    .line 142
     invoke-virtual {p0, v5}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->registerForContextMenu(Landroid/view/View;)V
 
+    .line 143
+    const v0, 0x7f0800a3
+
+    invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->registerForContextMenu(Landroid/view/View;)V
+
     .line 144
-    const v0, 0x7f08009d
+    const v0, 0x7f0800a4
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->findViewById(I)Landroid/view/View;
 
@@ -1018,29 +1027,20 @@
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->registerForContextMenu(Landroid/view/View;)V
 
     .line 145
-    const v0, 0x7f08009e
-
-    invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->registerForContextMenu(Landroid/view/View;)V
-
-    .line 146
     invoke-virtual {p0, v2}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->registerForContextMenu(Landroid/view/View;)V
 
-    .line 147
+    .line 146
     invoke-virtual {p0, v3}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->registerForContextMenu(Landroid/view/View;)V
 
-    .line 149
+    .line 148
     invoke-virtual {p0, v5}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -1051,8 +1051,8 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 155
-    const v0, 0x7f08009e
+    .line 154
+    const v0, 0x7f0800a4
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->findViewById(I)Landroid/view/View;
 
@@ -1064,7 +1064,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 161
+    .line 160
     invoke-virtual {p0, v3}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -1075,8 +1075,8 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 167
-    const v0, 0x7f08009f
+    .line 166
+    const v0, 0x7f0800a5
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->findViewById(I)Landroid/view/View;
 
@@ -1088,7 +1088,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 181
+    .line 180
     return-void
 .end method
 
@@ -1103,16 +1103,16 @@
 
     const/4 v5, 0x0
 
-    .line 219
+    .line 213
     invoke-static {p2}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->whichField(Landroid/view/View;)I
 
     move-result v3
 
-    .line 221
+    .line 215
     .local v3, whichField:I
     const/4 v2, 0x0
 
-    .line 223
+    .line 217
     .local v2, refreshEnabled:Z
     iget-object v6, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
 
@@ -1120,7 +1120,7 @@
 
     move-result v1
 
-    .line 224
+    .line 218
     .local v1, isProvisioned:Z
     iget-object v6, p0, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->mDcbStorage:Lcom/google/android/finsky/billing/carrierbilling/model/CarrierBillingStorage;
 
@@ -1132,7 +1132,7 @@
 
     move v0, v4
 
-    .line 227
+    .line 221
     .local v0, hasDcbParams:Z
     :goto_16
     const/16 v6, 0x20
@@ -1141,10 +1141,10 @@
 
     if-eqz v0, :cond_1d
 
-    .line 228
+    .line 222
     const/4 v2, 0x1
 
-    .line 231
+    .line 225
     :cond_1d
     const/16 v6, 0x30
 
@@ -1154,30 +1154,30 @@
 
     if-eqz v1, :cond_26
 
-    .line 232
+    .line 226
     const/4 v2, 0x1
 
-    .line 235
+    .line 229
     :cond_26
     const/16 v6, 0x10
 
     if-ne v3, v6, :cond_2b
 
-    .line 236
+    .line 230
     const/4 v2, 0x1
 
-    .line 239
+    .line 233
     :cond_2b
     or-int/lit8 v6, v3, 0x1
 
-    const v7, 0x7f07007e
+    const v7, 0x7f070089
 
     invoke-interface {p1, v5, v6, v5, v7}, Landroid/view/ContextMenu;->add(IIII)Landroid/view/MenuItem;
 
-    .line 241
+    .line 235
     or-int/lit8 v6, v3, 0x2
 
-    const v7, 0x7f070080
+    const v7, 0x7f07008b
 
     invoke-interface {p1, v5, v6, v4, v7}, Landroid/view/ContextMenu;->add(IIII)Landroid/view/MenuItem;
 
@@ -1185,23 +1185,23 @@
 
     invoke-interface {v4, v2}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
-    .line 243
+    .line 237
     or-int/lit8 v4, v3, 0x3
 
     const/4 v6, 0x2
 
-    const v7, 0x7f070081
+    const v7, 0x7f07008c
 
     invoke-interface {p1, v5, v4, v6, v7}, Landroid/view/ContextMenu;->add(IIII)Landroid/view/MenuItem;
 
-    .line 245
+    .line 239
     return-void
 
     .end local v0           #hasDcbParams:Z
     :cond_49
     move v0, v5
 
-    .line 224
+    .line 218
     goto :goto_16
 .end method
 
@@ -1210,18 +1210,18 @@
     .parameter "menu"
 
     .prologue
-    .line 84
+    .line 83
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->getMenuInflater()Landroid/view/MenuInflater;
 
     move-result-object v0
 
-    .line 85
+    .line 84
     .local v0, inflater:Landroid/view/MenuInflater;
     const v1, 0x7f0f0003
 
     invoke-virtual {v0, v1, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
-    .line 86
+    .line 85
     const/4 v1, 0x1
 
     return v1
@@ -1232,44 +1232,35 @@
     .parameter "item"
 
     .prologue
-    .line 92
+    .line 91
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_12
 
-    .line 97
-    invoke-super {p0, p1}, Lcom/google/android/finsky/activities/PhoneskyActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    .line 96
+    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v0
 
     :goto_b
     return v0
 
-    .line 94
+    .line 93
     :pswitch_c
     invoke-direct {p0}, Lcom/google/android/finsky/billing/carrierbilling/debug/DcbDebugActivity;->refreshAllInfo()V
 
-    .line 95
+    .line 94
     const/4 v0, 0x1
 
     goto :goto_b
 
-    .line 92
+    .line 91
     nop
 
     :pswitch_data_12
-    .packed-switch 0x7f0801aa
+    .packed-switch 0x7f080234
         :pswitch_c
     .end packed-switch
-.end method
-
-.method protected onReady(Z)V
-    .registers 2
-    .parameter "shouldHandleIntent"
-
-    .prologue
-    .line 186
-    return-void
 .end method

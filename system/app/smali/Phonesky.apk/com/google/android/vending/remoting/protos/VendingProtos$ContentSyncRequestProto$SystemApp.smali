@@ -42,32 +42,32 @@
     .registers 2
 
     .prologue
-    .line 1005
+    .line 1022
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1010
+    .line 1027
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->packageName_:Ljava/lang/String;
 
-    .line 1027
+    .line 1044
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->versionCode_:I
 
-    .line 1043
+    .line 1060
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->certificateHash_:Ljava/util/List;
 
-    .line 1100
+    .line 1118
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->cachedSize:I
 
-    .line 1005
+    .line 1022
     return-void
 .end method
 
@@ -78,17 +78,17 @@
     .parameter "value"
 
     .prologue
-    .line 1060
+    .line 1077
     if-nez p1, :cond_8
 
-    .line 1061
+    .line 1078
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1063
+    .line 1080
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->certificateHash_:Ljava/util/List;
 
@@ -98,20 +98,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 1064
+    .line 1081
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->certificateHash_:Ljava/util/List;
 
-    .line 1066
+    .line 1083
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->certificateHash_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1067
+    .line 1084
     return-object p0
 .end method
 
@@ -119,15 +119,15 @@
     .registers 2
 
     .prologue
-    .line 1102
+    .line 1121
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 1104
+    .line 1123
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->getSerializedSize()I
 
-    .line 1106
+    .line 1125
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->cachedSize:I
 
@@ -147,7 +147,7 @@
     .end annotation
 
     .prologue
-    .line 1046
+    .line 1063
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->certificateHash_:Ljava/util/List;
 
     return-object v0
@@ -157,7 +157,7 @@
     .registers 2
 
     .prologue
-    .line 1011
+    .line 1028
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->packageName_:Ljava/lang/String;
 
     return-object v0
@@ -167,10 +167,10 @@
     .registers 7
 
     .prologue
-    .line 1110
+    .line 1130
     const/4 v3, 0x0
 
-    .line 1111
+    .line 1131
     .local v3, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->hasPackageName()Z
 
@@ -178,7 +178,7 @@
 
     if-eqz v4, :cond_12
 
-    .line 1112
+    .line 1132
     const/16 v4, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->getPackageName()Ljava/lang/String;
@@ -191,7 +191,7 @@
 
     add-int/2addr v3, v4
 
-    .line 1115
+    .line 1135
     :cond_12
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->hasVersionCode()Z
 
@@ -199,7 +199,7 @@
 
     if-eqz v4, :cond_23
 
-    .line 1116
+    .line 1136
     const/16 v4, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->getVersionCode()I
@@ -212,11 +212,11 @@
 
     add-int/2addr v3, v4
 
-    .line 1120
+    .line 1140
     :cond_23
     const/4 v0, 0x0
 
-    .line 1121
+    .line 1141
     .local v0, dataSize:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->getCertificateHashList()Ljava/util/List;
 
@@ -240,7 +240,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 1122
+    .line 1142
     .local v1, element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -250,12 +250,12 @@
 
     goto :goto_2c
 
-    .line 1125
+    .line 1145
     .end local v1           #element:Ljava/lang/String;
     :cond_3e
     add-int/2addr v3, v0
 
-    .line 1126
+    .line 1146
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->getCertificateHashList()Ljava/util/List;
 
     move-result-object v4
@@ -268,10 +268,10 @@
 
     add-int/2addr v3, v4
 
-    .line 1128
+    .line 1148
     iput v3, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->cachedSize:I
 
-    .line 1129
+    .line 1149
     return v3
 .end method
 
@@ -279,7 +279,7 @@
     .registers 2
 
     .prologue
-    .line 1028
+    .line 1045
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->versionCode_:I
 
     return v0
@@ -289,7 +289,7 @@
     .registers 2
 
     .prologue
-    .line 1012
+    .line 1029
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->hasPackageName:Z
 
     return v0
@@ -299,7 +299,7 @@
     .registers 2
 
     .prologue
-    .line 1029
+    .line 1046
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->hasVersionCode:Z
 
     return v0
@@ -315,29 +315,29 @@
     .end annotation
 
     .prologue
-    .line 1136
+    .line 1157
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1137
+    .line 1158
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_26
 
-    .line 1141
+    .line 1162
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1142
+    .line 1163
     :sswitch_d
     return-object p0
 
-    .line 1147
+    .line 1168
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -347,7 +347,7 @@
 
     goto :goto_0
 
-    .line 1151
+    .line 1172
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -357,7 +357,7 @@
 
     goto :goto_0
 
-    .line 1155
+    .line 1176
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -367,7 +367,7 @@
 
     goto :goto_0
 
-    .line 1137
+    .line 1158
     :sswitch_data_26
     .sparse-switch
         0x0 -> :sswitch_d
@@ -387,7 +387,7 @@
     .end annotation
 
     .prologue
-    .line 1003
+    .line 1020
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;
 
     move-result-object v0
@@ -400,15 +400,15 @@
     .parameter "value"
 
     .prologue
-    .line 1014
+    .line 1031
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->hasPackageName:Z
 
-    .line 1015
+    .line 1032
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->packageName_:Ljava/lang/String;
 
-    .line 1016
+    .line 1033
     return-object p0
 .end method
 
@@ -417,15 +417,15 @@
     .parameter "value"
 
     .prologue
-    .line 1031
+    .line 1048
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->hasVersionCode:Z
 
-    .line 1032
+    .line 1049
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->versionCode_:I
 
-    .line 1033
+    .line 1050
     return-object p0
 .end method
 
@@ -439,14 +439,14 @@
     .end annotation
 
     .prologue
-    .line 1089
+    .line 1107
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->hasPackageName()Z
 
     move-result v2
 
     if-eqz v2, :cond_f
 
-    .line 1090
+    .line 1108
     const/16 v2, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->getPackageName()Ljava/lang/String;
@@ -455,7 +455,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1092
+    .line 1110
     :cond_f
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->hasVersionCode()Z
 
@@ -463,7 +463,7 @@
 
     if-eqz v2, :cond_1e
 
-    .line 1093
+    .line 1111
     const/16 v2, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->getVersionCode()I
@@ -472,7 +472,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 1095
+    .line 1113
     :cond_1e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;->getCertificateHashList()Ljava/util/List;
 
@@ -496,7 +496,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 1096
+    .line 1114
     .local v0, element:Ljava/lang/String;
     const/16 v2, 0xd
 
@@ -504,7 +504,7 @@
 
     goto :goto_26
 
-    .line 1098
+    .line 1116
     .end local v0           #element:Ljava/lang/String;
     :cond_38
     return-void

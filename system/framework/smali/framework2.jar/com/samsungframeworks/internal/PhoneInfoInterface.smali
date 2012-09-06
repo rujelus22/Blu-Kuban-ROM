@@ -1184,7 +1184,7 @@
 
     move-result-object v4
 
-    const-string v5, " values (\'RTSPProxyAddr\',\'rtsp.vog.sprintpcs.com\')"
+    const-string v5, " values (\'RTSPProxyAddr\',\'0.0.0.0\')"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1221,7 +1221,7 @@
 
     move-result-object v4
 
-    const-string v5, " values (\'RTSPProxyPort\',\'554\')"
+    const-string v5, " values (\'RTSPProxyPort\',\'0\')"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1258,7 +1258,7 @@
 
     move-result-object v4
 
-    const-string v5, " values (\'HTTPPDProxyAddr\',\'pd.vog.sprintpcs.com\')"
+    const-string v5, " values (\'HTTPPDProxyAddr\',\'0.0.0.0\')"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1295,7 +1295,7 @@
 
     move-result-object v4
 
-    const-string v5, " values (\'HTTPPDProxyPort\',\'8085\')"
+    const-string v5, " values (\'HTTPPDProxyPort\',\'0\')"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

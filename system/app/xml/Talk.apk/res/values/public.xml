@@ -35,6 +35,8 @@
     <public type="drawable" name="photo_thumbnail_background" id="0x7f0200b1" />
     <public type="drawable" name="roster_list_self_status_holo" id="0x7f0200b3" />
     <public type="drawable" name="roster_list_self_status_textcolor" id="0x7f0200b4" />
+    <public type="drawable" name="APKTOOL_DUMMY_00b5" id="0x7f0200b5" />
+    <public type="drawable" name="APKTOOL_DUMMY_00b6" id="0x7f0200b6" />
     <public type="drawable" name="search_result_item_bg_holo" id="0x7f0200b7" />
     <public type="drawable" name="video_button_background" id="0x7f0200c6" />
     <public type="drawable" name="video_button_background_mute" id="0x7f0200c7" />
@@ -194,8 +196,6 @@
     <public type="drawable" name="panel_bg_white_holo_light" id="0x7f0200af" />
     <public type="drawable" name="panel_bg_white_leftstroke_holo_light" id="0x7f0200b0" />
     <public type="drawable" name="picasa" id="0x7f0200b2" />
-    <public type="drawable" name="scrubber_primary_holo" id="0x7f0200b5" />
-    <public type="drawable" name="scrubber_secondary_holo" id="0x7f0200b6" />
     <public type="drawable" name="seperator_vertical_light" id="0x7f0200b8" />
     <public type="drawable" name="stat_notify_ongoing_audio_chat" id="0x7f0200b9" />
     <public type="drawable" name="stat_notify_ongoing_video_chat" id="0x7f0200ba" />
@@ -212,6 +212,8 @@
     <public type="drawable" name="video_panel_dropdown_bg_holo_dark" id="0x7f0200c9" />
     <public type="drawable" name="video_panel_dropdown_title_bg_holo_dark" id="0x7f0200ca" />
     <public type="drawable" name="youtube" id="0x7f0200cb" />
+    <public type="drawable" name="ics" id="0x7f0200cc" />
+    <public type="drawable" name="roster_list_bg" id="0x7f0200cd" />
     <public type="drawable" name="statusbox_holo_light" id="0x7f0200c1" />
     <public type="mipmap" name="ic_launcher_google_talk" id="0x7f030000" />
     <public type="layout" name="about_activity" id="0x7f040000" />

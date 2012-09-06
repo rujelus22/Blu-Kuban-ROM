@@ -23,29 +23,29 @@
     .parameter
 
     .prologue
-    .line 431
+    .line 462
     invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
 
-    .line 432
+    .line 463
     invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
 
     move-result v0
 
     const-string v1, "Map is non-empty"
 
-    invoke-static {v0, v1}, Lcom/google/common/base/t;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/common/base/ag;->a(ZLjava/lang/Object;)V
 
-    .line 433
+    .line 464
     iput-object p1, p0, Lcom/google/common/collect/Sets$SetFromMap;->m:Ljava/util/Map;
 
-    .line 434
+    .line 465
     invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
 
-    .line 435
+    .line 466
     return-void
 .end method
 
@@ -54,10 +54,10 @@
     .parameter
 
     .prologue
-    .line 489
+    .line 521
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 490
+    .line 522
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->m:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
@@ -66,7 +66,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
 
-    .line 491
+    .line 523
     return-void
 .end method
 
@@ -77,7 +77,7 @@
     .parameter
 
     .prologue
-    .line 453
+    .line 484
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->m:Ljava/util/Map;
 
     sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
@@ -103,12 +103,12 @@
     .registers 2
 
     .prologue
-    .line 438
+    .line 469
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->m:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 439
+    .line 470
     return-void
 .end method
 
@@ -117,7 +117,7 @@
     .parameter
 
     .prologue
-    .line 447
+    .line 478
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->m:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -132,7 +132,7 @@
     .parameter
 
     .prologue
-    .line 474
+    .line 505
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
@@ -145,9 +145,12 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 471
+    .line 502
     if-eq p0, p1, :cond_a
 
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
@@ -174,7 +177,7 @@
     .registers 2
 
     .prologue
-    .line 468
+    .line 499
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -188,7 +191,7 @@
     .registers 2
 
     .prologue
-    .line 444
+    .line 475
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->m:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
@@ -202,7 +205,7 @@
     .registers 2
 
     .prologue
-    .line 456
+    .line 487
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -217,7 +220,7 @@
     .parameter
 
     .prologue
-    .line 450
+    .line 481
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->m:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -242,7 +245,7 @@
     .parameter
 
     .prologue
-    .line 477
+    .line 508
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->removeAll(Ljava/util/Collection;)Z
@@ -257,7 +260,7 @@
     .parameter
 
     .prologue
-    .line 480
+    .line 511
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->retainAll(Ljava/util/Collection;)Z
@@ -271,7 +274,7 @@
     .registers 2
 
     .prologue
-    .line 441
+    .line 472
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->m:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->size()I
@@ -285,7 +288,7 @@
     .registers 2
 
     .prologue
-    .line 459
+    .line 490
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->toArray()[Ljava/lang/Object;
@@ -300,7 +303,7 @@
     .parameter
 
     .prologue
-    .line 462
+    .line 493
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
@@ -314,7 +317,7 @@
     .registers 2
 
     .prologue
-    .line 465
+    .line 496
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;

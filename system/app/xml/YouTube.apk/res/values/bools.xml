@@ -2,4 +2,7 @@
 <resources>
     <bool name="plus_one_button_progress_bar_inverse">true</bool>
     <bool name="handle_external_upload_intents">false</bool>
+    <bool name="show_fullscreen_button_in_portrait">false</bool>
+    <bool name="results_activity_media_route_in_overflow">true</bool>
+    <bool name="hide_media_route_icon_when_search_expanded">true</bool>
 </resources>

@@ -29,6 +29,12 @@
         <item>Apenas quando estiver no silencioso</item>
         <item>Nunca</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>desativado</item>
+        <item>baixo</item>
+        <item>médio</item>
+        <item>virtual</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Nenhum</item>
         <item>Estabilização de imagem: baixo</item>

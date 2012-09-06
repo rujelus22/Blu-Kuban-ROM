@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/Controller;->deleteFolder(JLjava/util/ArrayList;)Landroid/os/AsyncTask;
+    value = Lcom/android/email/Controller;->serviceCheckMail(JJJ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,27 +20,27 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/Controller;
 
-.field final synthetic val$accountKey:J
+.field final synthetic val$accountId:J
 
-.field final synthetic val$deleteMailboxIds:Ljava/util/ArrayList;
+.field final synthetic val$tag:J
 
 
 # direct methods
-.method constructor <init>(Lcom/android/email/Controller;JLjava/util/ArrayList;)V
-    .registers 5
+.method constructor <init>(Lcom/android/email/Controller;JJ)V
+    .registers 6
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 685
+    .line 386
     iput-object p1, p0, Lcom/android/email/Controller$2;->this$0:Lcom/android/email/Controller;
 
-    iput-wide p2, p0, Lcom/android/email/Controller$2;->val$accountKey:J
+    iput-wide p2, p0, Lcom/android/email/Controller$2;->val$accountId:J
 
-    iput-object p4, p0, Lcom/android/email/Controller$2;->val$deleteMailboxIds:Ljava/util/ArrayList;
+    iput-wide p4, p0, Lcom/android/email/Controller$2;->val$tag:J
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,22 +48,30 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .registers 7
 
     .prologue
-    .line 687
-    iget-wide v0, p0, Lcom/android/email/Controller$2;->val$accountKey:J
+    .line 388
+    iget-object v0, p0, Lcom/android/email/Controller$2;->this$0:Lcom/android/email/Controller;
 
-    invoke-static {v0, v1}, Lcom/android/email/adapter/ProtocolAdapter;->getProtocolAdapter(J)Lcom/android/email/adapter/ProtocolAdapter;
+    #getter for: Lcom/android/email/Controller;->mLegacyController:Lcom/android/email/MessagingController;
+    invoke-static {v0}, Lcom/android/email/Controller;->access$300(Lcom/android/email/Controller;)Lcom/android/email/MessagingController;
 
     move-result-object v0
 
-    iget-wide v1, p0, Lcom/android/email/Controller$2;->val$accountKey:J
+    iget-wide v1, p0, Lcom/android/email/Controller$2;->val$accountId:J
 
-    iget-object v3, p0, Lcom/android/email/Controller$2;->val$deleteMailboxIds:Ljava/util/ArrayList;
+    iget-wide v3, p0, Lcom/android/email/Controller$2;->val$tag:J
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/email/adapter/ProtocolAdapter;->deleteFolder(JLjava/util/ArrayList;)V
+    iget-object v5, p0, Lcom/android/email/Controller$2;->this$0:Lcom/android/email/Controller;
 
-    .line 689
+    #getter for: Lcom/android/email/Controller;->mLegacyListener:Lcom/android/email/Controller$LegacyListener;
+    invoke-static {v5}, Lcom/android/email/Controller;->access$200(Lcom/android/email/Controller;)Lcom/android/email/Controller$LegacyListener;
+
+    move-result-object v5
+
+    invoke-virtual/range {v0 .. v5}, Lcom/android/email/MessagingController;->checkMail(JJLcom/android/email/MessagingListener;)V
+
+    .line 389
     return-void
 .end method

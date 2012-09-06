@@ -29,6 +29,12 @@
         <item>Iba v tichom režime</item>
         <item>Nikdy</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>vypnuté</item>
+        <item>nízka</item>
+        <item>stredná</item>
+        <item>virtuálna</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Žiadna</item>
         <item>Stabilizácia obrazu: nízka</item>

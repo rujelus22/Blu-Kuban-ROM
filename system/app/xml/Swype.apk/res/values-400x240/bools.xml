@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <bool name="set_help_dialog_font">true</bool>
-    <bool name="force_bold_font">true</bool>
-</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="left" android:id="@id/headerButtonPanel" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip">
+        <include android:id="@id/headerButton1" layout="@layout/template_header_button_ad_style" />
+        <include android:id="@id/headerButton2" layout="@layout/template_header_button_ad_style" />
+    </LinearLayout>
+</merge>

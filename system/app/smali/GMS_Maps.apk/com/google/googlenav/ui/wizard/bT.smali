@@ -1,66 +1,86 @@
-.class synthetic Lcom/google/googlenav/ui/wizard/bT;
+.class Lcom/google/googlenav/ui/wizard/bt;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
-# static fields
-.field static final synthetic a:[I
+# instance fields
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/bq;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method private constructor <init>(Lcom/google/googlenav/ui/wizard/bq;)V
+    .registers 2
+    .parameter
 
-    invoke-static {}, Lcom/google/googlenav/ui/wizard/hh;->values()[Lcom/google/googlenav/ui/wizard/hh;
+    .prologue
+    .line 327
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/bt;->a:Lcom/google/googlenav/ui/wizard/bq;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/googlenav/ui/wizard/bq;Lcom/google/googlenav/ui/wizard/br;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 327
+    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/wizard/bt;-><init>(Lcom/google/googlenav/ui/wizard/bq;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .registers 9
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 330
+    check-cast p1, Landroid/widget/ListView;
+
+    invoke-virtual {p1}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v0
 
-    array-length v0, v0
+    check-cast v0, Lcom/google/googlenav/ui/view/android/L;
 
-    new-array v0, v0, [I
+    .line 332
+    invoke-virtual {v0, p3}, Lcom/google/googlenav/ui/view/android/L;->getItem(I)Ljava/lang/Object;
 
-    sput-object v0, Lcom/google/googlenav/ui/wizard/bT;->a:[I
+    move-result-object v0
 
-    :try_start_9
-    sget-object v0, Lcom/google/googlenav/ui/wizard/bT;->a:[I
+    check-cast v0, LaQ/bt;
 
-    sget-object v1, Lcom/google/googlenav/ui/wizard/hh;->b:Lcom/google/googlenav/ui/wizard/hh;
+    .line 333
+    if-nez v0, :cond_11
 
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/wizard/hh;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
-
-    :goto_14
-    :try_start_14
-    sget-object v0, Lcom/google/googlenav/ui/wizard/bT;->a:[I
-
-    sget-object v1, Lcom/google/googlenav/ui/wizard/hh;->a:Lcom/google/googlenav/ui/wizard/hh;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/wizard/hh;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
-
-    :goto_1f
+    .line 339
+    :goto_10
     return-void
 
-    :catch_20
-    move-exception v0
+    .line 336
+    :cond_11
+    invoke-virtual {v0}, LaQ/bt;->d()I
 
-    goto :goto_1f
+    move-result v0
 
-    :catch_22
-    move-exception v0
+    .line 338
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/bt;->a:Lcom/google/googlenav/ui/wizard/bq;
 
-    goto :goto_14
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, p3, v2}, Lcom/google/googlenav/ui/wizard/bq;->a(IILjava/lang/Object;)Z
+
+    goto :goto_10
 .end method

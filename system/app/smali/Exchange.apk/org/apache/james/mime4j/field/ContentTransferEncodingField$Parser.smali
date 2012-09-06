@@ -22,8 +22,8 @@
     .registers 1
 
     .prologue
-    .line 79
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 82
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -37,7 +37,7 @@
     .parameter "raw"
 
     .prologue
-    .line 81
+    .line 84
     invoke-virtual {p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
@@ -46,7 +46,7 @@
 
     move-result-object v0
 
-    .line 82
+    .line 85
     .local v0, encoding:Ljava/lang/String;
     new-instance v1, Lorg/apache/james/mime4j/field/ContentTransferEncodingField;
 

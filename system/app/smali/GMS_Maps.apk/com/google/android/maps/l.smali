@@ -1,93 +1,100 @@
 .class Lcom/google/android/maps/l;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/MapsActivity;
+.field final synthetic a:Lcom/google/android/maps/k;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/MapsActivity;)V
+.method constructor <init>(Lcom/google/android/maps/k;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/l;->a:Lcom/google/android/maps/MapsActivity;
+    .prologue
+    .line 1957
+    iput-object p1, p0, Lcom/google/android/maps/l;->a:Lcom/google/android/maps/k;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 5
+.method public run()V
+    .registers 4
 
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    .prologue
+    .line 1961
+    iget-object v0, p0, Lcom/google/android/maps/l;->a:Lcom/google/android/maps/k;
+
+    iget-object v0, v0, Lcom/google/android/maps/k;->a:Lcom/google/android/maps/MapsActivity;
+
+    #calls: Lcom/google/android/maps/MapsActivity;->getController()Lcom/google/googlenav/ui/v;
+    invoke-static {v0}, Lcom/google/android/maps/MapsActivity;->access$800(Lcom/google/android/maps/MapsActivity;)Lcom/google/googlenav/ui/v;
 
     move-result-object v0
 
-    const-string v1, "android.intent.action.SCREEN_ON"
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/v;->ak()LaM/am;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v0
 
-    move-result v0
+    .line 1963
+    if-eqz v0, :cond_33
 
-    if-eqz v0, :cond_14
+    invoke-virtual {v0}, LaM/am;->B()LaM/X;
 
-    iget-object v0, p0, Lcom/google/android/maps/l;->a:Lcom/google/android/maps/MapsActivity;
+    move-result-object v1
 
-    sget-object v1, Lcom/google/android/maps/u;->f:Lcom/google/android/maps/u;
+    if-eqz v1, :cond_33
 
-    invoke-static {v0, v1}, Lcom/google/android/maps/MapsActivity;->a(Lcom/google/android/maps/MapsActivity;Lcom/google/android/maps/u;)Lcom/google/android/maps/u;
+    .line 1964
+    invoke-virtual {v0}, LaM/am;->B()LaM/X;
 
-    :cond_13
-    :goto_13
+    move-result-object v1
+
+    .line 1966
+    iget-object v2, p0, Lcom/google/android/maps/l;->a:Lcom/google/android/maps/k;
+
+    iget-object v2, v2, Lcom/google/android/maps/k;->a:Lcom/google/android/maps/MapsActivity;
+
+    #getter for: Lcom/google/android/maps/MapsActivity;->mapViewMenuController:Lcom/google/googlenav/ui/av;
+    invoke-static {v2}, Lcom/google/android/maps/MapsActivity;->access$500(Lcom/google/android/maps/MapsActivity;)Lcom/google/googlenav/ui/av;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/google/googlenav/ui/av;->b()V
+
+    .line 1971
+    invoke-static {}, Lcom/google/googlenav/friend/aJ;->e()Z
+
+    move-result v2
+
+    if-nez v2, :cond_34
+
+    .line 1974
+    invoke-virtual {v0}, LaM/am;->ab()LaM/a;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, LaM/a;->a()V
+
+    .line 1975
+    invoke-virtual {v0, v1}, LaM/am;->g(LaM/i;)V
+
+    .line 1982
+    :cond_33
+    :goto_33
     return-void
 
-    :cond_14
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    .line 1979
+    :cond_34
+    invoke-virtual {v1}, LaM/X;->bG()V
 
-    move-result-object v0
-
-    const-string v1, "android.intent.action.SCREEN_OFF"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_13
-
-    iget-object v0, p0, Lcom/google/android/maps/l;->a:Lcom/google/android/maps/MapsActivity;
-
-    invoke-static {v0}, Lcom/google/android/maps/MapsActivity;->a(Lcom/google/android/maps/MapsActivity;)V
-
-    iget-object v0, p0, Lcom/google/android/maps/l;->a:Lcom/google/android/maps/MapsActivity;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/google/android/maps/MapsActivity;->a(Lcom/google/android/maps/MapsActivity;Z)Z
-
-    iget-object v0, p0, Lcom/google/android/maps/l;->a:Lcom/google/android/maps/MapsActivity;
-
-    invoke-static {v0}, Lcom/google/android/maps/MapsActivity;->b(Lcom/google/android/maps/MapsActivity;)Lap/d;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_13
-
-    iget-object v0, p0, Lcom/google/android/maps/l;->a:Lcom/google/android/maps/MapsActivity;
-
-    invoke-static {v0}, Lcom/google/android/maps/MapsActivity;->b(Lcom/google/android/maps/MapsActivity;)Lap/d;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lap/d;->c()I
-
-    iget-object v0, p0, Lcom/google/android/maps/l;->a:Lcom/google/android/maps/MapsActivity;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/google/android/maps/MapsActivity;->a(Lcom/google/android/maps/MapsActivity;Lap/d;)Lap/d;
-
-    goto :goto_13
+    goto :goto_33
 .end method

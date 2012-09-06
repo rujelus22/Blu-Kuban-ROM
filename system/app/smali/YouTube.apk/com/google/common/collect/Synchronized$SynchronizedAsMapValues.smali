@@ -9,15 +9,21 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/Collection;Ljava/lang/Object;)V
-    .registers 3
+    .registers 4
     .parameter
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 1349
-    invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;-><init>(Ljava/util/Collection;Ljava/lang/Object;)V
+    .line 1200
+    const/4 v0, 0x0
 
-    .line 1350
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;-><init>(Ljava/util/Collection;Ljava/lang/Object;Lcom/google/common/collect/lv;)V
+
+    .line 1201
     return-void
 .end method
 
@@ -27,15 +33,15 @@
     .registers 3
 
     .prologue
-    .line 1354
+    .line 1205
     invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 1355
-    new-instance v1, Lcom/google/common/collect/gd;
+    .line 1206
+    new-instance v1, Lcom/google/common/collect/ly;
 
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/gd;-><init>(Lcom/google/common/collect/Synchronized$SynchronizedAsMapValues;Ljava/util/Iterator;)V
+    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/ly;-><init>(Lcom/google/common/collect/Synchronized$SynchronizedAsMapValues;Ljava/util/Iterator;)V
 
     return-object v1
 .end method

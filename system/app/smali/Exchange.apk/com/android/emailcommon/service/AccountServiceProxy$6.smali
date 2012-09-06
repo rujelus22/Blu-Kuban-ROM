@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/emailcommon/service/AccountServiceProxy;->notifySendResult(JJZLjava/lang/String;)V
+    value = Lcom/android/emailcommon/service/AccountServiceProxy;->getDeviceId()Ljava/lang/String;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,37 +20,17 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/emailcommon/service/AccountServiceProxy;
 
-.field final synthetic val$accountId:J
-
-.field final synthetic val$messageId:J
-
-.field final synthetic val$sendfailed:Z
-
-.field final synthetic val$title:Ljava/lang/String;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/emailcommon/service/AccountServiceProxy;JJZLjava/lang/String;)V
-    .registers 8
-    .parameter
-    .parameter
-    .parameter
-    .parameter
+.method constructor <init>(Lcom/android/emailcommon/service/AccountServiceProxy;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 95
+    .line 116
     iput-object p1, p0, Lcom/android/emailcommon/service/AccountServiceProxy$6;->this$0:Lcom/android/emailcommon/service/AccountServiceProxy;
 
-    iput-wide p2, p0, Lcom/android/emailcommon/service/AccountServiceProxy$6;->val$accountId:J
-
-    iput-wide p4, p0, Lcom/android/emailcommon/service/AccountServiceProxy$6;->val$messageId:J
-
-    iput-boolean p6, p0, Lcom/android/emailcommon/service/AccountServiceProxy$6;->val$sendfailed:Z
-
-    iput-object p7, p0, Lcom/android/emailcommon/service/AccountServiceProxy$6;->val$title:Ljava/lang/String;
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -58,7 +38,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 8
+    .registers 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -66,24 +46,23 @@
     .end annotation
 
     .prologue
-    .line 97
+    .line 119
     iget-object v0, p0, Lcom/android/emailcommon/service/AccountServiceProxy$6;->this$0:Lcom/android/emailcommon/service/AccountServiceProxy;
 
+    iget-object v1, p0, Lcom/android/emailcommon/service/AccountServiceProxy$6;->this$0:Lcom/android/emailcommon/service/AccountServiceProxy;
+
     #getter for: Lcom/android/emailcommon/service/AccountServiceProxy;->mService:Lcom/android/emailcommon/service/IAccountService;
-    invoke-static {v0}, Lcom/android/emailcommon/service/AccountServiceProxy;->access$000(Lcom/android/emailcommon/service/AccountServiceProxy;)Lcom/android/emailcommon/service/IAccountService;
+    invoke-static {v1}, Lcom/android/emailcommon/service/AccountServiceProxy;->access$000(Lcom/android/emailcommon/service/AccountServiceProxy;)Lcom/android/emailcommon/service/IAccountService;
 
-    move-result-object v0
+    move-result-object v1
 
-    iget-wide v1, p0, Lcom/android/emailcommon/service/AccountServiceProxy$6;->val$accountId:J
+    invoke-interface {v1}, Lcom/android/emailcommon/service/IAccountService;->getDeviceId()Ljava/lang/String;
 
-    iget-wide v3, p0, Lcom/android/emailcommon/service/AccountServiceProxy$6;->val$messageId:J
+    move-result-object v1
 
-    iget-boolean v5, p0, Lcom/android/emailcommon/service/AccountServiceProxy$6;->val$sendfailed:Z
+    #setter for: Lcom/android/emailcommon/service/AccountServiceProxy;->mReturn:Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;->access$102(Lcom/android/emailcommon/service/AccountServiceProxy;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v6, p0, Lcom/android/emailcommon/service/AccountServiceProxy$6;->val$title:Ljava/lang/String;
-
-    invoke-interface/range {v0 .. v6}, Lcom/android/emailcommon/service/IAccountService;->notifySendResult(JJZLjava/lang/String;)V
-
-    .line 98
+    .line 120
     return-void
 .end method

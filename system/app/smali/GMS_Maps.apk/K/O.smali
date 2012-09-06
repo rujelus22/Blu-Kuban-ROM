@@ -1,88 +1,181 @@
-.class LK/O;
-.super Ljava/util/AbstractCollection;
+.class public Lk/o;
+.super LA/j;
+.source "SourceFile"
 
 
 # instance fields
-.field final a:Ljava/util/Collection;
+.field private final a:I
 
-.field final b:Lcom/google/common/base/o;
+.field private final b:I
+
+.field private final c:I
 
 
 # direct methods
-.method constructor <init>(Ljava/util/Collection;Lcom/google/common/base/o;)V
+.method public constructor <init>(III)V
     .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
+    .prologue
+    .line 287
+    invoke-direct {p0}, LA/j;-><init>()V
 
-    invoke-static {p1}, Lcom/google/common/base/v;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 288
+    iput p1, p0, Lk/o;->a:I
+
+    .line 289
+    iput p2, p0, Lk/o;->b:I
+
+    .line 290
+    iput p3, p0, Lk/o;->c:I
+
+    .line 291
+    return-void
+.end method
+
+.method public constructor <init>(Lorg/w3c/dom/Node;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 294
+    invoke-direct {p0, p1}, LA/j;-><init>(Lorg/w3c/dom/Node;)V
+
+    .line 295
+    const-string v0, "type"
+
+    invoke-static {p1, v0}, Lk/o;->a(Lorg/w3c/dom/Node;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/Collection;
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    iput-object v0, p0, LK/O;->a:Ljava/util/Collection;
+    move-result v0
 
-    invoke-static {p2}, Lcom/google/common/base/v;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    iput v0, p0, Lk/o;->a:I
+
+    .line 296
+    const-string v0, "satellites"
+
+    invoke-static {p1, v0}, Lk/o;->a(Lorg/w3c/dom/Node;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/common/base/o;
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    iput-object v0, p0, LK/O;->b:Lcom/google/common/base/o;
+    move-result v0
 
+    iput v0, p0, Lk/o;->b:I
+
+    .line 297
+    const-string v0, "numUsed"
+
+    invoke-static {p1, v0}, Lk/o;->a(Lorg/w3c/dom/Node;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lk/o;->c:I
+
+    .line 298
     return-void
 .end method
 
 
 # virtual methods
-.method public clear()V
+.method public a()I
     .registers 2
 
-    iget-object v0, p0, LK/O;->a:Ljava/util/Collection;
-
-    invoke-interface {v0}, Ljava/util/Collection;->clear()V
-
-    return-void
-.end method
-
-.method public isEmpty()Z
-    .registers 2
-
-    iget-object v0, p0, LK/O;->a:Ljava/util/Collection;
-
-    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v0
+    .prologue
+    .line 300
+    iget v0, p0, Lk/o;->a:I
 
     return v0
 .end method
 
-.method public iterator()Ljava/util/Iterator;
-    .registers 3
+.method protected a(Ljava/io/Writer;)V
+    .registers 4
+    .parameter
 
-    iget-object v0, p0, LK/O;->a:Ljava/util/Collection;
+    .prologue
+    .line 306
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "<gpsstatus type=\'"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, LK/O;->b:Lcom/google/common/base/o;
+    iget v1, p0, Lk/o;->a:I
 
-    invoke-static {v0, v1}, LK/bI;->a(Ljava/util/Iterator;Lcom/google/common/base/o;)Ljava/util/Iterator;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    return-object v0
+    const-string v1, "\' satellites=\'"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lk/o;->b:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\' numUsed=\'"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lk/o;->c:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\'/>"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+    .line 309
+    return-void
 .end method
 
-.method public size()I
+.method public b()I
     .registers 2
 
-    iget-object v0, p0, LK/O;->a:Ljava/util/Collection;
+    .prologue
+    .line 301
+    iget v0, p0, Lk/o;->b:I
 
-    invoke-interface {v0}, Ljava/util/Collection;->size()I
+    return v0
+.end method
 
-    move-result v0
+.method public c()I
+    .registers 2
+
+    .prologue
+    .line 302
+    iget v0, p0, Lk/o;->c:I
 
     return v0
 .end method

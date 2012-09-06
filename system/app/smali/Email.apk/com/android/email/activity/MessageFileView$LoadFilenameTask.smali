@@ -1,5 +1,5 @@
 .class Lcom/android/email/activity/MessageFileView$LoadFilenameTask;
-.super Landroid/os/AsyncTask;
+.super Lcom/android/emailcommon/utility/EmailAsyncTask;
 .source "MessageFileView.java"
 
 
@@ -15,7 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroid/os/AsyncTask",
+        "Lcom/android/emailcommon/utility/EmailAsyncTask",
         "<",
         "Ljava/lang/Void;",
         "Ljava/lang/Void;",
@@ -33,20 +33,26 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/email/activity/MessageFileView;Landroid/net/Uri;)V
-    .registers 3
+    .registers 4
     .parameter
     .parameter "contentUri"
 
     .prologue
-    .line 140
+    .line 105
     iput-object p1, p0, Lcom/android/email/activity/MessageFileView$LoadFilenameTask;->this$0:Lcom/android/email/activity/MessageFileView;
 
-    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
+    .line 106
+    #getter for: Lcom/android/email/activity/MessageFileView;->mTaskTracker:Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
+    invoke-static {p1}, Lcom/android/email/activity/MessageFileView;->access$000(Lcom/android/email/activity/MessageFileView;)Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
 
-    .line 141
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/android/emailcommon/utility/EmailAsyncTask;-><init>(Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;)V
+
+    .line 107
     iput-object p2, p0, Lcom/android/email/activity/MessageFileView$LoadFilenameTask;->mContentUri:Landroid/net/Uri;
 
-    .line 142
+    .line 108
     return-void
 .end method
 
@@ -57,7 +63,7 @@
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 102
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -73,7 +79,7 @@
     .parameter "params"
 
     .prologue
-    .line 146
+    .line 112
     iget-object v0, p0, Lcom/android/email/activity/MessageFileView$LoadFilenameTask;->this$0:Lcom/android/email/activity/MessageFileView;
 
     iget-object v1, p0, Lcom/android/email/activity/MessageFileView$LoadFilenameTask;->mContentUri:Landroid/net/Uri;
@@ -85,45 +91,38 @@
     return-object v0
 .end method
 
-.method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
+.method protected bridge synthetic onSuccess(Ljava/lang/Object;)V
     .registers 2
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 102
     check-cast p1, Ljava/lang/String;
 
     .end local p1
-    invoke-virtual {p0, p1}, Lcom/android/email/activity/MessageFileView$LoadFilenameTask;->onPostExecute(Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lcom/android/email/activity/MessageFileView$LoadFilenameTask;->onSuccess(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method protected onPostExecute(Ljava/lang/String;)V
+.method protected onSuccess(Ljava/lang/String;)V
     .registers 3
     .parameter "filename"
 
     .prologue
-    .line 151
-    if-eqz p1, :cond_8
+    .line 117
+    if-nez p1, :cond_3
 
-    invoke-virtual {p0}, Lcom/android/email/activity/MessageFileView$LoadFilenameTask;->isCancelled()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_9
-
-    .line 155
-    :cond_8
-    :goto_8
+    .line 121
+    :goto_2
     return-void
 
-    .line 154
-    :cond_9
+    .line 120
+    :cond_3
     iget-object v0, p0, Lcom/android/email/activity/MessageFileView$LoadFilenameTask;->this$0:Lcom/android/email/activity/MessageFileView;
 
     #calls: Lcom/android/email/activity/MessageFileView;->setTitle(Ljava/lang/String;)V
-    invoke-static {v0, p1}, Lcom/android/email/activity/MessageFileView;->access$000(Lcom/android/email/activity/MessageFileView;Ljava/lang/String;)V
+    invoke-static {v0, p1}, Lcom/android/email/activity/MessageFileView;->access$100(Lcom/android/email/activity/MessageFileView;Ljava/lang/String;)V
 
-    goto :goto_8
+    goto :goto_2
 .end method

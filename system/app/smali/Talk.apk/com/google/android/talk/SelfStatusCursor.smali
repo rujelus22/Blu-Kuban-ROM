@@ -153,7 +153,7 @@
     .line 45
     new-instance v1, Ljava/lang/Object;
 
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v1 .. v1}, Ljava/lang/Object;-><init>()V
 
     iput-object v1, p0, Lcom/google/android/talk/SelfStatusCursor;->mCapabilitiesLock:Ljava/lang/Object;
 

@@ -28,6 +28,14 @@
         <item quantity="other">%1$d saniye önce</item>
         <item quantity="one">1 saniye önce</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Süre sonu: %1$d gün</item>
+        <item quantity="one">Süre 1 gün içn dolyr</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Süre sonu: %1$d saat</item>
+        <item quantity="one">Süre 1 sa içn doluyr</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">yeni yüklenenler</item>
         <item quantity="one">yeni yükleme</item>

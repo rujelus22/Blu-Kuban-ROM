@@ -212,9 +212,9 @@
 
     int-to-float v4, v2
 
-    const v5, 0x888888
+    const v5, 0xa0a0a0
 
-    const v6, -0x777778
+    const v6, -0x5f5f60
 
     sget-object v7, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
@@ -236,9 +236,9 @@
 
     int-to-float v4, v2
 
-    const v5, 0xa0a0a0
+    const v5, 0xe5e560
 
-    const v6, -0x5f5f60
+    const v6, -0xaeeb6a
 
     sget-object v7, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
@@ -263,9 +263,9 @@
 
     int-to-float v4, v2
 
-    const v5, 0x99cc
+    const v5, 0x155496
 
-    const v6, -0xff6634
+    const v6, -0xeaab6a
 
     sget-object v7, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
@@ -682,7 +682,7 @@
 
     iget-object v1, v0, Lcom/android/settings/applications/LinearColorBar;->mPaint:Landroid/graphics/Paint;
 
-    const v2, -0xff6634
+    const v2, -0xeaab6a
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
@@ -733,7 +733,7 @@
 
     iget-object v1, v0, Lcom/android/settings/applications/LinearColorBar;->mPaint:Landroid/graphics/Paint;
 
-    const v2, -0xff6634
+    const v2, -0xeaab6a
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
@@ -784,7 +784,7 @@
 
     iget-object v1, v0, Lcom/android/settings/applications/LinearColorBar;->mPaint:Landroid/graphics/Paint;
 
-    const v2, -0x777778
+    const v2, -0xe5e5e6
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 

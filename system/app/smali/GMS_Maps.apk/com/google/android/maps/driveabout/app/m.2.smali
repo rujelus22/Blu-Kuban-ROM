@@ -1,176 +1,135 @@
-.class public abstract Lcom/google/android/maps/driveabout/app/m;
-.super Ljava/lang/Object;
+.class Lcom/google/android/maps/driveabout/app/M;
+.super Lcom/google/android/maps/driveabout/app/I;
+.source "SourceFile"
 
 
 # instance fields
-.field protected a:Lcom/google/android/maps/driveabout/vector/t;
-
-.field protected b:I
-
-.field protected c:I
+.field final synthetic c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
+.method private constructor <init>(Lcom/google/android/maps/driveabout/app/DestinationActivity;)V
+    .registers 3
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 419
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/M;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lcom/google/android/maps/driveabout/app/I;-><init>(Lcom/google/android/maps/driveabout/app/DestinationActivity;Lcom/google/android/maps/driveabout/app/r;)V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/maps/driveabout/app/DestinationActivity;Lcom/google/android/maps/driveabout/app/r;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 419
+    invoke-direct {p0, p1}, Lcom/google/android/maps/driveabout/app/M;-><init>(Lcom/google/android/maps/driveabout/app/DestinationActivity;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a(Lcom/google/android/maps/driveabout/vector/u;F)Lcom/google/android/maps/driveabout/vector/u;
-.end method
+.method public a()V
+    .registers 7
 
-.method public a(Lcom/google/android/maps/driveabout/vector/u;FIIF)Lcom/google/android/maps/driveabout/vector/u;
-    .registers 12
+    .prologue
+    .line 423
+    invoke-super {p0}, Lcom/google/android/maps/driveabout/app/I;->a()V
 
-    float-to-double v0, p2
+    .line 426
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/M;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
 
-    const-wide/16 v2, 0x0
+    const v1, 0x7f1000dc
 
-    cmpg-double v0, v0, v2
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->findViewById(I)Landroid/view/View;
 
-    if-gtz v0, :cond_8
+    move-result-object v0
 
-    :cond_7
-    :goto_7
-    return-object p1
+    check-cast v0, Landroid/support/v4/view/ViewPager;
 
-    :cond_8
-    invoke-virtual {p0, p1, p3, p4, p5}, Lcom/google/android/maps/driveabout/app/m;->a(Lcom/google/android/maps/driveabout/vector/u;IIF)V
+    .line 427
+    if-nez v0, :cond_11
 
-    invoke-static {p3, p4}, Ljava/lang/Math;->min(II)I
-
-    move-result v0
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/m;->a:Lcom/google/android/maps/driveabout/vector/t;
-
-    const/high16 v2, 0x4000
-
-    mul-float/2addr v2, p2
-
-    int-to-float v0, v0
-
-    invoke-virtual {v1, v2, v0}, Lcom/google/android/maps/driveabout/vector/t;->c(FF)F
-
-    move-result v2
-
-    invoke-virtual {p1}, Lcom/google/android/maps/driveabout/vector/u;->a()F
-
-    move-result v0
-
-    cmpl-float v0, v0, v2
-
-    if-lez v0, :cond_7
-
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/u;
-
-    invoke-virtual {p1}, Lcom/google/android/maps/driveabout/vector/u;->b()Lt/L;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Lcom/google/android/maps/driveabout/vector/u;->d()F
-
-    move-result v3
-
-    invoke-virtual {p1}, Lcom/google/android/maps/driveabout/vector/u;->e()F
-
-    move-result v4
-
-    invoke-virtual {p1}, Lcom/google/android/maps/driveabout/vector/u;->f()F
-
-    move-result v5
-
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/maps/driveabout/vector/u;-><init>(Lt/L;FFFF)V
-
-    move-object p1, v0
-
-    goto :goto_7
-.end method
-
-.method public abstract a(Lcom/google/android/maps/driveabout/vector/u;Landroid/location/Location;IIF)Lcom/google/android/maps/driveabout/vector/u;
-.end method
-
-.method public abstract a(Lcom/google/android/maps/driveabout/vector/u;Landroid/location/Location;Lcom/google/android/maps/driveabout/vector/bS;Lu/I;FIIF)Lcom/google/android/maps/driveabout/vector/u;
-.end method
-
-.method public abstract a(Lcom/google/android/maps/driveabout/vector/u;Landroid/location/Location;Lt/ab;IIF)Lcom/google/android/maps/driveabout/vector/u;
-.end method
-
-.method public abstract a(Lcom/google/android/maps/driveabout/vector/u;Lu/I;Z)Lcom/google/android/maps/driveabout/vector/u;
-.end method
-
-.method public a(I)V
-    .registers 2
-
-    iput p1, p0, Lcom/google/android/maps/driveabout/app/m;->b:I
-
-    return-void
-.end method
-
-.method protected a(Lcom/google/android/maps/driveabout/vector/u;IIF)V
-    .registers 6
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/m;->a:Lcom/google/android/maps/driveabout/vector/t;
-
-    if-nez v0, :cond_c
-
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/t;
-
-    invoke-direct {v0, p1, p2, p3, p4}, Lcom/google/android/maps/driveabout/vector/t;-><init>(Lcom/google/android/maps/driveabout/vector/u;IIF)V
-
-    iput-object v0, p0, Lcom/google/android/maps/driveabout/app/m;->a:Lcom/google/android/maps/driveabout/vector/t;
-
-    :goto_b
+    .line 439
+    :goto_10
     return-void
 
-    :cond_c
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/m;->a:Lcom/google/android/maps/driveabout/vector/t;
+    .line 430
+    :cond_11
+    new-instance v1, Lcom/google/android/maps/driveabout/widgets/a;
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/t;->d()I
+    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/M;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
 
-    move-result v0
+    iget-object v3, p0, Lcom/google/android/maps/driveabout/app/M;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
 
-    if-ne p2, v0, :cond_26
+    invoke-static {v3}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->g(Lcom/google/android/maps/driveabout/app/DestinationActivity;)Lcom/google/android/maps/driveabout/app/ad;
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/m;->a:Lcom/google/android/maps/driveabout/vector/t;
+    move-result-object v3
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/t;->e()I
+    new-instance v4, Lcom/google/android/maps/driveabout/app/K;
 
-    move-result v0
+    iget-object v5, p0, Lcom/google/android/maps/driveabout/app/M;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
 
-    if-ne p3, v0, :cond_26
+    invoke-direct {v4, v5}, Lcom/google/android/maps/driveabout/app/K;-><init>(Lcom/google/android/maps/driveabout/app/DestinationActivity;)V
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/m;->a:Lcom/google/android/maps/driveabout/vector/t;
+    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/maps/driveabout/widgets/a;-><init>(Landroid/content/Context;Lcom/google/android/maps/driveabout/app/ad;Lcom/google/android/maps/driveabout/app/K;)V
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/t;->f()F
+    .line 432
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->setAdapter(Landroid/support/v4/view/x;)V
 
-    move-result v0
+    .line 433
+    const/4 v2, 0x1
 
-    cmpl-float v0, p4, v0
+    invoke-virtual {v0, v2}, Landroid/support/v4/view/ViewPager;->setCurrentItem(I)V
 
-    if-eqz v0, :cond_2b
+    .line 434
+    const/16 v2, 0x10
 
-    :cond_26
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/m;->a:Lcom/google/android/maps/driveabout/vector/t;
+    invoke-virtual {v0, v2}, Landroid/support/v4/view/ViewPager;->setPageMargin(I)V
 
-    invoke-virtual {v0, p2, p3, p4}, Lcom/google/android/maps/driveabout/vector/t;->a(IIF)V
+    .line 438
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/M;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
 
-    :cond_2b
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/m;->a:Lcom/google/android/maps/driveabout/vector/t;
+    invoke-static {v0, v1}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->a(Lcom/google/android/maps/driveabout/app/DestinationActivity;Lcom/google/android/maps/driveabout/app/bL;)Lcom/google/android/maps/driveabout/app/bL;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/maps/driveabout/vector/t;->a(Lcom/google/android/maps/driveabout/vector/u;)V
-
-    goto :goto_b
+    goto :goto_10
 .end method
 
-.method public b(I)V
-    .registers 2
+.method public a(Landroid/view/Menu;)V
+    .registers 4
+    .parameter
 
-    iput p1, p0, Lcom/google/android/maps/driveabout/app/m;->c:I
+    .prologue
+    .line 444
+    const v0, 0x7f1004b7
 
+    invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+
+    .line 448
+    const v0, 0x7f1004b5
+
+    invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+
+    .line 449
     return-void
 .end method

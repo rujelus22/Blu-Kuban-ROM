@@ -26,13 +26,13 @@
     .parameter "textEntryStringId"
 
     .prologue
-    .line 406
+    .line 396
     invoke-direct {p0, p2, p3}, Lcom/google/android/finsky/activities/FlagItemFragment$FlagType;-><init>(II)V
 
-    .line 407
+    .line 397
     iput p1, p0, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;->mRpcId:I
 
-    .line 408
+    .line 398
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .prologue
     const/4 v6, -0x1
 
-    .line 380
+    .line 370
     sget-object v2, Lcom/google/android/finsky/config/G;->vendingHideContentRating:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v2}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
@@ -65,92 +65,92 @@
 
     move-result v0
 
-    .line 381
+    .line 371
     .local v0, hideContent:Z
     invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 382
+    .line 372
     .local v1, output:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/activities/FlagItemFragment$FlagType;>;"
     new-instance v2, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;
 
     const/4 v3, 0x1
 
-    const v4, 0x7f0701b7
+    const v4, 0x7f0701f4
 
     invoke-direct {v2, v3, v4, v6}, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;-><init>(III)V
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 384
+    .line 374
     new-instance v2, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;
 
     const/4 v3, 0x2
 
-    const v4, 0x7f0701b8
+    const v4, 0x7f0701f5
+
+    invoke-direct {v2, v3, v4, v6}, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;-><init>(III)V
+
+    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 376
+    new-instance v2, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;
+
+    const/4 v3, 0x3
+
+    const v4, 0x7f0701f6
+
+    invoke-direct {v2, v3, v4, v6}, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;-><init>(III)V
+
+    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 378
+    if-eqz p0, :cond_46
+
+    .line 379
+    new-instance v2, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;
+
+    const/4 v3, 0x4
+
+    const v4, 0x7f0701f7
+
+    const v5, 0x7f0701fe
+
+    invoke-direct {v2, v3, v4, v5}, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;-><init>(III)V
+
+    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 382
+    :cond_46
+    if-nez v0, :cond_54
+
+    .line 383
+    new-instance v2, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;
+
+    const/4 v3, 0x6
+
+    const v4, 0x7f0701f8
 
     invoke-direct {v2, v3, v4, v6}, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;-><init>(III)V
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 386
-    new-instance v2, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;
-
-    const/4 v3, 0x3
-
-    const v4, 0x7f0701b9
-
-    invoke-direct {v2, v3, v4, v6}, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;-><init>(III)V
-
-    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 388
-    if-eqz p0, :cond_46
-
-    .line 389
-    new-instance v2, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;
-
-    const/4 v3, 0x4
-
-    const v4, 0x7f0701ba
-
-    const v5, 0x7f0701c2
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;-><init>(III)V
-
-    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 392
-    :cond_46
-    if-nez v0, :cond_54
-
-    .line 393
-    new-instance v2, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;
-
-    const/4 v3, 0x6
-
-    const v4, 0x7f0701bb
-
-    invoke-direct {v2, v3, v4, v6}, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;-><init>(III)V
-
-    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 396
     :cond_54
     new-instance v2, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;
 
     const/4 v3, 0x5
 
-    const v4, 0x7f0701bc
+    const v4, 0x7f0701f9
 
-    const v5, 0x7f0701c1
+    const v5, 0x7f0701fd
 
     invoke-direct {v2, v3, v4, v5}, Lcom/google/android/finsky/activities/FlagItemFragment$AppFlagType;-><init>(III)V
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 398
+    .line 388
     return-object v1
 .end method
 
@@ -163,7 +163,7 @@
     .parameter "flagMessage"
 
     .prologue
-    .line 412
+    .line 402
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v1
@@ -172,13 +172,13 @@
 
     move-result-object v0
 
-    .line 413
+    .line 403
     .local v0, vendingApi:Lcom/google/android/vending/remoting/api/VendingApi;
     invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/finsky/utils/PurchaseInitiator;->generateAssetId(Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/android/finsky/local/AssetUtils;->makeAssetId(Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -196,6 +196,6 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/android/vending/remoting/api/VendingApi;->flagAsset(Ljava/lang/String;ILjava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 424
+    .line 414
     return-void
 .end method

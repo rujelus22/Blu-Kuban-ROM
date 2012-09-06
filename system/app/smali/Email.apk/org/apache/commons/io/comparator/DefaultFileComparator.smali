@@ -49,14 +49,14 @@
     .registers 2
 
     .prologue
-    .line 55
+    .line 50
     new-instance v0, Lorg/apache/commons/io/comparator/DefaultFileComparator;
 
     invoke-direct {v0}, Lorg/apache/commons/io/comparator/DefaultFileComparator;-><init>()V
 
     sput-object v0, Lorg/apache/commons/io/comparator/DefaultFileComparator;->DEFAULT_COMPARATOR:Ljava/util/Comparator;
 
-    .line 58
+    .line 53
     new-instance v0, Lorg/apache/commons/io/comparator/ReverseComparator;
 
     sget-object v1, Lorg/apache/commons/io/comparator/DefaultFileComparator;->DEFAULT_COMPARATOR:Ljava/util/Comparator;
@@ -72,8 +72,8 @@
     .registers 1
 
     .prologue
-    .line 52
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 47
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -86,7 +86,7 @@
     .parameter "file2"
 
     .prologue
-    .line 70
+    .line 64
     invoke-virtual {p1, p2}, Ljava/io/File;->compareTo(Ljava/io/File;)I
 
     move-result v0
@@ -100,7 +100,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 47
     check-cast p1, Ljava/io/File;
 
     .end local p1

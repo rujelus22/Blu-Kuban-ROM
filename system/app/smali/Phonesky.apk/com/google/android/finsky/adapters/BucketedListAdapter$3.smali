@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 388
+    .line 402
     invoke-static {}, Lcom/google/android/finsky/adapters/PaginatedListAdapter$FooterMode;->values()[Lcom/google/android/finsky/adapters/PaginatedListAdapter$FooterMode;
 
     move-result-object v0

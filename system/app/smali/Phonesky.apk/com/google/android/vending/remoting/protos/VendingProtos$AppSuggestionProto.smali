@@ -27,20 +27,20 @@
     .registers 2
 
     .prologue
-    .line 17494
+    .line 17983
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 17499
+    .line 17988
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->assetInfo_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;
 
-    .line 17535
+    .line 18025
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->cachedSize:I
 
-    .line 17494
+    .line 17983
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .registers 2
 
     .prologue
-    .line 17501
+    .line 17990
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->assetInfo_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;
 
     return-object v0
@@ -60,15 +60,15 @@
     .registers 2
 
     .prologue
-    .line 17537
+    .line 18028
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 17539
+    .line 18030
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->getSerializedSize()I
 
-    .line 17541
+    .line 18032
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->cachedSize:I
 
@@ -79,10 +79,10 @@
     .registers 4
 
     .prologue
-    .line 17545
+    .line 18037
     const/4 v0, 0x0
 
-    .line 17546
+    .line 18038
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->hasAssetInfo()Z
 
@@ -90,7 +90,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 17547
+    .line 18039
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->getAssetInfo()Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;
@@ -103,11 +103,11 @@
 
     add-int/2addr v0, v1
 
-    .line 17550
+    .line 18042
     :cond_11
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->cachedSize:I
 
-    .line 17551
+    .line 18043
     return v0
 .end method
 
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 17500
+    .line 17989
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->hasAssetInfo:Z
 
     return v0
@@ -131,44 +131,44 @@
     .end annotation
 
     .prologue
-    .line 17558
+    .line 18051
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 17559
+    .line 18052
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1a
 
-    .line 17563
+    .line 18056
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 17564
+    .line 18057
     :sswitch_d
     return-object p0
 
-    .line 17569
+    .line 18062
     :sswitch_e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;-><init>()V
 
-    .line 17570
+    .line 18063
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 17571
+    .line 18064
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->setAssetInfo(Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;
 
     goto :goto_0
 
-    .line 17559
+    .line 18052
     :sswitch_data_1a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -186,7 +186,7 @@
     .end annotation
 
     .prologue
-    .line 17492
+    .line 17981
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;
 
     move-result-object v0
@@ -199,26 +199,26 @@
     .parameter "value"
 
     .prologue
-    .line 17503
+    .line 17992
     if-nez p1, :cond_8
 
-    .line 17504
+    .line 17993
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 17506
+    .line 17995
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->hasAssetInfo:Z
 
-    .line 17507
+    .line 17996
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->assetInfo_:Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;
 
-    .line 17508
+    .line 17997
     return-object p0
 .end method
 
@@ -232,14 +232,14 @@
     .end annotation
 
     .prologue
-    .line 17530
+    .line 18020
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->hasAssetInfo()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 17531
+    .line 18021
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AppSuggestionProto;->getAssetInfo()Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto;
@@ -248,7 +248,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 17533
+    .line 18023
     :cond_e
     return-void
 .end method

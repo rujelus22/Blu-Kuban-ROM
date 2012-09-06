@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/emailcommon/service/EmailServiceProxy;->sendMeetingResponse(JI)V
+    value = Lcom/android/emailcommon/service/EmailServiceProxy;->deleteAccountPIMData(J)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,27 +20,22 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
-.field final synthetic val$messageId:J
-
-.field final synthetic val$response:I
+.field final synthetic val$accountId:J
 
 
 # direct methods
-.method constructor <init>(Lcom/android/emailcommon/service/EmailServiceProxy;JI)V
-    .registers 5
-    .parameter
+.method constructor <init>(Lcom/android/emailcommon/service/EmailServiceProxy;J)V
+    .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 262
+    .line 365
     iput-object p1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$11;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
-    iput-wide p2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$11;->val$messageId:J
+    iput-wide p2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$11;->val$accountId:J
 
-    iput p4, p0, Lcom/android/emailcommon/service/EmailServiceProxy$11;->val$response:I
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,7 +43,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .registers 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -56,17 +51,7 @@
     .end annotation
 
     .prologue
-    .line 264
-    iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$11;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
-
-    #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mCallback:Lcom/android/emailcommon/service/IEmailServiceCallback;
-    invoke-static {v0}, Lcom/android/emailcommon/service/EmailServiceProxy;->access$000(Lcom/android/emailcommon/service/EmailServiceProxy;)Lcom/android/emailcommon/service/IEmailServiceCallback;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_17
-
-    .line 265
+    .line 367
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$11;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mService:Lcom/android/emailcommon/service/IEmailService;
@@ -74,30 +59,10 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$11;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
+    iget-wide v1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$11;->val$accountId:J
 
-    #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mCallback:Lcom/android/emailcommon/service/IEmailServiceCallback;
-    invoke-static {v1}, Lcom/android/emailcommon/service/EmailServiceProxy;->access$000(Lcom/android/emailcommon/service/EmailServiceProxy;)Lcom/android/emailcommon/service/IEmailServiceCallback;
+    invoke-interface {v0, v1, v2}, Lcom/android/emailcommon/service/IEmailService;->deleteAccountPIMData(J)V
 
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/android/emailcommon/service/IEmailService;->setCallback(Lcom/android/emailcommon/service/IEmailServiceCallback;)V
-
-    .line 266
-    :cond_17
-    iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$11;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
-
-    #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mService:Lcom/android/emailcommon/service/IEmailService;
-    invoke-static {v0}, Lcom/android/emailcommon/service/EmailServiceProxy;->access$100(Lcom/android/emailcommon/service/EmailServiceProxy;)Lcom/android/emailcommon/service/IEmailService;
-
-    move-result-object v0
-
-    iget-wide v1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$11;->val$messageId:J
-
-    iget v3, p0, Lcom/android/emailcommon/service/EmailServiceProxy$11;->val$response:I
-
-    invoke-interface {v0, v1, v2, v3}, Lcom/android/emailcommon/service/IEmailService;->sendMeetingResponse(JI)V
-
-    .line 267
+    .line 368
     return-void
 .end method

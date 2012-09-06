@@ -1,28 +1,26 @@
 .class public interface abstract Lak/f;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # virtual methods
-.method public abstract a()Ljava/io/DataOutputStream;
+.method public abstract a()Ljava/lang/String;
 .end method
 
-.method public abstract a(Ljava/lang/String;)Ljava/lang/String;
+.method public abstract a(Lcom/google/googlenav/ui/v;)V
 .end method
 
-.method public abstract a(Ljava/lang/String;Ljava/lang/String;)V
+.method public abstract a(Lcom/google/googlenav/ui/v;Z)V
 .end method
 
-.method public abstract b()Ljava/io/DataInputStream;
+.method public abstract b()Ljava/lang/String;
 .end method
 
-.method public abstract c()I
+.method public abstract c()Ljava/lang/String;
 .end method
 
-.method public abstract d()Ljava/lang/String;
+.method public abstract d()I
 .end method
 
-.method public abstract e()J
-.end method
-
-.method public abstract f()V
+.method public abstract e()Z
 .end method

@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 42
+    .line 49
     iput-object p1, p0, Lcom/google/android/finsky/layout/AccountSelectorView$1;->this$0:Lcom/google/android/finsky/layout/AccountSelectorView;
 
     iput-object p2, p0, Lcom/google/android/finsky/layout/AccountSelectorView$1;->val$authenticatedActivity:Lcom/google/android/finsky/activities/AuthenticatedActivity;
@@ -47,13 +47,13 @@
     .parameter "v"
 
     .prologue
-    .line 45
+    .line 52
     iget-object v0, p0, Lcom/google/android/finsky/layout/AccountSelectorView$1;->val$authenticatedActivity:Lcom/google/android/finsky/activities/AuthenticatedActivity;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->chooseAccount(Z)V
 
-    .line 46
+    .line 53
     return-void
 .end method

@@ -1,11 +1,14 @@
 .class Lcom/android/exchange/ExchangeService$8;
-.super Landroid/telephony/PhoneStateListener;
+.super Ljava/lang/Object;
 .source "ExchangeService.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/exchange/ExchangeService;->onCreate()V
+    value = Lcom/android/exchange/ExchangeService;->onDestroy()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,136 +27,76 @@
     .parameter
 
     .prologue
-    .line 3851
+    .line 1832
     iput-object p1, p0, Lcom/android/exchange/ExchangeService$8;->this$0:Lcom/android/exchange/ExchangeService;
 
-    invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onServiceStateChanged(Landroid/telephony/ServiceState;)V
-    .registers 6
-    .parameter "state"
+.method public run()V
+    .registers 3
 
     .prologue
-    .line 3853
-    const-string v2, "onServiceStateChanged"
+    .line 1836
+    sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
-    invoke-static {v2}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
+    if-eqz v0, :cond_a
 
-    .line 3854
-    iget-object v2, p0, Lcom/android/exchange/ExchangeService$8;->this$0:Lcom/android/exchange/ExchangeService;
+    invoke-static {}, Lcom/android/exchange/ExchangeService;->access$1500()Ljava/lang/Thread;
 
-    #getter for: Lcom/android/exchange/ExchangeService;->mIsNetworkRoaming:Z
-    invoke-static {v2}, Lcom/android/exchange/ExchangeService;->access$2000(Lcom/android/exchange/ExchangeService;)Z
+    move-result-object v0
 
-    move-result v0
+    if-nez v0, :cond_b
 
-    .line 3855
-    .local v0, oldRoamingType:Z
-    iget-object v2, p0, Lcom/android/exchange/ExchangeService$8;->this$0:Lcom/android/exchange/ExchangeService;
-
-    #getter for: Lcom/android/exchange/ExchangeService;->mNetworkState:I
-    invoke-static {v2}, Lcom/android/exchange/ExchangeService;->access$2100(Lcom/android/exchange/ExchangeService;)I
-
-    move-result v1
-
-    .line 3857
-    .local v1, oldServiceState:I
-    iget-object v2, p0, Lcom/android/exchange/ExchangeService$8;->this$0:Lcom/android/exchange/ExchangeService;
-
-    invoke-virtual {p1}, Landroid/telephony/ServiceState;->getState()I
-
-    move-result v3
-
-    #setter for: Lcom/android/exchange/ExchangeService;->mNetworkState:I
-    invoke-static {v2, v3}, Lcom/android/exchange/ExchangeService;->access$2102(Lcom/android/exchange/ExchangeService;I)I
-
-    .line 3858
-    invoke-virtual {p1}, Landroid/telephony/ServiceState;->getState()I
-
-    move-result v2
-
-    if-nez v2, :cond_29
-
-    .line 3859
-    iget-object v2, p0, Lcom/android/exchange/ExchangeService$8;->this$0:Lcom/android/exchange/ExchangeService;
-
-    invoke-virtual {p1}, Landroid/telephony/ServiceState;->getRoaming()Z
-
-    move-result v3
-
-    #setter for: Lcom/android/exchange/ExchangeService;->mIsNetworkRoaming:Z
-    invoke-static {v2, v3}, Lcom/android/exchange/ExchangeService;->access$2002(Lcom/android/exchange/ExchangeService;Z)Z
-
-    .line 3860
-    :cond_29
-    iget-object v2, p0, Lcom/android/exchange/ExchangeService$8;->this$0:Lcom/android/exchange/ExchangeService;
-
-    #getter for: Lcom/android/exchange/ExchangeService;->mNetworkState:I
-    invoke-static {v2}, Lcom/android/exchange/ExchangeService;->access$2100(Lcom/android/exchange/ExchangeService;)I
-
-    move-result v2
-
-    if-ne v2, v1, :cond_41
-
-    iget-object v2, p0, Lcom/android/exchange/ExchangeService$8;->this$0:Lcom/android/exchange/ExchangeService;
-
-    #getter for: Lcom/android/exchange/ExchangeService;->mNetworkState:I
-    invoke-static {v2}, Lcom/android/exchange/ExchangeService;->access$2100(Lcom/android/exchange/ExchangeService;)I
-
-    move-result v2
-
-    if-nez v2, :cond_62
-
-    iget-object v2, p0, Lcom/android/exchange/ExchangeService$8;->this$0:Lcom/android/exchange/ExchangeService;
-
-    #getter for: Lcom/android/exchange/ExchangeService;->mIsNetworkRoaming:Z
-    invoke-static {v2}, Lcom/android/exchange/ExchangeService;->access$2000(Lcom/android/exchange/ExchangeService;)Z
-
-    move-result v2
-
-    if-eq v0, v2, :cond_62
-
-    .line 3862
-    :cond_41
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Roaming State changed: mIsNetworkRoaming:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/android/exchange/ExchangeService$8;->this$0:Lcom/android/exchange/ExchangeService;
-
-    #getter for: Lcom/android/exchange/ExchangeService;->mIsNetworkRoaming:Z
-    invoke-static {v3}, Lcom/android/exchange/ExchangeService;->access$2000(Lcom/android/exchange/ExchangeService;)Z
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
-
-    .line 3866
-    iget-object v2, p0, Lcom/android/exchange/ExchangeService$8;->this$0:Lcom/android/exchange/ExchangeService;
-
-    #calls: Lcom/android/exchange/ExchangeService;->updateAccountDb()V
-    invoke-static {v2}, Lcom/android/exchange/ExchangeService;->access$2200(Lcom/android/exchange/ExchangeService;)V
-
-    .line 3868
-    :cond_62
+    .line 1844
+    :cond_a
+    :goto_a
     return-void
+
+    .line 1837
+    :cond_b
+    invoke-static {}, Lcom/android/exchange/ExchangeService;->access$800()Ljava/lang/Object;
+
+    move-result-object v1
+
+    monitor-enter v1
+
+    .line 1839
+    :try_start_10
+    invoke-static {}, Lcom/android/exchange/ExchangeService;->access$1500()Ljava/lang/Thread;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_21
+
+    .line 1840
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Lcom/android/exchange/ExchangeService;->access$1302(Z)Z
+
+    .line 1841
+    invoke-static {}, Lcom/android/exchange/ExchangeService;->access$1500()Ljava/lang/Thread;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
+
+    .line 1843
+    :cond_21
+    monitor-exit v1
+
+    goto :goto_a
+
+    :catchall_23
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_25
+    .catchall {:try_start_10 .. :try_end_25} :catchall_23
+
+    throw v0
 .end method

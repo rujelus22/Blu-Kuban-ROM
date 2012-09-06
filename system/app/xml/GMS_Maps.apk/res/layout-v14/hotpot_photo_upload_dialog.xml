@@ -5,6 +5,7 @@
         <ImageView android:id="@id/hotpot_upload_photo" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" />
         <TextView android:textSize="19.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/hotpot_photo_upload_place_title" android:background="#77000000" android:padding="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
     </FrameLayout>
+    <include layout="@layout/user_identity_bar" />
     <View android:id="@id/divider_line" android:background="@android:drawable/divider_horizontal_bright" android:layout_width="fill_parent" android:layout_height="2.0px" />
     <LinearLayout android:gravity="center_horizontal" android:id="@id/upload_bar" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0" style="?android:attr/buttonBarStyle">
         <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="@color/dark_grey" android:gravity="center_vertical" android:id="@id/info_text" android:padding="6.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="5.0dip" android:layout_weight="1.0" />

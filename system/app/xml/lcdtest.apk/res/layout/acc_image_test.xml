@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:id="@id/acc_image_test_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TableLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/white" android:id="@id/acceleration" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0px" android:editable="false" />
-        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/white" android:id="@id/acceleration_angle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0px" android:editable="false" />
-    </TableLayout>
-</LinearLayout>

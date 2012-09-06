@@ -34,7 +34,7 @@
     .line 85
     iget-object v0, p0, Lcom/google/android/youtube/core/ui/s;->a:Lcom/google/android/youtube/core/ui/Workspace;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/core/ui/Workspace;->d(I)V
+    invoke-virtual {v0, p1}, Lcom/google/android/youtube/core/ui/Workspace;->c(I)V
 
     .line 86
     return-void

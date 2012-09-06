@@ -16,7 +16,7 @@
 
 .field public static final CHAN_SPACING_50_kHz:I = 0x5
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field public static final DE_TIME_CONSTANT_50:I = 0x1
 

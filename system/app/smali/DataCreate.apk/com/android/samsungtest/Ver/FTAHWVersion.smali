@@ -30,7 +30,7 @@
     invoke-virtual {p0, v1}, Lcom/android/samsungtest/Ver/FTAHWVersion;->setContentView(I)V
 
     .line 35
-    const v1, 0x7f06003b
+    const v1, 0x7f06003a
 
     invoke-virtual {p0, v1}, Lcom/android/samsungtest/Ver/FTAHWVersion;->findViewById(I)Landroid/view/View;
 

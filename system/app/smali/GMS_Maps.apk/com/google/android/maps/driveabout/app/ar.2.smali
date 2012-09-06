@@ -1,23 +1,28 @@
-.class Lcom/google/android/maps/driveabout/app/ar;
+.class Lcom/google/android/maps/driveabout/app/aR;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnCancelListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Landroid/content/DialogInterface$OnCancelListener;
+.field final synthetic a:I
 
-.field final synthetic b:Lcom/google/android/maps/driveabout/app/am;
+.field final synthetic b:Lcom/google/android/maps/driveabout/app/aQ;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/am;Landroid/content/DialogInterface$OnCancelListener;)V
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/aQ;I)V
     .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/ar;->b:Lcom/google/android/maps/driveabout/app/am;
+    .prologue
+    .line 1198
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aR;->b:Lcom/google/android/maps/driveabout/app/aQ;
 
-    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/ar;->a:Landroid/content/DialogInterface$OnCancelListener;
+    iput p2, p0, Lcom/google/android/maps/driveabout/app/aR;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,21 +31,18 @@
 
 
 # virtual methods
-.method public onCancel(Landroid/content/DialogInterface;)V
+.method public run()V
     .registers 3
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ar;->b:Lcom/google/android/maps/driveabout/app/am;
+    .prologue
+    .line 1200
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aR;->b:Lcom/google/android/maps/driveabout/app/aQ;
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/am;->q()V
+    iget-object v0, v0, Lcom/google/android/maps/driveabout/app/aQ;->a:Lcom/google/android/maps/driveabout/app/aN;
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ar;->a:Landroid/content/DialogInterface$OnCancelListener;
+    iget v1, p0, Lcom/google/android/maps/driveabout/app/aR;->a:I
 
-    if-eqz v0, :cond_e
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/aN;->c(I)V
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ar;->a:Landroid/content/DialogInterface$OnCancelListener;
-
-    invoke-interface {v0, p1}, Landroid/content/DialogInterface$OnCancelListener;->onCancel(Landroid/content/DialogInterface;)V
-
-    :cond_e
     return-void
 .end method

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.sec.android.app.music.widget.ListSplitViewResizer android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.sec.android.app.music.MusicContentListView android:id="@id/list_main_split_view_left" android:layout_width="0.0px" android:layout_height="fill_parent" android:layout_weight="1.0" />
-    <LinearLayout android:orientation="horizontal" android:id="@id/list_main_split_view_right_container" android:visibility="gone" android:layout_width="400.0dip" android:layout_height="fill_parent">
-        <View android:id="@id/list_main_split_view_divider" android:background="@drawable/split_divide_line" android:layout_width="5.0dip" android:layout_height="fill_parent" />
-        <com.sec.android.app.music.MusicContentListView android:id="@id/list_main_split_view_right" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    </LinearLayout>
-</com.sec.android.app.music.widget.ListSplitViewResizer>

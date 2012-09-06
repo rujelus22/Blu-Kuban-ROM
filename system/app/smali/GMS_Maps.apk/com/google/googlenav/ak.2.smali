@@ -1,108 +1,52 @@
-.class public Lcom/google/googlenav/ak;
+.class Lcom/google/googlenav/aK;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/googlenav/aL;
 
 
 # instance fields
-.field private final a:Lcom/google/googlenav/al;
-
-.field private final b:Ljava/lang/String;
-
-.field private final c:Ljava/util/Vector;
+.field private a:Landroid/app/NotificationManager;
 
 
 # direct methods
-.method public constructor <init>(Lam/b;)V
-    .registers 8
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 3
+    .parameter
 
-    const/4 v1, 0x2
-
-    const/4 v5, 0x1
-
+    .prologue
+    .line 337
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/Vector;
+    .line 338
+    const-string v0, "notification"
 
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
-
-    iput-object v0, p0, Lcom/google/googlenav/ak;->c:Ljava/util/Vector;
-
-    invoke-virtual {p1, v1}, Lam/b;->k(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_40
-
-    new-instance v0, Lcom/google/googlenav/al;
-
-    invoke-virtual {p1, v1}, Lam/b;->h(I)Lam/b;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/google/googlenav/al;-><init>(Lam/b;)V
-
-    :goto_1b
-    iput-object v0, p0, Lcom/google/googlenav/ak;->a:Lcom/google/googlenav/al;
-
-    const/4 v0, 0x3
-
-    invoke-static {p1, v0}, Lam/g;->b(Lam/b;I)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/googlenav/ak;->b:Ljava/lang/String;
+    check-cast v0, Landroid/app/NotificationManager;
 
-    invoke-virtual {p1, v5}, Lam/b;->l(I)I
+    iput-object v0, p0, Lcom/google/googlenav/aK;->a:Landroid/app/NotificationManager;
 
-    move-result v1
-
-    const/4 v0, 0x0
-
-    :goto_29
-    if-ge v0, v1, :cond_42
-
-    iget-object v2, p0, Lcom/google/googlenav/ak;->c:Ljava/util/Vector;
-
-    new-instance v3, Lcom/google/googlenav/al;
-
-    invoke-virtual {p1, v5, v0}, Lam/b;->e(II)Lam/b;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v5}, Lam/b;->h(I)Lam/b;
-
-    move-result-object v4
-
-    invoke-direct {v3, v4}, Lcom/google/googlenav/al;-><init>(Lam/b;)V
-
-    invoke-virtual {v2, v3}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_29
-
-    :cond_40
-    const/4 v0, 0x0
-
-    goto :goto_1b
-
-    :cond_42
+    .line 340
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Lcom/google/googlenav/al;
-    .registers 2
+.method public a(ILandroid/app/Notification;)V
+    .registers 4
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ak;->a:Lcom/google/googlenav/al;
+    .prologue
+    .line 349
+    iget-object v0, p0, Lcom/google/googlenav/aK;->a:Landroid/app/NotificationManager;
 
-    return-object v0
-.end method
+    invoke-virtual {v0, p1, p2}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
 
-.method public b()Ljava/util/Vector;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ak;->c:Ljava/util/Vector;
-
-    return-object v0
+    .line 350
+    return-void
 .end method

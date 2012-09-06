@@ -28,15 +28,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/activity/setup/MailboxSettings;
 
-.field final synthetic val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
+.field final synthetic val$account:Lcom/android/emailcommon/provider/Account;
 
 .field final synthetic val$context:Landroid/content/Context;
 
-.field final synthetic val$mailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+.field final synthetic val$mailbox:Lcom/android/emailcommon/provider/Mailbox;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/email/activity/setup/MailboxSettings;Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;Lcom/android/emailcommon/provider/EmailContent$Mailbox;Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Account;)V
+.method constructor <init>(Lcom/android/email/activity/setup/MailboxSettings;Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;Lcom/android/emailcommon/provider/Mailbox;Lcom/android/emailcommon/provider/Account;Landroid/content/Context;)V
     .registers 6
     .parameter
     .parameter "x0"
@@ -45,190 +45,18 @@
     .parameter
 
     .prologue
-    .line 331
+    .line 316
     iput-object p1, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->this$0:Lcom/android/email/activity/setup/MailboxSettings;
 
-    iput-object p3, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$mailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    iput-object p3, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$mailbox:Lcom/android/emailcommon/provider/Mailbox;
 
-    iput-object p4, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$context:Landroid/content/Context;
+    iput-object p4, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$account:Lcom/android/emailcommon/provider/Account;
 
-    iput-object p5, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
+    iput-object p5, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$context:Landroid/content/Context;
 
     invoke-direct {p0, p2}, Lcom/android/emailcommon/utility/EmailAsyncTask;-><init>(Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;)V
 
     return-void
-.end method
-
-.method private findInterval()I
-    .registers 11
-
-    .prologue
-    .line 362
-    iget-object v8, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    invoke-virtual {v8}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSyncScheduleData()Lcom/android/emailcommon/utility/SyncScheduleData;
-
-    move-result-object v6
-
-    .line 363
-    .local v6, syncScheduleData:Lcom/android/emailcommon/utility/SyncScheduleData;
-    const/4 v4, 0x1
-
-    .line 364
-    .local v4, requireManualSync:Z
-    iget-object v8, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->this$0:Lcom/android/email/activity/setup/MailboxSettings;
-
-    const-string v9, "phone"
-
-    invoke-virtual {v8, v9}, Lcom/android/email/activity/setup/MailboxSettings;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Landroid/telephony/TelephonyManager;
-
-    .line 365
-    .local v7, tm:Landroid/telephony/TelephonyManager;
-    invoke-virtual {v7}, Landroid/telephony/TelephonyManager;->isNetworkRoaming()Z
-
-    move-result v2
-
-    .line 367
-    .local v2, isRoaming:Z
-    invoke-static {v6}, Lcom/android/emailcommon/utility/SyncScheduler;->getIsPeakAndNextAlarm(Lcom/android/emailcommon/utility/SyncScheduleData;)Landroid/util/Pair;
-
-    move-result-object v8
-
-    iget-object v8, v8, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    check-cast v8, Ljava/lang/Boolean;
-
-    invoke-virtual {v8}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    .line 368
-    .local v1, isInPeakPeriod:Z
-    const/4 v3, -0x2
-
-    .line 369
-    .local v3, newSyncInterval:I
-    const/4 v4, 0x1
-
-    .line 370
-    if-eqz v2, :cond_3f
-
-    iget-object v8, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$context:Landroid/content/Context;
-
-    if-eqz v8, :cond_3f
-
-    .line 371
-    iget-object v8, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$context:Landroid/content/Context;
-
-    invoke-static {v8}, Lcom/android/email/SecurityPolicy;->getInstance(Landroid/content/Context;)Lcom/android/email/SecurityPolicy;
-
-    move-result-object v5
-
-    .line 372
-    .local v5, securityPolicy:Lcom/android/email/SecurityPolicy;
-    iget-object v8, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iget-wide v8, v8, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v8
-
-    invoke-virtual {v5, v8}, Lcom/android/email/SecurityPolicy;->getAccountPolicy(Ljava/lang/Long;)Lcom/android/emailcommon/service/PolicySet;
-
-    move-result-object v0
-
-    .line 373
-    .local v0, accountPolicies:Lcom/android/emailcommon/service/PolicySet;
-    if-eqz v0, :cond_3f
-
-    .line 374
-    iget-boolean v4, v0, Lcom/android/emailcommon/service/PolicySet;->mRequireManualSyncWhenRoaming:Z
-
-    .line 377
-    .end local v0           #accountPolicies:Lcom/android/emailcommon/service/PolicySet;
-    .end local v5           #securityPolicy:Lcom/android/email/SecurityPolicy;
-    :cond_3f
-    if-eqz v2, :cond_4b
-
-    invoke-virtual {v6}, Lcom/android/emailcommon/utility/SyncScheduleData;->getRoamingSchedule()I
-
-    move-result v8
-
-    if-eqz v8, :cond_49
-
-    if-eqz v4, :cond_4b
-
-    .line 378
-    :cond_49
-    const/4 v3, -0x1
-
-    .line 391
-    :goto_4a
-    return v3
-
-    .line 379
-    :cond_4b
-    if-eqz v1, :cond_61
-
-    .line 381
-    iget-object v8, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->this$0:Lcom/android/email/activity/setup/MailboxSettings;
-
-    #getter for: Lcom/android/email/activity/setup/MailboxSettings;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    invoke-static {v8}, Lcom/android/email/activity/setup/MailboxSettings;->access$100(Lcom/android/email/activity/setup/MailboxSettings;)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    move-result-object v8
-
-    iget v8, v8, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mPeakSyncSchedule:I
-
-    if-nez v8, :cond_5c
-
-    .line 382
-    invoke-virtual {v6}, Lcom/android/emailcommon/utility/SyncScheduleData;->getPeakSchedule()I
-
-    move-result v3
-
-    goto :goto_4a
-
-    .line 384
-    :cond_5c
-    iget-object v8, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$mailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget v3, v8, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mPeakSyncSchedule:I
-
-    goto :goto_4a
-
-    .line 386
-    :cond_61
-    iget-object v8, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->this$0:Lcom/android/email/activity/setup/MailboxSettings;
-
-    #getter for: Lcom/android/email/activity/setup/MailboxSettings;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    invoke-static {v8}, Lcom/android/email/activity/setup/MailboxSettings;->access$100(Lcom/android/email/activity/setup/MailboxSettings;)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    move-result-object v8
-
-    iget v8, v8, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mOffpeakSyncSchedule:I
-
-    if-nez v8, :cond_70
-
-    .line 387
-    invoke-virtual {v6}, Lcom/android/emailcommon/utility/SyncScheduleData;->getOffPeakSchedule()I
-
-    move-result v3
-
-    goto :goto_4a
-
-    .line 389
-    :cond_70
-    iget-object v8, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$mailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget v3, v8, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mOffpeakSyncSchedule:I
-
-    goto :goto_4a
 .end method
 
 
@@ -238,7 +66,7 @@
     .parameter "x0"
 
     .prologue
-    .line 331
+    .line 316
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -250,156 +78,140 @@
 .end method
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
-    .registers 9
+    .registers 8
     .parameter "params"
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    .line 334
+    .line 319
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 336
+    .line 322
     .local v0, cv:Landroid/content/ContentValues;
-    invoke-direct {p0}, Lcom/android/email/activity/setup/MailboxSettings$2;->findInterval()I
+    iget-object v2, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$mailbox:Lcom/android/emailcommon/provider/Mailbox;
 
-    move-result v1
+    iget v2, v2, Lcom/android/emailcommon/provider/Mailbox;->mType:I
 
-    .line 338
-    .local v1, interval:I
-    iget-object v3, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->this$0:Lcom/android/email/activity/setup/MailboxSettings;
+    if-nez v2, :cond_52
 
-    invoke-virtual {v3}, Lcom/android/email/activity/setup/MailboxSettings;->getApplicationContext()Landroid/content/Context;
+    .line 323
+    const-string v2, "syncInterval"
+
+    iget-object v3, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$account:Lcom/android/emailcommon/provider/Account;
+
+    iget v3, v3, Lcom/android/emailcommon/provider/Account;->mSyncInterval:I
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/android/email/RefreshManager;->getInstance(Landroid/content/Context;)Lcom/android/email/RefreshManager;
+    invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    .line 324
+    const-string v2, "syncLookback"
+
+    iget-object v3, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$account:Lcom/android/emailcommon/provider/Account;
+
+    iget v3, v3, Lcom/android/emailcommon/provider/Account;->mSyncLookback:I
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    iget-object v4, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->this$0:Lcom/android/email/activity/setup/MailboxSettings;
+    invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    #getter for: Lcom/android/email/activity/setup/MailboxSettings;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    invoke-static {v4}, Lcom/android/email/activity/setup/MailboxSettings;->access$100(Lcom/android/email/activity/setup/MailboxSettings;)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    .line 325
+    sget-object v2, Lcom/android/emailcommon/provider/Account;->CONTENT_URI:Landroid/net/Uri;
 
-    move-result-object v4
+    iget-object v3, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$account:Lcom/android/emailcommon/provider/Account;
 
-    iget-wide v4, v4, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v3, v3, Lcom/android/emailcommon/provider/Account;->mId:J
 
-    invoke-virtual {v3, v4, v5}, Lcom/android/email/RefreshManager;->interruptRefreshMessageList(J)V
+    invoke-static {v2, v3, v4}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
-    .line 339
-    const-string v3, "peakSyncSchedule"
+    move-result-object v1
 
-    iget-object v4, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$mailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    .line 331
+    .local v1, uri:Landroid/net/Uri;
+    :goto_30
+    iget-object v2, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$context:Landroid/content/Context;
 
-    iget v4, v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mPeakSyncSchedule:I
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 340
-    const-string v3, "offpeakSyncSchedule"
-
-    iget-object v4, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$mailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget v4, v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mOffpeakSyncSchedule:I
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 341
-    const-string v3, "syncLookback"
-
-    iget-object v4, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$mailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget v4, v4, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mSyncLookback:I
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 342
-    sget-object v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
-
-    iget-object v4, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$mailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget-wide v4, v4, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-static {v3, v4, v5}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
 
-    .line 344
-    .local v2, uri:Landroid/net/Uri;
-    iget-object v3, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$context:Landroid/content/Context;
+    invoke-virtual {v2, v1, v0, v5, v5}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    .line 333
+    const-string v2, "Email"
 
-    move-result-object v3
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v2, v0, v6, v6}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 346
-    const-string v3, "Email"
+    const-string v4, "Saved: "
 
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Saved: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 348
-    iget-object v3, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->this$0:Lcom/android/email/activity/setup/MailboxSettings;
-
-    #getter for: Lcom/android/email/activity/setup/MailboxSettings;->mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    invoke-static {v3}, Lcom/android/email/activity/setup/MailboxSettings;->access$100(Lcom/android/email/activity/setup/MailboxSettings;)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    iget v3, v3, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    if-nez v3, :cond_86
+    move-result-object v3
 
-    .line 349
-    iget-object v3, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iput v1, v3, Lcom/android/emailcommon/provider/EmailContent$Account;->mSyncInterval:I
+    move-result-object v3
 
-    .line 351
-    iget-object v3, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$context:Landroid/content/Context;
+    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v4, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 334
+    return-object v5
 
-    invoke-static {v3, v4}, Lcom/android/email/activity/setup/AccountSettingsUtils;->commitSettings(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Account;)V
+    .line 327
+    .end local v1           #uri:Landroid/net/Uri;
+    :cond_52
+    const-string v2, "syncInterval"
 
-    .line 354
-    :cond_86
-    return-object v6
+    iget-object v3, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$mailbox:Lcom/android/emailcommon/provider/Mailbox;
+
+    iget v3, v3, Lcom/android/emailcommon/provider/Mailbox;->mSyncInterval:I
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    .line 328
+    const-string v2, "syncLookback"
+
+    iget-object v3, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$mailbox:Lcom/android/emailcommon/provider/Mailbox;
+
+    iget v3, v3, Lcom/android/emailcommon/provider/Mailbox;->mSyncLookback:I
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    .line 329
+    sget-object v2, Lcom/android/emailcommon/provider/Mailbox;->CONTENT_URI:Landroid/net/Uri;
+
+    iget-object v3, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$mailbox:Lcom/android/emailcommon/provider/Mailbox;
+
+    iget-wide v3, v3, Lcom/android/emailcommon/provider/Mailbox;->mId:J
+
+    invoke-static {v2, v3, v4}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
+
+    move-result-object v1
+
+    .restart local v1       #uri:Landroid/net/Uri;
+    goto :goto_30
 .end method
 
 .method protected bridge synthetic onSuccess(Ljava/lang/Object;)V
@@ -407,7 +219,7 @@
     .parameter "x0"
 
     .prologue
-    .line 331
+    .line 316
     check-cast p1, Ljava/lang/Void;
 
     .end local p1
@@ -421,25 +233,25 @@
     .parameter "result"
 
     .prologue
-    .line 397
+    .line 340
     iget-object v0, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$context:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/email/RefreshManager;->getInstance(Landroid/content/Context;)Lcom/android/email/RefreshManager;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
+    iget-object v1, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$account:Lcom/android/emailcommon/provider/Account;
 
-    iget-wide v1, v1, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v1, v1, Lcom/android/emailcommon/provider/Account;->mId:J
 
-    iget-object v3, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$mailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    iget-object v3, p0, Lcom/android/email/activity/setup/MailboxSettings$2;->val$mailbox:Lcom/android/emailcommon/provider/Mailbox;
 
-    iget-wide v3, v3, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v3, v3, Lcom/android/emailcommon/provider/Mailbox;->mId:J
 
     const/4 v5, 0x1
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/email/RefreshManager;->refreshMessageList(JJZ)Z
 
-    .line 399
+    .line 342
     return-void
 .end method

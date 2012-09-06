@@ -1,23 +1,28 @@
-.class Lcom/google/googlenav/ui/K;
+.class final Lcom/google/googlenav/ui/k;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/widget/AdapterView$OnItemSelectedListener;
 
 
 # instance fields
-.field final synthetic a:I
+.field final synthetic a:Lcom/google/googlenav/ui/view/G;
 
-.field final synthetic b:Lcom/google/googlenav/ui/D;
+.field final synthetic b:I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/D;I)V
+.method constructor <init>(Lcom/google/googlenav/ui/view/G;I)V
     .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/K;->b:Lcom/google/googlenav/ui/D;
+    .prologue
+    .line 389
+    iput-object p1, p0, Lcom/google/googlenav/ui/k;->a:Lcom/google/googlenav/ui/view/G;
 
-    iput p2, p0, Lcom/google/googlenav/ui/K;->a:I
+    iput p2, p0, Lcom/google/googlenav/ui/k;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,14 +31,32 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 3
+.method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .registers 8
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/K;->b:Lcom/google/googlenav/ui/D;
+    .prologue
+    .line 392
+    iget-object v0, p0, Lcom/google/googlenav/ui/k;->a:Lcom/google/googlenav/ui/view/G;
 
-    iget v1, p0, Lcom/google/googlenav/ui/K;->a:I
+    iget-object v0, v0, Lcom/google/googlenav/ui/view/G;->e:[I
 
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/D;->d(I)V
+    iget v1, p0, Lcom/google/googlenav/ui/k;->b:I
 
+    aput p3, v0, v1
+
+    .line 393
+    return-void
+.end method
+
+.method public onNothingSelected(Landroid/widget/AdapterView;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 398
     return-void
 .end method

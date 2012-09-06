@@ -18,28 +18,28 @@
     .parameter "context"
 
     .prologue
-    .line 31
+    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 32
+    .line 30
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/android/finsky/download/DownloadManagerImpl;->mContentResolver:Landroid/content/ContentResolver;
 
-    .line 34
+    .line 32
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "download-manager-thread"
 
     invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
-    .line 35
+    .line 33
     .local v0, thread:Landroid/os/HandlerThread;
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 36
+    .line 34
     new-instance v1, Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
@@ -50,7 +50,7 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/download/DownloadManagerImpl;->mHandler:Landroid/os/Handler;
 
-    .line 37
+    .line 35
     return-void
 .end method
 
@@ -84,10 +84,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 63
+    .line 61
     invoke-static {}, Lcom/google/android/finsky/utils/Utils;->ensureNotOnMainThread()V
 
-    .line 68
+    .line 66
     if-eqz p1, :cond_19
 
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
@@ -104,12 +104,12 @@
 
     if-nez v0, :cond_19
 
-    .line 70
+    .line 68
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadManagerImpl;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {v0, p1, v1, v1}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 72
+    .line 70
     :cond_19
     return-void
 .end method
@@ -132,7 +132,7 @@
     .end annotation
 
     .prologue
-    .line 41
+    .line 39
     .local p2, listener:Lcom/google/android/finsky/utils/ParameterizedRunnable;,"Lcom/google/android/finsky/utils/ParameterizedRunnable<Landroid/net/Uri;>;"
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadManagerImpl;->mHandler:Landroid/os/Handler;
 
@@ -142,7 +142,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 50
+    .line 48
     return-void
 .end method
 
@@ -160,17 +160,17 @@
 
     const/4 v3, 0x0
 
-    .line 106
+    .line 86
     invoke-static {}, Lcom/google/android/finsky/utils/Utils;->ensureNotOnMainThread()V
 
-    .line 110
+    .line 90
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x8
 
     if-le v0, v1, :cond_3c
 
-    .line 111
+    .line 91
     const/4 v0, 0x5
 
     new-array v2, v0, [Ljava/lang/String;
@@ -197,7 +197,7 @@
 
     aput-object v1, v2, v0
 
-    .line 127
+    .line 107
     .local v2, columns:[Ljava/lang/String;
     :goto_26
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadManagerImpl;->mContentResolver:Landroid/content/ContentResolver;
@@ -214,22 +214,22 @@
 
     move-result-object v6
 
-    .line 131
+    .line 111
     .local v6, cursor:Landroid/database/Cursor;
     if-nez v6, :cond_50
 
-    .line 132
+    .line 112
     const-string v0, "Download progress cursor null when attempting to fetch all Downloads."
 
     new-array v1, v7, [Ljava/lang/Object;
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 136
+    .line 116
     :goto_3b
     return-object v3
 
-    .line 119
+    .line 99
     .end local v2           #columns:[Ljava/lang/String;
     .end local v6           #cursor:Landroid/database/Cursor;
     :cond_3c
@@ -260,7 +260,7 @@
     :cond_50
     move-object v3, v6
 
-    .line 136
+    .line 116
     goto :goto_3b
 .end method
 
@@ -271,10 +271,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 98
+    .line 74
     invoke-static {}, Lcom/google/android/finsky/utils/Utils;->ensureNotOnMainThread()V
 
-    .line 100
+    .line 76
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadManagerImpl;->mContentResolver:Landroid/content/ContentResolver;
 
     const/4 v1, 0x1
@@ -305,7 +305,7 @@
     .parameter "uri"
 
     .prologue
-    .line 54
+    .line 52
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadManagerImpl;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/android/finsky/download/DownloadManagerImpl$2;
@@ -314,23 +314,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 60
-    return-void
-.end method
-
-.method public removeAll()V
-    .registers 3
-
-    .prologue
-    .line 76
-    iget-object v0, p0, Lcom/google/android/finsky/download/DownloadManagerImpl;->mHandler:Landroid/os/Handler;
-
-    new-instance v1, Lcom/google/android/finsky/download/DownloadManagerImpl$3;
-
-    invoke-direct {v1, p0}, Lcom/google/android/finsky/download/DownloadManagerImpl$3;-><init>(Lcom/google/android/finsky/download/DownloadManagerImpl;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 94
+    .line 58
     return-void
 .end method

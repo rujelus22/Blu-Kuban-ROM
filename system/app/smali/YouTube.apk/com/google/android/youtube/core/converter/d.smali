@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final a()Lcom/google/android/youtube/core/converter/c;
-    .registers 3
+    .registers 4
 
     .prologue
     .line 59
@@ -36,7 +36,9 @@
 
     iget-object v1, p0, Lcom/google/android/youtube/core/converter/d;->a:Ljava/util/HashMap;
 
-    invoke-direct {v0, v1}, Lcom/google/android/youtube/core/converter/c;-><init>(Ljava/util/Map;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/youtube/core/converter/c;-><init>(Ljava/util/Map;B)V
 
     return-object v0
 .end method

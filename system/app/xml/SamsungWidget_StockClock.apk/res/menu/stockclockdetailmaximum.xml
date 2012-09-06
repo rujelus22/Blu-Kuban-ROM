@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:icon="@drawable/ic_menu_delete" android:id="@id/menu_detail_Delete" android:title="@string/menu_delete_title" />
-    <item android:icon="@drawable/ic_menu_list" android:id="@id/menu_detail_Market" android:title="@string/tab_my_markets" />
-    <item android:icon="@drawable/ic_menu_search" android:id="@id/menu_detail_Search" android:title="@string/menu_search_title" />
-    <item android:icon="@drawable/ic_menu_settings" android:id="@id/menu_detail_Setting" android:title="@string/menu_settings_title" />
-</menu>

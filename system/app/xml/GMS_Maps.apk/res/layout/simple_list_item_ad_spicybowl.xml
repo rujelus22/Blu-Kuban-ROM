@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="left|center" android:orientation="horizontal" android:id="@id/listItemAd" android:background="@color/ad_background_color" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="9.0sp" android:textColor="@color/ad_text_gray" android:gravity="top|right|center" android:id="@id/sponsoredLink" android:visibility="gone" android:layout_width="49.0dip" android:layout_height="fill_parent" android:layout_marginTop="4.0dip" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <LinearLayout android:gravity="top|left|center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="12.0dip" android:layout_marginBottom="3.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true">
+        <TextView android:textSize="14.0dip" android:textStyle="bold" android:gravity="top|left|center" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+        <TextView android:textColor="@color/attribution_green" android:id="@id/linkText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textColor="@color/ad_text_gray" android:id="@id/creativeLine1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_below="@id/merchantRating" />
+        <TextView android:textColor="@color/ad_text_gray" android:id="@id/creativeLine2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:layout_below="@id/creativeLine1" />
+        <include layout="@layout/list_item_buttons_ad_style" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/view/android/p;
+.class Lcom/google/googlenav/ui/view/android/P;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/android/o;
+.field final synthetic a:Lcom/google/googlenav/ui/view/android/N;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/o;)V
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/N;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/p;->a:Lcom/google/googlenav/ui/view/android/o;
+    .prologue
+    .line 259
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/P;->a:Lcom/google/googlenav/ui/view/android/N;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,31 +26,16 @@
 
 
 # virtual methods
-.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 8
+.method public onClick(Landroid/view/View;)V
+    .registers 3
+    .parameter
 
-    invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
+    .prologue
+    .line 262
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/P;->a:Lcom/google/googlenav/ui/view/android/N;
 
-    move-result-object v0
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/N;->f(Lcom/google/googlenav/ui/view/android/N;)V
 
-    check-cast v0, Landroid/widget/ListAdapter;
-
-    if-eqz v0, :cond_13
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/p;->a:Lcom/google/googlenav/ui/view/android/o;
-
-    invoke-interface {v0, p3}, Landroid/widget/ListAdapter;->getItem(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlenav/ui/bb;
-
-    invoke-virtual {v1, v0}, Lcom/google/googlenav/ui/view/android/o;->b(Lcom/google/googlenav/ui/bb;)Z
-
-    :cond_13
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/p;->a:Lcom/google/googlenav/ui/view/android/o;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/o;->m()V
-
+    .line 263
     return-void
 .end method

@@ -30,7 +30,7 @@
     .line 1577
     iput-object p1, p0, Lcom/google/android/videochat/CallManager$NetworkStateReceiver$1;->this$1:Lcom/google/android/videochat/CallManager$NetworkStateReceiver;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

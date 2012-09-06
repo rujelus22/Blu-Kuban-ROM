@@ -3,18 +3,8 @@
 .source "EmailSyncAlarmReceiver.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/android/exchange/EmailSyncAlarmReceiver$MessageInfoToNotifyListItem;
-    }
-.end annotation
-
-
 # instance fields
 .field final MAILBOX_DATA_PROJECTION:[Ljava/lang/String;
-
-.field uri:Landroid/net/Uri;
 
 
 # direct methods
@@ -22,11 +12,11 @@
     .registers 4
 
     .prologue
-    .line 47
+    .line 51
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 51
-    const/4 v0, 0x2
+    .line 52
+    const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -36,15 +26,8 @@
 
     aput-object v2, v0, v1
 
-    const/4 v1, 0x1
-
-    const-string v2, "_id"
-
-    aput-object v2, v0, v1
-
     iput-object v0, p0, Lcom/android/exchange/EmailSyncAlarmReceiver;->MAILBOX_DATA_PROJECTION:[Ljava/lang/String;
 
-    .line 65
     return-void
 .end method
 
@@ -54,454 +37,252 @@
     .parameter "x1"
 
     .prologue
-    .line 47
+    .line 51
     invoke-direct {p0, p1}, Lcom/android/exchange/EmailSyncAlarmReceiver;->handleReceive(Landroid/content/Context;)V
 
     return-void
 .end method
 
 .method private handleReceive(Landroid/content/Context;)V
-    .registers 27
+    .registers 15
     .parameter "context"
 
     .prologue
-    .line 89
-    const-string v2, "TAG"
+    .line 64
+    new-instance v11, Ljava/util/ArrayList;
 
-    const-string v3, "EmailSyncAlarmReceiver: handleReceive() called "
+    invoke-direct {v11}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    .line 65
+    .local v11, mailboxesToNotify:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
+    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    .line 91
-    new-instance v23, Ljava/util/ArrayList;
+    move-result-object v0
 
-    invoke-direct/range {v23 .. v23}, Ljava/util/ArrayList;-><init>()V
+    .line 66
+    .local v0, cr:Landroid/content/ContentResolver;
+    const/4 v12, 0x0
 
-    .line 94
-    .local v23, mailboxesToNotify:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/exchange/EmailSyncAlarmReceiver$MessageInfoToNotifyListItem;>;"
-    invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    .line 95
-    .local v1, cr:Landroid/content/ContentResolver;
-    const/16 v24, 0x0
-
-    .line 99
-    .local v24, messageCount:I
+    .line 69
+    .local v12, messageCount:I
     invoke-static {}, Lcom/android/exchange/ExchangeService;->getEasAccountSelector()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    .line 102
-    .local v4, selector:Ljava/lang/String;
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Message;->DELETED_CONTENT_URI:Landroid/net/Uri;
+    .line 73
+    .local v3, selector:Ljava/lang/String;
+    :try_start_e
+    sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Message;->DELETED_CONTENT_URI:Landroid/net/Uri;
 
-    move-object/from16 v0, p0
+    iget-object v2, p0, Lcom/android/exchange/EmailSyncAlarmReceiver;->MAILBOX_DATA_PROJECTION:[Ljava/lang/String;
 
-    iget-object v3, v0, Lcom/android/exchange/EmailSyncAlarmReceiver;->MAILBOX_DATA_PROJECTION:[Ljava/lang/String;
+    const/4 v4, 0x0
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
-    invoke-virtual/range {v1 .. v6}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+    move-result-object v6
 
-    move-result-object v17
+    .line 75
+    .local v6, c:Landroid/database/Cursor;
+    if-nez v6, :cond_29
 
-    .line 107
-    .local v17, c:Landroid/database/Cursor;
-    if-eqz v17, :cond_56
+    new-instance v1, Lcom/android/emailcommon/provider/ProviderUnavailableException;
 
-    .line 108
-    :cond_24
-    :goto_24
-    :try_start_24
-    invoke-interface/range {v17 .. v17}, Landroid/database/Cursor;->moveToNext()Z
+    invoke-direct {v1}, Lcom/android/emailcommon/provider/ProviderUnavailableException;-><init>()V
 
-    move-result v2
-
-    if-eqz v2, :cond_56
-
-    .line 109
-    add-int/lit8 v24, v24, 0x1
+    throw v1
+    :try_end_20
+    .catch Lcom/android/emailcommon/provider/ProviderUnavailableException; {:try_start_e .. :try_end_20} :catch_20
 
     .line 110
-    const/4 v2, 0x0
-
-    move-object/from16 v0, v17
-
-    invoke-interface {v0, v2}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v7
+    .end local v6           #c:Landroid/database/Cursor;
+    :catch_20
+    move-exception v7
 
     .line 111
-    .local v7, mailboxId:J
-    const/4 v2, 0x1
+    .local v7, e:Lcom/android/emailcommon/provider/ProviderUnavailableException;
+    const-string v1, "EmailSyncAlarmReceiver"
 
-    move-object/from16 v0, v17
+    const-string v2, "EmailProvider unavailable; aborting alarm receiver"
 
-    invoke-interface {v0, v2}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v9
-
-    .line 112
-    .local v9, messageId:J
-    new-instance v5, Lcom/android/exchange/EmailSyncAlarmReceiver$MessageInfoToNotifyListItem;
-
-    move-object/from16 v6, p0
-
-    invoke-direct/range {v5 .. v10}, Lcom/android/exchange/EmailSyncAlarmReceiver$MessageInfoToNotifyListItem;-><init>(Lcom/android/exchange/EmailSyncAlarmReceiver;JJ)V
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 113
-    .local v5, notifyItem:Lcom/android/exchange/EmailSyncAlarmReceiver$MessageInfoToNotifyListItem;
-    move-object/from16 v0, v23
+    .end local v7           #e:Lcom/android/emailcommon/provider/ProviderUnavailableException;
+    :cond_28
+    return-void
 
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    .line 78
+    .restart local v6       #c:Landroid/database/Cursor;
+    :cond_29
+    :goto_29
+    :try_start_29
+    invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_24
+    if-eqz v1, :cond_4d
 
-    .line 114
-    move-object/from16 v0, v23
+    .line 79
+    add-int/lit8 v12, v12, 0x1
 
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_4e
-    .catchall {:try_start_24 .. :try_end_4e} :catchall_4f
+    .line 80
+    const/4 v1, 0x0
 
-    goto :goto_24
-
-    .line 119
-    .end local v5           #notifyItem:Lcom/android/exchange/EmailSyncAlarmReceiver$MessageInfoToNotifyListItem;
-    .end local v7           #mailboxId:J
-    .end local v9           #messageId:J
-    :catchall_4f
-    move-exception v2
-
-    if-eqz v17, :cond_55
-
-    .line 120
-    invoke-interface/range {v17 .. v17}, Landroid/database/Cursor;->close()V
-
-    .line 119
-    :cond_55
-    throw v2
-
-    :cond_56
-    if-eqz v17, :cond_5b
-
-    .line 120
-    invoke-interface/range {v17 .. v17}, Landroid/database/Cursor;->close()V
-
-    .line 124
-    :cond_5b
-    sget-object v12, Lcom/android/emailcommon/provider/EmailContent$Message;->UPDATED_CONTENT_URI:Landroid/net/Uri;
-
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/exchange/EmailSyncAlarmReceiver;->MAILBOX_DATA_PROJECTION:[Ljava/lang/String;
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    move-object v11, v1
-
-    move-object v14, v4
-
-    invoke-virtual/range {v11 .. v16}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v17
-
-    .line 128
-    if-eqz v17, :cond_9e
-
-    .line 129
-    :cond_6c
-    :goto_6c
-    :try_start_6c
-    invoke-interface/range {v17 .. v17}, Landroid/database/Cursor;->moveToNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_9e
-
-    .line 130
-    add-int/lit8 v24, v24, 0x1
-
-    .line 131
-    const/4 v2, 0x0
-
-    move-object/from16 v0, v17
-
-    invoke-interface {v0, v2}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v7
-
-    .line 132
-    .restart local v7       #mailboxId:J
-    const/4 v2, 0x1
-
-    move-object/from16 v0, v17
-
-    invoke-interface {v0, v2}, Landroid/database/Cursor;->getLong(I)J
+    invoke-interface {v6, v1}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v9
 
-    .line 133
-    .restart local v9       #messageId:J
-    new-instance v5, Lcom/android/exchange/EmailSyncAlarmReceiver$MessageInfoToNotifyListItem;
+    .line 81
+    .local v9, mailboxId:J
+    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-object/from16 v6, p0
+    move-result-object v1
 
-    invoke-direct/range {v5 .. v10}, Lcom/android/exchange/EmailSyncAlarmReceiver$MessageInfoToNotifyListItem;-><init>(Lcom/android/exchange/EmailSyncAlarmReceiver;JJ)V
+    invoke-virtual {v11, v1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    .line 134
-    .restart local v5       #notifyItem:Lcom/android/exchange/EmailSyncAlarmReceiver$MessageInfoToNotifyListItem;
-    move-object/from16 v0, v23
+    move-result v1
 
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    if-nez v1, :cond_29
 
-    move-result v2
+    .line 82
+    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    if-nez v2, :cond_6c
+    move-result-object v1
 
-    .line 135
-    move-object/from16 v0, v23
+    invoke-virtual {v11, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :try_end_47
+    .catchall {:try_start_29 .. :try_end_47} :catchall_48
 
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_96
-    .catchall {:try_start_6c .. :try_end_96} :catchall_97
+    goto :goto_29
 
-    goto :goto_6c
+    .line 86
+    .end local v9           #mailboxId:J
+    :catchall_48
+    move-exception v1
 
-    .line 140
-    .end local v5           #notifyItem:Lcom/android/exchange/EmailSyncAlarmReceiver$MessageInfoToNotifyListItem;
-    .end local v7           #mailboxId:J
-    .end local v9           #messageId:J
-    :catchall_97
-    move-exception v2
+    :try_start_49
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    if-eqz v17, :cond_9d
+    throw v1
 
-    .line 141
-    invoke-interface/range {v17 .. v17}, Landroid/database/Cursor;->close()V
+    :cond_4d
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 140
-    :cond_9d
-    throw v2
+    .line 90
+    sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Message;->UPDATED_CONTENT_URI:Landroid/net/Uri;
 
-    :cond_9e
-    if-eqz v17, :cond_a3
+    iget-object v2, p0, Lcom/android/exchange/EmailSyncAlarmReceiver;->MAILBOX_DATA_PROJECTION:[Ljava/lang/String;
 
-    .line 141
-    invoke-interface/range {v17 .. v17}, Landroid/database/Cursor;->close()V
+    const/4 v4, 0x0
 
-    .line 145
-    :cond_a3
-    invoke-virtual/range {v23 .. v23}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    const/4 v5, 0x0
 
-    move-result-object v20
+    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
-    .local v20, i$:Ljava/util/Iterator;
-    :goto_a7
-    invoke-interface/range {v20 .. v20}, Ljava/util/Iterator;->hasNext()Z
+    move-result-object v6
 
-    move-result v2
+    .line 92
+    if-nez v6, :cond_62
 
-    if-eqz v2, :cond_131
+    new-instance v1, Lcom/android/emailcommon/provider/ProviderUnavailableException;
 
-    invoke-interface/range {v20 .. v20}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-direct {v1}, Lcom/android/emailcommon/provider/ProviderUnavailableException;-><init>()V
 
-    move-result-object v21
+    throw v1
+    :try_end_62
+    .catch Lcom/android/emailcommon/provider/ProviderUnavailableException; {:try_start_49 .. :try_end_62} :catch_20
 
-    check-cast v21, Lcom/android/exchange/EmailSyncAlarmReceiver$MessageInfoToNotifyListItem;
+    .line 95
+    :cond_62
+    :goto_62
+    :try_start_62
+    invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
 
-    .line 146
-    .local v21, item:Lcom/android/exchange/EmailSyncAlarmReceiver$MessageInfoToNotifyListItem;
-    move-object/from16 v0, v21
+    move-result v1
 
-    iget-wide v7, v0, Lcom/android/exchange/EmailSyncAlarmReceiver$MessageInfoToNotifyListItem;->mailboxId:J
+    if-eqz v1, :cond_86
 
-    .line 147
-    .restart local v7       #mailboxId:J
-    move-object/from16 v0, v21
+    .line 96
+    add-int/lit8 v12, v12, 0x1
 
-    iget-wide v9, v0, Lcom/android/exchange/EmailSyncAlarmReceiver$MessageInfoToNotifyListItem;->messageId:J
+    .line 97
+    const/4 v1, 0x0
 
-    .line 149
-    .restart local v9       #messageId:J
-    const/16 v22, 0x0
+    invoke-interface {v6, v1}, Landroid/database/Cursor;->getLong(I)J
 
-    .line 151
-    .local v22, mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    const-wide/16 v2, 0x0
+    move-result-wide v9
 
-    cmp-long v2, v7, v2
+    .line 98
+    .restart local v9       #mailboxId:J
+    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    if-ltz v2, :cond_c9
+    move-result-object v1
 
-    .line 152
-    :try_start_c3
-    move-object/from16 v0, p1
+    invoke-virtual {v11, v1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    invoke-static {v0, v7, v8}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    :try_end_c8
-    .catch Ljava/lang/Exception; {:try_start_c3 .. :try_end_c8} :catch_121
+    move-result v1
 
-    move-result-object v22
+    if-nez v1, :cond_62
 
-    .line 157
-    :cond_c9
-    :goto_c9
-    if-eqz v22, :cond_12b
+    .line 99
+    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-object/from16 v0, v22
+    move-result-object v1
 
-    iget v2, v0, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
+    invoke-virtual {v11, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :try_end_80
+    .catchall {:try_start_62 .. :try_end_80} :catchall_81
 
-    const/4 v3, 0x3
+    goto :goto_62
 
-    if-eq v2, v3, :cond_d9
+    .line 103
+    .end local v9           #mailboxId:J
+    :catchall_81
+    move-exception v1
 
-    move-object/from16 v0, v22
+    :try_start_82
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    iget v2, v0, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
+    throw v1
 
-    const/4 v3, 0x4
+    :cond_86
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    if-ne v2, v3, :cond_12b
+    .line 107
+    invoke-virtual {v11}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    .line 159
-    :cond_d9
-    const-string v2, "TAG"
+    move-result-object v8
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    .local v8, i$:Ljava/util/Iterator;
+    :goto_8d
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v1
 
-    const-string v6, "EmailSyncAlarmReceiver: remove trying to upsync for draft box or Outbox.. : mMailbox.mType = "
+    if-eqz v1, :cond_28
 
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v9
 
-    move-object/from16 v0, v22
+    check-cast v9, Ljava/lang/Long;
 
-    iget v6, v0, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
+    .line 108
+    .local v9, mailboxId:Ljava/lang/Long;
+    invoke-virtual {v9}, Ljava/lang/Long;->longValue()J
 
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-wide v1
 
-    move-result-object v3
+    const/4 v4, 0x0
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1, v2, v4}, Lcom/android/exchange/ExchangeService;->serviceRequest(JI)V
+    :try_end_a1
+    .catch Lcom/android/emailcommon/provider/ProviderUnavailableException; {:try_start_82 .. :try_end_a1} :catch_20
 
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 164
-    :try_start_f5
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Message;->UPDATED_CONTENT_URI:Landroid/net/Uri;
-
-    invoke-static {v2, v9, v10}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v2
-
-    move-object/from16 v0, p0
-
-    iput-object v2, v0, Lcom/android/exchange/EmailSyncAlarmReceiver;->uri:Landroid/net/Uri;
-
-    .line 165
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/exchange/EmailSyncAlarmReceiver;->uri:Landroid/net/Uri;
-
-    const/4 v3, 0x0
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v1, v2, v3, v6}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_108
-    .catch Ljava/lang/Exception; {:try_start_f5 .. :try_end_108} :catch_126
-
-    .line 171
-    :goto_108
-    :try_start_108
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Message;->DELETED_CONTENT_URI:Landroid/net/Uri;
-
-    invoke-static {v2, v9, v10}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v2
-
-    move-object/from16 v0, p0
-
-    iput-object v2, v0, Lcom/android/exchange/EmailSyncAlarmReceiver;->uri:Landroid/net/Uri;
-
-    .line 172
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/exchange/EmailSyncAlarmReceiver;->uri:Landroid/net/Uri;
-
-    const/4 v3, 0x0
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v1, v2, v3, v6}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_11b
-    .catch Ljava/lang/Exception; {:try_start_108 .. :try_end_11b} :catch_11c
-
-    goto :goto_a7
-
-    .line 173
-    :catch_11c
-    move-exception v18
-
-    .line 174
-    .local v18, e:Ljava/lang/Exception;
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/Exception;->printStackTrace()V
-
-    goto :goto_a7
-
-    .line 154
-    .end local v18           #e:Ljava/lang/Exception;
-    :catch_121
-    move-exception v19
-
-    .line 155
-    .local v19, ex:Ljava/lang/Exception;
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/Exception;->printStackTrace()V
-
-    goto :goto_c9
-
-    .line 166
-    .end local v19           #ex:Ljava/lang/Exception;
-    :catch_126
-    move-exception v18
-
-    .line 167
-    .restart local v18       #e:Ljava/lang/Exception;
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/Exception;->printStackTrace()V
-
-    goto :goto_108
-
-    .line 178
-    .end local v18           #e:Ljava/lang/Exception;
-    :cond_12b
-    const/4 v2, 0x0
-
-    invoke-static {v7, v8, v2}, Lcom/android/exchange/ExchangeService;->serviceRequest(JI)V
-
-    goto/16 :goto_a7
-
-    .line 181
-    .end local v7           #mailboxId:J
-    .end local v9           #messageId:J
-    .end local v21           #item:Lcom/android/exchange/EmailSyncAlarmReceiver$MessageInfoToNotifyListItem;
-    .end local v22           #mMailbox:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-    :cond_131
-    return-void
+    goto :goto_8d
 .end method
 
 
@@ -512,7 +293,7 @@
     .parameter "intent"
 
     .prologue
-    .line 57
+    .line 56
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Lcom/android/exchange/EmailSyncAlarmReceiver$1;
@@ -523,6 +304,6 @@
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 63
+    .line 61
     return-void
 .end method

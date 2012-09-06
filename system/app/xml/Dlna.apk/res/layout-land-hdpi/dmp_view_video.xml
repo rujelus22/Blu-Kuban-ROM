@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center" android:id="@id/view_holder" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    <include android:id="@id/view_stub" layout="@layout/dmp_view_stub" />
-</RelativeLayout>

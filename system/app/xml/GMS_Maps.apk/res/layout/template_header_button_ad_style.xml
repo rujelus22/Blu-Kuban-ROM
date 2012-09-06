@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/list_item_background" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="40.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="5.0dip" android:layout_weight="1.0" style="?android:attr/buttonBarButtonStyle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:id="@id/buttonIcon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" />
+        <TextView android:textSize="13.0sp" android:ellipsize="end" android:id="@id/buttonText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    </LinearLayout>
+    <ImageView android:layout_gravity="top|right|center" android:id="@id/buttonSuperscriptIcon" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</FrameLayout>

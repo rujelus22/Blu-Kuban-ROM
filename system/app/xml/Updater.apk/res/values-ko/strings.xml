@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rom">롬</string>
+    <string name="homepage">홈페이지</string>
+    <string name="plugin">플러그인</string>
+    <string name="Themes">테마</string>
+    <string name="apps">앱</string>
+    <string name="kernel">커널</string>
+    <string name="app_name">Update Me 스마트 폰</string>
+    <string name="check_rom_update">롬 업데이트 확인</string>
+    <string name="exit">종료</string>
+    <string name="info">정보(한글화:요모조모)</string>
+    <string name="costumization">커스터마이징</string>
+    <string name="settings">설정</string>
+    <string name="downloading_file">파일 다운로드 중....</string>
+    <string name="md5_ok">MD5 확인 완료</string>
+    <string name="md5_error">MD5 확인 실패</string>
+    <string name="file_downloaded">파일 다운 경로:</string>
+    <string name="reboot_to_recovery">리커버리로 다시 시작할까요?</string>
+    <string name="ok">확인</string>
+    <string name="cancel">취소</string>
+    <string name="new_rom">최신의 롬을 사용할 수 있습니다!</string>
+    <string name="download_new_rom">최신 롬 다운로드</string>
+    <string name="changelog">체인지 로그</string>
+    <string name="reload_apps">앱 다시 불러오기</string>
+    <string name="check_rom_startup">부팅 시 롬 업데이트 확인</string>
+    <string name="choose_download_dir">다운로드 디렉토리 지정</string>
+    <string name="reboot_recovery">리커버리로 다시 시작</string>
+    <string name="donate">롬 제작자에 기부</string>
+    <string name="donate_acquariusoft">acquariusoft에게 기부</string>
+    <string name="donate_acquariusoft_desc">Update me 제작자</string>
+    <string name="no_update_available">가능한 업데이트가 없습니다</string>
+    <string name="use_light_theme">밝은 테마 사용</string>
+    <string name="reboot_to_enable">설정한 항목을 활성화 시키기 위해 앱 다시 시작</string>
+    <string name="reboot_and_install">재시작 후 설치하기</string>
+    <string name="downloaded_files">다운로드된 파일</string>
+    <string name="cwm_flip_sdcard">CWM에서 SD카드 명 뒤집기(Flip)</string>
+    <string name="cwm_flip_sdcard_desc">"cwm에서 자동적으로 zip파일을 자동으로 플래싱하지 못할 때 유용합니다.
+(예:갤럭시s2)\u0009"</string>
+    <string name="dialog_donate_title">기부하기</string>
+    <string name="dialog_donate_text">"이 앱을 사용한다면, 기능 향상을 위해 앱개발자에게 기부해주세요.
+Paypal을 통해 기부하거나 도네이트버전을 구매할 수 있습니다."</string>
+    <string name="dialog_donate_paypal">페이팔</string>
+    <string name="dialog_donate_market">Play스토어</string>
+    <string name="error">에러</string>
+    <string name="error_on_donwload">파일 다운로드에 오류가 있었습니다</string>
+    <string name="install">설치</string>
+    <string name="click_for_update_market">Play 스토어에서 업데이트 확인</string>
+    <string name="reboot_type">재부팅 타입</string>
+    <string name="alert_no_config">"사용가능한 항목이 없습니다!!
+
+이 롬에서 Update Me를 통한 업데이트를 지원하지 않습니다.
+롬 제작자에게 Update Me를 지원하도록 요청하거나, 지원되는 롬 목록을 확인하세요!
+
+앱 개발자의 잘못이 아니므로, 마켓에 악평쓰지 마세요!"</string>
+    <string name="compatible_rom_list">지원되는 롬 목록</string>
+    <string name="check_rom_time">롬 확인 시간 (시간)</string>
+    <string name="disable_check_rom">롬 자동 체크 해제</string>
+    <string name="recovery">리커버리</string>
+    <string name="option">설정</string>
+    <string name="other">기타</string>
+    <string name="buy_donated">도네이트 버전 구매</string>
+    <string name="buy_donated_desc">이 광고를 숨기고 더 많은 기능을 얻으세요...</string>
+    <string name="download_script">스크립트 다운로드</string>
+    <string name="script_title">제목</string>
+    <string name="script_desc">내용</string>
+    <string name="script_text">스크립트</string>
+    <string name="script_create_your">스크립트를 편집하세요</string>
+    <string name="script_insert">삽입</string>
+    <string name="script_inserted">스크립트가 삽입됨</string>
+    <string name="script_create_new">새 스크립트</string>
+    <string name="delete">삭제</string>
+    <string name="share_rom">당신의 롬을 공유하세요.</string>
+    <string name="full_wipe">설치시 풀와잎</string>
+    <string name="full_wipe_recommended">풀와잎이 권장됩니다!</string>
+    <string name="system_app">시스템 앱</string>
+    <string name="system_app_desc">"이것은 시스템 앱입니다. 지우면 기기에 손상을 줄 가능성(벽돌)이 있습니다!!!
+이 앱을 지울까요?"</string>
+    <string name="installed_apps">설치된 앱</string>
+    <string name="download_the_file">파일을 다운로드 할까요?</string>
+</resources>

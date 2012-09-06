@@ -1,19 +1,28 @@
-.class LaZ/e;
+.class Laz/e;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/maps/driveabout/vector/aF;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:LaZ/b;
+.field final synthetic a:Laz/m;
+
+.field final synthetic b:Laz/a;
 
 
 # direct methods
-.method constructor <init>(LaZ/b;)V
-    .registers 2
+.method constructor <init>(Laz/a;Laz/m;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, LaZ/e;->a:LaZ/b;
+    .prologue
+    .line 490
+    iput-object p1, p0, Laz/e;->b:Laz/a;
+
+    iput-object p2, p0, Laz/e;->a:Laz/m;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,29 +31,59 @@
 
 
 # virtual methods
-.method public a(Lcom/google/android/maps/driveabout/vector/aE;)V
-    .registers 5
+.method public run()V
+    .registers 4
 
-    iget-object v0, p0, LaZ/e;->a:LaZ/b;
+    .prologue
+    .line 493
+    iget-object v0, p0, Laz/e;->a:Laz/m;
 
-    invoke-static {v0}, LaZ/b;->g(LaZ/b;)LaY/x;
+    new-instance v1, Laz/l;
 
-    move-result-object v0
+    invoke-direct {v1}, Laz/l;-><init>()V
 
-    if-eqz v0, :cond_15
+    iget-object v2, p0, Laz/e;->b:Laz/a;
 
-    iget-object v1, p0, LaZ/e;->a:LaZ/b;
-
-    invoke-virtual {v0}, LaY/x;->as()Lcom/google/googlenav/E;
+    invoke-static {v2}, Laz/a;->j(Laz/a;)[Laz/f;
 
     move-result-object v2
 
-    invoke-interface {v2}, Lcom/google/googlenav/E;->c()I
+    invoke-virtual {v1, v2}, Laz/l;->a([Laz/f;)Laz/l;
+
+    move-result-object v1
+
+    iget-object v2, p0, Laz/e;->b:Laz/a;
+
+    invoke-static {v2}, Laz/a;->a(Laz/a;)Laz/f;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Laz/l;->a(Laz/f;)Laz/l;
+
+    move-result-object v1
+
+    iget-object v2, p0, Laz/e;->b:Laz/a;
+
+    invoke-static {v2}, Laz/a;->i(Laz/a;)[Laz/f;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Laz/l;->b([Laz/f;)Laz/l;
+
+    move-result-object v1
+
+    iget-object v2, p0, Laz/e;->b:Laz/a;
+
+    invoke-static {v2}, Laz/a;->d(Laz/a;)I
 
     move-result v2
 
-    invoke-static {v1, v0, v2}, LaZ/b;->a(LaZ/b;LaY/i;I)V
+    invoke-virtual {v1, v2}, Laz/l;->a(I)Laz/l;
 
-    :cond_15
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Laz/m;->onOfflineDataUpdate(Laz/l;)V
+
+    .line 499
     return-void
 .end method

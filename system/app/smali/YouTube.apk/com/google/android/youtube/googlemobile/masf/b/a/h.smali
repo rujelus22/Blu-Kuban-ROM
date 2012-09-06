@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/youtube/googlemobile/masf/f;Lcom/google/android/youtube/googlemobile/common/c/c;Lcom/google/android/youtube/googlemobile/masf/a/d;)V
-    .registers 6
+    .registers 7
 
     invoke-direct {p0}, Lcom/google/android/youtube/googlemobile/masf/b/a/e;-><init>()V
 
@@ -50,7 +50,9 @@
 
     new-instance v1, Lcom/google/android/youtube/googlemobile/masf/b/a/m;
 
-    invoke-direct {v1, p0}, Lcom/google/android/youtube/googlemobile/masf/b/a/m;-><init>(Lcom/google/android/youtube/googlemobile/masf/b/a/h;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Lcom/google/android/youtube/googlemobile/masf/b/a/m;-><init>(Lcom/google/android/youtube/googlemobile/masf/b/a/h;B)V
 
     invoke-direct {v0, p2, v1}, Lcom/google/android/youtube/googlemobile/common/c/b;-><init>(Lcom/google/android/youtube/googlemobile/common/c/c;Ljava/lang/Runnable;)V
 

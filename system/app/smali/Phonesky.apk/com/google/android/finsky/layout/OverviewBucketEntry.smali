@@ -6,23 +6,23 @@
 # instance fields
 .field protected mBadge:Lcom/google/android/finsky/layout/DecoratedTextView;
 
-.field private final mBitmapLoadedHandler:Lcom/google/android/finsky/utils/BitmapLoader$BitmapLoadedHandler;
-
-.field private final mBottomSeparatorPaint:Landroid/graphics/Paint;
-
 .field protected mCreator:Lcom/google/android/finsky/layout/DecoratedTextView;
 
-.field private mIsLastRow:Z
+.field private final mHalfSeparatorThickness:I
 
-.field private final mLeftSeparatorPaint:Landroid/graphics/Paint;
+.field private mIsLastRow:Z
 
 .field protected mPrice:Landroid/widget/TextView;
 
 .field protected mRating:Landroid/widget/RatingBar;
 
-.field private mShowLeft:Z
+.field private final mSeparatorPaint:Landroid/graphics/Paint;
 
-.field protected mThumbnail:Landroid/widget/ImageView;
+.field private final mSeparatorThickness:F
+
+.field private mShowRight:Z
+
+.field protected mThumbnail:Lcom/google/android/finsky/layout/SmartThumbnailView;
 
 .field protected mTitle:Landroid/widget/TextView;
 
@@ -33,14 +33,14 @@
     .parameter "context"
 
     .prologue
-    .line 55
+    .line 43
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, v0, v1}, Lcom/google/android/finsky/layout/OverviewBucketEntry;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 56
+    .line 44
     return-void
 .end method
 
@@ -50,409 +50,171 @@
     .parameter "attrs"
 
     .prologue
-    .line 59
+    .line 47
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 60
+    .line 48
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 9
+    .registers 7
     .parameter "context"
     .parameter "attrs"
     .parameter "defStyle"
 
     .prologue
-    const v4, 0x7f0a0013
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
-
-    .line 63
+    .line 51
     invoke-direct {p0, p1, p2, p3}, Lcom/google/android/finsky/layout/CheckedRelativeLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 39
-    iput-boolean v2, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mIsLastRow:Z
+    .line 35
+    iput-boolean v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mIsLastRow:Z
 
-    .line 40
-    iput-boolean v2, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mShowLeft:Z
+    .line 36
+    iput-boolean v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mShowRight:Z
 
-    .line 45
-    new-instance v2, Lcom/google/android/finsky/layout/OverviewBucketEntry$1;
-
-    invoke-direct {v2, p0}, Lcom/google/android/finsky/layout/OverviewBucketEntry$1;-><init>(Lcom/google/android/finsky/layout/OverviewBucketEntry;)V
-
-    iput-object v2, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mBitmapLoadedHandler:Lcom/google/android/finsky/utils/BitmapLoader$BitmapLoadedHandler;
-
-    .line 65
+    .line 53
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 67
+    .line 55
     .local v0, res:Landroid/content/res/Resources;
-    new-instance v2, Landroid/graphics/Paint;
+    const v1, 0x7f0b0029
 
-    invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v2, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mLeftSeparatorPaint:Landroid/graphics/Paint;
-
-    .line 68
-    iget-object v2, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mLeftSeparatorPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getColor(I)I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 69
-    iget-object v2, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mLeftSeparatorPaint:Landroid/graphics/Paint;
-
-    const/high16 v3, 0x3f80
-
-    invoke-static {v3, v0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->getPixelsFromDips(FLandroid/content/res/Resources;)F
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
-
-    .line 71
-    new-instance v2, Landroid/graphics/Paint;
-
-    invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v2, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mBottomSeparatorPaint:Landroid/graphics/Paint;
-
-    .line 72
-    iget-object v2, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mBottomSeparatorPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getColor(I)I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 73
-    const v2, 0x7f0b0036
-
-    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
 
-    .line 74
-    .local v1, thickness:F
-    iget-object v2, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mBottomSeparatorPaint:Landroid/graphics/Paint;
+    int-to-float v1, v1
 
-    invoke-static {v1, v0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->getPixelsFromDips(FLandroid/content/res/Resources;)F
+    iput v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mSeparatorThickness:F
 
-    move-result v3
+    .line 56
+    iget v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mSeparatorThickness:F
 
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+    const/high16 v2, 0x4000
 
-    .line 75
-    return-void
-.end method
+    div-float/2addr v1, v2
 
-.method private static getPixelsFromDips(FLandroid/content/res/Resources;)F
-    .registers 6
-    .parameter "dips"
-    .parameter "res"
-
-    .prologue
-    .line 218
-    const v2, 0x7f0b0036
-
-    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getDimension(I)F
+    invoke-static {v1}, Landroid/util/FloatMath;->ceil(F)F
 
     move-result v1
 
-    .line 219
-    .local v1, thickness:F
-    invoke-virtual {p1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    float-to-int v1, v1
 
-    move-result-object v2
+    iput v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mHalfSeparatorThickness:I
 
-    iget v0, v2, Landroid/util/DisplayMetrics;->density:F
+    .line 57
+    new-instance v1, Landroid/graphics/Paint;
 
-    .line 220
-    .local v0, scale:F
-    mul-float v2, v1, v0
+    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
 
-    float-to-double v2, v2
+    iput-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mSeparatorPaint:Landroid/graphics/Paint;
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
+    .line 58
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mSeparatorPaint:Landroid/graphics/Paint;
 
-    move-result-wide v2
+    const v2, 0x7f0a000f
 
-    double-to-float v2, v2
+    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getColor(I)I
 
-    return v2
-.end method
+    move-result v2
 
-.method private setImage(Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/api/model/Document;)V
-    .registers 15
-    .parameter "mLoader"
-    .parameter "document"
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .prologue
-    const/4 v11, 0x0
+    .line 59
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mSeparatorPaint:Landroid/graphics/Paint;
 
-    .line 176
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->getContext()Landroid/content/Context;
+    iget v2, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mSeparatorThickness:F
 
-    move-result-object v6
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 177
-    .local v6, context:Landroid/content/Context;
-    invoke-virtual {v6}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v9
-
-    .line 178
-    .local v9, res:Landroid/content/res/Resources;
-    const v0, 0x7f0b0033
-
-    invoke-virtual {v9, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v5
-
-    .line 182
-    .local v5, height:I
-    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
-
-    move-result v0
-
-    const/4 v3, 0x2
-
-    if-ne v0, v3, :cond_51
-
-    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getArtistDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_51
-
-    const/4 v10, 0x1
-
-    .line 186
-    .local v10, use2x1Promo:Z
-    :goto_1e
-    if-eqz v10, :cond_53
-
-    .line 187
-    mul-int/lit8 v4, v5, 0x2
-
-    .line 188
-    .local v4, width:I
-    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Lcom/google/android/finsky/utils/CorpusResourceUtils;->getPlaceholderPromo(ILandroid/content/res/Resources;)Landroid/graphics/Bitmap;
-
-    move-result-object v2
-
-    .line 195
-    .local v2, defaultImage:Landroid/graphics/Bitmap;
-    :goto_32
-    iget-object v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Landroid/widget/ImageView;
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->getTag()Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-
-    .line 196
-    .local v8, oldContainer:Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-    invoke-static {p2, v4, v11}, Lcom/google/android/finsky/utils/ThumbnailUtils;->getIconUrlFromDocument(Lcom/google/android/finsky/api/model/Document;II)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 198
-    .local v1, urlToLoad:Ljava/lang/String;
-    if-eqz v8, :cond_67
-
-    invoke-virtual {v8}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getRequestUrl()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_67
-
-    .line 199
-    invoke-virtual {v8}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getRequestUrl()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_64
-
-    .line 215
-    :goto_50
+    .line 60
     return-void
-
-    .end local v1           #urlToLoad:Ljava/lang/String;
-    .end local v2           #defaultImage:Landroid/graphics/Bitmap;
-    .end local v4           #width:I
-    .end local v8           #oldContainer:Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-    .end local v10           #use2x1Promo:Z
-    :cond_51
-    move v10, v11
-
-    .line 182
-    goto :goto_1e
-
-    .line 191
-    .restart local v10       #use2x1Promo:Z
-    :cond_53
-    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
-
-    move-result v0
-
-    invoke-static {v6, v0}, Lcom/google/android/finsky/utils/CorpusResourceUtils;->getRelatedIconWidth(Landroid/content/Context;I)I
-
-    move-result v4
-
-    .line 192
-    .restart local v4       #width:I
-    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
-
-    move-result v0
-
-    invoke-static {v0, v9}, Lcom/google/android/finsky/utils/CorpusResourceUtils;->getPlaceholderIcon(ILandroid/content/res/Resources;)Landroid/graphics/Bitmap;
-
-    move-result-object v2
-
-    .restart local v2       #defaultImage:Landroid/graphics/Bitmap;
-    goto :goto_32
-
-    .line 202
-    .restart local v1       #urlToLoad:Ljava/lang/String;
-    .restart local v8       #oldContainer:Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-    :cond_64
-    invoke-virtual {v8}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->cancelRequest()V
-
-    .line 206
-    :cond_67
-    iget-object v3, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mBitmapLoadedHandler:Lcom/google/android/finsky/utils/BitmapLoader$BitmapLoadedHandler;
-
-    move-object v0, p1
-
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/utils/BitmapLoader;->get(Ljava/lang/String;Landroid/graphics/Bitmap;Lcom/google/android/finsky/utils/BitmapLoader$BitmapLoadedHandler;II)Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-
-    move-result-object v7
-
-    .line 209
-    .local v7, newContainer:Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-    if-lez v4, :cond_78
-
-    .line 210
-    iget-object v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Landroid/widget/ImageView;
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    iput v4, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    .line 212
-    :cond_78
-    iget-object v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, v11}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 213
-    iget-object v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, v7}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
-
-    .line 214
-    iget-object v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Landroid/widget/ImageView;
-
-    invoke-virtual {v7}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
-
-    goto :goto_50
 .end method
 
 
 # virtual methods
 .method public onDraw(Landroid/graphics/Canvas;)V
-    .registers 9
+    .registers 13
     .parameter "canvas"
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    .line 162
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->getHeight()I
-
-    move-result v6
-
-    .line 164
-    .local v6, height:I
-    iget-boolean v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mShowLeft:Z
-
-    if-eqz v0, :cond_12
-
-    .line 165
-    int-to-float v4, v6
-
-    iget-object v5, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mLeftSeparatorPaint:Landroid/graphics/Paint;
-
-    move-object v0, p1
-
-    move v2, v1
-
-    move v3, v1
-
-    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-
-    .line 168
-    :cond_12
-    iget-boolean v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mIsLastRow:Z
-
-    if-nez v0, :cond_23
-
-    .line 169
-    int-to-float v2, v6
-
+    .line 175
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->getWidth()I
 
-    move-result v0
+    move-result v10
 
-    int-to-float v3, v0
+    .line 176
+    .local v10, width:I
+    invoke-virtual {p0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->getHeight()I
 
-    int-to-float v4, v6
+    move-result v8
 
-    iget-object v5, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mBottomSeparatorPaint:Landroid/graphics/Paint;
+    .line 178
+    .local v8, height:I
+    iget-boolean v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mShowRight:Z
+
+    if-eqz v0, :cond_1a
+
+    .line 179
+    iget v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mHalfSeparatorThickness:I
+
+    sub-int v9, v10, v0
+
+    .line 180
+    .local v9, rightX:I
+    int-to-float v1, v9
+
+    int-to-float v3, v9
+
+    int-to-float v4, v8
+
+    iget-object v5, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mSeparatorPaint:Landroid/graphics/Paint;
 
     move-object v0, p1
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 172
-    :cond_23
+    .line 183
+    .end local v9           #rightX:I
+    :cond_1a
+    iget-boolean v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mIsLastRow:Z
+
+    if-nez v0, :cond_2b
+
+    .line 184
+    iget v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mHalfSeparatorThickness:I
+
+    sub-int v7, v8, v0
+
+    .line 185
+    .local v7, bottomY:I
+    int-to-float v3, v7
+
+    int-to-float v4, v10
+
+    int-to-float v5, v7
+
+    iget-object v6, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mSeparatorPaint:Landroid/graphics/Paint;
+
+    move-object v1, p1
+
+    invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    .line 188
+    .end local v7           #bottomY:I
+    :cond_2b
     invoke-super {p0, p1}, Lcom/google/android/finsky/layout/CheckedRelativeLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 173
+    .line 189
     return-void
 .end method
 
@@ -460,22 +222,22 @@
     .registers 2
 
     .prologue
-    .line 79
+    .line 64
     invoke-super {p0}, Lcom/google/android/finsky/layout/CheckedRelativeLayout;->onFinishInflate()V
 
-    .line 81
-    const v0, 0x7f080013
+    .line 66
+    const v0, 0x7f08001b
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/ImageView;
+    check-cast v0, Lcom/google/android/finsky/layout/SmartThumbnailView;
 
-    iput-object v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Landroid/widget/ImageView;
+    iput-object v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Lcom/google/android/finsky/layout/SmartThumbnailView;
 
-    .line 82
-    const v0, 0x7f080017
+    .line 67
+    const v0, 0x7f08001e
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->findViewById(I)Landroid/view/View;
 
@@ -485,8 +247,8 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mTitle:Landroid/widget/TextView;
 
-    .line 83
-    const v0, 0x7f080018
+    .line 68
+    const v0, 0x7f08001f
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->findViewById(I)Landroid/view/View;
 
@@ -496,8 +258,8 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mCreator:Lcom/google/android/finsky/layout/DecoratedTextView;
 
-    .line 84
-    const v0, 0x7f080015
+    .line 69
+    const v0, 0x7f08001c
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->findViewById(I)Landroid/view/View;
 
@@ -507,8 +269,8 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mPrice:Landroid/widget/TextView;
 
-    .line 85
-    const v0, 0x7f08012e
+    .line 70
+    const v0, 0x7f080164
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->findViewById(I)Landroid/view/View;
 
@@ -518,8 +280,8 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mBadge:Lcom/google/android/finsky/layout/DecoratedTextView;
 
-    .line 86
-    const v0, 0x7f08012d
+    .line 71
+    const v0, 0x7f080163
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->findViewById(I)Landroid/view/View;
 
@@ -529,166 +291,218 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mRating:Landroid/widget/RatingBar;
 
-    .line 87
+    .line 72
     return-void
 .end method
 
 .method public setDocument(Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/api/model/Document;Z)V
-    .registers 11
+    .registers 13
     .parameter "bitmapLoader"
     .parameter "document"
     .parameter "isLastRow"
 
     .prologue
-    const/4 v6, 0x1
+    const/4 v4, 0x1
 
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
-    .line 98
+    .line 83
     iput-boolean p3, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mIsLastRow:Z
 
-    .line 101
-    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
+    .line 85
+    iget-object v5, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mTitle:Landroid/widget/TextView;
+
+    invoke-virtual {v5, v3}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 86
+    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {p0, v5}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->setTitle(Ljava/lang/String;)V
+
+    .line 88
+    iget-object v5, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mCreator:Lcom/google/android/finsky/layout/DecoratedTextView;
+
+    invoke-virtual {v5, v3}, Lcom/google/android/finsky/layout/DecoratedTextView;->setVisibility(I)V
+
+    .line 89
+    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getDocumentType()I
 
     move-result v1
 
-    invoke-static {v1}, Lcom/google/android/finsky/utils/CorpusResourceUtils;->getCorpusCellContentDescriptionResource(I)I
+    .line 90
+    .local v1, docType:I
+    const/16 v5, 0x10
 
-    move-result v0
+    if-eq v1, v5, :cond_21
 
-    .line 103
-    .local v0, descriptionStringId:I
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->getContext()Landroid/content/Context;
+    const/16 v5, 0x11
 
-    move-result-object v1
+    if-ne v1, v5, :cond_99
 
-    const/4 v2, 0x2
+    :cond_21
+    move v2, v4
 
-    new-array v2, v2, [Ljava/lang/Object;
+    .line 92
+    .local v2, isMagazine:Z
+    :goto_22
+    iget-object v6, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mCreator:Lcom/google/android/finsky/layout/DecoratedTextView;
 
-    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
+    if-eqz v2, :cond_9b
 
-    move-result-object v3
+    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getSubtitle()Ljava/lang/String;
 
-    aput-object v3, v2, v5
+    move-result-object v5
 
-    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getCreator()Ljava/lang/String;
+    :goto_2a
+    invoke-virtual {v6, v5}, Lcom/google/android/finsky/layout/DecoratedTextView;->setText(Ljava/lang/CharSequence;)V
 
-    move-result-object v3
+    .line 94
+    iget-object v5, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mRating:Landroid/widget/RatingBar;
 
-    aput-object v3, v2, v6
+    if-eqz v5, :cond_4f
 
-    invoke-virtual {v1, v0, v2}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    .line 106
-    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mTitle:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 107
-    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->setTitle(Ljava/lang/String;)V
-
-    .line 109
-    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mCreator:Lcom/google/android/finsky/layout/DecoratedTextView;
-
-    invoke-virtual {v1, v5}, Lcom/google/android/finsky/layout/DecoratedTextView;->setVisibility(I)V
-
-    .line 110
-    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mCreator:Lcom/google/android/finsky/layout/DecoratedTextView;
-
-    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getCreator()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/DecoratedTextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 112
+    .line 95
     invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->hasRating()Z
 
-    move-result v1
+    move-result v5
 
-    if-eqz v1, :cond_73
+    if-eqz v5, :cond_a0
 
     invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getRatingCount()J
 
-    move-result-wide v1
+    move-result-wide v5
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v7, 0x0
 
-    cmp-long v1, v1, v3
+    cmp-long v5, v5, v7
 
-    if-lez v1, :cond_73
+    if-lez v5, :cond_a0
 
-    .line 113
-    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mRating:Landroid/widget/RatingBar;
+    .line 96
+    iget-object v5, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mRating:Landroid/widget/RatingBar;
 
     invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getStarRating()F
 
-    move-result v2
+    move-result v6
 
-    invoke-virtual {v1, v2}, Landroid/widget/RatingBar;->setRating(F)V
+    invoke-virtual {v5, v6}, Landroid/widget/RatingBar;->setRating(F)V
+
+    .line 97
+    iget-object v5, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mRating:Landroid/widget/RatingBar;
+
+    invoke-virtual {v5, v3}, Landroid/widget/RatingBar;->setVisibility(I)V
+
+    .line 103
+    :cond_4f
+    :goto_4f
+    iget-object v5, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mCreator:Lcom/google/android/finsky/layout/DecoratedTextView;
+
+    const/4 v6, -0x1
+
+    invoke-static {p2, p1, v5, v6}, Lcom/google/android/finsky/utils/BadgeUtils;->configureCreatorBadge(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/layout/DecoratedTextView;I)V
+
+    .line 104
+    iget-object v5, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mRating:Landroid/widget/RatingBar;
+
+    iget-object v6, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mBadge:Lcom/google/android/finsky/layout/DecoratedTextView;
+
+    invoke-static {p2, p1, v5, v6}, Lcom/google/android/finsky/utils/BadgeUtils;->configureRatingItemSection(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/utils/BitmapLoader;Landroid/widget/RatingBar;Lcom/google/android/finsky/layout/DecoratedTextView;)V
+
+    .line 106
+    iget-object v5, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mPrice:Landroid/widget/TextView;
+
+    invoke-static {p2, v4, v5}, Lcom/google/android/finsky/utils/PurchaseButtonHelper;->stylePurchaseButton(Lcom/google/android/finsky/api/model/Document;ZLandroid/widget/TextView;)V
+
+    .line 108
+    iget-object v5, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Lcom/google/android/finsky/layout/SmartThumbnailView;
+
+    invoke-virtual {v5, v3}, Lcom/google/android/finsky/layout/SmartThumbnailView;->setVisibility(I)V
+
+    .line 109
+    iget-object v5, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Lcom/google/android/finsky/layout/SmartThumbnailView;
+
+    invoke-virtual {v5, p2, p1}, Lcom/google/android/finsky/layout/SmartThumbnailView;->bind(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/utils/BitmapLoader;)V
+
+    .line 112
+    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
+
+    move-result v5
+
+    invoke-static {v5}, Lcom/google/android/finsky/utils/CorpusResourceUtils;->getCorpusCellContentLongDescriptionResource(I)I
+
+    move-result v0
 
     .line 114
-    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mRating:Landroid/widget/RatingBar;
+    .local v0, descriptionStringId:I
+    invoke-virtual {p0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->getContext()Landroid/content/Context;
 
-    invoke-virtual {v1, v5}, Landroid/widget/RatingBar;->setVisibility(I)V
+    move-result-object v5
 
-    .line 119
-    :goto_5e
-    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mCreator:Lcom/google/android/finsky/layout/DecoratedTextView;
+    const/4 v6, 0x3
 
-    invoke-static {p2, p1, v1}, Lcom/google/android/finsky/utils/BadgeUtils;->configureCreatorBadge(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/layout/DecoratedTextView;)V
+    new-array v6, v6, [Ljava/lang/Object;
 
-    .line 120
-    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mRating:Landroid/widget/RatingBar;
+    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mBadge:Lcom/google/android/finsky/layout/DecoratedTextView;
+    move-result-object v7
 
-    invoke-static {p2, p1, v1, v2}, Lcom/google/android/finsky/utils/BadgeUtils;->configureRatingItemSection(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/utils/BitmapLoader;Landroid/widget/RatingBar;Lcom/google/android/finsky/layout/DecoratedTextView;)V
+    aput-object v7, v6, v3
 
-    .line 122
-    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mPrice:Landroid/widget/TextView;
+    iget-object v3, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mCreator:Lcom/google/android/finsky/layout/DecoratedTextView;
 
-    invoke-static {p2, v6, v1}, Lcom/google/android/finsky/utils/PurchaseButtonHelper;->stylePurchaseButton(Lcom/google/android/finsky/api/model/Document;ZLandroid/widget/TextView;)V
+    invoke-virtual {v3}, Lcom/google/android/finsky/layout/DecoratedTextView;->getText()Ljava/lang/CharSequence;
 
-    .line 124
-    invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->setImage(Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/api/model/Document;)V
+    move-result-object v3
 
-    .line 125
-    return-void
+    aput-object v3, v6, v4
+
+    const/4 v3, 0x2
+
+    iget-object v4, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mPrice:Landroid/widget/TextView;
+
+    invoke-virtual {v4}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v4
+
+    aput-object v4, v6, v3
+
+    invoke-virtual {v5, v0, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p0, v3}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->setContentDescription(Ljava/lang/CharSequence;)V
 
     .line 116
-    :cond_73
-    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mRating:Landroid/widget/RatingBar;
-
-    const/4 v2, 0x4
-
-    invoke-virtual {v1, v2}, Landroid/widget/RatingBar;->setVisibility(I)V
-
-    goto :goto_5e
-.end method
-
-.method public setLeftSeparatorVisibility(Z)V
-    .registers 2
-    .parameter "isVisible"
-
-    .prologue
-    .line 128
-    iput-boolean p1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mShowLeft:Z
-
-    .line 129
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->invalidate()V
-
-    .line 130
     return-void
+
+    .end local v0           #descriptionStringId:I
+    .end local v2           #isMagazine:Z
+    :cond_99
+    move v2, v3
+
+    .line 90
+    goto :goto_22
+
+    .line 92
+    .restart local v2       #isMagazine:Z
+    :cond_9b
+    invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getCreator()Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_2a
+
+    .line 99
+    :cond_a0
+    iget-object v5, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mRating:Landroid/widget/RatingBar;
+
+    const/4 v6, 0x4
+
+    invoke-virtual {v5, v6}, Landroid/widget/RatingBar;->setVisibility(I)V
+
+    goto :goto_4f
 .end method
 
 .method public setMockDocument(I)V
@@ -698,30 +512,47 @@
     .prologue
     const/16 v3, 0x8
 
-    .line 133
+    .line 124
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mRating:Landroid/widget/RatingBar;
+
+    if-eqz v1, :cond_b
+
+    .line 125
     iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mRating:Landroid/widget/RatingBar;
 
     invoke-virtual {v1, v3}, Landroid/widget/RatingBar;->setVisibility(I)V
 
-    .line 134
+    .line 127
+    :cond_b
     iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mTitle:Landroid/widget/TextView;
 
-    const v2, 0x7f0700e6
+    const v2, 0x7f0700f5
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
-    .line 135
+    .line 128
     iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mCreator:Lcom/google/android/finsky/layout/DecoratedTextView;
 
     invoke-virtual {v1, v3}, Lcom/google/android/finsky/layout/DecoratedTextView;->setVisibility(I)V
 
-    .line 136
+    .line 129
     iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mPrice:Landroid/widget/TextView;
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 137
-    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Landroid/widget/ImageView;
+    .line 130
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mBadge:Lcom/google/android/finsky/layout/DecoratedTextView;
+
+    if-eqz v1, :cond_26
+
+    .line 131
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mBadge:Lcom/google/android/finsky/layout/DecoratedTextView;
+
+    invoke-virtual {v1, v3}, Lcom/google/android/finsky/layout/DecoratedTextView;->setVisibility(I)V
+
+    .line 133
+    :cond_26
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Lcom/google/android/finsky/layout/SmartThumbnailView;
 
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->getContext()Landroid/content/Context;
 
@@ -735,43 +566,147 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/SmartThumbnailView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 139
-    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Landroid/widget/ImageView;
+    .line 135
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Lcom/google/android/finsky/layout/SmartThumbnailView;
 
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getTag()Ljava/lang/Object;
+    invoke-virtual {v1}, Lcom/google/android/finsky/layout/SmartThumbnailView;->getTag()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
 
-    .line 140
+    .line 136
     .local v0, oldContainer:Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_45
 
-    .line 141
+    .line 137
     invoke-virtual {v0}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->cancelRequest()V
 
-    .line 142
+    .line 138
     const/4 v0, 0x0
 
-    .line 144
-    :cond_38
-    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Landroid/widget/ImageView;
+    .line 140
+    :cond_45
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Lcom/google/android/finsky/layout/SmartThumbnailView;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/SmartThumbnailView;->setTag(Ljava/lang/Object;)V
+
+    .line 141
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Lcom/google/android/finsky/layout/SmartThumbnailView;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/SmartThumbnailView;->setVisibility(I)V
+
+    .line 142
+    return-void
+.end method
+
+.method public setNoDocument()V
+    .registers 5
+
+    .prologue
+    const/16 v3, 0x8
 
     .line 145
-    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mRating:Landroid/widget/RatingBar;
+
+    if-eqz v1, :cond_b
+
+    .line 146
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mRating:Landroid/widget/RatingBar;
+
+    invoke-virtual {v1, v3}, Landroid/widget/RatingBar;->setVisibility(I)V
+
+    .line 148
+    :cond_b
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mTitle:Landroid/widget/TextView;
+
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 149
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mCreator:Lcom/google/android/finsky/layout/DecoratedTextView;
+
+    invoke-virtual {v1, v3}, Lcom/google/android/finsky/layout/DecoratedTextView;->setVisibility(I)V
+
+    .line 150
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mPrice:Landroid/widget/TextView;
+
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 151
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mBadge:Lcom/google/android/finsky/layout/DecoratedTextView;
+
+    if-eqz v1, :cond_23
+
+    .line 152
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mBadge:Lcom/google/android/finsky/layout/DecoratedTextView;
+
+    invoke-virtual {v1, v3}, Lcom/google/android/finsky/layout/DecoratedTextView;->setVisibility(I)V
+
+    .line 154
+    :cond_23
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Lcom/google/android/finsky/layout/SmartThumbnailView;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/layout/SmartThumbnailView;->getTag()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
+
+    .line 155
+    .local v0, oldContainer:Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
+    if-eqz v0, :cond_31
+
+    .line 156
+    invoke-virtual {v0}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->cancelRequest()V
+
+    .line 157
+    const/4 v0, 0x0
+
+    .line 159
+    :cond_31
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Lcom/google/android/finsky/layout/SmartThumbnailView;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/SmartThumbnailView;->setTag(Ljava/lang/Object;)V
 
-    .line 146
+    .line 160
+    iget-object v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mThumbnail:Lcom/google/android/finsky/layout/SmartThumbnailView;
+
+    invoke-virtual {v1, v3}, Lcom/google/android/finsky/layout/SmartThumbnailView;->setVisibility(I)V
+
+    .line 161
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mIsLastRow:Z
+
+    .line 162
+    const/4 v1, 0x0
+
+    iput-boolean v1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mShowRight:Z
+
+    .line 163
+    return-void
+.end method
+
+.method public setRightSeparatorVisibility(Z)V
+    .registers 2
+    .parameter "isVisible"
+
+    .prologue
+    .line 119
+    iput-boolean p1, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mShowRight:Z
+
+    .line 120
+    invoke-virtual {p0}, Lcom/google/android/finsky/layout/OverviewBucketEntry;->invalidate()V
+
+    .line 121
     return-void
 .end method
 
@@ -780,12 +715,12 @@
     .parameter "title"
 
     .prologue
-    .line 149
+    .line 166
     iget-object v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mTitle:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 150
+    .line 167
     return-void
 .end method
 
@@ -794,25 +729,11 @@
     .parameter "color"
 
     .prologue
-    .line 157
+    .line 170
     iget-object v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mTitle:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 158
-    return-void
-.end method
-
-.method public setTitleColor(Landroid/content/res/ColorStateList;)V
-    .registers 3
-    .parameter "color"
-
-    .prologue
-    .line 153
-    iget-object v0, p0, Lcom/google/android/finsky/layout/OverviewBucketEntry;->mTitle:Landroid/widget/TextView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
-
-    .line 154
+    .line 171
     return-void
 .end method

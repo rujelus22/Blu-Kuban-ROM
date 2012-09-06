@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/setup/AccountSetupOptions;->showErrorDialog(I[Ljava/lang/Object;)V
+    value = Lcom/android/email/activity/setup/AccountSetupOptions;->saveAccountAndFinish()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,27 +20,17 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/activity/setup/AccountSetupOptions;
 
-.field final synthetic val$args:[Ljava/lang/Object;
-
-.field final synthetic val$msgResId:I
-
 
 # direct methods
-.method constructor <init>(Lcom/android/email/activity/setup/AccountSetupOptions;I[Ljava/lang/Object;)V
-    .registers 4
-    .parameter
-    .parameter
+.method constructor <init>(Lcom/android/email/activity/setup/AccountSetupOptions;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 732
+    .line 361
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupOptions$4;->this$0:Lcom/android/email/activity/setup/AccountSetupOptions;
 
-    iput p2, p0, Lcom/android/email/activity/setup/AccountSetupOptions$4;->val$msgResId:I
-
-    iput-object p3, p0, Lcom/android/email/activity/setup/AccountSetupOptions$4;->val$args:[Ljava/lang/Object;
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,72 +38,43 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .registers 4
 
     .prologue
-    .line 734
-    new-instance v0, Landroid/app/AlertDialog$Builder;
-
+    .line 364
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupOptions$4;->this$0:Lcom/android/email/activity/setup/AccountSetupOptions;
 
-    invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
-
-    const v1, 0x1010355
-
-    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setIconAttribute(I)Landroid/app/AlertDialog$Builder;
+    .line 366
+    .local v1, context:Lcom/android/email/activity/setup/AccountSetupOptions;
+    invoke-static {}, Lcom/android/email/activity/setup/SetupData;->getAccount()Lcom/android/emailcommon/provider/Account;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupOptions$4;->this$0:Lcom/android/email/activity/setup/AccountSetupOptions;
+    .line 367
+    .local v0, account:Lcom/android/emailcommon/provider/Account;
+    iget v2, v0, Lcom/android/emailcommon/provider/Account;->mFlags:I
 
-    const v2, 0x7f080108
+    and-int/lit8 v2, v2, -0x21
 
-    invoke-virtual {v1, v2}, Lcom/android/email/activity/setup/AccountSetupOptions;->getString(I)Ljava/lang/String;
+    iput v2, v0, Lcom/android/emailcommon/provider/Account;->mFlags:I
 
-    move-result-object v1
+    .line 368
+    invoke-static {v1, v0}, Lcom/android/email/activity/setup/AccountSettingsUtils;->commitSettings(Landroid/content/Context;Lcom/android/emailcommon/provider/Account;)V
 
-    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    .line 370
+    invoke-static {v1}, Lcom/android/email/Email;->setServicesEnabledSync(Landroid/content/Context;)Z
 
-    move-result-object v0
+    .line 371
+    invoke-static {v1}, Lcom/android/email/service/EmailServiceUtils;->startExchangeService(Landroid/content/Context;)V
 
-    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupOptions$4;->this$0:Lcom/android/email/activity/setup/AccountSetupOptions;
+    .line 373
+    invoke-static {v1}, Lcom/android/email/activity/setup/AccountSetupNames;->actionSetNames(Landroid/app/Activity;)V
 
-    iget v2, p0, Lcom/android/email/activity/setup/AccountSetupOptions$4;->val$msgResId:I
+    .line 374
+    iget-object v2, p0, Lcom/android/email/activity/setup/AccountSetupOptions$4;->this$0:Lcom/android/email/activity/setup/AccountSetupOptions;
 
-    iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupOptions$4;->val$args:[Ljava/lang/Object;
+    invoke-virtual {v2}, Lcom/android/email/activity/setup/AccountSetupOptions;->finish()V
 
-    invoke-virtual {v1, v2, v3}, Lcom/android/email/activity/setup/AccountSetupOptions;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupOptions$4;->this$0:Lcom/android/email/activity/setup/AccountSetupOptions;
-
-    const v2, 0x7f080126
-
-    invoke-virtual {v1, v2}, Lcom/android/email/activity/setup/AccountSetupOptions;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Lcom/android/email/activity/setup/AccountSetupOptions$4$1;
-
-    invoke-direct {v2, p0}, Lcom/android/email/activity/setup/AccountSetupOptions$4$1;-><init>(Lcom/android/email/activity/setup/AccountSetupOptions$4;)V
-
-    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
-
-    .line 746
+    .line 375
     return-void
 .end method

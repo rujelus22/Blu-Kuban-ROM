@@ -1,132 +1,52 @@
-.class final synthetic Lcom/google/android/youtube/app/honeycomb/phone/af;
-.super Ljava/lang/Object;
+.class final Lcom/google/android/youtube/app/honeycomb/phone/af;
+.super Lcom/google/android/youtube/app/adapter/h;
 .source "SourceFile"
 
 
-# static fields
-.field static final synthetic a:[I
+# instance fields
+.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method private constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/t;)V
+    .registers 2
+    .parameter
 
     .prologue
-    .line 77
-    invoke-static {}, Lcom/google/android/youtube/core/model/Subscription$Type;->values()[Lcom/google/android/youtube/core/model/Subscription$Type;
+    .line 500
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/af;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
-    move-result-object v0
+    invoke-direct {p0}, Lcom/google/android/youtube/app/adapter/h;-><init>()V
 
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/google/android/youtube/app/honeycomb/phone/af;->a:[I
-
-    :try_start_9
-    sget-object v0, Lcom/google/android/youtube/app/honeycomb/phone/af;->a:[I
-
-    sget-object v1, Lcom/google/android/youtube/core/model/Subscription$Type;->CHANNEL:Lcom/google/android/youtube/core/model/Subscription$Type;
-
-    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/Subscription$Type;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_49
-
-    :goto_14
-    :try_start_14
-    sget-object v0, Lcom/google/android/youtube/app/honeycomb/phone/af;->a:[I
-
-    sget-object v1, Lcom/google/android/youtube/core/model/Subscription$Type;->FAVORITES:Lcom/google/android/youtube/core/model/Subscription$Type;
-
-    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/Subscription$Type;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_47
-
-    :goto_1f
-    :try_start_1f
-    sget-object v0, Lcom/google/android/youtube/app/honeycomb/phone/af;->a:[I
-
-    sget-object v1, Lcom/google/android/youtube/core/model/Subscription$Type;->PLAYLIST:Lcom/google/android/youtube/core/model/Subscription$Type;
-
-    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/Subscription$Type;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_45
-
-    :goto_2a
-    :try_start_2a
-    sget-object v0, Lcom/google/android/youtube/app/honeycomb/phone/af;->a:[I
-
-    sget-object v1, Lcom/google/android/youtube/core/model/Subscription$Type;->QUERY:Lcom/google/android/youtube/core/model/Subscription$Type;
-
-    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/Subscription$Type;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_35
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_43
-
-    :goto_35
-    :try_start_35
-    sget-object v0, Lcom/google/android/youtube/app/honeycomb/phone/af;->a:[I
-
-    sget-object v1, Lcom/google/android/youtube/core/model/Subscription$Type;->USER:Lcom/google/android/youtube/core/model/Subscription$Type;
-
-    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/Subscription$Type;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_40
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_35 .. :try_end_40} :catch_41
-
-    :goto_40
     return-void
+.end method
 
-    :catch_41
-    move-exception v0
+.method synthetic constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/t;B)V
+    .registers 3
+    .parameter
+    .parameter
 
-    goto :goto_40
+    .prologue
+    .line 500
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/af;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/t;)V
 
-    :catch_43
-    move-exception v0
+    return-void
+.end method
 
-    goto :goto_35
 
-    :catch_45
-    move-exception v0
+# virtual methods
+.method public final a(Landroid/view/View;Landroid/view/ViewGroup;)Lcom/google/android/youtube/app/adapter/az;
+    .registers 5
+    .parameter
+    .parameter
 
-    goto :goto_2a
+    .prologue
+    .line 503
+    new-instance v0, Lcom/google/android/youtube/app/honeycomb/phone/ad;
 
-    :catch_47
-    move-exception v0
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/af;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
-    goto :goto_1f
+    invoke-direct {v0, v1, p1}, Lcom/google/android/youtube/app/honeycomb/phone/ad;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/t;Landroid/view/View;)V
 
-    :catch_49
-    move-exception v0
-
-    goto :goto_14
+    return-object v0
 .end method

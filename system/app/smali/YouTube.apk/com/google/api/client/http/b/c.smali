@@ -1,5 +1,5 @@
 .class public final Lcom/google/api/client/http/b/c;
-.super Lcom/google/api/client/http/p;
+.super Lcom/google/api/client/http/r;
 .source "SourceFile"
 
 
@@ -9,14 +9,14 @@
 
     .prologue
     .line 32
-    invoke-direct {p0}, Lcom/google/api/client/http/p;-><init>()V
+    invoke-direct {p0}, Lcom/google/api/client/http/r;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/String;)Lcom/google/api/client/http/s;
+.method public final synthetic a(Ljava/lang/String;)Lcom/google/api/client/http/u;
     .registers 4
     .parameter
 
@@ -31,7 +31,7 @@
     return-object v0
 .end method
 
-.method public final synthetic b(Ljava/lang/String;)Lcom/google/api/client/http/s;
+.method public final synthetic b(Ljava/lang/String;)Lcom/google/api/client/http/u;
     .registers 4
     .parameter
 
@@ -46,7 +46,7 @@
     return-object v0
 .end method
 
-.method public final synthetic c(Ljava/lang/String;)Lcom/google/api/client/http/s;
+.method public final synthetic c(Ljava/lang/String;)Lcom/google/api/client/http/u;
     .registers 4
     .parameter
 
@@ -71,7 +71,7 @@
     return v0
 .end method
 
-.method public final synthetic e(Ljava/lang/String;)Lcom/google/api/client/http/s;
+.method public final synthetic e(Ljava/lang/String;)Lcom/google/api/client/http/u;
     .registers 4
     .parameter
 
@@ -86,7 +86,7 @@
     return-object v0
 .end method
 
-.method public final synthetic f(Ljava/lang/String;)Lcom/google/api/client/http/s;
+.method public final synthetic f(Ljava/lang/String;)Lcom/google/api/client/http/u;
     .registers 4
     .parameter
 

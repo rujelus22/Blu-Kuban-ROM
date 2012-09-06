@@ -25,7 +25,7 @@
     .registers 1
 
     .prologue
-    .line 162
+    .line 163
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
     .parameter "x0"
 
     .prologue
-    .line 162
+    .line 163
     invoke-direct {p0}, Lcom/google/android/finsky/adapters/EditorialBucketListAdapter$EditorialDocumentViewHolder;-><init>()V
 
     return-void

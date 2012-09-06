@@ -54,7 +54,7 @@
     <string name="settings_default_access">預設存取</string>
     <string name="settings_default_access_select">選擇預設存取</string>
     <string name="settings_show_notifications">顯示通知</string>
-    <string name="settings_show_notifications_enabled">Show a toast notification when a program requests access (may be overridden per-app)</string>
+    <string name="settings_show_notifications_enabled">當有應用程式要求SU權限，顯示訊息（每個程式都可另外設定）</string>
     <string name="settings_show_notifications_disabled">Do not show a toast notification when a program requests access (may be overridden per-app)</string>
     <string name="settings_category_logs">紀錄檔</string>
     <string name="settings_log">紀錄中</string>
@@ -66,7 +66,7 @@
     <string name="settings_log_clear_progress">清除紀錄檔</string>
     <string name="settings_log_format">紀錄檔日期格式</string>
     <string name="settings_log_format_select">選擇格式</string>
-    <string name="settings_log_format_restart">Changes to this setting are applied at app restart</string>
+    <string name="settings_log_format_restart">您的設定在程式重新啟動後才會生效</string>
     <string name="settings_category_security">安全</string>
     <string name="settings_pin">PIN碼</string>
     <string name="settings_pin_enabled">[ PIN code enabled ]</string>
@@ -91,7 +91,7 @@
     <string name="appdetail_notification">通知</string>
     <string name="appdetail_force_user">Force user</string>
     <string name="appdetail_pro_required">(限定專業版)</string>
-    <string name="logdetail_no_log">Superuser command contents have not been logged for this entry. Full logging can be enabled for all apps by selecting Settings --> Logging --> Full content, or on a per-app bases by selecting the app in the apps listing.</string>
+    <string name="logdetail_no_log">Superuser命令內容沒有被記錄。完整記錄在 設定--> 記錄 --> 完整內容 啟用，或者在程式列表的每個程式設定裡啟用</string>
     <string name="pin_title">輸入PIN碼</string>
     <string name="pin_wrong">輸入的PIN碼不正確</string>
     <string name="pin_title_verify">驗證PIN碼</string>

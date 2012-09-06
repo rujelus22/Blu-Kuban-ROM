@@ -47,45 +47,45 @@
     .registers 3
 
     .prologue
-    .line 9
+    .line 10
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 14
+    .line 15
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->browseUrl_:Ljava/lang/String;
 
-    .line 31
+    .line 32
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->nextPageUrl_:Ljava/lang/String;
 
-    .line 48
+    .line 49
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->relevance_:D
 
-    .line 65
+    .line 66
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->estimatedResults_:J
 
-    .line 82
+    .line 83
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->analyticsCookie_:Ljava/lang/String;
 
-    .line 99
+    .line 100
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->ordered_:Z
 
-    .line 150
+    .line 152
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->cachedSize:I
 
-    .line 9
+    .line 10
     return-void
 .end method
 
@@ -95,7 +95,7 @@
     .registers 2
 
     .prologue
-    .line 83
+    .line 84
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->analyticsCookie_:Ljava/lang/String;
 
     return-object v0
@@ -105,7 +105,7 @@
     .registers 2
 
     .prologue
-    .line 15
+    .line 16
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->browseUrl_:Ljava/lang/String;
 
     return-object v0
@@ -115,15 +115,15 @@
     .registers 2
 
     .prologue
-    .line 152
+    .line 155
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 154
+    .line 157
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->getSerializedSize()I
 
-    .line 156
+    .line 159
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->cachedSize:I
 
@@ -134,7 +134,7 @@
     .registers 3
 
     .prologue
-    .line 66
+    .line 67
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->estimatedResults_:J
 
     return-wide v0
@@ -144,7 +144,7 @@
     .registers 2
 
     .prologue
-    .line 32
+    .line 33
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->nextPageUrl_:Ljava/lang/String;
 
     return-object v0
@@ -154,7 +154,7 @@
     .registers 2
 
     .prologue
-    .line 100
+    .line 101
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->ordered_:Z
 
     return v0
@@ -164,7 +164,7 @@
     .registers 3
 
     .prologue
-    .line 49
+    .line 50
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->relevance_:D
 
     return-wide v0
@@ -174,10 +174,10 @@
     .registers 5
 
     .prologue
-    .line 160
+    .line 164
     const/4 v0, 0x0
 
-    .line 161
+    .line 165
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasBrowseUrl()Z
 
@@ -185,7 +185,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 162
+    .line 166
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->getBrowseUrl()Ljava/lang/String;
@@ -198,7 +198,7 @@
 
     add-int/2addr v0, v1
 
-    .line 165
+    .line 169
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasNextPageUrl()Z
 
@@ -206,7 +206,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 166
+    .line 170
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->getNextPageUrl()Ljava/lang/String;
@@ -219,7 +219,7 @@
 
     add-int/2addr v0, v1
 
-    .line 169
+    .line 173
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasRelevance()Z
 
@@ -227,7 +227,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 170
+    .line 174
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->getRelevance()D
@@ -240,7 +240,7 @@
 
     add-int/2addr v0, v1
 
-    .line 173
+    .line 177
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasEstimatedResults()Z
 
@@ -248,7 +248,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 174
+    .line 178
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->getEstimatedResults()J
@@ -261,7 +261,7 @@
 
     add-int/2addr v0, v1
 
-    .line 177
+    .line 181
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasAnalyticsCookie()Z
 
@@ -269,7 +269,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 178
+    .line 182
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->getAnalyticsCookie()Ljava/lang/String;
@@ -282,7 +282,7 @@
 
     add-int/2addr v0, v1
 
-    .line 181
+    .line 185
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasOrdered()Z
 
@@ -290,7 +290,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 182
+    .line 186
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->getOrdered()Z
@@ -303,11 +303,11 @@
 
     add-int/2addr v0, v1
 
-    .line 185
+    .line 189
     :cond_61
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->cachedSize:I
 
-    .line 186
+    .line 190
     return v0
 .end method
 
@@ -315,7 +315,7 @@
     .registers 2
 
     .prologue
-    .line 84
+    .line 85
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasAnalyticsCookie:Z
 
     return v0
@@ -325,7 +325,7 @@
     .registers 2
 
     .prologue
-    .line 16
+    .line 17
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasBrowseUrl:Z
 
     return v0
@@ -335,7 +335,7 @@
     .registers 2
 
     .prologue
-    .line 67
+    .line 68
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasEstimatedResults:Z
 
     return v0
@@ -345,7 +345,7 @@
     .registers 2
 
     .prologue
-    .line 33
+    .line 34
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasNextPageUrl:Z
 
     return v0
@@ -355,7 +355,7 @@
     .registers 2
 
     .prologue
-    .line 101
+    .line 102
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasOrdered:Z
 
     return v0
@@ -365,7 +365,7 @@
     .registers 2
 
     .prologue
-    .line 50
+    .line 51
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasRelevance:Z
 
     return v0
@@ -381,29 +381,29 @@
     .end annotation
 
     .prologue
-    .line 193
+    .line 198
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 194
+    .line 199
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_3e
 
-    .line 198
+    .line 203
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 199
+    .line 204
     :sswitch_d
     return-object p0
 
-    .line 204
+    .line 209
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -413,7 +413,7 @@
 
     goto :goto_0
 
-    .line 208
+    .line 213
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -423,7 +423,7 @@
 
     goto :goto_0
 
-    .line 212
+    .line 217
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readDouble()D
 
@@ -433,7 +433,7 @@
 
     goto :goto_0
 
-    .line 216
+    .line 221
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -443,7 +443,7 @@
 
     goto :goto_0
 
-    .line 220
+    .line 225
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -453,7 +453,7 @@
 
     goto :goto_0
 
-    .line 224
+    .line 229
     :sswitch_36
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -463,7 +463,7 @@
 
     goto :goto_0
 
-    .line 194
+    .line 199
     :sswitch_data_3e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -499,15 +499,15 @@
     .parameter "value"
 
     .prologue
-    .line 86
+    .line 87
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasAnalyticsCookie:Z
 
-    .line 87
+    .line 88
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->analyticsCookie_:Ljava/lang/String;
 
-    .line 88
+    .line 89
     return-object p0
 .end method
 
@@ -516,15 +516,15 @@
     .parameter "value"
 
     .prologue
-    .line 18
+    .line 19
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasBrowseUrl:Z
 
-    .line 19
+    .line 20
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->browseUrl_:Ljava/lang/String;
 
-    .line 20
+    .line 21
     return-object p0
 .end method
 
@@ -533,15 +533,15 @@
     .parameter "value"
 
     .prologue
-    .line 69
+    .line 70
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasEstimatedResults:Z
 
-    .line 70
+    .line 71
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->estimatedResults_:J
 
-    .line 71
+    .line 72
     return-object p0
 .end method
 
@@ -550,15 +550,15 @@
     .parameter "value"
 
     .prologue
-    .line 35
+    .line 36
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasNextPageUrl:Z
 
-    .line 36
+    .line 37
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->nextPageUrl_:Ljava/lang/String;
 
-    .line 37
+    .line 38
     return-object p0
 .end method
 
@@ -567,15 +567,15 @@
     .parameter "value"
 
     .prologue
-    .line 103
+    .line 104
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasOrdered:Z
 
-    .line 104
+    .line 105
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->ordered_:Z
 
-    .line 105
+    .line 106
     return-object p0
 .end method
 
@@ -584,15 +584,15 @@
     .parameter "value"
 
     .prologue
-    .line 52
+    .line 53
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasRelevance:Z
 
-    .line 53
+    .line 54
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->relevance_:D
 
-    .line 54
+    .line 55
     return-object p0
 .end method
 
@@ -606,14 +606,14 @@
     .end annotation
 
     .prologue
-    .line 130
+    .line 132
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasBrowseUrl()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 131
+    .line 133
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->getBrowseUrl()Ljava/lang/String;
@@ -622,7 +622,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 133
+    .line 135
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasNextPageUrl()Z
 
@@ -630,7 +630,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 134
+    .line 136
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->getNextPageUrl()Ljava/lang/String;
@@ -639,7 +639,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 136
+    .line 138
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasRelevance()Z
 
@@ -647,7 +647,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 137
+    .line 139
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->getRelevance()D
@@ -656,7 +656,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeDouble(ID)V
 
-    .line 139
+    .line 141
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasEstimatedResults()Z
 
@@ -664,7 +664,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 140
+    .line 142
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->getEstimatedResults()J
@@ -673,7 +673,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 142
+    .line 144
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasAnalyticsCookie()Z
 
@@ -681,7 +681,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 143
+    .line 145
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->getAnalyticsCookie()Ljava/lang/String;
@@ -690,7 +690,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 145
+    .line 147
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->hasOrdered()Z
 
@@ -698,7 +698,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 146
+    .line 148
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Containers$ContainerMetadata;->getOrdered()Z
@@ -707,7 +707,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 148
+    .line 150
     :cond_54
     return-void
 .end method

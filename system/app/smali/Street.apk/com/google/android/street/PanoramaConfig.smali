@@ -91,7 +91,7 @@
     .registers 1
 
     .prologue
-    .line 631
+    .line 625
     new-instance v0, Lcom/google/android/street/PanoramaConfig$1;
 
     invoke-direct {v0}, Lcom/google/android/street/PanoramaConfig$1;-><init>()V
@@ -108,17 +108,17 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 309
+    .line 303
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 275
+    .line 269
     invoke-static {}, Lcom/google/android/street/PanoramaConfig;->getCurrentTime()J
 
     move-result-wide v5
 
     iput-wide v5, p0, Lcom/google/android/street/PanoramaConfig;->mLastModifiedTime:J
 
-    .line 310
+    .line 304
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
@@ -127,7 +127,7 @@
 
     if-eq v5, v6, :cond_19
 
-    .line 311
+    .line 305
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     const-string v6, "unknown version"
@@ -136,7 +136,7 @@
 
     throw v5
 
-    .line 313
+    .line 307
     :cond_19
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -149,63 +149,63 @@
     :goto_20
     iput-boolean v5, p0, Lcom/google/android/street/PanoramaConfig;->mDisabled:Z
 
-    .line 314
+    .line 308
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
     iput v5, p0, Lcom/google/android/street/PanoramaConfig;->mInfoLevel:I
 
-    .line 317
+    .line 311
     iput v7, p0, Lcom/google/android/street/PanoramaConfig;->mInfoValue:I
 
-    .line 318
+    .line 312
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
     iput v5, p0, Lcom/google/android/street/PanoramaConfig;->mImageWidth:I
 
-    .line 319
+    .line 313
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
     iput v5, p0, Lcom/google/android/street/PanoramaConfig;->mImageHeight:I
 
-    .line 320
+    .line 314
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
     iput v5, p0, Lcom/google/android/street/PanoramaConfig;->mTileWidth:I
 
-    .line 321
+    .line 315
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
     iput v5, p0, Lcom/google/android/street/PanoramaConfig;->mTileHeight:I
 
-    .line 322
+    .line 316
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/google/android/street/PanoramaConfig;->mPanoId:Ljava/lang/String;
 
-    .line 323
+    .line 317
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
-    .line 324
+    .line 318
     .local v3, latE6:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
-    .line 325
+    .line 319
     .local v4, lngE6:I
     new-instance v5, Lcom/google/android/street/MapPoint;
 
@@ -213,84 +213,84 @@
 
     iput-object v5, p0, Lcom/google/android/street/PanoramaConfig;->mLatLng:Lcom/google/android/street/MapPoint;
 
-    .line 326
+    .line 320
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
     iput v5, p0, Lcom/google/android/street/PanoramaConfig;->mNumZoomLevels:I
 
-    .line 327
+    .line 321
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/google/android/street/PanoramaConfig;->mCopyright:Ljava/lang/String;
 
-    .line 328
+    .line 322
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/google/android/street/PanoramaConfig;->mText:Ljava/lang/String;
 
-    .line 329
+    .line 323
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/google/android/street/PanoramaConfig;->mStreetRange:Ljava/lang/String;
 
-    .line 330
+    .line 324
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
     iput v5, p0, Lcom/google/android/street/PanoramaConfig;->mSceneType:I
 
-    .line 331
+    .line 325
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
     iput v5, p0, Lcom/google/android/street/PanoramaConfig;->mProjectionType:I
 
-    .line 332
+    .line 326
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
 
     move-result v5
 
     iput v5, p0, Lcom/google/android/street/PanoramaConfig;->mPanoYawDeg:F
 
-    .line 333
+    .line 327
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
 
     move-result v5
 
     iput v5, p0, Lcom/google/android/street/PanoramaConfig;->mTiltYawDeg:F
 
-    .line 334
+    .line 328
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
 
     move-result v5
 
     iput v5, p0, Lcom/google/android/street/PanoramaConfig;->mTiltPitchDeg:F
 
-    .line 335
+    .line 329
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
 
     move-result v5
 
     iput v5, p0, Lcom/google/android/street/PanoramaConfig;->mMinVisiblePitchDeg:F
 
-    .line 336
+    .line 330
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
 
     move-result v5
 
     iput v5, p0, Lcom/google/android/street/PanoramaConfig;->mMaxVisiblePitchDeg:F
 
-    .line 337
+    .line 331
     sget-object v5, Lcom/google/android/street/PanoramaLink;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v5}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
@@ -301,25 +301,25 @@
 
     iput-object v5, p0, Lcom/google/android/street/PanoramaConfig;->mLinks:[Lcom/google/android/street/PanoramaLink;
 
-    .line 338
+    .line 332
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v5
 
     iput-wide v5, p0, Lcom/google/android/street/PanoramaConfig;->mLastModifiedTime:J
 
-    .line 339
+    .line 333
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v0
 
-    .line 340
+    .line 334
     .local v0, compressedDepthMap:[B
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v1
 
-    .line 342
+    .line 336
     .local v1, compressedPanoMap:[B
     :try_start_b1
     new-instance v5, Lcom/google/android/street/DepthMap;
@@ -330,11 +330,11 @@
     :try_end_b8
     .catch Ljava/io/IOException; {:try_start_b1 .. :try_end_b8} :catch_bf
 
-    .line 346
+    .line 340
     :goto_b8
     invoke-virtual {p0}, Lcom/google/android/street/PanoramaConfig;->finishInit()V
 
-    .line 347
+    .line 341
     return-void
 
     .end local v0           #compressedDepthMap:[B
@@ -344,10 +344,10 @@
     :cond_bc
     move v5, v7
 
-    .line 313
+    .line 307
     goto/16 :goto_20
 
-    .line 343
+    .line 337
     .restart local v0       #compressedDepthMap:[B
     .restart local v1       #compressedPanoMap:[B
     .restart local v3       #latE6:I
@@ -357,7 +357,7 @@
 
     move-object v2, v5
 
-    .line 344
+    .line 338
     .local v2, e:Ljava/io/IOException;
     const/4 v5, 0x0
 
@@ -371,24 +371,24 @@
     .parameter "proto"
 
     .prologue
-    .line 353
+    .line 347
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 275
+    .line 269
     invoke-static {}, Lcom/google/android/street/PanoramaConfig;->getCurrentTime()J
 
     move-result-wide v10
 
     iput-wide v10, p0, Lcom/google/android/street/PanoramaConfig;->mLastModifiedTime:J
 
-    .line 354
+    .line 348
     const/4 v10, 0x1
 
     invoke-virtual {p1, v10}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;->getProtoBuf(I)Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;
 
     move-result-object v1
 
-    .line 356
+    .line 350
     .local v1, dp:Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;
     const/16 v10, 0x21
 
@@ -396,7 +396,7 @@
 
     move-result-object v8
 
-    .line 358
+    .line 352
     .local v8, pp:Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;
     const/16 v10, 0x31
 
@@ -404,7 +404,7 @@
 
     move-result-object v0
 
-    .line 360
+    .line 354
     .local v0, ap:Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;
     const/16 v10, 0x3a
 
@@ -412,7 +412,7 @@
 
     move-result-object v5
 
-    .line 363
+    .line 357
     .local v5, m:Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;
     const/4 v10, 0x2
 
@@ -422,7 +422,7 @@
 
     iput-boolean v10, p0, Lcom/google/android/street/PanoramaConfig;->mDisabled:Z
 
-    .line 367
+    .line 361
     const/4 v10, 0x3
 
     invoke-virtual {v1, v10}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
@@ -431,7 +431,7 @@
 
     iput v10, p0, Lcom/google/android/street/PanoramaConfig;->mInfoLevel:I
 
-    .line 369
+    .line 363
     const/16 v10, 0x11
 
     const/4 v11, 0x0
@@ -444,12 +444,12 @@
 
     iput v10, p0, Lcom/google/android/street/PanoramaConfig;->mInfoValue:I
 
-    .line 373
+    .line 367
     iget v10, p0, Lcom/google/android/street/PanoramaConfig;->mInfoLevel:I
 
     if-eqz v10, :cond_62
 
-    .line 374
+    .line 368
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -484,7 +484,7 @@
 
     invoke-static {v10}, Lcom/google/android/street/Street;->log(Ljava/lang/String;)V
 
-    .line 377
+    .line 371
     :cond_62
     const/4 v10, 0x4
 
@@ -498,7 +498,7 @@
 
     iput v10, p0, Lcom/google/android/street/PanoramaConfig;->mImageWidth:I
 
-    .line 380
+    .line 374
     const/4 v10, 0x5
 
     const/4 v11, 0x1
@@ -511,7 +511,7 @@
 
     iput v10, p0, Lcom/google/android/street/PanoramaConfig;->mImageHeight:I
 
-    .line 383
+    .line 377
     const/4 v10, 0x6
 
     const/4 v11, 0x1
@@ -524,7 +524,7 @@
 
     iput v10, p0, Lcom/google/android/street/PanoramaConfig;->mTileWidth:I
 
-    .line 386
+    .line 380
     const/4 v10, 0x7
 
     const/4 v11, 0x1
@@ -537,7 +537,7 @@
 
     iput v10, p0, Lcom/google/android/street/PanoramaConfig;->mTileHeight:I
 
-    .line 389
+    .line 383
     const/16 v10, 0x8
 
     invoke-virtual {v1, v10}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;->getString(I)Ljava/lang/String;
@@ -546,7 +546,7 @@
 
     iput-object v10, p0, Lcom/google/android/street/PanoramaConfig;->mPanoId:Ljava/lang/String;
 
-    .line 391
+    .line 385
     const/16 v10, 0x9
 
     const/4 v11, 0x1
@@ -559,14 +559,14 @@
 
     iput v10, p0, Lcom/google/android/street/PanoramaConfig;->mNumZoomLevels:I
 
-    .line 394
+    .line 388
     const/16 v10, 0xa
 
     invoke-virtual {v1, v10}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;->getProtoBuf(I)Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;
 
     move-result-object v6
 
-    .line 396
+    .line 390
     .local v6, mapPointProto:Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;
     new-instance v10, Lcom/google/android/street/MapPoint;
 
@@ -574,7 +574,7 @@
 
     iput-object v10, p0, Lcom/google/android/street/PanoramaConfig;->mLatLng:Lcom/google/android/street/MapPoint;
 
-    .line 398
+    .line 392
     const/16 v10, 0xb
 
     invoke-virtual {v1, v10}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;->getString(I)Ljava/lang/String;
@@ -583,7 +583,7 @@
 
     iput-object v10, p0, Lcom/google/android/street/PanoramaConfig;->mCopyright:Ljava/lang/String;
 
-    .line 400
+    .line 394
     const/16 v10, 0xc
 
     invoke-virtual {v1, v10}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;->getString(I)Ljava/lang/String;
@@ -592,7 +592,7 @@
 
     iput-object v10, p0, Lcom/google/android/street/PanoramaConfig;->mText:Ljava/lang/String;
 
-    .line 402
+    .line 396
     const/16 v10, 0xd
 
     invoke-virtual {v1, v10}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;->getString(I)Ljava/lang/String;
@@ -601,7 +601,7 @@
 
     iput-object v10, p0, Lcom/google/android/street/PanoramaConfig;->mStreetRange:Ljava/lang/String;
 
-    .line 404
+    .line 398
     const/16 v10, 0x3d
 
     invoke-virtual {v1, v10}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
@@ -610,7 +610,7 @@
 
     iput v10, p0, Lcom/google/android/street/PanoramaConfig;->mSceneType:I
 
-    .line 409
+    .line 403
     const/16 v10, 0x22
 
     invoke-virtual {v8, v10}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
@@ -623,7 +623,7 @@
 
     iput v10, p0, Lcom/google/android/street/PanoramaConfig;->mPanoYawDeg:F
 
-    .line 411
+    .line 405
     const/16 v10, 0x23
 
     invoke-virtual {v8, v10}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
@@ -636,7 +636,7 @@
 
     iput v10, p0, Lcom/google/android/street/PanoramaConfig;->mTiltYawDeg:F
 
-    .line 413
+    .line 407
     const/16 v10, 0x24
 
     invoke-virtual {v8, v10}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
@@ -659,12 +659,12 @@
 
     iput v10, p0, Lcom/google/android/street/PanoramaConfig;->mTiltPitchDeg:F
 
-    .line 422
+    .line 416
     const/4 v10, 0x0
 
     iput v10, p0, Lcom/google/android/street/PanoramaConfig;->mProjectionType:I
 
-    .line 423
+    .line 417
     const/16 v10, 0x26
 
     invoke-virtual {v8, v10}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;->has(I)Z
@@ -673,7 +673,7 @@
 
     if-eqz v10, :cond_10f
 
-    .line 424
+    .line 418
     const/16 v10, 0x26
 
     invoke-virtual {v8, v10}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
@@ -682,7 +682,7 @@
 
     packed-switch v10, :pswitch_data_18c
 
-    .line 436
+    .line 430
     :cond_10f
     :goto_10f
     const/16 v10, 0x28
@@ -695,7 +695,7 @@
 
     iput v10, p0, Lcom/google/android/street/PanoramaConfig;->mMinVisiblePitchDeg:F
 
-    .line 439
+    .line 433
     const/16 v10, 0x29
 
     const v11, 0x55d4a80
@@ -706,7 +706,7 @@
 
     iput v10, p0, Lcom/google/android/street/PanoramaConfig;->mMaxVisiblePitchDeg:F
 
-    .line 443
+    .line 437
     iget v10, p0, Lcom/google/android/street/PanoramaConfig;->mMinVisiblePitchDeg:F
 
     iget v11, p0, Lcom/google/android/street/PanoramaConfig;->mMaxVisiblePitchDeg:F
@@ -715,19 +715,19 @@
 
     if-lez v10, :cond_135
 
-    .line 444
+    .line 438
     iget v9, p0, Lcom/google/android/street/PanoramaConfig;->mMinVisiblePitchDeg:F
 
-    .line 445
+    .line 439
     .local v9, temp:F
     iget v10, p0, Lcom/google/android/street/PanoramaConfig;->mMaxVisiblePitchDeg:F
 
     iput v10, p0, Lcom/google/android/street/PanoramaConfig;->mMinVisiblePitchDeg:F
 
-    .line 446
+    .line 440
     iput v9, p0, Lcom/google/android/street/PanoramaConfig;->mMaxVisiblePitchDeg:F
 
-    .line 454
+    .line 448
     .end local v9           #temp:F
     :cond_135
     const/16 v10, 0x34
@@ -736,27 +736,27 @@
 
     move-result v7
 
-    .line 456
+    .line 450
     .local v7, numLinks:I
     new-array v10, v7, [Lcom/google/android/street/PanoramaLink;
 
     iput-object v10, p0, Lcom/google/android/street/PanoramaConfig;->mLinks:[Lcom/google/android/street/PanoramaLink;
 
-    .line 457
+    .line 451
     const/4 v3, 0x0
 
     .local v3, i:I
     :goto_140
     if-ge v3, v7, :cond_15c
 
-    .line 458
+    .line 452
     const/16 v10, 0x34
 
     invoke-virtual {v0, v10, v3}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;->getProtoBuf(II)Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;
 
     move-result-object v4
 
-    .line 460
+    .line 454
     .local v4, linkProto:Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;
     iget-object v10, p0, Lcom/google/android/street/PanoramaConfig;->mLinks:[Lcom/google/android/street/PanoramaLink;
 
@@ -766,12 +766,12 @@
 
     aput-object v11, v10, v3
 
-    .line 457
+    .line 451
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_140
 
-    .line 426
+    .line 420
     .end local v3           #i:I
     .end local v4           #linkProto:Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;
     .end local v7           #numLinks:I
@@ -782,7 +782,7 @@
 
     goto :goto_10f
 
-    .line 429
+    .line 423
     :pswitch_158
     const/4 v10, 0x1
 
@@ -790,7 +790,7 @@
 
     goto :goto_10f
 
-    .line 466
+    .line 460
     .restart local v3       #i:I
     .restart local v7       #numLinks:I
     :cond_15c
@@ -812,7 +812,7 @@
 
     if-eqz v10, :cond_181
 
-    .line 469
+    .line 463
     :try_start_16e
     new-instance v10, Lcom/google/android/street/DepthMap;
 
@@ -834,21 +834,21 @@
     :try_end_181
     .catch Ljava/io/IOException; {:try_start_16e .. :try_end_181} :catch_185
 
-    .line 477
+    .line 471
     :cond_181
     :goto_181
     invoke-virtual {p0}, Lcom/google/android/street/PanoramaConfig;->finishInit()V
 
-    .line 478
+    .line 472
     return-void
 
-    .line 472
+    .line 466
     :catch_185
     move-exception v10
 
     move-object v2, v10
 
-    .line 473
+    .line 467
     .local v2, e:Ljava/io/IOException;
     const/4 v10, 0x0
 
@@ -856,7 +856,7 @@
 
     goto :goto_181
 
-    .line 424
+    .line 418
     nop
 
     :pswitch_data_18c
@@ -873,7 +873,7 @@
     .parameter "max"
 
     .prologue
-    .line 767
+    .line 761
     cmpg-float v0, p0, p1
 
     if-gez v0, :cond_6
@@ -905,7 +905,7 @@
     .parameter "max"
 
     .prologue
-    .line 763
+    .line 757
     if-ge p0, p1, :cond_4
 
     move v0, p1
@@ -931,7 +931,7 @@
     .parameter "yawE6"
 
     .prologue
-    .line 790
+    .line 784
     const v0, 0x15752a00
 
     rem-int v0, p0, v0
@@ -952,21 +952,21 @@
     .parameter "maxAngle"
 
     .prologue
-    .line 743
+    .line 737
     const/4 v4, -0x1
 
-    .line 744
+    .line 738
     .local v4, result:I
     move v5, p2
 
-    .line 745
+    .line 739
     .local v5, resultDiff:F
     if-eqz p0, :cond_25
 
-    .line 746
+    .line 740
     array-length v3, p0
 
-    .line 747
+    .line 741
     .local v3, linkCount:I
     const/4 v1, 0x0
 
@@ -974,10 +974,10 @@
     :goto_6
     if-ge v1, v3, :cond_25
 
-    .line 748
+    .line 742
     aget-object v2, p0, v1
 
-    .line 749
+    .line 743
     .local v2, link:Lcom/google/android/street/PanoramaLink;
     iget v6, v2, Lcom/google/android/street/PanoramaLink;->mYawDeg:F
 
@@ -987,7 +987,7 @@
 
     move-result v0
 
-    .line 750
+    .line 744
     .local v0, diff:F
     const/high16 v6, 0x4334
 
@@ -995,30 +995,30 @@
 
     if-lez v6, :cond_1c
 
-    .line 751
+    .line 745
     const/high16 v6, 0x43b4
 
     sub-float v0, v6, v0
 
-    .line 753
+    .line 747
     :cond_1c
     cmpg-float v6, v0, v5
 
     if-gez v6, :cond_22
 
-    .line 754
+    .line 748
     move v5, v0
 
-    .line 755
+    .line 749
     move v4, v1
 
-    .line 747
+    .line 741
     :cond_22
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_6
 
-    .line 759
+    .line 753
     .end local v0           #diff:F
     .end local v1           #i:I
     .end local v2           #link:Lcom/google/android/street/PanoramaLink;
@@ -1031,7 +1031,7 @@
     .registers 2
 
     .prologue
-    .line 550
+    .line 544
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -1047,7 +1047,7 @@
     .parameter "upperBound"
 
     .prologue
-    .line 773
+    .line 767
     invoke-virtual {p0, p1}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
 
     move-result v0
@@ -1066,7 +1066,7 @@
     .parameter "defaultValue"
 
     .prologue
-    .line 779
+    .line 773
     const v1, -0x55d4a80
 
     const v2, 0x55d4a80
@@ -1075,14 +1075,14 @@
 
     move-result v0
 
-    .line 782
+    .line 776
     .local v0, pitchE6:I
     if-nez v0, :cond_d
 
-    .line 783
+    .line 777
     move v0, p2
 
-    .line 785
+    .line 779
     :cond_d
     int-to-float v1, v0
 
@@ -1103,12 +1103,12 @@
     .end annotation
 
     .prologue
-    .line 283
+    .line 277
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
-    .line 285
+    .line 279
     .local v2, t0:J
     new-instance v1, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;
 
@@ -1116,16 +1116,16 @@
 
     invoke-direct {v1, v4}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;-><init>(Lcom/google/mobile/googlenav/common/io/protocol/ProtoBufType;)V
 
-    .line 287
+    .line 281
     .local v1, proto:Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;
     invoke-virtual {v1, p0}, Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;->parse(Ljava/io/InputStream;)Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;
 
-    .line 288
+    .line 282
     new-instance v0, Lcom/google/android/street/PanoramaConfig;
 
     invoke-direct {v0, v1}, Lcom/google/android/street/PanoramaConfig;-><init>(Lcom/google/mobile/googlenav/common/io/protocol/ProtoBuf;)V
 
-    .line 295
+    .line 289
     .local v0, panoramaConfig:Lcom/google/android/street/PanoramaConfig;
     return-object v0
 .end method
@@ -1135,7 +1135,7 @@
     .parameter "panoId"
 
     .prologue
-    .line 545
+    .line 539
     if-nez p0, :cond_4
 
     const/4 v0, 0x0
@@ -1171,7 +1171,7 @@
     .registers 2
 
     .prologue
-    .line 563
+    .line 557
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mInfoLevel:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1193,7 +1193,7 @@
     .registers 2
 
     .prologue
-    .line 628
+    .line 622
     const/4 v0, 0x0
 
     return v0
@@ -1205,7 +1205,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 486
+    .line 480
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mTiltYawDeg:F
 
     invoke-static {v0}, Lcom/google/android/street/StreetMath;->degreesToRadians(F)F
@@ -1214,7 +1214,7 @@
 
     iput v0, p0, Lcom/google/android/street/PanoramaConfig;->mTiltYawRad:F
 
-    .line 487
+    .line 481
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mTiltYawRad:F
 
     const/4 v1, 0x0
@@ -1223,7 +1223,7 @@
 
     if-gez v0, :cond_18
 
-    .line 488
+    .line 482
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mTiltYawRad:F
 
     const v1, 0x40c90fdb
@@ -1232,7 +1232,7 @@
 
     iput v0, p0, Lcom/google/android/street/PanoramaConfig;->mTiltYawRad:F
 
-    .line 490
+    .line 484
     :cond_18
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mTiltPitchDeg:F
 
@@ -1242,7 +1242,7 @@
 
     iput v0, p0, Lcom/google/android/street/PanoramaConfig;->mTiltPitchRad:F
 
-    .line 494
+    .line 488
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mImageWidth:I
 
     iget v1, p0, Lcom/google/android/street/PanoramaConfig;->mImageHeight:I
@@ -1257,19 +1257,19 @@
 
     iput v0, p0, Lcom/google/android/street/PanoramaConfig;->mOriginalZoomLevel:I
 
-    .line 499
+    .line 493
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mRootImageKeys:Ljava/util/List;
 
-    .line 500
+    .line 494
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mProjectionType:I
 
     packed-switch v0, :pswitch_data_ae
 
-    .line 520
+    .line 514
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Unrecognized projection type."
@@ -1278,7 +1278,7 @@
 
     throw v0
 
-    .line 502
+    .line 496
     :pswitch_42
     iget-object v6, p0, Lcom/google/android/street/PanoramaConfig;->mRootImageKeys:Ljava/util/List;
 
@@ -1296,11 +1296,11 @@
 
     invoke-interface {v6, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 522
+    .line 516
     :goto_51
     return-void
 
-    .line 506
+    .line 500
     :pswitch_52
     iget-object v6, p0, Lcom/google/android/street/PanoramaConfig;->mRootImageKeys:Ljava/util/List;
 
@@ -1318,7 +1318,7 @@
 
     invoke-interface {v6, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 508
+    .line 502
     iget-object v6, p0, Lcom/google/android/street/PanoramaConfig;->mRootImageKeys:Ljava/util/List;
 
     new-instance v0, Lcom/google/android/street/PanoramaImageKey;
@@ -1335,7 +1335,7 @@
 
     invoke-interface {v6, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 510
+    .line 504
     iget-object v6, p0, Lcom/google/android/street/PanoramaConfig;->mRootImageKeys:Ljava/util/List;
 
     new-instance v0, Lcom/google/android/street/PanoramaImageKey;
@@ -1352,7 +1352,7 @@
 
     invoke-interface {v6, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 512
+    .line 506
     iget-object v6, p0, Lcom/google/android/street/PanoramaConfig;->mRootImageKeys:Ljava/util/List;
 
     new-instance v0, Lcom/google/android/street/PanoramaImageKey;
@@ -1369,7 +1369,7 @@
 
     invoke-interface {v6, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 514
+    .line 508
     iget-object v6, p0, Lcom/google/android/street/PanoramaConfig;->mRootImageKeys:Ljava/util/List;
 
     new-instance v0, Lcom/google/android/street/PanoramaImageKey;
@@ -1386,7 +1386,7 @@
 
     invoke-interface {v6, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 516
+    .line 510
     iget-object v6, p0, Lcom/google/android/street/PanoramaConfig;->mRootImageKeys:Ljava/util/List;
 
     new-instance v0, Lcom/google/android/street/PanoramaImageKey;
@@ -1405,7 +1405,7 @@
 
     goto :goto_51
 
-    .line 500
+    .line 494
     nop
 
     :pswitch_data_ae
@@ -1420,7 +1420,7 @@
     .parameter "yawDeg"
 
     .prologue
-    .line 643
+    .line 637
     const/high16 v0, 0x42f0
 
     invoke-virtual {p0, p1, v0}, Lcom/google/android/street/PanoramaConfig;->getClosestLink(FF)Lcom/google/android/street/PanoramaLink;
@@ -1436,27 +1436,27 @@
     .parameter "maxAngle"
 
     .prologue
-    .line 647
+    .line 641
     const/4 v1, 0x0
 
-    .line 648
+    .line 642
     .local v1, result:Lcom/google/android/street/PanoramaLink;
     invoke-virtual {p0, p1, p2}, Lcom/google/android/street/PanoramaConfig;->getClosestLinkIndex(FF)I
 
     move-result v0
 
-    .line 649
+    .line 643
     .local v0, index:I
     const/4 v2, -0x1
 
     if-eq v0, v2, :cond_c
 
-    .line 650
+    .line 644
     iget-object v2, p0, Lcom/google/android/street/PanoramaConfig;->mLinks:[Lcom/google/android/street/PanoramaLink;
 
     aget-object v1, v2, v0
 
-    .line 652
+    .line 646
     :cond_c
     return-object v1
 .end method
@@ -1467,7 +1467,7 @@
     .parameter "maxAngle"
 
     .prologue
-    .line 660
+    .line 654
     iget-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mLinks:[Lcom/google/android/street/PanoramaLink;
 
     invoke-static {v0, p1, p2}, Lcom/google/android/street/PanoramaConfig;->getClosestLinkIndex([Lcom/google/android/street/PanoramaLink;FF)I
@@ -1481,7 +1481,7 @@
     .registers 2
 
     .prologue
-    .line 534
+    .line 528
     iget-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mPanoId:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/google/android/street/PanoramaConfig;->persistentKeyForPanoId(Ljava/lang/String;)Ljava/lang/String;
@@ -1501,26 +1501,26 @@
 
     const/4 v3, 0x0
 
-    .line 667
+    .line 661
     iget-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mTiltMatrix:[F
 
     if-nez v0, :cond_2f
 
-    .line 668
+    .line 662
     const/16 v0, 0x10
 
     new-array v0, v0, [F
 
     iput-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mTiltMatrix:[F
 
-    .line 675
+    .line 669
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mTiltYawDeg:F
 
     iget v5, p0, Lcom/google/android/street/PanoramaConfig;->mPanoYawDeg:F
 
     sub-float v2, v0, v5
 
-    .line 676
+    .line 670
     .local v2, tiltYawDeg:F
     iget-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mTiltMatrix:[F
 
@@ -1528,7 +1528,7 @@
 
     invoke-static/range {v0 .. v5}, Landroid/opengl/Matrix;->setRotateM([FIFFFF)V
 
-    .line 677
+    .line 671
     iget-object v5, p0, Lcom/google/android/street/PanoramaConfig;->mTiltMatrix:[F
 
     iget v7, p0, Lcom/google/android/street/PanoramaConfig;->mTiltPitchDeg:F
@@ -1543,7 +1543,7 @@
 
     invoke-static/range {v5 .. v10}, Landroid/opengl/Matrix;->rotateM([FIFFFF)V
 
-    .line 678
+    .line 672
     iget-object v5, p0, Lcom/google/android/street/PanoramaConfig;->mTiltMatrix:[F
 
     neg-float v7, v2
@@ -1558,7 +1558,7 @@
 
     invoke-static/range {v5 .. v10}, Landroid/opengl/Matrix;->rotateM([FIFFFF)V
 
-    .line 681
+    .line 675
     .end local v2           #tiltYawDeg:F
     :cond_2f
     iget-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mTiltMatrix:[F
@@ -1570,7 +1570,7 @@
     .registers 2
 
     .prologue
-    .line 567
+    .line 561
     invoke-virtual {p0}, Lcom/google/android/street/PanoramaConfig;->addLatencyToTransitions()Z
 
     move-result v0
@@ -1601,12 +1601,12 @@
     .registers 7
 
     .prologue
-    .line 554
+    .line 548
     invoke-static {}, Lcom/google/android/street/PanoramaConfig;->getCurrentTime()J
 
     move-result-wide v0
 
-    .line 555
+    .line 549
     .local v0, now:J
     iget-wide v2, p0, Lcom/google/android/street/PanoramaConfig;->mLastModifiedTime:J
 
@@ -1633,7 +1633,7 @@
     .registers 2
 
     .prologue
-    .line 573
+    .line 567
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mInfoLevel:I
 
     and-int/lit8 v0, v0, 0x40
@@ -1655,7 +1655,7 @@
     .registers 2
 
     .prologue
-    .line 577
+    .line 571
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mInfoLevel:I
 
     and-int/lit8 v0, v0, 0x41
@@ -1677,7 +1677,7 @@
     .registers 3
 
     .prologue
-    .line 526
+    .line 520
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1729,7 +1729,7 @@
 
     const/4 v1, 0x0
 
-    .line 731
+    .line 725
     const/4 v2, 0x4
 
     new-array v9, v2, [F
@@ -1746,13 +1746,13 @@
 
     aput v4, v9, v10
 
-    .line 732
+    .line 726
     .local v9, vector:[F
     const/16 v2, 0x10
 
     new-array v0, v2, [F
 
-    .line 733
+    .line 727
     .local v0, matrix:[F
     iget v2, p0, Lcom/google/android/street/PanoramaConfig;->mPanoYawDeg:F
 
@@ -1764,7 +1764,7 @@
 
     invoke-static/range {v0 .. v5}, Landroid/opengl/Matrix;->setRotateM([FIFFFF)V
 
-    .line 734
+    .line 728
     invoke-virtual {p0}, Lcom/google/android/street/PanoramaConfig;->getTiltMatrix()[F
 
     move-result-object v4
@@ -1789,27 +1789,27 @@
 
     move v7, v1
 
-    .line 735
+    .line 729
     invoke-static/range {v2 .. v7}, Landroid/opengl/Matrix;->multiplyMV([FI[FI[FI)V
 
-    .line 736
+    .line 730
     const/4 v8, 0x0
 
     .local v8, i:I
     :goto_33
     if-ge v8, v10, :cond_3c
 
-    .line 737
+    .line 731
     aget v1, v9, v8
 
     aput v1, p4, v8
 
-    .line 736
+    .line 730
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_33
 
-    .line 739
+    .line 733
     :cond_3c
     return-void
 .end method
@@ -1823,7 +1823,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 707
+    .line 701
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mPanoYawDeg:F
 
     invoke-static {v0}, Lcom/google/android/street/StreetMath;->degreesToUnit(F)F
@@ -1838,7 +1838,7 @@
 
     aput v0, p3, v2
 
-    .line 708
+    .line 702
     const/4 v0, 0x1
 
     aget v1, p3, v2
@@ -1871,7 +1871,7 @@
 
     aput v1, p3, v0
 
-    .line 712
+    .line 706
     return-void
 .end method
 
@@ -1882,7 +1882,7 @@
     .parameter "vehicleYawPitch"
 
     .prologue
-    .line 719
+    .line 713
     const/4 v0, 0x0
 
     iget v1, p0, Lcom/google/android/street/PanoramaConfig;->mPanoYawDeg:F
@@ -1899,7 +1899,7 @@
 
     aput v1, p3, v0
 
-    .line 720
+    .line 714
     const/4 v0, 0x1
 
     invoke-static {p1}, Lcom/google/android/street/StreetMath;->unitToRadians(F)F
@@ -1930,7 +1930,7 @@
 
     aput v1, p3, v0
 
-    .line 723
+    .line 717
     return-void
 .end method
 
@@ -1942,12 +1942,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 593
+    .line 587
     const/4 v0, 0x6
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 594
+    .line 588
     iget-boolean v0, p0, Lcom/google/android/street/PanoramaConfig;->mDisabled:Z
 
     if-eqz v0, :cond_95
@@ -1957,37 +1957,37 @@
     :goto_a
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 595
+    .line 589
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mInfoLevel:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 598
+    .line 592
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mImageWidth:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 599
+    .line 593
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mImageHeight:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 600
+    .line 594
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mTileWidth:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 601
+    .line 595
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mTileHeight:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 602
+    .line 596
     iget-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mPanoId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 603
+    .line 597
     iget-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mLatLng:Lcom/google/android/street/MapPoint;
 
     invoke-virtual {v0}, Lcom/google/android/street/MapPoint;->getLatE6()I
@@ -1996,7 +1996,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 604
+    .line 598
     iget-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mLatLng:Lcom/google/android/street/MapPoint;
 
     invoke-virtual {v0}, Lcom/google/android/street/MapPoint;->getLngE6()I
@@ -2005,77 +2005,77 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 605
+    .line 599
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mNumZoomLevels:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 606
+    .line 600
     iget-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mCopyright:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 607
+    .line 601
     iget-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mText:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 608
+    .line 602
     iget-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mStreetRange:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 609
+    .line 603
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mSceneType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 610
+    .line 604
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mProjectionType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 611
+    .line 605
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mPanoYawDeg:F
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 612
+    .line 606
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mTiltYawDeg:F
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 613
+    .line 607
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mTiltPitchDeg:F
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 614
+    .line 608
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mMinVisiblePitchDeg:F
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 615
+    .line 609
     iget v0, p0, Lcom/google/android/street/PanoramaConfig;->mMaxVisiblePitchDeg:F
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 616
+    .line 610
     iget-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mLinks:[Lcom/google/android/street/PanoramaLink;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
-    .line 617
+    .line 611
     iget-wide v0, p0, Lcom/google/android/street/PanoramaConfig;->mLastModifiedTime:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 618
+    .line 612
     iget-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mDepthMap:Lcom/google/android/street/DepthMap;
 
     if-eqz v0, :cond_98
 
-    .line 619
+    .line 613
     iget-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mDepthMap:Lcom/google/android/street/DepthMap;
 
     invoke-virtual {v0}, Lcom/google/android/street/DepthMap;->getCompressedDepthMap()[B
@@ -2084,7 +2084,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
 
-    .line 620
+    .line 614
     iget-object v0, p0, Lcom/google/android/street/PanoramaConfig;->mDepthMap:Lcom/google/android/street/DepthMap;
 
     invoke-virtual {v0}, Lcom/google/android/street/DepthMap;->getCompressedPanoMap()[B
@@ -2093,23 +2093,23 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
 
-    .line 625
+    .line 619
     :goto_94
     return-void
 
     :cond_95
     move v0, v2
 
-    .line 594
+    .line 588
     goto/16 :goto_a
 
-    .line 622
+    .line 616
     :cond_98
     new-array v0, v2, [B
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
 
-    .line 623
+    .line 617
     new-array v0, v2, [B
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V

@@ -18,14 +18,8 @@
 .method public abstract onAccountSelected(J)V
 .end method
 
-.method public abstract onCurrentMailboxUpdated(ILjava/lang/String;II)V
+.method public abstract onMailboxSelected(JJZ)V
 .end method
 
-.method public abstract onMailboxSelected(JJLjava/lang/String;II)V
-.end method
-
-.method public abstract setAllMailboxCursor(Landroid/database/Cursor;)V
-.end method
-
-.method public abstract setTotalCountFromMailbox(IZ)V
+.method public abstract onParentMailboxChanged()V
 .end method

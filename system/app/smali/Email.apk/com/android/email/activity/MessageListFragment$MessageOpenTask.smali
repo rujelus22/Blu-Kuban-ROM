@@ -1,5 +1,5 @@
 .class Lcom/android/email/activity/MessageListFragment$MessageOpenTask;
-.super Landroid/os/AsyncTask;
+.super Lcom/android/emailcommon/utility/EmailAsyncTask;
 .source "MessageListFragment.java"
 
 
@@ -15,7 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroid/os/AsyncTask",
+        "Lcom/android/emailcommon/utility/EmailAsyncTask",
         "<",
         "Ljava/lang/Void;",
         "Ljava/lang/Void;",
@@ -33,69 +33,68 @@
 .field final synthetic this$0:Lcom/android/email/activity/MessageListFragment;
 
 
+# direct methods
+.method public constructor <init>(Lcom/android/email/activity/MessageListFragment;JJ)V
+    .registers 7
+    .parameter
+    .parameter "messageMailboxId"
+    .parameter "messageId"
+
+    .prologue
+    .line 821
+    iput-object p1, p0, Lcom/android/email/activity/MessageListFragment$MessageOpenTask;->this$0:Lcom/android/email/activity/MessageListFragment;
+
+    .line 822
+    #getter for: Lcom/android/email/activity/MessageListFragment;->mTaskTracker:Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
+    invoke-static {p1}, Lcom/android/email/activity/MessageListFragment;->access$200(Lcom/android/email/activity/MessageListFragment;)Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/android/emailcommon/utility/EmailAsyncTask;-><init>(Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;)V
+
+    .line 823
+    iput-wide p2, p0, Lcom/android/email/activity/MessageListFragment$MessageOpenTask;->mMessageMailboxId:J
+
+    .line 824
+    iput-wide p4, p0, Lcom/android/email/activity/MessageListFragment$MessageOpenTask;->mMessageId:J
+
+    .line 825
+    return-void
+.end method
+
+
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Integer;
-    .registers 5
+    .registers 6
     .parameter "params"
 
     .prologue
-    .line 2422
+    .line 832
     iget-object v0, p0, Lcom/android/email/activity/MessageListFragment$MessageOpenTask;->this$0:Lcom/android/email/activity/MessageListFragment;
 
+    iget-object v1, p0, Lcom/android/email/activity/MessageListFragment$MessageOpenTask;->this$0:Lcom/android/email/activity/MessageListFragment;
+
     #getter for: Lcom/android/email/activity/MessageListFragment;->mActivity:Landroid/app/Activity;
-    invoke-static {v0}, Lcom/android/email/activity/MessageListFragment;->access$200(Lcom/android/email/activity/MessageListFragment;)Landroid/app/Activity;
+    invoke-static {v1}, Lcom/android/email/activity/MessageListFragment;->access$300(Lcom/android/email/activity/MessageListFragment;)Landroid/app/Activity;
 
-    move-result-object v0
+    move-result-object v1
 
-    iget-wide v1, p0, Lcom/android/email/activity/MessageListFragment$MessageOpenTask;->mMessageMailboxId:J
+    iget-wide v2, p0, Lcom/android/email/activity/MessageListFragment$MessageOpenTask;->mMessageMailboxId:J
 
-    invoke-static {v0, v1, v2}, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->getMailboxType(Landroid/content/Context;J)I
+    invoke-static {v1, v2, v3}, Lcom/android/emailcommon/provider/Mailbox;->getMailboxType(Landroid/content/Context;J)I
+
+    move-result v1
+
+    #calls: Lcom/android/email/activity/MessageListFragment;->callbackTypeForMailboxType(I)I
+    invoke-static {v0, v1}, Lcom/android/email/activity/MessageListFragment;->access$400(Lcom/android/email/activity/MessageListFragment;I)I
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_22
-
-    .line 2428
-    :pswitch_f
-    const/4 v0, 0x0
-
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    :goto_14
     return-object v0
-
-    .line 2424
-    :pswitch_15
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_14
-
-    .line 2426
-    :pswitch_1b
-    const/4 v0, 0x2
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_14
-
-    .line 2422
-    nop
-
-    :pswitch_data_22
-    .packed-switch 0x3
-        :pswitch_15
-        :pswitch_f
-        :pswitch_f
-        :pswitch_1b
-    .end packed-switch
 .end method
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
@@ -103,7 +102,7 @@
     .parameter "x0"
 
     .prologue
-    .line 2406
+    .line 817
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -114,31 +113,24 @@
     return-object v0
 .end method
 
-.method protected onPostExecute(Ljava/lang/Integer;)V
+.method protected onSuccess(Ljava/lang/Integer;)V
     .registers 10
     .parameter "type"
 
     .prologue
-    .line 2434
-    invoke-virtual {p0}, Lcom/android/email/activity/MessageListFragment$MessageOpenTask;->isCancelled()Z
+    .line 838
+    if-nez p1, :cond_3
 
-    move-result v0
-
-    if-nez v0, :cond_8
-
-    if-nez p1, :cond_9
-
-    .line 2438
-    :cond_8
-    :goto_8
+    .line 842
+    :goto_2
     return-void
 
-    .line 2437
-    :cond_9
+    .line 841
+    :cond_3
     iget-object v0, p0, Lcom/android/email/activity/MessageListFragment$MessageOpenTask;->this$0:Lcom/android/email/activity/MessageListFragment;
 
     #getter for: Lcom/android/email/activity/MessageListFragment;->mCallback:Lcom/android/email/activity/MessageListFragment$Callback;
-    invoke-static {v0}, Lcom/android/email/activity/MessageListFragment;->access$400(Lcom/android/email/activity/MessageListFragment;)Lcom/android/email/activity/MessageListFragment$Callback;
+    invoke-static {v0}, Lcom/android/email/activity/MessageListFragment;->access$500(Lcom/android/email/activity/MessageListFragment;)Lcom/android/email/activity/MessageListFragment$Callback;
 
     move-result-object v0
 
@@ -158,19 +150,19 @@
 
     invoke-interface/range {v0 .. v7}, Lcom/android/email/activity/MessageListFragment$Callback;->onMessageOpen(JJJI)V
 
-    goto :goto_8
+    goto :goto_2
 .end method
 
-.method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
+.method protected bridge synthetic onSuccess(Ljava/lang/Object;)V
     .registers 2
     .parameter "x0"
 
     .prologue
-    .line 2406
+    .line 817
     check-cast p1, Ljava/lang/Integer;
 
     .end local p1
-    invoke-virtual {p0, p1}, Lcom/android/email/activity/MessageListFragment$MessageOpenTask;->onPostExecute(Ljava/lang/Integer;)V
+    invoke-virtual {p0, p1}, Lcom/android/email/activity/MessageListFragment$MessageOpenTask;->onSuccess(Ljava/lang/Integer;)V
 
     return-void
 .end method

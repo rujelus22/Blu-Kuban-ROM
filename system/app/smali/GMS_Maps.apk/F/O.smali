@@ -1,20 +1,17 @@
-.class LF/O;
+.class final LF/o;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field final synthetic a:LF/N;
+.implements LF/p;
 
 
 # direct methods
-.method constructor <init>(LF/N;)V
-    .registers 2
+.method constructor <init>()V
+    .registers 1
 
-    iput-object p1, p0, LF/O;->a:LF/N;
-
+    .prologue
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -22,26 +19,44 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 5
+.method public a()Ljava/lang/String;
+    .registers 2
 
-    iget-object v0, p0, LF/O;->a:LF/N;
+    .prologue
+    .line 53
+    const/16 v0, 0x109
 
-    const/4 v1, 0x1
+    invoke-static {v0}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
 
-    iput v1, v0, LF/N;->a:I
+    move-result-object v0
 
-    iget-object v0, p0, LF/O;->a:LF/N;
+    return-object v0
+.end method
 
-    const-string v1, "network"
+.method public b()Ljava/lang/String;
+    .registers 2
 
-    const-string v2, "network"
+    .prologue
+    .line 58
+    const/16 v0, 0x10b
 
-    iget-object v3, p0, LF/O;->a:LF/N;
+    invoke-static {v0}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
 
-    iget v3, v3, LF/N;->a:I
+    move-result-object v0
 
-    invoke-virtual {v0, v1, v2, v3}, LF/N;->a(Ljava/lang/String;Ljava/lang/String;I)V
+    return-object v0
+.end method
 
-    return-void
+.method public c()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 63
+    const/16 v0, 0x10c
+
+    invoke-static {v0}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

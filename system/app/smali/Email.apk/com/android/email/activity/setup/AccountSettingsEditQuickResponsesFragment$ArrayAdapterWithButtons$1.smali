@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 84
+    .line 75
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$ArrayAdapterWithButtons$1;->this$0:Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$ArrayAdapterWithButtons;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,7 +42,7 @@
     .parameter "view"
 
     .prologue
-    .line 87
+    .line 78
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
@@ -53,7 +53,7 @@
 
     check-cast v0, Lcom/android/emailcommon/provider/QuickResponse;
 
-    .line 88
+    .line 79
     .local v0, quickResponse:Lcom/android/emailcommon/provider/QuickResponse;
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$ArrayAdapterWithButtons$1;->this$0:Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$ArrayAdapterWithButtons;
 
@@ -77,6 +77,6 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/android/email/activity/setup/EditQuickResponseDialog;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 90
+    .line 82
     return-void
 .end method

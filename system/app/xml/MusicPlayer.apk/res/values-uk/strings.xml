@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s, %2$s</string>
+    <string name="no_network_connection">Немає з’єднання</string>
+    <string name="authentication_failure_no_network">Щоб автентифікувати свій обліковий запис служби Музика, потрібне з’єднання з Інтернетом.</string>
+    <string name="authentication_failure">Не автентифіковано</string>
+    <string name="authentication_failure_error">Не вдалося автентифікувати ваш обліковий запис служби Музика.</string>
+    <string name="positive_button_text">OK</string>
+    <string name="negative_button_text">Скасувати</string>
+    <string name="save_button_text">Зберегти</string>
+    <string name="not_save_button_text">Не зберігати</string>
+    <string name="offline_music_not_available_message">Щоб зберегти музику на пристрої, перейдіть у режим перегляду альбомів, списків відтворення або виконавців.</string>
+    <string name="view_albums_button_text">Перейти до альбомів</string>
+    <string name="shuffle_all">Перемішати все</string>
+    <string name="play_all">Відтвор. всі</string>
+    <string name="songs_all">Усі пісні</string>
+    <string name="shuffle">Перемішати</string>
+    <string name="search">Пошук</string>
+    <string name="settings">Налаштування</string>
+    <string name="library_options">Параметри відображення</string>
+    <string name="manage_music">Музика на пристрої</string>
+    <string name="available_offline">Зберіг. на пристрої</string>
+    <string name="options">Опції</string>
+    <string name="clear_queue">Очистити чергу</string>
+    <string name="queue_cleared">Чергу очищено</string>
+    <string name="add_to_queue">Додати в чергу</string>
+    <string name="add_to_athome_queue">Додати в групу %s</string>
+    <string name="shop_artist">Шукати за виконавцем</string>
+    <string name="show_offline_music_only">Лише на пристрої</string>
+    <string name="show_all_music">Показувати всю музику</string>
+    <string name="new_playlist_title">Назва списку відтворення</string>
+    <string name="add_to_playlist_title">Назва списку відтворення</string>
+    <string name="rename_playlist_title">Перейменувати \"%s\" на</string>
+    <string name="search_section_header_artists">ВИКОНАВЦІ</string>
+    <string name="search_section_header_albums">АЛЬБОМИ</string>
+    <string name="search_section_header_songs">ПІСНІ</string>
+    <string name="search_section_header_playlists">СПИСКИ ВІДТВОРЕННЯ</string>
+    <string name="shuffle_all_songs">Перемішати все</string>
+    <string name="stream_settings">Налаштування програми Музика</string>
+    <string name="refresh_title">Оновити</string>
+    <string name="refresh_summary">Оновити музику з Google Play</string>
+    <string name="account_settings_title">Обліковий запис Google</string>
+    <string name="no_account_selected_summary">Торкніться, щоб вибрати обліковий запис</string>
+    <string name="account_selected_summary">З’єднуватися з Google Play, використовуючи обліковий запис %s</string>
+    <string name="hide_when_not_connected_title">Сховати недоступну музику</string>
+    <string name="hide_when_not_connected_summary">У режимі офлайн показувати лише доступну музику</string>
+    <string name="stream_only_on_wifi_title">Передавати лише через Wi-Fi</string>
+    <string name="stream_only_on_wifi_summary">Щоб уникнути стягнення плати оператором, не передавайте через мобільні мережі</string>
+    <string name="stream_only_hq_title">Поток.передав.у вис.якості</string>
+    <string name="stream_only_hq_summary">Завжди потоково передавати музику з найвищою якістю</string>
+    <string name="athome_title">Android@Home</string>
+    <string name="athome_summary">Шукати пристрої Android@Home.</string>
+    <string name="athome_not_remote">Щоб прослухати це в Nexus Q, спершу завантажте в музичну бібліотеку Google Play.</string>
+    <string name="athome_move_top_menu">Відтворити наступне</string>
+    <string name="athome_remove_menu">Видалити з черги</string>
+    <string name="lock_screen_controls_title">Елем.керув.блок.екр.</string>
+    <string name="lock_screen_controls_summary">Показати елементи керування музикою вгорі екрана блокування</string>
+    <string name="debug_logs_title">Журнали налагодження</string>
+    <string name="debug_logs_summary">Використовувати журнали налагодження</string>
+    <string name="debug_logs_enable_warning_message">"Дійсно ввімкнути журнали налагодження?
+Секретна інформація може зберігатися на зовнішніх пристроях пам’яті. Зміна цього параметра завершить роботу програми."</string>
+    <string name="debug_logs_disable_warning_message">"Дійсно вимкнути журнали налагодження?
+Зміна цього параметра завершить роботу програми."</string>
+    <string name="tungsten_settings">Налаштування Nexus Q</string>
+    <string name="offlinedl_only_on_wifi_title">Завантажувати лише через Wi-Fi</string>
+    <string name="offlinedl_only_on_wifi_summary">Щоб уникнути стягнення плати оператором, не завантажуйте через мобільні мережі</string>
+    <string name="cache_streamed_title">Кешувати автоматично</string>
+    <string name="cache_streamed_summary">Тимчасово зберігати музику, не запитуючи</string>
+    <string name="download_queue_title">Черга завантажень</string>
+    <string name="download_queue_summary">Показати пісні, які зараз завантажуються</string>
+    <string name="help_title">Довідка</string>
+    <string name="show_no_downloads_title">У черзі для завантаження немає пісень</string>
+    <string name="music_version_title">Версія програми Музика</string>
+    <string name="music_version_summary">Невідома версія</string>
+    <string name="nowplaying_title">Зараз відтвор.</string>
+    <string name="artists_title">Виконавці</string>
+    <string name="albums_title">Альбоми</string>
+    <string name="genres_title">Жанри</string>
+    <string name="tracks_title">Пісні</string>
+    <string name="playlists_title">Сп-ки відтвор.</string>
+    <string name="recent_title">Останнє</string>
+    <string name="search_title">Пошук</string>
+    <string name="no_tracks_title">Нема пісень</string>
+    <string name="delete_playlist_menu">Видалити</string>
+    <string name="edit_playlist_menu">Редаг.</string>
+    <string name="rename_playlist_menu">Переймен.</string>
+    <string name="playlist_delete_confirmation">Видалити список відтворення \"%s\"?</string>
+    <string name="delete_playlist_button_confirm">Видалити</string>
+    <string name="playlist_deleted_message">Сп-ок відтвор. видал.</string>
+    <string name="playlist_created_message">Список відтворення \"%s\" створено.</string>
+    <string name="playlist_renamed_message">Список відтворення перейменовано на \"%s\".</string>
+    <string name="recentlyadded">Останні додані</string>
+    <string name="recentlyadded_title">Останні додані</string>
+    <string name="all_songs_list">Усі пісні</string>
+    <string name="all_songs_list_title">Усі пісні</string>
+    <string name="storemusic_list">Безкоштовні та придбані</string>
+    <string name="storemusic_list_title">Безкоштовні та придбані</string>
+    <string name="freemusic_list">Безкоштовні пісні</string>
+    <string name="freemusic_list_title">Безкоштовні пісні</string>
+    <string name="thumbsup_list">Сподобалося</string>
+    <string name="thumbsup_list_title">Сподобалося</string>
+    <string name="unknown_artist_name">Невідом. виконав.</string>
+    <string name="unknown_album_name">Невідомий альбом</string>
+    <string name="unknown_playlist_name">Невідомий список відтвор.</string>
+    <string name="unknown_submitter_name">Невідомий</string>
+    <string name="ringtone_menu">Вик. як мелодію</string>
+    <string name="ringtone_set">Сигнал \"%s\" встановлено як мелодію телефону.</string>
+    <string name="ringtone_set_failed">Не вдалося створити сигнал дзвінка.</string>
+    <string name="ringtone_needs_download">Мелодію буде встановлено після завантаження.</string>
+    <string name="play_selection">Відтвор.</string>
+    <string name="add_to_playlist">Дод. до сп-ку відтв.</string>
+    <string name="rename_playlist_menu_item">Перейменувати</string>
+    <string name="add_to_playlist_selector_title">Додати до списку відтвор.</string>
+    <string name="queue">Поточ. сп-ок відтв.</string>
+    <string name="save_play_queue_as_playlist">Зберегти чергу</string>
+    <string name="new_playlist_for_content">Новий список відтворення</string>
+    <string name="new_empty_playlist">Новий список відтворення</string>
+    <string name="new_playlist_name_template">Список відтворення %d</string>
+    <string name="removed_from_playlist">\"%1$s\" видалено зі списку відтворення.</string>
+    <string name="removed_from_play_queue">Композицію \"%1$s\" видалено з черги відтворення.</string>
+    <string name="playlist_too_many_songs">Забагато пісень. Ліміт на список відтворення: %d</string>
+    <string name="emptyplaylist">Вибраний сп-ок відтв. порожній.</string>
+    <string name="widget_nowplaying_small_title">Музика (4x1)</string>
+    <string name="widget_nowplaying_large_title">Музика (4x4)</string>
+    <string name="appwidget_text_separator">–</string>
+    <string name="playlist_edit_label">НАЗВА</string>
+    <string name="create_playlist_create_text">OK</string>
+    <string name="rename_playlist_rename_text">Перейменувати</string>
+    <string name="service_start_error_title">Проблема з відтвор.</string>
+    <string name="service_start_error_msg">Не вдалося відтворити пісню.</string>
+    <string name="service_start_error_button">OK</string>
+    <string name="weekpicker_set">Готово</string>
+    <string name="weekpicker_title">Установ. час</string>
+    <string name="musicshortcutlabel">Спис. відтв. муз.</string>
+    <string name="app_name">Google Play Музика</string>
+    <string name="launcher_name">Play Музика</string>
+    <string name="actionbar_title">Google Play</string>
+    <string name="playback_failed_title">Помилка відтворення музики.</string>
+    <string name="playback_failed">Не вдалося відтворити потрібну вам композицію.</string>
+    <string name="cancel">Скасувати</string>
+    <string name="remove_from_playlist">Видал. зі списку відтвор.</string>
+    <string name="streamloadingtext">Під’єднання до %s...</string>
+    <string name="search_hint">Пошук музики</string>
+    <string name="working_artists">Виконавці...</string>
+    <string name="working_albums">Альбоми...</string>
+    <string name="loading">Завантаження...</string>
+    <string name="sort_by_track">Доріжки</string>
+    <string name="music_picker_title">Вибрати музичну композицію</string>
+    <string name="fail_to_start_stream">Не вдалося відтворити потрібний вам потік.</string>
+    <string name="search_settings_description">Виконавці, альбоми та доріжки</string>
+    <string name="fast_scroll_alphabet">" АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ"</string>
+    <string name="title_tv">Музика</string>
+    <string name="music_library">Муз. бібліотека</string>
+    <string name="playlist_label">Список відтворення</string>
+    <string name="faux_art_all_songs_label">Усі пісні</string>
+    <string name="faux_art_playlist_label">Список відтворення</string>
+    <string name="faux_art_playlist_instant_mix_label">Миттєва добірка</string>
+    <string name="faux_art_playlist_auto_playlist_label">Автомат. список відтворення</string>
+    <string name="buffering">Буферизація...</string>
+    <string name="keep_on_phone">Зберігати на пристрої</string>
+    <string name="no_music_add_music_header">СПОСОБИ ДОДАВАННЯ МУЗИКИ</string>
+    <string name="no_music_shop_body">Купуйте мільйони пісень і вибирайте сотні безкоштовних композицій.</string>
+    <string name="no_music_shop_button">КУПИТИ</string>
+    <string name="no_music_upload_body">Завантажуйте безкоштовно 20 тисяч пісень у Google Play.</string>
+    <string name="no_music_upload_button">ДОКЛАДНІШЕ</string>
+    <string name="no_music_usb_copy_body">Щоб копіювати музику з комп’ютера в пристрій, користуйтеся USB-кабелем.</string>
+    <string name="no_music_usb_copy_button">ДОКЛАДНІШЕ</string>
+    <string name="no_music_heading">Ваша музична бібліотека порожня.</string>
+    <string name="no_music_setup_uploader_heading">Потоково передавати музику в бездротовій мережі.</string>
+    <string name="no_music_setup_uploader_body">Можна потоково передавати особисту колекцію музики через Google Play Music.</string>
+    <string name="no_music_setup_usb_heading">Копіювати музику в пристрій.</string>
+    <string name="no_music_setup_usb_body">Щоб копіювати музику з комп’ютера в пристрій, користуйтеся USB-кабелем.</string>
+    <string name="no_local_music_heading">На пристрої немає музики</string>
+    <string name="no_local_music_body">"Щоб відобразити всю бібліотеку, відкрийте меню та зніміть прапорець біля пункту \"Лише на пристрої\".
+
+Щоб вибрати музику, яку потрібно зберегти на пристрої, відкрийте меню й торкніться опції \"Музика на пристрої\"."</string>
+    <string name="no_music_learn_more">Докладніше</string>
+    <string name="no_music_syncing_heading">Музика зараз синхронізується.</string>
+    <string name="no_music_syncing_body">Музика синхронізується із сервером. Вона відобразиться за мить.</string>
+    <string name="no_music_scanning_heading">Пошук музики на пристрої.</string>
+    <string name="no_music_scanning_body">Виконується пошук музики в пристрої.</string>
+    <string name="sync_disabled">Потрібно налаштувати синхронізацію, перш ніж з’явиться музика з Google Play Music. Зробити це зараз?</string>
+    <string name="tutorial_welcome_heading">Вітаємо в службі Google Play Music</string>
+    <string name="tutorial_welcome_body">"Завантажуйте до 20 тисяч пісень зі своєї особистої колекції музики.
+
+Одразу відтворюйте музику, придбану в Google Play.
+
+Слухайте свою музику в Інтернеті чи на будь-якому телефоні або планшетному ПК. Легко завантажуйте музику для відтворення в режимі офлайн.
+
+Усе безкоштовно."</string>
+    <string name="tutorial_select_account_heading">Вибрати обліковий запис</string>
+    <string name="tutorial_select_account_body">"Пов’яжіть свій обліковий запис зі службою Google Play Музика, щоб відтворювати свою музичну бібліотеку та покупки з Маркет.
+
+Який обліковий запис використати?"</string>
+    <string name="tutorial_sign_in">Пов’яжіть свій обліковий запис зі службою Google Play Музика, щоб відтворювати свою музичну бібліотеку та покупки з Маркет.</string>
+    <string name="tutorial_free_music_heading">Отримати безкоштовну музику</string>
+    <string name="tutorial_free_music_body">Переглядайте сотні безкоштовних композицій у Google Play від деяких із найвідоміших виконавців у жанрах рок, хіп-хоп тощо.</string>
+    <string name="tutorial_account_heading">Вітаємо</string>
+    <string name="tutorial_account_body">Вітаємо вас у Google Play Music. Цей програвач можна використовувати для миттєвого доступу до пісень, які ви додали в Google Play Music, та іншої музики, яка локально зберігається у вашому пристрої Android.</string>
+    <string name="tutorial_account_list_header">Розпочніть, вибравши обліковий запис Google, щоб пов’язати цей програвач зі службою Google Play Music:</string>
+    <string name="tutorial_done_heading">Приємних вражень</string>
+    <string name="tutorial_done_body">"Програвач Music тепер пов’язано з вашим обліковим записом Google.
+
+Якщо ви вже додали свою колекцію музики в Google Play Music, вона поступово почне відображатися в цьому програвачі.
+
+Якщо ви ще не додали свою музику в Google Play Music, розпочніть це робити, перейшовши на наш веб-сайт із комп’ютера:"</string>
+    <string name="tutorial_skip">Пропустити</string>
+    <string name="tutorial_next">Далі</string>
+    <string name="tutorial_done">Готово</string>
+    <string name="tutorial_add_account">Додати обліковий запис</string>
+    <string name="tutorial_free_music">Отримати безкоштовні пісні</string>
+    <string name="spinner_carousel">Останнє</string>
+    <string name="spinner_album">Альбоми</string>
+    <string name="spinner_artist">Виконавці</string>
+    <string name="spinner_songs">Пісні</string>
+    <string name="spinner_playlists">Списки відтворення</string>
+    <string name="spinner_genres">Жанри</string>
+    <string name="sort_by_title">Сортувати від А до Я</string>
+    <string name="sort_by_artist">Сортувати за виконавцем</string>
+    <string name="sort_by_album">Сортувати за альбомом</string>
+    <string name="sort_by_date">Сортувати за датою додавання</string>
+    <string name="more_by_artist">Інші альбоми виконавця</string>
+    <string name="make_available_offline">Зберігати на пристрої</string>
+    <string name="search_web">Пошук в Інтернеті</string>
+    <string name="manage_done">Готово</string>
+    <string name="too_many_items_title">Забагато елементів</string>
+    <string name="too_many_items_body">Недостатньо місця для зберігання всіх вибраних елементів. Скасуйте вибір кількох елементів, щоб звільнити місце.</string>
+    <string name="save_manage_music_change_title">Незбережені зміни</string>
+    <string name="save_manage_music_change_body">Зберегти вибрану музику на пристрої?</string>
+    <string name="not_all_items_can_be_kept_body">Недостатньо місця для зберігання всіх вибраних елементів. Не всі ці елементи буде завантажено.</string>
+    <string name="free_space_overfull">Пам’ять заповнено (понад %s)</string>
+    <string name="free_space">ВІЛЬНО %s</string>
+    <string name="stream_error_title">Музика тимчасово не доступна.</string>
+    <string name="stream_error_no_space_available">Немає доступного вільного місця.</string>
+    <string name="stream_error_only_on_wifi">Щоб відтворити цю пісню, потрібно перебувати в мережі Wi-Fi.</string>
+    <string name="stream_error_no_connection">Щоб відтворити цю пісню, потрібно перебувати в режимі онлайн.</string>
+    <string name="stream_error_unauthorized_title">Помилка авторизації.</string>
+    <string name="stream_error_unauthorized">Неправильне ім’я користувача чи пароль.</string>
+    <string name="stream_error_another_stream_being_played">Музику призупинено, оскільки ви слухаєте свою колекцію на іншому пристрої.</string>
+    <string name="stream_error_rate_limit_reached">Музика тимчасово не доступна. Переконайтеся, що ваша колекція відтворюється одночасно лише на одному пристрої.</string>
+    <string name="stream_error_device_not_authorized">Ваша музична бібліотека може використовуватися щонайбільше на 10 пристроях. Скасуйте авторизацію одного з пристроїв, щоб додати новий.</string>
+    <string name="stream_error_device_not_authorized_link">https://play.google.com/music/listen?view=settings_pl</string>
+    <string name="market_uri_link">market://details?id=com.google.android.music</string>
+    <string name="stream_error_device_not_authorized_not_now_button">Не зараз</string>
+    <string name="stream_error_device_not_authorized_manage_devices_button">Керувати пристроями</string>
+    <string name="stream_error_learn_more">Докладніше</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/music/bin/answer.py?answer=1230356</string>
+    <string name="stream_error_another_stream_being_played_short">Музику призупинено.</string>
+    <string name="stream_error_rate_limit_reached_short">Музика тимчасово не доступна.</string>
+    <string name="stream_error_device_not_authorized_short">Ваша музична бібліотека використовується на надто великій кількості пристроїв.</string>
+    <string name="stream_error_another_stream_being_played_notification">Ви слухаєте на іншому пристрої.</string>
+    <string name="stream_error_rate_limit_reached_notification">Ви слухаєте на іншому пристрої.</string>
+    <string name="stream_error_device_not_authorized_notification">Максимум 10 пристроїв у бібліотеці.</string>
+    <string name="stream_error_another_stream_being_played_notification_short">Музику призупинено.</string>
+    <string name="stream_error_rate_limit_reached_notification_short">Музика тимчасово не доступна.</string>
+    <string name="stream_error_device_not_authorized_notification_short">Вичерпано ліміт муз. пристроїв</string>
+    <string name="athome_error_place_disconnected_short">Неможливо обмінятися даними з Nexus Q.</string>
+    <string name="athome_error_controller_too_old_short">Nexus Q потребує останньої версії програми Google Play Музика.</string>
+    <string name="athome_error_controller_too_old">Щоб користуватися Nexus Q, спершу оновіть програму Google Play Музика.</string>
+    <string name="athome_error_controller_too_old_notification_short">Оновіть Google Play Музику,</string>
+    <string name="athome_error_controller_too_old_notification">щоб працювати з Nexus Q.</string>
+    <string name="athome_error_controller_too_old_update_button">Оновити</string>
+    <string name="athome_error_controller_too_new_short">Nexus Q потребує нового програмного забезпечення.</string>
+    <string name="athome_error_controller_too_new">Програмне забезпечення Nexus Q застаре. Під’єднайте Nexus Q до Інтернету через мережу Ethernet або Wi-Fi, щоб автоматично оновити.</string>
+    <string name="athome_error_controller_too_new_notification_short">Для Nexus Q потрібне нове ПЗ.</string>
+    <string name="athome_error_controller_too_new_notification">Під’єднайте Nexus Q до Інтернету, щоб автоматично оновити.</string>
+    <string name="athome_error_generic_short">Nexus Q – помилка мережі.</string>
+    <string name="athome_error_generic">З’єднання Nexus Q з мережею втрачено.</string>
+    <string name="athome_error_generic_notification_short">Nexus Q – помилка мережі</string>
+    <string name="athome_error_generic_notification">Неможливо зв’язатися з Nexus Q – можливо, через погане з’єднання з мережею або проблему з пристроєм.</string>
+    <string name="athome_error_device_setup_short">Потрібно відновити заводські налаштування Nexus Q.</string>
+    <string name="athome_error_device_setup">Налаштування Nexus Q не завершено. Щоб розпочати знову, відновіть заводські налаштування Nexus Q.</string>
+    <string name="athome_error_device_setup_notification_short">Налаштування Nexus Q не завершено.</string>
+    <string name="athome_error_device_setup_notification">Щоб розпочати знову, відновіть заводські налаштування Nexus Q.</string>
+    <string name="athome_error_unauthorized_account_short">Обліковий запис не авторизовано</string>
+    <string name="athome_error_unauthorized_account">Вибраний обліковий запис не авторизовано для використання з Nexus Q</string>
+    <string name="athome_error_unauthorized_account_notification_short">Обліков. запис не авторизовано</string>
+    <string name="athome_error_unauthorized_account_notification">Вибраний обліковий запис не авторизовано для використання з Nexus Q.</string>
+    <string name="athome_error_incompatible_tgs_version">У Nexus Q запущено несумісну версію служби групування.</string>
+    <string name="athome_error_incompatible_tgs_version_short">Помилка служб групув. Nexus Q</string>
+    <string name="athome_error_incompatible_tgs_version_notification">У Nexus Q запущено несумісну версію служби групування.</string>
+    <string name="athome_error_incompatible_tgs_version_notification_short">Помилка служб групув. Nexus Q</string>
+    <string name="athome_error_unreachable_tgs">Не вдається обмінятись даними з Nexus Q. Якщо це повториться, можливо, потрібно буде перезавантажити Nexus Q.</string>
+    <string name="athome_error_unreachable_tgs_short">Не вдається зв’язатись із Nexus Q</string>
+    <string name="athome_error_unreachable_tgs_notification">Не вдається обмінятись даними з Nexus Q. Якщо це повториться, можливо, потрібно буде перезавантажити Nexus Q.</string>
+    <string name="athome_error_unreachable_tgs_notification_short">Не вдається зв’язатись із Nexus Q</string>
+    <string name="athome_error_server_network_short">Помилка мережі</string>
+    <string name="athome_error_server_network">Не вдається обмінятися даними із сервером</string>
+    <string name="hide_now_playing_bar">Сховати панель відтворення</string>
+    <string name="show_now_playing_bar">Показати панель відтворення</string>
+    <string name="show_options">Показати опції</string>
+    <string name="hide_options">Сховати опції</string>
+    <string name="all_songs_in_genre">"Усі пісні в жанрі:
+%s"</string>
+    <string name="preview_header">ДОСТУП НАДАНО У GOOGLE+</string>
+    <string name="shared_playback_full">БЕЗКОШТОВНЕ ПОВНЕ ВІДТВОРЕННЯ</string>
+    <string name="shared_playback_partial">ЗРАЗОК</string>
+    <string name="btn_buy">Купити</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">Завантаження потрібної музики…</string>
+    <string name="notification_downloading_when_on_wifi">Завантаження потрібної музики продовжиться, коли пристрій знову буде в режимі онлайн і під’єднається до Wi-Fi</string>
+    <string name="notification_downloading_excessive_errors">Зараз неможливо завантажити пісні. Перевірте з’єднання з Інтернетом.</string>
+    <string name="notification_downloading_done">Потрібну музику завантажено</string>
+    <string name="notification_ticker_ringtone_set">Установлено такий сигнал дзвінка: \"%s\".</string>
+    <string name="notification_title_ringtone_set">Установлено таку мелодію: \"%s\"</string>
+    <string name="notification_content_ringtone_set">Торкніться, щоб редагувати цей сигнал дзвінка.</string>
+    <string name="notification_ticker_ringtone_set_failed">Не вдалося створити сигнал дзвінка.</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s – %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s – %s</string>
+    <string name="notification_newsongs_songcount">Нових пісень: %d</string>
+    <string name="notification_newsongs_subtitle">Додано в Google Play Music</string>
+    <string name="carousel_label_shuffle_all">Перемішати все</string>
+    <string name="song_label">ПІСНЯ</string>
+    <string name="artist_label">ВИКОНАВЕЦЬ</string>
+    <string name="album_label">АЛЬБОМ</string>
+    <string name="effectspanel">Еквалайзер</string>
+    <string name="menu_make_instant_mix">Ств. миттєву добірку</string>
+    <string name="instant_mix_default_name">Добірка %s</string>
+    <string name="creating_instant_mix">"Додавання миттєвої добірки
+в списки відтворення."</string>
+    <string name="creating_instant_mix_with_seed">"Додавання миттєвої добірки
+в списки відтворення на основі
+%s."</string>
+    <string name="create_instant_mix_failed">Не вдалося створити миттєву добірку. Повторіть спробу.</string>
+    <string name="create_instant_mix_failed_insufficient_results">У вашій колекції недостатньо подібних пісень, щоб створити миттєву добірку з пісні \"%s\". Спробуйте створити миттєву добірку з іншої пісні.</string>
+    <string name="create_instant_mix_sync_timeout">"Миттєву добірку
+створено. Незабаром вона відображатиметься у
+ваших списках відтворення."</string>
+    <string name="create_instant_mix_btn_ok">OK</string>
+    <string name="delete">Видалити</string>
+    <string name="confirm_delete_local_only">Дійсно видалити \"%s\"?</string>
+    <string name="confirm_delete_has_remote">\"%s\" уже завантажено через комп’ютер, а також у службу Google Play Music. Буде видалено лише елементи, завантажені через комп’ютер. Видалити їх?</string>
+    <string name="waiting_share">Надання доступу до %s</string>
+    <string name="share">Поділитися</string>
+    <string name="share_failure">На жаль, не вдалося поділитися музикою через проблему.</string>
+    <string name="share_google_plus_footer">Якщо поділитися, люди у ваших колах матимуть одне безкоштовне прослуховування</string>
+    <string name="accessibility_play">Відтворити</string>
+    <string name="accessibility_pause">Призупинити</string>
+    <string name="accessibility_stop">Зупинити</string>
+    <string name="accessibility_next">Далі</string>
+    <string name="accessibility_prev">Назад</string>
+    <string name="accessibility_shuffle">Перемішати</string>
+    <string name="accessibility_repeat">Повторити</string>
+    <string name="accessibility_thumbsUp">Подобається</string>
+    <string name="accessibility_thumbsDown">Не сподобалося</string>
+    <string name="accessibility_star1">Одна зірочка</string>
+    <string name="accessibility_star2">Дві зірочки</string>
+    <string name="accessibility_star3">Три зірочки</string>
+    <string name="accessibility_star4">Чотири зірочки</string>
+    <string name="accessibility_star5">П’ять зірочок</string>
+    <string name="accessibility_contractor">Розгорнути інформацію про пісню</string>
+    <string name="accessibility_back">Назад</string>
+    <string name="accessibility_contextMenu">Меню \"Пісні\"</string>
+    <string name="accessibility_home">Головний екран Музики</string>
+    <string name="accessibility_search">Пошук</string>
+    <string name="accessibility_search_cancel">Скасувати поточний пошук</string>
+    <string name="accessibility_current">Поточна пісня</string>
+    <string name="accessibility_createnewplaylist">Створити новий список відтворення</string>
+    <string name="accessibility_menu">Інші параметри</string>
+    <string name="accessibility_shop">Шукати музику для покупки</string>
+    <string name="accessibility_volume">Гучність</string>
+    <string name="accessibility_at_home_volume">Гучність</string>
+    <string name="accessibility_select_output">Вибрати аудіовихід</string>
+    <string name="accessibility_close_social_mix_mode">Закрити режим соціальної добірки</string>
+    <string name="header_help_add_songs">Додайте пісні зі своєї бібліотеки, щоб створити соціальну добірку</string>
+    <string name="ringtone_replace_alert_button">Замінити</string>
+    <string name="ringtone_replace_alert_title">Замінити сигнал дзвінка</string>
+    <string name="ringtone_replace_alert_message">Сигнал дзвінка з такою назвою вже існує. Замінити його?</string>
+    <string name="legal_information">Правова інформація</string>
+    <string name="license_title">Ліцензії з відкритим кодом</string>
+    <string name="license_error">Не вдалося завантажити ліцензії.</string>
+    <string name="market_wrong_account" formatted="false">"Музику, яку ви намагаєтеся відтворити, придбано через обліковий запис %s
+
+Зараз ви ввійшли в Google Play Music, використовуючи дані облікового запису %s
+
+Щоб прослухати свою покупку, спершу змініть обліковий запис."</string>
+    <string name="gplus_wrong_account" formatted="false">"Музика, яку ви намагаєтеся відтворити, доступна з облікового запису %s
+
+Зараз ви ввійшли в Google Play Music, використовуючи дані облікового запису %s
+
+Щоб слухати музику в спільному доступі, спершу змініть обліковий запис."</string>
+    <string name="switch_account_button">Змінити облік. запис</string>
+    <string name="switch_account_warning_message">"Дійсно змінити обліковий запис?
+Музику, що зберігається на цьому пристрої, буде видалено."</string>
+    <string name="switch_account_warning_button">Змінити обліковий запис</string>
+    <string name="retry_button">Повторити спробу</string>
+    <string name="wait_for_item">Очікування синхронізації музики.</string>
+    <string name="wait_for_item_failure">Ваша музика зараз додається. Зачекайте трошки та повторіть спробу.</string>
+    <string name="ringtone_title">Перевірити сигнал дзвінка</string>
+    <string name="edit_ringtone">Редаг.сигнал дзвінка</string>
+    <string name="ringtone_done">ГОТОВО</string>
+    <string name="ringtone_file_edited_name">Уривок пісні %1$s</string>
+    <string name="progress_dialog_saving">Збереження…</string>
+    <string name="start_handle">Вказівник початку</string>
+    <string name="resize_handle">Вказівник масштабування</string>
+    <string name="menu_reset">Скинути</string>
+    <string name="save_success_message">%1$s збережено як сигнал дзвінка за умовчанням.</string>
+    <string name="save_failure_message">Не вдалося зберегти %1$s як сигнал дзвінка.</string>
+    <string name="play_error">Не вдалося відтворити цей медіа-файл.</string>
+    <string name="write_error">Не вдалося записати у файл.</string>
+    <string name="read_error">Не вдалося зчитати файл.</string>
+    <string name="no_space_error">На карті SD недостатньо місця, щоб зберегти цей файл.</string>
+    <string name="bad_extension_error">Неможливо редагувати файли цього типу.</string>
+    <string name="no_extension_error">Можна редагувати лише файли, які мають розширення .mp3 або .wav.</string>
+    <string name="alert_ok_button">OK</string>
+    <string name="athome_playback_title">Грає зараз</string>
+    <string name="store_tutorial_title">Купити й одразу відтворити</string>
+    <string name="store_tutorial_content">Купуйте мільйони композицій у форматі MP3 в Google Play і вибирайте сотні безкоштовних пісень.</string>
+    <string name="store_tutorial_instruction">Щоб перейти в магазин, торкніться значка кошика для покупок</string>
+    <string name="athome_added_by">Додано користувачем</string>
+    <string name="athome_tutorial_title">Відтворюйте музику будь-де</string>
+    <string name="athome_tutorial_content">Торкніться значка потокового передавання, щоб вибрати місце відтворення музики</string>
+    <string name="athome_party_mode_disclamer">У режимі \"Соціальна добірка\" зображення вашого публічного профілю може бути видимим для інших користувачів</string>
+    <string name="athome_party_mode_disclamer_save_preference">Більше не показувати це</string>
+    <string name="no_song_added">Черга відтворення повна. Макс. пісень у черзі: %1$d.</string>
+    <string name="recent_added">Додано</string>
+    <string name="recent_purchased">Придбано</string>
+    <string name="recent_played">Відтворено</string>
+    <string name="now_playing_tab_now_playing">ЗАРАЗ ВІДТВОРЮЄТЬСЯ</string>
+    <string name="now_playing_tab_queue">ЧЕРГА ВІДТВОРЕННЯ</string>
+</resources>

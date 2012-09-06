@@ -11,26 +11,32 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Set;Ljava/lang/Object;)V
-    .registers 3
+.method constructor <init>(Ljava/util/Set;Ljava/lang/Object;)V
+    .registers 4
     .parameter
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 244
-    invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;-><init>(Ljava/util/Collection;Ljava/lang/Object;)V
+    .line 212
+    const/4 v0, 0x0
 
-    .line 245
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;-><init>(Ljava/util/Collection;Ljava/lang/Object;Lcom/google/common/collect/lv;)V
+
+    .line 213
     return-void
 .end method
 
 
 # virtual methods
-.method protected bridge synthetic delegate()Ljava/lang/Object;
+.method bridge synthetic delegate()Ljava/lang/Object;
     .registers 2
 
     .prologue
-    .line 241
+    .line 208
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSet;->delegate()Ljava/util/Set;
 
     move-result-object v0
@@ -38,11 +44,11 @@
     return-object v0
 .end method
 
-.method protected bridge synthetic delegate()Ljava/util/Collection;
+.method bridge synthetic delegate()Ljava/util/Collection;
     .registers 2
 
     .prologue
-    .line 241
+    .line 208
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSet;->delegate()Ljava/util/Set;
 
     move-result-object v0
@@ -50,11 +56,11 @@
     return-object v0
 .end method
 
-.method protected delegate()Ljava/util/Set;
+.method delegate()Ljava/util/Set;
     .registers 2
 
     .prologue
-    .line 248
+    .line 216
     invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
 
     move-result-object v0
@@ -69,23 +75,23 @@
     .parameter
 
     .prologue
-    .line 252
+    .line 220
     if-ne p1, p0, :cond_4
 
-    .line 253
+    .line 221
     const/4 v0, 0x1
 
-    .line 256
+    .line 224
     :goto_3
     return v0
 
-    .line 255
+    .line 223
     :cond_4
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 256
+    .line 224
     :try_start_7
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSet;->delegate()Ljava/util/Set;
 
@@ -101,7 +107,7 @@
 
     goto :goto_3
 
-    .line 257
+    .line 225
     :catchall_11
     move-exception v0
 
@@ -114,12 +120,12 @@
     .registers 3
 
     .prologue
-    .line 261
+    .line 229
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 262
+    .line 230
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSet;->delegate()Ljava/util/Set;
 
@@ -135,7 +141,7 @@
 
     return v0
 
-    .line 263
+    .line 231
     :catchall_d
     move-exception v0
 

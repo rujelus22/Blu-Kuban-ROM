@@ -26,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 56
+    .line 53
     new-instance v0, Lcom/android/email/activity/MessageCommandButtonView$EmptyCallback;
 
     invoke-direct {v0}, Lcom/android/email/activity/MessageCommandButtonView$EmptyCallback;-><init>()V
@@ -40,8 +40,8 @@
     .registers 1
 
     .prologue
-    .line 55
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 52
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -52,7 +52,7 @@
     .registers 1
 
     .prologue
-    .line 60
+    .line 54
     return-void
 .end method
 
@@ -60,6 +60,6 @@
     .registers 1
 
     .prologue
-    .line 64
+    .line 55
     return-void
 .end method

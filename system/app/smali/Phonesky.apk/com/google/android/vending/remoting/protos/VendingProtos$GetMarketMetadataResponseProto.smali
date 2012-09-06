@@ -70,50 +70,50 @@
 
     const/4 v1, 0x0
 
-    .line 15614
+    .line 16067
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 15619
+    .line 16072
     iput v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->latestClientVersionCode_:I
 
-    .line 15636
+    .line 16089
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->latestClientUrl_:Ljava/lang/String;
 
-    .line 15653
+    .line 16106
     iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->paidAppsEnabled_:Z
 
-    .line 15669
+    .line 16122
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->billingParameter_:Ljava/util/List;
 
-    .line 15703
+    .line 16156
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->commentPostEnabled_:Z
 
-    .line 15720
+    .line 16173
     iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->billingEventsEnabled_:Z
 
-    .line 15737
+    .line 16190
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->warningMessage_:Ljava/lang/String;
 
-    .line 15754
+    .line 16207
     iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->inAppBillingEnabled_:Z
 
-    .line 15771
+    .line 16224
     iput v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->inAppBillingMaxApiVersion_:I
 
-    .line 15838
+    .line 16292
     iput v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->cachedSize:I
 
-    .line 15614
+    .line 16067
     return-void
 .end method
 
@@ -124,17 +124,17 @@
     .parameter "value"
 
     .prologue
-    .line 15686
+    .line 16139
     if-nez p1, :cond_8
 
-    .line 15687
+    .line 16140
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 15689
+    .line 16142
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->billingParameter_:Ljava/util/List;
 
@@ -144,20 +144,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 15690
+    .line 16143
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->billingParameter_:Ljava/util/List;
 
-    .line 15692
+    .line 16145
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->billingParameter_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 15693
+    .line 16146
     return-object p0
 .end method
 
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 15721
+    .line 16174
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->billingEventsEnabled_:Z
 
     return v0
@@ -184,7 +184,7 @@
     .end annotation
 
     .prologue
-    .line 15672
+    .line 16125
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->billingParameter_:Ljava/util/List;
 
     return-object v0
@@ -194,15 +194,15 @@
     .registers 2
 
     .prologue
-    .line 15840
+    .line 16295
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 15842
+    .line 16297
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getSerializedSize()I
 
-    .line 15844
+    .line 16299
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->cachedSize:I
 
@@ -213,7 +213,7 @@
     .registers 2
 
     .prologue
-    .line 15704
+    .line 16157
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->commentPostEnabled_:Z
 
     return v0
@@ -223,7 +223,7 @@
     .registers 2
 
     .prologue
-    .line 15755
+    .line 16208
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->inAppBillingEnabled_:Z
 
     return v0
@@ -233,7 +233,7 @@
     .registers 2
 
     .prologue
-    .line 15772
+    .line 16225
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->inAppBillingMaxApiVersion_:I
 
     return v0
@@ -243,7 +243,7 @@
     .registers 2
 
     .prologue
-    .line 15637
+    .line 16090
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->latestClientUrl_:Ljava/lang/String;
 
     return-object v0
@@ -253,7 +253,7 @@
     .registers 2
 
     .prologue
-    .line 15620
+    .line 16073
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->latestClientVersionCode_:I
 
     return v0
@@ -263,7 +263,7 @@
     .registers 2
 
     .prologue
-    .line 15654
+    .line 16107
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->paidAppsEnabled_:Z
 
     return v0
@@ -273,10 +273,10 @@
     .registers 6
 
     .prologue
-    .line 15848
+    .line 16304
     const/4 v2, 0x0
 
-    .line 15849
+    .line 16305
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasLatestClientVersionCode()Z
 
@@ -284,7 +284,7 @@
 
     if-eqz v3, :cond_11
 
-    .line 15850
+    .line 16306
     const/4 v3, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getLatestClientVersionCode()I
@@ -297,7 +297,7 @@
 
     add-int/2addr v2, v3
 
-    .line 15853
+    .line 16309
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasLatestClientUrl()Z
 
@@ -305,7 +305,7 @@
 
     if-eqz v3, :cond_21
 
-    .line 15854
+    .line 16310
     const/4 v3, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getLatestClientUrl()Ljava/lang/String;
@@ -318,7 +318,7 @@
 
     add-int/2addr v2, v3
 
-    .line 15857
+    .line 16313
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasPaidAppsEnabled()Z
 
@@ -326,7 +326,7 @@
 
     if-eqz v3, :cond_31
 
-    .line 15858
+    .line 16314
     const/4 v3, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getPaidAppsEnabled()Z
@@ -339,7 +339,7 @@
 
     add-int/2addr v2, v3
 
-    .line 15861
+    .line 16317
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getBillingParameterList()Ljava/util/List;
 
@@ -363,7 +363,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
 
-    .line 15862
+    .line 16318
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
     const/4 v3, 0x4
 
@@ -375,7 +375,7 @@
 
     goto :goto_39
 
-    .line 15865
+    .line 16321
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
     :cond_4c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasCommentPostEnabled()Z
@@ -384,7 +384,7 @@
 
     if-eqz v3, :cond_5c
 
-    .line 15866
+    .line 16322
     const/4 v3, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getCommentPostEnabled()Z
@@ -397,7 +397,7 @@
 
     add-int/2addr v2, v3
 
-    .line 15869
+    .line 16325
     :cond_5c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasBillingEventsEnabled()Z
 
@@ -405,7 +405,7 @@
 
     if-eqz v3, :cond_6c
 
-    .line 15870
+    .line 16326
     const/4 v3, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getBillingEventsEnabled()Z
@@ -418,7 +418,7 @@
 
     add-int/2addr v2, v3
 
-    .line 15873
+    .line 16329
     :cond_6c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasWarningMessage()Z
 
@@ -426,7 +426,7 @@
 
     if-eqz v3, :cond_7c
 
-    .line 15874
+    .line 16330
     const/4 v3, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getWarningMessage()Ljava/lang/String;
@@ -439,7 +439,7 @@
 
     add-int/2addr v2, v3
 
-    .line 15877
+    .line 16333
     :cond_7c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasInAppBillingEnabled()Z
 
@@ -447,7 +447,7 @@
 
     if-eqz v3, :cond_8d
 
-    .line 15878
+    .line 16334
     const/16 v3, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getInAppBillingEnabled()Z
@@ -460,7 +460,7 @@
 
     add-int/2addr v2, v3
 
-    .line 15881
+    .line 16337
     :cond_8d
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasInAppBillingMaxApiVersion()Z
 
@@ -468,7 +468,7 @@
 
     if-eqz v3, :cond_9e
 
-    .line 15882
+    .line 16338
     const/16 v3, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getInAppBillingMaxApiVersion()I
@@ -481,11 +481,11 @@
 
     add-int/2addr v2, v3
 
-    .line 15885
+    .line 16341
     :cond_9e
     iput v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->cachedSize:I
 
-    .line 15886
+    .line 16342
     return v2
 .end method
 
@@ -493,7 +493,7 @@
     .registers 2
 
     .prologue
-    .line 15738
+    .line 16191
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->warningMessage_:Ljava/lang/String;
 
     return-object v0
@@ -503,7 +503,7 @@
     .registers 2
 
     .prologue
-    .line 15722
+    .line 16175
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasBillingEventsEnabled:Z
 
     return v0
@@ -513,7 +513,7 @@
     .registers 2
 
     .prologue
-    .line 15705
+    .line 16158
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasCommentPostEnabled:Z
 
     return v0
@@ -523,7 +523,7 @@
     .registers 2
 
     .prologue
-    .line 15756
+    .line 16209
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasInAppBillingEnabled:Z
 
     return v0
@@ -533,7 +533,7 @@
     .registers 2
 
     .prologue
-    .line 15773
+    .line 16226
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasInAppBillingMaxApiVersion:Z
 
     return v0
@@ -543,7 +543,7 @@
     .registers 2
 
     .prologue
-    .line 15638
+    .line 16091
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasLatestClientUrl:Z
 
     return v0
@@ -553,7 +553,7 @@
     .registers 2
 
     .prologue
-    .line 15621
+    .line 16074
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasLatestClientVersionCode:Z
 
     return v0
@@ -563,7 +563,7 @@
     .registers 2
 
     .prologue
-    .line 15655
+    .line 16108
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasPaidAppsEnabled:Z
 
     return v0
@@ -573,7 +573,7 @@
     .registers 2
 
     .prologue
-    .line 15739
+    .line 16192
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasWarningMessage:Z
 
     return v0
@@ -589,29 +589,29 @@
     .end annotation
 
     .prologue
-    .line 15893
+    .line 16350
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 15894
+    .line 16351
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_5a
 
-    .line 15898
+    .line 16355
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 15899
+    .line 16356
     :sswitch_d
     return-object p0
 
-    .line 15904
+    .line 16361
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -621,7 +621,7 @@
 
     goto :goto_0
 
-    .line 15908
+    .line 16365
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -631,7 +631,7 @@
 
     goto :goto_0
 
-    .line 15912
+    .line 16369
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -641,22 +641,22 @@
 
     goto :goto_0
 
-    .line 15916
+    .line 16373
     :sswitch_26
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;-><init>()V
 
-    .line 15917
+    .line 16374
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 15918
+    .line 16375
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->addBillingParameter(Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;
 
     goto :goto_0
 
-    .line 15922
+    .line 16379
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
     :sswitch_32
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
@@ -667,7 +667,7 @@
 
     goto :goto_0
 
-    .line 15926
+    .line 16383
     :sswitch_3a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -677,7 +677,7 @@
 
     goto :goto_0
 
-    .line 15930
+    .line 16387
     :sswitch_42
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -687,7 +687,7 @@
 
     goto :goto_0
 
-    .line 15934
+    .line 16391
     :sswitch_4a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -697,7 +697,7 @@
 
     goto :goto_0
 
-    .line 15938
+    .line 16395
     :sswitch_52
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -707,7 +707,7 @@
 
     goto :goto_0
 
-    .line 15894
+    .line 16351
     :sswitch_data_5a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -733,7 +733,7 @@
     .end annotation
 
     .prologue
-    .line 15612
+    .line 16065
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;
 
     move-result-object v0
@@ -746,15 +746,15 @@
     .parameter "value"
 
     .prologue
-    .line 15724
+    .line 16177
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasBillingEventsEnabled:Z
 
-    .line 15725
+    .line 16178
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->billingEventsEnabled_:Z
 
-    .line 15726
+    .line 16179
     return-object p0
 .end method
 
@@ -763,15 +763,15 @@
     .parameter "value"
 
     .prologue
-    .line 15707
+    .line 16160
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasCommentPostEnabled:Z
 
-    .line 15708
+    .line 16161
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->commentPostEnabled_:Z
 
-    .line 15709
+    .line 16162
     return-object p0
 .end method
 
@@ -780,15 +780,15 @@
     .parameter "value"
 
     .prologue
-    .line 15758
+    .line 16211
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasInAppBillingEnabled:Z
 
-    .line 15759
+    .line 16212
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->inAppBillingEnabled_:Z
 
-    .line 15760
+    .line 16213
     return-object p0
 .end method
 
@@ -797,15 +797,15 @@
     .parameter "value"
 
     .prologue
-    .line 15775
+    .line 16228
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasInAppBillingMaxApiVersion:Z
 
-    .line 15776
+    .line 16229
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->inAppBillingMaxApiVersion_:I
 
-    .line 15777
+    .line 16230
     return-object p0
 .end method
 
@@ -814,15 +814,15 @@
     .parameter "value"
 
     .prologue
-    .line 15640
+    .line 16093
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasLatestClientUrl:Z
 
-    .line 15641
+    .line 16094
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->latestClientUrl_:Ljava/lang/String;
 
-    .line 15642
+    .line 16095
     return-object p0
 .end method
 
@@ -831,15 +831,15 @@
     .parameter "value"
 
     .prologue
-    .line 15623
+    .line 16076
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasLatestClientVersionCode:Z
 
-    .line 15624
+    .line 16077
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->latestClientVersionCode_:I
 
-    .line 15625
+    .line 16078
     return-object p0
 .end method
 
@@ -848,15 +848,15 @@
     .parameter "value"
 
     .prologue
-    .line 15657
+    .line 16110
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasPaidAppsEnabled:Z
 
-    .line 15658
+    .line 16111
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->paidAppsEnabled_:Z
 
-    .line 15659
+    .line 16112
     return-object p0
 .end method
 
@@ -865,15 +865,15 @@
     .parameter "value"
 
     .prologue
-    .line 15741
+    .line 16194
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasWarningMessage:Z
 
-    .line 15742
+    .line 16195
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->warningMessage_:Ljava/lang/String;
 
-    .line 15743
+    .line 16196
     return-object p0
 .end method
 
@@ -887,14 +887,14 @@
     .end annotation
 
     .prologue
-    .line 15809
+    .line 16263
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasLatestClientVersionCode()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 15810
+    .line 16264
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getLatestClientVersionCode()I
@@ -903,7 +903,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 15812
+    .line 16266
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasLatestClientUrl()Z
 
@@ -911,7 +911,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 15813
+    .line 16267
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getLatestClientUrl()Ljava/lang/String;
@@ -920,7 +920,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 15815
+    .line 16269
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasPaidAppsEnabled()Z
 
@@ -928,7 +928,7 @@
 
     if-eqz v2, :cond_2a
 
-    .line 15816
+    .line 16270
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getPaidAppsEnabled()Z
@@ -937,7 +937,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 15818
+    .line 16272
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getBillingParameterList()Ljava/util/List;
 
@@ -961,7 +961,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
 
-    .line 15819
+    .line 16273
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
     const/4 v2, 0x4
 
@@ -969,7 +969,7 @@
 
     goto :goto_32
 
-    .line 15821
+    .line 16275
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$BillingParameterProto;
     :cond_43
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasCommentPostEnabled()Z
@@ -978,7 +978,7 @@
 
     if-eqz v2, :cond_51
 
-    .line 15822
+    .line 16276
     const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getCommentPostEnabled()Z
@@ -987,7 +987,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 15824
+    .line 16278
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasBillingEventsEnabled()Z
 
@@ -995,7 +995,7 @@
 
     if-eqz v2, :cond_5f
 
-    .line 15825
+    .line 16279
     const/4 v2, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getBillingEventsEnabled()Z
@@ -1004,7 +1004,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 15827
+    .line 16281
     :cond_5f
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasWarningMessage()Z
 
@@ -1012,7 +1012,7 @@
 
     if-eqz v2, :cond_6d
 
-    .line 15828
+    .line 16282
     const/4 v2, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getWarningMessage()Ljava/lang/String;
@@ -1021,7 +1021,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 15830
+    .line 16284
     :cond_6d
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasInAppBillingEnabled()Z
 
@@ -1029,7 +1029,7 @@
 
     if-eqz v2, :cond_7c
 
-    .line 15831
+    .line 16285
     const/16 v2, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getInAppBillingEnabled()Z
@@ -1038,7 +1038,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 15833
+    .line 16287
     :cond_7c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->hasInAppBillingMaxApiVersion()Z
 
@@ -1046,7 +1046,7 @@
 
     if-eqz v2, :cond_8b
 
-    .line 15834
+    .line 16288
     const/16 v2, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getInAppBillingMaxApiVersion()I
@@ -1055,7 +1055,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 15836
+    .line 16290
     :cond_8b
     return-void
 .end method

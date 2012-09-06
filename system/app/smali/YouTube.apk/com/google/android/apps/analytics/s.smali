@@ -48,7 +48,9 @@
 
     new-instance v0, Lcom/google/android/apps/analytics/u;
 
-    invoke-direct {v0, p0}, Lcom/google/android/apps/analytics/u;-><init>(Lcom/google/android/apps/analytics/s;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/google/android/apps/analytics/u;-><init>(Lcom/google/android/apps/analytics/s;B)V
 
     iput-object v0, p0, Lcom/google/android/apps/analytics/s;->i:Lcom/google/android/apps/analytics/u;
 
@@ -63,18 +65,8 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/google/android/apps/analytics/g;Ljava/lang/String;Lcom/google/android/apps/analytics/r;)V
-    .registers 5
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p2, p3, v0}, Lcom/google/android/apps/analytics/s;-><init>(Lcom/google/android/apps/analytics/g;Ljava/lang/String;Lcom/google/android/apps/analytics/r;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/apps/analytics/g;Ljava/lang/String;Lcom/google/android/apps/analytics/r;B)V
-    .registers 7
+.method private constructor <init>(Lcom/google/android/apps/analytics/g;Ljava/lang/String;Lcom/google/android/apps/analytics/r;)V
+    .registers 6
 
     new-instance v0, Lcom/google/android/apps/analytics/x;
 
@@ -85,6 +77,14 @@
     invoke-direct {v0, v1}, Lcom/google/android/apps/analytics/x;-><init>(Lorg/apache/http/HttpHost;)V
 
     invoke-direct {p0, p1, v0, p2, p3}, Lcom/google/android/apps/analytics/s;-><init>(Lcom/google/android/apps/analytics/g;Lcom/google/android/apps/analytics/x;Ljava/lang/String;Lcom/google/android/apps/analytics/r;)V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/apps/analytics/g;Ljava/lang/String;Lcom/google/android/apps/analytics/r;B)V
+    .registers 5
+
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/apps/analytics/s;-><init>(Lcom/google/android/apps/analytics/g;Ljava/lang/String;Lcom/google/android/apps/analytics/r;)V
 
     return-void
 .end method

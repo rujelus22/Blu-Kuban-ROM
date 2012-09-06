@@ -5,8 +5,8 @@
         <item quantity="one">검색결과 %1$d개</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">%2$s에 대해 %1$d개의 업데이트가 있습니다.</item>
-        <item quantity="one">%2$s에 대해 %1$d개의 업데이트가 있습니다.</item>
+        <item quantity="other">%1$d개의 업데이트가 있습니다.</item>
+        <item quantity="one">%1$d개의 업데이트가 있습니다.</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">%1$s명이 +1했습니다.</item>

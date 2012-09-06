@@ -1,19 +1,28 @@
-.class Lcom/google/googlenav/settings/a;
+.class Lcom/google/googlenav/settings/A;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/settings/AboutActivity;
+.field final synthetic a:Lcom/google/googlenav/friend/ag;
+
+.field final synthetic b:Lcom/google/googlenav/settings/y;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/settings/AboutActivity;)V
-    .registers 2
+.method constructor <init>(Lcom/google/googlenav/settings/y;Lcom/google/googlenav/friend/ag;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/settings/a;->a:Lcom/google/googlenav/settings/AboutActivity;
+    .prologue
+    .line 329
+    iput-object p1, p0, Lcom/google/googlenav/settings/A;->b:Lcom/google/googlenav/settings/y;
+
+    iput-object p2, p0, Lcom/google/googlenav/settings/A;->a:Lcom/google/googlenav/friend/ag;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,30 +31,30 @@
 
 
 # virtual methods
-.method public a(Lcom/google/googlenav/settings/b;Lcom/google/googlenav/settings/b;)I
-    .registers 5
+.method public run()V
+    .registers 3
 
-    iget-object v0, p1, Lcom/google/googlenav/settings/b;->a:Ljava/lang/String;
+    .prologue
+    .line 333
+    iget-object v0, p0, Lcom/google/googlenav/settings/A;->b:Lcom/google/googlenav/settings/y;
 
-    iget-object v1, p2, Lcom/google/googlenav/settings/b;->a:Ljava/lang/String;
+    iget-object v0, v0, Lcom/google/googlenav/settings/y;->a:Lcom/google/googlenav/settings/s;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->compareToIgnoreCase(Ljava/lang/String;)I
+    invoke-static {v0}, Lcom/google/googlenav/settings/s;->c(Lcom/google/googlenav/settings/s;)Lcom/google/googlenav/settings/C;
 
-    move-result v0
+    move-result-object v0
 
-    return v0
-.end method
+    iget-object v1, p0, Lcom/google/googlenav/settings/A;->a:Lcom/google/googlenav/friend/ag;
 
-.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 4
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/settings/C;->a(Lcom/google/googlenav/friend/ag;)V
 
-    check-cast p1, Lcom/google/googlenav/settings/b;
+    .line 334
+    iget-object v0, p0, Lcom/google/googlenav/settings/A;->b:Lcom/google/googlenav/settings/y;
 
-    check-cast p2, Lcom/google/googlenav/settings/b;
+    iget-object v0, v0, Lcom/google/googlenav/settings/y;->a:Lcom/google/googlenav/settings/s;
 
-    invoke-virtual {p0, p1, p2}, Lcom/google/googlenav/settings/a;->a(Lcom/google/googlenav/settings/b;Lcom/google/googlenav/settings/b;)I
+    invoke-static {v0}, Lcom/google/googlenav/settings/s;->e(Lcom/google/googlenav/settings/s;)V
 
-    move-result v0
-
-    return v0
+    .line 335
+    return-void
 .end method

@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="wallpaper_dialog_title">Select wallpaper</string>
-    <string name="wallpaper_chooser_empty">No wallpapers available</string>
-    <string name="wallpaper_cancel">Cancel</string>
+    <string name="pref_homescreen_grid_max">10</string>
+    <string name="pref_homescreen_portrait_grid_rows_default">6</string>
+    <string name="pref_homescreen_portrait_grid_columns_default">8</string>
+    <string name="pref_homescreen_landscape_grid_rows_default">6</string>
+    <string name="pref_homescreen_landscape_grid_columns_default">8</string>
+    <string name="pref_homescreen_horizontal_margin_default">MEDIUM</string>
+    <string name="pref_homescreen_vertical_margin_default">MEDIUM</string>
+    <string name="pref_homescreen_transition_effect_default">TABLET</string>
+    <string name="pref_show_persistent_search_bar_default">ALWAYS</string>
+    <string name="pref_number_of_dock_icons_default">8</string>
+    <string name="pref_number_of_dock_icons_min">1</string>
+    <string name="pref_number_of_dock_icons_max">10</string>
+    <string name="pref_dock_horizontal_margin_default">MEDIUM</string>
+    <string name="pref_dock_vertical_margin_default">MEDIUM</string>
+    <string name="pref_screen_orientation_default">ROTATE</string>
 </resources>

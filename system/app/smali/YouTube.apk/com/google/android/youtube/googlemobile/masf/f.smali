@@ -695,7 +695,7 @@
 
     const/4 v5, 0x0
 
-    invoke-interface {p1}, Lcom/google/android/youtube/googlemobile/common/async/b;->j_()I
+    invoke-interface {p1}, Lcom/google/android/youtube/googlemobile/common/async/b;->g_()I
 
     move-result v1
 

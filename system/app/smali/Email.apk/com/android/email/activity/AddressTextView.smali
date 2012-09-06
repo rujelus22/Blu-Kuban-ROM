@@ -25,15 +25,15 @@
     .parameter "attrs"
 
     .prologue
-    .line 53
+    .line 51
     invoke-direct {p0, p1, p2}, Landroid/widget/MultiAutoCompleteTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 48
+    .line 47
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/email/activity/AddressTextView;->mIsValid:Z
 
-    .line 50
+    .line 48
     new-instance v0, Lcom/android/email/activity/AddressTextView$ForwardValidator;
 
     const/4 v1, 0x0
@@ -42,12 +42,12 @@
 
     iput-object v0, p0, Lcom/android/email/activity/AddressTextView;->mInternalValidator:Lcom/android/email/activity/AddressTextView$ForwardValidator;
 
-    .line 54
+    .line 52
     iget-object v0, p0, Lcom/android/email/activity/AddressTextView;->mInternalValidator:Lcom/android/email/activity/AddressTextView$ForwardValidator;
 
     invoke-super {p0, v0}, Landroid/widget/MultiAutoCompleteTextView;->setValidator(Landroid/widget/AutoCompleteTextView$Validator;)V
 
-    .line 55
+    .line 53
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .parameter "x1"
 
     .prologue
-    .line 30
+    .line 29
     iput-boolean p1, p0, Lcom/android/email/activity/AddressTextView;->mIsValid:Z
 
     return p1
@@ -68,15 +68,15 @@
     .parameter "enable"
 
     .prologue
-    .line 83
+    .line 68
     if-eqz p1, :cond_11
 
-    .line 84
+    .line 69
     invoke-virtual {p0}, Lcom/android/email/activity/AddressTextView;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    const v1, 0x7f0800c7
+    const v1, 0x7f08006b
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -84,11 +84,11 @@
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/AddressTextView;->setError(Ljava/lang/CharSequence;)V
 
-    .line 88
+    .line 73
     :goto_10
     return-void
 
-    .line 86
+    .line 71
     :cond_11
     const/4 v0, 0x0
 
@@ -105,13 +105,13 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 64
+    .line 62
     iput-boolean v0, p0, Lcom/android/email/activity/AddressTextView;->mIsValid:Z
 
-    .line 65
+    .line 63
     invoke-super {p0}, Landroid/widget/MultiAutoCompleteTextView;->performValidation()V
 
-    .line 66
+    .line 64
     iget-boolean v1, p0, Lcom/android/email/activity/AddressTextView;->mIsValid:Z
 
     if-nez v1, :cond_e
@@ -119,81 +119,14 @@
     :goto_a
     invoke-direct {p0, v0}, Lcom/android/email/activity/AddressTextView;->markError(Z)V
 
-    .line 67
+    .line 65
     return-void
 
-    .line 66
+    .line 64
     :cond_e
     const/4 v0, 0x0
 
     goto :goto_a
-.end method
-
-.method protected replaceText(Ljava/lang/CharSequence;)V
-    .registers 6
-    .parameter "text"
-
-    .prologue
-    .line 71
-    invoke-virtual {p0}, Lcom/android/email/activity/AddressTextView;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    const v3, 0x7f080530
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 72
-    .local v0, showMore:Ljava/lang/String;
-    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 73
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 75
-    .local v1, tempText:Ljava/lang/String;
-    invoke-virtual {v1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_2d
-
-    const-string v2, "gal_search_show_more"
-
-    invoke-virtual {v2}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2e
-
-    .line 80
-    :cond_2d
-    :goto_2d
-    return-void
-
-    .line 78
-    :cond_2e
-    invoke-super {p0, p1}, Landroid/widget/MultiAutoCompleteTextView;->replaceText(Ljava/lang/CharSequence;)V
-
-    goto :goto_2d
 .end method
 
 .method public setValidator(Landroid/widget/AutoCompleteTextView$Validator;)V
@@ -201,11 +134,11 @@
     .parameter "validator"
 
     .prologue
-    .line 59
+    .line 57
     iget-object v0, p0, Lcom/android/email/activity/AddressTextView;->mInternalValidator:Lcom/android/email/activity/AddressTextView$ForwardValidator;
 
     invoke-virtual {v0, p1}, Lcom/android/email/activity/AddressTextView$ForwardValidator;->setValidator(Landroid/widget/AutoCompleteTextView$Validator;)V
 
-    .line 60
+    .line 58
     return-void
 .end method

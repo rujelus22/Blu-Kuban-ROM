@@ -3,6 +3,7 @@
 .source "ReviewsFragment.java"
 
 # interfaces
+.implements Lcom/google/android/finsky/activities/FilterOptionsDialog$Listener;
 .implements Lcom/google/android/finsky/activities/RateReviewDialog$Listener;
 
 
@@ -11,9 +12,17 @@
 
 .field protected mDocument:Lcom/google/android/finsky/api/model/Document;
 
+.field private mFilterByDevice:Z
+
+.field private mFilterByVersion:Z
+
 .field protected final mReviewsBinder:Lcom/google/android/finsky/activities/ReviewListViewBinder;
 
 .field private mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
+
+.field private mSavedInstanceState:Landroid/os/Bundle;
+
+.field private mSortType:I
 
 
 # direct methods
@@ -21,15 +30,22 @@
     .registers 2
 
     .prologue
-    .line 27
+    .line 28
     invoke-direct {p0}, Lcom/google/android/finsky/fragments/PageFragment;-><init>()V
 
-    .line 34
+    .line 36
     new-instance v0, Lcom/google/android/finsky/activities/ReviewListViewBinder;
 
     invoke-direct {v0}, Lcom/google/android/finsky/activities/ReviewListViewBinder;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsBinder:Lcom/google/android/finsky/activities/ReviewListViewBinder;
+
+    .line 51
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mSavedInstanceState:Landroid/os/Bundle;
 
     return-void
 .end method
@@ -39,7 +55,7 @@
     .parameter "x0"
 
     .prologue
-    .line 27
+    .line 28
     invoke-direct {p0}, Lcom/google/android/finsky/activities/ReviewsFragment;->reloadReviews()V
 
     return-void
@@ -51,10 +67,10 @@
     .parameter "document"
 
     .prologue
-    .line 40
+    .line 54
     const/4 v0, 0x0
 
-    .line 41
+    .line 55
     .local v0, fragment:Lcom/google/android/finsky/activities/ReviewsFragment;
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -68,20 +84,20 @@
 
     if-eqz v1, :cond_29
 
-    .line 42
+    .line 56
     new-instance v0, Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;
 
     .end local v0           #fragment:Lcom/google/android/finsky/activities/ReviewsFragment;
     invoke-direct {v0}, Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;-><init>()V
 
-    .line 46
+    .line 60
     .restart local v0       #fragment:Lcom/google/android/finsky/activities/ReviewsFragment;
     :goto_12
-    const v1, 0x7f0e0033
+    const v1, 0x7f0e0040
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/activities/ReviewsFragment;->setTheme(I)V
 
-    .line 47
+    .line 61
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v1
@@ -92,15 +108,15 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/activities/ReviewsFragment;->setDfeToc(Lcom/google/android/finsky/api/model/DfeToc;)V
 
-    .line 48
+    .line 62
     const-string v1, "finsky.ReviewsFragment.document"
 
     invoke-virtual {v0, v1, p1}, Lcom/google/android/finsky/activities/ReviewsFragment;->setArgument(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 49
+    .line 63
     return-object v0
 
-    .line 44
+    .line 58
     :cond_29
     new-instance v0, Lcom/google/android/finsky/activities/ReviewsFragment;
 
@@ -111,11 +127,63 @@
     goto :goto_12
 .end method
 
-.method private reloadReviews()V
+.method private recordState()V
     .registers 4
 
     .prologue
-    .line 167
+    .line 114
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/ReviewsFragment;->isDataReady()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_29
+
+    .line 115
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mSavedInstanceState:Landroid/os/Bundle;
+
+    const-string v1, "finsky.PageFragment.ReviewsFragment.filterByDevice"
+
+    iget-boolean v2, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mFilterByDevice:Z
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    .line 116
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mSavedInstanceState:Landroid/os/Bundle;
+
+    const-string v1, "finsky.PageFragment.ReviewsFragment.filterByVersion"
+
+    iget-boolean v2, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mFilterByVersion:Z
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    .line 117
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
+
+    if-eqz v0, :cond_29
+
+    .line 118
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mSavedInstanceState:Landroid/os/Bundle;
+
+    const-string v1, "finsky.PageFragment.ReviewsFragment.sortType"
+
+    iget-object v2, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/api/model/DfeReviews;->getSortType()I
+
+    move-result v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    .line 121
+    :cond_29
+    return-void
+.end method
+
+.method private reloadReviews()V
+    .registers 8
+
+    .prologue
+    .line 222
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
@@ -130,32 +198,56 @@
 
     move-result-object v1
 
-    const/4 v2, 0x1
+    iget-object v2, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/api/DfeApi;->invalidateReviewsCache(Ljava/lang/String;Z)V
+    invoke-virtual {v2}, Lcom/google/android/finsky/api/model/DfeReviews;->shouldFilterByDevice()Z
 
-    .line 168
+    move-result v2
+
+    iget-object v3, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/api/model/DfeReviews;->getVersionFilter()I
+
+    move-result v3
+
+    iget-object v4, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
+
+    invoke-virtual {v4}, Lcom/google/android/finsky/api/model/DfeReviews;->getRatingFilter()I
+
+    move-result v4
+
+    iget-object v5, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
+
+    invoke-virtual {v5}, Lcom/google/android/finsky/api/model/DfeReviews;->getSortType()I
+
+    move-result v5
+
+    const/4 v6, 0x1
+
+    invoke-interface/range {v0 .. v6}, Lcom/google/android/finsky/api/DfeApi;->invalidateReviewsCache(Ljava/lang/String;ZIIIZ)V
+
+    .line 225
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeReviews;->resetItems()V
 
-    .line 169
+    .line 226
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/ReviewsFragment;->switchToLoading()V
 
-    .line 170
+    .line 227
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->addDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 171
+    .line 228
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->addErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 172
+    .line 229
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/ReviewsFragment;->requestData()V
 
-    .line 173
+    .line 230
     return-void
 .end method
 
@@ -165,8 +257,8 @@
     .registers 2
 
     .prologue
-    .line 61
-    const v0, 0x7f04007b
+    .line 75
+    const v0, 0x7f040086
 
     return v0
 .end method
@@ -175,7 +267,7 @@
     .registers 2
 
     .prologue
-    .line 95
+    .line 139
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
 
     if-eqz v0, :cond_e
@@ -200,14 +292,66 @@
 .end method
 
 .method public onActivityCreated(Landroid/os/Bundle;)V
-    .registers 6
+    .registers 7
     .parameter "savedInstanceState"
 
     .prologue
-    .line 66
+    const/4 v2, 0x0
+
+    .line 80
     invoke-super {p0, p1}, Lcom/google/android/finsky/fragments/PageFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
-    .line 67
+    .line 83
+    if-eqz p1, :cond_10
+
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mSavedInstanceState:Landroid/os/Bundle;
+
+    invoke-virtual {v0}, Landroid/os/Bundle;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_10
+
+    .line 84
+    iput-object p1, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mSavedInstanceState:Landroid/os/Bundle;
+
+    .line 87
+    :cond_10
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mSavedInstanceState:Landroid/os/Bundle;
+
+    const-string v1, "finsky.PageFragment.ReviewsFragment.filterByDevice"
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mFilterByDevice:Z
+
+    .line 88
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mSavedInstanceState:Landroid/os/Bundle;
+
+    const-string v1, "finsky.PageFragment.ReviewsFragment.filterByVersion"
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mFilterByVersion:Z
+
+    .line 89
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mSavedInstanceState:Landroid/os/Bundle;
+
+    const-string v1, "finsky.PageFragment.ReviewsFragment.sortType"
+
+    const/4 v2, 0x2
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mSortType:I
+
+    .line 91
     new-instance v0, Lcom/google/android/finsky/api/model/DfeDetails;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
@@ -222,12 +366,12 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mDfeDetails:Lcom/google/android/finsky/api/model/DfeDetails;
 
-    .line 68
+    .line 92
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
 
-    if-nez v0, :cond_30
+    if-nez v0, :cond_62
 
-    .line 69
+    .line 93
     new-instance v0, Lcom/google/android/finsky/api/model/DfeReviews;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
@@ -238,38 +382,60 @@
 
     move-result-object v2
 
-    const/4 v3, 0x1
+    iget-object v3, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mDocument:Lcom/google/android/finsky/api/model/Document;
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/finsky/api/model/DfeReviews;-><init>(Lcom/google/android/finsky/api/DfeApi;Ljava/lang/String;Z)V
+    invoke-virtual {v3}, Lcom/google/android/finsky/api/model/Document;->getVersionCode()I
+
+    move-result v3
+
+    const/4 v4, 0x1
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/android/finsky/api/model/DfeReviews;-><init>(Lcom/google/android/finsky/api/DfeApi;Ljava/lang/String;IZ)V
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
 
-    .line 70
+    .line 95
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->addDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 71
+    .line 96
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->addErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 73
-    :cond_30
+    .line 98
+    :cond_62
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
+
+    iget-boolean v1, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mFilterByVersion:Z
+
+    iget-boolean v2, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mFilterByDevice:Z
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/api/model/DfeReviews;->setFilters(ZZ)V
+
+    .line 99
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
+
+    iget v1, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mSortType:I
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/api/model/DfeReviews;->setSortType(I)V
+
+    .line 100
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/ReviewsFragment;->isDataReady()Z
 
     move-result v0
 
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_7e
 
-    .line 74
+    .line 101
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/ReviewsFragment;->switchToLoading()V
 
-    .line 75
+    .line 102
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/ReviewsFragment;->requestData()V
 
-    .line 77
-    :cond_3c
+    .line 104
+    :cond_7e
     return-void
 .end method
 
@@ -278,10 +444,10 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 54
+    .line 68
     invoke-super {p0, p1}, Lcom/google/android/finsky/fragments/PageFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 55
+    .line 69
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/ReviewsFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -296,12 +462,12 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mDocument:Lcom/google/android/finsky/api/model/Document;
 
-    .line 56
+    .line 70
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/activities/ReviewsFragment;->setRetainInstance(Z)V
 
-    .line 57
+    .line 71
     return-void
 .end method
 
@@ -312,12 +478,12 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 82
+    .line 126
     invoke-super {p0, p1, p2, p3}, Lcom/google/android/finsky/fragments/PageFragment;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 83
+    .line 127
     .local v0, result:Landroid/view/View;
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/ReviewsFragment;->isDataReady()Z
 
@@ -325,10 +491,10 @@
 
     if-eqz v1, :cond_d
 
-    .line 88
+    .line 132
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/ReviewsFragment;->onDataChanged()V
 
-    .line 90
+    .line 134
     :cond_d
     return-object v0
 .end method
@@ -337,27 +503,27 @@
     .registers 3
 
     .prologue
-    .line 123
+    .line 167
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->removeDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 124
+    .line 168
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->removeErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 125
+    .line 169
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsBinder:Lcom/google/android/finsky/activities/ReviewListViewBinder;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/activities/ReviewListViewBinder;->setData(Lcom/google/android/finsky/api/model/DfeReviews;)V
 
-    .line 126
+    .line 170
     invoke-super {p0}, Lcom/google/android/finsky/fragments/PageFragment;->onDataChanged()V
 
-    .line 127
+    .line 171
     return-void
 .end method
 
@@ -365,31 +531,31 @@
     .registers 2
 
     .prologue
-    .line 131
+    .line 175
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsBinder:Lcom/google/android/finsky/activities/ReviewListViewBinder;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/activities/ReviewListViewBinder;->onDestroyView()V
 
-    .line 132
+    .line 176
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
 
     if-eqz v0, :cond_13
 
-    .line 133
+    .line 177
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->removeDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 134
+    .line 178
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeReviews;->removeErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 136
+    .line 180
     :cond_13
     invoke-super {p0}, Lcom/google/android/finsky/fragments/PageFragment;->onDestroyView()V
 
-    .line 137
+    .line 181
     return-void
 .end method
 
@@ -397,7 +563,7 @@
     .registers 7
 
     .prologue
-    .line 100
+    .line 144
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsBinder:Lcom/google/android/finsky/activities/ReviewListViewBinder;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mContext:Landroid/content/Context;
@@ -412,7 +578,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/activities/ReviewListViewBinder;->init(Landroid/content/Context;Landroid/support/v4/app/Fragment;Lcom/google/android/finsky/api/DfeApi;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/utils/BitmapLoader;)V
 
-    .line 101
+    .line 145
     return-void
 .end method
 
@@ -423,14 +589,14 @@
     .parameter "newRating"
 
     .prologue
-    .line 146
-    const v1, 0x7f070144
+    .line 201
+    const v1, 0x7f07017e
 
     const/4 v2, 0x0
 
     invoke-virtual {p0, v1, v2}, Lcom/google/android/finsky/activities/ReviewsFragment;->toast(II)V
 
-    .line 147
+    .line 202
     new-instance v0, Lcom/google/android/finsky/api/model/DfeRateReview;
 
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
@@ -447,7 +613,7 @@
 
     invoke-direct {v0, v1, p1, p2, v2}, Lcom/google/android/finsky/api/model/DfeRateReview;-><init>(Lcom/google/android/finsky/api/DfeApi;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 149
+    .line 204
     .local v0, request:Lcom/google/android/finsky/api/model/DfeRateReview;
     new-instance v1, Lcom/google/android/finsky/activities/ReviewsFragment$1;
 
@@ -455,14 +621,55 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/api/model/DfeRateReview;->addDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 158
+    .line 213
     new-instance v1, Lcom/google/android/finsky/activities/ReviewsFragment$2;
 
     invoke-direct {v1, p0}, Lcom/google/android/finsky/activities/ReviewsFragment$2;-><init>(Lcom/google/android/finsky/activities/ReviewsFragment;)V
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/api/model/DfeRateReview;->addErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 164
+    .line 219
+    return-void
+.end method
+
+.method public onReviewFilterChanged(ZZ)V
+    .registers 4
+    .parameter "filterByVersion"
+    .parameter "filterByDevice"
+
+    .prologue
+    .line 189
+    iput-boolean p1, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mFilterByVersion:Z
+
+    .line 190
+    iput-boolean p2, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mFilterByDevice:Z
+
+    .line 191
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
+
+    invoke-virtual {v0, p1, p2}, Lcom/google/android/finsky/api/model/DfeReviews;->setFilters(ZZ)V
+
+    .line 192
+    return-void
+.end method
+
+.method public onSaveInstanceState(Landroid/os/Bundle;)V
+    .registers 3
+    .parameter "bundle"
+
+    .prologue
+    .line 108
+    invoke-direct {p0}, Lcom/google/android/finsky/activities/ReviewsFragment;->recordState()V
+
+    .line 109
+    iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mSavedInstanceState:Landroid/os/Bundle;
+
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
+
+    .line 110
+    invoke-super {p0, p1}, Lcom/google/android/finsky/fragments/PageFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
+
+    .line 111
     return-void
 .end method
 
@@ -470,7 +677,7 @@
     .registers 3
 
     .prologue
-    .line 111
+    .line 155
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mPageFragmentHost:Lcom/google/android/finsky/fragments/PageFragmentHost;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mDocument:Lcom/google/android/finsky/api/model/Document;
@@ -481,7 +688,7 @@
 
     invoke-interface {v0, v1}, Lcom/google/android/finsky/fragments/PageFragmentHost;->updateCurrentBackendId(I)V
 
-    .line 112
+    .line 156
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mPageFragmentHost:Lcom/google/android/finsky/fragments/PageFragmentHost;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mDocument:Lcom/google/android/finsky/api/model/Document;
@@ -492,7 +699,7 @@
 
     invoke-interface {v0, v1}, Lcom/google/android/finsky/fragments/PageFragmentHost;->updateBreadcrumb(Ljava/lang/String;)V
 
-    .line 113
+    .line 157
     return-void
 .end method
 
@@ -500,10 +707,10 @@
     .registers 4
 
     .prologue
-    .line 105
+    .line 149
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/ReviewsFragment;->rebindActionBar()V
 
-    .line 106
+    .line 150
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsBinder:Lcom/google/android/finsky/activities/ReviewListViewBinder;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mDataView:Landroid/view/ViewGroup;
@@ -512,7 +719,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/activities/ReviewListViewBinder;->bind(Landroid/view/View;Lcom/google/android/finsky/api/model/Document;)V
 
-    .line 107
+    .line 151
     return-void
 .end method
 
@@ -520,12 +727,12 @@
     .registers 2
 
     .prologue
-    .line 117
+    .line 161
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mReviewsData:Lcom/google/android/finsky/api/model/DfeReviews;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeReviews;->startLoadItems()V
 
-    .line 118
+    .line 162
     return-void
 .end method
 
@@ -535,7 +742,7 @@
     .parameter "duration"
 
     .prologue
-    .line 179
+    .line 236
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragment;->mContext:Landroid/content/Context;
 
     invoke-static {v0, p1, p2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
@@ -544,6 +751,6 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 180
+    .line 237
     return-void
 .end method

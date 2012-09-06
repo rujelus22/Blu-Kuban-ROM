@@ -17,21 +17,26 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/download/DownloadQueueImpl;
 
+.field final synthetic val$currentProgress:Lcom/google/android/finsky/download/DownloadProgress;
+
 .field final synthetic val$download:Lcom/google/android/finsky/download/Download;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/download/DownloadQueueImpl;Lcom/google/android/finsky/download/DownloadQueueImpl$UpdateListenerType;Lcom/google/android/finsky/download/Download;)V
-    .registers 4
+.method constructor <init>(Lcom/google/android/finsky/download/DownloadQueueImpl;Lcom/google/android/finsky/download/DownloadQueueImpl$UpdateListenerType;Lcom/google/android/finsky/download/Download;Lcom/google/android/finsky/download/DownloadProgress;)V
+    .registers 5
     .parameter
     .parameter "x0"
     .parameter
+    .parameter
 
     .prologue
-    .line 285
+    .line 226
     iput-object p1, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$3;->this$0:Lcom/google/android/finsky/download/DownloadQueueImpl;
 
     iput-object p3, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$3;->val$download:Lcom/google/android/finsky/download/Download;
+
+    iput-object p4, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$3;->val$currentProgress:Lcom/google/android/finsky/download/DownloadProgress;
 
     invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/download/DownloadQueueImpl$ListenerNotifier;-><init>(Lcom/google/android/finsky/download/DownloadQueueImpl;Lcom/google/android/finsky/download/DownloadQueueImpl$UpdateListenerType;)V
 
@@ -41,15 +46,17 @@
 
 # virtual methods
 .method public updateListener(Lcom/google/android/finsky/download/DownloadQueueListener;)V
-    .registers 3
+    .registers 4
     .parameter "listener"
 
     .prologue
-    .line 288
+    .line 229
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$3;->val$download:Lcom/google/android/finsky/download/Download;
 
-    invoke-interface {p1, v0}, Lcom/google/android/finsky/download/DownloadQueueListener;->onNotificationClicked(Lcom/google/android/finsky/download/Download;)V
+    iget-object v1, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$3;->val$currentProgress:Lcom/google/android/finsky/download/DownloadProgress;
 
-    .line 289
+    invoke-interface {p1, v0, v1}, Lcom/google/android/finsky/download/DownloadQueueListener;->onProgress(Lcom/google/android/finsky/download/Download;Lcom/google/android/finsky/download/DownloadProgress;)V
+
+    .line 230
     return-void
 .end method

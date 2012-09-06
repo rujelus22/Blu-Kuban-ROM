@@ -53,40 +53,40 @@
         <item quantity="one">Inasubiri utendaji kwenye mazungumzo %1$d.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> zimenyamazishwa</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> zimenyamazishwa</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> zimenyamazishwa</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> zimenyamazishwa</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> zimeripotiwa kama barua taka.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> zimeripotiwa kama barua taka</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> zimeripotiwa kama barua taka.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> zimeripotiwa kama barua taka</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d:&amp;lt;/b&amp;amp;gt: zimejalidiwa.</item>
-        <item quantity="one">&amp;lt;b>%1$d:&amp;lt;/b&amp;amp;gt: zimejalidiwa</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d:&amp;amp;amp;lt;/b&amp;amp;amp;amp;gt: zimejalidiwa.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d:&amp;amp;amp;lt;/b&amp;amp;amp;amp;gt: zimejalidiwa</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> zimehamishwa hadi kwa Kikasha</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> zimehamishwa hadi kwa Kikasha</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> zimehamishwa hadi kwa Kikasha</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> zimehamishwa hadi kwa Kikasha</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d:&amp;lt;/b>zimefutwa</item>
-        <item quantity="one">&amp;lt;b>%1$d:&amp;lt;/b>zimefutwa.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d:&amp;amp;amp;lt;/b>zimefutwa</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d:&amp;amp;amp;lt;/b>zimefutwa.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d:&amp;lt;/b> Imetiwa alama kama muhimu</item>
-        <item quantity="one">&amp;lt;b>%1$d:&amp;lt;/b> Imetiwa alama kama muhimu</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d:&amp;amp;amp;lt;/b> Imetiwa alama kama muhimu</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d:&amp;amp;amp;lt;/b> Imetiwa alama kama muhimu</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> zimetiwa alama kama zisizomuhimu.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> zimetiwa alama kama zisizomuhimu</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> zimetiwa alama kama zisizomuhimu.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> zimetiwa alama kama zisizomuhimu</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d:&amp;lt;/b> Imetiwa alama kama zilizosomwa.</item>
-        <item quantity="one">&amp;lt;b>%1$d:&amp;lt;/b> Imetiwa alama kuwa imesomwa</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d:&amp;amp;amp;lt;/b> Imetiwa alama kama zilizosomwa.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d:&amp;amp;amp;lt;/b> Imetiwa alama kuwa imesomwa</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> zimetiwa alama kuwa hazijasomwa</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> zimetiwa alama kuwa hazijasomwa</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> zimetiwa alama kuwa hazijasomwa</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> zimetiwa alama kuwa hazijasomwa</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Lebo zilizobadilishwa.</item>

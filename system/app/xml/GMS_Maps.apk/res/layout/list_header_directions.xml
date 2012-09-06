@@ -46,7 +46,7 @@
         <com.google.googlenav.ui.android.TemplateView android:layout_gravity="center" android:id="@id/travelAdvisories" android:layout_width="wrap_content" android:layout_height="wrap_content">
             <include layout="@layout/template_text_parent" />
         </com.google.googlenav.ui.android.TemplateView>
+        <TextView android:layout_gravity="center" android:id="@id/travelAdvisoriesView" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
     </LinearLayout>
-    <include layout="@layout/direction_summary_list_item" />
     <View android:id="@id/headerDividerBottom" android:background="@android:drawable/divider_horizontal_bright" android:layout_width="fill_parent" android:layout_height="wrap_content" />
 </LinearLayout>

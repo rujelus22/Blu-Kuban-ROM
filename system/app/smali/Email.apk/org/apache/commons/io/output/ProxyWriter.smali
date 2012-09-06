@@ -27,12 +27,12 @@
     .end annotation
 
     .prologue
-    .line 115
+    .line 108
     iget-object v0, p0, Lorg/apache/commons/io/output/ProxyWriter;->out:Ljava/io/Writer;
 
     invoke-virtual {v0}, Ljava/io/Writer;->close()V
 
-    .line 116
+    .line 109
     return-void
 .end method
 
@@ -45,12 +45,12 @@
     .end annotation
 
     .prologue
-    .line 106
+    .line 100
     iget-object v0, p0, Lorg/apache/commons/io/output/ProxyWriter;->out:Ljava/io/Writer;
 
     invoke-virtual {v0}, Ljava/io/Writer;->flush()V
 
-    .line 107
+    .line 101
     return-void
 .end method
 
@@ -64,12 +64,12 @@
     .end annotation
 
     .prologue
-    .line 53
+    .line 52
     iget-object v0, p0, Lorg/apache/commons/io/output/ProxyWriter;->out:Ljava/io/Writer;
 
     invoke-virtual {v0, p1}, Ljava/io/Writer;->write(I)V
 
-    .line 54
+    .line 53
     return-void
 .end method
 
@@ -83,12 +83,12 @@
     .end annotation
 
     .prologue
-    .line 85
+    .line 81
     iget-object v0, p0, Lorg/apache/commons/io/output/ProxyWriter;->out:Ljava/io/Writer;
 
     invoke-virtual {v0, p1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
-    .line 86
+    .line 82
     return-void
 .end method
 
@@ -104,12 +104,12 @@
     .end annotation
 
     .prologue
-    .line 97
+    .line 92
     iget-object v0, p0, Lorg/apache/commons/io/output/ProxyWriter;->out:Ljava/io/Writer;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/Writer;->write(Ljava/lang/String;II)V
 
-    .line 98
+    .line 93
     return-void
 .end method
 
@@ -123,12 +123,12 @@
     .end annotation
 
     .prologue
-    .line 63
+    .line 61
     iget-object v0, p0, Lorg/apache/commons/io/output/ProxyWriter;->out:Ljava/io/Writer;
 
     invoke-virtual {v0, p1}, Ljava/io/Writer;->write([C)V
 
-    .line 64
+    .line 62
     return-void
 .end method
 
@@ -144,11 +144,11 @@
     .end annotation
 
     .prologue
-    .line 75
+    .line 72
     iget-object v0, p0, Lorg/apache/commons/io/output/ProxyWriter;->out:Ljava/io/Writer;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/Writer;->write([CII)V
 
-    .line 76
+    .line 73
     return-void
 .end method

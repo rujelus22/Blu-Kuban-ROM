@@ -562,7 +562,7 @@ Please check validity of certificates"</string>
     <string name="wifi_ap_devicename">My device name</string>
     <string name="wifi_ap_allow_all_device">Allow all devices to connect</string>
     <string name="wifi_ap_allow_only_allowlist">Only allowed devices</string>
-    <string name="wifi_ap_menu_configure">Configure (Sprint hotspot)</string>
+    <string name="wifi_ap_menu_configure">Configure (Hotspot)</string>
     <string name="wifi_ap_menu_timeout">Timeout settings</string>
     <string name="wifi_ap_menu_allow_list">Allowed device list</string>
     <string name="wifi_ap_menu_help">Help</string>
@@ -667,7 +667,7 @@ Please check validity of certificates"</string>
     <string name="wifi_tether_configure_ap_text">Configure Wi-Fi hotspot</string>
     <string name="wifi_tether_configure_subtext">%1$s %2$s portable Wi-Fi hotspot</string>
     <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
-    <string name="mobileap">Sprint Hotspot</string>
+    <string name="mobileap">Hotspot</string>
     <string name="wifi_tether_dialog_nosim_warning">Insert SIM for using portable Wi-Fi hotspot include tethering</string>
     <string name="wifi_tether_dialog_battery_data_warning">Portable Wi-Fi hotspot consumes much battery power and increases your data usage</string>
     <string name="it_policy_not_allow_wifi">Security policy restricts use of Wi-Fi</string>
@@ -2176,7 +2176,7 @@ Do you want to continue?"</string>
     <string name="wimax_notify_open_networks">Network notification</string>
     <string name="wimax_notify_open_networks_summary">Notify me when an open network is available</string>
     <string name="wimax_networks">4G networks</string>
-    <string name="sprint_connected_summary">Connected to Sprint</string>
+    <string name="sprint_connected_summary">Connected to The Kuban</string>
     <string name="unknown_carrier_connected_summary">Connected to Unknown Carrier</string>
     <string name="wimax_status_idle">Idle</string>
     <string name="wimax_status_initializing">Initializing</string>
@@ -2187,7 +2187,7 @@ Do you want to continue?"</string>
     <string name="wimax_status_scanning">Scanning</string>
     <string name="wimax_status_ready">Ready</string>
     <string name="data_disabled">Mobile network data is disabled</string>
-    <string name="Sprint">Sprint</string>
+    <string name="Sprint">RUJELUS22</string>
     <string name="unknown_carrier">Unknown Carrier</string>
     <string name="wimax_state_connected">State : CONNECTED</string>
     <string name="wimax_ip">IP address :</string>
@@ -2368,15 +2368,15 @@ Do you want to continue?"</string>
     <string name="usb_tethering_mobileap_active_subtext">Unable to tether while Mobile AP in use</string>
     <string name="usb_tethering_wimaxdm_active_subtext">Unable to tether while WiMAX DM in use</string>
     <string name="settings_license_sprint_privacy_activity_title">Privacy Alert from Sprint</string>
-    <string name="mobileap_settings">Sprint Hotspot Settings</string>
-    <string name="mobileap_settings_category">Sprint Hotspot settings</string>
-    <string name="mobileap_low_battery">Low battery. Charge before using Sprint Hotspot</string>
+    <string name="mobileap_settings">Hotspot Settings</string>
+    <string name="mobileap_settings_category">Hotspot settings</string>
+    <string name="mobileap_low_battery">Low battery. Charge before using Hotspot</string>
     <string name="hide_my_device_title">Visible</string>
     <string name="dialog_wifi_warning">Disconnect Wi-Fi for using Hotspot?</string>
     <string name="dialog_devicedisconnection_warning">Deactivating Hotspot will disconnect linked devices. Continue?</string>
     <string name="dialog_battery_data_warning">Hotspot consumes much battery power and increases your data usage. Continue?</string>
-    <string name="dialog_connecting_packet_data">Activating Sprint Hotspot</string>
-    <string name="mobileap_instruction_inactivate">"You can share your device's Sprint Hotspot with Wi-Fi enabled devices.
+    <string name="dialog_connecting_packet_data">Activating Hotspot</string>
+    <string name="mobileap_instruction_inactivate">"You can share your device's Hotspot with Wi-Fi enabled devices.
 
 After you start the Mobile Hotspot Wi-Fi router, connect using the controls on your Wi-Fi enabled device."</string>
     <string name="mobileap_instruction_activate">"1. Turn Wi-Fi on.
@@ -2388,8 +2388,8 @@ After you start the Mobile Hotspot Wi-Fi router, connect using the controls on y
 4. Enter %2$s in the %3$s field."</string>
     <string name="mobileap_wifi_turn_off_message">"Activiating Hotspot...
 Wi-Fi will be deactivated"</string>
-    <string name="mobileap_instruction_inactivate_title"><b>Introduction to Sprint Hotspot</b></string>
-    <string name="mobileap_instruction_activate_title"><b>How to connect to Sprint Hotspot from other devices</b></string>
+    <string name="mobileap_instruction_inactivate_title"><b>Introduction to Hotspot</b></string>
+    <string name="mobileap_instruction_activate_title"><b>How to connect to Hotspot from other devices</b></string>
     <string name="wimax_tethered_mode">4G tethered mode</string>
     <string name="wimax_bt_warning">Bluetooth Tethering is now connected. Turn Bluetooth Tethering off to connect 4G network.</string>
     <string name="wimax_tethered_warning_popup">4G network needed for using the tethered mode. Turn 4G and tethered mode off.</string>
@@ -2404,9 +2404,9 @@ Wi-Fi will be deactivated"</string>
 
 3. Select %1$s from available networks.
 
-4. Enjoy Internet with Sprint Hotspot."</string>
+4. Enjoy Internet with Hotspot."</string>
     <string name="mobileap_subtext_enabled_subtext">Hotspot activated</string>
-    <string name="mobileap_subtext">Set and change options for Sprint Hotspot</string>
+    <string name="mobileap_subtext">Set and change options for Hotspot</string>
     <string name="mobileap_channelChange_duringWIMAX">"channel would become auto 
 while WIMAX is turned on"</string>
     <string name="hide_my_device_summery">Make device visible</string>
@@ -2463,8 +2463,8 @@ while WIMAX is turned on"</string>
     <string name="wifiaplan_dlg_ip_not_compatible_message">IP has to be in the same range as the Local IP.</string>
     <string name="wifiaplan_dlg_convert_otherips">Change Others</string>
     <string name="wifiaplan_dlg_revert_changes">Revert Back</string>
-    <string name="wifiaplan_dlg_restart_required">Restart Sprint Hotspot</string>
-    <string name="wifiaplan_dlg_restart_required_message">The Sprint Hotspot has to be restarted to take effect this new configuration.</string>
+    <string name="wifiaplan_dlg_restart_required">Restart Hotspot</string>
+    <string name="wifiaplan_dlg_restart_required_message">The Hotspot has to be restarted to take effect this new configuration.</string>
     <string name="wifiaplan_dlg_restart_ap">Restart Hotspot</string>
     <string name="wifiaplan_ip_change_alert">IP range is changed accordingly</string>
     <string name="wifiap_name_unavailable">Name Unavailable</string>

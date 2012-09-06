@@ -268,107 +268,56 @@
 .end method
 
 .method public static a(I)V
-    .registers 7
-
-    const/4 v5, 0x1
-
-    const-string v0, "SuperSU"
-
-    const-string v1, "[SuperSU][%d] DONE"
-
-    new-array v2, v5, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    .registers 3
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v0, v5}, Leu/chainfire/supersu/PromptQueue;->a(ILeu/chainfire/supersu/PromptQueue$Entry;Z)I
+    const/4 v1, 0x1
+
+    invoke-static {p0, v0, v1}, Leu/chainfire/supersu/PromptQueue;->a(ILeu/chainfire/supersu/PromptQueue$Entry;Z)I
 
     return-void
 .end method
 
 .method public static a(ILjava/lang/String;Ljava/lang/String;IILjava/lang/String;)Z
-    .registers 12
+    .registers 9
+
+    const/4 v0, 0x0
+
+    new-instance v1, Leu/chainfire/supersu/PromptQueue;
+
+    invoke-direct {v1}, Leu/chainfire/supersu/PromptQueue;-><init>()V
+
+    new-instance v2, Leu/chainfire/supersu/PromptQueue$Entry;
+
+    invoke-direct {v2, v1}, Leu/chainfire/supersu/PromptQueue$Entry;-><init>(Leu/chainfire/supersu/PromptQueue;)V
+
+    iput p0, v2, Leu/chainfire/supersu/PromptQueue$Entry;->a:I
+
+    iput-object p1, v2, Leu/chainfire/supersu/PromptQueue$Entry;->b:Ljava/lang/String;
+
+    iput-object p2, v2, Leu/chainfire/supersu/PromptQueue$Entry;->c:Ljava/lang/String;
+
+    iput p3, v2, Leu/chainfire/supersu/PromptQueue$Entry;->d:I
+
+    iput p4, v2, Leu/chainfire/supersu/PromptQueue$Entry;->e:I
+
+    iput-object p5, v2, Leu/chainfire/supersu/PromptQueue$Entry;->f:Ljava/lang/String;
+
+    iget v1, v2, Leu/chainfire/supersu/PromptQueue$Entry;->a:I
+
+    invoke-static {v1, v2, v0}, Leu/chainfire/supersu/PromptQueue;->a(ILeu/chainfire/supersu/PromptQueue$Entry;Z)I
+
+    move-result v1
+
+    const/4 v2, -0x1
+
+    if-eq v1, v2, :cond_21
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x0
-
-    const-string v2, "SuperSU"
-
-    const-string v3, "[SuperSU][%d] ADD %s (%s)"
-
-    const/4 v4, 0x3
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    aput-object v5, v4, v1
-
-    aput-object p1, v4, v0
-
-    const/4 v5, 0x2
-
-    aput-object p2, v4, v5
-
-    invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    new-instance v2, Leu/chainfire/supersu/PromptQueue;
-
-    invoke-direct {v2}, Leu/chainfire/supersu/PromptQueue;-><init>()V
-
-    new-instance v3, Leu/chainfire/supersu/PromptQueue$Entry;
-
-    invoke-direct {v3, v2}, Leu/chainfire/supersu/PromptQueue$Entry;-><init>(Leu/chainfire/supersu/PromptQueue;)V
-
-    iput p0, v3, Leu/chainfire/supersu/PromptQueue$Entry;->a:I
-
-    iput-object p1, v3, Leu/chainfire/supersu/PromptQueue$Entry;->b:Ljava/lang/String;
-
-    iput-object p2, v3, Leu/chainfire/supersu/PromptQueue$Entry;->c:Ljava/lang/String;
-
-    iput p3, v3, Leu/chainfire/supersu/PromptQueue$Entry;->d:I
-
-    iput p4, v3, Leu/chainfire/supersu/PromptQueue$Entry;->e:I
-
-    iput-object p5, v3, Leu/chainfire/supersu/PromptQueue$Entry;->f:Ljava/lang/String;
-
-    iget v2, v3, Leu/chainfire/supersu/PromptQueue$Entry;->a:I
-
-    invoke-static {v2, v3, v1}, Leu/chainfire/supersu/PromptQueue;->a(ILeu/chainfire/supersu/PromptQueue$Entry;Z)I
-
-    move-result v2
-
-    const/4 v3, -0x1
-
-    if-eq v2, v3, :cond_3b
-
-    :goto_3a
+    :cond_21
     return v0
-
-    :cond_3b
-    move v0, v1
-
-    goto :goto_3a
 .end method
 
 .method public static a(Landroid/content/Context;)Z
@@ -376,25 +325,23 @@
 
     const/4 v2, 0x0
 
-    const/4 v5, 0x2
-
     const/4 v7, 0x1
 
     const/4 v1, 0x0
 
-    :goto_4
+    :goto_3
     sget-object v3, Leu/chainfire/supersu/PromptQueue;->a:Ljava/util/ArrayList;
 
     monitor-enter v3
 
-    :try_start_7
+    :try_start_6
     sget-object v0, Leu/chainfire/supersu/PromptQueue;->a:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    if-lez v0, :cond_87
+    if-lez v0, :cond_5d
 
     sget-object v0, Leu/chainfire/supersu/PromptQueue;->a:Ljava/util/ArrayList;
 
@@ -408,12 +355,12 @@
 
     move-object v6, v0
 
-    :goto_19
+    :goto_18
     monitor-exit v3
-    :try_end_1a
-    .catchall {:try_start_7 .. :try_end_1a} :catchall_40
+    :try_end_19
+    .catchall {:try_start_6 .. :try_end_19} :catchall_40
 
-    if-eqz v6, :cond_7e
+    if-eqz v6, :cond_5b
 
     new-instance v3, Leu/chainfire/supersu/Settings;
 
@@ -425,7 +372,7 @@
 
     iget-object v0, v6, Leu/chainfire/supersu/PromptQueue$Entry;->c:Ljava/lang/String;
 
-    :goto_27
+    :goto_26
     invoke-virtual {v3, v0}, Leu/chainfire/supersu/Settings;->a(Ljava/lang/String;)Leu/chainfire/supersu/Settings$App;
 
     move-result-object v0
@@ -436,7 +383,9 @@
 
     iget v3, v0, Leu/chainfire/supersu/Settings$App;->i:I
 
-    if-eq v3, v5, :cond_46
+    const/4 v4, 0x2
+
+    if-eq v3, v4, :cond_46
 
     iget v3, v6, Leu/chainfire/supersu/PromptQueue$Entry;->a:I
 
@@ -448,7 +397,7 @@
 
     invoke-static {v0, v2, v7}, Leu/chainfire/supersu/PromptQueue;->a(ILeu/chainfire/supersu/PromptQueue$Entry;Z)I
 
-    goto :goto_4
+    goto :goto_3
 
     :catchall_40
     move-exception v0
@@ -460,46 +409,10 @@
     :cond_43
     iget-object v0, v6, Leu/chainfire/supersu/PromptQueue$Entry;->b:Ljava/lang/String;
 
-    goto :goto_27
+    goto :goto_26
 
     :cond_46
     invoke-virtual {v0}, Leu/chainfire/supersu/Settings$App;->f()V
-
-    const-string v0, "SuperSU"
-
-    const-string v2, "[SuperSU][%d] NEXT %s (%s) \"%s\""
-
-    const/4 v3, 0x4
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    iget v4, v6, Leu/chainfire/supersu/PromptQueue$Entry;->a:I
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    aput-object v4, v3, v1
-
-    iget-object v1, v6, Leu/chainfire/supersu/PromptQueue$Entry;->b:Ljava/lang/String;
-
-    aput-object v1, v3, v7
-
-    iget-object v1, v6, Leu/chainfire/supersu/PromptQueue$Entry;->c:Ljava/lang/String;
-
-    aput-object v1, v3, v5
-
-    const/4 v1, 0x3
-
-    iget-object v4, v6, Leu/chainfire/supersu/PromptQueue$Entry;->f:Ljava/lang/String;
-
-    aput-object v4, v3, v1
-
-    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     iget v1, v6, Leu/chainfire/supersu/PromptQueue$Entry;->a:I
 
@@ -519,22 +432,16 @@
 
     move v0, v7
 
-    :goto_7d
+    :goto_5a
     return v0
 
-    :cond_7e
-    const-string v0, "SuperSU"
-
-    const-string v2, "[SuperSU][empty] NEXT"
-
-    invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
+    :cond_5b
     move v0, v1
 
-    goto :goto_7d
+    goto :goto_5a
 
-    :cond_87
+    :cond_5d
     move-object v6, v2
 
-    goto :goto_19
+    goto :goto_18
 .end method

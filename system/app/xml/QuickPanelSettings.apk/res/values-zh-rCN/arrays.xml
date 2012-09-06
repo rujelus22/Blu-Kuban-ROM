@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="entries_brightness_widget">
+        <item>自动 / 最暗 /40%/100%</item>
+        <item>自动 / 最暗 /25%1$/50%2$/75%3$/100%</item>
+        <item>自动 / 25%/100%</item>
+        <item>自动 / 100%</item>
+    </string-array>
+</resources>

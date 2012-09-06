@@ -1,307 +1,423 @@
 .class public Lcom/google/googlenav/ui/android/AndroidVectorView;
 .super Lcom/google/googlenav/ui/android/BaseAndroidView;
+.source "SourceFile"
 
 
 # instance fields
-.field private e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+.field private f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-.field private f:Lcom/google/android/maps/driveabout/vector/E;
+.field private g:Lcom/google/android/maps/driveabout/vector/w;
 
-.field private g:Lcom/google/googlenav/ui/bB;
+.field private h:Lcom/google/android/maps/driveabout/vector/bU;
 
-.field private h:Lcom/google/googlenav/ui/android/FloorPickerView;
+.field private i:Lcom/google/googlenav/ui/android/aa;
 
-.field private i:LaK/e;
+.field private j:Lau/e;
 
-.field private final j:Lcom/google/android/maps/driveabout/vector/dg;
+.field private final k:Lcom/google/android/maps/driveabout/vector/dW;
 
-.field private final k:Lcom/google/android/maps/driveabout/vector/df;
+.field private final l:Lcom/google/android/maps/driveabout/vector/dV;
 
-.field private final l:Lcom/google/googlenav/login/i;
+.field private final m:Las/h;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
+    .parameter
+    .parameter
 
+    .prologue
+    .line 316
     invoke-direct {p0, p1, p2}, Lcom/google/googlenav/ui/android/BaseAndroidView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
+    .line 224
+    new-instance v0, Lcom/google/googlenav/ui/android/f;
+
+    invoke-direct {v0, p0}, Lcom/google/googlenav/ui/android/f;-><init>(Lcom/google/googlenav/ui/android/AndroidVectorView;)V
+
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->k:Lcom/google/android/maps/driveabout/vector/dW;
+
+    .line 245
     new-instance v0, Lcom/google/googlenav/ui/android/g;
 
     invoke-direct {v0, p0}, Lcom/google/googlenav/ui/android/g;-><init>(Lcom/google/googlenav/ui/android/AndroidVectorView;)V
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->j:Lcom/google/android/maps/driveabout/vector/dg;
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->l:Lcom/google/android/maps/driveabout/vector/dV;
 
+    .line 283
     new-instance v0, Lcom/google/googlenav/ui/android/h;
 
     invoke-direct {v0, p0}, Lcom/google/googlenav/ui/android/h;-><init>(Lcom/google/googlenav/ui/android/AndroidVectorView;)V
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->k:Lcom/google/android/maps/driveabout/vector/df;
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->m:Las/h;
 
-    new-instance v0, Lcom/google/googlenav/ui/android/i;
-
-    invoke-direct {v0, p0}, Lcom/google/googlenav/ui/android/i;-><init>(Lcom/google/googlenav/ui/android/AndroidVectorView;)V
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->l:Lcom/google/googlenav/login/i;
-
+    .line 317
     return-void
 .end method
 
-.method static synthetic a(Lcom/google/googlenav/ui/android/AndroidVectorView;)Lcom/google/googlenav/login/i;
+.method static synthetic a(Lcom/google/googlenav/ui/android/AndroidVectorView;)Lau/e;
     .registers 2
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->l:Lcom/google/googlenav/login/i;
+    .prologue
+    .line 75
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->j:Lau/e;
 
     return-object v0
 .end method
 
-.method static synthetic b(Lcom/google/googlenav/ui/android/AndroidVectorView;)LaK/e;
-    .registers 2
+.method private a(Lcom/google/android/maps/driveabout/vector/dg;Lr/aO;I)Lr/aK;
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->i:LaK/e;
+    .prologue
+    .line 634
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->a:Landroid/content/Context;
 
-    return-object v0
-.end method
-
-.method static synthetic c(Lcom/google/googlenav/ui/android/AndroidVectorView;)V
-    .registers 1
-
-    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->m()V
-
-    return-void
-.end method
-
-.method static synthetic d(Lcom/google/googlenav/ui/android/AndroidVectorView;)Lcom/google/android/maps/driveabout/vector/VectorMapView;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
-
-    return-object v0
-.end method
-
-.method private l()V
-    .registers 6
-
-    sget-object v0, Lcom/google/android/maps/driveabout/vector/cU;->m:Lcom/google/android/maps/driveabout/vector/cU;
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->a:Landroid/content/Context;
-
-    invoke-static {v0, v1}, Lcom/google/android/maps/driveabout/vector/cS;->a(Lcom/google/android/maps/driveabout/vector/cU;Landroid/content/Context;)Lx/ay;
+    invoke-static {p1, v0}, Lcom/google/android/maps/driveabout/vector/dD;->a(Lcom/google/android/maps/driveabout/vector/dg;Landroid/content/Context;)Lr/aH;
 
     move-result-object v0
 
-    check-cast v0, Lx/aB;
+    check-cast v0, Lr/aK;
 
-    invoke-static {}, Lae/d;->d()Lae/i;
+    .line 636
+    invoke-virtual {v0, p2}, Lr/aK;->a(Lr/aO;)V
 
-    move-result-object v1
+    .line 638
+    int-to-long v1, p3
 
-    invoke-virtual {v1}, Lae/i;->c()I
+    invoke-virtual {v0, v1, v2}, Lr/aK;->a(J)V
 
-    move-result v1
+    .line 646
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    invoke-static {}, Lae/d;->d()Lae/i;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lae/i;->b()Z
-
-    move-result v2
-
-    invoke-static {}, Lae/d;->d()Lae/i;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lae/i;->a()J
-
-    move-result-wide v3
-
-    invoke-static {v1, v2}, Lx/aB;->a(IZ)Lx/aE;
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->w()Lcom/google/android/maps/driveabout/vector/cy;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lx/aB;->a(Lx/aE;)V
+    invoke-virtual {v1, p1}, Lcom/google/android/maps/driveabout/vector/cy;->a(Lcom/google/android/maps/driveabout/vector/dg;)V
 
-    long-to-int v1, v3
-
-    int-to-long v1, v1
-
-    invoke-virtual {v0, v1, v2}, Lx/aB;->a(J)V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
-
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->y()Lcom/google/android/maps/driveabout/vector/bs;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/maps/driveabout/vector/ce;
-
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/ce;->o()[Lcom/google/android/maps/driveabout/vector/cI;
-
-    move-result-object v1
-
-    array-length v2, v1
-
-    const/4 v0, 0x0
-
-    :goto_3c
-    if-ge v0, v2, :cond_4e
-
-    aget-object v3, v1, v0
-
-    invoke-virtual {v3}, Lcom/google/android/maps/driveabout/vector/cI;->i()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_4b
-
-    sget-object v4, Lcom/google/android/maps/driveabout/vector/cU;->m:Lcom/google/android/maps/driveabout/vector/cU;
-
-    invoke-virtual {v3, v4}, Lcom/google/android/maps/driveabout/vector/cI;->a(Lcom/google/android/maps/driveabout/vector/cU;)V
-
-    :cond_4b
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_3c
-
-    :cond_4e
-    return-void
+    .line 647
+    return-object v0
 .end method
 
-.method private m()V
-    .registers 6
+.method private a(Lcom/google/android/maps/driveabout/vector/dg;)V
+    .registers 3
+    .parameter
 
-    sget-object v0, Lcom/google/android/maps/driveabout/vector/cU;->m:Lcom/google/android/maps/driveabout/vector/cU;
-
-    invoke-static {v0}, Lx/aA;->b(Lcom/google/android/maps/driveabout/vector/cU;)Z
+    .prologue
+    .line 657
+    invoke-static {p1}, Lr/aJ;->b(Lcom/google/android/maps/driveabout/vector/dg;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_1b
 
-    sget-object v0, Lcom/google/android/maps/driveabout/vector/cU;->m:Lcom/google/android/maps/driveabout/vector/cU;
-
-    invoke-static {v0}, Lx/aA;->c(Lcom/google/android/maps/driveabout/vector/cU;)Lx/ay;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lx/ay;->e()V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
-
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->y()Lcom/google/android/maps/driveabout/vector/bs;
+    .line 659
+    invoke-static {p1}, Lr/aJ;->c(Lcom/google/android/maps/driveabout/vector/dg;)Lr/aH;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/maps/driveabout/vector/ce;
+    invoke-interface {v0}, Lr/aH;->c()V
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/ce;->o()[Lcom/google/android/maps/driveabout/vector/cI;
+    .line 666
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    move-result-object v1
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->w()Lcom/google/android/maps/driveabout/vector/cy;
 
-    array-length v2, v1
+    move-result-object v0
 
-    const/4 v0, 0x0
+    invoke-virtual {v0, p1}, Lcom/google/android/maps/driveabout/vector/cy;->b(Lcom/google/android/maps/driveabout/vector/dg;)V
 
-    :goto_1f
-    if-ge v0, v2, :cond_35
-
-    aget-object v3, v1, v0
-
-    invoke-virtual {v3}, Lcom/google/android/maps/driveabout/vector/cI;->i()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_32
-
-    invoke-virtual {v3}, Lcom/google/android/maps/driveabout/vector/cI;->j()Lcom/google/android/maps/driveabout/vector/cC;
-
-    move-result-object v3
-
-    sget-object v4, Lcom/google/android/maps/driveabout/vector/cU;->m:Lcom/google/android/maps/driveabout/vector/cU;
-
-    invoke-virtual {v3, v4}, Lcom/google/android/maps/driveabout/vector/cC;->b(Lcom/google/android/maps/driveabout/vector/cU;)V
-
-    :cond_32
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1f
-
-    :cond_35
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .line 670
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
     invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->g()V
 
-    :cond_3a
+    .line 672
+    :cond_1b
+    return-void
+.end method
+
+.method static synthetic b(Lcom/google/googlenav/ui/android/AndroidVectorView;)V
+    .registers 1
+    .parameter
+
+    .prologue
+    .line 75
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->s()V
+
+    return-void
+.end method
+
+.method private o()V
+    .registers 2
+
+    .prologue
+    .line 455
+    invoke-static {}, Lcom/google/googlenav/K;->E()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    .line 456
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->r()V
+
+    .line 460
+    :goto_9
+    return-void
+
+    .line 458
+    :cond_a
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->s()V
+
+    goto :goto_9
+.end method
+
+.method private p()V
+    .registers 1
+
+    .prologue
+    .line 467
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->t()V
+
+    .line 469
+    return-void
+.end method
+
+.method private q()V
+    .registers 1
+
+    .prologue
+    .line 476
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->u()V
+
+    .line 478
+    return-void
+.end method
+
+.method private r()V
+    .registers 5
+
+    .prologue
+    .line 571
+    invoke-static {}, Lcom/google/googlenav/clientparam/f;->d()Lcom/google/googlenav/clientparam/k;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/clientparam/k;->c()I
+
+    move-result v0
+
+    .line 573
+    invoke-static {}, Lcom/google/googlenav/clientparam/f;->d()Lcom/google/googlenav/clientparam/k;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/googlenav/clientparam/k;->b()Z
+
+    move-result v1
+
+    .line 575
+    invoke-static {}, Lcom/google/googlenav/clientparam/f;->d()Lcom/google/googlenav/clientparam/k;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/google/googlenav/clientparam/k;->a()J
+
+    move-result-wide v2
+
+    .line 577
+    invoke-static {v0, v1}, Lr/aK;->a(IZ)Lr/aO;
+
+    move-result-object v0
+
+    .line 579
+    sget-object v1, Lcom/google/android/maps/driveabout/vector/dg;->q:Lcom/google/android/maps/driveabout/vector/dg;
+
+    long-to-int v2, v2
+
+    invoke-direct {p0, v1, v0, v2}, Lcom/google/googlenav/ui/android/AndroidVectorView;->a(Lcom/google/android/maps/driveabout/vector/dg;Lr/aO;I)Lr/aK;
+
+    .line 580
+    return-void
+.end method
+
+.method private s()V
+    .registers 2
+
+    .prologue
+    .line 586
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/dg;->q:Lcom/google/android/maps/driveabout/vector/dg;
+
+    invoke-direct {p0, v0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->a(Lcom/google/android/maps/driveabout/vector/dg;)V
+
+    .line 587
+    return-void
+.end method
+
+.method private t()V
+    .registers 2
+
+    .prologue
+    .line 610
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/dg;->r:Lcom/google/android/maps/driveabout/vector/dg;
+
+    invoke-direct {p0, v0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->a(Lcom/google/android/maps/driveabout/vector/dg;)V
+
+    .line 611
+    return-void
+.end method
+
+.method private u()V
+    .registers 5
+
+    .prologue
+    .line 615
+    invoke-static {}, Lcom/google/googlenav/clientparam/f;->d()Lcom/google/googlenav/clientparam/k;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/clientparam/k;->a()J
+
+    move-result-wide v0
+
+    .line 618
+    sget-object v2, Lcom/google/android/maps/driveabout/vector/dg;->s:Lcom/google/android/maps/driveabout/vector/dg;
+
+    invoke-static {}, Lr/aK;->n()Lr/aO;
+
+    move-result-object v3
+
+    long-to-int v0, v0
+
+    invoke-direct {p0, v2, v3, v0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->a(Lcom/google/android/maps/driveabout/vector/dg;Lr/aO;I)Lr/aK;
+
+    move-result-object v0
+
+    .line 625
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lr/aK;->b(Z)V
+
+    .line 626
     return-void
 .end method
 
 
 # virtual methods
 .method public a()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
-
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->x()V
-
-    return-void
-.end method
-
-.method public a(IFFLcom/google/android/maps/driveabout/vector/cu;)V
     .registers 7
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .prologue
+    const/4 v3, 0x0
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .line 484
+    sget-object v0, Lcom/google/googlenav/android/A;->a:Lcom/google/googlenav/android/A;
 
-    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->A()Lcom/google/android/maps/driveabout/vector/bG;
+    invoke-virtual {v0}, Lcom/google/googlenav/android/A;->h()V
+
+    .line 485
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->c_()Lcom/google/android/maps/driveabout/vector/dI;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/dI;->f()Lcom/google/android/maps/driveabout/vector/l;
+
+    move-result-object v2
+
+    .line 486
+    new-instance v0, Lcom/google/android/maps/driveabout/vector/l;
+
+    invoke-virtual {v2}, Lcom/google/android/maps/driveabout/vector/l;->b()Ln/Q;
 
     move-result-object v1
 
-    invoke-static {v1, p1, p2, p3, p4}, Lcom/google/android/maps/driveabout/vector/bG;->a(Lcom/google/android/maps/driveabout/vector/bG;IFFLcom/google/android/maps/driveabout/vector/cu;)Lcom/google/android/maps/driveabout/vector/bG;
+    invoke-virtual {v2}, Lcom/google/android/maps/driveabout/vector/l;->a()F
+
+    move-result v2
+
+    move v4, v3
+
+    move v5, v3
+
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/maps/driveabout/vector/l;-><init>(Ln/Q;FFFF)V
+
+    .line 488
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->c_()Lcom/google/android/maps/driveabout/vector/dI;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(Lcom/google/android/maps/driveabout/vector/bG;)V
+    const/16 v2, 0x190
 
+    invoke-virtual {v1, v0, v2}, Lcom/google/android/maps/driveabout/vector/dI;->a(Lcom/google/android/maps/driveabout/vector/m;I)V
+
+    .line 490
     return-void
 .end method
 
-.method public a(II)V
-    .registers 4
+.method public a(IFFLcom/google/android/maps/driveabout/vector/cT;)V
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/E;
+    .prologue
+    .line 720
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/maps/driveabout/vector/E;->a(II)V
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->y()Lcom/google/android/maps/driveabout/vector/bZ;
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->p()V
+    move-result-object v1
 
+    invoke-static {v1, p1, p2, p3, p4}, Lcom/google/android/maps/driveabout/vector/bZ;->a(Lcom/google/android/maps/driveabout/vector/bZ;IFFLcom/google/android/maps/driveabout/vector/cT;)Lcom/google/android/maps/driveabout/vector/bZ;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->setLabelTheme(Lcom/google/android/maps/driveabout/vector/bZ;)V
+
+    .line 722
     return-void
 .end method
 
-.method public a(LaJ/B;Landroid/view/View;Lbb/d;Lbb/c;)V
+.method public a(Lat/B;Landroid/view/View;Lcom/google/googlenav/ui/view/d;Lcom/google/googlenav/ui/view/c;)V
     .registers 14
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
     const/4 v4, -0x1
 
     const/4 v2, 0x0
 
+    .line 684
     const/4 v8, 0x0
 
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/aA;
+    .line 685
+    new-instance v0, Lcom/google/android/maps/driveabout/vector/ay;
 
-    invoke-virtual {p1}, LaJ/B;->c()I
+    invoke-virtual {p1}, Lat/B;->c()I
 
     move-result v1
 
-    invoke-virtual {p1}, LaJ/B;->e()I
+    invoke-virtual {p1}, Lat/B;->e()I
 
     move-result v3
 
-    invoke-static {v1, v3}, Lt/L;->b(II)Lt/L;
+    invoke-static {v1, v3}, Ln/Q;->b(II)Ln/Q;
 
     move-result-object v1
 
@@ -313,47 +429,61 @@
 
     move-object v7, v2
 
-    invoke-direct/range {v0 .. v8}, Lcom/google/android/maps/driveabout/vector/aA;-><init>(Lt/L;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;IILjava/lang/String;Ljava/lang/String;Z)V
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/maps/driveabout/vector/ay;-><init>(Ln/Q;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;IILjava/lang/String;Ljava/lang/String;Z)V
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .line 690
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    new-instance v2, Lcom/google/googlenav/ui/android/l;
+    new-instance v2, Lcom/google/googlenav/ui/android/k;
 
-    invoke-direct {v2, p0, p4, p3}, Lcom/google/googlenav/ui/android/l;-><init>(Lcom/google/googlenav/ui/android/AndroidVectorView;Lbb/c;Lbb/d;)V
+    invoke-direct {v2, p0, p4, p3}, Lcom/google/googlenav/ui/android/k;-><init>(Lcom/google/googlenav/ui/android/AndroidVectorView;Lcom/google/googlenav/ui/view/c;Lcom/google/googlenav/ui/view/d;)V
 
-    invoke-virtual {v1, v2}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(Lcom/google/android/maps/driveabout/vector/V;)V
+    invoke-virtual {v1, v2}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->setBubbleTapListener(Lcom/google/android/maps/driveabout/vector/T;)V
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .line 704
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    new-instance v2, Lcom/google/android/maps/driveabout/vector/p;
+    new-instance v2, Lcom/google/android/maps/driveabout/vector/g;
 
-    invoke-direct {v2, p2}, Lcom/google/android/maps/driveabout/vector/p;-><init>(Landroid/view/View;)V
+    invoke-direct {v2, p2}, Lcom/google/android/maps/driveabout/vector/g;-><init>(Landroid/view/View;)V
 
-    invoke-virtual {v1, v0, v2}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(Lcom/google/android/maps/driveabout/vector/m;Lcom/google/android/maps/driveabout/vector/p;)V
+    invoke-virtual {v1, v0, v2}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(Lcom/google/android/maps/driveabout/vector/d;Lcom/google/android/maps/driveabout/vector/g;)V
 
+    .line 705
     return-void
 .end method
 
-.method public a(Lcom/google/googlenav/android/l;Lcom/google/googlenav/ui/android/ButtonContainer;)V
+.method public a(Lcom/google/googlenav/android/i;Lcom/google/googlenav/ui/android/ButtonContainer;)V
     .registers 9
+    .parameter
+    .parameter
 
+    .prologue
     const/4 v5, 0x1
 
     const/4 v4, 0x0
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->b:Lcom/google/googlenav/android/l;
+    .line 321
+    const-string v0, "AndroidVectorView.initialize"
 
-    new-instance v0, Lcom/google/googlenav/ui/android/c;
+    invoke-static {v0}, Lcom/google/googlenav/common/util/o;->a(Ljava/lang/String;)V
 
-    invoke-direct {v0, p1}, Lcom/google/googlenav/ui/android/c;-><init>(Lcom/google/googlenav/android/l;)V
+    .line 322
+    iput-object p1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->b:Lcom/google/googlenav/android/i;
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->c:Lcom/google/googlenav/ui/android/c;
+    .line 323
+    new-instance v0, Lcom/google/googlenav/ui/android/b;
 
+    invoke-direct {v0, p1}, Lcom/google/googlenav/ui/android/b;-><init>(Lcom/google/googlenav/android/i;)V
+
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->c:Lcom/google/googlenav/ui/android/b;
+
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->getRootView()Landroid/view/View;
 
     move-result-object v0
 
-    const v1, 0x7f0f026e
+    const v1, 0x7f1002e3
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -361,145 +491,150 @@
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
-    invoke-virtual {p1}, Lcom/google/googlenav/android/l;->i()LaJ/p;
+    .line 328
+    invoke-virtual {p1}, Lcom/google/googlenav/android/i;->g()Lat/p;
 
     move-result-object v0
 
-    check-cast v0, LaK/a;
+    check-cast v0, Lau/a;
 
-    new-instance v1, Lcom/google/googlenav/ui/android/m;
+    .line 329
+    new-instance v1, Lcom/google/googlenav/ui/android/l;
 
     iget-object v2, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->a:Landroid/content/Context;
 
     const/4 v3, 0x0
 
-    invoke-direct {v1, p0, v2, v0, v3}, Lcom/google/googlenav/ui/android/m;-><init>(Lcom/google/googlenav/ui/android/AndroidVectorView;Landroid/content/Context;LaK/a;Lcom/google/googlenav/ui/android/g;)V
+    invoke-direct {v1, p0, v2, v0, v3}, Lcom/google/googlenav/ui/android/l;-><init>(Lcom/google/googlenav/ui/android/AndroidVectorView;Landroid/content/Context;Lau/a;Lcom/google/googlenav/ui/android/f;)V
 
-    iput-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    iput-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .line 330
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->j:Lcom/google/android/maps/driveabout/vector/dg;
+    iget-object v2, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->k:Lcom/google/android/maps/driveabout/vector/dW;
 
-    invoke-virtual {v1, v2}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(Lcom/google/android/maps/driveabout/vector/dg;)V
+    invoke-virtual {v1, v2}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->setOnMapGestureListener(Lcom/google/android/maps/driveabout/vector/dW;)V
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .line 331
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->k:Lcom/google/android/maps/driveabout/vector/df;
+    iget-object v2, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->l:Lcom/google/android/maps/driveabout/vector/dV;
 
-    invoke-virtual {v1, v2}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(Lcom/google/android/maps/driveabout/vector/df;)V
+    invoke-virtual {v1, v2}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->setInterceptingOnMapGestureListener(Lcom/google/android/maps/driveabout/vector/dV;)V
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .line 332
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
     invoke-virtual {p0, v1}, Lcom/google/googlenav/ui/android/AndroidVectorView;->addView(Landroid/view/View;)V
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .line 351
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    invoke-virtual {v0, v1}, LaK/a;->a(Lcom/google/android/maps/driveabout/vector/dh;)V
+    invoke-virtual {v0, v1}, Lau/a;->a(Lcom/google/android/maps/driveabout/vector/dX;)V
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .line 352
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    invoke-virtual {v0, v1}, LaK/a;->a(Lt/x;)V
+    invoke-virtual {v0, v1}, Lau/a;->a(Ln/A;)V
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .line 353
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->B()Lcom/google/android/maps/driveabout/vector/bx;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, LaK/a;->a(Lcom/google/android/maps/driveabout/vector/bx;)V
-
-    invoke-virtual {p1}, Lcom/google/googlenav/android/l;->j()LaJ/u;
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->C()Lcom/google/android/maps/driveabout/vector/bM;
 
     move-result-object v1
 
-    check-cast v1, LaK/e;
+    invoke-virtual {v0, v1}, Lau/a;->a(Lcom/google/android/maps/driveabout/vector/bM;)V
 
-    iput-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->i:LaK/e;
+    .line 354
+    invoke-virtual {p1}, Lcom/google/googlenav/android/i;->h()Lat/u;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->i:LaK/e;
+    move-result-object v1
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    check-cast v1, Lau/e;
 
-    invoke-virtual {v2}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->w()F
+    iput-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->j:Lau/e;
+
+    .line 355
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->j:Lau/e;
+
+    iget-object v2, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+
+    invoke-virtual {v2}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->t()F
 
     move-result v2
 
-    invoke-virtual {v1, v2}, LaK/e;->a(F)V
+    invoke-virtual {v1, v2}, Lau/e;->a(F)V
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->i:LaK/e;
+    .line 356
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->j:Lau/e;
 
-    invoke-virtual {v0}, LaK/a;->d()LaJ/B;
+    invoke-virtual {v0}, Lau/a;->d()Lat/B;
 
     move-result-object v2
 
-    invoke-virtual {v0}, LaK/a;->c()LaJ/Y;
+    invoke-virtual {v0}, Lau/a;->c()Lat/Y;
 
     move-result-object v0
 
-    invoke-virtual {v1, v2, v0}, LaK/e;->e(LaJ/B;LaJ/Y;)V
+    invoke-virtual {v1, v2, v0}, Lau/e;->e(Lat/B;Lat/Y;)V
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->i:LaK/e;
+    .line 362
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->j:Lau/e;
 
     const/high16 v1, 0x4248
 
-    invoke-virtual {v0, v1}, LaK/e;->b(F)V
+    invoke-virtual {v0, v1}, Lau/e;->b(F)V
 
-    sget-object v0, Lcom/google/android/maps/driveabout/vector/cU;->l:Lcom/google/android/maps/driveabout/vector/cU;
+    .line 364
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->o()V
 
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->getContext()Landroid/content/Context;
+    .line 365
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->p()V
 
-    move-result-object v1
+    .line 366
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->q()V
 
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/google/android/maps/driveabout/vector/cI;->a(Lcom/google/android/maps/driveabout/vector/cU;Landroid/content/res/Resources;)Lcom/google/android/maps/driveabout/vector/cI;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
-
-    invoke-virtual {v1, v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(Lcom/google/android/maps/driveabout/vector/aE;)V
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->h()V
-
+    .line 370
     const/16 v0, 0x16
 
-    invoke-static {v0}, LaJ/Y;->b(I)LaJ/Y;
+    invoke-static {v0}, Lat/Y;->b(I)Lat/Y;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->w()F
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->t()F
 
     move-result v1
 
-    invoke-static {v0, v1}, LaK/e;->a(LaJ/Y;F)F
+    invoke-static {v0, v1}, Lau/e;->a(Lat/Y;F)F
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/vector/cV;->b(F)V
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/vector/dI;->b(F)V
 
-    invoke-virtual {p1}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/D;->ar()LaY/Y;
+    .line 373
+    invoke-virtual {p1}, Lcom/google/googlenav/android/i;->i()Lcom/google/googlenav/ui/v;
 
     move-result-object v0
 
-    check-cast v0, LaZ/b;
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/v;->ak()LaM/am;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, LaZ/b;->a(Lcom/google/android/maps/driveabout/vector/VectorMapView;)V
+    check-cast v0, LaN/b;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .line 374
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    new-instance v1, LB/d;
+    invoke-virtual {v0, v1}, LaN/b;->a(Lcom/google/android/maps/driveabout/vector/VectorMapView;)V
+
+    .line 376
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+
+    new-instance v1, Ly/e;
 
     invoke-virtual {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->getContext()Landroid/content/Context;
 
@@ -509,405 +644,552 @@
 
     move-result-object v2
 
-    invoke-direct {v1, v2}, LB/d;-><init>(Landroid/content/res/Resources;)V
+    invoke-direct {v1, v2}, Ly/e;-><init>(Landroid/content/res/Resources;)V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(LB/a;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(Ly/a;)V
 
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
+    .line 379
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->ak()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_182
-
-    sget-object v0, Lcom/google/android/maps/driveabout/vector/G;->b:Lcom/google/android/maps/driveabout/vector/G;
-
-    :goto_cc
-    new-instance v1, Lcom/google/android/maps/driveabout/vector/E;
+    new-instance v1, Ly/d;
 
     invoke-virtual {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    invoke-direct {v1, v2, v0}, Lcom/google/android/maps/driveabout/vector/E;-><init>(Landroid/content/Context;Lcom/google/android/maps/driveabout/vector/G;)V
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    iput-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/E;
+    move-result-object v2
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/E;
+    invoke-direct {v1, v2}, Ly/d;-><init>(Landroid/content/res/Resources;)V
 
-    invoke-static {}, Lcom/google/googlenav/ui/bw;->d()Lcom/google/googlenav/ui/bw;
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(Ly/a;)V
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/bw;->ag()I
-
-    move-result v1
-
-    invoke-virtual {v0, v4, v1}, Lcom/google/android/maps/driveabout/vector/E;->a(II)V
-
-    new-instance v0, Lcom/google/googlenav/ui/android/j;
-
-    invoke-direct {v0, p0}, Lcom/google/googlenav/ui/android/j;-><init>(Lcom/google/googlenav/ui/android/AndroidVectorView;)V
-
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->g:Lcom/google/googlenav/ui/bB;
-
-    invoke-static {}, Lcom/google/googlenav/ui/bw;->d()Lcom/google/googlenav/ui/bw;
+    .line 383
+    invoke-static {}, Lcom/google/googlenav/K;->a()Lcom/google/googlenav/K;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->g:Lcom/google/googlenav/ui/bB;
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/bw;->a(Lcom/google/googlenav/ui/bB;)V
-
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->ao()Z
+    invoke-virtual {v0}, Lcom/google/googlenav/K;->an()Z
 
     move-result v0
 
-    if-eqz v0, :cond_11f
+    if-eqz v0, :cond_188
 
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/z;->b:Lcom/google/android/maps/driveabout/vector/z;
+
+    .line 386
+    :goto_d6
+    new-instance v1, Lcom/google/android/maps/driveabout/vector/w;
+
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2, v0}, Lcom/google/android/maps/driveabout/vector/w;-><init>(Landroid/content/Context;Lcom/google/android/maps/driveabout/vector/z;)V
+
+    iput-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->g:Lcom/google/android/maps/driveabout/vector/w;
+
+    .line 389
+    invoke-virtual {p2}, Lcom/google/googlenav/ui/android/ButtonContainer;->d()Lcom/google/googlenav/ui/android/ab;
+
+    move-result-object v0
+
+    .line 390
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->g:Lcom/google/android/maps/driveabout/vector/w;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/android/ab;->a()I
+
+    move-result v2
+
+    invoke-virtual {v1, v4, v2}, Lcom/google/android/maps/driveabout/vector/w;->a(II)V
+
+    .line 391
+    new-instance v1, Lcom/google/googlenav/ui/android/i;
+
+    invoke-direct {v1, p0, v0}, Lcom/google/googlenav/ui/android/i;-><init>(Lcom/google/googlenav/ui/android/AndroidVectorView;Lcom/google/googlenav/ui/android/ab;)V
+
+    iput-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->i:Lcom/google/googlenav/ui/android/aa;
+
+    .line 399
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->i:Lcom/google/googlenav/ui/android/aa;
+
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/android/ab;->a(Lcom/google/googlenav/ui/android/aa;)V
+
+    .line 401
+    invoke-static {}, Lcom/google/googlenav/K;->a()Lcom/google/googlenav/K;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/K;->ar()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_125
+
+    .line 402
     invoke-virtual {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
+    .line 403
+    invoke-static {}, Lcom/google/googlenav/K;->a()Lcom/google/googlenav/K;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/googlenav/M;->ak()Z
+    invoke-virtual {v1}, Lcom/google/googlenav/K;->an()Z
 
     move-result v1
 
-    if-eqz v1, :cond_186
+    if-eqz v1, :cond_18c
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/E;
+    .line 404
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->g:Lcom/google/android/maps/driveabout/vector/w;
 
-    const v2, 0x7f090045
+    const v2, 0x7f0b0046
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    const v3, 0x7f090046
+    const v3, 0x7f0b0047
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
-    invoke-virtual {v1, v2, v0}, Lcom/google/android/maps/driveabout/vector/E;->a(II)V
+    invoke-virtual {v1, v2, v0}, Lcom/google/android/maps/driveabout/vector/w;->a(II)V
 
-    :cond_11f
-    :goto_11f
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/E;
+    .line 410
+    :cond_125
+    :goto_125
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->g:Lcom/google/android/maps/driveabout/vector/w;
 
-    invoke-virtual {v0, v5}, Lcom/google/android/maps/driveabout/vector/E;->b(Z)V
+    invoke-virtual {v0, v5}, Lcom/google/android/maps/driveabout/vector/w;->b(Z)V
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/E;
+    .line 411
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->g:Lcom/google/android/maps/driveabout/vector/w;
 
-    new-instance v1, Lcom/google/googlenav/ui/android/k;
+    new-instance v1, Lcom/google/googlenav/ui/android/j;
 
-    invoke-direct {v1, p0}, Lcom/google/googlenav/ui/android/k;-><init>(Lcom/google/googlenav/ui/android/AndroidVectorView;)V
+    invoke-direct {v1, p0}, Lcom/google/googlenav/ui/android/j;-><init>(Lcom/google/googlenav/ui/android/AndroidVectorView;)V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/vector/E;->a(Lcom/google/android/maps/driveabout/vector/aF;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/vector/w;->a(Lcom/google/android/maps/driveabout/vector/aE;)V
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .line 420
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/E;
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->g:Lcom/google/android/maps/driveabout/vector/w;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(Lcom/google/android/maps/driveabout/vector/aE;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(Lcom/google/android/maps/driveabout/vector/aD;)V
 
-    invoke-static {}, Laf/d;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_13b
-
-    :cond_13b
-    invoke-static {}, Lcom/google/googlenav/M;->F()Z
+    .line 422
+    invoke-static {}, Lcom/google/googlenav/common/c;->a()Z
 
     move-result v0
 
     if-eqz v0, :cond_141
 
+    .line 428
     :cond_141
-    invoke-virtual {p0, v5}, Lcom/google/googlenav/ui/android/AndroidVectorView;->setFocusable(Z)V
-
-    invoke-virtual {p0, v5}, Lcom/google/googlenav/ui/android/AndroidVectorView;->setFocusableInTouchMode(Z)V
-
-    invoke-static {}, Lcom/google/android/maps/driveabout/vector/cS;->b()Z
+    invoke-static {}, Lcom/google/googlenav/K;->D()Z
 
     move-result v0
 
-    if-eqz v0, :cond_178
+    if-eqz v0, :cond_147
 
+    .line 431
+    :cond_147
+    invoke-virtual {p0, v5}, Lcom/google/googlenav/ui/android/AndroidVectorView;->setFocusable(Z)V
+
+    .line 432
+    invoke-virtual {p0, v5}, Lcom/google/googlenav/ui/android/AndroidVectorView;->setFocusableInTouchMode(Z)V
+
+    .line 435
+    invoke-static {}, Lcom/google/android/maps/driveabout/vector/dD;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_16c
+
+    .line 436
     invoke-virtual {p2}, Lcom/google/googlenav/ui/android/ButtonContainer;->c()Lcom/google/googlenav/ui/android/FloorPickerView;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->h:Lcom/google/googlenav/ui/android/FloorPickerView;
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->h:Lcom/google/googlenav/ui/android/FloorPickerView;
-
-    invoke-virtual {p1}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
+    .line 437
+    invoke-static {}, Ll/q;->a()Ll/q;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/android/FloorPickerView;->a(Lcom/google/googlenav/ui/D;)V
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/android/FloorPickerView;->setIndoorState(Ll/q;)V
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->h:Lcom/google/googlenav/ui/android/FloorPickerView;
-
-    invoke-static {}, Lr/l;->a()Lr/l;
+    .line 438
+    invoke-static {}, Lan/l;->p()Lan/h;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/android/FloorPickerView;->c(Lr/l;)V
+    invoke-interface {v1, v0}, Lan/h;->a(Lan/y;)V
 
-    invoke-static {}, LaE/h;->a()LaE/h;
+    .line 439
+    invoke-virtual {p1}, Lcom/google/googlenav/android/i;->i()Lcom/google/googlenav/ui/v;
 
-    move-result-object v0
+    move-result-object v1
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->h:Lcom/google/googlenav/ui/android/FloorPickerView;
+    invoke-static {v0, v1}, Lcom/google/googlenav/ui/android/N;->a(Lcom/google/googlenav/ui/android/FloorPickerView;Lcom/google/googlenav/ui/v;)Lcom/google/googlenav/ui/android/N;
 
-    invoke-virtual {v0, v1}, LaE/h;->a(LaE/m;)V
+    .line 443
+    :cond_16c
+    sget-object v0, Lak/e;->a:Lak/e;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    invoke-virtual {v0}, Lak/e;->e()Z
 
-    new-instance v1, Lr/k;
+    move-result v0
 
-    invoke-direct {v1}, Lr/k;-><init>()V
+    if-eqz v0, :cond_182
 
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(Lcom/google/android/maps/driveabout/vector/ck;)V
+    .line 444
+    new-instance v0, Lcom/google/android/maps/driveabout/vector/bU;
 
-    :cond_178
-    invoke-static {}, Lcom/google/googlenav/login/g;->j()Lcom/google/googlenav/login/g;
+    invoke-direct {v0}, Lcom/google/android/maps/driveabout/vector/bU;-><init>()V
 
-    move-result-object v0
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->h:Lcom/google/android/maps/driveabout/vector/bU;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->l:Lcom/google/googlenav/login/i;
+    .line 445
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/login/g;->a(Lcom/google/googlenav/login/i;)V
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->h:Lcom/google/android/maps/driveabout/vector/bU;
 
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(Lcom/google/android/maps/driveabout/vector/aD;)V
+
+    .line 448
+    :cond_182
+    const-string v0, "AndroidVectorView.initialize"
+
+    invoke-static {v0}, Lcom/google/googlenav/common/util/o;->b(Ljava/lang/String;)V
+
+    .line 449
     return-void
 
-    :cond_182
-    sget-object v0, Lcom/google/android/maps/driveabout/vector/G;->a:Lcom/google/android/maps/driveabout/vector/G;
+    .line 383
+    :cond_188
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/z;->a:Lcom/google/android/maps/driveabout/vector/z;
 
-    goto/16 :goto_cc
+    goto/16 :goto_d6
 
-    :cond_186
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
+    .line 406
+    :cond_18c
+    invoke-static {}, Lcom/google/googlenav/K;->a()Lcom/google/googlenav/K;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/googlenav/M;->ao()Z
+    invoke-virtual {v1}, Lcom/google/googlenav/K;->ar()Z
 
     move-result v1
 
-    if-eqz v1, :cond_11f
+    if-eqz v1, :cond_125
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/E;
+    .line 407
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->g:Lcom/google/android/maps/driveabout/vector/w;
 
-    const v2, 0x7f09004c
+    const v2, 0x7f0b004d
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
-    invoke-virtual {v1, v4, v0}, Lcom/google/android/maps/driveabout/vector/E;->a(II)V
+    invoke-virtual {v1, v4, v0}, Lcom/google/android/maps/driveabout/vector/w;->a(II)V
 
-    goto :goto_11f
+    goto :goto_125
 .end method
 
 .method public b()V
-    .registers 2
+    .registers 1
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
-
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->c()V
-
+    .prologue
+    .line 495
     return-void
 .end method
 
 .method public c()V
+    .registers 3
+
+    .prologue
+    .line 501
+    invoke-static {}, Las/f;->j()Las/f;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->m:Las/h;
+
+    invoke-virtual {v0, v1}, Las/f;->b(Las/h;)V
+
+    .line 502
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->b_()V
+
+    .line 503
+    return-void
+.end method
+
+.method public d()V
     .registers 4
 
+    .prologue
+    .line 509
     invoke-virtual {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->getRootView()Landroid/view/View;
 
     move-result-object v0
 
-    const v1, 0x7f0f026e
+    const v1, 0x7f1002e3
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
+    .line 510
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v1
 
     if-eqz v1, :cond_15
 
+    .line 511
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
+    .line 513
     :cond_15
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    new-instance v1, Lcom/google/googlenav/ui/android/n;
+    new-instance v1, Lcom/google/googlenav/ui/android/m;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p0, v2}, Lcom/google/googlenav/ui/android/n;-><init>(Lcom/google/googlenav/ui/android/AndroidVectorView;Lcom/google/googlenav/ui/android/g;)V
+    invoke-direct {v1, p0, v2}, Lcom/google/googlenav/ui/android/m;-><init>(Lcom/google/googlenav/ui/android/AndroidVectorView;Lcom/google/googlenav/ui/android/f;)V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(Lcom/google/android/maps/driveabout/vector/ca;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(Lcom/google/android/maps/driveabout/vector/cu;)V
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .line 514
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
     invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->b()V
 
-    return-void
-.end method
-
-.method public d()V
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
-
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->l()V
-
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
+    .line 522
+    invoke-static {}, Las/f;->j()Las/f;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/googlenav/M;->ap()Z
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->m:Las/h;
+
+    invoke-virtual {v0, v1}, Las/f;->a(Las/h;)V
+
+    .line 523
+    return-void
+.end method
+
+.method public e()V
+    .registers 3
+
+    .prologue
+    .line 527
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->k()V
+
+    .line 531
+    invoke-static {}, Lcom/google/googlenav/K;->a()Lcom/google/googlenav/K;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/K;->as()Z
 
     move-result v0
 
     if-eqz v0, :cond_22
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->b:Lcom/google/googlenav/android/l;
+    .line 532
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->b:Lcom/google/googlenav/android/i;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/D;->ar()LaY/Y;
+    invoke-virtual {v0}, Lcom/google/googlenav/android/i;->i()Lcom/google/googlenav/ui/v;
 
     move-result-object v0
 
-    check-cast v0, LaZ/b;
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/v;->ak()LaM/am;
 
-    invoke-virtual {v0}, LaZ/b;->I()LaY/i;
+    move-result-object v0
+
+    check-cast v0, LaN/b;
+
+    .line 533
+    invoke-virtual {v0}, LaN/b;->I()LaM/i;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, LaZ/b;->c(LaY/i;)V
+    invoke-virtual {v0, v1}, LaN/b;->d(LaM/i;)V
 
+    .line 535
     :cond_22
     return-void
 .end method
 
-.method public e()V
+.method public f()V
     .registers 2
 
-    invoke-super {p0}, Lcom/google/googlenav/ui/android/BaseAndroidView;->e()V
+    .prologue
+    .line 539
+    invoke-super {p0}, Lcom/google/googlenav/ui/android/BaseAndroidView;->f()V
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->b:Lcom/google/googlenav/android/l;
+    .line 543
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->b:Lcom/google/googlenav/android/i;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/D;->ar()LaY/Y;
-
-    move-result-object v0
-
-    check-cast v0, LaZ/b;
-
-    invoke-virtual {v0}, LaZ/b;->af()V
-
-    return-void
-.end method
-
-.method public f()V
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
-
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->d()V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->b:Lcom/google/googlenav/android/l;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
+    invoke-virtual {v0}, Lcom/google/googlenav/android/i;->i()Lcom/google/googlenav/ui/v;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/D;->ar()LaY/Y;
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/v;->ak()LaM/am;
 
     move-result-object v0
 
-    check-cast v0, LaZ/b;
+    check-cast v0, LaN/b;
 
-    const/4 v1, 0x0
+    .line 544
+    invoke-virtual {v0}, LaN/b;->ac()V
 
-    invoke-virtual {v0, v1}, LaZ/b;->a(Lcom/google/android/maps/driveabout/vector/VectorMapView;)V
-
+    .line 545
     return-void
 .end method
 
 .method public g()V
-    .registers 2
+    .registers 3
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .prologue
+    .line 549
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->k()V
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->d()V
 
+    .line 550
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->b:Lcom/google/googlenav/android/i;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/android/i;->i()Lcom/google/googlenav/ui/v;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/v;->ak()LaM/am;
+
+    move-result-object v0
+
+    check-cast v0, LaN/b;
+
+    .line 551
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, LaN/b;->a(Lcom/google/android/maps/driveabout/vector/VectorMapView;)V
+
+    .line 552
     return-void
 .end method
 
 .method public h()V
     .registers 2
 
-    invoke-static {}, Lcom/google/googlenav/M;->G()Z
+    .prologue
+    .line 556
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    move-result v0
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->j()V
 
-    if-eqz v0, :cond_a
-
-    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->l()V
-
-    :goto_9
+    .line 557
     return-void
-
-    :cond_a
-    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->m()V
-
-    goto :goto_9
 .end method
 
 .method public i()V
-    .registers 2
+    .registers 1
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .prologue
+    .line 561
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->o()V
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->t()V
+    .line 562
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->q()V
 
+    .line 563
     return-void
 .end method
 
 .method public j()V
     .registers 2
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->e:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .prologue
+    .line 711
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->z()V
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->q()V
 
+    .line 712
+    return-void
+.end method
+
+.method public k()Lcom/google/android/maps/driveabout/vector/VectorMapView;
+    .registers 2
+
+    .prologue
+    .line 715
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+
+    return-object v0
+.end method
+
+.method public l()V
+    .registers 2
+
+    .prologue
+    .line 725
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->x()V
+
+    .line 726
+    return-void
+.end method
+
+.method public m()V
+    .registers 3
+
+    .prologue
+    const/4 v1, 0x1
+
+    .line 798
+    .line 800
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+
+    invoke-virtual {v0, v1, v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(ZZ)V
+
+    .line 801
+    return-void
+.end method
+
+.method public setCompassMargin(II)V
+    .registers 5
+    .parameter
+    .parameter
+
+    .prologue
+    const/4 v1, 0x1
+
+    .line 787
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->g:Lcom/google/android/maps/driveabout/vector/w;
+
+    invoke-virtual {v0, p1, p2}, Lcom/google/android/maps/driveabout/vector/w;->a(II)V
+
+    .line 789
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/AndroidVectorView;->f:Lcom/google/android/maps/driveabout/vector/VectorMapView;
+
+    invoke-virtual {v0, v1, v1}, Lcom/google/android/maps/driveabout/vector/VectorMapView;->a(ZZ)V
+
+    .line 790
     return-void
 .end method

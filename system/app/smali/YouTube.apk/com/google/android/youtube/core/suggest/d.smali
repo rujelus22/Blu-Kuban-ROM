@@ -19,18 +19,18 @@
     .parameter
 
     .prologue
-    .line 66
+    .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 67
+    .line 70
     iput-object p1, p0, Lcom/google/android/youtube/core/suggest/d;->a:Ljava/lang/String;
 
-    .line 68
+    .line 71
     iput-object p2, p0, Lcom/google/android/youtube/core/suggest/d;->b:Ljava/lang/String;
 
-    .line 69
+    .line 72
     iput-object p3, p0, Lcom/google/android/youtube/core/suggest/d;->c:Ljava/lang/String;
 
-    .line 70
+    .line 73
     return-void
 .end method

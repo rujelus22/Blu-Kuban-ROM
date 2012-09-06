@@ -1,46 +1,95 @@
-.class interface abstract Ls/v;
+.class Ls/v;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LaG/b;
+
+
+# instance fields
+.field final synthetic a:Ls/q;
+
+
+# direct methods
+.method private constructor <init>(Ls/q;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 1890
+    iput-object p1, p0, Ls/v;->a:Ls/q;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Ls/q;Ls/r;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 1890
+    invoke-direct {p0, p1}, Ls/v;-><init>(Ls/q;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/String;)Landroid/location/Location;
-.end method
+.method public a(I)V
+    .registers 5
+    .parameter
 
-.method public abstract a()Ljava/util/List;
-.end method
+    .prologue
+    .line 1894
+    iget-object v0, p0, Ls/v;->a:Ls/q;
 
-.method public abstract a(Ljava/lang/String;JFLs/c;)V
-.end method
+    iget-object v0, v0, Ls/q;->a:Ls/n;
 
-.method public abstract a(Ls/c;)V
-.end method
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
 
-.method public abstract a(Ls/s;)V
-.end method
+    move-result-object v0
 
-.method public abstract a(Landroid/location/GpsStatus$Listener;)Z
-.end method
+    iget-object v1, p0, Ls/v;->a:Ls/q;
 
-.method public abstract b()V
-.end method
+    iget-object v1, v1, Ls/q;->a:Ls/n;
 
-.method public abstract b(Landroid/location/GpsStatus$Listener;)V
-.end method
+    invoke-virtual {v1}, Ls/n;->b()Landroid/content/Context;
 
-.method public abstract b(Ls/c;)V
-.end method
+    move-result-object v1
 
-.method public abstract b(Ljava/lang/String;)Z
-.end method
+    const v2, 0x7f0d004f
 
-.method public abstract c()Ls/t;
-.end method
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-.method public abstract d()F
-.end method
+    move-result-object v1
 
-.method public abstract e()V
-.end method
+    invoke-interface {v0, v1}, Lcom/google/android/maps/driveabout/app/cI;->a(Ljava/lang/String;)V
 
-.method public abstract f()V
+    .line 1896
+    new-instance v0, Ljava/io/File;
+
+    iget-object v1, p0, Ls/v;->a:Ls/q;
+
+    iget-object v1, v1, Ls/q;->a:Ls/n;
+
+    invoke-virtual {v1}, Ls/n;->b()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+
+    move-result-object v1
+
+    const-string v2, "da_voice-rmi.3gp"
+
+    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    .line 1898
+    invoke-virtual {v0}, Ljava/io/File;->delete()Z
+
+    .line 1899
+    return-void
 .end method

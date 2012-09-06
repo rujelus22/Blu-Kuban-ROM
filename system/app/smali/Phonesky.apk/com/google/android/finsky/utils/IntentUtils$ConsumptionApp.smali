@@ -19,10 +19,10 @@
     .registers 1
 
     .prologue
-    .line 66
+    .line 110
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 67
+    .line 111
     return-void
 .end method
 
@@ -31,7 +31,7 @@
     .parameter "x0"
 
     .prologue
-    .line 65
+    .line 109
     invoke-direct {p0}, Lcom/google/android/finsky/utils/IntentUtils$ConsumptionApp;-><init>()V
 
     return-void
@@ -44,17 +44,17 @@
     .parameter "accountName"
 
     .prologue
-    .line 83
+    .line 123
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_9
 
-    .line 84
+    .line 124
     invoke-virtual {p0, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 86
+    .line 126
     :cond_9
     return-void
 .end method
@@ -64,12 +64,12 @@
     .parameter "intent"
 
     .prologue
-    .line 89
+    .line 129
     const/high16 v0, 0x1000
 
     invoke-virtual {p0, v0}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 90
+    .line 130
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .parameter "accountName"
 
     .prologue
-    .line 79
+    .line 119
     invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/finsky/utils/IntentUtils$ConsumptionApp;->buildViewItemIntent(Landroid/content/pm/PackageManager;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0

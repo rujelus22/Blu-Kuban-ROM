@@ -20,22 +20,27 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/service/MailService;
 
-.field final synthetic val$accountId:J
+.field final synthetic val$alarmManager:Landroid/app/AlarmManager;
+
+.field final synthetic val$startId:I
 
 
 # direct methods
-.method constructor <init>(Lcom/android/email/service/MailService;J)V
+.method constructor <init>(Lcom/android/email/service/MailService;Landroid/app/AlarmManager;I)V
     .registers 4
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 415
+    .line 256
     iput-object p1, p0, Lcom/android/email/service/MailService$5;->this$0:Lcom/android/email/service/MailService;
 
-    iput-wide p2, p0, Lcom/android/email/service/MailService$5;->val$accountId:J
+    iput-object p2, p0, Lcom/android/email/service/MailService$5;->val$alarmManager:Landroid/app/AlarmManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    iput p3, p0, Lcom/android/email/service/MailService$5;->val$startId:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,18 +48,30 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .registers 3
 
     .prologue
-    .line 417
+    .line 261
     iget-object v0, p0, Lcom/android/email/service/MailService$5;->this$0:Lcom/android/email/service/MailService;
 
-    iget-object v0, v0, Lcom/android/email/service/MailService;->mController:Lcom/android/email/Controller;
+    #calls: Lcom/android/email/service/MailService;->refreshSyncReports()V
+    invoke-static {v0}, Lcom/android/email/service/MailService;->access$700(Lcom/android/email/service/MailService;)V
 
-    iget-wide v1, p0, Lcom/android/email/service/MailService$5;->val$accountId:J
+    .line 263
+    iget-object v0, p0, Lcom/android/email/service/MailService$5;->this$0:Lcom/android/email/service/MailService;
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/email/Controller;->sendPendingMessages(J)V
+    iget-object v1, p0, Lcom/android/email/service/MailService$5;->val$alarmManager:Landroid/app/AlarmManager;
 
-    .line 418
+    #calls: Lcom/android/email/service/MailService;->reschedule(Landroid/app/AlarmManager;)V
+    invoke-static {v0, v1}, Lcom/android/email/service/MailService;->access$400(Lcom/android/email/service/MailService;Landroid/app/AlarmManager;)V
+
+    .line 264
+    iget-object v0, p0, Lcom/android/email/service/MailService$5;->this$0:Lcom/android/email/service/MailService;
+
+    iget v1, p0, Lcom/android/email/service/MailService$5;->val$startId:I
+
+    invoke-virtual {v0, v1}, Lcom/android/email/service/MailService;->stopSelf(I)V
+
+    .line 265
     return-void
 .end method

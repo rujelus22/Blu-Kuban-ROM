@@ -29,13 +29,13 @@
     .parameter "fragment"
 
     .prologue
-    .line 88
+    .line 90
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
+    .line 91
     iput-object p1, p0, Lcom/google/android/finsky/utils/Nfc$BaseNfcHandler;->mFragment:Lcom/google/android/finsky/activities/DetailsDataBasedFragment;
 
-    .line 90
+    .line 92
     invoke-virtual {p1}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -46,7 +46,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/utils/Nfc$BaseNfcHandler;->mNfcAdapter:Landroid/nfc/NfcAdapter;
 
-    .line 91
+    .line 93
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .parameter "x1"
 
     .prologue
-    .line 84
+    .line 86
     invoke-direct {p0, p1}, Lcom/google/android/finsky/utils/Nfc$BaseNfcHandler;-><init>(Lcom/google/android/finsky/activities/DetailsDataBasedFragment;)V
 
     return-void
@@ -72,23 +72,23 @@
 
     const/4 v8, 0x0
 
-    .line 97
+    .line 99
     iget-object v6, p0, Lcom/google/android/finsky/utils/Nfc$BaseNfcHandler;->mFragment:Lcom/google/android/finsky/activities/DetailsDataBasedFragment;
 
     invoke-virtual {v6}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->getDocument()Lcom/google/android/finsky/api/model/Document;
 
     move-result-object v0
 
-    .line 98
+    .line 100
     .local v0, doc:Lcom/google/android/finsky/api/model/Document;
     if-eqz v0, :cond_3a
 
-    .line 99
+    .line 101
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/Document;->getShareUrl()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 102
+    .line 104
     .local v5, shareUrl:Ljava/lang/String;
     :try_start_e
     const-string v6, "UTF-8"
@@ -99,7 +99,7 @@
 
     move-result-object v3
 
-    .line 106
+    .line 108
     .local v3, pkgBytes:[B
     :goto_14
     array-length v6, v3
@@ -108,13 +108,13 @@
 
     new-array v2, v6, [B
 
-    .line 107
+    .line 109
     .local v2, payloadData:[B
     array-length v6, v3
 
     invoke-static {v3, v8, v2, v9, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 109
+    .line 111
     new-instance v4, Landroid/nfc/NdefRecord;
 
     new-array v6, v9, [B
@@ -127,7 +127,7 @@
 
     invoke-direct {v4, v9, v6, v7, v2}, Landroid/nfc/NdefRecord;-><init>(S[B[B[B)V
 
-    .line 111
+    .line 113
     .local v4, record:Landroid/nfc/NdefRecord;
     new-instance v6, Landroid/nfc/NdefMessage;
 
@@ -137,7 +137,7 @@
 
     invoke-direct {v6, v7}, Landroid/nfc/NdefMessage;-><init>([Landroid/nfc/NdefRecord;)V
 
-    .line 113
+    .line 115
     .end local v2           #payloadData:[B
     .end local v3           #pkgBytes:[B
     .end local v4           #record:Landroid/nfc/NdefRecord;
@@ -145,12 +145,12 @@
     :goto_33
     return-object v6
 
-    .line 103
+    .line 105
     .restart local v5       #shareUrl:Ljava/lang/String;
     :catch_34
     move-exception v1
 
-    .line 104
+    .line 106
     .local v1, e:Ljava/io/UnsupportedEncodingException;
     invoke-virtual {v5}, Ljava/lang/String;->getBytes()[B
 
@@ -159,7 +159,7 @@
     .restart local v3       #pkgBytes:[B
     goto :goto_14
 
-    .line 113
+    .line 115
     .end local v1           #e:Ljava/io/UnsupportedEncodingException;
     .end local v3           #pkgBytes:[B
     .end local v5           #shareUrl:Ljava/lang/String;

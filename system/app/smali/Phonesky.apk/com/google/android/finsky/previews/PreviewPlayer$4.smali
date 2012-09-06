@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 362
+    .line 389
     iput-object p1, p0, Lcom/google/android/finsky/previews/PreviewPlayer$4;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .parameter "focusChange"
 
     .prologue
-    .line 365
+    .line 392
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer$4;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     #setter for: Lcom/google/android/finsky/previews/PreviewPlayer;->mAudioFocusState:I
     invoke-static {v0, p1}, Lcom/google/android/finsky/previews/PreviewPlayer;->access$602(Lcom/google/android/finsky/previews/PreviewPlayer;I)I
 
-    .line 366
+    .line 393
     return-void
 .end method

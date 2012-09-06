@@ -1,124 +1,58 @@
-.class public final Lcom/google/android/youtube/core/converter/http/cv;
-.super Lcom/google/android/youtube/core/converter/http/em;
+.class final Lcom/google/android/youtube/core/converter/http/cv;
+.super Lcom/google/android/youtube/core/converter/l;
 .source "SourceFile"
 
 
-# instance fields
-.field private final b:Lcom/google/android/youtube/core/converter/c;
-
-
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/core/converter/k;)V
-    .registers 5
-    .parameter
+.method constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 35
-    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/converter/http/em;-><init>(Lcom/google/android/youtube/core/converter/k;)V
+    .line 106
+    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
-    .line 36
-    new-instance v0, Lcom/google/android/youtube/core/converter/d;
-
-    invoke-direct {v0}, Lcom/google/android/youtube/core/converter/d;-><init>()V
-
-    const-string v1, "/VAST"
-
-    new-instance v2, Lcom/google/android/youtube/core/converter/http/dd;
-
-    invoke-direct {v2, p0}, Lcom/google/android/youtube/core/converter/http/dd;-><init>(Lcom/google/android/youtube/core/converter/http/cv;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/converter/d;->a(Ljava/lang/String;Lcom/google/android/youtube/core/converter/o;)Lcom/google/android/youtube/core/converter/d;
-
-    move-result-object v0
-
-    const-string v1, "/VAST/Ad/InLine/Impression"
-
-    new-instance v2, Lcom/google/android/youtube/core/converter/http/dc;
-
-    invoke-direct {v2, p0}, Lcom/google/android/youtube/core/converter/http/dc;-><init>(Lcom/google/android/youtube/core/converter/http/cv;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/converter/d;->a(Ljava/lang/String;Lcom/google/android/youtube/core/converter/o;)Lcom/google/android/youtube/core/converter/d;
-
-    move-result-object v0
-
-    const-string v1, "/VAST/Ad/InLine/Creatives/Creative/Linear/MediaFiles/MediaFile"
-
-    new-instance v2, Lcom/google/android/youtube/core/converter/http/db;
-
-    invoke-direct {v2, p0}, Lcom/google/android/youtube/core/converter/http/db;-><init>(Lcom/google/android/youtube/core/converter/http/cv;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/converter/d;->a(Ljava/lang/String;Lcom/google/android/youtube/core/converter/o;)Lcom/google/android/youtube/core/converter/d;
-
-    move-result-object v0
-
-    const-string v1, "/VAST/Ad/InLine/Creatives/Creative/Linear/TrackingEvents/Tracking"
-
-    new-instance v2, Lcom/google/android/youtube/core/converter/http/da;
-
-    invoke-direct {v2, p0}, Lcom/google/android/youtube/core/converter/http/da;-><init>(Lcom/google/android/youtube/core/converter/http/cv;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/converter/d;->a(Ljava/lang/String;Lcom/google/android/youtube/core/converter/o;)Lcom/google/android/youtube/core/converter/d;
-
-    move-result-object v0
-
-    const-string v1, "/VAST/Ad/InLine/Creatives/Creative/Linear/VideoClicks/ClickThrough"
-
-    new-instance v2, Lcom/google/android/youtube/core/converter/http/cz;
-
-    invoke-direct {v2, p0}, Lcom/google/android/youtube/core/converter/http/cz;-><init>(Lcom/google/android/youtube/core/converter/http/cv;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/converter/d;->a(Ljava/lang/String;Lcom/google/android/youtube/core/converter/o;)Lcom/google/android/youtube/core/converter/d;
-
-    move-result-object v0
-
-    const-string v1, "/VAST/Ad/InLine/Creatives/Creative/Linear/VideoClicks/ClickTracking"
-
-    new-instance v2, Lcom/google/android/youtube/core/converter/http/cy;
-
-    invoke-direct {v2, p0}, Lcom/google/android/youtube/core/converter/http/cy;-><init>(Lcom/google/android/youtube/core/converter/http/cv;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/converter/d;->a(Ljava/lang/String;Lcom/google/android/youtube/core/converter/o;)Lcom/google/android/youtube/core/converter/d;
-
-    move-result-object v0
-
-    const-string v1, "/VAST/Ad/InLine/Creatives/Creative/Linear/VideoClicks/CustomClick"
-
-    new-instance v2, Lcom/google/android/youtube/core/converter/http/cx;
-
-    invoke-direct {v2, p0}, Lcom/google/android/youtube/core/converter/http/cx;-><init>(Lcom/google/android/youtube/core/converter/http/cv;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/converter/d;->a(Ljava/lang/String;Lcom/google/android/youtube/core/converter/o;)Lcom/google/android/youtube/core/converter/d;
-
-    move-result-object v0
-
-    const-string v1, "/VAST/Ad/InLine/Extensions/Extension/CustomTracking/Tracking"
-
-    new-instance v2, Lcom/google/android/youtube/core/converter/http/cw;
-
-    invoke-direct {v2, p0}, Lcom/google/android/youtube/core/converter/http/cw;-><init>(Lcom/google/android/youtube/core/converter/http/cv;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/converter/d;->a(Ljava/lang/String;Lcom/google/android/youtube/core/converter/o;)Lcom/google/android/youtube/core/converter/d;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/converter/d;->a()Lcom/google/android/youtube/core/converter/c;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/converter/http/cv;->b:Lcom/google/android/youtube/core/converter/c;
-
-    .line 170
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a()Lcom/google/android/youtube/core/converter/c;
-    .registers 2
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
-    .line 174
-    iget-object v0, p0, Lcom/google/android/youtube/core/converter/http/cv;->b:Lcom/google/android/youtube/core/converter/c;
+    .line 109
+    const-class v0, Lcom/google/android/youtube/core/model/Subscription$Builder;
 
-    return-object v0
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->a(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/core/model/Subscription$Builder;
+
+    .line 110
+    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/Subscription$Builder;->username(Ljava/lang/String;)Lcom/google/android/youtube/core/model/Subscription$Builder;
+
+    .line 111
+    const-string v1, "display"
+
+    invoke-interface {p2, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 112
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1a
+
+    .line 113
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Subscription$Builder;->displayUsername(Ljava/lang/String;)Lcom/google/android/youtube/core/model/Subscription$Builder;
+
+    .line 115
+    :cond_1a
+    return-void
 .end method

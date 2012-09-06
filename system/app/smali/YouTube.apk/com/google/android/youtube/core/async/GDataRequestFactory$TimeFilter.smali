@@ -4,9 +4,11 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;
+.field private static final synthetic $VALUES:[Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter; = null
 
-.field public static final enum ALL_TIME:Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;
+.field public static final enum ALL_TIME:Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter; = null
+
+.field public static final PARAM_NAME:Ljava/lang/String; = "time"
 
 .field public static final enum THIS_MONTH:Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;
 
@@ -32,51 +34,51 @@
 
     const/4 v3, 0x0
 
-    .line 141
+    .line 192
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;
 
     const-string v1, "TODAY"
 
-    const v2, 0x7f0a001b
+    const v2, 0x7f0b0021
 
     invoke-direct {v0, v1, v3, v2}, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;->TODAY:Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;
 
-    .line 142
+    .line 193
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;
 
     const-string v1, "THIS_WEEK"
 
-    const v2, 0x7f0a001c
+    const v2, 0x7f0b0022
 
     invoke-direct {v0, v1, v4, v2}, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;->THIS_WEEK:Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;
 
-    .line 143
+    .line 194
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;
 
     const-string v1, "THIS_MONTH"
 
-    const v2, 0x7f0a001d
+    const v2, 0x7f0b0023
 
     invoke-direct {v0, v1, v5, v2}, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;->THIS_MONTH:Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;
 
-    .line 144
+    .line 195
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;
 
     const-string v1, "ALL_TIME"
 
-    const v2, 0x7f0a001e
+    const v2, 0x7f0b0024
 
     invoke-direct {v0, v1, v6, v2}, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;->ALL_TIME:Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;
 
-    .line 140
+    .line 191
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;
@@ -109,13 +111,13 @@
     .parameter
 
     .prologue
-    .line 148
+    .line 201
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 149
+    .line 202
     iput p3, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;->stringId:I
 
-    .line 150
+    .line 203
     return-void
 .end method
 
@@ -124,7 +126,7 @@
     .parameter
 
     .prologue
-    .line 140
+    .line 191
     const-class v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -140,7 +142,7 @@
     .registers 1
 
     .prologue
-    .line 140
+    .line 191
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;->$VALUES:[Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;
 
     invoke-virtual {v0}, [Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;->clone()Ljava/lang/Object;
@@ -158,12 +160,12 @@
     .registers 2
 
     .prologue
-    .line 154
+    .line 207
     invoke-super {p0}, Ljava/lang/Enum;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->e(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->f(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

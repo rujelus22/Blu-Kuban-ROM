@@ -1,42 +1,38 @@
-.class Lcom/google/android/maps/rideabout/app/o;
-.super Lcom/google/android/maps/rideabout/app/m;
+.class public interface abstract Lcom/google/android/maps/rideabout/app/o;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
-
-# direct methods
-.method public constructor <init>(Landroid/app/Service;)V
-    .registers 3
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/maps/rideabout/app/m;-><init>(Landroid/app/Service;Lcom/google/android/maps/rideabout/app/n;)V
-
-    return-void
-.end method
+# interfaces
+.implements Landroid/speech/tts/TextToSpeech$OnInitListener;
 
 
 # virtual methods
-.method protected d()V
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/o;->b:Landroid/app/Service;
-
-    const/16 v1, 0xc3b
-
-    iget-object v2, p0, Lcom/google/android/maps/rideabout/app/o;->c:Landroid/app/Notification;
-
-    invoke-virtual {v0, v1, v2}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;)V
-
-    return-void
+.method public abstract a()V
 .end method
 
-.method protected e()V
-    .registers 3
+.method public abstract a(Landroid/app/Activity;)V
+.end method
 
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/o;->b:Landroid/app/Service;
+.method public abstract a(Landroid/content/Context;Lay/b;)V
+.end method
 
-    const/4 v1, 0x1
+.method public abstract a(Lcom/google/android/maps/rideabout/app/y;)V
+.end method
 
-    invoke-virtual {v0, v1}, Landroid/app/Service;->stopForeground(Z)V
+.method public abstract a(Z)V
+.end method
 
-    return-void
+.method public abstract b()Lay/c;
+.end method
+
+.method public abstract c()Z
+.end method
+
+.method public abstract d()V
+.end method
+
+.method public abstract e()V
+.end method
+
+.method public abstract f()V
 .end method

@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/base/u;
+.implements Lcom/google/common/base/ah;
 .implements Ljava/io/Serializable;
 
 
@@ -12,33 +12,33 @@
 
 
 # instance fields
-.field private final components:Ljava/lang/Iterable;
+.field private final components:Ljava/util/List;
 
 
 # direct methods
-.method private constructor <init>(Ljava/lang/Iterable;)V
+.method private constructor <init>(Ljava/util/List;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 282
+    .line 332
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 283
-    iput-object p1, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/lang/Iterable;
+    .line 333
+    iput-object p1, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/util/List;
 
-    .line 284
+    .line 334
     return-void
 .end method
 
-.method synthetic constructor <init>(Ljava/lang/Iterable;Lcom/google/common/base/v;)V
+.method synthetic constructor <init>(Ljava/util/List;Lcom/google/common/base/ai;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 278
-    invoke-direct {p0, p1}, Lcom/google/common/base/Predicates$AndPredicate;-><init>(Ljava/lang/Iterable;)V
+    .line 329
+    invoke-direct {p0, p1}, Lcom/google/common/base/Predicates$AndPredicate;-><init>(Ljava/util/List;)V
 
     return-void
 .end method
@@ -46,73 +46,84 @@
 
 # virtual methods
 .method public apply(Ljava/lang/Object;)Z
-    .registers 4
+    .registers 5
     .parameter
 
     .prologue
-    .line 286
-    iget-object v0, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/lang/Iterable;
+    const/4 v2, 0x0
 
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    move v1, v2
 
-    move-result-object v1
+    .line 337
+    :goto_2
+    iget-object v0, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/util/List;
 
-    :cond_6
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-ge v1, v0, :cond_1d
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 338
+    iget-object v0, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/util/List;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/common/base/u;
+    check-cast v0, Lcom/google/common/base/ah;
 
-    .line 287
-    invoke-interface {v0, p1}, Lcom/google/common/base/u;->apply(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Lcom/google/common/base/ah;->apply(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_19
 
-    .line 288
-    const/4 v0, 0x0
+    .line 342
+    :goto_18
+    return v2
 
-    .line 291
-    :goto_19
-    return v0
+    .line 337
+    :cond_19
+    add-int/lit8 v0, v1, 0x1
 
-    :cond_1a
-    const/4 v0, 0x1
+    move v1, v0
 
-    goto :goto_19
+    goto :goto_2
+
+    .line 342
+    :cond_1d
+    const/4 v2, 0x1
+
+    goto :goto_18
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 301
+    .line 349
     instance-of v0, p1, Lcom/google/common/base/Predicates$AndPredicate;
 
     if-eqz v0, :cond_f
 
-    .line 302
+    .line 350
     check-cast p1, Lcom/google/common/base/Predicates$AndPredicate;
 
-    .line 303
-    iget-object v0, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/lang/Iterable;
+    .line 351
+    iget-object v0, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/util/List;
 
-    iget-object v1, p1, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/lang/Iterable;
+    iget-object v1, p1, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/util/List;
 
-    invoke-static {v0, v1}, Lcom/google/common/base/Predicates;->a(Ljava/lang/Iterable;Ljava/lang/Iterable;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 305
+    .line 353
     :goto_e
     return v0
 
@@ -123,72 +134,41 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .registers 3
 
     .prologue
-    .line 294
-    const/4 v0, -0x1
+    .line 346
+    iget-object v0, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/util/List;
 
-    .line 295
-    iget-object v1, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/lang/Iterable;
-
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    move v1, v0
-
-    :goto_8
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1b
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/common/base/u;
-
-    .line 296
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    and-int/2addr v0, v1
+    const v1, 0x12472c2c
 
-    move v1, v0
+    add-int/2addr v0, v1
 
-    goto :goto_8
-
-    .line 298
-    :cond_1b
-    return v1
+    return v0
 .end method
 
 .method public toString()Ljava/lang/String;
     .registers 4
 
     .prologue
-    .line 308
+    .line 356
     new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "And("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object v0
-
-    invoke-static {}, Lcom/google/common/base/Predicates;->a()Lcom/google/common/base/m;
+    invoke-static {}, Lcom/google/common/base/Predicates;->b()Lcom/google/common/base/x;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/lang/Iterable;
+    iget-object v2, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/util/List;
 
-    invoke-virtual {v1, v2}, Lcom/google/common/base/m;->a(Ljava/lang/Iterable;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Lcom/google/common/base/x;->a(Ljava/lang/Iterable;)Ljava/lang/String;
 
     move-result-object v1
 

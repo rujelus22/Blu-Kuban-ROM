@@ -1,240 +1,427 @@
-.class Lcom/google/googlenav/prefetch/android/s;
-.super Lap/b;
+.class public Lcom/google/googlenav/prefetch/android/s;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LaD/i;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/prefetch/android/t;
+.field private final a:Landroid/content/Context;
 
-.field final synthetic e:Lcom/google/googlenav/prefetch/android/p;
+.field private final b:Ljava/lang/Class;
+
+.field private volatile c:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+
+.field private d:Lcom/google/googlenav/prefetch/android/y;
+
+.field private e:LaD/h;
+
+.field private f:Z
+
+.field private final g:Landroid/content/ServiceConnection;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/prefetch/android/p;Lap/c;Lcom/google/googlenav/prefetch/android/t;)V
-    .registers 4
+.method public constructor <init>(Landroid/content/Context;Lcom/google/googlenav/prefetch/android/BasePrefetcherService;)V
+    .registers 5
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/prefetch/android/s;->e:Lcom/google/googlenav/prefetch/android/p;
+    .prologue
+    const/4 v1, 0x0
 
-    iput-object p3, p0, Lcom/google/googlenav/prefetch/android/s;->a:Lcom/google/googlenav/prefetch/android/t;
+    .line 60
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lap/b;-><init>(Lap/c;)V
+    .line 35
+    iput-object v1, p0, Lcom/google/googlenav/prefetch/android/s;->c:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
 
+    .line 146
+    new-instance v0, Lcom/google/googlenav/prefetch/android/t;
+
+    invoke-direct {v0, p0}, Lcom/google/googlenav/prefetch/android/t;-><init>(Lcom/google/googlenav/prefetch/android/s;)V
+
+    iput-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->g:Landroid/content/ServiceConnection;
+
+    .line 61
+    iput-object p2, p0, Lcom/google/googlenav/prefetch/android/s;->c:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+
+    .line 62
+    iput-object p1, p0, Lcom/google/googlenav/prefetch/android/s;->a:Landroid/content/Context;
+
+    .line 63
+    iput-object v1, p0, Lcom/google/googlenav/prefetch/android/s;->b:Ljava/lang/Class;
+
+    .line 64
     return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/Class;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 47
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 35
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->c:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+
+    .line 146
+    new-instance v0, Lcom/google/googlenav/prefetch/android/t;
+
+    invoke-direct {v0, p0}, Lcom/google/googlenav/prefetch/android/t;-><init>(Lcom/google/googlenav/prefetch/android/s;)V
+
+    iput-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->g:Landroid/content/ServiceConnection;
+
+    .line 48
+    iput-object p2, p0, Lcom/google/googlenav/prefetch/android/s;->b:Ljava/lang/Class;
+
+    .line 49
+    iput-object p1, p0, Lcom/google/googlenav/prefetch/android/s;->a:Landroid/content/Context;
+
+    .line 50
+    return-void
+.end method
+
+.method static synthetic a(Lcom/google/googlenav/prefetch/android/s;)LaD/h;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 26
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->e:LaD/h;
+
+    return-object v0
+.end method
+
+.method static synthetic a(Lcom/google/googlenav/prefetch/android/s;LaD/h;)LaD/h;
+    .registers 2
+    .parameter
+    .parameter
+
+    .prologue
+    .line 26
+    iput-object p1, p0, Lcom/google/googlenav/prefetch/android/s;->e:LaD/h;
+
+    return-object p1
+.end method
+
+.method static synthetic a(Lcom/google/googlenav/prefetch/android/s;Lcom/google/googlenav/prefetch/android/BasePrefetcherService;)Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+    .registers 2
+    .parameter
+    .parameter
+
+    .prologue
+    .line 26
+    iput-object p1, p0, Lcom/google/googlenav/prefetch/android/s;->c:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+
+    return-object p1
+.end method
+
+.method static synthetic a(Lcom/google/googlenav/prefetch/android/s;Lcom/google/googlenav/prefetch/android/y;)Lcom/google/googlenav/prefetch/android/y;
+    .registers 2
+    .parameter
+    .parameter
+
+    .prologue
+    .line 26
+    iput-object p1, p0, Lcom/google/googlenav/prefetch/android/s;->d:Lcom/google/googlenav/prefetch/android/y;
+
+    return-object p1
+.end method
+
+.method static synthetic b(Lcom/google/googlenav/prefetch/android/s;)Lcom/google/googlenav/prefetch/android/y;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 26
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->d:Lcom/google/googlenav/prefetch/android/y;
+
+    return-object v0
+.end method
+
+.method static synthetic c(Lcom/google/googlenav/prefetch/android/s;)Z
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 26
+    iget-boolean v0, p0, Lcom/google/googlenav/prefetch/android/s;->f:Z
+
+    return v0
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 13
+.method public declared-synchronized a()V
+    .registers 5
 
-    const/4 v2, 0x0
+    .prologue
+    .line 68
+    monitor-enter p0
 
-    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->e:Lcom/google/googlenav/prefetch/android/p;
+    :try_start_1
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->b:Ljava/lang/Class;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/p;->c()Ljava/util/Vector;
+    if-eqz v0, :cond_16
 
-    move-result-object v3
+    .line 70
+    new-instance v0, Landroid/content/Intent;
 
-    invoke-static {}, LK/bR;->a()Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/google/googlenav/prefetch/android/s;->a:Landroid/content/Context;
 
-    move-result-object v4
+    iget-object v2, p0, Lcom/google/googlenav/prefetch/android/s;->b:Ljava/lang/Class;
 
-    move v1, v2
+    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    :goto_c
-    invoke-virtual {v3}, Ljava/util/Vector;->size()I
+    .line 72
+    iget-object v1, p0, Lcom/google/googlenav/prefetch/android/s;->a:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/google/googlenav/prefetch/android/s;->g:Landroid/content/ServiceConnection;
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v1, v0, v2, v3}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
+    :try_end_16
+    .catchall {:try_start_1 .. :try_end_16} :catchall_18
+
+    .line 74
+    :cond_16
+    monitor-exit p0
+
+    return-void
+
+    .line 68
+    :catchall_18
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public a(LaD/c;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 130
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->c:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+
+    if-eqz v0, :cond_9
+
+    .line 131
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->c:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+
+    invoke-virtual {v0, p1}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->a(LaD/c;)V
+
+    .line 133
+    :cond_9
+    return-void
+.end method
+
+.method public declared-synchronized a(Lcom/google/googlenav/prefetch/android/y;LaD/h;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 104
+    monitor-enter p0
+
+    :try_start_1
+    invoke-virtual {p0}, Lcom/google/googlenav/prefetch/android/s;->f()Z
 
     move-result v0
 
-    if-ge v1, v0, :cond_2b
+    if-eqz v0, :cond_e
 
-    invoke-virtual {v3, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    .line 105
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->c:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
 
-    move-result-object v0
+    invoke-virtual {v0, p1, p2}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->a(Lcom/google/googlenav/prefetch/android/y;LaD/h;)V
+    :try_end_c
+    .catchall {:try_start_1 .. :try_end_c} :catchall_16
 
-    check-cast v0, Lt/af;
+    .line 111
+    :goto_c
+    monitor-exit p0
 
-    iget-object v5, p0, Lcom/google/googlenav/prefetch/android/s;->e:Lcom/google/googlenav/prefetch/android/p;
+    return-void
 
-    invoke-static {v5}, Lcom/google/googlenav/prefetch/android/p;->a(Lcom/google/googlenav/prefetch/android/p;)Ljava/util/Map;
+    .line 107
+    :cond_e
+    :try_start_e
+    iput-object p2, p0, Lcom/google/googlenav/prefetch/android/s;->e:LaD/h;
 
-    move-result-object v5
+    .line 108
+    iput-object p1, p0, Lcom/google/googlenav/prefetch/android/s;->d:Lcom/google/googlenav/prefetch/android/y;
 
-    invoke-interface {v5, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    .line 109
+    const/4 v0, 0x0
 
-    move-result v5
-
-    if-nez v5, :cond_27
-
-    invoke-interface {v4, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_27
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
+    iput-boolean v0, p0, Lcom/google/googlenav/prefetch/android/s;->f:Z
+    :try_end_15
+    .catchall {:try_start_e .. :try_end_15} :catchall_16
 
     goto :goto_c
 
-    :cond_2b
-    invoke-interface {v4}, Ljava/util/List;->isEmpty()Z
+    .line 104
+    :catchall_16
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public b()V
+    .registers 2
+
+    .prologue
+    .line 83
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->c:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+
+    if-eqz v0, :cond_9
+
+    .line 84
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->c:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->f()V
+
+    .line 86
+    :cond_9
+    return-void
+.end method
+
+.method public declared-synchronized b(Lcom/google/googlenav/prefetch/android/y;LaD/h;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 119
+    monitor-enter p0
+
+    :try_start_1
+    invoke-virtual {p0}, Lcom/google/googlenav/prefetch/android/s;->f()Z
 
     move-result v0
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_e
 
-    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->a:Lcom/google/googlenav/prefetch/android/t;
+    .line 120
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->c:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
 
-    invoke-interface {v0}, Lcom/google/googlenav/prefetch/android/t;->a()V
+    invoke-virtual {v0, p1, p2}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->b(Lcom/google/googlenav/prefetch/android/y;LaD/h;)V
+    :try_end_c
+    .catchall {:try_start_1 .. :try_end_c} :catchall_16
 
-    :goto_36
+    .line 126
+    :goto_c
+    monitor-exit p0
+
     return-void
 
-    :cond_37
-    new-instance v3, Ljava/util/concurrent/CountDownLatch;
+    .line 122
+    :cond_e
+    :try_start_e
+    iput-object p2, p0, Lcom/google/googlenav/prefetch/android/s;->e:LaD/h;
 
-    invoke-interface {v4}, Ljava/util/List;->size()I
+    .line 123
+    iput-object p1, p0, Lcom/google/googlenav/prefetch/android/s;->d:Lcom/google/googlenav/prefetch/android/y;
 
-    move-result v0
+    .line 124
+    const/4 v0, 0x1
 
-    invoke-direct {v3, v0}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
+    iput-boolean v0, p0, Lcom/google/googlenav/prefetch/android/s;->f:Z
+    :try_end_15
+    .catchall {:try_start_e .. :try_end_15} :catchall_16
 
-    const/16 v0, 0x4e
+    goto :goto_c
 
-    const-string v1, "rg"
+    .line 119
+    :catchall_16
+    move-exception v0
 
-    const-string v5, ""
+    monitor-exit p0
 
-    invoke-static {v0, v1, v5}, Laf/o;->a(ILjava/lang/String;Ljava/lang/String;)Lam/b;
+    throw v0
+.end method
 
-    move-result-object v5
+.method public c()LaD/j;
+    .registers 2
 
-    invoke-static {v5}, Laf/o;->a(Lam/b;)V
+    .prologue
+    .line 137
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->c:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
 
-    invoke-static {}, Lat/h;->a()Lat/h;
-
-    move-result-object v6
-
-    move v1, v2
-
-    :goto_52
-    invoke-interface {v4}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    if-ge v1, v0, :cond_b6
-
-    invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->g()LaD/j;
 
     move-result-object v0
 
-    check-cast v0, Lt/af;
+    return-object v0
+.end method
 
-    invoke-virtual {v0}, Lt/af;->i()Lt/V;
+.method public d()Landroid/content/Context;
+    .registers 2
 
-    move-result-object v7
+    .prologue
+    .line 142
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->a:Landroid/content/Context;
 
-    invoke-virtual {v7}, Lt/V;->f()Lt/L;
+    return-object v0
+.end method
 
-    move-result-object v7
+.method public e()V
+    .registers 2
 
-    new-instance v8, Lcom/google/googlenav/prefetch/android/u;
+    .prologue
+    .line 176
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->c:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
 
-    invoke-direct {v8, v3}, Lcom/google/googlenav/prefetch/android/u;-><init>(Ljava/util/concurrent/CountDownLatch;)V
+    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/BasePrefetcherService;->h()V
 
-    const/16 v9, 0x2710
+    .line 177
+    return-void
+.end method
 
-    new-instance v10, Lax/bo;
+.method public declared-synchronized f()Z
+    .registers 2
 
-    invoke-direct {v10}, Lax/bo;-><init>()V
+    .prologue
+    .line 78
+    monitor-enter p0
 
-    invoke-virtual {v7}, Lt/L;->a()I
+    :try_start_1
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->c:Lcom/google/googlenav/prefetch/android/BasePrefetcherService;
+    :try_end_3
+    .catchall {:try_start_1 .. :try_end_3} :catchall_a
 
-    move-result v11
+    if-eqz v0, :cond_8
 
-    invoke-virtual {v10, v11}, Lax/bo;->a(I)Lax/bo;
-
-    move-result-object v10
-
-    invoke-virtual {v7}, Lt/L;->c()I
-
-    move-result v7
-
-    invoke-virtual {v10, v7}, Lax/bo;->b(I)Lax/bo;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v9}, Lax/bo;->c(I)Lax/bo;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v9}, Lax/bo;->d(I)Lax/bo;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v8}, Lax/bo;->a(Lax/bn;)Lax/bo;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v5}, Lax/bo;->a(Lam/b;)Lax/bo;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lax/bo;->a()Lax/bm;
-
-    move-result-object v7
-
-    iget-object v9, p0, Lcom/google/googlenav/prefetch/android/s;->e:Lcom/google/googlenav/prefetch/android/p;
-
-    invoke-static {v9}, Lcom/google/googlenav/prefetch/android/p;->a(Lcom/google/googlenav/prefetch/android/p;)Ljava/util/Map;
-
-    move-result-object v9
-
-    invoke-interface {v9, v0, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-interface {v4}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    if-ge v1, v0, :cond_b1
-
-    invoke-virtual {v7, v2}, Lax/bm;->a(Z)V
-
-    :goto_aa
-    invoke-virtual {v6, v7}, Lat/h;->c(Lat/g;)V
-
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_52
-
-    :cond_b1
     const/4 v0, 0x1
 
-    invoke-virtual {v7, v0}, Lax/bm;->a(Z)V
+    :goto_6
+    monitor-exit p0
 
-    goto :goto_aa
+    return v0
 
-    :cond_b6
-    const-wide/16 v0, 0x1e
+    :cond_8
+    const/4 v0, 0x0
 
-    :try_start_b8
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    goto :goto_6
 
-    invoke-virtual {v3, v0, v1, v2}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
-    :try_end_bd
-    .catch Ljava/lang/InterruptedException; {:try_start_b8 .. :try_end_bd} :catch_c4
-
-    :goto_bd
-    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/s;->a:Lcom/google/googlenav/prefetch/android/t;
-
-    invoke-interface {v0}, Lcom/google/googlenav/prefetch/android/t;->a()V
-
-    goto/16 :goto_36
-
-    :catch_c4
+    :catchall_a
     move-exception v0
 
-    goto :goto_bd
+    monitor-exit p0
+
+    throw v0
 .end method

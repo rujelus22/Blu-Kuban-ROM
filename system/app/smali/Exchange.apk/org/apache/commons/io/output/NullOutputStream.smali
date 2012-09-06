@@ -12,7 +12,7 @@
     .registers 1
 
     .prologue
-    .line 37
+    .line 36
     new-instance v0, Lorg/apache/commons/io/output/NullOutputStream;
 
     invoke-direct {v0}, Lorg/apache/commons/io/output/NullOutputStream;-><init>()V
@@ -26,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 32
+    .line 31
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
     .parameter "b"
 
     .prologue
-    .line 57
+    .line 54
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .end annotation
 
     .prologue
-    .line 67
+    .line 63
     return-void
 .end method
 
@@ -64,6 +64,6 @@
     .parameter "len"
 
     .prologue
-    .line 48
+    .line 46
     return-void
 .end method

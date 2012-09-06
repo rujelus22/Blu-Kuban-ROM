@@ -1,28 +1,30 @@
-.class interface abstract Lcom/google/android/maps/driveabout/vector/an;
+.class Lcom/google/android/maps/driveabout/vector/aN;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# virtual methods
-.method public abstract a()F
-.end method
+# instance fields
+.field a:Ln/U;
 
-.method public abstract a(Lcom/google/android/maps/driveabout/vector/I;)Lcom/google/android/maps/driveabout/vector/cw;
-.end method
+.field b:[I
 
-.method public abstract a(Lcom/google/android/maps/driveabout/vector/aT;Lcom/google/android/maps/driveabout/vector/I;)Lcom/google/android/maps/driveabout/vector/cw;
-.end method
 
-.method public abstract b()F
-.end method
+# direct methods
+.method constructor <init>(Ln/U;[I)V
+    .registers 3
+    .parameter
+    .parameter
 
-.method public abstract c()F
-.end method
+    .prologue
+    .line 88
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract d()F
-.end method
+    .line 89
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/vector/aN;->a:Ln/U;
 
-.method public abstract e()F
-.end method
+    .line 90
+    iput-object p2, p0, Lcom/google/android/maps/driveabout/vector/aN;->b:[I
 
-.method public abstract f()V
+    .line 91
+    return-void
 .end method

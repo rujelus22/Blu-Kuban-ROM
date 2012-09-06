@@ -39,7 +39,7 @@
 
 .field private static final CODE_SCAN_PROGRESS:I = 0x1
 
-.field public static final DEBUG:Z = true
+.field public static final DEBUG:Z = false
 
 .field static final EVENT_AF_RECEIVED:I = 0xe
 

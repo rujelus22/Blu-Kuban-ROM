@@ -25,12 +25,12 @@
     .parameter "context"
 
     .prologue
-    .line 975
+    .line 967
     iput-object p1, p0, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->this$0:Lcom/samsung/fumo/FirmwareUpdate;
 
-    .line 976
+    .line 968
     invoke-direct {p0, p2}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
 
-    .line 977
+    .line 969
     return-void
 .end method

@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field final a:Lorg/codehaus/jackson/b/c;
+.field protected final a:Lorg/codehaus/jackson/b/c;
 
-.field final b:Ljava/io/InputStream;
+.field protected final b:Ljava/io/InputStream;
 
-.field final c:[B
+.field protected final c:[B
 
 .field protected d:I
 
@@ -76,18 +76,14 @@
     .parameter
 
     .prologue
-    .line 477
+    .line 485
     new-instance v0, Ljava/io/CharConversionException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Unsupported UCS-4 endianness ("
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -117,17 +113,17 @@
 
     const/4 v0, 0x0
 
-    .line 455
+    .line 463
     const v2, 0xff00
 
     and-int/2addr v2, p1
 
     if-nez v2, :cond_f
 
-    .line 456
+    .line 464
     iput-boolean v1, p0, Lorg/codehaus/jackson/a/a;->e:Z
 
-    .line 464
+    .line 472
     :goto_a
     const/4 v0, 0x2
 
@@ -135,17 +131,17 @@
 
     move v0, v1
 
-    .line 465
+    .line 473
     :cond_e
     return v0
 
-    .line 457
+    .line 465
     :cond_f
     and-int/lit16 v2, p1, 0xff
 
     if-nez v2, :cond_e
 
-    .line 458
+    .line 466
     iput-boolean v0, p0, Lorg/codehaus/jackson/a/a;->e:Z
 
     goto :goto_a
@@ -156,7 +152,7 @@
     .parameter
 
     .prologue
-    .line 492
+    .line 500
     iget v0, p0, Lorg/codehaus/jackson/a/a;->h:I
 
     iget v1, p0, Lorg/codehaus/jackson/a/a;->g:I
@@ -165,30 +161,30 @@
 
     move v1, v0
 
-    .line 493
+    .line 501
     :goto_6
     if-ge v1, p1, :cond_2a
 
-    .line 496
+    .line 504
     iget-object v0, p0, Lorg/codehaus/jackson/a/a;->b:Ljava/io/InputStream;
 
     if-nez v0, :cond_11
 
-    .line 497
+    .line 505
     const/4 v0, -0x1
 
-    .line 501
+    .line 509
     :goto_d
     if-gtz v0, :cond_22
 
-    .line 502
+    .line 510
     const/4 v0, 0x0
 
-    .line 507
+    .line 515
     :goto_10
     return v0
 
-    .line 499
+    .line 507
     :cond_11
     iget-object v0, p0, Lorg/codehaus/jackson/a/a;->b:Ljava/io/InputStream;
 
@@ -210,7 +206,7 @@
 
     goto :goto_d
 
-    .line 504
+    .line 512
     :cond_22
     iget v2, p0, Lorg/codehaus/jackson/a/a;->h:I
 
@@ -218,15 +214,15 @@
 
     iput v2, p0, Lorg/codehaus/jackson/a/a;->h:I
 
-    .line 505
+    .line 513
     add-int/2addr v0, v1
 
     move v1, v0
 
-    .line 506
+    .line 514
     goto :goto_6
 
-    .line 507
+    .line 515
     :cond_2a
     const/4 v0, 0x1
 
@@ -251,7 +247,7 @@
 
     const/4 v0, 0x1
 
-    .line 216
+    .line 224
     invoke-direct {p0, v5}, Lorg/codehaus/jackson/a/a;->b(I)Z
 
     move-result v2
@@ -306,7 +302,7 @@
 
     or-int/2addr v3, v2
 
-    sparse-switch v3, :sswitch_data_1c2
+    sparse-switch v3, :sswitch_data_1c4
 
     :goto_3a
     ushr-int/lit8 v2, v3, 0x10
@@ -341,35 +337,35 @@
 
     invoke-virtual {v1, v0}, Lorg/codehaus/jackson/b/c;->a(Lorg/codehaus/jackson/JsonEncoding;)V
 
-    .line 219
+    .line 227
     sget-object v1, Lorg/codehaus/jackson/JsonParser$Feature;->CANONICALIZE_FIELD_NAMES:Lorg/codehaus/jackson/JsonParser$Feature;
 
     invoke-virtual {v1, p1}, Lorg/codehaus/jackson/JsonParser$Feature;->enabledIn(I)Z
 
     move-result v8
 
-    .line 220
+    .line 228
     sget-object v1, Lorg/codehaus/jackson/JsonParser$Feature;->INTERN_FIELD_NAMES:Lorg/codehaus/jackson/JsonParser$Feature;
 
     invoke-virtual {v1, p1}, Lorg/codehaus/jackson/JsonParser$Feature;->enabledIn(I)Z
 
     move-result v9
 
-    .line 221
+    .line 229
     sget-object v1, Lorg/codehaus/jackson/JsonEncoding;->UTF8:Lorg/codehaus/jackson/JsonEncoding;
 
-    if-ne v0, v1, :cond_14e
+    if-ne v0, v1, :cond_14f
 
-    .line 225
-    if-eqz v8, :cond_14e
+    .line 233
+    if-eqz v8, :cond_14f
 
-    .line 226
+    .line 234
     invoke-virtual {p3, v9}, Lorg/codehaus/jackson/c/a;->a(Z)Lorg/codehaus/jackson/c/a;
 
     move-result-object v5
 
-    .line 227
-    new-instance v0, Lorg/codehaus/jackson/a/p;
+    .line 235
+    new-instance v0, Lorg/codehaus/jackson/a/m;
 
     iget-object v1, p0, Lorg/codehaus/jackson/a/a;->a:Lorg/codehaus/jackson/b/c;
 
@@ -387,13 +383,13 @@
 
     move-object v4, p2
 
-    invoke-direct/range {v0 .. v9}, Lorg/codehaus/jackson/a/p;-><init>(Lorg/codehaus/jackson/b/c;ILjava/io/InputStream;Lorg/codehaus/jackson/c;Lorg/codehaus/jackson/c/a;[BIIZ)V
+    invoke-direct/range {v0 .. v9}, Lorg/codehaus/jackson/a/m;-><init>(Lorg/codehaus/jackson/b/c;ILjava/io/InputStream;Lorg/codehaus/jackson/c;Lorg/codehaus/jackson/c/a;[BIIZ)V
 
-    .line 230
+    .line 238
     :goto_80
     return-object v0
 
-    .line 216
+    .line 224
     :sswitch_81
     iput-boolean v0, p0, Lorg/codehaus/jackson/a/a;->e:Z
 
@@ -591,40 +587,9 @@
     :cond_126
     iget v0, p0, Lorg/codehaus/jackson/a/a;->f:I
 
-    if-ne v0, v6, :cond_136
+    packed-switch v0, :pswitch_data_1d6
 
-    iget-boolean v0, p0, Lorg/codehaus/jackson/a/a;->e:Z
-
-    if-eqz v0, :cond_132
-
-    sget-object v0, Lorg/codehaus/jackson/JsonEncoding;->UTF16_BE:Lorg/codehaus/jackson/JsonEncoding;
-
-    goto/16 :goto_52
-
-    :cond_132
-    sget-object v0, Lorg/codehaus/jackson/JsonEncoding;->UTF16_LE:Lorg/codehaus/jackson/JsonEncoding;
-
-    goto/16 :goto_52
-
-    :cond_136
-    iget v0, p0, Lorg/codehaus/jackson/a/a;->f:I
-
-    if-ne v0, v5, :cond_146
-
-    iget-boolean v0, p0, Lorg/codehaus/jackson/a/a;->e:Z
-
-    if-eqz v0, :cond_142
-
-    sget-object v0, Lorg/codehaus/jackson/JsonEncoding;->UTF32_BE:Lorg/codehaus/jackson/JsonEncoding;
-
-    goto/16 :goto_52
-
-    :cond_142
-    sget-object v0, Lorg/codehaus/jackson/JsonEncoding;->UTF32_LE:Lorg/codehaus/jackson/JsonEncoding;
-
-    goto/16 :goto_52
-
-    :cond_146
+    :pswitch_12b
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Internal error"
@@ -633,9 +598,42 @@
 
     throw v0
 
-    .line 230
-    :cond_14e
-    new-instance v7, Lorg/codehaus/jackson/a/k;
+    :pswitch_133
+    sget-object v0, Lorg/codehaus/jackson/JsonEncoding;->UTF8:Lorg/codehaus/jackson/JsonEncoding;
+
+    goto/16 :goto_52
+
+    :pswitch_137
+    iget-boolean v0, p0, Lorg/codehaus/jackson/a/a;->e:Z
+
+    if-eqz v0, :cond_13f
+
+    sget-object v0, Lorg/codehaus/jackson/JsonEncoding;->UTF16_BE:Lorg/codehaus/jackson/JsonEncoding;
+
+    goto/16 :goto_52
+
+    :cond_13f
+    sget-object v0, Lorg/codehaus/jackson/JsonEncoding;->UTF16_LE:Lorg/codehaus/jackson/JsonEncoding;
+
+    goto/16 :goto_52
+
+    :pswitch_143
+    iget-boolean v0, p0, Lorg/codehaus/jackson/a/a;->e:Z
+
+    if-eqz v0, :cond_14b
+
+    sget-object v0, Lorg/codehaus/jackson/JsonEncoding;->UTF32_BE:Lorg/codehaus/jackson/JsonEncoding;
+
+    goto/16 :goto_52
+
+    :cond_14b
+    sget-object v0, Lorg/codehaus/jackson/JsonEncoding;->UTF32_LE:Lorg/codehaus/jackson/JsonEncoding;
+
+    goto/16 :goto_52
+
+    .line 238
+    :cond_14f
+    new-instance v7, Lorg/codehaus/jackson/a/j;
 
     iget-object v10, p0, Lorg/codehaus/jackson/a/a;->a:Lorg/codehaus/jackson/b/c;
 
@@ -653,7 +651,7 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_1d4
+    packed-switch v0, :pswitch_data_1e2
 
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -663,7 +661,7 @@
 
     throw v0
 
-    :pswitch_16b
+    :pswitch_16c
     new-instance v0, Lorg/codehaus/jackson/b/i;
 
     iget-object v1, p0, Lorg/codehaus/jackson/a/a;->a:Lorg/codehaus/jackson/b/c;
@@ -690,7 +688,7 @@
 
     move-object v3, v0
 
-    :goto_185
+    :goto_186
     invoke-virtual {p4, v8, v9}, Lorg/codehaus/jackson/c/c;->a(ZZ)Lorg/codehaus/jackson/c/c;
 
     move-result-object v5
@@ -703,16 +701,16 @@
 
     move-object v4, p2
 
-    invoke-direct/range {v0 .. v5}, Lorg/codehaus/jackson/a/k;-><init>(Lorg/codehaus/jackson/b/c;ILjava/io/Reader;Lorg/codehaus/jackson/c;Lorg/codehaus/jackson/c/c;)V
+    invoke-direct/range {v0 .. v5}, Lorg/codehaus/jackson/a/j;-><init>(Lorg/codehaus/jackson/b/c;ILjava/io/Reader;Lorg/codehaus/jackson/c;Lorg/codehaus/jackson/c/c;)V
 
     move-object v0, v7
 
     goto/16 :goto_80
 
-    :pswitch_193
+    :pswitch_194
     iget-object v2, p0, Lorg/codehaus/jackson/a/a;->b:Ljava/io/InputStream;
 
-    if-nez v2, :cond_1ac
+    if-nez v2, :cond_1ad
 
     new-instance v0, Ljava/io/ByteArrayInputStream;
 
@@ -724,7 +722,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Ljava/io/ByteArrayInputStream;-><init>([BII)V
 
-    :goto_1a2
+    :goto_1a3
     new-instance v3, Ljava/io/InputStreamReader;
 
     invoke-virtual {v6}, Lorg/codehaus/jackson/JsonEncoding;->getJavaName()Ljava/lang/String;
@@ -733,14 +731,14 @@
 
     invoke-direct {v3, v0, v1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    goto :goto_185
+    goto :goto_186
 
-    :cond_1ac
+    :cond_1ad
     iget v0, p0, Lorg/codehaus/jackson/a/a;->g:I
 
     iget v1, p0, Lorg/codehaus/jackson/a/a;->h:I
 
-    if-ge v0, v1, :cond_1c0
+    if-ge v0, v1, :cond_1c1
 
     new-instance v0, Lorg/codehaus/jackson/b/e;
 
@@ -754,15 +752,17 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/codehaus/jackson/b/e;-><init>(Lorg/codehaus/jackson/b/c;Ljava/io/InputStream;[BII)V
 
-    goto :goto_1a2
+    goto :goto_1a3
 
-    :cond_1c0
+    :cond_1c1
     move-object v0, v2
 
-    goto :goto_1a2
+    goto :goto_1a3
 
-    .line 216
-    :sswitch_data_1c2
+    .line 224
+    nop
+
+    :sswitch_data_1c4
     .sparse-switch
         -0x1010000 -> :sswitch_9e
         -0x20000 -> :sswitch_8d
@@ -770,13 +770,21 @@
         0xfffe -> :sswitch_99
     .end sparse-switch
 
-    .line 230
-    :pswitch_data_1d4
+    :pswitch_data_1d6
     .packed-switch 0x1
-        :pswitch_16b
-        :pswitch_16b
-        :pswitch_193
-        :pswitch_193
-        :pswitch_193
+        :pswitch_133
+        :pswitch_137
+        :pswitch_12b
+        :pswitch_143
+    .end packed-switch
+
+    .line 238
+    :pswitch_data_1e2
+    .packed-switch 0x1
+        :pswitch_16c
+        :pswitch_16c
+        :pswitch_194
+        :pswitch_194
+        :pswitch_194
     .end packed-switch
 .end method

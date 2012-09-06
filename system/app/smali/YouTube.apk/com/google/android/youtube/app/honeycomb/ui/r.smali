@@ -3,95 +3,123 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/ui/q;
+.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/ui/m;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/ui/q;)V
+.method private constructor <init>(Lcom/google/android/youtube/app/honeycomb/ui/m;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 178
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/ui/r;->a:Lcom/google/android/youtube/app/honeycomb/ui/q;
+    .line 380
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/ui/r;->a:Lcom/google/android/youtube/app/honeycomb/ui/m;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 9
+.method synthetic constructor <init>(Lcom/google/android/youtube/app/honeycomb/ui/m;B)V
+    .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 180
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/r;->a:Lcom/google/android/youtube/app/honeycomb/ui/q;
+    .line 380
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/honeycomb/ui/r;-><init>(Lcom/google/android/youtube/app/honeycomb/ui/m;)V
 
-    const/4 v1, 0x1
+    return-void
+.end method
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/app/honeycomb/ui/q;->a(Lcom/google/android/youtube/app/honeycomb/ui/q;Z)Z
 
-    .line 181
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/r;->a:Lcom/google/android/youtube/app/honeycomb/ui/q;
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
+    .registers 4
+    .parameter
+    .parameter
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/ui/q;->a(Lcom/google/android/youtube/app/honeycomb/ui/q;)Landroid/widget/Button;
+    .prologue
+    .line 380
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/r;->a:Lcom/google/android/youtube/app/honeycomb/ui/m;
 
-    move-result-object v0
-
-    const v1, 0x7f0a0106
-
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
-
-    .line 182
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/r;->a:Lcom/google/android/youtube/app/honeycomb/ui/q;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/ui/q;->a(Lcom/google/android/youtube/app/honeycomb/ui/q;)Landroid/widget/Button;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/ui/m;->o(Lcom/google/android/youtube/app/honeycomb/ui/m;)Lcom/google/android/youtube/core/d;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    invoke-virtual {v0, p2}, Lcom/google/android/youtube/core/d;->b(Ljava/lang/Throwable;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/r;->a:Lcom/google/android/youtube/app/honeycomb/ui/m;
 
-    .line 183
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/r;->a:Lcom/google/android/youtube/app/honeycomb/ui/q;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/ui/q;->c(Lcom/google/android/youtube/app/honeycomb/ui/q;)Lcom/google/android/youtube/core/Analytics;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/ui/m;->g(Lcom/google/android/youtube/app/honeycomb/ui/m;)Landroid/app/Activity;
 
     move-result-object v0
 
-    const-string v1, "UploadStarted"
+    invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    const/4 v2, 0x0
+    return-void
+.end method
 
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 9
+    .parameter
+    .parameter
 
-    move-result-wide v3
+    .prologue
+    const/4 v5, 0x1
 
-    iget-object v5, p0, Lcom/google/android/youtube/app/honeycomb/ui/r;->a:Lcom/google/android/youtube/app/honeycomb/ui/q;
+    .line 380
+    check-cast p2, Lcom/google/android/youtube/core/model/UserProfile;
 
-    invoke-static {v5}, Lcom/google/android/youtube/app/honeycomb/ui/q;->b(Lcom/google/android/youtube/app/honeycomb/ui/q;)J
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/r;->a:Lcom/google/android/youtube/app/honeycomb/ui/m;
 
-    move-result-wide v5
+    iget-object v1, p2, Lcom/google/android/youtube/core/model/UserProfile;->username:Ljava/lang/String;
 
-    sub-long/2addr v3, v5
+    invoke-static {v0, v1}, Lcom/google/android/youtube/app/honeycomb/ui/m;->a(Lcom/google/android/youtube/app/honeycomb/ui/m;Ljava/lang/String;)Ljava/lang/String;
 
-    long-to-int v3, v3
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/r;->a:Lcom/google/android/youtube/app/honeycomb/ui/m;
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/youtube/core/Analytics;->a(Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/ui/m;->m(Lcom/google/android/youtube/app/honeycomb/ui/m;)Landroid/widget/TextView;
 
-    .line 185
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/r;->a:Lcom/google/android/youtube/app/honeycomb/ui/q;
+    move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/ui/q;->d(Lcom/google/android/youtube/app/honeycomb/ui/q;)V
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/ui/r;->a:Lcom/google/android/youtube/app/honeycomb/ui/m;
 
-    .line 186
+    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/ui/m;->j(Lcom/google/android/youtube/app/honeycomb/ui/m;)Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f0b01bb
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-array v2, v5, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    iget-object v4, p2, Lcom/google/android/youtube/core/model/UserProfile;->displayUsername:Ljava/lang/String;
+
+    aput-object v4, v2, v3
+
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/r;->a:Lcom/google/android/youtube/app/honeycomb/ui/m;
+
+    invoke-static {v0, v5}, Lcom/google/android/youtube/app/honeycomb/ui/m;->b(Lcom/google/android/youtube/app/honeycomb/ui/m;Z)Z
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/r;->a:Lcom/google/android/youtube/app/honeycomb/ui/m;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/ui/m;->n(Lcom/google/android/youtube/app/honeycomb/ui/m;)V
+
     return-void
 .end method

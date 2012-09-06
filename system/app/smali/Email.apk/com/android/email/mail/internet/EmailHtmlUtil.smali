@@ -6,15 +6,13 @@
 # static fields
 .field private static final PLAIN_TEXT_TO_ESCAPE:Ljava/util/regex/Pattern;
 
-.field static out:Ljava/lang/StringBuilder;
-
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 1
 
     .prologue
-    .line 29
+    .line 26
     const-string v0, "[<>&]| {2,}|\r?\n"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -23,11 +21,6 @@
 
     sput-object v0, Lcom/android/email/mail/internet/EmailHtmlUtil;->PLAIN_TEXT_TO_ESCAPE:Ljava/util/regex/Pattern;
 
-    .line 38
-    const/4 v0, 0x0
-
-    sput-object v0, Lcom/android/email/mail/internet/EmailHtmlUtil;->out:Ljava/lang/StringBuilder;
-
     return-void
 .end method
 
@@ -35,8 +28,8 @@
     .registers 1
 
     .prologue
-    .line 24
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 22
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,210 +41,174 @@
     .prologue
     const/16 v9, 0x20
 
-    .line 41
-    sget-object v5, Lcom/android/email/mail/internet/EmailHtmlUtil;->PLAIN_TEXT_TO_ESCAPE:Ljava/util/regex/Pattern;
+    .line 35
+    sget-object v6, Lcom/android/email/mail/internet/EmailHtmlUtil;->PLAIN_TEXT_TO_ESCAPE:Ljava/util/regex/Pattern;
 
-    .line 42
-    .local v5, pattern:Ljava/util/regex/Pattern;
-    invoke-virtual {v5, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    .line 36
+    .local v6, pattern:Ljava/util/regex/Pattern;
+    invoke-virtual {v6, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v3
 
-    .line 44
+    .line 38
     .local v3, match:Ljava/util/regex/Matcher;
     invoke-virtual {v3}, Ljava/util/regex/Matcher;->find()Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_66
+    if-eqz v8, :cond_4a
 
-    .line 46
-    sget-object v7, Lcom/android/email/mail/internet/EmailHtmlUtil;->out:Ljava/lang/StringBuilder;
+    .line 39
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    if-nez v7, :cond_19
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 47
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    sput-object v7, Lcom/android/email/mail/internet/EmailHtmlUtil;->out:Ljava/lang/StringBuilder;
-
-    .line 48
-    :cond_19
+    .line 40
+    .local v5, out:Ljava/lang/StringBuilder;
     const/4 v1, 0x0
 
-    .line 50
+    .line 42
     .local v1, end:I
-    :cond_1a
+    :cond_14
     invoke-virtual {v3}, Ljava/util/regex/Matcher;->start()I
 
-    move-result v6
+    move-result v7
 
-    .line 51
-    .local v6, start:I
-    sget-object v7, Lcom/android/email/mail/internet/EmailHtmlUtil;->out:Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0, v1, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    .line 43
+    .local v7, start:I
+    invoke-virtual {p0, v1, v7}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 52
+    .line 44
     invoke-virtual {v3}, Ljava/util/regex/Matcher;->end()I
 
     move-result v1
 
-    .line 53
-    invoke-virtual {p0, v6}, Ljava/lang/String;->codePointAt(I)I
+    .line 45
+    invoke-virtual {p0, v7}, Ljava/lang/String;->codePointAt(I)I
 
     move-result v0
 
-    .line 54
+    .line 46
     .local v0, c:I
-    if-ne v0, v9, :cond_67
+    if-ne v0, v9, :cond_4b
 
-    .line 56
+    .line 48
     const/4 v2, 0x1
 
     .local v2, i:I
-    sub-int v4, v1, v6
+    sub-int v4, v1, v7
 
     .local v4, n:I
-    :goto_34
-    if-ge v2, v4, :cond_40
+    :goto_2c
+    if-ge v2, v4, :cond_36
 
-    .line 57
-    sget-object v7, Lcom/android/email/mail/internet/EmailHtmlUtil;->out:Ljava/lang/StringBuilder;
-
+    .line 49
     const-string v8, "&nbsp;"
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 56
+    .line 48
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_34
+    goto :goto_2c
 
-    .line 59
-    :cond_40
-    sget-object v7, Lcom/android/email/mail/internet/EmailHtmlUtil;->out:Ljava/lang/StringBuilder;
+    .line 51
+    :cond_36
+    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 69
+    .line 61
     .end local v2           #i:I
     .end local v4           #n:I
-    :cond_45
-    :goto_45
+    :cond_39
+    :goto_39
     invoke-virtual {v3}, Ljava/util/regex/Matcher;->find()Z
 
-    move-result v7
+    move-result v8
 
-    if-nez v7, :cond_1a
+    if-nez v8, :cond_14
 
-    .line 70
-    sget-object v7, Lcom/android/email/mail/internet/EmailHtmlUtil;->out:Ljava/lang/StringBuilder;
-
+    .line 62
     invoke-virtual {p0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 71
-    sget-object v7, Lcom/android/email/mail/internet/EmailHtmlUtil;->out:Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 63
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 73
-    sget-object v7, Lcom/android/email/mail/internet/EmailHtmlUtil;->out:Ljava/lang/StringBuilder;
-
-    const/4 v8, 0x0
-
-    sget-object v9, Lcom/android/email/mail/internet/EmailHtmlUtil;->out:Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->length()I
-
-    move-result v9
-
-    invoke-virtual {v7, v8, v9}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
-
-    .line 75
+    .line 65
     .end local v0           #c:I
     .end local v1           #end:I
-    .end local v6           #start:I
-    :cond_66
+    .end local v5           #out:Ljava/lang/StringBuilder;
+    .end local v7           #start:I
+    :cond_4a
     return-object p0
 
-    .line 60
+    .line 52
     .restart local v0       #c:I
     .restart local v1       #end:I
-    .restart local v6       #start:I
-    :cond_67
-    const/16 v7, 0xd
+    .restart local v5       #out:Ljava/lang/StringBuilder;
+    .restart local v7       #start:I
+    :cond_4b
+    const/16 v8, 0xd
 
-    if-eq v0, v7, :cond_6f
+    if-eq v0, v8, :cond_53
 
-    const/16 v7, 0xa
+    const/16 v8, 0xa
 
-    if-ne v0, v7, :cond_77
+    if-ne v0, v8, :cond_59
 
-    .line 61
-    :cond_6f
-    sget-object v7, Lcom/android/email/mail/internet/EmailHtmlUtil;->out:Ljava/lang/StringBuilder;
-
+    .line 53
+    :cond_53
     const-string v8, "<br>"
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_45
+    goto :goto_39
 
-    .line 62
-    :cond_77
-    const/16 v7, 0x3c
+    .line 54
+    :cond_59
+    const/16 v8, 0x3c
 
-    if-ne v0, v7, :cond_83
+    if-ne v0, v8, :cond_63
 
-    .line 63
-    sget-object v7, Lcom/android/email/mail/internet/EmailHtmlUtil;->out:Ljava/lang/StringBuilder;
-
+    .line 55
     const-string v8, "&lt;"
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_45
+    goto :goto_39
 
-    .line 64
-    :cond_83
-    const/16 v7, 0x3e
+    .line 56
+    :cond_63
+    const/16 v8, 0x3e
 
-    if-ne v0, v7, :cond_8f
+    if-ne v0, v8, :cond_6d
 
-    .line 65
-    sget-object v7, Lcom/android/email/mail/internet/EmailHtmlUtil;->out:Ljava/lang/StringBuilder;
-
+    .line 57
     const-string v8, "&gt;"
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_45
+    goto :goto_39
 
-    .line 66
-    :cond_8f
-    const/16 v7, 0x26
+    .line 58
+    :cond_6d
+    const/16 v8, 0x26
 
-    if-ne v0, v7, :cond_45
+    if-ne v0, v8, :cond_39
 
-    .line 67
-    sget-object v7, Lcom/android/email/mail/internet/EmailHtmlUtil;->out:Ljava/lang/StringBuilder;
-
+    .line 59
     const-string v8, "&amp;"
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_45
+    goto :goto_39
 .end method

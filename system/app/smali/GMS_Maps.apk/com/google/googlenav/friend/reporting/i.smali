@@ -1,214 +1,210 @@
-.class public Lcom/google/googlenav/friend/reporting/i;
-.super Ljava/lang/Object;
+.class final enum Lcom/google/googlenav/friend/reporting/i;
+.super Ljava/lang/Enum;
+.source "SourceFile"
 
 
-# instance fields
-.field private a:Lam/b;
+# static fields
+.field public static final enum a:Lcom/google/googlenav/friend/reporting/i;
+
+.field public static final enum b:Lcom/google/googlenav/friend/reporting/i;
+
+.field public static final enum c:Lcom/google/googlenav/friend/reporting/i;
+
+.field public static final enum d:Lcom/google/googlenav/friend/reporting/i;
+
+.field public static final enum e:Lcom/google/googlenav/friend/reporting/i;
+
+.field public static final enum f:Lcom/google/googlenav/friend/reporting/i;
+
+.field public static final enum g:Lcom/google/googlenav/friend/reporting/i;
+
+.field public static final enum h:Lcom/google/googlenav/friend/reporting/i;
+
+.field private static final synthetic i:[Lcom/google/googlenav/friend/reporting/i;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 8
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    const/4 v7, 0x4
 
-    new-instance v0, Lam/b;
+    const/4 v6, 0x3
 
-    sget-object v1, LbF/ax;->a:Lam/e;
+    const/4 v5, 0x2
 
-    invoke-direct {v0, v1}, Lam/b;-><init>(Lam/e;)V
+    const/4 v4, 0x1
 
-    iput-object v0, p0, Lcom/google/googlenav/friend/reporting/i;->a:Lam/b;
+    const/4 v3, 0x0
+
+    .line 33
+    new-instance v0, Lcom/google/googlenav/friend/reporting/i;
+
+    const-string v1, "DO_NOT_RECORD"
+
+    invoke-direct {v0, v1, v3}, Lcom/google/googlenav/friend/reporting/i;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/googlenav/friend/reporting/i;->a:Lcom/google/googlenav/friend/reporting/i;
+
+    .line 36
+    new-instance v0, Lcom/google/googlenav/friend/reporting/i;
+
+    const-string v1, "DO_NOT_RECORD_THROTTLED"
+
+    invoke-direct {v0, v1, v4}, Lcom/google/googlenav/friend/reporting/i;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/googlenav/friend/reporting/i;->b:Lcom/google/googlenav/friend/reporting/i;
+
+    .line 39
+    new-instance v0, Lcom/google/googlenav/friend/reporting/i;
+
+    const-string v1, "FIRST_RECORD"
+
+    invoke-direct {v0, v1, v5}, Lcom/google/googlenav/friend/reporting/i;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/googlenav/friend/reporting/i;->c:Lcom/google/googlenav/friend/reporting/i;
+
+    .line 42
+    new-instance v0, Lcom/google/googlenav/friend/reporting/i;
+
+    const-string v1, "RECORDING_ALL"
+
+    invoke-direct {v0, v1, v6}, Lcom/google/googlenav/friend/reporting/i;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/googlenav/friend/reporting/i;->d:Lcom/google/googlenav/friend/reporting/i;
+
+    .line 45
+    new-instance v0, Lcom/google/googlenav/friend/reporting/i;
+
+    const-string v1, "USER_REQUESTED"
+
+    invoke-direct {v0, v1, v7}, Lcom/google/googlenav/friend/reporting/i;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/googlenav/friend/reporting/i;->e:Lcom/google/googlenav/friend/reporting/i;
+
+    .line 48
+    new-instance v0, Lcom/google/googlenav/friend/reporting/i;
+
+    const-string v1, "IMPROVED_ACCURACY"
+
+    const/4 v2, 0x5
+
+    invoke-direct {v0, v1, v2}, Lcom/google/googlenav/friend/reporting/i;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/googlenav/friend/reporting/i;->f:Lcom/google/googlenav/friend/reporting/i;
+
+    .line 51
+    new-instance v0, Lcom/google/googlenav/friend/reporting/i;
+
+    const-string v1, "MOVING_INTERVAL_ELAPSED"
+
+    const/4 v2, 0x6
+
+    invoke-direct {v0, v1, v2}, Lcom/google/googlenav/friend/reporting/i;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/googlenav/friend/reporting/i;->g:Lcom/google/googlenav/friend/reporting/i;
+
+    .line 54
+    new-instance v0, Lcom/google/googlenav/friend/reporting/i;
+
+    const-string v1, "STATIONARY_INTERVAL_ELAPSED"
+
+    const/4 v2, 0x7
+
+    invoke-direct {v0, v1, v2}, Lcom/google/googlenav/friend/reporting/i;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/googlenav/friend/reporting/i;->h:Lcom/google/googlenav/friend/reporting/i;
+
+    .line 30
+    const/16 v0, 0x8
+
+    new-array v0, v0, [Lcom/google/googlenav/friend/reporting/i;
+
+    sget-object v1, Lcom/google/googlenav/friend/reporting/i;->a:Lcom/google/googlenav/friend/reporting/i;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lcom/google/googlenav/friend/reporting/i;->b:Lcom/google/googlenav/friend/reporting/i;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lcom/google/googlenav/friend/reporting/i;->c:Lcom/google/googlenav/friend/reporting/i;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Lcom/google/googlenav/friend/reporting/i;->d:Lcom/google/googlenav/friend/reporting/i;
+
+    aput-object v1, v0, v6
+
+    sget-object v1, Lcom/google/googlenav/friend/reporting/i;->e:Lcom/google/googlenav/friend/reporting/i;
+
+    aput-object v1, v0, v7
+
+    const/4 v1, 0x5
+
+    sget-object v2, Lcom/google/googlenav/friend/reporting/i;->f:Lcom/google/googlenav/friend/reporting/i;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    sget-object v2, Lcom/google/googlenav/friend/reporting/i;->g:Lcom/google/googlenav/friend/reporting/i;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
+
+    sget-object v2, Lcom/google/googlenav/friend/reporting/i;->h:Lcom/google/googlenav/friend/reporting/i;
+
+    aput-object v2, v0, v1
+
+    sput-object v0, Lcom/google/googlenav/friend/reporting/i;->i:[Lcom/google/googlenav/friend/reporting/i;
 
     return-void
 .end method
 
-.method static synthetic a(Lcom/google/googlenav/friend/reporting/i;)Lam/b;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/friend/reporting/i;->a:Lam/b;
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public a()Lcom/google/googlenav/friend/reporting/g;
+.method private constructor <init>(Ljava/lang/String;I)V
     .registers 3
+    .parameter
+    .parameter
 
-    new-instance v0, Lcom/google/googlenav/friend/reporting/g;
+    .prologue
+    .line 31
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    const/4 v1, 0x0
+    return-void
+.end method
 
-    invoke-direct {v0, p0, v1}, Lcom/google/googlenav/friend/reporting/g;-><init>(Lcom/google/googlenav/friend/reporting/i;Lcom/google/googlenav/friend/reporting/h;)V
+.method public static valueOf(Ljava/lang/String;)Lcom/google/googlenav/friend/reporting/i;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 30
+    const-class v0, Lcom/google/googlenav/friend/reporting/i;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlenav/friend/reporting/i;
 
     return-object v0
 .end method
 
-.method public a(D)Lcom/google/googlenav/friend/reporting/i;
-    .registers 5
+.method public static values()[Lcom/google/googlenav/friend/reporting/i;
+    .registers 1
 
-    iget-object v0, p0, Lcom/google/googlenav/friend/reporting/i;->a:Lam/b;
+    .prologue
+    .line 30
+    sget-object v0, Lcom/google/googlenav/friend/reporting/i;->i:[Lcom/google/googlenav/friend/reporting/i;
 
-    const/4 v1, 0x6
+    invoke-virtual {v0}, [Lcom/google/googlenav/friend/reporting/i;->clone()Ljava/lang/Object;
 
-    invoke-virtual {v0, v1, p1, p2}, Lam/b;->a(ID)V
+    move-result-object v0
 
-    return-object p0
-.end method
+    check-cast v0, [Lcom/google/googlenav/friend/reporting/i;
 
-.method public a(F)Lcom/google/googlenav/friend/reporting/i;
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/friend/reporting/i;->a:Lam/b;
-
-    const/4 v1, 0x4
-
-    invoke-virtual {v0, v1, p1}, Lam/b;->a(IF)V
-
-    return-object p0
-.end method
-
-.method public a(I)Lcom/google/googlenav/friend/reporting/i;
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/friend/reporting/i;->a:Lam/b;
-
-    const/4 v1, 0x2
-
-    invoke-virtual {v0, v1, p1}, Lam/b;->h(II)V
-
-    return-object p0
-.end method
-
-.method public a(II)Lcom/google/googlenav/friend/reporting/i;
-    .registers 6
-
-    const/4 v2, 0x1
-
-    new-instance v0, Lam/b;
-
-    sget-object v1, LbF/G;->a:Lam/e;
-
-    invoke-direct {v0, v1}, Lam/b;-><init>(Lam/e;)V
-
-    invoke-virtual {v0, v2, p1}, Lam/b;->h(II)V
-
-    const/4 v1, 0x2
-
-    invoke-virtual {v0, v1, p2}, Lam/b;->h(II)V
-
-    iget-object v1, p0, Lcom/google/googlenav/friend/reporting/i;->a:Lam/b;
-
-    invoke-virtual {v1, v2, v0}, Lam/b;->b(ILam/b;)V
-
-    return-object p0
-.end method
-
-.method public a(J)Lcom/google/googlenav/friend/reporting/i;
-    .registers 5
-
-    iget-object v0, p0, Lcom/google/googlenav/friend/reporting/i;->a:Lam/b;
-
-    const/4 v1, 0x3
-
-    invoke-virtual {v0, v1, p1, p2}, Lam/b;->b(IJ)V
-
-    return-object p0
-.end method
-
-.method public a(Ljava/lang/String;)Lcom/google/googlenav/friend/reporting/i;
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/friend/reporting/i;->a:Lam/b;
-
-    const/16 v1, 0xc
-
-    invoke-virtual {v0, v1, p1}, Lam/b;->b(ILjava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public a(Z)Lcom/google/googlenav/friend/reporting/i;
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/friend/reporting/i;->a:Lam/b;
-
-    const/16 v1, 0xa
-
-    invoke-virtual {v0, v1, p1}, Lam/b;->b(IZ)V
-
-    return-object p0
-.end method
-
-.method public b(F)Lcom/google/googlenav/friend/reporting/i;
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/friend/reporting/i;->a:Lam/b;
-
-    const/4 v1, 0x5
-
-    invoke-virtual {v0, v1, p1}, Lam/b;->a(IF)V
-
-    return-object p0
-.end method
-
-.method public b(I)Lcom/google/googlenav/friend/reporting/i;
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/friend/reporting/i;->a:Lam/b;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1, p1}, Lam/b;->h(II)V
-
-    return-object p0
-.end method
-
-.method public b(Z)Lcom/google/googlenav/friend/reporting/i;
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/friend/reporting/i;->a:Lam/b;
-
-    const/16 v1, 0xb
-
-    invoke-virtual {v0, v1, p1}, Lam/b;->b(IZ)V
-
-    return-object p0
-.end method
-
-.method public c(F)Lcom/google/googlenav/friend/reporting/i;
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/friend/reporting/i;->a:Lam/b;
-
-    const/4 v1, 0x7
-
-    invoke-virtual {v0, v1, p1}, Lam/b;->a(IF)V
-
-    return-object p0
-.end method
-
-.method public c(I)Lcom/google/googlenav/friend/reporting/i;
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/friend/reporting/i;->a:Lam/b;
-
-    const/16 v1, 0x9
-
-    invoke-virtual {v0, v1, p1}, Lam/b;->h(II)V
-
-    return-object p0
-.end method
-
-.method public d(I)Lcom/google/googlenav/friend/reporting/i;
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/friend/reporting/i;->a:Lam/b;
-
-    const/16 v1, 0xd
-
-    invoke-virtual {v0, v1, p1}, Lam/b;->h(II)V
-
-    return-object p0
+    return-object v0
 .end method

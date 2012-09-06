@@ -4,11 +4,13 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;
+.field private static final synthetic $VALUES:[Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter; = null
 
-.field public static final enum NEXT_24_HOURS:Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;
+.field public static final enum NEXT_24_HOURS:Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter; = null
 
-.field public static final enum NEXT_7_DAYS:Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;
+.field public static final enum NEXT_7_DAYS:Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter; = null
+
+.field public static final PARAM_NAME:Ljava/lang/String; = "upcoming"
 
 
 # instance fields
@@ -26,33 +28,33 @@
 
     const/4 v4, 0x0
 
-    .line 168
+    .line 277
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;
 
     const-string v1, "NEXT_24_HOURS"
 
     const-string v2, "today"
 
-    const v3, 0x7f0a001f
+    const v3, 0x7f0b0025
 
     invoke-direct {v0, v1, v4, v2, v3}, Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;->NEXT_24_HOURS:Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;
 
-    .line 169
+    .line 278
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;
 
     const-string v1, "NEXT_7_DAYS"
 
     const-string v2, "this_week"
 
-    const v3, 0x7f0a0020
+    const v3, 0x7f0b0026
 
     invoke-direct {v0, v1, v5, v2, v3}, Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;->NEXT_7_DAYS:Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;
 
-    .line 163
+    .line 272
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;
@@ -78,16 +80,16 @@
     .parameter
 
     .prologue
-    .line 174
+    .line 285
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 175
+    .line 286
     iput-object p3, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;->filterTerm:Ljava/lang/String;
 
-    .line 176
+    .line 287
     iput p4, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;->stringId:I
 
-    .line 177
+    .line 288
     return-void
 .end method
 
@@ -96,7 +98,7 @@
     .parameter
 
     .prologue
-    .line 163
+    .line 272
     const-class v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -112,7 +114,7 @@
     .registers 1
 
     .prologue
-    .line 163
+    .line 272
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;->$VALUES:[Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;
 
     invoke-virtual {v0}, [Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;->clone()Ljava/lang/Object;
@@ -130,7 +132,7 @@
     .registers 2
 
     .prologue
-    .line 181
+    .line 292
     iget-object v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;->filterTerm:Ljava/lang/String;
 
     return-object v0

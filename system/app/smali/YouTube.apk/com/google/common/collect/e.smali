@@ -1,5 +1,5 @@
 .class final Lcom/google/common/collect/e;
-.super Lcom/google/common/collect/bt;
+.super Lcom/google/common/collect/dc;
 .source "SourceFile"
 
 
@@ -8,29 +8,27 @@
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/common/collect/AbstractBiMap;)V
-    .registers 3
+.method private constructor <init>(Lcom/google/common/collect/AbstractBiMap;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 164
-    const/4 v0, 0x0
+    .line 168
+    iput-object p1, p0, Lcom/google/common/collect/e;->a:Lcom/google/common/collect/AbstractBiMap;
 
-    invoke-direct {p0, p1, v0}, Lcom/google/common/collect/e;-><init>(Lcom/google/common/collect/AbstractBiMap;B)V
+    invoke-direct {p0}, Lcom/google/common/collect/dc;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>(Lcom/google/common/collect/AbstractBiMap;B)V
+.method synthetic constructor <init>(Lcom/google/common/collect/AbstractBiMap;B)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 164
-    iput-object p1, p0, Lcom/google/common/collect/e;->a:Lcom/google/common/collect/AbstractBiMap;
-
-    invoke-direct {p0}, Lcom/google/common/collect/bt;-><init>()V
+    .line 168
+    invoke-direct {p0, p1}, Lcom/google/common/collect/e;-><init>(Lcom/google/common/collect/AbstractBiMap;)V
 
     return-void
 .end method
@@ -41,7 +39,7 @@
     .registers 2
 
     .prologue
-    .line 166
+    .line 170
     iget-object v0, p0, Lcom/google/common/collect/e;->a:Lcom/google/common/collect/AbstractBiMap;
 
     #getter for: Lcom/google/common/collect/AbstractBiMap;->delegate:Ljava/util/Map;
@@ -60,12 +58,12 @@
     .registers 2
 
     .prologue
-    .line 170
+    .line 174
     iget-object v0, p0, Lcom/google/common/collect/e;->a:Lcom/google/common/collect/AbstractBiMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/AbstractBiMap;->clear()V
 
-    .line 171
+    .line 175
     return-void
 .end method
 
@@ -73,7 +71,7 @@
     .registers 2
 
     .prologue
-    .line 164
+    .line 168
     invoke-virtual {p0}, Lcom/google/common/collect/e;->a()Ljava/util/Set;
 
     move-result-object v0
@@ -85,7 +83,7 @@
     .registers 2
 
     .prologue
-    .line 164
+    .line 168
     invoke-virtual {p0}, Lcom/google/common/collect/e;->a()Ljava/util/Set;
 
     move-result-object v0
@@ -97,7 +95,7 @@
     .registers 3
 
     .prologue
-    .line 190
+    .line 194
     iget-object v0, p0, Lcom/google/common/collect/e;->a:Lcom/google/common/collect/AbstractBiMap;
 
     #getter for: Lcom/google/common/collect/AbstractBiMap;->delegate:Ljava/util/Map;
@@ -113,7 +111,7 @@
 
     move-result-object v0
 
-    .line 191
+    .line 195
     new-instance v1, Lcom/google/common/collect/f;
 
     invoke-direct {v1, p0, v0}, Lcom/google/common/collect/f;-><init>(Lcom/google/common/collect/e;Ljava/util/Iterator;)V
@@ -126,28 +124,28 @@
     .parameter
 
     .prologue
-    .line 174
+    .line 178
     invoke-virtual {p0, p1}, Lcom/google/common/collect/e;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 175
+    .line 179
     const/4 v0, 0x0
 
-    .line 178
+    .line 182
     :goto_7
     return v0
 
-    .line 177
+    .line 181
     :cond_8
     iget-object v0, p0, Lcom/google/common/collect/e;->a:Lcom/google/common/collect/AbstractBiMap;
 
     #calls: Lcom/google/common/collect/AbstractBiMap;->removeFromBothMaps(Ljava/lang/Object;)Ljava/lang/Object;
     invoke-static {v0, p1}, Lcom/google/common/collect/AbstractBiMap;->access$300(Lcom/google/common/collect/AbstractBiMap;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 178
+    .line 182
     const/4 v0, 0x1
 
     goto :goto_7
@@ -158,12 +156,8 @@
     .parameter
 
     .prologue
-    .line 182
-    invoke-virtual {p0}, Lcom/google/common/collect/e;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lcom/google/common/collect/cr;->a(Ljava/util/Iterator;Ljava/util/Collection;)Z
+    .line 186
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/e;->standardRemoveAll(Ljava/util/Collection;)Z
 
     move-result v0
 
@@ -175,12 +169,8 @@
     .parameter
 
     .prologue
-    .line 186
-    invoke-virtual {p0}, Lcom/google/common/collect/e;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lcom/google/common/collect/cr;->b(Ljava/util/Iterator;Ljava/util/Collection;)Z
+    .line 190
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/e;->standardRetainAll(Ljava/util/Collection;)Z
 
     move-result v0
 

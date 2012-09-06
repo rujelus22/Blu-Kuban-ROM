@@ -12,7 +12,7 @@
     .registers 3
 
     .prologue
-    .line 244
+    .line 246
     invoke-static {}, Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;->values()[Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;
 
     move-result-object v0

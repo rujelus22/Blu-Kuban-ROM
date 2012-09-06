@@ -1,193 +1,136 @@
-.class public Lx/N;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lx/av;
+.class public final enum Lx/n;
+.super Ljava/lang/Enum;
+.source "SourceFile"
 
 
 # static fields
-.field protected static final b:Lt/ae;
+.field public static final enum a:Lx/n;
 
+.field public static final enum b:Lx/n;
 
-# instance fields
-.field protected final a:Lz/g;
+.field public static final enum c:Lx/n;
+
+.field public static final enum d:Lx/n;
+
+.field private static final synthetic e:[Lx/n;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .registers 6
 
-    new-instance v0, Lt/G;
+    .prologue
+    const/4 v5, 0x3
 
-    invoke-direct {v0}, Lt/G;-><init>()V
+    const/4 v4, 0x2
 
-    sput-object v0, Lx/N;->b:Lt/ae;
+    const/4 v3, 0x1
 
-    return-void
-.end method
+    const/4 v2, 0x0
 
-.method public constructor <init>(I)V
-    .registers 3
+    .line 34
+    new-instance v0, Lx/n;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v1, "CCW_OUTLINE"
 
-    new-instance v0, Lz/g;
+    invoke-direct {v0, v1, v2}, Lx/n;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v0, p1}, Lz/g;-><init>(I)V
+    sput-object v0, Lx/n;->a:Lx/n;
 
-    iput-object v0, p0, Lx/N;->a:Lz/g;
+    .line 35
+    new-instance v0, Lx/n;
 
-    return-void
-.end method
+    const-string v1, "CW_HOLES"
 
+    invoke-direct {v0, v1, v3}, Lx/n;-><init>(Ljava/lang/String;I)V
 
-# virtual methods
-.method public a(Lt/af;Lt/ae;)V
-    .registers 5
+    sput-object v0, Lx/n;->b:Lx/n;
 
-    iget-object v1, p0, Lx/N;->a:Lz/g;
+    .line 36
+    new-instance v0, Lx/n;
 
-    monitor-enter v1
+    const-string v1, "NON_SELF_INTERSECTING"
 
-    :try_start_3
-    iget-object v0, p0, Lx/N;->a:Lz/g;
+    invoke-direct {v0, v1, v4}, Lx/n;-><init>(Ljava/lang/String;I)V
 
-    invoke-virtual {v0, p1, p2}, Lz/g;->c(Ljava/lang/Object;Ljava/lang/Object;)V
+    sput-object v0, Lx/n;->c:Lx/n;
 
-    monitor-exit v1
+    .line 37
+    new-instance v0, Lx/n;
 
-    return-void
+    const-string v1, "NO_LINES_STICKING_OUT"
 
-    :catchall_a
-    move-exception v0
+    invoke-direct {v0, v1, v5}, Lx/n;-><init>(Ljava/lang/String;I)V
 
-    monitor-exit v1
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    sput-object v0, Lx/n;->d:Lx/n;
 
-    throw v0
-.end method
+    .line 33
+    const/4 v0, 0x4
 
-.method public a()Z
-    .registers 3
+    new-array v0, v0, [Lx/n;
 
-    iget-object v1, p0, Lx/N;->a:Lz/g;
+    sget-object v1, Lx/n;->a:Lx/n;
 
-    monitor-enter v1
+    aput-object v1, v0, v2
 
-    :try_start_3
-    iget-object v0, p0, Lx/N;->a:Lz/g;
+    sget-object v1, Lx/n;->b:Lx/n;
 
-    invoke-virtual {v0}, Lz/g;->f()V
+    aput-object v1, v0, v3
 
-    monitor-exit v1
+    sget-object v1, Lx/n;->c:Lx/n;
 
-    const/4 v0, 0x1
+    aput-object v1, v0, v4
 
-    return v0
+    sget-object v1, Lx/n;->d:Lx/n;
 
-    :catchall_b
-    move-exception v0
+    aput-object v1, v0, v5
 
-    monitor-exit v1
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
-
-    throw v0
-.end method
-
-.method public a(Lt/ae;)Z
-    .registers 3
-
-    sget-object v0, Lx/N;->b:Lt/ae;
-
-    if-ne p1, v0, :cond_6
-
-    const/4 v0, 0x1
-
-    :goto_5
-    return v0
-
-    :cond_6
-    const/4 v0, 0x0
-
-    goto :goto_5
-.end method
-
-.method public a_(Lt/af;)V
-    .registers 3
-
-    sget-object v0, Lx/N;->b:Lt/ae;
-
-    invoke-virtual {p0, p1, v0}, Lx/N;->a(Lt/af;Lt/ae;)V
+    sput-object v0, Lx/n;->e:[Lx/n;
 
     return-void
 .end method
 
-.method public b(Lt/af;)Z
-    .registers 4
+.method private constructor <init>(Ljava/lang/String;I)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iget-object v1, p0, Lx/N;->a:Lz/g;
+    .prologue
+    .line 33
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    monitor-enter v1
+    return-void
+.end method
 
-    :try_start_3
-    iget-object v0, p0, Lx/N;->a:Lz/g;
+.method public static valueOf(Ljava/lang/String;)Lx/n;
+    .registers 2
+    .parameter
 
-    invoke-virtual {v0, p1}, Lz/g;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    .prologue
+    .line 33
+    const-class v0, Lx/n;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object v0
 
-    if-eqz v0, :cond_e
-
-    const/4 v0, 0x1
-
-    :goto_c
-    monitor-exit v1
-
-    return v0
-
-    :cond_e
-    const/4 v0, 0x0
-
-    goto :goto_c
-
-    :catchall_10
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_12
-    .catchall {:try_start_3 .. :try_end_12} :catchall_10
-
-    throw v0
-.end method
-
-.method public c(Lt/af;)Lt/ae;
-    .registers 4
-
-    iget-object v1, p0, Lx/N;->a:Lz/g;
-
-    monitor-enter v1
-
-    :try_start_3
-    iget-object v0, p0, Lx/N;->a:Lz/g;
-
-    invoke-virtual {v0, p1}, Lz/g;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lt/ae;
-
-    monitor-exit v1
+    check-cast v0, Lx/n;
 
     return-object v0
+.end method
 
-    :catchall_d
-    move-exception v0
+.method public static values()[Lx/n;
+    .registers 1
 
-    monitor-exit v1
-    :try_end_f
-    .catchall {:try_start_3 .. :try_end_f} :catchall_d
+    .prologue
+    .line 33
+    sget-object v0, Lx/n;->e:[Lx/n;
 
-    throw v0
+    invoke-virtual {v0}, [Lx/n;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lx/n;
+
+    return-object v0
 .end method

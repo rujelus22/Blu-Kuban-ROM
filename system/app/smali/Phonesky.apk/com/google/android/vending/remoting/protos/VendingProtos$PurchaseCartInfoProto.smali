@@ -55,55 +55,55 @@
     .registers 3
 
     .prologue
-    .line 7587
+    .line 7733
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 7592
+    .line 7738
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->itemPrice_:Ljava/lang/String;
 
-    .line 7609
+    .line 7755
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->taxInclusive_:Ljava/lang/String;
 
-    .line 7626
+    .line 7772
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->taxExclusive_:Ljava/lang/String;
 
-    .line 7643
+    .line 7789
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->total_:Ljava/lang/String;
 
-    .line 7660
+    .line 7806
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->taxMessage_:Ljava/lang/String;
 
-    .line 7677
+    .line 7823
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->footerMessage_:Ljava/lang/String;
 
-    .line 7694
+    .line 7840
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->priceCurrency_:Ljava/lang/String;
 
-    .line 7711
+    .line 7857
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->priceMicros_:J
 
-    .line 7774
+    .line 7921
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->cachedSize:I
 
-    .line 7587
+    .line 7733
     return-void
 .end method
 
@@ -113,15 +113,15 @@
     .registers 2
 
     .prologue
-    .line 7776
+    .line 7924
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 7778
+    .line 7926
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getSerializedSize()I
 
-    .line 7780
+    .line 7928
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->cachedSize:I
 
@@ -132,7 +132,7 @@
     .registers 2
 
     .prologue
-    .line 7678
+    .line 7824
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->footerMessage_:Ljava/lang/String;
 
     return-object v0
@@ -142,7 +142,7 @@
     .registers 2
 
     .prologue
-    .line 7593
+    .line 7739
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->itemPrice_:Ljava/lang/String;
 
     return-object v0
@@ -152,7 +152,7 @@
     .registers 2
 
     .prologue
-    .line 7695
+    .line 7841
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->priceCurrency_:Ljava/lang/String;
 
     return-object v0
@@ -162,7 +162,7 @@
     .registers 3
 
     .prologue
-    .line 7712
+    .line 7858
     iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->priceMicros_:J
 
     return-wide v0
@@ -172,10 +172,10 @@
     .registers 5
 
     .prologue
-    .line 7784
+    .line 7933
     const/4 v0, 0x0
 
-    .line 7785
+    .line 7934
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasItemPrice()Z
 
@@ -183,7 +183,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 7786
+    .line 7935
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getItemPrice()Ljava/lang/String;
@@ -196,7 +196,7 @@
 
     add-int/2addr v0, v1
 
-    .line 7789
+    .line 7938
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasTaxInclusive()Z
 
@@ -204,7 +204,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 7790
+    .line 7939
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getTaxInclusive()Ljava/lang/String;
@@ -217,7 +217,7 @@
 
     add-int/2addr v0, v1
 
-    .line 7793
+    .line 7942
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasTaxExclusive()Z
 
@@ -225,7 +225,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 7794
+    .line 7943
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getTaxExclusive()Ljava/lang/String;
@@ -238,7 +238,7 @@
 
     add-int/2addr v0, v1
 
-    .line 7797
+    .line 7946
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasTotal()Z
 
@@ -246,7 +246,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 7798
+    .line 7947
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getTotal()Ljava/lang/String;
@@ -259,7 +259,7 @@
 
     add-int/2addr v0, v1
 
-    .line 7801
+    .line 7950
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasTaxMessage()Z
 
@@ -267,7 +267,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 7802
+    .line 7951
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getTaxMessage()Ljava/lang/String;
@@ -280,7 +280,7 @@
 
     add-int/2addr v0, v1
 
-    .line 7805
+    .line 7954
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasFooterMessage()Z
 
@@ -288,7 +288,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 7806
+    .line 7955
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getFooterMessage()Ljava/lang/String;
@@ -301,7 +301,7 @@
 
     add-int/2addr v0, v1
 
-    .line 7809
+    .line 7958
     :cond_61
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasPriceCurrency()Z
 
@@ -309,7 +309,7 @@
 
     if-eqz v1, :cond_71
 
-    .line 7810
+    .line 7959
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getPriceCurrency()Ljava/lang/String;
@@ -322,7 +322,7 @@
 
     add-int/2addr v0, v1
 
-    .line 7813
+    .line 7962
     :cond_71
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasPriceMicros()Z
 
@@ -330,7 +330,7 @@
 
     if-eqz v1, :cond_82
 
-    .line 7814
+    .line 7963
     const/16 v1, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getPriceMicros()J
@@ -343,11 +343,11 @@
 
     add-int/2addr v0, v1
 
-    .line 7817
+    .line 7966
     :cond_82
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->cachedSize:I
 
-    .line 7818
+    .line 7967
     return v0
 .end method
 
@@ -355,7 +355,7 @@
     .registers 2
 
     .prologue
-    .line 7627
+    .line 7773
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->taxExclusive_:Ljava/lang/String;
 
     return-object v0
@@ -365,7 +365,7 @@
     .registers 2
 
     .prologue
-    .line 7610
+    .line 7756
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->taxInclusive_:Ljava/lang/String;
 
     return-object v0
@@ -375,7 +375,7 @@
     .registers 2
 
     .prologue
-    .line 7661
+    .line 7807
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->taxMessage_:Ljava/lang/String;
 
     return-object v0
@@ -385,7 +385,7 @@
     .registers 2
 
     .prologue
-    .line 7644
+    .line 7790
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->total_:Ljava/lang/String;
 
     return-object v0
@@ -395,7 +395,7 @@
     .registers 2
 
     .prologue
-    .line 7679
+    .line 7825
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasFooterMessage:Z
 
     return v0
@@ -405,7 +405,7 @@
     .registers 2
 
     .prologue
-    .line 7594
+    .line 7740
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasItemPrice:Z
 
     return v0
@@ -415,7 +415,7 @@
     .registers 2
 
     .prologue
-    .line 7696
+    .line 7842
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasPriceCurrency:Z
 
     return v0
@@ -425,7 +425,7 @@
     .registers 2
 
     .prologue
-    .line 7713
+    .line 7859
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasPriceMicros:Z
 
     return v0
@@ -435,7 +435,7 @@
     .registers 2
 
     .prologue
-    .line 7628
+    .line 7774
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasTaxExclusive:Z
 
     return v0
@@ -445,7 +445,7 @@
     .registers 2
 
     .prologue
-    .line 7611
+    .line 7757
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasTaxInclusive:Z
 
     return v0
@@ -455,7 +455,7 @@
     .registers 2
 
     .prologue
-    .line 7662
+    .line 7808
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasTaxMessage:Z
 
     return v0
@@ -465,7 +465,7 @@
     .registers 2
 
     .prologue
-    .line 7645
+    .line 7791
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasTotal:Z
 
     return v0
@@ -481,29 +481,29 @@
     .end annotation
 
     .prologue
-    .line 7825
+    .line 7975
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 7826
+    .line 7976
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_4e
 
-    .line 7830
+    .line 7980
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 7831
+    .line 7981
     :sswitch_d
     return-object p0
 
-    .line 7836
+    .line 7986
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -513,7 +513,7 @@
 
     goto :goto_0
 
-    .line 7840
+    .line 7990
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -523,7 +523,7 @@
 
     goto :goto_0
 
-    .line 7844
+    .line 7994
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -533,7 +533,7 @@
 
     goto :goto_0
 
-    .line 7848
+    .line 7998
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -543,7 +543,7 @@
 
     goto :goto_0
 
-    .line 7852
+    .line 8002
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -553,7 +553,7 @@
 
     goto :goto_0
 
-    .line 7856
+    .line 8006
     :sswitch_36
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -563,7 +563,7 @@
 
     goto :goto_0
 
-    .line 7860
+    .line 8010
     :sswitch_3e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -573,7 +573,7 @@
 
     goto :goto_0
 
-    .line 7864
+    .line 8014
     :sswitch_46
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -583,7 +583,7 @@
 
     goto :goto_0
 
-    .line 7826
+    .line 7976
     :sswitch_data_4e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -608,7 +608,7 @@
     .end annotation
 
     .prologue
-    .line 7585
+    .line 7731
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;
 
     move-result-object v0
@@ -621,15 +621,15 @@
     .parameter "value"
 
     .prologue
-    .line 7681
+    .line 7827
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasFooterMessage:Z
 
-    .line 7682
+    .line 7828
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->footerMessage_:Ljava/lang/String;
 
-    .line 7683
+    .line 7829
     return-object p0
 .end method
 
@@ -638,15 +638,15 @@
     .parameter "value"
 
     .prologue
-    .line 7596
+    .line 7742
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasItemPrice:Z
 
-    .line 7597
+    .line 7743
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->itemPrice_:Ljava/lang/String;
 
-    .line 7598
+    .line 7744
     return-object p0
 .end method
 
@@ -655,15 +655,15 @@
     .parameter "value"
 
     .prologue
-    .line 7698
+    .line 7844
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasPriceCurrency:Z
 
-    .line 7699
+    .line 7845
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->priceCurrency_:Ljava/lang/String;
 
-    .line 7700
+    .line 7846
     return-object p0
 .end method
 
@@ -672,15 +672,15 @@
     .parameter "value"
 
     .prologue
-    .line 7715
+    .line 7861
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasPriceMicros:Z
 
-    .line 7716
+    .line 7862
     iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->priceMicros_:J
 
-    .line 7717
+    .line 7863
     return-object p0
 .end method
 
@@ -689,15 +689,15 @@
     .parameter "value"
 
     .prologue
-    .line 7630
+    .line 7776
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasTaxExclusive:Z
 
-    .line 7631
+    .line 7777
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->taxExclusive_:Ljava/lang/String;
 
-    .line 7632
+    .line 7778
     return-object p0
 .end method
 
@@ -706,15 +706,15 @@
     .parameter "value"
 
     .prologue
-    .line 7613
+    .line 7759
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasTaxInclusive:Z
 
-    .line 7614
+    .line 7760
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->taxInclusive_:Ljava/lang/String;
 
-    .line 7615
+    .line 7761
     return-object p0
 .end method
 
@@ -723,15 +723,15 @@
     .parameter "value"
 
     .prologue
-    .line 7664
+    .line 7810
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasTaxMessage:Z
 
-    .line 7665
+    .line 7811
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->taxMessage_:Ljava/lang/String;
 
-    .line 7666
+    .line 7812
     return-object p0
 .end method
 
@@ -740,15 +740,15 @@
     .parameter "value"
 
     .prologue
-    .line 7647
+    .line 7793
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasTotal:Z
 
-    .line 7648
+    .line 7794
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->total_:Ljava/lang/String;
 
-    .line 7649
+    .line 7795
     return-object p0
 .end method
 
@@ -762,14 +762,14 @@
     .end annotation
 
     .prologue
-    .line 7748
+    .line 7895
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasItemPrice()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 7749
+    .line 7896
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getItemPrice()Ljava/lang/String;
@@ -778,7 +778,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 7751
+    .line 7898
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasTaxInclusive()Z
 
@@ -786,7 +786,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 7752
+    .line 7899
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getTaxInclusive()Ljava/lang/String;
@@ -795,7 +795,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 7754
+    .line 7901
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasTaxExclusive()Z
 
@@ -803,7 +803,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 7755
+    .line 7902
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getTaxExclusive()Ljava/lang/String;
@@ -812,7 +812,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 7757
+    .line 7904
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasTotal()Z
 
@@ -820,7 +820,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 7758
+    .line 7905
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getTotal()Ljava/lang/String;
@@ -829,7 +829,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 7760
+    .line 7907
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasTaxMessage()Z
 
@@ -837,7 +837,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 7761
+    .line 7908
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getTaxMessage()Ljava/lang/String;
@@ -846,7 +846,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 7763
+    .line 7910
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasFooterMessage()Z
 
@@ -854,7 +854,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 7764
+    .line 7911
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getFooterMessage()Ljava/lang/String;
@@ -863,7 +863,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 7766
+    .line 7913
     :cond_54
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasPriceCurrency()Z
 
@@ -871,7 +871,7 @@
 
     if-eqz v0, :cond_62
 
-    .line 7767
+    .line 7914
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getPriceCurrency()Ljava/lang/String;
@@ -880,7 +880,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 7769
+    .line 7916
     :cond_62
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->hasPriceMicros()Z
 
@@ -888,7 +888,7 @@
 
     if-eqz v0, :cond_71
 
-    .line 7770
+    .line 7917
     const/16 v0, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseCartInfoProto;->getPriceMicros()J
@@ -897,7 +897,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 7772
+    .line 7919
     :cond_71
     return-void
 .end method

@@ -1,5 +1,5 @@
 .class public Lcom/google/android/finsky/activities/FlagItemDialog;
-.super Lcom/google/android/finsky/activities/PhoneskyActivity;
+.super Lcom/google/android/finsky/activities/AuthenticatedActivity;
 .source "FlagItemDialog.java"
 
 # interfaces
@@ -11,8 +11,6 @@
 
 .field private mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
-.field private mUrl:Ljava/lang/String;
-
 
 # direct methods
 .method public constructor <init>()V
@@ -20,9 +18,9 @@
 
     .prologue
     .line 24
-    invoke-direct {p0}, Lcom/google/android/finsky/activities/PhoneskyActivity;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/finsky/activities/AuthenticatedActivity;-><init>()V
 
-    .line 30
+    .line 29
     new-instance v0, Lcom/google/android/finsky/activities/FakeNavigationManager;
 
     invoke-direct {v0, p0}, Lcom/google/android/finsky/activities/FakeNavigationManager;-><init>(Landroid/app/Activity;)V
@@ -38,27 +36,27 @@
     .parameter
 
     .prologue
-    .line 33
+    .line 32
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/google/android/finsky/activities/FlagItemDialog;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 34
+    .line 33
     const-string v1, "url"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 35
+    .line 34
     const/high16 v1, 0x2001
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 36
+    .line 35
     invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 37
+    .line 36
     return-void
 .end method
 
@@ -68,7 +66,7 @@
     .registers 2
 
     .prologue
-    .line 64
+    .line 65
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
@@ -84,7 +82,7 @@
     .registers 2
 
     .prologue
-    .line 69
+    .line 70
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
@@ -100,7 +98,7 @@
     .registers 2
 
     .prologue
-    .line 74
+    .line 75
     const/4 v0, 0x0
 
     return-object v0
@@ -110,57 +108,95 @@
     .registers 1
 
     .prologue
-    .line 79
+    .line 80
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/FlagItemDialog;->finish()V
 
-    .line 80
+    .line 81
     return-void
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .registers 5
+    .registers 9
     .parameter "savedInstanceState"
 
     .prologue
+    const v6, 0x7f080033
+
+    .line 40
+    const v4, 0x7f04005f
+
+    invoke-virtual {p0, v4}, Lcom/google/android/finsky/activities/FlagItemDialog;->setContentView(I)V
+
     .line 41
-    const v1, 0x7f04005d
+    invoke-super {p0, p1}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->onCreate(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0, v1}, Lcom/google/android/finsky/activities/FlagItemDialog;->setContentView(I)V
+    .line 43
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/FlagItemDialog;->getIntent()Landroid/content/Intent;
 
-    .line 42
-    invoke-super {p0, p1}, Lcom/google/android/finsky/activities/PhoneskyActivity;->onCreate(Landroid/os/Bundle;)V
+    move-result-object v2
 
     .line 44
-    invoke-virtual {p0}, Lcom/google/android/finsky/activities/FlagItemDialog;->getIntent()Landroid/content/Intent;
+    .local v2, intent:Landroid/content/Intent;
+    const-string v4, "url"
+
+    invoke-virtual {v2, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 46
+    .local v3, url:Ljava/lang/String;
+    invoke-static {p0}, Lcom/google/android/finsky/layout/CustomActionBarFactory;->getInstance(Landroid/app/Activity;)Lcom/google/android/finsky/layout/CustomActionBar;
+
+    move-result-object v4
+
+    iput-object v4, p0, Lcom/google/android/finsky/activities/FlagItemDialog;->mActionBar:Lcom/google/android/finsky/layout/CustomActionBar;
+
+    .line 47
+    iget-object v4, p0, Lcom/google/android/finsky/activities/FlagItemDialog;->mActionBar:Lcom/google/android/finsky/layout/CustomActionBar;
+
+    iget-object v5, p0, Lcom/google/android/finsky/activities/FlagItemDialog;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+
+    invoke-interface {v4, v5, p0}, Lcom/google/android/finsky/layout/CustomActionBar;->initialize(Lcom/google/android/finsky/navigationmanager/NavigationManager;Landroid/app/Activity;)V
+
+    .line 49
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/FlagItemDialog;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v6}, Landroid/support/v4/app/FragmentManager;->findFragmentById(I)Landroid/support/v4/app/Fragment;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_2e
+
+    .line 56
+    :goto_2d
+    return-void
+
+    .line 52
+    :cond_2e
+    invoke-static {v3}, Lcom/google/android/finsky/activities/FlagItemFragment;->newInstance(Ljava/lang/String;)Lcom/google/android/finsky/activities/FlagItemFragment;
 
     move-result-object v0
 
-    .line 45
-    .local v0, intent:Landroid/content/Intent;
-    const-string v1, "url"
+    .line 53
+    .local v0, fragment:Lcom/google/android/finsky/activities/FlagItemFragment;
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/FlagItemDialog;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v4
 
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/google/android/finsky/activities/FlagItemDialog;->mUrl:Ljava/lang/String;
-
-    .line 47
-    invoke-static {p0}, Lcom/google/android/finsky/layout/CustomActionBarFactory;->getInstance(Landroid/app/Activity;)Lcom/google/android/finsky/layout/CustomActionBar;
+    invoke-virtual {v4}, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/google/android/finsky/activities/FlagItemDialog;->mActionBar:Lcom/google/android/finsky/layout/CustomActionBar;
+    .line 54
+    .local v1, ft:Landroid/support/v4/app/FragmentTransaction;
+    invoke-virtual {v1, v6, v0}, Landroid/support/v4/app/FragmentTransaction;->add(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 
-    .line 48
-    iget-object v1, p0, Lcom/google/android/finsky/activities/FlagItemDialog;->mActionBar:Lcom/google/android/finsky/layout/CustomActionBar;
+    .line 55
+    invoke-virtual {v1}, Landroid/support/v4/app/FragmentTransaction;->commit()I
 
-    iget-object v2, p0, Lcom/google/android/finsky/activities/FlagItemDialog;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
-
-    invoke-interface {v1, v2, p0}, Lcom/google/android/finsky/layout/CustomActionBar;->initialize(Lcom/google/android/finsky/navigationmanager/NavigationManager;Landroid/app/Activity;)V
-
-    .line 49
-    return-void
+    goto :goto_2d
 .end method
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
@@ -168,7 +204,7 @@
     .parameter "item"
 
     .prologue
-    .line 99
+    .line 100
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v0
@@ -177,18 +213,18 @@
 
     if-ne v0, v1, :cond_e
 
-    .line 100
+    .line 101
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/FlagItemDialog;->finish()V
 
-    .line 101
+    .line 102
     const/4 v0, 0x1
 
-    .line 103
+    .line 104
     :goto_d
     return v0
 
     :cond_e
-    invoke-super {p0, p1}, Lcom/google/android/finsky/activities/PhoneskyActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    invoke-super {p0, p1}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v0
 
@@ -196,53 +232,12 @@
 .end method
 
 .method protected onReady(Z)V
-    .registers 6
+    .registers 2
     .parameter "shouldHandleIntent"
 
     .prologue
-    const v3, 0x7f08003e
-
-    .line 53
-    invoke-virtual {p0}, Lcom/google/android/finsky/activities/FlagItemDialog;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentManager;->findFragmentById(I)Landroid/support/v4/app/Fragment;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_e
-
-    .line 60
-    :goto_d
+    .line 61
     return-void
-
-    .line 56
-    :cond_e
-    iget-object v2, p0, Lcom/google/android/finsky/activities/FlagItemDialog;->mUrl:Ljava/lang/String;
-
-    invoke-static {v2}, Lcom/google/android/finsky/activities/FlagItemFragment;->newInstance(Ljava/lang/String;)Lcom/google/android/finsky/activities/FlagItemFragment;
-
-    move-result-object v0
-
-    .line 57
-    .local v0, fragment:Lcom/google/android/finsky/activities/FlagItemFragment;
-    invoke-virtual {p0}, Lcom/google/android/finsky/activities/FlagItemDialog;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
-
-    move-result-object v1
-
-    .line 58
-    .local v1, ft:Landroid/support/v4/app/FragmentTransaction;
-    invoke-virtual {v1, v3, v0}, Landroid/support/v4/app/FragmentTransaction;->add(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
-
-    .line 59
-    invoke-virtual {v1}, Landroid/support/v4/app/FragmentTransaction;->commit()I
-
-    goto :goto_d
 .end method
 
 .method public showErrorDialog(Ljava/lang/String;Ljava/lang/String;Z)V
@@ -252,14 +247,14 @@
     .parameter "goBack"
 
     .prologue
-    .line 84
+    .line 85
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/FlagItemDialog;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v0
 
     invoke-static {v0, p1, p2, p3}, Lcom/google/android/finsky/activities/ErrorDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;Ljava/lang/String;Z)Lcom/google/android/finsky/activities/ErrorDialog;
 
-    .line 85
+    .line 86
     return-void
 .end method
 
@@ -268,12 +263,12 @@
     .parameter "breadcrumb"
 
     .prologue
-    .line 89
+    .line 90
     iget-object v0, p0, Lcom/google/android/finsky/activities/FlagItemDialog;->mActionBar:Lcom/google/android/finsky/layout/CustomActionBar;
 
     invoke-interface {v0, p1}, Lcom/google/android/finsky/layout/CustomActionBar;->updateBreadcrumb(Ljava/lang/String;)V
 
-    .line 90
+    .line 91
     return-void
 .end method
 
@@ -282,11 +277,11 @@
     .parameter "backend"
 
     .prologue
-    .line 94
+    .line 95
     iget-object v0, p0, Lcom/google/android/finsky/activities/FlagItemDialog;->mActionBar:Lcom/google/android/finsky/layout/CustomActionBar;
 
     invoke-interface {v0, p1}, Lcom/google/android/finsky/layout/CustomActionBar;->updateCurrentBackendId(I)V
 
-    .line 95
+    .line 96
     return-void
 .end method

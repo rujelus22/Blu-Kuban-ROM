@@ -20,7 +20,7 @@
     .registers 1
 
     .prologue
-    .line 47
+    .line 49
     new-instance v0, Lorg/apache/james/mime4j/field/address/Builder;
 
     invoke-direct {v0}, Lorg/apache/james/mime4j/field/address/Builder;-><init>()V
@@ -34,10 +34,10 @@
     .registers 1
 
     .prologue
-    .line 45
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 47
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 197
+    .line 214
     return-void
 .end method
 
@@ -47,20 +47,20 @@
     .parameter "specialToken"
 
     .prologue
-    .line 191
+    .line 208
     if-eqz p2, :cond_c
 
-    .line 192
+    .line 209
     iget-object v0, p2, Lorg/apache/james/mime4j/field/address/parser/Token;->specialToken:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     invoke-direct {p0, p1, v0}, Lorg/apache/james/mime4j/field/address/Builder;->addSpecials(Ljava/lang/StringBuffer;Lorg/apache/james/mime4j/field/address/parser/Token;)V
 
-    .line 193
+    .line 210
     iget-object v0, p2, Lorg/apache/james/mime4j/field/address/parser/Token;->image:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 195
+    .line 212
     :cond_c
     return-void
 .end method
@@ -73,12 +73,12 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 168
+    .line 184
     new-instance v1, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;
 
     invoke-direct {v1, p2}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;-><init>(Lorg/apache/james/mime4j/field/address/parser/SimpleNode;)V
 
-    .line 169
+    .line 185
     .local v1, it:Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;
     invoke-virtual {v1}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->nextNode()Lorg/apache/james/mime4j/field/address/parser/Node;
 
@@ -90,7 +90,7 @@
 
     move-result-object v2
 
-    .line 170
+    .line 186
     .local v2, localPart:Ljava/lang/String;
     invoke-virtual {v1}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->nextNode()Lorg/apache/james/mime4j/field/address/parser/Node;
 
@@ -102,7 +102,7 @@
 
     move-result-object v0
 
-    .line 171
+    .line 187
     .local v0, domain:Ljava/lang/String;
     new-instance v3, Lorg/apache/james/mime4j/field/address/Mailbox;
 
@@ -116,7 +116,7 @@
     .parameter "node"
 
     .prologue
-    .line 164
+    .line 181
     const/4 v0, 0x0
 
     invoke-direct {p0, v0, p1}, Lorg/apache/james/mime4j/field/address/Builder;->buildAddrSpec(Lorg/apache/james/mime4j/field/address/DomainList;Lorg/apache/james/mime4j/field/address/parser/ASTaddr_spec;)Lorg/apache/james/mime4j/field/address/Mailbox;
@@ -131,24 +131,24 @@
     .parameter "node"
 
     .prologue
-    .line 64
+    .line 68
     new-instance v0, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;
 
     invoke-direct {v0, p1}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;-><init>(Lorg/apache/james/mime4j/field/address/parser/SimpleNode;)V
 
-    .line 65
+    .line 69
     .local v0, it:Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;
     invoke-virtual {v0}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->nextNode()Lorg/apache/james/mime4j/field/address/parser/Node;
 
     move-result-object v1
 
-    .line 66
+    .line 70
     .local v1, n:Lorg/apache/james/mime4j/field/address/parser/Node;
     instance-of v4, v1, Lorg/apache/james/mime4j/field/address/parser/ASTaddr_spec;
 
     if-eqz v4, :cond_14
 
-    .line 67
+    .line 71
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ASTaddr_spec;
 
     .end local v1           #n:Lorg/apache/james/mime4j/field/address/parser/Node;
@@ -156,18 +156,18 @@
 
     move-result-object v4
 
-    .line 77
+    .line 84
     :goto_13
     return-object v4
 
-    .line 68
+    .line 73
     .restart local v1       #n:Lorg/apache/james/mime4j/field/address/parser/Node;
     :cond_14
     instance-of v4, v1, Lorg/apache/james/mime4j/field/address/parser/ASTangle_addr;
 
     if-eqz v4, :cond_1f
 
-    .line 69
+    .line 74
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ASTangle_addr;
 
     .end local v1           #n:Lorg/apache/james/mime4j/field/address/parser/Node;
@@ -177,14 +177,14 @@
 
     goto :goto_13
 
-    .line 70
+    .line 76
     .restart local v1       #n:Lorg/apache/james/mime4j/field/address/parser/Node;
     :cond_1f
     instance-of v4, v1, Lorg/apache/james/mime4j/field/address/parser/ASTphrase;
 
     if-eqz v4, :cond_58
 
-    .line 71
+    .line 77
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ASTphrase;
 
     .end local v1           #n:Lorg/apache/james/mime4j/field/address/parser/Node;
@@ -194,19 +194,19 @@
 
     move-result-object v3
 
-    .line 72
+    .line 78
     .local v3, name:Ljava/lang/String;
     invoke-virtual {v0}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->nextNode()Lorg/apache/james/mime4j/field/address/parser/Node;
 
     move-result-object v2
 
-    .line 73
+    .line 79
     .local v2, n2:Lorg/apache/james/mime4j/field/address/parser/Node;
     instance-of v4, v2, Lorg/apache/james/mime4j/field/address/parser/ASTgroup_body;
 
     if-eqz v4, :cond_3e
 
-    .line 74
+    .line 80
     new-instance v4, Lorg/apache/james/mime4j/field/address/Group;
 
     check-cast v2, Lorg/apache/james/mime4j/field/address/parser/ASTgroup_body;
@@ -220,19 +220,19 @@
 
     goto :goto_13
 
-    .line 75
+    .line 82
     .restart local v2       #n2:Lorg/apache/james/mime4j/field/address/parser/Node;
     :cond_3e
     instance-of v4, v2, Lorg/apache/james/mime4j/field/address/parser/ASTangle_addr;
 
     if-eqz v4, :cond_52
 
-    .line 76
+    .line 83
     invoke-static {v3}, Lorg/apache/james/mime4j/decoder/DecoderUtil;->decodeEncodedWords(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 77
+    .line 84
     new-instance v4, Lorg/apache/james/mime4j/field/address/NamedMailbox;
 
     check-cast v2, Lorg/apache/james/mime4j/field/address/parser/ASTangle_addr;
@@ -246,7 +246,7 @@
 
     goto :goto_13
 
-    .line 79
+    .line 87
     .restart local v2       #n2:Lorg/apache/james/mime4j/field/address/parser/Node;
     :cond_52
     new-instance v4, Ljava/lang/IllegalStateException;
@@ -255,7 +255,7 @@
 
     throw v4
 
-    .line 82
+    .line 91
     .end local v2           #n2:Lorg/apache/james/mime4j/field/address/parser/Node;
     .end local v3           #name:Ljava/lang/String;
     .restart local v1       #n:Lorg/apache/james/mime4j/field/address/parser/Node;
@@ -272,28 +272,28 @@
     .parameter "node"
 
     .prologue
-    .line 133
+    .line 149
     new-instance v0, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;
 
     invoke-direct {v0, p1}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;-><init>(Lorg/apache/james/mime4j/field/address/parser/SimpleNode;)V
 
-    .line 134
+    .line 150
     .local v0, it:Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;
     const/4 v2, 0x0
 
-    .line 135
+    .line 151
     .local v2, route:Lorg/apache/james/mime4j/field/address/DomainList;
     invoke-virtual {v0}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->nextNode()Lorg/apache/james/mime4j/field/address/parser/Node;
 
     move-result-object v1
 
-    .line 136
+    .line 152
     .local v1, n:Lorg/apache/james/mime4j/field/address/parser/Node;
     instance-of v3, v1, Lorg/apache/james/mime4j/field/address/parser/ASTroute;
 
     if-eqz v3, :cond_23
 
-    .line 137
+    .line 153
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ASTroute;
 
     .end local v1           #n:Lorg/apache/james/mime4j/field/address/parser/Node;
@@ -301,19 +301,19 @@
 
     move-result-object v2
 
-    .line 138
+    .line 154
     invoke-virtual {v0}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->nextNode()Lorg/apache/james/mime4j/field/address/parser/Node;
 
     move-result-object v1
 
-    .line 144
+    .line 161
     .restart local v1       #n:Lorg/apache/james/mime4j/field/address/parser/Node;
     :cond_18
     instance-of v3, v1, Lorg/apache/james/mime4j/field/address/parser/ASTaddr_spec;
 
     if-eqz v3, :cond_2d
 
-    .line 145
+    .line 162
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ASTaddr_spec;
 
     .end local v1           #n:Lorg/apache/james/mime4j/field/address/parser/Node;
@@ -323,21 +323,21 @@
 
     return-object v3
 
-    .line 139
+    .line 156
     .restart local v1       #n:Lorg/apache/james/mime4j/field/address/parser/Node;
     :cond_23
     instance-of v3, v1, Lorg/apache/james/mime4j/field/address/parser/ASTaddr_spec;
 
     if-nez v3, :cond_18
 
-    .line 142
+    .line 159
     new-instance v3, Ljava/lang/IllegalStateException;
 
     invoke-direct {v3}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v3
 
-    .line 147
+    .line 164
     :cond_2d
     new-instance v3, Ljava/lang/IllegalStateException;
 
@@ -351,18 +351,18 @@
     .parameter "node"
 
     .prologue
-    .line 87
+    .line 98
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 88
+    .line 99
     .local v2, results:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lorg/apache/james/mime4j/field/address/Address;>;"
     new-instance v0, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;
 
     invoke-direct {v0, p1}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;-><init>(Lorg/apache/james/mime4j/field/address/parser/SimpleNode;)V
 
-    .line 89
+    .line 100
     .local v0, it:Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;
     :goto_a
     invoke-virtual {v0}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->hasNext()Z
@@ -371,18 +371,18 @@
 
     if-eqz v3, :cond_28
 
-    .line 90
+    .line 101
     invoke-virtual {v0}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->nextNode()Lorg/apache/james/mime4j/field/address/parser/Node;
 
     move-result-object v1
 
-    .line 91
+    .line 102
     .local v1, n:Lorg/apache/james/mime4j/field/address/parser/Node;
     instance-of v3, v1, Lorg/apache/james/mime4j/field/address/parser/ASTmailbox;
 
     if-eqz v3, :cond_22
 
-    .line 92
+    .line 103
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ASTmailbox;
 
     .end local v1           #n:Lorg/apache/james/mime4j/field/address/parser/Node;
@@ -394,7 +394,7 @@
 
     goto :goto_a
 
-    .line 94
+    .line 105
     .restart local v1       #n:Lorg/apache/james/mime4j/field/address/parser/Node;
     :cond_22
     new-instance v3, Ljava/lang/IllegalStateException;
@@ -403,7 +403,7 @@
 
     throw v3
 
-    .line 96
+    .line 107
     .end local v1           #n:Lorg/apache/james/mime4j/field/address/parser/Node;
     :cond_28
     new-instance v3, Lorg/apache/james/mime4j/field/address/MailboxList;
@@ -420,24 +420,24 @@
     .parameter "node"
 
     .prologue
-    .line 100
+    .line 111
     new-instance v0, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;
 
     invoke-direct {v0, p1}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;-><init>(Lorg/apache/james/mime4j/field/address/parser/SimpleNode;)V
 
-    .line 101
+    .line 112
     .local v0, it:Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;
     invoke-virtual {v0}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->nextNode()Lorg/apache/james/mime4j/field/address/parser/Node;
 
     move-result-object v1
 
-    .line 102
+    .line 113
     .local v1, n:Lorg/apache/james/mime4j/field/address/parser/Node;
     instance-of v2, v1, Lorg/apache/james/mime4j/field/address/parser/ASTaddr_spec;
 
     if-eqz v2, :cond_14
 
-    .line 103
+    .line 114
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ASTaddr_spec;
 
     .end local v1           #n:Lorg/apache/james/mime4j/field/address/parser/Node;
@@ -445,18 +445,18 @@
 
     move-result-object v2
 
-    .line 107
+    .line 120
     :goto_13
     return-object v2
 
-    .line 104
+    .line 116
     .restart local v1       #n:Lorg/apache/james/mime4j/field/address/parser/Node;
     :cond_14
     instance-of v2, v1, Lorg/apache/james/mime4j/field/address/parser/ASTangle_addr;
 
     if-eqz v2, :cond_1f
 
-    .line 105
+    .line 117
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ASTangle_addr;
 
     .end local v1           #n:Lorg/apache/james/mime4j/field/address/parser/Node;
@@ -466,14 +466,14 @@
 
     goto :goto_13
 
-    .line 106
+    .line 119
     .restart local v1       #n:Lorg/apache/james/mime4j/field/address/parser/Node;
     :cond_1f
     instance-of v2, v1, Lorg/apache/james/mime4j/field/address/parser/ASTname_addr;
 
     if-eqz v2, :cond_2a
 
-    .line 107
+    .line 120
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ASTname_addr;
 
     .end local v1           #n:Lorg/apache/james/mime4j/field/address/parser/Node;
@@ -483,7 +483,7 @@
 
     goto :goto_13
 
-    .line 109
+    .line 123
     .restart local v1       #n:Lorg/apache/james/mime4j/field/address/parser/Node;
     :cond_2a
     new-instance v2, Ljava/lang/IllegalStateException;
@@ -498,24 +498,24 @@
     .parameter "node"
 
     .prologue
-    .line 114
+    .line 128
     new-instance v0, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;
 
     invoke-direct {v0, p1}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;-><init>(Lorg/apache/james/mime4j/field/address/parser/SimpleNode;)V
 
-    .line 115
+    .line 129
     .local v0, it:Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;
     invoke-virtual {v0}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->nextNode()Lorg/apache/james/mime4j/field/address/parser/Node;
 
     move-result-object v1
 
-    .line 117
+    .line 131
     .local v1, n:Lorg/apache/james/mime4j/field/address/parser/Node;
     instance-of v3, v1, Lorg/apache/james/mime4j/field/address/parser/ASTphrase;
 
     if-eqz v3, :cond_2c
 
-    .line 118
+    .line 132
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ASTphrase;
 
     .end local v1           #n:Lorg/apache/james/mime4j/field/address/parser/Node;
@@ -525,24 +525,24 @@
 
     move-result-object v2
 
-    .line 123
+    .line 138
     .local v2, name:Ljava/lang/String;
     invoke-virtual {v0}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->nextNode()Lorg/apache/james/mime4j/field/address/parser/Node;
 
     move-result-object v1
 
-    .line 124
+    .line 139
     .restart local v1       #n:Lorg/apache/james/mime4j/field/address/parser/Node;
     instance-of v3, v1, Lorg/apache/james/mime4j/field/address/parser/ASTangle_addr;
 
     if-eqz v3, :cond_32
 
-    .line 125
+    .line 140
     invoke-static {v2}, Lorg/apache/james/mime4j/decoder/DecoderUtil;->decodeEncodedWords(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 126
+    .line 141
     new-instance v3, Lorg/apache/james/mime4j/field/address/NamedMailbox;
 
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ASTangle_addr;
@@ -556,7 +556,7 @@
 
     return-object v3
 
-    .line 120
+    .line 135
     .end local v2           #name:Ljava/lang/String;
     .restart local v1       #n:Lorg/apache/james/mime4j/field/address/parser/Node;
     :cond_2c
@@ -566,7 +566,7 @@
 
     throw v3
 
-    .line 128
+    .line 144
     .restart local v2       #name:Ljava/lang/String;
     :cond_32
     new-instance v3, Ljava/lang/IllegalStateException;
@@ -583,7 +583,7 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 151
+    .line 168
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Lorg/apache/james/mime4j/field/address/parser/ASTroute;->jjtGetNumChildren()I
@@ -592,13 +592,13 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 152
+    .line 169
     .local v2, results:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     new-instance v0, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;
 
     invoke-direct {v0, p1}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;-><init>(Lorg/apache/james/mime4j/field/address/parser/SimpleNode;)V
 
-    .line 153
+    .line 170
     .local v0, it:Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;
     :goto_f
     invoke-virtual {v0}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->hasNext()Z
@@ -607,18 +607,18 @@
 
     if-eqz v3, :cond_2d
 
-    .line 154
+    .line 171
     invoke-virtual {v0}, Lorg/apache/james/mime4j/field/address/Builder$ChildNodeIterator;->nextNode()Lorg/apache/james/mime4j/field/address/parser/Node;
 
     move-result-object v1
 
-    .line 155
+    .line 172
     .local v1, n:Lorg/apache/james/mime4j/field/address/parser/Node;
     instance-of v3, v1, Lorg/apache/james/mime4j/field/address/parser/ASTdomain;
 
     if-eqz v3, :cond_27
 
-    .line 156
+    .line 173
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ASTdomain;
 
     .end local v1           #n:Lorg/apache/james/mime4j/field/address/parser/Node;
@@ -630,7 +630,7 @@
 
     goto :goto_f
 
-    .line 158
+    .line 175
     .restart local v1       #n:Lorg/apache/james/mime4j/field/address/parser/Node;
     :cond_27
     new-instance v3, Ljava/lang/IllegalStateException;
@@ -639,7 +639,7 @@
 
     throw v3
 
-    .line 160
+    .line 177
     .end local v1           #n:Lorg/apache/james/mime4j/field/address/parser/Node;
     :cond_2d
     new-instance v3, Lorg/apache/james/mime4j/field/address/DomainList;
@@ -655,50 +655,50 @@
     .parameter "stripSpaces"
 
     .prologue
-    .line 175
-    iget-object v0, p1, Lorg/apache/james/mime4j/field/address/parser/BaseNode;->firstToken:Lorg/apache/james/mime4j/field/address/parser/Token;
+    .line 192
+    iget-object v0, p1, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->firstToken:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 176
+    .line 193
     .local v0, head:Lorg/apache/james/mime4j/field/address/parser/Token;
-    iget-object v2, p1, Lorg/apache/james/mime4j/field/address/parser/BaseNode;->lastToken:Lorg/apache/james/mime4j/field/address/parser/Token;
+    iget-object v2, p1, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->lastToken:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 177
+    .line 194
     .local v2, tail:Lorg/apache/james/mime4j/field/address/parser/Token;
     new-instance v1, Ljava/lang/StringBuffer;
 
     invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 179
+    .line 196
     .local v1, out:Ljava/lang/StringBuffer;
     :cond_9
     :goto_9
     if-eq v0, v2, :cond_1a
 
-    .line 180
+    .line 197
     iget-object v3, v0, Lorg/apache/james/mime4j/field/address/parser/Token;->image:Ljava/lang/String;
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 181
+    .line 198
     iget-object v0, v0, Lorg/apache/james/mime4j/field/address/parser/Token;->next:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 182
+    .line 199
     if-nez p2, :cond_9
 
-    .line 183
+    .line 200
     iget-object v3, v0, Lorg/apache/james/mime4j/field/address/parser/Token;->specialToken:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     invoke-direct {p0, v1, v3}, Lorg/apache/james/mime4j/field/address/Builder;->addSpecials(Ljava/lang/StringBuffer;Lorg/apache/james/mime4j/field/address/parser/Token;)V
 
     goto :goto_9
 
-    .line 185
+    .line 202
     :cond_1a
     iget-object v3, v2, Lorg/apache/james/mime4j/field/address/parser/Token;->image:Ljava/lang/String;
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 187
+    .line 204
     invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v3
@@ -710,7 +710,7 @@
     .registers 1
 
     .prologue
-    .line 50
+    .line 52
     sget-object v0, Lorg/apache/james/mime4j/field/address/Builder;->singleton:Lorg/apache/james/mime4j/field/address/Builder;
 
     return-object v0
@@ -723,12 +723,12 @@
     .parameter "node"
 
     .prologue
-    .line 54
+    .line 58
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 55
+    .line 59
     .local v3, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lorg/apache/james/mime4j/field/address/Address;>;"
     const/4 v2, 0x0
 
@@ -740,29 +740,29 @@
 
     if-ge v2, v4, :cond_1c
 
-    .line 56
+    .line 60
     invoke-virtual {p1, v2}, Lorg/apache/james/mime4j/field/address/parser/ASTaddress_list;->jjtGetChild(I)Lorg/apache/james/mime4j/field/address/parser/Node;
 
     move-result-object v1
 
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ASTaddress;
 
-    .line 57
+    .line 61
     .local v1, childNode:Lorg/apache/james/mime4j/field/address/parser/ASTaddress;
     invoke-direct {p0, v1}, Lorg/apache/james/mime4j/field/address/Builder;->buildAddress(Lorg/apache/james/mime4j/field/address/parser/ASTaddress;)Lorg/apache/james/mime4j/field/address/Address;
 
     move-result-object v0
 
-    .line 58
+    .line 62
     .local v0, address:Lorg/apache/james/mime4j/field/address/Address;
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 55
+    .line 59
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_6
 
-    .line 60
+    .line 64
     .end local v0           #address:Lorg/apache/james/mime4j/field/address/Address;
     .end local v1           #childNode:Lorg/apache/james/mime4j/field/address/parser/ASTaddress;
     :cond_1c

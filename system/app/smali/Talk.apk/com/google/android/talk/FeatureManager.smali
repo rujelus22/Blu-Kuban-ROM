@@ -24,6 +24,12 @@
 
 .field private static sEffectsEnabledMask:I
 
+.field private static sMaxIncomingVideoSpec:Lcom/google/android/videochat/VideoSpecification;
+
+.field private static sMaxOutgoingSpecNoEffects:Lcom/google/android/videochat/VideoSpecification;
+
+.field private static sMaxOutgoingSpecWithEffects:Lcom/google/android/videochat/VideoSpecification;
+
 .field private static sVideoChatEnabled:Z
 
 
@@ -34,7 +40,7 @@
     .prologue
     const/16 v4, 0xf
 
-    .line 49
+    .line 52
     new-instance v0, Lcom/google/android/videochat/VideoSpecification;
 
     new-instance v1, Lcom/google/android/videochat/Size;
@@ -49,7 +55,7 @@
 
     sput-object v0, Lcom/google/android/talk/FeatureManager;->QVGA_SIZE:Lcom/google/android/videochat/VideoSpecification;
 
-    .line 51
+    .line 54
     new-instance v0, Lcom/google/android/videochat/VideoSpecification;
 
     new-instance v1, Lcom/google/android/videochat/Size;
@@ -72,9 +78,66 @@
 
     .prologue
     .line 32
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 193
+    .line 208
+    return-void
+.end method
+
+.method static synthetic access$1000()Lcom/google/android/videochat/VideoSpecification;
+    .registers 1
+
+    .prologue
+    .line 32
+    sget-object v0, Lcom/google/android/talk/FeatureManager;->QVGA_SIZE:Lcom/google/android/videochat/VideoSpecification;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1100()I
+    .registers 1
+
+    .prologue
+    .line 32
+    sget v0, Lcom/google/android/talk/FeatureManager;->sEffectsEnabledMask:I
+
+    return v0
+.end method
+
+.method static synthetic access$1102(I)I
+    .registers 1
+    .parameter "x0"
+
+    .prologue
+    .line 32
+    sput p0, Lcom/google/android/talk/FeatureManager;->sEffectsEnabledMask:I
+
+    return p0
+.end method
+
+.method static synthetic access$1172(I)I
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 32
+    sget v0, Lcom/google/android/talk/FeatureManager;->sEffectsEnabledMask:I
+
+    and-int/2addr v0, p0
+
+    sput v0, Lcom/google/android/talk/FeatureManager;->sEffectsEnabledMask:I
+
+    return v0
+.end method
+
+.method static synthetic access$1200(J)V
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 32
+    invoke-static {p0, p1}, Lcom/google/android/talk/FeatureManager;->setAccountFeatures(J)V
+
     return-void
 .end method
 
@@ -133,23 +196,34 @@
     return p0
 .end method
 
-.method static synthetic access$500()Lcom/google/android/videochat/VideoSpecification;
-    .registers 1
-
-    .prologue
-    .line 32
-    sget-object v0, Lcom/google/android/talk/FeatureManager;->QVGA_SIZE:Lcom/google/android/videochat/VideoSpecification;
-
-    return-object v0
-.end method
-
-.method static synthetic access$602(Ljava/lang/String;)Ljava/lang/String;
+.method static synthetic access$502(Ljava/lang/String;)Ljava/lang/String;
     .registers 1
     .parameter "x0"
 
     .prologue
     .line 32
     sput-object p0, Lcom/google/android/talk/FeatureManager;->sDefaultVideoChatEffect:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method static synthetic access$600()Lcom/google/android/videochat/VideoSpecification;
+    .registers 1
+
+    .prologue
+    .line 32
+    sget-object v0, Lcom/google/android/talk/FeatureManager;->sMaxIncomingVideoSpec:Lcom/google/android/videochat/VideoSpecification;
+
+    return-object v0
+.end method
+
+.method static synthetic access$602(Lcom/google/android/videochat/VideoSpecification;)Lcom/google/android/videochat/VideoSpecification;
+    .registers 1
+    .parameter "x0"
+
+    .prologue
+    .line 32
+    sput-object p0, Lcom/google/android/talk/FeatureManager;->sMaxIncomingVideoSpec:Lcom/google/android/videochat/VideoSpecification;
 
     return-object p0
 .end method
@@ -164,58 +238,53 @@
     return-object v0
 .end method
 
-.method static synthetic access$800()I
+.method static synthetic access$800()Lcom/google/android/videochat/VideoSpecification;
     .registers 1
 
     .prologue
     .line 32
-    sget v0, Lcom/google/android/talk/FeatureManager;->sEffectsEnabledMask:I
+    sget-object v0, Lcom/google/android/talk/FeatureManager;->sMaxOutgoingSpecNoEffects:Lcom/google/android/videochat/VideoSpecification;
 
-    return v0
+    return-object v0
 .end method
 
-.method static synthetic access$802(I)I
+.method static synthetic access$802(Lcom/google/android/videochat/VideoSpecification;)Lcom/google/android/videochat/VideoSpecification;
     .registers 1
     .parameter "x0"
 
     .prologue
     .line 32
-    sput p0, Lcom/google/android/talk/FeatureManager;->sEffectsEnabledMask:I
+    sput-object p0, Lcom/google/android/talk/FeatureManager;->sMaxOutgoingSpecNoEffects:Lcom/google/android/videochat/VideoSpecification;
 
-    return p0
+    return-object p0
 .end method
 
-.method static synthetic access$872(I)I
-    .registers 2
+.method static synthetic access$900()Lcom/google/android/videochat/VideoSpecification;
+    .registers 1
+
+    .prologue
+    .line 32
+    sget-object v0, Lcom/google/android/talk/FeatureManager;->sMaxOutgoingSpecWithEffects:Lcom/google/android/videochat/VideoSpecification;
+
+    return-object v0
+.end method
+
+.method static synthetic access$902(Lcom/google/android/videochat/VideoSpecification;)Lcom/google/android/videochat/VideoSpecification;
+    .registers 1
     .parameter "x0"
 
     .prologue
     .line 32
-    sget v0, Lcom/google/android/talk/FeatureManager;->sEffectsEnabledMask:I
+    sput-object p0, Lcom/google/android/talk/FeatureManager;->sMaxOutgoingSpecWithEffects:Lcom/google/android/videochat/VideoSpecification;
 
-    and-int/2addr v0, p0
-
-    sput v0, Lcom/google/android/talk/FeatureManager;->sEffectsEnabledMask:I
-
-    return v0
-.end method
-
-.method static synthetic access$900(J)V
-    .registers 2
-    .parameter "x0"
-
-    .prologue
-    .line 32
-    invoke-static {p0, p1}, Lcom/google/android/talk/FeatureManager;->setAccountFeatures(J)V
-
-    return-void
+    return-object p0
 .end method
 
 .method public static areAnyEffectsAvailable()Z
     .registers 1
 
     .prologue
-    .line 97
+    .line 112
     sget v0, Lcom/google/android/talk/FeatureManager;->sEffectsEnabledMask:I
 
     if-eqz v0, :cond_6
@@ -235,7 +304,7 @@
     .registers 1
 
     .prologue
-    .line 81
+    .line 84
     sget-boolean v0, Lcom/google/android/talk/FeatureManager;->sAudioChatEnabled:Z
 
     return v0
@@ -246,7 +315,7 @@
     .parameter "c"
 
     .prologue
-    .line 101
+    .line 116
     const-string v1, "deviceCapabilities"
 
     const/4 v2, 0x0
@@ -259,7 +328,7 @@
 
     move-result-object v0
 
-    .line 103
+    .line 118
     .local v0, deviceCaps:Landroid/content/SharedPreferences$Editor;
     const-string v1, "dirty"
 
@@ -267,10 +336,10 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 104
+    .line 119
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 105
+    .line 120
     return-void
 .end method
 
@@ -283,14 +352,14 @@
 
     const/4 v8, 0x0
 
-    .line 146
+    .line 161
     new-instance v2, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;
 
     const/4 v6, 0x0
 
     invoke-direct {v2, v6}, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;-><init>(Lcom/google/android/talk/FeatureManager$1;)V
 
-    .line 148
+    .line 163
     .local v2, deviceCaps:Lcom/google/android/talk/FeatureManager$DeviceCapabilities;
     const-string v6, "deviceCapabilities"
 
@@ -298,11 +367,11 @@
 
     move-result-object v3
 
-    .line 151
+    .line 166
     .local v3, deviceCapsPrefs:Landroid/content/SharedPreferences;
     iput-boolean v8, v2, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;->mHasNEON:Z
 
-    .line 152
+    .line 167
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v6
@@ -320,7 +389,7 @@
     :goto_1c
     iput-boolean v6, v2, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;->mMulticore:Z
 
-    .line 153
+    .line 168
     const-string v6, "armeabi-v7a"
 
     sget-object v9, Landroid/os/Build;->CPU_ABI:Ljava/lang/String;
@@ -331,7 +400,7 @@
 
     iput-boolean v6, v2, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;->mArmv7:Z
 
-    .line 154
+    .line 169
     const-string v6, "dirty"
 
     invoke-interface {v3, v6, v7}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -340,12 +409,12 @@
 
     if-eqz v6, :cond_d3
 
-    .line 155
+    .line 170
     iget-boolean v6, v2, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;->mArmv7:Z
 
     if-nez v6, :cond_80
 
-    .line 156
+    .line 171
     const-string v6, "talk"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -370,57 +439,57 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 175
+    .line 190
     :goto_4e
     invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v4
 
-    .line 176
+    .line 191
     .local v4, editor:Landroid/content/SharedPreferences$Editor;
     const-string v6, "dirty"
 
     invoke-interface {v4, v6, v8}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 177
+    .line 192
     const-string v6, "frontCamera"
 
     iget-boolean v7, v2, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;->mFrontCamera:Z
 
     invoke-interface {v4, v6, v7}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 178
+    .line 193
     const-string v6, "glv2"
 
     iget-boolean v7, v2, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;->mGlv2:Z
 
     invoke-interface {v4, v6, v7}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 179
+    .line 194
     const-string v6, "armv7"
 
     iget-boolean v7, v2, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;->mArmv7:Z
 
     invoke-interface {v4, v6, v7}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 180
+    .line 195
     const-string v6, "neon"
 
     iget-boolean v7, v2, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;->mHasNEON:Z
 
     invoke-interface {v4, v6, v7}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 181
+    .line 196
     const-string v6, "effectsMask"
 
     iget v7, v2, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;->mEffectsEnabledMask:I
 
     invoke-interface {v4, v6, v7}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 182
+    .line 197
     invoke-interface {v4}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 190
+    .line 205
     .end local v4           #editor:Landroid/content/SharedPreferences$Editor;
     :goto_7d
     return-object v2
@@ -428,10 +497,10 @@
     :cond_7e
     move v6, v8
 
-    .line 152
+    .line 167
     goto :goto_1c
 
-    .line 158
+    .line 173
     :cond_80
     invoke-static {p0}, Lcom/google/android/talk/FeatureManager;->getOpenGlEsVersion(Landroid/content/Context;)F
 
@@ -443,10 +512,10 @@
 
     if-ltz v6, :cond_8c
 
-    .line 159
+    .line 174
     iput-boolean v7, v2, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;->mGlv2:Z
 
-    .line 161
+    .line 176
     :cond_8c
     invoke-static {}, Lcom/google/android/talk/FeatureManager;->hasNEON()Z
 
@@ -454,18 +523,18 @@
 
     iput-boolean v6, v2, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;->mHasNEON:Z
 
-    .line 163
+    .line 178
     new-instance v0, Landroid/hardware/Camera$CameraInfo;
 
     invoke-direct {v0}, Landroid/hardware/Camera$CameraInfo;-><init>()V
 
-    .line 165
+    .line 180
     .local v0, cameraInfo:Landroid/hardware/Camera$CameraInfo;
     invoke-static {}, Landroid/hardware/Camera;->getNumberOfCameras()I
 
     move-result v1
 
-    .line 166
+    .line 181
     .local v1, count:I
     const/4 v5, 0x0
 
@@ -477,10 +546,10 @@
 
     if-nez v6, :cond_b1
 
-    .line 167
+    .line 182
     invoke-static {v5, v0}, Landroid/hardware/Camera;->getCameraInfo(ILandroid/hardware/Camera$CameraInfo;)V
 
-    .line 168
+    .line 183
     iget v6, v0, Landroid/hardware/Camera$CameraInfo;->facing:I
 
     if-ne v6, v7, :cond_af
@@ -490,7 +559,7 @@
     :goto_aa
     iput-boolean v6, v2, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;->mFrontCamera:Z
 
-    .line 166
+    .line 181
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_9c
@@ -498,10 +567,10 @@
     :cond_af
     move v6, v8
 
-    .line 168
+    .line 183
     goto :goto_aa
 
-    .line 171
+    .line 186
     :cond_b1
     const-string v6, "talk"
 
@@ -527,7 +596,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 172
+    .line 187
     invoke-static {}, Lcom/google/android/talk/videochat/EffectsController;->generateCapabilitiesMask()I
 
     move-result v6
@@ -536,7 +605,7 @@
 
     goto/16 :goto_4e
 
-    .line 184
+    .line 199
     .end local v0           #cameraInfo:Landroid/hardware/Camera$CameraInfo;
     .end local v1           #count:I
     .end local v5           #i:I
@@ -549,7 +618,7 @@
 
     iput-boolean v6, v2, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;->mFrontCamera:Z
 
-    .line 185
+    .line 200
     const-string v6, "glv2"
 
     invoke-interface {v3, v6, v8}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -558,7 +627,7 @@
 
     iput-boolean v6, v2, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;->mGlv2:Z
 
-    .line 186
+    .line 201
     const-string v6, "effectsMask"
 
     invoke-interface {v3, v6, v8}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
@@ -567,7 +636,7 @@
 
     iput v6, v2, Lcom/google/android/talk/FeatureManager$DeviceCapabilities;->mEffectsEnabledMask:I
 
-    .line 187
+    .line 202
     const-string v6, "neon"
 
     invoke-interface {v3, v6, v8}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -583,7 +652,7 @@
     .registers 1
 
     .prologue
-    .line 85
+    .line 100
     sget-object v0, Lcom/google/android/talk/FeatureManager;->sDefaultVideoChatEffect:Ljava/lang/String;
 
     return-object v0
@@ -594,18 +663,18 @@
     .parameter "context"
 
     .prologue
-    .line 399
+    .line 409
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v6
 
-    .line 400
+    .line 410
     .local v6, packageManager:Landroid/content/pm/PackageManager;
     invoke-virtual {v6}, Landroid/content/pm/PackageManager;->getSystemAvailableFeatures()[Landroid/content/pm/FeatureInfo;
 
     move-result-object v2
 
-    .line 401
+    .line 411
     .local v2, featureInfos:[Landroid/content/pm/FeatureInfo;
     if-eqz v2, :cond_41
 
@@ -613,7 +682,7 @@
 
     if-lez v7, :cond_41
 
-    .line 402
+    .line 412
     move-object v0, v2
 
     .local v0, arr$:[Landroid/content/pm/FeatureInfo;
@@ -628,18 +697,18 @@
 
     aget-object v1, v0, v4
 
-    .line 404
+    .line 414
     .local v1, featureInfo:Landroid/content/pm/FeatureInfo;
     iget-object v7, v1, Landroid/content/pm/FeatureInfo;->name:Ljava/lang/String;
 
     if-nez v7, :cond_3e
 
-    .line 405
+    .line 415
     invoke-virtual {v1}, Landroid/content/pm/FeatureInfo;->getGlEsVersion()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 406
+    .line 416
     .local v3, glVersionString:Ljava/lang/String;
     const-string v7, "talk"
 
@@ -663,7 +732,7 @@
 
     invoke-static {v7, v8}, Lcom/google/android/talk/TalkApp;->LOGD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 407
+    .line 417
     new-instance v7, Ljava/lang/Float;
 
     invoke-direct {v7, v3}, Ljava/lang/Float;-><init>(Ljava/lang/String;)V
@@ -672,7 +741,7 @@
 
     move-result v7
 
-    .line 411
+    .line 421
     .end local v0           #arr$:[Landroid/content/pm/FeatureInfo;
     .end local v1           #featureInfo:Landroid/content/pm/FeatureInfo;
     .end local v3           #glVersionString:Ljava/lang/String;
@@ -681,7 +750,7 @@
     :goto_3d
     return v7
 
-    .line 402
+    .line 412
     .restart local v0       #arr$:[Landroid/content/pm/FeatureInfo;
     .restart local v1       #featureInfo:Landroid/content/pm/FeatureInfo;
     .restart local v4       #i$:I
@@ -691,7 +760,7 @@
 
     goto :goto_10
 
-    .line 411
+    .line 421
     .end local v0           #arr$:[Landroid/content/pm/FeatureInfo;
     .end local v1           #featureInfo:Landroid/content/pm/FeatureInfo;
     .end local v4           #i$:I
@@ -708,10 +777,10 @@
     .prologue
     const/4 v12, 0x2
 
-    .line 108
+    .line 123
     const/4 v6, 0x0
 
-    .line 111
+    .line 126
     .local v6, hasNEON:Z
     :try_start_2
     new-instance v3, Ljava/io/FileInputStream;
@@ -722,7 +791,7 @@
     :try_end_9
     .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_9} :catch_5a
 
-    .line 113
+    .line 128
     .local v3, cpuStream:Ljava/io/FileInputStream;
     :try_start_9
     new-instance v2, Ljava/io/BufferedReader;
@@ -739,7 +808,7 @@
     :try_end_18
     .catchall {:try_start_9 .. :try_end_18} :catchall_55
 
-    .line 117
+    .line 132
     .local v2, cpuInfoReader:Ljava/io/BufferedReader;
     :cond_18
     :try_start_18
@@ -750,7 +819,7 @@
     .local v1, cpuInfoLine:Ljava/lang/String;
     if-eqz v1, :cond_4e
 
-    .line 118
+    .line 133
     const-string v10, "[ \t]*:[ \t]*"
 
     const/4 v11, 0x2
@@ -759,7 +828,7 @@
 
     move-result-object v9
 
-    .line 119
+    .line 134
     .local v9, lineParts:[Ljava/lang/String;
     if-eqz v9, :cond_18
 
@@ -779,7 +848,7 @@
 
     if-eqz v10, :cond_18
 
-    .line 121
+    .line 136
     const/4 v10, 0x1
 
     aget-object v10, v9, v10
@@ -790,7 +859,7 @@
 
     move-result-object v5
 
-    .line 122
+    .line 137
     .local v5, features:[Ljava/lang/String;
     move-object v0, v5
 
@@ -806,7 +875,7 @@
 
     aget-object v4, v0, v7
 
-    .line 123
+    .line 138
     .local v4, feature:Ljava/lang/String;
     const-string v10, "neon"
 
@@ -819,10 +888,10 @@
 
     if-eqz v10, :cond_52
 
-    .line 124
+    .line 139
     const/4 v6, 0x1
 
-    .line 135
+    .line 150
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v1           #cpuInfoLine:Ljava/lang/String;
     .end local v4           #feature:Ljava/lang/String;
@@ -838,13 +907,13 @@
     .catch Ljava/io/IOException; {:try_start_4e .. :try_end_51} :catch_5c
     .catch Ljava/io/FileNotFoundException; {:try_start_4e .. :try_end_51} :catch_5a
 
-    .line 141
+    .line 156
     .end local v2           #cpuInfoReader:Ljava/io/BufferedReader;
     .end local v3           #cpuStream:Ljava/io/FileInputStream;
     :goto_51
     return v6
 
-    .line 122
+    .line 137
     .restart local v0       #arr$:[Ljava/lang/String;
     .restart local v1       #cpuInfoLine:Ljava/lang/String;
     .restart local v2       #cpuInfoReader:Ljava/io/BufferedReader;
@@ -859,7 +928,7 @@
 
     goto :goto_41
 
-    .line 134
+    .line 149
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v1           #cpuInfoLine:Ljava/lang/String;
     .end local v2           #cpuInfoReader:Ljava/io/BufferedReader;
@@ -871,28 +940,28 @@
     :catchall_55
     move-exception v10
 
-    .line 135
+    .line 150
     :try_start_56
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_59
     .catch Ljava/io/IOException; {:try_start_56 .. :try_end_59} :catch_5e
     .catch Ljava/io/FileNotFoundException; {:try_start_56 .. :try_end_59} :catch_5a
 
-    .line 137
+    .line 152
     :goto_59
     :try_start_59
     throw v10
     :try_end_5a
     .catch Ljava/io/FileNotFoundException; {:try_start_59 .. :try_end_5a} :catch_5a
 
-    .line 139
+    .line 154
     .end local v3           #cpuStream:Ljava/io/FileInputStream;
     :catch_5a
     move-exception v10
 
     goto :goto_51
 
-    .line 136
+    .line 151
     .restart local v2       #cpuInfoReader:Ljava/io/BufferedReader;
     .restart local v3       #cpuStream:Ljava/io/FileInputStream;
     :catch_5c
@@ -906,7 +975,7 @@
 
     goto :goto_59
 
-    .line 131
+    .line 146
     .restart local v2       #cpuInfoReader:Ljava/io/BufferedReader;
     :catch_60
     move-exception v10
@@ -923,14 +992,14 @@
 
     const/4 v1, 0x0
 
-    .line 89
+    .line 104
     if-eqz p0, :cond_8
 
     const/16 v2, 0x20
 
     if-le p0, v2, :cond_22
 
-    .line 90
+    .line 105
     :cond_8
     const-string v0, "talk"
 
@@ -956,7 +1025,7 @@
 
     move v0, v1
 
-    .line 93
+    .line 108
     :cond_21
     :goto_21
     return v0
@@ -982,7 +1051,7 @@
     .parameter "accountId"
 
     .prologue
-    .line 389
+    .line 399
     invoke-static {}, Lcom/google/android/talk/SettingsCache;->getInstance()Lcom/google/android/talk/SettingsCache;
 
     move-result-object v1
@@ -991,23 +1060,23 @@
 
     move-result-object v0
 
-    .line 391
+    .line 401
     .local v0, settings:Lcom/google/android/gsf/TalkContract$AccountSettings$QueryMap;
     sget-boolean v1, Lcom/google/android/talk/FeatureManager;->sVideoChatEnabled:Z
 
     invoke-virtual {v0, v1}, Lcom/google/android/gsf/TalkContract$AccountSettings$QueryMap;->setCameraEnabled(Z)V
 
-    .line 392
+    .line 402
     sget-boolean v1, Lcom/google/android/talk/FeatureManager;->sVideoChatEnabled:Z
 
     invoke-virtual {v0, v1}, Lcom/google/android/gsf/TalkContract$AccountSettings$QueryMap;->setVideoChatEnabled(Z)V
 
-    .line 393
+    .line 403
     sget-boolean v1, Lcom/google/android/talk/FeatureManager;->sAudioChatEnabled:Z
 
     invoke-virtual {v0, v1}, Lcom/google/android/gsf/TalkContract$AccountSettings$QueryMap;->setAudioChatEnabled(Z)V
 
-    .line 394
+    .line 404
     return-void
 .end method
 
@@ -1018,16 +1087,16 @@
     .parameter "doneRunnable"
 
     .prologue
-    .line 71
+    .line 74
     new-instance v0, Lcom/google/android/talk/FeatureManager$SetFeaturesTask;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/google/android/talk/FeatureManager$SetFeaturesTask;-><init>(Landroid/content/Context;JLjava/lang/Runnable;)V
 
-    .line 73
+    .line 76
     .local v0, asyncDetermineFeaturesTask:Lcom/google/android/talk/FeatureManager$SetFeaturesTask;
     invoke-virtual {v0}, Lcom/google/android/talk/FeatureManager$SetFeaturesTask;->execute()V
 
-    .line 74
+    .line 77
     return-void
 .end method
 
@@ -1037,16 +1106,16 @@
     .parameter "doneRunnable"
 
     .prologue
-    .line 64
+    .line 67
     new-instance v0, Lcom/google/android/talk/FeatureManager$SetFeaturesTask;
 
     invoke-direct {v0, p0, p1}, Lcom/google/android/talk/FeatureManager$SetFeaturesTask;-><init>(Landroid/content/Context;Ljava/lang/Runnable;)V
 
-    .line 66
+    .line 69
     .local v0, asyncInspectCapabilitiesTask:Lcom/google/android/talk/FeatureManager$SetFeaturesTask;
     invoke-virtual {v0}, Lcom/google/android/talk/FeatureManager$SetFeaturesTask;->execute()V
 
-    .line 67
+    .line 70
     return-void
 .end method
 
@@ -1054,7 +1123,7 @@
     .registers 1
 
     .prologue
-    .line 77
+    .line 80
     sget-boolean v0, Lcom/google/android/talk/FeatureManager;->sVideoChatEnabled:Z
 
     return v0

@@ -6,6 +6,17 @@
     <dimen name="qsb_padding_right">3.0dip</dimen>
     <dimen name="apps_customize_widget_cell_width_gap">20.0dip</dimen>
     <dimen name="apps_customize_widget_cell_height_gap">10.0dip</dimen>
+    <dimen name="workspace_icon_drawable_padding">8.0dip</dimen>
+    <dimen name="workspace_icon_padding_left">4.0dip</dimen>
+    <dimen name="workspace_icon_padding_right">4.0dip</dimen>
+    <dimen name="workspace_icon_padding_top">@dimen/app_icon_padding_top</dimen>
+    <dimen name="workspace_icon_padding_bottom">4.0dip</dimen>
+    <dimen name="folder_icon_drawable_padding">0.0dip</dimen>
+    <dimen name="folder_icon_padding_left">0.0dip</dimen>
+    <dimen name="folder_icon_padding_right">0.0dip</dimen>
+    <dimen name="folder_icon_padding_top">2.0dip</dimen>
+    <dimen name="folder_icon_padding_bottom">0.0dip</dimen>
+    <dimen name="folder_icon_margin_top">0.0dip</dimen>
     <dimen name="workspace_left_padding">0.0dip</dimen>
     <dimen name="workspace_right_padding">0.0dip</dimen>
     <dimen name="workspace_top_padding">6.0dip</dimen>

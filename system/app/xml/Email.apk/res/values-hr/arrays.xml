@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="general_preference_text_zoom_summary_array">
+        <item>Sićušan tekst</item>
+        <item>Mali tekst</item>
+        <item>Tekst normalne veličine</item>
+        <item>Veliki tekst</item>
+        <item>Ogroman tekst</item>
+    </string-array>
+</resources>

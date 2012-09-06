@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="system_group_my_contacts">My contacts</string>
-    <string name="system_group_friend">Friends</string>
-    <string name="system_group_family">Family</string>
-    <string name="system_group_coworker">Co-workers</string>
-</resources>

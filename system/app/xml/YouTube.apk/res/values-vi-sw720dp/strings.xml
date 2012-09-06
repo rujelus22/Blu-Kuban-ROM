@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="play_on_this_device">Phát trên máy tính bảng này</string>
+    <string name="this_phone">Máy tính bảng này</string>
+</resources>

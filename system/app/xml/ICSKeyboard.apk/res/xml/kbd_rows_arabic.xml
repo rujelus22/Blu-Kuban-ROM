@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:latin="http://schemas.android.com/apk/res/inputmethod.latin.ported">
+    <include latin:keyboardLayout="@xml/kbd_key_styles" />
+    <Row latin:keyWidth="10.000002%p">
+        <Key latin:moreKeys="1,١" latin:keyLabel="ض" latin:keyHintLabel="1" />
+        <Key latin:moreKeys="2,٢" latin:keyLabel="ص" latin:keyHintLabel="2" />
+        <Key latin:moreKeys="3,٣,ڨ" latin:keyLabel="ق" latin:keyHintLabel="3" />
+        <Key latin:moreKeys="4,٤,ڤ,ڢ,ڥ" latin:keyLabel="ف" latin:keyHintLabel="4" />
+        <Key latin:moreKeys="5,٥" latin:keyLabel="غ" latin:keyHintLabel="5" />
+        <Key latin:moreKeys="6,٦" latin:keyLabel="ع" latin:keyHintLabel="6" />
+        <Key latin:moreKeys="7,٧,ﻫ|ه‍" latin:keyLabel="ه" latin:keyHintLabel="7" />
+        <Key latin:moreKeys="8,٨" latin:keyLabel="خ" latin:keyHintLabel="8" />
+        <Key latin:moreKeys="9,٩" latin:keyLabel="ح" latin:keyHintLabel="9" />
+        <Key latin:moreKeys="0,٠,چ" latin:keyLabel="ج" latin:keyHintLabel="0" latin:keyWidth="fillRight" />
+    </Row>
+    <Row latin:keyWidth="10.000002%p">
+        <Key latin:moreKeys="ڜ" latin:keyLabel="ش" />
+        <Key latin:keyLabel="س" />
+        <Key latin:moreKeys="ئ,ى" latin:keyLabel="ي" />
+        <Key latin:moreKeys="پ" latin:keyLabel="ب" />
+        <Key latin:moreKeys="ﻻ|لا,ﻷ|لأ,ﻹ|لإ,ﻵ|لآ" latin:keyLabel="ل" />
+        <Key latin:moreKeys="ء,ٱ,أ,إ,آ" latin:keyLabel="ا" />
+        <Key latin:moreKeys="ث" latin:keyLabel="ت" />
+        <Key latin:keyLabel="ن" />
+        <Key latin:keyLabel="م" />
+        <Key latin:moreKeys="گ,ک" latin:keyLabel="ك" latin:keyWidth="fillRight" />
+    </Row>
+    <Row latin:keyWidth="10.000002%p">
+        <Key latin:keyLabel="ظ" latin:keyXPos="4.999995%p" />
+        <Key latin:keyLabel="ط" />
+        <Key latin:keyLabel="ذ" />
+        <Key latin:keyLabel="د" />
+        <Key latin:moreKeys="ژ" latin:keyLabel="ز" />
+        <Key latin:keyLabel="ر" />
+        <Key latin:keyLabel="ة" />
+        <Key latin:moreKeys="ؤ" latin:keyLabel="و" />
+        <Key latin:keyStyle="deleteKeyStyle" latin:visualInsetsLeft="0.99999905%p" latin:keyWidth="fillRight" />
+    </Row>
+    <include latin:keyboardLayout="@xml/kbd_qwerty_row4" />
+</merge>

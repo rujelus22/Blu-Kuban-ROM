@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 110
+    .line 108
     iput-object p1, p0, Lcom/google/android/finsky/activities/GetMarketMetadataAction$3;->this$0:Lcom/google/android/finsky/activities/GetMarketMetadataAction;
 
     iput-object p2, p0, Lcom/google/android/finsky/activities/GetMarketMetadataAction$3;->val$sem:Ljava/util/concurrent/Semaphore;
@@ -47,11 +47,11 @@
     .parameter "error"
 
     .prologue
-    .line 113
+    .line 111
     iget-object v0, p0, Lcom/google/android/finsky/activities/GetMarketMetadataAction$3;->val$sem:Ljava/util/concurrent/Semaphore;
 
     invoke-virtual {v0}, Ljava/util/concurrent/Semaphore;->release()V
 
-    .line 114
+    .line 112
     return-void
 .end method

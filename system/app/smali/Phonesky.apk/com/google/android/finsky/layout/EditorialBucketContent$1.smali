@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 36
+    .line 40
     iput-object p1, p0, Lcom/google/android/finsky/layout/EditorialBucketContent$1;->this$0:Lcom/google/android/finsky/layout/EditorialBucketContent;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,17 +42,17 @@
     .parameter "result"
 
     .prologue
-    .line 39
+    .line 43
     invoke-virtual {p1}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     if-eqz v0, :cond_11
 
-    .line 40
+    .line 44
     iget-object v0, p0, Lcom/google/android/finsky/layout/EditorialBucketContent$1;->this$0:Lcom/google/android/finsky/layout/EditorialBucketContent;
 
-    iget-object v0, v0, Lcom/google/android/finsky/layout/EditorialBucketContent;->mThumbnail:Landroid/widget/ImageView;
+    iget-object v0, v0, Lcom/google/android/finsky/layout/EditorialBucketContent;->mThumbnail:Lcom/google/android/finsky/layout/SmartThumbnailView;
 
     invoke-virtual {p1}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
 
@@ -60,7 +60,7 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/ThumbnailUtils;->setImageBitmapWithFade(Landroid/widget/ImageView;Landroid/graphics/Bitmap;)V
 
-    .line 42
+    .line 46
     :cond_11
     return-void
 .end method
@@ -70,7 +70,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 40
     check-cast p1, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
 
     .end local p1

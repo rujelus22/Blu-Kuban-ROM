@@ -46,17 +46,6 @@
     return-void
 .end method
 
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 32
-    return-void
-.end method
-
 .method public static a()Lcom/google/android/youtube/core/converter/d;
     .registers 1
 
@@ -79,7 +68,7 @@
     .line 51
     const-string v0, "prefix can\'t be null"
 
-    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 52
     new-instance v0, Lcom/google/android/youtube/core/converter/d;

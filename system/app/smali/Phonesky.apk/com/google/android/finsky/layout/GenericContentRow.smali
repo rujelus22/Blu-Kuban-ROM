@@ -44,7 +44,7 @@
     invoke-super/range {p0 .. p5}, Landroid/widget/LinearLayout;->onLayout(ZIIII)V
 
     .line 25
-    const v3, 0x7f080117
+    const v3, 0x7f08014f
 
     invoke-virtual {p0, v3}, Lcom/google/android/finsky/layout/GenericContentRow;->findViewById(I)Landroid/view/View;
 

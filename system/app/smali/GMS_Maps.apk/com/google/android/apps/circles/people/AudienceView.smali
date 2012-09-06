@@ -1,5 +1,6 @@
 .class public Lcom/google/android/apps/circles/people/AudienceView;
 .super Landroid/widget/FrameLayout;
+.source "SourceFile"
 
 
 # instance fields
@@ -9,10 +10,15 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
+    .parameter
+    .parameter
 
+    .prologue
+    .line 31
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const v0, 0x7f0300de
+    .line 32
+    const v0, 0x7f040124
 
     invoke-direct {p0, v0}, Lcom/google/android/apps/circles/people/AudienceView;->a(I)Landroid/view/View;
 
@@ -20,7 +26,8 @@
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/circles/people/AudienceView;->addView(Landroid/view/View;)V
 
-    const v0, 0x7f0f0288
+    .line 33
+    const v0, 0x7f100311
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/circles/people/AudienceView;->findViewById(I)Landroid/view/View;
 
@@ -30,12 +37,16 @@
 
     iput-object v0, p0, Lcom/google/android/apps/circles/people/AudienceView;->a:Landroid/view/ViewGroup;
 
+    .line 34
     return-void
 .end method
 
 .method private a(I)Landroid/view/View;
     .registers 4
+    .parameter
 
+    .prologue
+    .line 51
     invoke-virtual {p0}, Lcom/google/android/apps/circles/people/AudienceView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -55,89 +66,81 @@
 
 
 # virtual methods
-.method public a(Ljava/util/List;)V
+.method public setAudience(Ljava/util/List;)V
     .registers 8
+    .parameter
 
-    const v5, 0x7f0300df
-
+    .prologue
     const/4 v3, 0x0
 
+    .line 37
     iget-object v0, p0, Lcom/google/android/apps/circles/people/AudienceView;->a:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
 
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    if-nez v0, :cond_2a
-
-    invoke-direct {p0, v5}, Lcom/google/android/apps/circles/people/AudienceView;->a(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    const v1, 0x7f020213
-
-    invoke-virtual {v0, v1, v3, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
-
-    const/16 v1, 0x312
-
-    invoke-static {v1}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    iget-object v1, p0, Lcom/google/android/apps/circles/people/AudienceView;->a:Landroid/view/ViewGroup;
-
-    invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    :cond_29
-    return-void
-
-    :cond_2a
     move v2, v3
 
-    :goto_2b
+    .line 38
+    :goto_7
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-ge v2, v0, :cond_29
+    if-ge v2, v0, :cond_3b
 
+    .line 39
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lax/aL;
+    check-cast v0, Lcom/google/googlenav/friend/aF;
 
-    invoke-direct {p0, v5}, Lcom/google/android/apps/circles/people/AudienceView;->a(I)Landroid/view/View;
+    .line 40
+    const v1, 0x7f040125
+
+    invoke-direct {p0, v1}, Lcom/google/android/apps/circles/people/AudienceView;->a(I)Landroid/view/View;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/TextView;
 
-    invoke-virtual {v0}, Lax/aL;->f()I
+    .line 42
+    invoke-virtual {v0}, Lcom/google/googlenav/friend/aF;->d()Lcom/google/googlenav/friend/aI;
+
+    move-result-object v4
+
+    sget-object v5, Lcom/google/googlenav/friend/aI;->c:Lcom/google/googlenav/friend/aI;
+
+    if-eq v4, v5, :cond_2b
+
+    .line 43
+    invoke-virtual {v0}, Lcom/google/googlenav/friend/aF;->g()I
 
     move-result v4
 
     invoke-virtual {v1, v4, v3, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
-    invoke-virtual {v0}, Lax/aL;->b()Ljava/lang/String;
+    .line 45
+    :cond_2b
+    invoke-virtual {v0}, Lcom/google/googlenav/friend/aF;->b()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
+    .line 46
     iget-object v0, p0, Lcom/google/android/apps/circles/people/AudienceView;->a:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
+    .line 38
     add-int/lit8 v0, v2, 0x1
 
     move v2, v0
 
-    goto :goto_2b
+    goto :goto_7
+
+    .line 48
+    :cond_3b
+    return-void
 .end method

@@ -15,6 +15,14 @@
 
 
 # virtual methods
+.method public abstract getOffers(Ljava/lang/String;)Landroid/os/Bundle;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract hasValidCreditCard(Ljava/lang/String;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {

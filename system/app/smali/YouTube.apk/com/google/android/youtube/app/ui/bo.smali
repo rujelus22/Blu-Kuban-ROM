@@ -1,65 +1,37 @@
-.class final Lcom/google/android/youtube/app/ui/bo;
+.class public interface abstract Lcom/google/android/youtube/app/ui/bo;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lcom/google/android/youtube/core/async/g;
 
-
-# instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/ui/bn;
+# static fields
+.field public static final a:Lcom/google/android/youtube/app/ui/bo;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/ui/bn;)V
-    .registers 2
-    .parameter
+.method static constructor <clinit>()V
+    .registers 1
 
     .prologue
-    .line 43
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/bo;->a:Lcom/google/android/youtube/app/ui/bn;
+    .line 62
+    new-instance v0, Lcom/google/android/youtube/app/ui/bp;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/youtube/app/ui/bp;-><init>()V
+
+    sput-object v0, Lcom/google/android/youtube/app/ui/bo;->a:Lcom/google/android/youtube/app/ui/bo;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
-    .registers 4
-    .parameter
-    .parameter
-
-    .prologue
-    .line 43
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/bo;->a:Lcom/google/android/youtube/app/ui/bn;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/bn;->a(Lcom/google/android/youtube/app/ui/bn;)Lcom/google/android/youtube/app/ui/StackButton;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/StackButton;->a()V
-
-    return-void
+.method public abstract b(Z)V
 .end method
 
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 4
-    .parameter
-    .parameter
+.method public abstract c(Z)V
+.end method
 
-    .prologue
-    .line 43
-    check-cast p2, Landroid/graphics/Bitmap;
+.method public abstract n()V
+.end method
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/bo;->a:Lcom/google/android/youtube/app/ui/bn;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/bn;->a(Lcom/google/android/youtube/app/ui/bn;)Lcom/google/android/youtube/app/ui/StackButton;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Lcom/google/android/youtube/app/ui/StackButton;->a(Landroid/graphics/Bitmap;)V
-
-    return-void
+.method public abstract o()V
 .end method

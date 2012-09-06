@@ -1,95 +1,249 @@
-.class public Ld/G;
-.super Ljava/lang/Object;
-
-
-# instance fields
-.field private a:J
-
-.field private b:J
+.class Ld/g;
+.super Ld/j;
+.source "SourceFile"
 
 
 # direct methods
-.method protected constructor <init>()V
-    .registers 3
+.method constructor <init>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Ld/G;->a:J
-
-    const-wide/16 v0, 0x0
-
-    iput-wide v0, p0, Ld/G;->b:J
+    .prologue
+    .line 399
+    invoke-direct {p0}, Ld/j;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected a(J)V
-    .registers 5
+.method public a(Ljava/lang/Object;)Ljava/lang/CharSequence;
+    .registers 3
+    .parameter
 
-    iget-wide v0, p0, Ld/G;->b:J
+    .prologue
+    .line 462
+    invoke-static {p1}, Ld/k;->a(Ljava/lang/Object;)Ljava/lang/CharSequence;
 
-    add-long/2addr v0, p1
+    move-result-object v0
 
-    iput-wide v0, p0, Ld/G;->b:J
+    return-object v0
+.end method
 
+.method public a()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 402
+    invoke-static {}, Ld/k;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public a(Landroid/view/View;)Ljava/lang/Object;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 407
+    invoke-static {p1}, Ld/k;->a(Landroid/view/View;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public a(Ljava/lang/Object;I)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 417
+    invoke-static {p1, p2}, Ld/k;->a(Ljava/lang/Object;I)V
+
+    .line 418
     return-void
 .end method
 
-.method protected a()Z
-    .registers 5
+.method public a(Ljava/lang/Object;Landroid/graphics/Rect;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iget-wide v0, p0, Ld/G;->b:J
+    .prologue
+    .line 437
+    invoke-static {p1, p2}, Ld/k;->a(Ljava/lang/Object;Landroid/graphics/Rect;)V
 
-    const-wide/16 v2, 0x7800
-
-    cmp-long v0, v0, v2
-
-    if-gez v0, :cond_16
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    iget-wide v2, p0, Ld/G;->a:J
-
-    sub-long/2addr v0, v2
-
-    const-wide/32 v2, 0xea60
-
-    cmp-long v0, v0, v2
-
-    if-lez v0, :cond_18
-
-    :cond_16
-    const/4 v0, 0x1
-
-    :goto_17
-    return v0
-
-    :cond_18
-    const/4 v0, 0x0
-
-    goto :goto_17
+    .line 438
+    return-void
 .end method
 
-.method protected b()V
+.method public a(Ljava/lang/Object;Landroid/view/View;)V
     .registers 3
+    .parameter
+    .parameter
 
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+    .prologue
+    .line 602
+    invoke-static {p1, p2}, Ld/k;->a(Ljava/lang/Object;Landroid/view/View;)V
 
-    move-result-wide v0
+    .line 603
+    return-void
+.end method
 
-    iput-wide v0, p0, Ld/G;->a:J
+.method public a(Ljava/lang/Object;Ljava/lang/CharSequence;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    const-wide/16 v0, 0x0
+    .prologue
+    .line 562
+    invoke-static {p1, p2}, Ld/k;->a(Ljava/lang/Object;Ljava/lang/CharSequence;)V
 
-    iput-wide v0, p0, Ld/G;->b:J
+    .line 563
+    return-void
+.end method
 
+.method public a(Ljava/lang/Object;Z)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 567
+    invoke-static {p1, p2}, Ld/k;->a(Ljava/lang/Object;Z)V
+
+    .line 568
+    return-void
+.end method
+
+.method public b(Ljava/lang/Object;)Ljava/lang/CharSequence;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 477
+    invoke-static {p1}, Ld/k;->b(Ljava/lang/Object;)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public b(Ljava/lang/Object;Landroid/graphics/Rect;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 442
+    invoke-static {p1, p2}, Ld/k;->b(Ljava/lang/Object;Landroid/graphics/Rect;)V
+
+    .line 443
+    return-void
+.end method
+
+.method public b(Ljava/lang/Object;Ljava/lang/CharSequence;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 572
+    invoke-static {p1, p2}, Ld/k;->b(Ljava/lang/Object;Ljava/lang/CharSequence;)V
+
+    .line 573
+    return-void
+.end method
+
+.method public b(Ljava/lang/Object;Z)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 577
+    invoke-static {p1, p2}, Ld/k;->b(Ljava/lang/Object;Z)V
+
+    .line 578
+    return-void
+.end method
+
+.method public c(Ljava/lang/Object;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 632
+    invoke-static {p1}, Ld/k;->c(Ljava/lang/Object;)V
+
+    .line 633
+    return-void
+.end method
+
+.method public c(Ljava/lang/Object;Landroid/graphics/Rect;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 542
+    invoke-static {p1, p2}, Ld/k;->c(Ljava/lang/Object;Landroid/graphics/Rect;)V
+
+    .line 543
+    return-void
+.end method
+
+.method public c(Ljava/lang/Object;Ljava/lang/CharSequence;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 597
+    invoke-static {p1, p2}, Ld/k;->c(Ljava/lang/Object;Ljava/lang/CharSequence;)V
+
+    .line 598
+    return-void
+.end method
+
+.method public c(Ljava/lang/Object;Z)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 582
+    invoke-static {p1, p2}, Ld/k;->c(Ljava/lang/Object;Z)V
+
+    .line 583
+    return-void
+.end method
+
+.method public d(Ljava/lang/Object;Landroid/graphics/Rect;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 547
+    invoke-static {p1, p2}, Ld/k;->d(Ljava/lang/Object;Landroid/graphics/Rect;)V
+
+    .line 548
+    return-void
+.end method
+
+.method public d(Ljava/lang/Object;Z)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 612
+    invoke-static {p1, p2}, Ld/k;->d(Ljava/lang/Object;Z)V
+
+    .line 613
     return-void
 .end method

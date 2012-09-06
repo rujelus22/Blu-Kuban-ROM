@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="general_preference_text_zoom_summary_array">
+        <item>نوشتار بسیار کوچک</item>
+        <item>نوشتار کوچک</item>
+        <item>نوشتار با اندازه معمولی</item>
+        <item>نوشتار بزرگ</item>
+        <item>نوشتار بسیار بزرگ</item>
+    </string-array>
+</resources>

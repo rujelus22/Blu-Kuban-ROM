@@ -1,45 +1,53 @@
-.class Lcom/google/googlenav/ui/view/android/z;
-.super Lcom/google/googlenav/ui/android/M;
+.class Lcom/google/googlenav/ui/view/android/Z;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/android/r;
+.field final synthetic a:Lcom/google/googlenav/ui/view/android/CheckableContainer;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/r;)V
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/CheckableContainer;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/z;->a:Lcom/google/googlenav/ui/view/android/r;
+    .prologue
+    .line 82
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/Z;->a:Lcom/google/googlenav/ui/view/android/CheckableContainer;
 
-    invoke-direct {p0}, Lcom/google/googlenav/ui/android/M;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/view/View;)V
-    .registers 4
+.method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
+    .registers 5
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/z;->a:Lcom/google/googlenav/ui/view/android/r;
+    .prologue
+    .line 85
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/Z;->a:Lcom/google/googlenav/ui/view/android/CheckableContainer;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/r;->e(Lcom/google/googlenav/ui/view/android/r;)Z
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/CheckableContainer;->a(Lcom/google/googlenav/ui/view/android/CheckableContainer;)Lcom/google/googlenav/ui/view/android/ab;
 
-    move-result v0
+    move-result-object v0
 
+    .line 86
     if-eqz v0, :cond_d
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/z;->a:Lcom/google/googlenav/ui/view/android/r;
+    .line 87
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/Z;->a:Lcom/google/googlenav/ui/view/android/CheckableContainer;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/r;->k()V
+    invoke-interface {v0, v1, p2}, Lcom/google/googlenav/ui/view/android/ab;->a(Lcom/google/googlenav/ui/view/android/CheckableContainer;Z)V
 
+    .line 89
     :cond_d
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/z;->a:Lcom/google/googlenav/ui/view/android/r;
-
-    const/16 v1, 0xd6
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/view/android/r;->d(I)V
-
     return-void
 .end method

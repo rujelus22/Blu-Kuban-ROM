@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:gravity="center" android:id="@id/thumb_frame" android:background="#ff000000" android:layout_width="130.0dip" android:layout_height="100.0dip">
-        <ImageView android:layout_gravity="center" android:id="@id/thumb_image" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="7.3299866dip" android:scaleType="fitXY" />
-    </FrameLayout>
-</LinearLayout>

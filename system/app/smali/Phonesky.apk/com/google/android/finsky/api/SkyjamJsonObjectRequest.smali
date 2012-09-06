@@ -25,11 +25,11 @@
     .end annotation
 
     .prologue
-    .line 22
+    .line 21
     .local p3, listener:Lcom/android/volley/Response$Listener;,"Lcom/android/volley/Response$Listener<Lorg/json/JSONObject;>;"
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/volley/toolbox/JsonObjectRequest;-><init>(Ljava/lang/String;Lorg/json/JSONObject;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 23
+    .line 22
     return-void
 .end method
 
@@ -55,16 +55,16 @@
     .end annotation
 
     .prologue
-    .line 31
+    .line 30
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 32
+    .line 31
     .local v0, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     const-string v1, "X-Device-Logging-ID"
 
-    sget-object v2, Lcom/google/android/finsky/config/G;->loggingId:Lcom/google/android/finsky/config/GservicesValue;
+    sget-object v2, Lcom/google/android/finsky/api/DfeApiConfig;->loggingId:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v2}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 
@@ -72,10 +72,10 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 33
+    .line 32
     const-string v2, "X-Device-ID"
 
-    sget-object v1, Lcom/google/android/finsky/config/G;->androidId:Lcom/google/android/finsky/config/GservicesValue;
+    sget-object v1, Lcom/google/android/finsky/api/DfeApiConfig;->androidId:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v1}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 
@@ -93,6 +93,6 @@
 
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 34
+    .line 33
     return-object v0
 .end method

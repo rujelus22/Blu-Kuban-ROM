@@ -12,9 +12,9 @@
 
 
 # static fields
-.field private static final CHEVRON_ANIMATION_DURATION:I = 0x352
+.field private static final CHEVRON_ANIMATION_DURATION:I = 0xbb8
 
-.field private static final CHEVRON_INCREMENTAL_DELAY:I = 0xa0
+.field private static final CHEVRON_INCREMENTAL_DELAY:I = 0x1e0
 
 .field private static final DEBUG:Z = false
 
@@ -978,7 +978,7 @@
     .local v0, activeTarget:I
     const/4 v2, -0x1
 
-    if-eq v0, v2, :cond_96
+    if-eq v0, v2, :cond_9a
 
     move v1, v3
 
@@ -990,7 +990,7 @@
     .line 405
     iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    if-eqz v1, :cond_99
+    if-eqz v1, :cond_9d
 
     const/4 v2, 0x0
 
@@ -998,7 +998,7 @@
     invoke-virtual {v6, v2}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setAlpha(F)V
 
     .line 406
-    if-eqz v1, :cond_9c
+    if-eqz v1, :cond_a0
 
     .line 407
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mTargetDrawables:Ljava/util/ArrayList;
@@ -1066,7 +1066,7 @@
 
     const/4 v3, 0x6
 
-    const-string v5, "x"
+    const-string/jumbo v5, "x"
 
     aput-object v5, v8, v3
 
@@ -1082,7 +1082,7 @@
 
     const/16 v3, 0x8
 
-    const-string v5, "y"
+    const-string/jumbo v5, "y"
 
     aput-object v5, v8, v3
 
@@ -1098,7 +1098,7 @@
 
     const/16 v3, 0xa
 
-    const-string v5, "onUpdate"
+    const-string/jumbo v5, "onUpdate"
 
     aput-object v5, v8, v3
 
@@ -1110,7 +1110,7 @@
 
     const/16 v3, 0xc
 
-    const-string v5, "onComplete"
+    const-string/jumbo v5, "onComplete"
 
     aput-object v5, v8, v3
 
@@ -1127,28 +1127,28 @@
     iput-object v2, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mHandleAnimation:Lcom/android/internal/widget/multiwaveview/Tweener;
 
     .line 434
-    :goto_92
+    :goto_96
     invoke-direct {p0, v4}, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->setGrabbedState(I)V
 
     .line 435
     return-void
 
     .end local v1           #targetHit:Z
-    :cond_96
+    :cond_9a
     move v1, v4
 
     .line 399
     goto/16 :goto_c
 
     .restart local v1       #targetHit:Z
-    :cond_99
+    :cond_9d
     move v2, v5
 
     .line 405
     goto/16 :goto_14
 
     .line 424
-    :cond_9c
+    :cond_a0
     iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     const-wide/16 v7, 0x12c
@@ -1191,7 +1191,7 @@
 
     const/4 v2, 0x6
 
-    const-string v3, "x"
+    const-string/jumbo v3, "x"
 
     aput-object v3, v9, v2
 
@@ -1207,7 +1207,7 @@
 
     const/16 v2, 0x8
 
-    const-string v3, "y"
+    const-string/jumbo v3, "y"
 
     aput-object v3, v9, v2
 
@@ -1223,7 +1223,7 @@
 
     const/16 v2, 0xa
 
-    const-string v3, "onUpdate"
+    const-string/jumbo v3, "onUpdate"
 
     aput-object v3, v9, v2
 
@@ -1235,7 +1235,7 @@
 
     const/16 v2, 0xc
 
-    const-string v3, "onComplete"
+    const-string/jumbo v3, "onComplete"
 
     aput-object v3, v9, v2
 
@@ -1243,11 +1243,11 @@
 
     iget-boolean v2, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mDragging:Z
 
-    if-eqz v2, :cond_103
+    if-eqz v2, :cond_10b
 
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mResetListenerWithPing:Landroid/animation/Animator$AnimatorListener;
 
-    :goto_fa
+    :goto_102
     aput-object v2, v9, v3
 
     invoke-static {v6, v7, v8, v9}, Lcom/android/internal/widget/multiwaveview/Tweener;->to(Ljava/lang/Object;J[Ljava/lang/Object;)Lcom/android/internal/widget/multiwaveview/Tweener;
@@ -1256,12 +1256,12 @@
 
     iput-object v2, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mHandleAnimation:Lcom/android/internal/widget/multiwaveview/Tweener;
 
-    goto :goto_92
+    goto :goto_96
 
-    :cond_103
+    :cond_10b
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mResetListener:Landroid/animation/Animator$AnimatorListener;
 
-    goto :goto_fa
+    goto :goto_102
 .end method
 
 .method private dump()V
@@ -2488,10 +2488,10 @@
     iput-boolean p1, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mAnimatingTargets:Z
 
     .line 453
-    if-eqz p1, :cond_9a
+    if-eqz p1, :cond_9d
 
     .line 454
-    if-eqz p1, :cond_5d
+    if-eqz p1, :cond_5e
 
     const/16 v0, 0x4b0
 
@@ -2510,7 +2510,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_5f
+    if-eqz v4, :cond_60
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2557,7 +2557,7 @@
 
     const/4 v8, 0x4
 
-    const-string v9, "onUpdate"
+    const-string/jumbo v9, "onUpdate"
 
     aput-object v9, v7, v8
 
@@ -2578,7 +2578,7 @@
     .end local v0           #duration:I
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #target:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    :cond_5d
+    :cond_5e
     move v0, v3
 
     .line 454
@@ -2587,7 +2587,7 @@
     .line 462
     .restart local v0       #duration:I
     .restart local v1       #i$:Ljava/util/Iterator;
-    :cond_5f
+    :cond_60
     iget-object v4, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mTargetAnimations:Ljava/util/ArrayList;
 
     iget-object v5, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mOuterRing:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
@@ -2622,7 +2622,7 @@
 
     const/4 v3, 0x4
 
-    const-string v9, "onUpdate"
+    const-string/jumbo v9, "onUpdate"
 
     aput-object v9, v8, v3
 
@@ -2634,7 +2634,7 @@
 
     const/4 v3, 0x6
 
-    const-string v9, "onComplete"
+    const-string/jumbo v9, "onComplete"
 
     aput-object v9, v8, v3
 
@@ -2652,12 +2652,12 @@
 
     .line 474
     .end local v0           #duration:I
-    :goto_99
+    :goto_9c
     return-void
 
     .line 468
     .end local v1           #i$:Ljava/util/Iterator;
-    :cond_9a
+    :cond_9d
     iget-object v3, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mTargetDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -2665,12 +2665,12 @@
     move-result-object v1
 
     .restart local v1       #i$:Ljava/util/Iterator;
-    :goto_a0
+    :goto_a3
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_b5
+    if-eqz v3, :cond_b8
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2687,16 +2687,16 @@
     .line 470
     invoke-virtual {v2, v10}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setAlpha(F)V
 
-    goto :goto_a0
+    goto :goto_a3
 
     .line 472
     .end local v2           #target:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    :cond_b5
+    :cond_b8
     iget-object v3, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mOuterRing:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     invoke-virtual {v3, v10}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setAlpha(F)V
 
-    goto :goto_99
+    goto :goto_9c
 .end method
 
 .method private hideUnselected(I)V
@@ -3151,7 +3151,7 @@
     iput-boolean p1, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mAnimatingTargets:Z
 
     .line 481
-    if-eqz p1, :cond_93
+    if-eqz p1, :cond_96
 
     .line 482
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mTargetDrawables:Ljava/util/ArrayList;
@@ -3166,7 +3166,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_59
+    if-eqz v2, :cond_5a
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3211,7 +3211,7 @@
 
     const/4 v6, 0x4
 
-    const-string v7, "onUpdate"
+    const-string/jumbo v7, "onUpdate"
 
     aput-object v7, v5, v6
 
@@ -3231,7 +3231,7 @@
 
     .line 489
     .end local v1           #target:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    :cond_59
+    :cond_5a
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mTargetAnimations:Ljava/util/ArrayList;
 
     iget-object v3, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mOuterRing:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
@@ -3264,7 +3264,7 @@
 
     const/4 v7, 0x4
 
-    const-string v8, "onUpdate"
+    const-string/jumbo v8, "onUpdate"
 
     aput-object v8, v6, v7
 
@@ -3276,7 +3276,7 @@
 
     const/4 v7, 0x6
 
-    const-string v8, "onComplete"
+    const-string/jumbo v8, "onComplete"
 
     aput-object v8, v6, v7
 
@@ -3293,12 +3293,12 @@
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 501
-    :goto_92
+    :goto_95
     return-void
 
     .line 495
     .end local v0           #i$:Ljava/util/Iterator;
-    :cond_93
+    :cond_96
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mTargetDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -3306,12 +3306,12 @@
     move-result-object v0
 
     .restart local v0       #i$:Ljava/util/Iterator;
-    :goto_99
+    :goto_9c
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_ae
+    if-eqz v2, :cond_b1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3328,16 +3328,16 @@
     .line 497
     invoke-virtual {v1, v8}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setAlpha(F)V
 
-    goto :goto_99
+    goto :goto_9c
 
     .line 499
     .end local v1           #target:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    :cond_ae
+    :cond_b1
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mOuterRing:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     invoke-virtual {v2, v8}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setAlpha(F)V
 
-    goto :goto_92
+    goto :goto_95
 .end method
 
 .method private square(F)F
@@ -3423,8 +3423,6 @@
     move-object/from16 v0, p0
 
     iget v14, v0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mWaveCenterX:F
-
-    add-float/2addr v14, v8
 
     aput v14, v12, v13
 
@@ -3534,8 +3532,6 @@
 
     iget v14, v0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mWaveCenterX:F
 
-    add-float/2addr v14, v1
-
     aput v14, v12, v13
 
     const/4 v13, 0x1
@@ -3609,11 +3605,11 @@
     invoke-virtual {v11}, Ljava/util/ArrayList;->clear()V
 
     .line 320
-    const/high16 v9, 0x3f00
+    const v9, 0x3e99999a
 
     .line 321
     .local v9, startScale:F
-    const/high16 v5, 0x4000
+    const v5, 0x3f8ccccd
 
     .line 322
     .local v5, endScale:F
@@ -3623,7 +3619,7 @@
     :goto_d1
     const/4 v11, 0x4
 
-    if-ge v4, v11, :cond_1ba
+    if-ge v4, v11, :cond_1bf
 
     .line 323
     const/4 v2, 0x0
@@ -3634,10 +3630,10 @@
 
     iget v11, v0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mFeedbackCount:I
 
-    if-ge v2, v11, :cond_1b6
+    if-ge v2, v11, :cond_1bb
 
     .line 324
-    mul-int/lit16 v3, v2, 0xa0
+    mul-int/lit16 v3, v2, 0x1e0
 
     .line 325
     .local v3, delay:I
@@ -3675,7 +3671,7 @@
 
     iget-object v11, v0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mChevronAnimations:Ljava/util/ArrayList;
 
-    const-wide/16 v12, 0x352
+    const-wide/16 v12, 0xbb8
 
     const/16 v14, 0x10
 
@@ -3713,7 +3709,7 @@
 
     const/4 v15, 0x4
 
-    const-string v16, "x"
+    const-string/jumbo v16, "x"
 
     aput-object v16, v14, v15
 
@@ -3751,7 +3747,7 @@
 
     const/4 v15, 0x6
 
-    const-string v16, "y"
+    const-string/jumbo v16, "y"
 
     aput-object v16, v14, v15
 
@@ -3803,13 +3799,13 @@
 
     move-object/from16 v16, v0
 
-    fill-array-data v16, :array_1bc
+    fill-array-data v16, :array_1c0
 
     aput-object v16, v14, v15
 
     const/16 v15, 0xa
 
-    const-string v16, "scaleX"
+    const-string/jumbo v16, "scaleX"
 
     aput-object v16, v14, v15
 
@@ -3823,13 +3819,13 @@
 
     move-object/from16 v16, v0
 
-    fill-array-data v16, :array_1c4
+    fill-array-data v16, :array_1c8
 
     aput-object v16, v14, v15
 
     const/16 v15, 0xc
 
-    const-string v16, "scaleY"
+    const-string/jumbo v16, "scaleY"
 
     aput-object v16, v14, v15
 
@@ -3843,13 +3839,13 @@
 
     move-object/from16 v16, v0
 
-    fill-array-data v16, :array_1cc
+    fill-array-data v16, :array_1d0
 
     aput-object v16, v14, v15
 
     const/16 v15, 0xe
 
-    const-string v16, "onUpdate"
+    const-string/jumbo v16, "onUpdate"
 
     aput-object v16, v14, v15
 
@@ -3874,35 +3870,33 @@
     .line 322
     .end local v3           #delay:I
     .end local v7           #icon:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    :cond_1b6
+    :cond_1bb
     add-int/lit8 v4, v4, 0x1
 
     goto/16 :goto_d1
 
     .line 340
     .end local v2           #count:I
-    :cond_1ba
+    :cond_1bf
     return-void
 
     .line 329
-    nop
-
-    :array_1bc
+    :array_1c0
     .array-data 0x4
         0x0t 0x0t 0x80t 0x3ft
         0x0t 0x0t 0x0t 0x0t
     .end array-data
 
-    :array_1c4
+    :array_1c8
     .array-data 0x4
-        0x0t 0x0t 0x0t 0x3ft
-        0x0t 0x0t 0x0t 0x40t
+        0x9at 0x99t 0x99t 0x3et
+        0xcdt 0xcct 0x8ct 0x3ft
     .end array-data
 
-    :array_1cc
+    :array_1d0
     .array-data 0x4
-        0x0t 0x0t 0x0t 0x3ft
-        0x0t 0x0t 0x0t 0x40t
+        0x9at 0x99t 0x99t 0x3et
+        0xcdt 0xcct 0x8ct 0x3ft
     .end array-data
 .end method
 
@@ -5116,18 +5110,18 @@
 
     .prologue
     .line 597
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_16
 
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mVibrator:Landroid/os/Vibrator;
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_16
 
     .line 598
     invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    const-string v1, "vibrator"
+    const-string/jumbo v1, "vibrator"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -5138,14 +5132,14 @@
     iput-object v0, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mVibrator:Landroid/os/Vibrator;
 
     .line 602
-    :goto_14
+    :goto_15
     return-void
 
     .line 600
-    :cond_15
+    :cond_16
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mVibrator:Landroid/os/Vibrator;
 
-    goto :goto_14
+    goto :goto_15
 .end method

@@ -30,7 +30,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Ljava/util/ArrayList;Lcom/google/android/youtube/core/model/m;)V
+.method synthetic constructor <init>(Ljava/util/ArrayList;Lcom/google/android/youtube/core/model/l;)V
     .registers 3
     .parameter
     .parameter

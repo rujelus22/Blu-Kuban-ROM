@@ -18,7 +18,7 @@
 
 .field private static final CHINESE:Ljava/lang/String; = "CHINESE"
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final ENGLISH:Ljava/lang/String; = "ENGLISH"
 

@@ -31,7 +31,7 @@
 
     const/4 v1, 0x0
 
-    .line 44
+    .line 43
     new-instance v2, Lorg/apache/commons/io/IOCase;
 
     const-string v3, "Sensitive"
@@ -40,7 +40,7 @@
 
     sput-object v2, Lorg/apache/commons/io/IOCase;->SENSITIVE:Lorg/apache/commons/io/IOCase;
 
-    .line 49
+    .line 48
     new-instance v2, Lorg/apache/commons/io/IOCase;
 
     const-string v3, "Insensitive"
@@ -49,7 +49,7 @@
 
     sput-object v2, Lorg/apache/commons/io/IOCase;->INSENSITIVE:Lorg/apache/commons/io/IOCase;
 
-    .line 59
+    .line 57
     new-instance v2, Lorg/apache/commons/io/IOCase;
 
     const-string v3, "System"
@@ -79,16 +79,16 @@
     .parameter "sensitive"
 
     .prologue
-    .line 98
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 96
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 99
+    .line 97
     iput-object p1, p0, Lorg/apache/commons/io/IOCase;->name:Ljava/lang/String;
 
-    .line 100
+    .line 98
     iput-boolean p2, p0, Lorg/apache/commons/io/IOCase;->sensitive:Z
 
-    .line 101
+    .line 99
     return-void
 .end method
 
@@ -97,7 +97,7 @@
     .parameter "name"
 
     .prologue
-    .line 79
+    .line 77
     sget-object v0, Lorg/apache/commons/io/IOCase;->SENSITIVE:Lorg/apache/commons/io/IOCase;
 
     iget-object v0, v0, Lorg/apache/commons/io/IOCase;->name:Ljava/lang/String;
@@ -108,14 +108,14 @@
 
     if-eqz v0, :cond_d
 
-    .line 80
+    .line 78
     sget-object v0, Lorg/apache/commons/io/IOCase;->SENSITIVE:Lorg/apache/commons/io/IOCase;
 
-    .line 86
+    .line 84
     :goto_c
     return-object v0
 
-    .line 82
+    .line 80
     :cond_d
     sget-object v0, Lorg/apache/commons/io/IOCase;->INSENSITIVE:Lorg/apache/commons/io/IOCase;
 
@@ -127,12 +127,12 @@
 
     if-eqz v0, :cond_1a
 
-    .line 83
+    .line 81
     sget-object v0, Lorg/apache/commons/io/IOCase;->INSENSITIVE:Lorg/apache/commons/io/IOCase;
 
     goto :goto_c
 
-    .line 85
+    .line 83
     :cond_1a
     sget-object v0, Lorg/apache/commons/io/IOCase;->SYSTEM:Lorg/apache/commons/io/IOCase;
 
@@ -144,12 +144,12 @@
 
     if-eqz v0, :cond_27
 
-    .line 86
+    .line 84
     sget-object v0, Lorg/apache/commons/io/IOCase;->SYSTEM:Lorg/apache/commons/io/IOCase;
 
     goto :goto_c
 
-    .line 88
+    .line 86
     :cond_27
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -180,7 +180,7 @@
     .registers 2
 
     .prologue
-    .line 110
+    .line 108
     iget-object v0, p0, Lorg/apache/commons/io/IOCase;->name:Ljava/lang/String;
 
     invoke-static {v0}, Lorg/apache/commons/io/IOCase;->forName(Ljava/lang/String;)Lorg/apache/commons/io/IOCase;
@@ -198,12 +198,12 @@
     .parameter "str2"
 
     .prologue
-    .line 145
+    .line 143
     if-eqz p1, :cond_4
 
     if-nez p2, :cond_c
 
-    .line 146
+    .line 144
     :cond_4
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -213,7 +213,7 @@
 
     throw v0
 
-    .line 148
+    .line 146
     :cond_c
     iget-boolean v0, p0, Lorg/apache/commons/io/IOCase;->sensitive:Z
 
@@ -242,12 +242,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 196
+    .line 194
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result v5
 
-    .line 197
+    .line 195
     .local v5, endLen:I
     iget-boolean v0, p0, Lorg/apache/commons/io/IOCase;->sensitive:Z
 
@@ -284,12 +284,12 @@
     .parameter "str2"
 
     .prologue
-    .line 163
+    .line 161
     if-eqz p1, :cond_4
 
     if-nez p2, :cond_c
 
-    .line 164
+    .line 162
     :cond_4
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -299,7 +299,7 @@
 
     throw v0
 
-    .line 166
+    .line 164
     :cond_c
     iget-boolean v0, p0, Lorg/apache/commons/io/IOCase;->sensitive:Z
 
@@ -328,7 +328,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 181
+    .line 179
     iget-boolean v0, p0, Lorg/apache/commons/io/IOCase;->sensitive:Z
 
     if-nez v0, :cond_12
@@ -363,13 +363,13 @@
     .parameter "str"
 
     .prologue
-    .line 226
+    .line 222
     if-nez p1, :cond_4
 
-    .line 227
+    .line 223
     const/4 p1, 0x0
 
-    .line 229
+    .line 225
     .end local p1
     :cond_3
     :goto_3
@@ -392,7 +392,7 @@
     .registers 2
 
     .prologue
-    .line 239
+    .line 235
     iget-object v0, p0, Lorg/apache/commons/io/IOCase;->name:Ljava/lang/String;
 
     return-object v0

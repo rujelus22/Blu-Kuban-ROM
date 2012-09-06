@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res/com.google.android.apps.maps">
+    <com.google.android.maps.driveabout.widgets.DestinationActivityTileButton android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:onClick="handleSpeakDestinationClick" app:title="@string/da_picker_speak_destination" app:icon="@drawable/da_picker_speak_destination" />
+    <com.google.android.maps.driveabout.widgets.DestinationActivityTileButton android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:onClick="handleTypeDestinationClick" app:title="@string/da_picker_type_destination" app:icon="@drawable/da_picker_type_destination" />
+    <com.google.android.maps.driveabout.widgets.DestinationActivityTileButton android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:onClick="handleDriveHomeClick" app:title="@string/da_go_home" app:icon="@drawable/da_ic_menu_go_home" />
+    <com.google.android.maps.driveabout.widgets.DestinationActivityTileButton android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:onClick="handleFreeDriveClick" app:title="@string/da_map" app:icon="@drawable/da_ic_menu_free_drive" />
+</LinearLayout>

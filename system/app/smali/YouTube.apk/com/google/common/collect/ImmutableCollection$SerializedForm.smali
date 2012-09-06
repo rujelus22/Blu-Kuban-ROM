@@ -20,13 +20,13 @@
     .parameter
 
     .prologue
-    .line 246
+    .line 254
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 247
+    .line 255
     iput-object p1, p0, Lcom/google/common/collect/ImmutableCollection$SerializedForm;->elements:[Ljava/lang/Object;
 
-    .line 248
+    .line 256
     return-void
 .end method
 
@@ -36,7 +36,7 @@
     .registers 3
 
     .prologue
-    .line 250
+    .line 258
     iget-object v0, p0, Lcom/google/common/collect/ImmutableCollection$SerializedForm;->elements:[Ljava/lang/Object;
 
     array-length v0, v0
@@ -53,7 +53,7 @@
 
     iget-object v1, p0, Lcom/google/common/collect/ImmutableCollection$SerializedForm;->elements:[Ljava/lang/Object;
 
-    invoke-static {v1}, Lcom/google/common/collect/fu;->a([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-static {v1}, Lcom/google/common/collect/ji;->a([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v1
 

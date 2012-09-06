@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/footer" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:layout_gravity="center" android:id="@id/list_empty_progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="64.0dip">
-        <ProgressBar android:layout_gravity="center_vertical" android:id="@id/list_empty_progress_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="true" style="?android:attr/progressBarStyleSmall" />
-        <TextView android:textSize="18.0sp" android:layout_gravity="center_vertical" android:id="@id/list_empty_progress_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/loading" />
-    </LinearLayout>
-</FrameLayout>

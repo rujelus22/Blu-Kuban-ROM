@@ -37,26 +37,26 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 316
+    .line 458
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 326
+    .line 468
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->fileType_:I
 
-    .line 343
+    .line 485
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->versionCode_:I
 
-    .line 360
+    .line 502
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->size_:J
 
-    .line 399
+    .line 542
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->cachedSize:I
 
-    .line 316
+    .line 458
     return-void
 .end method
 
@@ -66,15 +66,15 @@
     .registers 2
 
     .prologue
-    .line 401
+    .line 545
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 403
+    .line 547
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->getSerializedSize()I
 
-    .line 405
+    .line 549
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->cachedSize:I
 
@@ -85,7 +85,7 @@
     .registers 2
 
     .prologue
-    .line 328
+    .line 470
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->fileType_:I
 
     return v0
@@ -95,10 +95,10 @@
     .registers 5
 
     .prologue
-    .line 409
+    .line 554
     const/4 v0, 0x0
 
-    .line 410
+    .line 555
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->hasFileType()Z
 
@@ -106,7 +106,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 411
+    .line 556
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->getFileType()I
@@ -119,7 +119,7 @@
 
     add-int/2addr v0, v1
 
-    .line 414
+    .line 559
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->hasVersionCode()Z
 
@@ -127,7 +127,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 415
+    .line 560
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->getVersionCode()I
@@ -140,7 +140,7 @@
 
     add-int/2addr v0, v1
 
-    .line 418
+    .line 563
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->hasSize()Z
 
@@ -148,7 +148,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 419
+    .line 564
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->getSize()J
@@ -161,11 +161,11 @@
 
     add-int/2addr v0, v1
 
-    .line 422
+    .line 567
     :cond_31
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->cachedSize:I
 
-    .line 423
+    .line 568
     return v0
 .end method
 
@@ -173,7 +173,7 @@
     .registers 3
 
     .prologue
-    .line 361
+    .line 503
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->size_:J
 
     return-wide v0
@@ -183,7 +183,7 @@
     .registers 2
 
     .prologue
-    .line 344
+    .line 486
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->versionCode_:I
 
     return v0
@@ -193,7 +193,7 @@
     .registers 2
 
     .prologue
-    .line 327
+    .line 469
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->hasFileType:Z
 
     return v0
@@ -203,7 +203,7 @@
     .registers 2
 
     .prologue
-    .line 362
+    .line 504
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->hasSize:Z
 
     return v0
@@ -213,7 +213,7 @@
     .registers 2
 
     .prologue
-    .line 345
+    .line 487
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->hasVersionCode:Z
 
     return v0
@@ -229,29 +229,29 @@
     .end annotation
 
     .prologue
-    .line 430
+    .line 576
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 431
+    .line 577
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_26
 
-    .line 435
+    .line 581
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 436
+    .line 582
     :sswitch_d
     return-object p0
 
-    .line 441
+    .line 587
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -261,7 +261,7 @@
 
     goto :goto_0
 
-    .line 445
+    .line 591
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -271,7 +271,7 @@
 
     goto :goto_0
 
-    .line 449
+    .line 595
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -281,7 +281,7 @@
 
     goto :goto_0
 
-    .line 431
+    .line 577
     :sswitch_data_26
     .sparse-switch
         0x0 -> :sswitch_d
@@ -301,7 +301,7 @@
     .end annotation
 
     .prologue
-    .line 314
+    .line 455
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;
 
     move-result-object v0
@@ -314,15 +314,15 @@
     .parameter "value"
 
     .prologue
-    .line 330
+    .line 472
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->hasFileType:Z
 
-    .line 331
+    .line 473
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->fileType_:I
 
-    .line 332
+    .line 474
     return-object p0
 .end method
 
@@ -331,15 +331,15 @@
     .parameter "value"
 
     .prologue
-    .line 364
+    .line 506
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->hasSize:Z
 
-    .line 365
+    .line 507
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->size_:J
 
-    .line 366
+    .line 508
     return-object p0
 .end method
 
@@ -348,15 +348,15 @@
     .parameter "value"
 
     .prologue
-    .line 347
+    .line 489
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->hasVersionCode:Z
 
-    .line 348
+    .line 490
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->versionCode_:I
 
-    .line 349
+    .line 491
     return-object p0
 .end method
 
@@ -370,14 +370,14 @@
     .end annotation
 
     .prologue
-    .line 388
+    .line 531
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->hasFileType()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 389
+    .line 532
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->getFileType()I
@@ -386,7 +386,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 391
+    .line 534
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->hasVersionCode()Z
 
@@ -394,7 +394,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 392
+    .line 535
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->getVersionCode()I
@@ -403,7 +403,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 394
+    .line 537
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->hasSize()Z
 
@@ -411,7 +411,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 395
+    .line 538
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$FileMetadata;->getSize()J
@@ -420,7 +420,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 397
+    .line 540
     :cond_2a
     return-void
 .end method

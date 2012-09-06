@@ -1,7 +1,8 @@
-.class public interface abstract LL/f;
+.class public interface abstract Ll/f;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # virtual methods
-.method public abstract b()Ljava/lang/Object;
+.method public abstract a()V
 .end method

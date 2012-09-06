@@ -43,28 +43,28 @@
     .registers 2
 
     .prologue
-    .line 44
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 43
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
+    .line 47
     new-instance v0, Ljava/lang/ref/ReferenceQueue;
 
     invoke-direct {v0}, Ljava/lang/ref/ReferenceQueue;-><init>()V
 
     iput-object v0, p0, Lorg/apache/commons/io/FileCleaningTracker;->q:Ljava/lang/ref/ReferenceQueue;
 
-    .line 52
+    .line 51
     new-instance v0, Ljava/util/Vector;
 
     invoke-direct {v0}, Ljava/util/Vector;-><init>()V
 
     iput-object v0, p0, Lorg/apache/commons/io/FileCleaningTracker;->trackers:Ljava/util/Collection;
 
-    .line 56
+    .line 55
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/apache/commons/io/FileCleaningTracker;->exitWhenFinished:Z
 
-    .line 229
+    .line 223
     return-void
 .end method

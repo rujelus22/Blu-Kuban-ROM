@@ -1,459 +1,136 @@
-.class public final Lal/b;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lorg/apache/http/client/HttpClient;
+.class public Lal/b;
+.super Lak/i;
+.source "SourceFile"
 
 
 # static fields
-.field private static final a:Ljava/lang/ThreadLocal;
-
-.field private static final b:Lorg/apache/http/HttpRequestInterceptor;
-
-
-# instance fields
-.field private final c:Lorg/apache/http/client/HttpClient;
-
-.field private d:Ljava/lang/RuntimeException;
-
-.field private volatile e:Lal/f;
+.field public static final a:Lal/b;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 1
 
-    new-instance v0, Ljava/lang/ThreadLocal;
+    .prologue
+    .line 18
+    new-instance v0, Lal/b;
 
-    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
+    invoke-direct {v0}, Lal/b;-><init>()V
 
-    sput-object v0, Lal/b;->a:Ljava/lang/ThreadLocal;
-
-    new-instance v0, Lal/c;
-
-    invoke-direct {v0}, Lal/c;-><init>()V
-
-    sput-object v0, Lal/b;->b:Lorg/apache/http/HttpRequestInterceptor;
+    sput-object v0, Lal/b;->a:Lal/b;
 
     return-void
 .end method
 
-.method private constructor <init>(Lorg/apache/http/conn/ClientConnectionManager;Lorg/apache/http/params/HttpParams;)V
-    .registers 5
+.method public constructor <init>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "AndroidHttpClient_v09 created and never closed"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    iput-object v0, p0, Lal/b;->d:Ljava/lang/RuntimeException;
-
-    new-instance v0, Lal/d;
-
-    invoke-direct {v0, p0, p1, p2}, Lal/d;-><init>(Lal/b;Lorg/apache/http/conn/ClientConnectionManager;Lorg/apache/http/params/HttpParams;)V
-
-    iput-object v0, p0, Lal/b;->c:Lorg/apache/http/client/HttpClient;
+    .prologue
+    .line 17
+    invoke-direct {p0}, Lak/i;-><init>()V
 
     return-void
-.end method
-
-.method public static a(Ljava/lang/String;)Lal/b;
-    .registers 7
-
-    const/16 v1, 0x4e20
-
-    const/4 v2, 0x0
-
-    new-instance v0, Lorg/apache/http/params/BasicHttpParams;
-
-    invoke-direct {v0}, Lorg/apache/http/params/BasicHttpParams;-><init>()V
-
-    invoke-static {v0, v2}, Lorg/apache/http/params/HttpConnectionParams;->setStaleCheckingEnabled(Lorg/apache/http/params/HttpParams;Z)V
-
-    invoke-static {v0, v1}, Lorg/apache/http/params/HttpConnectionParams;->setConnectionTimeout(Lorg/apache/http/params/HttpParams;I)V
-
-    invoke-static {v0, v1}, Lorg/apache/http/params/HttpConnectionParams;->setSoTimeout(Lorg/apache/http/params/HttpParams;I)V
-
-    const/16 v1, 0x2000
-
-    invoke-static {v0, v1}, Lorg/apache/http/params/HttpConnectionParams;->setSocketBufferSize(Lorg/apache/http/params/HttpParams;I)V
-
-    invoke-static {v0, v2}, Lorg/apache/http/client/params/HttpClientParams;->setRedirecting(Lorg/apache/http/params/HttpParams;Z)V
-
-    invoke-static {v0, p0}, Lorg/apache/http/params/HttpProtocolParams;->setUserAgent(Lorg/apache/http/params/HttpParams;Ljava/lang/String;)V
-
-    new-instance v1, Lorg/apache/http/conn/scheme/SchemeRegistry;
-
-    invoke-direct {v1}, Lorg/apache/http/conn/scheme/SchemeRegistry;-><init>()V
-
-    new-instance v2, Lorg/apache/http/conn/scheme/Scheme;
-
-    const-string v3, "http"
-
-    invoke-static {}, Lorg/apache/http/conn/scheme/PlainSocketFactory;->getSocketFactory()Lorg/apache/http/conn/scheme/PlainSocketFactory;
-
-    move-result-object v4
-
-    const/16 v5, 0x50
-
-    invoke-direct {v2, v3, v4, v5}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;Lorg/apache/http/conn/scheme/SocketFactory;I)V
-
-    invoke-virtual {v1, v2}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
-
-    new-instance v2, Lorg/apache/http/conn/scheme/Scheme;
-
-    const-string v3, "https"
-
-    invoke-static {}, Lorg/apache/http/conn/ssl/SSLSocketFactory;->getSocketFactory()Lorg/apache/http/conn/ssl/SSLSocketFactory;
-
-    move-result-object v4
-
-    const/16 v5, 0x1bb
-
-    invoke-direct {v2, v3, v4, v5}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;Lorg/apache/http/conn/scheme/SocketFactory;I)V
-
-    invoke-virtual {v1, v2}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
-
-    new-instance v2, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;
-
-    invoke-direct {v2, v0, v1}, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;-><init>(Lorg/apache/http/params/HttpParams;Lorg/apache/http/conn/scheme/SchemeRegistry;)V
-
-    new-instance v1, Lal/b;
-
-    invoke-direct {v1, v2, v0}, Lal/b;-><init>(Lorg/apache/http/conn/ClientConnectionManager;Lorg/apache/http/params/HttpParams;)V
-
-    return-object v1
-.end method
-
-.method static synthetic a(Lal/b;)Lal/f;
-    .registers 2
-
-    iget-object v0, p0, Lal/b;->e:Lal/f;
-
-    return-object v0
-.end method
-
-.method static synthetic a(Lorg/apache/http/client/methods/HttpUriRequest;)Ljava/lang/String;
-    .registers 2
-
-    invoke-static {p0}, Lal/b;->b(Lorg/apache/http/client/methods/HttpUriRequest;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic a()Ljava/lang/ThreadLocal;
-    .registers 1
-
-    sget-object v0, Lal/b;->a:Ljava/lang/ThreadLocal;
-
-    return-object v0
-.end method
-
-.method private static b(Lorg/apache/http/client/methods/HttpUriRequest;)Ljava/lang/String;
-    .registers 8
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v0, "curl "
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-interface {p0}, Lorg/apache/http/client/methods/HttpUriRequest;->getAllHeaders()[Lorg/apache/http/Header;
-
-    move-result-object v1
-
-    array-length v3, v1
-
-    const/4 v0, 0x0
-
-    :goto_10
-    if-ge v0, v3, :cond_2c
-
-    aget-object v4, v1, v0
-
-    const-string v5, "--header \""
-
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v4, "\" "
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_10
-
-    :cond_2c
-    invoke-interface {p0}, Lorg/apache/http/client/methods/HttpUriRequest;->getURI()Ljava/net/URI;
-
-    move-result-object v1
-
-    instance-of v0, p0, Lorg/apache/http/impl/client/RequestWrapper;
-
-    if-eqz v0, :cond_94
-
-    move-object v0, p0
-
-    check-cast v0, Lorg/apache/http/impl/client/RequestWrapper;
-
-    invoke-virtual {v0}, Lorg/apache/http/impl/client/RequestWrapper;->getOriginal()Lorg/apache/http/HttpRequest;
-
-    move-result-object v0
-
-    instance-of v3, v0, Lorg/apache/http/client/methods/HttpUriRequest;
-
-    if-eqz v3, :cond_94
-
-    check-cast v0, Lorg/apache/http/client/methods/HttpUriRequest;
-
-    invoke-interface {v0}, Lorg/apache/http/client/methods/HttpUriRequest;->getURI()Ljava/net/URI;
-
-    move-result-object v0
-
-    :goto_45
-    const-string v1, "\""
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, "\""
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    instance-of v0, p0, Lorg/apache/http/HttpEntityEnclosingRequest;
-
-    if-eqz v0, :cond_89
-
-    check-cast p0, Lorg/apache/http/HttpEntityEnclosingRequest;
-
-    invoke-interface {p0}, Lorg/apache/http/HttpEntityEnclosingRequest;->getEntity()Lorg/apache/http/HttpEntity;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_89
-
-    invoke-interface {v0}, Lorg/apache/http/HttpEntity;->isRepeatable()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_89
-
-    invoke-interface {v0}, Lorg/apache/http/HttpEntity;->getContentLength()J
-
-    move-result-wide v3
-
-    const-wide/16 v5, 0x400
-
-    cmp-long v1, v3, v5
-
-    if-gez v1, :cond_8e
-
-    new-instance v1, Ljava/io/ByteArrayOutputStream;
-
-    invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
-
-    invoke-interface {v0, v1}, Lorg/apache/http/HttpEntity;->writeTo(Ljava/io/OutputStream;)V
-
-    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, " --data-ascii \""
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\""
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_89
-    :goto_89
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_8e
-    const-string v0, " [TOO MUCH DATA TO INCLUDE]"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_89
-
-    :cond_94
-    move-object v0, v1
-
-    goto :goto_45
-.end method
-
-.method static synthetic b()Lorg/apache/http/HttpRequestInterceptor;
-    .registers 1
-
-    sget-object v0, Lal/b;->b:Lorg/apache/http/HttpRequestInterceptor;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/client/ResponseHandler;)Ljava/lang/Object;
-    .registers 5
-
-    iget-object v0, p0, Lal/b;->c:Lorg/apache/http/client/HttpClient;
-
-    invoke-interface {v0, p1, p2, p3}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/client/ResponseHandler;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/client/ResponseHandler;Lorg/apache/http/protocol/HttpContext;)Ljava/lang/Object;
-    .registers 6
-
-    iget-object v0, p0, Lal/b;->c:Lorg/apache/http/client/HttpClient;
-
-    invoke-interface {v0, p1, p2, p3, p4}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/client/ResponseHandler;Lorg/apache/http/protocol/HttpContext;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public execute(Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/client/ResponseHandler;)Ljava/lang/Object;
-    .registers 4
-
-    iget-object v0, p0, Lal/b;->c:Lorg/apache/http/client/HttpClient;
-
-    invoke-interface {v0, p1, p2}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/client/ResponseHandler;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public execute(Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/client/ResponseHandler;Lorg/apache/http/protocol/HttpContext;)Ljava/lang/Object;
-    .registers 5
-
-    iget-object v0, p0, Lal/b;->c:Lorg/apache/http/client/HttpClient;
-
-    invoke-interface {v0, p1, p2, p3}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/client/ResponseHandler;Lorg/apache/http/protocol/HttpContext;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;)Lorg/apache/http/HttpResponse;
-    .registers 4
-
-    iget-object v0, p0, Lal/b;->c:Lorg/apache/http/client/HttpClient;
-
-    invoke-interface {v0, p1, p2}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;)Lorg/apache/http/HttpResponse;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
-    .registers 5
-
-    iget-object v0, p0, Lal/b;->c:Lorg/apache/http/client/HttpClient;
-
-    invoke-interface {v0, p1, p2, p3}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
-    .registers 3
-
-    iget-object v0, p0, Lal/b;->c:Lorg/apache/http/client/HttpClient;
-
-    invoke-interface {v0, p1}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public execute(Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
-    .registers 4
-
-    iget-object v0, p0, Lal/b;->c:Lorg/apache/http/client/HttpClient;
-
-    invoke-interface {v0, p1, p2}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected finalize()V
+.method public a()Ljava/lang/String;
     .registers 2
 
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
+    .prologue
+    .line 37
+    const-string v0, "Ronghui Z."
 
-    iget-object v0, p0, Lal/b;->d:Ljava/lang/RuntimeException;
+    return-object v0
+.end method
 
-    if-eqz v0, :cond_a
+.method public a(Lcom/google/googlenav/ui/v;)V
+    .registers 3
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    .line 49
+    invoke-super {p0, p1}, Lak/i;->a(Lcom/google/googlenav/ui/v;)V
 
-    iput-object v0, p0, Lal/b;->d:Ljava/lang/RuntimeException;
+    .line 50
+    invoke-virtual {p0}, Lal/b;->e()Z
 
-    :cond_a
+    move-result v0
+
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/vector/dD;->a(Z)V
+
+    .line 51
+    invoke-virtual {p0}, Lal/b;->e()Z
+
+    move-result v0
+
+    invoke-static {v0}, Lat/d;->a(Z)V
+
+    .line 52
     return-void
 .end method
 
-.method public getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
+.method public a(Lcom/google/googlenav/ui/v;Z)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 42
+    invoke-super {p0, p1, p2}, Lak/i;->a(Lcom/google/googlenav/ui/v;Z)V
+
+    .line 43
+    invoke-virtual {p0}, Lal/b;->e()Z
+
+    move-result v0
+
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/vector/dD;->a(Z)V
+
+    .line 44
+    invoke-virtual {p0}, Lal/b;->e()Z
+
+    move-result v0
+
+    invoke-static {v0}, Lat/d;->a(Z)V
+
+    .line 45
+    return-void
+.end method
+
+.method public b()Ljava/lang/String;
     .registers 2
 
-    iget-object v0, p0, Lal/b;->c:Lorg/apache/http/client/HttpClient;
+    .prologue
+    .line 27
+    const/16 v0, 0x5af
 
-    invoke-interface {v0}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
+    invoke-static {v0}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getParams()Lorg/apache/http/params/HttpParams;
+.method public c()Ljava/lang/String;
     .registers 2
 
-    iget-object v0, p0, Lal/b;->c:Lorg/apache/http/client/HttpClient;
+    .prologue
+    .line 32
+    const/16 v0, 0x5ae
 
-    invoke-interface {v0}, Lorg/apache/http/client/HttpClient;->getParams()Lorg/apache/http/params/HttpParams;
+    invoke-static {v0}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public d()I
+    .registers 2
+
+    .prologue
+    .line 22
+    const/16 v0, 0x17
+
+    return v0
 .end method

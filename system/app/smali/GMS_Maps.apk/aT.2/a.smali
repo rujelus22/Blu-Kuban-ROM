@@ -1,468 +1,542 @@
 .class public LaT/a;
-.super Lat/a;
-
-
-# instance fields
-.field private final a:I
-
-.field private final b:Ljava/lang/String;
-
-.field private final c:[B
-
-.field private final d:LaJ/B;
-
-.field private e:Lt/y;
-
-.field private final f:LaJ/H;
-
-.field private final g:I
-
-.field private final h:I
-
-.field private final i:I
-
-.field private j:Z
-
-.field private k:LaT/b;
-
-.field private l:I
-
-.field private m:I
-
-.field private n:I
-
-.field private o:I
-
-.field private p:Ljava/lang/String;
-
-.field private q:Ljava/lang/String;
-
-.field private r:Ljava/lang/String;
-
-.field private s:[B
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;[BLaJ/B;Lt/y;ZILaJ/H;IIIILjava/lang/String;Ljava/lang/String;LaT/b;)V
-    .registers 16
-
-    invoke-direct {p0}, Lat/a;-><init>()V
-
-    iput-object p8, p0, LaT/a;->f:LaJ/H;
-
-    iput p9, p0, LaT/a;->g:I
-
-    iput p10, p0, LaT/a;->h:I
-
-    iput p1, p0, LaT/a;->a:I
-
-    iput-object p2, p0, LaT/a;->b:Ljava/lang/String;
-
-    iput-object p3, p0, LaT/a;->c:[B
-
-    iput-object p4, p0, LaT/a;->d:LaJ/B;
-
-    iput-object p5, p0, LaT/a;->e:Lt/y;
-
-    iput-boolean p6, p0, LaT/a;->j:Z
-
-    iput p7, p0, LaT/a;->i:I
-
-    iput-object p14, p0, LaT/a;->q:Ljava/lang/String;
-
-    iput-object p15, p0, LaT/a;->k:LaT/b;
-
-    iput p11, p0, LaT/a;->n:I
-
-    iput p12, p0, LaT/a;->o:I
-
-    iput-object p13, p0, LaT/a;->p:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(ILjava/lang/String;[BLaJ/B;Lt/y;ZILaJ/H;IILjava/lang/String;LaT/b;)V
-    .registers 13
-
-    invoke-direct {p0}, Lat/a;-><init>()V
-
-    iput-object p8, p0, LaT/a;->f:LaJ/H;
-
-    iput p9, p0, LaT/a;->g:I
-
-    iput p10, p0, LaT/a;->h:I
-
-    iput p1, p0, LaT/a;->a:I
-
-    iput-object p2, p0, LaT/a;->b:Ljava/lang/String;
-
-    iput-object p3, p0, LaT/a;->c:[B
-
-    iput-object p4, p0, LaT/a;->d:LaJ/B;
-
-    iput-object p5, p0, LaT/a;->e:Lt/y;
-
-    iput-boolean p6, p0, LaT/a;->j:Z
-
-    iput p7, p0, LaT/a;->i:I
-
-    iput-object p11, p0, LaT/a;->q:Ljava/lang/String;
-
-    iput-object p12, p0, LaT/a;->k:LaT/b;
-
-    return-void
-.end method
-
-.method private static a(I)Z
+.method public static a(Lcom/google/googlenav/ui/wizard/cc;)I
     .registers 2
+    .parameter
 
-    const/4 v0, 0x5
+    .prologue
+    .line 42
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/cc;->c:Ljava/lang/String;
 
-    if-eq p0, v0, :cond_9
-
-    const/4 v0, 0x6
-
-    if-eq p0, v0, :cond_9
-
-    const/4 v0, 0x7
-
-    if-ne p0, v0, :cond_b
-
-    :cond_9
-    const/4 v0, 0x1
-
-    :goto_a
-    return v0
-
-    :cond_b
-    const/4 v0, 0x0
-
-    goto :goto_a
-.end method
-
-
-# virtual methods
-.method public a()I
-    .registers 2
-
-    const/16 v0, 0x4f
-
-    return v0
-.end method
-
-.method public a(Ljava/io/DataOutput;)V
-    .registers 11
-
-    const/16 v8, 0x9
-
-    const/4 v7, 0x3
-
-    const/4 v6, 0x1
-
-    const/4 v5, 0x2
-
-    new-instance v0, Lam/b;
-
-    sget-object v1, LbD/eo;->a:Lam/e;
-
-    invoke-direct {v0, v1}, Lam/b;-><init>(Lam/e;)V
-
-    iget v1, p0, LaT/a;->a:I
-
-    invoke-virtual {v0, v6, v1}, Lam/b;->h(II)V
-
-    iget-object v1, p0, LaT/a;->b:Ljava/lang/String;
-
-    if-eqz v1, :cond_1a
-
-    iget-object v1, p0, LaT/a;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v1}, Lam/b;->b(ILjava/lang/String;)V
-
-    :cond_1a
-    iget-object v1, p0, LaT/a;->c:[B
-
-    if-eqz v1, :cond_24
-
-    const/4 v1, 0x7
-
-    iget-object v2, p0, LaT/a;->c:[B
-
-    invoke-virtual {v0, v1, v2}, Lam/b;->b(I[B)V
-
-    :cond_24
-    iget-boolean v1, p0, LaT/a;->j:Z
-
-    invoke-virtual {v0, v7, v1}, Lam/b;->b(IZ)V
-
-    const/16 v1, 0x8
-
-    iget v2, p0, LaT/a;->i:I
-
-    invoke-virtual {v0, v1, v2}, Lam/b;->h(II)V
-
-    iget-object v1, p0, LaT/a;->q:Ljava/lang/String;
-
-    invoke-static {v1}, Las/b;->b(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3f
-
-    const/16 v1, 0xb
-
-    iget-object v2, p0, LaT/a;->q:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lam/b;->b(ILjava/lang/String;)V
-
-    :cond_3f
-    iget-object v1, p0, LaT/a;->d:LaJ/B;
-
-    invoke-static {v1}, LaJ/C;->d(LaJ/B;)Lam/b;
-
-    move-result-object v1
-
-    const/4 v2, 0x4
-
-    invoke-virtual {v0, v2, v1}, Lam/b;->b(ILam/b;)V
-
-    iget-object v1, p0, LaT/a;->f:LaJ/H;
-
-    invoke-virtual {v1}, LaJ/H;->a()LaJ/B;
-
-    move-result-object v1
-
-    iget v2, p0, LaT/a;->g:I
-
-    iget v3, p0, LaT/a;->h:I
-
-    iget-object v4, p0, LaT/a;->f:LaJ/H;
-
-    invoke-virtual {v4}, LaJ/H;->b()LaJ/Y;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, LaJ/Y;->a()I
-
-    move-result v4
-
-    invoke-static {v1, v2, v3, v4}, LaJ/C;->a(LaJ/B;III)Lam/b;
-
-    move-result-object v1
-
-    const/4 v2, 0x5
-
-    invoke-virtual {v0, v2, v1}, Lam/b;->b(ILam/b;)V
-
-    iget-object v1, p0, LaT/a;->e:Lt/y;
-
-    if-eqz v1, :cond_82
-
-    new-instance v1, Lam/b;
-
-    sget-object v2, LbD/dH;->a:Lam/e;
-
-    invoke-direct {v1, v2}, Lam/b;-><init>(Lam/e;)V
-
-    iget-object v2, p0, LaT/a;->e:Lt/y;
-
-    invoke-virtual {v2}, Lt/y;->a()Lt/r;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lt/r;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v6, v2}, Lam/b;->b(ILjava/lang/String;)V
-
-    const/16 v2, 0xc
-
-    invoke-virtual {v0, v2, v1}, Lam/b;->b(ILam/b;)V
-
-    :cond_82
-    new-instance v1, Lam/b;
-
-    sget-object v2, LbD/eo;->b:Lam/e;
-
-    invoke-direct {v1, v2}, Lam/b;-><init>(Lam/e;)V
-
-    iget v2, p0, LaT/a;->a:I
-
-    invoke-static {v2}, LaT/a;->a(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_cd
-
-    iget v2, p0, LaT/a;->n:I
-
-    invoke-virtual {v1, v6, v2}, Lam/b;->h(II)V
-
-    iget v2, p0, LaT/a;->o:I
-
-    invoke-virtual {v1, v7, v2}, Lam/b;->h(II)V
-
-    iget-object v2, p0, LaT/a;->p:Ljava/lang/String;
-
-    invoke-virtual {v1, v5, v2}, Lam/b;->b(ILjava/lang/String;)V
-
-    :cond_a0
-    :goto_a0
-    invoke-virtual {v1, v5}, Lam/b;->k(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_aa
-
-    const/4 v2, 0x6
-
-    invoke-virtual {v0, v2, v1}, Lam/b;->b(ILam/b;)V
-
-    :cond_aa
-    iget-object v1, p0, LaT/a;->s:[B
-
-    if-eqz v1, :cond_b8
-
-    iget-object v1, p0, LaT/a;->s:[B
-
-    array-length v1, v1
-
-    if-lez v1, :cond_b8
-
-    iget-object v1, p0, LaT/a;->s:[B
-
-    invoke-virtual {v0, v8, v1}, Lam/b;->b(I[B)V
-
-    :cond_b8
-    iget-object v1, p0, LaT/a;->r:Ljava/lang/String;
-
-    invoke-static {v1}, Las/b;->b(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_c7
-
-    const/16 v1, 0xa
-
-    iget-object v2, p0, LaT/a;->r:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lam/b;->b(ILjava/lang/String;)V
-
-    :cond_c7
-    check-cast p1, Ljava/io/OutputStream;
-
-    invoke-virtual {v0, p1}, Lam/b;->a(Ljava/io/OutputStream;)V
-
-    return-void
-
-    :cond_cd
-    iget v2, p0, LaT/a;->a:I
-
-    if-ne v2, v8, :cond_a0
-
-    iget-object v2, p0, LaT/a;->p:Ljava/lang/String;
-
-    if-eqz v2, :cond_a0
-
-    iget-object v2, p0, LaT/a;->p:Ljava/lang/String;
-
-    invoke-virtual {v1, v5, v2}, Lam/b;->b(ILjava/lang/String;)V
-
-    goto :goto_a0
-.end method
-
-.method public a(Ljava/io/DataInput;)Z
-    .registers 7
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, -0x1
-
-    sget-object v0, LbD/eo;->c:Lam/e;
-
-    invoke-static {v0, p1}, Lam/g;->a(Lam/e;Ljava/io/DataInput;)Lam/b;
-
-    move-result-object v0
-
-    invoke-static {v0, v3, v2}, Lam/g;->c(Lam/b;II)I
-
-    move-result v1
-
-    iput v1, p0, LaT/a;->l:I
-
-    iput v2, p0, LaT/a;->m:I
-
-    invoke-virtual {v0, v4}, Lam/b;->k(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_21
-
-    invoke-virtual {v0, v4}, Lam/b;->h(I)Lam/b;
-
-    move-result-object v0
-
-    invoke-static {v0, v3, v2}, Lam/g;->c(Lam/b;II)I
+    invoke-static {v0}, LaT/a;->b(Ljava/lang/String;)I
 
     move-result v0
 
-    iput v0, p0, LaT/a;->m:I
+    return v0
+.end method
 
-    :cond_21
-    invoke-static {}, Lcom/google/googlenav/login/g;->j()Lcom/google/googlenav/login/g;
+.method public static a(Ljava/io/InputStream;)I
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 105
+    new-instance v0, Landroid/graphics/BitmapFactory$Options;
+
+    invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+
+    .line 106
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
+
+    .line 107
+    const/4 v1, 0x0
+
+    invoke-static {p0, v1, v0}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    .line 109
+    iget v1, v0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
+
+    iget v0, v0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
+
+    mul-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public static a(Ljava/lang/String;)I
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 122
+    new-instance v0, Ljava/io/FileInputStream;
+
+    invoke-direct {v0, p0}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
+
+    .line 124
+    :try_start_5
+    invoke-static {v0}, LaT/a;->a(Ljava/io/InputStream;)I
+    :try_end_8
+    .catchall {:try_start_5 .. :try_end_8} :catchall_d
+
+    move-result v1
+
+    .line 126
+    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
+
+    return v1
+
+    :catchall_d
+    move-exception v1
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
+
+    throw v1
+.end method
+
+.method public static a(Lcom/google/googlenav/ui/wizard/cc;IZ)LS/f;
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 232
+    new-instance v0, LT/f;
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/cc;->c:Ljava/lang/String;
+
+    invoke-static {v1, p1, p2}, LaT/a;->a(Ljava/lang/String;IZ)Landroid/graphics/Bitmap;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, LT/f;-><init>(Landroid/graphics/Bitmap;)V
+
+    .line 235
+    invoke-static {p0}, LaT/a;->a(Lcom/google/googlenav/ui/wizard/cc;)I
+
+    move-result v1
+
+    .line 242
+    if-eqz v1, :cond_15
+
+    .line 243
+    invoke-interface {v0, v1}, LS/f;->a(I)LS/f;
 
     move-result-object v0
 
-    iget v1, p0, LaT/a;->m:I
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/login/g;->a(I)V
-
-    return v3
+    .line 246
+    :cond_15
+    return-object v0
 .end method
 
-.method public b()V
-    .registers 3
+.method public static a(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+    .registers 4
+    .parameter
 
-    iget v0, p0, LaT/a;->l:I
+    .prologue
+    const/4 v2, 0x0
 
-    packed-switch v0, :pswitch_data_1c
+    .line 257
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
-    :cond_5
-    :goto_5
-    return-void
+    move-result v0
 
-    :pswitch_6
-    iget-object v0, p0, LaT/a;->k:LaT/b;
+    .line 258
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
-    if-eqz v0, :cond_5
+    move-result v1
 
-    iget-object v0, p0, LaT/a;->k:LaT/b;
+    .line 260
+    if-ne v0, v1, :cond_10
 
+    .line 261
+    invoke-static {p0}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    .line 268
+    :goto_f
+    return-object v0
+
+    .line 263
+    :cond_10
+    if-le v0, v1, :cond_1a
+
+    .line 265
+    sub-int/2addr v0, v1
+
+    div-int/lit8 v0, v0, 0x2
+
+    invoke-static {p0, v0, v2, v1, v1}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    goto :goto_f
+
+    .line 268
+    :cond_1a
+    sub-int/2addr v1, v0
+
+    div-int/lit8 v1, v1, 0x2
+
+    invoke-static {p0, v2, v1, v0, v0}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    goto :goto_f
+.end method
+
+.method public static a(Ljava/lang/String;IZ)Landroid/graphics/Bitmap;
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 284
+    new-instance v1, Ljava/io/FileInputStream;
+
+    invoke-direct {v1, p0}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
+
+    .line 288
+    :try_start_6
+    new-instance v0, Landroid/graphics/BitmapFactory$Options;
+
+    invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+
+    .line 289
+    const/4 v3, 0x1
+
+    iput-boolean v3, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
+
+    .line 290
+    const/4 v3, 0x0
+
+    invoke-static {v1, v3, v0}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    .line 291
+    invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
+    :try_end_15
+    .catchall {:try_start_6 .. :try_end_15} :catchall_41
+
+    .line 294
+    :try_start_15
+    iget v1, v0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
+
+    iget v0, v0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
+
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    .line 295
+    div-int/2addr v0, p1
+
+    .line 298
+    new-instance v1, Ljava/io/FileInputStream;
+
+    invoke-direct {v1, p0}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
+    :try_end_23
+    .catchall {:try_start_15 .. :try_end_23} :catchall_48
+
+    .line 299
+    :try_start_23
+    new-instance v2, Landroid/graphics/BitmapFactory$Options;
+
+    invoke-direct {v2}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+
+    .line 300
+    iput v0, v2, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
+
+    .line 301
+    const/4 v0, 0x0
+
+    invoke-static {v1, v0, v2}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    .line 304
+    if-eqz p2, :cond_3b
+
+    .line 305
+    invoke-static {v0}, LaT/a;->a(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+    :try_end_34
+    .catchall {:try_start_23 .. :try_end_34} :catchall_41
+
+    move-result-object v0
+
+    .line 310
+    if-eqz v1, :cond_3a
+
+    .line 311
+    invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
+
+    :cond_3a
+    :goto_3a
+    return-object v0
+
+    .line 310
+    :cond_3b
+    if-eqz v1, :cond_3a
+
+    .line 311
+    invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
+
+    goto :goto_3a
+
+    .line 310
+    :catchall_41
+    move-exception v0
+
+    :goto_42
+    if-eqz v1, :cond_47
+
+    .line 311
+    invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
+
+    :cond_47
+    throw v0
+
+    .line 310
+    :catchall_48
+    move-exception v0
+
+    move-object v1, v2
+
+    goto :goto_42
+.end method
+
+.method public static a(Ljava/io/InputStream;II)[B
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 140
+    const/4 v0, 0x0
+
+    invoke-static {p0, p1, p2, v0}, LaT/a;->a(Ljava/io/InputStream;III)[B
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static a(Ljava/io/InputStream;III)[B
+    .registers 8
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 156
+    int-to-double v0, p1
+
+    int-to-double v2, p2
+
+    div-double/2addr v0, v2
+
+    invoke-static {v0, v1}, Ljava/lang/StrictMath;->sqrt(D)D
+
+    move-result-wide v0
+
+    .line 157
+    new-instance v2, Landroid/graphics/BitmapFactory$Options;
+
+    invoke-direct {v2}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+
+    .line 158
+    invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v0
+
+    double-to-int v0, v0
+
+    iput v0, v2, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
+
+    .line 160
+    const/4 v0, 0x1
+
+    iput-boolean v0, v2, Landroid/graphics/BitmapFactory$Options;->inPurgeable:Z
+
+    .line 161
+    sget-object v0, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
+
+    iput-object v0, v2, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
+
+    .line 162
+    const/4 v0, 0x0
+
+    invoke-static {p0, v0, v2}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    .line 164
+    if-eqz p3, :cond_33
+
+    .line 165
+    new-instance v1, LT/f;
+
+    invoke-direct {v1, v0}, LT/f;-><init>(Landroid/graphics/Bitmap;)V
+
+    .line 166
+    invoke-virtual {v1, p3}, LT/f;->a(I)LS/f;
+
+    move-result-object v0
+
+    check-cast v0, LT/f;
+
+    .line 167
+    invoke-virtual {v0}, LT/f;->h()Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    .line 168
+    invoke-virtual {v1}, LT/f;->d()V
+
+    .line 171
+    :cond_33
+    new-instance v1, Ljava/io/ByteArrayOutputStream;
+
+    invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
+
+    .line 172
+    sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+
+    const/16 v3, 0x4b
+
+    invoke-virtual {v0, v2, v3, v1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+
+    .line 175
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
+
+    .line 176
+    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static a(Ljava/lang/String;II)[B
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 190
+    invoke-static {p0}, LaT/a;->b(Ljava/lang/String;)I
+
+    move-result v0
+
+    .line 191
+    new-instance v1, Ljava/io/FileInputStream;
+
+    invoke-direct {v1, p0}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
+
+    .line 193
+    :try_start_9
+    invoke-static {v1, p1, p2, v0}, LaT/a;->a(Ljava/io/InputStream;III)[B
+    :try_end_c
+    .catchall {:try_start_9 .. :try_end_c} :catchall_11
+
+    move-result-object v0
+
+    .line 195
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+
+    return-object v0
+
+    :catchall_11
+    move-exception v0
+
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+
+    throw v0
+.end method
+
+.method private static b(Ljava/lang/String;)I
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 46
+    new-instance v0, Landroid/media/ExifInterface;
+
+    invoke-direct {v0, p0}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
+
+    .line 48
+    const-string v1, "Orientation"
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Landroid/media/ExifInterface;->getAttributeInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    .line 51
+    packed-switch v0, :pswitch_data_1a
+
+    .line 62
+    :pswitch_f
+    const/4 v0, 0x0
+
+    :goto_10
+    return v0
+
+    .line 53
+    :pswitch_11
+    const/16 v0, 0x5a
+
+    goto :goto_10
+
+    .line 56
+    :pswitch_14
+    const/16 v0, 0xb4
+
+    goto :goto_10
+
+    .line 59
+    :pswitch_17
+    const/16 v0, 0x10e
+
+    goto :goto_10
+
+    .line 51
+    :pswitch_data_1a
+    .packed-switch 0x3
+        :pswitch_14
+        :pswitch_f
+        :pswitch_f
+        :pswitch_11
+        :pswitch_f
+        :pswitch_17
+    .end packed-switch
+.end method
+
+.method public static b(Ljava/lang/String;II)[B
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 211
+    new-instance v0, Ljava/io/FileInputStream;
+
+    invoke-direct {v0, p0}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
+
+    .line 213
     const/4 v1, 0x0
 
-    invoke-interface {v0, v1}, LaT/b;->a(I)V
+    :try_start_6
+    invoke-static {v0, p1, p2, v1}, LaT/a;->a(Ljava/io/InputStream;III)[B
+    :try_end_9
+    .catchall {:try_start_6 .. :try_end_9} :catchall_e
 
-    goto :goto_5
+    move-result-object v1
 
-    :pswitch_11
-    iget-object v0, p0, LaT/a;->k:LaT/b;
+    .line 215
+    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
 
-    if-eqz v0, :cond_5
+    return-object v1
 
-    iget-object v0, p0, LaT/a;->k:LaT/b;
+    :catchall_e
+    move-exception v1
 
-    const/4 v1, 0x1
+    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
 
-    invoke-interface {v0, v1}, LaT/b;->a(I)V
-
-    goto :goto_5
-
-    :pswitch_data_1c
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_11
-    .end packed-switch
+    throw v1
 .end method

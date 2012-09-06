@@ -1,19 +1,23 @@
-.class Lcom/google/android/maps/driveabout/app/dw;
+.class Lcom/google/android/maps/driveabout/app/dW;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/StepDescriptionView;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/dD;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/StepDescriptionView;)V
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/dD;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/dw;->a:Lcom/google/android/maps/driveabout/app/StepDescriptionView;
+    .prologue
+    .line 963
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/dW;->a:Lcom/google/android/maps/driveabout/app/dD;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,14 +26,39 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 3
+.method public onClick(Landroid/view/View;)V
+    .registers 5
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/dw;->a:Lcom/google/android/maps/driveabout/app/StepDescriptionView;
+    .prologue
+    .line 966
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/dW;->a:Lcom/google/android/maps/driveabout/app/dD;
 
-    const/4 v1, 0x0
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/dW;->a:Lcom/google/android/maps/driveabout/app/dD;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/StepDescriptionView;->c(Z)V
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/dD;->a(Lcom/google/android/maps/driveabout/app/dD;)Ls/n;
 
+    move-result-object v0
+
+    sget-object v2, Ls/w;->k:Ls/w;
+
+    invoke-virtual {v0, v2}, Ls/n;->b(Ls/w;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_15
+
+    const/4 v0, 0x1
+
+    :goto_11
+    invoke-virtual {v1, v0}, Lcom/google/android/maps/driveabout/app/dD;->e(Z)V
+
+    .line 967
     return-void
+
+    .line 966
+    :cond_15
+    const/4 v0, 0x0
+
+    goto :goto_11
 .end method

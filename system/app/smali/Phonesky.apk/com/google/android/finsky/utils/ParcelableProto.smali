@@ -50,7 +50,7 @@
     .registers 1
 
     .prologue
-    .line 62
+    .line 68
     new-instance v0, Lcom/google/android/finsky/utils/ParcelableProto$1;
 
     invoke-direct {v0}, Lcom/google/android/finsky/utils/ParcelableProto$1;-><init>()V
@@ -70,20 +70,20 @@
     .end annotation
 
     .prologue
-    .line 20
+    .line 21
     .local p0, this:Lcom/google/android/finsky/utils/ParcelableProto;,"Lcom/google/android/finsky/utils/ParcelableProto<TT;>;"
     .local p1, payload:Lcom/google/protobuf/micro/MessageMicro;,"TT;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 18
+    .line 19
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/finsky/utils/ParcelableProto;->mSerialized:[B
 
-    .line 21
+    .line 22
     iput-object p1, p0, Lcom/google/android/finsky/utils/ParcelableProto;->mPayload:Lcom/google/protobuf/micro/MessageMicro;
 
-    .line 22
+    .line 23
     return-void
 .end method
 
@@ -101,13 +101,93 @@
     .end annotation
 
     .prologue
-    .line 26
+    .line 27
     .local p0, payload:Lcom/google/protobuf/micro/MessageMicro;,"TT;"
     new-instance v0, Lcom/google/android/finsky/utils/ParcelableProto;
 
     invoke-direct {v0, p0}, Lcom/google/android/finsky/utils/ParcelableProto;-><init>(Lcom/google/protobuf/micro/MessageMicro;)V
 
     return-object v0
+.end method
+
+.method public static getProtoFromBundle(Landroid/os/Bundle;Ljava/lang/String;)Lcom/google/protobuf/micro/MessageMicro;
+    .registers 4
+    .parameter "b"
+    .parameter "key"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Lcom/google/protobuf/micro/MessageMicro;",
+            ">(",
+            "Landroid/os/Bundle;",
+            "Ljava/lang/String;",
+            ")TT;"
+        }
+    .end annotation
+
+    .prologue
+    .line 41
+    invoke-virtual {p0, p1}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/utils/ParcelableProto;
+
+    .line 42
+    .local v0, wrapper:Lcom/google/android/finsky/utils/ParcelableProto;,"Lcom/google/android/finsky/utils/ParcelableProto<TT;>;"
+    if-eqz v0, :cond_d
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/utils/ParcelableProto;->getPayload()Lcom/google/protobuf/micro/MessageMicro;
+
+    move-result-object v1
+
+    :goto_c
+    return-object v1
+
+    :cond_d
+    const/4 v1, 0x0
+
+    goto :goto_c
+.end method
+
+.method public static getProtoFromIntent(Landroid/content/Intent;Ljava/lang/String;)Lcom/google/protobuf/micro/MessageMicro;
+    .registers 4
+    .parameter "i"
+    .parameter "key"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Lcom/google/protobuf/micro/MessageMicro;",
+            ">(",
+            "Landroid/content/Intent;",
+            "Ljava/lang/String;",
+            ")TT;"
+        }
+    .end annotation
+
+    .prologue
+    .line 31
+    invoke-virtual {p0, p1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/finsky/utils/ParcelableProto;
+
+    .line 32
+    .local v0, wrapper:Lcom/google/android/finsky/utils/ParcelableProto;,"Lcom/google/android/finsky/utils/ParcelableProto<TT;>;"
+    if-eqz v0, :cond_d
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/utils/ParcelableProto;->getPayload()Lcom/google/protobuf/micro/MessageMicro;
+
+    move-result-object v1
+
+    :goto_c
+    return-object v1
+
+    :cond_d
+    const/4 v1, 0x0
+
+    goto :goto_c
 .end method
 
 .method public static getProtoFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Lcom/google/protobuf/micro/MessageMicro;
@@ -126,27 +206,35 @@
     .end annotation
 
     .prologue
-    .line 35
+    .line 36
     invoke-virtual {p0, p1}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/finsky/utils/ParcelableProto;
 
-    .line 36
+    .line 37
     .local v0, wrapper:Lcom/google/android/finsky/utils/ParcelableProto;,"Lcom/google/android/finsky/utils/ParcelableProto<TT;>;"
+    if-eqz v0, :cond_d
+
     invoke-virtual {v0}, Lcom/google/android/finsky/utils/ParcelableProto;->getPayload()Lcom/google/protobuf/micro/MessageMicro;
 
     move-result-object v1
 
+    :goto_c
     return-object v1
+
+    :cond_d
+    const/4 v1, 0x0
+
+    goto :goto_c
 .end method
 
 .method private serializePayload()V
     .registers 2
 
     .prologue
-    .line 44
+    .line 50
     .local p0, this:Lcom/google/android/finsky/utils/ParcelableProto;,"Lcom/google/android/finsky/utils/ParcelableProto<TT;>;"
     iget-object v0, p0, Lcom/google/android/finsky/utils/ParcelableProto;->mPayload:Lcom/google/protobuf/micro/MessageMicro;
 
@@ -156,7 +244,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/utils/ParcelableProto;->mSerialized:[B
 
-    .line 45
+    .line 51
     return-void
 .end method
 
@@ -166,7 +254,7 @@
     .registers 2
 
     .prologue
-    .line 49
+    .line 55
     .local p0, this:Lcom/google/android/finsky/utils/ParcelableProto;,"Lcom/google/android/finsky/utils/ParcelableProto<TT;>;"
     const/4 v0, 0x0
 
@@ -182,7 +270,7 @@
     .end annotation
 
     .prologue
-    .line 40
+    .line 46
     .local p0, this:Lcom/google/android/finsky/utils/ParcelableProto;,"Lcom/google/android/finsky/utils/ParcelableProto<TT;>;"
     iget-object v0, p0, Lcom/google/android/finsky/utils/ParcelableProto;->mPayload:Lcom/google/protobuf/micro/MessageMicro;
 
@@ -195,16 +283,16 @@
     .parameter "flags"
 
     .prologue
-    .line 54
+    .line 60
     .local p0, this:Lcom/google/android/finsky/utils/ParcelableProto;,"Lcom/google/android/finsky/utils/ParcelableProto<TT;>;"
     iget-object v0, p0, Lcom/google/android/finsky/utils/ParcelableProto;->mSerialized:[B
 
     if-nez v0, :cond_7
 
-    .line 55
+    .line 61
     invoke-direct {p0}, Lcom/google/android/finsky/utils/ParcelableProto;->serializePayload()V
 
-    .line 57
+    .line 63
     :cond_7
     iget-object v0, p0, Lcom/google/android/finsky/utils/ParcelableProto;->mSerialized:[B
 
@@ -212,12 +300,12 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 58
+    .line 64
     iget-object v0, p0, Lcom/google/android/finsky/utils/ParcelableProto;->mSerialized:[B
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
 
-    .line 59
+    .line 65
     iget-object v0, p0, Lcom/google/android/finsky/utils/ParcelableProto;->mPayload:Lcom/google/protobuf/micro/MessageMicro;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -230,6 +318,6 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 60
+    .line 66
     return-void
 .end method

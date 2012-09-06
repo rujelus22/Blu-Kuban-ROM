@@ -12,7 +12,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final DRM_DIVX_MODE_ACTIVATE_RENTAL:I = 0x4
 

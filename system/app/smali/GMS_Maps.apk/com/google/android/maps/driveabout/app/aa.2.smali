@@ -1,19 +1,28 @@
-.class Lcom/google/android/maps/driveabout/app/aa;
+.class Lcom/google/android/maps/driveabout/app/aA;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/Z;
+.field final synthetic a:Landroid/content/DialogInterface$OnCancelListener;
+
+.field final synthetic b:Lcom/google/android/maps/driveabout/app/al;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/Z;)V
-    .registers 2
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/al;Landroid/content/DialogInterface$OnCancelListener;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aa;->a:Lcom/google/android/maps/driveabout/app/Z;
+    .prologue
+    .line 571
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aA;->b:Lcom/google/android/maps/driveabout/app/al;
+
+    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/aA;->a:Landroid/content/DialogInterface$OnCancelListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,14 +31,17 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 3
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .registers 4
+    .parameter
+    .parameter
 
-    const/4 v1, 0x0
+    .prologue
+    .line 574
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aA;->a:Landroid/content/DialogInterface$OnCancelListener;
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aa;->a:Lcom/google/android/maps/driveabout/app/Z;
+    invoke-interface {v0, p1}, Landroid/content/DialogInterface$OnCancelListener;->onCancel(Landroid/content/DialogInterface;)V
 
-    invoke-virtual {v0, v1, v1, v1}, Lcom/google/android/maps/driveabout/app/Z;->a(Lt/o;Lu/P;Ljava/util/ArrayList;)V
-
+    .line 575
     return-void
 .end method

@@ -1,157 +1,146 @@
-.class final Lcom/google/android/youtube/core/converter/http/c;
-.super Lcom/google/android/youtube/core/converter/l;
+.class public final Lcom/google/android/youtube/core/converter/http/c;
+.super Lcom/google/android/youtube/core/converter/http/ar;
 .source "SourceFile"
 
 
+# static fields
+.field private static final b:Ljava/util/Set;
+
+
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/converter/http/b;
+.field private final c:Lcom/google/android/youtube/core/converter/c;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/core/converter/http/b;)V
-    .registers 2
-    .parameter
+.method static constructor <clinit>()V
+    .registers 4
 
     .prologue
-    .line 51
-    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/c;->a:Lcom/google/android/youtube/core/converter/http/b;
+    .line 27
+    new-instance v0, Ljava/util/HashSet;
 
-    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
+    const/4 v1, 0x7
+
+    new-array v1, v1, [Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    const-string v3, "channel.global.title.string"
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    const-string v3, "channel.global.description.string"
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x2
+
+    const-string v3, "channel.global.keywords.string"
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x3
+
+    const-string v3, "mobile_watchpage.banner.image.url"
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x4
+
+    const-string v3, "mobile_watchpage.banner.image_target.url"
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x5
+
+    const-string v3, "watchpage.global.featured_playlist.id"
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x6
+
+    const-string v3, "watchpage.large_branded_banner.image.url"
+
+    aput-object v3, v1, v2
+
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/youtube/core/converter/http/c;->b:Ljava/util/Set;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
-    .registers 7
-    .parameter
-    .parameter
+.method public constructor <init>(Lcom/google/android/youtube/core/converter/k;)V
+    .registers 5
     .parameter
 
     .prologue
-    .line 54
-    invoke-virtual {p1}, Lcom/google/android/youtube/core/utils/p;->peek()Ljava/lang/Object;
+    .line 40
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/converter/http/ar;-><init>(Lcom/google/android/youtube/core/converter/k;)V
+
+    .line 41
+    new-instance v0, Lcom/google/android/youtube/core/converter/d;
+
+    invoke-direct {v0}, Lcom/google/android/youtube/core/converter/d;-><init>()V
+
+    const-string v1, "/entry"
+
+    new-instance v2, Lcom/google/android/youtube/core/converter/http/e;
+
+    invoke-direct {v2, p0}, Lcom/google/android/youtube/core/converter/http/e;-><init>(Lcom/google/android/youtube/core/converter/http/c;)V
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/converter/d;->a(Ljava/lang/String;Lcom/google/android/youtube/core/converter/o;)Lcom/google/android/youtube/core/converter/d;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/Branding$Builder;
+    const-string v1, "/entry/yt:option"
 
-    .line 55
-    const-string v1, "name"
+    new-instance v2, Lcom/google/android/youtube/core/converter/http/d;
 
-    invoke-interface {p2, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {v2, p0}, Lcom/google/android/youtube/core/converter/http/d;-><init>(Lcom/google/android/youtube/core/converter/http/c;)V
 
-    move-result-object v1
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/converter/d;->a(Ljava/lang/String;Lcom/google/android/youtube/core/converter/o;)Lcom/google/android/youtube/core/converter/d;
 
-    .line 56
-    invoke-static {}, Lcom/google/android/youtube/core/converter/http/b;->b()Ljava/util/Set;
+    move-result-object v0
 
-    move-result-object v2
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/converter/d;->a()Lcom/google/android/youtube/core/converter/c;
 
-    invoke-interface {v2, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    move-result-object v0
 
-    move-result v2
+    iput-object v0, p0, Lcom/google/android/youtube/core/converter/http/c;->c:Lcom/google/android/youtube/core/converter/c;
 
-    if-eqz v2, :cond_21
-
-    .line 57
-    const-string v2, "channel.global.title.string"
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_22
-
-    .line 58
-    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/Branding$Builder;->title(Ljava/lang/String;)Lcom/google/android/youtube/core/model/Branding$Builder;
-
-    .line 71
-    :cond_21
-    :goto_21
+    .line 76
     return-void
+.end method
 
-    .line 59
-    :cond_22
-    const-string v2, "channel.global.description.string"
+.method static synthetic b()Ljava/util/Set;
+    .registers 1
 
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .prologue
+    .line 25
+    sget-object v0, Lcom/google/android/youtube/core/converter/http/c;->b:Ljava/util/Set;
 
-    move-result v2
+    return-object v0
+.end method
 
-    if-eqz v2, :cond_2e
 
-    .line 60
-    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/Branding$Builder;->description(Ljava/lang/String;)Lcom/google/android/youtube/core/model/Branding$Builder;
+# virtual methods
+.method protected final a()Lcom/google/android/youtube/core/converter/c;
+    .registers 2
 
-    goto :goto_21
+    .prologue
+    .line 80
+    iget-object v0, p0, Lcom/google/android/youtube/core/converter/http/c;->c:Lcom/google/android/youtube/core/converter/c;
 
-    .line 61
-    :cond_2e
-    const-string v2, "channel.global.keywords.string"
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3a
-
-    .line 62
-    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/Branding$Builder;->keywords(Ljava/lang/String;)Lcom/google/android/youtube/core/model/Branding$Builder;
-
-    goto :goto_21
-
-    .line 63
-    :cond_3a
-    const-string v2, "mobile_watchpage.banner.image.url"
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4a
-
-    .line 64
-    invoke-static {p3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Branding$Builder;->bannerUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Branding$Builder;
-
-    goto :goto_21
-
-    .line 65
-    :cond_4a
-    const-string v2, "mobile_watchpage.banner.image_target.url"
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5a
-
-    .line 66
-    invoke-static {p3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Branding$Builder;->bannerTargetUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Branding$Builder;
-
-    goto :goto_21
-
-    .line 67
-    :cond_5a
-    const-string v2, "watchpage.global.featured_playlist.id"
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_21
-
-    .line 68
-    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/Branding$Builder;->featuredPlaylistId(Ljava/lang/String;)Lcom/google/android/youtube/core/model/Branding$Builder;
-
-    goto :goto_21
+    return-object v0
 .end method

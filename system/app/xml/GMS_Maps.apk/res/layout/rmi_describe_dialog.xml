@@ -15,6 +15,7 @@
             <View android:id="@id/divider3" android:background="@drawable/divider_horizontal" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="1.0px" />
             <TextView android:id="@id/privacy_note" android:background="?selectableItemBackground" android:paddingLeft="5.0dip" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" />
             <View android:id="@id/divider4" android:background="@drawable/divider_horizontal" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            <include layout="@layout/rmi_email_me_layout" />
         </LinearLayout>
     </ScrollView>
     <include layout="@layout/bottom_button_panel_full_width" />

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item type="id" name="web_view">false</item>
-    <item type="id" name="check_accept">false</item>
-    <item type="id" name="button_agree">false</item>
-    <item type="id" name="button_decline">false</item>
-    <item type="id" name="text_accept">false</item>
-</resources>

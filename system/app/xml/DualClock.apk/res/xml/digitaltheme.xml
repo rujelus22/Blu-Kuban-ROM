@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<metadata widgetId="com.sec.android.widgetapp.dualclock" description="@string/digitalclock" icon="@drawable/icon" themeName="Digital" preview="@drawable/dualclock_clock_bg02_pre" width="@dimen/width_digital" height="@dimen/height_digital" class="com.sec.android.widgetapp.dualclock.DigitalDualClockView" />

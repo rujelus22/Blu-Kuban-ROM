@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <Preference android:persistent="false" android:title="@string/open_source_licenses" android:key="open_source_licences" />
-    <PreferenceCategory android:title="@string/advanced_settings" android:key="advanced_settings_list">
-        <ListPreference android:persistent="false" android:entries="@array/voice_effects_entries" android:title="@string/change_voice_effects" android:key="change_voice_effects" android:summary="@string/change_voice_effects_summary" android:entryValues="@array/voice_effects_values" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="@string/installed_languages" android:key="installed_languages_list" />
-</PreferenceScreen>

@@ -16,7 +16,7 @@
     .parameter
 
     .prologue
-    .line 55
+    .line 58
     iput-object p1, p0, Lcom/google/android/youtube/coreicecream/ui/a;->a:Lcom/google/android/youtube/coreicecream/ui/ActionBarWorkspace;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,7 +32,7 @@
     .parameter
 
     .prologue
-    .line 64
+    .line 67
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .parameter
 
     .prologue
-    .line 57
+    .line 60
     iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ui/a;->a:Lcom/google/android/youtube/coreicecream/ui/ActionBarWorkspace;
 
     invoke-virtual {p1}, Landroid/app/ActionBar$Tab;->getPosition()I
@@ -51,7 +51,7 @@
 
     invoke-static {v0, v1}, Lcom/google/android/youtube/coreicecream/ui/ActionBarWorkspace;->a(Lcom/google/android/youtube/coreicecream/ui/ActionBarWorkspace;I)V
 
-    .line 58
+    .line 61
     return-void
 .end method
 
@@ -61,6 +61,6 @@
     .parameter
 
     .prologue
-    .line 61
+    .line 64
     return-void
 .end method

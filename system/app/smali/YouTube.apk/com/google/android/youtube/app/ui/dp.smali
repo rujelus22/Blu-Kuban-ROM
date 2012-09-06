@@ -1,9 +1,9 @@
 .class final Lcom/google/android/youtube/app/ui/dp;
-.super Ljava/lang/Object;
+.super Lcom/google/android/youtube/core/ui/e;
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/g;
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
@@ -11,146 +11,157 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/ui/dm;)V
-    .registers 2
+.method public constructor <init>(Lcom/google/android/youtube/app/ui/dm;)V
+    .registers 3
     .parameter
 
     .prologue
-    .line 239
+    .line 496
     iput-object p1, p0, Lcom/google/android/youtube/app/ui/dp;->a:Lcom/google/android/youtube/app/ui/dm;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 497
+    invoke-static {p1}, Lcom/google/android/youtube/app/ui/dm;->b(Lcom/google/android/youtube/app/ui/dm;)Lcom/google/android/youtube/core/d;
 
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/google/android/youtube/core/ui/e;-><init>(Lcom/google/android/youtube/core/d;)V
+
+    .line 498
     return-void
 .end method
 
 
 # virtual methods
+.method public final a(Lcom/google/android/youtube/core/model/UserAuth;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 501
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dp;->a:Lcom/google/android/youtube/app/ui/dm;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/dm;->h(Lcom/google/android/youtube/app/ui/dm;)Lcom/google/android/youtube/core/Analytics;
+
+    move-result-object v0
+
+    const-string v1, "Favorite"
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/Analytics;->b(Ljava/lang/String;)V
+
+    .line 502
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dp;->a:Lcom/google/android/youtube/app/ui/dm;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/dm;->e(Lcom/google/android/youtube/app/ui/dm;)Lcom/google/android/youtube/core/b/ae;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/dp;->a:Lcom/google/android/youtube/app/ui/dm;
+
+    invoke-static {v1}, Lcom/google/android/youtube/app/ui/dm;->f(Lcom/google/android/youtube/app/ui/dm;)Lcom/google/android/youtube/core/model/Video;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lcom/google/android/youtube/core/model/Video;->id:Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/google/android/youtube/app/ui/dp;->a:Lcom/google/android/youtube/app/ui/dm;
+
+    iget-object v2, v2, Lcom/google/android/youtube/app/ui/dm;->a:Landroid/app/Activity;
+
+    invoke-static {v2, p0}, Lcom/google/android/youtube/core/async/c;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/l;)Lcom/google/android/youtube/core/async/c;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, p1, v2}, Lcom/google/android/youtube/core/b/ae;->d(Ljava/lang/String;Lcom/google/android/youtube/core/model/UserAuth;Lcom/google/android/youtube/core/async/l;)V
+
+    .line 503
+    return-void
+.end method
+
+.method public final a(Ljava/lang/Exception;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 512
+    invoke-super {p0, p1}, Lcom/google/android/youtube/core/ui/e;->a(Ljava/lang/Exception;)V
+
+    .line 513
+    return-void
+.end method
+
 .method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
-    .registers 6
+    .registers 7
     .parameter
     .parameter
 
     .prologue
-    const/4 v2, 0x1
+    .line 493
+    const-string v0, "GData"
 
-    .line 239
-    check-cast p1, Ljava/lang/String;
+    const-string v1, "InvalidEntryException"
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/4 v2, 0x0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v3, "Favorite already exists."
 
-    const-string v1, "failed to get disco results for artist "
+    invoke-static {p2, v0, v1, v2, v3}, Lcom/google/android/youtube/core/d;->a(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " : "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/L;->c(Ljava/lang/String;)V
+    if-eqz v0, :cond_16
 
     iget-object v0, p0, Lcom/google/android/youtube/app/ui/dp;->a:Lcom/google/android/youtube/app/ui/dm;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/dm;->c(Lcom/google/android/youtube/app/ui/dm;)Lcom/google/android/youtube/core/e;
+    const v1, 0x7f0b01c6
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lcom/google/android/youtube/app/ui/dm;->a(Lcom/google/android/youtube/app/ui/dm;I)V
 
-    invoke-virtual {v0, p2}, Lcom/google/android/youtube/core/e;->a(Ljava/lang/Throwable;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/dp;->a:Lcom/google/android/youtube/app/ui/dm;
-
-    invoke-static {v1}, Lcom/google/android/youtube/app/ui/dm;->g(Lcom/google/android/youtube/app/ui/dm;)Lcom/google/android/youtube/app/ui/a;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0, v2}, Lcom/google/android/youtube/app/ui/a;->b(Ljava/lang/String;Z)V
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/dp;->a:Lcom/google/android/youtube/app/ui/dm;
-
-    invoke-static {v1}, Lcom/google/android/youtube/app/ui/dm;->h(Lcom/google/android/youtube/app/ui/dm;)Lcom/google/android/youtube/app/ui/a;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0, v2}, Lcom/google/android/youtube/app/ui/a;->b(Ljava/lang/String;Z)V
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/dp;->a:Lcom/google/android/youtube/app/ui/dm;
-
-    invoke-static {v1}, Lcom/google/android/youtube/app/ui/dm;->i(Lcom/google/android/youtube/app/ui/dm;)Lcom/google/android/youtube/core/ui/l;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0, v2}, Lcom/google/android/youtube/core/ui/l;->a(Ljava/lang/String;Z)V
-
+    :goto_15
     return-void
+
+    :cond_16
+    const-string v0, "Error adding to favorites"
+
+    invoke-static {v0, p2}, Lcom/google/android/youtube/core/L;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dp;->c:Lcom/google/android/youtube/core/d;
+
+    invoke-virtual {v0, p2}, Lcom/google/android/youtube/core/d;->b(Ljava/lang/Throwable;)V
+
+    goto :goto_15
 .end method
 
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 5
     .parameter
     .parameter
 
     .prologue
-    .line 239
-    check-cast p2, Lcom/google/android/youtube/core/model/ArtistBundle;
+    .line 493
+    check-cast p2, Lcom/google/android/youtube/core/model/Video;
 
     iget-object v0, p0, Lcom/google/android/youtube/app/ui/dp;->a:Lcom/google/android/youtube/app/ui/dm;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/dm;->f(Lcom/google/android/youtube/app/ui/dm;)Lcom/google/android/youtube/core/model/MusicVideo;
+    iget-object v1, p2, Lcom/google/android/youtube/core/model/Video;->editUri:Landroid/net/Uri;
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lcom/google/android/youtube/app/ui/dm;->a(Lcom/google/android/youtube/app/ui/dm;Landroid/net/Uri;)V
 
-    if-eqz v0, :cond_1c
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dp;->a:Lcom/google/android/youtube/app/ui/dm;
 
-    iget-object v0, p2, Lcom/google/android/youtube/core/model/ArtistBundle;->artist:Lcom/google/android/youtube/core/model/Artist;
+    const v1, 0x7f0b01c5
 
-    iget-object v0, v0, Lcom/google/android/youtube/core/model/Artist;->id:Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/google/android/youtube/app/ui/dm;->a(Lcom/google/android/youtube/app/ui/dm;I)V
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/dp;->a:Lcom/google/android/youtube/app/ui/dm;
-
-    invoke-static {v1}, Lcom/google/android/youtube/app/ui/dm;->f(Lcom/google/android/youtube/app/ui/dm;)Lcom/google/android/youtube/core/model/MusicVideo;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lcom/google/android/youtube/core/model/MusicVideo;->artistId:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_22
-
-    :cond_1c
-    const-string v0, "got stale result for artist disco, ignoring"
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/L;->c(Ljava/lang/String;)V
-
-    :goto_21
     return-void
+.end method
 
-    :cond_22
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dp;->a:Lcom/google/android/youtube/app/ui/dm;
+.method public final e_()V
+    .registers 1
 
-    invoke-static {v0, p2}, Lcom/google/android/youtube/app/ui/dm;->a(Lcom/google/android/youtube/app/ui/dm;Lcom/google/android/youtube/core/model/ArtistBundle;)V
+    .prologue
+    .line 507
+    invoke-super {p0}, Lcom/google/android/youtube/core/ui/e;->e_()V
 
-    goto :goto_21
+    .line 508
+    return-void
 .end method

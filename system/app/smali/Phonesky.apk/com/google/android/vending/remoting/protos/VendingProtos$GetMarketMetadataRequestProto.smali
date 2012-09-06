@@ -60,48 +60,48 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 14864
+    .line 15190
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 14869
+    .line 15195
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->lastRequestTime_:J
 
-    .line 14886
+    .line 15212
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->deviceConfiguration_:Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
 
-    .line 14906
+    .line 15232
     iput-boolean v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->deviceRoaming_:Z
 
-    .line 14922
+    .line 15248
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->marketSignatureHash_:Ljava/util/List;
 
-    .line 14956
+    .line 15282
     iput v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->contentRating_:I
 
-    .line 14973
+    .line 15299
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->deviceModelName_:Ljava/lang/String;
 
-    .line 14990
+    .line 15316
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->deviceManufacturerName_:Ljava/lang/String;
 
-    .line 15048
+    .line 15375
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->cachedSize:I
 
-    .line 14864
+    .line 15190
     return-void
 .end method
 
@@ -112,17 +112,17 @@
     .parameter "value"
 
     .prologue
-    .line 14939
+    .line 15265
     if-nez p1, :cond_8
 
-    .line 14940
+    .line 15266
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 14942
+    .line 15268
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->marketSignatureHash_:Ljava/util/List;
 
@@ -132,20 +132,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 14943
+    .line 15269
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->marketSignatureHash_:Ljava/util/List;
 
-    .line 14945
+    .line 15271
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->marketSignatureHash_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 14946
+    .line 15272
     return-object p0
 .end method
 
@@ -153,17 +153,17 @@
     .registers 2
 
     .prologue
-    .line 14898
+    .line 15224
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceConfiguration:Z
 
-    .line 14899
+    .line 15225
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->deviceConfiguration_:Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
 
-    .line 14900
+    .line 15226
     return-object p0
 .end method
 
@@ -171,15 +171,15 @@
     .registers 2
 
     .prologue
-    .line 15050
+    .line 15378
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 15052
+    .line 15380
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getSerializedSize()I
 
-    .line 15054
+    .line 15382
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->cachedSize:I
 
@@ -190,7 +190,7 @@
     .registers 2
 
     .prologue
-    .line 14957
+    .line 15283
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->contentRating_:I
 
     return v0
@@ -200,7 +200,7 @@
     .registers 2
 
     .prologue
-    .line 14888
+    .line 15214
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->deviceConfiguration_:Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
 
     return-object v0
@@ -210,7 +210,7 @@
     .registers 2
 
     .prologue
-    .line 14991
+    .line 15317
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->deviceManufacturerName_:Ljava/lang/String;
 
     return-object v0
@@ -220,7 +220,7 @@
     .registers 2
 
     .prologue
-    .line 14974
+    .line 15300
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->deviceModelName_:Ljava/lang/String;
 
     return-object v0
@@ -230,7 +230,7 @@
     .registers 2
 
     .prologue
-    .line 14907
+    .line 15233
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->deviceRoaming_:Z
 
     return v0
@@ -240,7 +240,7 @@
     .registers 3
 
     .prologue
-    .line 14870
+    .line 15196
     iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->lastRequestTime_:J
 
     return-wide v0
@@ -259,7 +259,7 @@
     .end annotation
 
     .prologue
-    .line 14925
+    .line 15251
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->marketSignatureHash_:Ljava/util/List;
 
     return-object v0
@@ -269,10 +269,10 @@
     .registers 8
 
     .prologue
-    .line 15058
+    .line 15387
     const/4 v3, 0x0
 
-    .line 15059
+    .line 15388
     .local v3, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasLastRequestTime()Z
 
@@ -280,7 +280,7 @@
 
     if-eqz v4, :cond_11
 
-    .line 15060
+    .line 15389
     const/4 v4, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getLastRequestTime()J
@@ -293,7 +293,7 @@
 
     add-int/2addr v3, v4
 
-    .line 15063
+    .line 15392
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceConfiguration()Z
 
@@ -301,7 +301,7 @@
 
     if-eqz v4, :cond_21
 
-    .line 15064
+    .line 15393
     const/4 v4, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getDeviceConfiguration()Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
@@ -314,7 +314,7 @@
 
     add-int/2addr v3, v4
 
-    .line 15067
+    .line 15396
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceRoaming()Z
 
@@ -322,7 +322,7 @@
 
     if-eqz v4, :cond_31
 
-    .line 15068
+    .line 15397
     const/4 v4, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getDeviceRoaming()Z
@@ -335,11 +335,11 @@
 
     add-int/2addr v3, v4
 
-    .line 15072
+    .line 15401
     :cond_31
     const/4 v0, 0x0
 
-    .line 15073
+    .line 15402
     .local v0, dataSize:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getMarketSignatureHashList()Ljava/util/List;
 
@@ -363,7 +363,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 15074
+    .line 15403
     .local v1, element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -373,12 +373,12 @@
 
     goto :goto_3a
 
-    .line 15077
+    .line 15406
     .end local v1           #element:Ljava/lang/String;
     :cond_4c
     add-int/2addr v3, v0
 
-    .line 15078
+    .line 15407
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getMarketSignatureHashList()Ljava/util/List;
 
     move-result-object v4
@@ -391,14 +391,14 @@
 
     add-int/2addr v3, v4
 
-    .line 15080
+    .line 15409
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasContentRating()Z
 
     move-result v4
 
     if-eqz v4, :cond_68
 
-    .line 15081
+    .line 15410
     const/4 v4, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getContentRating()I
@@ -411,7 +411,7 @@
 
     add-int/2addr v3, v4
 
-    .line 15084
+    .line 15413
     :cond_68
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceModelName()Z
 
@@ -419,7 +419,7 @@
 
     if-eqz v4, :cond_78
 
-    .line 15085
+    .line 15414
     const/4 v4, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getDeviceModelName()Ljava/lang/String;
@@ -432,7 +432,7 @@
 
     add-int/2addr v3, v4
 
-    .line 15088
+    .line 15417
     :cond_78
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceManufacturerName()Z
 
@@ -440,7 +440,7 @@
 
     if-eqz v4, :cond_88
 
-    .line 15089
+    .line 15418
     const/4 v4, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getDeviceManufacturerName()Ljava/lang/String;
@@ -453,11 +453,11 @@
 
     add-int/2addr v3, v4
 
-    .line 15092
+    .line 15421
     :cond_88
     iput v3, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->cachedSize:I
 
-    .line 15093
+    .line 15422
     return v3
 .end method
 
@@ -465,7 +465,7 @@
     .registers 2
 
     .prologue
-    .line 14958
+    .line 15284
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasContentRating:Z
 
     return v0
@@ -475,7 +475,7 @@
     .registers 2
 
     .prologue
-    .line 14887
+    .line 15213
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceConfiguration:Z
 
     return v0
@@ -485,7 +485,7 @@
     .registers 2
 
     .prologue
-    .line 14992
+    .line 15318
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceManufacturerName:Z
 
     return v0
@@ -495,7 +495,7 @@
     .registers 2
 
     .prologue
-    .line 14975
+    .line 15301
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceModelName:Z
 
     return v0
@@ -505,7 +505,7 @@
     .registers 2
 
     .prologue
-    .line 14908
+    .line 15234
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceRoaming:Z
 
     return v0
@@ -515,7 +515,7 @@
     .registers 2
 
     .prologue
-    .line 14871
+    .line 15197
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasLastRequestTime:Z
 
     return v0
@@ -531,29 +531,29 @@
     .end annotation
 
     .prologue
-    .line 15100
+    .line 15430
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 15101
+    .line 15431
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_4a
 
-    .line 15105
+    .line 15435
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 15106
+    .line 15436
     :sswitch_d
     return-object p0
 
-    .line 15111
+    .line 15441
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -563,22 +563,22 @@
 
     goto :goto_0
 
-    .line 15115
+    .line 15445
     :sswitch_16
     new-instance v1, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;-><init>()V
 
-    .line 15116
+    .line 15446
     .local v1, value:Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 15117
+    .line 15447
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->setDeviceConfiguration(Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;
 
     goto :goto_0
 
-    .line 15121
+    .line 15451
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
     :sswitch_22
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
@@ -589,7 +589,7 @@
 
     goto :goto_0
 
-    .line 15125
+    .line 15455
     :sswitch_2a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -599,7 +599,7 @@
 
     goto :goto_0
 
-    .line 15129
+    .line 15459
     :sswitch_32
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -609,7 +609,7 @@
 
     goto :goto_0
 
-    .line 15133
+    .line 15463
     :sswitch_3a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -619,7 +619,7 @@
 
     goto :goto_0
 
-    .line 15137
+    .line 15467
     :sswitch_42
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -629,7 +629,7 @@
 
     goto :goto_0
 
-    .line 15101
+    .line 15431
     :sswitch_data_4a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -653,7 +653,7 @@
     .end annotation
 
     .prologue
-    .line 14862
+    .line 15188
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;
 
     move-result-object v0
@@ -666,15 +666,15 @@
     .parameter "value"
 
     .prologue
-    .line 14960
+    .line 15286
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasContentRating:Z
 
-    .line 14961
+    .line 15287
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->contentRating_:I
 
-    .line 14962
+    .line 15288
     return-object p0
 .end method
 
@@ -683,26 +683,26 @@
     .parameter "value"
 
     .prologue
-    .line 14890
+    .line 15216
     if-nez p1, :cond_8
 
-    .line 14891
+    .line 15217
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 14893
+    .line 15219
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceConfiguration:Z
 
-    .line 14894
+    .line 15220
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->deviceConfiguration_:Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
 
-    .line 14895
+    .line 15221
     return-object p0
 .end method
 
@@ -711,15 +711,15 @@
     .parameter "value"
 
     .prologue
-    .line 14994
+    .line 15320
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceManufacturerName:Z
 
-    .line 14995
+    .line 15321
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->deviceManufacturerName_:Ljava/lang/String;
 
-    .line 14996
+    .line 15322
     return-object p0
 .end method
 
@@ -728,15 +728,15 @@
     .parameter "value"
 
     .prologue
-    .line 14977
+    .line 15303
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceModelName:Z
 
-    .line 14978
+    .line 15304
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->deviceModelName_:Ljava/lang/String;
 
-    .line 14979
+    .line 15305
     return-object p0
 .end method
 
@@ -745,15 +745,15 @@
     .parameter "value"
 
     .prologue
-    .line 14910
+    .line 15236
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceRoaming:Z
 
-    .line 14911
+    .line 15237
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->deviceRoaming_:Z
 
-    .line 14912
+    .line 15238
     return-object p0
 .end method
 
@@ -762,15 +762,15 @@
     .parameter "value"
 
     .prologue
-    .line 14873
+    .line 15199
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasLastRequestTime:Z
 
-    .line 14874
+    .line 15200
     iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->lastRequestTime_:J
 
-    .line 14875
+    .line 15201
     return-object p0
 .end method
 
@@ -784,14 +784,14 @@
     .end annotation
 
     .prologue
-    .line 15025
+    .line 15352
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasLastRequestTime()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 15026
+    .line 15353
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getLastRequestTime()J
@@ -800,7 +800,7 @@
 
     invoke-virtual {p1, v2, v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 15028
+    .line 15355
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceConfiguration()Z
 
@@ -808,7 +808,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 15029
+    .line 15356
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getDeviceConfiguration()Lcom/google/android/vending/remoting/protos/DeviceConfigurationProto;
@@ -817,7 +817,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 15031
+    .line 15358
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceRoaming()Z
 
@@ -825,7 +825,7 @@
 
     if-eqz v2, :cond_2a
 
-    .line 15032
+    .line 15359
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getDeviceRoaming()Z
@@ -834,7 +834,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 15034
+    .line 15361
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getMarketSignatureHashList()Ljava/util/List;
 
@@ -858,7 +858,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 15035
+    .line 15362
     .local v0, element:Ljava/lang/String;
     const/4 v2, 0x4
 
@@ -866,7 +866,7 @@
 
     goto :goto_32
 
-    .line 15037
+    .line 15364
     .end local v0           #element:Ljava/lang/String;
     :cond_43
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasContentRating()Z
@@ -875,7 +875,7 @@
 
     if-eqz v2, :cond_51
 
-    .line 15038
+    .line 15365
     const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getContentRating()I
@@ -884,7 +884,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 15040
+    .line 15367
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceModelName()Z
 
@@ -892,7 +892,7 @@
 
     if-eqz v2, :cond_5f
 
-    .line 15041
+    .line 15368
     const/4 v2, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getDeviceModelName()Ljava/lang/String;
@@ -901,7 +901,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 15043
+    .line 15370
     :cond_5f
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->hasDeviceManufacturerName()Z
 
@@ -909,7 +909,7 @@
 
     if-eqz v2, :cond_6d
 
-    .line 15044
+    .line 15371
     const/4 v2, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;->getDeviceManufacturerName()Ljava/lang/String;
@@ -918,7 +918,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 15046
+    .line 15373
     :cond_6d
     return-void
 .end method

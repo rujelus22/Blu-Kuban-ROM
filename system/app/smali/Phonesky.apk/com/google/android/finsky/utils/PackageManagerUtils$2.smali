@@ -27,7 +27,7 @@
     .line 1
     iput-object p1, p0, Lcom/google/android/finsky/utils/PackageManagerUtils$2;->val$listener:Lcom/google/android/finsky/utils/PackageManagerUtils$FreeSpaceListener;
 
-    .line 54
+    .line 248
     invoke-direct {p0}, Landroid/content/pm/IPackageDataObserver$Stub;-><init>()V
 
     return-void
@@ -41,11 +41,11 @@
     .parameter "succeeded"
 
     .prologue
-    .line 57
+    .line 251
     iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerUtils$2;->val$listener:Lcom/google/android/finsky/utils/PackageManagerUtils$FreeSpaceListener;
 
     invoke-interface {v0, p2}, Lcom/google/android/finsky/utils/PackageManagerUtils$FreeSpaceListener;->onComplete(Z)V
 
-    .line 58
+    .line 252
     return-void
 .end method

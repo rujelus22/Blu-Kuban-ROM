@@ -26,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 49
+    .line 48
     const-class v0, Lorg/apache/james/mime4j/field/AddressListField$Parser;
 
     invoke-static {v0}, Lorg/apache/james/mime4j/LogFactory;->getLog(Ljava/lang/Class;)Lorg/apache/james/mime4j/Log;
@@ -42,8 +42,8 @@
     .registers 1
 
     .prologue
-    .line 48
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 47
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -57,14 +57,14 @@
     .parameter "raw"
 
     .prologue
-    .line 52
+    .line 51
     const/4 v4, 0x0
 
-    .line 53
+    .line 52
     .local v4, addressList:Lorg/apache/james/mime4j/field/address/AddressList;
     const/4 v5, 0x0
 
-    .line 55
+    .line 54
     .local v5, parseException:Lorg/apache/james/mime4j/field/address/parser/ParseException;
     :try_start_2
     invoke-static {p2}, Lorg/apache/james/mime4j/field/address/AddressList;->parse(Ljava/lang/String;)Lorg/apache/james/mime4j/field/address/AddressList;

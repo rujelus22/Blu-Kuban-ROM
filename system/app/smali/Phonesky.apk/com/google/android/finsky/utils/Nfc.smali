@@ -21,10 +21,10 @@
     .registers 1
 
     .prologue
-    .line 22
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 161
+    .line 164
     return-void
 .end method
 
@@ -35,7 +35,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 32
+    .line 33
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -44,7 +44,7 @@
 
     move-result-object v1
 
-    .line 33
+    .line 34
     .local v1, pm:Landroid/content/pm/PackageManager;
     const-string v2, "android.hardware.nfc"
 
@@ -52,7 +52,7 @@
 
     move-result v0
 
-    .line 35
+    .line 36
     .local v0, hasNfc:Z
     if-eqz v0, :cond_1d
 
@@ -62,16 +62,16 @@
 
     if-lt v2, v3, :cond_1d
 
-    .line 36
+    .line 37
     new-instance v2, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;
 
     invoke-direct {v2, p0, v4}, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;-><init>(Lcom/google/android/finsky/activities/DetailsDataBasedFragment;Lcom/google/android/finsky/utils/Nfc$1;)V
 
-    .line 40
+    .line 41
     :goto_1c
     return-object v2
 
-    .line 37
+    .line 38
     :cond_1d
     if-eqz v0, :cond_2b
 
@@ -81,14 +81,14 @@
 
     if-lt v2, v3, :cond_2b
 
-    .line 38
+    .line 39
     new-instance v2, Lcom/google/android/finsky/utils/Nfc$GingerbreadMr1NfcHandler;
 
     invoke-direct {v2, p0, v4}, Lcom/google/android/finsky/utils/Nfc$GingerbreadMr1NfcHandler;-><init>(Lcom/google/android/finsky/activities/DetailsDataBasedFragment;Lcom/google/android/finsky/utils/Nfc$1;)V
 
     goto :goto_1c
 
-    .line 40
+    .line 41
     :cond_2b
     new-instance v2, Lcom/google/android/finsky/utils/Nfc$NoopNfcHandler;
 

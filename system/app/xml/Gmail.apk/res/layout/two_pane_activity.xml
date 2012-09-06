@@ -7,7 +7,7 @@
             <FrameLayout android:id="@id/content_pane" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentTop="true" />
         </RelativeLayout>
     </RelativeLayout>
-    <FrameLayout android:id="@id/conversation_pane_container" android:background="@android:color/white" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent">
+    <FrameLayout android:id="@id/conversation_pane_container" android:background="#ff000000" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent">
         <FrameLayout android:id="@id/conversation_pane" android:layout_width="fill_parent" android:layout_height="fill_parent" />
         <View android:id="@id/conversation_overlay" android:background="@android:color/transparent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
         <TextView android:textAppearance="?android:textAppearanceLarge" android:gravity="center" android:id="@id/conversation_error" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/no_conversations" />

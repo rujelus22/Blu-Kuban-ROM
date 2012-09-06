@@ -1,141 +1,189 @@
 .class final Lcom/google/common/collect/fe;
-.super Lcom/google/common/collect/bt;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field private final a:Ljava/util/Set;
+.field final a:Ljava/util/Set;
+
+.field b:Lcom/google/common/collect/fk;
+
+.field c:Lcom/google/common/collect/fk;
+
+.field final synthetic d:Lcom/google/common/collect/LinkedListMultimap;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/Set;)V
-    .registers 2
+.method private constructor <init>(Lcom/google/common/collect/LinkedListMultimap;)V
+    .registers 3
     .parameter
 
     .prologue
-    .line 886
-    invoke-direct {p0}, Lcom/google/common/collect/bt;-><init>()V
+    .line 364
+    iput-object p1, p0, Lcom/google/common/collect/fe;->d:Lcom/google/common/collect/LinkedListMultimap;
 
-    .line 887
-    iput-object p1, p0, Lcom/google/common/collect/fe;->a:Ljava/util/Set;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 888
+    .line 365
+    iget-object v0, p0, Lcom/google/common/collect/fe;->d:Lcom/google/common/collect/LinkedListMultimap;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/LinkedListMultimap;->keySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->size()I
+
+    move-result v0
+
+    invoke-static {v0}, Lcom/google/common/collect/Sets;->a(I)Ljava/util/HashSet;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/common/collect/fe;->a:Ljava/util/Set;
+
+    .line 366
+    iget-object v0, p0, Lcom/google/common/collect/fe;->d:Lcom/google/common/collect/LinkedListMultimap;
+
+    #getter for: Lcom/google/common/collect/LinkedListMultimap;->head:Lcom/google/common/collect/fk;
+    invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$000(Lcom/google/common/collect/LinkedListMultimap;)Lcom/google/common/collect/fk;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/common/collect/fe;->b:Lcom/google/common/collect/fk;
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/common/collect/LinkedListMultimap;B)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 364
+    invoke-direct {p0, p1}, Lcom/google/common/collect/fe;-><init>(Lcom/google/common/collect/LinkedListMultimap;)V
+
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a()Ljava/util/Set;
+.method public final hasNext()Z
     .registers 2
 
     .prologue
-    .line 891
-    iget-object v0, p0, Lcom/google/common/collect/fe;->a:Ljava/util/Set;
+    .line 371
+    iget-object v0, p0, Lcom/google/common/collect/fe;->b:Lcom/google/common/collect/fk;
 
-    return-object v0
+    if-eqz v0, :cond_6
+
+    const/4 v0, 0x1
+
+    :goto_5
+    return v0
+
+    :cond_6
+    const/4 v0, 0x0
+
+    goto :goto_5
 .end method
 
-.method public final contains(Ljava/lang/Object;)Z
+.method public final next()Ljava/lang/Object;
     .registers 3
-    .parameter
 
     .prologue
-    .line 915
+    .line 375
+    iget-object v0, p0, Lcom/google/common/collect/fe;->b:Lcom/google/common/collect/fk;
+
+    #calls: Lcom/google/common/collect/LinkedListMultimap;->checkElement(Ljava/lang/Object;)V
+    invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$200(Ljava/lang/Object;)V
+
+    .line 376
+    iget-object v0, p0, Lcom/google/common/collect/fe;->b:Lcom/google/common/collect/fk;
+
+    iput-object v0, p0, Lcom/google/common/collect/fe;->c:Lcom/google/common/collect/fk;
+
+    .line 377
     iget-object v0, p0, Lcom/google/common/collect/fe;->a:Ljava/util/Set;
 
-    invoke-static {v0, p1}, Lcom/google/common/collect/Maps;->a(Ljava/util/Collection;Ljava/lang/Object;)Z
+    iget-object v1, p0, Lcom/google/common/collect/fe;->c:Lcom/google/common/collect/fk;
+
+    iget-object v1, v1, Lcom/google/common/collect/fk;->a:Ljava/lang/Object;
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    .line 379
+    :cond_12
+    iget-object v0, p0, Lcom/google/common/collect/fe;->b:Lcom/google/common/collect/fk;
+
+    iget-object v0, v0, Lcom/google/common/collect/fk;->c:Lcom/google/common/collect/fk;
+
+    iput-object v0, p0, Lcom/google/common/collect/fe;->b:Lcom/google/common/collect/fk;
+
+    .line 380
+    iget-object v0, p0, Lcom/google/common/collect/fe;->b:Lcom/google/common/collect/fk;
+
+    if-eqz v0, :cond_28
+
+    iget-object v0, p0, Lcom/google/common/collect/fe;->a:Ljava/util/Set;
+
+    iget-object v1, p0, Lcom/google/common/collect/fe;->b:Lcom/google/common/collect/fk;
+
+    iget-object v1, v1, Lcom/google/common/collect/fk;->a:Ljava/lang/Object;
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     move-result v0
 
-    return v0
-.end method
+    if-eqz v0, :cond_12
 
-.method public final containsAll(Ljava/util/Collection;)Z
-    .registers 3
-    .parameter
+    .line 381
+    :cond_28
+    iget-object v0, p0, Lcom/google/common/collect/fe;->c:Lcom/google/common/collect/fk;
 
-    .prologue
-    .line 919
-    invoke-static {p0, p1}, Lcom/google/common/collect/at;->a(Ljava/util/Collection;Ljava/util/Collection;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method protected final bridge synthetic delegate()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 883
-    iget-object v0, p0, Lcom/google/common/collect/fe;->a:Ljava/util/Set;
+    iget-object v0, v0, Lcom/google/common/collect/fk;->a:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method protected final bridge synthetic delegate()Ljava/util/Collection;
-    .registers 2
-
-    .prologue
-    .line 883
-    iget-object v0, p0, Lcom/google/common/collect/fe;->a:Ljava/util/Set;
-
-    return-object v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 923
-    invoke-static {p0, p1}, Lcom/google/common/collect/at;->a(Ljava/util/Set;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final iterator()Ljava/util/Iterator;
+.method public final remove()V
     .registers 3
 
     .prologue
-    .line 895
-    iget-object v0, p0, Lcom/google/common/collect/fe;->a:Ljava/util/Set;
+    .line 385
+    iget-object v0, p0, Lcom/google/common/collect/fe;->c:Lcom/google/common/collect/fk;
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    if-eqz v0, :cond_15
 
-    move-result-object v0
+    const/4 v0, 0x1
 
-    .line 896
-    new-instance v1, Lcom/google/common/collect/ff;
+    :goto_5
+    invoke-static {v0}, Lcom/google/common/base/ag;->b(Z)V
 
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/ff;-><init>(Lcom/google/common/collect/fe;Ljava/util/Iterator;)V
+    .line 386
+    iget-object v0, p0, Lcom/google/common/collect/fe;->d:Lcom/google/common/collect/LinkedListMultimap;
 
-    return-object v1
-.end method
+    iget-object v1, p0, Lcom/google/common/collect/fe;->c:Lcom/google/common/collect/fk;
 
-.method public final toArray()[Ljava/lang/Object;
-    .registers 2
+    iget-object v1, v1, Lcom/google/common/collect/fk;->a:Ljava/lang/Object;
 
-    .prologue
-    .line 907
-    invoke-static {p0}, Lcom/google/common/collect/fq;->a(Ljava/util/Collection;)[Ljava/lang/Object;
+    #calls: Lcom/google/common/collect/LinkedListMultimap;->removeAllNodes(Ljava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/common/collect/LinkedListMultimap;->access$400(Lcom/google/common/collect/LinkedListMultimap;Ljava/lang/Object;)V
 
-    move-result-object v0
+    .line 387
+    const/4 v0, 0x0
 
-    return-object v0
-.end method
+    iput-object v0, p0, Lcom/google/common/collect/fe;->c:Lcom/google/common/collect/fk;
 
-.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 3
-    .parameter
+    .line 388
+    return-void
 
-    .prologue
-    .line 911
-    invoke-static {p0, p1}, Lcom/google/common/collect/fq;->a(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
+    .line 385
+    :cond_15
+    const/4 v0, 0x0
 
-    move-result-object v0
-
-    return-object v0
+    goto :goto_5
 .end method

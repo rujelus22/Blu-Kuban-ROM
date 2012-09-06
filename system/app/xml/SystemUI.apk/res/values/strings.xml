@@ -29,7 +29,7 @@ Use only the supplied charger."</string>
     <string name="status_bar_settings_mute_label">MUTE</string>
     <string name="status_bar_settings_auto_brightness_label">Auto</string>
     <string name="status_bar_settings_notifications">Notifications</string>
-    <string name="status_bar_settings_battery_meter_format">%d%%</string>
+    <string name="status_bar_settings_battery_meter_format">%d</string>
     <string name="status_bar_network_name_separator">"
 "</string>
     <string name="bluetooth_tethered">Bluetooth tethered</string>
@@ -195,4 +195,7 @@ Unplug charger"</string>
     <string name="mini_apps_no_selected_apps">No mini apps. Tap to add mini apps</string>
     <string name="done">Done</string>
     <string name="edit">Edit</string>
+    <string name="recent_apps_title">Recent apps</string>
+    <string name="accessibility_flashlight">Turn on Flashlight.</string>
+    <string name="accessibility_camera">Open Camera</string>
 </resources>

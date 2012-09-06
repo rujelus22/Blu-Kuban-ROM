@@ -3,12 +3,12 @@
 .source "AuthenticatedActivity.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnKeyListener;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/activities/AuthenticatedActivity;->setupAccountCreationDialog()Landroid/app/Dialog;
+    value = Lcom/google/android/finsky/activities/AuthenticatedActivity;->setupAccountDialog()Landroid/app/AlertDialog;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
 
+.field final synthetic val$accounts:[Landroid/accounts/Account;
+
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/activities/AuthenticatedActivity;)V
-    .registers 2
+.method constructor <init>(Lcom/google/android/finsky/activities/AuthenticatedActivity;[Landroid/accounts/Account;)V
+    .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 678
+    .line 663
     iput-object p1, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$4;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
+
+    iput-object p2, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$4;->val$accounts:[Landroid/accounts/Account;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,25 +42,88 @@
 
 
 # virtual methods
-.method public onKey(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z
-    .registers 5
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .registers 8
     .parameter "dialog"
-    .parameter "keyCode"
-    .parameter "event"
+    .parameter "item"
 
     .prologue
-    .line 682
-    const/16 v0, 0x54
+    const/4 v3, 0x0
 
-    if-ne p2, v0, :cond_6
+    const/4 v4, 0x0
 
-    const/4 v0, 0x1
+    .line 666
+    iget-object v1, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$4;->val$accounts:[Landroid/accounts/Account;
 
-    :goto_5
-    return v0
+    aget-object v1, v1, p2
 
-    :cond_6
-    const/4 v0, 0x0
+    iget-object v0, v1, Landroid/accounts/Account;->name:Ljava/lang/String;
 
-    goto :goto_5
+    .line 669
+    .local v0, newAccount:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$4;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
+
+    #calls: Lcom/google/android/finsky/activities/AuthenticatedActivity;->isAccountSwitchNeeded(Ljava/lang/String;)Z
+    invoke-static {v1, v0}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->access$000(Lcom/google/android/finsky/activities/AuthenticatedActivity;Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_40
+
+    .line 670
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/FinskyApp;->getAnalytics()Lcom/google/android/finsky/analytics/Analytics;
+
+    move-result-object v1
+
+    const-string v2, "switchAccount"
+
+    invoke-interface {v1, v3, v3, v2}, Lcom/google/android/finsky/analytics/Analytics;->logPageView(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 672
+    iget-object v1, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$4;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
+
+    new-instance v2, Landroid/content/Intent;
+
+    invoke-direct {v2}, Landroid/content/Intent;-><init>()V
+
+    invoke-virtual {v1, v2}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->setIntent(Landroid/content/Intent;)V
+
+    .line 673
+    const-string v1, "b/5160617: Switching account to %s on user action"
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    invoke-static {v0}, Lcom/google/android/finsky/utils/FinskyLog;->scrubPii(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    aput-object v3, v2, v4
+
+    invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 675
+    iget-object v1, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$4;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
+
+    invoke-virtual {v1, v0}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->switchAccount(Ljava/lang/String;)V
+
+    .line 680
+    :goto_3a
+    iget-object v1, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$4;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
+
+    invoke-virtual {v1, v4}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->removeDialog(I)V
+
+    .line 681
+    return-void
+
+    .line 677
+    :cond_40
+    sput-boolean v4, Lcom/google/android/finsky/activities/AuthenticatedActivity;->sSwitchToMyApps:Z
+
+    goto :goto_3a
 .end method

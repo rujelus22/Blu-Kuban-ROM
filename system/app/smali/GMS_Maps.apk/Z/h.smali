@@ -1,402 +1,458 @@
-.class LZ/h;
-.super LZ/i;
+.class public Lz/h;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lz/C;
 
 
 # instance fields
-.field private a:[Ljava/lang/Long;
+.field volatile a:Lz/B;
 
-.field private b:[Ljava/lang/Integer;
+.field protected b:Z
+
+.field protected c:[Lz/B;
+
+.field protected d:[I
+
+.field e:[[F
+
+.field private f:[[Lz/m;
+
+.field private g:[Lz/E;
+
+.field private h:Z
+
+.field private i:B
+
+.field private j:B
+
+.field private k:Lz/j;
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 11
+.method public constructor <init>()V
+    .registers 4
 
-    const/4 v9, 0x4
+    .prologue
+    const/4 v1, 0x0
 
-    const/4 v8, 0x3
+    const/4 v2, 0x5
 
-    const/4 v7, 0x2
+    .line 146
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v6, 0x1
+    .line 55
+    const/4 v0, 0x1
 
-    const/4 v5, 0x0
+    iput-boolean v0, p0, Lz/h;->b:Z
 
-    invoke-direct {p0}, LZ/i;-><init>()V
+    .line 118
+    iput-boolean v1, p0, Lz/h;->h:Z
 
-    const/16 v0, 0x10
+    .line 131
+    iput-byte v1, p0, Lz/h;->i:B
 
-    new-array v0, v0, [Ljava/lang/Long;
+    .line 138
+    const/4 v0, -0x1
 
-    new-instance v1, Ljava/lang/Long;
+    iput-byte v0, p0, Lz/h;->j:B
 
-    const-wide/16 v2, 0x0
+    .line 147
+    new-array v0, v2, [Lz/E;
 
-    invoke-direct {v1, v2, v3}, Ljava/lang/Long;-><init>(J)V
+    iput-object v0, p0, Lz/h;->g:[Lz/E;
 
-    aput-object v1, v0, v5
+    .line 148
+    sget v0, Lz/m;->a:I
 
-    new-instance v1, Ljava/lang/Long;
+    filled-new-array {v2, v0}, [I
 
-    const-wide/16 v2, 0x1
+    move-result-object v0
 
-    invoke-direct {v1, v2, v3}, Ljava/lang/Long;-><init>(J)V
+    const-class v1, Lz/m;
 
-    aput-object v1, v0, v6
+    invoke-static {v1, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;[I)Ljava/lang/Object;
 
-    new-instance v1, Ljava/lang/Long;
+    move-result-object v0
 
-    const-wide/16 v2, 0x2
+    check-cast v0, [[Lz/m;
 
-    invoke-direct {v1, v2, v3}, Ljava/lang/Long;-><init>(J)V
+    iput-object v0, p0, Lz/h;->f:[[Lz/m;
 
-    aput-object v1, v0, v7
+    .line 149
+    new-instance v0, Lz/B;
 
-    new-instance v1, Ljava/lang/Long;
+    invoke-direct {v0}, Lz/B;-><init>()V
 
-    const-wide/16 v2, 0x3
+    iput-object v0, p0, Lz/h;->a:Lz/B;
 
-    invoke-direct {v1, v2, v3}, Ljava/lang/Long;-><init>(J)V
+    .line 150
+    new-array v0, v2, [Lz/B;
 
-    aput-object v1, v0, v8
+    iput-object v0, p0, Lz/h;->c:[Lz/B;
 
-    new-instance v1, Ljava/lang/Long;
+    .line 151
+    new-array v0, v2, [[F
 
-    const-wide/16 v2, 0x4
+    iput-object v0, p0, Lz/h;->e:[[F
 
-    invoke-direct {v1, v2, v3}, Ljava/lang/Long;-><init>(J)V
+    .line 152
+    new-array v0, v2, [I
 
-    aput-object v1, v0, v9
+    iput-object v0, p0, Lz/h;->d:[I
 
-    const/4 v1, 0x5
-
-    new-instance v2, Ljava/lang/Long;
-
-    const-wide/16 v3, 0x5
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Long;-><init>(J)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    new-instance v2, Ljava/lang/Long;
-
-    const-wide/16 v3, 0x6
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Long;-><init>(J)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
-
-    new-instance v2, Ljava/lang/Long;
-
-    const-wide/16 v3, 0x7
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Long;-><init>(J)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x8
-
-    new-instance v2, Ljava/lang/Long;
-
-    const-wide/16 v3, 0x8
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Long;-><init>(J)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x9
-
-    new-instance v2, Ljava/lang/Long;
-
-    const-wide/16 v3, 0x9
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Long;-><init>(J)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xa
-
-    new-instance v2, Ljava/lang/Long;
-
-    const-wide/16 v3, 0xa
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Long;-><init>(J)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xb
-
-    new-instance v2, Ljava/lang/Long;
-
-    const-wide/16 v3, 0xb
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Long;-><init>(J)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xc
-
-    new-instance v2, Ljava/lang/Long;
-
-    const-wide/16 v3, 0xc
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Long;-><init>(J)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xd
-
-    new-instance v2, Ljava/lang/Long;
-
-    const-wide/16 v3, 0xd
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Long;-><init>(J)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xe
-
-    new-instance v2, Ljava/lang/Long;
-
-    const-wide/16 v3, 0xe
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Long;-><init>(J)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xf
-
-    new-instance v2, Ljava/lang/Long;
-
-    const-wide/16 v3, 0xf
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Long;-><init>(J)V
-
-    aput-object v2, v0, v1
-
-    iput-object v0, p0, LZ/h;->a:[Ljava/lang/Long;
-
-    const/16 v0, 0x10
-
-    new-array v0, v0, [Ljava/lang/Integer;
-
-    new-instance v1, Ljava/lang/Integer;
-
-    invoke-direct {v1, v5}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v1, v0, v5
-
-    new-instance v1, Ljava/lang/Integer;
-
-    invoke-direct {v1, v6}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v1, v0, v6
-
-    new-instance v1, Ljava/lang/Integer;
-
-    invoke-direct {v1, v7}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v1, v0, v7
-
-    new-instance v1, Ljava/lang/Integer;
-
-    invoke-direct {v1, v8}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v1, v0, v8
-
-    new-instance v1, Ljava/lang/Integer;
-
-    invoke-direct {v1, v9}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v1, v0, v9
-
-    const/4 v1, 0x5
-
-    new-instance v2, Ljava/lang/Integer;
-
-    const/4 v3, 0x5
-
-    invoke-direct {v2, v3}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    new-instance v2, Ljava/lang/Integer;
-
-    const/4 v3, 0x6
-
-    invoke-direct {v2, v3}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
-
-    new-instance v2, Ljava/lang/Integer;
-
-    const/4 v3, 0x7
-
-    invoke-direct {v2, v3}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x8
-
-    new-instance v2, Ljava/lang/Integer;
-
-    const/16 v3, 0x8
-
-    invoke-direct {v2, v3}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x9
-
-    new-instance v2, Ljava/lang/Integer;
-
-    const/16 v3, 0x9
-
-    invoke-direct {v2, v3}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xa
-
-    new-instance v2, Ljava/lang/Integer;
-
-    const/16 v3, 0xa
-
-    invoke-direct {v2, v3}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xb
-
-    new-instance v2, Ljava/lang/Integer;
-
-    const/16 v3, 0xb
-
-    invoke-direct {v2, v3}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xc
-
-    new-instance v2, Ljava/lang/Integer;
-
-    const/16 v3, 0xc
-
-    invoke-direct {v2, v3}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xd
-
-    new-instance v2, Ljava/lang/Integer;
-
-    const/16 v3, 0xd
-
-    invoke-direct {v2, v3}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xe
-
-    new-instance v2, Ljava/lang/Integer;
-
-    const/16 v3, 0xe
-
-    invoke-direct {v2, v3}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xf
-
-    new-instance v2, Ljava/lang/Integer;
-
-    const/16 v3, 0xf
-
-    invoke-direct {v2, v3}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v2, v0, v1
-
-    iput-object v0, p0, LZ/h;->b:[Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(LZ/g;)V
-    .registers 2
-
-    invoke-direct {p0}, LZ/h;-><init>()V
-
+    .line 153
     return-void
 .end method
 
 
 # virtual methods
-.method public a(I)Ljava/lang/Integer;
-    .registers 3
+.method a()B
+    .registers 2
 
-    if-ltz p1, :cond_c
+    .prologue
+    .line 342
+    iget-byte v0, p0, Lz/h;->i:B
 
-    iget-object v0, p0, LZ/h;->b:[Ljava/lang/Integer;
-
-    array-length v0, v0
-
-    if-ge p1, v0, :cond_c
-
-    iget-object v0, p0, LZ/h;->b:[Ljava/lang/Integer;
-
-    aget-object v0, v0, p1
-
-    :goto_b
-    return-object v0
-
-    :cond_c
-    new-instance v0, Ljava/lang/Integer;
-
-    invoke-direct {v0, p1}, Ljava/lang/Integer;-><init>(I)V
-
-    goto :goto_b
+    return v0
 .end method
 
-.method public a(J)Ljava/lang/Long;
-    .registers 5
+.method public a(Lz/n;)I
+    .registers 6
+    .parameter
 
-    const-wide/16 v0, 0x0
+    .prologue
+    const/4 v0, 0x0
 
-    cmp-long v0, p1, v0
+    .line 248
+    move v1, v0
 
-    if-ltz v0, :cond_14
+    .line 249
+    :goto_2
+    const/4 v2, 0x5
 
-    iget-object v0, p0, LZ/h;->a:[Ljava/lang/Long;
+    if-ge v1, v2, :cond_17
 
-    array-length v0, v0
+    .line 250
+    iget-object v2, p0, Lz/h;->f:[[Lz/m;
 
-    int-to-long v0, v0
+    aget-object v2, v2, v1
 
-    cmp-long v0, p1, v0
+    invoke-virtual {p1}, Lz/n;->a()I
 
-    if-gez v0, :cond_14
+    move-result v3
 
-    iget-object v0, p0, LZ/h;->a:[Ljava/lang/Long;
+    aget-object v2, v2, v3
 
-    long-to-int v1, p1
+    if-eqz v2, :cond_14
 
-    aget-object v0, v0, v1
+    .line 251
+    const/4 v2, 0x1
 
-    :goto_13
-    return-object v0
+    shl-int/2addr v2, v1
 
+    or-int/2addr v0, v2
+
+    .line 249
     :cond_14
-    new-instance v0, Ljava/lang/Long;
+    add-int/lit8 v1, v1, 0x1
 
-    invoke-direct {v0, p1, p2}, Ljava/lang/Long;-><init>(J)V
+    goto :goto_2
 
-    goto :goto_13
+    .line 254
+    :cond_17
+    return v0
+.end method
+
+.method public a(Lz/B;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 369
+    iget-boolean v0, p0, Lz/h;->h:Z
+
+    if-eqz v0, :cond_7
+
+    .line 370
+    invoke-static {}, Lz/j;->c()V
+
+    .line 372
+    :cond_7
+    iget-object v0, p0, Lz/h;->a:Lz/B;
+
+    invoke-virtual {v0, p1}, Lz/B;->a(Lz/B;)Lz/B;
+
+    .line 373
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lz/h;->b:Z
+
+    .line 374
+    return-void
+.end method
+
+.method public a(Lz/m;I)V
+    .registers 7
+    .parameter
+    .parameter
+
+    .prologue
+    .line 204
+    iget-boolean v0, p0, Lz/h;->h:Z
+
+    if-eqz v0, :cond_7
+
+    .line 205
+    invoke-static {}, Lz/j;->c()V
+
+    .line 210
+    :cond_7
+    const/4 v0, 0x0
+
+    :goto_8
+    const/4 v1, 0x5
+
+    if-ge v0, v1, :cond_47
+
+    .line 211
+    const/4 v1, 0x1
+
+    shl-int/2addr v1, v0
+
+    .line 212
+    and-int/2addr v1, p2
+
+    if-eqz v1, :cond_44
+
+    .line 213
+    iget-object v1, p0, Lz/h;->f:[[Lz/m;
+
+    aget-object v1, v1, v0
+
+    iget-object v2, p1, Lz/m;->f:Lz/n;
+
+    invoke-virtual {v2}, Lz/n;->a()I
+
+    move-result v2
+
+    aget-object v1, v1, v2
+
+    .line 214
+    iget-object v2, p0, Lz/h;->f:[[Lz/m;
+
+    aget-object v2, v2, v0
+
+    iget-object v3, p1, Lz/m;->f:Lz/n;
+
+    invoke-virtual {v3}, Lz/n;->a()I
+
+    move-result v3
+
+    aput-object p1, v2, v3
+
+    .line 216
+    iget-boolean v2, p0, Lz/h;->h:Z
+
+    if-eqz v2, :cond_44
+
+    .line 219
+    if-eqz v1, :cond_38
+
+    .line 220
+    invoke-virtual {v1, p0}, Lz/m;->b(Lz/h;)V
+
+    .line 221
+    iget-object v2, p0, Lz/h;->k:Lz/j;
+
+    sget-object v3, Lz/i;->a:Lz/i;
+
+    invoke-virtual {v1, v2, v3}, Lz/m;->a(Lz/j;Lz/i;)Z
+
+    .line 223
+    :cond_38
+    if-eqz p1, :cond_44
+
+    .line 224
+    invoke-virtual {p1, p0}, Lz/m;->a(Lz/h;)V
+
+    .line 225
+    iget-object v1, p0, Lz/h;->k:Lz/j;
+
+    sget-object v2, Lz/i;->c:Lz/i;
+
+    invoke-virtual {p1, v1, v2}, Lz/m;->a(Lz/j;Lz/i;)Z
+
+    .line 210
+    :cond_44
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_8
+
+    .line 230
+    :cond_47
+    return-void
+.end method
+
+.method a(Lz/j;Lz/i;)Z
+    .registers 12
+    .parameter
+    .parameter
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 273
+    iget-boolean v1, p2, Lz/i;->e:Z
+
+    iget-boolean v2, p0, Lz/h;->h:Z
+
+    if-ne v1, v2, :cond_c
+
+    iget-boolean v1, p2, Lz/i;->f:Z
+
+    if-nez v1, :cond_c
+
+    .line 313
+    :goto_b
+    return v0
+
+    .line 277
+    :cond_c
+    iput-object p1, p0, Lz/h;->k:Lz/j;
+
+    .line 278
+    iget-object v2, p0, Lz/h;->g:[Lz/E;
+
+    array-length v3, v2
+
+    move v1, v0
+
+    :goto_12
+    if-ge v1, v3, :cond_2d
+
+    aget-object v4, v2, v1
+
+    .line 279
+    if-eqz v4, :cond_26
+
+    .line 280
+    iget-boolean v5, p2, Lz/i;->f:Z
+
+    if-nez v5, :cond_23
+
+    .line 281
+    iget-boolean v5, p2, Lz/i;->e:Z
+
+    if-eqz v5, :cond_29
+
+    .line 282
+    invoke-virtual {v4, p0}, Lz/E;->b(Lz/h;)V
+
+    .line 287
+    :cond_23
+    :goto_23
+    invoke-virtual {v4, p1, p2}, Lz/E;->a(Lz/j;Lz/i;)Z
+
+    .line 278
+    :cond_26
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_12
+
+    .line 284
+    :cond_29
+    invoke-virtual {v4, p0}, Lz/E;->a(Lz/h;)V
+
+    goto :goto_23
+
+    .line 291
+    :cond_2d
+    const-string v1, "Entity"
+
+    const-string v2, "vertex data setLive"
+
+    invoke-static {v1, v2}, Lz/j;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 294
+    iget-object v3, p0, Lz/h;->f:[[Lz/m;
+
+    array-length v4, v3
+
+    move v2, v0
+
+    :goto_38
+    if-ge v2, v4, :cond_5d
+
+    aget-object v5, v3, v2
+
+    .line 295
+    array-length v6, v5
+
+    move v1, v0
+
+    :goto_3e
+    if-ge v1, v6, :cond_59
+
+    aget-object v7, v5, v1
+
+    .line 296
+    if-eqz v7, :cond_52
+
+    .line 297
+    iget-boolean v8, p2, Lz/i;->f:Z
+
+    if-nez v8, :cond_4f
+
+    .line 298
+    iget-boolean v8, p2, Lz/i;->e:Z
+
+    if-eqz v8, :cond_55
+
+    .line 299
+    invoke-virtual {v7, p0}, Lz/m;->a(Lz/h;)V
+
+    .line 304
+    :cond_4f
+    :goto_4f
+    invoke-virtual {v7, p1, p2}, Lz/m;->a(Lz/j;Lz/i;)Z
+
+    .line 295
+    :cond_52
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_3e
+
+    .line 301
+    :cond_55
+    invoke-virtual {v7, p0}, Lz/m;->b(Lz/h;)V
+
+    goto :goto_4f
+
+    .line 294
+    :cond_59
+    add-int/lit8 v1, v2, 0x1
+
+    move v2, v1
+
+    goto :goto_38
+
+    .line 309
+    :cond_5d
+    const-string v0, "Entity"
+
+    const-string v1, "entity state setLive"
+
+    invoke-static {v0, v1}, Lz/j;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 312
+    iget-boolean v0, p2, Lz/i;->e:Z
+
+    iput-boolean v0, p0, Lz/h;->h:Z
+
+    .line 313
+    const/4 v0, 0x1
+
+    goto :goto_b
 .end method

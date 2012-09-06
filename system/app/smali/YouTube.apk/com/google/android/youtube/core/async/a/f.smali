@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/g;
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields

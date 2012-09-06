@@ -47,7 +47,7 @@
 
     if-eqz v0, :cond_10
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     :goto_d
     sput-boolean v0, Lorg/apache/xml/dtm/DTMManager;->debug:Z

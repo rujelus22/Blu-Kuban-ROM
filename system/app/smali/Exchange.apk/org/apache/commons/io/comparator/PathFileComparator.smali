@@ -97,14 +97,14 @@
     .registers 2
 
     .prologue
-    .line 59
+    .line 55
     new-instance v0, Lorg/apache/commons/io/comparator/PathFileComparator;
 
     invoke-direct {v0}, Lorg/apache/commons/io/comparator/PathFileComparator;-><init>()V
 
     sput-object v0, Lorg/apache/commons/io/comparator/PathFileComparator;->PATH_COMPARATOR:Ljava/util/Comparator;
 
-    .line 65
+    .line 58
     new-instance v0, Lorg/apache/commons/io/comparator/ReverseComparator;
 
     sget-object v1, Lorg/apache/commons/io/comparator/PathFileComparator;->PATH_COMPARATOR:Ljava/util/Comparator;
@@ -113,7 +113,7 @@
 
     sput-object v0, Lorg/apache/commons/io/comparator/PathFileComparator;->PATH_REVERSE:Ljava/util/Comparator;
 
-    .line 71
+    .line 61
     new-instance v0, Lorg/apache/commons/io/comparator/PathFileComparator;
 
     sget-object v1, Lorg/apache/commons/io/IOCase;->INSENSITIVE:Lorg/apache/commons/io/IOCase;
@@ -122,7 +122,7 @@
 
     sput-object v0, Lorg/apache/commons/io/comparator/PathFileComparator;->PATH_INSENSITIVE_COMPARATOR:Ljava/util/Comparator;
 
-    .line 78
+    .line 64
     new-instance v0, Lorg/apache/commons/io/comparator/ReverseComparator;
 
     sget-object v1, Lorg/apache/commons/io/comparator/PathFileComparator;->PATH_INSENSITIVE_COMPARATOR:Ljava/util/Comparator;
@@ -131,7 +131,7 @@
 
     sput-object v0, Lorg/apache/commons/io/comparator/PathFileComparator;->PATH_INSENSITIVE_REVERSE:Ljava/util/Comparator;
 
-    .line 82
+    .line 67
     new-instance v0, Lorg/apache/commons/io/comparator/PathFileComparator;
 
     sget-object v1, Lorg/apache/commons/io/IOCase;->SYSTEM:Lorg/apache/commons/io/IOCase;
@@ -140,7 +140,7 @@
 
     sput-object v0, Lorg/apache/commons/io/comparator/PathFileComparator;->PATH_SYSTEM_COMPARATOR:Ljava/util/Comparator;
 
-    .line 89
+    .line 70
     new-instance v0, Lorg/apache/commons/io/comparator/ReverseComparator;
 
     sget-object v1, Lorg/apache/commons/io/comparator/PathFileComparator;->PATH_SYSTEM_COMPARATOR:Ljava/util/Comparator;
@@ -156,15 +156,15 @@
     .registers 2
 
     .prologue
-    .line 98
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 78
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 99
+    .line 79
     sget-object v0, Lorg/apache/commons/io/IOCase;->SENSITIVE:Lorg/apache/commons/io/IOCase;
 
     iput-object v0, p0, Lorg/apache/commons/io/comparator/PathFileComparator;->caseSensitivity:Lorg/apache/commons/io/IOCase;
 
-    .line 100
+    .line 80
     return-void
 .end method
 
@@ -173,10 +173,10 @@
     .parameter "caseSensitivity"
 
     .prologue
-    .line 109
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 87
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 110
+    .line 88
     if-nez p1, :cond_7
 
     sget-object p1, Lorg/apache/commons/io/IOCase;->SENSITIVE:Lorg/apache/commons/io/IOCase;
@@ -185,7 +185,7 @@
     :cond_7
     iput-object p1, p0, Lorg/apache/commons/io/comparator/PathFileComparator;->caseSensitivity:Lorg/apache/commons/io/IOCase;
 
-    .line 111
+    .line 89
     return-void
 .end method
 
@@ -197,7 +197,7 @@
     .parameter "file2"
 
     .prologue
-    .line 123
+    .line 103
     iget-object v0, p0, Lorg/apache/commons/io/comparator/PathFileComparator;->caseSensitivity:Lorg/apache/commons/io/IOCase;
 
     invoke-virtual {p1}, Ljava/io/File;->getPath()Ljava/lang/String;
@@ -221,7 +221,7 @@
     .parameter "x1"
 
     .prologue
-    .line 56
+    .line 52
     check-cast p1, Ljava/io/File;
 
     .end local p1

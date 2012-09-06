@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/dock_settings_title"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/layout_title">
+        <com.anddoes.launcher.preference.NumberPickerPreference android:max="@string/pref_number_of_dock_pages_max" android:text="@string/pref_number_of_dock_pages_min" android:title="@string/number_of_dock_pages_title" android:key="@string/pref_number_of_dock_pages_key" android:defaultValue="@string/pref_number_of_dock_pages_default" />
+        <com.anddoes.launcher.preference.NumberPickerPreference android:max="@string/pref_number_of_dock_icons_max" android:text="@string/pref_number_of_dock_icons_min" android:title="@string/number_of_dock_icons_title" android:key="@string/pref_number_of_dock_icons_key" android:defaultValue="@string/pref_number_of_dock_icons_default" />
+        <ListPreference android:entries="@array/margin_entries" android:title="@string/horizontal_margin_title" android:key="@string/pref_dock_horizontal_margin_key" android:defaultValue="@string/pref_dock_horizontal_margin_default" android:entryValues="@array/margin_values" />
+        <ListPreference android:entries="@array/margin_entries" android:title="@string/vertical_margin_title" android:key="@string/pref_dock_vertical_margin_key" android:defaultValue="@string/pref_dock_vertical_margin_default" android:entryValues="@array/margin_values" />
+        <CheckBoxPreference android:title="@string/dock_as_overlay_title" android:key="@string/pref_dock_as_overlay_key" android:summary="@string/dock_as_overlay_summary" android:defaultValue="@bool/pref_dock_as_overlay_default" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/scrolling_title">
+        <CheckBoxPreference android:title="@string/infinite_scrolling_title" android:key="@string/pref_dock_infinite_scrolling_key" android:defaultValue="@bool/pref_dock_infinite_scrolling_default" android:summaryOn="@string/enabled" android:summaryOff="@string/disabled" />
+        <CheckBoxPreference android:title="@string/elastic_scrolling_title" android:key="@string/pref_dock_elastic_scrolling_key" android:defaultValue="@bool/pref_dock_elastic_scrolling_default" android:summaryOn="@string/enabled" android:summaryOff="@string/disabled" />
+        <com.anddoes.launcher.preference.SeekBarPreference android:max="@string/pref_minimum_scrolling_time_max" android:text="" android:title="@string/minimum_scrolling_time_title" android:key="@string/pref_dock_minimum_scrolling_time_key" android:summary="@string/minimum_scrolling_time_summary" android:defaultValue="@string/pref_minimum_scrolling_time_default" android:dialogMessage="@string/minimum_scrolling_time_msg" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/indicator_title">
+        <CheckBoxPreference android:title="@string/use_homescreen_indicator_title" android:key="@string/pref_dock_use_homescreen_indicator_key" android:defaultValue="@bool/pref_dock_use_homescreen_indicator_default" android:summaryOn="@string/enabled" android:summaryOff="@string/disabled" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/hide_element_title">
+        <CheckBoxPreference android:title="@string/hide_dock_title" android:key="@string/pref_hide_dock_key" android:summary="@string/hide_dock_summary" android:defaultValue="@bool/pref_hide_dock_default" />
+        <CheckBoxPreference android:title="@string/hide_dock_divider_title" android:key="@string/pref_hide_dock_divider_key" android:summary="@string/hide_dock_divider_summary" android:defaultValue="@bool/pref_hide_dock_divider_default" />
+    </PreferenceCategory>
+</PreferenceScreen>

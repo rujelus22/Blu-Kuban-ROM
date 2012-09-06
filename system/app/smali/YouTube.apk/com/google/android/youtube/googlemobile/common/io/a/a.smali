@@ -27,19 +27,15 @@
 
     move-result v0
 
-    if-nez v0, :cond_31
+    if-nez v0, :cond_2d
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Directory "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -59,26 +55,22 @@
 
     throw v0
 
-    :cond_31
+    :cond_2d
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/common/io/a/a;->a:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->canWrite()Z
 
     move-result v0
 
-    if-nez v0, :cond_58
+    if-nez v0, :cond_50
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Directory "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -98,26 +90,22 @@
 
     throw v0
 
-    :cond_58
+    :cond_50
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/common/io/a/a;->a:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->canRead()Z
 
     move-result v0
 
-    if-nez v0, :cond_7f
+    if-nez v0, :cond_73
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Directory "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -137,7 +125,7 @@
 
     throw v0
 
-    :cond_7f
+    :cond_73
     return-void
 .end method
 
@@ -206,7 +194,7 @@
     div-int/lit16 v0, v1, 0x1000
     :try_end_15
     .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_15} :catch_1a
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_15} :catch_38
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_15} :catch_34
 
     add-int/lit8 v0, v0, 0x1
 
@@ -222,13 +210,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Couldn\'t write block:  "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1}, Ljava/io/FileNotFoundException;->getMessage()Ljava/lang/String;
 
@@ -246,20 +230,16 @@
 
     goto :goto_19
 
-    :catch_38
+    :catch_34
     move-exception v1
 
     const-string v2, "Fixed_Persistence_Store"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Couldn\'t write block:  "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
@@ -304,19 +284,15 @@
 
     move-result v4
 
-    if-ge v4, v3, :cond_2f
+    if-ge v4, v3, :cond_2b
 
     const-string v3, "Fixed_Persistence_Store"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v5, "Didn\'t read full file:  "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -328,29 +304,25 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_2f
+    :cond_2b
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
-    :try_end_32
-    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_32} :catch_33
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_32} :catch_52
+    :try_end_2e
+    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_2e} :catch_2f
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_2e} :catch_4a
 
-    :goto_32
+    :goto_2e
     return-object v0
 
-    :catch_33
+    :catch_2f
     move-exception v0
 
     const-string v2, "Fixed_Persistence_Store"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Couldn\'t find file:  "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/io/FileNotFoundException;->getMessage()Ljava/lang/String;
 
@@ -368,22 +340,18 @@
 
     move-object v0, v1
 
-    goto :goto_32
+    goto :goto_2e
 
-    :catch_52
+    :catch_4a
     move-exception v0
 
     const-string v2, "Fixed_Persistence_Store"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Couldn\'t read file:  "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
@@ -401,5 +369,5 @@
 
     move-object v0, v1
 
-    goto :goto_32
+    goto :goto_2e
 .end method

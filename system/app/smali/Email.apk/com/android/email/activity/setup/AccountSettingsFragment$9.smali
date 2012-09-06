@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 1385
+    .line 566
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSettingsFragment$9;->this$0:Lcom/android/email/activity/setup/AccountSettingsFragment;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -38,32 +38,35 @@
 
 # virtual methods
 .method public onPreferenceClick(Landroid/preference/Preference;)Z
-    .registers 4
+    .registers 5
     .parameter "preference"
 
     .prologue
-    .line 1387
-    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSettingsFragment$9;->this$0:Lcom/android/email/activity/setup/AccountSettingsFragment;
+    const/4 v2, 0x1
 
-    #getter for: Lcom/android/email/activity/setup/AccountSettingsFragment;->mAccountSignature:Landroid/preference/EditTextPreference;
-    invoke-static {v1}, Lcom/android/email/activity/setup/AccountSettingsFragment;->access$2100(Lcom/android/email/activity/setup/AccountSettingsFragment;)Landroid/preference/EditTextPreference;
+    .line 568
+    iget-object v0, p0, Lcom/android/email/activity/setup/AccountSettingsFragment$9;->this$0:Lcom/android/email/activity/setup/AccountSettingsFragment;
 
-    move-result-object v1
+    #setter for: Lcom/android/email/activity/setup/AccountSettingsFragment;->mAccountDirty:Z
+    invoke-static {v0, v2}, Lcom/android/email/activity/setup/AccountSettingsFragment;->access$1402(Lcom/android/email/activity/setup/AccountSettingsFragment;Z)Z
 
-    invoke-virtual {v1}, Landroid/preference/EditTextPreference;->getEditText()Landroid/widget/EditText;
+    .line 569
+    iget-object v0, p0, Lcom/android/email/activity/setup/AccountSettingsFragment$9;->this$0:Lcom/android/email/activity/setup/AccountSettingsFragment;
+
+    #getter for: Lcom/android/email/activity/setup/AccountSettingsFragment;->mCallback:Lcom/android/email/activity/setup/AccountSettingsFragment$Callback;
+    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSettingsFragment;->access$300(Lcom/android/email/activity/setup/AccountSettingsFragment;)Lcom/android/email/activity/setup/AccountSettingsFragment$Callback;
 
     move-result-object v0
 
-    .line 1388
-    .local v0, editText:Landroid/widget/EditText;
-    invoke-virtual {v0}, Landroid/widget/EditText;->length()I
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSettingsFragment$9;->this$0:Lcom/android/email/activity/setup/AccountSettingsFragment;
 
-    move-result v1
+    #getter for: Lcom/android/email/activity/setup/AccountSettingsFragment;->mAccount:Lcom/android/emailcommon/provider/Account;
+    invoke-static {v1}, Lcom/android/email/activity/setup/AccountSettingsFragment;->access$400(Lcom/android/email/activity/setup/AccountSettingsFragment;)Lcom/android/emailcommon/provider/Account;
 
-    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setSelection(I)V
+    move-result-object v1
 
-    .line 1389
-    const/4 v1, 0x1
+    invoke-interface {v0, v1}, Lcom/android/email/activity/setup/AccountSettingsFragment$Callback;->onOutgoingSettings(Lcom/android/emailcommon/provider/Account;)V
 
-    return v1
+    .line 570
+    return v2
 .end method

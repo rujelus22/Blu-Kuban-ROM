@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 2856
+    .line 2842
     iput-object p1, p0, Lcom/samsung/client/DMApp$LocaleChangeReceiver;->this$0:Lcom/samsung/client/DMApp;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2856
+    .line 2842
     invoke-direct {p0, p1}, Lcom/samsung/client/DMApp$LocaleChangeReceiver;-><init>(Lcom/samsung/client/DMApp;)V
 
     return-void
@@ -52,7 +52,7 @@
     .parameter "arg1"
 
     .prologue
-    .line 2860
+    .line 2846
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -65,19 +65,19 @@
 
     if-eqz v0, :cond_17
 
-    .line 2861
+    .line 2847
     invoke-static {}, Lcom/samsung/client/DMApp;->access$4400()Z
 
     move-result v0
 
     if-eqz v0, :cond_17
 
-    .line 2862
+    .line 2848
     iget-object v0, p0, Lcom/samsung/client/DMApp$LocaleChangeReceiver;->this$0:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->setNotification()V
 
-    .line 2865
+    .line 2851
     :cond_17
     return-void
 .end method

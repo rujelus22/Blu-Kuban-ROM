@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 122
+    .line 116
     iput-object p1, p0, Lcom/google/android/finsky/layout/LegacyActionBar$2;->this$0:Lcom/google/android/finsky/layout/LegacyActionBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .registers 2
 
     .prologue
-    .line 125
+    .line 119
     iget-object v0, p0, Lcom/google/android/finsky/layout/LegacyActionBar$2;->this$0:Lcom/google/android/finsky/layout/LegacyActionBar;
 
     #calls: Lcom/google/android/finsky/layout/LegacyActionBar;->syncActionBar()V
     invoke-static {v0}, Lcom/google/android/finsky/layout/LegacyActionBar;->access$200(Lcom/google/android/finsky/layout/LegacyActionBar;)V
 
-    .line 126
+    .line 120
     return-void
 .end method

@@ -16,10 +16,10 @@
     .registers 2
 
     .prologue
-    .line 29
+    .line 28
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 34
+    .line 33
     new-instance v0, Lcom/android/email/service/PolicyService$1;
 
     invoke-direct {v0, p0}, Lcom/android/email/service/PolicyService$1;-><init>(Lcom/android/email/service/PolicyService;)V
@@ -34,7 +34,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 28
     iget-object v0, p0, Lcom/android/email/service/PolicyService;->mSecurityPolicy:Lcom/android/email/SecurityPolicy;
 
     return-object v0
@@ -45,7 +45,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 28
     iget-object v0, p0, Lcom/android/email/service/PolicyService;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -58,17 +58,17 @@
     .parameter "intent"
 
     .prologue
-    .line 90
+    .line 70
     iput-object p0, p0, Lcom/android/email/service/PolicyService;->mContext:Landroid/content/Context;
 
-    .line 91
+    .line 71
     invoke-static {p0}, Lcom/android/email/SecurityPolicy;->getInstance(Landroid/content/Context;)Lcom/android/email/SecurityPolicy;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/email/service/PolicyService;->mSecurityPolicy:Lcom/android/email/SecurityPolicy;
 
-    .line 92
+    .line 72
     iget-object v0, p0, Lcom/android/email/service/PolicyService;->mBinder:Lcom/android/emailcommon/service/IPolicyService$Stub;
 
     return-object v0

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <bool name="isTablet">true</bool>
-    <bool name="hide_nav_buttons">false</bool>
-    <bool name="menu_show_navigation">false</bool>
-    <bool name="menu_show_bookmarks">true</bool>
-</resources>

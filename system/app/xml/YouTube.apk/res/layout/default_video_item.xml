@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/video_item" android:paddingLeft="@dimen/cell_padding_left" android:paddingTop="@dimen/cell_padding_top" android:paddingRight="@dimen/cell_padding_right" android:paddingBottom="@dimen/cell_padding_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:yt="http://schemas.android.com/apk/res/com.google.android.youtube">
+    <com.google.android.youtube.app.ui.FixedAspectRatioFrameLayout android:id="@id/resizable_thumbnail" android:tag="resizable_thumbnail" android:background="@drawable/bg_video_thumb" android:layout_width="fill_parent" android:layout_height="wrap_content" yt:aspectRatio="@fraction/default_video_item_thumbnail_aspect_ratio">
+        <ImageView android:id="@id/thumbnail" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+        <ImageView android:id="@id/gradient" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/video_gradient_overlay" android:scaleType="fitXY" />
+        <ViewStub android:id="@id/unplayable_overlay_stub" android:layout="@layout/unplayable_overlay" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </com.google.android.youtube.app.ui.FixedAspectRatioFrameLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/title_region" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="1.0" android:layout_alignLeft="@id/resizable_thumbnail" android:layout_alignBottom="@id/resizable_thumbnail">
+        <TextView android:textSize="@dimen/default_video_item_title_font_size" android:textStyle="normal" android:textColor="@color/video_item_duration_font" android:ellipsize="end" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="8.0dip" android:maxLines="2" android:includeFontPadding="false" android:layout_weight="0.25" android:layout_alignLeft="@id/resizable_thumbnail" android:layout_alignBottom="@id/resizable_thumbnail" />
+        <View android:id="@id/title_padding" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.75" />
+    </LinearLayout>
+    <include android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="8.0dip" android:layout_alignRight="@id/resizable_thumbnail" android:layout_alignBottom="@id/resizable_thumbnail" layout="@layout/default_video_item_badges" />
+    <TextView android:textSize="@dimen/default_video_item_duration_font_size" android:textStyle="normal" android:textColor="@color/video_item_duration_font" android:id="@id/duration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginBottom="4.0dip" android:maxLines="1" android:layout_above="@id/title_region" android:layout_alignLeft="@id/resizable_thumbnail" />
+    <View android:id="@id/duration_underline" android:background="#7fffffff" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_marginLeft="8.0dip" android:layout_marginTop="-2.0dip" android:layout_below="@id/duration" android:layout_alignLeft="@id/resizable_thumbnail" android:layout_alignRight="@id/duration" />
+</RelativeLayout>

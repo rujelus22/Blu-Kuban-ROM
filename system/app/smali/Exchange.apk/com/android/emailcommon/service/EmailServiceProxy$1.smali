@@ -33,14 +33,14 @@
     .parameter
 
     .prologue
-    .line 122
+    .line 129
     iput-object p1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$1;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
     iput-wide p2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$1;->val$attachmentId:J
 
     iput-boolean p4, p0, Lcom/android/emailcommon/service/EmailServiceProxy$1;->val$background:Z
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -56,7 +56,7 @@
     .end annotation
 
     .prologue
-    .line 125
+    .line 132
     :try_start_0
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$1;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
@@ -67,7 +67,6 @@
 
     if-eqz v0, :cond_17
 
-    .line 126
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$1;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mService:Lcom/android/emailcommon/service/IEmailService;
@@ -84,7 +83,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/emailcommon/service/IEmailService;->setCallback(Lcom/android/emailcommon/service/IEmailServiceCallback;)V
 
-    .line 127
+    .line 133
     :cond_17
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$1;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
@@ -101,16 +100,16 @@
     :try_end_24
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_24} :catch_25
 
-    .line 138
+    .line 144
     :cond_24
     :goto_24
     return-void
 
-    .line 128
+    .line 134
     :catch_25
     move-exception v7
 
-    .line 131
+    .line 137
     .local v7, e:Landroid/os/RemoteException;
     :try_start_26
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$1;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
@@ -122,7 +121,7 @@
 
     if-eqz v0, :cond_24
 
-    .line 132
+    .line 138
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$1;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mCallback:Lcom/android/emailcommon/service/IEmailServiceCallback;
@@ -144,7 +143,7 @@
 
     goto :goto_24
 
-    .line 135
+    .line 141
     :catch_3f
     move-exception v0
 

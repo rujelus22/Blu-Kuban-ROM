@@ -242,18 +242,18 @@ tanong"</b></string>
     <string name="account_intro_recommended_title">Gawin itong Google</string>
     <string name="common_message">"Hinahayaan ka ng Google na
 
-"<li><ul>Tingnan at ayusin ang lahat ng iyong impormasyon mula saanman.</ul></li>"
+"<ul><li>Tingnan at ayusin ang lahat ng iyong impormasyon mula saanman.</li></ul>"
 
-"<li><ul>Awtomatikong i-back up ang iyong data.</ul></li>"
+"<ul><li>Awtomatikong i-back up ang iyong data.</li></ul>"
 
-"<li><ul>Madaling gamitin ang mga serbisyo ng Google mula saanman.</ul></li></string>
+"<ul><li>Madaling gamitin ang mga serbisyo ng Google mula saanman.</li></ul></string>
     <string name="add_account_message">" Maaari kang gumamit ng higit pa sa isang Google Account (gaya ng mga account sa iyong tahanan o trabaho). Pindutin ang "<b>Mag-sign in</b> o <b>Lumikha ng Account</b> upang magdagdag ng Google Account</string>
     <string name="account_intro_default_message">Huwag kailanman maiwalang muli ang iyong gamit. Ligtas na itinatago ng Google Account ang lahat ng bagay.</string>
     <string name="account_intro_custom_endtext">Mayroong %s? Mag-sign in ngayon.</string>
     <string name="account_intro_simple_message">Nais mo bang magdagdag ng umiiral nang account o lumikha ng bago?</string>
     <string name="learn_more_title"><annotation id="learn_more">Matuto nang higit pa</annotation></string>
     <string name="learn_more_account_intro">"Hinahayaan ka ng isang Google account na
-"<li><ul>Tingnan at ayusin ang lahat ng iyong impormasyon mula saanman.<li>Awtomatikong i-back-up ang iyong data, tulad ng email, mga contact, musika, at mga larawan.</li><li>Gamitin ang mga serbisyo ng Google nang madali mula saanman—kabilang ang Mga Contact, Calendar, Maps, at higit pa.</li></ul></li></string>
+"<ul><li>Tingnan at ayusin ang lahat ng iyong impormasyon mula saanman.<li>Awtomatikong i-back-up ang iyong data, tulad ng email, mga contact, musika, at mga larawan.</li><li>Gamitin ang mga serbisyo ng Google nang madali mula saanman—kabilang ang Mga Contact, Calendar, Maps, at higit pa.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Tungkol sa mga Google account</string>
     <string name="learn_more_web_history">"Umaayon ang Kasaysayan sa Web sa mga resulta ng paghahanap batay sa kung ano ang iyong hinanap at kung aling mga site ang iyong binisita, na nagbibigay ng personalized na karanasan sa Google.
 

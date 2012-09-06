@@ -2,6 +2,10 @@
 <resources>
     <attr name="childBackgroundDrawable" format="reference" />
     <attr name="max_height" format="dimension" />
+    <attr name="load_once" format="boolean" />
+    <attr name="fade_in_after_load" format="boolean" />
+    <attr name="no_placeholder" format="boolean" />
+    <attr name="use_promo_placeholder" format="boolean" />
     <attr name="content" format="reference" />
     <attr name="contentId" format="reference" />
     <attr name="decoration_position">
@@ -14,4 +18,9 @@
     <attr name="min_width_percent" format="float" />
     <attr name="max_width_percent" format="float" />
     <attr name="default_ratio" format="float" />
+    <attr name="multi_account_drawable" format="reference" />
+    <attr name="min_row_count" format="integer" />
+    <attr name="enforce_button_alignment" format="boolean" />
+    <attr name="finskyButtonBarStyle" format="reference" />
+    <attr name="finskyButtonBarButtonStyle" format="reference" />
 </resources>

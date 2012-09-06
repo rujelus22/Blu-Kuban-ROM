@@ -32,7 +32,7 @@
     .registers 1
 
     .prologue
-    .line 145
+    .line 217
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,24 +45,24 @@
     .parameter "parcel"
 
     .prologue
-    .line 148
+    .line 220
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 149
+    .line 221
     .local v2, typeString:Ljava/lang/String;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 150
+    .line 222
     .local v0, code:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 151
+    .line 223
     .local v1, message:Ljava/lang/String;
     new-instance v3, Lcom/google/android/finsky/billing/CheckoutPurchase$Error;
 
@@ -80,7 +80,7 @@
     .parameter "x0"
 
     .prologue
-    .line 145
+    .line 217
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/billing/CheckoutPurchase$Error$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/finsky/billing/CheckoutPurchase$Error;
 
     move-result-object v0
@@ -93,7 +93,7 @@
     .parameter "i"
 
     .prologue
-    .line 156
+    .line 228
     new-array v0, p1, [Lcom/google/android/finsky/billing/CheckoutPurchase$Error;
 
     return-object v0
@@ -104,7 +104,7 @@
     .parameter "x0"
 
     .prologue
-    .line 145
+    .line 217
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/billing/CheckoutPurchase$Error$1;->newArray(I)[Lcom/google/android/finsky/billing/CheckoutPurchase$Error;
 
     move-result-object v0

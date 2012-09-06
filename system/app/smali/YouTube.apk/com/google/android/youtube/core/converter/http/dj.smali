@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 484
+    .line 80
     invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
     return-void
@@ -16,26 +16,23 @@
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;)V
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
     .registers 5
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 487
-    const-class v0, Lcom/google/android/youtube/core/model/Video$Builder;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    .line 83
+    invoke-virtual {p1}, Lcom/google/android/youtube/core/utils/x;->peek()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/Video$Builder;
+    check-cast v0, Lcom/google/android/youtube/core/model/UserProfile$Builder;
 
-    .line 488
-    sget-object v1, Lcom/google/android/youtube/core/model/Video$Privacy;->PRIVATE:Lcom/google/android/youtube/core/model/Video$Privacy;
+    .line 84
+    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->username(Ljava/lang/String;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Video$Builder;->privacy(Lcom/google/android/youtube/core/model/Video$Privacy;)Lcom/google/android/youtube/core/model/Video$Builder;
-
-    .line 489
+    .line 85
     return-void
 .end method

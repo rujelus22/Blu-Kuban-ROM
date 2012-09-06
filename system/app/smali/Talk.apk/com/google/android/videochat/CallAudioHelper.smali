@@ -59,7 +59,7 @@
 
     .prologue
     .line 205
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 40
     const/4 v0, 0x0
@@ -69,7 +69,7 @@
     .line 41
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/videochat/CallAudioHelper;->mInitializationLock:Ljava/lang/Object;
 

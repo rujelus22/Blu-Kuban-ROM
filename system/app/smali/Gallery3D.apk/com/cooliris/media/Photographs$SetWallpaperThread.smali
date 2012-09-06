@@ -92,7 +92,7 @@
 
     .line 128
     :cond_18
-    const-string v2, "zzzzzz_lockscreen_wallpaper.jpg"
+    const-string v2, "zzzzzz_lockscreen_wallpaper.png"
 
     .line 129
     .local v2, mediaFile:Ljava/lang/String;
@@ -107,7 +107,7 @@
     .line 130
     iget-object v4, p0, Lcom/cooliris/media/Photographs$SetWallpaperThread;->mBitmap:Landroid/graphics/Bitmap;
 
-    sget-object v5, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+    sget-object v5, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
     const/16 v6, 0x64
 

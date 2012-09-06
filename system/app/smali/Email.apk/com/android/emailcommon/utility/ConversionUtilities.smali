@@ -8,8 +8,8 @@
     .registers 1
 
     .prologue
-    .line 31
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 29
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -20,18 +20,18 @@
     .parameter "newText"
 
     .prologue
-    .line 47
+    .line 43
     if-nez p1, :cond_3
 
-    .line 57
+    .line 54
     :goto_2
     return-object p0
 
-    .line 49
+    .line 46
     :cond_3
     if-nez p0, :cond_b
 
-    .line 50
+    .line 47
     new-instance p0, Ljava/lang/StringBuffer;
 
     .end local p0
@@ -40,7 +40,7 @@
     .restart local p0
     goto :goto_2
 
-    .line 52
+    .line 49
     :cond_b
     invoke-virtual {p0}, Ljava/lang/StringBuffer;->length()I
 
@@ -48,28 +48,26 @@
 
     if-lez v0, :cond_16
 
-    .line 53
+    .line 50
     const/16 v0, 0xa
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    .line 55
+    .line 52
     :cond_16
     invoke-virtual {p0, p1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     goto :goto_2
 .end method
 
-.method public static updateBodyFields(Ljava/lang/String;Lcom/android/emailcommon/provider/EmailContent$Body;Lcom/android/emailcommon/provider/EmailContent$Message;Ljava/util/ArrayList;)Z
-    .registers 24
-    .parameter "overflowMsg"
+.method public static updateBodyFields(Lcom/android/emailcommon/provider/EmailContent$Body;Lcom/android/emailcommon/provider/EmailContent$Message;Ljava/util/ArrayList;)Z
+    .registers 20
     .parameter "body"
     .parameter "localMessage"
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/lang/String;",
             "Lcom/android/emailcommon/provider/EmailContent$Body;",
             "Lcom/android/emailcommon/provider/EmailContent$Message;",
             "Ljava/util/ArrayList",
@@ -86,517 +84,350 @@
     .end annotation
 
     .prologue
+    .line 64
+    .local p2, viewables:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/mail/Part;>;"
+    move-object/from16 v0, p1
+
+    iget-wide v15, v0, Lcom/android/emailcommon/provider/EmailContent$Message;->mId:J
+
+    move-object/from16 v0, p0
+
+    iput-wide v15, v0, Lcom/android/emailcommon/provider/EmailContent$Body;->mMessageKey:J
+
     .line 66
-    .local p3, viewables:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/mail/Part;>;"
-    move-object/from16 v0, p2
-
-    iget-wide v0, v0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    move-wide/from16 v17, v0
-
-    move-wide/from16 v0, v17
-
-    move-object/from16 v2, p1
-
-    iput-wide v0, v2, Lcom/android/emailcommon/provider/EmailContent$Body;->mMessageKey:J
-
-    .line 68
-    const/4 v10, 0x0
-
-    .line 69
-    .local v10, sbHtml:Ljava/lang/StringBuffer;
-    const/4 v13, 0x0
-
-    .line 70
-    .local v13, sbText:Ljava/lang/StringBuffer;
-    const/4 v11, 0x0
-
-    .line 71
-    .local v11, sbHtmlReply:Ljava/lang/StringBuffer;
-    const/4 v14, 0x0
-
-    .line 72
-    .local v14, sbTextReply:Ljava/lang/StringBuffer;
-    const/4 v12, 0x0
-
-    .line 74
-    .local v12, sbIntroText:Ljava/lang/StringBuffer;
-    invoke-virtual/range {p3 .. p3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    .local v3, i$:Ljava/util/Iterator;
-    :goto_15
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v17
-
-    if-eqz v17, :cond_10f
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v16
-
-    check-cast v16, Lcom/android/emailcommon/mail/Part;
-
-    .line 75
-    .local v16, viewable:Lcom/android/emailcommon/mail/Part;
-    const/4 v15, 0x0
-
-    .line 76
-    .local v15, text:Ljava/lang/String;
-    const-string v17, "X-Android-Body-Quoted-Part"
-
-    invoke-interface/range {v16 .. v17}, Lcom/android/emailcommon/mail/Part;->getHeader(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v9
-
-    .line 77
-    .local v9, replyTags:[Ljava/lang/String;
     const/4 v8, 0x0
 
-    .line 78
-    .local v8, replyTag:Ljava/lang/String;
-    if-eqz v9, :cond_34
+    .line 67
+    .local v8, sbHtml:Ljava/lang/StringBuffer;
+    const/4 v11, 0x0
 
-    array-length v0, v9
+    .line 68
+    .local v11, sbText:Ljava/lang/StringBuffer;
+    const/4 v9, 0x0
 
-    move/from16 v17, v0
+    .line 69
+    .local v9, sbHtmlReply:Ljava/lang/StringBuffer;
+    const/4 v12, 0x0
 
-    if-lez v17, :cond_34
+    .line 70
+    .local v12, sbTextReply:Ljava/lang/StringBuffer;
+    const/4 v10, 0x0
 
-    .line 79
-    const/16 v17, 0x0
+    .line 72
+    .local v10, sbIntroText:Ljava/lang/StringBuffer;
+    invoke-virtual/range {p2 .. p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    aget-object v8, v9, v17
+    move-result-object v1
 
-    .line 82
-    :cond_34
-    const-string v17, "text/html"
+    .local v1, i$:Ljava/util/Iterator;
+    :goto_11
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-interface/range {v16 .. v16}, Lcom/android/emailcommon/mail/Part;->getMimeType()Ljava/lang/String;
+    move-result v15
 
-    move-result-object v18
+    if-eqz v15, :cond_8c
 
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v4
-
-    .line 85
-    .local v4, isHtml:Z
-    :try_start_3e
-    invoke-static/range {v16 .. v16}, Lcom/android/emailcommon/internet/MimeUtility;->getTextFromPart(Lcom/android/emailcommon/mail/Part;)Ljava/lang/String;
-
-    move-result-object v15
-
-    .line 86
-    invoke-virtual {v15}, Ljava/lang/String;->length()I
-
-    move-result v17
-
-    const/high16 v18, 0xc
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-le v0, v1, :cond_7d
-
-    .line 88
-    if-eqz v4, :cond_c3
-
-    .line 89
-    new-instance v17, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
-
-    const/16 v18, 0x0
-
-    const/high16 v19, 0xc
-
-    move/from16 v0, v18
-
-    move/from16 v1, v19
-
-    invoke-virtual {v15, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v18
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    const-string v18, "<BR><BR>...<BR><BR>"
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    const-string v18, "<BR>"
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_7c
-    .catch Ljava/lang/Exception; {:try_start_3e .. :try_end_7c} :catch_180
-
-    move-result-object v15
-
-    .line 96
-    :cond_7d
-    :goto_7d
-    if-eqz v8, :cond_101
-
-    .line 97
-    const-string v17, "quoted-reply"
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v0, v8}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v7
-
-    .line 98
-    .local v7, isQuotedReply:Z
-    const-string v17, "quoted-forward"
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v0, v8}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v5
-
-    .line 99
-    .local v5, isQuotedForward:Z
-    const-string v17, "quoted-intro"
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v0, v8}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v6
-
-    .line 101
-    .local v6, isQuotedIntro:Z
-    if-nez v7, :cond_9b
-
-    if-eqz v5, :cond_f9
-
-    .line 102
-    :cond_9b
-    if-eqz v4, :cond_f1
-
-    .line 103
-    invoke-static {v11, v15}, Lcom/android/emailcommon/utility/ConversionUtilities;->appendTextPart(Ljava/lang/StringBuffer;Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    move-result-object v11
-
-    .line 108
-    :goto_a1
-    move-object/from16 v0, p2
-
-    iget v0, v0, Lcom/android/emailcommon/provider/EmailContent$Message;->mFlags:I
-
-    move/from16 v17, v0
-
-    and-int/lit8 v17, v17, -0x4
-
-    move/from16 v0, v17
-
-    move-object/from16 v1, p2
-
-    iput v0, v1, Lcom/android/emailcommon/provider/EmailContent$Message;->mFlags:I
-
-    .line 109
-    move-object/from16 v0, p2
-
-    iget v0, v0, Lcom/android/emailcommon/provider/EmailContent$Message;->mFlags:I
-
-    move/from16 v18, v0
-
-    if-eqz v7, :cond_f6
-
-    const/16 v17, 0x1
-
-    :goto_b9
-    or-int v17, v17, v18
-
-    move/from16 v0, v17
-
-    move-object/from16 v1, p2
-
-    iput v0, v1, Lcom/android/emailcommon/provider/EmailContent$Message;->mFlags:I
-
-    goto/16 :goto_15
-
-    .line 91
-    .end local v5           #isQuotedForward:Z
-    .end local v6           #isQuotedIntro:Z
-    .end local v7           #isQuotedReply:Z
-    :cond_c3
-    :try_start_c3
-    new-instance v17, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
-
-    const/16 v18, 0x0
-
-    const/high16 v19, 0xc
-
-    move/from16 v0, v18
-
-    move/from16 v1, v19
-
-    invoke-virtual {v15, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v18
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    const-string v18, "\n\r\n\r...\n\r\n\r"
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    const-string v18, "\n\r"
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_ef
-    .catch Ljava/lang/Exception; {:try_start_c3 .. :try_end_ef} :catch_180
-
-    move-result-object v15
-
-    goto :goto_7d
-
-    .line 105
-    .restart local v5       #isQuotedForward:Z
-    .restart local v6       #isQuotedIntro:Z
-    .restart local v7       #isQuotedReply:Z
-    :cond_f1
-    invoke-static {v14, v15}, Lcom/android/emailcommon/utility/ConversionUtilities;->appendTextPart(Ljava/lang/StringBuffer;Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v14
 
-    goto :goto_a1
+    check-cast v14, Lcom/android/emailcommon/mail/Part;
 
-    .line 109
-    :cond_f6
-    const/16 v17, 0x2
-
-    goto :goto_b9
-
-    .line 113
-    :cond_f9
-    if-eqz v6, :cond_101
-
-    .line 114
-    invoke-static {v12, v15}, Lcom/android/emailcommon/utility/ConversionUtilities;->appendTextPart(Ljava/lang/StringBuffer;Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    move-result-object v12
-
-    .line 115
-    goto/16 :goto_15
-
-    .line 120
-    .end local v5           #isQuotedForward:Z
-    .end local v6           #isQuotedIntro:Z
-    .end local v7           #isQuotedReply:Z
-    :cond_101
-    if-eqz v4, :cond_109
-
-    .line 121
-    invoke-static {v10, v15}, Lcom/android/emailcommon/utility/ConversionUtilities;->appendTextPart(Ljava/lang/StringBuffer;Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    move-result-object v10
-
-    goto/16 :goto_15
-
-    .line 123
-    :cond_109
-    invoke-static {v13, v15}, Lcom/android/emailcommon/utility/ConversionUtilities;->appendTextPart(Ljava/lang/StringBuffer;Ljava/lang/String;)Ljava/lang/StringBuffer;
+    .line 73
+    .local v14, viewable:Lcom/android/emailcommon/mail/Part;
+    invoke-static {v14}, Lcom/android/emailcommon/internet/MimeUtility;->getTextFromPart(Lcom/android/emailcommon/mail/Part;)Ljava/lang/String;
 
     move-result-object v13
 
-    goto/16 :goto_15
+    .line 74
+    .local v13, text:Ljava/lang/String;
+    const-string v15, "X-Android-Body-Quoted-Part"
 
-    .line 128
-    .end local v4           #isHtml:Z
-    .end local v8           #replyTag:Ljava/lang/String;
-    .end local v9           #replyTags:[Ljava/lang/String;
-    .end local v15           #text:Ljava/lang/String;
-    .end local v16           #viewable:Lcom/android/emailcommon/mail/Part;
-    :cond_10f
-    invoke-static {v13}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-interface {v14, v15}, Lcom/android/emailcommon/mail/Part;->getHeader(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result v17
+    move-result-object v7
 
-    if-nez v17, :cond_127
+    .line 75
+    .local v7, replyTags:[Ljava/lang/String;
+    const/4 v6, 0x0
 
-    .line 129
-    invoke-virtual {v13}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    .line 76
+    .local v6, replyTag:Ljava/lang/String;
+    if-eqz v7, :cond_30
+
+    array-length v15, v7
+
+    if-lez v15, :cond_30
+
+    .line 77
+    const/4 v15, 0x0
+
+    aget-object v6, v7, v15
+
+    .line 80
+    :cond_30
+    const-string v15, "text/html"
+
+    invoke-interface {v14}, Lcom/android/emailcommon/mail/Part;->getMimeType()Ljava/lang/String;
+
+    move-result-object v16
+
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v2
+
+    .line 82
+    .local v2, isHtml:Z
+    if-eqz v6, :cond_80
+
+    .line 83
+    const-string v15, "quoted-reply"
+
+    invoke-virtual {v15, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v5
+
+    .line 84
+    .local v5, isQuotedReply:Z
+    const-string v15, "quoted-forward"
+
+    invoke-virtual {v15, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v3
+
+    .line 85
+    .local v3, isQuotedForward:Z
+    const-string v15, "quoted-intro"
+
+    invoke-virtual {v15, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v4
+
+    .line 87
+    .local v4, isQuotedIntro:Z
+    if-nez v5, :cond_52
+
+    if-eqz v3, :cond_79
+
+    .line 88
+    :cond_52
+    if-eqz v2, :cond_72
+
+    .line 89
+    invoke-static {v9, v13}, Lcom/android/emailcommon/utility/ConversionUtilities;->appendTextPart(Ljava/lang/StringBuffer;Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    move-result-object v9
+
+    .line 94
+    :goto_58
+    move-object/from16 v0, p1
+
+    iget v15, v0, Lcom/android/emailcommon/provider/EmailContent$Message;->mFlags:I
+
+    and-int/lit8 v15, v15, -0x4
+
+    move-object/from16 v0, p1
+
+    iput v15, v0, Lcom/android/emailcommon/provider/EmailContent$Message;->mFlags:I
+
+    .line 95
+    move-object/from16 v0, p1
+
+    iget v0, v0, Lcom/android/emailcommon/provider/EmailContent$Message;->mFlags:I
+
+    move/from16 v16, v0
+
+    if-eqz v5, :cond_77
+
+    const/4 v15, 0x1
+
+    :goto_6b
+    or-int v15, v15, v16
+
+    move-object/from16 v0, p1
+
+    iput v15, v0, Lcom/android/emailcommon/provider/EmailContent$Message;->mFlags:I
+
+    goto :goto_11
+
+    .line 91
+    :cond_72
+    invoke-static {v12, v13}, Lcom/android/emailcommon/utility/ConversionUtilities;->appendTextPart(Ljava/lang/StringBuffer;Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    move-result-object v12
+
+    goto :goto_58
+
+    .line 95
+    :cond_77
+    const/4 v15, 0x2
+
+    goto :goto_6b
+
+    .line 100
+    :cond_79
+    if-eqz v4, :cond_80
+
+    .line 101
+    invoke-static {v10, v13}, Lcom/android/emailcommon/utility/ConversionUtilities;->appendTextPart(Ljava/lang/StringBuffer;Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    move-result-object v10
+
+    .line 102
+    goto :goto_11
+
+    .line 107
+    .end local v3           #isQuotedForward:Z
+    .end local v4           #isQuotedIntro:Z
+    .end local v5           #isQuotedReply:Z
+    :cond_80
+    if-eqz v2, :cond_87
+
+    .line 108
+    invoke-static {v8, v13}, Lcom/android/emailcommon/utility/ConversionUtilities;->appendTextPart(Ljava/lang/StringBuffer;Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    move-result-object v8
+
+    goto :goto_11
+
+    .line 110
+    :cond_87
+    invoke-static {v11, v13}, Lcom/android/emailcommon/utility/ConversionUtilities;->appendTextPart(Ljava/lang/StringBuffer;Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    move-result-object v11
+
+    goto :goto_11
+
+    .line 115
+    .end local v2           #isHtml:Z
+    .end local v6           #replyTag:Ljava/lang/String;
+    .end local v7           #replyTags:[Ljava/lang/String;
+    .end local v13           #text:Ljava/lang/String;
+    .end local v14           #viewable:Lcom/android/emailcommon/mail/Part;
+    :cond_8c
+    invoke-static {v11}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v15
+
+    if-nez v15, :cond_a2
+
+    .line 116
+    invoke-virtual {v11}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    .line 117
+    .restart local v13       #text:Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    iput-object v13, v0, Lcom/android/emailcommon/provider/EmailContent$Body;->mTextContent:Ljava/lang/String;
+
+    .line 118
+    invoke-static {v13}, Lcom/android/emailcommon/utility/TextUtilities;->makeSnippetFromPlainText(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v15
 
-    .line 130
-    .restart local v15       #text:Ljava/lang/String;
     move-object/from16 v0, p1
 
-    iput-object v15, v0, Lcom/android/emailcommon/provider/EmailContent$Body;->mTextContent:Ljava/lang/String;
+    iput-object v15, v0, Lcom/android/emailcommon/provider/EmailContent$Message;->mSnippet:Ljava/lang/String;
+
+    .line 120
+    .end local v13           #text:Ljava/lang/String;
+    :cond_a2
+    invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v15
+
+    if-nez v15, :cond_be
+
+    .line 121
+    invoke-virtual {v8}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    .line 122
+    .restart local v13       #text:Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    iput-object v13, v0, Lcom/android/emailcommon/provider/EmailContent$Body;->mHtmlContent:Ljava/lang/String;
+
+    .line 123
+    move-object/from16 v0, p1
+
+    iget-object v15, v0, Lcom/android/emailcommon/provider/EmailContent$Message;->mSnippet:Ljava/lang/String;
+
+    if-nez v15, :cond_be
+
+    .line 124
+    invoke-static {v13}, Lcom/android/emailcommon/utility/TextUtilities;->makeSnippetFromHtmlText(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v15
+
+    move-object/from16 v0, p1
+
+    iput-object v15, v0, Lcom/android/emailcommon/provider/EmailContent$Message;->mSnippet:Ljava/lang/String;
+
+    .line 127
+    .end local v13           #text:Ljava/lang/String;
+    :cond_be
+    if-eqz v9, :cond_ce
+
+    invoke-virtual {v9}, Ljava/lang/StringBuffer;->length()I
+
+    move-result v15
+
+    if-eqz v15, :cond_ce
+
+    .line 128
+    invoke-virtual {v9}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v15
+
+    move-object/from16 v0, p0
+
+    iput-object v15, v0, Lcom/android/emailcommon/provider/EmailContent$Body;->mHtmlReply:Ljava/lang/String;
+
+    .line 130
+    :cond_ce
+    if-eqz v12, :cond_de
+
+    invoke-virtual {v12}, Ljava/lang/StringBuffer;->length()I
+
+    move-result v15
+
+    if-eqz v15, :cond_de
 
     .line 131
-    invoke-static {v15}, Lcom/android/emailcommon/mail/Snippet;->fromPlainText(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v12}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
-    move-result-object v17
+    move-result-object v15
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, p0
 
-    move-object/from16 v1, p2
-
-    iput-object v0, v1, Lcom/android/emailcommon/provider/EmailContent$Message;->mSnippet:Ljava/lang/String;
+    iput-object v15, v0, Lcom/android/emailcommon/provider/EmailContent$Body;->mTextReply:Ljava/lang/String;
 
     .line 133
-    .end local v15           #text:Ljava/lang/String;
-    :cond_127
-    invoke-static {v10}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    :cond_de
+    if-eqz v10, :cond_ee
 
-    move-result v17
+    invoke-virtual {v10}, Ljava/lang/StringBuffer;->length()I
 
-    if-nez v17, :cond_147
+    move-result v15
+
+    if-eqz v15, :cond_ee
 
     .line 134
     invoke-virtual {v10}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v15
 
-    .line 135
-    .restart local v15       #text:Ljava/lang/String;
-    move-object/from16 v0, p1
+    move-object/from16 v0, p0
 
-    iput-object v15, v0, Lcom/android/emailcommon/provider/EmailContent$Body;->mHtmlContent:Ljava/lang/String;
+    iput-object v15, v0, Lcom/android/emailcommon/provider/EmailContent$Body;->mIntroText:Ljava/lang/String;
 
     .line 136
-    move-object/from16 v0, p2
+    :cond_ee
+    const/4 v15, 0x1
 
-    iget-object v0, v0, Lcom/android/emailcommon/provider/EmailContent$Message;->mSnippet:Ljava/lang/String;
-
-    move-object/from16 v17, v0
-
-    if-nez v17, :cond_147
-
-    .line 137
-    invoke-static {v15}, Lcom/android/emailcommon/mail/Snippet;->fromHtmlText(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p2
-
-    iput-object v0, v1, Lcom/android/emailcommon/provider/EmailContent$Message;->mSnippet:Ljava/lang/String;
-
-    .line 140
-    .end local v15           #text:Ljava/lang/String;
-    :cond_147
-    if-eqz v11, :cond_159
-
-    invoke-virtual {v11}, Ljava/lang/StringBuffer;->length()I
-
-    move-result v17
-
-    if-eqz v17, :cond_159
-
-    .line 141
-    invoke-virtual {v11}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p1
-
-    iput-object v0, v1, Lcom/android/emailcommon/provider/EmailContent$Body;->mHtmlReply:Ljava/lang/String;
-
-    .line 143
-    :cond_159
-    if-eqz v14, :cond_16b
-
-    invoke-virtual {v14}, Ljava/lang/StringBuffer;->length()I
-
-    move-result v17
-
-    if-eqz v17, :cond_16b
-
-    .line 144
-    invoke-virtual {v14}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p1
-
-    iput-object v0, v1, Lcom/android/emailcommon/provider/EmailContent$Body;->mTextReply:Ljava/lang/String;
-
-    .line 146
-    :cond_16b
-    if-eqz v12, :cond_17d
-
-    invoke-virtual {v12}, Ljava/lang/StringBuffer;->length()I
-
-    move-result v17
-
-    if-eqz v17, :cond_17d
-
-    .line 147
-    invoke-virtual {v12}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p1
-
-    iput-object v0, v1, Lcom/android/emailcommon/provider/EmailContent$Body;->mIntroText:Ljava/lang/String;
-
-    .line 149
-    :cond_17d
-    const/16 v17, 0x1
-
-    return v17
-
-    .line 93
-    .restart local v4       #isHtml:Z
-    .restart local v8       #replyTag:Ljava/lang/String;
-    .restart local v9       #replyTags:[Ljava/lang/String;
-    .restart local v15       #text:Ljava/lang/String;
-    .restart local v16       #viewable:Lcom/android/emailcommon/mail/Part;
-    :catch_180
-    move-exception v17
-
-    goto/16 :goto_7d
+    return v15
 .end method

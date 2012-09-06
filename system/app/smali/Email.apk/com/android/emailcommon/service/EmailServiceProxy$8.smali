@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/emailcommon/service/EmailServiceProxy;->setLogging(I)V
+    value = Lcom/android/emailcommon/service/EmailServiceProxy;->setCallback(Lcom/android/emailcommon/service/IEmailServiceCallback;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,22 +20,22 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
-.field final synthetic val$on:I
+.field final synthetic val$cb:Lcom/android/emailcommon/service/IEmailServiceCallback;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/emailcommon/service/EmailServiceProxy;I)V
+.method constructor <init>(Lcom/android/emailcommon/service/EmailServiceProxy;Lcom/android/emailcommon/service/IEmailServiceCallback;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 235
+    .line 278
     iput-object p1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$8;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
-    iput p2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$8;->val$on:I
+    iput-object p2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$8;->val$cb:Lcom/android/emailcommon/service/IEmailServiceCallback;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -51,17 +51,7 @@
     .end annotation
 
     .prologue
-    .line 237
-    iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$8;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
-
-    #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mCallback:Lcom/android/emailcommon/service/IEmailServiceCallback;
-    invoke-static {v0}, Lcom/android/emailcommon/service/EmailServiceProxy;->access$000(Lcom/android/emailcommon/service/EmailServiceProxy;)Lcom/android/emailcommon/service/IEmailServiceCallback;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_17
-
-    .line 238
+    .line 280
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$8;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mService:Lcom/android/emailcommon/service/IEmailService;
@@ -69,28 +59,10 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$8;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
-
-    #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mCallback:Lcom/android/emailcommon/service/IEmailServiceCallback;
-    invoke-static {v1}, Lcom/android/emailcommon/service/EmailServiceProxy;->access$000(Lcom/android/emailcommon/service/EmailServiceProxy;)Lcom/android/emailcommon/service/IEmailServiceCallback;
-
-    move-result-object v1
+    iget-object v1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$8;->val$cb:Lcom/android/emailcommon/service/IEmailServiceCallback;
 
     invoke-interface {v0, v1}, Lcom/android/emailcommon/service/IEmailService;->setCallback(Lcom/android/emailcommon/service/IEmailServiceCallback;)V
 
-    .line 239
-    :cond_17
-    iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$8;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
-
-    #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mService:Lcom/android/emailcommon/service/IEmailService;
-    invoke-static {v0}, Lcom/android/emailcommon/service/EmailServiceProxy;->access$100(Lcom/android/emailcommon/service/EmailServiceProxy;)Lcom/android/emailcommon/service/IEmailService;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$8;->val$on:I
-
-    invoke-interface {v0, v1}, Lcom/android/emailcommon/service/IEmailService;->setLogging(I)V
-
-    .line 240
+    .line 281
     return-void
 .end method

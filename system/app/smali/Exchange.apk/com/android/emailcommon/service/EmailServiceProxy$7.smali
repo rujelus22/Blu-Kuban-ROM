@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/emailcommon/service/EmailServiceProxy;->updateFolderList(J)V
+    value = Lcom/android/emailcommon/service/EmailServiceProxy;->setLogging(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,22 +20,22 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
-.field final synthetic val$accountId:J
+.field final synthetic val$flags:I
 
 
 # direct methods
-.method constructor <init>(Lcom/android/emailcommon/service/EmailServiceProxy;J)V
-    .registers 4
+.method constructor <init>(Lcom/android/emailcommon/service/EmailServiceProxy;I)V
+    .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 225
+    .line 263
     iput-object p1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$7;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
-    iput-wide p2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$7;->val$accountId:J
+    iput p2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$7;->val$flags:I
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .registers 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -51,7 +51,7 @@
     .end annotation
 
     .prologue
-    .line 227
+    .line 265
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$7;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mCallback:Lcom/android/emailcommon/service/IEmailServiceCallback;
@@ -61,7 +61,6 @@
 
     if-eqz v0, :cond_17
 
-    .line 228
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$7;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mService:Lcom/android/emailcommon/service/IEmailService;
@@ -78,7 +77,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/emailcommon/service/IEmailService;->setCallback(Lcom/android/emailcommon/service/IEmailServiceCallback;)V
 
-    .line 229
+    .line 266
     :cond_17
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$7;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
@@ -87,10 +86,10 @@
 
     move-result-object v0
 
-    iget-wide v1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$7;->val$accountId:J
+    iget v1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$7;->val$flags:I
 
-    invoke-interface {v0, v1, v2}, Lcom/android/emailcommon/service/IEmailService;->updateFolderList(J)V
+    invoke-interface {v0, v1}, Lcom/android/emailcommon/service/IEmailService;->setLogging(I)V
 
-    .line 230
+    .line 267
     return-void
 .end method

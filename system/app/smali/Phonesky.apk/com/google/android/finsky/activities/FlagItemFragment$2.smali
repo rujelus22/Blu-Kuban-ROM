@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 170
+    .line 165
     iput-object p1, p0, Lcom/google/android/finsky/activities/FlagItemFragment$2;->this$0:Lcom/google/android/finsky/activities/FlagItemFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .registers 3
 
     .prologue
-    .line 173
+    .line 168
     iget-object v0, p0, Lcom/google/android/finsky/activities/FlagItemFragment$2;->this$0:Lcom/google/android/finsky/activities/FlagItemFragment;
 
     #getter for: Lcom/google/android/finsky/activities/FlagItemFragment;->mDoc:Lcom/google/android/finsky/api/model/Document;
@@ -51,7 +51,7 @@
 
     if-nez v0, :cond_18
 
-    .line 174
+    .line 169
     iget-object v0, p0, Lcom/google/android/finsky/activities/FlagItemFragment$2;->this$0:Lcom/google/android/finsky/activities/FlagItemFragment;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/FlagItemFragment$2;->this$0:Lcom/google/android/finsky/activities/FlagItemFragment;
@@ -67,11 +67,11 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/activities/FlagItemFragment;->onDocumentLoaded(Lcom/google/android/finsky/api/model/Document;)V
 
-    .line 178
+    .line 173
     :goto_17
     return-void
 
-    .line 176
+    .line 171
     :cond_18
     const-string v0, "Ignoring soft TTL refresh."
 

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/emailcommon/service/PolicyServiceProxy;->isActive(Lcom/android/emailcommon/service/PolicySet;)Z
+    value = Lcom/android/emailcommon/service/PolicyServiceProxy;->isSupported(Lcom/android/emailcommon/provider/Policy;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,22 +20,22 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
 
-.field final synthetic val$arg0:Lcom/android/emailcommon/service/PolicySet;
+.field final synthetic val$arg0:Lcom/android/emailcommon/provider/Policy;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/emailcommon/service/PolicyServiceProxy;Lcom/android/emailcommon/service/PolicySet;)V
+.method constructor <init>(Lcom/android/emailcommon/service/PolicyServiceProxy;Lcom/android/emailcommon/provider/Policy;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 112
+    .line 107
     iput-object p1, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$4;->this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
 
-    iput-object p2, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$4;->val$arg0:Lcom/android/emailcommon/service/PolicySet;
+    iput-object p2, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$4;->val$arg0:Lcom/android/emailcommon/provider/Policy;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -51,7 +51,7 @@
     .end annotation
 
     .prologue
-    .line 114
+    .line 109
     iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$4;->this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
 
     iget-object v1, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$4;->this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
@@ -61,9 +61,9 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$4;->val$arg0:Lcom/android/emailcommon/service/PolicySet;
+    iget-object v2, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$4;->val$arg0:Lcom/android/emailcommon/provider/Policy;
 
-    invoke-interface {v1, v2}, Lcom/android/emailcommon/service/IPolicyService;->isActive(Lcom/android/emailcommon/service/PolicySet;)Z
+    invoke-interface {v1, v2}, Lcom/android/emailcommon/service/IPolicyService;->isSupported(Lcom/android/emailcommon/provider/Policy;)Z
 
     move-result v1
 
@@ -74,6 +74,6 @@
     #setter for: Lcom/android/emailcommon/service/PolicyServiceProxy;->mReturn:Ljava/lang/Object;
     invoke-static {v0, v1}, Lcom/android/emailcommon/service/PolicyServiceProxy;->access$002(Lcom/android/emailcommon/service/PolicyServiceProxy;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 115
+    .line 110
     return-void
 .end method

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 629
+    .line 496
     iput-object p1, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$PurgeCacheCallback;->this$0:Lcom/google/android/finsky/download/DownloadQueueImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 629
+    .line 496
     invoke-direct {p0, p1}, Lcom/google/android/finsky/download/DownloadQueueImpl$PurgeCacheCallback;-><init>(Lcom/google/android/finsky/download/DownloadQueueImpl;)V
 
     return-void
@@ -54,10 +54,10 @@
     .parameter "success"
 
     .prologue
-    .line 633
+    .line 500
     if-nez p1, :cond_a
 
-    .line 634
+    .line 501
     const-string v0, "Could not free required amount of space for download"
 
     const/4 v1, 0x0
@@ -66,14 +66,14 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 636
+    .line 503
     :cond_a
     new-instance v0, Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$PurgeCacheCallback;->this$0:Lcom/google/android/finsky/download/DownloadQueueImpl;
 
     #getter for: Lcom/google/android/finsky/download/DownloadQueueImpl;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Lcom/google/android/finsky/download/DownloadQueueImpl;->access$800(Lcom/google/android/finsky/download/DownloadQueueImpl;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/google/android/finsky/download/DownloadQueueImpl;->access$600(Lcom/google/android/finsky/download/DownloadQueueImpl;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -93,6 +93,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 637
+    .line 504
     return-void
 .end method

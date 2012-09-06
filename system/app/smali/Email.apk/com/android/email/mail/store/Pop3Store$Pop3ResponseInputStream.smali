@@ -31,20 +31,20 @@
     .parameter "in"
 
     .prologue
-    .line 1229
+    .line 1026
     iput-object p1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->this$0:Lcom/android/email/mail/store/Pop3Store;
 
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
-    .line 1226
+    .line 1023
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->mStartOfLine:Z
 
-    .line 1230
+    .line 1027
     iput-object p2, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->mIn:Ljava/io/InputStream;
 
-    .line 1231
+    .line 1028
     return-void
 .end method
 
@@ -63,18 +63,18 @@
 
     const/4 v2, -0x1
 
-    .line 1235
+    .line 1032
     iget-boolean v3, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->mFinished:Z
 
     if-eqz v3, :cond_8
 
     move v0, v2
 
-    .line 1250
+    .line 1047
     :goto_7
     return v0
 
-    .line 1238
+    .line 1035
     :cond_8
     iget-object v3, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->mIn:Ljava/io/InputStream;
 
@@ -82,7 +82,7 @@
 
     move-result v0
 
-    .line 1239
+    .line 1036
     .local v0, d:I
     iget-boolean v3, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->mStartOfLine:Z
 
@@ -92,32 +92,32 @@
 
     if-ne v0, v3, :cond_29
 
-    .line 1240
+    .line 1037
     iget-object v3, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->mIn:Ljava/io/InputStream;
 
     invoke-virtual {v3}, Ljava/io/InputStream;->read()I
 
     move-result v0
 
-    .line 1241
+    .line 1038
     const/16 v3, 0xd
 
     if-ne v0, v3, :cond_29
 
-    .line 1242
+    .line 1039
     iput-boolean v1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->mFinished:Z
 
-    .line 1243
+    .line 1040
     iget-object v1, p0, Lcom/android/email/mail/store/Pop3Store$Pop3ResponseInputStream;->mIn:Ljava/io/InputStream;
 
     invoke-virtual {v1}, Ljava/io/InputStream;->read()I
 
     move v0, v2
 
-    .line 1244
+    .line 1041
     goto :goto_7
 
-    .line 1248
+    .line 1045
     :cond_29
     const/16 v2, 0xa
 

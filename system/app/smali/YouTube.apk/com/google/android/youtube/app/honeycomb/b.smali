@@ -170,13 +170,3 @@
         0x3dt
     .end array-data
 .end method
-
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 8
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method

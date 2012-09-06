@@ -20,7 +20,7 @@
 
 .field private static final ADN_LIKE_CAPA_COLUMN_NAMES:[Ljava/lang/String; = null
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final EMAIL_COLUMN_NAMES:[Ljava/lang/String; = null
 

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="top_bar_height">40.0dip</dimen>
-    <dimen name="album_art_thumb_width">160.0dip</dimen>
-    <dimen name="album_art_thumb_height">160.0dip</dimen>
-    <dimen name="now_playing_right_left_margin_large">24.0dip</dimen>
-    <dimen name="now_playing_progress_bar_margin">12.0dip</dimen>
-</resources>

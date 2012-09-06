@@ -54,7 +54,7 @@
 
     const/4 v3, 0x0
 
-    .line 56
+    .line 47
     new-instance v0, Lcom/google/android/finsky/download/Download$DownloadState;
 
     const-string v1, "UNQUEUED"
@@ -105,7 +105,7 @@
 
     sput-object v0, Lcom/google/android/finsky/download/Download$DownloadState;->ERROR:Lcom/google/android/finsky/download/Download$DownloadState;
 
-    .line 55
+    .line 46
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/google/android/finsky/download/Download$DownloadState;
@@ -152,7 +152,7 @@
     .end annotation
 
     .prologue
-    .line 55
+    .line 46
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -163,7 +163,7 @@
     .parameter
 
     .prologue
-    .line 55
+    .line 46
     const-class v0, Lcom/google/android/finsky/download/Download$DownloadState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -179,7 +179,7 @@
     .registers 1
 
     .prologue
-    .line 55
+    .line 46
     sget-object v0, Lcom/google/android/finsky/download/Download$DownloadState;->$VALUES:[Lcom/google/android/finsky/download/Download$DownloadState;
 
     invoke-virtual {v0}, [Lcom/google/android/finsky/download/Download$DownloadState;->clone()Ljava/lang/Object;

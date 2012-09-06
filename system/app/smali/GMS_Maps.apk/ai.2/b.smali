@@ -1,56 +1,83 @@
 .class Lai/b;
-.super Lai/f;
+.super LY/b;
+.source "SourceFile"
 
 
-# static fields
-.field private static final b:Landroid/graphics/BitmapFactory$Options;
+# instance fields
+.field final synthetic a:Ljava/lang/String;
+
+.field final synthetic b:I
+
+.field final synthetic f:Lai/c;
+
+.field final synthetic g:Lai/a;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method constructor <init>(Lai/a;LY/c;Ljava/lang/String;ILai/c;)V
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    new-instance v0, Landroid/graphics/BitmapFactory$Options;
+    .prologue
+    .line 52
+    iput-object p1, p0, Lai/b;->g:Lai/a;
 
-    invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+    iput-object p3, p0, Lai/b;->a:Ljava/lang/String;
 
-    sput-object v0, Lai/b;->b:Landroid/graphics/BitmapFactory$Options;
+    iput p4, p0, Lai/b;->b:I
 
-    sget-object v0, Lai/b;->b:Landroid/graphics/BitmapFactory$Options;
+    iput-object p5, p0, Lai/b;->f:Lai/c;
 
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Landroid/graphics/BitmapFactory$Options;->inPurgeable:Z
-
-    sget-object v0, Lai/b;->b:Landroid/graphics/BitmapFactory$Options;
-
-    sget-object v1, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
-
-    iput-object v1, v0, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
-
-    return-void
-.end method
-
-.method public constructor <init>([BII)V
-    .registers 5
-
-    sget-object v0, Lai/b;->b:Landroid/graphics/BitmapFactory$Options;
-
-    invoke-static {p1, p2, p3, v0}, Landroid/graphics/BitmapFactory;->decodeByteArray([BIILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lai/f;-><init>(Landroid/graphics/Bitmap;)V
+    invoke-direct {p0, p2}, LY/b;-><init>(LY/c;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public g()I
-    .registers 2
+.method public a()V
+    .registers 4
 
-    const/4 v0, 0x0
+    .prologue
+    .line 56
+    :try_start_0
+    iget-object v0, p0, Lai/b;->g:Lai/a;
 
-    return v0
+    invoke-static {v0}, Lai/a;->a(Lai/a;)Landroid/location/Geocoder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lai/b;->a:Ljava/lang/String;
+
+    iget v2, p0, Lai/b;->b:I
+
+    invoke-virtual {v0, v1, v2}, Landroid/location/Geocoder;->getFromLocationName(Ljava/lang/String;I)Ljava/util/List;
+
+    move-result-object v0
+
+    .line 57
+    iget-object v1, p0, Lai/b;->f:Lai/c;
+
+    invoke-interface {v1, v0}, Lai/c;->a(Ljava/util/List;)V
+    :try_end_13
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_13} :catch_14
+
+    .line 61
+    :goto_13
+    return-void
+
+    .line 58
+    :catch_14
+    move-exception v0
+
+    .line 59
+    iget-object v0, p0, Lai/b;->f:Lai/c;
+
+    invoke-interface {v0}, Lai/c;->a()V
+
+    goto :goto_13
 .end method

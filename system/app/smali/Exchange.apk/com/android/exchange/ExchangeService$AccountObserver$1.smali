@@ -30,12 +30,12 @@
     .parameter
 
     .prologue
-    .line 1693
+    .line 632
     iput-object p1, p0, Lcom/android/exchange/ExchangeService$AccountObserver$1;->this$1:Lcom/android/exchange/ExchangeService$AccountObserver;
 
     iput-object p2, p0, Lcom/android/exchange/ExchangeService$AccountObserver$1;->val$this$0:Lcom/android/exchange/ExchangeService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,132 +46,131 @@
     .registers 7
 
     .prologue
-    .line 1696
-    sget-object v3, Lcom/android/exchange/ExchangeService;->mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
+    .line 635
+    iget-object v2, p0, Lcom/android/exchange/ExchangeService$AccountObserver$1;->this$1:Lcom/android/exchange/ExchangeService$AccountObserver;
+
+    iget-object v2, v2, Lcom/android/exchange/ExchangeService$AccountObserver;->this$0:Lcom/android/exchange/ExchangeService;
+
+    iget-object v3, v2, Lcom/android/exchange/ExchangeService;->mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
 
     monitor-enter v3
 
-    .line 1697
-    :try_start_3
-    sget-object v2, Lcom/android/exchange/ExchangeService;->mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
+    .line 636
+    :try_start_7
+    iget-object v2, p0, Lcom/android/exchange/ExchangeService$AccountObserver$1;->this$1:Lcom/android/exchange/ExchangeService$AccountObserver;
+
+    iget-object v2, v2, Lcom/android/exchange/ExchangeService$AccountObserver;->this$0:Lcom/android/exchange/ExchangeService;
+
+    iget-object v2, v2, Lcom/android/exchange/ExchangeService;->mAccountList:Lcom/android/exchange/ExchangeService$AccountList;
 
     invoke-virtual {v2}, Lcom/android/exchange/ExchangeService$AccountList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
     .local v1, i$:Ljava/util/Iterator;
-    :cond_9
-    :goto_9
+    :cond_11
+    :goto_11
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_5d
+    if-eqz v2, :cond_5c
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/android/emailcommon/provider/EmailContent$Account;
+    check-cast v0, Lcom/android/emailcommon/provider/Account;
 
-    .line 1698
-    .local v0, account:Lcom/android/emailcommon/provider/EmailContent$Account;
-    iget v2, v0, Lcom/android/emailcommon/provider/EmailContent$Account;->mFlags:I
+    .line 637
+    .local v0, account:Lcom/android/emailcommon/provider/Account;
+    iget v2, v0, Lcom/android/emailcommon/provider/Account;->mFlags:I
 
     and-int/lit8 v2, v2, 0x20
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_11
 
-    .line 1704
+    .line 641
     iget-object v2, p0, Lcom/android/exchange/ExchangeService$AccountObserver$1;->this$1:Lcom/android/exchange/ExchangeService$AccountObserver;
 
     iget-object v2, v2, Lcom/android/exchange/ExchangeService$AccountObserver;->this$0:Lcom/android/exchange/ExchangeService;
 
     const/4 v4, 0x0
 
-    invoke-static {v2, v4}, Lcom/android/emailcommon/service/PolicyServiceProxy;->isActive(Landroid/content/Context;Lcom/android/emailcommon/service/PolicySet;)Z
+    invoke-static {v2, v4}, Lcom/android/emailcommon/service/PolicyServiceProxy;->isActive(Landroid/content/Context;Lcom/android/emailcommon/provider/Policy;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_4c
+    if-eqz v2, :cond_52
 
-    .line 1705
+    .line 642
     iget-object v2, p0, Lcom/android/exchange/ExchangeService$AccountObserver$1;->this$1:Lcom/android/exchange/ExchangeService$AccountObserver;
 
     iget-object v2, v2, Lcom/android/exchange/ExchangeService$AccountObserver;->this$0:Lcom/android/exchange/ExchangeService;
 
     const/4 v4, 0x0
 
-    invoke-static {v2, v0, v4}, Lcom/android/emailcommon/service/PolicyServiceProxy;->setAccountHoldFlag(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Account;Z)V
+    invoke-static {v2, v0, v4}, Lcom/android/emailcommon/service/PolicyServiceProxy;->setAccountHoldFlag(Landroid/content/Context;Lcom/android/emailcommon/provider/Account;Z)V
 
-    .line 1707
-    const-string v2, "ExchangeService"
+    .line 644
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v4, "isActive true; release hold for "
 
-    const-string v5, "AccountObserver - isActive true; release hold for "
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v4
+    iget-object v4, v0, Lcom/android/emailcommon/provider/Account;->mDisplayName:Ljava/lang/String;
 
-    iget-object v5, v0, Lcom/android/emailcommon/provider/EmailContent$Account;->mDisplayName:Ljava/lang/String;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v4
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v4
+    invoke-static {v2}, Lcom/android/exchange/ExchangeService;->log(Ljava/lang/String;)V
 
-    invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    goto :goto_11
 
-    goto :goto_9
-
-    .line 1717
-    .end local v0           #account:Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 651
+    .end local v0           #account:Lcom/android/emailcommon/provider/Account;
     .end local v1           #i$:Ljava/util/Iterator;
-    :catchall_49
+    :catchall_4f
     move-exception v2
 
     monitor-exit v3
-    :try_end_4b
-    .catchall {:try_start_3 .. :try_end_4b} :catchall_49
+    :try_end_51
+    .catchall {:try_start_7 .. :try_end_51} :catchall_4f
 
     throw v2
 
-    .line 1711
-    .restart local v0       #account:Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 646
+    .restart local v0       #account:Lcom/android/emailcommon/provider/Account;
     .restart local v1       #i$:Ljava/util/Iterator;
-    :cond_4c
-    :try_start_4c
-    const-string v2, "ExchangeService"
-
-    const-string v4, "AccountObserver - policiesRequired"
-
-    invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1712
+    :cond_52
+    :try_start_52
     iget-object v2, p0, Lcom/android/exchange/ExchangeService$AccountObserver$1;->this$1:Lcom/android/exchange/ExchangeService$AccountObserver;
 
     iget-object v2, v2, Lcom/android/exchange/ExchangeService$AccountObserver;->this$0:Lcom/android/exchange/ExchangeService;
 
-    iget-wide v4, v0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v4, v0, Lcom/android/emailcommon/provider/Account;->mId:J
 
     invoke-static {v2, v4, v5}, Lcom/android/emailcommon/service/PolicyServiceProxy;->policiesRequired(Landroid/content/Context;J)V
 
-    goto :goto_9
+    goto :goto_11
 
-    .line 1717
-    .end local v0           #account:Lcom/android/emailcommon/provider/EmailContent$Account;
-    :cond_5d
+    .line 651
+    .end local v0           #account:Lcom/android/emailcommon/provider/Account;
+    :cond_5c
     monitor-exit v3
-    :try_end_5e
-    .catchall {:try_start_4c .. :try_end_5e} :catchall_49
+    :try_end_5d
+    .catchall {:try_start_52 .. :try_end_5d} :catchall_4f
 
-    .line 1718
+    .line 652
     return-void
 .end method

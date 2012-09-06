@@ -5,8 +5,8 @@
         <item quantity="one">%1$d件の結果</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">%2$sに%1$d個のアップデートが見つかりました。</item>
-        <item quantity="one">%2$sに%1$d個のアップデートが見つかりました。</item>
+        <item quantity="other">アップデートが%1$d件見つかりました。</item>
+        <item quantity="one">アップデートが%1$d件見つかりました。</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">%1$s人が+1しました。</item>

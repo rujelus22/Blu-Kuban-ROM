@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/inset" android:layout_width="100.0dip" android:layout_height="50.0dip" android:layout_marginRight="40.0dip" android:layout_marginBottom="40.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
-        <com.google.android.apps.plus.hangout.MediaOverlaySurfaceView android:id="@id/surface_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-        <TextView android:textAppearance="?android:textAppearanceMediumInverse" android:gravity="center" android:id="@id/self_video_error" android:padding="8.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/hangout_camera_error" />
-    </RelativeLayout>
-</RelativeLayout>

@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 146
+    .line 147
     iput-object p1, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder$2;->this$0:Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;
 
     iput-object p2, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder$2;->val$doc:Lcom/google/android/finsky/api/model/Document;
@@ -43,11 +43,13 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 7
+    .registers 8
     .parameter "v"
 
     .prologue
-    .line 149
+    const/4 v4, 0x0
+
+    .line 150
     iget-object v0, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder$2;->this$0:Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;
 
     #getter for: Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
@@ -75,10 +77,10 @@
 
     move-result-object v3
 
-    const/4 v4, 0x0
+    move-object v5, v4
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToDocPage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToDocPage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 150
+    .line 152
     return-void
 .end method

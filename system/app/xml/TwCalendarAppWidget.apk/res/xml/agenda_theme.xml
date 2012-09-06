@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<metadata widgetId="com.sec.android.widgetapp.TwCalendarAppWidget" description="@string/agenda_theme" icon="@drawable/app_icon" themeName="Agenda" preview="@drawable/calendar_agenda_theme" width="@dimen/width" height="@dimen/height" class="com.sec.android.widgetapp.TwCalendarAppWidget.TWCalendarAppWidgetActivity" />

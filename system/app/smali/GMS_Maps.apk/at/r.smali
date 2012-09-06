@@ -1,10 +1,11 @@
 .class public interface abstract Lat/r;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/String;Ljava/lang/Exception;)V
+.method public abstract a(I)I
 .end method
 
-.method public abstract a(Ljava/lang/String;Ljava/lang/String;)V
+.method public abstract a(Landroid/graphics/Point;)V
 .end method

@@ -24,21 +24,21 @@
     .registers 3
 
     .prologue
-    .line 37
+    .line 38
     const/4 v0, 0x0
 
     new-array v0, v0, [B
 
     sput-object v0, Lcom/android/email/mail/store/imap/ImapString;->EMPTY_BYTES:[B
 
-    .line 39
+    .line 40
     new-instance v0, Lcom/android/email/mail/store/imap/ImapString$1;
 
     invoke-direct {v0}, Lcom/android/email/mail/store/imap/ImapString$1;-><init>()V
 
     sput-object v0, Lcom/android/email/mail/store/imap/ImapString;->EMPTY:Lcom/android/email/mail/store/imap/ImapString;
 
-    .line 67
+    .line 62
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     const-string v1, "dd-MMM-yyyy HH:mm:ss Z"
@@ -56,7 +56,7 @@
     .registers 1
 
     .prologue
-    .line 36
+    .line 37
     invoke-direct {p0}, Lcom/android/email/mail/store/imap/ImapElement;-><init>()V
 
     return-void
@@ -66,7 +66,7 @@
     .registers 1
 
     .prologue
-    .line 36
+    .line 37
     sget-object v0, Lcom/android/email/mail/store/imap/ImapString;->EMPTY_BYTES:[B
 
     return-object v0
@@ -79,27 +79,27 @@
     .parameter "that"
 
     .prologue
-    .line 185
+    .line 181
     invoke-super {p0, p1}, Lcom/android/email/mail/store/imap/ImapElement;->equalsForTest(Lcom/android/email/mail/store/imap/ImapElement;)Z
 
     move-result v1
 
     if-nez v1, :cond_8
 
-    .line 186
+    .line 182
     const/4 v1, 0x0
 
-    .line 189
+    .line 185
     :goto_7
     return v1
 
     :cond_8
     move-object v0, p1
 
-    .line 188
+    .line 184
     check-cast v0, Lcom/android/email/mail/store/imap/ImapString;
 
-    .line 189
+    .line 185
     .local v0, thatString:Lcom/android/email/mail/store/imap/ImapString;
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapString;->getString()Ljava/lang/String;
 
@@ -123,17 +123,17 @@
     .registers 2
 
     .prologue
-    .line 149
+    .line 144
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapString;->isDate()Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 150
+    .line 145
     const/4 v0, 0x0
 
-    .line 152
+    .line 147
     :goto_7
     return-object v0
 
@@ -147,17 +147,17 @@
     .registers 2
 
     .prologue
-    .line 119
+    .line 115
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapString;->isNumber()Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 120
+    .line 116
     const/4 v0, 0x0
 
-    .line 122
+    .line 118
     :goto_7
     return v0
 
@@ -175,13 +175,13 @@
     .parameter "s"
 
     .prologue
-    .line 159
+    .line 154
     if-nez p1, :cond_4
 
-    .line 160
+    .line 155
     const/4 v0, 0x0
 
-    .line 162
+    .line 157
     :goto_3
     return v0
 
@@ -205,16 +205,16 @@
 
     const/4 v2, 0x0
 
-    .line 130
+    .line 125
     iget-object v3, p0, Lcom/android/email/mail/store/imap/ImapString;->mParsedDate:Ljava/util/Date;
 
     if-eqz v3, :cond_7
 
-    .line 141
+    .line 136
     :goto_6
     return v1
 
-    .line 133
+    .line 128
     :cond_7
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapString;->isEmpty()Z
 
@@ -224,10 +224,10 @@
 
     move v1, v2
 
-    .line 134
+    .line 129
     goto :goto_6
 
-    .line 137
+    .line 132
     :cond_f
     :try_start_f
     sget-object v3, Lcom/android/email/mail/store/imap/ImapString;->DATE_TIME_FORMAT:Ljava/text/SimpleDateFormat;
@@ -246,11 +246,11 @@
 
     goto :goto_6
 
-    .line 139
+    .line 134
     :catch_1c
     move-exception v0
 
-    .line 140
+    .line 135
     .local v0, e:Ljava/text/ParseException;
     const-string v1, "Email"
 
@@ -280,7 +280,7 @@
 
     move v1, v2
 
-    .line 141
+    .line 136
     goto :goto_6
 .end method
 
@@ -288,7 +288,7 @@
     .registers 2
 
     .prologue
-    .line 92
+    .line 88
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapString;->getString()Ljava/lang/String;
 
     move-result-object v0
@@ -314,7 +314,7 @@
     .registers 2
 
     .prologue
-    .line 76
+    .line 71
     const/4 v0, 0x0
 
     return v0
@@ -326,16 +326,16 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 103
+    .line 99
     iget-boolean v2, p0, Lcom/android/email/mail/store/imap/ImapString;->mIsInteger:Z
 
     if-eqz v2, :cond_6
 
-    .line 111
+    .line 107
     :goto_5
     return v1
 
-    .line 107
+    .line 103
     :cond_6
     :try_start_6
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapString;->getString()Ljava/lang/String;
@@ -348,7 +348,7 @@
 
     iput v2, p0, Lcom/android/email/mail/store/imap/ImapString;->mParsedInteger:I
 
-    .line 108
+    .line 104
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/android/email/mail/store/imap/ImapString;->mIsInteger:Z
@@ -357,11 +357,11 @@
 
     goto :goto_5
 
-    .line 110
+    .line 106
     :catch_14
     move-exception v0
 
-    .line 111
+    .line 107
     .local v0, e:Ljava/lang/NumberFormatException;
     const/4 v1, 0x0
 
@@ -372,7 +372,7 @@
     .registers 2
 
     .prologue
-    .line 81
+    .line 76
     const/4 v0, 0x1
 
     return v0
@@ -385,21 +385,21 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 169
+    .line 165
     if-nez p1, :cond_4
 
-    .line 176
+    .line 172
     :cond_3
     :goto_3
     return v1
 
-    .line 172
+    .line 168
     :cond_4
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapString;->getString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 173
+    .line 169
     .local v0, me:Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -411,7 +411,7 @@
 
     if-lt v2, v3, :cond_3
 
-    .line 176
+    .line 172
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -425,7 +425,4 @@
     move-result v1
 
     goto :goto_3
-.end method
-
-.method public abstract toString()Ljava/lang/String;
 .end method

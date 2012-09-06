@@ -29,6 +29,12 @@
         <item>Solo in modalità silenziosa</item>
         <item>Mai</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>disattivo</item>
+        <item>basso</item>
+        <item>medio</item>
+        <item>virtuale</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Nessuna</item>
         <item>Stabilizzazione immagine: Bassa</item>

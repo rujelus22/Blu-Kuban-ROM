@@ -16,7 +16,7 @@
     <string name="toast_denied">거부됨</string>
     <string name="toast_package" formatted="false">%s(%s)의 슈퍼유저 권한이 %s</string>
     <string name="toast_name" formatted="false">%s의 슈퍼유저 권한이 %s</string>
-    <string name="toast_interactive">for an interactive shell</string>
+    <string name="toast_interactive">대화형 쉘에서 권한을 획득했습니다</string>
     <string name="tab_apps">앱</string>
     <string name="tab_logs">로그</string>
     <string name="tab_settings">설정</string>
@@ -74,8 +74,8 @@
     <string name="settings_category_market">구글 플레이</string>
     <string name="settings_market">다른 앱</string>
     <string name="settings_market_description">Google Play에서 사용할 수 있는 제작자의 다른 앱 보기</string>
-    <string name="settings_category_cleanup">비우기</string>
-    <string name="settings_cleanup_full_unroot_title">완전한 루팅 권한 해제</string>
+    <string name="settings_category_cleanup">청소</string>
+    <string name="settings_cleanup_full_unroot_title">완전 언루팅</string>
     <string name="settings_cleanup_full_unroot_description">영구적으로 언루팅 하기 위해 청소</string>
     <string name="settings_cleanup_full_unroot_success">청소작업이 완료되면, 루트 권한이 없어지고 이 앱은 몇 초후 자동으로 닫힙니다. 부팅시에 자동으로 루팅되는 일부 커널에서는 조심해서 사용하세요. 계속 진행 하시겠습니까?</string>
     <string name="settings_cleanup_switch_superuser_title">수퍼유저 앱 교체</string>
@@ -96,7 +96,7 @@
     <string name="pin_wrong">입력된 PIN 코드가 올바르지 않습니다</string>
     <string name="pin_title_verify">PIN 코드 확인</string>
     <string name="pin_verify_wrong">입력하신 두 PIN 코드가 일치하지 않습니다.</string>
-    <string name="follow_pref_title">Twitter 혹은 Google+ 에 개발자 팔로우</string>
+    <string name="follow_pref_title">트위터나 구글+에서 팔로우</string>
     <string name="follow_pref_desc">제 개발과 함께하십시오!</string>
     <string name="follow_popup_title">개발자 팔로우하기</string>
     <string name="follow_popup_desc">최신으로 유지 하세요. 트위터 또는 구글+에서 팔로우 해 주세요.</string>

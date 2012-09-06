@@ -1,23 +1,28 @@
-.class Lcom/google/googlenav/ui/wizard/hj;
+.class Lcom/google/googlenav/ui/wizard/hJ;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/googlenav/ui/wizard/ho;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Landroid/content/Intent;
+.field final synthetic a:Landroid/widget/EditText;
 
-.field final synthetic b:Lcom/google/googlenav/ui/wizard/hi;
+.field final synthetic b:Lcom/google/googlenav/ui/wizard/hI;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/hi;Landroid/content/Intent;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/hI;Landroid/widget/EditText;)V
     .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/hj;->b:Lcom/google/googlenav/ui/wizard/hi;
+    .prologue
+    .line 858
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/hJ;->b:Lcom/google/googlenav/ui/wizard/hI;
 
-    iput-object p2, p0, Lcom/google/googlenav/ui/wizard/hj;->a:Landroid/content/Intent;
+    iput-object p2, p0, Lcom/google/googlenav/ui/wizard/hJ;->a:Landroid/widget/EditText;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,58 +31,43 @@
 
 
 # virtual methods
-.method public a()V
-    .registers 4
+.method public onClick(Landroid/view/View;)V
+    .registers 6
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    .line 861
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hJ;->b:Lcom/google/googlenav/ui/wizard/hI;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/hj;->b:Lcom/google/googlenav/ui/wizard/hi;
+    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/hI;->a:Lcom/google/googlenav/ui/wizard/hG;
 
-    iget-object v1, v1, Lcom/google/googlenav/ui/wizard/hi;->b:Lcom/google/googlenav/ui/wizard/hM;
+    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/hG;->b:Lcom/google/googlenav/ui/wizard/hP;
 
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/wizard/hM;->A()Lcom/google/googlenav/android/ac;
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/hJ;->a:Landroid/widget/EditText;
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v1
 
-    new-instance v2, Lcom/google/googlenav/ui/wizard/hk;
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    invoke-direct {v2, p0}, Lcom/google/googlenav/ui/wizard/hk;-><init>(Lcom/google/googlenav/ui/wizard/hj;)V
+    move-result-object v1
 
-    invoke-virtual {v1, v2, v0}, Lcom/google/googlenav/android/ac;->a(Ljava/lang/Runnable;Z)V
+    iput-object v1, v0, Lcom/google/googlenav/ui/wizard/hP;->j:Ljava/lang/String;
 
-    return-void
-.end method
+    .line 862
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hJ;->b:Lcom/google/googlenav/ui/wizard/hI;
 
-.method public a(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/hI;->a:Lcom/google/googlenav/ui/wizard/hG;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hj;->a:Landroid/content/Intent;
+    const/16 v1, 0x5ee
 
-    const/high16 v1, 0x1000
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    const/4 v3, 0x0
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hj;->a:Landroid/content/Intent;
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/googlenav/ui/wizard/hG;->a(IILjava/lang/Object;)Z
 
-    const-string v1, "android.intent.extra.SUBJECT"
-
-    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hj;->a:Landroid/content/Intent;
-
-    const-string v1, "android.intent.extra.TEXT"
-
-    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hj;->b:Lcom/google/googlenav/ui/wizard/hi;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/hi;->a(Lcom/google/googlenav/ui/wizard/hi;)Landroid/content/Context;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/hj;->a:Landroid/content/Intent;
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-
+    .line 863
     return-void
 .end method

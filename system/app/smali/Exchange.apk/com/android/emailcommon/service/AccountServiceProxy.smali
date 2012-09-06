@@ -61,33 +61,11 @@
 
 
 # virtual methods
-.method public accountDeleted()V
-    .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 104
-    new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy$7;
-
-    invoke-direct {v0, p0}, Lcom/android/emailcommon/service/AccountServiceProxy$7;-><init>(Lcom/android/emailcommon/service/AccountServiceProxy;)V
-
-    const-string v1, "accountDeleted"
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
-
-    .line 109
-    return-void
-.end method
-
 .method public asBinder()Landroid/os/IBinder;
     .registers 2
 
     .prologue
-    .line 43
+    .line 44
     const/4 v0, 0x0
 
     return-object v0
@@ -96,34 +74,29 @@
 .method public getAccountColor(J)I
     .registers 5
     .parameter "accountId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 127
-    new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy$9;
+    .line 82
+    new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy$4;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/android/emailcommon/service/AccountServiceProxy$9;-><init>(Lcom/android/emailcommon/service/AccountServiceProxy;J)V
+    invoke-direct {v0, p0, p1, p2}, Lcom/android/emailcommon/service/AccountServiceProxy$4;-><init>(Lcom/android/emailcommon/service/AccountServiceProxy;J)V
 
     const-string v1, "getAccountColor"
 
     invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
 
-    .line 132
+    .line 88
     invoke-virtual {p0}, Lcom/android/emailcommon/service/AccountServiceProxy;->waitForCompletion()V
 
-    .line 133
+    .line 89
     iget-object v0, p0, Lcom/android/emailcommon/service/AccountServiceProxy;->mReturn:Ljava/lang/Object;
 
     if-nez v0, :cond_15
 
-    .line 134
+    .line 90
     const v0, -0xffff01
 
-    .line 136
+    .line 92
     :goto_14
     return v0
 
@@ -142,34 +115,29 @@
 .method public getConfigurationData(Ljava/lang/String;)Landroid/os/Bundle;
     .registers 4
     .parameter "accountType"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 143
-    new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy$10;
+    .line 99
+    new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy$5;
 
-    invoke-direct {v0, p0, p1}, Lcom/android/emailcommon/service/AccountServiceProxy$10;-><init>(Lcom/android/emailcommon/service/AccountServiceProxy;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p1}, Lcom/android/emailcommon/service/AccountServiceProxy$5;-><init>(Lcom/android/emailcommon/service/AccountServiceProxy;Ljava/lang/String;)V
 
     const-string v1, "getConfigurationData"
 
     invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
 
-    .line 148
+    .line 105
     invoke-virtual {p0}, Lcom/android/emailcommon/service/AccountServiceProxy;->waitForCompletion()V
 
-    .line 149
+    .line 106
     iget-object v0, p0, Lcom/android/emailcommon/service/AccountServiceProxy;->mReturn:Ljava/lang/Object;
 
     if-nez v0, :cond_13
 
-    .line 150
+    .line 107
     const/4 v0, 0x0
 
-    .line 152
+    .line 109
     :goto_12
     return-object v0
 
@@ -183,76 +151,29 @@
 
 .method public getDeviceId()Ljava/lang/String;
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 159
-    new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy$11;
+    .line 116
+    new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy$6;
 
-    invoke-direct {v0, p0}, Lcom/android/emailcommon/service/AccountServiceProxy$11;-><init>(Lcom/android/emailcommon/service/AccountServiceProxy;)V
+    invoke-direct {v0, p0}, Lcom/android/emailcommon/service/AccountServiceProxy$6;-><init>(Lcom/android/emailcommon/service/AccountServiceProxy;)V
 
     const-string v1, "getDeviceId"
 
     invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
 
-    .line 164
+    .line 122
     invoke-virtual {p0}, Lcom/android/emailcommon/service/AccountServiceProxy;->waitForCompletion()V
 
-    .line 165
+    .line 123
     iget-object v0, p0, Lcom/android/emailcommon/service/AccountServiceProxy;->mReturn:Ljava/lang/Object;
 
     if-nez v0, :cond_13
 
-    .line 166
+    .line 124
     const/4 v0, 0x0
 
-    .line 168
-    :goto_12
-    return-object v0
-
-    :cond_13
-    iget-object v0, p0, Lcom/android/emailcommon/service/AccountServiceProxy;->mReturn:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/String;
-
-    goto :goto_12
-.end method
-
-.method public getDeviceIdForWifi(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
-    .parameter "hardwareId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 175
-    new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy$12;
-
-    invoke-direct {v0, p0, p1}, Lcom/android/emailcommon/service/AccountServiceProxy$12;-><init>(Lcom/android/emailcommon/service/AccountServiceProxy;Ljava/lang/String;)V
-
-    const-string v1, "getDeviceIdForWifi"
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
-
-    .line 180
-    invoke-virtual {p0}, Lcom/android/emailcommon/service/AccountServiceProxy;->waitForCompletion()V
-
-    .line 181
-    iget-object v0, p0, Lcom/android/emailcommon/service/AccountServiceProxy;->mReturn:Ljava/lang/Object;
-
-    if-nez v0, :cond_13
-
-    .line 182
-    const/4 v0, 0x0
-
-    .line 184
+    .line 126
     :goto_12
     return-object v0
 
@@ -267,14 +188,9 @@
 .method public notifyLoginFailed(J)V
     .registers 5
     .parameter "accountId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 48
+    .line 49
     new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy$1;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/android/emailcommon/service/AccountServiceProxy$1;-><init>(Lcom/android/emailcommon/service/AccountServiceProxy;J)V
@@ -283,21 +199,16 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
 
-    .line 53
+    .line 55
     return-void
 .end method
 
 .method public notifyLoginSucceeded(J)V
     .registers 5
     .parameter "accountId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 57
+    .line 59
     new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy$2;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/android/emailcommon/service/AccountServiceProxy$2;-><init>(Lcom/android/emailcommon/service/AccountServiceProxy;J)V
@@ -306,106 +217,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
 
-    .line 62
-    return-void
-.end method
-
-.method public notifyNewMessages(JJI)V
-    .registers 13
-    .parameter "accountId"
-    .parameter "lastestMsgId"
-    .parameter "messageCount"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 66
-    new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy$3;
-
-    move-object v1, p0
-
-    move-wide v2, p1
-
-    move-wide v4, p3
-
-    move v6, p5
-
-    invoke-direct/range {v0 .. v6}, Lcom/android/emailcommon/service/AccountServiceProxy$3;-><init>(Lcom/android/emailcommon/service/AccountServiceProxy;JJI)V
-
-    const-string v1, "notifyNewMessages"
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
-
-    .line 71
-    return-void
-.end method
-
-.method public notifySendFailedOutOfMemoryError(JJ)V
-    .registers 11
-    .parameter "accountId"
-    .parameter "messageId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 85
-    new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy$5;
-
-    move-object v1, p0
-
-    move-wide v2, p1
-
-    move-wide v4, p3
-
-    invoke-direct/range {v0 .. v5}, Lcom/android/emailcommon/service/AccountServiceProxy$5;-><init>(Lcom/android/emailcommon/service/AccountServiceProxy;JJ)V
-
-    const-string v1, "notifySendFailed_OutOfMemoryError"
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
-
-    .line 90
-    return-void
-.end method
-
-.method public notifySendResult(JJZLjava/lang/String;)V
-    .registers 15
-    .parameter "accountId"
-    .parameter "messageId"
-    .parameter "sendfailed"
-    .parameter "title"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 95
-    new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy$6;
-
-    move-object v1, p0
-
-    move-wide v2, p1
-
-    move-wide v4, p3
-
-    move v6, p5
-
-    move-object v7, p6
-
-    invoke-direct/range {v0 .. v7}, Lcom/android/emailcommon/service/AccountServiceProxy$6;-><init>(Lcom/android/emailcommon/service/AccountServiceProxy;JJZLjava/lang/String;)V
-
-    const-string v1, "notifySendResult"
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
-
-    .line 100
+    .line 65
     return-void
 .end method
 
@@ -425,50 +237,24 @@
     return-void
 .end method
 
-.method public resetNewMessageCount(J)V
+.method public reconcileAccounts(Ljava/lang/String;Ljava/lang/String;)V
     .registers 5
-    .parameter "accountId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+    .parameter "protocol"
+    .parameter "accountManagerType"
 
     .prologue
-    .line 75
-    new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy$4;
+    .line 70
+    new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy$3;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/android/emailcommon/service/AccountServiceProxy$4;-><init>(Lcom/android/emailcommon/service/AccountServiceProxy;J)V
+    invoke-direct {v0, p0, p1, p2}, Lcom/android/emailcommon/service/AccountServiceProxy$3;-><init>(Lcom/android/emailcommon/service/AccountServiceProxy;Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v1, "resetNewMessageCount"
+    const-string v1, "reconcileAccounts"
 
     invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
 
-    .line 80
-    return-void
-.end method
-
-.method public restoreAccountsIfNeeded()V
-    .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 115
-    new-instance v0, Lcom/android/emailcommon/service/AccountServiceProxy$8;
-
-    invoke-direct {v0, p0}, Lcom/android/emailcommon/service/AccountServiceProxy$8;-><init>(Lcom/android/emailcommon/service/AccountServiceProxy;)V
-
-    const-string v1, "restoreAccountsIfNeeded"
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/AccountServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
-
-    .line 120
+    .line 76
     invoke-virtual {p0}, Lcom/android/emailcommon/service/AccountServiceProxy;->waitForCompletion()V
 
-    .line 121
+    .line 77
     return-void
 .end method

@@ -55,7 +55,7 @@
 
     iput-boolean p6, p0, Lcom/google/android/talk/videochat/NotificationReceiver$1;->val$isVideo:Z
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

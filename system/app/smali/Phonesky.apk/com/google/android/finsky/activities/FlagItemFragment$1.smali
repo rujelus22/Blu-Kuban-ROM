@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 113
+    .line 108
     iput-object p1, p0, Lcom/google/android/finsky/activities/FlagItemFragment$1;->this$0:Lcom/google/android/finsky/activities/FlagItemFragment;
 
     iput-object p2, p0, Lcom/google/android/finsky/activities/FlagItemFragment$1;->val$buttonBar:Lcom/google/android/finsky/layout/ButtonBar;
@@ -43,16 +43,18 @@
 
 # virtual methods
 .method public onCheckedChanged(Landroid/widget/RadioGroup;I)V
-    .registers 4
+    .registers 5
     .parameter "group"
     .parameter "checkedId"
 
     .prologue
-    .line 116
+    .line 111
     iget-object v0, p0, Lcom/google/android/finsky/activities/FlagItemFragment$1;->val$buttonBar:Lcom/google/android/finsky/layout/ButtonBar;
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/layout/ButtonBar;->enablePositiveButton()V
+    const/4 v1, 0x1
 
-    .line 117
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/ButtonBar;->setPositiveButtonEnabled(Z)V
+
+    .line 112
     return-void
 .end method

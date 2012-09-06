@@ -28,6 +28,14 @@
         <item quantity="other">%1$d วินาทีที่ผ่านมา</item>
         <item quantity="one">1 วินาทีที่ผ่านมา</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">หมดอายุใน %1$d วัน</item>
+        <item quantity="one">หมดอายุในอีก 1 วัน</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">หมดอายุใน %1$d ชั่วโมง</item>
+        <item quantity="one">หมดอายุในอีก 1 ชั่วโมง</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">การอัปโหลดใหม่</item>
         <item quantity="one">การอัปโหลดใหม่</item>

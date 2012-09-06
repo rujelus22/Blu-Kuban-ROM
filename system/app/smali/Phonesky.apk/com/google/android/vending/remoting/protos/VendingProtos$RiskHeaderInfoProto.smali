@@ -27,20 +27,20 @@
     .registers 2
 
     .prologue
-    .line 8336
+    .line 8494
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 8341
+    .line 8499
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;->hashedDeviceInfo_:Ljava/lang/String;
 
-    .line 8373
+    .line 8532
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;->cachedSize:I
 
-    .line 8336
+    .line 8494
     return-void
 .end method
 
@@ -50,15 +50,15 @@
     .registers 2
 
     .prologue
-    .line 8375
+    .line 8535
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 8377
+    .line 8537
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;->getSerializedSize()I
 
-    .line 8379
+    .line 8539
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;->cachedSize:I
 
@@ -69,7 +69,7 @@
     .registers 2
 
     .prologue
-    .line 8342
+    .line 8500
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;->hashedDeviceInfo_:Ljava/lang/String;
 
     return-object v0
@@ -79,10 +79,10 @@
     .registers 4
 
     .prologue
-    .line 8383
+    .line 8544
     const/4 v0, 0x0
 
-    .line 8384
+    .line 8545
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;->hasHashedDeviceInfo()Z
 
@@ -90,7 +90,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 8385
+    .line 8546
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;->getHashedDeviceInfo()Ljava/lang/String;
@@ -103,11 +103,11 @@
 
     add-int/2addr v0, v1
 
-    .line 8388
+    .line 8549
     :cond_11
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;->cachedSize:I
 
-    .line 8389
+    .line 8550
     return v0
 .end method
 
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 8343
+    .line 8501
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;->hasHashedDeviceInfo:Z
 
     return v0
@@ -131,29 +131,29 @@
     .end annotation
 
     .prologue
-    .line 8396
+    .line 8558
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 8397
+    .line 8559
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_16
 
-    .line 8401
+    .line 8563
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 8402
+    .line 8564
     :sswitch_d
     return-object p0
 
-    .line 8407
+    .line 8569
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 8397
+    .line 8559
     :sswitch_data_16
     .sparse-switch
         0x0 -> :sswitch_d
@@ -181,7 +181,7 @@
     .end annotation
 
     .prologue
-    .line 8334
+    .line 8492
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;
 
     move-result-object v0
@@ -194,15 +194,15 @@
     .parameter "value"
 
     .prologue
-    .line 8345
+    .line 8503
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;->hasHashedDeviceInfo:Z
 
-    .line 8346
+    .line 8504
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;->hashedDeviceInfo_:Ljava/lang/String;
 
-    .line 8347
+    .line 8505
     return-object p0
 .end method
 
@@ -216,14 +216,14 @@
     .end annotation
 
     .prologue
-    .line 8368
+    .line 8527
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;->hasHashedDeviceInfo()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 8369
+    .line 8528
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;->getHashedDeviceInfo()Ljava/lang/String;
@@ -232,7 +232,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 8371
+    .line 8530
     :cond_e
     return-void
 .end method

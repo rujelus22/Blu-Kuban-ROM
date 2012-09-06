@@ -7,8 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;,
-        Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AppsSearchSuggestor;,
-        Lcom/google/android/finsky/providers/RecentSuggestionsProvider$NonAppsSearchSuggestor;,
+        Lcom/google/android/finsky/providers/RecentSuggestionsProvider$SearchSuggestor;,
+        Lcom/google/android/finsky/providers/RecentSuggestionsProvider$ThirdPartySearchSuggestor;,
         Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AsyncSuggestionAuthority;,
         Lcom/google/android/finsky/providers/RecentSuggestionsProvider$OnCompleteListener;
     }
@@ -24,17 +24,17 @@
     .registers 3
 
     .prologue
-    .line 258
+    .line 471
     invoke-direct {p0}, Landroid/content/SearchRecentSuggestionsProvider;-><init>()V
 
-    .line 259
+    .line 472
     const-string v0, "com.google.android.finsky.RecentSuggestionsProvider"
 
     const/4 v1, 0x1
 
     invoke-virtual {p0, v0, v1}, Lcom/google/android/finsky/providers/RecentSuggestionsProvider;->setupSuggestions(Ljava/lang/String;I)V
 
-    .line 260
+    .line 473
     return-void
 .end method
 
@@ -43,10 +43,10 @@
     .parameter "backendId"
 
     .prologue
-    .line 46
+    .line 57
     sput p0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider;->sCurrentBackendId:I
 
-    .line 47
+    .line 58
     return-void
 .end method
 
@@ -63,14 +63,14 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 273
+    .line 486
     if-eqz p4, :cond_6
 
     array-length v3, p4
 
     if-nez v3, :cond_1f
 
-    .line 274
+    .line 487
     :cond_6
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -96,7 +96,7 @@
 
     throw v3
 
-    .line 278
+    .line 491
     :cond_1f
     aget-object v3, p4, v6
 
@@ -104,7 +104,7 @@
 
     move-result-object v2
 
-    .line 279
+    .line 492
     .local v2, query:Ljava/lang/String;
     new-instance v0, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;
 
@@ -112,23 +112,32 @@
 
     move-result-object v3
 
-    invoke-direct {v0, p0, v2, v3}, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;-><init>(Lcom/google/android/finsky/providers/RecentSuggestionsProvider;Ljava/lang/String;Landroid/database/Cursor;)V
+    invoke-virtual {p0}, Lcom/google/android/finsky/providers/RecentSuggestionsProvider;->getContext()Landroid/content/Context;
 
-    .line 283
+    move-result-object v4
+
+    invoke-direct {v0, v2, v3, v4}, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$HistorySearchSuggestor;-><init>(Ljava/lang/String;Landroid/database/Cursor;Landroid/content/Context;)V
+
+    .line 498
     .local v0, historySuggestor:Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AsyncSuggestionAuthority;
     sget v3, Lcom/google/android/finsky/providers/RecentSuggestionsProvider;->sCurrentBackendId:I
 
-    packed-switch v3, :pswitch_data_56
+    packed-switch v3, :pswitch_data_64
 
-    .line 293
-    :pswitch_33
-    new-instance v1, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AppsSearchSuggestor;
+    .line 509
+    new-instance v1, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$SearchSuggestor;
 
-    invoke-direct {v1, p0, v2}, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AppsSearchSuggestor;-><init>(Lcom/google/android/finsky/providers/RecentSuggestionsProvider;Ljava/lang/String;)V
+    invoke-virtual {p0}, Lcom/google/android/finsky/providers/RecentSuggestionsProvider;->getContext()Landroid/content/Context;
 
-    .line 297
+    move-result-object v3
+
+    sget v4, Lcom/google/android/finsky/providers/RecentSuggestionsProvider;->sCurrentBackendId:I
+
+    invoke-direct {v1, v3, v4, v2}, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$SearchSuggestor;-><init>(Landroid/content/Context;ILjava/lang/String;)V
+
+    .line 513
     .local v1, networkSuggestor:Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AsyncSuggestionAuthority;
-    :goto_38
+    :goto_42
     new-instance v3, Landroid/database/MergeCursor;
 
     const/4 v4, 0x2
@@ -153,25 +162,26 @@
 
     return-object v3
 
-    .line 287
+    .line 501
     .end local v1           #networkSuggestor:Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AsyncSuggestionAuthority;
-    :pswitch_4e
-    new-instance v1, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$NonAppsSearchSuggestor;
+    :pswitch_58
+    new-instance v1, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$ThirdPartySearchSuggestor;
 
     sget v3, Lcom/google/android/finsky/providers/RecentSuggestionsProvider;->sCurrentBackendId:I
 
-    invoke-direct {v1, p0, v3, v2}, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$NonAppsSearchSuggestor;-><init>(Lcom/google/android/finsky/providers/RecentSuggestionsProvider;ILjava/lang/String;)V
+    invoke-virtual {p0}, Lcom/google/android/finsky/providers/RecentSuggestionsProvider;->getContext()Landroid/content/Context;
 
-    .line 288
+    move-result-object v4
+
+    invoke-direct {v1, v3, v2, v4}, Lcom/google/android/finsky/providers/RecentSuggestionsProvider$ThirdPartySearchSuggestor;-><init>(ILjava/lang/String;Landroid/content/Context;)V
+
+    .line 503
     .restart local v1       #networkSuggestor:Lcom/google/android/finsky/providers/RecentSuggestionsProvider$AsyncSuggestionAuthority;
-    goto :goto_38
+    goto :goto_42
 
-    .line 283
-    :pswitch_data_56
-    .packed-switch 0x1
-        :pswitch_4e
-        :pswitch_4e
-        :pswitch_33
-        :pswitch_4e
+    .line 498
+    :pswitch_data_64
+    .packed-switch 0x2
+        :pswitch_58
     .end packed-switch
 .end method

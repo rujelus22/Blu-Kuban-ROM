@@ -27,20 +27,20 @@
     .registers 2
 
     .prologue
-    .line 657
+    .line 673
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 662
+    .line 678
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;->tosCheckboxMarketingEmailsOptedIn_:Z
 
-    .line 693
+    .line 710
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;->cachedSize:I
 
-    .line 657
+    .line 673
     return-void
 .end method
 
@@ -50,15 +50,15 @@
     .registers 2
 
     .prologue
-    .line 695
+    .line 713
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 697
+    .line 715
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;->getSerializedSize()I
 
-    .line 699
+    .line 717
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;->cachedSize:I
 
@@ -69,10 +69,10 @@
     .registers 4
 
     .prologue
-    .line 703
+    .line 722
     const/4 v0, 0x0
 
-    .line 704
+    .line 723
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;->hasTosCheckboxMarketingEmailsOptedIn()Z
 
@@ -80,7 +80,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 705
+    .line 724
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;->getTosCheckboxMarketingEmailsOptedIn()Z
@@ -93,11 +93,11 @@
 
     add-int/2addr v0, v1
 
-    .line 708
+    .line 727
     :cond_11
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;->cachedSize:I
 
-    .line 709
+    .line 728
     return v0
 .end method
 
@@ -105,7 +105,7 @@
     .registers 2
 
     .prologue
-    .line 663
+    .line 679
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;->tosCheckboxMarketingEmailsOptedIn_:Z
 
     return v0
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 664
+    .line 680
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;->hasTosCheckboxMarketingEmailsOptedIn:Z
 
     return v0
@@ -131,29 +131,29 @@
     .end annotation
 
     .prologue
-    .line 716
+    .line 736
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 717
+    .line 737
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_16
 
-    .line 721
+    .line 741
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 722
+    .line 742
     :sswitch_d
     return-object p0
 
-    .line 727
+    .line 747
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 717
+    .line 737
     :sswitch_data_16
     .sparse-switch
         0x0 -> :sswitch_d
@@ -181,7 +181,7 @@
     .end annotation
 
     .prologue
-    .line 655
+    .line 670
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;
 
     move-result-object v0
@@ -194,15 +194,15 @@
     .parameter "value"
 
     .prologue
-    .line 666
+    .line 682
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;->hasTosCheckboxMarketingEmailsOptedIn:Z
 
-    .line 667
+    .line 683
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;->tosCheckboxMarketingEmailsOptedIn_:Z
 
-    .line 668
+    .line 684
     return-object p0
 .end method
 
@@ -216,14 +216,14 @@
     .end annotation
 
     .prologue
-    .line 688
+    .line 705
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;->hasTosCheckboxMarketingEmailsOptedIn()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 689
+    .line 706
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;->getTosCheckboxMarketingEmailsOptedIn()Z
@@ -232,7 +232,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 691
+    .line 708
     :cond_e
     return-void
 .end method

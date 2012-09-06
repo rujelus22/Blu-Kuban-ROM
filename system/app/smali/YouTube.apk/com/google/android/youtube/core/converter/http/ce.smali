@@ -3,19 +3,12 @@
 .source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/converter/http/cc;
-
-
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/core/converter/http/cc;)V
-    .registers 2
-    .parameter
+.method constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 38
-    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/ce;->a:Lcom/google/android/youtube/core/converter/http/cc;
-
+    .line 76
     invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
     return-void
@@ -23,33 +16,33 @@
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;)V
-    .registers 4
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;)V
+    .registers 5
     .parameter
     .parameter
 
     .prologue
-    .line 41
-    new-instance v0, Lcom/google/android/youtube/core/model/n;
+    .line 79
+    const-class v0, Lcom/google/android/youtube/core/model/Playlist$Builder;
 
-    invoke-direct {v0}, Lcom/google/android/youtube/core/model/n;-><init>()V
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->a(Ljava/lang/Class;)Ljava/lang/Object;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->offer(Ljava/lang/Object;)Z
+    move-result-object v0
 
-    .line 42
-    return-void
-.end method
+    check-cast v0, Lcom/google/android/youtube/core/model/Playlist$Builder;
 
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
-    .registers 4
-    .parameter
-    .parameter
-    .parameter
+    const-string v1, "src"
 
-    .prologue
-    .line 45
-    invoke-virtual {p1}, Lcom/google/android/youtube/core/utils/p;->poll()Ljava/lang/Object;
+    invoke-interface {p2, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 46
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Playlist$Builder;->contentUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Playlist$Builder;
+
+    .line 80
     return-void
 .end method

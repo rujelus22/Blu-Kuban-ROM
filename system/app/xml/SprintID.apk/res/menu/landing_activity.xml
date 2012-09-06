@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:icon="@drawable/ic_menu_sprintid" android:id="@id/check_for_update" android:title="@string/check_for_update" />
-    <item android:icon="@drawable/ic_menu_manage" android:id="@id/dev_mode" android:title="@string/dev_tools" />
-</menu>

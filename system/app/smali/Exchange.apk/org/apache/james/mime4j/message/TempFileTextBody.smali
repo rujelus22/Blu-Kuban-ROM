@@ -15,7 +15,7 @@
     .registers 1
 
     .prologue
-    .line 45
+    .line 47
     const-class v0, Lorg/apache/james/mime4j/message/TempFileTextBody;
 
     invoke-static {v0}, Lorg/apache/james/mime4j/LogFactory;->getLog(Ljava/lang/Class;)Lorg/apache/james/mime4j/Log;

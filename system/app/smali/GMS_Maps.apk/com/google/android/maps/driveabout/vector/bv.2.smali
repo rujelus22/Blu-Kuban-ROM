@@ -1,311 +1,107 @@
-.class public Lcom/google/android/maps/driveabout/vector/bv;
-.super Lcom/google/android/maps/driveabout/vector/bu;
+.class Lcom/google/android/maps/driveabout/vector/bV;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field private final h:[I
+.field a:Lcom/google/googlenav/intersectionexplorer/c;
 
-.field private i:Lcom/google/android/maps/driveabout/vector/aT;
+.field b:Lcom/google/googlenav/intersectionexplorer/c;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>(Lcom/google/googlenav/intersectionexplorer/c;Lcom/google/googlenav/intersectionexplorer/c;)V
     .registers 3
+    .parameter
+    .parameter
 
-    invoke-direct {p0, p1}, Lcom/google/android/maps/driveabout/vector/bu;-><init>(I)V
+    .prologue
+    .line 215
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
+    .line 216
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/vector/bV;->a:Lcom/google/googlenav/intersectionexplorer/c;
 
-    new-array v0, v0, [I
+    .line 217
+    iput-object p2, p0, Lcom/google/android/maps/driveabout/vector/bV;->b:Lcom/google/googlenav/intersectionexplorer/c;
 
-    iput-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->h:[I
-
+    .line 218
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lcom/google/android/maps/driveabout/vector/aT;)V
-    .registers 4
+.method public equals(Ljava/lang/Object;)Z
+    .registers 5
+    .parameter
 
-    const/4 v1, 0x0
+    .prologue
+    const/4 v0, 0x0
 
-    invoke-super {p0, p1}, Lcom/google/android/maps/driveabout/vector/bu;->a(Lcom/google/android/maps/driveabout/vector/aT;)V
+    .line 222
+    instance-of v1, p1, Lcom/google/android/maps/driveabout/vector/bV;
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->h:[I
+    if-nez v1, :cond_6
 
-    if-eqz v0, :cond_c
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->h:[I
-
-    aput v1, v0, v1
-
-    :cond_c
-    return-void
-.end method
-
-.method public a(Lcom/google/android/maps/driveabout/vector/aT;I)V
-    .registers 9
-
-    const v5, 0x8893
-
-    const/4 v4, 0x0
-
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/vector/bv;->i:Lcom/google/android/maps/driveabout/vector/aT;
-
-    iget-boolean v0, p1, Lcom/google/android/maps/driveabout/vector/aT;->c:Z
-
-    if-nez v0, :cond_e
-
-    invoke-super {p0, p1, p2}, Lcom/google/android/maps/driveabout/vector/bu;->a(Lcom/google/android/maps/driveabout/vector/aT;I)V
-
-    :cond_d
-    :goto_d
-    return-void
-
-    :cond_e
-    iget-object v0, p1, Lcom/google/android/maps/driveabout/vector/aT;->a:Ljavax/microedition/khronos/opengles/GL10;
-
-    check-cast v0, Ljavax/microedition/khronos/opengles/GL11;
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->h:[I
-
-    aget v1, v1, v4
-
-    if-nez v1, :cond_4b
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->d:Ljava/nio/ShortBuffer;
-
-    if-nez v1, :cond_1f
-
-    invoke-virtual {p0, p1}, Lcom/google/android/maps/driveabout/vector/bv;->d(Lcom/google/android/maps/driveabout/vector/aT;)V
-
-    :cond_1f
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->d:Ljava/nio/ShortBuffer;
-
-    invoke-virtual {v1}, Ljava/nio/ShortBuffer;->limit()I
-
-    move-result v1
-
-    if-eqz v1, :cond_d
-
-    const/4 v1, 0x1
-
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/vector/bv;->h:[I
-
-    invoke-interface {v0, v1, v2, v4}, Ljavax/microedition/khronos/opengles/GL11;->glGenBuffers(I[II)V
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->h:[I
-
-    aget v1, v1, v4
-
-    invoke-interface {v0, v5, v1}, Ljavax/microedition/khronos/opengles/GL11;->glBindBuffer(II)V
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->d:Ljava/nio/ShortBuffer;
-
-    invoke-virtual {v1}, Ljava/nio/ShortBuffer;->limit()I
-
-    move-result v1
-
-    mul-int/lit8 v1, v1, 0x2
-
-    iput v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->f:I
-
-    iget v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->f:I
-
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/vector/bv;->d:Ljava/nio/ShortBuffer;
-
-    const v3, 0x88e4
-
-    invoke-interface {v0, v5, v1, v2, v3}, Ljavax/microedition/khronos/opengles/GL11;->glBufferData(IILjava/nio/Buffer;I)V
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->d:Ljava/nio/ShortBuffer;
-
-    :cond_4b
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->h:[I
-
-    aget v1, v1, v4
-
-    invoke-interface {v0, v5, v1}, Ljavax/microedition/khronos/opengles/GL11;->glBindBuffer(II)V
-
-    iget v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->c:I
-
-    const/16 v2, 0x1403
-
-    invoke-interface {v0, p2, v1, v2, v4}, Ljavax/microedition/khronos/opengles/GL11;->glDrawElements(IIII)V
-
-    invoke-interface {v0, v5, v4}, Ljavax/microedition/khronos/opengles/GL11;->glBindBuffer(II)V
-
-    goto :goto_d
-.end method
-
-.method public b(Lcom/google/android/maps/driveabout/vector/aT;)V
-    .registers 6
-
-    const/4 v3, 0x0
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->h:[I
-
-    if-eqz v0, :cond_25
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->h:[I
-
-    aget v0, v0, v3
-
-    if-eqz v0, :cond_25
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->i:Lcom/google/android/maps/driveabout/vector/aT;
-
-    if-ne v0, p1, :cond_1f
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->i:Lcom/google/android/maps/driveabout/vector/aT;
-
-    if-eqz v0, :cond_1f
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->i:Lcom/google/android/maps/driveabout/vector/aT;
-
-    iget-object v0, v0, Lcom/google/android/maps/driveabout/vector/aT;->a:Ljavax/microedition/khronos/opengles/GL10;
-
-    check-cast v0, Ljavax/microedition/khronos/opengles/GL11;
-
-    const/4 v1, 0x1
-
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/vector/bv;->h:[I
-
-    invoke-interface {v0, v1, v2, v3}, Ljavax/microedition/khronos/opengles/GL11;->glDeleteBuffers(I[II)V
-
-    :cond_1f
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->h:[I
-
-    aput v3, v0, v3
-
-    iput v3, p0, Lcom/google/android/maps/driveabout/vector/bv;->f:I
-
-    :cond_25
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/vector/bv;->i:Lcom/google/android/maps/driveabout/vector/aT;
-
-    return-void
-.end method
-
-.method public d()I
-    .registers 3
-
-    const/16 v0, 0x38
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->g:LA/h;
-
-    if-eqz v1, :cond_10
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->g:LA/h;
-
-    invoke-virtual {v1}, LA/h;->b()I
-
-    move-result v1
-
-    mul-int/lit8 v1, v1, 0x2
-
-    add-int/2addr v0, v1
-
-    :cond_f
-    :goto_f
+    .line 228
+    :cond_5
+    :goto_5
     return v0
 
-    :cond_10
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->a:[S
+    .line 226
+    :cond_6
+    check-cast p1, Lcom/google/android/maps/driveabout/vector/bV;
 
-    if-eqz v1, :cond_f
+    .line 228
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bV;->a:Lcom/google/googlenav/intersectionexplorer/c;
 
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->a:[S
+    iget-object v2, p1, Lcom/google/android/maps/driveabout/vector/bV;->a:Lcom/google/googlenav/intersectionexplorer/c;
 
-    array-length v1, v1
+    if-ne v1, v2, :cond_14
 
-    mul-int/lit8 v1, v1, 0x2
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bV;->b:Lcom/google/googlenav/intersectionexplorer/c;
 
-    add-int/lit8 v1, v1, 0x10
+    iget-object v2, p1, Lcom/google/android/maps/driveabout/vector/bV;->b:Lcom/google/googlenav/intersectionexplorer/c;
 
-    add-int/2addr v0, v1
+    if-eq v1, v2, :cond_20
 
-    goto :goto_f
+    :cond_14
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bV;->a:Lcom/google/googlenav/intersectionexplorer/c;
+
+    iget-object v2, p1, Lcom/google/android/maps/driveabout/vector/bV;->b:Lcom/google/googlenav/intersectionexplorer/c;
+
+    if-ne v1, v2, :cond_5
+
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bV;->b:Lcom/google/googlenav/intersectionexplorer/c;
+
+    iget-object v2, p1, Lcom/google/android/maps/driveabout/vector/bV;->a:Lcom/google/googlenav/intersectionexplorer/c;
+
+    if-ne v1, v2, :cond_5
+
+    :cond_20
+    const/4 v0, 0x1
+
+    goto :goto_5
 .end method
 
-.method protected d(Lcom/google/android/maps/driveabout/vector/aT;)V
-    .registers 7
+.method public hashCode()I
+    .registers 3
 
-    const/4 v4, 0x0
+    .prologue
+    .line 234
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bV;->a:Lcom/google/googlenav/intersectionexplorer/c;
 
-    const/4 v3, 0x0
-
-    invoke-virtual {p1}, Lcom/google/android/maps/driveabout/vector/aT;->D()Z
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    if-eqz v0, :cond_44
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bV;->b:Lcom/google/googlenav/intersectionexplorer/c;
 
-    invoke-static {}, Lcom/google/android/maps/driveabout/vector/cR;->b()Ljava/nio/ShortBuffer;
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
-    move-result-object v0
+    move-result v1
 
-    iput-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->d:Ljava/nio/ShortBuffer;
+    xor-int/2addr v0, v1
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->g:LA/h;
-
-    if-nez v0, :cond_39
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->d:Ljava/nio/ShortBuffer;
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->a:[S
-
-    iget v2, p0, Lcom/google/android/maps/driveabout/vector/bv;->c:I
-
-    invoke-virtual {v0, v1, v3, v2}, Ljava/nio/ShortBuffer;->put([SII)Ljava/nio/ShortBuffer;
-
-    :goto_1b
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->d:Ljava/nio/ShortBuffer;
-
-    iget v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/nio/ShortBuffer;->limit(I)Ljava/nio/Buffer;
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->d:Ljava/nio/ShortBuffer;
-
-    invoke-virtual {v0, v3}, Ljava/nio/ShortBuffer;->position(I)Ljava/nio/Buffer;
-
-    sget-boolean v0, Lcom/google/googlenav/android/I;->a:Z
-
-    if-nez v0, :cond_38
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->g:LA/h;
-
-    if-eqz v0, :cond_36
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->g:LA/h;
-
-    invoke-virtual {v0}, LA/h;->c()V
-
-    iput-object v4, p0, Lcom/google/android/maps/driveabout/vector/bv;->g:LA/h;
-
-    :cond_36
-    iput-object v4, p0, Lcom/google/android/maps/driveabout/vector/bv;->a:[S
-
-    :cond_38
-    :goto_38
-    return-void
-
-    :cond_39
-    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/vector/bv;->a()V
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bv;->g:LA/h;
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bv;->d:Ljava/nio/ShortBuffer;
-
-    invoke-virtual {v0, v1}, LA/h;->a(Ljava/nio/ShortBuffer;)V
-
-    goto :goto_1b
-
-    :cond_44
-    invoke-super {p0, p1}, Lcom/google/android/maps/driveabout/vector/bu;->d(Lcom/google/android/maps/driveabout/vector/aT;)V
-
-    goto :goto_38
+    return v0
 .end method

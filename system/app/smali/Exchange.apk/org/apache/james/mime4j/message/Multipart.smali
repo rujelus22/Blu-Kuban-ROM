@@ -32,37 +32,37 @@
     .registers 2
 
     .prologue
-    .line 54
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
-    .line 45
-    const-string v0, ""
-
-    iput-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->preamble:Ljava/lang/String;
+    .line 55
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     const-string v0, ""
 
-    iput-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->epilogue:Ljava/lang/String;
+    iput-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->preamble:Ljava/lang/String;
 
     .line 47
+    const-string v0, ""
+
+    iput-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->epilogue:Ljava/lang/String;
+
+    .line 48
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->bodyParts:Ljava/util/List;
 
-    .line 48
+    .line 49
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->parent:Lorg/apache/james/mime4j/message/Entity;
 
-    .line 49
+    .line 50
     const-string v0, "alternative"
 
     iput-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->subType:Ljava/lang/String;
 
-    .line 55
+    .line 56
     return-void
 .end method
 
@@ -73,17 +73,17 @@
     .parameter "bodyPart"
 
     .prologue
-    .line 141
+    .line 142
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->bodyParts:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 142
+    .line 143
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Multipart;->parent:Lorg/apache/james/mime4j/message/Entity;
 
     invoke-virtual {p1, v0}, Lorg/apache/james/mime4j/message/BodyPart;->setParent(Lorg/apache/james/mime4j/message/Entity;)V
 
-    .line 143
+    .line 144
     return-void
 .end method
 
@@ -92,10 +92,10 @@
     .parameter "epilogue"
 
     .prologue
-    .line 111
+    .line 112
     iput-object p1, p0, Lorg/apache/james/mime4j/message/Multipart;->epilogue:Ljava/lang/String;
 
-    .line 112
+    .line 113
     return-void
 .end method
 
@@ -104,10 +104,10 @@
     .parameter "parent"
 
     .prologue
-    .line 90
+    .line 91
     iput-object p1, p0, Lorg/apache/james/mime4j/message/Multipart;->parent:Lorg/apache/james/mime4j/message/Entity;
 
-    .line 91
+    .line 92
     iget-object v1, p0, Lorg/apache/james/mime4j/message/Multipart;->bodyParts:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -122,7 +122,7 @@
 
     if-eqz v1, :cond_18
 
-    .line 92
+    .line 93
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
@@ -133,7 +133,7 @@
 
     goto :goto_8
 
-    .line 94
+    .line 95
     :cond_18
     return-void
 .end method
@@ -143,9 +143,9 @@
     .parameter "preamble"
 
     .prologue
-    .line 160
+    .line 161
     iput-object p1, p0, Lorg/apache/james/mime4j/message/Multipart;->preamble:Ljava/lang/String;
 
-    .line 161
+    .line 162
     return-void
 .end method

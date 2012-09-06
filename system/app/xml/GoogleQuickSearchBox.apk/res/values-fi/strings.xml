@@ -53,7 +53,7 @@
     <string name="accessibility_menu_button">Valikko</string>
     <string name="accessibility_close_button">Tyhjennä</string>
     <string name="accessibility_go_button">Valmis</string>
-    <string name="accessibility_voice_button">Puhehaku</string>
+    <string name="accessibility_voice_button">Äänihaku</string>
     <string name="accessibility_widget_search">Haku</string>
     <string name="accessibility_search_history">Historia</string>
     <string name="accessibility_query_refinement">Muokkaa ehdotusta %1$s</string>

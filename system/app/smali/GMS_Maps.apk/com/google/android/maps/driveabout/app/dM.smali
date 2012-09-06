@@ -1,100 +1,353 @@
-.class public Lcom/google/android/maps/driveabout/app/dM;
+.class public Lcom/google/android/maps/driveabout/app/dm;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static a(Landroid/view/Window;)V
-    .registers 2
-
-    const/4 v0, 0x1
-
-    invoke-static {p0, v0}, Lcom/google/android/maps/driveabout/app/dM;->a(Landroid/view/Window;Z)V
-
-    return-void
-.end method
-
-.method public static a(Landroid/view/Window;Z)V
+.method private static a(Landroid/content/Context;Ljava/lang/String;)V
     .registers 6
+    .parameter
+    .parameter
 
-    invoke-virtual {p0}, Landroid/view/Window;->getContext()Landroid/content/Context;
+    .prologue
+    .line 85
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.intent.action.VIEW"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "google.streetview:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v2
+
+    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+
+    .line 86
+    const/high16 v1, 0x1000
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    .line 88
+    :try_start_23
+    invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    :try_end_26
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_23 .. :try_end_26} :catch_27
+
+    .line 92
+    :goto_26
+    return-void
+
+    .line 89
+    :catch_27
+    move-exception v0
+
+    .line 90
+    const-string v1, "Could not start street view app"
+
+    invoke-static {v1, v0}, Lh/a;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_26
+.end method
+
+.method public static a(Landroid/content/Context;Lo/I;)V
+    .registers 5
+    .parameter
+    .parameter
+
+    .prologue
+    .line 24
+    invoke-virtual {p1}, Lo/I;->m()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    .line 25
+    if-eqz v0, :cond_e
 
-    move-result-object v0
+    invoke-virtual {p1}, Lo/I;->b()I
 
-    invoke-virtual {p0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    move-result v1
+
+    const/16 v2, 0x10
+
+    if-ne v1, v2, :cond_f
+
+    .line 35
+    :cond_e
+    :goto_e
+    return-void
+
+    .line 31
+    :cond_f
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "panoid="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    const v2, 0x7f0900aa
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    move-result-object v0
 
-    move-result v2
+    const-string v1, "&cbp=1,"
 
-    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->width:I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz p1, :cond_22
+    move-result-object v0
 
-    const v2, 0x7f0900ab
+    invoke-virtual {p1}, Lo/I;->g()F
 
-    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    move-result v1
 
-    move-result v2
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    if-eqz v2, :cond_44
+    move-result-object v0
 
-    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->height:I
+    const-string v1, ",,0,1"
 
-    :cond_22
-    :goto_22
-    const v2, 0x7f0900ad
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    move-result-object v0
 
-    move-result v2
+    const-string v1, "&title="
 
-    const v3, 0x7f0900ac
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    move-result-object v0
 
-    move-result v0
+    invoke-virtual {p1}, Lo/I;->o()Landroid/text/Spanned;
 
-    const/16 v3, 0x30
+    move-result-object v1
 
-    iput v3, v1, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->y:I
+    move-result-object v1
 
-    if-eqz v0, :cond_40
+    invoke-static {v1}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
 
-    iget v2, v1, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    move-result-object v1
 
-    or-int/lit8 v2, v2, 0x3
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    move-result-object v0
 
-    iput v0, v1, Landroid/view/WindowManager$LayoutParams;->x:I
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :cond_40
-    invoke-virtual {p0, v1}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+    move-result-object v0
 
+    .line 34
+    invoke-static {p0, v0}, Lcom/google/android/maps/driveabout/app/dm;->a(Landroid/content/Context;Ljava/lang/String;)V
+
+    goto :goto_e
+.end method
+
+.method public static a(Landroid/content/Context;Lo/I;Ln/s;)V
+    .registers 9
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    const/16 v5, 0xa
+
+    const v4, 0x358637bd
+
+    .line 44
+    invoke-virtual {p1}, Lo/I;->l()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 45
+    if-eqz v0, :cond_13
+
+    invoke-virtual {p1}, Lo/I;->b()I
+
+    move-result v1
+
+    const/16 v2, 0x10
+
+    if-eq v1, v2, :cond_14
+
+    .line 62
+    :cond_13
+    :goto_13
     return-void
 
-    :cond_44
-    const/4 v2, -0x1
+    .line 51
+    :cond_14
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->height:I
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    goto :goto_22
+    const-string v2, "panoid="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "&cbp=1,"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Lo/I;->g()F
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ",,0,1"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "&title="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Lo/I;->o()Landroid/text/Spanned;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 54
+    invoke-virtual {p1}, Lo/I;->a()Ln/Q;
+
+    move-result-object v1
+
+    .line 55
+    invoke-virtual {v1}, Ln/Q;->a()I
+
+    move-result v2
+
+    invoke-virtual {p2}, Ln/s;->a()I
+
+    move-result v3
+
+    sub-int/2addr v2, v3
+
+    invoke-static {v2}, Ljava/lang/Math;->abs(I)I
+
+    move-result v2
+
+    if-gt v2, v5, :cond_73
+
+    invoke-virtual {v1}, Ln/Q;->c()I
+
+    move-result v1
+
+    invoke-virtual {p2}, Ln/s;->b()I
+
+    move-result v2
+
+    sub-int/2addr v1, v2
+
+    invoke-static {v1}, Ljava/lang/Math;->abs(I)I
+
+    move-result v1
+
+    if-le v1, v5, :cond_a0
+
+    .line 57
+    :cond_73
+    invoke-virtual {p2}, Ln/s;->a()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    mul-float/2addr v1, v4
+
+    .line 58
+    invoke-virtual {p2}, Ln/s;->b()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    mul-float/2addr v2, v4
+
+    .line 59
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, "&faceto_ll="
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ","
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 61
+    :cond_a0
+    invoke-static {p0, v0}, Lcom/google/android/maps/driveabout/app/dm;->a(Landroid/content/Context;Ljava/lang/String;)V
+
+    goto/16 :goto_13
 .end method

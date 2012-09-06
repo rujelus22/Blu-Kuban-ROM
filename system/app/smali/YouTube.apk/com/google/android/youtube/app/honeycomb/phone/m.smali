@@ -1,95 +1,90 @@
-.class final Lcom/google/android/youtube/app/honeycomb/phone/m;
+.class final synthetic Lcom/google/android/youtube/app/honeycomb/phone/m;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lcom/google/android/youtube/core/async/g;
 
-
-# instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;)V
+.method static constructor <clinit>()V
     .registers 3
-    .parameter
 
     .prologue
-    .line 379
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/app/honeycomb/phone/m;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;B)V
-    .registers 3
-    .parameter
-    .parameter
-
-    .prologue
-    .line 379
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/m;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
-    .registers 5
-    .parameter
-    .parameter
-
-    .prologue
-    .line 379
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/m;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->c(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;)Lcom/google/android/youtube/core/e;
+    .line 337
+    invoke-static {}, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->values()[Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Lcom/google/android/youtube/core/e;->b(Ljava/lang/Throwable;)V
+    array-length v0, v0
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/m;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+    new-array v0, v0, [I
 
-    const/4 v1, 0x0
+    sput-object v0, Lcom/google/android/youtube/app/honeycomb/phone/m;->a:[I
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;Z)Z
+    :try_start_9
+    sget-object v0, Lcom/google/android/youtube/app/honeycomb/phone/m;->a:[I
 
-    return-void
-.end method
+    sget-object v1, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->SUBSCRIBED:Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;
 
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 6
-    .parameter
-    .parameter
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->ordinal()I
 
-    .prologue
-    .line 379
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/m;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
-
-    const v1, 0x7f0a0127
+    move-result v1
 
     const/4 v2, 0x1
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/youtube/core/utils/Util;->a(Landroid/content/Context;II)V
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_2f
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/m;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/android/youtube/app/honeycomb/phone/m;->a:[I
 
-    const/4 v1, 0x0
+    sget-object v1, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->NOT_SUBSCRIBED:Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;Landroid/net/Uri;)Landroid/net/Uri;
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->ordinal()I
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/m;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+    move-result v1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x2
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;Z)Z
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_2d
 
+    :goto_1f
+    :try_start_1f
+    sget-object v0, Lcom/google/android/youtube/app/honeycomb/phone/m;->a:[I
+
+    sget-object v1, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->WORKING:Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_2b
+
+    :goto_2a
     return-void
+
+    :catch_2b
+    move-exception v0
+
+    goto :goto_2a
+
+    :catch_2d
+    move-exception v0
+
+    goto :goto_1f
+
+    :catch_2f
+    move-exception v0
+
+    goto :goto_14
 .end method

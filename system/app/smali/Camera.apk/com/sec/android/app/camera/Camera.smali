@@ -15308,7 +15308,7 @@
     .line 4550
     iget-object v2, p0, Lcom/sec/android/app/camera/Camera;->mDeviceListMenuWrapper:Lcom/sec/android/glview/TwGLTitleDecorator;
 
-    const v3, 0x7f020178
+    const v3, 0x7f020177
 
     invoke-virtual {v2, v3}, Lcom/sec/android/glview/TwGLTitleDecorator;->setNinePatchBackground(I)Z
     :try_end_7e

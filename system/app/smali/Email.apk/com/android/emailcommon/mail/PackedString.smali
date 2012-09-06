@@ -46,7 +46,7 @@
     .registers 1
 
     .prologue
-    .line 43
+    .line 42
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -61,19 +61,32 @@
     .parameter "string"
 
     .prologue
-    .line 51
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 48
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
+    .line 49
     iput-object p1, p0, Lcom/android/emailcommon/mail/PackedString;->mString:Ljava/lang/String;
 
-    .line 53
+    .line 50
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/emailcommon/mail/PackedString;->mExploded:Ljava/util/HashMap;
 
-    .line 54
+    .line 51
     return-void
+.end method
+
+.method static synthetic access$000(Ljava/lang/String;)Ljava/util/HashMap;
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 30
+    invoke-static {p0}, Lcom/android/emailcommon/mail/PackedString;->explode(Ljava/lang/String;)Ljava/util/HashMap;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method private static explode(Ljava/lang/String;)Ljava/util/HashMap;
@@ -97,7 +110,7 @@
 
     const/4 v8, -0x1
 
-    .line 87
+    .line 81
     if-eqz p0, :cond_a
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -106,71 +119,71 @@
 
     if-nez v7, :cond_d
 
-    .line 88
+    .line 82
     :cond_a
     sget-object v3, Lcom/android/emailcommon/mail/PackedString;->EMPTY_MAP:Ljava/util/HashMap;
 
-    .line 121
+    .line 113
     :cond_c
     return-object v3
 
-    .line 90
+    .line 84
     :cond_d
     new-instance v3, Ljava/util/HashMap;
 
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 92
+    .line 86
     .local v3, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    .line 93
+    .line 87
     .local v2, length:I
     const/4 v1, 0x0
 
-    .line 94
+    .line 88
     .local v1, elementStartIndex:I
     const/4 v0, 0x0
 
-    .line 95
+    .line 89
     .local v0, elementEndIndex:I
     invoke-virtual {p0, v9}, Ljava/lang/String;->indexOf(I)I
 
     move-result v5
 
-    .line 97
+    .line 91
     .local v5, tagEndIndex:I
     :goto_1c
     if-ge v1, v2, :cond_c
 
-    .line 98
+    .line 92
     const/4 v7, 0x1
 
     invoke-virtual {p0, v7, v1}, Ljava/lang/String;->indexOf(II)I
 
     move-result v0
 
-    .line 99
+    .line 93
     if-ne v0, v8, :cond_26
 
-    .line 100
+    .line 94
     move v0, v2
 
-    .line 104
+    .line 98
     :cond_26
     if-eq v5, v8, :cond_2a
 
     if-gt v0, v5, :cond_3c
 
-    .line 109
+    .line 101
     :cond_2a
     invoke-virtual {p0, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 110
+    .line 102
     .local v6, value:Ljava/lang/String;
     invoke-virtual {v3}, Ljava/util/HashMap;->size()I
 
@@ -180,18 +193,18 @@
 
     move-result-object v4
 
-    .line 117
+    .line 109
     .local v4, tag:Ljava/lang/String;
     :goto_36
     invoke-virtual {v3, v4, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 118
+    .line 110
     add-int/lit8 v1, v0, 0x1
 
-    .line 119
+    .line 111
     goto :goto_1c
 
-    .line 112
+    .line 104
     .end local v4           #tag:Ljava/lang/String;
     .end local v6           #value:Ljava/lang/String;
     :cond_3c
@@ -199,7 +212,7 @@
 
     move-result-object v6
 
-    .line 113
+    .line 105
     .restart local v6       #value:Ljava/lang/String;
     add-int/lit8 v7, v5, 0x1
 
@@ -207,7 +220,7 @@
 
     move-result-object v4
 
-    .line 115
+    .line 107
     .restart local v4       #tag:Ljava/lang/String;
     add-int/lit8 v7, v0, 0x1
 
@@ -225,12 +238,12 @@
     .parameter "tag"
 
     .prologue
-    .line 64
+    .line 59
     iget-object v0, p0, Lcom/android/emailcommon/mail/PackedString;->mExploded:Ljava/util/HashMap;
 
     if-nez v0, :cond_c
 
-    .line 65
+    .line 60
     iget-object v0, p0, Lcom/android/emailcommon/mail/PackedString;->mString:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/android/emailcommon/mail/PackedString;->explode(Ljava/lang/String;)Ljava/util/HashMap;
@@ -239,7 +252,7 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/mail/PackedString;->mExploded:Ljava/util/HashMap;
 
-    .line 67
+    .line 62
     :cond_c
     iget-object v0, p0, Lcom/android/emailcommon/mail/PackedString;->mExploded:Ljava/util/HashMap;
 

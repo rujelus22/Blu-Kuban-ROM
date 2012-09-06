@@ -16,12 +16,12 @@
     .registers 2
 
     .prologue
-    .line 65
+    .line 70
     const/16 v0, 0x20
 
     invoke-direct {p0, v0}, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;-><init>(I)V
 
-    .line 66
+    .line 71
     return-void
 .end method
 
@@ -32,13 +32,13 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 75
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 80
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 76
+    .line 81
     if-gtz p1, :cond_e
 
-    .line 77
+    .line 82
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "The size must be greater than 0"
@@ -47,7 +47,7 @@
 
     throw v0
 
-    .line 79
+    .line 84
     :cond_e
     add-int/lit8 v0, p1, 0x1
 
@@ -55,13 +55,13 @@
 
     iput-object v0, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->buffer:[B
 
-    .line 80
+    .line 85
     iput v1, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->head:I
 
-    .line 81
+    .line 86
     iput v1, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->tail:I
 
-    .line 82
+    .line 87
     return-void
 .end method
 
@@ -71,7 +71,7 @@
     .parameter "x1"
 
     .prologue
-    .line 50
+    .line 55
     invoke-direct {p0, p1}, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->increment(I)I
 
     move-result v0
@@ -85,7 +85,7 @@
     .parameter "x1"
 
     .prologue
-    .line 50
+    .line 55
     invoke-direct {p0, p1}, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->decrement(I)I
 
     move-result v0
@@ -98,20 +98,20 @@
     .parameter "index"
 
     .prologue
-    .line 202
+    .line 207
     add-int/lit8 p1, p1, -0x1
 
-    .line 203
+    .line 208
     if-gez p1, :cond_9
 
-    .line 204
+    .line 209
     iget-object v0, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->buffer:[B
 
     array-length v0, v0
 
     add-int/lit8 p1, v0, -0x1
 
-    .line 206
+    .line 211
     :cond_9
     return p1
 .end method
@@ -121,20 +121,20 @@
     .parameter "index"
 
     .prologue
-    .line 188
+    .line 193
     add-int/lit8 p1, p1, 0x1
 
-    .line 189
+    .line 194
     iget-object v0, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->buffer:[B
 
     array-length v0, v0
 
     if-lt p1, v0, :cond_8
 
-    .line 190
+    .line 195
     const/4 p1, 0x0
 
-    .line 192
+    .line 197
     :cond_8
     return p1
 .end method
@@ -148,7 +148,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 118
+    .line 123
     invoke-virtual {p0}, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->size()I
 
     move-result v3
@@ -161,7 +161,7 @@
 
     if-lt v3, v4, :cond_39
 
-    .line 119
+    .line 124
     iget-object v3, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->buffer:[B
 
     array-length v3, v3
@@ -174,11 +174,11 @@
 
     new-array v2, v3, [B
 
-    .line 121
+    .line 126
     .local v2, tmp:[B
     const/4 v1, 0x0
 
-    .line 122
+    .line 127
     .local v1, j:I
     iget v0, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->head:I
 
@@ -189,47 +189,47 @@
 
     if-eq v0, v3, :cond_33
 
-    .line 123
+    .line 128
     iget-object v3, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->buffer:[B
 
     aget-byte v3, v3, v0
 
     aput-byte v3, v2, v1
 
-    .line 124
+    .line 129
     iget-object v3, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->buffer:[B
 
     aput-byte v5, v3, v0
 
-    .line 126
+    .line 131
     add-int/lit8 v1, v1, 0x1
 
-    .line 127
+    .line 132
     add-int/lit8 v0, v0, 0x1
 
-    .line 128
+    .line 133
     iget-object v3, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->buffer:[B
 
     array-length v3, v3
 
     if-ne v0, v3, :cond_1a
 
-    .line 129
+    .line 134
     const/4 v0, 0x0
 
     goto :goto_1a
 
-    .line 133
+    .line 138
     :cond_33
     iput-object v2, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->buffer:[B
 
-    .line 134
+    .line 139
     iput v5, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->head:I
 
-    .line 135
+    .line 140
     iput v1, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->tail:I
 
-    .line 138
+    .line 143
     .end local v0           #i:I
     .end local v1           #j:I
     .end local v2           #tmp:[B
@@ -240,14 +240,14 @@
 
     aput-byte p1, v3, v4
 
-    .line 139
+    .line 144
     iget v3, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->tail:I
 
     add-int/lit8 v3, v3, 0x1
 
     iput v3, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->tail:I
 
-    .line 140
+    .line 145
     iget v3, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->tail:I
 
     iget-object v4, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->buffer:[B
@@ -256,10 +256,10 @@
 
     if-lt v3, v4, :cond_4e
 
-    .line 141
+    .line 146
     iput v5, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->tail:I
 
-    .line 143
+    .line 148
     :cond_4e
     const/4 v3, 0x1
 
@@ -270,7 +270,7 @@
     .registers 2
 
     .prologue
-    .line 107
+    .line 112
     invoke-virtual {p0}, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->size()I
 
     move-result v0
@@ -292,14 +292,14 @@
     .registers 4
 
     .prologue
-    .line 167
+    .line 172
     invoke-virtual {p0}, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->isEmpty()Z
 
     move-result v1
 
     if-eqz v1, :cond_e
 
-    .line 168
+    .line 173
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "The buffer is already empty"
@@ -308,7 +308,7 @@
 
     throw v1
 
-    .line 171
+    .line 176
     :cond_e
     iget-object v1, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->buffer:[B
 
@@ -316,7 +316,7 @@
 
     aget-byte v0, v1, v2
 
-    .line 173
+    .line 178
     .local v0, element:B
     iget v1, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->head:I
 
@@ -324,7 +324,7 @@
 
     iput v1, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->head:I
 
-    .line 174
+    .line 179
     iget v1, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->head:I
 
     iget-object v2, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->buffer:[B
@@ -333,12 +333,12 @@
 
     if-lt v1, v2, :cond_24
 
-    .line 175
+    .line 180
     const/4 v1, 0x0
 
     iput v1, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->head:I
 
-    .line 178
+    .line 183
     :cond_24
     return v0
 .end method
@@ -347,10 +347,10 @@
     .registers 4
 
     .prologue
-    .line 90
+    .line 95
     const/4 v0, 0x0
 
-    .line 92
+    .line 97
     .local v0, size:I
     iget v1, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->tail:I
 
@@ -358,7 +358,7 @@
 
     if-ge v1, v2, :cond_12
 
-    .line 93
+    .line 98
     iget-object v1, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->buffer:[B
 
     array-length v1, v1
@@ -371,11 +371,11 @@
 
     add-int v0, v1, v2
 
-    .line 98
+    .line 103
     :goto_11
     return v0
 
-    .line 95
+    .line 100
     :cond_12
     iget v1, p0, Lorg/apache/james/mime4j/decoder/UnboundedFifoByteBuffer;->tail:I
 

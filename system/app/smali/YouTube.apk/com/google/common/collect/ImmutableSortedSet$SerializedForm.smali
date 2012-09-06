@@ -23,16 +23,16 @@
     .parameter
 
     .prologue
-    .line 663
+    .line 677
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 664
+    .line 678
     iput-object p1, p0, Lcom/google/common/collect/ImmutableSortedSet$SerializedForm;->comparator:Ljava/util/Comparator;
 
-    .line 665
+    .line 679
     iput-object p2, p0, Lcom/google/common/collect/ImmutableSortedSet$SerializedForm;->elements:[Ljava/lang/Object;
 
-    .line 666
+    .line 680
     return-void
 .end method
 
@@ -42,22 +42,22 @@
     .registers 3
 
     .prologue
-    .line 670
-    new-instance v1, Lcom/google/common/collect/cp;
+    .line 684
+    new-instance v1, Lcom/google/common/collect/ea;
 
     iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedSet$SerializedForm;->comparator:Ljava/util/Comparator;
 
-    invoke-direct {v1, v0}, Lcom/google/common/collect/cp;-><init>(Ljava/util/Comparator;)V
+    invoke-direct {v1, v0}, Lcom/google/common/collect/ea;-><init>(Ljava/util/Comparator;)V
 
     iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedSet$SerializedForm;->elements:[Ljava/lang/Object;
 
     check-cast v0, [Ljava/lang/Object;
 
-    invoke-virtual {v1, v0}, Lcom/google/common/collect/cp;->c([Ljava/lang/Object;)Lcom/google/common/collect/cp;
+    invoke-virtual {v1, v0}, Lcom/google/common/collect/ea;->c([Ljava/lang/Object;)Lcom/google/common/collect/ea;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/common/collect/cp;->a()Lcom/google/common/collect/ImmutableSortedSet;
+    invoke-virtual {v0}, Lcom/google/common/collect/ea;->a()Lcom/google/common/collect/ImmutableSortedSet;
 
     move-result-object v0
 

@@ -13,15 +13,9 @@
     name = "MessageRetrievalListener"
 .end annotation
 
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/android/emailcommon/mail/Folder$MessageRetrievalListener$DOWNLOAD_STATUS;
-    }
-.end annotation
-
 
 # virtual methods
-.method public abstract loadAttachmentProgress(ILcom/android/emailcommon/mail/Folder$MessageRetrievalListener$DOWNLOAD_STATUS;)V
+.method public abstract loadAttachmentProgress(I)V
 .end method
 
 .method public abstract messageRetrieved(Lcom/android/emailcommon/mail/Message;)V

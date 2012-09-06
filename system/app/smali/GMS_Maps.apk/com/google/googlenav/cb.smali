@@ -1,205 +1,98 @@
-.class public Lcom/google/googlenav/cb;
-.super Lat/a;
+.class Lcom/google/googlenav/cb;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field a:Z
-
-.field b:Ljava/util/List;
-
-.field private final c:I
-
-.field private final d:J
-
-.field private final e:Lcom/google/googlenav/cc;
-
-.field private f:I
+.field final synthetic a:Lcom/google/googlenav/ca;
 
 
 # direct methods
-.method public constructor <init>(IJLcom/google/googlenav/cc;)V
-    .registers 6
+.method constructor <init>(Lcom/google/googlenav/ca;)V
+    .registers 2
+    .parameter
 
-    invoke-direct {p0}, Lat/a;-><init>()V
+    .prologue
+    .line 397
+    iput-object p1, p0, Lcom/google/googlenav/cb;->a:Lcom/google/googlenav/ca;
 
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/google/googlenav/cb;->b:Ljava/util/List;
-
-    iput p1, p0, Lcom/google/googlenav/cb;->c:I
-
-    iput-wide p2, p0, Lcom/google/googlenav/cb;->d:J
-
-    iput-object p4, p0, Lcom/google/googlenav/cb;->e:Lcom/google/googlenav/cc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()I
-    .registers 2
-
-    const/16 v0, 0x73
-
-    return v0
-.end method
-
-.method public a(Ljava/io/DataOutput;)V
+.method public run()V
     .registers 6
 
-    new-instance v0, Lam/b;
+    .prologue
+    .line 400
+    iget-object v1, p0, Lcom/google/googlenav/cb;->a:Lcom/google/googlenav/ca;
 
-    sget-object v1, LbD/hE;->d:Lam/e;
+    monitor-enter v1
 
-    invoke-direct {v0, v1}, Lam/b;-><init>(Lam/e;)V
+    .line 403
+    :try_start_3
+    invoke-static {}, Lac/h;->a()Lac/h;
 
-    const/4 v1, 0x2
+    move-result-object v0
 
-    iget v2, p0, Lcom/google/googlenav/cb;->c:I
+    .line 404
+    iget-object v2, p0, Lcom/google/googlenav/cb;->a:Lcom/google/googlenav/ca;
 
-    invoke-virtual {v0, v1, v2}, Lam/b;->h(II)V
+    invoke-static {v2}, Lcom/google/googlenav/ca;->a(Lcom/google/googlenav/ca;)Lcom/google/googlenav/cl;
 
-    const/4 v1, 0x1
+    move-result-object v2
 
-    iget-wide v2, p0, Lcom/google/googlenav/cb;->d:J
+    if-nez v2, :cond_1b
 
-    invoke-virtual {v0, v1, v2, v3}, Lam/b;->b(IJ)V
+    .line 405
+    iget-object v2, p0, Lcom/google/googlenav/cb;->a:Lcom/google/googlenav/ca;
 
-    check-cast p1, Ljava/io/OutputStream;
+    new-instance v3, Lcom/google/googlenav/cl;
 
-    invoke-virtual {v0, p1}, Lam/b;->a(Ljava/io/OutputStream;)V
+    iget-object v4, p0, Lcom/google/googlenav/cb;->a:Lcom/google/googlenav/ca;
 
+    invoke-direct {v3, v4}, Lcom/google/googlenav/cl;-><init>(Lcom/google/googlenav/ca;)V
+
+    invoke-static {v2, v3}, Lcom/google/googlenav/ca;->a(Lcom/google/googlenav/ca;Lcom/google/googlenav/cl;)Lcom/google/googlenav/cl;
+
+    .line 408
+    :cond_1b
+    const/16 v2, 0x54
+
+    const-string v3, "ts"
+
+    const-string v4, "r"
+
+    invoke-static {v2, v3, v4}, LaT/k;->a(ILjava/lang/String;Ljava/lang/String;)V
+
+    .line 411
+    iget-object v2, p0, Lcom/google/googlenav/cb;->a:Lcom/google/googlenav/ca;
+
+    invoke-static {v2}, Lcom/google/googlenav/ca;->a(Lcom/google/googlenav/ca;)Lcom/google/googlenav/cl;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lac/h;->c(Lac/g;)V
+
+    .line 412
+    monitor-exit v1
+
+    .line 413
     return-void
-.end method
 
-.method public a(Ljava/io/DataInput;)Z
-    .registers 8
+    .line 412
+    :catchall_2f
+    move-exception v0
 
-    const/4 v5, 0x2
+    monitor-exit v1
+    :try_end_31
+    .catchall {:try_start_3 .. :try_end_31} :catchall_2f
 
-    const/4 v2, 0x0
-
-    const/4 v1, 0x1
-
-    sget-object v0, LbD/hE;->f:Lam/e;
-
-    invoke-static {v0, p1}, Lam/g;->a(Lam/e;Ljava/io/DataInput;)Lam/b;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Lam/b;->k(I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_15
-
-    iput-boolean v2, p0, Lcom/google/googlenav/cb;->a:Z
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lcom/google/googlenav/cb;->f:I
-
-    :cond_14
-    return v1
-
-    :cond_15
-    invoke-virtual {v3, v1}, Lam/b;->d(I)I
-
-    move-result v0
-
-    iput v0, p0, Lcom/google/googlenav/cb;->f:I
-
-    iget v0, p0, Lcom/google/googlenav/cb;->f:I
-
-    if-nez v0, :cond_3e
-
-    move v0, v1
-
-    :goto_20
-    iput-boolean v0, p0, Lcom/google/googlenav/cb;->a:Z
-
-    iget-boolean v0, p0, Lcom/google/googlenav/cb;->a:Z
-
-    if-eqz v0, :cond_14
-
-    invoke-virtual {v3, v5}, Lam/b;->k(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_14
-
-    :goto_2c
-    invoke-virtual {v3, v5}, Lam/b;->l(I)I
-
-    move-result v0
-
-    if-ge v2, v0, :cond_14
-
-    iget-object v0, p0, Lcom/google/googlenav/cb;->b:Ljava/util/List;
-
-    invoke-virtual {v3, v5, v2}, Lam/b;->e(II)Lam/b;
-
-    move-result-object v4
-
-    invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_2c
-
-    :cond_3e
-    move v0, v2
-
-    goto :goto_20
-.end method
-
-.method public b()V
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/cb;->e:Lcom/google/googlenav/cc;
-
-    if-eqz v0, :cond_d
-
-    iget-object v0, p0, Lcom/google/googlenav/cb;->e:Lcom/google/googlenav/cc;
-
-    iget-boolean v1, p0, Lcom/google/googlenav/cb;->a:Z
-
-    iget-object v2, p0, Lcom/google/googlenav/cb;->b:Ljava/util/List;
-
-    invoke-interface {v0, v1, v2}, Lcom/google/googlenav/cc;->a(ZLjava/util/List;)V
-
-    :cond_d
-    return-void
-.end method
-
-.method public c_()Z
-    .registers 2
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public j_()V
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/cb;->e:Lcom/google/googlenav/cc;
-
-    if-eqz v0, :cond_f
-
-    iget-object v0, p0, Lcom/google/googlenav/cb;->e:Lcom/google/googlenav/cc;
-
-    const/4 v1, 0x0
-
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {v0, v1, v2}, Lcom/google/googlenav/cc;->a(ZLjava/util/List;)V
-
-    :cond_f
-    return-void
+    throw v0
 .end method

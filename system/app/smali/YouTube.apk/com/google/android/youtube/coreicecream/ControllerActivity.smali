@@ -1,18 +1,16 @@
 .class public abstract Lcom/google/android/youtube/coreicecream/ControllerActivity;
-.super Landroid/app/Activity;
+.super Landroid/support/v4/app/FragmentActivity;
 .source "SourceFile"
 
 
 # instance fields
-.field private final a:Ljava/util/List;
+.field private final m:Ljava/util/List;
 
-.field private final b:Ljava/util/Map;
+.field private n:Lcom/google/android/youtube/coreicecream/Controller;
 
-.field private c:Lcom/google/android/youtube/coreicecream/a;
+.field private o:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
 
-.field private d:Z
-
-.field private e:Z
+.field private p:Z
 
 
 # direct methods
@@ -20,189 +18,98 @@
     .registers 2
 
     .prologue
-    .line 42
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    .line 41
+    invoke-direct {p0}, Landroid/support/v4/app/FragmentActivity;-><init>()V
 
-    .line 43
+    .line 42
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a:Ljava/util/List;
+    iput-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
+
+    .line 43
+    sget-object v0, Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;->STOPPED:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
+
+    iput-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->o:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
 
     .line 44
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->b:Ljava/util/Map;
-
-    .line 45
     return-void
 .end method
 
 
 # virtual methods
-.method protected a()V
-    .registers 1
-
-    .prologue
-    .line 270
-    return-void
-.end method
-
-.method protected a(Lcom/google/android/youtube/coreicecream/a;)V
-    .registers 4
+.method protected final a(Lcom/google/android/youtube/coreicecream/Controller;)I
+    .registers 3
     .parameter
 
     .prologue
-    .line 89
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 82
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
 
-    .line 90
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/k;->a(Z)V
-
-    .line 92
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
-
-    if-eq p1, v0, :cond_36
-
-    .line 93
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
-
-    if-eqz v0, :cond_19
-
-    .line 94
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/coreicecream/a;->h_()V
-
-    .line 96
-    :cond_19
-    iput-object p1, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
-
-    .line 98
-    invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->invalidateOptionsMenu()V
-
-    .line 100
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->b:Ljava/util/Map;
-
-    iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    .line 101
-    if-eqz v0, :cond_2d
-
-    .line 102
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->setContentView(Landroid/view/View;)V
-
-    .line 104
-    :cond_2d
-    iget-boolean v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->d:Z
-
-    if-eqz v0, :cond_36
-
-    .line 105
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/coreicecream/a;->i_()V
-
-    .line 108
-    :cond_36
-    return-void
+    return v0
 .end method
 
-.method protected a(Lcom/google/android/youtube/coreicecream/a;Landroid/os/Bundle;)V
-    .registers 7
+.method protected a(Lcom/google/android/youtube/coreicecream/Controller;Landroid/os/Bundle;)V
+    .registers 6
     .parameter
     .parameter
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 58
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 59
-    invoke-virtual {p1}, Lcom/google/android/youtube/coreicecream/a;->a()I
-
-    move-result v0
-
     .line 61
-    if-ltz v0, :cond_4d
-
-    .line 62
-    invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->getLayoutInflater()Landroid/view/LayoutInflater;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v0
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 63
-    iget-object v2, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->b:Ljava/util/Map;
+    const/4 v0, 0x0
 
-    invoke-interface {v2, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 64
+    if-eqz p2, :cond_1f
 
     .line 65
-    :goto_17
-    iget-object v2, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
 
-    invoke-interface {v2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    .line 68
-    if-eqz p2, :cond_3d
+    move-result v0
+
+    .line 66
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "controller_state_"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+
+    move-result-object v0
 
     .line 69
-    iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a:Ljava/util/List;
+    :cond_1f
+    invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->getLayoutInflater()Landroid/view/LayoutInflater;
 
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    move-result-object v1
 
-    move-result v1
-
-    add-int/lit8 v1, v1, -0x1
+    invoke-virtual {p1, v1, v0}, Lcom/google/android/youtube/coreicecream/Controller;->a(Landroid/view/LayoutInflater;Landroid/os/Bundle;)V
 
     .line 70
-    new-instance v2, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string v3, "controller_state_"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
-
-    move-result-object v1
-
-    .line 73
-    :cond_3d
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/youtube/coreicecream/a;->a(Landroid/view/View;Landroid/os/Bundle;)V
-
-    .line 75
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a:Ljava/util/List;
+    .line 72
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -210,53 +117,14 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_4c
+    if-ne v0, v1, :cond_37
 
-    .line 76
-    invoke-virtual {p0, p1}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a(Lcom/google/android/youtube/coreicecream/a;)V
+    .line 73
+    invoke-virtual {p0, p1}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->b(Lcom/google/android/youtube/coreicecream/Controller;)V
 
-    .line 78
-    :cond_4c
+    .line 75
+    :cond_37
     return-void
-
-    :cond_4d
-    move-object v0, v1
-
-    goto :goto_17
-.end method
-
-.method public final a(Z)V
-    .registers 4
-    .parameter
-
-    .prologue
-    const/4 v1, 0x4
-
-    .line 163
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->e:Z
-
-    .line 164
-    invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->getActionBar()Landroid/app/ActionBar;
-
-    move-result-object v0
-
-    .line 165
-    invoke-virtual {v0, v1, v1}, Landroid/app/ActionBar;->setDisplayOptions(II)V
-
-    .line 167
-    return-void
-.end method
-
-.method protected final b()Lcom/google/android/youtube/coreicecream/a;
-    .registers 2
-
-    .prologue
-    .line 280
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
-
-    return-object v0
 .end method
 
 .method protected final b(Landroid/os/Bundle;)V
@@ -264,10 +132,10 @@
     .parameter
 
     .prologue
-    .line 116
+    .line 160
     if-eqz p1, :cond_1e
 
-    .line 117
+    .line 161
     const-string v0, "selected_controller_index"
 
     const/4 v1, -0x1
@@ -276,10 +144,10 @@
 
     move-result v0
 
-    .line 118
+    .line 162
     if-ltz v0, :cond_1e
 
-    iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -287,39 +155,155 @@
 
     if-ge v0, v1, :cond_1e
 
-    .line 119
-    iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a:Ljava/util/List;
+    .line 163
+    iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/coreicecream/a;
+    check-cast v0, Lcom/google/android/youtube/coreicecream/Controller;
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a(Lcom/google/android/youtube/coreicecream/a;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->b(Lcom/google/android/youtube/coreicecream/Controller;)V
 
-    .line 122
+    .line 166
     :cond_1e
     return-void
 .end method
 
-.method protected final b(Lcom/google/android/youtube/coreicecream/a;)V
+.method protected final b(Lcom/google/android/youtube/coreicecream/Controller;)V
+    .registers 6
+    .parameter
+
+    .prologue
+    .line 104
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 105
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/n;->a(Z)V
+
+    .line 107
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
+
+    if-eq p1, v0, :cond_38
+
+    .line 108
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
+
+    if-eqz v0, :cond_30
+
+    .line 109
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
+
+    sget-object v1, Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;->STOPPED:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
+
+    const-string v2, "controller cannot be null"
+
+    invoke-static {v0, v2}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v2, "newState cannot be null"
+
+    invoke-static {v1, v2}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v2, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
+
+    invoke-interface {v2, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    const-string v3, "given controller not managed by this activity"
+
+    invoke-static {v2, v3}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/coreicecream/Controller;->a(Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;)V
+
+    .line 111
+    :cond_30
+    iput-object p1, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
+
+    .line 113
+    invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->invalidateOptionsMenu()V
+
+    .line 114
+    invoke-virtual {p0, p1}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c(Lcom/google/android/youtube/coreicecream/Controller;)V
+
+    .line 116
+    :cond_38
+    return-void
+.end method
+
+.method public final b(Z)V
+    .registers 4
+    .parameter
+
+    .prologue
+    const/4 v1, 0x4
+
+    .line 231
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->p:Z
+
+    .line 232
+    invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->getActionBar()Landroid/app/ActionBar;
+
+    move-result-object v0
+
+    .line 233
+    invoke-virtual {v0, v1, v1}, Landroid/app/ActionBar;->setDisplayOptions(II)V
+
+    .line 235
+    return-void
+.end method
+
+.method protected c(Lcom/google/android/youtube/coreicecream/Controller;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 148
+    invoke-virtual {p1}, Lcom/google/android/youtube/coreicecream/Controller;->s()Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_d
+
+    .line 149
+    invoke-virtual {p1}, Lcom/google/android/youtube/coreicecream/Controller;->s()Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->setContentView(Landroid/view/View;)V
+
+    .line 151
+    :cond_d
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->o:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/coreicecream/Controller;->a(Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;)V
+
+    .line 152
+    return-void
+.end method
+
+.method protected final d(Lcom/google/android/youtube/coreicecream/Controller;)V
     .registers 7
     .parameter
 
     .prologue
     const/4 v4, 0x0
 
-    .line 303
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->b:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 378
+    invoke-virtual {p1}, Lcom/google/android/youtube/coreicecream/Controller;->s()Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Landroid/view/View;
-
-    .line 304
+    .line 379
     invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v1
@@ -336,7 +320,7 @@
 
     move-result-object v1
 
-    .line 305
+    .line 380
     const/4 v2, 0x0
 
     invoke-virtual {v1, v4, v2}, Landroid/content/res/TypedArray;->getDimension(IF)F
@@ -345,7 +329,7 @@
 
     float-to-int v1, v1
 
-    .line 306
+    .line 381
     invoke-virtual {v0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v2
@@ -366,23 +350,41 @@
 
     invoke-virtual {v0, v2, v1, v3, v4}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 311
+    .line 386
     return-void
 .end method
 
-.method protected final onActivityResult(IILandroid/content/Intent;)V
+.method protected e()V
+    .registers 1
+
+    .prologue
+    .line 337
+    return-void
+.end method
+
+.method protected final f()Lcom/google/android/youtube/coreicecream/Controller;
+    .registers 2
+
+    .prologue
+    .line 353
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
+
+    return-object v0
+.end method
+
+.method protected onActivityResult(IILandroid/content/Intent;)V
     .registers 5
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 295
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    .line 370
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
-    invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/youtube/coreicecream/a;->a(IILandroid/content/Intent;)Z
+    invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/youtube/coreicecream/Controller;->a(IILandroid/content/Intent;)Z
 
-    .line 296
+    .line 371
     return-void
 .end method
 
@@ -390,32 +392,32 @@
     .registers 2
 
     .prologue
-    .line 274
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    .line 341
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/coreicecream/a;->i()Z
+    invoke-virtual {v0}, Lcom/google/android/youtube/coreicecream/Controller;->l()Z
 
     move-result v0
 
     if-nez v0, :cond_b
 
-    .line 275
-    invoke-super {p0}, Landroid/app/Activity;->onBackPressed()V
+    .line 342
+    invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onBackPressed()V
 
-    .line 277
+    .line 344
     :cond_b
     return-void
 .end method
 
-.method public onCreate(Landroid/os/Bundle;)V
+.method protected onCreate(Landroid/os/Bundle;)V
     .registers 4
     .parameter
 
     .prologue
-    .line 49
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    .line 52
+    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 50
+    .line 53
     invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -424,30 +426,30 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->requestFeature(I)Z
 
-    .line 51
+    .line 54
     const/4 v0, 0x3
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->setVolumeControlStream(I)V
 
-    .line 52
+    .line 55
     return-void
 .end method
 
-.method public final onCreateDialog(I)Landroid/app/Dialog;
+.method protected final onCreateDialog(I)Landroid/app/Dialog;
     .registers 3
     .parameter
 
     .prologue
-    .line 218
+    .line 285
     invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->isFinishing()Z
 
     move-result v0
 
     if-nez v0, :cond_d
 
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/coreicecream/a;->c(I)Landroid/app/Dialog;
+    invoke-virtual {v0, p1}, Lcom/google/android/youtube/coreicecream/Controller;->c(I)Landroid/app/Dialog;
 
     move-result-object v0
 
@@ -460,22 +462,22 @@
     goto :goto_c
 .end method
 
-.method public final onCreateDialog(ILandroid/os/Bundle;)Landroid/app/Dialog;
+.method protected final onCreateDialog(ILandroid/os/Bundle;)Landroid/app/Dialog;
     .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 223
+    .line 290
     invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->isFinishing()Z
 
     move-result v0
 
     if-nez v0, :cond_d
 
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/youtube/coreicecream/a;->a(ILandroid/os/Bundle;)Landroid/app/Dialog;
+    invoke-virtual {v0, p1, p2}, Lcom/google/android/youtube/coreicecream/Controller;->a(ILandroid/os/Bundle;)Landroid/app/Dialog;
 
     move-result-object v0
 
@@ -493,36 +495,36 @@
     .parameter
 
     .prologue
-    .line 234
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    .line 301
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
     if-eqz v0, :cond_d
 
-    .line 237
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    .line 304
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
     invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->getMenuInflater()Landroid/view/MenuInflater;
 
     move-result-object v1
 
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/youtube/coreicecream/a;->a(Landroid/view/Menu;Landroid/view/MenuInflater;)V
+    invoke-virtual {v0, p1, v1}, Lcom/google/android/youtube/coreicecream/Controller;->a(Landroid/view/Menu;Landroid/view/MenuInflater;)V
 
-    .line 239
+    .line 306
     :cond_d
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreateOptionsMenu(Landroid/view/Menu;)Z
+    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreateOptionsMenu(Landroid/view/Menu;)Z
 
-    .line 240
+    .line 307
     const/4 v0, 0x1
 
     return v0
 .end method
 
-.method public final onDestroy()V
+.method protected final onDestroy()V
     .registers 3
 
     .prologue
-    .line 156
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a:Ljava/util/List;
+    .line 224
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -539,18 +541,18 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/coreicecream/a;
+    check-cast v0, Lcom/google/android/youtube/coreicecream/Controller;
 
-    .line 157
-    invoke-virtual {v0}, Lcom/google/android/youtube/coreicecream/a;->d()V
+    .line 225
+    invoke-virtual {v0}, Lcom/google/android/youtube/coreicecream/Controller;->d()V
 
     goto :goto_6
 
-    .line 159
+    .line 227
     :cond_16
-    invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
+    invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onDestroy()V
 
-    .line 160
+    .line 228
     return-void
 .end method
 
@@ -560,16 +562,16 @@
     .parameter
 
     .prologue
-    .line 285
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    .line 358
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/youtube/coreicecream/a;->a(ILandroid/view/KeyEvent;)Z
+    invoke-virtual {v0, p1, p2}, Lcom/google/android/youtube/coreicecream/Controller;->a(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
     if-nez v0, :cond_e
 
-    invoke-super {p0, p1, p2}, Landroid/app/Activity;->onKeyDown(ILandroid/view/KeyEvent;)Z
+    invoke-super {p0, p1, p2}, Landroid/support/v4/app/FragmentActivity;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
@@ -593,16 +595,16 @@
     .parameter
 
     .prologue
-    .line 290
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    .line 364
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/youtube/coreicecream/a;->b(ILandroid/view/KeyEvent;)Z
+    invoke-virtual {v0, p1, p2}, Lcom/google/android/youtube/coreicecream/Controller;->b(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
     if-nez v0, :cond_e
 
-    invoke-super {p0, p1, p2}, Landroid/app/Activity;->onKeyUp(ILandroid/view/KeyEvent;)Z
+    invoke-super {p0, p1, p2}, Landroid/support/v4/app/FragmentActivity;->onKeyUp(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
@@ -625,7 +627,7 @@
     .parameter
 
     .prologue
-    .line 254
+    .line 321
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v0
@@ -634,24 +636,24 @@
 
     if-ne v0, v1, :cond_12
 
-    iget-boolean v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->e:Z
+    iget-boolean v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->p:Z
 
     if-eqz v0, :cond_12
 
-    .line 256
-    invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a()V
+    .line 323
+    invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->e()V
 
-    .line 257
+    .line 324
     const/4 v0, 0x1
 
-    .line 259
+    .line 326
     :goto_11
     return v0
 
     :cond_12
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/coreicecream/a;->a(Landroid/view/MenuItem;)Z
+    invoke-virtual {v0, p1}, Lcom/google/android/youtube/coreicecream/Controller;->a(Landroid/view/MenuItem;)Z
 
     move-result v0
 
@@ -663,26 +665,33 @@
     .parameter
 
     .prologue
-    .line 265
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    .line 332
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
-    .line 266
+    .line 333
     return-void
 .end method
 
 .method protected final onPause()V
-    .registers 2
+    .registers 3
 
     .prologue
-    .line 143
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    .line 208
+    sget-object v0, Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;->PAUSED:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/coreicecream/a;->h()V
+    iput-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->o:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
 
-    .line 144
-    invoke-super {p0}, Landroid/app/Activity;->onPause()V
+    .line 209
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
-    .line 145
+    sget-object v1, Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;->PAUSED:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/coreicecream/Controller;->a(Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;)V
+
+    .line 210
+    invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onPause()V
+
+    .line 211
     return-void
 .end method
 
@@ -693,13 +702,13 @@
     .parameter
 
     .prologue
-    .line 228
-    invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onPrepareDialog(ILandroid/app/Dialog;Landroid/os/Bundle;)V
+    .line 295
+    invoke-super {p0, p1, p2, p3}, Landroid/support/v4/app/FragmentActivity;->onPrepareDialog(ILandroid/app/Dialog;Landroid/os/Bundle;)V
 
-    .line 229
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    .line 296
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
-    .line 230
+    .line 297
     return-void
 .end method
 
@@ -708,217 +717,225 @@
     .parameter
 
     .prologue
-    .line 245
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    .line 312
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
     if-eqz v0, :cond_9
 
-    .line 246
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    .line 313
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/coreicecream/a;->a(Landroid/view/Menu;)V
+    invoke-virtual {v0, p1}, Lcom/google/android/youtube/coreicecream/Controller;->a(Landroid/view/Menu;)V
 
-    .line 248
+    .line 315
     :cond_9
-    invoke-super {p0, p1}, Landroid/app/Activity;->onPrepareOptionsMenu(Landroid/view/Menu;)Z
+    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onPrepareOptionsMenu(Landroid/view/Menu;)Z
 
-    .line 249
+    .line 316
     const/4 v0, 0x1
 
     return v0
 .end method
 
-.method public onRestoreInstanceState(Landroid/os/Bundle;)V
-    .registers 6
+.method protected onRestoreInstanceState(Landroid/os/Bundle;)V
+    .registers 7
     .parameter
 
     .prologue
-    .line 200
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    move v1, v0
+    move v1, v2
 
+    .line 268
     :goto_2
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-ge v1, v0, :cond_40
+    if-ge v1, v0, :cond_38
 
-    .line 201
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a:Ljava/util/List;
+    .line 269
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/coreicecream/a;
+    check-cast v0, Lcom/google/android/youtube/coreicecream/Controller;
 
-    .line 202
-    new-instance v2, Ljava/lang/StringBuilder;
+    .line 270
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v4, "controller_state_"
 
-    const-string v3, "controller_state_"
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1, v3}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {p1, v2}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+    .line 271
+    const-string v4, "controller_ui_state"
 
-    move-result-object v2
+    invoke-virtual {v3, v4}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
 
-    .line 203
-    const-string v3, "controller_ui_state"
+    move-result-object v3
 
-    invoke-virtual {v2, v3}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
-
-    move-result-object v2
-
-    .line 207
-    iget-object v3, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->b:Ljava/util/Map;
-
-    invoke-interface {v3, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 275
+    invoke-virtual {v0}, Lcom/google/android/youtube/coreicecream/Controller;->s()Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Landroid/view/View;
+    .line 276
+    if-eqz v0, :cond_34
 
-    .line 208
-    if-eqz v0, :cond_3c
+    .line 277
+    invoke-virtual {v0, v3}, Landroid/view/View;->restoreHierarchyState(Landroid/util/SparseArray;)V
 
-    .line 209
-    invoke-virtual {v0, v2}, Landroid/view/View;->restoreHierarchyState(Landroid/util/SparseArray;)V
-
-    .line 200
-    :cond_3c
+    .line 268
+    :cond_34
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_2
 
-    .line 212
-    :cond_40
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a:Ljava/util/List;
+    .line 280
+    :cond_38
+    const-string v0, "selected_controller_index"
 
-    const-string v1, "selected_controller_index"
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
-    invoke-virtual {p1, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+    move-result v0
+
+    if-ltz v0, :cond_49
+
+    iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    if-ge v0, v1, :cond_49
+
+    const/4 v2, 0x1
+
+    :cond_49
+    const-string v1, "controller index out of bound"
+
+    invoke-static {v2, v1}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
+
+    iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
+
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/coreicecream/a;
+    check-cast v0, Lcom/google/android/youtube/coreicecream/Controller;
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a(Lcom/google/android/youtube/coreicecream/a;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ControllerActivity;->b(Lcom/google/android/youtube/coreicecream/Controller;)V
 
-    .line 214
+    .line 281
     return-void
 .end method
 
 .method protected onResume()V
-    .registers 2
+    .registers 3
 
     .prologue
-    .line 137
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    .line 201
+    invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onResume()V
 
-    .line 138
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    .line 202
+    sget-object v0, Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;->RESUMED:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/coreicecream/a;->g()V
+    iput-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->o:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
 
-    .line 139
+    .line 203
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
+
+    sget-object v1, Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;->RESUMED:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/coreicecream/Controller;->a(Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;)V
+
+    .line 204
     return-void
 .end method
 
-.method public onSaveInstanceState(Landroid/os/Bundle;)V
-    .registers 7
+.method protected onSaveInstanceState(Landroid/os/Bundle;)V
+    .registers 6
     .parameter
 
     .prologue
-    .line 180
+    .line 248
     const/4 v0, 0x0
 
     move v1, v0
 
     :goto_2
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-ge v1, v0, :cond_4b
+    if-ge v1, v0, :cond_43
 
-    .line 181
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a:Ljava/util/List;
+    .line 249
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/coreicecream/a;
+    check-cast v0, Lcom/google/android/youtube/coreicecream/Controller;
 
-    .line 182
+    .line 250
     new-instance v2, Landroid/os/Bundle;
 
     invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    .line 183
-    invoke-virtual {v0, v2}, Lcom/google/android/youtube/coreicecream/a;->a(Landroid/os/Bundle;)V
+    .line 251
+    invoke-virtual {v0, v2}, Lcom/google/android/youtube/coreicecream/Controller;->a(Landroid/os/Bundle;)V
 
-    .line 185
+    .line 253
     new-instance v3, Landroid/util/SparseArray;
 
     invoke-direct {v3}, Landroid/util/SparseArray;-><init>()V
 
-    .line 186
-    iget-object v4, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->b:Ljava/util/Map;
-
-    invoke-interface {v4, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 254
+    invoke-virtual {v0}, Lcom/google/android/youtube/coreicecream/Controller;->s()Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Landroid/view/View;
+    .line 255
+    if-eqz v0, :cond_28
 
-    .line 187
-    if-eqz v0, :cond_2c
-
-    .line 188
+    .line 256
     invoke-virtual {v0, v3}, Landroid/view/View;->saveHierarchyState(Landroid/util/SparseArray;)V
 
-    .line 190
-    :cond_2c
+    .line 258
+    :cond_28
     const-string v0, "controller_ui_state"
 
     invoke-virtual {v2, v0, v3}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
 
-    .line 192
+    .line 260
     new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v3, "controller_state_"
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -930,20 +947,20 @@
 
     invoke-virtual {p1, v0, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 180
+    .line 248
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_2
 
-    .line 194
-    :cond_4b
+    .line 262
+    :cond_43
     const-string v0, "selected_controller_index"
 
-    iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->a:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
 
-    iget-object v2, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    iget-object v2, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
     invoke-interface {v1, v2}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
 
@@ -951,7 +968,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 195
+    .line 263
     return-void
 .end method
 
@@ -959,21 +976,21 @@
     .registers 2
 
     .prologue
-    .line 171
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    .line 239
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/coreicecream/a;->j()Z
+    invoke-virtual {v0}, Lcom/google/android/youtube/coreicecream/Controller;->m()Z
 
     move-result v0
 
     if-eqz v0, :cond_d
 
-    .line 172
-    invoke-super {p0}, Landroid/app/Activity;->onSearchRequested()Z
+    .line 240
+    invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onSearchRequested()Z
 
     move-result v0
 
-    .line 174
+    .line 242
     :goto_c
     return v0
 
@@ -983,50 +1000,75 @@
     goto :goto_c
 .end method
 
-.method public final onStart()V
-    .registers 2
+.method protected onStart()V
+    .registers 3
 
     .prologue
-    .line 126
-    invoke-super {p0}, Landroid/app/Activity;->onStart()V
+    .line 170
+    invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onStart()V
 
-    .line 129
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    .line 171
+    sget-object v0, Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;->PAUSED:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
 
-    if-eqz v0, :cond_c
+    iput-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->o:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
 
-    .line 130
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    .line 172
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/coreicecream/a;->i_()V
+    if-eqz v0, :cond_12
 
-    .line 132
-    :cond_c
-    const/4 v0, 0x1
+    .line 176
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->n:Lcom/google/android/youtube/coreicecream/Controller;
 
-    iput-boolean v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->d:Z
+    sget-object v1, Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;->PAUSED:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
 
-    .line 133
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/coreicecream/Controller;->a(Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;)V
+
+    .line 180
+    :cond_12
     return-void
 .end method
 
-.method protected final onStop()V
-    .registers 2
+.method protected onStop()V
+    .registers 4
 
     .prologue
-    .line 149
-    const/4 v0, 0x0
+    .line 215
+    sget-object v0, Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;->STOPPED:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
 
-    iput-boolean v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->d:Z
+    iput-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->o:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
 
-    .line 150
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->c:Lcom/google/android/youtube/coreicecream/a;
+    .line 216
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ControllerActivity;->m:Ljava/util/List;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/coreicecream/a;->h_()V
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    .line 151
-    invoke-super {p0}, Landroid/app/Activity;->onStop()V
+    move-result-object v1
 
-    .line 152
+    :goto_a
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1c
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/coreicecream/Controller;
+
+    .line 217
+    sget-object v2, Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;->STOPPED:Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;
+
+    invoke-virtual {v0, v2}, Lcom/google/android/youtube/coreicecream/Controller;->a(Lcom/google/android/youtube/coreicecream/Controller$LifecycleState;)V
+
+    goto :goto_a
+
+    .line 219
+    :cond_1c
+    invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onStop()V
+
+    .line 220
     return-void
 .end method

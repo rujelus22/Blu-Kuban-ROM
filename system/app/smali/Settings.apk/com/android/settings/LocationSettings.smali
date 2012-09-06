@@ -131,7 +131,7 @@
     .line 114
     iget-object v2, p0, Lcom/android/settings/LocationSettings;->mAssistedGps:Landroid/preference/CheckBoxPreference;
 
-    if-eqz v2, :cond_40
+    if-eqz v2, :cond_3d
 
     .line 115
     invoke-virtual {p0}, Lcom/android/settings/LocationSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -140,10 +140,8 @@
 
     iget-object v5, p0, Lcom/android/settings/LocationSettings;->mAssistedGps:Landroid/preference/CheckBoxPreference;
 
-    invoke-virtual {v2, v5}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 119
-    :cond_40
+    :cond_3d
     invoke-virtual {p0}, Lcom/android/settings/LocationSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v2
@@ -152,7 +150,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_81
+    if-eqz v2, :cond_7e
 
     .line 121
     new-instance v1, Landroid/preference/CheckBoxPreference;
@@ -188,11 +186,11 @@
 
     move-result v2
 
-    if-ne v2, v3, :cond_a2
+    if-ne v2, v3, :cond_9f
 
     move v2, v3
 
-    :goto_6f
+    :goto_6c
     invoke-virtual {v1, v2}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 128
@@ -213,7 +211,7 @@
 
     .line 135
     .end local v1           #useLocation:Landroid/preference/CheckBoxPreference;
-    :cond_81
+    :cond_7e
     invoke-virtual {p0}, Lcom/android/settings/LocationSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v2
@@ -222,7 +220,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_93
+    if-eqz v2, :cond_90
 
     .line 136
     iget-object v2, p0, Lcom/android/settings/LocationSettings;->mNetwork:Landroid/preference/CheckBoxPreference;
@@ -232,7 +230,7 @@
     invoke-virtual {v2, v3}, Landroid/preference/CheckBoxPreference;->setSummaryOn(I)V
 
     .line 147
-    :cond_93
+    :cond_90
     invoke-virtual {p0}, Lcom/android/settings/LocationSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v2
@@ -251,11 +249,11 @@
     return-object v0
 
     .restart local v1       #useLocation:Landroid/preference/CheckBoxPreference;
-    :cond_a2
+    :cond_9f
     move v2, v4
 
     .line 125
-    goto :goto_6f
+    goto :goto_6c
 .end method
 
 .method private selectPdrDescription(ZZ)V

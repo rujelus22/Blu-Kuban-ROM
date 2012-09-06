@@ -38,13 +38,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "AsyncHttpConnection("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -80,7 +76,7 @@
 
     invoke-virtual {v0, p0}, Lcom/google/android/youtube/googlemobile/masf/a/e;->a(Lcom/google/android/youtube/googlemobile/masf/a/n;)V
 
-    if-eqz p2, :cond_44
+    if-eqz p2, :cond_40
 
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/a;->a:Lcom/google/android/youtube/googlemobile/masf/a/e;
 
@@ -92,17 +88,17 @@
 
     invoke-virtual {v0, v2}, Lcom/google/android/youtube/googlemobile/masf/a/e;->b(I)V
 
-    :goto_43
+    :goto_3f
     return-void
 
-    :cond_44
+    :cond_40
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/a;->a:Lcom/google/android/youtube/googlemobile/masf/a/e;
 
     const-string v1, "GET"
 
     invoke-virtual {v0, v1}, Lcom/google/android/youtube/googlemobile/masf/a/e;->a(Ljava/lang/String;)V
 
-    goto :goto_43
+    goto :goto_3f
 .end method
 
 .method private a(I)V
@@ -110,13 +106,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "AsyncHttpConnection.setState("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -296,13 +288,9 @@
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "AsyncHttpConnection.getHeaderField(\""
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -322,16 +310,16 @@
 
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/a;->e:[Ljava/lang/String;
 
-    if-eqz v0, :cond_44
+    if-eqz v0, :cond_40
 
     const/4 v0, 0x0
 
-    :goto_24
+    :goto_20
     iget-object v1, p0, Lcom/google/android/youtube/googlemobile/masf/a;->e:[Ljava/lang/String;
 
     array-length v1, v1
 
-    if-ge v0, v1, :cond_44
+    if-ge v0, v1, :cond_40
 
     iget-object v1, p0, Lcom/google/android/youtube/googlemobile/masf/a;->e:[Ljava/lang/String;
 
@@ -349,30 +337,30 @@
 
     move-result v1
 
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_3d
 
     iget-object v1, p0, Lcom/google/android/youtube/googlemobile/masf/a;->f:[Ljava/lang/String;
 
     aget-object v0, v1, v0
-    :try_end_3f
-    .catchall {:try_start_1 .. :try_end_3f} :catchall_46
+    :try_end_3b
+    .catchall {:try_start_1 .. :try_end_3b} :catchall_42
 
-    :goto_3f
+    :goto_3b
     monitor-exit p0
 
     return-object v0
 
-    :cond_41
+    :cond_3d
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_24
+    goto :goto_20
 
-    :cond_44
+    :cond_40
     const/4 v0, 0x0
 
-    goto :goto_3f
+    goto :goto_3b
 
-    :catchall_46
+    :catchall_42
     move-exception v0
 
     monitor-exit p0

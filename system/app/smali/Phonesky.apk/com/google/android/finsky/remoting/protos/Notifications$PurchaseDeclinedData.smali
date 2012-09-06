@@ -31,25 +31,25 @@
     .registers 2
 
     .prologue
-    .line 222
+    .line 233
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 234
+    .line 245
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->reason_:I
 
-    .line 251
+    .line 262
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->showNotification_:Z
 
-    .line 286
+    .line 298
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->cachedSize:I
 
-    .line 222
+    .line 233
     return-void
 .end method
 
@@ -59,15 +59,15 @@
     .registers 2
 
     .prologue
-    .line 288
+    .line 301
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 290
+    .line 303
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->getSerializedSize()I
 
-    .line 292
+    .line 305
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->cachedSize:I
 
@@ -78,7 +78,7 @@
     .registers 2
 
     .prologue
-    .line 236
+    .line 247
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->reason_:I
 
     return v0
@@ -88,10 +88,10 @@
     .registers 4
 
     .prologue
-    .line 296
+    .line 310
     const/4 v0, 0x0
 
-    .line 297
+    .line 311
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->hasReason()Z
 
@@ -99,7 +99,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 298
+    .line 312
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->getReason()I
@@ -112,7 +112,7 @@
 
     add-int/2addr v0, v1
 
-    .line 301
+    .line 315
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->hasShowNotification()Z
 
@@ -120,7 +120,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 302
+    .line 316
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->getShowNotification()Z
@@ -133,11 +133,11 @@
 
     add-int/2addr v0, v1
 
-    .line 305
+    .line 319
     :cond_21
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->cachedSize:I
 
-    .line 306
+    .line 320
     return v0
 .end method
 
@@ -145,7 +145,7 @@
     .registers 2
 
     .prologue
-    .line 252
+    .line 263
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->showNotification_:Z
 
     return v0
@@ -155,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 235
+    .line 246
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->hasReason:Z
 
     return v0
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 253
+    .line 264
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->hasShowNotification:Z
 
     return v0
@@ -181,29 +181,29 @@
     .end annotation
 
     .prologue
-    .line 313
+    .line 328
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 314
+    .line 329
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 318
+    .line 333
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 319
+    .line 334
     :sswitch_d
     return-object p0
 
-    .line 324
+    .line 339
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 328
+    .line 343
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 314
+    .line 329
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -242,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 220
+    .line 230
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;
 
     move-result-object v0
@@ -255,15 +255,15 @@
     .parameter "value"
 
     .prologue
-    .line 238
+    .line 249
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->hasReason:Z
 
-    .line 239
+    .line 250
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->reason_:I
 
-    .line 240
+    .line 251
     return-object p0
 .end method
 
@@ -272,15 +272,15 @@
     .parameter "value"
 
     .prologue
-    .line 255
+    .line 266
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->hasShowNotification:Z
 
-    .line 256
+    .line 267
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->showNotification_:Z
 
-    .line 257
+    .line 268
     return-object p0
 .end method
 
@@ -294,14 +294,14 @@
     .end annotation
 
     .prologue
-    .line 278
+    .line 290
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->hasReason()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 279
+    .line 291
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->getReason()I
@@ -310,7 +310,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 281
+    .line 293
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->hasShowNotification()Z
 
@@ -318,7 +318,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 282
+    .line 294
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseDeclinedData;->getShowNotification()Z
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 284
+    .line 296
     :cond_1c
     return-void
 .end method

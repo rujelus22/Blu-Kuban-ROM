@@ -1,15 +1,8 @@
-.class public abstract LS/b;
+.class public interface abstract LS/b;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements LS/a;
+.source "SourceFile"
 
 
-# direct methods
-.method public constructor <init>()V
-    .registers 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract a(IZZIZZ)LS/d;
 .end method

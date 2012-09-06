@@ -53,28 +53,35 @@
 No manipuleu aquesta aplicació mentre conduïu. Les dades de trànsit no són en temps real, i és possible que les indicacions no siguin correctes, siguin perilloses, impliquin prohibicions o bé que hàgiu d'utilitzar ferris. És possible que les rutes per fer a peu no disposin de voreres o de camins per a vianants. Respecteu les lleis aplicables.
 
 Estigueu atent a la carretera."</string>
+    <string name="da_agreement_with_walking_and_biking">"Google Maps Navigation està en fase beta. Aneu amb compte. 
+
+No manipuleu aquesta aplicació mentre esteu en moviment. Les dades de trànsit no són en temps real i les indicacions poden estar equivocades, prohibides, ser perilloses o implicar l'ús de transbordadors. A les rutes a peu podria no haver-hi voreres o vies de vianants. A les indicacions en bicicleta podrien aparèixer rutes no adequades per anar en bicicleta. Obeïu la legislació vigent.
+
+Presteu atenció a la carretera!"</string>
     <string name="da_disclaimer_checkbox">Mostra aquest missatge la propera vegada</string>
     <string name="da_show_list">"Llista d'indicacions"</string>
-    <string name="da_route_overview">Informació de la ruta</string>
-    <string name="da_show_map">Mostra el mapa</string>
+    <string name="da_route_and_alternates">Ruta i alternatives</string>
+    <string name="da_show_map">Mostra al mapa</string>
+    <string name="da_menu_more">Més</string>
     <string name="da_satellite">Satèl·lit</string>
     <string name="da_traffic_view">Estat del trànsit</string>
     <string name="da_no_traffic_here">No hi ha informació del trànsit per a aquesta zona</string>
     <string name="da_traffic">Trànsit</string>
     <string name="da_area_view">"Visualització d'àrea"</string>
-    <string name="da_mute">Silencia</string>
-    <string name="da_unmute">Activa el so</string>
     <string name="da_settings">Configuració</string>
     <string name="da_help">Ajuda</string>
     <string name="da_terms_privacy_notices">"Condicions d'ús i privadesa"</string>
-    <string name="da_terms_and_conditions">"Condicions d'ús"</string>
+    <string name="da_terms_and_conditions">Termes i condicions</string>
     <string name="da_privacy_policy">Política de privadesa</string>
     <string name="da_legal_notices">Avisos legals</string>
     <string name="da_navigation_suspended">"S'ha suspès la navegació"</string>
-    <string name="da_exit_navigation">Surt de Navigation</string>
+    <string name="da_exit_navigation">Surt de la navegació</string>
+    <string name="da_save">Desa</string>
     <string name="da_power_settings_category">"Configuració d'energia"</string>
     <string name="da_screen_dimming_setting_title">Atenuació de la pantalla</string>
     <string name="da_screen_dimming_setting_summary">Atenua la pantalla entre les instruccions per estalviar energia</string>
+    <string name="da_home_setting_set_address">"Defineix l'adreça de casa"</string>
+    <string name="da_home_setting_set_address_hint">Introdueix una adreça.</string>
     <string name="da_info_settings_category">Informació</string>
     <string name="da_email_me_when_resolved">"Envia'm un correu electrònic quan s'hagi resolt"</string>
     <string name="da_problem_reported">"S'ha informat d'un problema"</string>
@@ -109,6 +116,8 @@ Pot ser que hi hagi una drecera d'un clic activada a la configuració de l'aplic
     <string name="da_turn_on_gps">"Voleu mostrar la configuració d'ubicació?"</string>
     <string name="da_voice_guidance">Guia de veu</string>
     <string name="da_install_voice_guidance_prompt">"Per a la navegació guiada per veu, cal que instal·leu l'assistència de text a parla des d'Android Market."</string>
+    <string name="da_voice_off">Desactiva la veu</string>
+    <string name="da_voice_on">Activa la veu</string>
     <string name="da_voice_guidance_on">La guia de veu està activada</string>
     <string name="da_voice_guidance_off">La guia de veu està desactivada</string>
     <string name="da_dialog_ok">Accepta</string>
@@ -117,11 +126,11 @@ Pot ser que hi hagi una drecera d'un clic activada a la configuració de l'aplic
     <string name="da_dialog_done">Fet</string>
     <string name="da_dialog_accept">Accepta</string>
     <string name="da_dialog_install">Instal·la</string>
-    <string name="da_dialog_dont_accept">No ho acceptis</string>
+    <string name="da_dialog_dont_accept">No acceptis</string>
     <string name="da_dialog_go">Vés</string>
-    <string name="da_dialog_get_directions">Obtén indicacions</string>
+    <string name="da_dialog_get_directions">"Obtenció d'indicacions"</string>
     <string name="da_map">Mapa</string>
-    <string name="da_clear_layers">Esborra els resultats</string>
+    <string name="da_clear_layers">Neteja el mapa</string>
     <string name="da_layer_name_parking">Aparcament</string>
     <string name="da_layer_name_attractions">"Llocs d'interès"</string>
     <string name="da_layer_name_gas_stations">Gasolineres</string>
@@ -185,12 +194,15 @@ Pot ser que hi hagi una drecera d'un clic activada a la configuració de l'aplic
     <string name="da_image_error">Error en carregar la imatge.</string>
     <string name="da_no_alternate_routes">No hem trobat cap ruta alternativa per a la vostra destinació.</string>
     <string name="da_picker_type_destination">Escriu la destinació</string>
-    <string name="da_picker_speak_destination">Digueu la vostra destinació en veu alta</string>
+    <string name="da_picker_speak_destination">Digueu la destinació en veu alta</string>
     <string name="da_picker_contacts">Contactes</string>
     <string name="da_picker_starred_items">Llocs destacats</string>
+    <string name="da_picker_starred">DESTACATS</string>
     <string name="da_picker_new_contact">Contacte nou</string>
+    <string name="da_go_home">"Vés a la pàgina d'inici"</string>
     <string name="da_picker_saved_destinations">Destinacions desades</string>
     <string name="da_picker_recent_destinations">Destinacions recents</string>
+    <string name="da_picker_shortcuts">DRECERES</string>
     <string name="da_navigate_to">Navega a</string>
     <string name="da_return_to">Torna a</string>
     <string name="da_picker_search_hint">Destinació</string>
@@ -208,7 +220,6 @@ Podeu afegir contactes nous o bé configurar adreces per als contactes existents
     <string name="da_walking">A peu</string>
     <string name="da_bicycling">En bicicleta</string>
     <string name="da_quoted_text">\"%1$s\"</string>
-    <string name="da_more_info">Més informació</string>
     <string name="da_walking_warning">A peu (beta): aneu amb compte</string>
     <string name="da_bicycling_warning">En bicicleta (beta): aneu amb compte</string>
     <string name="da_calibrate_compass_title">Calibració de la brúixola</string>
@@ -216,7 +227,6 @@ Podeu afegir contactes nous o bé configurar adreces per als contactes existents
     <string name="da_confirm_exit_title">Sortiu de Navigation?</string>
     <string name="da_confirm_exit_text">"Aquesta acció finalitzarà l'assistència en ruta."</string>
     <string name="da_route_includes_tolls">La ruta inclou peatges</string>
-    <string name="da_avoid_tolls">Evita els peatges</string>
     <string name="da_avoiding_tolls">"S'han evitat els peatges"</string>
     <string name="da_avoiding_highways">"S'han evitat les autopistes"</string>
     <string name="da_route_includes_unavoidable_tolls">Aquesta ruta inclou peatges.</string>
@@ -272,13 +282,15 @@ Podeu afegir contactes nous o bé configurar adreces per als contactes existents
     <string name="DIRECTIONS_TITLE">Indicacions</string>
     <string name="EXIT_COMMAND">Surt</string>
     <string name="FEATURE_SWITCHER_LATITUDE_SUBTITLE">Cerca la família i els amics</string>
-    <string name="FEATURE_SWITCHER_LOCAL">Llocs</string>
+    <string name="FEATURE_SWITCHER_LOCAL">Local</string>
     <string name="FEATURE_SWITCHER_LOCAL_SUBTITLE">Cerca restaurants, bars, etc.</string>
     <string name="FEATURE_SWITCHER_MAP">Mapa</string>
     <string name="FEATURE_SWITCHER_NAV">Navegació GPS</string>
     <string name="FEATURE_SWITCHER_TRAFFIC">Trànsit</string>
     <string name="FRIENDS_COMMAND_ACTIVATE">Latitude</string>
     <string name="FRIENDS_COMMAND_JOIN">Afegiu-vos a Latitude</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE">Perfil de Google+</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE_DESCRIPTION">"Mostra el perfil de Google+ d'un amic"</string>
     <string name="FRIENDS_HISTORY_SUMMARY_TITLE">"Historial d'ubicacions"</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TICKER">A {0} li agradaria que registréssiu visita</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TITLE">Sol·licitud de visita de Latitude</string>
@@ -298,10 +310,26 @@ Podeu afegir contactes nous o bé configurar adreces per als contactes existents
     <string name="LATITUDE_WIDGET_FRIENDS_ACTIVATE">Premeu per iniciar la sessió a Latitude</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LAST_UPDATED_TIME_ABSOLUTE">Última actualització: {0}</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LOCATION_UNKNOWN">Ubicació desconeguda</string>
+    <string name="LATITUDE_WIDGET_START">Premeu per iniciar Google Latitude</string>
     <string name="LOADING">"S'està carregant"</string>
-    <string name="LOCAL_APP_NAME">Google Local</string>
     <string name="MAPS_APP_NAME">Maps</string>
     <string name="MY_PLACES_COMMAND">Els meus llocs</string>
+    <string name="MY_PLACES_DELETE_CONFIRM">"&lt;b>{0}&lt;/b> s'eliminarà d'Els meus llocs."</string>
+    <string name="MY_PLACES_DELETE_CONFIRM_TITLE">Suprimeix</string>
+    <string name="MY_PLACES_DELETE_ITEM_COMMAND">Suprimeix</string>
+    <string name="MY_PLACES_DELETE_OWNED_MAP_CONFIRM">"&lt;b>{0}&lt;/b> s'eliminarà d'Els meus llocs i se suprimirà permanentment."</string>
+    <string name="MY_PLACES_DELETE_PLACE_CONFIRM">"&lt;b>{0}&lt;/b> s'eliminarà d'Els meus llocs i les activitats relacionades amb aquest lloc se suprimiran permanentment: "</string>
+    <string name="MY_PLACES_DELETE_SERVICE_UNAVAILABLE">Aquest servei no està disponible. Torneu-ho a provar més tard.</string>
+    <string name="MY_PLACES_ITEM_IS_BOOKMARKED_MY_MAP">Mapa marcat</string>
+    <string name="MY_PLACES_ITEM_IS_MY_MAP">El meu mapa</string>
+    <string name="MY_PLACES_ITEM_IS_REVIEWED">Comentat</string>
+    <string name="MY_PLACES_ITEM_IS_STARRED">Destacat</string>
+    <string name="MY_PLACES_LINK_ON_SUGGEST">Personalitzat amb Els meus llocs</string>
+    <string name="MY_PLACES_NO_DIRECTIONS_ITEM_MESSAGE">"No teniu historial d'adreces."</string>
+    <string name="MY_PLACES_NO_MY_MAP_ITEM_MESSAGE">No teniu cap mapa.</string>
+    <string name="MY_PLACES_NO_STARRED_ITEM_MESSAGE">No teniu cap lloc destacat.</string>
+    <string name="MY_PLACES_SEE_ON_MAP_COMMAND">Mapa</string>
+    <string name="MY_PLACES_SHOW_DETAIL_PAGE_COMMAND">Detalls</string>
     <string name="NAVIGATE_MODE_NAVIGATION">Navegació</string>
     <string name="NEED_NET_BODY">No es pot utilitzar aquesta aplicació fins que no li atorgueu permís per enviar i rebre dades per la xarxa.</string>
     <string name="NEED_NET_TITLE">Cal accés a la xarxa</string>
@@ -309,8 +337,11 @@ Podeu afegir contactes nous o bé configurar adreces per als contactes existents
     <string name="NET_FAIL_BODY">Aquesta aplicació necessita una connexió de dades que funcioni.</string>
     <string name="NET_FAIL_TITLE">Error de xarxa</string>
     <string name="NET_UNAVAILABLE_TITLE">La xarxa no està disponible</string>
-    <string name="PLACES_APP_NAME">Places</string>
-    <string name="RATINGS_CUSTOM_ASPECT_EXAMPLE_TEXT">Per exemple, espaguetis a la bolonyesa, còctels, música</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_PLURAL">Teniu {0} ofertes a prop</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_SINGLE">Teniu 1 oferta a prop</string>
+    <string name="OFFERS_FEATURE_SWITCHER_TITLE">Ofertes</string>
+    <string name="PLACES_APP_NAME">Local</string>
+    <string name="RATINGS_CORRECT_CATEGORY">Seleccioneu la categoria correcta per a aquest lloc</string>
     <string name="RATINGS_CUSTOM_ASPECT_HINT_TEXT">Què destaca?</string>
     <string name="RATINGS_OPTIN_CANCEL">Cancel·la</string>
     <string name="RATINGS_OPTIN_CLOSE">Tanca</string>
@@ -326,6 +357,7 @@ Podeu afegir contactes nous o bé configurar adreces per als contactes existents
     <string name="RATINGS_RATE_PLACES">Motius per valorar els llocs</string>
     <string name="RATINGS_SET_APPEARANCE">"Establiment de l'aspecte"</string>
     <string name="RATINGS_WAIT">Espereu...</string>
+    <string name="RATINGS_WRONG_LABELS">Etiquetes incorrectes?</string>
     <string name="SEARCH_HINT">Cerca mapes</string>
     <string name="SHORT_APP_NAME">Google Maps</string>
     <string name="TRAFFIC_WIDGET_END_LOCATION">Punt final</string>
@@ -335,7 +367,12 @@ Podeu afegir contactes nous o bé configurar adreces per als contactes existents
     <string name="TRAFFIC_WIDGET_START_LOCATION">Punt inicial</string>
     <string name="TRANSIT_NAVIGATION">Navegació en transport públic</string>
     <string name="TRANSIT_TITLE">Trànsit</string>
-    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">"Error greu.  Sortiu i torneu a iniciar."</string>
+    <string name="TRANSIT_TYPE_FILTER_ALL">Tots</string>
+    <string name="TRANSIT_TYPE_FILTER_BUS">Autobús</string>
+    <string name="TRANSIT_TYPE_FILTER_SUBWAY">Metro</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAIN">Tren</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAM">Tramvia</string>
+    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">"Hi ha alguna cosa que ha anat malament... Torneu-ho a provar d'aquí a uns minuts."</string>
     <string name="UNKNOWN_COMMUNICATION_FAILURE_TITLE">Error desconegut</string>
     <string name="UPGRADE_BODY">"Heu d'instal·lar una nova versió per utilitzar aquesta aplicació."</string>
     <string name="UPGRADE_TITLE">Actualització del programari</string>

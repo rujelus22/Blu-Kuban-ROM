@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/google/android/talk/videochat/NotificationReceiver$2;->val$notifier:Lcom/google/android/talk/videochat/IncomingCallNotifier;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="delete_target_hover_tint">#daff0000</color>
-    <color name="info_target_hover_tint">#da0099cc</color>
+    <color name="delete_target_hover_tint">#da990000</color>
+    <color name="info_target_hover_tint">#da155496</color>
     <color name="drag_view_multiply_color">#ccffffff</color>
     <color name="bubble_dark_background">#20000000</color>
     <color name="appwidget_error_color">#ffcccccc</color>
     <color name="workspace_all_apps_and_delete_zone_text_color">#ccffffff</color>
     <color name="workspace_all_apps_and_delete_zone_text_shadow_color">#a0000000</color>
+    <color name="drawer_background_color">#ff000000</color>
+    <color name="bubble_text_color">#ffffffff</color>
+    <color name="bubble_ring_color">#ffffffff</color>
+    <color name="bubble_shadow_color">#ff000000</color>
+    <color name="bubble_background_color">#ffaa0000</color>
+    <color name="bubble_shader_color">#ffff6f60</color>
 </resources>

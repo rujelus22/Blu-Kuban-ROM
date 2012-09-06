@@ -1,31 +1,62 @@
-.class final Lcom/google/common/collect/am;
-.super Lcom/google/common/collect/ai;
+.class Lcom/google/common/collect/am;
+.super Lcom/google/common/collect/iy;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/Set;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/common/collect/AbstractMultimap;
+.field final synthetic a:Lcom/google/common/collect/ak;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/Set;)V
-    .registers 5
-    .parameter
-    .parameter
+.method constructor <init>(Lcom/google/common/collect/ak;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 631
-    iput-object p1, p0, Lcom/google/common/collect/am;->a:Lcom/google/common/collect/AbstractMultimap;
+    .line 171
+    iput-object p1, p0, Lcom/google/common/collect/am;->a:Lcom/google/common/collect/ak;
 
-    .line 632
-    const/4 v0, 0x0
+    invoke-direct {p0}, Lcom/google/common/collect/iy;-><init>()V
 
-    invoke-direct {p0, p1, p2, p3, v0}, Lcom/google/common/collect/ai;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/Collection;Lcom/google/common/collect/ai;)V
-
-    .line 633
     return-void
+.end method
+
+
+# virtual methods
+.method a()Lcom/google/common/collect/iq;
+    .registers 2
+
+    .prologue
+    .line 173
+    iget-object v0, p0, Lcom/google/common/collect/am;->a:Lcom/google/common/collect/ak;
+
+    return-object v0
+.end method
+
+.method public iterator()Ljava/util/Iterator;
+    .registers 2
+
+    .prologue
+    .line 177
+    iget-object v0, p0, Lcom/google/common/collect/am;->a:Lcom/google/common/collect/ak;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ak;->entryIterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public size()I
+    .registers 2
+
+    .prologue
+    .line 181
+    iget-object v0, p0, Lcom/google/common/collect/am;->a:Lcom/google/common/collect/ak;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ak;->distinctElements()I
+
+    move-result v0
+
+    return v0
 .end method

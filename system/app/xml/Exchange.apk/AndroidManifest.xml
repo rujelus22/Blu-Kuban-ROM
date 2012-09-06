@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:versionCode="310000" android:versionName="3.1" package="com.android.exchange"
+<manifest android:versionCode="410000" android:versionName="4.1" package="com.android.exchange"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
-    <uses-permission android:name="com.android.email.ACCOUNT_INTENT" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.READ_OWNER_DATA" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -15,25 +12,15 @@
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
-    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
     <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="com.android.email.permission.READ_ATTACHMENT" />
     <uses-permission android:name="com.android.email.permission.ACCESS_PROVIDER" />
-    <uses-permission android:name="android.permission.READ_POLICIES" />
-    <uses-permission android:name="android.permission.WRITE_POLICIES" />
-    <uses-permission android:name="android.permission.BIND_DEVICE_ADMIN" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
-    <uses-permission android:name="android.permission.MASTER_CLEAR" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.MOUNT_FORMAT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="com.sec.android.provider.logsprovider.permission.READ_LOGS" />
-    <uses-permission android:name="com.sec.android.provider.logsprovider.permission.WRITE_LOGS" />
     <application android:theme="@android:style/Theme.Holo.Light" android:label="@string/app_name" android:icon="@mipmap/icon" android:name="Exchange">
         <receiver android:name="com.android.exchange.EmailSyncAlarmReceiver" />
         <receiver android:name="com.android.exchange.MailboxAlarmReceiver" />
@@ -64,12 +51,6 @@
             </intent-filter>
             <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/syncadapter_calendar" />
         </service>
-        <service android:name="com.android.exchange.TasksSyncAdapterService" android:exported="true">
-            <intent-filter>
-                <action android:name="android.content.SyncAdapter" />
-            </intent-filter>
-            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/syncadapter_tasks" />
-        </service>
         <service android:name="com.android.exchange.ExchangeService" android:permission="com.android.email.permission.ACCESS_PROVIDER" android:enabled="true">
             <intent-filter>
                 <action android:name="com.android.email.EXCHANGE_INTENT" />
@@ -78,11 +59,18 @@
         <provider android:name="com.android.exchange.provider.ExchangeDirectoryProvider" android:readPermission="android.permission.READ_CONTACTS" android:multiprocess="false" android:authorities="com.android.exchange.directory.provider">
             <meta-data android:name="android.content.ContactDirectory" android:value="true" />
         </provider>
-        <service android:name="com.android.exchange.SmsRelayService" android:enabled="true" />
-        <receiver android:name="com.android.exchange.SmsReceiver" android:enabled="true">
+        <activity android:name=".EasCertificateRequestor">
             <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="com.android.emailcommon.REQUEST_CERT" />
+                <data android:scheme="eas" android:path="/certrequest" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </receiver>
+        </activity>
+        <activity android:name=".SettingsRedirector">
+            <intent-filter>
+                <action android:name="android.intent.action.MANAGE_NETWORK_USAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

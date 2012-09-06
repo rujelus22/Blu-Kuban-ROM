@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.finsky.layout.PurchaseSummaryLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/DetailsHeader"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.finsky.layout.SmartThumbnailView android:id="@id/thumbnail" android:paddingTop="6.0dip" android:paddingBottom="4.0dip" android:layout_width="0.0dip" android:layout_height="@dimen/summary_thumbnail_large_size" android:scaleType="fitCenter" />
+    <LinearLayout android:orientation="vertical" android:id="@id/summary_right_column" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip">
+        <TextView android:textSize="24.0sp" android:textStyle="bold" android:textColor="@color/white" android:ellipsize="end" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" />
+        <com.google.android.finsky.layout.DecoratedTextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/grey" android:ellipsize="end" android:id="@id/creator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:drawablePadding="6.0dip" />
+        <com.google.android.finsky.layout.DecoratedTextView android:textSize="16.0sp" android:ellipsize="end" android:id="@id/tipper_sticker" android:paddingLeft="4.0dip" android:paddingTop="1.0dip" android:paddingRight="4.0dip" android:paddingBottom="1.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:singleLine="true" />
+        <LinearLayout android:gravity="bottom|right|center" android:orientation="vertical" android:id="@id/button_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <include layout="@layout/purchase_buttons" />
+            <TextView android:textSize="@dimen/by_wallet_size" android:textColor="@color/grey" android:layout_gravity="right" android:id="@id/wallet_byline" android:paddingTop="8.0dip" android:paddingRight="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lineSpacingExtra="3.0sp" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.finsky.layout.PurchaseSummaryLayout>

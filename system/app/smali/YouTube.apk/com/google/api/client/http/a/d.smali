@@ -6,11 +6,11 @@
 # instance fields
 .field private final a:J
 
-.field private final b:Lcom/google/api/client/http/g;
+.field private final b:Lcom/google/api/client/http/h;
 
 
 # direct methods
-.method constructor <init>(JLcom/google/api/client/http/g;)V
+.method constructor <init>(JLcom/google/api/client/http/h;)V
     .registers 4
     .parameter
     .parameter
@@ -23,7 +23,7 @@
     iput-wide p1, p0, Lcom/google/api/client/http/a/d;->a:J
 
     .line 35
-    iput-object p3, p0, Lcom/google/api/client/http/a/d;->b:Lcom/google/api/client/http/g;
+    iput-object p3, p0, Lcom/google/api/client/http/a/d;->b:Lcom/google/api/client/http/h;
 
     .line 36
     return-void
@@ -88,9 +88,9 @@
     if-eqz v0, :cond_d
 
     .line 56
-    iget-object v0, p0, Lcom/google/api/client/http/a/d;->b:Lcom/google/api/client/http/g;
+    iget-object v0, p0, Lcom/google/api/client/http/a/d;->b:Lcom/google/api/client/http/h;
 
-    invoke-interface {v0, p1}, Lcom/google/api/client/http/g;->a(Ljava/io/OutputStream;)V
+    invoke-interface {v0, p1}, Lcom/google/api/client/http/h;->a(Ljava/io/OutputStream;)V
 
     .line 58
     :cond_d

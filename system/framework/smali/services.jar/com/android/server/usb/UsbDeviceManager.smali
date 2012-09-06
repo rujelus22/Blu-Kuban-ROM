@@ -17,7 +17,7 @@
 
 .field private static final BOOT_MODE_PROPERTY:Ljava/lang/String; = "ro.bootmode"
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final FUNCTIONS_PATH:Ljava/lang/String; = "/sys/class/android_usb/android0/functions"
 

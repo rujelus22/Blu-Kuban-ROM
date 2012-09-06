@@ -7,5 +7,8 @@
 .method public abstract showAppAlert(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Z
 .end method
 
-.method public abstract showDocAlert(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+.method public abstract showAppNotification(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+.end method
+
+.method public abstract showDocAlert(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 .end method

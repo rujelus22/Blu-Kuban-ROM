@@ -20,11 +20,11 @@
     .parameter
 
     .prologue
-    .line 31
+    .line 33
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
-    .line 32
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 34
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -32,7 +32,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
 
-    .line 33
+    .line 35
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .parameter
 
     .prologue
-    .line 36
+    .line 38
     iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
 
     invoke-virtual {v0, p2, p1}, Lcom/google/common/collect/Ordering;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
@@ -57,28 +57,31 @@
 .method public final equals(Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 75
+    .line 85
     if-ne p1, p0, :cond_4
 
-    .line 76
+    .line 86
     const/4 v0, 0x1
 
-    .line 82
+    .line 92
     :goto_3
     return v0
 
-    .line 78
+    .line 88
     :cond_4
     instance-of v0, p1, Lcom/google/common/collect/ReverseOrdering;
 
     if-eqz v0, :cond_13
 
-    .line 79
+    .line 89
     check-cast p1, Lcom/google/common/collect/ReverseOrdering;
 
-    .line 80
+    .line 90
     iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
 
     iget-object v1, p1, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
@@ -89,7 +92,7 @@
 
     goto :goto_3
 
-    .line 82
+    .line 92
     :cond_13
     const/4 v0, 0x0
 
@@ -100,7 +103,7 @@
     .registers 2
 
     .prologue
-    .line 71
+    .line 81
     iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -117,7 +120,7 @@
     .parameter
 
     .prologue
-    .line 67
+    .line 77
     iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/Ordering;->min(Ljava/lang/Iterable;)Ljava/lang/Object;
@@ -133,7 +136,7 @@
     .parameter
 
     .prologue
-    .line 59
+    .line 65
     iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/common/collect/Ordering;->min(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -151,10 +154,25 @@
     .parameter
 
     .prologue
-    .line 63
+    .line 69
     iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Lcom/google/common/collect/Ordering;->min(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final max(Ljava/util/Iterator;)Ljava/lang/Object;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 73
+    iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
+
+    invoke-virtual {v0, p1}, Lcom/google/common/collect/Ordering;->min(Ljava/util/Iterator;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -166,7 +184,7 @@
     .parameter
 
     .prologue
-    .line 55
+    .line 61
     iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/Ordering;->max(Ljava/lang/Iterable;)Ljava/lang/Object;
@@ -182,7 +200,7 @@
     .parameter
 
     .prologue
-    .line 47
+    .line 49
     iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/common/collect/Ordering;->max(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -200,10 +218,25 @@
     .parameter
 
     .prologue
-    .line 51
+    .line 53
     iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Lcom/google/common/collect/Ordering;->max(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final min(Ljava/util/Iterator;)Ljava/lang/Object;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 57
+    iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
+
+    invoke-virtual {v0, p1}, Lcom/google/common/collect/Ordering;->max(Ljava/util/Iterator;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -214,7 +247,7 @@
     .registers 2
 
     .prologue
-    .line 41
+    .line 43
     iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
 
     return-object v0
@@ -224,7 +257,7 @@
     .registers 3
 
     .prologue
-    .line 86
+    .line 96
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

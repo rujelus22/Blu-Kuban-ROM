@@ -53,28 +53,35 @@
 Nu utilizaţi aplicaţia în timp ce conduceţi. Datele de trafic nu sunt în timp real, iar indicaţiile de orientare pot fi eronate, periculoase, interzise sau pot implica utilizarea feribotului. Din traseele pe jos pot lipsi trotuare sau alei pietonale. Respectaţi legile aplicabile.
 
 Fiţi atent(ă) la drum!"</string>
+    <string name="da_agreement_with_walking_and_biking">"Navigarea Hărți Google este în versiune beta. Aveți grijă. 
+
+Nu utilizați această aplicație în timp ce vă deplasați. Datele privind traficul nu sunt în timp real, iar indicațiile de orientare pot fi eronate, periculoase, interzise sau pot implica utilizarea feribotului. Din traseele de mers pe jos pot lipsi trotuarele sau aleile pietonale. Indicațiile de orientare pentru mers cu bicicleta pot cuprinde trasee care nu sunt potrivite pentru ciclism. Respectați legile în vigoare.
+
+ Fiți atent(ă) la drum!"</string>
     <string name="da_disclaimer_checkbox">Afişaţi acest mesaj data viitoare</string>
-    <string name="da_show_list">Listă de indicaţii rutiere</string>
-    <string name="da_route_overview">Informaţii despre traseu</string>
+    <string name="da_show_list">Lista de indicaţii</string>
+    <string name="da_route_and_alternates">Traseu şi alternative</string>
     <string name="da_show_map">Afişaţi harta</string>
+    <string name="da_menu_more">Mai multe</string>
     <string name="da_satellite">Satelit</string>
     <string name="da_traffic_view">Vizualizare trafic</string>
     <string name="da_no_traffic_here">Nu există info. de trafic</string>
     <string name="da_traffic">Trafic</string>
     <string name="da_area_view">Afişare zonă</string>
-    <string name="da_mute">Dezactivaţi sunetul</string>
-    <string name="da_unmute">Activaţi sunetul</string>
     <string name="da_settings">Setări</string>
     <string name="da_help">Ajutor</string>
-    <string name="da_terms_privacy_notices">Confidenţialitate</string>
+    <string name="da_terms_privacy_notices">Termeni şi confidenţialitate</string>
     <string name="da_terms_and_conditions">Termeni şi condiţii</string>
     <string name="da_privacy_policy">Politica de confidenţialitate</string>
-    <string name="da_legal_notices">Menţiuni legale</string>
+    <string name="da_legal_notices">Note legale</string>
     <string name="da_navigation_suspended">Navigare suspendată</string>
-    <string name="da_exit_navigation">Ieşiţi din navigare</string>
+    <string name="da_exit_navigation">Ieşire din navigare</string>
+    <string name="da_save">Salvaţi</string>
     <string name="da_power_settings_category">Setări pentru energie</string>
     <string name="da_screen_dimming_setting_title">Întunecare ecran</string>
     <string name="da_screen_dimming_setting_summary">Luminozitatea ecranului se estompează între instrucţiuni pentru a conserva energia</string>
+    <string name="da_home_setting_set_address">Setaţi adresa de acasă</string>
+    <string name="da_home_setting_set_address_hint">Introduceţi o adresă</string>
     <string name="da_info_settings_category">Informaţii</string>
     <string name="da_email_me_when_resolved">Doresc e-mail când se rezolvă</string>
     <string name="da_problem_reported">Problema a fost semnalată</string>
@@ -85,7 +92,7 @@ Fiţi atent(ă) la drum!"</string>
 Puteţi activa o comandă rapidă, cu un singur clic, în setările aplicaţiei.
 
  Dacă doriţi actualizări pe e-mail la remedierea problemei, până în acel moment, adresa de e-mail va fi stocată împreună cu locaţia şi comentariile dvs."</string>
-    <string name="da_report_a_problem">Semnalaţi o problemă</string>
+    <string name="da_report_a_problem">Raportaţi o problemă</string>
     <string name="da_report_a_problem_dialog_title">Semnalaţi probl.</string>
     <string name="da_rmi_preference_trackball_summary">Dacă este activată opţiunea şi apăsaţi pe trackball veţi începe semnalarea problemei.</string>
     <string name="da_rmi_preference_camera_summary">Dacă este activată opţiunea şi apăsaţi pe butonul camerei veţi începe semnalarea problemei.</string>
@@ -109,6 +116,8 @@ Puteţi activa o comandă rapidă, cu un singur clic, în setările aplicaţiei.
     <string name="da_turn_on_gps">Doriţi să fie afişate setările locaţiei?</string>
     <string name="da_voice_guidance">Ghid vocal</string>
     <string name="da_install_voice_guidance_prompt">Pentru navigare vocală, instalaţi suportul de transformare a textului în vorbire de pe Android Market.</string>
+    <string name="da_voice_off">Dezactivaţi vocea</string>
+    <string name="da_voice_on">Porniţi vocea</string>
     <string name="da_voice_guidance_on">Instrucţiunile vocale sunt activate</string>
     <string name="da_voice_guidance_off">Instrucţiunile vocale sunt dezactivate</string>
     <string name="da_dialog_ok">OK</string>
@@ -121,7 +130,7 @@ Puteţi activa o comandă rapidă, cu un singur clic, în setările aplicaţiei.
     <string name="da_dialog_go">Accesaţi</string>
     <string name="da_dialog_get_directions">Obţineţi indicaţii de orientare</string>
     <string name="da_map">Hartă</string>
-    <string name="da_clear_layers">Curăţaţi harta</string>
+    <string name="da_clear_layers">Goliţi</string>
     <string name="da_layer_name_parking">Parcare</string>
     <string name="da_layer_name_attractions">Atracţii</string>
     <string name="da_layer_name_gas_stations">Benzinării</string>
@@ -188,9 +197,12 @@ Puteţi activa o comandă rapidă, cu un singur clic, în setările aplicaţiei.
     <string name="da_picker_speak_destination">Rostiţi destinaţia</string>
     <string name="da_picker_contacts">Agendă</string>
     <string name="da_picker_starred_items">Locaţii cu stea</string>
+    <string name="da_picker_starred">CU STEA</string>
     <string name="da_picker_new_contact">Contact nou</string>
+    <string name="da_go_home">Mergeţi acasă</string>
     <string name="da_picker_saved_destinations">Destinaţii salvate</string>
     <string name="da_picker_recent_destinations">Destinaţii recente</string>
+    <string name="da_picker_shortcuts">COMENZI RAPIDE</string>
     <string name="da_navigate_to">Navigaţi la</string>
     <string name="da_return_to">Reveniţi la</string>
     <string name="da_picker_search_hint">Destinaţie</string>
@@ -208,7 +220,6 @@ Puteţi adăuga intrări noi sau puteţi seta adresele pentru cele existente în
     <string name="da_walking">Pe jos</string>
     <string name="da_bicycling">Bicicletă</string>
     <string name="da_quoted_text">„%1$s”</string>
-    <string name="da_more_info">Mai multe informaţii</string>
     <string name="da_walking_warning">Mers pe jos (beta): atenţie</string>
     <string name="da_bicycling_warning">Ciclism (beta): fiţi precaut(ă)</string>
     <string name="da_calibrate_compass_title">Calibrare busolă</string>
@@ -216,7 +227,6 @@ Puteţi adăuga intrări noi sau puteţi seta adresele pentru cele existente în
     <string name="da_confirm_exit_title">Ieşiţi din navigare?</string>
     <string name="da_confirm_exit_text">Veţi opri indicaţiile de traseu.</string>
     <string name="da_route_includes_tolls">Traseul include taxe</string>
-    <string name="da_avoid_tolls">Fără taxe</string>
     <string name="da_avoiding_tolls">Se evită taxele</string>
     <string name="da_avoiding_highways">Se evită autostrăzile</string>
     <string name="da_route_includes_unavoidable_tolls">Traseul include taxe.</string>
@@ -272,13 +282,15 @@ Puteţi adăuga intrări noi sau puteţi seta adresele pentru cele existente în
     <string name="DIRECTIONS_TITLE">Indicaţii de orientare</string>
     <string name="EXIT_COMMAND">Ieşire</string>
     <string name="FEATURE_SWITCHER_LATITUDE_SUBTITLE">Găsiţi familia şi prietenii</string>
-    <string name="FEATURE_SWITCHER_LOCAL">Locaţii</string>
+    <string name="FEATURE_SWITCHER_LOCAL">Local</string>
     <string name="FEATURE_SWITCHER_LOCAL_SUBTITLE">Găsiţi restaurante, baruri şi altele</string>
     <string name="FEATURE_SWITCHER_MAP">Hartă</string>
     <string name="FEATURE_SWITCHER_NAV">Navigare GPS</string>
     <string name="FEATURE_SWITCHER_TRAFFIC">Trafic</string>
     <string name="FRIENDS_COMMAND_ACTIVATE">Latitude</string>
     <string name="FRIENDS_COMMAND_JOIN">Înscrieţi-vă în Latitude</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE">Profil Google+</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE_DESCRIPTION">Vizualizaţi profilul Google+ al unui prieten</string>
     <string name="FRIENDS_HISTORY_SUMMARY_TITLE">Istoricul locaţiilor</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TICKER">{0} ar dori să vă înregistraţi</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TITLE">Solicitare de înregistrare pe Latitude</string>
@@ -298,10 +310,26 @@ Puteţi adăuga intrări noi sau puteţi seta adresele pentru cele existente în
     <string name="LATITUDE_WIDGET_FRIENDS_ACTIVATE">Atingeţi pentru a vă conecta la serviciul Latitude</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LAST_UPDATED_TIME_ABSOLUTE">Momentul ultimei actualizări: {0}</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LOCATION_UNKNOWN">Locaţie necunoscută</string>
+    <string name="LATITUDE_WIDGET_START">Apăsați pentru a porni Latitude</string>
     <string name="LOADING">Se încarcă</string>
-    <string name="LOCAL_APP_NAME">Google Local</string>
     <string name="MAPS_APP_NAME">Hărţi</string>
     <string name="MY_PLACES_COMMAND">Locaţiile mele</string>
+    <string name="MY_PLACES_DELETE_CONFIRM">&lt;b>{0}&lt;/b> va fi eliminată din Locațiile mele.</string>
+    <string name="MY_PLACES_DELETE_CONFIRM_TITLE">Ştergeţi</string>
+    <string name="MY_PLACES_DELETE_ITEM_COMMAND">Ștergeți</string>
+    <string name="MY_PLACES_DELETE_OWNED_MAP_CONFIRM">&lt;b>{0}&lt;/b> va fi eliminată din Locațiile mele și ștearsă definitiv.</string>
+    <string name="MY_PLACES_DELETE_PLACE_CONFIRM">"&lt;b>{0}&lt;/b> va fi eliminată din Locaţiile mele și activitățile legate de această locație vor fi șterse definitiv: "</string>
+    <string name="MY_PLACES_DELETE_SERVICE_UNAVAILABLE">Serviciul este temporar indisponibil. Încercați din nou mai târziu.</string>
+    <string name="MY_PLACES_ITEM_IS_BOOKMARKED_MY_MAP">Hartă marcată</string>
+    <string name="MY_PLACES_ITEM_IS_MY_MAP">Harta mea</string>
+    <string name="MY_PLACES_ITEM_IS_REVIEWED">Recenzat</string>
+    <string name="MY_PLACES_ITEM_IS_STARRED">Cu stea</string>
+    <string name="MY_PLACES_LINK_ON_SUGGEST">Personalizat cu Locaţiile mele</string>
+    <string name="MY_PLACES_NO_DIRECTIONS_ITEM_MESSAGE">Nu aveți niciun istoric al indicațiilor de orientare.</string>
+    <string name="MY_PLACES_NO_MY_MAP_ITEM_MESSAGE">Nu aveți nicio hartă.</string>
+    <string name="MY_PLACES_NO_STARRED_ITEM_MESSAGE">Nu aveți nicio locație cu stea.</string>
+    <string name="MY_PLACES_SEE_ON_MAP_COMMAND">Hartă</string>
+    <string name="MY_PLACES_SHOW_DETAIL_PAGE_COMMAND">Detalii</string>
     <string name="NAVIGATE_MODE_NAVIGATION">Navigare</string>
     <string name="NEED_NET_BODY">Această aplicaţie nu poate fi utilizată până nu-i permiteţi să trimită şi să primească date prin reţea.</string>
     <string name="NEED_NET_TITLE">Este nevoie de acces la reţea</string>
@@ -309,8 +337,11 @@ Puteţi adăuga intrări noi sau puteţi seta adresele pentru cele existente în
     <string name="NET_FAIL_BODY">Această aplicaţie necesită o conexiune de date funcţională.</string>
     <string name="NET_FAIL_TITLE">Eroare de reţea</string>
     <string name="NET_UNAVAILABLE_TITLE">Reţea indisponibilă</string>
-    <string name="PLACES_APP_NAME">Locaţii</string>
-    <string name="RATINGS_CUSTOM_ASPECT_EXAMPLE_TEXT">de ex., spaghete bologneze, cocteiluri, muzică</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_PLURAL">{0} oferte pentru dvs. în apropiere</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_SINGLE">1 ofertă pentru dvs. în apropiere</string>
+    <string name="OFFERS_FEATURE_SWITCHER_TITLE">Oferte</string>
+    <string name="PLACES_APP_NAME">Local</string>
+    <string name="RATINGS_CORRECT_CATEGORY">Selectați categoria corectă pentru această locație</string>
     <string name="RATINGS_CUSTOM_ASPECT_HINT_TEXT">Ce iese în evidenţă?</string>
     <string name="RATINGS_OPTIN_CANCEL">Anulaţi</string>
     <string name="RATINGS_OPTIN_CLOSE">Închideţi</string>
@@ -326,6 +357,7 @@ Puteţi adăuga intrări noi sau puteţi seta adresele pentru cele existente în
     <string name="RATINGS_RATE_PLACES">De ce eval. loc.?</string>
     <string name="RATINGS_SET_APPEARANCE">Setaţi aspectul</string>
     <string name="RATINGS_WAIT">Aşteptaţi...</string>
+    <string name="RATINGS_WRONG_LABELS">Etichete greșite?</string>
     <string name="SEARCH_HINT">Căutaţi pe Hărţi</string>
     <string name="SHORT_APP_NAME">Hărţi Google</string>
     <string name="TRAFFIC_WIDGET_END_LOCATION">Punct de sosire</string>
@@ -335,7 +367,12 @@ Puteţi adăuga intrări noi sau puteţi seta adresele pentru cele existente în
     <string name="TRAFFIC_WIDGET_START_LOCATION">Punct de plecare</string>
     <string name="TRANSIT_NAVIGATION">Navigare pentru transport public</string>
     <string name="TRANSIT_TITLE">Transport public</string>
-    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">"Eroare gravă.  Ieşiţi şi reporniţi."</string>
+    <string name="TRANSIT_TYPE_FILTER_ALL">Toate</string>
+    <string name="TRANSIT_TYPE_FILTER_BUS">Autobuz</string>
+    <string name="TRANSIT_TYPE_FILTER_SUBWAY">Metrou</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAIN">Tren</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAM">Tramvai</string>
+    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">Au apărut probleme... Încercați din nou în câteva minute.</string>
     <string name="UNKNOWN_COMMUNICATION_FAILURE_TITLE">Eroare necunoscută</string>
     <string name="UPGRADE_BODY">Trebuie să instalaţi o nouă versiune pentru a utiliza această aplicaţie.</string>
     <string name="UPGRADE_TITLE">Actualizare software</string>

@@ -1,44 +1,79 @@
-.class Lcom/google/googlenav/ui/view/android/j;
-.super Lcom/google/googlenav/ui/android/M;
+.class Lcom/google/googlenav/ui/view/android/J;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/widget/AbsListView$OnScrollListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/android/i;
+.field private final a:Lcom/google/googlenav/ui/view/android/H;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/i;)V
+.method private constructor <init>(Lcom/google/googlenav/ui/view/android/H;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/j;->a:Lcom/google/googlenav/ui/view/android/i;
+    .prologue
+    .line 328
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcom/google/googlenav/ui/android/M;-><init>()V
+    .line 329
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/J;->a:Lcom/google/googlenav/ui/view/android/H;
+
+    .line 330
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/googlenav/ui/view/android/H;Lcom/google/googlenav/ui/view/android/I;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 324
+    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/view/android/J;-><init>(Lcom/google/googlenav/ui/view/android/H;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/view/View;)V
+.method public onScroll(Landroid/widget/AbsListView;III)V
     .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v2, 0x1
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/j;->a:Lcom/google/googlenav/ui/view/android/i;
-
-    invoke-virtual {v0, v2}, Lcom/google/googlenav/ui/view/android/i;->a(I)Landroid/app/Dialog;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/j;->a:Lcom/google/googlenav/ui/view/android/i;
-
-    invoke-virtual {v1, v2, v0}, Lcom/google/googlenav/ui/view/android/i;->a(ILandroid/app/Dialog;)V
-
-    invoke-virtual {v0}, Landroid/app/Dialog;->show()V
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/j;->a:Lcom/google/googlenav/ui/view/android/i;
-
-    invoke-static {v1, v0}, Lcom/google/googlenav/ui/view/android/i;->a(Lcom/google/googlenav/ui/view/android/i;Landroid/app/Dialog;)Landroid/app/Dialog;
-
+    .prologue
+    .line 339
     return-void
+.end method
+
+.method public onScrollStateChanged(Landroid/widget/AbsListView;I)V
+    .registers 5
+    .parameter
+    .parameter
+
+    .prologue
+    .line 333
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/J;->a:Lcom/google/googlenav/ui/view/android/H;
+
+    if-eqz p2, :cond_9
+
+    const/4 v0, 0x1
+
+    :goto_5
+    invoke-static {v1, v0}, Lcom/google/googlenav/ui/view/android/H;->a(Lcom/google/googlenav/ui/view/android/H;Z)Z
+
+    .line 334
+    return-void
+
+    .line 333
+    :cond_9
+    const/4 v0, 0x0
+
+    goto :goto_5
 .end method

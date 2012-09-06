@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:id="@id/alarm_layout" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <Button android:textSize="16.0sp" android:gravity="left|center" android:id="@id/alarm_item" android:background="@drawable/calendars_dropdown_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.3299866dip" android:layout_weight="1.0" />
-    <ImageButton android:gravity="center_vertical" android:id="@id/reminder_remove" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="7.3299866dip" android:contentDescription="@string/content_description_edit_event_remove_reminder" style="@style/MinusButton" />
-</LinearLayout>

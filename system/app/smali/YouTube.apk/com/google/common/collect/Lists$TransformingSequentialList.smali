@@ -13,21 +13,21 @@
 # instance fields
 .field final fromList:Ljava/util/List;
 
-.field final function:Lcom/google/common/base/k;
+.field final function:Lcom/google/common/base/v;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/List;Lcom/google/common/base/k;)V
+.method constructor <init>(Ljava/util/List;Lcom/google/common/base/v;)V
     .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 352
+    .line 361
     invoke-direct {p0}, Ljava/util/AbstractSequentialList;-><init>()V
 
-    .line 353
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 362
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -35,16 +35,16 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Lists$TransformingSequentialList;->fromList:Ljava/util/List;
 
-    .line 354
-    invoke-static {p2}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 363
+    invoke-static {p2}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/common/base/k;
+    check-cast v0, Lcom/google/common/base/v;
 
-    iput-object v0, p0, Lcom/google/common/collect/Lists$TransformingSequentialList;->function:Lcom/google/common/base/k;
+    iput-object v0, p0, Lcom/google/common/collect/Lists$TransformingSequentialList;->function:Lcom/google/common/base/v;
 
-    .line 355
+    .line 364
     return-void
 .end method
 
@@ -54,12 +54,12 @@
     .registers 2
 
     .prologue
-    .line 362
+    .line 371
     iget-object v0, p0, Lcom/google/common/collect/Lists$TransformingSequentialList;->fromList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 363
+    .line 372
     return-void
 .end method
 
@@ -68,17 +68,17 @@
     .parameter
 
     .prologue
-    .line 368
+    .line 377
     iget-object v0, p0, Lcom/google/common/collect/Lists$TransformingSequentialList;->fromList:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
 
     move-result-object v0
 
-    .line 369
-    new-instance v1, Lcom/google/common/collect/dw;
+    .line 378
+    new-instance v1, Lcom/google/common/collect/fp;
 
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/dw;-><init>(Lcom/google/common/collect/Lists$TransformingSequentialList;Ljava/util/ListIterator;)V
+    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/fp;-><init>(Lcom/google/common/collect/Lists$TransformingSequentialList;Ljava/util/ListIterator;)V
 
     return-object v1
 .end method
@@ -87,7 +87,7 @@
     .registers 2
 
     .prologue
-    .line 365
+    .line 374
     iget-object v0, p0, Lcom/google/common/collect/Lists$TransformingSequentialList;->fromList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I

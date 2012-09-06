@@ -1,35 +1,51 @@
-.class Lcom/google/googlenav/ui/view/android/aN;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class Lcom/google/googlenav/ui/view/android/an;
+.super Lcom/google/googlenav/ui/android/ac;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/android/DistanceView;
+.field final synthetic a:Lcom/google/googlenav/ui/bd;
+
+.field final synthetic b:Lcom/google/googlenav/ui/view/android/ak;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/DistanceView;)V
-    .registers 2
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/ak;Lcom/google/googlenav/ui/bd;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/aN;->a:Lcom/google/googlenav/ui/view/android/DistanceView;
+    .prologue
+    .line 164
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/an;->b:Lcom/google/googlenav/ui/view/android/ak;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lcom/google/googlenav/ui/view/android/an;->a:Lcom/google/googlenav/ui/bd;
+
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/ac;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .registers 3
+.method public a(Landroid/view/View;)V
+    .registers 4
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aN;->a:Lcom/google/googlenav/ui/view/android/DistanceView;
+    .prologue
+    .line 168
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/an;->b:Lcom/google/googlenav/ui/view/android/ak;
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/ak;->a(Lcom/google/googlenav/ui/view/android/ak;)Lcom/google/googlenav/ui/view/android/V;
 
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/view/android/DistanceView;->setVisibility(I)V
+    move-result-object v0
 
+    check-cast v0, Lcom/google/googlenav/ui/view/android/ah;
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/an;->a:Lcom/google/googlenav/ui/bd;
+
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/view/android/ah;->a(Lcom/google/googlenav/ui/aQ;)Z
+
+    .line 169
     return-void
 .end method

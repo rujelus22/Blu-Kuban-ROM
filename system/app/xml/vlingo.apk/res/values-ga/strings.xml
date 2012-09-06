@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="driving_mode">Mód tiomána</string>
-    <string name="app_name">Ordú gutha</string>
-    <string name="incar">Labhairt ghutha</string>
-    <string name="incar_icon">Labhairt ghutha</string>
-    <string name="Vlingo">Orduithe gutha</string>
-    <string name="widget_name">Guth</string>
-</resources>

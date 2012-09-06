@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 113
+    .line 115
     iput-object p1, p0, Lcom/google/android/finsky/download/DownloadProgressManager$3;->this$0:Lcom/google/android/finsky/download/DownloadProgressManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .registers 3
 
     .prologue
-    .line 116
+    .line 118
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager$3;->this$0:Lcom/google/android/finsky/download/DownloadProgressManager;
 
     #getter for: Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
@@ -51,7 +51,7 @@
 
     if-eqz v0, :cond_17
 
-    .line 117
+    .line 119
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager$3;->this$0:Lcom/google/android/finsky/download/DownloadProgressManager;
 
     #getter for: Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
@@ -61,7 +61,7 @@
 
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 118
+    .line 120
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager$3;->this$0:Lcom/google/android/finsky/download/DownloadProgressManager;
 
     const/4 v1, 0x0
@@ -69,7 +69,7 @@
     #setter for: Lcom/google/android/finsky/download/DownloadProgressManager;->mCursor:Landroid/database/Cursor;
     invoke-static {v0, v1}, Lcom/google/android/finsky/download/DownloadProgressManager;->access$302(Lcom/google/android/finsky/download/DownloadProgressManager;Landroid/database/Cursor;)Landroid/database/Cursor;
 
-    .line 121
+    .line 122
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager$3;->this$0:Lcom/google/android/finsky/download/DownloadProgressManager;
 
@@ -80,6 +80,6 @@
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->quit()Z
 
-    .line 122
+    .line 123
     return-void
 .end method

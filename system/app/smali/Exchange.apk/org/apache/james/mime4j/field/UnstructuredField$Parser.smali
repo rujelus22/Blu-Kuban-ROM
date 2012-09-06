@@ -22,8 +22,8 @@
     .registers 1
 
     .prologue
-    .line 41
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 43
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -37,12 +37,12 @@
     .parameter "raw"
 
     .prologue
-    .line 43
+    .line 45
     invoke-static {p2}, Lorg/apache/james/mime4j/decoder/DecoderUtil;->decodeEncodedWords(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 44
+    .line 46
     .local v0, value:Ljava/lang/String;
     new-instance v1, Lorg/apache/james/mime4j/field/UnstructuredField;
 

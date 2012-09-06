@@ -10,6 +10,6 @@
             <TextView android:textAppearance="@style/TwTextAppearanceListTwoLineSecondary1" android:id="@id/duration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/call_time" android:layout_alignLeft="@id/call_time" />
             <TextView android:textAppearance="@style/TwTextAppearanceListTwoLineSecondary1" android:id="@id/cdnip_number" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:layout_below="@id/call_time" android:layout_alignParentRight="true" />
         </RelativeLayout>
-        <View android:id="@id/call_detail_log_divider" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <View android:id="@id/call_detail_log_divider" android:background="#ff4d4d4d" android:layout_width="fill_parent" android:layout_height="1.0dip" />
     </LinearLayout>
 </LinearLayout>

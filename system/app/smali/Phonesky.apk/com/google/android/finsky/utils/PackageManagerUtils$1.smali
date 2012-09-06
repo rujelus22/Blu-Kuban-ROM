@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/utils/PackageManagerUtils;->installPackage(Landroid/content/Context;Landroid/net/Uri;Lcom/google/android/finsky/utils/PackageManagerUtils$PackageInstallObserver;I)V
+    value = Lcom/google/android/finsky/utils/PackageManagerUtils;->installPackage(Landroid/content/Context;Landroid/net/Uri;Lcom/google/android/finsky/utils/PackageManagerUtils$PackageInstallObserver;IJLjava/lang/String;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .line 1
     iput-object p1, p0, Lcom/google/android/finsky/utils/PackageManagerUtils$1;->val$observer:Lcom/google/android/finsky/utils/PackageManagerUtils$PackageInstallObserver;
 
-    .line 27
+    .line 50
     invoke-direct {p0}, Landroid/content/pm/IPackageInstallObserver$Stub;-><init>()V
 
     return-void
@@ -39,24 +39,19 @@
     .registers 4
     .parameter "packageName"
     .parameter "returnCode"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
     .prologue
-    .line 31
+    .line 53
     iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerUtils$1;->val$observer:Lcom/google/android/finsky/utils/PackageManagerUtils$PackageInstallObserver;
 
     if-eqz v0, :cond_9
 
-    .line 32
+    .line 54
     iget-object v0, p0, Lcom/google/android/finsky/utils/PackageManagerUtils$1;->val$observer:Lcom/google/android/finsky/utils/PackageManagerUtils$PackageInstallObserver;
 
     invoke-interface {v0, p1, p2}, Lcom/google/android/finsky/utils/PackageManagerUtils$PackageInstallObserver;->packageInstalled(Ljava/lang/String;I)V
 
-    .line 34
+    .line 56
     :cond_9
     return-void
 .end method

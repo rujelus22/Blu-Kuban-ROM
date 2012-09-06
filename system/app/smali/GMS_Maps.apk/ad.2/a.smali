@@ -1,210 +1,267 @@
 .class public Lad/a;
-.super Ljava/lang/Object;
+.super Lad/m;
+.source "SourceFile"
 
 
-# static fields
-.field private static a:Landroid/content/Context;
+# instance fields
+.field private b:Ljava/util/Vector;
 
-.field private static b:Z
+.field private c:I
+
+.field private d:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lad/t;IILat/B;Ljava/lang/String;)V
+    .registers 14
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    const/4 v7, 0x0
 
-    sput-boolean v0, Lad/a;->b:Z
+    .line 22
+    const/4 v3, 0x4
 
-    return-void
-.end method
+    move-object v0, p0
 
-.method public constructor <init>()V
-    .registers 1
+    move-object v1, p1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move v2, p2
 
-    return-void
-.end method
+    move v4, p3
 
-.method private static b()V
-    .registers 6
+    move-object v5, p4
 
-    const/4 v1, 0x0
+    move-object v6, p5
 
-    invoke-static {}, Lcom/google/googlenav/login/g;->j()Lcom/google/googlenav/login/g;
+    invoke-direct/range {v0 .. v6}, Lad/m;-><init>(Lad/t;IIILat/B;Ljava/lang/String;)V
 
-    sget-object v0, Lad/a;->a:Landroid/content/Context;
+    .line 16
+    new-instance v0, Ljava/util/Vector;
 
-    invoke-static {v0, v1}, Lcom/google/googlenav/login/a;->a(Landroid/content/Context;Lcom/google/googlenav/android/ac;)Lcom/google/googlenav/login/g;
+    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
 
-    move-result-object v0
+    iput-object v0, p0, Lad/a;->b:Ljava/util/Vector;
 
-    new-instance v2, Lad/b;
+    .line 17
+    iput v7, p0, Lad/a;->c:I
 
-    sget-object v3, Lad/a;->a:Landroid/content/Context;
+    .line 18
+    iput v7, p0, Lad/a;->d:I
 
-    invoke-direct {v2, v3}, Lad/b;-><init>(Landroid/content/Context;)V
-
-    invoke-virtual {v0, v2}, Lcom/google/googlenav/login/g;->a(Lcom/google/googlenav/login/i;)V
-
-    invoke-static {v1, v1, v1}, Lax/aa;->b(Lcom/google/googlenav/android/ac;Lcom/google/googlenav/ui/wizard/hM;Lcom/google/googlenav/L;)Lax/aa;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v5}, Lcom/google/googlenav/login/g;->c(Lcom/google/googlenav/login/h;)V
-
-    invoke-virtual {v0}, Lcom/google/googlenav/login/g;->k()Z
-
-    move-result v2
-
-    if-nez v2, :cond_2d
-
-    invoke-virtual {v0}, Lcom/google/googlenav/login/g;->o()Z
-
-    move-result v2
-
-    if-nez v2, :cond_2d
-
-    move-object v2, v1
-
-    move-object v3, v1
-
-    move-object v4, v1
-
-    invoke-virtual/range {v0 .. v5}, Lcom/google/googlenav/login/g;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/google/googlenav/login/h;)V
-
-    :cond_2d
-    return-void
-.end method
-
-.method public static b(Landroid/content/Context;)Z
-    .registers 3
-
-    invoke-static {p0}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
-
-    move-result-object v0
-
-    const-string v1, "com.google"
-
-    invoke-virtual {v0, v1}, Landroid/accounts/AccountManager;->getAccountsByType(Ljava/lang/String;)[Landroid/accounts/Account;
-
-    move-result-object v0
-
-    array-length v0, v0
-
-    if-lez v0, :cond_f
-
-    const/4 v0, 0x1
-
-    :goto_e
-    return v0
-
-    :cond_f
-    const/4 v0, 0x0
-
-    goto :goto_e
-.end method
-
-.method private static declared-synchronized c(Landroid/content/Context;)V
-    .registers 3
-
-    const-class v1, Lad/a;
-
-    monitor-enter v1
-
-    :try_start_3
-    sget-boolean v0, Lad/a;->b:Z
-
-    if-nez v0, :cond_f
-
-    sput-object p0, Lad/a;->a:Landroid/content/Context;
-
-    invoke-static {p0}, Lad/a;->d(Landroid/content/Context;)V
-
-    const/4 v0, 0x1
-
-    sput-boolean v0, Lad/a;->b:Z
-    :try_end_f
-    .catchall {:try_start_3 .. :try_end_f} :catchall_11
-
-    :cond_f
-    monitor-exit v1
-
-    return-void
-
-    :catchall_11
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-.end method
-
-.method private static d(Landroid/content/Context;)V
-    .registers 2
-
-    invoke-static {p0}, Landroid/webkit/CookieSyncManager;->createInstance(Landroid/content/Context;)Landroid/webkit/CookieSyncManager;
-
-    invoke-static {p0}, Lcom/google/googlenav/android/c;->a(Landroid/content/Context;)V
-
-    invoke-static {p0}, Lcom/google/googlenav/android/c;->b(Landroid/content/Context;)Lat/h;
-
-    invoke-static {}, Lcom/google/googlenav/bD;->a()Lap/c;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lap/c;->d()V
-
-    invoke-static {p0}, Lad/a;->b(Landroid/content/Context;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_19
-
-    invoke-static {}, Lad/a;->b()V
-
-    :cond_19
+    .line 23
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
+.method public a(I)Lad/m;
     .registers 3
+    .parameter
 
-    invoke-static {}, Laf/b;->a()Laf/b;
+    .prologue
+    .line 30
+    iget-object v0, p0, Lad/a;->b:Ljava/util/Vector;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Laf/b;->n()Lak/m;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, Lak/m;->a(Z)V
-
-    invoke-static {}, Lcom/google/googlenav/login/g;->j()Lcom/google/googlenav/login/g;
+    invoke-virtual {v0, p1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_19
+    check-cast v0, Lad/m;
 
-    invoke-static {}, Lcom/google/googlenav/login/g;->j()Lcom/google/googlenav/login/g;
+    return-object v0
+.end method
+
+.method public a(Lad/m;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    const/4 v2, 0x1
+
+    .line 34
+    iget-object v0, p0, Lad/a;->b:Ljava/util/Vector;
+
+    invoke-virtual {v0, p1}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
+
+    .line 37
+    iget-object v0, p0, Lad/a;->b:Ljava/util/Vector;
+
+    invoke-virtual {v0}, Ljava/util/Vector;->size()I
+
+    move-result v0
+
+    if-le v0, v2, :cond_17
+
+    .line 38
+    iget-object v0, p0, Lad/a;->b:Ljava/util/Vector;
+
+    invoke-virtual {v0}, Ljava/util/Vector;->size()I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Lad/m;->b(I)V
+
+    .line 40
+    :cond_17
+    iget-object v0, p0, Lad/a;->b:Ljava/util/Vector;
+
+    invoke-virtual {v0}, Ljava/util/Vector;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_28
+
+    .line 41
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lad/a;->a(I)Lad/m;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/googlenav/login/g;->a()V
+    invoke-virtual {v0, v2}, Lad/m;->b(I)V
 
-    :cond_19
+    .line 44
+    :cond_28
+    iput-object p0, p1, Lad/m;->a:Lad/a;
+
+    .line 45
+    iget v0, p0, Lad/a;->c:I
+
+    invoke-virtual {p1}, Lad/m;->m()Lad/t;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lad/t;->t()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    iput v0, p0, Lad/a;->c:I
+
+    .line 46
+    iget v0, p0, Lad/a;->d:I
+
+    invoke-virtual {p1}, Lad/m;->m()Lad/t;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lad/t;->v()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    iput v0, p0, Lad/a;->d:I
+
+    .line 47
     return-void
 .end method
 
-.method public a(Landroid/content/Context;)V
+.method public g()Lcom/google/googlenav/common/util/l;
+    .registers 4
+
+    .prologue
+    .line 59
+    new-instance v1, Lcom/google/googlenav/common/util/l;
+
+    const-string v0, "AggregateDirectionsFeature"
+
+    const/16 v2, 0x8
+
+    invoke-direct {v1, v0, v2}, Lcom/google/googlenav/common/util/l;-><init>(Ljava/lang/String;I)V
+
+    .line 60
+    const/4 v0, 0x0
+
+    move-object v2, v1
+
+    move v1, v0
+
+    :goto_c
+    iget-object v0, p0, Lad/a;->b:Ljava/util/Vector;
+
+    invoke-virtual {v0}, Ljava/util/Vector;->size()I
+
+    move-result v0
+
+    if-ge v1, v0, :cond_28
+
+    .line 61
+    iget-object v0, p0, Lad/a;->b:Ljava/util/Vector;
+
+    invoke-virtual {v0, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lad/m;
+
+    .line 62
+    invoke-virtual {v0}, Lad/m;->g()Lcom/google/googlenav/common/util/l;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Lcom/google/googlenav/common/util/l;->a(Lcom/google/googlenav/common/util/l;)Lcom/google/googlenav/common/util/l;
+
+    move-result-object v2
+
+    .line 60
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_c
+
+    .line 64
+    :cond_28
+    invoke-super {p0}, Lad/m;->g()Lcom/google/googlenav/common/util/l;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Lcom/google/googlenav/common/util/l;->a(Lcom/google/googlenav/common/util/l;)Lcom/google/googlenav/common/util/l;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public h()I
     .registers 2
 
-    invoke-static {p1}, Lad/a;->c(Landroid/content/Context;)V
+    .prologue
+    .line 26
+    iget-object v0, p0, Lad/a;->b:Ljava/util/Vector;
 
-    return-void
+    invoke-virtual {v0}, Ljava/util/Vector;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public i()I
+    .registers 2
+
+    .prologue
+    .line 50
+    iget v0, p0, Lad/a;->c:I
+
+    return v0
+.end method
+
+.method public j()I
+    .registers 2
+
+    .prologue
+    .line 54
+    iget v0, p0, Lad/a;->d:I
+
+    return v0
 .end method

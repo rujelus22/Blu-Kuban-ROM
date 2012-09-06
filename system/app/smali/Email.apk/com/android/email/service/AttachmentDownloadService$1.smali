@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/service/AttachmentDownloadService;->attachmentChanged(JI)V
+    value = Lcom/android/email/service/AttachmentDownloadService;->attachmentChanged(Landroid/content/Context;JI)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,29 +18,29 @@
 
 
 # instance fields
+.field final synthetic val$context:Landroid/content/Context;
+
 .field final synthetic val$flags:I
 
 .field final synthetic val$id:J
 
-.field final synthetic val$service:Lcom/android/email/service/AttachmentDownloadService;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/email/service/AttachmentDownloadService;JI)V
+.method constructor <init>(Landroid/content/Context;JI)V
     .registers 5
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 1033
-    iput-object p1, p0, Lcom/android/email/service/AttachmentDownloadService$1;->val$service:Lcom/android/email/service/AttachmentDownloadService;
+    .line 796
+    iput-object p1, p0, Lcom/android/email/service/AttachmentDownloadService$1;->val$context:Landroid/content/Context;
 
     iput-wide p2, p0, Lcom/android/email/service/AttachmentDownloadService$1;->val$id:J
 
     iput p4, p0, Lcom/android/email/service/AttachmentDownloadService$1;->val$flags:I
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -51,30 +51,43 @@
     .registers 5
 
     .prologue
-    .line 1035
-    iget-object v1, p0, Lcom/android/email/service/AttachmentDownloadService$1;->val$service:Lcom/android/email/service/AttachmentDownloadService;
+    .line 798
+    iget-object v0, p0, Lcom/android/email/service/AttachmentDownloadService$1;->val$context:Landroid/content/Context;
 
-    iget-wide v2, p0, Lcom/android/email/service/AttachmentDownloadService$1;->val$id:J
+    iget-wide v1, p0, Lcom/android/email/service/AttachmentDownloadService$1;->val$id:J
 
-    invoke-static {v1, v2, v3}, Lcom/android/emailcommon/provider/EmailContent$Attachment;->restoreAttachmentWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Attachment;
+    invoke-static {v0, v1, v2}, Lcom/android/emailcommon/provider/EmailContent$Attachment;->restoreAttachmentWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Attachment;
 
     move-result-object v0
 
-    .line 1036
-    .local v0, attachment:Lcom/android/emailcommon/provider/EmailContent$Attachment;
-    if-eqz v0, :cond_13
+    .line 799
+    if-eqz v0, :cond_21
 
-    .line 1042
+    .line 803
     iget v1, p0, Lcom/android/email/service/AttachmentDownloadService$1;->val$flags:I
 
     iput v1, v0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mFlags:I
 
-    .line 1043
-    iget-object v1, p0, Lcom/android/email/service/AttachmentDownloadService$1;->val$service:Lcom/android/email/service/AttachmentDownloadService;
+    .line 804
+    new-instance v1, Landroid/content/Intent;
 
-    invoke-virtual {v1, v0}, Lcom/android/email/service/AttachmentDownloadService;->onChange(Lcom/android/emailcommon/provider/EmailContent$Attachment;)V
+    iget-object v2, p0, Lcom/android/email/service/AttachmentDownloadService$1;->val$context:Landroid/content/Context;
 
-    .line 1045
-    :cond_13
+    const-class v3, Lcom/android/email/service/AttachmentDownloadService;
+
+    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 805
+    const-string v2, "com.android.email.AttachmentDownloadService.attachment"
+
+    invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    .line 806
+    iget-object v0, p0, Lcom/android/email/service/AttachmentDownloadService$1;->val$context:Landroid/content/Context;
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+
+    .line 808
+    :cond_21
     return-void
 .end method

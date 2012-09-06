@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include android:id="@id/check_all_select" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0" android:layout_below="@id/layout" android:layout_alignParentTop="true" layout="@layout/conversation_select_list_header" />
-    <include android:id="@id/list_title_bar_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0" android:layout_below="@id/layout" android:layout_alignParentTop="true" layout="@layout/common_list_item_title_bar" />
-    <LinearLayout android:id="@id/layout_message_listview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" android:layout_below="@id/conversation_select_list_header" />
-    <include android:id="@id/select_list_softkey" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0" android:layout_alignParentBottom="true" layout="@layout/common_softkey_2_button" />
-    <com.sec.android.socialhub.view.SocialHubDirectComposer android:id="@id/direct_composer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0" android:layout_alignParentBottom="true" />
-</LinearLayout>

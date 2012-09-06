@@ -1,58 +1,31 @@
-.class public interface abstract Ld/C;
+.class Ld/c;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ld/d;
+
+
+# direct methods
+.method constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 47
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()V
-.end method
+.method public a(Landroid/view/accessibility/AccessibilityManager;)Z
+    .registers 3
+    .parameter
 
-.method public abstract a(I)V
-.end method
+    .prologue
+    .line 74
+    const/4 v0, 0x0
 
-.method public abstract a(ILjava/lang/String;)V
-.end method
-
-.method public abstract a(ILjava/lang/String;Ljava/lang/String;)V
-.end method
-
-.method public abstract a(LW/a;)V
-.end method
-
-.method public abstract a(Ld/aq;)V
-.end method
-
-.method public abstract a(Ljava/lang/String;)V
-.end method
-
-.method public abstract a(Ljava/lang/String;ILW/a;)V
-.end method
-
-.method public abstract a(Ljava/lang/String;ILjava/lang/String;)V
-.end method
-
-.method public abstract a(ZZ)V
-.end method
-
-.method public abstract b()V
-.end method
-
-.method public abstract c()V
-.end method
-
-.method public abstract d()V
-.end method
-
-.method public abstract e()V
-.end method
-
-.method public abstract f()V
-.end method
-
-.method public abstract g()V
-.end method
-
-.method public abstract h()V
-.end method
-
-.method public abstract i()V
+    return v0
 .end method

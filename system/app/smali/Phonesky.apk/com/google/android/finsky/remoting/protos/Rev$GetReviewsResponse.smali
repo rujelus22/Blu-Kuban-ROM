@@ -38,27 +38,27 @@
     .registers 3
 
     .prologue
-    .line 1400
+    .line 499
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1404
+    .line 503
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->review_:Ljava/util/List;
 
-    .line 1438
+    .line 537
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->matchingCount_:J
 
-    .line 1476
+    .line 573
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->cachedSize:I
 
-    .line 1400
+    .line 499
     return-void
 .end method
 
@@ -69,17 +69,17 @@
     .parameter "value"
 
     .prologue
-    .line 1421
+    .line 520
     if-nez p1, :cond_8
 
-    .line 1422
+    .line 521
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1424
+    .line 523
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->review_:Ljava/util/List;
 
@@ -89,20 +89,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 1425
+    .line 524
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->review_:Ljava/util/List;
 
-    .line 1427
+    .line 526
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->review_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1428
+    .line 527
     return-object p0
 .end method
 
@@ -110,15 +110,15 @@
     .registers 2
 
     .prologue
-    .line 1478
+    .line 576
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 1480
+    .line 578
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->getSerializedSize()I
 
-    .line 1482
+    .line 580
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->cachedSize:I
 
@@ -129,7 +129,7 @@
     .registers 3
 
     .prologue
-    .line 1439
+    .line 538
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->matchingCount_:J
 
     return-wide v0
@@ -148,7 +148,7 @@
     .end annotation
 
     .prologue
-    .line 1407
+    .line 506
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->review_:Ljava/util/List;
 
     return-object v0
@@ -158,10 +158,10 @@
     .registers 7
 
     .prologue
-    .line 1486
+    .line 585
     const/4 v2, 0x0
 
-    .line 1487
+    .line 586
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->getReviewList()Ljava/util/List;
 
@@ -185,7 +185,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Rev$Review;
 
-    .line 1488
+    .line 587
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Rev$Review;
     const/4 v3, 0x1
 
@@ -197,7 +197,7 @@
 
     goto :goto_9
 
-    .line 1491
+    .line 590
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Rev$Review;
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->hasMatchingCount()Z
@@ -206,7 +206,7 @@
 
     if-eqz v3, :cond_2c
 
-    .line 1492
+    .line 591
     const/4 v3, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->getMatchingCount()J
@@ -219,11 +219,11 @@
 
     add-int/2addr v2, v3
 
-    .line 1495
+    .line 594
     :cond_2c
     iput v2, p0, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->cachedSize:I
 
-    .line 1496
+    .line 595
     return v2
 .end method
 
@@ -231,7 +231,7 @@
     .registers 2
 
     .prologue
-    .line 1440
+    .line 539
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->hasMatchingCount:Z
 
     return v0
@@ -247,44 +247,44 @@
     .end annotation
 
     .prologue
-    .line 1503
+    .line 603
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1504
+    .line 604
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_22
 
-    .line 1508
+    .line 608
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 1509
+    .line 609
     :sswitch_d
     return-object p0
 
-    .line 1514
+    .line 614
     :sswitch_e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Rev$Review;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Rev$Review;-><init>()V
 
-    .line 1515
+    .line 615
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Rev$Review;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1516
+    .line 616
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->addReview(Lcom/google/android/finsky/remoting/protos/Rev$Review;)Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;
 
     goto :goto_0
 
-    .line 1520
+    .line 620
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Rev$Review;
     :sswitch_1a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
@@ -295,7 +295,7 @@
 
     goto :goto_0
 
-    .line 1504
+    .line 604
     :sswitch_data_22
     .sparse-switch
         0x0 -> :sswitch_d
@@ -314,7 +314,7 @@
     .end annotation
 
     .prologue
-    .line 1398
+    .line 496
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;
 
     move-result-object v0
@@ -327,15 +327,15 @@
     .parameter "value"
 
     .prologue
-    .line 1442
+    .line 541
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->hasMatchingCount:Z
 
-    .line 1443
+    .line 542
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->matchingCount_:J
 
-    .line 1444
+    .line 543
     return-object p0
 .end method
 
@@ -349,7 +349,7 @@
     .end annotation
 
     .prologue
-    .line 1468
+    .line 565
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->getReviewList()Ljava/util/List;
 
     move-result-object v2
@@ -372,7 +372,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Rev$Review;
 
-    .line 1469
+    .line 566
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Rev$Review;
     const/4 v2, 0x1
 
@@ -380,7 +380,7 @@
 
     goto :goto_8
 
-    .line 1471
+    .line 568
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Rev$Review;
     :cond_19
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->hasMatchingCount()Z
@@ -389,7 +389,7 @@
 
     if-eqz v2, :cond_27
 
-    .line 1472
+    .line 569
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Rev$GetReviewsResponse;->getMatchingCount()J
@@ -398,7 +398,7 @@
 
     invoke-virtual {p1, v2, v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 1474
+    .line 571
     :cond_27
     return-void
 .end method

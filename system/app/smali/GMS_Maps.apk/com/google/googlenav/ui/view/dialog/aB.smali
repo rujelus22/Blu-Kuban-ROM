@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/view/dialog/aB;
+.class Lcom/google/googlenav/ui/view/dialog/ab;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/aA;
+.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/X;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/aA;)V
+.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/X;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/aB;->a:Lcom/google/googlenav/ui/view/dialog/aA;
+    .prologue
+    .line 292
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/ab;->a:Lcom/google/googlenav/ui/view/dialog/X;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,13 +27,29 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 3
+    .registers 4
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/aB;->a:Lcom/google/googlenav/ui/view/dialog/aA;
+    .prologue
+    .line 295
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/ab;->a:Lcom/google/googlenav/ui/view/dialog/X;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/view/dialog/aA;->a:Lcom/google/googlenav/ui/wizard/hp;
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/X;->b(Lcom/google/googlenav/ui/view/dialog/X;)Lcom/google/googlenav/ui/view/dialog/ah;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hp;->B()V
+    move-result-object v0
 
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/ab;->a:Lcom/google/googlenav/ui/view/dialog/X;
+
+    invoke-static {v1}, Lcom/google/googlenav/ui/view/dialog/X;->a(Lcom/google/googlenav/ui/view/dialog/X;)Lcom/google/googlenav/friend/history/l;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/googlenav/friend/history/l;->o()Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/view/dialog/ah;->c(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+
+    .line 296
     return-void
 .end method

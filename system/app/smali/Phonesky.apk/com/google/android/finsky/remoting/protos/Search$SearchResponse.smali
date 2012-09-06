@@ -68,51 +68,51 @@
     .registers 2
 
     .prologue
-    .line 9
+    .line 10
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 14
+    .line 15
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->originalQuery_:Ljava/lang/String;
 
-    .line 31
+    .line 32
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->suggestedQuery_:Ljava/lang/String;
 
-    .line 48
+    .line 49
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->aggregateQuery_:Z
 
-    .line 64
+    .line 65
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->bucket_:Ljava/util/List;
 
-    .line 97
+    .line 98
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->doc_:Ljava/util/List;
 
-    .line 130
+    .line 131
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->relatedSearch_:Ljava/util/List;
 
-    .line 204
+    .line 206
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->cachedSize:I
 
-    .line 9
+    .line 10
     return-void
 .end method
 
@@ -123,17 +123,17 @@
     .parameter "value"
 
     .prologue
-    .line 81
+    .line 82
     if-nez p1, :cond_8
 
-    .line 82
+    .line 83
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 84
+    .line 85
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->bucket_:Ljava/util/List;
 
@@ -143,20 +143,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 85
+    .line 86
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->bucket_:Ljava/util/List;
 
-    .line 87
+    .line 88
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->bucket_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 88
+    .line 89
     return-object p0
 .end method
 
@@ -165,17 +165,17 @@
     .parameter "value"
 
     .prologue
-    .line 114
+    .line 115
     if-nez p1, :cond_8
 
-    .line 115
+    .line 116
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 117
+    .line 118
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->doc_:Ljava/util/List;
 
@@ -185,20 +185,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 118
+    .line 119
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->doc_:Ljava/util/List;
 
-    .line 120
+    .line 121
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->doc_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 121
+    .line 122
     return-object p0
 .end method
 
@@ -207,17 +207,17 @@
     .parameter "value"
 
     .prologue
-    .line 147
+    .line 148
     if-nez p1, :cond_8
 
-    .line 148
+    .line 149
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 150
+    .line 151
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->relatedSearch_:Ljava/util/List;
 
@@ -227,20 +227,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 151
+    .line 152
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->relatedSearch_:Ljava/util/List;
 
-    .line 153
+    .line 154
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->relatedSearch_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 154
+    .line 155
     return-object p0
 .end method
 
@@ -248,7 +248,7 @@
     .registers 2
 
     .prologue
-    .line 49
+    .line 50
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->aggregateQuery_:Z
 
     return v0
@@ -267,7 +267,7 @@
     .end annotation
 
     .prologue
-    .line 67
+    .line 68
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->bucket_:Ljava/util/List;
 
     return-object v0
@@ -277,15 +277,15 @@
     .registers 2
 
     .prologue
-    .line 206
+    .line 209
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 208
+    .line 211
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->getSerializedSize()I
 
-    .line 210
+    .line 213
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->cachedSize:I
 
@@ -297,7 +297,7 @@
     .parameter "index"
 
     .prologue
-    .line 104
+    .line 105
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->doc_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -313,7 +313,7 @@
     .registers 2
 
     .prologue
-    .line 102
+    .line 103
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->doc_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -336,7 +336,7 @@
     .end annotation
 
     .prologue
-    .line 100
+    .line 101
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->doc_:Ljava/util/List;
 
     return-object v0
@@ -346,7 +346,7 @@
     .registers 2
 
     .prologue
-    .line 15
+    .line 16
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->originalQuery_:Ljava/lang/String;
 
     return-object v0
@@ -365,7 +365,7 @@
     .end annotation
 
     .prologue
-    .line 133
+    .line 134
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->relatedSearch_:Ljava/util/List;
 
     return-object v0
@@ -375,10 +375,10 @@
     .registers 6
 
     .prologue
-    .line 214
+    .line 218
     const/4 v2, 0x0
 
-    .line 215
+    .line 219
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->hasOriginalQuery()Z
 
@@ -386,7 +386,7 @@
 
     if-eqz v3, :cond_11
 
-    .line 216
+    .line 220
     const/4 v3, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->getOriginalQuery()Ljava/lang/String;
@@ -399,7 +399,7 @@
 
     add-int/2addr v2, v3
 
-    .line 219
+    .line 223
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->hasSuggestedQuery()Z
 
@@ -407,7 +407,7 @@
 
     if-eqz v3, :cond_21
 
-    .line 220
+    .line 224
     const/4 v3, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->getSuggestedQuery()Ljava/lang/String;
@@ -420,7 +420,7 @@
 
     add-int/2addr v2, v3
 
-    .line 223
+    .line 227
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->hasAggregateQuery()Z
 
@@ -428,7 +428,7 @@
 
     if-eqz v3, :cond_31
 
-    .line 224
+    .line 228
     const/4 v3, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->getAggregateQuery()Z
@@ -441,7 +441,7 @@
 
     add-int/2addr v2, v3
 
-    .line 227
+    .line 231
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->getBucketList()Ljava/util/List;
 
@@ -465,7 +465,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
 
-    .line 228
+    .line 232
     .local v0, element:Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
     const/4 v3, 0x4
 
@@ -477,7 +477,7 @@
 
     goto :goto_39
 
-    .line 231
+    .line 235
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
     :cond_4c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->getDocList()Ljava/util/List;
@@ -501,7 +501,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
-    .line 232
+    .line 236
     .local v0, element:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
     const/4 v3, 0x5
 
@@ -513,7 +513,7 @@
 
     goto :goto_54
 
-    .line 235
+    .line 239
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
     :cond_67
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->getRelatedSearchList()Ljava/util/List;
@@ -537,7 +537,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;
 
-    .line 236
+    .line 240
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;
     const/4 v3, 0x6
 
@@ -549,12 +549,12 @@
 
     goto :goto_6f
 
-    .line 239
+    .line 243
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;
     :cond_82
     iput v2, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->cachedSize:I
 
-    .line 240
+    .line 244
     return v2
 .end method
 
@@ -562,7 +562,7 @@
     .registers 2
 
     .prologue
-    .line 32
+    .line 33
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->suggestedQuery_:Ljava/lang/String;
 
     return-object v0
@@ -572,7 +572,7 @@
     .registers 2
 
     .prologue
-    .line 50
+    .line 51
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->hasAggregateQuery:Z
 
     return v0
@@ -582,7 +582,7 @@
     .registers 2
 
     .prologue
-    .line 16
+    .line 17
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->hasOriginalQuery:Z
 
     return v0
@@ -592,7 +592,7 @@
     .registers 2
 
     .prologue
-    .line 33
+    .line 34
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->hasSuggestedQuery:Z
 
     return v0
@@ -608,29 +608,29 @@
     .end annotation
 
     .prologue
-    .line 247
+    .line 252
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 248
+    .line 253
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_4a
 
-    .line 252
+    .line 257
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 253
+    .line 258
     :sswitch_d
     return-object p0
 
-    .line 258
+    .line 263
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -640,7 +640,7 @@
 
     goto :goto_0
 
-    .line 262
+    .line 267
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -650,7 +650,7 @@
 
     goto :goto_0
 
-    .line 266
+    .line 271
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -660,54 +660,54 @@
 
     goto :goto_0
 
-    .line 270
+    .line 275
     :sswitch_26
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocList$Bucket;-><init>()V
 
-    .line 271
+    .line 276
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 272
+    .line 277
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->addBucket(Lcom/google/android/finsky/remoting/protos/DocList$Bucket;)Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;
 
     goto :goto_0
 
-    .line 276
+    .line 281
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
     :sswitch_32
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;-><init>()V
 
-    .line 277
+    .line 282
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 278
+    .line 283
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->addDoc(Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;)Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;
 
     goto :goto_0
 
-    .line 282
+    .line 287
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
     :sswitch_3e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;-><init>()V
 
-    .line 283
+    .line 288
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 284
+    .line 289
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->addRelatedSearch(Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;)Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;
 
     goto :goto_0
 
-    .line 248
+    .line 253
     :sswitch_data_4a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -743,15 +743,15 @@
     .parameter "value"
 
     .prologue
-    .line 52
+    .line 53
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->hasAggregateQuery:Z
 
-    .line 53
+    .line 54
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->aggregateQuery_:Z
 
-    .line 54
+    .line 55
     return-object p0
 .end method
 
@@ -760,15 +760,15 @@
     .parameter "value"
 
     .prologue
-    .line 18
+    .line 19
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->hasOriginalQuery:Z
 
-    .line 19
+    .line 20
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->originalQuery_:Ljava/lang/String;
 
-    .line 20
+    .line 21
     return-object p0
 .end method
 
@@ -777,15 +777,15 @@
     .parameter "value"
 
     .prologue
-    .line 35
+    .line 36
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->hasSuggestedQuery:Z
 
-    .line 36
+    .line 37
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->suggestedQuery_:Ljava/lang/String;
 
-    .line 37
+    .line 38
     return-object p0
 .end method
 
@@ -799,14 +799,14 @@
     .end annotation
 
     .prologue
-    .line 184
+    .line 186
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->hasOriginalQuery()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 185
+    .line 187
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->getOriginalQuery()Ljava/lang/String;
@@ -815,7 +815,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 187
+    .line 189
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->hasSuggestedQuery()Z
 
@@ -823,7 +823,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 188
+    .line 190
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->getSuggestedQuery()Ljava/lang/String;
@@ -832,7 +832,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 190
+    .line 192
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->hasAggregateQuery()Z
 
@@ -840,7 +840,7 @@
 
     if-eqz v2, :cond_2a
 
-    .line 191
+    .line 193
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->getAggregateQuery()Z
@@ -849,7 +849,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 193
+    .line 195
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->getBucketList()Ljava/util/List;
 
@@ -873,7 +873,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
 
-    .line 194
+    .line 196
     .local v0, element:Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
     const/4 v2, 0x4
 
@@ -881,7 +881,7 @@
 
     goto :goto_32
 
-    .line 196
+    .line 198
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/DocList$Bucket;
     :cond_43
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->getDocList()Ljava/util/List;
@@ -905,7 +905,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
 
-    .line 197
+    .line 199
     .local v0, element:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
     const/4 v2, 0x5
 
@@ -913,7 +913,7 @@
 
     goto :goto_4b
 
-    .line 199
+    .line 201
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
     :cond_5c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Search$SearchResponse;->getRelatedSearchList()Ljava/util/List;
@@ -937,7 +937,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;
 
-    .line 200
+    .line 202
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;
     const/4 v2, 0x6
 
@@ -945,7 +945,7 @@
 
     goto :goto_64
 
-    .line 202
+    .line 204
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;
     :cond_75
     return-void

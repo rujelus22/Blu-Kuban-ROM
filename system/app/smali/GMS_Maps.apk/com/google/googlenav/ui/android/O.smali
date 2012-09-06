@@ -1,108 +1,133 @@
-.class synthetic Lcom/google/googlenav/ui/android/O;
+.class Lcom/google/googlenav/ui/android/o;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# static fields
-.field static final synthetic a:[I
+# instance fields
+.field public a:I
+
+.field public b:I
+
+.field final synthetic c:Lcom/google/googlenav/ui/android/AndroidView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method public constructor <init>(Lcom/google/googlenav/ui/android/AndroidView;)V
+    .registers 2
+    .parameter
 
-    invoke-static {}, Lcom/google/googlenav/ui/android/P;->values()[Lcom/google/googlenav/ui/android/P;
+    .prologue
+    .line 356
+    iput-object p1, p0, Lcom/google/googlenav/ui/android/o;->c:Lcom/google/googlenav/ui/android/AndroidView;
 
-    move-result-object v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/google/googlenav/ui/android/O;->a:[I
-
-    :try_start_9
-    sget-object v0, Lcom/google/googlenav/ui/android/O;->a:[I
-
-    sget-object v1, Lcom/google/googlenav/ui/android/P;->b:Lcom/google/googlenav/ui/android/P;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/android/P;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_3c
-
-    :goto_14
-    :try_start_14
-    sget-object v0, Lcom/google/googlenav/ui/android/O;->a:[I
-
-    sget-object v1, Lcom/google/googlenav/ui/android/P;->d:Lcom/google/googlenav/ui/android/P;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/android/P;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_3a
-
-    :goto_1f
-    :try_start_1f
-    sget-object v0, Lcom/google/googlenav/ui/android/O;->a:[I
-
-    sget-object v1, Lcom/google/googlenav/ui/android/P;->c:Lcom/google/googlenav/ui/android/P;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/android/P;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_38
-
-    :goto_2a
-    :try_start_2a
-    sget-object v0, Lcom/google/googlenav/ui/android/O;->a:[I
-
-    sget-object v1, Lcom/google/googlenav/ui/android/P;->a:Lcom/google/googlenav/ui/android/P;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/android/P;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_35
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_36
-
-    :goto_35
+    .line 357
     return-void
+.end method
 
-    :catch_36
-    move-exception v0
 
-    goto :goto_35
+# virtual methods
+.method public a(Landroid/view/MotionEvent;)V
+    .registers 9
+    .parameter
 
-    :catch_38
-    move-exception v0
+    .prologue
+    const/high16 v3, 0x3f00
 
-    goto :goto_2a
+    .line 367
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/o;->c:Lcom/google/googlenav/ui/android/AndroidView;
 
-    :catch_3a
-    move-exception v0
+    invoke-static {v0}, Lcom/google/googlenav/ui/android/AndroidView;->a(Lcom/google/googlenav/ui/android/AndroidView;)F
 
-    goto :goto_1f
+    move-result v0
 
-    :catch_3c
-    move-exception v0
+    const v1, 0x3c8efa35
 
-    goto :goto_14
+    mul-float/2addr v0, v1
+
+    .line 370
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/o;->c:Lcom/google/googlenav/ui/android/AndroidView;
+
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/android/AndroidView;->getWidth()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    mul-float/2addr v1, v3
+
+    .line 371
+    iget-object v2, p0, Lcom/google/googlenav/ui/android/o;->c:Lcom/google/googlenav/ui/android/AndroidView;
+
+    invoke-virtual {v2}, Lcom/google/googlenav/ui/android/AndroidView;->getHeight()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    mul-float/2addr v2, v3
+
+    .line 372
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v3
+
+    sub-float/2addr v3, v1
+
+    .line 373
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v4
+
+    sub-float/2addr v4, v2
+
+    .line 376
+    invoke-static {v0}, Landroid/util/FloatMath;->cos(F)F
+
+    move-result v5
+
+    mul-float/2addr v5, v3
+
+    invoke-static {v0}, Landroid/util/FloatMath;->sin(F)F
+
+    move-result v6
+
+    mul-float/2addr v6, v4
+
+    sub-float/2addr v5, v6
+
+    add-float/2addr v1, v5
+
+    invoke-static {v1}, Ljava/lang/Math;->round(F)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/google/googlenav/ui/android/o;->a:I
+
+    .line 378
+    invoke-static {v0}, Landroid/util/FloatMath;->sin(F)F
+
+    move-result v1
+
+    mul-float/2addr v1, v3
+
+    invoke-static {v0}, Landroid/util/FloatMath;->cos(F)F
+
+    move-result v0
+
+    mul-float/2addr v0, v4
+
+    add-float/2addr v0, v1
+
+    add-float/2addr v0, v2
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/googlenav/ui/android/o;->b:I
+
+    .line 380
+    return-void
 .end method

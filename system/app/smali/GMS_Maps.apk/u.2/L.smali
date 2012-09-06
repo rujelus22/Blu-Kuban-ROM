@@ -1,116 +1,17 @@
-.class public Lu/L;
+.class public interface abstract Lu/l;
 .super Ljava/lang/Object;
-
-
-# instance fields
-.field private final a:I
-
-.field private final b:Ljava/lang/String;
-
-
-# direct methods
-.method public constructor <init>(ILjava/lang/String;)V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lu/L;->a:I
-
-    iput-object p2, p0, Lu/L;->b:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method static a(Lam/b;)Lu/L;
-    .registers 4
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lam/b;->d(I)I
-
-    move-result v0
-
-    if-ltz v0, :cond_b
-
-    const/16 v1, 0x9
-
-    if-le v0, v1, :cond_c
-
-    :cond_b
-    const/4 v0, 0x0
-
-    :cond_c
-    const/4 v1, 0x2
-
-    invoke-virtual {p0, v1}, Lam/b;->i(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Lu/L;
-
-    invoke-direct {v2, v0, v1}, Lu/L;-><init>(ILjava/lang/String;)V
-
-    return-object v2
-.end method
+.source "SourceFile"
 
 
 # virtual methods
-.method public a()I
-    .registers 2
-
-    iget v0, p0, Lu/L;->a:I
-
-    return v0
+.method public abstract a(J)I
 .end method
 
-.method public b()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lu/L;->b:Ljava/lang/String;
-
-    return-object v0
+.method public abstract a(Lcom/google/android/maps/driveabout/vector/k;)V
 .end method
 
-.method public toString()Ljava/lang/String;
-    .registers 3
+.method public abstract a(Ln/P;)Z
+.end method
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "[type:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lu/L;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", text:\""
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lu/L;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\"]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+.method public abstract b(Ln/P;)V
 .end method

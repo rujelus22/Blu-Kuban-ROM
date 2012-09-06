@@ -33,7 +33,7 @@
     .registers 3
 
     .prologue
-    .line 52
+    .line 50
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/String;
@@ -54,16 +54,16 @@
 
     .prologue
     .line 28
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
+    .line 56
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/emailcommon/internet/MimeHeader;->mFields:Ljava/util/ArrayList;
 
-    .line 136
+    .line 134
     return-void
 .end method
 
@@ -80,7 +80,7 @@
     .end annotation
 
     .prologue
-    .line 73
+    .line 71
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeHeader;->mFields:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/emailcommon/internet/MimeHeader$Field;
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 74
+    .line 72
     return-void
 .end method
 
@@ -97,12 +97,12 @@
     .registers 2
 
     .prologue
-    .line 61
+    .line 59
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeHeader;->mFields:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 62
+    .line 60
     return-void
 .end method
 
@@ -116,19 +116,19 @@
     .end annotation
 
     .prologue
-    .line 65
+    .line 63
     invoke-virtual {p0, p1}, Lcom/android/emailcommon/internet/MimeHeader;->getHeader(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 66
+    .line 64
     .local v0, header:[Ljava/lang/String;
     if-nez v0, :cond_8
 
-    .line 67
+    .line 65
     const/4 v1, 0x0
 
-    .line 69
+    .line 67
     :goto_7
     return-object v1
 
@@ -150,12 +150,12 @@
     .end annotation
 
     .prologue
-    .line 85
+    .line 83
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 86
+    .line 84
     .local v2, values:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     iget-object v3, p0, Lcom/android/emailcommon/internet/MimeHeader;->mFields:Ljava/util/ArrayList;
 
@@ -178,7 +178,7 @@
 
     check-cast v0, Lcom/android/emailcommon/internet/MimeHeader$Field;
 
-    .line 87
+    .line 85
     .local v0, field:Lcom/android/emailcommon/internet/MimeHeader$Field;
     iget-object v3, v0, Lcom/android/emailcommon/internet/MimeHeader$Field;->name:Ljava/lang/String;
 
@@ -188,14 +188,14 @@
 
     if-eqz v3, :cond_b
 
-    .line 88
+    .line 86
     iget-object v3, v0, Lcom/android/emailcommon/internet/MimeHeader$Field;->value:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_b
 
-    .line 91
+    .line 89
     .end local v0           #field:Lcom/android/emailcommon/internet/MimeHeader$Field;
     :cond_25
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -204,10 +204,10 @@
 
     if-nez v3, :cond_2d
 
-    .line 92
+    .line 90
     const/4 v3, 0x0
 
-    .line 94
+    .line 92
     :goto_2c
     return-object v3
 
@@ -235,12 +235,12 @@
     .end annotation
 
     .prologue
-    .line 98
+    .line 96
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 99
+    .line 97
     .local v2, removeFields:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/internet/MimeHeader$Field;>;"
     iget-object v3, p0, Lcom/android/emailcommon/internet/MimeHeader;->mFields:Ljava/util/ArrayList;
 
@@ -263,7 +263,7 @@
 
     check-cast v0, Lcom/android/emailcommon/internet/MimeHeader$Field;
 
-    .line 100
+    .line 98
     .local v0, field:Lcom/android/emailcommon/internet/MimeHeader$Field;
     iget-object v3, v0, Lcom/android/emailcommon/internet/MimeHeader$Field;->name:Ljava/lang/String;
 
@@ -273,19 +273,19 @@
 
     if-eqz v3, :cond_b
 
-    .line 101
+    .line 99
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_b
 
-    .line 104
+    .line 102
     .end local v0           #field:Lcom/android/emailcommon/internet/MimeHeader$Field;
     :cond_23
     iget-object v3, p0, Lcom/android/emailcommon/internet/MimeHeader;->mFields:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->removeAll(Ljava/util/Collection;)Z
 
-    .line 105
+    .line 103
     return-void
 .end method
 
@@ -300,21 +300,21 @@
     .end annotation
 
     .prologue
-    .line 77
+    .line 75
     if-eqz p1, :cond_4
 
     if-nez p2, :cond_5
 
-    .line 82
+    .line 80
     :cond_4
     :goto_4
     return-void
 
-    .line 80
+    .line 78
     :cond_5
     invoke-virtual {p0, p1}, Lcom/android/emailcommon/internet/MimeHeader;->removeHeader(Ljava/lang/String;)V
 
-    .line 81
+    .line 79
     invoke-virtual {p0, p1, p2}, Lcom/android/emailcommon/internet/MimeHeader;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_4
@@ -324,7 +324,7 @@
     .registers 2
 
     .prologue
-    .line 153
+    .line 151
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeHeader;->mFields:Ljava/util/ArrayList;
 
     if-nez v0, :cond_6

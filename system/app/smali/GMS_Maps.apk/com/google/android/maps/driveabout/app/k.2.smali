@@ -1,44 +1,94 @@
-.class Lcom/google/android/maps/driveabout/app/k;
-.super Lcom/google/android/maps/driveabout/app/j;
+.class public Lcom/google/android/maps/driveabout/app/K;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/widget/AdapterView$OnItemClickListener;
+
+
+# instance fields
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>(Lcom/google/android/maps/driveabout/app/DestinationActivity;)V
     .registers 2
+    .parameter
 
-    invoke-direct {p0, p1}, Lcom/google/android/maps/driveabout/app/j;-><init>(Landroid/content/Context;)V
+    .prologue
+    .line 815
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/K;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected c()Z
-    .registers 4
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .registers 9
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v2, 0x1
+    .prologue
+    .line 818
+    invoke-virtual {p1, p3}, Landroid/widget/AdapterView;->getItemAtPosition(I)Ljava/lang/Object;
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/k;->a:Landroid/media/AudioManager;
+    move-result-object v0
 
-    const/4 v1, 0x3
+    check-cast v0, Lcom/google/android/maps/driveabout/app/W;
 
-    invoke-virtual {v0, v1, v2}, Landroid/media/AudioManager;->setStreamSolo(IZ)V
+    .line 819
+    if-eqz v0, :cond_1c
 
-    return v2
-.end method
+    .line 820
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/W;->b()I
 
-.method protected d()Z
-    .registers 4
+    move-result v1
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/k;->a:Landroid/media/AudioManager;
+    const/4 v2, 0x3
 
-    const/4 v1, 0x3
+    if-ne v1, v2, :cond_1d
 
-    const/4 v2, 0x0
+    .line 821
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/K;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
 
-    invoke-virtual {v0, v1, v2}, Landroid/media/AudioManager;->setStreamSolo(IZ)V
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/W;->g()Lo/P;
 
-    const/4 v0, 0x1
+    move-result-object v2
 
-    return v0
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->a(Lcom/google/android/maps/driveabout/app/W;)I
+
+    move-result v0
+
+    invoke-static {v1, v2, v0}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->a(Lcom/google/android/maps/driveabout/app/DestinationActivity;Lo/P;I)V
+
+    .line 826
+    :cond_1c
+    :goto_1c
+    return-void
+
+    .line 822
+    :cond_1d
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/W;->b()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    if-ne v1, v2, :cond_1c
+
+    .line 823
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/K;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/W;->c()I
+
+    move-result v0
+
+    invoke-static {v1, v0}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->a(Lcom/google/android/maps/driveabout/app/DestinationActivity;I)V
+
+    goto :goto_1c
 .end method

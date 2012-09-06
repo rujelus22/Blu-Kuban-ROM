@@ -16,9 +16,10 @@
         <com.sec.android.touchwiz.widget.TwSoftkeyItem android:id="@id/conversation_softkeyleft" android:layout_width="fill_parent" android:layout_height="fill_parent" touchwiz:twSoftkeyItemType="text" touchwiz:twSoftkeyItemText="@string/delete" />
         <com.sec.android.touchwiz.widget.TwSoftkeyItem android:id="@id/conversation_softkeyright" android:layout_width="fill_parent" android:layout_height="fill_parent" touchwiz:twSoftkeyItemType="text" touchwiz:twSoftkeyItemText="@string/no" />
     </com.sec.android.touchwiz.widget.TwSoftkeyView>
+    <include layout="@layout/conversation_footer_custom" />
     <FrameLayout android:orientation="vertical" android:id="@id/empty_screen" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
         <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@id/emptyText" android:layout_width="fill_parent" android:layout_height="fill_parent">
-            <TextView android:textSize="17.329987sp" android:textColor="@touchwiz:color/tw_color145" android:layout_gravity="center" android:id="@id/empty_list_textView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Conversation_count_zero" android:drawableTop="@drawable/noitems_no_conversation" />
+            <TextView android:textSize="17.329987sp" android:textColor="@touchwiz:color/tw_color001" android:layout_gravity="center" android:id="@id/empty_list_textView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Conversation_count_zero" android:drawableTop="@drawable/noitems_no_conversation" />
         </LinearLayout>
     </FrameLayout>
 </LinearLayout>

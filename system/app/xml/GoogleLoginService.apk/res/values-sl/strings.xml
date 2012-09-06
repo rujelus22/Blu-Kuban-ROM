@@ -242,18 +242,18 @@ vprašanje"</b></string>
     <string name="account_intro_recommended_title">Naj bo Google</string>
     <string name="common_message">"Google Račun vam omogoča:
 
-"<li><ul>ogledovanje in urejanje vseh podatkov, kjer koli ste;</ul></li>"
+"<ul><li>ogledovanje in urejanje vseh podatkov, kjer koli ste;</li></ul>"
 
-"<li><ul>samodejno varnostno shranjevanje podatkov;</ul></li>"
+"<ul><li>samodejno varnostno shranjevanje podatkov;</li></ul>"
 
-"<li><ul>preprosto uporabo Googlovih storitev, kjer koli ste.</ul></li></string>
+"<ul><li>preprosto uporabo Googlovih storitev, kjer koli ste.</li></ul></string>
     <string name="add_account_message">" Uporabite lahko več Google Računov (na primer domači in službeni račun). Če želite dodati Google Račun, se dotaknite možnosti "<b>Prijava</b> ali <b>Ustvari račun</b></string>
     <string name="account_intro_default_message">Ničesar več ne boste izgubili. Z Google Računom imate vse na varnem.</string>
     <string name="account_intro_custom_endtext">Imate %s? Prijavite se zdaj.</string>
     <string name="account_intro_simple_message">Ali želite dodati obstoječi račun ali ustvariti novega?</string>
     <string name="learn_more_title"><annotation id="learn_more">Več o tem</annotation></string>
     <string name="learn_more_account_intro">"Google Račun vam omogoča: 
-"<li><ul>ogled in urejanje vseh svojih podatkov iz različnih virov;<li>samodejno varnostno shranjevanje podatkov, kot so e-pošta, stiki, glasba in slike;</li><li>preprosto uporabo Googlovih storitev, kot so Stiki, Koledar, Zemljevidi in druge, od koder koli.</li></ul></li></string>
+"<ul><li>ogled in urejanje vseh svojih podatkov iz različnih virov;<li>samodejno varnostno shranjevanje podatkov, kot so e-pošta, stiki, glasba in slike;</li><li>preprosto uporabo Googlovih storitev, kot so Stiki, Koledar, Zemljevidi in druge, od koder koli.</li></li></ul></string>
     <string name="learn_more_account_intro_title">O Google Računih</string>
     <string name="learn_more_web_history">"Spletna zgodovina prilagodi rezultate iskanja glede na to, kaj ste iskali in katera spletna mesta ste obiskali, in omogoči prilagojeno izkušnjo z Googlom.
 

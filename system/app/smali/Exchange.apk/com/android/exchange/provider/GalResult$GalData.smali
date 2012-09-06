@@ -23,35 +23,28 @@
 
 .field public emailAddress:Ljava/lang/String;
 
-.field public pictureData:Ljava/lang/String;
-
 
 # direct methods
 .method public constructor <init>()V
     .registers 3
 
     .prologue
-    .line 271
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 79
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 193
+    .line 60
     new-instance v0, Lcom/android/emailcommon/mail/PackedString$Builder;
 
     invoke-direct {v0}, Lcom/android/emailcommon/mail/PackedString$Builder;-><init>()V
 
     iput-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->builder:Lcom/android/emailcommon/mail/PackedString$Builder;
 
-    .line 199
+    .line 63
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->_id:J
 
-    .line 213
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->pictureData:Ljava/lang/String;
-
-    .line 273
+    .line 80
     return-void
 .end method
 
@@ -62,27 +55,22 @@
     .parameter "_emailAddress"
 
     .prologue
-    .line 225
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 70
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 193
+    .line 60
     new-instance v0, Lcom/android/emailcommon/mail/PackedString$Builder;
 
     invoke-direct {v0}, Lcom/android/emailcommon/mail/PackedString$Builder;-><init>()V
 
     iput-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->builder:Lcom/android/emailcommon/mail/PackedString$Builder;
 
-    .line 199
+    .line 63
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->_id:J
 
-    .line 213
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->pictureData:Ljava/lang/String;
-
-    .line 227
+    .line 71
     const-string v0, "_id"
 
     invoke-static {p1, p2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
@@ -91,26 +79,26 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/exchange/provider/GalResult$GalData;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 229
+    .line 72
     iput-wide p1, p0, Lcom/android/exchange/provider/GalResult$GalData;->_id:J
 
-    .line 231
+    .line 73
     const-string v0, "displayName"
 
     invoke-virtual {p0, v0, p3}, Lcom/android/exchange/provider/GalResult$GalData;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 233
+    .line 74
     iput-object p3, p0, Lcom/android/exchange/provider/GalResult$GalData;->displayName:Ljava/lang/String;
 
-    .line 235
+    .line 75
     const-string v0, "emailAddress"
 
     invoke-virtual {p0, v0, p4}, Lcom/android/exchange/provider/GalResult$GalData;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 237
+    .line 76
     iput-object p4, p0, Lcom/android/exchange/provider/GalResult$GalData;->emailAddress:Ljava/lang/String;
 
-    .line 239
+    .line 77
     return-void
 .end method
 
@@ -122,7 +110,7 @@
     .parameter "x3"
 
     .prologue
-    .line 131
+    .line 45
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/exchange/provider/GalResult$GalData;-><init>(JLjava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -135,7 +123,7 @@
     .parameter "field"
 
     .prologue
-    .line 279
+    .line 83
     iget-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->builder:Lcom/android/emailcommon/mail/PackedString$Builder;
 
     invoke-virtual {v0, p1}, Lcom/android/emailcommon/mail/PackedString$Builder;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -151,12 +139,12 @@
     .parameter "value"
 
     .prologue
-    .line 287
+    .line 87
     iget-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->builder:Lcom/android/emailcommon/mail/PackedString$Builder;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/emailcommon/mail/PackedString$Builder;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 289
+    .line 88
     return-void
 .end method
 
@@ -164,7 +152,7 @@
     .registers 2
 
     .prologue
-    .line 295
+    .line 91
     iget-object v0, p0, Lcom/android/exchange/provider/GalResult$GalData;->builder:Lcom/android/emailcommon/mail/PackedString$Builder;
 
     invoke-virtual {v0}, Lcom/android/emailcommon/mail/PackedString$Builder;->toString()Ljava/lang/String;

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.sec.android.app.twlauncher.MenuItemView android:orientation="vertical" android:paddingLeft="2.0dip" android:paddingTop="@dimen/mm_itemPaddingTop" android:paddingRight="2.0dip" android:clipToPadding="false" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="@dimen/mm_itemHeight"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:layout_gravity="center" android:id="@id/icon" android:layout_width="@dimen/mm_itemIconSize" android:layout_height="@dimen/mm_itemIconSize" android:scaleType="center" />
-    <TextView android:textSize="@dimen/mm_itemTextSize" android:textColor="#ffffffff" android:ellipsize="marquee" android:gravity="top|center" android:id="@id/name" android:paddingTop="@dimen/mm_itemTextPaddingTop" android:fadingEdge="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:shadowColor="#ff000000" android:shadowRadius="2.0" />
-</com.sec.android.app.twlauncher.MenuItemView>

@@ -1,36 +1,46 @@
-.class public final Lcom/google/android/youtube/core/converter/http/an;
-.super Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;
+.class final Lcom/google/android/youtube/core/converter/http/an;
+.super Lcom/google/android/youtube/core/converter/l;
 .source "SourceFile"
 
 
+# instance fields
+.field final synthetic a:Lcom/google/android/youtube/core/converter/http/ag;
+
+
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+.method constructor <init>(Lcom/google/android/youtube/core/converter/http/ag;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 18
-    invoke-direct {p0}, Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;-><init>()V
+    .line 52
+    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/an;->a:Lcom/google/android/youtube/core/converter/http/ag;
 
-    .line 19
-    invoke-static {p1}, Ljava/net/URI;->create(Ljava/lang/String;)Ljava/net/URI;
+    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/core/converter/http/an;->setURI(Ljava/net/URI;)V
-
-    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final getMethod()Ljava/lang/String;
-    .registers 2
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
-    .line 24
-    const-string v0, "PATCH"
+    .line 55
+    const-class v0, Lcom/google/android/youtube/core/model/Event$Builder;
 
-    return-object v0
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->a(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/core/model/Event$Builder;
+
+    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/Event$Builder;->subject(Ljava/lang/String;)Lcom/google/android/youtube/core/model/Event$Builder;
+
+    .line 56
+    return-void
 .end method

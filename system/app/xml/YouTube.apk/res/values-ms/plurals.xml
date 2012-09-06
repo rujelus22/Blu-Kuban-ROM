@@ -28,6 +28,14 @@
         <item quantity="other">%1$d saat yang lalu</item>
         <item quantity="one">1 saat yang lalu</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Tamat dlm %1$d hari</item>
+        <item quantity="one">Tmt tempoh dlm 1 hr</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Tamat dlm %1$d jam</item>
+        <item quantity="one">Tmt tempoh dlm 1 jam</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">muat naik baru</item>
         <item quantity="one">muat naik baru</item>

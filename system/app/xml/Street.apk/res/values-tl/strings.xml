@@ -15,7 +15,7 @@
     <string name="click_to_go_toast">I-drag ang Pegman kung saan mo gustong pumunta.</string>
     <string name="street_range_name_format">%1$s %2$s</string>
     <string name="network_unavailable">Nangangailangan ang programang ito ng koneksyon ng data, at awtomatikong muling susubukan. Pakitingnan ang lakas ng iyong signal. Naka-on ba ang mode ng airplane? Di ba pinagana ang data sa pag-roam?</string>
-    <string name="whats_new_header">Anong bago sa Street View?</string>
+    <string name="whats_new_header">Ano bgo sa Street View?</string>
     <string name="whats_new_c2g">Lumipad sa kahit saan na nakikita mo. I-drag si Pegman mula sa ibabang kaliwa at i-drop sya kung saan mo gustong pumunta.</string>
     <string name="terms_and_privacy">Mga Tuntunin &amp; Privacy</string>
     <string name="terms_and_conditions">Tuntunin/Kundisyon</string>

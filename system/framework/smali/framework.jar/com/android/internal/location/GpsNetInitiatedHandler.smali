@@ -15,7 +15,7 @@
 # static fields
 .field public static final ACTION_NI_VERIFY:Ljava/lang/String; = "android.intent.action.NETWORK_INITIATED_VERIFY"
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field public static final GPS_ENC_NONE:I = 0x0
 

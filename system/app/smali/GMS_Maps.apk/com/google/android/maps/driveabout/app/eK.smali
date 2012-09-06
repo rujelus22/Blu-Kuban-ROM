@@ -1,129 +1,51 @@
-.class final Lcom/google/android/maps/driveabout/app/eK;
+.class Lcom/google/android/maps/driveabout/app/ek;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/maps/driveabout/app/eP;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field private final a:Landroid/media/MediaRecorder;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/dD;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/dD;)V
     .registers 2
+    .parameter
+
+    .prologue
+    .line 749
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/ek;->a:Lcom/google/android/maps/driveabout/app/dD;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Landroid/media/MediaRecorder;
-
-    invoke-direct {v0}, Landroid/media/MediaRecorder;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/maps/driveabout/app/eK;->a:Landroid/media/MediaRecorder;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()I
-    .registers 2
+.method public onClick(Landroid/view/View;)V
+    .registers 4
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/eK;->a:Landroid/media/MediaRecorder;
+    .prologue
+    .line 752
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ek;->a:Lcom/google/android/maps/driveabout/app/dD;
 
-    invoke-virtual {v0}, Landroid/media/MediaRecorder;->getMaxAmplitude()I
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/dD;->a(Lcom/google/android/maps/driveabout/app/dD;)Ls/n;
 
-    move-result v0
+    move-result-object v0
 
-    return v0
-.end method
+    invoke-virtual {v0}, Ls/n;->g()Ls/q;
 
-.method public a(I)V
-    .registers 3
+    move-result-object v0
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/eK;->a:Landroid/media/MediaRecorder;
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, p1}, Landroid/media/MediaRecorder;->setAudioEncoder(I)V
+    invoke-virtual {v0, v1}, Ls/q;->b(Ln/Q;)V
 
-    return-void
-.end method
-
-.method public a(Ljava/lang/String;)V
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/eK;->a:Landroid/media/MediaRecorder;
-
-    invoke-virtual {v0, p1}, Landroid/media/MediaRecorder;->setOutputFile(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public b()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/eK;->a:Landroid/media/MediaRecorder;
-
-    invoke-virtual {v0}, Landroid/media/MediaRecorder;->prepare()V
-
-    return-void
-.end method
-
-.method public b(I)V
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/eK;->a:Landroid/media/MediaRecorder;
-
-    invoke-virtual {v0, p1}, Landroid/media/MediaRecorder;->setAudioSource(I)V
-
-    return-void
-.end method
-
-.method public c()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/eK;->a:Landroid/media/MediaRecorder;
-
-    invoke-virtual {v0}, Landroid/media/MediaRecorder;->release()V
-
-    return-void
-.end method
-
-.method public c(I)V
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/eK;->a:Landroid/media/MediaRecorder;
-
-    invoke-virtual {v0, p1}, Landroid/media/MediaRecorder;->setOutputFormat(I)V
-
-    return-void
-.end method
-
-.method public d()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/eK;->a:Landroid/media/MediaRecorder;
-
-    invoke-virtual {v0}, Landroid/media/MediaRecorder;->reset()V
-
-    return-void
-.end method
-
-.method public e()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/eK;->a:Landroid/media/MediaRecorder;
-
-    invoke-virtual {v0}, Landroid/media/MediaRecorder;->start()V
-
-    return-void
-.end method
-
-.method public f()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/eK;->a:Landroid/media/MediaRecorder;
-
-    invoke-virtual {v0}, Landroid/media/MediaRecorder;->stop()V
-
+    .line 753
     return-void
 .end method

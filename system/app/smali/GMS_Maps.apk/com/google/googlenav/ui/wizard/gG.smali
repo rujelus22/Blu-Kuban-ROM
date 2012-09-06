@@ -1,45 +1,20 @@
-.class public Lcom/google/googlenav/ui/wizard/gG;
+.class public interface abstract Lcom/google/googlenav/ui/wizard/gg;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/googlenav/ui/wizard/gK;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/gB;
-
-
-# direct methods
-.method public constructor <init>(Lcom/google/googlenav/ui/wizard/gB;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/gG;->a:Lcom/google/googlenav/ui/wizard/gB;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.source "SourceFile"
 
 
 # virtual methods
-.method public a()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/gG;->a:Lcom/google/googlenav/ui/wizard/gB;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/gB;->b(Lcom/google/googlenav/ui/wizard/gB;)V
-
-    return-void
+.method public abstract a()V
 .end method
 
-.method public a(I)V
-    .registers 2
-
-    return-void
+.method public abstract a(Lcom/google/googlenav/h;)V
 .end method
 
-.method public b()V
-    .registers 1
+.method public abstract b()V
+.end method
 
-    return-void
+.method public abstract c()V
+.end method
+
+.method public abstract d()V
 .end method

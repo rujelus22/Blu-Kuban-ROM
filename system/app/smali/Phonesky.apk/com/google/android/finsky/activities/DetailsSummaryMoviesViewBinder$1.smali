@@ -20,15 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder;
 
+.field final synthetic val$owner:Landroid/accounts/Account;
+
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder;)V
-    .registers 2
+.method constructor <init>(Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder;Landroid/accounts/Account;)V
+    .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 43
+    .line 54
     iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder;
+
+    iput-object p2, p0, Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder$1;->val$owner:Landroid/accounts/Account;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,7 +47,7 @@
     .parameter "v"
 
     .prologue
-    .line 46
+    .line 57
     iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder;
 
     iget-object v2, v2, Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder;->mContext:Landroid/content/Context;
@@ -51,7 +56,7 @@
 
     move-result-object v1
 
-    .line 48
+    .line 59
     .local v1, pm:Landroid/content/pm/PackageManager;
     iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder;
 
@@ -67,7 +72,7 @@
 
     if-nez v2, :cond_26
 
-    .line 50
+    .line 61
     iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder;
 
     iget-object v2, v2, Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
@@ -82,11 +87,11 @@
 
     invoke-virtual {v2, v3}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->showAppNeededDialog(I)V
 
-    .line 59
+    .line 70
     :goto_25
     return-void
 
-    .line 55
+    .line 66
     :cond_26
     iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder;
 
@@ -100,15 +105,15 @@
 
     iget-object v3, v3, Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
 
-    iget-object v4, p0, Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder;
+    iget-object v4, p0, Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder$1;->val$owner:Landroid/accounts/Account;
 
-    iget-object v4, v4, Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder;->mAccountName:Ljava/lang/String;
+    iget-object v4, v4, Landroid/accounts/Account;->name:Ljava/lang/String;
 
     invoke-static {v2, v3, v4}, Lcom/google/android/finsky/utils/IntentUtils;->buildConsumptionAppManageItemIntent(Landroid/content/pm/PackageManager;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 58
+    .line 69
     .local v0, downloadIntent:Landroid/content/Intent;
     iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryMoviesViewBinder;
 

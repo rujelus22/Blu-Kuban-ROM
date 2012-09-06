@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 257
+    .line 274
     iput-object p1, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionInfoDialog$1;->this$0:Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionInfoDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,11 +43,11 @@
     .parameter "which"
 
     .prologue
-    .line 260
+    .line 277
     iget-object v0, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionInfoDialog$1;->this$0:Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionInfoDialog;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionInfoDialog;->dismiss()V
 
-    .line 261
+    .line 278
     return-void
 .end method

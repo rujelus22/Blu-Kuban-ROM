@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/collect/dv;
+.implements Lcom/google/common/collect/fn;
 
 
 # static fields
@@ -25,6 +25,18 @@
 
 
 # virtual methods
+.method public asMap()Ljava/util/Map;
+    .registers 2
+
+    .prologue
+    .line 105
+    invoke-super {p0}, Lcom/google/common/collect/AbstractMultimap;->asMap()Ljava/util/Map;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method bridge synthetic createCollection()Ljava/util/Collection;
     .registers 2
 
@@ -43,9 +55,12 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 83
+    .line 116
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMultimap;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -69,9 +84,12 @@
 .method public get(Ljava/lang/Object;)Ljava/util/List;
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 52
+    .line 61
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMultimap;->get(Ljava/lang/Object;)Ljava/util/Collection;
 
     move-result-object v0
@@ -84,10 +102,16 @@
 .method public put(Ljava/lang/Object;Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 72
+    .line 95
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractMultimap;->put(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
@@ -111,9 +135,12 @@
 .method public removeAll(Ljava/lang/Object;)Ljava/util/List;
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 56
+    .line 72
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMultimap;->removeAll(Ljava/lang/Object;)Ljava/util/Collection;
 
     move-result-object v0
@@ -140,10 +167,14 @@
 .method public replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/List;
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+    .end parameter
 
     .prologue
-    .line 61
+    .line 84
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractMultimap;->replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/Collection;
 
     move-result-object v0

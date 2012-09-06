@@ -1,105 +1,177 @@
-.class Lcom/google/googlenav/ui/ap;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class final enum Lcom/google/googlenav/ui/aP;
+.super Ljava/lang/Enum;
+.source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Ljava/lang/StringBuilder;
+# static fields
+.field public static final enum a:Lcom/google/googlenav/ui/aP;
 
-.field final synthetic b:Z
+.field public static final enum b:Lcom/google/googlenav/ui/aP;
 
-.field final synthetic c:Ljava/lang/String;
+.field public static final enum c:Lcom/google/googlenav/ui/aP;
 
-.field final synthetic d:Lcom/google/googlenav/ui/ak;
+.field public static final enum d:Lcom/google/googlenav/ui/aP;
+
+.field private static final synthetic e:[Lcom/google/googlenav/ui/aP;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/ak;Ljava/lang/StringBuilder;ZLjava/lang/String;)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 6
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/ap;->d:Lcom/google/googlenav/ui/ak;
+    .prologue
+    const/4 v5, 0x3
 
-    iput-object p2, p0, Lcom/google/googlenav/ui/ap;->a:Ljava/lang/StringBuilder;
+    const/4 v4, 0x2
 
-    iput-boolean p3, p0, Lcom/google/googlenav/ui/ap;->b:Z
+    const/4 v3, 0x1
 
-    iput-object p4, p0, Lcom/google/googlenav/ui/ap;->c:Ljava/lang/String;
+    const/4 v2, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 82
+    new-instance v0, Lcom/google/googlenav/ui/aP;
+
+    const-string v1, "REGULAR"
+
+    invoke-direct {v0, v1, v2}, Lcom/google/googlenav/ui/aP;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/googlenav/ui/aP;->a:Lcom/google/googlenav/ui/aP;
+
+    .line 88
+    new-instance v0, Lcom/google/googlenav/ui/aP;
+
+    const-string v1, "GHOSTED"
+
+    invoke-direct {v0, v1, v3}, Lcom/google/googlenav/ui/aP;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/googlenav/ui/aP;->b:Lcom/google/googlenav/ui/aP;
+
+    .line 96
+    new-instance v0, Lcom/google/googlenav/ui/aP;
+
+    const-string v1, "LOW_DPI_VM"
+
+    invoke-direct {v0, v1, v4}, Lcom/google/googlenav/ui/aP;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/googlenav/ui/aP;->c:Lcom/google/googlenav/ui/aP;
+
+    .line 101
+    new-instance v0, Lcom/google/googlenav/ui/aP;
+
+    const-string v1, "GHOSTED_LOW_DPI_VM"
+
+    invoke-direct {v0, v1, v5}, Lcom/google/googlenav/ui/aP;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/googlenav/ui/aP;->d:Lcom/google/googlenav/ui/aP;
+
+    .line 78
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Lcom/google/googlenav/ui/aP;
+
+    sget-object v1, Lcom/google/googlenav/ui/aP;->a:Lcom/google/googlenav/ui/aP;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/google/googlenav/ui/aP;->b:Lcom/google/googlenav/ui/aP;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lcom/google/googlenav/ui/aP;->c:Lcom/google/googlenav/ui/aP;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lcom/google/googlenav/ui/aP;->d:Lcom/google/googlenav/ui/aP;
+
+    aput-object v1, v0, v5
+
+    sput-object v0, Lcom/google/googlenav/ui/aP;->e:[Lcom/google/googlenav/ui/aP;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .registers 3
+    .parameter
+    .parameter
 
-# virtual methods
-.method public run()V
-    .registers 9
+    .prologue
+    .line 78
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/ap;->d:Lcom/google/googlenav/ui/ak;
+    return-void
+.end method
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/ak;->f(Lcom/google/googlenav/ui/ak;)Lcom/google/googlenav/ui/wizard/hM;
+.method public static a(ZZ)Lcom/google/googlenav/ui/aP;
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 104
+    if-eqz p0, :cond_a
+
+    .line 105
+    if-eqz p1, :cond_7
+
+    .line 106
+    sget-object v0, Lcom/google/googlenav/ui/aP;->d:Lcom/google/googlenav/ui/aP;
+
+    .line 114
+    :goto_6
+    return-object v0
+
+    .line 108
+    :cond_7
+    sget-object v0, Lcom/google/googlenav/ui/aP;->b:Lcom/google/googlenav/ui/aP;
+
+    goto :goto_6
+
+    .line 111
+    :cond_a
+    if-eqz p1, :cond_f
+
+    .line 112
+    sget-object v0, Lcom/google/googlenav/ui/aP;->c:Lcom/google/googlenav/ui/aP;
+
+    goto :goto_6
+
+    .line 114
+    :cond_f
+    sget-object v0, Lcom/google/googlenav/ui/aP;->a:Lcom/google/googlenav/ui/aP;
+
+    goto :goto_6
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lcom/google/googlenav/ui/aP;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 78
+    const-class v0, Lcom/google/googlenav/ui/aP;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object v0
 
-    const/16 v1, 0x222
+    check-cast v0, Lcom/google/googlenav/ui/aP;
 
-    invoke-static {v1}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
+    return-object v0
+.end method
 
-    move-result-object v1
+.method public static values()[Lcom/google/googlenav/ui/aP;
+    .registers 1
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/ap;->a:Ljava/lang/StringBuilder;
+    .prologue
+    .line 78
+    sget-object v0, Lcom/google/googlenav/ui/aP;->e:[Lcom/google/googlenav/ui/aP;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, [Lcom/google/googlenav/ui/aP;->clone()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    const/16 v3, 0x220
+    check-cast v0, [Lcom/google/googlenav/ui/aP;
 
-    invoke-static {v3}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    iget-boolean v4, p0, Lcom/google/googlenav/ui/ap;->b:Z
-
-    if-eqz v4, :cond_31
-
-    const/16 v4, 0x62
-
-    :goto_1e
-    invoke-static {v4}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    const/4 v5, 0x1
-
-    iget-boolean v6, p0, Lcom/google/googlenav/ui/ap;->b:Z
-
-    if-eqz v6, :cond_34
-
-    const/4 v6, 0x0
-
-    :goto_28
-    new-instance v7, Lcom/google/googlenav/ui/aq;
-
-    invoke-direct {v7, p0}, Lcom/google/googlenav/ui/aq;-><init>(Lcom/google/googlenav/ui/ap;)V
-
-    invoke-virtual/range {v0 .. v7}, Lcom/google/googlenav/ui/wizard/hM;->a(Ljava/lang/String;Ljava/lang/CharSequence;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Lcom/google/googlenav/ui/wizard/aX;)V
-
-    return-void
-
-    :cond_31
-    const/16 v4, 0x221
-
-    goto :goto_1e
-
-    :cond_34
-    const/16 v6, 0x21d
-
-    invoke-static {v6}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    goto :goto_28
+    return-object v0
 .end method

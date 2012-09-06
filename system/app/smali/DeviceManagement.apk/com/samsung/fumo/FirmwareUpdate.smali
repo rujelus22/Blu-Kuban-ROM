@@ -118,17 +118,17 @@
     .line 80
     iput-object v2, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaRebootTimer:Lcom/samsung/fumo/FirmwareUpdate$RebootTimer;
 
-    .line 853
+    .line 845
     iput-boolean v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->homekeyevent:Z
 
-    .line 906
+    .line 898
     new-instance v0, Lcom/samsung/fumo/FirmwareUpdate$13;
 
     invoke-direct {v0, p0}, Lcom/samsung/fumo/FirmwareUpdate$13;-><init>(Lcom/samsung/fumo/FirmwareUpdate;)V
 
     iput-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mFwUpdateHandler:Landroid/os/Handler;
 
-    .line 974
+    .line 966
     return-void
 .end method
 
@@ -234,7 +234,7 @@
 
     const/4 v4, 0x1
 
-    .line 702
+    .line 694
     const-string v1, "FirmwareUpdate"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -259,7 +259,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 703
+    .line 695
     const-string v1, "FirmwareUpdate"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -284,7 +284,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 704
+    .line 696
     const-string v1, "FirmwareUpdate"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -309,51 +309,51 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 706
+    .line 698
     iget v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
     if-ne v1, v4, :cond_95
 
-    .line 707
+    .line 699
     iget-object v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     iput-boolean v4, v1, Lcom/samsung/client/DMApp;->userCancel:Z
 
-    .line 708
+    .line 700
     iget-object v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v1}, Lcom/samsung/client/DMApp;->stopSession()V
 
-    .line 710
+    .line 702
     iget-boolean v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaPrlFumo:Z
 
     if-eqz v1, :cond_92
 
-    .line 711
+    .line 703
     iget-boolean v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->mdnmsidchanged:Z
 
     if-eqz v1, :cond_8f
 
-    .line 712
+    .line 704
     iput v7, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
-    .line 719
+    .line 711
     :goto_69
     iget-boolean v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->cifumo_after_gota:Z
 
     if-ne v1, v4, :cond_8e
 
-    .line 721
+    .line 713
     iget-object v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     if-eqz v1, :cond_76
 
-    .line 722
+    .line 714
     iget-object v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->dismiss()V
 
-    .line 728
+    .line 720
     :cond_76
     const-string v1, "FirmwareUpdate"
 
@@ -361,44 +361,44 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 729
+    .line 721
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.samsung.client.SYNCML_SERVICE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 730
+    .line 722
     .local v0, i:Landroid/content/Intent;
     const-string v1, "dialog"
 
     invoke-virtual {v0, v1, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 731
+    .line 723
     invoke-virtual {p0, v0}, Lcom/samsung/fumo/FirmwareUpdate;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 732
+    .line 724
     iput-boolean v5, p0, Lcom/samsung/fumo/FirmwareUpdate;->cifumo_after_gota:Z
 
-    .line 764
+    .line 756
     .end local v0           #i:Landroid/content/Intent;
     :cond_8e
     :goto_8e
     return-void
 
-    .line 714
+    .line 706
     :cond_8f
     iput v6, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
     goto :goto_69
 
-    .line 717
+    .line 709
     :cond_92
     iput v5, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
     goto :goto_69
 
-    .line 735
+    .line 727
     :cond_95
     iget v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
@@ -406,46 +406,46 @@
 
     if-ne v1, v2, :cond_8e
 
-    .line 738
+    .line 730
     iget-object v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     iput-boolean v4, v1, Lcom/samsung/client/DMApp;->userCancelDld:Z
 
-    .line 739
+    .line 731
     iget-object v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v1}, Lcom/samsung/client/DMApp;->cancelDld()V
 
-    .line 740
+    .line 732
     iget-boolean v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaPrlFumo:Z
 
     if-eqz v1, :cond_d6
 
-    .line 741
+    .line 733
     iget-boolean v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->mdnmsidchanged:Z
 
     if-eqz v1, :cond_d3
 
-    .line 742
+    .line 734
     iput v7, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
-    .line 749
+    .line 741
     :goto_ad
     iget-boolean v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->cifumo_after_gota:Z
 
     if-ne v1, v4, :cond_8e
 
-    .line 750
+    .line 742
     iget-object v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     if-eqz v1, :cond_ba
 
-    .line 751
+    .line 743
     iget-object v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->dismiss()V
 
-    .line 757
+    .line 749
     :cond_ba
     const-string v1, "FirmwareUpdate"
 
@@ -453,35 +453,35 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 758
+    .line 750
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.samsung.client.SYNCML_SERVICE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 759
+    .line 751
     .restart local v0       #i:Landroid/content/Intent;
     const-string v1, "dialog"
 
     invoke-virtual {v0, v1, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 760
+    .line 752
     invoke-virtual {p0, v0}, Lcom/samsung/fumo/FirmwareUpdate;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 761
+    .line 753
     iput-boolean v5, p0, Lcom/samsung/fumo/FirmwareUpdate;->cifumo_after_gota:Z
 
     goto :goto_8e
 
-    .line 744
+    .line 736
     .end local v0           #i:Landroid/content/Intent;
     :cond_d3
     iput v6, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
     goto :goto_ad
 
-    .line 747
+    .line 739
     :cond_d6
     iput v5, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
@@ -496,7 +496,7 @@
 
     const/4 v1, 0x0
 
-    .line 766
+    .line 758
     const-string v2, "FirmwareUpdate"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -521,7 +521,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 767
+    .line 759
     const-string v2, "FirmwareUpdate"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -548,7 +548,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 768
+    .line 760
     const-string v2, "FirmwareUpdate"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -575,7 +575,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 769
+    .line 761
     const-string v2, "FirmwareUpdate"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -600,7 +600,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 770
+    .line 762
     const-string v2, "FirmwareUpdate"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -625,52 +625,52 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 785
+    .line 777
     iget-object v2, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaRebootTimer:Lcom/samsung/fumo/FirmwareUpdate$RebootTimer;
 
     if-eqz v2, :cond_91
 
-    .line 786
+    .line 778
     iget-object v2, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaRebootTimer:Lcom/samsung/fumo/FirmwareUpdate$RebootTimer;
 
     invoke-virtual {v2}, Lcom/samsung/fumo/FirmwareUpdate$RebootTimer;->cancel()V
 
-    .line 789
+    .line 781
     :cond_91
     iget v2, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
     packed-switch v2, :pswitch_data_12a
 
-    .line 838
+    .line 830
     :pswitch_96
     invoke-virtual {p0}, Lcom/samsung/fumo/FirmwareUpdate;->finish()V
 
-    .line 839
+    .line 831
     const-string v0, "FirmwareUpdate"
 
     const-string v1, "fumoDone ERROR STATE"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 842
+    .line 834
     :goto_a0
     return-void
 
-    .line 792
+    .line 784
     :pswitch_a1
     invoke-virtual {p0}, Lcom/samsung/fumo/FirmwareUpdate;->finish()V
 
-    .line 793
+    .line 785
     iget-boolean v2, p0, Lcom/samsung/fumo/FirmwareUpdate;->homekeyevent:Z
 
     if-nez v2, :cond_ad
 
-    .line 794
+    .line 786
     iget-object v2, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2}, Lcom/samsung/client/DMApp;->launchHomeScreen()V
 
-    .line 796
+    .line 788
     :cond_ad
     iget-object v2, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
@@ -688,21 +688,21 @@
 
     goto :goto_b3
 
-    .line 801
+    .line 793
     :pswitch_b9
     invoke-virtual {p0}, Lcom/samsung/fumo/FirmwareUpdate;->finish()V
 
-    .line 802
+    .line 794
     iget-object v2, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v1}, Lcom/samsung/client/DMApp;->setHfaInitiated(Z)V
 
-    .line 803
+    .line 795
     iget-object v2, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v0}, Lcom/samsung/client/DMApp;->setHfaRebooted(Z)V
 
-    .line 804
+    .line 796
     iget-object v2, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     iget-boolean v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->homekeyevent:Z
@@ -719,84 +719,84 @@
 
     goto :goto_cc
 
-    .line 809
+    .line 801
     :pswitch_d2
     invoke-virtual {p0}, Lcom/samsung/fumo/FirmwareUpdate;->finish()V
 
-    .line 810
+    .line 802
     iget-object v2, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v1}, Lcom/samsung/client/DMApp;->setHfaInitiated(Z)V
 
-    .line 811
+    .line 803
     iget-object v2, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v0}, Lcom/samsung/client/DMApp;->setHfaRebooted(Z)V
 
-    .line 812
+    .line 804
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->enableKeyGuard()V
 
-    .line 813
+    .line 805
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->releaseWakeLock()V
 
-    .line 814
+    .line 806
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0, v1}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
     goto :goto_a0
 
-    .line 818
+    .line 810
     :pswitch_ef
     invoke-virtual {p0}, Lcom/samsung/fumo/FirmwareUpdate;->finish()V
 
-    .line 819
+    .line 811
     iget-object v2, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v1}, Lcom/samsung/client/DMApp;->setHfaInitiated(Z)V
 
-    .line 820
+    .line 812
     iget-object v2, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v0}, Lcom/samsung/client/DMApp;->setHfaRebooted(Z)V
 
-    .line 821
+    .line 813
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->homekeyevent:Z
 
     if-nez v0, :cond_105
 
-    .line 822
+    .line 814
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->launchHomeScreen()V
 
-    .line 824
+    .line 816
     :cond_105
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->enableKeyGuard()V
 
-    .line 825
+    .line 817
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->releaseWakeLock()V
 
-    .line 826
+    .line 818
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0, v1}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
     goto :goto_a0
 
-    .line 830
+    .line 822
     :pswitch_115
     invoke-virtual {p0}, Lcom/samsung/fumo/FirmwareUpdate;->finish()V
 
-    .line 831
+    .line 823
     iget-object v2, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     iget-boolean v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->homekeyevent:Z
@@ -813,13 +813,13 @@
 
     goto :goto_11e
 
-    .line 835
+    .line 827
     :pswitch_125
     invoke-virtual {p0}, Lcom/samsung/fumo/FirmwareUpdate;->finish()V
 
     goto/16 :goto_a0
 
-    .line 789
+    .line 781
     :pswitch_data_12a
     .packed-switch 0x0
         :pswitch_115
@@ -984,7 +984,7 @@
 
     const/4 v6, 0x0
 
-    .line 587
+    .line 579
     const-string v0, "FirmwareUpdate"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1009,7 +1009,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 591
+    .line 583
     iget v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
     if-eq v0, v7, :cond_25
@@ -1020,41 +1020,41 @@
 
     if-ne v0, v1, :cond_5d
 
-    .line 594
+    .line 586
     :cond_25
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     if-eqz v0, :cond_5e
 
-    .line 595
+    .line 587
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 596
+    .line 588
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 603
+    .line 595
     :goto_34
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaPrlFumo:Z
 
     if-eqz v0, :cond_6a
 
-    .line 604
+    .line 596
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mdnmsidchanged:Z
 
     if-eqz v0, :cond_66
 
-    .line 605
+    .line 597
     const/4 v0, 0x6
 
     iput v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
-    .line 606
+    .line 598
     new-instance v0, Lcom/samsung/fumo/FirmwareUpdate$RebootTimer;
 
     const-wide/16 v2, 0x2710
@@ -1067,33 +1067,33 @@
 
     iput-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaRebootTimer:Lcom/samsung/fumo/FirmwareUpdate$RebootTimer;
 
-    .line 613
+    .line 605
     :goto_4b
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->cifumo_after_gota:Z
 
     if-ne v0, v7, :cond_6d
 
-    .line 614
+    .line 606
     const-string v0, "FirmwareUpdate"
 
     const-string v1, "dldError show DIALOG_ANDROID_UPDATE_COMPLETED"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 615
+    .line 607
     const/16 v0, 0x8
 
     invoke-virtual {p0, v0}, Lcom/samsung/fumo/FirmwareUpdate;->showDialog(I)V
 
-    .line 616
+    .line 608
     iput-boolean v6, p0, Lcom/samsung/fumo/FirmwareUpdate;->cifumo_after_gota:Z
 
-    .line 621
+    .line 613
     :cond_5d
     :goto_5d
     return-void
 
-    .line 598
+    .line 590
     :cond_5e
     const-string v0, "FirmwareUpdate"
 
@@ -1103,7 +1103,7 @@
 
     goto :goto_34
 
-    .line 608
+    .line 600
     :cond_66
     const/4 v0, 0x4
 
@@ -1111,13 +1111,13 @@
 
     goto :goto_4b
 
-    .line 611
+    .line 603
     :cond_6a
     iput v6, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
     goto :goto_4b
 
-    .line 618
+    .line 610
     :cond_6d
     const/4 v0, 0x5
 
@@ -1138,7 +1138,7 @@
 
     const/4 v3, 0x1
 
-    .line 492
+    .line 484
     const-string v0, "FirmwareUpdate"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1183,58 +1183,58 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 494
+    .line 486
     iput p1, p0, Lcom/samsung/fumo/FirmwareUpdate;->max:I
 
-    .line 495
+    .line 487
     iput p2, p0, Lcom/samsung/fumo/FirmwareUpdate;->current:I
 
-    .line 496
+    .line 488
     iget v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
     if-ne v0, v3, :cond_5e
 
-    .line 497
+    .line 489
     iput v4, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
-    .line 498
+    .line 490
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->fullScreens:Z
 
     if-eqz v0, :cond_43
 
-    .line 499
+    .line 491
     invoke-direct {p0}, Lcom/samsung/fumo/FirmwareUpdate;->moveToHfaPrlFumoDldProgressWindow()V
 
-    .line 527
+    .line 519
     :cond_42
     :goto_42
     return-void
 
-    .line 501
+    .line 493
     :cond_43
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     if-eqz v0, :cond_56
 
-    .line 502
+    .line 494
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 503
+    .line 495
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 509
+    .line 501
     :goto_52
     invoke-virtual {p0, v4}, Lcom/samsung/fumo/FirmwareUpdate;->showDialog(I)V
 
     goto :goto_42
 
-    .line 505
+    .line 497
     :cond_56
     const-string v0, "FirmwareUpdate"
 
@@ -1244,18 +1244,18 @@
 
     goto :goto_52
 
-    .line 512
+    .line 504
     :cond_5e
     iget v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
     if-ne v0, v4, :cond_42
 
-    .line 513
+    .line 505
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->fullScreens:Z
 
     if-eqz v0, :cond_7e
 
-    .line 514
+    .line 506
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaPrlFumoWinProgressBar:Landroid/widget/ProgressBar;
 
     invoke-virtual {v0}, Landroid/widget/ProgressBar;->isIndeterminate()Z
@@ -1264,25 +1264,25 @@
 
     if-ne v0, v3, :cond_73
 
-    .line 515
+    .line 507
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaPrlFumoWinProgressBar:Landroid/widget/ProgressBar;
 
     invoke-virtual {v0, v5}, Landroid/widget/ProgressBar;->setIndeterminate(Z)V
 
-    .line 517
+    .line 509
     :cond_73
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaPrlFumoWinProgressBar:Landroid/widget/ProgressBar;
 
     invoke-virtual {v0, p1}, Landroid/widget/ProgressBar;->setMax(I)V
 
-    .line 518
+    .line 510
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaPrlFumoWinProgressBar:Landroid/widget/ProgressBar;
 
     invoke-virtual {v0, p2}, Landroid/widget/ProgressBar;->setProgress(I)V
 
     goto :goto_42
 
-    .line 520
+    .line 512
     :cond_7e
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
@@ -1294,14 +1294,14 @@
 
     if-ne v0, v3, :cond_8f
 
-    .line 521
+    .line 513
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     check-cast v0, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;
 
     invoke-virtual {v0, v5}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setIndeterminate(Z)V
 
-    .line 523
+    .line 515
     :cond_8f
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
@@ -1309,7 +1309,7 @@
 
     invoke-virtual {v0, p1}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setMax(I)V
 
-    .line 524
+    .line 516
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     check-cast v0, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;
@@ -1328,7 +1328,7 @@
 
     const/4 v6, 0x0
 
-    .line 531
+    .line 523
     const-string v0, "FirmwareUpdate"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1363,7 +1363,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 537
+    .line 529
     iget v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
     if-eq v0, v7, :cond_2f
@@ -1374,44 +1374,44 @@
 
     if-ne v0, v1, :cond_69
 
-    .line 540
+    .line 532
     :cond_2f
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     if-eqz v0, :cond_6a
 
-    .line 541
+    .line 533
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 542
+    .line 534
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 549
+    .line 541
     :goto_3e
     iput p1, p0, Lcom/samsung/fumo/FirmwareUpdate;->errCode:I
 
-    .line 550
+    .line 542
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaPrlFumo:Z
 
     if-eqz v0, :cond_76
 
-    .line 551
+    .line 543
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mdnmsidchanged:Z
 
     if-eqz v0, :cond_72
 
-    .line 552
+    .line 544
     const/4 v0, 0x6
 
     iput v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
-    .line 553
+    .line 545
     new-instance v0, Lcom/samsung/fumo/FirmwareUpdate$RebootTimer;
 
     const-wide/16 v2, 0x2710
@@ -1424,33 +1424,33 @@
 
     iput-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaRebootTimer:Lcom/samsung/fumo/FirmwareUpdate$RebootTimer;
 
-    .line 560
+    .line 552
     :goto_57
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->cifumo_after_gota:Z
 
     if-ne v0, v7, :cond_79
 
-    .line 561
+    .line 553
     const-string v0, "FirmwareUpdate"
 
     const-string v1, "gotoFailure show DIALOG_ANDROID_UPDATE_COMPLETED"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 562
+    .line 554
     const/16 v0, 0x8
 
     invoke-virtual {p0, v0}, Lcom/samsung/fumo/FirmwareUpdate;->showDialog(I)V
 
-    .line 563
+    .line 555
     iput-boolean v6, p0, Lcom/samsung/fumo/FirmwareUpdate;->cifumo_after_gota:Z
 
-    .line 568
+    .line 560
     :cond_69
     :goto_69
     return-void
 
-    .line 544
+    .line 536
     :cond_6a
     const-string v0, "FirmwareUpdate"
 
@@ -1460,7 +1460,7 @@
 
     goto :goto_3e
 
-    .line 555
+    .line 547
     :cond_72
     const/4 v0, 0x4
 
@@ -1468,13 +1468,13 @@
 
     goto :goto_57
 
-    .line 558
+    .line 550
     :cond_76
     iput v6, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
     goto :goto_57
 
-    .line 565
+    .line 557
     :cond_79
     const/4 v0, 0x7
 
@@ -1487,7 +1487,7 @@
     .registers 4
 
     .prologue
-    .line 571
+    .line 563
     const-string v0, "FirmwareUpdate"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1512,7 +1512,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 575
+    .line 567
     iget v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
     const/4 v1, 0x1
@@ -1525,28 +1525,28 @@
 
     if-ne v0, v1, :cond_30
 
-    .line 577
+    .line 569
     :cond_24
     const/4 v0, 0x7
 
     iput v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
-    .line 578
+    .line 570
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     if-eqz v0, :cond_31
 
-    .line 579
+    .line 571
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 584
+    .line 576
     :cond_30
     :goto_30
     return-void
 
-    .line 581
+    .line 573
     :cond_31
     invoke-direct {p0}, Lcom/samsung/fumo/FirmwareUpdate;->fumoDone()V
 
@@ -1561,7 +1561,7 @@
 
     const/4 v3, 0x1
 
-    .line 624
+    .line 616
     const-string v0, "FirmwareUpdate"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1586,7 +1586,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 628
+    .line 620
     iget v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
     if-eq v0, v3, :cond_25
@@ -1597,32 +1597,32 @@
 
     if-ne v0, v1, :cond_43
 
-    .line 631
+    .line 623
     :cond_25
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->fullScreens:Z
 
     if-eqz v0, :cond_44
 
-    .line 632
+    .line 624
     invoke-direct {p0}, Lcom/samsung/fumo/FirmwareUpdate;->moveToHfaPrlFumoNoUpdateWindow()V
 
-    .line 651
+    .line 643
     :goto_2c
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaPrlFumo:Z
 
     if-eqz v0, :cond_76
 
-    .line 652
+    .line 644
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mdnmsidchanged:Z
 
     if-eqz v0, :cond_72
 
-    .line 653
+    .line 645
     const/4 v0, 0x6
 
     iput v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
-    .line 654
+    .line 646
     new-instance v0, Lcom/samsung/fumo/FirmwareUpdate$RebootTimer;
 
     const-wide/16 v2, 0x2710
@@ -1635,53 +1635,53 @@
 
     iput-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaRebootTimer:Lcom/samsung/fumo/FirmwareUpdate$RebootTimer;
 
-    .line 662
+    .line 654
     :cond_43
     :goto_43
     return-void
 
-    .line 634
+    .line 626
     :cond_44
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     if-eqz v0, :cond_66
 
-    .line 635
+    .line 627
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 636
+    .line 628
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 642
+    .line 634
     :goto_53
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->cifumo_after_gota:Z
 
     if-ne v0, v3, :cond_6e
 
-    .line 643
+    .line 635
     const-string v0, "FirmwareUpdate"
 
     const-string v1, "noUpdateAltert show DIALOG_ANDROID_UPDATE_COMPLETED"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 644
+    .line 636
     const/16 v0, 0x8
 
     invoke-virtual {p0, v0}, Lcom/samsung/fumo/FirmwareUpdate;->showDialog(I)V
 
-    .line 645
+    .line 637
     iput-boolean v4, p0, Lcom/samsung/fumo/FirmwareUpdate;->cifumo_after_gota:Z
 
     goto :goto_2c
 
-    .line 638
+    .line 630
     :cond_66
     const-string v0, "FirmwareUpdate"
 
@@ -1691,13 +1691,13 @@
 
     goto :goto_53
 
-    .line 647
+    .line 639
     :cond_6e
     invoke-virtual {p0, v3}, Lcom/samsung/fumo/FirmwareUpdate;->showDialog(I)V
 
     goto :goto_2c
 
-    .line 656
+    .line 648
     :cond_72
     const/4 v0, 0x4
 
@@ -1705,7 +1705,7 @@
 
     goto :goto_43
 
-    .line 659
+    .line 651
     :cond_76
     iput v4, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
@@ -1914,7 +1914,7 @@
     iput-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mOnDlgDismiss:Lcom/samsung/fumo/FirmwareUpdate$OnDlgDismiss;
 
     .line 121
-    if-nez v6, :cond_186
+    if-nez v6, :cond_17d
 
     .line 122
     const-string v0, "UpgradePending"
@@ -2043,11 +2043,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13f
-
-    iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->cifumo_after_gota:Z
-
-    if-nez v0, :cond_13f
+    if-eqz v0, :cond_13b
 
     .line 145
     const-string v0, "FirmwareUpdate"
@@ -2059,12 +2055,12 @@
     .line 146
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaPrlFumo:Z
 
-    if-eqz v0, :cond_13c
+    if-eqz v0, :cond_138
 
     .line 147
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mdnmsidchanged:Z
 
-    if-eqz v0, :cond_139
+    if-eqz v0, :cond_135
 
     .line 148
     iput v10, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
@@ -2081,36 +2077,32 @@
     iput-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaRebootTimer:Lcom/samsung/fumo/FirmwareUpdate$RebootTimer;
 
     .line 157
-    :goto_135
+    :goto_131
     invoke-virtual {p0, v10}, Lcom/samsung/fumo/FirmwareUpdate;->showDialog(I)V
 
     goto :goto_f9
 
     .line 151
-    :cond_139
+    :cond_135
     iput v9, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
-    goto :goto_135
+    goto :goto_131
 
     .line 154
-    :cond_13c
+    :cond_138
     iput v8, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
-    goto :goto_135
+    goto :goto_131
 
     .line 158
-    :cond_13f
+    :cond_13b
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->lowBattery()Z
 
     move-result v0
 
-    if-eqz v0, :cond_171
-
-    iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->cifumo_after_gota:Z
-
-    if-nez v0, :cond_171
+    if-eqz v0, :cond_169
 
     .line 159
     const-string v0, "FirmwareUpdate"
@@ -2122,12 +2114,12 @@
     .line 160
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaPrlFumo:Z
 
-    if-eqz v0, :cond_16e
+    if-eqz v0, :cond_166
 
     .line 161
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mdnmsidchanged:Z
 
-    if-eqz v0, :cond_16b
+    if-eqz v0, :cond_163
 
     .line 162
     iput v10, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
@@ -2144,7 +2136,7 @@
     iput-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->hfaRebootTimer:Lcom/samsung/fumo/FirmwareUpdate$RebootTimer;
 
     .line 171
-    :goto_166
+    :goto_15e
     const/4 v0, 0x3
 
     invoke-virtual {p0, v0}, Lcom/samsung/fumo/FirmwareUpdate;->showDialog(I)V
@@ -2152,19 +2144,19 @@
     goto :goto_f9
 
     .line 165
-    :cond_16b
+    :cond_163
     iput v9, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
-    goto :goto_166
+    goto :goto_15e
 
     .line 168
-    :cond_16e
+    :cond_166
     iput v8, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
-    goto :goto_166
+    goto :goto_15e
 
     .line 174
-    :cond_171
+    :cond_169
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
@@ -2172,15 +2164,15 @@
     .line 175
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->fullScreens:Z
 
-    if-eqz v0, :cond_17d
+    if-eqz v0, :cond_174
 
     .line 176
     invoke-direct {p0}, Lcom/samsung/fumo/FirmwareUpdate;->showHfaPrlFumoProgressWindow()V
 
-    goto/16 :goto_f9
+    goto :goto_f9
 
     .line 178
-    :cond_17d
+    :cond_174
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->freshActivity:Z
 
     if-eqz v0, :cond_f9
@@ -2191,13 +2183,13 @@
     goto/16 :goto_f9
 
     .line 184
-    :cond_186
+    :cond_17d
     iput v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->sessionstatus:I
 
     .line 185
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->fullScreens:Z
 
-    if-eqz v0, :cond_194
+    if-eqz v0, :cond_18b
 
     .line 186
     invoke-direct {p0}, Lcom/samsung/fumo/FirmwareUpdate;->showHfaPrlFumoProgressWindow()V
@@ -2208,7 +2200,7 @@
     goto/16 :goto_f9
 
     .line 189
-    :cond_194
+    :cond_18b
     invoke-virtual {p0, v3}, Lcom/samsung/fumo/FirmwareUpdate;->showDialog(I)V
 
     goto/16 :goto_f9
@@ -2219,15 +2211,15 @@
     .parameter "id"
 
     .prologue
-    const v10, 0x1080027
+    const v10, 0x108009b
 
-    const v9, 0x7f050009
+    const v9, 0x1080027
 
-    const/4 v8, 0x1
+    const v8, 0x7f050009
 
-    const v7, 0x7f050016
+    const/4 v7, 0x1
 
-    const/4 v6, 0x0
+    const v6, 0x7f050016
 
     .line 264
     const-string v3, "FirmwareUpdate"
@@ -2259,16 +2251,16 @@
 
     .line 289
     .local v2, keylistner:Landroid/content/DialogInterface$OnKeyListener;
-    packed-switch p1, :pswitch_data_288
+    packed-switch p1, :pswitch_data_25e
 
-    .line 488
+    .line 480
     const/4 v3, 0x0
 
-    :goto_2c
+    :goto_2e
     return-object v3
 
     .line 291
-    :pswitch_2d
+    :pswitch_2f
     new-instance v0, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;
 
     invoke-direct {v0, p0, p0}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;-><init>(Lcom/samsung/fumo/FirmwareUpdate;Landroid/content/Context;)V
@@ -2284,13 +2276,13 @@
     invoke-virtual {v0, v3}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setMessage(Ljava/lang/CharSequence;)V
 
     .line 293
-    invoke-virtual {v0, v8}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setProgressStyle(I)V
+    invoke-virtual {v0, v7}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setProgressStyle(I)V
 
     .line 294
-    invoke-virtual {v0, v8}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setIndeterminate(Z)V
+    invoke-virtual {v0, v7}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setIndeterminate(Z)V
 
     .line 295
-    invoke-virtual {v0, v8}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setCancelable(Z)V
+    invoke-virtual {v0, v7}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setCancelable(Z)V
 
     .line 296
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mOnDlgDismiss:Lcom/samsung/fumo/FirmwareUpdate$OnDlgDismiss;
@@ -2329,11 +2321,11 @@
     .line 311
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    goto :goto_2c
+    goto :goto_2e
 
     .line 314
     .end local v0           #dialog:Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;
-    :pswitch_6b
+    :pswitch_6d
     new-instance v0, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;
 
     invoke-direct {v0, p0, p0}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;-><init>(Lcom/samsung/fumo/FirmwareUpdate;Landroid/content/Context;)V
@@ -2342,7 +2334,7 @@
     .restart local v0       #dialog:Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;
     iget-boolean v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->cifumo_after_gota:Z
 
-    if-ne v3, v8, :cond_ab
+    if-ne v3, v7, :cond_aa
 
     .line 316
     const v3, 0x7f050044
@@ -2354,11 +2346,11 @@
     invoke-virtual {v0, v3}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setMessage(Ljava/lang/CharSequence;)V
 
     .line 324
-    :goto_7e
-    invoke-virtual {v0, v8}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setIndeterminate(Z)V
+    :goto_80
+    invoke-virtual {v0, v7}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setIndeterminate(Z)V
 
     .line 325
-    invoke-virtual {v0, v8}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setCancelable(Z)V
+    invoke-virtual {v0, v7}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setCancelable(Z)V
 
     .line 326
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mOnDlgDismiss:Lcom/samsung/fumo/FirmwareUpdate$OnDlgDismiss;
@@ -2372,7 +2364,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_a0
+    if-nez v3, :cond_a2
 
     .line 328
     const v3, 0x7f050013
@@ -2388,27 +2380,24 @@
     invoke-virtual {v0, v3, v4}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
     .line 341
-    :cond_a0
+    :cond_a2
     invoke-virtual {v0, v2}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 342
-    invoke-virtual {v0, v6}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 344
+    .line 343
     iput-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 345
+    .line 344
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    goto :goto_2c
+    goto :goto_2e
 
     .line 318
-    :cond_ab
+    :cond_aa
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     sget-boolean v3, Lcom/samsung/client/DMApp;->mNIAProgress:Z
 
-    if-eqz v3, :cond_bc
+    if-eqz v3, :cond_bb
 
     .line 319
     const v3, 0x7f05000d
@@ -2419,10 +2408,10 @@
 
     invoke-virtual {v0, v3}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    goto :goto_7e
+    goto :goto_80
 
     .line 321
-    :cond_bc
+    :cond_bb
     const v3, 0x7f050035
 
     invoke-virtual {p0, v3}, Lcom/samsung/fumo/FirmwareUpdate;->getString(I)Ljava/lang/String;
@@ -2431,16 +2420,16 @@
 
     invoke-virtual {v0, v3}, Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    goto :goto_7e
+    goto :goto_80
 
-    .line 349
+    .line 348
     .end local v0           #dialog:Lcom/samsung/fumo/FirmwareUpdate$DownloadDialog;
-    :pswitch_c7
+    :pswitch_c6
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v3, v9}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2464,7 +2453,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/fumo/FirmwareUpdate$6;-><init>(Lcom/samsung/fumo/FirmwareUpdate;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2474,14 +2463,14 @@
 
     iput-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 364
+    .line 363
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/fumo/FirmwareUpdate;->mOnDlgDismiss:Lcom/samsung/fumo/FirmwareUpdate$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 365
+    .line 364
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
@@ -2489,15 +2478,10 @@
     .line 366
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
+    goto/16 :goto_2e
 
-    .line 368
-    iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
-
-    goto/16 :goto_2c
-
-    .line 372
-    :pswitch_106
+    .line 370
+    :pswitch_100
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -2512,13 +2496,11 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v9}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    const v4, 0x108009b
-
-    invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v10}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2526,7 +2508,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/fumo/FirmwareUpdate$7;-><init>(Lcom/samsung/fumo/FirmwareUpdate;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2536,30 +2518,25 @@
 
     iput-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 386
+    .line 384
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/fumo/FirmwareUpdate;->mOnDlgDismiss:Lcom/samsung/fumo/FirmwareUpdate$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 387
+    .line 385
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 388
+    .line 386
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
+    goto/16 :goto_2e
 
-    .line 389
-    iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
-
-    goto/16 :goto_2c
-
-    .line 393
-    :pswitch_145
+    .line 390
+    :pswitch_137
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -2574,13 +2551,11 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v9}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    const v4, 0x108009b
-
-    invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v10}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2588,7 +2563,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/fumo/FirmwareUpdate$8;-><init>(Lcom/samsung/fumo/FirmwareUpdate;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2598,39 +2573,34 @@
 
     iput-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 404
+    .line 401
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/fumo/FirmwareUpdate;->mOnDlgDismiss:Lcom/samsung/fumo/FirmwareUpdate$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 405
+    .line 402
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 406
+    .line 403
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
+    goto/16 :goto_2e
 
     .line 407
-    iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
-
-    goto/16 :goto_2c
-
-    .line 411
-    :pswitch_184
+    :pswitch_16e
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v3, v9}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    invoke-virtual {v3, v10}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v9}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2648,7 +2618,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/fumo/FirmwareUpdate$9;-><init>(Lcom/samsung/fumo/FirmwareUpdate;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2658,30 +2628,25 @@
 
     iput-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 424
+    .line 420
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/fumo/FirmwareUpdate;->mOnDlgDismiss:Lcom/samsung/fumo/FirmwareUpdate$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 425
+    .line 421
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 426
+    .line 422
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
+    goto/16 :goto_2e
 
-    .line 427
-    iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
-
-    goto/16 :goto_2c
-
-    .line 430
-    :pswitch_1c0
+    .line 425
+    :pswitch_1a5
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -2692,7 +2657,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v10}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v9}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2710,7 +2675,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/fumo/FirmwareUpdate$10;-><init>(Lcom/samsung/fumo/FirmwareUpdate;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2720,39 +2685,34 @@
 
     iput-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 443
+    .line 438
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/fumo/FirmwareUpdate;->mOnDlgDismiss:Lcom/samsung/fumo/FirmwareUpdate$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 444
+    .line 439
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 445
+    .line 440
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
+    goto/16 :goto_2e
 
-    .line 446
-    iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
-
-    goto/16 :goto_2c
-
-    .line 449
-    :pswitch_1ff
+    .line 443
+    :pswitch_1df
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v3, v9}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    invoke-virtual {v3, v10}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v9}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2770,7 +2730,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/fumo/FirmwareUpdate$11;-><init>(Lcom/samsung/fumo/FirmwareUpdate;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2780,37 +2740,32 @@
 
     iput-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 462
+    .line 456
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/fumo/FirmwareUpdate;->mOnDlgDismiss:Lcom/samsung/fumo/FirmwareUpdate$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 463
+    .line 457
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 464
+    .line 458
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
+    goto/16 :goto_2e
 
-    .line 465
-    iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
-
-    goto/16 :goto_2c
-
-    .line 468
-    :pswitch_23b
+    .line 461
+    :pswitch_216
     const v3, 0x7f050040
 
     invoke-virtual {p0, v3}, Lcom/samsung/fumo/FirmwareUpdate;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 469
+    .line 462
     .local v1, errStr:Ljava/lang/String;
     const-string v3, "###"
 
@@ -2826,7 +2781,7 @@
 
     move-result-object v1
 
-    .line 470
+    .line 463
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -2841,7 +2796,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v10}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v9}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2849,7 +2804,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/fumo/FirmwareUpdate$12;-><init>(Lcom/samsung/fumo/FirmwareUpdate;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2859,40 +2814,35 @@
 
     iput-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 482
+    .line 475
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/fumo/FirmwareUpdate;->mOnDlgDismiss:Lcom/samsung/fumo/FirmwareUpdate$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 483
+    .line 476
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 484
+    .line 477
     iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 485
-    iget-object v3, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
-
-    goto/16 :goto_2c
+    goto/16 :goto_2e
 
     .line 289
-    :pswitch_data_288
+    :pswitch_data_25e
     .packed-switch 0x0
-        :pswitch_6b
-        :pswitch_106
-        :pswitch_2d
-        :pswitch_c7
-        :pswitch_184
-        :pswitch_1c0
-        :pswitch_1ff
-        :pswitch_23b
-        :pswitch_145
+        :pswitch_6d
+        :pswitch_100
+        :pswitch_2f
+        :pswitch_c6
+        :pswitch_16e
+        :pswitch_1a5
+        :pswitch_1df
+        :pswitch_216
+        :pswitch_137
     .end packed-switch
 .end method
 
@@ -2900,17 +2850,17 @@
     .registers 3
 
     .prologue
-    .line 948
+    .line 940
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
-    .line 949
+    .line 941
     const-string v0, "FirmwareUpdate"
 
     const-string v1, "onDestroy ... "
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 950
+    .line 942
     return-void
 .end method
 
@@ -2976,20 +2926,20 @@
     .registers 3
 
     .prologue
-    .line 937
+    .line 929
     invoke-super {p0}, Landroid/app/Activity;->onStop()V
 
-    .line 938
+    .line 930
     iget-boolean v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->freshActivity:Z
 
     if-nez v0, :cond_c
 
-    .line 941
+    .line 933
     iget-object v0, p0, Lcom/samsung/fumo/FirmwareUpdate;->previousActivity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 943
+    .line 935
     :cond_c
     const-string v0, "FirmwareUpdate"
 
@@ -2997,7 +2947,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 944
+    .line 936
     return-void
 .end method
 
@@ -3009,10 +2959,10 @@
 
     const/4 v4, 0x0
 
-    .line 857
+    .line 849
     invoke-super {p0}, Landroid/app/Activity;->onUserLeaveHint()V
 
-    .line 858
+    .line 850
     const-string v1, "FirmwareUpdate"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3041,7 +2991,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 860
+    .line 852
     const-string v1, "FirmwareUpdate"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3070,7 +3020,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 864
+    .line 856
     iget-object v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v1}, Lcom/samsung/client/DMApp;->isHomeLaunchedByApp()Z
@@ -3079,16 +3029,16 @@
 
     if-eqz v1, :cond_4a
 
-    .line 903
+    .line 895
     :cond_49
     :goto_49
     return-void
 
-    .line 889
+    .line 881
     :cond_4a
     new-array v0, v5, [Landroid/content/Intent;
 
-    .line 890
+    .line 882
     .local v0, intents:[Landroid/content/Intent;
     new-instance v1, Landroid/content/Intent;
 
@@ -3098,21 +3048,21 @@
 
     aput-object v1, v0, v4
 
-    .line 891
+    .line 883
     aget-object v1, v0, v4
 
     const-string v2, "android.intent.category.HOME"
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 892
+    .line 884
     aget-object v1, v0, v4
 
     const-string v2, "android.intent.category.DEFAULT"
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 894
+    .line 886
     iget-object v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v1, v0}, Lcom/samsung/client/DMApp;->checkTopActivity([Landroid/content/Intent;)Z
@@ -3121,23 +3071,23 @@
 
     if-eqz v1, :cond_49
 
-    .line 895
+    .line 887
     iput-boolean v5, p0, Lcom/samsung/fumo/FirmwareUpdate;->homekeyevent:Z
 
-    .line 896
+    .line 888
     invoke-direct {p0}, Lcom/samsung/fumo/FirmwareUpdate;->cancelSession()V
 
-    .line 897
+    .line 889
     iget-object v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     if-nez v1, :cond_78
 
-    .line 898
+    .line 890
     invoke-direct {p0}, Lcom/samsung/fumo/FirmwareUpdate;->fumoDone()V
 
     goto :goto_49
 
-    .line 900
+    .line 892
     :cond_78
     iget-object v1, p0, Lcom/samsung/fumo/FirmwareUpdate;->mPrgDlg:Landroid/app/Dialog;
 

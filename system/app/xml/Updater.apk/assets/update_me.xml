@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RomConfig>
+    <RomName>Name rom</RomName>
+    <RomVersion>0.1.0</RomVersion>
+    <RomCheckUrl>http://url_where_xml_to_rom_check</RomCheckUrl>
+    <RomElemUrl>http://url_where_xml_to_rom_element</RomElemUrl>
+</RomConfig>

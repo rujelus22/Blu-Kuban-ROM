@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/settings/H;
+.class Lcom/google/googlenav/settings/h;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/preference/Preference$OnPreferenceClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/settings/MapTileSettingsActivity;
+.field final synthetic a:Lcom/google/googlenav/settings/LatitudeSettingsActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/settings/MapTileSettingsActivity;)V
+.method constructor <init>(Lcom/google/googlenav/settings/LatitudeSettingsActivity;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/settings/H;->a:Lcom/google/googlenav/settings/MapTileSettingsActivity;
+    .prologue
+    .line 350
+    iput-object p1, p0, Lcom/google/googlenav/settings/h;->a:Lcom/google/googlenav/settings/LatitudeSettingsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,40 +26,39 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 5
+.method public onPreferenceClick(Landroid/preference/Preference;)Z
+    .registers 3
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    .line 353
+    iget-object v0, p0, Lcom/google/googlenav/settings/h;->a:Lcom/google/googlenav/settings/LatitudeSettingsActivity;
 
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/google/googlenav/M;->e(Z)V
-
-    iget-object v0, p0, Lcom/google/googlenav/settings/H;->a:Lcom/google/googlenav/settings/MapTileSettingsActivity;
-
-    const-string v1, "map_tile_settings_use_cached_tiles_only"
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/settings/MapTileSettingsActivity;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-static {v0}, Lcom/google/googlenav/settings/LatitudeSettingsActivity;->a(Lcom/google/googlenav/settings/LatitudeSettingsActivity;)Lcom/google/googlenav/settings/q;
 
     move-result-object v0
 
-    check-cast v0, Landroid/preference/CheckBoxPreference;
+    if-nez v0, :cond_a
 
-    const/4 v1, 0x1
+    .line 354
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
+    .line 357
+    :goto_9
+    return v0
 
-    new-instance v0, Lcom/google/googlenav/settings/I;
+    .line 356
+    :cond_a
+    iget-object v0, p0, Lcom/google/googlenav/settings/h;->a:Lcom/google/googlenav/settings/LatitudeSettingsActivity;
 
-    invoke-static {}, Lcom/google/googlenav/bD;->a()Lap/c;
+    invoke-static {v0}, Lcom/google/googlenav/settings/LatitudeSettingsActivity;->a(Lcom/google/googlenav/settings/LatitudeSettingsActivity;)Lcom/google/googlenav/settings/q;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-direct {v0, p0, v1}, Lcom/google/googlenav/settings/I;-><init>(Lcom/google/googlenav/settings/H;Lap/c;)V
+    invoke-virtual {v0}, Lcom/google/googlenav/settings/q;->a()V
 
-    invoke-virtual {v0}, Lcom/google/googlenav/settings/I;->g()V
+    .line 357
+    const/4 v0, 0x1
 
-    return-void
+    goto :goto_9
 .end method

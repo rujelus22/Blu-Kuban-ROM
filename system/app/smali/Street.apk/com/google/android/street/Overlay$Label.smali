@@ -29,16 +29,16 @@
     .registers 2
 
     .prologue
-    .line 323
+    .line 371
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 324
+    .line 372
     const/4 v0, 0x3
 
     new-array v0, v0, [F
 
     iput-object v0, p0, Lcom/google/android/street/Overlay$Label;->mPosition:[F
 
-    .line 325
+    .line 373
     return-void
 .end method

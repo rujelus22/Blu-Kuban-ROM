@@ -14,10 +14,10 @@
     .parameter "message"
 
     .prologue
-    .line 29
+    .line 28
     invoke-direct {p0, p1, p2}, Lcom/android/emailcommon/mail/MessagingException;-><init>(ILjava/lang/String;)V
 
-    .line 30
+    .line 29
     return-void
 .end method
 
@@ -26,12 +26,12 @@
     .parameter "message"
 
     .prologue
-    .line 25
+    .line 24
     const/4 v0, 0x5
 
     invoke-direct {p0, v0, p1}, Lcom/android/emailcommon/mail/MessagingException;-><init>(ILjava/lang/String;)V
 
-    .line 26
+    .line 25
     return-void
 .end method
 
@@ -41,11 +41,11 @@
     .parameter "throwable"
 
     .prologue
-    .line 33
+    .line 32
     const/4 v0, 0x5
 
     invoke-direct {p0, v0, p1, p2}, Lcom/android/emailcommon/mail/MessagingException;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 34
+    .line 33
     return-void
 .end method

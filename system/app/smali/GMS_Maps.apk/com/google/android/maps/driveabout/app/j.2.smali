@@ -1,116 +1,128 @@
-.class public abstract Lcom/google/android/maps/driveabout/app/j;
+.class Lcom/google/android/maps/driveabout/app/J;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/location/LocationListener;
 
 
 # instance fields
-.field protected final a:Landroid/media/AudioManager;
-
-.field private b:Z
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;)V
-    .registers 3
+.method private constructor <init>(Lcom/google/android/maps/driveabout/app/DestinationActivity;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 1079
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/J;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/google/android/maps/driveabout/app/j;->b:Z
-
-    const-string v0, "audio"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/media/AudioManager;
-
-    iput-object v0, p0, Lcom/google/android/maps/driveabout/app/j;->a:Landroid/media/AudioManager;
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;)Lcom/google/android/maps/driveabout/app/j;
+.method synthetic constructor <init>(Lcom/google/android/maps/driveabout/app/DestinationActivity;Lcom/google/android/maps/driveabout/app/r;)V
     .registers 3
+    .parameter
+    .parameter
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .prologue
+    .line 1079
+    invoke-direct {p0, p1}, Lcom/google/android/maps/driveabout/app/J;-><init>(Lcom/google/android/maps/driveabout/app/DestinationActivity;)V
 
-    const/16 v1, 0x8
-
-    if-lt v0, v1, :cond_c
-
-    new-instance v0, Lcom/google/android/maps/driveabout/app/l;
-
-    invoke-direct {v0, p0}, Lcom/google/android/maps/driveabout/app/l;-><init>(Landroid/content/Context;)V
-
-    :goto_b
-    return-object v0
-
-    :cond_c
-    new-instance v0, Lcom/google/android/maps/driveabout/app/k;
-
-    invoke-direct {v0, p0}, Lcom/google/android/maps/driveabout/app/k;-><init>(Landroid/content/Context;)V
-
-    goto :goto_b
+    return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 3
+.method public onLocationChanged(Landroid/location/Location;)V
+    .registers 5
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/j;->a:Landroid/media/AudioManager;
+    .prologue
+    .line 1082
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/J;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
 
-    if-eqz v0, :cond_f
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->i(Lcom/google/android/maps/driveabout/app/DestinationActivity;)Lm/b;
 
-    const-string v0, "a"
+    move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/j;->a:Landroid/media/AudioManager;
+    if-eqz v0, :cond_2a
 
-    invoke-virtual {v1}, Landroid/media/AudioManager;->isMusicActive()Z
+    const/4 v0, 0x1
 
-    move-result v1
+    .line 1083
+    :goto_9
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/J;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
 
-    invoke-static {v0, v1}, Lcom/google/android/maps/driveabout/app/ds;->a(Ljava/lang/String;Z)V
+    new-instance v2, Lm/b;
 
-    :cond_f
-    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/app/j;->c()Z
+    invoke-direct {v2, p1}, Lm/b;-><init>(Landroid/location/Location;)V
 
-    move-result v0
+    invoke-static {v1, v2}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->a(Lcom/google/android/maps/driveabout/app/DestinationActivity;Lm/b;)Lm/b;
 
-    iput-boolean v0, p0, Lcom/google/android/maps/driveabout/app/j;->b:Z
+    .line 1084
+    if-nez v0, :cond_1a
 
+    .line 1085
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/J;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->j(Lcom/google/android/maps/driveabout/app/DestinationActivity;)V
+
+    .line 1087
+    :cond_1a
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/J;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->k(Lcom/google/android/maps/driveabout/app/DestinationActivity;)Lcom/google/android/maps/driveabout/app/bL;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/J;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+
+    invoke-static {v1}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->i(Lcom/google/android/maps/driveabout/app/DestinationActivity;)Lm/b;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lcom/google/android/maps/driveabout/app/bL;->a(Lm/b;)V
+
+    .line 1088
     return-void
-.end method
 
-.method public b()V
-    .registers 2
-
-    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/app/j;->d()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_9
-
+    .line 1082
+    :cond_2a
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/android/maps/driveabout/app/j;->b:Z
+    goto :goto_9
+.end method
 
-    :cond_9
+.method public onProviderDisabled(Ljava/lang/String;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 1090
     return-void
 .end method
 
-.method protected abstract c()Z
-.end method
-
-.method protected abstract d()Z
-.end method
-
-.method public e()Z
+.method public onProviderEnabled(Ljava/lang/String;)V
     .registers 2
+    .parameter
 
-    iget-boolean v0, p0, Lcom/google/android/maps/driveabout/app/j;->b:Z
+    .prologue
+    .line 1092
+    return-void
+.end method
 
-    return v0
+.method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 1094
+    return-void
 .end method

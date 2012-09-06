@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/list_item_track_layout" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="64.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/reorder_icon" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="64.0dip" android:src="@drawable/btn_reorder" android:scaleType="center" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
-    <RelativeLayout android:gravity="center_vertical" android:id="@id/list_item_track_layout" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="64.0dip" android:layout_toLeftOf="@id/reorder_icon" android:layout_alignParentBottom="true"
-      xmlns:android="http://schemas.android.com/apk/res/android">
-        <include layout="@layout/list_item_track_albumart_common" />
-    </RelativeLayout>
-</RelativeLayout>

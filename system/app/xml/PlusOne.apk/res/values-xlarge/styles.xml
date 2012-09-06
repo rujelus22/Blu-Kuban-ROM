@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="SdkActivity" parent="@style/SdkActivityDefault">
-        <item name="android:layout_width">@dimen/sdk_activity_size</item>
-        <item name="android:layout_height">@dimen/sdk_activity_size</item>
-    </style>
-</resources>

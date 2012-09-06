@@ -20,13 +20,13 @@
     .parameter
 
     .prologue
-    .line 49
+    .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 50
+    .line 53
     iput-object p1, p0, Lcom/google/common/collect/ImmutableAsList$SerializedForm;->collection:Lcom/google/common/collect/ImmutableCollection;
 
-    .line 51
+    .line 54
     return-void
 .end method
 
@@ -36,7 +36,7 @@
     .registers 2
 
     .prologue
-    .line 53
+    .line 56
     iget-object v0, p0, Lcom/google/common/collect/ImmutableAsList$SerializedForm;->collection:Lcom/google/common/collect/ImmutableCollection;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableCollection;->asList()Lcom/google/common/collect/ImmutableList;

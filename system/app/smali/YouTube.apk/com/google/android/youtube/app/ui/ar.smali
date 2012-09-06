@@ -1,77 +1,131 @@
 .class final Lcom/google/android/youtube/app/ui/ar;
-.super Lcom/google/android/youtube/app/ui/as;
+.super Landroid/widget/BaseAdapter;
 .source "SourceFile"
 
 
 # instance fields
-.field public a:Landroid/widget/TextView;
+.field private final a:Landroid/view/LayoutInflater;
 
-.field final synthetic b:Lcom/google/android/youtube/app/ui/aq;
+.field private final b:Ljava/util/List;
+
+.field private final c:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/app/ui/aq;Landroid/view/View;)V
+.method public constructor <init>(Landroid/view/LayoutInflater;Ljava/util/List;I)V
     .registers 4
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 113
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/ar;->b:Lcom/google/android/youtube/app/ui/aq;
+    .line 293
+    invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 114
-    invoke-direct {p0, p1, p2}, Lcom/google/android/youtube/app/ui/as;-><init>(Lcom/google/android/youtube/app/ui/aq;Landroid/view/View;)V
+    .line 294
+    iput-object p1, p0, Lcom/google/android/youtube/app/ui/ar;->a:Landroid/view/LayoutInflater;
 
-    .line 115
-    const v0, 0x7f090044
+    .line 295
+    iput-object p2, p0, Lcom/google/android/youtube/app/ui/ar;->b:Ljava/util/List;
 
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    .line 296
+    iput p3, p0, Lcom/google/android/youtube/app/ui/ar;->c:I
 
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcom/google/android/youtube/app/ui/ar;->a:Landroid/widget/TextView;
-
-    .line 116
+    .line 297
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/model/Video$Privacy;)V
+.method public final getCount()I
+    .registers 2
+
+    .prologue
+    .line 300
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ar;->b:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final getItem(I)Ljava/lang/Object;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 304
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ar;->b:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/util/Pair;
+
+    iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final getItemId(I)J
     .registers 4
     .parameter
 
     .prologue
-    .line 120
-    invoke-super {p0, p1}, Lcom/google/android/youtube/app/ui/as;->a(Lcom/google/android/youtube/core/model/Video$Privacy;)V
+    .line 308
+    int-to-long v0, p1
 
-    .line 121
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ar;->a:Landroid/widget/TextView;
+    return-wide v0
+.end method
 
-    if-eqz v0, :cond_1a
+.method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
 
-    .line 122
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/ar;->a:Landroid/widget/TextView;
+    .prologue
+    .line 312
+    if-nez p2, :cond_1d
 
-    invoke-static {}, Lcom/google/android/youtube/app/ui/PrivacySpinner;->b()Ljava/util/Map;
+    .line 313
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ar;->a:Landroid/view/LayoutInflater;
+
+    iget v1, p0, Lcom/google/android/youtube/app/ui/ar;->c:I
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, p3, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 315
+    :goto_b
+    check-cast v0, Landroid/widget/TextView;
 
-    move-result-object v0
+    .line 316
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/ar;->b:Ljava/util/List;
 
-    check-cast v0, Ljava/lang/Integer;
+    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    move-result-object v1
 
-    move-result v0
+    check-cast v1, Landroid/util/Pair;
 
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(I)V
+    iget-object v1, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    .line 124
-    :cond_1a
-    return-void
+    check-cast v1, Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 317
+    return-object v0
+
+    :cond_1d
+    move-object v0, p2
+
+    goto :goto_b
 .end method

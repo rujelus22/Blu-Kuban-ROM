@@ -28,6 +28,14 @@
         <item quantity="other">Fa %1$d segons</item>
         <item quantity="one">Fa 1 segon</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">"Caduca d'aquí a %1$d dies"</item>
+        <item quantity="one">"Cad. d'aquí a 1 dia"</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">"Caduca d'aquí a %1$d hores"</item>
+        <item quantity="one">"Cad. d'aquí a 1 hora"</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">càrregues noves</item>
         <item quantity="one">càrrega nova</item>

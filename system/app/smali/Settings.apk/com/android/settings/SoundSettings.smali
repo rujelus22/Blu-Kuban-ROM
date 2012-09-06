@@ -616,8 +616,6 @@
 
     move-result-object v13
 
-    invoke-virtual {v10, v13}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 180
     const-string v10, "silent_mode"
 
@@ -640,7 +638,7 @@
 
     move-result v10
 
-    if-nez v10, :cond_16a
+    if-nez v10, :cond_15b
 
     .line 182
     invoke-virtual {p0}, Lcom/android/settings/SoundSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -648,8 +646,6 @@
     move-result-object v10
 
     iget-object v13, p0, Lcom/android/settings/SoundSettings;->mSilentMode:Landroid/preference/ListPreference;
-
-    invoke-virtual {v10, v13}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     .line 183
     const-string v10, "ring_volume"
@@ -663,7 +659,7 @@
     invoke-virtual {v10, v13}, Landroid/preference/Preference;->setDependency(Ljava/lang/String;)V
 
     .line 188
-    :goto_63
+    :goto_5d
     const-string v10, "vibrate_on_ring"
 
     invoke-virtual {p0, v10}, Lcom/android/settings/SoundSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -704,11 +700,11 @@
 
     move-result v10
 
-    if-eqz v10, :cond_171
+    if-eqz v10, :cond_162
 
     move v10, v11
 
-    :goto_8c
+    :goto_86
     invoke-virtual {v13, v10}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 195
@@ -736,11 +732,11 @@
 
     move-result v10
 
-    if-eqz v10, :cond_174
+    if-eqz v10, :cond_165
 
     move v10, v11
 
-    :goto_a9
+    :goto_a3
     invoke-virtual {v13, v10}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 199
@@ -768,11 +764,11 @@
 
     move-result v10
 
-    if-eqz v10, :cond_177
+    if-eqz v10, :cond_168
 
     move v10, v11
 
-    :goto_c6
+    :goto_c0
     invoke-virtual {v13, v10}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 203
@@ -800,9 +796,9 @@
 
     move-result v13
 
-    if-eqz v13, :cond_17a
+    if-eqz v13, :cond_16b
 
-    :goto_e2
+    :goto_dc
     invoke-virtual {v10, v11}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 208
@@ -836,7 +832,7 @@
 
     move-result v10
 
-    if-nez v10, :cond_115
+    if-nez v10, :cond_109
 
     .line 212
     invoke-virtual {p0}, Lcom/android/settings/SoundSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -845,8 +841,6 @@
 
     iget-object v11, p0, Lcom/android/settings/SoundSettings;->mVibrateOnRing:Landroid/preference/CheckBoxPreference;
 
-    invoke-virtual {v10, v11}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 213
     invoke-virtual {p0}, Lcom/android/settings/SoundSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
@@ -854,10 +848,8 @@
 
     iget-object v11, p0, Lcom/android/settings/SoundSettings;->mHapticFeedback:Landroid/preference/CheckBoxPreference;
 
-    invoke-virtual {v10, v11}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 235
-    :cond_115
+    :cond_109
     const-string v10, "sound_settings"
 
     invoke-virtual {p0, v10}, Lcom/android/settings/SoundSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -908,7 +900,7 @@
 
     const/4 v11, 0x2
 
-    if-gt v10, v11, :cond_148
+    if-gt v10, v11, :cond_13c
 
     .line 247
     iget-object v10, p0, Lcom/android/settings/SoundSettings;->mSoundSettings:Landroid/preference/PreferenceGroup;
@@ -918,7 +910,7 @@
     invoke-virtual {v10, v11}, Landroid/preference/PreferenceGroup;->removePreference(Landroid/preference/Preference;)Z
 
     .line 250
-    :cond_148
+    :cond_13c
     invoke-virtual {p0}, Lcom/android/settings/SoundSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v10
@@ -927,7 +919,7 @@
 
     move-result v10
 
-    if-nez v10, :cond_17d
+    if-nez v10, :cond_16e
 
     .line 251
     sget-object v1, Lcom/android/settings/SoundSettings;->NEED_VOICE_CAPABILITY:[Ljava/lang/String;
@@ -939,8 +931,8 @@
     const/4 v3, 0x0
 
     .local v3, i$:I
-    :goto_156
-    if-ge v3, v4, :cond_17d
+    :goto_14a
+    if-ge v3, v4, :cond_16e
 
     aget-object v7, v1, v3
 
@@ -952,20 +944,18 @@
 
     .line 253
     .local v6, pref:Landroid/preference/Preference;
-    if-eqz v6, :cond_167
+    if-eqz v6, :cond_158
 
     .line 254
     invoke-virtual {p0}, Lcom/android/settings/SoundSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v10
 
-    invoke-virtual {v10, v6}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 251
-    :cond_167
+    :cond_158
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_156
+    goto :goto_14a
 
     .line 185
     .end local v1           #arr$:[Ljava/lang/String;
@@ -976,42 +966,42 @@
     .end local v6           #pref:Landroid/preference/Preference;
     .end local v7           #prefKey:Ljava/lang/String;
     .end local v9           #ris:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
-    :cond_16a
+    :cond_15b
     iget-object v10, p0, Lcom/android/settings/SoundSettings;->mSilentMode:Landroid/preference/ListPreference;
 
     invoke-virtual {v10, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
-    goto/16 :goto_63
+    goto/16 :goto_5d
 
-    :cond_171
+    :cond_162
     move v10, v12
 
     .line 193
-    goto/16 :goto_8c
+    goto/16 :goto_86
 
-    :cond_174
+    :cond_165
     move v10, v12
 
     .line 197
-    goto/16 :goto_a9
+    goto/16 :goto_a3
 
-    :cond_177
+    :cond_168
     move v10, v12
 
     .line 201
-    goto/16 :goto_c6
+    goto/16 :goto_c0
 
-    :cond_17a
+    :cond_16b
     move v11, v12
 
     .line 205
-    goto/16 :goto_e2
+    goto/16 :goto_dc
 
     .line 259
     .restart local v2       #i:Landroid/content/Intent;
     .restart local v5       #p:Landroid/content/pm/PackageManager;
     .restart local v9       #ris:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
-    :cond_17d
+    :cond_16e
     new-instance v10, Lcom/android/settings/SoundSettings$3;
 
     invoke-direct {v10, p0}, Lcom/android/settings/SoundSettings$3;-><init>(Lcom/android/settings/SoundSettings;)V
@@ -1035,7 +1025,7 @@
     .line 300
     iget-boolean v10, p0, Lcom/android/settings/SoundSettings;->mEnableLog:Z
 
-    if-eqz v10, :cond_19d
+    if-eqz v10, :cond_18e
 
     const-string v10, "SoundSettings"
 
@@ -1044,7 +1034,7 @@
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 301
-    :cond_19d
+    :cond_18e
     return-void
 .end method
 

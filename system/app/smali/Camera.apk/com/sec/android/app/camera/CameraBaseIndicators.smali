@@ -1491,7 +1491,7 @@
     .line 466
     iget-object v1, p0, Lcom/sec/android/app/camera/CameraBaseIndicators;->mIndicatorWifiApSSID:Landroid/widget/ImageView;
 
-    const v2, 0x7f020181
+    const v2, 0x7f020180
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
@@ -1507,7 +1507,7 @@
     :cond_1d
     iget-object v1, p0, Lcom/sec/android/app/camera/CameraBaseIndicators;->mIndicatorWifiApSSID:Landroid/widget/ImageView;
 
-    const v2, 0x7f020180
+    const v2, 0x7f02017f
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 

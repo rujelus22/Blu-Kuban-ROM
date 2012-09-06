@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="SamsungButtonPanel.Single" parent="@style/SamsungButtonPanel">
-        <item name="android:paddingLeft">80.0dip</item>
-        <item name="android:paddingRight">80.0dip</item>
-    </style>
-</resources>

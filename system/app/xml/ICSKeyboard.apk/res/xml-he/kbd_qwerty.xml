@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard latin:keyboardLocale="iw,he" latin:isRtlKeyboard="true"
+  xmlns:latin="http://schemas.android.com/apk/res/inputmethod.latin.ported">
+    <include latin:keyboardLayout="@xml/kbd_rows_hebrew" />
+</Keyboard>

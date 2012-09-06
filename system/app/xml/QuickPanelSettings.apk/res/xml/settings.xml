@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/app_name"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:title="@string/title_expanded_hide_onchange" android:key="expanded_hide_onchange" android:summary="@string/summary_expanded_hide_onchange" android:defaultValue="false" />
+    <PreferenceScreen android:title="@string/title_widget_picker" android:key="widget_picker" android:summary="@string/summary_widget_picker">
+        <intent android:targetPackage="com.lidroid.quickpanel" android:action="android.intent.action.MAIN" android:targetClass="com.lidroid.quickpanel.PowerWidgetActivity" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="@string/title_widget_order" android:key="widget_order" android:summary="@string/summary_widget_order">
+        <intent android:targetPackage="com.lidroid.quickpanel" android:action="android.intent.action.MAIN" android:targetClass="com.lidroid.quickpanel.PowerWidgetOrderActivity" />
+    </PreferenceScreen>
+</PreferenceScreen>

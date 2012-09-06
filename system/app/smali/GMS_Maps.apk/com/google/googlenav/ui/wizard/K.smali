@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/wizard/K;
+.class Lcom/google/googlenav/ui/wizard/k;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/googlenav/ui/wizard/Z;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/J;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/e;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/J;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/e;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/K;->a:Lcom/google/googlenav/ui/wizard/J;
+    .prologue
+    .line 228
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/k;->a:Lcom/google/googlenav/ui/wizard/e;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,85 +26,54 @@
 
 
 # virtual methods
-.method public a()V
-    .registers 2
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .registers 8
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/K;->a:Lcom/google/googlenav/ui/wizard/J;
+    .prologue
+    .line 231
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/k;->a:Lcom/google/googlenav/ui/wizard/e;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/J;->e()V
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/e;->c(Lcom/google/googlenav/ui/wizard/e;)Lcom/google/googlenav/ui/view/android/L;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public b()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/K;->a:Lcom/google/googlenav/ui/wizard/J;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/J;->f()V
-
-    return-void
-.end method
-
-.method public c()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/K;->a:Lcom/google/googlenav/ui/wizard/J;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/J;->f:Lcom/google/googlenav/ui/view/android/bs;
-
-    if-eqz v0, :cond_d
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/K;->a:Lcom/google/googlenav/ui/wizard/J;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/J;->f:Lcom/google/googlenav/ui/view/android/bs;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/bs;->hide()V
-
-    :cond_d
-    return-void
-.end method
-
-.method public d()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/K;->a:Lcom/google/googlenav/ui/wizard/J;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/J;->f:Lcom/google/googlenav/ui/view/android/bs;
-
-    if-eqz v0, :cond_d
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/K;->a:Lcom/google/googlenav/ui/wizard/J;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/J;->f:Lcom/google/googlenav/ui/view/android/bs;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/bs;->show()V
-
-    :cond_d
-    return-void
-.end method
-
-.method public e()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/K;->a:Lcom/google/googlenav/ui/wizard/J;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/J;->f:Lcom/google/googlenav/ui/view/android/bs;
-
-    if-eqz v0, :cond_13
-
-    invoke-static {}, Lcom/google/googlenav/android/a;->e()Z
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/L;->getCount()I
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-ge p3, v0, :cond_25
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/K;->a:Lcom/google/googlenav/ui/wizard/J;
+    .line 232
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/k;->a:Lcom/google/googlenav/ui/wizard/e;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/J;->f:Lcom/google/googlenav/ui/view/android/bs;
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/e;->c(Lcom/google/googlenav/ui/wizard/e;)Lcom/google/googlenav/ui/view/android/L;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/bs;->invalidateOptionsMenu()V
+    move-result-object v0
 
-    :cond_13
+    invoke-virtual {v0, p3}, Lcom/google/googlenav/ui/view/android/L;->getItem(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlenav/ui/wizard/n;
+
+    .line 234
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/k;->a:Lcom/google/googlenav/ui/wizard/e;
+
+    invoke-static {v1}, Lcom/google/googlenav/ui/wizard/e;->a(Lcom/google/googlenav/ui/wizard/e;)Lcom/google/googlenav/ui/wizard/q;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/n;->d()Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lcom/google/googlenav/ui/wizard/q;->a(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+
+    .line 236
+    :cond_25
     return-void
 .end method

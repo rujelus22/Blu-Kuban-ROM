@@ -31,25 +31,25 @@
     .registers 2
 
     .prologue
-    .line 225
+    .line 231
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 230
+    .line 236
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->name_:Ljava/lang/String;
 
-    .line 247
+    .line 253
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->dataUrl_:Ljava/lang/String;
 
-    .line 282
+    .line 289
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->cachedSize:I
 
-    .line 225
+    .line 231
     return-void
 .end method
 
@@ -59,15 +59,15 @@
     .registers 2
 
     .prologue
-    .line 284
+    .line 292
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 286
+    .line 294
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->getSerializedSize()I
 
-    .line 288
+    .line 296
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->cachedSize:I
 
@@ -78,7 +78,7 @@
     .registers 2
 
     .prologue
-    .line 248
+    .line 254
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->dataUrl_:Ljava/lang/String;
 
     return-object v0
@@ -88,7 +88,7 @@
     .registers 2
 
     .prologue
-    .line 231
+    .line 237
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->name_:Ljava/lang/String;
 
     return-object v0
@@ -98,10 +98,10 @@
     .registers 4
 
     .prologue
-    .line 292
+    .line 301
     const/4 v0, 0x0
 
-    .line 293
+    .line 302
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->hasName()Z
 
@@ -109,7 +109,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 294
+    .line 303
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->getName()Ljava/lang/String;
@@ -122,7 +122,7 @@
 
     add-int/2addr v0, v1
 
-    .line 297
+    .line 306
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->hasDataUrl()Z
 
@@ -130,7 +130,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 298
+    .line 307
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->getDataUrl()Ljava/lang/String;
@@ -143,11 +143,11 @@
 
     add-int/2addr v0, v1
 
-    .line 301
+    .line 310
     :cond_21
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->cachedSize:I
 
-    .line 302
+    .line 311
     return v0
 .end method
 
@@ -155,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 249
+    .line 255
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->hasDataUrl:Z
 
     return v0
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 232
+    .line 238
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->hasName:Z
 
     return v0
@@ -181,29 +181,29 @@
     .end annotation
 
     .prologue
-    .line 309
+    .line 319
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 310
+    .line 320
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 314
+    .line 324
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 315
+    .line 325
     :sswitch_d
     return-object p0
 
-    .line 320
+    .line 330
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 324
+    .line 334
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 310
+    .line 320
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -242,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 223
+    .line 228
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;
 
     move-result-object v0
@@ -255,15 +255,15 @@
     .parameter "value"
 
     .prologue
-    .line 251
+    .line 257
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->hasDataUrl:Z
 
-    .line 252
+    .line 258
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->dataUrl_:Ljava/lang/String;
 
-    .line 253
+    .line 259
     return-object p0
 .end method
 
@@ -272,15 +272,15 @@
     .parameter "value"
 
     .prologue
-    .line 234
+    .line 240
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->hasName:Z
 
-    .line 235
+    .line 241
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->name_:Ljava/lang/String;
 
-    .line 236
+    .line 242
     return-object p0
 .end method
 
@@ -294,14 +294,14 @@
     .end annotation
 
     .prologue
-    .line 274
+    .line 281
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->hasName()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 275
+    .line 282
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->getName()Ljava/lang/String;
@@ -310,7 +310,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 277
+    .line 284
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->hasDataUrl()Z
 
@@ -318,7 +318,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 278
+    .line 285
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Browse$BrowseLink;->getDataUrl()Ljava/lang/String;
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 280
+    .line 287
     :cond_1c
     return-void
 .end method

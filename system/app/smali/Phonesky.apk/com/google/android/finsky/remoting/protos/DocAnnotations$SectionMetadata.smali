@@ -39,35 +39,35 @@
     .registers 2
 
     .prologue
-    .line 838
+    .line 283
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 843
+    .line 288
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->header_:Ljava/lang/String;
 
-    .line 860
+    .line 305
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->descriptionHtml_:Ljava/lang/String;
 
-    .line 877
+    .line 322
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->listUrl_:Ljava/lang/String;
 
-    .line 894
+    .line 339
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->browseUrl_:Ljava/lang/String;
 
-    .line 937
+    .line 383
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->cachedSize:I
 
-    .line 838
+    .line 283
     return-void
 .end method
 
@@ -77,7 +77,7 @@
     .registers 2
 
     .prologue
-    .line 895
+    .line 340
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->browseUrl_:Ljava/lang/String;
 
     return-object v0
@@ -87,15 +87,15 @@
     .registers 2
 
     .prologue
-    .line 939
+    .line 386
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 941
+    .line 388
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->getSerializedSize()I
 
-    .line 943
+    .line 390
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->cachedSize:I
 
@@ -106,7 +106,7 @@
     .registers 2
 
     .prologue
-    .line 861
+    .line 306
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->descriptionHtml_:Ljava/lang/String;
 
     return-object v0
@@ -116,7 +116,7 @@
     .registers 2
 
     .prologue
-    .line 844
+    .line 289
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->header_:Ljava/lang/String;
 
     return-object v0
@@ -126,7 +126,7 @@
     .registers 2
 
     .prologue
-    .line 878
+    .line 323
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->listUrl_:Ljava/lang/String;
 
     return-object v0
@@ -136,10 +136,10 @@
     .registers 4
 
     .prologue
-    .line 947
+    .line 395
     const/4 v0, 0x0
 
-    .line 948
+    .line 396
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->hasHeader()Z
 
@@ -147,7 +147,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 949
+    .line 397
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->getHeader()Ljava/lang/String;
@@ -160,7 +160,7 @@
 
     add-int/2addr v0, v1
 
-    .line 952
+    .line 400
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->hasListUrl()Z
 
@@ -168,7 +168,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 953
+    .line 401
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->getListUrl()Ljava/lang/String;
@@ -181,7 +181,7 @@
 
     add-int/2addr v0, v1
 
-    .line 956
+    .line 404
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->hasBrowseUrl()Z
 
@@ -189,7 +189,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 957
+    .line 405
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->getBrowseUrl()Ljava/lang/String;
@@ -202,7 +202,7 @@
 
     add-int/2addr v0, v1
 
-    .line 960
+    .line 408
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->hasDescriptionHtml()Z
 
@@ -210,7 +210,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 961
+    .line 409
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->getDescriptionHtml()Ljava/lang/String;
@@ -223,11 +223,11 @@
 
     add-int/2addr v0, v1
 
-    .line 964
+    .line 412
     :cond_41
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->cachedSize:I
 
-    .line 965
+    .line 413
     return v0
 .end method
 
@@ -235,7 +235,7 @@
     .registers 2
 
     .prologue
-    .line 896
+    .line 341
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->hasBrowseUrl:Z
 
     return v0
@@ -245,7 +245,7 @@
     .registers 2
 
     .prologue
-    .line 862
+    .line 307
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->hasDescriptionHtml:Z
 
     return v0
@@ -255,7 +255,7 @@
     .registers 2
 
     .prologue
-    .line 845
+    .line 290
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->hasHeader:Z
 
     return v0
@@ -265,7 +265,7 @@
     .registers 2
 
     .prologue
-    .line 879
+    .line 324
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->hasListUrl:Z
 
     return v0
@@ -281,29 +281,29 @@
     .end annotation
 
     .prologue
-    .line 972
+    .line 421
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 973
+    .line 422
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_2e
 
-    .line 977
+    .line 426
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 978
+    .line 427
     :sswitch_d
     return-object p0
 
-    .line 983
+    .line 432
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -313,7 +313,7 @@
 
     goto :goto_0
 
-    .line 987
+    .line 436
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -323,7 +323,7 @@
 
     goto :goto_0
 
-    .line 991
+    .line 440
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -333,7 +333,7 @@
 
     goto :goto_0
 
-    .line 995
+    .line 444
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -343,7 +343,7 @@
 
     goto :goto_0
 
-    .line 973
+    .line 422
     :sswitch_data_2e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -364,7 +364,7 @@
     .end annotation
 
     .prologue
-    .line 836
+    .line 280
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;
 
     move-result-object v0
@@ -377,15 +377,15 @@
     .parameter "value"
 
     .prologue
-    .line 898
+    .line 343
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->hasBrowseUrl:Z
 
-    .line 899
+    .line 344
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->browseUrl_:Ljava/lang/String;
 
-    .line 900
+    .line 345
     return-object p0
 .end method
 
@@ -394,15 +394,15 @@
     .parameter "value"
 
     .prologue
-    .line 864
+    .line 309
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->hasDescriptionHtml:Z
 
-    .line 865
+    .line 310
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->descriptionHtml_:Ljava/lang/String;
 
-    .line 866
+    .line 311
     return-object p0
 .end method
 
@@ -411,15 +411,15 @@
     .parameter "value"
 
     .prologue
-    .line 847
+    .line 292
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->hasHeader:Z
 
-    .line 848
+    .line 293
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->header_:Ljava/lang/String;
 
-    .line 849
+    .line 294
     return-object p0
 .end method
 
@@ -428,15 +428,15 @@
     .parameter "value"
 
     .prologue
-    .line 881
+    .line 326
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->hasListUrl:Z
 
-    .line 882
+    .line 327
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->listUrl_:Ljava/lang/String;
 
-    .line 883
+    .line 328
     return-object p0
 .end method
 
@@ -450,14 +450,14 @@
     .end annotation
 
     .prologue
-    .line 923
+    .line 369
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->hasHeader()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 924
+    .line 370
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->getHeader()Ljava/lang/String;
@@ -466,7 +466,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 926
+    .line 372
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->hasListUrl()Z
 
@@ -474,7 +474,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 927
+    .line 373
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->getListUrl()Ljava/lang/String;
@@ -483,7 +483,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 929
+    .line 375
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->hasBrowseUrl()Z
 
@@ -491,7 +491,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 930
+    .line 376
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->getBrowseUrl()Ljava/lang/String;
@@ -500,7 +500,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 932
+    .line 378
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->hasDescriptionHtml()Z
 
@@ -508,7 +508,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 933
+    .line 379
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$SectionMetadata;->getDescriptionHtml()Ljava/lang/String;
@@ -517,7 +517,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 935
+    .line 381
     :cond_38
     return-void
 .end method

@@ -13,7 +13,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field static final LOG_TAG:Ljava/lang/String; = "CDMA"
 

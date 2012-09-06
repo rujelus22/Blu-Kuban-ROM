@@ -4,9 +4,6 @@
 
 
 # virtual methods
-.method public abstract onAdd(Lcom/google/android/finsky/download/Download;)V
-.end method
-
 .method public abstract onCancel(Lcom/google/android/finsky/download/Download;)V
 .end method
 
@@ -23,7 +20,4 @@
 .end method
 
 .method public abstract onStart(Lcom/google/android/finsky/download/Download;)V
-.end method
-
-.method public abstract onUpdate()V
 .end method

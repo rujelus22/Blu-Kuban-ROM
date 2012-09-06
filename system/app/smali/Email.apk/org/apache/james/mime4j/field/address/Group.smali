@@ -16,16 +16,16 @@
     .parameter "mailboxes"
 
     .prologue
-    .line 35
+    .line 37
     invoke-direct {p0}, Lorg/apache/james/mime4j/field/address/Address;-><init>()V
 
-    .line 36
+    .line 38
     iput-object p1, p0, Lorg/apache/james/mime4j/field/address/Group;->name:Ljava/lang/String;
 
-    .line 37
+    .line 39
     iput-object p2, p0, Lorg/apache/james/mime4j/field/address/Group;->mailboxList:Lorg/apache/james/mime4j/field/address/MailboxList;
 
-    .line 38
+    .line 40
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .end annotation
 
     .prologue
-    .line 70
+    .line 72
     .local p1, results:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lorg/apache/james/mime4j/field/address/Address;>;"
     const/4 v0, 0x0
 
@@ -59,7 +59,7 @@
 
     if-ge v0, v1, :cond_15
 
-    .line 71
+    .line 73
     iget-object v1, p0, Lorg/apache/james/mime4j/field/address/Group;->mailboxList:Lorg/apache/james/mime4j/field/address/MailboxList;
 
     invoke-virtual {v1, v0}, Lorg/apache/james/mime4j/field/address/MailboxList;->get(I)Lorg/apache/james/mime4j/field/address/Mailbox;
@@ -68,12 +68,12 @@
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 70
+    .line 72
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 72
+    .line 74
     :cond_15
     return-void
 .end method
@@ -82,23 +82,23 @@
     .registers 5
 
     .prologue
-    .line 56
+    .line 58
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 57
+    .line 59
     .local v0, buf:Ljava/lang/StringBuffer;
     iget-object v2, p0, Lorg/apache/james/mime4j/field/address/Group;->name:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 58
+    .line 60
     const-string v2, ":"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 59
+    .line 61
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -111,7 +111,7 @@
 
     if-ge v1, v2, :cond_37
 
-    .line 60
+    .line 62
     iget-object v2, p0, Lorg/apache/james/mime4j/field/address/Group;->mailboxList:Lorg/apache/james/mime4j/field/address/MailboxList;
 
     invoke-virtual {v2, v1}, Lorg/apache/james/mime4j/field/address/MailboxList;->get(I)Lorg/apache/james/mime4j/field/address/Mailbox;
@@ -124,7 +124,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 61
+    .line 63
     add-int/lit8 v2, v1, 0x1
 
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/Group;->mailboxList:Lorg/apache/james/mime4j/field/address/MailboxList;
@@ -135,24 +135,24 @@
 
     if-ge v2, v3, :cond_34
 
-    .line 62
+    .line 64
     const-string v2, ","
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 59
+    .line 61
     :cond_34
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_10
 
-    .line 64
+    .line 66
     :cond_37
     const-string v2, ";"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 65
+    .line 67
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v2

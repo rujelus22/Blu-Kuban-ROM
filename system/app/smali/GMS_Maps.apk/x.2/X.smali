@@ -1,430 +1,127 @@
-.class Lx/X;
-.super Lx/o;
-
-
-# instance fields
-.field a:[Lam/b;
-
-.field private b:Laf/a;
+.class final Lx/x;
+.super Lx/v;
+.source "SourceFile"
 
 
 # direct methods
-.method constructor <init>(Laf/a;)V
-    .registers 3
+.method public constructor <init>()V
+    .registers 2
 
-    const/16 v0, 0x8
+    .prologue
+    const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lx/o;-><init>(I)V
+    .line 32
+    invoke-direct {p0, v0, v0}, Lx/v;-><init>(Lx/z;Lx/w;)V
 
-    new-array v0, v0, [Lam/b;
-
-    iput-object v0, p0, Lx/X;->a:[Lam/b;
-
-    iput-object p1, p0, Lx/X;->b:Laf/a;
-
+    .line 33
     return-void
 .end method
 
 
 # virtual methods
-.method public a()I
+.method public a(III)Z
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 37
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "Cannot add triangle to immutable empty mesh"
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public c()D
+    .registers 3
+
+    .prologue
+    .line 47
+    const-wide/16 v0, 0x0
+
+    return-wide v0
+.end method
+
+.method public d()I
     .registers 2
 
-    const/16 v0, 0x24
+    .prologue
+    .line 52
+    const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public a(Ljava/io/DataOutput;)V
-    .registers 4
+.method public e()I
+    .registers 2
 
-    new-instance v0, Ljava/io/ByteArrayOutputStream;
+    .prologue
+    .line 57
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
-
-    invoke-virtual {p0}, Lx/X;->g()Lam/b;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lam/b;->b(Ljava/io/OutputStream;)V
-
-    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->size()I
-
-    move-result v1
-
-    invoke-interface {p1, v1}, Ljava/io/DataOutput;->writeInt(I)V
-
-    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object v0
-
-    invoke-interface {p1, v0}, Ljava/io/DataOutput;->write([B)V
-
-    return-void
+    return v0
 .end method
 
-.method public a(Ljava/io/DataInput;)Z
-    .registers 9
+.method public equals(Ljava/lang/Object;)Z
+    .registers 5
+    .parameter
 
-    const/4 v6, 0x2
+    .prologue
+    const/4 v0, 0x1
 
-    const/4 v5, 0x1
+    const/4 v1, 0x0
 
-    sget-object v0, LbD/da;->k:Lam/e;
+    .line 62
+    if-eq p0, p1, :cond_a
 
-    invoke-static {v0, p1}, Lam/g;->a(Lam/e;Ljava/io/DataInput;)Lam/b;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v6}, Lam/b;->l(I)I
+    invoke-super {p0, p1}, Lx/v;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    invoke-virtual {p0}, Lx/X;->d()I
+    if-eqz v2, :cond_b
 
-    move-result v0
-
-    if-eq v2, v0, :cond_13
-
-    :cond_12
-    return v5
-
-    :cond_13
-    const/4 v0, 0x0
-
-    :goto_14
-    if-ge v0, v2, :cond_12
-
-    iget-object v3, p0, Lx/X;->a:[Lam/b;
-
-    invoke-virtual {v1, v6, v0}, Lam/b;->e(II)Lam/b;
-
-    move-result-object v4
-
-    aput-object v4, v3, v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_14
-.end method
-
-.method protected a(Lx/r;)Z
-    .registers 5
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0}, Lx/X;->d()I
-
-    move-result v0
-
-    if-eqz v0, :cond_1d
-
-    invoke-virtual {p1}, Lx/r;->a()Lt/af;
-
-    move-result-object v0
-
-    check-cast v0, Lx/Y;
-
-    invoke-virtual {p0, v2}, Lx/X;->a(I)Lx/r;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lx/r;->a()Lt/af;
-
-    move-result-object v1
-
-    check-cast v1, Lx/Y;
-
-    invoke-virtual {v0, v1}, Lx/Y;->a(Lx/Y;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1f
-
-    :cond_1d
-    const/4 v0, 0x1
-
-    :goto_1e
+    .line 69
+    :cond_a
+    :goto_a
     return v0
 
-    :cond_1f
-    move v0, v2
-
-    goto :goto_1e
-.end method
-
-.method public b(I)Lt/ae;
-    .registers 11
-
-    const/4 v8, 0x3
-
-    iget-object v0, p0, Lx/X;->a:[Lam/b;
-
-    aget-object v2, v0, p1
-
-    if-nez v2, :cond_9
-
-    const/4 v0, 0x0
-
-    :goto_8
-    return-object v0
-
-    :cond_9
-    new-instance v4, Lt/aa;
-
-    invoke-direct {v4}, Lt/aa;-><init>()V
-
-    invoke-virtual {p0, p1}, Lx/X;->a(I)Lx/r;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lx/r;->a()Lt/af;
-
-    move-result-object v0
-
-    check-cast v0, Lx/Y;
-
-    invoke-virtual {v2, v8}, Lam/b;->l(I)I
-
-    move-result v3
-
-    new-instance v5, Ljava/util/ArrayList;
-
-    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
-
-    const/4 v1, 0x0
-
-    :goto_22
-    if-ge v1, v3, :cond_3d
-
-    invoke-virtual {v2, v8, v1}, Lam/b;->e(II)Lam/b;
-
-    move-result-object v6
-
-    invoke-virtual {v4}, Lt/aa;->a()Lt/Z;
-
-    move-result-object v7
-
-    invoke-static {v6, v7, v0}, Lx/W;->a(Lam/b;Lt/Z;Lt/af;)Lt/l;
-
-    move-result-object v6
-
-    if-eqz v6, :cond_7a
-
-    invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
-
-    move-result v6
-
-    const/16 v7, 0x14
-
-    if-ne v6, v7, :cond_7a
-
-    :cond_3d
-    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
-
-    new-array v1, v1, [Lt/l;
-
-    invoke-virtual {v5, v1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, [Lt/l;
-
-    invoke-virtual {v0}, Lx/Y;->a()Lt/C;
-
-    move-result-object v5
-
-    const-wide/16 v2, -0x1
-
-    invoke-virtual {v5}, Lt/C;->e()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_60
-
-    iget-object v2, p0, Lx/X;->b:Laf/a;
-
-    invoke-interface {v2}, Laf/a;->c()J
-
-    move-result-wide v2
-
-    invoke-virtual {v5}, Lt/C;->f()J
-
-    move-result-wide v5
-
-    add-long/2addr v2, v5
-
-    :cond_60
-    new-instance v5, Lt/aq;
-
-    invoke-direct {v5}, Lt/aq;-><init>()V
-
-    invoke-virtual {v5, v4}, Lt/aq;->a(Lt/aa;)Lt/aq;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v0}, Lt/aq;->a(Lt/af;)Lt/aq;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lt/aq;->a([Lt/l;)Lt/aq;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2, v3}, Lt/aq;->a(J)Lt/aq;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lt/aq;->a()Lt/ao;
-
-    move-result-object v0
-
-    goto :goto_8
-
-    :cond_7a
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_22
-.end method
-
-.method g()Lam/b;
-    .registers 12
-
-    const/16 v10, 0x16
-
-    const/4 v9, 0x3
-
-    const/4 v8, 0x1
-
-    const/4 v1, 0x0
-
-    const/4 v7, 0x2
-
-    new-instance v2, Lam/b;
-
-    sget-object v0, LbD/da;->i:Lam/e;
-
-    invoke-direct {v2, v0}, Lam/b;-><init>(Lam/e;)V
-
-    const/16 v0, 0x80
-
-    invoke-virtual {v2, v8, v0}, Lam/b;->h(II)V
-
-    invoke-virtual {p0, v1}, Lx/X;->a(I)Lx/r;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lx/r;->a()Lt/af;
-
-    move-result-object v0
-
-    check-cast v0, Lx/Y;
-
-    invoke-virtual {v0}, Lx/Y;->a()Lt/C;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v7}, Lam/b;->a(I)Lam/b;
-
-    move-result-object v3
-
-    const/16 v4, 0x15
-
-    invoke-virtual {v0}, Lt/C;->c()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v4, v5}, Lam/b;->b(ILjava/lang/String;)V
-
-    invoke-virtual {v0}, Lt/C;->d()[Ljava/lang/String;
-
-    move-result-object v4
+    .line 65
+    :cond_b
+    instance-of v2, p1, Lx/v;
+
+    if-nez v2, :cond_11
 
     move v0, v1
 
-    :goto_32
-    array-length v5, v4
+    .line 66
+    goto :goto_a
 
-    if-ge v0, v5, :cond_4b
+    .line 68
+    :cond_11
+    check-cast p1, Lx/v;
 
-    invoke-virtual {v3, v10}, Lam/b;->a(I)Lam/b;
+    .line 69
+    invoke-virtual {p1}, Lx/v;->d()I
 
-    move-result-object v5
+    move-result v2
 
-    aget-object v6, v4, v0
+    if-eqz v2, :cond_a
 
-    invoke-virtual {v5, v8, v6}, Lam/b;->b(ILjava/lang/String;)V
+    move v0, v1
 
-    add-int/lit8 v6, v0, 0x1
+    goto :goto_a
+.end method
 
-    aget-object v6, v4, v6
+.method public hashCode()I
+    .registers 2
 
-    invoke-virtual {v5, v7, v6}, Lam/b;->b(ILjava/lang/String;)V
+    .prologue
+    .line 75
+    const/4 v0, 0x0
 
-    invoke-virtual {v3, v10, v5}, Lam/b;->a(ILam/b;)V
-
-    add-int/lit8 v0, v0, 0x2
-
-    goto :goto_32
-
-    :cond_4b
-    invoke-virtual {v2, v7, v3}, Lam/b;->b(ILam/b;)V
-
-    :goto_4e
-    invoke-virtual {p0}, Lx/X;->d()I
-
-    move-result v0
-
-    if-ge v1, v0, :cond_84
-
-    invoke-virtual {p0, v1}, Lx/X;->a(I)Lx/r;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lx/r;->a()Lt/af;
-
-    move-result-object v0
-
-    new-instance v3, Lam/b;
-
-    sget-object v4, LbD/gy;->i:Lam/e;
-
-    invoke-direct {v3, v4}, Lam/b;-><init>(Lam/e;)V
-
-    const/16 v4, 0x8
-
-    invoke-virtual {v3, v8, v4}, Lam/b;->h(II)V
-
-    invoke-virtual {v0}, Lt/af;->c()I
-
-    move-result v4
-
-    invoke-virtual {v3, v7, v4}, Lam/b;->h(II)V
-
-    invoke-virtual {v0}, Lt/af;->d()I
-
-    move-result v4
-
-    invoke-virtual {v3, v9, v4}, Lam/b;->h(II)V
-
-    const/4 v4, 0x4
-
-    invoke-virtual {v0}, Lt/af;->b()I
-
-    move-result v0
-
-    invoke-virtual {v3, v4, v0}, Lam/b;->h(II)V
-
-    invoke-virtual {v2, v9, v3}, Lam/b;->a(ILam/b;)V
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_4e
-
-    :cond_84
-    return-object v2
+    return v0
 .end method

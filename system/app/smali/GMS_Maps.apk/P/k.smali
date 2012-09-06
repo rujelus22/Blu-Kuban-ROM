@@ -1,131 +1,79 @@
-.class public final LP/k;
-.super Ljava/lang/Object;
+.class public Lp/k;
+.super Lp/h;
+.source "SourceFile"
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
+.method public constructor <init>(Landroid/content/Context;Ljava/util/List;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 309
+    invoke-direct {p0, p1, p2}, Lp/h;-><init>(Landroid/content/Context;Ljava/util/List;)V
 
+    .line 310
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)J
-    .registers 5
 
-    const/16 v1, 0x10
+# virtual methods
+.method public a()I
+    .registers 2
 
-    invoke-static {p0, v1}, LP/k;->a(Ljava/lang/String;I)Z
+    .prologue
+    .line 324
+    const/4 v0, 0x2
 
-    move-result v0
-
-    if-eqz v0, :cond_14
-
-    invoke-static {p0}, LP/k;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;I)J
-
-    move-result-wide v0
-
-    const-wide/high16 v2, -0x8000
-
-    add-long/2addr v0, v2
-
-    :goto_13
-    return-wide v0
-
-    :cond_14
-    invoke-static {p0, v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;I)J
-
-    move-result-wide v0
-
-    goto :goto_13
-.end method
-
-.method private static a(Ljava/lang/String;I)Z
-    .registers 5
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    if-ne v1, p1, :cond_19
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
-
-    move-result-object v1
-
-    const/16 v2, 0x10
-
-    invoke-static {v1, v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
-
-    move-result v1
-
-    const/4 v2, 0x7
-
-    if-le v1, v2, :cond_19
-
-    const/4 v0, 0x1
-
-    :cond_19
     return v0
 .end method
 
-.method private static b(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+.method public c()Ljava/lang/String;
+    .registers 6
 
-    const/4 v0, 0x0
+    .prologue
+    const/4 v4, 0x0
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
+    .line 314
+    invoke-virtual {p0, v4}, Lp/k;->a(I)Lo/K;
 
     move-result-object v0
 
-    const/16 v1, 0x10
+    .line 315
+    if-eqz v0, :cond_1a
 
-    invoke-static {v0, v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
+    .line 316
+    iget-object v1, p0, Lp/k;->a:Landroid/content/Context;
 
-    move-result v0
+    const v2, 0x7f0d00fd
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const/4 v3, 0x1
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    new-array v3, v3, [Ljava/lang/Object;
 
-    add-int/lit8 v0, v0, -0x8
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Lo/K;->b()Ljava/lang/String;
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    aput-object v0, v3, v4
 
-    invoke-virtual {p0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
+    .line 318
+    :goto_19
     return-object v0
+
+    :cond_1a
+    iget-object v0, p0, Lp/k;->a:Landroid/content/Context;
+
+    const v1, 0x7f0d00fe
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_19
 .end method

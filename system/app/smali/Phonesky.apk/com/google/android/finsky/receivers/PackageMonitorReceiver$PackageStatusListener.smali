@@ -24,5 +24,8 @@
 .method public abstract onPackageChanged(Ljava/lang/String;)V
 .end method
 
+.method public abstract onPackageFirstLaunch(Ljava/lang/String;)V
+.end method
+
 .method public abstract onPackageRemoved(Ljava/lang/String;Z)V
 .end method

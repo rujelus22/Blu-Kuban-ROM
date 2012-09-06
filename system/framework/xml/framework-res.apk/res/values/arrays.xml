@@ -690,4 +690,12 @@
         <item>Custom</item>
     </string-array>
     <array name="carrier_properties" />
+    <array name="shutdown_reboot_options">
+        <item>@string/reboot_reboot</item>
+        <item>@string/reboot_recovery</item>
+    </array>
+    <string-array name="shutdown_reboot_actions">
+        <item></item>
+        <item>recovery</item>
+    </string-array>
 </resources>

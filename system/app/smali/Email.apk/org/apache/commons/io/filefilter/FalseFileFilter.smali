@@ -18,14 +18,14 @@
     .registers 1
 
     .prologue
-    .line 38
+    .line 36
     new-instance v0, Lorg/apache/commons/io/filefilter/FalseFileFilter;
 
     invoke-direct {v0}, Lorg/apache/commons/io/filefilter/FalseFileFilter;-><init>()V
 
     sput-object v0, Lorg/apache/commons/io/filefilter/FalseFileFilter;->FALSE:Lorg/apache/commons/io/filefilter/IOFileFilter;
 
-    .line 44
+    .line 43
     sget-object v0, Lorg/apache/commons/io/filefilter/FalseFileFilter;->FALSE:Lorg/apache/commons/io/filefilter/IOFileFilter;
 
     sput-object v0, Lorg/apache/commons/io/filefilter/FalseFileFilter;->INSTANCE:Lorg/apache/commons/io/filefilter/IOFileFilter;
@@ -37,10 +37,10 @@
     .registers 1
 
     .prologue
-    .line 49
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 48
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 50
+    .line 49
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .parameter "file"
 
     .prologue
-    .line 59
+    .line 58
     const/4 v0, 0x0
 
     return v0
@@ -63,7 +63,7 @@
     .parameter "name"
 
     .prologue
-    .line 70
+    .line 69
     const/4 v0, 0x0
 
     return v0

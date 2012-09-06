@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 136
+    .line 126
     iput-object p1, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
 
     invoke-direct {p0}, Lcom/android/email/Controller$Result;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 136
+    .line 126
     invoke-direct {p0, p1}, Lcom/android/email/activity/MailboxFinder$ControllerResults;-><init>(Lcom/android/email/activity/MailboxFinder;)V
 
     return-void
@@ -47,21 +47,59 @@
 
 # virtual methods
 .method public updateMailboxListCallback(Lcom/android/emailcommon/mail/MessagingException;JI)V
-    .registers 10
+    .registers 9
     .parameter "result"
     .parameter "accountId"
     .parameter "progress"
 
     .prologue
-    .line 140
-    iget-object v1, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
+    const/4 v3, 0x0
+
+    .line 130
+    iget-object v0, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
 
     #getter for: Lcom/android/email/activity/MailboxFinder;->mClosed:Z
-    invoke-static {v1}, Lcom/android/email/activity/MailboxFinder;->access$100(Lcom/android/email/activity/MailboxFinder;)Z
+    invoke-static {v0}, Lcom/android/email/activity/MailboxFinder;->access$100(Lcom/android/email/activity/MailboxFinder;)Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_12
+    if-nez v0, :cond_13
+
+    iget-object v0, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
+
+    #getter for: Lcom/android/email/activity/MailboxFinder;->mAccountId:J
+    invoke-static {v0}, Lcom/android/email/activity/MailboxFinder;->access$200(Lcom/android/email/activity/MailboxFinder;)J
+
+    move-result-wide v0
+
+    cmp-long v0, p2, v0
+
+    if-eqz v0, :cond_14
+
+    .line 146
+    :cond_13
+    :goto_13
+    return-void
+
+    .line 133
+    :cond_14
+    const-string v0, "Email"
+
+    const-string v1, "MailboxFinder: updateMailboxListCallback"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 134
+    if-eqz p1, :cond_39
+
+    .line 137
+    :try_start_1d
+    iget-object v0, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
+
+    #getter for: Lcom/android/email/activity/MailboxFinder;->mCallback:Lcom/android/email/activity/MailboxFinder$Callback;
+    invoke-static {v0}, Lcom/android/email/activity/MailboxFinder;->access$300(Lcom/android/email/activity/MailboxFinder;)Lcom/android/email/activity/MailboxFinder$Callback;
+
+    move-result-object v0
 
     iget-object v1, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
 
@@ -70,155 +108,57 @@
 
     move-result-wide v1
 
-    cmp-long v1, p2, v1
+    invoke-interface {v0, v1, v2}, Lcom/android/email/activity/MailboxFinder$Callback;->onMailboxNotFound(J)V
+    :try_end_2c
+    .catchall {:try_start_1d .. :try_end_2c} :catchall_32
 
-    if-eqz v1, :cond_13
+    .line 139
+    iget-object v0, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
 
-    .line 163
-    :cond_12
-    :goto_12
-    return-void
+    #calls: Lcom/android/email/activity/MailboxFinder;->close()V
+    invoke-static {v0}, Lcom/android/email/activity/MailboxFinder;->access$400(Lcom/android/email/activity/MailboxFinder;)V
 
-    .line 143
-    :cond_13
-    const-string v1, "Email"
+    goto :goto_13
 
-    const-string v2, "MailboxFinder: updateMailboxListCallback"
+    :catchall_32
+    move-exception v0
 
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 144
-    if-eqz p1, :cond_38
-
-    .line 147
-    :try_start_1c
-    iget-object v1, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
-
-    #getter for: Lcom/android/email/activity/MailboxFinder;->mCallback:Lcom/android/email/activity/MailboxFinder$Callback;
-    invoke-static {v1}, Lcom/android/email/activity/MailboxFinder;->access$300(Lcom/android/email/activity/MailboxFinder;)Lcom/android/email/activity/MailboxFinder$Callback;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
-
-    #getter for: Lcom/android/email/activity/MailboxFinder;->mAccountId:J
-    invoke-static {v2}, Lcom/android/email/activity/MailboxFinder;->access$200(Lcom/android/email/activity/MailboxFinder;)J
-
-    move-result-wide v2
-
-    invoke-interface {v1, v2, v3}, Lcom/android/email/activity/MailboxFinder$Callback;->onMailboxNotFound(J)V
-    :try_end_2b
-    .catchall {:try_start_1c .. :try_end_2b} :catchall_31
-
-    .line 149
     iget-object v1, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
 
     #calls: Lcom/android/email/activity/MailboxFinder;->close()V
     invoke-static {v1}, Lcom/android/email/activity/MailboxFinder;->access$400(Lcom/android/email/activity/MailboxFinder;)V
 
-    goto :goto_12
+    throw v0
 
-    :catchall_31
-    move-exception v1
+    .line 141
+    :cond_39
+    const/16 v0, 0x64
+
+    if-ne p4, v0, :cond_13
+
+    .line 143
+    iget-object v0, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
+
+    new-instance v1, Lcom/android/email/activity/MailboxFinder$FindMailboxTask;
 
     iget-object v2, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
 
-    #calls: Lcom/android/email/activity/MailboxFinder;->close()V
-    invoke-static {v2}, Lcom/android/email/activity/MailboxFinder;->access$400(Lcom/android/email/activity/MailboxFinder;)V
-
-    throw v1
-
-    .line 151
-    :cond_38
-    const/16 v1, 0x64
-
-    if-ne p4, v1, :cond_12
-
-    .line 152
-    const/4 v0, 0x1
-
-    .line 153
-    .local v0, retryCount:I
-    iget-object v1, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
-
-    #getter for: Lcom/android/email/activity/MailboxFinder;->mTask:Lcom/android/email/activity/MailboxFinder$FindMailboxTask;
-    invoke-static {v1}, Lcom/android/email/activity/MailboxFinder;->access$500(Lcom/android/email/activity/MailboxFinder;)Lcom/android/email/activity/MailboxFinder$FindMailboxTask;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_50
-
-    .line 154
-    iget-object v1, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
-
-    #getter for: Lcom/android/email/activity/MailboxFinder;->mTask:Lcom/android/email/activity/MailboxFinder$FindMailboxTask;
-    invoke-static {v1}, Lcom/android/email/activity/MailboxFinder;->access$500(Lcom/android/email/activity/MailboxFinder;)Lcom/android/email/activity/MailboxFinder$FindMailboxTask;
-
-    move-result-object v1
-
-    #getter for: Lcom/android/email/activity/MailboxFinder$FindMailboxTask;->mRetrycount:I
-    invoke-static {v1}, Lcom/android/email/activity/MailboxFinder$FindMailboxTask;->access$600(Lcom/android/email/activity/MailboxFinder$FindMailboxTask;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 156
-    :cond_50
-    const-string v1, "Email"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "MailboxFinder: tryCount"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 157
-    const/16 v1, 0xa
-
-    if-gt v0, v1, :cond_12
-
-    .line 160
-    iget-object v1, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
-
-    new-instance v2, Lcom/android/email/activity/MailboxFinder$FindMailboxTask;
-
-    iget-object v3, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v2, v3, v4, v0}, Lcom/android/email/activity/MailboxFinder$FindMailboxTask;-><init>(Lcom/android/email/activity/MailboxFinder;ZI)V
+    invoke-direct {v1, v2, v3}, Lcom/android/email/activity/MailboxFinder$FindMailboxTask;-><init>(Lcom/android/email/activity/MailboxFinder;Z)V
 
     #setter for: Lcom/android/email/activity/MailboxFinder;->mTask:Lcom/android/email/activity/MailboxFinder$FindMailboxTask;
-    invoke-static {v1, v2}, Lcom/android/email/activity/MailboxFinder;->access$502(Lcom/android/email/activity/MailboxFinder;Lcom/android/email/activity/MailboxFinder$FindMailboxTask;)Lcom/android/email/activity/MailboxFinder$FindMailboxTask;
+    invoke-static {v0, v1}, Lcom/android/email/activity/MailboxFinder;->access$502(Lcom/android/email/activity/MailboxFinder;Lcom/android/email/activity/MailboxFinder$FindMailboxTask;)Lcom/android/email/activity/MailboxFinder$FindMailboxTask;
 
-    .line 161
-    iget-object v1, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
+    .line 144
+    iget-object v0, p0, Lcom/android/email/activity/MailboxFinder$ControllerResults;->this$0:Lcom/android/email/activity/MailboxFinder;
 
     #getter for: Lcom/android/email/activity/MailboxFinder;->mTask:Lcom/android/email/activity/MailboxFinder$FindMailboxTask;
-    invoke-static {v1}, Lcom/android/email/activity/MailboxFinder;->access$500(Lcom/android/email/activity/MailboxFinder;)Lcom/android/email/activity/MailboxFinder$FindMailboxTask;
+    invoke-static {v0}, Lcom/android/email/activity/MailboxFinder;->access$500(Lcom/android/email/activity/MailboxFinder;)Lcom/android/email/activity/MailboxFinder$FindMailboxTask;
 
-    move-result-object v1
+    move-result-object v0
 
-    const/4 v2, 0x0
+    new-array v1, v3, [Ljava/lang/Void;
 
-    new-array v2, v2, [Ljava/lang/Void;
+    invoke-virtual {v0, v1}, Lcom/android/email/activity/MailboxFinder$FindMailboxTask;->executeParallel([Ljava/lang/Object;)Lcom/android/emailcommon/utility/EmailAsyncTask;
 
-    invoke-virtual {v1, v2}, Lcom/android/email/activity/MailboxFinder$FindMailboxTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
-
-    goto :goto_12
+    goto :goto_13
 .end method

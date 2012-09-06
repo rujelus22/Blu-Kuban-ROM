@@ -3,56 +3,75 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/app/ui/al;
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/BrowseActivity;
+.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/a;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/BrowseActivity;)V
+.method private constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/a;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 95
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/d;->a:Lcom/google/android/youtube/app/honeycomb/phone/BrowseActivity;
+    .line 207
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/d;->a:Lcom/google/android/youtube/app/honeycomb/phone/a;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Enum;)V
-    .registers 5
+.method synthetic constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/a;B)V
+    .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 95
-    check-cast p1, Lcom/google/android/youtube/core/async/GDataRequestFactory$StatisticFilter;
+    .line 207
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/d;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/a;)V
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/d;->a:Lcom/google/android/youtube/app/honeycomb/phone/BrowseActivity;
+    return-void
+.end method
 
-    invoke-static {v0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/BrowseActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/BrowseActivity;Lcom/google/android/youtube/core/async/GDataRequestFactory$StatisticFilter;)Lcom/google/android/youtube/core/async/GDataRequestFactory$StatisticFilter;
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/d;->a:Lcom/google/android/youtube/app/honeycomb/phone/BrowseActivity;
+# virtual methods
+.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
+    .registers 4
+    .parameter
+    .parameter
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/d;->a:Lcom/google/android/youtube/app/honeycomb/phone/BrowseActivity;
+    .prologue
+    .line 207
+    const-string v0, "Error retrieving user thumbnail"
 
-    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/phone/BrowseActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/BrowseActivity;)Lcom/google/android/youtube/core/async/GDataRequestFactory$StatisticFilter;
+    invoke-static {v0, p2}, Lcom/google/android/youtube/core/L;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    move-result-object v1
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/d;->a:Lcom/google/android/youtube/app/honeycomb/phone/a;
 
-    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/d;->a:Lcom/google/android/youtube/app/honeycomb/phone/BrowseActivity;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/a;->a(Lcom/google/android/youtube/app/honeycomb/phone/a;)V
 
-    invoke-static {v2}, Lcom/google/android/youtube/app/honeycomb/phone/BrowseActivity;->b(Lcom/google/android/youtube/app/honeycomb/phone/BrowseActivity;)Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;
+    return-void
+.end method
 
-    move-result-object v2
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 4
+    .parameter
+    .parameter
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/youtube/app/honeycomb/phone/BrowseActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/BrowseActivity;Lcom/google/android/youtube/core/async/GDataRequestFactory$StatisticFilter;Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;)V
+    .prologue
+    .line 207
+    check-cast p2, Landroid/graphics/Bitmap;
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/d;->a:Lcom/google/android/youtube/app/honeycomb/phone/a;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/a;->c(Lcom/google/android/youtube/app/honeycomb/phone/a;)Landroid/widget/ImageView;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
     return-void
 .end method

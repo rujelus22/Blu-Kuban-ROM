@@ -1,25 +1,27 @@
 .class final Lcom/google/android/youtube/core/player/j;
-.super Ljava/lang/Object;
+.super Ljava/lang/Thread;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/player/d;
+.field final synthetic a:Ljava/lang/String;
+
+.field final synthetic b:Lcom/google/android/youtube/core/player/f;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/core/player/d;)V
-    .registers 2
+.method constructor <init>(Lcom/google/android/youtube/core/player/f;Ljava/lang/String;)V
+    .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 548
-    iput-object p1, p0, Lcom/google/android/youtube/core/player/j;->a:Lcom/google/android/youtube/core/player/d;
+    .line 240
+    iput-object p1, p0, Lcom/google/android/youtube/core/player/j;->b:Lcom/google/android/youtube/core/player/f;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lcom/google/android/youtube/core/player/j;->a:Ljava/lang/String;
+
+    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
     return-void
 .end method
@@ -30,24 +32,18 @@
     .registers 3
 
     .prologue
-    .line 550
-    const-string v0, "delayed short seek"
+    .line 243
+    new-instance v0, Ljava/io/File;
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/L;->c(Ljava/lang/String;)V
+    iget-object v1, p0, Lcom/google/android/youtube/core/player/j;->a:Ljava/lang/String;
 
-    .line 551
-    iget-object v0, p0, Lcom/google/android/youtube/core/player/j;->a:Lcom/google/android/youtube/core/player/d;
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/google/android/youtube/core/player/j;->a:Lcom/google/android/youtube/core/player/d;
+    invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    invoke-virtual {v1}, Lcom/google/android/youtube/core/player/d;->getCurrentPosition()I
+    .line 244
+    invoke-static {}, Lcom/google/android/youtube/core/L;->d()V
 
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x32
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/player/d;->seekTo(I)V
-
-    .line 552
+    .line 245
     return-void
 .end method

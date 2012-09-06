@@ -8,7 +8,7 @@
 
 .field private final b:Landroid/content/Context;
 
-.field private final c:Lcom/google/android/youtube/core/utils/h;
+.field private final c:Lcom/google/android/youtube/core/utils/j;
 
 .field private d:Z
 
@@ -16,7 +16,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/youtube/core/utils/h;)V
+.method public constructor <init>(Landroid/content/Context;Lcom/google/android/youtube/core/utils/j;)V
     .registers 6
     .parameter
     .parameter
@@ -45,7 +45,7 @@
     .line 51
     const-string v0, "context cannot be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -56,13 +56,13 @@
     .line 52
     const-string v0, "listener cannot be null"
 
-    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/utils/h;
+    check-cast v0, Lcom/google/android/youtube/core/utils/j;
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/utils/HdmiReceiver;->c:Lcom/google/android/youtube/core/utils/h;
+    iput-object v0, p0, Lcom/google/android/youtube/core/utils/HdmiReceiver;->c:Lcom/google/android/youtube/core/utils/j;
 
     .line 53
     return-void
@@ -164,11 +164,11 @@
     iput-boolean v0, p0, Lcom/google/android/youtube/core/utils/HdmiReceiver;->e:Z
 
     .line 59
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/HdmiReceiver;->c:Lcom/google/android/youtube/core/utils/h;
+    iget-object v0, p0, Lcom/google/android/youtube/core/utils/HdmiReceiver;->c:Lcom/google/android/youtube/core/utils/j;
 
     iget-boolean v1, p0, Lcom/google/android/youtube/core/utils/HdmiReceiver;->e:Z
 
-    invoke-interface {v0}, Lcom/google/android/youtube/core/utils/h;->i()V
+    invoke-interface {v0}, Lcom/google/android/youtube/core/utils/j;->l()V
 
     .line 63
     :goto_1c
@@ -178,13 +178,9 @@
     :cond_1d
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "unexpected intent: "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

@@ -1,14 +1,11 @@
 .class Lcom/android/internal/policy/impl/GlobalActions$9;
-.super Ljava/lang/Object;
+.super Landroid/content/BroadcastReceiver;
 .source "GlobalActions.java"
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnDismissListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/internal/policy/impl/GlobalActions;->comfirmDialog(Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;III)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/internal/policy/impl/GlobalActions;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,47 +24,48 @@
     .parameter
 
     .prologue
-    .line 454
+    .line 721
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$9;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onDismiss(Landroid/content/DialogInterface;)V
-    .registers 4
-    .parameter "unused"
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .registers 5
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
-    .line 456
-    invoke-static {}, Lcom/android/internal/policy/impl/GlobalActions;->access$1000()Ljava/lang/Object;
+    .line 724
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    monitor-enter v1
+    const-string v1, "android.media.RINGER_MODE_CHANGED"
 
-    .line 457
-    const/4 v0, 0x0
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    :try_start_6
-    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$1102(Z)Z
+    move-result v0
 
-    .line 458
-    monitor-exit v1
+    if-eqz v0, :cond_16
 
-    .line 459
+    .line 725
+    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$9;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+
+    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mHandler:Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$600(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    .line 727
+    :cond_16
     return-void
-
-    .line 458
-    :catchall_b
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_d
-    .catchall {:try_start_6 .. :try_end_d} :catchall_b
-
-    throw v0
 .end method

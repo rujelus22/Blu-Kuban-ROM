@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/backup_restore_title"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/apex_settings_title">
+        <Preference android:title="@string/backup_settings_title" android:key="@string/pref_backup_settings_key" android:summary="@string/backup_settings_summary" />
+        <Preference android:title="@string/restore_settings_title" android:key="@string/pref_restore_settings_key" android:summary="@string/restore_settings_summary" />
+        <Preference android:title="@string/reset_settings_title" android:key="@string/pref_reset_settings_key" android:summary="@string/reset_settings_summary" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/desktop_data_title">
+        <Preference android:title="@string/backup_data_title" android:key="@string/pref_backup_data_key" android:summary="@string/backup_data_summary" />
+        <Preference android:title="@string/restore_data_title" android:key="@string/pref_restore_data_key" android:summary="@string/restore_data_summary" />
+    </PreferenceCategory>
+</PreferenceScreen>

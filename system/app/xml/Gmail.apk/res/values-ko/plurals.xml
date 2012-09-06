@@ -53,40 +53,40 @@
         <item quantity="one">%1$d개의 대화에 대한 작업을 기다리는 중입니다.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>개를 무시</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>개를 무시</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 무시</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 무시</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>개를 스팸으로 신고</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>개를 스팸으로 신고</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 스팸으로 신고</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 스팸으로 신고</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>개를 보관처리</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>개를 보관처리</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 보관처리</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 보관처리</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>개를 받은편지함으로 이동</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>개를 받은편지함으로 이동</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 받은편지함으로 이동</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 받은편지함으로 이동</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>개를 삭제</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>개를 삭제</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 삭제</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 삭제</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>개를 중요로 표시</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>개를 중요로 표시</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 중요로 표시</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 중요로 표시</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>개를 중요하지 않음으로 표시</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>개를 중요하지 않음으로 표시</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 중요하지 않음으로 표시</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 중요하지 않음으로 표시</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>개를 읽음으로 표시</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>개를 읽음으로 표시</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 읽음으로 표시</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 읽음으로 표시</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>개를 읽지않음으로 표시</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>개를 읽지않음으로 표시</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 읽지않음으로 표시</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>개를 읽지않음으로 표시</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">라벨 변경</item>

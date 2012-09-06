@@ -26,7 +26,7 @@
 
 .field private static final CMD_STOP:I = 0x67
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final ErrDrmLicenseExpired:I = 0x7
 

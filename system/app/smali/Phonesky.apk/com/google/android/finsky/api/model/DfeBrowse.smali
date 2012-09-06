@@ -36,15 +36,13 @@
 # instance fields
 .field private mBrowseResponse:Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;
 
-.field private final mDfeApi:Lcom/google/android/finsky/api/DfeApi;
-
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 1
 
     .prologue
-    .line 124
+    .line 119
     new-instance v0, Lcom/google/android/finsky/api/model/DfeBrowse$1;
 
     invoke-direct {v0}, Lcom/google/android/finsky/api/model/DfeBrowse$1;-><init>()V
@@ -54,51 +52,45 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/finsky/api/DfeApi;Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;)V
-    .registers 3
-    .parameter "dfeApi"
-    .parameter "browseResponse"
-
-    .prologue
-    .line 31
-    invoke-direct {p0}, Lcom/google/android/finsky/api/model/DfeModel;-><init>()V
-
-    .line 32
-    iput-object p1, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
-
-    .line 33
-    iput-object p2, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mBrowseResponse:Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;
-
-    .line 34
-    return-void
-.end method
-
 .method public constructor <init>(Lcom/google/android/finsky/api/DfeApi;Ljava/lang/String;)V
     .registers 3
     .parameter "dfeApi"
     .parameter "landingUrl"
 
     .prologue
-    .line 41
+    .line 37
     invoke-direct {p0}, Lcom/google/android/finsky/api/model/DfeModel;-><init>()V
 
-    .line 42
-    iput-object p1, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
+    .line 38
+    invoke-interface {p1, p2, p0, p0}, Lcom/google/android/finsky/api/DfeApi;->getBrowseLayout(Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
 
-    .line 43
-    invoke-virtual {p1, p2, p0, p0}, Lcom/google/android/finsky/api/DfeApi;->getBrowseLayout(Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
+    .line 39
+    return-void
+.end method
 
-    .line 44
+.method public constructor <init>(Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;)V
+    .registers 2
+    .parameter "browseResponse"
+
+    .prologue
+    .line 28
+    invoke-direct {p0}, Lcom/google/android/finsky/api/model/DfeModel;-><init>()V
+
+    .line 29
+    iput-object p1, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mBrowseResponse:Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;
+
+    .line 30
     return-void
 .end method
 
 
 # virtual methods
-.method public buildContentList()Lcom/google/android/finsky/api/model/DfeList;
+.method public buildContentList(Lcom/google/android/finsky/api/DfeApi;)Lcom/google/android/finsky/api/model/DfeList;
     .registers 5
+    .parameter "dfeApi"
 
     .prologue
-    .line 80
+    .line 75
     invoke-virtual {p0}, Lcom/google/android/finsky/api/model/DfeBrowse;->isReady()Z
 
     move-result v0
@@ -117,64 +109,61 @@
 
     if-eqz v0, :cond_14
 
-    .line 81
+    .line 76
     :cond_12
     const/4 v0, 0x0
 
-    .line 83
+    .line 78
     :goto_13
     return-object v0
 
     :cond_14
     new-instance v0, Lcom/google/android/finsky/api/model/DfeList;
 
-    iget-object v1, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
+    iget-object v1, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mBrowseResponse:Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;
 
-    iget-object v2, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mBrowseResponse:Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;
+    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;->getContentsUrl()Ljava/lang/String;
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;->getContentsUrl()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
-
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/finsky/api/model/DfeList;-><init>(Lcom/google/android/finsky/api/DfeApi;Ljava/lang/String;Z)V
+    invoke-direct {v0, p1, v1, v2}, Lcom/google/android/finsky/api/model/DfeList;-><init>(Lcom/google/android/finsky/api/DfeApi;Ljava/lang/String;Z)V
 
     goto :goto_13
 .end method
 
-.method public buildPromoList()Lcom/google/android/finsky/api/model/DfeList;
+.method public buildPromoList(Lcom/google/android/finsky/api/DfeApi;)Lcom/google/android/finsky/api/model/DfeList;
     .registers 5
+    .parameter "dfeApi"
 
     .prologue
-    .line 90
+    .line 85
     invoke-virtual {p0}, Lcom/google/android/finsky/api/model/DfeBrowse;->hasPromotionalItems()Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 91
+    .line 86
     const/4 v0, 0x0
 
-    .line 93
+    .line 88
     :goto_7
     return-object v0
 
     :cond_8
     new-instance v0, Lcom/google/android/finsky/api/model/DfeList;
 
-    iget-object v1, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
+    iget-object v1, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mBrowseResponse:Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;
 
-    iget-object v2, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mBrowseResponse:Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;
+    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;->getPromoUrl()Ljava/lang/String;
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;->getPromoUrl()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/finsky/api/model/DfeList;-><init>(Lcom/google/android/finsky/api/DfeApi;Ljava/lang/String;Z)V
+    invoke-direct {v0, p1, v1, v2}, Lcom/google/android/finsky/api/model/DfeList;-><init>(Lcom/google/android/finsky/api/DfeApi;Ljava/lang/String;Z)V
 
     goto :goto_7
 .end method
@@ -183,7 +172,7 @@
     .registers 2
 
     .prologue
-    .line 116
+    .line 111
     const/4 v0, 0x0
 
     return v0
@@ -202,7 +191,7 @@
     .end annotation
 
     .prologue
-    .line 50
+    .line 45
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mBrowseResponse:Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;
 
     if-eqz v0, :cond_b
@@ -235,7 +224,7 @@
     .end annotation
 
     .prologue
-    .line 57
+    .line 52
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mBrowseResponse:Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;
 
     if-eqz v0, :cond_b
@@ -259,7 +248,7 @@
     .registers 2
 
     .prologue
-    .line 64
+    .line 59
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mBrowseResponse:Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;
 
     if-eqz v0, :cond_1a
@@ -299,7 +288,7 @@
     .registers 2
 
     .prologue
-    .line 73
+    .line 68
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mBrowseResponse:Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;
 
     if-eqz v0, :cond_12
@@ -331,7 +320,7 @@
     .registers 2
 
     .prologue
-    .line 101
+    .line 96
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mBrowseResponse:Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;
 
     if-eqz v0, :cond_6
@@ -352,16 +341,16 @@
     .parameter "response"
 
     .prologue
-    .line 109
+    .line 104
     invoke-virtual {p0}, Lcom/google/android/finsky/api/model/DfeBrowse;->clearErrors()V
 
-    .line 110
+    .line 105
     iput-object p1, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mBrowseResponse:Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;
 
-    .line 111
+    .line 106
     invoke-virtual {p0}, Lcom/google/android/finsky/api/model/DfeBrowse;->notifyDataSetChanged()V
 
-    .line 112
+    .line 107
     return-void
 .end method
 
@@ -370,7 +359,7 @@
     .parameter "x0"
 
     .prologue
-    .line 22
+    .line 21
     check-cast p1, Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;
 
     .end local p1
@@ -385,7 +374,7 @@
     .parameter "flags"
 
     .prologue
-    .line 121
+    .line 116
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeBrowse;->mBrowseResponse:Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;
 
     invoke-static {v0}, Lcom/google/android/finsky/utils/ParcelableProto;->forProto(Lcom/google/protobuf/micro/MessageMicro;)Lcom/google/android/finsky/utils/ParcelableProto;
@@ -396,6 +385,6 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 122
+    .line 117
     return-void
 .end method

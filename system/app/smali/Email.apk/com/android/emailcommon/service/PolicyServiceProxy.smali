@@ -19,7 +19,7 @@
     .parameter "x1"
 
     .prologue
-    .line 27
+    .line 28
     iput-object p1, p0, Lcom/android/emailcommon/service/PolicyServiceProxy;->mReturn:Ljava/lang/Object;
 
     return-object p1
@@ -30,7 +30,7 @@
     .parameter "x0"
 
     .prologue
-    .line 27
+    .line 28
     iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy;->mService:Lcom/android/emailcommon/service/IPolicyService;
 
     return-object v0
@@ -48,7 +48,7 @@
     return-object v0
 .end method
 
-.method public clearUnsupportedPolicies(Lcom/android/emailcommon/service/PolicySet;)Lcom/android/emailcommon/service/PolicySet;
+.method public clearUnsupportedPolicies(Lcom/android/emailcommon/provider/Policy;)Lcom/android/emailcommon/provider/Policy;
     .registers 4
     .parameter "arg0"
     .annotation system Ldalvik/annotation/Throws;
@@ -61,7 +61,7 @@
     .line 53
     new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$1;
 
-    invoke-direct {v0, p0, p1}, Lcom/android/emailcommon/service/PolicyServiceProxy$1;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;Lcom/android/emailcommon/service/PolicySet;)V
+    invoke-direct {v0, p0, p1}, Lcom/android/emailcommon/service/PolicyServiceProxy$1;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;Lcom/android/emailcommon/provider/Policy;)V
 
     const-string v1, "clearUnsupportedPolicies"
 
@@ -73,107 +73,27 @@
     .line 62
     iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy;->mReturn:Ljava/lang/Object;
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_19
 
-    .line 64
-    const/4 v0, 0x0
+    .line 63
+    new-instance v0, Lcom/android/emailcommon/service/ServiceUnavailableException;
 
-    .line 66
-    :goto_12
-    return-object v0
+    const-string v1, "clearUnsupportedPolicies"
 
-    :cond_13
+    invoke-direct {v0, v1}, Lcom/android/emailcommon/service/ServiceUnavailableException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 65
+    :cond_19
     iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy;->mReturn:Ljava/lang/Object;
 
-    check-cast v0, Lcom/android/emailcommon/service/PolicySet;
+    check-cast v0, Lcom/android/emailcommon/provider/Policy;
 
-    goto :goto_12
+    return-object v0
 .end method
 
-.method public getAccountPolicy(J)Lcom/android/emailcommon/service/PolicySet;
-    .registers 5
-    .parameter "accountId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 93
-    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$3;
-
-    invoke-direct {v0, p0, p1, p2}, Lcom/android/emailcommon/service/PolicyServiceProxy$3;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;J)V
-
-    const-string v1, "getAccountPolicy"
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/PolicyServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
-
-    .line 98
-    invoke-virtual {p0}, Lcom/android/emailcommon/service/PolicyServiceProxy;->waitForCompletion()V
-
-    .line 102
-    iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy;->mReturn:Ljava/lang/Object;
-
-    if-nez v0, :cond_13
-
-    .line 104
-    const/4 v0, 0x0
-
-    .line 106
-    :goto_12
-    return-object v0
-
-    :cond_13
-    iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy;->mReturn:Ljava/lang/Object;
-
-    check-cast v0, Lcom/android/emailcommon/service/PolicySet;
-
-    goto :goto_12
-.end method
-
-.method public getAggregatePolicy()Lcom/android/emailcommon/service/PolicySet;
-    .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 72
-    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$2;
-
-    invoke-direct {v0, p0}, Lcom/android/emailcommon/service/PolicyServiceProxy$2;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;)V
-
-    const-string v1, "getAggregatePolicy"
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/PolicyServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
-
-    .line 77
-    invoke-virtual {p0}, Lcom/android/emailcommon/service/PolicyServiceProxy;->waitForCompletion()V
-
-    .line 81
-    iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy;->mReturn:Ljava/lang/Object;
-
-    if-nez v0, :cond_13
-
-    .line 83
-    const/4 v0, 0x0
-
-    .line 85
-    :goto_12
-    return-object v0
-
-    :cond_13
-    iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy;->mReturn:Ljava/lang/Object;
-
-    check-cast v0, Lcom/android/emailcommon/service/PolicySet;
-
-    goto :goto_12
-.end method
-
-.method public isActive(Lcom/android/emailcommon/service/PolicySet;)Z
+.method public isActive(Lcom/android/emailcommon/provider/Policy;)Z
     .registers 4
     .parameter "arg0"
     .annotation system Ldalvik/annotation/Throws;
@@ -183,31 +103,34 @@
     .end annotation
 
     .prologue
-    .line 112
-    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$4;
+    .line 71
+    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$2;
 
-    invoke-direct {v0, p0, p1}, Lcom/android/emailcommon/service/PolicyServiceProxy$4;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;Lcom/android/emailcommon/service/PolicySet;)V
+    invoke-direct {v0, p0, p1}, Lcom/android/emailcommon/service/PolicyServiceProxy$2;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;Lcom/android/emailcommon/provider/Policy;)V
 
     const-string v1, "isActive"
 
     invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/PolicyServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
 
-    .line 117
+    .line 76
     invoke-virtual {p0}, Lcom/android/emailcommon/service/PolicyServiceProxy;->waitForCompletion()V
 
-    .line 121
+    .line 80
     iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy;->mReturn:Ljava/lang/Object;
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_19
 
-    .line 125
-    const/4 v0, 0x1
+    .line 81
+    new-instance v0, Lcom/android/emailcommon/service/ServiceUnavailableException;
 
-    .line 127
-    :goto_12
-    return v0
+    const-string v1, "isActive"
 
-    :cond_13
+    invoke-direct {v0, v1}, Lcom/android/emailcommon/service/ServiceUnavailableException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 83
+    :cond_19
     iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy;->mReturn:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Boolean;
@@ -216,7 +139,7 @@
 
     move-result v0
 
-    goto :goto_12
+    return v0
 .end method
 
 .method public isActiveAdmin()Z
@@ -228,31 +151,34 @@
     .end annotation
 
     .prologue
-    .line 133
-    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$5;
+    .line 89
+    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$3;
 
-    invoke-direct {v0, p0}, Lcom/android/emailcommon/service/PolicyServiceProxy$5;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;)V
+    invoke-direct {v0, p0}, Lcom/android/emailcommon/service/PolicyServiceProxy$3;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;)V
 
     const-string v1, "isActiveAdmin"
 
     invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/PolicyServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
 
-    .line 138
+    .line 94
     invoke-virtual {p0}, Lcom/android/emailcommon/service/PolicyServiceProxy;->waitForCompletion()V
 
-    .line 142
+    .line 98
     iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy;->mReturn:Ljava/lang/Object;
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_19
 
-    .line 144
-    const/4 v0, 0x0
+    .line 99
+    new-instance v0, Lcom/android/emailcommon/service/ServiceUnavailableException;
 
-    .line 146
-    :goto_12
-    return v0
+    const-string v1, "isActiveAdmin"
 
-    :cond_13
+    invoke-direct {v0, v1}, Lcom/android/emailcommon/service/ServiceUnavailableException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 101
+    :cond_19
     iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy;->mReturn:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Boolean;
@@ -261,10 +187,10 @@
 
     move-result v0
 
-    goto :goto_12
+    return v0
 .end method
 
-.method public isSupported(Lcom/android/emailcommon/service/PolicySet;)Z
+.method public isSupported(Lcom/android/emailcommon/provider/Policy;)Z
     .registers 4
     .parameter "arg0"
     .annotation system Ldalvik/annotation/Throws;
@@ -274,31 +200,34 @@
     .end annotation
 
     .prologue
-    .line 152
-    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$6;
+    .line 107
+    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$4;
 
-    invoke-direct {v0, p0, p1}, Lcom/android/emailcommon/service/PolicyServiceProxy$6;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;Lcom/android/emailcommon/service/PolicySet;)V
+    invoke-direct {v0, p0, p1}, Lcom/android/emailcommon/service/PolicyServiceProxy$4;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;Lcom/android/emailcommon/provider/Policy;)V
 
     const-string v1, "isSupported"
 
     invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/PolicyServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
 
-    .line 157
+    .line 112
     invoke-virtual {p0}, Lcom/android/emailcommon/service/PolicyServiceProxy;->waitForCompletion()V
 
-    .line 161
+    .line 116
     iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy;->mReturn:Ljava/lang/Object;
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_19
 
-    .line 163
-    const/4 v0, 0x0
+    .line 117
+    new-instance v0, Lcom/android/emailcommon/service/ServiceUnavailableException;
 
-    .line 165
-    :goto_12
-    return v0
+    const-string v1, "isSupported"
 
-    :cond_13
+    invoke-direct {v0, v1}, Lcom/android/emailcommon/service/ServiceUnavailableException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 119
+    :cond_19
     iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy;->mReturn:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Boolean;
@@ -307,7 +236,7 @@
 
     move-result v0
 
-    goto :goto_12
+    return v0
 .end method
 
 .method public onConnected(Landroid/os/IBinder;)V
@@ -336,21 +265,22 @@
     .end annotation
 
     .prologue
-    .line 171
-    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$7;
+    .line 125
+    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$5;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/android/emailcommon/service/PolicyServiceProxy$7;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;J)V
+    invoke-direct {v0, p0, p1, p2}, Lcom/android/emailcommon/service/PolicyServiceProxy$5;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;J)V
 
     const-string v1, "policiesRequired"
 
     invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/PolicyServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
 
-    .line 176
+    .line 130
     return-void
 .end method
 
-.method public reducePolicies()V
-    .registers 3
+.method public policiesUpdated(J)V
+    .registers 5
+    .parameter "arg0"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -358,16 +288,16 @@
     .end annotation
 
     .prologue
-    .line 198
-    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$10;
+    .line 152
+    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$8;
 
-    invoke-direct {v0, p0}, Lcom/android/emailcommon/service/PolicyServiceProxy$10;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;)V
+    invoke-direct {v0, p0, p1, p2}, Lcom/android/emailcommon/service/PolicyServiceProxy$8;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;J)V
 
-    const-string v1, "reducePolicies"
+    const-string v1, "policiesUpdated"
 
     invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/PolicyServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
 
-    .line 203
+    .line 157
     return-void
 .end method
 
@@ -380,16 +310,16 @@
     .end annotation
 
     .prologue
-    .line 180
-    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$8;
+    .line 134
+    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$6;
 
-    invoke-direct {v0, p0}, Lcom/android/emailcommon/service/PolicyServiceProxy$8;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;)V
+    invoke-direct {v0, p0}, Lcom/android/emailcommon/service/PolicyServiceProxy$6;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;)V
 
     const-string v1, "remoteWipe"
 
     invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/PolicyServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
 
-    .line 185
+    .line 139
     return-void
 .end method
 
@@ -404,61 +334,15 @@
     .end annotation
 
     .prologue
-    .line 207
-    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$11;
+    .line 143
+    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$7;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lcom/android/emailcommon/service/PolicyServiceProxy$11;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;JZ)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lcom/android/emailcommon/service/PolicyServiceProxy$7;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;JZ)V
 
     const-string v1, "setAccountHoldFlag"
 
     invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/PolicyServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
 
-    .line 212
-    return-void
-.end method
-
-.method public setRecoverPasswordState(Z)V
-    .registers 4
-    .parameter "arg0"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 189
-    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$9;
-
-    invoke-direct {v0, p0, p1}, Lcom/android/emailcommon/service/PolicyServiceProxy$9;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;Z)V
-
-    const-string v1, "setRecoverPasswordState"
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/PolicyServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
-
-    .line 194
-    return-void
-.end method
-
-.method public updatePolicies(J)V
-    .registers 5
-    .parameter "arg0"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 216
-    new-instance v0, Lcom/android/emailcommon/service/PolicyServiceProxy$12;
-
-    invoke-direct {v0, p0, p1, p2}, Lcom/android/emailcommon/service/PolicyServiceProxy$12;-><init>(Lcom/android/emailcommon/service/PolicyServiceProxy;J)V
-
-    const-string v1, "updatePolicies"
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/emailcommon/service/PolicyServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;Ljava/lang/String;)Z
-
-    .line 221
+    .line 148
     return-void
 .end method

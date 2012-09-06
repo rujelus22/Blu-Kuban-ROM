@@ -1,11 +1,14 @@
 .class Lcom/android/internal/policy/impl/GlobalActions$5;
-.super Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+.super Ljava/lang/Object;
 .source "GlobalActions.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/internal/policy/impl/GlobalActions;->createDialog()Landroid/app/AlertDialog;
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/internal/policy/impl/GlobalActions;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,71 +22,75 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
-    .registers 4
+.method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;)V
+    .registers 2
     .parameter
-    .parameter "x0"
-    .parameter "x1"
 
     .prologue
-    .line 338
+    .line 257
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$5;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    invoke-direct {p0, p2, p3}, Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;-><init>(II)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onPress()V
+.method public run()V
     .registers 4
 
     .prologue
-    .line 341
+    .line 259
+    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$5;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+
+    iget-object v1, v0, Lcom/android/internal/policy/impl/GlobalActions;->mScreenshotLock:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 260
+    :try_start_5
+    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$5;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+
+    iget-object v0, v0, Lcom/android/internal/policy/impl/GlobalActions;->mScreenshotConnection:Landroid/content/ServiceConnection;
+
+    if-eqz v0, :cond_1d
+
+    .line 261
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$5;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$000(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$100(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/content/Context;
 
     move-result-object v0
 
-    const-string v1, "GlobalActions restart"
+    iget-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions$5;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    const/4 v2, 0x1
+    iget-object v2, v2, Lcom/android/internal/policy/impl/GlobalActions;->mScreenshotConnection:Landroid/content/ServiceConnection;
 
-    invoke-static {v0, v1, v2}, Lcom/android/internal/app/ShutdownThread;->reboot(Landroid/content/Context;Ljava/lang/String;Z)V
+    invoke-virtual {v0, v2}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 342
+    .line 262
+    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$5;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+
+    const/4 v2, 0x0
+
+    iput-object v2, v0, Lcom/android/internal/policy/impl/GlobalActions;->mScreenshotConnection:Landroid/content/ServiceConnection;
+
+    .line 264
+    :cond_1d
+    monitor-exit v1
+
+    .line 265
     return-void
-.end method
 
-.method public showBeforeProvisioning()Z
-    .registers 2
+    .line 264
+    :catchall_1f
+    move-exception v0
 
-    .prologue
-    .line 347
-    const/4 v0, 0x1
+    monitor-exit v1
+    :try_end_21
+    .catchall {:try_start_5 .. :try_end_21} :catchall_1f
 
-    return v0
-.end method
-
-.method public showConditional()Z
-    .registers 2
-
-    .prologue
-    .line 350
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public showDuringKeyguard()Z
-    .registers 2
-
-    .prologue
-    .line 344
-    const/4 v0, 0x1
-
-    return v0
+    throw v0
 .end method

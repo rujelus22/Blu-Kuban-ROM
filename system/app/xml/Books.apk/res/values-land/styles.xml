@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="ActionBarTitle" parent="@android:style/TextAppearance.Medium">
-        <item name="android:textSize">16.0dip</item>
-    </style>
-    <style name="ActionBarSubtitle" parent="@android:style/TextAppearance.Small">
-        <item name="android:textSize">12.0dip</item>
-    </style>
-</resources>

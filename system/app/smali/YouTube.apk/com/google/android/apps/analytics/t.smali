@@ -176,7 +176,7 @@
 
     move-result v0
 
-    if-ge v5, v0, :cond_209
+    if-ge v5, v0, :cond_205
 
     iget-object v0, p0, Lcom/google/android/apps/analytics/t;->a:Lcom/google/android/apps/analytics/s;
 
@@ -184,7 +184,7 @@
 
     move-result v0
 
-    if-ge v5, v0, :cond_209
+    if-ge v5, v0, :cond_205
 
     iget-object v0, p0, Lcom/google/android/apps/analytics/t;->b:Ljava/util/LinkedList;
 
@@ -330,7 +330,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c2
+    if-eqz v0, :cond_1be
 
     new-instance v4, Ljava/lang/StringBuffer;
 
@@ -345,7 +345,7 @@
     move v0, v1
 
     :goto_115
-    if-ge v0, v9, :cond_1a8
+    if-ge v0, v9, :cond_1a4
 
     aget-object v10, v8, v0
 
@@ -373,8 +373,8 @@
     invoke-static {v0, v4, v5}, Lcom/google/android/apps/analytics/s;->b(Lcom/google/android/apps/analytics/s;J)J
     :try_end_130
     .catch Ljava/lang/InterruptedException; {:try_start_14 .. :try_end_130} :catch_132
-    .catch Ljava/io/IOException; {:try_start_14 .. :try_end_130} :catch_1eb
-    .catch Lorg/apache/http/HttpException; {:try_start_14 .. :try_end_130} :catch_1ff
+    .catch Ljava/io/IOException; {:try_start_14 .. :try_end_130} :catch_1e7
+    .catch Lorg/apache/http/HttpException; {:try_start_14 .. :try_end_130} :catch_1fb
 
     goto/16 :goto_48
 
@@ -456,13 +456,9 @@
 
     new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v9, "/p"
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
+    invoke-direct {v8, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -502,7 +498,7 @@
 
     goto/16 :goto_ab
 
-    :cond_1a8
+    :cond_1a4
     invoke-interface {v2}, Lorg/apache/http/HttpEntityEnclosingRequest;->getRequestLine()Lorg/apache/http/RequestLine;
 
     move-result-object v0
@@ -527,14 +523,14 @@
 
     invoke-static {v0, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1c2
+    :cond_1be
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v0
 
     const/16 v3, 0x2000
 
-    if-le v0, v3, :cond_1df
+    if-le v0, v3, :cond_1db
 
     const-string v0, "GoogleAnalyticsTracker"
 
@@ -550,15 +546,15 @@
 
     invoke-virtual {v0}, Lcom/google/android/apps/analytics/u;->a()V
 
-    :goto_1da
+    :goto_1d6
     add-int/lit8 v0, v5, 0x1
 
     move v5, v0
 
     goto/16 :goto_6c
 
-    :cond_1df
-    if-eqz v7, :cond_1f5
+    :cond_1db
+    if-eqz v7, :cond_1f1
 
     iget-object v0, p0, Lcom/google/android/apps/analytics/t;->a:Lcom/google/android/apps/analytics/s;
 
@@ -567,14 +563,14 @@
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/google/android/apps/analytics/u;->a()V
-    :try_end_1ea
-    .catch Ljava/lang/InterruptedException; {:try_start_156 .. :try_end_1ea} :catch_132
-    .catch Ljava/io/IOException; {:try_start_156 .. :try_end_1ea} :catch_1eb
-    .catch Lorg/apache/http/HttpException; {:try_start_156 .. :try_end_1ea} :catch_1ff
+    :try_end_1e6
+    .catch Ljava/lang/InterruptedException; {:try_start_156 .. :try_end_1e6} :catch_132
+    .catch Ljava/io/IOException; {:try_start_156 .. :try_end_1e6} :catch_1e7
+    .catch Lorg/apache/http/HttpException; {:try_start_156 .. :try_end_1e6} :catch_1fb
 
-    goto :goto_1da
+    goto :goto_1d6
 
-    :catch_1eb
+    :catch_1e7
     move-exception v0
 
     const-string v1, "GoogleAnalyticsTracker"
@@ -585,8 +581,8 @@
 
     goto/16 :goto_13a
 
-    :cond_1f5
-    :try_start_1f5
+    :cond_1f1
+    :try_start_1f1
     iget-object v0, p0, Lcom/google/android/apps/analytics/t;->a:Lcom/google/android/apps/analytics/s;
 
     invoke-static {v0}, Lcom/google/android/apps/analytics/s;->d(Lcom/google/android/apps/analytics/s;)Lcom/google/android/apps/analytics/x;
@@ -594,14 +590,14 @@
     move-result-object v0
 
     invoke-virtual {v0, v2}, Lcom/google/android/apps/analytics/x;->a(Lorg/apache/http/HttpEntityEnclosingRequest;)V
-    :try_end_1fe
-    .catch Ljava/lang/InterruptedException; {:try_start_1f5 .. :try_end_1fe} :catch_132
-    .catch Ljava/io/IOException; {:try_start_1f5 .. :try_end_1fe} :catch_1eb
-    .catch Lorg/apache/http/HttpException; {:try_start_1f5 .. :try_end_1fe} :catch_1ff
+    :try_end_1fa
+    .catch Ljava/lang/InterruptedException; {:try_start_1f1 .. :try_end_1fa} :catch_132
+    .catch Ljava/io/IOException; {:try_start_1f1 .. :try_end_1fa} :catch_1e7
+    .catch Lorg/apache/http/HttpException; {:try_start_1f1 .. :try_end_1fa} :catch_1fb
 
-    goto :goto_1da
+    goto :goto_1d6
 
-    :catch_1ff
+    :catch_1fb
     move-exception v0
 
     const-string v1, "GoogleAnalyticsTracker"
@@ -612,10 +608,10 @@
 
     goto/16 :goto_13a
 
-    :cond_209
-    if-nez v7, :cond_214
+    :cond_205
+    if-nez v7, :cond_210
 
-    :try_start_20b
+    :try_start_207
     iget-object v0, p0, Lcom/google/android/apps/analytics/t;->a:Lcom/google/android/apps/analytics/s;
 
     invoke-static {v0}, Lcom/google/android/apps/analytics/s;->d(Lcom/google/android/apps/analytics/s;)Lcom/google/android/apps/analytics/x;
@@ -623,12 +619,12 @@
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/google/android/apps/analytics/x;->a()V
-    :try_end_214
-    .catch Ljava/lang/InterruptedException; {:try_start_20b .. :try_end_214} :catch_132
-    .catch Ljava/io/IOException; {:try_start_20b .. :try_end_214} :catch_1eb
-    .catch Lorg/apache/http/HttpException; {:try_start_20b .. :try_end_214} :catch_1ff
+    :try_end_210
+    .catch Ljava/lang/InterruptedException; {:try_start_207 .. :try_end_210} :catch_132
+    .catch Ljava/io/IOException; {:try_start_207 .. :try_end_210} :catch_1e7
+    .catch Lorg/apache/http/HttpException; {:try_start_207 .. :try_end_210} :catch_1fb
 
-    :cond_214
+    :cond_210
     add-int/lit8 v0, v6, 0x1
 
     move v6, v0

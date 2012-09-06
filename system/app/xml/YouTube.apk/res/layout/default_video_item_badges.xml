@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/video_badges" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ViewStub android:id="@id/badge_3d_stub" android:layout="@layout/badge_3d" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ViewStub android:id="@id/badge_hd_stub" android:layout="@layout/badge_hd" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ViewStub android:id="@id/badge_music_stub" android:layout="@layout/badge_music" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ViewStub android:id="@id/badge_prefetched_stub" android:layout="@layout/badge_prefetched" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>

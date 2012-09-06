@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/g;
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
@@ -37,7 +37,7 @@
 
     iget-object v0, p0, Lcom/google/android/youtube/core/ui/r;->a:Lcom/google/android/youtube/core/ui/q;
 
-    iget-object v0, v0, Lcom/google/android/youtube/core/ui/q;->e:Lcom/google/android/youtube/core/a/d;
+    iget-object v0, v0, Lcom/google/android/youtube/core/ui/q;->h:Lcom/google/android/youtube/core/a/d;
 
     invoke-virtual {v0, p1}, Lcom/google/android/youtube/core/a/d;->c(Landroid/net/Uri;)V
 
@@ -57,7 +57,7 @@
 
     iget-object v0, p0, Lcom/google/android/youtube/core/ui/r;->a:Lcom/google/android/youtube/core/ui/q;
 
-    iget-object v0, v0, Lcom/google/android/youtube/core/ui/q;->e:Lcom/google/android/youtube/core/a/d;
+    iget-object v0, v0, Lcom/google/android/youtube/core/ui/q;->h:Lcom/google/android/youtube/core/a/d;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/youtube/core/a/d;->a(Landroid/net/Uri;Landroid/graphics/Bitmap;)V
 

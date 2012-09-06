@@ -1,13 +1,10 @@
 .class public final Lcom/google/api/client/http/a/c;
-.super Lcom/google/api/client/http/p;
+.super Lcom/google/api/client/http/r;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:Lorg/apache/http/client/HttpClient;
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field private final b:Lorg/apache/http/client/HttpClient;
 
 
 # direct methods
@@ -15,30 +12,23 @@
     .registers 7
 
     .prologue
-    const/4 v3, 0x0
-
-    .line 88
-    invoke-direct {p0}, Lcom/google/api/client/http/p;-><init>()V
-
-    .line 91
+    .line 75
     new-instance v0, Lorg/apache/http/params/BasicHttpParams;
 
     invoke-direct {v0}, Lorg/apache/http/params/BasicHttpParams;-><init>()V
 
-    .line 92
-    invoke-static {v0, v3}, Lorg/apache/http/params/HttpConnectionParams;->setStaleCheckingEnabled(Lorg/apache/http/params/HttpParams;Z)V
+    const/4 v1, 0x0
 
-    .line 93
+    invoke-static {v0, v1}, Lorg/apache/http/params/HttpConnectionParams;->setStaleCheckingEnabled(Lorg/apache/http/params/HttpParams;Z)V
+
     const/16 v1, 0x2000
 
     invoke-static {v0, v1}, Lorg/apache/http/params/HttpConnectionParams;->setSocketBufferSize(Lorg/apache/http/params/HttpParams;I)V
 
-    .line 94
     const/16 v1, 0xc8
 
     invoke-static {v0, v1}, Lorg/apache/http/conn/params/ConnManagerParams;->setMaxTotalConnections(Lorg/apache/http/params/HttpParams;I)V
 
-    .line 95
     new-instance v1, Lorg/apache/http/conn/params/ConnPerRouteBean;
 
     const/16 v2, 0x14
@@ -47,22 +37,10 @@
 
     invoke-static {v0, v1}, Lorg/apache/http/conn/params/ConnManagerParams;->setMaxConnectionsPerRoute(Lorg/apache/http/params/HttpParams;Lorg/apache/http/conn/params/ConnPerRoute;)V
 
-    .line 96
-    const-string v1, "http.protocol.handle-redirects"
-
-    invoke-interface {v0, v1, v3}, Lorg/apache/http/params/HttpParams;->setBooleanParameter(Ljava/lang/String;Z)Lorg/apache/http/params/HttpParams;
-
-    .line 97
-    sget-object v1, Lorg/apache/http/HttpVersion;->HTTP_1_1:Lorg/apache/http/HttpVersion;
-
-    invoke-static {v0, v1}, Lorg/apache/http/params/HttpProtocolParams;->setVersion(Lorg/apache/http/params/HttpParams;Lorg/apache/http/ProtocolVersion;)V
-
-    .line 99
     new-instance v1, Lorg/apache/http/conn/scheme/SchemeRegistry;
 
     invoke-direct {v1}, Lorg/apache/http/conn/scheme/SchemeRegistry;-><init>()V
 
-    .line 100
     new-instance v2, Lorg/apache/http/conn/scheme/Scheme;
 
     const-string v3, "http"
@@ -77,7 +55,6 @@
 
     invoke-virtual {v1, v2}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
 
-    .line 101
     new-instance v2, Lorg/apache/http/conn/scheme/Scheme;
 
     const-string v3, "https"
@@ -92,30 +69,60 @@
 
     invoke-virtual {v1, v2}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
 
-    .line 102
     new-instance v2, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;
 
     invoke-direct {v2, v0, v1}, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;-><init>(Lorg/apache/http/params/HttpParams;Lorg/apache/http/conn/scheme/SchemeRegistry;)V
 
-    .line 103
     new-instance v1, Lorg/apache/http/impl/client/DefaultHttpClient;
 
     invoke-direct {v1, v2, v0}, Lorg/apache/http/impl/client/DefaultHttpClient;-><init>(Lorg/apache/http/conn/ClientConnectionManager;Lorg/apache/http/params/HttpParams;)V
 
-    iput-object v1, p0, Lcom/google/api/client/http/a/c;->b:Lorg/apache/http/client/HttpClient;
+    invoke-direct {p0, v1}, Lcom/google/api/client/http/a/c;-><init>(Lorg/apache/http/client/HttpClient;)V
 
-    .line 104
+    .line 76
+    return-void
+.end method
+
+.method private constructor <init>(Lorg/apache/http/client/HttpClient;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 98
+    invoke-direct {p0}, Lcom/google/api/client/http/r;-><init>()V
+
+    .line 99
+    iput-object p1, p0, Lcom/google/api/client/http/a/c;->b:Lorg/apache/http/client/HttpClient;
+
+    .line 100
+    invoke-interface {p1}, Lorg/apache/http/client/HttpClient;->getParams()Lorg/apache/http/params/HttpParams;
+
+    move-result-object v0
+
+    .line 101
+    sget-object v1, Lorg/apache/http/HttpVersion;->HTTP_1_1:Lorg/apache/http/HttpVersion;
+
+    invoke-static {v0, v1}, Lorg/apache/http/params/HttpProtocolParams;->setVersion(Lorg/apache/http/params/HttpParams;Lorg/apache/http/ProtocolVersion;)V
+
+    .line 102
+    const-string v1, "http.protocol.handle-redirects"
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v1, v2}, Lorg/apache/http/params/HttpParams;->setBooleanParameter(Ljava/lang/String;Z)Lorg/apache/http/params/HttpParams;
+
+    .line 103
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/String;)Lcom/google/api/client/http/s;
+.method public final synthetic a(Ljava/lang/String;)Lcom/google/api/client/http/u;
     .registers 5
     .parameter
 
     .prologue
-    .line 74
+    .line 64
     new-instance v0, Lcom/google/api/client/http/a/a;
 
     iget-object v1, p0, Lcom/google/api/client/http/a/c;->b:Lorg/apache/http/client/HttpClient;
@@ -129,12 +136,12 @@
     return-object v0
 .end method
 
-.method public final synthetic b(Ljava/lang/String;)Lcom/google/api/client/http/s;
+.method public final synthetic b(Ljava/lang/String;)Lcom/google/api/client/http/u;
     .registers 5
     .parameter
 
     .prologue
-    .line 74
+    .line 64
     new-instance v0, Lcom/google/api/client/http/a/a;
 
     iget-object v1, p0, Lcom/google/api/client/http/a/c;->b:Lorg/apache/http/client/HttpClient;
@@ -148,12 +155,12 @@
     return-object v0
 .end method
 
-.method public final synthetic c(Ljava/lang/String;)Lcom/google/api/client/http/s;
+.method public final synthetic c(Ljava/lang/String;)Lcom/google/api/client/http/u;
     .registers 5
     .parameter
 
     .prologue
-    .line 74
+    .line 64
     new-instance v0, Lcom/google/api/client/http/a/a;
 
     iget-object v1, p0, Lcom/google/api/client/http/a/c;->b:Lorg/apache/http/client/HttpClient;
@@ -171,18 +178,18 @@
     .registers 2
 
     .prologue
-    .line 108
+    .line 139
     const/4 v0, 0x1
 
     return v0
 .end method
 
-.method public final synthetic d(Ljava/lang/String;)Lcom/google/api/client/http/s;
+.method public final synthetic d(Ljava/lang/String;)Lcom/google/api/client/http/u;
     .registers 5
     .parameter
 
     .prologue
-    .line 74
+    .line 64
     new-instance v0, Lcom/google/api/client/http/a/a;
 
     iget-object v1, p0, Lcom/google/api/client/http/a/c;->b:Lorg/apache/http/client/HttpClient;
@@ -200,18 +207,18 @@
     .registers 2
 
     .prologue
-    .line 113
+    .line 144
     const/4 v0, 0x1
 
     return v0
 .end method
 
-.method public final synthetic e(Ljava/lang/String;)Lcom/google/api/client/http/s;
+.method public final synthetic e(Ljava/lang/String;)Lcom/google/api/client/http/u;
     .registers 5
     .parameter
 
     .prologue
-    .line 74
+    .line 64
     new-instance v0, Lcom/google/api/client/http/a/a;
 
     iget-object v1, p0, Lcom/google/api/client/http/a/c;->b:Lorg/apache/http/client/HttpClient;
@@ -225,12 +232,12 @@
     return-object v0
 .end method
 
-.method public final synthetic f(Ljava/lang/String;)Lcom/google/api/client/http/s;
+.method public final synthetic f(Ljava/lang/String;)Lcom/google/api/client/http/u;
     .registers 5
     .parameter
 
     .prologue
-    .line 74
+    .line 64
     new-instance v0, Lcom/google/api/client/http/a/a;
 
     iget-object v1, p0, Lcom/google/api/client/http/a/c;->b:Lorg/apache/http/client/HttpClient;

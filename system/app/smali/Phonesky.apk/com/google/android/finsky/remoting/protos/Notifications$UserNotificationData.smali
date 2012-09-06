@@ -43,40 +43,40 @@
     .registers 2
 
     .prologue
-    .line 350
+    .line 366
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 355
+    .line 371
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->notificationTitle_:Ljava/lang/String;
 
-    .line 372
+    .line 388
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->notificationText_:Ljava/lang/String;
 
-    .line 389
+    .line 405
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->tickerText_:Ljava/lang/String;
 
-    .line 406
+    .line 422
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->dialogTitle_:Ljava/lang/String;
 
-    .line 423
+    .line 439
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->dialogText_:Ljava/lang/String;
 
-    .line 470
+    .line 487
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->cachedSize:I
 
-    .line 350
+    .line 366
     return-void
 .end method
 
@@ -86,15 +86,15 @@
     .registers 2
 
     .prologue
-    .line 472
+    .line 490
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 474
+    .line 492
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->getSerializedSize()I
 
-    .line 476
+    .line 494
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->cachedSize:I
 
@@ -105,7 +105,7 @@
     .registers 2
 
     .prologue
-    .line 424
+    .line 440
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->dialogText_:Ljava/lang/String;
 
     return-object v0
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 407
+    .line 423
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->dialogTitle_:Ljava/lang/String;
 
     return-object v0
@@ -125,7 +125,7 @@
     .registers 2
 
     .prologue
-    .line 373
+    .line 389
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->notificationText_:Ljava/lang/String;
 
     return-object v0
@@ -135,7 +135,7 @@
     .registers 2
 
     .prologue
-    .line 356
+    .line 372
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->notificationTitle_:Ljava/lang/String;
 
     return-object v0
@@ -145,10 +145,10 @@
     .registers 4
 
     .prologue
-    .line 480
+    .line 499
     const/4 v0, 0x0
 
-    .line 481
+    .line 500
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasNotificationTitle()Z
 
@@ -156,7 +156,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 482
+    .line 501
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->getNotificationTitle()Ljava/lang/String;
@@ -169,7 +169,7 @@
 
     add-int/2addr v0, v1
 
-    .line 485
+    .line 504
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasNotificationText()Z
 
@@ -177,7 +177,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 486
+    .line 505
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->getNotificationText()Ljava/lang/String;
@@ -190,7 +190,7 @@
 
     add-int/2addr v0, v1
 
-    .line 489
+    .line 508
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasTickerText()Z
 
@@ -198,7 +198,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 490
+    .line 509
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->getTickerText()Ljava/lang/String;
@@ -211,7 +211,7 @@
 
     add-int/2addr v0, v1
 
-    .line 493
+    .line 512
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasDialogTitle()Z
 
@@ -219,7 +219,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 494
+    .line 513
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->getDialogTitle()Ljava/lang/String;
@@ -232,7 +232,7 @@
 
     add-int/2addr v0, v1
 
-    .line 497
+    .line 516
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasDialogText()Z
 
@@ -240,7 +240,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 498
+    .line 517
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->getDialogText()Ljava/lang/String;
@@ -253,11 +253,11 @@
 
     add-int/2addr v0, v1
 
-    .line 501
+    .line 520
     :cond_51
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->cachedSize:I
 
-    .line 502
+    .line 521
     return v0
 .end method
 
@@ -265,7 +265,7 @@
     .registers 2
 
     .prologue
-    .line 390
+    .line 406
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->tickerText_:Ljava/lang/String;
 
     return-object v0
@@ -275,7 +275,7 @@
     .registers 2
 
     .prologue
-    .line 425
+    .line 441
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasDialogText:Z
 
     return v0
@@ -285,7 +285,7 @@
     .registers 2
 
     .prologue
-    .line 408
+    .line 424
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasDialogTitle:Z
 
     return v0
@@ -295,7 +295,7 @@
     .registers 2
 
     .prologue
-    .line 374
+    .line 390
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasNotificationText:Z
 
     return v0
@@ -305,7 +305,7 @@
     .registers 2
 
     .prologue
-    .line 357
+    .line 373
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasNotificationTitle:Z
 
     return v0
@@ -315,7 +315,7 @@
     .registers 2
 
     .prologue
-    .line 391
+    .line 407
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasTickerText:Z
 
     return v0
@@ -331,29 +331,29 @@
     .end annotation
 
     .prologue
-    .line 509
+    .line 529
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 510
+    .line 530
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_36
 
-    .line 514
+    .line 534
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 515
+    .line 535
     :sswitch_d
     return-object p0
 
-    .line 520
+    .line 540
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -363,7 +363,7 @@
 
     goto :goto_0
 
-    .line 524
+    .line 544
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -373,7 +373,7 @@
 
     goto :goto_0
 
-    .line 528
+    .line 548
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -383,7 +383,7 @@
 
     goto :goto_0
 
-    .line 532
+    .line 552
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -393,7 +393,7 @@
 
     goto :goto_0
 
-    .line 536
+    .line 556
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -403,7 +403,7 @@
 
     goto :goto_0
 
-    .line 510
+    .line 530
     :sswitch_data_36
     .sparse-switch
         0x0 -> :sswitch_d
@@ -425,7 +425,7 @@
     .end annotation
 
     .prologue
-    .line 348
+    .line 363
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;
 
     move-result-object v0
@@ -438,15 +438,15 @@
     .parameter "value"
 
     .prologue
-    .line 427
+    .line 443
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasDialogText:Z
 
-    .line 428
+    .line 444
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->dialogText_:Ljava/lang/String;
 
-    .line 429
+    .line 445
     return-object p0
 .end method
 
@@ -455,15 +455,15 @@
     .parameter "value"
 
     .prologue
-    .line 410
+    .line 426
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasDialogTitle:Z
 
-    .line 411
+    .line 427
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->dialogTitle_:Ljava/lang/String;
 
-    .line 412
+    .line 428
     return-object p0
 .end method
 
@@ -472,15 +472,15 @@
     .parameter "value"
 
     .prologue
-    .line 376
+    .line 392
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasNotificationText:Z
 
-    .line 377
+    .line 393
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->notificationText_:Ljava/lang/String;
 
-    .line 378
+    .line 394
     return-object p0
 .end method
 
@@ -489,15 +489,15 @@
     .parameter "value"
 
     .prologue
-    .line 359
+    .line 375
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasNotificationTitle:Z
 
-    .line 360
+    .line 376
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->notificationTitle_:Ljava/lang/String;
 
-    .line 361
+    .line 377
     return-object p0
 .end method
 
@@ -506,15 +506,15 @@
     .parameter "value"
 
     .prologue
-    .line 393
+    .line 409
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasTickerText:Z
 
-    .line 394
+    .line 410
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->tickerText_:Ljava/lang/String;
 
-    .line 395
+    .line 411
     return-object p0
 .end method
 
@@ -528,14 +528,14 @@
     .end annotation
 
     .prologue
-    .line 453
+    .line 470
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasNotificationTitle()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 454
+    .line 471
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->getNotificationTitle()Ljava/lang/String;
@@ -544,7 +544,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 456
+    .line 473
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasNotificationText()Z
 
@@ -552,7 +552,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 457
+    .line 474
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->getNotificationText()Ljava/lang/String;
@@ -561,7 +561,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 459
+    .line 476
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasTickerText()Z
 
@@ -569,7 +569,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 460
+    .line 477
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->getTickerText()Ljava/lang/String;
@@ -578,7 +578,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 462
+    .line 479
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasDialogTitle()Z
 
@@ -586,7 +586,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 463
+    .line 480
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->getDialogTitle()Ljava/lang/String;
@@ -595,7 +595,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 465
+    .line 482
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->hasDialogText()Z
 
@@ -603,7 +603,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 466
+    .line 483
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$UserNotificationData;->getDialogText()Ljava/lang/String;
@@ -612,7 +612,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 468
+    .line 485
     :cond_46
     return-void
 .end method

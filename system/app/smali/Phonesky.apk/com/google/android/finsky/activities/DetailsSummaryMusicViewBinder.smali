@@ -4,15 +4,16 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/finsky/api/model/DfeToc;)V
-    .registers 2
+.method public constructor <init>(Lcom/google/android/finsky/api/model/DfeToc;Landroid/accounts/Account;)V
+    .registers 3
     .parameter "dfeToc"
+    .parameter "account"
 
     .prologue
-    .line 17
-    invoke-direct {p0, p1}, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;-><init>(Lcom/google/android/finsky/api/model/DfeToc;)V
+    .line 19
+    invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;-><init>(Lcom/google/android/finsky/api/model/DfeToc;Landroid/accounts/Account;)V
 
-    .line 18
+    .line 20
     return-void
 .end method
 
@@ -21,46 +22,50 @@
     .parameter "x0"
 
     .prologue
-    .line 15
+    .line 17
     invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->goToArtistPage()V
 
     return-void
 .end method
 
 .method private goToArtistPage()V
-    .registers 5
+    .registers 7
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    .line 70
-    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+    .line 80
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Document;->getAlbumDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;->getDisplayArtist()Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;->getDetailsUrl()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/finsky/api/model/Document;->getAlbumDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;
 
     move-result-object v0
 
-    .line 71
-    .local v0, artistDetailsUrl:Ljava/lang/String;
-    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;->getDisplayArtist()Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
 
-    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+    move-result-object v0
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/api/model/Document;->getDetailsUrl()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;->getDetailsUrl()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v0, v3, v2, v3}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToDocPage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .line 81
+    .local v1, artistDetailsUrl:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
-    .line 72
+    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/api/model/Document;->getDetailsUrl()Ljava/lang/String;
+
+    move-result-object v3
+
+    move-object v4, v2
+
+    move-object v5, v2
+
+    invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToDocPage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 82
     return-void
 .end method
 
@@ -68,7 +73,7 @@
     .registers 2
 
     .prologue
-    .line 62
+    .line 72
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/Document;->getAlbumDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;
@@ -123,117 +128,147 @@
 
 # virtual methods
 .method protected setupItemDetails()V
-    .registers 7
+    .registers 9
 
     .prologue
-    const v5, 0x7f0800bd
+    const v7, 0x7f0800eb
 
-    const/4 v4, 0x0
+    const/4 v6, 0x1
 
-    .line 26
-    invoke-super {p0}, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->setupItemDetails()V
+    const/4 v5, 0x0
 
     .line 28
-    const v3, 0x7f0800bb
+    invoke-super {p0}, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->setupItemDetails()V
 
-    invoke-virtual {p0, v3}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->findViewById(I)Landroid/view/View;
+    .line 30
+    const v4, 0x7f0800ea
 
-    move-result-object v0
-
-    .line 29
-    .local v0, creatorPanel:Landroid/view/View;
-    if-eqz v0, :cond_2d
-
-    .line 31
-    invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->hasArtistLink()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_53
-
-    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
-
-    if-eqz v3, :cond_53
-
-    .line 32
-    invoke-virtual {p0, v5}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->findViewById(I)Landroid/view/View;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v4}, Landroid/view/View;->setVisibility(I)V
-
-    .line 33
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v3}, Landroid/view/View;->setFocusable(Z)V
-
-    .line 34
-    new-instance v3, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder$1;
-
-    invoke-direct {v3, p0}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder$1;-><init>(Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;)V
-
-    invoke-virtual {v0, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 47
-    :cond_2d
-    :goto_2d
-    const v3, 0x7f0800be
-
-    invoke-virtual {p0, v3}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v4}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    check-cast v1, Lcom/google/android/finsky/layout/DecoratedTextView;
+    .line 31
+    .local v1, creatorPanel:Landroid/view/View;
+    if-eqz v1, :cond_33
 
-    .line 48
-    .local v1, tipperStickerView:Lcom/google/android/finsky/layout/DecoratedTextView;
-    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+    .line 33
+    invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->hasArtistLink()Z
 
-    invoke-static {v3, v1}, Lcom/google/android/finsky/utils/BadgeUtils;->configureTipperSticker(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/layout/DecoratedTextView;)V
+    move-result v4
 
-    .line 49
-    invoke-virtual {v1}, Lcom/google/android/finsky/layout/DecoratedTextView;->getVisibility()I
+    if-eqz v4, :cond_69
 
-    move-result v3
+    iget-object v4, p0, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
-    if-nez v3, :cond_52
+    if-eqz v4, :cond_69
 
-    .line 52
-    const v3, 0x7f08007b
+    .line 34
+    invoke-virtual {p0, v7}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->findViewById(I)Landroid/view/View;
 
-    invoke-virtual {p0, v3}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->findViewById(I)Landroid/view/View;
+    move-result-object v4
+
+    invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
+
+    .line 35
+    invoke-virtual {v1, v6}, Landroid/view/View;->setFocusable(Z)V
+
+    .line 36
+    const v4, 0x7f020062
+
+    invoke-virtual {v1, v4}, Landroid/view/View;->setBackgroundResource(I)V
+
+    .line 37
+    new-instance v4, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder$1;
+
+    invoke-direct {v4, p0}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder$1;-><init>(Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;)V
+
+    invoke-virtual {v1, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 51
+    :cond_33
+    :goto_33
+    const v4, 0x7f0800ec
+
+    invoke-virtual {p0, v4}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
-    check-cast v2, Landroid/widget/TextView;
+    check-cast v2, Lcom/google/android/finsky/layout/DecoratedTextView;
+
+    .line 52
+    .local v2, tipperStickerView:Lcom/google/android/finsky/layout/DecoratedTextView;
+    iget-object v4, p0, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-static {v4, v2}, Lcom/google/android/finsky/utils/BadgeUtils;->configureTipperSticker(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/layout/DecoratedTextView;)V
 
     .line 53
-    .local v2, title:Landroid/widget/TextView;
-    invoke-virtual {v2}, Landroid/widget/TextView;->setSingleLine()V
+    invoke-virtual {v2}, Lcom/google/android/finsky/layout/DecoratedTextView;->getVisibility()I
 
-    .line 54
-    sget-object v3, Landroid/text/TextUtils$TruncateAt;->MARQUEE:Landroid/text/TextUtils$TruncateAt;
+    move-result v4
 
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
+    if-nez v4, :cond_58
 
     .line 56
-    .end local v2           #title:Landroid/widget/TextView;
-    :cond_52
-    return-void
+    const v4, 0x7f0800e4
 
-    .line 42
-    .end local v1           #tipperStickerView:Lcom/google/android/finsky/layout/DecoratedTextView;
-    :cond_53
-    invoke-virtual {v0, v4}, Landroid/view/View;->setFocusable(Z)V
-
-    .line 43
-    invoke-virtual {p0, v5}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v4}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
-    const/16 v4, 0x8
+    check-cast v3, Landroid/widget/TextView;
 
-    invoke-virtual {v3, v4}, Landroid/view/View;->setVisibility(I)V
+    .line 57
+    .local v3, title:Landroid/widget/TextView;
+    invoke-virtual {v3}, Landroid/widget/TextView;->setSingleLine()V
 
-    goto :goto_2d
+    .line 58
+    sget-object v4, Landroid/text/TextUtils$TruncateAt;->MARQUEE:Landroid/text/TextUtils$TruncateAt;
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
+
+    .line 61
+    .end local v3           #title:Landroid/widget/TextView;
+    :cond_58
+    const v4, 0x7f0800c1
+
+    invoke-virtual {p0, v4}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    .line 62
+    .local v0, buttonContainer:Landroid/view/View;
+    instance-of v4, v0, Lcom/google/android/finsky/layout/DetailsButtonColumnLayout;
+
+    if-eqz v4, :cond_68
+
+    .line 64
+    check-cast v0, Lcom/google/android/finsky/layout/DetailsButtonColumnLayout;
+
+    .end local v0           #buttonContainer:Landroid/view/View;
+    invoke-virtual {v0, v6}, Lcom/google/android/finsky/layout/DetailsButtonColumnLayout;->setMinimumRowCount(I)V
+
+    .line 66
+    :cond_68
+    return-void
+
+    .line 45
+    .end local v2           #tipperStickerView:Lcom/google/android/finsky/layout/DecoratedTextView;
+    :cond_69
+    invoke-virtual {v1, v5}, Landroid/view/View;->setFocusable(Z)V
+
+    .line 46
+    const v4, 0x7f020100
+
+    invoke-virtual {v1, v4}, Landroid/view/View;->setBackgroundResource(I)V
+
+    .line 47
+    invoke-virtual {p0, v7}, Lcom/google/android/finsky/activities/DetailsSummaryMusicViewBinder;->findViewById(I)Landroid/view/View;
+
+    move-result-object v4
+
+    const/16 v5, 0x8
+
+    invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
+
+    goto :goto_33
 .end method

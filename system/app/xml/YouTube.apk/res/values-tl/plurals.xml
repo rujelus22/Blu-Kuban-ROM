@@ -28,6 +28,14 @@
         <item quantity="other">%1$d segundo lumipas</item>
         <item quantity="one">1 segundo ang nakakalipas</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Mag-expire %1$d araw</item>
+        <item quantity="one">Mag-expire sa 1 araw</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Mag-expire %1$d oras</item>
+        <item quantity="one">Mag-expire sa 1 oras</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">mga bagong upload</item>
         <item quantity="one">bagong upload</item>

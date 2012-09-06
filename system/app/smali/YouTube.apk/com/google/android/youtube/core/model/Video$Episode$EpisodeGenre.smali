@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/model/r;
+.implements Lcom/google/android/youtube/core/model/q;
 
 
 # static fields
@@ -91,7 +91,7 @@
 
     const-string v1, "ACTION_AND_ADVENTURE"
 
-    const v2, 0x7f0a0062
+    const v2, 0x7f0b0085
 
     invoke-direct {v0, v1, v5, v2}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -102,7 +102,7 @@
 
     const-string v1, "ANIMATION_AND_CARTOONS"
 
-    const v2, 0x7f0a0063
+    const v2, 0x7f0b0086
 
     invoke-direct {v0, v1, v6, v2}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -113,7 +113,7 @@
 
     const-string v1, "COMEDY"
 
-    const v2, 0x7f0a0064
+    const v2, 0x7f0b0087
 
     invoke-direct {v0, v1, v7, v2}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -124,7 +124,7 @@
 
     const-string v1, "DRAMA"
 
-    const v2, 0x7f0a0065
+    const v2, 0x7f0b0088
 
     invoke-direct {v0, v1, v8, v2}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -137,7 +137,7 @@
 
     const/4 v2, 0x5
 
-    const v3, 0x7f0a0066
+    const v3, 0x7f0b0089
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -150,7 +150,7 @@
 
     const/4 v2, 0x6
 
-    const v3, 0x7f0a0067
+    const v3, 0x7f0b008a
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -163,7 +163,7 @@
 
     const/4 v2, 0x7
 
-    const v3, 0x7f0a0068
+    const v3, 0x7f0b008b
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -176,7 +176,7 @@
 
     const/16 v2, 0x8
 
-    const v3, 0x7f0a0070
+    const v3, 0x7f0b0093
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -189,7 +189,7 @@
 
     const/16 v2, 0x9
 
-    const v3, 0x7f0a0071
+    const v3, 0x7f0b0094
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -202,7 +202,7 @@
 
     const/16 v2, 0xa
 
-    const v3, 0x7f0a0072
+    const v3, 0x7f0b0095
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -215,7 +215,7 @@
 
     const/16 v2, 0xb
 
-    const v3, 0x7f0a0073
+    const v3, 0x7f0b0096
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -228,7 +228,7 @@
 
     const/16 v2, 0xc
 
-    const v3, 0x7f0a0074
+    const v3, 0x7f0b0097
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -241,7 +241,7 @@
 
     const/16 v2, 0xd
 
-    const v3, 0x7f0a0075
+    const v3, 0x7f0b0098
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -254,7 +254,7 @@
 
     const/16 v2, 0xe
 
-    const v3, 0x7f0a0076
+    const v3, 0x7f0b0099
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -267,7 +267,7 @@
 
     const/16 v2, 0xf
 
-    const v3, 0x7f0a0077
+    const v3, 0x7f0b009a
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -280,7 +280,7 @@
 
     const/16 v2, 0x10
 
-    const v3, 0x7f0a0078
+    const v3, 0x7f0b009b
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -293,7 +293,7 @@
 
     const/16 v2, 0x11
 
-    const v3, 0x7f0a0079
+    const v3, 0x7f0b009c
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -306,7 +306,7 @@
 
     const/16 v2, 0x12
 
-    const v3, 0x7f0a007a
+    const v3, 0x7f0b009d
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -319,7 +319,7 @@
 
     const/16 v2, 0x13
 
-    const v3, 0x7f0a007b
+    const v3, 0x7f0b009e
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -332,7 +332,7 @@
 
     const/16 v2, 0x14
 
-    const v3, 0x7f0a007c
+    const v3, 0x7f0b009f
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -345,7 +345,7 @@
 
     const/16 v2, 0x15
 
-    const v3, 0x7f0a007d
+    const v3, 0x7f0b00a0
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 
@@ -358,7 +358,7 @@
 
     const/16 v2, 0x16
 
-    const v3, 0x7f0a007e
+    const v3, 0x7f0b00a1
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$Episode$EpisodeGenre;-><init>(Ljava/lang/String;II)V
 

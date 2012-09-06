@@ -50,7 +50,9 @@
     iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/b;->b:Landroid/view/LayoutInflater;
 
     .line 55
-    iput-object p2, p0, Lcom/google/android/youtube/app/honeycomb/ui/b;->c:Lcom/google/android/youtube/app/ui/ToolbarHelper;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/b;->c:Lcom/google/android/youtube/app/ui/ToolbarHelper;
 
     .line 56
     return-void
@@ -64,7 +66,7 @@
     .line 36
     const-string v0, "context may not be null"
 
-    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 37
     new-instance v0, Lcom/google/android/youtube/app/honeycomb/ui/b;
@@ -72,25 +74,6 @@
     const/4 v1, 0x0
 
     invoke-direct {v0, p0, v1}, Lcom/google/android/youtube/app/honeycomb/ui/b;-><init>(Landroid/content/Context;Lcom/google/android/youtube/app/ui/ToolbarHelper;)V
-
-    return-object v0
-.end method
-
-.method public static a(Landroid/content/Context;Lcom/google/android/youtube/app/ui/ToolbarHelper;)Lcom/google/android/youtube/app/honeycomb/ui/b;
-    .registers 3
-    .parameter
-    .parameter
-
-    .prologue
-    .line 41
-    const-string v0, "context may not be null"
-
-    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 42
-    new-instance v0, Lcom/google/android/youtube/app/honeycomb/ui/b;
-
-    invoke-direct {v0, p0, p1}, Lcom/google/android/youtube/app/honeycomb/ui/b;-><init>(Landroid/content/Context;Lcom/google/android/youtube/app/ui/ToolbarHelper;)V
 
     return-object v0
 .end method
@@ -184,7 +167,7 @@
     .line 89
     iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/ui/b;->b:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f040022
+    const v2, 0x7f04003e
 
     invoke-virtual {v1, v2, p3, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -275,7 +258,7 @@
 
     iget-object v6, p0, Lcom/google/android/youtube/app/honeycomb/ui/b;->a:Landroid/content/Context;
 
-    invoke-static {v6, v0}, Lcom/google/android/youtube/core/utils/r;->a(Landroid/content/Context;Lcom/google/android/youtube/core/model/LiveEvent;)Ljava/lang/String;
+    invoke-static {v6, v0}, Lcom/google/android/youtube/core/utils/ac;->a(Landroid/content/Context;Lcom/google/android/youtube/core/model/LiveEvent;)Ljava/lang/String;
 
     move-result-object v6
 
@@ -449,7 +432,7 @@
     .line 128
     iget-object v2, v1, Lcom/google/android/youtube/app/honeycomb/ui/c;->e:Landroid/widget/ImageView;
 
-    const v5, 0x7f020089
+    const v5, 0x7f0200d0
 
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 

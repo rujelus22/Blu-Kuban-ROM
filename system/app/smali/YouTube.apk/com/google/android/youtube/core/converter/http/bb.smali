@@ -1,69 +1,36 @@
-.class final synthetic Lcom/google/android/youtube/core/converter/http/bb;
-.super Ljava/lang/Object;
+.class public final Lcom/google/android/youtube/core/converter/http/bb;
+.super Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;
 .source "SourceFile"
 
 
-# static fields
-.field static final synthetic a:[I
-
-
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/lang/String;)V
     .registers 3
+    .parameter
 
     .prologue
-    .line 55
-    invoke-static {}, Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;->values()[Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;
+    .line 18
+    invoke-direct {p0}, Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;-><init>()V
+
+    .line 19
+    invoke-static {p1}, Ljava/net/URI;->create(Ljava/lang/String;)Ljava/net/URI;
 
     move-result-object v0
 
-    array-length v0, v0
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/core/converter/http/bb;->setURI(Ljava/net/URI;)V
 
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/google/android/youtube/core/converter/http/bb;->a:[I
-
-    :try_start_9
-    sget-object v0, Lcom/google/android/youtube/core/converter/http/bb;->a:[I
-
-    sget-object v1, Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;->CLIENTLOGIN:Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;
-
-    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
-
-    :goto_14
-    :try_start_14
-    sget-object v0, Lcom/google/android/youtube/core/converter/http/bb;->a:[I
-
-    sget-object v1, Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;->OAUTH2:Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;
-
-    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
-
-    :goto_1f
+    .line 20
     return-void
+.end method
 
-    :catch_20
-    move-exception v0
 
-    goto :goto_1f
+# virtual methods
+.method public final getMethod()Ljava/lang/String;
+    .registers 2
 
-    :catch_22
-    move-exception v0
+    .prologue
+    .line 24
+    const-string v0, "PATCH"
 
-    goto :goto_14
+    return-object v0
 .end method

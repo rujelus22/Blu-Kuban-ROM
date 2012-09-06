@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item type="drawable" name="class_zero_background">#7f040000</item>
-    <item type="drawable" name="light_blue_background">#ffecfbff</item>
-    <item type="drawable" name="white_background">#ffffffff</item>
-    <item type="drawable" name="text_color">#ffffffff</item>
-    <item type="drawable" name="text_color_red">#ffff0000</item>
-    <item type="drawable" name="text_color_black">#ff000000</item>
-    <item type="drawable" name="text_color_offwhite">#55ffffff</item>
-    <item type="drawable" name="push_message_dialog_background">#7f040000</item>
     <item type="drawable" name="APKTOOL_DUMMY_0006">false</item>
     <item type="drawable" name="APKTOOL_DUMMY_0009">false</item>
     <item type="drawable" name="APKTOOL_DUMMY_0021">false</item>
@@ -87,4 +79,12 @@
     <item type="drawable" name="APKTOOL_DUMMY_0156">false</item>
     <item type="drawable" name="APKTOOL_DUMMY_0157">false</item>
     <item type="drawable" name="APKTOOL_DUMMY_016b">false</item>
+    <item type="drawable" name="class_zero_background">#7f000000</item>
+    <item type="drawable" name="light_blue_background">#ff155496</item>
+    <item type="drawable" name="white_background">#ffffffff</item>
+    <item type="drawable" name="text_color">#ffffffff</item>
+    <item type="drawable" name="text_color_red">#ff990000</item>
+    <item type="drawable" name="text_color_black">#ff000000</item>
+    <item type="drawable" name="text_color_offwhite">#55ffffff</item>
+    <item type="drawable" name="push_message_dialog_background">#7f000000</item>
 </resources>

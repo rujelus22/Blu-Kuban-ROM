@@ -36,7 +36,7 @@
     .line 91
     iput-object p1, p0, Lcom/google/android/videochat/CallManager$StatsUpdate;->this$0:Lcom/google/android/videochat/CallManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 92
     iput-wide p2, p0, Lcom/google/android/videochat/CallManager$StatsUpdate;->mTime:J

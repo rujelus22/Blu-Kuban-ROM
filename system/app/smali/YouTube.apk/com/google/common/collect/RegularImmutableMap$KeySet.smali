@@ -13,9 +13,9 @@
     .parameter
 
     .prologue
-    .line 156
-    #getter for: Lcom/google/common/collect/RegularImmutableMap;->entries:[Ljava/util/Map$Entry;
-    invoke-static {p1}, Lcom/google/common/collect/RegularImmutableMap;->access$000(Lcom/google/common/collect/RegularImmutableMap;)[Ljava/util/Map$Entry;
+    .line 229
+    #getter for: Lcom/google/common/collect/RegularImmutableMap;->entries:[Lcom/google/common/collect/jn;
+    invoke-static {p1}, Lcom/google/common/collect/RegularImmutableMap;->access$000(Lcom/google/common/collect/RegularImmutableMap;)[Lcom/google/common/collect/jn;
 
     move-result-object v0
 
@@ -26,10 +26,10 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;-><init>([Ljava/lang/Object;I)V
 
-    .line 157
+    .line 230
     iput-object p1, p0, Lcom/google/common/collect/RegularImmutableMap$KeySet;->map:Lcom/google/common/collect/RegularImmutableMap;
 
-    .line 158
+    .line 231
     return-void
 .end method
 
@@ -40,7 +40,7 @@
     .parameter
 
     .prologue
-    .line 165
+    .line 238
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap$KeySet;->map:Lcom/google/common/collect/RegularImmutableMap;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/RegularImmutableMap;->containsKey(Ljava/lang/Object;)Z
@@ -50,12 +50,22 @@
     return v0
 .end method
 
+.method isPartialView()Z
+    .registers 2
+
+    .prologue
+    .line 242
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
 .method bridge synthetic transform(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
     .parameter
 
     .prologue
-    .line 150
+    .line 223
     check-cast p1, Ljava/util/Map$Entry;
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/RegularImmutableMap$KeySet;->transform(Ljava/util/Map$Entry;)Ljava/lang/Object;
@@ -70,7 +80,7 @@
     .parameter
 
     .prologue
-    .line 161
+    .line 234
     invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v0

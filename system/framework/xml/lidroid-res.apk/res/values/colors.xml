@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sliding_tab_text_color_active">@android:color/black</color>
+    <color name="sliding_tab_text_color_shadow">@android:color/black</color>
+    <color name="keyguard_text_color_normal">@android:color/white</color>
+    <color name="keyguard_text_color_unlock">#ffa7d84c</color>
+    <color name="keyguard_text_color_soundoff">@android:color/white</color>
+    <color name="keyguard_text_color_soundon">#ffe69310</color>
+    <color name="keyguard_text_color_decline">#fffe0a5a</color>
+    <color name="preference_secondary_text">#ff7f7f7f</color>
+    <color name="preference_category_text">#ff7f7f7f</color>
+    <color name="power_widget_button_text">@android:color/white</color>
+    <color name="lense_text_color">@android:color/white</color>
+</resources>

@@ -31,7 +31,7 @@
     .registers 1
 
     .prologue
-    .line 307
+    .line 309
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .registers 2
 
     .prologue
-    .line 315
+    .line 317
     iget-boolean v0, p0, Lcom/google/android/street/StreetView$Status;->mBadPanorama:Z
 
     if-nez v0, :cond_c
@@ -56,37 +56,37 @@
 
     if-eqz v0, :cond_f
 
-    .line 318
+    .line 320
     :cond_c
     const/16 v0, 0x2710
 
-    .line 326
+    .line 328
     :goto_e
     return v0
 
-    .line 320
+    .line 322
     :cond_f
     iget-boolean v0, p0, Lcom/google/android/street/StreetView$Status;->mGotNetworkConnection:Z
 
     if-nez v0, :cond_15
 
-    .line 321
+    .line 323
     const/4 v0, 0x0
 
     goto :goto_e
 
-    .line 323
+    .line 325
     :cond_15
     iget-boolean v0, p0, Lcom/google/android/street/StreetView$Status;->mGotPanoramaConfig:Z
 
     if-nez v0, :cond_1c
 
-    .line 324
+    .line 326
     const/16 v0, 0x3e8
 
     goto :goto_e
 
-    .line 326
+    .line 328
     :cond_1c
     const/16 v0, 0x7d0
 

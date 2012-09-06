@@ -40,7 +40,7 @@
     .parameter
 
     .prologue
-    .line 148
+    .line 147
     iput-object p1, p0, Lcom/google/android/finsky/analytics/DfeAnalytics$1;->this$0:Lcom/google/android/finsky/analytics/DfeAnalytics;
 
     iput p2, p0, Lcom/google/android/finsky/analytics/DfeAnalytics$1;->val$currentLogCount:I
@@ -57,12 +57,12 @@
     .parameter "response"
 
     .prologue
-    .line 151
+    .line 150
     sget-boolean v0, Lcom/google/android/finsky/utils/FinskyLog;->DEBUG:Z
 
     if-eqz v0, :cond_15
 
-    .line 152
+    .line 151
     const-string v0, "Logged %d analytics events successfully."
 
     const/4 v1, 0x1
@@ -81,7 +81,7 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 154
+    .line 153
     :cond_15
     return-void
 .end method
@@ -91,7 +91,7 @@
     .parameter "x0"
 
     .prologue
-    .line 148
+    .line 147
     check-cast p1, Lcom/google/android/finsky/remoting/protos/Log$LogResponse;
 
     .end local p1

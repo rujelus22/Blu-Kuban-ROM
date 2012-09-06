@@ -8,6 +8,9 @@
     <dimen name="da_step_description_big_text">28.0dip</dimen>
     <dimen name="da_camera_positioner_bottom_margin">0.0dip</dimen>
     <dimen name="da_road_name_offset_from_center">20.0dip</dimen>
+    <dimen name="my_location_notifier_header_view_max_width">250.0dip</dimen>
+    <dimen name="my_location_notifier_header_view_top_padding">0.0dip</dimen>
+    <dimen name="my_location_notifier_header_view_top_padding_more">0.0dip</dimen>
     <dimen name="navigation_action_bar_height">45.0dip</dimen>
     <dimen name="vs_recognition_dialog_marginTop">5.0dip</dimen>
     <dimen name="vs_spinner_marginTop">91.0dip</dimen>

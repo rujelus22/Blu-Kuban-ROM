@@ -33,17 +33,17 @@
     .registers 2
 
     .prologue
-    .line 32
+    .line 27
     invoke-direct {p0}, Lcom/android/email/MessagingListener;-><init>()V
 
-    .line 40
+    .line 36
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/email/GroupMessagingListener;->mListenersMap:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 42
+    .line 39
     iget-object v0, p0, Lcom/android/email/GroupMessagingListener;->mListenersMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->keySet()Ljava/util/Set;
@@ -62,7 +62,7 @@
     .parameter "listener"
 
     .prologue
-    .line 46
+    .line 43
     monitor-enter p0
 
     :try_start_1
@@ -72,12 +72,12 @@
     :try_end_6
     .catchall {:try_start_1 .. :try_end_6} :catchall_8
 
-    .line 47
+    .line 44
     monitor-exit p0
 
     return-void
 
-    .line 46
+    .line 43
     :catchall_8
     move-exception v0
 
@@ -94,7 +94,7 @@
     .parameter "tag"
 
     .prologue
-    .line 147
+    .line 129
     monitor-enter p0
 
     :try_start_1
@@ -127,14 +127,14 @@
 
     move-wide v6, p6
 
-    .line 148
+    .line 130
     invoke-virtual/range {v0 .. v7}, Lcom/android/email/MessagingListener;->checkMailFinished(Landroid/content/Context;JJJ)V
     :try_end_1a
     .catchall {:try_start_1 .. :try_end_1a} :catchall_1b
 
     goto :goto_7
 
-    .line 147
+    .line 129
     .end local v0           #l:Lcom/android/email/MessagingListener;
     .end local v8           #i$:Ljava/util/Iterator;
     :catchall_1b
@@ -144,7 +144,7 @@
 
     throw v1
 
-    .line 150
+    .line 132
     .restart local v8       #i$:Ljava/util/Iterator;
     :cond_1e
     monitor-exit p0
@@ -159,7 +159,7 @@
     .parameter "tag"
 
     .prologue
-    .line 139
+    .line 121
     monitor-enter p0
 
     :try_start_1
@@ -190,14 +190,14 @@
 
     move-wide v4, p4
 
-    .line 140
+    .line 122
     invoke-virtual/range {v0 .. v5}, Lcom/android/email/MessagingListener;->checkMailStarted(Landroid/content/Context;JJ)V
     :try_end_19
     .catchall {:try_start_1 .. :try_end_19} :catchall_1a
 
     goto :goto_7
 
-    .line 139
+    .line 121
     .end local v0           #l:Lcom/android/email/MessagingListener;
     .end local v6           #i$:Ljava/util/Iterator;
     :catchall_1a
@@ -207,7 +207,7 @@
 
     throw v1
 
-    .line 142
+    .line 124
     .restart local v6       #i$:Ljava/util/Iterator;
     :cond_1d
     monitor-exit p0
@@ -220,7 +220,7 @@
     .parameter "moreCommandsToRun"
 
     .prologue
-    .line 231
+    .line 199
     monitor-enter p0
 
     :try_start_1
@@ -244,7 +244,7 @@
 
     check-cast v1, Lcom/android/email/MessagingListener;
 
-    .line 232
+    .line 200
     .local v1, l:Lcom/android/email/MessagingListener;
     invoke-virtual {v1, p1}, Lcom/android/email/MessagingListener;->controllerCommandCompleted(Z)V
     :try_end_16
@@ -252,7 +252,7 @@
 
     goto :goto_7
 
-    .line 231
+    .line 199
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #l:Lcom/android/email/MessagingListener;
     :catchall_17
@@ -262,200 +262,9 @@
 
     throw v2
 
-    .line 234
+    .line 202
     .restart local v0       #i$:Ljava/util/Iterator;
     :cond_1a
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public deleteUserAccountStatus(Landroid/os/Bundle;J)V
-    .registers 8
-    .parameter "bundle"
-    .parameter "accountId"
-
-    .prologue
-    .line 239
-    iget-object v3, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    monitor-enter v3
-
-    .line 240
-    :try_start_3
-    iget-object v2, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, i$:Ljava/util/Iterator;
-    :goto_9
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1c
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/email/MessagingListener;
-
-    .line 241
-    .local v1, l:Lcom/android/email/MessagingListener;
-    invoke-virtual {v1, p1, p2, p3}, Lcom/android/email/MessagingListener;->deleteUserAccountStatus(Landroid/os/Bundle;J)V
-
-    goto :goto_9
-
-    .line 243
-    .end local v0           #i$:Ljava/util/Iterator;
-    .end local v1           #l:Lcom/android/email/MessagingListener;
-    :catchall_19
-    move-exception v2
-
-    monitor-exit v3
-    :try_end_1b
-    .catchall {:try_start_3 .. :try_end_1b} :catchall_19
-
-    throw v2
-
-    .restart local v0       #i$:Ljava/util/Iterator;
-    :cond_1c
-    :try_start_1c
-    monitor-exit v3
-    :try_end_1d
-    .catchall {:try_start_1c .. :try_end_1d} :catchall_19
-
-    .line 244
-    return-void
-.end method
-
-.method public folderPushStatus(Lcom/android/emailcommon/provider/EmailContent$Mailbox;Lcom/android/emailcommon/mail/MessagingException;I)V
-    .registers 8
-    .parameter "mailbox"
-    .parameter "e"
-    .parameter "progress"
-
-    .prologue
-    .line 257
-    iget-object v3, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    monitor-enter v3
-
-    .line 258
-    :try_start_3
-    iget-object v2, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, i$:Ljava/util/Iterator;
-    :goto_9
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1c
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/email/MessagingListener;
-
-    .line 259
-    .local v1, l:Lcom/android/email/MessagingListener;
-    invoke-virtual {v1, p1, p2, p3}, Lcom/android/email/MessagingListener;->folderPushStatus(Lcom/android/emailcommon/provider/EmailContent$Mailbox;Lcom/android/emailcommon/mail/MessagingException;I)V
-
-    goto :goto_9
-
-    .line 261
-    .end local v0           #i$:Ljava/util/Iterator;
-    .end local v1           #l:Lcom/android/email/MessagingListener;
-    :catchall_19
-    move-exception v2
-
-    monitor-exit v3
-    :try_end_1b
-    .catchall {:try_start_3 .. :try_end_1b} :catchall_19
-
-    throw v2
-
-    .restart local v0       #i$:Ljava/util/Iterator;
-    :cond_1c
-    :try_start_1c
-    monitor-exit v3
-    :try_end_1d
-    .catchall {:try_start_1c .. :try_end_1d} :catchall_19
-
-    .line 262
-    return-void
-.end method
-
-.method public declared-synchronized foldersCommandFinished(JILjava/lang/String;Lcom/android/emailcommon/mail/MessagingException;)V
-    .registers 13
-    .parameter "accountId"
-    .parameter "command"
-    .parameter "folderName"
-    .parameter "result"
-
-    .prologue
-    .line 67
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v1, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v6
-
-    .local v6, i$:Ljava/util/Iterator;
-    :goto_7
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1e
-
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/email/MessagingListener;
-
-    .local v0, l:Lcom/android/email/MessagingListener;
-    move-wide v1, p1
-
-    move v3, p3
-
-    move-object v4, p4
-
-    move-object v5, p5
-
-    .line 68
-    invoke-virtual/range {v0 .. v5}, Lcom/android/email/MessagingListener;->foldersCommandFinished(JILjava/lang/String;Lcom/android/emailcommon/mail/MessagingException;)V
-    :try_end_1a
-    .catchall {:try_start_1 .. :try_end_1a} :catchall_1b
-
-    goto :goto_7
-
-    .line 67
-    .end local v0           #l:Lcom/android/email/MessagingListener;
-    .end local v6           #i$:Ljava/util/Iterator;
-    :catchall_1b
-    move-exception v1
-
-    monitor-exit p0
-
-    throw v1
-
-    .line 70
-    .restart local v6       #i$:Ljava/util/Iterator;
-    :cond_1e
     monitor-exit p0
 
     return-void
@@ -466,7 +275,7 @@
     .parameter "listener"
 
     .prologue
-    .line 54
+    .line 51
     monitor-enter p0
 
     :try_start_1
@@ -496,7 +305,7 @@
     .parameter "message"
 
     .prologue
-    .line 81
+    .line 63
     monitor-enter p0
 
     :try_start_1
@@ -520,7 +329,7 @@
 
     check-cast v1, Lcom/android/email/MessagingListener;
 
-    .line 82
+    .line 64
     .local v1, l:Lcom/android/email/MessagingListener;
     invoke-virtual {v1, p1, p2, p3}, Lcom/android/email/MessagingListener;->listFoldersFailed(JLjava/lang/String;)V
     :try_end_16
@@ -528,7 +337,7 @@
 
     goto :goto_7
 
-    .line 81
+    .line 63
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #l:Lcom/android/email/MessagingListener;
     :catchall_17
@@ -538,7 +347,7 @@
 
     throw v2
 
-    .line 84
+    .line 66
     .restart local v0       #i$:Ljava/util/Iterator;
     :cond_1a
     monitor-exit p0
@@ -551,7 +360,7 @@
     .parameter "accountId"
 
     .prologue
-    .line 88
+    .line 70
     monitor-enter p0
 
     :try_start_1
@@ -575,7 +384,7 @@
 
     check-cast v1, Lcom/android/email/MessagingListener;
 
-    .line 89
+    .line 71
     .local v1, l:Lcom/android/email/MessagingListener;
     invoke-virtual {v1, p1, p2}, Lcom/android/email/MessagingListener;->listFoldersFinished(J)V
     :try_end_16
@@ -583,7 +392,7 @@
 
     goto :goto_7
 
-    .line 88
+    .line 70
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #l:Lcom/android/email/MessagingListener;
     :catchall_17
@@ -593,7 +402,7 @@
 
     throw v2
 
-    .line 91
+    .line 73
     .restart local v0       #i$:Ljava/util/Iterator;
     :cond_1a
     monitor-exit p0
@@ -606,7 +415,7 @@
     .parameter "accountId"
 
     .prologue
-    .line 74
+    .line 56
     monitor-enter p0
 
     :try_start_1
@@ -630,7 +439,7 @@
 
     check-cast v1, Lcom/android/email/MessagingListener;
 
-    .line 75
+    .line 57
     .local v1, l:Lcom/android/email/MessagingListener;
     invoke-virtual {v1, p1, p2}, Lcom/android/email/MessagingListener;->listFoldersStarted(J)V
     :try_end_16
@@ -638,7 +447,7 @@
 
     goto :goto_7
 
-    .line 74
+    .line 56
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #l:Lcom/android/email/MessagingListener;
     :catchall_17
@@ -648,7 +457,7 @@
 
     throw v2
 
-    .line 77
+    .line 59
     .restart local v0       #i$:Ljava/util/Iterator;
     :cond_1a
     monitor-exit p0
@@ -665,7 +474,7 @@
     .parameter "background"
 
     .prologue
-    .line 224
+    .line 192
     monitor-enter p0
 
     :try_start_1
@@ -700,14 +509,14 @@
 
     move/from16 v8, p8
 
-    .line 225
+    .line 193
     invoke-virtual/range {v0 .. v8}, Lcom/android/email/MessagingListener;->loadAttachmentFailed(JJJLcom/android/emailcommon/mail/MessagingException;Z)V
     :try_end_1d
     .catchall {:try_start_1 .. :try_end_1d} :catchall_1e
 
     goto :goto_7
 
-    .line 224
+    .line 192
     .end local v0           #l:Lcom/android/email/MessagingListener;
     .end local v9           #i$:Ljava/util/Iterator;
     :catchall_1e
@@ -717,7 +526,7 @@
 
     throw v1
 
-    .line 227
+    .line 195
     .restart local v9       #i$:Ljava/util/Iterator;
     :cond_21
     monitor-exit p0
@@ -725,725 +534,14 @@
     return-void
 .end method
 
-.method public declared-synchronized loadAttachmentFinished(JJJZ)V
-    .registers 17
-    .parameter "accountId"
-    .parameter "messageId"
-    .parameter "attachmentId"
-    .parameter "requiresDownload"
-
-    .prologue
-    .line 214
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v1, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v8
-
-    .local v8, i$:Ljava/util/Iterator;
-    :goto_7
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1f
-
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/email/MessagingListener;
-
-    .local v0, l:Lcom/android/email/MessagingListener;
-    move-wide v1, p1
-
-    move-wide v3, p3
-
-    move-wide v5, p5
-
-    move/from16 v7, p7
-
-    .line 215
-    invoke-virtual/range {v0 .. v7}, Lcom/android/email/MessagingListener;->loadAttachmentFinished(JJJZ)V
-    :try_end_1b
-    .catchall {:try_start_1 .. :try_end_1b} :catchall_1c
-
-    goto :goto_7
-
-    .line 214
-    .end local v0           #l:Lcom/android/email/MessagingListener;
-    .end local v8           #i$:Ljava/util/Iterator;
-    :catchall_1c
-    move-exception v1
-
-    monitor-exit p0
-
-    throw v1
-
-    .line 217
-    .restart local v8       #i$:Ljava/util/Iterator;
-    :cond_1f
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public declared-synchronized loadAttachmentStarted(JJJZ)V
-    .registers 17
-    .parameter "accountId"
-    .parameter "messageId"
-    .parameter "attachmentId"
-    .parameter "requiresDownload"
-
-    .prologue
-    .line 197
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v1, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v8
-
-    .local v8, i$:Ljava/util/Iterator;
-    :goto_7
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1f
-
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/email/MessagingListener;
-
-    .local v0, l:Lcom/android/email/MessagingListener;
-    move-wide v1, p1
-
-    move-wide v3, p3
-
-    move-wide v5, p5
-
-    move/from16 v7, p7
-
-    .line 198
-    invoke-virtual/range {v0 .. v7}, Lcom/android/email/MessagingListener;->loadAttachmentStarted(JJJZ)V
-    :try_end_1b
-    .catchall {:try_start_1 .. :try_end_1b} :catchall_1c
-
-    goto :goto_7
-
-    .line 197
-    .end local v0           #l:Lcom/android/email/MessagingListener;
-    .end local v8           #i$:Ljava/util/Iterator;
-    :catchall_1c
-    move-exception v1
-
-    monitor-exit p0
-
-    throw v1
-
-    .line 200
-    .restart local v8       #i$:Ljava/util/Iterator;
-    :cond_1f
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public declared-synchronized loadMessageForViewFailed(JLjava/lang/String;)V
-    .registers 7
-    .parameter "messageId"
-    .parameter "message"
-
-    .prologue
-    .line 132
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v2, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, i$:Ljava/util/Iterator;
-    :goto_7
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1a
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/email/MessagingListener;
-
-    .line 133
-    .local v1, l:Lcom/android/email/MessagingListener;
-    invoke-virtual {v1, p1, p2, p3}, Lcom/android/email/MessagingListener;->loadMessageForViewFailed(JLjava/lang/String;)V
-    :try_end_16
-    .catchall {:try_start_1 .. :try_end_16} :catchall_17
-
-    goto :goto_7
-
-    .line 132
-    .end local v0           #i$:Ljava/util/Iterator;
-    .end local v1           #l:Lcom/android/email/MessagingListener;
-    :catchall_17
-    move-exception v2
-
-    monitor-exit p0
-
-    throw v2
-
-    .line 135
-    .restart local v0       #i$:Ljava/util/Iterator;
-    :cond_1a
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public declared-synchronized loadMessageForViewFinished(J)V
-    .registers 6
-    .parameter "messageId"
-
-    .prologue
-    .line 125
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v2, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, i$:Ljava/util/Iterator;
-    :goto_7
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1a
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/email/MessagingListener;
-
-    .line 126
-    .local v1, l:Lcom/android/email/MessagingListener;
-    invoke-virtual {v1, p1, p2}, Lcom/android/email/MessagingListener;->loadMessageForViewFinished(J)V
-    :try_end_16
-    .catchall {:try_start_1 .. :try_end_16} :catchall_17
-
-    goto :goto_7
-
-    .line 125
-    .end local v0           #i$:Ljava/util/Iterator;
-    .end local v1           #l:Lcom/android/email/MessagingListener;
-    :catchall_17
-    move-exception v2
-
-    monitor-exit p0
-
-    throw v2
-
-    .line 128
-    .restart local v0       #i$:Ljava/util/Iterator;
-    :cond_1a
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public declared-synchronized loadMessageForViewStarted(J)V
-    .registers 6
-    .parameter "messageId"
-
-    .prologue
-    .line 118
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v2, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, i$:Ljava/util/Iterator;
-    :goto_7
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1a
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/email/MessagingListener;
-
-    .line 119
-    .local v1, l:Lcom/android/email/MessagingListener;
-    invoke-virtual {v1, p1, p2}, Lcom/android/email/MessagingListener;->loadMessageForViewStarted(J)V
-    :try_end_16
-    .catchall {:try_start_1 .. :try_end_16} :catchall_17
-
-    goto :goto_7
-
-    .line 118
-    .end local v0           #i$:Ljava/util/Iterator;
-    .end local v1           #l:Lcom/android/email/MessagingListener;
-    :catchall_17
-    move-exception v2
-
-    monitor-exit p0
-
-    throw v2
-
-    .line 121
-    .restart local v0       #i$:Ljava/util/Iterator;
-    :cond_1a
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public declared-synchronized movemessageToOtherAccountCallback(ZJJJJJJII)V
-    .registers 34
-    .parameter "result"
-    .parameter "messageId"
-    .parameter "source_accountId"
-    .parameter "orig_boxkey"
-    .parameter "target_accountId"
-    .parameter "target_boxkey"
-    .parameter "source_trashMailboxId"
-    .parameter "target_server_type"
-    .parameter "source_server_type"
-
-    .prologue
-    .line 187
-    monitor-enter p0
-
-    :try_start_1
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v17
-
-    .local v17, i$:Ljava/util/Iterator;
-    :goto_9
-    invoke-interface/range {v17 .. v17}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2e
-
-    invoke-interface/range {v17 .. v17}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/email/MessagingListener;
-
-    .local v1, l:Lcom/android/email/MessagingListener;
-    move/from16 v2, p1
-
-    move-wide/from16 v3, p2
-
-    move-wide/from16 v5, p4
-
-    move-wide/from16 v7, p6
-
-    move-wide/from16 v9, p8
-
-    move-wide/from16 v11, p10
-
-    move-wide/from16 v13, p12
-
-    move/from16 v15, p14
-
-    move/from16 v16, p15
-
-    .line 188
-    invoke-virtual/range {v1 .. v16}, Lcom/android/email/MessagingListener;->movemessageToOtherAccountCallback(ZJJJJJJII)V
-    :try_end_2a
-    .catchall {:try_start_1 .. :try_end_2a} :catchall_2b
-
-    goto :goto_9
-
-    .line 187
-    .end local v1           #l:Lcom/android/email/MessagingListener;
-    .end local v17           #i$:Ljava/util/Iterator;
-    :catchall_2b
-    move-exception v2
-
-    monitor-exit p0
-
-    throw v2
-
-    .line 192
-    .restart local v17       #i$:Ljava/util/Iterator;
-    :cond_2e
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public declared-synchronized removeListener(Lcom/android/email/MessagingListener;)V
-    .registers 3
-    .parameter "listener"
-
-    .prologue
-    .line 50
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v0, p0, Lcom/android/email/GroupMessagingListener;->mListenersMap:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_6
-    .catchall {:try_start_1 .. :try_end_6} :catchall_8
-
-    .line 51
-    monitor-exit p0
-
-    return-void
-
-    .line 50
-    :catchall_8
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized sendPendingMessagesCompleted(J)V
-    .registers 6
-    .parameter "accountId"
-
-    .prologue
-    .line 161
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v2, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, i$:Ljava/util/Iterator;
-    :goto_7
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1a
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/email/MessagingListener;
-
-    .line 162
-    .local v1, l:Lcom/android/email/MessagingListener;
-    invoke-virtual {v1, p1, p2}, Lcom/android/email/MessagingListener;->sendPendingMessagesCompleted(J)V
-    :try_end_16
-    .catchall {:try_start_1 .. :try_end_16} :catchall_17
-
-    goto :goto_7
-
-    .line 161
-    .end local v0           #i$:Ljava/util/Iterator;
-    .end local v1           #l:Lcom/android/email/MessagingListener;
-    :catchall_17
-    move-exception v2
-
-    monitor-exit p0
-
-    throw v2
-
-    .line 164
-    .restart local v0       #i$:Ljava/util/Iterator;
-    :cond_1a
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public declared-synchronized sendPendingMessagesFailed(JJLjava/lang/Exception;)V
-    .registers 13
-    .parameter "accountId"
-    .parameter "messageId"
-    .parameter "reason"
-
-    .prologue
-    .line 169
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v1, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v6
-
-    .local v6, i$:Ljava/util/Iterator;
-    :goto_7
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1d
-
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/email/MessagingListener;
-
-    .local v0, l:Lcom/android/email/MessagingListener;
-    move-wide v1, p1
-
-    move-wide v3, p3
-
-    move-object v5, p5
-
-    .line 170
-    invoke-virtual/range {v0 .. v5}, Lcom/android/email/MessagingListener;->sendPendingMessagesFailed(JJLjava/lang/Exception;)V
-    :try_end_19
-    .catchall {:try_start_1 .. :try_end_19} :catchall_1a
-
-    goto :goto_7
-
-    .line 169
-    .end local v0           #l:Lcom/android/email/MessagingListener;
-    .end local v6           #i$:Ljava/util/Iterator;
-    :catchall_1a
-    move-exception v1
-
-    monitor-exit p0
-
-    throw v1
-
-    .line 172
-    .restart local v6       #i$:Ljava/util/Iterator;
-    :cond_1d
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public declared-synchronized sendPendingMessagesStarted(JJ)V
-    .registers 8
-    .parameter "accountId"
-    .parameter "messageId"
-
-    .prologue
-    .line 154
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v2, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, i$:Ljava/util/Iterator;
-    :goto_7
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1a
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/email/MessagingListener;
-
-    .line 155
-    .local v1, l:Lcom/android/email/MessagingListener;
-    invoke-virtual {v1, p1, p2, p3, p4}, Lcom/android/email/MessagingListener;->sendPendingMessagesStarted(JJ)V
-    :try_end_16
-    .catchall {:try_start_1 .. :try_end_16} :catchall_17
-
-    goto :goto_7
-
-    .line 154
-    .end local v0           #i$:Ljava/util/Iterator;
-    .end local v1           #l:Lcom/android/email/MessagingListener;
-    :catchall_17
-    move-exception v2
-
-    monitor-exit p0
-
-    throw v2
-
-    .line 157
-    .restart local v0       #i$:Ljava/util/Iterator;
-    :cond_1a
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public syncMailboxStatus(JLcom/android/emailcommon/mail/MessagingException;I)V
-    .registers 9
-    .parameter "mailboxId"
-    .parameter "e"
-    .parameter "progress"
-
-    .prologue
-    .line 266
-    iget-object v3, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    monitor-enter v3
-
-    .line 267
-    :try_start_3
-    iget-object v2, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, i$:Ljava/util/Iterator;
-    :goto_9
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1c
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/email/MessagingListener;
-
-    .line 268
-    .local v1, l:Lcom/android/email/MessagingListener;
-    invoke-virtual {v1, p1, p2, p3, p4}, Lcom/android/email/MessagingListener;->syncMailboxStatus(JLcom/android/emailcommon/mail/MessagingException;I)V
-
-    goto :goto_9
-
-    .line 270
-    .end local v0           #i$:Ljava/util/Iterator;
-    .end local v1           #l:Lcom/android/email/MessagingListener;
-    :catchall_19
-    move-exception v2
-
-    monitor-exit v3
-    :try_end_1b
-    .catchall {:try_start_3 .. :try_end_1b} :catchall_19
-
-    throw v2
-
-    .restart local v0       #i$:Ljava/util/Iterator;
-    :cond_1c
-    :try_start_1c
-    monitor-exit v3
-    :try_end_1d
-    .catchall {:try_start_1c .. :try_end_1d} :catchall_19
-
-    .line 271
-    return-void
-.end method
-
-.method public declared-synchronized synchronizeMailboxFailed(JJLjava/lang/Exception;)V
-    .registers 13
-    .parameter "accountId"
-    .parameter "mailboxId"
-    .parameter "e"
-
-    .prologue
-    .line 111
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v1, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v6
-
-    .local v6, i$:Ljava/util/Iterator;
-    :goto_7
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1d
-
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/email/MessagingListener;
-
-    .local v0, l:Lcom/android/email/MessagingListener;
-    move-wide v1, p1
-
-    move-wide v3, p3
-
-    move-object v5, p5
-
-    .line 112
-    invoke-virtual/range {v0 .. v5}, Lcom/android/email/MessagingListener;->synchronizeMailboxFailed(JJLjava/lang/Exception;)V
-    :try_end_19
-    .catchall {:try_start_1 .. :try_end_19} :catchall_1a
-
-    goto :goto_7
-
-    .line 111
-    .end local v0           #l:Lcom/android/email/MessagingListener;
-    .end local v6           #i$:Ljava/util/Iterator;
-    :catchall_1a
-    move-exception v1
-
-    monitor-exit p0
-
-    throw v1
-
-    .line 114
-    .restart local v6       #i$:Ljava/util/Iterator;
-    :cond_1d
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public declared-synchronized synchronizeMailboxFinished(JJII)V
+.method public declared-synchronized loadAttachmentFinished(JJJ)V
     .registers 15
     .parameter "accountId"
-    .parameter "mailboxId"
-    .parameter "totalMessagesInMailbox"
-    .parameter "numNewMessages"
+    .parameter "messageId"
+    .parameter "attachmentId"
 
     .prologue
-    .line 103
+    .line 180
     monitor-enter p0
 
     :try_start_1
@@ -1459,7 +557,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1d
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1472,42 +570,106 @@
 
     move-wide v3, p3
 
-    move v5, p5
+    move-wide v5, p5
 
-    move v6, p6
-
-    .line 104
-    invoke-virtual/range {v0 .. v6}, Lcom/android/email/MessagingListener;->synchronizeMailboxFinished(JJII)V
-    :try_end_1a
-    .catchall {:try_start_1 .. :try_end_1a} :catchall_1b
+    .line 181
+    invoke-virtual/range {v0 .. v6}, Lcom/android/email/MessagingListener;->loadAttachmentFinished(JJJ)V
+    :try_end_19
+    .catchall {:try_start_1 .. :try_end_19} :catchall_1a
 
     goto :goto_7
 
-    .line 103
+    .line 180
     .end local v0           #l:Lcom/android/email/MessagingListener;
     .end local v7           #i$:Ljava/util/Iterator;
-    :catchall_1b
+    :catchall_1a
     move-exception v1
 
     monitor-exit p0
 
     throw v1
 
-    .line 107
+    .line 183
     .restart local v7       #i$:Ljava/util/Iterator;
-    :cond_1e
+    :cond_1d
     monitor-exit p0
 
     return-void
 .end method
 
-.method public declared-synchronized synchronizeMailboxStarted(JJ)V
-    .registers 8
+.method public declared-synchronized loadAttachmentStarted(JJJZ)V
+    .registers 17
     .parameter "accountId"
-    .parameter "mailboxId"
+    .parameter "messageId"
+    .parameter "attachmentId"
+    .parameter "requiresDownload"
 
     .prologue
-    .line 95
+    .line 170
+    monitor-enter p0
+
+    :try_start_1
+    iget-object v1, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v8
+
+    .local v8, i$:Ljava/util/Iterator;
+    :goto_7
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1f
+
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/email/MessagingListener;
+
+    .local v0, l:Lcom/android/email/MessagingListener;
+    move-wide v1, p1
+
+    move-wide v3, p3
+
+    move-wide v5, p5
+
+    move/from16 v7, p7
+
+    .line 171
+    invoke-virtual/range {v0 .. v7}, Lcom/android/email/MessagingListener;->loadAttachmentStarted(JJJZ)V
+    :try_end_1b
+    .catchall {:try_start_1 .. :try_end_1b} :catchall_1c
+
+    goto :goto_7
+
+    .line 170
+    .end local v0           #l:Lcom/android/email/MessagingListener;
+    .end local v8           #i$:Ljava/util/Iterator;
+    :catchall_1c
+    move-exception v1
+
+    monitor-exit p0
+
+    throw v1
+
+    .line 173
+    .restart local v8       #i$:Ljava/util/Iterator;
+    :cond_1f
+    monitor-exit p0
+
+    return-void
+.end method
+
+.method public declared-synchronized loadMessageForViewFailed(JLjava/lang/String;)V
+    .registers 7
+    .parameter "messageId"
+    .parameter "message"
+
+    .prologue
+    .line 114
     monitor-enter p0
 
     :try_start_1
@@ -1531,15 +693,15 @@
 
     check-cast v1, Lcom/android/email/MessagingListener;
 
-    .line 96
+    .line 115
     .local v1, l:Lcom/android/email/MessagingListener;
-    invoke-virtual {v1, p1, p2, p3, p4}, Lcom/android/email/MessagingListener;->synchronizeMailboxStarted(JJ)V
+    invoke-virtual {v1, p1, p2, p3}, Lcom/android/email/MessagingListener;->loadMessageForViewFailed(JLjava/lang/String;)V
     :try_end_16
     .catchall {:try_start_1 .. :try_end_16} :catchall_17
 
     goto :goto_7
 
-    .line 95
+    .line 114
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #l:Lcom/android/email/MessagingListener;
     :catchall_17
@@ -1549,7 +711,7 @@
 
     throw v2
 
-    .line 98
+    .line 117
     .restart local v0       #i$:Ljava/util/Iterator;
     :cond_1a
     monitor-exit p0
@@ -1557,22 +719,405 @@
     return-void
 .end method
 
-.method public updateMailboxCallback(Lcom/android/emailcommon/mail/MessagingException;JJII)V
-    .registers 18
-    .parameter "result"
-    .parameter "accountId"
-    .parameter "mailboxId"
-    .parameter "progress"
-    .parameter "numNewMessages"
+.method public declared-synchronized loadMessageForViewFinished(J)V
+    .registers 6
+    .parameter "messageId"
 
     .prologue
-    .line 278
-    iget-object v9, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
+    .line 107
+    monitor-enter p0
 
-    monitor-enter v9
+    :try_start_1
+    iget-object v2, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
 
-    .line 279
-    :try_start_3
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .local v0, i$:Ljava/util/Iterator;
+    :goto_7
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1a
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/email/MessagingListener;
+
+    .line 108
+    .local v1, l:Lcom/android/email/MessagingListener;
+    invoke-virtual {v1, p1, p2}, Lcom/android/email/MessagingListener;->loadMessageForViewFinished(J)V
+    :try_end_16
+    .catchall {:try_start_1 .. :try_end_16} :catchall_17
+
+    goto :goto_7
+
+    .line 107
+    .end local v0           #i$:Ljava/util/Iterator;
+    .end local v1           #l:Lcom/android/email/MessagingListener;
+    :catchall_17
+    move-exception v2
+
+    monitor-exit p0
+
+    throw v2
+
+    .line 110
+    .restart local v0       #i$:Ljava/util/Iterator;
+    :cond_1a
+    monitor-exit p0
+
+    return-void
+.end method
+
+.method public declared-synchronized loadMessageForViewStarted(J)V
+    .registers 6
+    .parameter "messageId"
+
+    .prologue
+    .line 100
+    monitor-enter p0
+
+    :try_start_1
+    iget-object v2, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
+
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .local v0, i$:Ljava/util/Iterator;
+    :goto_7
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1a
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/email/MessagingListener;
+
+    .line 101
+    .local v1, l:Lcom/android/email/MessagingListener;
+    invoke-virtual {v1, p1, p2}, Lcom/android/email/MessagingListener;->loadMessageForViewStarted(J)V
+    :try_end_16
+    .catchall {:try_start_1 .. :try_end_16} :catchall_17
+
+    goto :goto_7
+
+    .line 100
+    .end local v0           #i$:Ljava/util/Iterator;
+    .end local v1           #l:Lcom/android/email/MessagingListener;
+    :catchall_17
+    move-exception v2
+
+    monitor-exit p0
+
+    throw v2
+
+    .line 103
+    .restart local v0       #i$:Ljava/util/Iterator;
+    :cond_1a
+    monitor-exit p0
+
+    return-void
+.end method
+
+.method public declared-synchronized removeListener(Lcom/android/email/MessagingListener;)V
+    .registers 3
+    .parameter "listener"
+
+    .prologue
+    .line 47
+    monitor-enter p0
+
+    :try_start_1
+    iget-object v0, p0, Lcom/android/email/GroupMessagingListener;->mListenersMap:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_6
+    .catchall {:try_start_1 .. :try_end_6} :catchall_8
+
+    .line 48
+    monitor-exit p0
+
+    return-void
+
+    .line 47
+    :catchall_8
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized sendPendingMessagesCompleted(J)V
+    .registers 6
+    .parameter "accountId"
+
+    .prologue
+    .line 143
+    monitor-enter p0
+
+    :try_start_1
+    iget-object v2, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
+
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .local v0, i$:Ljava/util/Iterator;
+    :goto_7
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1a
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/email/MessagingListener;
+
+    .line 144
+    .local v1, l:Lcom/android/email/MessagingListener;
+    invoke-virtual {v1, p1, p2}, Lcom/android/email/MessagingListener;->sendPendingMessagesCompleted(J)V
+    :try_end_16
+    .catchall {:try_start_1 .. :try_end_16} :catchall_17
+
+    goto :goto_7
+
+    .line 143
+    .end local v0           #i$:Ljava/util/Iterator;
+    .end local v1           #l:Lcom/android/email/MessagingListener;
+    :catchall_17
+    move-exception v2
+
+    monitor-exit p0
+
+    throw v2
+
+    .line 146
+    .restart local v0       #i$:Ljava/util/Iterator;
+    :cond_1a
+    monitor-exit p0
+
+    return-void
+.end method
+
+.method public declared-synchronized sendPendingMessagesFailed(JJLjava/lang/Exception;)V
+    .registers 13
+    .parameter "accountId"
+    .parameter "messageId"
+    .parameter "reason"
+
+    .prologue
+    .line 151
+    monitor-enter p0
+
+    :try_start_1
+    iget-object v1, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v6
+
+    .local v6, i$:Ljava/util/Iterator;
+    :goto_7
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1d
+
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/email/MessagingListener;
+
+    .local v0, l:Lcom/android/email/MessagingListener;
+    move-wide v1, p1
+
+    move-wide v3, p3
+
+    move-object v5, p5
+
+    .line 152
+    invoke-virtual/range {v0 .. v5}, Lcom/android/email/MessagingListener;->sendPendingMessagesFailed(JJLjava/lang/Exception;)V
+    :try_end_19
+    .catchall {:try_start_1 .. :try_end_19} :catchall_1a
+
+    goto :goto_7
+
+    .line 151
+    .end local v0           #l:Lcom/android/email/MessagingListener;
+    .end local v6           #i$:Ljava/util/Iterator;
+    :catchall_1a
+    move-exception v1
+
+    monitor-exit p0
+
+    throw v1
+
+    .line 154
+    .restart local v6       #i$:Ljava/util/Iterator;
+    :cond_1d
+    monitor-exit p0
+
+    return-void
+.end method
+
+.method public declared-synchronized sendPendingMessagesStarted(JJ)V
+    .registers 8
+    .parameter "accountId"
+    .parameter "messageId"
+
+    .prologue
+    .line 136
+    monitor-enter p0
+
+    :try_start_1
+    iget-object v2, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
+
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .local v0, i$:Ljava/util/Iterator;
+    :goto_7
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1a
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/email/MessagingListener;
+
+    .line 137
+    .local v1, l:Lcom/android/email/MessagingListener;
+    invoke-virtual {v1, p1, p2, p3, p4}, Lcom/android/email/MessagingListener;->sendPendingMessagesStarted(JJ)V
+    :try_end_16
+    .catchall {:try_start_1 .. :try_end_16} :catchall_17
+
+    goto :goto_7
+
+    .line 136
+    .end local v0           #i$:Ljava/util/Iterator;
+    .end local v1           #l:Lcom/android/email/MessagingListener;
+    :catchall_17
+    move-exception v2
+
+    monitor-exit p0
+
+    throw v2
+
+    .line 139
+    .restart local v0       #i$:Ljava/util/Iterator;
+    :cond_1a
+    monitor-exit p0
+
+    return-void
+.end method
+
+.method public declared-synchronized synchronizeMailboxFailed(JJLjava/lang/Exception;)V
+    .registers 13
+    .parameter "accountId"
+    .parameter "mailboxId"
+    .parameter "e"
+
+    .prologue
+    .line 93
+    monitor-enter p0
+
+    :try_start_1
+    iget-object v1, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v6
+
+    .local v6, i$:Ljava/util/Iterator;
+    :goto_7
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1d
+
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/email/MessagingListener;
+
+    .local v0, l:Lcom/android/email/MessagingListener;
+    move-wide v1, p1
+
+    move-wide v3, p3
+
+    move-object v5, p5
+
+    .line 94
+    invoke-virtual/range {v0 .. v5}, Lcom/android/email/MessagingListener;->synchronizeMailboxFailed(JJLjava/lang/Exception;)V
+    :try_end_19
+    .catchall {:try_start_1 .. :try_end_19} :catchall_1a
+
+    goto :goto_7
+
+    .line 93
+    .end local v0           #l:Lcom/android/email/MessagingListener;
+    .end local v6           #i$:Ljava/util/Iterator;
+    :catchall_1a
+    move-exception v1
+
+    monitor-exit p0
+
+    throw v1
+
+    .line 96
+    .restart local v6       #i$:Ljava/util/Iterator;
+    :cond_1d
+    monitor-exit p0
+
+    return-void
+.end method
+
+.method public declared-synchronized synchronizeMailboxFinished(JJIILjava/util/ArrayList;)V
+    .registers 17
+    .parameter "accountId"
+    .parameter "mailboxId"
+    .parameter "totalMessagesInMailbox"
+    .parameter "numNewMessages"
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(JJII",
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/Long;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 85
+    .local p7, addedMessages:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
+    monitor-enter p0
+
+    :try_start_1
     iget-object v1, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
 
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -1580,12 +1125,12 @@
     move-result-object v8
 
     .local v8, i$:Ljava/util/Iterator;
-    :goto_9
+    :goto_7
     invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_20
 
     invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1594,40 +1139,93 @@
     check-cast v0, Lcom/android/email/MessagingListener;
 
     .local v0, l:Lcom/android/email/MessagingListener;
-    move-object v1, p1
+    move-wide v1, p1
 
-    move-wide v2, p2
+    move-wide v3, p3
 
-    move-wide v4, p4
+    move v5, p5
 
-    move/from16 v6, p6
+    move v6, p6
 
-    move/from16 v7, p7
+    move-object/from16 v7, p7
 
-    .line 280
-    invoke-virtual/range {v0 .. v7}, Lcom/android/email/MessagingListener;->updateMailboxCallback(Lcom/android/emailcommon/mail/MessagingException;JJII)V
+    .line 86
+    invoke-virtual/range {v0 .. v7}, Lcom/android/email/MessagingListener;->synchronizeMailboxFinished(JJIILjava/util/ArrayList;)V
+    :try_end_1c
+    .catchall {:try_start_1 .. :try_end_1c} :catchall_1d
 
-    goto :goto_9
+    goto :goto_7
 
-    .line 282
+    .line 85
     .end local v0           #l:Lcom/android/email/MessagingListener;
     .end local v8           #i$:Ljava/util/Iterator;
-    :catchall_20
+    :catchall_1d
     move-exception v1
 
-    monitor-exit v9
-    :try_end_22
-    .catchall {:try_start_3 .. :try_end_22} :catchall_20
+    monitor-exit p0
 
     throw v1
 
+    .line 89
     .restart local v8       #i$:Ljava/util/Iterator;
-    :cond_23
-    :try_start_23
-    monitor-exit v9
-    :try_end_24
-    .catchall {:try_start_23 .. :try_end_24} :catchall_20
+    :cond_20
+    monitor-exit p0
 
-    .line 283
+    return-void
+.end method
+
+.method public declared-synchronized synchronizeMailboxStarted(JJ)V
+    .registers 8
+    .parameter "accountId"
+    .parameter "mailboxId"
+
+    .prologue
+    .line 77
+    monitor-enter p0
+
+    :try_start_1
+    iget-object v2, p0, Lcom/android/email/GroupMessagingListener;->mListeners:Ljava/util/Set;
+
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .local v0, i$:Ljava/util/Iterator;
+    :goto_7
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1a
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/email/MessagingListener;
+
+    .line 78
+    .local v1, l:Lcom/android/email/MessagingListener;
+    invoke-virtual {v1, p1, p2, p3, p4}, Lcom/android/email/MessagingListener;->synchronizeMailboxStarted(JJ)V
+    :try_end_16
+    .catchall {:try_start_1 .. :try_end_16} :catchall_17
+
+    goto :goto_7
+
+    .line 77
+    .end local v0           #i$:Ljava/util/Iterator;
+    .end local v1           #l:Lcom/android/email/MessagingListener;
+    :catchall_17
+    move-exception v2
+
+    monitor-exit p0
+
+    throw v2
+
+    .line 80
+    .restart local v0       #i$:Ljava/util/Iterator;
+    :cond_1a
+    monitor-exit p0
+
     return-void
 .end method

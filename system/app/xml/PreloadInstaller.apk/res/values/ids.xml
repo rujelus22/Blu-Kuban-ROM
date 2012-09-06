@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item type="id" name="relativeLayout1">false</item>
-    <item type="id" name="ImageView1">false</item>
-    <item type="id" name="ImageView2">false</item>
-    <item type="id" name="textView">false</item>
-    <item type="id" name="progressHBar">false</item>
-</resources>

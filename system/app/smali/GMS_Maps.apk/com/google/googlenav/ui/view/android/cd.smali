@@ -1,28 +1,69 @@
-.class Lcom/google/googlenav/ui/view/android/cd;
-.super Lbb/b;
+.class synthetic Lcom/google/googlenav/ui/view/android/cd;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/android/cb;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/cb;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/cd;->a:Lcom/google/googlenav/ui/view/android/cb;
-
-    invoke-direct {p0}, Lbb/b;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public a(Lbb/E;)Z
+.method static constructor <clinit>()V
     .registers 3
 
-    const/4 v0, 0x1
+    .prologue
+    .line 199
+    invoke-static {}, Lcom/google/googlenav/ui/view/android/ce;->values()[Lcom/google/googlenav/ui/view/android/ce;
 
-    return v0
+    move-result-object v0
+
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    sput-object v0, Lcom/google/googlenav/ui/view/android/cd;->a:[I
+
+    :try_start_9
+    sget-object v0, Lcom/google/googlenav/ui/view/android/cd;->a:[I
+
+    sget-object v1, Lcom/google/googlenav/ui/view/android/ce;->b:Lcom/google/googlenav/ui/view/android/ce;
+
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/view/android/ce;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
+
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/googlenav/ui/view/android/cd;->a:[I
+
+    sget-object v1, Lcom/google/googlenav/ui/view/android/ce;->a:Lcom/google/googlenav/ui/view/android/ce;
+
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/view/android/ce;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
+
+    :goto_1f
+    return-void
+
+    :catch_20
+    move-exception v0
+
+    goto :goto_1f
+
+    :catch_22
+    move-exception v0
+
+    goto :goto_14
 .end method

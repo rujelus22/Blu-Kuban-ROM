@@ -318,7 +318,7 @@
     <string name="global_actions">Device options</string>
     <string name="global_action_lock">Screen lock</string>
     <string name="global_action_power_off">Power off</string>
-    <string name="global_action_restart">Restart</string>
+    <string name="global_action_restart">Reboot</string>
     <string name="global_action_toggle_silent_mode">Silent mode</string>
     <string name="global_action_silent_mode_on_status">Sound is OFF</string>
     <string name="global_action_silent_mode_off_status">Sound is ON</string>

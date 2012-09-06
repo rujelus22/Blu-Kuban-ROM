@@ -11,16 +11,20 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/SortedSet;Ljava/lang/Object;)V
+.method constructor <init>(Ljava/util/SortedSet;Ljava/lang/Object;)V
     .registers 3
     .parameter
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 302
+    .line 245
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Synchronized$SynchronizedSet;-><init>(Ljava/util/Set;Ljava/lang/Object;)V
 
-    .line 303
+    .line 246
     return-void
 .end method
 
@@ -30,12 +34,12 @@
     .registers 3
 
     .prologue
-    .line 310
+    .line 254
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 311
+    .line 255
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;->delegate()Ljava/util/SortedSet;
 
@@ -51,7 +55,7 @@
 
     return-object v0
 
-    .line 312
+    .line 256
     :catchall_d
     move-exception v0
 
@@ -60,11 +64,11 @@
     throw v0
 .end method
 
-.method protected bridge synthetic delegate()Ljava/lang/Object;
+.method bridge synthetic delegate()Ljava/lang/Object;
     .registers 2
 
     .prologue
-    .line 298
+    .line 242
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;->delegate()Ljava/util/SortedSet;
 
     move-result-object v0
@@ -72,11 +76,11 @@
     return-object v0
 .end method
 
-.method protected bridge synthetic delegate()Ljava/util/Collection;
+.method bridge synthetic delegate()Ljava/util/Collection;
     .registers 2
 
     .prologue
-    .line 298
+    .line 242
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;->delegate()Ljava/util/SortedSet;
 
     move-result-object v0
@@ -84,11 +88,11 @@
     return-object v0
 .end method
 
-.method protected bridge synthetic delegate()Ljava/util/Set;
+.method bridge synthetic delegate()Ljava/util/Set;
     .registers 2
 
     .prologue
-    .line 298
+    .line 242
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;->delegate()Ljava/util/SortedSet;
 
     move-result-object v0
@@ -96,11 +100,11 @@
     return-object v0
 .end method
 
-.method protected delegate()Ljava/util/SortedSet;
+.method delegate()Ljava/util/SortedSet;
     .registers 2
 
     .prologue
-    .line 306
+    .line 249
     invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSet;->delegate()Ljava/util/Set;
 
     move-result-object v0
@@ -114,12 +118,12 @@
     .registers 3
 
     .prologue
-    .line 334
+    .line 282
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 335
+    .line 283
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;->delegate()Ljava/util/SortedSet;
 
@@ -135,7 +139,7 @@
 
     return-object v0
 
-    .line 336
+    .line 284
     :catchall_d
     move-exception v0
 
@@ -149,12 +153,12 @@
     .parameter
 
     .prologue
-    .line 322
+    .line 268
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 323
+    .line 269
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;->delegate()Ljava/util/SortedSet;
 
@@ -176,7 +180,7 @@
 
     return-object v0
 
-    .line 324
+    .line 270
     :catchall_13
     move-exception v0
 
@@ -189,12 +193,12 @@
     .registers 3
 
     .prologue
-    .line 340
+    .line 289
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 341
+    .line 290
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;->delegate()Ljava/util/SortedSet;
 
@@ -210,7 +214,7 @@
 
     return-object v0
 
-    .line 342
+    .line 291
     :catchall_d
     move-exception v0
 
@@ -225,12 +229,12 @@
     .parameter
 
     .prologue
-    .line 316
+    .line 261
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 317
+    .line 262
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;->delegate()Ljava/util/SortedSet;
 
@@ -252,7 +256,7 @@
 
     return-object v0
 
-    .line 318
+    .line 263
     :catchall_13
     move-exception v0
 
@@ -266,12 +270,12 @@
     .parameter
 
     .prologue
-    .line 328
+    .line 275
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 329
+    .line 276
     :try_start_3
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;->delegate()Ljava/util/SortedSet;
 
@@ -293,7 +297,7 @@
 
     return-object v0
 
-    .line 330
+    .line 277
     :catchall_13
     move-exception v0
 

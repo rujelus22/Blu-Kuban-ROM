@@ -4,4 +4,5 @@
     <dimen name="da_destination_activity_btn_width">194.0dip</dimen>
     <dimen name="da_destination_activity_btn_height">194.0dip</dimen>
     <dimen name="da_destination_activity_btn_inner_size">176.0dip</dimen>
+    <dimen name="content_hint_width">@dimen/content_hint_width_tablet</dimen>
 </resources>

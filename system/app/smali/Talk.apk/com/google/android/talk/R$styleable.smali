@@ -27,7 +27,7 @@
     .registers 1
 
     .prologue
-    .line 1810
+    .line 1847
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -36,7 +36,7 @@
 
     sput-object v0, Lcom/google/android/talk/R$styleable;->CompoundImageView:[I
 
-    .line 1849
+    .line 1886
     const/4 v0, 0x4
 
     new-array v0, v0, [I
@@ -45,7 +45,7 @@
 
     sput-object v0, Lcom/google/android/talk/R$styleable;->DrawerLayout:[I
 
-    .line 1922
+    .line 1959
     const/4 v0, 0x3
 
     new-array v0, v0, [I
@@ -56,7 +56,7 @@
 
     return-void
 
-    .line 1810
+    .line 1847
     nop
 
     :array_1a
@@ -65,7 +65,7 @@
         0x8t 0x0t 0x1t 0x7ft
     .end array-data
 
-    .line 1849
+    .line 1886
     :array_22
     .array-data 0x4
         0x3t 0x0t 0x1t 0x7ft
@@ -74,7 +74,7 @@
         0x6t 0x0t 0x1t 0x7ft
     .end array-data
 
-    .line 1922
+    .line 1959
     :array_2e
     .array-data 0x4
         0x0t 0x0t 0x1t 0x7ft
@@ -87,8 +87,8 @@
     .registers 1
 
     .prologue
-    .line 1797
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1834
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:sharedUserId="android.uid.shared" android:versionCode="15" android:versionName="4.0.4-FH13" package="com.android.contacts"
+<manifest android:sharedUserId="android.uid.shared" android:versionCode="15" android:versionName="4.0.4-FF18" package="com.android.contacts"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <original-package android:name="com.android.contacts" />
     <uses-permission android:name="com.sec.factory.permission.KEYSTRING" />

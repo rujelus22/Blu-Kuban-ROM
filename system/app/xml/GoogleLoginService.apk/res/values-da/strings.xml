@@ -242,18 +242,18 @@ spørgsmål"</b></string>
     <string name="account_intro_recommended_title">Konfigurer Google</string>
     <string name="common_message">"Med en Google-konto kan du
 
-"<li><ul>Se og organisere alle dine oplysninger alle steder.</ul></li>"
+"<ul><li>Se og organisere alle dine oplysninger alle steder.</li></ul>"
 
-"<li><ul>Automatisk sikkerhedskopiere dine data.</ul></li>"
+"<ul><li>Automatisk sikkerhedskopiere dine data.</li></ul>"
 
-"<li><ul>Nemt bruge Googles tjenester alle steder.</ul></li></string>
+"<ul><li>Nemt bruge Googles tjenester alle steder.</li></ul></string>
     <string name="add_account_message">" Du kan bruge mere end én Google-konto (såsom privat- og arbejdskonti). Tryk på "<b>Log ind</b> eller <b>Opret konto</b> for at tilføje en Google-konto</string>
     <string name="account_intro_default_message">Mist aldrig dine ting igen. En Google-konto holder alting sikkert.</string>
     <string name="account_intro_custom_endtext">Har du %s? Log ind nu.</string>
     <string name="account_intro_simple_message">Vil du tilføje en eksisterende konto eller oprette en ny?</string>
     <string name="learn_more_title"><annotation id="learn_more">Læs mere</annotation></string>
     <string name="learn_more_account_intro">"Med en Google-konto kan du
-"<li><ul>Få vist og organisere alle dine oplysninger, uanset hvor de kommer fra.<li>Automatisk sikkerhedskopiere dine data, såsom e-mails, kontaktpersoner, musik og billeder.</li><li>Let bruge Google-tjenester, uanset hvor du er - f.eks. Kontaktpersoner, Kalender, Maps og meget mere.</li></ul></li></string>
+"<ul><li>Få vist og organisere alle dine oplysninger, uanset hvor de kommer fra.<li>Automatisk sikkerhedskopiere dine data, såsom e-mails, kontaktpersoner, musik og billeder.</li><li>Let bruge Google-tjenester, uanset hvor du er - f.eks. Kontaktpersoner, Kalender, Maps og meget mere.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Om Google Konti</string>
     <string name="learn_more_web_history">"Weboversigt justerer søgeresultater alt efter, hvad du har søgt efter, og hvilke websteder du har besøgt. Dette giver en personlig oplevelse på Google.
 

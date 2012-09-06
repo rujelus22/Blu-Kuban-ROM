@@ -49,7 +49,7 @@
     const/4 v9, 0x0
 
     .line 103
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 81
     new-instance v7, Ljava/lang/ThreadLocal;

@@ -2,9 +2,15 @@
 .super Ljava/lang/Object;
 .source "Transport.java"
 
+# interfaces
+.implements Ljava/lang/Cloneable;
+
 
 # virtual methods
 .method public abstract canTryTlsSecurity()Z
+.end method
+
+.method public abstract clone()Lcom/android/email/mail/Transport;
 .end method
 
 .method public abstract close()V
@@ -27,13 +33,7 @@
 .method public abstract getOutputStream()Ljava/io/OutputStream;
 .end method
 
-.method public abstract getUserInfoParts()[Ljava/lang/String;
-.end method
-
 .method public abstract isOpen()Z
-.end method
-
-.method public abstract newInstanceWithConfiguration()Lcom/android/email/mail/Transport;
 .end method
 
 .method public abstract open()V
@@ -61,6 +61,12 @@
     .end annotation
 .end method
 
+.method public abstract setHost(Ljava/lang/String;)V
+.end method
+
+.method public abstract setPort(I)V
+.end method
+
 .method public abstract setSecurity(IZ)V
 .end method
 
@@ -70,9 +76,6 @@
             Ljava/net/SocketException;
         }
     .end annotation
-.end method
-
-.method public abstract setUri(Ljava/net/URI;I)V
 .end method
 
 .method public abstract writeLine(Ljava/lang/String;Ljava/lang/String;)V

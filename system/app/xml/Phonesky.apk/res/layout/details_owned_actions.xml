@@ -1,7 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@drawable/details_section_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/auto_update_checkbox" />
-    <View android:id="@id/owned_actions_separator" android:background="@color/details_panel_separator" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-    <include layout="@layout/rate_review_section" />
-</LinearLayout>
+<com.google.android.finsky.layout.OwnedActions android:orientation="vertical" android:background="@drawable/details_section_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

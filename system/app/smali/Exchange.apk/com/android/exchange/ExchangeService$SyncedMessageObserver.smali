@@ -33,13 +33,13 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2214
+    .line 1006
     iput-object p1, p0, Lcom/android/exchange/ExchangeService$SyncedMessageObserver;->this$0:Lcom/android/exchange/ExchangeService;
 
-    .line 2215
+    .line 1007
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 2207
+    .line 1001
     new-instance v0, Landroid/content/Intent;
 
     sget-object v1, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
@@ -50,7 +50,7 @@
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService$SyncedMessageObserver;->syncAlarmIntent:Landroid/content/Intent;
 
-    .line 2209
+    .line 1002
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
     iget-object v1, p0, Lcom/android/exchange/ExchangeService$SyncedMessageObserver;->syncAlarmIntent:Landroid/content/Intent;
@@ -61,7 +61,7 @@
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService$SyncedMessageObserver;->syncAlarmPendingIntent:Landroid/app/PendingIntent;
 
-    .line 2212
+    .line 1004
     sget-object v0, Lcom/android/exchange/ExchangeService;->INSTANCE:Lcom/android/exchange/ExchangeService;
 
     const-string v1, "alarm"
@@ -74,7 +74,7 @@
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService$SyncedMessageObserver;->alarmManager:Landroid/app/AlarmManager;
 
-    .line 2216
+    .line 1008
     return-void
 .end method
 
@@ -85,7 +85,7 @@
     .parameter "selfChange"
 
     .prologue
-    .line 2220
+    .line 1012
     iget-object v0, p0, Lcom/android/exchange/ExchangeService$SyncedMessageObserver;->alarmManager:Landroid/app/AlarmManager;
 
     const/4 v1, 0x0
@@ -102,6 +102,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
 
-    .line 2222
+    .line 1014
     return-void
 .end method

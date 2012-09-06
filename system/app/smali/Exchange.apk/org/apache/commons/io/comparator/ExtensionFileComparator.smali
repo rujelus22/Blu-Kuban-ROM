@@ -97,14 +97,14 @@
     .registers 2
 
     .prologue
-    .line 64
+    .line 57
     new-instance v0, Lorg/apache/commons/io/comparator/ExtensionFileComparator;
 
     invoke-direct {v0}, Lorg/apache/commons/io/comparator/ExtensionFileComparator;-><init>()V
 
     sput-object v0, Lorg/apache/commons/io/comparator/ExtensionFileComparator;->EXTENSION_COMPARATOR:Ljava/util/Comparator;
 
-    .line 70
+    .line 60
     new-instance v0, Lorg/apache/commons/io/comparator/ReverseComparator;
 
     sget-object v1, Lorg/apache/commons/io/comparator/ExtensionFileComparator;->EXTENSION_COMPARATOR:Ljava/util/Comparator;
@@ -113,7 +113,7 @@
 
     sput-object v0, Lorg/apache/commons/io/comparator/ExtensionFileComparator;->EXTENSION_REVERSE:Ljava/util/Comparator;
 
-    .line 77
+    .line 63
     new-instance v0, Lorg/apache/commons/io/comparator/ExtensionFileComparator;
 
     sget-object v1, Lorg/apache/commons/io/IOCase;->INSENSITIVE:Lorg/apache/commons/io/IOCase;
@@ -122,7 +122,7 @@
 
     sput-object v0, Lorg/apache/commons/io/comparator/ExtensionFileComparator;->EXTENSION_INSENSITIVE_COMPARATOR:Ljava/util/Comparator;
 
-    .line 84
+    .line 66
     new-instance v0, Lorg/apache/commons/io/comparator/ReverseComparator;
 
     sget-object v1, Lorg/apache/commons/io/comparator/ExtensionFileComparator;->EXTENSION_INSENSITIVE_COMPARATOR:Ljava/util/Comparator;
@@ -131,7 +131,7 @@
 
     sput-object v0, Lorg/apache/commons/io/comparator/ExtensionFileComparator;->EXTENSION_INSENSITIVE_REVERSE:Ljava/util/Comparator;
 
-    .line 91
+    .line 70
     new-instance v0, Lorg/apache/commons/io/comparator/ExtensionFileComparator;
 
     sget-object v1, Lorg/apache/commons/io/IOCase;->SYSTEM:Lorg/apache/commons/io/IOCase;
@@ -140,7 +140,7 @@
 
     sput-object v0, Lorg/apache/commons/io/comparator/ExtensionFileComparator;->EXTENSION_SYSTEM_COMPARATOR:Ljava/util/Comparator;
 
-    .line 98
+    .line 73
     new-instance v0, Lorg/apache/commons/io/comparator/ReverseComparator;
 
     sget-object v1, Lorg/apache/commons/io/comparator/ExtensionFileComparator;->EXTENSION_SYSTEM_COMPARATOR:Ljava/util/Comparator;
@@ -156,15 +156,15 @@
     .registers 2
 
     .prologue
-    .line 107
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 81
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 108
+    .line 82
     sget-object v0, Lorg/apache/commons/io/IOCase;->SENSITIVE:Lorg/apache/commons/io/IOCase;
 
     iput-object v0, p0, Lorg/apache/commons/io/comparator/ExtensionFileComparator;->caseSensitivity:Lorg/apache/commons/io/IOCase;
 
-    .line 109
+    .line 83
     return-void
 .end method
 
@@ -173,10 +173,10 @@
     .parameter "caseSensitivity"
 
     .prologue
-    .line 118
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 90
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 119
+    .line 91
     if-nez p1, :cond_7
 
     sget-object p1, Lorg/apache/commons/io/IOCase;->SENSITIVE:Lorg/apache/commons/io/IOCase;
@@ -185,7 +185,7 @@
     :cond_7
     iput-object p1, p0, Lorg/apache/commons/io/comparator/ExtensionFileComparator;->caseSensitivity:Lorg/apache/commons/io/IOCase;
 
-    .line 120
+    .line 92
     return-void
 .end method
 
@@ -197,7 +197,7 @@
     .parameter "file2"
 
     .prologue
-    .line 132
+    .line 106
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v2
@@ -206,7 +206,7 @@
 
     move-result-object v0
 
-    .line 133
+    .line 107
     .local v0, suffix1:Ljava/lang/String;
     invoke-virtual {p2}, Ljava/io/File;->getName()Ljava/lang/String;
 
@@ -216,7 +216,7 @@
 
     move-result-object v1
 
-    .line 134
+    .line 108
     .local v1, suffix2:Ljava/lang/String;
     iget-object v2, p0, Lorg/apache/commons/io/comparator/ExtensionFileComparator;->caseSensitivity:Lorg/apache/commons/io/IOCase;
 
@@ -233,7 +233,7 @@
     .parameter "x1"
 
     .prologue
-    .line 58
+    .line 54
     check-cast p1, Ljava/io/File;
 
     .end local p1

@@ -63,7 +63,7 @@
     invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
     .line 34
-    const v0, 0x7f080010
+    const v0, 0x7f080013
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/CellWithOverlay;->findViewById(I)Landroid/view/View;
 

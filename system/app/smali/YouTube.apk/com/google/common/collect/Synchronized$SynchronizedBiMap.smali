@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/collect/as;
+.implements Lcom/google/common/collect/bj;
 .implements Ljava/io/Serializable;
 
 
@@ -12,63 +12,84 @@
 
 
 # instance fields
-.field private transient inverse:Lcom/google/common/collect/as;
+.field private transient inverse:Lcom/google/common/collect/bj;
 
 .field private transient valueSet:Ljava/util/Set;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/common/collect/as;Ljava/lang/Object;Lcom/google/common/collect/as;)V
+.method private constructor <init>(Lcom/google/common/collect/bj;Ljava/lang/Object;Lcom/google/common/collect/bj;)V
     .registers 4
+    .parameter
+    .end parameter
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
+
+    .prologue
+    .line 1113
+    invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Synchronized$SynchronizedMap;-><init>(Ljava/util/Map;Ljava/lang/Object;)V
+
+    .line 1114
+    iput-object p3, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->inverse:Lcom/google/common/collect/bj;
+
+    .line 1115
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/common/collect/bj;Ljava/lang/Object;Lcom/google/common/collect/bj;Lcom/google/common/collect/lv;)V
+    .registers 5
+    .parameter
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 1261
-    invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Synchronized$SynchronizedMap;-><init>(Ljava/util/Map;Ljava/lang/Object;)V
+    .line 1106
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;-><init>(Lcom/google/common/collect/bj;Ljava/lang/Object;Lcom/google/common/collect/bj;)V
 
-    .line 1262
-    iput-object p3, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->inverse:Lcom/google/common/collect/as;
-
-    .line 1263
     return-void
 .end method
 
 
 # virtual methods
-.method protected delegate()Lcom/google/common/collect/as;
+.method delegate()Lcom/google/common/collect/bj;
     .registers 2
 
     .prologue
-    .line 1266
+    .line 1118
     invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->delegate()Ljava/util/Map;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/common/collect/as;
+    check-cast v0, Lcom/google/common/collect/bj;
 
     return-object v0
 .end method
 
-.method protected bridge synthetic delegate()Ljava/lang/Object;
+.method bridge synthetic delegate()Ljava/lang/Object;
     .registers 2
 
     .prologue
-    .line 1253
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->delegate()Lcom/google/common/collect/as;
+    .line 1106
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->delegate()Lcom/google/common/collect/bj;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected bridge synthetic delegate()Ljava/util/Map;
+.method bridge synthetic delegate()Ljava/util/Map;
     .registers 2
 
     .prologue
-    .line 1253
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->delegate()Lcom/google/common/collect/as;
+    .line 1106
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->delegate()Lcom/google/common/collect/bj;
 
     move-result-object v0
 
@@ -81,18 +102,18 @@
     .parameter
 
     .prologue
-    .line 1279
+    .line 1132
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1280
+    .line 1133
     :try_start_3
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->delegate()Lcom/google/common/collect/as;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->delegate()Lcom/google/common/collect/bj;
 
     move-result-object v0
 
-    invoke-interface {v0, p1, p2}, Lcom/google/common/collect/as;->forcePut(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1, p2}, Lcom/google/common/collect/bj;->forcePut(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -102,7 +123,7 @@
 
     return-object v0
 
-    .line 1281
+    .line 1134
     :catchall_d
     move-exception v0
 
@@ -111,41 +132,41 @@
     throw v0
 .end method
 
-.method public inverse()Lcom/google/common/collect/as;
+.method public inverse()Lcom/google/common/collect/bj;
     .registers 5
 
     .prologue
-    .line 1285
+    .line 1139
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1286
+    .line 1140
     :try_start_3
-    iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->inverse:Lcom/google/common/collect/as;
+    iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->inverse:Lcom/google/common/collect/bj;
 
     if-nez v0, :cond_18
 
-    .line 1287
+    .line 1141
     new-instance v0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;
 
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->delegate()Lcom/google/common/collect/as;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->delegate()Lcom/google/common/collect/bj;
 
     move-result-object v2
 
-    invoke-interface {v2}, Lcom/google/common/collect/as;->inverse()Lcom/google/common/collect/as;
+    invoke-interface {v2}, Lcom/google/common/collect/bj;->inverse()Lcom/google/common/collect/bj;
 
     move-result-object v2
 
     iget-object v3, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->mutex:Ljava/lang/Object;
 
-    invoke-direct {v0, v2, v3, p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;-><init>(Lcom/google/common/collect/as;Ljava/lang/Object;Lcom/google/common/collect/as;)V
+    invoke-direct {v0, v2, v3, p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;-><init>(Lcom/google/common/collect/bj;Ljava/lang/Object;Lcom/google/common/collect/bj;)V
 
-    iput-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->inverse:Lcom/google/common/collect/as;
+    iput-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->inverse:Lcom/google/common/collect/bj;
 
-    .line 1290
+    .line 1144
     :cond_18
-    iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->inverse:Lcom/google/common/collect/as;
+    iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->inverse:Lcom/google/common/collect/bj;
 
     monitor-exit v1
     :try_end_1b
@@ -153,7 +174,7 @@
 
     return-object v0
 
-    .line 1291
+    .line 1145
     :catchall_1c
     move-exception v0
 
@@ -166,7 +187,7 @@
     .registers 2
 
     .prologue
-    .line 1253
+    .line 1106
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->values()Ljava/util/Set;
 
     move-result-object v0
@@ -178,23 +199,23 @@
     .registers 4
 
     .prologue
-    .line 1270
+    .line 1122
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1271
+    .line 1123
     :try_start_3
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->valueSet:Ljava/util/Set;
 
     if-nez v0, :cond_17
 
-    .line 1272
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->delegate()Lcom/google/common/collect/as;
+    .line 1124
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->delegate()Lcom/google/common/collect/bj;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/common/collect/as;->values()Ljava/util/Set;
+    invoke-interface {v0}, Lcom/google/common/collect/bj;->values()Ljava/util/Set;
 
     move-result-object v0
 
@@ -206,7 +227,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->valueSet:Ljava/util/Set;
 
-    .line 1274
+    .line 1126
     :cond_17
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->valueSet:Ljava/util/Set;
 
@@ -216,7 +237,7 @@
 
     return-object v0
 
-    .line 1275
+    .line 1127
     :catchall_1b
     move-exception v0
 

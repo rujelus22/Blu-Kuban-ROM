@@ -75,7 +75,7 @@
 
     .prologue
     .line 83
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 56
     const/4 v0, -0x1
@@ -114,7 +114,7 @@
     .prologue
     .line 69
     .local p7, availableAudioDevices:Ljava/util/Set;,"Ljava/util/Set<Lcom/google/android/videochat/CallSession$AudioDevice;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 56
     const/4 v1, -0x1

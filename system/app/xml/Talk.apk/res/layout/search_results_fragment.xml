@@ -7,5 +7,5 @@
         <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/count" android:layout_width="wrap_content" android:layout_height="wrap_content" />
     </LinearLayout>
     <ListView android:id="@android:id/list" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="0.0dip" android:drawSelectorOnTop="false" android:cacheColorHint="@android:color/transparent" android:layout_weight="1.0" />
-    <TextView android:textAppearance="?android:textAppearanceLarge" android:textColor="@android:color/black" android:gravity="center" android:id="@id/empty" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <TextView android:textAppearance="?android:textAppearanceLarge" android:textColor="@android:color/black" android:gravity="center" android:id="@id/empty" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent" />
 </LinearLayout>

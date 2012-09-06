@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract onAutoDiscoverComplete(ILcom/android/emailcommon/provider/EmailContent$HostAuth;)V
+.method public abstract onAutoDiscoverComplete(ILcom/android/emailcommon/provider/HostAuth;)V
 .end method
 
 .method public abstract onCheckSettingsComplete(I)V

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:background="@color/selectable_background" android:paddingLeft="@dimen/place_page_padding_left" android:paddingTop="@dimen/action_list_item_padding_top" android:paddingBottom="@dimen/action_list_item_padding_top" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/image" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="7.0dip" />
+        <TextView android:ellipsize="marquee" android:gravity="center_vertical" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <View android:id="@id/linkDivider" android:background="@android:drawable/divider_horizontal_bright" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</LinearLayout>

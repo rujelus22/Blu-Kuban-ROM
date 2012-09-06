@@ -26,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 53
+    .line 52
     const-class v0, Lorg/apache/james/mime4j/field/DateTimeField$Parser;
 
     invoke-static {v0}, Lorg/apache/james/mime4j/LogFactory;->getLog(Ljava/lang/Class;)Lorg/apache/james/mime4j/Log;
@@ -42,8 +42,8 @@
     .registers 1
 
     .prologue
-    .line 52
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 51
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -57,20 +57,20 @@
     .parameter "raw"
 
     .prologue
-    .line 56
+    .line 55
     const/4 v4, 0x0
 
-    .line 57
+    .line 56
     .local v4, date:Ljava/util/Date;
     const/4 v5, 0x0
 
-    .line 59
+    .line 58
     .local v5, parseException:Lorg/apache/james/mime4j/field/datetime/parser/ParseException;
     invoke-static {p2}, Lcom/android/emailcommon/utility/Utility;->cleanUpMimeDate(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 62
+    .line 61
     :try_start_6
     invoke-static {p2}, Lorg/apache/james/mime4j/field/datetime/DateTime;->parse(Ljava/lang/String;)Lorg/apache/james/mime4j/field/datetime/DateTime;
 

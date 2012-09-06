@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:paddingTop="4.0dip" android:layout_width="64.0dip" android:layout_height="36.0dip" android:layout_weight="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/oneIcon" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageView android:id="@id/icon1" android:visibility="gone" android:layout_width="@dimen/transit_line_icon_small" android:layout_height="@dimen/transit_line_icon_small" android:scaleType="fitXY" />
+        <ImageView android:id="@id/icon2" android:visibility="gone" android:layout_width="@dimen/transit_line_icon_small" android:layout_height="@dimen/transit_line_icon_small" android:scaleType="fitXY" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageView android:id="@id/icon3" android:visibility="gone" android:layout_width="@dimen/transit_line_icon_small" android:layout_height="@dimen/transit_line_icon_small" android:scaleType="fitXY" />
+        <ImageView android:id="@id/icon4" android:visibility="gone" android:layout_width="@dimen/transit_line_icon_small" android:layout_height="@dimen/transit_line_icon_small" android:scaleType="fitXY" />
+    </LinearLayout>
+</LinearLayout>

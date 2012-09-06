@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <fraction name="default_video_item_thumbnail_aspect_ratio">238.99841%</fraction>
+    <fraction name="detailed_video_item_thumbnail_aspect_ratio">175.0%</fraction>
+    <fraction name="guide_content_panel_collapsed_size">20.000004%</fraction>
+</resources>

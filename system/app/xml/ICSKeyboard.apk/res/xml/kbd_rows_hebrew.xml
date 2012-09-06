@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:latin="http://schemas.android.com/apk/res/inputmethod.latin.ported">
+    <include latin:keyboardLayout="@xml/kbd_key_styles" />
+    <Row latin:keyWidth="10.000002%p">
+        <Key latin:keyLabel="ק" latin:keyXPos="4.999995%p" />
+        <Key latin:keyLabel="ר" />
+        <Key latin:keyLabel="א" />
+        <Key latin:keyLabel="ט" />
+        <Key latin:keyLabel="ו" />
+        <Key latin:keyLabel="ן" />
+        <Key latin:keyLabel="ם" />
+        <Key latin:keyLabel="פ" />
+        <Key latin:keyStyle="deleteKeyStyle" latin:visualInsetsLeft="0.99999905%p" latin:keyWidth="fillRight" />
+    </Row>
+    <Row latin:keyWidth="10.000002%p">
+        <Key latin:moreKeys="1" latin:keyLabel="ש" latin:keyHintLabel="1" />
+        <Key latin:moreKeys="2" latin:keyLabel="ד" latin:keyHintLabel="2" />
+        <Key latin:moreKeys="3,ג׳" latin:keyLabel="ג" latin:keyHintLabel="3" />
+        <Key latin:moreKeys="4" latin:keyLabel="כ" latin:keyHintLabel="4" />
+        <Key latin:moreKeys="5" latin:keyLabel="ע" latin:keyHintLabel="5" />
+        <Key latin:moreKeys="6,ײַ" latin:keyLabel="י" latin:keyHintLabel="6" />
+        <Key latin:moreKeys="7,ח׳" latin:keyLabel="ח" latin:keyHintLabel="7" />
+        <Key latin:moreKeys="8" latin:keyLabel="ל" latin:keyHintLabel="8" />
+        <Key latin:moreKeys="9" latin:keyLabel="ך" latin:keyHintLabel="9" />
+        <Key latin:moreKeys="0" latin:keyLabel="ף" latin:keyHintLabel="0" latin:keyWidth="fillRight" />
+    </Row>
+    <Row latin:keyWidth="10.000002%p">
+        <Key latin:moreKeys="ז׳" latin:keyLabel="ז" latin:keyXPos="4.999995%p" />
+        <Key latin:keyLabel="ס" />
+        <Key latin:keyLabel="ב" />
+        <Key latin:keyLabel="ה" />
+        <Key latin:keyLabel="נ" />
+        <Key latin:keyLabel="מ" />
+        <Key latin:moreKeys="צ׳" latin:keyLabel="צ" />
+        <Key latin:moreKeys="ת׳" latin:keyLabel="ת" />
+        <Key latin:moreKeys="ץ׳" latin:keyLabel="ץ" />
+    </Row>
+    <include latin:keyboardLayout="@xml/kbd_qwerty_row4" />
+</merge>

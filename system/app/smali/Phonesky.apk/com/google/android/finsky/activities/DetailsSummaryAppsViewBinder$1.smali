@@ -20,25 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;
 
-.field final synthetic val$download:Lcom/google/android/finsky/download/Download;
-
-.field final synthetic val$downloadQueue:Lcom/google/android/finsky/download/DownloadQueue;
+.field final synthetic val$packageName:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Lcom/google/android/finsky/download/DownloadQueue;Lcom/google/android/finsky/download/Download;)V
-    .registers 4
-    .parameter
+.method constructor <init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;)V
+    .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 142
+    .line 170
     iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;
 
-    iput-object p2, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$1;->val$downloadQueue:Lcom/google/android/finsky/download/DownloadQueue;
-
-    iput-object p3, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$1;->val$download:Lcom/google/android/finsky/download/Download;
+    iput-object p2, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$1;->val$packageName:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -52,13 +47,18 @@
     .parameter "v"
 
     .prologue
-    .line 145
-    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$1;->val$downloadQueue:Lcom/google/android/finsky/download/DownloadQueue;
+    .line 173
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;
 
-    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$1;->val$download:Lcom/google/android/finsky/download/Download;
+    #getter for: Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mInstaller:Lcom/google/android/finsky/receivers/Installer;
+    invoke-static {v0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->access$000(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;)Lcom/google/android/finsky/receivers/Installer;
 
-    invoke-interface {v0, v1}, Lcom/google/android/finsky/download/DownloadQueue;->cancel(Lcom/google/android/finsky/download/Download;)V
+    move-result-object v0
 
-    .line 146
+    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$1;->val$packageName:Ljava/lang/String;
+
+    invoke-interface {v0, v1}, Lcom/google/android/finsky/receivers/Installer;->cancel(Ljava/lang/String;)V
+
+    .line 174
     return-void
 .end method

@@ -29,6 +29,12 @@
         <item>Only when silent</item>
         <item>Never</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>off</item>
+        <item>low</item>
+        <item>medium</item>
+        <item>virtual</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>None</item>
         <item>Image stabilisation: Low</item>

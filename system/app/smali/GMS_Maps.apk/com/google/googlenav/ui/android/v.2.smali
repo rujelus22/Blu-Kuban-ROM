@@ -1,584 +1,574 @@
-.class public Lcom/google/googlenav/ui/android/v;
-.super Ljava/lang/Object;
+.class Lcom/google/googlenav/ui/android/V;
+.super Landroid/widget/ArrayAdapter;
+.source "SourceFile"
 
 
-# static fields
-.field private static final a:[Lcom/google/googlenav/ui/android/w;
+# instance fields
+.field final synthetic a:Lcom/google/googlenav/ui/android/FloorPickerView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 10
+.method constructor <init>(Lcom/google/googlenav/ui/android/FloorPickerView;Landroid/content/Context;Ln/w;)V
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
 
-    const/16 v9, 0x8
+    .prologue
+    .line 156
+    iput-object p1, p0, Lcom/google/googlenav/ui/android/V;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
 
-    const v8, 0x7f020392
+    .line 158
+    const/4 v0, -0x1
 
-    const/4 v7, 0x2
+    invoke-direct {p0, p2, v0}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I)V
 
-    const/4 v6, 0x0
+    .line 160
+    invoke-virtual {p3}, Ln/w;->d()Z
 
+    move-result v0
+
+    if-eqz v0, :cond_15
+
+    .line 161
+    new-instance v0, Lcom/google/googlenav/ui/android/W;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lcom/google/googlenav/ui/android/W;-><init>(Ln/x;)V
+
+    invoke-virtual {p0, v0}, Lcom/google/googlenav/ui/android/V;->add(Ljava/lang/Object;)V
+
+    .line 164
+    :cond_15
+    invoke-virtual {p3}, Ln/w;->b()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_1d
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_32
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ln/x;
+
+    .line 165
+    new-instance v2, Lcom/google/googlenav/ui/android/W;
+
+    invoke-direct {v2, v0}, Lcom/google/googlenav/ui/android/W;-><init>(Ln/x;)V
+
+    invoke-virtual {p0, v2}, Lcom/google/googlenav/ui/android/V;->add(Ljava/lang/Object;)V
+
+    goto :goto_1d
+
+    .line 167
+    :cond_32
+    return-void
+.end method
+
+.method private a(I)I
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 240
+    const/4 v0, 0x1
+
+    int-to-float v1, p1
+
+    iget-object v2, p0, Lcom/google/googlenav/ui/android/V;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
+
+    invoke-virtual {v2}, Lcom/google/googlenav/ui/android/FloorPickerView;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v2
+
+    invoke-static {v0, v1, v2}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method private a(Landroid/view/ViewGroup;Landroid/graphics/drawable/Drawable;)Landroid/widget/ImageView;
+    .registers 9
+    .parameter
+    .parameter
+
+    .prologue
     const/4 v5, 0x1
 
-    const/16 v0, 0x29
+    const/4 v4, 0x0
 
-    new-array v0, v0, [Lcom/google/googlenav/ui/android/w;
+    .line 230
+    new-instance v0, Landroid/widget/ImageView;
 
-    new-instance v1, Lcom/google/googlenav/ui/android/w;
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/android/V;->getContext()Landroid/content/Context;
 
-    const v2, 0x7f02038d
+    move-result-object v1
 
-    invoke-direct {v1, v5, v6, v2}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
+    invoke-direct {v0, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    aput-object v1, v0, v6
+    .line 231
+    new-instance v1, Landroid/widget/AbsListView$LayoutParams;
 
-    new-instance v1, Lcom/google/googlenav/ui/android/w;
+    const/4 v2, -0x2
 
-    const/16 v2, 0x10
+    const/16 v3, 0x10
 
-    const v3, 0x7f02038c
-
-    invoke-direct {v1, v2, v6, v3}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
-
-    aput-object v1, v0, v5
-
-    new-instance v1, Lcom/google/googlenav/ui/android/w;
-
-    const v2, 0x7f0203a4
-
-    invoke-direct {v1, v7, v6, v2}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
-
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x3
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/4 v3, 0x3
-
-    const v4, 0x7f02039d
-
-    invoke-direct {v2, v3, v5, v4, v5}, Lcom/google/googlenav/ui/android/w;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x4
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/4 v3, 0x3
-
-    const v4, 0x7f02039d
-
-    invoke-direct {v2, v3, v7, v4}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x5
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/4 v3, 0x4
-
-    const v4, 0x7f020393
-
-    invoke-direct {v2, v3, v5, v4, v5}, Lcom/google/googlenav/ui/android/w;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/4 v3, 0x4
-
-    const v4, 0x7f020393
-
-    invoke-direct {v2, v3, v7, v4}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/4 v3, 0x5
-
-    const v4, 0x7f02039c
-
-    invoke-direct {v2, v3, v5, v4, v5}, Lcom/google/googlenav/ui/android/w;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    new-instance v1, Lcom/google/googlenav/ui/android/w;
-
-    const/4 v2, 0x5
-
-    const v3, 0x7f02039c
-
-    invoke-direct {v1, v2, v7, v3}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
-
-    aput-object v1, v0, v9
-
-    const/16 v1, 0x9
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/4 v3, 0x6
-
-    const v4, 0x7f0203a6
-
-    invoke-direct {v2, v3, v7, v4, v5}, Lcom/google/googlenav/ui/android/w;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xa
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/4 v3, 0x6
-
-    const v4, 0x7f0203a6
-
-    invoke-direct {v2, v3, v6, v4}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xb
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/4 v3, 0x7
-
-    invoke-direct {v2, v3, v5, v8, v5}, Lcom/google/googlenav/ui/android/w;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xc
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/4 v3, 0x7
-
-    invoke-direct {v2, v3, v6, v8}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xd
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    invoke-direct {v2, v9, v7, v8}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xe
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    invoke-direct {v2, v9, v5, v8, v5}, Lcom/google/googlenav/ui/android/w;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xf
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    invoke-direct {v2, v9, v6, v8}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x10
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/16 v3, 0x9
-
-    const v4, 0x7f02038f
-
-    invoke-direct {v2, v3, v5, v4, v5}, Lcom/google/googlenav/ui/android/w;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x11
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/16 v3, 0x9
-
-    const v4, 0x7f02038f
-
-    invoke-direct {v2, v3, v7, v4}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x12
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/16 v3, 0xa
-
-    const v4, 0x7f020390
-
-    invoke-direct {v2, v3, v6, v4}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x13
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/16 v3, 0xb
-
-    const v4, 0x7f020391
-
-    invoke-direct {v2, v3, v5, v4, v5}, Lcom/google/googlenav/ui/android/w;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x14
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/16 v3, 0xb
-
-    const v4, 0x7f020391
-
-    invoke-direct {v2, v3, v6, v4}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x15
-
-    new-instance v2, Lcom/google/googlenav/ui/android/y;
-
-    const/16 v3, 0x43
-
-    const v4, 0x7f020394
-
-    invoke-direct {v2, v5, v3, v4, v5}, Lcom/google/googlenav/ui/android/y;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x16
-
-    new-instance v2, Lcom/google/googlenav/ui/android/y;
-
-    const/16 v3, 0x70
-
-    const v4, 0x7f020395
-
-    invoke-direct {v2, v5, v3, v4, v5}, Lcom/google/googlenav/ui/android/y;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x17
-
-    new-instance v2, Lcom/google/googlenav/ui/android/y;
-
-    const/16 v3, 0x9d
-
-    const v4, 0x7f020396
-
-    invoke-direct {v2, v5, v3, v4, v5}, Lcom/google/googlenav/ui/android/y;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x18
-
-    new-instance v2, Lcom/google/googlenav/ui/android/y;
-
-    const/16 v3, 0xca
-
-    const v4, 0x7f020397
-
-    invoke-direct {v2, v5, v3, v4, v5}, Lcom/google/googlenav/ui/android/y;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x19
-
-    new-instance v2, Lcom/google/googlenav/ui/android/y;
-
-    const/16 v3, 0xf7
-
-    const v4, 0x7f020398
-
-    invoke-direct {v2, v5, v3, v4, v5}, Lcom/google/googlenav/ui/android/y;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1a
-
-    new-instance v2, Lcom/google/googlenav/ui/android/y;
-
-    const/16 v3, 0x124
-
-    const v4, 0x7f020399
-
-    invoke-direct {v2, v5, v3, v4, v5}, Lcom/google/googlenav/ui/android/y;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1b
-
-    new-instance v2, Lcom/google/googlenav/ui/android/y;
-
-    const/16 v3, 0x168
-
-    const v4, 0x7f02039a
-
-    invoke-direct {v2, v5, v3, v4, v5}, Lcom/google/googlenav/ui/android/y;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1c
-
-    new-instance v2, Lcom/google/googlenav/ui/android/y;
-
-    const/16 v3, 0x43
-
-    const v4, 0x7f020394
-
-    invoke-direct {v2, v6, v3, v4}, Lcom/google/googlenav/ui/android/y;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1d
-
-    new-instance v2, Lcom/google/googlenav/ui/android/y;
-
-    const/16 v3, 0x70
-
-    const v4, 0x7f020395
-
-    invoke-direct {v2, v6, v3, v4}, Lcom/google/googlenav/ui/android/y;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1e
-
-    new-instance v2, Lcom/google/googlenav/ui/android/y;
-
-    const/16 v3, 0x9d
-
-    const v4, 0x7f020396
-
-    invoke-direct {v2, v6, v3, v4}, Lcom/google/googlenav/ui/android/y;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1f
-
-    new-instance v2, Lcom/google/googlenav/ui/android/y;
-
-    const/16 v3, 0xca
-
-    const v4, 0x7f020397
-
-    invoke-direct {v2, v6, v3, v4}, Lcom/google/googlenav/ui/android/y;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x20
-
-    new-instance v2, Lcom/google/googlenav/ui/android/y;
-
-    const/16 v3, 0xf7
-
-    const v4, 0x7f020398
-
-    invoke-direct {v2, v6, v3, v4}, Lcom/google/googlenav/ui/android/y;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x21
-
-    new-instance v2, Lcom/google/googlenav/ui/android/y;
-
-    const/16 v3, 0x124
-
-    const v4, 0x7f020399
-
-    invoke-direct {v2, v6, v3, v4}, Lcom/google/googlenav/ui/android/y;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x22
-
-    new-instance v2, Lcom/google/googlenav/ui/android/y;
-
-    const/16 v3, 0x168
-
-    const v4, 0x7f02039a
-
-    invoke-direct {v2, v6, v3, v4}, Lcom/google/googlenav/ui/android/y;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x23
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/16 v3, 0xc
-
-    const v4, 0x7f020391
-
-    invoke-direct {v2, v3, v5, v4, v5}, Lcom/google/googlenav/ui/android/w;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x24
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/16 v3, 0xc
-
-    const v4, 0x7f020391
-
-    invoke-direct {v2, v3, v6, v4}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x25
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/16 v3, 0x11
-
-    const v4, 0x7f02039b
-
-    invoke-direct {v2, v3, v5, v4, v5}, Lcom/google/googlenav/ui/android/w;-><init>(IIIZ)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x26
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/16 v3, 0x11
-
-    const v4, 0x7f02039b
-
-    invoke-direct {v2, v3, v6, v4}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x27
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/16 v3, 0xd
-
-    const v4, 0x7f0203a4
-
-    invoke-direct {v2, v3, v6, v4}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x28
-
-    new-instance v2, Lcom/google/googlenav/ui/android/w;
-
-    const/16 v3, 0xe
-
-    const v4, 0x7f02038e
-
-    invoke-direct {v2, v3, v6, v4}, Lcom/google/googlenav/ui/android/w;-><init>(III)V
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lcom/google/googlenav/ui/android/v;->a:[Lcom/google/googlenav/ui/android/w;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .registers 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static a(Landroid/content/Context;Lau/s;)Landroid/graphics/drawable/Drawable;
-    .registers 4
-
-    invoke-static {p1}, Lcom/google/googlenav/ui/android/v;->a(Lau/s;)Lcom/google/googlenav/ui/android/w;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_b
-
-    invoke-virtual {v0, p0}, Lcom/google/googlenav/ui/android/w;->a(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    :goto_a
-    return-object v0
-
-    :cond_b
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f0203a5
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    goto :goto_a
-.end method
-
-.method static a(Lau/s;)Lcom/google/googlenav/ui/android/w;
-    .registers 6
-
-    invoke-virtual {p0}, Lau/s;->c()I
-
-    move-result v1
-
-    invoke-virtual {p0}, Lau/s;->d()I
-
-    move-result v2
-
-    invoke-virtual {p0}, Lau/s;->e()I
+    invoke-direct {p0, v3}, Lcom/google/googlenav/ui/android/V;->a(I)I
 
     move-result v3
 
-    const/4 v0, 0x0
+    invoke-direct {v1, v2, v3}, Landroid/widget/AbsListView$LayoutParams;-><init>(II)V
 
-    :goto_d
-    sget-object v4, Lcom/google/googlenav/ui/android/v;->a:[Lcom/google/googlenav/ui/android/w;
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    array-length v4, v4
+    .line 232
+    invoke-direct {p0, v5}, Lcom/google/googlenav/ui/android/V;->a(I)I
 
-    if-ge v0, v4, :cond_24
+    move-result v1
 
-    sget-object v4, Lcom/google/googlenav/ui/android/v;->a:[Lcom/google/googlenav/ui/android/w;
+    invoke-direct {p0, v5}, Lcom/google/googlenav/ui/android/V;->a(I)I
 
-    aget-object v4, v4, v0
+    move-result v2
 
-    invoke-virtual {v4, v1, v2, v3}, Lcom/google/googlenav/ui/android/w;->a(III)Z
+    invoke-virtual {v0, v1, v4, v2, v4}, Landroid/widget/ImageView;->setPadding(IIII)V
 
-    move-result v4
+    .line 233
+    invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    if-eqz v4, :cond_21
+    .line 234
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    sget-object v1, Lcom/google/googlenav/ui/android/v;->a:[Lcom/google/googlenav/ui/android/w;
-
-    aget-object v0, v1, v0
-
-    :goto_20
+    .line 235
     return-object v0
+.end method
 
-    :cond_21
-    add-int/lit8 v0, v0, 0x1
+.method private a(Landroid/widget/RelativeLayout;)Landroid/widget/TextView;
+    .registers 6
+    .parameter
 
-    goto :goto_d
+    .prologue
+    const/4 v2, 0x0
 
-    :cond_24
+    .line 216
+    new-instance v0, Landroid/widget/TextView;
+
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/android/V;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+    .line 217
+    invoke-virtual {v0, v2, v2, v2, v2}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    .line 218
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setClickable(Z)V
+
+    .line 219
+    const/4 v1, 0x2
+
+    const/high16 v2, 0x4190
+
+    invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
+
+    .line 220
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/V;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
+
+    invoke-static {v1}, Lcom/google/googlenav/ui/android/FloorPickerView;->a(Lcom/google/googlenav/ui/android/FloorPickerView;)Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f090042
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 221
+    const/16 v1, 0x11
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
+
+    .line 222
+    new-instance v1, Landroid/widget/RelativeLayout$LayoutParams;
+
+    const/4 v2, -0x1
+
+    const/16 v3, 0x24
+
+    invoke-direct {p0, v3}, Lcom/google/googlenav/ui/android/V;->a(I)I
+
+    move-result v3
+
+    invoke-direct {v1, v2, v3}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
+
+    .line 224
+    const/16 v2, 0xa
+
+    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
+
+    .line 225
+    invoke-virtual {p1, v0, v1}, Landroid/widget/RelativeLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 226
+    return-object v0
+.end method
+
+.method private a(Landroid/view/View;ILcom/google/googlenav/ui/android/X;)V
+    .registers 9
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    const/16 v2, 0x8
+
+    const/4 v1, 0x0
+
+    .line 248
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/V;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
+
+    invoke-static {v0}, Lcom/google/googlenav/ui/android/FloorPickerView;->b(Lcom/google/googlenav/ui/android/FloorPickerView;)I
+
+    move-result v0
+
+    if-ne p2, v0, :cond_60
+
+    .line 249
+    iget-object v0, p3, Lcom/google/googlenav/ui/android/X;->a:Landroid/widget/TextView;
+
+    iget-object v3, p0, Lcom/google/googlenav/ui/android/V;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
+
+    invoke-static {v3}, Lcom/google/googlenav/ui/android/FloorPickerView;->a(Lcom/google/googlenav/ui/android/FloorPickerView;)Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    const v4, 0x7f090001
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v3
+
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 250
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/V;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
+
+    invoke-static {v0}, Lcom/google/googlenav/ui/android/FloorPickerView;->a(Lcom/google/googlenav/ui/android/FloorPickerView;)Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v3, 0x7f0201ad
+
+    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 254
+    invoke-virtual {p1}, Landroid/view/View;->destroyDrawingCache()V
+
+    .line 266
+    :cond_30
+    :goto_30
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/V;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
+
+    invoke-static {v0}, Lcom/google/googlenav/ui/android/FloorPickerView;->c(Lcom/google/googlenav/ui/android/FloorPickerView;)I
+
+    move-result v0
+
+    if-ne p2, v0, :cond_80
+
+    .line 267
+    iget-object v0, p3, Lcom/google/googlenav/ui/android/X;->b:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 274
+    :goto_3d
+    invoke-virtual {p0, p2}, Lcom/google/googlenav/ui/android/V;->getItem(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlenav/ui/android/W;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/android/W;->a()Ln/x;
+
+    move-result-object v0
+
+    .line 276
+    if-eqz v0, :cond_86
+
+    iget-object v3, p0, Lcom/google/googlenav/ui/android/V;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
+
+    invoke-static {v3}, Lcom/google/googlenav/ui/android/FloorPickerView;->d(Lcom/google/googlenav/ui/android/FloorPickerView;)Ljava/util/Set;
+
+    move-result-object v3
+
+    invoke-virtual {v0}, Ln/x;->a()Ln/B;
+
+    move-result-object v0
+
+    invoke-interface {v3, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_86
+
+    move v0, v1
+
+    .line 279
+    :goto_5a
+    iget-object v1, p3, Lcom/google/googlenav/ui/android/X;->c:Landroid/view/View;
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    .line 280
+    return-void
+
+    .line 256
+    :cond_60
+    iget-object v0, p3, Lcom/google/googlenav/ui/android/X;->a:Landroid/widget/TextView;
+
+    iget-object v3, p0, Lcom/google/googlenav/ui/android/V;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
+
+    invoke-static {v3}, Lcom/google/googlenav/ui/android/FloorPickerView;->a(Lcom/google/googlenav/ui/android/FloorPickerView;)Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    const v4, 0x7f090042
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v3
+
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 257
+    invoke-virtual {p1}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_30
+
+    .line 258
     const/4 v0, 0x0
 
-    goto :goto_20
+    invoke-virtual {p1, v0}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 262
+    invoke-virtual {p1}, Landroid/view/View;->destroyDrawingCache()V
+
+    goto :goto_30
+
+    .line 269
+    :cond_80
+    iget-object v0, p3, Lcom/google/googlenav/ui/android/X;->b:Landroid/view/View;
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+
+    goto :goto_3d
+
+    :cond_86
+    move v0, v2
+
+    goto :goto_5a
+.end method
+
+
+# virtual methods
+.method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .registers 10
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    const/4 v4, -0x2
+
+    .line 183
+    move-object v0, p2
+
+    check-cast v0, Landroid/widget/RelativeLayout;
+
+    .line 184
+    if-nez p2, :cond_86
+
+    .line 185
+    new-instance v0, Landroid/widget/RelativeLayout;
+
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/android/V;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;)V
+
+    .line 186
+    new-instance v1, Landroid/widget/AbsListView$LayoutParams;
+
+    const/4 v2, -0x1
+
+    const/16 v3, 0x2c
+
+    invoke-direct {p0, v3}, Lcom/google/googlenav/ui/android/V;->a(I)I
+
+    move-result v3
+
+    invoke-direct {v1, v2, v3}, Landroid/widget/AbsListView$LayoutParams;-><init>(II)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    move-object v1, v0
+
+    .line 189
+    :goto_1f
+    invoke-virtual {v1}, Landroid/widget/RelativeLayout;->getTag()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlenav/ui/android/X;
+
+    .line 190
+    if-nez v0, :cond_84
+
+    .line 191
+    invoke-direct {p0, v1}, Lcom/google/googlenav/ui/android/V;->a(Landroid/widget/RelativeLayout;)Landroid/widget/TextView;
+
+    move-result-object v2
+
+    .line 193
+    new-instance v0, Landroid/widget/LinearLayout;
+
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/android/V;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-direct {v0, v3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+
+    .line 194
+    new-instance v3, Landroid/widget/RelativeLayout$LayoutParams;
+
+    invoke-direct {v3, v4, v4}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
+
+    .line 196
+    const/16 v4, 0xc
+
+    invoke-virtual {v3, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
+
+    .line 197
+    const/16 v4, 0xe
+
+    invoke-virtual {v3, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
+
+    .line 198
+    invoke-virtual {v1, v0, v3}, Landroid/widget/RelativeLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 200
+    iget-object v3, p0, Lcom/google/googlenav/ui/android/V;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
+
+    invoke-static {v3}, Lcom/google/googlenav/ui/android/FloorPickerView;->a(Lcom/google/googlenav/ui/android/FloorPickerView;)Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    const v4, 0x7f0201ae
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    invoke-direct {p0, v0, v3}, Lcom/google/googlenav/ui/android/V;->a(Landroid/view/ViewGroup;Landroid/graphics/drawable/Drawable;)Landroid/widget/ImageView;
+
+    move-result-object v3
+
+    .line 202
+    iget-object v4, p0, Lcom/google/googlenav/ui/android/V;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
+
+    invoke-static {v4}, Lcom/google/googlenav/ui/android/FloorPickerView;->a(Lcom/google/googlenav/ui/android/FloorPickerView;)Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    const v5, 0x7f0201af
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v4
+
+    invoke-direct {p0, v0, v4}, Lcom/google/googlenav/ui/android/V;->a(Landroid/view/ViewGroup;Landroid/graphics/drawable/Drawable;)Landroid/widget/ImageView;
+
+    move-result-object v4
+
+    .line 205
+    new-instance v0, Lcom/google/googlenav/ui/android/X;
+
+    invoke-direct {v0, v2, v3, v4}, Lcom/google/googlenav/ui/android/X;-><init>(Landroid/widget/TextView;Landroid/view/View;Landroid/view/View;)V
+
+    .line 206
+    invoke-virtual {v1, v0}, Landroid/widget/RelativeLayout;->setTag(Ljava/lang/Object;)V
+
+    move-object v2, v0
+
+    .line 208
+    :goto_71
+    iget-object v3, v2, Lcom/google/googlenav/ui/android/X;->a:Landroid/widget/TextView;
+
+    invoke-virtual {p0, p1}, Lcom/google/googlenav/ui/android/V;->getItem(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlenav/ui/android/W;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/android/W;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v3, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 210
+    invoke-direct {p0, v1, p1, v2}, Lcom/google/googlenav/ui/android/V;->a(Landroid/view/View;ILcom/google/googlenav/ui/android/X;)V
+
+    .line 212
+    return-object v1
+
+    :cond_84
+    move-object v2, v0
+
+    goto :goto_71
+
+    :cond_86
+    move-object v1, v0
+
+    goto :goto_1f
+.end method
+
+.method public hasStableIds()Z
+    .registers 2
+
+    .prologue
+    .line 175
+    const/4 v0, 0x1
+
+    return v0
 .end method

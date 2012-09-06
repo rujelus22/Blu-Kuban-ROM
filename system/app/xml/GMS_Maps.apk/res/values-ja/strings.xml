@@ -53,17 +53,21 @@
 運転中はアプリケーションを操作しないでください。交通情報データはリアルタイムではありません。また、経路が間違っていたり、危険な場所を通過する場合や、フェリーを利用する場合があります。徒歩経路に歩道がない場合もあります。適用される法律には従うようにしてください。
 
 常に安全運転を心掛けましょう。"</string>
+    <string name="da_agreement_with_walking_and_biking">"Googleマップナビはベータ版です。あらかじめご了承の上、ご利用ください。
+
+移動中はこのアプリを操作しないでください。交通情報データはリアルタイムではありません。また、経路が間違っていたり、危険な場所や通行禁止の場所を通ったり、フェリーを利用したりする場合があります。徒歩経路では歩道のない道を通る場合があります。自転車ルートでは自転車に適さないルートを含む場合があります。適用される法律には従うようにしてください。
+
+移動中は常に安全を心掛けてください。"</string>
     <string name="da_disclaimer_checkbox">このメッセージを再表示する</string>
     <string name="da_show_list">経路一覧</string>
-    <string name="da_route_overview">経路情報</string>
+    <string name="da_route_and_alternates">経路と別の経路</string>
     <string name="da_show_map">地図を表示</string>
+    <string name="da_menu_more">その他</string>
     <string name="da_satellite">航空写真</string>
     <string name="da_traffic_view">交通状況表示</string>
     <string name="da_no_traffic_here">この地域の交通情報はありません</string>
     <string name="da_traffic">交通情報</string>
     <string name="da_area_view">広域表示</string>
-    <string name="da_mute">ミュート</string>
-    <string name="da_unmute">ミュート解除</string>
     <string name="da_settings">設定</string>
     <string name="da_help">ヘルプ</string>
     <string name="da_terms_privacy_notices">法的事項</string>
@@ -71,10 +75,13 @@
     <string name="da_privacy_policy">プライバシーポリシー</string>
     <string name="da_legal_notices">法的通知</string>
     <string name="da_navigation_suspended">ナビが中断されました</string>
-    <string name="da_exit_navigation">ナビの終了</string>
-    <string name="da_power_settings_category">電源の設定</string>
+    <string name="da_exit_navigation">ナビゲーションの終了</string>
+    <string name="da_save">保存</string>
+    <string name="da_power_settings_category">電源設定</string>
     <string name="da_screen_dimming_setting_title">自動調光</string>
     <string name="da_screen_dimming_setting_summary">指示が出た時以外は画面の輝度を下げ、バッテリーの消耗を抑えます</string>
+    <string name="da_home_setting_set_address">自宅の住所を設定する</string>
+    <string name="da_home_setting_set_address_hint">住所を入力</string>
     <string name="da_info_settings_category">情報</string>
     <string name="da_email_me_when_resolved">解決時にメールを受け取る</string>
     <string name="da_problem_reported">問題を報告しました</string>
@@ -85,7 +92,7 @@
 ナビゲーションの設定で、ワンクリックで問題を報告することもできます。
 
 問題の解決時にメールを受け取る設定にしておくと、問題が解決されるまでメールアドレス、現在地、コメントが保管されます。"</string>
-    <string name="da_report_a_problem">問題を報告</string>
+    <string name="da_report_a_problem">問題の報告</string>
     <string name="da_report_a_problem_dialog_title">問題の報告</string>
     <string name="da_rmi_preference_trackball_summary">有効にすると、トラックボールを押して問題を報告できます。</string>
     <string name="da_rmi_preference_camera_summary">有効にすると、カメラボタンを押して問題を報告できます。</string>
@@ -109,6 +116,8 @@
     <string name="da_turn_on_gps">位置情報の設定を表示しますか？</string>
     <string name="da_voice_guidance">音声案内</string>
     <string name="da_install_voice_guidance_prompt">音声ガイドナビを利用する前に、Androidマーケットからテキスト読み上げサポートをインストールしてください。</string>
+    <string name="da_voice_off">音声をオフにする</string>
+    <string name="da_voice_on">音声をオンにする</string>
     <string name="da_voice_guidance_on">音声案内がオンになっています</string>
     <string name="da_voice_guidance_off">音声案内がオフになっています</string>
     <string name="da_dialog_ok">OK</string>
@@ -127,7 +136,7 @@
     <string name="da_layer_name_gas_stations">ガソリンスタンド</string>
     <string name="da_layer_name_restaurants">レストラン</string>
     <string name="da_layer_name_supermarkets">スーパー</string>
-    <string name="da_layer_name_atms_and_banks">コンビニ</string>
+    <string name="da_layer_name_atms_and_banks">ATM、銀行</string>
     <string name="da_layer_name_convenience_stores">コンビニ</string>
     <string name="da_query_banks_and_atms">コンビニエンスストア</string>
     <string name="da_rerouting">経路の再検索中...</string>
@@ -136,7 +145,7 @@
     <string name="da_via_name_separator">" &amp; "</string>
     <string name="da_record_feedback">フィードバックを録音</string>
     <string name="da_destination_not_here">目的地はここではない</string>
-    <string name="da_new_destination">他の目的地</string>
+    <string name="da_new_destination">次の目的地</string>
     <string name="da_reroute_to_destination">目的地に戻る</string>
     <string name="da_change_destination">目的地設定</string>
     <string name="da_search_for_destination">検索...</string>
@@ -145,7 +154,7 @@
     <string name="da_did_you_mean">候補から選択</string>
     <string name="da_did_you_say">もしかして:</string>
     <string name="da_for_your_end_point">目的地</string>
-    <string name="da_unnamed_road">名称のない道路</string>
+    <string name="da_unnamed_road">不明な道路</string>
     <string name="da_combined_maneuver">%1$s、その先、%2$s</string>
     <string name="da_prepare_event">%1$s、%2$s</string>
     <string name="da_speech_in_x_meters">およそ%1$sm先</string>
@@ -184,13 +193,16 @@
     <string name="da_no_image_available">利用できる画像がありません。</string>
     <string name="da_image_error">画像の読み込み中にエラー。</string>
     <string name="da_no_alternate_routes">目的地への別の経路が見つかりませんでした。</string>
-    <string name="da_picker_type_destination">目的地を入力</string>
+    <string name="da_picker_type_destination">目的地をキーボードで入力</string>
     <string name="da_picker_speak_destination">目的地を音声入力</string>
     <string name="da_picker_contacts">連絡先</string>
     <string name="da_picker_starred_items">スター付きの場所</string>
+    <string name="da_picker_starred">スター付き</string>
     <string name="da_picker_new_contact">連絡先を新規登録</string>
-    <string name="da_picker_saved_destinations">保存された目的地</string>
-    <string name="da_picker_recent_destinations">最近の目的地</string>
+    <string name="da_go_home">自宅に戻る</string>
+    <string name="da_picker_saved_destinations">保存済みの目的地</string>
+    <string name="da_picker_recent_destinations">目的地の履歴</string>
+    <string name="da_picker_shortcuts">ショートカット</string>
     <string name="da_navigate_to">目的地:</string>
     <string name="da_return_to">次のところへ戻る</string>
     <string name="da_picker_search_hint">目的地</string>
@@ -208,7 +220,6 @@ Googleマップの検索結果にスターを付けるには、住所の近く�
     <string name="da_walking">徒歩</string>
     <string name="da_bicycling">自転車</string>
     <string name="da_quoted_text">「%1$s」</string>
-    <string name="da_more_info">詳細</string>
     <string name="da_walking_warning">徒歩経路（ベータ版）: 注意してください</string>
     <string name="da_bicycling_warning">自転車経路（ベータ版）: 注意してください</string>
     <string name="da_calibrate_compass_title">コンパスの調整</string>
@@ -216,7 +227,6 @@ Googleマップの検索結果にスターを付けるには、住所の近く�
     <string name="da_confirm_exit_title">ナビを終了しますか？</string>
     <string name="da_confirm_exit_text">すべての経路案内を終了します。</string>
     <string name="da_route_includes_tolls">有料道路を使う経路です</string>
-    <string name="da_avoid_tolls">有料道路を使わない</string>
     <string name="da_avoiding_tolls">有料道路を使わない経路です</string>
     <string name="da_avoiding_highways">高速道路を使わない経路です</string>
     <string name="da_route_includes_unavoidable_tolls">この経路は有料道路を使います。</string>
@@ -272,13 +282,15 @@ Googleマップの検索結果にスターを付けるには、住所の近く�
     <string name="DIRECTIONS_TITLE">経路・乗換</string>
     <string name="EXIT_COMMAND">終了</string>
     <string name="FEATURE_SWITCHER_LATITUDE_SUBTITLE">家族や友だちを見つけよう</string>
-    <string name="FEATURE_SWITCHER_LOCAL">プレイス</string>
+    <string name="FEATURE_SWITCHER_LOCAL">ローカル</string>
     <string name="FEATURE_SWITCHER_LOCAL_SUBTITLE">レストランやバーなどを見つけよう</string>
     <string name="FEATURE_SWITCHER_MAP">地図</string>
     <string name="FEATURE_SWITCHER_NAV">GPSナビ</string>
     <string name="FEATURE_SWITCHER_TRAFFIC">交通状況</string>
     <string name="FRIENDS_COMMAND_ACTIVATE">Latitude</string>
     <string name="FRIENDS_COMMAND_JOIN">Latitudeに参加</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE">Google+プロフィール</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE_DESCRIPTION">Google+で友だちのプロフィールを表示する</string>
     <string name="FRIENDS_HISTORY_SUMMARY_TITLE">ロケーション履歴</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TICKER">{0}さんからチェックインリクエストが届いています</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TITLE">Latitudeチェックインリクエスト</string>
@@ -294,14 +306,30 @@ Googleマップの検索結果にスターを付けるには、住所の近く�
     <string name="LATITUDE_CHECKIN_NOTIFICATION_CONTENT_NEW">チェックインするか通知を停止するにはここをタップ</string>
     <string name="LATITUDE_CHECKIN_NOTIFICATION_TICKER">{0}にチェックインしますか？</string>
     <string name="LATITUDE_CHECKIN_NOTIFICATION_TITLE">チェックイン</string>
-    <string name="LATITUDE_CHECKIN_NOTIFICATION_TITLE_NEW">今{0}ですか？</string>
+    <string name="LATITUDE_CHECKIN_NOTIFICATION_TITLE_NEW">今ここ？{0}</string>
     <string name="LATITUDE_WIDGET_FRIENDS_ACTIVATE">タップしてLatitudeにログインしてください</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LAST_UPDATED_TIME_ABSOLUTE">最終更新:{0}</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LOCATION_UNKNOWN">現在地不明</string>
+    <string name="LATITUDE_WIDGET_START">タップしてLatitudeを開始</string>
     <string name="LOADING">読み込み中</string>
-    <string name="LOCAL_APP_NAME">Googleローカル</string>
     <string name="MAPS_APP_NAME">マップ</string>
     <string name="MY_PLACES_COMMAND">マイプレイス</string>
+    <string name="MY_PLACES_DELETE_CONFIRM">&lt;b>{0}&lt;/b>はマイプレイスから削除されます。</string>
+    <string name="MY_PLACES_DELETE_CONFIRM_TITLE">削除</string>
+    <string name="MY_PLACES_DELETE_ITEM_COMMAND">削除</string>
+    <string name="MY_PLACES_DELETE_OWNED_MAP_CONFIRM">&lt;b>{0}&lt;/b>はマイプレイスから完全に削除されます。</string>
+    <string name="MY_PLACES_DELETE_PLACE_CONFIRM">&lt;b>{0}&lt;/b>はマイプレイスから削除され、この場所に関する以下のあなたの情報は完全に削除されます:</string>
+    <string name="MY_PLACES_DELETE_SERVICE_UNAVAILABLE">サービスはご利用いただけません。しばらくしてからもう一度お試しください。</string>
+    <string name="MY_PLACES_ITEM_IS_BOOKMARKED_MY_MAP">ブックマーク済み</string>
+    <string name="MY_PLACES_ITEM_IS_MY_MAP">マイマップ</string>
+    <string name="MY_PLACES_ITEM_IS_REVIEWED">クチコミあり</string>
+    <string name="MY_PLACES_ITEM_IS_STARRED">スター付き</string>
+    <string name="MY_PLACES_LINK_ON_SUGGEST">マイプレイスが反映されています</string>
+    <string name="MY_PLACES_NO_DIRECTIONS_ITEM_MESSAGE">経路の履歴はありません。</string>
+    <string name="MY_PLACES_NO_MY_MAP_ITEM_MESSAGE">マイマップはありません。</string>
+    <string name="MY_PLACES_NO_STARRED_ITEM_MESSAGE">スター付きの場所はありません。</string>
+    <string name="MY_PLACES_SEE_ON_MAP_COMMAND">地図</string>
+    <string name="MY_PLACES_SHOW_DETAIL_PAGE_COMMAND">詳細</string>
     <string name="NAVIGATE_MODE_NAVIGATION">ナビ</string>
     <string name="NEED_NET_BODY">このアプリケーションを使用するには、ネットワークによるデータ送受信を許可する必要があります。</string>
     <string name="NEED_NET_TITLE">ネットワークアクセスが必要です</string>
@@ -309,8 +337,11 @@ Googleマップの検索結果にスターを付けるには、住所の近く�
     <string name="NET_FAIL_BODY">このアプリケーションにはデータ接続が常に必要です。</string>
     <string name="NET_FAIL_TITLE">ネットワークエラー</string>
     <string name="NET_UNAVAILABLE_TITLE">ネットワークに接続できません</string>
-    <string name="PLACES_APP_NAME">プレイス</string>
-    <string name="RATINGS_CUSTOM_ASPECT_EXAMPLE_TEXT">例: スパゲティーミートソース、カクテル、音楽</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_PLURAL">付近に{0}件のクーポン</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_SINGLE">付近に１件のクーポン</string>
+    <string name="OFFERS_FEATURE_SWITCHER_TITLE">クーポン</string>
+    <string name="PLACES_APP_NAME">ローカル</string>
+    <string name="RATINGS_CORRECT_CATEGORY">正しいカテゴリを選択</string>
     <string name="RATINGS_CUSTOM_ASPECT_HINT_TEXT">どんな特徴がありますか？</string>
     <string name="RATINGS_OPTIN_CANCEL">キャンセル</string>
     <string name="RATINGS_OPTIN_CLOSE">閉じる</string>
@@ -326,6 +357,7 @@ Googleマップの検索結果にスターを付けるには、住所の近く�
     <string name="RATINGS_RATE_PLACES">お店に評価をつけると...</string>
     <string name="RATINGS_SET_APPEARANCE">表示方法を設定</string>
     <string name="RATINGS_WAIT">お待ちください...</string>
+    <string name="RATINGS_WRONG_LABELS">項目を修正</string>
     <string name="SEARCH_HINT">地図を検索</string>
     <string name="SHORT_APP_NAME">モバイルGoogleマップ</string>
     <string name="TRAFFIC_WIDGET_END_LOCATION">目的地</string>
@@ -335,7 +367,12 @@ Googleマップの検索結果にスターを付けるには、住所の近く�
     <string name="TRAFFIC_WIDGET_START_LOCATION">出発地</string>
     <string name="TRANSIT_NAVIGATION">乗換ナビ</string>
     <string name="TRANSIT_TITLE">公共交通機関</string>
-    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">重大なエラーです。いったん終了して再起動してください。</string>
+    <string name="TRANSIT_TYPE_FILTER_ALL">すべて</string>
+    <string name="TRANSIT_TYPE_FILTER_BUS">バス</string>
+    <string name="TRANSIT_TYPE_FILTER_SUBWAY">地下鉄</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAIN">電車</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAM">路面電車</string>
+    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">問題が発生しました。数分後にもう一度お試しください。</string>
     <string name="UNKNOWN_COMMUNICATION_FAILURE_TITLE">不明なエラー</string>
     <string name="UPGRADE_BODY">このアプリケーションを使用するには新しいバージョンをインストールする必要があります。</string>
     <string name="UPGRADE_TITLE">ソフトウェアのアップグレード</string>

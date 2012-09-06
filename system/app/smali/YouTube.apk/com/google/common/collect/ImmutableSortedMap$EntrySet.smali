@@ -13,13 +13,13 @@
     .parameter
 
     .prologue
-    .line 464
+    .line 479
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableSet;-><init>()V
 
-    .line 465
+    .line 480
     iput-object p1, p0, Lcom/google/common/collect/ImmutableSortedMap$EntrySet;->map:Lcom/google/common/collect/ImmutableSortedMap;
 
-    .line 466
+    .line 481
     return-void
 .end method
 
@@ -32,15 +32,15 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 477
+    .line 497
     instance-of v1, p1, Ljava/util/Map$Entry;
 
     if-eqz v1, :cond_1e
 
-    .line 478
+    .line 498
     check-cast p1, Ljava/util/Map$Entry;
 
-    .line 479
+    .line 499
     iget-object v1, p0, Lcom/google/common/collect/ImmutableSortedMap$EntrySet;->map:Lcom/google/common/collect/ImmutableSortedMap;
 
     invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -51,7 +51,7 @@
 
     move-result-object v1
 
-    .line 480
+    .line 500
     if-eqz v1, :cond_1e
 
     invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -66,35 +66,35 @@
 
     const/4 v0, 0x1
 
-    .line 482
+    .line 502
     :cond_1e
     return v0
 .end method
 
-.method public iterator()Lcom/google/common/collect/gf;
-    .registers 4
+.method isPartialView()Z
+    .registers 2
 
     .prologue
-    .line 473
+    .line 484
     iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap$EntrySet;->map:Lcom/google/common/collect/ImmutableSortedMap;
 
-    #getter for: Lcom/google/common/collect/ImmutableSortedMap;->entries:[Ljava/util/Map$Entry;
-    invoke-static {v0}, Lcom/google/common/collect/ImmutableSortedMap;->access$200(Lcom/google/common/collect/ImmutableSortedMap;)[Ljava/util/Map$Entry;
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedMap;->isPartialView()Z
 
-    move-result-object v0
+    move-result v0
 
-    iget-object v1, p0, Lcom/google/common/collect/ImmutableSortedMap$EntrySet;->map:Lcom/google/common/collect/ImmutableSortedMap;
+    return v0
+.end method
 
-    #getter for: Lcom/google/common/collect/ImmutableSortedMap;->fromIndex:I
-    invoke-static {v1}, Lcom/google/common/collect/ImmutableSortedMap;->access$300(Lcom/google/common/collect/ImmutableSortedMap;)I
+.method public iterator()Lcom/google/common/collect/mt;
+    .registers 2
 
-    move-result v1
+    .prologue
+    .line 493
+    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap$EntrySet;->map:Lcom/google/common/collect/ImmutableSortedMap;
 
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap$EntrySet;->size()I
+    iget-object v0, v0, Lcom/google/common/collect/ImmutableSortedMap;->entries:Lcom/google/common/collect/ImmutableList;
 
-    move-result v2
-
-    invoke-static {v0, v1, v2}, Lcom/google/common/collect/cr;->a([Ljava/lang/Object;II)Lcom/google/common/collect/gf;
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->iterator()Lcom/google/common/collect/mt;
 
     move-result-object v0
 
@@ -105,8 +105,8 @@
     .registers 2
 
     .prologue
-    .line 460
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap$EntrySet;->iterator()Lcom/google/common/collect/gf;
+    .line 475
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap$EntrySet;->iterator()Lcom/google/common/collect/mt;
 
     move-result-object v0
 
@@ -117,7 +117,7 @@
     .registers 2
 
     .prologue
-    .line 469
+    .line 489
     iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap$EntrySet;->map:Lcom/google/common/collect/ImmutableSortedMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedMap;->size()I
@@ -131,7 +131,7 @@
     .registers 3
 
     .prologue
-    .line 486
+    .line 506
     new-instance v0, Lcom/google/common/collect/ImmutableSortedMap$EntrySetSerializedForm;
 
     iget-object v1, p0, Lcom/google/common/collect/ImmutableSortedMap$EntrySet;->map:Lcom/google/common/collect/ImmutableSortedMap;

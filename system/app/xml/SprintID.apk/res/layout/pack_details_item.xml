@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/ListItemContent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:id="@id/title" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/TextBody" />
-    <TextView android:id="@id/secondary_title" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/title" style="@style/TextBody" />
-</RelativeLayout>

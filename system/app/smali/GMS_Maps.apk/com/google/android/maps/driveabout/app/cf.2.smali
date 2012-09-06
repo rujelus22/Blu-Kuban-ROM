@@ -1,19 +1,33 @@
-.class Lcom/google/android/maps/driveabout/app/cf;
+.class Lcom/google/android/maps/driveabout/app/cF;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/NavigationActivity;
+.field final synthetic a:Ljava/lang/String;
+
+.field final synthetic b:I
+
+.field final synthetic c:Lcom/google/android/maps/driveabout/app/NavigationView;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/NavigationActivity;)V
-    .registers 2
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/NavigationView;Ljava/lang/String;I)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/cf;->a:Lcom/google/android/maps/driveabout/app/NavigationActivity;
+    .prologue
+    .line 1340
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/cF;->c:Lcom/google/android/maps/driveabout/app/NavigationView;
+
+    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/cF;->a:Ljava/lang/String;
+
+    iput p3, p0, Lcom/google/android/maps/driveabout/app/cF;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,18 +36,27 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 5
+.method public run()V
+    .registers 4
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/cf;->a:Lcom/google/android/maps/driveabout/app/NavigationActivity;
+    .prologue
+    .line 1343
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/cF;->c:Lcom/google/android/maps/driveabout/app/NavigationView;
 
-    const/4 v1, 0x1
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/NavigationView;->getContext()Landroid/content/Context;
 
-    invoke-static {v0, v1}, Lcom/google/android/maps/driveabout/app/NavigationActivity;->b(Lcom/google/android/maps/driveabout/app/NavigationActivity;Z)Z
+    move-result-object v0
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/cf;->a:Lcom/google/android/maps/driveabout/app/NavigationActivity;
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/cF;->a:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/NavigationActivity;->k(Lcom/google/android/maps/driveabout/app/NavigationActivity;)V
+    iget v2, p0, Lcom/google/android/maps/driveabout/app/cF;->b:I
 
+    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    .line 1344
     return-void
 .end method

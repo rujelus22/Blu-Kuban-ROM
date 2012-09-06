@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="carousel_card_slots">56</integer>
+    <integer name="carousel_visible_slots">7</integer>
+    <integer name="carousel_visible_details">2</integer>
+    <integer name="carousel_texture_size">128</integer>
+    <integer name="grid_max_overscroll_x">0</integer>
+    <integer name="grid_max_overscroll_y">90</integer>
+    <integer name="grid_label_multiline_pile">3</integer>
+    <integer name="grid_label_font_opacity_pile">217</integer>
+    <integer name="grid_label_secondary_font_opacity_pile">127</integer>
+    <integer name="grid_label_tertiary_font_opacity_pile">127</integer>
+    <integer name="grid_label_max_lines_pile">1</integer>
+    <integer name="grid_label_multiline_item">3</integer>
+    <integer name="grid_label_font_opacity_item">217</integer>
+    <integer name="grid_label_secondary_font_opacity_item">191</integer>
+    <integer name="grid_label_tertiary_font_opacity_item">127</integer>
+    <integer name="grid_label_max_lines_item">1</integer>
+    <integer name="grid_label_multiline_item_expanded">3</integer>
+    <integer name="grid_label_font_opacity_item_expanded">217</integer>
+    <integer name="grid_label_secondary_font_opacity_item_expanded">191</integer>
+    <integer name="grid_label_tertiary_font_opacity_item_expanded">127</integer>
+    <integer name="grid_label_max_lines_item_expanded">1</integer>
+    <integer name="music_album_wall_style">1</integer>
+    <integer name="music_album_wall_item_minor_axis_nb_items">5</integer>
+    <integer name="music_album_wall_cell_moc_size">176</integer>
+    <integer name="music_album_wall_cluster_single_moc_size">160</integer>
+    <integer name="music_album_wall_cluster_mutliple_moc_size">144</integer>
+    <integer name="music_album_wall_margin_moc_size">32</integer>
+    <integer name="music_album_wall_stack_spacing">40</integer>
+    <integer name="grid_label_multiline_pile_expanded">1</integer>
+    <integer name="grid_label_font_opacity_pile_expanded">255</integer>
+    <integer name="grid_label_secondary_font_opacity_pile_expanded">255</integer>
+    <integer name="grid_label_tertiary_font_opacity_pile_expanded">255</integer>
+    <integer name="grid_label_max_lines_pile_expanded">1</integer>
+</resources>

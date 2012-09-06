@@ -16,228 +16,291 @@
     .registers 1
 
     .prologue
-    .line 24
+    .line 30
     invoke-direct {p0}, Landroid/support/v4/app/DialogFragment;-><init>()V
 
-    .line 26
+    .line 39
     return-void
 .end method
 
-.method public static newInstance(Landroid/support/v4/app/Fragment;)Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;
-    .registers 4
+.method public static newInstance(Landroid/support/v4/app/Fragment;ZZZ)Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;
+    .registers 8
     .parameter "targetFragment"
+    .parameter "setWifiOnlyOption"
+    .parameter "showWifiOnlyOption"
+    .parameter "onMobileNetwork"
 
     .prologue
-    .line 50
-    instance-of v1, p0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$DownloadSizeDialogListener;
+    .line 68
+    instance-of v2, p0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$DownloadSizeDialogListener;
 
-    if-nez v1, :cond_c
+    if-nez v2, :cond_c
 
-    .line 51
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    .line 69
+    new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "targetFragment must implement DownloadSizeDialogListener"
+    const-string v3, "targetFragment must implement DownloadSizeDialogListener"
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v2
 
-    .line 54
+    .line 72
     :cond_c
-    new-instance v0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;
+    new-instance v1, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;
 
-    invoke-direct {v0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;-><init>()V
+    invoke-direct {v1}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;-><init>()V
 
-    .line 55
-    .local v0, dialog:Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;
-    const/4 v1, -0x1
+    .line 73
+    .local v1, dialog:Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;
+    const/4 v2, -0x1
 
-    invoke-virtual {v0, p0, v1}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;->setTargetFragment(Landroid/support/v4/app/Fragment;I)V
+    invoke-virtual {v1, p0, v2}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;->setTargetFragment(Landroid/support/v4/app/Fragment;I)V
 
-    .line 56
-    return-object v0
+    .line 74
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    .line 75
+    .local v0, arguments:Landroid/os/Bundle;
+    const-string v2, "setWifiOnly"
+
+    invoke-virtual {v0, v2, p1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    .line 76
+    const-string v2, "showWifiOnly"
+
+    invoke-virtual {v0, v2, p2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    .line 77
+    invoke-virtual {v1, v0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;->setArguments(Landroid/os/Bundle;)V
+
+    .line 78
+    return-object v1
 .end method
 
 
 # virtual methods
-.method public onCancel(Landroid/content/DialogInterface;)V
-    .registers 4
-    .parameter "dialog"
-
-    .prologue
-    .line 106
-    invoke-super {p0, p1}, Landroid/support/v4/app/DialogFragment;->onCancel(Landroid/content/DialogInterface;)V
-
-    .line 107
-    invoke-virtual {p0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;->getTargetFragment()Landroid/support/v4/app/Fragment;
-
-    move-result-object v0
-
-    instance-of v0, v0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$DownloadSizeDialogListener;
-
-    if-eqz v0, :cond_15
-
-    .line 108
-    invoke-virtual {p0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;->getTargetFragment()Landroid/support/v4/app/Fragment;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$DownloadSizeDialogListener;
-
-    invoke-interface {v0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$DownloadSizeDialogListener;->onDownloadCancel()V
-
-    .line 112
-    :goto_14
-    return-void
-
-    .line 110
-    :cond_15
-    const-string v0, "Target fragment does not implement DownloadSizeDialogListener."
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_14
-.end method
-
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
-    .registers 8
+    .registers 19
     .parameter "savedInstanceState"
 
     .prologue
-    .line 61
-    new-instance v3, Landroid/app/AlertDialog$Builder;
-
-    invoke-virtual {p0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v4
-
-    invoke-direct {v3, v4}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
-
-    const v4, 0x7f070170
-
-    invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v3
-
-    const v4, 0x7f070171
-
-    invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v3
-
-    const v4, 0x7f070162
-
-    new-instance v5, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$2;
-
-    invoke-direct {v5, p0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$2;-><init>(Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;)V
-
-    invoke-virtual {v3, v4, v5}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v3
-
-    const v4, 0x7f070060
-
-    new-instance v5, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$1;
-
-    invoke-direct {v5, p0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$1;-><init>(Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;)V
-
-    invoke-virtual {v3, v4, v5}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v0
-
-    .line 79
-    .local v0, builder:Landroid/app/AlertDialog$Builder;
-    new-instance v2, Landroid/content/Intent;
-
-    const-string v3, "android.settings.WIFI_SETTINGS"
-
-    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 80
-    .local v2, test:Landroid/content/Intent;
-    invoke-virtual {p0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/support/v4/app/FragmentActivity;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v3
-
-    const/high16 v4, 0x1
-
-    invoke-virtual {v3, v2, v4}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
+    .line 83
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v1
 
-    .line 82
-    .local v1, settings:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    .line 84
+    .local v1, arguments:Landroid/os/Bundle;
+    const-string v14, "showWifiOnly"
 
-    move-result v3
+    invoke-virtual {v1, v14}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
-    if-lez v3, :cond_55
+    move-result v12
 
-    .line 83
-    const v3, 0x7f070172
+    .line 85
+    .local v12, showWifiOnlyOption:Z
+    const-string v14, "setWifiOnly"
 
-    new-instance v4, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$3;
+    invoke-virtual {v1, v14}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
-    invoke-direct {v4, p0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$3;-><init>(Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;)V
+    move-result v10
 
-    invoke-virtual {v0, v3, v4}, Landroid/app/AlertDialog$Builder;->setNeutralButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    .line 86
+    .local v10, setWifiOnlyOption:Z
+    const-string v14, "onMobileNetwork"
 
-    .line 91
-    :cond_55
-    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+    invoke-virtual {v1, v14}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v9
+
+    .line 87
+    .local v9, onMobileNetwork:Z
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v5
+
+    .line 89
+    .local v5, context:Landroid/content/Context;
+    new-instance v2, Landroid/app/AlertDialog$Builder;
+
+    invoke-direct {v2, v5}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    .line 90
+    .local v2, builder:Landroid/app/AlertDialog$Builder;
+    const v14, 0x7f0701a8
+
+    invoke-virtual {v2, v14}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+
+    .line 93
+    new-instance v6, Landroid/view/ContextThemeWrapper;
+
+    const v14, 0x7f0e003d
+
+    invoke-direct {v6, v5, v14}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
+
+    .line 94
+    .local v6, inflationContext:Landroid/content/Context;
+    invoke-static {v6}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object v14
+
+    const v15, 0x7f040062
+
+    const/16 v16, 0x0
+
+    invoke-virtual/range {v14 .. v16}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v4
+
+    .line 96
+    .local v4, contentLayout:Landroid/view/View;
+    const v14, 0x7f080104
+
+    invoke-virtual {v4, v14}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v8
+
+    check-cast v8, Landroid/widget/TextView;
+
+    .line 100
+    .local v8, messageView:Landroid/widget/TextView;
+    if-eqz v12, :cond_ad
+
+    .line 101
+    const v7, 0x7f0701a9
+
+    .line 106
+    .local v7, messageTextId:I
+    :goto_48
+    invoke-virtual {v8, v7}, Landroid/widget/TextView;->setText(I)V
+
+    .line 112
+    const v14, 0x7f080105
+
+    invoke-virtual {v4, v14}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
-    return-object v3
-.end method
+    check-cast v3, Landroid/widget/CheckBox;
 
-.method public onDismiss(Landroid/content/DialogInterface;)V
-    .registers 4
-    .parameter "dialog"
+    .line 113
+    .local v3, checkboxView:Landroid/widget/CheckBox;
+    if-eqz v12, :cond_5f
 
-    .prologue
-    .line 96
-    invoke-super {p0, p1}, Landroid/support/v4/app/DialogFragment;->onDismiss(Landroid/content/DialogInterface;)V
+    .line 114
+    const/4 v14, 0x0
 
-    .line 97
-    invoke-virtual {p0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;->getTargetFragment()Landroid/support/v4/app/Fragment;
+    invoke-virtual {v3, v14}, Landroid/widget/CheckBox;->setVisibility(I)V
 
-    move-result-object v0
+    .line 115
+    if-nez p1, :cond_5f
 
-    instance-of v0, v0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$DownloadSizeDialogListener;
+    .line 116
+    invoke-virtual {v3, v10}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    if-eqz v0, :cond_15
+    .line 120
+    :cond_5f
+    invoke-virtual {v2, v4}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    .line 98
-    invoke-virtual {p0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;->getTargetFragment()Landroid/support/v4/app/Fragment;
+    .line 122
+    const v14, 0x7f0701ae
 
-    move-result-object v0
+    new-instance v15, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$1;
 
-    check-cast v0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$DownloadSizeDialogListener;
+    move-object/from16 v0, p0
 
-    invoke-interface {v0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$DownloadSizeDialogListener;->onDownloadCancel()V
+    invoke-direct {v15, v0, v12, v3, v10}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$1;-><init>(Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;ZLandroid/widget/CheckBox;Z)V
 
-    .line 102
-    :goto_14
-    return-void
+    invoke-virtual {v2, v14, v15}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 100
-    :cond_15
-    const-string v0, "Target fragment does not implement DownloadSizeDialogListener."
+    .line 132
+    const v14, 0x7f070059
 
-    const/4 v1, 0x0
+    const/4 v15, 0x0
 
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-virtual {v2, v14, v15}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
+    .line 136
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    goto :goto_14
+    move-result-object v14
+
+    invoke-virtual {v14}, Lcom/google/android/finsky/FinskyApp;->getInstallPolicies()Lcom/google/android/finsky/installer/InstallPolicies;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Lcom/google/android/finsky/installer/InstallPolicies;->isMobileNetwork()Z
+
+    move-result v14
+
+    if-eqz v14, :cond_a8
+
+    .line 137
+    new-instance v13, Landroid/content/Intent;
+
+    const-string v14, "android.settings.WIFI_SETTINGS"
+
+    invoke-direct {v13, v14}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 138
+    .local v13, test:Landroid/content/Intent;
+    invoke-virtual {v5}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v14
+
+    const/high16 v15, 0x1
+
+    invoke-virtual {v14, v13, v15}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
+
+    move-result-object v11
+
+    .line 140
+    .local v11, settings:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
+    invoke-interface {v11}, Ljava/util/List;->size()I
+
+    move-result v14
+
+    if-lez v14, :cond_a8
+
+    .line 141
+    const v14, 0x7f0701ad
+
+    new-instance v15, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$2;
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v15, v0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$2;-><init>(Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;)V
+
+    invoke-virtual {v2, v14, v15}, Landroid/app/AlertDialog$Builder;->setNeutralButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    .line 150
+    .end local v11           #settings:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
+    .end local v13           #test:Landroid/content/Intent;
+    :cond_a8
+    invoke-virtual {v2}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+
+    move-result-object v14
+
+    return-object v14
+
+    .line 103
+    .end local v3           #checkboxView:Landroid/widget/CheckBox;
+    .end local v7           #messageTextId:I
+    :cond_ad
+    if-eqz v9, :cond_b3
+
+    const v7, 0x7f0701aa
+
+    .restart local v7       #messageTextId:I
+    :goto_b2
+    goto :goto_48
+
+    .end local v7           #messageTextId:I
+    :cond_b3
+    const v7, 0x7f0701ab
+
+    goto :goto_b2
 .end method

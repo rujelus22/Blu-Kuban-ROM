@@ -12,7 +12,7 @@
     .registers 1
 
     .prologue
-    .line 39
+    .line 38
     new-instance v0, Lorg/apache/commons/io/output/ClosedOutputStream;
 
     invoke-direct {v0}, Lorg/apache/commons/io/output/ClosedOutputStream;-><init>()V
@@ -26,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 34
+    .line 33
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
 
     return-void
@@ -44,7 +44,7 @@
     .end annotation
 
     .prologue
-    .line 48
+    .line 47
     new-instance v0, Ljava/io/IOException;
 
     new-instance v1, Ljava/lang/StringBuilder;

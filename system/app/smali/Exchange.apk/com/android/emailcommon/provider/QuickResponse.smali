@@ -37,7 +37,7 @@
     .registers 3
 
     .prologue
-    .line 39
+    .line 40
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -64,7 +64,7 @@
 
     sput-object v0, Lcom/android/emailcommon/provider/QuickResponse;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 40
+    .line 42
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -91,7 +91,7 @@
 
     sput-object v0, Lcom/android/emailcommon/provider/QuickResponse;->ACCOUNT_ID_URI:Landroid/net/Uri;
 
-    .line 49
+    .line 51
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/String;
@@ -116,7 +116,7 @@
 
     sput-object v0, Lcom/android/emailcommon/provider/QuickResponse;->CONTENT_PROJECTION:[Ljava/lang/String;
 
-    .line 202
+    .line 204
     new-instance v0, Lcom/android/emailcommon/provider/QuickResponse$1;
 
     invoke-direct {v0}, Lcom/android/emailcommon/provider/QuickResponse$1;-><init>()V
@@ -130,10 +130,10 @@
     .registers 1
 
     .prologue
-    .line 56
+    .line 60
     invoke-direct {p0}, Lcom/android/emailcommon/provider/EmailContent;-><init>()V
 
-    .line 58
+    .line 62
     return-void
 .end method
 
@@ -142,36 +142,36 @@
     .parameter "in"
 
     .prologue
-    .line 63
+    .line 67
     invoke-direct {p0}, Lcom/android/emailcommon/provider/EmailContent;-><init>()V
 
-    .line 64
+    .line 68
     sget-object v0, Lcom/android/emailcommon/provider/QuickResponse;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v0, p0, Lcom/android/emailcommon/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
+    iput-object v0, p0, Lcom/android/emailcommon/provider/QuickResponse;->mBaseUri:Landroid/net/Uri;
 
-    .line 65
+    .line 69
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iput-wide v0, p0, Lcom/android/emailcommon/provider/QuickResponse;->mId:J
 
-    .line 66
+    .line 70
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/emailcommon/provider/QuickResponse;->mText:Ljava/lang/String;
 
-    .line 67
+    .line 71
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/emailcommon/provider/QuickResponse;->mAccountKey:J
 
-    .line 68
+    .line 72
     return-void
 .end method
 
@@ -193,7 +193,7 @@
     .registers 2
 
     .prologue
-    .line 186
+    .line 188
     const/4 v0, 0x0
 
     return v0
@@ -208,15 +208,15 @@
 
     const/4 v2, 0x0
 
-    .line 163
+    .line 168
     if-ne p0, p1, :cond_5
 
-    .line 169
+    .line 172
     :cond_4
     :goto_4
     return v1
 
-    .line 165
+    .line 169
     :cond_5
     instance-of v3, p1, Lcom/android/emailcommon/provider/QuickResponse;
 
@@ -224,16 +224,15 @@
 
     move v1, v2
 
-    .line 166
     goto :goto_4
 
     :cond_b
     move-object v0, p1
 
-    .line 168
+    .line 171
     check-cast v0, Lcom/android/emailcommon/provider/QuickResponse;
 
-    .line 169
+    .line 172
     .local v0, that:Lcom/android/emailcommon/provider/QuickResponse;
     iget-object v3, p0, Lcom/android/emailcommon/provider/QuickResponse;->mText:Ljava/lang/String;
 
@@ -245,9 +244,9 @@
 
     if-eqz v3, :cond_28
 
-    iget-wide v3, p0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v3, p0, Lcom/android/emailcommon/provider/QuickResponse;->mId:J
 
-    iget-wide v5, v0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v5, v0, Lcom/android/emailcommon/provider/QuickResponse;->mId:J
 
     cmp-long v3, v3, v5
 
@@ -268,11 +267,43 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .registers 5
 
     .prologue
-    .line 174
-    const/4 v0, 0x0
+    .line 180
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    iget-wide v2, p0, Lcom/android/emailcommon/provider/QuickResponse;->mId:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    iget-object v2, p0, Lcom/android/emailcommon/provider/QuickResponse;->mText:Ljava/lang/String;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    iget-wide v2, p0, Lcom/android/emailcommon/provider/QuickResponse;->mAccountKey:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Lcom/google/common/base/Objects;->hashCode([Ljava/lang/Object;)I
+
+    move-result v0
 
     return v0
 .end method
@@ -282,21 +313,21 @@
     .parameter "cursor"
 
     .prologue
-    .line 85
+    .line 88
     sget-object v0, Lcom/android/emailcommon/provider/QuickResponse;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v0, p0, Lcom/android/emailcommon/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
+    iput-object v0, p0, Lcom/android/emailcommon/provider/QuickResponse;->mBaseUri:Landroid/net/Uri;
 
-    .line 86
+    .line 89
     const/4 v0, 0x0
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iput-wide v0, p0, Lcom/android/emailcommon/provider/QuickResponse;->mId:J
 
-    .line 87
+    .line 90
     const/4 v0, 0x1
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -305,7 +336,7 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/provider/QuickResponse;->mText:Ljava/lang/String;
 
-    .line 88
+    .line 91
     const/4 v0, 0x2
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -314,7 +345,7 @@
 
     iput-wide v0, p0, Lcom/android/emailcommon/provider/QuickResponse;->mAccountKey:J
 
-    .line 89
+    .line 92
     return-void
 .end method
 
@@ -322,12 +353,12 @@
     .registers 5
 
     .prologue
-    .line 96
+    .line 99
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 98
+    .line 101
     .local v0, values:Landroid/content/ContentValues;
     const-string v1, "quickResponse"
 
@@ -335,7 +366,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 99
+    .line 102
     const-string v1, "accountKey"
 
     iget-wide v2, p0, Lcom/android/emailcommon/provider/QuickResponse;->mAccountKey:J
@@ -346,7 +377,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 101
+    .line 104
     return-object v0
 .end method
 
@@ -354,7 +385,7 @@
     .registers 2
 
     .prologue
-    .line 106
+    .line 109
     iget-object v0, p0, Lcom/android/emailcommon/provider/QuickResponse;->mText:Ljava/lang/String;
 
     return-object v0
@@ -366,21 +397,21 @@
     .parameter "flags"
 
     .prologue
-    .line 194
-    iget-wide v0, p0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    .line 195
-    iget-object v0, p0, Lcom/android/emailcommon/provider/QuickResponse;->mText:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
     .line 196
-    iget-wide v0, p0, Lcom/android/emailcommon/provider/QuickResponse;->mAccountKey:J
+    iget-wide v0, p0, Lcom/android/emailcommon/provider/QuickResponse;->mId:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
     .line 197
+    iget-object v0, p0, Lcom/android/emailcommon/provider/QuickResponse;->mText:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 198
+    iget-wide v0, p0, Lcom/android/emailcommon/provider/QuickResponse;->mAccountKey:J
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+
+    .line 199
     return-void
 .end method

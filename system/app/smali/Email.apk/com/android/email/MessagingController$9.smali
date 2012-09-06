@@ -3,12 +3,12 @@
 .source "MessagingController.java"
 
 # interfaces
-.implements Lcom/android/emailcommon/mail/Folder$MessageRetrievalListener;
+.implements Lcom/android/emailcommon/mail/Folder$MessageUpdateCallbacks;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/MessagingController;->syncSearchOnServer(Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/emailcommon/provider/EmailContent$Mailbox;Ljava/lang/String;)Lcom/android/email/mail/StoreSynchronizer$SyncResults;
+    value = Lcom/android/email/MessagingController;->processPendingMoveToTrash(Lcom/android/email/mail/Store;Lcom/android/emailcommon/provider/Account;Lcom/android/emailcommon/provider/Mailbox;Lcom/android/emailcommon/provider/EmailContent$Message;Lcom/android/emailcommon/provider/EmailContent$Message;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,59 +20,67 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/MessagingController;
 
-.field final synthetic val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-.field final synthetic val$folder:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+.field final synthetic val$newMessage:Lcom/android/emailcommon/provider/EmailContent$Message;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/email/MessagingController;Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/emailcommon/provider/EmailContent$Mailbox;)V
-    .registers 4
-    .parameter
+.method constructor <init>(Lcom/android/email/MessagingController;Lcom/android/emailcommon/provider/EmailContent$Message;)V
+    .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 1947
+    .line 1638
     iput-object p1, p0, Lcom/android/email/MessagingController$9;->this$0:Lcom/android/email/MessagingController;
 
-    iput-object p2, p0, Lcom/android/email/MessagingController$9;->val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
+    iput-object p2, p0, Lcom/android/email/MessagingController$9;->val$newMessage:Lcom/android/emailcommon/provider/EmailContent$Message;
 
-    iput-object p3, p0, Lcom/android/email/MessagingController$9;->val$folder:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public loadAttachmentProgress(ILcom/android/emailcommon/mail/Folder$MessageRetrievalListener$DOWNLOAD_STATUS;)V
-    .registers 3
-    .parameter "progress"
-    .parameter "status"
-
-    .prologue
-    .line 1955
-    return-void
-.end method
-
-.method public messageRetrieved(Lcom/android/emailcommon/mail/Message;)V
-    .registers 6
+.method public onMessageUidChange(Lcom/android/emailcommon/mail/Message;Ljava/lang/String;)V
+    .registers 7
     .parameter "message"
+    .parameter "newUid"
 
     .prologue
-    .line 1949
-    iget-object v0, p0, Lcom/android/email/MessagingController$9;->this$0:Lcom/android/email/MessagingController;
+    const/4 v3, 0x0
 
-    iget-object v1, p0, Lcom/android/email/MessagingController$9;->val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 1642
+    new-instance v0, Landroid/content/ContentValues;
 
-    iget-object v2, p0, Lcom/android/email/MessagingController$9;->val$folder:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
+    invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    const/4 v3, 0x1
+    .line 1643
+    .local v0, cv:Landroid/content/ContentValues;
+    const-string v1, "syncServerId"
 
-    invoke-virtual {v0, p1, v1, v2, v3}, Lcom/android/email/MessagingController;->copyOneMessageToProvider(Lcom/android/emailcommon/mail/Message;Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/emailcommon/provider/EmailContent$Mailbox;I)V
+    invoke-virtual {v0, v1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1951
+    .line 1644
+    iget-object v1, p0, Lcom/android/email/MessagingController$9;->this$0:Lcom/android/email/MessagingController;
+
+    #getter for: Lcom/android/email/MessagingController;->mContext:Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/email/MessagingController;->access$100(Lcom/android/email/MessagingController;)Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/email/MessagingController$9;->val$newMessage:Lcom/android/emailcommon/provider/EmailContent$Message;
+
+    invoke-virtual {v2}, Lcom/android/emailcommon/provider/EmailContent$Message;->getUri()Landroid/net/Uri;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2, v0, v3, v3}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+
+    .line 1645
     return-void
 .end method

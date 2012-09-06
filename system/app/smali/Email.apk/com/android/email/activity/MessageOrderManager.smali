@@ -7,16 +7,10 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;,
-        Lcom/android/email/activity/MessageOrderManager$Callback;,
-        Lcom/android/email/activity/MessageOrderManager$MessageData;
+        Lcom/android/email/activity/MessageOrderManager$PostingCallback;,
+        Lcom/android/email/activity/MessageOrderManager$Callback;
     }
 .end annotation
-
-
-# static fields
-.field static final ORDER_MANAGER_CURSOR_PROJECTION:[Ljava/lang/String;
-
-.field static final ORDER_MANAGER_PROJECTION:[Ljava/lang/String;
 
 
 # instance fields
@@ -34,9 +28,11 @@
 
 .field private mCursor:Landroid/database/Cursor;
 
-.field private mLoadMessageListTask:Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;
+.field private final mDelayedOperations:Lcom/android/emailcommon/utility/DelayedOperations;
 
-.field private final mMailboxId:J
+.field private final mListContext:Lcom/android/email/MessageListContext;
+
+.field private mLoadMessageListTask:Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;
 
 .field private final mObserver:Landroid/database/ContentObserver;
 
@@ -44,79 +40,73 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 5
-
-    .prologue
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    .line 87
-    new-array v0, v4, [Ljava/lang/String;
-
-    const-string v1, "_id"
-
-    aput-object v1, v0, v2
-
-    const-string v1, "threadId"
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/android/email/activity/MessageOrderManager;->ORDER_MANAGER_PROJECTION:[Ljava/lang/String;
-
-    .line 91
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    const-string v1, "_id"
-
-    aput-object v1, v0, v2
-
-    const-string v1, "threadId"
-
-    aput-object v1, v0, v3
-
-    const-string v1, "firstItem"
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/android/email/activity/MessageOrderManager;->ORDER_MANAGER_CURSOR_PROJECTION:[Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;JLcom/android/email/activity/MessageOrderManager$Callback;)V
-    .registers 7
+.method public constructor <init>(Landroid/content/Context;Lcom/android/email/MessageListContext;Lcom/android/email/activity/MessageOrderManager$Callback;)V
+    .registers 6
     .parameter "context"
-    .parameter "mailboxId"
+    .parameter "listContext"
     .parameter "callback"
 
     .prologue
-    .line 119
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 127
+    new-instance v0, Lcom/android/emailcommon/utility/DelayedOperations;
 
-    .line 67
-    const-wide/16 v0, -0x1
+    invoke-static {}, Lcom/android/emailcommon/utility/Utility;->getMainThreadHandler()Landroid/os/Handler;
 
-    iput-wide v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentMessageId:J
+    move-result-object v1
 
-    .line 73
+    invoke-direct {v0, v1}, Lcom/android/emailcommon/utility/DelayedOperations;-><init>(Landroid/os/Handler;)V
+
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/android/email/activity/MessageOrderManager;-><init>(Landroid/content/Context;Lcom/android/email/MessageListContext;Lcom/android/email/activity/MessageOrderManager$Callback;Lcom/android/emailcommon/utility/DelayedOperations;)V
+
+    .line 128
+    return-void
+.end method
+
+.method constructor <init>(Landroid/content/Context;Lcom/android/email/MessageListContext;Lcom/android/email/activity/MessageOrderManager$Callback;Lcom/android/emailcommon/utility/DelayedOperations;)V
+    .registers 10
+    .parameter "context"
+    .parameter "listContext"
+    .parameter "callback"
+    .parameter "delayedOperations"
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+
+    .prologue
+    const-wide/16 v3, -0x1
+
     const/4 v0, 0x0
 
+    .line 132
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 68
+    iput-wide v3, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentMessageId:J
+
+    .line 74
     iput-boolean v0, p0, Lcom/android/email/activity/MessageOrderManager;->mClosed:Z
 
-    .line 120
+    .line 133
+    invoke-virtual {p2}, Lcom/android/email/MessageListContext;->getMailboxId()J
+
+    move-result-wide v1
+
+    cmp-long v1, v1, v3
+
+    if-eqz v1, :cond_13
+
+    const/4 v0, 0x1
+
+    :cond_13
+    invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
+
+    .line 134
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mContext:Landroid/content/Context;
 
-    .line 121
+    .line 135
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -125,13 +115,22 @@
 
     iput-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mContentResolver:Landroid/content/ContentResolver;
 
-    .line 122
-    iput-wide p2, p0, Lcom/android/email/activity/MessageOrderManager;->mMailboxId:J
+    .line 136
+    iput-object p4, p0, Lcom/android/email/activity/MessageOrderManager;->mDelayedOperations:Lcom/android/emailcommon/utility/DelayedOperations;
 
-    .line 123
-    iput-object p4, p0, Lcom/android/email/activity/MessageOrderManager;->mCallback:Lcom/android/email/activity/MessageOrderManager$Callback;
+    .line 137
+    iput-object p2, p0, Lcom/android/email/activity/MessageOrderManager;->mListContext:Lcom/android/email/MessageListContext;
 
-    .line 124
+    .line 138
+    new-instance v0, Lcom/android/email/activity/MessageOrderManager$PostingCallback;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, p3, v1}, Lcom/android/email/activity/MessageOrderManager$PostingCallback;-><init>(Lcom/android/email/activity/MessageOrderManager;Lcom/android/email/activity/MessageOrderManager$Callback;Lcom/android/email/activity/MessageOrderManager$1;)V
+
+    iput-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCallback:Lcom/android/email/activity/MessageOrderManager$Callback;
+
+    .line 139
     new-instance v0, Lcom/android/email/activity/MessageOrderManager$1;
 
     invoke-virtual {p0}, Lcom/android/email/activity/MessageOrderManager;->getHandlerForContentObserver()Landroid/os/Handler;
@@ -142,41 +141,52 @@
 
     iput-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mObserver:Landroid/database/ContentObserver;
 
-    .line 133
-    invoke-virtual {p0}, Lcom/android/email/activity/MessageOrderManager;->startTask()V
+    .line 147
+    invoke-direct {p0}, Lcom/android/email/activity/MessageOrderManager;->startTask()V
 
-    .line 134
+    .line 148
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/android/email/activity/MessageOrderManager;)Z
+.method static synthetic access$100(Lcom/android/email/activity/MessageOrderManager;)Lcom/android/emailcommon/utility/DelayedOperations;
     .registers 2
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 56
+    iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mDelayedOperations:Lcom/android/emailcommon/utility/DelayedOperations;
+
+    return-object v0
+.end method
+
+.method static synthetic access$300(Lcom/android/email/activity/MessageOrderManager;)Z
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 56
     iget-boolean v0, p0, Lcom/android/email/activity/MessageOrderManager;->mClosed:Z
 
     return v0
 .end method
 
-.method static synthetic access$100(Lcom/android/email/activity/MessageOrderManager;)V
+.method static synthetic access$400(Lcom/android/email/activity/MessageOrderManager;)V
     .registers 1
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 56
     invoke-direct {p0}, Lcom/android/email/activity/MessageOrderManager;->onContentChanged()V
 
     return-void
 .end method
 
-.method static synthetic access$300(Lcom/android/email/activity/MessageOrderManager;)Landroid/database/Cursor;
+.method static synthetic access$500(Lcom/android/email/activity/MessageOrderManager;)Landroid/database/Cursor;
     .registers 2
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 56
     invoke-direct {p0}, Lcom/android/email/activity/MessageOrderManager;->openNewCursor()Landroid/database/Cursor;
 
     move-result-object v0
@@ -190,10 +200,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 231
+    .line 250
     iput v4, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
 
-    .line 232
+    .line 251
     iget-wide v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentMessageId:J
 
     const-wide/16 v2, -0x1
@@ -202,25 +212,25 @@
 
     if-nez v0, :cond_c
 
-    .line 252
+    .line 270
     :cond_b
     :goto_b
     return-void
 
-    .line 235
+    .line 254
     :cond_c
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
 
     if-eqz v0, :cond_b
 
-    .line 240
+    .line 259
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
 
     const/4 v1, -0x1
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    .line 242
+    .line 261
     :goto_16
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
 
@@ -242,7 +252,7 @@
 
     if-eqz v0, :cond_31
 
-    .line 243
+    .line 262
     iget v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
 
     add-int/lit8 v0, v0, 0x1
@@ -251,7 +261,7 @@
 
     goto :goto_16
 
-    .line 245
+    .line 264
     :cond_31
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
 
@@ -261,17 +271,17 @@
 
     if-eqz v0, :cond_41
 
-    .line 246
+    .line 265
     iput v4, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
 
-    .line 247
+    .line 266
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCallback:Lcom/android/email/activity/MessageOrderManager$Callback;
 
     invoke-interface {v0}, Lcom/android/email/activity/MessageOrderManager$Callback;->onMessageNotFound()V
 
     goto :goto_b
 
-    .line 250
+    .line 268
     :cond_41
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCallback:Lcom/android/email/activity/MessageOrderManager$Callback;
 
@@ -284,17 +294,17 @@
     .registers 2
 
     .prologue
-    .line 182
+    .line 201
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mLoadMessageListTask:Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;
 
-    invoke-static {v0}, Lcom/android/emailcommon/utility/Utility;->cancelTaskInterrupt(Landroid/os/AsyncTask;)V
+    invoke-static {v0}, Lcom/android/emailcommon/utility/Utility;->cancelTaskInterrupt(Lcom/android/emailcommon/utility/EmailAsyncTask;)V
 
-    .line 183
+    .line 202
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mLoadMessageListTask:Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;
 
-    .line 184
+    .line 203
     return-void
 .end method
 
@@ -302,22 +312,22 @@
     .registers 2
 
     .prologue
-    .line 187
+    .line 206
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
 
     if-eqz v0, :cond_c
 
-    .line 188
+    .line 207
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 189
+    .line 208
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
 
-    .line 191
+    .line 210
     :cond_c
     return-void
 .end method
@@ -326,7 +336,7 @@
     .registers 2
 
     .prologue
-    .line 164
+    .line 183
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mLoadMessageListTask:Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;
 
     if-eqz v0, :cond_6
@@ -346,17 +356,17 @@
     .registers 2
 
     .prologue
-    .line 200
+    .line 219
     invoke-direct {p0}, Lcom/android/email/activity/MessageOrderManager;->isTaskRunning()Z
 
     move-result v0
 
     if-nez v0, :cond_9
 
-    .line 201
-    invoke-virtual {p0}, Lcom/android/email/activity/MessageOrderManager;->startTask()V
+    .line 220
+    invoke-direct {p0}, Lcom/android/email/activity/MessageOrderManager;->startTask()V
 
-    .line 203
+    .line 222
     :cond_9
     return-void
 .end method
@@ -365,377 +375,52 @@
     .registers 10
 
     .prologue
-    .line 445
-    :try_start_0
+    .line 354
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mContentResolver:Landroid/content/ContentResolver;
 
     sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
 
-    sget-object v2, Lcom/android/email/activity/MessageOrderManager;->ORDER_MANAGER_PROJECTION:[Ljava/lang/String;
+    sget-object v2, Lcom/android/emailcommon/provider/EmailContent;->ID_PROJECTION:[Ljava/lang/String;
 
-    invoke-virtual {p0}, Lcom/android/email/activity/MessageOrderManager;->getQuerySelection()Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/email/activity/MessageOrderManager;->mContext:Landroid/content/Context;
+
+    iget-object v4, p0, Lcom/android/email/activity/MessageOrderManager;->mListContext:Lcom/android/email/MessageListContext;
+
+    iget-wide v4, v4, Lcom/android/email/MessageListContext;->mAccountId:J
+
+    iget-object v7, p0, Lcom/android/email/activity/MessageOrderManager;->mListContext:Lcom/android/email/MessageListContext;
+
+    invoke-virtual {v7}, Lcom/android/email/MessageListContext;->getMailboxId()J
+
+    move-result-wide v7
+
+    invoke-static {v3, v4, v5, v7, v8}, Lcom/android/emailcommon/provider/EmailContent$Message;->buildMessageListSelection(Landroid/content/Context;JJ)Ljava/lang/String;
 
     move-result-object v3
 
     const/4 v4, 0x0
 
-    sget-object v5, Lcom/android/email/activity/MessagesAdapter;->SORT_QUERY:[Ljava/lang/String;
-
-    sget v8, Lcom/android/email/activity/MessagesAdapter;->sSortType:I
-
-    aget-object v5, v5, v8
+    const-string v5, "timeStamp DESC"
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v6
 
-    .line 448
+    .line 359
     .local v6, cursor:Landroid/database/Cursor;
-    invoke-static {}, Lcom/android/email/activity/MessageListXL;->getSortType()I
-
-    move-result v0
-
-    const/4 v1, 0x7
-
-    if-ne v0, v1, :cond_20
-
-    .line 449
-    invoke-direct {p0, v6}, Lcom/android/email/activity/MessageOrderManager;->remakeCursor(Landroid/database/Cursor;)Landroid/database/Cursor;
-    :try_end_1f
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1f} :catch_21
-
-    move-result-object v6
-
-    .line 455
-    .end local v6           #cursor:Landroid/database/Cursor;
-    :cond_20
-    :goto_20
     return-object v6
-
-    .line 453
-    :catch_21
-    move-exception v7
-
-    .line 454
-    .local v7, e:Ljava/lang/Exception;
-    invoke-virtual {v7}, Ljava/lang/Exception;->printStackTrace()V
-
-    .line 455
-    iget-object v6, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
-
-    goto :goto_20
-.end method
-
-.method private remakeCursor(Landroid/database/Cursor;)Landroid/database/Cursor;
-    .registers 18
-    .parameter "cursor"
-
-    .prologue
-    .line 384
-    new-instance v12, Ljava/util/HashMap;
-
-    invoke-direct {v12}, Ljava/util/HashMap;-><init>()V
-
-    .line 385
-    .local v12, threadMailMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Long;Ljava/util/List<Lcom/android/email/activity/MessageOrderManager$MessageData;>;>;"
-    new-instance v11, Ljava/util/ArrayList;
-
-    invoke-direct {v11}, Ljava/util/ArrayList;-><init>()V
-
-    .line 386
-    .local v11, threadList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
-    const/4 v5, 0x0
-
-    .line 387
-    .local v5, messageDataList:Ljava/util/List;,"Ljava/util/List<Lcom/android/email/activity/MessageOrderManager$MessageData;>;"
-    const/4 v13, 0x0
-
-    .line 388
-    .local v13, totalThreadMail:I
-    invoke-interface/range {p1 .. p1}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_5d
-
-    .line 390
-    :cond_12
-    new-instance v6, Lcom/android/email/activity/MessageOrderManager$MessageData;
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v6, v0}, Lcom/android/email/activity/MessageOrderManager$MessageData;-><init>(Lcom/android/email/activity/MessageOrderManager;)V
-
-    .line 391
-    .local v6, msgData:Lcom/android/email/activity/MessageOrderManager$MessageData;
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p1
-
-    invoke-interface {v0, v14}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v14
-
-    invoke-static {v14, v15}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v14
-
-    iput-object v14, v6, Lcom/android/email/activity/MessageOrderManager$MessageData;->recordID:Ljava/lang/Long;
-
-    .line 392
-    const/4 v14, 0x1
-
-    move-object/from16 v0, p1
-
-    invoke-interface {v0, v14}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v14
-
-    invoke-static {v14, v15}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v14
-
-    iput-object v14, v6, Lcom/android/email/activity/MessageOrderManager$MessageData;->threadId:Ljava/lang/Long;
-
-    .line 393
-    const/4 v14, 0x0
-
-    iput v14, v6, Lcom/android/email/activity/MessageOrderManager$MessageData;->isFirstItemInConv:I
-
-    .line 394
-    add-int/lit8 v13, v13, 0x1
-
-    .line 396
-    iget-object v14, v6, Lcom/android/email/activity/MessageOrderManager$MessageData;->threadId:Ljava/lang/Long;
-
-    invoke-virtual {v12, v14}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    .end local v5           #messageDataList:Ljava/util/List;,"Ljava/util/List<Lcom/android/email/activity/MessageOrderManager$MessageData;>;"
-    check-cast v5, Ljava/util/List;
-
-    .line 397
-    .restart local v5       #messageDataList:Ljava/util/List;,"Ljava/util/List<Lcom/android/email/activity/MessageOrderManager$MessageData;>;"
-    if-nez v5, :cond_bd
-
-    .line 398
-    new-instance v7, Ljava/util/ArrayList;
-
-    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
-
-    .line 399
-    .local v7, newList:Ljava/util/List;,"Ljava/util/List<Lcom/android/email/activity/MessageOrderManager$MessageData;>;"
-    const/4 v14, 0x1
-
-    iput v14, v6, Lcom/android/email/activity/MessageOrderManager$MessageData;->isFirstItemInConv:I
-
-    .line 400
-    invoke-interface {v7, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 401
-    iget-object v14, v6, Lcom/android/email/activity/MessageOrderManager$MessageData;->threadId:Ljava/lang/Long;
-
-    invoke-virtual {v12, v14, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 402
-    iget-object v14, v6, Lcom/android/email/activity/MessageOrderManager$MessageData;->threadId:Ljava/lang/Long;
-
-    invoke-virtual {v11, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 409
-    .end local v7           #newList:Ljava/util/List;,"Ljava/util/List<Lcom/android/email/activity/MessageOrderManager$MessageData;>;"
-    :cond_57
-    :goto_57
-    invoke-interface/range {p1 .. p1}, Landroid/database/Cursor;->moveToNext()Z
-
-    move-result v14
-
-    if-nez v14, :cond_12
-
-    .line 412
-    .end local v6           #msgData:Lcom/android/email/activity/MessageOrderManager$MessageData;
-    :cond_5d
-    new-instance v1, Landroid/database/MatrixCursor;
-
-    sget-object v14, Lcom/android/email/activity/MessageOrderManager;->ORDER_MANAGER_CURSOR_PROJECTION:[Ljava/lang/String;
-
-    invoke-direct {v1, v14, v13}, Landroid/database/MatrixCursor;-><init>([Ljava/lang/String;I)V
-
-    .line 414
-    .local v1, childCursor:Landroid/database/MatrixCursor;
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/email/activity/MessageOrderManager;->mContentResolver:Landroid/content/ContentResolver;
-
-    sget-object v15, Lcom/android/emailcommon/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-virtual {v1, v14, v15}, Landroid/database/MatrixCursor;->setNotificationUri(Landroid/content/ContentResolver;Landroid/net/Uri;)V
-
-    .line 416
-    new-instance v9, Ljava/util/HashSet;
-
-    invoke-direct {v9}, Ljava/util/HashSet;-><init>()V
-
-    .line 417
-    .local v9, senderHash:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
-    invoke-virtual {v11}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :cond_76
-    :goto_76
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_cf
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Ljava/lang/Long;
-
-    .line 418
-    .local v10, threadId:Ljava/lang/Long;
-    invoke-virtual {v12, v10}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    .end local v5           #messageDataList:Ljava/util/List;,"Ljava/util/List<Lcom/android/email/activity/MessageOrderManager$MessageData;>;"
-    check-cast v5, Ljava/util/List;
-
-    .line 419
-    .restart local v5       #messageDataList:Ljava/util/List;,"Ljava/util/List<Lcom/android/email/activity/MessageOrderManager$MessageData;>;"
-    if-eqz v5, :cond_76
-
-    .line 421
-    invoke-virtual {v9}, Ljava/util/HashSet;->clear()V
-
-    .line 423
-    invoke-interface {v5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    .local v4, i$:Ljava/util/Iterator;
-    :goto_91
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_ca
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/android/email/activity/MessageOrderManager$MessageData;
-
-    .line 424
-    .local v2, data:Lcom/android/email/activity/MessageOrderManager$MessageData;
-    invoke-virtual {v1}, Landroid/database/MatrixCursor;->newRow()Landroid/database/MatrixCursor$RowBuilder;
-
-    move-result-object v8
-
-    .line 425
-    .local v8, row:Landroid/database/MatrixCursor$RowBuilder;
-    iget-object v14, v2, Lcom/android/email/activity/MessageOrderManager$MessageData;->recordID:Ljava/lang/Long;
-
-    invoke-virtual {v8, v14}, Landroid/database/MatrixCursor$RowBuilder;->add(Ljava/lang/Object;)Landroid/database/MatrixCursor$RowBuilder;
-
-    .line 426
-    iget-object v14, v2, Lcom/android/email/activity/MessageOrderManager$MessageData;->threadId:Ljava/lang/Long;
-
-    invoke-virtual {v14}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v14
-
-    invoke-static {v14, v15}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v14
-
-    invoke-virtual {v8, v14}, Landroid/database/MatrixCursor$RowBuilder;->add(Ljava/lang/Object;)Landroid/database/MatrixCursor$RowBuilder;
-
-    .line 427
-    iget v14, v2, Lcom/android/email/activity/MessageOrderManager$MessageData;->isFirstItemInConv:I
-
-    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v14
-
-    invoke-virtual {v8, v14}, Landroid/database/MatrixCursor$RowBuilder;->add(Ljava/lang/Object;)Landroid/database/MatrixCursor$RowBuilder;
-
-    goto :goto_91
-
-    .line 404
-    .end local v1           #childCursor:Landroid/database/MatrixCursor;
-    .end local v2           #data:Lcom/android/email/activity/MessageOrderManager$MessageData;
-    .end local v4           #i$:Ljava/util/Iterator;
-    .end local v8           #row:Landroid/database/MatrixCursor$RowBuilder;
-    .end local v9           #senderHash:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
-    .end local v10           #threadId:Ljava/lang/Long;
-    .restart local v6       #msgData:Lcom/android/email/activity/MessageOrderManager$MessageData;
-    :cond_bd
-    invoke-interface {v5, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 405
-    invoke-interface {v5}, Ljava/util/List;->size()I
-
-    move-result v14
-
-    const/4 v15, 0x2
-
-    if-ne v14, v15, :cond_57
-
-    .line 406
-    add-int/lit8 v13, v13, 0x1
-
-    goto :goto_57
-
-    .line 429
-    .end local v6           #msgData:Lcom/android/email/activity/MessageOrderManager$MessageData;
-    .restart local v1       #childCursor:Landroid/database/MatrixCursor;
-    .restart local v4       #i$:Ljava/util/Iterator;
-    .restart local v9       #senderHash:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
-    .restart local v10       #threadId:Ljava/lang/Long;
-    :cond_ca
-    invoke-interface {v5}, Ljava/util/List;->clear()V
-
-    .line 430
-    const/4 v5, 0x0
-
-    goto :goto_76
-
-    .line 432
-    .end local v4           #i$:Ljava/util/Iterator;
-    .end local v10           #threadId:Ljava/lang/Long;
-    :cond_cf
-    invoke-virtual {v11}, Ljava/util/ArrayList;->clear()V
-
-    .line 433
-    const/4 v11, 0x0
-
-    .line 434
-    invoke-virtual {v12}, Ljava/util/HashMap;->clear()V
-
-    .line 435
-    const/4 v12, 0x0
-
-    .line 436
-    return-object v1
 .end method
 
 .method private setCurrentMessageIdFromCursor()V
     .registers 3
 
     .prologue
-    .line 194
+    .line 213
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
 
     if-eqz v0, :cond_d
 
-    .line 195
+    .line 214
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
 
     const/4 v1, 0x0
@@ -746,8 +431,22 @@
 
     iput-wide v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentMessageId:J
 
-    .line 197
+    .line 216
     :cond_d
+    return-void
+.end method
+
+.method private startTask()V
+    .registers 1
+
+    .prologue
+    .line 187
+    invoke-direct {p0}, Lcom/android/email/activity/MessageOrderManager;->cancelTask()V
+
+    .line 188
+    invoke-virtual {p0}, Lcom/android/email/activity/MessageOrderManager;->startQuery()V
+
+    .line 189
     return-void
 .end method
 
@@ -757,7 +456,7 @@
     .registers 2
 
     .prologue
-    .line 267
+    .line 286
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
 
     if-eqz v0, :cond_e
@@ -785,7 +484,7 @@
     .registers 2
 
     .prologue
-    .line 259
+    .line 277
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
 
     if-eqz v0, :cond_e
@@ -813,18 +512,23 @@
     .registers 2
 
     .prologue
-    .line 209
+    .line 228
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/email/activity/MessageOrderManager;->mClosed:Z
 
-    .line 210
+    .line 229
+    iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mDelayedOperations:Lcom/android/emailcommon/utility/DelayedOperations;
+
+    invoke-virtual {v0}, Lcom/android/emailcommon/utility/DelayedOperations;->removeCallbacks()V
+
+    .line 230
     invoke-direct {p0}, Lcom/android/email/activity/MessageOrderManager;->cancelTask()V
 
-    .line 211
+    .line 231
     invoke-direct {p0}, Lcom/android/email/activity/MessageOrderManager;->closeCursor()V
 
-    .line 212
+    .line 232
     return-void
 .end method
 
@@ -832,7 +536,7 @@
     .registers 3
 
     .prologue
-    .line 215
+    .line 235
     iget-wide v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentMessageId:J
 
     return-wide v0
@@ -842,7 +546,7 @@
     .registers 2
 
     .prologue
-    .line 151
+    .line 169
     iget v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
 
     return v0
@@ -852,7 +556,7 @@
     .registers 2
 
     .prologue
-    .line 160
+    .line 179
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
@@ -860,79 +564,21 @@
     return-object v0
 .end method
 
-.method public getMailboxId()J
-    .registers 3
+.method public getListContext()Lcom/android/email/MessageListContext;
+    .registers 2
 
     .prologue
-    .line 137
-    iget-wide v0, p0, Lcom/android/email/activity/MessageOrderManager;->mMailboxId:J
+    .line 151
+    iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mListContext:Lcom/android/email/MessageListContext;
 
-    return-wide v0
-.end method
-
-.method getQuerySelection()Ljava/lang/String;
-    .registers 5
-
-    .prologue
-    .line 375
-    invoke-static {}, Lcom/android/email/activity/MessageListXL;->getSortType()I
-
-    move-result v0
-
-    const/4 v1, 0x6
-
-    if-eq v0, v1, :cond_10
-
-    .line 376
-    iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mContext:Landroid/content/Context;
-
-    iget-wide v1, p0, Lcom/android/email/activity/MessageOrderManager;->mMailboxId:J
-
-    invoke-static {v0, v1, v2}, Lcom/android/emailcommon/utility/Utility;->buildMailboxIdSelection(Landroid/content/Context;J)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 378
-    :goto_f
     return-object v0
-
-    :cond_10
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p0, Lcom/android/email/activity/MessageOrderManager;->mContext:Landroid/content/Context;
-
-    iget-wide v2, p0, Lcom/android/email/activity/MessageOrderManager;->mMailboxId:J
-
-    invoke-static {v1, v2, v3}, Lcom/android/emailcommon/utility/Utility;->buildMailboxIdSelection(Landroid/content/Context;J)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-static {}, Lcom/android/email/activity/MessageListXL;->getSearchSelectionString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_f
 .end method
 
 .method public getTotalMessageCount()I
     .registers 2
 
     .prologue
-    .line 144
+    .line 162
     iget v0, p0, Lcom/android/email/activity/MessageOrderManager;->mTotalMessageCount:I
 
     return v0
@@ -943,256 +589,116 @@
     .parameter "messageId"
 
     .prologue
-    .line 224
+    .line 243
     iget-wide v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentMessageId:J
 
     cmp-long v0, v0, p1
 
     if-eqz v0, :cond_b
 
-    .line 225
+    .line 244
     iput-wide p1, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentMessageId:J
 
-    .line 226
+    .line 245
     invoke-direct {p0}, Lcom/android/email/activity/MessageOrderManager;->adjustCursorPosition()V
 
-    .line 228
+    .line 247
     :cond_b
     return-void
 .end method
 
 .method public moveToNewer()Z
-    .registers 6
+    .registers 2
 
     .prologue
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    .line 312
+    .line 311
     invoke-virtual {p0}, Lcom/android/email/activity/MessageOrderManager;->canMoveToNewer()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_58
+    if-eqz v0, :cond_1e
 
-    iget-object v3, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
 
-    invoke-interface {v3}, Landroid/database/Cursor;->moveToPrevious()Z
+    invoke-interface {v0}, Landroid/database/Cursor;->moveToPrevious()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_58
+    if-eqz v0, :cond_1e
+
+    .line 312
+    iget v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
 
     .line 313
-    iget v3, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
-
-    add-int/lit8 v3, v3, -0x1
-
-    iput v3, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
-
-    .line 314
-    invoke-static {}, Lcom/android/email/activity/MessageListXL;->getSortType()I
-
-    move-result v3
-
-    const/4 v4, 0x7
-
-    if-ne v3, v4, :cond_4f
-
-    .line 315
-    invoke-static {}, Lcom/android/email/activity/MessagesAdapter;->getHideViewPosition()Ljava/util/HashSet;
-
-    move-result-object v0
-
-    .line 316
-    .local v0, hideViewPosition:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/Long;>;"
-    if-eqz v0, :cond_4f
-
-    iget-object v3, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
-
-    invoke-interface {v3, v2}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4f
-
-    .line 318
-    :cond_33
-    iget-object v2, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
-
-    const/4 v3, 0x2
-
-    invoke-interface {v2, v3}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v2
-
-    if-nez v2, :cond_4f
-
-    .line 319
-    iget-object v2, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
-
-    invoke-interface {v2}, Landroid/database/Cursor;->moveToPrevious()Z
-
-    .line 320
-    iget v2, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
-
-    add-int/lit8 v2, v2, -0x1
-
-    iput v2, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
-
-    .line 321
-    iget-object v2, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
-
-    invoke-interface {v2}, Landroid/database/Cursor;->isFirst()Z
-
-    move-result v2
-
-    if-ne v2, v1, :cond_33
-
-    .line 334
-    .end local v0           #hideViewPosition:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/Long;>;"
-    :cond_4f
     invoke-direct {p0}, Lcom/android/email/activity/MessageOrderManager;->setCurrentMessageIdFromCursor()V
 
-    .line 335
-    iget-object v2, p0, Lcom/android/email/activity/MessageOrderManager;->mCallback:Lcom/android/email/activity/MessageOrderManager$Callback;
+    .line 314
+    iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCallback:Lcom/android/email/activity/MessageOrderManager$Callback;
 
-    invoke-interface {v2}, Lcom/android/email/activity/MessageOrderManager$Callback;->onMessagesChanged()V
+    invoke-interface {v0}, Lcom/android/email/activity/MessageOrderManager$Callback;->onMessagesChanged()V
 
-    .line 338
-    :goto_57
-    return v1
+    .line 315
+    const/4 v0, 0x1
 
-    :cond_58
-    move v1, v2
+    .line 317
+    :goto_1d
+    return v0
 
-    goto :goto_57
+    :cond_1e
+    const/4 v0, 0x0
+
+    goto :goto_1d
 .end method
 
 .method public moveToOlder()Z
-    .registers 6
+    .registers 2
 
     .prologue
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    .line 277
+    .line 295
     invoke-virtual {p0}, Lcom/android/email/activity/MessageOrderManager;->canMoveToOlder()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_58
+    if-eqz v0, :cond_1e
 
-    iget-object v3, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
+    iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
 
-    invoke-interface {v3}, Landroid/database/Cursor;->moveToNext()Z
+    invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_58
+    if-eqz v0, :cond_1e
 
-    .line 278
-    iget v3, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
+    .line 296
+    iget v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    iput v3, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
-
-    .line 279
-    invoke-static {}, Lcom/android/email/activity/MessageListXL;->getSortType()I
-
-    move-result v3
-
-    const/4 v4, 0x7
-
-    if-ne v3, v4, :cond_4f
-
-    .line 280
-    invoke-static {}, Lcom/android/email/activity/MessagesAdapter;->getHideViewPosition()Ljava/util/HashSet;
-
-    move-result-object v0
-
-    .line 281
-    .local v0, hideViewPosition:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/Long;>;"
-    if-eqz v0, :cond_4f
-
-    iget-object v3, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
-
-    invoke-interface {v3, v2}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4f
-
-    .line 283
-    :cond_33
-    iget-object v2, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
-
-    const/4 v3, 0x2
-
-    invoke-interface {v2, v3}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v2
-
-    if-nez v2, :cond_4f
-
-    .line 284
-    iget-object v2, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
-
-    invoke-interface {v2}, Landroid/database/Cursor;->moveToNext()Z
-
-    .line 285
-    iget v2, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
-
-    add-int/lit8 v2, v2, 0x1
-
-    iput v2, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
-
-    .line 286
-    iget-object v2, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
-
-    invoke-interface {v2}, Landroid/database/Cursor;->isLast()Z
-
-    move-result v2
-
-    if-ne v2, v1, :cond_33
+    iput v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
 
     .line 297
-    .end local v0           #hideViewPosition:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/Long;>;"
-    :cond_4f
     invoke-direct {p0}, Lcom/android/email/activity/MessageOrderManager;->setCurrentMessageIdFromCursor()V
 
     .line 298
-    iget-object v2, p0, Lcom/android/email/activity/MessageOrderManager;->mCallback:Lcom/android/email/activity/MessageOrderManager$Callback;
+    iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCallback:Lcom/android/email/activity/MessageOrderManager$Callback;
 
-    invoke-interface {v2}, Lcom/android/email/activity/MessageOrderManager$Callback;->onMessagesChanged()V
+    invoke-interface {v0}, Lcom/android/email/activity/MessageOrderManager$Callback;->onMessagesChanged()V
+
+    .line 299
+    const/4 v0, 0x1
 
     .line 301
-    :goto_57
-    return v1
+    :goto_1d
+    return v0
 
-    :cond_58
-    move v1, v2
+    :cond_1e
+    const/4 v0, 0x0
 
-    goto :goto_57
+    goto :goto_1d
 .end method
 
 .method onCursorOpenDone(Landroid/database/Cursor;)V
@@ -1202,11 +708,11 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 465
+    .line 369
     :try_start_1
     invoke-direct {p0}, Lcom/android/email/activity/MessageOrderManager;->closeCursor()V
 
-    .line 466
+    .line 370
     if-eqz p1, :cond_c
 
     invoke-interface {p1}, Landroid/database/Cursor;->isClosed()Z
@@ -1215,32 +721,32 @@
 
     if-eqz v0, :cond_15
 
-    .line 467
+    .line 371
     :cond_c
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/email/activity/MessageOrderManager;->mTotalMessageCount:I
 
-    .line 468
+    .line 372
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCurrentPosition:I
     :try_end_12
     .catchall {:try_start_1 .. :try_end_12} :catchall_2c
 
-    .line 476
+    .line 380
     iput-object v2, p0, Lcom/android/email/activity/MessageOrderManager;->mLoadMessageListTask:Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;
 
-    .line 478
+    .line 382
     :goto_14
     return-void
 
-    .line 471
+    .line 375
     :cond_15
     :try_start_15
     iput-object p1, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
 
-    .line 472
+    .line 376
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
@@ -1249,19 +755,19 @@
 
     iput v0, p0, Lcom/android/email/activity/MessageOrderManager;->mTotalMessageCount:I
 
-    .line 473
+    .line 377
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mCursor:Landroid/database/Cursor;
 
     iget-object v1, p0, Lcom/android/email/activity/MessageOrderManager;->mObserver:Landroid/database/ContentObserver;
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->registerContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 474
+    .line 378
     invoke-direct {p0}, Lcom/android/email/activity/MessageOrderManager;->adjustCursorPosition()V
     :try_end_29
     .catchall {:try_start_15 .. :try_end_29} :catchall_2c
 
-    .line 476
+    .line 380
     iput-object v2, p0, Lcom/android/email/activity/MessageOrderManager;->mLoadMessageListTask:Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;
 
     goto :goto_14
@@ -1278,38 +784,22 @@
     .registers 3
 
     .prologue
-    .line 177
+    .line 196
     new-instance v0, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;-><init>(Lcom/android/email/activity/MessageOrderManager;Lcom/android/email/activity/MessageOrderManager$1;)V
+    invoke-direct {v0, p0}, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;-><init>(Lcom/android/email/activity/MessageOrderManager;)V
 
     iput-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mLoadMessageListTask:Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;
 
-    .line 178
+    .line 197
     iget-object v0, p0, Lcom/android/email/activity/MessageOrderManager;->mLoadMessageListTask:Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;
 
     const/4 v1, 0x0
 
     new-array v1, v1, [Ljava/lang/Void;
 
-    invoke-virtual {v0, v1}, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v0, v1}, Lcom/android/email/activity/MessageOrderManager$LoadMessageListTask;->executeParallel([Ljava/lang/Object;)Lcom/android/emailcommon/utility/EmailAsyncTask;
 
-    .line 179
-    return-void
-.end method
-
-.method public startTask()V
-    .registers 1
-
-    .prologue
-    .line 168
-    invoke-direct {p0}, Lcom/android/email/activity/MessageOrderManager;->cancelTask()V
-
-    .line 169
-    invoke-virtual {p0}, Lcom/android/email/activity/MessageOrderManager;->startQuery()V
-
-    .line 170
+    .line 198
     return-void
 .end method

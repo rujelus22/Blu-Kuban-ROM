@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="11" android:versionName="1.1" android:installLocation="internalOnly" package="com.adwtheme.rujelus22iconpack"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:label="@string/theme_title" android:icon="@drawable/theme_icon">
+        <activity android:label="@string/theme_title" android:name=".main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+    <uses-sdk android:minSdkVersion="4" />
+</manifest>

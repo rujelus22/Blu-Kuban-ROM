@@ -53,40 +53,40 @@
         <item quantity="one">Esperando a una acción en %1$d conversación</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">Se han silenciado &amp;lt;b>%1$d&amp;lt;/b> conversaciones.</item>
-        <item quantity="one">Se ha silenciado &amp;lt;b>%1$d&amp;lt;/b> conversación.</item>
+        <item quantity="other">Se han silenciado &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversaciones.</item>
+        <item quantity="one">Se ha silenciado &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversación.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">Se han marcado &amp;lt;b>%1$d&amp;lt;/b> conversaciones como spam.</item>
-        <item quantity="one">Se ha marcado &amp;lt;b>%1$d&amp;lt;/b> conversación como spam.</item>
+        <item quantity="other">Se han marcado &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversaciones como spam.</item>
+        <item quantity="one">Se ha marcado &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversación como spam.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">Se han archivado &amp;lt;b>%1$d&amp;lt;/b> conversaciones.</item>
-        <item quantity="one">Se ha archivado &amp;lt;b>%1$d&amp;lt;/b> conversación.</item>
+        <item quantity="other">Se han archivado &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversaciones.</item>
+        <item quantity="one">Se ha archivado &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversación.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">Se han movido &amp;lt;b>%1$d&amp;lt;/b> conversaciones a Recibidos.</item>
-        <item quantity="one">Se ha movido &amp;lt;b>%1$d&amp;lt;/b> conversación a Recibidos.</item>
+        <item quantity="other">Se han movido &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversaciones a Recibidos.</item>
+        <item quantity="one">Se ha movido &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversación a Recibidos.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">Se han eliminado &amp;lt;b>%1$d&amp;lt;/b> conversaciones.</item>
-        <item quantity="one">Se ha eliminado &amp;lt;b>%1$d&amp;lt;/b> conversación.</item>
+        <item quantity="other">Se han eliminado &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversaciones.</item>
+        <item quantity="one">Se ha eliminado &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversación.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">Se han marcado &amp;lt;b>%1$d&amp;lt;/b> conversaciones como importantes.</item>
-        <item quantity="one">Se ha marcado &amp;lt;b>%1$d&amp;lt;/b> conversación como importante.</item>
+        <item quantity="other">Se han marcado &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversaciones como importantes.</item>
+        <item quantity="one">Se ha marcado &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversación como importante.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">Se han marcado &amp;lt;b>%1$d&amp;lt;/b> conversaciones como no importantes.</item>
-        <item quantity="one">Se ha marcado &amp;lt;b>%1$d&amp;lt;/b> conversación como no importante.</item>
+        <item quantity="other">Se han marcado &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversaciones como no importantes.</item>
+        <item quantity="one">Se ha marcado &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversación como no importante.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">Se han marcado &amp;lt;b>%1$d&amp;lt;/b> conversaciones como leídas.</item>
-        <item quantity="one">Se ha marcado &amp;lt;b>%1$d&amp;lt;/b> conversación como leída.</item>
+        <item quantity="other">Se han marcado &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversaciones como leídas.</item>
+        <item quantity="one">Se ha marcado &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversación como leída.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">Se han marcado &amp;lt;b>%1$d&amp;lt;/b> conversaciones como no leídas.</item>
-        <item quantity="one">Se ha marcado &amp;lt;b>%1$d&amp;lt;/b> conversación como no leída.</item>
+        <item quantity="other">Se han marcado &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversaciones como no leídas.</item>
+        <item quantity="one">Se ha marcado &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversación como no leída.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Etiquetas modificadas</item>

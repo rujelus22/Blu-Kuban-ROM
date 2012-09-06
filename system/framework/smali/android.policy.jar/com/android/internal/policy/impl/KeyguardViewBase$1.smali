@@ -40,7 +40,7 @@
 
     .prologue
     .line 58
-    const/high16 v0, 0x7000
+    const v0, 0x106000d
 
     sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC:Landroid/graphics/PorterDuff$Mode;
 

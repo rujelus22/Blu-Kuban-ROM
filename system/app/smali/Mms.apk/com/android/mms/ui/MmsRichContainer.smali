@@ -1643,7 +1643,7 @@
 
     move-result-object v1
 
-    const v2, 0x2050001
+    const v2, 0x2050000
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1652,7 +1652,7 @@
     iput v1, p0, Lcom/android/mms/ui/MmsRichContainer;->mTextColor:I
 
     .line 126
-    const/high16 v1, -0x100
+    const v1, -0x1
 
     iput v1, p0, Lcom/android/mms/ui/MmsRichContainer;->mCursorColor:I
 

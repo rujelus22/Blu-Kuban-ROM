@@ -114,17 +114,17 @@
     .line 78
     iput-object v2, p0, Lcom/samsung/prlupdate/PRLUpdate;->prlToFumoTimer:Lcom/samsung/prlupdate/PRLUpdate$PRLtoFUMOTimer;
 
-    .line 685
+    .line 679
     iput-boolean v1, p0, Lcom/samsung/prlupdate/PRLUpdate;->homekeyevent:Z
 
-    .line 755
+    .line 749
     new-instance v0, Lcom/samsung/prlupdate/PRLUpdate$13;
 
     invoke-direct {v0, p0}, Lcom/samsung/prlupdate/PRLUpdate$13;-><init>(Lcom/samsung/prlupdate/PRLUpdate;)V
 
     iput-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrlUpadteHandler:Landroid/os/Handler;
 
-    .line 869
+    .line 863
     return-void
 .end method
 
@@ -213,7 +213,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 567
+    .line 561
     const-string v0, "PRLUpdate"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -238,7 +238,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 568
+    .line 562
     const-string v0, "PRLUpdate"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -263,42 +263,42 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 570
+    .line 564
     iget v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
     if-ne v0, v3, :cond_4d
 
-    .line 571
+    .line 565
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     iput-boolean v3, v0, Lcom/samsung/client/DMApp;->userCancel:Z
 
-    .line 572
+    .line 566
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->stopSession()V
 
-    .line 574
+    .line 568
     iget-boolean v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->hfaPrl:Z
 
     if-eqz v0, :cond_52
 
-    .line 575
+    .line 569
     iget-boolean v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mdnmsidchanged:Z
 
     if-eqz v0, :cond_4e
 
-    .line 576
+    .line 570
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
-    .line 588
+    .line 582
     :cond_4d
     :goto_4d
     return-void
 
-    .line 578
+    .line 572
     :cond_4e
     const/4 v0, 0x4
 
@@ -306,7 +306,7 @@
 
     goto :goto_4d
 
-    .line 581
+    .line 575
     :cond_52
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
@@ -316,14 +316,14 @@
 
     if-eqz v0, :cond_5e
 
-    .line 582
+    .line 576
     const/4 v0, 0x7
 
     iput v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
     goto :goto_4d
 
-    .line 584
+    .line 578
     :cond_5e
     const/4 v0, 0x0
 
@@ -464,7 +464,7 @@
 
     const/4 v1, 0x0
 
-    .line 592
+    .line 586
     const-string v2, "PRLUpdate"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -489,7 +489,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 593
+    .line 587
     const-string v2, "PRLUpdate"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -516,7 +516,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 594
+    .line 588
     const-string v2, "PRLUpdate"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -541,69 +541,69 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 608
+    .line 602
     iget-object v2, p0, Lcom/samsung/prlupdate/PRLUpdate;->prlToFumoTimer:Lcom/samsung/prlupdate/PRLUpdate$PRLtoFUMOTimer;
 
     if-eqz v2, :cond_5b
 
-    .line 609
+    .line 603
     iget-object v2, p0, Lcom/samsung/prlupdate/PRLUpdate;->prlToFumoTimer:Lcom/samsung/prlupdate/PRLUpdate$PRLtoFUMOTimer;
 
     invoke-virtual {v2}, Lcom/samsung/prlupdate/PRLUpdate$PRLtoFUMOTimer;->cancel()V
 
-    .line 612
+    .line 606
     :cond_5b
     iget v2, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
     packed-switch v2, :pswitch_data_102
 
-    .line 674
+    .line 668
     :cond_60
     :goto_60
     :pswitch_60
     return-void
 
-    .line 615
+    .line 609
     :pswitch_61
     invoke-virtual {p0}, Lcom/samsung/prlupdate/PRLUpdate;->finish()V
 
-    .line 616
+    .line 610
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->enableKeyGuard()V
 
-    .line 617
+    .line 611
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->releaseWakeLock()V
 
-    .line 618
+    .line 612
     iget-boolean v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->homekeyevent:Z
 
     if-nez v0, :cond_60
 
-    .line 619
+    .line 613
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->launchHomeScreen()V
 
     goto :goto_60
 
-    .line 625
+    .line 619
     :pswitch_78
     invoke-virtual {p0}, Lcom/samsung/prlupdate/PRLUpdate;->finish()V
 
-    .line 626
+    .line 620
     iget-object v2, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v1}, Lcom/samsung/client/DMApp;->setHfaInitiated(Z)V
 
-    .line 627
+    .line 621
     iget-object v2, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v0}, Lcom/samsung/client/DMApp;->setHfaRebooted(Z)V
 
-    .line 628
+    .line 622
     iget-object v2, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     iget-boolean v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->homekeyevent:Z
@@ -620,16 +620,16 @@
 
     goto :goto_8b
 
-    .line 633
+    .line 627
     :pswitch_91
     invoke-virtual {p0}, Lcom/samsung/prlupdate/PRLUpdate;->finish()V
 
-    .line 634
+    .line 628
     iget-object v2, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v1}, Lcom/samsung/client/DMApp;->setHfaInitiated(Z)V
 
-    .line 635
+    .line 629
     iget-object v2, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     iget-boolean v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->homekeyevent:Z
@@ -646,72 +646,72 @@
 
     goto :goto_9f
 
-    .line 640
+    .line 634
     :pswitch_a5
     invoke-virtual {p0}, Lcom/samsung/prlupdate/PRLUpdate;->finish()V
 
-    .line 641
+    .line 635
     iget-object v2, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v1}, Lcom/samsung/client/DMApp;->setHfaInitiated(Z)V
 
-    .line 642
+    .line 636
     iget-object v2, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v0}, Lcom/samsung/client/DMApp;->setHfaRebooted(Z)V
 
-    .line 643
+    .line 637
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->enableKeyGuard()V
 
-    .line 644
+    .line 638
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->releaseWakeLock()V
 
-    .line 645
+    .line 639
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0, v1}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
     goto :goto_60
 
-    .line 650
+    .line 644
     :pswitch_c2
     invoke-virtual {p0}, Lcom/samsung/prlupdate/PRLUpdate;->finish()V
 
-    .line 651
+    .line 645
     iget-object v2, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v1}, Lcom/samsung/client/DMApp;->setHfaInitiated(Z)V
 
-    .line 652
+    .line 646
     iget-object v2, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v0}, Lcom/samsung/client/DMApp;->setHfaRebooted(Z)V
 
-    .line 653
+    .line 647
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->enableKeyGuard()V
 
-    .line 654
+    .line 648
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->releaseWakeLock()V
 
-    .line 655
+    .line 649
     iget-boolean v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->homekeyevent:Z
 
     if-nez v0, :cond_e2
 
-    .line 656
+    .line 650
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->launchHomeScreen()V
 
-    .line 658
+    .line 652
     :cond_e2
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
@@ -719,34 +719,34 @@
 
     goto/16 :goto_60
 
-    .line 663
+    .line 657
     :pswitch_e9
     invoke-virtual {p0}, Lcom/samsung/prlupdate/PRLUpdate;->finish()V
 
-    .line 664
+    .line 658
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->setFumoAlarm()V
 
     goto/16 :goto_60
 
-    .line 669
+    .line 663
     :pswitch_f3
     invoke-virtual {p0}, Lcom/samsung/prlupdate/PRLUpdate;->finish()V
 
-    .line 670
+    .line 664
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->enableKeyGuard()V
 
-    .line 671
+    .line 665
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->releaseWakeLock()V
 
     goto/16 :goto_60
 
-    .line 612
+    .line 606
     :pswitch_data_102
     .packed-switch 0x0
         :pswitch_f3
@@ -831,7 +831,7 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 518
+    .line 512
     const-string v0, "PRLUpdate"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -866,7 +866,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 519
+    .line 513
     const-string v0, "PRLUpdate"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -915,48 +915,48 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 526
+    .line 520
     iget v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
     if-ne v0, v6, :cond_84
 
-    .line 528
+    .line 522
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     if-eqz v0, :cond_85
 
-    .line 529
+    .line 523
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 530
+    .line 524
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 537
+    .line 531
     :goto_6a
     iput p1, p0, Lcom/samsung/prlupdate/PRLUpdate;->errCode:I
 
-    .line 538
+    .line 532
     iget-boolean v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->hfaPrl:Z
 
     if-eqz v0, :cond_91
 
-    .line 539
+    .line 533
     iget-boolean v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mdnmsidchanged:Z
 
     if-eqz v0, :cond_8d
 
-    .line 540
+    .line 534
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
-    .line 541
+    .line 535
     new-instance v0, Lcom/samsung/prlupdate/PRLUpdate$RebootTimer;
 
     const-wide/16 v2, 0x2710
@@ -967,15 +967,15 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/samsung/prlupdate/PRLUpdate$RebootTimer;-><init>(Lcom/samsung/prlupdate/PRLUpdate;JJ)V
 
-    .line 553
+    .line 547
     :goto_81
     invoke-virtual {p0, v6}, Lcom/samsung/prlupdate/PRLUpdate;->showDialog(I)V
 
-    .line 555
+    .line 549
     :cond_84
     return-void
 
-    .line 532
+    .line 526
     :cond_85
     const-string v0, "PRLUpdate"
 
@@ -985,7 +985,7 @@
 
     goto :goto_6a
 
-    .line 543
+    .line 537
     :cond_8d
     const/4 v0, 0x4
 
@@ -993,7 +993,7 @@
 
     goto :goto_81
 
-    .line 546
+    .line 540
     :cond_91
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
@@ -1003,14 +1003,14 @@
 
     if-eqz v0, :cond_9d
 
-    .line 547
+    .line 541
     const/4 v0, 0x7
 
     iput v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
     goto :goto_81
 
-    .line 549
+    .line 543
     :cond_9d
     const/4 v0, 0x0
 
@@ -1033,7 +1033,7 @@
 
     const/4 v7, 0x3
 
-    .line 426
+    .line 420
     const-string v0, "PRLUpdate"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1082,18 +1082,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 433
+    .line 427
     iget v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
     if-ne v0, v4, :cond_4f
 
-    .line 435
+    .line 429
     :try_start_3b
     iget v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
     if-eq v0, v4, :cond_50
 
-    .line 436
+    .line 430
     new-instance v0, Ljava/lang/Exception;
 
     invoke-direct {v0}, Ljava/lang/Exception;-><init>()V
@@ -1102,11 +1102,11 @@
     :try_end_45
     .catch Ljava/lang/Exception; {:try_start_3b .. :try_end_45} :catch_45
 
-    .line 438
+    .line 432
     :catch_45
     move-exception v6
 
-    .line 439
+    .line 433
     .local v6, e:Ljava/lang/Exception;
     const-string v0, "PRLUpdate"
 
@@ -1116,40 +1116,40 @@
 
     invoke-static {v0, v1, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 515
+    .line 509
     .end local v6           #e:Ljava/lang/Exception;
     :cond_4f
     :goto_4f
     return-void
 
-    .line 443
+    .line 437
     :cond_50
     iget-boolean v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mUpdateAvailable:Z
 
     if-eqz v0, :cond_bb
 
-    .line 444
+    .line 438
     iget-boolean v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->fullScreens:Z
 
     if-eqz v0, :cond_7b
 
-    .line 445
+    .line 439
     iget-boolean v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->hfaPrl:Z
 
     if-eqz v0, :cond_77
 
-    .line 446
+    .line 440
     const/4 v0, 0x6
 
     invoke-direct {p0, v0}, Lcom/samsung/prlupdate/PRLUpdate;->moveToHfaPrlDoneWindow(I)V
 
-    .line 467
+    .line 461
     :goto_60
     iget-boolean v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->hfaPrl:Z
 
     if-eqz v0, :cond_a7
 
-    .line 468
+    .line 462
     new-instance v0, Lcom/samsung/prlupdate/PRLUpdate$PRLtoFUMOTimer;
 
     const-wide/16 v2, 0x2710
@@ -1162,54 +1162,54 @@
 
     iput-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->prlToFumoTimer:Lcom/samsung/prlupdate/PRLUpdate$PRLtoFUMOTimer;
 
-    .line 469
+    .line 463
     iget-boolean v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mdnmsidchanged:Z
 
     if-eqz v0, :cond_9f
 
-    .line 470
+    .line 464
     iput v7, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
     goto :goto_4f
 
-    .line 448
+    .line 442
     :cond_77
     invoke-direct {p0, v5}, Lcom/samsung/prlupdate/PRLUpdate;->moveToHfaPrlDoneWindow(I)V
 
     goto :goto_60
 
-    .line 451
+    .line 445
     :cond_7b
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     if-eqz v0, :cond_93
 
-    .line 452
+    .line 446
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 453
+    .line 447
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 460
+    .line 454
     :goto_8a
     iget-boolean v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->hfaPrl:Z
 
     if-eqz v0, :cond_9b
 
-    .line 461
+    .line 455
     const/4 v0, 0x6
 
     invoke-virtual {p0, v0}, Lcom/samsung/prlupdate/PRLUpdate;->showDialog(I)V
 
     goto :goto_60
 
-    .line 455
+    .line 449
     :cond_93
     const-string v0, "PRLUpdate"
 
@@ -1219,24 +1219,24 @@
 
     goto :goto_8a
 
-    .line 463
+    .line 457
     :cond_9b
     invoke-virtual {p0, v5}, Lcom/samsung/prlupdate/PRLUpdate;->showDialog(I)V
 
     goto :goto_60
 
-    .line 472
+    .line 466
     :cond_9f
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->resetRadio()V
 
-    .line 473
+    .line 467
     iput v8, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
     goto :goto_4f
 
-    .line 476
+    .line 470
     :cond_a7
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
@@ -1246,40 +1246,40 @@
 
     if-eqz v0, :cond_b3
 
-    .line 477
+    .line 471
     const/4 v0, 0x7
 
     iput v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
     goto :goto_4f
 
-    .line 479
+    .line 473
     :cond_b3
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->resetRadio()V
 
-    .line 480
+    .line 474
     iput v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
     goto :goto_4f
 
-    .line 484
+    .line 478
     :cond_bb
     iget-boolean v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->fullScreens:Z
 
     if-eqz v0, :cond_da
 
-    .line 486
+    .line 480
     invoke-virtual {p0, v7}, Lcom/samsung/prlupdate/PRLUpdate;->showDialog(I)V
 
-    .line 499
+    .line 493
     :goto_c2
     iget-boolean v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->hfaPrl:Z
 
     if-eqz v0, :cond_f9
 
-    .line 500
+    .line 494
     new-instance v0, Lcom/samsung/prlupdate/PRLUpdate$PRLtoFUMOTimer;
 
     const-wide/16 v2, 0x2710
@@ -1292,41 +1292,41 @@
 
     iput-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->prlToFumoTimer:Lcom/samsung/prlupdate/PRLUpdate$PRLtoFUMOTimer;
 
-    .line 501
+    .line 495
     iget-boolean v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mdnmsidchanged:Z
 
     if-eqz v0, :cond_f5
 
-    .line 502
+    .line 496
     iput v7, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
     goto/16 :goto_4f
 
-    .line 488
+    .line 482
     :cond_da
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     if-eqz v0, :cond_ed
 
-    .line 489
+    .line 483
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 490
+    .line 484
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 496
+    .line 490
     :goto_e9
     invoke-virtual {p0, v7}, Lcom/samsung/prlupdate/PRLUpdate;->showDialog(I)V
 
     goto :goto_c2
 
-    .line 492
+    .line 486
     :cond_ed
     const-string v0, "PRLUpdate"
 
@@ -1336,13 +1336,13 @@
 
     goto :goto_e9
 
-    .line 504
+    .line 498
     :cond_f5
     iput v8, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
     goto/16 :goto_4f
 
-    .line 507
+    .line 501
     :cond_f9
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
@@ -1352,14 +1352,14 @@
 
     if-eqz v0, :cond_106
 
-    .line 508
+    .line 502
     const/4 v0, 0x7
 
     iput v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
     goto/16 :goto_4f
 
-    .line 510
+    .line 504
     :cond_106
     iput v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->sessionstatus:I
 
@@ -1727,15 +1727,15 @@
     .parameter "id"
 
     .prologue
-    const/4 v10, 0x1
+    const v10, 0x108009b
 
-    const v9, 0x1080027
+    const/4 v9, 0x1
 
-    const v8, 0x7f050009
+    const v8, 0x1080027
 
-    const v7, 0x7f050016
+    const v7, 0x7f050009
 
-    const/4 v6, 0x0
+    const v6, 0x7f050016
 
     .line 255
     const-string v3, "PRLUpdate"
@@ -1767,16 +1767,16 @@
 
     .line 275
     .local v2, keylistner:Landroid/content/DialogInterface$OnKeyListener;
-    packed-switch p1, :pswitch_data_1e2
+    packed-switch p1, :pswitch_data_1bc
 
-    .line 422
+    .line 416
     const/4 v0, 0x0
 
-    :goto_2c
+    :goto_2e
     return-object v0
 
     .line 278
-    :pswitch_2d
+    :pswitch_2f
     new-instance v0, Lcom/samsung/prlupdate/PRLUpdate$CustomDialog;
 
     invoke-direct {v0, p0, p0}, Lcom/samsung/prlupdate/PRLUpdate$CustomDialog;-><init>(Lcom/samsung/prlupdate/PRLUpdate;Landroid/content/Context;)V
@@ -1785,7 +1785,7 @@
     .local v0, dialog:Landroid/app/ProgressDialog;
     iget-boolean v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->niaPrl:Z
 
-    if-eqz v3, :cond_6b
+    if-eqz v3, :cond_6a
 
     .line 280
     const v3, 0x7f05000d
@@ -1797,11 +1797,11 @@
     invoke-virtual {v0, v3}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
     .line 284
-    :goto_40
-    invoke-virtual {v0, v10}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
+    :goto_42
+    invoke-virtual {v0, v9}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
 
     .line 285
-    invoke-virtual {v0, v10}, Landroid/app/ProgressDialog;->setCancelable(Z)V
+    invoke-virtual {v0, v9}, Landroid/app/ProgressDialog;->setCancelable(Z)V
 
     .line 286
     iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mOnDlgDismiss:Lcom/samsung/prlupdate/PRLUpdate$OnDlgDismiss;
@@ -1815,7 +1815,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_62
+    if-nez v3, :cond_64
 
     .line 288
     const v3, 0x7f050013
@@ -1831,19 +1831,16 @@
     invoke-virtual {v0, v3, v4}, Landroid/app/ProgressDialog;->setButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
     .line 300
-    :cond_62
+    :cond_64
     invoke-virtual {v0, v2}, Landroid/app/ProgressDialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
-
-    .line 301
-    invoke-virtual {v0, v6}, Landroid/app/ProgressDialog;->setCanceledOnTouchOutside(Z)V
 
     .line 302
     iput-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    goto :goto_2c
+    goto :goto_2e
 
     .line 282
-    :cond_6b
+    :cond_6a
     const v3, 0x7f05002e
 
     invoke-virtual {p0, v3}, Lcom/samsung/prlupdate/PRLUpdate;->getString(I)Ljava/lang/String;
@@ -1852,11 +1849,11 @@
 
     invoke-virtual {v0, v3}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    goto :goto_40
+    goto :goto_42
 
     .line 307
     .end local v0           #dialog:Landroid/app/ProgressDialog;
-    :pswitch_76
+    :pswitch_75
     const v3, 0x7f05002f
 
     invoke-virtual {p0, v3}, Lcom/samsung/prlupdate/PRLUpdate;->getString(I)Ljava/lang/String;
@@ -1894,7 +1891,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v9}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -1902,7 +1899,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/prlupdate/PRLUpdate$7;-><init>(Lcom/samsung/prlupdate/PRLUpdate;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -1925,18 +1922,13 @@
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
     .line 323
-    iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
-
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 324
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    goto/16 :goto_2c
+    goto/16 :goto_2e
 
-    .line 327
+    .line 326
     .end local v1           #errStr:Ljava/lang/String;
-    :pswitch_c3
+    :pswitch_bd
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -1947,13 +1939,11 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v7}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    const v4, 0x108009b
-
-    invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v10}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -1961,7 +1951,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/prlupdate/PRLUpdate$8;-><init>(Lcom/samsung/prlupdate/PRLUpdate;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -1971,30 +1961,25 @@
 
     iput-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 339
+    .line 338
     iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 340
+    .line 339
     iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/prlupdate/PRLUpdate;->mOnDlgDismiss:Lcom/samsung/prlupdate/PRLUpdate$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 341
-    iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
-
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 342
+    .line 340
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    goto/16 :goto_2c
+    goto/16 :goto_2e
 
-    .line 345
-    :pswitch_fe
+    .line 343
+    :pswitch_f0
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -2005,13 +1990,11 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v7}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    const v4, 0x108009b
-
-    invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v10}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2019,7 +2002,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/prlupdate/PRLUpdate$9;-><init>(Lcom/samsung/prlupdate/PRLUpdate;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2029,39 +2012,34 @@
 
     iput-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 360
+    .line 358
     iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 361
+    .line 359
     iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/prlupdate/PRLUpdate;->mOnDlgDismiss:Lcom/samsung/prlupdate/PRLUpdate$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 362
-    iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
-
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 363
+    .line 360
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    goto/16 :goto_2c
+    goto/16 :goto_2e
 
-    .line 366
-    :pswitch_139
+    .line 363
+    :pswitch_123
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v7}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    invoke-virtual {v3, v9}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2079,7 +2057,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/prlupdate/PRLUpdate$10;-><init>(Lcom/samsung/prlupdate/PRLUpdate;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2089,30 +2067,25 @@
 
     iput-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 379
+    .line 376
     iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 380
+    .line 377
     iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/prlupdate/PRLUpdate;->mOnDlgDismiss:Lcom/samsung/prlupdate/PRLUpdate$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 381
-    iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
-
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 382
+    .line 378
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    goto/16 :goto_2c
+    goto/16 :goto_2e
 
-    .line 386
-    :pswitch_175
+    .line 382
+    :pswitch_15a
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -2127,7 +2100,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/prlupdate/PRLUpdate$11;-><init>(Lcom/samsung/prlupdate/PRLUpdate;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2137,39 +2110,34 @@
 
     iput-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 397
+    .line 393
     iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 398
+    .line 394
     iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/prlupdate/PRLUpdate;->mOnDlgDismiss:Lcom/samsung/prlupdate/PRLUpdate$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 399
-    iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
-
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 400
+    .line 395
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    goto/16 :goto_2c
+    goto/16 :goto_2e
 
-    .line 403
-    :pswitch_1a5
+    .line 398
+    :pswitch_185
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v7}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    invoke-virtual {v3, v9}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2187,7 +2155,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/prlupdate/PRLUpdate$12;-><init>(Lcom/samsung/prlupdate/PRLUpdate;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -2197,40 +2165,33 @@
 
     iput-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 416
+    .line 411
     iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 417
+    .line 412
     iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/prlupdate/PRLUpdate;->mOnDlgDismiss:Lcom/samsung/prlupdate/PRLUpdate$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 418
-    iget-object v3, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
-
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 419
+    .line 413
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
-    goto/16 :goto_2c
+    goto/16 :goto_2e
 
     .line 275
-    nop
-
-    :pswitch_data_1e2
+    :pswitch_data_1bc
     .packed-switch 0x0
-        :pswitch_2d
-        :pswitch_76
-        :pswitch_c3
-        :pswitch_fe
-        :pswitch_139
-        :pswitch_1a5
-        :pswitch_175
+        :pswitch_2f
+        :pswitch_75
+        :pswitch_bd
+        :pswitch_f0
+        :pswitch_123
+        :pswitch_185
+        :pswitch_15a
     .end packed-switch
 .end method
 
@@ -2238,17 +2199,17 @@
     .registers 3
 
     .prologue
-    .line 819
+    .line 813
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
-    .line 820
+    .line 814
     const-string v0, "PRLUpdate"
 
     const-string v1, "onDestroy ... "
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 821
+    .line 815
     return-void
 .end method
 
@@ -2262,7 +2223,7 @@
 
     const/4 v3, 0x0
 
-    .line 791
+    .line 785
     const-string v0, "PRLUpdate"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2285,14 +2246,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 793
+    .line 787
     packed-switch p1, :pswitch_data_36
 
-    .line 803
+    .line 797
     :goto_1d
     return v4
 
-    .line 795
+    .line 789
     :pswitch_1e
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrlUpadteHandler:Landroid/os/Handler;
 
@@ -2306,7 +2267,7 @@
 
     goto :goto_1d
 
-    .line 799
+    .line 793
     :pswitch_2a
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrlUpadteHandler:Landroid/os/Handler;
 
@@ -2320,7 +2281,7 @@
 
     goto :goto_1d
 
-    .line 793
+    .line 787
     :pswitch_data_36
     .packed-switch 0x3
         :pswitch_2a
@@ -2390,20 +2351,20 @@
     .registers 3
 
     .prologue
-    .line 808
+    .line 802
     invoke-super {p0}, Landroid/app/Activity;->onStop()V
 
-    .line 809
+    .line 803
     iget-boolean v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->freshActivity:Z
 
     if-nez v0, :cond_c
 
-    .line 812
+    .line 806
     iget-object v0, p0, Lcom/samsung/prlupdate/PRLUpdate;->previousActivity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 814
+    .line 808
     :cond_c
     const-string v0, "PRLUpdate"
 
@@ -2411,7 +2372,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 815
+    .line 809
     return-void
 .end method
 
@@ -2423,17 +2384,17 @@
 
     const/4 v4, 0x0
 
-    .line 689
+    .line 683
     invoke-super {p0}, Landroid/app/Activity;->onUserLeaveHint()V
 
-    .line 690
+    .line 684
     const-string v1, "PRLUpdate"
 
     const-string v2, "onUserLeaveHint() ............ "
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 691
+    .line 685
     const-string v1, "PRLUpdate"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2462,7 +2423,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 694
+    .line 688
     iget-object v1, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v1}, Lcom/samsung/client/DMApp;->isHomeLaunchedByApp()Z
@@ -2471,16 +2432,16 @@
 
     if-eqz v1, :cond_33
 
-    .line 733
+    .line 727
     :cond_32
     :goto_32
     return-void
 
-    .line 719
+    .line 713
     :cond_33
     new-array v0, v5, [Landroid/content/Intent;
 
-    .line 720
+    .line 714
     .local v0, intents:[Landroid/content/Intent;
     new-instance v1, Landroid/content/Intent;
 
@@ -2490,21 +2451,21 @@
 
     aput-object v1, v0, v4
 
-    .line 721
+    .line 715
     aget-object v1, v0, v4
 
     const-string v2, "android.intent.category.HOME"
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 722
+    .line 716
     aget-object v1, v0, v4
 
     const-string v2, "android.intent.category.DEFAULT"
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 724
+    .line 718
     iget-object v1, p0, Lcom/samsung/prlupdate/PRLUpdate;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v1, v0}, Lcom/samsung/client/DMApp;->checkTopActivity([Landroid/content/Intent;)Z
@@ -2513,23 +2474,23 @@
 
     if-eqz v1, :cond_32
 
-    .line 725
+    .line 719
     iput-boolean v5, p0, Lcom/samsung/prlupdate/PRLUpdate;->homekeyevent:Z
 
-    .line 726
+    .line 720
     invoke-direct {p0}, Lcom/samsung/prlupdate/PRLUpdate;->cancelSession()V
 
-    .line 727
+    .line 721
     iget-object v1, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 
     if-nez v1, :cond_61
 
-    .line 728
+    .line 722
     invoke-direct {p0}, Lcom/samsung/prlupdate/PRLUpdate;->prlDone()V
 
     goto :goto_32
 
-    .line 730
+    .line 724
     :cond_61
     iget-object v1, p0, Lcom/samsung/prlupdate/PRLUpdate;->mPrgDlg:Landroid/app/Dialog;
 

@@ -135,12 +135,12 @@
     sput v3, Lcom/android/mms/ui/ConversationListItem;->LIST_SUBJECT_TEXT_SIZE_HUGE:F
 
     .line 115
-    const/16 v0, 0x2c
+    const/16 v0, 0x40
 
     sput v0, Lcom/android/mms/ui/ConversationListItem;->LIST_HEIGHT_TINY:I
 
     .line 116
-    const/16 v0, 0x32
+    const/16 v0, 0x40
 
     sput v0, Lcom/android/mms/ui/ConversationListItem;->LIST_HEIGHT_SMALL:I
 
@@ -1064,11 +1064,11 @@
 
     .line 337
     :cond_5d
-    const/4 v1, 0x0
+    const/16 v1, 0xc0
 
-    const/16 v2, 0xb2
+    const/16 v2, 0xc0
 
-    const/16 v3, 0xfc
+    const/16 v3, 0xc0
 
     invoke-static {v1, v2, v3}, Landroid/graphics/Color;->rgb(III)I
 
@@ -1113,7 +1113,7 @@
 
     move-result v3
 
-    if-ne v2, v3, :cond_22
+    if-ne v2, v3, :cond_23
 
     .line 312
     const-string v2, "Mms/ConversationListItem"
@@ -1126,7 +1126,7 @@
     invoke-direct {p0, v0}, Lcom/android/mms/ui/ConversationListItem;->updateCMASView(Lcom/android/mms/ui/ConversationListItemData;)V
 
     .line 314
-    const/high16 v1, -0x100
+    const v1, -0x1
 
     .line 315
     .local v1, fontColor:I
@@ -1136,11 +1136,11 @@
 
     .line 325
     .end local v1           #fontColor:I
-    :goto_21
+    :goto_22
     return-void
 
     .line 317
-    :cond_22
+    :cond_23
     const-string v2, "Mms/ConversationListItem"
 
     const-string v3, "ConversationListItem,ch.mIsCMAS = false"
@@ -1162,7 +1162,7 @@
     .line 323
     invoke-direct {p0}, Lcom/android/mms/ui/ConversationListItem;->updateAvatarView()V
 
-    goto :goto_21
+    goto :goto_22
 .end method
 
 
@@ -1204,9 +1204,9 @@
     .local v3, unreadCount:I
     iget-boolean v4, p0, Lcom/android/mms/ui/ConversationListItem;->mIsDeleteMode:Z
 
-    if-nez v4, :cond_76
+    if-nez v4, :cond_78
 
-    if-lez v3, :cond_76
+    if-lez v3, :cond_78
 
     .line 561
     iget-object v4, p0, Lcom/android/mms/ui/ConversationListItem;->mUnreadCount:Landroid/widget/TextView;
@@ -1228,7 +1228,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_7e
+    if-eqz v4, :cond_80
 
     .line 570
     iget-object v4, p0, Lcom/android/mms/ui/ConversationListItem;->mDateView:Landroid/widget/TextView;
@@ -1269,7 +1269,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_bb
+    if-eqz v4, :cond_bd
 
     .line 601
     const-string v4, "Mms/ConversationListItem"
@@ -1285,11 +1285,13 @@
     invoke-direct {p0, p2}, Lcom/android/mms/ui/ConversationListItem;->updateCMASView(Lcom/android/mms/ui/ConversationListItemData;)V
 
     .line 606
-    const/16 v4, 0xb2
+    const/16 v3, 0xc0
 
-    const/16 v5, 0xfc
+    const/16 v4, 0xc0
 
-    invoke-static {v7, v4, v5}, Landroid/graphics/Color;->rgb(III)I
+    const/16 v5, 0xc0
+
+    invoke-static {v3, v4, v5}, Landroid/graphics/Color;->rgb(III)I
 
     move-result v2
 
@@ -1300,7 +1302,7 @@
     invoke-virtual {v4, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 622
-    :goto_6f
+    :goto_71
     invoke-direct {p0}, Lcom/android/mms/ui/ConversationListItem;->updateAvatarView()V
 
     .line 625
@@ -1312,7 +1314,7 @@
     .line 564
     .end local v0           #contacts:Lcom/android/mms/data/ContactList;
     .end local v2           #fontColor:I
-    :cond_76
+    :cond_78
     iget-object v4, p0, Lcom/android/mms/ui/ConversationListItem;->mUnreadCount:Landroid/widget/TextView;
 
     const/16 v5, 0x8
@@ -1322,12 +1324,12 @@
     goto :goto_28
 
     .line 573
-    :cond_7e
+    :cond_80
     invoke-virtual {p2}, Lcom/android/mms/ui/ConversationListItemData;->hasError()Z
 
     move-result v4
 
-    if-eqz v4, :cond_9f
+    if-eqz v4, :cond_a1
 
     .line 575
     iget-object v4, p0, Lcom/android/mms/ui/ConversationListItem;->mDateView:Landroid/widget/TextView;
@@ -1356,7 +1358,7 @@
     goto :goto_48
 
     .line 579
-    :cond_9f
+    :cond_a1
     iget-object v4, p0, Lcom/android/mms/ui/ConversationListItem;->mDateView:Landroid/widget/TextView;
 
     iget-object v5, p0, Lcom/android/mms/ui/ConversationListItem;->mContext:Landroid/content/Context;
@@ -1386,7 +1388,7 @@
 
     .line 609
     .restart local v0       #contacts:Lcom/android/mms/data/ContactList;
-    :cond_bb
+    :cond_bd
     invoke-virtual {p0}, Lcom/android/mms/ui/ConversationListItem;->changeFontSize()V
 
     .line 610
@@ -1401,7 +1403,7 @@
     .line 612
     iget-boolean v4, p0, Lcom/android/mms/ui/ConversationListItem;->mIsDeleteMode:Z
 
-    if-eqz v4, :cond_db
+    if-eqz v4, :cond_dd
 
     .line 613
     iget-object v4, p0, Lcom/android/mms/ui/ConversationListItem;->mSubjectView:Landroid/widget/TextView;
@@ -1413,7 +1415,7 @@
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 617
-    :goto_d4
+    :goto_d6
     const/4 v2, -0x1
 
     .line 618
@@ -1422,11 +1424,11 @@
 
     invoke-virtual {v4, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    goto :goto_6f
+    goto :goto_71
 
     .line 615
     .end local v2           #fontColor:I
-    :cond_db
+    :cond_dd
     iget-object v4, p0, Lcom/android/mms/ui/ConversationListItem;->mSubjectView:Landroid/widget/TextView;
 
     invoke-virtual {p2}, Lcom/android/mms/ui/ConversationListItemData;->getSubject()Ljava/lang/String;
@@ -1435,7 +1437,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_d4
+    goto :goto_d6
 .end method
 
 .method public changeFontSize()V
@@ -1450,7 +1452,7 @@
 
     const/4 v8, -0x4
 
-    const/4 v7, 0x0
+    const/4 v7, 0x2
 
     .line 419
     iget-object v4, p0, Lcom/android/mms/ui/ConversationListItem;->mContext:Landroid/content/Context;
@@ -1485,7 +1487,7 @@
 
     .line 425
     .local v1, fromLP:Landroid/widget/RelativeLayout$LayoutParams;
-    const/16 v4, -0xa
+    const/16 v4, 0x0
 
     iput v4, v1, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
@@ -1504,7 +1506,7 @@
 
     const/16 v5, 0xa
 
-    invoke-virtual {v4, v7, v5, v7, v7}, Landroid/widget/RelativeLayout;->setPadding(IIII)V
+    invoke-virtual {v4, v7, v7, v7, v7}, Landroid/widget/RelativeLayout;->setPadding(IIII)V
 
     .line 431
     sget v4, Lcom/android/mms/ui/ConversationListItem;->LIST_HEIGHT_TINY:I
@@ -1568,7 +1570,7 @@
 
     const/16 v5, 0x9
 
-    invoke-virtual {v4, v7, v5, v7, v10}, Landroid/widget/RelativeLayout;->setPadding(IIII)V
+    invoke-virtual {v4, v7, v7, v7, v7}, Landroid/widget/RelativeLayout;->setPadding(IIII)V
 
     .line 440
     sget v4, Lcom/android/mms/ui/ConversationListItem;->LIST_HEIGHT_SMALL:I
@@ -1622,7 +1624,7 @@
 
     const/16 v6, 0x10
 
-    invoke-virtual {v4, v7, v5, v7, v6}, Landroid/widget/RelativeLayout;->setPadding(IIII)V
+    invoke-virtual {v4, v7, v7, v7, v7}, Landroid/widget/RelativeLayout;->setPadding(IIII)V
 
     .line 449
     sget v4, Lcom/android/mms/ui/ConversationListItem;->LIST_HEIGHT_NORMAL:I
@@ -1674,7 +1676,7 @@
 
     const/4 v6, 0x7
 
-    invoke-virtual {v4, v7, v5, v7, v6}, Landroid/widget/RelativeLayout;->setPadding(IIII)V
+    invoke-virtual {v4, v7, v7, v7, v7}, Landroid/widget/RelativeLayout;->setPadding(IIII)V
 
     .line 458
     sget v4, Lcom/android/mms/ui/ConversationListItem;->LIST_HEIGHT_LARGE:I
@@ -1728,7 +1730,7 @@
 
     const/4 v6, 0x7
 
-    invoke-virtual {v4, v7, v5, v7, v6}, Landroid/widget/RelativeLayout;->setPadding(IIII)V
+    invoke-virtual {v4, v7, v7, v7, v7}, Landroid/widget/RelativeLayout;->setPadding(IIII)V
 
     .line 467
     sget v4, Lcom/android/mms/ui/ConversationListItem;->LIST_HEIGHT_HUGE:I
@@ -1777,7 +1779,7 @@
 
     const/16 v6, 0x10
 
-    invoke-virtual {v4, v7, v5, v7, v6}, Landroid/widget/RelativeLayout;->setPadding(IIII)V
+    invoke-virtual {v4, v7, v7, v7, v7}, Landroid/widget/RelativeLayout;->setPadding(IIII)V
 
     .line 476
     sget v4, Lcom/android/mms/ui/ConversationListItem;->LIST_HEIGHT_NORMAL:I
@@ -2232,7 +2234,7 @@
 
     iget-object v1, p0, Lcom/android/mms/ui/ConversationListItem;->mContext:Landroid/content/Context;
 
-    const v2, 0x207000f
+    const v2, 0x106003b
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
 

@@ -38,27 +38,27 @@
     .registers 2
 
     .prologue
-    .line 1360
+    .line 1689
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1372
+    .line 1701
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->billingAddressType_:I
 
-    .line 1388
+    .line 1717
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->requiredField_:Ljava/util/List;
 
-    .line 1435
+    .line 1765
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->cachedSize:I
 
-    .line 1360
+    .line 1689
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .parameter "value"
 
     .prologue
-    .line 1402
+    .line 1731
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->requiredField_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -78,14 +78,14 @@
 
     if-eqz v0, :cond_f
 
-    .line 1403
+    .line 1732
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->requiredField_:Ljava/util/List;
 
-    .line 1405
+    .line 1734
     :cond_f
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->requiredField_:Ljava/util/List;
 
@@ -95,7 +95,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1406
+    .line 1735
     return-object p0
 .end method
 
@@ -103,7 +103,7 @@
     .registers 2
 
     .prologue
-    .line 1374
+    .line 1703
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->billingAddressType_:I
 
     return v0
@@ -113,17 +113,31 @@
     .registers 2
 
     .prologue
-    .line 1437
+    .line 1768
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 1439
+    .line 1770
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->getSerializedSize()I
 
-    .line 1441
+    .line 1772
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->cachedSize:I
+
+    return v0
+.end method
+
+.method public getRequiredFieldCount()I
+    .registers 2
+
+    .prologue
+    .line 1722
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->requiredField_:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
 
     return v0
 .end method
@@ -141,7 +155,7 @@
     .end annotation
 
     .prologue
-    .line 1391
+    .line 1720
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->requiredField_:Ljava/util/List;
 
     return-object v0
@@ -151,10 +165,10 @@
     .registers 7
 
     .prologue
-    .line 1445
+    .line 1777
     const/4 v3, 0x0
 
-    .line 1446
+    .line 1778
     .local v3, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->hasBillingAddressType()Z
 
@@ -162,7 +176,7 @@
 
     if-eqz v4, :cond_11
 
-    .line 1447
+    .line 1779
     const/4 v4, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->getBillingAddressType()I
@@ -175,11 +189,11 @@
 
     add-int/2addr v3, v4
 
-    .line 1451
+    .line 1783
     :cond_11
     const/4 v0, 0x0
 
-    .line 1452
+    .line 1784
     .local v0, dataSize:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->getRequiredFieldList()Ljava/util/List;
 
@@ -203,7 +217,7 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    .line 1453
+    .line 1785
     .local v1, element:Ljava/lang/Integer;
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
@@ -217,12 +231,12 @@
 
     goto :goto_1a
 
-    .line 1456
+    .line 1788
     .end local v1           #element:Ljava/lang/Integer;
     :cond_30
     add-int/2addr v3, v0
 
-    .line 1457
+    .line 1789
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->getRequiredFieldList()Ljava/util/List;
 
     move-result-object v4
@@ -235,10 +249,10 @@
 
     add-int/2addr v3, v4
 
-    .line 1459
+    .line 1791
     iput v3, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->cachedSize:I
 
-    .line 1460
+    .line 1792
     return v3
 .end method
 
@@ -246,7 +260,7 @@
     .registers 2
 
     .prologue
-    .line 1373
+    .line 1702
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->hasBillingAddressType:Z
 
     return v0
@@ -262,29 +276,29 @@
     .end annotation
 
     .prologue
-    .line 1467
+    .line 1800
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1468
+    .line 1801
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 1472
+    .line 1805
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1473
+    .line 1806
     :sswitch_d
     return-object p0
 
-    .line 1478
+    .line 1811
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -294,7 +308,7 @@
 
     goto :goto_0
 
-    .line 1482
+    .line 1815
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -304,7 +318,7 @@
 
     goto :goto_0
 
-    .line 1468
+    .line 1801
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -323,7 +337,7 @@
     .end annotation
 
     .prologue
-    .line 1358
+    .line 1686
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;
 
     move-result-object v0
@@ -336,15 +350,15 @@
     .parameter "value"
 
     .prologue
-    .line 1376
+    .line 1705
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->hasBillingAddressType:Z
 
-    .line 1377
+    .line 1706
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->billingAddressType_:I
 
-    .line 1378
+    .line 1707
     return-object p0
 .end method
 
@@ -358,14 +372,14 @@
     .end annotation
 
     .prologue
-    .line 1427
+    .line 1757
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->hasBillingAddressType()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 1428
+    .line 1758
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->getBillingAddressType()I
@@ -374,7 +388,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 1430
+    .line 1760
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;->getRequiredFieldList()Ljava/util/List;
 
@@ -398,7 +412,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 1431
+    .line 1761
     .local v0, element:Ljava/lang/Integer;
     const/4 v2, 0x2
 
@@ -410,7 +424,7 @@
 
     goto :goto_16
 
-    .line 1433
+    .line 1763
     .end local v0           #element:Ljava/lang/Integer;
     :cond_2b
     return-void

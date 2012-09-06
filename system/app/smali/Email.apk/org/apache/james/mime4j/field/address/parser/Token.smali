@@ -26,8 +26,8 @@
     .registers 1
 
     .prologue
-    .line 24
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 23
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -37,8 +37,8 @@
     .parameter "ofKind"
 
     .prologue
-    .line 86
-    .line 88
+    .line 90
+    .line 92
     new-instance v0, Lorg/apache/james/mime4j/field/address/parser/Token;
 
     invoke-direct {v0}, Lorg/apache/james/mime4j/field/address/parser/Token;-><init>()V
@@ -52,7 +52,7 @@
     .registers 2
 
     .prologue
-    .line 72
+    .line 73
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/Token;->image:Ljava/lang/String;
 
     return-object v0

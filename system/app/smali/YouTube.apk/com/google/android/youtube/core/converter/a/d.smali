@@ -24,7 +24,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 23
-    invoke-static {p3}, Lcom/google/android/youtube/core/utils/Util;->f(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p3}, Lcom/google/android/youtube/core/utils/Util;->g(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

@@ -7,7 +7,7 @@
     <string name="generic_load">載入</string>
     <string name="generic_forget">忘記</string>
     <string name="generic_close">關閉</string>
-    <string name="generic_clear">刪除</string>
+    <string name="generic_clear">清除</string>
     <string name="generic_continue">繼續</string>
     <string name="generic_grant">允許</string>
     <string name="generic_deny">拒絕</string>
@@ -102,7 +102,7 @@
     <string name="follow_popup_desc">接收我的最新開發資訊，跟蹤我的Twitter或Google+</string>
     <string name="follow_gplus">Google+</string>
     <string name="follow_twitter">Twitter</string>
-    <string name="follow_nothanks">不用</string>
+    <string name="follow_nothanks">不，謝謝</string>
     <string name="settings_category_language">語言</string>
     <string name="settings_language_title">語言覆蓋</string>
     <string name="settings_language_popup">選擇語言</string>

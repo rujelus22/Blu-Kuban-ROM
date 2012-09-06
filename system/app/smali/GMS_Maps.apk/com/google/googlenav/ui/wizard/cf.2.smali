@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/wizard/cf;
+.class Lcom/google/googlenav/ui/wizard/cF;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lac/d;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/ce;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/cD;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/ce;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/cD;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/cf;->a:Lcom/google/googlenav/ui/wizard/ce;
+    .prologue
+    .line 129
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/cF;->a:Lcom/google/googlenav/ui/wizard/cD;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,28 +26,22 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 4
+.method public Z()V
+    .registers 3
 
-    const/16 v0, 0x43
+    .prologue
+    .line 139
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/cF;->a:Lcom/google/googlenav/ui/wizard/cD;
 
-    const-string v1, "c"
+    const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Laf/m;->a(ILjava/lang/String;)Z
+    invoke-static {v0, v1}, Lcom/google/googlenav/ui/wizard/cD;->b(Lcom/google/googlenav/ui/wizard/cD;Z)Z
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/cf;->a:Lcom/google/googlenav/ui/wizard/ce;
+    .line 140
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/cF;->a:Lcom/google/googlenav/ui/wizard/cD;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/ce;->a(Lcom/google/googlenav/ui/wizard/ce;)LaY/Y;
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/cD;->a()V
 
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, LaY/Y;->b(Z)V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/cf;->a:Lcom/google/googlenav/ui/wizard/ce;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/ce;->a()V
-
+    .line 141
     return-void
 .end method

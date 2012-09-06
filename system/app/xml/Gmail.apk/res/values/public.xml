@@ -32,6 +32,8 @@
     <public type="drawable" name="trash" id="0x7f020072" />
     <public type="drawable" name="widget_conversation_read_selector" id="0x7f020073" />
     <public type="drawable" name="widget_conversation_unread_selector" id="0x7f020074" />
+    <public type="drawable" name="header_convo_view_thread_bg_holo_repeat" id="0x7f020075" />
+    <public type="drawable" name="message_header_bg" id="0x7f020076" />
     <public type="drawable" name="attachment_bg_holo" id="0x7f020002" />
     <public type="drawable" name="banner_background_search" id="0x7f020003" />
     <public type="drawable" name="bg_separator" id="0x7f020004" />

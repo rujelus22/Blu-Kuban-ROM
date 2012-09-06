@@ -29,24 +29,24 @@
     .end annotation
 
     .prologue
-    .line 320
+    .line 322
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lorg/apache/commons/io/input/NullInputStream;->eof:Z
 
-    .line 321
+    .line 323
     iget-boolean v0, p0, Lorg/apache/commons/io/input/NullInputStream;->throwEofException:Z
 
     if-eqz v0, :cond_d
 
-    .line 322
+    .line 324
     new-instance v0, Ljava/io/EOFException;
 
     invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
 
     throw v0
 
-    .line 324
+    .line 326
     :cond_d
     const/4 v0, -0x1
 
@@ -195,7 +195,7 @@
     .registers 2
 
     .prologue
-    .line 294
+    .line 296
     const/4 v0, 0x0
 
     return v0
@@ -208,7 +208,7 @@
     .parameter "length"
 
     .prologue
-    .line 309
+    .line 311
     return-void
 .end method
 
@@ -394,7 +394,7 @@
     .end annotation
 
     .prologue
-    .line 244
+    .line 245
     monitor-enter p0
 
     :try_start_1
@@ -402,7 +402,7 @@
 
     if-nez v0, :cond_10
 
-    .line 245
+    .line 246
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Mark not supported"
@@ -413,7 +413,7 @@
     :try_end_d
     .catchall {:try_start_1 .. :try_end_d} :catchall_d
 
-    .line 244
+    .line 245
     :catchall_d
     move-exception v0
 
@@ -421,7 +421,7 @@
 
     throw v0
 
-    .line 247
+    .line 248
     :cond_10
     :try_start_10
     iget-wide v0, p0, Lorg/apache/commons/io/input/NullInputStream;->mark:J
@@ -432,7 +432,7 @@
 
     if-gez v0, :cond_20
 
-    .line 248
+    .line 249
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "No position has been marked"
@@ -441,7 +441,7 @@
 
     throw v0
 
-    .line 250
+    .line 251
     :cond_20
     iget-wide v0, p0, Lorg/apache/commons/io/input/NullInputStream;->position:J
 
@@ -455,7 +455,7 @@
 
     if-lez v0, :cond_58
 
-    .line 251
+    .line 252
     new-instance v0, Ljava/io/IOException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -500,20 +500,20 @@
 
     throw v0
 
-    .line 254
+    .line 256
     :cond_58
     iget-wide v0, p0, Lorg/apache/commons/io/input/NullInputStream;->mark:J
 
     iput-wide v0, p0, Lorg/apache/commons/io/input/NullInputStream;->position:J
 
-    .line 255
+    .line 257
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/apache/commons/io/input/NullInputStream;->eof:Z
     :try_end_5f
     .catchall {:try_start_10 .. :try_end_5f} :catchall_d
 
-    .line 256
+    .line 258
     monitor-exit p0
 
     return-void
@@ -529,12 +529,12 @@
     .end annotation
 
     .prologue
-    .line 270
+    .line 272
     iget-boolean v2, p0, Lorg/apache/commons/io/input/NullInputStream;->eof:Z
 
     if-eqz v2, :cond_c
 
-    .line 271
+    .line 273
     new-instance v2, Ljava/io/IOException;
 
     const-string v3, "Skip after end of file"
@@ -543,7 +543,7 @@
 
     throw v2
 
-    .line 273
+    .line 275
     :cond_c
     iget-wide v2, p0, Lorg/apache/commons/io/input/NullInputStream;->position:J
 
@@ -553,19 +553,19 @@
 
     if-nez v2, :cond_1a
 
-    .line 274
+    .line 276
     invoke-direct {p0}, Lorg/apache/commons/io/input/NullInputStream;->doEndOfFile()I
 
     move-result v2
 
     int-to-long v0, v2
 
-    .line 282
+    .line 284
     :cond_19
     :goto_19
     return-wide v0
 
-    .line 276
+    .line 278
     :cond_1a
     iget-wide v2, p0, Lorg/apache/commons/io/input/NullInputStream;->position:J
 
@@ -573,10 +573,10 @@
 
     iput-wide v2, p0, Lorg/apache/commons/io/input/NullInputStream;->position:J
 
-    .line 277
+    .line 279
     move-wide v0, p1
 
-    .line 278
+    .line 280
     .local v0, returnLength:J
     iget-wide v2, p0, Lorg/apache/commons/io/input/NullInputStream;->position:J
 
@@ -586,7 +586,7 @@
 
     if-lez v2, :cond_19
 
-    .line 279
+    .line 281
     iget-wide v2, p0, Lorg/apache/commons/io/input/NullInputStream;->position:J
 
     iget-wide v4, p0, Lorg/apache/commons/io/input/NullInputStream;->size:J
@@ -595,7 +595,7 @@
 
     sub-long v0, p1, v2
 
-    .line 280
+    .line 282
     iget-wide v2, p0, Lorg/apache/commons/io/input/NullInputStream;->size:J
 
     iput-wide v2, p0, Lorg/apache/commons/io/input/NullInputStream;->position:J

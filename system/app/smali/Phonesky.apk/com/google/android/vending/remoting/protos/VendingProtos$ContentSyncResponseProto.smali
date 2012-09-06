@@ -27,20 +27,20 @@
     .registers 2
 
     .prologue
-    .line 1365
+    .line 1419
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1370
+    .line 1424
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;->numUpdatesAvailable_:I
 
-    .line 1401
+    .line 1456
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;->cachedSize:I
 
-    .line 1365
+    .line 1419
     return-void
 .end method
 
@@ -50,15 +50,15 @@
     .registers 2
 
     .prologue
-    .line 1403
+    .line 1459
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 1405
+    .line 1461
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;->getSerializedSize()I
 
-    .line 1407
+    .line 1463
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;->cachedSize:I
 
@@ -69,7 +69,7 @@
     .registers 2
 
     .prologue
-    .line 1371
+    .line 1425
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;->numUpdatesAvailable_:I
 
     return v0
@@ -79,10 +79,10 @@
     .registers 4
 
     .prologue
-    .line 1411
+    .line 1468
     const/4 v0, 0x0
 
-    .line 1412
+    .line 1469
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;->hasNumUpdatesAvailable()Z
 
@@ -90,7 +90,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 1413
+    .line 1470
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;->getNumUpdatesAvailable()I
@@ -103,11 +103,11 @@
 
     add-int/2addr v0, v1
 
-    .line 1416
+    .line 1473
     :cond_11
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;->cachedSize:I
 
-    .line 1417
+    .line 1474
     return v0
 .end method
 
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 1372
+    .line 1426
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;->hasNumUpdatesAvailable:Z
 
     return v0
@@ -131,29 +131,29 @@
     .end annotation
 
     .prologue
-    .line 1424
+    .line 1482
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1425
+    .line 1483
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_16
 
-    .line 1429
+    .line 1487
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1430
+    .line 1488
     :sswitch_d
     return-object p0
 
-    .line 1435
+    .line 1493
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 1425
+    .line 1483
     :sswitch_data_16
     .sparse-switch
         0x0 -> :sswitch_d
@@ -181,7 +181,7 @@
     .end annotation
 
     .prologue
-    .line 1363
+    .line 1417
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;
 
     move-result-object v0
@@ -194,15 +194,15 @@
     .parameter "value"
 
     .prologue
-    .line 1374
+    .line 1428
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;->hasNumUpdatesAvailable:Z
 
-    .line 1375
+    .line 1429
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;->numUpdatesAvailable_:I
 
-    .line 1376
+    .line 1430
     return-object p0
 .end method
 
@@ -216,14 +216,14 @@
     .end annotation
 
     .prologue
-    .line 1396
+    .line 1451
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;->hasNumUpdatesAvailable()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 1397
+    .line 1452
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncResponseProto;->getNumUpdatesAvailable()I
@@ -232,7 +232,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 1399
+    .line 1454
     :cond_e
     return-void
 .end method

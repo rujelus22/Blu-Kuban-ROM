@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/googlenav/capabilities/a;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # static fields
@@ -14,30 +15,39 @@
 .method protected constructor <init>()V
     .registers 2
 
+    .prologue
+    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 31
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/googlenav/capabilities/a;->b:Ljava/lang/Boolean;
 
+    .line 34
     return-void
 .end method
 
 .method public static a()Lcom/google/googlenav/capabilities/a;
     .registers 1
 
+    .prologue
+    .line 44
     sget-object v0, Lcom/google/googlenav/capabilities/a;->a:Lcom/google/googlenav/capabilities/a;
 
     if-nez v0, :cond_12
 
-    invoke-static {}, Lcom/google/googlenav/android/a;->e()Z
+    .line 58
+    invoke-static {}, Lcom/google/googlenav/android/a;->b()Z
 
     move-result v0
 
     if-eqz v0, :cond_15
 
+    .line 59
     const-string v0, "com.google.googlenav.capabilities.CapabilitiesControllerSdk11"
 
+    .line 64
     :goto_c
     invoke-static {v0}, Lcom/google/googlenav/capabilities/a;->a(Ljava/lang/String;)Lcom/google/googlenav/capabilities/a;
 
@@ -45,31 +55,25 @@
 
     sput-object v0, Lcom/google/googlenav/capabilities/a;->a:Lcom/google/googlenav/capabilities/a;
 
+    .line 67
     :cond_12
     sget-object v0, Lcom/google/googlenav/capabilities/a;->a:Lcom/google/googlenav/capabilities/a;
 
     return-object v0
 
+    .line 62
     :cond_15
-    invoke-static {}, Lcom/google/googlenav/android/a;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1e
-
     const-string v0, "com.google.googlenav.capabilities.CapabilitiesControllerSdk7"
-
-    goto :goto_c
-
-    :cond_1e
-    const-string v0, "com.google.googlenav.capabilities.CapabilitiesControllerSdk6"
 
     goto :goto_c
 .end method
 
 .method private static a(Ljava/lang/String;)Lcom/google/googlenav/capabilities/a;
     .registers 3
+    .parameter
 
+    .prologue
+    .line 80
     :try_start_0
     invoke-static {p0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -81,6 +85,7 @@
 
     move-result-object v0
 
+    .line 81
     invoke-virtual {v0}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
     move-result-object v0
@@ -93,27 +98,33 @@
 
     return-object v0
 
+    .line 82
     :catch_11
     move-exception v0
 
+    .line 83
     new-instance v1, Ljava/lang/IllegalStateException;
 
     invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
 
     throw v1
 
+    .line 84
     :catch_18
     move-exception v0
 
+    .line 85
     new-instance v1, Ljava/lang/IllegalStateException;
 
     invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
 
     throw v1
 
+    .line 86
     :catch_1f
     move-exception v0
 
+    .line 87
     new-instance v1, Ljava/lang/IllegalStateException;
 
     invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
@@ -129,19 +140,24 @@
 .method public b()Z
     .registers 7
 
+    .prologue
+    .line 105
     iget-object v0, p0, Lcom/google/googlenav/capabilities/a;->b:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_b
 
+    .line 106
     iget-object v0, p0, Lcom/google/googlenav/capabilities/a;->b:Ljava/lang/Boolean;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
+    .line 116
     :goto_a
     return v0
 
+    .line 111
     :cond_b
     :try_start_b
     const-string v0, "android.os.SystemProperties"
@@ -166,6 +182,7 @@
 
     move-result-object v0
 
+    .line 112
     const-string v1, "wifi-only"
 
     const/4 v2, 0x0
@@ -196,6 +213,7 @@
     :try_end_38
     .catch Ljava/lang/Exception; {:try_start_b .. :try_end_38} :catch_3f
 
+    .line 116
     :goto_38
     iget-object v0, p0, Lcom/google/googlenav/capabilities/a;->b:Ljava/lang/Boolean;
 
@@ -205,9 +223,11 @@
 
     goto :goto_a
 
+    .line 113
     :catch_3f
     move-exception v0
 
+    .line 114
     sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     iput-object v0, p0, Lcom/google/googlenav/capabilities/a;->b:Ljava/lang/Boolean;
@@ -220,7 +240,10 @@
 
 .method public c(Landroid/content/Context;)Z
     .registers 4
+    .parameter
 
+    .prologue
+    .line 124
     invoke-virtual {p0, p1}, Lcom/google/googlenav/capabilities/a;->d(Landroid/content/Context;)I
 
     move-result v0
@@ -242,7 +265,10 @@
 
 .method protected d(Landroid/content/Context;)I
     .registers 3
+    .parameter
 
+    .prologue
+    .line 135
     const-string v0, "activity"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -251,6 +277,7 @@
 
     check-cast v0, Landroid/app/ActivityManager;
 
+    .line 137
     invoke-virtual {v0}, Landroid/app/ActivityManager;->getDeviceConfigurationInfo()Landroid/content/pm/ConfigurationInfo;
 
     move-result-object v0

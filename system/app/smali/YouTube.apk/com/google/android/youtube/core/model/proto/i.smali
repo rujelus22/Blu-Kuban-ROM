@@ -87,7 +87,7 @@
 .end method
 
 .method private static e()Lcom/google/android/youtube/core/model/proto/i;
-    .registers 2
+    .registers 3
 
     .prologue
     .line 1997
@@ -98,7 +98,9 @@
     .line 1998
     new-instance v1, Lcom/google/android/youtube/core/model/proto/h;
 
-    invoke-direct {v1}, Lcom/google/android/youtube/core/model/proto/h;-><init>()V
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v2}, Lcom/google/android/youtube/core/model/proto/h;-><init>(C)V
 
     iput-object v1, v0, Lcom/google/android/youtube/core/model/proto/i;->a:Lcom/google/android/youtube/core/model/proto/h;
 

@@ -25,12 +25,12 @@
     .parameter "context"
 
     .prologue
-    .line 870
+    .line 864
     iput-object p1, p0, Lcom/samsung/prlupdate/PRLUpdate$CustomDialog;->this$0:Lcom/samsung/prlupdate/PRLUpdate;
 
-    .line 871
+    .line 865
     invoke-direct {p0, p2}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
 
-    .line 872
+    .line 866
     return-void
 .end method

@@ -6,6 +6,8 @@
 # static fields
 .field private static final synthetic $VALUES:[Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
 
+.field public static final enum EXTERNAL_PROPERTY:Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
+
 .field public static final enum PROPERTY:Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
 
 .field public static final enum WRAPPER_ARRAY:Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
@@ -15,16 +17,18 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .registers 6
 
     .prologue
+    const/4 v5, 0x3
+
     const/4 v4, 0x2
 
     const/4 v3, 0x1
 
     const/4 v2, 0x0
 
-    .line 129
+    .line 132
     new-instance v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
 
     const-string v1, "PROPERTY"
@@ -33,7 +37,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;->PROPERTY:Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
 
-    .line 142
+    .line 145
     new-instance v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
 
     const-string v1, "WRAPPER_OBJECT"
@@ -42,7 +46,7 @@
 
     sput-object v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;->WRAPPER_OBJECT:Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
 
-    .line 151
+    .line 154
     new-instance v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
 
     const-string v1, "WRAPPER_ARRAY"
@@ -51,8 +55,17 @@
 
     sput-object v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;->WRAPPER_ARRAY:Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
 
-    .line 122
-    const/4 v0, 0x3
+    .line 166
+    new-instance v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
+
+    const-string v1, "EXTERNAL_PROPERTY"
+
+    invoke-direct {v0, v1, v5}, Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;->EXTERNAL_PROPERTY:Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
+
+    .line 125
+    const/4 v0, 0x4
 
     new-array v0, v0, [Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
 
@@ -68,6 +81,10 @@
 
     aput-object v1, v0, v4
 
+    sget-object v1, Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;->EXTERNAL_PROPERTY:Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
+
+    aput-object v1, v0, v5
+
     sput-object v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;->$VALUES:[Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
 
     return-void
@@ -79,7 +96,7 @@
     .parameter
 
     .prologue
-    .line 122
+    .line 125
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -90,7 +107,7 @@
     .parameter
 
     .prologue
-    .line 122
+    .line 125
     const-class v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -106,7 +123,7 @@
     .registers 1
 
     .prologue
-    .line 122
+    .line 125
     sget-object v0, Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;->$VALUES:[Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;
 
     invoke-virtual {v0}, [Lorg/codehaus/jackson/annotate/JsonTypeInfo$As;->clone()Ljava/lang/Object;

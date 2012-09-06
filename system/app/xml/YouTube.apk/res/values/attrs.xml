@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="mediaRouteButtonStyleFallback" format="reference" />
+    <attr name="externalRouteEnabledDrawableFallback" format="reference" />
+    <attr name="mediaRouteTypes" format="integer">
+        <enum name="liveAudio" value="1" />
+        <enum name="user" value="8388608" />
+    </attr>
     <attr name="numColumns" format="integer" min="0">
         <enum name="auto_fit" value="-1" />
     </attr>
     <attr name="horizontalSpacing" format="dimension" />
     <attr name="verticalSpacing" format="dimension" />
     <attr name="maxItems" format="integer" min="1" />
+    <attr name="itemsPerPage" format="integer" min="1" />
     <attr name="cacheColorHint" format="color" />
     <attr name="textWhenEmpty" format="string" />
     <attr name="statusView" format="reference" />
@@ -52,4 +59,5 @@
     <attr name="labelPadding" format="dimension" />
     <attr name="missingThumbnail" format="reference" />
     <attr name="LiveBadge" format="reference" />
+    <attr name="aspectRatio" format="float" />
 </resources>

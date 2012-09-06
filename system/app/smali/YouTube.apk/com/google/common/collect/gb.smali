@@ -1,69 +1,97 @@
 .class final Lcom/google/common/collect/gb;
-.super Lcom/google/common/collect/bn;
+.super Lcom/google/common/collect/fu;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Ljava/util/Iterator;
+.field a:Lcom/google/common/collect/gg;
 
-.field final synthetic b:Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;
+.field b:Lcom/google/common/collect/gg;
+
+.field final synthetic c:Lcom/google/common/collect/ga;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;Ljava/util/Iterator;)V
-    .registers 3
-    .parameter
+.method constructor <init>(Lcom/google/common/collect/ga;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 1006
-    iput-object p1, p0, Lcom/google/common/collect/gb;->b:Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;
+    .line 3285
+    iput-object p1, p0, Lcom/google/common/collect/gb;->c:Lcom/google/common/collect/ga;
 
-    iput-object p2, p0, Lcom/google/common/collect/gb;->a:Ljava/util/Iterator;
+    invoke-direct {p0}, Lcom/google/common/collect/fu;-><init>()V
 
-    invoke-direct {p0}, Lcom/google/common/collect/bn;-><init>()V
+    .line 3295
+    iput-object p0, p0, Lcom/google/common/collect/gb;->a:Lcom/google/common/collect/gg;
+
+    .line 3307
+    iput-object p0, p0, Lcom/google/common/collect/gb;->b:Lcom/google/common/collect/gg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a()Ljava/util/Iterator;
-    .registers 2
-
-    .prologue
-    .line 1008
-    iget-object v0, p0, Lcom/google/common/collect/gb;->a:Ljava/util/Iterator;
-
-    return-object v0
-.end method
-
-.method protected final bridge synthetic delegate()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 1006
-    iget-object v0, p0, Lcom/google/common/collect/gb;->a:Ljava/util/Iterator;
-
-    return-object v0
-.end method
-
-.method public final synthetic next()Ljava/lang/Object;
+.method public final getExpirationTime()J
     .registers 3
 
     .prologue
-    .line 1006
-    iget-object v0, p0, Lcom/google/common/collect/gb;->a:Ljava/util/Iterator;
+    .line 3289
+    const-wide v0, 0x7fffffffffffffffL
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    return-wide v0
+.end method
 
-    move-result-object v0
+.method public final getNextExpirable()Lcom/google/common/collect/gg;
+    .registers 2
 
-    check-cast v0, Ljava/util/Map$Entry;
+    .prologue
+    .line 3299
+    iget-object v0, p0, Lcom/google/common/collect/gb;->a:Lcom/google/common/collect/gg;
 
-    new-instance v1, Lcom/google/common/collect/gc;
+    return-object v0
+.end method
 
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/gc;-><init>(Lcom/google/common/collect/gb;Ljava/util/Map$Entry;)V
+.method public final getPreviousExpirable()Lcom/google/common/collect/gg;
+    .registers 2
 
-    return-object v1
+    .prologue
+    .line 3311
+    iget-object v0, p0, Lcom/google/common/collect/gb;->b:Lcom/google/common/collect/gg;
+
+    return-object v0
+.end method
+
+.method public final setExpirationTime(J)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 3293
+    return-void
+.end method
+
+.method public final setNextExpirable(Lcom/google/common/collect/gg;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 3304
+    iput-object p1, p0, Lcom/google/common/collect/gb;->a:Lcom/google/common/collect/gg;
+
+    .line 3305
+    return-void
+.end method
+
+.method public final setPreviousExpirable(Lcom/google/common/collect/gg;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 3316
+    iput-object p1, p0, Lcom/google/common/collect/gb;->b:Lcom/google/common/collect/gg;
+
+    .line 3317
+    return-void
 .end method

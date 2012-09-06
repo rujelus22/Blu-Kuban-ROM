@@ -285,12 +285,12 @@
     .line 94
     .restart local v1       #initBundle:Landroid/os/Bundle;
     :cond_37
-    const v4, 0x7f0400b9
+    const v4, 0x7f040104
 
     invoke-virtual {p0, v4}, Lcom/google/android/finsky/activities/TosActivity;->setContentView(I)V
 
     .line 96
-    const v4, 0x7f080063
+    const v4, 0x7f080067
 
     invoke-virtual {p0, v4}, Lcom/google/android/finsky/activities/TosActivity;->findViewById(I)Landroid/view/View;
 
@@ -303,14 +303,14 @@
     .line 97
     iget-object v4, p0, Lcom/google/android/finsky/activities/TosActivity;->mButtonBar:Lcom/google/android/finsky/layout/ButtonBar;
 
-    const v5, 0x7f0700c7
+    const v5, 0x7f0700d3
 
     invoke-virtual {v4, v5}, Lcom/google/android/finsky/layout/ButtonBar;->setPositiveButtonTitle(I)V
 
     .line 98
     iget-object v4, p0, Lcom/google/android/finsky/activities/TosActivity;->mButtonBar:Lcom/google/android/finsky/layout/ButtonBar;
 
-    const v5, 0x7f0700c9
+    const v5, 0x7f0700d5
 
     invoke-virtual {v4, v5}, Lcom/google/android/finsky/layout/ButtonBar;->setNegativeButtonTitle(I)V
 
@@ -320,7 +320,7 @@
     invoke-virtual {v4, p0}, Lcom/google/android/finsky/layout/ButtonBar;->setClickListener(Lcom/google/android/finsky/layout/ButtonBar$ClickListener;)V
 
     .line 101
-    const v4, 0x7f080002
+    const v4, 0x7f080110
 
     invoke-virtual {p0, v4}, Lcom/google/android/finsky/activities/TosActivity;->findViewById(I)Landroid/view/View;
 
@@ -335,7 +335,7 @@
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 104
-    const v4, 0x7f08000c
+    const v4, 0x7f08000f
 
     invoke-virtual {p0, v4}, Lcom/google/android/finsky/activities/TosActivity;->findViewById(I)Landroid/view/View;
 
@@ -365,7 +365,7 @@
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 109
-    const v4, 0x7f08018e
+    const v4, 0x7f080218
 
     invoke-virtual {p0, v4}, Lcom/google/android/finsky/activities/TosActivity;->findViewById(I)Landroid/view/View;
 
@@ -496,7 +496,7 @@
 
     invoke-direct {v4, p0}, Lcom/google/android/finsky/activities/TosActivity$2;-><init>(Lcom/google/android/finsky/activities/TosActivity;)V
 
-    invoke-virtual {v1, v2, v0, v3, v4}, Lcom/google/android/finsky/api/DfeApi;->acceptTos(Ljava/lang/String;Ljava/lang/Boolean;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
+    invoke-interface {v1, v2, v0, v3, v4}, Lcom/google/android/finsky/api/DfeApi;->acceptTos(Ljava/lang/String;Ljava/lang/Boolean;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
 
     .line 153
     sget-object v1, Lcom/google/android/finsky/activities/TosActivity;->sLastTosAcceptedInProcessLife:Ljava/util/Map;

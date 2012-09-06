@@ -1,19 +1,23 @@
-.class public Lcom/google/googlenav/ui/wizard/da;
+.class Lcom/google/googlenav/ui/wizard/dA;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lax/bn;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/cA;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/dp;
 
 
 # direct methods
-.method protected constructor <init>(Lcom/google/googlenav/ui/wizard/cA;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/dp;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/da;->a:Lcom/google/googlenav/ui/wizard/cA;
+    .prologue
+    .line 789
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/dA;->a:Lcom/google/googlenav/ui/wizard/dp;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,34 +26,16 @@
 
 
 # virtual methods
-.method public a(J)V
-    .registers 5
+.method public onClick(Landroid/view/View;)V
+    .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/da;->a:Lcom/google/googlenav/ui/wizard/cA;
+    .prologue
+    .line 792
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/dA;->a:Lcom/google/googlenav/ui/wizard/dp;
 
-    const/4 v1, -0x1
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/dp;->i()V
 
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/wizard/cA;->b(I)V
-
-    return-void
-.end method
-
-.method public a(Lam/b;Ljava/util/List;Lam/b;J)V
-    .registers 8
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/da;->a:Lcom/google/googlenav/ui/wizard/cA;
-
-    invoke-static {v0, p1}, Lcom/google/googlenav/ui/wizard/cA;->b(Lcom/google/googlenav/ui/wizard/cA;Lam/b;)Lam/b;
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/da;->a:Lcom/google/googlenav/ui/wizard/cA;
-
-    invoke-static {v0, p2}, Lcom/google/googlenav/ui/wizard/cA;->a(Lcom/google/googlenav/ui/wizard/cA;Ljava/util/List;)Ljava/util/List;
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/da;->a:Lcom/google/googlenav/ui/wizard/cA;
-
-    const/4 v1, 0x5
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/wizard/cA;->b(I)V
-
+    .line 793
     return-void
 .end method

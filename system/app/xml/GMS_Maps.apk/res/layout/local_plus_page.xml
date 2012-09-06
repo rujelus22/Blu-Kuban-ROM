@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/inline_loading" />
+    <com.google.googlenav.ui.view.android.InstrumentableTabHost android:id="@android:id/tabhost" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="horizontal" android:id="@id/titleBar" android:background="@drawable/actionbar_holo_dark" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textAppearance="@style/LocalPlusPageTitle" android:layout_gravity="left|center" android:id="@id/title" android:paddingLeft="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                <ImageView android:id="@id/starButton" android:background="@drawable/header_bar_button" android:focusable="false" android:layout_width="@dimen/action_bar_icon_width" android:layout_height="@dimen/action_bar_height" android:src="@drawable/ic_menu_star" android:scaleType="center" />
+                <ImageView android:id="@id/photoButton" android:background="@drawable/header_bar_button" android:focusable="false" android:layout_width="@dimen/action_bar_icon_width" android:layout_height="@dimen/action_bar_height" android:src="@drawable/ic_menu_photo" android:scaleType="center" />
+            </LinearLayout>
+            <TabWidget android:orientation="horizontal" android:id="@android:id/tabs" android:background="@color/tab_background" android:layout_width="fill_parent" android:layout_height="48.0dip" android:divider="@drawable/tab_separator" android:layout_weight="0.0" />
+            <FrameLayout android:id="@android:id/tabcontent" android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="0.0" />
+            <android.support.v4.view.ViewPager android:id="@id/pager" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+        </LinearLayout>
+    </com.google.googlenav.ui.view.android.InstrumentableTabHost>
+</LinearLayout>

@@ -1,11 +1,14 @@
 .class final Lcom/google/android/finsky/utils/PurchaseInitiator$2;
-.super Lcom/google/android/finsky/receivers/Installer$DownloadAndInstallGetAssetListener;
+.super Ljava/lang/Object;
 .source "PurchaseInitiator.java"
+
+# interfaces
+.implements Lcom/android/volley/Response$ErrorListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/utils/PurchaseInitiator;->createDirectDownloadListener(Ljava/lang/String;ILcom/google/android/finsky/api/model/Document;)Lcom/android/volley/Response$Listener;
+    value = Lcom/google/android/finsky/utils/PurchaseInitiator;->createPurchaseErrorListener(Lcom/google/android/finsky/api/model/Document;)Lcom/android/volley/Response$ErrorListener;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,87 +18,77 @@
 
 
 # instance fields
-.field final synthetic val$docId:Ljava/lang/String;
-
-.field final synthetic val$document:Lcom/google/android/finsky/api/model/Document;
-
-.field final synthetic val$offerType:I
+.field final synthetic val$doc:Lcom/google/android/finsky/api/model/Document;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/receivers/Installer;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;I)V
-    .registers 7
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-    .parameter
-    .parameter
+.method constructor <init>(Lcom/google/android/finsky/api/model/Document;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 195
-    iput-object p4, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$2;->val$document:Lcom/google/android/finsky/api/model/Document;
+    .line 127
+    iput-object p1, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$2;->val$doc:Lcom/google/android/finsky/api/model/Document;
 
-    iput-object p5, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$2;->val$docId:Ljava/lang/String;
-
-    iput p6, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$2;->val$offerType:I
-
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/finsky/receivers/Installer$DownloadAndInstallGetAssetListener;-><init>(Lcom/google/android/finsky/receivers/Installer;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onResponse(Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;)V
-    .registers 5
-    .parameter "response"
+.method public onErrorResponse(Lcom/android/volley/VolleyError;)V
+    .registers 8
+    .parameter "error"
 
     .prologue
-    .line 198
+    .line 130
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getDfeApi()Lcom/google/android/finsky/api/DfeApi;
+    const v3, 0x7f0700fe
 
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$2;->val$document:Lcom/google/android/finsky/api/model/Document;
-
-    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Document;->getDetailsUrl()Ljava/lang/String;
+    invoke-virtual {v0, v3}, Lcom/google/android/finsky/FinskyApp;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const/4 v2, 0x1
+    .line 131
+    .local v1, title:Ljava/lang/String;
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/api/DfeApi;->invalidateDetailsCache(Ljava/lang/String;Z)V
+    move-result-object v0
 
-    .line 199
-    iget-object v0, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$2;->val$docId:Ljava/lang/String;
+    invoke-static {v0, p1}, Lcom/google/android/finsky/utils/ErrorStrings;->get(Landroid/content/Context;Lcom/android/volley/VolleyError;)Ljava/lang/String;
 
-    iget v1, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$2;->val$offerType:I
+    move-result-object v2
 
-    #calls: Lcom/google/android/finsky/utils/PurchaseInitiator;->switchToCompleted(Ljava/lang/String;I)V
-    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/PurchaseInitiator;->access$100(Ljava/lang/String;I)V
+    .line 132
+    .local v2, errorMessage:Ljava/lang/String;
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    .line 200
-    invoke-super {p0, p1}, Lcom/google/android/finsky/receivers/Installer$DownloadAndInstallGetAssetListener;->onResponse(Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;)V
+    move-result-object v0
 
-    .line 201
-    return-void
-.end method
+    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getNotifier()Lcom/google/android/finsky/utils/Notifier;
 
-.method public bridge synthetic onResponse(Ljava/lang/Object;)V
-    .registers 2
-    .parameter "x0"
+    move-result-object v0
 
-    .prologue
-    .line 195
-    check-cast p1, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;
+    iget-object v3, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$2;->val$doc:Lcom/google/android/finsky/api/model/Document;
 
-    .end local p1
-    invoke-virtual {p0, p1}, Lcom/google/android/finsky/utils/PurchaseInitiator$2;->onResponse(Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;)V
+    invoke-virtual {v3}, Lcom/google/android/finsky/api/model/Document;->getDocId()Ljava/lang/String;
 
+    move-result-object v4
+
+    iget-object v3, p0, Lcom/google/android/finsky/utils/PurchaseInitiator$2;->val$doc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/api/model/Document;->getDetailsUrl()Ljava/lang/String;
+
+    move-result-object v5
+
+    move-object v3, v2
+
+    invoke-interface/range {v0 .. v5}, Lcom/google/android/finsky/utils/Notifier;->showPurchaseErrorMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 134
     return-void
 .end method

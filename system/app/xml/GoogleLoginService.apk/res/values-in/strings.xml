@@ -242,18 +242,18 @@ keamanan"</b></string>
     <string name="account_intro_recommended_title">Jadikan Google</string>
     <string name="common_message">"Akun Google memungkinkan Anda
 
-"<li><ul>Melihat dan mengelola semua informasi Anda dari mana saja.</ul></li>"
+"<ul><li>Melihat dan mengelola semua informasi Anda dari mana saja.</li></ul>"
 
-"<li><ul>Mencadangkan data Anda secara otomatis.</ul></li>"
+"<ul><li>Mencadangkan data Anda secara otomatis.</li></ul>"
 
-"<li><ul>Menggunakan layanan Google dengan mudah dari mana saja.</ul></li></string>
+"<ul><li>Menggunakan layanan Google dengan mudah dari mana saja.</li></ul></string>
     <string name="add_account_message">" Anda dapat menggunakan lebih dari satu Akun Google (seperti akun rumah dan kantor). Sentuh "<b>Masuk</b> atau <b>Buat Akun</b> untuk menambah Akun Google</string>
     <string name="account_intro_default_message">Jangan pernah kehilangan barang-barang Anda lagi. Akun Google menjaga segalanya tetap aman.</string>
     <string name="account_intro_custom_endtext">Punya %s? Masuk sekarang.</string>
     <string name="account_intro_simple_message">Apakah Anda ingin menambahkan akun yang sudah ada atau membuat yang baru?</string>
     <string name="learn_more_title"><annotation id="learn_more">Pelajari lebih lanjut</annotation></string>
     <string name="learn_more_account_intro">"Akun Google memungkinkan Anda
-"<li><ul>Melihat dan mengatur semua informasi Anda dari mana saja.<li>Mencadangkan data Anda secara otomatis, misalnya email, kenalan, musik, dan gambar.</li><li>Menggunakan layanan Google dengan mudah dari mana saja—termasuk di antaranya Kenalan, Kalender, Maps, dan lain-lain.</li></ul></li></string>
+"<ul><li>Melihat dan mengatur semua informasi Anda dari mana saja.<li>Mencadangkan data Anda secara otomatis, misalnya email, kenalan, musik, dan gambar.</li><li>Menggunakan layanan Google dengan mudah dari mana saja—termasuk di antaranya Kenalan, Kalender, Maps, dan lain-lain.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Tentang akun Google</string>
     <string name="learn_more_web_history">"Riwayat Web menyesuaikan hasil penelusuran berdasarkan hal yang pernah Anda telusuri dan situs yang pernah Anda kunjungi, sehingga memberikan pengalaman Google hasil personalisasi.
 

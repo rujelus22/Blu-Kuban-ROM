@@ -1,51 +1,58 @@
 .class Lcom/google/android/maps/d;
-.super Lbf/g;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/googlenav/ui/view/o;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/c;
+.field final synthetic a:Lcom/google/android/maps/b;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/c;Lap/c;Lcom/google/googlenav/android/ac;Z)V
-    .registers 5
+.method constructor <init>(Lcom/google/android/maps/b;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/d;->a:Lcom/google/android/maps/c;
+    .prologue
+    .line 1190
+    iput-object p1, p0, Lcom/google/android/maps/d;->a:Lcom/google/android/maps/b;
 
-    invoke-direct {p0, p2, p3, p4}, Lbf/g;-><init>(Lap/c;Lcom/google/googlenav/android/ac;Z)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected b()V
-    .registers 3
+.method public a()V
+    .registers 4
 
-    iget-object v0, p0, Lcom/google/android/maps/d;->a:Lcom/google/android/maps/c;
+    .prologue
+    .line 1199
+    iget-object v0, p0, Lcom/google/android/maps/d;->a:Lcom/google/android/maps/b;
 
-    iget-object v0, v0, Lcom/google/android/maps/c;->a:Lcom/google/android/maps/MapsActivity;
+    iget-object v0, v0, Lcom/google/android/maps/b;->c:Landroid/content/SharedPreferences;
 
-    invoke-static {v0}, Lcom/google/android/maps/MapsActivity;->f(Lcom/google/android/maps/MapsActivity;)Z
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    move-result v0
+    move-result-object v0
 
-    if-eqz v0, :cond_19
+    .line 1200
+    const-string v1, "lastRunVersionCode"
 
-    iget-object v0, p0, Lcom/google/android/maps/d;->a:Lcom/google/android/maps/c;
+    iget-object v2, p0, Lcom/google/android/maps/d;->a:Lcom/google/android/maps/b;
 
-    iget-object v0, v0, Lcom/google/android/maps/c;->a:Lcom/google/android/maps/MapsActivity;
+    iget-object v2, v2, Lcom/google/android/maps/b;->a:Landroid/content/pm/PackageInfo;
 
-    invoke-static {v0}, Lcom/google/android/maps/MapsActivity;->a(Lcom/google/android/maps/MapsActivity;)V
+    iget v2, v2, Landroid/content/pm/PackageInfo;->versionCode:I
 
-    iget-object v0, p0, Lcom/google/android/maps/d;->a:Lcom/google/android/maps/c;
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    iget-object v0, v0, Lcom/google/android/maps/c;->a:Lcom/google/android/maps/MapsActivity;
+    .line 1202
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/google/android/maps/MapsActivity;->a(Lcom/google/android/maps/MapsActivity;Z)Z
-
-    :cond_19
+    .line 1203
     return-void
 .end method

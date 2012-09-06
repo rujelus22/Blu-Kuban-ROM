@@ -1,5 +1,5 @@
 .class final Lcom/google/api/client/http/a/a;
-.super Lcom/google/api/client/http/s;
+.super Lcom/google/api/client/http/u;
 .source "SourceFile"
 
 
@@ -17,7 +17,7 @@
 
     .prologue
     .line 38
-    invoke-direct {p0}, Lcom/google/api/client/http/s;-><init>()V
+    invoke-direct {p0}, Lcom/google/api/client/http/u;-><init>()V
 
     .line 39
     iput-object p1, p0, Lcom/google/api/client/http/a/a;->a:Lorg/apache/http/client/HttpClient;
@@ -31,7 +31,7 @@
 
 
 # virtual methods
-.method public final a()Lcom/google/api/client/http/t;
+.method public final a()Lcom/google/api/client/http/v;
     .registers 5
 
     .prologue
@@ -81,7 +81,7 @@
     return-void
 .end method
 
-.method public final a(Lcom/google/api/client/http/g;)V
+.method public final a(Lcom/google/api/client/http/h;)V
     .registers 6
     .parameter
 
@@ -89,21 +89,21 @@
     .line 63
     new-instance v1, Lcom/google/api/client/http/a/d;
 
-    invoke-interface {p1}, Lcom/google/api/client/http/g;->b()J
+    invoke-interface {p1}, Lcom/google/api/client/http/h;->b()J
 
     move-result-wide v2
 
-    invoke-direct {v1, v2, v3, p1}, Lcom/google/api/client/http/a/d;-><init>(JLcom/google/api/client/http/g;)V
+    invoke-direct {v1, v2, v3, p1}, Lcom/google/api/client/http/a/d;-><init>(JLcom/google/api/client/http/h;)V
 
     .line 64
-    invoke-interface {p1}, Lcom/google/api/client/http/g;->a()Ljava/lang/String;
+    invoke-interface {p1}, Lcom/google/api/client/http/h;->a()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v1, v0}, Lcom/google/api/client/http/a/d;->setContentEncoding(Ljava/lang/String;)V
 
     .line 65
-    invoke-interface {p1}, Lcom/google/api/client/http/g;->e()Ljava/lang/String;
+    invoke-interface {p1}, Lcom/google/api/client/http/h;->e()Ljava/lang/String;
 
     move-result-object v0
 

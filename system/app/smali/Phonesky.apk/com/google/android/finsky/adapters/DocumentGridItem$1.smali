@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 273
+    .line 276
     iput-object p1, p0, Lcom/google/android/finsky/adapters/DocumentGridItem$1;->this$0:Lcom/google/android/finsky/adapters/DocumentGridItem;
 
     iput-object p2, p0, Lcom/google/android/finsky/adapters/DocumentGridItem$1;->val$temporaryDisplay:Landroid/graphics/Bitmap;
@@ -62,19 +62,19 @@
     .parameter "result"
 
     .prologue
-    .line 276
+    .line 279
     invoke-virtual {p1}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     if-eqz v0, :cond_20
 
-    .line 277
+    .line 280
     iget-object v0, p0, Lcom/google/android/finsky/adapters/DocumentGridItem$1;->val$temporaryDisplay:Landroid/graphics/Bitmap;
 
     if-nez v0, :cond_21
 
-    .line 278
+    .line 281
     iget-object v0, p0, Lcom/google/android/finsky/adapters/DocumentGridItem$1;->val$safeView:Landroid/widget/ImageView;
 
     invoke-virtual {p1}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
@@ -83,26 +83,26 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 279
+    .line 282
     iget-object v0, p0, Lcom/google/android/finsky/adapters/DocumentGridItem$1;->val$content:Landroid/view/View;
 
     iget-object v1, p0, Lcom/google/android/finsky/adapters/DocumentGridItem$1;->val$fadeInAnimation:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 280
+    .line 283
     iget-object v0, p0, Lcom/google/android/finsky/adapters/DocumentGridItem$1;->val$content:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 285
+    .line 288
     :cond_20
     :goto_20
     return-void
 
-    .line 282
+    .line 285
     :cond_21
     iget-object v0, p0, Lcom/google/android/finsky/adapters/DocumentGridItem$1;->val$safeView:Landroid/widget/ImageView;
 
@@ -120,7 +120,7 @@
     .parameter "x0"
 
     .prologue
-    .line 273
+    .line 276
     check-cast p1, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
 
     .end local p1

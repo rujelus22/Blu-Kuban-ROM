@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field private mDangerousList:Ljava/util/List;
+.field private final mDangerousList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -26,7 +26,7 @@
     .end annotation
 .end field
 
-.field private mDangerousMap:Ljava/util/Map;
+.field private final mDangerousMap:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -42,7 +42,7 @@
 
 .field private mLayoutInflater:Landroid/view/LayoutInflater;
 
-.field private mNewDangerousPermissions:Ljava/util/Set;
+.field private final mNewDangerousPermissions:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set",
@@ -53,7 +53,7 @@
     .end annotation
 .end field
 
-.field private mNewNormalPermissions:Ljava/util/Set;
+.field private final mNewNormalPermissions:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set",
@@ -64,7 +64,7 @@
     .end annotation
 .end field
 
-.field private mNormalMap:Ljava/util/Map;
+.field private final mNormalMap:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -78,7 +78,7 @@
     .end annotation
 .end field
 
-.field private mTotalList:Ljava/util/List;
+.field private final mTotalList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -94,7 +94,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/android/finsky/layout/AppSecurityPermissions;Ljava/util/List;)V
-    .registers 16
+    .registers 17
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -108,433 +108,456 @@
     .end annotation
 
     .prologue
-    .line 297
+    .line 314
     .local p2, permissions:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/PermissionInfo;>;"
     iput-object p1, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->this$0:Lcom/google/android/finsky/layout/AppSecurityPermissions;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 286
+    invoke-static {}, Lcom/google/android/finsky/utils/Maps;->newHashMap()Ljava/util/HashMap;
+
+    move-result-object v11
+
+    iput-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousMap:Ljava/util/Map;
+
+    .line 289
+    invoke-static {}, Lcom/google/android/finsky/utils/Maps;->newHashMap()Ljava/util/HashMap;
+
+    move-result-object v11
+
+    iput-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNormalMap:Ljava/util/Map;
+
+    .line 292
+    invoke-static {}, Lcom/google/android/finsky/utils/Sets;->newHashSet()Ljava/util/HashSet;
+
+    move-result-object v11
+
+    iput-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNewDangerousPermissions:Ljava/util/Set;
+
+    .line 295
+    invoke-static {}, Lcom/google/android/finsky/utils/Sets;->newHashSet()Ljava/util/HashSet;
+
+    move-result-object v11
+
+    iput-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNewNormalPermissions:Ljava/util/Set;
+
     .line 298
+    invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
+
+    move-result-object v11
+
+    iput-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousList:Ljava/util/List;
+
+    .line 304
+    invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
+
+    move-result-object v11
+
+    iput-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mTotalList:Ljava/util/List;
+
+    .line 315
     #getter for: Lcom/google/android/finsky/layout/AppSecurityPermissions;->mContext:Landroid/content/Context;
     invoke-static {p1}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$300(Lcom/google/android/finsky/layout/AppSecurityPermissions;)Landroid/content/Context;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-static {v10}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+    invoke-static {v11}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    move-result-object v10
+    move-result-object v11
 
-    iput-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
+    iput-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    .line 300
-    invoke-static {}, Lcom/google/android/finsky/utils/Maps;->newHashMap()Ljava/util/HashMap;
-
-    move-result-object v10
-
-    iput-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousMap:Ljava/util/Map;
-
-    .line 301
-    invoke-static {}, Lcom/google/android/finsky/utils/Maps;->newHashMap()Ljava/util/HashMap;
-
-    move-result-object v10
-
-    iput-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNormalMap:Ljava/util/Map;
-
-    .line 302
-    invoke-static {}, Lcom/google/android/finsky/utils/Sets;->newHashSet()Ljava/util/HashSet;
-
-    move-result-object v10
-
-    iput-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNewDangerousPermissions:Ljava/util/Set;
-
-    .line 303
-    invoke-static {}, Lcom/google/android/finsky/utils/Sets;->newHashSet()Ljava/util/HashSet;
-
-    move-result-object v10
-
-    iput-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNewNormalPermissions:Ljava/util/Set;
-
-    .line 305
+    .line 317
     #getter for: Lcom/google/android/finsky/layout/AppSecurityPermissions;->mContext:Landroid/content/Context;
     invoke-static {p1}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$300(Lcom/google/android/finsky/layout/AppSecurityPermissions;)Landroid/content/Context;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-direct {p0, v10}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->loadLocalAssetPermissions(Landroid/content/Context;)Ljava/util/Set;
+    invoke-direct {p0, v11}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->loadLocalAssetPermissions(Landroid/content/Context;)Ljava/util/Set;
 
     move-result-object v0
 
-    .line 308
+    .line 320
     .local v0, allLocalPermissions:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
-    invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface/range {p2 .. p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
 
     .local v6, i$:Ljava/util/Iterator;
-    :cond_33
-    :goto_33
+    :cond_3f
+    :goto_3f
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v10
+    move-result v11
 
-    if-eqz v10, :cond_130
+    if-eqz v11, :cond_13c
 
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v9
 
-    check-cast v8, Landroid/content/pm/PermissionInfo;
+    check-cast v9, Landroid/content/pm/PermissionInfo;
 
-    .line 309
-    .local v8, permission:Landroid/content/pm/PermissionInfo;
-    invoke-direct {p0, v8}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->isDisplayablePermission(Landroid/content/pm/PermissionInfo;)Z
+    .line 321
+    .local v9, permission:Landroid/content/pm/PermissionInfo;
+    invoke-direct {p0, v9}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->isDisplayablePermission(Landroid/content/pm/PermissionInfo;)Z
 
-    move-result v10
+    move-result v11
 
-    if-nez v10, :cond_6b
+    if-nez v11, :cond_77
 
-    .line 311
-    sget-boolean v10, Lcom/google/android/finsky/utils/FinskyLog;->DEBUG:Z
+    .line 323
+    sget-boolean v11, Lcom/google/android/finsky/utils/FinskyLog;->DEBUG:Z
 
-    if-eqz v10, :cond_33
+    if-eqz v11, :cond_3f
 
-    .line 312
-    new-instance v10, Ljava/lang/StringBuilder;
+    .line 324
+    new-instance v11, Ljava/lang/StringBuilder;
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v11, "Permission:"
+    const-string v12, "Permission:"
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v11
 
-    iget-object v11, v8, Landroid/content/pm/PermissionInfo;->name:Ljava/lang/String;
+    iget-object v12, v9, Landroid/content/pm/PermissionInfo;->name:Ljava/lang/String;
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v11
 
-    const-string v11, " is not displayable"
+    const-string v12, " is not displayable"
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v10
-
-    const/4 v11, 0x0
-
-    new-array v11, v11, [Ljava/lang/Object;
-
-    invoke-static {v10, v11}, Lcom/google/android/finsky/utils/FinskyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_33
-
-    .line 316
-    :cond_6b
-    const/4 v4, 0x0
-
-    .line 318
-    .local v4, group:Landroid/content/pm/PermissionGroupInfo;
-    :try_start_6c
-    #getter for: Lcom/google/android/finsky/layout/AppSecurityPermissions;->mPackageManager:Landroid/content/pm/PackageManager;
-    invoke-static {p1}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$400(Lcom/google/android/finsky/layout/AppSecurityPermissions;)Landroid/content/pm/PackageManager;
-
-    move-result-object v10
-
-    iget-object v11, v8, Landroid/content/pm/PermissionInfo;->group:Ljava/lang/String;
+    move-result-object v11
 
     const/4 v12, 0x0
 
-    invoke-virtual {v10, v11, v12}, Landroid/content/pm/PackageManager;->getPermissionGroupInfo(Ljava/lang/String;I)Landroid/content/pm/PermissionGroupInfo;
-    :try_end_76
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_6c .. :try_end_76} :catch_d6
+    new-array v12, v12, [Ljava/lang/Object;
+
+    invoke-static {v11, v12}, Lcom/google/android/finsky/utils/FinskyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    goto :goto_3f
+
+    .line 328
+    :cond_77
+    const/4 v4, 0x0
+
+    .line 330
+    .local v4, group:Landroid/content/pm/PermissionGroupInfo;
+    :try_start_78
+    #getter for: Lcom/google/android/finsky/layout/AppSecurityPermissions;->mPackageManager:Landroid/content/pm/PackageManager;
+    invoke-static {p1}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$400(Lcom/google/android/finsky/layout/AppSecurityPermissions;)Landroid/content/pm/PackageManager;
+
+    move-result-object v11
+
+    iget-object v12, v9, Landroid/content/pm/PermissionInfo;->group:Ljava/lang/String;
+
+    const/4 v13, 0x0
+
+    invoke-virtual {v11, v12, v13}, Landroid/content/pm/PackageManager;->getPermissionGroupInfo(Ljava/lang/String;I)Landroid/content/pm/PermissionGroupInfo;
+    :try_end_82
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_78 .. :try_end_82} :catch_e2
 
     move-result-object v4
 
-    .line 322
-    :goto_77
-    if-nez v4, :cond_f3
+    .line 334
+    :goto_83
+    if-nez v4, :cond_ff
 
     #getter for: Lcom/google/android/finsky/layout/AppSecurityPermissions;->mContext:Landroid/content/Context;
     invoke-static {p1}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$300(Lcom/google/android/finsky/layout/AppSecurityPermissions;)Landroid/content/Context;
 
-    move-result-object v10
+    move-result-object v11
 
-    const v11, 0x7f070155
+    const v12, 0x7f07018d
 
-    invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v11, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 325
+    .line 337
     .local v5, groupLabel:Ljava/lang/String;
-    :goto_84
+    :goto_90
     #getter for: Lcom/google/android/finsky/layout/AppSecurityPermissions;->mPackageManager:Landroid/content/pm/PackageManager;
     invoke-static {p1}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$400(Lcom/google/android/finsky/layout/AppSecurityPermissions;)Landroid/content/pm/PackageManager;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-virtual {v8, v10}, Landroid/content/pm/PermissionInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    invoke-virtual {v9, v11}, Landroid/content/pm/PermissionInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-virtual {v10}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 326
+    .line 338
     .local v7, label:Ljava/lang/String;
     #getter for: Lcom/google/android/finsky/layout/AppSecurityPermissions;->mPackageManager:Landroid/content/pm/PackageManager;
     invoke-static {p1}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$400(Lcom/google/android/finsky/layout/AppSecurityPermissions;)Landroid/content/pm/PackageManager;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-virtual {v8, v10}, Landroid/content/pm/PermissionInfo;->loadDescription(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    invoke-virtual {v9, v11}, Landroid/content/pm/PermissionInfo;->loadDescription(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    .line 327
+    .line 339
     .local v2, descriptionSeq:Ljava/lang/CharSequence;
-    if-eqz v2, :cond_100
+    if-eqz v2, :cond_10c
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 328
+    .line 340
     .local v1, description:Ljava/lang/String;
-    :goto_9e
-    new-instance v9, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
+    :goto_aa
+    new-instance v10, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
 
-    invoke-direct {v9, p1, v7, v1}, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;-><init>(Lcom/google/android/finsky/layout/AppSecurityPermissions;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v10, p1, v7, v1}, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;-><init>(Lcom/google/android/finsky/layout/AppSecurityPermissions;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 330
-    .local v9, uiInfo:Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
-    iget v10, v8, Landroid/content/pm/PermissionInfo;->protectionLevel:I
+    .line 342
+    .local v10, uiInfo:Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
+    iget v11, v9, Landroid/content/pm/PermissionInfo;->protectionLevel:I
 
-    const/4 v11, 0x1
+    const/4 v12, 0x1
 
-    if-ne v10, v11, :cond_102
+    if-ne v11, v12, :cond_10e
+
+    .line 343
+    iget-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousMap:Ljava/util/Map;
+
+    invoke-interface {v11, v5}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_c6
+
+    .line 344
+    iget-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousMap:Ljava/util/Map;
+
+    new-instance v12, Ljava/util/TreeSet;
+
+    invoke-direct {v12}, Ljava/util/TreeSet;-><init>()V
+
+    invoke-interface {v11, v5, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 346
+    :cond_c6
+    iget-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousMap:Ljava/util/Map;
+
+    invoke-interface {v11, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Ljava/util/Set;
+
+    invoke-interface {v11, v10}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    .line 347
+    if-eqz v0, :cond_3f
+
+    iget-object v11, v9, Landroid/content/pm/PermissionInfo;->name:Ljava/lang/String;
+
+    invoke-interface {v0, v11}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_3f
+
+    .line 349
+    iget-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNewDangerousPermissions:Ljava/util/Set;
+
+    invoke-interface {v11, v10}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_3f
 
     .line 331
-    iget-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousMap:Ljava/util/Map;
-
-    invoke-interface {v10, v5}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v10
-
-    if-nez v10, :cond_ba
-
-    .line 332
-    iget-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousMap:Ljava/util/Map;
-
-    new-instance v11, Ljava/util/TreeSet;
-
-    invoke-direct {v11}, Ljava/util/TreeSet;-><init>()V
-
-    invoke-interface {v10, v5, v11}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 334
-    :cond_ba
-    iget-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousMap:Ljava/util/Map;
-
-    invoke-interface {v10, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Ljava/util/Set;
-
-    invoke-interface {v10, v9}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    .line 335
-    if-eqz v0, :cond_33
-
-    iget-object v10, v8, Landroid/content/pm/PermissionInfo;->name:Ljava/lang/String;
-
-    invoke-interface {v0, v10}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v10
-
-    if-nez v10, :cond_33
-
-    .line 337
-    iget-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNewDangerousPermissions:Ljava/util/Set;
-
-    invoke-interface {v10, v9}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_33
-
-    .line 319
     .end local v1           #description:Ljava/lang/String;
     .end local v2           #descriptionSeq:Ljava/lang/CharSequence;
     .end local v5           #groupLabel:Ljava/lang/String;
     .end local v7           #label:Ljava/lang/String;
-    .end local v9           #uiInfo:Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
-    :catch_d6
+    .end local v10           #uiInfo:Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
+    :catch_e2
     move-exception v3
 
-    .line 320
+    .line 332
     .local v3, e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    new-instance v10, Ljava/lang/StringBuilder;
+    new-instance v11, Ljava/lang/StringBuilder;
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v11, "Invalid group name:"
+    const-string v12, "Invalid group name:"
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v11
 
-    iget-object v11, v8, Landroid/content/pm/PermissionInfo;->group:Ljava/lang/String;
+    iget-object v12, v9, Landroid/content/pm/PermissionInfo;->group:Ljava/lang/String;
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v11
 
-    const/4 v11, 0x0
+    const/4 v12, 0x0
 
-    new-array v11, v11, [Ljava/lang/Object;
+    new-array v12, v12, [Ljava/lang/Object;
 
-    invoke-static {v10, v11}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v11, v12}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    goto :goto_77
+    goto :goto_83
 
-    .line 322
+    .line 334
     .end local v3           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    :cond_f3
+    :cond_ff
     #getter for: Lcom/google/android/finsky/layout/AppSecurityPermissions;->mPackageManager:Landroid/content/pm/PackageManager;
     invoke-static {p1}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$400(Lcom/google/android/finsky/layout/AppSecurityPermissions;)Landroid/content/pm/PackageManager;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-virtual {v4, v10}, Landroid/content/pm/PermissionGroupInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    invoke-virtual {v4, v11}, Landroid/content/pm/PermissionGroupInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-virtual {v10}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v5
 
-    goto :goto_84
+    goto :goto_90
 
-    .line 327
+    .line 339
     .restart local v2       #descriptionSeq:Ljava/lang/CharSequence;
     .restart local v5       #groupLabel:Ljava/lang/String;
     .restart local v7       #label:Ljava/lang/String;
-    :cond_100
+    :cond_10c
     const/4 v1, 0x0
 
-    goto :goto_9e
-
-    .line 341
-    .restart local v1       #description:Ljava/lang/String;
-    .restart local v9       #uiInfo:Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
-    :cond_102
-    iget-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNormalMap:Ljava/util/Map;
-
-    invoke-interface {v10, v5}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v10
-
-    if-nez v10, :cond_114
-
-    .line 342
-    iget-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNormalMap:Ljava/util/Map;
-
-    new-instance v11, Ljava/util/TreeSet;
-
-    invoke-direct {v11}, Ljava/util/TreeSet;-><init>()V
-
-    invoke-interface {v10, v5, v11}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 344
-    :cond_114
-    iget-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNormalMap:Ljava/util/Map;
-
-    invoke-interface {v10, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Ljava/util/Set;
-
-    invoke-interface {v10, v9}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    .line 345
-    if-eqz v0, :cond_33
-
-    iget-object v10, v8, Landroid/content/pm/PermissionInfo;->name:Ljava/lang/String;
-
-    invoke-interface {v0, v10}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v10
-
-    if-nez v10, :cond_33
-
-    .line 347
-    iget-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNewNormalPermissions:Ljava/util/Set;
-
-    invoke-interface {v10, v9}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_33
+    goto :goto_aa
 
     .line 353
+    .restart local v1       #description:Ljava/lang/String;
+    .restart local v10       #uiInfo:Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
+    :cond_10e
+    iget-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNormalMap:Ljava/util/Map;
+
+    invoke-interface {v11, v5}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_120
+
+    .line 354
+    iget-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNormalMap:Ljava/util/Map;
+
+    new-instance v12, Ljava/util/TreeSet;
+
+    invoke-direct {v12}, Ljava/util/TreeSet;-><init>()V
+
+    invoke-interface {v11, v5, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 356
+    :cond_120
+    iget-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNormalMap:Ljava/util/Map;
+
+    invoke-interface {v11, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Ljava/util/Set;
+
+    invoke-interface {v11, v10}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    .line 357
+    if-eqz v0, :cond_3f
+
+    iget-object v11, v9, Landroid/content/pm/PermissionInfo;->name:Ljava/lang/String;
+
+    invoke-interface {v0, v11}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_3f
+
+    .line 359
+    iget-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNewNormalPermissions:Ljava/util/Set;
+
+    invoke-interface {v11, v10}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_3f
+
+    .line 365
     .end local v1           #description:Ljava/lang/String;
     .end local v2           #descriptionSeq:Ljava/lang/CharSequence;
     .end local v4           #group:Landroid/content/pm/PermissionGroupInfo;
     .end local v5           #groupLabel:Ljava/lang/String;
     .end local v7           #label:Ljava/lang/String;
-    .end local v8           #permission:Landroid/content/pm/PermissionInfo;
-    .end local v9           #uiInfo:Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
-    :cond_130
+    .end local v9           #permission:Landroid/content/pm/PermissionInfo;
+    .end local v10           #uiInfo:Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
+    :cond_13c
+    iget-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousMap:Ljava/util/Map;
+
+    iget-object v12, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNewDangerousPermissions:Ljava/util/Set;
+
+    iget-object v13, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousList:Ljava/util/List;
+
+    invoke-direct {p0, v11, v12, v13}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->aggregatePermissions(Ljava/util/Map;Ljava/util/Set;Ljava/util/List;)V
+
+    .line 366
+    iget-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousList:Ljava/util/List;
+
+    invoke-static {}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$500()Ljava/util/Comparator;
+
+    move-result-object v12
+
+    invoke-static {v11, v12}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+
+    .line 368
     invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
 
-    move-result-object v10
+    move-result-object v8
 
-    iput-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousList:Ljava/util/List;
+    .line 369
+    .local v8, normalList:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;>;"
+    iget-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNormalMap:Ljava/util/Map;
 
-    .line 354
-    iget-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousMap:Ljava/util/Map;
+    iget-object v12, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNewNormalPermissions:Ljava/util/Set;
 
-    iget-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNewDangerousPermissions:Ljava/util/Set;
+    invoke-direct {p0, v11, v12, v8}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->aggregatePermissions(Ljava/util/Map;Ljava/util/Set;Ljava/util/List;)V
+
+    .line 370
+    invoke-static {}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$500()Ljava/util/Comparator;
+
+    move-result-object v11
+
+    invoke-static {v8, v11}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+
+    .line 377
+    iget-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mTotalList:Ljava/util/List;
 
     iget-object v12, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousList:Ljava/util/List;
 
-    invoke-direct {p0, v10, v11, v12}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->aggregatePermissions(Ljava/util/Map;Ljava/util/Set;Ljava/util/List;)V
+    invoke-interface {v11, v12}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 361
-    invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
+    .line 378
+    iget-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mTotalList:Ljava/util/List;
 
-    move-result-object v10
+    invoke-interface {v11, v8}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    iput-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mTotalList:Ljava/util/List;
-
-    .line 362
-    iget-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousMap:Ljava/util/Map;
-
-    iget-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNewDangerousPermissions:Ljava/util/Set;
-
-    iget-object v12, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mTotalList:Ljava/util/List;
-
-    invoke-direct {p0, v10, v11, v12}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->aggregatePermissions(Ljava/util/Map;Ljava/util/Set;Ljava/util/List;)V
-
-    .line 363
-    iget-object v10, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNormalMap:Ljava/util/Map;
-
-    iget-object v11, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNewNormalPermissions:Ljava/util/Set;
-
-    iget-object v12, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mTotalList:Ljava/util/List;
-
-    invoke-direct {p0, v10, v11, v12}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->aggregatePermissions(Ljava/util/Map;Ljava/util/Set;Ljava/util/List;)V
-
-    .line 364
+    .line 379
     return-void
 .end method
 
@@ -543,7 +566,7 @@
     .parameter "x0"
 
     .prologue
-    .line 267
+    .line 284
     invoke-direct {p0}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->containsDangerousNewPermissions()Z
 
     move-result v0
@@ -557,7 +580,7 @@
     .parameter "x1"
 
     .prologue
-    .line 267
+    .line 284
     invoke-direct {p0, p1}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->getViewType(I)I
 
     move-result v0
@@ -572,7 +595,7 @@
     .parameter "x2"
 
     .prologue
-    .line 267
+    .line 284
     invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->getView(Landroid/view/ViewGroup;I)Landroid/view/View;
 
     move-result-object v0
@@ -581,7 +604,7 @@
 .end method
 
 .method private aggregatePermissions(Ljava/util/Map;Ljava/util/Set;Ljava/util/List;)V
-    .registers 21
+    .registers 24
     .parameter
     .parameter
     .parameter
@@ -607,299 +630,335 @@
     .end annotation
 
     .prologue
-    .line 376
+    .line 391
     .local p1, permissionsMap:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/util/Set<Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;>;>;"
     .local p2, newPermissions:Ljava/util/Set;,"Ljava/util/Set<Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;>;"
     .local p3, permissionsList:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;>;"
     invoke-interface/range {p1 .. p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
-    move-result-object v13
+    move-result-object v16
 
-    invoke-interface {v13}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface/range {v16 .. v16}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v8
+
+    :goto_8
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v16
+
+    if-eqz v16, :cond_fe
+
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v5
 
-    :goto_8
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v5, Ljava/lang/String;
 
-    move-result v13
+    .line 392
+    .local v5, group:Ljava/lang/String;
+    new-instance v15, Landroid/text/SpannableStringBuilder;
 
-    if-eqz v13, :cond_df
-
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/lang/String;
-
-    .line 377
-    .local v4, group:Ljava/lang/String;
-    new-instance v12, Landroid/text/SpannableStringBuilder;
-
-    invoke-direct {v12}, Landroid/text/SpannableStringBuilder;-><init>()V
-
-    .line 378
-    .local v12, unchangedJoiner:Landroid/text/SpannableStringBuilder;
-    new-instance v10, Landroid/text/SpannableStringBuilder;
-
-    invoke-direct {v10}, Landroid/text/SpannableStringBuilder;-><init>()V
-
-    .line 379
-    .local v10, newJoiner:Landroid/text/SpannableStringBuilder;
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 380
-    .local v3, descriptionBuilder:Ljava/lang/StringBuilder;
-    move-object/from16 v0, p1
-
-    invoke-interface {v0, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, Ljava/util/Set;
-
-    invoke-interface {v13}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v6
-
-    .local v6, i$:Ljava/util/Iterator;
-    :cond_2f
-    :goto_2f
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v13
-
-    if-eqz v13, :cond_cb
-
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v11
-
-    check-cast v11, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
-
-    .line 381
-    .local v11, permissionUiInfo:Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
-    move-object/from16 v0, p2
-
-    invoke-interface {v0, v11}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v13
-
-    if-eqz v13, :cond_c1
-
-    move-object v7, v10
-
-    .line 384
-    .local v7, joiner:Landroid/text/SpannableStringBuilder;
-    :goto_44
-    iget-object v8, v11, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;->label:Ljava/lang/String;
-
-    .line 385
-    .local v8, label:Ljava/lang/String;
-    invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v13
-
-    if-nez v13, :cond_2f
-
-    .line 389
-    iget-object v2, v11, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;->description:Ljava/lang/String;
-
-    .line 390
-    .local v2, description:Ljava/lang/String;
-    invoke-virtual {v7}, Landroid/text/SpannableStringBuilder;->length()I
-
-    move-result v13
-
-    if-lez v13, :cond_59
-
-    .line 391
-    const-string v13, ", "
-
-    invoke-virtual {v7, v13}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-direct {v15}, Landroid/text/SpannableStringBuilder;-><init>()V
 
     .line 393
-    :cond_59
-    new-instance v13, Ljava/lang/StringBuilder;
+    .local v15, unchangedJoiner:Landroid/text/SpannableStringBuilder;
+    new-instance v13, Landroid/text/SpannableStringBuilder;
 
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v13}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    const/4 v14, 0x0
+    .line 394
+    .local v13, newJoiner:Landroid/text/SpannableStringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    const/4 v15, 0x1
-
-    invoke-virtual {v8, v14, v15}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    const/4 v14, 0x1
-
-    invoke-virtual {v8, v14}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 395
-    .local v1, capitalized:Ljava/lang/String;
-    invoke-virtual {v7}, Landroid/text/SpannableStringBuilder;->length()I
-
-    move-result v13
-
-    if-nez v13, :cond_c3
+    .local v4, descriptionBuilder:Ljava/lang/StringBuilder;
+    const/4 v6, 0x0
 
     .line 396
-    invoke-virtual {v7, v1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    .local v6, hasAnyNew:Z
+    move-object/from16 v0, p1
 
-    .line 401
-    :goto_82
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->length()I
+    invoke-interface {v0, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v13
+    move-result-object v16
 
-    if-lez v13, :cond_8d
+    check-cast v16, Ljava/util/Set;
 
-    .line 402
-    const-string v13, "<br><br>"
+    invoke-interface/range {v16 .. v16}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v3, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v9
 
-    .line 404
-    :cond_8d
-    const-string v13, "<b>"
+    .local v9, i$:Ljava/util/Iterator;
+    :cond_30
+    :goto_30
+    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {v3, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v16
 
-    .line 405
+    if-eqz v16, :cond_e8
+
+    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v14
+
+    check-cast v14, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
+
+    .line 397
+    .local v14, permissionUiInfo:Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
     move-object/from16 v0, p2
 
-    invoke-interface {v0, v11}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v14}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    move-result v13
-
-    if-eqz v13, :cond_c7
-
-    .line 406
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->this$0:Lcom/google/android/finsky/layout/AppSecurityPermissions;
-
-    invoke-virtual {v13}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->getContext()Landroid/content/Context;
-
-    move-result-object v13
-
-    invoke-virtual {v13}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v13
-
-    const v14, 0x7f0701a6
-
-    const/4 v15, 0x1
-
-    new-array v15, v15, [Ljava/lang/Object;
-
-    const/16 v16, 0x0
-
-    aput-object v1, v15, v16
-
-    invoke-virtual {v13, v14, v15}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-virtual {v3, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 411
-    :goto_b7
-    const-string v13, "</b><br><br>"
-
-    invoke-virtual {v3, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 412
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto/16 :goto_2f
-
-    .end local v1           #capitalized:Ljava/lang/String;
-    .end local v2           #description:Ljava/lang/String;
-    .end local v7           #joiner:Landroid/text/SpannableStringBuilder;
-    .end local v8           #label:Ljava/lang/String;
-    :cond_c1
-    move-object v7, v12
-
-    .line 381
-    goto :goto_44
+    move-result v7
 
     .line 398
-    .restart local v1       #capitalized:Ljava/lang/String;
-    .restart local v2       #description:Ljava/lang/String;
-    .restart local v7       #joiner:Landroid/text/SpannableStringBuilder;
-    .restart local v8       #label:Ljava/lang/String;
-    :cond_c3
-    invoke-virtual {v7, v8}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    .local v7, hasNew:Z
+    if-eqz v7, :cond_dd
 
-    goto :goto_82
+    move-object v10, v13
 
-    .line 409
-    :cond_c7
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 399
+    .local v10, joiner:Landroid/text/SpannableStringBuilder;
+    :goto_45
+    or-int/2addr v6, v7
 
-    goto :goto_b7
+    .line 401
+    iget-object v11, v14, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;->label:Ljava/lang/String;
 
-    .line 414
-    .end local v1           #capitalized:Ljava/lang/String;
-    .end local v2           #description:Ljava/lang/String;
-    .end local v7           #joiner:Landroid/text/SpannableStringBuilder;
-    .end local v8           #label:Ljava/lang/String;
-    .end local v11           #permissionUiInfo:Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
-    :cond_cb
-    new-instance v9, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;
+    .line 402
+    .local v11, label:Ljava/lang/String;
+    invoke-static {v11}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    invoke-direct {v9}, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;-><init>()V
+    move-result v16
 
-    .line 415
-    .local v9, newEntry:Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;
-    iput-object v4, v9, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;->headerText:Ljava/lang/String;
+    if-nez v16, :cond_30
 
-    .line 416
-    iput-object v12, v9, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;->contentText:Ljava/lang/CharSequence;
+    .line 406
+    iget-object v3, v14, Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;->description:Ljava/lang/String;
 
-    .line 417
-    iput-object v10, v9, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;->newContentText:Ljava/lang/CharSequence;
+    .line 407
+    .local v3, description:Ljava/lang/String;
+    invoke-virtual {v10}, Landroid/text/SpannableStringBuilder;->length()I
+
+    move-result v16
+
+    if-lez v16, :cond_5d
+
+    .line 408
+    const-string v16, ", "
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v10, v0}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    .line 410
+    :cond_5d
+    new-instance v16, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v16 .. v16}, Ljava/lang/StringBuilder;-><init>()V
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x1
+
+    move/from16 v0, v17
+
+    move/from16 v1, v18
+
+    invoke-virtual {v11, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v17
+
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+
+    move-result-object v17
+
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v16
+
+    const/16 v17, 0x1
+
+    move/from16 v0, v17
+
+    invoke-virtual {v11, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v17
+
+    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v16
+
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 412
+    .local v2, capitalized:Ljava/lang/String;
+    invoke-virtual {v10}, Landroid/text/SpannableStringBuilder;->length()I
+
+    move-result v16
+
+    if-nez v16, :cond_e0
+
+    .line 413
+    invoke-virtual {v10, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     .line 418
-    iput-object v3, v9, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;->detailedDescription:Ljava/lang/CharSequence;
+    :goto_8f
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v16
+
+    if-lez v16, :cond_9c
 
     .line 419
+    const-string v16, "<br><br>"
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 421
+    :cond_9c
+    const-string v16, "<b>"
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 422
+    move-object/from16 v0, p2
+
+    invoke-interface {v0, v14}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v16
+
+    if-eqz v16, :cond_e4
+
+    .line 423
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->this$0:Lcom/google/android/finsky/layout/AppSecurityPermissions;
+
+    move-object/from16 v16, v0
+
+    invoke-virtual/range {v16 .. v16}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->getContext()Landroid/content/Context;
+
+    move-result-object v16
+
+    invoke-virtual/range {v16 .. v16}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v16
+
+    const v17, 0x7f0701e4
+
+    const/16 v18, 0x1
+
+    move/from16 v0, v18
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    move-object/from16 v18, v0
+
+    const/16 v19, 0x0
+
+    aput-object v2, v18, v19
+
+    invoke-virtual/range {v16 .. v18}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v16
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 428
+    :goto_d1
+    const-string v16, "</b><br><br>"
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 429
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto/16 :goto_30
+
+    .end local v2           #capitalized:Ljava/lang/String;
+    .end local v3           #description:Ljava/lang/String;
+    .end local v10           #joiner:Landroid/text/SpannableStringBuilder;
+    .end local v11           #label:Ljava/lang/String;
+    :cond_dd
+    move-object v10, v15
+
+    .line 398
+    goto/16 :goto_45
+
+    .line 415
+    .restart local v2       #capitalized:Ljava/lang/String;
+    .restart local v3       #description:Ljava/lang/String;
+    .restart local v10       #joiner:Landroid/text/SpannableStringBuilder;
+    .restart local v11       #label:Ljava/lang/String;
+    :cond_e0
+    invoke-virtual {v10, v11}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    goto :goto_8f
+
+    .line 426
+    :cond_e4
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_d1
+
+    .line 431
+    .end local v2           #capitalized:Ljava/lang/String;
+    .end local v3           #description:Ljava/lang/String;
+    .end local v7           #hasNew:Z
+    .end local v10           #joiner:Landroid/text/SpannableStringBuilder;
+    .end local v11           #label:Ljava/lang/String;
+    .end local v14           #permissionUiInfo:Lcom/google/android/finsky/layout/AppSecurityPermissions$PermissionUiInfo;
+    :cond_e8
+    new-instance v12, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;
+
+    invoke-direct {v12}, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;-><init>()V
+
+    .line 432
+    .local v12, newEntry:Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;
+    iput-object v5, v12, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;->headerText:Ljava/lang/String;
+
+    .line 433
+    iput-object v15, v12, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;->contentText:Ljava/lang/CharSequence;
+
+    .line 434
+    iput-object v13, v12, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;->newContentText:Ljava/lang/CharSequence;
+
+    .line 435
+    iput-object v4, v12, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;->detailedDescription:Ljava/lang/CharSequence;
+
+    .line 436
+    iput-boolean v6, v12, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;->hasNewPermission:Z
+
+    .line 437
     move-object/from16 v0, p3
 
-    invoke-interface {v0, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v12}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_8
 
-    .line 421
-    .end local v3           #descriptionBuilder:Ljava/lang/StringBuilder;
-    .end local v4           #group:Ljava/lang/String;
-    .end local v6           #i$:Ljava/util/Iterator;
-    .end local v9           #newEntry:Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;
-    .end local v10           #newJoiner:Landroid/text/SpannableStringBuilder;
-    .end local v12           #unchangedJoiner:Landroid/text/SpannableStringBuilder;
-    :cond_df
+    .line 439
+    .end local v4           #descriptionBuilder:Ljava/lang/StringBuilder;
+    .end local v5           #group:Ljava/lang/String;
+    .end local v6           #hasAnyNew:Z
+    .end local v9           #i$:Ljava/util/Iterator;
+    .end local v12           #newEntry:Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;
+    .end local v13           #newJoiner:Landroid/text/SpannableStringBuilder;
+    .end local v15           #unchangedJoiner:Landroid/text/SpannableStringBuilder;
+    :cond_fe
     return-void
 .end method
 
@@ -907,7 +966,7 @@
     .registers 2
 
     .prologue
-    .line 445
+    .line 463
     iget-object v0, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNewDangerousPermissions:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
@@ -932,7 +991,7 @@
     .parameter "context"
 
     .prologue
-    .line 473
+    .line 491
     :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -941,7 +1000,7 @@
     iget-object v2, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->this$0:Lcom/google/android/finsky/layout/AppSecurityPermissions;
 
     #getter for: Lcom/google/android/finsky/layout/AppSecurityPermissions;->mPackageName:Ljava/lang/String;
-    invoke-static {v2}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$500(Lcom/google/android/finsky/layout/AppSecurityPermissions;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$600(Lcom/google/android/finsky/layout/AppSecurityPermissions;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -953,15 +1012,15 @@
 
     move-result-object v1
 
-    .line 476
+    .line 494
     :goto_10
     return-object v1
 
-    .line 475
+    .line 493
     :catch_11
     move-exception v0
 
-    .line 476
+    .line 494
     .local v0, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     const/4 v1, 0x0
 
@@ -978,18 +1037,18 @@
 
     const/4 v11, 0x0
 
-    .line 507
+    .line 525
     iget-object v8, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    const v9, 0x7f040076
+    const v9, 0x7f040081
 
     invoke-virtual {v8, v9, p1, v11}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v7
 
-    .line 508
+    .line 526
     .local v7, view:Landroid/view/View;
-    const v8, 0x7f0800a2
+    const v8, 0x7f0800a8
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -997,9 +1056,9 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    .line 509
+    .line 527
     .local v3, headerView:Landroid/widget/TextView;
-    const v8, 0x7f080116
+    const v8, 0x7f08014e
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1007,9 +1066,9 @@
 
     check-cast v4, Landroid/widget/TextView;
 
-    .line 510
+    .line 528
     .local v4, newContentView:Landroid/widget/TextView;
-    const v8, 0x7f08000c
+    const v8, 0x7f08000f
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1017,13 +1076,13 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 511
+    .line 529
     .local v1, contentView:Landroid/widget/TextView;
     iget-object v8, p2, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;->headerText:Ljava/lang/String;
 
     invoke-virtual {v3, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 512
+    .line 530
     iget-object v8, p2, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;->contentText:Ljava/lang/CharSequence;
 
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1032,10 +1091,10 @@
 
     if-eqz v8, :cond_5c
 
-    .line 513
+    .line 531
     invoke-virtual {v1, v10}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 519
+    .line 537
     :goto_37
     iget-object v8, p2, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;->newContentText:Ljava/lang/CharSequence;
 
@@ -1045,12 +1104,12 @@
 
     if-eqz v8, :cond_65
 
-    .line 520
+    .line 538
     invoke-virtual {v4, v10}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 533
+    .line 551
     :goto_42
-    const v8, 0x7f080115
+    const v8, 0x7f08014d
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1062,8 +1121,8 @@
 
     invoke-virtual {v8, v9}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 540
-    const v8, 0x7f080117
+    .line 558
+    const v8, 0x7f08014f
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1071,25 +1130,25 @@
 
     invoke-virtual {v8, v11}, Landroid/view/View;->setVisibility(I)V
 
-    .line 542
+    .line 560
     return-object v7
 
-    .line 515
+    .line 533
     :cond_5c
     invoke-virtual {v1, v11}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 516
+    .line 534
     iget-object v8, p2, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;->contentText:Ljava/lang/CharSequence;
 
     invoke-virtual {v1, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_37
 
-    .line 522
+    .line 540
     :cond_65
     invoke-virtual {v4, v11}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 523
+    .line 541
     iget-object v8, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->this$0:Lcom/google/android/finsky/layout/AppSecurityPermissions;
 
     #getter for: Lcom/google/android/finsky/layout/AppSecurityPermissions;->mContext:Landroid/content/Context;
@@ -1101,9 +1160,9 @@
 
     move-result-object v6
 
-    .line 524
+    .line 542
     .local v6, resources:Landroid/content/res/Resources;
-    const v8, 0x7f0a0015
+    const v8, 0x7f0a0011
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1111,8 +1170,8 @@
 
     invoke-virtual {v4, v8}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 525
-    const v8, 0x7f0701a6
+    .line 543
+    const v8, 0x7f0701e4
 
     const/4 v9, 0x1
 
@@ -1126,7 +1185,7 @@
 
     move-result-object v2
 
-    .line 527
+    .line 545
     .local v2, fullContents:Ljava/lang/String;
     iget-object v8, p2, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;->newContentText:Ljava/lang/CharSequence;
 
@@ -1138,13 +1197,13 @@
 
     move-result v5
 
-    .line 528
+    .line 546
     .local v5, permIndex:I
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v0, v2}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 529
+    .line 547
     .local v0, builder:Landroid/text/SpannableStringBuilder;
     new-instance v8, Landroid/text/style/TextAppearanceSpan;
 
@@ -1155,7 +1214,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0e0023
+    const v10, 0x7f0e0028
 
     invoke-direct {v8, v9, v10}, Landroid/text/style/TextAppearanceSpan;-><init>(Landroid/content/Context;I)V
 
@@ -1169,7 +1228,7 @@
 
     invoke-virtual {v0, v8, v5, v9, v11}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 531
+    .line 549
     invoke-virtual {v4, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_42
@@ -1180,10 +1239,10 @@
     .parameter "parent"
 
     .prologue
-    .line 546
+    .line 564
     iget-object v1, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f040098
+    const v2, 0x7f0400c7
 
     const/4 v3, 0x0
 
@@ -1193,7 +1252,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 548
+    .line 566
     .local v0, expander:Landroid/widget/TextView;
     new-instance v1, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter$2;
 
@@ -1201,10 +1260,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 559
-    invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->configureExpanderArrow(Landroid/widget/TextView;)V
+    .line 577
+    invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->configureExpander(Landroid/widget/TextView;)V
 
-    .line 560
+    .line 578
     return-object v0
 .end method
 
@@ -1214,20 +1273,20 @@
     .parameter "position"
 
     .prologue
-    .line 491
+    .line 509
     invoke-direct {p0, p2}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->getViewType(I)I
 
     move-result v1
 
     packed-switch v1, :pswitch_data_34
 
-    .line 503
+    .line 521
     const/4 v1, 0x0
 
     :goto_8
     return-object v1
 
-    .line 493
+    .line 511
     :pswitch_9
     iget-object v1, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousList:Ljava/util/List;
 
@@ -1243,11 +1302,11 @@
 
     goto :goto_8
 
-    .line 495
+    .line 513
     :pswitch_16
     move v0, p2
 
-    .line 496
+    .line 514
     .local v0, tweakedPosition:I
     iget-object v1, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNormalMap:Ljava/util/Map;
 
@@ -1257,10 +1316,10 @@
 
     if-lez v1, :cond_21
 
-    .line 497
+    .line 515
     add-int/lit8 v0, v0, -0x1
 
-    .line 499
+    .line 517
     :cond_21
     iget-object v1, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mTotalList:Ljava/util/List;
 
@@ -1276,7 +1335,7 @@
 
     goto :goto_8
 
-    .line 501
+    .line 519
     .end local v0           #tweakedPosition:I
     :pswitch_2e
     invoke-direct {p0, p1}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->getTogglerView(Landroid/view/ViewGroup;)Landroid/view/View;
@@ -1285,7 +1344,7 @@
 
     goto :goto_8
 
-    .line 491
+    .line 509
     nop
 
     :pswitch_data_34
@@ -1301,7 +1360,7 @@
     .parameter "position"
 
     .prologue
-    .line 481
+    .line 499
     iget-object v0, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -1310,14 +1369,14 @@
 
     if-ge p1, v0, :cond_a
 
-    .line 482
+    .line 500
     const/4 v0, 0x0
 
-    .line 487
+    .line 505
     :goto_9
     return v0
 
-    .line 484
+    .line 502
     :cond_a
     iget-object v0, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousList:Ljava/util/List;
 
@@ -1335,12 +1394,12 @@
 
     if-lez v0, :cond_1c
 
-    .line 485
+    .line 503
     const/4 v0, 0x2
 
     goto :goto_9
 
-    .line 487
+    .line 505
     :cond_1c
     const/4 v0, 0x1
 
@@ -1354,7 +1413,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 367
+    .line 382
     iget v1, p1, Landroid/content/pm/PermissionInfo;->protectionLevel:I
 
     if-eq v1, v0, :cond_9
@@ -1363,7 +1422,7 @@
 
     if-nez v1, :cond_a
 
-    .line 371
+    .line 386
     :cond_9
     :goto_9
     return v0
@@ -1390,29 +1449,29 @@
     .end annotation
 
     .prologue
-    .line 457
+    .line 475
     invoke-direct {p0, p1}, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->getPackageInfo(Landroid/content/Context;)Landroid/content/pm/PackageInfo;
 
     move-result-object v4
 
-    .line 458
+    .line 476
     .local v4, packageInfo:Landroid/content/pm/PackageInfo;
     if-nez v4, :cond_8
 
-    .line 459
+    .line 477
     const/4 v3, 0x0
 
-    .line 468
+    .line 486
     :cond_7
     return-object v3
 
-    .line 461
+    .line 479
     :cond_8
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
 
-    .line 462
+    .line 480
     .local v3, oldPermissions:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     if-eqz v4, :cond_7
 
@@ -1420,7 +1479,7 @@
 
     if-eqz v6, :cond_7
 
-    .line 463
+    .line 481
     iget-object v0, v4, Landroid/content/pm/PackageInfo;->requestedPermissions:[Ljava/lang/String;
 
     .local v0, arr$:[Ljava/lang/String;
@@ -1435,11 +1494,11 @@
 
     aget-object v5, v0, v1
 
-    .line 464
+    .line 482
     .local v5, permission:Ljava/lang/String;
     invoke-virtual {v3, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 463
+    .line 481
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_17
@@ -1447,77 +1506,71 @@
 
 
 # virtual methods
-.method protected configureExpanderArrow(Landroid/widget/TextView;)V
-    .registers 8
+.method protected configureExpander(Landroid/widget/TextView;)V
+    .registers 6
     .parameter "expander"
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
-
-    .line 564
+    .line 582
     iget-object v2, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->this$0:Lcom/google/android/finsky/layout/AppSecurityPermissions;
 
     #calls: Lcom/google/android/finsky/layout/AppSecurityPermissions;->isCollapsed()Z
-    invoke-static {v2}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$800(Lcom/google/android/finsky/layout/AppSecurityPermissions;)Z
+    invoke-static {v2}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$900(Lcom/google/android/finsky/layout/AppSecurityPermissions;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_2a
+    if-eqz v2, :cond_1e
 
-    const v1, 0x7f020064
+    const v0, 0x7f02008c
 
-    .line 566
-    .local v1, arrowId:I
-    :goto_d
+    .line 584
+    .local v0, arrowId:I
+    :goto_c
+    invoke-virtual {p1, v3, v3, v0, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+
+    .line 585
     iget-object v2, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->this$0:Lcom/google/android/finsky/layout/AppSecurityPermissions;
 
-    #getter for: Lcom/google/android/finsky/layout/AppSecurityPermissions;->mContext:Landroid/content/Context;
-    invoke-static {v2}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$300(Lcom/google/android/finsky/layout/AppSecurityPermissions;)Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .line 567
-    .local v0, arrowDrawable:Landroid/graphics/drawable/Drawable;
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+    #calls: Lcom/google/android/finsky/layout/AppSecurityPermissions;->isCollapsed()Z
+    invoke-static {v2}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->access$900(Lcom/google/android/finsky/layout/AppSecurityPermissions;)Z
 
     move-result v2
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    if-eqz v2, :cond_22
 
-    move-result v3
+    const v1, 0x7f070117
 
-    invoke-virtual {v0, v5, v5, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    .line 586
+    .local v1, textId:I
+    :goto_1a
+    invoke-virtual {p1, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 569
-    invoke-virtual {p1, v4, v4, v0, v4}, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    .line 570
+    .line 587
     return-void
 
-    .line 564
-    .end local v0           #arrowDrawable:Landroid/graphics/drawable/Drawable;
-    .end local v1           #arrowId:I
-    :cond_2a
-    const v1, 0x7f020067
+    .line 582
+    .end local v0           #arrowId:I
+    .end local v1           #textId:I
+    :cond_1e
+    const v0, 0x7f020090
 
-    goto :goto_d
+    goto :goto_c
+
+    .line 585
+    .restart local v0       #arrowId:I
+    :cond_22
+    const v1, 0x7f070118
+
+    goto :goto_1a
 .end method
 
 .method public getCount()I
     .registers 3
 
     .prologue
-    .line 424
+    .line 442
     iget-object v1, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mDangerousList:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -1526,15 +1579,15 @@
 
     if-nez v1, :cond_a
 
-    .line 428
+    .line 446
     const/4 v0, 0x0
 
-    .line 436
+    .line 454
     :cond_9
     :goto_9
     return v0
 
-    .line 431
+    .line 449
     :cond_a
     iget-object v1, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mTotalList:Ljava/util/List;
 
@@ -1542,7 +1595,7 @@
 
     move-result v0
 
-    .line 432
+    .line 450
     .local v0, total:I
     iget-object v1, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$AppPermissionAdapter;->mNormalMap:Ljava/util/Map;
 
@@ -1552,7 +1605,7 @@
 
     if-nez v1, :cond_9
 
-    .line 433
+    .line 451
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_9

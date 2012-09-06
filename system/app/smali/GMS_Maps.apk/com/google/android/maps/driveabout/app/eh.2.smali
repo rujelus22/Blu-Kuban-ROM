@@ -1,19 +1,23 @@
 .class Lcom/google/android/maps/driveabout/app/eh;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/dO;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/dD;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/dO;)V
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/dD;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/eh;->a:Lcom/google/android/maps/driveabout/app/dO;
+    .prologue
+    .line 1039
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/eh;->a:Lcom/google/android/maps/driveabout/app/dD;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,34 +26,36 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 5
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .registers 6
+    .parameter
+    .parameter
 
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/eh;->a:Lcom/google/android/maps/driveabout/app/dO;
+    .prologue
+    .line 1042
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/eh;->a:Lcom/google/android/maps/driveabout/app/dD;
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/eh;->a:Lcom/google/android/maps/driveabout/app/dO;
-
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/dO;->a(Lcom/google/android/maps/driveabout/app/dO;)Ly/p;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ly/p;->a()Ly/s;
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/dD;->b(Lcom/google/android/maps/driveabout/app/dD;)Lcom/google/android/maps/driveabout/app/NavigationActivity;
 
     move-result-object v0
 
-    sget-object v2, Ly/g;->a:Ly/g;
+    new-instance v1, Landroid/content/Intent;
 
-    if-eq v0, v2, :cond_15
+    const-string v2, "android.speech.tts.engine.INSTALL_TTS_DATA"
 
-    const/4 v0, 0x1
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    :goto_11
-    invoke-virtual {v1, v0}, Lcom/google/android/maps/driveabout/app/dO;->e(Z)V
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/NavigationActivity;->startActivity(Landroid/content/Intent;)V
 
+    .line 1043
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/eh;->a:Lcom/google/android/maps/driveabout/app/dD;
+
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/dD;->b(Lcom/google/android/maps/driveabout/app/dD;)Lcom/google/android/maps/driveabout/app/NavigationActivity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/NavigationActivity;->c()V
+
+    .line 1044
     return-void
-
-    :cond_15
-    const/4 v0, 0x0
-
-    goto :goto_11
 .end method

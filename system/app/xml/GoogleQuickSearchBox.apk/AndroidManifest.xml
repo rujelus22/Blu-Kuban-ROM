@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:versionCode="141278776" android:versionName="1.4.1.278776" package="com.google.android.googlequicksearchbox"
+<manifest android:versionCode="141239410" android:versionName="1.4.1.239410" package="com.google.android.googlequicksearchbox"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="14" />
     <uses-permission android:name="android.permission.GLOBAL_SEARCH" />

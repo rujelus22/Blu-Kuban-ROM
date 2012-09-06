@@ -20,25 +20,30 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;
 
-.field final synthetic val$isRefundable:Z
+.field final synthetic val$actions:Lcom/google/android/finsky/activities/AppActionAnalyzer;
 
-.field final synthetic val$localAsset:Lcom/google/android/finsky/local/LocalAsset;
+.field final synthetic val$appHasSubscriptions:Z
+
+.field final synthetic val$appPackageName:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Lcom/google/android/finsky/local/LocalAsset;Z)V
-    .registers 4
+.method constructor <init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;Lcom/google/android/finsky/activities/AppActionAnalyzer;Z)V
+    .registers 5
+    .parameter
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 198
+    .line 240
     iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;
 
-    iput-object p2, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;->val$localAsset:Lcom/google/android/finsky/local/LocalAsset;
+    iput-object p2, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;->val$appPackageName:Ljava/lang/String;
 
-    iput-boolean p3, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;->val$isRefundable:Z
+    iput-object p3, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;->val$actions:Lcom/google/android/finsky/activities/AppActionAnalyzer;
+
+    iput-boolean p4, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;->val$appHasSubscriptions:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,24 +53,36 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 5
+    .registers 9
     .parameter "v"
 
     .prologue
-    .line 201
+    .line 243
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;
 
-    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;->val$localAsset:Lcom/google/android/finsky/local/LocalAsset;
+    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;->val$appPackageName:Ljava/lang/String;
 
-    invoke-interface {v1}, Lcom/google/android/finsky/local/LocalAsset;->getPackage()Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;->val$actions:Lcom/google/android/finsky/activities/AppActionAnalyzer;
 
-    move-result-object v1
+    iget-boolean v2, v2, Lcom/google/android/finsky/activities/AppActionAnalyzer;->isRefundable:Z
 
-    iget-boolean v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;->val$isRefundable:Z
+    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;->val$actions:Lcom/google/android/finsky/activities/AppActionAnalyzer;
 
-    #calls: Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->refundAndUninstallAsset(Ljava/lang/String;Z)V
-    invoke-static {v0, v1, v2}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->access$000(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;Z)V
+    iget-object v3, v3, Lcom/google/android/finsky/activities/AppActionAnalyzer;->refundAccount:Ljava/lang/String;
 
-    .line 202
+    iget-object v4, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;->val$actions:Lcom/google/android/finsky/activities/AppActionAnalyzer;
+
+    iget-boolean v4, v4, Lcom/google/android/finsky/activities/AppActionAnalyzer;->isInstalledSystemApp:Z
+
+    iget-object v5, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;->val$actions:Lcom/google/android/finsky/activities/AppActionAnalyzer;
+
+    iget-boolean v5, v5, Lcom/google/android/finsky/activities/AppActionAnalyzer;->isInstalledOwnedPackage:Z
+
+    iget-boolean v6, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;->val$appHasSubscriptions:Z
+
+    #calls: Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->refundAndUninstallAsset(Ljava/lang/String;ZLjava/lang/String;ZZZ)V
+    invoke-static/range {v0 .. v6}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->access$100(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;ZLjava/lang/String;ZZZ)V
+
+    .line 246
     return-void
 .end method

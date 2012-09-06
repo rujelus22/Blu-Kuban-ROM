@@ -26,7 +26,7 @@
 
 .field private static final CMD_UNLOAD_P2P_DRIVER_SUCCESS:I = 0x2302a
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final DHCP_RANGE:[Ljava/lang/String; = null
 

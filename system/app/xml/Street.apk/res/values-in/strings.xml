@@ -14,7 +14,7 @@
     <string name="invalid_panorama_data">Panorama tidak valid.</string>
     <string name="click_to_go_toast">Seret Pegman ke tujuan Anda.</string>
     <string name="street_range_name_format">%2$s %1$s</string>
-    <string name="network_unavailable">Program ini memerlukan koneksi data, dan akan mencoba lagi secara otomatis. Periksa kekuatan sinyal. Apakah mode pesawat aktif? Apakah data roaming dinonaktifkan?</string>
+    <string name="network_unavailable">Program ini memerlukan sambungan data dan akan mencoba lagi secara otomatis. Periksa kekuatan sinyal. Apakah mode pesawat aktif? Apakah roaming data dinonaktifkan?</string>
     <string name="whats_new_header">Yang baru di Street View</string>
     <string name="whats_new_c2g">Terbanglah sejauh mata dapat memandang. Tarik Pegman dari sisi kiri bawah dan letakkan di tempat yang ingin dituju.</string>
     <string name="terms_and_privacy">Syarat &amp; Privasi</string>

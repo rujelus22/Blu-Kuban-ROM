@@ -1,91 +1,82 @@
 .class public LA/h;
-.super LA/a;
+.super LA/j;
+.source "SourceFile"
 
 
-# static fields
-.field private static final e:LA/e;
+# instance fields
+.field private final a:I
+
+.field private final b:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(IZ)V
     .registers 3
+    .parameter
+    .parameter
 
-    new-instance v0, LA/i;
+    .prologue
+    .line 292
+    invoke-direct {p0}, LA/j;-><init>()V
 
-    const/16 v1, 0x64
+    .line 293
+    iput p1, p0, LA/h;->a:I
 
-    const-string v2, "ShortChunkArrayManager"
+    .line 294
+    iput-boolean p2, p0, LA/h;->b:Z
 
-    invoke-direct {v0, v1, v2}, LA/i;-><init>(ILjava/lang/String;)V
-
-    sput-object v0, LA/h;->e:LA/e;
-
-    return-void
-.end method
-
-.method public constructor <init>(I)V
-    .registers 4
-
-    const/16 v0, 0xb
-
-    sget-object v1, LA/h;->e:LA/e;
-
-    invoke-direct {p0, p1, v0, v1}, LA/a;-><init>(IILA/e;)V
-
+    .line 295
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/nio/ShortBuffer;)V
-    .registers 6
+.method protected a(Ljava/io/Writer;)V
+    .registers 4
+    .parameter
 
-    const/4 v2, 0x0
+    .prologue
+    .line 299
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move v1, v2
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    :goto_2
-    iget v0, p0, LA/h;->b:I
+    const-string v1, "<datarequest type=\'onNetworkError\' errorCode=\'"
 
-    if-ge v1, v0, :cond_17
-
-    iget-object v0, p0, LA/h;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0, v1}, Ljava/util/LinkedList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, [S
+    iget v1, p0, LA/h;->a:I
 
-    const/16 v3, 0x800
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v0, v2, v3}, Ljava/nio/ShortBuffer;->put([SII)Ljava/nio/ShortBuffer;
+    move-result-object v0
 
-    add-int/lit8 v0, v1, 0x1
+    const-string v1, "\' networkEverWorked=\'"
 
-    move v1, v0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_2
+    move-result-object v0
 
-    :cond_17
-    iget v0, p0, LA/h;->b:I
+    iget-boolean v1, p0, LA/h;->b:Z
 
-    iget-object v1, p0, LA/h;->a:Ljava/util/LinkedList;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/util/LinkedList;->size()I
+    move-result-object v0
 
-    move-result v1
+    const-string v1, "\' />"
 
-    if-eq v0, v1, :cond_2a
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, LA/h;->c:Ljava/lang/Object;
+    move-result-object v0
 
-    check-cast v0, [S
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget v1, p0, LA/h;->d:I
+    move-result-object v0
 
-    invoke-virtual {p1, v0, v2, v1}, Ljava/nio/ShortBuffer;->put([SII)Ljava/nio/ShortBuffer;
+    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
-    :cond_2a
+    .line 302
     return-void
 .end method

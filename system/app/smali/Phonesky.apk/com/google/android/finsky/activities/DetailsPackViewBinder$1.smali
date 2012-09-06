@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 131
+    .line 129
     iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsPackViewBinder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .registers 2
 
     .prologue
-    .line 134
+    .line 132
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsPackViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsPackViewBinder;
 
     #getter for: Lcom/google/android/finsky/activities/DetailsPackViewBinder;->mItemListRequest:Lcom/google/android/finsky/api/model/DfeList;
@@ -51,6 +51,6 @@
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeList;->retryLoadItems()V
 
-    .line 135
+    .line 133
     return-void
 .end method

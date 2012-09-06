@@ -49,41 +49,41 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1567
+    .line 1758
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1572
+    .line 1763
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->name_:Ljava/lang/String;
 
-    .line 1589
+    .line 1780
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->details_:Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;
 
-    .line 1609
+    .line 1800
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->albumName_:Ljava/lang/String;
 
-    .line 1626
+    .line 1817
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->trackNumber_:I
 
-    .line 1643
+    .line 1834
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->previewUrl_:Ljava/lang/String;
 
-    .line 1660
+    .line 1851
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->displayArtist_:Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
 
-    .line 1714
+    .line 1906
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->cachedSize:I
 
-    .line 1567
+    .line 1758
     return-void
 .end method
 
@@ -93,7 +93,7 @@
     .registers 2
 
     .prologue
-    .line 1610
+    .line 1801
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->albumName_:Ljava/lang/String;
 
     return-object v0
@@ -103,15 +103,15 @@
     .registers 2
 
     .prologue
-    .line 1716
+    .line 1909
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 1718
+    .line 1911
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->getSerializedSize()I
 
-    .line 1720
+    .line 1913
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->cachedSize:I
 
@@ -122,7 +122,7 @@
     .registers 2
 
     .prologue
-    .line 1591
+    .line 1782
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->details_:Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;
 
     return-object v0
@@ -132,7 +132,7 @@
     .registers 2
 
     .prologue
-    .line 1662
+    .line 1853
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->displayArtist_:Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
 
     return-object v0
@@ -142,7 +142,7 @@
     .registers 2
 
     .prologue
-    .line 1573
+    .line 1764
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->name_:Ljava/lang/String;
 
     return-object v0
@@ -152,7 +152,7 @@
     .registers 2
 
     .prologue
-    .line 1644
+    .line 1835
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->previewUrl_:Ljava/lang/String;
 
     return-object v0
@@ -162,10 +162,10 @@
     .registers 4
 
     .prologue
-    .line 1724
+    .line 1918
     const/4 v0, 0x0
 
-    .line 1725
+    .line 1919
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasName()Z
 
@@ -173,7 +173,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 1726
+    .line 1920
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->getName()Ljava/lang/String;
@@ -186,7 +186,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1729
+    .line 1923
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasDetails()Z
 
@@ -194,7 +194,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 1730
+    .line 1924
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->getDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;
@@ -207,7 +207,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1733
+    .line 1927
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasAlbumName()Z
 
@@ -215,7 +215,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 1734
+    .line 1928
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->getAlbumName()Ljava/lang/String;
@@ -228,7 +228,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1737
+    .line 1931
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasTrackNumber()Z
 
@@ -236,7 +236,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 1738
+    .line 1932
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->getTrackNumber()I
@@ -249,7 +249,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1741
+    .line 1935
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasPreviewUrl()Z
 
@@ -257,7 +257,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 1742
+    .line 1936
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->getPreviewUrl()Ljava/lang/String;
@@ -270,7 +270,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1745
+    .line 1939
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasDisplayArtist()Z
 
@@ -278,7 +278,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 1746
+    .line 1940
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->getDisplayArtist()Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
@@ -291,11 +291,11 @@
 
     add-int/2addr v0, v1
 
-    .line 1749
+    .line 1943
     :cond_61
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->cachedSize:I
 
-    .line 1750
+    .line 1944
     return v0
 .end method
 
@@ -303,7 +303,7 @@
     .registers 2
 
     .prologue
-    .line 1627
+    .line 1818
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->trackNumber_:I
 
     return v0
@@ -313,7 +313,7 @@
     .registers 2
 
     .prologue
-    .line 1611
+    .line 1802
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasAlbumName:Z
 
     return v0
@@ -323,7 +323,7 @@
     .registers 2
 
     .prologue
-    .line 1590
+    .line 1781
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasDetails:Z
 
     return v0
@@ -333,7 +333,7 @@
     .registers 2
 
     .prologue
-    .line 1661
+    .line 1852
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasDisplayArtist:Z
 
     return v0
@@ -343,7 +343,7 @@
     .registers 2
 
     .prologue
-    .line 1574
+    .line 1765
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasName:Z
 
     return v0
@@ -353,7 +353,7 @@
     .registers 2
 
     .prologue
-    .line 1645
+    .line 1836
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasPreviewUrl:Z
 
     return v0
@@ -363,7 +363,7 @@
     .registers 2
 
     .prologue
-    .line 1628
+    .line 1819
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasTrackNumber:Z
 
     return v0
@@ -379,29 +379,29 @@
     .end annotation
 
     .prologue
-    .line 1757
+    .line 1952
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1758
+    .line 1953
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_46
 
-    .line 1762
+    .line 1957
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 1763
+    .line 1958
     :sswitch_d
     return-object p0
 
-    .line 1768
+    .line 1963
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -411,22 +411,22 @@
 
     goto :goto_0
 
-    .line 1772
+    .line 1967
     :sswitch_16
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;-><init>()V
 
-    .line 1773
+    .line 1968
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1774
+    .line 1969
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->setDetails(Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
     goto :goto_0
 
-    .line 1778
+    .line 1973
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;
     :sswitch_22
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -437,7 +437,7 @@
 
     goto :goto_0
 
-    .line 1782
+    .line 1977
     :sswitch_2a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -447,7 +447,7 @@
 
     goto :goto_0
 
-    .line 1786
+    .line 1981
     :sswitch_32
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -457,22 +457,22 @@
 
     goto :goto_0
 
-    .line 1790
+    .line 1985
     :sswitch_3a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;-><init>()V
 
-    .line 1791
+    .line 1986
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1792
+    .line 1987
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->setDisplayArtist(Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
     goto :goto_0
 
-    .line 1758
+    .line 1953
     :sswitch_data_46
     .sparse-switch
         0x0 -> :sswitch_d
@@ -495,7 +495,7 @@
     .end annotation
 
     .prologue
-    .line 1565
+    .line 1755
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
     move-result-object v0
@@ -508,15 +508,15 @@
     .parameter "value"
 
     .prologue
-    .line 1613
+    .line 1804
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasAlbumName:Z
 
-    .line 1614
+    .line 1805
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->albumName_:Ljava/lang/String;
 
-    .line 1615
+    .line 1806
     return-object p0
 .end method
 
@@ -525,26 +525,26 @@
     .parameter "value"
 
     .prologue
-    .line 1593
+    .line 1784
     if-nez p1, :cond_8
 
-    .line 1594
+    .line 1785
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1596
+    .line 1787
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasDetails:Z
 
-    .line 1597
+    .line 1788
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->details_:Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;
 
-    .line 1598
+    .line 1789
     return-object p0
 .end method
 
@@ -553,26 +553,26 @@
     .parameter "value"
 
     .prologue
-    .line 1664
+    .line 1855
     if-nez p1, :cond_8
 
-    .line 1665
+    .line 1856
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1667
+    .line 1858
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasDisplayArtist:Z
 
-    .line 1668
+    .line 1859
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->displayArtist_:Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
 
-    .line 1669
+    .line 1860
     return-object p0
 .end method
 
@@ -581,15 +581,15 @@
     .parameter "value"
 
     .prologue
-    .line 1576
+    .line 1767
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasName:Z
 
-    .line 1577
+    .line 1768
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->name_:Ljava/lang/String;
 
-    .line 1578
+    .line 1769
     return-object p0
 .end method
 
@@ -598,15 +598,15 @@
     .parameter "value"
 
     .prologue
-    .line 1647
+    .line 1838
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasPreviewUrl:Z
 
-    .line 1648
+    .line 1839
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->previewUrl_:Ljava/lang/String;
 
-    .line 1649
+    .line 1840
     return-object p0
 .end method
 
@@ -615,15 +615,15 @@
     .parameter "value"
 
     .prologue
-    .line 1630
+    .line 1821
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasTrackNumber:Z
 
-    .line 1631
+    .line 1822
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->trackNumber_:I
 
-    .line 1632
+    .line 1823
     return-object p0
 .end method
 
@@ -637,14 +637,14 @@
     .end annotation
 
     .prologue
-    .line 1694
+    .line 1886
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasName()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 1695
+    .line 1887
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->getName()Ljava/lang/String;
@@ -653,7 +653,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1697
+    .line 1889
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasDetails()Z
 
@@ -661,7 +661,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 1698
+    .line 1890
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->getDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$MusicDetails;
@@ -670,7 +670,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1700
+    .line 1892
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasAlbumName()Z
 
@@ -678,7 +678,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 1701
+    .line 1893
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->getAlbumName()Ljava/lang/String;
@@ -687,7 +687,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1703
+    .line 1895
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasTrackNumber()Z
 
@@ -695,7 +695,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 1704
+    .line 1896
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->getTrackNumber()I
@@ -704,7 +704,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 1706
+    .line 1898
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasPreviewUrl()Z
 
@@ -712,7 +712,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 1707
+    .line 1899
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->getPreviewUrl()Ljava/lang/String;
@@ -721,7 +721,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1709
+    .line 1901
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->hasDisplayArtist()Z
 
@@ -729,7 +729,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 1710
+    .line 1902
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;->getDisplayArtist()Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
@@ -738,7 +738,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1712
+    .line 1904
     :cond_54
     return-void
 .end method

@@ -249,7 +249,7 @@
     .line 230
     iget-object v1, p0, Lcom/sec/android/app/camera/HistoryActivity$HistoryListAdapter;->mPhoto:Landroid/widget/ImageView;
 
-    const v2, 0x7f02019c
+    const v2, 0x7f02019b
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -269,7 +269,7 @@
     .line 235
     iget-object v1, p0, Lcom/sec/android/app/camera/HistoryActivity$HistoryListAdapter;->micon:Landroid/widget/ImageView;
 
-    const v2, 0x7f02018b
+    const v2, 0x7f02018a
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -315,7 +315,7 @@
     .line 238
     iget-object v1, p0, Lcom/sec/android/app/camera/HistoryActivity$HistoryListAdapter;->micon:Landroid/widget/ImageView;
 
-    const v2, 0x7f02018a
+    const v2, 0x7f020189
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -334,7 +334,7 @@
     .line 240
     iget-object v1, p0, Lcom/sec/android/app/camera/HistoryActivity$HistoryListAdapter;->micon:Landroid/widget/ImageView;
 
-    const v2, 0x7f020189
+    const v2, 0x7f020188
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 

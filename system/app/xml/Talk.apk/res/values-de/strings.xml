@@ -128,7 +128,7 @@ Tippen Sie zum Einladen weiterer Personen auf das Menü \"Chat\" und dann auf \"
     <string name="text_notification_popup_summary">Bei Eingang einer Chat-Nachricht Dialogfeld öffnen</string>
     <string name="text_notification_bar_summary">Bei Eingang einer Chat-Nachricht Benachrichtigung einblenden</string>
     <string name="notification_vibrateWhen_title">Vibration</string>
-    <string name="notification_vibrateWhen_summary_always">Bei Benachrichtigung auch vibrieren</string>
+    <string name="notification_vibrateWhen_summary_always">Auch bei Benachrichtigung vibrieren</string>
     <string name="notification_vibrateWhen_summary_silent">Nur im Lautlos-Modus</string>
     <string name="notification_vibrateWhen_summary_never">Nie vibrieren</string>
     <string name="video_notification_enabled_title">Benachrichtig. zu Video-Chat</string>
@@ -179,7 +179,7 @@ Tippen Sie zum Einladen weiterer Personen auf das Menü \"Chat\" und dann auf \"
     <string name="take_photo">Mit der Kamera aufnehmen</string>
     <string name="photoPickerNotFoundText">Auf dem Telefon sind keine Bilder verfügbar.</string>
     <string name="end_video_chat">Video beenden</string>
-    <string name="search_chats_line1">In Chat-Liste suchen</string>
+    <string name="search_chats_line1">Chat-Protokoll durchsuchen</string>
     <string name="search_chats_line2">nach \"%1$s\"</string>
     <string name="add_friend_line1">Einladung senden</string>
     <string name="add_friend_line2">an \"%1$s\"</string>

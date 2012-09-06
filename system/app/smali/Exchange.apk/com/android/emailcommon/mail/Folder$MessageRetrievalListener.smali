@@ -12,9 +12,3 @@
     accessFlags = 0x609
     name = "MessageRetrievalListener"
 .end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/android/emailcommon/mail/Folder$MessageRetrievalListener$DOWNLOAD_STATUS;
-    }
-.end annotation

@@ -29,6 +29,12 @@
         <item>En mode silencieux</item>
         <item>Jamais</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>désactivée</item>
+        <item>faible</item>
+        <item>moyenne</item>
+        <item>virtuelle</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Aucune</item>
         <item>"Stabilisation de l'image : faible"</item>

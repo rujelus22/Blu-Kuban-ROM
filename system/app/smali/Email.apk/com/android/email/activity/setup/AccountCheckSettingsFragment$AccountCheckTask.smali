@@ -26,6 +26,8 @@
 
 
 # instance fields
+.field final mAccount:Lcom/android/emailcommon/provider/Account;
+
 .field final mCheckEmail:Ljava/lang/String;
 
 .field final mCheckPassword:Ljava/lang/String;
@@ -34,29 +36,25 @@
 
 .field final mMode:I
 
-.field final mSenderUri:Ljava/lang/String;
-
 .field final mStoreHost:Ljava/lang/String;
-
-.field final mStoreUri:Ljava/lang/String;
 
 .field final synthetic this$0:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/email/activity/setup/AccountCheckSettingsFragment;ILcom/android/emailcommon/provider/EmailContent$Account;)V
+.method public constructor <init>(Lcom/android/email/activity/setup/AccountCheckSettingsFragment;ILcom/android/emailcommon/provider/Account;)V
     .registers 5
     .parameter
     .parameter "mode"
     .parameter "checkAccount"
 
     .prologue
-    .line 507
+    .line 412
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->this$0:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 508
+    .line 413
     invoke-virtual {p1}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -67,661 +65,425 @@
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mContext:Landroid/content/Context;
 
-    .line 509
+    .line 414
     iput p2, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mMode:I
 
-    .line 510
-    iget-object v0, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mContext:Landroid/content/Context;
+    .line 415
+    iput-object p3, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mAccount:Lcom/android/emailcommon/provider/Account;
 
-    invoke-virtual {p3, v0}, Lcom/android/emailcommon/provider/EmailContent$Account;->getStoreUri(Landroid/content/Context;)Ljava/lang/String;
+    .line 416
+    iget-object v0, p3, Lcom/android/emailcommon/provider/Account;->mHostAuthRecv:Lcom/android/emailcommon/provider/HostAuth;
 
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mStoreUri:Ljava/lang/String;
-
-    .line 511
-    iget-object v0, p3, Lcom/android/emailcommon/provider/EmailContent$Account;->mHostAuthRecv:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
-
-    iget-object v0, v0, Lcom/android/emailcommon/provider/EmailContent$HostAuth;->mAddress:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/emailcommon/provider/HostAuth;->mAddress:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mStoreHost:Ljava/lang/String;
 
-    .line 512
-    iget-object v0, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mContext:Landroid/content/Context;
-
-    invoke-virtual {p3, v0}, Lcom/android/emailcommon/provider/EmailContent$Account;->getSenderUri(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mSenderUri:Ljava/lang/String;
-
-    .line 513
-    iget-object v0, p3, Lcom/android/emailcommon/provider/EmailContent$Account;->mEmailAddress:Ljava/lang/String;
+    .line 417
+    iget-object v0, p3, Lcom/android/emailcommon/provider/Account;->mEmailAddress:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mCheckEmail:Ljava/lang/String;
 
-    .line 514
-    iget-object v0, p3, Lcom/android/emailcommon/provider/EmailContent$Account;->mHostAuthRecv:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
+    .line 418
+    iget-object v0, p3, Lcom/android/emailcommon/provider/Account;->mHostAuthRecv:Lcom/android/emailcommon/provider/HostAuth;
 
-    iget-object v0, v0, Lcom/android/emailcommon/provider/EmailContent$HostAuth;->mPassword:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/emailcommon/provider/HostAuth;->mPassword:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mCheckPassword:Ljava/lang/String;
 
-    .line 515
+    .line 419
     return-void
 .end method
 
 
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Lcom/android/emailcommon/mail/MessagingException;
-    .registers 21
+    .registers 16
     .parameter "params"
 
     .prologue
-    .line 524
-    :try_start_0
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mMode:I
-
-    and-int/lit8 v2, v2, 0x4
-
-    if-eqz v2, :cond_d6
-
-    .line 525
-    invoke-virtual/range {p0 .. p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->isCancelled()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_10
-
-    .line 526
-    const/4 v12, 0x0
-
-    .line 637
-    :goto_f
-    return-object v12
-
-    .line 527
-    :cond_10
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Integer;
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v2}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->publishProgress([Ljava/lang/Object;)V
-
-    .line 528
-    sget-boolean v2, Lcom/android/emailcommon/EasRefs;->USER_LOG:Z
-
-    if-eqz v2, :cond_40
-
-    .line 529
-    const-string v2, "Email"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Begin auto-discover for "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mCheckEmail:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 531
-    :cond_40
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mStoreUri:Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mContext:Landroid/content/Context;
+    const/4 v13, -0x1
 
     const/4 v4, 0x0
 
-    invoke-static {v2, v3, v4}, Lcom/android/email/mail/Store;->getInstance(Ljava/lang/String;Landroid/content/Context;Lcom/android/email/mail/Store$PersistentDataCallbacks;)Lcom/android/email/mail/Store;
+    .line 428
+    :try_start_2
+    iget v10, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mMode:I
 
-    move-result-object v1
+    and-int/lit8 v10, v10, 0x4
 
-    .line 535
-    .local v1, store:Lcom/android/email/mail/Store;
-    invoke-static {}, Lcom/android/email/activity/setup/SetupData;->getDomain()Ljava/lang/String;
+    if-eqz v10, :cond_80
+
+    .line 429
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->isCancelled()Z
+
+    move-result v10
+
+    if-eqz v10, :cond_f
+
+    .line 498
+    :cond_e
+    :goto_e
+    return-object v4
+
+    .line 430
+    :cond_f
+    const/4 v10, 0x1
+
+    new-array v10, v10, [Ljava/lang/Integer;
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x1
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    aput-object v12, v10, v11
+
+    invoke-virtual {p0, v10}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->publishProgress([Ljava/lang/Object;)V
+
+    .line 431
+    const-string v10, "Email"
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v12, "Begin auto-discover for "
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    iget-object v12, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mCheckEmail:Ljava/lang/String;
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 432
+    iget-object v10, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mAccount:Lcom/android/emailcommon/provider/Account;
+
+    iget-object v11, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mContext:Landroid/content/Context;
+
+    invoke-static {v10, v11}, Lcom/android/email/mail/Store;->getInstance(Lcom/android/emailcommon/provider/Account;Landroid/content/Context;)Lcom/android/email/mail/Store;
+
+    move-result-object v9
+
+    .line 433
+    .local v9, store:Lcom/android/email/mail/Store;
+    iget-object v10, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mContext:Landroid/content/Context;
+
+    iget-object v11, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mCheckEmail:Ljava/lang/String;
+
+    iget-object v12, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mCheckPassword:Ljava/lang/String;
+
+    invoke-virtual {v9, v10, v11, v12}, Lcom/android/email/mail/Store;->autoDiscover(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v5
 
-    .line 537
-    .local v5, checkDomain:Ljava/lang/String;
-    move-object/from16 v0, p0
+    .line 439
+    .local v5, result:Landroid/os/Bundle;
+    if-nez v5, :cond_55
 
-    iget-object v2, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mContext:Landroid/content/Context;
+    .line 440
+    new-instance v4, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;
 
-    move-object/from16 v0, p0
+    const/4 v10, 0x0
 
-    iget-object v3, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mCheckEmail:Ljava/lang/String;
+    const/4 v11, 0x0
 
-    move-object/from16 v0, p0
+    invoke-direct {v4, v10, v11}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;-><init>(ZLcom/android/emailcommon/provider/HostAuth;)V
 
-    iget-object v4, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mCheckPassword:Ljava/lang/String;
+    goto :goto_e
 
-    const/4 v6, 0x0
+    .line 495
+    .end local v5           #result:Landroid/os/Bundle;
+    .end local v9           #store:Lcom/android/email/mail/Store;
+    :catch_53
+    move-exception v4
 
-    invoke-virtual/range {v1 .. v6}, Lcom/android/email/mail/Store;->autoDiscover(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/os/Bundle;
+    .line 498
+    .local v4, me:Lcom/android/emailcommon/mail/MessagingException;
+    goto :goto_e
 
-    move-result-object v14
+    .line 442
+    .end local v4           #me:Lcom/android/emailcommon/mail/MessagingException;
+    .restart local v5       #result:Landroid/os/Bundle;
+    .restart local v9       #store:Lcom/android/email/mail/Store;
+    :cond_55
+    const-string v10, "autodiscover_error_code"
 
-    .line 546
-    .local v14, result:Landroid/os/Bundle;
-    if-nez v14, :cond_86
-
-    .line 547
-    new-instance v12, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-direct {v12, v2, v3}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;-><init>(ZLcom/android/emailcommon/provider/EmailContent$HostAuth;)V
-    :try_end_6b
-    .catch Lcom/android/emailcommon/mail/MessagingException; {:try_start_0 .. :try_end_6b} :catch_6c
-
-    goto :goto_f
-
-    .line 632
-    .end local v1           #store:Lcom/android/email/mail/Store;
-    .end local v5           #checkDomain:Ljava/lang/String;
-    .end local v14           #result:Landroid/os/Bundle;
-    :catch_6c
-    move-exception v12
-
-    .line 636
-    .local v12, me:Lcom/android/emailcommon/mail/MessagingException;
-    const-string v2, "Email"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "AccountCheckTask MessagingException "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_f
-
-    .line 549
-    .end local v12           #me:Lcom/android/emailcommon/mail/MessagingException;
-    .restart local v1       #store:Lcom/android/email/mail/Store;
-    .restart local v5       #checkDomain:Ljava/lang/String;
-    .restart local v14       #result:Landroid/os/Bundle;
-    :cond_86
-    :try_start_86
-    const-string v2, "autodiscover_error_code"
-
-    invoke-virtual {v14, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
-
-    move-result v9
-
-    .line 552
-    .local v9, errorCode:I
-    invoke-static {}, Lcom/android/email/activity/setup/SetupData;->getAutoDiscoverCount()I
-
-    move-result v11
-
-    .line 553
-    .local v11, mCheckAutodicoverCount:I
-    if-nez v11, :cond_a2
-
-    .line 554
-    const/4 v2, 0x1
-
-    invoke-static {v2}, Lcom/android/email/activity/setup/SetupData;->setAutoDiscoverCount(I)V
-
-    .line 555
-    const/4 v2, -0x1
-
-    if-eq v9, v2, :cond_a9
-
-    .line 556
-    new-instance v12, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-direct {v12, v2, v3}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;-><init>(ZLcom/android/emailcommon/provider/EmailContent$HostAuth;)V
-
-    goto/16 :goto_f
-
-    .line 557
-    :cond_a2
-    const/4 v2, 0x1
-
-    if-ne v2, v11, :cond_a9
-
-    .line 558
-    const/4 v2, 0x2
-
-    invoke-static {v2}, Lcom/android/email/activity/setup/SetupData;->setAutoDiscoverCount(I)V
-
-    .line 561
-    :cond_a9
-    const/4 v2, 0x5
-
-    if-eq v9, v2, :cond_af
-
-    const/4 v2, 0x1
-
-    if-ne v9, v2, :cond_b8
-
-    .line 563
-    :cond_af
-    new-instance v12, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    invoke-direct {v12, v2, v3}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;-><init>(ZLcom/android/emailcommon/provider/EmailContent$HostAuth;)V
-
-    goto/16 :goto_f
-
-    .line 564
-    :cond_b8
-    const/4 v2, -0x1
-
-    if-eq v9, v2, :cond_c4
-
-    .line 565
-    new-instance v12, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-direct {v12, v2, v3}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;-><init>(ZLcom/android/emailcommon/provider/EmailContent$HostAuth;)V
-
-    goto/16 :goto_f
-
-    .line 567
-    :cond_c4
-    const-string v2, "autodiscover_host_auth"
-
-    invoke-virtual {v14, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object v17
-
-    check-cast v17, Lcom/android/emailcommon/provider/EmailContent$HostAuth;
-
-    .line 569
-    .local v17, serverInfo:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
-    new-instance v12, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;
-
-    const/4 v2, 0x0
-
-    move-object/from16 v0, v17
-
-    invoke-direct {v12, v2, v0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;-><init>(ZLcom/android/emailcommon/provider/EmailContent$HostAuth;)V
-
-    goto/16 :goto_f
-
-    .line 574
-    .end local v1           #store:Lcom/android/email/mail/Store;
-    .end local v5           #checkDomain:Ljava/lang/String;
-    .end local v9           #errorCode:I
-    .end local v11           #mCheckAutodicoverCount:I
-    .end local v14           #result:Landroid/os/Bundle;
-    .end local v17           #serverInfo:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
-    :cond_d6
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mMode:I
-
-    and-int/lit8 v2, v2, 0x1
-
-    if-eqz v2, :cond_193
-
-    .line 575
-    invoke-virtual/range {p0 .. p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->isCancelled()Z
+    invoke-virtual {v5, v10}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v2
 
-    if-eqz v2, :cond_e7
+    .line 444
+    .local v2, errorCode:I
+    const/16 v10, 0xb
 
-    .line 576
-    const/4 v12, 0x0
+    if-ne v2, v10, :cond_67
 
-    goto/16 :goto_f
+    .line 445
+    new-instance v4, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;
 
-    .line 577
-    :cond_e7
-    const-string v2, "Email"
+    const/4 v10, 0x1
 
-    const-string v3, "Begin check of incoming email settings"
+    const/4 v11, 0x0
 
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-direct {v4, v10, v11}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;-><init>(ZLcom/android/emailcommon/provider/HostAuth;)V
 
-    .line 578
-    const/4 v2, 0x1
+    goto :goto_e
 
-    new-array v2, v2, [Ljava/lang/Integer;
+    .line 446
+    :cond_67
+    if-eq v2, v13, :cond_71
 
-    const/4 v3, 0x0
+    .line 447
+    new-instance v4, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;
 
-    const/4 v4, 0x2
+    const/4 v10, 0x0
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const/4 v11, 0x0
 
-    move-result-object v4
+    invoke-direct {v4, v10, v11}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;-><init>(ZLcom/android/emailcommon/provider/HostAuth;)V
 
-    aput-object v4, v2, v3
+    goto :goto_e
 
-    move-object/from16 v0, p0
+    .line 449
+    :cond_71
+    const-string v10, "autodiscover_host_auth"
 
-    invoke-virtual {v0, v2}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->publishProgress([Ljava/lang/Object;)V
-
-    .line 582
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->this$0:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mContext:Landroid/content/Context;
-
-    invoke-static {}, Lcom/android/email/activity/setup/SetupData;->getAccount()Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    move-result-object v4
-
-    #calls: Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->checkITPolicy(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Account;)V
-    invoke-static {v2, v3, v4}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->access$000(Lcom/android/email/activity/setup/AccountCheckSettingsFragment;Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Account;)V
-
-    .line 585
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mStoreUri:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "?"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-static {}, Lcom/android/email/activity/setup/SetupData;->getAccount()Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    move-result-object v3
-
-    iget-object v3, v3, Lcom/android/emailcommon/provider/EmailContent$Account;->mCbaCertificateAlias:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v18
-
-    .line 586
-    .local v18, tmpURI:Ljava/lang/String;
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mContext:Landroid/content/Context;
-
-    const/4 v3, 0x0
-
-    move-object/from16 v0, v18
-
-    invoke-static {v0, v2, v3}, Lcom/android/email/mail/Store;->getInstance(Ljava/lang/String;Landroid/content/Context;Lcom/android/email/mail/Store$PersistentDataCallbacks;)Lcom/android/email/mail/Store;
-
-    move-result-object v1
-
-    .line 590
-    .restart local v1       #store:Lcom/android/email/mail/Store;
-    invoke-virtual {v1}, Lcom/android/email/mail/Store;->checkSettings()Landroid/os/Bundle;
-
-    move-result-object v7
-
-    .line 591
-    .local v7, bundle:Landroid/os/Bundle;
-    const/4 v15, 0x0
-
-    .line 593
-    .local v15, resultCode:I
-    if-eqz v7, :cond_154
-
-    .line 594
-    const-string v2, "validate_result_code"
-
-    invoke-virtual {v7, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
-
-    move-result v15
-
-    .line 596
-    const-string v2, "validate_protocol_version"
-
-    invoke-virtual {v7, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v13
-
-    .line 598
-    .local v13, protocolVersion:Ljava/lang/String;
-    if-eqz v13, :cond_154
-
-    .line 599
-    invoke-static {}, Lcom/android/email/activity/setup/SetupData;->getAccount()Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    move-result-object v2
-
-    iput-object v13, v2, Lcom/android/emailcommon/provider/EmailContent$Account;->mProtocolVersion:Ljava/lang/String;
-
-    .line 602
-    .end local v13           #protocolVersion:Ljava/lang/String;
-    :cond_154
-    const/4 v2, 0x7
-
-    if-ne v15, v2, :cond_16e
-
-    .line 603
-    const-string v2, "validate_policy_set"
-
-    invoke-virtual {v7, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/android/emailcommon/service/PolicySet;
-
-    invoke-static {v2}, Lcom/android/email/activity/setup/SetupData;->setPolicySet(Lcom/android/emailcommon/service/PolicySet;)V
-
-    .line 605
-    new-instance v12, Lcom/android/emailcommon/mail/MessagingException;
-
-    const/4 v2, 0x7
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mStoreHost:Ljava/lang/String;
-
-    invoke-direct {v12, v2, v3}, Lcom/android/emailcommon/mail/MessagingException;-><init>(ILjava/lang/String;)V
-
-    goto/16 :goto_f
-
-    .line 607
-    :cond_16e
-    const/16 v2, 0x8
-
-    if-ne v15, v2, :cond_183
-
-    .line 608
-    const-string v2, "validate_unsupported_policies"
-
-    invoke-virtual {v7, v2}, Landroid/os/Bundle;->getStringArray(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {v5, v10}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object v8
 
-    .line 610
-    .local v8, data:[Ljava/lang/String;
-    new-instance v12, Lcom/android/emailcommon/mail/MessagingException;
+    check-cast v8, Lcom/android/emailcommon/provider/HostAuth;
 
-    move-object/from16 v0, p0
+    .line 451
+    .local v8, serverInfo:Lcom/android/emailcommon/provider/HostAuth;
+    new-instance v4, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;
 
-    iget-object v2, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mStoreHost:Ljava/lang/String;
+    const/4 v10, 0x0
 
-    invoke-direct {v12, v15, v2, v8}, Lcom/android/emailcommon/mail/MessagingException;-><init>(ILjava/lang/String;Ljava/lang/Object;)V
+    invoke-direct {v4, v10, v8}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;-><init>(ZLcom/android/emailcommon/provider/HostAuth;)V
 
-    goto/16 :goto_f
+    goto :goto_e
 
-    .line 611
-    .end local v8           #data:[Ljava/lang/String;
-    :cond_183
-    const/4 v2, -0x1
+    .line 456
+    .end local v2           #errorCode:I
+    .end local v5           #result:Landroid/os/Bundle;
+    .end local v8           #serverInfo:Lcom/android/emailcommon/provider/HostAuth;
+    .end local v9           #store:Lcom/android/email/mail/Store;
+    :cond_80
+    iget v10, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mMode:I
 
-    if-eq v15, v2, :cond_193
+    and-int/lit8 v10, v10, 0x1
 
-    .line 612
-    const-string v2, "validate_error_message"
+    if-eqz v10, :cond_ef
 
-    invoke-virtual {v7, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 457
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->isCancelled()Z
+
+    move-result v10
+
+    if-nez v10, :cond_e
+
+    .line 458
+    const-string v10, "Email"
+
+    const-string v11, "Begin check of incoming email settings"
+
+    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 459
+    const/4 v10, 0x1
+
+    new-array v10, v10, [Ljava/lang/Integer;
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x2
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    aput-object v12, v10, v11
+
+    invoke-virtual {p0, v10}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->publishProgress([Ljava/lang/Object;)V
+
+    .line 460
+    iget-object v10, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mAccount:Lcom/android/emailcommon/provider/Account;
+
+    iget-object v11, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mContext:Landroid/content/Context;
+
+    invoke-static {v10, v11}, Lcom/android/email/mail/Store;->getInstance(Lcom/android/emailcommon/provider/Account;Landroid/content/Context;)Lcom/android/email/mail/Store;
+
+    move-result-object v9
+
+    .line 461
+    .restart local v9       #store:Lcom/android/email/mail/Store;
+    invoke-virtual {v9}, Lcom/android/email/mail/Store;->checkSettings()Landroid/os/Bundle;
+
+    move-result-object v0
+
+    .line 462
+    .local v0, bundle:Landroid/os/Bundle;
+    const/4 v6, 0x0
+
+    .line 463
+    .local v6, resultCode:I
+    if-eqz v0, :cond_b6
+
+    .line 464
+    const-string v10, "validate_result_code"
+
+    invoke-virtual {v0, v10}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v6
+
+    .line 467
+    :cond_b6
+    const/4 v10, 0x7
+
+    if-ne v6, v10, :cond_cd
+
+    .line 468
+    const-string v10, "validate_policy_set"
+
+    invoke-virtual {v0, v10}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object v10
 
-    .line 614
-    .local v10, errorMessage:Ljava/lang/String;
-    new-instance v12, Lcom/android/emailcommon/mail/MessagingException;
+    check-cast v10, Lcom/android/emailcommon/provider/Policy;
 
-    invoke-direct {v12, v15, v10}, Lcom/android/emailcommon/mail/MessagingException;-><init>(ILjava/lang/String;)V
+    invoke-static {v10}, Lcom/android/email/activity/setup/SetupData;->setPolicy(Lcom/android/emailcommon/provider/Policy;)V
 
-    goto/16 :goto_f
+    .line 470
+    new-instance v4, Lcom/android/emailcommon/mail/MessagingException;
 
-    .line 619
-    .end local v1           #store:Lcom/android/email/mail/Store;
-    .end local v7           #bundle:Landroid/os/Bundle;
-    .end local v10           #errorMessage:Ljava/lang/String;
-    .end local v15           #resultCode:I
-    .end local v18           #tmpURI:Ljava/lang/String;
-    :cond_193
-    move-object/from16 v0, p0
+    iget-object v10, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mStoreHost:Ljava/lang/String;
 
-    iget v2, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mMode:I
+    invoke-direct {v4, v6, v10}, Lcom/android/emailcommon/mail/MessagingException;-><init>(ILjava/lang/String;)V
 
-    and-int/lit8 v2, v2, 0x2
+    goto/16 :goto_e
 
-    if-eqz v2, :cond_1d0
+    .line 471
+    :cond_cd
+    const/16 v10, 0x8
 
-    .line 620
-    invoke-virtual/range {p0 .. p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->isCancelled()Z
+    if-ne v6, v10, :cond_e0
 
-    move-result v2
+    .line 472
+    const-string v10, "validate_unsupported_policies"
 
-    if-eqz v2, :cond_1a4
+    invoke-virtual {v0, v10}, Landroid/os/Bundle;->getStringArray(Ljava/lang/String;)[Ljava/lang/String;
 
-    .line 621
-    const/4 v12, 0x0
+    move-result-object v1
 
-    goto/16 :goto_f
+    .line 474
+    .local v1, data:[Ljava/lang/String;
+    new-instance v4, Lcom/android/emailcommon/mail/MessagingException;
 
-    .line 622
-    :cond_1a4
-    const-string v2, "Email"
+    iget-object v10, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mStoreHost:Ljava/lang/String;
 
-    const-string v3, "Begin check of outgoing email settings"
+    invoke-direct {v4, v6, v10, v1}, Lcom/android/emailcommon/mail/MessagingException;-><init>(ILjava/lang/String;Ljava/lang/Object;)V
 
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    goto/16 :goto_e
 
-    .line 623
-    const/4 v2, 0x1
+    .line 475
+    .end local v1           #data:[Ljava/lang/String;
+    :cond_e0
+    if-eq v6, v13, :cond_ef
 
-    new-array v2, v2, [Ljava/lang/Integer;
+    .line 476
+    const-string v10, "validate_error_message"
 
-    const/4 v3, 0x0
+    invoke-virtual {v0, v10}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    const/4 v4, 0x3
+    move-result-object v3
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 478
+    .local v3, errorMessage:Ljava/lang/String;
+    new-instance v4, Lcom/android/emailcommon/mail/MessagingException;
 
-    move-result-object v4
+    invoke-direct {v4, v6, v3}, Lcom/android/emailcommon/mail/MessagingException;-><init>(ILjava/lang/String;)V
 
-    aput-object v4, v2, v3
+    goto/16 :goto_e
 
-    move-object/from16 v0, p0
+    .line 483
+    .end local v0           #bundle:Landroid/os/Bundle;
+    .end local v3           #errorMessage:Ljava/lang/String;
+    .end local v6           #resultCode:I
+    .end local v9           #store:Lcom/android/email/mail/Store;
+    :cond_ef
+    iget v10, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mMode:I
 
-    invoke-virtual {v0, v2}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->publishProgress([Ljava/lang/Object;)V
+    and-int/lit8 v10, v10, 0x2
 
-    .line 624
-    move-object/from16 v0, p0
+    if-eqz v10, :cond_e
 
-    iget-object v2, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mContext:Landroid/content/Context;
+    .line 484
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->isCancelled()Z
 
-    move-object/from16 v0, p0
+    move-result v10
 
-    iget-object v3, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mSenderUri:Ljava/lang/String;
+    if-nez v10, :cond_e
 
-    invoke-static {v2, v3}, Lcom/android/email/mail/Sender;->getInstance(Landroid/content/Context;Ljava/lang/String;)Lcom/android/email/mail/Sender;
+    .line 485
+    const-string v10, "Email"
 
-    move-result-object v16
+    const-string v11, "Begin check of outgoing email settings"
 
-    .line 625
-    .local v16, sender:Lcom/android/email/mail/Sender;
-    invoke-virtual/range {v16 .. v16}, Lcom/android/email/mail/Sender;->close()V
+    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 626
-    invoke-virtual/range {v16 .. v16}, Lcom/android/email/mail/Sender;->open()V
+    .line 486
+    const/4 v10, 0x1
 
-    .line 627
-    invoke-virtual/range {v16 .. v16}, Lcom/android/email/mail/Sender;->close()V
-    :try_end_1d0
-    .catch Lcom/android/emailcommon/mail/MessagingException; {:try_start_86 .. :try_end_1d0} :catch_6c
+    new-array v10, v10, [Ljava/lang/Integer;
 
-    .line 631
-    .end local v16           #sender:Lcom/android/email/mail/Sender;
-    :cond_1d0
-    const/4 v12, 0x0
+    const/4 v11, 0x0
 
-    goto/16 :goto_f
+    const/4 v12, 0x3
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    aput-object v12, v10, v11
+
+    invoke-virtual {p0, v10}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->publishProgress([Ljava/lang/Object;)V
+
+    .line 487
+    iget-object v10, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mContext:Landroid/content/Context;
+
+    iget-object v11, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->mAccount:Lcom/android/emailcommon/provider/Account;
+
+    invoke-static {v10, v11}, Lcom/android/email/mail/Sender;->getInstance(Landroid/content/Context;Lcom/android/emailcommon/provider/Account;)Lcom/android/email/mail/Sender;
+
+    move-result-object v7
+
+    .line 488
+    .local v7, sender:Lcom/android/email/mail/Sender;
+    invoke-virtual {v7}, Lcom/android/email/mail/Sender;->close()V
+
+    .line 489
+    invoke-virtual {v7}, Lcom/android/email/mail/Sender;->open()V
+
+    .line 490
+    invoke-virtual {v7}, Lcom/android/email/mail/Sender;->close()V
+    :try_end_121
+    .catch Lcom/android/emailcommon/mail/MessagingException; {:try_start_2 .. :try_end_121} :catch_53
+
+    goto/16 :goto_e
 .end method
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
@@ -729,7 +491,7 @@
     .parameter "x0"
 
     .prologue
-    .line 485
+    .line 398
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -741,348 +503,91 @@
 .end method
 
 .method protected onPostExecute(Lcom/android/emailcommon/mail/MessagingException;)V
-    .registers 20
+    .registers 7
     .parameter "result"
 
     .prologue
-    .line 717
-    invoke-virtual/range {p0 .. p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->isCancelled()Z
-
-    move-result v13
-
-    if-eqz v13, :cond_7
-
-    .line 833
-    .end local p1
-    :goto_6
-    return-void
-
-    .line 719
-    .restart local p1
-    :cond_7
-    if-nez p1, :cond_17
-
-    .line 720
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->this$0:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
-
-    const/4 v14, 0x4
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0x0
-
-    invoke-virtual/range {v13 .. v17}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->reportProgress(IILjava/lang/String;Lcom/android/emailcommon/provider/EmailContent$HostAuth;)V
-
-    goto :goto_6
-
-    .line 722
-    :cond_17
-    const/4 v10, 0x6
-
-    .line 723
-    .local v10, progressState:I
-    invoke-virtual/range {p1 .. p1}, Lcom/android/emailcommon/mail/MessagingException;->getExceptionType()I
+    .line 570
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->isCancelled()Z
 
     move-result v2
 
-    .line 725
-    .local v2, exceptionType:I
-    const-string v13, "Email"
+    if-eqz v2, :cond_7
 
-    new-instance v14, Ljava/lang/StringBuilder;
+    .line 594
+    :goto_6
+    return-void
 
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+    .line 571
+    :cond_7
+    if-nez p1, :cond_11
 
-    const-string v15, "message : "
+    .line 572
+    iget-object v2, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->this$0:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v3, 0x4
 
-    move-result-object v14
-
-    invoke-virtual/range {p1 .. p1}, Lcom/android/emailcommon/mail/MessagingException;->getMessage()Ljava/lang/String;
-
-    move-result-object v15
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v13, v14}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 726
-    const-string v8, ""
-
-    .line 727
-    .local v8, message:Ljava/lang/String;
     const/4 v4, 0x0
 
-    .line 728
-    .local v4, hostAuth:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
-    const/4 v6, 0x0
-
-    .line 730
-    .local v6, id:I
-    sparse-switch v2, :sswitch_data_c8
-
-    .line 828
-    const v6, 0x7f080110
-
-    .line 831
-    .end local p1
-    :goto_42
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->this$0:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
-
-    invoke-virtual {v13, v10, v6, v8, v4}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->reportProgress(IILjava/lang/String;Lcom/android/emailcommon/provider/EmailContent$HostAuth;)V
+    #calls: Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->reportProgress(ILcom/android/emailcommon/mail/MessagingException;)V
+    invoke-static {v2, v3, v4}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->access$000(Lcom/android/email/activity/setup/AccountCheckSettingsFragment;ILcom/android/emailcommon/mail/MessagingException;)V
 
     goto :goto_6
 
-    .line 735
-    .restart local p1
-    :sswitch_4a
-    const v6, 0x7f0803d6
-
-    .line 739
-    const/4 v10, 0x7
-
-    .line 740
-    goto :goto_42
-
-    .line 742
-    :sswitch_4f
-    check-cast p1, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;
-
-    .end local p1
-    move-object/from16 v0, p1
-
-    iget-object v4, v0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AutoDiscoverResults;->mHostAuth:Lcom/android/emailcommon/provider/EmailContent$HostAuth;
-
-    .line 744
-    const/4 v13, 0x1
-
-    invoke-static {}, Lcom/android/email/activity/setup/SetupData;->getAutoDiscoverCount()I
-
-    move-result v14
-
-    if-eq v13, v14, :cond_5e
-
-    if-eqz v4, :cond_61
-
-    .line 746
-    :cond_5e
-    const/16 v10, 0x8
-
-    goto :goto_42
-
-    .line 748
-    :cond_61
-    const v6, 0x7f0803d6
-
-    .line 749
-    const/4 v10, 0x7
-
-    .line 752
-    goto :goto_42
-
-    .line 758
-    .restart local p1
-    :sswitch_66
-    const/4 v10, 0x5
-
-    .line 759
-    goto :goto_42
-
-    .line 766
-    :sswitch_68
-    const v6, 0x7f08010d
-
-    .line 767
-    goto :goto_42
-
-    .line 769
-    :sswitch_6c
-    const v6, 0x7f08010b
-
-    .line 770
-    goto :goto_42
-
-    .line 772
-    :sswitch_70
-    const v6, 0x7f08010f
-
-    .line 773
-    goto :goto_42
-
-    .line 775
-    :sswitch_74
-    const v6, 0x7f080115
-
-    .line 776
-    goto :goto_42
-
-    .line 778
-    :sswitch_78
-    const v6, 0x7f080112
-
-    .line 779
-    goto :goto_42
-
-    .line 781
-    :sswitch_7c
-    const v6, 0x7f080113
-
-    .line 782
-    goto :goto_42
-
-    .line 784
-    :sswitch_80
-    const v6, 0x7f08011a
-
-    .line 787
-    invoke-virtual/range {p1 .. p1}, Lcom/android/emailcommon/mail/MessagingException;->getExceptionData()Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, [Ljava/lang/String;
-
-    move-object v12, v13
-
-    check-cast v12, [Ljava/lang/String;
-
-    .line 788
-    .local v12, unsupportedPolicies:[Ljava/lang/String;
-    if-nez v12, :cond_96
-
-    .line 789
-    const-string v13, "AccountCheckSettingsFragment"
-
-    const-string v14, "No data for unsupported policies?"
-
-    invoke-static {v13, v14}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_42
-
-    .line 794
-    :cond_96
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 795
-    .local v11, sb:Ljava/lang/StringBuilder;
-    const/4 v3, 0x1
-
-    .line 796
-    .local v3, first:Z
-    move-object v1, v12
-
-    .local v1, arr$:[Ljava/lang/String;
-    array-length v7, v1
-
-    .local v7, len$:I
-    const/4 v5, 0x0
-
-    .local v5, i$:I
-    :goto_9f
-    if-ge v5, v7, :cond_b2
-
-    aget-object v9, v1, v5
-
-    .line 797
-    .local v9, policyName:Ljava/lang/String;
-    if-eqz v3, :cond_ac
-
-    .line 798
-    const/4 v3, 0x0
-
-    .line 802
-    :goto_a6
-    invoke-virtual {v11, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 796
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_9f
-
-    .line 800
-    :cond_ac
-    const-string v13, ", "
-
-    invoke-virtual {v11, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_a6
-
-    .line 804
-    .end local v9           #policyName:Ljava/lang/String;
-    :cond_b2
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    .line 805
-    goto :goto_42
-
-    .line 807
-    .end local v1           #arr$:[Ljava/lang/String;
-    .end local v3           #first:Z
-    .end local v5           #i$:I
-    .end local v7           #len$:I
-    .end local v11           #sb:Ljava/lang/StringBuilder;
-    .end local v12           #unsupportedPolicies:[Ljava/lang/String;
-    :sswitch_b7
-    const v6, 0x7f080117
-
-    .line 808
-    goto :goto_42
-
-    .line 810
-    :sswitch_bb
-    const v6, 0x7f080114
-
-    .line 811
-    goto :goto_42
-
-    .line 821
-    :sswitch_bf
-    const v6, 0x7f080116
-
-    .line 823
-    goto :goto_42
-
-    .line 825
-    :sswitch_c3
-    const v6, 0x7f0803ec
-
-    .line 826
-    goto/16 :goto_42
-
-    .line 730
-    :sswitch_data_c8
-    .sparse-switch
-        0x1 -> :sswitch_74
-        0x2 -> :sswitch_78
-        0x3 -> :sswitch_7c
-        0x4 -> :sswitch_bb
-        0x5 -> :sswitch_6c
-        0x7 -> :sswitch_66
-        0x8 -> :sswitch_80
-        0x9 -> :sswitch_b7
-        0xe -> :sswitch_c3
-        0x10 -> :sswitch_bf
-        0x4a -> :sswitch_68
-        0x4b -> :sswitch_4a
-        0x4c -> :sswitch_4f
-        0x4d -> :sswitch_70
-    .end sparse-switch
+    .line 574
+    :cond_11
+    const/4 v1, 0x6
+
+    .line 575
+    .local v1, progressState:I
+    invoke-virtual {p1}, Lcom/android/emailcommon/mail/MessagingException;->getExceptionType()I
+
+    move-result v0
+
+    .line 577
+    .local v0, exceptionType:I
+    packed-switch v0, :pswitch_data_26
+
+    .line 592
+    :goto_19
+    :pswitch_19
+    iget-object v2, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->this$0:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
+
+    #calls: Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->reportProgress(ILcom/android/emailcommon/mail/MessagingException;)V
+    invoke-static {v2, v1, p1}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->access$000(Lcom/android/email/activity/setup/AccountCheckSettingsFragment;ILcom/android/emailcommon/mail/MessagingException;)V
+
+    goto :goto_6
+
+    .line 581
+    :pswitch_1f
+    const/4 v1, 0x7
+
+    .line 582
+    goto :goto_19
+
+    .line 584
+    :pswitch_21
+    const/16 v1, 0x8
+
+    .line 585
+    goto :goto_19
+
+    .line 589
+    :pswitch_24
+    const/4 v1, 0x5
+
+    goto :goto_19
+
+    .line 577
+    :pswitch_data_26
+    .packed-switch 0x7
+        :pswitch_24
+        :pswitch_19
+        :pswitch_19
+        :pswitch_19
+        :pswitch_1f
+        :pswitch_21
+    .end packed-switch
 .end method
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
@@ -1090,7 +595,7 @@
     .parameter "x0"
 
     .prologue
-    .line 485
+    .line 398
     check-cast p1, Lcom/android/emailcommon/mail/MessagingException;
 
     .end local p1
@@ -1100,38 +605,39 @@
 .end method
 
 .method protected varargs onProgressUpdate([Ljava/lang/Integer;)V
-    .registers 6
+    .registers 5
     .parameter "progress"
 
     .prologue
-    const/4 v3, 0x0
-
-    const/4 v2, 0x0
-
-    .line 701
+    .line 555
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->isCancelled()Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_7
 
-    .line 704
-    :goto_8
+    .line 557
+    :goto_6
     return-void
 
-    .line 703
-    :cond_9
+    .line 556
+    :cond_7
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$AccountCheckTask;->this$0:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
 
-    aget-object v1, p1, v2
+    const/4 v1, 0x0
+
+    aget-object v1, p1, v1
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    invoke-virtual {v0, v1, v2, v3, v3}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->reportProgress(IILjava/lang/String;Lcom/android/emailcommon/provider/EmailContent$HostAuth;)V
+    const/4 v2, 0x0
 
-    goto :goto_8
+    #calls: Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->reportProgress(ILcom/android/emailcommon/mail/MessagingException;)V
+    invoke-static {v0, v1, v2}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;->access$000(Lcom/android/email/activity/setup/AccountCheckSettingsFragment;ILcom/android/emailcommon/mail/MessagingException;)V
+
+    goto :goto_6
 .end method
 
 .method protected bridge synthetic onProgressUpdate([Ljava/lang/Object;)V
@@ -1139,7 +645,7 @@
     .parameter "x0"
 
     .prologue
-    .line 485
+    .line 398
     check-cast p1, [Ljava/lang/Integer;
 
     .end local p1

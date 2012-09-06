@@ -12,13 +12,17 @@
 
 .field private final mBannerView:Landroid/widget/TextView;
 
+.field private mLastAnimator:Landroid/animation/Animator;
+
+.field private mShown:Z
+
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 2
 
     .prologue
-    .line 34
+    .line 33
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
     const/high16 v1, 0x3fc0
@@ -37,34 +41,152 @@
     .parameter "bannerHeight"
 
     .prologue
-    .line 45
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 43
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
+    .line 44
     iput-object p2, p0, Lcom/android/email/activity/BannerController;->mBannerView:Landroid/widget/TextView;
 
-    .line 47
+    .line 45
     iput p3, p0, Lcom/android/email/activity/BannerController;->mBannerHeight:I
 
-    .line 49
+    .line 47
     iget v0, p0, Lcom/android/email/activity/BannerController;->mBannerHeight:I
 
     neg-int v0, v0
 
     invoke-virtual {p0, v0}, Lcom/android/email/activity/BannerController;->setBannerYAnim(I)V
 
-    .line 50
+    .line 48
+    return-void
+.end method
+
+.method private getBannerY()I
+    .registers 2
+
+    .prologue
+    .line 54
+    iget-object v0, p0, Lcom/android/email/activity/BannerController;->mBannerView:Landroid/widget/TextView;
+
+    invoke-virtual {v0}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
+
+    iget v0, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+
+    return v0
+.end method
+
+.method private slideBanner(I)V
+    .registers 9
+    .parameter "toY"
+
+    .prologue
+    const/4 v6, 0x1
+
+    const/4 v5, 0x0
+
+    .line 94
+    iget-object v2, p0, Lcom/android/email/activity/BannerController;->mLastAnimator:Landroid/animation/Animator;
+
+    if-eqz v2, :cond_b
+
+    .line 95
+    iget-object v2, p0, Lcom/android/email/activity/BannerController;->mLastAnimator:Landroid/animation/Animator;
+
+    invoke-virtual {v2}, Landroid/animation/Animator;->cancel()V
+
+    .line 98
+    :cond_b
+    new-array v1, v6, [Landroid/animation/PropertyValuesHolder;
+
+    const-string v2, "bannerYAnim"
+
+    const/4 v3, 0x2
+
+    new-array v3, v3, [I
+
+    invoke-direct {p0}, Lcom/android/email/activity/BannerController;->getBannerY()I
+
+    move-result v4
+
+    aput v4, v3, v5
+
+    aput p1, v3, v6
+
+    invoke-static {v2, v3}, Landroid/animation/PropertyValuesHolder;->ofInt(Ljava/lang/String;[I)Landroid/animation/PropertyValuesHolder;
+
+    move-result-object v2
+
+    aput-object v2, v1, v5
+
+    .line 100
+    .local v1, values:[Landroid/animation/PropertyValuesHolder;
+    invoke-static {p0, v1}, Landroid/animation/ObjectAnimator;->ofPropertyValuesHolder(Ljava/lang/Object;[Landroid/animation/PropertyValuesHolder;)Landroid/animation/ObjectAnimator;
+
+    move-result-object v2
+
+    const-wide/16 v3, 0x64
+
+    invoke-virtual {v2, v3, v4}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    move-result-object v0
+
+    .line 102
+    .local v0, animator:Landroid/animation/ObjectAnimator;
+    sget-object v2, Lcom/android/email/activity/BannerController;->INTERPOLATOR:Landroid/animation/TimeInterpolator;
+
+    invoke-virtual {v0, v2}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    .line 103
+    iput-object v0, p0, Lcom/android/email/activity/BannerController;->mLastAnimator:Landroid/animation/Animator;
+
+    .line 104
+    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
+
+    .line 105
     return-void
 .end method
 
 
 # virtual methods
+.method public dismiss()V
+    .registers 2
+
+    .prologue
+    .line 86
+    iget-boolean v0, p0, Lcom/android/email/activity/BannerController;->mShown:Z
+
+    if-nez v0, :cond_5
+
+    .line 91
+    :goto_4
+    return-void
+
+    .line 89
+    :cond_5
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/email/activity/BannerController;->mShown:Z
+
+    .line 90
+    iget v0, p0, Lcom/android/email/activity/BannerController;->mBannerHeight:I
+
+    neg-int v0, v0
+
+    invoke-direct {p0, v0}, Lcom/android/email/activity/BannerController;->slideBanner(I)V
+
+    goto :goto_4
+.end method
+
 .method public setBannerYAnim(I)V
     .registers 3
     .parameter "y"
 
     .prologue
-    .line 66
+    .line 63
     iget-object v0, p0, Lcom/android/email/activity/BannerController;->mBannerView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -75,11 +197,47 @@
 
     iput p1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 67
+    .line 64
     iget-object v0, p0, Lcom/android/email/activity/BannerController;->mBannerView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->requestLayout()V
 
-    .line 68
+    .line 65
     return-void
+.end method
+
+.method public show(Ljava/lang/String;)Z
+    .registers 5
+    .parameter "message"
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v0, 0x0
+
+    .line 73
+    iget-boolean v2, p0, Lcom/android/email/activity/BannerController;->mShown:Z
+
+    if-eqz v2, :cond_7
+
+    .line 79
+    :goto_6
+    return v0
+
+    .line 76
+    :cond_7
+    iput-boolean v1, p0, Lcom/android/email/activity/BannerController;->mShown:Z
+
+    .line 77
+    iget-object v2, p0, Lcom/android/email/activity/BannerController;->mBannerView:Landroid/widget/TextView;
+
+    invoke-virtual {v2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 78
+    invoke-direct {p0, v0}, Lcom/android/email/activity/BannerController;->slideBanner(I)V
+
+    move v0, v1
+
+    .line 79
+    goto :goto_6
 .end method

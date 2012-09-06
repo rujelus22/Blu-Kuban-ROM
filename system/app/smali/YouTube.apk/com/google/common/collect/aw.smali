@@ -1,93 +1,112 @@
 .class final Lcom/google/common/collect/aw;
-.super Ljava/lang/Object;
+.super Lcom/google/common/collect/q;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/Iterator;
+.field final synthetic a:I
 
 .field final synthetic b:Lcom/google/common/collect/av;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/av;Ljava/util/Iterator;)V
+.method constructor <init>(Lcom/google/common/collect/av;I)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 396
+    .line 578
     iput-object p1, p0, Lcom/google/common/collect/aw;->b:Lcom/google/common/collect/av;
 
-    iput-object p2, p0, Lcom/google/common/collect/aw;->a:Ljava/util/Iterator;
+    iput p2, p0, Lcom/google/common/collect/aw;->a:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/common/collect/q;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .registers 2
-
-    .prologue
-    .line 398
-    iget-object v0, p0, Lcom/google/common/collect/aw;->a:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final synthetic next()Ljava/lang/Object;
+.method public final getKey()Ljava/lang/Object;
     .registers 3
 
     .prologue
-    .line 396
-    iget-object v0, p0, Lcom/google/common/collect/aw;->a:Ljava/util/Iterator;
+    .line 580
+    iget-object v0, p0, Lcom/google/common/collect/aw;->b:Lcom/google/common/collect/av;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v0, v0, Lcom/google/common/collect/av;->a:Lcom/google/common/collect/au;
 
-    move-result-object v0
+    iget-object v0, v0, Lcom/google/common/collect/au;->b:Lcom/google/common/collect/ArrayTable;
 
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    #getter for: Lcom/google/common/collect/ArrayTable;->rowList:Lcom/google/common/collect/ImmutableList;
+    invoke-static {v0}, Lcom/google/common/collect/ArrayTable;->access$200(Lcom/google/common/collect/ArrayTable;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    iget v1, p0, Lcom/google/common/collect/aw;->a:I
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-static {v1, v0}, Lcom/google/common/collect/Multisets;->a(Ljava/lang/Object;I)Lcom/google/common/collect/fk;
+    invoke-virtual {v0, v1}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final remove()V
-    .registers 2
+.method public final getValue()Ljava/lang/Object;
+    .registers 3
 
     .prologue
-    .line 408
-    iget-object v0, p0, Lcom/google/common/collect/aw;->a:Ljava/util/Iterator;
+    .line 583
+    iget-object v0, p0, Lcom/google/common/collect/aw;->b:Lcom/google/common/collect/av;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+    iget-object v0, v0, Lcom/google/common/collect/av;->a:Lcom/google/common/collect/au;
 
-    .line 409
-    return-void
+    iget-object v0, v0, Lcom/google/common/collect/au;->b:Lcom/google/common/collect/ArrayTable;
+
+    #getter for: Lcom/google/common/collect/ArrayTable;->array:[[Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/common/collect/ArrayTable;->access$300(Lcom/google/common/collect/ArrayTable;)[[Ljava/lang/Object;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/google/common/collect/aw;->a:I
+
+    aget-object v0, v0, v1
+
+    iget-object v1, p0, Lcom/google/common/collect/aw;->b:Lcom/google/common/collect/av;
+
+    iget-object v1, v1, Lcom/google/common/collect/av;->a:Lcom/google/common/collect/au;
+
+    iget v1, v1, Lcom/google/common/collect/au;->a:I
+
+    aget-object v0, v0, v1
+
+    return-object v0
+.end method
+
+.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 586
+    iget-object v0, p0, Lcom/google/common/collect/aw;->b:Lcom/google/common/collect/av;
+
+    iget-object v0, v0, Lcom/google/common/collect/av;->a:Lcom/google/common/collect/au;
+
+    iget-object v0, v0, Lcom/google/common/collect/au;->b:Lcom/google/common/collect/ArrayTable;
+
+    iget v1, p0, Lcom/google/common/collect/aw;->a:I
+
+    iget-object v2, p0, Lcom/google/common/collect/aw;->b:Lcom/google/common/collect/av;
+
+    iget-object v2, v2, Lcom/google/common/collect/av;->a:Lcom/google/common/collect/au;
+
+    iget v2, v2, Lcom/google/common/collect/au;->a:I
+
+    invoke-virtual {v0, v1, v2, p1}, Lcom/google/common/collect/ArrayTable;->set(IILjava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
 .end method

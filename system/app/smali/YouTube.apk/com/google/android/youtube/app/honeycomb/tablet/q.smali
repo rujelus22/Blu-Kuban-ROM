@@ -1,54 +1,52 @@
 .class final Lcom/google/android/youtube/app/honeycomb/tablet/q;
-.super Lcom/google/android/youtube/core/ui/f;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/tablet/n;
+.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/tablet/m;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/tablet/n;Lcom/google/android/youtube/core/e;)V
-    .registers 3
-    .parameter
+.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/tablet/m;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 403
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/q;->a:Lcom/google/android/youtube/app/honeycomb/tablet/n;
+    .line 417
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/q;->a:Lcom/google/android/youtube/app/honeycomb/tablet/m;
 
-    invoke-direct {p0, p2}, Lcom/google/android/youtube/core/ui/f;-><init>(Lcom/google/android/youtube/core/e;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/model/UserAuth;)V
+.method public final onClick(Landroid/content/DialogInterface;I)V
     .registers 4
+    .parameter
     .parameter
 
     .prologue
-    .line 405
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/q;->a:Lcom/google/android/youtube/app/honeycomb/tablet/n;
+    .line 419
+    const/4 v0, -0x1
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/n;->c(Lcom/google/android/youtube/app/honeycomb/tablet/n;)Lcom/google/android/youtube/core/Analytics;
+    if-ne p2, v0, :cond_c
 
-    move-result-object v0
+    .line 420
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/q;->a:Lcom/google/android/youtube/app/honeycomb/tablet/m;
 
-    const-string v1, "Upload"
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/Analytics;->b(Ljava/lang/String;)V
-
-    .line 406
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/q;->a:Lcom/google/android/youtube/app/honeycomb/tablet/n;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/n;->d(Lcom/google/android/youtube/app/honeycomb/tablet/n;)Landroid/app/Activity;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/m;->a(Lcom/google/android/youtube/app/honeycomb/tablet/m;)Lcom/google/android/youtube/app/honeycomb/tablet/u;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/g;->a(Landroid/app/Activity;)V
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/u;->c()V
 
-    .line 407
+    .line 422
+    :cond_c
     return-void
 .end method

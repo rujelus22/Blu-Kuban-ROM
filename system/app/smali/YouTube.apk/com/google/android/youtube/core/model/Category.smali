@@ -61,7 +61,7 @@
 
     const-string v1, ""
 
-    const v2, 0x7f0a0013
+    const v2, 0x7f0b0018
 
     invoke-virtual {p0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -85,7 +85,7 @@
 
     const-string v1, "!!live"
 
-    const v2, 0x7f0a0014
+    const v2, 0x7f0b0019
 
     invoke-virtual {p0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

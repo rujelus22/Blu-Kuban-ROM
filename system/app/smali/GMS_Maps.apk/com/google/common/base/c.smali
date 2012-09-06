@@ -1,28 +1,45 @@
-.class public final Lcom/google/common/base/c;
-.super Ljava/lang/Object;
+.class final Lcom/google/common/base/c;
+.super Lcom/google/common/base/b;
+.source "SourceFile"
 
 
 # direct methods
-.method private constructor <init>()V
+.method constructor <init>()V
     .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 132
+    invoke-direct {p0}, Lcom/google/common/base/b;-><init>()V
 
     return-void
 .end method
 
-.method public static a()Lcom/google/common/base/b;
-    .registers 1
 
-    sget-object v0, Lcom/google/common/base/e;->a:Lcom/google/common/base/e;
+# virtual methods
+.method public bridge synthetic a(Ljava/lang/Object;)Z
+    .registers 3
+    .parameter
 
-    return-object v0
+    .prologue
+    .line 132
+    check-cast p1, Ljava/lang/Character;
+
+    invoke-super {p0, p1}, Lcom/google/common/base/b;->a(Ljava/lang/Character;)Z
+
+    move-result v0
+
+    return v0
 .end method
 
-.method public static b()Lcom/google/common/base/b;
-    .registers 1
+.method public b(C)Z
+    .registers 3
+    .parameter
 
-    sget-object v0, Lcom/google/common/base/e;->b:Lcom/google/common/base/e;
+    .prologue
+    .line 134
+    invoke-static {p1}, Ljava/lang/Character;->isDigit(C)Z
 
-    return-object v0
+    move-result v0
+
+    return v0
 .end method

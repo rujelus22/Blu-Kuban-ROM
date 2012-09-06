@@ -1,119 +1,180 @@
 .class final Lcom/google/android/youtube/app/ui/cy;
-.super Ljava/lang/Object;
+.super Lcom/google/android/youtube/core/ui/e;
 .source "SourceFile"
-
-# interfaces
-.implements Lcom/google/android/youtube/core/async/g;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/ui/cv;
+.field final synthetic a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/youtube/app/ui/cv;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 271
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/app/ui/cy;-><init>(Lcom/google/android/youtube/app/ui/cv;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/youtube/app/ui/cv;B)V
+.method public constructor <init>(Lcom/google/android/youtube/app/ui/SubscribeHelper;Lcom/google/android/youtube/core/d;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 271
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/cv;
+    .line 262
+    iput-object p1, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 263
+    invoke-direct {p0, p2}, Lcom/google/android/youtube/core/ui/e;-><init>(Lcom/google/android/youtube/core/d;)V
 
+    .line 264
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
-    .registers 4
-    .parameter
-    .parameter
-
-    .prologue
-    .line 271
-    const-string v0, "MusicVideosRequester failed"
-
-    invoke-static {v0, p2}, Lcom/google/android/youtube/core/L;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 7
-    .parameter
+.method public final a(Lcom/google/android/youtube/core/model/UserAuth;)V
+    .registers 8
     .parameter
 
     .prologue
-    .line 271
-    check-cast p2, Ljava/util/List;
+    const/4 v5, 0x0
 
-    invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    .line 267
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    move-result-object v2
+    invoke-static {v0, p1}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->a(Lcom/google/android/youtube/app/ui/SubscribeHelper;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/model/UserAuth;
 
-    :goto_6
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    .line 268
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    move-result v0
-
-    if-eqz v0, :cond_37
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->d(Lcom/google/android/youtube/app/ui/SubscribeHelper;)Lcom/google/android/youtube/core/Analytics;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/MusicVideo;
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v3, v0, Lcom/google/android/youtube/core/model/MusicVideo;->videoId:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->e(Lcom/google/android/youtube/app/ui/SubscribeHelper;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v3, " is a music video"
+    iget-object v2, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->f(Lcom/google/android/youtube/app/ui/SubscribeHelper;)Lcom/google/android/youtube/app/YouTubeApplication;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/google/android/youtube/app/YouTubeApplication;->B()I
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    invoke-static {v0, v1, v2, v3}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->a(Lcom/google/android/youtube/core/Analytics;Ljava/lang/String;IZ)V
+
+    .line 269
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->j(Lcom/google/android/youtube/app/ui/SubscribeHelper;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    if-nez v0, :cond_4b
+
+    .line 270
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->c(Lcom/google/android/youtube/app/ui/SubscribeHelper;)Lcom/google/android/youtube/core/b/ae;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
+
+    invoke-static {v1}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->a(Lcom/google/android/youtube/app/ui/SubscribeHelper;)Lcom/google/android/youtube/core/model/UserProfile;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v1, v1, Lcom/google/android/youtube/core/model/UserProfile;->username:Ljava/lang/String;
 
-    invoke-static {}, Lcom/google/android/youtube/core/L;->d()V
+    iget-object v2, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/cv;
+    invoke-static {v2}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->g(Lcom/google/android/youtube/app/ui/SubscribeHelper;)Landroid/app/Activity;
 
-    invoke-static {v1}, Lcom/google/android/youtube/app/ui/cv;->a(Lcom/google/android/youtube/app/ui/cv;)Lcom/google/android/youtube/core/a/d;
+    move-result-object v2
+
+    new-instance v3, Lcom/google/android/youtube/app/ui/da;
+
+    iget-object v4, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
+
+    invoke-direct {v3, v4, v5}, Lcom/google/android/youtube/app/ui/da;-><init>(Lcom/google/android/youtube/app/ui/SubscribeHelper;B)V
+
+    invoke-static {v2, v3}, Lcom/google/android/youtube/core/async/c;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/l;)Lcom/google/android/youtube/core/async/c;
+
+    move-result-object v2
+
+    invoke-interface {v0, p1, v1, v2}, Lcom/google/android/youtube/core/b/ae;->a(Lcom/google/android/youtube/core/model/UserAuth;Ljava/lang/String;Lcom/google/android/youtube/core/async/l;)V
+
+    .line 278
+    :goto_4a
+    return-void
+
+    .line 275
+    :cond_4b
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->c(Lcom/google/android/youtube/app/ui/SubscribeHelper;)Lcom/google/android/youtube/core/b/ae;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
+
+    invoke-static {v1}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->j(Lcom/google/android/youtube/app/ui/SubscribeHelper;)Landroid/net/Uri;
 
     move-result-object v1
 
-    check-cast v1, Lcom/google/android/youtube/app/a/x;
+    iget-object v2, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    iget-object v0, v0, Lcom/google/android/youtube/core/model/MusicVideo;->videoId:Ljava/lang/String;
+    invoke-static {v2}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->g(Lcom/google/android/youtube/app/ui/SubscribeHelper;)Landroid/app/Activity;
 
-    invoke-virtual {v1, v0}, Lcom/google/android/youtube/app/a/x;->a(Ljava/lang/String;)V
+    move-result-object v2
 
-    goto :goto_6
+    new-instance v3, Lcom/google/android/youtube/app/ui/cz;
 
-    :cond_37
+    iget-object v4, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
+
+    invoke-direct {v3, v4, v5}, Lcom/google/android/youtube/app/ui/cz;-><init>(Lcom/google/android/youtube/app/ui/SubscribeHelper;B)V
+
+    invoke-static {v2, v3}, Lcom/google/android/youtube/core/async/c;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/l;)Lcom/google/android/youtube/core/async/c;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, p1, v2}, Lcom/google/android/youtube/core/b/ae;->g(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;Lcom/google/android/youtube/core/async/l;)V
+
+    goto :goto_4a
+.end method
+
+.method public final a(Ljava/lang/Exception;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 288
+    invoke-super {p0, p1}, Lcom/google/android/youtube/core/ui/e;->a(Ljava/lang/Exception;)V
+
+    .line 289
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->h(Lcom/google/android/youtube/app/ui/SubscribeHelper;)V
+
+    .line 290
+    return-void
+.end method
+
+.method public final e_()V
+    .registers 2
+
+    .prologue
+    .line 282
+    invoke-super {p0}, Lcom/google/android/youtube/core/ui/e;->e_()V
+
+    .line 283
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cy;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->h(Lcom/google/android/youtube/app/ui/SubscribeHelper;)V
+
+    .line 284
     return-void
 .end method

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/adapters/SearchAdapter;->makeHeaderClickListener(Lcom/google/android/finsky/model/Bucket;)Landroid/view/View$OnClickListener;
+    value = Lcom/google/android/finsky/adapters/SearchAdapter;->makeHeaderClickListener(Lcom/google/android/finsky/api/model/Bucket;)Landroid/view/View$OnClickListener;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/adapters/SearchAdapter;
 
-.field final synthetic val$bucket:Lcom/google/android/finsky/model/Bucket;
+.field final synthetic val$bucket:Lcom/google/android/finsky/api/model/Bucket;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/adapters/SearchAdapter;Lcom/google/android/finsky/model/Bucket;)V
+.method constructor <init>(Lcom/google/android/finsky/adapters/SearchAdapter;Lcom/google/android/finsky/api/model/Bucket;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 135
+    .line 134
     iput-object p1, p0, Lcom/google/android/finsky/adapters/SearchAdapter$1;->this$0:Lcom/google/android/finsky/adapters/SearchAdapter;
 
-    iput-object p2, p0, Lcom/google/android/finsky/adapters/SearchAdapter$1;->val$bucket:Lcom/google/android/finsky/model/Bucket;
+    iput-object p2, p0, Lcom/google/android/finsky/adapters/SearchAdapter$1;->val$bucket:Lcom/google/android/finsky/api/model/Bucket;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,7 +47,7 @@
     .parameter "v"
 
     .prologue
-    .line 138
+    .line 137
     iget-object v0, p0, Lcom/google/android/finsky/adapters/SearchAdapter$1;->this$0:Lcom/google/android/finsky/adapters/SearchAdapter;
 
     iget-object v0, v0, Lcom/google/android/finsky/adapters/SearchAdapter;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
@@ -63,9 +63,9 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/finsky/adapters/SearchAdapter$1;->val$bucket:Lcom/google/android/finsky/model/Bucket;
+    iget-object v2, p0, Lcom/google/android/finsky/adapters/SearchAdapter$1;->val$bucket:Lcom/google/android/finsky/api/model/Bucket;
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/model/Bucket;->getBrowseUrl()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/google/android/finsky/api/model/Bucket;->getBrowseUrl()Ljava/lang/String;
 
     move-result-object v2
 
@@ -75,6 +75,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToSearch(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 140
+    .line 139
     return-void
 .end method

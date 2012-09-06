@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/item_text" android:background="@drawable/selectable_list_item_bg" android:paddingLeft="10.0dip" android:paddingTop="15.0dip" android:paddingRight="10.0dip" android:paddingBottom="15.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="3" style="@style/TextListSelectorDialogItem" />
+    <ImageView android:id="@id/item_divider" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/horizontal_line_minor" android:scaleType="fitXY" />
+</LinearLayout>

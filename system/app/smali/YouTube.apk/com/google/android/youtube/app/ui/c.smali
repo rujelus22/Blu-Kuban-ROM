@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/g;
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
@@ -11,22 +11,8 @@
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/youtube/app/ui/b;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 109
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/app/ui/c;-><init>(Lcom/google/android/youtube/app/ui/b;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/youtube/app/ui/b;B)V
-    .registers 3
-    .parameter
+.method private constructor <init>(Lcom/google/android/youtube/app/ui/b;)V
+    .registers 2
     .parameter
 
     .prologue
@@ -34,6 +20,18 @@
     iput-object p1, p0, Lcom/google/android/youtube/app/ui/c;->a:Lcom/google/android/youtube/app/ui/b;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/youtube/app/ui/b;B)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 109
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/ui/c;-><init>(Lcom/google/android/youtube/app/ui/b;)V
 
     return-void
 .end method
@@ -77,11 +75,11 @@
 
     iget-object v1, p0, Lcom/google/android/youtube/app/ui/c;->a:Lcom/google/android/youtube/app/ui/b;
 
-    invoke-static {v1}, Lcom/google/android/youtube/app/ui/b;->e(Lcom/google/android/youtube/app/ui/b;)Lcom/google/android/youtube/app/a/a;
+    invoke-static {v1}, Lcom/google/android/youtube/app/ui/b;->e(Lcom/google/android/youtube/app/ui/b;)Lcom/google/android/youtube/app/adapter/c;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0, p2}, Lcom/google/android/youtube/app/a/a;->a(Landroid/net/Uri;Landroid/graphics/Bitmap;)V
+    invoke-virtual {v1, v0, p2}, Lcom/google/android/youtube/app/adapter/c;->a(Landroid/net/Uri;Landroid/graphics/Bitmap;)V
 
     :cond_1b
     return-void

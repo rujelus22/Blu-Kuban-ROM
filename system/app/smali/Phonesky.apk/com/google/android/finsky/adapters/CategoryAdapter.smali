@@ -194,7 +194,7 @@
     .line 55
     iget-object v2, p0, Lcom/google/android/finsky/adapters/CategoryAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    const v3, 0x7f040021
+    const v3, 0x7f040026
 
     const/4 v4, 0x0
 
@@ -224,7 +224,7 @@
 
     .line 62
     .restart local v1       #holder:Lcom/google/android/finsky/adapters/CategoryAdapter$ViewHolder;
-    const v2, 0x7f080074
+    const v2, 0x7f080078
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

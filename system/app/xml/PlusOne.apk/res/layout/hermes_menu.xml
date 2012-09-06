@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/hangout_overlay_menu_height"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageButton android:id="@id/toggle_speaker_phone" android:background="@drawable/hangout_transparent" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/hermes_ic_speakerphone_off" android:scaleType="center" android:layout_weight="1.0" android:contentDescription="@string/hangout_menu_audio_mute" />
-    <ImageButton android:id="@id/toggle_audio_mute" android:background="@drawable/hangout_transparent" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/hangout_ic_menu_audio_mute" android:scaleType="center" android:layout_weight="1.0" android:contentDescription="@string/hangout_menu_audio_mute" />
-    <ImageButton android:id="@id/upgrade_to_hangout" android:background="@drawable/hangout_transparent" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/messenger_hangout_notify" android:scaleType="center" android:layout_weight="1.0" android:contentDescription="@string/hangout_menu_video_mute" />
-</LinearLayout>

@@ -143,7 +143,7 @@
     .line 68
     iget-object v1, p0, Lcom/sec/android/app/camera/glwidget/TwGLContextMenu;->mMenu:Lcom/sec/android/glview/TwGLViewGroup;
 
-    const v2, 0x7f0201a3
+    const v2, 0x7f0201a2
 
     invoke-virtual {v1, v2}, Lcom/sec/android/glview/TwGLViewGroup;->setNinePatchBackground(I)Z
 
@@ -168,7 +168,7 @@
 
     iget v9, v11, Lcom/sec/android/app/camera/resourcedata/ResourceIDMap$ResourceIDSet;->mDim:I
 
-    const v10, 0x7f0201a2
+    const v10, 0x7f0201a1
 
     invoke-direct/range {v1 .. v10}, Lcom/sec/android/glview/TwGLButton;-><init>(Lcom/sec/android/glview/TwGLContext;FFFFIIII)V
 
@@ -272,7 +272,7 @@
 
     iget v9, v11, Lcom/sec/android/app/camera/resourcedata/ResourceIDMap$ResourceIDSet;->mDim:I
 
-    const v10, 0x7f0201a2
+    const v10, 0x7f0201a1
 
     invoke-direct/range {v1 .. v10}, Lcom/sec/android/glview/TwGLButton;-><init>(Lcom/sec/android/glview/TwGLContext;FFFFIIII)V
 

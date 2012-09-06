@@ -29,6 +29,12 @@
         <item>Yalnızca sessizken</item>
         <item>Hiçbir zaman</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>kapalı</item>
+        <item>düşük</item>
+        <item>orta</item>
+        <item>sanal</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Hiçbiri</item>
         <item>Görüntü sabitleme: Düşük</item>

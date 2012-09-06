@@ -20,24 +20,32 @@
     .parameter
 
     .prologue
-    .line 70
+    .line 74
     new-instance v0, Ljava/util/EnumMap;
 
     invoke-direct {v0, p1}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
+
+    invoke-static {v0}, Lcom/google/common/collect/mv;->a(Ljava/util/Map;)Lcom/google/common/collect/mv;
+
+    move-result-object v0
 
     new-instance v1, Ljava/util/EnumMap;
 
     invoke-direct {v1, p2}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
 
+    invoke-static {v1}, Lcom/google/common/collect/mv;->a(Ljava/util/Map;)Lcom/google/common/collect/mv;
+
+    move-result-object v1
+
     invoke-direct {p0, v0, v1}, Lcom/google/common/collect/AbstractBiMap;-><init>(Ljava/util/Map;Ljava/util/Map;)V
 
-    .line 71
+    .line 76
     iput-object p1, p0, Lcom/google/common/collect/EnumBiMap;->keyType:Ljava/lang/Class;
 
-    .line 72
+    .line 77
     iput-object p2, p0, Lcom/google/common/collect/EnumBiMap;->valueType:Ljava/lang/Class;
 
-    .line 73
+    .line 78
     return-void
 .end method
 
@@ -47,7 +55,7 @@
     .parameter
 
     .prologue
-    .line 49
+    .line 53
     new-instance v0, Lcom/google/common/collect/EnumBiMap;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/EnumBiMap;-><init>(Ljava/lang/Class;Ljava/lang/Class;)V
@@ -60,7 +68,7 @@
     .parameter
 
     .prologue
-    .line 64
+    .line 68
     invoke-static {p0}, Lcom/google/common/collect/EnumBiMap;->inferKeyType(Ljava/util/Map;)Ljava/lang/Class;
 
     move-result-object v0
@@ -73,10 +81,10 @@
 
     move-result-object v0
 
-    .line 65
+    .line 69
     invoke-super {v0, p0}, Lcom/google/common/collect/AbstractBiMap;->putAll(Ljava/util/Map;)V
 
-    .line 66
+    .line 70
     return-object v0
 .end method
 
@@ -85,29 +93,29 @@
     .parameter
 
     .prologue
-    .line 76
+    .line 81
     instance-of v0, p0, Lcom/google/common/collect/EnumBiMap;
 
     if-eqz v0, :cond_b
 
-    .line 77
+    .line 82
     check-cast p0, Lcom/google/common/collect/EnumBiMap;
 
     invoke-virtual {p0}, Lcom/google/common/collect/EnumBiMap;->keyType()Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 83
+    .line 88
     :goto_a
     return-object v0
 
-    .line 79
+    .line 84
     :cond_b
     instance-of v0, p0, Lcom/google/common/collect/EnumHashBiMap;
 
     if-eqz v0, :cond_16
 
-    .line 80
+    .line 85
     check-cast p0, Lcom/google/common/collect/EnumHashBiMap;
 
     invoke-virtual {p0}, Lcom/google/common/collect/EnumHashBiMap;->keyType()Ljava/lang/Class;
@@ -116,7 +124,7 @@
 
     goto :goto_a
 
-    .line 82
+    .line 87
     :cond_16
     invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z
 
@@ -127,9 +135,9 @@
     const/4 v0, 0x1
 
     :goto_1d
-    invoke-static {v0}, Lcom/google/common/base/t;->a(Z)V
+    invoke-static {v0}, Lcom/google/common/base/ag;->a(Z)V
 
-    .line 83
+    .line 88
     invoke-interface {p0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
@@ -150,7 +158,7 @@
 
     goto :goto_a
 
-    .line 82
+    .line 87
     :cond_33
     const/4 v0, 0x0
 
@@ -162,21 +170,21 @@
     .parameter
 
     .prologue
-    .line 87
+    .line 92
     instance-of v0, p0, Lcom/google/common/collect/EnumBiMap;
 
     if-eqz v0, :cond_9
 
-    .line 88
+    .line 93
     check-cast p0, Lcom/google/common/collect/EnumBiMap;
 
     iget-object v0, p0, Lcom/google/common/collect/EnumBiMap;->valueType:Ljava/lang/Class;
 
-    .line 91
+    .line 96
     :goto_8
     return-object v0
 
-    .line 90
+    .line 95
     :cond_9
     invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z
 
@@ -187,9 +195,9 @@
     const/4 v0, 0x1
 
     :goto_10
-    invoke-static {v0}, Lcom/google/common/base/t;->a(Z)V
+    invoke-static {v0}, Lcom/google/common/base/ag;->a(Z)V
 
-    .line 91
+    .line 96
     invoke-interface {p0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
     move-result-object v0
@@ -210,7 +218,7 @@
 
     goto :goto_8
 
-    .line 90
+    .line 95
     :cond_26
     const/4 v0, 0x0
 
@@ -222,10 +230,10 @@
     .parameter
 
     .prologue
-    .line 118
+    .line 125
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 119
+    .line 126
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v0
@@ -234,7 +242,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/EnumBiMap;->keyType:Ljava/lang/Class;
 
-    .line 120
+    .line 127
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v0
@@ -243,12 +251,16 @@
 
     iput-object v0, p0, Lcom/google/common/collect/EnumBiMap;->valueType:Ljava/lang/Class;
 
-    .line 121
+    .line 128
     new-instance v0, Ljava/util/EnumMap;
 
     iget-object v1, p0, Lcom/google/common/collect/EnumBiMap;->keyType:Ljava/lang/Class;
 
     invoke-direct {v0, v1}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
+
+    invoke-static {v0}, Lcom/google/common/collect/mv;->a(Ljava/util/Map;)Lcom/google/common/collect/mv;
+
+    move-result-object v0
 
     new-instance v1, Ljava/util/EnumMap;
 
@@ -256,12 +268,16 @@
 
     invoke-direct {v1, v2}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
 
+    invoke-static {v1}, Lcom/google/common/collect/mv;->a(Ljava/util/Map;)Lcom/google/common/collect/mv;
+
+    move-result-object v1
+
     invoke-virtual {p0, v0, v1}, Lcom/google/common/collect/EnumBiMap;->setDelegates(Ljava/util/Map;Ljava/util/Map;)V
 
-    .line 122
-    invoke-static {p0, p1}, Lcom/google/common/collect/fx;->a(Ljava/util/Map;Ljava/io/ObjectInputStream;)V
+    .line 131
+    invoke-static {p0, p1}, Lcom/google/common/collect/jt;->a(Ljava/util/Map;Ljava/io/ObjectInputStream;)V
 
-    .line 123
+    .line 132
     return-void
 .end method
 
@@ -270,23 +286,23 @@
     .parameter
 
     .prologue
-    .line 109
+    .line 115
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 110
+    .line 116
     iget-object v0, p0, Lcom/google/common/collect/EnumBiMap;->keyType:Ljava/lang/Class;
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 111
+    .line 117
     iget-object v0, p0, Lcom/google/common/collect/EnumBiMap;->valueType:Ljava/lang/Class;
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 112
-    invoke-static {p0, p1}, Lcom/google/common/collect/fx;->a(Ljava/util/Map;Ljava/io/ObjectOutputStream;)V
+    .line 118
+    invoke-static {p0, p1}, Lcom/google/common/collect/jt;->a(Ljava/util/Map;Ljava/io/ObjectOutputStream;)V
 
-    .line 113
+    .line 119
     return-void
 .end method
 
@@ -296,7 +312,7 @@
     .registers 1
 
     .prologue
-    .line 35
+    .line 38
     invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->clear()V
 
     return-void
@@ -307,7 +323,7 @@
     .parameter
 
     .prologue
-    .line 35
+    .line 38
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractBiMap;->containsValue(Ljava/lang/Object;)Z
 
     move-result v0
@@ -319,7 +335,7 @@
     .registers 2
 
     .prologue
-    .line 35
+    .line 38
     invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -327,12 +343,12 @@
     return-object v0
 .end method
 
-.method public final bridge synthetic inverse()Lcom/google/common/collect/as;
+.method public final bridge synthetic inverse()Lcom/google/common/collect/bj;
     .registers 2
 
     .prologue
-    .line 35
-    invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->inverse()Lcom/google/common/collect/as;
+    .line 38
+    invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->inverse()Lcom/google/common/collect/bj;
 
     move-result-object v0
 
@@ -343,7 +359,7 @@
     .registers 2
 
     .prologue
-    .line 35
+    .line 38
     invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->keySet()Ljava/util/Set;
 
     move-result-object v0
@@ -355,7 +371,7 @@
     .registers 2
 
     .prologue
-    .line 96
+    .line 101
     iget-object v0, p0, Lcom/google/common/collect/EnumBiMap;->keyType:Ljava/lang/Class;
 
     return-object v0
@@ -366,7 +382,7 @@
     .parameter
 
     .prologue
-    .line 35
+    .line 38
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractBiMap;->putAll(Ljava/util/Map;)V
 
     return-void
@@ -376,7 +392,7 @@
     .registers 2
 
     .prologue
-    .line 101
+    .line 106
     iget-object v0, p0, Lcom/google/common/collect/EnumBiMap;->valueType:Ljava/lang/Class;
 
     return-object v0
@@ -386,7 +402,7 @@
     .registers 2
 
     .prologue
-    .line 35
+    .line 38
     invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->values()Ljava/util/Set;
 
     move-result-object v0

@@ -104,7 +104,7 @@
     <style name="TwTextAppearanceListTwoLineSecondaryOrange">
         <item name="android:textSize">13.329987sp</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textColor">#ff006aaa</item>
+        <item name="android:textColor">#ff155496</item>
     </style>
     <style name="TwTextAppearanceListTwoLineSecondaryGrey">
         <item name="android:textSize">13.329987sp</item>
@@ -188,10 +188,10 @@
         <item name="android:src">@drawable/APKTOOL_DUMMY_0208</item>
     </style>
     <style name="WhiteStyleList" parent="@android:style/Theme.Light">
-        <item name="android:listViewStyle">@android:style/Widget.ListView.White</item>
+        <item name="android:listViewStyle">@android:style/Widget.ListView</item>
     </style>
     <style name="TwWhiteStyleList" parent="@android:style/Theme.Light">
-        <item name="android:listViewStyle">@android:style/Widget.ListView.White</item>
+        <item name="android:listViewStyle">@android:style/Widget.ListView</item>
     </style>
     <style name="TwVoiceSearchButton" parent="@android:style/Widget.ImageButton">
         <item name="android:background">@drawable/tw_btn_voice_search</item>

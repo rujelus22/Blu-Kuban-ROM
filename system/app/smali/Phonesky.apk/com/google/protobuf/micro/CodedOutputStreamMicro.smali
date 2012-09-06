@@ -247,7 +247,7 @@
 
     .prologue
     .line 677
-    invoke-virtual {p0}, Lcom/google/protobuf/micro/MessageMicro;->getCachedSize()I
+    invoke-virtual {p0}, Lcom/google/protobuf/micro/MessageMicro;->getSerializedSize()I
 
     move-result v0
 
@@ -356,7 +356,7 @@
 
     .prologue
     .line 685
-    invoke-virtual {p0}, Lcom/google/protobuf/micro/MessageMicro;->getCachedSize()I
+    invoke-virtual {p0}, Lcom/google/protobuf/micro/MessageMicro;->getSerializedSize()I
 
     move-result v0
 

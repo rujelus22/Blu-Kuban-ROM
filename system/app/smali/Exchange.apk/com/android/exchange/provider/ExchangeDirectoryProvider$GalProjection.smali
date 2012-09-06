@@ -36,22 +36,22 @@
     .parameter "projection"
 
     .prologue
-    .line 200
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 94
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 198
+    .line 92
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     iput-object v1, p0, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalProjection;->columnMap:Ljava/util/HashMap;
 
-    .line 201
+    .line 95
     array-length v1, p1
 
     iput v1, p0, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalProjection;->size:I
 
-    .line 202
+    .line 96
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -60,7 +60,7 @@
 
     if-ge v0, v1, :cond_1f
 
-    .line 203
+    .line 97
     iget-object v1, p0, Lcom/android/exchange/provider/ExchangeDirectoryProvider$GalProjection;->columnMap:Ljava/util/HashMap;
 
     aget-object v2, p1, v0
@@ -71,12 +71,12 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 202
+    .line 96
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_e
 
-    .line 205
+    .line 99
     :cond_1f
     return-void
 .end method

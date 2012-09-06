@@ -1,23 +1,23 @@
-.class Lcom/google/googlenav/ui/view/dialog/M;
+.class Lcom/google/googlenav/ui/view/dialog/m;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/String;
-
-.field final synthetic b:Lcom/google/googlenav/ui/view/dialog/L;
+.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/k;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/L;Ljava/lang/String;)V
-    .registers 3
+.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/k;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/M;->b:Lcom/google/googlenav/ui/view/dialog/L;
-
-    iput-object p2, p0, Lcom/google/googlenav/ui/view/dialog/M;->a:Ljava/lang/String;
+    .prologue
+    .line 144
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/m;->a:Lcom/google/googlenav/ui/view/dialog/k;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,18 +26,20 @@
 
 
 # virtual methods
-.method public run()V
+.method public onClick(Landroid/view/View;)V
     .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/M;->b:Lcom/google/googlenav/ui/view/dialog/L;
+    .prologue
+    .line 147
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/m;->a:Lcom/google/googlenav/ui/view/dialog/k;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/view/dialog/L;->b:Lcom/google/googlenav/ui/view/dialog/K;
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/k;->a(Lcom/google/googlenav/ui/view/dialog/k;)Lcom/google/googlenav/ui/view/dialog/o;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/view/dialog/K;->b:Landroid/webkit/WebView;
+    move-result-object v0
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/M;->a:Ljava/lang/String;
+    invoke-interface {v0}, Lcom/google/googlenav/ui/view/dialog/o;->a()V
 
-    invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
-
+    .line 148
     return-void
 .end method

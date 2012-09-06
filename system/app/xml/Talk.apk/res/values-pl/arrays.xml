@@ -29,6 +29,12 @@
         <item>Tylko po wyciszeniu</item>
         <item>Nigdy</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>wyłączona</item>
+        <item>słaba</item>
+        <item>średnia</item>
+        <item>wirtualna</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Brak</item>
         <item>Stabilizacja obrazu: słaba</item>

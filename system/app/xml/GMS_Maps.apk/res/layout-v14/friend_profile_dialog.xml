@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/placard" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip">
+        <QuickContactBadge android:layout_gravity="left|center" android:id="@id/avatar" android:paddingLeft="2.0dip" android:layout_width="80.0dip" android:layout_height="80.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="8.0dip" style="?android:attr/quickContactBadgeStyleWindowMedium" />
+        <LinearLayout android:layout_gravity="left|center" android:orientation="vertical" android:id="@id/placardDetails" android:background="?selectableItemBackground" android:paddingLeft="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:minHeight="80.0dip" android:layout_toRightOf="@id/avatar" android:layout_alignParentTop="true">
+            <TextView android:textColor="@color/link_blue" android:layout_gravity="top" android:id="@id/name" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListFriendName" />
+            <TextView android:textSize="14.0sp" android:id="@id/email" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <TextView android:textColor="@color/dark_grey" android:layout_gravity="bottom" android:id="@id/location" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <RelativeLayout android:id="@id/details" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:id="@id/lastUpdated" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/ListSecondaryFriend" />
+                <LinearLayout android:gravity="right" android:layout_gravity="right" android:id="@id/distanceAndHeading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="1.0dip" android:layout_toRightOf="@id/lastUpdated">
+                    <com.google.googlenav.ui.view.android.DistanceView android:id="@id/distance" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="2.0dip" />
+                    <com.google.googlenav.ui.view.android.HeadingView android:id="@id/heading" android:paddingLeft="2.0dip" android:visibility="gone" android:layout_width="14.0dip" android:layout_height="14.0dip" android:layout_marginTop="2.0dip" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:background="@android:color/holo_blue_light" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" style="?android:attr/buttonBarStyle">
+                <include android:id="@id/mapButton" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" layout="@layout/template_header_button" />
+                <include android:id="@id/directionsButton" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" layout="@layout/template_header_button" />
+                <include android:id="@id/streetViewButton" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" layout="@layout/template_header_button" />
+            </LinearLayout>
+            <include android:id="@id/plusProfile" layout="@layout/friend_profile_list_item" />
+            <include android:id="@id/checkinStatus" android:visibility="gone" layout="@layout/friend_profile_list_item" />
+            <include android:id="@id/pingForCheckin" android:visibility="gone" layout="@layout/friend_profile_list_item" />
+            <include android:id="@id/sharingOptions" layout="@layout/friend_profile_list_item" />
+            <include android:id="@id/removeFriend" layout="@layout/friend_profile_list_item" />
+            <include layout="@layout/friend_list_divider" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

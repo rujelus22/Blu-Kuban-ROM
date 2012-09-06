@@ -75,7 +75,7 @@
     :goto_b
     const-string v3, "years may not be negative"
 
-    invoke-static {v0, v3}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
 
     .line 49
     cmpl-float v0, p2, v4
@@ -87,7 +87,7 @@
     :goto_15
     const-string v3, "months may not be negative"
 
-    invoke-static {v0, v3}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
 
     .line 50
     cmpl-float v0, p3, v4
@@ -99,7 +99,7 @@
     :goto_1f
     const-string v3, "weeks may not be negative"
 
-    invoke-static {v0, v3}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
 
     .line 51
     cmpl-float v0, p4, v4
@@ -111,7 +111,7 @@
     :goto_29
     const-string v3, "days may not be negative"
 
-    invoke-static {v0, v3}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
 
     .line 52
     cmpl-float v0, p5, v4
@@ -123,7 +123,7 @@
     :goto_33
     const-string v3, "hours may not be negative"
 
-    invoke-static {v0, v3}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
 
     .line 53
     cmpl-float v0, p6, v4
@@ -135,7 +135,7 @@
     :goto_3d
     const-string v3, "minutes may not be negative"
 
-    invoke-static {v0, v3}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
 
     .line 54
     cmpl-float v0, p7, v4
@@ -145,7 +145,7 @@
     :goto_46
     const-string v0, "seconds may not be negative"
 
-    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
 
     .line 56
     iput p1, p0, Lcom/google/android/youtube/core/model/Duration;->years:F
@@ -274,7 +274,7 @@
     .line 121
     array-length v0, v2
 
-    if-le v0, v3, :cond_64
+    if-le v0, v3, :cond_60
 
     aget-object v0, v2, v3
 
@@ -282,7 +282,7 @@
     :goto_10
     array-length v3, v2
 
-    if-le v3, v4, :cond_66
+    if-le v3, v4, :cond_62
 
     aget-object v1, v2, v4
 
@@ -294,7 +294,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_d4
+    if-nez v1, :cond_cc
 
     .line 125
     sget-object v1, Lcom/google/android/youtube/core/model/Duration;->PATTERN:Ljava/util/regex/Pattern;
@@ -317,7 +317,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_70
+    if-eqz v1, :cond_6c
 
     .line 127
     invoke-virtual {v7}, Ljava/util/regex/Matcher;->group()Ljava/lang/String;
@@ -351,20 +351,16 @@
     move-result v8
 
     .line 130
-    sparse-switch v8, :sswitch_data_da
+    sparse-switch v8, :sswitch_data_d2
 
     .line 135
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Invalid unit: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
@@ -378,43 +374,43 @@
 
     throw v0
 
-    :cond_64
+    :cond_60
     move-object v0, v1
 
     .line 121
     goto :goto_10
 
-    :cond_66
+    :cond_62
     move-object v5, v1
 
     .line 122
     goto :goto_16
 
-    :sswitch_68
+    :sswitch_64
     move v4, v1
 
     .line 131
     goto :goto_26
 
-    :sswitch_6a
+    :sswitch_66
     move v3, v1
 
     .line 132
     goto :goto_26
 
-    :sswitch_6c
+    :sswitch_68
     move v2, v1
 
     .line 133
     goto :goto_26
 
-    :sswitch_6e
+    :sswitch_6a
     move v0, v1
 
     .line 134
     goto :goto_26
 
-    :cond_70
+    :cond_6c
     move v1, v4
 
     move v4, v0
@@ -426,12 +422,12 @@
     move v2, v12
 
     .line 137
-    :goto_75
+    :goto_71
     invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-nez v0, :cond_d1
+    if-nez v0, :cond_c9
 
     .line 141
     sget-object v0, Lcom/google/android/youtube/core/model/Duration;->PATTERN:Ljava/util/regex/Pattern;
@@ -445,12 +441,12 @@
     move v7, v6
 
     .line 142
-    :goto_83
+    :goto_7f
     invoke-virtual {v8}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v0
 
-    if-eqz v0, :cond_c7
+    if-eqz v0, :cond_bf
 
     .line 143
     invoke-virtual {v8}, Ljava/util/regex/Matcher;->group()Ljava/lang/String;
@@ -484,20 +480,16 @@
     move-result v9
 
     .line 146
-    sparse-switch v9, :sswitch_data_ec
+    sparse-switch v9, :sswitch_data_e4
 
     .line 150
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Invalid unit: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
@@ -511,25 +503,25 @@
 
     throw v0
 
-    :sswitch_c1
+    :sswitch_b9
     move v7, v0
 
     .line 147
-    goto :goto_83
+    goto :goto_7f
 
-    :sswitch_c3
+    :sswitch_bb
     move v5, v0
 
     .line 148
-    goto :goto_83
+    goto :goto_7f
 
-    :sswitch_c5
+    :sswitch_bd
     move v6, v0
 
     .line 149
-    goto :goto_83
+    goto :goto_7f
 
-    :cond_c7
+    :cond_bf
     move v12, v6
 
     move v6, v5
@@ -539,21 +531,21 @@
     move v7, v12
 
     .line 152
-    :goto_cb
+    :goto_c3
     new-instance v0, Lcom/google/android/youtube/core/model/Duration;
 
     invoke-direct/range {v0 .. v7}, Lcom/google/android/youtube/core/model/Duration;-><init>(FFFFFFF)V
 
     return-object v0
 
-    :cond_d1
+    :cond_c9
     move v7, v6
 
     move v5, v6
 
-    goto :goto_cb
+    goto :goto_c3
 
-    :cond_d4
+    :cond_cc
     move v4, v6
 
     move v3, v6
@@ -562,25 +554,25 @@
 
     move v1, v6
 
-    goto :goto_75
+    goto :goto_71
 
     .line 130
     nop
 
-    :sswitch_data_da
+    :sswitch_data_d2
     .sparse-switch
-        0x44 -> :sswitch_6e
-        0x4d -> :sswitch_6a
-        0x57 -> :sswitch_6c
-        0x59 -> :sswitch_68
+        0x44 -> :sswitch_6a
+        0x4d -> :sswitch_66
+        0x57 -> :sswitch_68
+        0x59 -> :sswitch_64
     .end sparse-switch
 
     .line 146
-    :sswitch_data_ec
+    :sswitch_data_e4
     .sparse-switch
-        0x48 -> :sswitch_c1
-        0x4d -> :sswitch_c3
-        0x53 -> :sswitch_c5
+        0x48 -> :sswitch_b9
+        0x4d -> :sswitch_bb
+        0x53 -> :sswitch_bd
     .end sparse-switch
 .end method
 
@@ -760,68 +752,100 @@
     return v0
 .end method
 
-.method public final inHours()I
-    .registers 5
+.method public final inSeconds()J
+    .registers 11
 
     .prologue
-    const/high16 v3, 0x41c0
+    const-wide/high16 v8, 0x4038
+
+    const-wide/high16 v6, 0x404e
 
     .line 101
     iget v0, p0, Lcom/google/android/youtube/core/model/Duration;->seconds:F
 
-    const/high16 v1, 0x4561
+    float-to-double v0, v0
 
-    div-float/2addr v0, v1
+    iget v2, p0, Lcom/google/android/youtube/core/model/Duration;->minutes:F
 
-    iget v1, p0, Lcom/google/android/youtube/core/model/Duration;->minutes:F
+    float-to-double v2, v2
 
-    const/high16 v2, 0x4270
+    mul-double/2addr v2, v6
 
-    div-float/2addr v1, v2
+    add-double/2addr v0, v2
 
-    add-float/2addr v0, v1
+    iget v2, p0, Lcom/google/android/youtube/core/model/Duration;->hours:F
 
-    iget v1, p0, Lcom/google/android/youtube/core/model/Duration;->hours:F
+    float-to-double v2, v2
 
-    add-float/2addr v0, v1
+    mul-double/2addr v2, v6
 
-    iget v1, p0, Lcom/google/android/youtube/core/model/Duration;->days:F
+    mul-double/2addr v2, v6
 
-    mul-float/2addr v1, v3
+    add-double/2addr v0, v2
 
-    add-float/2addr v0, v1
+    iget v2, p0, Lcom/google/android/youtube/core/model/Duration;->days:F
 
-    iget v1, p0, Lcom/google/android/youtube/core/model/Duration;->weeks:F
+    float-to-double v2, v2
 
-    const/high16 v2, 0x40e0
+    mul-double/2addr v2, v8
 
-    mul-float/2addr v1, v2
+    mul-double/2addr v2, v6
 
-    mul-float/2addr v1, v3
+    mul-double/2addr v2, v6
 
-    add-float/2addr v0, v1
+    add-double/2addr v0, v2
 
-    iget v1, p0, Lcom/google/android/youtube/core/model/Duration;->months:F
+    iget v2, p0, Lcom/google/android/youtube/core/model/Duration;->weeks:F
 
-    const/high16 v2, 0x41f8
+    float-to-double v2, v2
 
-    mul-float/2addr v1, v2
+    const-wide/high16 v4, 0x401c
 
-    mul-float/2addr v1, v3
+    mul-double/2addr v2, v4
 
-    add-float/2addr v0, v1
+    mul-double/2addr v2, v8
 
-    iget v1, p0, Lcom/google/android/youtube/core/model/Duration;->years:F
+    mul-double/2addr v2, v6
 
-    const v2, 0x43b68000
+    mul-double/2addr v2, v6
 
-    mul-float/2addr v1, v2
+    add-double/2addr v0, v2
 
-    mul-float/2addr v1, v3
+    iget v2, p0, Lcom/google/android/youtube/core/model/Duration;->months:F
 
-    add-float/2addr v0, v1
+    float-to-double v2, v2
 
-    float-to-int v0, v0
+    const-wide/high16 v4, 0x403f
 
-    return v0
+    mul-double/2addr v2, v4
+
+    mul-double/2addr v2, v8
+
+    mul-double/2addr v2, v6
+
+    mul-double/2addr v2, v6
+
+    add-double/2addr v0, v2
+
+    iget v2, p0, Lcom/google/android/youtube/core/model/Duration;->years:F
+
+    float-to-double v2, v2
+
+    const-wide v4, 0x4076d00000000000L
+
+    mul-double/2addr v2, v4
+
+    mul-double/2addr v2, v8
+
+    mul-double/2addr v2, v6
+
+    mul-double/2addr v2, v6
+
+    add-double/2addr v0, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->round(D)J
+
+    move-result-wide v0
+
+    return-wide v0
 .end method

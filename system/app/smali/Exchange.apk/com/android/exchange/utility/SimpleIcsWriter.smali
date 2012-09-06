@@ -12,17 +12,17 @@
     .registers 2
 
     .prologue
-    .line 36
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
     .line 34
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 32
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
     iput-object v0, p0, Lcom/android/exchange/utility/SimpleIcsWriter;->mOut:Ljava/io/ByteArrayOutputStream;
 
-    .line 37
+    .line 35
     return-void
 .end method
 
@@ -33,7 +33,7 @@
     .prologue
     const/16 v4, 0x5c
 
-    .line 142
+    .line 140
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -42,7 +42,7 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 143
+    .line 141
     .local v2, sb:Ljava/lang/StringBuilder;
     const/4 v1, 0x0
 
@@ -54,36 +54,36 @@
 
     if-ge v1, v3, :cond_3b
 
-    .line 144
+    .line 142
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    .line 145
+    .line 143
     .local v0, ch:C
     const/16 v3, 0xa
 
     if-ne v0, v3, :cond_22
 
-    .line 146
+    .line 144
     const-string v3, "\\n"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 143
+    .line 141
     :cond_1f
     :goto_1f
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_c
 
-    .line 147
+    .line 145
     :cond_22
     const/16 v3, 0xd
 
     if-eq v0, v3, :cond_1f
 
-    .line 149
+    .line 147
     const/16 v3, 0x2c
 
     if-eq v0, v3, :cond_30
@@ -94,22 +94,22 @@
 
     if-ne v0, v4, :cond_37
 
-    .line 150
+    .line 148
     :cond_30
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 151
+    .line 149
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_1f
 
-    .line 153
+    .line 151
     :cond_37
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_1f
 
-    .line 156
+    .line 154
     .end local v0           #ch:C
     :cond_3b
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -130,7 +130,7 @@
     .line 126
     const/4 v0, 0x0
 
-    .line 135
+    .line 133
     :goto_3
     return-object v0
 
@@ -226,19 +226,11 @@
 
     const/16 v7, 0xa
 
-    .line 43
+    .line 41
     const/4 v4, 0x0
 
-    .line 44
+    .line 42
     .local v4, numBytes:I
-    if-nez p1, :cond_8
-
-    .line 72
-    :goto_7
-    return-void
-
-    .line 48
-    :cond_8
     invoke-static {p1}, Lcom/android/emailcommon/utility/Utility;->toUtf8(Ljava/lang/String;)[B
 
     move-result-object v0
@@ -250,70 +242,71 @@
     const/4 v2, 0x0
 
     .local v2, i$:I
-    :goto_e
-    if-ge v2, v3, :cond_38
+    :goto_b
+    if-ge v2, v3, :cond_35
 
     aget-byte v1, v0, v2
 
-    .line 54
+    .line 47
     .local v1, b:B
     const/16 v5, 0x47
 
-    if-le v4, v5, :cond_2e
+    if-le v4, v5, :cond_2b
 
     invoke-static {v1}, Lcom/android/emailcommon/utility/Utility;->isFirstUtf8Byte(B)Z
 
     move-result v5
 
-    if-eqz v5, :cond_2e
+    if-eqz v5, :cond_2b
 
-    .line 62
+    .line 49
     iget-object v5, p0, Lcom/android/exchange/utility/SimpleIcsWriter;->mOut:Ljava/io/ByteArrayOutputStream;
 
     invoke-virtual {v5, v8}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 63
+    .line 50
     iget-object v5, p0, Lcom/android/exchange/utility/SimpleIcsWriter;->mOut:Ljava/io/ByteArrayOutputStream;
 
     invoke-virtual {v5, v7}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 64
+    .line 51
     iget-object v5, p0, Lcom/android/exchange/utility/SimpleIcsWriter;->mOut:Ljava/io/ByteArrayOutputStream;
 
     const/16 v6, 0x9
 
     invoke-virtual {v5, v6}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 65
+    .line 52
     const/4 v4, 0x1
 
-    .line 67
-    :cond_2e
+    .line 54
+    :cond_2b
     iget-object v5, p0, Lcom/android/exchange/utility/SimpleIcsWriter;->mOut:Ljava/io/ByteArrayOutputStream;
 
     invoke-virtual {v5, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 68
+    .line 55
     add-int/lit8 v4, v4, 0x1
 
-    .line 48
+    .line 42
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_e
+    goto :goto_b
 
-    .line 70
+    .line 57
     .end local v1           #b:B
-    :cond_38
+    :cond_35
     iget-object v5, p0, Lcom/android/exchange/utility/SimpleIcsWriter;->mOut:Ljava/io/ByteArrayOutputStream;
 
     invoke-virtual {v5, v8}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 71
+    .line 58
     iget-object v5, p0, Lcom/android/exchange/utility/SimpleIcsWriter;->mOut:Ljava/io/ByteArrayOutputStream;
 
     invoke-virtual {v5, v7}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    goto :goto_7
+    .line 59
+    return-void
 .end method
 
 .method public writeTag(Ljava/lang/String;Ljava/lang/String;)V
@@ -322,7 +315,7 @@
     .parameter "value"
 
     .prologue
-    .line 79
+    .line 66
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -333,7 +326,7 @@
     :goto_6
     return-void
 
-    .line 89
+    .line 75
     :cond_7
     const-string v0, "CALSCALE"
 

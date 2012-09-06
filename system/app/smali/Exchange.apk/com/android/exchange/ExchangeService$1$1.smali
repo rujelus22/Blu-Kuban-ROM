@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 543
+    .line 288
     iput-object p1, p0, Lcom/android/exchange/ExchangeService$1$1;->this$0:Lcom/android/exchange/ExchangeService$1;
 
     iput-wide p2, p0, Lcom/android/exchange/ExchangeService$1$1;->val$messageId:J
@@ -50,7 +50,7 @@
 
     iput p7, p0, Lcom/android/exchange/ExchangeService$1$1;->val$progress:I
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -67,7 +67,7 @@
     .end annotation
 
     .prologue
-    .line 546
+    .line 291
     iget-wide v1, p0, Lcom/android/exchange/ExchangeService$1$1;->val$messageId:J
 
     iget-wide v3, p0, Lcom/android/exchange/ExchangeService$1$1;->val$attachmentId:J
@@ -80,6 +80,6 @@
 
     invoke-interface/range {v0 .. v6}, Lcom/android/emailcommon/service/IEmailServiceCallback;->loadAttachmentStatus(JJII)V
 
-    .line 547
+    .line 292
     return-void
 .end method

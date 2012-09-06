@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item type="id" name="TextViewBdAddrTitle">false</item>
-    <item type="id" name="TextViewBdAddr">false</item>
-    <item type="id" name="ButtonExitBdAddr">false</item>
-    <item type="id" name="TextViewBtRfTestTitle">false</item>
-    <item type="id" name="ButtonExitBtRfTest">false</item>
-</resources>

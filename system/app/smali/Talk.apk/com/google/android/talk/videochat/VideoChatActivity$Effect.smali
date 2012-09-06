@@ -28,7 +28,7 @@
 
     .prologue
     .line 248
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 249
     iput p1, p0, Lcom/google/android/talk/videochat/VideoChatActivity$Effect;->id:I

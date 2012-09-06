@@ -1958,13 +1958,13 @@
     .line 699
     iget v3, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mDataNetType:I
 
-    packed-switch v3, :pswitch_data_18a
+    packed-switch v3, :pswitch_data_188
 
     .line 784
     :pswitch_10
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mShowAtLeastThreeGees:Z
 
-    if-nez v3, :cond_145
+    if-nez v3, :cond_143
 
     .line 785
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_G:[[I
@@ -2010,13 +2010,13 @@
 
     move-result v3
 
-    if-eqz v3, :cond_180
+    if-eqz v3, :cond_17e
 
     .line 807
     :cond_3e
     sget-boolean v3, Lcom/android/systemui/statusbar/StatusBar;->useTouchWizGUI:Z
 
-    if-eqz v3, :cond_177
+    if-eqz v3, :cond_175
 
     .line 812
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mPhone:Landroid/telephony/TelephonyManager;
@@ -2035,7 +2035,7 @@
 
     .line 816
     .local v1, iconMode:I
-    if-ne v0, v8, :cond_159
+    if-ne v0, v8, :cond_157
 
     .line 817
     sput-boolean v5, Lcom/android/systemui/statusbar/policy/NetworkController;->mIsFlashing:Z
@@ -2227,8 +2227,6 @@
     :pswitch_e8
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mShowAtLeastThreeGees:Z
 
-    if-nez v3, :cond_103
-
     .line 753
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_1X:[[I
 
@@ -2255,7 +2253,6 @@
     goto/16 :goto_2c
 
     .line 760
-    :cond_103
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_3G:[[I
 
     iget v4, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mInetCondition:I
@@ -2279,7 +2276,7 @@
     goto/16 :goto_2c
 
     .line 772
-    :pswitch_117
+    :pswitch_115
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_3G:[[I
 
     iget v4, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mInetCondition:I
@@ -2303,7 +2300,7 @@
     goto/16 :goto_2c
 
     .line 778
-    :pswitch_12b
+    :pswitch_129
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_4G:[[I
 
     iget v4, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mInetCondition:I
@@ -2331,7 +2328,7 @@
     goto/16 :goto_2c
 
     .line 790
-    :cond_145
+    :cond_143
     sget-object v3, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->DATA_3G:[[I
 
     iget v4, p0, Lcom/android/systemui/statusbar/policy/NetworkController;->mInetCondition:I
@@ -2357,8 +2354,8 @@
     .line 820
     .restart local v0       #iconIndex:I
     .restart local v1       #iconMode:I
-    :cond_159
-    if-nez v1, :cond_164
+    :cond_157
+    if-nez v1, :cond_162
 
     .line 821
     sput-boolean v5, Lcom/android/systemui/statusbar/policy/NetworkController;->mIsFlashing:Z
@@ -2371,7 +2368,7 @@
     goto/16 :goto_54
 
     .line 825
-    :cond_164
+    :cond_162
     sget-boolean v3, Lcom/android/systemui/statusbar/policy/NetworkController;->mIsFlashing:Z
 
     if-nez v3, :cond_54
@@ -2398,7 +2395,7 @@
     .end local v0           #iconIndex:I
     .end local v1           #iconMode:I
     .end local v2           #m:Landroid/os/Message;
-    :cond_177
+    :cond_175
     sput-boolean v5, Lcom/android/systemui/statusbar/policy/NetworkController;->mIsFlashing:Z
 
     .line 845
@@ -2409,7 +2406,7 @@
     goto/16 :goto_54
 
     .line 849
-    :cond_180
+    :cond_17e
     sget-boolean v3, Lcom/android/systemui/statusbar/StatusBar;->useTouchWizGUI:Z
 
     if-eqz v3, :cond_54
@@ -2423,23 +2420,23 @@
     goto/16 :goto_54
 
     .line 699
-    :pswitch_data_18a
+    :pswitch_data_188
     .packed-switch 0x0
         :pswitch_55
         :pswitch_10
         :pswitch_6f
         :pswitch_8c
         :pswitch_d1
-        :pswitch_117
-        :pswitch_117
+        :pswitch_115
+        :pswitch_115
         :pswitch_e8
         :pswitch_9f
         :pswitch_9f
         :pswitch_9f
         :pswitch_10
-        :pswitch_117
-        :pswitch_12b
-        :pswitch_117
+        :pswitch_115
+        :pswitch_129
+        :pswitch_115
         :pswitch_9f
     .end packed-switch
 .end method

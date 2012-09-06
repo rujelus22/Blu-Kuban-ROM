@@ -53,28 +53,35 @@
 Aplikacji nie należy obsługiwać podczas jazdy. Dane o ruchu nie są udostępniane na bieżąco, a trasy mogą być błędne, niebezpieczne lub obejmować odcinki zamknięte dla ruchu bądź przeprawy promowe. Trasy piesze mogą nie uwzględniać braku chodnika lub ścieżek dla pieszych. Przestrzegaj obowiązującego prawa. 
 
 Skoncentruj się na drodze!"</string>
+    <string name="da_agreement_with_walking_and_biking">"Google Maps Navigation jest w fazie beta. Zachowaj ostrożność.
+
+Nie obsługuj tej aplikacji, będąc w ruchu. Dane o ruchu nie są podawane w czasie rzeczywistym, a trasy mogą być błędne, niebezpieczne, zabronione, lub mogą obejmować promy. Na szlakach turystycznych może brakować poboczy i chodników. Wskazówki dla rowerzystów mogą obejmować trasy nienadające się dla rowerów. Stosuj się do obowiązującego prawa.
+
+Zwracaj uwagę na drogę."</string>
     <string name="da_disclaimer_checkbox">Pokaż ten komunikat następnym razem</string>
-    <string name="da_show_list">Lista wskazówek dojazdu</string>
-    <string name="da_route_overview">Informacje o trasie</string>
+    <string name="da_show_list">Lista wskazówek</string>
+    <string name="da_route_and_alternates">Trasa i alternatywy</string>
     <string name="da_show_map">Pokaż mapę</string>
+    <string name="da_menu_more">Więcej</string>
     <string name="da_satellite">Satelita</string>
     <string name="da_traffic_view">Widok natężenia ruchu</string>
     <string name="da_no_traffic_here">Brak informacji o korkach</string>
     <string name="da_traffic">Ruch</string>
     <string name="da_area_view">Widok obszaru</string>
-    <string name="da_mute">Wycisz</string>
-    <string name="da_unmute">Anuluj wyciszenie</string>
     <string name="da_settings">Ustawienia</string>
     <string name="da_help">Pomoc</string>
     <string name="da_terms_privacy_notices">Warunki i prywatność</string>
-    <string name="da_terms_and_conditions">Warunki i prywatność</string>
+    <string name="da_terms_and_conditions">Warunki korzystania z usługi</string>
     <string name="da_privacy_policy">Polityka prywatności</string>
     <string name="da_legal_notices">Informacje prawne</string>
     <string name="da_navigation_suspended">Nawigacja zawieszona</string>
     <string name="da_exit_navigation">Zakończ nawigację</string>
+    <string name="da_save">Zapisz</string>
     <string name="da_power_settings_category">Ustawienia poboru energii</string>
     <string name="da_screen_dimming_setting_title">Przyciemnianie ekranu</string>
     <string name="da_screen_dimming_setting_summary">Ekran jest przyciemniany między instrukcjami w celu oszczędzania energii.</string>
+    <string name="da_home_setting_set_address">Ustaw adres domowy</string>
+    <string name="da_home_setting_set_address_hint">Wpisz adres.</string>
     <string name="da_info_settings_category">Informacje</string>
     <string name="da_email_me_when_resolved">Wyślij e-mail po rozwiązaniu</string>
     <string name="da_problem_reported">Problem zgłoszony</string>
@@ -109,6 +116,8 @@ W ustawieniach aplikacji może zostać włączony skrót 1 kliknięcia.
     <string name="da_turn_on_gps">Wyświetlić ustawienia lokalizacji?</string>
     <string name="da_voice_guidance">Wskazówki głosowe</string>
     <string name="da_install_voice_guidance_prompt">Nawigacja głosowa wymaga zainstalowania funkcji przetwarzania tekstu na mowę z usługi Android Market.</string>
+    <string name="da_voice_off">Wyłącz głos</string>
+    <string name="da_voice_on">Włącz głos</string>
     <string name="da_voice_guidance_on">Wskazówki głosowe są włączone</string>
     <string name="da_voice_guidance_off">Wskazówki głosowe są wyłączone</string>
     <string name="da_dialog_ok">OK</string>
@@ -119,7 +128,7 @@ W ustawieniach aplikacji może zostać włączony skrót 1 kliknięcia.
     <string name="da_dialog_install">Zainstaluj</string>
     <string name="da_dialog_dont_accept">Nie akceptuj</string>
     <string name="da_dialog_go">OK</string>
-    <string name="da_dialog_get_directions">Wyznacz trasę</string>
+    <string name="da_dialog_get_directions">Wyznaczanie trasy</string>
     <string name="da_map">Mapa</string>
     <string name="da_clear_layers">Wyczyść mapę</string>
     <string name="da_layer_name_parking">Parking</string>
@@ -187,10 +196,13 @@ W ustawieniach aplikacji może zostać włączony skrót 1 kliknięcia.
     <string name="da_picker_type_destination">Wpisz cel trasy</string>
     <string name="da_picker_speak_destination">Podaj cel trasy</string>
     <string name="da_picker_contacts">Kontakty</string>
-    <string name="da_picker_starred_items">Miejsca oznaczone gwiazdką</string>
+    <string name="da_picker_starred_items">Miejsca z gwiazdką</string>
+    <string name="da_picker_starred">Z GWIAZDKĄ</string>
     <string name="da_picker_new_contact">Nowy kontakt</string>
+    <string name="da_go_home">Do domu</string>
     <string name="da_picker_saved_destinations">Zapisane miejsca docelowe</string>
     <string name="da_picker_recent_destinations">Ostatnie miejsca docelowe</string>
+    <string name="da_picker_shortcuts">NA SKRÓTY</string>
     <string name="da_navigate_to">Przejdź do</string>
     <string name="da_return_to">Wróć do</string>
     <string name="da_picker_search_hint">Cel trasy</string>
@@ -208,7 +220,6 @@ Możesz dodać nowe kontakty lub przypisać adresy już istniejącym za pomocą 
     <string name="da_walking">Pieszo</string>
     <string name="da_bicycling">Rower</string>
     <string name="da_quoted_text">„%1$s”</string>
-    <string name="da_more_info">Więcej informacji</string>
     <string name="da_walking_warning">Pieszo (wersja beta): zachowaj ostrożność</string>
     <string name="da_bicycling_warning">Rower (beta): zalecana ostrożność</string>
     <string name="da_calibrate_compass_title">Kalibracja kompasu</string>
@@ -216,7 +227,6 @@ Możesz dodać nowe kontakty lub przypisać adresy już istniejącym za pomocą 
     <string name="da_confirm_exit_title">Zakończyć nawigację?</string>
     <string name="da_confirm_exit_text">Spowoduje to wyłączenie wszystkich wskazówek dojazdu.</string>
     <string name="da_route_includes_tolls">Trasa obejmuje drogi płatne</string>
-    <string name="da_avoid_tolls">Unikaj opłat</string>
     <string name="da_avoiding_tolls">Unikanie opłat</string>
     <string name="da_avoiding_highways">Unikanie autostrad</string>
     <string name="da_route_includes_unavoidable_tolls">Ta trasa obejmuje drogi płatne.</string>
@@ -272,13 +282,15 @@ Możesz dodać nowe kontakty lub przypisać adresy już istniejącym za pomocą 
     <string name="DIRECTIONS_TITLE">Trasa dojazdu</string>
     <string name="EXIT_COMMAND">Zakończ</string>
     <string name="FEATURE_SWITCHER_LATITUDE_SUBTITLE">Znajdź rodzinę i znajomych</string>
-    <string name="FEATURE_SWITCHER_LOCAL">Miejsca</string>
-    <string name="FEATURE_SWITCHER_LOCAL_SUBTITLE">Znajdź restauracje, bary i wiele więcej</string>
+    <string name="FEATURE_SWITCHER_LOCAL">Lokalnie</string>
+    <string name="FEATURE_SWITCHER_LOCAL_SUBTITLE">Znajdź restauracje, puby itp.</string>
     <string name="FEATURE_SWITCHER_MAP">Mapa</string>
     <string name="FEATURE_SWITCHER_NAV">Nawigacja GPS</string>
     <string name="FEATURE_SWITCHER_TRAFFIC">Natężenie ruchu</string>
     <string name="FRIENDS_COMMAND_ACTIVATE">Współrzędne</string>
     <string name="FRIENDS_COMMAND_JOIN">Współrzędne</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE">Profil Google+</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE_DESCRIPTION">Zobacz profil znajomego w Google+</string>
     <string name="FRIENDS_HISTORY_SUMMARY_TITLE">Historia lokalizacji</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TICKER">Użytkownik {0} proponuje zameldowanie się</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TITLE">Prośba o zameldowanie się we Współrzędnych</string>
@@ -298,10 +310,26 @@ Możesz dodać nowe kontakty lub przypisać adresy już istniejącym za pomocą 
     <string name="LATITUDE_WIDGET_FRIENDS_ACTIVATE">Dotknij, aby zalogować się do usługi Współrzędne</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LAST_UPDATED_TIME_ABSOLUTE">Ostatnia aktualizacja: {0}</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LOCATION_UNKNOWN">Nieznana lokalizacja</string>
+    <string name="LATITUDE_WIDGET_START">Wybierz, aby uruchomić Współrzędne</string>
     <string name="LOADING">Ładowanie</string>
-    <string name="LOCAL_APP_NAME">Google Local</string>
     <string name="MAPS_APP_NAME">Mapy</string>
     <string name="MY_PLACES_COMMAND">Moje miejsca</string>
+    <string name="MY_PLACES_DELETE_CONFIRM">Element &lt;b>{0}&lt;/b> zostanie usunięty z Moich miejsc.</string>
+    <string name="MY_PLACES_DELETE_CONFIRM_TITLE">Usuń</string>
+    <string name="MY_PLACES_DELETE_ITEM_COMMAND">Usuń</string>
+    <string name="MY_PLACES_DELETE_OWNED_MAP_CONFIRM">Mapa &lt;b>{0}&lt;/b> zostanie usunięta z Moich miejsc oraz trwale usunięta z systemu.</string>
+    <string name="MY_PLACES_DELETE_PLACE_CONFIRM">"Miejsce &lt;b>{0}&lt;/b> zostanie usunięte z Moich miejsc, a związane z nim działania zostaną trwale usunięte z systemu: "</string>
+    <string name="MY_PLACES_DELETE_SERVICE_UNAVAILABLE">Usługa jest niedostępna. Spróbuj ponownie później.</string>
+    <string name="MY_PLACES_ITEM_IS_BOOKMARKED_MY_MAP">Mapa dodana do zakładek</string>
+    <string name="MY_PLACES_ITEM_IS_MY_MAP">Moja mapa</string>
+    <string name="MY_PLACES_ITEM_IS_REVIEWED">Opiniowane</string>
+    <string name="MY_PLACES_ITEM_IS_STARRED">Z gwiazdką</string>
+    <string name="MY_PLACES_LINK_ON_SUGGEST">Spersonalizowane przy użyciu Moich miejsc</string>
+    <string name="MY_PLACES_NO_DIRECTIONS_ITEM_MESSAGE">Nie masz historii tras.</string>
+    <string name="MY_PLACES_NO_MY_MAP_ITEM_MESSAGE">Nie masz żadnych map.</string>
+    <string name="MY_PLACES_NO_STARRED_ITEM_MESSAGE">Nie masz miejsc z gwiazdką.</string>
+    <string name="MY_PLACES_SEE_ON_MAP_COMMAND">Mapa</string>
+    <string name="MY_PLACES_SHOW_DETAIL_PAGE_COMMAND">Szczegóły</string>
     <string name="NAVIGATE_MODE_NAVIGATION">Nawigacja</string>
     <string name="NEED_NET_BODY">Ta aplikacja nie może zostać użyta, jeśli nie zezwolisz jej na przesyłanie danych przez sieć.</string>
     <string name="NEED_NET_TITLE">Potrzebny dostęp do sieci</string>
@@ -309,8 +337,11 @@ Możesz dodać nowe kontakty lub przypisać adresy już istniejącym za pomocą 
     <string name="NET_FAIL_BODY">Ta aplikacja wymaga działającego połączenia transmisji danych.</string>
     <string name="NET_FAIL_TITLE">Błąd sieci</string>
     <string name="NET_UNAVAILABLE_TITLE">Sieć niedostępna</string>
-    <string name="PLACES_APP_NAME">Miejsca</string>
-    <string name="RATINGS_CUSTOM_ASPECT_EXAMPLE_TEXT">np. spaghetti bolońskie, koktajle, muzyka</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_PLURAL">{0} ofert(y) w pobliżu</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_SINGLE">1 oferta w pobliżu</string>
+    <string name="OFFERS_FEATURE_SWITCHER_TITLE">Oferty</string>
+    <string name="PLACES_APP_NAME">Lokalnie</string>
+    <string name="RATINGS_CORRECT_CATEGORY">Wybierz właściwą kategorię dla tego miejsca</string>
     <string name="RATINGS_CUSTOM_ASPECT_HINT_TEXT">Czym się wyróżnia?</string>
     <string name="RATINGS_OPTIN_CANCEL">Anuluj</string>
     <string name="RATINGS_OPTIN_CLOSE">Zamknij</string>
@@ -326,6 +357,7 @@ Możesz dodać nowe kontakty lub przypisać adresy już istniejącym za pomocą 
     <string name="RATINGS_RATE_PLACES">Dlaczego warto oceniać miejsca?</string>
     <string name="RATINGS_SET_APPEARANCE">Ustaw wygląd</string>
     <string name="RATINGS_WAIT">Proszę czekać...</string>
+    <string name="RATINGS_WRONG_LABELS">Nieprawidłowe etykiety?</string>
     <string name="SEARCH_HINT">Szukaj</string>
     <string name="SHORT_APP_NAME">Mapy Google</string>
     <string name="TRAFFIC_WIDGET_END_LOCATION">Punkt końcowy</string>
@@ -335,7 +367,12 @@ Możesz dodać nowe kontakty lub przypisać adresy już istniejącym za pomocą 
     <string name="TRAFFIC_WIDGET_START_LOCATION">Punkt początkowy</string>
     <string name="TRANSIT_NAVIGATION">Nawigacja dla transportu publicznego</string>
     <string name="TRANSIT_TITLE">Transport publiczny</string>
-    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">"Poważny błąd.  Zamknij i ponownie uruchom aplikację."</string>
+    <string name="TRANSIT_TYPE_FILTER_ALL">Wszystkie</string>
+    <string name="TRANSIT_TYPE_FILTER_BUS">Autobus</string>
+    <string name="TRANSIT_TYPE_FILTER_SUBWAY">Metro</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAIN">Pociąg</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAM">Tramwaj</string>
+    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">Coś poszło nie tak... Spróbuj ponownie za kilka minut.</string>
     <string name="UNKNOWN_COMMUNICATION_FAILURE_TITLE">Nieznany błąd</string>
     <string name="UPGRADE_BODY">Musisz zainstalować nową wersję, aby używać tej aplikacji.</string>
     <string name="UPGRADE_TITLE">Uaktualnienie oprogramowania</string>

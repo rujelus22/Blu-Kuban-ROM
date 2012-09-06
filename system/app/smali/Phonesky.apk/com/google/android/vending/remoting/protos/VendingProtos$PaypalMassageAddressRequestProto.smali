@@ -27,20 +27,20 @@
     .registers 2
 
     .prologue
-    .line 10430
+    .line 10640
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 10435
+    .line 10645
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->address_:Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;
 
-    .line 10470
+    .line 10681
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->cachedSize:I
 
-    .line 10430
+    .line 10640
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .registers 2
 
     .prologue
-    .line 10437
+    .line 10647
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->address_:Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;
 
     return-object v0
@@ -60,15 +60,15 @@
     .registers 2
 
     .prologue
-    .line 10472
+    .line 10684
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 10474
+    .line 10686
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->getSerializedSize()I
 
-    .line 10476
+    .line 10688
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->cachedSize:I
 
@@ -79,10 +79,10 @@
     .registers 4
 
     .prologue
-    .line 10480
+    .line 10693
     const/4 v0, 0x0
 
-    .line 10481
+    .line 10694
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->hasAddress()Z
 
@@ -90,7 +90,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 10482
+    .line 10695
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->getAddress()Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;
@@ -103,11 +103,11 @@
 
     add-int/2addr v0, v1
 
-    .line 10485
+    .line 10698
     :cond_11
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->cachedSize:I
 
-    .line 10486
+    .line 10699
     return v0
 .end method
 
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 10436
+    .line 10646
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->hasAddress:Z
 
     return v0
@@ -131,44 +131,44 @@
     .end annotation
 
     .prologue
-    .line 10493
+    .line 10707
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 10494
+    .line 10708
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1a
 
-    .line 10498
+    .line 10712
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 10499
+    .line 10713
     :sswitch_d
     return-object p0
 
-    .line 10504
+    .line 10718
     :sswitch_e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;-><init>()V
 
-    .line 10505
+    .line 10719
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 10506
+    .line 10720
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->setAddress(Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;
 
     goto :goto_0
 
-    .line 10494
+    .line 10708
     :sswitch_data_1a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -186,7 +186,7 @@
     .end annotation
 
     .prologue
-    .line 10428
+    .line 10638
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;
 
     move-result-object v0
@@ -199,26 +199,26 @@
     .parameter "value"
 
     .prologue
-    .line 10439
+    .line 10649
     if-nez p1, :cond_8
 
-    .line 10440
+    .line 10650
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 10442
+    .line 10652
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->hasAddress:Z
 
-    .line 10443
+    .line 10653
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->address_:Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;
 
-    .line 10444
+    .line 10654
     return-object p0
 .end method
 
@@ -232,14 +232,14 @@
     .end annotation
 
     .prologue
-    .line 10465
+    .line 10676
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->hasAddress()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 10466
+    .line 10677
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalMassageAddressRequestProto;->getAddress()Lcom/google/android/vending/remoting/protos/VendingProtos$AddressProto;
@@ -248,7 +248,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 10468
+    .line 10679
     :cond_e
     return-void
 .end method

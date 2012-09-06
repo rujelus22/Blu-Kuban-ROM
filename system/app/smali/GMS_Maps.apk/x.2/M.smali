@@ -1,138 +1,117 @@
-.class Lx/M;
-.super Lx/f;
+.class public final enum Lx/m;
+.super Ljava/lang/Enum;
+.source "SourceFile"
 
 
-# instance fields
-.field final synthetic d:Lx/L;
+# static fields
+.field public static final enum a:Lx/m;
+
+.field public static final enum b:Lx/m;
+
+.field public static final enum c:Lx/m;
+
+.field private static final synthetic d:[Lx/m;
 
 
 # direct methods
-.method constructor <init>(Lx/L;)V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 5
 
-    iput-object p1, p0, Lx/M;->d:Lx/L;
+    .prologue
+    const/4 v4, 0x2
 
-    invoke-direct {p0, p1}, Lx/f;-><init>(Lx/d;)V
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    .line 73
+    new-instance v0, Lx/m;
+
+    const-string v1, "EMPTY_MESH"
+
+    invoke-direct {v0, v1, v2}, Lx/m;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lx/m;->a:Lx/m;
+
+    new-instance v0, Lx/m;
+
+    const-string v1, "TESSELLATE_MONOTONE"
+
+    invoke-direct {v0, v1, v3}, Lx/m;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lx/m;->b:Lx/m;
+
+    new-instance v0, Lx/m;
+
+    const-string v1, "CUT_AND_TESSELLATE"
+
+    invoke-direct {v0, v1, v4}, Lx/m;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lx/m;->c:Lx/m;
+
+    .line 72
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Lx/m;
+
+    sget-object v1, Lx/m;->a:Lx/m;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lx/m;->b:Lx/m;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lx/m;->c:Lx/m;
+
+    aput-object v1, v0, v4
+
+    sput-object v0, Lx/m;->d:[Lx/m;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .registers 3
+    .parameter
+    .parameter
 
-# virtual methods
-.method protected b(I)Lt/ae;
-    .registers 9
+    .prologue
+    .line 72
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    const/16 v3, 0x100
-
-    iget-object v0, p0, Lx/M;->b:[[B
-
-    aget-object v0, v0, p1
-
-    if-nez v0, :cond_a
-
-    const/4 v0, 0x0
-
-    :goto_9
-    return-object v0
-
-    :cond_a
-    new-instance v0, Lt/p;
-
-    invoke-virtual {p0, p1}, Lx/M;->a(I)Lx/r;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lx/r;->a()Lt/af;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lx/M;->c()I
-
-    move-result v2
-
-    iget-object v4, p0, Lx/M;->b:[[B
-
-    aget-object v5, v4, p1
-
-    iget-object v4, p0, Lx/M;->d:Lx/L;
-
-    iget-object v6, v4, Lx/L;->a:Lcom/google/android/maps/driveabout/vector/cU;
-
-    move v4, v3
-
-    invoke-direct/range {v0 .. v6}, Lt/p;-><init>(Lt/af;III[BLcom/google/android/maps/driveabout/vector/cU;)V
-
-    goto :goto_9
+    return-void
 .end method
 
-.method protected c(I)[B
-    .registers 10
+.method public static valueOf(Ljava/lang/String;)Lx/m;
+    .registers 2
+    .parameter
 
-    const/4 v6, 0x0
+    .prologue
+    .line 72
+    const-class v0, Lx/m;
 
-    iget-object v0, p0, Lx/M;->b:[[B
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    aget-object v0, v0, p1
+    move-result-object v0
 
-    if-nez v0, :cond_9
+    check-cast v0, Lx/m;
 
-    move-object v0, v6
-
-    :goto_8
     return-object v0
+.end method
 
-    :cond_9
-    new-instance v7, Ljava/io/ByteArrayOutputStream;
+.method public static values()[Lx/m;
+    .registers 1
 
-    iget-object v0, p0, Lx/M;->b:[[B
+    .prologue
+    .line 72
+    sget-object v0, Lx/m;->d:[Lx/m;
 
-    aget-object v0, v0, p1
-
-    array-length v0, v0
-
-    add-int/lit8 v0, v0, 0x20
-
-    invoke-direct {v7, v0}, Ljava/io/ByteArrayOutputStream;-><init>(I)V
-
-    :try_start_15
-    invoke-virtual {p0, p1}, Lx/M;->a(I)Lx/r;
+    invoke-virtual {v0}, [Lx/m;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lx/r;->a()Lt/af;
+    check-cast v0, [Lx/m;
 
-    move-result-object v0
-
-    invoke-virtual {p0}, Lx/M;->c()I
-
-    move-result v1
-
-    const/16 v2, 0x100
-
-    const/16 v3, 0x100
-
-    iget-object v4, p0, Lx/M;->b:[[B
-
-    aget-object v4, v4, p1
-
-    new-instance v5, Ljava/io/DataOutputStream;
-
-    invoke-direct {v5, v7}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
-
-    invoke-static/range {v0 .. v5}, Lt/p;->a(Lt/af;III[BLjava/io/DataOutput;)V
-
-    invoke-virtual {v7}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-    :try_end_34
-    .catch Ljava/io/IOException; {:try_start_15 .. :try_end_34} :catch_36
-
-    move-result-object v0
-
-    goto :goto_8
-
-    :catch_36
-    move-exception v0
-
-    move-object v0, v6
-
-    goto :goto_8
+    return-object v0
 .end method

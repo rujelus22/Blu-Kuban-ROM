@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:fadeScrollbars="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:scrollbarAlwaysDrawVerticalTrack="true" android:orientation="vertical" android:id="@id/adMenu" android:visibility="visible" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="17.0dip" android:textColor="@color/white" android:ellipsize="end" android:gravity="left|center" android:id="@id/title" android:paddingLeft="10.0dip" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:singleLine="true" android:layout_weight="1.0" android:alpha="1.0" />
+        <View android:id="@id/divider" android:background="@color/ad_menu_divider" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_weight="1.0" />
+        <LinearLayout android:orientation="vertical" android:id="@id/contents" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    </LinearLayout>
+</ScrollView>

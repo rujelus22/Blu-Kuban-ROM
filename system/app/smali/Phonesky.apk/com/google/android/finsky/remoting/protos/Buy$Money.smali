@@ -35,30 +35,30 @@
     .registers 3
 
     .prologue
-    .line 2050
+    .line 1925
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 2055
+    .line 1930
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->micros_:J
 
-    .line 2072
+    .line 1947
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->currencyCode_:Ljava/lang/String;
 
-    .line 2089
+    .line 1964
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->formattedAmount_:Ljava/lang/String;
 
-    .line 2130
+    .line 2006
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->cachedSize:I
 
-    .line 2050
+    .line 1925
     return-void
 .end method
 
@@ -68,15 +68,15 @@
     .registers 2
 
     .prologue
-    .line 2132
+    .line 2009
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 2134
+    .line 2011
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$Money;->getSerializedSize()I
 
-    .line 2136
+    .line 2013
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->cachedSize:I
 
@@ -87,7 +87,7 @@
     .registers 2
 
     .prologue
-    .line 2073
+    .line 1948
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->currencyCode_:Ljava/lang/String;
 
     return-object v0
@@ -97,7 +97,7 @@
     .registers 2
 
     .prologue
-    .line 2090
+    .line 1965
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->formattedAmount_:Ljava/lang/String;
 
     return-object v0
@@ -107,7 +107,7 @@
     .registers 3
 
     .prologue
-    .line 2056
+    .line 1931
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->micros_:J
 
     return-wide v0
@@ -117,10 +117,10 @@
     .registers 5
 
     .prologue
-    .line 2140
+    .line 2018
     const/4 v0, 0x0
 
-    .line 2141
+    .line 2019
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$Money;->hasMicros()Z
 
@@ -128,7 +128,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 2142
+    .line 2020
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$Money;->getMicros()J
@@ -141,7 +141,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2145
+    .line 2023
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$Money;->hasCurrencyCode()Z
 
@@ -149,7 +149,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 2146
+    .line 2024
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$Money;->getCurrencyCode()Ljava/lang/String;
@@ -162,7 +162,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2149
+    .line 2027
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$Money;->hasFormattedAmount()Z
 
@@ -170,7 +170,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 2150
+    .line 2028
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$Money;->getFormattedAmount()Ljava/lang/String;
@@ -183,11 +183,11 @@
 
     add-int/2addr v0, v1
 
-    .line 2153
+    .line 2031
     :cond_31
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->cachedSize:I
 
-    .line 2154
+    .line 2032
     return v0
 .end method
 
@@ -195,7 +195,7 @@
     .registers 2
 
     .prologue
-    .line 2074
+    .line 1949
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->hasCurrencyCode:Z
 
     return v0
@@ -205,7 +205,7 @@
     .registers 2
 
     .prologue
-    .line 2091
+    .line 1966
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->hasFormattedAmount:Z
 
     return v0
@@ -215,7 +215,7 @@
     .registers 2
 
     .prologue
-    .line 2057
+    .line 1932
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->hasMicros:Z
 
     return v0
@@ -231,29 +231,29 @@
     .end annotation
 
     .prologue
-    .line 2161
+    .line 2040
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 2162
+    .line 2041
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_26
 
-    .line 2166
+    .line 2045
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Buy$Money;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 2167
+    .line 2046
     :sswitch_d
     return-object p0
 
-    .line 2172
+    .line 2051
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -263,7 +263,7 @@
 
     goto :goto_0
 
-    .line 2176
+    .line 2055
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -273,7 +273,7 @@
 
     goto :goto_0
 
-    .line 2180
+    .line 2059
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -283,7 +283,7 @@
 
     goto :goto_0
 
-    .line 2162
+    .line 2041
     :sswitch_data_26
     .sparse-switch
         0x0 -> :sswitch_d
@@ -303,7 +303,7 @@
     .end annotation
 
     .prologue
-    .line 2048
+    .line 1922
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Buy$Money;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Buy$Money;
 
     move-result-object v0
@@ -316,15 +316,15 @@
     .parameter "value"
 
     .prologue
-    .line 2076
+    .line 1951
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->hasCurrencyCode:Z
 
-    .line 2077
+    .line 1952
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->currencyCode_:Ljava/lang/String;
 
-    .line 2078
+    .line 1953
     return-object p0
 .end method
 
@@ -333,15 +333,15 @@
     .parameter "value"
 
     .prologue
-    .line 2093
+    .line 1968
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->hasFormattedAmount:Z
 
-    .line 2094
+    .line 1969
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->formattedAmount_:Ljava/lang/String;
 
-    .line 2095
+    .line 1970
     return-object p0
 .end method
 
@@ -350,15 +350,15 @@
     .parameter "value"
 
     .prologue
-    .line 2059
+    .line 1934
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->hasMicros:Z
 
-    .line 2060
+    .line 1935
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$Money;->micros_:J
 
-    .line 2061
+    .line 1936
     return-object p0
 .end method
 
@@ -372,14 +372,14 @@
     .end annotation
 
     .prologue
-    .line 2119
+    .line 1995
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$Money;->hasMicros()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 2120
+    .line 1996
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$Money;->getMicros()J
@@ -388,7 +388,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 2122
+    .line 1998
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$Money;->hasCurrencyCode()Z
 
@@ -396,7 +396,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 2123
+    .line 1999
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$Money;->getCurrencyCode()Ljava/lang/String;
@@ -405,7 +405,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2125
+    .line 2001
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$Money;->hasFormattedAmount()Z
 
@@ -413,7 +413,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 2126
+    .line 2002
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$Money;->getFormattedAmount()Ljava/lang/String;
@@ -422,7 +422,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2128
+    .line 2004
     :cond_2a
     return-void
 .end method

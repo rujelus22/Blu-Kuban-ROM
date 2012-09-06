@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/base/w;
+.implements Lcom/google/common/base/am;
 .implements Ljava/io/Serializable;
 
 
@@ -12,28 +12,28 @@
 
 
 # instance fields
-.field final first:Lcom/google/common/base/w;
+.field final function:Lcom/google/common/base/v;
 
-.field final function:Lcom/google/common/base/k;
+.field final supplier:Lcom/google/common/base/am;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/base/k;Lcom/google/common/base/w;)V
+.method constructor <init>(Lcom/google/common/base/v;Lcom/google/common/base/am;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 59
+    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
-    iput-object p1, p0, Lcom/google/common/base/Suppliers$SupplierComposition;->function:Lcom/google/common/base/k;
-
-    .line 61
-    iput-object p2, p0, Lcom/google/common/base/Suppliers$SupplierComposition;->first:Lcom/google/common/base/w;
-
     .line 62
+    iput-object p1, p0, Lcom/google/common/base/Suppliers$SupplierComposition;->function:Lcom/google/common/base/v;
+
+    .line 63
+    iput-object p2, p0, Lcom/google/common/base/Suppliers$SupplierComposition;->supplier:Lcom/google/common/base/am;
+
+    .line 64
     return-void
 .end method
 
@@ -43,16 +43,16 @@
     .registers 3
 
     .prologue
-    .line 64
-    iget-object v0, p0, Lcom/google/common/base/Suppliers$SupplierComposition;->function:Lcom/google/common/base/k;
+    .line 67
+    iget-object v0, p0, Lcom/google/common/base/Suppliers$SupplierComposition;->function:Lcom/google/common/base/v;
 
-    iget-object v1, p0, Lcom/google/common/base/Suppliers$SupplierComposition;->first:Lcom/google/common/base/w;
+    iget-object v1, p0, Lcom/google/common/base/Suppliers$SupplierComposition;->supplier:Lcom/google/common/base/am;
 
-    invoke-interface {v1}, Lcom/google/common/base/w;->get()Ljava/lang/Object;
+    invoke-interface {v1}, Lcom/google/common/base/am;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lcom/google/common/base/k;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v1}, Lcom/google/common/base/v;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

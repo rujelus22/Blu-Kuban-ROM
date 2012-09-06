@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 26
+    .line 25
     invoke-direct {p0}, Lcom/android/email/service/EasAuthenticatorService;-><init>()V
 
     return-void

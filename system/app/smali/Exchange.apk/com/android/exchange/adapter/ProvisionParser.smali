@@ -3,33 +3,25 @@
 .source "ProvisionParser.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;
-    }
-.end annotation
-
-
 # instance fields
 .field mIsSupportable:Z
 
-.field mPolicyKey:Ljava/lang/String;
-
-.field mPolicySet:Lcom/android/emailcommon/service/PolicySet;
-
-.field mPolicyStatus:I
+.field mPolicy:Lcom/android/emailcommon/provider/Policy;
 
 .field mRemoteWipe:Z
 
-.field private mService:Lcom/android/exchange/EasSyncService;
+.field mSecuritySyncKey:Ljava/lang/String;
+
+.field private final mService:Lcom/android/exchange/EasSyncService;
 
 .field mUnsupportedPolicies:[Ljava/lang/String;
+
+.field smimeRequired:Z
 
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;Lcom/android/exchange/EasSyncService;)V
-    .registers 4
+    .registers 5
     .parameter "in"
     .parameter "service"
     .annotation system Ldalvik/annotation/Throws;
@@ -39,45 +31,41 @@
     .end annotation
 
     .prologue
-    .line 62
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    .line 52
     invoke-direct {p0, p1}, Lcom/android/exchange/adapter/Parser;-><init>(Ljava/io/InputStream;)V
 
-    .line 47
-    const/4 v0, 0x0
+    .line 43
+    iput-object v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicy:Lcom/android/emailcommon/provider/Policy;
 
-    iput-object v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicySet:Lcom/android/emailcommon/service/PolicySet;
+    .line 44
+    iput-object v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mSecuritySyncKey:Ljava/lang/String;
 
-    .line 49
-    const-string v0, "0"
+    .line 45
+    iput-boolean v1, p0, Lcom/android/exchange/adapter/ProvisionParser;->mRemoteWipe:Z
 
-    iput-object v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicyKey:Ljava/lang/String;
-
-    .line 51
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mRemoteWipe:Z
-
-    .line 57
-    const/4 v0, -0x1
-
-    iput v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicyStatus:I
-
-    .line 59
+    .line 46
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mIsSupportable:Z
 
-    .line 63
+    .line 49
+    iput-boolean v1, p0, Lcom/android/exchange/adapter/ProvisionParser;->smimeRequired:Z
+
+    .line 53
     iput-object p2, p0, Lcom/android/exchange/adapter/ProvisionParser;->mService:Lcom/android/exchange/EasSyncService;
 
-    .line 64
+    .line 54
     return-void
 .end method
 
-.method private parseCharacteristic(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;)V
-    .registers 10
+.method private parseCharacteristic(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/emailcommon/provider/Policy;)V
+    .registers 12
     .parameter "parser"
-    .parameter "sps"
+    .parameter "policy"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -86,104 +74,104 @@
     .end annotation
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v8, 0x0
 
-    .line 593
+    const/4 v7, 0x2
+
+    const/4 v6, 0x1
+
+    .line 413
     const/4 v0, 0x1
 
-    .line 595
+    .line 415
     .local v0, enforceInactivityTimer:Z
-    :cond_2
-    :goto_2
+    :cond_4
+    :goto_4
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->nextTag()I
 
     move-result v2
 
-    .line 596
+    .line 416
     .local v2, type:I
     const/4 v4, 0x3
 
-    if-ne v2, v4, :cond_16
-
-    const-string v4, "characteristic"
+    if-ne v2, v4, :cond_18
 
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
+
+    const-string v5, "characteristic"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_16
+    if-eqz v4, :cond_18
 
-    .line 629
+    .line 451
     return-void
 
-    .line 598
-    :cond_16
-    const/4 v4, 0x2
+    .line 418
+    :cond_18
+    if-ne v2, v7, :cond_4
 
-    if-ne v2, v4, :cond_2
-
-    .line 599
-    const-string v4, "parm"
-
+    .line 419
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
+
+    const-string v5, "parm"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_4
 
-    .line 600
+    .line 420
     const-string v4, "name"
 
-    invoke-interface {p1, v6, v4}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {p1, v8, v4}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 601
+    .line 421
     .local v1, name:Ljava/lang/String;
     const-string v4, "value"
 
-    invoke-interface {p1, v6, v4}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {p1, v8, v4}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 602
+    .line 422
     .local v3, value:Ljava/lang/String;
     const-string v4, "AEFrequencyValue"
 
-    invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
     if-eqz v4, :cond_50
 
-    .line 603
-    if-eqz v0, :cond_2
+    .line 423
+    if-eqz v0, :cond_4
 
-    .line 604
+    .line 424
     const-string v4, "0"
 
-    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
     if-eqz v4, :cond_47
 
-    .line 605
-    const/4 v4, 0x0
+    .line 425
+    iput v6, p2, Lcom/android/emailcommon/provider/Policy;->mMaxScreenLockTime:I
 
-    iput v4, p2, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxScreenLockTime:I
+    goto :goto_4
 
-    goto :goto_2
-
-    .line 607
+    .line 427
     :cond_47
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -191,114 +179,186 @@
 
     mul-int/lit8 v4, v4, 0x3c
 
-    iput v4, p2, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxScreenLockTime:I
+    iput v4, p2, Lcom/android/emailcommon/provider/Policy;->mMaxScreenLockTime:I
 
-    goto :goto_2
+    goto :goto_4
 
-    .line 610
+    .line 430
     :cond_50
     const-string v4, "AEFrequencyType"
 
-    invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
     if-eqz v4, :cond_62
 
-    .line 611
+    .line 432
     const-string v4, "0"
 
-    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_4
 
-    .line 612
+    .line 433
     const/4 v0, 0x0
 
-    goto :goto_2
+    goto :goto_4
 
-    .line 614
+    .line 435
     :cond_62
     const-string v4, "DeviceWipeThreshold"
 
-    invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
     if-eqz v4, :cond_71
 
-    .line 615
+    .line 436
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v4
 
-    iput v4, p2, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxPasswordFails:I
+    iput v4, p2, Lcom/android/emailcommon/provider/Policy;->mPasswordMaxFails:I
 
-    goto :goto_2
+    goto :goto_4
 
-    .line 616
+    .line 437
     :cond_71
     const-string v4, "CodewordFrequency"
 
-    invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_2
+    if-nez v4, :cond_4
 
-    .line 617
+    .line 439
     const-string v4, "MinimumPasswordLength"
 
-    invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
     if-eqz v4, :cond_89
 
-    .line 618
+    .line 440
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v4
 
-    iput v4, p2, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMinPasswordLength:I
+    iput v4, p2, Lcom/android/emailcommon/provider/Policy;->mPasswordMinLength:I
 
-    goto/16 :goto_2
+    goto/16 :goto_4
 
-    .line 619
+    .line 441
     :cond_89
     const-string v4, "PasswordComplexity"
 
-    invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_4
 
-    .line 620
+    .line 442
     const-string v4, "0"
 
-    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_9f
+    if-eqz v4, :cond_9d
 
-    .line 621
-    const/16 v4, 0x40
+    .line 443
+    iput v7, p2, Lcom/android/emailcommon/provider/Policy;->mPasswordMode:I
 
-    iput v4, p2, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mPasswordMode:I
+    goto/16 :goto_4
 
-    goto/16 :goto_2
+    .line 445
+    :cond_9d
+    iput v6, p2, Lcom/android/emailcommon/provider/Policy;->mPasswordMode:I
 
-    .line 623
-    :cond_9f
-    const/16 v4, 0x20
+    goto/16 :goto_4
+.end method
 
-    iput v4, p2, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mPasswordMode:I
+.method private parseDeviceInformation()V
+    .registers 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
-    goto/16 :goto_2
+    .prologue
+    .line 542
+    :goto_0
+    const/16 v0, 0x496
+
+    invoke-virtual {p0, v0}, Lcom/android/exchange/adapter/ProvisionParser;->nextTag(I)I
+
+    move-result v0
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_36
+
+    .line 543
+    iget v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
+
+    const/16 v1, 0x486
+
+    if-ne v0, v1, :cond_32
+
+    .line 544
+    iget-object v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mService:Lcom/android/exchange/EasSyncService;
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "DeviceInformation status: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValue()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-virtual {v0, v1}, Lcom/android/exchange/EasSyncService;->userLog([Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 546
+    :cond_32
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
+
+    goto :goto_0
+
+    .line 549
+    :cond_36
+    return-void
 .end method
 
 .method private parsePolicies()V
@@ -310,7 +370,7 @@
     .end annotation
 
     .prologue
-    .line 710
+    .line 532
     :goto_0
     const/16 v0, 0x386
 
@@ -322,31 +382,31 @@
 
     if-eq v0, v1, :cond_17
 
-    .line 711
-    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 533
+    iget v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
 
     const/16 v1, 0x387
 
     if-ne v0, v1, :cond_13
 
-    .line 712
+    .line 534
     invoke-direct {p0}, Lcom/android/exchange/adapter/ProvisionParser;->parsePolicy()V
 
     goto :goto_0
 
-    .line 714
+    .line 536
     :cond_13
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
 
     goto :goto_0
 
-    .line 717
+    .line 539
     :cond_17
     return-void
 .end method
 
 .method private parsePolicy()V
-    .registers 6
+    .registers 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -354,12 +414,18 @@
     .end annotation
 
     .prologue
-    .line 680
+    const/4 v6, 0x2
+
+    const/4 v5, 0x1
+
+    const/4 v4, 0x0
+
+    .line 503
     const/4 v0, 0x0
 
-    .line 681
+    .line 504
     .local v0, policyType:Ljava/lang/String;
-    :goto_1
+    :goto_4
     const/16 v1, 0x387
 
     invoke-virtual {p0, v1}, Lcom/android/exchange/adapter/ProvisionParser;->nextTag(I)I
@@ -368,109 +434,104 @@
 
     const/4 v2, 0x3
 
-    if-eq v1, v2, :cond_53
+    if-eq v1, v2, :cond_55
 
-    .line 682
-    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 505
+    iget v1, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
 
-    packed-switch v1, :pswitch_data_54
+    packed-switch v1, :pswitch_data_56
 
-    .line 704
+    .line 526
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
 
-    goto :goto_1
+    goto :goto_4
 
-    .line 684
-    :pswitch_13
+    .line 507
+    :pswitch_16
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 685
+    .line 508
     iget-object v1, p0, Lcom/android/exchange/adapter/ProvisionParser;->mService:Lcom/android/exchange/EasSyncService;
 
-    const/4 v2, 0x2
+    new-array v2, v6, [Ljava/lang/String;
 
-    new-array v2, v2, [Ljava/lang/String;
+    const-string v3, "Policy type: "
 
-    const/4 v3, 0x0
+    aput-object v3, v2, v4
 
-    const-string v4, "Policy type: "
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x1
-
-    aput-object v0, v2, v3
+    aput-object v0, v2, v5
 
     invoke-virtual {v1, v2}, Lcom/android/exchange/EasSyncService;->userLog([Ljava/lang/String;)V
 
-    goto :goto_1
+    goto :goto_4
 
-    .line 688
+    .line 511
     :pswitch_28
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValue()Ljava/lang/String;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicyKey:Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/exchange/adapter/ProvisionParser;->mSecuritySyncKey:Ljava/lang/String;
 
-    goto :goto_1
+    goto :goto_4
 
-    .line 691
+    .line 514
     :pswitch_2f
-    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v1
-
-    iput v1, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicyStatus:I
-
-    .line 692
     iget-object v1, p0, Lcom/android/exchange/adapter/ProvisionParser;->mService:Lcom/android/exchange/EasSyncService;
 
-    const-string v2, "Policy status: "
+    new-array v2, v6, [Ljava/lang/String;
 
-    iget v3, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicyStatus:I
+    const-string v3, "Policy status: "
 
-    invoke-virtual {v1, v2, v3}, Lcom/android/exchange/EasSyncService;->userLog(Ljava/lang/String;I)V
+    aput-object v3, v2, v4
 
-    goto :goto_1
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValue()Ljava/lang/String;
 
-    .line 695
-    :pswitch_3f
+    move-result-object v3
+
+    aput-object v3, v2, v5
+
+    invoke-virtual {v1, v2}, Lcom/android/exchange/EasSyncService;->userLog([Ljava/lang/String;)V
+
+    goto :goto_4
+
+    .line 517
+    :pswitch_41
     const-string v1, "MS-WAP-Provisioning-XML"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_4f
+    if-eqz v1, :cond_51
 
-    .line 697
+    .line 519
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValue()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Lcom/android/exchange/adapter/ProvisionParser;->parseProvisionDocXml(Ljava/lang/String;)V
 
-    goto :goto_1
+    goto :goto_4
 
-    .line 700
-    :cond_4f
+    .line 522
+    :cond_51
     invoke-direct {p0}, Lcom/android/exchange/adapter/ProvisionParser;->parseProvisionData()V
 
-    goto :goto_1
+    goto :goto_4
 
-    .line 707
-    :cond_53
+    .line 529
+    :cond_55
     return-void
 
-    .line 682
-    :pswitch_data_54
+    .line 505
+    :pswitch_data_56
     .packed-switch 0x388
-        :pswitch_13
+        :pswitch_16
         :pswitch_28
-        :pswitch_3f
+        :pswitch_41
         :pswitch_2f
     .end packed-switch
 .end method
@@ -484,7 +545,7 @@
     .end annotation
 
     .prologue
-    .line 670
+    .line 493
     :goto_0
     const/16 v0, 0x38a
 
@@ -496,31 +557,31 @@
 
     if-eq v0, v1, :cond_17
 
-    .line 671
-    iget v0, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 494
+    iget v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
 
     const/16 v1, 0x38d
 
     if-ne v0, v1, :cond_13
 
-    .line 672
+    .line 495
     invoke-direct {p0}, Lcom/android/exchange/adapter/ProvisionParser;->parseProvisionDocWbxml()V
 
     goto :goto_0
 
-    .line 674
+    .line 497
     :cond_13
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
 
     goto :goto_0
 
-    .line 677
+    .line 500
     :cond_17
     return-void
 .end method
 
 .method private parseProvisionDocWbxml()V
-    .registers 54
+    .registers 15
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -528,1156 +589,874 @@
     .end annotation
 
     .prologue
-    .line 97
-    new-instance v48, Ljava/util/ArrayList;
+    .line 92
+    new-instance v6, Lcom/android/emailcommon/provider/Policy;
 
-    invoke-direct/range {v48 .. v48}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v6}, Lcom/android/emailcommon/provider/Policy;-><init>()V
 
-    .line 99
-    .local v48, unsupportedList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Integer;>;"
-    const/4 v3, 0x0
+    .line 93
+    .local v6, policy:Lcom/android/emailcommon/provider/Policy;
+    new-instance v10, Ljava/util/ArrayList;
 
-    .line 100
-    .local v3, minPasswordLength:I
-    const/4 v4, 0x0
+    invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
-    .line 101
-    .local v4, passwordMode:I
+    .line 94
+    .local v10, unsupportedList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     const/4 v5, 0x0
 
-    .line 102
-    .local v5, maxPasswordFails:I
-    const/4 v9, 0x0
-
-    .line 103
-    .local v9, passwordExpirationDays:I
-    const/4 v10, 0x0
-
-    .line 104
-    .local v10, passwordHistory:I
-    const/16 v23, 0x0
-
-    .line 105
-    .local v23, passwordComplexChars:I
-    const/16 v44, 0x0
-
-    .line 110
-    .local v44, passwordEnabled:Z
-    const/4 v6, 0x0
-
-    .line 111
-    .local v6, maxScreenLockTime:I
-    const/4 v8, 0x0
-
-    .line 114
-    .local v8, passwordRecoverable:Z
-    const/4 v11, 0x1
-
-    .line 115
-    .local v11, attachmentsEnabled:Z
-    const/16 v38, 0x1
-
-    .line 116
-    .local v38, simplePasswordEnabled:Z
-    const/4 v12, 0x0
-
-    .line 117
-    .local v12, maxAttachmentSize:I
-    const/16 v18, 0x1
-
-    .line 118
-    .local v18, allowHTMLEmail:Z
-    const/16 v21, 0x0
-
-    .line 122
-    .local v21, requireManualSyncWhenRoaming:Z
-    const/16 v24, 0x0
-
-    .line 123
-    .local v24, maxCalendarAgeFilter:I
-    const/16 v25, 0x0
-
-    .line 125
-    .local v25, maxEmailAgeFilter:I
-    const/16 v26, 0x0
-
-    .line 126
-    .local v26, maxEmailBodyTruncationSize:I
-    const/16 v27, 0x0
-
-    .line 127
-    .local v27, maxEmailHtmlBodyTruncationSize:I
-    const/16 v28, 0x0
-
-    .line 128
-    .local v28, requireSignedSMIMEMessages:Z
-    const/16 v29, 0x0
-
-    .line 129
-    .local v29, requireEncryptedSMIMEMessages:Z
-    const/16 v30, -0x1
-
-    .line 130
-    .local v30, requireSignedSMIMEAlgorithm:I
-    const/16 v31, -0x1
-
-    .line 131
-    .local v31, requireEncryptionSMIMEAlgorithm:I
-    const/16 v32, -0x1
-
-    .line 132
-    .local v32, allowSMIMEEncryptionAlgorithmNegotiation:I
-    const/16 v33, 0x1
-
-    .line 135
-    .local v33, allowSMIMESoftCerts:Z
-    const/4 v13, 0x1
-
-    .line 136
-    .local v13, allowStorageCard:Z
-    const/4 v14, 0x1
-
-    .line 137
-    .local v14, allowCamera:Z
-    const/4 v15, 0x1
-
-    .line 138
-    .local v15, allowWifi:Z
-    const/16 v16, 0x1
-
-    .line 139
-    .local v16, allowTextMessaging:Z
-    const/16 v17, 0x1
-
-    .line 140
-    .local v17, allowPOPIMAPEmail:Z
-    const/16 v19, 0x1
-
-    .line 141
-    .local v19, allowBrowser:Z
-    const/16 v20, 0x1
-
-    .line 143
-    .local v20, allowInternetSharing:Z
-    const/16 v22, 0x2
-
-    .line 144
-    .local v22, allowBluetoothMode:I
-    const/16 v34, 0x1
-
-    .line 145
-    .local v34, allowDesktopSync:Z
-    const/16 v35, 0x1
-
-    .line 146
-    .local v35, allowIrDA:Z
-    const/16 v39, 0x1
-
-    .line 149
-    .local v39, allowUnsignedPackage:Z
-    const/16 v36, 0x0
-
-    .line 150
-    .local v36, encryptionRequired:Z
-    const/16 v37, 0x0
-
-    .line 152
-    .local v37, deviceEncryptionEnabled:Z
-    :cond_43
-    :goto_43
-    const/16 v2, 0x38d
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v2}, Lcom/android/exchange/adapter/ProvisionParser;->nextTag(I)I
-
-    move-result v2
-
-    const/4 v7, 0x3
-
-    if-eq v2, v7, :cond_2a0
-
-    .line 153
-    const/16 v47, 0x1
-
-    .line 154
-    .local v47, tagIsSupported:Z
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lcom/android/exchange/adapter/Parser;->tag:I
-
-    packed-switch v2, :pswitch_data_328
-
-    .line 397
-    :pswitch_57
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
-
-    .line 400
-    :cond_5a
-    :goto_5a
-    if-nez v47, :cond_43
-
-    .line 401
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Policy not supported: "
-
-    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    move-object/from16 v0, p0
-
-    iget v7, v0, Lcom/android/exchange/adapter/Parser;->tag:I
-
-    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v2}, Lcom/android/exchange/adapter/ProvisionParser;->log(Ljava/lang/String;)V
-
-    .line 402
-    const/4 v2, 0x0
-
-    move-object/from16 v0, p0
-
-    iput-boolean v2, v0, Lcom/android/exchange/adapter/ProvisionParser;->mIsSupportable:Z
-
-    goto :goto_43
-
-    .line 156
-    :pswitch_7e
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    const/4 v7, 0x1
-
-    if-ne v2, v7, :cond_5a
-
-    .line 157
-    const/16 v44, 0x1
-
-    .line 158
-    if-nez v4, :cond_5a
-
-    .line 159
-    const/16 v4, 0x20
-
-    goto :goto_5a
-
-    .line 164
-    :pswitch_8c
-    if-eqz v44, :cond_9b
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->hasContent()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_9b
-
-    .line 165
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v49
-
-    .line 166
-    .local v49, val:I
-    move/from16 v3, v49
-
-    goto :goto_5a
-
-    .line 168
-    .end local v49           #val:I
-    :cond_9b
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
-
-    goto :goto_5a
-
-    .line 171
-    :pswitch_9f
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    const/4 v7, 0x1
-
-    if-ne v2, v7, :cond_5a
-
-    if-eqz v44, :cond_5a
-
-    .line 172
-    const/16 v4, 0x40
-
-    goto :goto_5a
-
-    .line 177
-    :pswitch_ab
-    if-eqz v44, :cond_ba
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->hasContent()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_ba
-
-    .line 178
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v49
-
-    .line 179
-    .restart local v49       #val:I
-    move/from16 v6, v49
-
-    goto :goto_5a
-
-    .line 181
-    .end local v49           #val:I
-    :cond_ba
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
-
-    goto :goto_5a
-
-    .line 184
-    :pswitch_be
-    if-eqz v44, :cond_cb
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->hasContent()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_cb
-
-    .line 185
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v5
-
-    goto :goto_5a
-
-    .line 187
-    :cond_cb
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
-
-    goto :goto_5a
-
-    .line 190
-    :pswitch_cf
-    if-eqz v44, :cond_dd
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->hasContent()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_dd
-
-    .line 191
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v9
-
-    goto/16 :goto_5a
-
-    .line 193
-    :cond_dd
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
-
-    goto/16 :goto_5a
-
-    .line 196
-    :pswitch_e2
-    if-eqz v44, :cond_f0
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->hasContent()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_f0
-
-    .line 197
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v10
-
-    goto/16 :goto_5a
-
-    .line 199
-    :cond_f0
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
-
-    goto/16 :goto_5a
-
-    .line 206
-    :pswitch_f5
-    if-eqz v44, :cond_107
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->hasContent()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_107
-
-    .line 207
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    if-nez v2, :cond_5a
-
-    .line 208
-    const/16 v38, 0x0
-
-    goto/16 :goto_5a
-
-    .line 210
-    :cond_107
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
-
-    goto/16 :goto_5a
-
-    .line 214
-    :pswitch_10c
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    if-nez v2, :cond_5a
-
-    .line 215
-    const/4 v11, 0x0
-
-    goto/16 :goto_5a
-
-    .line 219
-    :pswitch_115
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    const/4 v7, 0x1
-
-    if-ne v2, v7, :cond_5a
-
-    if-eqz v44, :cond_5a
-
-    .line 220
-    const/4 v8, 0x1
-
-    goto/16 :goto_5a
-
-    .line 224
-    :pswitch_121
-    if-eqz v11, :cond_12f
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->hasContent()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_12f
-
-    .line 225
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+    .line 96
+    .local v5, passwordEnabled:Z
+    :cond_b
+    :goto_b
+    const/16 v12, 0x38d
+
+    invoke-virtual {p0, v12}, Lcom/android/exchange/adapter/ProvisionParser;->nextTag(I)I
 
     move-result v12
 
-    goto/16 :goto_5a
+    const/4 v13, 0x3
 
-    .line 227
-    :cond_12f
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
+    if-eq v12, v13, :cond_1e1
 
-    goto/16 :goto_5a
+    .line 97
+    const/4 v9, 0x1
 
-    .line 231
-    :pswitch_134
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->hasContent()Z
+    .line 98
+    .local v9, tagIsSupported:Z
+    const/4 v7, 0x0
 
-    move-result v2
+    .line 99
+    .local v7, res:I
+    iget v12, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
 
-    if-eqz v2, :cond_147
-
-    if-eqz v44, :cond_147
-
-    .line 232
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    const/4 v7, 0x1
-
-    if-ne v2, v7, :cond_5a
-
-    .line 233
-    const/16 v36, 0x1
-
-    goto/16 :goto_5a
-
-    .line 235
-    :cond_147
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
-
-    goto/16 :goto_5a
-
-    .line 244
-    :pswitch_14c
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    const/4 v7, 0x1
-
-    if-ne v2, v7, :cond_5a
-
-    if-eqz v44, :cond_5a
-
-    .line 245
-    const/16 v37, 0x1
-
-    goto/16 :goto_5a
-
-    .line 255
-    :pswitch_159
-    if-eqz v44, :cond_167
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->hasContent()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_167
-
-    .line 256
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v23
-
-    goto/16 :goto_5a
-
-    .line 258
-    :cond_167
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
-
-    goto/16 :goto_5a
-
-    .line 261
-    :pswitch_16c
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    if-nez v2, :cond_5a
-
-    .line 262
-    const/4 v13, 0x0
-
-    goto/16 :goto_5a
-
-    .line 266
-    :pswitch_175
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    if-nez v2, :cond_5a
-
-    .line 267
-    const/4 v14, 0x0
-
-    goto/16 :goto_5a
-
-    .line 271
-    :pswitch_17e
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    if-nez v2, :cond_5a
-
-    .line 272
-    const/4 v15, 0x0
-
-    goto/16 :goto_5a
-
-    .line 276
-    :pswitch_187
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    if-nez v2, :cond_5a
-
-    .line 280
-    const/16 v16, 0x0
-
-    goto/16 :goto_5a
-
-    .line 285
-    :pswitch_191
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    if-nez v2, :cond_5a
-
-    .line 286
-    const/16 v17, 0x0
-
-    goto/16 :goto_5a
-
-    .line 290
-    :pswitch_19b
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    if-nez v2, :cond_5a
-
-    .line 291
-    const/16 v18, 0x0
-
-    goto/16 :goto_5a
-
-    .line 295
-    :pswitch_1a5
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    if-nez v2, :cond_5a
-
-    .line 296
-    const/16 v19, 0x0
-
-    goto/16 :goto_5a
-
-    .line 300
-    :pswitch_1af
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    if-nez v2, :cond_5a
-
-    .line 301
-    const/16 v20, 0x0
-
-    goto/16 :goto_5a
+    packed-switch v12, :pswitch_data_240
 
     .line 305
-    :pswitch_1b9
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+    :pswitch_1b
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
 
-    move-result v2
+    .line 308
+    :cond_1e
+    :goto_1e
+    if-nez v9, :cond_b
 
-    const/4 v7, 0x1
+    .line 309
+    new-instance v12, Ljava/lang/StringBuilder;
 
-    if-ne v2, v7, :cond_5a
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v13, "Policy not supported: "
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    iget v13, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {p0, v12}, Lcom/android/exchange/adapter/ProvisionParser;->log(Ljava/lang/String;)V
 
     .line 310
-    const/16 v21, 0x1
+    const/4 v12, 0x0
 
-    goto/16 :goto_5a
+    iput-boolean v12, p0, Lcom/android/exchange/adapter/ProvisionParser;->mIsSupportable:Z
 
-    .line 314
-    :pswitch_1c4
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+    goto :goto_b
 
-    move-result v22
+    .line 101
+    :pswitch_3c
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
 
-    .line 315
-    goto/16 :goto_5a
+    move-result v12
 
-    .line 317
-    :pswitch_1ca
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+    const/4 v13, 0x1
 
-    move-result v24
+    if-ne v12, v13, :cond_1e
 
-    .line 318
-    goto/16 :goto_5a
+    .line 102
+    const/4 v5, 0x1
 
-    .line 320
-    :pswitch_1d0
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+    .line 103
+    iget v12, v6, Lcom/android/emailcommon/provider/Policy;->mPasswordMode:I
 
-    move-result v25
+    if-nez v12, :cond_1e
 
-    .line 321
-    goto/16 :goto_5a
+    .line 104
+    const/4 v12, 0x1
 
-    .line 323
-    :pswitch_1d6
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+    iput v12, v6, Lcom/android/emailcommon/provider/Policy;->mPasswordMode:I
 
-    move-result v26
+    goto :goto_1e
 
-    if-gez v26, :cond_5a
+    .line 109
+    :pswitch_4c
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
 
-    .line 324
-    const/16 v26, 0x0
+    move-result v12
 
-    goto/16 :goto_5a
+    iput v12, v6, Lcom/android/emailcommon/provider/Policy;->mPasswordMinLength:I
 
-    .line 327
-    :pswitch_1e0
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+    goto :goto_1e
 
-    move-result v27
+    .line 112
+    :pswitch_53
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
 
-    if-gez v27, :cond_5a
+    move-result v12
 
-    .line 328
-    const/16 v27, 0x0
+    const/4 v13, 0x1
 
-    goto/16 :goto_5a
+    if-ne v12, v13, :cond_1e
 
-    .line 331
-    :pswitch_1ea
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+    .line 113
+    const/4 v12, 0x2
 
-    move-result v2
+    iput v12, v6, Lcom/android/emailcommon/provider/Policy;->mPasswordMode:I
 
-    const/4 v7, 0x1
+    goto :goto_1e
 
-    if-ne v2, v7, :cond_5a
+    .line 118
+    :pswitch_5e
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
 
-    .line 332
-    const/16 v28, 0x1
+    move-result v12
 
-    goto/16 :goto_5a
+    iput v12, v6, Lcom/android/emailcommon/provider/Policy;->mMaxScreenLockTime:I
 
-    .line 336
-    :pswitch_1f5
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+    goto :goto_1e
 
-    move-result v2
+    .line 121
+    :pswitch_65
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
 
-    const/4 v7, 0x1
+    move-result v12
 
-    if-ne v2, v7, :cond_5a
+    iput v12, v6, Lcom/android/emailcommon/provider/Policy;->mPasswordMaxFails:I
 
-    .line 337
-    const/16 v29, 0x1
+    goto :goto_1e
 
-    goto/16 :goto_5a
+    .line 124
+    :pswitch_6c
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
 
-    .line 342
-    :pswitch_200
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->hasContent()Z
+    move-result v12
 
-    move-result v2
+    iput v12, v6, Lcom/android/emailcommon/provider/Policy;->mPasswordExpirationDays:I
 
-    if-eqz v2, :cond_5a
+    goto :goto_1e
 
-    .line 343
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+    .line 127
+    :pswitch_73
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
 
-    move-result v30
+    move-result v12
 
-    goto/16 :goto_5a
+    iput v12, v6, Lcom/android/emailcommon/provider/Policy;->mPasswordHistory:I
 
-    .line 347
-    :pswitch_20c
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->hasContent()Z
+    goto :goto_1e
 
-    move-result v2
+    .line 130
+    :pswitch_7a
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
 
-    if-eqz v2, :cond_5a
+    move-result v12
 
-    .line 348
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+    if-nez v12, :cond_84
 
-    move-result v31
+    const/4 v12, 0x1
 
-    goto/16 :goto_5a
+    :goto_81
+    iput-boolean v12, v6, Lcom/android/emailcommon/provider/Policy;->mDontAllowCamera:Z
 
-    .line 352
-    :pswitch_218
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->hasContent()Z
+    goto :goto_1e
 
-    move-result v2
+    :cond_84
+    const/4 v12, 0x0
 
-    if-eqz v2, :cond_5a
+    goto :goto_81
 
-    .line 353
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+    .line 135
+    :pswitch_86
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValue()Ljava/lang/String;
 
-    move-result v32
+    goto :goto_1e
 
-    goto/16 :goto_5a
+    .line 149
+    :pswitch_8a
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
 
-    .line 358
-    :pswitch_224
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+    move-result v12
 
-    move-result v2
+    if-nez v12, :cond_1e
 
-    if-nez v2, :cond_5a
+    .line 150
+    const/4 v9, 0x0
 
-    .line 359
-    const/16 v33, 0x0
+    .line 151
+    iget v12, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
 
-    goto/16 :goto_5a
+    sparse-switch v12, :sswitch_data_29c
 
-    .line 363
-    :pswitch_22e
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+    .line 187
+    :goto_96
+    if-lez v7, :cond_1e
 
-    move-result v2
+    .line 188
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    if-nez v2, :cond_5a
+    move-result-object v12
 
-    .line 364
-    const/16 v34, 0x0
+    invoke-virtual {v10, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_5a
+    goto/16 :goto_1e
 
-    .line 368
-    :pswitch_238
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    if-nez v2, :cond_5a
-
-    .line 369
-    const/16 v35, 0x0
-
-    goto/16 :goto_5a
-
-    .line 373
-    :pswitch_242
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    if-nez v2, :cond_5a
-
-    .line 374
-    const/16 v47, 0x0
-
-    .line 375
-    const v2, 0x7f06001a
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    move-object/from16 v0, v48
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_5a
-
-    .line 379
-    :pswitch_258
-    invoke-virtual/range {p0 .. p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
-
-    move-result v2
-
-    if-nez v2, :cond_5a
-
-    .line 380
-    const/16 v47, 0x0
-
-    .line 381
-    const v2, 0x7f06001b
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    move-object/from16 v0, v48
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_5a
-
-    .line 387
-    :pswitch_26e
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lcom/android/exchange/adapter/Parser;->tag:I
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v2}, Lcom/android/exchange/adapter/ProvisionParser;->specifiesApplications(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5a
-
-    .line 388
-    const/16 v47, 0x0
-
-    .line 389
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lcom/android/exchange/adapter/Parser;->tag:I
-
-    const/16 v7, 0x3b7
-
-    if-ne v2, v7, :cond_292
-
-    .line 390
-    const v2, 0x7f060016
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    move-object/from16 v0, v48
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_5a
-
-    .line 392
-    :cond_292
-    const v2, 0x7f060017
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    move-object/from16 v0, v48
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_5a
-
-    .line 408
-    .end local v47           #tagIsSupported:Z
-    :cond_2a0
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/exchange/adapter/ProvisionParser;->mService:Lcom/android/exchange/EasSyncService;
-
-    const/4 v7, 0x2
-
-    new-array v7, v7, [Ljava/lang/String;
-
-    const/16 v50, 0x0
-
-    const-string v51, "ProvisionParser"
-
-    aput-object v51, v7, v50
-
-    const/16 v50, 0x1
-
-    new-instance v51, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v51 .. v51}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v52, "PasswordEnabled = "
-
-    invoke-virtual/range {v51 .. v52}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v51
-
-    move-object/from16 v0, v51
-
-    move/from16 v1, v44
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v51
-
-    invoke-virtual/range {v51 .. v51}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v51
-
-    aput-object v51, v7, v50
-
-    invoke-virtual {v2, v7}, Lcom/android/exchange/EasSyncService;->userLog([Ljava/lang/String;)V
-
-    .line 410
-    invoke-virtual/range {v48 .. v48}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v2
-
-    if-nez v2, :cond_31c
-
-    .line 411
-    invoke-virtual/range {v48 .. v48}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    new-array v2, v2, [Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iput-object v2, v0, Lcom/android/exchange/adapter/ProvisionParser;->mUnsupportedPolicies:[Ljava/lang/String;
-
-    .line 412
-    const/16 v41, 0x0
-
-    .line 413
-    .local v41, i:I
-    invoke-static {}, Lcom/android/exchange/ExchangeService;->getContext()Landroid/content/Context;
-
-    move-result-object v40
-
-    .line 415
-    .local v40, context:Landroid/content/Context;
-    if-nez v40, :cond_2ef
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/exchange/adapter/ProvisionParser;->mService:Lcom/android/exchange/EasSyncService;
-
-    if-eqz v2, :cond_2ef
-
-    .line 416
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/exchange/adapter/ProvisionParser;->mService:Lcom/android/exchange/EasSyncService;
-
-    sget-object v40, Lcom/android/exchange/EasSyncService;->mContext:Landroid/content/Context;
-
-    .line 418
-    :cond_2ef
-    if-eqz v40, :cond_31c
-
-    .line 419
-    invoke-virtual/range {v40 .. v40}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v46
-
-    .line 420
-    .local v46, resources:Landroid/content/res/Resources;
-    invoke-virtual/range {v48 .. v48}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v43
-
-    .local v43, i$:Ljava/util/Iterator;
-    :goto_2f9
-    invoke-interface/range {v43 .. v43}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_31c
-
-    invoke-interface/range {v43 .. v43}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Integer;
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v45
-
-    .line 421
-    .local v45, res:I
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/exchange/adapter/ProvisionParser;->mUnsupportedPolicies:[Ljava/lang/String;
-
-    add-int/lit8 v42, v41, 0x1
-
-    .end local v41           #i:I
-    .local v42, i:I
-    move-object/from16 v0, v46
-
-    move/from16 v1, v45
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    aput-object v7, v2, v41
-
-    move/from16 v41, v42
-
-    .end local v42           #i:I
-    .restart local v41       #i:I
-    goto :goto_2f9
-
-    .line 426
-    .end local v40           #context:Landroid/content/Context;
-    .end local v41           #i:I
-    .end local v43           #i$:Ljava/util/Iterator;
-    .end local v45           #res:I
-    .end local v46           #resources:Landroid/content/res/Resources;
-    :cond_31c
-    new-instance v2, Lcom/android/emailcommon/service/PolicySet;
-
-    const/4 v7, 0x1
-
-    invoke-direct/range {v2 .. v38}, Lcom/android/emailcommon/service/PolicySet;-><init>(IIIIZZIIZIZZZZZZZZZIIIIIIZZIIIZZZZZZ)V
-
-    move-object/from16 v0, p0
-
-    iput-object v2, v0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicySet:Lcom/android/emailcommon/service/PolicySet;
-
-    .line 444
-    return-void
+    .line 153
+    :sswitch_a1
+    const v7, 0x7f060011
 
     .line 154
+    goto :goto_96
+
+    .line 156
+    :sswitch_a5
+    const v7, 0x7f060012
+
+    .line 157
+    goto :goto_96
+
+    .line 159
+    :sswitch_a9
+    const v7, 0x7f060013
+
+    .line 160
+    goto :goto_96
+
+    .line 162
+    :sswitch_ad
+    const v7, 0x7f060014
+
+    .line 163
+    goto :goto_96
+
+    .line 165
+    :sswitch_b1
+    const v7, 0x7f060015
+
+    .line 166
+    goto :goto_96
+
+    .line 168
+    :sswitch_b5
+    const v7, 0x7f060016
+
+    .line 169
+    goto :goto_96
+
+    .line 171
+    :sswitch_b9
+    const v7, 0x7f060017
+
+    .line 172
+    goto :goto_96
+
+    .line 174
+    :sswitch_bd
+    const v7, 0x7f060018
+
+    .line 175
+    const/4 v12, 0x1
+
+    iput-boolean v12, v6, Lcom/android/emailcommon/provider/Policy;->mDontAllowHtml:Z
+
+    goto :goto_96
+
+    .line 178
+    :sswitch_c4
+    const v7, 0x7f060019
+
+    .line 179
+    goto :goto_96
+
+    .line 181
+    :sswitch_c8
+    const v7, 0x7f06001a
+
+    .line 182
+    goto :goto_96
+
+    .line 184
+    :sswitch_cc
+    const v7, 0x7f06001b
+
+    goto :goto_96
+
+    .line 193
+    :pswitch_d0
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+
+    move-result v12
+
+    const/4 v13, 0x1
+
+    if-eq v12, v13, :cond_dc
+
+    const/4 v12, 0x1
+
+    :goto_d8
+    iput-boolean v12, v6, Lcom/android/emailcommon/provider/Policy;->mDontAllowAttachments:Z
+
+    goto/16 :goto_1e
+
+    :cond_dc
+    const/4 v12, 0x0
+
+    goto :goto_d8
+
+    .line 197
+    :pswitch_de
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+
+    move-result v12
+
+    const/4 v13, 0x2
+
+    if-eq v12, v13, :cond_1e
+
+    .line 198
+    const/4 v9, 0x0
+
+    .line 199
+    const v12, 0x7f06001f
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    invoke-virtual {v10, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_1e
+
+    .line 205
+    :pswitch_f2
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+
+    move-result v12
+
+    const/4 v13, 0x1
+
+    if-ne v12, v13, :cond_1e
+
+    .line 206
+    const/4 v12, 0x1
+
+    iput-boolean v12, v6, Lcom/android/emailcommon/provider/Policy;->mRequireEncryption:Z
+
+    goto/16 :goto_1e
+
+    .line 211
+    :pswitch_fe
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+
+    move-result v12
+
+    const/4 v13, 0x1
+
+    if-ne v12, v13, :cond_10a
+
+    const/4 v12, 0x1
+
+    :goto_106
+    iput-boolean v12, v6, Lcom/android/emailcommon/provider/Policy;->mRequireManualSyncWhenRoaming:Z
+
+    goto/16 :goto_1e
+
+    :cond_10a
+    const/4 v12, 0x0
+
+    goto :goto_106
+
+    .line 218
+    :pswitch_10c
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+
+    move-result v12
+
+    const/4 v13, 0x1
+
+    if-ne v12, v13, :cond_118
+
+    const/4 v12, 0x1
+
+    :goto_114
+    iput-boolean v12, v6, Lcom/android/emailcommon/provider/Policy;->mPasswordRecoveryEnabled:Z
+
+    goto/16 :goto_1e
+
+    :cond_118
+    const/4 v12, 0x0
+
+    goto :goto_114
+
+    .line 223
+    :pswitch_11a
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+
+    move-result v12
+
+    const/4 v13, 0x1
+
+    if-ne v12, v13, :cond_1e
+
+    .line 224
+    const/4 v9, 0x0
+
+    .line 225
+    const v12, 0x7f060028
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    invoke-virtual {v10, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_1e
+
+    .line 233
+    :pswitch_12e
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+
+    move-result v12
+
+    const/4 v13, 0x1
+
+    if-ne v12, v13, :cond_1e
+
+    .line 234
+    const/4 v9, 0x0
+
+    .line 235
+    iget-boolean v12, p0, Lcom/android/exchange/adapter/ProvisionParser;->smimeRequired:Z
+
+    if-nez v12, :cond_1e
+
+    .line 236
+    const v12, 0x7f06001d
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    invoke-virtual {v10, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 237
+    const/4 v12, 0x1
+
+    iput-boolean v12, p0, Lcom/android/exchange/adapter/ProvisionParser;->smimeRequired:Z
+
+    goto/16 :goto_1e
+
+    .line 242
+    :pswitch_149
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+
+    move-result v4
+
+    .line 243
+    .local v4, max:I
+    if-lez v4, :cond_1e
+
+    .line 244
+    iput v4, v6, Lcom/android/emailcommon/provider/Policy;->mMaxAttachmentSize:I
+
+    goto/16 :goto_1e
+
+    .line 249
+    .end local v4           #max:I
+    :pswitch_153
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+
+    move-result v12
+
+    iput v12, v6, Lcom/android/emailcommon/provider/Policy;->mPasswordComplexChars:I
+
+    goto/16 :goto_1e
+
+    .line 256
+    :pswitch_15b
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
+
+    goto/16 :goto_1e
+
+    .line 262
+    :pswitch_160
+    iget v12, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
+
+    invoke-direct {p0, v12}, Lcom/android/exchange/adapter/ProvisionParser;->specifiesApplications(I)Z
+
+    move-result v12
+
+    if-eqz v12, :cond_1e
+
+    .line 263
+    const/4 v9, 0x0
+
+    .line 264
+    iget v12, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
+
+    const/16 v13, 0x3b7
+
+    if-ne v12, v13, :cond_17b
+
+    .line 265
+    const v12, 0x7f060020
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    invoke-virtual {v10, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_1e
+
+    .line 267
+    :cond_17b
+    const v12, 0x7f060021
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    invoke-virtual {v10, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_1e
+
+    .line 274
+    :pswitch_187
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
+
+    move-result v4
+
+    .line 276
+    .restart local v4       #max:I
+    if-eqz v4, :cond_1e
+
+    .line 277
+    iget v12, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
+
+    const/16 v13, 0x3a8
+
+    if-ne v12, v13, :cond_1a2
+
+    .line 278
+    iput v4, v6, Lcom/android/emailcommon/provider/Policy;->mMaxCalendarLookback:I
+
+    .line 279
+    const v12, 0x7f060022
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    invoke-virtual {v10, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 284
+    :goto_19f
+    const/4 v9, 0x0
+
+    goto/16 :goto_1e
+
+    .line 281
+    :cond_1a2
+    iput v4, v6, Lcom/android/emailcommon/provider/Policy;->mMaxEmailLookback:I
+
+    .line 282
+    const v12, 0x7f060023
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    invoke-virtual {v10, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_19f
+
+    .line 290
+    .end local v4           #max:I
+    :pswitch_1af
+    invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValue()Ljava/lang/String;
+
+    move-result-object v11
+
+    .line 292
+    .local v11, value:Ljava/lang/String;
+    const-string v12, "-1"
+
+    invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v12
+
+    if-nez v12, :cond_1e
+
+    .line 293
+    invoke-static {v11}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v4
+
+    .line 294
+    .restart local v4       #max:I
+    iget v12, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
+
+    const/16 v13, 0x3ab
+
+    if-ne v12, v13, :cond_1d4
+
+    .line 295
+    iput v4, v6, Lcom/android/emailcommon/provider/Policy;->mMaxTextTruncationSize:I
+
+    .line 296
+    const v12, 0x7f060024
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    invoke-virtual {v10, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 301
+    :goto_1d1
+    const/4 v9, 0x0
+
+    goto/16 :goto_1e
+
+    .line 298
+    :cond_1d4
+    iput v4, v6, Lcom/android/emailcommon/provider/Policy;->mMaxHtmlTruncationSize:I
+
+    .line 299
+    const v12, 0x7f060025
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    invoke-virtual {v10, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1d1
+
+    .line 315
+    .end local v4           #max:I
+    .end local v7           #res:I
+    .end local v9           #tagIsSupported:Z
+    .end local v11           #value:Ljava/lang/String;
+    :cond_1e1
+    if-nez v5, :cond_1e6
+
+    .line 316
+    const/4 v12, 0x0
+
+    iput v12, v6, Lcom/android/emailcommon/provider/Policy;->mPasswordMode:I
+
+    .line 318
+    :cond_1e6
+    invoke-direct {p0, v6}, Lcom/android/exchange/adapter/ProvisionParser;->setPolicy(Lcom/android/emailcommon/provider/Policy;)V
+
+    .line 321
+    iget-object v12, p0, Lcom/android/exchange/adapter/ProvisionParser;->mService:Lcom/android/exchange/EasSyncService;
+
+    iget-object v12, v12, Lcom/android/exchange/EasSyncService;->mContext:Landroid/content/Context;
+
+    invoke-static {v12, v6}, Lcom/android/exchange/SecurityPolicyDelegate;->isSupported(Landroid/content/Context;Lcom/android/emailcommon/provider/Policy;)Z
+
+    move-result v12
+
+    if-nez v12, :cond_205
+
+    .line 322
+    const-string v12, "SecurityPolicy reports PolicySet not supported."
+
+    invoke-virtual {p0, v12}, Lcom/android/exchange/adapter/ProvisionParser;->log(Ljava/lang/String;)V
+
+    .line 323
+    const/4 v12, 0x0
+
+    iput-boolean v12, p0, Lcom/android/exchange/adapter/ProvisionParser;->mIsSupportable:Z
+
+    .line 324
+    const v12, 0x7f060027
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    invoke-virtual {v10, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 327
+    :cond_205
+    invoke-virtual {v10}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v12
+
+    if-nez v12, :cond_23e
+
+    .line 328
+    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
+
+    move-result v12
+
+    new-array v12, v12, [Ljava/lang/String;
+
+    iput-object v12, p0, Lcom/android/exchange/adapter/ProvisionParser;->mUnsupportedPolicies:[Ljava/lang/String;
+
+    .line 329
+    const/4 v1, 0x0
+
+    .line 330
+    .local v1, i:I
+    invoke-static {}, Lcom/android/exchange/ExchangeService;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    .line 331
+    .local v0, context:Landroid/content/Context;
+    if-eqz v0, :cond_23e
+
+    .line 332
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v8
+
+    .line 333
+    .local v8, resources:Landroid/content/res/Resources;
+    invoke-virtual {v10}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    .local v3, i$:Ljava/util/Iterator;
+    :goto_222
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v12
+
+    if-eqz v12, :cond_23e
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Ljava/lang/Integer;
+
+    invoke-virtual {v12}, Ljava/lang/Integer;->intValue()I
+
+    move-result v7
+
+    .line 334
+    .restart local v7       #res:I
+    iget-object v12, p0, Lcom/android/exchange/adapter/ProvisionParser;->mUnsupportedPolicies:[Ljava/lang/String;
+
+    add-int/lit8 v2, v1, 0x1
+
+    .end local v1           #i:I
+    .local v2, i:I
+    invoke-virtual {v8, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v13
+
+    aput-object v13, v12, v1
+
+    move v1, v2
+
+    .end local v2           #i:I
+    .restart local v1       #i:I
+    goto :goto_222
+
+    .line 338
+    .end local v0           #context:Landroid/content/Context;
+    .end local v1           #i:I
+    .end local v3           #i$:Ljava/util/Iterator;
+    .end local v7           #res:I
+    .end local v8           #resources:Landroid/content/res/Resources;
+    :cond_23e
+    return-void
+
+    .line 99
     nop
 
-    :pswitch_data_328
+    :pswitch_data_240
     .packed-switch 0x38e
-        :pswitch_7e
-        :pswitch_9f
-        :pswitch_14c
-        :pswitch_115
-        :pswitch_57
+        :pswitch_3c
+        :pswitch_53
+        :pswitch_11a
         :pswitch_10c
-        :pswitch_8c
-        :pswitch_ab
-        :pswitch_be
-        :pswitch_121
-        :pswitch_f5
-        :pswitch_cf
-        :pswitch_e2
-        :pswitch_16c
-        :pswitch_175
-        :pswitch_134
-        :pswitch_242
-        :pswitch_258
-        :pswitch_159
-        :pswitch_17e
+        :pswitch_1b
+        :pswitch_d0
+        :pswitch_4c
+        :pswitch_5e
+        :pswitch_65
+        :pswitch_149
+        :pswitch_86
+        :pswitch_6c
+        :pswitch_73
+        :pswitch_8a
+        :pswitch_7a
+        :pswitch_f2
+        :pswitch_8a
+        :pswitch_8a
+        :pswitch_153
+        :pswitch_8a
+        :pswitch_8a
+        :pswitch_8a
+        :pswitch_de
+        :pswitch_8a
+        :pswitch_fe
+        :pswitch_15b
         :pswitch_187
-        :pswitch_191
-        :pswitch_1c4
-        :pswitch_238
-        :pswitch_1b9
-        :pswitch_22e
-        :pswitch_1ca
-        :pswitch_19b
-        :pswitch_1d0
-        :pswitch_1d6
-        :pswitch_1e0
-        :pswitch_1ea
-        :pswitch_1f5
-        :pswitch_200
-        :pswitch_20c
-        :pswitch_218
-        :pswitch_224
-        :pswitch_1a5
-        :pswitch_191
-        :pswitch_57
+        :pswitch_8a
+        :pswitch_187
         :pswitch_1af
-        :pswitch_26e
-        :pswitch_57
-        :pswitch_26e
+        :pswitch_1af
+        :pswitch_12e
+        :pswitch_12e
+        :pswitch_12e
+        :pswitch_12e
+        :pswitch_15b
+        :pswitch_15b
+        :pswitch_8a
+        :pswitch_8a
+        :pswitch_15b
+        :pswitch_8a
+        :pswitch_160
+        :pswitch_1b
+        :pswitch_160
     .end packed-switch
+
+    .line 151
+    :sswitch_data_29c
+    .sparse-switch
+        0x39b -> :sswitch_a1
+        0x39e -> :sswitch_a5
+        0x39f -> :sswitch_a9
+        0x3a1 -> :sswitch_ad
+        0x3a2 -> :sswitch_b1
+        0x3a3 -> :sswitch_b5
+        0x3a5 -> :sswitch_b9
+        0x3a9 -> :sswitch_bd
+        0x3b3 -> :sswitch_c4
+        0x3b4 -> :sswitch_c8
+        0x3b6 -> :sswitch_cc
+    .end sparse-switch
 .end method
 
-.method private parseRegistry(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;)V
+.method private parseRegistry(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/emailcommon/provider/Policy;)V
     .registers 7
     .parameter "parser"
-    .parameter "sps"
+    .parameter "policy"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -1686,24 +1465,24 @@
     .end annotation
 
     .prologue
-    .line 634
+    .line 456
     :cond_0
     :goto_0
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->nextTag()I
 
     move-result v1
 
-    .line 635
+    .line 457
     .local v1, type:I
     const/4 v2, 0x3
 
     if-ne v1, v2, :cond_14
 
-    const-string v2, "characteristic"
-
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
+
+    const-string v3, "characteristic"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1711,40 +1490,40 @@
 
     if-eqz v2, :cond_14
 
-    .line 644
+    .line 466
     return-void
 
-    .line 637
+    .line 459
     :cond_14
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_0
 
-    .line 638
+    .line 460
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 639
+    .line 461
     .local v0, name:Ljava/lang/String;
     const-string v2, "characteristic"
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 640
-    invoke-direct {p0, p1, p2}, Lcom/android/exchange/adapter/ProvisionParser;->parseCharacteristic(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;)V
+    .line 462
+    invoke-direct {p0, p1, p2}, Lcom/android/exchange/adapter/ProvisionParser;->parseCharacteristic(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/emailcommon/provider/Policy;)V
 
     goto :goto_0
 .end method
 
-.method private parseSecurityPolicy(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;)Z
+.method private parseSecurityPolicy(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/emailcommon/provider/Policy;)Z
     .registers 11
     .parameter "parser"
-    .parameter "sps"
+    .parameter "policy"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -1755,10 +1534,10 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 570
+    .line 390
     const/4 v1, 0x1
 
-    .line 572
+    .line 392
     .local v1, passwordRequired:Z
     :cond_2
     :goto_2
@@ -1766,17 +1545,17 @@
 
     move-result v3
 
-    .line 573
+    .line 393
     .local v3, type:I
     const/4 v5, 0x3
 
     if-ne v3, v5, :cond_16
 
-    const-string v5, "characteristic"
-
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
+
+    const-string v6, "characteristic"
 
     invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1784,74 +1563,74 @@
 
     if-eqz v5, :cond_16
 
-    .line 588
+    .line 408
     return v1
 
-    .line 575
+    .line 395
     :cond_16
     const/4 v5, 0x2
 
     if-ne v3, v5, :cond_2
 
-    .line 576
+    .line 396
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 577
+    .line 397
     .local v2, tagName:Ljava/lang/String;
     const-string v5, "parm"
 
-    invoke-virtual {v5, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_2
 
-    .line 578
+    .line 398
     const-string v5, "name"
 
     invoke-interface {p1, v7, v5}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 579
+    .line 399
     .local v0, name:Ljava/lang/String;
     const-string v5, "4131"
 
-    invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_2
 
-    .line 580
+    .line 400
     const-string v5, "value"
 
     invoke-interface {p1, v7, v5}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 581
+    .line 401
     .local v4, value:Ljava/lang/String;
     const-string v5, "1"
 
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_2
 
-    .line 582
+    .line 402
     const/4 v1, 0x0
 
     goto :goto_2
 .end method
 
-.method private parseWapProvisioningDoc(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;)V
+.method private parseWapProvisioningDoc(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/emailcommon/provider/Policy;)V
     .registers 8
     .parameter "parser"
-    .parameter "sps"
+    .parameter "policy"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -1860,23 +1639,23 @@
     .end annotation
 
     .prologue
-    .line 649
+    .line 471
     :cond_0
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->nextTag()I
 
     move-result v2
 
-    .line 650
+    .line 472
     .local v2, type:I
     const/4 v3, 0x3
 
     if-ne v2, v3, :cond_14
 
-    const-string v3, "wap-provisioningdoc"
-
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
+
+    const-string v4, "wap-provisioningdoc"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1884,32 +1663,32 @@
 
     if-eqz v3, :cond_14
 
-    .line 667
+    .line 490
     :goto_13
     return-void
 
-    .line 652
+    .line 474
     :cond_14
     const/4 v3, 0x2
 
     if-ne v2, v3, :cond_0
 
-    .line 653
+    .line 475
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 654
+    .line 476
     .local v1, name:Ljava/lang/String;
     const-string v3, "characteristic"
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 655
+    .line 477
     const/4 v3, 0x0
 
     const-string v4, "type"
@@ -1918,18 +1697,18 @@
 
     move-result-object v0
 
-    .line 656
+    .line 478
     .local v0, atype:Ljava/lang/String;
     const-string v3, "SecurityPolicy"
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_39
 
-    .line 657
-    invoke-direct {p0, p1, p2}, Lcom/android/exchange/adapter/ProvisionParser;->parseSecurityPolicy(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;)Z
+    .line 480
+    invoke-direct {p0, p1, p2}, Lcom/android/exchange/adapter/ProvisionParser;->parseSecurityPolicy(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/emailcommon/provider/Policy;)Z
 
     move-result v3
 
@@ -1937,20 +1716,35 @@
 
     goto :goto_13
 
-    .line 660
+    .line 483
     :cond_39
     const-string v3, "Registry"
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 661
-    invoke-direct {p0, p1, p2}, Lcom/android/exchange/adapter/ProvisionParser;->parseRegistry(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;)V
+    .line 484
+    invoke-direct {p0, p1, p2}, Lcom/android/exchange/adapter/ProvisionParser;->parseRegistry(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/emailcommon/provider/Policy;)V
 
     goto :goto_13
+.end method
+
+.method private setPolicy(Lcom/android/emailcommon/provider/Policy;)V
+    .registers 2
+    .parameter "policy"
+
+    .prologue
+    .line 87
+    invoke-virtual {p1}, Lcom/android/emailcommon/provider/Policy;->normalize()V
+
+    .line 88
+    iput-object p1, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicy:Lcom/android/emailcommon/provider/Policy;
+
+    .line 89
+    return-void
 .end method
 
 .method private specifiesApplications(I)Z
@@ -1963,10 +1757,10 @@
     .end annotation
 
     .prologue
-    .line 456
+    .line 347
     const/4 v0, 0x0
 
-    .line 457
+    .line 348
     .local v0, specifiesApplications:Z
     :goto_1
     invoke-virtual {p0, p1}, Lcom/android/exchange/adapter/ProvisionParser;->nextTag(I)I
@@ -1977,29 +1771,29 @@
 
     if-eq v1, v2, :cond_13
 
-    .line 458
-    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 349
+    iget v1, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
 
     packed-switch v1, :pswitch_data_14
 
-    .line 464
+    .line 355
     :pswitch_d
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
 
     goto :goto_1
 
-    .line 461
+    .line 352
     :pswitch_11
     const/4 v0, 0x1
 
-    .line 462
+    .line 353
     goto :goto_1
 
-    .line 467
+    .line 358
     :cond_13
     return v0
 
-    .line 458
+    .line 349
     :pswitch_data_14
     .packed-switch 0x3b8
         :pswitch_11
@@ -2014,78 +1808,68 @@
     .registers 3
 
     .prologue
-    .line 87
+    .line 77
     iget-object v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mService:Lcom/android/exchange/EasSyncService;
 
-    sget-object v0, Lcom/android/exchange/EasSyncService;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/exchange/EasSyncService;->mContext:Landroid/content/Context;
 
-    iget-object v1, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicySet:Lcom/android/emailcommon/service/PolicySet;
+    iget-object v1, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicy:Lcom/android/emailcommon/provider/Policy;
 
-    invoke-static {v0, v1}, Lcom/android/exchange/SecurityPolicyDelegate;->clearUnsupportedPolicies(Landroid/content/Context;Lcom/android/emailcommon/service/PolicySet;)Lcom/android/emailcommon/service/PolicySet;
+    invoke-static {v0, v1}, Lcom/android/exchange/SecurityPolicyDelegate;->clearUnsupportedPolicies(Landroid/content/Context;Lcom/android/emailcommon/provider/Policy;)Lcom/android/emailcommon/provider/Policy;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicySet:Lcom/android/emailcommon/service/PolicySet;
+    iput-object v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicy:Lcom/android/emailcommon/provider/Policy;
 
-    .line 88
+    .line 78
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mIsSupportable:Z
 
-    .line 89
+    .line 79
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mUnsupportedPolicies:[Ljava/lang/String;
 
-    .line 90
+    .line 80
     return-void
 .end method
 
-.method public getPolicyKey()Ljava/lang/String;
+.method public getPolicy()Lcom/android/emailcommon/provider/Policy;
     .registers 2
 
     .prologue
-    .line 71
-    iget-object v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicyKey:Ljava/lang/String;
+    .line 57
+    iget-object v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicy:Lcom/android/emailcommon/provider/Policy;
 
     return-object v0
-.end method
-
-.method public getPolicySet()Lcom/android/emailcommon/service/PolicySet;
-    .registers 2
-
-    .prologue
-    .line 67
-    iget-object v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicySet:Lcom/android/emailcommon/service/PolicySet;
-
-    return-object v0
-.end method
-
-.method public getPolicyStatus()I
-    .registers 2
-
-    .prologue
-    .line 79
-    iget v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicyStatus:I
-
-    return v0
 .end method
 
 .method public getRemoteWipe()Z
     .registers 2
 
     .prologue
-    .line 75
+    .line 69
     iget-boolean v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mRemoteWipe:Z
 
     return v0
+.end method
+
+.method public getSecuritySyncKey()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 61
+    iget-object v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mSecuritySyncKey:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method public getUnsupportedPolicies()[Ljava/lang/String;
     .registers 2
 
     .prologue
-    .line 93
+    .line 83
     iget-object v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mUnsupportedPolicies:[Ljava/lang/String;
 
     return-object v0
@@ -2095,8 +1879,8 @@
     .registers 2
 
     .prologue
-    .line 83
-    iget-object v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicySet:Lcom/android/emailcommon/service/PolicySet;
+    .line 73
+    iget-object v0, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicy:Lcom/android/emailcommon/provider/Policy;
 
     if-eqz v0, :cond_a
 
@@ -2128,10 +1912,10 @@
 
     const/4 v3, 0x0
 
-    .line 721
+    .line 553
     const/4 v0, 0x0
 
-    .line 722
+    .line 554
     .local v0, res:Z
     invoke-virtual {p0, v3}, Lcom/android/exchange/adapter/ProvisionParser;->nextTag(I)I
 
@@ -2141,20 +1925,20 @@
 
     if-eq v4, v5, :cond_1f
 
-    .line 723
+    .line 555
     new-instance v2, Ljava/io/IOException;
 
     invoke-direct {v2}, Ljava/io/IOException;-><init>()V
 
     throw v2
 
-    .line 728
+    .line 560
     :sswitch_11
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->getValueInt()I
 
     move-result v1
 
-    .line 729
+    .line 561
     .local v1, status:I
     iget-object v4, p0, Lcom/android/exchange/adapter/ProvisionParser;->mService:Lcom/android/exchange/EasSyncService;
 
@@ -2162,12 +1946,12 @@
 
     invoke-virtual {v4, v5, v1}, Lcom/android/exchange/EasSyncService;->userLog(Ljava/lang/String;I)V
 
-    .line 730
+    .line 562
     if-ne v1, v2, :cond_2f
 
     move v0, v2
 
-    .line 725
+    .line 557
     .end local v1           #status:I
     :cond_1f
     :goto_1f
@@ -2177,14 +1961,14 @@
 
     const/4 v5, 0x3
 
-    if-eq v4, v5, :cond_4a
+    if-eq v4, v5, :cond_3c
 
-    .line 726
-    iget v4, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 558
+    iget v4, p0, Lcom/android/exchange/adapter/ProvisionParser;->tag:I
 
-    sparse-switch v4, :sswitch_data_4c
+    sparse-switch v4, :sswitch_data_3e
 
-    .line 741
+    .line 575
     invoke-virtual {p0}, Lcom/android/exchange/adapter/ProvisionParser;->skipTag()V
 
     goto :goto_1f
@@ -2193,69 +1977,46 @@
     :cond_2f
     move v0, v3
 
-    .line 730
+    .line 562
     goto :goto_1f
 
-    .line 733
+    .line 565
     .end local v1           #status:I
     :sswitch_31
+    invoke-direct {p0}, Lcom/android/exchange/adapter/ProvisionParser;->parseDeviceInformation()V
+
+    goto :goto_1f
+
+    .line 568
+    :sswitch_35
     invoke-direct {p0}, Lcom/android/exchange/adapter/ProvisionParser;->parsePolicies()V
 
-    .line 734
-    iget-object v4, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicySet:Lcom/android/emailcommon/service/PolicySet;
-
-    if-nez v4, :cond_42
-
-    iget-object v4, p0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicyKey:Ljava/lang/String;
-
-    const-string v5, "0"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_44
-
-    :cond_42
-    move v0, v2
-
-    .line 735
-    :goto_43
     goto :goto_1f
 
-    :cond_44
-    move v0, v3
-
-    .line 734
-    goto :goto_43
-
-    .line 737
-    :sswitch_46
+    .line 572
+    :sswitch_39
     iput-boolean v2, p0, Lcom/android/exchange/adapter/ProvisionParser;->mRemoteWipe:Z
 
-    .line 738
-    const/4 v0, 0x1
-
-    .line 739
     goto :goto_1f
 
-    .line 744
-    :cond_4a
+    .line 578
+    :cond_3c
     return v0
 
-    .line 726
+    .line 558
     nop
 
-    :sswitch_data_4c
+    :sswitch_data_3e
     .sparse-switch
-        0x386 -> :sswitch_31
+        0x386 -> :sswitch_35
         0x38b -> :sswitch_11
-        0x38c -> :sswitch_46
+        0x38c -> :sswitch_39
+        0x496 -> :sswitch_31
     .end sparse-switch
 .end method
 
 .method parseProvisionDocXml(Ljava/lang/String;)V
-    .registers 48
+    .registers 10
     .parameter "doc"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -2264,309 +2025,109 @@
     .end annotation
 
     .prologue
-    .line 519
-    new-instance v43, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;
+    .line 362
+    new-instance v3, Lcom/android/emailcommon/provider/Policy;
 
-    move-object/from16 v0, v43
+    invoke-direct {v3}, Lcom/android/emailcommon/provider/Policy;-><init>()V
 
-    move-object/from16 v1, p0
-
-    invoke-direct {v0, v1}, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;-><init>(Lcom/android/exchange/adapter/ProvisionParser;)V
-
-    .line 521
-    .local v43, sps:Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;
-    :try_start_9
+    .line 365
+    .local v3, policy:Lcom/android/emailcommon/provider/Policy;
+    :try_start_5
     invoke-static {}, Lorg/xmlpull/v1/XmlPullParserFactory;->newInstance()Lorg/xmlpull/v1/XmlPullParserFactory;
 
-    move-result-object v41
+    move-result-object v1
 
-    .line 522
-    .local v41, factory:Lorg/xmlpull/v1/XmlPullParserFactory;
-    invoke-virtual/range {v41 .. v41}, Lorg/xmlpull/v1/XmlPullParserFactory;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
+    .line 366
+    .local v1, factory:Lorg/xmlpull/v1/XmlPullParserFactory;
+    invoke-virtual {v1}, Lorg/xmlpull/v1/XmlPullParserFactory;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
-    move-result-object v42
+    move-result-object v2
 
-    .line 523
-    .local v42, parser:Lorg/xmlpull/v1/XmlPullParser;
-    new-instance v3, Ljava/io/ByteArrayInputStream;
+    .line 367
+    .local v2, parser:Lorg/xmlpull/v1/XmlPullParser;
+    new-instance v6, Ljava/io/ByteArrayInputStream;
 
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->getBytes()[B
+    invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v7
+
+    invoke-direct {v6, v7}, Ljava/io/ByteArrayInputStream;-><init>([B)V
+
+    const-string v7, "UTF-8"
+
+    invoke-interface {v2, v6, v7}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
+
+    .line 368
+    invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
+
+    move-result v5
+
+    .line 369
+    .local v5, type:I
+    if-nez v5, :cond_37
+
+    .line 370
+    invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->next()I
+
+    move-result v5
+
+    .line 371
+    const/4 v6, 0x2
+
+    if-ne v5, v6, :cond_37
+
+    .line 372
+    invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-direct {v3, v4}, Ljava/io/ByteArrayInputStream;-><init>([B)V
+    .line 373
+    .local v4, tagName:Ljava/lang/String;
+    const-string v6, "wap-provisioningdoc"
 
-    const-string v4, "UTF-8"
+    invoke-virtual {v4, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v0, v42
+    move-result v6
 
-    invoke-interface {v0, v3, v4}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
+    if-eqz v6, :cond_37
 
-    .line 524
-    invoke-interface/range {v42 .. v42}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
+    .line 374
+    invoke-direct {p0, v2, v3}, Lcom/android/exchange/adapter/ProvisionParser;->parseWapProvisioningDoc(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/emailcommon/provider/Policy;)V
+    :try_end_37
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_5 .. :try_end_37} :catch_3b
 
-    move-result v45
+    .line 382
+    .end local v4           #tagName:Ljava/lang/String;
+    :cond_37
+    invoke-direct {p0, v3}, Lcom/android/exchange/adapter/ProvisionParser;->setPolicy(Lcom/android/emailcommon/provider/Policy;)V
 
-    .line 525
-    .local v45, type:I
-    if-nez v45, :cond_47
-
-    .line 526
-    invoke-interface/range {v42 .. v42}, Lorg/xmlpull/v1/XmlPullParser;->next()I
-
-    move-result v45
-
-    .line 527
-    const/4 v3, 0x2
-
-    move/from16 v0, v45
-
-    if-ne v0, v3, :cond_47
-
-    .line 528
-    invoke-interface/range {v42 .. v42}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
-
-    move-result-object v44
-
-    .line 529
-    .local v44, tagName:Ljava/lang/String;
-    const-string v3, "wap-provisioningdoc"
-
-    move-object/from16 v0, v44
-
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_47
-
-    .line 531
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v42
-
-    move-object/from16 v2, v43
-
-    invoke-direct {v0, v1, v2}, Lcom/android/exchange/adapter/ProvisionParser;->parseWapProvisioningDoc(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;)V
-    :try_end_47
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_9 .. :try_end_47} :catch_10e
-
-    .line 539
-    .end local v44           #tagName:Ljava/lang/String;
-    :cond_47
-    new-instance v3, Lcom/android/emailcommon/service/PolicySet;
-
-    move-object/from16 v0, v43
-
-    iget v4, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMinPasswordLength:I
-
-    move-object/from16 v0, v43
-
-    iget v5, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mPasswordMode:I
-
-    move-object/from16 v0, v43
-
-    iget v6, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxPasswordFails:I
-
-    move-object/from16 v0, v43
-
-    iget v7, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxScreenLockTime:I
-
-    const/4 v8, 0x0
-
-    move-object/from16 v0, v43
-
-    iget-boolean v9, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mPasswordRecoverable:Z
-
-    move-object/from16 v0, v43
-
-    iget v10, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mPasswordExpiration:I
-
-    move-object/from16 v0, v43
-
-    iget v11, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mPasswordHistory:I
-
-    move-object/from16 v0, v43
-
-    iget-boolean v12, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAttachmentsEnabled:Z
-
-    move-object/from16 v0, v43
-
-    iget v13, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxAttachmentSize:I
-
-    move-object/from16 v0, v43
-
-    iget-boolean v14, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowStorageCard:Z
-
-    move-object/from16 v0, v43
-
-    iget-boolean v15, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowCamera:Z
-
-    move-object/from16 v0, v43
-
-    iget-boolean v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowWifi:Z
-
-    move/from16 v16, v0
-
-    move-object/from16 v0, v43
-
-    iget-boolean v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowTextMessaging:Z
-
-    move/from16 v17, v0
-
-    move-object/from16 v0, v43
-
-    iget-boolean v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowPOPIMAPEmail:Z
-
-    move/from16 v18, v0
-
-    move-object/from16 v0, v43
-
-    iget-boolean v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowHTMLEmail:Z
-
-    move/from16 v19, v0
-
-    move-object/from16 v0, v43
-
-    iget-boolean v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowBrowser:Z
-
-    move/from16 v20, v0
-
-    move-object/from16 v0, v43
-
-    iget-boolean v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowInternetSharing:Z
-
-    move/from16 v21, v0
-
-    move-object/from16 v0, v43
-
-    iget-boolean v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mRequireManualSyncWhenRoaming:Z
-
-    move/from16 v22, v0
-
-    move-object/from16 v0, v43
-
-    iget v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowBluetoothMode:I
-
-    move/from16 v23, v0
-
-    move-object/from16 v0, v43
-
-    iget v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mPasswordComplexChars:I
-
-    move/from16 v24, v0
-
-    move-object/from16 v0, v43
-
-    iget v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxCalendarAgeFilter:I
-
-    move/from16 v25, v0
-
-    move-object/from16 v0, v43
-
-    iget v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxEmailAgeFilter:I
-
-    move/from16 v26, v0
-
-    move-object/from16 v0, v43
-
-    iget v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxEmailBodyTruncationSize:I
-
-    move/from16 v27, v0
-
-    move-object/from16 v0, v43
-
-    iget v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mMaxEmailHtmlBodyTruncationSize:I
-
-    move/from16 v28, v0
-
-    move-object/from16 v0, v43
-
-    iget-boolean v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mRequireSignedSMIMEMessages:Z
-
-    move/from16 v29, v0
-
-    move-object/from16 v0, v43
-
-    iget-boolean v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mRequireEncryptedSMIMEMessages:Z
-
-    move/from16 v30, v0
-
-    move-object/from16 v0, v43
-
-    iget v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mRequireSignedSMIMEAlgorithm:I
-
-    move/from16 v31, v0
-
-    move-object/from16 v0, v43
-
-    iget v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mRequireEncryptionSMIMEAlgorithm:I
-
-    move/from16 v32, v0
-
-    move-object/from16 v0, v43
-
-    iget v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowSMIMEEncryptionAlgorithmNegotiation:I
-
-    move/from16 v33, v0
-
-    move-object/from16 v0, v43
-
-    iget-boolean v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowSMIMESoftCerts:Z
-
-    move/from16 v34, v0
-
-    move-object/from16 v0, v43
-
-    iget-boolean v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowDesktopSync:Z
-
-    move/from16 v35, v0
-
-    move-object/from16 v0, v43
-
-    iget-boolean v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mAllowIrDA:Z
-
-    move/from16 v36, v0
-
-    move-object/from16 v0, v43
-
-    iget-boolean v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mRequireEncryption:Z
-
-    move/from16 v37, v0
-
-    move-object/from16 v0, v43
-
-    iget-boolean v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mDeviceEncryptionEnabled:Z
-
-    move/from16 v38, v0
-
-    move-object/from16 v0, v43
-
-    iget-boolean v0, v0, Lcom/android/exchange/adapter/ProvisionParser$ShadowPolicySet;->mSimplePasswordEnabled:Z
-
-    move/from16 v39, v0
-
-    invoke-direct/range {v3 .. v39}, Lcom/android/emailcommon/service/PolicySet;-><init>(IIIIZZIIZIZZZZZZZZZIIIIIIZZIIIZZZZZZ)V
-
-    move-object/from16 v0, p0
-
-    iput-object v3, v0, Lcom/android/exchange/adapter/ProvisionParser;->mPolicySet:Lcom/android/emailcommon/service/PolicySet;
-
-    .line 562
+    .line 383
     return-void
 
-    .line 535
-    .end local v41           #factory:Lorg/xmlpull/v1/XmlPullParserFactory;
-    .end local v42           #parser:Lorg/xmlpull/v1/XmlPullParser;
-    .end local v45           #type:I
-    :catch_10e
-    move-exception v40
+    .line 378
+    .end local v1           #factory:Lorg/xmlpull/v1/XmlPullParserFactory;
+    .end local v2           #parser:Lorg/xmlpull/v1/XmlPullParser;
+    .end local v5           #type:I
+    :catch_3b
+    move-exception v0
 
-    .line 536
-    .local v40, e:Lorg/xmlpull/v1/XmlPullParserException;
-    new-instance v3, Ljava/io/IOException;
+    .line 379
+    .local v0, e:Lorg/xmlpull/v1/XmlPullParserException;
+    new-instance v6, Ljava/io/IOException;
 
-    invoke-direct {v3}, Ljava/io/IOException;-><init>()V
+    invoke-direct {v6}, Ljava/io/IOException;-><init>()V
 
-    throw v3
+    throw v6
+.end method
+
+.method public setSecuritySyncKey(Ljava/lang/String;)V
+    .registers 2
+    .parameter "securitySyncKey"
+
+    .prologue
+    .line 65
+    iput-object p1, p0, Lcom/android/exchange/adapter/ProvisionParser;->mSecuritySyncKey:Ljava/lang/String;
+
+    .line 66
+    return-void
 .end method

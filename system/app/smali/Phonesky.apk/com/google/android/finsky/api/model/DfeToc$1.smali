@@ -32,7 +32,7 @@
     .registers 1
 
     .prologue
-    .line 144
+    .line 155
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter
 
     .prologue
-    .line 147
+    .line 158
     const-class v0, Lcom/google/android/finsky/utils/ParcelableProto;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
@@ -58,7 +58,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;
 
-    .line 149
+    .line 160
     new-instance v1, Lcom/google/android/finsky/api/model/DfeToc;
 
     invoke-direct {v1, v0}, Lcom/google/android/finsky/api/model/DfeToc;-><init>(Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;)V
@@ -71,7 +71,7 @@
     .parameter "x0"
 
     .prologue
-    .line 144
+    .line 155
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/api/model/DfeToc$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/finsky/api/model/DfeToc;
 
     move-result-object v0
@@ -84,7 +84,7 @@
     .parameter "size"
 
     .prologue
-    .line 154
+    .line 165
     new-array v0, p1, [Lcom/google/android/finsky/api/model/DfeToc;
 
     return-object v0
@@ -95,7 +95,7 @@
     .parameter "x0"
 
     .prologue
-    .line 144
+    .line 155
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/api/model/DfeToc$1;->newArray(I)[Lcom/google/android/finsky/api/model/DfeToc;
 
     move-result-object v0

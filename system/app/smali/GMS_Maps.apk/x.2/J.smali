@@ -1,26 +1,19 @@
-.class Lx/J;
-.super Ljava/lang/Object;
-
-
-# instance fields
-.field final a:Lx/I;
-
-.field final b:Lx/H;
-
-.field final c:I
+.class public Lx/j;
+.super Lx/k;
+.source "SourceFile"
 
 
 # direct methods
-.method constructor <init>(Lx/I;Lx/H;I)V
-    .registers 4
+.method public constructor <init>(Ljava/lang/String;)V
+    .registers 3
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 63
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Lx/J;->a:Lx/I;
+    invoke-direct {p0, p1, v0}, Lx/k;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    iput-object p2, p0, Lx/J;->b:Lx/H;
-
-    iput p3, p0, Lx/J;->c:I
-
+    .line 64
     return-void
 .end method

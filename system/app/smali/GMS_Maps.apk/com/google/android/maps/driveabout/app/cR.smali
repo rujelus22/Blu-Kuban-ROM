@@ -1,27 +1,23 @@
-.class Lcom/google/android/maps/driveabout/app/cR;
+.class Lcom/google/android/maps/driveabout/app/cr;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/String;
-
-.field final synthetic b:I
-
-.field final synthetic c:Lcom/google/android/maps/driveabout/app/NavigationView;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/NavigationService;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/NavigationView;Ljava/lang/String;I)V
-    .registers 4
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/NavigationService;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/cR;->c:Lcom/google/android/maps/driveabout/app/NavigationView;
-
-    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/cR;->a:Ljava/lang/String;
-
-    iput p3, p0, Lcom/google/android/maps/driveabout/app/cR;->b:I
+    .prologue
+    .line 270
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/cr;->a:Lcom/google/android/maps/driveabout/app/NavigationService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,23 +27,14 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .registers 2
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/cR;->c:Lcom/google/android/maps/driveabout/app/NavigationView;
+    .prologue
+    .line 273
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/cr;->a:Lcom/google/android/maps/driveabout/app/NavigationService;
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/NavigationView;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/NavigationService;->g()V
 
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/cR;->a:Ljava/lang/String;
-
-    iget v2, p0, Lcom/google/android/maps/driveabout/app/cR;->b:I
-
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
-
+    .line 274
     return-void
 .end method

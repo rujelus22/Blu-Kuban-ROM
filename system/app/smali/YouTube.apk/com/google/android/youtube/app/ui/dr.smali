@@ -1,96 +1,131 @@
 .class final Lcom/google/android/youtube/app/ui/dr;
-.super Ljava/lang/Object;
+.super Lcom/google/android/youtube/core/ui/e;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
 .field final synthetic a:Lcom/google/android/youtube/app/ui/dm;
 
+.field private final b:Lcom/google/android/youtube/core/model/Playlist;
+
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/youtube/app/ui/dm;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 305
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/app/ui/dr;-><init>(Lcom/google/android/youtube/app/ui/dm;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/youtube/app/ui/dm;B)V
-    .registers 3
+.method public constructor <init>(Lcom/google/android/youtube/app/ui/dm;Lcom/google/android/youtube/core/model/Playlist;)V
+    .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 305
+    .line 642
     iput-object p1, p0, Lcom/google/android/youtube/app/ui/dr;->a:Lcom/google/android/youtube/app/ui/dm;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 643
+    invoke-static {p1}, Lcom/google/android/youtube/app/ui/dm;->b(Lcom/google/android/youtube/app/ui/dm;)Lcom/google/android/youtube/core/d;
 
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/google/android/youtube/core/ui/e;-><init>(Lcom/google/android/youtube/core/d;)V
+
+    .line 644
+    iput-object p2, p0, Lcom/google/android/youtube/app/ui/dr;->b:Lcom/google/android/youtube/core/model/Playlist;
+
+    .line 645
     return-void
 .end method
 
 
 # virtual methods
-.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 9
+.method public final a(Lcom/google/android/youtube/core/model/UserAuth;)V
+    .registers 6
     .parameter
-    .parameter
+
+    .prologue
+    .line 648
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dr;->a:Lcom/google/android/youtube/app/ui/dm;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/dm;->e(Lcom/google/android/youtube/app/ui/dm;)Lcom/google/android/youtube/core/b/ae;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/dr;->a:Lcom/google/android/youtube/app/ui/dm;
+
+    invoke-static {v1}, Lcom/google/android/youtube/app/ui/dm;->f(Lcom/google/android/youtube/app/ui/dm;)Lcom/google/android/youtube/core/model/Video;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lcom/google/android/youtube/core/model/Video;->id:Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/google/android/youtube/app/ui/dr;->b:Lcom/google/android/youtube/core/model/Playlist;
+
+    iget-object v2, v2, Lcom/google/android/youtube/core/model/Playlist;->contentUri:Landroid/net/Uri;
+
+    iget-object v3, p0, Lcom/google/android/youtube/app/ui/dr;->a:Lcom/google/android/youtube/app/ui/dm;
+
+    iget-object v3, v3, Lcom/google/android/youtube/app/ui/dm;->a:Landroid/app/Activity;
+
+    invoke-static {v3, p0}, Lcom/google/android/youtube/core/async/c;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/l;)Lcom/google/android/youtube/core/async/c;
+
+    move-result-object v3
+
+    invoke-interface {v0, v1, v2, p1, v3}, Lcom/google/android/youtube/core/b/ae;->a(Ljava/lang/String;Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;Lcom/google/android/youtube/core/async/l;)V
+
+    .line 650
+    return-void
+.end method
+
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
+    .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 307
-    if-eqz p1, :cond_26
+    .line 637
+    const-string v0, "Error adding video to playlist"
 
-    .line 308
-    invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
+    invoke-static {v0, p2}, Lcom/google/android/youtube/core/L;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    move-result-object v0
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dr;->c:Lcom/google/android/youtube/core/d;
 
-    .line 309
-    invoke-interface {v0, p3}, Landroid/widget/Adapter;->getItem(I)Ljava/lang/Object;
+    invoke-virtual {v0, p2}, Lcom/google/android/youtube/core/d;->b(Ljava/lang/Throwable;)V
 
-    move-result-object v0
+    return-void
+.end method
 
-    check-cast v0, Lcom/google/android/youtube/core/model/ArtistBundle$Related;
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 9
+    .parameter
+    .parameter
 
-    .line 310
-    if-eqz v0, :cond_26
+    .prologue
+    .line 637
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dr;->a:Lcom/google/android/youtube/app/ui/dm;
 
-    .line 311
     iget-object v1, p0, Lcom/google/android/youtube/app/ui/dr;->a:Lcom/google/android/youtube/app/ui/dm;
 
-    invoke-static {v1}, Lcom/google/android/youtube/app/ui/dm;->j(Lcom/google/android/youtube/app/ui/dm;)Lcom/google/android/youtube/core/Analytics;
+    iget-object v1, v1, Lcom/google/android/youtube/app/ui/dm;->a:Landroid/app/Activity;
+
+    const v2, 0x7f0b01d4
+
+    const/4 v3, 0x1
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    iget-object v5, p0, Lcom/google/android/youtube/app/ui/dr;->b:Lcom/google/android/youtube/core/model/Playlist;
+
+    iget-object v5, v5, Lcom/google/android/youtube/core/model/Playlist;->title:Ljava/lang/String;
+
+    aput-object v5, v3, v4
+
+    invoke-virtual {v1, v2, v3}, Landroid/app/Activity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    sget-object v2, Lcom/google/android/youtube/core/Analytics$VideoCategory;->RelatedArtist:Lcom/google/android/youtube/core/Analytics$VideoCategory;
+    invoke-static {v0, v1}, Lcom/google/android/youtube/app/ui/dm;->a(Lcom/google/android/youtube/app/ui/dm;Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2, p3}, Lcom/google/android/youtube/core/Analytics;->a(Lcom/google/android/youtube/core/Analytics$VideoCategory;I)V
-
-    .line 312
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/dr;->a:Lcom/google/android/youtube/app/ui/dm;
-
-    invoke-static {v1}, Lcom/google/android/youtube/app/ui/dm;->k(Lcom/google/android/youtube/app/ui/dm;)Lcom/google/android/youtube/app/o;
-
-    move-result-object v1
-
-    iget-object v0, v0, Lcom/google/android/youtube/core/model/ArtistBundle$Related;->id:Ljava/lang/String;
-
-    sget-object v2, Lcom/google/android/youtube/core/client/DefaultVideoStatsClient$Referrers;->WATCH_RELATED:Lcom/google/android/youtube/core/client/DefaultVideoStatsClient$Referrers;
-
-    invoke-interface {v1, v0, v2}, Lcom/google/android/youtube/app/o;->a(Ljava/lang/String;Lcom/google/android/youtube/core/client/al;)V
-
-    .line 315
-    :cond_26
     return-void
 .end method

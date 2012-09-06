@@ -157,7 +157,7 @@
     .line 194
     sget-object v0, Lcom/google/android/common/http/UrlRules;->d:Ljava/lang/Object;
 
-    if-ne v3, v0, :cond_30
+    if-ne v3, v0, :cond_2c
 
     .line 196
     const-string v0, "UrlRules"
@@ -168,20 +168,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_28
 
     .line 197
     const-string v0, "UrlRules"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Using cached rules, versionToken: "
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -194,20 +190,20 @@
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 199
-    :cond_2c
+    :cond_28
     sget-object v0, Lcom/google/android/common/http/UrlRules;->c:Lcom/google/android/common/http/UrlRules;
-    :try_end_2e
-    .catchall {:try_start_3 .. :try_end_2e} :catchall_bb
+    :try_end_2a
+    .catchall {:try_start_3 .. :try_end_2a} :catchall_b3
 
     .line 226
-    :goto_2e
+    :goto_2a
     monitor-exit v2
 
     return-object v0
 
     .line 202
-    :cond_30
-    :try_start_30
+    :cond_2c
+    :try_start_2c
     const-string v0, "UrlRules"
 
     const/4 v1, 0x2
@@ -216,7 +212,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_3c
 
     .line 203
     const-string v0, "UrlRules"
@@ -226,7 +222,7 @@
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 206
-    :cond_40
+    :cond_3c
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/String;
@@ -255,24 +251,24 @@
 
     move-result-object v5
 
-    :cond_59
-    :goto_59
+    :cond_55
+    :goto_55
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_be
+    if-eqz v0, :cond_b6
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map$Entry;
-    :try_end_65
-    .catchall {:try_start_30 .. :try_end_65} :catchall_bb
+    :try_end_61
+    .catchall {:try_start_2c .. :try_end_61} :catchall_b3
 
     .line 210
-    :try_start_65
+    :try_start_61
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
@@ -293,13 +289,13 @@
     check-cast v0, Ljava/lang/String;
 
     .line 212
-    if-eqz v0, :cond_59
+    if-eqz v0, :cond_55
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v6
 
-    if-eqz v6, :cond_59
+    if-eqz v6, :cond_55
 
     .line 213
     const-string v6, "UrlRules"
@@ -310,19 +306,15 @@
 
     move-result v6
 
-    if-eqz v6, :cond_a9
+    if-eqz v6, :cond_a1
 
     const-string v6, "UrlRules"
 
     new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v8, "  Rule "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
+    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -345,36 +337,36 @@
     invoke-static {v6, v7}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 214
-    :cond_a9
+    :cond_a1
     new-instance v6, Lcom/google/android/common/http/e;
 
     invoke-direct {v6, v1, v0}, Lcom/google/android/common/http/e;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_b1
-    .catchall {:try_start_65 .. :try_end_b1} :catchall_bb
-    .catch Lcom/google/android/common/http/UrlRules$RuleFormatException; {:try_start_65 .. :try_end_b1} :catch_b2
+    :try_end_a9
+    .catchall {:try_start_61 .. :try_end_a9} :catchall_b3
+    .catch Lcom/google/android/common/http/UrlRules$RuleFormatException; {:try_start_61 .. :try_end_a9} :catch_aa
 
-    goto :goto_59
+    goto :goto_55
 
     .line 215
-    :catch_b2
+    :catch_aa
     move-exception v0
 
     .line 217
-    :try_start_b3
+    :try_start_ab
     const-string v1, "UrlRules"
 
     const-string v6, "Invalid rule from Gservices"
 
     invoke-static {v1, v6, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_ba
-    .catchall {:try_start_b3 .. :try_end_ba} :catchall_bb
+    :try_end_b2
+    .catchall {:try_start_ab .. :try_end_b2} :catchall_b3
 
-    goto :goto_59
+    goto :goto_55
 
     .line 193
-    :catchall_bb
+    :catchall_b3
     move-exception v0
 
     monitor-exit v2
@@ -382,8 +374,8 @@
     throw v0
 
     .line 220
-    :cond_be
-    :try_start_be
+    :cond_b6
+    :try_start_b6
     new-instance v1, Lcom/google/android/common/http/UrlRules;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -414,20 +406,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f4
+    if-eqz v0, :cond_e8
 
     .line 223
     const-string v0, "UrlRules"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "New rules stored, versionToken: "
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -440,12 +428,12 @@
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 226
-    :cond_f4
+    :cond_e8
     sget-object v0, Lcom/google/android/common/http/UrlRules;->c:Lcom/google/android/common/http/UrlRules;
-    :try_end_f6
-    .catchall {:try_start_be .. :try_end_f6} :catchall_bb
+    :try_end_ea
+    .catchall {:try_start_b6 .. :try_end_ea} :catchall_b3
 
-    goto/16 :goto_2e
+    goto/16 :goto_2a
 .end method
 
 .method static synthetic a()Ljava/util/regex/Pattern;

@@ -53,40 +53,40 @@
         <item quantity="one">در انتظار عملکرد در %1$d گفتگو.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> مورد نادیده گرفته شد.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> مورد نادیده گرفته شد.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد نادیده گرفته شد.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد نادیده گرفته شد.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> مورد به عنوان هرزنامه گزارش شد.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> مورد به عنوان هرزنامه گزارش شد.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد به عنوان هرزنامه گزارش شد.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد به عنوان هرزنامه گزارش شد.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> مورد بایگانی شد.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> مورد بایگانی شد.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد بایگانی شد.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد بایگانی شد.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> مورد به صندوق ورودی منتقل شد.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> مورد به صندوق ورودی منتقل شد.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد به صندوق ورودی منتقل شد.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد به صندوق ورودی منتقل شد.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> مورد حذف شد.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> مورد حذف شد.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد حذف شد.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد حذف شد.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> مورد به عنوان مهم علامت‌گذاری شد.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> مورد به عنوان مهم علامت‌گذاری شد.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد به عنوان مهم علامت‌گذاری شد.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد به عنوان مهم علامت‌گذاری شد.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> مورد به عنوان غیرمهم علامت‌گذاری شد.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> مورد به عنوان غیرمهم علامت‌گذاری شد.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد به عنوان غیرمهم علامت‌گذاری شد.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد به عنوان غیرمهم علامت‌گذاری شد.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> مورد بعنوان خوانده شده علامت‌گذاری شد.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> مورد بعنوان خوانده شده علامت‌گذاری شد.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد بعنوان خوانده شده علامت‌گذاری شد.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد بعنوان خوانده شده علامت‌گذاری شد.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> مورد بعنوان خوانده نشده علامت‌گذاری شد.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> مورد بعنوان خوانده نشده علامت‌گذاری شد.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد بعنوان خوانده نشده علامت‌گذاری شد.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> مورد بعنوان خوانده نشده علامت‌گذاری شد.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">برچسب‌های تغییر یافته.</item>

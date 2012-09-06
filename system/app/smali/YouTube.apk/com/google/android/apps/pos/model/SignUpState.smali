@@ -12,23 +12,23 @@
 
 # instance fields
 .field private displayName:Ljava/lang/String;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
         a = "display_name"
     .end annotation
 .end field
 
 .field private email:Ljava/lang/String;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
     .end annotation
 .end field
 
 .field private profileImageUrl:Ljava/lang/String;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
     .end annotation
 .end field
 
 .field private signedUp:Ljava/lang/Boolean;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
     .end annotation
 .end field
 
@@ -120,7 +120,7 @@
 
     move-result-object v3
 
-    invoke-static {v0, v3}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v3}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -134,7 +134,7 @@
 
     move-result-object v3
 
-    invoke-static {v0, v3}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v3}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -148,7 +148,7 @@
 
     move-result-object v3
 
-    invoke-static {v0, v3}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v3}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -176,7 +176,7 @@
 
     move-result-object v4
 
-    invoke-static {v0, v4}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v4}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -189,7 +189,7 @@
 
     move-result-object v0
 
-    invoke-static {v3, v0}, Lcom/google/common/base/p;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v0}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -454,7 +454,7 @@
 
     .prologue
     .line 136
-    invoke-static {p0}, Lcom/google/common/base/p;->a(Ljava/lang/Object;)Lcom/google/common/base/q;
+    invoke-static {p0}, Lcom/google/common/base/aa;->a(Ljava/lang/Object;)Lcom/google/common/base/ab;
 
     move-result-object v0
 
@@ -462,17 +462,17 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/common/base/q;->a(Ljava/lang/Object;)Lcom/google/common/base/q;
+    invoke-virtual {v0, v1}, Lcom/google/common/base/ab;->a(Ljava/lang/Object;)Lcom/google/common/base/ab;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/google/android/apps/pos/model/SignUpState;->signedUp:Ljava/lang/Boolean;
 
-    invoke-virtual {v0, v1}, Lcom/google/common/base/q;->a(Ljava/lang/Object;)Lcom/google/common/base/q;
+    invoke-virtual {v0, v1}, Lcom/google/common/base/ab;->a(Ljava/lang/Object;)Lcom/google/common/base/ab;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/common/base/q;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/common/base/ab;->toString()Ljava/lang/String;
 
     move-result-object v0
 

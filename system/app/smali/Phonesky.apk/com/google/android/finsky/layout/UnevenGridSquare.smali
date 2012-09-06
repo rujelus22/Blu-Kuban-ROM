@@ -88,7 +88,7 @@
     invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->onDraw(Landroid/graphics/Canvas;)V
 
     .line 121
-    const v0, 0x7f08018f
+    const v0, 0x7f080219
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/UnevenGridSquare;->findViewById(I)Landroid/view/View;
 
@@ -188,7 +188,7 @@
 
     .prologue
     .line 84
-    const v8, 0x7f08018f
+    const v8, 0x7f080219
 
     invoke-virtual {p0, v8}, Lcom/google/android/finsky/layout/UnevenGridSquare;->findViewById(I)Landroid/view/View;
 
@@ -198,7 +198,7 @@
 
     .line 85
     .local v3, promoImage:Landroid/widget/ImageView;
-    const v8, 0x7f080190
+    const v8, 0x7f08021a
 
     invoke-virtual {p0, v8}, Lcom/google/android/finsky/layout/UnevenGridSquare;->findViewById(I)Landroid/view/View;
 
@@ -206,7 +206,7 @@
 
     .line 86
     .local v6, reflectionGradient:Landroid/view/View;
-    const v8, 0x7f08012d
+    const v8, 0x7f080163
 
     invoke-virtual {p0, v8}, Lcom/google/android/finsky/layout/UnevenGridSquare;->findViewById(I)Landroid/view/View;
 
@@ -216,7 +216,7 @@
 
     .line 87
     .local v4, ratingBar:Landroid/widget/RatingBar;
-    const v8, 0x7f080015
+    const v8, 0x7f08001c
 
     invoke-virtual {p0, v8}, Lcom/google/android/finsky/layout/UnevenGridSquare;->findViewById(I)Landroid/view/View;
 
@@ -344,7 +344,7 @@
 
     .prologue
     .line 48
-    const v10, 0x7f08018f
+    const v10, 0x7f080219
 
     invoke-virtual {p0, v10}, Lcom/google/android/finsky/layout/UnevenGridSquare;->findViewById(I)Landroid/view/View;
 
@@ -354,7 +354,7 @@
 
     .line 49
     .local v4, promoImage:Landroid/widget/ImageView;
-    const v10, 0x7f080190
+    const v10, 0x7f08021a
 
     invoke-virtual {p0, v10}, Lcom/google/android/finsky/layout/UnevenGridSquare;->findViewById(I)Landroid/view/View;
 
@@ -362,7 +362,7 @@
 
     .line 50
     .local v6, reflectionGradient:Landroid/view/View;
-    const v10, 0x7f08012d
+    const v10, 0x7f080163
 
     invoke-virtual {p0, v10}, Lcom/google/android/finsky/layout/UnevenGridSquare;->findViewById(I)Landroid/view/View;
 
@@ -372,7 +372,7 @@
 
     .line 51
     .local v5, ratingBar:Landroid/widget/RatingBar;
-    const v10, 0x7f080015
+    const v10, 0x7f08001c
 
     invoke-virtual {p0, v10}, Lcom/google/android/finsky/layout/UnevenGridSquare;->findViewById(I)Landroid/view/View;
 

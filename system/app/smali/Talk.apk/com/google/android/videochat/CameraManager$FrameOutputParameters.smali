@@ -27,7 +27,7 @@
 
     .prologue
     .line 57
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 58
     new-instance v0, Lcom/google/android/videochat/Size;
@@ -54,7 +54,7 @@
 
     .prologue
     .line 53
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
     iput-object p1, p0, Lcom/google/android/videochat/CameraManager$FrameOutputParameters;->size:Lcom/google/android/videochat/Size;

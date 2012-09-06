@@ -265,7 +265,7 @@
 
     .prologue
     .line 240
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 241
     iput-object p1, p0, Lcom/google/android/talk/GmailProviderWrapper;->mContentResolver:Landroid/content/ContentResolver;

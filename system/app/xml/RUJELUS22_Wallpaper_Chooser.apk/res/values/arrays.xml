@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="extra_wallpapers" />
+    <string-array name="wallpapers">
+        <item>wallpaper_cat2</item>
+        <item>wallpaper_broke_glass</item>
+        <item>wallpaper_circuit</item>
+        <item>wallpaper_cafe</item>
+        <item>wallpaper_field</item>
+        <item>wallpaper_flower</item>
+        <item>wallpaper_grass</item>
+        <item>wallpaper_grass_new</item>
+        <item>wallpaper_secdesert</item>
+        <item>wallpaper_street</item>
+        <item>wallpaper_street_lights</item>
+        <item>wallpaper_tree</item>
+        <item>wallpaper_desert</item>
+        <item>wallpaper_brown</item>
+        <item>wallpaper_bliss</item>
+        <item>wallpaper_circle</item>
+        <item>wallpaper_glass</item>
+        <item>wallpaper_light</item>
+        <item>wallpaper_motion</item>
+        <item>wallpaper_rock</item>
+        <item>wallpaper_speedlight</item>
+        <item>wallpaper_stars</item>
+        <item>wallpaper_venezia</item>
+        <item>wallpaper_nexuswallpaper1</item>
+        <item>wallpaper_phasebeam</item>
+        <item>wallpaper_canyon</item>
+        <item>wallpaper_zanzibar</item>
+        <item>wallpaper_trans90</item>
+        <item>wallpaper_trans80</item>
+        <item>wallpaper_trans70</item>
+        <item>wallpaper_trans60</item>
+        <item>wallpaper_trans50</item>
+        <item>wallpaper_trans40</item>
+        <item>wallpaper_trans30</item>
+        <item>wallpaper_trans20</item>
+        <item>wallpaper_trans10</item>
+        <item>wallpaper_trans0</item>
+        <item>wallpaper_trans90ics</item>
+        <item>wallpaper_trans80ics</item>
+        <item>wallpaper_trans70ics</item>
+        <item>wallpaper_trans60ics</item>
+        <item>wallpaper_trans50ics</item>
+        <item>wallpaper_trans40ics</item>
+        <item>wallpaper_trans30ics</item>
+        <item>wallpaper_trans20ics</item>
+        <item>wallpaper_trans10ics</item>
+        <item>wallpaper_trans0ics</item>
+    </string-array>
+</resources>

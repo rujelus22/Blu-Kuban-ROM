@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/model/j;
+.implements Lcom/google/android/youtube/core/model/i;
 .implements Ljava/io/Serializable;
 
 
@@ -173,7 +173,7 @@
     .line 135
     const-string v0, "entries can\'t be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 136
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Page$Builder;->entries:Ljava/util/List;
@@ -254,7 +254,7 @@
     .line 128
     const-string v0, "entries can\'t be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 129
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Page$Builder;->entries:Ljava/util/List;

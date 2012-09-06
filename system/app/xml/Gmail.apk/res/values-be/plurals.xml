@@ -53,40 +53,40 @@
         <item quantity="one">У чаканні дзеяння размоў: %1$d.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">Адключана: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Адключана: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Адключана: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Адключана: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">Пазначана як спам: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Пазначана як спам: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Пазначана як спам: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Пазначана як спам: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">Заархiвавана: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Заархiвавана: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Заархiвавана: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Заархiвавана: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">Перамешчана ва Ўваходныя: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Перамешчана ва Ўваходныя: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Перамешчана ва Ўваходныя: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Перамешчана ва Ўваходныя: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">Выдалена: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Выдалена: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Выдалена: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Выдалена: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">Пазначаны як важныя: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Пазначаны як важныя: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Пазначаны як важныя: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Пазначаны як важныя: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">Пазначаны як няважныя: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Пазначаны як няважныя: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Пазначаны як няважныя: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Пазначаны як няважныя: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">Пазначаны як прачытаныя: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Пазначаны як прачытаныя: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Пазначаны як прачытаныя: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Пазначаны як прачытаныя: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">Пазначаны як непрачытаныя: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Пазначаны як непрачытаныя: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Пазначаны як непрачытаныя: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Пазначаны як непрачытаныя: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Змененыя цэтлiкi.</item>

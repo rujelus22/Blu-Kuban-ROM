@@ -62,6 +62,35 @@
     return-void
 .end method
 
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 35
+    invoke-direct {p0, p1}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
+
+    .line 24
+    new-instance v0, Landroid/graphics/Paint;
+
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/ui/GlowingButton;->a:Landroid/graphics/Paint;
+
+    .line 25
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/ui/GlowingButton;->b:Landroid/graphics/Rect;
+
+    .line 36
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/ui/GlowingButton;->a(Landroid/content/Context;)V
+
+    .line 37
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
     .parameter
@@ -105,7 +134,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f080041
+    const v1, 0x7f09004c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
@@ -192,7 +221,7 @@
     .line 61
     iget-object v0, p0, Lcom/google/android/youtube/app/ui/GlowingButton;->a:Landroid/graphics/Paint;
 
-    const v2, -0x3ebdbe
+    const v2, -0xeaab6a
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="12.0sp" android:gravity="right|center" android:id="@id/home_time" android:background="@color/calendar_date_banner_background" android:paddingRight="8.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="16.0dip" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:id="@id/main_pane" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="6.0" />
+        <FrameLayout android:id="@id/secondary_pane" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="4.0" />
+    </LinearLayout>
+    <View android:id="@id/mini_month_container" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="0.0dip" />
+    <FrameLayout android:id="@id/mini_month" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="0.0dip" />
+    <FrameLayout android:id="@id/calendar_list" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="0.0dip" />
+</LinearLayout>

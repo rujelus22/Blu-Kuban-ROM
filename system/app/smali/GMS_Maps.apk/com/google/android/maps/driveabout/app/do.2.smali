@@ -1,23 +1,23 @@
-.class Lcom/google/android/maps/driveabout/app/do;
+.class Lcom/google/android/maps/driveabout/app/dO;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/preference/Preference$OnPreferenceClickListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/am;
-
-.field final synthetic b:Lcom/google/android/maps/driveabout/app/SettingsActivity;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/dD;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/SettingsActivity;Lcom/google/android/maps/driveabout/app/am;)V
-    .registers 3
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/dD;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/do;->b:Lcom/google/android/maps/driveabout/app/SettingsActivity;
-
-    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/do;->a:Lcom/google/android/maps/driveabout/app/am;
+    .prologue
+    .line 904
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/dO;->a:Lcom/google/android/maps/driveabout/app/dD;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,14 +26,16 @@
 
 
 # virtual methods
-.method public onPreferenceClick(Landroid/preference/Preference;)Z
+.method public onClick(Landroid/view/View;)V
     .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/do;->a:Lcom/google/android/maps/driveabout/app/am;
+    .prologue
+    .line 907
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/dO;->a:Lcom/google/android/maps/driveabout/app/dD;
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/am;->h()V
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/dD;->g()V
 
-    const/4 v0, 0x1
-
-    return v0
+    .line 908
+    return-void
 .end method

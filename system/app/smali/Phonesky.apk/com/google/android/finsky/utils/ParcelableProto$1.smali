@@ -34,7 +34,7 @@
     .registers 1
 
     .prologue
-    .line 63
+    .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -58,32 +58,32 @@
     .end annotation
 
     .prologue
-    .line 66
+    .line 72
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 67
+    .line 73
     .local v5, size:I
     new-array v3, v5, [B
 
-    .line 68
+    .line 74
     .local v3, payload:[B
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->readByteArray([B)V
 
-    .line 69
+    .line 75
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 72
+    .line 78
     .local v0, className:Ljava/lang/String;
     :try_start_d
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v1
 
-    .line 73
+    .line 79
     .local v1, clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     const/4 v6, 0x0
 
@@ -103,11 +103,11 @@
 
     check-cast v4, Lcom/google/protobuf/micro/MessageMicro;
 
-    .line 76
+    .line 82
     .local v4, proto:Lcom/google/protobuf/micro/MessageMicro;
     invoke-virtual {v4, v3}, Lcom/google/protobuf/micro/MessageMicro;->mergeFrom([B)Lcom/google/protobuf/micro/MessageMicro;
 
-    .line 77
+    .line 83
     new-instance v6, Lcom/google/android/finsky/utils/ParcelableProto;
 
     invoke-direct {v6, v4}, Lcom/google/android/finsky/utils/ParcelableProto;-><init>(Lcom/google/protobuf/micro/MessageMicro;)V
@@ -116,27 +116,14 @@
 
     return-object v6
 
-    .line 78
+    .line 84
     .end local v1           #clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     .end local v4           #proto:Lcom/google/protobuf/micro/MessageMicro;
     :catch_2a
     move-exception v2
 
-    .line 80
+    .line 86
     .local v2, e:Ljava/lang/Exception;
-    const-string v6, "Could not properly unmarshal %s"
-
-    const/4 v7, 0x1
-
-    new-array v7, v7, [Ljava/lang/Object;
-
-    const/4 v8, 0x0
-
-    aput-object v0, v7, v8
-
-    invoke-static {v6, v7}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 81
     new-instance v6, Ljava/lang/IllegalArgumentException;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -167,7 +154,7 @@
     .parameter "x0"
 
     .prologue
-    .line 63
+    .line 69
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/utils/ParcelableProto$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/finsky/utils/ParcelableProto;
 
     move-result-object v0
@@ -189,7 +176,7 @@
     .end annotation
 
     .prologue
-    .line 89
+    .line 94
     new-array v0, p1, [Lcom/google/android/finsky/utils/ParcelableProto;
 
     return-object v0
@@ -200,7 +187,7 @@
     .parameter "x0"
 
     .prologue
-    .line 63
+    .line 69
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/utils/ParcelableProto$1;->newArray(I)[Lcom/google/android/finsky/utils/ParcelableProto;
 
     move-result-object v0

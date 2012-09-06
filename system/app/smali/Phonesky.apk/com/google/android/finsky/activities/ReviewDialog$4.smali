@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 167
+    .line 164
     iput-object p1, p0, Lcom/google/android/finsky/activities/ReviewDialog$4;->this$0:Lcom/google/android/finsky/activities/ReviewDialog;
 
     iput-object p2, p0, Lcom/google/android/finsky/activities/ReviewDialog$4;->val$ratingDescription:Landroid/widget/TextView;
@@ -49,13 +49,13 @@
     .parameter "fromTouch"
 
     .prologue
-    .line 170
+    .line 167
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewDialog$4;->this$0:Lcom/google/android/finsky/activities/ReviewDialog;
 
     #calls: Lcom/google/android/finsky/activities/ReviewDialog;->syncOkButtonState()V
     invoke-static {v0}, Lcom/google/android/finsky/activities/ReviewDialog;->access$000(Lcom/google/android/finsky/activities/ReviewDialog;)V
 
-    .line 171
+    .line 168
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewDialog$4;->val$ratingDescription:Landroid/widget/TextView;
 
     invoke-static {}, Lcom/google/android/finsky/activities/ReviewDialog;->access$500()[I
@@ -70,6 +70,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 172
+    .line 169
     return-void
 .end method

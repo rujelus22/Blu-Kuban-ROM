@@ -9,21 +9,11 @@
 # instance fields
 .field private mAutoAdvance:Landroid/preference/ListPreference;
 
-.field private mDeleteEmailConfirm:Landroid/preference/CheckBoxPreference;
-
-.field mLineSummaries:[Ljava/lang/CharSequence;
-
-.field private mPreView:Landroid/preference/ListPreference;
-
 .field private mPreferences:Lcom/android/email/Preferences;
 
 .field mSizeSummaries:[Ljava/lang/CharSequence;
 
-.field private mSplitMode:Landroid/preference/CheckBoxPreference;
-
-.field private mTopMode:Landroid/preference/ListPreference;
-
-.field mTopModeSummaries:[Ljava/lang/CharSequence;
+.field private mTextZoom:Landroid/preference/ListPreference;
 
 
 # direct methods
@@ -31,83 +21,188 @@
     .registers 1
 
     .prologue
-    .line 38
+    .line 32
     invoke-direct {p0}, Landroid/preference/PreferenceFragment;-><init>()V
 
     return-void
 .end method
 
 .method private loadSettings()V
-    .registers 4
+    .registers 3
 
     .prologue
-    .line 156
+    .line 103
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/GeneralPreferences;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/email/Preferences;->getPreferences(Landroid/content/Context;)Lcom/android/email/Preferences;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
+
+    .line 104
+    const-string v0, "auto_advance"
+
+    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/GeneralPreferences;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/preference/ListPreference;
+
+    iput-object v0, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mAutoAdvance:Landroid/preference/ListPreference;
+
+    .line 105
+    iget-object v0, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mAutoAdvance:Landroid/preference/ListPreference;
+
+    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
+
+    invoke-virtual {v1}, Lcom/android/email/Preferences;->getAutoAdvanceDirection()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setValueIndex(I)V
+
+    .line 106
+    iget-object v0, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mAutoAdvance:Landroid/preference/ListPreference;
+
+    invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
+
+    .line 108
+    const-string v0, "text_zoom"
+
+    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/GeneralPreferences;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/preference/ListPreference;
+
+    iput-object v0, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mTextZoom:Landroid/preference/ListPreference;
+
+    .line 109
+    iget-object v0, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mTextZoom:Landroid/preference/ListPreference;
+
+    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
+
+    invoke-virtual {v1}, Lcom/android/email/Preferences;->getTextZoom()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setValueIndex(I)V
+
+    .line 110
+    iget-object v0, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mTextZoom:Landroid/preference/ListPreference;
+
+    invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
+
+    .line 112
+    invoke-direct {p0}, Lcom/android/email/activity/setup/GeneralPreferences;->reloadDynamicSummaries()V
+
+    .line 113
+    return-void
+.end method
+
+.method private reloadDynamicSummaries()V
+    .registers 5
+
+    .prologue
+    .line 119
+    iget-object v2, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
+
+    invoke-virtual {v2}, Lcom/android/email/Preferences;->getTextZoom()I
+
+    move-result v1
+
+    .line 121
+    .local v1, textZoomIndex:I
+    iget-object v2, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mSizeSummaries:[Ljava/lang/CharSequence;
+
+    if-nez v2, :cond_1b
+
+    .line 122
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/GeneralPreferences;->getActivity()Landroid/app/Activity;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x7f060012
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getTextArray(I)[Ljava/lang/CharSequence;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mSizeSummaries:[Ljava/lang/CharSequence;
+
+    .line 125
+    :cond_1b
+    const/4 v0, 0x0
+
+    .line 126
+    .local v0, summary:Ljava/lang/CharSequence;
+    if-ltz v1, :cond_27
+
+    iget-object v2, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mSizeSummaries:[Ljava/lang/CharSequence;
+
+    array-length v2, v2
+
+    if-ge v1, v2, :cond_27
+
+    .line 127
+    iget-object v2, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mSizeSummaries:[Ljava/lang/CharSequence;
+
+    aget-object v0, v2, v1
+
+    .line 129
+    :cond_27
+    iget-object v2, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mTextZoom:Landroid/preference/ListPreference;
+
+    invoke-virtual {v2, v0}, Landroid/preference/ListPreference;->setSummary(Ljava/lang/CharSequence;)V
+
+    .line 130
+    return-void
+.end method
+
+
+# virtual methods
+.method public onCreate(Landroid/os/Bundle;)V
+    .registers 5
+    .parameter "savedInstanceState"
+
+    .prologue
+    .line 49
+    invoke-super {p0, p1}, Landroid/preference/PreferenceFragment;->onCreate(Landroid/os/Bundle;)V
+
+    .line 51
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/GeneralPreferences;->getPreferenceManager()Landroid/preference/PreferenceManager;
+
+    move-result-object v1
+
+    const-string v2, "AndroidMail.Main"
+
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceManager;->setSharedPreferencesName(Ljava/lang/String;)V
+
+    .line 54
+    const v1, 0x7f050006
+
+    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/GeneralPreferences;->addPreferencesFromResource(I)V
+
+    .line 56
     invoke-virtual {p0}, Lcom/android/email/activity/setup/GeneralPreferences;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/android/email/Preferences;->getPreferences(Landroid/content/Context;)Lcom/android/email/Preferences;
+    invoke-static {v1}, Lcom/android/email/activity/UiUtilities;->useTwoPane(Landroid/content/Context;)Z
 
-    move-result-object v1
+    move-result v1
 
-    iput-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
+    if-eqz v1, :cond_2d
 
-    .line 158
-    const-string v1, "auto_advance"
-
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/GeneralPreferences;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/preference/ListPreference;
-
-    iput-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mAutoAdvance:Landroid/preference/ListPreference;
-
-    .line 159
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mAutoAdvance:Landroid/preference/ListPreference;
-
-    iget-object v2, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
-
-    invoke-virtual {v2}, Lcom/android/email/Preferences;->getAutoAdvanceDirection()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/preference/ListPreference;->setValueIndex(I)V
-
-    .line 160
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mAutoAdvance:Landroid/preference/ListPreference;
-
-    invoke-virtual {v1, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
-
-    .line 170
-    const-string v1, "preview_line"
-
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/GeneralPreferences;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/preference/ListPreference;
-
-    iput-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreView:Landroid/preference/ListPreference;
-
-    .line 171
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreView:Landroid/preference/ListPreference;
-
-    iget-object v2, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
-
-    invoke-virtual {v2}, Lcom/android/email/Preferences;->getPreViewLine()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/preference/ListPreference;->setValueIndex(I)V
-
-    .line 172
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreView:Landroid/preference/ListPreference;
-
-    invoke-virtual {v1, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
-
-    .line 174
-    const-string v1, "general_preference"
+    .line 58
+    const-string v1, "category_general_preferences"
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/GeneralPreferences;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
@@ -115,306 +210,19 @@
 
     check-cast v0, Landroid/preference/PreferenceCategory;
 
-    .line 175
-    .local v0, generalPreferenceCategory:Landroid/preference/PreferenceCategory;
-    const-string v1, "delete_email_confirm"
+    .line 59
+    .local v0, pc:Landroid/preference/PreferenceCategory;
+    const-string v1, "reply_all"
 
     invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/GeneralPreferences;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v1
-
-    check-cast v1, Landroid/preference/CheckBoxPreference;
-
-    iput-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mDeleteEmailConfirm:Landroid/preference/CheckBoxPreference;
-
-    .line 176
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mDeleteEmailConfirm:Landroid/preference/CheckBoxPreference;
-
-    if-eqz v1, :cond_70
-
-    .line 177
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mDeleteEmailConfirm:Landroid/preference/CheckBoxPreference;
-
-    const v2, 0x7f0802c5
-
-    invoke-virtual {v1, v2}, Landroid/preference/CheckBoxPreference;->setTitle(I)V
-
-    .line 178
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mDeleteEmailConfirm:Landroid/preference/CheckBoxPreference;
-
-    const/4 v2, 0x0
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/preference/CheckBoxPreference;->setDefaultValue(Ljava/lang/Object;)V
-
-    .line 179
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mDeleteEmailConfirm:Landroid/preference/CheckBoxPreference;
-
-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceCategory;->addPreference(Landroid/preference/Preference;)Z
-
-    .line 184
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mDeleteEmailConfirm:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 189
-    :cond_70
-    const-string v1, "view_mode"
-
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/GeneralPreferences;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/preference/CheckBoxPreference;
-
-    iput-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mSplitMode:Landroid/preference/CheckBoxPreference;
-
-    .line 191
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mSplitMode:Landroid/preference/CheckBoxPreference;
-
-    iget-object v2, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
-
-    invoke-virtual {v2}, Lcom/android/email/Preferences;->getSplitMode()Z
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
-
-    .line 192
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mSplitMode:Landroid/preference/CheckBoxPreference;
-
-    invoke-virtual {v1, p0}, Landroid/preference/CheckBoxPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
-
-    .line 205
-    const-string v1, "top_line_info_mode"
-
-    invoke-virtual {p0, v1}, Lcom/android/email/activity/setup/GeneralPreferences;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/preference/ListPreference;
-
-    iput-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mTopMode:Landroid/preference/ListPreference;
-
-    .line 206
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mTopMode:Landroid/preference/ListPreference;
-
-    iget-object v2, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
-
-    invoke-virtual {v2}, Lcom/android/email/Preferences;->getTopLineInfoMode()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/preference/ListPreference;->setValueIndex(I)V
-
-    .line 207
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mTopMode:Landroid/preference/ListPreference;
-
-    invoke-virtual {v1, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
-
-    .line 209
-    invoke-direct {p0}, Lcom/android/email/activity/setup/GeneralPreferences;->reloadDynamicSummaries()V
-
-    .line 210
-    return-void
-.end method
-
-.method private reloadDynamicSummaries()V
-    .registers 7
-
-    .prologue
-    .line 216
-    iget-object v4, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
-
-    invoke-virtual {v4}, Lcom/android/email/Preferences;->getTextZoom()I
-
-    move-result v1
-
-    .line 218
-    .local v1, textZoomIndex:I
-    iget-object v4, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mSizeSummaries:[Ljava/lang/CharSequence;
-
-    if-nez v4, :cond_1b
-
-    .line 219
-    invoke-virtual {p0}, Lcom/android/email/activity/setup/GeneralPreferences;->getActivity()Landroid/app/Activity;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    const v5, 0x7f0a005e
-
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getTextArray(I)[Ljava/lang/CharSequence;
-
-    move-result-object v4
-
-    iput-object v4, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mSizeSummaries:[Ljava/lang/CharSequence;
-
-    .line 223
-    :cond_1b
-    const/4 v0, 0x0
-
-    .line 230
-    .local v0, summary:Ljava/lang/CharSequence;
-    iget-object v4, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
-
-    invoke-virtual {v4}, Lcom/android/email/Preferences;->getPreViewLine()I
-
-    move-result v2
-
-    .line 232
-    .local v2, textpreviewlineIndex:I
-    iget-object v4, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mLineSummaries:[Ljava/lang/CharSequence;
-
-    if-nez v4, :cond_37
-
-    .line 233
-    invoke-virtual {p0}, Lcom/android/email/activity/setup/GeneralPreferences;->getActivity()Landroid/app/Activity;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    const v5, 0x7f0a0022
-
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getTextArray(I)[Ljava/lang/CharSequence;
-
-    move-result-object v4
-
-    iput-object v4, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mLineSummaries:[Ljava/lang/CharSequence;
-
-    .line 236
-    :cond_37
-    const/4 v0, 0x0
-
-    .line 237
-    if-ltz v2, :cond_43
-
-    iget-object v4, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mLineSummaries:[Ljava/lang/CharSequence;
-
-    array-length v4, v4
-
-    if-ge v2, v4, :cond_43
-
-    .line 238
-    iget-object v4, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mLineSummaries:[Ljava/lang/CharSequence;
-
-    aget-object v0, v4, v2
-
-    .line 240
-    :cond_43
-    iget-object v4, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreView:Landroid/preference/ListPreference;
-
-    invoke-virtual {v4, v0}, Landroid/preference/ListPreference;->setSummary(Ljava/lang/CharSequence;)V
-
-    .line 255
-    iget-object v4, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
-
-    invoke-virtual {v4}, Lcom/android/email/Preferences;->getTopLineInfoMode()I
-
-    move-result v3
-
-    .line 257
-    .local v3, topmode:I
-    iget-object v4, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mTopModeSummaries:[Ljava/lang/CharSequence;
-
-    if-nez v4, :cond_63
-
-    .line 258
-    invoke-virtual {p0}, Lcom/android/email/activity/setup/GeneralPreferences;->getActivity()Landroid/app/Activity;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    const v5, 0x7f0a0057
-
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getTextArray(I)[Ljava/lang/CharSequence;
-
-    move-result-object v4
-
-    iput-object v4, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mTopModeSummaries:[Ljava/lang/CharSequence;
-
-    .line 261
-    :cond_63
-    const/4 v0, 0x0
-
-    .line 262
-    if-ltz v3, :cond_6f
-
-    iget-object v4, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mTopModeSummaries:[Ljava/lang/CharSequence;
-
-    array-length v4, v4
-
-    if-ge v3, v4, :cond_6f
-
-    .line 263
-    iget-object v4, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mTopModeSummaries:[Ljava/lang/CharSequence;
-
-    aget-object v0, v4, v3
-
-    .line 265
-    :cond_6f
-    iget-object v4, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mTopMode:Landroid/preference/ListPreference;
-
-    invoke-virtual {v4, v0}, Landroid/preference/ListPreference;->setSummary(Ljava/lang/CharSequence;)V
-
-    .line 266
-    return-void
-.end method
-
-
-# virtual methods
-.method public onCreate(Landroid/os/Bundle;)V
-    .registers 3
-    .parameter "savedInstanceState"
-
-    .prologue
-    .line 87
-    invoke-super {p0, p1}, Landroid/preference/PreferenceFragment;->onCreate(Landroid/os/Bundle;)V
-
-    .line 90
-    const v0, 0x7f06000a
-
-    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/GeneralPreferences;->addPreferencesFromResource(I)V
-
-    .line 92
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lcom/android/email/activity/setup/GeneralPreferences;->setHasOptionsMenu(Z)V
-
-    .line 93
-    return-void
-.end method
-
-.method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
-    .registers 3
-    .parameter "menu"
-    .parameter "inflater"
-
-    .prologue
-    .line 270
-    invoke-super {p0, p1, p2}, Landroid/preference/PreferenceFragment;->onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
-
-    .line 272
+    .line 61
+    .end local v0           #pc:Landroid/preference/PreferenceCategory;
+    :cond_2d
     return-void
 .end method
 
@@ -424,25 +232,25 @@
     .parameter "newValue"
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    .line 103
+    .line 71
     invoke-virtual {p1}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 105
+    .line 73
     .local v0, key:Ljava/lang/String;
-    const-string v1, "auto_advance"
+    const-string v2, "auto_advance"
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1c
+    if-eqz v2, :cond_1b
 
-    .line 106
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
+    .line 74
+    iget-object v2, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
 
     iget-object v3, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mAutoAdvance:Landroid/preference/ListPreference;
 
@@ -453,29 +261,27 @@
 
     move-result v3
 
-    invoke-virtual {v1, v3}, Lcom/android/email/Preferences;->setAutoAdvanceDirection(I)V
+    invoke-virtual {v2, v3}, Lcom/android/email/Preferences;->setAutoAdvanceDirection(I)V
 
-    move v1, v2
-
-    .line 152
-    :goto_1b
+    .line 81
+    :goto_1a
     return v1
 
-    .line 115
+    .line 76
     .restart local p2
-    :cond_1c
-    const-string v1, "preview_line"
+    :cond_1b
+    const-string v2, "text_zoom"
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_3d
+    if-eqz v2, :cond_34
 
-    .line 116
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
+    .line 77
+    iget-object v2, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
 
-    iget-object v3, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreView:Landroid/preference/ListPreference;
+    iget-object v3, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mTextZoom:Landroid/preference/ListPreference;
 
     check-cast p2, Ljava/lang/String;
 
@@ -484,155 +290,91 @@
 
     move-result v3
 
-    invoke-virtual {v1, v3}, Lcom/android/email/Preferences;->setPreViewLine(I)V
+    invoke-virtual {v2, v3}, Lcom/android/email/Preferences;->setTextZoom(I)V
 
-    .line 118
-    invoke-static {}, Lcom/android/email/widget/WidgetManager;->getInstance()Lcom/android/email/widget/WidgetManager;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/android/email/widget/WidgetManager;->updateAllWidgets()V
-
-    .line 119
+    .line 78
     invoke-direct {p0}, Lcom/android/email/activity/setup/GeneralPreferences;->reloadDynamicSummaries()V
 
-    move v1, v2
+    goto :goto_1a
 
-    .line 120
-    goto :goto_1b
-
-    .line 133
+    .line 81
     .restart local p2
-    :cond_3d
-    const-string v1, "view_mode"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5e
-
-    .line 134
-    iget-object v3, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mSplitMode:Landroid/preference/CheckBoxPreference;
-
-    move-object v1, p2
-
-    check-cast v1, Ljava/lang/Boolean;
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    invoke-virtual {v3, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
-
-    .line 135
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
-
-    check-cast p2, Ljava/lang/Boolean;
-
-    .end local p2
-    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v3
-
-    invoke-virtual {v1, v3}, Lcom/android/email/Preferences;->setSplitMode(Z)V
-
-    move v1, v2
-
-    .line 136
-    goto :goto_1b
-
-    .line 146
-    .restart local p2
-    :cond_5e
-    const-string v1, "top_line_info_mode"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_78
-
-    .line 147
-    iget-object v1, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
-
-    iget-object v3, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mTopMode:Landroid/preference/ListPreference;
-
-    check-cast p2, Ljava/lang/String;
-
-    .end local p2
-    invoke-virtual {v3, p2}, Landroid/preference/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
-
-    move-result v3
-
-    invoke-virtual {v1, v3}, Lcom/android/email/Preferences;->setTopLineInfoMode(I)V
-
-    .line 148
-    invoke-direct {p0}, Lcom/android/email/activity/setup/GeneralPreferences;->reloadDynamicSummaries()V
-
-    move v1, v2
-
-    .line 149
-    goto :goto_1b
-
-    .line 152
-    .restart local p2
-    :cond_78
+    :cond_34
     const/4 v1, 0x0
 
-    goto :goto_1b
+    goto :goto_1a
 .end method
 
-.method public onPrepareOptionsMenu(Landroid/view/Menu;)V
-    .registers 6
-    .parameter "menu"
+.method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
+    .registers 7
+    .parameter "preferenceScreen"
+    .parameter "preference"
 
     .prologue
-    .line 277
-    invoke-super {p0, p1}, Landroid/preference/PreferenceFragment;->onPrepareOptionsMenu(Landroid/view/Menu;)V
+    const/4 v1, 0x0
 
-    .line 279
-    invoke-interface {p1}, Landroid/view/Menu;->size()I
-
-    move-result v1
-
-    .line 280
-    .local v1, size:I
-    const/4 v0, 0x0
-
-    .local v0, i:I
-    :goto_8
-    if-ge v0, v1, :cond_15
-
-    .line 281
-    invoke-interface {p1, v0}, Landroid/view/Menu;->getItem(I)Landroid/view/MenuItem;
+    .line 86
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/GeneralPreferences;->getActivity()Landroid/app/Activity;
 
     move-result-object v2
 
-    const/4 v3, 0x0
+    if-nez v2, :cond_8
 
-    invoke-interface {v2, v3}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+    .line 99
+    :cond_7
+    :goto_7
+    return v1
 
-    .line 280
-    add-int/lit8 v0, v0, 0x1
+    .line 91
+    :cond_8
+    invoke-virtual {p2}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
 
-    goto :goto_8
+    move-result-object v0
 
-    .line 283
-    :cond_15
-    return-void
+    .line 92
+    .local v0, key:Ljava/lang/String;
+    const-string v2, "clear_trusted_senders"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_7
+
+    .line 93
+    iget-object v2, p0, Lcom/android/email/activity/setup/GeneralPreferences;->mPreferences:Lcom/android/email/Preferences;
+
+    invoke-virtual {v2}, Lcom/android/email/Preferences;->clearTrustedSenders()V
+
+    .line 94
+    invoke-virtual {p0}, Lcom/android/email/activity/setup/GeneralPreferences;->getActivity()Landroid/app/Activity;
+
+    move-result-object v2
+
+    const v3, 0x7f08017e
+
+    invoke-static {v2, v3, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+
+    .line 96
+    const/4 v1, 0x1
+
+    goto :goto_7
 .end method
 
 .method public onResume()V
     .registers 1
 
     .prologue
-    .line 97
+    .line 65
     invoke-direct {p0}, Lcom/android/email/activity/setup/GeneralPreferences;->loadSettings()V
 
-    .line 98
+    .line 66
     invoke-super {p0}, Landroid/preference/PreferenceFragment;->onResume()V
 
-    .line 99
+    .line 67
     return-void
 .end method

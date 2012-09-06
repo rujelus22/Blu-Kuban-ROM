@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<view android:orientation="vertical" android:id="@id/pref_line_height" android:layout_width="fill_parent" android:layout_height="wrap_content" books:key="lineHeight2" class="com.google.android.apps.books.preference.LineHeightPreference"
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:books="http://schemas.android.com/apk/res/com.google.android.apps.books">
-    <LinearLayout style="@style/Preference.SegmentedButtons">
-        <Button android:id="@id/button_minus" android:drawableTop="@drawable/ic_settings_lineheight_smaller" android:contentDescription="@string/decrease_line_height" style="@style/Preference.SmallButton" />
-        <Button android:id="@id/button_plus" android:drawableTop="@drawable/ic_settings_lineheight_larger" android:contentDescription="@string/increase_line_height" style="@style/Preference.SmallButton" />
-    </LinearLayout>
-</view>

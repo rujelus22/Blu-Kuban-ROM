@@ -25,12 +25,12 @@
     .registers 2
 
     .prologue
-    .line 64
+    .line 66
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Header$1;->val$parser:Lorg/apache/james/mime4j/MimeStreamParser;
 
     invoke-virtual {v0}, Lorg/apache/james/mime4j/MimeStreamParser;->stop()V
 
-    .line 65
+    .line 67
     return-void
 .end method
 
@@ -39,7 +39,7 @@
     .parameter "fieldData"
 
     .prologue
-    .line 69
+    .line 70
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Header$1;->this$0:Lorg/apache/james/mime4j/message/Header;
 
     invoke-static {p1}, Lorg/apache/james/mime4j/field/Field;->parse(Ljava/lang/String;)Lorg/apache/james/mime4j/field/Field;
@@ -48,6 +48,6 @@
 
     invoke-virtual {v0, v1}, Lorg/apache/james/mime4j/message/Header;->addField(Lorg/apache/james/mime4j/field/Field;)V
 
-    .line 70
+    .line 71
     return-void
 .end method

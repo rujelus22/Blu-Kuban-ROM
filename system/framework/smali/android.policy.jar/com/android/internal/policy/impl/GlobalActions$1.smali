@@ -29,7 +29,7 @@
     .parameter "x4"
 
     .prologue
-    .line 141
+    .line 136
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     move-object v0, p0
@@ -51,108 +51,123 @@
 
 
 # virtual methods
-.method public onPress()V
-    .registers 5
+.method protected changeStateFromPress(Z)V
+    .registers 4
+    .parameter "buttonOn"
 
     .prologue
-    .line 152
-    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+    .line 155
+    const-string v0, "ril.cdma.inecmmode"
 
-    const v1, 0x104016a
-
-    const v2, 0x104016d
-
-    const v3, 0x104016e
-
-    #calls: Lcom/android/internal/policy/impl/GlobalActions;->comfirmDialog(Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;III)V
-    invoke-static {v0, p0, v1, v2, v3}, Lcom/android/internal/policy/impl/GlobalActions;->access$100(Lcom/android/internal/policy/impl/GlobalActions;Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;III)V
-
-    .line 154
-    return-void
-.end method
-
-.method onToggle(Z)V
-    .registers 6
-    .parameter "on"
-
-    .prologue
-    const/4 v0, 0x1
-
-    .line 157
-    if-eqz p1, :cond_21
-
-    .line 158
-    iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
-
-    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mAudioManager:Landroid/media/AudioManager;
-    invoke-static {v1}, Lcom/android/internal/policy/impl/GlobalActions;->access$200(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/media/AudioManager;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
-
-    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mContext:Landroid/content/Context;
-    invoke-static {v2}, Lcom/android/internal/policy/impl/GlobalActions;->access$000(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    const-string v3, "vibrate_in_silent"
-
-    invoke-static {v2, v3, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v2
-
-    if-ne v2, v0, :cond_1f
-
-    :goto_1b
-    invoke-virtual {v1, v0}, Landroid/media/AudioManager;->setRingerMode(I)V
-
-    .line 165
-    :goto_1e
-    return-void
-
-    .line 158
-    :cond_1f
-    const/4 v0, 0x0
-
-    goto :goto_1b
-
-    .line 163
-    :cond_21
-    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
-
-    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mAudioManager:Landroid/media/AudioManager;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$200(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/media/AudioManager;
+    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    const/4 v1, 0x2
+    invoke-static {v0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
-    invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setRingerMode(I)V
+    move-result v0
 
-    goto :goto_1e
+    if-nez v0, :cond_19
+
+    .line 157
+    if-eqz p1, :cond_1a
+
+    sget-object v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->TurningOn:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
+
+    :goto_10
+    iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->mState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
+
+    .line 158
+    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+
+    iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->mState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
+
+    #setter for: Lcom/android/internal/policy/impl/GlobalActions;->mAirplaneState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
+    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/GlobalActions;->access$302(Lcom/android/internal/policy/impl/GlobalActions;Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;)Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
+
+    .line 160
+    :cond_19
+    return-void
+
+    .line 157
+    :cond_1a
+    sget-object v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->TurningOff:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
+
+    goto :goto_10
+.end method
+
+.method onToggle(Z)V
+    .registers 5
+    .parameter "on"
+
+    .prologue
+    .line 139
+    const-string v1, "ril.cdma.inecmmode"
+
+    invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_29
+
+    .line 141
+    iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+
+    const/4 v2, 0x1
+
+    #setter for: Lcom/android/internal/policy/impl/GlobalActions;->mIsWaitingForEcmExit:Z
+    invoke-static {v1, v2}, Lcom/android/internal/policy/impl/GlobalActions;->access$002(Lcom/android/internal/policy/impl/GlobalActions;Z)Z
+
+    .line 143
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.intent.action.ACTION_SHOW_NOTICE_ECM_BLOCK_OTHERS"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+
+    .line 145
+    .local v0, ecmDialogIntent:Landroid/content/Intent;
+    const/high16 v1, 0x1000
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    .line 146
+    iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+
+    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mContext:Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/internal/policy/impl/GlobalActions;->access$100(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    .line 150
+    .end local v0           #ecmDialogIntent:Landroid/content/Intent;
+    :goto_28
+    return-void
+
+    .line 148
+    :cond_29
+    iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+
+    #calls: Lcom/android/internal/policy/impl/GlobalActions;->changeAirplaneModeSystemSetting(Z)V
+    invoke-static {v1, p1}, Lcom/android/internal/policy/impl/GlobalActions;->access$200(Lcom/android/internal/policy/impl/GlobalActions;Z)V
+
+    goto :goto_28
 .end method
 
 .method public showBeforeProvisioning()Z
     .registers 2
 
     .prologue
-    .line 172
+    .line 167
     const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public showConditional()Z
-    .registers 2
-
-    .prologue
-    .line 176
-    const/4 v0, 0x1
 
     return v0
 .end method
@@ -161,49 +176,8 @@
     .registers 2
 
     .prologue
-    .line 168
+    .line 163
     const/4 v0, 0x1
 
     return v0
-.end method
-
-.method willCreate()V
-    .registers 4
-
-    .prologue
-    const/4 v2, 0x1
-
-    .line 145
-    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
-
-    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$000(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string v1, "vibrate_in_silent"
-
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-
-    if-ne v0, v2, :cond_19
-
-    const v0, 0x108064e
-
-    :goto_16
-    iput v0, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mEnabledIconResId:I
-
-    .line 149
-    return-void
-
-    .line 145
-    :cond_19
-    const v0, 0x108064c
-
-    goto :goto_16
 .end method

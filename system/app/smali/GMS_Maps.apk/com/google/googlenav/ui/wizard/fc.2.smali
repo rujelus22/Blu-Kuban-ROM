@@ -1,106 +1,95 @@
 .class Lcom/google/googlenav/ui/wizard/fc;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lax/ag;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/fa;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/fb;
 
 
 # direct methods
-.method private constructor <init>(Lcom/google/googlenav/ui/wizard/fa;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/fb;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fc;->a:Lcom/google/googlenav/ui/wizard/fa;
+    .prologue
+    .line 590
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fc;->a:Lcom/google/googlenav/ui/wizard/fb;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/google/googlenav/ui/wizard/fa;Lcom/google/googlenav/ui/wizard/fb;)V
-    .registers 3
-
-    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/wizard/fc;-><init>(Lcom/google/googlenav/ui/wizard/fa;)V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public a()V
-    .registers 2
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .registers 9
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fc;->a:Lcom/google/googlenav/ui/wizard/fa;
+    .prologue
+    .line 593
+    check-cast p1, Landroid/widget/ListView;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/fa;->b(Lcom/google/googlenav/ui/wizard/fa;)Lcom/google/googlenav/ui/wizard/fd;
+    invoke-virtual {p1}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/googlenav/ui/wizard/fd;->a()V
+    invoke-interface {v0, p3}, Landroid/widget/ListAdapter;->getItem(I)Ljava/lang/Object;
 
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlenav/ui/view/android/a;
+
+    .line 595
+    if-nez v0, :cond_f
+
+    .line 605
+    :cond_e
+    :goto_e
     return-void
-.end method
 
-.method public a(Ljava/util/List;)V
-    .registers 7
+    .line 598
+    :cond_f
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/a;->d()Lcom/google/googlenav/ui/view/a;
 
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object v0
+
+    .line 599
+    if-eqz v0, :cond_e
+
+    .line 602
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/fc;->a:Lcom/google/googlenav/ui/wizard/fb;
+
+    iget-object v1, v1, Lcom/google/googlenav/ui/wizard/fb;->a:Lcom/google/googlenav/ui/wizard/eT;
+
+    invoke-static {v1}, Lcom/google/googlenav/ui/wizard/eT;->a(Lcom/google/googlenav/ui/wizard/eT;)Lcom/google/googlenav/ui/wizard/fb;
 
     move-result-object v1
 
-    :cond_4
-    :goto_4
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/wizard/fb;->dismiss()V
 
-    move-result v0
+    .line 603
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/fc;->a:Lcom/google/googlenav/ui/wizard/fb;
 
-    if-eqz v0, :cond_2c
+    iget-object v1, v1, Lcom/google/googlenav/ui/wizard/fb;->a:Lcom/google/googlenav/ui/wizard/eT;
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    move-result-object v0
+    invoke-static {v1, v2}, Lcom/google/googlenav/ui/wizard/eT;->a(Lcom/google/googlenav/ui/wizard/eT;Lcom/google/googlenav/ui/wizard/fb;)Lcom/google/googlenav/ui/wizard/fb;
 
-    check-cast v0, Lax/aL;
+    .line 604
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/fc;->a:Lcom/google/googlenav/ui/wizard/fb;
 
-    invoke-virtual {v0}, Lax/aL;->c()Lax/aN;
+    iget-object v1, v1, Lcom/google/googlenav/ui/wizard/fb;->a:Lcom/google/googlenav/ui/wizard/eT;
 
-    move-result-object v2
+    invoke-static {v1, v0}, Lcom/google/googlenav/ui/wizard/eT;->a(Lcom/google/googlenav/ui/wizard/eT;Lcom/google/googlenav/ui/view/a;)V
 
-    sget-object v3, Lax/aN;->c:Lax/aN;
-
-    if-ne v2, v3, :cond_4
-
-    new-instance v2, LaX/j;
-
-    invoke-virtual {v0}, Lax/aL;->a()J
-
-    move-result-wide v3
-
-    const/4 v0, 0x2
-
-    invoke-direct {v2, v3, v4, v0}, LaX/j;-><init>(JI)V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fc;->a:Lcom/google/googlenav/ui/wizard/fa;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/fa;->a(Lcom/google/googlenav/ui/wizard/fa;)Lay/a;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Lay/a;->a(Lcom/google/googlenav/ui/aj;)Lah/f;
-
-    goto :goto_4
-
-    :cond_2c
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fc;->a:Lcom/google/googlenav/ui/wizard/fa;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/fa;->b(Lcom/google/googlenav/ui/wizard/fa;)Lcom/google/googlenav/ui/wizard/fd;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lcom/google/googlenav/ui/wizard/fd;->a(Ljava/util/List;)V
-
-    return-void
+    goto :goto_e
 .end method

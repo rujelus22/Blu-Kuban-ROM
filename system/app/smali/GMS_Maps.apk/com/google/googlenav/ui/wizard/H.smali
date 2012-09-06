@@ -1,23 +1,23 @@
-.class Lcom/google/googlenav/ui/wizard/H;
+.class Lcom/google/googlenav/ui/wizard/h;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lax/j;
-
-.field final synthetic b:Lcom/google/googlenav/ui/wizard/G;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/e;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/G;Lax/j;)V
-    .registers 3
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/e;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/H;->b:Lcom/google/googlenav/ui/wizard/G;
-
-    iput-object p2, p0, Lcom/google/googlenav/ui/wizard/H;->a:Lax/j;
+    .prologue
+    .line 174
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/h;->a:Lcom/google/googlenav/ui/wizard/e;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,20 +26,20 @@
 
 
 # virtual methods
-.method public run()V
+.method public onClick(Landroid/view/View;)V
     .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/H;->b:Lcom/google/googlenav/ui/wizard/G;
+    .prologue
+    .line 178
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/h;->a:Lcom/google/googlenav/ui/wizard/e;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/G;->a:Lcom/google/googlenav/ui/wizard/E;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/E;->b(Lcom/google/googlenav/ui/wizard/E;)Lcom/google/googlenav/ui/wizard/I;
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/e;->a(Lcom/google/googlenav/ui/wizard/e;)Lcom/google/googlenav/ui/wizard/q;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/H;->a:Lax/j;
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/q;->f()V
 
-    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/wizard/I;->a(Lax/j;)V
-
+    .line 179
     return-void
 .end method

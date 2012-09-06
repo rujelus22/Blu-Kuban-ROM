@@ -1,22 +1,46 @@
-.class public Lcom/google/googlenav/ui/q;
-.super Lcom/google/googlenav/ui/bl;
+.class Lcom/google/googlenav/ui/Q;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LaI/q;
 
 
 # instance fields
-.field public a:Lau/s;
+.field final synthetic a:Lat/u;
 
-.field public b:Z
+.field final synthetic b:Lcom/google/googlenav/ui/v;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/ui/bl;Lau/s;Z)V
-    .registers 4
+.method constructor <init>(Lcom/google/googlenav/ui/v;Lat/u;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/bl;-><init>(Lcom/google/googlenav/ui/bl;)V
+    .prologue
+    .line 1022
+    iput-object p1, p0, Lcom/google/googlenav/ui/Q;->b:Lcom/google/googlenav/ui/v;
 
-    iput-object p2, p0, Lcom/google/googlenav/ui/q;->a:Lau/s;
+    iput-object p2, p0, Lcom/google/googlenav/ui/Q;->a:Lat/u;
 
-    iput-boolean p3, p0, Lcom/google/googlenav/ui/q;->b:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public a()Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+    .registers 2
+
+    .prologue
+    .line 1025
+    iget-object v0, p0, Lcom/google/googlenav/ui/Q;->a:Lat/u;
+
+    invoke-virtual {v0}, Lat/u;->o()Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    move-result-object v0
+
+    return-object v0
 .end method

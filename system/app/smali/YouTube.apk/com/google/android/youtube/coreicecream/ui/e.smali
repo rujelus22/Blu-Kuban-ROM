@@ -264,14 +264,14 @@
 
     move-result v3
 
-    invoke-virtual {v1, v2, v3}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->a(II)V
+    invoke-virtual {v1, v2, v3}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setCardSize(II)V
 
     .line 499
     iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ui/e;->b:Lcom/google/android/youtube/coreicecream/ui/d;
 
     iget-object v1, v1, Lcom/google/android/youtube/coreicecream/ui/d;->a:Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;
 
-    invoke-virtual {v1, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->g(I)V
+    invoke-virtual {v1, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->a(I)V
 
     .line 500
     iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ui/e;->b:Lcom/google/android/youtube/coreicecream/ui/d;
@@ -449,7 +449,7 @@
 
     move v5, v2
 
-    invoke-virtual/range {v0 .. v6}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->a(IFFFFLandroid/graphics/Bitmap;)V
+    invoke-virtual/range {v0 .. v6}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setDetailTextureForItem(IFFFFLandroid/graphics/Bitmap;)V
 
     .line 524
     :cond_158
@@ -497,7 +497,7 @@
 
     iget-object v2, v2, Lcom/google/android/youtube/coreicecream/ui/d;->a:Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;
 
-    invoke-virtual {v2, v1, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->a(ILandroid/graphics/Bitmap;)V
+    invoke-virtual {v2, v1, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setTextureForItem(ILandroid/graphics/Bitmap;)V
 
     goto :goto_158
 

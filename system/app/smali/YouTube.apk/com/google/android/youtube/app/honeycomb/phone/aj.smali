@@ -1,58 +1,65 @@
 .class final Lcom/google/android/youtube/app/honeycomb/phone/aj;
-.super Lcom/google/android/youtube/core/ui/f;
+.super Lcom/google/android/youtube/app/honeycomb/phone/ab;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/async/g;
+.field final synthetic e:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
-.field final synthetic b:Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;
+.field private final f:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;Lcom/google/android/youtube/core/e;Lcom/google/android/youtube/core/async/g;)V
-    .registers 4
+.method public constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/t;Ljava/lang/String;II)V
+    .registers 6
+    .parameter
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 215
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/aj;->b:Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;
+    .line 667
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/aj;->e:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
-    iput-object p3, p0, Lcom/google/android/youtube/app/honeycomb/phone/aj;->a:Lcom/google/android/youtube/core/async/g;
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/ab;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/t;)V
 
-    invoke-direct {p0, p2}, Lcom/google/android/youtube/core/ui/f;-><init>(Lcom/google/android/youtube/core/e;)V
+    .line 668
+    iput-object p2, p0, Lcom/google/android/youtube/app/honeycomb/phone/aj;->f:Ljava/lang/String;
 
+    .line 669
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/aj;->c:Landroid/widget/TextView;
+
+    invoke-virtual {v0, p3}, Landroid/widget/TextView;->setText(I)V
+
+    .line 670
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/aj;->b:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, p4}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 671
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/model/UserAuth;)V
-    .registers 5
+.method public final a(I)Landroid/view/View;
+    .registers 6
     .parameter
 
     .prologue
-    .line 217
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/aj;->b:Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;
+    .line 674
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/aj;->e:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;->f(Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;)Lcom/google/android/youtube/core/client/ad;
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/aj;->a:Landroid/view/View;
 
-    move-result-object v0
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/aj;->c:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/aj;->b:Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;
+    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/aj;->f:Ljava/lang/String;
 
-    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;->c(Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;)Lcom/google/android/youtube/core/model/Video;
+    invoke-static {v0, v1, v2, v3}, Lcom/google/android/youtube/app/honeycomb/phone/t;->a(Lcom/google/android/youtube/app/honeycomb/phone/t;Landroid/view/View;Landroid/widget/TextView;Ljava/lang/String;)V
 
-    move-result-object v1
+    .line 675
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/aj;->a:Landroid/view/View;
 
-    iget-object v1, v1, Lcom/google/android/youtube/core/model/Video;->editUri:Landroid/net/Uri;
-
-    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/aj;->a:Lcom/google/android/youtube/core/async/g;
-
-    invoke-interface {v0, v1, p1, v2}, Lcom/google/android/youtube/core/client/ad;->h(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;Lcom/google/android/youtube/core/async/g;)V
-
-    .line 218
-    return-void
+    return-object v0
 .end method

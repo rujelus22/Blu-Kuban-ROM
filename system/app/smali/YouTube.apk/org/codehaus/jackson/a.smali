@@ -200,13 +200,13 @@
 
     .line 683
     :cond_16
-    new-instance v0, Lorg/codehaus/jackson/a/o;
+    new-instance v0, Lorg/codehaus/jackson/a/l;
 
     iget v1, p0, Lorg/codehaus/jackson/a;->h:I
 
     iget-object v3, p0, Lorg/codehaus/jackson/a;->f:Lorg/codehaus/jackson/c;
 
-    invoke-direct {v0, v2, v1, v3, p1}, Lorg/codehaus/jackson/a/o;-><init>(Lorg/codehaus/jackson/b/c;ILorg/codehaus/jackson/c;Ljava/io/OutputStream;)V
+    invoke-direct {v0, v2, v1, v3, p1}, Lorg/codehaus/jackson/a/l;-><init>(Lorg/codehaus/jackson/b/c;ILorg/codehaus/jackson/c;Ljava/io/OutputStream;)V
 
     iget-object v1, p0, Lorg/codehaus/jackson/a;->i:Lorg/codehaus/jackson/b/b;
 
@@ -214,7 +214,7 @@
 
     iget-object v1, p0, Lorg/codehaus/jackson/a;->i:Lorg/codehaus/jackson/b/b;
 
-    invoke-virtual {v0, v1}, Lorg/codehaus/jackson/a/o;->a(Lorg/codehaus/jackson/b/b;)Lorg/codehaus/jackson/JsonGenerator;
+    invoke-virtual {v0, v1}, Lorg/codehaus/jackson/a/l;->a(Lorg/codehaus/jackson/b/b;)Lorg/codehaus/jackson/JsonGenerator;
 
     .line 690
     :cond_28
@@ -246,13 +246,13 @@
 
     .line 690
     :cond_3c
-    new-instance v1, Lorg/codehaus/jackson/a/r;
+    new-instance v1, Lorg/codehaus/jackson/a/o;
 
     iget v3, p0, Lorg/codehaus/jackson/a;->h:I
 
     iget-object v4, p0, Lorg/codehaus/jackson/a;->f:Lorg/codehaus/jackson/c;
 
-    invoke-direct {v1, v2, v3, v4, v0}, Lorg/codehaus/jackson/a/r;-><init>(Lorg/codehaus/jackson/b/c;ILorg/codehaus/jackson/c;Ljava/io/Writer;)V
+    invoke-direct {v1, v2, v3, v4, v0}, Lorg/codehaus/jackson/a/o;-><init>(Lorg/codehaus/jackson/b/c;ILorg/codehaus/jackson/c;Ljava/io/Writer;)V
 
     iget-object v0, p0, Lorg/codehaus/jackson/a;->i:Lorg/codehaus/jackson/b/b;
 
@@ -260,7 +260,7 @@
 
     iget-object v0, p0, Lorg/codehaus/jackson/a;->i:Lorg/codehaus/jackson/b/b;
 
-    invoke-virtual {v1, v0}, Lorg/codehaus/jackson/a/r;->a(Lorg/codehaus/jackson/b/b;)Lorg/codehaus/jackson/JsonGenerator;
+    invoke-virtual {v1, v0}, Lorg/codehaus/jackson/a/o;->a(Lorg/codehaus/jackson/b/b;)Lorg/codehaus/jackson/JsonGenerator;
 
     :cond_4e
     move-object v0, v1

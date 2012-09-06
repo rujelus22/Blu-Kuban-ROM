@@ -1,34 +1,80 @@
-.class final LA/c;
-.super LA/e;
+.class LA/c;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/io/FilenameFilter;
+
+
+# instance fields
+.field final synthetic a:LA/b;
 
 
 # direct methods
-.method constructor <init>(ILjava/lang/String;)V
-    .registers 3
+.method constructor <init>(LA/b;)V
+    .registers 2
+    .parameter
 
-    invoke-direct {p0, p1, p2}, LA/e;-><init>(ILjava/lang/String;)V
+    .prologue
+    .line 225
+    iput-object p1, p0, LA/c;->a:LA/b;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected a()[B
-    .registers 2
+.method public accept(Ljava/io/File;Ljava/lang/String;)Z
+    .registers 4
+    .parameter
+    .parameter
 
-    const/16 v0, 0x100a
+    .prologue
+    .line 228
+    const-string v0, "event-log"
 
-    new-array v0, v0, [B
+    invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    return-object v0
-.end method
+    move-result v0
 
-.method protected synthetic b()Ljava/lang/Object;
-    .registers 2
+    if-nez v0, :cond_20
 
-    invoke-virtual {p0}, LA/c;->a()[B
+    const-string v0, "crash-log"
 
-    move-result-object v0
+    invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    return-object v0
+    move-result v0
+
+    if-nez v0, :cond_20
+
+    const-string v0, "snapshot"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_20
+
+    const-string v0, "voice-note"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_22
+
+    .line 232
+    :cond_20
+    const/4 v0, 0x1
+
+    .line 234
+    :goto_21
+    return v0
+
+    :cond_22
+    const/4 v0, 0x0
+
+    goto :goto_21
 .end method

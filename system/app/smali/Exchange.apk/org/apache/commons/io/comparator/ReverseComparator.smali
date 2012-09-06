@@ -45,15 +45,15 @@
     .end annotation
 
     .prologue
-    .line 40
+    .line 38
     .local p0, this:Lorg/apache/commons/io/comparator/ReverseComparator;,"Lorg/apache/commons/io/comparator/ReverseComparator<TT;>;"
     .local p1, delegate:Ljava/util/Comparator;,"Ljava/util/Comparator<TT;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 41
+    .line 39
     if-nez p1, :cond_d
 
-    .line 42
+    .line 40
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Delegate comparator is missing"
@@ -62,11 +62,11 @@
 
     throw v0
 
-    .line 44
+    .line 42
     :cond_d
     iput-object p1, p0, Lorg/apache/commons/io/comparator/ReverseComparator;->delegate:Ljava/util/Comparator;
 
-    .line 45
+    .line 43
     return-void
 .end method
 
@@ -83,7 +83,7 @@
     .end annotation
 
     .prologue
-    .line 57
+    .line 54
     .local p0, this:Lorg/apache/commons/io/comparator/ReverseComparator;,"Lorg/apache/commons/io/comparator/ReverseComparator<TT;>;"
     .local p1, obj1:Ljava/lang/Object;,"TT;"
     .local p2, obj2:Ljava/lang/Object;,"TT;"

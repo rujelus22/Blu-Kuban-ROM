@@ -31,25 +31,25 @@
     .registers 2
 
     .prologue
-    .line 17366
+    .line 17851
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 17376
+    .line 17861
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->query_:Ljava/lang/String;
 
-    .line 17393
+    .line 17878
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->requestType_:I
 
-    .line 17430
+    .line 17916
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->cachedSize:I
 
-    .line 17366
+    .line 17851
     return-void
 .end method
 
@@ -59,15 +59,15 @@
     .registers 2
 
     .prologue
-    .line 17432
+    .line 17919
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 17434
+    .line 17921
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->getSerializedSize()I
 
-    .line 17436
+    .line 17923
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->cachedSize:I
 
@@ -78,7 +78,7 @@
     .registers 2
 
     .prologue
-    .line 17377
+    .line 17862
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->query_:Ljava/lang/String;
 
     return-object v0
@@ -88,7 +88,7 @@
     .registers 2
 
     .prologue
-    .line 17395
+    .line 17880
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->requestType_:I
 
     return v0
@@ -98,10 +98,10 @@
     .registers 4
 
     .prologue
-    .line 17440
+    .line 17928
     const/4 v0, 0x0
 
-    .line 17441
+    .line 17929
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->hasQuery()Z
 
@@ -109,7 +109,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 17442
+    .line 17930
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->getQuery()Ljava/lang/String;
@@ -122,7 +122,7 @@
 
     add-int/2addr v0, v1
 
-    .line 17445
+    .line 17933
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->hasRequestType()Z
 
@@ -130,7 +130,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 17446
+    .line 17934
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->getRequestType()I
@@ -143,11 +143,11 @@
 
     add-int/2addr v0, v1
 
-    .line 17449
+    .line 17937
     :cond_21
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->cachedSize:I
 
-    .line 17450
+    .line 17938
     return v0
 .end method
 
@@ -155,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 17378
+    .line 17863
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->hasQuery:Z
 
     return v0
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 17394
+    .line 17879
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->hasRequestType:Z
 
     return v0
@@ -181,29 +181,29 @@
     .end annotation
 
     .prologue
-    .line 17457
+    .line 17946
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 17458
+    .line 17947
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 17462
+    .line 17951
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 17463
+    .line 17952
     :sswitch_d
     return-object p0
 
-    .line 17468
+    .line 17957
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 17472
+    .line 17961
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 17458
+    .line 17947
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -242,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 17364
+    .line 17849
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;
 
     move-result-object v0
@@ -255,15 +255,15 @@
     .parameter "value"
 
     .prologue
-    .line 17380
+    .line 17865
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->hasQuery:Z
 
-    .line 17381
+    .line 17866
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->query_:Ljava/lang/String;
 
-    .line 17382
+    .line 17867
     return-object p0
 .end method
 
@@ -272,15 +272,15 @@
     .parameter "value"
 
     .prologue
-    .line 17397
+    .line 17882
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->hasRequestType:Z
 
-    .line 17398
+    .line 17883
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->requestType_:I
 
-    .line 17399
+    .line 17884
     return-object p0
 .end method
 
@@ -294,14 +294,14 @@
     .end annotation
 
     .prologue
-    .line 17422
+    .line 17908
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->hasQuery()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 17423
+    .line 17909
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->getQuery()Ljava/lang/String;
@@ -310,7 +310,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 17425
+    .line 17911
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->hasRequestType()Z
 
@@ -318,7 +318,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 17426
+    .line 17912
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$QuerySuggestionRequestProto;->getRequestType()I
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 17428
+    .line 17914
     :cond_1c
     return-void
 .end method

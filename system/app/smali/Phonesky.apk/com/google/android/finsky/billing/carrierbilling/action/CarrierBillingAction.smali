@@ -42,18 +42,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_c
 
     .line 18
+    if-eqz p1, :cond_b
+
+    .line 19
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 22
-    :goto_9
+    .line 24
+    :cond_b
+    :goto_b
     return-void
 
-    .line 21
-    :cond_a
+    .line 23
+    :cond_c
     invoke-static {p1}, Lcom/google/android/finsky/billing/BillingLocator;->initCarrierBillingStorage(Ljava/lang/Runnable;)V
 
-    goto :goto_9
+    goto :goto_b
 .end method

@@ -1,63 +1,143 @@
-.class Lcom/google/googlenav/ui/android/i;
+.class Lcom/google/googlenav/ui/android/I;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/googlenav/login/i;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/android/AndroidVectorView;
+.field private final a:I
+
+.field private final b:I
+
+.field private final c:I
+
+.field private final d:Z
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/android/AndroidVectorView;)V
-    .registers 2
+.method public constructor <init>(III)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/android/i;->a:Lcom/google/googlenav/ui/android/AndroidVectorView;
+    .prologue
+    .line 35
+    const/4 v0, 0x0
 
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/google/googlenav/ui/android/I;-><init>(IIIZ)V
+
+    .line 36
+    return-void
+.end method
+
+.method public constructor <init>(IIIZ)V
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 39
+    iput p1, p0, Lcom/google/googlenav/ui/android/I;->a:I
+
+    .line 40
+    iput p2, p0, Lcom/google/googlenav/ui/android/I;->b:I
+
+    .line 41
+    iput-boolean p4, p0, Lcom/google/googlenav/ui/android/I;->d:Z
+
+    .line 43
+    if-eqz p3, :cond_e
+
+    .line 44
+    iput p3, p0, Lcom/google/googlenav/ui/android/I;->c:I
+
+    .line 48
+    :goto_d
     return-void
+
+    .line 46
+    :cond_e
+    const v0, 0x7f020447
+
+    iput v0, p0, Lcom/google/googlenav/ui/android/I;->c:I
+
+    goto :goto_d
+.end method
+
+.method static synthetic a(Lcom/google/googlenav/ui/android/I;)I
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 27
+    iget v0, p0, Lcom/google/googlenav/ui/android/I;->c:I
+
+    return v0
+.end method
+
+.method static synthetic b(Lcom/google/googlenav/ui/android/I;)Z
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 27
+    iget-boolean v0, p0, Lcom/google/googlenav/ui/android/I;->d:Z
+
+    return v0
 .end method
 
 
 # virtual methods
-.method public B_()V
-    .registers 1
+.method public a(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
+    .registers 3
+    .parameter
 
-    return-void
+    .prologue
+    .line 70
+    new-instance v0, Lcom/google/googlenav/ui/android/J;
+
+    invoke-direct {v0, p1, p0}, Lcom/google/googlenav/ui/android/J;-><init>(Landroid/content/Context;Lcom/google/googlenav/ui/android/I;)V
+
+    return-object v0
 .end method
 
-.method public C_()V
-    .registers 1
+.method public a(III)Z
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
 
-    return-void
-.end method
+    .prologue
+    const/4 v0, 0x0
 
-.method public E_()V
-    .registers 2
+    .line 59
+    iget v1, p0, Lcom/google/googlenav/ui/android/I;->a:I
 
-    invoke-static {}, Lat/h;->a()Lat/h;
+    if-eq v1, p1, :cond_6
 
-    move-result-object v0
+    .line 65
+    :cond_5
+    :goto_5
+    return v0
 
-    invoke-static {v0}, Lae/d;->c(Lat/h;)V
+    .line 62
+    :cond_6
+    iget v1, p0, Lcom/google/googlenav/ui/android/I;->b:I
 
-    return-void
-.end method
+    if-eqz v1, :cond_e
 
-.method public F_()V
-    .registers 2
+    iget v1, p0, Lcom/google/googlenav/ui/android/I;->b:I
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/i;->a:Lcom/google/googlenav/ui/android/AndroidVectorView;
+    if-ne v1, p2, :cond_5
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/android/AndroidVectorView;->c(Lcom/google/googlenav/ui/android/AndroidVectorView;)V
+    .line 63
+    :cond_e
+    const/4 v0, 0x1
 
-    return-void
-.end method
-
-.method public i()V
-    .registers 1
-
-    return-void
+    goto :goto_5
 .end method

@@ -1,5 +1,5 @@
 .class final Lcom/google/api/client/http/b/b;
-.super Lcom/google/api/client/http/t;
+.super Lcom/google/api/client/http/v;
 .source "SourceFile"
 
 
@@ -22,7 +22,7 @@
 
     .prologue
     .line 35
-    invoke-direct {p0}, Lcom/google/api/client/http/t;-><init>()V
+    invoke-direct {p0}, Lcom/google/api/client/http/v;-><init>()V
 
     .line 32
     new-instance v0, Ljava/util/ArrayList;
@@ -46,22 +46,30 @@
 
     move-result v0
 
+    .line 38
+    const/4 v1, -0x1
+
+    if-ne v0, v1, :cond_1b
+
+    const/4 v0, 0x0
+
+    :cond_1b
     iput v0, p0, Lcom/google/api/client/http/b/b;->b:I
 
-    .line 38
+    .line 39
     invoke-virtual {p1}, Ljava/net/HttpURLConnection;->getResponseMessage()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/api/client/http/b/b;->c:Ljava/lang/String;
 
-    .line 39
+    .line 40
     iget-object v2, p0, Lcom/google/api/client/http/b/b;->d:Ljava/util/ArrayList;
 
-    .line 40
+    .line 41
     iget-object v3, p0, Lcom/google/api/client/http/b/b;->e:Ljava/util/ArrayList;
 
-    .line 41
+    .line 42
     invoke-virtual {p1}, Ljava/net/HttpURLConnection;->getHeaderFields()Ljava/util/Map;
 
     move-result-object v0
@@ -74,12 +82,12 @@
 
     move-result-object v4
 
-    :cond_2f
+    :cond_33
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_62
+    if-eqz v0, :cond_66
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -87,17 +95,17 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 42
+    .line 43
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/String;
 
-    .line 43
-    if-eqz v1, :cond_2f
-
     .line 44
+    if-eqz v1, :cond_33
+
+    .line 45
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -108,13 +116,13 @@
 
     move-result-object v5
 
-    :cond_4d
-    :goto_4d
+    :cond_51
+    :goto_51
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_33
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -122,19 +130,19 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 45
-    if-eqz v0, :cond_4d
-
     .line 46
-    invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    if-eqz v0, :cond_51
 
     .line 47
+    invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 48
     invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_4d
+    goto :goto_51
 
-    .line 52
-    :cond_62
+    .line 53
+    :cond_66
     return-void
 .end method
 
@@ -144,13 +152,13 @@
     .registers 3
 
     .prologue
-    .line 61
+    .line 62
     iget-object v0, p0, Lcom/google/api/client/http/b/b;->a:Ljava/net/HttpURLConnection;
 
-    .line 62
+    .line 63
     iget v1, p0, Lcom/google/api/client/http/b/b;->b:I
 
-    invoke-static {v1}, Lcom/google/api/client/http/o;->a(I)Z
+    invoke-static {v1}, Lcom/google/api/client/http/q;->a(I)Z
 
     move-result v1
 
@@ -176,7 +184,7 @@
     .parameter
 
     .prologue
-    .line 100
+    .line 101
     iget-object v0, p0, Lcom/google/api/client/http/b/b;->d:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -192,7 +200,7 @@
     .registers 2
 
     .prologue
-    .line 68
+    .line 69
     iget-object v0, p0, Lcom/google/api/client/http/b/b;->a:Ljava/net/HttpURLConnection;
 
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getContentEncoding()Ljava/lang/String;
@@ -207,7 +215,7 @@
     .parameter
 
     .prologue
-    .line 105
+    .line 106
     iget-object v0, p0, Lcom/google/api/client/http/b/b;->e:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -223,7 +231,7 @@
     .registers 3
 
     .prologue
-    .line 73
+    .line 74
     iget-object v0, p0, Lcom/google/api/client/http/b/b;->a:Ljava/net/HttpURLConnection;
 
     const-string v1, "Content-Length"
@@ -232,7 +240,7 @@
 
     move-result-object v0
 
-    .line 74
+    .line 75
     if-nez v0, :cond_d
 
     const-wide/16 v0, -0x1
@@ -252,7 +260,7 @@
     .registers 3
 
     .prologue
-    .line 79
+    .line 80
     iget-object v0, p0, Lcom/google/api/client/http/b/b;->a:Ljava/net/HttpURLConnection;
 
     const-string v1, "Content-Type"
@@ -268,7 +276,7 @@
     .registers 3
 
     .prologue
-    .line 89
+    .line 90
     iget-object v0, p0, Lcom/google/api/client/http/b/b;->a:Ljava/net/HttpURLConnection;
 
     const/4 v1, 0x0
@@ -277,7 +285,7 @@
 
     move-result-object v0
 
-    .line 90
+    .line 91
     if-eqz v0, :cond_12
 
     const-string v1, "HTTP/1."
@@ -301,7 +309,7 @@
     .registers 2
 
     .prologue
-    .line 56
+    .line 57
     iget v0, p0, Lcom/google/api/client/http/b/b;->b:I
 
     return v0
@@ -311,7 +319,7 @@
     .registers 2
 
     .prologue
-    .line 84
+    .line 85
     iget-object v0, p0, Lcom/google/api/client/http/b/b;->c:Ljava/lang/String;
 
     return-object v0
@@ -321,7 +329,7 @@
     .registers 2
 
     .prologue
-    .line 95
+    .line 96
     iget-object v0, p0, Lcom/google/api/client/http/b/b;->d:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I

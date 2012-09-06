@@ -4,16 +4,6 @@
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 292
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method public static a(Landroid/content/Context;Ljava/lang/String;)Z
     .registers 14
     .parameter
@@ -104,13 +94,13 @@
 
     move-result-object v4
 
-    new-instance v5, Lcom/android/common/b;
+    new-instance v5, Lcom/android/common/a;
 
-    invoke-direct {v5, v4}, Lcom/android/common/b;-><init>(Landroid/content/SharedPreferences;)V
+    invoke-direct {v5, v4}, Lcom/android/common/a;-><init>(Landroid/content/SharedPreferences;)V
 
-    new-instance v0, Lcom/android/common/c;
+    new-instance v0, Lcom/android/common/b;
 
-    invoke-direct {v0}, Lcom/android/common/c;-><init>()V
+    invoke-direct {v0}, Lcom/android/common/b;-><init>()V
 
     const-string v2, "parental_control_timeout_in_ms"
 
@@ -120,7 +110,7 @@
 
     move-result-wide v6
 
-    iput-wide v6, v0, Lcom/android/common/c;->e:J
+    iput-wide v6, v0, Lcom/android/common/b;->e:J
 
     new-instance v2, Ljava/io/File;
 
@@ -132,7 +122,7 @@
 
     move-result-wide v6
 
-    invoke-virtual {v5}, Lcom/android/common/b;->a()J
+    invoke-virtual {v5}, Lcom/android/common/a;->a()J
 
     move-result-wide v8
 
@@ -142,10 +132,10 @@
 
     const-wide/16 v6, 0x0
 
-    invoke-virtual {v5, v6, v7}, Lcom/android/common/b;->a(J)V
+    invoke-virtual {v5, v6, v7}, Lcom/android/common/a;->a(J)V
 
     :cond_6f
-    invoke-virtual {v5, v0}, Lcom/android/common/b;->a(Lcom/android/common/c;)J
+    invoke-virtual {v5, v0}, Lcom/android/common/a;->a(Lcom/android/common/b;)J
 
     move-result-wide v6
 
@@ -205,10 +195,10 @@
 
     if-nez v2, :cond_b2
 
-    invoke-virtual {v5}, Lcom/android/common/b;->c()V
+    invoke-virtual {v5}, Lcom/android/common/a;->c()V
     :try_end_a9
-    .catchall {:try_start_a0 .. :try_end_a9} :catchall_242
-    .catch Ljava/io/IOException; {:try_start_a0 .. :try_end_a9} :catch_1df
+    .catchall {:try_start_a0 .. :try_end_a9} :catchall_232
+    .catch Ljava/io/IOException; {:try_start_a0 .. :try_end_a9} :catch_1d3
 
     invoke-virtual {v6}, Lcom/google/android/common/http/GoogleHttpClient;->a()V
 
@@ -280,19 +270,15 @@
 
     move-result v8
 
-    if-nez v8, :cond_10c
+    if-nez v8, :cond_108
 
     const-string v3, "ParentalControl"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v7, "Parental control unchanged: Error rerouting "
 
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
+    invoke-direct {v4, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -304,10 +290,10 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v5}, Lcom/android/common/b;->c()V
-    :try_end_103
-    .catchall {:try_start_b2 .. :try_end_103} :catchall_242
-    .catch Ljava/io/IOException; {:try_start_b2 .. :try_end_103} :catch_1df
+    invoke-virtual {v5}, Lcom/android/common/a;->c()V
+    :try_end_ff
+    .catchall {:try_start_b2 .. :try_end_ff} :catchall_232
+    .catch Ljava/io/IOException; {:try_start_b2 .. :try_end_ff} :catch_1d3
 
     invoke-virtual {v6}, Lcom/google/android/common/http/GoogleHttpClient;->a()V
 
@@ -317,8 +303,8 @@
 
     goto :goto_8c
 
-    :cond_10c
-    :try_start_10c
+    :cond_108
+    :try_start_108
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -335,17 +321,13 @@
 
     move-result v2
 
-    if-lez v2, :cond_1ba
+    if-lez v2, :cond_1ae
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v9, ":"
 
-    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v7}, Landroid/net/Uri;->getPort()I
 
@@ -359,7 +341,7 @@
 
     move-result-object v2
 
-    :goto_136
+    :goto_12e
     invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -384,13 +366,9 @@
 
     new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v9, "Attempting litmus URL fetch: "
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
+    invoke-direct {v8, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -430,7 +408,7 @@
 
     const/16 v8, 0xc8
 
-    if-ne v7, v8, :cond_1f4
+    if-ne v7, v8, :cond_1e8
 
     const-string v7, "parental_control_expected_response"
 
@@ -438,7 +416,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_19c
+    if-eqz v3, :cond_190
 
     invoke-interface {v2}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
 
@@ -456,16 +434,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1be
+    if-eqz v2, :cond_1b2
 
-    :cond_19c
+    :cond_190
     const-string v2, "ParentalControl"
 
     const-string v3, "Parental control is OFF: Litmus fetch succeeded"
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v5}, Lcom/android/common/b;->b()V
+    invoke-virtual {v5}, Lcom/android/common/a;->b()V
 
     invoke-interface {v4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -476,12 +454,12 @@
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v4}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-    :try_end_1b0
-    .catchall {:try_start_10c .. :try_end_1b0} :catchall_242
-    .catch Ljava/io/IOException; {:try_start_10c .. :try_end_1b0} :catch_1df
+    :try_end_1a4
+    .catchall {:try_start_108 .. :try_end_1a4} :catchall_232
+    .catch Ljava/io/IOException; {:try_start_108 .. :try_end_1a4} :catch_1d3
 
-    :cond_1b0
-    :goto_1b0
+    :cond_1a4
+    :goto_1a4
     invoke-virtual {v6}, Lcom/google/android/common/http/GoogleHttpClient;->a()V
 
     const-string v2, "enableHIPRI"
@@ -490,20 +468,20 @@
 
     goto/16 :goto_8c
 
-    :cond_1ba
-    :try_start_1ba
+    :cond_1ae
+    :try_start_1ae
     const-string v2, ""
 
-    goto/16 :goto_136
+    goto/16 :goto_12e
 
-    :cond_1be
+    :cond_1b2
     const-string v2, "ParentalControl"
 
     const-string v3, "Parental control is ON: Litmus content was modified"
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v5}, Lcom/android/common/b;->b()V
+    invoke-virtual {v5}, Lcom/android/common/a;->b()V
 
     invoke-interface {v4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -526,25 +504,25 @@
     move-result-object v2
 
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->commit()Z
-    :try_end_1de
-    .catchall {:try_start_1ba .. :try_end_1de} :catchall_242
-    .catch Ljava/io/IOException; {:try_start_1ba .. :try_end_1de} :catch_1df
+    :try_end_1d2
+    .catchall {:try_start_1ae .. :try_end_1d2} :catchall_232
+    .catch Ljava/io/IOException; {:try_start_1ae .. :try_end_1d2} :catch_1d3
 
-    goto :goto_1b0
+    goto :goto_1a4
 
-    :catch_1df
+    :catch_1d3
     move-exception v2
 
-    :try_start_1e0
+    :try_start_1d4
     const-string v3, "ParentalControl"
 
     const-string v4, "Parental control unchanged: Litmus fetch failed"
 
     invoke-static {v3, v4, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    invoke-virtual {v5}, Lcom/android/common/b;->c()V
-    :try_end_1ea
-    .catchall {:try_start_1e0 .. :try_end_1ea} :catchall_242
+    invoke-virtual {v5}, Lcom/android/common/a;->c()V
+    :try_end_1de
+    .catchall {:try_start_1d4 .. :try_end_1de} :catchall_232
 
     invoke-virtual {v6}, Lcom/google/android/common/http/GoogleHttpClient;->a()V
 
@@ -554,12 +532,12 @@
 
     goto/16 :goto_8c
 
-    :cond_1f4
+    :cond_1e8
     const/16 v8, 0x12e
 
-    if-ne v7, v8, :cond_1b0
+    if-ne v7, v8, :cond_1a4
 
-    :try_start_1f8
+    :try_start_1ec
     const-string v7, "parental_control_redirect_regex"
 
     invoke-static {v3, v7}, Lcom/google/android/gsf/f;->a(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
@@ -572,32 +550,28 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_24c
+    if-nez v2, :cond_23c
 
     const/4 v2, 0x0
 
-    :goto_207
-    if-eqz v3, :cond_251
+    :goto_1fb
+    if-eqz v3, :cond_241
 
-    if-eqz v2, :cond_251
+    if-eqz v2, :cond_241
 
     invoke-static {v3, v2}, Ljava/util/regex/Pattern;->matches(Ljava/lang/String;Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_251
+    if-eqz v3, :cond_241
 
     const-string v3, "ParentalControl"
 
     new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v8, "Parental control is ON: Litmus redirects to "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
+    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -609,7 +583,7 @@
 
     invoke-static {v3, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v5}, Lcom/android/common/b;->b()V
+    invoke-virtual {v5}, Lcom/android/common/a;->b()V
 
     invoke-interface {v4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -630,13 +604,13 @@
     move-result-object v2
 
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->commit()Z
-    :try_end_240
-    .catchall {:try_start_1f8 .. :try_end_240} :catchall_242
-    .catch Ljava/io/IOException; {:try_start_1f8 .. :try_end_240} :catch_1df
+    :try_end_230
+    .catchall {:try_start_1ec .. :try_end_230} :catchall_232
+    .catch Ljava/io/IOException; {:try_start_1ec .. :try_end_230} :catch_1d3
 
-    goto/16 :goto_1b0
+    goto/16 :goto_1a4
 
-    :catchall_242
+    :catchall_232
     move-exception v2
 
     invoke-virtual {v6}, Lcom/google/android/common/http/GoogleHttpClient;->a()V
@@ -647,34 +621,30 @@
 
     throw v2
 
-    :cond_24c
-    :try_start_24c
+    :cond_23c
+    :try_start_23c
     invoke-interface {v2}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
 
     move-result-object v2
 
-    goto :goto_207
+    goto :goto_1fb
 
-    :cond_251
-    invoke-virtual {v5}, Lcom/android/common/b;->c()V
+    :cond_241
+    invoke-virtual {v5}, Lcom/android/common/a;->c()V
 
     const-string v3, "ParentalControl"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v7, "Parental control unchanged: Unknown litmus redirect "
 
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v4, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object v4
-
-    if-nez v2, :cond_265
+    if-nez v2, :cond_251
 
     const-string v2, "(none)"
 
-    :cond_265
+    :cond_251
     invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -684,11 +654,11 @@
     move-result-object v2
 
     invoke-static {v3, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_270
-    .catchall {:try_start_24c .. :try_end_270} :catchall_242
-    .catch Ljava/io/IOException; {:try_start_24c .. :try_end_270} :catch_1df
+    :try_end_25c
+    .catchall {:try_start_23c .. :try_end_25c} :catchall_232
+    .catch Ljava/io/IOException; {:try_start_23c .. :try_end_25c} :catch_1d3
 
-    goto/16 :goto_1b0
+    goto/16 :goto_1a4
 .end method
 
 .method private static a(Landroid/net/ConnectivityManager;)Z
@@ -741,22 +711,18 @@
 
     .line 178
     :cond_f
-    if-eqz v3, :cond_2d
+    if-eqz v3, :cond_29
 
-    if-eq v3, v0, :cond_2d
+    if-eq v3, v0, :cond_29
 
     .line 179
     const-string v0, "ParentalControl"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Parental control unchanged: Mobile network error, code "
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -773,14 +739,14 @@
     .line 180
     goto :goto_e
 
-    :cond_2d
+    :cond_29
     move v2, v1
 
     .line 183
-    :goto_2e
+    :goto_2a
     const/16 v3, 0x14
 
-    if-ge v2, v3, :cond_47
+    if-ge v2, v3, :cond_43
 
     .line 184
     const-string v3, "ParentalControl"
@@ -804,10 +770,10 @@
     .line 183
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_2e
+    goto :goto_2a
 
     .line 191
-    :cond_47
+    :cond_43
     const-string v0, "ParentalControl"
 
     const-string v2, "Parental control unchanged: Timed out waiting for mobile network"

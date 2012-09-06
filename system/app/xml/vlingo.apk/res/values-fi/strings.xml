@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="driving_mode">Ajotila</string>
-    <string name="app_name">Äänikomennot</string>
-    <string name="incar">Äänipuhe</string>
-    <string name="incar_icon">Äänipuhe</string>
-    <string name="Vlingo">Äänikomennot</string>
-    <string name="widget_name">Ääni</string>
-</resources>

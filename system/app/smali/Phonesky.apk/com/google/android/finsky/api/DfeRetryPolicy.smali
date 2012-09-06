@@ -33,8 +33,8 @@
     .parameter "context"
 
     .prologue
-    .line 27
-    sget-object v0, Lcom/google/android/finsky/config/G;->dfeRequestTimeoutMs:Lcom/google/android/finsky/config/GservicesValue;
+    .line 26
+    sget-object v0, Lcom/google/android/finsky/api/DfeApiConfig;->dfeRequestTimeoutMs:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 
@@ -46,7 +46,7 @@
 
     move-result v1
 
-    sget-object v0, Lcom/google/android/finsky/config/G;->dfeMaxRetries:Lcom/google/android/finsky/config/GservicesValue;
+    sget-object v0, Lcom/google/android/finsky/api/DfeApiConfig;->dfeMaxRetries:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 
@@ -58,7 +58,7 @@
 
     move-result v2
 
-    sget-object v0, Lcom/google/android/finsky/config/G;->dfeBackoffMultipler:Lcom/google/android/finsky/config/GservicesValue;
+    sget-object v0, Lcom/google/android/finsky/api/DfeApiConfig;->dfeBackoffMultipler:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 

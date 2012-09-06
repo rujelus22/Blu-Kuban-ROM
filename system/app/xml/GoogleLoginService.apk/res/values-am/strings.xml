@@ -242,18 +242,18 @@
     <string name="account_intro_recommended_title">Google+ አድርገው</string>
     <string name="common_message">"የ Google መለያ የሚከተሉትን እንድታደርግ ያስችልሃል
 
-"<li><ul>ሁሉንም መረጃህን ከማንኛውም ቦታ ሆነህ ማየትና ማደራጀት::</ul></li>"
+"<ul><li>ሁሉንም መረጃህን ከማንኛውም ቦታ ሆነህ ማየትና ማደራጀት::</li></ul>"
 
-"<li><ul>በራስ ሰር ውሂብህን ተጠባባቂ ሆኖ እንዲቀመጥ ማድረግ::</ul></li>"
+"<ul><li>በራስ ሰር ውሂብህን ተጠባባቂ ሆኖ እንዲቀመጥ ማድረግ::</li></ul>"
 
-"<li><ul>የ ግኡግሌ አገልግሎቶችን ከማንኛውም ቦታ ሆነህ መጠቀም:: </ul></li></string>
+"<ul><li>የ ግኡግሌ አገልግሎቶችን ከማንኛውም ቦታ ሆነህ መጠቀም:: </li></ul></string>
     <string name="add_account_message">" ከአንድ በላይ የGoogle መለያ(እንደ ቤት እና የሥራ መለያዎች ያሉትን) መጠቀም ይችላሉ።"<b>ግባ</b> ይንኩ ወይም የGoogle መለያለ ለማከል<b> መለያ ፍጠር</b> ይንኩ።</string>
     <string name="account_intro_default_message">ንብረትዎን የትም አይጣሉ። የGoogle መለያ ሁሉንም ነገር በደንብ ጠብቆ ያስቀምጣል።</string>
     <string name="account_intro_custom_endtext">%s አገኘህ? አሁን ግባ።</string>
     <string name="account_intro_simple_message">ነባር መለያ ማከል ወይም አዲስ መፍጠር ትፈልጋለህ?</string>
     <string name="learn_more_title">ተጨማሪ ይወቁ</string>
     <string name="learn_more_account_intro">"የGoogle መለያ እርስዎ
-"<li><ul> ሁሉንም መረጃዎን ከማንኛውም ቦታ ለማየት እና ለማደራጀት ይፈቅዳል። .<li> ሁሉንም ውሂብዎን፣ እንደ ኢሜይል፣ ዕውቂያዎች እና ፎቶዎች ይጠብቃል።</li><li> የ Google አገልግሎቶችን ከማንኛውም ቦታ ሆነው በቀላሉ — ዕውቂያዎችን፣ የቀን መቁጠሪያዎችን፣ ካርታዎች፣ እና ሌሎች ጨምሮ </li></ul></li> ይጠቀሙ።</string>
+"<ul><li> ሁሉንም መረጃዎን ከማንኛውም ቦታ ለማየት እና ለማደራጀት ይፈቅዳል። .<li> ሁሉንም ውሂብዎን፣ እንደ ኢሜይል፣ ዕውቂያዎች እና ፎቶዎች ይጠብቃል።</li><li> የ Google አገልግሎቶችን ከማንኛውም ቦታ ሆነው በቀላሉ — ዕውቂያዎችን፣ የቀን መቁጠሪያዎችን፣ ካርታዎች፣ እና ሌሎች ጨምሮ </li></li></ul> ይጠቀሙ።</string>
     <string name="learn_more_account_intro_title">ስለGoogle መለያዎች</string>
     <string name="learn_more_web_history">"የድር ታሪክ ምን እንደፈለግክ እና በጎበኘሃቸው ጣቢያዎች ላይ ተመርኩዞ፣ የግልህ የሆነ የGoogle ተሞክሮ እያቀረበልህ የፍለጋ ውጤቶችን ያስተካክላል፡፡.
 

@@ -32,12 +32,12 @@
     <string-array name="appdetail_logging_items">
         <item>全局默認</item>
         <item>完整資料</item>
-        <item>僅通過</item>
+        <item>僅存取</item>
         <item>沒有</item>
     </string-array>
     <string-array name="appdetail_notification_items">
         <item>全局默認</item>
-        <item>設置</item>
-        <item>未設置</item>
+        <item>已啟動</item>
+        <item>已禁用</item>
     </string-array>
 </resources>

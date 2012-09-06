@@ -7,6 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppDeliveryData;,
+        Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AndroidAppPatchData;,
+        Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$EncryptionParams;,
         Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$HttpCookie;,
         Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$AppFileMetadata;
     }

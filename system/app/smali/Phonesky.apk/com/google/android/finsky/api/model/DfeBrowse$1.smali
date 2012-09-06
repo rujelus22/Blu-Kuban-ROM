@@ -32,7 +32,7 @@
     .registers 1
 
     .prologue
-    .line 124
+    .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,11 +41,11 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Lcom/google/android/finsky/api/model/DfeBrowse;
-    .registers 5
+    .registers 4
     .parameter
 
     .prologue
-    .line 128
+    .line 123
     const-class v0, Lcom/google/android/finsky/utils/ParcelableProto;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
@@ -58,18 +58,10 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;
 
-    .line 130
+    .line 125
     new-instance v1, Lcom/google/android/finsky/api/model/DfeBrowse;
 
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/google/android/finsky/FinskyApp;->getDfeApi()Lcom/google/android/finsky/api/DfeApi;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2, v0}, Lcom/google/android/finsky/api/model/DfeBrowse;-><init>(Lcom/google/android/finsky/api/DfeApi;Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;)V
+    invoke-direct {v1, v0}, Lcom/google/android/finsky/api/model/DfeBrowse;-><init>(Lcom/google/android/finsky/remoting/protos/Browse$BrowseResponse;)V
 
     return-object v1
 .end method
@@ -79,7 +71,7 @@
     .parameter "x0"
 
     .prologue
-    .line 124
+    .line 119
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/api/model/DfeBrowse$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/finsky/api/model/DfeBrowse;
 
     move-result-object v0
@@ -92,7 +84,7 @@
     .parameter "size"
 
     .prologue
-    .line 135
+    .line 130
     new-array v0, p1, [Lcom/google/android/finsky/api/model/DfeBrowse;
 
     return-object v0
@@ -103,7 +95,7 @@
     .parameter "x0"
 
     .prologue
-    .line 124
+    .line 119
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/api/model/DfeBrowse$1;->newArray(I)[Lcom/google/android/finsky/api/model/DfeBrowse;
 
     move-result-object v0

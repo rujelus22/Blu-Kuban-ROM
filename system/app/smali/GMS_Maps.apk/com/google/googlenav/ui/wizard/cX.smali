@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/wizard/cX;
+.class Lcom/google/googlenav/ui/wizard/cx;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnCancelListener;
+.implements Lcom/google/googlenav/ui/wizard/dk;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/cW;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/cw;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/cW;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/cw;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/cX;->a:Lcom/google/googlenav/ui/wizard/cW;
+    .prologue
+    .line 111
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/cx;->a:Lcom/google/googlenav/ui/wizard/cw;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,16 +26,28 @@
 
 
 # virtual methods
-.method public onCancel(Landroid/content/DialogInterface;)V
-    .registers 3
+.method public a()V
+    .registers 2
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/cX;->a:Lcom/google/googlenav/ui/wizard/cW;
+    .prologue
+    .line 115
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/cx;->a:Lcom/google/googlenav/ui/wizard/cw;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/cW;->a(Lcom/google/googlenav/ui/wizard/cW;)Lcom/google/googlenav/ui/p;
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/cw;->a()V
 
-    move-result-object v0
+    .line 116
+    return-void
+.end method
 
-    invoke-interface {v0}, Lcom/google/googlenav/ui/p;->o()V
+.method public b()V
+    .registers 2
 
+    .prologue
+    .line 120
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/cx;->a:Lcom/google/googlenav/ui/wizard/cw;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/cw;->T_()V
+
+    .line 121
     return-void
 .end method

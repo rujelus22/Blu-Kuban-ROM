@@ -53,40 +53,40 @@
         <item quantity="one">Esperando operación en %1$d conversación.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">Se silenciaron &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Se silenciaron &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Se silenciaron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Se silenciaron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">Se detectaron &amp;lt;b>%1$d&amp;lt;/b> como spam.</item>
-        <item quantity="one">Se detectaron &amp;lt;b>%1$d&amp;lt;/b> como spam.</item>
+        <item quantity="other">Se detectaron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> como spam.</item>
+        <item quantity="one">Se detectaron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> como spam.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">Se archivaron &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Se archivaron &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Se archivaron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Se archivaron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">Se movieron &amp;lt;b>%1$d&amp;lt;/b> a la bandeja de entrada.</item>
-        <item quantity="one">Se movieron &amp;lt;b>%1$d&amp;lt;/b> a la bandeja de entrada.</item>
+        <item quantity="other">Se movieron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> a la bandeja de entrada.</item>
+        <item quantity="one">Se movieron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> a la bandeja de entrada.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">Se eliminaron &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Se eliminaron &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Se eliminaron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Se eliminaron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">Se marcaron &amp;lt;b>%1$d&amp;lt;/b> como importantes.</item>
-        <item quantity="one">Se marcaron &amp;lt;b>%1$d&amp;lt;/b> como importantes.</item>
+        <item quantity="other">Se marcaron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> como importantes.</item>
+        <item quantity="one">Se marcaron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> como importantes.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">Se marcaron &amp;lt;b>%1$d&amp;lt;/b> como no importantes.</item>
-        <item quantity="one">Se marcaron &amp;lt;b>%1$d&amp;lt;/b> como no importantes.</item>
+        <item quantity="other">Se marcaron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> como no importantes.</item>
+        <item quantity="one">Se marcaron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> como no importantes.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">Se marcaron &amp;lt;b>%1$d&amp;lt;/b> como leídas.</item>
-        <item quantity="one">Se marcaron &amp;lt;b>%1$d&amp;lt;/b> como leídas.</item>
+        <item quantity="other">Se marcaron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> como leídas.</item>
+        <item quantity="one">Se marcaron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> como leídas.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">Se marcaron &amp;lt;b>%1$d&amp;lt;/b> como no leídas.</item>
-        <item quantity="one">Se marcaron &amp;lt;b>%1$d&amp;lt;/b> como no leídas.</item>
+        <item quantity="other">Se marcaron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> como no leídas.</item>
+        <item quantity="one">Se marcaron &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> como no leídas.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Etiquetas modificadas</item>

@@ -1,222 +1,213 @@
-.class final Lcom/google/android/youtube/core/converter/http/da;
-.super Lcom/google/android/youtube/core/converter/l;
+.class public final Lcom/google/android/youtube/core/converter/http/da;
+.super Lcom/google/android/youtube/core/converter/http/bc;
 .source "SourceFile"
 
-
-# instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/converter/http/cv;
+# interfaces
+.implements Lcom/google/android/youtube/core/converter/a;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/core/converter/http/cv;)V
-    .registers 2
-    .parameter
+.method public constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 69
-    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/da;->a:Lcom/google/android/youtube/core/converter/http/cv;
-
-    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
+    .line 34
+    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/http/bc;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
+.method private static b(Lorg/apache/http/HttpEntity;)Ljava/util/List;
     .registers 8
-    .parameter
-    .parameter
     .parameter
 
     .prologue
-    .line 72
-    const-class v0, Lcom/google/android/youtube/core/model/p;
+    .line 45
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    move-result-object v0
+    .line 47
+    :try_start_5
+    invoke-interface {p0}, Lorg/apache/http/HttpEntity;->getContentLength()J
 
-    check-cast v0, Lcom/google/android/youtube/core/model/p;
+    move-result-wide v1
 
-    .line 73
-    const-string v1, "event"
+    const-wide/16 v3, 0x0
 
-    invoke-interface {p2, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
+    cmp-long v1, v1, v3
+
+    if-nez v1, :cond_10
+
+    .line 69
+    :cond_f
+    return-object v0
+
+    .line 51
+    :cond_10
+    invoke-interface {p0}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
 
     move-result-object v1
 
-    .line 74
-    if-nez v1, :cond_16
-
-    .line 75
-    const-string v0, "Badly formed tracking event - ignoring"
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/L;->c(Ljava/lang/String;)V
-
-    .line 102
-    :cond_15
-    :goto_15
-    return-void
-
-    .line 79
-    :cond_16
-    :try_start_16
-    invoke-virtual {p3}, Ljava/lang/String;->trim()Ljava/lang/String;
+    .line 52
+    invoke-static {}, Ljavax/xml/parsers/DocumentBuilderFactory;->newInstance()Ljavax/xml/parsers/DocumentBuilderFactory;
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/google/android/youtube/core/utils/Util;->c(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-virtual {v2}, Ljavax/xml/parsers/DocumentBuilderFactory;->newDocumentBuilder()Ljavax/xml/parsers/DocumentBuilder;
 
     move-result-object v2
 
-    .line 80
-    const-string v3, "start"
+    .line 53
+    invoke-virtual {v2, v1}, Ljavax/xml/parsers/DocumentBuilder;->parse(Ljava/io/InputStream;)Lorg/w3c/dom/Document;
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v1
+
+    .line 55
+    const-string v2, "track"
+
+    invoke-interface {v1, v2}, Lorg/w3c/dom/Document;->getElementsByTagName(Ljava/lang/String;)Lorg/w3c/dom/NodeList;
+
+    move-result-object v2
+
+    .line 56
+    const/4 v1, 0x0
+
+    :goto_27
+    invoke-interface {v2}, Lorg/w3c/dom/NodeList;->getLength()I
 
     move-result v3
 
-    if-eqz v3, :cond_31
+    if-ge v1, v3, :cond_f
 
-    .line 81
-    invoke-virtual {v0, v2}, Lcom/google/android/youtube/core/model/p;->b(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/p;
-    :try_end_29
-    .catch Ljava/net/MalformedURLException; {:try_start_16 .. :try_end_29} :catch_2a
+    .line 57
+    invoke-interface {v2, v1}, Lorg/w3c/dom/NodeList;->item(I)Lorg/w3c/dom/Node;
 
-    goto :goto_15
+    move-result-object v3
 
-    .line 99
-    :catch_2a
+    invoke-interface {v3}, Lorg/w3c/dom/Node;->getAttributes()Lorg/w3c/dom/NamedNodeMap;
+
+    move-result-object v3
+
+    .line 58
+    const-string v4, "lang_code"
+
+    invoke-interface {v3, v4}, Lorg/w3c/dom/NamedNodeMap;->getNamedItem(Ljava/lang/String;)Lorg/w3c/dom/Node;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Lorg/w3c/dom/Node;->getNodeValue()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 59
+    const-string v5, "lang_original"
+
+    invoke-interface {v3, v5}, Lorg/w3c/dom/NamedNodeMap;->getNamedItem(Ljava/lang/String;)Lorg/w3c/dom/Node;
+
+    move-result-object v5
+
+    invoke-interface {v5}, Lorg/w3c/dom/Node;->getNodeValue()Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 60
+    const-string v6, "name"
+
+    invoke-interface {v3, v6}, Lorg/w3c/dom/NamedNodeMap;->getNamedItem(Ljava/lang/String;)Lorg/w3c/dom/Node;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Lorg/w3c/dom/Node;->getNodeValue()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 61
+    new-instance v6, Lcom/google/android/youtube/core/model/SubtitleTrack;
+
+    invoke-direct {v6, v4, v5, v3}, Lcom/google/android/youtube/core/model/SubtitleTrack;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :try_end_5b
+    .catch Ljavax/xml/parsers/ParserConfigurationException; {:try_start_5 .. :try_end_5b} :catch_5e
+    .catch Lorg/xml/sax/SAXException; {:try_start_5 .. :try_end_5b} :catch_65
+
+    .line 56
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_27
+
+    .line 63
+    :catch_5e
     move-exception v0
 
-    .line 100
-    const-string v0, "Badly formed tracking uri - ignoring"
+    .line 64
+    new-instance v1, Lcom/google/android/youtube/core/converter/ConverterException;
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/L;->c(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/google/android/youtube/core/converter/ConverterException;-><init>(Ljava/lang/Throwable;)V
 
-    goto :goto_15
+    throw v1
 
-    .line 82
-    :cond_31
-    :try_start_31
-    const-string v3, "firstQuartile"
+    .line 65
+    :catch_65
+    move-exception v0
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 66
+    new-instance v1, Lcom/google/android/youtube/core/converter/ConverterException;
 
-    move-result v3
+    invoke-direct {v1, v0}, Lcom/google/android/youtube/core/converter/ConverterException;-><init>(Ljava/lang/Throwable;)V
 
-    if-eqz v3, :cond_3d
+    throw v1
+.end method
 
-    .line 83
-    invoke-virtual {v0, v2}, Lcom/google/android/youtube/core/model/p;->c(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/p;
 
-    goto :goto_15
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
+    .parameter
 
-    .line 84
-    :cond_3d
-    const-string v3, "midpoint"
+    .prologue
+    .line 34
+    check-cast p1, Ljava/lang/String;
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result v3
+    new-instance v0, Lorg/apache/http/client/methods/HttpGet;
 
-    if-eqz v3, :cond_49
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    .line 85
-    invoke-virtual {v0, v2}, Lcom/google/android/youtube/core/model/p;->d(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/p;
+    const-string v2, "http://video.google.com/timedtext?hl=en&v="
 
-    goto :goto_15
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 86
-    :cond_49
-    const-string v3, "thirdQuartile"
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v1
 
-    move-result v3
+    const-string v2, "&type=list"
 
-    if-eqz v3, :cond_55
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 87
-    invoke-virtual {v0, v2}, Lcom/google/android/youtube/core/model/p;->e(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/p;
+    move-result-object v1
 
-    goto :goto_15
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 88
-    :cond_55
-    const-string v3, "complete"
+    move-result-object v1
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-direct {v0, v1}, Lorg/apache/http/client/methods/HttpGet;-><init>(Ljava/lang/String;)V
 
-    move-result v3
+    return-object v0
+.end method
 
-    if-eqz v3, :cond_61
+.method protected final synthetic a(Lorg/apache/http/HttpEntity;)Ljava/lang/Object;
+    .registers 3
+    .parameter
 
-    .line 89
-    invoke-virtual {v0, v2}, Lcom/google/android/youtube/core/model/p;->h(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/p;
+    .prologue
+    .line 34
+    invoke-static {p1}, Lcom/google/android/youtube/core/converter/http/da;->b(Lorg/apache/http/HttpEntity;)Ljava/util/List;
 
-    goto :goto_15
+    move-result-object v0
 
-    .line 90
-    :cond_61
-    const-string v3, "pause"
-
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_6d
-
-    .line 91
-    invoke-virtual {v0, v2}, Lcom/google/android/youtube/core/model/p;->j(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/p;
-
-    goto :goto_15
-
-    .line 92
-    :cond_6d
-    const-string v3, "mute"
-
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_79
-
-    .line 93
-    invoke-virtual {v0, v2}, Lcom/google/android/youtube/core/model/p;->k(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/p;
-
-    goto :goto_15
-
-    .line 94
-    :cond_79
-    const-string v3, "fullscreen"
-
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_85
-
-    .line 95
-    invoke-virtual {v0, v2}, Lcom/google/android/youtube/core/model/p;->l(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/p;
-
-    goto :goto_15
-
-    .line 96
-    :cond_85
-    const-string v3, "close"
-
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_15
-
-    .line 97
-    invoke-virtual {v0, v2}, Lcom/google/android/youtube/core/model/p;->i(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/p;
-    :try_end_90
-    .catch Ljava/net/MalformedURLException; {:try_start_31 .. :try_end_90} :catch_2a
-
-    goto :goto_15
+    return-object v0
 .end method

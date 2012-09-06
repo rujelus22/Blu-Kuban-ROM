@@ -1,26 +1,44 @@
-.class public Lcom/google/googlenav/ui/android/S;
-.super Ljava/lang/Object;
+.class Lcom/google/googlenav/ui/android/s;
+.super LY/b;
+.source "SourceFile"
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/lang/String;
+.field final synthetic a:Lcom/google/googlenav/ui/android/r;
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
-    .registers 4
+.method constructor <init>(Lcom/google/googlenav/ui/android/r;LY/c;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 435
+    iput-object p1, p0, Lcom/google/googlenav/ui/android/s;->a:Lcom/google/googlenav/ui/android/r;
 
-    iput p1, p0, Lcom/google/googlenav/ui/android/S;->a:I
+    invoke-direct {p0, p2}, LY/b;-><init>(LY/c;)V
 
-    iput-object p2, p0, Lcom/google/googlenav/ui/android/S;->b:Ljava/lang/String;
+    return-void
+.end method
 
-    iput-object p3, p0, Lcom/google/googlenav/ui/android/S;->c:Ljava/lang/String;
 
+# virtual methods
+.method public a()V
+    .registers 3
+
+    .prologue
+    .line 437
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/s;->a:Lcom/google/googlenav/ui/android/r;
+
+    invoke-static {v0}, Lcom/google/googlenav/ui/android/r;->a(Lcom/google/googlenav/ui/android/r;)LaM/ah;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, LaM/ah;->a(Ljava/lang/String;)V
+
+    .line 438
     return-void
 .end method

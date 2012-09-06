@@ -11,8 +11,8 @@
     .registers 1
 
     .prologue
-    .line 34
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 33
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -24,7 +24,7 @@
     .parameter "file"
 
     .prologue
-    .line 43
+    .line 42
     invoke-virtual {p1}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
     move-result-object v0
@@ -46,7 +46,7 @@
     .parameter "name"
 
     .prologue
-    .line 54
+    .line 53
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p1, p2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
@@ -62,7 +62,7 @@
     .registers 4
 
     .prologue
-    .line 63
+    .line 62
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -71,7 +71,7 @@
 
     move-result-object v0
 
-    .line 64
+    .line 63
     .local v0, name:Ljava/lang/String;
     const/16 v2, 0x2e
 
@@ -79,7 +79,7 @@
 
     move-result v1
 
-    .line 65
+    .line 64
     .local v1, period:I
     if-lez v1, :cond_16
 

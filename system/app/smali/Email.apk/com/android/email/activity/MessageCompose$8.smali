@@ -3,12 +3,12 @@
 .source "MessageCompose.java"
 
 # interfaces
-.implements Lcom/android/email/ExtendedScrollView$onChangeKeyboardStatusListener;
+.implements Landroid/app/ActionBar$TabListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MessageCompose;->initViews()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/email/activity/MessageCompose;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,50 +27,56 @@
     .parameter
 
     .prologue
-    .line 2154
+    .line 1851
     iput-object p1, p0, Lcom/android/email/activity/MessageCompose$8;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onChangeStatus(I)V
-    .registers 5
-    .parameter "arg0"
+.method public onTabReselected(Landroid/app/ActionBar$Tab;Landroid/app/FragmentTransaction;)V
+    .registers 3
+    .parameter "tab"
+    .parameter "ft"
 
     .prologue
-    .line 2157
-    const-string v0, "Compose >>"
+    .line 1852
+    return-void
+.end method
 
-    new-instance v1, Ljava/lang/StringBuilder;
+.method public onTabSelected(Landroid/app/ActionBar$Tab;Landroid/app/FragmentTransaction;)V
+    .registers 5
+    .parameter "tab"
+    .parameter "ft"
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .prologue
+    .line 1857
+    invoke-virtual {p1}, Landroid/app/ActionBar$Tab;->getTag()Ljava/lang/Object;
 
-    const-string v2, "setOnChangeKeyboardStatusListener status: "
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v0, Ljava/lang/String;
 
-    move-result-object v1
+    .line 1858
+    .local v0, action:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/email/activity/MessageCompose$8;->this$0:Lcom/android/email/activity/MessageCompose;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    #calls: Lcom/android/email/activity/MessageCompose;->setAction(Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/android/email/activity/MessageCompose;->access$1400(Lcom/android/email/activity/MessageCompose;Ljava/lang/String;)V
 
-    move-result-object v1
+    .line 1859
+    return-void
+.end method
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+.method public onTabUnselected(Landroid/app/ActionBar$Tab;Landroid/app/FragmentTransaction;)V
+    .registers 3
+    .parameter "tab"
+    .parameter "ft"
 
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/android/email/Email;->logd(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 2158
-    iget-object v0, p0, Lcom/android/email/activity/MessageCompose$8;->this$0:Lcom/android/email/activity/MessageCompose;
-
-    #calls: Lcom/android/email/activity/MessageCompose;->arrangeScrollView()V
-    invoke-static {v0}, Lcom/android/email/activity/MessageCompose;->access$1000(Lcom/android/email/activity/MessageCompose;)V
-
-    .line 2160
+    .prologue
+    .line 1853
     return-void
 .end method

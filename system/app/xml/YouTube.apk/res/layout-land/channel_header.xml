@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="@drawable/bg_stripes_medium_drawable" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="7.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="3.0">
+        <ImageView android:layout_gravity="center" android:id="@id/channel_avatar" android:background="@drawable/bg_avatar" android:layout_width="@dimen/guide_small_avatar_width" android:layout_height="@dimen/guide_small_avatar_height" android:layout_margin="8.0dip" android:scaleType="centerCrop" />
+        <TextView android:textSize="@dimen/large_font_size" android:textStyle="bold" android:textColor="@color/primary_contrast_font" android:ellipsize="end" android:id="@id/channel_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="40.0dip" android:minHeight="40.0dip">
+            <ProgressBar android:layout_gravity="center" android:id="@id/subscribe_progress" android:visibility="visible" android:layout_width="@dimen/status_spinner_width" android:layout_height="@dimen/status_spinner_height" />
+            <ImageView android:layout_gravity="center" android:id="@id/channel_subscribe" android:background="?android:selectableItemBackground" android:padding="4.0dip" android:visibility="gone" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="@string/subscribe" />
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="4.0">
+        <include layout="@layout/channel_statistics" />
+    </LinearLayout>
+</LinearLayout>

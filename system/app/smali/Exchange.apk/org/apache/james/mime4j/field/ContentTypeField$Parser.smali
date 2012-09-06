@@ -26,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 205
+    .line 209
     const-class v0, Lorg/apache/james/mime4j/field/ContentTypeField$Parser;
 
     invoke-static {v0}, Lorg/apache/james/mime4j/LogFactory;->getLog(Ljava/lang/Class;)Lorg/apache/james/mime4j/Log;
@@ -42,8 +42,8 @@
     .registers 1
 
     .prologue
-    .line 204
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 208
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -57,18 +57,18 @@
     .parameter "raw"
 
     .prologue
-    .line 208
+    .line 212
     const/4 v7, 0x0
 
-    .line 209
+    .line 213
     .local v7, parseException:Lorg/apache/james/mime4j/field/contenttype/parser/ParseException;
     const-string v5, ""
 
-    .line 210
+    .line 214
     .local v5, mimeType:Ljava/lang/String;
     const/4 v6, 0x0
 
-    .line 212
+    .line 216
     .local v6, parameters:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     new-instance v15, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;
 
@@ -80,7 +80,7 @@
 
     invoke-direct {v15, v1}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;-><init>(Ljava/io/Reader;)V
 
-    .line 214
+    .line 218
     .local v15, parser:Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;
     :try_start_10
     invoke-virtual {v15}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->parseAll()V
@@ -88,26 +88,26 @@
     .catch Lorg/apache/james/mime4j/field/contenttype/parser/ParseException; {:try_start_10 .. :try_end_13} :catch_87
     .catch Lorg/apache/james/mime4j/field/contenttype/parser/TokenMgrError; {:try_start_10 .. :try_end_13} :catch_bb
 
-    .line 228
+    .line 234
     :goto_13
     :try_start_13
     invoke-virtual {v15}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->getType()Ljava/lang/String;
 
     move-result-object v17
 
-    .line 229
+    .line 235
     .local v17, type:Ljava/lang/String;
     invoke-virtual {v15}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->getSubType()Ljava/lang/String;
 
     move-result-object v16
 
-    .line 231
+    .line 237
     .local v16, subType:Ljava/lang/String;
     if-eqz v17, :cond_f8
 
     if-eqz v16, :cond_f8
 
-    .line 232
+    .line 238
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -140,12 +140,12 @@
 
     move-result-object v5
 
-    .line 234
+    .line 240
     invoke-virtual {v15}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->getParamNames()Ljava/util/ArrayList;
 
     move-result-object v11
 
-    .line 235
+    .line 241
     .local v11, paramNames:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {v15}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->getParamValues()Ljava/util/ArrayList;
     :try_end_47
@@ -153,13 +153,13 @@
 
     move-result-object v13
 
-    .line 237
+    .line 243
     .local v13, paramValues:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     if-eqz v11, :cond_f8
 
     if-eqz v13, :cond_f8
 
-    .line 238
+    .line 244
     const/4 v9, 0x0
 
     .local v9, i:I
@@ -181,10 +181,10 @@
 
     if-ge v9, v1, :cond_10a
 
-    .line 239
+    .line 245
     if-nez v14, :cond_107
 
-    .line 240
+    .line 246
     new-instance v6, Ljava/util/HashMap;
 
     invoke-virtual {v11}, Ljava/util/ArrayList;->size()I
@@ -207,7 +207,7 @@
     :try_end_70
     .catch Ljava/lang/NullPointerException; {:try_start_4e .. :try_end_70} :catch_104
 
-    .line 242
+    .line 247
     .end local v14           #parameters:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     .restart local v6       #parameters:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     :goto_70
@@ -222,7 +222,7 @@
 
     move-result-object v10
 
-    .line 243
+    .line 248
     .local v10, paramName:Ljava/lang/String;
     invoke-virtual {v13, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -230,13 +230,13 @@
 
     check-cast v12, Ljava/lang/String;
 
-    .line 244
+    .line 249
     .local v12, paramValue:Ljava/lang/String;
     invoke-interface {v6, v10, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_83
     .catch Ljava/lang/NullPointerException; {:try_start_70 .. :try_end_83} :catch_f7
 
-    .line 238
+    .line 244
     add-int/lit8 v9, v9, 0x1
 
     move-object v14, v6
@@ -245,7 +245,7 @@
     .restart local v14       #parameters:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     goto :goto_4e
 
-    .line 215
+    .line 220
     .end local v9           #i:I
     .end local v10           #paramName:Ljava/lang/String;
     .end local v11           #paramNames:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
@@ -258,7 +258,7 @@
     :catch_87
     move-exception v8
 
-    .line 216
+    .line 221
     .local v8, e:Lorg/apache/james/mime4j/field/contenttype/parser/ParseException;
     sget-object v1, Lorg/apache/james/mime4j/field/ContentTypeField$Parser;->log:Lorg/apache/james/mime4j/Log;
 
@@ -268,7 +268,7 @@
 
     if-eqz v1, :cond_b8
 
-    .line 217
+    .line 222
     sget-object v1, Lorg/apache/james/mime4j/field/ContentTypeField$Parser;->log:Lorg/apache/james/mime4j/Log;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -307,19 +307,19 @@
 
     invoke-virtual {v1, v2}, Lorg/apache/james/mime4j/Log;->debug(Ljava/lang/Object;)V
 
-    .line 219
+    .line 224
     :cond_b8
     move-object v7, v8
 
-    .line 225
+    .line 231
     goto/16 :goto_13
 
-    .line 220
+    .line 226
     .end local v8           #e:Lorg/apache/james/mime4j/field/contenttype/parser/ParseException;
     :catch_bb
     move-exception v8
 
-    .line 221
+    .line 227
     .local v8, e:Lorg/apache/james/mime4j/field/contenttype/parser/TokenMgrError;
     sget-object v1, Lorg/apache/james/mime4j/field/ContentTypeField$Parser;->log:Lorg/apache/james/mime4j/Log;
 
@@ -329,7 +329,7 @@
 
     if-eqz v1, :cond_ec
 
-    .line 222
+    .line 228
     sget-object v1, Lorg/apache/james/mime4j/field/ContentTypeField$Parser;->log:Lorg/apache/james/mime4j/Log;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -368,7 +368,7 @@
 
     invoke-virtual {v1, v2}, Lorg/apache/james/mime4j/Log;->debug(Ljava/lang/Object;)V
 
-    .line 224
+    .line 230
     :cond_ec
     new-instance v7, Lorg/apache/james/mime4j/field/contenttype/parser/ParseException;
 
@@ -382,12 +382,12 @@
     .restart local v7       #parseException:Lorg/apache/james/mime4j/field/contenttype/parser/ParseException;
     goto/16 :goto_13
 
-    .line 248
+    .line 254
     .end local v8           #e:Lorg/apache/james/mime4j/field/contenttype/parser/TokenMgrError;
     :catch_f7
     move-exception v1
 
-    .line 250
+    .line 256
     :cond_f8
     :goto_f8
     new-instance v1, Lorg/apache/james/mime4j/field/ContentTypeField;
@@ -402,7 +402,7 @@
 
     return-object v1
 
-    .line 248
+    .line 254
     .end local v6           #parameters:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     .restart local v9       #i:I
     .restart local v11       #paramNames:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rom">ROM</string>
+    <string name="homepage">Homepage</string>
+    <string name="plugin">Plugin</string>
+    <string name="Themes">"Thema's"</string>
+    <string name="apps">Apps</string>
+    <string name="kernel">Kernel</string>
+    <string name="check_rom_update">Zoek nieuwe updates</string>
+    <string name="exit">Afsluiten</string>
+    <string name="info">Informatie</string>
+    <string name="costumization">Aanpassingen</string>
+    <string name="settings">Instellingen</string>
+    <string name="downloading_file">Bestand aan het downloaden....</string>
+    <string name="md5_ok">MD5 check goedgekeurd</string>
+    <string name="md5_error">MD5 check niet geaccepteerd</string>
+    <string name="file_downloaded">Bestand gedownload naar:</string>
+    <string name="reboot_to_recovery">Wilt je opstarten in recovery?</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Annuleren</string>
+    <string name="new_rom">Nieuwe ROM versie beschikbaar</string>
+    <string name="download_new_rom">Download nieuwe ROM versie</string>
+    <string name="changelog">Changelog</string>
+    <string name="reload_apps">Herlaad Apps</string>
+    <string name="check_rom_startup">Check voor updates tijdens opstarten</string>
+    <string name="choose_download_dir">Kies download map</string>
+    <string name="reboot_recovery">Herstart in recovery</string>
+    <string name="donate">Doneer ROM ontwikkelaar</string>
+    <string name="donate_acquariusoft">Doneer acquariusoft</string>
+    <string name="donate_acquariusoft_desc">Update me ontwikkelaar</string>
+    <string name="no_update_available">Geen updates beschikbaar</string>
+    <string name="use_light_theme">Gebruik lichte thema</string>
+    <string name="reboot_to_enable">Herstart de applicatie om instellingen toe te passen</string>
+    <string name="reboot_and_install">Herstart en installeer</string>
+    <string name="downloaded_files">Gedownloade bestanden</string>
+    <string name="cwm_flip_sdcard">Wijzig naam sdcard naar CWM</string>
+    <string name="cwm_flip_sdcard_desc">Belangrijk voor sommige bestanden die niet geinstalleerd worden door CWM, voor SGSII</string>
+    <string name="dialog_donate_title">Doneer</string>
+    <string name="dialog_donate_text">"Als je deze app gebruikt, steun de ontwikkelaar om de applicatie te verbeteren. 
+Je kunt doneren d.m.v. pay pal of door de app te kopen via Play Store"</string>
+    <string name="dialog_donate_paypal">Paypal</string>
+    <string name="dialog_donate_market">Play Store</string>
+    <string name="error">Error</string>
+    <string name="error_on_donwload">Er is een fout opgetreden tijdens download</string>
+    <string name="install">Installeer</string>
+    <string name="click_for_update_market">Check voor updates via de Play Store</string>
+    <string name="reboot_type">Soort herstart</string>
+    <string name="alert_no_config">"Geen configuratie beschikbaar
+
+ Deze rom is niet compatibel met deze app. 
+Geef dit door aan de maker van de ROM om dit op te lossen."</string>
+    <string name="compatible_rom_list">ROMS die compatiebel zijn</string>
+    <string name="check_rom_time">Check ROM update elke (uren)</string>
+    <string name="disable_check_rom">Schakel auto-checks voor updates uit.</string>
+    <string name="recovery">Recovery</string>
+    <string name="option">Optie</string>
+    <string name="other">Overige</string>
+    <string name="buy_donated">Koop doneer app</string>
+    <string name="buy_donated_desc">Schakelt advertenties uit en geeft meer opties</string>
+    <string name="download_script">Download scripts</string>
+    <string name="script_title">Titel</string>
+    <string name="script_desc">Beschrijving</string>
+    <string name="script_text">Script</string>
+    <string name="script_create_your">Pas je script aan</string>
+    <string name="script_insert">Voer in</string>
+    <string name="script_inserted">Script ingevoerd</string>
+    <string name="script_create_new">Maak nieuw</string>
+    <string name="delete">Verwijder</string>
+    <string name="share_rom">Deel je ROM</string>
+    <string name="full_wipe">Doe een full wipe tijdens installeren</string>
+    <string name="full_wipe_recommended">Full wipe aangeraden</string>
+    <string name="system_app">Systeem app</string>
+    <string name="system_app_desc">"Dit is een systeem app, je toestel kan onstabiel functioneren door het te verwijderen! 
+
+Weet je het zeker?"</string>
+    <string name="installed_apps">Geinstalleerde apps</string>
+    <string name="download_the_file">Bestand downloaden?</string>
+</resources>

@@ -52,7 +52,7 @@
 
     const/4 v2, 0x0
 
-    .line 44
+    .line 43
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
 
     const-string v1, "CHECK_CARRIER_TOS_VERSION"
@@ -61,16 +61,16 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;->CHECK_CARRIER_TOS_VERSION:Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
 
-    .line 46
+    .line 45
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
 
-    const-string v1, "PASSWORD_REQUEST"
+    const-string v1, "CHECK_VALID_CREDENTIALS"
 
     invoke-direct {v0, v1, v3}, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;->PASSWORD_REQUEST:Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
+    sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;->CHECK_VALID_CREDENTIALS:Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
 
-    .line 48
+    .line 47
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
 
     const-string v1, "CHECK_VALID_PASSWORD"
@@ -79,7 +79,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;->CHECK_VALID_PASSWORD:Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
 
-    .line 52
+    .line 49
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
 
     const-string v1, "CARRIER_CREDENTIALS_REQUEST"
@@ -88,16 +88,16 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;->CARRIER_CREDENTIALS_REQUEST:Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
 
-    .line 54
+    .line 51
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
 
-    const-string v1, "CHECK_VALID_CREDENTIALS"
+    const-string v1, "PASSWORD_REQUEST"
 
     invoke-direct {v0, v1, v6}, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;->CHECK_VALID_CREDENTIALS:Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
+    sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;->PASSWORD_REQUEST:Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
 
-    .line 39
+    .line 38
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
@@ -106,7 +106,7 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;->PASSWORD_REQUEST:Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
+    sget-object v1, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;->CHECK_VALID_CREDENTIALS:Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
 
     aput-object v1, v0, v3
 
@@ -118,7 +118,7 @@
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;->CHECK_VALID_CREDENTIALS:Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
+    sget-object v1, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;->PASSWORD_REQUEST:Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
 
     aput-object v1, v0, v6
 
@@ -138,7 +138,7 @@
     .end annotation
 
     .prologue
-    .line 39
+    .line 38
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -149,7 +149,7 @@
     .parameter
 
     .prologue
-    .line 39
+    .line 38
     const-class v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -165,7 +165,7 @@
     .registers 1
 
     .prologue
-    .line 39
+    .line 38
     sget-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;->$VALUES:[Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;
 
     invoke-virtual {v0}, [Lcom/google/android/finsky/billing/carrierbilling/flow/CompleteCarrierBillingFlow$State;->clone()Ljava/lang/Object;

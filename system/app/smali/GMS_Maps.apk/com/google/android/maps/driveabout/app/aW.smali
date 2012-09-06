@@ -1,27 +1,28 @@
-.class Lcom/google/android/maps/driveabout/app/aW;
+.class Lcom/google/android/maps/driveabout/app/aw;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lu/j;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/cJ;
 
-.field final synthetic b:I
-
-.field final synthetic c:Lcom/google/android/maps/driveabout/app/aV;
+.field final synthetic b:Lcom/google/android/maps/driveabout/app/al;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/aV;Lu/j;I)V
-    .registers 4
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/al;Lcom/google/android/maps/driveabout/app/cJ;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aW;->c:Lcom/google/android/maps/driveabout/app/aV;
+    .prologue
+    .line 326
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aw;->b:Lcom/google/android/maps/driveabout/app/al;
 
-    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/aW;->a:Lu/j;
-
-    iput p3, p0, Lcom/google/android/maps/driveabout/app/aW;->b:I
+    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/aw;->a:Lcom/google/android/maps/driveabout/app/cJ;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -30,24 +31,22 @@
 
 
 # virtual methods
-.method public run()V
+.method public onClick(Landroid/content/DialogInterface;I)V
     .registers 4
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aW;->c:Lcom/google/android/maps/driveabout/app/aV;
+    .prologue
+    .line 329
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aw;->b:Lcom/google/android/maps/driveabout/app/al;
 
-    iget-object v0, v0, Lcom/google/android/maps/driveabout/app/aV;->a:Lcom/google/android/maps/driveabout/app/aL;
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/al;->d()V
 
-    iget-object v0, v0, Lcom/google/android/maps/driveabout/app/aL;->f:Ly/p;
+    .line 330
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aw;->a:Lcom/google/android/maps/driveabout/app/cJ;
 
-    invoke-virtual {v0}, Ly/p;->a()Ly/s;
+    invoke-interface {v0}, Lcom/google/android/maps/driveabout/app/cJ;->a()V
 
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/aW;->a:Lu/j;
-
-    iget v2, p0, Lcom/google/android/maps/driveabout/app/aW;->b:I
-
-    invoke-virtual {v0, v1, v2}, Ly/s;->a(Lu/j;I)V
-
+    .line 331
     return-void
 .end method

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/emailcommon/service/EmailServiceProxy;->setCallback(Lcom/android/emailcommon/service/IEmailServiceCallback;)V
+    value = Lcom/android/emailcommon/service/EmailServiceProxy;->hostChanged(J)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,22 +20,22 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
-.field final synthetic val$cb:Lcom/android/emailcommon/service/IEmailServiceCallback;
+.field final synthetic val$accountId:J
 
 
 # direct methods
-.method constructor <init>(Lcom/android/emailcommon/service/EmailServiceProxy;Lcom/android/emailcommon/service/IEmailServiceCallback;)V
-    .registers 3
+.method constructor <init>(Lcom/android/emailcommon/service/EmailServiceProxy;J)V
+    .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 245
+    .line 293
     iput-object p1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$9;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
-    iput-object p2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$9;->val$cb:Lcom/android/emailcommon/service/IEmailServiceCallback;
+    iput-wide p2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$9;->val$accountId:J
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 3
+    .registers 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -51,7 +51,7 @@
     .end annotation
 
     .prologue
-    .line 247
+    .line 295
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$9;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mService:Lcom/android/emailcommon/service/IEmailService;
@@ -59,10 +59,10 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$9;->val$cb:Lcom/android/emailcommon/service/IEmailServiceCallback;
+    iget-wide v1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$9;->val$accountId:J
 
-    invoke-interface {v0, v1}, Lcom/android/emailcommon/service/IEmailService;->setCallback(Lcom/android/emailcommon/service/IEmailServiceCallback;)V
+    invoke-interface {v0, v1, v2}, Lcom/android/emailcommon/service/IEmailService;->hostChanged(J)V
 
-    .line 248
+    .line 296
     return-void
 .end method

@@ -52,7 +52,7 @@
 
     const/4 v2, 0x0
 
-    .line 76
+    .line 72
     new-instance v0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     const-string v1, "INIT"
@@ -61,7 +61,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->INIT:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    .line 81
+    .line 77
     new-instance v0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     const-string v1, "SHOWING_FORM"
@@ -70,7 +70,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->SHOWING_FORM:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    .line 85
+    .line 81
     new-instance v0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     const-string v1, "ESCROWING_CREDENTIALS"
@@ -79,7 +79,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->ESCROWING_CREDENTIALS:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    .line 90
+    .line 86
     new-instance v0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     const-string v1, "SENDING_REQUEST"
@@ -88,7 +88,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->SENDING_REQUEST:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    .line 92
+    .line 88
     new-instance v0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     const-string v1, "DONE"
@@ -97,7 +97,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->DONE:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    .line 74
+    .line 70
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
@@ -138,7 +138,7 @@
     .end annotation
 
     .prologue
-    .line 74
+    .line 70
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -149,7 +149,7 @@
     .parameter
 
     .prologue
-    .line 74
+    .line 70
     const-class v0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -165,7 +165,7 @@
     .registers 1
 
     .prologue
-    .line 74
+    .line 70
     sget-object v0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->$VALUES:[Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     invoke-virtual {v0}, [Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->clone()Ljava/lang/Object;

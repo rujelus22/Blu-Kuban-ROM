@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="general_preference_text_zoom_summary_array">
+        <item>Pytteliten text</item>
+        <item>Liten text</item>
+        <item>Normalstor text</item>
+        <item>Stor text</item>
+        <item>Jättestor text</item>
+    </string-array>
+</resources>

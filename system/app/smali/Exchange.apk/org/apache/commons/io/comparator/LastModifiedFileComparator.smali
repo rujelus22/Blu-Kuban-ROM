@@ -49,14 +49,14 @@
     .registers 2
 
     .prologue
-    .line 55
+    .line 51
     new-instance v0, Lorg/apache/commons/io/comparator/LastModifiedFileComparator;
 
     invoke-direct {v0}, Lorg/apache/commons/io/comparator/LastModifiedFileComparator;-><init>()V
 
     sput-object v0, Lorg/apache/commons/io/comparator/LastModifiedFileComparator;->LASTMODIFIED_COMPARATOR:Ljava/util/Comparator;
 
-    .line 58
+    .line 54
     new-instance v0, Lorg/apache/commons/io/comparator/ReverseComparator;
 
     sget-object v1, Lorg/apache/commons/io/comparator/LastModifiedFileComparator;->LASTMODIFIED_COMPARATOR:Ljava/util/Comparator;
@@ -72,8 +72,8 @@
     .registers 1
 
     .prologue
-    .line 52
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 48
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -88,7 +88,7 @@
     .prologue
     const-wide/16 v6, 0x0
 
-    .line 72
+    .line 68
     invoke-virtual {p1}, Ljava/io/File;->lastModified()J
 
     move-result-wide v2
@@ -99,31 +99,31 @@
 
     sub-long v0, v2, v4
 
-    .line 73
+    .line 69
     .local v0, result:J
     cmp-long v2, v0, v6
 
     if-gez v2, :cond_12
 
-    .line 74
+    .line 70
     const/4 v2, -0x1
 
-    .line 78
+    .line 74
     :goto_11
     return v2
 
-    .line 75
+    .line 71
     :cond_12
     cmp-long v2, v0, v6
 
     if-lez v2, :cond_18
 
-    .line 76
+    .line 72
     const/4 v2, 0x1
 
     goto :goto_11
 
-    .line 78
+    .line 74
     :cond_18
     const/4 v2, 0x0
 
@@ -136,7 +136,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 48
     check-cast p1, Ljava/io/File;
 
     .end local p1

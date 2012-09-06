@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 62
+    .line 70
     iput-object p1, p0, Lcom/google/android/finsky/previews/PreviewController$1;->val$navigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,32 +41,32 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 74
     invoke-static {}, Lcom/google/android/finsky/previews/PreviewController;->access$000()Lcom/google/android/finsky/previews/PreviewPlayer;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/google/android/finsky/previews/PreviewPlayer;->clear()V
 
-    .line 67
+    .line 75
     invoke-static {}, Lcom/google/android/finsky/previews/PreviewController;->access$000()Lcom/google/android/finsky/previews/PreviewPlayer;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/google/android/finsky/previews/PreviewPlayer;->stop()V
 
-    .line 68
+    .line 76
     invoke-static {}, Lcom/google/android/finsky/previews/PreviewController;->access$000()Lcom/google/android/finsky/previews/PreviewPlayer;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/google/android/finsky/previews/PreviewPlayer;->reset()V
 
-    .line 69
+    .line 77
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewController$1;->val$navigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->removeOnBackStackChangedListener(Landroid/support/v4/app/FragmentManager$OnBackStackChangedListener;)V
 
-    .line 70
+    .line 78
     return-void
 .end method

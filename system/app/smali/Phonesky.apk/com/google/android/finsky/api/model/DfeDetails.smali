@@ -61,7 +61,7 @@
     .line 41
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeDetails;->mDetailsUrl:Ljava/lang/String;
 
-    invoke-virtual {p1, v0, p0, p0}, Lcom/google/android/finsky/api/DfeApi;->getDetails(Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
+    invoke-interface {p1, v0, p0, p0}, Lcom/google/android/finsky/api/DfeApi;->getDetails(Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
 
     .line 42
     return-void
@@ -110,11 +110,46 @@
     goto :goto_d
 .end method
 
+.method public getFooterHtml()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 104
+    iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeDetails;->mDetailsResponse:Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;
+
+    if-eqz v0, :cond_c
+
+    iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeDetails;->mDetailsResponse:Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->hasFooterHtml()Z
+
+    move-result v0
+
+    if-nez v0, :cond_e
+
+    .line 105
+    :cond_c
+    const/4 v0, 0x0
+
+    .line 107
+    :goto_d
+    return-object v0
+
+    :cond_e
+    iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeDetails;->mDetailsResponse:Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->getFooterHtml()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_d
+.end method
+
 .method public getUserReview()Lcom/google/android/finsky/remoting/protos/Rev$Review;
     .registers 2
 
     .prologue
-    .line 92
+    .line 97
     iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeDetails;->mDetailsResponse:Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;
 
     if-eqz v0, :cond_c
@@ -127,11 +162,11 @@
 
     if-nez v0, :cond_e
 
-    .line 93
+    .line 98
     :cond_c
     const/4 v0, 0x0
 
-    .line 95
+    .line 100
     :goto_d
     return-object v0
 
@@ -143,6 +178,27 @@
     move-result-object v0
 
     goto :goto_d
+.end method
+
+.method public initializeUserReview()Lcom/google/android/finsky/remoting/protos/Rev$Review;
+    .registers 3
+
+    .prologue
+    .line 88
+    iget-object v0, p0, Lcom/google/android/finsky/api/model/DfeDetails;->mDetailsResponse:Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;
+
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/Rev$Review;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Rev$Review;-><init>()V
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;->setUserReview(Lcom/google/android/finsky/remoting/protos/Rev$Review;)Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;
+
+    .line 89
+    invoke-virtual {p0}, Lcom/google/android/finsky/api/model/DfeDetails;->getUserReview()Lcom/google/android/finsky/remoting/protos/Rev$Review;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public isReady()Z

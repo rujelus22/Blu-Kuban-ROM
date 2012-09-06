@@ -56,7 +56,7 @@
     .end annotation
 
     .prologue
-    .line 77
+    .line 76
     .local p5, parameters:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-direct {p0, p1, p2, p3}, Lorg/apache/james/mime4j/field/Field;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
@@ -70,16 +70,16 @@
 
     iput-object v0, p0, Lorg/apache/james/mime4j/field/ContentTypeField;->parameters:Ljava/util/Map;
 
-    .line 78
+    .line 77
     iput-object p4, p0, Lorg/apache/james/mime4j/field/ContentTypeField;->mimeType:Ljava/lang/String;
 
-    .line 79
+    .line 78
     iput-object p5, p0, Lorg/apache/james/mime4j/field/ContentTypeField;->parameters:Ljava/util/Map;
 
-    .line 80
+    .line 79
     iput-object p6, p0, Lorg/apache/james/mime4j/field/ContentTypeField;->parseException:Lorg/apache/james/mime4j/field/contenttype/parser/ParseException;
 
-    .line 81
+    .line 80
     return-void
 .end method
 
@@ -88,10 +88,10 @@
     .parameter "f"
 
     .prologue
-    .line 175
+    .line 179
     if-eqz p0, :cond_17
 
-    .line 176
+    .line 180
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/ContentTypeField;->getCharset()Ljava/lang/String;
 
     move-result-object v0
@@ -108,12 +108,12 @@
 
     if-lez v0, :cond_17
 
-    .line 177
+    .line 181
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/ContentTypeField;->getCharset()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 180
+    .line 184
     :goto_16
     return-object v0
 
@@ -129,7 +129,7 @@
     .parameter "parent"
 
     .prologue
-    .line 112
+    .line 114
     if-eqz p0, :cond_18
 
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/ContentTypeField;->getMimeType()Ljava/lang/String;
@@ -154,7 +154,7 @@
 
     if-nez v0, :cond_28
 
-    .line 115
+    .line 117
     :cond_18
     if-eqz p1, :cond_25
 
@@ -166,20 +166,20 @@
 
     if-eqz v0, :cond_25
 
-    .line 116
+    .line 118
     const-string v0, "message/rfc822"
 
-    .line 122
+    .line 124
     :goto_24
     return-object v0
 
-    .line 118
+    .line 120
     :cond_25
     const-string v0, "text/plain"
 
     goto :goto_24
 
-    .line 122
+    .line 124
     :cond_28
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/ContentTypeField;->getMimeType()Ljava/lang/String;
 
@@ -194,7 +194,7 @@
     .registers 2
 
     .prologue
-    .line 154
+    .line 158
     const-string v0, "boundary"
 
     invoke-virtual {p0, v0}, Lorg/apache/james/mime4j/field/ContentTypeField;->getParameter(Ljava/lang/String;)Ljava/lang/String;
@@ -208,7 +208,7 @@
     .registers 2
 
     .prologue
-    .line 164
+    .line 168
     const-string v0, "charset"
 
     invoke-virtual {p0, v0}, Lorg/apache/james/mime4j/field/ContentTypeField;->getParameter(Ljava/lang/String;)Ljava/lang/String;
@@ -222,7 +222,7 @@
     .registers 2
 
     .prologue
-    .line 97
+    .line 96
     iget-object v0, p0, Lorg/apache/james/mime4j/field/ContentTypeField;->mimeType:Ljava/lang/String;
 
     return-object v0
@@ -233,7 +233,7 @@
     .parameter "name"
 
     .prologue
-    .line 132
+    .line 134
     iget-object v0, p0, Lorg/apache/james/mime4j/field/ContentTypeField;->parameters:Ljava/util/Map;
 
     if-eqz v0, :cond_11
@@ -264,7 +264,7 @@
     .parameter "mimeType"
 
     .prologue
-    .line 191
+    .line 195
     iget-object v0, p0, Lorg/apache/james/mime4j/field/ContentTypeField;->mimeType:Ljava/lang/String;
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -278,7 +278,7 @@
     .registers 3
 
     .prologue
-    .line 201
+    .line 205
     iget-object v0, p0, Lorg/apache/james/mime4j/field/ContentTypeField;->mimeType:Ljava/lang/String;
 
     const-string v1, "multipart/"

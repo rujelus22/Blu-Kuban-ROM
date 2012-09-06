@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 213
+    .line 76
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupNames$1;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,13 +42,13 @@
     .parameter "s"
 
     .prologue
-    .line 215
+    .line 79
     iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupNames$1;->this$0:Lcom/android/email/activity/setup/AccountSetupNames;
 
     #calls: Lcom/android/email/activity/setup/AccountSetupNames;->validateFields()V
     invoke-static {v0}, Lcom/android/email/activity/setup/AccountSetupNames;->access$000(Lcom/android/email/activity/setup/AccountSetupNames;)V
 
-    .line 216
+    .line 80
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .parameter "after"
 
     .prologue
-    .line 219
+    .line 84
     return-void
 .end method
 
@@ -72,6 +72,6 @@
     .parameter "count"
 
     .prologue
-    .line 222
+    .line 88
     return-void
 .end method

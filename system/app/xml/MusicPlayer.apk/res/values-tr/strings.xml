@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s, %2$s</string>
+    <string name="no_network_connection">Bağlı değil</string>
+    <string name="authentication_failure_no_network">"Müzik hesabınızın kimliğini doğrulamak için İnternet'e bağlanacaksınız."</string>
+    <string name="authentication_failure">Kimlik doğrulanmadı</string>
+    <string name="authentication_failure_error">Müzik hesabınızın kimliği doğrulanamadı.</string>
+    <string name="positive_button_text">Tamam</string>
+    <string name="negative_button_text">İptal</string>
+    <string name="save_button_text">Kaydet</string>
+    <string name="not_save_button_text">Kaydetme</string>
+    <string name="offline_music_not_available_message">Müzikleri cihazda saklamak için Albümler, Şarkı Listeleri veya Sanatçı görünümüne gidin.</string>
+    <string name="view_albums_button_text">Albümlere git</string>
+    <string name="shuffle_all">Tümünü karıştır</string>
+    <string name="play_all">Tümünü çal</string>
+    <string name="songs_all">Tüm şarkılar</string>
+    <string name="shuffle">Karıştır</string>
+    <string name="search">Ara</string>
+    <string name="settings">Ayarlar</string>
+    <string name="library_options">Görüntüleme seçenekleri</string>
+    <string name="manage_music">Cihazda müziği seç</string>
+    <string name="available_offline">Cihazda sakla</string>
+    <string name="options">Seçenekler</string>
+    <string name="clear_queue">Kuyruğu temizle</string>
+    <string name="queue_cleared">Sıra temizlendi</string>
+    <string name="add_to_queue">Sıraya ekle</string>
+    <string name="add_to_athome_queue">%s grubuna ekle</string>
+    <string name="shop_artist">Sanatçıya göre alışvrş</string>
+    <string name="show_offline_music_only">Sadece cihazda</string>
+    <string name="show_all_music">Tüm müziği göster</string>
+    <string name="new_playlist_title">Şarkı listesi adı</string>
+    <string name="add_to_playlist_title">Şarkı listesi adı</string>
+    <string name="rename_playlist_title">\"%s\" şarkı listesini yeniden adlandır:</string>
+    <string name="search_section_header_artists">SANATÇILAR</string>
+    <string name="search_section_header_albums">ALBÜMLER</string>
+    <string name="search_section_header_songs">ŞARKILAR</string>
+    <string name="search_section_header_playlists">ŞARKI LİSTELERİ</string>
+    <string name="shuffle_all_songs">Tümünü karıştır</string>
+    <string name="stream_settings">Müzik ayarları</string>
+    <string name="refresh_title">Yenile</string>
+    <string name="refresh_summary">"Google Play'deki müziği yenile"</string>
+    <string name="account_settings_title">Google hesabı</string>
+    <string name="no_account_selected_summary">Hesap seçmek için dokunun</string>
+    <string name="account_selected_summary">"%s hesabını kullanarak Google Play'e bağlan"</string>
+    <string name="hide_when_not_connected_title">Kullanılamayan müzikleri gizle</string>
+    <string name="hide_when_not_connected_summary">Yalnızca çevrimdışıyken kullanılabilir müziği görüntüle</string>
+    <string name="stream_only_on_wifi_title">Yalnızca Kablosuz üzerinden akış</string>
+    <string name="stream_only_on_wifi_summary">Operatör veri ücretlerini düşürmek için, mobil ağlar üzerinden akış gerçekleştirmeyin</string>
+    <string name="stream_only_hq_title">Yüksek kalitede akış</string>
+    <string name="stream_only_hq_summary">Müzik akışını her zaman en yüksek kalitede yap</string>
+    <string name="athome_title">Android@Home</string>
+    <string name="athome_summary">Android@Home cihazları ara</string>
+    <string name="athome_not_remote">Bunu Nexus Q cihazında dinlemek için öncelikle Google Play müzik kitaplığınıza yükleyin.</string>
+    <string name="athome_move_top_menu">Sonrakini oynat</string>
+    <string name="athome_remove_menu">Kuyruktan kaldırılsın mı?</string>
+    <string name="lock_screen_controls_title">Kilit ekranı denetimleri</string>
+    <string name="lock_screen_controls_summary">Müzik denetimlerini kilit ekranının üzerinde göster</string>
+    <string name="debug_logs_title">Hata ayıklama günlükleri</string>
+    <string name="debug_logs_summary">Hata ayıklama günlüklerini kullan</string>
+    <string name="debug_logs_enable_warning_message">"Hata ayıklama günlüklerini devre dışı bırakmak istediğinizden emin misiniz?
+Harici depolama biriminde hassas bilgiler saklanıyor olabilir. Bu seçenek değiştirildiğinde uygulama kapatılacaktır."</string>
+    <string name="debug_logs_disable_warning_message">"Hata ayıklama günlüklerini devre dışı bırakmak istediğinizden emin misiniz?
+Bu seçenek değiştirildiğinde uygulama kapatılacaktır."</string>
+    <string name="tungsten_settings">Nexus Q ayarları</string>
+    <string name="offlinedl_only_on_wifi_title">Yalnızca Kablosuz üzerinden indir</string>
+    <string name="offlinedl_only_on_wifi_summary">Operatör veri ücretlerini düşürmek için, mobil ağlar üzerinden indirmeyin</string>
+    <string name="cache_streamed_title">Önbelleğe otomatik al</string>
+    <string name="cache_streamed_summary">Sormadan müzikleri geçici olarak sakla</string>
+    <string name="download_queue_title">Kuyruğu indir</string>
+    <string name="download_queue_summary">Şu an indirilen şarkıları göster</string>
+    <string name="help_title">Yardım</string>
+    <string name="show_no_downloads_title">İndirilmek·üzere·kuyruğa·alınmış şarkı yok</string>
+    <string name="music_version_title">Müzik sürümü</string>
+    <string name="music_version_summary">Bilinmeyen sürüm</string>
+    <string name="nowplaying_title">Şimdi yürütülüyor</string>
+    <string name="artists_title">Sanatçılar</string>
+    <string name="albums_title">Albümler</string>
+    <string name="genres_title">Türler</string>
+    <string name="tracks_title">Şarkılar</string>
+    <string name="playlists_title">Şarkı listeleri</string>
+    <string name="recent_title">En yeni</string>
+    <string name="search_title">Ara</string>
+    <string name="no_tracks_title">Şarkı yok</string>
+    <string name="delete_playlist_menu">Sil</string>
+    <string name="edit_playlist_menu">Düzenle</string>
+    <string name="rename_playlist_menu">Yeniden adlandır</string>
+    <string name="playlist_delete_confirmation">\"%s\" şarkı listesini silmek istiyor musunuz?</string>
+    <string name="delete_playlist_button_confirm">Sil</string>
+    <string name="playlist_deleted_message">Şarkı listesi silindi.</string>
+    <string name="playlist_created_message">\"%s\" şarkı listesi oluşturuldu.</string>
+    <string name="playlist_renamed_message">Şarkı listesi \"%s\" olarak yeniden adlandırıldı.</string>
+    <string name="recentlyadded">Son eklenenler</string>
+    <string name="recentlyadded_title">Son eklenenler</string>
+    <string name="all_songs_list">Tüm şarkılar</string>
+    <string name="all_songs_list_title">Tüm şarkılar</string>
+    <string name="storemusic_list">Ücretsiz olanlar ve satın alınanlar</string>
+    <string name="storemusic_list_title">Ücretsiz olanlar ve satın alınanlar</string>
+    <string name="freemusic_list">Ücretsiz şarkılar</string>
+    <string name="freemusic_list_title">Ücretsiz şarkılar</string>
+    <string name="thumbsup_list">Beğen</string>
+    <string name="thumbsup_list_title">Beğen</string>
+    <string name="unknown_artist_name">Bilinmeyen sanatçı</string>
+    <string name="unknown_album_name">Bilinmeyen albüm</string>
+    <string name="unknown_playlist_name">Bilinmeyen şarkı listesi</string>
+    <string name="unknown_submitter_name">Bilinmiyor</string>
+    <string name="ringtone_menu">Zil sesi olarak kullan</string>
+    <string name="ringtone_set">\"%s\" zil sesi olarak ayarlandı.</string>
+    <string name="ringtone_set_failed">Zil sesi oluşturulamadı.</string>
+    <string name="ringtone_needs_download">İndirildiğinde zil sesi ayarlanacak.</string>
+    <string name="play_selection">Çal</string>
+    <string name="add_to_playlist">Şarkı listesine ekle</string>
+    <string name="rename_playlist_menu_item">Yeniden adlandır</string>
+    <string name="add_to_playlist_selector_title">Şarkı listesine ekle</string>
+    <string name="queue">Geçerli şarkı listesi</string>
+    <string name="save_play_queue_as_playlist">Sırayı kaydet</string>
+    <string name="new_playlist_for_content">Yeni şarkı listesi</string>
+    <string name="new_empty_playlist">Yeni şarkı listesi</string>
+    <string name="new_playlist_name_template">Şarkı Listesi %d</string>
+    <string name="removed_from_playlist">\"%1$s\" şarkı listesinden kaldırıldı.</string>
+    <string name="removed_from_play_queue">\"%1$s\" çalma sırasından kaldırıldı.</string>
+    <string name="playlist_too_many_songs">Çok fzl şarkı. Her çalm list içn sınır %d şarkdr.</string>
+    <string name="emptyplaylist">Seçilen şarkı listesi boş.</string>
+    <string name="widget_nowplaying_small_title">Müzik (4x1)</string>
+    <string name="widget_nowplaying_large_title">Müzik (4x4)</string>
+    <string name="appwidget_text_separator">-</string>
+    <string name="playlist_edit_label">AD</string>
+    <string name="create_playlist_create_text">Tamam</string>
+    <string name="rename_playlist_rename_text">Yeniden adlandır</string>
+    <string name="service_start_error_title">Yürütme sorunu</string>
+    <string name="service_start_error_msg">Şarkı çalınamadı.</string>
+    <string name="service_start_error_button">Tamam</string>
+    <string name="weekpicker_set">Bitti</string>
+    <string name="weekpicker_title">Saati ayarlayın</string>
+    <string name="musicshortcutlabel">Müzik şarkı listesi</string>
+    <string name="app_name">Google Play Müzik</string>
+    <string name="launcher_name">Google Play Müzik</string>
+    <string name="actionbar_title">Google Play</string>
+    <string name="playback_failed_title">Muzik çalma hatası.</string>
+    <string name="playback_failed">İstekte bulunduğunuz parça çalınamadı.</string>
+    <string name="cancel">İptal</string>
+    <string name="remove_from_playlist">Şarkı listesinden kaldır</string>
+    <string name="streamloadingtext">Bağlanılıyor: %s</string>
+    <string name="search_hint">Müzik ara</string>
+    <string name="working_artists">Sanatçılar...</string>
+    <string name="working_albums">Albümler...</string>
+    <string name="loading">Yükleniyor...</string>
+    <string name="sort_by_track">Parçalar</string>
+    <string name="music_picker_title">Müzik parçası seçin</string>
+    <string name="fail_to_start_stream">İstekte bulunduğunuz akış çalınamadı.</string>
+    <string name="search_settings_description">Sanatçı, albüm ve parçalar</string>
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+    <string name="title_tv">Müzik</string>
+    <string name="music_library">Müzik kitaplığı</string>
+    <string name="playlist_label">Şarkı Listesi</string>
+    <string name="faux_art_all_songs_label">Tüm şarkılar</string>
+    <string name="faux_art_playlist_label">Şarkı listesi</string>
+    <string name="faux_art_playlist_instant_mix_label">Anında mix</string>
+    <string name="faux_art_playlist_auto_playlist_label">Otomatik çalma listesi</string>
+    <string name="buffering">Arabelleğe alınıyor...</string>
+    <string name="keep_on_phone">Cihazda sakla</string>
+    <string name="no_music_add_music_header">MÜZİK EKLEME YÖNTEMLERİ</string>
+    <string name="no_music_shop_body">Milyonlarca şarkıdan istediğinizi satın alın, ücretsiz yüzlerce parça edinin.</string>
+    <string name="no_music_shop_button">ALIŞVERİŞ</string>
+    <string name="no_music_upload_body">"Google Play Müzik'e 20.000 şarkıyı ücretsiz yükleyebilirsiniz."</string>
+    <string name="no_music_upload_button">DAHA FAZLA BİLGİ EDİNİN</string>
+    <string name="no_music_usb_copy_body">Bilgisayarınızdan cihazınıza müzik kopyalamak için USB kablosu kullanın.</string>
+    <string name="no_music_usb_copy_button">DAHA FAZLA BİLGİ EDİNİN</string>
+    <string name="no_music_heading">Müzik kitaplığınız boş.</string>
+    <string name="no_music_setup_uploader_heading">Müziğinizi kablosuz olarak akışla dinleyin.</string>
+    <string name="no_music_setup_uploader_body">Google Play Müzik ile kişisel müzik koleksiyonunuzu akış olarak alabilirsiniz.</string>
+    <string name="no_music_setup_usb_heading">Cihazınıza müzik kopyalayın.</string>
+    <string name="no_music_setup_usb_body">Bilgisayarınızdan cihazınıza müzik kopyalamak için USB kablosu kullanın.</string>
+    <string name="no_local_music_heading">Cihazda saklanan hiç müzik yok</string>
+    <string name="no_local_music_body">"Tüm kitaplığınızı görüntülemek için menüyü açın ve \"Sadece cihazda\" öğesinin işaretini kaldırın.
+
+Cihazınızda saklamak üzere müzik seçmek için menüyü açın ve \"Cihaz müziği seç\" öğesine dokunun."</string>
+    <string name="no_music_learn_more">Daha fazla bilgi edinin</string>
+    <string name="no_music_syncing_heading">Music şu anda senkronize ediliyor.</string>
+    <string name="no_music_syncing_body">Müzik şu anda sunucudan gelen verilerle senkronize ediliyor, kısa süre içinde görüntülenecektir.</string>
+    <string name="no_music_scanning_heading">Cihazdaki müzikler için tarama yapılıyor</string>
+    <string name="no_music_scanning_body">Müzik bulmak için cihazınız taranıyor.</string>
+    <string name="sync_disabled">"Google Play Müzik'ten alınan müziğin görüntülenebilmesi için, senkronizasyonu ayarlamanız gerekir. Bunu şimdi yapmak ister misiniz?"</string>
+    <string name="tutorial_welcome_heading">"Google Play Müzik'e hoş geldiniz"</string>
+    <string name="tutorial_welcome_body">"Kişisel müzik koleksiyonunuzdan şarkılar yükleyin (20.000 şarkı yükleyebilirsiniz).
+
+Google Play'den satın aldığınız müziği anında çalın.
+
+Tüm müziğinizi Web üzerinde veya herhangi bir telefonda ya da tablette dinleyin. Müziklerinizi çevrimdışı olarak dinlemek için kolayca indirin.
+
+Hepsi ücretsiz."</string>
+    <string name="tutorial_select_account_heading">Bir hesap seçin</string>
+    <string name="tutorial_select_account_body">"Müzik kitaplığınızı ve mağazadan satın aldıklarınızı dinleyebilmek için hesabınızla Google Play Müzik arasında bağlantı oluşturun.
+
+Hangi hesabı kullanmak istiyorsunuz?"</string>
+    <string name="tutorial_sign_in">Müzik kitaplığınızı ve mağazadan satın aldıklarınızı dinleyebilmek için hesabınızla Google Play Müzik arasında bağlantı oluşturun.</string>
+    <string name="tutorial_free_music_heading">Ücretsiz müzik dinleme</string>
+    <string name="tutorial_free_music_body">"Google Play'de Rock, Hip-Hop ve diğer türlerin en büyük isimlerinden bazılarının yüzlerce ücretsiz şarkısına göz atın."</string>
+    <string name="tutorial_account_heading">Hoş Geldiniz</string>
+    <string name="tutorial_account_body">"Google Play Müzik'e davet edildiniz. Bu müzik çaları kullanarak, Google Play Müzik'e eklediğiniz şarkılara ve Android cihazınıza kopyaladığınız müziğe anında erişebilirsiniz."</string>
+    <string name="tutorial_account_list_header">Bu müzik çalar ile Google Play Müzik arasında bağlantı oluşturmak için ilk olarak bir Google Hesabı seçin:</string>
+    <string name="tutorial_done_heading">Keyfini çıkarın</string>
+    <string name="tutorial_done_body">"Müzik çalar artık Google Hesabınıza bağlı.
+
+Müzik koleksiyonunuzu Google Play Müzik'e zaten eklediyseniz, koleksiyonunuz bu müzik çalarda görünmeye başlayacaktır.
+
+Müziğinizi Google Play Müzik'e eklemeniz gerekiyorsa, bilgisayarınızdan web sitemizi ziyaret ederek işleme başlayabilirsiniz:"</string>
+    <string name="tutorial_skip">Atla</string>
+    <string name="tutorial_next">İleri</string>
+    <string name="tutorial_done">Bitti</string>
+    <string name="tutorial_add_account">Hesap ekle</string>
+    <string name="tutorial_free_music">Ücretsiz şarkılar alın</string>
+    <string name="spinner_carousel">En yeni</string>
+    <string name="spinner_album">Albümler</string>
+    <string name="spinner_artist">Sanatçılar</string>
+    <string name="spinner_songs">Şarkılar</string>
+    <string name="spinner_playlists">Çalma listeleri</string>
+    <string name="spinner_genres">Türler</string>
+    <string name="sort_by_title">"A'dan Z'ye sırala"</string>
+    <string name="sort_by_artist">Sanatçıya göre sırala</string>
+    <string name="sort_by_album">Albüme göre sırala</string>
+    <string name="sort_by_date">Eklendiği tarihe göre sırala</string>
+    <string name="more_by_artist">Sanatçının diğer albümleri</string>
+    <string name="make_available_offline">Cihazda sakla</string>
+    <string name="search_web">"Web'de ara"</string>
+    <string name="manage_done">Bitti</string>
+    <string name="too_many_items_title">Çok sayıda ürün var</string>
+    <string name="too_many_items_body">Seçtiğiniz tüm öğeleri saklamak için yeterince yer yok. Yer açmak için bazı öğelerin seçimini kaldırın.</string>
+    <string name="save_manage_music_change_title">Kaydedilmemiş değişiklikler</string>
+    <string name="save_manage_music_change_body">Seçilen müziği cihazda saklamak istiyor musunuz?</string>
+    <string name="not_all_items_can_be_kept_body">Seçtiğiniz tüm öğeleri saklamak için yeterince yer yok. Öğelerin tümü indirilmeyecek.</string>
+    <string name="free_space_overfull">Dpl br doldu (%s fazla)</string>
+    <string name="free_space">%s BOŞ</string>
+    <string name="stream_error_title">Müzik geçici olarak kullanılamıyor.</string>
+    <string name="stream_error_no_space_available">Kullanılabilir yer yok.</string>
+    <string name="stream_error_only_on_wifi">Bu şarkıyı çalmak için Kablosuz ağda olmanız gerekir.</string>
+    <string name="stream_error_no_connection">Bu şarkıyı çalmak için çevrimiçi olmanız gerekir.</string>
+    <string name="stream_error_unauthorized_title">Yetkilendirme hatası.</string>
+    <string name="stream_error_unauthorized">Yanlış kullanıcı adı veya şifre.</string>
+    <string name="stream_error_another_stream_being_played">Koleksiyonunuzu başka bir cihazdan dinlediğiniz için müzik duraklatıldı.</string>
+    <string name="stream_error_rate_limit_reached">Müzik geçici olarak kullanılamıyor. Koleksiyonunuzu yalnızca tek bir cihazda çaldığınızdan emin olun.</string>
+    <string name="stream_error_device_not_authorized">Müzik kitaplığınız en fazla 10 cihazla birlikte kullanılabilir. Yeni bir cihaz ekleyebilmek için eklenmiş olanlardan birinin yetkisini kaldırmanız gerekir.</string>
+    <string name="stream_error_device_not_authorized_link">https://play.google.com/music/listen?view=settings_pl</string>
+    <string name="market_uri_link">market://details?id=com.google.android.music</string>
+    <string name="stream_error_device_not_authorized_not_now_button">Şimdi değil</string>
+    <string name="stream_error_device_not_authorized_manage_devices_button">Cihazları yönet</string>
+    <string name="stream_error_learn_more">Daha fazla bilgi edinin</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/music/bin/answer.py?answer=1230356</string>
+    <string name="stream_error_another_stream_being_played_short">Müzik duraklatıldı.</string>
+    <string name="stream_error_rate_limit_reached_short">Müzik geçici olarak kullanılamıyor.</string>
+    <string name="stream_error_device_not_authorized_short">Müzik kitaplığını çok sayıda cihaz kullandı.</string>
+    <string name="stream_error_another_stream_being_played_notification">Başka bir cihazda dinliyorsunuz.</string>
+    <string name="stream_error_rate_limit_reached_notification">Başka bir cihazda dinliyorsunuz.</string>
+    <string name="stream_error_device_not_authorized_notification">Kitaplık başına en çok 10 cihaz.</string>
+    <string name="stream_error_another_stream_being_played_notification_short">Müzik duraklatıldı.</string>
+    <string name="stream_error_rate_limit_reached_notification_short">Müzik geçici olarak kullanılamıyor.</string>
+    <string name="stream_error_device_not_authorized_notification_short">Müzik cihazı sınırına erişildi.</string>
+    <string name="athome_error_place_disconnected_short">Nexus Q ile iletişim kurulamıyor.</string>
+    <string name="athome_error_controller_too_old_short">Nexus Q için en son Google Play Müzik uygulaması gereklidir.</string>
+    <string name="athome_error_controller_too_old">Nexus Q cihazını kullanmak için öncelikle Google Play Müzik uygulamanızı güncelleyin</string>
+    <string name="athome_error_controller_too_old_notification_short">Google Play Müzik uygulamasını güncelleyin</string>
+    <string name="athome_error_controller_too_old_notification">ve Nexus Q ile çalışacak duruma getirin.</string>
+    <string name="athome_error_controller_too_old_update_button">Güncelle</string>
+    <string name="athome_error_controller_too_new_short">Nexus Q için yeni yazılım gerekli.</string>
+    <string name="athome_error_controller_too_new">"Nexus Q cihazının yazılımı çok eski. Otomatik güncelleme için Nexus Q cihazını Ethernet veya Kablosuz üzerinden İnternet'e bağlayın."</string>
+    <string name="athome_error_controller_too_new_notification_short">Nexus Q için yeni yazılım gerekli.</string>
+    <string name="athome_error_controller_too_new_notification">"Otomatik güncelleme için Nexus Q cihazını İnternet'e bağlayın."</string>
+    <string name="athome_error_generic_short">Nexus Q ağ hatası.</string>
+    <string name="athome_error_generic">Nexus Q ile ağ bağlantısı kesildi.</string>
+    <string name="athome_error_generic_notification_short">Nexus Q Ağ Hatası</string>
+    <string name="athome_error_generic_notification">Büyük olasılıkla bozuk ağ bağlantısı veya cihazla ilgili sorun nedeniyle Nexus Q ile iletişim kurulamıyor.</string>
+    <string name="athome_error_device_setup_short">Nexus Q cihazının fabrika ayarlarına sıfırlanması gerekiyor.</string>
+    <string name="athome_error_device_setup">Nexus Q kurulumu tamamlanmadı. Baştan başlamak için Nexus Q cihazınızı fabrika ayarlarına sıfırlayın.</string>
+    <string name="athome_error_device_setup_notification_short">Nexus Q kurulumu tamamlanmadı.</string>
+    <string name="athome_error_device_setup_notification">Baştan başlamak için Nexus Q cihazınızı fabrika ayarlarına sıfırlayın.</string>
+    <string name="athome_error_unauthorized_account_short">Hesap yetkili değil</string>
+    <string name="athome_error_unauthorized_account">Seçilen hesap Nexus Q ile kullanım için yetkili değil.</string>
+    <string name="athome_error_unauthorized_account_notification_short">Hesap yetkili değil</string>
+    <string name="athome_error_unauthorized_account_notification">Seçilen hesap Nexus Q ile kullanım için yetkili değil.</string>
+    <string name="athome_error_incompatible_tgs_version">Nexus Q üzerinde gruplama hizmetinin uyumsuz bir sürümü çalışıyor.</string>
+    <string name="athome_error_incompatible_tgs_version_short">Nexus Q grup hizmeti hatası</string>
+    <string name="athome_error_incompatible_tgs_version_notification">Nexus Q üzerinde gruplama hizmetinin uyumsuz bir sürümü çalışıyor.</string>
+    <string name="athome_error_incompatible_tgs_version_notification_short">Nexus Q grup hizmeti hatası</string>
+    <string name="athome_error_unreachable_tgs">Nexus Q ile iletişim kurulamıyor. Bu durum devam ederse Nexus Q cihazının yeniden başlatılması gerekebilir.</string>
+    <string name="athome_error_unreachable_tgs_short">Nexus Q ile iletişim kurulamıyor</string>
+    <string name="athome_error_unreachable_tgs_notification">Nexus Q ile iletişim kurulamıyor. Bu durum devam ederse Nexus Q cihazının yeniden başlatılması gerekebilir.</string>
+    <string name="athome_error_unreachable_tgs_notification_short">Nexus Q ile iletişim kurulamıyor.</string>
+    <string name="athome_error_server_network_short">Ağ Hatası</string>
+    <string name="athome_error_server_network">Sunucuyla iletişim kurulamıyor</string>
+    <string name="hide_now_playing_bar">Şimdi oynatılıyor çubuğunu gizle</string>
+    <string name="show_now_playing_bar">Şimdi oynatılıyor çubuğunu göster</string>
+    <string name="show_options">Seçenekleri göster</string>
+    <string name="hide_options">Seçenekleri gizle</string>
+    <string name="all_songs_in_genre">"Bu türdeki tüm şarkılar:
+%s"</string>
+    <string name="preview_header">"GOOGLE+'DA PAYLAŞILDI"</string>
+    <string name="shared_playback_full">ÜCRETSİZ TAM DİNLEME</string>
+    <string name="shared_playback_partial">ÖRNEK</string>
+    <string name="btn_buy">Satın al</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">İstenen müzik saklanıyor…</string>
+    <string name="notification_downloading_when_on_wifi">İstenen müziği saklama işlemi, cihaz tekrar çevrimiçi olduğunda ve Kablosuz ağa bağlandığında devam edecek</string>
+    <string name="notification_downloading_excessive_errors">Şu anda şarkı indirilemiyor. İnternet bağlantınızı kontrol edin.</string>
+    <string name="notification_downloading_done">İstenen müzik indirildi</string>
+    <string name="notification_ticker_ringtone_set">Ayarlanan zil sesi: \"%s\".</string>
+    <string name="notification_title_ringtone_set">Zil sesi olarak \"%s\" ayarlandı</string>
+    <string name="notification_content_ringtone_set">Bu zil sesini düzenlemek için dokunun.</string>
+    <string name="notification_ticker_ringtone_set_failed">Zil sesi oluşturulamadı.</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s - %s</string>
+    <string name="notification_newsongs_songcount">%d yeni şarkı</string>
+    <string name="notification_newsongs_subtitle">"Google Play Müzik'e eklendi"</string>
+    <string name="carousel_label_shuffle_all">Tümünü karıştır</string>
+    <string name="song_label">ŞARKI</string>
+    <string name="artist_label">SANATÇI</string>
+    <string name="album_label">ALBÜM</string>
+    <string name="effectspanel">Ekolayzer</string>
+    <string name="menu_make_instant_mix">Anında mix oluştur</string>
+    <string name="instant_mix_default_name">%s Mix</string>
+    <string name="creating_instant_mix">"Şarkı listelerine
+anında mix ekleniyor."</string>
+    <string name="creating_instant_mix_with_seed">"Şarkı listelerine şununla
+ilgili anında mix ekleniyor:
+%s."</string>
+    <string name="create_instant_mix_failed">Anında mix oluşturulamadı. Tekrar deneyin.</string>
+    <string name="create_instant_mix_failed_insufficient_results">Koleksiyonunuzda, \"%s\" adlı şarkıdan anında mix oluşturmak için yeterli sayıda benzer şarkı yoktu. Farklı bir şarkıdan anında mix yapmayı deneyin.</string>
+    <string name="create_instant_mix_sync_timeout">"Anında mix oluşturuldu
+ve az sonra şarkı listelerinizde
+görünecek."</string>
+    <string name="create_instant_mix_btn_ok">TAMAM</string>
+    <string name="delete">Sil</string>
+    <string name="confirm_delete_local_only">\"%s\" silinsin mi?</string>
+    <string name="confirm_delete_has_remote">"\"%s\" Google Play Müzik'e yüklenmesinin yanı sıra bir cihaza da aktarılmış durumda. Yalnızca cihaza aktarılan öğeler silinecek. Bunları silmek istiyor musunuz?"</string>
+    <string name="waiting_share">\"%s\" paylaşılıyor</string>
+    <string name="share">Paylaş</string>
+    <string name="share_failure">Müziğiniz paylaşılırken bir sorun oluştu.</string>
+    <string name="share_google_plus_footer">Paylaşmak, çevrelerinizdeki kişilerin müziğin tamamını ücretsiz olarak bir kez dinlemelerine olanak sağlar.</string>
+    <string name="accessibility_play">Oynat</string>
+    <string name="accessibility_pause">Duraklat</string>
+    <string name="accessibility_stop">Durdur</string>
+    <string name="accessibility_next">Sonraki</string>
+    <string name="accessibility_prev">Önceki</string>
+    <string name="accessibility_shuffle">Karıştır</string>
+    <string name="accessibility_repeat">Yinele</string>
+    <string name="accessibility_thumbsUp">Beğen</string>
+    <string name="accessibility_thumbsDown">Beğenme</string>
+    <string name="accessibility_star1">Bir yıldız</string>
+    <string name="accessibility_star2">İki yıldız</string>
+    <string name="accessibility_star3">Üç yıldız</string>
+    <string name="accessibility_star4">Dört yıldız</string>
+    <string name="accessibility_star5">Beş yıldız</string>
+    <string name="accessibility_contractor">Şarkı bilgilerini genişlet</string>
+    <string name="accessibility_back">Geri</string>
+    <string name="accessibility_contextMenu">Şarkı menüsü</string>
+    <string name="accessibility_home">Music ana sayfası</string>
+    <string name="accessibility_search">Ara</string>
+    <string name="accessibility_search_cancel">Mevcut aramayı iptal et</string>
+    <string name="accessibility_current">Mevcut şarkı</string>
+    <string name="accessibility_createnewplaylist">Yeni oynatma listesi oluştur</string>
+    <string name="accessibility_menu">Diğer seçenekler</string>
+    <string name="accessibility_shop">Müzik satın alın</string>
+    <string name="accessibility_volume">Ses</string>
+    <string name="accessibility_at_home_volume">Ses</string>
+    <string name="accessibility_select_output">Ses çıkışını seç</string>
+    <string name="accessibility_close_social_mix_mode">Sosyal mix modunu kapat</string>
+    <string name="header_help_add_songs">"Sosyal mix'i başlatmak için kitaplıktan şarkı ekleyin"</string>
+    <string name="ringtone_replace_alert_button">Değiştir</string>
+    <string name="ringtone_replace_alert_title">Zil sesini değiştir</string>
+    <string name="ringtone_replace_alert_message">Bu adı taşıyan bir zil sesi zaten var. Değiştirmek istiyor musunuz?</string>
+    <string name="legal_information">Yasal bilgiler</string>
+    <string name="license_title">Açık kaynak lisansları</string>
+    <string name="license_error">Lisanslar yüklenemedi.</string>
+    <string name="market_wrong_account" formatted="false">"Çalmaya çalıştığınız müzik, %s hesabı ile satın alınmış
+
+Şu an  Google Play Müzik'te %s hesabı ile oturum açmış bulunuyorsunuz.
+
+ Satın aldığınız müziği dinlemek için, öncelikle hesap değiştirin."</string>
+    <string name="gplus_wrong_account" formatted="false">"Çalmaya çalıştığınız müzik, %s hesabı ile paylaşıldı
+
+Şu an Google PLay Müzik'te %s hesabı ile oturum açmış bulunuyorsunuz
+
+Paylaşılan müziğinizi dinlemek için, öncelikle hesap değiştirin."</string>
+    <string name="switch_account_button">Hesapları değiştir</string>
+    <string name="switch_account_warning_message">"Hesapları değiştirmek istediğinizden emin misiniz?
+Bu cihazda saklanan müzikler kaldırılacaktır."</string>
+    <string name="switch_account_warning_button">Hesabı değiştir</string>
+    <string name="retry_button">Tekrar dene</string>
+    <string name="wait_for_item">Müziğin senkronize edilmesi bekleniyor.</string>
+    <string name="wait_for_item_failure">Müziğiniz şu anda ekleniyor. Lütfen kısa bir süre sonra tekrar deneyin.</string>
+    <string name="ringtone_title">Zil sesini dinle</string>
+    <string name="edit_ringtone">Zil sesini düzenle</string>
+    <string name="ringtone_done">BİTTİ</string>
+    <string name="ringtone_file_edited_name">%1$s adlı şarkıdan bir bölüm</string>
+    <string name="progress_dialog_saving">Kaydediliyor...</string>
+    <string name="start_handle">Başlangıç yeri</string>
+    <string name="resize_handle">Yeniden boyutlandırma tutma yeri</string>
+    <string name="menu_reset">Sıfırla</string>
+    <string name="save_success_message">%1$s varsayılan zil sesi olarak kaydedildi.</string>
+    <string name="save_failure_message">%1$s zil sesi olarak kaydedilemedi.</string>
+    <string name="play_error">Bu medya dosyası çalınamadı.</string>
+    <string name="write_error">Dosyaya yazılamadı.</string>
+    <string name="read_error">Dosya okunamadı.</string>
+    <string name="no_space_error">SD kartınızda bu dosyayı kaydetmek için yeterli alan yok.</string>
+    <string name="bad_extension_error">Bu türdeki dosyalar düzenlenemez.</string>
+    <string name="no_extension_error">Uzantısı .mp3 veya .wav olmayan bir dosya düzenlenemez.</string>
+    <string name="alert_ok_button">Tamam</string>
+    <string name="athome_playback_title">Şimdi çalınıyor</string>
+    <string name="store_tutorial_title">Anında satın alın ve oynayın</string>
+    <string name="store_tutorial_content">"Google Play'de yüzlerce ücretsiz şarkıyla birlikte milyonlarca MP3 parça içinden alışveriş yapın."</string>
+    <string name="store_tutorial_instruction">Mağazayı ziyaret etmek için alışveriş torbası simgesine dokunun</string>
+    <string name="athome_added_by">Ekleyen:</string>
+    <string name="athome_tutorial_title">Müziği istediğiniz yerde dinleyin</string>
+    <string name="athome_tutorial_content">Müziği nereden dinleyeceğinizi seçmek için akış simgesine dokunun</string>
+    <string name="athome_party_mode_disclamer">"Sosyal Mix'i kullandığınızda diğer kullanıcılar herkese açık profil resminizi görebilirler"</string>
+    <string name="athome_party_mode_disclamer_save_preference">Bunu bir daha gösterme</string>
+    <string name="no_song_added">Çalma sırası dolu. En çok %1$d şarkı olabilir.</string>
+    <string name="recent_added">Eklendi</string>
+    <string name="recent_purchased">Satın alındı</string>
+    <string name="recent_played">Çalındı</string>
+    <string name="now_playing_tab_now_playing">ŞİMDİ ÇALINIYOR</string>
+    <string name="now_playing_tab_queue">SIRADAKİLERİ ÇAL</string>
+</resources>

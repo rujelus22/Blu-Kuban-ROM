@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="entries_statusbar_preference">
+        <item>Mostrar barra de estado</item>
+        <item>Occultar barra de estado</item>
+    </string-array>
+    <string-array name="entries_cursorblink_preference">
+        <item>Cursor constante</item>
+        <item>Cursor piscando</item>
+    </string-array>
+    <string-array name="entries_cursorstyle_preference">
+        <item>Retângulo</item>
+        <item>Sublinhado</item>
+        <item>Barra vertical</item>
+    </string-array>
+    <string-array name="entries_fontsize_preference">
+        <item>4 x 8 pixels</item>
+        <item>6 pt</item>
+        <item>7 pt</item>
+        <item>8 pt</item>
+        <item>9 pt</item>
+        <item>10 pt</item>
+        <item>12 pt</item>
+        <item>14 pt</item>
+        <item>16 pt</item>
+        <item>20 pt</item>
+    </string-array>
+    <string-array name="entries_color_preference">
+        <item>Texto preto sobre fundo branco</item>
+        <item>Texto branco sobre fundo preto</item>
+        <item>Texto branco sobre fundo azul</item>
+        <item>Texto verde sobre fundo preto</item>
+        <item>Texto âmbar sobre fundo preto</item>
+        <item>Texto vermelho sobre fundo preto</item>
+    </string-array>
+    <string-array name="entries_backaction_preference">
+        <item>Fecha todas as janelas do terminal</item>
+        <item>Fecha esta janela de terminal só</item>
+        <item>Fecha atividade, deixando sessões em execução</item>
+        <item>Envia ESC para terminal</item>
+        <item>Envia TAB para terminal</item>
+    </string-array>
+    <string-array name="entries_controlkey_preference">
+        <item>Trackball</item>
+        <item>Chave @</item>
+        <item>Tecla Alt esquerda</item>
+        <item>Tecla Alt direita</item>
+        <item>Tecla Volume mais</item>
+        <item>Tecla Volume menos</item>
+        <item>Tecla Camera</item>
+        <item>Nenhum</item>
+    </string-array>
+    <string-array name="entries_fnkey_preference">
+        <item>Trackball</item>
+        <item>Chave @</item>
+        <item>Tecla Alt esquerda</item>
+        <item>Tecla Alt direita</item>
+        <item>Tecla Volume mais</item>
+        <item>Tecla Volume menos</item>
+        <item>Tecla Camera</item>
+        <item>Nenhum</item>
+    </string-array>
+    <string-array name="entries_ime_preference">
+        <item>Baseado sobre caractere</item>
+        <item>Baseado sobre palavra</item>
+    </string-array>
+    <string-array name="control_keys_short_names">
+        <item>Ball</item>
+        <item>\@</item>
+        <item>Alt Esquerdo</item>
+        <item>Alt Direito</item>
+        <item>Vol-Mais</item>
+        <item>Vol-Menos</item>
+        <item>Camera</item>
+        <item>Nenhum</item>
+    </string-array>
+    <string-array name="fn_keys_short_names">
+        <item>Ball</item>
+        <item>\@</item>
+        <item>Alt Esquerdo</item>
+        <item>Alt Direito</item>
+        <item>Vol-Mais</item>
+        <item>Vol-Menos</item>
+        <item>Camera</item>
+        <item>Nenhum</item>
+    </string-array>
+</resources>

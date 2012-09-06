@@ -28,7 +28,7 @@
 
     const/4 v2, 0x0
 
-    .line 125
+    .line 176
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;
 
     const-string v1, "FEATURED"
@@ -37,7 +37,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;->FEATURED:Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;
 
-    .line 126
+    .line 177
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;
 
     const-string v1, "LIVE_NOW"
@@ -46,7 +46,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;->LIVE_NOW:Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;
 
-    .line 127
+    .line 178
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;
 
     const-string v1, "UPCOMING"
@@ -55,7 +55,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;->UPCOMING:Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;
 
-    .line 128
+    .line 179
     new-instance v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;
 
     const-string v1, "RECENTLY_BROADCASTED"
@@ -64,7 +64,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;->RECENTLY_BROADCASTED:Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;
 
-    .line 124
+    .line 175
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;
@@ -96,7 +96,7 @@
     .parameter
 
     .prologue
-    .line 124
+    .line 175
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -107,7 +107,7 @@
     .parameter
 
     .prologue
-    .line 124
+    .line 175
     const-class v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -123,7 +123,7 @@
     .registers 1
 
     .prologue
-    .line 124
+    .line 175
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;->$VALUES:[Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;
 
     invoke-virtual {v0}, [Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;->clone()Ljava/lang/Object;
@@ -141,12 +141,12 @@
     .registers 2
 
     .prologue
-    .line 132
+    .line 183
     invoke-super {p0}, Ljava/lang/Enum;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->e(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->f(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

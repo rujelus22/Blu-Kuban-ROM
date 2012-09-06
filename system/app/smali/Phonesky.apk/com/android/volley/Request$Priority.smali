@@ -48,7 +48,7 @@
 
     const/4 v2, 0x0
 
-    .line 323
+    .line 325
     new-instance v0, Lcom/android/volley/Request$Priority;
 
     const-string v1, "LOW"
@@ -57,7 +57,7 @@
 
     sput-object v0, Lcom/android/volley/Request$Priority;->LOW:Lcom/android/volley/Request$Priority;
 
-    .line 324
+    .line 326
     new-instance v0, Lcom/android/volley/Request$Priority;
 
     const-string v1, "NORMAL"
@@ -66,7 +66,7 @@
 
     sput-object v0, Lcom/android/volley/Request$Priority;->NORMAL:Lcom/android/volley/Request$Priority;
 
-    .line 325
+    .line 327
     new-instance v0, Lcom/android/volley/Request$Priority;
 
     const-string v1, "HIGH"
@@ -75,7 +75,7 @@
 
     sput-object v0, Lcom/android/volley/Request$Priority;->HIGH:Lcom/android/volley/Request$Priority;
 
-    .line 326
+    .line 328
     new-instance v0, Lcom/android/volley/Request$Priority;
 
     const-string v1, "IMMEDIATE"
@@ -84,7 +84,7 @@
 
     sput-object v0, Lcom/android/volley/Request$Priority;->IMMEDIATE:Lcom/android/volley/Request$Priority;
 
-    .line 322
+    .line 324
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/volley/Request$Priority;
@@ -121,7 +121,7 @@
     .end annotation
 
     .prologue
-    .line 322
+    .line 324
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -132,7 +132,7 @@
     .parameter
 
     .prologue
-    .line 322
+    .line 324
     const-class v0, Lcom/android/volley/Request$Priority;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -148,7 +148,7 @@
     .registers 1
 
     .prologue
-    .line 322
+    .line 324
     sget-object v0, Lcom/android/volley/Request$Priority;->$VALUES:[Lcom/android/volley/Request$Priority;
 
     invoke-virtual {v0}, [Lcom/android/volley/Request$Priority;->clone()Ljava/lang/Object;

@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:orientation="horizontal" android:id="@id/header_bar" android:background="@drawable/header_bar_background" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/action_bar_height"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/feature_switcher_anchor" />
-    <LinearLayout android:orientation="horizontal" android:id="@id/search_bar" android:background="@drawable/textfield_search" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:layout_marginTop="3.5dip" android:layout_marginRight="2.0dip" android:layout_marginBottom="2.5dip" android:layout_weight="9999.0">
-        <ImageView android:paddingLeft="3.0dip" android:paddingTop="2.5dip" android:paddingRight="5.0dip" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/magnifying_glass_grey" android:scaleType="center" />
-        <TextView android:ellipsize="end" android:id="@id/search_box" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/header_bar_with_feature_switcher" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include layout="@layout/feature_switcher_anchor" />
+        <TableLayout android:id="@id/header_bar_extra_items" android:layout_width="fill_parent" android:layout_height="fill_parent" android:stretchColumns="0" android:shrinkColumns="1" android:layout_weight="1.0">
+            <TableRow>
+                <LinearLayout android:orientation="horizontal" android:id="@id/search_bar" android:background="@drawable/textfield_search" android:layout_width="@dimen/minimum_search_box_width" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:layout_marginTop="3.5dip" android:layout_marginRight="2.0dip" android:layout_marginBottom="2.5dip" android:layout_alignParentLeft="true">
+                    <ImageView android:paddingLeft="3.0dip" android:paddingTop="2.5dip" android:paddingRight="5.0dip" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/magnifying_glass_grey" android:scaleType="center" />
+                    <TextView android:ellipsize="end" android:id="@id/search_box" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+                </LinearLayout>
+                <com.google.googlenav.ui.android.ListPopupSpinnerSdk5 android:orientation="horizontal" android:id="@id/vehicle_type_spinner" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" app:dialogResource="@layout/vehicle_selector" app:arrowOnLeft="false"
+                  xmlns:app="http://schemas.android.com/apk/res/com.google.android.apps.maps" />
+            </TableRow>
+        </TableLayout>
+        <View android:background="@drawable/header_divider_line" android:layout_width="2.0px" android:layout_height="fill_parent" />
+        <ImageView android:id="@id/btn_header_places" android:background="@drawable/header_bar_button" android:focusable="false" android:visibility="gone" android:layout_width="@dimen/action_bar_icon_width" android:layout_height="@dimen/action_bar_height" android:src="@drawable/btn_show_places" android:scaleType="center" />
+        <View android:id="@id/btn_header_places_divider" android:background="@drawable/header_divider_line" android:visibility="gone" android:layout_width="2.0px" android:layout_height="fill_parent" />
+        <ImageView android:id="@id/btn_header_layer" android:background="@drawable/header_bar_button" android:focusable="false" android:layout_width="@dimen/action_bar_icon_width" android:layout_height="@dimen/action_bar_height" android:src="@drawable/btn_show_layers" android:scaleType="center" />
+        <View android:background="@drawable/header_divider_line" android:layout_width="2.0px" android:layout_height="fill_parent" />
+        <ImageView android:id="@id/btn_header_myloc" android:background="@drawable/header_bar_button" android:focusable="false" android:layout_width="@dimen/action_bar_icon_width" android:layout_height="@dimen/action_bar_height" android:src="@drawable/btn_show_myl" android:scaleType="center" />
     </LinearLayout>
-    <View android:background="@drawable/header_divider_line" android:layout_width="2.0px" android:layout_height="fill_parent" />
-    <ImageView android:id="@id/btn_header_places" android:background="@drawable/header_bar_button" android:focusable="false" android:visibility="gone" android:layout_width="@dimen/action_bar_icon_width" android:layout_height="@dimen/action_bar_height" android:src="@drawable/btn_show_places" android:scaleType="center" />
-    <View android:id="@id/btn_header_places_divider" android:background="@drawable/header_divider_line" android:visibility="gone" android:layout_width="2.0px" android:layout_height="fill_parent" />
-    <ImageView android:id="@id/btn_header_layer" android:background="@drawable/header_bar_button" android:focusable="false" android:layout_width="@dimen/action_bar_icon_width" android:layout_height="@dimen/action_bar_height" android:src="@drawable/btn_show_layers" android:scaleType="center" />
-    <View android:background="@drawable/header_divider_line" android:layout_width="2.0px" android:layout_height="fill_parent" />
-    <ImageView android:id="@id/btn_header_myloc" android:background="@drawable/header_bar_button" android:focusable="false" android:layout_width="@dimen/action_bar_icon_width" android:layout_height="@dimen/action_bar_height" android:src="@drawable/btn_show_myl" android:scaleType="center" />
+    <include layout="@layout/area_selector_top_bar" />
 </LinearLayout>

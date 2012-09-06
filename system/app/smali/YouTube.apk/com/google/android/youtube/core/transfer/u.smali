@@ -1,120 +1,149 @@
-.class final Lcom/google/android/youtube/core/transfer/u;
+.class public final Lcom/google/android/youtube/core/transfer/u;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lcom/google/android/youtube/core/async/g;
-
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/transfer/s;
+.field public a:Ljava/lang/String;
 
-.field private final b:Lcom/google/android/youtube/core/transfer/t;
+.field public b:Ljava/lang/String;
+
+.field public c:Lcom/google/android/youtube/core/transfer/Transfer$Status;
+
+.field public d:I
+
+.field public e:J
+
+.field public f:J
+
+.field public g:Lcom/google/android/youtube/core/transfer/d;
+
+.field public h:Lcom/google/android/youtube/core/transfer/d;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/core/transfer/s;Lcom/google/android/youtube/core/transfer/t;)V
-    .registers 4
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/google/android/youtube/core/transfer/d;)V
+    .registers 7
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 348
-    iput-object p1, p0, Lcom/google/android/youtube/core/transfer/u;->a:Lcom/google/android/youtube/core/transfer/s;
+    const-wide/16 v1, 0x0
 
+    .line 690
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 349
-    const-string v0, "upload cannot be null"
+    .line 691
+    const-string v0, "filePath may not be empty"
 
-    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/transfer/t;
+    iput-object v0, p0, Lcom/google/android/youtube/core/transfer/u;->a:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/transfer/u;->b:Lcom/google/android/youtube/core/transfer/t;
+    .line 692
+    const-string v0, "networkUri may not be empty"
 
-    .line 350
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/transfer/u;->b:Ljava/lang/String;
+
+    .line 693
+    const-string v0, "inputExtras may not be null"
+
+    invoke-static {p3, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/core/transfer/d;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/transfer/u;->g:Lcom/google/android/youtube/core/transfer/d;
+
+    .line 694
+    sget-object v0, Lcom/google/android/youtube/core/transfer/Transfer$Status;->PENDING:Lcom/google/android/youtube/core/transfer/Transfer$Status;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/transfer/u;->c:Lcom/google/android/youtube/core/transfer/Transfer$Status;
+
+    .line 695
+    const/4 v0, 0x1
+
+    iput v0, p0, Lcom/google/android/youtube/core/transfer/u;->d:I
+
+    .line 696
+    iput-wide v1, p0, Lcom/google/android/youtube/core/transfer/u;->e:J
+
+    .line 697
+    iput-wide v1, p0, Lcom/google/android/youtube/core/transfer/u;->f:J
+
+    .line 698
+    new-instance v0, Lcom/google/android/youtube/core/transfer/d;
+
+    invoke-direct {v0}, Lcom/google/android/youtube/core/transfer/d;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/transfer/u;->h:Lcom/google/android/youtube/core/transfer/d;
+
+    .line 699
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
-    .registers 5
-    .parameter
-    .parameter
+.method public final a()Lcom/google/android/youtube/core/transfer/Transfer;
+    .registers 12
 
     .prologue
-    .line 344
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/u;->a:Lcom/google/android/youtube/core/transfer/s;
+    .line 712
+    new-instance v0, Lcom/google/android/youtube/core/transfer/Transfer;
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/transfer/s;->b(Lcom/google/android/youtube/core/transfer/s;)Ljava/util/Map;
+    iget-object v1, p0, Lcom/google/android/youtube/core/transfer/u;->a:Ljava/lang/String;
 
-    move-result-object v0
+    iget-object v2, p0, Lcom/google/android/youtube/core/transfer/u;->b:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/google/android/youtube/core/transfer/u;->b:Lcom/google/android/youtube/core/transfer/t;
+    iget-object v3, p0, Lcom/google/android/youtube/core/transfer/u;->c:Lcom/google/android/youtube/core/transfer/Transfer$Status;
 
-    invoke-static {v1}, Lcom/google/android/youtube/core/transfer/t;->b(Lcom/google/android/youtube/core/transfer/t;)Ljava/lang/String;
+    iget v4, p0, Lcom/google/android/youtube/core/transfer/u;->d:I
 
-    move-result-object v1
+    iget-wide v5, p0, Lcom/google/android/youtube/core/transfer/u;->e:J
 
-    invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-wide v7, p0, Lcom/google/android/youtube/core/transfer/u;->f:J
 
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/u;->a:Lcom/google/android/youtube/core/transfer/s;
+    iget-object v9, p0, Lcom/google/android/youtube/core/transfer/u;->g:Lcom/google/android/youtube/core/transfer/d;
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/transfer/s;->c(Lcom/google/android/youtube/core/transfer/s;)Lcom/google/android/youtube/core/transfer/v;
+    iget-object v10, p0, Lcom/google/android/youtube/core/transfer/u;->h:Lcom/google/android/youtube/core/transfer/d;
 
-    move-result-object v0
+    invoke-direct/range {v0 .. v10}, Lcom/google/android/youtube/core/transfer/Transfer;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/google/android/youtube/core/transfer/Transfer$Status;IJJLcom/google/android/youtube/core/transfer/d;Lcom/google/android/youtube/core/transfer/d;)V
 
-    invoke-interface {v0, p2}, Lcom/google/android/youtube/core/transfer/v;->a(Ljava/lang/Exception;)V
-
-    return-void
+    return-object v0
 .end method
 
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 6
-    .parameter
-    .parameter
+.method public final b()Z
+    .registers 3
 
     .prologue
-    .line 344
-    check-cast p2, Landroid/net/Uri;
+    .line 717
+    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/u;->c:Lcom/google/android/youtube/core/transfer/Transfer$Status;
 
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/u;->b:Lcom/google/android/youtube/core/transfer/t;
+    sget-object v1, Lcom/google/android/youtube/core/transfer/Transfer$Status;->COMPLETED:Lcom/google/android/youtube/core/transfer/Transfer$Status;
 
-    invoke-virtual {p2}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    if-eq v0, v1, :cond_e
 
-    move-result-object v1
+    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/u;->c:Lcom/google/android/youtube/core/transfer/Transfer$Status;
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/transfer/t;->g(Lcom/google/android/youtube/core/transfer/t;Ljava/lang/String;)Ljava/lang/String;
+    sget-object v1, Lcom/google/android/youtube/core/transfer/Transfer$Status;->FAILED:Lcom/google/android/youtube/core/transfer/Transfer$Status;
 
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/u;->a:Lcom/google/android/youtube/core/transfer/s;
+    if-eq v0, v1, :cond_e
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/transfer/s;->a(Lcom/google/android/youtube/core/transfer/s;)Ljava/util/Map;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    :goto_d
+    return v0
 
-    iget-object v1, p0, Lcom/google/android/youtube/core/transfer/u;->b:Lcom/google/android/youtube/core/transfer/t;
+    :cond_e
+    const/4 v0, 0x0
 
-    invoke-static {v1}, Lcom/google/android/youtube/core/transfer/t;->b(Lcom/google/android/youtube/core/transfer/t;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/google/android/youtube/core/transfer/u;->b:Lcom/google/android/youtube/core/transfer/t;
-
-    invoke-static {v2}, Lcom/google/android/youtube/core/transfer/t;->c(Lcom/google/android/youtube/core/transfer/t;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lcom/google/android/youtube/core/transfer/u;->a:Lcom/google/android/youtube/core/transfer/s;
-
-    iget-object v1, p0, Lcom/google/android/youtube/core/transfer/u;->b:Lcom/google/android/youtube/core/transfer/t;
-
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/transfer/s;->a(Lcom/google/android/youtube/core/transfer/s;Lcom/google/android/youtube/core/transfer/t;)V
-
-    return-void
+    goto :goto_d
 .end method

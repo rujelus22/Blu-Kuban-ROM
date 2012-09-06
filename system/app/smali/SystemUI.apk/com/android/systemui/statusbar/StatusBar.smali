@@ -648,7 +648,7 @@
 
     const v15, 0x800048
 
-    const/16 v16, 0x4
+    const/16 v16, -0x3
 
     invoke-direct/range {v11 .. v16}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
 

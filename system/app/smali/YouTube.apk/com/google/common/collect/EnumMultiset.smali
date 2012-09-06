@@ -17,17 +17,21 @@
     .parameter
 
     .prologue
-    .line 64
+    .line 62
     new-instance v0, Ljava/util/EnumMap;
 
     invoke-direct {v0, p1}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
 
+    invoke-static {v0}, Lcom/google/common/collect/mv;->a(Ljava/util/Map;)Lcom/google/common/collect/mv;
+
+    move-result-object v0
+
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractMapBasedMultiset;-><init>(Ljava/util/Map;)V
 
-    .line 65
+    .line 63
     iput-object p1, p0, Lcom/google/common/collect/EnumMultiset;->type:Ljava/lang/Class;
 
-    .line 66
+    .line 64
     return-void
 .end method
 
@@ -36,7 +40,7 @@
     .parameter
 
     .prologue
-    .line 40
+    .line 38
     new-instance v0, Lcom/google/common/collect/EnumMultiset;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/EnumMultiset;-><init>(Ljava/lang/Class;)V
@@ -61,9 +65,9 @@
 
     const-string v2, "EnumMultiset constructor passed empty Iterable"
 
-    invoke-static {v1, v2}, Lcom/google/common/base/t;->a(ZLjava/lang/Object;)V
+    invoke-static {v1, v2}, Lcom/google/common/base/ag;->a(ZLjava/lang/Object;)V
 
-    .line 54
+    .line 53
     new-instance v1, Lcom/google/common/collect/EnumMultiset;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -78,10 +82,10 @@
 
     invoke-direct {v1, v0}, Lcom/google/common/collect/EnumMultiset;-><init>(Ljava/lang/Class;)V
 
-    .line 56
-    invoke-static {v1, p0}, Lcom/google/common/collect/cq;->a(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+    .line 54
+    invoke-static {v1, p0}, Lcom/google/common/collect/eb;->a(Ljava/util/Collection;Ljava/lang/Iterable;)Z
 
-    .line 57
+    .line 55
     return-object v1
 .end method
 
@@ -90,32 +94,36 @@
     .parameter
 
     .prologue
-    .line 81
+    .line 80
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 83
+    .line 82
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/Class;
 
-    .line 84
+    .line 83
     iput-object v0, p0, Lcom/google/common/collect/EnumMultiset;->type:Ljava/lang/Class;
 
-    .line 85
+    .line 84
     new-instance v0, Ljava/util/EnumMap;
 
     iget-object v1, p0, Lcom/google/common/collect/EnumMultiset;->type:Ljava/lang/Class;
 
     invoke-direct {v0, v1}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
 
+    invoke-static {v0}, Lcom/google/common/collect/mv;->a(Ljava/util/Map;)Lcom/google/common/collect/mv;
+
+    move-result-object v0
+
     invoke-virtual {p0, v0}, Lcom/google/common/collect/EnumMultiset;->setBackingMap(Ljava/util/Map;)V
 
-    .line 86
-    invoke-static {p0, p1}, Lcom/google/common/collect/fx;->a(Lcom/google/common/collect/fj;Ljava/io/ObjectInputStream;)V
+    .line 85
+    invoke-static {p0, p1}, Lcom/google/common/collect/jt;->a(Lcom/google/common/collect/iq;Ljava/io/ObjectInputStream;)V
 
-    .line 87
+    .line 86
     return-void
 .end method
 
@@ -124,18 +132,18 @@
     .parameter
 
     .prologue
-    .line 69
+    .line 68
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 70
+    .line 69
     iget-object v0, p0, Lcom/google/common/collect/EnumMultiset;->type:Ljava/lang/Class;
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 71
-    invoke-static {p0, p1}, Lcom/google/common/collect/fx;->a(Lcom/google/common/collect/fj;Ljava/io/ObjectOutputStream;)V
+    .line 70
+    invoke-static {p0, p1}, Lcom/google/common/collect/jt;->a(Lcom/google/common/collect/iq;Ljava/io/ObjectOutputStream;)V
 
-    .line 72
+    .line 71
     return-void
 .end method
 
@@ -146,7 +154,7 @@
     .parameter
 
     .prologue
-    .line 35
+    .line 34
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->addAll(Ljava/util/Collection;)Z
 
     move-result v0
@@ -158,7 +166,7 @@
     .registers 1
 
     .prologue
-    .line 35
+    .line 34
     invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->clear()V
 
     return-void
@@ -169,21 +177,8 @@
     .parameter
 
     .prologue
-    .line 35
+    .line 34
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final bridge synthetic containsAll(Ljava/util/Collection;)Z
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 35
-    invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->containsAll(Ljava/util/Collection;)Z
 
     move-result v0
 
@@ -195,7 +190,7 @@
     .parameter
 
     .prologue
-    .line 35
+    .line 34
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->count(Ljava/lang/Object;)I
 
     move-result v0
@@ -207,7 +202,7 @@
     .registers 2
 
     .prologue
-    .line 35
+    .line 34
     invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->elementSet()Ljava/util/Set;
 
     move-result-object v0
@@ -219,7 +214,7 @@
     .registers 2
 
     .prologue
-    .line 35
+    .line 34
     invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -232,7 +227,7 @@
     .parameter
 
     .prologue
-    .line 35
+    .line 34
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -244,7 +239,7 @@
     .registers 2
 
     .prologue
-    .line 35
+    .line 34
     invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->hashCode()I
 
     move-result v0
@@ -256,7 +251,7 @@
     .registers 2
 
     .prologue
-    .line 35
+    .line 34
     invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->isEmpty()Z
 
     move-result v0
@@ -268,7 +263,7 @@
     .registers 2
 
     .prologue
-    .line 35
+    .line 34
     invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -282,7 +277,7 @@
     .parameter
 
     .prologue
-    .line 35
+    .line 34
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractMapBasedMultiset;->remove(Ljava/lang/Object;I)I
 
     move-result v0
@@ -295,7 +290,7 @@
     .parameter
 
     .prologue
-    .line 35
+    .line 34
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->remove(Ljava/lang/Object;)Z
 
     move-result v0
@@ -308,7 +303,7 @@
     .parameter
 
     .prologue
-    .line 35
+    .line 34
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->removeAll(Ljava/util/Collection;)Z
 
     move-result v0
@@ -321,7 +316,7 @@
     .parameter
 
     .prologue
-    .line 35
+    .line 34
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->retainAll(Ljava/util/Collection;)Z
 
     move-result v0
@@ -333,7 +328,7 @@
     .registers 2
 
     .prologue
-    .line 35
+    .line 34
     invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->size()I
 
     move-result v0
@@ -345,7 +340,7 @@
     .registers 2
 
     .prologue
-    .line 35
+    .line 34
     invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->toString()Ljava/lang/String;
 
     move-result-object v0

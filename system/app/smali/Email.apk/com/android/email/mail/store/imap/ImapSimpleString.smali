@@ -84,7 +84,7 @@
     .registers 3
 
     .prologue
-    .line 54
+    .line 53
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

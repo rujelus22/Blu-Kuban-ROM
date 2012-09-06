@@ -1,40 +1,44 @@
-.class final enum LK/W;
-.super LK/S;
+.class public Lk/w;
+.super LA/j;
+.source "SourceFile"
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;I)V
-    .registers 4
+.method public constructor <init>()V
+    .registers 1
 
-    const/4 v0, 0x0
+    .prologue
+    .line 335
+    invoke-direct {p0}, LA/j;-><init>()V
 
-    invoke-direct {p0, p1, p2, v0}, LK/S;-><init>(Ljava/lang/String;ILK/Q;)V
+    .line 336
+    return-void
+.end method
 
+.method public constructor <init>(Lorg/w3c/dom/Node;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 339
+    invoke-direct {p0, p1}, LA/j;-><init>(Lorg/w3c/dom/Node;)V
+
+    .line 340
     return-void
 .end method
 
 
 # virtual methods
-.method a(LK/P;LK/am;LK/am;)LK/am;
-    .registers 5
+.method protected a(Ljava/io/Writer;)V
+    .registers 3
+    .parameter
 
-    invoke-super {p0, p1, p2, p3}, LK/S;->a(LK/P;LK/am;LK/am;)LK/am;
+    .prologue
+    .line 344
+    const-string v0, "<networksenabled/>"
 
-    move-result-object v0
+    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
-    invoke-virtual {p0, p2, v0}, LK/W;->a(LK/am;LK/am;)V
-
-    invoke-virtual {p0, p2, v0}, LK/W;->b(LK/am;LK/am;)V
-
-    return-object v0
-.end method
-
-.method a(LK/P;Ljava/lang/Object;ILK/am;)LK/am;
-    .registers 6
-
-    new-instance v0, LK/aP;
-
-    invoke-direct {v0, p1, p2, p3, p4}, LK/aP;-><init>(LK/P;Ljava/lang/Object;ILK/am;)V
-
-    return-object v0
+    .line 345
+    return-void
 .end method

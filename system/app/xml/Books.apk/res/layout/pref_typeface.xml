@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<view android:orientation="vertical" android:id="@id/pref_typeface" android:layout_width="fill_parent" android:layout_height="wrap_content" books:key="typeface2" books:entries="@array/typeface" books:entryValues="@array/typeface_values" books:entryIcons="@array/typeface_icons" class="com.google.android.apps.books.widget.TabletSpinnerPreference"
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:books="http://schemas.android.com/apk/res/com.google.android.apps.books">
-    <Spinner android:id="@id/pref_typeface_content" android:tag="typeface2" style="@style/Preference.Spinner" />
-</view>

@@ -3,77 +3,92 @@
 .source "DetailsSummaryAppsViewBinder.java"
 
 # interfaces
+.implements Lcom/google/android/finsky/installer/InstallerListener;
+.implements Lcom/google/android/finsky/library/Libraries$Listener;
 .implements Lcom/google/android/finsky/receivers/PackageMonitorReceiver$PackageStatusListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$6;
+        Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$8;
     }
 .end annotation
 
 
 # instance fields
-.field private final mAssetStore:Lcom/google/android/finsky/local/AssetStore;
+.field private final mAppStates:Lcom/google/android/finsky/appstate/AppStates;
 
-.field private final mPackageInfoCache:Lcom/google/android/finsky/utils/PackageInfoCache;
+.field private final mInstaller:Lcom/google/android/finsky/receivers/Installer;
+
+.field private final mLibraries:Lcom/google/android/finsky/library/Libraries;
+
+.field private mListenersAdded:Z
 
 .field private final mPackageMonitorReceiver:Lcom/google/android/finsky/receivers/PackageMonitorReceiver;
 
+.field private mTrackPackageStatus:Z
+
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/finsky/receivers/PackageMonitorReceiver;Lcom/google/android/finsky/local/AssetStore;Lcom/google/android/finsky/utils/PackageInfoCache;Lcom/google/android/finsky/api/model/DfeToc;)V
-    .registers 5
-    .parameter "packageMonitorReceiver"
-    .parameter "assetStore"
-    .parameter "packageInfoCache"
+.method public constructor <init>(Lcom/google/android/finsky/api/model/DfeToc;Landroid/accounts/Account;Lcom/google/android/finsky/receivers/PackageMonitorReceiver;Lcom/google/android/finsky/receivers/Installer;Lcom/google/android/finsky/appstate/AppStates;Lcom/google/android/finsky/library/Libraries;)V
+    .registers 7
     .parameter "dfeToc"
+    .parameter "currentAccount"
+    .parameter "packageMonitorReceiver"
+    .parameter "installer"
+    .parameter "appStates"
+    .parameter "libraries"
 
     .prologue
-    .line 63
-    invoke-direct {p0, p4}, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;-><init>(Lcom/google/android/finsky/api/model/DfeToc;)V
+    .line 72
+    invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;-><init>(Lcom/google/android/finsky/api/model/DfeToc;Landroid/accounts/Account;)V
 
-    .line 64
-    iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mPackageMonitorReceiver:Lcom/google/android/finsky/receivers/PackageMonitorReceiver;
+    .line 73
+    iput-object p3, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mPackageMonitorReceiver:Lcom/google/android/finsky/receivers/PackageMonitorReceiver;
 
-    .line 65
-    iput-object p2, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mAssetStore:Lcom/google/android/finsky/local/AssetStore;
+    .line 74
+    iput-object p4, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mInstaller:Lcom/google/android/finsky/receivers/Installer;
 
-    .line 66
-    iput-object p3, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mPackageInfoCache:Lcom/google/android/finsky/utils/PackageInfoCache;
+    .line 75
+    iput-object p5, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mAppStates:Lcom/google/android/finsky/appstate/AppStates;
 
-    .line 67
+    .line 76
+    iput-object p6, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mLibraries:Lcom/google/android/finsky/library/Libraries;
+
+    .line 77
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;Z)V
-    .registers 3
+.method static synthetic access$000(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;)Lcom/google/android/finsky/receivers/Installer;
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 52
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mInstaller:Lcom/google/android/finsky/receivers/Installer;
+
+    return-object v0
+.end method
+
+.method static synthetic access$100(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;ZLjava/lang/String;ZZZ)V
+    .registers 7
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
+    .parameter "x3"
+    .parameter "x4"
+    .parameter "x5"
+    .parameter "x6"
 
     .prologue
-    .line 48
-    invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->refundAndUninstallAsset(Ljava/lang/String;Z)V
+    .line 52
+    invoke-direct/range {p0 .. p6}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->refundAndUninstallAsset(Ljava/lang/String;ZLjava/lang/String;ZZZ)V
 
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;Ljava/lang/Runnable;)V
-    .registers 3
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-
-    .prologue
-    .line 48
-    invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->refundAsset(Ljava/lang/String;Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method static synthetic access$200(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;Lcom/google/android/finsky/local/LocalAsset;Z)V
+.method static synthetic access$200(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;Ljava/lang/String;Z)V
     .registers 4
     .parameter "x0"
     .parameter "x1"
@@ -81,10 +96,131 @@
     .parameter "x3"
 
     .prologue
-    .line 48
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->uninstallAsset(Ljava/lang/String;Lcom/google/android/finsky/local/LocalAsset;Z)V
+    .line 52
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->confirmRefundApp(Ljava/lang/String;Ljava/lang/String;Z)V
 
     return-void
+.end method
+
+.method private attachListeners()V
+    .registers 2
+
+    .prologue
+    .line 90
+    iget-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mTrackPackageStatus:Z
+
+    if-eqz v0, :cond_1f
+
+    .line 91
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mPackageMonitorReceiver:Lcom/google/android/finsky/receivers/PackageMonitorReceiver;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/finsky/receivers/PackageMonitorReceiver;->detach(Lcom/google/android/finsky/receivers/PackageMonitorReceiver$PackageStatusListener;)V
+
+    .line 92
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mPackageMonitorReceiver:Lcom/google/android/finsky/receivers/PackageMonitorReceiver;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/finsky/receivers/PackageMonitorReceiver;->attach(Lcom/google/android/finsky/receivers/PackageMonitorReceiver$PackageStatusListener;)V
+
+    .line 93
+    iget-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mListenersAdded:Z
+
+    if-nez v0, :cond_1f
+
+    .line 94
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mInstaller:Lcom/google/android/finsky/receivers/Installer;
+
+    invoke-interface {v0, p0}, Lcom/google/android/finsky/receivers/Installer;->addListener(Lcom/google/android/finsky/installer/InstallerListener;)V
+
+    .line 95
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mLibraries:Lcom/google/android/finsky/library/Libraries;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/finsky/library/Libraries;->addListener(Lcom/google/android/finsky/library/Libraries$Listener;)V
+
+    .line 96
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mListenersAdded:Z
+
+    .line 99
+    :cond_1f
+    return-void
+.end method
+
+.method private confirmRefundApp(Ljava/lang/String;Ljava/lang/String;Z)V
+    .registers 10
+    .parameter "packageName"
+    .parameter "appRefundAccount"
+    .parameter "tryUninstall"
+
+    .prologue
+    .line 388
+    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContainerFragment:Lcom/google/android/finsky/fragments/PageFragment;
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/fragments/PageFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
+
+    move-result-object v2
+
+    .line 389
+    .local v2, fragmentManager:Landroid/support/v4/app/FragmentManager;
+    const-string v3, "refund_confirm"
+
+    invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/support/v4/app/Fragment;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_f
+
+    .line 402
+    :goto_e
+    return-void
+
+    .line 393
+    :cond_f
+    const v3, 0x7f07019f
+
+    const v4, 0x7f0700d6
+
+    const v5, 0x7f0700d7
+
+    invoke-static {v3, v4, v5}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->newInstance(III)Lcom/google/android/finsky/activities/SimpleAlertDialog;
+
+    move-result-object v0
+
+    .line 395
+    .local v0, dialog:Lcom/google/android/finsky/activities/SimpleAlertDialog;
+    new-instance v1, Landroid/os/Bundle;
+
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+
+    .line 396
+    .local v1, extraArguments:Landroid/os/Bundle;
+    const-string v3, "package_name"
+
+    invoke-virtual {v1, v3, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 397
+    const-string v3, "account_name"
+
+    invoke-virtual {v1, v3, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 398
+    const-string v3, "try_uninstall"
+
+    invoke-virtual {v1, v3, p3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    .line 399
+    iget-object v3, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContainerFragment:Lcom/google/android/finsky/fragments/PageFragment;
+
+    const/4 v4, 0x4
+
+    invoke-virtual {v0, v3, v4, v1}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->setCallback(Landroid/support/v4/app/Fragment;ILandroid/os/Bundle;)Lcom/google/android/finsky/activities/SimpleAlertDialog;
+
+    .line 401
+    const-string v3, "refund_confirm"
+
+    invoke-virtual {v0, v2, v3}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
+
+    goto :goto_e
 .end method
 
 .method private getUpdateReferrerUrl(Ljava/lang/String;)Ljava/lang/String;
@@ -92,7 +228,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 440
+    .line 591
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mExternalReferrer:Ljava/lang/String;
 
     if-eqz v0, :cond_2a
@@ -107,7 +243,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 441
+    .line 592
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mExternalReferrer:Ljava/lang/String;
 
     const-string v1, "details"
@@ -134,7 +270,7 @@
 
     move-result-object v0
 
-    .line 444
+    .line 595
     :goto_29
     return-object v0
 
@@ -160,429 +296,50 @@
     goto :goto_29
 .end method
 
-.method private logEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 9
-    .parameter "tag"
-    .parameter "packageName"
-    .parameter "extra"
+.method private listenerRefresh(Z)V
+    .registers 3
+    .parameter "refreshParent"
 
     .prologue
-    const/4 v4, 0x0
+    .line 582
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContainerFragment:Lcom/google/android/finsky/fragments/PageFragment;
 
-    .line 432
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getAnalytics()Lcom/google/android/finsky/analytics/Analytics;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_39
-
-    .line 433
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getAnalytics()Lcom/google/android/finsky/analytics/Analytics;
-
-    move-result-object v1
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "?doc="
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0}, Lcom/google/android/finsky/fragments/PageFragment;->isAdded()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_1a
 
-    const-string v0, ""
-
-    :goto_2e
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v1, v4, v4, v0}, Lcom/google/android/finsky/analytics/Analytics;->logPageView(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 437
-    :cond_39
-    return-void
-
-    .line 433
-    :cond_3a
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "&"
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_2e
-.end method
-
-.method private refundAndUninstallAsset(Ljava/lang/String;Z)V
-    .registers 5
-    .parameter "packageName"
-    .parameter "isRefundable"
-
-    .prologue
-    .line 260
-    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mAssetStore:Lcom/google/android/finsky/local/AssetStore;
-
-    invoke-interface {v1, p1}, Lcom/google/android/finsky/local/AssetStore;->getAsset(Ljava/lang/String;)Lcom/google/android/finsky/local/LocalAsset;
-
-    move-result-object v0
-
-    .line 261
-    .local v0, localAsset:Lcom/google/android/finsky/local/LocalAsset;
-    if-nez p2, :cond_d
-
-    .line 262
-    const/4 v1, 0x1
-
-    invoke-direct {p0, p1, v0, v1}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->uninstallAsset(Ljava/lang/String;Lcom/google/android/finsky/local/LocalAsset;Z)V
-
-    .line 272
-    :goto_c
-    return-void
-
-    .line 266
-    :cond_d
-    new-instance v1, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$4;
-
-    invoke-direct {v1, p0, p1, v0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$4;-><init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;Lcom/google/android/finsky/local/LocalAsset;)V
-
-    invoke-direct {p0, p1, v1}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->refundAsset(Ljava/lang/String;Ljava/lang/Runnable;)V
-
-    goto :goto_c
-.end method
-
-.method private refundAsset(Ljava/lang/String;Ljava/lang/Runnable;)V
-    .registers 4
-    .parameter "packageName"
-    .parameter "successRunnable"
-
-    .prologue
-    .line 278
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mIsPendingRefund:Z
-
-    .line 279
-    new-instance v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$5;
-
-    invoke-direct {v0, p0, p2}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$5;-><init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/Runnable;)V
-
-    invoke-static {p1, v0}, Lcom/google/android/finsky/utils/AssetSupport;->refund(Ljava/lang/String;Lcom/google/android/finsky/utils/AssetSupport$RefundListener;)V
-
-    .line 306
-    return-void
-.end method
-
-.method private setDynamicButtonsVisibility(I)V
-    .registers 3
-    .parameter "state"
-
-    .prologue
-    .line 255
-    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDynamicSection:Landroid/view/ViewGroup;
-
-    invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
-
-    .line 256
-    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mButtonSection:Landroid/view/View;
-
-    invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 257
-    return-void
-.end method
-
-.method private uninstallAsset(Ljava/lang/String;Lcom/google/android/finsky/local/LocalAsset;Z)V
-    .registers 12
-    .parameter "packageName"
-    .parameter "localAsset"
-    .parameter "showConfirmationDialog"
-
-    .prologue
-    .line 330
-    if-eqz p3, :cond_4f
-
-    if-eqz p2, :cond_4f
-
-    .line 332
-    iget-object v6, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContainerFragment:Lcom/google/android/finsky/fragments/PageFragment;
-
-    invoke-virtual {v6}, Lcom/google/android/finsky/fragments/PageFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
-
-    move-result-object v2
-
-    .line 333
-    .local v2, fragmentManager:Landroid/support/v4/app/FragmentManager;
-    const-string v6, "uninstall_dialog"
-
-    invoke-virtual {v2, v6}, Landroid/support/v4/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/support/v4/app/Fragment;
-
-    move-result-object v6
-
-    if-eqz v6, :cond_13
-
-    .line 351
-    .end local v2           #fragmentManager:Landroid/support/v4/app/FragmentManager;
-    :goto_12
-    return-void
-
-    .line 337
-    .restart local v2       #fragmentManager:Landroid/support/v4/app/FragmentManager;
-    :cond_13
-    iget-object v6, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mPackageInfoCache:Lcom/google/android/finsky/utils/PackageInfoCache;
-
-    invoke-interface {p2}, Lcom/google/android/finsky/local/LocalAsset;->getPackage()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Lcom/google/android/finsky/utils/PackageInfoCache;->isSystemPackage(Ljava/lang/String;)Z
-
-    move-result v3
-
-    .line 338
-    .local v3, isSystemPackage:Z
-    if-eqz v3, :cond_47
-
-    const v5, 0x7f0700f8
-
-    .line 340
-    .local v5, titleId:I
-    :goto_22
-    if-eqz v3, :cond_4b
-
-    const v4, 0x7f0700f9
-
-    .line 342
-    .local v4, messageId:I
-    :goto_27
-    const v6, 0x7f070162
-
-    const v7, 0x7f070060
-
-    invoke-static {v5, v4, v6, v7}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->newInstance(IIII)Lcom/google/android/finsky/activities/SimpleAlertDialog;
-
-    move-result-object v0
-
-    .line 344
-    .local v0, alert:Lcom/google/android/finsky/activities/SimpleAlertDialog;
-    new-instance v1, Landroid/os/Bundle;
-
-    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
-
-    .line 345
-    .local v1, extraArgs:Landroid/os/Bundle;
-    const-string v6, "package_name"
-
-    invoke-virtual {v1, v6, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 346
-    iget-object v6, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContainerFragment:Lcom/google/android/finsky/fragments/PageFragment;
-
-    const/4 v7, 0x1
-
-    invoke-virtual {v0, v6, v7, v1}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->setCallback(Landroid/support/v4/app/Fragment;ILandroid/os/Bundle;)Lcom/google/android/finsky/activities/SimpleAlertDialog;
-
-    .line 347
-    const-string v6, "uninstall_dialog"
-
-    invoke-virtual {v0, v2, v6}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
-
-    goto :goto_12
-
-    .line 338
-    .end local v0           #alert:Lcom/google/android/finsky/activities/SimpleAlertDialog;
-    .end local v1           #extraArgs:Landroid/os/Bundle;
-    .end local v4           #messageId:I
-    .end local v5           #titleId:I
-    :cond_47
-    const v5, 0x7f0700fa
-
-    goto :goto_22
-
-    .line 340
-    .restart local v5       #titleId:I
-    :cond_4b
-    const v4, 0x7f0700fb
-
-    goto :goto_27
-
-    .line 350
-    .end local v2           #fragmentManager:Landroid/support/v4/app/FragmentManager;
-    .end local v3           #isSystemPackage:Z
-    .end local v5           #titleId:I
-    :cond_4f
-    invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->uninstallAssetSilently(Ljava/lang/String;Lcom/google/android/finsky/local/LocalAsset;)V
-
-    goto :goto_12
-.end method
-
-.method private uninstallAssetSilently(Ljava/lang/String;Lcom/google/android/finsky/local/LocalAsset;)V
-    .registers 5
-    .parameter "packageName"
-    .parameter "localAsset"
-
-    .prologue
-    .line 391
-    const-string v0, "uninstall"
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v0, p1, v1}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->logEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 392
-    if-eqz p2, :cond_e
-
-    .line 393
-    invoke-interface {p2}, Lcom/google/android/finsky/local/LocalAsset;->setStateUninstalling()V
-
-    .line 394
+    .line 583
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->refresh()V
 
-    .line 396
-    :cond_e
-    invoke-static {p1}, Lcom/google/android/finsky/utils/PackageManagerHelper;->uninstallPackage(Ljava/lang/String;)V
+    .line 584
+    if-eqz p1, :cond_1a
 
-    .line 397
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContainerFragment:Lcom/google/android/finsky/fragments/PageFragment;
+
+    instance-of v0, v0, Lcom/google/android/finsky/activities/DetailsFragment;
+
+    if-eqz v0, :cond_1a
+
+    .line 585
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContainerFragment:Lcom/google/android/finsky/fragments/PageFragment;
+
+    check-cast v0, Lcom/google/android/finsky/activities/DetailsFragment;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/activities/DetailsFragment;->updateDetailsSections()V
+
+    .line 588
+    :cond_1a
     return-void
 .end method
 
-
-# virtual methods
-.method protected handleRefundFailure()V
-    .registers 3
-
-    .prologue
-    .line 309
-    const/4 v1, 0x0
-
-    iput-boolean v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mIsPendingRefund:Z
-
-    .line 310
-    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContainerFragment:Lcom/google/android/finsky/fragments/PageFragment;
-
-    invoke-virtual {v1}, Lcom/google/android/finsky/fragments/PageFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
-
-    move-result-object v0
-
-    .line 311
-    .local v0, fragmentManager:Landroid/support/v4/app/FragmentManager;
-    if-eqz v0, :cond_11
-
-    .line 312
-    invoke-static {v0}, Lcom/google/android/finsky/utils/AssetSupport;->showRefundFailureDialog(Landroid/support/v4/app/FragmentManager;)V
-
-    .line 313
-    invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->refresh()V
-
-    .line 315
-    :cond_11
-    return-void
-.end method
-
-.method public init(Landroid/content/Context;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/fragments/PageFragment;ZZLjava/lang/String;Ljava/lang/String;)V
-    .registers 10
-    .parameter "context"
-    .parameter "navManager"
-    .parameter "bitmapLoader"
-    .parameter "fragment"
-    .parameter "trackPurchaseStatus"
-    .parameter "trackPackageStatus"
-    .parameter "referrer"
-    .parameter "externalReferrer"
-
-    .prologue
-    .line 73
-    invoke-super/range {p0 .. p8}, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->init(Landroid/content/Context;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/fragments/PageFragment;ZZLjava/lang/String;Ljava/lang/String;)V
-
-    .line 75
-    if-eqz p6, :cond_f
-
-    .line 76
-    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mPackageMonitorReceiver:Lcom/google/android/finsky/receivers/PackageMonitorReceiver;
-
-    invoke-virtual {v0, p0}, Lcom/google/android/finsky/receivers/PackageMonitorReceiver;->detach(Lcom/google/android/finsky/receivers/PackageMonitorReceiver$PackageStatusListener;)V
-
-    .line 77
-    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mPackageMonitorReceiver:Lcom/google/android/finsky/receivers/PackageMonitorReceiver;
-
-    invoke-virtual {v0, p0}, Lcom/google/android/finsky/receivers/PackageMonitorReceiver;->attach(Lcom/google/android/finsky/receivers/PackageMonitorReceiver$PackageStatusListener;)V
-
-    .line 79
-    :cond_f
-    return-void
-.end method
-
-.method public onDestroyView()V
-    .registers 2
-
-    .prologue
-    .line 83
-    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mPackageMonitorReceiver:Lcom/google/android/finsky/receivers/PackageMonitorReceiver;
-
-    invoke-virtual {v0, p0}, Lcom/google/android/finsky/receivers/PackageMonitorReceiver;->detach(Lcom/google/android/finsky/receivers/PackageMonitorReceiver$PackageStatusListener;)V
-
-    .line 84
-    invoke-super {p0}, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->onDestroyView()V
-
-    .line 85
-    return-void
-.end method
-
-.method public onNegativeClick(ILandroid/os/Bundle;)V
-    .registers 3
-    .parameter "requestCode"
-    .parameter "extraArguments"
-
-    .prologue
-    .line 385
-    return-void
-.end method
-
-.method public onPackageAdded(Ljava/lang/String;)V
+.method private refreshByPackageName(Ljava/lang/String;)V
     .registers 3
     .parameter "packageName"
 
     .prologue
-    .line 409
+    .line 481
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
 
     if-eqz v0, :cond_24
@@ -611,16 +368,409 @@
 
     if-eqz v0, :cond_24
 
-    .line 411
+    .line 483
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->syncDynamicSection()V
 
-    .line 412
+    .line 484
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->refreshPage()V
 
-    .line 414
+    .line 486
     :cond_24
+    return-void
+.end method
+
+.method private refundAndUninstallAsset(Ljava/lang/String;ZLjava/lang/String;ZZZ)V
+    .registers 13
+    .parameter "packageName"
+    .parameter "isRefundable"
+    .parameter "appRefundAccount"
+    .parameter "isSystemPackage"
+    .parameter "isOwned"
+    .parameter "hasSubscriptions"
+
+    .prologue
+    const/4 v2, 0x1
+
+    .line 370
+    if-nez p2, :cond_c
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move v3, p4
+
+    move v4, p5
+
+    move v5, p6
+
+    .line 371
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->uninstallAsset(Ljava/lang/String;ZZZZ)V
+
+    .line 376
+    :goto_b
+    return-void
+
+    .line 375
+    :cond_c
+    invoke-direct {p0, p1, p3, v2}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->confirmRefundApp(Ljava/lang/String;Ljava/lang/String;Z)V
+
+    goto :goto_b
+.end method
+
+.method private refundApp(Landroid/os/Bundle;)V
+    .registers 6
+    .parameter "extraArguments"
+
+    .prologue
+    .line 408
+    const-string v3, "package_name"
+
+    invoke-virtual {p1, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 409
+    .local v1, packageName:Ljava/lang/String;
+    const-string v3, "account_name"
+
+    invoke-virtual {p1, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 410
+    .local v0, appRefundAccount:Ljava/lang/String;
+    const-string v3, "try_uninstall"
+
+    invoke-virtual {p1, v3}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v2
+
+    .line 411
+    .local v2, tryUninstall:Z
+    new-instance v3, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$7;
+
+    invoke-direct {v3, p0, v2}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$7;-><init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Z)V
+
+    invoke-static {v1, v0, v3}, Lcom/google/android/finsky/utils/AppSupport;->silentRefund(Ljava/lang/String;Ljava/lang/String;Lcom/google/android/finsky/utils/AppSupport$RefundListener;)V
+
+    .line 444
+    return-void
+.end method
+
+.method private uninstallAsset(Ljava/lang/String;ZZZZ)V
+    .registers 7
+    .parameter "packageName"
+    .parameter "showConfirmationDialog"
+    .parameter "isSystemPackage"
+    .parameter "isOwned"
+    .parameter "hasActiveSubscriptions"
+
+    .prologue
+    .line 467
+    if-eqz p2, :cond_8
+
+    .line 468
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContainerFragment:Lcom/google/android/finsky/fragments/PageFragment;
+
+    invoke-static {p1, v0, p3, p4, p5}, Lcom/google/android/finsky/utils/AppSupport;->showUninstallConfirmationDialog(Ljava/lang/String;Landroid/support/v4/app/Fragment;ZZZ)V
+
+    .line 474
+    :goto_7
+    return-void
+
+    .line 471
+    :cond_8
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mInstaller:Lcom/google/android/finsky/receivers/Installer;
+
+    invoke-interface {v0, p1}, Lcom/google/android/finsky/receivers/Installer;->uninstallAssetSilently(Ljava/lang/String;)V
+
+    .line 472
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->refresh()V
+
+    goto :goto_7
+.end method
+
+.method private updateContainerLayouts()V
+    .registers 2
+
+    .prologue
+    .line 352
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mButtonSection:Landroid/view/ViewGroup;
+
+    invoke-direct {p0, v0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->updateLayoutVisibility(Landroid/view/ViewGroup;)V
+
+    .line 353
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDynamicSection:Landroid/view/ViewGroup;
+
+    invoke-direct {p0, v0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->updateLayoutVisibility(Landroid/view/ViewGroup;)V
+
+    .line 354
+    return-void
+.end method
+
+.method private updateLayoutVisibility(Landroid/view/ViewGroup;)V
+    .registers 6
+    .parameter "layout"
+
+    .prologue
+    .line 357
+    const/16 v1, 0x8
+
+    .line 358
+    .local v1, visibility:I
+    const/4 v0, 0x0
+
+    .local v0, i:I
+    :goto_3
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
+
+    move-result v2
+
+    if-ge v0, v2, :cond_16
+
+    .line 359
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
+
+    move-result v2
+
+    const/16 v3, 0x8
+
+    if-eq v2, v3, :cond_1a
+
+    .line 360
+    const/4 v1, 0x0
+
+    .line 364
+    :cond_16
+    invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    .line 365
+    return-void
+
+    .line 358
+    :cond_1a
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_3
+.end method
+
+
+# virtual methods
+.method public varargs bind(Lcom/google/android/finsky/api/model/Document;Z[Landroid/view/View;)V
+    .registers 4
+    .parameter "document"
+    .parameter "bindDynamicSection"
+    .parameter "views"
+
+    .prologue
+    .line 103
+    invoke-super {p0, p1, p2, p3}, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->bind(Lcom/google/android/finsky/api/model/Document;Z[Landroid/view/View;)V
+
+    .line 104
+    invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->attachListeners()V
+
+    .line 105
+    return-void
+.end method
+
+.method protected handleRefundFailure()V
+    .registers 3
+
+    .prologue
+    .line 447
+    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContainerFragment:Lcom/google/android/finsky/fragments/PageFragment;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/fragments/PageFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
+
+    move-result-object v0
+
+    .line 448
+    .local v0, fragmentManager:Landroid/support/v4/app/FragmentManager;
+    if-eqz v0, :cond_e
+
+    .line 449
+    invoke-static {v0}, Lcom/google/android/finsky/utils/AppSupport;->showRefundFailureDialog(Landroid/support/v4/app/FragmentManager;)V
+
+    .line 450
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->refresh()V
+
+    .line 452
+    :cond_e
+    return-void
+.end method
+
+.method public init(Landroid/content/Context;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/fragments/PageFragment;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    .registers 10
+    .parameter "context"
+    .parameter "navManager"
+    .parameter "bitmapLoader"
+    .parameter "fragment"
+    .parameter "trackPackageStatus"
+    .parameter "referrer"
+    .parameter "externalReferrer"
+    .parameter "continueUrl"
+    .parameter "returnAfterPurchase"
+
+    .prologue
+    .line 83
+    invoke-super/range {p0 .. p9}, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->init(Landroid/content/Context;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/fragments/PageFragment;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+
+    .line 85
+    iput-boolean p5, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mTrackPackageStatus:Z
+
+    .line 86
+    invoke-direct {p0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->attachListeners()V
+
+    .line 87
+    return-void
+.end method
+
+.method public onAllLibrariesLoaded()V
+    .registers 1
+
+    .prologue
+    .line 566
+    return-void
+.end method
+
+.method public onDestroyView()V
+    .registers 2
+
+    .prologue
+    .line 109
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mPackageMonitorReceiver:Lcom/google/android/finsky/receivers/PackageMonitorReceiver;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/finsky/receivers/PackageMonitorReceiver;->detach(Lcom/google/android/finsky/receivers/PackageMonitorReceiver$PackageStatusListener;)V
+
+    .line 110
+    iget-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mListenersAdded:Z
+
+    if-eqz v0, :cond_16
+
+    .line 111
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mInstaller:Lcom/google/android/finsky/receivers/Installer;
+
+    invoke-interface {v0, p0}, Lcom/google/android/finsky/receivers/Installer;->removeListener(Lcom/google/android/finsky/installer/InstallerListener;)V
+
+    .line 112
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mLibraries:Lcom/google/android/finsky/library/Libraries;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/finsky/library/Libraries;->removeListener(Lcom/google/android/finsky/library/Libraries$Listener;)V
+
+    .line 113
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mListenersAdded:Z
+
+    .line 115
+    :cond_16
+    invoke-super {p0}, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->onDestroyView()V
+
+    .line 116
+    return-void
+.end method
+
+.method public onInstallPackageEvent(Ljava/lang/String;Lcom/google/android/finsky/installer/InstallerListener$InstallerPackageEvent;I)V
+    .registers 5
+    .parameter "packageName"
+    .parameter "event"
+    .parameter "statusCode"
+
+    .prologue
+    .line 558
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    if-eqz v0, :cond_18
+
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_18
+
+    .line 559
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->listenerRefresh(Z)V
+
+    .line 561
+    :cond_18
+    return-void
+.end method
+
+.method public onLibraryContentsChanged(Lcom/google/android/finsky/library/AccountLibrary;)V
+    .registers 3
+    .parameter "library"
+
+    .prologue
+    .line 571
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    if-eqz v0, :cond_18
+
+    .line 572
+    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lcom/google/android/finsky/library/AccountLibrary;->getAppEntry(Ljava/lang/String;)Lcom/google/android/finsky/library/LibraryAppEntry;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_18
+
+    .line 573
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->listenerRefresh(Z)V
+
+    .line 576
+    :cond_18
+    return-void
+.end method
+
+.method public onNegativeClick(ILandroid/os/Bundle;)V
+    .registers 3
+    .parameter "requestCode"
+    .parameter "extraArguments"
+
+    .prologue
+    .line 520
+    return-void
+.end method
+
+.method public onPackageAdded(Ljava/lang/String;)V
+    .registers 2
+    .parameter "packageName"
+
+    .prologue
+    .line 532
+    invoke-direct {p0, p1}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->refreshByPackageName(Ljava/lang/String;)V
+
+    .line 533
     return-void
 .end method
 
@@ -630,7 +780,7 @@
     .parameter "available"
 
     .prologue
-    .line 424
+    .line 543
     return-void
 .end method
 
@@ -639,7 +789,19 @@
     .parameter "packageName"
 
     .prologue
-    .line 419
+    .line 537
+    invoke-direct {p0, p1}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->refreshByPackageName(Ljava/lang/String;)V
+
+    .line 538
+    return-void
+.end method
+
+.method public onPackageFirstLaunch(Ljava/lang/String;)V
+    .registers 2
+    .parameter "packageName"
+
+    .prologue
+    .line 552
     return-void
 .end method
 
@@ -649,883 +811,910 @@
     .parameter "replacing"
 
     .prologue
-    .line 428
+    .line 547
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->refreshPage()V
 
-    .line 429
+    .line 548
     return-void
 .end method
 
 .method public onPositiveClick(ILandroid/os/Bundle;)V
-    .registers 9
+    .registers 8
     .parameter "requestCode"
     .parameter "extraArguments"
 
     .prologue
-    .line 358
-    packed-switch p1, :pswitch_data_2c
+    .line 493
+    packed-switch p1, :pswitch_data_2a
 
-    .line 374
-    const-string v2, "Unexpected requestCode %d"
+    .line 509
+    :pswitch_3
+    const-string v1, "Unexpected requestCode %d"
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v2, v2, [Ljava/lang/Object;
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v4
 
-    aput-object v5, v3, v4
+    aput-object v4, v2, v3
 
-    invoke-static {v2, v3}, Lcom/google/android/finsky/utils/FinskyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 377
+    .line 512
     :cond_12
     :goto_12
     :pswitch_12
     return-void
 
-    .line 362
+    .line 496
     :pswitch_13
-    const-string v2, "package_name"
+    const-string v1, "package_name"
 
-    invoke-virtual {p2, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 363
-    .local v1, packageName:Ljava/lang/String;
-    if-eqz v1, :cond_12
-
-    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mAssetStore:Lcom/google/android/finsky/local/AssetStore;
-
-    if-eqz v2, :cond_12
-
-    .line 364
-    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mAssetStore:Lcom/google/android/finsky/local/AssetStore;
-
-    invoke-interface {v2, v1}, Lcom/google/android/finsky/local/AssetStore;->getAsset(Ljava/lang/String;)Lcom/google/android/finsky/local/LocalAsset;
+    invoke-virtual {p2, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 365
-    .local v0, localAsset:Lcom/google/android/finsky/local/LocalAsset;
-    if-eqz v0, :cond_12
+    .line 497
+    .local v0, packageName:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mInstaller:Lcom/google/android/finsky/receivers/Installer;
 
-    .line 366
-    invoke-direct {p0, v1, v0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->uninstallAssetSilently(Ljava/lang/String;Lcom/google/android/finsky/local/LocalAsset;)V
+    if-eqz v1, :cond_12
+
+    .line 498
+    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mInstaller:Lcom/google/android/finsky/receivers/Installer;
+
+    invoke-interface {v1, v0}, Lcom/google/android/finsky/receivers/Installer;->uninstallAssetSilently(Ljava/lang/String;)V
+
+    .line 499
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->refresh()V
 
     goto :goto_12
 
-    .line 358
-    nop
+    .line 506
+    .end local v0           #packageName:Ljava/lang/String;
+    :pswitch_26
+    invoke-direct {p0, p2}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->refundApp(Landroid/os/Bundle;)V
 
-    :pswitch_data_2c
+    goto :goto_12
+
+    .line 493
+    :pswitch_data_2a
     .packed-switch 0x1
         :pswitch_13
         :pswitch_12
+        :pswitch_3
+        :pswitch_26
     .end packed-switch
 .end method
 
 .method protected setupActionButtons(Z)V
-    .registers 21
+    .registers 22
     .parameter "isInTransientState"
 
     .prologue
-    .line 160
-    const v14, 0x7f0800a4
+    .line 209
+    const v1, 0x7f0800aa
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v14}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/widget/Button;
-
-    .line 161
-    .local v2, buyButton:Landroid/widget/Button;
-    const v14, 0x7f08001c
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v14}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->findViewById(I)Landroid/view/View;
-
-    move-result-object v8
-
-    check-cast v8, Landroid/widget/Button;
-
-    .line 162
-    .local v8, launchButton:Landroid/widget/Button;
-    const v14, 0x7f08001e
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v14}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->findViewById(I)Landroid/view/View;
 
     move-result-object v12
 
     check-cast v12, Landroid/widget/Button;
 
-    .line 163
-    .local v12, uninstallButton:Landroid/widget/Button;
-    const v14, 0x7f08001d
+    .line 210
+    .local v12, buyButton:Landroid/widget/Button;
+    const v1, 0x7f0800ad
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v14}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->findViewById(I)Landroid/view/View;
 
-    move-result-object v13
+    move-result-object v15
 
-    check-cast v13, Landroid/widget/Button;
+    check-cast v15, Landroid/widget/Button;
 
-    .line 166
-    .local v13, updateButton:Landroid/widget/Button;
-    const/16 v14, 0x8
+    .line 211
+    .local v15, launchButton:Landroid/widget/Button;
+    const v1, 0x7f0800af
 
-    invoke-virtual {v8, v14}, Landroid/widget/Button;->setVisibility(I)V
-
-    .line 167
-    const/16 v14, 0x8
-
-    invoke-virtual {v2, v14}, Landroid/widget/Button;->setVisibility(I)V
-
-    .line 168
-    const/16 v14, 0x8
-
-    invoke-virtual {v12, v14}, Landroid/widget/Button;->setVisibility(I)V
-
-    .line 169
-    const/16 v14, 0x8
-
-    invoke-virtual {v13, v14}, Landroid/widget/Button;->setVisibility(I)V
-
-    .line 171
     move-object/from16 v0, p0
 
-    iget-boolean v14, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mHideDynamicFeatures:Z
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->findViewById(I)Landroid/view/View;
 
-    if-eqz v14, :cond_47
+    move-result-object v18
 
-    .line 252
-    :cond_46
-    :goto_46
+    check-cast v18, Landroid/widget/Button;
+
+    .line 212
+    .local v18, uninstallButton:Landroid/widget/Button;
+    const v1, 0x7f0800ae
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->findViewById(I)Landroid/view/View;
+
+    move-result-object v19
+
+    check-cast v19, Landroid/widget/Button;
+
+    .line 215
+    .local v19, updateButton:Landroid/widget/Button;
+    const/16 v1, 0x8
+
+    invoke-virtual {v15, v1}, Landroid/widget/Button;->setVisibility(I)V
+
+    .line 216
+    const/16 v1, 0x8
+
+    invoke-virtual {v12, v1}, Landroid/widget/Button;->setVisibility(I)V
+
+    .line 217
+    const/16 v1, 0x8
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setVisibility(I)V
+
+    .line 218
+    const/16 v1, 0x8
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setVisibility(I)V
+
+    .line 221
+    move-object/from16 v0, p0
+
+    iget-boolean v1, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mHideDynamicFeatures:Z
+
+    if-nez v1, :cond_4c
+
+    if-eqz p1, :cond_4d
+
+    .line 349
+    :cond_4c
+    :goto_4c
     return-void
 
-    .line 175
-    :cond_47
-    if-nez p1, :cond_46
-
-    .line 179
+    .line 226
+    :cond_4d
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+    iget-object v1, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
 
-    invoke-virtual {v14}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
 
     move-result-object v1
 
-    .line 180
-    .local v1, appPackageName:Ljava/lang/String;
-    move-object/from16 v0, p0
+    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getPackageName()Ljava/lang/String;
 
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mAssetStore:Lcom/google/android/finsky/local/AssetStore;
-
-    invoke-interface {v14, v1}, Lcom/google/android/finsky/local/AssetStore;->getAsset(Ljava/lang/String;)Lcom/google/android/finsky/local/LocalAsset;
-
-    move-result-object v9
-
-    .line 181
-    .local v9, localAsset:Lcom/google/android/finsky/local/LocalAsset;
-    if-eqz v9, :cond_18e
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v14
-
-    invoke-interface {v9, v14, v15}, Lcom/google/android/finsky/local/LocalAsset;->isRefundable(J)Z
-
-    move-result v14
-
-    if-eqz v14, :cond_18e
-
-    const/4 v6, 0x1
-
-    .line 183
-    .local v6, isRefundable:Z
-    :goto_6a
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mPackageInfoCache:Lcom/google/android/finsky/utils/PackageInfoCache;
-
-    invoke-virtual {v14, v15}, Lcom/google/android/finsky/api/model/Document;->isLocallyAvailable(Lcom/google/android/finsky/utils/PackageInfoCache;)Z
-
-    move-result v5
-
-    .line 184
-    .local v5, isLocallyAvailable:Z
-    if-nez v5, :cond_7a
-
-    if-eqz v6, :cond_145
-
-    .line 185
-    :cond_7a
-    const/4 v11, 0x0
-
-    .line 186
-    .local v11, numButtons:I
-    if-eqz v9, :cond_c7
-
-    .line 187
-    invoke-interface {v9}, Lcom/google/android/finsky/local/LocalAsset;->isUninstallable()Z
-
-    move-result v7
-
-    .line 190
-    .local v7, isUninstallable:Z
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mPackageInfoCache:Lcom/google/android/finsky/utils/PackageInfoCache;
-
-    invoke-virtual {v14, v1}, Lcom/google/android/finsky/utils/PackageInfoCache;->isSystemPackage(Ljava/lang/String;)Z
-
-    move-result v14
-
-    if-eqz v14, :cond_93
-
-    .line 191
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mPackageInfoCache:Lcom/google/android/finsky/utils/PackageInfoCache;
-
-    invoke-virtual {v14, v1}, Lcom/google/android/finsky/utils/PackageInfoCache;->isUpdatedSystemPackage(Ljava/lang/String;)Z
-
-    move-result v7
-
-    .line 193
-    :cond_93
-    if-eqz v7, :cond_196
-
-    .line 195
-    const/4 v14, 0x0
-
-    invoke-virtual {v12, v14}, Landroid/widget/Button;->setVisibility(I)V
-
-    .line 196
-    add-int/lit8 v11, v11, 0x1
-
-    .line 197
-    if-eqz v6, :cond_191
-
-    const v14, 0x7f070164
-
-    :goto_a0
-    invoke-virtual {v12, v14}, Landroid/widget/Button;->setText(I)V
-
-    .line 198
-    new-instance v14, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v14, v0, v9, v6}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;-><init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Lcom/google/android/finsky/local/LocalAsset;Z)V
-
-    invoke-virtual {v12, v14}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 217
-    :cond_ad
-    :goto_ad
-    invoke-interface {v9}, Lcom/google/android/finsky/local/LocalAsset;->getExternalReferrer()Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 218
-    .local v4, externalReferrer:Ljava/lang/String;
-    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v14
-
-    if-nez v14, :cond_c7
-
-    .line 219
-    invoke-static {v4}, Ljava/net/URLDecoder;->decode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 220
-    .local v3, decodedUrl:Ljava/lang/String;
-    invoke-static {v3}, Lcom/google/android/finsky/utils/IntentUtils;->isLaunchUrl(Ljava/lang/String;)Z
-
-    move-result v14
-
-    if-eqz v14, :cond_c7
-
-    .line 222
-    const v14, 0x7f070111
-
-    invoke-virtual {v8, v14}, Landroid/widget/Button;->setText(I)V
+    move-result-object v11
 
     .line 227
-    .end local v3           #decodedUrl:Ljava/lang/String;
-    .end local v4           #externalReferrer:Ljava/lang/String;
-    .end local v7           #isUninstallable:Z
-    :cond_c7
+    .local v11, appPackageName:Ljava/lang/String;
+    new-instance v9, Lcom/google/android/finsky/activities/AppActionAnalyzer;
+
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mPackageInfoCache:Lcom/google/android/finsky/utils/PackageInfoCache;
+    iget-object v1, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mAppStates:Lcom/google/android/finsky/appstate/AppStates;
 
-    invoke-virtual {v14, v1}, Lcom/google/android/finsky/utils/PackageInfoCache;->getPackageVersion(Ljava/lang/String;)I
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mLibraries:Lcom/google/android/finsky/library/Libraries;
+
+    invoke-direct {v9, v11, v1, v3}, Lcom/google/android/finsky/activities/AppActionAnalyzer;-><init>(Ljava/lang/String;Lcom/google/android/finsky/appstate/AppStates;Lcom/google/android/finsky/library/Libraries;)V
+
+    .line 232
+    .local v9, actions:Lcom/google/android/finsky/activities/AppActionAnalyzer;
+    const/16 v16, 0x0
+
+    .line 233
+    .local v16, numButtons:I
+    iget-boolean v1, v9, Lcom/google/android/finsky/activities/AppActionAnalyzer;->isUninstallable:Z
+
+    if-eqz v1, :cond_17b
+
+    .line 235
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mLibraries:Lcom/google/android/finsky/library/Libraries;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-static {v1, v3}, Lcom/google/android/finsky/utils/DocUtils;->hasAutoRenewingSubscriptions(Lcom/google/android/finsky/library/Libraries;Lcom/google/android/finsky/api/model/Document;)Z
 
     move-result v10
 
-    .line 228
-    .local v10, localVersion:I
-    if-ltz v10, :cond_110
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
-
-    invoke-virtual {v14}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getVersionCode()I
-
-    move-result v14
-
-    if-ge v10, v14, :cond_110
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDfeToc:Lcom/google/android/finsky/api/model/DfeToc;
-
-    invoke-virtual {v14, v15}, Lcom/google/android/finsky/api/model/Document;->isAvailable(Lcom/google/android/finsky/api/model/DfeToc;)Z
-
-    move-result v14
-
-    if-eqz v14, :cond_110
-
-    .line 230
-    const/4 v14, 0x0
-
-    invoke-virtual {v13, v14}, Landroid/widget/Button;->setVisibility(I)V
-
-    .line 231
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
-
-    const/16 v16, 0x1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v1}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->getUpdateReferrerUrl(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v17
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mExternalReferrer:Ljava/lang/String;
-
-    move-object/from16 v18, v0
-
-    invoke-virtual/range {v14 .. v18}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getBuyImmediateClickListener(Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;)Landroid/view/View$OnClickListener;
-
-    move-result-object v14
-
-    invoke-virtual {v13, v14}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 234
-    add-int/lit8 v11, v11, 0x1
-
     .line 237
-    :cond_110
-    const/4 v14, 0x2
+    .local v10, appHasSubscriptions:Z
+    const/4 v1, 0x0
 
-    if-ge v11, v14, :cond_13c
+    move-object/from16 v0, v18
 
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mPackageInfoCache:Lcom/google/android/finsky/utils/PackageInfoCache;
-
-    invoke-virtual {v14, v15}, Lcom/google/android/finsky/api/model/Document;->canLaunch(Lcom/google/android/finsky/utils/PackageInfoCache;)Z
-
-    move-result v14
-
-    if-eqz v14, :cond_13c
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setVisibility(I)V
 
     .line 238
-    add-int/lit8 v11, v11, 0x1
+    add-int/lit8 v16, v16, 0x1
 
     .line 239
-    const/4 v14, 0x0
+    iget-boolean v1, v9, Lcom/google/android/finsky/activities/AppActionAnalyzer;->isRefundable:Z
 
-    invoke-virtual {v8, v14}, Landroid/widget/Button;->setVisibility(I)V
+    if-eqz v1, :cond_176
+
+    const v1, 0x7f070199
+
+    :goto_87
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 
     .line 240
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+    new-instance v1, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;
 
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+    invoke-direct {v1, v0, v11, v9, v10}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$2;-><init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;Lcom/google/android/finsky/activities/AppActionAnalyzer;Z)V
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 276
+    .end local v10           #appHasSubscriptions:Z
+    :cond_98
+    :goto_98
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mAccount:Landroid/accounts/Account;
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mAccountName:Ljava/lang/String;
-
-    move-object/from16 v16, v0
-
-    invoke-virtual/range {v14 .. v16}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getOpenClickListener(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/view/View$OnClickListener;
-
-    move-result-object v14
-
-    invoke-virtual {v8, v14}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 243
-    :cond_13c
-    if-nez v11, :cond_1b0
-
-    const/16 v14, 0x8
-
-    :goto_140
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v14}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->setDynamicButtonsVisibility(I)V
-
-    .line 245
-    .end local v10           #localVersion:I
-    .end local v11           #numButtons:I
-    :cond_145
-    if-nez v5, :cond_46
+    iget-object v3, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mAppStates:Lcom/google/android/finsky/appstate/AppStates;
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+    iget-object v4, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mLibraries:Lcom/google/android/finsky/library/Libraries;
 
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDfeToc:Lcom/google/android/finsky/api/model/DfeToc;
-
-    invoke-virtual {v14, v15}, Lcom/google/android/finsky/api/model/Document;->isAvailable(Lcom/google/android/finsky/api/model/DfeToc;)Z
-
-    move-result v14
-
-    if-eqz v14, :cond_46
-
-    .line 246
-    const/4 v14, 0x0
-
-    invoke-virtual {v2, v14}, Landroid/widget/Button;->setVisibility(I)V
-
-    .line 247
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mPackageInfoCache:Lcom/google/android/finsky/utils/PackageInfoCache;
-
-    invoke-virtual {v14, v15}, Lcom/google/android/finsky/api/model/Document;->ownedByUser(Lcom/google/android/finsky/utils/PackageInfoCache;)Z
-
-    move-result v14
-
-    const/4 v15, 0x1
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v14, v15}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->getBuyButtonString(ZI)Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-virtual {v2, v14}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
-
-    .line 249
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
-
-    const/16 v16, 0x1
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mReferrer:Ljava/lang/String;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mExternalReferrer:Ljava/lang/String;
-
-    move-object/from16 v18, v0
-
-    invoke-virtual/range {v14 .. v18}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getBuyImmediateClickListener(Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;)Landroid/view/View$OnClickListener;
-
-    move-result-object v14
-
-    invoke-virtual {v2, v14}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    goto/16 :goto_46
-
-    .line 181
-    .end local v5           #isLocallyAvailable:Z
-    .end local v6           #isRefundable:Z
-    :cond_18e
-    const/4 v6, 0x0
-
-    goto/16 :goto_6a
-
-    .line 197
-    .restart local v5       #isLocallyAvailable:Z
-    .restart local v6       #isRefundable:Z
-    .restart local v7       #isUninstallable:Z
-    .restart local v11       #numButtons:I
-    :cond_191
-    const v14, 0x7f0700f7
-
-    goto/16 :goto_a0
-
-    .line 204
-    :cond_196
-    if-eqz v6, :cond_ad
-
-    .line 206
-    const/4 v14, 0x0
-
-    invoke-virtual {v12, v14}, Landroid/widget/Button;->setVisibility(I)V
-
-    .line 207
-    add-int/lit8 v11, v11, 0x1
-
-    .line 208
-    const v14, 0x7f070164
-
-    invoke-virtual {v12, v14}, Landroid/widget/Button;->setText(I)V
-
-    .line 209
-    new-instance v14, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$3;
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v14, v0, v9}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$3;-><init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Lcom/google/android/finsky/local/LocalAsset;)V
-
-    invoke-virtual {v12, v14}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    goto/16 :goto_ad
-
-    .line 243
-    .end local v7           #isUninstallable:Z
-    .restart local v10       #localVersion:I
-    :cond_1b0
-    const/4 v14, 0x0
-
-    goto :goto_140
-.end method
-
-.method protected syncDynamicSection()V
-    .registers 16
-
-    .prologue
-    const/4 v14, 0x1
-
-    const/4 v13, 0x0
-
-    .line 89
-    invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->resetDynamicStatus()V
-
-    .line 91
-    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
-
-    invoke-virtual {v0}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
-
-    move-result v0
-
-    const/4 v11, 0x3
-
-    if-eq v0, v11, :cond_12
-
-    .line 92
-    invoke-super {p0}, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->syncDynamicSection()V
-
-    .line 155
-    :cond_11
-    :goto_11
-    return-void
-
-    .line 96
-    :cond_12
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getAssetStore()Lcom/google/android/finsky/local/AssetStore;
-
-    move-result-object v0
-
-    iget-object v11, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
-
-    invoke-virtual {v11}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getPackageName()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-interface {v0, v11}, Lcom/google/android/finsky/local/AssetStore;->getAsset(Ljava/lang/String;)Lcom/google/android/finsky/local/LocalAsset;
-
-    move-result-object v1
-
-    .line 98
-    .local v1, localAsset:Lcom/google/android/finsky/local/LocalAsset;
-    if-eqz v1, :cond_48
-
-    .line 99
-    invoke-interface {v1}, Lcom/google/android/finsky/local/LocalAsset;->getState()Lcom/google/android/finsky/local/AssetState;
-
-    move-result-object v6
-
-    .line 100
-    .local v6, assetState:Lcom/google/android/finsky/local/AssetState;
-    sget-object v0, Lcom/google/android/finsky/local/AssetState;->INSTALLING:Lcom/google/android/finsky/local/AssetState;
-
-    if-eq v6, v0, :cond_36
-
-    sget-object v0, Lcom/google/android/finsky/local/AssetState;->UNINSTALLING:Lcom/google/android/finsky/local/AssetState;
-
-    if-ne v6, v0, :cond_48
-
-    .line 101
-    :cond_36
-    sget-object v0, Lcom/google/android/finsky/local/AssetState;->INSTALLING:Lcom/google/android/finsky/local/AssetState;
-
-    if-ne v6, v0, :cond_44
-
-    const v0, 0x7f070160
-
-    :goto_3d
-    invoke-virtual {p0, v0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->showDynamicStatus(I)V
-
-    .line 103
-    invoke-virtual {p0, v14}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->setupActionButtons(Z)V
-
-    goto :goto_11
-
-    .line 101
-    :cond_44
-    const v0, 0x7f070161
-
-    goto :goto_3d
-
-    .line 109
-    .end local v6           #assetState:Lcom/google/android/finsky/local/AssetState;
-    :cond_48
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getDownloadQueue()Lcom/google/android/finsky/download/DownloadQueue;
-
-    move-result-object v8
-
-    .line 110
-    .local v8, downloadQueue:Lcom/google/android/finsky/download/DownloadQueue;
-    if-nez v8, :cond_56
-
-    .line 111
-    invoke-super {p0}, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->syncDynamicSection()V
-
-    goto :goto_11
-
-    .line 115
-    :cond_56
-    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
-
-    invoke-virtual {v0}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getPackageName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_11
-
-    .line 118
-    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
-
-    invoke-virtual {v0}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getPackageName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v8, v0}, Lcom/google/android/finsky/download/DownloadQueue;->getByPackageName(Ljava/lang/String;)Lcom/google/android/finsky/download/Download;
+    invoke-static {v11, v1, v3, v4}, Lcom/google/android/finsky/activities/AppActionAnalyzer;->getInstallAccount(Ljava/lang/String;Landroid/accounts/Account;Lcom/google/android/finsky/appstate/AppStates;Lcom/google/android/finsky/library/Libraries;)Landroid/accounts/Account;
 
     move-result-object v2
 
+    .line 278
+    .local v2, installAccount:Landroid/accounts/Account;
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mLibraries:Lcom/google/android/finsky/library/Libraries;
+
+    invoke-virtual {v1, v2}, Lcom/google/android/finsky/library/Libraries;->getAccountLibrary(Landroid/accounts/Account;)Lcom/google/android/finsky/library/AccountLibrary;
+
+    move-result-object v14
+
+    .line 281
+    .local v14, installAccountLibrary:Lcom/google/android/finsky/library/AccountLibrary;
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-static {v9, v1}, Lcom/google/android/finsky/utils/PurchaseButtonHelper;->hasUpdateAvailable(Lcom/google/android/finsky/activities/AppActionAnalyzer;Lcom/google/android/finsky/api/model/Document;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_f4
+
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDfeToc:Lcom/google/android/finsky/api/model/DfeToc;
+
+    invoke-static {v1, v3, v14}, Lcom/google/android/finsky/utils/LibraryUtils;->isAvailable(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/api/model/DfeToc;Lcom/google/android/finsky/library/Library;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_f4
+
+    iget-boolean v1, v9, Lcom/google/android/finsky/activities/AppActionAnalyzer;->isDisabled:Z
+
+    if-nez v1, :cond_f4
+
+    .line 284
+    const/4 v1, 0x0
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setVisibility(I)V
+
+    .line 285
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    const/4 v4, 0x1
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v11}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->getUpdateReferrerUrl(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mExternalReferrer:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContinueUrl:Ljava/lang/String;
+
+    invoke-virtual/range {v1 .. v7}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getBuyImmediateClickListener(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/view/View$OnClickListener;
+
+    move-result-object v1
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 289
+    add-int/lit8 v16, v16, 0x1
+
+    .line 294
+    :cond_f4
+    const/4 v1, 0x2
+
+    move/from16 v0, v16
+
+    if-ge v0, v1, :cond_116
+
+    .line 295
+    const/4 v13, 0x0
+
+    .line 298
+    .local v13, clickHandler:Landroid/view/View$OnClickListener;
+    const/4 v1, 0x0
+
+    invoke-virtual {v15, v1}, Landroid/widget/Button;->setVisibility(I)V
+
+    .line 300
+    iget-boolean v1, v9, Lcom/google/android/finsky/activities/AppActionAnalyzer;->isLaunchable:Z
+
+    if-eqz v1, :cond_1db
+
+    .line 303
+    iget-boolean v1, v9, Lcom/google/android/finsky/activities/AppActionAnalyzer;->isContinueLaunch:Z
+
+    if-eqz v1, :cond_1c3
+
+    .line 305
+    const v1, 0x7f07012b
+
+    invoke-virtual {v15, v1}, Landroid/widget/Button;->setText(I)V
+
+    .line 307
+    new-instance v13, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$5;
+
+    .end local v13           #clickHandler:Landroid/view/View$OnClickListener;
+    move-object/from16 v0, p0
+
+    invoke-direct {v13, v0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$5;-><init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;)V
+
+    .line 335
+    .restart local v13       #clickHandler:Landroid/view/View$OnClickListener;
+    :goto_113
+    invoke-virtual {v15, v13}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 338
+    .end local v13           #clickHandler:Landroid/view/View$OnClickListener;
+    :cond_116
+    iget-boolean v1, v9, Lcom/google/android/finsky/activities/AppActionAnalyzer;->isInstalled:Z
+
+    if-nez v1, :cond_171
+
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDfeToc:Lcom/google/android/finsky/api/model/DfeToc;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mLibraries:Lcom/google/android/finsky/library/Libraries;
+
+    invoke-static {v1, v3, v4}, Lcom/google/android/finsky/utils/LibraryUtils;->isAvailable(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/api/model/DfeToc;Lcom/google/android/finsky/library/Library;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_171
+
+    .line 339
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/FinskyApp;->getLibraries()Lcom/google/android/finsky/library/Libraries;
+
+    move-result-object v3
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mAccount:Landroid/accounts/Account;
+
+    invoke-static {v1, v3, v4}, Lcom/google/android/finsky/utils/LibraryUtils;->getOwnerWithCurrentAccount(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/library/Libraries;Landroid/accounts/Account;)Landroid/accounts/Account;
+
+    move-result-object v17
+
+    .line 342
+    .local v17, owner:Landroid/accounts/Account;
+    const/4 v1, 0x0
+
+    invoke-virtual {v12, v1}, Landroid/widget/Button;->setVisibility(I)V
+
+    .line 343
+    if-eqz v17, :cond_1f5
+
+    const/4 v1, 0x1
+
+    :goto_147
+    const/4 v3, 0x1
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v1, v3}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->getBuyButtonString(ZI)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v12, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+
+    .line 344
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    const/4 v4, 0x1
+
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mReferrer:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mExternalReferrer:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContinueUrl:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-boolean v8, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mReturnAfterPurchase:Z
+
+    invoke-virtual/range {v1 .. v8}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getBuyImmediateClickListener(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/view/View$OnClickListener;
+
+    move-result-object v1
+
+    invoke-virtual {v12, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 348
+    .end local v17           #owner:Landroid/accounts/Account;
+    :cond_171
+    invoke-direct/range {p0 .. p0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->updateContainerLayouts()V
+
+    goto/16 :goto_4c
+
+    .line 239
+    .end local v2           #installAccount:Landroid/accounts/Account;
+    .end local v14           #installAccountLibrary:Lcom/google/android/finsky/library/AccountLibrary;
+    .restart local v10       #appHasSubscriptions:Z
+    :cond_176
+    const v1, 0x7f070103
+
+    goto/16 :goto_87
+
+    .line 248
+    .end local v10           #appHasSubscriptions:Z
+    :cond_17b
+    iget-boolean v1, v9, Lcom/google/android/finsky/activities/AppActionAnalyzer;->isUninstallable:Z
+
+    if-nez v1, :cond_1a1
+
+    iget-boolean v1, v9, Lcom/google/android/finsky/activities/AppActionAnalyzer;->isActiveDeviceAdmin:Z
+
+    if-eqz v1, :cond_1a1
+
+    .line 251
+    const/4 v1, 0x0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setVisibility(I)V
+
+    .line 252
+    add-int/lit8 v16, v16, 0x1
+
+    .line 253
+    const v1, 0x7f070104
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
+
+    .line 254
+    new-instance v1, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$3;
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v1, v0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$3;-><init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;)V
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    goto/16 :goto_98
+
+    .line 262
+    :cond_1a1
+    iget-boolean v1, v9, Lcom/google/android/finsky/activities/AppActionAnalyzer;->isRefundable:Z
+
+    if-eqz v1, :cond_98
+
+    .line 264
+    const/4 v1, 0x0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setVisibility(I)V
+
+    .line 265
+    add-int/lit8 v16, v16, 0x1
+
+    .line 266
+    const v1, 0x7f070199
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
+
+    .line 267
+    new-instance v1, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$4;
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v1, v0, v11, v9}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$4;-><init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;Lcom/google/android/finsky/activities/AppActionAnalyzer;)V
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    goto/16 :goto_98
+
+    .line 317
+    .restart local v2       #installAccount:Landroid/accounts/Account;
+    .restart local v13       #clickHandler:Landroid/view/View$OnClickListener;
+    .restart local v14       #installAccountLibrary:Lcom/google/android/finsky/library/AccountLibrary;
+    :cond_1c3
+    const v1, 0x7f07012a
+
+    invoke-virtual {v15, v1}, Landroid/widget/Button;->setText(I)V
+
+    .line 318
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mAccount:Landroid/accounts/Account;
+
+    invoke-virtual {v1, v3, v4}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getOpenClickListener(Lcom/google/android/finsky/api/model/Document;Landroid/accounts/Account;)Landroid/view/View$OnClickListener;
+
+    move-result-object v13
+
+    goto/16 :goto_113
+
+    .line 320
+    :cond_1db
+    iget-boolean v1, v9, Lcom/google/android/finsky/activities/AppActionAnalyzer;->isDisabledByUser:Z
+
+    if-eqz v1, :cond_1ee
+
+    .line 321
+    new-instance v13, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$6;
+
+    .end local v13           #clickHandler:Landroid/view/View$OnClickListener;
+    move-object/from16 v0, p0
+
+    invoke-direct {v13, v0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$6;-><init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;)V
+
+    .line 331
+    .restart local v13       #clickHandler:Landroid/view/View$OnClickListener;
+    const v1, 0x7f07012d
+
+    invoke-virtual {v15, v1}, Landroid/widget/Button;->setText(I)V
+
+    goto/16 :goto_113
+
+    .line 333
+    :cond_1ee
+    const/16 v1, 0x8
+
+    invoke-virtual {v15, v1}, Landroid/widget/Button;->setVisibility(I)V
+
+    goto/16 :goto_113
+
+    .line 343
+    .end local v13           #clickHandler:Landroid/view/View$OnClickListener;
+    .restart local v17       #owner:Landroid/accounts/Account;
+    :cond_1f5
+    const/4 v1, 0x0
+
+    goto/16 :goto_147
+.end method
+
+.method protected syncDynamicSection()V
+    .registers 14
+
+    .prologue
+    const/4 v10, 0x3
+
+    const/4 v12, 0x1
+
+    const/4 v11, 0x0
+
     .line 120
-    .local v2, download:Lcom/google/android/finsky/download/Download;
-    if-nez v2, :cond_84
+    invoke-virtual {p0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->resetDynamicStatus()V
 
-    if-eqz v1, :cond_80
+    .line 123
+    iget-object v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
 
-    invoke-interface {v1}, Lcom/google/android/finsky/local/LocalAsset;->getState()Lcom/google/android/finsky/local/AssetState;
+    invoke-virtual {v8}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
 
-    move-result-object v0
+    move-result v8
 
-    sget-object v11, Lcom/google/android/finsky/local/AssetState;->DOWNLOADING:Lcom/google/android/finsky/local/AssetState;
+    if-eq v8, v10, :cond_2a
 
-    if-eq v0, v11, :cond_84
+    .line 124
+    const-string v8, "Unexpected doc backend %s"
 
-    .line 122
-    :cond_80
+    const/4 v9, 0x2
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    iget-object v10, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    invoke-virtual {v10}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
+
+    move-result v10
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v10
+
+    aput-object v10, v9, v11
+
+    iget-object v10, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
+
+    aput-object v10, v9, v12
+
+    invoke-static {v8, v9}, Lcom/google/android/finsky/utils/FinskyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 125
     invoke-super {p0}, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->syncDynamicSection()V
 
-    goto :goto_11
+    .line 183
+    :cond_29
+    :goto_29
+    return-void
 
-    .line 126
-    :cond_84
-    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDynamicSection:Landroid/view/ViewGroup;
+    .line 129
+    :cond_2a
+    iget-object v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
 
-    invoke-virtual {v0, v13}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-virtual {v8}, Lcom/google/android/finsky/api/model/Document;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
 
-    .line 127
-    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDynamicSection:Landroid/view/ViewGroup;
+    move-result-object v8
 
-    iget-object v11, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContext:Landroid/content/Context;
+    invoke-virtual {v8}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;->getPackageName()Ljava/lang/String;
 
-    iget-object v12, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
-
-    invoke-virtual {v12}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
-
-    move-result v12
-
-    invoke-static {v11, v12}, Lcom/google/android/finsky/utils/CorpusResourceUtils;->getBackendHintColor(Landroid/content/Context;I)I
-
-    move-result v11
-
-    invoke-virtual {v0, v11}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
-
-    .line 130
-    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDynamicSection:Landroid/view/ViewGroup;
-
-    const v11, 0x7f0800e2
-
-    invoke-virtual {v0, v11}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v9
-
-    check-cast v9, Landroid/view/ViewGroup;
+    move-result-object v4
 
     .line 132
-    .local v9, downloadSection:Landroid/view/ViewGroup;
-    invoke-virtual {v9, v13}, Landroid/view/ViewGroup;->setVisibility(I)V
+    .local v4, packageName:Ljava/lang/String;
+    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    .line 134
-    const v0, 0x7f0800c2
+    move-result v8
 
-    invoke-virtual {v9, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    if-nez v8, :cond_29
+
+    .line 136
+    iget-object v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mInstaller:Lcom/google/android/finsky/receivers/Installer;
+
+    invoke-interface {v8, v4}, Lcom/google/android/finsky/receivers/Installer;->getProgress(Ljava/lang/String;)Lcom/google/android/finsky/receivers/Installer$InstallerProgressReport;
+
+    move-result-object v6
+
+    .line 138
+    .local v6, progressReport:Lcom/google/android/finsky/receivers/Installer$InstallerProgressReport;
+    sget-object v8, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$8;->$SwitchMap$com$google$android$finsky$receivers$Installer$InstallerState:[I
+
+    iget-object v9, v6, Lcom/google/android/finsky/receivers/Installer$InstallerProgressReport;->installerState:Lcom/google/android/finsky/receivers/Installer$InstallerState;
+
+    invoke-virtual {v9}, Lcom/google/android/finsky/receivers/Installer$InstallerState;->ordinal()I
+
+    move-result v9
+
+    aget v8, v8, v9
+
+    packed-switch v8, :pswitch_data_c8
+
+    .line 154
+    iget-object v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDynamicSection:Landroid/view/ViewGroup;
+
+    invoke-virtual {v8, v11}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    .line 155
+    iget-object v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDynamicSection:Landroid/view/ViewGroup;
+
+    iget-object v9, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContext:Landroid/content/Context;
+
+    invoke-static {v9, v10}, Lcom/google/android/finsky/utils/CorpusResourceUtils;->getBackendHintColor(Landroid/content/Context;I)I
+
+    move-result v9
+
+    invoke-virtual {v8, v9}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
+
+    .line 158
+    iget-object v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mDynamicSection:Landroid/view/ViewGroup;
+
+    const v9, 0x7f0800e7
+
+    invoke-virtual {v8, v9}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/view/ViewGroup;
+
+    .line 160
+    .local v1, downloadSection:Landroid/view/ViewGroup;
+    invoke-virtual {v1, v11}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    .line 162
+    const v8, 0x7f0800ca
+
+    invoke-virtual {v1, v8}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    .line 163
+    .local v2, downloadingBytes:Landroid/widget/TextView;
+    const v8, 0x7f0800c9
+
+    invoke-virtual {v1, v8}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
     check-cast v3, Landroid/widget/TextView;
 
-    .line 135
-    .local v3, downloadingBytes:Landroid/widget/TextView;
-    const v0, 0x7f0800c1
+    .line 165
+    .local v3, downloadingPercentage:Landroid/widget/TextView;
+    const v8, 0x7f0800cb
 
-    invoke-virtual {v9, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/widget/TextView;
-
-    .line 137
-    .local v4, downloadingPercentage:Landroid/widget/TextView;
-    const v0, 0x7f0800c3
-
-    invoke-virtual {v9, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v8}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v5
 
     check-cast v5, Landroid/widget/ProgressBar;
 
-    .line 138
+    .line 166
     .local v5, progressBar:Landroid/widget/ProgressBar;
-    iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContext:Landroid/content/Context;
+    iget-object v8, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->mContext:Landroid/content/Context;
 
-    invoke-static/range {v0 .. v5}, Lcom/google/android/finsky/adapters/DownloadProgressHelper;->configureDownloadProgressUi(Landroid/content/Context;Lcom/google/android/finsky/local/LocalAsset;Lcom/google/android/finsky/download/Download;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ProgressBar;)V
+    invoke-static {v8, v6, v2, v3, v5}, Lcom/google/android/finsky/adapters/DownloadProgressHelper;->configureDownloadProgressUi(Landroid/content/Context;Lcom/google/android/finsky/receivers/Installer$InstallerProgressReport;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/ProgressBar;)V
 
-    .line 141
-    const v0, 0x7f0800c0
+    .line 169
+    const v8, 0x7f0800c8
 
-    invoke-virtual {v9, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v8}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    .line 170
+    .local v0, cancel:Landroid/widget/ImageView;
+    new-instance v8, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$1;
+
+    invoke-direct {v8, p0, v4}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$1;-><init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v8}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 179
+    const v8, 0x7f0800e4
+
+    invoke-virtual {p0, v8}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->findViewById(I)Landroid/view/View;
 
     move-result-object v7
 
-    check-cast v7, Landroid/widget/ImageView;
+    check-cast v7, Landroid/widget/TextView;
 
-    .line 142
-    .local v7, cancel:Landroid/widget/ImageView;
-    new-instance v0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$1;
+    .line 180
+    .local v7, title:Landroid/widget/TextView;
+    invoke-virtual {v7, v11}, Landroid/widget/TextView;->setSelected(Z)V
 
-    invoke-direct {v0, p0, v8, v2}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$1;-><init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Lcom/google/android/finsky/download/DownloadQueue;Lcom/google/android/finsky/download/Download;)V
+    .line 182
+    invoke-virtual {p0, v12}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->setupActionButtons(Z)V
 
-    invoke-virtual {v7, v0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    goto/16 :goto_29
 
-    .line 151
-    const v0, 0x7f08007b
+    .line 140
+    .end local v0           #cancel:Landroid/widget/ImageView;
+    .end local v1           #downloadSection:Landroid/view/ViewGroup;
+    .end local v2           #downloadingBytes:Landroid/widget/TextView;
+    .end local v3           #downloadingPercentage:Landroid/widget/TextView;
+    .end local v5           #progressBar:Landroid/widget/ProgressBar;
+    .end local v7           #title:Landroid/widget/TextView;
+    :pswitch_ad
+    const v8, 0x7f070195
 
-    invoke-virtual {p0, v0}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v8}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->showDynamicStatus(I)V
 
-    move-result-object v10
+    .line 141
+    invoke-virtual {p0, v12}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->setupActionButtons(Z)V
 
-    check-cast v10, Landroid/widget/TextView;
+    goto/16 :goto_29
 
-    .line 152
-    .local v10, title:Landroid/widget/TextView;
-    invoke-virtual {v10, v13}, Landroid/widget/TextView;->setSelected(Z)V
+    .line 144
+    :pswitch_b8
+    const v8, 0x7f070196
 
-    .line 154
-    invoke-virtual {p0, v14}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->setupActionButtons(Z)V
+    invoke-virtual {p0, v8}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->showDynamicStatus(I)V
 
-    goto/16 :goto_11
+    .line 145
+    invoke-virtual {p0, v12}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->setupActionButtons(Z)V
+
+    goto/16 :goto_29
+
+    .line 149
+    :pswitch_c3
+    invoke-super {p0}, Lcom/google/android/finsky/activities/DetailsSummaryViewBinder;->syncDynamicSection()V
+
+    goto/16 :goto_29
+
+    .line 138
+    :pswitch_data_c8
+    .packed-switch 0x1
+        :pswitch_ad
+        :pswitch_b8
+        :pswitch_c3
+    .end packed-switch
 .end method

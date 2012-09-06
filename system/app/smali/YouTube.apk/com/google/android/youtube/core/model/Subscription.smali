@@ -3,10 +3,13 @@
 .source "SourceFile"
 
 # interfaces
+.implements Lcom/google/android/youtube/core/async/Optional;
 .implements Ljava/io/Serializable;
 
 
 # instance fields
+.field public final channelUri:Landroid/net/Uri;
+
 .field public final editUri:Landroid/net/Uri;
 
 .field public final title:Ljava/lang/String;
@@ -15,44 +18,78 @@
 
 .field public final uri:Landroid/net/Uri;
 
+.field public final username:Ljava/lang/String;
+
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lcom/google/android/youtube/core/model/Subscription$Type;Landroid/net/Uri;Landroid/net/Uri;)V
-    .registers 5
+.method public constructor <init>(Ljava/lang/String;Lcom/google/android/youtube/core/model/Subscription$Type;Landroid/net/Uri;Landroid/net/Uri;Ljava/lang/String;Landroid/net/Uri;)V
+    .registers 8
+    .parameter
+    .parameter
     .parameter
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 46
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 47
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 48
-    invoke-static {p2}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 49
-    invoke-static {p3}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 50
-    invoke-static {p4}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 51
-    iput-object p4, p0, Lcom/google/android/youtube/core/model/Subscription;->editUri:Landroid/net/Uri;
-
-    .line 52
-    iput-object p1, p0, Lcom/google/android/youtube/core/model/Subscription;->title:Ljava/lang/String;
-
-    .line 53
-    iput-object p2, p0, Lcom/google/android/youtube/core/model/Subscription;->type:Lcom/google/android/youtube/core/model/Subscription$Type;
-
-    .line 54
-    iput-object p3, p0, Lcom/google/android/youtube/core/model/Subscription;->uri:Landroid/net/Uri;
-
     .line 55
+    invoke-static {p4}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/Uri;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/model/Subscription;->editUri:Landroid/net/Uri;
+
+    .line 56
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/model/Subscription;->title:Ljava/lang/String;
+
+    .line 57
+    invoke-static {p2}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/core/model/Subscription$Type;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/model/Subscription;->type:Lcom/google/android/youtube/core/model/Subscription$Type;
+
+    .line 58
+    invoke-static {p3}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/Uri;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/model/Subscription;->uri:Landroid/net/Uri;
+
+    .line 59
+    invoke-static {p5}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/model/Subscription;->username:Ljava/lang/String;
+
+    .line 60
+    invoke-static {p6}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/Uri;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/model/Subscription;->channelUri:Landroid/net/Uri;
+
+    .line 61
     return-void
 .end method
 
@@ -61,7 +98,7 @@
     .parameter
 
     .prologue
-    .line 66
+    .line 82
     new-instance v0, Ljava/io/InvalidObjectException;
 
     const-string v1, "builder required"
@@ -75,7 +112,7 @@
     .registers 2
 
     .prologue
-    .line 62
+    .line 78
     invoke-virtual {p0}, Lcom/google/android/youtube/core/model/Subscription;->buildUpon()Lcom/google/android/youtube/core/model/Subscription$Builder;
 
     move-result-object v0
@@ -89,7 +126,7 @@
     .registers 3
 
     .prologue
-    .line 58
+    .line 68
     new-instance v0, Lcom/google/android/youtube/core/model/Subscription$Builder;
 
     invoke-direct {v0}, Lcom/google/android/youtube/core/model/Subscription$Builder;-><init>()V
@@ -118,6 +155,38 @@
 
     move-result-object v0
 
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/Subscription;->username:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Subscription$Builder;->username(Ljava/lang/String;)Lcom/google/android/youtube/core/model/Subscription$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/model/Subscription;->channelUri:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Subscription$Builder;->channelUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Subscription$Builder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final get()Lcom/google/android/youtube/core/model/Subscription;
+    .registers 1
+
+    .prologue
+    .line 64
+    return-object p0
+.end method
+
+.method public final bridge synthetic get()Ljava/io/Serializable;
+    .registers 2
+
+    .prologue
+    .line 23
+    invoke-virtual {p0}, Lcom/google/android/youtube/core/model/Subscription;->get()Lcom/google/android/youtube/core/model/Subscription;
+
+    move-result-object v0
+
     return-object v0
 .end method
 
@@ -125,7 +194,7 @@
     .registers 3
 
     .prologue
-    .line 78
+    .line 94
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Subscription;->type:Lcom/google/android/youtube/core/model/Subscription$Type;
 
     sget-object v1, Lcom/google/android/youtube/core/model/Subscription$Type;->CHANNEL:Lcom/google/android/youtube/core/model/Subscription$Type;
@@ -160,7 +229,7 @@
     .registers 2
 
     .prologue
-    .line 71
+    .line 87
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Subscription;->title:Ljava/lang/String;
 
     return-object v0

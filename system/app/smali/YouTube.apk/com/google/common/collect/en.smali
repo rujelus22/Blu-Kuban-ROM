@@ -1,129 +1,137 @@
-.class Lcom/google/common/collect/en;
-.super Lcom/google/common/base/j;
+.class final Lcom/google/common/collect/en;
+.super Lcom/google/common/collect/AbstractIterator;
 .source "SourceFile"
-
-# interfaces
-.implements Lcom/google/common/collect/ee;
 
 
 # instance fields
-.field final b:Lcom/google/common/collect/bj;
+.field final a:Ljava/util/Queue;
 
-.field final c:I
-
-.field volatile d:Lcom/google/common/collect/em;
+.field final b:Ljava/util/Comparator;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/bj;Ljava/lang/Object;I)V
-    .registers 5
-    .parameter
+.method public constructor <init>(Ljava/lang/Iterable;Ljava/util/Comparator;)V
+    .registers 6
     .parameter
     .parameter
 
     .prologue
-    .line 996
-    sget-object v0, Lcom/google/common/collect/ed;->a:Lcom/google/common/base/d;
+    .line 1291
+    invoke-direct {p0}, Lcom/google/common/collect/AbstractIterator;-><init>()V
 
-    invoke-direct {p0, p2, v0}, Lcom/google/common/base/j;-><init>(Ljava/lang/Object;Lcom/google/common/base/d;)V
+    .line 1292
+    iput-object p2, p0, Lcom/google/common/collect/en;->b:Ljava/util/Comparator;
 
-    .line 1013
-    invoke-static {}, Lcom/google/common/collect/MapMaker;->c()Lcom/google/common/collect/em;
+    .line 1296
+    new-instance v0, Lcom/google/common/collect/eo;
+
+    invoke-direct {v0, p0}, Lcom/google/common/collect/eo;-><init>(Lcom/google/common/collect/en;)V
+
+    .line 1304
+    new-instance v1, Ljava/util/PriorityQueue;
+
+    const/4 v2, 0x2
+
+    invoke-direct {v1, v2, v0}, Ljava/util/PriorityQueue;-><init>(ILjava/util/Comparator;)V
+
+    iput-object v1, p0, Lcom/google/common/collect/en;->a:Ljava/util/Queue;
+
+    .line 1306
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_16
+    :goto_16
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_32
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/common/collect/en;->d:Lcom/google/common/collect/em;
+    check-cast v0, Ljava/util/Iterator;
 
-    .line 997
-    iput-object p1, p0, Lcom/google/common/collect/en;->b:Lcom/google/common/collect/bj;
+    .line 1307
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 998
-    iput p3, p0, Lcom/google/common/collect/en;->c:I
+    move-result v2
 
-    .line 999
+    if-eqz v2, :cond_16
+
+    .line 1308
+    iget-object v2, p0, Lcom/google/common/collect/en;->a:Ljava/util/Queue;
+
+    invoke-static {v0}, Lcom/google/common/collect/ee;->f(Ljava/util/Iterator;)Lcom/google/common/collect/jh;
+
+    move-result-object v0
+
+    invoke-interface {v2, v0}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
+
+    goto :goto_16
+
+    .line 1311
+    :cond_32
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .registers 2
+.method protected final a()Ljava/lang/Object;
+    .registers 4
 
     .prologue
-    .line 1006
-    iget-object v0, p0, Lcom/google/common/collect/en;->b:Lcom/google/common/collect/bj;
+    .line 1315
+    iget-object v0, p0, Lcom/google/common/collect/en;->a:Ljava/util/Queue;
 
-    invoke-interface {v0, p0}, Lcom/google/common/collect/bj;->removeEntry(Ljava/lang/Object;)Z
+    invoke-interface {v0}, Ljava/util/Queue;->isEmpty()Z
 
-    .line 1007
-    return-void
-.end method
+    move-result v0
 
-.method public final a(Lcom/google/common/collect/em;)V
-    .registers 2
-    .parameter
+    if-eqz v0, :cond_d
 
-    .prologue
-    .line 1020
-    iput-object p1, p0, Lcom/google/common/collect/en;->d:Lcom/google/common/collect/em;
-
-    .line 1021
-    return-void
-.end method
-
-.method public b()Lcom/google/common/collect/ee;
-    .registers 2
-
-    .prologue
-    .line 1026
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final c()Lcom/google/common/collect/em;
-    .registers 2
-
-    .prologue
-    .line 1016
-    iget-object v0, p0, Lcom/google/common/collect/en;->d:Lcom/google/common/collect/em;
-
-    return-object v0
-.end method
-
-.method public final d()V
-    .registers 3
-
-    .prologue
-    .line 1023
-    iget-object v0, p0, Lcom/google/common/collect/en;->b:Lcom/google/common/collect/bj;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, p0, v1}, Lcom/google/common/collect/bj;->removeEntry(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 1024
-    return-void
-.end method
-
-.method public final e()I
-    .registers 2
-
-    .prologue
-    .line 1029
-    iget v0, p0, Lcom/google/common/collect/en;->c:I
-
-    return v0
-.end method
-
-.method public final f()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 1002
-    invoke-virtual {p0}, Lcom/google/common/collect/en;->get()Ljava/lang/Object;
+    .line 1316
+    invoke-virtual {p0}, Lcom/google/common/collect/en;->b()Ljava/lang/Object;
 
     move-result-object v0
 
+    .line 1326
+    :goto_c
     return-object v0
+
+    .line 1319
+    :cond_d
+    iget-object v0, p0, Lcom/google/common/collect/en;->a:Ljava/util/Queue;
+
+    invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/common/collect/jh;
+
+    .line 1320
+    invoke-interface {v0}, Lcom/google/common/collect/jh;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 1322
+    invoke-interface {v0}, Lcom/google/common/collect/jh;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_24
+
+    .line 1323
+    iget-object v2, p0, Lcom/google/common/collect/en;->a:Ljava/util/Queue;
+
+    invoke-interface {v2, v0}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
+
+    :cond_24
+    move-object v0, v1
+
+    .line 1326
+    goto :goto_c
 .end method

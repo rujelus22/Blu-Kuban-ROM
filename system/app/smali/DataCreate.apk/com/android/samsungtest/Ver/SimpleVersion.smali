@@ -98,7 +98,7 @@
     invoke-virtual {p0, v8}, Lcom/android/samsungtest/Ver/SimpleVersion;->setContentView(I)V
 
     .line 26
-    const v8, 0x7f06003c
+    const v8, 0x7f06003b
 
     invoke-virtual {p0, v8}, Lcom/android/samsungtest/Ver/SimpleVersion;->findViewById(I)Landroid/view/View;
 
@@ -108,7 +108,7 @@
 
     .line 27
     .local v5, pdatv:Landroid/widget/TextView;
-    const v8, 0x7f06003d
+    const v8, 0x7f06003c
 
     invoke-virtual {p0, v8}, Lcom/android/samsungtest/Ver/SimpleVersion;->findViewById(I)Landroid/view/View;
 
@@ -118,7 +118,7 @@
 
     .line 28
     .local v7, phonetv:Landroid/widget/TextView;
-    const v8, 0x7f060048
+    const v8, 0x7f060047
 
     invoke-virtual {p0, v8}, Lcom/android/samsungtest/Ver/SimpleVersion;->findViewById(I)Landroid/view/View;
 
@@ -128,7 +128,7 @@
 
     .line 29
     .local v3, csctv:Landroid/widget/TextView;
-    const v8, 0x7f060043
+    const v8, 0x7f060042
 
     invoke-virtual {p0, v8}, Lcom/android/samsungtest/Ver/SimpleVersion;->findViewById(I)Landroid/view/View;
 

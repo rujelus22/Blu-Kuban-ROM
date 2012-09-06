@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/view/dialog/D;
+.class Lcom/google/googlenav/ui/view/dialog/d;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/C;
+.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/c;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/C;)V
+.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/c;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/D;->a:Lcom/google/googlenav/ui/view/dialog/C;
+    .prologue
+    .line 198
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/d;->a:Lcom/google/googlenav/ui/view/dialog/c;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,29 +26,31 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 3
+.method public run()V
+    .registers 4
 
-    const/4 v0, 0x0
+    .prologue
+    .line 202
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/d;->a:Lcom/google/googlenav/ui/view/dialog/c;
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setEnabled(Z)V
+    iget-object v0, v0, Lcom/google/googlenav/ui/view/dialog/c;->a:Lcom/google/googlenav/ui/view/dialog/a;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/D;->a:Lcom/google/googlenav/ui/view/dialog/C;
+    iget-object v0, v0, Lcom/google/googlenav/ui/view/dialog/a;->m:Landroid/widget/ScrollView;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/C;->a(Lcom/google/googlenav/ui/view/dialog/C;)Lcom/google/googlenav/ui/view/dialog/H;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    iget-object v2, p0, Lcom/google/googlenav/ui/view/dialog/d;->a:Lcom/google/googlenav/ui/view/dialog/c;
 
-    if-eqz v0, :cond_15
+    iget-object v2, v2, Lcom/google/googlenav/ui/view/dialog/c;->a:Lcom/google/googlenav/ui/view/dialog/a;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/D;->a:Lcom/google/googlenav/ui/view/dialog/C;
+    iget-object v2, v2, Lcom/google/googlenav/ui/view/dialog/a;->d:Landroid/view/View;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/C;->a(Lcom/google/googlenav/ui/view/dialog/C;)Lcom/google/googlenav/ui/view/dialog/H;
+    invoke-virtual {v2}, Landroid/view/View;->getHeight()I
 
-    move-result-object v0
+    move-result v2
 
-    invoke-interface {v0}, Lcom/google/googlenav/ui/view/dialog/H;->a()V
+    invoke-virtual {v0, v1, v2}, Landroid/widget/ScrollView;->scrollTo(II)V
 
-    :cond_15
+    .line 203
     return-void
 .end method

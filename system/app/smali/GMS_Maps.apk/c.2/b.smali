@@ -1,258 +1,146 @@
-.class public final Lc/b;
-.super Ljava/lang/Object;
+.class public Lc/b;
+.super Ljava/io/Writer;
+.source "SourceFile"
 
 
 # instance fields
-.field private a:J
+.field private final a:Ljava/lang/String;
 
-.field private b:J
-
-.field private c:I
-
-.field private d:Ljava/lang/Object;
+.field private b:Ljava/lang/StringBuilder;
 
 
 # direct methods
-.method constructor <init>(ILjava/lang/Object;J)V
-    .registers 12
+.method public constructor <init>(Ljava/lang/String;)V
+    .registers 4
+    .parameter
 
-    move-object v0, p0
+    .prologue
+    .line 39
+    invoke-direct {p0}, Ljava/io/Writer;-><init>()V
 
-    move v1, p1
+    .line 31
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-object v2, p2
+    const/16 v1, 0x80
 
-    move-wide v3, p3
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    move-wide v5, p3
+    iput-object v0, p0, Lc/b;->b:Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v0 .. v6}, Lc/b;-><init>(ILjava/lang/Object;JJ)V
+    .line 40
+    iput-object p1, p0, Lc/b;->a:Ljava/lang/String;
 
+    .line 41
     return-void
 .end method
 
-.method constructor <init>(ILjava/lang/Object;JJ)V
-    .registers 9
+.method private a()V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 64
+    iget-object v0, p0, Lc/b;->b:Ljava/lang/StringBuilder;
 
-    const/4 v0, -0x1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
-    iput v0, p0, Lc/b;->c:I
+    move-result v0
 
-    if-nez p2, :cond_10
+    if-lez v0, :cond_1f
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    .line 65
+    iget-object v0, p0, Lc/b;->a:Ljava/lang/String;
 
-    const-string v1, "Position many not be null."
+    iget-object v1, p0, Lc/b;->b:Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    throw v0
+    move-result-object v1
 
-    :cond_10
-    iput-object p2, p0, Lc/b;->d:Ljava/lang/Object;
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iput p1, p0, Lc/b;->c:I
+    .line 66
+    iget-object v0, p0, Lc/b;->b:Ljava/lang/StringBuilder;
 
-    iput-wide p3, p0, Lc/b;->a:J
+    const/4 v1, 0x0
 
-    iput-wide p5, p0, Lc/b;->b:J
+    iget-object v2, p0, Lc/b;->b:Ljava/lang/StringBuilder;
 
-    return-void
-.end method
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
-.method public static a(Ljava/io/DataInput;Le/w;)Lc/b;
-    .registers 9
+    move-result v2
 
-    invoke-interface {p0}, Ljava/io/DataInput;->readLong()J
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
-    move-result-wide v5
-
-    invoke-interface {p0}, Ljava/io/DataInput;->readLong()J
-
-    move-result-wide v3
-
-    invoke-interface {p0}, Ljava/io/DataInput;->readInt()I
-
-    move-result v1
-
-    invoke-interface {p1, p0}, Le/w;->b(Ljava/io/DataInput;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    new-instance v0, Lc/b;
-
-    invoke-direct/range {v0 .. v6}, Lc/b;-><init>(ILjava/lang/Object;JJ)V
-
-    iput-wide v5, v0, Lc/b;->b:J
-
-    return-object v0
-.end method
-
-.method public static a(Lc/b;Ljava/io/DataOutput;Le/w;)V
-    .registers 5
-
-    iget-wide v0, p0, Lc/b;->b:J
-
-    invoke-interface {p1, v0, v1}, Ljava/io/DataOutput;->writeLong(J)V
-
-    iget-wide v0, p0, Lc/b;->a:J
-
-    invoke-interface {p1, v0, v1}, Ljava/io/DataOutput;->writeLong(J)V
-
-    iget v0, p0, Lc/b;->c:I
-
-    invoke-interface {p1, v0}, Ljava/io/DataOutput;->writeInt(I)V
-
-    iget-object v0, p0, Lc/b;->d:Ljava/lang/Object;
-
-    invoke-interface {p2, v0, p1}, Le/w;->a(Ljava/lang/Object;Ljava/io/DataOutput;)V
-
+    .line 68
+    :cond_1f
     return-void
 .end method
 
 
 # virtual methods
-.method public a()J
-    .registers 3
+.method public close()V
+    .registers 1
 
-    iget-wide v0, p0, Lc/b;->a:J
+    .prologue
+    .line 44
+    invoke-direct {p0}, Lc/b;->a()V
 
-    return-wide v0
+    .line 45
+    return-void
 .end method
 
-.method a(ILjava/lang/Object;J)V
+.method public flush()V
+    .registers 1
+
+    .prologue
+    .line 48
+    invoke-direct {p0}, Lc/b;->a()V
+
+    .line 49
+    return-void
+.end method
+
+.method public write([CII)V
     .registers 7
+    .parameter
+    .parameter
+    .parameter
 
-    if-nez p2, :cond_a
+    .prologue
+    .line 52
+    const/4 v0, 0x0
 
-    new-instance v0, Ljava/lang/RuntimeException;
+    :goto_1
+    if-ge v0, p3, :cond_17
 
-    const-string v1, "Position may not be null."
+    .line 53
+    add-int v1, p2, v0
 
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    aget-char v1, p1, v1
 
-    throw v0
+    .line 54
+    const/16 v2, 0xa
 
-    :cond_a
-    iput-wide p3, p0, Lc/b;->a:J
+    if-ne v1, v2, :cond_11
 
-    iput-object p2, p0, Lc/b;->d:Ljava/lang/Object;
+    .line 55
+    invoke-direct {p0}, Lc/b;->a()V
 
-    iput p1, p0, Lc/b;->c:I
+    .line 52
+    :goto_e
+    add-int/lit8 v0, v0, 0x1
 
+    goto :goto_1
+
+    .line 58
+    :cond_11
+    iget-object v2, p0, Lc/b;->b:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_e
+
+    .line 61
+    :cond_17
     return-void
-.end method
-
-.method public a(J)V
-    .registers 3
-
-    iput-wide p1, p0, Lc/b;->b:J
-
-    return-void
-.end method
-
-.method public b()J
-    .registers 3
-
-    iget-wide v0, p0, Lc/b;->b:J
-
-    return-wide v0
-.end method
-
-.method public b(J)V
-    .registers 3
-
-    iput-wide p1, p0, Lc/b;->a:J
-
-    return-void
-.end method
-
-.method public c()I
-    .registers 2
-
-    iget v0, p0, Lc/b;->c:I
-
-    return v0
-.end method
-
-.method public d()Ljava/lang/Object;
-    .registers 2
-
-    iget-object v0, p0, Lc/b;->d:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .registers 4
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "CacheResult ["
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lc/b;->d:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " databaseVersion="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lc/b;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " readingTime="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v1, p0, Lc/b;->a:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " lastSeenTime="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v1, p0, Lc/b;->b:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

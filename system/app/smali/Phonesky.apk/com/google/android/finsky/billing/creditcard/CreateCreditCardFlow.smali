@@ -1,5 +1,5 @@
 .class public Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;
-.super Lcom/google/android/finsky/billing/BillingFlow;
+.super Lcom/google/android/finsky/billing/InstrumentFlow;
 .source "CreateCreditCardFlow.java"
 
 # interfaces
@@ -11,6 +11,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$1;,
         Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$EscrowErrorListener;,
         Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$EscrowResponseListener;,
         Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
@@ -19,7 +20,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/google/android/finsky/billing/BillingFlow;",
+        "Lcom/google/android/finsky/billing/InstrumentFlow;",
         "Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener;",
         "Lcom/android/volley/Response$Listener",
         "<",
@@ -36,8 +37,6 @@
 .field private mAddCreditCardResponse:Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
 
 .field private final mAnalytics:Lcom/google/android/finsky/analytics/Analytics;
-
-.field private final mAuthenticator:Lcom/android/volley/toolbox/AndroidAuthenticator;
 
 .field private final mContext:Lcom/google/android/finsky/billing/BillingFlowContext;
 
@@ -59,7 +58,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/finsky/billing/BillingFlowContext;Lcom/google/android/finsky/billing/BillingFlowListener;Lcom/android/volley/toolbox/AndroidAuthenticator;Lcom/google/android/finsky/api/DfeApi;Lcom/google/android/finsky/analytics/Analytics;Landroid/os/Bundle;)V
+.method public constructor <init>(Lcom/google/android/finsky/billing/BillingFlowContext;Lcom/google/android/finsky/billing/BillingFlowListener;Lcom/google/android/finsky/billing/AsyncAuthenticator;Lcom/google/android/finsky/api/DfeApi;Lcom/google/android/finsky/analytics/Analytics;Landroid/os/Bundle;)V
     .registers 8
     .parameter "context"
     .parameter "listener"
@@ -69,44 +68,41 @@
     .parameter "parameters"
 
     .prologue
-    .line 135
-    invoke-direct {p0, p1, p2, p6}, Lcom/google/android/finsky/billing/BillingFlow;-><init>(Lcom/google/android/finsky/billing/BillingFlowContext;Lcom/google/android/finsky/billing/BillingFlowListener;Landroid/os/Bundle;)V
+    .line 130
+    invoke-direct {p0, p1, p2, p3, p6}, Lcom/google/android/finsky/billing/InstrumentFlow;-><init>(Lcom/google/android/finsky/billing/BillingFlowContext;Lcom/google/android/finsky/billing/BillingFlowListener;Lcom/google/android/finsky/billing/AsyncAuthenticator;Landroid/os/Bundle;)V
 
-    .line 113
+    .line 109
     sget-object v0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->INIT:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     iput-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    .line 122
+    .line 117
     sget-object v0, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->INTERNAL:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
 
     iput-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mMode:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
 
-    .line 136
+    .line 131
     iput-object p1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mContext:Lcom/google/android/finsky/billing/BillingFlowContext;
 
-    .line 137
-    iput-object p3, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAuthenticator:Lcom/android/volley/toolbox/AndroidAuthenticator;
-
-    .line 138
+    .line 132
     iput-object p4, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
-    .line 139
+    .line 133
     iput-object p5, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAnalytics:Lcom/google/android/finsky/analytics/Analytics;
 
-    .line 140
-    if-eqz p6, :cond_39
+    .line 134
+    if-eqz p6, :cond_37
 
-    .line 141
+    .line 135
     const-string v0, "ui_mode"
 
     invoke-virtual {p6, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_27
 
-    .line 142
+    .line 136
     const-string v0, "ui_mode"
 
     invoke-virtual {p6, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -119,8 +115,8 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mMode:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
 
-    .line 145
-    :cond_29
+    .line 139
+    :cond_27
     const-string v0, "referrer_url"
 
     invoke-virtual {p6, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -129,7 +125,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mReferrerUrl:Ljava/lang/String;
 
-    .line 146
+    .line 140
     const-string v0, "referrer_list_cookie"
 
     invoke-virtual {p6, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -138,8 +134,8 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mReferrerListCookie:Ljava/lang/String;
 
-    .line 148
-    :cond_39
+    .line 142
+    :cond_37
     return-void
 .end method
 
@@ -148,7 +144,7 @@
     .parameter "x0"
 
     .prologue
-    .line 58
+    .line 54
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mInstrument:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
     return-object v0
@@ -160,7 +156,7 @@
     .parameter "x1"
 
     .prologue
-    .line 58
+    .line 54
     invoke-direct {p0, p1}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->logError(Ljava/lang/String;)V
 
     return-void
@@ -172,20 +168,8 @@
     .parameter "x1"
 
     .prologue
-    .line 58
+    .line 54
     invoke-direct {p0, p1}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->showError(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method static synthetic access$300(Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;Ljava/lang/String;)V
-    .registers 2
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 58
-    invoke-direct {p0, p1}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->queueUpdateCreditCardRequest(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -194,7 +178,7 @@
     .registers 2
 
     .prologue
-    .line 231
+    .line 229
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v1
@@ -203,7 +187,7 @@
 
     move-result-object v0
 
-    .line 232
+    .line 230
     .local v0, toc:Lcom/google/android/finsky/api/model/DfeToc;
     if-eqz v0, :cond_13
 
@@ -226,56 +210,29 @@
     goto :goto_12
 .end method
 
-.method private getCheckoutTokenAndQueueUpdateRequest()V
-    .registers 5
-
-    .prologue
-    .line 293
-    iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAuthenticator:Lcom/android/volley/toolbox/AndroidAuthenticator;
-
-    new-instance v1, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$1;
-
-    invoke-direct {v1, p0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$1;-><init>(Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;)V
-
-    new-instance v2, Landroid/os/Handler;
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/volley/toolbox/AndroidAuthenticator;->getAuthTokenAsync(Lcom/android/volley/toolbox/AndroidAuthenticator$AuthTokenListener;Landroid/os/Handler;Z)V
-
-    .line 306
-    return-void
-.end method
-
 .method private hideProgress()V
     .registers 3
 
     .prologue
-    .line 274
+    .line 268
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardFragment:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
 
     if-eqz v0, :cond_a
 
-    .line 275
+    .line 269
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardFragment:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;->enableUi(Z)V
 
-    .line 277
+    .line 271
     :cond_a
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mContext:Lcom/google/android/finsky/billing/BillingFlowContext;
 
     invoke-interface {v0}, Lcom/google/android/finsky/billing/BillingFlowContext;->hideProgress()V
 
-    .line 278
+    .line 272
     return-void
 .end method
 
@@ -284,7 +241,7 @@
     .parameter "updateFopResponse"
 
     .prologue
-    .line 285
+    .line 279
     invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getResult()I
 
     move-result v0
@@ -309,7 +266,7 @@
     .parameter "updateFopResponse"
 
     .prologue
-    .line 289
+    .line 283
     invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getResult()I
 
     move-result v0
@@ -332,7 +289,7 @@
     .parameter "event"
 
     .prologue
-    .line 236
+    .line 234
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAnalytics:Lcom/google/android/finsky/analytics/Analytics;
 
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mReferrerUrl:Ljava/lang/String;
@@ -341,7 +298,7 @@
 
     invoke-interface {v0, v1, v2, p1}, Lcom/google/android/finsky/analytics/Analytics;->logPageView(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 237
+    .line 235
     return-void
 .end method
 
@@ -350,7 +307,7 @@
     .parameter "error"
 
     .prologue
-    .line 240
+    .line 238
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -371,7 +328,7 @@
 
     invoke-direct {p0, v0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->log(Ljava/lang/String;)V
 
-    .line 241
+    .line 239
     return-void
 .end method
 
@@ -381,14 +338,14 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 315
+    .line 294
     new-instance v6, Ljava/util/Random;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
-    sget-object v2, Lcom/google/android/finsky/config/G;->androidId:Lcom/google/android/finsky/config/GservicesValue;
+    sget-object v2, Lcom/google/android/finsky/api/DfeApiConfig;->androidId:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v2}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 
@@ -404,7 +361,7 @@
 
     invoke-direct {v6, v2, v3}, Ljava/util/Random;-><init>(J)V
 
-    .line 316
+    .line 295
     .local v6, rnd:Ljava/util/Random;
     invoke-virtual {v6}, Ljava/util/Random;->nextInt()I
 
@@ -416,7 +373,7 @@
 
     move-result v1
 
-    .line 317
+    .line 296
     .local v1, userId:I
     new-instance v0, Lcom/google/android/finsky/billing/creditcard/EscrowRequest;
 
@@ -434,7 +391,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/google/android/finsky/billing/creditcard/EscrowRequest;-><init>(ILjava/lang/String;Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 319
+    .line 298
     .local v0, escrowRequest:Lcom/google/android/finsky/billing/creditcard/EscrowRequest;
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
@@ -446,38 +403,13 @@
 
     invoke-virtual {v2, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
 
-    .line 321
+    .line 300
     iput-object v9, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mCreditCardNumber:Ljava/lang/String;
 
-    .line 322
+    .line 301
     iput-object v9, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mCvc:Ljava/lang/String;
 
-    .line 323
-    return-void
-.end method
-
-.method private queueUpdateCreditCardRequest(Ljava/lang/String;)V
-    .registers 4
-    .parameter "checkoutToken"
-
-    .prologue
-    .line 309
-    new-instance v0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentRequest;
-
-    invoke-direct {v0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentRequest;-><init>()V
-
-    .line 310
-    .local v0, request:Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentRequest;
-    iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mInstrument:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentRequest;->setInstrument(Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;)Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentRequest;
-
-    .line 311
-    iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
-
-    invoke-virtual {v1, v0, p1, p0, p0}, Lcom/google/android/finsky/api/DfeApi;->updateInstrument(Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentRequest;Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
-
-    .line 312
+    .line 302
     return-void
 .end method
 
@@ -488,15 +420,15 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 363
+    .line 356
     sget-object v0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->SHOWING_FORM:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     iput-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    .line 364
+    .line 357
     invoke-direct {p0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->hideProgress()V
 
-    .line 365
+    .line 358
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardFragment:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
@@ -505,7 +437,7 @@
 
     if-nez v0, :cond_1b
 
-    .line 366
+    .line 359
     const-string v0, "No fragment manager, swallowing error: %s"
 
     const/4 v1, 0x1
@@ -516,11 +448,11 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 371
+    .line 364
     :goto_1a
     return-void
 
-    .line 369
+    .line 362
     :cond_1b
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardFragment:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
 
@@ -535,12 +467,85 @@
     goto :goto_1a
 .end method
 
+.method private showErrorWithChoice(Ljava/lang/String;)V
+    .registers 6
+    .parameter "htmlMessage"
+
+    .prologue
+    .line 342
+    sget-object v1, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->SHOWING_FORM:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
+
+    iput-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
+
+    .line 343
+    invoke-direct {p0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->hideProgress()V
+
+    .line 344
+    iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardFragment:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
+
+    move-result-object v1
+
+    if-nez v1, :cond_1b
+
+    .line 345
+    const-string v1, "No fragment manager, swallowing error: %s"
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    aput-object p1, v2, v3
+
+    invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 353
+    :goto_1a
+    return-void
+
+    .line 348
+    :cond_1b
+    const v1, 0x7f0700d9
+
+    const v2, 0x7f0700d8
+
+    invoke-static {p1, v1, v2}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->newInstance(Ljava/lang/String;II)Lcom/google/android/finsky/activities/SimpleAlertDialog;
+
+    move-result-object v0
+
+    .line 350
+    .local v0, sad:Lcom/google/android/finsky/activities/SimpleAlertDialog;
+    iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardFragment:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
+
+    const/4 v2, 0x2
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->setCallback(Landroid/support/v4/app/Fragment;ILandroid/os/Bundle;)Lcom/google/android/finsky/activities/SimpleAlertDialog;
+
+    .line 352
+    iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardFragment:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
+
+    move-result-object v1
+
+    const-string v2, "error_with_choice"
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
+
+    goto :goto_1a
+.end method
+
 .method private showFormErrors(Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;)V
     .registers 4
     .parameter "response"
 
     .prologue
-    .line 281
+    .line 275
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardFragment:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
 
     invoke-virtual {p1}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getErrorInputFieldList()Ljava/util/List;
@@ -549,7 +554,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;->displayErrors(Ljava/util/List;)V
 
-    .line 282
+    .line 276
     return-void
 .end method
 
@@ -557,27 +562,27 @@
     .registers 3
 
     .prologue
-    .line 267
+    .line 261
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardFragment:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
 
     if-eqz v0, :cond_a
 
-    .line 268
+    .line 262
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardFragment:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;->enableUi(Z)V
 
-    .line 270
+    .line 264
     :cond_a
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mContext:Lcom/google/android/finsky/billing/BillingFlowContext;
 
-    const v1, 0x7f070051
+    const v1, 0x7f07004b
 
     invoke-interface {v0, v1}, Lcom/google/android/finsky/billing/BillingFlowContext;->showProgress(I)V
 
-    .line 271
+    .line 265
     return-void
 .end method
 
@@ -587,25 +592,25 @@
     .registers 3
 
     .prologue
-    .line 245
+    .line 243
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     sget-object v1, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->SHOWING_FORM:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     if-eq v0, v1, :cond_c
 
-    .line 246
+    .line 244
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
 
-    .line 248
+    .line 246
     :cond_c
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->cancel()V
 
-    .line 249
+    .line 247
     return-void
 .end method
 
@@ -613,7 +618,7 @@
     .registers 3
 
     .prologue
-    .line 263
+    .line 257
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     sget-object v1, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->SHOWING_FORM:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
@@ -632,43 +637,18 @@
 .end method
 
 .method public cancel()V
-    .registers 5
+    .registers 2
 
     .prologue
+    .line 251
+    const-string v0, "addCreditCardCancel"
+
+    invoke-direct {p0, v0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->log(Ljava/lang/String;)V
+
+    .line 252
+    invoke-super {p0}, Lcom/google/android/finsky/billing/InstrumentFlow;->cancel()V
+
     .line 253
-    iget-object v2, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
-
-    invoke-virtual {v2}, Lcom/google/android/finsky/api/DfeApi;->getAccountName()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 254
-    .local v0, accountName:Ljava/lang/String;
-    invoke-static {v0}, Lcom/google/android/finsky/billing/BillingPreferences;->getLastAddCreditcardCanceledMillis(Ljava/lang/String;)Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    move-result-object v1
-
-    .line 256
-    .local v1, lastCanceled:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;,"Lcom/google/android/finsky/config/PreferenceFile$SharedPreference<Ljava/lang/Long;>;"
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->put(Ljava/lang/Object;)V
-
-    .line 257
-    const-string v2, "addCreditCardCancel"
-
-    invoke-direct {p0, v2}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->log(Ljava/lang/String;)V
-
-    .line 258
-    invoke-super {p0}, Lcom/google/android/finsky/billing/BillingFlow;->cancel()V
-
-    .line 259
     return-void
 .end method
 
@@ -680,45 +660,45 @@
     .parameter "instrument"
 
     .prologue
-    .line 328
+    .line 307
     sget-object v0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;->SUCCESS:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;
 
     if-ne p1, v0, :cond_13
 
-    .line 329
+    .line 308
     iput-object p2, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mCreditCardNumber:Ljava/lang/String;
 
-    .line 330
+    .line 309
     iput-object p3, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mCvc:Ljava/lang/String;
 
-    .line 331
+    .line 310
     iput-object p4, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mInstrument:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
-    .line 332
+    .line 311
     const-string v0, "addCreditCardConfirm"
 
     invoke-direct {p0, v0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->log(Ljava/lang/String;)V
 
-    .line 333
+    .line 312
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->performNext()V
 
-    .line 343
+    .line 322
     :cond_12
     :goto_12
     return-void
 
-    .line 334
+    .line 313
     :cond_13
     sget-object v0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;->CANCELED:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;
 
     if-ne p1, v0, :cond_27
 
-    .line 335
+    .line 314
     sget-boolean v0, Lcom/google/android/finsky/utils/FinskyLog;->DEBUG:Z
 
     if-eqz v0, :cond_23
 
-    .line 336
+    .line 315
     const-string v0, "Add credit card canceled."
 
     const/4 v1, 0x0
@@ -727,29 +707,29 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 338
+    .line 317
     :cond_23
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->cancel()V
 
     goto :goto_12
 
-    .line 339
+    .line 318
     :cond_27
     sget-object v0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;->FAILURE:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener$Result;
 
     if-ne p1, v0, :cond_12
 
-    .line 340
+    .line 319
     const-string v0, "UNKNOWN"
 
     invoke-direct {p0, v0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->logError(Ljava/lang/String;)V
 
-    .line 341
+    .line 320
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
 
-    const v1, 0x7f070067
+    const v1, 0x7f070061
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/FinskyApp;->getString(I)Ljava/lang/String;
 
@@ -765,7 +745,7 @@
     .parameter "error"
 
     .prologue
-    .line 357
+    .line 336
     const-string v0, "Error received: %s"
 
     const/4 v1, 0x1
@@ -778,14 +758,14 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 358
+    .line 337
     invoke-static {p1}, Lcom/google/android/finsky/api/DfeUtils;->getLegacyErrorCode(Lcom/android/volley/VolleyError;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->logError(Ljava/lang/String;)V
 
-    .line 359
+    .line 338
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v0
@@ -796,7 +776,7 @@
 
     invoke-direct {p0, v0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->showError(Ljava/lang/String;)V
 
-    .line 360
+    .line 339
     return-void
 .end method
 
@@ -804,12 +784,12 @@
     .registers 2
 
     .prologue
-    .line 352
+    .line 331
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mBillingFlowContext:Lcom/google/android/finsky/billing/BillingFlowContext;
 
     invoke-interface {v0}, Lcom/google/android/finsky/billing/BillingFlowContext;->hideProgress()V
 
-    .line 353
+    .line 332
     return-void
 .end method
 
@@ -817,14 +797,14 @@
     .registers 3
 
     .prologue
-    .line 347
+    .line 326
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mBillingFlowContext:Lcom/google/android/finsky/billing/BillingFlowContext;
 
     const/high16 v1, 0x7f07
 
     invoke-interface {v0, v1}, Lcom/google/android/finsky/billing/BillingFlowContext;->showProgress(I)V
 
-    .line 348
+    .line 327
     return-void
 .end method
 
@@ -833,13 +813,13 @@
     .parameter "response"
 
     .prologue
-    .line 375
+    .line 368
     iput-object p1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardResponse:Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
 
-    .line 376
+    .line 369
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->performNext()V
 
-    .line 377
+    .line 370
     return-void
 .end method
 
@@ -848,7 +828,7 @@
     .parameter "x0"
 
     .prologue
-    .line 58
+    .line 54
     check-cast p1, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
 
     .end local p1
@@ -858,24 +838,28 @@
 .end method
 
 .method protected performNext()V
-    .registers 6
+    .registers 7
 
     .prologue
-    const v3, 0x7f070067
+    const v5, 0x7f070061
 
-    .line 191
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    .line 187
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     sget-object v2, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->INIT:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    if-ne v1, v2, :cond_38
+    if-ne v1, v2, :cond_39
 
-    .line 192
+    .line 188
     sget-object v1, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->SHOWING_FORM:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     iput-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    .line 193
+    .line 189
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mParameters:Landroid/os/Bundle;
 
     const-string v2, "cardholder_name"
@@ -884,13 +868,13 @@
 
     move-result-object v0
 
-    .line 194
+    .line 190
     .local v0, cardholderName:Ljava/lang/String;
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mMode:Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;
 
     iget-object v2, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/api/DfeApi;->getAccountName()Ljava/lang/String;
+    invoke-interface {v2}, Lcom/google/android/finsky/api/DfeApi;->getAccountName()Ljava/lang/String;
 
     move-result-object v2
 
@@ -904,111 +888,107 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardFragment:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
 
-    .line 196
+    .line 192
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardFragment:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
 
     invoke-virtual {v1, p0}, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;->setOnResultListener(Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener;)V
 
-    .line 197
+    .line 193
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mContext:Lcom/google/android/finsky/billing/BillingFlowContext;
 
     iget-object v2, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardFragment:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
 
-    const v3, 0x7f070042
-
-    const/4 v4, 0x1
+    const v3, 0x7f07003f
 
     invoke-interface {v1, v2, v3, v4}, Lcom/google/android/finsky/billing/BillingFlowContext;->showFragment(Landroid/support/v4/app/Fragment;IZ)V
 
-    .line 228
+    .line 226
     .end local v0           #cardholderName:Ljava/lang/String;
-    :cond_37
-    :goto_37
+    :cond_38
+    :goto_38
     return-void
 
-    .line 198
-    :cond_38
+    .line 194
+    :cond_39
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     sget-object v2, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->SHOWING_FORM:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    if-ne v1, v2, :cond_49
+    if-ne v1, v2, :cond_4a
 
-    .line 199
+    .line 195
     sget-object v1, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->ESCROWING_CREDENTIALS:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     iput-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    .line 200
+    .line 196
     invoke-direct {p0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->showProgress()V
 
-    .line 201
+    .line 197
     invoke-direct {p0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->queueEscrowCredentialsRequest()V
 
-    goto :goto_37
+    goto :goto_38
 
-    .line 202
-    :cond_49
+    .line 198
+    :cond_4a
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     sget-object v2, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->ESCROWING_CREDENTIALS:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    if-ne v1, v2, :cond_57
+    if-ne v1, v2, :cond_58
 
-    .line 203
+    .line 199
     sget-object v1, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->SENDING_REQUEST:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     iput-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    .line 204
-    invoke-direct {p0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->getCheckoutTokenAndQueueUpdateRequest()V
+    .line 200
+    invoke-virtual {p0, v3}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->getAuthTokenAndContinue(Z)V
 
-    goto :goto_37
+    goto :goto_38
 
-    .line 205
-    :cond_57
+    .line 201
+    :cond_58
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     sget-object v2, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->SENDING_REQUEST:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    if-ne v1, v2, :cond_37
+    if-ne v1, v2, :cond_38
 
-    .line 206
+    .line 202
     invoke-direct {p0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->hideProgress()V
 
-    .line 207
+    .line 203
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardResponse:Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
 
     if-nez v1, :cond_7d
 
-    .line 208
+    .line 204
     const-string v1, "AddCreditCard Response is null."
 
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v2, v3, [Ljava/lang/Object;
 
     invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 209
+    .line 205
     const-string v1, "UNKNOWN"
 
     invoke-direct {p0, v1}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->logError(Ljava/lang/String;)V
 
-    .line 210
+    .line 206
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v1
 
-    invoke-virtual {v1, v3}, Lcom/google/android/finsky/FinskyApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v5}, Lcom/google/android/finsky/FinskyApp;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-direct {p0, v1}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->showError(Ljava/lang/String;)V
 
-    goto :goto_37
+    goto :goto_38
 
-    .line 211
+    .line 207
     :cond_7d
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardResponse:Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
 
@@ -1016,89 +996,131 @@
 
     move-result v1
 
-    if-eqz v1, :cond_92
+    if-eqz v1, :cond_94
 
-    .line 212
+    .line 208
     const-string v1, "addCreditCardSuccess"
 
     invoke-direct {p0, v1}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->log(Ljava/lang/String;)V
 
-    .line 213
+    .line 209
     sget-object v1, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->DONE:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     iput-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    .line 214
-    invoke-virtual {p0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->finish()V
+    .line 210
+    iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardResponse:Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
 
-    goto :goto_37
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->finishWithUpdateInstrumentResponse(Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;)V
 
-    .line 215
-    :cond_92
+    goto :goto_38
+
+    .line 211
+    :cond_94
+    iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardResponse:Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getCheckoutTokenRequired()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_a0
+
+    .line 212
+    invoke-virtual {p0, v4}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->getAuthTokenAndContinue(Z)V
+
+    goto :goto_38
+
+    .line 213
+    :cond_a0
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardResponse:Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
 
     invoke-direct {p0, v1}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->isRetryableError(Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_a9
+    if-eqz v1, :cond_b7
 
-    .line 216
+    .line 214
     const-string v1, "INVALID_INPUT"
 
     invoke-direct {p0, v1}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->logError(Ljava/lang/String;)V
 
-    .line 217
+    .line 215
     sget-object v1, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->SHOWING_FORM:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     iput-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    .line 218
+    .line 216
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardResponse:Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
 
     invoke-direct {p0, v1}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->showFormErrors(Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;)V
 
-    goto :goto_37
+    goto :goto_38
 
-    .line 220
-    :cond_a9
+    .line 218
+    :cond_b7
     const-string v1, "UNKNOWN"
 
     invoke-direct {p0, v1}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->logError(Ljava/lang/String;)V
 
-    .line 221
+    .line 219
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardResponse:Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
 
     invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->hasUserMessageHtml()Z
 
     move-result v1
 
-    if-eqz v1, :cond_c1
+    if-eqz v1, :cond_cf
 
-    .line 222
+    .line 220
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardResponse:Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;
 
     invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentResponse;->getUserMessageHtml()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-direct {p0, v1}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->showError(Ljava/lang/String;)V
+    invoke-direct {p0, v1}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->showErrorWithChoice(Ljava/lang/String;)V
 
-    goto/16 :goto_37
+    goto/16 :goto_38
 
-    .line 224
-    :cond_c1
+    .line 222
+    :cond_cf
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v1
 
-    invoke-virtual {v1, v3}, Lcom/google/android/finsky/FinskyApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v5}, Lcom/google/android/finsky/FinskyApp;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-direct {p0, v1}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->showError(Ljava/lang/String;)V
 
-    goto/16 :goto_37
+    goto/16 :goto_38
+.end method
+
+.method public performRequestWithToken(Ljava/lang/String;)V
+    .registers 4
+    .parameter "authToken"
+
+    .prologue
+    .line 288
+    new-instance v0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentRequest;
+
+    invoke-direct {v0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentRequest;-><init>()V
+
+    .line 289
+    .local v0, request:Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentRequest;
+    iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mInstrument:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentRequest;->setInstrument(Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;)Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentRequest;
+
+    .line 290
+    iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
+
+    invoke-interface {v1, v0, p1, p0, p0}, Lcom/google/android/finsky/api/DfeApi;->updateInstrument(Lcom/google/android/finsky/remoting/protos/BuyInstruments$UpdateInstrumentRequest;Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)Lcom/android/volley/Request;
+
+    .line 291
+    return-void
 .end method
 
 .method public resumeFromSavedState(Landroid/os/Bundle;)V
@@ -1106,22 +1128,25 @@
     .parameter "bundle"
 
     .prologue
-    .line 158
+    .line 152
+    invoke-super {p0, p1}, Lcom/google/android/finsky/billing/InstrumentFlow;->resumeFromSavedState(Landroid/os/Bundle;)V
+
+    .line 153
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     sget-object v1, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->INIT:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    if-eq v0, v1, :cond_c
+    if-eq v0, v1, :cond_f
 
-    .line 159
+    .line 154
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
 
-    .line 161
-    :cond_c
+    .line 156
+    :cond_f
     const-string v0, "state"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -1134,30 +1159,30 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    .line 162
+    .line 157
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
     sget-object v1, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;->SHOWING_FORM:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
 
-    if-eq v0, v1, :cond_24
+    if-eq v0, v1, :cond_27
 
-    .line 165
+    .line 160
     invoke-direct {p0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->hideProgress()V
 
-    .line 166
+    .line 161
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->finish()V
 
-    .line 168
-    :cond_24
+    .line 163
+    :cond_27
     const-string v0, "fragment"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_40
 
-    .line 169
+    .line 164
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mContext:Lcom/google/android/finsky/billing/BillingFlowContext;
 
     const-string v1, "fragment"
@@ -1170,13 +1195,13 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardFragment:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
 
-    .line 171
+    .line 166
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardFragment:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;->setOnResultListener(Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$AddCreditCardResultListener;)V
 
-    .line 173
-    :cond_3d
+    .line 168
+    :cond_40
     return-void
 .end method
 
@@ -1185,7 +1210,10 @@
     .parameter "bundle"
 
     .prologue
-    .line 177
+    .line 172
+    invoke-super {p0, p1}, Lcom/google/android/finsky/billing/InstrumentFlow;->saveState(Landroid/os/Bundle;)V
+
+    .line 173
     const-string v0, "state"
 
     iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mState:Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow$State;
@@ -1196,12 +1224,12 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 178
+    .line 174
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mAddCreditCardFragment:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1b
 
-    .line 179
+    .line 175
     iget-object v0, p0, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->mContext:Lcom/google/android/finsky/billing/BillingFlowContext;
 
     const-string v1, "fragment"
@@ -1210,8 +1238,8 @@
 
     invoke-interface {v0, p1, v1, v2}, Lcom/google/android/finsky/billing/BillingFlowContext;->persistFragment(Landroid/os/Bundle;Ljava/lang/String;Landroid/support/v4/app/Fragment;)V
 
-    .line 181
-    :cond_18
+    .line 177
+    :cond_1b
     return-void
 .end method
 
@@ -1219,14 +1247,14 @@
     .registers 2
 
     .prologue
-    .line 152
+    .line 146
     const-string v0, "addCreditCard"
 
     invoke-direct {p0, v0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->log(Ljava/lang/String;)V
 
-    .line 153
+    .line 147
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/creditcard/CreateCreditCardFlow;->performNext()V
 
-    .line 154
+    .line 148
     return-void
 .end method

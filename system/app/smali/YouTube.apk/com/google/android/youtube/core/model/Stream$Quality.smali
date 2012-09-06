@@ -8,6 +8,8 @@
 
 .field public static final enum DOWNLOAD_720P:Lcom/google/android/youtube/core/model/Stream$Quality;
 
+.field public static final enum STREAM_1080P:Lcom/google/android/youtube/core/model/Stream$Quality;
+
 .field public static final enum STREAM_144P:Lcom/google/android/youtube/core/model/Stream$Quality;
 
 .field public static final enum STREAM_240P:Lcom/google/android/youtube/core/model/Stream$Quality;
@@ -125,38 +127,49 @@
     .line 35
     new-instance v0, Lcom/google/android/youtube/core/model/Stream$Quality;
 
-    const-string v1, "DOWNLOAD_720P"
+    const-string v1, "STREAM_1080P"
 
     const/16 v2, 0x8
 
     invoke-direct {v0, v1, v2}, Lcom/google/android/youtube/core/model/Stream$Quality;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/android/youtube/core/model/Stream$Quality;->DOWNLOAD_720P:Lcom/google/android/youtube/core/model/Stream$Quality;
+    sput-object v0, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_1080P:Lcom/google/android/youtube/core/model/Stream$Quality;
 
     .line 36
     new-instance v0, Lcom/google/android/youtube/core/model/Stream$Quality;
 
-    const-string v1, "STREAM_HLS"
+    const-string v1, "DOWNLOAD_720P"
 
     const/16 v2, 0x9
 
     invoke-direct {v0, v1, v2}, Lcom/google/android/youtube/core/model/Stream$Quality;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_HLS:Lcom/google/android/youtube/core/model/Stream$Quality;
+    sput-object v0, Lcom/google/android/youtube/core/model/Stream$Quality;->DOWNLOAD_720P:Lcom/google/android/youtube/core/model/Stream$Quality;
 
     .line 37
     new-instance v0, Lcom/google/android/youtube/core/model/Stream$Quality;
 
-    const-string v1, "UNKNOWN"
+    const-string v1, "STREAM_HLS"
 
     const/16 v2, 0xa
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/youtube/core/model/Stream$Quality;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_HLS:Lcom/google/android/youtube/core/model/Stream$Quality;
+
+    .line 38
+    new-instance v0, Lcom/google/android/youtube/core/model/Stream$Quality;
+
+    const-string v1, "UNKNOWN"
+
+    const/16 v2, 0xb
 
     invoke-direct {v0, v1, v2}, Lcom/google/android/youtube/core/model/Stream$Quality;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/android/youtube/core/model/Stream$Quality;->UNKNOWN:Lcom/google/android/youtube/core/model/Stream$Quality;
 
     .line 26
-    const/16 v0, 0xb
+    const/16 v0, 0xc
 
     new-array v0, v0, [Lcom/google/android/youtube/core/model/Stream$Quality;
 
@@ -200,17 +213,23 @@
 
     const/16 v1, 0x8
 
-    sget-object v2, Lcom/google/android/youtube/core/model/Stream$Quality;->DOWNLOAD_720P:Lcom/google/android/youtube/core/model/Stream$Quality;
+    sget-object v2, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_1080P:Lcom/google/android/youtube/core/model/Stream$Quality;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9
 
-    sget-object v2, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_HLS:Lcom/google/android/youtube/core/model/Stream$Quality;
+    sget-object v2, Lcom/google/android/youtube/core/model/Stream$Quality;->DOWNLOAD_720P:Lcom/google/android/youtube/core/model/Stream$Quality;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa
+
+    sget-object v2, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_HLS:Lcom/google/android/youtube/core/model/Stream$Quality;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xb
 
     sget-object v2, Lcom/google/android/youtube/core/model/Stream$Quality;->UNKNOWN:Lcom/google/android/youtube/core/model/Stream$Quality;
 

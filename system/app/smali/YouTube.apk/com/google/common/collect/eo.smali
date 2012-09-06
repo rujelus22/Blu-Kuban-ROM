@@ -1,74 +1,57 @@
 .class final Lcom/google/common/collect/eo;
-.super Lcom/google/common/base/j;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/collect/em;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
-.field final a:Lcom/google/common/collect/ee;
+.field final synthetic a:Lcom/google/common/collect/en;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Object;Lcom/google/common/collect/ee;)V
-    .registers 4
-    .parameter
+.method constructor <init>(Lcom/google/common/collect/en;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 1054
-    sget-object v0, Lcom/google/common/collect/ed;->a:Lcom/google/common/base/d;
+    .line 1297
+    iput-object p1, p0, Lcom/google/common/collect/eo;->a:Lcom/google/common/collect/en;
 
-    invoke-direct {p0, p1, v0}, Lcom/google/common/base/j;-><init>(Ljava/lang/Object;Lcom/google/common/base/d;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1055
-    iput-object p2, p0, Lcom/google/common/collect/eo;->a:Lcom/google/common/collect/ee;
-
-    .line 1056
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/common/collect/ee;)Lcom/google/common/collect/em;
-    .registers 4
+.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .registers 6
+    .parameter
     .parameter
 
     .prologue
-    .line 1064
-    new-instance v0, Lcom/google/common/collect/eo;
+    .line 1297
+    check-cast p1, Lcom/google/common/collect/jh;
 
-    invoke-virtual {p0}, Lcom/google/common/collect/eo;->get()Ljava/lang/Object;
+    check-cast p2, Lcom/google/common/collect/jh;
+
+    iget-object v0, p0, Lcom/google/common/collect/eo;->a:Lcom/google/common/collect/en;
+
+    iget-object v0, v0, Lcom/google/common/collect/en;->b:Ljava/util/Comparator;
+
+    invoke-interface {p1}, Lcom/google/common/collect/jh;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-direct {v0, v1, p1}, Lcom/google/common/collect/eo;-><init>(Ljava/lang/Object;Lcom/google/common/collect/ee;)V
+    invoke-interface {p2}, Lcom/google/common/collect/jh;->a()Ljava/lang/Object;
 
-    return-object v0
-.end method
+    move-result-object v2
 
-.method public final a()V
-    .registers 2
+    invoke-interface {v0, v1, v2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
-    .prologue
-    .line 1059
-    iget-object v0, p0, Lcom/google/common/collect/eo;->a:Lcom/google/common/collect/ee;
+    move-result v0
 
-    invoke-interface {v0}, Lcom/google/common/collect/ee;->d()V
-
-    .line 1060
-    return-void
-.end method
-
-.method public final n_()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 1068
-    invoke-virtual {p0}, Lcom/google/common/collect/eo;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
+    return v0
 .end method

@@ -1,88 +1,59 @@
-.class public final enum Lcom/google/googlenav/ui/view/android/bB;
-.super Ljava/lang/Enum;
+.class public Lcom/google/googlenav/ui/view/android/bb;
+.super Landroid/app/Dialog;
+.source "SourceFile"
 
 
 # static fields
-.field public static final enum a:Lcom/google/googlenav/ui/view/android/bB;
-
-.field public static final enum b:Lcom/google/googlenav/ui/view/android/bB;
-
-.field private static final synthetic c:[Lcom/google/googlenav/ui/view/android/bB;
+.field public static l:Lcom/google/googlenav/ui/android/aC;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Lcom/google/googlenav/ui/view/android/bB;
-
-    const-string v1, "WAITING"
-
-    invoke-direct {v0, v1, v2}, Lcom/google/googlenav/ui/view/android/bB;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/googlenav/ui/view/android/bB;->a:Lcom/google/googlenav/ui/view/android/bB;
-
-    new-instance v0, Lcom/google/googlenav/ui/view/android/bB;
-
-    const-string v1, "ERROR"
-
-    invoke-direct {v0, v1, v3}, Lcom/google/googlenav/ui/view/android/bB;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/googlenav/ui/view/android/bB;->b:Lcom/google/googlenav/ui/view/android/bB;
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Lcom/google/googlenav/ui/view/android/bB;
-
-    sget-object v1, Lcom/google/googlenav/ui/view/android/bB;->a:Lcom/google/googlenav/ui/view/android/bB;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/googlenav/ui/view/android/bB;->b:Lcom/google/googlenav/ui/view/android/bB;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lcom/google/googlenav/ui/view/android/bB;->c:[Lcom/google/googlenav/ui/view/android/bB;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lcom/google/googlenav/ui/view/android/bB;
-    .registers 2
-
-    const-class v0, Lcom/google/googlenav/ui/view/android/bB;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlenav/ui/view/android/bB;
-
-    return-object v0
-.end method
-
-.method public static values()[Lcom/google/googlenav/ui/view/android/bB;
     .registers 1
 
-    sget-object v0, Lcom/google/googlenav/ui/view/android/bB;->c:[Lcom/google/googlenav/ui/view/android/bB;
+    .prologue
+    .line 34
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, [Lcom/google/googlenav/ui/view/android/bB;->clone()Ljava/lang/Object;
+    sput-object v0, Lcom/google/googlenav/ui/view/android/bb;->l:Lcom/google/googlenav/ui/android/aC;
 
-    move-result-object v0
+    .line 40
+    return-void
+.end method
 
-    check-cast v0, [Lcom/google/googlenav/ui/view/android/bB;
+.method public constructor <init>(Landroid/content/Context;I)V
+    .registers 3
+    .parameter
+    .parameter
 
-    return-object v0
+    .prologue
+    .line 47
+    invoke-direct {p0, p1, p2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
+
+    .line 48
+    return-void
+.end method
+
+
+# virtual methods
+.method public dismiss()V
+    .registers 1
+
+    .prologue
+    .line 63
+    invoke-super {p0}, Landroid/app/Dialog;->dismiss()V
+
+    .line 70
+    return-void
+.end method
+
+.method public show()V
+    .registers 1
+
+    .prologue
+    .line 52
+    invoke-super {p0}, Landroid/app/Dialog;->show()V
+
+    .line 59
+    return-void
 .end method

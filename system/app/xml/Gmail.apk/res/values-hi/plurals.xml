@@ -53,40 +53,40 @@
         <item quantity="one">%1$d वार्तालाप पर कार्रवाई की प्रतीक्षा कर रहा है.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> को म्‍यूट कि‍या गया.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> को म्‍यूट किया गया.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को म्‍यूट कि‍या गया.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को म्‍यूट किया गया.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> को स्पैम के रूप में रिपोर्ट किया गया.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> को स्पैम के रूप में रिपोर्ट किया गया.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को स्पैम के रूप में रिपोर्ट किया गया.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को स्पैम के रूप में रिपोर्ट किया गया.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> को संग्रहीत कि‍या गया.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> को संग्रहीत कि‍या गया.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को संग्रहीत कि‍या गया.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को संग्रहीत कि‍या गया.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> को इनबॉक्स में ले जाया गया.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> को इनबॉक्स में ले जाया गया.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को इनबॉक्स में ले जाया गया.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को इनबॉक्स में ले जाया गया.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> को हटा दिया गया.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> को हटा दिया गया.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को हटा दिया गया.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को हटा दिया गया.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>&amp;lt;/b> को महत्‍वपूर्ण चि‍ह्नि‍त कि‍या गया.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> को महत्‍वपूर्ण चि‍ह्नि‍त कि‍या गया.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>&amp;amp;amp;lt;/b> को महत्‍वपूर्ण चि‍ह्नि‍त कि‍या गया.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को महत्‍वपूर्ण चि‍ह्नि‍त कि‍या गया.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> को महत्‍वपूर्ण नहीं चि‍ह्नि‍त कि‍या गया.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> को महत्‍वपूर्ण नहीं चि‍ह्नि‍त किया गया.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को महत्‍वपूर्ण नहीं चि‍ह्नि‍त कि‍या गया.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को महत्‍वपूर्ण नहीं चि‍ह्नि‍त किया गया.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> को पढ़ा गया चि‍ह्नि‍त कि‍या गया.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> को पढ़ा गया चि‍ह्नि‍त कि‍या गया</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को पढ़ा गया चि‍ह्नि‍त कि‍या गया.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को पढ़ा गया चि‍ह्नि‍त कि‍या गया</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> को बिना पढ़ा गया चिह्नित किया गया.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> को बिना पढ़ा गया चिह्नित किया गया.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को बिना पढ़ा गया चिह्नित किया गया.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> को बिना पढ़ा गया चिह्नित किया गया.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">लेबल बदले गए.</item>

@@ -124,10 +124,10 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 135
+    .line 148
     sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    .line 136
+    .line 149
     .local v1, config:Landroid/graphics/Bitmap$Config;
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -141,19 +141,19 @@
 
     move-result-object v4
 
-    .line 137
+    .line 150
     .local v4, result:Landroid/graphics/Bitmap;
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0, v4}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 139
+    .line 152
     .local v0, canvas:Landroid/graphics/Canvas;
     new-instance v3, Landroid/graphics/Paint;
 
     invoke-direct {v3}, Landroid/graphics/Paint;-><init>()V
 
-    .line 140
+    .line 153
     .local v3, paint:Landroid/graphics/Paint;
     new-instance v2, Landroid/graphics/LightingColorFilter;
 
@@ -163,38 +163,36 @@
 
     invoke-direct {v2, v5, v6}, Landroid/graphics/LightingColorFilter;-><init>(II)V
 
-    .line 141
+    .line 154
     .local v2, lcf:Landroid/graphics/LightingColorFilter;
     invoke-virtual {v3, v2}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 143
+    .line 156
     invoke-virtual {v0, p0, v7, v7, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 144
+    .line 157
     return-object v4
 .end method
 
 .method private setBitmap(Landroid/graphics/Bitmap;)V
-    .registers 7
+    .registers 5
     .parameter "response"
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    .line 95
+    .line 99
     iget-boolean v1, p0, Lcom/google/android/finsky/layout/DecoratedTextView;->mUseWhitescale:Z
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_9
 
-    .line 96
+    .line 100
     invoke-static {p1}, Lcom/google/android/finsky/layout/DecoratedTextView;->getWhitescale(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
-    .line 98
-    :cond_a
+    .line 102
+    :cond_9
     new-instance v0, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/DecoratedTextView;->getResources()Landroid/content/res/Resources;
@@ -203,49 +201,88 @@
 
     invoke-direct {v0, v1, p1}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
 
-    .line 99
+    .line 103
     .local v0, bitmapDrawable:Landroid/graphics/drawable/BitmapDrawable;
-    invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getIntrinsicWidth()I
-
-    move-result v1
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getIntrinsicHeight()I
-
-    move-result v2
-
-    invoke-virtual {v0, v4, v4, v1, v2}, Landroid/graphics/drawable/BitmapDrawable;->setBounds(IIII)V
-
-    .line 101
     iget v1, p0, Lcom/google/android/finsky/layout/DecoratedTextView;->mDecorationPosition:I
 
-    packed-switch v1, :pswitch_data_2c
+    packed-switch v1, :pswitch_data_20
 
-    .line 109
-    :goto_23
+    .line 111
+    :goto_17
     return-void
 
+    .line 105
+    :pswitch_18
+    invoke-virtual {p0, v0, v2, v2, v2}, Lcom/google/android/finsky/layout/DecoratedTextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+
+    goto :goto_17
+
+    .line 108
+    :pswitch_1c
+    invoke-virtual {p0, v2, v2, v0, v2}, Lcom/google/android/finsky/layout/DecoratedTextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+
+    goto :goto_17
+
     .line 103
-    :pswitch_24
-    invoke-virtual {p0, v0, v3, v3, v3}, Lcom/google/android/finsky/layout/DecoratedTextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    goto :goto_23
-
-    .line 106
-    :pswitch_28
-    invoke-virtual {p0, v3, v3, v0, v3}, Lcom/google/android/finsky/layout/DecoratedTextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    goto :goto_23
-
-    .line 101
-    :pswitch_data_2c
+    :pswitch_data_20
     .packed-switch 0x1
-        :pswitch_24
-        :pswitch_28
+        :pswitch_18
+        :pswitch_1c
+    .end packed-switch
+.end method
+
+.method private setDrawable(I)V
+    .registers 4
+    .parameter "drawable"
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 114
+    iget v0, p0, Lcom/google/android/finsky/layout/DecoratedTextView;->mDecorationPosition:I
+
+    packed-switch v0, :pswitch_data_10
+
+    .line 122
+    :goto_6
+    return-void
+
+    .line 116
+    :pswitch_7
+    invoke-virtual {p0, p1, v1, v1, v1}, Lcom/google/android/finsky/layout/DecoratedTextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+
+    goto :goto_6
+
+    .line 119
+    :pswitch_b
+    invoke-virtual {p0, v1, v1, p1, v1}, Lcom/google/android/finsky/layout/DecoratedTextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+
+    goto :goto_6
+
+    .line 114
+    nop
+
+    :pswitch_data_10
+    .packed-switch 0x1
+        :pswitch_7
+        :pswitch_b
     .end packed-switch
 .end method
 
 
 # virtual methods
+.method public loadDecoration(I)V
+    .registers 2
+    .parameter "decorationResourceId"
+
+    .prologue
+    .line 66
+    invoke-direct {p0, p1}, Lcom/google/android/finsky/layout/DecoratedTextView;->setDrawable(I)V
+
+    .line 67
+    return-void
+.end method
+
 .method public loadDecoration(Lcom/google/android/finsky/utils/BitmapLoader;Ljava/lang/String;I)V
     .registers 12
     .parameter "bitmapLoader"
@@ -295,15 +332,15 @@
     .prologue
     const/high16 v1, 0x3f80
 
-    .line 127
+    .line 140
     invoke-super {p0, p1}, Landroid/widget/TextView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 129
+    .line 142
     iget-boolean v0, p0, Lcom/google/android/finsky/layout/DecoratedTextView;->mDrawBorder:Z
 
     if-eqz v0, :cond_1e
 
-    .line 130
+    .line 143
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/DecoratedTextView;->getWidth()I
 
     move-result v0
@@ -328,7 +365,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 132
+    .line 145
     :cond_1e
     return-void
 .end method
@@ -338,20 +375,20 @@
     .parameter "bitmapContainer"
 
     .prologue
-    .line 73
+    .line 77
     invoke-virtual {p1}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 75
+    .line 79
     .local v0, response:Landroid/graphics/Bitmap;
     if-nez v0, :cond_7
 
-    .line 80
+    .line 84
     :goto_6
     return-void
 
-    .line 79
+    .line 83
     :cond_7
     invoke-direct {p0, v0}, Lcom/google/android/finsky/layout/DecoratedTextView;->setBitmap(Landroid/graphics/Bitmap;)V
 
@@ -378,15 +415,15 @@
     .parameter "drawBorder"
 
     .prologue
-    .line 112
+    .line 125
     iget-boolean v1, p0, Lcom/google/android/finsky/layout/DecoratedTextView;->mUseWhitescale:Z
 
     if-eqz v1, :cond_7
 
-    .line 113
-    const p1, 0x7f0a0003
+    .line 126
+    const p1, 0x7f0a0002
 
-    .line 115
+    .line 128
     :cond_7
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/DecoratedTextView;->getResources()Landroid/content/res/Resources;
 
@@ -396,28 +433,28 @@
 
     move-result v0
 
-    .line 117
+    .line 130
     .local v0, color:I
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/DecoratedTextView;->setTextColor(I)V
 
-    .line 118
+    .line 131
     iput-boolean p2, p0, Lcom/google/android/finsky/layout/DecoratedTextView;->mDrawBorder:Z
 
-    .line 119
+    .line 132
     iget-boolean v1, p0, Lcom/google/android/finsky/layout/DecoratedTextView;->mDrawBorder:Z
 
     if-eqz v1, :cond_1d
 
-    .line 120
+    .line 133
     iget-object v1, p0, Lcom/google/android/finsky/layout/DecoratedTextView;->mBorderPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 122
+    .line 135
     :cond_1d
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/DecoratedTextView;->invalidate()V
 
-    .line 123
+    .line 136
     return-void
 .end method
 
@@ -425,7 +462,7 @@
     .registers 2
 
     .prologue
-    .line 91
+    .line 95
     iget-boolean v0, p0, Lcom/google/android/finsky/layout/DecoratedTextView;->mUseWhitescale:Z
 
     return v0

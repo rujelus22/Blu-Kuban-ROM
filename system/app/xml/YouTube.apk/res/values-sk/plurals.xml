@@ -28,6 +28,14 @@
         <item quantity="other">pred %1$d sekundami</item>
         <item quantity="one">Pred 1 sekundou</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Vyprší o: %1$d d.</item>
+        <item quantity="one">Plat. vyprší o 1 deň</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Vyprší o: %1$d hod.</item>
+        <item quantity="one">Plat. vyprší o 1 hod.</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">nové odovzdané videá</item>
         <item quantity="one">nové odovzdané video</item>

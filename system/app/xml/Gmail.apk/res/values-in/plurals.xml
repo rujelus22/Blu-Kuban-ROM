@@ -53,40 +53,40 @@
         <item quantity="one">Menunggu operasi pada %1$d percakapan.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> dibungkam.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> dibungkam.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> dibungkam.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> dibungkam.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> dilaporkan sebagai spam.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> dilaporkan sebagai spam.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> dilaporkan sebagai spam.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> dilaporkan sebagai spam.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> diarsipkan.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> diarsipkan.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> diarsipkan.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> diarsipkan.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;amp;lb;b>%1$d&amp;lt;/b> dipindahkan ke Kotak Masuk.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> dipindahkan ke Kotak Masuk.</item>
+        <item quantity="other">&amp;amp;amp;amp;lb;b>%1$d&amp;amp;amp;lt;/b> dipindahkan ke Kotak Masuk.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> dipindahkan ke Kotak Masuk.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> dihapus.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> dihapus.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> dihapus.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> dihapus.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> ditandai sebagai penting.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> ditandai sebagai penting.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ditandai sebagai penting.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ditandai sebagai penting.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> ditandai sebagai tidak penting.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> ditandai sebagai tidak penting.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ditandai sebagai tidak penting.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ditandai sebagai tidak penting.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> ditandai sebagai telah dibaca.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> ditandai sebagai telah dibaca.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ditandai sebagai telah dibaca.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ditandai sebagai telah dibaca.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> ditandai sebagai belum dibaca.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> ditandai sebagai belum dibaca.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ditandai sebagai belum dibaca.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ditandai sebagai belum dibaca.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Label yang diubah.</item>

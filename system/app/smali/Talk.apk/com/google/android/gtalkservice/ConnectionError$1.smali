@@ -32,8 +32,8 @@
     .registers 1
 
     .prologue
-    .line 162
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 160
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,7 +45,7 @@
     .parameter "source"
 
     .prologue
-    .line 164
+    .line 162
     new-instance v0, Lcom/google/android/gtalkservice/ConnectionError;
 
     invoke-direct {v0, p1}, Lcom/google/android/gtalkservice/ConnectionError;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 162
+    .line 160
     invoke-virtual {p0, p1}, Lcom/google/android/gtalkservice/ConnectionError$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/gtalkservice/ConnectionError;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .parameter "size"
 
     .prologue
-    .line 168
+    .line 166
     new-array v0, p1, [Lcom/google/android/gtalkservice/ConnectionError;
 
     return-object v0
@@ -82,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 162
+    .line 160
     invoke-virtual {p0, p1}, Lcom/google/android/gtalkservice/ConnectionError$1;->newArray(I)[Lcom/google/android/gtalkservice/ConnectionError;
 
     move-result-object v0

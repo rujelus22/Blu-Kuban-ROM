@@ -32,23 +32,23 @@
     .parameter "tosDisplayView"
 
     .prologue
-    .line 137
+    .line 135
     iput-object p1, p0, Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment$CarrierTosWebViewClient;->this$0:Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment;
 
     invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
 
-    .line 138
+    .line 136
     iput-object p2, p0, Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment$CarrierTosWebViewClient;->mProgress:Landroid/view/View;
 
-    .line 139
+    .line 137
     iput-object p3, p0, Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment$CarrierTosWebViewClient;->mTosDisplayView:Landroid/view/View;
 
-    .line 140
+    .line 138
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment$CarrierTosWebViewClient;->mReceivedError:Z
 
-    .line 141
+    .line 139
     return-void
 .end method
 
@@ -62,20 +62,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 161
+    .line 159
     invoke-virtual {p1, v1}, Landroid/webkit/WebView;->setVisibility(I)V
 
-    .line 162
+    .line 160
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment$CarrierTosWebViewClient;->mTosDisplayView:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 163
+    .line 161
     iget-boolean v0, p0, Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment$CarrierTosWebViewClient;->mReceivedError:Z
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_17
 
-    .line 164
+    .line 162
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment$CarrierTosWebViewClient;->this$0:Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment;
 
     #getter for: Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment;->mButtonBar:Lcom/google/android/finsky/layout/ButtonBar;
@@ -83,17 +83,19 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/layout/ButtonBar;->enablePositiveButton()V
+    const/4 v1, 0x1
 
-    .line 166
-    :cond_16
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/ButtonBar;->setPositiveButtonEnabled(Z)V
+
+    .line 164
+    :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment$CarrierTosWebViewClient;->mProgress:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 167
+    .line 165
     return-void
 .end method
 
@@ -105,7 +107,7 @@
     .parameter "failingUrl"
 
     .prologue
-    .line 154
+    .line 152
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -140,12 +142,12 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 155
+    .line 153
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment$CarrierTosWebViewClient;->mReceivedError:Z
 
-    .line 156
+    .line 154
     iget-object v0, p0, Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment$CarrierTosWebViewClient;->this$0:Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment;
 
     #getter for: Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment;->mListener:Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment$CarrierTosResultListener;
@@ -157,6 +159,6 @@
 
     invoke-interface {v0, v1}, Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment$CarrierTosResultListener;->onCarrierTosResult(Lcom/google/android/finsky/billing/carrierbilling/fragment/CarrierTosDialogFragment$CarrierTosResultListener$TosResult;)V
 
-    .line 157
+    .line 155
     return-void
 .end method

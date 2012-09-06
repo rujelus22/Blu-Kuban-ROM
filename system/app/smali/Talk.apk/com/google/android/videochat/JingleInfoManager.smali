@@ -15,7 +15,7 @@
     .line 41
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/google/android/videochat/JingleInfoManager;->sLock:Ljava/lang/Object;
 
@@ -27,7 +27,7 @@
 
     .prologue
     .line 20
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

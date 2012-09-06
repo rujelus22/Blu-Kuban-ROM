@@ -28,15 +28,15 @@
     .parameter
 
     .prologue
-    .line 337
+    .line 136
     iput-object p1, p0, Lcom/android/exchange/adapter/Parser$EasParserException;->this$0:Lcom/android/exchange/adapter/Parser;
 
-    .line 339
+    .line 137
     const-string v0, "WBXML format error"
 
     invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    .line 341
+    .line 138
     return-void
 .end method
 
@@ -46,12 +46,12 @@
     .parameter "reason"
 
     .prologue
-    .line 345
+    .line 140
     iput-object p1, p0, Lcom/android/exchange/adapter/Parser$EasParserException;->this$0:Lcom/android/exchange/adapter/Parser;
 
-    .line 347
+    .line 141
     invoke-direct {p0, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    .line 349
+    .line 142
     return-void
 .end method

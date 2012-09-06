@@ -236,7 +236,7 @@
     <string name="video_audio_chat_calling">전화 거는 중...</string>
     <string name="menu_item_speaker">스피커</string>
     <string name="menu_item_wired_headphones">유선 헤드폰</string>
-    <string name="menu_item_handset_earpiece">휴대전화</string>
+    <string name="menu_item_handset_earpiece">무선 이어폰</string>
     <string name="menu_item_bluetooth">블루투스</string>
     <string name="menu_item_audio">오디오</string>
     <string name="menu_sort_header">표시 옵션</string>

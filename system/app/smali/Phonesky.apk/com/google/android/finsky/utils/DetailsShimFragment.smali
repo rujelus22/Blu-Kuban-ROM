@@ -18,20 +18,51 @@
     return-void
 .end method
 
-.method public static newInstance(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/utils/DetailsShimFragment;
-    .registers 6
+.method public static newInstance(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/finsky/utils/DetailsShimFragment;
+    .registers 11
     .parameter "url"
     .parameter "cookie"
     .parameter "referrer"
     .parameter "externalReferrer"
+    .parameter "continueUrl"
 
     .prologue
-    .line 35
+    .line 41
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    invoke-static/range {v0 .. v5}, Lcom/google/android/finsky/utils/DetailsShimFragment;->newInstance(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Lcom/google/android/finsky/utils/DetailsShimFragment;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static newInstance(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Lcom/google/android/finsky/utils/DetailsShimFragment;
+    .registers 8
+    .parameter "url"
+    .parameter "cookie"
+    .parameter "referrer"
+    .parameter "externalReferrer"
+    .parameter "continueUrl"
+    .parameter "returnAfterPurchase"
+
+    .prologue
+    .line 46
     new-instance v0, Lcom/google/android/finsky/utils/DetailsShimFragment;
 
     invoke-direct {v0}, Lcom/google/android/finsky/utils/DetailsShimFragment;-><init>()V
 
-    .line 36
+    .line 47
     .local v0, fragment:Lcom/google/android/finsky/utils/DetailsShimFragment;
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
@@ -43,22 +74,32 @@
 
     invoke-virtual {v0, v1, p0}, Lcom/google/android/finsky/utils/DetailsShimFragment;->setDfeTocAndUrl(Lcom/google/android/finsky/api/model/DfeToc;Ljava/lang/String;)V
 
-    .line 37
+    .line 48
     const-string v1, "finsky.DetailsFragment.cookie"
 
     invoke-virtual {v0, v1, p1}, Lcom/google/android/finsky/utils/DetailsShimFragment;->setArgument(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 38
+    .line 49
     const-string v1, "finsky.DetailsFragment.referrerUrl"
 
     invoke-virtual {v0, v1, p2}, Lcom/google/android/finsky/utils/DetailsShimFragment;->setArgument(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 39
+    .line 50
     const-string v1, "finsky.DetailsFragment.externalUrl"
 
     invoke-virtual {v0, v1, p3}, Lcom/google/android/finsky/utils/DetailsShimFragment;->setArgument(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 40
+    .line 51
+    const-string v1, "finsky.DetailsFragment.continueUrl"
+
+    invoke-virtual {v0, v1, p4}, Lcom/google/android/finsky/utils/DetailsShimFragment;->setArgument(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 52
+    const-string v1, "finsky.DetailsFragment.returnAfterPurchase"
+
+    invoke-virtual {v0, v1, p5}, Lcom/google/android/finsky/utils/DetailsShimFragment;->setArgument(Ljava/lang/String;Z)V
+
+    .line 53
     return-object v0
 .end method
 
@@ -68,7 +109,7 @@
     .registers 2
 
     .prologue
-    .line 51
+    .line 73
     const/4 v0, 0x0
 
     return v0
@@ -79,21 +120,21 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 45
+    .line 58
     invoke-super {p0, p1}, Lcom/google/android/finsky/fragments/UrlBasedPageFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
-    .line 46
+    .line 59
     invoke-virtual {p0}, Lcom/google/android/finsky/utils/DetailsShimFragment;->requestData()V
 
-    .line 47
+    .line 60
     return-void
 .end method
 
 .method public onDataChanged()V
-    .registers 8
+    .registers 10
 
     .prologue
-    .line 82
+    .line 109
     iget-object v0, p0, Lcom/google/android/finsky/utils/DetailsShimFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeDetails;->getDocument()Lcom/google/android/finsky/api/model/Document;
@@ -102,14 +143,14 @@
 
     if-nez v0, :cond_19
 
-    .line 85
+    .line 112
     iget-object v0, p0, Lcom/google/android/finsky/utils/DetailsShimFragment;->mPageFragmentHost:Lcom/google/android/finsky/fragments/PageFragmentHost;
 
     const/4 v1, 0x0
 
     iget-object v2, p0, Lcom/google/android/finsky/utils/DetailsShimFragment;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0700fd
+    const v3, 0x7f07010d
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -119,11 +160,11 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/google/android/finsky/fragments/PageFragmentHost;->showErrorDialog(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 96
+    .line 125
     :goto_18
     return-void
 
-    .line 91
+    .line 118
     :cond_19
     iget-object v0, p0, Lcom/google/android/finsky/utils/DetailsShimFragment;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
@@ -165,16 +206,63 @@
 
     move-result-object v5
 
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->replaceDetailsShimWithDocPage(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0}, Lcom/google/android/finsky/utils/DetailsShimFragment;->getArguments()Landroid/os/Bundle;
+
+    move-result-object v6
+
+    const-string v7, "finsky.DetailsFragment.continueUrl"
+
+    invoke-virtual {v6, v7}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/utils/DetailsShimFragment;->getArguments()Landroid/os/Bundle;
+
+    move-result-object v7
+
+    const-string v8, "finsky.DetailsFragment.returnAfterPurchase"
+
+    invoke-virtual {v7, v8}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v7
+
+    invoke-virtual/range {v0 .. v7}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->replaceDetailsShimWithDocPage(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     goto :goto_18
+.end method
+
+.method public onDestroyView()V
+    .registers 2
+
+    .prologue
+    .line 64
+    invoke-super {p0}, Lcom/google/android/finsky/fragments/UrlBasedPageFragment;->onDestroyView()V
+
+    .line 65
+    iget-object v0, p0, Lcom/google/android/finsky/utils/DetailsShimFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
+
+    if-eqz v0, :cond_11
+
+    .line 66
+    iget-object v0, p0, Lcom/google/android/finsky/utils/DetailsShimFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->removeDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
+
+    .line 67
+    iget-object v0, p0, Lcom/google/android/finsky/utils/DetailsShimFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->removeErrorListener(Lcom/android/volley/Response$ErrorListener;)V
+
+    .line 69
+    :cond_11
+    return-void
 .end method
 
 .method protected onInitViewBinders()V
     .registers 1
 
     .prologue
-    .line 61
+    .line 83
     return-void
 .end method
 
@@ -182,7 +270,7 @@
     .registers 1
 
     .prologue
-    .line 66
+    .line 88
     return-void
 .end method
 
@@ -190,22 +278,22 @@
     .registers 6
 
     .prologue
-    .line 70
+    .line 92
     iget-object v0, p0, Lcom/google/android/finsky/utils/DetailsShimFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     if-eqz v0, :cond_e
 
-    .line 71
+    .line 93
     iget-object v0, p0, Lcom/google/android/finsky/utils/DetailsShimFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->removeDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 72
+    .line 94
     iget-object v0, p0, Lcom/google/android/finsky/utils/DetailsShimFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->removeErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 74
+    .line 96
     :cond_e
     new-instance v0, Lcom/google/android/finsky/api/model/DfeDetails;
 
@@ -227,19 +315,22 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/utils/DetailsShimFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
-    .line 75
+    .line 97
     iget-object v0, p0, Lcom/google/android/finsky/utils/DetailsShimFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->addDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 76
+    .line 98
     iget-object v0, p0, Lcom/google/android/finsky/utils/DetailsShimFragment;->mDetailsData:Lcom/google/android/finsky/api/model/DfeDetails;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeDetails;->addErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 77
+    .line 101
+    invoke-virtual {p0}, Lcom/google/android/finsky/utils/DetailsShimFragment;->switchToBlank()V
+
+    .line 104
     invoke-virtual {p0}, Lcom/google/android/finsky/utils/DetailsShimFragment;->switchToLoading()V
 
-    .line 78
+    .line 105
     return-void
 .end method

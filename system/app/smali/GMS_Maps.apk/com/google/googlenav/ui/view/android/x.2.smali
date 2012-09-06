@@ -1,45 +1,59 @@
-.class Lcom/google/googlenav/ui/view/android/x;
-.super Lcom/google/googlenav/ui/android/M;
+.class final Lcom/google/googlenav/ui/view/android/x;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/android/r;
+.field final synthetic a:Lcom/google/googlenav/ui/g;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/r;)V
+.method constructor <init>(Lcom/google/googlenav/ui/g;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/x;->a:Lcom/google/googlenav/ui/view/android/r;
+    .prologue
+    .line 174
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/x;->a:Lcom/google/googlenav/ui/g;
 
-    invoke-direct {p0}, Lcom/google/googlenav/ui/android/M;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/view/View;)V
-    .registers 4
+.method public onClick(Landroid/view/View;)V
+    .registers 6
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/x;->a:Lcom/google/googlenav/ui/view/android/r;
+    .prologue
+    .line 177
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/x;->a:Lcom/google/googlenav/ui/g;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/r;->e(Lcom/google/googlenav/ui/view/android/r;)Z
+    const/16 v1, 0x261
 
-    move-result v0
+    const/4 v2, -0x1
 
-    if-eqz v0, :cond_d
+    const/4 v3, 0x0
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/x;->a:Lcom/google/googlenav/ui/view/android/r;
+    invoke-interface {v0, v1, v2, v3}, Lcom/google/googlenav/ui/g;->a(IILjava/lang/Object;)Z
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/r;->k()V
+    .line 178
+    const/4 v0, 0x4
 
-    :cond_d
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/x;->a:Lcom/google/googlenav/ui/view/android/r;
+    const-string v1, "mb"
 
-    const/16 v1, 0xd6
+    const-string v2, "cn"
 
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/view/android/r;->d(I)V
+    invoke-static {v0, v1, v2}, LaT/k;->a(ILjava/lang/String;Ljava/lang/String;)V
 
+    .line 182
+    invoke-static {}, Lcom/google/googlenav/ui/view/android/v;->a()V
+
+    .line 183
     return-void
 .end method

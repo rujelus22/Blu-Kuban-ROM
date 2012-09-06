@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/googlenav/friend/android/p;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # virtual methods

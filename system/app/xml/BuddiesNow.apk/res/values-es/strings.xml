@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Amigos</string>
-    <string name="buddy">Amigo</string>
-    <string name="unknown_contact">Desconocido</string>
-    <string name="initial_text">Pulsar para añadir amigos</string>
-</resources>

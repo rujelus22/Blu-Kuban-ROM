@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="carousel_visible_details">1</integer>
+    <integer name="music_album_wall_item_minor_axis_nb_items">5</integer>
+    <integer name="music_album_wall_cell_moc_size">176</integer>
+    <integer name="music_album_wall_cluster_single_moc_size">176</integer>
+    <integer name="music_album_wall_cluster_mutliple_moc_size">150</integer>
+    <integer name="music_album_wall_margin_moc_size">40</integer>
+    <integer name="music_album_wall_stack_spacing">0</integer>
+    <integer name="allowed_focus_exit_mask">2</integer>
+</resources>

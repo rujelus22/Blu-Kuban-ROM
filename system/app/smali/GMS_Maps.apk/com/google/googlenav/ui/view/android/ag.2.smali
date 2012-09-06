@@ -1,23 +1,23 @@
-.class Lcom/google/googlenav/ui/view/android/ag;
+.class Lcom/google/googlenav/ui/view/android/aG;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/aw;
-
-.field final synthetic b:Lcom/google/googlenav/ui/view/android/Z;
+.field final synthetic a:Lcom/google/googlenav/ui/view/android/aD;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/Z;Lcom/google/googlenav/aw;)V
-    .registers 3
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/aD;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/ag;->b:Lcom/google/googlenav/ui/view/android/Z;
-
-    iput-object p2, p0, Lcom/google/googlenav/ui/view/android/ag;->a:Lcom/google/googlenav/aw;
+    .prologue
+    .line 205
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/aG;->a:Lcom/google/googlenav/ui/view/android/aD;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,20 +26,26 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 6
+.method public run()V
+    .registers 2
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/ag;->b:Lcom/google/googlenav/ui/view/android/Z;
+    .prologue
+    .line 208
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aG;->a:Lcom/google/googlenav/ui/view/android/aD;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/view/android/Z;->f:Lcom/google/googlenav/ui/p;
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/aD;->a(Lcom/google/googlenav/ui/view/android/aD;)Landroid/widget/ListView;
 
-    const/16 v1, 0x6b1
+    move-result-object v0
 
-    const/4 v2, -0x1
+    invoke-virtual {v0}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
 
-    iget-object v3, p0, Lcom/google/googlenav/ui/view/android/ag;->a:Lcom/google/googlenav/aw;
+    move-result-object v0
 
-    invoke-interface {v0, v1, v2, v3}, Lcom/google/googlenav/ui/p;->a(IILjava/lang/Object;)Z
+    check-cast v0, Lcom/google/googlenav/ui/view/android/aI;
 
+    .line 209
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/aI;->notifyDataSetChanged()V
+
+    .line 210
     return-void
 .end method

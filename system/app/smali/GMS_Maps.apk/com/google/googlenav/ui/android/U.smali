@@ -1,32 +1,41 @@
-.class Lcom/google/googlenav/ui/android/U;
-.super Lcom/google/googlenav/x;
+.class Lcom/google/googlenav/ui/android/u;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/android/RealtimeScheduleTransitStationView;
+.field final synthetic a:Lcom/google/googlenav/ui/android/r;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/android/RealtimeScheduleTransitStationView;)V
+.method constructor <init>(Lcom/google/googlenav/ui/android/r;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/android/U;->a:Lcom/google/googlenav/ui/android/RealtimeScheduleTransitStationView;
+    .prologue
+    .line 500
+    iput-object p1, p0, Lcom/google/googlenav/ui/android/u;->a:Lcom/google/googlenav/ui/android/r;
 
-    invoke-direct {p0}, Lcom/google/googlenav/x;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 2
+.method public onClick(Landroid/view/View;)V
+    .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/U;->a:Lcom/google/googlenav/ui/android/RealtimeScheduleTransitStationView;
+    .prologue
+    .line 503
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/u;->a:Lcom/google/googlenav/ui/android/r;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/android/RealtimeScheduleTransitStationView;->e:Lcom/google/googlenav/bN;
+    invoke-static {v0}, Lcom/google/googlenav/ui/android/r;->c(Lcom/google/googlenav/ui/android/r;)V
 
-    invoke-virtual {v0}, Lcom/google/googlenav/bN;->e()V
-
+    .line 504
     return-void
 .end method

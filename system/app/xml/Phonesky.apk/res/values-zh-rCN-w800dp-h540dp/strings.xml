@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="magazine_buy_current">购买当期杂志 %1$s</string>
+    <string name="search_result_title">有关“%1$s”的搜索结果</string>
+</resources>

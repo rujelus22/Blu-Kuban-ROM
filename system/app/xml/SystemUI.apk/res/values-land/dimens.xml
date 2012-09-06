@@ -10,4 +10,6 @@
     <dimen name="status_bar_recents_app_icon_top_margin">8.0dip</dimen>
     <dimen name="status_bar_recents_item_padding">2.0dip</dimen>
     <dimen name="status_bar_recents_thumbnail_top_margin">28.0dip</dimen>
+    <dimen name="thumbnail_height_land">160.0dip</dimen>
+    <dimen name="thumbnail_width_land">240.0dip</dimen>
 </resources>

@@ -25,6 +25,3 @@
 
 .method public abstract remove(Landroid/net/Uri;)V
 .end method
-
-.method public abstract removeAll()V
-.end method

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@color/agenda_general_background_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:calendar="http://schemas.android.com/apk/res/com.android.calendar">
+    <view android:id="@id/agenda_sticky_header_list" android:layout_width="0.0px" android:layout_height="fill_parent" android:layout_marginLeft="0.0dip" android:layout_weight="0.4" class="com.android.calendar.StickyHeaderListView">
+        <view android:id="@id/agenda_events_list" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" class="com.android.calendar.agenda.AgendaListView" />
+    </view>
+    <FrameLayout android:id="@id/agenda_event_info" android:background="@color/agenda_general_background_color" android:layout_width="0.0px" android:layout_height="fill_parent" android:layout_marginTop="0.0dip" android:layout_weight="0.6" />
+</LinearLayout>

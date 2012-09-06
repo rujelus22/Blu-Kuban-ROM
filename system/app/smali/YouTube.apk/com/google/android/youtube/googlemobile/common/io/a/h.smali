@@ -18,18 +18,8 @@
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/youtube/googlemobile/common/io/a/g;Ljava/lang/String;Z)V
-    .registers 5
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p2, p3, v0}, Lcom/google/android/youtube/googlemobile/common/io/a/h;-><init>(Lcom/google/android/youtube/googlemobile/common/io/a/g;Ljava/lang/String;ZB)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/youtube/googlemobile/common/io/a/g;Ljava/lang/String;ZB)V
-    .registers 8
+.method private constructor <init>(Lcom/google/android/youtube/googlemobile/common/io/a/g;Ljava/lang/String;Z)V
+    .registers 7
 
     const/4 v0, 0x0
 
@@ -50,7 +40,7 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/googlemobile/common/io/a/h;->b:Lorg/apache/http/client/methods/HttpUriRequest;
     :try_end_13
-    .catch Ljava/lang/RuntimeException; {:try_start_c .. :try_end_13} :catch_36
+    .catch Ljava/lang/RuntimeException; {:try_start_c .. :try_end_13} :catch_32
 
     invoke-static {}, Lcom/google/android/youtube/googlemobile/common/io/a/g;->a()Ljava/lang/Object;
 
@@ -63,7 +53,7 @@
 
     monitor-exit v1
     :try_end_1c
-    .catchall {:try_start_18 .. :try_end_1c} :catchall_5d
+    .catchall {:try_start_18 .. :try_end_1c} :catchall_55
 
     return-void
 
@@ -73,13 +63,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "GET not supported:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -92,21 +78,17 @@
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw v0
-    :try_end_36
-    .catch Ljava/lang/RuntimeException; {:try_start_1d .. :try_end_36} :catch_36
+    :try_end_32
+    .catch Ljava/lang/RuntimeException; {:try_start_1d .. :try_end_32} :catch_32
 
-    :catch_36
+    :catch_32
     move-exception v0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "URISyntaxException in HttpUriRequest, post="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -134,12 +116,20 @@
 
     throw v2
 
-    :catchall_5d
+    :catchall_55
     move-exception v0
 
     monitor-exit v1
 
     throw v0
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/youtube/googlemobile/common/io/a/g;Ljava/lang/String;ZB)V
+    .registers 5
+
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/youtube/googlemobile/common/io/a/h;-><init>(Lcom/google/android/youtube/googlemobile/common/io/a/g;Ljava/lang/String;Z)V
+
+    return-void
 .end method
 
 .method private g()Lorg/apache/http/HttpResponse;
@@ -207,19 +197,15 @@
 
     instance-of v0, v0, Lorg/apache/http/client/methods/HttpPost;
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_21
 
     new-instance v0, Ljava/io/IOException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Can\'t open output stream on a GET to "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/google/android/youtube/googlemobile/common/io/a/h;->b:Lorg/apache/http/client/methods/HttpUriRequest;
 
@@ -239,7 +225,7 @@
 
     throw v0
 
-    :cond_25
+    :cond_21
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
@@ -417,13 +403,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Connection closed.  # of open connections="
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-static {}, Lcom/google/android/youtube/googlemobile/common/io/a/g;->d()I
 
@@ -436,12 +418,12 @@
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     monitor-exit v1
-    :try_end_37
-    .catchall {:try_start_14 .. :try_end_37} :catchall_38
+    :try_end_33
+    .catchall {:try_start_14 .. :try_end_33} :catchall_34
 
     goto :goto_19
 
-    :catchall_38
+    :catchall_34
     move-exception v0
 
     monitor-exit v1

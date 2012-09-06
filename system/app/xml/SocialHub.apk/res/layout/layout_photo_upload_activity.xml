@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
-        <com.sec.android.socialhub.view.PhotoUploadView android:gravity="center" android:id="@id/layout_photo_upload" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    </ScrollView>
-    <include android:id="@id/select_list_softkey" android:layout_height="wrap_content" android:layout_weight="0.0" layout="@layout/common_softkey_2_button" />
-</LinearLayout>

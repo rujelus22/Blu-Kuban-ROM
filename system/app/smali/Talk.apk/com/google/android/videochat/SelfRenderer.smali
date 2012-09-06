@@ -140,14 +140,14 @@
     .line 41
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mSelfFrameReadyLock:Ljava/lang/Object;
 
     .line 42
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mEffectsLock:Ljava/lang/Object;
 
@@ -188,13 +188,13 @@
     iput-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mImageStabilizationStopWatch:Lcom/google/android/videochat/util/GLStopWatch;
 
     .line 75
-    iput-object p1, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iput-object p1, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     .line 76
     iput-object p2, p0, Lcom/google/android/videochat/SelfRenderer;->mCallback:Lcom/google/android/videochat/Renderer$SelfRendererThreadCallback;
 
     .line 77
-    iget-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     const/4 v1, 0x1
 
@@ -205,7 +205,7 @@
     iput v0, p0, Lcom/google/android/videochat/SelfRenderer;->mCameraRendererID:I
 
     .line 79
-    iget-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     invoke-virtual {v0, v2}, Lcom/google/android/videochat/RendererManager;->instantiateRenderer(I)I
 
@@ -297,7 +297,7 @@
     iput-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mCameraInterface:Lcom/google/android/videochat/CameraInterface;
 
     .line 174
-    iget-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     invoke-virtual {v0, p0}, Lcom/google/android/videochat/RendererManager;->registerRendererForStats(Lcom/google/android/videochat/Renderer;)V
 
@@ -455,7 +455,7 @@
     invoke-static {v0, v1}, Lcom/google/android/videochat/util/LogUtil;->LOGV(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 468
-    iget-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v1, p0, Lcom/google/android/videochat/SelfRenderer;->mImageStabilizationRendererID:I
 
@@ -469,14 +469,14 @@
     invoke-direct {p0}, Lcom/google/android/videochat/SelfRenderer;->setSizeOnImageStabilizationRenderer()V
 
     .line 472
-    iget-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v1, p0, Lcom/google/android/videochat/SelfRenderer;->mImageStabilizationRendererID:I
 
     invoke-virtual {v0, v1}, Lcom/google/android/videochat/RendererManager;->initializeGLContext(I)Z
 
     .line 473
-    iget-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v1, p0, Lcom/google/android/videochat/SelfRenderer;->mImageStabilizationRendererID:I
 
@@ -678,7 +678,7 @@
 
     .line 286
     :goto_91
-    iget-object v8, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v8, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v9, p0, Lcom/google/android/videochat/SelfRenderer;->mCameraRendererID:I
 
@@ -694,7 +694,7 @@
     invoke-virtual {v8, v9, v10, v6}, Lcom/google/android/videochat/RendererManager;->setIntParam(ILjava/lang/String;I)V
 
     .line 288
-    iget-object v6, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v6, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v8, p0, Lcom/google/android/videochat/SelfRenderer;->mEncodeRendererID:I
 
@@ -705,7 +705,7 @@
     invoke-virtual {v6, v8, v9, v10}, Lcom/google/android/videochat/RendererManager;->setIntParam(ILjava/lang/String;I)V
 
     .line 290
-    iget-object v6, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v6, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v8, p0, Lcom/google/android/videochat/SelfRenderer;->mEncodeRendererID:I
 
@@ -720,7 +720,7 @@
     invoke-virtual {v6, v8, v9, v10}, Lcom/google/android/videochat/RendererManager;->setIntParam(ILjava/lang/String;I)V
 
     .line 293
-    iget-object v6, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v6, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v8, p0, Lcom/google/android/videochat/SelfRenderer;->mEncodeRendererID:I
 
@@ -876,7 +876,7 @@
 
     .line 309
     :cond_154
-    iget-object v6, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v6, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v8, p0, Lcom/google/android/videochat/SelfRenderer;->mEncodeRendererID:I
 
@@ -909,7 +909,7 @@
     invoke-virtual {v6, v8, v9, v10}, Lcom/google/android/videochat/RendererManager;->setIntParam(ILjava/lang/String;I)V
 
     .line 313
-    iget-object v6, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v6, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v8, p0, Lcom/google/android/videochat/SelfRenderer;->mCameraRendererID:I
 
@@ -1206,7 +1206,7 @@
 
     .prologue
     .line 479
-    iget-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v1, p0, Lcom/google/android/videochat/SelfRenderer;->mImageStabilizationRendererID:I
 
@@ -1221,7 +1221,7 @@
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/videochat/RendererManager;->setIntParam(ILjava/lang/String;I)V
 
     .line 482
-    iget-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v1, p0, Lcom/google/android/videochat/SelfRenderer;->mImageStabilizationRendererID:I
 
@@ -1262,7 +1262,7 @@
     invoke-virtual {v0}, Lcom/google/android/videochat/util/GLStopWatch;->start()V
 
     .line 599
-    iget-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v1, p0, Lcom/google/android/videochat/SelfRenderer;->mEncodeRendererID:I
 
@@ -1458,7 +1458,7 @@
 
     .line 363
     :cond_77
-    iget-object v2, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v2, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v3, p0, Lcom/google/android/videochat/SelfRenderer;->mCameraRendererID:I
 
@@ -1467,14 +1467,14 @@
     invoke-virtual {v2, v3, v4, v0}, Lcom/google/android/videochat/RendererManager;->setIntParam(ILjava/lang/String;I)V
 
     .line 366
-    iget-object v2, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v2, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v3, p0, Lcom/google/android/videochat/SelfRenderer;->mCameraRendererID:I
 
     invoke-virtual {v2, v3}, Lcom/google/android/videochat/RendererManager;->initializeGLContext(I)Z
 
     .line 367
-    iget-object v2, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v2, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v3, p0, Lcom/google/android/videochat/SelfRenderer;->mEncodeRendererID:I
 
@@ -1495,7 +1495,7 @@
 
     .line 373
     :cond_98
-    iget-object v2, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v2, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v3, p0, Lcom/google/android/videochat/SelfRenderer;->mCameraRendererID:I
 
@@ -1508,7 +1508,7 @@
     iput v2, p0, Lcom/google/android/videochat/SelfRenderer;->mCameraOutputTextureName:I
 
     .line 375
-    iget-object v2, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v2, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v3, p0, Lcom/google/android/videochat/SelfRenderer;->mEncodeRendererID:I
 
@@ -1538,7 +1538,7 @@
 
     .prologue
     .line 409
-    iget-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v1, p0, Lcom/google/android/videochat/SelfRenderer;->mEncodeRendererID:I
 
@@ -1626,7 +1626,7 @@
     if-eq v0, v1, :cond_4a
 
     .line 428
-    iget-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v1, p0, Lcom/google/android/videochat/SelfRenderer;->mImageStabilizationRendererID:I
 
@@ -1634,19 +1634,19 @@
 
     .line 430
     :cond_4a
-    iget-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     invoke-virtual {v0, p0}, Lcom/google/android/videochat/RendererManager;->unregisterRendererForStats(Lcom/google/android/videochat/Renderer;)V
 
     .line 431
-    iget-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v1, p0, Lcom/google/android/videochat/SelfRenderer;->mEncodeRendererID:I
 
     invoke-virtual {v0, v1}, Lcom/google/android/videochat/RendererManager;->releaseRenderer(I)V
 
     .line 432
-    iget-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v1, p0, Lcom/google/android/videochat/SelfRenderer;->mCameraRendererID:I
 
@@ -1748,7 +1748,7 @@
     iput-object v6, v5, Lcom/google/android/videochat/SelfRenderer$CameraInputData;->selfFrameTransform:[F
 
     .line 521
-    iget-object v5, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v5, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v6, p0, Lcom/google/android/videochat/SelfRenderer;->mCameraRendererID:I
 
@@ -1820,7 +1820,7 @@
     if-eqz v3, :cond_76
 
     .line 542
-    iget-object v5, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v5, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v6, p0, Lcom/google/android/videochat/SelfRenderer;->mImageStabilizationRendererID:I
 
@@ -1884,7 +1884,7 @@
     if-ne v5, v6, :cond_b3
 
     .line 556
-    iget-object v5, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v5, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     const/4 v6, 0x2
 
@@ -1899,7 +1899,7 @@
 
     .line 562
     :cond_b3
-    iget-object v5, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v5, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v6, p0, Lcom/google/android/videochat/SelfRenderer;->mImageStabilizationRendererID:I
 
@@ -1908,7 +1908,7 @@
     invoke-virtual {v5, v6, v7, v2}, Lcom/google/android/videochat/RendererManager;->setIntParam(ILjava/lang/String;I)V
 
     .line 568
-    iget-object v5, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v5, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v6, p0, Lcom/google/android/videochat/SelfRenderer;->mEncodeRendererID:I
 
@@ -1940,7 +1940,7 @@
     invoke-virtual {v5}, Lcom/google/android/videochat/util/GLStopWatch;->start()V
 
     .line 586
-    iget-object v5, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v5, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v6, p0, Lcom/google/android/videochat/SelfRenderer;->mImageStabilizationRendererID:I
 
@@ -1985,7 +1985,7 @@
     .restart local v2       #pendingImageStabilizationLevel:I
     .restart local v3       #resetImageStabilization:Z
     :cond_e7
-    iget-object v5, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v5, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v6, p0, Lcom/google/android/videochat/SelfRenderer;->mEncodeRendererID:I
 
@@ -2007,7 +2007,7 @@
 
     .prologue
     .line 415
-    iget-object v0, p0, Lcom/google/android/videochat/SelfRenderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
+    iget-object v0, p0, Lcom/google/android/videochat/Renderer;->mRendererManager:Lcom/google/android/videochat/RendererManager;
 
     iget v1, p0, Lcom/google/android/videochat/SelfRenderer;->mEncodeRendererID:I
 

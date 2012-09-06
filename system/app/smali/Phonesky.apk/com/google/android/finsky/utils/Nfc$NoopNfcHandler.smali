@@ -22,7 +22,7 @@
     .registers 1
 
     .prologue
-    .line 67
+    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +33,7 @@
     .parameter "x0"
 
     .prologue
-    .line 67
+    .line 68
     invoke-direct {p0}, Lcom/google/android/finsky/utils/Nfc$NoopNfcHandler;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 1
 
     .prologue
-    .line 78
+    .line 79
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .registers 1
 
     .prologue
-    .line 70
+    .line 71
     return-void
 .end method
 
@@ -61,6 +61,6 @@
     .registers 1
 
     .prologue
-    .line 74
+    .line 75
     return-void
 .end method

@@ -1,94 +1,93 @@
-.class public final Lcom/google/common/collect/cl;
-.super Lcom/google/common/collect/cb;
+.class final Lcom/google/common/collect/cl;
+.super Lcom/google/common/collect/dc;
 .source "SourceFile"
 
 
 # instance fields
-.field private final a:Lcom/google/common/collect/ew;
+.field final synthetic a:Ljava/util/Set;
+
+.field final synthetic b:Lcom/google/common/collect/ConcurrentHashMultiset;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method constructor <init>(Lcom/google/common/collect/ConcurrentHashMultiset;Ljava/util/Set;)V
+    .registers 3
+    .parameter
+    .parameter
 
     .prologue
-    .line 179
-    invoke-direct {p0}, Lcom/google/common/collect/cb;-><init>()V
+    .line 447
+    iput-object p1, p0, Lcom/google/common/collect/cl;->b:Lcom/google/common/collect/ConcurrentHashMultiset;
 
-    .line 173
-    new-instance v0, Lcom/google/common/collect/ImmutableSetMultimap$BuilderMultimap;
+    iput-object p2, p0, Lcom/google/common/collect/cl;->a:Ljava/util/Set;
 
-    invoke-direct {v0}, Lcom/google/common/collect/ImmutableSetMultimap$BuilderMultimap;-><init>()V
+    invoke-direct {p0}, Lcom/google/common/collect/dc;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/collect/cl;->a:Lcom/google/common/collect/ew;
-
-    .line 179
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcom/google/common/collect/ImmutableSetMultimap;
+.method protected final a()Ljava/util/Set;
     .registers 2
 
     .prologue
-    .line 237
-    iget-object v0, p0, Lcom/google/common/collect/cl;->a:Lcom/google/common/collect/ew;
-
-    invoke-static {v0}, Lcom/google/common/collect/ImmutableSetMultimap;->copyOf(Lcom/google/common/collect/ew;)Lcom/google/common/collect/ImmutableSetMultimap;
-
-    move-result-object v0
+    .line 449
+    iget-object v0, p0, Lcom/google/common/collect/cl;->a:Ljava/util/Set;
 
     return-object v0
 .end method
 
-.method public final a(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/cl;
-    .registers 6
-    .parameter
-    .parameter
-
-    .prologue
-    .line 186
-    iget-object v0, p0, Lcom/google/common/collect/cl;->a:Lcom/google/common/collect/ew;
-
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-static {p2}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Lcom/google/common/collect/ew;->put(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 187
-    return-object p0
-.end method
-
-.method public final synthetic b()Lcom/google/common/collect/ImmutableMultimap;
+.method protected final bridge synthetic delegate()Ljava/lang/Object;
     .registers 2
 
     .prologue
-    .line 171
-    iget-object v0, p0, Lcom/google/common/collect/cl;->a:Lcom/google/common/collect/ew;
-
-    invoke-static {v0}, Lcom/google/common/collect/ImmutableSetMultimap;->copyOf(Lcom/google/common/collect/ew;)Lcom/google/common/collect/ImmutableSetMultimap;
-
-    move-result-object v0
+    .line 447
+    iget-object v0, p0, Lcom/google/common/collect/cl;->a:Ljava/util/Set;
 
     return-object v0
 .end method
 
-.method public final synthetic b(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/cb;
+.method protected final bridge synthetic delegate()Ljava/util/Collection;
+    .registers 2
+
+    .prologue
+    .line 447
+    iget-object v0, p0, Lcom/google/common/collect/cl;->a:Ljava/util/Set;
+
+    return-object v0
+.end method
+
+.method public final remove(Ljava/lang/Object;)Z
     .registers 4
     .parameter
-    .parameter
 
     .prologue
-    .line 171
-    invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/cl;->a(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/cl;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    .line 453
+    :try_start_1
+    iget-object v1, p0, Lcom/google/common/collect/cl;->a:Ljava/util/Set;
 
-    return-object v0
+    invoke-interface {v1, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    :try_end_6
+    .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_6} :catch_a
+    .catch Ljava/lang/ClassCastException; {:try_start_1 .. :try_end_6} :catch_8
+
+    move-result v0
+
+    .line 457
+    :goto_7
+    return v0
+
+    :catch_8
+    move-exception v1
+
+    goto :goto_7
+
+    .line 455
+    :catch_a
+    move-exception v1
+
+    goto :goto_7
 .end method

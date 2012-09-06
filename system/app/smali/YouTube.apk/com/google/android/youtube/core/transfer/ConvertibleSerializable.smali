@@ -7,5 +7,5 @@
 
 
 # virtual methods
-.method public abstract convertToPrimitives(Lcom/google/android/youtube/core/transfer/b;)V
+.method public abstract convertToPrimitives(Lcom/google/android/youtube/core/transfer/d;)V
 .end method

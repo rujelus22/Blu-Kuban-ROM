@@ -308,16 +308,16 @@
     return v0
 .end method
 
-.method public final d()Lorg/codehaus/jackson/util/c;
+.method public final d()Lorg/codehaus/jackson/util/f;
     .registers 3
 
     .prologue
     .line 122
-    new-instance v0, Lorg/codehaus/jackson/util/c;
+    new-instance v0, Lorg/codehaus/jackson/util/f;
 
     iget-object v1, p0, Lorg/codehaus/jackson/b/c;->d:Lorg/codehaus/jackson/util/BufferRecycler;
 
-    invoke-direct {v0, v1}, Lorg/codehaus/jackson/util/c;-><init>(Lorg/codehaus/jackson/util/BufferRecycler;)V
+    invoke-direct {v0, v1}, Lorg/codehaus/jackson/util/f;-><init>(Lorg/codehaus/jackson/util/BufferRecycler;)V
 
     return-object v0
 .end method

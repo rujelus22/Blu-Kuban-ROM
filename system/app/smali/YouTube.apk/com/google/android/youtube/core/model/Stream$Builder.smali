@@ -23,7 +23,7 @@
     .registers 1
 
     .prologue
-    .line 246
+    .line 256
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
     .parameter
 
     .prologue
-    .line 300
+    .line 310
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v0
@@ -47,7 +47,7 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->uri:Landroid/net/Uri;
 
-    .line 301
+    .line 311
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v0
@@ -56,7 +56,7 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->quality:Lcom/google/android/youtube/core/model/Stream$Quality;
 
-    .line 302
+    .line 312
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v0
@@ -65,21 +65,21 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->mimeType:Ljava/lang/String;
 
-    .line 303
+    .line 313
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->gdataFormat:I
 
-    .line 304
+    .line 314
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->sizeInBytes:J
 
-    .line 305
+    .line 315
     return-void
 .end method
 
@@ -87,7 +87,7 @@
     .registers 2
 
     .prologue
-    .line 287
+    .line 297
     invoke-virtual {p0}, Lcom/google/android/youtube/core/model/Stream$Builder;->build()Lcom/google/android/youtube/core/model/Stream;
 
     move-result-object v0
@@ -100,7 +100,7 @@
     .parameter
 
     .prologue
-    .line 291
+    .line 301
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->uri:Landroid/net/Uri;
 
     invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->a(Landroid/net/Uri;)Ljava/lang/String;
@@ -109,27 +109,27 @@
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 292
+    .line 302
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->quality:Lcom/google/android/youtube/core/model/Stream$Quality;
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 293
+    .line 303
     iget-object v0, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->mimeType:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 294
+    .line 304
     iget v0, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->gdataFormat:I
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeInt(I)V
 
-    .line 295
+    .line 305
     iget-wide v0, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->sizeInBytes:J
 
     invoke-virtual {p1, v0, v1}, Ljava/io/ObjectOutputStream;->writeLong(J)V
 
-    .line 296
+    .line 306
     return-void
 .end method
 
@@ -139,7 +139,7 @@
     .registers 8
 
     .prologue
-    .line 279
+    .line 289
     iget-wide v0, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->sizeInBytes:J
 
     const-wide/16 v2, 0x0
@@ -148,7 +148,7 @@
 
     if-lez v0, :cond_18
 
-    .line 280
+    .line 290
     new-instance v0, Lcom/google/android/youtube/core/model/Stream;
 
     iget-object v1, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->uri:Landroid/net/Uri;
@@ -163,7 +163,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/google/android/youtube/core/model/Stream;-><init>(Landroid/net/Uri;Lcom/google/android/youtube/core/model/Stream$Quality;Ljava/lang/String;IJ)V
 
-    .line 282
+    .line 292
     :goto_17
     return-object v0
 
@@ -188,10 +188,10 @@
     .parameter
 
     .prologue
-    .line 274
+    .line 284
     iput p1, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->gdataFormat:I
 
-    .line 275
+    .line 285
     return-object p0
 .end method
 
@@ -200,10 +200,10 @@
     .parameter
 
     .prologue
-    .line 269
+    .line 279
     iput-object p1, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->mimeType:Ljava/lang/String;
 
-    .line 270
+    .line 280
     return-object p0
 .end method
 
@@ -212,10 +212,10 @@
     .parameter
 
     .prologue
-    .line 259
+    .line 269
     iput-object p1, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->quality:Lcom/google/android/youtube/core/model/Stream$Quality;
 
-    .line 260
+    .line 270
     return-object p0
 .end method
 
@@ -224,10 +224,10 @@
     .parameter
 
     .prologue
-    .line 264
+    .line 274
     iput-wide p1, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->sizeInBytes:J
 
-    .line 265
+    .line 275
     return-object p0
 .end method
 
@@ -236,9 +236,9 @@
     .parameter
 
     .prologue
-    .line 254
+    .line 264
     iput-object p1, p0, Lcom/google/android/youtube/core/model/Stream$Builder;->uri:Landroid/net/Uri;
 
-    .line 255
+    .line 265
     return-object p0
 .end method

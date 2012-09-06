@@ -1,104 +1,167 @@
-.class final enum Lcom/google/googlenav/prefetch/android/k;
-.super Ljava/lang/Enum;
+.class Lcom/google/googlenav/prefetch/android/k;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# static fields
-.field public static final enum a:Lcom/google/googlenav/prefetch/android/k;
+# instance fields
+.field private a:Lcom/google/googlenav/prefetch/android/y;
 
-.field public static final enum b:Lcom/google/googlenav/prefetch/android/k;
+.field private b:I
 
-.field public static final enum c:Lcom/google/googlenav/prefetch/android/k;
+.field private c:I
 
-.field private static final synthetic d:[Lcom/google/googlenav/prefetch/android/k;
+.field private d:LaD/g;
+
+.field private e:LaD/h;
+
+.field private f:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 5
+.method public constructor <init>(Lcom/google/googlenav/prefetch/android/y;ILaD/g;LaD/h;J)V
+    .registers 8
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v4, 0x2
+    .prologue
+    .line 818
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v3, 0x1
+    .line 819
+    iput-object p1, p0, Lcom/google/googlenav/prefetch/android/k;->a:Lcom/google/googlenav/prefetch/android/y;
 
-    const/4 v2, 0x0
+    .line 820
+    iput p2, p0, Lcom/google/googlenav/prefetch/android/k;->b:I
 
-    new-instance v0, Lcom/google/googlenav/prefetch/android/k;
+    .line 821
+    invoke-interface {p1}, Lcom/google/googlenav/prefetch/android/y;->l()I
 
-    const-string v1, "PREFETCHING"
+    move-result v0
 
-    invoke-direct {v0, v1, v2}, Lcom/google/googlenav/prefetch/android/k;-><init>(Ljava/lang/String;I)V
+    iput v0, p0, Lcom/google/googlenav/prefetch/android/k;->c:I
 
-    sput-object v0, Lcom/google/googlenav/prefetch/android/k;->a:Lcom/google/googlenav/prefetch/android/k;
+    .line 822
+    iput-object p3, p0, Lcom/google/googlenav/prefetch/android/k;->d:LaD/g;
 
-    new-instance v0, Lcom/google/googlenav/prefetch/android/k;
+    .line 823
+    iput-object p4, p0, Lcom/google/googlenav/prefetch/android/k;->e:LaD/h;
 
-    const-string v1, "SUSPENDED"
+    .line 824
+    iput-wide p5, p0, Lcom/google/googlenav/prefetch/android/k;->f:J
 
-    invoke-direct {v0, v1, v3}, Lcom/google/googlenav/prefetch/android/k;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/googlenav/prefetch/android/k;->b:Lcom/google/googlenav/prefetch/android/k;
-
-    new-instance v0, Lcom/google/googlenav/prefetch/android/k;
-
-    const-string v1, "FINISHED"
-
-    invoke-direct {v0, v1, v4}, Lcom/google/googlenav/prefetch/android/k;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/googlenav/prefetch/android/k;->c:Lcom/google/googlenav/prefetch/android/k;
-
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Lcom/google/googlenav/prefetch/android/k;
-
-    sget-object v1, Lcom/google/googlenav/prefetch/android/k;->a:Lcom/google/googlenav/prefetch/android/k;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/google/googlenav/prefetch/android/k;->b:Lcom/google/googlenav/prefetch/android/k;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/google/googlenav/prefetch/android/k;->c:Lcom/google/googlenav/prefetch/android/k;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lcom/google/googlenav/prefetch/android/k;->d:[Lcom/google/googlenav/prefetch/android/k;
-
+    .line 825
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+.method static synthetic a(Lcom/google/googlenav/prefetch/android/k;)LaD/g;
+    .registers 2
+    .parameter
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    .prologue
+    .line 807
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/k;->d:LaD/g;
 
-    return-void
+    return-object v0
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lcom/google/googlenav/prefetch/android/k;
+.method static synthetic b(Lcom/google/googlenav/prefetch/android/k;)LaD/h;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 807
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/k;->e:LaD/h;
+
+    return-object v0
+.end method
+
+.method static synthetic c(Lcom/google/googlenav/prefetch/android/k;)Lcom/google/googlenav/prefetch/android/y;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 807
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/k;->a:Lcom/google/googlenav/prefetch/android/y;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public a()Lcom/google/googlenav/prefetch/android/y;
     .registers 2
 
-    const-class v0, Lcom/google/googlenav/prefetch/android/k;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlenav/prefetch/android/k;
+    .prologue
+    .line 828
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/k;->a:Lcom/google/googlenav/prefetch/android/y;
 
     return-object v0
 .end method
 
-.method public static values()[Lcom/google/googlenav/prefetch/android/k;
-    .registers 1
+.method public b()I
+    .registers 2
 
-    sget-object v0, Lcom/google/googlenav/prefetch/android/k;->d:[Lcom/google/googlenav/prefetch/android/k;
+    .prologue
+    .line 832
+    iget v0, p0, Lcom/google/googlenav/prefetch/android/k;->b:I
 
-    invoke-virtual {v0}, [Lcom/google/googlenav/prefetch/android/k;->clone()Ljava/lang/Object;
+    return v0
+.end method
 
-    move-result-object v0
+.method public c()V
+    .registers 2
 
-    check-cast v0, [Lcom/google/googlenav/prefetch/android/k;
+    .prologue
+    .line 836
+    iget v0, p0, Lcom/google/googlenav/prefetch/android/k;->b:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Lcom/google/googlenav/prefetch/android/k;->b:I
+
+    .line 837
+    return-void
+.end method
+
+.method public d()LaD/g;
+    .registers 2
+
+    .prologue
+    .line 840
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/k;->d:LaD/g;
 
     return-object v0
+.end method
+
+.method public e()I
+    .registers 2
+
+    .prologue
+    .line 844
+    iget v0, p0, Lcom/google/googlenav/prefetch/android/k;->c:I
+
+    return v0
+.end method
+
+.method public f()LaD/h;
+    .registers 2
+
+    .prologue
+    .line 848
+    iget-object v0, p0, Lcom/google/googlenav/prefetch/android/k;->e:LaD/h;
+
+    return-object v0
+.end method
+
+.method public g()J
+    .registers 3
+
+    .prologue
+    .line 852
+    iget-wide v0, p0, Lcom/google/googlenav/prefetch/android/k;->f:J
+
+    return-wide v0
 .end method

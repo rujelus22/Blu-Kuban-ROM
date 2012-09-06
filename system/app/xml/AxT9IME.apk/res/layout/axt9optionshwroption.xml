@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:title="@string/s_handwriting_settings" android:key="handwriting_settings"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ListPreference android:title="@string/s_recognition_time" android:key="recognition_time" android:defaultValue="500" android:dialogTitle="@string/s_recognition_time" />
-    <Preference android:title="@string/s_about" android:key="about_hwr"
-      xmlns:android="http://schemas.android.com/apk/res/android" />
-</PreferenceScreen>

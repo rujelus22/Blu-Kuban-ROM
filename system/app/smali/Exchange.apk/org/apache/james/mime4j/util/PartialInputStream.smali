@@ -12,12 +12,12 @@
     .registers 7
 
     .prologue
-    .line 62
+    .line 61
     const-wide/32 v0, 0x7fffffff
 
     iget-wide v2, p0, Lorg/apache/james/mime4j/util/PartialInputStream;->limit:J
 
-    iget-wide v4, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->position:J
+    iget-wide v4, p0, Lorg/apache/james/mime4j/util/PartialInputStream;->position:J
 
     sub-long/2addr v2, v4
 
@@ -41,7 +41,7 @@
     .end annotation
 
     .prologue
-    .line 35
+    .line 36
     invoke-super {p0}, Lorg/apache/james/mime4j/util/PositionInputStream;->available()I
 
     move-result v0
@@ -66,21 +66,21 @@
     .end annotation
 
     .prologue
-    .line 39
+    .line 40
     iget-wide v0, p0, Lorg/apache/james/mime4j/util/PartialInputStream;->limit:J
 
-    iget-wide v2, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->position:J
+    iget-wide v2, p0, Lorg/apache/james/mime4j/util/PartialInputStream;->position:J
 
     cmp-long v0, v0, v2
 
     if-lez v0, :cond_d
 
-    .line 40
+    .line 41
     invoke-super {p0}, Lorg/apache/james/mime4j/util/PositionInputStream;->read()I
 
     move-result v0
 
-    .line 42
+    .line 43
     :goto_c
     return v0
 
@@ -100,7 +100,7 @@
     .end annotation
 
     .prologue
-    .line 46
+    .line 47
     const/4 v0, 0x0
 
     array-length v1, p1
@@ -124,7 +124,7 @@
     .end annotation
 
     .prologue
-    .line 50
+    .line 51
     invoke-direct {p0}, Lorg/apache/james/mime4j/util/PartialInputStream;->getBytesLeft()I
 
     move-result v0
@@ -133,7 +133,7 @@
 
     move-result p3
 
-    .line 51
+    .line 52
     invoke-super {p0, p1, p2, p3}, Lorg/apache/james/mime4j/util/PositionInputStream;->read([BII)I
 
     move-result v0

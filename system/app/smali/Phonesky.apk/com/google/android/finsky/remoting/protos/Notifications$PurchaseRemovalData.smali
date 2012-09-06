@@ -27,20 +27,20 @@
     .registers 2
 
     .prologue
-    .line 130
+    .line 136
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 135
+    .line 141
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;->malicious_:Z
 
-    .line 166
+    .line 173
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;->cachedSize:I
 
-    .line 130
+    .line 136
     return-void
 .end method
 
@@ -50,15 +50,15 @@
     .registers 2
 
     .prologue
-    .line 168
+    .line 176
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 170
+    .line 178
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;->getSerializedSize()I
 
-    .line 172
+    .line 180
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;->cachedSize:I
 
@@ -69,7 +69,7 @@
     .registers 2
 
     .prologue
-    .line 136
+    .line 142
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;->malicious_:Z
 
     return v0
@@ -79,10 +79,10 @@
     .registers 4
 
     .prologue
-    .line 176
+    .line 185
     const/4 v0, 0x0
 
-    .line 177
+    .line 186
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;->hasMalicious()Z
 
@@ -90,7 +90,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 178
+    .line 187
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;->getMalicious()Z
@@ -103,11 +103,11 @@
 
     add-int/2addr v0, v1
 
-    .line 181
+    .line 190
     :cond_11
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;->cachedSize:I
 
-    .line 182
+    .line 191
     return v0
 .end method
 
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 137
+    .line 143
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;->hasMalicious:Z
 
     return v0
@@ -131,29 +131,29 @@
     .end annotation
 
     .prologue
-    .line 189
+    .line 199
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 190
+    .line 200
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_16
 
-    .line 194
+    .line 204
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 195
+    .line 205
     :sswitch_d
     return-object p0
 
-    .line 200
+    .line 210
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 190
+    .line 200
     :sswitch_data_16
     .sparse-switch
         0x0 -> :sswitch_d
@@ -181,7 +181,7 @@
     .end annotation
 
     .prologue
-    .line 128
+    .line 133
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;
 
     move-result-object v0
@@ -194,15 +194,15 @@
     .parameter "value"
 
     .prologue
-    .line 139
+    .line 145
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;->hasMalicious:Z
 
-    .line 140
+    .line 146
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;->malicious_:Z
 
-    .line 141
+    .line 147
     return-object p0
 .end method
 
@@ -216,14 +216,14 @@
     .end annotation
 
     .prologue
-    .line 161
+    .line 168
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;->hasMalicious()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 162
+    .line 169
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$PurchaseRemovalData;->getMalicious()Z
@@ -232,7 +232,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 164
+    .line 171
     :cond_e
     return-void
 .end method

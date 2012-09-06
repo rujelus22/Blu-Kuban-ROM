@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/resolution_layout" android:layout_width="442.0px" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.sec.android.app.ve.ui.HelveticaTextView android:textSize="34.0px" android:textColor="#ffffffff" android:gravity="center_vertical" android:id="@id/cameramode" android:background="@drawable/popup_top_dark" android:paddingLeft="15.0px" android:layout_width="fill_parent" android:layout_height="80.0px" android:text="@string/export_dialog_title" />
-    <ListView android:id="@id/export_resolution_listview" android:layout_width="fill_parent" android:layout_height="290.0px" android:divider="@drawable/divider_horizontal_bright" android:dividerHeight="1.0px" />
-</LinearLayout>

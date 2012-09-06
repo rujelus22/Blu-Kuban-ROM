@@ -66,45 +66,45 @@
 
     const/4 v1, 0x0
 
-    .line 9
+    .line 10
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 271
+    .line 282
     iput v1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->imageType_:I
 
-    .line 288
+    .line 299
     iput v1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->positionInSequence_:I
 
-    .line 305
+    .line 316
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->dimension_:Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;
 
-    .line 325
+    .line 336
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->imageUrl_:Ljava/lang/String;
 
-    .line 342
+    .line 353
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->secureUrl_:Ljava/lang/String;
 
-    .line 359
+    .line 370
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->altTextLocalized_:Ljava/lang/String;
 
-    .line 376
+    .line 387
     iput-boolean v1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->supportsFifeUrlOptions_:Z
 
-    .line 393
+    .line 404
     iput-object v2, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->citation_:Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;
 
-    .line 459
+    .line 471
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->cachedSize:I
 
-    .line 9
+    .line 10
     return-void
 .end method
 
@@ -114,7 +114,7 @@
     .registers 2
 
     .prologue
-    .line 360
+    .line 371
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->altTextLocalized_:Ljava/lang/String;
 
     return-object v0
@@ -124,15 +124,15 @@
     .registers 2
 
     .prologue
-    .line 461
+    .line 474
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 463
+    .line 476
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getSerializedSize()I
 
-    .line 465
+    .line 478
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->cachedSize:I
 
@@ -143,7 +143,7 @@
     .registers 2
 
     .prologue
-    .line 395
+    .line 406
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->citation_:Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;
 
     return-object v0
@@ -153,7 +153,7 @@
     .registers 2
 
     .prologue
-    .line 307
+    .line 318
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->dimension_:Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;
 
     return-object v0
@@ -163,7 +163,7 @@
     .registers 2
 
     .prologue
-    .line 273
+    .line 284
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->imageType_:I
 
     return v0
@@ -173,7 +173,7 @@
     .registers 2
 
     .prologue
-    .line 326
+    .line 337
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->imageUrl_:Ljava/lang/String;
 
     return-object v0
@@ -183,7 +183,7 @@
     .registers 2
 
     .prologue
-    .line 289
+    .line 300
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->positionInSequence_:I
 
     return v0
@@ -193,7 +193,7 @@
     .registers 2
 
     .prologue
-    .line 343
+    .line 354
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->secureUrl_:Ljava/lang/String;
 
     return-object v0
@@ -203,10 +203,10 @@
     .registers 4
 
     .prologue
-    .line 469
+    .line 483
     const/4 v0, 0x0
 
-    .line 470
+    .line 484
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasImageType()Z
 
@@ -214,7 +214,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 471
+    .line 485
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getImageType()I
@@ -227,7 +227,7 @@
 
     add-int/2addr v0, v1
 
-    .line 474
+    .line 488
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasDimension()Z
 
@@ -235,7 +235,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 475
+    .line 489
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getDimension()Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;
@@ -248,7 +248,7 @@
 
     add-int/2addr v0, v1
 
-    .line 478
+    .line 492
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasImageUrl()Z
 
@@ -256,7 +256,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 479
+    .line 493
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getImageUrl()Ljava/lang/String;
@@ -269,7 +269,7 @@
 
     add-int/2addr v0, v1
 
-    .line 482
+    .line 496
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasAltTextLocalized()Z
 
@@ -277,7 +277,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 483
+    .line 497
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getAltTextLocalized()Ljava/lang/String;
@@ -290,7 +290,7 @@
 
     add-int/2addr v0, v1
 
-    .line 486
+    .line 500
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasSecureUrl()Z
 
@@ -298,7 +298,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 487
+    .line 501
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getSecureUrl()Ljava/lang/String;
@@ -311,7 +311,7 @@
 
     add-int/2addr v0, v1
 
-    .line 490
+    .line 504
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasPositionInSequence()Z
 
@@ -319,7 +319,7 @@
 
     if-eqz v1, :cond_62
 
-    .line 491
+    .line 505
     const/16 v1, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getPositionInSequence()I
@@ -332,7 +332,7 @@
 
     add-int/2addr v0, v1
 
-    .line 494
+    .line 508
     :cond_62
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasSupportsFifeUrlOptions()Z
 
@@ -340,7 +340,7 @@
 
     if-eqz v1, :cond_73
 
-    .line 495
+    .line 509
     const/16 v1, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getSupportsFifeUrlOptions()Z
@@ -353,7 +353,7 @@
 
     add-int/2addr v0, v1
 
-    .line 498
+    .line 512
     :cond_73
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasCitation()Z
 
@@ -361,7 +361,7 @@
 
     if-eqz v1, :cond_84
 
-    .line 499
+    .line 513
     const/16 v1, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getCitation()Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;
@@ -374,11 +374,11 @@
 
     add-int/2addr v0, v1
 
-    .line 502
+    .line 516
     :cond_84
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->cachedSize:I
 
-    .line 503
+    .line 517
     return v0
 .end method
 
@@ -386,7 +386,7 @@
     .registers 2
 
     .prologue
-    .line 377
+    .line 388
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->supportsFifeUrlOptions_:Z
 
     return v0
@@ -396,7 +396,7 @@
     .registers 2
 
     .prologue
-    .line 361
+    .line 372
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasAltTextLocalized:Z
 
     return v0
@@ -406,7 +406,7 @@
     .registers 2
 
     .prologue
-    .line 394
+    .line 405
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasCitation:Z
 
     return v0
@@ -416,7 +416,7 @@
     .registers 2
 
     .prologue
-    .line 306
+    .line 317
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasDimension:Z
 
     return v0
@@ -426,7 +426,7 @@
     .registers 2
 
     .prologue
-    .line 272
+    .line 283
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasImageType:Z
 
     return v0
@@ -436,7 +436,7 @@
     .registers 2
 
     .prologue
-    .line 327
+    .line 338
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasImageUrl:Z
 
     return v0
@@ -446,7 +446,7 @@
     .registers 2
 
     .prologue
-    .line 290
+    .line 301
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasPositionInSequence:Z
 
     return v0
@@ -456,7 +456,7 @@
     .registers 2
 
     .prologue
-    .line 344
+    .line 355
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasSecureUrl:Z
 
     return v0
@@ -466,7 +466,7 @@
     .registers 2
 
     .prologue
-    .line 378
+    .line 389
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasSupportsFifeUrlOptions:Z
 
     return v0
@@ -482,29 +482,29 @@
     .end annotation
 
     .prologue
-    .line 510
+    .line 525
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 511
+    .line 526
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_5a
 
-    .line 515
+    .line 530
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 516
+    .line 531
     :sswitch_d
     return-object p0
 
-    .line 521
+    .line 536
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -514,24 +514,24 @@
 
     goto :goto_0
 
-    .line 525
+    .line 540
     :sswitch_16
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;-><init>()V
 
-    .line 526
+    .line 541
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;
     const/4 v2, 0x2
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readGroup(Lcom/google/protobuf/micro/MessageMicro;I)V
 
-    .line 527
+    .line 542
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->setDimension(Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;)Lcom/google/android/finsky/remoting/protos/Doc$Image;
 
     goto :goto_0
 
-    .line 531
+    .line 546
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;
     :sswitch_23
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -542,7 +542,7 @@
 
     goto :goto_0
 
-    .line 535
+    .line 550
     :sswitch_2b
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -552,7 +552,7 @@
 
     goto :goto_0
 
-    .line 539
+    .line 554
     :sswitch_33
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -562,7 +562,7 @@
 
     goto :goto_0
 
-    .line 543
+    .line 558
     :sswitch_3b
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -572,7 +572,7 @@
 
     goto :goto_0
 
-    .line 547
+    .line 562
     :sswitch_43
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -582,24 +582,24 @@
 
     goto :goto_0
 
-    .line 551
+    .line 566
     :sswitch_4b
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;-><init>()V
 
-    .line 552
+    .line 567
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;
     const/16 v2, 0xa
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readGroup(Lcom/google/protobuf/micro/MessageMicro;I)V
 
-    .line 553
+    .line 568
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->setCitation(Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;)Lcom/google/android/finsky/remoting/protos/Doc$Image;
 
     goto :goto_0
 
-    .line 511
+    .line 526
     nop
 
     :sswitch_data_5a
@@ -639,15 +639,15 @@
     .parameter "value"
 
     .prologue
-    .line 363
+    .line 374
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasAltTextLocalized:Z
 
-    .line 364
+    .line 375
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->altTextLocalized_:Ljava/lang/String;
 
-    .line 365
+    .line 376
     return-object p0
 .end method
 
@@ -656,26 +656,26 @@
     .parameter "value"
 
     .prologue
-    .line 397
+    .line 408
     if-nez p1, :cond_8
 
-    .line 398
+    .line 409
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 400
+    .line 411
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasCitation:Z
 
-    .line 401
+    .line 412
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->citation_:Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;
 
-    .line 402
+    .line 413
     return-object p0
 .end method
 
@@ -684,26 +684,26 @@
     .parameter "value"
 
     .prologue
-    .line 309
+    .line 320
     if-nez p1, :cond_8
 
-    .line 310
+    .line 321
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 312
+    .line 323
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasDimension:Z
 
-    .line 313
+    .line 324
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->dimension_:Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;
 
-    .line 314
+    .line 325
     return-object p0
 .end method
 
@@ -712,15 +712,15 @@
     .parameter "value"
 
     .prologue
-    .line 275
+    .line 286
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasImageType:Z
 
-    .line 276
+    .line 287
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->imageType_:I
 
-    .line 277
+    .line 288
     return-object p0
 .end method
 
@@ -729,15 +729,15 @@
     .parameter "value"
 
     .prologue
-    .line 329
+    .line 340
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasImageUrl:Z
 
-    .line 330
+    .line 341
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->imageUrl_:Ljava/lang/String;
 
-    .line 331
+    .line 342
     return-object p0
 .end method
 
@@ -746,15 +746,15 @@
     .parameter "value"
 
     .prologue
-    .line 292
+    .line 303
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasPositionInSequence:Z
 
-    .line 293
+    .line 304
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->positionInSequence_:I
 
-    .line 294
+    .line 305
     return-object p0
 .end method
 
@@ -763,15 +763,15 @@
     .parameter "value"
 
     .prologue
-    .line 346
+    .line 357
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasSecureUrl:Z
 
-    .line 347
+    .line 358
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->secureUrl_:Ljava/lang/String;
 
-    .line 348
+    .line 359
     return-object p0
 .end method
 
@@ -780,15 +780,15 @@
     .parameter "value"
 
     .prologue
-    .line 380
+    .line 391
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasSupportsFifeUrlOptions:Z
 
-    .line 381
+    .line 392
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image;->supportsFifeUrlOptions_:Z
 
-    .line 382
+    .line 393
     return-object p0
 .end method
 
@@ -802,14 +802,14 @@
     .end annotation
 
     .prologue
-    .line 433
+    .line 445
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasImageType()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 434
+    .line 446
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getImageType()I
@@ -818,7 +818,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 436
+    .line 448
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasDimension()Z
 
@@ -826,7 +826,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 437
+    .line 449
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getDimension()Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;
@@ -835,7 +835,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeGroup(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 439
+    .line 451
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasImageUrl()Z
 
@@ -843,7 +843,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 440
+    .line 452
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getImageUrl()Ljava/lang/String;
@@ -852,7 +852,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 442
+    .line 454
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasAltTextLocalized()Z
 
@@ -860,7 +860,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 443
+    .line 455
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getAltTextLocalized()Ljava/lang/String;
@@ -869,7 +869,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 445
+    .line 457
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasSecureUrl()Z
 
@@ -877,7 +877,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 446
+    .line 458
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getSecureUrl()Ljava/lang/String;
@@ -886,7 +886,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 448
+    .line 460
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasPositionInSequence()Z
 
@@ -894,7 +894,7 @@
 
     if-eqz v0, :cond_55
 
-    .line 449
+    .line 461
     const/16 v0, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getPositionInSequence()I
@@ -903,7 +903,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 451
+    .line 463
     :cond_55
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasSupportsFifeUrlOptions()Z
 
@@ -911,7 +911,7 @@
 
     if-eqz v0, :cond_64
 
-    .line 452
+    .line 464
     const/16 v0, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getSupportsFifeUrlOptions()Z
@@ -920,7 +920,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 454
+    .line 466
     :cond_64
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->hasCitation()Z
 
@@ -928,7 +928,7 @@
 
     if-eqz v0, :cond_73
 
-    .line 455
+    .line 467
     const/16 v0, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image;->getCitation()Lcom/google/android/finsky/remoting/protos/Doc$Image$Citation;
@@ -937,7 +937,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeGroup(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 457
+    .line 469
     :cond_73
     return-void
 .end method

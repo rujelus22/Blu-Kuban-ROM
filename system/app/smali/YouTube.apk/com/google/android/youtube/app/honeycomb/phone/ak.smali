@@ -1,437 +1,125 @@
-.class public final Lcom/google/android/youtube/app/honeycomb/phone/ak;
+.class final Lcom/google/android/youtube/app/honeycomb/phone/ak;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/app/o;
+.implements Lcom/google/android/youtube/core/async/bc;
 
 
 # instance fields
-.field private final a:Landroid/app/Activity;
+.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/Activity;)V
+.method private constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/t;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 22
+    .line 512
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 23
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
+    return-void
+.end method
 
-    .line 24
+.method synthetic constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/t;B)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 512
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/ak;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/t;)V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .registers 3
-
-    .prologue
-    .line 44
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    instance-of v0, v0, Lcom/google/android/youtube/app/honeycomb/phone/HomeActivity;
-
-    if-nez v0, :cond_11
-
-    .line 45
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/phone/HomeActivity;->a(Landroid/content/Context;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 47
-    :cond_11
-    return-void
-.end method
-
-.method public final a(Landroid/net/Uri;IZLcom/google/android/youtube/core/client/al;)V
-    .registers 7
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 93
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    invoke-static {v1, p1, p2, p3, p4}, Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;->a(Landroid/content/Context;Landroid/net/Uri;IZLcom/google/android/youtube/core/client/al;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 95
-    return-void
-.end method
-
-.method public final a(Landroid/net/Uri;Z)V
-    .registers 5
-    .parameter
-    .parameter
-
-    .prologue
-    .line 40
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    invoke-static {v1, p1, p2}, Lcom/google/android/youtube/app/honeycomb/phone/PlaylistActivity;->a(Landroid/content/Context;Landroid/net/Uri;Z)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 41
-    return-void
-.end method
-
-.method public final a(Lcom/google/android/youtube/core/model/Video;)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 98
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    invoke-static {v1, p1}, Lcom/google/android/youtube/app/honeycomb/phone/EditVideoActivity;->a(Landroid/content/Context;Lcom/google/android/youtube/core/model/Video;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 99
-    return-void
-.end method
-
-.method public final a(Ljava/lang/String;)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 31
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    invoke-static {v1, p1}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->a(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 32
-    return-void
-.end method
-
-.method public final a(Ljava/lang/String;ILandroid/net/Uri;)V
+.method public final a(Lcom/google/android/youtube/core/model/UserAuth;)V
     .registers 6
     .parameter
-    .parameter
-    .parameter
 
     .prologue
-    .line 35
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
+    .line 517
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/t;->t(Lcom/google/android/youtube/app/honeycomb/phone/t;)V
 
-    invoke-static {v1, p1, p2, p3}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->a(Landroid/content/Context;Ljava/lang/String;ILandroid/net/Uri;)Landroid/content/Intent;
+    .line 518
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
-    move-result-object v1
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/t;->v(Lcom/google/android/youtube/app/honeycomb/phone/t;)Lcom/google/android/youtube/core/ui/j;
 
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+    move-result-object v0
 
-    .line 37
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Lcom/google/android/youtube/core/async/GDataRequest;
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
+
+    invoke-static {v3}, Lcom/google/android/youtube/app/honeycomb/phone/t;->u(Lcom/google/android/youtube/app/honeycomb/phone/t;)Lcom/google/android/youtube/core/b/ae;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Lcom/google/android/youtube/core/b/ae;->a()Lcom/google/android/youtube/core/async/GDataRequestFactory;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->i(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/ui/j;->a([Lcom/google/android/youtube/core/async/GDataRequest;)V
+
+    .line 520
     return-void
 .end method
 
-.method public final a(Ljava/lang/String;Landroid/net/Uri;Lcom/google/android/youtube/core/client/al;)V
-    .registers 6
-    .parameter
-    .parameter
+.method public final a(Ljava/lang/Exception;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 87
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
+    .line 529
+    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/ak;->e_()V
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    invoke-static {v1, p1, p2, p3}, Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;->a(Landroid/content/Context;Ljava/lang/String;Landroid/net/Uri;Lcom/google/android/youtube/core/client/al;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 89
+    .line 530
     return-void
 .end method
 
-.method public final a(Ljava/lang/String;Lcom/google/android/youtube/core/client/al;)V
-    .registers 5
-    .parameter
-    .parameter
-
-    .prologue
-    .line 83
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    invoke-static {v1, p1, p2}, Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;->b(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/youtube/core/client/al;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 84
-    return-void
-.end method
-
-.method public final a(Ljava/lang/String;ZLcom/google/android/youtube/core/client/al;)V
-    .registers 6
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 78
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    invoke-static {v1, p1, p2, p3}, Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;->a(Landroid/content/Context;Ljava/lang/String;ZLcom/google/android/youtube/core/client/al;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 80
-    return-void
-.end method
-
-.method public final b()V
-    .registers 1
-
-    .prologue
-    .line 28
-    return-void
-.end method
-
-.method public final b(Ljava/lang/String;)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 70
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    invoke-static {v1, p1}, Lcom/google/android/youtube/app/honeycomb/phone/ResultsActivity;->a(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 71
-    return-void
-.end method
-
-.method public final c()V
-    .registers 1
-
-    .prologue
-    .line 51
-    return-void
-.end method
-
-.method public final c(Ljava/lang/String;)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 118
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    invoke-static {v1, p1}, Lcom/google/android/youtube/app/honeycomb/phone/an;->a(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 119
-    return-void
-.end method
-
-.method public final d()V
+.method public final e_()V
     .registers 3
 
     .prologue
-    .line 54
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
+    .line 523
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/t;->v(Lcom/google/android/youtube/app/honeycomb/phone/t;)Lcom/google/android/youtube/core/ui/j;
 
-    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;->a(Landroid/content/Context;)Landroid/content/Intent;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/ui/j;->e()V
 
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+    .line 524
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
-    .line 55
-    return-void
-.end method
+    const/4 v1, 0x0
 
-.method public final e()V
-    .registers 3
+    invoke-static {v0, v1}, Lcom/google/android/youtube/app/honeycomb/phone/t;->a(Lcom/google/android/youtube/app/honeycomb/phone/t;Z)Z
 
-    .prologue
-    .line 58
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
+    .line 525
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/t;->w(Lcom/google/android/youtube/app/honeycomb/phone/t;)V
 
-    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/phone/MyFavoritesActivity;->a(Landroid/content/Context;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 59
-    return-void
-.end method
-
-.method public final f()V
-    .registers 3
-
-    .prologue
-    .line 110
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/phone/WatchLaterActivity;->a(Landroid/content/Context;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 111
-    return-void
-.end method
-
-.method public final g()V
-    .registers 3
-
-    .prologue
-    .line 114
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/phone/WatchHistoryActivity;->a(Landroid/content/Context;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 115
-    return-void
-.end method
-
-.method public final h()V
-    .registers 3
-
-    .prologue
-    .line 62
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/phone/MyPlaylistsActivity;->a(Landroid/content/Context;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 63
-    return-void
-.end method
-
-.method public final i()V
-    .registers 3
-
-    .prologue
-    .line 66
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/phone/MySubscriptionsActivity;->a(Landroid/content/Context;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 67
-    return-void
-.end method
-
-.method public final j()V
-    .registers 5
-
-    .prologue
-    .line 102
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    new-instance v1, Landroid/content/Intent;
-
-    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    const-class v3, Lcom/google/android/youtube/app/honeycomb/SettingsActivity;
-
-    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 103
-    return-void
-.end method
-
-.method public final k()V
-    .registers 3
-
-    .prologue
-    .line 106
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ak;->a:Landroid/app/Activity;
-
-    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/phone/LiveActivity;->a(Landroid/content/Context;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    .line 107
+    .line 526
     return-void
 .end method

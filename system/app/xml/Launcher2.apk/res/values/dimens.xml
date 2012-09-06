@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="clingPunchThroughGraphicCenterRadius">94.0dip</dimen>
-    <dimen name="folderClingMarginTop">20.0dip</dimen>
-    <dimen name="cling_text_block_offset_x">0.0dip</dimen>
-    <dimen name="cling_text_block_offset_y">0.0dip</dimen>
     <dimen name="qsb_bar_height_inset">34.0dip</dimen>
     <dimen name="qsb_bar_height">40.0dip</dimen>
     <dimen name="qsb_padding_left">0.0dip</dimen>
@@ -26,6 +22,12 @@
     <dimen name="hotseat_height_gap">-1.0dip</dimen>
     <dimen name="workspace_overscroll_drawable_padding">0.0dip</dimen>
     <dimen name="app_icon_padding_top">8.0dip</dimen>
+    <dimen name="workspace_horizontal_margin_small">4.0dip</dimen>
+    <dimen name="workspace_horizontal_margin_medium">8.0dip</dimen>
+    <dimen name="workspace_horizontal_margin_large">16.0dip</dimen>
+    <dimen name="workspace_vertical_margin_small">4.0dip</dimen>
+    <dimen name="workspace_vertical_margin_medium">8.0dip</dimen>
+    <dimen name="workspace_vertical_margin_large">16.0dip</dimen>
     <dimen name="toolbar_button_vertical_padding">0.0dip</dimen>
     <dimen name="toolbar_button_horizontal_padding">12.0dip</dimen>
     <dimen name="toolbar_external_icon_width">36.0dip</dimen>
@@ -61,4 +63,31 @@
     <dimen name="folder_name_padding">10.0dip</dimen>
     <dimen name="folder_width_gap">0.0dip</dimen>
     <dimen name="folder_height_gap">0.0dip</dimen>
+    <dimen name="default_app_widget_padding_left">8.0dip</dimen>
+    <dimen name="default_app_widget_padding_right">8.0dip</dimen>
+    <dimen name="default_app_widget_padding_top">8.0dip</dimen>
+    <dimen name="default_app_widget_padding_bottom">8.0dip</dimen>
+    <dimen name="hotseat_page_spacing">0.0dip</dimen>
+    <dimen name="hotseat_max_gap">160.0dip</dimen>
+    <dimen name="dock_horizontal_margin_small">4.0dip</dimen>
+    <dimen name="dock_horizontal_margin_medium">8.0dip</dimen>
+    <dimen name="dock_horizontal_margin_large">16.0dip</dimen>
+    <dimen name="button_bar_height_none">56.0dip</dimen>
+    <dimen name="button_bar_height_top_padding_none">2.0dip</dimen>
+    <dimen name="button_bar_height_bottom_padding_none">2.0dip</dimen>
+    <dimen name="button_bar_height_plus_padding_none">60.0dip</dimen>
+    <dimen name="button_bar_height_small">62.0dip</dimen>
+    <dimen name="button_bar_height_top_padding_small">8.0dip</dimen>
+    <dimen name="button_bar_height_bottom_padding_small">0.0dip</dimen>
+    <dimen name="button_bar_height_plus_padding_small">70.0dip</dimen>
+    <dimen name="button_bar_height_medium">80.0dip</dimen>
+    <dimen name="button_bar_height_top_padding_medium">8.0dip</dimen>
+    <dimen name="button_bar_height_bottom_padding_medium">8.0dip</dimen>
+    <dimen name="button_bar_height_plus_padding_medium">80.0dip</dimen>
+    <dimen name="button_bar_height_large">90.0dip</dimen>
+    <dimen name="button_bar_height_top_padding_large">8.0dip</dimen>
+    <dimen name="button_bar_height_bottom_padding_large">0.0dip</dimen>
+    <dimen name="button_bar_height_plus_padding_large">90.0dip</dimen>
+    <dimen name="tabindicator_appscustomize_padding">20.0dip</dimen>
+    <dimen name="preview_gap">5.0dip</dimen>
 </resources>

@@ -19,37 +19,16 @@
 
 # direct methods
 .method private constructor <init>(Lcom/google/android/finsky/activities/DetailsDataBasedFragment;)V
-    .registers 5
+    .registers 3
     .parameter "fragment"
 
     .prologue
-    .line 164
+    .line 168
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/google/android/finsky/utils/Nfc$BaseNfcHandler;-><init>(Lcom/google/android/finsky/activities/DetailsDataBasedFragment;Lcom/google/android/finsky/utils/Nfc$1;)V
 
     .line 169
-    iget-object v0, p0, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;->mNfcAdapter:Landroid/nfc/NfcAdapter;
-
-    if-eqz v0, :cond_16
-
-    .line 170
-    iget-object v0, p0, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;->mNfcAdapter:Landroid/nfc/NfcAdapter;
-
-    iget-object v1, p0, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;->mFragment:Lcom/google/android/finsky/activities/DetailsDataBasedFragment;
-
-    invoke-virtual {v1}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Landroid/app/Activity;
-
-    invoke-virtual {v0, p0, v1, v2}, Landroid/nfc/NfcAdapter;->setNdefPushMessageCallback(Landroid/nfc/NfcAdapter$CreateNdefMessageCallback;Landroid/app/Activity;[Landroid/app/Activity;)V
-
-    .line 172
-    :cond_16
     return-void
 .end method
 
@@ -59,23 +38,38 @@
     .parameter "x1"
 
     .prologue
-    .line 161
+    .line 165
     invoke-direct {p0, p1}, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;-><init>(Lcom/google/android/finsky/activities/DetailsDataBasedFragment;)V
 
     return-void
 .end method
 
-.method private setPushMessage(Landroid/nfc/NdefMessage;)V
+.method private setCallback(Landroid/nfc/NfcAdapter$CreateNdefMessageCallback;)V
     .registers 5
-    .parameter "message"
+    .parameter "callback"
 
     .prologue
-    .line 196
+    .line 192
+    iget-object v0, p0, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;->mFragment:Lcom/google/android/finsky/activities/DetailsDataBasedFragment;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/activities/DetailsDataBasedFragment;->canChangeFragmentManagerState()Z
+
+    move-result v0
+
+    if-nez v0, :cond_9
+
+    .line 202
+    :cond_8
+    :goto_8
+    return-void
+
+    .line 199
+    :cond_9
     iget-object v0, p0, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;->mNfcAdapter:Landroid/nfc/NfcAdapter;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_8
 
-    .line 197
+    .line 200
     iget-object v0, p0, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;->mNfcAdapter:Landroid/nfc/NfcAdapter;
 
     iget-object v1, p0, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;->mFragment:Lcom/google/android/finsky/activities/DetailsDataBasedFragment;
@@ -88,11 +82,9 @@
 
     new-array v2, v2, [Landroid/app/Activity;
 
-    invoke-virtual {v0, p1, v1, v2}, Landroid/nfc/NfcAdapter;->setNdefPushMessage(Landroid/nfc/NdefMessage;Landroid/app/Activity;[Landroid/app/Activity;)V
+    invoke-virtual {v0, p1, v1, v2}, Landroid/nfc/NfcAdapter;->setNdefPushMessageCallback(Landroid/nfc/NfcAdapter$CreateNdefMessageCallback;Landroid/app/Activity;[Landroid/app/Activity;)V
 
-    .line 199
-    :cond_12
-    return-void
+    goto :goto_8
 .end method
 
 
@@ -102,7 +94,7 @@
     .parameter "event"
 
     .prologue
-    .line 176
+    .line 173
     invoke-virtual {p0}, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;->createMessage()Landroid/nfc/NdefMessage;
 
     move-result-object v0
@@ -111,17 +103,13 @@
 .end method
 
 .method public onDataChanged()V
-    .registers 2
+    .registers 1
 
     .prologue
-    .line 192
-    invoke-virtual {p0}, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;->createMessage()Landroid/nfc/NdefMessage;
+    .line 188
+    invoke-direct {p0, p0}, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;->setCallback(Landroid/nfc/NfcAdapter$CreateNdefMessageCallback;)V
 
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;->setPushMessage(Landroid/nfc/NdefMessage;)V
-
-    .line 193
+    .line 189
     return-void
 .end method
 
@@ -129,26 +117,22 @@
     .registers 2
 
     .prologue
-    .line 182
+    .line 178
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;->setPushMessage(Landroid/nfc/NdefMessage;)V
+    invoke-direct {p0, v0}, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;->setCallback(Landroid/nfc/NfcAdapter$CreateNdefMessageCallback;)V
 
-    .line 183
+    .line 179
     return-void
 .end method
 
 .method public onResume()V
-    .registers 2
+    .registers 1
 
     .prologue
-    .line 187
-    invoke-virtual {p0}, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;->createMessage()Landroid/nfc/NdefMessage;
+    .line 183
+    invoke-direct {p0, p0}, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;->setCallback(Landroid/nfc/NfcAdapter$CreateNdefMessageCallback;)V
 
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/google/android/finsky/utils/Nfc$IcsNfcHandler;->setPushMessage(Landroid/nfc/NdefMessage;)V
-
-    .line 188
+    .line 184
     return-void
 .end method

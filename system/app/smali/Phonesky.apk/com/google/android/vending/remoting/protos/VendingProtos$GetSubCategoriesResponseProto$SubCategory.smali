@@ -31,25 +31,25 @@
     .registers 2
 
     .prologue
-    .line 13692
+    .line 13990
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 13697
+    .line 13995
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->subCategoryDisplay_:Ljava/lang/String;
 
-    .line 13714
+    .line 14012
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->subCategoryId_:Ljava/lang/String;
 
-    .line 13750
+    .line 14049
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->cachedSize:I
 
-    .line 13692
+    .line 13990
     return-void
 .end method
 
@@ -59,15 +59,15 @@
     .registers 2
 
     .prologue
-    .line 13752
+    .line 14052
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 13754
+    .line 14054
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->getSerializedSize()I
 
-    .line 13756
+    .line 14056
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->cachedSize:I
 
@@ -78,10 +78,10 @@
     .registers 4
 
     .prologue
-    .line 13760
+    .line 14061
     const/4 v0, 0x0
 
-    .line 13761
+    .line 14062
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->hasSubCategoryDisplay()Z
 
@@ -89,7 +89,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 13762
+    .line 14063
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->getSubCategoryDisplay()Ljava/lang/String;
@@ -102,7 +102,7 @@
 
     add-int/2addr v0, v1
 
-    .line 13765
+    .line 14066
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->hasSubCategoryId()Z
 
@@ -110,7 +110,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 13766
+    .line 14067
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->getSubCategoryId()Ljava/lang/String;
@@ -123,11 +123,11 @@
 
     add-int/2addr v0, v1
 
-    .line 13769
+    .line 14070
     :cond_21
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->cachedSize:I
 
-    .line 13770
+    .line 14071
     return v0
 .end method
 
@@ -135,7 +135,7 @@
     .registers 2
 
     .prologue
-    .line 13698
+    .line 13996
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->subCategoryDisplay_:Ljava/lang/String;
 
     return-object v0
@@ -145,7 +145,7 @@
     .registers 2
 
     .prologue
-    .line 13715
+    .line 14013
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->subCategoryId_:Ljava/lang/String;
 
     return-object v0
@@ -155,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 13699
+    .line 13997
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->hasSubCategoryDisplay:Z
 
     return v0
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 13716
+    .line 14014
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->hasSubCategoryId:Z
 
     return v0
@@ -181,29 +181,29 @@
     .end annotation
 
     .prologue
-    .line 13777
+    .line 14079
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 13778
+    .line 14080
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 13782
+    .line 14084
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 13783
+    .line 14085
     :sswitch_d
     return-object p0
 
-    .line 13788
+    .line 14090
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 13792
+    .line 14094
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 13778
+    .line 14080
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -242,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 13690
+    .line 13988
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;
 
     move-result-object v0
@@ -255,15 +255,15 @@
     .parameter "value"
 
     .prologue
-    .line 13701
+    .line 13999
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->hasSubCategoryDisplay:Z
 
-    .line 13702
+    .line 14000
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->subCategoryDisplay_:Ljava/lang/String;
 
-    .line 13703
+    .line 14001
     return-object p0
 .end method
 
@@ -272,15 +272,15 @@
     .parameter "value"
 
     .prologue
-    .line 13718
+    .line 14016
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->hasSubCategoryId:Z
 
-    .line 13719
+    .line 14017
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->subCategoryId_:Ljava/lang/String;
 
-    .line 13720
+    .line 14018
     return-object p0
 .end method
 
@@ -294,14 +294,14 @@
     .end annotation
 
     .prologue
-    .line 13742
+    .line 14041
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->hasSubCategoryDisplay()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 13743
+    .line 14042
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->getSubCategoryDisplay()Ljava/lang/String;
@@ -310,7 +310,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 13745
+    .line 14044
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->hasSubCategoryId()Z
 
@@ -318,7 +318,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 13746
+    .line 14045
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesResponseProto$SubCategory;->getSubCategoryId()Ljava/lang/String;
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 13748
+    .line 14047
     :cond_1c
     return-void
 .end method

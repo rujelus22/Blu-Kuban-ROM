@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="@string/preferences_about_title" android:order="5000">
-        <Preference android:title="@string/preferences_build_version" android:key="build_version" />
-        <Preference android:title="@string/preferences_license_title" android:key="@string/license_preference_key" android:summary="@string/preferences_license_summary" />
-    </PreferenceCategory>
-</PreferenceScreen>

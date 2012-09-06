@@ -1,168 +1,206 @@
-.class public Lcom/google/googlenav/ui/view/dialog/b;
-.super Lcom/google/googlenav/ui/view/dialog/a;
+.class Lcom/google/googlenav/ui/view/dialog/B;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LaQ/bE;
 
 
 # instance fields
-.field private final d:Landroid/widget/ListAdapter;
+.field private a:Landroid/widget/TableLayout;
 
-.field private k:Landroid/widget/AdapterView$OnItemClickListener;
+.field private b:Landroid/widget/TextView;
+
+.field private c:Landroid/widget/ImageView;
+
+.field private d:Landroid/widget/TextView;
+
+.field private e:Landroid/widget/TextView;
+
+.field private f:Landroid/widget/TextView;
+
+.field private g:Landroid/widget/ImageView;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/view/View;Landroid/widget/ListAdapter;Landroid/widget/AdapterView$OnItemClickListener;)V
-    .registers 7
+.method private constructor <init>()V
+    .registers 1
 
-    const v0, 0x7f0300fb
-
-    const v1, 0x7f0d00c0
-
-    invoke-direct {p0, p1, p2, v0, v1}, Lcom/google/googlenav/ui/view/dialog/a;-><init>(Landroid/content/Context;Landroid/view/View;II)V
-
-    iput-object p3, p0, Lcom/google/googlenav/ui/view/dialog/b;->d:Landroid/widget/ListAdapter;
-
-    iput-object p4, p0, Lcom/google/googlenav/ui/view/dialog/b;->k:Landroid/widget/AdapterView$OnItemClickListener;
+    .prologue
+    .line 439
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method synthetic constructor <init>(Lcom/google/googlenav/ui/view/dialog/t;)V
+    .registers 2
+    .parameter
 
-# virtual methods
-.method public a(Landroid/widget/AdapterView$OnItemClickListener;)V
-    .registers 3
+    .prologue
+    .line 439
+    invoke-direct {p0}, Lcom/google/googlenav/ui/view/dialog/B;-><init>()V
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/b;->k:Landroid/widget/AdapterView$OnItemClickListener;
-
-    const v0, 0x7f0f00fd
-
-    invoke-virtual {p0, v0}, Lcom/google/googlenav/ui/view/dialog/b;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ListView;
-
-    if-eqz v0, :cond_12
-
-    if-eqz p1, :cond_12
-
-    invoke-virtual {v0, p1}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
-
-    :cond_12
     return-void
 .end method
 
-.method protected g()V
-    .registers 8
+.method static synthetic a(Lcom/google/googlenav/ui/view/dialog/B;Landroid/widget/ImageView;)Landroid/widget/ImageView;
+    .registers 2
+    .parameter
+    .parameter
 
-    const v0, 0x7f0f00fd
+    .prologue
+    .line 439
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/B;->c:Landroid/widget/ImageView;
 
-    invoke-virtual {p0, v0}, Lcom/google/googlenav/ui/view/dialog/b;->findViewById(I)Landroid/view/View;
+    return-object p1
+.end method
 
-    move-result-object v0
+.method static synthetic a(Lcom/google/googlenav/ui/view/dialog/B;Landroid/widget/TableLayout;)Landroid/widget/TableLayout;
+    .registers 2
+    .parameter
+    .parameter
 
-    check-cast v0, Landroid/widget/ListView;
+    .prologue
+    .line 439
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/B;->a:Landroid/widget/TableLayout;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/b;->d:Landroid/widget/ListAdapter;
+    return-object p1
+.end method
 
-    if-eqz v1, :cond_12
+.method static synthetic a(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/TextView;
+    .registers 2
+    .parameter
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/b;->d:Landroid/widget/ListAdapter;
+    .prologue
+    .line 439
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/B;->b:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
+    return-object v0
+.end method
 
-    :cond_12
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/b;->k:Landroid/widget/AdapterView$OnItemClickListener;
+.method static synthetic a(Lcom/google/googlenav/ui/view/dialog/B;Landroid/widget/TextView;)Landroid/widget/TextView;
+    .registers 2
+    .parameter
+    .parameter
 
-    if-eqz v1, :cond_1b
+    .prologue
+    .line 439
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/B;->b:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/b;->k:Landroid/widget/AdapterView$OnItemClickListener;
+    return-object p1
+.end method
 
-    invoke-virtual {v0, v1}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+.method static synthetic b(Lcom/google/googlenav/ui/view/dialog/B;Landroid/widget/ImageView;)Landroid/widget/ImageView;
+    .registers 2
+    .parameter
+    .parameter
 
-    :cond_1b
-    invoke-super {p0}, Lcom/google/googlenav/ui/view/dialog/a;->g()V
+    .prologue
+    .line 439
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/B;->g:Landroid/widget/ImageView;
 
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/b;->getWindow()Landroid/view/Window;
+    return-object p1
+.end method
 
-    move-result-object v2
+.method static synthetic b(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/TextView;
+    .registers 2
+    .parameter
 
-    invoke-virtual {v2}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    .prologue
+    .line 439
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/B;->d:Landroid/widget/TextView;
 
-    move-result-object v3
+    return-object v0
+.end method
 
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/b;->getContext()Landroid/content/Context;
+.method static synthetic b(Lcom/google/googlenav/ui/view/dialog/B;Landroid/widget/TextView;)Landroid/widget/TextView;
+    .registers 2
+    .parameter
+    .parameter
 
-    move-result-object v1
+    .prologue
+    .line 439
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/B;->d:Landroid/widget/TextView;
 
-    const-string v4, "window"
+    return-object p1
+.end method
 
-    invoke-virtual {v1, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+.method static synthetic c(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/TextView;
+    .registers 2
+    .parameter
 
-    move-result-object v1
+    .prologue
+    .line 439
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/B;->e:Landroid/widget/TextView;
 
-    check-cast v1, Landroid/view/WindowManager;
+    return-object v0
+.end method
 
-    new-instance v4, Landroid/util/DisplayMetrics;
+.method static synthetic c(Lcom/google/googlenav/ui/view/dialog/B;Landroid/widget/TextView;)Landroid/widget/TextView;
+    .registers 2
+    .parameter
+    .parameter
 
-    invoke-direct {v4}, Landroid/util/DisplayMetrics;-><init>()V
+    .prologue
+    .line 439
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/B;->e:Landroid/widget/TextView;
 
-    invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    return-object p1
+.end method
 
-    move-result-object v1
+.method static synthetic d(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/TextView;
+    .registers 2
+    .parameter
 
-    invoke-virtual {v1, v4}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+    .prologue
+    .line 439
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/B;->f:Landroid/widget/TextView;
 
-    const/4 v1, 0x0
+    return-object v0
+.end method
 
-    iget v5, v3, Landroid/view/WindowManager$LayoutParams;->height:I
+.method static synthetic d(Lcom/google/googlenav/ui/view/dialog/B;Landroid/widget/TextView;)Landroid/widget/TextView;
+    .registers 2
+    .parameter
+    .parameter
 
-    iget v6, v3, Landroid/view/WindowManager$LayoutParams;->y:I
+    .prologue
+    .line 439
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/B;->f:Landroid/widget/TextView;
 
-    add-int/2addr v5, v6
+    return-object p1
+.end method
 
-    iget v6, v4, Landroid/util/DisplayMetrics;->heightPixels:I
+.method static synthetic e(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/ImageView;
+    .registers 2
+    .parameter
 
-    if-le v5, v6, :cond_69
+    .prologue
+    .line 439
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/B;->c:Landroid/widget/ImageView;
 
-    iget v1, v3, Landroid/view/WindowManager$LayoutParams;->height:I
+    return-object v0
+.end method
 
-    iget v5, v3, Landroid/view/WindowManager$LayoutParams;->height:I
+.method static synthetic f(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/ImageView;
+    .registers 2
+    .parameter
 
-    iget v6, v3, Landroid/view/WindowManager$LayoutParams;->y:I
+    .prologue
+    .line 439
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/B;->g:Landroid/widget/ImageView;
 
-    add-int/2addr v5, v6
+    return-object v0
+.end method
 
-    iget v4, v4, Landroid/util/DisplayMetrics;->heightPixels:I
+.method static synthetic g(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/TableLayout;
+    .registers 2
+    .parameter
 
-    sub-int v4, v5, v4
+    .prologue
+    .line 439
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/B;->a:Landroid/widget/TableLayout;
 
-    sub-int/2addr v1, v4
-
-    iput v1, v3, Landroid/view/WindowManager$LayoutParams;->height:I
-
-    invoke-virtual {v0}, Landroid/widget/ListView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/LinearLayout$LayoutParams;
-
-    const/4 v4, -0x1
-
-    iput v4, v1, Landroid/widget/LinearLayout$LayoutParams;->height:I
-
-    invoke-virtual {v0, v1}, Landroid/widget/ListView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    const/4 v0, 0x1
-
-    :goto_63
-    if-eqz v0, :cond_68
-
-    invoke-virtual {v2, v3}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
-
-    :cond_68
-    return-void
-
-    :cond_69
-    move v0, v1
-
-    goto :goto_63
+    return-object v0
 .end method

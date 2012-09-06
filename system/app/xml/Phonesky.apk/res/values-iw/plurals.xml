@@ -5,8 +5,8 @@
         <item quantity="one">%1$d תוצאות</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">%1$d עדכונים נמצאו עבור %2$s.</item>
-        <item quantity="one">עדכון %1$d נמצא עבור %2$s.</item>
+        <item quantity="other">נמצאו %1$d עדכונים.</item>
+        <item quantity="one">נמצא עדכון %1$d.</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">%1$s אנשים עשו לזה 1+.</item>

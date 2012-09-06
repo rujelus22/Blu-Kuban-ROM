@@ -7,7 +7,7 @@
         <include layout="@layout/undo_bar" />
     </com.google.android.gm.UndoBarView>
     <View android:id="@id/web_view_scrim" android:background="@color/fadedWebView" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    <RelativeLayout android:gravity="center" android:id="@id/background_view" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+    <RelativeLayout android:gravity="center" android:id="@id/background_view" android:background="#ff000000" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
         <RelativeLayout android:gravity="center" android:id="@id/info_view" android:paddingLeft="8.0dip" android:paddingRight="16.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="70.0sp" android:layout_marginLeft="@dimen/info_view_margin" android:layout_marginRight="@dimen/info_view_margin">
             <ProgressBar android:id="@id/progress_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_marginRight="8.0dip" android:indeterminate="true" android:layout_centerVertical="true" />
             <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/progress_bar" android:layout_centerVertical="true">

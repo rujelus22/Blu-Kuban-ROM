@@ -28,6 +28,14 @@
         <item quantity="other">Acum %1$d (de) sec.</item>
         <item quantity="one">acum 1 secundă</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Expiră în %1$d zile</item>
+        <item quantity="one">Expiră într-o zi</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Expiră în %1$d ore</item>
+        <item quantity="one">Expiră într-o oră</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">încărcări noi</item>
         <item quantity="one">încărcare nouă</item>

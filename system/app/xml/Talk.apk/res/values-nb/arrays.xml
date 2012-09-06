@@ -29,6 +29,12 @@
         <item>Kun ved stille modus</item>
         <item>Aldri</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>av</item>
+        <item>lav</item>
+        <item>middels</item>
+        <item>virtuell</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Ingen</item>
         <item>Bildestabilisering: lav</item>

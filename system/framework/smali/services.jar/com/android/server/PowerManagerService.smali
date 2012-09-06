@@ -109,11 +109,11 @@
 
 .field private static final mAutoBrightnessWithTiltEnabled:Z = true
 
-.field private static final mDebugDVFSLock:Z = false
+.field private static final mDebugDVFSLock:Z
 
-.field private static final mDebugLightSensor:Z = true
+.field private static final mDebugLightSensor:Z
 
-.field private static final mDebugProximitySensor:Z = true
+.field private static final mDebugProximitySensor:Z
 
 .field private static final mSpew:Z
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/guide_item" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:yt="http://schemas.android.com/apk/res/com.google.android.youtube">
+    <FrameLayout android:id="@id/thumbnail_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:id="@id/thumbnail" android:layout_width="@dimen/guide_avatar_width" android:layout_height="@dimen/guide_avatar_height" android:scaleType="centerCrop" />
+    </FrameLayout>
+    <TextView android:textSize="@dimen/large_font_size" android:textColor="@color/guide_item" android:gravity="center_vertical" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/list_item_padding" android:maxLines="2" />
+</LinearLayout>

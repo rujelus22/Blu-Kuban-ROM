@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 126
+    .line 140
     iput-object p1, p0, Lcom/google/android/finsky/activities/PinEntryDialog$1;->this$0:Lcom/google/android/finsky/activities/PinEntryDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "arg0"
 
     .prologue
-    .line 134
+    .line 148
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .parameter "arg3"
 
     .prologue
-    .line 138
+    .line 152
     return-void
 .end method
 
@@ -66,12 +66,12 @@
     .parameter "arg3"
 
     .prologue
-    .line 129
+    .line 143
     iget-object v0, p0, Lcom/google/android/finsky/activities/PinEntryDialog$1;->this$0:Lcom/google/android/finsky/activities/PinEntryDialog;
 
     #calls: Lcom/google/android/finsky/activities/PinEntryDialog;->syncOkButtonState()V
     invoke-static {v0}, Lcom/google/android/finsky/activities/PinEntryDialog;->access$000(Lcom/google/android/finsky/activities/PinEntryDialog;)V
 
-    .line 130
+    .line 144
     return-void
 .end method

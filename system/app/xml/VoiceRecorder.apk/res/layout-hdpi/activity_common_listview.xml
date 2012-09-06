@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/no_softkey_main" style="@style/layout_match_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ListView android:id="@id/listview_common" android:clickable="true" android:drawingCacheQuality="high" android:drawSelectorOnTop="false" android:dividerHeight="1.0px" android:choiceMode="singleChoice" style="@style/layout_match_parent" />
-</LinearLayout>

@@ -1,149 +1,263 @@
-.class LF/J;
+.class public LF/j;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:LF/L;
+# static fields
+.field static volatile a:Z
 
-.field final synthetic b:LF/I;
+.field private static volatile b:LF/q;
+
+.field private static volatile c:LF/q;
+
+.field private static final d:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method constructor <init>(LF/I;LF/L;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput-object p1, p0, LF/J;->b:LF/I;
+    .prologue
+    const/4 v1, 0x0
 
-    iput-object p2, p0, LF/J;->a:LF/L;
+    .line 42
+    sput-boolean v1, LF/j;->a:Z
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 54
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    sput-object v0, LF/j;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    .line 57
+    invoke-static {}, LF/j;->c()V
+
+    .line 58
     return-void
 .end method
 
+.method public static a()LF/q;
+    .registers 1
 
-# virtual methods
-.method public run()V
-    .registers 6
+    .prologue
+    .line 70
+    sget-object v0, LF/j;->b:LF/q;
 
-    iget-object v0, p0, LF/J;->b:LF/I;
+    return-object v0
+.end method
 
-    invoke-static {v0}, LF/I;->a(LF/I;)Ljava/lang/Runnable;
+.method static synthetic a(LF/q;)LF/q;
+    .registers 1
+    .parameter
 
-    move-result-object v1
+    .prologue
+    .line 36
+    sput-object p0, LF/j;->c:LF/q;
 
-    monitor-enter v1
+    return-object p0
+.end method
 
-    :try_start_7
-    iget-object v0, p0, LF/J;->b:LF/I;
+.method public static a(Landroid/content/Context;Lac/h;LF/e;)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-static {v0}, LF/I;->b(LF/I;)Z
+    .prologue
+    .line 75
+    const-string v0, "TransitNavigationParameters"
 
-    move-result v0
+    invoke-static {p0, p1, p2, v0}, LF/j;->a(Landroid/content/Context;Lac/h;LF/e;Ljava/lang/String;)V
+
+    .line 76
+    return-void
+.end method
+
+.method static a(Landroid/content/Context;Lac/h;LF/e;Ljava/lang/String;)V
+    .registers 10
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    const/4 v5, 0x0
+
+    const/16 v2, 0x9
+
+    const/4 v3, 0x2
+
+    .line 90
+    sget-boolean v0, LF/j;->a:Z
 
     if-eqz v0, :cond_11
 
-    monitor-exit v1
+    .line 91
+    invoke-static {}, LF/j;->b()V
 
+    .line 92
+    if-eqz p2, :cond_10
+
+    .line 93
+    invoke-interface {p2}, LF/e;->a()V
+
+    .line 117
+    :cond_10
     :goto_10
     return-void
 
+    .line 99
     :cond_11
-    const/4 v0, 0x0
+    sget-object v0, Lcom/google/wireless/googlenav/proto/j2me/ClientParameters;->d:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    sget-object v2, LF/K;->a:[I
+    invoke-static {p0, p3, v0}, LF/r;->a(Landroid/content/Context;Ljava/lang/String;Lcom/google/googlenav/common/io/protocol/ProtoBufType;)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    iget-object v3, p0, LF/J;->a:LF/L;
+    move-result-object v1
 
-    invoke-virtual {v3}, LF/L;->ordinal()I
+    .line 102
+    if-eqz v1, :cond_50
 
-    move-result v3
+    invoke-virtual {v1, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->has(I)Z
 
-    aget v2, v2, v3
+    move-result v0
 
-    packed-switch v2, :pswitch_data_5a
+    if-eqz v0, :cond_50
 
-    :goto_1f
-    iget-object v2, p0, LF/J;->b:LF/I;
-
-    invoke-static {v2, v0}, LF/I;->a(LF/I;LF/C;)V
-
-    iget-object v0, p0, LF/J;->b:LF/I;
-
-    invoke-static {v0}, LF/I;->g(LF/I;)Landroid/os/Handler;
+    .line 103
+    invoke-virtual {v1, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getProtoBuf(I)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
     move-result-object v0
 
-    iget-object v2, p0, LF/J;->b:LF/I;
+    .line 108
+    :goto_23
+    new-instance v2, LF/q;
 
-    invoke-static {v2}, LF/I;->a(LF/I;)Ljava/lang/Runnable;
+    invoke-direct {v2, v0}, LF/q;-><init>(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
 
-    move-result-object v2
+    sput-object v2, LF/j;->b:LF/q;
 
-    const-wide/16 v3, 0x3e8
+    .line 109
+    invoke-virtual {v1, v3}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->has(I)Z
 
-    invoke-virtual {v0, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    move-result v0
 
-    monitor-exit v1
+    if-eqz v0, :cond_5f
+
+    invoke-virtual {v1, v3}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getLong(I)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    .line 111
+    :goto_38
+    if-eqz p1, :cond_10
+
+    .line 112
+    new-instance v0, LF/f;
+
+    const-class v1, LF/l;
+
+    invoke-direct {v0, p1, p2, v1}, LF/f;-><init>(Lac/h;LF/e;Ljava/lang/Class;)V
+
+    invoke-virtual {p1, v0}, Lac/h;->a(Lac/q;)V
+
+    .line 114
+    new-instance v0, LF/l;
+
+    move-object v1, p0
+
+    move-object v2, p3
+
+    move-object v4, p2
+
+    invoke-direct/range {v0 .. v5}, LF/l;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Long;LF/e;LF/k;)V
+
+    invoke-virtual {p1, v0}, Lac/h;->c(Lac/g;)V
 
     goto :goto_10
 
-    :catchall_37
-    move-exception v0
+    .line 105
+    :cond_50
+    new-instance v1, Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    monitor-exit v1
-    :try_end_39
-    .catchall {:try_start_7 .. :try_end_39} :catchall_37
+    sget-object v0, Lcom/google/wireless/googlenav/proto/j2me/ClientParameters;->d:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    throw v0
+    invoke-direct {v1, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;-><init>(Lcom/google/googlenav/common/io/protocol/ProtoBufType;)V
 
-    :pswitch_3a
-    :try_start_3a
-    iget-object v0, p0, LF/J;->b:LF/I;
+    .line 106
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBuf;
 
-    invoke-static {v0}, LF/I;->c(LF/I;)LF/C;
+    sget-object v2, Lcom/google/wireless/googlenav/proto/j2me/ClientParameters;->s:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
-    move-result-object v0
+    invoke-direct {v0, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;-><init>(Lcom/google/googlenav/common/io/protocol/ProtoBufType;)V
 
-    goto :goto_1f
+    goto :goto_23
 
-    :pswitch_41
-    iget-object v0, p0, LF/J;->b:LF/I;
+    :cond_5f
+    move-object v3, v5
 
-    invoke-static {v0}, LF/I;->d(LF/I;)V
+    .line 109
+    goto :goto_38
+.end method
 
-    iget-object v0, p0, LF/J;->b:LF/I;
+.method static b()V
+    .registers 3
 
-    invoke-static {v0}, LF/I;->e(LF/I;)LF/C;
+    .prologue
+    .line 82
+    sget-object v0, LF/j;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    goto :goto_1f
+    const/4 v2, 0x0
 
-    :pswitch_4d
-    iget-object v0, p0, LF/J;->b:LF/I;
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-    invoke-static {v0}, LF/I;->f(LF/I;)V
+    move-result v0
 
-    iget-object v0, p0, LF/J;->b:LF/I;
+    if-eqz v0, :cond_e
 
-    invoke-static {v0}, LF/I;->e(LF/I;)LF/C;
-    :try_end_57
-    .catchall {:try_start_3a .. :try_end_57} :catchall_37
+    .line 83
+    sget-object v0, LF/j;->c:LF/q;
 
-    move-result-object v0
+    sput-object v0, LF/j;->b:LF/q;
 
-    goto :goto_1f
+    .line 85
+    :cond_e
+    return-void
+.end method
 
-    nop
+.method public static c()V
+    .registers 3
 
-    :pswitch_data_5a
-    .packed-switch 0x1
-        :pswitch_3a
-        :pswitch_41
-        :pswitch_4d
-    .end packed-switch
+    .prologue
+    .line 192
+    new-instance v0, LF/q;
+
+    new-instance v1, Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    sget-object v2, Lcom/google/wireless/googlenav/proto/j2me/ClientParameters;->s:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-direct {v1, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;-><init>(Lcom/google/googlenav/common/io/protocol/ProtoBufType;)V
+
+    invoke-direct {v0, v1}, LF/q;-><init>(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+
+    sput-object v0, LF/j;->b:LF/q;
+
+    .line 194
+    return-void
+.end method
+
+.method static synthetic d()Ljava/util/concurrent/atomic/AtomicBoolean;
+    .registers 1
+
+    .prologue
+    .line 36
+    sget-object v0, LF/j;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    return-object v0
 .end method

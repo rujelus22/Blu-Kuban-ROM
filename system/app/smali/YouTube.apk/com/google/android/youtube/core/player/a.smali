@@ -4,11 +4,20 @@
 
 
 # virtual methods
-.method public abstract a()V
+.method public abstract a()Landroid/view/View;
+.end method
+
+.method public abstract a(II)V
+.end method
+
+.method public abstract a(Lcom/google/android/youtube/core/model/n;)V
 .end method
 
 .method public abstract b()V
 .end method
 
-.method public abstract c()V
+.method public abstract setListener(Lcom/google/android/youtube/core/player/b;)V
+.end method
+
+.method public abstract setOrientation(Z)V
 .end method

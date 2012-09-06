@@ -1,0 +1,6 @@
+version: 1.4.3
+apkFileName: RUJELUS22_Icon_Pack_v1.1.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1

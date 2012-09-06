@@ -2991,7 +2991,7 @@
 
     array-length v8, v8
 
-    if-eqz v8, :cond_e3
+    if-eqz v8, :cond_e0
 
     move v4, v9
 
@@ -3002,7 +3002,7 @@
 
     array-length v8, v8
 
-    if-eqz v8, :cond_e5
+    if-eqz v8, :cond_e2
 
     move v6, v9
 
@@ -3013,7 +3013,7 @@
 
     array-length v8, v8
 
-    if-eqz v8, :cond_e7
+    if-eqz v8, :cond_e4
 
     move v2, v9
 
@@ -3044,16 +3044,16 @@
 
     .line 196
     :cond_a3
-    if-eqz v6, :cond_e9
+    if-eqz v6, :cond_e6
 
-    if-eqz v7, :cond_e9
+    if-eqz v7, :cond_e6
 
     .line 199
     invoke-direct {p0}, Lcom/android/settings/TetherSettings;->initWifiTethering()V
 
     .line 205
     :goto_aa
-    if-nez v2, :cond_fa
+    if-nez v2, :cond_f7
 
     .line 206
     invoke-virtual {p0}, Lcom/android/settings/TetherSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -3088,8 +3088,6 @@
 
     move-result-object v8
 
-    invoke-virtual {v8, v5}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 217
     invoke-virtual {p0}, Lcom/android/settings/TetherSettings;->getResources()Landroid/content/res/Resources;
 
@@ -3117,21 +3115,21 @@
     .end local v4           #usbAvailable:Z
     .end local v6           #wifiAvailable:Z
     .end local v7           #wifiHotspotAvailable:Z
-    :cond_e3
+    :cond_e0
     move v4, v10
 
     .line 181
     goto :goto_85
 
     .restart local v4       #usbAvailable:Z
-    :cond_e5
+    :cond_e2
     move v6, v10
 
     .line 182
     goto :goto_8b
 
     .restart local v6       #wifiAvailable:Z
-    :cond_e7
+    :cond_e4
     move v2, v10
 
     .line 183
@@ -3140,7 +3138,7 @@
     .line 201
     .restart local v2       #bluetoothAvailable:Z
     .restart local v7       #wifiHotspotAvailable:Z
-    :cond_e9
+    :cond_e6
     invoke-virtual {p0}, Lcom/android/settings/TetherSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v8
@@ -3159,10 +3157,10 @@
     goto :goto_aa
 
     .line 208
-    :cond_fa
+    :cond_f7
     iget-object v8, p0, Lcom/android/settings/TetherSettings;->mBluetoothPan:Landroid/bluetooth/BluetoothPan;
 
-    if-eqz v8, :cond_10c
+    if-eqz v8, :cond_109
 
     iget-object v8, p0, Lcom/android/settings/TetherSettings;->mBluetoothPan:Landroid/bluetooth/BluetoothPan;
 
@@ -3170,7 +3168,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_10c
+    if-eqz v8, :cond_109
 
     .line 209
     iget-object v8, p0, Lcom/android/settings/TetherSettings;->mBluetoothTether:Landroid/preference/CheckBoxPreference;
@@ -3180,7 +3178,7 @@
     goto :goto_b5
 
     .line 211
-    :cond_10c
+    :cond_109
     iget-object v8, p0, Lcom/android/settings/TetherSettings;->mBluetoothTether:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v8, v10}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V

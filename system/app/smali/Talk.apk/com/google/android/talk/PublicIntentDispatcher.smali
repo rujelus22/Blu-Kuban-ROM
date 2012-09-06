@@ -272,7 +272,7 @@
 
     .line 242
     .local v0, as:Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;
-    iget-object v5, v0, Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;->username:Ljava/lang/String;
+    iget-object v5, v0, Lcom/google/android/talk/TalkApp$AccountInfo;->username:Ljava/lang/String;
 
     invoke-virtual {v5, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -292,11 +292,11 @@
     if-eqz v5, :cond_18
 
     .line 247
-    iget-boolean v5, v0, Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;->signedIn:Z
+    iget-boolean v5, v0, Lcom/google/android/talk/TalkApp$AccountInfo;->signedIn:Z
 
     if-eqz v5, :cond_3f
 
-    iget-boolean v5, v0, Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;->active:Z
+    iget-boolean v5, v0, Lcom/google/android/talk/TalkApp$AccountInfo;->active:Z
 
     if-eqz v5, :cond_3f
 
@@ -312,7 +312,7 @@
 
     .line 249
     :cond_3f
-    iget-boolean v5, v0, Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;->signedIn:Z
+    iget-boolean v5, v0, Lcom/google/android/talk/TalkApp$AccountInfo;->signedIn:Z
 
     if-eqz v5, :cond_3b
 
@@ -601,7 +601,7 @@
 
     iget-object v0, p0, Lcom/google/android/talk/PublicIntentDispatcher;->mFromAccount:Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;
 
-    iget-wide v3, v0, Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;->accountId:J
+    iget-wide v3, v0, Lcom/google/android/talk/TalkApp$AccountInfo;->accountId:J
 
     iget-object v5, p0, Lcom/google/android/talk/PublicIntentDispatcher;->mMessageBody:Ljava/lang/String;
 
@@ -659,7 +659,7 @@
 
     iget-object v1, p0, Lcom/google/android/talk/PublicIntentDispatcher;->mFromAccount:Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;
 
-    iget-wide v2, v1, Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;->accountId:J
+    iget-wide v2, v1, Lcom/google/android/talk/TalkApp$AccountInfo;->accountId:J
 
     iget-object v4, p0, Lcom/google/android/talk/PublicIntentDispatcher;->mToAddress:Ljava/lang/String;
 
@@ -972,7 +972,7 @@
 
     iget-object v7, p0, Lcom/google/android/talk/PublicIntentDispatcher;->mFromAccount:Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;
 
-    iget-object v7, v7, Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;->username:Ljava/lang/String;
+    iget-object v7, v7, Lcom/google/android/talk/TalkApp$AccountInfo;->username:Ljava/lang/String;
 
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
@@ -1079,7 +1079,7 @@
 
     iget-object v1, p0, Lcom/google/android/talk/PublicIntentDispatcher;->mFromAccount:Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;
 
-    iget-object v1, v1, Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;->username:Ljava/lang/String;
+    iget-object v1, v1, Lcom/google/android/talk/TalkApp$AccountInfo;->username:Ljava/lang/String;
 
     :goto_8
     invoke-static {p1, v1}, Lcom/google/android/talk/PublicIntentDispatcher;->chooseFromAccount(Ljava/util/List;Ljava/lang/String;)Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;
@@ -1289,7 +1289,7 @@
 
     move-result-object v12
 
-    iput-object v12, v11, Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;->username:Ljava/lang/String;
+    iput-object v12, v11, Lcom/google/android/talk/TalkApp$AccountInfo;->username:Ljava/lang/String;
 
     .line 123
     iget v11, p0, Lcom/google/android/talk/PublicIntentDispatcher;->mAction:I
@@ -1644,7 +1644,7 @@
     :try_start_3
     iget-object v4, p0, Lcom/google/android/talk/PublicIntentDispatcher;->mFromAccount:Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;
 
-    iget-wide v4, v4, Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;->accountId:J
+    iget-wide v4, v4, Lcom/google/android/talk/TalkApp$AccountInfo;->accountId:J
 
     invoke-interface {p1, v4, v5}, Lcom/google/android/gtalkservice/IGTalkService;->getImSessionForAccountId(J)Lcom/google/android/gtalkservice/IImSession;
 

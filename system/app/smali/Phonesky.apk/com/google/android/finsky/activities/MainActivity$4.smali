@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/activities/MainActivity;->initializeBilling()V
+    value = Lcom/google/android/finsky/activities/MainActivity;->onReady(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/activities/MainActivity;
 
+.field final synthetic val$shouldHandleIntent:Z
+
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/activities/MainActivity;)V
-    .registers 2
+.method constructor <init>(Lcom/google/android/finsky/activities/MainActivity;Z)V
+    .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 303
+    .line 364
     iput-object p1, p0, Lcom/google/android/finsky/activities/MainActivity$4;->this$0:Lcom/google/android/finsky/activities/MainActivity;
+
+    iput-boolean p2, p0, Lcom/google/android/finsky/activities/MainActivity$4;->val$shouldHandleIntent:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,44 +43,69 @@
 
 # virtual methods
 .method public run()V
-    .registers 6
+    .registers 3
 
     .prologue
-    .line 308
+    .line 370
     iget-object v0, p0, Lcom/google/android/finsky/activities/MainActivity$4;->this$0:Lcom/google/android/finsky/activities/MainActivity;
 
-    #calls: Lcom/google/android/finsky/activities/MainActivity;->checkHasValidInstrument()V
-    invoke-static {v0}, Lcom/google/android/finsky/activities/MainActivity;->access$200(Lcom/google/android/finsky/activities/MainActivity;)V
-
-    .line 310
-    new-instance v1, Landroid/os/Handler;
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    #getter for: Lcom/google/android/finsky/activities/MainActivity;->mSavedInstanceState:Landroid/os/Bundle;
+    invoke-static {v0}, Lcom/google/android/finsky/activities/MainActivity;->access$200(Lcom/google/android/finsky/activities/MainActivity;)Landroid/os/Bundle;
 
     move-result-object v0
 
-    invoke-direct {v1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    if-eqz v0, :cond_26
 
-    new-instance v2, Lcom/google/android/finsky/activities/MainActivity$4$1;
+    iget-object v0, p0, Lcom/google/android/finsky/activities/MainActivity$4;->this$0:Lcom/google/android/finsky/activities/MainActivity;
 
-    invoke-direct {v2, p0}, Lcom/google/android/finsky/activities/MainActivity$4$1;-><init>(Lcom/google/android/finsky/activities/MainActivity$4;)V
-
-    sget-object v0, Lcom/google/android/finsky/config/G;->initializeBillingDelayMs:Lcom/google/android/finsky/config/GservicesValue;
-
-    invoke-virtual {v0}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
+    #getter for: Lcom/google/android/finsky/activities/MainActivity;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+    invoke-static {v0}, Lcom/google/android/finsky/activities/MainActivity;->access$000(Lcom/google/android/finsky/activities/MainActivity;)Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    iget-object v1, p0, Lcom/google/android/finsky/activities/MainActivity$4;->this$0:Lcom/google/android/finsky/activities/MainActivity;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    #getter for: Lcom/google/android/finsky/activities/MainActivity;->mSavedInstanceState:Landroid/os/Bundle;
+    invoke-static {v1}, Lcom/google/android/finsky/activities/MainActivity;->access$200(Lcom/google/android/finsky/activities/MainActivity;)Landroid/os/Bundle;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->deserialize(Landroid/os/Bundle;)Z
 
     move-result v0
 
-    int-to-long v3, v0
+    if-eqz v0, :cond_26
 
-    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    .line 380
+    :cond_1a
+    :goto_1a
+    iget-object v0, p0, Lcom/google/android/finsky/activities/MainActivity$4;->this$0:Lcom/google/android/finsky/activities/MainActivity;
 
-    .line 318
+    const/4 v1, 0x0
+
+    #setter for: Lcom/google/android/finsky/activities/MainActivity;->mSavedInstanceState:Landroid/os/Bundle;
+    invoke-static {v0, v1}, Lcom/google/android/finsky/activities/MainActivity;->access$202(Lcom/google/android/finsky/activities/MainActivity;Landroid/os/Bundle;)Landroid/os/Bundle;
+
+    .line 381
+    iget-object v0, p0, Lcom/google/android/finsky/activities/MainActivity$4;->this$0:Lcom/google/android/finsky/activities/MainActivity;
+
+    #calls: Lcom/google/android/finsky/activities/MainActivity;->initializeBilling()V
+    invoke-static {v0}, Lcom/google/android/finsky/activities/MainActivity;->access$400(Lcom/google/android/finsky/activities/MainActivity;)V
+
+    .line 382
     return-void
+
+    .line 375
+    :cond_26
+    iget-boolean v0, p0, Lcom/google/android/finsky/activities/MainActivity$4;->val$shouldHandleIntent:Z
+
+    if-eqz v0, :cond_1a
+
+    .line 378
+    iget-object v0, p0, Lcom/google/android/finsky/activities/MainActivity$4;->this$0:Lcom/google/android/finsky/activities/MainActivity;
+
+    #calls: Lcom/google/android/finsky/activities/MainActivity;->handleIntent()V
+    invoke-static {v0}, Lcom/google/android/finsky/activities/MainActivity;->access$300(Lcom/google/android/finsky/activities/MainActivity;)V
+
+    goto :goto_1a
 .end method

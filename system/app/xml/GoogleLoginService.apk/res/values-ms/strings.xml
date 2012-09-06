@@ -242,18 +242,18 @@ keselamatan"</b></string>
     <string name="account_intro_recommended_title">Jadikannya Google</string>
     <string name="common_message">"Akaun Google membenarkan anda
 
-"<li><ul>Lihat dan atur semua maklumat anda dari mana-mana sahaja.</ul></li>"
+"<ul><li>Lihat dan atur semua maklumat anda dari mana-mana sahaja.</li></ul>"
 
-"<li><ul>Buat sandaran data anda secara automatik.</ul></li>"
+"<ul><li>Buat sandaran data anda secara automatik.</li></ul>"
 
-"<li><ul>Gunakan perkhidmatan Google dengan mudah dari mana-mana sahaja.</ul></li></string>
+"<ul><li>Gunakan perkhidmatan Google dengan mudah dari mana-mana sahaja.</li></ul></string>
     <string name="add_account_message">" Anda boleh menggunakan lebih daripada satu Akaun Google (seperti akaun rumah dan kerja anda). Sentuh "<b>Log masuk</b> atau <b>Buat Akaun</b> untuk menambah Akaun Google</string>
     <string name="account_intro_default_message">Tidak akan kehilangan bahan anda lagi. Akaun Google memastikan segalanya selamat.</string>
     <string name="account_intro_custom_endtext">Ada %s? Log masuk sekarang.</string>
     <string name="account_intro_simple_message">Adakah anda ingin menambah akaun sedia ada atau membuat yang baharu?</string>
     <string name="learn_more_title"><annotation id="learn_more">Ketahui lebih lanjut</annotation></string>
     <string name="learn_more_account_intro">"Akaun Google membolehkan anda
-"<li><ul>Melihat dan mengatur semua maklumat anda dari mana sahaja.<li>Membuat sandaran untuk data anda, seperti e-mel, kenalan, muzik dan gambar, secara automatik.</li><li>Menggunakan perkhidmatan Google dengan mudah dari mana-mana sahaja?? termasuk Kenalan, Kalendar, Peta dan banyak lagi.</li></ul></li></string>
+"<ul><li>Melihat dan mengatur semua maklumat anda dari mana sahaja.<li>Membuat sandaran untuk data anda, seperti e-mel, kenalan, muzik dan gambar, secara automatik.</li><li>Menggunakan perkhidmatan Google dengan mudah dari mana-mana sahaja?? termasuk Kenalan, Kalendar, Peta dan banyak lagi.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Perihal akaun Google</string>
     <string name="learn_more_web_history">"Sejarah Web menyesuaikan hasil carian berdasarkan apa yang telah anda cari dan laman-laman web yang anda telah kunjungi, menyediakan pengalaman Google yang diperibadikan.
 

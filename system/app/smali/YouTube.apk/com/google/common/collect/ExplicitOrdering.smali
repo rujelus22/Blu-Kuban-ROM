@@ -52,7 +52,7 @@
 
     .prologue
     .line 53
-    invoke-static {}, Lcom/google/common/collect/ImmutableMap;->builder()Lcom/google/common/collect/ca;
+    invoke-static {}, Lcom/google/common/collect/ImmutableMap;->builder()Lcom/google/common/collect/dm;
 
     move-result-object v2
 
@@ -82,7 +82,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v2, v4, v0}, Lcom/google/common/collect/ca;->a(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ca;
+    invoke-virtual {v2, v4, v0}, Lcom/google/common/collect/dm;->a(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/dm;
 
     move v0, v1
 
@@ -90,7 +90,7 @@
 
     .line 58
     :cond_1e
-    invoke-virtual {v2}, Lcom/google/common/collect/ca;->a()Lcom/google/common/collect/ImmutableMap;
+    invoke-virtual {v2}, Lcom/google/common/collect/dm;->a()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
 
@@ -155,6 +155,9 @@
 .method public final equals(Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     .line 62
@@ -205,13 +208,9 @@
     .line 74
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "Ordering.explicit("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/common/collect/ExplicitOrdering;->rankMap:Lcom/google/common/collect/ImmutableMap;
 

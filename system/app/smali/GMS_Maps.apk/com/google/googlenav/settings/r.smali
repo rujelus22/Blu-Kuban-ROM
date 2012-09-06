@@ -1,42 +1,64 @@
 .class Lcom/google/googlenav/settings/r;
-.super Lcom/google/googlenav/bZ;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/googlenav/friend/aS;
 
 
 # instance fields
-.field final synthetic a:Lax/j;
+.field final synthetic a:Lcom/google/googlenav/settings/LatitudeSettingsActivity;
 
 .field final synthetic b:Lcom/google/googlenav/settings/q;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/settings/q;Lam/b;Lcom/google/googlenav/ca;Lax/j;)V
-    .registers 5
+.method constructor <init>(Lcom/google/googlenav/settings/q;Lcom/google/googlenav/settings/LatitudeSettingsActivity;)V
+    .registers 3
+    .parameter
+    .parameter
 
+    .prologue
+    .line 604
     iput-object p1, p0, Lcom/google/googlenav/settings/r;->b:Lcom/google/googlenav/settings/q;
 
-    iput-object p4, p0, Lcom/google/googlenav/settings/r;->a:Lax/j;
+    iput-object p2, p0, Lcom/google/googlenav/settings/r;->a:Lcom/google/googlenav/settings/LatitudeSettingsActivity;
 
-    invoke-direct {p0, p2, p3}, Lcom/google/googlenav/bZ;-><init>(Lam/b;Lcom/google/googlenav/ca;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b()V
+.method public a(I)V
     .registers 3
+    .parameter
 
-    invoke-super {p0}, Lcom/google/googlenav/bZ;->b()V
-
+    .prologue
+    .line 607
     iget-object v0, p0, Lcom/google/googlenav/settings/r;->b:Lcom/google/googlenav/settings/q;
 
-    invoke-static {v0}, Lcom/google/googlenav/settings/q;->a(Lcom/google/googlenav/settings/q;)Lcom/google/googlenav/settings/A;
+    iget-object v0, v0, Lcom/google/googlenav/settings/q;->a:Lcom/google/googlenav/settings/LatitudeSettingsActivity;
+
+    invoke-static {v0}, Lcom/google/googlenav/settings/LatitudeSettingsActivity;->c(Lcom/google/googlenav/settings/LatitudeSettingsActivity;)Landroid/widget/Toast;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/googlenav/settings/r;->a:Lax/j;
+    if-eqz v0, :cond_15
 
-    invoke-interface {v0, v1}, Lcom/google/googlenav/settings/A;->a(Lax/j;)V
+    .line 608
+    iget-object v0, p0, Lcom/google/googlenav/settings/r;->b:Lcom/google/googlenav/settings/q;
 
+    iget-object v0, v0, Lcom/google/googlenav/settings/q;->a:Lcom/google/googlenav/settings/LatitudeSettingsActivity;
+
+    invoke-static {v0}, Lcom/google/googlenav/settings/LatitudeSettingsActivity;->c(Lcom/google/googlenav/settings/LatitudeSettingsActivity;)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    .line 610
+    :cond_15
     return-void
 .end method

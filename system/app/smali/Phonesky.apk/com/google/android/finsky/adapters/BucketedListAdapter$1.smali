@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 325
+    .line 338
     iput-object p1, p0, Lcom/google/android/finsky/adapters/BucketedListAdapter$1;->this$0:Lcom/google/android/finsky/adapters/BucketedListAdapter;
 
     iput-object p2, p0, Lcom/google/android/finsky/adapters/BucketedListAdapter$1;->val$imageView:Landroid/widget/ImageView;
@@ -47,7 +47,7 @@
     .parameter "result"
 
     .prologue
-    .line 328
+    .line 341
     iget-object v0, p0, Lcom/google/android/finsky/adapters/BucketedListAdapter$1;->val$imageView:Landroid/widget/ImageView;
 
     invoke-virtual {p1}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
@@ -56,7 +56,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 329
+    .line 342
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .parameter "x0"
 
     .prologue
-    .line 325
+    .line 338
     check-cast p1, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
 
     .end local p1

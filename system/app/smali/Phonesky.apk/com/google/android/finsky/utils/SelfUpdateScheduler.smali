@@ -25,26 +25,26 @@
     .parameter "marketVersion"
 
     .prologue
-    .line 63
+    .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
+    .line 45
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mUpdateInProgress:Z
 
-    .line 47
+    .line 50
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mUpdateDownload:Lcom/google/android/finsky/download/Download;
 
-    .line 64
+    .line 67
     iput-object p1, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mDownloadQueue:Lcom/google/android/finsky/download/DownloadQueue;
 
-    .line 65
+    .line 68
     iput p2, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mMarketVersion:I
 
-    .line 66
+    .line 69
     return-void
 .end method
 
@@ -74,149 +74,144 @@
 
 # virtual methods
 .method public checkForSelfUpdate(Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;)V
-    .registers 11
+    .registers 12
     .parameter "response"
 
     .prologue
-    const/4 v8, 0x1
+    const/4 v9, 0x1
 
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
-    .line 75
-    iget-boolean v4, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mUpdateInProgress:Z
+    .line 78
+    iget-boolean v5, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mUpdateInProgress:Z
 
-    if-eqz v4, :cond_e
+    if-eqz v5, :cond_e
 
-    .line 76
-    const-string v4, "Skipping self-update check as there is an update already queued."
+    .line 79
+    const-string v5, "Skipping self-update check as there is an update already queued."
 
-    new-array v5, v7, [Ljava/lang/Object;
+    new-array v6, v8, [Ljava/lang/Object;
 
-    invoke-static {v4, v5}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v5, v6}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 119
+    .line 127
     :goto_d
     return-void
 
-    .line 82
+    .line 85
     :cond_e
     invoke-virtual {p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getLatestClientVersionCode()I
 
-    move-result v3
+    move-result v4
 
-    .line 83
-    .local v3, serverMarketVersion:I
-    iget v4, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mMarketVersion:I
+    .line 86
+    .local v4, serverMarketVersion:I
+    iget v5, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mMarketVersion:I
 
-    if-lt v4, v3, :cond_2d
+    if-lt v5, v4, :cond_2d
 
-    .line 84
-    const-string v4, "Skipping self-update. Local Version [%d] >= Server Version [%d]"
+    .line 87
+    const-string v5, "Skipping self-update. Local Version [%d] >= Server Version [%d]"
 
-    const/4 v5, 0x2
+    const/4 v6, 0x2
 
-    new-array v5, v5, [Ljava/lang/Object;
+    new-array v6, v6, [Ljava/lang/Object;
 
-    iget v6, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mMarketVersion:I
+    iget v7, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mMarketVersion:I
 
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v7
 
-    aput-object v6, v5, v7
+    aput-object v7, v6, v8
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v7
 
-    aput-object v6, v5, v8
+    aput-object v7, v6, v9
 
-    invoke-static {v4, v5}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v5, v6}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_d
 
-    .line 90
+    .line 93
     :cond_2d
     invoke-virtual {p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;->getLatestClientUrl()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_3f
+    if-eqz v5, :cond_3f
 
-    .line 91
-    const-string v4, "Skipping self-update. No upgrade URL specified."
+    .line 94
+    const-string v5, "Skipping self-update. No upgrade URL specified."
 
-    new-array v5, v7, [Ljava/lang/Object;
+    new-array v6, v8, [Ljava/lang/Object;
 
-    invoke-static {v4, v5}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v5, v6}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_d
 
-    .line 97
+    .line 100
     :cond_3f
-    iput-boolean v8, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mUpdateInProgress:Z
+    iput-boolean v9, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mUpdateInProgress:Z
 
-    .line 99
+    .line 102
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4}, Lcom/google/android/finsky/FinskyApp;->getCurrentAccountName()Ljava/lang/String;
+    invoke-virtual {v5}, Lcom/google/android/finsky/FinskyApp;->getCurrentAccountName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 100
+    .line 103
     .local v2, accountName:Ljava/lang/String;
     new-instance v1, Landroid/accounts/Account;
 
-    const-string v4, "com.google"
+    const-string v5, "com.google"
 
-    invoke-direct {v1, v2, v4}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, v2, v5}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 101
+    .line 104
     .local v1, account:Landroid/accounts/Account;
     new-instance v0, Lcom/android/volley/toolbox/AndroidAuthenticator;
 
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-direct {v0, v4, v1}, Lcom/android/volley/toolbox/AndroidAuthenticator;-><init>(Landroid/content/Context;Landroid/accounts/Account;)V
+    sget-object v5, Lcom/google/android/finsky/config/G;->vendingSecureAuthTokenType:Lcom/google/android/finsky/config/GservicesValue;
 
-    .line 103
+    invoke-virtual {v5}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/String;
+
+    invoke-direct {v0, v6, v1, v5}, Lcom/android/volley/toolbox/AndroidAuthenticator;-><init>(Landroid/content/Context;Landroid/accounts/Account;Ljava/lang/String;)V
+
+    .line 106
     .local v0, a:Lcom/android/volley/toolbox/AndroidAuthenticator;
+    new-instance v3, Lcom/google/android/finsky/billing/AsyncAuthenticator;
+
+    invoke-direct {v3, v0}, Lcom/google/android/finsky/billing/AsyncAuthenticator;-><init>(Lcom/android/volley/toolbox/Authenticator;)V
+
+    .line 108
+    .local v3, asyncAuthenticator:Lcom/google/android/finsky/billing/AsyncAuthenticator;
     new-instance v5, Lcom/google/android/finsky/utils/SelfUpdateScheduler$1;
 
     invoke-direct {v5, p0, p1}, Lcom/google/android/finsky/utils/SelfUpdateScheduler$1;-><init>(Lcom/google/android/finsky/utils/SelfUpdateScheduler;Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;)V
 
-    new-instance v6, Landroid/os/Handler;
+    const/4 v6, 0x0
 
-    invoke-direct {v6}, Landroid/os/Handler;-><init>()V
-
-    sget-object v4, Lcom/google/android/finsky/config/G;->vendingSecureAuthTokenType:Lcom/google/android/finsky/config/GservicesValue;
-
-    invoke-virtual {v4}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v6, v4}, Lcom/android/volley/toolbox/AndroidAuthenticator;->getAuthTokenAsync(Lcom/android/volley/toolbox/AndroidAuthenticator$AuthTokenListener;Landroid/os/Handler;Ljava/lang/String;)V
+    invoke-virtual {v3, v5, v6}, Lcom/google/android/finsky/billing/AsyncAuthenticator;->getToken(Lcom/google/android/finsky/billing/AsyncAuthenticator$Listener;Ljava/lang/String;)V
 
     goto :goto_d
-.end method
-
-.method public onAdd(Lcom/google/android/finsky/download/Download;)V
-    .registers 2
-    .parameter "download"
-
-    .prologue
-    .line 177
-    return-void
 .end method
 
 .method public onCancel(Lcom/google/android/finsky/download/Download;)V
@@ -224,23 +219,25 @@
     .parameter "download"
 
     .prologue
-    .line 171
+    .line 186
     return-void
 .end method
 
 .method public onComplete(Lcom/google/android/finsky/download/Download;)V
-    .registers 5
+    .registers 7
     .parameter "download"
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v4, 0x0
 
-    .line 126
+    const/4 v3, 0x0
+
+    .line 134
     iget-object v0, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mUpdateDownload:Lcom/google/android/finsky/download/Download;
 
-    if-eq p1, v0, :cond_1e
+    if-eq p1, v0, :cond_1f
 
-    .line 128
+    .line 136
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -259,43 +256,56 @@
 
     move-result-object v0
 
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array v1, v3, [Ljava/lang/Object;
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 157
-    :goto_1d
+    .line 167
+    :goto_1e
     return-void
 
-    .line 131
-    :cond_1e
-    const/4 v0, 0x0
+    .line 139
+    :cond_1f
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    iput-object v0, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mUpdateDownload:Lcom/google/android/finsky/download/Download;
+    move-result-object v0
 
-    .line 132
+    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getAnalytics()Lcom/google/android/finsky/analytics/Analytics;
+
+    move-result-object v0
+
+    const-string v1, "install.downloadComplete"
+
+    const-string v2, "self-update-download"
+
+    invoke-interface {v0, v1, v2, v4}, Lcom/google/android/finsky/analytics/Analytics;->logTagAndPackage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 141
+    iput-object v4, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mUpdateDownload:Lcom/google/android/finsky/download/Download;
+
+    .line 142
     iget-object v0, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mOnAppExitDeferrer:Lcom/google/android/finsky/utils/ApplicationDismissedDeferrer;
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_3c
 
-    .line 133
+    .line 143
     const-string v0, "Self-update package Uri was already assigned!"
 
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array v1, v3, [Ljava/lang/Object;
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    goto :goto_1d
+    goto :goto_1e
 
-    .line 137
-    :cond_2d
+    .line 147
+    :cond_3c
     const-string v0, "Self-update ready to be installed, waiting for market to close."
 
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array v1, v3, [Ljava/lang/Object;
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 138
+    .line 148
     new-instance v0, Lcom/google/android/finsky/utils/ApplicationDismissedDeferrer;
 
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
@@ -306,7 +316,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mOnAppExitDeferrer:Lcom/google/android/finsky/utils/ApplicationDismissedDeferrer;
 
-    .line 139
+    .line 149
     iget-object v0, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mOnAppExitDeferrer:Lcom/google/android/finsky/utils/ApplicationDismissedDeferrer;
 
     new-instance v1, Lcom/google/android/finsky/utils/SelfUpdateScheduler$2;
@@ -317,7 +327,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/utils/ApplicationDismissedDeferrer;->runOnApplicationClose(Ljava/lang/Runnable;I)V
 
-    goto :goto_1d
+    goto :goto_1e
 .end method
 
 .method public onError(Lcom/google/android/finsky/download/Download;I)V
@@ -326,12 +336,31 @@
     .parameter "httpStatus"
 
     .prologue
-    .line 161
+    .line 171
     iget-object v0, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler;->mUpdateDownload:Lcom/google/android/finsky/download/Download;
 
-    if-ne p1, v0, :cond_13
+    if-ne p1, v0, :cond_26
 
-    .line 162
+    .line 172
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getAnalytics()Lcom/google/android/finsky/analytics/Analytics;
+
+    move-result-object v0
+
+    const-string v1, "install.downloadError"
+
+    const-string v2, "self-update-download"
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v0, v1, v2, v3}, Lcom/google/android/finsky/analytics/Analytics;->logTagAndPackage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 174
     const-string v0, "Self-update failed because of HTTP error code: %d"
 
     const/4 v1, 0x1
@@ -348,8 +377,8 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 164
-    :cond_13
+    .line 176
+    :cond_26
     return-void
 .end method
 
@@ -358,7 +387,7 @@
     .parameter "download"
 
     .prologue
-    .line 180
+    .line 189
     return-void
 .end method
 
@@ -368,23 +397,32 @@
     .parameter "progress"
 
     .prologue
-    .line 183
+    .line 192
     return-void
 .end method
 
 .method public onStart(Lcom/google/android/finsky/download/Download;)V
-    .registers 2
+    .registers 6
     .parameter "download"
 
     .prologue
-    .line 168
-    return-void
-.end method
+    .line 180
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-.method public onUpdate()V
-    .registers 1
+    move-result-object v0
 
-    .prologue
-    .line 174
+    invoke-virtual {v0}, Lcom/google/android/finsky/FinskyApp;->getAnalytics()Lcom/google/android/finsky/analytics/Analytics;
+
+    move-result-object v0
+
+    const-string v1, "install.downloadStarted"
+
+    const-string v2, "self-update-download"
+
+    const/4 v3, 0x0
+
+    invoke-interface {v0, v1, v2, v3}, Lcom/google/android/finsky/analytics/Analytics;->logTagAndPackage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 182
     return-void
 .end method

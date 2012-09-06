@@ -26,7 +26,7 @@
     .line 68
     const-string v0, "accountName cannot be null"
 
-    invoke-static {p2, v0}, Lcom/google/common/base/t;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 69
     new-instance v0, Landroid/content/Intent;
@@ -114,7 +114,7 @@
 
     const/4 v1, 0x3
 
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v1}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v0
 
@@ -192,7 +192,7 @@
     .line 177
     const-string v1, "PlusOneActivity"
 
-    invoke-static {v1, v5}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v1, v5}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v1
 
@@ -214,7 +214,7 @@
     .line 181
     const-string v1, "PlusOneActivity"
 
-    invoke-static {v1, v5}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v1, v5}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v1
 

@@ -27,8 +27,9 @@
     return-void
 .end method
 
-.method public static createIntent(Ljava/lang/String;IILcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-    .registers 9
+.method public static createIntent(Ljava/lang/String;IILcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;ZLjava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    .registers 10
+    .parameter
     .parameter
     .parameter
     .parameter
@@ -37,7 +38,7 @@
     .parameter
 
     .prologue
-    .line 35
+    .line 36
     new-instance v0, Landroid/content/Intent;
 
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
@@ -48,22 +49,22 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 36
+    .line 37
     const-string v1, "authAccount"
 
     invoke-virtual {v0, v1, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 37
+    .line 38
     const-string v1, "billing_flow"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 38
+    .line 39
     const-string v1, "backend_id"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 39
+    .line 40
     const-string v1, "ui_mode"
 
     invoke-virtual {p3}, Lcom/google/android/finsky/billing/BillingUtils$CreateInstrumentUiMode;->toString()Ljava/lang/String;
@@ -72,24 +73,29 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 40
+    .line 41
     const-string v1, "instrument_mode"
 
     sget-object v2, Lcom/google/android/finsky/activities/InstrumentActivity$Mode;->ADD:Lcom/google/android/finsky/activities/InstrumentActivity$Mode;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 42
-    const-string v1, "referrer_url"
-
-    invoke-virtual {v0, v1, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
     .line 43
-    const-string v1, "referrer_list_cookie"
+    const-string v1, "entry_point_menu"
+
+    invoke-virtual {v0, v1, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    .line 44
+    const-string v1, "referrer_url"
 
     invoke-virtual {v0, v1, p5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 44
+    .line 45
+    const-string v1, "referrer_list_cookie"
+
+    invoke-virtual {v0, v1, p6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 46
     return-object v0
 .end method
 
@@ -98,21 +104,21 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 65
+    .line 67
     invoke-static {p0}, Lcom/google/android/finsky/layout/CustomActionBarFactory;->getInstance(Landroid/app/Activity;)Lcom/google/android/finsky/layout/CustomActionBar;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/android/finsky/activities/FinskyCreateInstrumentActivity;->mActionBar:Lcom/google/android/finsky/layout/CustomActionBar;
 
-    .line 66
+    .line 68
     iget-object v1, p0, Lcom/google/android/finsky/activities/FinskyCreateInstrumentActivity;->mActionBar:Lcom/google/android/finsky/layout/CustomActionBar;
 
     iget-object v2, p0, Lcom/google/android/finsky/activities/FinskyCreateInstrumentActivity;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     invoke-interface {v1, v2, p0}, Lcom/google/android/finsky/layout/CustomActionBar;->initialize(Lcom/google/android/finsky/navigationmanager/NavigationManager;Landroid/app/Activity;)V
 
-    .line 69
+    .line 71
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/FinskyCreateInstrumentActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
@@ -125,13 +131,13 @@
 
     move-result v0
 
-    .line 70
+    .line 72
     .local v0, backendId:I
     iget-object v1, p0, Lcom/google/android/finsky/activities/FinskyCreateInstrumentActivity;->mActionBar:Lcom/google/android/finsky/layout/CustomActionBar;
 
     invoke-interface {v1, v0}, Lcom/google/android/finsky/layout/CustomActionBar;->updateCurrentBackendId(I)V
 
-    .line 73
+    .line 75
     if-eqz p1, :cond_30
 
     const-string v1, "last_title"
@@ -142,7 +148,7 @@
 
     if-eqz v1, :cond_30
 
-    .line 74
+    .line 76
     const-string v1, "last_title"
 
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -151,7 +157,7 @@
 
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/activities/FinskyCreateInstrumentActivity;->setTitle(Ljava/lang/String;)V
 
-    .line 76
+    .line 78
     :cond_30
     return-void
 .end method
@@ -163,13 +169,13 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 49
+    .line 51
     invoke-super {p0, p1}, Lcom/google/android/finsky/activities/InstrumentActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 50
+    .line 52
     invoke-direct {p0, p1}, Lcom/google/android/finsky/activities/FinskyCreateInstrumentActivity;->setupActionBar(Landroid/os/Bundle;)V
 
-    .line 51
+    .line 53
     return-void
 .end method
 
@@ -178,10 +184,10 @@
     .parameter "outState"
 
     .prologue
-    .line 55
+    .line 57
     invoke-super {p0, p1}, Lcom/google/android/finsky/activities/InstrumentActivity;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 56
+    .line 58
     const-string v0, "last_title"
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/FinskyCreateInstrumentActivity;->mActionBar:Lcom/google/android/finsky/layout/CustomActionBar;
@@ -192,7 +198,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 57
+    .line 59
     return-void
 .end method
 
@@ -201,11 +207,11 @@
     .parameter "title"
 
     .prologue
-    .line 61
+    .line 63
     iget-object v0, p0, Lcom/google/android/finsky/activities/FinskyCreateInstrumentActivity;->mActionBar:Lcom/google/android/finsky/layout/CustomActionBar;
 
     invoke-interface {v0, p1}, Lcom/google/android/finsky/layout/CustomActionBar;->updateBreadcrumb(Ljava/lang/String;)V
 
-    .line 62
+    .line 64
     return-void
 .end method

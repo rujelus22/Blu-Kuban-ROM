@@ -44,19 +44,19 @@
     .end annotation
 
     .prologue
-    .line 307
+    .line 270
     .local p4, listener:Lcom/android/volley/Response$Listener;,"Lcom/android/volley/Response$Listener<Lorg/json/JSONObject;>;"
     invoke-direct {p0, p2, p3, p4, p5}, Lcom/google/android/finsky/api/SkyjamJsonObjectRequest;-><init>(Ljava/lang/String;Lorg/json/JSONObject;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 302
+    .line 265
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/GooglePlusShareSection$AuthorizedSkyjamJsonObjectRequest;->mLastAuthToken:Ljava/lang/String;
 
-    .line 309
+    .line 272
     iput-object p1, p0, Lcom/google/android/finsky/layout/GooglePlusShareSection$AuthorizedSkyjamJsonObjectRequest;->mAuthenticator:Lcom/android/volley/toolbox/Authenticator;
 
-    .line 310
+    .line 273
     return-void
 .end method
 
@@ -67,10 +67,10 @@
     .parameter "error"
 
     .prologue
-    .line 314
+    .line 277
     invoke-super {p0, p1}, Lcom/google/android/finsky/api/SkyjamJsonObjectRequest;->deliverError(Lcom/android/volley/VolleyError;)V
 
-    .line 316
+    .line 279
     iget-object v0, p0, Lcom/google/android/finsky/layout/GooglePlusShareSection$AuthorizedSkyjamJsonObjectRequest;->mLastAuthToken:Ljava/lang/String;
 
     if-eqz v0, :cond_15
@@ -79,19 +79,19 @@
 
     if-eqz v0, :cond_15
 
-    .line 318
+    .line 281
     iget-object v0, p0, Lcom/google/android/finsky/layout/GooglePlusShareSection$AuthorizedSkyjamJsonObjectRequest;->mAuthenticator:Lcom/android/volley/toolbox/Authenticator;
 
     iget-object v1, p0, Lcom/google/android/finsky/layout/GooglePlusShareSection$AuthorizedSkyjamJsonObjectRequest;->mLastAuthToken:Ljava/lang/String;
 
     invoke-interface {v0, v1}, Lcom/android/volley/toolbox/Authenticator;->invalidateAuthToken(Ljava/lang/String;)V
 
-    .line 319
+    .line 282
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/GooglePlusShareSection$AuthorizedSkyjamJsonObjectRequest;->mLastAuthToken:Ljava/lang/String;
 
-    .line 321
+    .line 284
     :cond_15
     return-void
 .end method
@@ -116,29 +116,27 @@
     .end annotation
 
     .prologue
-    .line 329
+    .line 292
     invoke-super {p0}, Lcom/google/android/finsky/api/SkyjamJsonObjectRequest;->getHeaders()Ljava/util/Map;
 
     move-result-object v0
 
-    .line 331
+    .line 294
     .local v0, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     iget-object v1, p0, Lcom/google/android/finsky/layout/GooglePlusShareSection$AuthorizedSkyjamJsonObjectRequest;->mAuthenticator:Lcom/android/volley/toolbox/Authenticator;
 
-    const-string v2, "sj"
-
-    invoke-interface {v1, v2}, Lcom/android/volley/toolbox/Authenticator;->getAuthToken(Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v1}, Lcom/android/volley/toolbox/Authenticator;->getAuthToken()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/android/finsky/layout/GooglePlusShareSection$AuthorizedSkyjamJsonObjectRequest;->mLastAuthToken:Ljava/lang/String;
 
-    .line 332
+    .line 295
     iget-object v1, p0, Lcom/google/android/finsky/layout/GooglePlusShareSection$AuthorizedSkyjamJsonObjectRequest;->mLastAuthToken:Ljava/lang/String;
 
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_18
 
-    .line 333
+    .line 296
     new-instance v1, Lcom/android/volley/AuthFailureError;
 
     const-string v2, "Auth token is null"
@@ -147,8 +145,8 @@
 
     throw v1
 
-    .line 335
-    :cond_1a
+    .line 298
+    :cond_18
     const-string v1, "Authorization"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -173,6 +171,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 337
+    .line 300
     return-object v0
 .end method

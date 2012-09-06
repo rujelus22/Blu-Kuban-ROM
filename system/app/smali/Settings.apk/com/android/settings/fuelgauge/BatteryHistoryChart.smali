@@ -368,13 +368,13 @@
 
     move-object/from16 v20, v0
 
-    const/16 v21, 0xff
+    const/16 v21, 0xa0
 
-    const/16 v22, 0x80
+    const/16 v22, 0x25
 
-    const/16 v23, 0x80
+    const/16 v23, 0x25
 
-    const/16 v24, 0x80
+    const/16 v24, 0x25
 
     invoke-virtual/range {v20 .. v24}, Landroid/graphics/Paint;->setARGB(IIII)V
 
@@ -398,11 +398,11 @@
 
     const/16 v21, 0x80
 
-    const/16 v22, 0x0
+    const/16 v22, 0x15
 
-    const/16 v23, 0xff
+    const/16 v23, 0x54
 
-    const/16 v24, 0x0
+    const/16 v24, 0x96
 
     invoke-virtual/range {v20 .. v24}, Landroid/graphics/Paint;->setARGB(IIII)V
 
@@ -426,9 +426,9 @@
 
     const/16 v21, 0x80
 
-    const/16 v22, 0xff
+    const/16 v22, 0x99
 
-    const/16 v23, 0xff
+    const/16 v23, 0x0
 
     const/16 v24, 0x0
 
@@ -452,9 +452,9 @@
 
     move-object/from16 v20, v0
 
-    const/16 v21, 0xc0
+    const/16 v21, 0xff
 
-    const/16 v22, 0xff
+    const/16 v22, 0x99
 
     const/16 v23, 0x0
 
@@ -482,11 +482,11 @@
 
     const/16 v21, 0xff
 
-    const/16 v22, 0x0
+    const/16 v22, 0x15
 
-    const/16 v23, 0x80
+    const/16 v23, 0x54
 
-    const/16 v24, 0x0
+    const/16 v24, 0x96
 
     invoke-virtual/range {v20 .. v24}, Landroid/graphics/Paint;->setARGB(IIII)V
 
@@ -1887,11 +1887,11 @@
 
     const/16 v3, 0xff
 
-    const/16 v4, 0x20
+    const/16 v4, 0x15
 
-    const/16 v37, 0x40
+    const/16 v37, 0x54
 
-    const/16 v38, 0xff
+    const/16 v38, 0x96
 
     move/from16 v0, v37
 
@@ -1906,11 +1906,11 @@
 
     const/16 v3, 0xff
 
-    const/16 v4, 0x20
+    const/16 v4, 0x15
 
-    const/16 v37, 0x40
+    const/16 v37, 0x54
 
-    const/16 v38, 0xff
+    const/16 v38, 0x96
 
     move/from16 v0, v37
 
@@ -1925,11 +1925,11 @@
 
     const/16 v3, 0xff
 
-    const/16 v4, 0x20
+    const/16 v4, 0x15
 
-    const/16 v37, 0x40
+    const/16 v37, 0x54
 
-    const/16 v38, 0xff
+    const/16 v38, 0x96
 
     move/from16 v0, v37
 
@@ -1944,11 +1944,11 @@
 
     const/16 v3, 0xff
 
-    const/16 v4, 0x20
+    const/16 v4, 0x15
 
-    const/16 v37, 0x40
+    const/16 v37, 0x54
 
-    const/16 v38, 0xff
+    const/16 v38, 0x96
 
     move/from16 v0, v37
 

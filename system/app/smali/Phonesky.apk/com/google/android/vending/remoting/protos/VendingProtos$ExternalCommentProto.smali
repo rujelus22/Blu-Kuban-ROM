@@ -43,40 +43,40 @@
     .registers 3
 
     .prologue
-    .line 3703
+    .line 3789
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 3708
+    .line 3794
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->body_:Ljava/lang/String;
 
-    .line 3725
+    .line 3811
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->rating_:I
 
-    .line 3742
+    .line 3828
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->creatorName_:Ljava/lang/String;
 
-    .line 3759
+    .line 3845
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->creationTime_:J
 
-    .line 3776
+    .line 3862
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->creatorId_:Ljava/lang/String;
 
-    .line 3823
+    .line 3910
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->cachedSize:I
 
-    .line 3703
+    .line 3789
     return-void
 .end method
 
@@ -86,7 +86,7 @@
     .registers 2
 
     .prologue
-    .line 3709
+    .line 3795
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->body_:Ljava/lang/String;
 
     return-object v0
@@ -96,15 +96,15 @@
     .registers 2
 
     .prologue
-    .line 3825
+    .line 3913
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 3827
+    .line 3915
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->getSerializedSize()I
 
-    .line 3829
+    .line 3917
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->cachedSize:I
 
@@ -115,7 +115,7 @@
     .registers 3
 
     .prologue
-    .line 3760
+    .line 3846
     iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->creationTime_:J
 
     return-wide v0
@@ -125,7 +125,7 @@
     .registers 2
 
     .prologue
-    .line 3777
+    .line 3863
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->creatorId_:Ljava/lang/String;
 
     return-object v0
@@ -135,7 +135,7 @@
     .registers 2
 
     .prologue
-    .line 3743
+    .line 3829
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->creatorName_:Ljava/lang/String;
 
     return-object v0
@@ -145,7 +145,7 @@
     .registers 2
 
     .prologue
-    .line 3726
+    .line 3812
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->rating_:I
 
     return v0
@@ -155,10 +155,10 @@
     .registers 5
 
     .prologue
-    .line 3833
+    .line 3922
     const/4 v0, 0x0
 
-    .line 3834
+    .line 3923
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasBody()Z
 
@@ -166,7 +166,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 3835
+    .line 3924
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->getBody()Ljava/lang/String;
@@ -179,7 +179,7 @@
 
     add-int/2addr v0, v1
 
-    .line 3838
+    .line 3927
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasRating()Z
 
@@ -187,7 +187,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 3839
+    .line 3928
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->getRating()I
@@ -200,7 +200,7 @@
 
     add-int/2addr v0, v1
 
-    .line 3842
+    .line 3931
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasCreatorName()Z
 
@@ -208,7 +208,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 3843
+    .line 3932
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->getCreatorName()Ljava/lang/String;
@@ -221,7 +221,7 @@
 
     add-int/2addr v0, v1
 
-    .line 3846
+    .line 3935
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasCreationTime()Z
 
@@ -229,7 +229,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 3847
+    .line 3936
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->getCreationTime()J
@@ -242,7 +242,7 @@
 
     add-int/2addr v0, v1
 
-    .line 3850
+    .line 3939
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasCreatorId()Z
 
@@ -250,7 +250,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 3851
+    .line 3940
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->getCreatorId()Ljava/lang/String;
@@ -263,11 +263,11 @@
 
     add-int/2addr v0, v1
 
-    .line 3854
+    .line 3943
     :cond_51
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->cachedSize:I
 
-    .line 3855
+    .line 3944
     return v0
 .end method
 
@@ -275,7 +275,7 @@
     .registers 2
 
     .prologue
-    .line 3710
+    .line 3796
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasBody:Z
 
     return v0
@@ -285,7 +285,7 @@
     .registers 2
 
     .prologue
-    .line 3761
+    .line 3847
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasCreationTime:Z
 
     return v0
@@ -295,7 +295,7 @@
     .registers 2
 
     .prologue
-    .line 3778
+    .line 3864
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasCreatorId:Z
 
     return v0
@@ -305,7 +305,7 @@
     .registers 2
 
     .prologue
-    .line 3744
+    .line 3830
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasCreatorName:Z
 
     return v0
@@ -315,7 +315,7 @@
     .registers 2
 
     .prologue
-    .line 3727
+    .line 3813
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasRating:Z
 
     return v0
@@ -331,29 +331,29 @@
     .end annotation
 
     .prologue
-    .line 3862
+    .line 3952
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 3863
+    .line 3953
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_36
 
-    .line 3867
+    .line 3957
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 3868
+    .line 3958
     :sswitch_d
     return-object p0
 
-    .line 3873
+    .line 3963
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -363,7 +363,7 @@
 
     goto :goto_0
 
-    .line 3877
+    .line 3967
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -373,7 +373,7 @@
 
     goto :goto_0
 
-    .line 3881
+    .line 3971
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -383,7 +383,7 @@
 
     goto :goto_0
 
-    .line 3885
+    .line 3975
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -393,7 +393,7 @@
 
     goto :goto_0
 
-    .line 3889
+    .line 3979
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -403,7 +403,7 @@
 
     goto :goto_0
 
-    .line 3863
+    .line 3953
     :sswitch_data_36
     .sparse-switch
         0x0 -> :sswitch_d
@@ -425,7 +425,7 @@
     .end annotation
 
     .prologue
-    .line 3701
+    .line 3787
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;
 
     move-result-object v0
@@ -438,15 +438,15 @@
     .parameter "value"
 
     .prologue
-    .line 3712
+    .line 3798
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasBody:Z
 
-    .line 3713
+    .line 3799
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->body_:Ljava/lang/String;
 
-    .line 3714
+    .line 3800
     return-object p0
 .end method
 
@@ -455,15 +455,15 @@
     .parameter "value"
 
     .prologue
-    .line 3763
+    .line 3849
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasCreationTime:Z
 
-    .line 3764
+    .line 3850
     iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->creationTime_:J
 
-    .line 3765
+    .line 3851
     return-object p0
 .end method
 
@@ -472,15 +472,15 @@
     .parameter "value"
 
     .prologue
-    .line 3780
+    .line 3866
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasCreatorId:Z
 
-    .line 3781
+    .line 3867
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->creatorId_:Ljava/lang/String;
 
-    .line 3782
+    .line 3868
     return-object p0
 .end method
 
@@ -489,15 +489,15 @@
     .parameter "value"
 
     .prologue
-    .line 3746
+    .line 3832
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasCreatorName:Z
 
-    .line 3747
+    .line 3833
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->creatorName_:Ljava/lang/String;
 
-    .line 3748
+    .line 3834
     return-object p0
 .end method
 
@@ -506,15 +506,15 @@
     .parameter "value"
 
     .prologue
-    .line 3729
+    .line 3815
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasRating:Z
 
-    .line 3730
+    .line 3816
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->rating_:I
 
-    .line 3731
+    .line 3817
     return-object p0
 .end method
 
@@ -528,14 +528,14 @@
     .end annotation
 
     .prologue
-    .line 3806
+    .line 3893
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasBody()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 3807
+    .line 3894
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->getBody()Ljava/lang/String;
@@ -544,7 +544,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 3809
+    .line 3896
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasRating()Z
 
@@ -552,7 +552,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 3810
+    .line 3897
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->getRating()I
@@ -561,7 +561,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 3812
+    .line 3899
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasCreatorName()Z
 
@@ -569,7 +569,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 3813
+    .line 3900
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->getCreatorName()Ljava/lang/String;
@@ -578,7 +578,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 3815
+    .line 3902
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasCreationTime()Z
 
@@ -586,7 +586,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 3816
+    .line 3903
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->getCreationTime()J
@@ -595,7 +595,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 3818
+    .line 3905
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->hasCreatorId()Z
 
@@ -603,7 +603,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 3819
+    .line 3906
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalCommentProto;->getCreatorId()Ljava/lang/String;
@@ -612,7 +612,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 3821
+    .line 3908
     :cond_46
     return-void
 .end method

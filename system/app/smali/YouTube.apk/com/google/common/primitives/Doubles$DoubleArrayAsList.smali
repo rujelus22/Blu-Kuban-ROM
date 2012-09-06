@@ -25,14 +25,14 @@
     .parameter
 
     .prologue
-    .line 388
+    .line 415
     const/4 v0, 0x0
 
     array-length v1, p1
 
     invoke-direct {p0, p1, v0, v1}, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;-><init>([DII)V
 
-    .line 389
+    .line 416
     return-void
 .end method
 
@@ -43,19 +43,19 @@
     .parameter
 
     .prologue
-    .line 391
+    .line 418
     invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
 
-    .line 392
+    .line 419
     iput-object p1, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->array:[D
 
-    .line 393
+    .line 420
     iput p2, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->start:I
 
-    .line 394
+    .line 421
     iput p3, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->end:I
 
-    .line 395
+    .line 422
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .parameter
 
     .prologue
-    .line 412
+    .line 439
     instance-of v0, p1, Ljava/lang/Double;
 
     if-eqz v0, :cond_19
@@ -111,29 +111,29 @@
 
     const/4 v1, 0x0
 
-    .line 456
+    .line 482
     if-ne p1, p0, :cond_5
 
-    .line 472
+    .line 498
     :cond_4
     :goto_4
     return v0
 
-    .line 459
+    .line 485
     :cond_5
     instance-of v2, p1, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;
 
     if-eqz v2, :cond_31
 
-    .line 460
+    .line 486
     check-cast p1, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;
 
-    .line 461
+    .line 487
     invoke-virtual {p0}, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->size()I
 
     move-result v3
 
-    .line 462
+    .line 488
     invoke-virtual {p1}, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->size()I
 
     move-result v2
@@ -142,17 +142,17 @@
 
     move v0, v1
 
-    .line 463
+    .line 489
     goto :goto_4
 
     :cond_17
     move v2, v1
 
-    .line 465
+    .line 491
     :goto_18
     if-ge v2, v3, :cond_4
 
-    .line 466
+    .line 492
     iget-object v4, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->array:[D
 
     iget v5, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->start:I
@@ -175,16 +175,16 @@
 
     move v0, v1
 
-    .line 467
+    .line 493
     goto :goto_4
 
-    .line 465
+    .line 491
     :cond_2e
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_18
 
-    .line 472
+    .line 498
     :cond_31
     invoke-super {p0, p1}, Ljava/util/AbstractList;->equals(Ljava/lang/Object;)Z
 
@@ -198,14 +198,14 @@
     .parameter
 
     .prologue
-    .line 406
+    .line 433
     invoke-virtual {p0}, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->size()I
 
     move-result v0
 
-    invoke-static {p1, v0}, Lcom/google/common/base/t;->a(II)I
+    invoke-static {p1, v0}, Lcom/google/common/base/ag;->a(II)I
 
-    .line 407
+    .line 434
     iget-object v0, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->array:[D
 
     iget v1, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->start:I
@@ -226,7 +226,7 @@
     .parameter
 
     .prologue
-    .line 380
+    .line 407
     invoke-virtual {p0, p1}, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->get(I)Ljava/lang/Double;
 
     move-result-object v0
@@ -238,10 +238,10 @@
     .registers 5
 
     .prologue
-    .line 476
+    .line 502
     const/4 v1, 0x1
 
-    .line 477
+    .line 503
     iget v0, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->start:I
 
     :goto_3
@@ -249,7 +249,7 @@
 
     if-ge v0, v2, :cond_19
 
-    .line 478
+    .line 504
     mul-int/lit8 v1, v1, 0x1f
 
     iget-object v2, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->array:[D
@@ -266,12 +266,12 @@
 
     add-int/2addr v1, v2
 
-    .line 477
+    .line 503
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
 
-    .line 480
+    .line 506
     :cond_19
     return v1
 .end method
@@ -281,12 +281,12 @@
     .parameter
 
     .prologue
-    .line 418
+    .line 445
     instance-of v0, p1, Ljava/lang/Double;
 
     if-eqz v0, :cond_1a
 
-    .line 419
+    .line 446
     iget-object v0, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->array:[D
 
     check-cast p1, Ljava/lang/Double;
@@ -303,15 +303,15 @@
 
     move-result v0
 
-    .line 420
+    .line 447
     if-ltz v0, :cond_1a
 
-    .line 421
+    .line 448
     iget v1, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->start:I
 
     sub-int/2addr v0, v1
 
-    .line 424
+    .line 451
     :goto_19
     return v0
 
@@ -325,7 +325,7 @@
     .registers 2
 
     .prologue
-    .line 402
+    .line 429
     const/4 v0, 0x0
 
     return v0
@@ -336,12 +336,12 @@
     .parameter
 
     .prologue
-    .line 429
+    .line 456
     instance-of v0, p1, Ljava/lang/Double;
 
     if-eqz v0, :cond_1a
 
-    .line 430
+    .line 457
     iget-object v0, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->array:[D
 
     check-cast p1, Ljava/lang/Double;
@@ -358,15 +358,15 @@
 
     move-result v0
 
-    .line 431
+    .line 458
     if-ltz v0, :cond_1a
 
-    .line 432
+    .line 459
     iget v1, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->start:I
 
     sub-int/2addr v0, v1
 
-    .line 435
+    .line 462
     :goto_19
     return v0
 
@@ -377,42 +377,48 @@
 .end method
 
 .method public set(ILjava/lang/Double;)Ljava/lang/Double;
-    .registers 9
+    .registers 10
     .parameter
     .parameter
 
     .prologue
-    .line 439
+    .line 466
     invoke-virtual {p0}, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->size()I
 
     move-result v0
 
-    invoke-static {p1, v0}, Lcom/google/common/base/t;->a(II)I
+    invoke-static {p1, v0}, Lcom/google/common/base/ag;->a(II)I
 
-    .line 440
+    .line 467
     iget-object v0, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->array:[D
 
     iget v1, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->start:I
 
     add-int/2addr v1, p1
 
-    aget-wide v0, v0, v1
+    aget-wide v1, v0, v1
 
-    .line 441
-    iget-object v2, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->array:[D
+    .line 468
+    iget-object v3, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->array:[D
 
-    iget v3, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->start:I
+    iget v0, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->start:I
 
-    add-int/2addr v3, p1
+    add-int v4, v0, p1
 
-    invoke-virtual {p2}, Ljava/lang/Double;->doubleValue()D
+    invoke-static {p2}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-wide v4
+    move-result-object v0
 
-    aput-wide v4, v2, v3
+    check-cast v0, Ljava/lang/Double;
 
-    .line 442
-    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v5
+
+    aput-wide v5, v3, v4
+
+    .line 469
+    invoke-static {v1, v2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v0
 
@@ -425,7 +431,7 @@
     .parameter
 
     .prologue
-    .line 380
+    .line 407
     check-cast p2, Ljava/lang/Double;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->set(ILjava/lang/Double;)Ljava/lang/Double;
@@ -439,7 +445,7 @@
     .registers 3
 
     .prologue
-    .line 398
+    .line 425
     iget v0, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->end:I
 
     iget v1, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->start:I
@@ -455,23 +461,23 @@
     .parameter
 
     .prologue
-    .line 447
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->size()I
 
     move-result v0
 
-    .line 448
-    invoke-static {p1, p2, v0}, Lcom/google/common/base/t;->a(III)V
+    .line 474
+    invoke-static {p1, p2, v0}, Lcom/google/common/base/ag;->a(III)V
 
-    .line 449
+    .line 475
     if-ne p1, p2, :cond_e
 
-    .line 450
+    .line 476
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 452
+    .line 478
     :goto_d
     return-object v0
 
@@ -497,15 +503,15 @@
     .registers 6
 
     .prologue
-    .line 494
+    .line 520
     invoke-virtual {p0}, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->size()I
 
     move-result v0
 
-    .line 495
+    .line 521
     new-array v1, v0, [D
 
-    .line 496
+    .line 522
     iget-object v2, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->array:[D
 
     iget v3, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->start:I
@@ -514,7 +520,7 @@
 
     invoke-static {v2, v3, v1, v4, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 497
+    .line 523
     return-object v1
 .end method
 
@@ -522,7 +528,7 @@
     .registers 6
 
     .prologue
-    .line 484
+    .line 510
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->size()I
@@ -533,7 +539,7 @@
 
     invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 485
+    .line 511
     const/16 v0, 0x5b
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -548,7 +554,7 @@
 
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    .line 486
+    .line 512
     iget v0, p0, Lcom/google/common/primitives/Doubles$DoubleArrayAsList;->start:I
 
     add-int/lit8 v0, v0, 0x1
@@ -558,7 +564,7 @@
 
     if-ge v0, v2, :cond_32
 
-    .line 487
+    .line 513
     const-string v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -571,12 +577,12 @@
 
     invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    .line 486
+    .line 512
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1e
 
-    .line 489
+    .line 515
     :cond_32
     const/16 v0, 0x5d
 

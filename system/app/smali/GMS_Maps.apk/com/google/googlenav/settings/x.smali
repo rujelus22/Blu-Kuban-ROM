@@ -1,19 +1,23 @@
 .class Lcom/google/googlenav/settings/x;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lax/al;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/settings/q;
+.field final synthetic a:Lcom/google/googlenav/settings/w;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/settings/q;)V
+.method constructor <init>(Lcom/google/googlenav/settings/w;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/settings/x;->a:Lcom/google/googlenav/settings/q;
+    .prologue
+    .line 281
+    iput-object p1, p0, Lcom/google/googlenav/settings/x;->a:Lcom/google/googlenav/settings/w;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,38 +26,59 @@
 
 
 # virtual methods
-.method public a()V
+.method public run()V
     .registers 3
 
-    iget-object v0, p0, Lcom/google/googlenav/settings/x;->a:Lcom/google/googlenav/settings/q;
+    .prologue
+    .line 284
+    iget-object v0, p0, Lcom/google/googlenav/settings/x;->a:Lcom/google/googlenav/settings/w;
 
-    invoke-static {v0}, Lcom/google/googlenav/settings/q;->b(Lcom/google/googlenav/settings/q;)Landroid/os/Handler;
+    iget-object v0, v0, Lcom/google/googlenav/settings/w;->a:Lcom/google/googlenav/settings/s;
 
-    move-result-object v0
-
-    new-instance v1, Lcom/google/googlenav/settings/z;
-
-    invoke-direct {v1, p0}, Lcom/google/googlenav/settings/z;-><init>(Lcom/google/googlenav/settings/x;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
-.end method
-
-.method public a(Z)V
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/googlenav/settings/x;->a:Lcom/google/googlenav/settings/q;
-
-    invoke-static {v0}, Lcom/google/googlenav/settings/q;->b(Lcom/google/googlenav/settings/q;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/google/googlenav/settings/s;->c(Lcom/google/googlenav/settings/s;)Lcom/google/googlenav/settings/C;
 
     move-result-object v0
 
-    new-instance v1, Lcom/google/googlenav/settings/y;
+    iget-object v1, p0, Lcom/google/googlenav/settings/x;->a:Lcom/google/googlenav/settings/w;
 
-    invoke-direct {v1, p0, p1}, Lcom/google/googlenav/settings/y;-><init>(Lcom/google/googlenav/settings/x;Z)V
+    iget-object v1, v1, Lcom/google/googlenav/settings/w;->a:Lcom/google/googlenav/settings/s;
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-static {v1}, Lcom/google/googlenav/settings/s;->d(Lcom/google/googlenav/settings/s;)Lcom/google/googlenav/friend/j;
 
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/googlenav/friend/j;->k()Lcom/google/googlenav/friend/i;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/google/googlenav/settings/C;->a(Lcom/google/googlenav/settings/C;Lcom/google/googlenav/friend/i;)Lcom/google/googlenav/friend/i;
+
+    .line 285
+    iget-object v0, p0, Lcom/google/googlenav/settings/x;->a:Lcom/google/googlenav/settings/w;
+
+    iget-object v0, v0, Lcom/google/googlenav/settings/w;->a:Lcom/google/googlenav/settings/s;
+
+    invoke-static {v0}, Lcom/google/googlenav/settings/s;->c(Lcom/google/googlenav/settings/s;)Lcom/google/googlenav/settings/C;
+
+    move-result-object v0
+
+    invoke-static {}, Lcom/google/googlenav/RatingReminderManager;->a()Z
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/google/googlenav/settings/C;->a(Lcom/google/googlenav/settings/C;Ljava/lang/Boolean;)Ljava/lang/Boolean;
+
+    .line 287
+    iget-object v0, p0, Lcom/google/googlenav/settings/x;->a:Lcom/google/googlenav/settings/w;
+
+    iget-object v0, v0, Lcom/google/googlenav/settings/w;->a:Lcom/google/googlenav/settings/s;
+
+    invoke-static {v0}, Lcom/google/googlenav/settings/s;->e(Lcom/google/googlenav/settings/s;)V
+
+    .line 288
     return-void
 .end method

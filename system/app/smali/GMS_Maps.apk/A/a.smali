@@ -1,352 +1,222 @@
-.class public abstract LA/a;
-.super Ljava/lang/Object;
+.class public LA/a;
+.super LA/f;
+.source "SourceFile"
 
 
 # instance fields
-.field protected final a:Ljava/util/LinkedList;
+.field private final a:[LA/j;
 
-.field protected b:I
+.field private b:I
 
-.field public c:Ljava/lang/Object;
-
-.field public d:I
-
-.field private final e:LA/e;
-
-.field private final f:I
-
-.field private final g:I
-
-.field private final h:I
-
-.field private i:I
+.field private d:I
 
 
 # direct methods
-.method public constructor <init>(IILA/e;)V
-    .registers 6
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-
-    iput-object v0, p0, LA/a;->a:Ljava/util/LinkedList;
-
-    iput p2, p0, LA/a;->h:I
-
-    const/4 v0, 0x1
-
-    iget v1, p0, LA/a;->h:I
-
-    shl-int/2addr v0, v1
-
-    iput v0, p0, LA/a;->f:I
-
-    iget v0, p0, LA/a;->f:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, LA/a;->g:I
-
-    iput-object p3, p0, LA/a;->e:LA/e;
-
-    invoke-direct {p0, p1}, LA/a;->d(I)I
-
-    move-result v0
-
-    iput v0, p0, LA/a;->i:I
-
-    invoke-virtual {p0}, LA/a;->a()V
-
-    return-void
-.end method
-
-.method private d(I)I
+.method public constructor <init>(Landroid/content/Context;)V
     .registers 4
+    .parameter
 
-    iget v0, p0, LA/a;->h:I
+    .prologue
+    const/4 v1, 0x0
 
-    shr-int v1, p1, v0
+    .line 27
+    invoke-direct {p0, p1}, LA/f;-><init>(Landroid/content/Context;)V
 
-    iget v0, p0, LA/a;->g:I
+    .line 22
+    const/16 v0, 0x190
 
-    and-int/2addr v0, p1
+    new-array v0, v0, [LA/j;
 
-    if-eqz v0, :cond_c
+    iput-object v0, p0, LA/a;->a:[LA/j;
 
-    const/4 v0, 0x1
+    .line 23
+    iput v1, p0, LA/a;->b:I
 
-    :goto_a
-    add-int/2addr v0, v1
+    .line 24
+    iput v1, p0, LA/a;->d:I
 
-    return v0
-
-    :cond_c
-    const/4 v0, 0x0
-
-    goto :goto_a
+    .line 28
+    return-void
 .end method
 
 
 # virtual methods
-.method public a(I)Ljava/lang/Object;
-    .registers 5
+.method public declared-synchronized a()Ljava/util/List;
+    .registers 6
 
-    iget v0, p0, LA/a;->i:I
+    .prologue
+    const/16 v1, 0x190
 
-    if-le p1, v0, :cond_2f
+    .line 33
+    monitor-enter p0
 
-    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
+    :try_start_3
+    iget v0, p0, LA/a;->d:I
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    if-ge v0, v1, :cond_1a
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 34
+    iget v0, p0, LA/a;->d:I
 
-    const-string v2, "Index out of bound : "
+    new-array v0, v0, [LA/j;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "(index) > "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, LA/a;->i:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "(size)"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2f
-    :goto_2f
-    iget-object v0, p0, LA/a;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
-
-    move-result v0
-
-    if-lt p1, v0, :cond_43
-
-    iget-object v0, p0, LA/a;->a:Ljava/util/LinkedList;
-
-    iget-object v1, p0, LA/a;->e:LA/e;
-
-    invoke-virtual {v1}, LA/e;->c()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_2f
-
-    :cond_43
-    iget-object v0, p0, LA/a;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0, p1}, Ljava/util/LinkedList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public a()V
-    .registers 2
-
-    const/4 v0, 0x0
-
-    iput v0, p0, LA/a;->b:I
-
-    iput v0, p0, LA/a;->d:I
-
-    invoke-virtual {p0, v0}, LA/a;->a(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    iput-object v0, p0, LA/a;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/Object;I)V
-    .registers 7
+    .line 35
+    iget-object v1, p0, LA/a;->a:[LA/j;
 
     const/4 v2, 0x0
 
-    invoke-virtual {p0}, LA/a;->a()V
+    const/4 v3, 0x0
 
-    move v1, v2
+    iget v4, p0, LA/a;->d:I
 
-    :goto_5
-    if-ge v1, p2, :cond_2a
+    invoke-static {v1, v2, v0, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    iget v0, p0, LA/a;->f:I
+    .line 43
+    :goto_14
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    :try_end_17
+    .catchall {:try_start_3 .. :try_end_17} :catchall_37
 
-    iget v3, p0, LA/a;->f:I
+    move-result-object v0
 
-    add-int/2addr v3, v1
+    monitor-exit p0
 
-    if-le v3, p2, :cond_10
+    return-object v0
 
-    sub-int v0, p2, v1
+    .line 37
+    :cond_1a
+    const/16 v0, 0x190
 
-    :cond_10
+    :try_start_1c
+    new-array v0, v0, [LA/j;
+
+    .line 38
+    iget-object v1, p0, LA/a;->a:[LA/j;
+
+    iget v2, p0, LA/a;->b:I
+
+    const/4 v3, 0x0
+
+    iget v4, p0, LA/a;->b:I
+
+    rsub-int v4, v4, 0x190
+
+    invoke-static {v1, v2, v0, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 40
+    iget-object v1, p0, LA/a;->a:[LA/j;
+
+    const/4 v2, 0x0
+
     iget v3, p0, LA/a;->b:I
 
-    invoke-virtual {p0, v3}, LA/a;->a(I)Ljava/lang/Object;
+    rsub-int v3, v3, 0x190
 
-    move-result-object v3
+    iget v4, p0, LA/a;->b:I
 
-    invoke-static {p1, v1, v3, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v1, v2, v0, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    :try_end_36
+    .catchall {:try_start_1c .. :try_end_36} :catchall_37
 
-    add-int/2addr v1, v0
+    goto :goto_14
 
-    iget v3, p0, LA/a;->f:I
+    .line 33
+    :catchall_37
+    move-exception v0
 
-    if-ne v0, v3, :cond_27
+    monitor-exit p0
 
+    throw v0
+.end method
+
+.method public declared-synchronized a(LA/j;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    const/16 v2, 0x190
+
+    .line 48
+    monitor-enter p0
+
+    if-nez p1, :cond_e
+
+    .line 49
+    :try_start_5
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+    :try_end_b
+    .catchall {:try_start_5 .. :try_end_b} :catchall_b
+
+    .line 48
+    :catchall_b
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    .line 52
+    :cond_e
+    :try_start_e
+    iget v0, p0, LA/a;->d:I
+
+    if-ne v0, v2, :cond_27
+
+    .line 53
     iget v0, p0, LA/a;->b:I
 
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, LA/a;->b:I
-
-    iput v2, p0, LA/a;->d:I
-
-    goto :goto_5
-
-    :cond_27
-    iput v0, p0, LA/a;->d:I
-
-    goto :goto_5
-
-    :cond_2a
-    return-void
-.end method
-
-.method public b()I
-    .registers 3
-
-    iget-object v0, p0, LA/a;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
-
-    move-result v0
-
-    iget v1, p0, LA/a;->h:I
-
-    shl-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public b(I)V
-    .registers 7
-
-    iget v0, p0, LA/a;->f:I
-
-    if-lt p1, v0, :cond_2a
-
-    iget v0, p0, LA/a;->g:I
-
-    and-int/2addr v0, p1
-
+    .line 54
     iget v1, p0, LA/a;->b:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, LA/a;->b:I
 
+    .line 55
     iget v1, p0, LA/a;->b:I
 
-    iget v2, p0, LA/a;->i:I
+    if-ne v1, v2, :cond_21
 
-    if-eq v1, v2, :cond_27
+    .line 56
+    const/4 v1, 0x0
 
-    iget-object v1, p0, LA/a;->c:Ljava/lang/Object;
+    iput v1, p0, LA/a;->b:I
 
-    iget v2, p0, LA/a;->b:I
+    .line 62
+    :cond_21
+    :goto_21
+    iget-object v1, p0, LA/a;->a:[LA/j;
 
-    invoke-virtual {p0, v2}, LA/a;->a(I)Ljava/lang/Object;
+    aput-object p1, v1, v0
+    :try_end_25
+    .catchall {:try_start_e .. :try_end_25} :catchall_b
 
-    move-result-object v2
+    .line 63
+    monitor-exit p0
 
-    iput-object v2, p0, LA/a;->c:Ljava/lang/Object;
+    return-void
 
-    if-eqz v0, :cond_27
-
-    iget v2, p0, LA/a;->f:I
-
-    iget-object v3, p0, LA/a;->c:Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    invoke-static {v1, v2, v3, v4, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
+    .line 59
     :cond_27
-    iput v0, p0, LA/a;->d:I
+    :try_start_27
+    iget v0, p0, LA/a;->b:I
 
-    :goto_29
-    return-void
+    iget v1, p0, LA/a;->d:I
 
-    :cond_2a
-    iput p1, p0, LA/a;->d:I
+    add-int/2addr v0, v1
 
-    goto :goto_29
-.end method
+    .line 60
+    iget v1, p0, LA/a;->d:I
 
-.method public c()V
-    .registers 3
+    add-int/lit8 v1, v1, 0x1
 
-    iget-object v0, p0, LA/a;->e:LA/e;
+    iput v1, p0, LA/a;->d:I
+    :try_end_32
+    .catchall {:try_start_27 .. :try_end_32} :catchall_b
 
-    iget-object v1, p0, LA/a;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0, v1}, LA/e;->a(Ljava/util/List;)V
-
-    iget-object v0, p0, LA/a;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->clear()V
-
-    return-void
-.end method
-
-.method public c(I)V
-    .registers 4
-
-    invoke-direct {p0, p1}, LA/a;->d(I)I
-
-    move-result v0
-
-    iget v1, p0, LA/a;->i:I
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
-
-    move-result v0
-
-    iput v0, p0, LA/a;->i:I
-
-    return-void
+    goto :goto_21
 .end method

@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 27
+    .line 26
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -22,9 +22,9 @@
     .parameter "intent"
 
     .prologue
-    .line 30
+    .line 29
     invoke-static {p1, p2}, Lcom/android/email/service/EmailBroadcastProcessorService;->processBroadcastIntent(Landroid/content/Context;Landroid/content/Intent;)V
 
-    .line 31
+    .line 30
     return-void
 .end method

@@ -4,13 +4,13 @@
 
 
 # static fields
-.field private static final GRID_SEQUENCE_4xN:[Lcom/google/android/finsky/adapters/GridSlotSize;
+.field private static final GRID_SEQUENCE_4xN:[I
 
-.field private static final GRID_SEQUENCE_6xN:[Lcom/google/android/finsky/adapters/GridSlotSize;
+.field private static final GRID_SEQUENCE_6xN:[I
 
-.field private static final GRID_SEQUENCE_6xN_PROMO_HEAVY:[Lcom/google/android/finsky/adapters/GridSlotSize;
+.field private static final GRID_SEQUENCE_6xN_PROMO_HEAVY:[I
 
-.field private static final GRID_SEQUENCE_8xN:[Lcom/google/android/finsky/adapters/GridSlotSize;
+.field private static final GRID_SEQUENCE_8xN:[I
 
 
 # instance fields
@@ -20,269 +20,209 @@
 
 .field private mGridSequencer:Lcom/google/android/finsky/layout/GridSequencer;
 
+.field private final mHandler:Landroid/os/Handler;
+
 .field private mHaveLoggedBefore:Z
 
+.field private mPageContent:Landroid/view/View;
+
 .field private mPromoListData:Lcom/google/android/finsky/api/model/DfeList;
+
+.field private mScrollPosition:I
+
+.field private final mScrollRunnable:Ljava/lang/Runnable;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .registers 1
 
     .prologue
-    const/4 v7, 0x4
-
-    const/4 v6, 0x3
-
-    const/4 v5, 0x2
-
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    .line 48
+    .line 64
     const/16 v0, 0x8
 
-    new-array v0, v0, [Lcom/google/android/finsky/adapters/GridSlotSize;
+    new-array v0, v0, [I
 
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_4x2:Lcom/google/android/finsky/adapters/GridSlotSize;
+    fill-array-data v0, :array_26
 
-    aput-object v1, v0, v3
+    sput-object v0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->GRID_SEQUENCE_4xN:[I
 
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2xN_TOC:Lcom/google/android/finsky/adapters/GridSlotSize;
+    .line 75
+    const/16 v0, 0xd
 
-    aput-object v1, v0, v4
+    new-array v0, v0, [I
 
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x1:Lcom/google/android/finsky/adapters/GridSlotSize;
+    fill-array-data v0, :array_3a
 
-    aput-object v1, v0, v5
+    sput-object v0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->GRID_SEQUENCE_6xN:[I
 
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x2:Lcom/google/android/finsky/adapters/GridSlotSize;
+    .line 91
+    const/16 v0, 0x10
 
-    aput-object v1, v0, v6
+    new-array v0, v0, [I
 
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_4x2:Lcom/google/android/finsky/adapters/GridSlotSize;
+    fill-array-data v0, :array_58
 
-    aput-object v1, v0, v7
+    sput-object v0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->GRID_SEQUENCE_6xN_PROMO_HEAVY:[I
 
-    const/4 v1, 0x5
+    .line 110
+    const/16 v0, 0xa
 
-    sget-object v2, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x2:Lcom/google/android/finsky/adapters/GridSlotSize;
+    new-array v0, v0, [I
 
-    aput-object v2, v0, v1
+    fill-array-data v0, :array_7c
 
-    const/4 v1, 0x6
-
-    sget-object v2, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
-
-    sget-object v2, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_4x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->GRID_SEQUENCE_4xN:[Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    .line 59
-    const/16 v0, 0x9
-
-    new-array v0, v0, [Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_4x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2xN_TOC:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x1:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x5
-
-    sget-object v2, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_4x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    sget-object v2, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
-
-    sget-object v2, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x8
-
-    sget-object v2, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_4x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->GRID_SEQUENCE_6xN:[Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    .line 71
-    const/16 v0, 0xb
-
-    new-array v0, v0, [Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_4x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2xN_TOC:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x1:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x5
-
-    sget-object v2, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_4x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    sget-object v2, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
-
-    sget-object v2, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x8
-
-    sget-object v2, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_4x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x9
-
-    sget-object v2, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_4x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xa
-
-    sget-object v2, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->GRID_SEQUENCE_6xN_PROMO_HEAVY:[Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    .line 86
-    const/4 v0, 0x7
-
-    new-array v0, v0, [Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_4x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_4x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2xN_TOC:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x5
-
-    sget-object v2, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x2:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    sget-object v2, Lcom/google/android/finsky/adapters/GridSlotSize;->Cell_2x1:Lcom/google/android/finsky/adapters/GridSlotSize;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->GRID_SEQUENCE_8xN:[Lcom/google/android/finsky/adapters/GridSlotSize;
+    sput-object v0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->GRID_SEQUENCE_8xN:[I
 
     return-void
+
+    .line 64
+    nop
+
+    :array_26
+    .array-data 0x4
+        0x1t 0x0t 0x0t 0x0t
+        0x2t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x3t 0x0t 0x0t 0x0t
+        0x1t 0x0t 0x0t 0x0t
+        0x3t 0x0t 0x0t 0x0t
+        0x3t 0x0t 0x0t 0x0t
+        0x1t 0x0t 0x0t 0x0t
+    .end array-data
+
+    .line 75
+    :array_3a
+    .array-data 0x4
+        0x1t 0x0t 0x0t 0x0t
+        0x2t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x1t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x1t 0x0t 0x0t 0x0t
+    .end array-data
+
+    .line 91
+    :array_58
+    .array-data 0x4
+        0x1t 0x0t 0x0t 0x0t
+        0x2t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x1t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x1t 0x0t 0x0t 0x0t
+        0x1t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+    .end array-data
+
+    .line 110
+    :array_7c
+    .array-data 0x4
+        0x1t 0x0t 0x0t 0x0t
+        0x1t 0x0t 0x0t 0x0t
+        0x2t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+        0x4t 0x0t 0x0t 0x0t
+    .end array-data
 .end method
 
 .method public constructor <init>()V
     .registers 2
 
     .prologue
-    .line 28
-    invoke-direct {p0}, Lcom/google/android/finsky/fragments/UrlBasedPageFragment;-><init>()V
-
-    .line 33
     const/4 v0, 0x0
 
+    .line 29
+    invoke-direct {p0}, Lcom/google/android/finsky/fragments/UrlBasedPageFragment;-><init>()V
+
+    .line 34
     iput-boolean v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mHaveLoggedBefore:Z
 
+    .line 52
+    iput v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mScrollPosition:I
+
+    .line 54
+    new-instance v0, Lcom/google/android/finsky/activities/CorporaHomeFragment$1;
+
+    invoke-direct {v0, p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment$1;-><init>(Lcom/google/android/finsky/activities/CorporaHomeFragment;)V
+
+    iput-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mScrollRunnable:Ljava/lang/Runnable;
+
+    .line 61
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mHandler:Landroid/os/Handler;
+
     return-void
+.end method
+
+.method static synthetic access$000(Lcom/google/android/finsky/activities/CorporaHomeFragment;)I
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 29
+    iget v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mScrollPosition:I
+
+    return v0
+.end method
+
+.method static synthetic access$100(Lcom/google/android/finsky/activities/CorporaHomeFragment;)Landroid/view/View;
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 29
+    iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPageContent:Landroid/view/View;
+
+    return-object v0
 .end method
 
 .method private addItemsToGridSequence()V
     .registers 4
 
     .prologue
-    .line 219
+    .line 246
     iget-boolean v1, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mGridSequenceDataAdded:Z
 
-    if-nez v1, :cond_39
+    if-nez v1, :cond_36
 
-    .line 221
+    .line 247
+    invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    .line 249
+    .local v0, promoDocuments:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/api/model/Document;>;"
     invoke-direct {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->getPromoListData()Lcom/google/android/finsky/api/model/DfeList;
 
     move-result-object v1
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_2e
 
-    invoke-direct {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->getPromoListData()Lcom/google/android/finsky/api/model/DfeList;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/DfeList;->isReady()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_36
-
-    .line 223
+    .line 250
     invoke-direct {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->getPromoListData()Lcom/google/android/finsky/api/model/DfeList;
 
     move-result-object v1
@@ -291,9 +231,9 @@
 
     move-result v1
 
-    if-lez v1, :cond_3a
+    if-lez v1, :cond_2e
 
-    .line 224
+    .line 251
     invoke-direct {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->getPromoListData()Lcom/google/android/finsky/api/model/DfeList;
 
     move-result-object v1
@@ -308,50 +248,41 @@
 
     move-result-object v1
 
-    check-cast v1, Lcom/google/android/finsky/model/Bucket;
+    check-cast v1, Lcom/google/android/finsky/api/model/Bucket;
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/model/Bucket;->getChildren()Ljava/util/List;
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Bucket;->getChildren()Ljava/util/List;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 228
-    .local v0, promoDocuments:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/api/model/Document;>;"
-    :goto_31
+    invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    .line 255
+    :cond_2e
     iget-object v1, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mGridSequencer:Lcom/google/android/finsky/layout/GridSequencer;
 
     invoke-virtual {v1, v0}, Lcom/google/android/finsky/layout/GridSequencer;->setPromoData(Ljava/util/List;)V
 
-    .line 231
-    .end local v0           #promoDocuments:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/api/model/Document;>;"
-    :cond_36
+    .line 256
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mGridSequenceDataAdded:Z
 
-    .line 233
-    :cond_39
+    .line 258
+    .end local v0           #promoDocuments:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/api/model/Document;>;"
+    :cond_36
     return-void
-
-    .line 226
-    :cond_3a
-    invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    .restart local v0       #promoDocuments:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/api/model/Document;>;"
-    goto :goto_31
 .end method
 
 .method private getPromoListData()Lcom/google/android/finsky/api/model/DfeList;
-    .registers 2
+    .registers 3
 
     .prologue
-    .line 264
+    .line 296
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPromoListData:Lcom/google/android/finsky/api/model/DfeList;
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_2e
 
-    .line 265
+    .line 297
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mBrowseData:Lcom/google/android/finsky/api/model/DfeBrowse;
 
     if-eqz v0, :cond_18
@@ -372,36 +303,38 @@
 
     if-nez v0, :cond_1a
 
-    .line 267
+    .line 299
     :cond_18
     const/4 v0, 0x0
 
-    .line 275
+    .line 307
     :goto_19
     return-object v0
 
-    .line 270
+    .line 302
     :cond_1a
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mBrowseData:Lcom/google/android/finsky/api/model/DfeBrowse;
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeBrowse;->buildPromoList()Lcom/google/android/finsky/api/model/DfeList;
+    iget-object v1, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/api/model/DfeBrowse;->buildPromoList(Lcom/google/android/finsky/api/DfeApi;)Lcom/google/android/finsky/api/model/DfeList;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPromoListData:Lcom/google/android/finsky/api/model/DfeList;
 
-    .line 271
+    .line 303
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPromoListData:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeList;->addDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 272
+    .line 304
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPromoListData:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeList;->addErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 275
-    :cond_2c
+    .line 307
+    :cond_2e
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPromoListData:Lcom/google/android/finsky/api/model/DfeList;
 
     goto :goto_19
@@ -413,12 +346,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 206
+    .line 233
     iget-boolean v1, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mHaveLoggedBefore:Z
 
     if-nez v1, :cond_3a
 
-    .line 207
+    .line 234
     iget-object v1, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mBrowseData:Lcom/google/android/finsky/api/model/DfeBrowse;
 
     invoke-virtual {v1}, Lcom/google/android/finsky/api/model/DfeBrowse;->hasPromotionalItems()Z
@@ -441,13 +374,13 @@
 
     move-result-object v1
 
-    check-cast v1, Lcom/google/android/finsky/model/Bucket;
+    check-cast v1, Lcom/google/android/finsky/api/model/Bucket;
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/model/Bucket;->getAnalyticsCookie()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Bucket;->getAnalyticsCookie()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 209
+    .line 236
     .local v0, listCookie:Ljava/lang/String;
     :goto_20
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
@@ -472,12 +405,12 @@
 
     invoke-interface {v1, v3, v2, v4, v0}, Lcom/google/android/finsky/analytics/Analytics;->logListViewOnPage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 211
+    .line 238
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mHaveLoggedBefore:Z
 
-    .line 213
+    .line 240
     .end local v0           #listCookie:Ljava/lang/String;
     :cond_3a
     return-void
@@ -485,7 +418,7 @@
     :cond_3b
     move-object v0, v2
 
-    .line 207
+    .line 234
     goto :goto_20
 .end method
 
@@ -496,21 +429,21 @@
     .parameter "referrer"
 
     .prologue
-    .line 101
+    .line 128
     new-instance v0, Lcom/google/android/finsky/activities/CorporaHomeFragment;
 
     invoke-direct {v0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;-><init>()V
 
-    .line 102
+    .line 129
     .local v0, fragment:Lcom/google/android/finsky/activities/CorporaHomeFragment;
     invoke-virtual {v0, p0, p1}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->setDfeTocAndUrl(Lcom/google/android/finsky/api/model/DfeToc;Ljava/lang/String;)V
 
-    .line 103
+    .line 130
     const-string v1, "CorporaHomeFragment.ReferrerUrl"
 
     invoke-virtual {v0, v1, p2}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->setArgument(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 104
+    .line 131
     return-object v0
 .end method
 
@@ -520,45 +453,45 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 172
+    .line 199
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mBrowseData:Lcom/google/android/finsky/api/model/DfeBrowse;
 
     if-eqz v0, :cond_f
 
-    .line 173
+    .line 200
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mBrowseData:Lcom/google/android/finsky/api/model/DfeBrowse;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeBrowse;->removeDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 174
+    .line 201
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mBrowseData:Lcom/google/android/finsky/api/model/DfeBrowse;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeBrowse;->removeErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 176
+    .line 203
     :cond_f
     iput-object v1, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mBrowseData:Lcom/google/android/finsky/api/model/DfeBrowse;
 
-    .line 177
+    .line 204
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPromoListData:Lcom/google/android/finsky/api/model/DfeList;
 
     if-eqz v0, :cond_1f
 
-    .line 178
+    .line 205
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPromoListData:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeList;->removeDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 179
+    .line 206
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPromoListData:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeList;->removeErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 181
+    .line 208
     :cond_1f
     iput-object v1, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPromoListData:Lcom/google/android/finsky/api/model/DfeList;
 
-    .line 182
+    .line 209
     return-void
 .end method
 
@@ -568,8 +501,8 @@
     .registers 2
 
     .prologue
-    .line 132
-    const v0, 0x7f040026
+    .line 159
+    const v0, 0x7f04002b
 
     return v0
 .end method
@@ -578,7 +511,7 @@
     .registers 2
 
     .prologue
-    .line 137
+    .line 164
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mBrowseData:Lcom/google/android/finsky/api/model/DfeBrowse;
 
     if-eqz v0, :cond_20
@@ -626,26 +559,26 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 109
+    .line 136
     invoke-super {p0, p1}, Lcom/google/android/finsky/fragments/UrlBasedPageFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
-    .line 111
+    .line 138
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->isDataReady()Z
 
     move-result v0
 
     if-nez v0, :cond_12
 
-    .line 112
+    .line 139
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->switchToLoading()V
 
-    .line 113
+    .line 140
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->requestData()V
 
-    .line 114
+    .line 141
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->rebindActionBar()V
 
-    .line 116
+    .line 143
     :cond_12
     return-void
 .end method
@@ -657,12 +590,12 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 121
+    .line 148
     invoke-super {p0, p1, p2, p3}, Lcom/google/android/finsky/fragments/UrlBasedPageFragment;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 123
+    .line 150
     .local v0, result:Landroid/view/View;
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->isDataReady()Z
 
@@ -670,10 +603,10 @@
 
     if-eqz v1, :cond_d
 
-    .line 124
+    .line 151
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->rebindViews()V
 
-    .line 127
+    .line 154
     :cond_d
     return-object v0
 .end method
@@ -682,19 +615,19 @@
     .registers 2
 
     .prologue
-    .line 186
+    .line 213
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->isAdded()Z
 
     move-result v0
 
     if-nez v0, :cond_7
 
-    .line 203
+    .line 230
     :cond_6
     :goto_6
     return-void
 
-    .line 190
+    .line 217
     :cond_7
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mBrowseData:Lcom/google/android/finsky/api/model/DfeBrowse;
 
@@ -712,20 +645,20 @@
 
     if-nez v0, :cond_23
 
-    .line 191
+    .line 218
     invoke-direct {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->getPromoListData()Lcom/google/android/finsky/api/model/DfeList;
 
-    .line 192
+    .line 219
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPromoListData:Lcom/google/android/finsky/api/model/DfeList;
 
     if-eqz v0, :cond_23
 
-    .line 193
+    .line 220
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPromoListData:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeList;->startLoadItems()V
 
-    .line 196
+    .line 223
     :cond_23
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->isDataReady()Z
 
@@ -733,13 +666,13 @@
 
     if-eqz v0, :cond_6
 
-    .line 198
+    .line 225
     invoke-direct {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->logPageView()V
 
-    .line 200
+    .line 227
     invoke-direct {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->addItemsToGridSequence()V
 
-    .line 201
+    .line 228
     invoke-super {p0}, Lcom/google/android/finsky/fragments/UrlBasedPageFragment;->onDataChanged()V
 
     goto :goto_6
@@ -749,10 +682,32 @@
     .registers 3
 
     .prologue
-    .line 253
+    .line 281
+    iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mHandler:Landroid/os/Handler;
+
+    iget-object v1, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mScrollRunnable:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    .line 282
+    iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPageContent:Landroid/view/View;
+
+    if-eqz v0, :cond_13
+
+    .line 283
+    iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPageContent:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getScrollY()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mScrollPosition:I
+
+    .line 285
+    :cond_13
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mDataView:Landroid/view/ViewGroup;
 
-    const v1, 0x7f080085
+    const v1, 0x7f080081
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -762,10 +717,10 @@
 
     invoke-virtual {v0}, Lcom/google/android/finsky/layout/UnevenGrid;->onDestroyView()V
 
-    .line 254
+    .line 286
     invoke-super {p0}, Lcom/google/android/finsky/fragments/UrlBasedPageFragment;->onDestroyView()V
 
-    .line 255
+    .line 287
     return-void
 .end method
 
@@ -773,28 +728,28 @@
     .registers 9
 
     .prologue
-    .line 143
+    .line 170
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f0c0007
+    const v1, 0x7f0c0008
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v7
 
-    .line 146
+    .line 173
     .local v7, gridWidth:I
     const/16 v0, 0x8
 
     if-ne v7, v0, :cond_25
 
-    .line 147
-    sget-object v4, Lcom/google/android/finsky/activities/CorporaHomeFragment;->GRID_SEQUENCE_8xN:[Lcom/google/android/finsky/adapters/GridSlotSize;
+    .line 174
+    sget-object v4, Lcom/google/android/finsky/activities/CorporaHomeFragment;->GRID_SEQUENCE_8xN:[I
 
-    .line 157
-    .local v4, layoutSequence:[Lcom/google/android/finsky/adapters/GridSlotSize;
+    .line 184
+    .local v4, layoutSequence:[I
     :goto_11
     new-instance v0, Lcom/google/android/finsky/layout/GridSequencer;
 
@@ -810,26 +765,26 @@
 
     iget-object v6, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mUrl:Ljava/lang/String;
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/finsky/layout/GridSequencer;-><init>(Landroid/content/Context;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/utils/BitmapLoader;[Lcom/google/android/finsky/adapters/GridSlotSize;Lcom/google/android/finsky/api/model/DfeToc;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/finsky/layout/GridSequencer;-><init>(Landroid/content/Context;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/utils/BitmapLoader;[ILcom/google/android/finsky/api/model/DfeToc;Ljava/lang/String;)V
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mGridSequencer:Lcom/google/android/finsky/layout/GridSequencer;
 
-    .line 159
+    .line 186
     return-void
 
-    .line 148
-    .end local v4           #layoutSequence:[Lcom/google/android/finsky/adapters/GridSlotSize;
+    .line 175
+    .end local v4           #layoutSequence:[I
     :cond_25
     const/4 v0, 0x6
 
     if-ne v7, v0, :cond_3b
 
-    .line 149
+    .line 176
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f090005
+    const v1, 0x7f090004
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -837,26 +792,26 @@
 
     if-eqz v0, :cond_38
 
-    .line 150
-    sget-object v4, Lcom/google/android/finsky/activities/CorporaHomeFragment;->GRID_SEQUENCE_6xN_PROMO_HEAVY:[Lcom/google/android/finsky/adapters/GridSlotSize;
+    .line 177
+    sget-object v4, Lcom/google/android/finsky/activities/CorporaHomeFragment;->GRID_SEQUENCE_6xN_PROMO_HEAVY:[I
 
-    .restart local v4       #layoutSequence:[Lcom/google/android/finsky/adapters/GridSlotSize;
+    .restart local v4       #layoutSequence:[I
     goto :goto_11
 
-    .line 152
-    .end local v4           #layoutSequence:[Lcom/google/android/finsky/adapters/GridSlotSize;
+    .line 179
+    .end local v4           #layoutSequence:[I
     :cond_38
-    sget-object v4, Lcom/google/android/finsky/activities/CorporaHomeFragment;->GRID_SEQUENCE_6xN:[Lcom/google/android/finsky/adapters/GridSlotSize;
+    sget-object v4, Lcom/google/android/finsky/activities/CorporaHomeFragment;->GRID_SEQUENCE_6xN:[I
 
-    .restart local v4       #layoutSequence:[Lcom/google/android/finsky/adapters/GridSlotSize;
+    .restart local v4       #layoutSequence:[I
     goto :goto_11
 
-    .line 155
-    .end local v4           #layoutSequence:[Lcom/google/android/finsky/adapters/GridSlotSize;
+    .line 182
+    .end local v4           #layoutSequence:[I
     :cond_3b
-    sget-object v4, Lcom/google/android/finsky/activities/CorporaHomeFragment;->GRID_SEQUENCE_4xN:[Lcom/google/android/finsky/adapters/GridSlotSize;
+    sget-object v4, Lcom/google/android/finsky/activities/CorporaHomeFragment;->GRID_SEQUENCE_4xN:[I
 
-    .restart local v4       #layoutSequence:[Lcom/google/android/finsky/adapters/GridSlotSize;
+    .restart local v4       #layoutSequence:[I
     goto :goto_11
 .end method
 
@@ -864,12 +819,12 @@
     .registers 4
 
     .prologue
-    .line 259
+    .line 291
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPageFragmentHost:Lcom/google/android/finsky/fragments/PageFragmentHost;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f070194
+    const v2, 0x7f0701cd
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -877,14 +832,14 @@
 
     invoke-interface {v0, v1}, Lcom/google/android/finsky/fragments/PageFragmentHost;->updateBreadcrumb(Ljava/lang/String;)V
 
-    .line 260
+    .line 292
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPageFragmentHost:Lcom/google/android/finsky/fragments/PageFragmentHost;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Lcom/google/android/finsky/fragments/PageFragmentHost;->updateCurrentBackendId(I)V
 
-    .line 261
+    .line 293
     return-void
 .end method
 
@@ -892,16 +847,16 @@
     .registers 6
 
     .prologue
-    .line 237
+    .line 262
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->switchToData()V
 
-    .line 239
+    .line 264
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->rebindActionBar()V
 
-    .line 241
+    .line 266
     iget-object v3, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mDataView:Landroid/view/ViewGroup;
 
-    const v4, 0x7f080085
+    const v4, 0x7f080081
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -909,20 +864,20 @@
 
     check-cast v1, Lcom/google/android/finsky/layout/UnevenGrid;
 
-    .line 242
+    .line 267
     .local v1, grid:Lcom/google/android/finsky/layout/UnevenGrid;
     const/4 v3, 0x0
 
     invoke-virtual {v1, v3}, Lcom/google/android/finsky/layout/UnevenGrid;->setHasTopGutter(Z)V
 
-    .line 243
+    .line 268
     invoke-virtual {v1}, Lcom/google/android/finsky/layout/UnevenGrid;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
 
     check-cast v2, Landroid/view/View;
 
-    .line 244
+    .line 269
     .local v2, gridParent:Landroid/view/View;
     iget-object v3, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mContext:Landroid/content/Context;
 
@@ -930,7 +885,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a0006
+    const v4, 0x7f0a0005
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -938,23 +893,41 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 246
+    .line 271
     iget-object v3, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mGridSequencer:Lcom/google/android/finsky/layout/GridSequencer;
 
     invoke-virtual {v3}, Lcom/google/android/finsky/layout/GridSequencer;->getAdapter()Lcom/google/android/finsky/adapters/UnevenGridAdapter;
 
     move-result-object v0
 
-    .line 247
+    .line 272
     .local v0, adapter:Lcom/google/android/finsky/adapters/UnevenGridAdapter;
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Lcom/google/android/finsky/adapters/UnevenGridAdapter;->setShowCorpusStrip(Z)V
 
-    .line 248
+    .line 273
     invoke-virtual {v1, v0}, Lcom/google/android/finsky/layout/UnevenGrid;->setAdapter(Lcom/google/android/finsky/adapters/UnevenGridAdapter;)V
 
-    .line 249
+    .line 275
+    iget-object v3, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mDataView:Landroid/view/ViewGroup;
+
+    const v4, 0x7f080142
+
+    invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mPageContent:Landroid/view/View;
+
+    .line 276
+    iget-object v3, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mHandler:Landroid/os/Handler;
+
+    iget-object v4, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mScrollRunnable:Ljava/lang/Runnable;
+
+    invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 277
     return-void
 .end method
 
@@ -962,10 +935,10 @@
     .registers 4
 
     .prologue
-    .line 163
+    .line 190
     invoke-direct {p0}, Lcom/google/android/finsky/activities/CorporaHomeFragment;->resetDfeModels()V
 
-    .line 166
+    .line 193
     new-instance v0, Lcom/google/android/finsky/api/model/DfeBrowse;
 
     iget-object v1, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
@@ -976,16 +949,16 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mBrowseData:Lcom/google/android/finsky/api/model/DfeBrowse;
 
-    .line 167
+    .line 194
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mBrowseData:Lcom/google/android/finsky/api/model/DfeBrowse;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeBrowse;->addDataChangedListener(Lcom/google/android/finsky/api/model/OnDataChangedListener;)V
 
-    .line 168
+    .line 195
     iget-object v0, p0, Lcom/google/android/finsky/activities/CorporaHomeFragment;->mBrowseData:Lcom/google/android/finsky/api/model/DfeBrowse;
 
     invoke-virtual {v0, p0}, Lcom/google/android/finsky/api/model/DfeBrowse;->addErrorListener(Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 169
+    .line 196
     return-void
 .end method

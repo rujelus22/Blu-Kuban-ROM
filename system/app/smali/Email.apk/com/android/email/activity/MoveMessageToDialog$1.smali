@@ -3,12 +3,12 @@
 .source "MoveMessageToDialog.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/activity/MoveMessageToDialog;->onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
+    value = Lcom/android/email/activity/MoveMessageToDialog;->dismissAsync()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,25 +27,36 @@
     .parameter
 
     .prologue
-    .line 354
+    .line 184
     iput-object p1, p0, Lcom/android/email/activity/MoveMessageToDialog$1;->this$0:Lcom/android/email/activity/MoveMessageToDialog;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 3
-    .parameter "dialog"
-    .parameter "whichButton"
+.method public run()V
+    .registers 2
 
     .prologue
-    .line 356
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    .line 187
+    iget-object v0, p0, Lcom/android/email/activity/MoveMessageToDialog$1;->this$0:Lcom/android/email/activity/MoveMessageToDialog;
 
-    .line 357
+    #getter for: Lcom/android/email/activity/MoveMessageToDialog;->mDestroyed:Z
+    invoke-static {v0}, Lcom/android/email/activity/MoveMessageToDialog;->access$100(Lcom/android/email/activity/MoveMessageToDialog;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_d
+
+    .line 188
+    iget-object v0, p0, Lcom/android/email/activity/MoveMessageToDialog$1;->this$0:Lcom/android/email/activity/MoveMessageToDialog;
+
+    invoke-virtual {v0}, Lcom/android/email/activity/MoveMessageToDialog;->dismissAllowingStateLoss()V
+
+    .line 190
+    :cond_d
     return-void
 .end method

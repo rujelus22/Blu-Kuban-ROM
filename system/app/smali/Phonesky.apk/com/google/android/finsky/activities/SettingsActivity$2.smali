@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 345
+    .line 361
     iput-object p1, p0, Lcom/google/android/finsky/activities/SettingsActivity$2;->this$0:Lcom/google/android/finsky/activities/SettingsActivity;
 
     iput-object p2, p0, Lcom/google/android/finsky/activities/SettingsActivity$2;->val$preference:Landroid/preference/CheckBoxPreference;
@@ -52,7 +52,7 @@
     .parameter "error"
 
     .prologue
-    .line 348
+    .line 364
     iget-object v1, p0, Lcom/google/android/finsky/activities/SettingsActivity$2;->this$0:Lcom/google/android/finsky/activities/SettingsActivity;
 
     iget-object v2, p0, Lcom/google/android/finsky/activities/SettingsActivity$2;->val$preference:Landroid/preference/CheckBoxPreference;
@@ -67,10 +67,10 @@
     #calls: Lcom/google/android/finsky/activities/SettingsActivity;->setInterestBasedAds(Landroid/preference/CheckBoxPreference;Z)V
     invoke-static {v1, v2, v0}, Lcom/google/android/finsky/activities/SettingsActivity;->access$000(Lcom/google/android/finsky/activities/SettingsActivity;Landroid/preference/CheckBoxPreference;Z)V
 
-    .line 349
+    .line 365
     return-void
 
-    .line 348
+    .line 364
     :cond_d
     const/4 v0, 0x0
 

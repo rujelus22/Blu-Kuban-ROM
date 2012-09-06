@@ -3,122 +3,219 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
-.field final synthetic a:Landroid/app/Dialog;
+.field final synthetic a:Z
 
-.field final synthetic b:Lcom/google/android/youtube/app/ui/af;
+.field final synthetic b:Lcom/google/android/youtube/app/ui/aa;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/ui/af;Landroid/app/Dialog;)V
+.method constructor <init>(Lcom/google/android/youtube/app/ui/aa;Z)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 85
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/ag;->b:Lcom/google/android/youtube/app/ui/af;
+    .line 188
+    iput-object p1, p0, Lcom/google/android/youtube/app/ui/ag;->b:Lcom/google/android/youtube/app/ui/aa;
 
-    iput-object p2, p0, Lcom/google/android/youtube/app/ui/ag;->a:Landroid/app/Dialog;
+    iput-boolean p2, p0, Lcom/google/android/youtube/app/ui/ag;->a:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method private a(Lcom/google/android/youtube/core/async/GDataRequest;)Z
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 212
+    iget-object v0, p1, Lcom/google/android/youtube/core/async/GDataRequest;->c:Landroid/net/Uri;
+
+    const-string v1, "hint"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 213
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/ag;->b:Lcom/google/android/youtube/app/ui/aa;
+
+    invoke-static {v1}, Lcom/google/android/youtube/app/ui/aa;->a(Lcom/google/android/youtube/app/ui/aa;)Landroid/widget/EditText;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3c
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/ag;->b:Lcom/google/android/youtube/app/ui/aa;
+
+    invoke-static {v1}, Lcom/google/android/youtube/app/ui/aa;->a(Lcom/google/android/youtube/app/ui/aa;)Landroid/widget/EditText;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3e
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/ag;->b:Lcom/google/android/youtube/app/ui/aa;
+
+    invoke-static {v1}, Lcom/google/android/youtube/app/ui/aa;->i(Lcom/google/android/youtube/app/ui/aa;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3e
+
+    :cond_3c
+    const/4 v0, 0x1
+
+    :goto_3d
+    return v0
+
+    :cond_3e
+    const/4 v0, 0x0
+
+    goto :goto_3d
+.end method
+
 
 # virtual methods
-.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 10
-    .parameter
-    .parameter
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
+    .registers 6
     .parameter
     .parameter
 
     .prologue
-    .line 87
-    packed-switch p3, :pswitch_data_44
+    .line 188
+    check-cast p1, Lcom/google/android/youtube/core/async/GDataRequest;
 
-    .line 100
-    :goto_3
-    return-void
+    iget-boolean v0, p0, Lcom/google/android/youtube/app/ui/ag;->a:Z
 
-    .line 89
-    :pswitch_4
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ag;->a:Landroid/app/Dialog;
+    if-eqz v0, :cond_10
 
-    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ag;->b:Lcom/google/android/youtube/app/ui/aa;
 
-    .line 90
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ag;->b:Lcom/google/android/youtube/app/ui/af;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/af;->a(Lcom/google/android/youtube/app/ui/af;)Landroid/app/Activity;
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/aa;->a(Lcom/google/android/youtube/app/ui/aa;)Landroid/widget/EditText;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
+    const/4 v1, 0x1
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setEnabled(Z)V
 
-    check-cast v0, Lcom/google/android/youtube/app/YouTubeApplication;
+    :cond_10
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/ui/ag;->a(Lcom/google/android/youtube/core/async/GDataRequest;)Z
 
-    .line 91
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/ag;->b:Lcom/google/android/youtube/app/ui/af;
+    move-result v0
 
-    invoke-static {v1}, Lcom/google/android/youtube/app/ui/af;->a(Lcom/google/android/youtube/app/ui/af;)Landroid/app/Activity;
+    if-eqz v0, :cond_27
+
+    instance-of v0, p2, Lcom/google/android/youtube/core/async/GDataResponseException;
+
+    if-eqz v0, :cond_28
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ag;->b:Lcom/google/android/youtube/app/ui/aa;
+
+    iget-object v1, p1, Lcom/google/android/youtube/core/async/GDataRequest;->c:Landroid/net/Uri;
+
+    const-string v2, "hint"
+
+    invoke-virtual {v1, v2}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/youtube/app/ui/ag;->b:Lcom/google/android/youtube/app/ui/af;
+    invoke-static {v0, v1}, Lcom/google/android/youtube/app/ui/aa;->b(Lcom/google/android/youtube/app/ui/aa;Ljava/lang/String;)V
 
-    invoke-static {v2}, Lcom/google/android/youtube/app/ui/af;->a(Lcom/google/android/youtube/app/ui/af;)Landroid/app/Activity;
+    :cond_27
+    :goto_27
+    return-void
 
-    move-result-object v2
+    :cond_28
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ag;->b:Lcom/google/android/youtube/app/ui/aa;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->G()Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/ag;->b:Lcom/google/android/youtube/app/ui/aa;
+
+    invoke-static {v1}, Lcom/google/android/youtube/app/ui/aa;->h(Lcom/google/android/youtube/app/ui/aa;)Lcom/google/android/youtube/core/d;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Lcom/google/android/youtube/core/d;->a(Ljava/lang/Throwable;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/google/android/youtube/app/ui/aa;->c(Lcom/google/android/youtube/app/ui/aa;Ljava/lang/String;)V
+
+    goto :goto_27
+.end method
+
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 5
+    .parameter
+    .parameter
+
+    .prologue
+    .line 188
+    check-cast p1, Lcom/google/android/youtube/core/async/GDataRequest;
+
+    check-cast p2, Ljava/util/List;
+
+    iget-boolean v0, p0, Lcom/google/android/youtube/app/ui/ag;->a:Z
+
+    if-eqz v0, :cond_12
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ag;->b:Lcom/google/android/youtube/app/ui/aa;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/aa;->a(Lcom/google/android/youtube/app/ui/aa;)Landroid/widget/EditText;
 
     move-result-object v0
 
-    const v3, 0x7f0a01a6
+    const/4 v1, 0x1
 
-    invoke-static {v2, v0, v3}, Lcom/google/android/youtube/core/utils/g;->a(Landroid/content/Context;Ljava/lang/String;I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setEnabled(Z)V
 
-    move-result-object v0
+    :cond_12
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/ui/ag;->a(Lcom/google/android/youtube/core/async/GDataRequest;)Z
 
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    move-result v0
 
-    move-result-object v0
+    if-eqz v0, :cond_1f
 
-    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/g;->a(Landroid/content/Context;Landroid/net/Uri;)V
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ag;->b:Lcom/google/android/youtube/app/ui/aa;
 
-    goto :goto_3
+    iget-boolean v1, p0, Lcom/google/android/youtube/app/ui/ag;->a:Z
 
-    .line 96
-    :pswitch_34
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ag;->a:Landroid/app/Dialog;
+    invoke-virtual {v0, p2, v1}, Lcom/google/android/youtube/app/ui/aa;->a(Ljava/util/List;Z)V
 
-    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
-
-    .line 97
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ag;->b:Lcom/google/android/youtube/app/ui/af;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/af;->a(Lcom/google/android/youtube/app/ui/af;)Landroid/app/Activity;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/a;->a(Landroid/app/Activity;)V
-
-    goto :goto_3
-
-    .line 87
-    nop
-
-    :pswitch_data_44
-    .packed-switch 0x0
-        :pswitch_4
-        :pswitch_34
-    .end packed-switch
+    :cond_1f
+    return-void
 .end method

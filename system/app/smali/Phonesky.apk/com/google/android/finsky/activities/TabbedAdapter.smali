@@ -151,24 +151,24 @@
 
     const/4 v6, 0x0
 
-    .line 320
+    .line 325
     invoke-direct {p0, p1}, Lcom/google/android/finsky/activities/TabbedAdapter;->restoreScrollPositions(Landroid/os/Bundle;)Ljava/util/List;
 
     move-result-object v5
 
-    .line 321
+    .line 326
     .local v5, scrollPositions:Ljava/util/List;,"Ljava/util/List<Landroid/os/Bundle;>;"
     invoke-direct {p0, p1}, Lcom/google/android/finsky/activities/TabbedAdapter;->restoreDfeLists(Landroid/os/Bundle;)Ljava/util/List;
 
     move-result-object v4
 
-    .line 322
+    .line 327
     .local v4, restoredDfeLists:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/api/model/DfeList;>;"
     iget-object v7, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mTabDataList:Ljava/util/List;
 
     invoke-interface {v7}, Ljava/util/List;->clear()V
 
-    .line 323
+    .line 328
     iget-object v7, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mDfeBrowse:Lcom/google/android/finsky/api/model/DfeBrowse;
 
     invoke-virtual {v7}, Lcom/google/android/finsky/api/model/DfeBrowse;->hasCategories()Z
@@ -177,7 +177,7 @@
 
     if-eqz v7, :cond_21
 
-    .line 324
+    .line 329
     iget-object v7, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mTabDataList:Ljava/util/List;
 
     new-instance v8, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;
@@ -186,7 +186,7 @@
 
     invoke-interface {v7, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 326
+    .line 331
     :cond_21
     iget-object v7, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mDfeBrowse:Lcom/google/android/finsky/api/model/DfeBrowse;
 
@@ -196,21 +196,21 @@
 
     if-eqz v7, :cond_35
 
-    .line 327
+    .line 332
     new-instance v0, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;
 
     invoke-direct {v0, v3}, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;-><init>(I)V
 
-    .line 329
+    .line 334
     .local v0, gridTab:Lcom/google/android/finsky/activities/TabbedAdapter$TabType;
     iput-object p2, v0, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabListData:Lcom/google/android/finsky/api/model/DfeList;
 
-    .line 330
+    .line 335
     iget-object v7, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mTabDataList:Ljava/util/List;
 
     invoke-interface {v7, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 333
+    .line 338
     .end local v0           #gridTab:Lcom/google/android/finsky/activities/TabbedAdapter$TabType;
     :cond_35
     iget-object v7, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mTabDataList:Ljava/util/List;
@@ -221,12 +221,12 @@
 
     iput v7, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mNonListTabCount:I
 
-    .line 334
+    .line 339
     iget-object v7, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mContentListData:Lcom/google/android/finsky/api/model/DfeList;
 
     if-eqz v7, :cond_58
 
-    .line 335
+    .line 340
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -239,7 +239,7 @@
 
     if-ge v1, v7, :cond_58
 
-    .line 336
+    .line 341
     iget-object v7, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mTabDataList:Ljava/util/List;
 
     new-instance v8, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;
@@ -250,12 +250,12 @@
 
     invoke-interface {v7, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 335
+    .line 340
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_42
 
-    .line 341
+    .line 346
     .end local v1           #i:I
     :cond_58
     if-eqz v4, :cond_a7
@@ -274,7 +274,7 @@
 
     move v2, v3
 
-    .line 343
+    .line 348
     .local v2, restoreDfeLists:Z
     :goto_67
     if-eqz v5, :cond_a9
@@ -291,7 +291,7 @@
 
     if-ne v7, v8, :cond_a9
 
-    .line 345
+    .line 350
     .local v3, restoreScrollPositions:Z
     :goto_75
     iget v1, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mNonListTabCount:I
@@ -306,10 +306,10 @@
 
     if-ge v1, v6, :cond_ab
 
-    .line 346
+    .line 351
     if-eqz v2, :cond_91
 
-    .line 347
+    .line 352
     iget-object v6, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mTabDataList:Ljava/util/List;
 
     invoke-interface {v6, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -326,11 +326,11 @@
 
     iput-object v7, v6, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabListData:Lcom/google/android/finsky/api/model/DfeList;
 
-    .line 349
+    .line 354
     :cond_91
     if-eqz v3, :cond_a4
 
-    .line 350
+    .line 355
     iget-object v6, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mTabDataList:Ljava/util/List;
 
     invoke-interface {v6, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -348,7 +348,7 @@
     #setter for: Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabBundle:Landroid/os/Bundle;
     invoke-static {v6, v7}, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->access$002(Lcom/google/android/finsky/activities/TabbedAdapter$TabType;Landroid/os/Bundle;)Landroid/os/Bundle;
 
-    .line 345
+    .line 350
     :cond_a4
     add-int/lit8 v1, v1, 0x1
 
@@ -360,17 +360,17 @@
     :cond_a7
     move v2, v6
 
-    .line 341
+    .line 346
     goto :goto_67
 
     .restart local v2       #restoreDfeLists:Z
     :cond_a9
     move v3, v6
 
-    .line 343
+    .line 348
     goto :goto_75
 
-    .line 353
+    .line 358
     .restart local v1       #i:I
     .restart local v3       #restoreScrollPositions:Z
     :cond_ab
@@ -384,7 +384,7 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 307
+    .line 312
     iget-object v2, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mContentListData:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v2}, Lcom/google/android/finsky/api/model/DfeList;->getBucketCount()I
@@ -393,14 +393,14 @@
 
     if-ne v2, v5, :cond_c
 
-    .line 308
+    .line 313
     iget-object v2, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mContentListData:Lcom/google/android/finsky/api/model/DfeList;
 
-    .line 312
+    .line 317
     :goto_b
     return-object v2
 
-    .line 310
+    .line 315
     :cond_c
     iget-object v2, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mContentListData:Lcom/google/android/finsky/api/model/DfeList;
 
@@ -412,11 +412,11 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/finsky/model/Bucket;
+    check-cast v0, Lcom/google/android/finsky/api/model/Bucket;
 
-    .line 311
-    .local v0, bucket:Lcom/google/android/finsky/model/Bucket;
-    invoke-virtual {v0}, Lcom/google/android/finsky/model/Bucket;->getBrowseUrl()Ljava/lang/String;
+    .line 316
+    .local v0, bucket:Lcom/google/android/finsky/api/model/Bucket;
+    invoke-virtual {v0}, Lcom/google/android/finsky/api/model/Bucket;->getBrowseUrl()Ljava/lang/String;
 
     move-result-object v2
 
@@ -428,7 +428,7 @@
 
     move-result-object v1
 
-    .line 312
+    .line 317
     .local v1, listUrl:Ljava/lang/String;
     new-instance v2, Lcom/google/android/finsky/api/model/DfeList;
 
@@ -614,12 +614,12 @@
     .end annotation
 
     .prologue
-    .line 240
+    .line 241
     invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 241
+    .line 242
     .local v1, titles:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     iget-object v2, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mDfeBrowse:Lcom/google/android/finsky/api/model/DfeBrowse;
 
@@ -629,17 +629,17 @@
 
     if-eqz v2, :cond_21
 
-    .line 242
+    .line 243
     iget v2, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mBackendId:I
 
     const/4 v3, 0x2
 
     if-ne v2, v3, :cond_64
 
-    .line 243
+    .line 244
     iget-object v2, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f070174
+    const v3, 0x7f0701b0
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -651,14 +651,14 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 249
+    .line 250
     :cond_21
     :goto_21
     iget-object v2, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mPromoData:Lcom/google/android/finsky/api/model/DfeList;
 
     if-eqz v2, :cond_3d
 
-    .line 250
+    .line 251
     iget-object v2, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mPromoData:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v2}, Lcom/google/android/finsky/api/model/DfeList;->getBucketList()Ljava/util/List;
@@ -671,9 +671,9 @@
 
     move-result-object v2
 
-    check-cast v2, Lcom/google/android/finsky/model/Bucket;
+    check-cast v2, Lcom/google/android/finsky/api/model/Bucket;
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/model/Bucket;->getTitle()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/google/android/finsky/api/model/Bucket;->getTitle()Ljava/lang/String;
 
     move-result-object v2
 
@@ -683,13 +683,13 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 253
+    .line 254
     :cond_3d
     iget-object v2, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mContentListData:Lcom/google/android/finsky/api/model/DfeList;
 
     if-eqz v2, :cond_75
 
-    .line 254
+    .line 255
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -702,7 +702,7 @@
 
     if-ge v0, v2, :cond_75
 
-    .line 255
+    .line 256
     iget-object v2, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mContentListData:Lcom/google/android/finsky/api/model/DfeList;
 
     invoke-virtual {v2}, Lcom/google/android/finsky/api/model/DfeList;->getBucketList()Ljava/util/List;
@@ -713,9 +713,9 @@
 
     move-result-object v2
 
-    check-cast v2, Lcom/google/android/finsky/model/Bucket;
+    check-cast v2, Lcom/google/android/finsky/api/model/Bucket;
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/model/Bucket;->getTitle()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/google/android/finsky/api/model/Bucket;->getTitle()Ljava/lang/String;
 
     move-result-object v2
 
@@ -725,17 +725,17 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 254
+    .line 255
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_42
 
-    .line 245
+    .line 246
     .end local v0           #i:I
     :cond_64
     iget-object v2, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f070173
+    const v3, 0x7f0701af
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -749,7 +749,7 @@
 
     goto :goto_21
 
-    .line 259
+    .line 260
     :cond_75
     return-object v1
 .end method
@@ -770,10 +770,10 @@
     .end annotation
 
     .prologue
-    .line 364
+    .line 369
     const/4 v2, 0x0
 
-    .line 365
+    .line 370
     .local v2, lists:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/api/model/DfeList;>;"
     if-eqz p1, :cond_2b
 
@@ -785,17 +785,17 @@
 
     if-eqz v3, :cond_2b
 
-    .line 366
+    .line 371
     const-string v3, "TabbedAdapter.TabDfeListParcels"
 
     invoke-virtual {p1, v3}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v2
 
-    .line 367
+    .line 372
     if-eqz v2, :cond_2b
 
-    .line 368
+    .line 373
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -815,18 +815,18 @@
 
     check-cast v1, Lcom/google/android/finsky/api/model/DfeList;
 
-    .line 369
+    .line 374
     .local v1, list:Lcom/google/android/finsky/api/model/DfeList;
     if-eqz v1, :cond_17
 
-    .line 373
+    .line 378
     iget-object v3, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
     invoke-virtual {v1, v3}, Lcom/google/android/finsky/api/model/DfeList;->setDfeApi(Lcom/google/android/finsky/api/DfeApi;)V
 
     goto :goto_17
 
-    .line 377
+    .line 382
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #list:Lcom/google/android/finsky/api/model/DfeList;
     :cond_2b
@@ -849,10 +849,10 @@
     .end annotation
 
     .prologue
-    .line 356
+    .line 361
     const/4 v0, 0x0
 
-    .line 357
+    .line 362
     .local v0, scrollPositions:Ljava/util/List;,"Ljava/util/List<Landroid/os/Bundle;>;"
     if-eqz p1, :cond_11
 
@@ -864,14 +864,14 @@
 
     if-eqz v1, :cond_11
 
-    .line 358
+    .line 363
     const-string v1, "TabbedAdapter.TabParcels"
 
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 360
+    .line 365
     :cond_11
     return-object v0
 .end method
@@ -951,7 +951,7 @@
     .parameter "viewPager"
 
     .prologue
-    .line 304
+    .line 309
     return-void
 .end method
 
@@ -1038,7 +1038,23 @@
     .parameter "index"
 
     .prologue
-    .line 264
+    .line 266
+    iget-object v0, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mTabTitles:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-lt p1, v0, :cond_b
+
+    .line 267
+    const-string v0, ""
+
+    .line 269
+    :goto_a
+    return-object v0
+
+    :cond_b
     iget-object v0, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mTabTitles:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1047,7 +1063,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    return-object v0
+    goto :goto_a
 .end method
 
 .method public getPageWidth(I)F
@@ -1055,7 +1071,7 @@
     .parameter "position"
 
     .prologue
-    .line 282
+    .line 287
     if-nez p1, :cond_29
 
     iget-object v0, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mTabDataList:Ljava/util/List;
@@ -1080,14 +1096,14 @@
 
     if-nez v0, :cond_29
 
-    .line 284
+    .line 289
     iget-object v0, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f0c001a
+    const v1, 0x7f0c0018
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1099,7 +1115,7 @@
 
     div-float/2addr v0, v1
 
-    .line 287
+    .line 292
     :goto_28
     return v0
 
@@ -1110,7 +1126,7 @@
 .end method
 
 .method public instantiateItem(Landroid/view/ViewGroup;I)Ljava/lang/Object;
-    .registers 13
+    .registers 15
     .parameter "viewPager"
     .parameter "position"
 
@@ -1124,21 +1140,21 @@
 
     invoke-interface {v1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v11
 
-    check-cast v9, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;
+    check-cast v11, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;
 
     .line 207
-    .local v9, tabType:Lcom/google/android/finsky/activities/TabbedAdapter$TabType;
-    iget v1, v9, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->type:I
+    .local v11, tabType:Lcom/google/android/finsky/activities/TabbedAdapter$TabType;
+    iget v1, v11, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->type:I
 
-    packed-switch v1, :pswitch_data_8a
-
-    .line 231
-    :goto_e
-    iput-object v0, v9, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->slidingPanelTab:Lcom/google/android/finsky/activities/ViewPagerTab;
+    packed-switch v1, :pswitch_data_90
 
     .line 232
+    :goto_e
+    iput-object v0, v11, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->slidingPanelTab:Lcom/google/android/finsky/activities/ViewPagerTab;
+
+    .line 233
     iget v1, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mBackendId:I
 
     invoke-interface {v0, v1}, Lcom/google/android/finsky/activities/ViewPagerTab;->getView(I)Landroid/view/View;
@@ -1147,7 +1163,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 233
+    .line 234
     return-object v0
 
     .line 209
@@ -1174,7 +1190,7 @@
     .line 211
     .restart local v0       #tab:Lcom/google/android/finsky/activities/ViewPagerTab;
     #getter for: Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabBundle:Landroid/os/Bundle;
-    invoke-static {v9}, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->access$000(Lcom/google/android/finsky/activities/TabbedAdapter$TabType;)Landroid/os/Bundle;
+    invoke-static {v11}, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->access$000(Lcom/google/android/finsky/activities/TabbedAdapter$TabType;)Landroid/os/Bundle;
 
     move-result-object v1
 
@@ -1184,21 +1200,23 @@
 
     .line 214
     :pswitch_35
-    iget-object v1, v9, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabListData:Lcom/google/android/finsky/api/model/DfeList;
+    iget-object v1, v11, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabListData:Lcom/google/android/finsky/api/model/DfeList;
 
-    if-nez v1, :cond_41
+    if-nez v1, :cond_43
 
     .line 215
     iget-object v1, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mDfeBrowse:Lcom/google/android/finsky/api/model/DfeBrowse;
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/DfeBrowse;->buildPromoList()Lcom/google/android/finsky/api/model/DfeList;
+    iget-object v2, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
+
+    invoke-virtual {v1, v2}, Lcom/google/android/finsky/api/model/DfeBrowse;->buildPromoList(Lcom/google/android/finsky/api/DfeApi;)Lcom/google/android/finsky/api/model/DfeList;
 
     move-result-object v1
 
-    iput-object v1, v9, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabListData:Lcom/google/android/finsky/api/model/DfeList;
+    iput-object v1, v11, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabListData:Lcom/google/android/finsky/api/model/DfeList;
 
     .line 217
-    :cond_41
+    :cond_43
     new-instance v0, Lcom/google/android/finsky/activities/GridFeaturedTab;
 
     .end local v0           #tab:Lcom/google/android/finsky/activities/ViewPagerTab;
@@ -1210,7 +1228,7 @@
 
     iget-object v4, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
-    iget-object v5, v9, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabListData:Lcom/google/android/finsky/api/model/DfeList;
+    iget-object v5, v11, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabListData:Lcom/google/android/finsky/api/model/DfeList;
 
     iget-object v6, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mReferrerUrl:Ljava/lang/String;
 
@@ -1223,7 +1241,7 @@
     .line 220
     .restart local v0       #tab:Lcom/google/android/finsky/activities/ViewPagerTab;
     #getter for: Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabBundle:Landroid/os/Bundle;
-    invoke-static {v9}, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->access$000(Lcom/google/android/finsky/activities/TabbedAdapter$TabType;)Landroid/os/Bundle;
+    invoke-static {v11}, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->access$000(Lcom/google/android/finsky/activities/TabbedAdapter$TabType;)Landroid/os/Bundle;
 
     move-result-object v1
 
@@ -1232,10 +1250,10 @@
     goto :goto_e
 
     .line 223
-    :pswitch_5e
-    iget-object v1, v9, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabListData:Lcom/google/android/finsky/api/model/DfeList;
+    :pswitch_60
+    iget-object v1, v11, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabListData:Lcom/google/android/finsky/api/model/DfeList;
 
-    if-nez v1, :cond_6c
+    if-nez v1, :cond_6e
 
     .line 224
     iget v1, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mNonListTabCount:I
@@ -1246,10 +1264,10 @@
 
     move-result-object v1
 
-    iput-object v1, v9, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabListData:Lcom/google/android/finsky/api/model/DfeList;
+    iput-object v1, v11, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabListData:Lcom/google/android/finsky/api/model/DfeList;
 
     .line 226
-    :cond_6c
+    :cond_6e
     new-instance v0, Lcom/google/android/finsky/activities/ListTab;
 
     .end local v0           #tab:Lcom/google/android/finsky/activities/ViewPagerTab;
@@ -1259,22 +1277,26 @@
 
     iget-object v3, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
 
-    iget-object v4, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
+    iget-object v4, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
-    iget-object v5, v9, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabListData:Lcom/google/android/finsky/api/model/DfeList;
+    iget-object v5, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    iget-object v6, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mReferrerUrl:Ljava/lang/String;
+    iget-object v6, v11, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabListData:Lcom/google/android/finsky/api/model/DfeList;
 
-    iget-object v7, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mCurrentPageUrl:Ljava/lang/String;
+    iget-object v7, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mReferrerUrl:Ljava/lang/String;
 
-    iget-object v8, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mDfeToc:Lcom/google/android/finsky/api/model/DfeToc;
+    iget-object v8, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mCurrentPageUrl:Ljava/lang/String;
 
-    invoke-direct/range {v0 .. v8}, Lcom/google/android/finsky/activities/ListTab;-><init>(Landroid/content/Context;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/utils/BitmapLoader;Landroid/view/LayoutInflater;Lcom/google/android/finsky/api/model/DfeList;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/finsky/api/model/DfeToc;)V
+    iget-object v9, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mDfeToc:Lcom/google/android/finsky/api/model/DfeToc;
 
-    .line 228
+    iget v10, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mBackendId:I
+
+    invoke-direct/range {v0 .. v10}, Lcom/google/android/finsky/activities/ListTab;-><init>(Landroid/content/Context;Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/api/DfeApi;Landroid/view/LayoutInflater;Lcom/google/android/finsky/api/model/DfeList;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/finsky/api/model/DfeToc;I)V
+
+    .line 229
     .restart local v0       #tab:Lcom/google/android/finsky/activities/ViewPagerTab;
     #getter for: Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->tabBundle:Landroid/os/Bundle;
-    invoke-static {v9}, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->access$000(Lcom/google/android/finsky/activities/TabbedAdapter$TabType;)Landroid/os/Bundle;
+    invoke-static {v11}, Lcom/google/android/finsky/activities/TabbedAdapter$TabType;->access$000(Lcom/google/android/finsky/activities/TabbedAdapter$TabType;)Landroid/os/Bundle;
 
     move-result-object v1
 
@@ -1285,11 +1307,11 @@
     .line 207
     nop
 
-    :pswitch_data_8a
+    :pswitch_data_90
     .packed-switch 0x0
         :pswitch_1a
         :pswitch_35
-        :pswitch_5e
+        :pswitch_60
     .end packed-switch
 .end method
 
@@ -1299,7 +1321,7 @@
     .parameter "object"
 
     .prologue
-    .line 277
+    .line 282
     check-cast p2, Lcom/google/android/finsky/activities/ViewPagerTab;
 
     .end local p2
@@ -1327,7 +1349,7 @@
     .parameter "position"
 
     .prologue
-    .line 268
+    .line 273
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1340,7 +1362,7 @@
 
     if-ge v0, v1, :cond_2a
 
-    .line 269
+    .line 274
     iget-object v1, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mTabDataList:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1353,7 +1375,7 @@
 
     if-eqz v1, :cond_25
 
-    .line 270
+    .line 275
     iget-object v1, p0, Lcom/google/android/finsky/activities/TabbedAdapter;->mTabDataList:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1371,19 +1393,19 @@
     :goto_22
     invoke-interface {v2, v1}, Lcom/google/android/finsky/activities/ViewPagerTab;->setTabSelected(Z)V
 
-    .line 268
+    .line 273
     :cond_25
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 270
+    .line 275
     :cond_28
     const/4 v1, 0x0
 
     goto :goto_22
 
-    .line 273
+    .line 278
     :cond_2a
     return-void
 .end method
@@ -1421,7 +1443,7 @@
     .parameter "loader"
 
     .prologue
-    .line 295
+    .line 300
     return-void
 .end method
 
@@ -1429,7 +1451,7 @@
     .registers 2
 
     .prologue
-    .line 298
+    .line 303
     const/4 v0, 0x0
 
     return-object v0
@@ -1440,6 +1462,6 @@
     .parameter "container"
 
     .prologue
-    .line 301
+    .line 306
     return-void
 .end method

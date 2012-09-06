@@ -123,7 +123,7 @@
     :goto_22
     array-length v5, v4
 
-    if-ge v0, v5, :cond_64
+    if-ge v0, v5, :cond_60
 
     .line 90
     aget-object v5, v4, v0
@@ -180,13 +180,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Illegal rule: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -201,7 +197,7 @@
     throw v0
 
     .line 101
-    :cond_64
+    :cond_60
     iput-object v3, p0, Lcom/google/android/common/http/e;->c:Ljava/lang/String;
 
     .line 104

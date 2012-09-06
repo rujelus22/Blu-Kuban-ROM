@@ -242,18 +242,18 @@ otázka"</b></string>
     <string name="account_intro_recommended_title">Propojit s účtem Google</string>
     <string name="common_message">"Účet Google umožňuje:
 
-"<li><ul>Zobrazit a uspořádat informace, ať jste kdekoliv.</ul></li>"
+"<ul><li>Zobrazit a uspořádat informace, ať jste kdekoliv.</li></ul>"
 
-"<li><ul>Automaticky zálohovat data.</ul></li>"
+"<ul><li>Automaticky zálohovat data.</li></ul>"
 
-"<li><ul>Používat služby Google, ať jste kdekoliv.</ul></li></string>
+"<ul><li>Používat služby Google, ať jste kdekoliv.</li></ul></string>
     <string name="add_account_message">" Můžete používat více účtů Google (například domácí a pracovní účty). Chcete-li přidat účet Google, dotkněte se možnosti "<b>Přihlásit se</b> nebo <b>Vytvořit účet</b></string>
     <string name="account_intro_default_message">Neztraťte už nikdy svá data. Účet Google udržuje vše v bezpečí.</string>
     <string name="account_intro_custom_endtext">Máte %s? Přihlaste se.</string>
     <string name="account_intro_simple_message">Chcete přidat již existující účet nebo vytvořit nový?</string>
     <string name="learn_more_title"><annotation id="learn_more">Další informace</annotation></string>
     <string name="learn_more_account_intro">"Účet Google umožňuje:
-"<li><ul>kdekoliv zobrazit a uspořádat své informace;<li>automaticky zálohovat data, jako jsou e-maily, kontakty, hudba a obrázky;</li><li>kdekoliv používat služby Google, včetně Kontaktů, Kalendáře, Map a dalších.</li></ul></li></string>
+"<ul><li>kdekoliv zobrazit a uspořádat své informace;<li>automaticky zálohovat data, jako jsou e-maily, kontakty, hudba a obrázky;</li><li>kdekoliv používat služby Google, včetně Kontaktů, Kalendáře, Map a dalších.</li></li></ul></string>
     <string name="learn_more_account_intro_title">O účtech Google</string>
     <string name="learn_more_web_history">"Webová historie upravuje výsledky vyhledávání podle toho, co jste hledali a které stránky jste navštívili. Poskytuje tak osobnější přístup při práci se službami Google.
 

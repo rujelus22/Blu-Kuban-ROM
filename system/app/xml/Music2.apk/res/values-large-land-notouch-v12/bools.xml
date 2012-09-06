@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <bool name="grid_context_menu_show_mark">false</bool>
-    <bool name="enable_new_and_recent_carousel">false</bool>
-    <bool name="enable_new_and_recent_wall">true</bool>
-    <bool name="use_album_art_backgrounds">false</bool>
-</resources>

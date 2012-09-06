@@ -29,6 +29,12 @@
         <item>Лише в беззв. реж.</item>
         <item>Ніколи</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>вимкнено</item>
+        <item>низька</item>
+        <item>середня</item>
+        <item>віртуальна</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Немає</item>
         <item>Стабілізація зображення: низька</item>

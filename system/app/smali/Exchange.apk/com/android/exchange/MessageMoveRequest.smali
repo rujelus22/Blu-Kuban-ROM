@@ -49,9 +49,9 @@
     check-cast p1, Lcom/android/exchange/MessageMoveRequest;
 
     .end local p1
-    iget-wide v1, p1, Lcom/android/exchange/Request;->mMessageId:J
+    iget-wide v1, p1, Lcom/android/exchange/MessageMoveRequest;->mMessageId:J
 
-    iget-wide v3, p0, Lcom/android/exchange/Request;->mMessageId:J
+    iget-wide v3, p0, Lcom/android/exchange/MessageMoveRequest;->mMessageId:J
 
     cmp-long v1, v1, v3
 
@@ -67,7 +67,7 @@
 
     .prologue
     .line 38
-    iget-wide v0, p0, Lcom/android/exchange/Request;->mMessageId:J
+    iget-wide v0, p0, Lcom/android/exchange/MessageMoveRequest;->mMessageId:J
 
     long-to-int v0, v0
 

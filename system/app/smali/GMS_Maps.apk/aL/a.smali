@@ -1,269 +1,123 @@
 .class public LaL/a;
-.super Lat/a;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LaQ/H;
 
 
 # instance fields
-.field private a:[LaL/c;
+.field private final a:Ljava/lang/String;
 
-.field private b:[LaL/c;
-
-.field private c:I
-
-.field private d:LaL/b;
+.field private final b:Landroid/view/View$OnClickListener;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method public constructor <init>(Ljava/lang/String;Landroid/view/View$OnClickListener;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Lat/a;-><init>()V
+    .prologue
+    .line 31
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    .line 32
+    iput-object p1, p0, LaL/a;->a:Ljava/lang/String;
 
-    iput v0, p0, LaL/a;->c:I
+    .line 33
+    iput-object p2, p0, LaL/a;->b:Landroid/view/View$OnClickListener;
 
-    const/4 v0, 0x0
-
-    iput-object v0, p0, LaL/a;->d:LaL/b;
-
+    .line 34
     return-void
 .end method
 
 
 # virtual methods
-.method public a()I
-    .registers 2
-
-    const/16 v0, 0x3c
-
-    return v0
-.end method
-
-.method public a(LaL/b;)V
-    .registers 2
-
-    iput-object p1, p0, LaL/a;->d:LaL/b;
-
-    return-void
-.end method
-
-.method public a(Ljava/io/DataOutput;)V
-    .registers 5
-
-    new-instance v0, Lam/b;
-
-    sget-object v1, LbD/hx;->a:Lam/e;
-
-    invoke-direct {v0, v1}, Lam/b;-><init>(Lam/e;)V
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Lam/b;->h(II)V
-
-    check-cast p1, Ljava/io/OutputStream;
-
-    invoke-virtual {v0, p1}, Lam/b;->a(Ljava/io/OutputStream;)V
-
-    return-void
-.end method
-
-.method public a(Ljava/io/DataInput;)Z
-    .registers 11
-
-    const/4 v2, 0x0
-
-    const/4 v8, 0x4
-
-    const/4 v7, 0x1
-
-    sget-object v0, LbD/hx;->b:Lam/e;
-
-    invoke-static {v0, p1}, Lam/g;->a(Lam/e;Ljava/io/DataInput;)Lam/b;
-
-    move-result-object v1
-
-    iput-object v2, p0, LaL/a;->a:[LaL/c;
-
-    iput-object v2, p0, LaL/a;->b:[LaL/c;
-
-    invoke-virtual {v1, v7}, Lam/b;->d(I)I
-
-    move-result v0
-
-    iput v0, p0, LaL/a;->c:I
-
-    iget v0, p0, LaL/a;->c:I
-
-    if-eqz v0, :cond_18
-
-    :goto_17
-    return v7
-
-    :cond_18
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-virtual {v1, v8}, Lam/b;->l(I)I
-
-    move-result v4
-
-    const/4 v0, 0x0
-
-    :goto_27
-    if-ge v0, v4, :cond_48
-
-    new-instance v5, LaL/c;
-
-    invoke-virtual {v1, v8, v0}, Lam/b;->e(II)Lam/b;
-
-    move-result-object v6
-
-    invoke-direct {v5, v6}, LaL/c;-><init>(Lam/b;)V
-
-    invoke-virtual {v5}, LaL/c;->d()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_3e
-
-    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_3b
-    :goto_3b
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_27
-
-    :cond_3e
-    invoke-virtual {v5}, LaL/c;->e()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_3b
-
-    invoke-interface {v3, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_3b
-
-    :cond_48
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    new-array v0, v0, [LaL/c;
-
-    invoke-interface {v2, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [LaL/c;
-
-    iput-object v0, p0, LaL/a;->a:[LaL/c;
-
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    new-array v0, v0, [LaL/c;
-
-    invoke-interface {v3, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [LaL/c;
-
-    iput-object v0, p0, LaL/a;->b:[LaL/c;
-
-    goto :goto_17
-.end method
-
-.method public b()V
+.method public a(Landroid/view/View;)LaQ/bE;
     .registers 4
+    .parameter
 
-    iget-object v0, p0, LaL/a;->d:LaL/b;
+    .prologue
+    .line 45
+    new-instance v1, LaL/c;
 
-    if-eqz v0, :cond_11
+    const/4 v0, 0x0
 
-    iget-object v0, p0, LaL/a;->a:[LaL/c;
+    invoke-direct {v1, v0}, LaL/c;-><init>(LaL/b;)V
 
-    if-eqz v0, :cond_c
+    .line 46
+    const v0, 0x7f100269
 
-    iget-object v0, p0, LaL/a;->b:[LaL/c;
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    if-nez v0, :cond_12
+    move-result-object v0
 
-    :cond_c
-    iget-object v0, p0, LaL/a;->d:LaL/b;
+    check-cast v0, Landroid/widget/Button;
 
-    invoke-interface {v0}, LaL/b;->R_()V
+    invoke-static {v1, v0}, LaL/c;->a(LaL/c;Landroid/widget/Button;)Landroid/widget/Button;
 
-    :cond_11
-    :goto_11
-    return-void
-
-    :cond_12
-    iget-object v0, p0, LaL/a;->d:LaL/b;
-
-    iget-object v1, p0, LaL/a;->a:[LaL/c;
-
-    iget-object v2, p0, LaL/a;->b:[LaL/c;
-
-    invoke-interface {v0, v1, v2}, LaL/b;->a([LaL/c;[LaL/c;)V
-
-    goto :goto_11
+    .line 47
+    return-object v1
 .end method
 
-.method public g_()Z
+.method public a(Lcom/google/googlenav/ui/g;LaQ/bE;)V
+    .registers 5
+    .parameter
+    .parameter
+
+    .prologue
+    .line 38
+    check-cast p2, LaL/c;
+
+    .line 39
+    invoke-static {p2}, LaL/c;->a(LaL/c;)Landroid/widget/Button;
+
+    move-result-object v0
+
+    iget-object v1, p0, LaL/a;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+
+    .line 40
+    invoke-static {p2}, LaL/c;->a(LaL/c;)Landroid/widget/Button;
+
+    move-result-object v0
+
+    iget-object v1, p0, LaL/a;->b:Landroid/view/View$OnClickListener;
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 41
+    return-void
+.end method
+
+.method public a()Z
     .registers 2
 
-    const/4 v0, 0x1
+    .prologue
+    .line 62
+    const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public k()Z
-    .registers 3
+.method public b()I
+    .registers 2
 
-    iget v0, p0, LaL/a;->c:I
+    .prologue
+    .line 52
+    const/4 v0, 0x6
 
-    const/4 v1, 0x2
-
-    if-ne v0, v1, :cond_7
-
-    const/4 v0, 0x1
-
-    :goto_6
     return v0
-
-    :cond_7
-    const/4 v0, 0x0
-
-    goto :goto_6
 .end method
 
-.method public l()Z
-    .registers 3
+.method public c()I
+    .registers 2
 
-    iget v0, p0, LaL/a;->c:I
+    .prologue
+    .line 57
+    const v0, 0x7f0400c1
 
-    const/4 v1, 0x3
-
-    if-ne v0, v1, :cond_7
-
-    const/4 v0, 0x1
-
-    :goto_6
     return v0
-
-    :cond_7
-    const/4 v0, 0x0
-
-    goto :goto_6
 .end method

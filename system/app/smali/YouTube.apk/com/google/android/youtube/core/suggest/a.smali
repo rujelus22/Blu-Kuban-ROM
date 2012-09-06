@@ -103,13 +103,9 @@
     .line 88
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "History query returning "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
 
@@ -133,6 +129,104 @@
     return-object v0
 .end method
 
+.method public final a(Ljava/lang/String;)Landroid/database/Cursor;
+    .registers 10
+    .parameter
+
+    .prologue
+    const/4 v5, 0x0
+
+    .line 93
+    iget-object v0, p0, Lcom/google/android/youtube/core/suggest/a;->a:Landroid/database/sqlite/SQLiteOpenHelper;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteOpenHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v0
+
+    .line 94
+    const-string v3, "suggest_intent_query LIKE ?"
+
+    .line 95
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "%"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "%"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 96
+    const-string v1, "suggestions"
+
+    iget-object v2, p0, Lcom/google/android/youtube/core/suggest/a;->b:[Ljava/lang/String;
+
+    const/4 v4, 0x1
+
+    new-array v4, v4, [Ljava/lang/String;
+
+    const/4 v7, 0x0
+
+    aput-object v6, v4, v7
+
+    const-string v7, "date DESC"
+
+    move-object v6, v5
+
+    invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v0
+
+    .line 98
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "query "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " returning "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " rows"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
+
+    .line 99
+    return-object v0
+.end method
+
 .method public final a(Landroid/content/ContentValues;)V
     .registers 5
     .parameter
@@ -141,13 +235,9 @@
     .line 79
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "History insert "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -179,14 +269,14 @@
     .registers 5
 
     .prologue
-    .line 93
+    .line 103
     iget-object v0, p0, Lcom/google/android/youtube/core/suggest/a;->a:Landroid/database/sqlite/SQLiteOpenHelper;
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 94
+    .line 104
     const-string v1, "suggestions"
 
     const-string v2, "1"
@@ -197,16 +287,12 @@
 
     move-result v0
 
-    .line 95
+    .line 105
     new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "Cleared search history "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -222,6 +308,6 @@
 
     invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
 
-    .line 96
+    .line 106
     return-void
 .end method

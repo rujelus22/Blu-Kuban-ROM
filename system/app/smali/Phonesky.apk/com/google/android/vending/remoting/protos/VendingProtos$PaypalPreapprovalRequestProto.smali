@@ -23,15 +23,15 @@
     .registers 2
 
     .prologue
-    .line 9473
+    .line 9651
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 9488
+    .line 9667
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;->cachedSize:I
 
-    .line 9473
+    .line 9651
     return-void
 .end method
 
@@ -41,15 +41,15 @@
     .registers 2
 
     .prologue
-    .line 9490
+    .line 9670
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 9492
+    .line 9672
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;->getSerializedSize()I
 
-    .line 9494
+    .line 9674
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;->cachedSize:I
 
@@ -60,14 +60,14 @@
     .registers 2
 
     .prologue
-    .line 9498
+    .line 9679
     const/4 v0, 0x0
 
-    .line 9499
+    .line 9680
     .local v0, size:I
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;->cachedSize:I
 
-    .line 9500
+    .line 9681
     return v0
 .end method
 
@@ -81,28 +81,28 @@
     .end annotation
 
     .prologue
-    .line 9507
+    .line 9689
     :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 9508
+    .line 9690
     .local v0, tag:I
     packed-switch v0, :pswitch_data_e
 
-    .line 9512
+    .line 9694
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 9513
+    .line 9695
     :pswitch_d
     return-object p0
 
-    .line 9508
+    .line 9690
     :pswitch_data_e
     .packed-switch 0x0
         :pswitch_d
@@ -119,7 +119,7 @@
     .end annotation
 
     .prologue
-    .line 9471
+    .line 9649
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalPreapprovalRequestProto;
 
     move-result-object v0
@@ -137,6 +137,6 @@
     .end annotation
 
     .prologue
-    .line 9486
+    .line 9665
     return-void
 .end method

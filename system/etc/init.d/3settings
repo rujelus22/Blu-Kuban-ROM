@@ -1,0 +1,20 @@
+#!/system/bin/sh
+
+LOG_FILE=/data/settings.log
+if [ -e $LOG_FILE ]; then
+	rm $LOG_FILE;
+fi;
+echo "Settings Script Started at $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LOG_FILE;
+if [ -e /data/settings.sh ]; then
+	echo "Starting First Boot Settings Script in 40 Sec" | tee -a $LOG_FILE;	
+	sleep 40
+	chmod 777 /data/settings.sh
+	logwrapper /system/bin/sh /data/settings.sh
+	setprop cm.userinit.active 1
+fi;
+if [ -e /data/settings.sh ]; then
+	sleep 10
+	echo "Renaming setting.sh" | tee -a $LOG_FILE;
+	mv /data/settings.sh /data/settings.run.sh
+fi;
+echo "Settings Script Finished at $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LOG_FILE;

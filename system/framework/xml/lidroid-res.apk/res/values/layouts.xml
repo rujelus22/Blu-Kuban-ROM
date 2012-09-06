@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="layout" name="zzz_keyguard_screen_epic_clock">false</item>
+    <item type="layout" name="zzz_keyguard_screen_epic_clock_land">false</item>
+    <item type="layout" name="zzz_keyguard_screen_epic_lock">false</item>
+    <item type="layout" name="zzz_keyguard_screen_epic_lock_land">false</item>
+    <item type="layout" name="zzz_keyguard_screen_fascinate_lock">false</item>
+    <item type="layout" name="zzz_keyguard_screen_fascinate_lock_land">false</item>
+    <item type="layout" name="zzz_keyguard_screen_glass_lock">false</item>
+    <item type="layout" name="zzz_keyguard_screen_glass_lock_land">false</item>
+    <item type="layout" name="zzz_keyguard_screen_puzzle_lock">false</item>
+    <item type="layout" name="zzz_keyguard_screen_puzzle_lock_land">false</item>
+    <item type="layout" name="zzz_keyguard_screen_samsung_clock">false</item>
+    <item type="layout" name="zzz_keyguard_screen_samsung_clock_land">false</item>
+    <item type="layout" name="zzz_keyguard_screen_samsung_dual_clock">false</item>
+</resources>

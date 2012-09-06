@@ -1,32 +1,18 @@
 .class public LaA/d;
-.super LaA/z;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
-
-# instance fields
-.field private final a:LaA/j;
+# interfaces
+.implements Lcom/google/android/maps/driveabout/vector/C;
 
 
 # direct methods
-.method public constructor <init>(ILaA/j;)V
-    .registers 3
+.method public constructor <init>()V
+    .registers 1
 
-    invoke-direct {p0, p1}, LaA/z;-><init>(I)V
-
-    iput-object p2, p0, LaA/d;->a:LaA/j;
+    .prologue
+    .line 52
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public a()F
-    .registers 2
-
-    iget-object v0, p0, LaA/d;->a:LaA/j;
-
-    invoke-virtual {v0}, LaA/j;->h()F
-
-    move-result v0
-
-    return v0
 .end method

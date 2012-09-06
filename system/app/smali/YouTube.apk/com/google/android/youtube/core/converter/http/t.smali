@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 55
+    .line 75
     invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
     return-void
@@ -16,24 +16,28 @@
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
-    .registers 5
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
+    .registers 6
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 58
-    const-class v0, Lcom/google/android/youtube/core/model/c;
+    .line 78
+    const-class v0, Lcom/google/android/youtube/core/model/Channel$Builder;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->a(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/c;
+    check-cast v0, Lcom/google/android/youtube/core/model/Channel$Builder;
 
-    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/c;->c(Ljava/lang/String;)Lcom/google/android/youtube/core/model/c;
+    invoke-static {p3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    .line 59
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/Channel$Builder;->userProfileUri(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/Channel$Builder;
+
+    .line 79
     return-void
 .end method

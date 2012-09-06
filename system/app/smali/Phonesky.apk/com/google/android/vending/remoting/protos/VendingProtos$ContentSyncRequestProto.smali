@@ -37,7 +37,11 @@
 
 .field private hasIncremental:Z
 
+.field private hasSideloadedAppCount:Z
+
 .field private incremental_:Z
+
+.field private sideloadedAppCount_:I
 
 .field private systemApp_:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -56,34 +60,37 @@
     .registers 2
 
     .prologue
-    .line 719
-    invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
-
-    .line 1178
     const/4 v0, 0x0
 
+    .line 732
+    invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
+
+    .line 1199
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->incremental_:Z
 
-    .line 1194
+    .line 1216
+    iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->sideloadedAppCount_:I
+
+    .line 1232
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->assetInstallState_:Ljava/util/List;
 
-    .line 1227
+    .line 1265
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->systemApp_:Ljava/util/List;
 
-    .line 1289
+    .line 1332
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->cachedSize:I
 
-    .line 719
+    .line 732
     return-void
 .end method
 
@@ -94,17 +101,17 @@
     .parameter "value"
 
     .prologue
-    .line 1211
+    .line 1249
     if-nez p1, :cond_8
 
-    .line 1212
+    .line 1250
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1214
+    .line 1252
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->assetInstallState_:Ljava/util/List;
 
@@ -114,20 +121,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 1215
+    .line 1253
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->assetInstallState_:Ljava/util/List;
 
-    .line 1217
+    .line 1255
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->assetInstallState_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1218
+    .line 1256
     return-object p0
 .end method
 
@@ -136,17 +143,17 @@
     .parameter "value"
 
     .prologue
-    .line 1244
+    .line 1282
     if-nez p1, :cond_8
 
-    .line 1245
+    .line 1283
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1247
+    .line 1285
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->systemApp_:Ljava/util/List;
 
@@ -156,21 +163,35 @@
 
     if-eqz v0, :cond_17
 
-    .line 1248
+    .line 1286
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->systemApp_:Ljava/util/List;
 
-    .line 1250
+    .line 1288
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->systemApp_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1251
+    .line 1289
     return-object p0
+.end method
+
+.method public getAssetInstallStateCount()I
+    .registers 2
+
+    .prologue
+    .line 1237
+    iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->assetInstallState_:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public getAssetInstallStateList()Ljava/util/List;
@@ -186,7 +207,7 @@
     .end annotation
 
     .prologue
-    .line 1197
+    .line 1235
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->assetInstallState_:Ljava/util/List;
 
     return-object v0
@@ -196,15 +217,15 @@
     .registers 2
 
     .prologue
-    .line 1291
+    .line 1335
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 1293
+    .line 1337
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->getSerializedSize()I
 
-    .line 1295
+    .line 1339
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->cachedSize:I
 
@@ -215,7 +236,7 @@
     .registers 2
 
     .prologue
-    .line 1179
+    .line 1200
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->incremental_:Z
 
     return v0
@@ -225,10 +246,10 @@
     .registers 6
 
     .prologue
-    .line 1299
+    .line 1344
     const/4 v2, 0x0
 
-    .line 1300
+    .line 1345
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->hasIncremental()Z
 
@@ -236,7 +257,7 @@
 
     if-eqz v3, :cond_11
 
-    .line 1301
+    .line 1346
     const/4 v3, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->getIncremental()Z
@@ -249,7 +270,7 @@
 
     add-int/2addr v2, v3
 
-    .line 1304
+    .line 1349
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->getAssetInstallStateList()Ljava/util/List;
 
@@ -273,7 +294,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$AssetInstallState;
 
-    .line 1305
+    .line 1350
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$AssetInstallState;
     const/4 v3, 0x2
 
@@ -285,7 +306,7 @@
 
     goto :goto_19
 
-    .line 1308
+    .line 1353
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$AssetInstallState;
     :cond_2c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->getSystemAppList()Ljava/util/List;
@@ -309,7 +330,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;
 
-    .line 1309
+    .line 1354
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;
     const/16 v3, 0xa
 
@@ -321,13 +342,58 @@
 
     goto :goto_34
 
-    .line 1312
+    .line 1357
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;
     :cond_48
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->hasSideloadedAppCount()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_59
+
+    .line 1358
+    const/16 v3, 0xe
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->getSideloadedAppCount()I
+
+    move-result v4
+
+    invoke-static {v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeInt32Size(II)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    .line 1361
+    :cond_59
     iput v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->cachedSize:I
 
-    .line 1313
+    .line 1362
     return v2
+.end method
+
+.method public getSideloadedAppCount()I
+    .registers 2
+
+    .prologue
+    .line 1217
+    iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->sideloadedAppCount_:I
+
+    return v0
+.end method
+
+.method public getSystemAppCount()I
+    .registers 2
+
+    .prologue
+    .line 1270
+    iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->systemApp_:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public getSystemAppList()Ljava/util/List;
@@ -343,7 +409,7 @@
     .end annotation
 
     .prologue
-    .line 1230
+    .line 1268
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->systemApp_:Ljava/util/List;
 
     return-object v0
@@ -353,8 +419,18 @@
     .registers 2
 
     .prologue
-    .line 1180
+    .line 1201
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->hasIncremental:Z
+
+    return v0
+.end method
+
+.method public hasSideloadedAppCount()Z
+    .registers 2
+
+    .prologue
+    .line 1218
+    iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->hasSideloadedAppCount:Z
 
     return v0
 .end method
@@ -369,29 +445,29 @@
     .end annotation
 
     .prologue
-    .line 1320
+    .line 1370
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1321
+    .line 1371
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_32
+    sparse-switch v0, :sswitch_data_3a
 
-    .line 1325
+    .line 1375
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 1326
+    .line 1376
     :sswitch_d
     return-object p0
 
-    .line 1331
+    .line 1381
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -401,50 +477,62 @@
 
     goto :goto_0
 
-    .line 1335
+    .line 1385
     :sswitch_16
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$AssetInstallState;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$AssetInstallState;-><init>()V
 
-    .line 1336
+    .line 1386
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$AssetInstallState;
     const/4 v2, 0x2
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readGroup(Lcom/google/protobuf/micro/MessageMicro;I)V
 
-    .line 1337
+    .line 1387
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->addAssetInstallState(Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$AssetInstallState;)Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;
 
     goto :goto_0
 
-    .line 1341
+    .line 1391
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$AssetInstallState;
     :sswitch_23
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;-><init>()V
 
-    .line 1342
+    .line 1392
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;
     const/16 v2, 0xa
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readGroup(Lcom/google/protobuf/micro/MessageMicro;I)V
 
-    .line 1343
+    .line 1393
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->addSystemApp(Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;)Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;
 
     goto :goto_0
 
-    .line 1321
+    .line 1397
+    .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;
+    :sswitch_31
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
+
+    move-result v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->setSideloadedAppCount(I)Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;
+
+    goto :goto_0
+
+    .line 1371
     nop
 
-    :sswitch_data_32
+    :sswitch_data_3a
     .sparse-switch
         0x0 -> :sswitch_d
         0x8 -> :sswitch_e
         0x13 -> :sswitch_16
         0x53 -> :sswitch_23
+        0x70 -> :sswitch_31
     .end sparse-switch
 .end method
 
@@ -458,7 +546,7 @@
     .end annotation
 
     .prologue
-    .line 717
+    .line 730
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;
 
     move-result-object v0
@@ -471,15 +559,32 @@
     .parameter "value"
 
     .prologue
-    .line 1182
+    .line 1203
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->hasIncremental:Z
 
-    .line 1183
+    .line 1204
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->incremental_:Z
 
-    .line 1184
+    .line 1205
+    return-object p0
+.end method
+
+.method public setSideloadedAppCount(I)Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 1220
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->hasSideloadedAppCount:Z
+
+    .line 1221
+    iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->sideloadedAppCount_:I
+
+    .line 1222
     return-object p0
 .end method
 
@@ -493,14 +598,14 @@
     .end annotation
 
     .prologue
-    .line 1278
+    .line 1318
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->hasIncremental()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 1279
+    .line 1319
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->getIncremental()Z
@@ -509,7 +614,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 1281
+    .line 1321
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->getAssetInstallStateList()Ljava/util/List;
 
@@ -533,7 +638,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$AssetInstallState;
 
-    .line 1282
+    .line 1322
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$AssetInstallState;
     const/4 v2, 0x2
 
@@ -541,7 +646,7 @@
 
     goto :goto_16
 
-    .line 1284
+    .line 1324
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$AssetInstallState;
     :cond_27
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->getSystemAppList()Ljava/util/List;
@@ -565,7 +670,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;
 
-    .line 1285
+    .line 1325
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;
     const/16 v2, 0xa
 
@@ -573,8 +678,25 @@
 
     goto :goto_2f
 
-    .line 1287
+    .line 1327
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto$SystemApp;
     :cond_41
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->hasSideloadedAppCount()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_50
+
+    .line 1328
+    const/16 v2, 0xe
+
+    invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;->getSideloadedAppCount()I
+
+    move-result v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
+
+    .line 1330
+    :cond_50
     return-void
 .end method

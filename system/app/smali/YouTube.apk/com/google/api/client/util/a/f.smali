@@ -66,10 +66,10 @@
 
     .line 139
     :goto_b
-    if-ge p2, v5, :cond_e0
+    if-ge p2, v5, :cond_d8
 
     .line 140
-    if-ge p2, v5, :cond_9d
+    if-ge p2, v5, :cond_95
 
     add-int/lit8 v6, p2, 0x1
 
@@ -88,7 +88,7 @@
     .line 141
     :cond_1f
     :goto_1f
-    if-gez v1, :cond_a5
+    if-gez v1, :cond_9d
 
     .line 142
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -103,7 +103,7 @@
     :cond_29
     const v7, 0xdbff
 
-    if-gt v1, v7, :cond_6e
+    if-gt v1, v7, :cond_6a
 
     if-ne v6, v5, :cond_32
 
@@ -133,13 +133,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Expected low surrogate but got char \'"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
@@ -173,18 +169,14 @@
 
     throw v0
 
-    :cond_6e
+    :cond_6a
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Unexpected low surrogate character \'"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
@@ -220,7 +212,7 @@
 
     throw v0
 
-    :cond_9d
+    :cond_95
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     const-string v1, "Index exceeds specified range"
@@ -230,7 +222,7 @@
     throw v0
 
     .line 147
-    :cond_a5
+    :cond_9d
     invoke-virtual {p0, v1}, Lcom/google/api/client/util/a/f;->a(I)[C
 
     move-result-object v6
@@ -240,15 +232,15 @@
 
     move-result v1
 
-    if-eqz v1, :cond_de
+    if-eqz v1, :cond_d6
 
     const/4 v1, 0x2
 
-    :goto_b0
+    :goto_a8
     add-int/2addr v1, p2
 
     .line 149
-    if-eqz v6, :cond_f6
+    if-eqz v6, :cond_ee
 
     .line 150
     sub-int v7, p2, v2
@@ -263,7 +255,7 @@
     .line 155
     array-length v9, v3
 
-    if-ge v9, v8, :cond_c4
+    if-ge v9, v8, :cond_bc
 
     .line 156
     add-int/2addr v8, v5
@@ -278,8 +270,8 @@
     move-result-object v3
 
     .line 160
-    :cond_c4
-    if-lez v7, :cond_ca
+    :cond_bc
+    if-lez v7, :cond_c2
 
     .line 161
     invoke-virtual {p1, v2, p2, v3, v0}, Ljava/lang/String;->getChars(II[CI)V
@@ -288,10 +280,10 @@
     add-int/2addr v0, v7
 
     .line 164
-    :cond_ca
+    :cond_c2
     array-length v2, v6
 
-    if-lez v2, :cond_d3
+    if-lez v2, :cond_cb
 
     .line 165
     array-length v2, v6
@@ -303,13 +295,13 @@
 
     add-int/2addr v0, v2
 
-    :cond_d3
+    :cond_cb
     move v2, v0
 
     move v0, v1
 
     .line 171
-    :goto_d5
+    :goto_cd
     invoke-virtual {p0, p1, v1, v5}, Lcom/google/api/client/util/a/f;->a(Ljava/lang/CharSequence;II)I
 
     move-result p2
@@ -324,17 +316,17 @@
     goto/16 :goto_b
 
     .line 148
-    :cond_de
+    :cond_d6
     const/4 v1, 0x1
 
-    goto :goto_b0
+    goto :goto_a8
 
     .line 176
-    :cond_e0
+    :cond_d8
     sub-int v1, v5, v2
 
     .line 177
-    if-lez v1, :cond_f0
+    if-lez v1, :cond_e8
 
     .line 178
     add-int/2addr v1, v0
@@ -342,7 +334,7 @@
     .line 179
     array-length v6, v3
 
-    if-ge v6, v1, :cond_ec
+    if-ge v6, v1, :cond_e4
 
     .line 180
     invoke-static {v3, v0, v1}, Lcom/google/api/client/util/a/f;->a([CII)[C
@@ -350,27 +342,27 @@
     move-result-object v3
 
     .line 182
-    :cond_ec
+    :cond_e4
     invoke-virtual {p1, v2, v5, v3, v0}, Ljava/lang/String;->getChars(II[CI)V
 
     move v0, v1
 
     .line 185
-    :cond_f0
+    :cond_e8
     new-instance v1, Ljava/lang/String;
 
     invoke-direct {v1, v3, v4, v0}, Ljava/lang/String;-><init>([CII)V
 
     return-object v1
 
-    :cond_f6
+    :cond_ee
     move v10, v2
 
     move v2, v0
 
     move v0, v10
 
-    goto :goto_d5
+    goto :goto_cd
 .end method
 
 .method protected abstract a(I)[C

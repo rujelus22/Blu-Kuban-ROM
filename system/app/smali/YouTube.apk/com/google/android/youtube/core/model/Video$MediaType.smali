@@ -24,7 +24,7 @@
 
     const/4 v2, 0x0
 
-    .line 794
+    .line 817
     new-instance v0, Lcom/google/android/youtube/core/model/Video$MediaType;
 
     const-string v1, "MOVIE"
@@ -33,7 +33,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/model/Video$MediaType;->MOVIE:Lcom/google/android/youtube/core/model/Video$MediaType;
 
-    .line 795
+    .line 818
     new-instance v0, Lcom/google/android/youtube/core/model/Video$MediaType;
 
     const-string v1, "TRAILER"
@@ -42,7 +42,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/model/Video$MediaType;->TRAILER:Lcom/google/android/youtube/core/model/Video$MediaType;
 
-    .line 796
+    .line 819
     new-instance v0, Lcom/google/android/youtube/core/model/Video$MediaType;
 
     const-string v1, "EPISODE"
@@ -51,7 +51,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/model/Video$MediaType;->EPISODE:Lcom/google/android/youtube/core/model/Video$MediaType;
 
-    .line 793
+    .line 816
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/android/youtube/core/model/Video$MediaType;
@@ -79,7 +79,7 @@
     .parameter
 
     .prologue
-    .line 793
+    .line 816
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -90,7 +90,7 @@
     .parameter
 
     .prologue
-    .line 793
+    .line 816
     const-class v0, Lcom/google/android/youtube/core/model/Video$MediaType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -106,7 +106,7 @@
     .registers 1
 
     .prologue
-    .line 793
+    .line 816
     sget-object v0, Lcom/google/android/youtube/core/model/Video$MediaType;->$VALUES:[Lcom/google/android/youtube/core/model/Video$MediaType;
 
     invoke-virtual {v0}, [Lcom/google/android/youtube/core/model/Video$MediaType;->clone()Ljava/lang/Object;

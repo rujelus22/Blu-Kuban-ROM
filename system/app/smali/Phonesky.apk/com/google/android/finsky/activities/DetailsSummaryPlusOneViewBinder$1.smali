@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 123
+    .line 170
     iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .parameter "v"
 
     .prologue
-    .line 126
+    .line 173
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;
 
     #calls: Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->handleClick()V
     invoke-static {v0}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;->access$000(Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder;)V
 
-    .line 127
+    .line 174
     return-void
 .end method

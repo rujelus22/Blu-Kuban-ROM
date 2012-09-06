@@ -1,33 +1,11 @@
-.class Lcom/google/googlenav/ui/wizard/cB;
+.class public interface abstract Lcom/google/googlenav/ui/wizard/cb;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnCancelListener;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/cA;
-
-
-# direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/cA;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/cB;->a:Lcom/google/googlenav/ui/wizard/cA;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.source "SourceFile"
 
 
 # virtual methods
-.method public onCancel(Landroid/content/DialogInterface;)V
-    .registers 3
+.method public abstract a()V
+.end method
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/cB;->a:Lcom/google/googlenav/ui/wizard/cA;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/cA;->a(Lcom/google/googlenav/ui/wizard/cA;)V
-
-    return-void
+.method public abstract a(Lcom/google/googlenav/ui/wizard/cc;)V
 .end method

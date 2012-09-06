@@ -30,24 +30,24 @@
     .parameter "familyType"
 
     .prologue
-    .line 218
+    .line 221
     iput-object p1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 219
+    .line 222
     iput p2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;->mFamilyType:I
 
-    .line 220
+    .line 223
     return-void
 .end method
 
-.method static synthetic access$1100(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;)I
+.method static synthetic access$1200(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;)I
     .registers 2
     .parameter "x0"
 
     .prologue
-    .line 215
+    .line 218
     iget v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;->mFamilyType:I
 
     return v0
@@ -59,7 +59,7 @@
     .registers 2
 
     .prologue
-    .line 224
+    .line 227
     const/4 v0, 0x0
 
     return-object v0
@@ -69,7 +69,7 @@
     .registers 3
 
     .prologue
-    .line 240
+    .line 243
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
 
     #getter for: Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentFactory:Lcom/google/android/finsky/billing/InstrumentFactory;
@@ -90,7 +90,7 @@
     .registers 2
 
     .prologue
-    .line 245
+    .line 248
     const/4 v0, 0x1
 
     return v0
@@ -101,7 +101,7 @@
     .parameter "isUserInitiatedSelection"
 
     .prologue
-    .line 229
+    .line 232
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
 
     const/4 v1, 0x0
@@ -109,7 +109,7 @@
     #calls: Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->updatePriceFromInstrument(Lcom/google/android/finsky/billing/Instrument;)V
     invoke-static {v0, v1}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->access$600(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Lcom/google/android/finsky/billing/Instrument;)V
 
-    .line 230
+    .line 233
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
 
     #getter for: Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mOnInstrumentSelectedListener:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$OnInstrumentSelectedListener;
@@ -121,7 +121,7 @@
 
     invoke-interface {v0, v1, p1}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$OnInstrumentSelectedListener;->onAddInstrument(IZ)V
 
-    .line 231
+    .line 234
     return-void
 .end method
 
@@ -129,7 +129,7 @@
     .registers 3
 
     .prologue
-    .line 235
+    .line 238
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$AddInstrumentSelectorItem;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
 
     #getter for: Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->mInstrumentFactory:Lcom/google/android/finsky/billing/InstrumentFactory;

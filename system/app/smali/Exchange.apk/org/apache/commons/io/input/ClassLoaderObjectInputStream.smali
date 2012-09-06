@@ -19,7 +19,7 @@
     .end annotation
 
     .prologue
-    .line 68
+    .line 67
     invoke-virtual {p1}, Ljava/io/ObjectStreamClass;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -32,11 +32,11 @@
 
     move-result-object v0
 
-    .line 70
+    .line 69
     .local v0, clazz:Ljava/lang/Class;
     if-eqz v0, :cond_e
 
-    .line 75
+    .line 74
     .end local v0           #clazz:Ljava/lang/Class;
     :goto_d
     return-object v0

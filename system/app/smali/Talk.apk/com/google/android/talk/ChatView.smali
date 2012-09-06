@@ -333,7 +333,7 @@
     .line 251
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/talk/ChatView;->mQueryCompleteLock:Ljava/lang/Object;
 
@@ -462,7 +462,7 @@
     .line 251
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/talk/ChatView;->mQueryCompleteLock:Ljava/lang/Object;
 
@@ -589,7 +589,7 @@
     .line 251
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/talk/ChatView;->mQueryCompleteLock:Ljava/lang/Object;
 
@@ -717,7 +717,7 @@
     .line 251
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/talk/ChatView;->mQueryCompleteLock:Ljava/lang/Object;
 
@@ -6106,9 +6106,9 @@
     .local v3, hiLayoutOld:Landroid/widget/RelativeLayout$LayoutParams;
     new-instance v5, Landroid/widget/RelativeLayout$LayoutParams;
 
-    iget v9, v6, Landroid/widget/RelativeLayout$LayoutParams;->width:I
+    iget v9, v6, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    iget v10, v6, Landroid/widget/RelativeLayout$LayoutParams;->height:I
+    iget v10, v6, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-direct {v5, v9, v10}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
 
@@ -6116,9 +6116,9 @@
     .local v5, mbLayout:Landroid/widget/RelativeLayout$LayoutParams;
     new-instance v2, Landroid/widget/RelativeLayout$LayoutParams;
 
-    iget v9, v3, Landroid/widget/RelativeLayout$LayoutParams;->width:I
+    iget v9, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    iget v10, v3, Landroid/widget/RelativeLayout$LayoutParams;->height:I
+    iget v10, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-direct {v2, v9, v10}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
 
@@ -6157,12 +6157,12 @@
 
     move-result v9
 
-    iput v9, v5, Landroid/widget/RelativeLayout$LayoutParams;->width:I
+    iput v9, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 393
     const/4 v9, 0x0
 
-    iput v9, v5, Landroid/widget/RelativeLayout$LayoutParams;->height:I
+    iput v9, v5, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 395
     const/16 v9, 0x9

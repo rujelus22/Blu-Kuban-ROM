@@ -1,27 +1,23 @@
-.class Lcom/google/googlenav/ui/view/dialog/ag;
+.class Lcom/google/googlenav/ui/view/dialog/aG;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lay/q;
+.implements Lag/f;
 
 
 # instance fields
-.field final synthetic a:Landroid/widget/ImageView;
-
-.field final synthetic b:Lcom/google/googlenav/ui/bG;
-
-.field final synthetic c:Lcom/google/googlenav/ui/view/dialog/af;
+.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/aF;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/af;Landroid/widget/ImageView;Lcom/google/googlenav/ui/bG;)V
-    .registers 4
+.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/aF;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/ag;->c:Lcom/google/googlenav/ui/view/dialog/af;
-
-    iput-object p2, p0, Lcom/google/googlenav/ui/view/dialog/ag;->a:Landroid/widget/ImageView;
-
-    iput-object p3, p0, Lcom/google/googlenav/ui/view/dialog/ag;->b:Lcom/google/googlenav/ui/bG;
+    .prologue
+    .line 450
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/aG;->a:Lcom/google/googlenav/ui/view/dialog/aF;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -30,34 +26,26 @@
 
 
 # virtual methods
-.method public aa_()V
-    .registers 4
+.method public a(Lag/c;)V
+    .registers 3
+    .parameter
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/ag;->a:Landroid/widget/ImageView;
+    .prologue
+    .line 453
+    sget-object v0, Lag/b;->j:Lag/c;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/ag;->c:Lcom/google/googlenav/ui/view/dialog/af;
+    if-eq p1, v0, :cond_d
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/af;->a(Lcom/google/googlenav/ui/view/dialog/af;)Lay/r;
+    .line 454
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/aG;->a:Lcom/google/googlenav/ui/view/dialog/aF;
 
-    move-result-object v0
-
-    iget-object v2, p0, Lcom/google/googlenav/ui/view/dialog/ag;->b:Lcom/google/googlenav/ui/bG;
-
-    invoke-virtual {v0, v2}, Lay/r;->a(Lcom/google/googlenav/ui/bG;)Lah/f;
-
-    move-result-object v0
-
-    check-cast v0, Lai/f;
-
-    invoke-virtual {v0}, Lai/f;->h()Landroid/graphics/Bitmap;
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/aF;->a(Lcom/google/googlenav/ui/view/dialog/aF;)Lcom/google/googlenav/ui/view/dialog/aL;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+    invoke-interface {v0}, Lcom/google/googlenav/ui/view/dialog/aL;->a()V
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/ag;->a:Landroid/widget/ImageView;
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->invalidate()V
-
+    .line 456
+    :cond_d
     return-void
 .end method

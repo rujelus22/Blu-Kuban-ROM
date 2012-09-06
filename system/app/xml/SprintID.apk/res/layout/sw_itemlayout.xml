@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextView android:textSize="14.0dip" android:typeface="sans" android:textColor="#ffcccccc" android:gravity="center" android:id="@id/sw_download_progress_text" android:lines="2" android:scrollHorizontally="false" style="@style/home_gallery_item"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -11,22 +11,8 @@
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/plus1/BasePlusOneButton;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 500
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/plus1/e;-><init>(Lcom/google/android/plus1/BasePlusOneButton;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/plus1/BasePlusOneButton;B)V
-    .registers 3
-    .parameter
+.method private constructor <init>(Lcom/google/android/plus1/BasePlusOneButton;)V
+    .registers 2
     .parameter
 
     .prologue
@@ -34,6 +20,18 @@
     iput-object p1, p0, Lcom/google/android/plus1/e;->a:Lcom/google/android/plus1/BasePlusOneButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/plus1/BasePlusOneButton;B)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 500
+    invoke-direct {p0, p1}, Lcom/google/android/plus1/e;-><init>(Lcom/google/android/plus1/BasePlusOneButton;)V
 
     return-void
 .end method
@@ -50,13 +48,9 @@
     .line 515
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "Error receiving +1 data: "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
@@ -103,7 +97,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_44
+    if-eqz v0, :cond_40
 
     .line 518
     iget-object v0, p0, Lcom/google/android/plus1/e;->a:Lcom/google/android/plus1/BasePlusOneButton;
@@ -115,14 +109,14 @@
     invoke-interface {v0, p1}, Lcom/google/android/plus1/ac;->a(Ljava/lang/Exception;)V
 
     .line 521
-    :cond_44
+    :cond_40
     iget-object v0, p0, Lcom/google/android/plus1/e;->a:Lcom/google/android/plus1/BasePlusOneButton;
 
     invoke-static {v0}, Lcom/google/android/plus1/BasePlusOneButton;->g(Lcom/google/android/plus1/BasePlusOneButton;)Lcom/google/android/plus1/u;
 
     move-result-object v0
 
-    if-nez v0, :cond_5e
+    if-nez v0, :cond_5a
 
     iget-object v0, p0, Lcom/google/android/plus1/e;->a:Lcom/google/android/plus1/BasePlusOneButton;
 
@@ -130,7 +124,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_5e
+    if-nez v0, :cond_5a
 
     .line 522
     iget-object v0, p0, Lcom/google/android/plus1/e;->a:Lcom/google/android/plus1/BasePlusOneButton;
@@ -143,7 +137,7 @@
     invoke-static {v0, p1, v2}, Lcom/google/android/plus1/BasePlusOneButton;->a(Lcom/google/android/plus1/BasePlusOneButton;Ljava/lang/Exception;Z)V
 
     .line 527
-    :cond_5e
+    :cond_5a
     iget-object v0, p0, Lcom/google/android/plus1/e;->a:Lcom/google/android/plus1/BasePlusOneButton;
 
     const/4 v1, 0x0
@@ -166,13 +160,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "Received +1 data: "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -190,7 +180,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_26
 
     iget-object v0, p0, Lcom/google/android/plus1/e;->a:Lcom/google/android/plus1/BasePlusOneButton;
 
@@ -200,7 +190,7 @@
 
     invoke-interface {v0, p1}, Lcom/google/android/plus1/ac;->a(Ljava/lang/Object;)V
 
-    :cond_2a
+    :cond_26
     iget-object v0, p0, Lcom/google/android/plus1/e;->a:Lcom/google/android/plus1/BasePlusOneButton;
 
     invoke-static {v0, p1}, Lcom/google/android/plus1/BasePlusOneButton;->a(Lcom/google/android/plus1/BasePlusOneButton;Lcom/google/android/plus1/u;)Lcom/google/android/plus1/u;

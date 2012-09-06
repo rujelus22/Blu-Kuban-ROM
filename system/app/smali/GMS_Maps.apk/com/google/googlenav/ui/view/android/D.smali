@@ -1,23 +1,28 @@
-.class final Lcom/google/googlenav/ui/view/android/D;
+.class Lcom/google/googlenav/ui/view/android/d;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/p;
+.field final synthetic a:I
 
-.field final synthetic b:I
+.field final synthetic b:Lcom/google/googlenav/ui/view/android/c;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/p;I)V
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/c;I)V
     .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/D;->a:Lcom/google/googlenav/ui/p;
+    .prologue
+    .line 221
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/d;->b:Lcom/google/googlenav/ui/view/android/c;
 
-    iput p2, p0, Lcom/google/googlenav/ui/view/android/D;->b:I
+    iput p2, p0, Lcom/google/googlenav/ui/view/android/d;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,26 +33,74 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .registers 6
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/D;->a:Lcom/google/googlenav/ui/p;
+    .prologue
+    .line 224
+    const/4 v0, 0x0
 
-    iget v1, p0, Lcom/google/googlenav/ui/view/android/D;->b:I
+    .line 225
+    iget v1, p0, Lcom/google/googlenav/ui/view/android/d;->a:I
 
-    const/4 v2, -0x1
+    const/16 v2, 0x25b
 
-    const/4 v3, 0x0
+    if-ne v1, v2, :cond_16
 
-    invoke-interface {v0, v1, v2, v3}, Lcom/google/googlenav/ui/p;->a(IILjava/lang/Object;)Z
+    .line 226
+    new-instance v0, Lcom/google/googlenav/ui/wizard/A;
 
-    const/4 v0, 0x4
+    const/16 v1, 0x8
 
-    const-string v1, "mb"
+    iget-object v2, p0, Lcom/google/googlenav/ui/view/android/d;->b:Lcom/google/googlenav/ui/view/android/c;
 
-    const-string v2, "cs"
+    iget-object v2, v2, Lcom/google/googlenav/ui/view/android/c;->b:LaM/bj;
 
-    invoke-static {v0, v1, v2}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
+    invoke-virtual {v2}, LaM/bj;->bN()Lcom/google/googlenav/aW;
 
-    invoke-static {}, Lcom/google/googlenav/ui/view/android/C;->g()V
+    move-result-object v2
 
+    invoke-direct {v0, v1, v2}, Lcom/google/googlenav/ui/wizard/A;-><init>(ILjava/lang/Object;)V
+
+    .line 229
+    :cond_16
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/d;->b:Lcom/google/googlenav/ui/view/android/c;
+
+    iget-object v1, v1, Lcom/google/googlenav/ui/view/android/c;->b:LaM/bj;
+
+    iget-object v2, p0, Lcom/google/googlenav/ui/view/android/d;->b:Lcom/google/googlenav/ui/view/android/c;
+
+    iget v2, v2, Lcom/google/googlenav/ui/view/android/c;->c:I
+
+    invoke-virtual {v1, v2}, LaM/bj;->b(I)V
+
+    .line 230
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/d;->b:Lcom/google/googlenav/ui/view/android/c;
+
+    iget-object v1, v1, Lcom/google/googlenav/ui/view/android/c;->b:LaM/bj;
+
+    iget v2, p0, Lcom/google/googlenav/ui/view/android/d;->a:I
+
+    iget-object v3, p0, Lcom/google/googlenav/ui/view/android/d;->b:Lcom/google/googlenav/ui/view/android/c;
+
+    iget v3, v3, Lcom/google/googlenav/ui/view/android/c;->c:I
+
+    invoke-virtual {v1, v2, v3, v0}, LaM/bj;->a(IILjava/lang/Object;)Z
+
+    .line 231
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/d;->b:Lcom/google/googlenav/ui/view/android/c;
+
+    iget-object v0, v0, Lcom/google/googlenav/ui/view/android/c;->a:Landroid/app/AlertDialog;
+
+    if-eqz v0, :cond_3b
+
+    .line 232
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/d;->b:Lcom/google/googlenav/ui/view/android/c;
+
+    iget-object v0, v0, Lcom/google/googlenav/ui/view/android/c;->a:Landroid/app/AlertDialog;
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
+
+    .line 234
+    :cond_3b
     return-void
 .end method

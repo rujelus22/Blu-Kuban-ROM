@@ -41,29 +41,29 @@
     .prologue
     const-wide/16 v1, 0x0
 
-    .line 1944
+    .line 2014
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1949
+    .line 2019
     iput-wide v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->purchaseTime_:J
 
-    .line 1966
+    .line 2036
     iput-wide v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->refundTimeoutTime_:J
 
-    .line 1983
+    .line 2053
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->refundStartPolicy_:I
 
-    .line 2000
+    .line 2070
     iput-wide v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->refundWindowDuration_:J
 
-    .line 2044
+    .line 2115
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->cachedSize:I
 
-    .line 1944
+    .line 2014
     return-void
 .end method
 
@@ -73,15 +73,15 @@
     .registers 2
 
     .prologue
-    .line 2046
+    .line 2118
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 2048
+    .line 2120
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->getSerializedSize()I
 
-    .line 2050
+    .line 2122
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->cachedSize:I
 
@@ -92,7 +92,7 @@
     .registers 3
 
     .prologue
-    .line 1950
+    .line 2020
     iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->purchaseTime_:J
 
     return-wide v0
@@ -102,7 +102,7 @@
     .registers 2
 
     .prologue
-    .line 1985
+    .line 2055
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->refundStartPolicy_:I
 
     return v0
@@ -112,7 +112,7 @@
     .registers 3
 
     .prologue
-    .line 1967
+    .line 2037
     iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->refundTimeoutTime_:J
 
     return-wide v0
@@ -122,7 +122,7 @@
     .registers 3
 
     .prologue
-    .line 2001
+    .line 2071
     iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->refundWindowDuration_:J
 
     return-wide v0
@@ -132,10 +132,10 @@
     .registers 5
 
     .prologue
-    .line 2054
+    .line 2127
     const/4 v0, 0x0
 
-    .line 2055
+    .line 2128
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->hasPurchaseTime()Z
 
@@ -143,7 +143,7 @@
 
     if-eqz v1, :cond_12
 
-    .line 2056
+    .line 2129
     const/16 v1, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->getPurchaseTime()J
@@ -156,7 +156,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2059
+    .line 2132
     :cond_12
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->hasRefundTimeoutTime()Z
 
@@ -164,7 +164,7 @@
 
     if-eqz v1, :cond_23
 
-    .line 2060
+    .line 2133
     const/16 v1, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->getRefundTimeoutTime()J
@@ -177,7 +177,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2063
+    .line 2136
     :cond_23
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->hasRefundStartPolicy()Z
 
@@ -185,7 +185,7 @@
 
     if-eqz v1, :cond_34
 
-    .line 2064
+    .line 2137
     const/16 v1, 0x2d
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->getRefundStartPolicy()I
@@ -198,7 +198,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2067
+    .line 2140
     :cond_34
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->hasRefundWindowDuration()Z
 
@@ -206,7 +206,7 @@
 
     if-eqz v1, :cond_45
 
-    .line 2068
+    .line 2141
     const/16 v1, 0x2e
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->getRefundWindowDuration()J
@@ -219,11 +219,11 @@
 
     add-int/2addr v0, v1
 
-    .line 2071
+    .line 2144
     :cond_45
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->cachedSize:I
 
-    .line 2072
+    .line 2145
     return v0
 .end method
 
@@ -231,7 +231,7 @@
     .registers 2
 
     .prologue
-    .line 1951
+    .line 2021
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->hasPurchaseTime:Z
 
     return v0
@@ -241,7 +241,7 @@
     .registers 2
 
     .prologue
-    .line 1984
+    .line 2054
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->hasRefundStartPolicy:Z
 
     return v0
@@ -251,7 +251,7 @@
     .registers 2
 
     .prologue
-    .line 1968
+    .line 2038
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->hasRefundTimeoutTime:Z
 
     return v0
@@ -261,7 +261,7 @@
     .registers 2
 
     .prologue
-    .line 2002
+    .line 2072
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->hasRefundWindowDuration:Z
 
     return v0
@@ -277,29 +277,29 @@
     .end annotation
 
     .prologue
-    .line 2079
+    .line 2153
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 2080
+    .line 2154
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_2e
 
-    .line 2084
+    .line 2158
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 2085
+    .line 2159
     :sswitch_d
     return-object p0
 
-    .line 2090
+    .line 2164
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -309,7 +309,7 @@
 
     goto :goto_0
 
-    .line 2094
+    .line 2168
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -319,7 +319,7 @@
 
     goto :goto_0
 
-    .line 2098
+    .line 2172
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -329,7 +329,7 @@
 
     goto :goto_0
 
-    .line 2102
+    .line 2176
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -339,7 +339,7 @@
 
     goto :goto_0
 
-    .line 2080
+    .line 2154
     :sswitch_data_2e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -360,7 +360,7 @@
     .end annotation
 
     .prologue
-    .line 1942
+    .line 2012
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;
 
     move-result-object v0
@@ -373,15 +373,15 @@
     .parameter "value"
 
     .prologue
-    .line 1953
+    .line 2023
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->hasPurchaseTime:Z
 
-    .line 1954
+    .line 2024
     iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->purchaseTime_:J
 
-    .line 1955
+    .line 2025
     return-object p0
 .end method
 
@@ -390,15 +390,15 @@
     .parameter "value"
 
     .prologue
-    .line 1987
+    .line 2057
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->hasRefundStartPolicy:Z
 
-    .line 1988
+    .line 2058
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->refundStartPolicy_:I
 
-    .line 1989
+    .line 2059
     return-object p0
 .end method
 
@@ -407,15 +407,15 @@
     .parameter "value"
 
     .prologue
-    .line 1970
+    .line 2040
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->hasRefundTimeoutTime:Z
 
-    .line 1971
+    .line 2041
     iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->refundTimeoutTime_:J
 
-    .line 1972
+    .line 2042
     return-object p0
 .end method
 
@@ -424,15 +424,15 @@
     .parameter "value"
 
     .prologue
-    .line 2004
+    .line 2074
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->hasRefundWindowDuration:Z
 
-    .line 2005
+    .line 2075
     iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->refundWindowDuration_:J
 
-    .line 2006
+    .line 2076
     return-object p0
 .end method
 
@@ -446,14 +446,14 @@
     .end annotation
 
     .prologue
-    .line 2030
+    .line 2101
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->hasPurchaseTime()Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    .line 2031
+    .line 2102
     const/16 v0, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->getPurchaseTime()J
@@ -462,7 +462,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 2033
+    .line 2104
     :cond_f
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->hasRefundTimeoutTime()Z
 
@@ -470,7 +470,7 @@
 
     if-eqz v0, :cond_1e
 
-    .line 2034
+    .line 2105
     const/16 v0, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->getRefundTimeoutTime()J
@@ -479,7 +479,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 2036
+    .line 2107
     :cond_1e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->hasRefundStartPolicy()Z
 
@@ -487,7 +487,7 @@
 
     if-eqz v0, :cond_2d
 
-    .line 2037
+    .line 2108
     const/16 v0, 0x2d
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->getRefundStartPolicy()I
@@ -496,7 +496,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 2039
+    .line 2110
     :cond_2d
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->hasRefundWindowDuration()Z
 
@@ -504,7 +504,7 @@
 
     if-eqz v0, :cond_3c
 
-    .line 2040
+    .line 2111
     const/16 v0, 0x2e
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$ExternalAssetProto$PurchaseInformation;->getRefundWindowDuration()J
@@ -513,7 +513,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 2042
+    .line 2113
     :cond_3c
     return-void
 .end method

@@ -1,24 +1,8 @@
-.class Lcom/google/googlenav/ui/wizard/dA;
+.class public interface abstract Lcom/google/googlenav/ui/wizard/da;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# instance fields
-.field a:Landroid/widget/TextView;
-
-
-# direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/google/googlenav/ui/wizard/dw;)V
-    .registers 2
-
-    invoke-direct {p0}, Lcom/google/googlenav/ui/wizard/dA;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract a(Lcom/google/googlenav/ui/wizard/db;Lcom/google/googlenav/friend/ah;)V
 .end method

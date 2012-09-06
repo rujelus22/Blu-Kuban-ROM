@@ -27,17 +27,17 @@
     .registers 2
 
     .prologue
-    .line 22
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 21
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 24
+    .line 23
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/apache/james/mime4j/field/DelegatingFieldParser;->parsers:Ljava/util/Map;
 
-    .line 25
+    .line 24
     new-instance v0, Lorg/apache/james/mime4j/field/UnstructuredField$Parser;
 
     invoke-direct {v0}, Lorg/apache/james/mime4j/field/UnstructuredField$Parser;-><init>()V
@@ -54,7 +54,7 @@
     .parameter "name"
 
     .prologue
-    .line 38
+    .line 36
     iget-object v1, p0, Lorg/apache/james/mime4j/field/DelegatingFieldParser;->parsers:Ljava/util/Map;
 
     invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -67,14 +67,14 @@
 
     check-cast v0, Lorg/apache/james/mime4j/field/FieldParser;
 
-    .line 39
+    .line 37
     .local v0, field:Lorg/apache/james/mime4j/field/FieldParser;
     if-nez v0, :cond_10
 
-    .line 40
+    .line 38
     iget-object v0, p0, Lorg/apache/james/mime4j/field/DelegatingFieldParser;->defaultParser:Lorg/apache/james/mime4j/field/FieldParser;
 
-    .line 42
+    .line 40
     .end local v0           #field:Lorg/apache/james/mime4j/field/FieldParser;
     :cond_10
     return-object v0
@@ -87,12 +87,12 @@
     .parameter "raw"
 
     .prologue
-    .line 46
+    .line 44
     invoke-virtual {p0, p1}, Lorg/apache/james/mime4j/field/DelegatingFieldParser;->getParser(Ljava/lang/String;)Lorg/apache/james/mime4j/field/FieldParser;
 
     move-result-object v0
 
-    .line 47
+    .line 45
     .local v0, parser:Lorg/apache/james/mime4j/field/FieldParser;
     invoke-interface {v0, p1, p2, p3}, Lorg/apache/james/mime4j/field/FieldParser;->parse(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/james/mime4j/field/Field;
 
@@ -107,7 +107,7 @@
     .parameter "parser"
 
     .prologue
-    .line 34
+    .line 32
     iget-object v0, p0, Lorg/apache/james/mime4j/field/DelegatingFieldParser;->parsers:Ljava/util/Map;
 
     invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -116,6 +116,6 @@
 
     invoke-interface {v0, v1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 35
+    .line 33
     return-void
 .end method

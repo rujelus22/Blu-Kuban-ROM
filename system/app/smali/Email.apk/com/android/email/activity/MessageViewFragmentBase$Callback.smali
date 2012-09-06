@@ -27,11 +27,5 @@
 .method public abstract onMessageNotExists()V
 .end method
 
-.method public abstract onMessageViewGone()V
-.end method
-
-.method public abstract onMessageViewShown(I)V
-.end method
-
 .method public abstract onUrlInMessageClicked(Ljava/lang/String;)Z
 .end method

@@ -1,148 +1,62 @@
-.class public Lcom/google/googlenav/android/Z;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/nfc/NfcAdapter$CreateNdefMessageCallback;
-
-
-# static fields
-.field private static a:Lcom/google/googlenav/android/Z;
+.class Lcom/google/googlenav/android/z;
+.super Lcom/google/googlenav/x;
+.source "SourceFile"
 
 
 # instance fields
-.field private final b:Landroid/app/Activity;
-
-.field private final c:Lcom/google/googlenav/android/aa;
+.field final synthetic a:Lcom/google/googlenav/android/y;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    const/4 v0, 0x0
-
-    sput-object v0, Lcom/google/googlenav/android/Z;->a:Lcom/google/googlenav/android/Z;
-
-    return-void
-.end method
-
-.method private constructor <init>(Landroid/app/Activity;Lcom/google/googlenav/android/aa;)V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/googlenav/android/Z;->b:Landroid/app/Activity;
-
-    iput-object p2, p0, Lcom/google/googlenav/android/Z;->c:Lcom/google/googlenav/android/aa;
-
-    return-void
-.end method
-
-.method public static a(Landroid/app/Activity;)V
+.method constructor <init>(Lcom/google/googlenav/android/y;ZZ)V
     .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-virtual {p0}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
+    .prologue
+    .line 33
+    iput-object p1, p0, Lcom/google/googlenav/android/z;->a:Lcom/google/googlenav/android/y;
 
-    move-result-object v0
+    invoke-direct {p0, p2, p3}, Lcom/google/googlenav/x;-><init>(ZZ)V
 
-    invoke-static {v0}, Landroid/nfc/NfcAdapter;->getDefaultAdapter(Landroid/content/Context;)Landroid/nfc/NfcAdapter;
-
-    move-result-object v0
-
-    if-nez v0, :cond_b
-
-    :goto_a
     return-void
-
-    :cond_b
-    const/4 v1, 0x0
-
-    sput-object v1, Lcom/google/googlenav/android/Z;->a:Lcom/google/googlenav/android/Z;
-
-    sget-object v1, Lcom/google/googlenav/android/Z;->a:Lcom/google/googlenav/android/Z;
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Landroid/app/Activity;
-
-    invoke-virtual {v0, v1, p0, v2}, Landroid/nfc/NfcAdapter;->setNdefPushMessageCallback(Landroid/nfc/NfcAdapter$CreateNdefMessageCallback;Landroid/app/Activity;[Landroid/app/Activity;)V
-
-    goto :goto_a
-.end method
-
-.method public static a(Landroid/app/Activity;Lcom/google/googlenav/android/aa;)V
-    .registers 5
-
-    invoke-virtual {p0}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/nfc/NfcAdapter;->getDefaultAdapter(Landroid/content/Context;)Landroid/nfc/NfcAdapter;
-
-    move-result-object v0
-
-    if-nez v0, :cond_b
-
-    :goto_a
-    return-void
-
-    :cond_b
-    sget-object v1, Lcom/google/googlenav/android/Z;->a:Lcom/google/googlenav/android/Z;
-
-    if-nez v1, :cond_16
-
-    new-instance v1, Lcom/google/googlenav/android/Z;
-
-    invoke-direct {v1, p0, p1}, Lcom/google/googlenav/android/Z;-><init>(Landroid/app/Activity;Lcom/google/googlenav/android/aa;)V
-
-    sput-object v1, Lcom/google/googlenav/android/Z;->a:Lcom/google/googlenav/android/Z;
-
-    :cond_16
-    sget-object v1, Lcom/google/googlenav/android/Z;->a:Lcom/google/googlenav/android/Z;
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Landroid/app/Activity;
-
-    invoke-virtual {v0, v1, p0, v2}, Landroid/nfc/NfcAdapter;->setNdefPushMessageCallback(Landroid/nfc/NfcAdapter$CreateNdefMessageCallback;Landroid/app/Activity;[Landroid/app/Activity;)V
-
-    goto :goto_a
 .end method
 
 
 # virtual methods
-.method public createNdefMessage(Landroid/nfc/NfcEvent;)Landroid/nfc/NdefMessage;
-    .registers 6
+.method public a()V
+    .registers 4
 
-    iget-object v0, p0, Lcom/google/googlenav/android/Z;->c:Lcom/google/googlenav/android/aa;
+    .prologue
+    .line 37
+    const-string v0, "LAST_NETWORK_CONNECTED"
 
-    invoke-interface {v0}, Lcom/google/googlenav/android/aa;->s()Ljava/lang/String;
+    invoke-static {v0}, LaT/d;->a(Ljava/lang/String;)J
 
-    move-result-object v0
+    move-result-wide v0
 
-    if-nez v0, :cond_a
+    .line 40
+    invoke-static {}, Lcom/google/googlenav/android/F;->f()Z
 
-    const/4 v0, 0x0
+    move-result v2
 
-    :goto_9
-    return-object v0
+    if-eqz v2, :cond_12
 
-    :cond_a
-    invoke-static {v0}, Landroid/nfc/NdefRecord;->createUri(Ljava/lang/String;)Landroid/nfc/NdefRecord;
+    .line 42
+    const-string v0, "LAST_NETWORK_CONNECTED"
 
-    move-result-object v1
+    invoke-static {v0}, LaT/d;->b(Ljava/lang/String;)V
 
-    new-instance v0, Landroid/nfc/NdefMessage;
+    .line 48
+    :goto_11
+    return-void
 
-    const/4 v2, 0x1
+    .line 46
+    :cond_12
+    iget-object v2, p0, Lcom/google/googlenav/android/z;->a:Lcom/google/googlenav/android/y;
 
-    new-array v2, v2, [Landroid/nfc/NdefRecord;
+    invoke-static {v2, v0, v1}, Lcom/google/googlenav/android/y;->a(Lcom/google/googlenav/android/y;J)V
 
-    const/4 v3, 0x0
-
-    aput-object v1, v2, v3
-
-    invoke-direct {v0, v2}, Landroid/nfc/NdefMessage;-><init>([Landroid/nfc/NdefRecord;)V
-
-    goto :goto_9
+    goto :goto_11
 .end method

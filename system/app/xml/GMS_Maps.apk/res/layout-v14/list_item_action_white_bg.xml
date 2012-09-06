@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/selectable_list_item_white_bg" android:paddingLeft="@dimen/local_plus_page_padding_left" android:paddingRight="@dimen/local_plus_page_padding_left" android:layout_width="fill_parent" android:layout_height="?android:listPreferredItemHeight"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:gravity="center_vertical" android:id="@id/left_image" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="16.0dip" />
+    <TextView android:gravity="center_vertical" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_toRightOf="@id/left_image" style="@style/OptionClickable" />
+</RelativeLayout>

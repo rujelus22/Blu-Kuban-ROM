@@ -19,12 +19,12 @@
     .registers 2
 
     .prologue
-    .line 140
+    .line 136
     const-string v0, "Force"
 
     invoke-direct {p0, v0}, Lorg/apache/commons/io/FileDeleteStrategy;-><init>(Ljava/lang/String;)V
 
-    .line 141
+    .line 137
     return-void
 .end method
 
@@ -40,10 +40,10 @@
     .end annotation
 
     .prologue
-    .line 155
+    .line 151
     invoke-static {p1}, Lorg/apache/commons/io/FileUtils;->forceDelete(Ljava/io/File;)V
 
-    .line 156
+    .line 152
     const/4 v0, 0x1
 
     return v0

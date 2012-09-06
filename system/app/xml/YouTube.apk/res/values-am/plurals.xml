@@ -28,6 +28,14 @@
         <item quantity="other">ከ%1$d ሰከንዶች በፊት</item>
         <item quantity="one">ከ1 ሰከንድ በፊት</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">በ%1$d ቀን ጊዜው ያልቃል</item>
+        <item quantity="one">በ1 ቀንውስጥ ይቃጠላል</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">በ%1$d ሰዓቶች ውስጥ ይቃጠላል</item>
+        <item quantity="one">በ1 ሰዓትውስጥ ይቃጠላል</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">አዲስ ስቀሎች</item>
         <item quantity="one">አዲስ ስቀል</item>

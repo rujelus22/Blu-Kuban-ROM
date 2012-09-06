@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 45
+    .line 47
     const-class v0, Lorg/apache/james/mime4j/message/TempFileTextBody;
 
     invoke-static {v0}, Lorg/apache/james/mime4j/LogFactory;->getLog(Ljava/lang/Class;)Lorg/apache/james/mime4j/Log;
@@ -43,7 +43,7 @@
     .end annotation
 
     .prologue
-    .line 103
+    .line 115
     iget-object v0, p0, Lorg/apache/james/mime4j/message/TempFileTextBody;->tempFile:Lorg/apache/james/mime4j/util/TempFile;
 
     invoke-interface {v0}, Lorg/apache/james/mime4j/util/TempFile;->getInputStream()Ljava/io/InputStream;
@@ -52,6 +52,6 @@
 
     invoke-static {v0, p1}, Lorg/apache/commons/io/IOUtils;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)I
 
-    .line 104
+    .line 116
     return-void
 .end method

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/account_bar" android:background="@drawable/hub_sub_title_bg2" android:paddingLeft="10.0px" android:paddingTop="6.0px" android:paddingRight="10.0px" android:paddingBottom="5.0px" android:layout_width="fill_parent" android:layout_height="52.0px"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="21.0px" android:textColor="#ffffffff" android:id="@id/txt_email" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
-    <Button android:textSize="22.0px" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/GatewayButton" android:background="@drawable/hub_link_account" android:paddingLeft="10.0px" android:paddingRight="10.0px" android:clickable="false" android:layout_width="wrap_content" android:layout_height="41.0px" android:layout_marginLeft="10.0px" android:singleLine="true" android:layout_weight="0.0" />
-</LinearLayout>

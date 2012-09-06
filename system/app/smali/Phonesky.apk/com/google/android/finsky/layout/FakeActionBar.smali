@@ -25,6 +25,24 @@
 
 
 # virtual methods
+.method public addTab(Ljava/lang/String;Lcom/google/android/finsky/layout/CustomActionBar$TabListener;)V
+    .registers 3
+    .parameter "text"
+    .parameter "tabListener"
+
+    .prologue
+    .line 72
+    return-void
+.end method
+
+.method public clearTabs()V
+    .registers 1
+
+    .prologue
+    .line 80
+    return-void
+.end method
+
 .method public configureMenu(Landroid/app/Activity;Landroid/view/Menu;)V
     .registers 3
     .parameter "activity"
@@ -32,15 +50,6 @@
 
     .prologue
     .line 23
-    return-void
-.end method
-
-.method public exploreButtonClicked(Landroid/app/Activity;)V
-    .registers 2
-    .parameter "activity"
-
-    .prologue
-    .line 66
     return-void
 .end method
 
@@ -87,10 +96,19 @@
     .parameter "activity"
 
     .prologue
-    .line 71
+    .line 67
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public setSelectedTab(I)V
+    .registers 2
+    .parameter "position"
+
+    .prologue
+    .line 76
+    return-void
 .end method
 
 .method public shareButtonClicked(Landroid/app/Activity;)V

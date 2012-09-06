@@ -1,337 +1,247 @@
 .class final Lcom/google/android/youtube/core/player/k;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Thread;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/player/d;
-
-.field private b:Z
-
-.field private c:Z
-
-.field private d:Z
+.field final synthetic a:Lcom/google/android/youtube/core/player/f;
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/youtube/core/player/d;)V
-    .registers 3
+.method constructor <init>(Lcom/google/android/youtube/core/player/f;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 653
-    const/4 v0, 0x0
+    .line 448
+    iput-object p1, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/f;
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/core/player/k;-><init>(Lcom/google/android/youtube/core/player/d;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/youtube/core/player/d;B)V
-    .registers 3
-    .parameter
-    .parameter
-
-    .prologue
-    .line 653
-    iput-object p1, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/d;
-
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a()V
-    .registers 3
+.method public final run()V
+    .registers 6
 
     .prologue
-    .line 660
-    monitor-enter p0
+    const/4 v4, 0x0
 
+    .line 452
     :try_start_1
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/player/k;->b:Z
+    iget-object v0, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/f;
 
-    if-nez v0, :cond_18
-
-    .line 661
-    new-instance v0, Landroid/content/IntentFilter;
-
-    const-string v1, "android.net.conn.CONNECTIVITY_CHANGE"
-
-    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
-
-    .line 662
-    iget-object v1, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/d;
-
-    invoke-static {v1}, Lcom/google/android/youtube/core/player/d;->j(Lcom/google/android/youtube/core/player/d;)Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    .line 663
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/android/youtube/core/player/k;->b:Z
-    :try_end_18
-    .catchall {:try_start_1 .. :try_end_18} :catchall_1a
-
-    .line 665
-    :cond_18
-    monitor-exit p0
-
-    return-void
-
-    .line 660
-    :catchall_1a
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized b()V
-    .registers 2
-
-    .prologue
-    .line 668
-    monitor-enter p0
-
-    :try_start_1
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/player/k;->b:Z
-
-    if-eqz v0, :cond_19
-
-    iget-object v0, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/d;
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/player/d;->j(Lcom/google/android/youtube/core/player/d;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/google/android/youtube/core/player/f;->c(Lcom/google/android/youtube/core/player/f;)Ljava/util/concurrent/atomic/AtomicReference;
 
     move-result-object v0
 
-    if-eqz v0, :cond_19
-
-    .line 669
-    iget-object v0, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/d;
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/player/d;->j(Lcom/google/android/youtube/core/player/d;)Landroid/content/Context;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    check-cast v0, Ljava/lang/String;
 
-    .line 670
-    const/4 v0, 0x0
+    .line 453
+    if-nez v0, :cond_3d
 
-    iput-boolean v0, p0, Lcom/google/android/youtube/core/player/k;->b:Z
-    :try_end_19
-    .catchall {:try_start_1 .. :try_end_19} :catchall_1b
+    .line 454
+    new-instance v0, Ljava/io/IOException;
 
-    .line 672
-    :cond_19
-    monitor-exit p0
+    const-string v1, "The file was deleted"
 
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_17
+    .catchall {:try_start_1 .. :try_end_17} :catchall_ae
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_17} :catch_17
+
+    .line 466
+    :catch_17
+    move-exception v0
+
+    .line 467
+    :try_start_18
+    iget-object v0, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/f;
+
+    invoke-static {v0}, Lcom/google/android/youtube/core/player/f;->d(Lcom/google/android/youtube/core/player/f;)Ljava/util/concurrent/atomic/AtomicReference;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+
+    .line 468
+    iget-object v0, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/f;
+
+    invoke-static {v0}, Lcom/google/android/youtube/core/player/f;->f(Lcom/google/android/youtube/core/player/f;)Ljava/util/concurrent/atomic/AtomicLong;
+
+    move-result-object v0
+
+    const-wide/32 v1, 0x40000
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;->addAndGet(J)J
+
+    .line 469
+    const-string v0, "failed to read offsets, will retry"
+
+    invoke-static {v0}, Lcom/google/android/youtube/core/L;->c(Ljava/lang/String;)V
+    :try_end_33
+    .catchall {:try_start_18 .. :try_end_33} :catchall_ae
+
+    .line 471
+    iget-object v0, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/f;
+
+    invoke-static {v0}, Lcom/google/android/youtube/core/player/f;->i(Lcom/google/android/youtube/core/player/f;)Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v4}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    .line 472
+    :goto_3c
     return-void
 
-    .line 668
-    :catchall_1b
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized c()Z
-    .registers 2
-
-    .prologue
-    .line 695
-    monitor-enter p0
-
-    :try_start_1
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/player/k;->c:Z
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_5
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized d()Z
-    .registers 2
-
-    .prologue
-    .line 699
-    monitor-enter p0
-
-    :try_start_1
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/player/k;->d:Z
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_5
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 7
-    .parameter
-    .parameter
-
-    .prologue
-    const/4 v0, 0x1
-
-    .line 676
-    monitor-enter p0
-
-    :try_start_2
-    iget-boolean v1, p0, Lcom/google/android/youtube/core/player/k;->b:Z
-    :try_end_4
-    .catchall {:try_start_2 .. :try_end_4} :catchall_55
-
-    if-nez v1, :cond_8
-
-    .line 692
-    :cond_6
-    :goto_6
-    monitor-exit p0
-
-    return-void
-
-    .line 680
-    :cond_8
-    :try_start_8
-    iget-object v1, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/d;
-
-    invoke-static {v1}, Lcom/google/android/youtube/core/player/d;->k(Lcom/google/android/youtube/core/player/d;)Lcom/google/android/youtube/core/utils/i;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lcom/google/android/youtube/core/utils/i;->a()Z
-
-    move-result v1
-
-    iput-boolean v1, p0, Lcom/google/android/youtube/core/player/k;->c:Z
-
-    .line 681
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "connection "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-boolean v2, p0, Lcom/google/android/youtube/core/player/k;->c:Z
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
-
-    .line 682
-    iget-boolean v1, p0, Lcom/google/android/youtube/core/player/k;->c:Z
-
-    if-eqz v1, :cond_3d
-
-    .line 683
-    iget-object v1, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/d;
-
-    invoke-static {v1}, Lcom/google/android/youtube/core/player/d;->k(Lcom/google/android/youtube/core/player/d;)Lcom/google/android/youtube/core/utils/i;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lcom/google/android/youtube/core/utils/i;->c()Z
-
-    move-result v1
-
-    if-nez v1, :cond_58
-
-    :goto_3b
-    iput-boolean v0, p0, Lcom/google/android/youtube/core/player/k;->d:Z
-
-    .line 685
+    .line 456
     :cond_3d
-    iget-object v0, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/d;
+    :try_start_3d
+    new-instance v1, Ljava/io/FileInputStream;
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/player/d;->l(Lcom/google/android/youtube/core/player/d;)Lcom/google/android/youtube/core/transfer/a;
+    invoke-direct {v1, v0}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
+
+    .line 457
+    iget-object v0, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/f;
+
+    invoke-static {v0}, Lcom/google/android/youtube/core/player/f;->d(Lcom/google/android/youtube/core/player/f;)Ljava/util/concurrent/atomic/AtomicReference;
 
     move-result-object v0
 
-    if-nez v0, :cond_6
+    invoke-static {v1}, Lcom/google/android/youtube/core/player/mp4/e;->a(Ljava/io/InputStream;)Ljava/util/SortedMap;
 
-    .line 686
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/player/k;->c:Z
+    move-result-object v2
 
-    if-eqz v0, :cond_5a
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 687
-    iget-object v0, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/d;
+    .line 458
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
 
-    iget-object v1, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/d;
+    .line 459
+    iget-object v0, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/f;
 
-    invoke-static {v1}, Lcom/google/android/youtube/core/player/d;->g(Lcom/google/android/youtube/core/player/d;)J
+    invoke-static {v0}, Lcom/google/android/youtube/core/player/f;->f(Lcom/google/android/youtube/core/player/f;)Ljava/util/concurrent/atomic/AtomicLong;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/f;
+
+    iget-object v2, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/f;
+
+    invoke-static {v2}, Lcom/google/android/youtube/core/player/f;->e(Lcom/google/android/youtube/core/player/f;)I
+
+    move-result v2
+
+    invoke-static {v1, v2}, Lcom/google/android/youtube/core/player/f;->a(Lcom/google/android/youtube/core/player/f;I)J
 
     move-result-wide v1
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/youtube/core/player/d;->b(Lcom/google/android/youtube/core/player/d;J)V
-    :try_end_54
-    .catchall {:try_start_8 .. :try_end_54} :catchall_55
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
 
-    goto :goto_6
+    .line 460
+    iget-object v0, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/f;
 
-    .line 676
-    :catchall_55
+    invoke-static {v0}, Lcom/google/android/youtube/core/player/f;->g(Lcom/google/android/youtube/core/player/f;)J
+
+    move-result-wide v0
+
+    iget-object v2, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/f;
+
+    invoke-static {v2}, Lcom/google/android/youtube/core/player/f;->f(Lcom/google/android/youtube/core/player/f;)Ljava/util/concurrent/atomic/AtomicLong;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
+
+    move-result-wide v2
+
+    cmp-long v0, v0, v2
+
+    if-gez v0, :cond_a0
+
+    .line 461
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "loaded offsets, will prepare at offset "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/f;
+
+    invoke-static {v1}, Lcom/google/android/youtube/core/player/f;->f(Lcom/google/android/youtube/core/player/f;)Ljava/util/concurrent/atomic/AtomicLong;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
+    :try_end_96
+    .catchall {:try_start_3d .. :try_end_96} :catchall_ae
+    .catch Ljava/io/IOException; {:try_start_3d .. :try_end_96} :catch_17
+
+    .line 471
+    :goto_96
+    iget-object v0, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/f;
+
+    invoke-static {v0}, Lcom/google/android/youtube/core/player/f;->i(Lcom/google/android/youtube/core/player/f;)Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v4}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    goto :goto_3c
+
+    .line 463
+    :cond_a0
+    :try_start_a0
+    invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
+
+    .line 464
+    iget-object v0, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/f;
+
+    invoke-static {v0}, Lcom/google/android/youtube/core/player/f;->h(Lcom/google/android/youtube/core/player/f;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    :try_end_ad
+    .catchall {:try_start_a0 .. :try_end_ad} :catchall_ae
+    .catch Ljava/io/IOException; {:try_start_a0 .. :try_end_ad} :catch_17
+
+    goto :goto_96
+
+    .line 471
+    :catchall_ae
     move-exception v0
 
-    monitor-exit p0
+    iget-object v1, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/f;
+
+    invoke-static {v1}, Lcom/google/android/youtube/core/player/f;->i(Lcom/google/android/youtube/core/player/f;)Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v4}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     throw v0
-
-    .line 683
-    :cond_58
-    const/4 v0, 0x0
-
-    goto :goto_3b
-
-    .line 689
-    :cond_5a
-    :try_start_5a
-    iget-object v0, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/d;
-
-    iget-object v1, p0, Lcom/google/android/youtube/core/player/k;->a:Lcom/google/android/youtube/core/player/d;
-
-    const/4 v2, 0x1
-
-    const/16 v3, -0xfa0
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/youtube/core/player/d;->onError(Landroid/media/MediaPlayer;II)Z
-    :try_end_64
-    .catchall {:try_start_5a .. :try_end_64} :catchall_55
-
-    goto :goto_6
 .end method

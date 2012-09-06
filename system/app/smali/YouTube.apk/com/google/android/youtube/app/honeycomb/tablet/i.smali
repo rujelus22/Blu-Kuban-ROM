@@ -1,126 +1,111 @@
-.class final Lcom/google/android/youtube/app/honeycomb/tablet/i;
+.class final synthetic Lcom/google/android/youtube/app/honeycomb/tablet/i;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lcom/google/android/youtube/core/async/g;
 
-
-# instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/tablet/g;
-
-.field private final b:Ljava/lang/String;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/app/honeycomb/tablet/g;Ljava/lang/String;)V
+.method static constructor <clinit>()V
     .registers 3
-    .parameter
-    .parameter
 
     .prologue
-    .line 391
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/i;->a:Lcom/google/android/youtube/app/honeycomb/tablet/g;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 392
-    iput-object p2, p0, Lcom/google/android/youtube/app/honeycomb/tablet/i;->b:Ljava/lang/String;
-
-    .line 393
-    return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
-    .registers 6
-    .parameter
-    .parameter
-
-    .prologue
-    .line 384
-    instance-of v0, p2, Lorg/apache/http/client/HttpResponseException;
-
-    if-eqz v0, :cond_23
-
-    move-object v0, p2
-
-    check-cast v0, Lorg/apache/http/client/HttpResponseException;
-
-    invoke-virtual {v0}, Lorg/apache/http/client/HttpResponseException;->getStatusCode()I
-
-    move-result v0
-
-    const/16 v1, 0x190
-
-    if-ne v0, v1, :cond_23
-
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/i;->a:Lcom/google/android/youtube/app/honeycomb/tablet/g;
-
-    const v1, 0x7f0a0126
-
-    invoke-static {v0, v1}, Lcom/google/android/youtube/app/honeycomb/tablet/g;->a(Lcom/google/android/youtube/app/honeycomb/tablet/g;I)Ljava/lang/String;
+    .line 295
+    invoke-static {}, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->values()[Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/i;->a:Lcom/google/android/youtube/app/honeycomb/tablet/g;
+    array-length v0, v0
 
-    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/tablet/g;->f(Lcom/google/android/youtube/app/honeycomb/tablet/g;)Landroid/app/Activity;
+    new-array v0, v0, [I
 
-    move-result-object v1
+    sput-object v0, Lcom/google/android/youtube/app/honeycomb/tablet/i;->a:[I
+
+    :try_start_9
+    sget-object v0, Lcom/google/android/youtube/app/honeycomb/tablet/i;->a:[I
+
+    sget-object v1, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->SUBSCRIBED:Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->ordinal()I
+
+    move-result v1
 
     const/4 v2, 0x1
 
-    invoke-static {v1, v0, v2}, Lcom/google/android/youtube/core/utils/Util;->b(Landroid/content/Context;Ljava/lang/CharSequence;I)V
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_3c
 
-    :goto_22
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/android/youtube/app/honeycomb/tablet/i;->a:[I
+
+    sget-object v1, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->NOT_SUBSCRIBED:Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_3a
+
+    :goto_1f
+    :try_start_1f
+    sget-object v0, Lcom/google/android/youtube/app/honeycomb/tablet/i;->a:[I
+
+    sget-object v1, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->ERROR:Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_38
+
+    :goto_2a
+    :try_start_2a
+    sget-object v0, Lcom/google/android/youtube/app/honeycomb/tablet/i;->a:[I
+
+    sget-object v1, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->WORKING:Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_35
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_36
+
+    :goto_35
     return-void
 
-    :cond_23
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/i;->a:Lcom/google/android/youtube/app/honeycomb/tablet/g;
+    :catch_36
+    move-exception v0
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/g;->g(Lcom/google/android/youtube/app/honeycomb/tablet/g;)Landroid/app/Activity;
+    goto :goto_35
 
-    move-result-object v0
+    :catch_38
+    move-exception v0
 
-    const/16 v1, 0x3f9
+    goto :goto_2a
 
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->dismissDialog(I)V
+    :catch_3a
+    move-exception v0
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/i;->a:Lcom/google/android/youtube/app/honeycomb/tablet/g;
+    goto :goto_1f
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/g;->h(Lcom/google/android/youtube/app/honeycomb/tablet/g;)Lcom/google/android/youtube/core/e;
+    :catch_3c
+    move-exception v0
 
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Lcom/google/android/youtube/core/e;->b(Ljava/lang/Throwable;)V
-
-    goto :goto_22
-.end method
-
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 6
-    .parameter
-    .parameter
-
-    .prologue
-    .line 384
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/i;->a:Lcom/google/android/youtube/app/honeycomb/tablet/g;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/g;->d(Lcom/google/android/youtube/app/honeycomb/tablet/g;)Landroid/app/Activity;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/i;->b:Ljava/lang/String;
-
-    const/4 v2, 0x1
-
-    invoke-static {v0, v1, v2}, Lcom/google/android/youtube/core/utils/Util;->b(Landroid/content/Context;Ljava/lang/CharSequence;I)V
-
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/i;->a:Lcom/google/android/youtube/app/honeycomb/tablet/g;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/g;->e(Lcom/google/android/youtube/app/honeycomb/tablet/g;)V
-
-    return-void
+    goto :goto_14
 .end method

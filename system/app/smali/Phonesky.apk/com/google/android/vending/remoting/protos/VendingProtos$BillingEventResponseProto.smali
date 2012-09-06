@@ -23,15 +23,15 @@
     .registers 2
 
     .prologue
-    .line 18422
+    .line 18935
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 18437
+    .line 18951
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventResponseProto;->cachedSize:I
 
-    .line 18422
+    .line 18935
     return-void
 .end method
 
@@ -41,15 +41,15 @@
     .registers 2
 
     .prologue
-    .line 18439
+    .line 18954
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventResponseProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 18441
+    .line 18956
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventResponseProto;->getSerializedSize()I
 
-    .line 18443
+    .line 18958
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventResponseProto;->cachedSize:I
 
@@ -60,14 +60,14 @@
     .registers 2
 
     .prologue
-    .line 18447
+    .line 18963
     const/4 v0, 0x0
 
-    .line 18448
+    .line 18964
     .local v0, size:I
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventResponseProto;->cachedSize:I
 
-    .line 18449
+    .line 18965
     return v0
 .end method
 
@@ -81,28 +81,28 @@
     .end annotation
 
     .prologue
-    .line 18456
+    .line 18973
     :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 18457
+    .line 18974
     .local v0, tag:I
     packed-switch v0, :pswitch_data_e
 
-    .line 18461
+    .line 18978
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventResponseProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 18462
+    .line 18979
     :pswitch_d
     return-object p0
 
-    .line 18457
+    .line 18974
     :pswitch_data_e
     .packed-switch 0x0
         :pswitch_d
@@ -119,7 +119,7 @@
     .end annotation
 
     .prologue
-    .line 18420
+    .line 18933
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventResponseProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventResponseProto;
 
     move-result-object v0
@@ -137,6 +137,6 @@
     .end annotation
 
     .prologue
-    .line 18435
+    .line 18949
     return-void
 .end method

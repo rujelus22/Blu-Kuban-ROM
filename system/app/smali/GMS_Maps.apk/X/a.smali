@@ -1,141 +1,51 @@
 .class public LX/a;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements LX/c;
+.implements LX/d;
 
 
 # instance fields
-.field private a:I
-
-.field private b:I
+.field private final a:LX/d;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(LX/d;)V
     .registers 2
+    .parameter
 
-    const/4 v0, 0x0
-
+    .prologue
+    .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput v0, p0, LX/a;->a:I
+    .line 20
+    iput-object p1, p0, LX/a;->a:LX/d;
 
-    iput v0, p0, LX/a;->b:I
-
-    return-void
-.end method
-
-.method private declared-synchronized a()V
-    .registers 2
-
-    monitor-enter p0
-
-    :try_start_1
-    iget v0, p0, LX/a;->a:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, LX/a;->a:I
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_9
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_9
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method static synthetic a(LX/a;)V
-    .registers 1
-
-    invoke-direct {p0}, LX/a;->a()V
-
-    return-void
-.end method
-
-.method private declared-synchronized b()V
-    .registers 2
-
-    monitor-enter p0
-
-    :try_start_1
-    iget v0, p0, LX/a;->b:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, LX/a;->b:I
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_9
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_9
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method static synthetic b(LX/a;)V
-    .registers 1
-
-    invoke-direct {p0}, LX/a;->b()V
-
-    return-void
-.end method
-
-.method private declared-synchronized c()V
-    .registers 2
-
-    monitor-enter p0
-
-    :try_start_1
-    iget v0, p0, LX/a;->b:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, LX/a;->b:I
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_9
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_9
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method static synthetic c(LX/a;)V
-    .registers 1
-
-    invoke-direct {p0}, LX/a;->c()V
-
+    .line 21
     return-void
 .end method
 
 
 # virtual methods
 .method public a(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .registers 4
+    .registers 5
+    .parameter
+    .parameter
 
-    new-instance v0, LX/b;
+    .prologue
+    .line 25
+    iget-object v0, p0, LX/a;->a:LX/d;
 
-    invoke-direct {v0, p0, p1, p2}, LX/b;-><init>(LX/a;Ljava/lang/String;Ljava/lang/Runnable;)V
+    invoke-interface {v0, p1, p2}, LX/d;->a(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Thread;
 
+    move-result-object v0
+
+    .line 26
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Ljava/lang/Thread;->setPriority(I)V
+
+    .line 27
     return-object v0
 .end method

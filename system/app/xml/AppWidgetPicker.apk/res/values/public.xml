@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="drawable" name="icon" id="0x7f020000" />
+    <public type="layout" name="appwidgetpicker" id="0x7f030000" />
+    <public type="string" name="app_name" id="0x7f040000" />
+    <public type="string" name="widget_picker_title" id="0x7f040001" />
+    <public type="string" name="widget_count" id="0x7f040002" />
+    <public type="id" name="appwidgetpicker_imageview" id="0x7f050000" />
+    <public type="id" name="appwidgetpicker_textview" id="0x7f050001" />
+    <public type="id" name="appwidgetpicker_count" id="0x7f050002" />
+</resources>

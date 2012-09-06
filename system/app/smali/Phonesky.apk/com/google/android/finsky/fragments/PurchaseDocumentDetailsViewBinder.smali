@@ -12,9 +12,13 @@
 
 .field private mDefaultTab:I
 
+.field private final mHandler:Landroid/os/Handler;
+
 .field private mLayout:Landroid/view/View;
 
 .field private mPackageManager:Landroid/content/pm/PackageManager;
+
+.field private final mRequestLayoutRunnable:Ljava/lang/Runnable;
 
 .field private mSavedState:Landroid/os/Bundle;
 
@@ -23,51 +27,69 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .registers 3
 
     .prologue
-    .line 39
+    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
+    .line 62
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mDefaultTab:I
 
+    .line 68
+    new-instance v0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$1;
+
+    invoke-direct {v0, p0}, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$1;-><init>(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;)V
+
+    iput-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mRequestLayoutRunnable:Ljava/lang/Runnable;
+
+    .line 78
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    iput-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mHandler:Landroid/os/Handler;
+
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;)Lcom/google/android/finsky/layout/CustomRadioGroup;
+.method static synthetic access$000(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;)Landroid/view/View;
     .registers 2
     .parameter "x0"
 
     .prologue
-    .line 39
+    .line 40
+    iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mLayout:Landroid/view/View;
+
+    return-object v0
+.end method
+
+.method static synthetic access$100(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;)Lcom/google/android/finsky/layout/CustomRadioGroup;
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 40
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mButtonStrip:Lcom/google/android/finsky/layout/CustomRadioGroup;
 
     return-object v0
 .end method
 
-.method static synthetic access$100(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;)V
+.method static synthetic access$200(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;)V
     .registers 1
     .parameter "x0"
 
     .prologue
-    .line 39
+    .line 40
     invoke-direct {p0}, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->requestContentLayout()V
 
     return-void
-.end method
-
-.method static synthetic access$200(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;)Landroid/view/View;
-    .registers 2
-    .parameter "x0"
-
-    .prologue
-    .line 39
-    iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mLayout:Landroid/view/View;
-
-    return-object v0
 .end method
 
 .method private initTab(Landroid/view/LayoutInflater;ILjava/lang/String;Landroid/view/View;I)V
@@ -79,8 +101,8 @@
     .parameter "channelId"
 
     .prologue
-    .line 205
-    const v2, 0x7f04002b
+    .line 224
+    const v2, 0x7f040031
 
     iget-object v3, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mButtonStrip:Lcom/google/android/finsky/layout/CustomRadioGroup;
 
@@ -92,18 +114,18 @@
 
     check-cast v0, Landroid/widget/RadioButton;
 
-    .line 207
+    .line 226
     .local v0, radioButton:Landroid/widget/RadioButton;
     invoke-virtual {v0, p2}, Landroid/widget/RadioButton;->setId(I)V
 
-    .line 208
+    .line 227
     invoke-virtual {p3}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Landroid/widget/RadioButton;->setText(Ljava/lang/CharSequence;)V
 
-    .line 209
+    .line 228
     iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mContext:Landroid/content/Context;
 
     invoke-static {v2, p5}, Lcom/google/android/finsky/utils/CorpusResourceUtils;->getBackendForegroundColor(Landroid/content/Context;I)I
@@ -112,12 +134,12 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/RadioButton;->setTextColor(I)V
 
-    .line 211
+    .line 230
     iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mButtonStrip:Lcom/google/android/finsky/layout/CustomRadioGroup;
 
     invoke-virtual {v2, v0}, Lcom/google/android/finsky/layout/CustomRadioGroup;->addView(Landroid/view/View;)V
 
-    .line 214
+    .line 233
     iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -134,27 +156,27 @@
 
     const/4 v1, 0x4
 
-    .line 216
+    .line 235
     .local v1, visibility:I
     :goto_34
     invoke-virtual {p4, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 217
+    .line 236
     iget-object v2, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mTabContent:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, p4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 219
-    new-instance v2, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$1;
+    .line 238
+    new-instance v2, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$2;
 
-    invoke-direct {v2, p0, p4, v1, v0}, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$1;-><init>(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;Landroid/view/View;ILandroid/widget/RadioButton;)V
+    invoke-direct {v2, p0, p4, v1, v0}, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$2;-><init>(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;Landroid/view/View;ILandroid/widget/RadioButton;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/RadioButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 230
+    .line 249
     return-void
 
-    .line 214
+    .line 233
     .end local v1           #visibility:I
     :cond_45
     const/16 v1, 0x8
@@ -166,22 +188,14 @@
     .registers 3
 
     .prologue
-    .line 248
-    new-instance v0, Landroid/os/Handler;
+    .line 268
+    iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mHandler:Landroid/os/Handler;
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    new-instance v1, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$2;
-
-    invoke-direct {v1, p0}, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder$2;-><init>(Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;)V
+    iget-object v1, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mRequestLayoutRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 257
+    .line 269
     return-void
 .end method
 
@@ -210,7 +224,7 @@
     .end annotation
 
     .prologue
-    .line 90
+    .line 103
     .local p5, htmlFootnotes:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     move-object/from16 v0, p0
 
@@ -220,13 +234,13 @@
 
     move-result-object v3
 
-    .line 91
+    .line 104
     .local v3, layoutInflater:Landroid/view/LayoutInflater;
     invoke-virtual/range {p3 .. p3}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
 
     move-result v7
 
-    .line 93
+    .line 106
     .local v7, channelId:I
     move-object/from16 v0, p2
 
@@ -234,8 +248,8 @@
 
     iput-object v0, v1, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mLayout:Landroid/view/View;
 
-    .line 94
-    const v2, 0x7f080161
+    .line 107
+    const v2, 0x7f0801b6
 
     move-object/from16 v0, p2
 
@@ -249,8 +263,8 @@
 
     iput-object v2, v0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mButtonStrip:Lcom/google/android/finsky/layout/CustomRadioGroup;
 
-    .line 95
-    const v2, 0x7f080162
+    .line 108
+    const v2, 0x7f0801b7
 
     move-object/from16 v0, p2
 
@@ -264,8 +278,8 @@
 
     iput-object v2, v0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mTabContent:Landroid/widget/FrameLayout;
 
-    .line 99
-    const v2, 0x7f080160
+    .line 112
+    const v2, 0x7f0801b5
 
     move-object/from16 v0, p2
 
@@ -275,7 +289,7 @@
 
     check-cast v34, Landroid/widget/HorizontalScrollView;
 
-    .line 101
+    .line 114
     .local v34, tabScroller:Landroid/widget/HorizontalScrollView;
     const/4 v2, 0x0
 
@@ -283,14 +297,14 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/HorizontalScrollView;->setHorizontalScrollBarEnabled(Z)V
 
-    .line 103
+    .line 116
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mDefaultTab:I
 
     move/from16 v20, v0
 
-    .line 104
+    .line 117
     .local v20, defaultTab:I
     move-object/from16 v0, p0
 
@@ -302,7 +316,7 @@
 
     if-lez v2, :cond_59
 
-    .line 105
+    .line 118
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mButtonStrip:Lcom/google/android/finsky/layout/CustomRadioGroup;
@@ -311,7 +325,7 @@
 
     move-result v20
 
-    .line 108
+    .line 121
     :cond_59
     move-object/from16 v0, p0
 
@@ -319,14 +333,14 @@
 
     invoke-virtual {v2}, Lcom/google/android/finsky/layout/CustomRadioGroup;->clearCheck()V
 
-    .line 109
+    .line 122
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mButtonStrip:Lcom/google/android/finsky/layout/CustomRadioGroup;
 
     invoke-virtual {v2}, Lcom/google/android/finsky/layout/CustomRadioGroup;->removeAllViews()V
 
-    .line 110
+    .line 123
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mButtonStrip:Lcom/google/android/finsky/layout/CustomRadioGroup;
@@ -337,19 +351,19 @@
 
     invoke-virtual {v2, v4}, Lcom/google/android/finsky/layout/CustomRadioGroup;->setBackendId(I)V
 
-    .line 111
+    .line 124
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mTabContent:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->removeAllViews()V
 
-    .line 113
+    .line 126
     invoke-virtual/range {p3 .. p3}, Lcom/google/android/finsky/api/model/Document;->getAppPermissionsList()Ljava/util/List;
 
     move-result-object v28
 
-    .line 114
+    .line 127
     .local v28, permissions:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     const/4 v2, 0x3
 
@@ -357,14 +371,14 @@
 
     if-eqz p6, :cond_10d
 
-    .line 115
+    .line 128
     invoke-virtual/range {p3 .. p3}, Lcom/google/android/finsky/api/model/Document;->getDescription()Ljava/lang/CharSequence;
 
     move-result-object v21
 
-    .line 116
+    .line 129
     .local v21, description:Ljava/lang/CharSequence;
-    const v2, 0x7f0400a7
+    const v2, 0x7f0400d9
 
     const/4 v4, 0x0
 
@@ -374,20 +388,20 @@
 
     check-cast v6, Landroid/widget/TextView;
 
-    .line 118
+    .line 131
     .local v6, descriptionView:Landroid/widget/TextView;
     move-object/from16 v0, v21
 
     invoke-virtual {v6, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 119
+    .line 132
     const/4 v4, 0x2
 
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v2
 
-    const v5, 0x7f070153
+    const v5, 0x7f07018b
 
     invoke-virtual {v2, v5}, Lcom/google/android/finsky/FinskyApp;->getString(I)Ljava/lang/String;
 
@@ -397,27 +411,27 @@
 
     invoke-direct/range {v2 .. v7}, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->initTab(Landroid/view/LayoutInflater;ILjava/lang/String;Landroid/view/View;I)V
 
-    .line 122
+    .line 135
     if-gez v20, :cond_aa
 
-    .line 123
+    .line 136
     const/16 v20, 0x2
 
-    .line 175
+    .line 194
     .end local v6           #descriptionView:Landroid/widget/TextView;
     .end local v21           #description:Ljava/lang/CharSequence;
     :cond_aa
     :goto_aa
-    if-eqz p5, :cond_233
+    if-eqz p5, :cond_24a
 
     invoke-interface/range {p5 .. p5}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-lez v2, :cond_233
+    if-lez v2, :cond_24a
 
-    .line 176
-    const v2, 0x7f0400a5
+    .line 195
+    const v2, 0x7f0400d7
 
     const/4 v4, 0x0
 
@@ -427,7 +441,7 @@
 
     check-cast v17, Landroid/view/ViewGroup;
 
-    .line 178
+    .line 197
     .local v17, footnotesContainer:Landroid/view/ViewGroup;
     invoke-interface/range {p5 .. p5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -439,7 +453,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_21b
+    if-eqz v2, :cond_232
 
     invoke-interface/range {v25 .. v25}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -447,9 +461,9 @@
 
     check-cast v22, Ljava/lang/String;
 
-    .line 179
+    .line 198
     .local v22, footnote:Ljava/lang/String;
-    const v2, 0x7f040076
+    const v2, 0x7f040081
 
     const/4 v4, 0x0
 
@@ -461,9 +475,9 @@
 
     check-cast v23, Landroid/view/ViewGroup;
 
-    .line 181
+    .line 200
     .local v23, footnoteView:Landroid/view/ViewGroup;
-    const v2, 0x7f0800a2
+    const v2, 0x7f0800a8
 
     move-object/from16 v0, v23
 
@@ -473,7 +487,7 @@
 
     check-cast v24, Landroid/widget/TextView;
 
-    .line 182
+    .line 201
     .local v24, header:Landroid/widget/TextView;
     invoke-static/range {v22 .. v22}, Landroid/text/Html;->fromHtml(Ljava/lang/String;)Landroid/text/Spanned;
 
@@ -483,7 +497,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 183
+    .line 202
     invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
 
     move-result-object v2
@@ -492,8 +506,8 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    .line 184
-    const v2, 0x7f08000c
+    .line 203
+    const v2, 0x7f08000f
 
     move-object/from16 v0, v23
 
@@ -501,7 +515,7 @@
 
     move-result-object v19
 
-    .line 185
+    .line 204
     .local v19, content:Landroid/view/View;
     const/16 v2, 0x8
 
@@ -509,7 +523,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 186
+    .line 205
     move-object/from16 v0, v17
 
     move-object/from16 v1, v23
@@ -518,7 +532,7 @@
 
     goto :goto_c0
 
-    .line 125
+    .line 138
     .end local v17           #footnotesContainer:Landroid/view/ViewGroup;
     .end local v19           #content:Landroid/view/View;
     .end local v22           #footnote:Ljava/lang/String;
@@ -528,12 +542,12 @@
     :cond_10d
     if-eqz v28, :cond_17a
 
-    .line 128
+    .line 141
     invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v29
 
-    .line 129
+    .line 142
     .local v29, pis:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/PermissionInfo;>;"
     invoke-interface/range {v28 .. v28}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -553,7 +567,7 @@
 
     check-cast v26, Ljava/lang/String;
 
-    .line 131
+    .line 144
     .local v26, permission:Ljava/lang/String;
     :try_start_123
     move-object/from16 v0, p0
@@ -568,7 +582,7 @@
 
     move-result-object v27
 
-    .line 133
+    .line 146
     .local v27, permissionInfo:Landroid/content/pm/PermissionInfo;
     move-object/from16 v0, v29
 
@@ -580,17 +594,17 @@
 
     goto :goto_117
 
-    .line 134
+    .line 147
     .end local v27           #permissionInfo:Landroid/content/pm/PermissionInfo;
     :catch_136
     move-exception v2
 
     goto :goto_117
 
-    .line 138
+    .line 151
     .end local v26           #permission:Ljava/lang/String;
     :cond_138
-    const v2, 0x7f040099
+    const v2, 0x7f0400c8
 
     const/4 v4, 0x0
 
@@ -604,7 +618,7 @@
 
     iput-object v2, v0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mAppSecurityPermissions:Lcom/google/android/finsky/layout/AppSecurityPermissions;
 
-    .line 140
+    .line 153
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mAppSecurityPermissions:Lcom/google/android/finsky/layout/AppSecurityPermissions;
@@ -627,14 +641,14 @@
 
     invoke-virtual {v2, v0, v4, v1, v5}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->bindInfo(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;Ljava/util/List;Landroid/os/Bundle;)V
 
-    .line 143
+    .line 156
     const/4 v10, 0x0
 
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v2
 
-    const v4, 0x7f070151
+    const v4, 0x7f070189
 
     invoke-virtual {v2, v4}, Lcom/google/android/finsky/FinskyApp;->getString(I)Ljava/lang/String;
 
@@ -652,15 +666,15 @@
 
     invoke-direct/range {v8 .. v13}, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->initTab(Landroid/view/LayoutInflater;ILjava/lang/String;Landroid/view/View;I)V
 
-    .line 146
+    .line 159
     if-gez v20, :cond_aa
 
-    .line 147
+    .line 160
     const/16 v20, 0x0
 
     goto/16 :goto_aa
 
-    .line 149
+    .line 162
     .end local v25           #i$:Ljava/util/Iterator;
     .end local v29           #pis:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/PermissionInfo;>;"
     :cond_17a
@@ -668,8 +682,8 @@
 
     if-ne v7, v2, :cond_aa
 
-    .line 150
-    const v2, 0x7f0400a5
+    .line 163
+    const v2, 0x7f0400d7
 
     const/4 v4, 0x0
 
@@ -679,8 +693,34 @@
 
     check-cast v12, Landroid/view/ViewGroup;
 
-    .line 152
+    .line 165
     .local v12, rentalTermsContainer:Landroid/view/ViewGroup;
+    invoke-virtual/range {p3 .. p3}, Lcom/google/android/finsky/api/model/Document;->getDocumentType()I
+
+    move-result v2
+
+    const/16 v4, 0x13
+
+    if-eq v2, v4, :cond_aa
+
+    invoke-virtual/range {p3 .. p3}, Lcom/google/android/finsky/api/model/Document;->getDocumentType()I
+
+    move-result v2
+
+    const/16 v4, 0x14
+
+    if-eq v2, v4, :cond_aa
+
+    .line 168
+    invoke-virtual/range {p3 .. p3}, Lcom/google/android/finsky/api/model/Document;->getDocumentType()I
+
+    move-result v2
+
+    const/4 v4, 0x6
+
+    if-ne v2, v4, :cond_aa
+
+    .line 169
     invoke-virtual/range {p3 .. p3}, Lcom/google/android/finsky/api/model/Document;->getMovieRentalTerms()Ljava/util/List;
 
     move-result-object v2
@@ -690,6 +730,7 @@
     move-result-object v25
 
     .restart local v25       #i$:Ljava/util/Iterator;
+    :cond_1a6
     invoke-interface/range {v25 .. v25}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
@@ -702,7 +743,7 @@
 
     check-cast v35, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;
 
-    .line 153
+    .line 170
     .local v35, term:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;
     invoke-virtual/range {v35 .. v35}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->getOfferType()I
 
@@ -710,14 +751,14 @@
 
     move/from16 v0, p4
 
-    if-ne v2, v0, :cond_aa
+    if-ne v2, v0, :cond_1a6
 
-    .line 154
+    .line 171
     invoke-virtual/range {v35 .. v35}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->getRentalHeader()Ljava/lang/String;
 
     move-result-object v11
 
-    .line 155
+    .line 172
     .local v11, tabTitle:Ljava/lang/String;
     invoke-virtual/range {v35 .. v35}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->getTermList()Ljava/util/List;
 
@@ -727,12 +768,12 @@
 
     move-result-object v25
 
-    :goto_1af
+    :goto_1c6
     invoke-interface/range {v25 .. v25}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_20d
+    if-eqz v2, :cond_224
 
     invoke-interface/range {v25 .. v25}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -740,9 +781,9 @@
 
     check-cast v31, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm$Term;
 
-    .line 156
+    .line 173
     .local v31, subterm:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm$Term;
-    const v2, 0x7f040076
+    const v2, 0x7f040081
 
     const/4 v4, 0x0
 
@@ -752,9 +793,9 @@
 
     check-cast v30, Landroid/view/ViewGroup;
 
-    .line 158
+    .line 175
     .local v30, rentalTerm:Landroid/view/ViewGroup;
-    const v2, 0x7f0800a2
+    const v2, 0x7f0800a8
 
     move-object/from16 v0, v30
 
@@ -764,7 +805,7 @@
 
     check-cast v33, Landroid/widget/TextView;
 
-    .line 159
+    .line 177
     .local v33, subtermHeader:Landroid/widget/TextView;
     invoke-virtual/range {v31 .. v31}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm$Term;->getHeader()Ljava/lang/String;
 
@@ -778,7 +819,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 160
+    .line 178
     invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
 
     move-result-object v2
@@ -787,8 +828,8 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    .line 161
-    const v2, 0x7f08000c
+    .line 179
+    const v2, 0x7f08000f
 
     move-object/from16 v0, v30
 
@@ -798,7 +839,7 @@
 
     check-cast v32, Landroid/widget/TextView;
 
-    .line 162
+    .line 180
     .local v32, subtermBody:Landroid/widget/TextView;
     invoke-virtual/range {v31 .. v31}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm$Term;->getBody()Ljava/lang/String;
 
@@ -812,7 +853,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 163
+    .line 181
     invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
 
     move-result-object v2
@@ -821,19 +862,19 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    .line 164
+    .line 182
     move-object/from16 v0, v30
 
     invoke-virtual {v12, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    goto :goto_1af
+    goto :goto_1c6
 
-    .line 166
+    .line 184
     .end local v30           #rentalTerm:Landroid/view/ViewGroup;
     .end local v31           #subterm:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm$Term;
     .end local v32           #subtermBody:Landroid/widget/TextView;
     .end local v33           #subtermHeader:Landroid/widget/TextView;
-    :cond_20d
+    :cond_224
     const/4 v10, 0x3
 
     move-object/from16 v8, p0
@@ -844,27 +885,27 @@
 
     invoke-direct/range {v8 .. v13}, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->initTab(Landroid/view/LayoutInflater;ILjava/lang/String;Landroid/view/View;I)V
 
-    .line 168
+    .line 186
     if-gez v20, :cond_aa
 
-    .line 169
+    .line 187
     const/16 v20, 0x3
 
     goto/16 :goto_aa
 
-    .line 188
+    .line 207
     .end local v11           #tabTitle:Ljava/lang/String;
     .end local v12           #rentalTermsContainer:Landroid/view/ViewGroup;
     .end local v35           #term:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;
     .restart local v17       #footnotesContainer:Landroid/view/ViewGroup;
-    :cond_21b
+    :cond_232
     const/4 v15, 0x1
 
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object v2
 
-    const v4, 0x7f070152
+    const v4, 0x7f07018a
 
     invoke-virtual {v2, v4}, Lcom/google/android/finsky/FinskyApp;->getString(I)Ljava/lang/String;
 
@@ -878,16 +919,16 @@
 
     invoke-direct/range {v13 .. v18}, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->initTab(Landroid/view/LayoutInflater;ILjava/lang/String;Landroid/view/View;I)V
 
-    .line 191
-    if-gez v20, :cond_233
+    .line 210
+    if-gez v20, :cond_24a
 
-    .line 192
+    .line 211
     const/16 v20, 0x1
 
-    .line 195
+    .line 214
     .end local v17           #footnotesContainer:Landroid/view/ViewGroup;
     .end local v25           #i$:Ljava/util/Iterator;
-    :cond_233
+    :cond_24a
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mButtonStrip:Lcom/google/android/finsky/layout/CustomRadioGroup;
@@ -896,9 +937,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_247
+    if-nez v2, :cond_25e
 
-    .line 196
+    .line 215
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mButtonStrip:Lcom/google/android/finsky/layout/CustomRadioGroup;
@@ -907,12 +948,12 @@
 
     invoke-virtual {v2, v4}, Lcom/google/android/finsky/layout/CustomRadioGroup;->setVisibility(I)V
 
-    .line 201
-    :goto_246
+    .line 220
+    :goto_25d
     return-void
 
-    .line 198
-    :cond_247
+    .line 217
+    :cond_25e
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mButtonStrip:Lcom/google/android/finsky/layout/CustomRadioGroup;
@@ -921,7 +962,7 @@
 
     invoke-virtual {v2, v4}, Lcom/google/android/finsky/layout/CustomRadioGroup;->setVisibility(I)V
 
-    .line 199
+    .line 218
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mButtonStrip:Lcom/google/android/finsky/layout/CustomRadioGroup;
@@ -930,7 +971,7 @@
 
     invoke-virtual {v2, v0}, Lcom/google/android/finsky/layout/CustomRadioGroup;->check(I)V
 
-    goto :goto_246
+    goto :goto_25d
 .end method
 
 .method public init(Landroid/content/Context;Landroid/content/pm/PackageManager;Landroid/os/Bundle;)V
@@ -940,16 +981,16 @@
     .parameter "savedState"
 
     .prologue
-    .line 68
+    .line 81
     iput-object p1, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mContext:Landroid/content/Context;
 
-    .line 69
+    .line 82
     iput-object p2, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mPackageManager:Landroid/content/pm/PackageManager;
 
-    .line 70
+    .line 83
     iput-object p3, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mSavedState:Landroid/os/Bundle;
 
-    .line 71
+    .line 84
     if-eqz p3, :cond_19
 
     const-string v0, "default_tab"
@@ -960,7 +1001,7 @@
 
     if-eqz v0, :cond_19
 
-    .line 72
+    .line 85
     const-string v0, "default_tab"
 
     const/4 v1, -0x1
@@ -971,33 +1012,40 @@
 
     iput v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mDefaultTab:I
 
-    .line 74
+    .line 87
     :cond_19
     return-void
 .end method
 
 .method public onDestroyView()V
-    .registers 2
+    .registers 3
 
     .prologue
     const/4 v0, 0x0
 
-    .line 233
+    .line 252
     iput-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mLayout:Landroid/view/View;
 
-    .line 234
+    .line 253
     iput-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mContext:Landroid/content/Context;
 
-    .line 235
+    .line 254
     iput-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mAppSecurityPermissions:Lcom/google/android/finsky/layout/AppSecurityPermissions;
 
-    .line 236
+    .line 255
     iput-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mButtonStrip:Lcom/google/android/finsky/layout/CustomRadioGroup;
 
-    .line 237
+    .line 256
     iput-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mTabContent:Landroid/widget/FrameLayout;
 
-    .line 238
+    .line 257
+    iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mHandler:Landroid/os/Handler;
+
+    iget-object v1, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mRequestLayoutRunnable:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    .line 258
     return-void
 .end method
 
@@ -1006,12 +1054,12 @@
     .parameter "outState"
 
     .prologue
-    .line 77
+    .line 90
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mButtonStrip:Lcom/google/android/finsky/layout/CustomRadioGroup;
 
     if-eqz v0, :cond_f
 
-    .line 78
+    .line 91
     const-string v0, "default_tab"
 
     iget-object v1, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mButtonStrip:Lcom/google/android/finsky/layout/CustomRadioGroup;
@@ -1022,18 +1070,18 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 80
+    .line 93
     :cond_f
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mAppSecurityPermissions:Lcom/google/android/finsky/layout/AppSecurityPermissions;
 
     if-eqz v0, :cond_18
 
-    .line 81
+    .line 94
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseDocumentDetailsViewBinder;->mAppSecurityPermissions:Lcom/google/android/finsky/layout/AppSecurityPermissions;
 
     invoke-virtual {v0, p1}, Lcom/google/android/finsky/layout/AppSecurityPermissions;->saveInstanceState(Landroid/os/Bundle;)V
 
-    .line 83
+    .line 96
     :cond_18
     return-void
 .end method

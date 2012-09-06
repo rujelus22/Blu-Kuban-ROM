@@ -29,6 +29,12 @@
         <item>רק במצב שקט</item>
         <item>אף פעם</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>כבוי</item>
+        <item>נמוך</item>
+        <item>בינוני</item>
+        <item>וירטואלי</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>ללא</item>
         <item>ייצוב תמונה: נמוך</item>

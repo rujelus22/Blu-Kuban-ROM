@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/collect/fj;
+.implements Lcom/google/common/collect/iq;
 
 
 # static fields
@@ -11,22 +11,28 @@
 
 
 # instance fields
-.field private transient elementSet:Ljava/util/Set;
+.field transient elementSet:Ljava/util/Set;
 
-.field private transient entrySet:Ljava/util/Set;
+.field transient entrySet:Ljava/util/Set;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/common/collect/fj;Ljava/lang/Object;)V
-    .registers 3
+.method constructor <init>(Lcom/google/common/collect/iq;Ljava/lang/Object;)V
+    .registers 4
     .parameter
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 511
-    invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;-><init>(Ljava/util/Collection;Ljava/lang/Object;)V
+    .line 420
+    const/4 v0, 0x0
 
-    .line 512
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;-><init>(Ljava/util/Collection;Ljava/lang/Object;Lcom/google/common/collect/lv;)V
+
+    .line 421
     return-void
 .end method
 
@@ -38,18 +44,18 @@
     .parameter
 
     .prologue
-    .line 525
+    .line 436
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 526
+    .line 437
     :try_start_3
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/fj;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/iq;
 
     move-result-object v0
 
-    invoke-interface {v0, p1, p2}, Lcom/google/common/collect/fj;->add(Ljava/lang/Object;I)I
+    invoke-interface {v0, p1, p2}, Lcom/google/common/collect/iq;->add(Ljava/lang/Object;I)I
 
     move-result v0
 
@@ -59,7 +65,7 @@
 
     return v0
 
-    .line 527
+    .line 438
     :catchall_d
     move-exception v0
 
@@ -73,18 +79,18 @@
     .parameter
 
     .prologue
-    .line 519
+    .line 429
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 520
+    .line 430
     :try_start_3
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/fj;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/iq;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lcom/google/common/collect/fj;->count(Ljava/lang/Object;)I
+    invoke-interface {v0, p1}, Lcom/google/common/collect/iq;->count(Ljava/lang/Object;)I
 
     move-result v0
 
@@ -94,7 +100,7 @@
 
     return v0
 
-    .line 521
+    .line 431
     :catchall_d
     move-exception v0
 
@@ -103,38 +109,38 @@
     throw v0
 .end method
 
-.method protected delegate()Lcom/google/common/collect/fj;
+.method delegate()Lcom/google/common/collect/iq;
     .registers 2
 
     .prologue
-    .line 515
+    .line 424
     invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/common/collect/fj;
+    check-cast v0, Lcom/google/common/collect/iq;
 
     return-object v0
 .end method
 
-.method protected bridge synthetic delegate()Ljava/lang/Object;
+.method bridge synthetic delegate()Ljava/lang/Object;
     .registers 2
 
     .prologue
-    .line 505
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/fj;
+    .line 414
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/iq;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected bridge synthetic delegate()Ljava/util/Collection;
+.method bridge synthetic delegate()Ljava/util/Collection;
     .registers 2
 
     .prologue
-    .line 505
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/fj;
+    .line 414
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/iq;
 
     move-result-object v0
 
@@ -145,23 +151,23 @@
     .registers 4
 
     .prologue
-    .line 549
+    .line 464
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 550
+    .line 465
     :try_start_3
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->elementSet:Ljava/util/Set;
 
     if-nez v0, :cond_17
 
-    .line 551
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/fj;
+    .line 466
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/iq;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/common/collect/fj;->elementSet()Ljava/util/Set;
+    invoke-interface {v0}, Lcom/google/common/collect/iq;->elementSet()Ljava/util/Set;
 
     move-result-object v0
 
@@ -173,7 +179,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->elementSet:Ljava/util/Set;
 
-    .line 553
+    .line 468
     :cond_17
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->elementSet:Ljava/util/Set;
 
@@ -183,7 +189,7 @@
 
     return-object v0
 
-    .line 554
+    .line 469
     :catchall_1b
     move-exception v0
 
@@ -196,23 +202,23 @@
     .registers 4
 
     .prologue
-    .line 558
+    .line 474
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 559
+    .line 475
     :try_start_3
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->entrySet:Ljava/util/Set;
 
     if-nez v0, :cond_17
 
-    .line 560
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/fj;
+    .line 476
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/iq;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/common/collect/fj;->entrySet()Ljava/util/Set;
+    invoke-interface {v0}, Lcom/google/common/collect/iq;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
@@ -224,7 +230,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->entrySet:Ljava/util/Set;
 
-    .line 562
+    .line 478
     :cond_17
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->entrySet:Ljava/util/Set;
 
@@ -234,7 +240,7 @@
 
     return-object v0
 
-    .line 563
+    .line 479
     :catchall_1b
     move-exception v0
 
@@ -248,25 +254,25 @@
     .parameter
 
     .prologue
-    .line 567
+    .line 483
     if-ne p1, p0, :cond_4
 
-    .line 568
+    .line 484
     const/4 v0, 0x1
 
-    .line 571
+    .line 487
     :goto_3
     return v0
 
-    .line 570
+    .line 486
     :cond_4
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 571
+    .line 487
     :try_start_7
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/fj;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/iq;
 
     move-result-object v0
 
@@ -280,7 +286,7 @@
 
     goto :goto_3
 
-    .line 572
+    .line 488
     :catchall_11
     move-exception v0
 
@@ -293,14 +299,14 @@
     .registers 3
 
     .prologue
-    .line 576
+    .line 492
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 577
+    .line 493
     :try_start_3
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/fj;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/iq;
 
     move-result-object v0
 
@@ -314,7 +320,7 @@
 
     return v0
 
-    .line 578
+    .line 494
     :catchall_d
     move-exception v0
 
@@ -329,18 +335,18 @@
     .parameter
 
     .prologue
-    .line 531
+    .line 443
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 532
+    .line 444
     :try_start_3
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/fj;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/iq;
 
     move-result-object v0
 
-    invoke-interface {v0, p1, p2}, Lcom/google/common/collect/fj;->remove(Ljava/lang/Object;I)I
+    invoke-interface {v0, p1, p2}, Lcom/google/common/collect/iq;->remove(Ljava/lang/Object;I)I
 
     move-result v0
 
@@ -350,7 +356,7 @@
 
     return v0
 
-    .line 533
+    .line 445
     :catchall_d
     move-exception v0
 
@@ -365,18 +371,18 @@
     .parameter
 
     .prologue
-    .line 537
+    .line 450
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 538
+    .line 451
     :try_start_3
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/fj;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/iq;
 
     move-result-object v0
 
-    invoke-interface {v0, p1, p2}, Lcom/google/common/collect/fj;->setCount(Ljava/lang/Object;I)I
+    invoke-interface {v0, p1, p2}, Lcom/google/common/collect/iq;->setCount(Ljava/lang/Object;I)I
 
     move-result v0
 
@@ -386,7 +392,7 @@
 
     return v0
 
-    .line 539
+    .line 452
     :catchall_d
     move-exception v0
 
@@ -402,18 +408,18 @@
     .parameter
 
     .prologue
-    .line 543
+    .line 457
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 544
+    .line 458
     :try_start_3
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/fj;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultiset;->delegate()Lcom/google/common/collect/iq;
 
     move-result-object v0
 
-    invoke-interface {v0, p1, p2, p3}, Lcom/google/common/collect/fj;->setCount(Ljava/lang/Object;II)Z
+    invoke-interface {v0, p1, p2, p3}, Lcom/google/common/collect/iq;->setCount(Ljava/lang/Object;II)Z
 
     move-result v0
 
@@ -423,7 +429,7 @@
 
     return v0
 
-    .line 545
+    .line 459
     :catchall_d
     move-exception v0
 

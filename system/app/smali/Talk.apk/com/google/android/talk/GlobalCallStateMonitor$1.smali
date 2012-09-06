@@ -50,7 +50,7 @@
 
     iget-object v1, p0, Lcom/google/android/talk/GlobalCallStateMonitor$1;->this$0:Lcom/google/android/talk/GlobalCallStateMonitor;
 
-    #getter for: Lcom/google/android/talk/GlobalCallStateMonitor;->mContext:Landroid/content/Context;
+    #getter for: Lcom/google/android/videochat/CallStateClient;->mContext:Landroid/content/Context;
     invoke-static {v1}, Lcom/google/android/talk/GlobalCallStateMonitor;->access$100(Lcom/google/android/talk/GlobalCallStateMonitor;)Landroid/content/Context;
 
     move-result-object v1

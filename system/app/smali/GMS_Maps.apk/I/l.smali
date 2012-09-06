@@ -1,198 +1,289 @@
-.class LI/l;
-.super Lat/a;
-
-
-# instance fields
-.field private final a:Landroid/content/Context;
-
-.field private final b:Ljava/lang/String;
-
-.field private final c:Ljava/lang/Long;
-
-.field private final d:LI/e;
+.class public Li/l;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # direct methods
-.method private constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Long;LI/e;)V
-    .registers 5
+.method private constructor <init>()V
+    .registers 1
 
-    invoke-direct {p0}, Lat/a;-><init>()V
-
-    iput-object p1, p0, LI/l;->a:Landroid/content/Context;
-
-    iput-object p2, p0, LI/l;->b:Ljava/lang/String;
-
-    iput-object p3, p0, LI/l;->c:Ljava/lang/Long;
-
-    iput-object p4, p0, LI/l;->d:LI/e;
+    .prologue
+    .line 33
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Long;LI/e;LI/k;)V
-    .registers 6
+.method synthetic constructor <init>(Li/m;)V
+    .registers 2
+    .parameter
 
-    invoke-direct {p0, p1, p2, p3, p4}, LI/l;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Long;LI/e;)V
+    .prologue
+    .line 12
+    invoke-direct {p0}, Li/l;-><init>()V
 
     return-void
+.end method
+
+.method public static a(Ljava/lang/String;)I
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 296
+    const-string v0, "THEN"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    .line 297
+    const/4 v0, 0x0
+
+    .line 321
+    :goto_9
+    return v0
+
+    .line 298
+    :cond_a
+    const-string v0, "GPS_LOST"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_14
+
+    .line 299
+    const/4 v0, 0x1
+
+    goto :goto_9
+
+    .line 300
+    :cond_14
+    const-string v0, "DATA_LOST"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1e
+
+    .line 301
+    const/4 v0, 0x2
+
+    goto :goto_9
+
+    .line 302
+    :cond_1e
+    const-string v0, "NAVIGATION_RESUMED"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_28
+
+    .line 303
+    const/4 v0, 0x3
+
+    goto :goto_9
+
+    .line 304
+    :cond_28
+    const-string v0, "PLEASE_DESCRIBE_PROBLEM"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_32
+
+    .line 305
+    const/4 v0, 0x4
+
+    goto :goto_9
+
+    .line 306
+    :cond_32
+    const-string v0, "ARRIVED"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3c
+
+    .line 307
+    const/4 v0, 0x5
+
+    goto :goto_9
+
+    .line 308
+    :cond_3c
+    const-string v0, "WILL_ARRIVE"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_46
+
+    .line 309
+    const/4 v0, 0x6
+
+    goto :goto_9
+
+    .line 310
+    :cond_46
+    const-string v0, "DESTINATION_ON_LEFT"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_50
+
+    .line 311
+    const/4 v0, 0x7
+
+    goto :goto_9
+
+    .line 312
+    :cond_50
+    const-string v0, "DESTINATION_ON_RIGHT"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5b
+
+    .line 313
+    const/16 v0, 0x8
+
+    goto :goto_9
+
+    .line 314
+    :cond_5b
+    const-string v0, "DESTINATION_WILL_BE_ON_LEFT"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_66
+
+    .line 315
+    const/16 v0, 0x9
+
+    goto :goto_9
+
+    .line 316
+    :cond_66
+    const-string v0, "DESTINATION_WILL_BE_ON_RIGHT"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_71
+
+    .line 317
+    const/16 v0, 0xa
+
+    goto :goto_9
+
+    .line 318
+    :cond_71
+    const-string v0, "GENERIC_CONTINUE"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7c
+
+    .line 319
+    const/16 v0, 0xb
+
+    goto :goto_9
+
+    .line 321
+    :cond_7c
+    const/4 v0, -0x1
+
+    goto :goto_9
+.end method
+
+.method public static a(Li/l;)Li/l;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 288
+    if-nez p0, :cond_4
+
+    const/4 v0, 0x0
+
+    :goto_3
+    return-object v0
+
+    :cond_4
+    new-instance v0, Li/q;
+
+    invoke-direct {v0, p0}, Li/q;-><init>(Li/l;)V
+
+    goto :goto_3
+.end method
+
+.method public static a(Li/l;Li/l;)Li/l;
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 274
+    if-eqz p0, :cond_5
+
+    if-nez p1, :cond_6
+
+    .line 280
+    :cond_5
+    :goto_5
+    return-object v0
+
+    .line 277
+    :cond_6
+    new-instance v1, Li/o;
+
+    invoke-direct {v1, v0}, Li/o;-><init>(Li/m;)V
+
+    .line 278
+    invoke-virtual {v1, p0}, Li/o;->a(Li/l;)V
+
+    .line 279
+    invoke-virtual {v1, p1}, Li/o;->a(Li/l;)V
+
+    .line 280
+    invoke-virtual {v1}, Li/o;->a()Li/l;
+
+    move-result-object v0
+
+    goto :goto_5
 .end method
 
 
 # virtual methods
-.method public a()I
+.method public a()Z
     .registers 2
 
-    const/16 v0, 0x4b
-
-    return v0
-.end method
-
-.method public a(Ljava/io/DataOutput;)V
-    .registers 7
-
-    const/4 v4, 0x1
-
-    new-instance v0, Lam/b;
-
-    sget-object v1, LbD/z;->d:Lam/e;
-
-    invoke-direct {v0, v1}, Lam/b;-><init>(Lam/e;)V
-
-    const/4 v1, 0x7
-
-    invoke-virtual {v0, v4, v1}, Lam/b;->h(II)V
-
-    iget-object v1, p0, LI/l;->c:Ljava/lang/Long;
-
-    if-eqz v1, :cond_1a
-
-    const/4 v1, 0x2
-
-    iget-object v2, p0, LI/l;->c:Ljava/lang/Long;
-
-    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v1, v2, v3}, Lam/b;->b(IJ)V
-
-    :cond_1a
-    new-instance v1, Lam/b;
-
-    sget-object v2, LbD/z;->a:Lam/e;
-
-    invoke-direct {v1, v2}, Lam/b;-><init>(Lam/e;)V
-
-    invoke-virtual {v1, v4, v0}, Lam/b;->a(ILam/b;)V
-
-    invoke-static {v1}, Lae/d;->a(Lam/b;)V
-
-    invoke-virtual {v1}, Lam/b;->d()I
-
-    move-result v0
-
-    invoke-interface {p1, v0}, Ljava/io/DataOutput;->writeInt(I)V
-
-    check-cast p1, Ljava/io/OutputStream;
-
-    invoke-virtual {v1, p1}, Lam/b;->b(Ljava/io/OutputStream;)V
-
-    return-void
-.end method
-
-.method public a(Ljava/io/DataInput;)Z
-    .registers 10
-
-    const/16 v7, 0x9
-
-    const/4 v6, 0x1
-
-    sget-object v0, LbD/z;->c:Lam/e;
-
-    invoke-static {v0, p1}, Lam/g;->a(Lam/e;Ljava/io/DataInput;)Lam/b;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v6}, Lam/b;->l(I)I
-
-    move-result v2
-
-    const/4 v0, 0x0
-
-    :goto_e
-    if-ge v0, v2, :cond_45
-
-    invoke-virtual {v1, v6, v0}, Lam/b;->e(II)Lam/b;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v6}, Lam/b;->d(I)I
-
-    move-result v4
-
-    const/4 v5, 0x7
-
-    if-ne v4, v5, :cond_42
-
-    const/4 v4, 0x2
-
-    invoke-virtual {v3, v4}, Lam/b;->k(I)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_42
-
-    invoke-virtual {v3, v7}, Lam/b;->k(I)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_42
-
-    iget-object v4, p0, LI/l;->a:Landroid/content/Context;
-
-    iget-object v5, p0, LI/l;->b:Ljava/lang/String;
-
-    invoke-static {v4, v3, v5}, LI/r;->a(Landroid/content/Context;Lam/b;Ljava/lang/String;)Z
-
-    invoke-virtual {v3, v7}, Lam/b;->h(I)Lam/b;
-
-    move-result-object v3
-
-    new-instance v4, LI/q;
-
-    invoke-direct {v4, v3}, LI/q;-><init>(Lam/b;)V
-
-    invoke-static {v4}, LI/j;->a(LI/q;)LI/q;
-
-    invoke-static {}, LI/j;->d()Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v6}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    :cond_42
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_e
-
-    :cond_45
-    sput-boolean v6, LI/j;->a:Z
-
-    iget-object v0, p0, LI/l;->d:LI/e;
-
-    if-eqz v0, :cond_50
-
-    iget-object v0, p0, LI/l;->d:LI/e;
-
-    invoke-interface {v0}, LI/e;->a()V
-
-    :cond_50
-    return v6
-.end method
-
-.method public c_()Z
-    .registers 2
-
+    .prologue
+    .line 42
     const/4 v0, 0x0
 
     return v0

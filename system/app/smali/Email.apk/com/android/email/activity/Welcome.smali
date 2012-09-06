@@ -3,90 +3,127 @@
 .source "Welcome.java"
 
 
-# static fields
-.field public static customer:Lcom/android/email/activity/setup/AccountSetupCustomer;
-
-.field public static fromWidget:Z
-
-.field private static largeDisplayPortSize:I
-
-.field private static largeDisplaySize:I
-
-.field public static needFull:Z
-
-.field private static xlargeDisplayPortSize:I
-
-.field private static xlargeDisplaySize:I
-
-
 # instance fields
-.field private final TAG:Ljava/lang/String;
-
 .field private mAccountId:J
 
-.field private mDebugPaneMode:I
+.field private mAccountUuid:Ljava/lang/String;
 
-.field private mHandler:Landroid/os/Handler;
+.field private mInboxFinder:Lcom/android/email/activity/MailboxFinder;
+
+.field private final mMailboxFinderCallback:Lcom/android/email/activity/MailboxFinder$Callback;
 
 .field private mMailboxId:J
 
 .field private mMessageId:J
 
+.field private final mTaskTracker:Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
+
+.field private mWaitingForSyncView:Landroid/view/View;
+
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 103
-    sput-boolean v1, Lcom/android/email/activity/Welcome;->fromWidget:Z
-
-    .line 105
-    const/16 v0, 0x400
-
-    sput v0, Lcom/android/email/activity/Welcome;->largeDisplaySize:I
-
-    .line 107
-    const/16 v0, 0x258
-
-    sput v0, Lcom/android/email/activity/Welcome;->largeDisplayPortSize:I
-
-    .line 111
-    const/16 v0, 0x500
-
-    sput v0, Lcom/android/email/activity/Welcome;->xlargeDisplaySize:I
-
-    .line 113
-    const/16 v0, 0x320
-
-    sput v0, Lcom/android/email/activity/Welcome;->xlargeDisplayPortSize:I
-
-    .line 333
-    sput-boolean v1, Lcom/android/email/activity/Welcome;->needFull:Z
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .registers 2
 
     .prologue
-    .line 58
+    .line 55
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 75
-    const-string v0, "Welcome"
+    .line 91
+    new-instance v0, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
 
-    iput-object v0, p0, Lcom/android/email/activity/Welcome;->TAG:Ljava/lang/String;
+    invoke-direct {v0}, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;-><init>()V
 
-    .line 93
-    new-instance v0, Landroid/os/Handler;
+    iput-object v0, p0, Lcom/android/email/activity/Welcome;->mTaskTracker:Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
 
-    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+    .line 387
+    new-instance v0, Lcom/android/email/activity/Welcome$2;
 
-    iput-object v0, p0, Lcom/android/email/activity/Welcome;->mHandler:Landroid/os/Handler;
+    invoke-direct {v0, p0}, Lcom/android/email/activity/Welcome$2;-><init>(Lcom/android/email/activity/Welcome;)V
+
+    iput-object v0, p0, Lcom/android/email/activity/Welcome;->mMailboxFinderCallback:Lcom/android/email/activity/MailboxFinder$Callback;
+
+    return-void
+.end method
+
+.method static synthetic access$000(Lcom/android/email/activity/Welcome;)V
+    .registers 1
+    .parameter "x0"
+
+    .prologue
+    .line 55
+    invoke-direct {p0}, Lcom/android/email/activity/Welcome;->resolveAccount()V
+
+    return-void
+.end method
+
+.method static synthetic access$102(Lcom/android/email/activity/Welcome;Lcom/android/email/activity/MailboxFinder;)Lcom/android/email/activity/MailboxFinder;
+    .registers 2
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 55
+    iput-object p1, p0, Lcom/android/email/activity/Welcome;->mInboxFinder:Lcom/android/email/activity/MailboxFinder;
+
+    return-object p1
+.end method
+
+.method static synthetic access$202(Lcom/android/email/activity/Welcome;J)J
+    .registers 3
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 55
+    iput-wide p1, p0, Lcom/android/email/activity/Welcome;->mAccountId:J
+
+    return-wide p1
+.end method
+
+.method static synthetic access$302(Lcom/android/email/activity/Welcome;J)J
+    .registers 3
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 55
+    iput-wide p1, p0, Lcom/android/email/activity/Welcome;->mMailboxId:J
+
+    return-wide p1
+.end method
+
+.method static synthetic access$402(Lcom/android/email/activity/Welcome;J)J
+    .registers 3
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 55
+    iput-wide p1, p0, Lcom/android/email/activity/Welcome;->mMessageId:J
+
+    return-wide p1
+.end method
+
+.method static synthetic access$502(Lcom/android/email/activity/Welcome;Ljava/lang/String;)Ljava/lang/String;
+    .registers 2
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 55
+    iput-object p1, p0, Lcom/android/email/activity/Welcome;->mAccountUuid:Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method static synthetic access$600(Lcom/android/email/activity/Welcome;)V
+    .registers 1
+    .parameter "x0"
+
+    .prologue
+    .line 55
+    invoke-direct {p0}, Lcom/android/email/activity/Welcome;->startEmailActivity()V
 
     return-void
 .end method
@@ -97,14 +134,14 @@
     .parameter "accountId"
 
     .prologue
-    .line 209
+    .line 140
     invoke-static {p0, p1, p2}, Lcom/android/email/activity/Welcome;->createOpenAccountInboxIntent(Landroid/content/Context;J)Landroid/content/Intent;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 210
+    .line 141
     return-void
 .end method
 
@@ -113,160 +150,117 @@
     .parameter
 
     .prologue
-    .line 135
+    .line 108
     const-class v0, Lcom/android/email/activity/Welcome;
 
-    invoke-static {p0, v0}, Lcom/android/emailcommon/utility/Utility;->createRestartAppIntent(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
+    invoke-static {p0, v0}, Lcom/android/emailcommon/utility/IntentUtilities;->createRestartAppIntent(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 136
+    .line 109
     invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 137
+    .line 110
     return-void
 .end method
 
-.method public static createOpenAccountInboxIntent(Landroid/content/Context;J)Landroid/content/Intent;
+.method public static createAccountShortcutIntent(Landroid/content/Context;Ljava/lang/String;J)Landroid/content/Intent;
     .registers 6
-    .parameter
-    .parameter
+    .parameter "context"
+    .parameter "uuid"
+    .parameter "mailboxId"
 
     .prologue
-    .line 151
-    const-class v0, Lcom/android/email/activity/MessageListXL;
+    .line 148
+    const-string v1, "/view/mailbox"
 
-    invoke-static {p0, v0}, Lcom/android/emailcommon/utility/Utility;->createRestartAppIntent(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
+    invoke-static {v1}, Lcom/android/emailcommon/utility/IntentUtilities;->createActivityIntentUrlBuilder(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v0
 
+    .line 150
+    .local v0, b:Landroid/net/Uri$Builder;
+    invoke-static {v0, p1}, Lcom/android/emailcommon/utility/IntentUtilities;->setAccountUuid(Landroid/net/Uri$Builder;Ljava/lang/String;)V
+
+    .line 151
+    invoke-static {v0, p2, p3}, Lcom/android/emailcommon/utility/IntentUtilities;->setMailboxId(Landroid/net/Uri$Builder;J)V
+
     .line 152
-    const-wide/16 v1, -0x1
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
-    cmp-long v1, p1, v1
+    move-result-object v1
 
-    if-eqz v1, :cond_11
+    invoke-static {v1}, Lcom/android/emailcommon/utility/IntentUtilities;->createRestartAppIntent(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 153
-    const-string v1, "ACCOUNT_ID"
+    move-result-object v1
 
-    invoke-virtual {v0, v1, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
-
-    .line 155
-    :cond_11
-    return-object v0
+    return-object v1
 .end method
 
-.method public static createOpenAccountInboxIntentFromShortcut(Landroid/content/Context;J)Landroid/content/Intent;
-    .registers 6
+.method public static createOpenAccountInboxIntent(Landroid/content/Context;J)Landroid/content/Intent;
+    .registers 5
     .parameter "context"
     .parameter "accountId"
 
     .prologue
-    .line 183
-    invoke-static {p0, p1, p2}, Lcom/android/email/activity/Welcome;->createOpenAccountInboxIntent(Landroid/content/Context;J)Landroid/content/Intent;
+    .line 117
+    const-string v1, "/view/mailbox"
+
+    invoke-static {v1}, Lcom/android/emailcommon/utility/IntentUtilities;->createActivityIntentUrlBuilder(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v0
 
-    .line 184
-    .local v0, i:Landroid/content/Intent;
-    const-string v1, "FROM_SHORTCUT"
+    .line 119
+    .local v0, b:Landroid/net/Uri$Builder;
+    invoke-static {v0, p1, p2}, Lcom/android/emailcommon/utility/IntentUtilities;->setAccountId(Landroid/net/Uri$Builder;J)V
 
-    const/4 v2, 0x1
+    .line 120
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    move-result-object v1
 
-    .line 185
-    return-object v0
-.end method
+    invoke-static {v1}, Lcom/android/emailcommon/utility/IntentUtilities;->createRestartAppIntent(Landroid/net/Uri;)Landroid/content/Intent;
 
-.method public static createOpenAccountMailboxIntent(Landroid/content/Context;JJ)Landroid/content/Intent;
-    .registers 9
-    .parameter
-    .parameter
-    .parameter
+    move-result-object v1
 
-    .prologue
-    const-wide/16 v2, -0x1
-
-    .line 160
-    const-class v0, Lcom/android/email/activity/MessageListXL;
-
-    invoke-static {p0, v0}, Lcom/android/emailcommon/utility/Utility;->createRestartAppIntent(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
-
-    move-result-object v0
-
-    .line 161
-    cmp-long v1, p1, v2
-
-    if-eqz v1, :cond_11
-
-    .line 162
-    const-string v1, "ACCOUNT_ID"
-
-    invoke-virtual {v0, v1, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
-
-    .line 164
-    :cond_11
-    cmp-long v1, p3, v2
-
-    if-eqz v1, :cond_1a
-
-    .line 165
-    const-string v1, "MAILBOX_ID"
-
-    invoke-virtual {v0, v1, p3, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
-
-    .line 167
-    :cond_1a
-    return-object v0
+    return-object v1
 .end method
 
 .method public static createOpenMessageIntent(Landroid/content/Context;JJJ)Landroid/content/Intent;
-    .registers 10
-    .parameter
-    .parameter
-    .parameter
-    .parameter
+    .registers 9
+    .parameter "context"
+    .parameter "accountId"
+    .parameter "mailboxId"
+    .parameter "messageId"
 
     .prologue
-    .line 195
-    const-class v0, Lcom/android/email/activity/Welcome;
+    .line 128
+    const-string v1, "/view/mailbox"
 
-    invoke-static {p0, v0}, Lcom/android/emailcommon/utility/Utility;->createRestartAppIntentFromWidget(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
+    invoke-static {v1}, Lcom/android/emailcommon/utility/IntentUtilities;->createActivityIntentUrlBuilder(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v0
 
-    .line 196
-    const/4 v1, 0x1
+    .line 130
+    .local v0, b:Landroid/net/Uri$Builder;
+    invoke-static {v0, p1, p2}, Lcom/android/emailcommon/utility/IntentUtilities;->setAccountId(Landroid/net/Uri$Builder;J)V
 
-    sput-boolean v1, Lcom/android/email/activity/Welcome;->fromWidget:Z
+    .line 131
+    invoke-static {v0, p3, p4}, Lcom/android/emailcommon/utility/IntentUtilities;->setMailboxId(Landroid/net/Uri$Builder;J)V
 
-    .line 197
-    const-wide/16 v1, -0x1
+    .line 132
+    invoke-static {v0, p5, p6}, Lcom/android/emailcommon/utility/IntentUtilities;->setMessageId(Landroid/net/Uri$Builder;J)V
 
-    cmp-long v1, p1, v1
+    .line 133
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
-    if-eqz v1, :cond_1e
+    move-result-object v1
 
-    .line 198
-    const-string v1, "ACCOUNT_ID"
+    invoke-static {v1}, Lcom/android/emailcommon/utility/IntentUtilities;->createRestartAppIntent(Landroid/net/Uri;)Landroid/content/Intent;
 
-    invoke-virtual {v0, v1, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
+    move-result-object v1
 
-    .line 199
-    const-string v1, "MAILBOX_ID"
-
-    invoke-virtual {v0, v1, p3, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
-
-    .line 200
-    const-string v1, "MESSAGE_ID"
-
-    invoke-virtual {v0, v1, p5, p6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
-
-    .line 202
-    :cond_1e
-    return-object v0
+    return-object v1
 .end method
 
 .method private static getDebugPaneMode(Landroid/content/Intent;)I
@@ -274,23 +268,23 @@
     .parameter "i"
 
     .prologue
-    .line 217
+    .line 163
     invoke-virtual {p0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 218
+    .line 164
     .local v0, extras:Landroid/os/Bundle;
     if-eqz v0, :cond_20
 
-    .line 219
+    .line 165
     const-string v2, "DEBUG_PANE_MODE"
 
     invoke-virtual {v0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 220
+    .line 166
     .local v1, s:Ljava/lang/String;
     const-string v2, "1"
 
@@ -300,15 +294,15 @@
 
     if-eqz v2, :cond_16
 
-    .line 221
+    .line 167
     const/4 v2, 0x1
 
-    .line 226
+    .line 172
     .end local v1           #s:Ljava/lang/String;
     :goto_15
     return v2
 
-    .line 222
+    .line 168
     .restart local v1       #s:Ljava/lang/String;
     :cond_16
     const-string v2, "2"
@@ -319,12 +313,12 @@
 
     if-eqz v2, :cond_20
 
-    .line 223
+    .line 169
     const/4 v2, 0x2
 
     goto :goto_15
 
-    .line 226
+    .line 172
     .end local v1           #s:Ljava/lang/String;
     :cond_20
     const/4 v2, 0x0
@@ -332,858 +326,595 @@
     goto :goto_15
 .end method
 
-.method private isMailboxSelected()Z
-    .registers 5
+.method private resolveAccount()V
+    .registers 6
 
     .prologue
-    .line 434
-    iget-wide v0, p0, Lcom/android/email/activity/Welcome;->mMailboxId:J
+    .line 353
+    sget-object v1, Lcom/android/emailcommon/provider/Account;->CONTENT_URI:Landroid/net/Uri;
 
-    const-wide/16 v2, -0x1
-
-    cmp-long v0, v0, v2
-
-    if-eqz v0, :cond_a
-
-    const/4 v0, 0x1
-
-    :goto_9
-    return v0
-
-    :cond_a
-    const/4 v0, 0x0
-
-    goto :goto_9
-.end method
-
-.method private isMessageSelected()Z
-    .registers 5
-
-    .prologue
-    .line 438
-    iget-wide v0, p0, Lcom/android/email/activity/Welcome;->mMessageId:J
-
-    const-wide/16 v2, -0x1
-
-    cmp-long v0, v0, v2
-
-    if-eqz v0, :cond_a
-
-    const/4 v0, 0x1
-
-    :goto_9
-    return v0
-
-    :cond_a
-    const/4 v0, 0x0
-
-    goto :goto_9
-.end method
-
-
-# virtual methods
-.method public InitCustomizePreference()V
-    .registers 2
-
-    .prologue
-    .line 442
-    invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    .line 443
-    .local v0, sharedPref:Landroid/content/SharedPreferences;
-    return-void
-.end method
-
-.method public MainActivityLauncher()V
-    .registers 16
-
-    .prologue
-    .line 345
-    invoke-static {p0}, Lcom/android/email/service/MailService;->reconcilePopImapAccountsSync(Landroid/content/Context;)V
-
-    .line 350
-    const/4 v9, 0x0
-
-    .line 352
-    .local v9, c:Landroid/database/Cursor;
-    :try_start_4
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
-
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Account;->CONTENT_PROJECTION:[Ljava/lang/String;
-
-    const-string v3, "emailAddress!=\'snc@snc.snc\'"
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_13
-    .catchall {:try_start_4 .. :try_end_13} :catchall_5d
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_13} :catch_47
-
-    move-result-object v9
-
-    .line 359
-    if-eqz v9, :cond_1f
-
-    invoke-interface {v9}, Landroid/database/Cursor;->isClosed()Z
+    invoke-static {p0, v1}, Lcom/android/emailcommon/provider/EmailContent;->count(Landroid/content/Context;Landroid/net/Uri;)I
 
     move-result v0
 
-    if-nez v0, :cond_1f
-
-    .line 360
-    invoke-interface {v9}, Landroid/database/Cursor;->close()V
-
-    .line 363
-    :cond_1f
-    :goto_1f
-    if-eqz v9, :cond_7b
-
-    .line 364
-    invoke-interface {v9}, Landroid/database/Cursor;->getCount()I
-
-    move-result v12
-
-    .line 366
-    .local v12, numAccount:I
-    if-nez v12, :cond_7f
-
-    .line 368
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getIntent()Landroid/content/Intent;
-
-    move-result-object v0
-
-    const-string v3, "FROM_SHORTCUT"
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6a
-
-    .line 369
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    const v3, 0x7f080287
-
-    const/4 v4, 0x1
-
-    invoke-static {v0, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
-
-    .line 371
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->finish()V
-
-    .line 431
-    .end local v12           #numAccount:I
-    :goto_46
-    return-void
+    .line 354
+    .local v0, numAccount:I
+    if-nez v0, :cond_f
 
     .line 355
-    :catch_47
-    move-exception v11
-
-    .line 356
-    .local v11, e:Ljava/lang/Exception;
-    :try_start_48
-    const-string v0, "Welcome"
-
-    invoke-virtual {v11}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_51
-    .catchall {:try_start_48 .. :try_end_51} :catchall_5d
-
-    .line 359
-    if-eqz v9, :cond_1f
-
-    invoke-interface {v9}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1f
-
-    .line 360
-    invoke-interface {v9}, Landroid/database/Cursor;->close()V
-
-    goto :goto_1f
-
-    .line 359
-    .end local v11           #e:Ljava/lang/Exception;
-    :catchall_5d
-    move-exception v0
-
-    if-eqz v9, :cond_69
-
-    invoke-interface {v9}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v3
-
-    if-nez v3, :cond_69
-
-    .line 360
-    invoke-interface {v9}, Landroid/database/Cursor;->close()V
-
-    :cond_69
-    throw v0
-
-    .line 376
-    .restart local v12       #numAccount:I
-    :cond_6a
     invoke-static {p0}, Lcom/android/email/activity/setup/AccountSetupBasics;->actionNewAccount(Landroid/app/Activity;)V
 
-    .line 379
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/email/BadgeManager;->insertBadgeProvider(Landroid/content/Context;)V
-
-    .line 380
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/email/BadgeManager;->updateBadgeProvider(Landroid/content/Context;)V
-
-    .line 430
-    .end local v12           #numAccount:I
-    :cond_7b
-    :goto_7b
+    .line 356
     invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->finish()V
 
-    goto :goto_46
+    .line 368
+    :goto_e
+    return-void
 
-    .line 383
-    .restart local v12       #numAccount:I
-    :cond_7f
-    iget-wide v7, p0, Lcom/android/email/activity/Welcome;->mAccountId:J
+    .line 359
+    :cond_f
+    iget-wide v1, p0, Lcom/android/email/activity/Welcome;->mAccountId:J
 
-    .line 384
-    .local v7, accountId:J
-    const-wide/16 v3, -0x1
+    iget-object v3, p0, Lcom/android/email/activity/Welcome;->mAccountUuid:Ljava/lang/String;
 
-    cmp-long v0, v7, v3
-
-    if-nez v0, :cond_f1
-
-    .line 388
-    const/4 v10, 0x0
-
-    .line 390
-    .local v10, cur:Landroid/database/Cursor;
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
-
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Message;->CONTENT_PROJECTION:[Ljava/lang/String;
-
-    const-string v3, "_id=?"
-
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/String;
-
-    const/4 v5, 0x0
-
-    iget-wide v13, p0, Lcom/android/email/activity/Welcome;->mMessageId:J
-
-    invoke-static {v13, v14}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v6
-
-    aput-object v6, v4, v5
-
-    const/4 v5, 0x0
-
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v10
-
-    .line 396
-    :try_start_a3
-    invoke-interface {v10}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_11f
-
-    .line 397
-    const-string v0, "accountKey"
-
-    invoke-interface {v10, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-interface {v10, v0}, Landroid/database/Cursor;->getLong(I)J
-    :try_end_b2
-    .catchall {:try_start_a3 .. :try_end_b2} :catchall_e4
-    .catch Ljava/lang/Exception; {:try_start_a3 .. :try_end_b2} :catch_cd
+    invoke-static {p0, v1, v2, v3}, Lcom/android/email/activity/Welcome;->resolveAccountId(Landroid/content/Context;JLjava/lang/String;)J
 
     move-result-wide v1
 
-    .line 407
-    .end local v7           #accountId:J
-    .local v1, accountId:J
-    :goto_b3
-    if-eqz v10, :cond_be
+    iput-wide v1, p0, Lcom/android/email/activity/Welcome;->mAccountId:J
 
-    invoke-interface {v10}, Landroid/database/Cursor;->isClosed()Z
+    .line 360
+    iget-wide v1, p0, Lcom/android/email/activity/Welcome;->mAccountId:J
 
-    move-result v0
+    invoke-static {v1, v2}, Lcom/android/emailcommon/provider/Account;->isNormalAccount(J)Z
 
-    if-nez v0, :cond_be
+    move-result v1
 
-    .line 408
-    invoke-interface {v10}, Landroid/database/Cursor;->close()V
+    if-eqz v1, :cond_32
 
-    .line 421
-    .end local v10           #cur:Landroid/database/Cursor;
-    :cond_be
-    :goto_be
-    invoke-direct {p0}, Lcom/android/email/activity/Welcome;->isMessageSelected()Z
+    iget-wide v1, p0, Lcom/android/email/activity/Welcome;->mAccountId:J
 
-    move-result v0
+    const/4 v3, 0x0
 
-    if-eqz v0, :cond_10b
+    invoke-static {p0, v1, v2, v3}, Lcom/android/emailcommon/provider/Mailbox;->findMailboxOfType(Landroid/content/Context;JI)J
 
-    .line 422
+    move-result-wide v1
+
+    const-wide/16 v3, -0x1
+
+    cmp-long v1, v1, v3
+
+    if-nez v1, :cond_32
+
+    .line 363
+    invoke-direct {p0}, Lcom/android/email/activity/Welcome;->startInboxLookup()V
+
+    goto :goto_e
+
+    .line 367
+    :cond_32
+    invoke-direct {p0}, Lcom/android/email/activity/Welcome;->startEmailActivity()V
+
+    goto :goto_e
+.end method
+
+.method static resolveAccountId(Landroid/content/Context;JLjava/lang/String;)J
+    .registers 12
+    .parameter "context"
+    .parameter "inputAccountId"
+    .parameter "inputUuid"
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+
+    .prologue
+    const-wide/16 v6, -0x1
+
+    .line 303
+    invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_11
+
+    .line 306
+    invoke-static {p0, p3}, Lcom/android/emailcommon/provider/Account;->getAccountIdFromUuid(Landroid/content/Context;Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    .line 331
+    .local v0, accountId:J
+    :goto_c
+    cmp-long v4, v0, v6
+
+    if-eqz v4, :cond_4c
+
+    .line 337
+    .end local v0           #accountId:J
+    :goto_10
+    return-wide v0
+
+    .line 308
+    :cond_11
+    cmp-long v4, p1, v6
+
+    if-eqz v4, :cond_26
+
+    .line 310
+    const-wide/high16 v4, 0x1000
+
+    cmp-long v4, p1, v4
+
+    if-eqz v4, :cond_21
+
+    invoke-static {p0, p1, p2}, Lcom/android/emailcommon/provider/Account;->isValidId(Landroid/content/Context;J)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_23
+
+    .line 312
+    :cond_21
+    move-wide v0, p1
+
+    .restart local v0       #accountId:J
+    goto :goto_c
+
+    .line 314
+    .end local v0           #accountId:J
+    :cond_23
+    const-wide/16 v0, -0x1
+
+    .restart local v0       #accountId:J
+    goto :goto_c
+
+    .line 319
+    .end local v0           #accountId:J
+    :cond_26
+    invoke-static {p0}, Lcom/android/email/Preferences;->getPreferences(Landroid/content/Context;)Lcom/android/email/Preferences;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/android/email/Preferences;->getLastUsedAccountId()J
+
+    move-result-wide v2
+
+    .line 320
+    .local v2, lastUsedId:J
+    cmp-long v4, v2, v6
+
+    if-eqz v4, :cond_41
+
+    .line 321
+    invoke-static {p0, v2, v3}, Lcom/android/emailcommon/provider/Account;->isValidId(Landroid/content/Context;J)Z
+
+    move-result v4
+
+    if-nez v4, :cond_41
+
+    .line 323
+    const-wide/16 v2, -0x1
+
+    .line 324
+    invoke-static {p0}, Lcom/android/email/Preferences;->getPreferences(Landroid/content/Context;)Lcom/android/email/Preferences;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v6, v7}, Lcom/android/email/Preferences;->setLastUsedAccountId(J)V
+
+    .line 327
+    :cond_41
+    cmp-long v4, v2, v6
+
+    if-nez v4, :cond_4a
+
+    invoke-static {p0}, Lcom/android/emailcommon/provider/Account;->getDefaultAccountId(Landroid/content/Context;)J
+
+    move-result-wide v0
+
+    .restart local v0       #accountId:J
+    :goto_49
+    goto :goto_c
+
+    .end local v0           #accountId:J
+    :cond_4a
+    move-wide v0, v2
+
+    goto :goto_49
+
+    .line 336
+    .end local v2           #lastUsedId:J
+    .restart local v0       #accountId:J
+    :cond_4c
+    const v4, 0x7f080160
+
+    invoke-static {p0, v4}, Lcom/android/emailcommon/utility/Utility;->showToast(Landroid/content/Context;I)V
+
+    .line 337
+    invoke-static {p0}, Lcom/android/emailcommon/provider/Account;->getDefaultAccountId(Landroid/content/Context;)J
+
+    move-result-wide v0
+
+    goto :goto_10
+.end method
+
+.method private startEmailActivity()V
+    .registers 9
+
+    .prologue
+    const-wide/16 v2, -0x1
+
+    .line 376
+    iget-wide v0, p0, Lcom/android/email/activity/Welcome;->mMessageId:J
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_1a
+
+    .line 377
+    iget-wide v1, p0, Lcom/android/email/activity/Welcome;->mAccountId:J
+
     iget-wide v3, p0, Lcom/android/email/activity/Welcome;->mMailboxId:J
 
     iget-wide v5, p0, Lcom/android/email/activity/Welcome;->mMessageId:J
 
     move-object v0, p0
 
-    invoke-static/range {v0 .. v6}, Lcom/android/email/activity/MessageListXL;->actionOpenMessage(Landroid/app/Activity;JJJ)V
+    invoke-static/range {v0 .. v6}, Lcom/android/email/activity/EmailActivity;->createOpenMessageIntent(Landroid/app/Activity;JJJ)Landroid/content/Intent;
 
-    goto :goto_7b
+    move-result-object v7
 
-    .line 404
-    .end local v1           #accountId:J
-    .restart local v7       #accountId:J
-    .restart local v10       #cur:Landroid/database/Cursor;
-    :catch_cd
-    move-exception v11
+    .line 383
+    .local v7, i:Landroid/content/Intent;
+    :goto_13
+    invoke-virtual {p0, v7}, Lcom/android/email/activity/Welcome;->startActivity(Landroid/content/Intent;)V
 
-    .line 405
-    .restart local v11       #e:Ljava/lang/Exception;
-    :try_start_ce
-    const-string v0, "Welcome"
-
-    invoke-virtual {v11}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_d7
-    .catchall {:try_start_ce .. :try_end_d7} :catchall_e4
-
-    .line 407
-    if-eqz v10, :cond_11d
-
-    invoke-interface {v10}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_11d
-
-    .line 408
-    invoke-interface {v10}, Landroid/database/Cursor;->close()V
-
-    move-wide v1, v7
-
-    .end local v7           #accountId:J
-    .restart local v1       #accountId:J
-    goto :goto_be
-
-    .line 407
-    .end local v1           #accountId:J
-    .end local v11           #e:Ljava/lang/Exception;
-    .restart local v7       #accountId:J
-    :catchall_e4
-    move-exception v0
-
-    if-eqz v10, :cond_f0
-
-    invoke-interface {v10}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v3
-
-    if-nez v3, :cond_f0
-
-    .line 408
-    invoke-interface {v10}, Landroid/database/Cursor;->close()V
-
-    :cond_f0
-    throw v0
-
-    .line 413
-    .end local v10           #cur:Landroid/database/Cursor;
-    :cond_f1
-    invoke-static {p0, v7, v8}, Lcom/android/emailcommon/provider/EmailContent$Account;->isValidId(Landroid/content/Context;J)Z
-
-    move-result v0
-
-    if-nez v0, :cond_11d
-
-    .line 414
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    const v3, 0x7f080287
-
-    const/4 v4, 0x1
-
-    invoke-static {v0, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
-
-    .line 416
+    .line 384
     invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->finish()V
 
-    goto/16 :goto_46
-
-    .line 423
-    .end local v7           #accountId:J
-    .restart local v1       #accountId:J
-    :cond_10b
-    invoke-direct {p0}, Lcom/android/email/activity/Welcome;->isMailboxSelected()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_118
-
-    .line 424
-    iget-wide v3, p0, Lcom/android/email/activity/Welcome;->mMailboxId:J
-
-    invoke-static {p0, v1, v2, v3, v4}, Lcom/android/email/activity/MessageListXL;->actionOpenMailbox(Landroid/app/Activity;JJ)V
-
-    goto/16 :goto_7b
-
-    .line 426
-    :cond_118
-    invoke-static {p0, v1, v2}, Lcom/android/email/activity/MessageListXL;->actionOpenAccount(Landroid/app/Activity;J)V
-
-    goto/16 :goto_7b
-
-    .end local v1           #accountId:J
-    .restart local v7       #accountId:J
-    :cond_11d
-    move-wide v1, v7
-
-    .end local v7           #accountId:J
-    .restart local v1       #accountId:J
-    goto :goto_be
-
-    .end local v1           #accountId:J
-    .restart local v7       #accountId:J
-    .restart local v10       #cur:Landroid/database/Cursor;
-    :cond_11f
-    move-wide v1, v7
-
-    .end local v7           #accountId:J
-    .restart local v1       #accountId:J
-    goto :goto_b3
-.end method
-
-.method public onCreate(Landroid/os/Bundle;)V
-    .registers 16
-    .parameter "icicle"
-
-    .prologue
-    const/4 v13, 0x1
-
-    const-wide/16 v2, -0x1
-
-    const/4 v12, 0x0
-
-    .line 231
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
-
-    .line 234
-    invoke-static {}, Lcom/android/email/activity/setup/AccountSetupCustomer;->getInstance()Lcom/android/email/activity/setup/AccountSetupCustomer;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/android/email/activity/Welcome;->customer:Lcom/android/email/activity/setup/AccountSetupCustomer;
-
-    .line 237
-    sget-object v0, Lcom/android/email/activity/Welcome;->customer:Lcom/android/email/activity/setup/AccountSetupCustomer;
-
-    invoke-virtual {v0}, Lcom/android/email/activity/setup/AccountSetupCustomer;->isCombinedEnabled()Z
-
-    move-result v0
-
-    if-nez v0, :cond_34
-
-    const/4 v0, 0x6
-
-    invoke-static {v0}, Lcom/android/email/adapter/ProtocolAdapter;->getProtocolAdapterDirect(I)Lcom/android/email/adapter/ProtocolAdapter;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/email/adapter/ProtocolAdapter;->isAvailable()Z
-
-    move-result v0
-
-    if-nez v0, :cond_34
-
-    const-string v0, "com.seven.Z7.ACTION_EMAIL"
-
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getIntent()Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_34
-
-    .line 239
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->finish()V
-
-    .line 331
-    :goto_33
+    .line 385
     return-void
 
-    .line 244
-    :cond_34
-    invoke-static {p0}, Lcom/android/email/activity/ActivityHelper;->debugSetWindowFlags(Landroid/app/Activity;)V
-
-    .line 247
-    invoke-static {v12}, Lcom/android/email/Email;->setNotifyUiAccountsChanged(Z)V
-
-    .line 251
-    sput-boolean v12, Lcom/android/email/Email;->SETUP_WIZARD_FLOW:Z
-
-    .line 252
-    sput-boolean v12, Lcom/android/email/Email;->SETUP_WIZARD_FLOW_FROM_SERVICE:Z
-
-    .line 254
-    sput-boolean v12, Lcom/android/email/Email;->SETUP_FROM_ACCOUNT_MANAGER_FLOW:Z
-
-    .line 261
-    invoke-static {p0}, Lcom/android/email/activity/UpgradeAccounts;->doBulkUpgradeIfNecessary(Landroid/content/Context;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4a
-
-    .line 262
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->finish()V
-
-    goto :goto_33
-
-    .line 266
-    :cond_4a
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->InitCustomizePreference()V
-
-    .line 275
-    invoke-static {p0}, Lcom/android/email/AccountBackupRestore;->restoreAccountsIfNeeded(Landroid/content/Context;)V
-
-    .line 284
-    invoke-static {p0}, Lcom/android/email/ExchangeUtils;->startExchangeService(Landroid/content/Context;)V
-
-    .line 287
-    invoke-static {}, Lcom/android/email/FolderProperties;->setInitInstance()V
-
-    .line 290
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getIntent()Landroid/content/Intent;
-
-    move-result-object v9
-
-    .line 291
-    .local v9, mIntent:Landroid/content/Intent;
-    const-string v0, "IS_FROM_COMPOSER"
-
-    invoke-virtual {v9, v0, v12}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
-
-    move-result v8
-
-    .line 292
-    .local v8, isFromComposer:Z
-    if-nez v8, :cond_65
-
-    .line 293
-    invoke-static {}, Lcom/android/email/activity/MessageCompose;->ClearComposerIntent()V
-
-    .line 296
-    :cond_65
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getIntent()Landroid/content/Intent;
-
-    move-result-object v0
-
-    const-string v1, "com.android.email.LogProvider"
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 297
-    .local v6, action:Ljava/lang/String;
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getIntent()Landroid/content/Intent;
-
-    move-result-object v0
-
-    const-string v1, "ACCOUNT_ID"
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/android/email/activity/Welcome;->mAccountId:J
-
-    .line 298
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getIntent()Landroid/content/Intent;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/email/activity/Welcome;->getDebugPaneMode(Landroid/content/Intent;)I
-
-    move-result v0
-
-    iput v0, p0, Lcom/android/email/activity/Welcome;->mDebugPaneMode:I
-
-    .line 299
-    const-string v0, "com.android.email.LogProvider"
-
-    invoke-virtual {v0, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_11b
-
-    .line 300
-    const-string v0, "Welcome"
-
-    const-string v1, "LOG_VIEW_ACTION"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 301
-    sput-boolean v13, Lcom/android/email/activity/Welcome;->needFull:Z
-
-    .line 302
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getIntent()Landroid/content/Intent;
-
-    move-result-object v0
-
-    const-string v1, "com.android.email.MessageView_mailbox_id"
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/android/email/activity/Welcome;->mMailboxId:J
-
-    .line 303
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getIntent()Landroid/content/Intent;
-
-    move-result-object v0
-
-    const-string v1, "com.android.email.MessageView_message_id"
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/android/email/activity/Welcome;->mMessageId:J
-
-    .line 304
+    .line 378
+    .end local v7           #i:Landroid/content/Intent;
+    :cond_1a
     iget-wide v0, p0, Lcom/android/email/activity/Welcome;->mMailboxId:J
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_e2
+    if-eqz v0, :cond_29
 
-    .line 305
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getContentResolver()Landroid/content/ContentResolver;
+    .line 379
+    iget-wide v0, p0, Lcom/android/email/activity/Welcome;->mAccountId:J
 
-    move-result-object v0
+    iget-wide v2, p0, Lcom/android/email/activity/Welcome;->mMailboxId:J
 
-    sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Message;->CONTENT_URI:Landroid/net/Uri;
-
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Message;->CONTENT_PROJECTION:[Ljava/lang/String;
-
-    const-string v3, "_id=?"
-
-    new-array v4, v13, [Ljava/lang/String;
-
-    iget-wide v10, p0, Lcom/android/email/activity/Welcome;->mMessageId:J
-
-    invoke-static {v10, v11}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v5
-
-    aput-object v5, v4, v12
-
-    const/4 v5, 0x0
-
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+    invoke-static {p0, v0, v1, v2, v3}, Lcom/android/email/activity/EmailActivity;->createOpenMailboxIntent(Landroid/app/Activity;JJ)Landroid/content/Intent;
 
     move-result-object v7
 
-    .line 311
-    .local v7, cur:Landroid/database/Cursor;
-    :try_start_cd
-    invoke-interface {v7}, Landroid/database/Cursor;->moveToFirst()Z
+    .restart local v7       #i:Landroid/content/Intent;
+    goto :goto_13
 
-    move-result v0
+    .line 381
+    .end local v7           #i:Landroid/content/Intent;
+    :cond_29
+    iget-wide v0, p0, Lcom/android/email/activity/Welcome;->mAccountId:J
 
-    if-eqz v0, :cond_df
+    invoke-static {p0, v0, v1}, Lcom/android/email/activity/EmailActivity;->createOpenAccountIntent(Landroid/app/Activity;J)Landroid/content/Intent;
 
-    .line 312
-    const-string v0, "mailboxKey"
+    move-result-object v7
 
-    invoke-interface {v7, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-interface {v7, v0}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/android/email/activity/Welcome;->mMailboxId:J
-    :try_end_df
-    .catchall {:try_start_cd .. :try_end_df} :catchall_116
-    .catch Ljava/lang/Exception; {:try_start_cd .. :try_end_df} :catch_111
-
-    .line 321
-    :cond_df
-    invoke-interface {v7}, Landroid/database/Cursor;->close()V
-
-    .line 328
-    .end local v7           #cur:Landroid/database/Cursor;
-    :cond_e2
-    :goto_e2
-    const-string v0, "Welcome"
-
-    const-string v1, "mMessageId : %d"
-
-    new-array v2, v13, [Ljava/lang/Object;
-
-    iget-wide v3, p0, Lcom/android/email/activity/Welcome;->mMessageId:J
-
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    aput-object v3, v2, v12
-
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 329
-    const-string v0, "Welcome"
-
-    const-string v1, "mMailboxId : %d"
-
-    new-array v2, v13, [Ljava/lang/Object;
-
-    iget-wide v3, p0, Lcom/android/email/activity/Welcome;->mMailboxId:J
-
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    aput-object v3, v2, v12
-
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 330
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->MainActivityLauncher()V
-
-    goto/16 :goto_33
-
-    .line 319
-    .restart local v7       #cur:Landroid/database/Cursor;
-    :catch_111
-    move-exception v0
-
-    .line 321
-    invoke-interface {v7}, Landroid/database/Cursor;->close()V
-
-    goto :goto_e2
-
-    :catchall_116
-    move-exception v0
-
-    invoke-interface {v7}, Landroid/database/Cursor;->close()V
-
-    throw v0
-
-    .line 325
-    .end local v7           #cur:Landroid/database/Cursor;
-    :cond_11b
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getIntent()Landroid/content/Intent;
-
-    move-result-object v0
-
-    const-string v1, "MAILBOX_ID"
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/android/email/activity/Welcome;->mMailboxId:J
-
-    .line 326
-    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getIntent()Landroid/content/Intent;
-
-    move-result-object v0
-
-    const-string v1, "MESSAGE_ID"
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/android/email/activity/Welcome;->mMessageId:J
-
-    goto :goto_e2
+    .restart local v7       #i:Landroid/content/Intent;
+    goto :goto_13
 .end method
 
-.method public onDestroy()V
-    .registers 1
+.method private startInboxLookup()V
+    .registers 8
 
     .prologue
-    .line 339
-    invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
+    const/4 v6, -0x1
 
-    .line 340
+    .line 280
+    const-string v0, "Email"
+
+    const-string v1, "Inbox not found.  Starting mailbox finder..."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 281
+    invoke-direct {p0}, Lcom/android/email/activity/Welcome;->stopInboxLookup()V
+
+    .line 282
+    new-instance v0, Lcom/android/email/activity/MailboxFinder;
+
+    iget-wide v2, p0, Lcom/android/email/activity/Welcome;->mAccountId:J
+
+    const/4 v4, 0x0
+
+    iget-object v5, p0, Lcom/android/email/activity/Welcome;->mMailboxFinderCallback:Lcom/android/email/activity/MailboxFinder$Callback;
+
+    move-object v1, p0
+
+    invoke-direct/range {v0 .. v5}, Lcom/android/email/activity/MailboxFinder;-><init>(Landroid/content/Context;JILcom/android/email/activity/MailboxFinder$Callback;)V
+
+    iput-object v0, p0, Lcom/android/email/activity/Welcome;->mInboxFinder:Lcom/android/email/activity/MailboxFinder;
+
+    .line 284
+    iget-object v0, p0, Lcom/android/email/activity/Welcome;->mInboxFinder:Lcom/android/email/activity/MailboxFinder;
+
+    invoke-virtual {v0}, Lcom/android/email/activity/MailboxFinder;->startLookup()V
+
+    .line 287
+    invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object v0
+
+    const v1, 0x7f040047
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/email/activity/Welcome;->mWaitingForSyncView:Landroid/view/View;
+
+    .line 289
+    iget-object v0, p0, Lcom/android/email/activity/Welcome;->mWaitingForSyncView:Landroid/view/View;
+
+    new-instance v1, Landroid/view/ViewGroup$LayoutParams;
+
+    invoke-direct {v1, v6, v6}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    invoke-virtual {p0, v0, v1}, Lcom/android/email/activity/Welcome;->addContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 291
+    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->invalidateOptionsMenu()V
+
+    .line 292
+    return-void
+.end method
+
+.method private stopInboxLookup()V
+    .registers 2
+
+    .prologue
+    .line 270
+    iget-object v0, p0, Lcom/android/email/activity/Welcome;->mInboxFinder:Lcom/android/email/activity/MailboxFinder;
+
+    if-eqz v0, :cond_c
+
+    .line 271
+    iget-object v0, p0, Lcom/android/email/activity/Welcome;->mInboxFinder:Lcom/android/email/activity/MailboxFinder;
+
+    invoke-virtual {v0}, Lcom/android/email/activity/MailboxFinder;->cancel()V
+
+    .line 272
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/email/activity/Welcome;->mInboxFinder:Lcom/android/email/activity/MailboxFinder;
+
+    .line 274
+    :cond_c
+    return-void
+.end method
+
+
+# virtual methods
+.method public onCreate(Landroid/os/Bundle;)V
+    .registers 5
+    .parameter "icicle"
+
+    .prologue
+    .line 177
+    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+
+    .line 178
+    invoke-static {p0}, Lcom/android/email/activity/ActivityHelper;->debugSetWindowFlags(Landroid/app/Activity;)V
+
+    .line 185
+    invoke-static {p0}, Lcom/android/email/service/EmailServiceUtils;->startExchangeService(Landroid/content/Context;)V
+
+    .line 188
+    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getIntent()Landroid/content/Intent;
+
+    move-result-object v0
+
+    .line 189
+    .local v0, intent:Landroid/content/Intent;
+    invoke-static {v0}, Lcom/android/emailcommon/utility/IntentUtilities;->getAccountIdFromIntent(Landroid/content/Intent;)J
+
+    move-result-wide v1
+
+    iput-wide v1, p0, Lcom/android/email/activity/Welcome;->mAccountId:J
+
+    .line 190
+    invoke-static {v0}, Lcom/android/emailcommon/utility/IntentUtilities;->getMailboxIdFromIntent(Landroid/content/Intent;)J
+
+    move-result-wide v1
+
+    iput-wide v1, p0, Lcom/android/email/activity/Welcome;->mMailboxId:J
+
+    .line 191
+    invoke-static {v0}, Lcom/android/emailcommon/utility/IntentUtilities;->getMessageIdFromIntent(Landroid/content/Intent;)J
+
+    move-result-wide v1
+
+    iput-wide v1, p0, Lcom/android/email/activity/Welcome;->mMessageId:J
+
+    .line 192
+    invoke-static {v0}, Lcom/android/emailcommon/utility/IntentUtilities;->getAccountUuidFromIntent(Landroid/content/Intent;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/email/activity/Welcome;->mAccountUuid:Ljava/lang/String;
+
+    .line 193
+    invoke-static {v0}, Lcom/android/email/activity/Welcome;->getDebugPaneMode(Landroid/content/Intent;)I
+
+    move-result v1
+
+    invoke-static {v1}, Lcom/android/email/activity/UiUtilities;->setDebugPaneMode(I)V
+
+    .line 196
+    invoke-static {p0}, Lcom/android/email/service/MailService;->hasMismatchInPopImapAccounts(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3f
+
+    .line 197
+    new-instance v1, Lcom/android/email/activity/Welcome$1;
+
+    invoke-direct {v1, p0}, Lcom/android/email/activity/Welcome$1;-><init>(Lcom/android/email/activity/Welcome;)V
+
+    invoke-static {v1}, Lcom/android/emailcommon/utility/EmailAsyncTask;->runAsyncParallel(Ljava/lang/Runnable;)Lcom/android/emailcommon/utility/EmailAsyncTask;
+
+    .line 210
+    :goto_3a
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Lcom/android/email/Email;->setNotifyUiAccountsChanged(Z)V
+
+    .line 211
+    return-void
+
+    .line 206
+    :cond_3f
+    invoke-direct {p0}, Lcom/android/email/activity/Welcome;->resolveAccount()V
+
+    goto :goto_3a
+.end method
+
+.method public onCreateOptionsMenu(Landroid/view/Menu;)Z
+    .registers 4
+    .parameter "menu"
+
+    .prologue
+    .line 217
+    iget-object v0, p0, Lcom/android/email/activity/Welcome;->mInboxFinder:Lcom/android/email/activity/MailboxFinder;
+
+    if-nez v0, :cond_9
+
+    .line 218
+    invoke-super {p0, p1}, Landroid/app/Activity;->onCreateOptionsMenu(Landroid/view/Menu;)Z
+
+    move-result v0
+
+    .line 222
+    :goto_8
+    return v0
+
+    .line 221
+    :cond_9
+    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->getMenuInflater()Landroid/view/MenuInflater;
+
+    move-result-object v0
+
+    const v1, 0x7f0d0008
+
+    invoke-virtual {v0, v1, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
+
+    .line 222
+    const/4 v0, 0x1
+
+    goto :goto_8
+.end method
+
+.method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    .registers 4
+    .parameter "item"
+
+    .prologue
+    .line 227
+    invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
+
+    move-result v0
+
+    const v1, 0x7f0e00e4
+
+    if-ne v0, v1, :cond_10
+
+    .line 228
+    iget-wide v0, p0, Lcom/android/email/activity/Welcome;->mAccountId:J
+
+    invoke-static {p0, v0, v1}, Lcom/android/email/activity/setup/AccountSettings;->actionSettings(Landroid/app/Activity;J)V
+
+    .line 229
+    const/4 v0, 0x1
+
+    .line 231
+    :goto_f
+    return v0
+
+    :cond_10
+    invoke-super {p0, p1}, Landroid/app/Activity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+
+    move-result v0
+
+    goto :goto_f
+.end method
+
+.method protected onStop()V
+    .registers 3
+
+    .prologue
+    .line 239
+    invoke-direct {p0}, Lcom/android/email/activity/Welcome;->stopInboxLookup()V
+
+    .line 240
+    iget-object v0, p0, Lcom/android/email/activity/Welcome;->mTaskTracker:Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
+
+    invoke-virtual {v0}, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->cancellAllInterrupt()V
+
+    .line 242
+    invoke-super {p0}, Landroid/app/Activity;->onStop()V
+
+    .line 244
+    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->isChangingConfigurations()Z
+
+    move-result v0
+
+    if-nez v0, :cond_23
+
+    .line 247
+    sget-boolean v0, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v0, :cond_20
+
+    sget-boolean v0, Lcom/android/emailcommon/Logging;->DEBUG_LIFECYCLE:Z
+
+    if-eqz v0, :cond_20
+
+    .line 248
+    const-string v0, "Email"
+
+    const-string v1, "Welcome: Closing self..."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 250
+    :cond_20
+    invoke-virtual {p0}, Lcom/android/email/activity/Welcome;->finish()V
+
+    .line 252
+    :cond_23
+    return-void
+.end method
+
+.method public startActivity(Landroid/content/Intent;)V
+    .registers 3
+    .parameter "intent"
+
+    .prologue
+    .line 262
+    const/high16 v0, 0x200
+
+    invoke-virtual {p1, v0}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    .line 263
+    invoke-super {p0, p1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+
+    .line 264
     return-void
 .end method

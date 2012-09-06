@@ -1,31 +1,23 @@
-.class Lcom/google/googlenav/ui/W;
+.class Lcom/google/googlenav/ui/w;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/googlenav/g;
+.implements Lat/v;
 
 
 # instance fields
-.field final synthetic a:Z
-
-.field final synthetic b:I
-
-.field final synthetic c:Ljava/lang/String;
-
-.field final synthetic d:Lcom/google/googlenav/ui/D;
+.field final synthetic a:Lcom/google/googlenav/ui/v;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/D;ZILjava/lang/String;)V
-    .registers 5
+.method constructor <init>(Lcom/google/googlenav/ui/v;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/W;->d:Lcom/google/googlenav/ui/D;
-
-    iput-boolean p2, p0, Lcom/google/googlenav/ui/W;->a:Z
-
-    iput p3, p0, Lcom/google/googlenav/ui/W;->b:I
-
-    iput-object p4, p0, Lcom/google/googlenav/ui/W;->c:Ljava/lang/String;
+    .prologue
+    .line 740
+    iput-object p1, p0, Lcom/google/googlenav/ui/w;->a:Lcom/google/googlenav/ui/v;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -34,44 +26,77 @@
 
 
 # virtual methods
-.method public a(Ljava/lang/String;Lam/b;)V
-    .registers 7
+.method public a(ZZZII)V
+    .registers 8
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/W;->d:Lcom/google/googlenav/ui/D;
+    .prologue
+    .line 744
+    if-eqz p3, :cond_d
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/D;->a()V
+    .line 745
+    iget-object v0, p0, Lcom/google/googlenav/ui/w;->a:Lcom/google/googlenav/ui/v;
 
-    if-eqz p2, :cond_1a
+    const/4 v1, 0x1
 
-    invoke-static {p2}, Lcom/google/googlenav/ah;->a(Lam/b;)Lcom/google/googlenav/ah;
+    invoke-static {v0, v1}, Lcom/google/googlenav/ui/v;->a(Lcom/google/googlenav/ui/v;Z)Z
+
+    .line 748
+    iget-object v0, p0, Lcom/google/googlenav/ui/w;->a:Lcom/google/googlenav/ui/v;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/v;->q()V
+
+    .line 750
+    :cond_d
+    return-void
+.end method
+
+.method public i()V
+    .registers 3
+
+    .prologue
+    .line 753
+    iget-object v0, p0, Lcom/google/googlenav/ui/w;->a:Lcom/google/googlenav/ui/v;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/google/googlenav/ui/v;->a(Lcom/google/googlenav/ui/v;Z)Z
+
+    .line 754
+    iget-object v0, p0, Lcom/google/googlenav/ui/w;->a:Lcom/google/googlenav/ui/v;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/v;->U()V
+
+    .line 755
+    iget-object v0, p0, Lcom/google/googlenav/ui/w;->a:Lcom/google/googlenav/ui/v;
+
+    invoke-static {v0}, Lcom/google/googlenav/ui/v;->a(Lcom/google/googlenav/ui/v;)V
+
+    .line 760
+    invoke-static {}, Lcom/google/googlenav/K;->a()Lcom/google/googlenav/K;
 
     move-result-object v0
 
-    iget-boolean v1, p0, Lcom/google/googlenav/ui/W;->a:Z
+    invoke-virtual {v0}, Lcom/google/googlenav/K;->w()Z
 
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ah;->d(Z)V
+    move-result v0
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/W;->d:Lcom/google/googlenav/ui/D;
+    if-eqz v0, :cond_23
 
-    iget v2, p0, Lcom/google/googlenav/ui/W;->b:I
+    .line 761
+    iget-object v0, p0, Lcom/google/googlenav/ui/w;->a:Lcom/google/googlenav/ui/v;
 
-    iget-object v3, p0, Lcom/google/googlenav/ui/W;->c:Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/googlenav/ui/v;->b(Lcom/google/googlenav/ui/v;)Lcom/google/googlenav/ui/bJ;
 
-    invoke-virtual {v1, v0, v2, v3}, Lcom/google/googlenav/ui/D;->a(Lcom/google/googlenav/ah;ILjava/lang/String;)V
+    move-result-object v0
 
-    :goto_19
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/bJ;->c()V
+
+    .line 763
+    :cond_23
     return-void
-
-    :cond_1a
-    iget-object v0, p0, Lcom/google/googlenav/ui/W;->d:Lcom/google/googlenav/ui/D;
-
-    const/16 v1, 0x335
-
-    invoke-static {v1}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/D;->a(Ljava/lang/String;)V
-
-    goto :goto_19
 .end method

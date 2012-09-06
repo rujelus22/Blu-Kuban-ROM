@@ -12,7 +12,7 @@
     .registers 1
 
     .prologue
-    .line 205
+    .line 377
     invoke-direct {p0}, Landroid/preference/PreferenceFragment;-><init>()V
 
     return-void
@@ -25,10 +25,10 @@
     .parameter
 
     .prologue
-    .line 210
+    .line 382
     invoke-super {p0, p1}, Landroid/preference/PreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 211
+    .line 383
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$AboutPrefsFragment;->getPreferenceManager()Landroid/preference/PreferenceManager;
 
     move-result-object v0
@@ -37,12 +37,12 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceManager;->setSharedPreferencesName(Ljava/lang/String;)V
 
-    .line 212
+    .line 384
     const/high16 v0, 0x7f06
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$AboutPrefsFragment;->addPreferencesFromResource(I)V
 
-    .line 214
+    .line 386
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$AboutPrefsFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -55,23 +55,23 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$AboutPrefsFragment;->a:Lcom/google/android/youtube/app/YouTubeApplication;
 
-    .line 216
+    .line 388
     const-string v0, "version"
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$AboutPrefsFragment;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v0
 
-    .line 217
+    .line 389
     iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$AboutPrefsFragment;->a:Lcom/google/android/youtube/app/YouTubeApplication;
 
-    invoke-virtual {v1}, Lcom/google/android/youtube/app/YouTubeApplication;->G()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/YouTubeApplication;->V()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 218
+    .line 390
     return-void
 .end method
 
@@ -81,17 +81,17 @@
     .parameter
 
     .prologue
-    .line 222
+    .line 394
     invoke-virtual {p2}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 223
+    .line 395
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$AboutPrefsFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    .line 225
+    .line 397
     const-string v2, "mobile_terms"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -100,8 +100,8 @@
 
     if-eqz v2, :cond_23
 
-    .line 226
-    const v0, 0x7f0a01a7
+    .line 398
+    const v0, 0x7f0b01fc
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$AboutPrefsFragment;->getString(I)Ljava/lang/String;
 
@@ -111,9 +111,9 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/g;->a(Landroid/content/Context;Landroid/net/Uri;)V
+    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/i;->a(Landroid/content/Context;Landroid/net/Uri;)V
 
-    .line 244
+    .line 416
     :cond_1e
     :goto_1e
     invoke-super {p0, p1, p2}, Landroid/preference/PreferenceFragment;->onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
@@ -122,7 +122,7 @@
 
     return v0
 
-    .line 227
+    .line 399
     :cond_23
     const-string v2, "youtube_terms"
 
@@ -132,8 +132,8 @@
 
     if-eqz v2, :cond_3a
 
-    .line 228
-    const v0, 0x7f0a01a8
+    .line 400
+    const v0, 0x7f0b01fd
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$AboutPrefsFragment;->getString(I)Ljava/lang/String;
 
@@ -143,11 +143,11 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/g;->a(Landroid/content/Context;Landroid/net/Uri;)V
+    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/i;->a(Landroid/content/Context;Landroid/net/Uri;)V
 
     goto :goto_1e
 
-    .line 229
+    .line 401
     :cond_3a
     const-string v2, "mobile_privacy"
 
@@ -157,8 +157,8 @@
 
     if-eqz v2, :cond_51
 
-    .line 230
-    const v0, 0x7f0a01a9
+    .line 402
+    const v0, 0x7f0b01fe
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$AboutPrefsFragment;->getString(I)Ljava/lang/String;
 
@@ -168,11 +168,11 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/g;->a(Landroid/content/Context;Landroid/net/Uri;)V
+    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/i;->a(Landroid/content/Context;Landroid/net/Uri;)V
 
     goto :goto_1e
 
-    .line 231
+    .line 403
     :cond_51
     const-string v2, "youtube_privacy"
 
@@ -182,8 +182,8 @@
 
     if-eqz v2, :cond_68
 
-    .line 232
-    const v0, 0x7f0a01aa
+    .line 404
+    const v0, 0x7f0b01ff
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$AboutPrefsFragment;->getString(I)Ljava/lang/String;
 
@@ -193,11 +193,11 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/g;->a(Landroid/content/Context;Landroid/net/Uri;)V
+    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/i;->a(Landroid/content/Context;Landroid/net/Uri;)V
 
     goto :goto_1e
 
-    .line 233
+    .line 405
     :cond_68
     const-string v2, "open_source_licenses"
 
@@ -207,7 +207,7 @@
 
     if-eqz v2, :cond_78
 
-    .line 234
+    .line 406
     invoke-static {v1}, Lcom/google/android/youtube/core/LicensesActivity;->a(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v0
@@ -216,7 +216,7 @@
 
     goto :goto_1e
 
-    .line 235
+    .line 407
     :cond_78
     const-string v2, "feedback"
 
@@ -226,16 +226,16 @@
 
     if-eqz v2, :cond_95
 
-    .line 236
+    .line 408
     iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$AboutPrefsFragment;->a:Lcom/google/android/youtube/app/YouTubeApplication;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->G()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->V()Ljava/lang/String;
 
     move-result-object v0
 
-    const v2, 0x7f0a01a6
+    const v2, 0x7f0b01fb
 
-    invoke-static {v1, v0, v2}, Lcom/google/android/youtube/core/utils/g;->a(Landroid/content/Context;Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, v0, v2}, Lcom/google/android/youtube/core/utils/i;->a(Landroid/content/Context;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -243,11 +243,11 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/g;->a(Landroid/content/Context;Landroid/net/Uri;)V
+    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/i;->a(Landroid/content/Context;Landroid/net/Uri;)V
 
     goto :goto_1e
 
-    .line 239
+    .line 411
     :cond_95
     const-string v2, "help"
 
@@ -257,10 +257,10 @@
 
     if-eqz v0, :cond_1e
 
-    .line 240
-    const v0, 0x7f0a01a4
+    .line 412
+    const v0, 0x7f0b01f9
 
-    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/g;->a(Landroid/content/Context;I)Ljava/lang/String;
+    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/i;->a(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -268,7 +268,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/g;->a(Landroid/content/Context;Landroid/net/Uri;)V
+    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/i;->a(Landroid/content/Context;Landroid/net/Uri;)V
 
     goto/16 :goto_1e
 .end method

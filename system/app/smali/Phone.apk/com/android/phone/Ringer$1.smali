@@ -55,7 +55,7 @@
     .local v0, r:Landroid/media/Ringtone;
     iget v1, p1, Landroid/os/Message;->what:I
 
-    packed-switch v1, :pswitch_data_19c
+    packed-switch v1, :pswitch_data_19a
 
     .line 481
     :cond_a
@@ -204,7 +204,7 @@
     :cond_85
     monitor-exit v2
     :try_end_86
-    .catchall {:try_start_7b .. :try_end_86} :catchall_da
+    .catchall {:try_start_7b .. :try_end_86} :catchall_d7
 
     .line 423
     :cond_86
@@ -230,7 +230,7 @@
     .line 426
     iget v1, p1, Landroid/os/Message;->what:I
 
-    if-ne v1, v3, :cond_dd
+    if-ne v1, v3, :cond_da
 
     .line 427
     invoke-virtual {v0, v5}, Landroid/media/Ringtone;->setRepeat(Z)V
@@ -255,8 +255,6 @@
 
     iget-object v1, v1, Lcom/android/phone/Ringer;->mAudioManager:Landroid/media/AudioManager;
 
-    invoke-virtual {v1, v3, v5, v4}, Landroid/media/AudioManager;->setStreamVolume(III)V
-
     .line 437
     const/4 v1, 0x7
 
@@ -273,7 +271,7 @@
     monitor-enter v2
 
     .line 441
-    :try_start_bf
+    :try_start_bc
     iget-object v1, p0, Lcom/android/phone/Ringer$1;->this$0:Lcom/android/phone/Ringer;
 
     #getter for: Lcom/android/phone/Ringer;->mFirstRingStartTime:J
@@ -285,7 +283,7 @@
 
     cmp-long v1, v3, v5
 
-    if-gez v1, :cond_d4
+    if-gez v1, :cond_d1
 
     .line 442
     iget-object v1, p0, Lcom/android/phone/Ringer$1;->this$0:Lcom/android/phone/Ringer;
@@ -298,44 +296,44 @@
     invoke-static {v1, v3, v4}, Lcom/android/phone/Ringer;->access$502(Lcom/android/phone/Ringer;J)J
 
     .line 444
-    :cond_d4
+    :cond_d1
     monitor-exit v2
 
     goto/16 :goto_a
 
-    :catchall_d7
+    :catchall_d4
     move-exception v1
 
     monitor-exit v2
-    :try_end_d9
-    .catchall {:try_start_bf .. :try_end_d9} :catchall_d7
+    :try_end_d6
+    .catchall {:try_start_bc .. :try_end_d6} :catchall_d4
 
     throw v1
 
     .line 421
-    :catchall_da
+    :catchall_d7
     move-exception v1
 
-    :try_start_db
+    :try_start_d8
     monitor-exit v2
-    :try_end_dc
-    .catchall {:try_start_db .. :try_end_dc} :catchall_da
+    :try_end_d9
+    .catchall {:try_start_d8 .. :try_end_d9} :catchall_d7
 
     throw v1
 
     .line 430
-    :cond_dd
+    :cond_da
     invoke-virtual {v0, v4}, Landroid/media/Ringtone;->setRepeat(Z)V
 
     goto :goto_9f
 
     .line 450
-    :pswitch_e1
+    :pswitch_de
     invoke-static {}, Lcom/android/phone/Ringer;->access$300()Z
 
     move-result v1
 
-    if-eqz v1, :cond_ec
+    if-eqz v1, :cond_e9
 
     const-string v1, "mRingHandler: PLAY_TTS..."
 
@@ -343,7 +341,7 @@
     invoke-static {v1}, Lcom/android/phone/Ringer;->access$200(Ljava/lang/String;)V
 
     .line 452
-    :cond_ec
+    :cond_e9
     iget-object v1, p0, Lcom/android/phone/Ringer$1;->this$0:Lcom/android/phone/Ringer;
 
     iget-object v2, p0, Lcom/android/phone/Ringer$1;->this$0:Lcom/android/phone/Ringer;
@@ -382,12 +380,12 @@
     goto/16 :goto_a
 
     .line 459
-    :pswitch_10d
+    :pswitch_10a
     invoke-static {}, Lcom/android/phone/Ringer;->access$300()Z
 
     move-result v1
 
-    if-eqz v1, :cond_118
+    if-eqz v1, :cond_115
 
     const-string v1, "mRingHandler: STOP_RING..."
 
@@ -395,7 +393,7 @@
     invoke-static {v1}, Lcom/android/phone/Ringer;->access$200(Ljava/lang/String;)V
 
     .line 460
-    :cond_118
+    :cond_115
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     .end local v0           #r:Landroid/media/Ringtone;
@@ -403,7 +401,7 @@
 
     .line 461
     .restart local v0       #r:Landroid/media/Ringtone;
-    if-eqz v0, :cond_14d
+    if-eqz v0, :cond_14a
 
     .line 463
     iget-object v1, p0, Lcom/android/phone/Ringer$1;->this$0:Lcom/android/phone/Ringer;
@@ -413,7 +411,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_141
+    if-eqz v1, :cond_13e
 
     iget-object v1, p0, Lcom/android/phone/Ringer$1;->this$0:Lcom/android/phone/Ringer;
 
@@ -426,7 +424,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_141
+    if-eqz v1, :cond_13e
 
     .line 464
     iget-object v1, p0, Lcom/android/phone/Ringer$1;->this$0:Lcom/android/phone/Ringer;
@@ -447,12 +445,12 @@
     invoke-static {v1, v2}, Lcom/android/phone/Ringer;->access$602(Lcom/android/phone/Ringer;Lcom/android/phone/CallTextToSpeech;)Lcom/android/phone/CallTextToSpeech;
 
     .line 467
-    :cond_141
+    :cond_13e
     invoke-virtual {v0}, Landroid/media/Ringtone;->stop()V
 
     .line 473
-    :cond_144
-    :goto_144
+    :cond_141
+    :goto_141
     invoke-virtual {p0}, Lcom/android/phone/Ringer$1;->getLooper()Landroid/os/Looper;
 
     move-result-object v1
@@ -462,12 +460,12 @@
     goto/16 :goto_a
 
     .line 470
-    :cond_14d
+    :cond_14a
     invoke-static {}, Lcom/android/phone/Ringer;->access$300()Z
 
     move-result v1
 
-    if-eqz v1, :cond_144
+    if-eqz v1, :cond_141
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -490,15 +488,15 @@
     #calls: Lcom/android/phone/Ringer;->log(Ljava/lang/String;)V
     invoke-static {v1}, Lcom/android/phone/Ringer;->access$200(Ljava/lang/String;)V
 
-    goto :goto_144
+    goto :goto_141
 
     .line 477
-    :pswitch_16a
+    :pswitch_167
     invoke-static {}, Lcom/android/phone/Ringer;->access$300()Z
 
     move-result v1
 
-    if-eqz v1, :cond_18c
+    if-eqz v1, :cond_189
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -529,7 +527,7 @@
     invoke-static {v1}, Lcom/android/phone/Ringer;->access$200(Ljava/lang/String;)V
 
     .line 478
-    :cond_18c
+    :cond_189
     iget-object v1, p0, Lcom/android/phone/Ringer$1;->this$0:Lcom/android/phone/Ringer;
 
     iget-object v1, v1, Lcom/android/phone/Ringer;->mAudioManager:Landroid/media/AudioManager;
@@ -548,14 +546,16 @@
     .line 396
     nop
 
-    :pswitch_data_19c
+    nop
+
+    :pswitch_data_19a
     .packed-switch 0x1
         :pswitch_b
         :pswitch_b
-        :pswitch_10d
+        :pswitch_10a
         :pswitch_a
-        :pswitch_e1
+        :pswitch_de
         :pswitch_a
-        :pswitch_16a
+        :pswitch_167
     .end packed-switch
 .end method

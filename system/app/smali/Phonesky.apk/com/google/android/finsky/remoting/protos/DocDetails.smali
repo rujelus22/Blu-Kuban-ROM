@@ -6,6 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/android/finsky/remoting/protos/DocDetails$TvEpisodeDetails;,
+        Lcom/google/android/finsky/remoting/protos/DocDetails$TvSeasonDetails;,
+        Lcom/google/android/finsky/remoting/protos/DocDetails$TvShowDetails;,
+        Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;,
         Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;,
         Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;,
         Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;,

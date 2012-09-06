@@ -3,66 +3,43 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/concurrent/ThreadFactory;
+.implements Ljava/util/concurrent/Executor;
 
 
 # instance fields
-.field private final a:I
-
-.field private final b:Ljava/util/concurrent/ThreadFactory;
+.field final synthetic a:Lcom/google/android/youtube/core/BaseApplication;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 462
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 463
-    iput p1, p0, Lcom/google/android/youtube/core/b;->a:I
-
-    .line 464
-    invoke-static {}, Ljava/util/concurrent/Executors;->defaultThreadFactory()Ljava/util/concurrent/ThreadFactory;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/b;->b:Ljava/util/concurrent/ThreadFactory;
-
-    .line 465
-    return-void
-.end method
-
-.method static synthetic a(Lcom/google/android/youtube/core/b;)I
+.method constructor <init>(Lcom/google/android/youtube/core/BaseApplication;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 458
-    iget v0, p0, Lcom/google/android/youtube/core/b;->a:I
+    .line 508
+    iput-object p1, p0, Lcom/google/android/youtube/core/b;->a:Lcom/google/android/youtube/core/BaseApplication;
 
-    return v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .registers 4
+.method public final execute(Ljava/lang/Runnable;)V
+    .registers 3
     .parameter
 
     .prologue
-    .line 468
-    iget-object v0, p0, Lcom/google/android/youtube/core/b;->b:Ljava/util/concurrent/ThreadFactory;
+    .line 510
+    iget-object v0, p0, Lcom/google/android/youtube/core/b;->a:Lcom/google/android/youtube/core/BaseApplication;
 
-    new-instance v1, Lcom/google/android/youtube/core/c;
-
-    invoke-direct {v1, p0, p1}, Lcom/google/android/youtube/core/c;-><init>(Lcom/google/android/youtube/core/b;Ljava/lang/Runnable;)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/ThreadFactory;->newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+    invoke-static {v0}, Lcom/google/android/youtube/core/BaseApplication;->a(Lcom/google/android/youtube/core/BaseApplication;)Landroid/os/Handler;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 511
+    return-void
 .end method

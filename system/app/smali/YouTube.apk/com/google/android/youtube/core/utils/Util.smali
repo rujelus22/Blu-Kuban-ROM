@@ -6,24 +6,60 @@
 # static fields
 .field public static final a:Ljava/lang/String;
 
-.field private static final b:Ljava/util/HashSet;
+.field private static final b:Ljava/lang/reflect/Method;
+
+.field private static final c:Ljava/util/HashSet;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .registers 6
 
     .prologue
+    const/4 v5, 0x1
+
+    const/4 v4, 0x0
+
+    const/4 v0, 0x0
+
+    .line 77
+    invoke-static {v4}, Lcom/google/android/youtube/core/utils/Util;->a(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    sput-object v1, Lcom/google/android/youtube/core/utils/Util;->a:Ljava/lang/String;
+
+    .line 96
+    :try_start_9
+    const-class v1, Landroid/content/SharedPreferences$Editor;
+
+    const-string v2, "apply"
+
     const/4 v3, 0x0
 
-    .line 71
-    invoke-static {v3}, Lcom/google/android/youtube/core/utils/Util;->a(I)Ljava/lang/String;
+    invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    :try_end_11
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_9 .. :try_end_11} :catch_fa
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Lcom/google/android/youtube/core/utils/Util;->a:Ljava/lang/String;
+    .line 97
+    :try_start_12
+    invoke-virtual {v1}, Ljava/lang/reflect/Method;->getModifiers()I
+    :try_end_15
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_12 .. :try_end_15} :catch_fd
 
-    .line 372
+    move-result v2
+
+    and-int/lit8 v2, v2, 0x1
+
+    if-eq v2, v5, :cond_101
+
+    .line 103
+    :goto_1a
+    sput-object v0, Lcom/google/android/youtube/core/utils/Util;->b:Ljava/lang/reflect/Method;
+
+    .line 439
     new-instance v0, Ljava/util/HashSet;
 
     const/16 v1, 0x24
@@ -32,13 +68,11 @@
 
     const-string v2, "mariannefaithfull"
 
-    aput-object v2, v1, v3
+    aput-object v2, v1, v4
 
-    const/4 v2, 0x1
+    const-string v2, "sylver"
 
-    const-string v3, "sylver"
-
-    aput-object v3, v1, v2
+    aput-object v2, v1, v5
 
     const/4 v2, 0x2
 
@@ -250,20 +284,26 @@
 
     invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    sput-object v0, Lcom/google/android/youtube/core/utils/Util;->b:Ljava/util/HashSet;
+    sput-object v0, Lcom/google/android/youtube/core/utils/Util;->c:Ljava/util/HashSet;
 
     return-void
-.end method
 
-.method private constructor <init>()V
-    .registers 1
+    :catch_fa
+    move-exception v1
 
-    .prologue
-    .line 83
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    goto/16 :goto_1a
 
-    .line 84
-    return-void
+    :catch_fd
+    move-exception v0
+
+    move-object v0, v1
+
+    goto/16 :goto_1a
+
+    :cond_101
+    move-object v0, v1
+
+    goto/16 :goto_1a
 .end method
 
 .method public static a(Ljava/lang/String;F)F
@@ -274,7 +314,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 268
+    .line 290
     if-eqz p0, :cond_b
 
     :try_start_3
@@ -288,7 +328,7 @@
 
     move-result v0
 
-    .line 270
+    .line 292
     :cond_b
     :goto_b
     return v0
@@ -305,7 +345,7 @@
     .parameter
 
     .prologue
-    .line 246
+    .line 268
     if-eqz p0, :cond_a
 
     :try_start_2
@@ -319,7 +359,7 @@
 
     move-result p1
 
-    .line 248
+    .line 270
     :cond_a
     :goto_a
     return p1
@@ -335,7 +375,7 @@
     .parameter
 
     .prologue
-    .line 229
+    .line 251
     if-nez p0, :cond_4
 
     const/4 v0, 0x0
@@ -358,7 +398,7 @@
     .parameter
 
     .prologue
-    .line 212
+    .line 234
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -376,7 +416,7 @@
     .parameter
 
     .prologue
-    .line 188
+    .line 211
     const-string v0, "AnalyticsYouTubeApplicationVersion"
 
     const/4 v1, 0x0
@@ -385,54 +425,54 @@
 
     move-result-object v0
 
-    .line 190
+    .line 213
     invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
-    .line 191
     const-string v2, "AnalyticsYouTubeApplicationVersion"
 
     invoke-interface {v1, v2, p0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 192
-    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    move-result-object v1
 
-    .line 194
-    if-nez v0, :cond_18
+    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->a(Landroid/content/SharedPreferences$Editor;)V
 
-    .line 195
+    .line 216
+    if-nez v0, :cond_19
+
+    .line 217
     sget-object v0, Lcom/google/android/youtube/core/utils/Util$StartupType;->FIRST_STARTUP:Lcom/google/android/youtube/core/utils/Util$StartupType;
 
-    .line 199
-    :goto_17
+    .line 221
+    :goto_18
     return-object v0
 
-    .line 196
-    :cond_18
+    .line 218
+    :cond_19
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_22
 
-    .line 197
+    .line 219
     sget-object v0, Lcom/google/android/youtube/core/utils/Util$StartupType;->NORMAL_STARTUP:Lcom/google/android/youtube/core/utils/Util$StartupType;
 
-    goto :goto_17
+    goto :goto_18
 
-    .line 199
-    :cond_21
+    .line 221
+    :cond_22
     sget-object v0, Lcom/google/android/youtube/core/utils/Util$StartupType;->UPGRADE_STARTUP:Lcom/google/android/youtube/core/utils/Util$StartupType;
 
-    goto :goto_17
+    goto :goto_18
 .end method
 
 .method public static a()Ljava/lang/String;
     .registers 2
 
     .prologue
-    .line 156
+    .line 179
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -469,44 +509,40 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 93
+    .line 116
     div-int/lit8 v0, p0, 0x3c
 
-    .line 94
+    .line 117
     div-int/lit8 v2, v0, 0x3c
 
-    .line 95
+    .line 118
     if-lez v2, :cond_9
 
-    .line 96
+    .line 119
     rem-int/lit8 v0, v0, 0x3c
 
-    .line 98
+    .line 121
     :cond_9
     rem-int/lit8 v1, p0, 0x3c
 
-    .line 100
+    .line 123
     invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 101
+    .line 124
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    if-ne v3, v5, :cond_28
+    if-ne v3, v5, :cond_24
 
-    .line 102
+    .line 125
     new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v4, "0"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -516,29 +552,25 @@
 
     move-result-object v1
 
-    .line 105
-    :cond_28
+    .line 128
+    :cond_24
     invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 106
+    .line 129
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    if-ne v3, v5, :cond_45
+    if-ne v3, v5, :cond_3d
 
-    .line 107
+    .line 130
     new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v4, "0"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -548,11 +580,11 @@
 
     move-result-object v0
 
-    .line 110
-    :cond_45
-    if-lez v2, :cond_69
+    .line 133
+    :cond_3d
+    if-lez v2, :cond_61
 
-    .line 111
+    .line 134
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -585,11 +617,11 @@
 
     move-result-object v0
 
-    .line 114
-    :goto_68
+    .line 137
+    :goto_60
     return-object v0
 
-    :cond_69
+    :cond_61
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -612,7 +644,7 @@
 
     move-result-object v0
 
-    goto :goto_68
+    goto :goto_60
 .end method
 
 .method public static a(Landroid/net/Uri;)Ljava/lang/String;
@@ -620,7 +652,7 @@
     .parameter
 
     .prologue
-    .line 238
+    .line 260
     if-nez p0, :cond_4
 
     const/4 v0, 0x0
@@ -645,7 +677,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 547
+    .line 614
     if-ltz p1, :cond_29
 
     const/4 v0, 0x1
@@ -653,12 +685,12 @@
     :goto_4
     const-string v2, "maxLength must be non-negative"
 
-    invoke-static {v0, v2}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v2}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
 
-    .line 548
+    .line 615
     const-string v0, "defaultValue may not be null"
 
-    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     if-nez p0, :cond_2b
 
@@ -684,7 +716,7 @@
     move-result-object v0
 
     :cond_24
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->h(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->k(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -693,7 +725,7 @@
     :cond_29
     move v0, v1
 
-    .line 547
+    .line 614
     goto :goto_4
 
     :cond_2b
@@ -708,29 +740,29 @@
     .parameter
 
     .prologue
-    .line 520
+    .line 587
     invoke-static {p0}, Lcom/google/android/youtube/googlemobile/common/util/a/a;->a(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_b
 
-    .line 521
+    .line 588
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 527
+    .line 594
     :cond_a
     return-object v0
 
-    .line 523
+    .line 590
     :cond_b
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    .line 524
+    .line 591
     invoke-virtual {p0, p1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v2
@@ -744,7 +776,7 @@
 
     aget-object v4, v2, v1
 
-    .line 525
+    .line 592
     invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v4
@@ -755,7 +787,7 @@
 
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 524
+    .line 591
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_16
@@ -768,7 +800,7 @@
     .parameter
 
     .prologue
-    .line 216
+    .line 238
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -779,8 +811,52 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 217
+    .line 239
     return-void
+.end method
+
+.method public static a(Landroid/content/SharedPreferences$Editor;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 788
+    sget-object v0, Lcom/google/android/youtube/core/utils/Util;->b:Ljava/lang/reflect/Method;
+
+    if-eqz v0, :cond_e
+
+    .line 790
+    :try_start_4
+    sget-object v0, Lcom/google/android/youtube/core/utils/Util;->b:Ljava/lang/reflect/Method;
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_c
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_4 .. :try_end_c} :catch_12
+    .catch Ljava/lang/IllegalAccessException; {:try_start_4 .. :try_end_c} :catch_d
+
+    .line 800
+    :goto_c
+    return-void
+
+    :catch_d
+    move-exception v0
+
+    .line 799
+    :cond_e
+    :goto_e
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    goto :goto_c
+
+    .line 796
+    :catch_12
+    move-exception v0
+
+    goto :goto_e
 .end method
 
 .method public static a(Landroid/database/sqlite/SQLiteDatabase;)V
@@ -794,7 +870,7 @@
 
     const/4 v3, 0x0
 
-    .line 640
+    .line 707
     const/4 v0, 0x2
 
     new-array v2, v0, [Ljava/lang/String;
@@ -807,7 +883,7 @@
 
     aput-object v0, v2, v4
 
-    .line 641
+    .line 708
     const-string v1, "sqlite_master"
 
     move-object v0, p0
@@ -824,7 +900,7 @@
 
     move-result-object v1
 
-    .line 643
+    .line 710
     :cond_19
     :goto_19
     :try_start_19
@@ -832,23 +908,23 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6f
+    if-eqz v0, :cond_67
 
-    .line 644
+    .line 711
     const/4 v0, 0x0
 
     invoke-interface {v1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 645
+    .line 712
     const/4 v2, 0x1
 
     invoke-interface {v1, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 646
+    .line 713
     const-string v3, "sqlite_sequence"
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -857,16 +933,12 @@
 
     if-nez v3, :cond_19
 
-    .line 648
+    .line 715
     new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v4, "DROP "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -883,35 +955,31 @@
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_4d
-    .catchall {:try_start_19 .. :try_end_4d} :catchall_6a
+    :try_end_49
+    .catchall {:try_start_19 .. :try_end_49} :catchall_62
 
     move-result-object v0
 
-    .line 650
-    :try_start_4e
+    .line 717
+    :try_start_4a
     invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-    :try_end_51
-    .catchall {:try_start_4e .. :try_end_51} :catchall_6a
-    .catch Landroid/database/SQLException; {:try_start_4e .. :try_end_51} :catch_52
+    :try_end_4d
+    .catchall {:try_start_4a .. :try_end_4d} :catchall_62
+    .catch Landroid/database/SQLException; {:try_start_4a .. :try_end_4d} :catch_4e
 
     goto :goto_19
 
-    .line 651
-    :catch_52
+    .line 718
+    :catch_4e
     move-exception v2
 
-    .line 652
-    :try_start_53
+    .line 719
+    :try_start_4f
     new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v4, "Error executing "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -922,23 +990,23 @@
     move-result-object v0
 
     invoke-static {v0, v2}, Lcom/google/android/youtube/core/L;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_69
-    .catchall {:try_start_53 .. :try_end_69} :catchall_6a
+    :try_end_61
+    .catchall {:try_start_4f .. :try_end_61} :catchall_62
 
     goto :goto_19
 
-    .line 657
-    :catchall_6a
+    .line 724
+    :catchall_62
     move-exception v0
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
     throw v0
 
-    :cond_6f
+    :cond_67
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    .line 658
+    .line 725
     return-void
 .end method
 
@@ -951,7 +1019,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 433
+    .line 500
     const-wide/16 v2, 0x0
 
     cmp-long v0, p2, v2
@@ -963,24 +1031,24 @@
     :goto_8
     const-string v2, "limit may not be <= 0"
 
-    invoke-static {v0, v2}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v2}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
 
-    .line 434
+    .line 501
     const-string v0, "dirPath may not be empty"
 
-    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 435
+    .line 502
     const-string v0, "suffix may not be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 436
+    .line 503
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 437
+    .line 504
     invoke-virtual {v0}, Ljava/io/File;->isDirectory()Z
 
     move-result v2
@@ -1003,22 +1071,22 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
+    invoke-static {v2, v3}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
 
-    .line 438
-    new-instance v2, Lcom/google/android/youtube/core/utils/t;
+    .line 505
+    new-instance v2, Lcom/google/android/youtube/core/utils/af;
 
-    invoke-direct {v2, p1}, Lcom/google/android/youtube/core/utils/t;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, p1}, Lcom/google/android/youtube/core/utils/af;-><init>(Ljava/lang/String;)V
 
-    .line 444
+    .line 511
     invoke-virtual {v0, v2}, Ljava/io/File;->listFiles(Ljava/io/FileFilter;)[Ljava/io/File;
 
     move-result-object v4
 
-    .line 445
+    .line 512
     if-nez v4, :cond_44
 
-    .line 486
+    .line 553
     :cond_41
     :goto_41
     return-void
@@ -1026,10 +1094,10 @@
     :cond_42
     move v0, v1
 
-    .line 433
+    .line 500
     goto :goto_8
 
-    .line 450
+    .line 517
     :cond_44
     array-length v3, v4
 
@@ -1042,7 +1110,7 @@
 
     aget-object v5, v4, v0
 
-    .line 451
+    .line 518
     int-to-long v6, v2
 
     invoke-virtual {v5}, Ljava/io/File;->length()J
@@ -1053,29 +1121,25 @@
 
     long-to-int v2, v5
 
-    .line 450
+    .line 517
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_47
 
-    .line 453
+    .line 520
     :cond_56
     int-to-long v5, v2
 
     cmp-long v0, v5, p2
 
-    if-gez v0, :cond_81
+    if-gez v0, :cond_7d
 
-    .line 454
+    .line 521
     new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "Dir is below limit, no need to shrink: [size="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1103,15 +1167,15 @@
 
     goto :goto_41
 
-    .line 457
-    :cond_81
-    new-instance v0, Lcom/google/android/youtube/core/utils/u;
+    .line 524
+    :cond_7d
+    new-instance v0, Lcom/google/android/youtube/core/utils/ag;
 
-    invoke-direct {v0}, Lcom/google/android/youtube/core/utils/u;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/youtube/core/utils/ag;-><init>()V
 
     invoke-static {v4, v0}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
 
-    .line 473
+    .line 540
     array-length v5, v4
 
     move v0, v1
@@ -1120,57 +1184,53 @@
 
     move v1, v2
 
-    :goto_8d
+    :goto_89
     if-ge v3, v5, :cond_41
 
     aget-object v6, v4, v3
 
-    .line 474
+    .line 541
     int-to-long v7, v1
 
     cmp-long v7, v7, p2
 
-    if-ltz v7, :cond_a9
+    if-ltz v7, :cond_a5
 
-    .line 475
+    .line 542
     invoke-virtual {v6}, Ljava/io/File;->length()J
 
     move-result-wide v7
 
-    .line 476
+    .line 543
     invoke-virtual {v6}, Ljava/io/File;->delete()Z
 
     move-result v6
 
-    if-eqz v6, :cond_a6
+    if-eqz v6, :cond_a2
 
-    .line 477
+    .line 544
     int-to-long v9, v1
 
     sub-long v6, v9, v7
 
     long-to-int v1, v6
 
-    .line 478
+    .line 545
     add-int/lit8 v0, v0, 0x1
 
-    .line 473
-    :cond_a6
+    .line 540
+    :cond_a2
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_8d
+    goto :goto_89
 
-    .line 481
-    :cond_a9
+    .line 548
+    :cond_a5
     new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v4, "Dir shrunk: [deleted="
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1226,7 +1286,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 125
+    .line 148
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -1256,15 +1316,15 @@
     .parameter
 
     .prologue
-    .line 531
+    .line 598
     if-eqz p0, :cond_7
 
-    .line 532
+    .line 599
     invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 534
+    .line 601
     :goto_6
     return v0
 
@@ -1286,7 +1346,7 @@
     .parameter
 
     .prologue
-    .line 539
+    .line 606
     if-eqz p0, :cond_14
 
     invoke-virtual {p0}, Ljava/util/Date;->getTime()J
@@ -1321,7 +1381,7 @@
     .parameter
 
     .prologue
-    .line 713
+    .line 780
     sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     const/16 v1, 0x50
@@ -1340,22 +1400,54 @@
     .parameter
 
     .prologue
-    .line 704
+    .line 771
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 705
+    .line 772
     const/16 v1, 0x50
 
     invoke-virtual {p0, p1, v1, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 706
+    .line 773
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public static b()I
+    .registers 3
+
+    .prologue
+    const/16 v0, 0x10
+
+    .line 811
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 812
+    if-ge v1, v0, :cond_11
+
+    sget-object v1, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
+
+    const-string v2, "J"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_11
+
+    .line 815
+    :goto_10
+    return v0
+
+    :cond_11
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    goto :goto_10
 .end method
 
 .method public static b(Landroid/net/Uri;)Ljava/lang/String;
@@ -1365,22 +1457,22 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 668
+    .line 735
     if-nez p0, :cond_5
 
     move-object v0, v1
 
-    .line 678
+    .line 745
     :goto_4
     return-object v0
 
-    .line 671
+    .line 738
     :cond_5
     invoke-virtual {p0}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
     move-result-object v0
 
-    .line 672
+    .line 739
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1392,14 +1484,14 @@
 
     if-eqz v0, :cond_30
 
-    .line 673
+    .line 740
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/String;
 
-    .line 674
+    .line 741
     const-string v3, "videos"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1408,7 +1500,7 @@
 
     if-eqz v0, :cond_d
 
-    .line 675
+    .line 742
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
@@ -1431,7 +1523,7 @@
     :cond_30
     move-object v0, v1
 
-    .line 678
+    .line 745
     goto :goto_4
 .end method
 
@@ -1444,19 +1536,19 @@
     .prologue
     const/16 v5, 0x1f4
 
-    .line 573
+    .line 640
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_57
 
-    .line 574
+    .line 641
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 575
+    .line 642
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
@@ -1477,14 +1569,14 @@
 
     move-result-object v1
 
-    .line 576
+    .line 643
     new-instance v2, Ljava/util/StringTokenizer;
 
     const-string v3, ",;"
 
     invoke-direct {v2, v1, v3}, Ljava/util/StringTokenizer;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 577
+    .line 644
     :cond_28
     :goto_28
     invoke-virtual {v2}, Ljava/util/StringTokenizer;->hasMoreTokens()Z
@@ -1493,17 +1585,17 @@
 
     if-eqz v1, :cond_4e
 
-    .line 578
+    .line 645
     invoke-virtual {v2}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 579
+    .line 646
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    .line 580
+    .line 647
     const/4 v4, 0x2
 
     if-gt v4, v3, :cond_28
@@ -1520,7 +1612,7 @@
 
     if-ge v3, v5, :cond_28
 
-    .line 582
+    .line 649
     const-string v3, ","
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1531,17 +1623,17 @@
 
     goto :goto_28
 
-    .line 585
+    .line 652
     :cond_4e
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->h(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->k(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 587
+    .line 654
     :goto_56
     return-object v0
 
@@ -1560,10 +1652,10 @@
     .parameter
 
     .prologue
-    .line 293
-    invoke-static {p0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 315
+    invoke-static {p0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 296
+    .line 318
     :try_start_3
     new-instance v0, Ljava/text/SimpleDateFormat;
 
@@ -1587,14 +1679,14 @@
 
     move-result-object v0
 
-    .line 307
+    .line 329
     :goto_19
     return-object v0
 
     :catch_1a
     move-exception v0
 
-    .line 302
+    .line 324
     :try_start_1b
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -1640,7 +1732,7 @@
 
     move-result-object p0
 
-    .line 303
+    .line 325
     :cond_47
     new-instance v0, Ljava/text/SimpleDateFormat;
 
@@ -1658,19 +1750,15 @@
 
     goto :goto_19
 
-    .line 305
+    .line 327
     :catch_55
     move-exception v0
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "Invalid RFC3339 date: "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1680,7 +1768,7 @@
 
     invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
 
-    .line 307
+    .line 329
     const/4 v0, 0x0
 
     goto :goto_19
@@ -1693,14 +1781,14 @@
     .parameter
 
     .prologue
-    .line 220
+    .line 242
     invoke-static {p0, p1, p2}, Lcom/google/android/youtube/core/utils/Util;->a(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 221
+    .line 243
     return-void
 .end method
 
@@ -1713,7 +1801,7 @@
 
     const/4 v1, 0x0
 
-    .line 137
+    .line 160
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -1728,7 +1816,7 @@
 
     packed-switch v0, :pswitch_data_38
 
-    .line 145
+    .line 168
     const-string v0, "window"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1741,28 +1829,28 @@
 
     move-result-object v0
 
-    .line 147
+    .line 170
     if-nez v0, :cond_24
 
     move v0, v1
 
-    .line 151
+    .line 174
     :goto_1f
     return v0
 
     :pswitch_20
     move v0, v1
 
-    .line 139
+    .line 162
     goto :goto_1f
 
     :pswitch_22
     move v0, v2
 
-    .line 141
+    .line 164
     goto :goto_1f
 
-    .line 150
+    .line 173
     :cond_24
     invoke-virtual {v0}, Landroid/view/Display;->getWidth()I
 
@@ -1776,7 +1864,7 @@
 
     move-result v0
 
-    .line 151
+    .line 174
     const/16 v3, 0x167
 
     if-gt v0, v3, :cond_36
@@ -1790,7 +1878,7 @@
 
     goto :goto_1f
 
-    .line 137
+    .line 160
     :pswitch_data_38
     .packed-switch 0x0
         :pswitch_20
@@ -1798,52 +1886,15 @@
     .end packed-switch
 .end method
 
-.method public static c(Ljava/lang/String;)Landroid/net/Uri;
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 335
-    const-string v0, ":/?=&"
-
-    invoke-static {p0, v0}, Landroid/net/Uri;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    .line 336
-    invoke-virtual {v0}, Landroid/net/Uri;->isAbsolute()Z
-
-    move-result v1
-
-    if-nez v1, :cond_18
-
-    .line 337
-    new-instance v0, Ljava/net/MalformedURLException;
-
-    const-string v1, "Uri must have an absolute scheme"
-
-    invoke-direct {v0, v1}, Ljava/net/MalformedURLException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 339
-    :cond_18
-    return-object v0
-.end method
-
 .method public static c(Landroid/content/Context;)Ljava/lang/String;
     .registers 3
     .parameter
 
     .prologue
-    .line 168
+    .line 191
     const/4 v1, 0x0
 
-    .line 169
+    .line 192
     const-string v0, "phone"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1852,15 +1903,15 @@
 
     check-cast v0, Landroid/telephony/TelephonyManager;
 
-    .line 171
+    .line 194
     if-eqz v0, :cond_25
 
-    .line 172
+    .line 195
     invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getNetworkCountryIso()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 174
+    .line 197
     :goto_f
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1894,12 +1945,45 @@
     goto :goto_f
 .end method
 
+.method public static c(Ljava/lang/String;)Ljava/lang/String;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 357
+    invoke-static {p0}, Lcom/google/android/youtube/core/utils/Util;->j(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 358
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->i(Ljava/lang/String;)Landroid/net/Uri;
+
+    .line 359
+    return-object v0
+.end method
+
+.method public static c()Z
+    .registers 2
+
+    .prologue
+    .line 829
+    const-string v0, "nbx02"
+
+    sget-object v1, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static c(Landroid/net/Uri;)Z
     .registers 3
     .parameter
 
     .prologue
-    .line 682
+    .line 749
     const-string v0, "file"
 
     invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
@@ -1913,74 +1997,14 @@
     return v0
 .end method
 
-.method public static d(Landroid/content/Context;)Landroid/widget/Toast;
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 204
-    new-instance v0, Landroid/widget/Toast;
-
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/widget/Toast;-><init>(Landroid/content/Context;)V
-
-    return-object v0
-.end method
-
-.method public static d(Ljava/lang/String;)Z
-    .registers 4
-    .parameter
-
-    .prologue
-    const/4 v0, 0x1
-
-    .line 412
-    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "vevo"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_10
-
-    .line 417
-    :cond_f
-    :goto_f
-    return v0
-
-    .line 414
-    :cond_10
-    sget-object v1, Lcom/google/android/youtube/core/utils/Util;->b:Ljava/util/HashSet;
-
-    invoke-virtual {v1, p0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_f
-
-    .line 417
-    const/4 v0, 0x0
-
-    goto :goto_f
-.end method
-
-.method public static e(Landroid/content/Context;)I
+.method public static d(Landroid/content/Context;)I
     .registers 5
     .parameter
 
     .prologue
     const/4 v0, 0x0
 
-    .line 491
+    .line 558
     :try_start_1
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -1996,20 +2020,20 @@
 
     move-result-object v1
 
-    .line 492
+    .line 559
     iget v0, v1, Landroid/content/pm/PackageInfo;->versionCode:I
     :try_end_10
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_10} :catch_11
 
-    .line 495
+    .line 562
     :goto_10
     return v0
 
-    .line 493
+    .line 560
     :catch_11
     move-exception v1
 
-    .line 494
+    .line 561
     const-string v2, "could not retrieve application version name"
 
     invoke-static {v2, v1}, Lcom/google/android/youtube/core/L;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -2017,44 +2041,32 @@
     goto :goto_10
 .end method
 
-.method public static e(Ljava/lang/String;)Ljava/lang/String;
+.method public static d(Ljava/lang/String;)Landroid/net/Uri;
     .registers 2
     .parameter
 
     .prologue
-    .line 599
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+    .line 363
+    invoke-static {p0}, Lcom/google/android/youtube/core/utils/Util;->j(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    move-result-object v0
+
+    .line 364
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->i(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static f(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 606
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static f(Landroid/content/Context;)Z
+.method public static e(Landroid/content/Context;)Z
     .registers 3
     .parameter
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .prologue
-    .line 504
+    .line 571
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -2063,12 +2075,12 @@
 
     move-result-object v0
 
-    .line 505
+    .line 572
     iget v0, v0, Landroid/content/res/Configuration;->screenLayout:I
 
     and-int/lit8 v0, v0, 0xf
 
-    .line 506
+    .line 573
     const/4 v1, 0x2
 
     if-le v0, v1, :cond_11
@@ -2084,14 +2096,72 @@
     goto :goto_10
 .end method
 
-.method public static g(Landroid/content/Context;)Z
+.method public static e(Ljava/lang/String;)Z
+    .registers 4
+    .parameter
+
+    .prologue
+    const/4 v0, 0x1
+
+    .line 479
+    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "vevo"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_10
+
+    .line 484
+    :cond_f
+    :goto_f
+    return v0
+
+    .line 481
+    :cond_10
+    sget-object v1, Lcom/google/android/youtube/core/utils/Util;->c:Ljava/util/HashSet;
+
+    invoke-virtual {v1, p0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_f
+
+    .line 484
+    const/4 v0, 0x0
+
+    goto :goto_f
+.end method
+
+.method public static f(Ljava/lang/String;)Ljava/lang/String;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 666
+    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static f(Landroid/content/Context;)Z
     .registers 3
     .parameter
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .prologue
-    .line 514
+    .line 581
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -2100,12 +2170,12 @@
 
     move-result-object v0
 
-    .line 515
+    .line 582
     iget v0, v0, Landroid/content/res/Configuration;->screenLayout:I
 
     and-int/lit8 v0, v0, 0xf
 
-    .line 516
+    .line 583
     const/4 v1, 0x4
 
     if-lt v0, v1, :cond_11
@@ -2121,60 +2191,29 @@
     goto :goto_10
 .end method
 
-.method public static g(Ljava/lang/String;)[B
-    .registers 3
+.method public static g(Ljava/lang/String;)Ljava/lang/String;
+    .registers 2
     .parameter
 
     .prologue
-    .line 614
-    :try_start_0
-    const-string v0, "utf8"
+    .line 673
+    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
-    :try_end_5
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_5} :catch_7
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 615
-    :catch_7
-    move-exception v0
-
-    .line 617
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-.end method
-
-.method private static h(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 592
-    const-string v0, "&"
-
-    const-string v1, "&amp;"
-
-    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static h(Landroid/content/Context;)Z
+.method public static g(Landroid/content/Context;)Z
     .registers 5
     .parameter
 
     .prologue
     const/4 v0, 0x1
 
-    .line 692
+    .line 759
     const/4 v1, 0x0
 
     new-instance v2, Landroid/content/IntentFilter;
@@ -2187,7 +2226,7 @@
 
     move-result-object v1
 
-    .line 694
+    .line 761
     const-string v2, "plugged"
 
     const/4 v3, -0x1
@@ -2196,7 +2235,7 @@
 
     move-result v1
 
-    .line 695
+    .line 762
     if-eq v1, v0, :cond_19
 
     const/4 v2, 0x2
@@ -2211,4 +2250,233 @@
     const/4 v0, 0x0
 
     goto :goto_19
+.end method
+
+.method public static h(Ljava/lang/String;)[B
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 681
+    :try_start_0
+    const-string v0, "utf8"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
+    :try_end_5
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_5} :catch_7
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 682
+    :catch_7
+    move-exception v0
+
+    .line 684
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method private static i(Ljava/lang/String;)Landroid/net/Uri;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 368
+    invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    .line 369
+    invoke-virtual {v0}, Landroid/net/Uri;->isAbsolute()Z
+
+    move-result v1
+
+    if-nez v1, :cond_12
+
+    .line 370
+    new-instance v0, Ljava/net/MalformedURLException;
+
+    const-string v1, "Uri must have an absolute scheme"
+
+    invoke-direct {v0, v1}, Ljava/net/MalformedURLException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 372
+    :cond_12
+    return-object v0
+.end method
+
+.method private static j(Ljava/lang/String;)Ljava/lang/String;
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 376
+    invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    .line 378
+    :try_start_4
+    new-instance v0, Ljava/net/URI;
+
+    invoke-direct {v0, p0}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
+    :try_end_9
+    .catch Ljava/net/URISyntaxException; {:try_start_4 .. :try_end_9} :catch_a
+
+    .line 404
+    :goto_9
+    return-object p0
+
+    .line 380
+    :catch_a
+    move-exception v0
+
+    .line 385
+    :try_start_b
+    invoke-virtual {v1}, Landroid/net/Uri;->getEncodedPath()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v2, "%,;:$&+=/@"
+
+    invoke-static {v0, v2}, Landroid/net/Uri;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 386
+    invoke-virtual {v1}, Landroid/net/Uri;->getEncodedQuery()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "%,;:$&+=/[]@?"
+
+    invoke-static {v2, v3}, Landroid/net/Uri;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 387
+    invoke-virtual {v1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Landroid/net/Uri$Builder;->encodedPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/net/Uri$Builder;->encodedQuery(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 389
+    new-instance v2, Ljava/net/URI;
+
+    invoke-direct {v2, v0}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
+    :try_end_38
+    .catch Ljava/net/URISyntaxException; {:try_start_b .. :try_end_38} :catch_3a
+
+    move-object p0, v0
+
+    .line 390
+    goto :goto_9
+
+    :catch_3a
+    move-exception v0
+
+    .line 396
+    :try_start_3b
+    invoke-virtual {v1}, Landroid/net/Uri;->getEncodedPath()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v2, ",;:$&+=/@"
+
+    invoke-static {v0, v2}, Landroid/net/Uri;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 397
+    invoke-virtual {v1}, Landroid/net/Uri;->getEncodedQuery()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, ",;:$&+=/@[]?"
+
+    invoke-static {v2, v3}, Landroid/net/Uri;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 398
+    invoke-virtual {v1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/net/Uri$Builder;->encodedPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/net/Uri$Builder;->encodedQuery(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 400
+    new-instance v1, Ljava/net/URI;
+
+    invoke-direct {v1, v0}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
+    :try_end_68
+    .catch Ljava/net/URISyntaxException; {:try_start_3b .. :try_end_68} :catch_6a
+
+    move-object p0, v0
+
+    .line 401
+    goto :goto_9
+
+    .line 404
+    :catch_6a
+    move-exception v0
+
+    invoke-static {p0}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_9
+.end method
+
+.method private static k(Ljava/lang/String;)Ljava/lang/String;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 659
+    const-string v0, "&"
+
+    const-string v1, "&amp;"
+
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

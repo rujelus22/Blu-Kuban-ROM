@@ -8,7 +8,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final DEFAULT_TIMEOUT:I = 0xbb8
 

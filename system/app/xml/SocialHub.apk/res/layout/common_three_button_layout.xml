@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:id="@id/layout_main" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
-        <com.sec.android.socialhub.view.EditTextEx android:scrollbarStyle="insideInset" android:textColor="#ff000000" android:gravity="top" android:id="@id/reply_comment_editText" android:background="@color/edit_text_background" android:paddingLeft="8.0dip" android:paddingTop="10.665985dip" android:paddingRight="8.0dip" android:paddingBottom="10.665985dip" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/enter_text" android:maxLength="100000" android:inputType="textCapSentences|textAutoCorrect|textMultiLine" />
-    </LinearLayout>
-    <include android:id="@id/select_list_softkey" android:layout_height="wrap_content" android:layout_weight="0.0" layout="@layout/common_softkey_3_button" />
-</LinearLayout>

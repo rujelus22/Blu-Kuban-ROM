@@ -1,19 +1,23 @@
 .class Lcom/google/googlenav/suggest/android/h;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnFocusChangeListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/suggest/android/SuggestView;
+.field final synthetic a:Lcom/google/googlenav/suggest/android/BaseSuggestView;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/suggest/android/SuggestView;)V
+.method constructor <init>(Lcom/google/googlenav/suggest/android/BaseSuggestView;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/suggest/android/h;->a:Lcom/google/googlenav/suggest/android/SuggestView;
+    .prologue
+    .line 166
+    iput-object p1, p0, Lcom/google/googlenav/suggest/android/h;->a:Lcom/google/googlenav/suggest/android/BaseSuggestView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,21 +26,37 @@
 
 
 # virtual methods
-.method public onFocusChange(Landroid/view/View;Z)V
-    .registers 5
+.method public onClick(Landroid/view/View;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 172
+    iget-object v0, p0, Lcom/google/googlenav/suggest/android/h;->a:Lcom/google/googlenav/suggest/android/BaseSuggestView;
+
+    iget-object v1, p0, Lcom/google/googlenav/suggest/android/h;->a:Lcom/google/googlenav/suggest/android/BaseSuggestView;
+
+    invoke-virtual {v1}, Lcom/google/googlenav/suggest/android/BaseSuggestView;->isPopupShowing()Z
+
+    move-result v1
+
+    iput-boolean v1, v0, Lcom/google/googlenav/suggest/android/BaseSuggestView;->b:Z
+
+    .line 173
+    iget-object v0, p0, Lcom/google/googlenav/suggest/android/h;->a:Lcom/google/googlenav/suggest/android/BaseSuggestView;
+
+    iget-boolean v0, v0, Lcom/google/googlenav/suggest/android/BaseSuggestView;->b:Z
+
+    if-nez v0, :cond_16
+
+    .line 174
+    iget-object v0, p0, Lcom/google/googlenav/suggest/android/h;->a:Lcom/google/googlenav/suggest/android/BaseSuggestView;
 
     const/4 v1, 0x0
 
-    if-nez p2, :cond_d
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/suggest/android/BaseSuggestView;->a(Z)V
 
-    iget-object v0, p0, Lcom/google/googlenav/suggest/android/h;->a:Lcom/google/googlenav/suggest/android/SuggestView;
-
-    invoke-static {v0, v1}, Lcom/google/googlenav/suggest/android/SuggestView;->b(Lcom/google/googlenav/suggest/android/SuggestView;Z)Z
-
-    iget-object v0, p0, Lcom/google/googlenav/suggest/android/h;->a:Lcom/google/googlenav/suggest/android/SuggestView;
-
-    invoke-static {v0, v1}, Lcom/google/googlenav/suggest/android/SuggestView;->a(Lcom/google/googlenav/suggest/android/SuggestView;Z)V
-
-    :cond_d
+    .line 176
+    :cond_16
     return-void
 .end method

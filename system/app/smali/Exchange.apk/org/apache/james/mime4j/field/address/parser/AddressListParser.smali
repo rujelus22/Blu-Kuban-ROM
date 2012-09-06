@@ -79,13 +79,13 @@
     .registers 0
 
     .prologue
-    .line 815
+    .line 711
     invoke-static {}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1_0()V
 
-    .line 816
+    .line 712
     invoke-static {}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1_1()V
 
-    .line 817
+    .line 713
     return-void
 .end method
 
@@ -102,38 +102,38 @@
 
     const/4 v3, 0x0
 
-    .line 879
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 751
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 22
+    .line 20
     new-instance v1, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-direct {v1}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;-><init>()V
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
-    .line 808
+    .line 704
     iput-boolean v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->lookingAhead:Z
 
-    .line 811
+    .line 707
     new-array v1, v6, [I
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
-    .line 834
+    .line 720
     const/4 v1, 0x2
 
     new-array v1, v1, [Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_2_rtns:[Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
 
-    .line 835
+    .line 721
     iput-boolean v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_rescan:Z
 
-    .line 836
+    .line 722
     iput v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_gc:I
 
-    .line 957
+    .line 816
     new-instance v1, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$LookaheadSuccess;
 
     const/4 v2, 0x0
@@ -142,31 +142,31 @@
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ls:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$LookaheadSuccess;
 
-    .line 1015
+    .line 862
     new-instance v1, Ljava/util/Vector;
 
     invoke-direct {v1}, Ljava/util/Vector;-><init>()V
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_expentries:Ljava/util/Vector;
 
-    .line 1017
+    .line 864
     iput v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_kind:I
 
-    .line 1018
+    .line 865
     const/16 v1, 0x64
 
     new-array v1, v1, [I
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_lasttokens:[I
 
-    .line 880
+    .line 752
     new-instance v1, Lorg/apache/james/mime4j/field/address/parser/SimpleCharStream;
 
     invoke-direct {v1, p1, v5, v5}, Lorg/apache/james/mime4j/field/address/parser/SimpleCharStream;-><init>(Ljava/io/Reader;II)V
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_input_stream:Lorg/apache/james/mime4j/field/address/parser/SimpleCharStream;
 
-    .line 881
+    .line 753
     new-instance v1, Lorg/apache/james/mime4j/field/address/parser/AddressListParserTokenManager;
 
     iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_input_stream:Lorg/apache/james/mime4j/field/address/parser/SimpleCharStream;
@@ -175,37 +175,35 @@
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->token_source:Lorg/apache/james/mime4j/field/address/parser/AddressListParserTokenManager;
 
-    .line 882
+    .line 754
     new-instance v1, Lorg/apache/james/mime4j/field/address/parser/Token;
 
     invoke-direct {v1}, Lorg/apache/james/mime4j/field/address/parser/Token;-><init>()V
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->token:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 883
+    .line 755
     iput v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
-    .line 884
+    .line 756
     iput v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_gen:I
 
-    .line 885
+    .line 757
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_51
     if-ge v0, v6, :cond_5a
 
-    .line 886
     iget-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     aput v4, v1, v0
 
-    .line 885
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_51
 
-    .line 887
+    .line 758
     :cond_5a
     const/4 v0, 0x0
 
@@ -216,7 +214,6 @@
 
     if-ge v0, v1, :cond_6c
 
-    .line 888
     iget-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_2_rtns:[Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
 
     new-instance v2, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
@@ -225,12 +222,11 @@
 
     aput-object v2, v1, v0
 
-    .line 887
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_5b
 
-    .line 889
+    .line 759
     :cond_6c
     return-void
 .end method
@@ -244,17 +240,16 @@
 
     const/4 v2, 0x0
 
-    .line 690
+    .line 614
     iput p1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la:I
 
-    .line 691
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->token:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     iput-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     iput-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_lastpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 693
+    .line 615
     :try_start_a
     invoke-direct {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_3_1()Z
     :try_end_d
@@ -265,7 +260,7 @@
 
     if-nez v3, :cond_14
 
-    .line 697
+    .line 617
     :goto_10
     invoke-direct {p0, v2, p1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_save(II)V
 
@@ -275,14 +270,14 @@
     :cond_14
     move v1, v2
 
-    .line 693
+    .line 615
     goto :goto_10
 
-    .line 694
+    .line 616
     :catch_16
     move-exception v0
 
-    .line 697
+    .line 617
     .local v0, ls:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$LookaheadSuccess;
     invoke-direct {p0, v2, p1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_save(II)V
 
@@ -304,17 +299,16 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 702
+    .line 621
     iput p1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la:I
 
-    .line 703
     iget-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->token:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_lastpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 705
+    .line 622
     :try_start_9
     invoke-direct {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_3_2()Z
     :try_end_c
@@ -327,24 +321,24 @@
 
     move v1, v2
 
-    .line 709
+    .line 624
     :goto_10
     invoke-direct {p0, v2, p1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_save(II)V
 
     :goto_13
     return v1
 
-    .line 705
+    .line 622
     :cond_14
     const/4 v1, 0x0
 
     goto :goto_10
 
-    .line 706
+    .line 623
     :catch_16
     move-exception v0
 
-    .line 709
+    .line 624
     .local v0, ls:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$LookaheadSuccess;
     invoke-direct {p0, v2, p1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_save(II)V
 
@@ -365,10 +359,10 @@
     .registers 3
 
     .prologue
-    .line 769
+    .line 671
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 770
+    .line 672
     .local v0, xsp:Lorg/apache/james/mime4j/field/address/parser/Token;
     invoke-direct {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_3R_12()Z
 
@@ -376,10 +370,10 @@
 
     if-eqz v1, :cond_14
 
-    .line 771
+    .line 673
     iput-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 772
+    .line 674
     const/16 v1, 0x12
 
     invoke-direct {p0, v1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scan_token(I)Z
@@ -388,10 +382,9 @@
 
     if-eqz v1, :cond_14
 
-    .line 773
     const/4 v1, 0x1
 
-    .line 775
+    .line 676
     :goto_13
     return v1
 
@@ -405,10 +398,10 @@
     .registers 3
 
     .prologue
-    .line 715
+    .line 629
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 716
+    .line 630
     .local v0, xsp:Lorg/apache/james/mime4j/field/address/parser/Token;
     const/16 v1, 0x9
 
@@ -418,14 +411,13 @@
 
     if-eqz v1, :cond_c
 
-    .line 717
     iput-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 718
+    .line 631
     :cond_c
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 719
+    .line 632
     const/16 v1, 0xe
 
     invoke-direct {p0, v1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scan_token(I)Z
@@ -434,10 +426,10 @@
 
     if-eqz v1, :cond_22
 
-    .line 720
+    .line 633
     iput-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 721
+    .line 634
     const/16 v1, 0x1f
 
     invoke-direct {p0, v1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scan_token(I)Z
@@ -446,10 +438,9 @@
 
     if-eqz v1, :cond_22
 
-    .line 722
     const/4 v1, 0x1
 
-    .line 724
+    .line 636
     :goto_21
     return v1
 
@@ -463,7 +454,7 @@
     .registers 3
 
     .prologue
-    .line 754
+    .line 660
     const/16 v1, 0xe
 
     invoke-direct {p0, v1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scan_token(I)Z
@@ -472,18 +463,17 @@
 
     if-eqz v1, :cond_a
 
-    .line 755
     const/4 v1, 0x1
 
-    .line 764
+    .line 666
     :goto_9
     return v1
 
-    .line 758
+    .line 663
     :cond_a
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 759
+    .line 664
     .local v0, xsp:Lorg/apache/james/mime4j/field/address/parser/Token;
     invoke-direct {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_3R_13()Z
 
@@ -491,10 +481,9 @@
 
     if-eqz v1, :cond_a
 
-    .line 760
     iput-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 764
+    .line 666
     const/4 v1, 0x0
 
     goto :goto_9
@@ -504,10 +493,10 @@
     .registers 3
 
     .prologue
-    .line 729
+    .line 641
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 730
+    .line 642
     .local v0, xsp:Lorg/apache/james/mime4j/field/address/parser/Token;
     const/16 v1, 0x9
 
@@ -517,10 +506,9 @@
 
     if-eqz v1, :cond_c
 
-    .line 731
     iput-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 732
+    .line 643
     :cond_c
     const/16 v1, 0xe
 
@@ -530,10 +518,9 @@
 
     if-eqz v1, :cond_16
 
-    .line 733
     const/4 v1, 0x1
 
-    .line 734
+    .line 644
     :goto_15
     return v1
 
@@ -549,19 +536,19 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 738
+    .line 648
     invoke-direct {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_3R_9()Z
 
     move-result v1
 
     if-eqz v1, :cond_8
 
-    .line 744
+    .line 651
     :cond_7
     :goto_7
     return v0
 
-    .line 740
+    .line 649
     :cond_8
     const/16 v1, 0x8
 
@@ -571,14 +558,14 @@
 
     if-nez v1, :cond_7
 
-    .line 742
+    .line 650
     invoke-direct {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_3R_10()Z
 
     move-result v1
 
     if-nez v1, :cond_7
 
-    .line 744
+    .line 651
     const/4 v0, 0x0
 
     goto :goto_7
@@ -588,10 +575,10 @@
     .registers 3
 
     .prologue
-    .line 786
+    .line 686
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 787
+    .line 687
     .local v0, xsp:Lorg/apache/james/mime4j/field/address/parser/Token;
     const/16 v1, 0xe
 
@@ -601,10 +588,10 @@
 
     if-eqz v1, :cond_16
 
-    .line 788
+    .line 688
     iput-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 789
+    .line 689
     const/16 v1, 0x1f
 
     invoke-direct {p0, v1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scan_token(I)Z
@@ -613,28 +600,26 @@
 
     if-eqz v1, :cond_16
 
-    .line 790
     const/4 v1, 0x1
 
-    .line 799
+    .line 695
     :goto_15
     return v1
 
-    .line 793
+    .line 692
     :cond_16
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 794
+    .line 693
     invoke-direct {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_3R_11()Z
 
     move-result v1
 
     if-eqz v1, :cond_16
 
-    .line 795
     iput-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 799
+    .line 695
     const/4 v1, 0x0
 
     goto :goto_15
@@ -644,17 +629,16 @@
     .registers 2
 
     .prologue
-    .line 748
+    .line 655
     invoke-direct {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_3R_8()Z
 
     move-result v0
 
     if-eqz v0, :cond_8
 
-    .line 749
     const/4 v0, 0x1
 
-    .line 750
+    .line 656
     :goto_7
     return v0
 
@@ -668,17 +652,16 @@
     .registers 2
 
     .prologue
-    .line 779
+    .line 680
     invoke-direct {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_3R_8()Z
 
     move-result v0
 
     if-eqz v0, :cond_8
 
-    .line 780
     const/4 v0, 0x1
 
-    .line 781
+    .line 681
     :goto_7
     return v0
 
@@ -694,17 +677,17 @@
     .parameter "pos"
 
     .prologue
-    .line 1022
+    .line 869
     const/16 v4, 0x64
 
     if-lt p2, v4, :cond_5
 
-    .line 1051
+    .line 894
     :cond_4
     :goto_4
     return-void
 
-    .line 1024
+    .line 870
     :cond_5
     iget v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_endpos:I
 
@@ -712,7 +695,7 @@
 
     if-ne p2, v4, :cond_16
 
-    .line 1025
+    .line 871
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_lasttokens:[I
 
     iget v5, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_endpos:I
@@ -725,20 +708,20 @@
 
     goto :goto_4
 
-    .line 1026
+    .line 872
     :cond_16
     iget v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_endpos:I
 
     if-eqz v4, :cond_4
 
-    .line 1027
+    .line 873
     iget v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_endpos:I
 
     new-array v4, v4, [I
 
     iput-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_expentry:[I
 
-    .line 1028
+    .line 874
     const/4 v2, 0x0
 
     .local v2, i:I
@@ -747,7 +730,7 @@
 
     if-ge v2, v4, :cond_30
 
-    .line 1029
+    .line 875
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_expentry:[I
 
     iget-object v5, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_lasttokens:[I
@@ -756,16 +739,16 @@
 
     aput v5, v4, v2
 
-    .line 1028
+    .line 874
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_21
 
-    .line 1031
+    .line 877
     :cond_30
     const/4 v1, 0x0
 
-    .line 1032
+    .line 878
     .local v1, exists:Z
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_expentries:Ljava/util/Vector;
 
@@ -781,14 +764,14 @@
 
     if-eqz v4, :cond_5b
 
-    .line 1033
+    .line 879
     invoke-interface {v0}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, [I
 
-    .line 1034
+    .line 880
     .local v3, oldentry:[I
     array-length v4, v3
 
@@ -798,10 +781,10 @@
 
     if-ne v4, v5, :cond_37
 
-    .line 1035
+    .line 881
     const/4 v1, 0x1
 
-    .line 1036
+    .line 882
     const/4 v2, 0x0
 
     :goto_4b
@@ -811,7 +794,7 @@
 
     if-ge v2, v4, :cond_59
 
-    .line 1037
+    .line 883
     aget v4, v3, v2
 
     iget-object v5, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_expentry:[I
@@ -820,30 +803,28 @@
 
     if-eq v4, v5, :cond_6f
 
-    .line 1038
+    .line 884
     const/4 v1, 0x0
 
-    .line 1042
+    .line 888
     :cond_59
     if-eqz v1, :cond_37
 
-    .line 1046
+    .line 891
     .end local v3           #oldentry:[I
     :cond_5b
     if-nez v1, :cond_64
 
-    .line 1047
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_expentries:Ljava/util/Vector;
 
     iget-object v5, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_expentry:[I
 
     invoke-virtual {v4, v5}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
 
-    .line 1048
+    .line 892
     :cond_64
     if-eqz p2, :cond_4
 
-    .line 1049
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_lasttokens:[I
 
     iput p2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_endpos:I
@@ -854,7 +835,7 @@
 
     goto :goto_4
 
-    .line 1036
+    .line 882
     .restart local v3       #oldentry:[I
     :cond_6f
     add-int/lit8 v2, v2, 0x1
@@ -872,7 +853,7 @@
     .end annotation
 
     .prologue
-    .line 929
+    .line 793
     iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->token:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     .local v2, oldToken:Lorg/apache/james/mime4j/field/address/parser/Token;
@@ -880,34 +861,33 @@
 
     if-eqz v3, :cond_40
 
-    .line 930
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->token:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     iget-object v3, v3, Lorg/apache/james/mime4j/field/address/parser/Token;->next:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     iput-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->token:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 933
+    .line 795
     :goto_c
     const/4 v3, -0x1
 
     iput v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
-    .line 934
+    .line 796
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->token:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     iget v3, v3, Lorg/apache/james/mime4j/field/address/parser/Token;->kind:I
 
     if-ne v3, p1, :cond_53
 
-    .line 935
+    .line 797
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_gen:I
 
     add-int/lit8 v3, v3, 0x1
 
     iput v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_gen:I
 
-    .line 936
+    .line 798
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_gc:I
 
     add-int/lit8 v3, v3, 0x1
@@ -918,12 +898,12 @@
 
     if-le v3, v4, :cond_50
 
-    .line 937
+    .line 799
     const/4 v3, 0x0
 
     iput v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_gc:I
 
-    .line 938
+    .line 800
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -934,35 +914,34 @@
 
     if-ge v1, v3, :cond_50
 
-    .line 939
+    .line 801
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_2_rtns:[Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
 
     aget-object v0, v3, v1
 
-    .line 940
+    .line 802
     .local v0, c:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
     :goto_32
     if-eqz v0, :cond_4d
 
-    .line 941
+    .line 803
     iget v3, v0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;->gen:I
 
     iget v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_gen:I
 
     if-ge v3, v4, :cond_3d
 
-    .line 942
     const/4 v3, 0x0
 
     iput-object v3, v0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;->first:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 943
+    .line 804
     :cond_3d
     iget-object v0, v0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;->next:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
 
     goto :goto_32
 
-    .line 932
+    .line 794
     .end local v0           #c:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
     .end local v1           #i:I
     :cond_40
@@ -980,7 +959,7 @@
 
     goto :goto_c
 
-    .line 938
+    .line 800
     .restart local v0       #c:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
     .restart local v1       #i:I
     :cond_4d
@@ -988,7 +967,7 @@
 
     goto :goto_29
 
-    .line 947
+    .line 808
     .end local v0           #c:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
     .end local v1           #i:I
     :cond_50
@@ -996,14 +975,14 @@
 
     return-object v3
 
-    .line 949
+    .line 810
     :cond_53
     iput-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->token:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 950
+    .line 811
     iput p1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_kind:I
 
-    .line 951
+    .line 812
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->generateParseException()Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     move-result-object v3
@@ -1015,7 +994,7 @@
     .registers 1
 
     .prologue
-    .line 820
+    .line 715
     const/16 v0, 0x16
 
     new-array v0, v0, [I
@@ -1024,10 +1003,10 @@
 
     sput-object v0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1_0:[I
 
-    .line 825
+    .line 716
     return-void
 
-    .line 820
+    .line 715
     :array_a
     .array-data 0x4
         0x2t 0x0t 0x0t 0x0t
@@ -1059,7 +1038,7 @@
     .registers 1
 
     .prologue
-    .line 828
+    .line 718
     const/16 v0, 0x16
 
     new-array v0, v0, [I
@@ -1068,10 +1047,10 @@
 
     sput-object v0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1_1:[I
 
-    .line 832
+    .line 719
     return-void
 
-    .line 828
+    .line 718
     :array_a
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -1103,7 +1082,7 @@
     .registers 3
 
     .prologue
-    .line 1009
+    .line 856
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->token:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     iget-object v0, v0, Lorg/apache/james/mime4j/field/address/parser/Token;->next:Lorg/apache/james/mime4j/field/address/parser/Token;
@@ -1112,7 +1091,7 @@
 
     if-nez v0, :cond_17
 
-    .line 1010
+    .line 857
     iget-object v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->token:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     iget-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->token_source:Lorg/apache/james/mime4j/field/address/parser/AddressListParserTokenManager;
@@ -1127,7 +1106,7 @@
 
     iput v0, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
-    .line 1012
+    .line 859
     :goto_16
     return v0
 
@@ -1145,12 +1124,12 @@
     .registers 5
 
     .prologue
-    .line 1099
+    .line 942
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_rescan:Z
 
-    .line 1100
+    .line 943
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1159,13 +1138,13 @@
 
     if-ge v0, v2, :cond_2f
 
-    .line 1102
+    .line 945
     :try_start_7
     iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_2_rtns:[Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
 
     aget-object v1, v2, v0
 
-    .line 1104
+    .line 947
     .local v1, p:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
     :cond_b
     iget v2, v1, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;->gen:I
@@ -1174,51 +1153,50 @@
 
     if-le v2, v3, :cond_1e
 
-    .line 1105
+    .line 948
     iget v2, v1, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;->arg:I
 
     iput v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la:I
 
-    .line 1106
     iget-object v2, v1, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;->first:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     iput-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     iput-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_lastpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 1107
+    .line 949
     packed-switch v0, :pswitch_data_34
 
-    .line 1116
+    .line 954
     :cond_1e
     :goto_1e
     iget-object v1, v1, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;->next:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
 
-    .line 1117
+    .line 955
     if-nez v1, :cond_b
 
-    .line 1100
+    .line 943
     .end local v1           #p:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
     :goto_22
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_4
 
-    .line 1109
+    .line 950
     .restart local v1       #p:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
     :pswitch_25
     invoke-direct {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_3_1()Z
 
     goto :goto_1e
 
-    .line 1118
+    .line 956
     .end local v1           #p:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
     :catch_29
     move-exception v2
 
     goto :goto_22
 
-    .line 1112
+    .line 951
     .restart local v1       #p:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
     :pswitch_2b
     invoke-direct {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_3_2()Z
@@ -1227,17 +1205,17 @@
 
     goto :goto_1e
 
-    .line 1121
+    .line 958
     .end local v1           #p:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
     :cond_2f
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_rescan:Z
 
-    .line 1122
+    .line 959
     return-void
 
-    .line 1107
+    .line 949
     nop
 
     :pswitch_data_34
@@ -1253,12 +1231,12 @@
     .parameter "xla"
 
     .prologue
-    .line 1125
+    .line 962
     iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_2_rtns:[Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
 
     aget-object v0, v2, p1
 
-    .line 1126
+    .line 963
     .local v0, p:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
     :goto_4
     iget v2, v0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;->gen:I
@@ -1267,12 +1245,11 @@
 
     if-le v2, v3, :cond_16
 
-    .line 1127
+    .line 964
     iget-object v2, v0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;->next:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
 
     if-nez v2, :cond_25
 
-    .line 1128
     new-instance v1, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
 
     invoke-direct {v1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;-><init>()V
@@ -1283,7 +1260,7 @@
     .local v1, p:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
     move-object v0, v1
 
-    .line 1133
+    .line 967
     .end local v1           #p:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
     .restart local v0       #p:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
     :cond_16
@@ -1297,18 +1274,16 @@
 
     iput v2, v0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;->gen:I
 
-    .line 1134
     iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->token:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     iput-object v2, v0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;->first:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 1135
     iput p2, v0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;->arg:I
 
-    .line 1136
+    .line 968
     return-void
 
-    .line 1131
+    .line 965
     :cond_25
     iget-object v0, v0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;->next:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$JJCalls;
 
@@ -1320,28 +1295,28 @@
     .parameter "kind"
 
     .prologue
-    .line 960
+    .line 818
     iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_lastpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     if-ne v2, v3, :cond_3b
 
-    .line 961
+    .line 819
     iget v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la:I
 
     add-int/lit8 v2, v2, -0x1
 
     iput v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la:I
 
-    .line 962
+    .line 820
     iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     iget-object v2, v2, Lorg/apache/james/mime4j/field/address/parser/Token;->next:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     if-nez v2, :cond_32
 
-    .line 963
+    .line 821
     iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->token_source:Lorg/apache/james/mime4j/field/address/parser/AddressListParserTokenManager;
@@ -1356,20 +1331,19 @@
 
     iput-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_lastpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 970
+    .line 828
     :goto_20
     iget-boolean v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_rescan:Z
 
     if-eqz v2, :cond_47
 
-    .line 971
+    .line 829
     const/4 v0, 0x0
 
-    .line 972
     .local v0, i:I
     iget-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->token:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 973
+    .line 830
     .local v1, tok:Lorg/apache/james/mime4j/field/address/parser/Token;
     :goto_27
     if-eqz v1, :cond_42
@@ -1378,15 +1352,13 @@
 
     if-eq v1, v2, :cond_42
 
-    .line 974
     add-int/lit8 v0, v0, 0x1
 
-    .line 975
     iget-object v1, v1, Lorg/apache/james/mime4j/field/address/parser/Token;->next:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     goto :goto_27
 
-    .line 965
+    .line 823
     .end local v0           #i:I
     .end local v1           #tok:Lorg/apache/james/mime4j/field/address/parser/Token;
     :cond_32
@@ -1400,7 +1372,7 @@
 
     goto :goto_20
 
-    .line 968
+    .line 826
     :cond_3b
     iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
@@ -1410,16 +1382,15 @@
 
     goto :goto_20
 
-    .line 977
+    .line 831
     .restart local v0       #i:I
     .restart local v1       #tok:Lorg/apache/james/mime4j/field/address/parser/Token;
     :cond_42
     if-eqz v1, :cond_47
 
-    .line 978
     invoke-direct {p0, p1, v0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_add_error_token(II)V
 
-    .line 980
+    .line 833
     .end local v0           #i:I
     .end local v1           #tok:Lorg/apache/james/mime4j/field/address/parser/Token;
     :cond_47
@@ -1429,14 +1400,13 @@
 
     if-eq v2, p1, :cond_4f
 
-    .line 981
     const/4 v2, 0x1
 
-    .line 984
+    .line 835
     :goto_4e
     return v2
 
-    .line 982
+    .line 834
     :cond_4f
     iget v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la:I
 
@@ -1448,12 +1418,11 @@
 
     if-ne v2, v3, :cond_5c
 
-    .line 983
     iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ls:Lorg/apache/james/mime4j/field/address/parser/AddressListParser$LookaheadSuccess;
 
     throw v2
 
-    .line 984
+    .line 835
     :cond_5c
     const/4 v2, 0x0
 
@@ -1473,80 +1442,80 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 532
+    .line 471
     new-instance v2, Lorg/apache/james/mime4j/field/address/parser/ASTaddr_spec;
 
     const/16 v3, 0x9
 
     invoke-direct {v2, v3}, Lorg/apache/james/mime4j/field/address/parser/ASTaddr_spec;-><init>(I)V
 
-    .line 533
+    .line 472
     .local v2, jjtn000:Lorg/apache/james/mime4j/field/address/parser/ASTaddr_spec;
     const/4 v0, 0x1
 
-    .line 534
+    .line 473
     .local v0, jjtc000:Z
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->openNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 535
+    .line 474
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeOpenNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 537
+    .line 476
     :try_start_11
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->local_part()V
 
-    .line 538
+    .line 477
     const/16 v3, 0x8
 
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 539
+    .line 478
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->domain()V
     :try_end_1c
     .catchall {:try_start_11 .. :try_end_1c} :catchall_37
     .catch Ljava/lang/Throwable; {:try_start_11 .. :try_end_1c} :catch_27
 
-    .line 564
+    .line 494
     if-eqz v0, :cond_26
 
-    .line 565
+    .line 495
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2, v5}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 566
+    .line 496
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 569
+    .line 499
     :cond_26
     return-void
 
-    .line 540
+    .line 479
     :catch_27
     move-exception v1
 
-    .line 541
+    .line 480
     .local v1, jjte000:Ljava/lang/Throwable;
     if-eqz v0, :cond_43
 
-    .line 542
+    .line 481
     :try_start_2a
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->clearNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 543
+    .line 482
     const/4 v0, 0x0
 
-    .line 547
+    .line 486
     :goto_30
     instance-of v3, v1, Ljava/lang/RuntimeException;
 
     if-eqz v3, :cond_49
 
-    .line 550
+    .line 487
     check-cast v1, Ljava/lang/RuntimeException;
 
     .end local v1           #jjte000:Ljava/lang/Throwable;
@@ -1554,24 +1523,24 @@
     :try_end_37
     .catchall {:try_start_2a .. :try_end_37} :catchall_37
 
-    .line 564
+    .line 494
     :catchall_37
     move-exception v3
 
     if-eqz v0, :cond_42
 
-    .line 565
+    .line 495
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v4, v2, v5}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 566
+    .line 496
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
     :cond_42
     throw v3
 
-    .line 545
+    .line 484
     .restart local v1       #jjte000:Ljava/lang/Throwable;
     :cond_43
     :try_start_43
@@ -1581,19 +1550,19 @@
 
     goto :goto_30
 
-    .line 553
+    .line 489
     :cond_49
     instance-of v3, v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     if-eqz v3, :cond_50
 
-    .line 556
+    .line 490
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     .end local v1           #jjte000:Ljava/lang/Throwable;
     throw v1
 
-    .line 561
+    .line 492
     .restart local v1       #jjte000:Ljava/lang/Throwable;
     :cond_50
     check-cast v1, Ljava/lang/Error;
@@ -1617,27 +1586,27 @@
 
     const/4 v4, -0x1
 
-    .line 147
+    .line 136
     new-instance v2, Lorg/apache/james/mime4j/field/address/parser/ASTaddress;
 
     const/4 v3, 0x2
 
     invoke-direct {v2, v3}, Lorg/apache/james/mime4j/field/address/parser/ASTaddress;-><init>(I)V
 
-    .line 148
+    .line 137
     .local v2, jjtn000:Lorg/apache/james/mime4j/field/address/parser/ASTaddress;
     const/4 v0, 0x1
 
-    .line 149
+    .line 138
     .local v0, jjtc000:Z
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->openNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 150
+    .line 139
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeOpenNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 152
+    .line 141
     const v3, 0x7fffffff
 
     :try_start_14
@@ -1647,29 +1616,29 @@
 
     if-eqz v3, :cond_28
 
-    .line 153
+    .line 142
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->addr_spec()V
     :try_end_1d
     .catchall {:try_start_14 .. :try_end_1d} :catchall_54
     .catch Ljava/lang/Throwable; {:try_start_14 .. :try_end_1d} :catch_44
 
-    .line 205
+    .line 185
     :goto_1d
     if-eqz v0, :cond_27
 
-    .line 206
+    .line 186
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2, v6}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 207
+    .line 187
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 210
+    .line 190
     :cond_27
     return-void
 
-    .line 155
+    .line 144
     :cond_28
     :try_start_28
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
@@ -1683,7 +1652,7 @@
     :goto_30
     sparse-switch v3, :sswitch_data_a2
 
-    .line 176
+    .line 165
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/4 v4, 0x5
@@ -1692,12 +1661,12 @@
 
     aput v5, v3, v4
 
-    .line 177
+    .line 166
     const/4 v3, -0x1
 
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 178
+    .line 167
     new-instance v3, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     invoke-direct {v3}, Lorg/apache/james/mime4j/field/address/parser/ParseException;-><init>()V
@@ -1707,30 +1676,30 @@
     .catchall {:try_start_28 .. :try_end_44} :catchall_54
     .catch Ljava/lang/Throwable; {:try_start_28 .. :try_end_44} :catch_44
 
-    .line 181
+    .line 170
     :catch_44
     move-exception v1
 
-    .line 182
+    .line 171
     .local v1, jjte000:Ljava/lang/Throwable;
     if-eqz v0, :cond_91
 
-    .line 183
+    .line 172
     :try_start_47
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->clearNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 184
+    .line 173
     const/4 v0, 0x0
 
-    .line 188
+    .line 177
     :goto_4d
     instance-of v3, v1, Ljava/lang/RuntimeException;
 
     if-eqz v3, :cond_97
 
-    .line 191
+    .line 178
     check-cast v1, Ljava/lang/RuntimeException;
 
     .end local v1           #jjte000:Ljava/lang/Throwable;
@@ -1738,41 +1707,41 @@
     :try_end_54
     .catchall {:try_start_47 .. :try_end_54} :catchall_54
 
-    .line 205
+    .line 185
     :catchall_54
     move-exception v3
 
     if-eqz v0, :cond_5f
 
-    .line 206
+    .line 186
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v4, v2, v6}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 207
+    .line 187
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
     :cond_5f
     throw v3
 
-    .line 155
+    .line 144
     :cond_60
     :try_start_60
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_30
 
-    .line 157
+    .line 146
     :sswitch_63
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->angle_addr()V
 
     goto :goto_1d
 
-    .line 161
+    .line 150
     :sswitch_67
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->phrase()V
 
-    .line 162
+    .line 151
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     if-ne v3, v4, :cond_86
@@ -1784,7 +1753,7 @@
     :goto_72
     packed-switch v3, :pswitch_data_b0
 
-    .line 170
+    .line 159
     :pswitch_75
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
@@ -1794,31 +1763,31 @@
 
     aput v5, v3, v4
 
-    .line 171
+    .line 160
     const/4 v3, -0x1
 
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 172
+    .line 161
     new-instance v3, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     invoke-direct {v3}, Lorg/apache/james/mime4j/field/address/parser/ParseException;-><init>()V
 
     throw v3
 
-    .line 162
+    .line 151
     :cond_86
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_72
 
-    .line 164
+    .line 153
     :pswitch_89
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->group_body()V
 
     goto :goto_1d
 
-    .line 167
+    .line 156
     :pswitch_8d
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->angle_addr()V
     :try_end_90
@@ -1827,7 +1796,7 @@
 
     goto :goto_1d
 
-    .line 186
+    .line 175
     .restart local v1       #jjte000:Ljava/lang/Throwable;
     :cond_91
     :try_start_91
@@ -1837,19 +1806,19 @@
 
     goto :goto_4d
 
-    .line 194
+    .line 180
     :cond_97
     instance-of v3, v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     if-eqz v3, :cond_9e
 
-    .line 197
+    .line 181
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     .end local v1           #jjte000:Ljava/lang/Throwable;
     throw v1
 
-    .line 202
+    .line 183
     .restart local v1       #jjte000:Ljava/lang/Throwable;
     :cond_9e
     check-cast v1, Ljava/lang/Error;
@@ -1859,7 +1828,7 @@
     :try_end_a1
     .catchall {:try_start_91 .. :try_end_a1} :catchall_54
 
-    .line 155
+    .line 144
     nop
 
     :sswitch_data_a2
@@ -1869,7 +1838,7 @@
         0x1f -> :sswitch_67
     .end sparse-switch
 
-    .line 162
+    .line 151
     :pswitch_data_b0
     .packed-switch 0x4
         :pswitch_89
@@ -1891,25 +1860,25 @@
 
     const/4 v6, 0x1
 
-    .line 78
+    .line 75
     new-instance v2, Lorg/apache/james/mime4j/field/address/parser/ASTaddress_list;
 
     invoke-direct {v2, v6}, Lorg/apache/james/mime4j/field/address/parser/ASTaddress_list;-><init>(I)V
 
-    .line 79
+    .line 76
     .local v2, jjtn000:Lorg/apache/james/mime4j/field/address/parser/ASTaddress_list;
     const/4 v0, 0x1
 
-    .line 80
+    .line 77
     .local v0, jjtc000:Z
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->openNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 81
+    .line 78
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeOpenNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 83
+    .line 80
     :try_start_10
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
@@ -1922,7 +1891,7 @@
     :goto_18
     sparse-switch v3, :sswitch_data_94
 
-    .line 90
+    .line 87
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/4 v4, 0x1
@@ -1931,7 +1900,7 @@
 
     aput v5, v3, v4
 
-    .line 94
+    .line 92
     :goto_22
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
@@ -1944,7 +1913,7 @@
     :goto_2a
     packed-switch v3, :pswitch_data_a2
 
-    .line 99
+    .line 97
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/4 v4, 0x2
@@ -1956,29 +1925,29 @@
     .catchall {:try_start_10 .. :try_end_34} :catchall_56
     .catch Ljava/lang/Throwable; {:try_start_10 .. :try_end_34} :catch_46
 
-    .line 138
+    .line 127
     if-eqz v0, :cond_3e
 
-    .line 139
+    .line 128
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2, v6}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 140
+    .line 129
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 143
+    .line 132
     :cond_3e
     return-void
 
-    .line 83
+    .line 80
     :cond_3f
     :try_start_3f
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_18
 
-    .line 87
+    .line 84
     :sswitch_42
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->address()V
     :try_end_45
@@ -1987,30 +1956,30 @@
 
     goto :goto_22
 
-    .line 114
+    .line 112
     :catch_46
     move-exception v1
 
-    .line 115
+    .line 113
     .local v1, jjte000:Ljava/lang/Throwable;
     if-eqz v0, :cond_83
 
-    .line 116
+    .line 114
     :try_start_49
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->clearNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 117
+    .line 115
     const/4 v0, 0x0
 
-    .line 121
+    .line 119
     :goto_4f
     instance-of v3, v1, Ljava/lang/RuntimeException;
 
     if-eqz v3, :cond_89
 
-    .line 124
+    .line 120
     check-cast v1, Ljava/lang/RuntimeException;
 
     .end local v1           #jjte000:Ljava/lang/Throwable;
@@ -2018,37 +1987,37 @@
     :try_end_56
     .catchall {:try_start_49 .. :try_end_56} :catchall_56
 
-    .line 138
+    .line 127
     :catchall_56
     move-exception v3
 
     if-eqz v0, :cond_61
 
-    .line 139
+    .line 128
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v4, v2, v6}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 140
+    .line 129
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
     :cond_61
     throw v3
 
-    .line 94
+    .line 92
     :cond_62
     :try_start_62
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_2a
 
-    .line 102
+    .line 100
     :pswitch_65
     const/4 v3, 0x3
 
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 103
+    .line 101
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     if-ne v3, v7, :cond_7c
@@ -2060,7 +2029,7 @@
     :goto_71
     sparse-switch v3, :sswitch_data_a8
 
-    .line 110
+    .line 108
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/4 v4, 0x3
@@ -2071,13 +2040,13 @@
 
     goto :goto_22
 
-    .line 103
+    .line 101
     :cond_7c
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_71
 
-    .line 107
+    .line 105
     :sswitch_7f
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->address()V
     :try_end_82
@@ -2086,7 +2055,7 @@
 
     goto :goto_22
 
-    .line 119
+    .line 117
     .restart local v1       #jjte000:Ljava/lang/Throwable;
     :cond_83
     :try_start_83
@@ -2096,19 +2065,19 @@
 
     goto :goto_4f
 
-    .line 127
+    .line 122
     :cond_89
     instance-of v3, v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     if-eqz v3, :cond_90
 
-    .line 130
+    .line 123
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     .end local v1           #jjte000:Ljava/lang/Throwable;
     throw v1
 
-    .line 135
+    .line 125
     .restart local v1       #jjte000:Ljava/lang/Throwable;
     :cond_90
     check-cast v1, Ljava/lang/Error;
@@ -2118,7 +2087,7 @@
     :try_end_93
     .catchall {:try_start_83 .. :try_end_93} :catchall_56
 
-    .line 83
+    .line 80
     nop
 
     :sswitch_data_94
@@ -2128,13 +2097,13 @@
         0x1f -> :sswitch_42
     .end sparse-switch
 
-    .line 94
+    .line 92
     :pswitch_data_a2
     .packed-switch 0x3
         :pswitch_65
     .end packed-switch
 
-    .line 103
+    .line 101
     :sswitch_data_a8
     .sparse-switch
         0x6 -> :sswitch_7f
@@ -2156,31 +2125,31 @@
 
     const/4 v6, 0x1
 
-    .line 380
+    .line 334
     new-instance v2, Lorg/apache/james/mime4j/field/address/parser/ASTangle_addr;
 
     invoke-direct {v2, v3}, Lorg/apache/james/mime4j/field/address/parser/ASTangle_addr;-><init>(I)V
 
-    .line 381
+    .line 335
     .local v2, jjtn000:Lorg/apache/james/mime4j/field/address/parser/ASTangle_addr;
     const/4 v0, 0x1
 
-    .line 382
+    .line 336
     .local v0, jjtc000:Z
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->openNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 383
+    .line 337
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeOpenNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 385
+    .line 339
     const/4 v3, 0x6
 
     :try_start_11
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 386
+    .line 340
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     const/4 v4, -0x1
@@ -2194,7 +2163,7 @@
     :goto_1d
     packed-switch v3, :pswitch_data_6e
 
-    .line 391
+    .line 345
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/16 v4, 0xa
@@ -2203,11 +2172,11 @@
 
     aput v5, v3, v4
 
-    .line 394
+    .line 348
     :goto_28
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->addr_spec()V
 
-    .line 395
+    .line 349
     const/4 v3, 0x7
 
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
@@ -2215,29 +2184,29 @@
     .catchall {:try_start_11 .. :try_end_2f} :catchall_51
     .catch Ljava/lang/Throwable; {:try_start_11 .. :try_end_2f} :catch_41
 
-    .line 420
+    .line 365
     if-eqz v0, :cond_39
 
-    .line 421
+    .line 366
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2, v6}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 422
+    .line 367
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 425
+    .line 370
     :cond_39
     return-void
 
-    .line 386
+    .line 340
     :cond_3a
     :try_start_3a
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_1d
 
-    .line 388
+    .line 342
     :pswitch_3d
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->route()V
     :try_end_40
@@ -2246,30 +2215,30 @@
 
     goto :goto_28
 
-    .line 396
+    .line 350
     :catch_41
     move-exception v1
 
-    .line 397
+    .line 351
     .local v1, jjte000:Ljava/lang/Throwable;
     if-eqz v0, :cond_5d
 
-    .line 398
+    .line 352
     :try_start_44
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->clearNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 399
+    .line 353
     const/4 v0, 0x0
 
-    .line 403
+    .line 357
     :goto_4a
     instance-of v3, v1, Ljava/lang/RuntimeException;
 
     if-eqz v3, :cond_63
 
-    .line 406
+    .line 358
     check-cast v1, Ljava/lang/RuntimeException;
 
     .end local v1           #jjte000:Ljava/lang/Throwable;
@@ -2277,24 +2246,24 @@
     :try_end_51
     .catchall {:try_start_44 .. :try_end_51} :catchall_51
 
-    .line 420
+    .line 365
     :catchall_51
     move-exception v3
 
     if-eqz v0, :cond_5c
 
-    .line 421
+    .line 366
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v4, v2, v6}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 422
+    .line 367
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
     :cond_5c
     throw v3
 
-    .line 401
+    .line 355
     .restart local v1       #jjte000:Ljava/lang/Throwable;
     :cond_5d
     :try_start_5d
@@ -2304,19 +2273,19 @@
 
     goto :goto_4a
 
-    .line 409
+    .line 360
     :cond_63
     instance-of v3, v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     if-eqz v3, :cond_6a
 
-    .line 412
+    .line 361
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     .end local v1           #jjte000:Ljava/lang/Throwable;
     throw v1
 
-    .line 417
+    .line 363
     .restart local v1       #jjte000:Ljava/lang/Throwable;
     :cond_6a
     check-cast v1, Ljava/lang/Error;
@@ -2326,7 +2295,7 @@
     :try_end_6d
     .catchall {:try_start_5d .. :try_end_6d} :catchall_51
 
-    .line 386
+    .line 340
     nop
 
     :pswitch_data_6e
@@ -2348,27 +2317,27 @@
 
     const/4 v6, -0x1
 
-    .line 638
+    .line 565
     new-instance v1, Lorg/apache/james/mime4j/field/address/parser/ASTdomain;
 
     const/16 v3, 0xb
 
     invoke-direct {v1, v3}, Lorg/apache/james/mime4j/field/address/parser/ASTdomain;-><init>(I)V
 
-    .line 639
+    .line 566
     .local v1, jjtn000:Lorg/apache/james/mime4j/field/address/parser/ASTdomain;
     const/4 v0, 0x1
 
-    .line 640
+    .line 567
     .local v0, jjtc000:Z
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v1}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->openNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 641
+    .line 568
     invoke-virtual {p0, v1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeOpenNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 644
+    .line 570
     :try_start_12
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
@@ -2381,7 +2350,7 @@
     :goto_1a
     sparse-switch v3, :sswitch_data_aa
 
-    .line 677
+    .line 601
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/16 v4, 0x15
@@ -2390,12 +2359,12 @@
 
     aput v5, v3, v4
 
-    .line 678
+    .line 602
     const/4 v3, -0x1
 
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 679
+    .line 603
     new-instance v3, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     invoke-direct {v3}, Lorg/apache/james/mime4j/field/address/parser/ParseException;-><init>()V
@@ -2404,31 +2373,31 @@
     :try_end_2f
     .catchall {:try_start_12 .. :try_end_2f} :catchall_2f
 
-    .line 682
+    .line 606
     :catchall_2f
     move-exception v3
 
     if-eqz v0, :cond_3a
 
-    .line 683
+    .line 607
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v4, v1, v7}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 684
+    .line 608
     invoke-virtual {p0, v1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
     :cond_3a
     throw v3
 
-    .line 644
+    .line 570
     :cond_3b
     :try_start_3b
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_1a
 
-    .line 646
+    .line 572
     :sswitch_3e
     const/16 v3, 0xe
 
@@ -2436,7 +2405,7 @@
 
     move-result-object v2
 
-    .line 648
+    .line 575
     .local v2, t:Lorg/apache/james/mime4j/field/address/parser/Token;
     :goto_44
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
@@ -2450,7 +2419,7 @@
     :goto_4c
     sparse-switch v3, :sswitch_data_b4
 
-    .line 654
+    .line 581
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/16 v4, 0x13
@@ -2461,24 +2430,24 @@
     :try_end_57
     .catchall {:try_start_3b .. :try_end_57} :catchall_2f
 
-    .line 682
+    .line 606
     .end local v2           #t:Lorg/apache/james/mime4j/field/address/parser/Token;
     :goto_57
     if-eqz v0, :cond_61
 
-    .line 683
+    .line 607
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v1, v7}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 684
+    .line 608
     invoke-virtual {p0, v1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 687
+    .line 611
     :cond_61
     return-void
 
-    .line 648
+    .line 575
     .restart local v2       #t:Lorg/apache/james/mime4j/field/address/parser/Token;
     :cond_62
     :try_start_62
@@ -2486,7 +2455,7 @@
 
     goto :goto_4c
 
-    .line 657
+    .line 584
     :sswitch_65
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
@@ -2499,7 +2468,7 @@
     :goto_6d
     packed-switch v3, :pswitch_data_be
 
-    .line 662
+    .line 589
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/16 v4, 0x14
@@ -2508,7 +2477,7 @@
 
     aput v5, v3, v4
 
-    .line 665
+    .line 592
     :goto_78
     iget-object v3, v2, Lorg/apache/james/mime4j/field/address/parser/Token;->image:Ljava/lang/String;
 
@@ -2528,7 +2497,7 @@
 
     if-eq v3, v4, :cond_9c
 
-    .line 667
+    .line 593
     new-instance v3, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     const-string v4, "Atoms in domain names must be separated by \'.\'"
@@ -2537,13 +2506,13 @@
 
     throw v3
 
-    .line 657
+    .line 584
     :cond_92
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_6d
 
-    .line 659
+    .line 586
     :pswitch_95
     const/16 v3, 0x9
 
@@ -2551,10 +2520,10 @@
 
     move-result-object v2
 
-    .line 660
+    .line 587
     goto :goto_78
 
-    .line 670
+    .line 594
     :cond_9c
     const/16 v3, 0xe
 
@@ -2564,7 +2533,7 @@
 
     goto :goto_44
 
-    .line 674
+    .line 598
     .end local v2           #t:Lorg/apache/james/mime4j/field/address/parser/Token;
     :sswitch_a3
     const/16 v3, 0x12
@@ -2575,7 +2544,7 @@
 
     goto :goto_57
 
-    .line 644
+    .line 570
     nop
 
     :sswitch_data_aa
@@ -2584,14 +2553,14 @@
         0x12 -> :sswitch_a3
     .end sparse-switch
 
-    .line 648
+    .line 575
     :sswitch_data_b4
     .sparse-switch
         0x9 -> :sswitch_65
         0xe -> :sswitch_65
     .end sparse-switch
 
-    .line 657
+    .line 584
     :pswitch_data_be
     .packed-switch 0x9
         :pswitch_95
@@ -2608,15 +2577,15 @@
 
     const/4 v6, 0x1
 
-    .line 1054
+    .line 897
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_expentries:Ljava/util/Vector;
 
     invoke-virtual {v4}, Ljava/util/Vector;->removeAllElements()V
 
-    .line 1055
+    .line 898
     new-array v3, v8, [Z
 
-    .line 1056
+    .line 899
     .local v3, la1tokens:[Z
     const/4 v1, 0x0
 
@@ -2624,31 +2593,31 @@
     :goto_c
     if-ge v1, v8, :cond_13
 
-    .line 1057
+    .line 900
     aput-boolean v7, v3, v1
 
-    .line 1056
+    .line 899
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_c
 
-    .line 1059
+    .line 902
     :cond_13
     iget v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_kind:I
 
     if-ltz v4, :cond_1e
 
-    .line 1060
+    .line 903
     iget v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_kind:I
 
     aput-boolean v6, v3, v4
 
-    .line 1061
+    .line 904
     const/4 v4, -0x1
 
     iput v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_kind:I
 
-    .line 1063
+    .line 906
     :cond_1e
     const/4 v1, 0x0
 
@@ -2657,7 +2626,7 @@
 
     if-ge v1, v4, :cond_4e
 
-    .line 1064
+    .line 907
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     aget v4, v4, v1
@@ -2666,7 +2635,7 @@
 
     if-ne v4, v5, :cond_4b
 
-    .line 1065
+    .line 908
     const/4 v2, 0x0
 
     .local v2, j:I
@@ -2675,7 +2644,7 @@
 
     if-ge v2, v4, :cond_4b
 
-    .line 1066
+    .line 909
     sget-object v4, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1_0:[I
 
     aget v4, v4, v1
@@ -2686,10 +2655,10 @@
 
     if-eqz v4, :cond_3b
 
-    .line 1067
+    .line 910
     aput-boolean v6, v3, v2
 
-    .line 1069
+    .line 912
     :cond_3b
     sget-object v4, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1_1:[I
 
@@ -2701,70 +2670,70 @@
 
     if-eqz v4, :cond_48
 
-    .line 1070
+    .line 913
     add-int/lit8 v4, v2, 0x20
 
     aput-boolean v6, v3, v4
 
-    .line 1065
+    .line 908
     :cond_48
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2c
 
-    .line 1063
+    .line 906
     .end local v2           #j:I
     :cond_4b
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1f
 
-    .line 1075
+    .line 918
     :cond_4e
     const/4 v1, 0x0
 
     :goto_4f
     if-ge v1, v8, :cond_67
 
-    .line 1076
+    .line 919
     aget-boolean v4, v3, v1
 
     if-eqz v4, :cond_64
 
-    .line 1077
+    .line 920
     new-array v4, v6, [I
 
     iput-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_expentry:[I
 
-    .line 1078
+    .line 921
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_expentry:[I
 
     aput v1, v4, v7
 
-    .line 1079
+    .line 922
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_expentries:Ljava/util/Vector;
 
     iget-object v5, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_expentry:[I
 
     invoke-virtual {v4, v5}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
 
-    .line 1075
+    .line 918
     :cond_64
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_4f
 
-    .line 1082
+    .line 925
     :cond_67
     iput v7, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_endpos:I
 
-    .line 1083
+    .line 926
     invoke-direct {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_rescan_token()V
 
-    .line 1084
+    .line 927
     invoke-direct {p0, v7, v7}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_add_error_token(II)V
 
-    .line 1085
+    .line 928
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_expentries:Ljava/util/Vector;
 
     invoke-virtual {v4}, Ljava/util/Vector;->size()I
@@ -2773,7 +2742,7 @@
 
     new-array v0, v4, [[I
 
-    .line 1086
+    .line 929
     .local v0, exptokseq:[[I
     const/4 v1, 0x0
 
@@ -2786,7 +2755,7 @@
 
     if-ge v1, v4, :cond_8d
 
-    .line 1087
+    .line 930
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_expentries:Ljava/util/Vector;
 
     invoke-virtual {v4, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
@@ -2797,12 +2766,12 @@
 
     aput-object v4, v0, v1
 
-    .line 1086
+    .line 929
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_78
 
-    .line 1089
+    .line 932
     :cond_8d
     new-instance v4, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
@@ -2820,14 +2789,14 @@
     .parameter "index"
 
     .prologue
-    .line 998
+    .line 847
     iget-boolean v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->lookingAhead:Z
 
     if-eqz v3, :cond_14
 
     iget-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_scanpos:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 999
+    .line 848
     .local v1, t:Lorg/apache/james/mime4j/field/address/parser/Token;
     :goto_6
     const/4 v0, 0x0
@@ -2840,15 +2809,14 @@
     :goto_8
     if-ge v0, p1, :cond_20
 
-    .line 1000
+    .line 849
     iget-object v3, v2, Lorg/apache/james/mime4j/field/address/parser/Token;->next:Lorg/apache/james/mime4j/field/address/parser/Token;
 
     if-eqz v3, :cond_17
 
-    .line 1001
     iget-object v1, v2, Lorg/apache/james/mime4j/field/address/parser/Token;->next:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 999
+    .line 848
     .end local v2           #t:Lorg/apache/james/mime4j/field/address/parser/Token;
     .restart local v1       #t:Lorg/apache/james/mime4j/field/address/parser/Token;
     :goto_10
@@ -2860,7 +2828,7 @@
     .restart local v2       #t:Lorg/apache/james/mime4j/field/address/parser/Token;
     goto :goto_8
 
-    .line 998
+    .line 847
     .end local v0           #i:I
     .end local v2           #t:Lorg/apache/james/mime4j/field/address/parser/Token;
     :cond_14
@@ -2868,7 +2836,7 @@
 
     goto :goto_6
 
-    .line 1003
+    .line 850
     .restart local v0       #i:I
     .restart local v2       #t:Lorg/apache/james/mime4j/field/address/parser/Token;
     :cond_17
@@ -2884,7 +2852,7 @@
     .restart local v1       #t:Lorg/apache/james/mime4j/field/address/parser/Token;
     goto :goto_10
 
-    .line 1005
+    .line 852
     .end local v1           #t:Lorg/apache/james/mime4j/field/address/parser/Token;
     .restart local v2       #t:Lorg/apache/james/mime4j/field/address/parser/Token;
     :cond_20
@@ -2906,31 +2874,31 @@
 
     const/4 v6, -0x1
 
-    .line 309
+    .line 271
     new-instance v2, Lorg/apache/james/mime4j/field/address/parser/ASTgroup_body;
 
     invoke-direct {v2, v3}, Lorg/apache/james/mime4j/field/address/parser/ASTgroup_body;-><init>(I)V
 
-    .line 310
+    .line 272
     .local v2, jjtn000:Lorg/apache/james/mime4j/field/address/parser/ASTgroup_body;
     const/4 v0, 0x1
 
-    .line 311
+    .line 273
     .local v0, jjtc000:Z
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->openNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 312
+    .line 274
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeOpenNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 314
+    .line 276
     const/4 v3, 0x4
 
     :try_start_12
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 315
+    .line 277
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     if-ne v3, v6, :cond_49
@@ -2942,7 +2910,7 @@
     :goto_1d
     sparse-switch v3, :sswitch_data_9e
 
-    .line 322
+    .line 284
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/4 v4, 0x7
@@ -2951,7 +2919,7 @@
 
     aput v5, v3, v4
 
-    .line 326
+    .line 289
     :goto_27
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
@@ -2964,7 +2932,7 @@
     :goto_2f
     packed-switch v3, :pswitch_data_ac
 
-    .line 331
+    .line 294
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/16 v4, 0x8
@@ -2973,7 +2941,7 @@
 
     aput v5, v3, v4
 
-    .line 346
+    .line 309
     const/4 v3, 0x5
 
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
@@ -2981,29 +2949,29 @@
     .catchall {:try_start_12 .. :try_end_3e} :catchall_60
     .catch Ljava/lang/Throwable; {:try_start_12 .. :try_end_3e} :catch_50
 
-    .line 371
+    .line 325
     if-eqz v0, :cond_48
 
-    .line 372
+    .line 326
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2, v7}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 373
+    .line 327
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 376
+    .line 330
     :cond_48
     return-void
 
-    .line 315
+    .line 277
     :cond_49
     :try_start_49
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_1d
 
-    .line 319
+    .line 281
     :sswitch_4c
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->mailbox()V
     :try_end_4f
@@ -3012,30 +2980,30 @@
 
     goto :goto_27
 
-    .line 347
+    .line 310
     :catch_50
     move-exception v1
 
-    .line 348
+    .line 311
     .local v1, jjte000:Ljava/lang/Throwable;
     if-eqz v0, :cond_8e
 
-    .line 349
+    .line 312
     :try_start_53
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->clearNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 350
+    .line 313
     const/4 v0, 0x0
 
-    .line 354
+    .line 317
     :goto_59
     instance-of v3, v1, Ljava/lang/RuntimeException;
 
     if-eqz v3, :cond_94
 
-    .line 357
+    .line 318
     check-cast v1, Ljava/lang/RuntimeException;
 
     .end local v1           #jjte000:Ljava/lang/Throwable;
@@ -3043,37 +3011,37 @@
     :try_end_60
     .catchall {:try_start_53 .. :try_end_60} :catchall_60
 
-    .line 371
+    .line 325
     :catchall_60
     move-exception v3
 
     if-eqz v0, :cond_6b
 
-    .line 372
+    .line 326
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v4, v2, v7}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 373
+    .line 327
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
     :cond_6b
     throw v3
 
-    .line 326
+    .line 289
     :cond_6c
     :try_start_6c
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_2f
 
-    .line 334
+    .line 297
     :pswitch_6f
     const/4 v3, 0x3
 
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 335
+    .line 298
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     if-ne v3, v6, :cond_87
@@ -3085,7 +3053,7 @@
     :goto_7b
     sparse-switch v3, :sswitch_data_b2
 
-    .line 342
+    .line 305
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/16 v4, 0x9
@@ -3096,13 +3064,13 @@
 
     goto :goto_27
 
-    .line 335
+    .line 298
     :cond_87
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_7b
 
-    .line 339
+    .line 302
     :sswitch_8a
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->mailbox()V
     :try_end_8d
@@ -3111,7 +3079,7 @@
 
     goto :goto_27
 
-    .line 352
+    .line 315
     .restart local v1       #jjte000:Ljava/lang/Throwable;
     :cond_8e
     :try_start_8e
@@ -3121,19 +3089,19 @@
 
     goto :goto_59
 
-    .line 360
+    .line 320
     :cond_94
     instance-of v3, v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     if-eqz v3, :cond_9b
 
-    .line 363
+    .line 321
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     .end local v1           #jjte000:Ljava/lang/Throwable;
     throw v1
 
-    .line 368
+    .line 323
     .restart local v1       #jjte000:Ljava/lang/Throwable;
     :cond_9b
     check-cast v1, Ljava/lang/Error;
@@ -3143,7 +3111,7 @@
     :try_end_9e
     .catchall {:try_start_8e .. :try_end_9e} :catchall_60
 
-    .line 315
+    .line 277
     :sswitch_data_9e
     .sparse-switch
         0x6 -> :sswitch_4c
@@ -3151,13 +3119,13 @@
         0x1f -> :sswitch_4c
     .end sparse-switch
 
-    .line 326
+    .line 289
     :pswitch_data_ac
     .packed-switch 0x3
         :pswitch_6f
     .end packed-switch
 
-    .line 335
+    .line 298
     :sswitch_data_b2
     .sparse-switch
         0x6 -> :sswitch_8a
@@ -3171,7 +3139,7 @@
     .parameter "n"
 
     .prologue
-    .line 55
+    .line 52
     check-cast p1, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;
 
     .end local p1
@@ -3181,9 +3149,9 @@
 
     move-result-object v0
 
-    iput-object v0, p1, Lorg/apache/james/mime4j/field/address/parser/BaseNode;->lastToken:Lorg/apache/james/mime4j/field/address/parser/Token;
+    iput-object v0, p1, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->lastToken:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 56
+    .line 53
     return-void
 .end method
 
@@ -3192,7 +3160,7 @@
     .parameter "n"
 
     .prologue
-    .line 51
+    .line 48
     check-cast p1, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;
 
     .end local p1
@@ -3202,9 +3170,9 @@
 
     move-result-object v0
 
-    iput-object v0, p1, Lorg/apache/james/mime4j/field/address/parser/BaseNode;->firstToken:Lorg/apache/james/mime4j/field/address/parser/Token;
+    iput-object v0, p1, Lorg/apache/james/mime4j/field/address/parser/SimpleNode;->firstToken:Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 52
+    .line 49
     return-void
 .end method
 
@@ -3223,27 +3191,27 @@
 
     const/4 v6, -0x1
 
-    .line 573
+    .line 503
     new-instance v1, Lorg/apache/james/mime4j/field/address/parser/ASTlocal_part;
 
     const/16 v3, 0xa
 
     invoke-direct {v1, v3}, Lorg/apache/james/mime4j/field/address/parser/ASTlocal_part;-><init>(I)V
 
-    .line 574
+    .line 504
     .local v1, jjtn000:Lorg/apache/james/mime4j/field/address/parser/ASTlocal_part;
     const/4 v0, 0x1
 
-    .line 575
+    .line 505
     .local v0, jjtc000:Z
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v1}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->openNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 576
+    .line 506
     invoke-virtual {p0, v1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeOpenNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 579
+    .line 508
     :try_start_14
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
@@ -3256,7 +3224,7 @@
     :goto_1c
     sparse-switch v3, :sswitch_data_da
 
-    .line 587
+    .line 516
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/16 v4, 0xf
@@ -3265,12 +3233,12 @@
 
     aput v5, v3, v4
 
-    .line 588
+    .line 517
     const/4 v3, -0x1
 
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 589
+    .line 518
     new-instance v3, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     invoke-direct {v3}, Lorg/apache/james/mime4j/field/address/parser/ParseException;-><init>()V
@@ -3279,31 +3247,31 @@
     :try_end_31
     .catchall {:try_start_14 .. :try_end_31} :catchall_31
 
-    .line 629
+    .line 556
     :catchall_31
     move-exception v3
 
     if-eqz v0, :cond_3c
 
-    .line 630
+    .line 557
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v4, v1, v8}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 631
+    .line 558
     invoke-virtual {p0, v1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
     :cond_3c
     throw v3
 
-    .line 579
+    .line 508
     :cond_3d
     :try_start_3d
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_1c
 
-    .line 581
+    .line 510
     :sswitch_40
     const/16 v3, 0xe
 
@@ -3311,7 +3279,7 @@
 
     move-result-object v2
 
-    .line 592
+    .line 522
     .local v2, t:Lorg/apache/james/mime4j/field/address/parser/Token;
     :goto_46
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
@@ -3325,7 +3293,7 @@
     :goto_4e
     sparse-switch v3, :sswitch_data_e4
 
-    .line 599
+    .line 529
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/16 v4, 0x10
@@ -3336,22 +3304,22 @@
     :try_end_59
     .catchall {:try_start_3d .. :try_end_59} :catchall_31
 
-    .line 629
+    .line 556
     if-eqz v0, :cond_63
 
-    .line 630
+    .line 557
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v1, v8}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 631
+    .line 558
     invoke-virtual {p0, v1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 634
+    .line 561
     :cond_63
     return-void
 
-    .line 584
+    .line 513
     .end local v2           #t:Lorg/apache/james/mime4j/field/address/parser/Token;
     :sswitch_64
     const/16 v3, 0x1f
@@ -3361,17 +3329,17 @@
 
     move-result-object v2
 
-    .line 585
+    .line 514
     .restart local v2       #t:Lorg/apache/james/mime4j/field/address/parser/Token;
     goto :goto_46
 
-    .line 592
+    .line 522
     :cond_6b
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_4e
 
-    .line 602
+    .line 532
     :sswitch_6e
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
@@ -3384,7 +3352,7 @@
     :goto_76
     packed-switch v3, :pswitch_data_f2
 
-    .line 607
+    .line 537
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/16 v4, 0x11
@@ -3393,7 +3361,7 @@
 
     aput v5, v3, v4
 
-    .line 610
+    .line 540
     :goto_81
     iget-object v3, v2, Lorg/apache/james/mime4j/field/address/parser/Token;->image:Ljava/lang/String;
 
@@ -3417,7 +3385,7 @@
 
     if-ne v3, v7, :cond_a9
 
-    .line 613
+    .line 541
     :cond_97
     new-instance v3, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
@@ -3427,13 +3395,13 @@
 
     throw v3
 
-    .line 602
+    .line 532
     :cond_9f
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_76
 
-    .line 604
+    .line 534
     :pswitch_a2
     const/16 v3, 0x9
 
@@ -3441,10 +3409,10 @@
 
     move-result-object v2
 
-    .line 605
+    .line 535
     goto :goto_81
 
-    .line 615
+    .line 542
     :cond_a9
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
@@ -3457,7 +3425,7 @@
     :goto_b1
     sparse-switch v3, :sswitch_data_f8
 
-    .line 623
+    .line 550
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/16 v4, 0x12
@@ -3466,25 +3434,25 @@
 
     aput v5, v3, v4
 
-    .line 624
+    .line 551
     const/4 v3, -0x1
 
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 625
+    .line 552
     new-instance v3, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     invoke-direct {v3}, Lorg/apache/james/mime4j/field/address/parser/ParseException;-><init>()V
 
     throw v3
 
-    .line 615
+    .line 542
     :cond_c6
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_b1
 
-    .line 617
+    .line 544
     :sswitch_c9
     const/16 v3, 0xe
 
@@ -3492,10 +3460,10 @@
 
     move-result-object v2
 
-    .line 618
+    .line 545
     goto/16 :goto_46
 
-    .line 620
+    .line 547
     :sswitch_d1
     const/16 v3, 0x1f
 
@@ -3505,10 +3473,10 @@
 
     move-result-object v2
 
-    .line 621
+    .line 548
     goto/16 :goto_46
 
-    .line 579
+    .line 508
     nop
 
     :sswitch_data_da
@@ -3517,7 +3485,7 @@
         0x1f -> :sswitch_64
     .end sparse-switch
 
-    .line 592
+    .line 522
     :sswitch_data_e4
     .sparse-switch
         0x9 -> :sswitch_6e
@@ -3525,13 +3493,13 @@
         0x1f -> :sswitch_6e
     .end sparse-switch
 
-    .line 602
+    .line 532
     :pswitch_data_f2
     .packed-switch 0x9
         :pswitch_a2
     .end packed-switch
 
-    .line 615
+    .line 542
     :sswitch_data_f8
     .sparse-switch
         0xe -> :sswitch_c9
@@ -3552,27 +3520,27 @@
 
     const/4 v4, -0x1
 
-    .line 214
+    .line 194
     new-instance v2, Lorg/apache/james/mime4j/field/address/parser/ASTmailbox;
 
     const/4 v3, 0x3
 
     invoke-direct {v2, v3}, Lorg/apache/james/mime4j/field/address/parser/ASTmailbox;-><init>(I)V
 
-    .line 215
+    .line 195
     .local v2, jjtn000:Lorg/apache/james/mime4j/field/address/parser/ASTmailbox;
     const/4 v0, 0x1
 
-    .line 216
+    .line 196
     .local v0, jjtc000:Z
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->openNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 217
+    .line 197
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeOpenNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 219
+    .line 199
     const v3, 0x7fffffff
 
     :try_start_14
@@ -3582,29 +3550,29 @@
 
     if-eqz v3, :cond_28
 
-    .line 220
+    .line 200
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->addr_spec()V
     :try_end_1d
     .catchall {:try_start_14 .. :try_end_1d} :catchall_54
     .catch Ljava/lang/Throwable; {:try_start_14 .. :try_end_1d} :catch_44
 
-    .line 260
+    .line 231
     :goto_1d
     if-eqz v0, :cond_27
 
-    .line 261
+    .line 232
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2, v6}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 262
+    .line 233
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 265
+    .line 236
     :cond_27
     return-void
 
-    .line 222
+    .line 202
     :cond_28
     :try_start_28
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
@@ -3618,7 +3586,7 @@
     :goto_30
     sparse-switch v3, :sswitch_data_7c
 
-    .line 231
+    .line 211
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/4 v4, 0x6
@@ -3627,12 +3595,12 @@
 
     aput v5, v3, v4
 
-    .line 232
+    .line 212
     const/4 v3, -0x1
 
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 233
+    .line 213
     new-instance v3, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     invoke-direct {v3}, Lorg/apache/james/mime4j/field/address/parser/ParseException;-><init>()V
@@ -3642,30 +3610,30 @@
     .catchall {:try_start_28 .. :try_end_44} :catchall_54
     .catch Ljava/lang/Throwable; {:try_start_28 .. :try_end_44} :catch_44
 
-    .line 236
+    .line 216
     :catch_44
     move-exception v1
 
-    .line 237
+    .line 217
     .local v1, jjte000:Ljava/lang/Throwable;
     if-eqz v0, :cond_6b
 
-    .line 238
+    .line 218
     :try_start_47
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->clearNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 239
+    .line 219
     const/4 v0, 0x0
 
-    .line 243
+    .line 223
     :goto_4d
     instance-of v3, v1, Ljava/lang/RuntimeException;
 
     if-eqz v3, :cond_71
 
-    .line 246
+    .line 224
     check-cast v1, Ljava/lang/RuntimeException;
 
     .end local v1           #jjte000:Ljava/lang/Throwable;
@@ -3673,37 +3641,37 @@
     :try_end_54
     .catchall {:try_start_47 .. :try_end_54} :catchall_54
 
-    .line 260
+    .line 231
     :catchall_54
     move-exception v3
 
     if-eqz v0, :cond_5f
 
-    .line 261
+    .line 232
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v4, v2, v6}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 262
+    .line 233
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
     :cond_5f
     throw v3
 
-    .line 222
+    .line 202
     :cond_60
     :try_start_60
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_30
 
-    .line 224
+    .line 204
     :sswitch_63
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->angle_addr()V
 
     goto :goto_1d
 
-    .line 228
+    .line 208
     :sswitch_67
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->name_addr()V
     :try_end_6a
@@ -3712,7 +3680,7 @@
 
     goto :goto_1d
 
-    .line 241
+    .line 221
     .restart local v1       #jjte000:Ljava/lang/Throwable;
     :cond_6b
     :try_start_6b
@@ -3722,19 +3690,19 @@
 
     goto :goto_4d
 
-    .line 249
+    .line 226
     :cond_71
     instance-of v3, v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     if-eqz v3, :cond_78
 
-    .line 252
+    .line 227
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     .end local v1           #jjte000:Ljava/lang/Throwable;
     throw v1
 
-    .line 257
+    .line 229
     .restart local v1       #jjte000:Ljava/lang/Throwable;
     :cond_78
     check-cast v1, Ljava/lang/Error;
@@ -3744,7 +3712,7 @@
     :try_end_7b
     .catchall {:try_start_6b .. :try_end_7b} :catchall_54
 
-    .line 222
+    .line 202
     nop
 
     :sswitch_data_7c
@@ -3766,75 +3734,75 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 269
+    .line 240
     new-instance v2, Lorg/apache/james/mime4j/field/address/parser/ASTname_addr;
 
     const/4 v3, 0x4
 
     invoke-direct {v2, v3}, Lorg/apache/james/mime4j/field/address/parser/ASTname_addr;-><init>(I)V
 
-    .line 270
+    .line 241
     .local v2, jjtn000:Lorg/apache/james/mime4j/field/address/parser/ASTname_addr;
     const/4 v0, 0x1
 
-    .line 271
+    .line 242
     .local v0, jjtc000:Z
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->openNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 272
+    .line 243
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeOpenNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 274
+    .line 245
     :try_start_10
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->phrase()V
 
-    .line 275
+    .line 246
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->angle_addr()V
     :try_end_16
     .catchall {:try_start_10 .. :try_end_16} :catchall_31
     .catch Ljava/lang/Throwable; {:try_start_10 .. :try_end_16} :catch_21
 
-    .line 300
+    .line 262
     if-eqz v0, :cond_20
 
-    .line 301
+    .line 263
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2, v5}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 302
+    .line 264
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 305
+    .line 267
     :cond_20
     return-void
 
-    .line 276
+    .line 247
     :catch_21
     move-exception v1
 
-    .line 277
+    .line 248
     .local v1, jjte000:Ljava/lang/Throwable;
     if-eqz v0, :cond_3d
 
-    .line 278
+    .line 249
     :try_start_24
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->clearNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 279
+    .line 250
     const/4 v0, 0x0
 
-    .line 283
+    .line 254
     :goto_2a
     instance-of v3, v1, Ljava/lang/RuntimeException;
 
     if-eqz v3, :cond_43
 
-    .line 286
+    .line 255
     check-cast v1, Ljava/lang/RuntimeException;
 
     .end local v1           #jjte000:Ljava/lang/Throwable;
@@ -3842,24 +3810,24 @@
     :try_end_31
     .catchall {:try_start_24 .. :try_end_31} :catchall_31
 
-    .line 300
+    .line 262
     :catchall_31
     move-exception v3
 
     if-eqz v0, :cond_3c
 
-    .line 301
+    .line 263
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v4, v2, v5}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 302
+    .line 264
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
     :cond_3c
     throw v3
 
-    .line 281
+    .line 252
     .restart local v1       #jjte000:Ljava/lang/Throwable;
     :cond_3d
     :try_start_3d
@@ -3869,19 +3837,19 @@
 
     goto :goto_2a
 
-    .line 289
+    .line 257
     :cond_43
     instance-of v3, v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     if-eqz v3, :cond_4a
 
-    .line 292
+    .line 258
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     .end local v1           #jjte000:Ljava/lang/Throwable;
     throw v1
 
-    .line 297
+    .line 260
     .restart local v1       #jjte000:Ljava/lang/Throwable;
     :cond_4a
     check-cast v1, Ljava/lang/Error;
@@ -3901,11 +3869,11 @@
     .end annotation
 
     .prologue
-    .line 43
+    .line 39
     :try_start_0
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->parseAll()V
 
-    .line 44
+    .line 40
     iget-object v1, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v1}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->rootNode()Lorg/apache/james/mime4j/field/address/parser/Node;
@@ -3918,11 +3886,11 @@
 
     return-object v1
 
-    .line 45
+    .line 41
     :catch_c
     move-exception v0
 
-    .line 46
+    .line 42
     .local v0, tme:Lorg/apache/james/mime4j/field/address/parser/TokenMgrError;
     new-instance v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
@@ -3944,15 +3912,15 @@
     .end annotation
 
     .prologue
-    .line 72
+    .line 69
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->address_list()V
 
-    .line 73
+    .line 70
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 74
+    .line 71
     return-void
 .end method
 
@@ -3969,27 +3937,27 @@
 
     const/4 v3, -0x1
 
-    .line 494
+    .line 432
     new-instance v1, Lorg/apache/james/mime4j/field/address/parser/ASTphrase;
 
     const/16 v2, 0x8
 
     invoke-direct {v1, v2}, Lorg/apache/james/mime4j/field/address/parser/ASTphrase;-><init>(I)V
 
-    .line 495
+    .line 433
     .local v1, jjtn000:Lorg/apache/james/mime4j/field/address/parser/ASTphrase;
     const/4 v0, 0x1
 
-    .line 496
+    .line 434
     .local v0, jjtc000:Z
     iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v2, v1}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->openNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 497
+    .line 435
     invoke-virtual {p0, v1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeOpenNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 500
+    .line 439
     :sswitch_12
     :try_start_12
     iget v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
@@ -4003,7 +3971,7 @@
     :goto_1a
     sparse-switch v2, :sswitch_data_6a
 
-    .line 508
+    .line 447
     iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/16 v3, 0xd
@@ -4012,12 +3980,12 @@
 
     aput v4, v2, v3
 
-    .line 509
+    .line 448
     const/4 v2, -0x1
 
     invoke-direct {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 510
+    .line 449
     new-instance v2, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     invoke-direct {v2}, Lorg/apache/james/mime4j/field/address/parser/ParseException;-><init>()V
@@ -4026,37 +3994,37 @@
     :try_end_2f
     .catchall {:try_start_12 .. :try_end_2f} :catchall_2f
 
-    .line 523
+    .line 462
     :catchall_2f
     move-exception v2
 
     if-eqz v0, :cond_3a
 
-    .line 524
+    .line 463
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v1, v5}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 525
+    .line 464
     invoke-virtual {p0, v1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
     :cond_3a
     throw v2
 
-    .line 500
+    .line 439
     :cond_3b
     :try_start_3b
     iget v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_1a
 
-    .line 502
+    .line 441
     :sswitch_3e
     const/16 v2, 0xe
 
     invoke-direct {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 512
+    .line 451
     :goto_43
     iget v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
@@ -4069,7 +4037,7 @@
     :goto_4b
     sparse-switch v2, :sswitch_data_74
 
-    .line 518
+    .line 457
     iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/16 v3, 0xe
@@ -4080,22 +4048,22 @@
     :try_end_56
     .catchall {:try_start_3b .. :try_end_56} :catchall_2f
 
-    .line 523
+    .line 462
     if-eqz v0, :cond_60
 
-    .line 524
+    .line 463
     iget-object v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v2, v1, v5}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 525
+    .line 464
     invoke-virtual {p0, v1}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 528
+    .line 467
     :cond_60
     return-void
 
-    .line 505
+    .line 444
     :sswitch_61
     const/16 v2, 0x1f
 
@@ -4104,7 +4072,7 @@
 
     goto :goto_43
 
-    .line 512
+    .line 451
     :cond_67
     iget v2, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
     :try_end_69
@@ -4112,14 +4080,14 @@
 
     goto :goto_4b
 
-    .line 500
+    .line 439
     :sswitch_data_6a
     .sparse-switch
         0xe -> :sswitch_3e
         0x1f -> :sswitch_61
     .end sparse-switch
 
-    .line 512
+    .line 451
     :sswitch_data_74
     .sparse-switch
         0xe -> :sswitch_12
@@ -4140,36 +4108,36 @@
 
     const/4 v6, -0x1
 
-    .line 429
+    .line 374
     new-instance v2, Lorg/apache/james/mime4j/field/address/parser/ASTroute;
 
     const/4 v3, 0x7
 
     invoke-direct {v2, v3}, Lorg/apache/james/mime4j/field/address/parser/ASTroute;-><init>(I)V
 
-    .line 430
+    .line 375
     .local v2, jjtn000:Lorg/apache/james/mime4j/field/address/parser/ASTroute;
     const/4 v0, 0x1
 
-    .line 431
+    .line 376
     .local v0, jjtc000:Z
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->openNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 432
+    .line 377
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeOpenNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 434
+    .line 379
     const/16 v3, 0x8
 
     :try_start_13
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 435
+    .line 380
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->domain()V
 
-    .line 437
+    .line 383
     :goto_19
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
@@ -4182,7 +4150,7 @@
     :goto_21
     sparse-switch v3, :sswitch_data_8e
 
-    .line 443
+    .line 389
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/16 v4, 0xb
@@ -4191,7 +4159,7 @@
 
     aput v5, v3, v4
 
-    .line 460
+    .line 407
     const/4 v3, 0x4
 
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
@@ -4199,35 +4167,35 @@
     .catchall {:try_start_13 .. :try_end_30} :catchall_6e
     .catch Ljava/lang/Throwable; {:try_start_13 .. :try_end_30} :catch_5e
 
-    .line 485
+    .line 423
     if-eqz v0, :cond_3a
 
-    .line 486
+    .line 424
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2, v7}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 487
+    .line 425
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 490
+    .line 428
     :cond_3a
     return-void
 
-    .line 437
+    .line 383
     :cond_3b
     :try_start_3b
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
     goto :goto_21
 
-    .line 455
+    .line 402
     :pswitch_3e
     const/4 v3, 0x3
 
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 447
+    .line 394
     :sswitch_42
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
 
@@ -4240,7 +4208,7 @@
     :goto_4a
     packed-switch v3, :pswitch_data_98
 
-    .line 452
+    .line 399
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_la1:[I
 
     const/16 v4, 0xc
@@ -4249,12 +4217,12 @@
 
     aput v5, v3, v4
 
-    .line 457
+    .line 404
     const/16 v3, 0x8
 
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/address/parser/Token;
 
-    .line 458
+    .line 405
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->domain()V
     :try_end_5d
     .catchall {:try_start_3b .. :try_end_5d} :catchall_6e
@@ -4262,30 +4230,30 @@
 
     goto :goto_19
 
-    .line 461
+    .line 408
     :catch_5e
     move-exception v1
 
-    .line 462
+    .line 409
     .local v1, jjte000:Ljava/lang/Throwable;
     if-eqz v0, :cond_7d
 
-    .line 463
+    .line 410
     :try_start_61
     iget-object v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v3, v2}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->clearNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
-    .line 464
+    .line 411
     const/4 v0, 0x0
 
-    .line 468
+    .line 415
     :goto_67
     instance-of v3, v1, Ljava/lang/RuntimeException;
 
     if-eqz v3, :cond_83
 
-    .line 471
+    .line 416
     check-cast v1, Ljava/lang/RuntimeException;
 
     .end local v1           #jjte000:Ljava/lang/Throwable;
@@ -4293,24 +4261,24 @@
     :try_end_6e
     .catchall {:try_start_61 .. :try_end_6e} :catchall_6e
 
-    .line 485
+    .line 423
     :catchall_6e
     move-exception v3
 
     if-eqz v0, :cond_79
 
-    .line 486
+    .line 424
     iget-object v4, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtree:Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;
 
     invoke-virtual {v4, v2, v7}, Lorg/apache/james/mime4j/field/address/parser/JJTAddressListParserState;->closeNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;Z)V
 
-    .line 487
+    .line 425
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jjtreeCloseNodeScope(Lorg/apache/james/mime4j/field/address/parser/Node;)V
 
     :cond_79
     throw v3
 
-    .line 447
+    .line 394
     :cond_7a
     :try_start_7a
     iget v3, p0, Lorg/apache/james/mime4j/field/address/parser/AddressListParser;->jj_ntk:I
@@ -4320,7 +4288,7 @@
 
     goto :goto_4a
 
-    .line 466
+    .line 413
     .restart local v1       #jjte000:Ljava/lang/Throwable;
     :cond_7d
     :try_start_7d
@@ -4330,19 +4298,19 @@
 
     goto :goto_67
 
-    .line 474
+    .line 418
     :cond_83
     instance-of v3, v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     if-eqz v3, :cond_8a
 
-    .line 477
+    .line 419
     check-cast v1, Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
     .end local v1           #jjte000:Ljava/lang/Throwable;
     throw v1
 
-    .line 482
+    .line 421
     .restart local v1       #jjte000:Ljava/lang/Throwable;
     :cond_8a
     check-cast v1, Ljava/lang/Error;
@@ -4352,7 +4320,7 @@
     :try_end_8d
     .catchall {:try_start_7d .. :try_end_8d} :catchall_6e
 
-    .line 437
+    .line 383
     nop
 
     :sswitch_data_8e
@@ -4361,7 +4329,7 @@
         0x8 -> :sswitch_42
     .end sparse-switch
 
-    .line 447
+    .line 394
     :pswitch_data_98
     .packed-switch 0x3
         :pswitch_3e

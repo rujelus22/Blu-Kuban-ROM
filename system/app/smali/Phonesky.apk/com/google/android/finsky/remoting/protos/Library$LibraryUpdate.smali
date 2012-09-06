@@ -23,11 +23,15 @@
 
 .field private hasHasMore:Z
 
+.field private hasLibraryId:Z
+
 .field private hasMore_:Z
 
 .field private hasServerToken:Z
 
 .field private hasStatus:Z
+
+.field private libraryId_:Ljava/lang/String;
 
 .field private mutation_:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -52,38 +56,43 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 9
+    .line 10
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 19
+    .line 20
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->status_:I
 
-    .line 36
+    .line 37
     iput v1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->corpus_:I
 
-    .line 53
+    .line 54
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->libraryId_:Ljava/lang/String;
+
+    .line 71
     sget-object v0, Lcom/google/protobuf/micro/ByteStringMicro;->EMPTY:Lcom/google/protobuf/micro/ByteStringMicro;
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->serverToken_:Lcom/google/protobuf/micro/ByteStringMicro;
 
-    .line 69
+    .line 87
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->mutation_:Ljava/util/List;
 
-    .line 103
+    .line 121
     iput-boolean v1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasMore_:Z
 
-    .line 154
+    .line 177
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->cachedSize:I
 
-    .line 9
+    .line 10
     return-void
 .end method
 
@@ -94,17 +103,17 @@
     .parameter "value"
 
     .prologue
-    .line 86
+    .line 104
     if-nez p1, :cond_8
 
-    .line 87
+    .line 105
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 89
+    .line 107
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->mutation_:Ljava/util/List;
 
@@ -114,20 +123,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 90
+    .line 108
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->mutation_:Ljava/util/List;
 
-    .line 92
+    .line 110
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->mutation_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 93
+    .line 111
     return-object p0
 .end method
 
@@ -135,15 +144,15 @@
     .registers 2
 
     .prologue
-    .line 156
+    .line 180
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 158
+    .line 182
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->getSerializedSize()I
 
-    .line 160
+    .line 184
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->cachedSize:I
 
@@ -154,7 +163,7 @@
     .registers 2
 
     .prologue
-    .line 38
+    .line 39
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->corpus_:I
 
     return v0
@@ -164,8 +173,32 @@
     .registers 2
 
     .prologue
-    .line 104
+    .line 122
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasMore_:Z
+
+    return v0
+.end method
+
+.method public getLibraryId()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 55
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->libraryId_:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getMutationCount()I
+    .registers 2
+
+    .prologue
+    .line 92
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->mutation_:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
 
     return v0
 .end method
@@ -183,7 +216,7 @@
     .end annotation
 
     .prologue
-    .line 72
+    .line 90
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->mutation_:Ljava/util/List;
 
     return-object v0
@@ -193,10 +226,10 @@
     .registers 6
 
     .prologue
-    .line 164
+    .line 189
     const/4 v2, 0x0
 
-    .line 165
+    .line 190
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasStatus()Z
 
@@ -204,7 +237,7 @@
 
     if-eqz v3, :cond_11
 
-    .line 166
+    .line 191
     const/4 v3, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->getStatus()I
@@ -217,7 +250,7 @@
 
     add-int/2addr v2, v3
 
-    .line 169
+    .line 194
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasCorpus()Z
 
@@ -225,7 +258,7 @@
 
     if-eqz v3, :cond_21
 
-    .line 170
+    .line 195
     const/4 v3, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->getCorpus()I
@@ -238,7 +271,7 @@
 
     add-int/2addr v2, v3
 
-    .line 173
+    .line 198
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasServerToken()Z
 
@@ -246,7 +279,7 @@
 
     if-eqz v3, :cond_31
 
-    .line 174
+    .line 199
     const/4 v3, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->getServerToken()Lcom/google/protobuf/micro/ByteStringMicro;
@@ -259,7 +292,7 @@
 
     add-int/2addr v2, v3
 
-    .line 177
+    .line 202
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->getMutationList()Ljava/util/List;
 
@@ -283,7 +316,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;
 
-    .line 178
+    .line 203
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;
     const/4 v3, 0x4
 
@@ -295,7 +328,7 @@
 
     goto :goto_39
 
-    .line 181
+    .line 206
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;
     :cond_4c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasHasMore()Z
@@ -304,7 +337,7 @@
 
     if-eqz v3, :cond_5c
 
-    .line 182
+    .line 207
     const/4 v3, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->getHasMore()Z
@@ -317,11 +350,32 @@
 
     add-int/2addr v2, v3
 
-    .line 185
+    .line 210
     :cond_5c
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasLibraryId()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_6c
+
+    .line 211
+    const/4 v3, 0x6
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->getLibraryId()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    .line 214
+    :cond_6c
     iput v2, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->cachedSize:I
 
-    .line 186
+    .line 215
     return v2
 .end method
 
@@ -329,7 +383,7 @@
     .registers 2
 
     .prologue
-    .line 54
+    .line 72
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->serverToken_:Lcom/google/protobuf/micro/ByteStringMicro;
 
     return-object v0
@@ -339,7 +393,7 @@
     .registers 2
 
     .prologue
-    .line 21
+    .line 22
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->status_:I
 
     return v0
@@ -349,7 +403,7 @@
     .registers 2
 
     .prologue
-    .line 37
+    .line 38
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasCorpus:Z
 
     return v0
@@ -359,8 +413,18 @@
     .registers 2
 
     .prologue
-    .line 105
+    .line 123
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasHasMore:Z
+
+    return v0
+.end method
+
+.method public hasLibraryId()Z
+    .registers 2
+
+    .prologue
+    .line 56
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasLibraryId:Z
 
     return v0
 .end method
@@ -369,7 +433,7 @@
     .registers 2
 
     .prologue
-    .line 55
+    .line 73
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasServerToken:Z
 
     return v0
@@ -379,7 +443,7 @@
     .registers 2
 
     .prologue
-    .line 20
+    .line 21
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasStatus:Z
 
     return v0
@@ -395,29 +459,29 @@
     .end annotation
 
     .prologue
-    .line 193
+    .line 223
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 194
+    .line 224
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_3a
+    sparse-switch v0, :sswitch_data_42
 
-    .line 198
+    .line 228
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 199
+    .line 229
     :sswitch_d
     return-object p0
 
-    .line 204
+    .line 234
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -427,7 +491,7 @@
 
     goto :goto_0
 
-    .line 208
+    .line 238
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -437,7 +501,7 @@
 
     goto :goto_0
 
-    .line 212
+    .line 242
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBytes()Lcom/google/protobuf/micro/ByteStringMicro;
 
@@ -447,22 +511,22 @@
 
     goto :goto_0
 
-    .line 216
+    .line 246
     :sswitch_26
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;-><init>()V
 
-    .line 217
+    .line 247
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 218
+    .line 248
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->addMutation(Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;)Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
 
     goto :goto_0
 
-    .line 222
+    .line 252
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;
     :sswitch_32
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
@@ -473,8 +537,18 @@
 
     goto :goto_0
 
-    .line 194
-    :sswitch_data_3a
+    .line 256
+    :sswitch_3a
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->setLibraryId(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
+
+    goto :goto_0
+
+    .line 224
+    :sswitch_data_42
     .sparse-switch
         0x0 -> :sswitch_d
         0x8 -> :sswitch_e
@@ -482,6 +556,7 @@
         0x1a -> :sswitch_1e
         0x22 -> :sswitch_26
         0x28 -> :sswitch_32
+        0x32 -> :sswitch_3a
     .end sparse-switch
 .end method
 
@@ -508,15 +583,15 @@
     .parameter "value"
 
     .prologue
-    .line 40
+    .line 41
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasCorpus:Z
 
-    .line 41
+    .line 42
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->corpus_:I
 
-    .line 42
+    .line 43
     return-object p0
 .end method
 
@@ -525,15 +600,32 @@
     .parameter "value"
 
     .prologue
-    .line 107
+    .line 125
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasHasMore:Z
 
-    .line 108
+    .line 126
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasMore_:Z
 
-    .line 109
+    .line 127
+    return-object p0
+.end method
+
+.method public setLibraryId(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 58
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasLibraryId:Z
+
+    .line 59
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->libraryId_:Ljava/lang/String;
+
+    .line 60
     return-object p0
 .end method
 
@@ -542,15 +634,15 @@
     .parameter "value"
 
     .prologue
-    .line 57
+    .line 75
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasServerToken:Z
 
-    .line 58
+    .line 76
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->serverToken_:Lcom/google/protobuf/micro/ByteStringMicro;
 
-    .line 59
+    .line 77
     return-object p0
 .end method
 
@@ -559,15 +651,15 @@
     .parameter "value"
 
     .prologue
-    .line 23
+    .line 24
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasStatus:Z
 
-    .line 24
+    .line 25
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->status_:I
 
-    .line 25
+    .line 26
     return-object p0
 .end method
 
@@ -581,14 +673,14 @@
     .end annotation
 
     .prologue
-    .line 137
+    .line 157
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasStatus()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 138
+    .line 158
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->getStatus()I
@@ -597,7 +689,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 140
+    .line 160
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasCorpus()Z
 
@@ -605,7 +697,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 141
+    .line 161
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->getCorpus()I
@@ -614,7 +706,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 143
+    .line 163
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasServerToken()Z
 
@@ -622,7 +714,7 @@
 
     if-eqz v2, :cond_2a
 
-    .line 144
+    .line 164
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->getServerToken()Lcom/google/protobuf/micro/ByteStringMicro;
@@ -631,7 +723,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBytes(ILcom/google/protobuf/micro/ByteStringMicro;)V
 
-    .line 146
+    .line 166
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->getMutationList()Ljava/util/List;
 
@@ -655,7 +747,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;
 
-    .line 147
+    .line 167
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;
     const/4 v2, 0x4
 
@@ -663,7 +755,7 @@
 
     goto :goto_32
 
-    .line 149
+    .line 169
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Library$LibraryMutation;
     :cond_43
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasHasMore()Z
@@ -672,7 +764,7 @@
 
     if-eqz v2, :cond_51
 
-    .line 150
+    .line 170
     const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->getHasMore()Z
@@ -681,7 +773,24 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 152
+    .line 172
     :cond_51
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->hasLibraryId()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5f
+
+    .line 173
+    const/4 v2, 0x6
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;->getLibraryId()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    .line 175
+    :cond_5f
     return-void
 .end method

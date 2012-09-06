@@ -1,77 +1,200 @@
 .class final Lcom/google/android/youtube/app/honeycomb/phone/ai;
-.super Ljava/lang/Object;
+.super Lcom/google/android/youtube/app/remote/an;
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/g;
+.implements Lcom/google/android/youtube/app/adapter/bl;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;
+.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/t;
+
+.field private final b:Landroid/view/View;
+
+.field private final c:Landroid/widget/ImageView;
+
+.field private final d:Landroid/widget/TextView;
+
+.field private e:Lcom/google/android/youtube/app/remote/ap;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;)V
-    .registers 2
+.method public constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/t;)V
+    .registers 5
     .parameter
 
     .prologue
-    .line 203
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->a:Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;
+    .line 710
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/youtube/app/remote/an;-><init>()V
 
+    .line 711
+    invoke-static {p1}, Lcom/google/android/youtube/app/honeycomb/phone/t;->y(Lcom/google/android/youtube/app/honeycomb/phone/t;)Landroid/view/LayoutInflater;
+
+    move-result-object v0
+
+    const v1, 0x7f040032
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->b:Landroid/view/View;
+
+    .line 712
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->b:Landroid/view/View;
+
+    const v1, 0x7f080023
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->c:Landroid/widget/ImageView;
+
+    .line 713
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->b:Landroid/view/View;
+
+    const v1, 0x7f080024
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->d:Landroid/widget/TextView;
+
+    .line 714
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->b:Landroid/view/View;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 715
     return-void
+.end method
+
+.method private b()V
+    .registers 5
+
+    .prologue
+    .line 727
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->e:Lcom/google/android/youtube/app/remote/ap;
+
+    if-nez v0, :cond_c
+
+    .line 728
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->b:Landroid/view/View;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 735
+    :goto_b
+    return-void
+
+    .line 730
+    :cond_c
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->d:Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->e:Lcom/google/android/youtube/app/remote/ap;
+
+    invoke-interface {v1}, Lcom/google/android/youtube/app/remote/ap;->a()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 732
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->c:Landroid/widget/ImageView;
+
+    const v1, 0x7f020140
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 733
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->b:Landroid/view/View;
+
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->d:Landroid/widget/TextView;
+
+    const-string v3, "REMOTE"
+
+    invoke-static {v0, v1, v2, v3}, Lcom/google/android/youtube/app/honeycomb/phone/t;->a(Lcom/google/android/youtube/app/honeycomb/phone/t;Landroid/view/View;Landroid/widget/TextView;Ljava/lang/String;)V
+
+    goto :goto_b
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
-    .registers 4
-    .parameter
+.method public final a(I)Landroid/view/View;
+    .registers 3
     .parameter
 
     .prologue
-    .line 203
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->a:Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;
+    .line 738
+    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/phone/ai;->b()V
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;->e(Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;)Lcom/google/android/youtube/core/e;
+    .line 739
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->b:Landroid/view/View;
 
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Lcom/google/android/youtube/core/e;->b(Ljava/lang/Throwable;)V
-
-    return-void
+    return-object v0
 .end method
 
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 6
-    .parameter
+.method public final a(Lcom/google/android/youtube/app/remote/RemoteControl$State;)V
+    .registers 3
     .parameter
 
     .prologue
-    .line 203
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->a:Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;
+    .line 718
+    sget-object v0, Lcom/google/android/youtube/app/remote/RemoteControl$State;->CONNECTED:Lcom/google/android/youtube/app/remote/RemoteControl$State;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;->d(Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;)Lcom/google/android/youtube/app/a/v;
+    if-ne p1, v0, :cond_14
+
+    .line 719
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/t;->B(Lcom/google/android/youtube/app/honeycomb/phone/t;)Lcom/google/android/youtube/app/remote/RemoteControl;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->a:Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;
+    invoke-interface {v0}, Lcom/google/android/youtube/app/remote/RemoteControl;->q()Lcom/google/android/youtube/app/remote/ap;
 
-    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;->c(Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;)Lcom/google/android/youtube/core/model/Video;
+    move-result-object v0
 
-    move-result-object v1
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->e:Lcom/google/android/youtube/app/remote/ap;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/a/v;->a(Lcom/google/android/youtube/core/model/Video;)V
+    .line 723
+    :goto_10
+    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/phone/ai;->b()V
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->a:Lcom/google/android/youtube/app/honeycomb/phone/MyUploadsActivity;
-
-    const v1, 0x7f0a017f
-
-    const/4 v2, 0x1
-
-    invoke-static {v0, v1, v2}, Lcom/google/android/youtube/core/utils/Util;->a(Landroid/content/Context;II)V
-
+    .line 724
     return-void
+
+    .line 721
+    :cond_14
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/ai;->e:Lcom/google/android/youtube/app/remote/ap;
+
+    goto :goto_10
+.end method
+
+.method public final a()Z
+    .registers 2
+
+    .prologue
+    .line 743
+    const/4 v0, 0x1
+
+    return v0
 .end method

@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 4618
+    .line 1536
     iput-object p1, p0, Lcom/android/email/activity/MessageListFragment$RefreshListener;->this$0:Lcom/android/email/activity/MessageListFragment;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 4618
+    .line 1536
     invoke-direct {p0, p1}, Lcom/android/email/activity/MessageListFragment$RefreshListener;-><init>(Lcom/android/email/activity/MessageListFragment;)V
 
     return-void
@@ -50,19 +50,13 @@
 
 # virtual methods
 .method public onMessagingError(JJLjava/lang/String;)V
-    .registers 7
+    .registers 6
     .parameter "accountId"
     .parameter "mailboxId"
     .parameter "message"
 
     .prologue
-    .line 4621
-    iget-object v0, p0, Lcom/android/email/activity/MessageListFragment$RefreshListener;->this$0:Lcom/android/email/activity/MessageListFragment;
-
-    #calls: Lcom/android/email/activity/MessageListFragment;->updateProgressIcon(J)V
-    invoke-static {v0, p3, p4}, Lcom/android/email/activity/MessageListFragment;->access$4400(Lcom/android/email/activity/MessageListFragment;J)V
-
-    .line 4622
+    .line 1539
     return-void
 .end method
 
@@ -72,33 +66,12 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 4627
-    sget-boolean v0, Lcom/android/email/activity/MessageListFragment;->mIsEasAccount:Z
-
-    if-eqz v0, :cond_f
-
-    .line 4628
-    iget-object v0, p0, Lcom/android/email/activity/MessageListFragment$RefreshListener;->this$0:Lcom/android/email/activity/MessageListFragment;
-
-    #calls: Lcom/android/email/activity/MessageListFragment;->addFooterView()V
-    invoke-static {v0}, Lcom/android/email/activity/MessageListFragment;->access$3100(Lcom/android/email/activity/MessageListFragment;)V
-
-    .line 4631
-    :goto_9
-    iget-object v0, p0, Lcom/android/email/activity/MessageListFragment$RefreshListener;->this$0:Lcom/android/email/activity/MessageListFragment;
-
-    #calls: Lcom/android/email/activity/MessageListFragment;->updateProgressIcon(J)V
-    invoke-static {v0, p3, p4}, Lcom/android/email/activity/MessageListFragment;->access$4400(Lcom/android/email/activity/MessageListFragment;J)V
-
-    .line 4632
-    return-void
-
-    .line 4630
-    :cond_f
+    .line 1543
     iget-object v0, p0, Lcom/android/email/activity/MessageListFragment$RefreshListener;->this$0:Lcom/android/email/activity/MessageListFragment;
 
     #calls: Lcom/android/email/activity/MessageListFragment;->updateListFooter()V
-    invoke-static {v0}, Lcom/android/email/activity/MessageListFragment;->access$4500(Lcom/android/email/activity/MessageListFragment;)V
+    invoke-static {v0}, Lcom/android/email/activity/MessageListFragment;->access$3700(Lcom/android/email/activity/MessageListFragment;)V
 
-    goto :goto_9
+    .line 1544
+    return-void
 .end method

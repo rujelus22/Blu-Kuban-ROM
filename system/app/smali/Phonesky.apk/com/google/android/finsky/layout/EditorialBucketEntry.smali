@@ -4,11 +4,13 @@
 
 
 # instance fields
-.field private final mLeftSeparatorPaint:Landroid/graphics/Paint;
+.field private final mHalfSeparatorThickness:I
+
+.field private final mSeparatorPaint:Landroid/graphics/Paint;
+
+.field private final mSeparatorThickness:F
 
 .field private mShowLeft:Z
-
-.field private final mTopSeparatorPaint:Landroid/graphics/Paint;
 
 
 # direct methods
@@ -17,14 +19,14 @@
     .parameter "context"
 
     .prologue
-    .line 24
+    .line 26
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, v0, v1}, Lcom/google/android/finsky/layout/EditorialBucketEntry;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 25
+    .line 27
     return-void
 .end method
 
@@ -34,188 +36,150 @@
     .parameter "attrs"
 
     .prologue
-    .line 28
+    .line 30
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/android/finsky/layout/EditorialBucketEntry;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 29
+    .line 31
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 9
+    .registers 7
     .parameter "context"
     .parameter "attrs"
     .parameter "defStyle"
 
     .prologue
-    const v4, 0x7f0a0013
-
-    .line 32
+    .line 34
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 34
+    .line 36
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 36
-    .local v0, res:Landroid/content/res/Resources;
-    new-instance v2, Landroid/graphics/Paint;
-
-    invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v2, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mLeftSeparatorPaint:Landroid/graphics/Paint;
-
-    .line 37
-    iget-object v2, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mLeftSeparatorPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getColor(I)I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
-
     .line 38
-    iget-object v2, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mLeftSeparatorPaint:Landroid/graphics/Paint;
+    .local v0, res:Landroid/content/res/Resources;
+    const v1, 0x7f0b0029
 
-    const/high16 v3, 0x3f80
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    invoke-static {v3, v0}, Lcom/google/android/finsky/layout/EditorialBucketEntry;->getPixelsFromDips(FLandroid/content/res/Resources;)F
+    move-result v1
 
-    move-result v3
+    int-to-float v1, v1
 
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+    iput v1, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mSeparatorThickness:F
+
+    .line 39
+    iget v1, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mSeparatorThickness:F
+
+    const/high16 v2, 0x4000
+
+    div-float/2addr v1, v2
+
+    invoke-static {v1}, Landroid/util/FloatMath;->ceil(F)F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    iput v1, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mHalfSeparatorThickness:I
 
     .line 40
-    new-instance v2, Landroid/graphics/Paint;
+    new-instance v1, Landroid/graphics/Paint;
 
-    invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
+    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v2, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mTopSeparatorPaint:Landroid/graphics/Paint;
+    iput-object v1, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mSeparatorPaint:Landroid/graphics/Paint;
 
     .line 41
-    iget-object v2, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mTopSeparatorPaint:Landroid/graphics/Paint;
+    iget-object v1, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mSeparatorPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getColor(I)I
+    const v2, 0x7f0a000f
 
-    move-result v3
+    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getColor(I)I
 
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
+    move-result v2
+
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 42
-    const v2, 0x7f0b0036
+    iget-object v1, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mSeparatorPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
+    iget v2, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mSeparatorThickness:F
 
-    move-result v1
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
     .line 43
-    .local v1, thickness:F
-    iget-object v2, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mTopSeparatorPaint:Landroid/graphics/Paint;
-
-    invoke-static {v1, v0}, Lcom/google/android/finsky/layout/EditorialBucketEntry;->getPixelsFromDips(FLandroid/content/res/Resources;)F
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
-
-    .line 44
     return-void
-.end method
-
-.method private static getPixelsFromDips(FLandroid/content/res/Resources;)F
-    .registers 6
-    .parameter "dips"
-    .parameter "res"
-
-    .prologue
-    .line 65
-    const v2, 0x7f0b0036
-
-    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v1
-
-    .line 66
-    .local v1, thickness:F
-    invoke-virtual {p1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v2
-
-    iget v0, v2, Landroid/util/DisplayMetrics;->density:F
-
-    .line 67
-    .local v0, scale:F
-    mul-float v2, v1, v0
-
-    float-to-double v2, v2
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide v2
-
-    double-to-float v2, v2
-
-    return v2
 .end method
 
 
 # virtual methods
 .method public onDraw(Landroid/graphics/Canvas;)V
-    .registers 9
+    .registers 12
     .parameter "canvas"
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    .line 53
+    .line 52
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/EditorialBucketEntry;->getHeight()I
 
-    move-result v6
+    move-result v7
 
-    .line 55
-    .local v6, height:I
+    .line 54
+    .local v7, height:I
     iget-boolean v0, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mShowLeft:Z
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_14
+
+    .line 55
+    iget v8, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mHalfSeparatorThickness:I
 
     .line 56
-    int-to-float v4, v6
+    .local v8, leftX:I
+    int-to-float v1, v8
 
-    iget-object v5, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mLeftSeparatorPaint:Landroid/graphics/Paint;
+    int-to-float v3, v8
+
+    int-to-float v4, v7
+
+    iget-object v5, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mSeparatorPaint:Landroid/graphics/Paint;
 
     move-object v0, p1
-
-    move v2, v1
-
-    move v3, v1
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
     .line 59
-    :cond_12
+    .end local v8           #leftX:I
+    :cond_14
+    iget v9, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mHalfSeparatorThickness:I
+
+    .line 60
+    .local v9, topY:I
+    int-to-float v3, v9
+
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/EditorialBucketEntry;->getWidth()I
 
     move-result v0
 
-    int-to-float v3, v0
+    int-to-float v4, v0
 
-    iget-object v5, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mTopSeparatorPaint:Landroid/graphics/Paint;
+    int-to-float v5, v9
 
-    move-object v0, p1
+    iget-object v6, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mSeparatorPaint:Landroid/graphics/Paint;
 
-    move v2, v1
+    move-object v1, p1
 
-    move v4, v1
-
-    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-
-    .line 61
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
+    invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
     .line 62
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
+
+    .line 63
     return-void
 .end method
 
@@ -224,12 +188,12 @@
     .parameter "isVisible"
 
     .prologue
-    .line 47
+    .line 46
     iput-boolean p1, p0, Lcom/google/android/finsky/layout/EditorialBucketEntry;->mShowLeft:Z
 
-    .line 48
+    .line 47
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/EditorialBucketEntry;->invalidate()V
 
-    .line 49
+    .line 48
     return-void
 .end method

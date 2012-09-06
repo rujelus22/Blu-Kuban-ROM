@@ -13,9 +13,9 @@
     <string name="generic_deny">Zamítnout</string>
     <string name="toast_unknown">neznámý</string>
     <string name="toast_granted">povoleno</string>
-    <string name="toast_denied">Zamítnut</string>
-    <string name="toast_package" formatted="false">%s (%s) ne/dostal %s superuser oprávnění</string>
-    <string name="toast_name" formatted="false">%s ne/dostal %s superuser oprávnění</string>
+    <string name="toast_denied">zamítnuto</string>
+    <string name="toast_package" formatted="false">Pro %s (%s) bylo oprávnění superuser %s</string>
+    <string name="toast_name" formatted="false">Pro %s bylo oprávnění superuser %s</string>
     <string name="toast_interactive">pro interaktivní shell</string>
     <string name="tab_apps">Aplikace</string>
     <string name="tab_logs">Záznamy</string>
@@ -24,21 +24,21 @@
     <string name="tab_logs_empty">Žádné dostupné záznamy</string>
     <string name="superuser_request_from">Požadavek Superuser:</string>
     <string name="superuser_request_uid">Požadovaný uživatel</string>
-    <string name="superuser_request_command">Příkaz</string>
+    <string name="superuser_request_command">Příkaz:</string>
     <string name="superuser_prompt_again">Zeptej se mně příště</string>
     <string name="superuser_command_shell">(Interaktivní Shell)</string>
     <string name="superuser_user_unknown">Neznámý</string>
     <string name="install_binary">SU binary potřebují aktualizovat. Pokračovat ?</string>
     <string name="install_binary_cant">Nejsou instalovány SU Binary, a SuperSU nelze nainstalovat. Toto je problém</string>
-    <string name="install_binary_progress">Instaluje, prosím počkejte...</string>
+    <string name="install_binary_progress">Instaluji, prosím počkejte...</string>
     <string name="install_binary_success">Instalace byla úspěšná</string>
-    <string name="install_binary_failure">Instalace selhala</string>
-    <string name="uninstall_binary_progress">Odinstalovávám, prosím počkejte ...</string>
-    <string name="uninstall_binary_failure">Odinstalace selhala</string>
+    <string name="install_binary_failure">Instalace se nezdařila!</string>
+    <string name="uninstall_binary_progress">Probíhá odinstalace, čekejte prosím...</string>
+    <string name="uninstall_binary_failure">Odinstalace se nezdařila!</string>
     <string name="boot_ota_superuser_restored">SuperSU automaticky obnovil přístup Superuser</string>
-    <string name="settings_tap_xda">Kliknutím navštiv XDA forum</string>
+    <string name="settings_tap_xda">Přejít na diskusi na XDA fóru</string>
     <string name="settings_upgrade">Vylepšit na Pro verzi</string>
-    <string name="settings_upgrade_description">Podpoř vývoj a odemkni další vlastnosti</string>
+    <string name="settings_upgrade_description">Podpořte vývoj a získejte další funkce</string>
     <string name="settings_pro_required">Pro tuto vlastnost je vyžadován SuperSU Pro.</string>
     <string name="settings_category_root">Superuser</string>
     <string name="settings_root">Povolit Superuser</string>
@@ -55,16 +55,16 @@
     <string name="settings_default_access_select">Vyberte výchozí přístup</string>
     <string name="settings_show_notifications">Zobrazit upozornění</string>
     <string name="settings_show_notifications_enabled">Zobrazit upozornění, když program požádá o přístup (může být nastaveno pro každou aplikaci jinak)</string>
-    <string name="settings_show_notifications_disabled">Neukazovat toast upozornění když aplikace požádá o přístup(může být jinak nastaveno v každé aplikaci)</string>
-    <string name="settings_category_logs">Záznamy</string>
-    <string name="settings_log">Zaznamenávání</string>
-    <string name="settings_log_select">Vyberte úroveň záznamu</string>
-    <string name="settings_log_age">Vymazat záznamy po ...</string>
-    <string name="settings_log_age_select">Vyberte expiraci záznamů</string>
-    <string name="settings_log_clear">Vymazat záznamy nyní</string>
-    <string name="settings_log_clear_description">Smaže všechny současně ukázané záznamy</string>
-    <string name="settings_log_clear_progress">Vymazávám záznamy ...</string>
-    <string name="settings_log_format">Formát data záznamu</string>
+    <string name="settings_show_notifications_disabled">Nezobrazovat upozornění, když program požádá o přístup (může být nastaveno pro každou aplikaci jinak)</string>
+    <string name="settings_category_logs">Protokoly</string>
+    <string name="settings_log">Protokolování</string>
+    <string name="settings_log_select">Vyberte úroveň protokolováni</string>
+    <string name="settings_log_age">Vymazat protokoly po ...</string>
+    <string name="settings_log_age_select">Nastavit expiraci protokolů</string>
+    <string name="settings_log_clear">Vymazat protokoly ihned</string>
+    <string name="settings_log_clear_description">Smaže veškeré existující protokoly</string>
+    <string name="settings_log_clear_progress">Mažu protokoly ...</string>
+    <string name="settings_log_format">Formát data protokolu</string>
     <string name="settings_log_format_select">Vyberte formát</string>
     <string name="settings_log_format_restart">Změny tohoto nastavení jsou uplatněny po restartu aplikace</string>
     <string name="settings_category_security">Bezpečnost</string>
@@ -89,7 +89,7 @@
     <string name="appdetail_access">Přístup</string>
     <string name="appdetail_logging">Zaznamenávání</string>
     <string name="appdetail_notification">Upozornění</string>
-    <string name="appdetail_force_user">Trvat na uživateli</string>
+    <string name="appdetail_force_user">Vynutit uživatele</string>
     <string name="appdetail_pro_required">( Pouze v Pro )</string>
     <string name="logdetail_no_log">Obsah superuser příkazu nebyl zaznamenán pro tento vstup dat. Plné zaznamenávání může být povoleno zvolením Nastavení->Zaznamenávání-> Celý obsah, nebo v každé aplikaci zvlášť zvolení aplikace ze seznamu aplikací.</string>
     <string name="pin_title">Vložte PIN kód</string>

@@ -1,80 +1,77 @@
-.class synthetic Lcom/google/android/finsky/billing/CheckoutPurchase$1;
+.class Lcom/google/android/finsky/billing/CheckoutPurchase$1;
 .super Ljava/lang/Object;
 .source "CheckoutPurchase.java"
 
+# interfaces
+.implements Lcom/android/volley/Response$Listener;
+
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/finsky/billing/CheckoutPurchase;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/google/android/finsky/billing/CheckoutPurchase;->pollStatus(Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
+    accessFlags = 0x0
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/android/volley/Response$Listener",
+        "<",
+        "Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;",
+        ">;"
+    }
+.end annotation
 
-# static fields
-.field static final synthetic $SwitchMap$com$google$android$finsky$billing$CheckoutPurchase$State:[I
+
+# instance fields
+.field final synthetic this$0:Lcom/google/android/finsky/billing/CheckoutPurchase;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method constructor <init>(Lcom/google/android/finsky/billing/CheckoutPurchase;)V
+    .registers 2
+    .parameter
 
     .prologue
-    .line 809
-    invoke-static {}, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->values()[Lcom/google/android/finsky/billing/CheckoutPurchase$State;
+    .line 627
+    iput-object p1, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$1;->this$0:Lcom/google/android/finsky/billing/CheckoutPurchase;
 
-    move-result-object v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/google/android/finsky/billing/CheckoutPurchase$1;->$SwitchMap$com$google$android$finsky$billing$CheckoutPurchase$State:[I
-
-    :try_start_9
-    sget-object v0, Lcom/google/android/finsky/billing/CheckoutPurchase$1;->$SwitchMap$com$google$android$finsky$billing$CheckoutPurchase$State:[I
-
-    sget-object v1, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->PREPARING:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
-
-    invoke-virtual {v1}, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
-
-    :goto_14
-    :try_start_14
-    sget-object v0, Lcom/google/android/finsky/billing/CheckoutPurchase$1;->$SwitchMap$com$google$android$finsky$billing$CheckoutPurchase$State:[I
-
-    sget-object v1, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->COMPLETING:Lcom/google/android/finsky/billing/CheckoutPurchase$State;
-
-    invoke-virtual {v1}, Lcom/google/android/finsky/billing/CheckoutPurchase$State;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
-
-    :goto_1f
     return-void
+.end method
 
-    :catch_20
-    move-exception v0
 
-    goto :goto_1f
+# virtual methods
+.method public onResponse(Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;)V
+    .registers 3
+    .parameter "purchaseStatusResponse"
 
-    :catch_22
-    move-exception v0
+    .prologue
+    .line 630
+    iget-object v0, p0, Lcom/google/android/finsky/billing/CheckoutPurchase$1;->this$0:Lcom/google/android/finsky/billing/CheckoutPurchase;
 
-    goto :goto_14
+    #calls: Lcom/google/android/finsky/billing/CheckoutPurchase;->onPurchaseStatusResponse(Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;)V
+    invoke-static {v0, p1}, Lcom/google/android/finsky/billing/CheckoutPurchase;->access$000(Lcom/google/android/finsky/billing/CheckoutPurchase;Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;)V
+
+    .line 631
+    return-void
+.end method
+
+.method public bridge synthetic onResponse(Ljava/lang/Object;)V
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 627
+    check-cast p1, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;
+
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/google/android/finsky/billing/CheckoutPurchase$1;->onResponse(Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;)V
+
+    return-void
 .end method

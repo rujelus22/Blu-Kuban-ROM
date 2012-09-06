@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/navigationmanager/NavigationManager;->getBuyImmediateClickListener(Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;)Landroid/view/View$OnClickListener;
+    value = Lcom/google/android/finsky/navigationmanager/NavigationManager;->getBuyImmediateClickListener(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/view/View$OnClickListener;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,6 +20,10 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
+.field final synthetic val$account:Landroid/accounts/Account;
+
+.field final synthetic val$continueUrl:Ljava/lang/String;
+
 .field final synthetic val$doc:Lcom/google/android/finsky/api/model/Document;
 
 .field final synthetic val$externalReferrer:Ljava/lang/String;
@@ -28,10 +32,15 @@
 
 .field final synthetic val$referrerUrl:Ljava/lang/String;
 
+.field final synthetic val$returnAfterPurchase:Z
+
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/navigationmanager/NavigationManager;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;)V
-    .registers 6
+.method constructor <init>(Lcom/google/android/finsky/navigationmanager/NavigationManager;Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    .registers 9
+    .parameter
+    .parameter
+    .parameter
     .parameter
     .parameter
     .parameter
@@ -39,16 +48,22 @@
     .parameter
 
     .prologue
-    .line 686
+    .line 608
     iput-object p1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->this$0:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
-    iput-object p2, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$doc:Lcom/google/android/finsky/api/model/Document;
+    iput-object p2, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$account:Landroid/accounts/Account;
 
-    iput p3, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$offerType:I
+    iput-object p3, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$doc:Lcom/google/android/finsky/api/model/Document;
 
-    iput-object p4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$referrerUrl:Ljava/lang/String;
+    iput p4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$offerType:I
 
-    iput-object p5, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$externalReferrer:Ljava/lang/String;
+    iput-object p5, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$referrerUrl:Ljava/lang/String;
+
+    iput-object p6, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$externalReferrer:Ljava/lang/String;
+
+    iput-object p7, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$continueUrl:Ljava/lang/String;
+
+    iput-boolean p8, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$returnAfterPurchase:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -58,23 +73,29 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 7
+    .registers 10
     .parameter "v"
 
     .prologue
-    .line 689
+    .line 611
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->this$0:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
-    iget-object v1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$doc:Lcom/google/android/finsky/api/model/Document;
+    iget-object v1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$account:Landroid/accounts/Account;
 
-    iget v2, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$offerType:I
+    iget-object v2, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$doc:Lcom/google/android/finsky/api/model/Document;
 
-    iget-object v3, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$referrerUrl:Ljava/lang/String;
+    iget v3, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$offerType:I
 
-    iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$externalReferrer:Ljava/lang/String;
+    iget-object v4, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$referrerUrl:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->buy(Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;)V
+    iget-object v5, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$externalReferrer:Ljava/lang/String;
 
-    .line 690
+    iget-object v6, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$continueUrl:Ljava/lang/String;
+
+    iget-boolean v7, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$4;->val$returnAfterPurchase:Z
+
+    invoke-virtual/range {v0 .. v7}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->buy(Landroid/accounts/Account;Lcom/google/android/finsky/api/model/Document;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+
+    .line 613
     return-void
 .end method

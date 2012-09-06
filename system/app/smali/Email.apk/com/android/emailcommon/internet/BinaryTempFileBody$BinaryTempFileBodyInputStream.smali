@@ -25,13 +25,13 @@
     .parameter "in"
 
     .prologue
-    .line 87
+    .line 79
     iput-object p1, p0, Lcom/android/emailcommon/internet/BinaryTempFileBody$BinaryTempFileBodyInputStream;->this$0:Lcom/android/emailcommon/internet/BinaryTempFileBody;
 
-    .line 88
+    .line 80
     invoke-direct {p0, p2}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 89
+    .line 81
     return-void
 .end method
 
@@ -46,10 +46,10 @@
     .end annotation
 
     .prologue
-    .line 93
+    .line 85
     invoke-super {p0}, Ljava/io/FilterInputStream;->close()V
 
-    .line 94
+    .line 86
     iget-object v0, p0, Lcom/android/emailcommon/internet/BinaryTempFileBody$BinaryTempFileBodyInputStream;->this$0:Lcom/android/emailcommon/internet/BinaryTempFileBody;
 
     #getter for: Lcom/android/emailcommon/internet/BinaryTempFileBody;->mFile:Ljava/io/File;
@@ -59,6 +59,6 @@
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 95
+    .line 87
     return-void
 .end method

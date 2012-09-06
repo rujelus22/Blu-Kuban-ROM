@@ -33,18 +33,18 @@
     .parameter "requestId"
 
     .prologue
-    .line 587
+    .line 637
     iput-object p1, p0, Lcom/google/android/finsky/billing/iab/MarketBillingService$Stub$NotifyingErrorListener;->this$1:Lcom/google/android/finsky/billing/iab/MarketBillingService$Stub;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 588
+    .line 638
     iput-object p2, p0, Lcom/google/android/finsky/billing/iab/MarketBillingService$Stub$NotifyingErrorListener;->mPackageName:Ljava/lang/String;
 
-    .line 589
+    .line 639
     iput-wide p3, p0, Lcom/google/android/finsky/billing/iab/MarketBillingService$Stub$NotifyingErrorListener;->mRequestId:J
 
-    .line 590
+    .line 640
     return-void
 .end method
 
@@ -55,7 +55,7 @@
     .parameter "error"
 
     .prologue
-    .line 594
+    .line 644
     const-string v0, "Server error on InAppPurchaseInformationRequest: %s"
 
     const/4 v1, 0x1
@@ -68,7 +68,7 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 595
+    .line 645
     iget-object v0, p0, Lcom/google/android/finsky/billing/iab/MarketBillingService$Stub$NotifyingErrorListener;->this$1:Lcom/google/android/finsky/billing/iab/MarketBillingService$Stub;
 
     iget-object v0, v0, Lcom/google/android/finsky/billing/iab/MarketBillingService$Stub;->this$0:Lcom/google/android/finsky/billing/iab/MarketBillingService;
@@ -83,6 +83,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/android/finsky/billing/iab/MarketBillingService$BillingNotifier;->sendResponseCode(Ljava/lang/String;JLcom/google/android/finsky/billing/iab/MarketBillingService$ResponseCode;)Z
 
-    .line 597
+    .line 647
     return-void
 .end method

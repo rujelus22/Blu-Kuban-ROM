@@ -1,26 +1,20 @@
-.class Lcom/google/googlenav/settings/b;
+.class public interface abstract Lcom/google/googlenav/settings/B;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# instance fields
-.field a:Ljava/lang/String;
+# virtual methods
+.method public abstract a(Lcom/google/googlenav/friend/i;)V
+.end method
 
-.field b:Z
+.method public abstract a(Lcom/google/googlenav/settings/C;)V
+.end method
 
-.field final synthetic c:Lcom/google/googlenav/settings/AboutActivity;
+.method public abstract a(Z)V
+.end method
 
+.method public abstract b(Lcom/google/googlenav/settings/C;)V
+.end method
 
-# direct methods
-.method public constructor <init>(Lcom/google/googlenav/settings/AboutActivity;Ljava/lang/String;Z)V
-    .registers 4
-
-    iput-object p1, p0, Lcom/google/googlenav/settings/b;->c:Lcom/google/googlenav/settings/AboutActivity;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Lcom/google/googlenav/settings/b;->a:Ljava/lang/String;
-
-    iput-boolean p3, p0, Lcom/google/googlenav/settings/b;->b:Z
-
-    return-void
+.method public abstract b(Z)V
 .end method

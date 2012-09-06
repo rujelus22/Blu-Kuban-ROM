@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="play_on_this_device">Přehrát v tomto tabletu</string>
+    <string name="this_phone">Tento tablet</string>
+</resources>

@@ -5,8 +5,8 @@
         <item quantity="one">%1$d risultato</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">%1$d aggiornamenti trovati per %2$s.</item>
-        <item quantity="one">%1$d aggiornamento trovato per %2$s.</item>
+        <item quantity="other">%1$d aggiornamenti trovati.</item>
+        <item quantity="one">%1$d aggiornamento trovato.</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">%1$s persone hanno fatto +1.</item>

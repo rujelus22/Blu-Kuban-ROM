@@ -13,13 +13,13 @@
     .parameter "is"
 
     .prologue
-    .line 38
+    .line 39
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
-    .line 39
+    .line 40
     iput-object p1, p0, Lorg/apache/james/mime4j/CloseShieldInputStream;->is:Ljava/io/InputStream;
 
-    .line 40
+    .line 41
     return-void
 .end method
 
@@ -32,12 +32,12 @@
     .end annotation
 
     .prologue
-    .line 124
+    .line 126
     iget-object v0, p0, Lorg/apache/james/mime4j/CloseShieldInputStream;->is:Ljava/io/InputStream;
 
     if-nez v0, :cond_c
 
-    .line 125
+    .line 127
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "Stream is closed"
@@ -46,7 +46,7 @@
 
     throw v0
 
-    .line 126
+    .line 128
     :cond_c
     return-void
 .end method
@@ -62,10 +62,10 @@
     .end annotation
 
     .prologue
-    .line 58
+    .line 59
     invoke-direct {p0}, Lorg/apache/james/mime4j/CloseShieldInputStream;->checkIfClosed()V
 
-    .line 59
+    .line 60
     iget-object v0, p0, Lorg/apache/james/mime4j/CloseShieldInputStream;->is:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->available()I
@@ -84,12 +84,12 @@
     .end annotation
 
     .prologue
-    .line 66
+    .line 68
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/apache/james/mime4j/CloseShieldInputStream;->is:Ljava/io/InputStream;
 
-    .line 67
+    .line 69
     return-void
 .end method
 
@@ -98,7 +98,7 @@
     .parameter "readlimit"
 
     .prologue
-    .line 90
+    .line 92
     monitor-enter p0
 
     :try_start_1
@@ -106,20 +106,20 @@
 
     if-eqz v0, :cond_a
 
-    .line 91
+    .line 93
     iget-object v0, p0, Lorg/apache/james/mime4j/CloseShieldInputStream;->is:Ljava/io/InputStream;
 
     invoke-virtual {v0, p1}, Ljava/io/InputStream;->mark(I)V
     :try_end_a
     .catchall {:try_start_1 .. :try_end_a} :catchall_c
 
-    .line 92
+    .line 94
     :cond_a
     monitor-exit p0
 
     return-void
 
-    .line 90
+    .line 92
     :catchall_c
     move-exception v0
 
@@ -132,15 +132,15 @@
     .registers 2
 
     .prologue
-    .line 81
+    .line 83
     iget-object v0, p0, Lorg/apache/james/mime4j/CloseShieldInputStream;->is:Ljava/io/InputStream;
 
     if-nez v0, :cond_6
 
-    .line 82
+    .line 84
     const/4 v0, 0x0
 
-    .line 83
+    .line 85
     :goto_5
     return v0
 
@@ -163,10 +163,10 @@
     .end annotation
 
     .prologue
-    .line 50
+    .line 51
     invoke-direct {p0}, Lorg/apache/james/mime4j/CloseShieldInputStream;->checkIfClosed()V
 
-    .line 51
+    .line 52
     iget-object v0, p0, Lorg/apache/james/mime4j/CloseShieldInputStream;->is:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->read()I
@@ -186,10 +186,10 @@
     .end annotation
 
     .prologue
-    .line 106
+    .line 108
     invoke-direct {p0}, Lorg/apache/james/mime4j/CloseShieldInputStream;->checkIfClosed()V
 
-    .line 107
+    .line 109
     iget-object v0, p0, Lorg/apache/james/mime4j/CloseShieldInputStream;->is:Ljava/io/InputStream;
 
     invoke-virtual {v0, p1}, Ljava/io/InputStream;->read([B)I
@@ -211,10 +211,10 @@
     .end annotation
 
     .prologue
-    .line 114
+    .line 116
     invoke-direct {p0}, Lorg/apache/james/mime4j/CloseShieldInputStream;->checkIfClosed()V
 
-    .line 115
+    .line 117
     iget-object v0, p0, Lorg/apache/james/mime4j/CloseShieldInputStream;->is:Ljava/io/InputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
@@ -233,25 +233,25 @@
     .end annotation
 
     .prologue
-    .line 73
+    .line 75
     monitor-enter p0
 
     :try_start_1
     invoke-direct {p0}, Lorg/apache/james/mime4j/CloseShieldInputStream;->checkIfClosed()V
 
-    .line 74
+    .line 76
     iget-object v0, p0, Lorg/apache/james/mime4j/CloseShieldInputStream;->is:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
     :try_end_9
     .catchall {:try_start_1 .. :try_end_9} :catchall_b
 
-    .line 75
+    .line 77
     monitor-exit p0
 
     return-void
 
-    .line 73
+    .line 75
     :catchall_b
     move-exception v0
 
@@ -270,10 +270,10 @@
     .end annotation
 
     .prologue
-    .line 98
+    .line 100
     invoke-direct {p0}, Lorg/apache/james/mime4j/CloseShieldInputStream;->checkIfClosed()V
 
-    .line 99
+    .line 101
     iget-object v0, p0, Lorg/apache/james/mime4j/CloseShieldInputStream;->is:Ljava/io/InputStream;
 
     invoke-virtual {v0, p1, p2}, Ljava/io/InputStream;->skip(J)J

@@ -1,55 +1,48 @@
-.class final Lcom/google/android/youtube/core/converter/http/dd;
-.super Lcom/google/android/youtube/core/converter/l;
+.class public final Lcom/google/android/youtube/core/converter/http/dd;
+.super Lcom/google/android/youtube/core/converter/http/ar;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/converter/http/cv;
+.field private final b:Lcom/google/android/youtube/core/converter/c;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/core/converter/http/cv;)V
-    .registers 2
+.method public constructor <init>(Lcom/google/android/youtube/core/converter/k;)V
+    .registers 3
     .parameter
 
     .prologue
-    .line 37
-    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/dd;->a:Lcom/google/android/youtube/core/converter/http/cv;
+    .line 19
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/converter/http/ar;-><init>(Lcom/google/android/youtube/core/converter/k;)V
 
-    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
+    .line 20
+    new-instance v0, Lcom/google/android/youtube/core/converter/d;
 
+    invoke-direct {v0}, Lcom/google/android/youtube/core/converter/d;-><init>()V
+
+    .line 21
+    invoke-static {v0}, Lcom/google/android/youtube/core/converter/http/de;->a(Lcom/google/android/youtube/core/converter/d;)V
+
+    .line 22
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/converter/d;->a()Lcom/google/android/youtube/core/converter/c;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/converter/http/dd;->b:Lcom/google/android/youtube/core/converter/c;
+
+    .line 23
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;)V
-    .registers 4
-    .parameter
-    .parameter
+.method protected final a()Lcom/google/android/youtube/core/converter/c;
+    .registers 2
 
     .prologue
-    .line 40
-    new-instance v0, Lcom/google/android/youtube/core/model/p;
+    .line 27
+    iget-object v0, p0, Lcom/google/android/youtube/core/converter/http/dd;->b:Lcom/google/android/youtube/core/converter/c;
 
-    invoke-direct {v0}, Lcom/google/android/youtube/core/model/p;-><init>()V
-
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->offer(Ljava/lang/Object;)Z
-
-    .line 41
-    return-void
-.end method
-
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
-    .registers 4
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 44
-    invoke-virtual {p1}, Lcom/google/android/youtube/core/utils/p;->poll()Ljava/lang/Object;
-
-    .line 45
-    return-void
+    return-object v0
 .end method

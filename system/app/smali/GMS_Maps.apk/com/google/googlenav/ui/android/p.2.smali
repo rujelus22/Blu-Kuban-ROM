@@ -1,20 +1,23 @@
-.class Lcom/google/googlenav/ui/android/p;
+.class Lcom/google/googlenav/ui/android/P;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # instance fields
-.field public a:I
-
-.field public b:I
-
-.field final synthetic c:Lcom/google/googlenav/ui/android/AndroidView;
+.field final synthetic a:Lcom/google/googlenav/ui/android/FloorPickerView;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/ui/android/AndroidView;)V
+.method constructor <init>(Lcom/google/googlenav/ui/android/FloorPickerView;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/android/p;->c:Lcom/google/googlenav/ui/android/AndroidView;
+    .prologue
+    .line 362
+    iput-object p1, p0, Lcom/google/googlenav/ui/android/P;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,96 +26,34 @@
 
 
 # virtual methods
-.method public a(Landroid/view/MotionEvent;)V
-    .registers 9
+.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+    .registers 3
+    .parameter
 
-    const/high16 v3, 0x3f00
+    .prologue
+    .line 365
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/P;->a:Lcom/google/googlenav/ui/android/FloorPickerView;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/p;->c:Lcom/google/googlenav/ui/android/AndroidView;
+    invoke-static {v0}, Lcom/google/googlenav/ui/android/FloorPickerView;->e(Lcom/google/googlenav/ui/android/FloorPickerView;)V
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/android/AndroidView;->a(Lcom/google/googlenav/ui/android/AndroidView;)F
+    .line 366
+    return-void
+.end method
 
-    move-result v0
+.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .registers 2
+    .parameter
 
-    const v1, 0x3c8efa35
+    .prologue
+    .line 368
+    return-void
+.end method
 
-    mul-float/2addr v0, v1
+.method public onAnimationStart(Landroid/view/animation/Animation;)V
+    .registers 2
+    .parameter
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/p;->c:Lcom/google/googlenav/ui/android/AndroidView;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/android/AndroidView;->getWidth()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    mul-float/2addr v1, v3
-
-    iget-object v2, p0, Lcom/google/googlenav/ui/android/p;->c:Lcom/google/googlenav/ui/android/AndroidView;
-
-    invoke-virtual {v2}, Lcom/google/googlenav/ui/android/AndroidView;->getHeight()I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    mul-float/2addr v2, v3
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v3
-
-    sub-float/2addr v3, v1
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v4
-
-    sub-float/2addr v4, v2
-
-    invoke-static {v0}, Landroid/util/FloatMath;->cos(F)F
-
-    move-result v5
-
-    mul-float/2addr v5, v3
-
-    invoke-static {v0}, Landroid/util/FloatMath;->sin(F)F
-
-    move-result v6
-
-    mul-float/2addr v6, v4
-
-    sub-float/2addr v5, v6
-
-    add-float/2addr v1, v5
-
-    invoke-static {v1}, Ljava/lang/Math;->round(F)I
-
-    move-result v1
-
-    iput v1, p0, Lcom/google/googlenav/ui/android/p;->a:I
-
-    invoke-static {v0}, Landroid/util/FloatMath;->sin(F)F
-
-    move-result v1
-
-    mul-float/2addr v1, v3
-
-    invoke-static {v0}, Landroid/util/FloatMath;->cos(F)F
-
-    move-result v0
-
-    mul-float/2addr v0, v4
-
-    add-float/2addr v0, v1
-
-    add-float/2addr v0, v2
-
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v0
-
-    iput v0, p0, Lcom/google/googlenav/ui/android/p;->b:I
-
+    .prologue
+    .line 370
     return-void
 .end method

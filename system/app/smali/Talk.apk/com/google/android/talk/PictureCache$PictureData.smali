@@ -35,7 +35,7 @@
 
     .prologue
     .line 541
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 542
     iput-object p1, p0, Lcom/google/android/talk/PictureCache$PictureData;->mHash:Ljava/lang/String;

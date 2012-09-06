@@ -5,11 +5,13 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .registers 2
 
     .prologue
     .line 69
-    invoke-direct {p0}, Lcom/google/net/async/ac;-><init>()V
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lcom/google/net/async/ac;-><init>(C)V
 
     .line 1
     return-void

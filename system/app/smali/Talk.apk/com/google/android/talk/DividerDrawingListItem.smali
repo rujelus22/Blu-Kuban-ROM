@@ -45,7 +45,7 @@
     .line 21
     new-instance v0, Landroid/graphics/drawable/ColorDrawable;
 
-    const v1, -0x333334
+    const v1, -0xe5e5e6
 
     invoke-direct {v0, v1}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
@@ -88,7 +88,7 @@
     .line 21
     new-instance v0, Landroid/graphics/drawable/ColorDrawable;
 
-    const v1, -0x333334
+    const v1, -0xe5e5e6
 
     invoke-direct {v0, v1}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 

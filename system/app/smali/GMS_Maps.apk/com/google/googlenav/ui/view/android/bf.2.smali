@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/view/android/bf;
+.class Lcom/google/googlenav/ui/view/android/bF;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/googlenav/ui/p;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/android/be;
+.field final synthetic a:Lcom/google/googlenav/ui/view/android/bE;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/be;)V
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/bE;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/bf;->a:Lcom/google/googlenav/ui/view/android/be;
+    .prologue
+    .line 168
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/bF;->a:Lcom/google/googlenav/ui/view/android/bE;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,62 +26,26 @@
 
 
 # virtual methods
-.method public a(IILjava/lang/Object;)Z
-    .registers 8
+.method public run()V
+    .registers 4
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bf;->a:Lcom/google/googlenav/ui/view/android/be;
+    .prologue
+    .line 177
+    const/4 v0, 0x1
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/be;->a(Lcom/google/googlenav/ui/view/android/be;)Lcom/google/googlenav/ui/view/android/bj;
+    .line 178
+    sget-object v1, Lcom/google/googlenav/ui/view/android/V;->f:Lcom/google/googlenav/android/BaseMapsActivity;
 
-    move-result-object v0
+    invoke-virtual {v1}, Lcom/google/googlenav/android/BaseMapsActivity;->getUiThreadHandler()Lcom/google/googlenav/android/Y;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/bj;->hide()V
+    move-result-object v1
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bf;->a:Lcom/google/googlenav/ui/view/android/be;
+    new-instance v2, Lcom/google/googlenav/ui/view/android/bG;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/view/android/be;->f:Lcom/google/googlenav/ui/p;
+    invoke-direct {v2, p0}, Lcom/google/googlenav/ui/view/android/bG;-><init>(Lcom/google/googlenav/ui/view/android/bF;)V
 
-    const/16 v1, 0x149
+    invoke-virtual {v1, v2, v0}, Lcom/google/googlenav/android/Y;->a(Ljava/lang/Runnable;Z)V
 
-    const/4 v2, -0x1
-
-    const/4 v3, 0x0
-
-    invoke-interface {v0, v1, v2, v3}, Lcom/google/googlenav/ui/p;->a(IILjava/lang/Object;)Z
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bf;->a:Lcom/google/googlenav/ui/view/android/be;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/view/android/be;->f:Lcom/google/googlenav/ui/p;
-
-    invoke-interface {v0, p1, p2, p3}, Lcom/google/googlenav/ui/p;->a(IILjava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public o()V
-    .registers 5
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bf;->a:Lcom/google/googlenav/ui/view/android/be;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/be;->a(Lcom/google/googlenav/ui/view/android/be;)Lcom/google/googlenav/ui/view/android/bj;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/bj;->hide()V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/bf;->a:Lcom/google/googlenav/ui/view/android/be;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/view/android/be;->f:Lcom/google/googlenav/ui/p;
-
-    const/16 v1, 0x149
-
-    const/4 v2, -0x1
-
-    const/4 v3, 0x0
-
-    invoke-interface {v0, v1, v2, v3}, Lcom/google/googlenav/ui/p;->a(IILjava/lang/Object;)Z
-
+    .line 184
     return-void
 .end method

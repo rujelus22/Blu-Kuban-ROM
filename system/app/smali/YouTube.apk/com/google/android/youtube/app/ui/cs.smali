@@ -1,62 +1,77 @@
 .class final Lcom/google/android/youtube/app/ui/cs;
-.super Lcom/google/android/youtube/core/ui/f;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/ui/cr;
+.field final synthetic a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/ui/cr;Lcom/google/android/youtube/core/e;)V
-    .registers 3
-    .parameter
+.method constructor <init>(Lcom/google/android/youtube/app/ui/SubscribeHelper;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 415
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/cs;->a:Lcom/google/android/youtube/app/ui/cr;
+    .line 344
+    iput-object p1, p0, Lcom/google/android/youtube/app/ui/cs;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    invoke-direct {p0, p2}, Lcom/google/android/youtube/core/ui/f;-><init>(Lcom/google/android/youtube/core/e;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/model/UserAuth;)V
-    .registers 4
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .registers 8
+    .parameter
     .parameter
 
     .prologue
-    .line 417
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cs;->a:Lcom/google/android/youtube/app/ui/cr;
+    .line 346
+    const/4 v0, -0x1
 
-    iget-object v0, v0, Lcom/google/android/youtube/app/ui/cr;->b:Lcom/google/android/youtube/app/ui/cq;
+    if-ne p2, v0, :cond_26
 
-    iget-object v0, v0, Lcom/google/android/youtube/app/ui/cq;->a:Lcom/google/android/youtube/app/ui/ch;
+    .line 348
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cs;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/ch;->h(Lcom/google/android/youtube/app/ui/ch;)Lcom/google/android/youtube/core/Analytics;
+    sget-object v1, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->WORKING:Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;
+
+    invoke-static {v0, v1}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->a(Lcom/google/android/youtube/app/ui/SubscribeHelper;Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;)V
+
+    .line 349
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cs;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->l(Lcom/google/android/youtube/app/ui/SubscribeHelper;)Lcom/google/android/youtube/core/async/UserAuthorizer;
 
     move-result-object v0
 
-    const-string v1, "CreatePlaylist"
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/cs;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/Analytics;->b(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->g(Lcom/google/android/youtube/app/ui/SubscribeHelper;)Landroid/app/Activity;
 
-    .line 418
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cs;->a:Lcom/google/android/youtube/app/ui/cr;
+    move-result-object v1
 
-    iget-object v0, v0, Lcom/google/android/youtube/app/ui/cr;->b:Lcom/google/android/youtube/app/ui/cq;
+    new-instance v2, Lcom/google/android/youtube/app/ui/cy;
 
-    iget-object v0, v0, Lcom/google/android/youtube/app/ui/cq;->a:Lcom/google/android/youtube/app/ui/ch;
+    iget-object v3, p0, Lcom/google/android/youtube/app/ui/cs;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    iget-object v0, v0, Lcom/google/android/youtube/app/ui/ch;->a:Landroid/app/Activity;
+    iget-object v4, p0, Lcom/google/android/youtube/app/ui/cs;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    const/16 v1, 0x3ed
+    invoke-static {v4}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->i(Lcom/google/android/youtube/app/ui/SubscribeHelper;)Lcom/google/android/youtube/core/d;
 
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->showDialog(I)V
+    move-result-object v4
 
-    .line 419
+    invoke-direct {v2, v3, v4}, Lcom/google/android/youtube/app/ui/cy;-><init>(Lcom/google/android/youtube/app/ui/SubscribeHelper;Lcom/google/android/youtube/core/d;)V
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/bc;)V
+
+    .line 351
+    :cond_26
     return-void
 .end method

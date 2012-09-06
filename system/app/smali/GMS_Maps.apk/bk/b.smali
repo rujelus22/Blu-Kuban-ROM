@@ -1,486 +1,147 @@
-.class synthetic Lbk/b;
+.class public abstract Lbk/b;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
-
-# static fields
-.field static final synthetic a:[I
+# interfaces
+.implements Lbk/q;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method public constructor <init>()V
+    .registers 1
 
-    invoke-static {}, Lbg/c;->values()[Lbg/c;
+    .prologue
+    .line 80
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 203
+    return-void
+.end method
+
+.method protected static a(Lbk/p;)Lbk/x;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 278
+    new-instance v0, Lbk/x;
+
+    invoke-direct {v0, p0}, Lbk/x;-><init>(Lbk/p;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public a(Lbk/f;)Lbk/b;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 88
+    invoke-static {}, Lbk/i;->a()Lbk/i;
 
     move-result-object v0
 
-    array-length v0, v0
+    invoke-virtual {p0, p1, v0}, Lbk/b;->b(Lbk/f;Lbk/i;)Lbk/b;
 
-    new-array v0, v0, [I
+    move-result-object v0
 
-    sput-object v0, Lbk/b;->a:[I
+    return-object v0
+.end method
 
-    :try_start_9
-    sget-object v0, Lbk/b;->a:[I
+.method public a([B)Lbk/b;
+    .registers 4
+    .parameter
 
-    sget-object v1, Lbg/c;->a:Lbg/c;
+    .prologue
+    .line 133
+    const/4 v0, 0x0
 
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
+    array-length v1, p1
 
-    move-result v1
+    invoke-virtual {p0, p1, v0, v1}, Lbk/b;->a([BII)Lbk/b;
 
-    const/4 v2, 0x1
+    move-result-object v0
 
-    aput v2, v0, v1
-    :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_140
+    return-object v0
+.end method
 
-    :goto_14
-    :try_start_14
-    sget-object v0, Lbk/b;->a:[I
+.method public a([BII)Lbk/b;
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
 
-    sget-object v1, Lbg/c;->v:Lbg/c;
+    .prologue
+    .line 140
+    :try_start_0
+    invoke-static {p1, p2, p3}, Lbk/f;->a([BII)Lbk/f;
 
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
+    move-result-object v0
 
-    move-result v1
+    .line 142
+    invoke-virtual {p0, v0}, Lbk/b;->a(Lbk/f;)Lbk/b;
 
-    const/4 v2, 0x2
+    .line 143
+    const/4 v1, 0x0
 
-    aput v2, v0, v1
-    :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_13d
+    invoke-virtual {v0, v1}, Lbk/f;->a(I)V
+    :try_end_b
+    .catch Lbk/l; {:try_start_0 .. :try_end_b} :catch_c
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_b} :catch_e
 
-    :goto_1f
-    :try_start_1f
-    sget-object v0, Lbk/b;->a:[I
+    .line 144
+    return-object p0
 
-    sget-object v1, Lbg/c;->n:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_13a
-
-    :goto_2a
-    :try_start_2a
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->j:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_35
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_137
-
-    :goto_35
-    :try_start_35
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->m:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_40
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_35 .. :try_end_40} :catch_134
-
-    :goto_40
-    :try_start_40
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->h:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x6
-
-    aput v2, v0, v1
-    :try_end_4b
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_40 .. :try_end_4b} :catch_131
-
-    :goto_4b
-    :try_start_4b
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->c:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x7
-
-    aput v2, v0, v1
-    :try_end_56
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4b .. :try_end_56} :catch_12e
-
-    :goto_56
-    :try_start_56
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->l:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x8
-
-    aput v2, v0, v1
-    :try_end_62
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_56 .. :try_end_62} :catch_12b
-
-    :goto_62
-    :try_start_62
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->r:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x9
-
-    aput v2, v0, v1
-    :try_end_6e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_62 .. :try_end_6e} :catch_128
-
-    :goto_6e
-    :try_start_6e
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->i:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xa
-
-    aput v2, v0, v1
-    :try_end_7a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6e .. :try_end_7a} :catch_125
-
-    :goto_7a
-    :try_start_7a
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->s:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xb
-
-    aput v2, v0, v1
-    :try_end_86
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_7a .. :try_end_86} :catch_122
-
-    :goto_86
-    :try_start_86
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->b:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xc
-
-    aput v2, v0, v1
-    :try_end_92
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_86 .. :try_end_92} :catch_11f
-
-    :goto_92
-    :try_start_92
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->p:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xd
-
-    aput v2, v0, v1
-    :try_end_9e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_92 .. :try_end_9e} :catch_11d
-
-    :goto_9e
-    :try_start_9e
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->o:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xe
-
-    aput v2, v0, v1
-    :try_end_aa
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9e .. :try_end_aa} :catch_11b
-
-    :goto_aa
-    :try_start_aa
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->q:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xf
-
-    aput v2, v0, v1
-    :try_end_b6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_aa .. :try_end_b6} :catch_119
-
-    :goto_b6
-    :try_start_b6
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->k:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x10
-
-    aput v2, v0, v1
-    :try_end_c2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_b6 .. :try_end_c2} :catch_117
-
-    :goto_c2
-    :try_start_c2
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->d:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x11
-
-    aput v2, v0, v1
-    :try_end_ce
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_c2 .. :try_end_ce} :catch_115
-
-    :goto_ce
-    :try_start_ce
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->u:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x12
-
-    aput v2, v0, v1
-    :try_end_da
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_ce .. :try_end_da} :catch_113
-
-    :goto_da
-    :try_start_da
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->t:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x13
-
-    aput v2, v0, v1
-    :try_end_e6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_da .. :try_end_e6} :catch_111
-
-    :goto_e6
-    :try_start_e6
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->e:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x14
-
-    aput v2, v0, v1
-    :try_end_f2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_e6 .. :try_end_f2} :catch_10f
-
-    :goto_f2
-    :try_start_f2
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->f:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x15
-
-    aput v2, v0, v1
-    :try_end_fe
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_f2 .. :try_end_fe} :catch_10d
-
-    :goto_fe
-    :try_start_fe
-    sget-object v0, Lbk/b;->a:[I
-
-    sget-object v1, Lbg/c;->g:Lbg/c;
-
-    invoke-virtual {v1}, Lbg/c;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x16
-
-    aput v2, v0, v1
-    :try_end_10a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_fe .. :try_end_10a} :catch_10b
-
-    :goto_10a
-    return-void
-
-    :catch_10b
+    .line 145
+    :catch_c
     move-exception v0
 
-    goto :goto_10a
+    .line 146
+    throw v0
 
-    :catch_10d
+    .line 147
+    :catch_e
     move-exception v0
 
-    goto :goto_fe
+    .line 148
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    :catch_10f
-    move-exception v0
+    const-string v2, "Reading from a byte array threw an IOException (should never happen)."
 
-    goto :goto_f2
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :catch_111
-    move-exception v0
+    throw v1
+.end method
 
-    goto :goto_e6
+.method public abstract b(Lbk/f;Lbk/i;)Lbk/b;
+.end method
 
-    :catch_113
-    move-exception v0
+.method public synthetic b([B)Lbk/q;
+    .registers 3
+    .parameter
 
-    goto :goto_da
+    .prologue
+    .line 79
+    invoke-virtual {p0, p1}, Lbk/b;->a([B)Lbk/b;
 
-    :catch_115
-    move-exception v0
+    move-result-object v0
 
-    goto :goto_ce
+    return-object v0
+.end method
 
-    :catch_117
-    move-exception v0
+.method public synthetic clone()Ljava/lang/Object;
+    .registers 2
 
-    goto :goto_c2
+    .prologue
+    .line 79
+    invoke-virtual {p0}, Lbk/b;->e()Lbk/b;
 
-    :catch_119
-    move-exception v0
+    move-result-object v0
 
-    goto :goto_b6
+    return-object v0
+.end method
 
-    :catch_11b
-    move-exception v0
-
-    goto :goto_aa
-
-    :catch_11d
-    move-exception v0
-
-    goto :goto_9e
-
-    :catch_11f
-    move-exception v0
-
-    goto/16 :goto_92
-
-    :catch_122
-    move-exception v0
-
-    goto/16 :goto_86
-
-    :catch_125
-    move-exception v0
-
-    goto/16 :goto_7a
-
-    :catch_128
-    move-exception v0
-
-    goto/16 :goto_6e
-
-    :catch_12b
-    move-exception v0
-
-    goto/16 :goto_62
-
-    :catch_12e
-    move-exception v0
-
-    goto/16 :goto_56
-
-    :catch_131
-    move-exception v0
-
-    goto/16 :goto_4b
-
-    :catch_134
-    move-exception v0
-
-    goto/16 :goto_40
-
-    :catch_137
-    move-exception v0
-
-    goto/16 :goto_35
-
-    :catch_13a
-    move-exception v0
-
-    goto/16 :goto_2a
-
-    :catch_13d
-    move-exception v0
-
-    goto/16 :goto_1f
-
-    :catch_140
-    move-exception v0
-
-    goto/16 :goto_14
+.method public abstract e()Lbk/b;
 .end method

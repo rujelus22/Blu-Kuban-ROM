@@ -8,22 +8,8 @@
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 200
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/plus1/s;-><init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;B)V
-    .registers 3
-    .parameter
+.method private constructor <init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;)V
+    .registers 2
     .parameter
 
     .prologue
@@ -31,6 +17,18 @@
     iput-object p1, p0, Lcom/google/android/plus1/s;->a:Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;
 
     invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;B)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 200
+    invoke-direct {p0, p1}, Lcom/google/android/plus1/s;-><init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;)V
 
     return-void
 .end method
@@ -114,7 +112,7 @@
 
     const/4 v3, 0x6
 
-    invoke-static {v2, v3}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v2, v3}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v2
 
@@ -125,13 +123,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Error starting browser for URL: "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

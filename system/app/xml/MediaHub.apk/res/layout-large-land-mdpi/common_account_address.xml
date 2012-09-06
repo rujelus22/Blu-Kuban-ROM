@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextView android:textSize="14.0sp" android:textStyle="normal" android:textColor="@color/white" android:ellipsize="marquee" android:gravity="center_vertical" android:id="@id/tv_subtitle" android:background="@drawable/dark_header" android:paddingLeft="14.0dip" android:paddingRight="28.0dip" android:layout_width="fill_parent" android:layout_height="25.339996dip" android:singleLine="true" android:layout_alignParentBottom="true" android:marqueeRepeatLimit="marquee_forever"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

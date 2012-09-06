@@ -21,13 +21,13 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 52
+    .line 50
     iput v0, p0, Lorg/apache/commons/io/input/CharSequenceReader;->idx:I
 
-    .line 53
+    .line 51
     iput v0, p0, Lorg/apache/commons/io/input/CharSequenceReader;->mark:I
 
-    .line 54
+    .line 52
     return-void
 .end method
 
@@ -36,12 +36,12 @@
     .parameter "readAheadLimit"
 
     .prologue
-    .line 62
+    .line 60
     iget v0, p0, Lorg/apache/commons/io/input/CharSequenceReader;->idx:I
 
     iput v0, p0, Lorg/apache/commons/io/input/CharSequenceReader;->mark:I
 
-    .line 63
+    .line 61
     return-void
 .end method
 
@@ -49,7 +49,7 @@
     .registers 2
 
     .prologue
-    .line 71
+    .line 69
     const/4 v0, 0x1
 
     return v0
@@ -59,7 +59,7 @@
     .registers 4
 
     .prologue
-    .line 81
+    .line 79
     iget v0, p0, Lorg/apache/commons/io/input/CharSequenceReader;->idx:I
 
     iget-object v1, p0, Lorg/apache/commons/io/input/CharSequenceReader;->charSequence:Ljava/lang/CharSequence;
@@ -70,10 +70,10 @@
 
     if-lt v0, v1, :cond_c
 
-    .line 82
+    .line 80
     const/4 v0, -0x1
 
-    .line 84
+    .line 82
     :goto_b
     return v0
 
@@ -102,7 +102,7 @@
     .prologue
     const/4 v3, -0x1
 
-    .line 97
+    .line 96
     iget v4, p0, Lorg/apache/commons/io/input/CharSequenceReader;->idx:I
 
     iget-object v5, p0, Lorg/apache/commons/io/input/CharSequenceReader;->charSequence:Ljava/lang/CharSequence;
@@ -115,15 +115,15 @@
 
     move v1, v3
 
-    .line 116
+    .line 115
     :cond_c
     return v1
 
-    .line 100
+    .line 99
     :cond_d
     if-nez p1, :cond_17
 
-    .line 101
+    .line 100
     new-instance v3, Ljava/lang/NullPointerException;
 
     const-string v4, "Character array is missing"
@@ -132,7 +132,7 @@
 
     throw v3
 
-    .line 103
+    .line 102
     :cond_17
     if-ltz p3, :cond_1e
 
@@ -142,7 +142,7 @@
 
     if-le v4, v5, :cond_4c
 
-    .line 104
+    .line 103
     :cond_1e
     new-instance v3, Ljava/lang/IndexOutOfBoundsException;
 
@@ -190,11 +190,11 @@
 
     throw v3
 
-    .line 107
+    .line 106
     :cond_4c
     const/4 v1, 0x0
 
-    .line 108
+    .line 107
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -202,26 +202,26 @@
     :goto_4e
     if-ge v2, p3, :cond_c
 
-    .line 109
+    .line 108
     invoke-virtual {p0}, Lorg/apache/commons/io/input/CharSequenceReader;->read()I
 
     move-result v0
 
-    .line 110
+    .line 109
     .local v0, c:I
     if-eq v0, v3, :cond_c
 
-    .line 113
+    .line 112
     add-int v4, p2, v2
 
     int-to-char v5, v0
 
     aput-char v5, p1, v4
 
-    .line 114
+    .line 113
     add-int/lit8 v1, v1, 0x1
 
-    .line 108
+    .line 107
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_4e
@@ -231,12 +231,12 @@
     .registers 2
 
     .prologue
-    .line 124
+    .line 123
     iget v0, p0, Lorg/apache/commons/io/input/CharSequenceReader;->mark:I
 
     iput v0, p0, Lorg/apache/commons/io/input/CharSequenceReader;->idx:I
 
-    .line 125
+    .line 124
     return-void
 .end method
 
@@ -245,14 +245,14 @@
     .parameter "n"
 
     .prologue
-    .line 134
+    .line 133
     const-wide/16 v2, 0x0
 
     cmp-long v2, p1, v2
 
     if-gez v2, :cond_1f
 
-    .line 135
+    .line 134
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -277,7 +277,7 @@
 
     throw v2
 
-    .line 138
+    .line 137
     :cond_1f
     iget v2, p0, Lorg/apache/commons/io/input/CharSequenceReader;->idx:I
 
@@ -289,14 +289,14 @@
 
     if-lt v2, v3, :cond_2c
 
-    .line 139
+    .line 138
     const-wide/16 v2, -0x1
 
-    .line 144
+    .line 143
     :goto_2b
     return-wide v2
 
-    .line 141
+    .line 140
     :cond_2c
     iget-object v2, p0, Lorg/apache/commons/io/input/CharSequenceReader;->charSequence:Ljava/lang/CharSequence;
 
@@ -318,17 +318,17 @@
 
     long-to-int v1, v2
 
-    .line 142
+    .line 141
     .local v1, dest:I
     iget v2, p0, Lorg/apache/commons/io/input/CharSequenceReader;->idx:I
 
     sub-int v0, v1, v2
 
-    .line 143
+    .line 142
     .local v0, count:I
     iput v1, p0, Lorg/apache/commons/io/input/CharSequenceReader;->idx:I
 
-    .line 144
+    .line 143
     int-to-long v2, v0
 
     goto :goto_2b

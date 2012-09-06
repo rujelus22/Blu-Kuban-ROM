@@ -18,7 +18,7 @@
 
 .field private static final BLUETOOTH_PREFIX_LENGTH:I = 0x18
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field static final NAP_BRIDGE:Ljava/lang/String; = "pan1"
 

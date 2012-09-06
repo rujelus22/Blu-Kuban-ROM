@@ -1,155 +1,204 @@
-.class public Lcom/google/android/maps/driveabout/vector/bH;
+.class abstract Lcom/google/android/maps/driveabout/vector/bh;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/maps/driveabout/vector/bl;
 
 
 # instance fields
-.field private final a:Lt/l;
+.field protected a:[I
 
-.field private final b:Lcom/google/android/maps/driveabout/vector/bF;
+.field final synthetic b:Lcom/google/android/maps/driveabout/vector/GmmGLSurfaceView;
 
 
 # direct methods
-.method public constructor <init>(Lt/l;Lcom/google/android/maps/driveabout/vector/bF;)V
-    .registers 3
+.method public constructor <init>(Lcom/google/android/maps/driveabout/vector/GmmGLSurfaceView;[I)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 915
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/vector/bh;->b:Lcom/google/android/maps/driveabout/vector/GmmGLSurfaceView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Lcom/google/common/base/v;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 916
+    invoke-direct {p0, p2}, Lcom/google/android/maps/driveabout/vector/bh;->a([I)[I
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/vector/bH;->a:Lt/l;
+    move-result-object v0
 
-    iput-object p2, p0, Lcom/google/android/maps/driveabout/vector/bH;->b:Lcom/google/android/maps/driveabout/vector/bF;
+    iput-object v0, p0, Lcom/google/android/maps/driveabout/vector/bh;->a:[I
 
+    .line 917
     return-void
+.end method
+
+.method private a([I)[I
+    .registers 6
+    .parameter
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 951
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bh;->b:Lcom/google/android/maps/driveabout/vector/GmmGLSurfaceView;
+
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/vector/GmmGLSurfaceView;->a(Lcom/google/android/maps/driveabout/vector/GmmGLSurfaceView;)I
+
+    move-result v0
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_b
+
+    .line 963
+    :goto_a
+    return-object p1
+
+    .line 957
+    :cond_b
+    array-length v1, p1
+
+    .line 958
+    add-int/lit8 v0, v1, 0x2
+
+    new-array v0, v0, [I
+
+    .line 959
+    add-int/lit8 v2, v1, -0x1
+
+    invoke-static {p1, v3, v0, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 960
+    add-int/lit8 v2, v1, -0x1
+
+    const/16 v3, 0x3040
+
+    aput v3, v0, v2
+
+    .line 961
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+
+    .line 962
+    add-int/lit8 v1, v1, 0x1
+
+    const/16 v2, 0x3038
+
+    aput v2, v0, v1
+
+    move-object p1, v0
+
+    .line 963
+    goto :goto_a
 .end method
 
 
 # virtual methods
-.method public a()Lt/l;
-    .registers 2
+.method public a(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;)Ljavax/microedition/khronos/egl/EGLConfig;
+    .registers 9
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bH;->a:Lt/l;
+    .prologue
+    const/4 v4, 0x0
 
-    return-object v0
-.end method
-
-.method public b()I
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bH;->a:Lt/l;
-
-    invoke-interface {v0}, Lt/l;->i()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public c()Lcom/google/android/maps/driveabout/vector/bF;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bH;->b:Lcom/google/android/maps/driveabout/vector/bF;
-
-    return-object v0
-.end method
-
-.method public d()I
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bH;->a:Lt/l;
-
-    invoke-interface {v0}, Lt/l;->l()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, 0x10
-
-    return v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .registers 6
-
+    .line 920
     const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    new-array v5, v0, [I
 
-    if-ne p0, p1, :cond_5
+    .line 921
+    iget-object v2, p0, Lcom/google/android/maps/driveabout/vector/bh;->a:[I
 
-    :cond_4
-    :goto_4
-    return v0
+    const/4 v3, 0x0
 
-    :cond_5
-    if-eqz p1, :cond_11
+    move-object v0, p1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-object v1, p2
 
-    move-result-object v2
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    if-eq v2, v3, :cond_13
-
-    :cond_11
-    move v0, v1
-
-    goto :goto_4
-
-    :cond_13
-    check-cast p1, Lcom/google/android/maps/driveabout/vector/bH;
-
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/vector/bH;->a:Lt/l;
-
-    iget-object v3, p1, Lcom/google/android/maps/driveabout/vector/bH;->a:Lt/l;
-
-    invoke-virtual {v2, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_29
-
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/vector/bH;->b:Lcom/google/android/maps/driveabout/vector/bF;
-
-    iget-object v3, p1, Lcom/google/android/maps/driveabout/vector/bH;->b:Lcom/google/android/maps/driveabout/vector/bF;
-
-    invoke-static {v2, v3}, Lcom/google/android/maps/driveabout/vector/bF;->a(Lcom/google/android/maps/driveabout/vector/bF;Lcom/google/android/maps/driveabout/vector/bF;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    :cond_29
-    move v0, v1
-
-    goto :goto_4
-.end method
-
-.method public hashCode()I
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bH;->a:Lt/l;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-interface/range {v0 .. v5}, Ljavax/microedition/khronos/egl/EGL10;->eglChooseConfig(Ljavax/microedition/khronos/egl/EGLDisplay;[I[Ljavax/microedition/khronos/egl/EGLConfig;I[I)Z
 
     move-result v0
 
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bH;->b:Lcom/google/android/maps/driveabout/vector/bF;
+    if-nez v0, :cond_17
 
-    if-eqz v1, :cond_13
+    .line 923
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    mul-int/lit8 v0, v0, 0x1f
+    const-string v1, "eglChooseConfig failed"
 
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/bH;->b:Lcom/google/android/maps/driveabout/vector/bF;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    throw v0
 
-    move-result v1
+    .line 926
+    :cond_17
+    aget v4, v5, v4
 
-    add-int/2addr v0, v1
+    .line 928
+    if-gtz v4, :cond_23
 
-    :cond_13
-    return v0
+    .line 929
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "No configs match configSpec"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 933
+    :cond_23
+    new-array v3, v4, [Ljavax/microedition/khronos/egl/EGLConfig;
+
+    .line 934
+    iget-object v2, p0, Lcom/google/android/maps/driveabout/vector/bh;->a:[I
+
+    move-object v0, p1
+
+    move-object v1, p2
+
+    invoke-interface/range {v0 .. v5}, Ljavax/microedition/khronos/egl/EGL10;->eglChooseConfig(Ljavax/microedition/khronos/egl/EGLDisplay;[I[Ljavax/microedition/khronos/egl/EGLConfig;I[I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_37
+
+    .line 936
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "eglChooseConfig#2 failed"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 938
+    :cond_37
+    invoke-virtual {p0, p1, p2, v3}, Lcom/google/android/maps/driveabout/vector/bh;->a(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;[Ljavax/microedition/khronos/egl/EGLConfig;)Ljavax/microedition/khronos/egl/EGLConfig;
+
+    move-result-object v0
+
+    .line 939
+    if-nez v0, :cond_45
+
+    .line 940
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "No config chosen"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 942
+    :cond_45
+    return-object v0
+.end method
+
+.method abstract a(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;[Ljavax/microedition/khronos/egl/EGLConfig;)Ljavax/microedition/khronos/egl/EGLConfig;
 .end method

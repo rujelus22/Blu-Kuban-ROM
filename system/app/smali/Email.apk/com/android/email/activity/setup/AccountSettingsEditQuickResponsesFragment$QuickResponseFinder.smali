@@ -52,28 +52,28 @@
     .parameter "isEditable"
 
     .prologue
-    .line 198
+    .line 169
     invoke-direct {p0, p1}, Lcom/android/emailcommon/utility/EmailAsyncTask;-><init>(Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;)V
 
-    .line 199
+    .line 170
     iput-wide p2, p0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$QuickResponseFinder;->mAccountId:J
 
-    .line 200
+    .line 171
     iput-object p4, p0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$QuickResponseFinder;->mQuickResponsesView:Landroid/widget/ListView;
 
-    .line 201
+    .line 172
     iput-object p5, p0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$QuickResponseFinder;->mContext:Landroid/content/Context;
 
-    .line 202
+    .line 173
     iput-object p6, p0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$QuickResponseFinder;->mFragmentManager:Landroid/app/FragmentManager;
 
-    .line 203
+    .line 174
     iput-object p7, p0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$QuickResponseFinder;->mListener:Landroid/widget/AdapterView$OnItemClickListener;
 
-    .line 204
+    .line 175
     iput-boolean p8, p0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$QuickResponseFinder;->mIsEditable:Z
 
-    .line 205
+    .line 176
     return-void
 .end method
 
@@ -84,7 +84,7 @@
     .parameter "x0"
 
     .prologue
-    .line 165
+    .line 141
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -100,7 +100,7 @@
     .parameter "params"
 
     .prologue
-    .line 209
+    .line 180
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$QuickResponseFinder;->mContext:Landroid/content/Context;
 
     iget-wide v2, p0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$QuickResponseFinder;->mAccountId:J
@@ -109,7 +109,7 @@
 
     move-result-object v0
 
-    .line 211
+    .line 182
     .local v0, quickResponses:[Lcom/android/emailcommon/provider/QuickResponse;
     return-object v0
 .end method
@@ -119,7 +119,7 @@
     .parameter "x0"
 
     .prologue
-    .line 165
+    .line 141
     check-cast p1, [Lcom/android/emailcommon/provider/QuickResponse;
 
     .end local p1
@@ -133,12 +133,12 @@
     .parameter "quickResponseItems"
 
     .prologue
-    .line 217
+    .line 188
     iget-boolean v1, p0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$QuickResponseFinder;->mIsEditable:Z
 
     if-eqz v1, :cond_16
 
-    .line 218
+    .line 189
     new-instance v0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$ArrayAdapterWithButtons;
 
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$QuickResponseFinder;->mContext:Landroid/content/Context;
@@ -151,28 +151,28 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$ArrayAdapterWithButtons;-><init>(Landroid/content/Context;[Lcom/android/emailcommon/provider/QuickResponse;Landroid/app/FragmentManager;J)V
 
-    .line 225
+    .line 202
     .local v0, adapter:Landroid/widget/ArrayAdapter;,"Landroid/widget/ArrayAdapter<Lcom/android/emailcommon/provider/QuickResponse;>;"
     :goto_10
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$QuickResponseFinder;->mQuickResponsesView:Landroid/widget/ListView;
 
     invoke-virtual {v1, v0}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 226
+    .line 203
     return-void
 
-    .line 221
+    .line 195
     .end local v0           #adapter:Landroid/widget/ArrayAdapter;,"Landroid/widget/ArrayAdapter<Lcom/android/emailcommon/provider/QuickResponse;>;"
     :cond_16
     new-instance v0, Landroid/widget/ArrayAdapter;
 
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$QuickResponseFinder;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f04006e
+    const v2, 0x7f04002a
 
     invoke-direct {v0, v1, v2, p1}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
-    .line 223
+    .line 200
     .restart local v0       #adapter:Landroid/widget/ArrayAdapter;,"Landroid/widget/ArrayAdapter<Lcom/android/emailcommon/provider/QuickResponse;>;"
     iget-object v1, p0, Lcom/android/email/activity/setup/AccountSettingsEditQuickResponsesFragment$QuickResponseFinder;->mQuickResponsesView:Landroid/widget/ListView;
 

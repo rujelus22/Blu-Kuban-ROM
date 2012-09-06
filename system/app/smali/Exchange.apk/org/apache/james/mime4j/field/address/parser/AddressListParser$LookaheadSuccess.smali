@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 954
+    .line 815
     invoke-direct {p0}, Ljava/lang/Error;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
     .parameter "x0"
 
     .prologue
-    .line 954
+    .line 815
     invoke-direct {p0}, Lorg/apache/james/mime4j/field/address/parser/AddressListParser$LookaheadSuccess;-><init>()V
 
     return-void

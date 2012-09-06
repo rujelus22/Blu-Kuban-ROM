@@ -32,22 +32,22 @@
     .parameter "file"
 
     .prologue
-    .line 169
+    .line 221
     iput-object p1, p0, Lcom/google/android/finsky/FinskyApp$CrashHandler;->this$0:Lcom/google/android/finsky/FinskyApp;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 170
+    .line 222
     invoke-static {}, Ljava/lang/Thread;->getDefaultUncaughtExceptionHandler()Ljava/lang/Thread$UncaughtExceptionHandler;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/FinskyApp$CrashHandler;->mOriginalHandler:Ljava/lang/Thread$UncaughtExceptionHandler;
 
-    .line 171
+    .line 223
     iput-object p2, p0, Lcom/google/android/finsky/FinskyApp$CrashHandler;->mFile:Ljava/io/File;
 
-    .line 172
+    .line 224
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .parameter "ex"
 
     .prologue
-    .line 177
+    .line 229
     :try_start_0
     iget-object v0, p0, Lcom/google/android/finsky/FinskyApp$CrashHandler;->mFile:Ljava/io/File;
 
@@ -67,16 +67,16 @@
     :try_end_5
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_5} :catch_b
 
-    .line 180
+    .line 231
     :goto_5
     iget-object v0, p0, Lcom/google/android/finsky/FinskyApp$CrashHandler;->mOriginalHandler:Ljava/lang/Thread$UncaughtExceptionHandler;
 
     invoke-interface {v0, p1, p2}, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
 
-    .line 181
+    .line 232
     return-void
 
-    .line 178
+    .line 230
     :catch_b
     move-exception v0
 

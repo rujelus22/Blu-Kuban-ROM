@@ -1,1208 +1,1633 @@
-.class Ls/k;
-.super Lz/d;
-
-# interfaces
-.implements Ls/c;
+.class public Ls/k;
+.super Ls/q;
+.source "SourceFile"
 
 
 # instance fields
-.field private a:J
+.field private c:Z
 
-.field private b:Ljava/lang/Runnable;
+.field private d:Ls/p;
 
-.field private c:I
+.field private e:Z
 
-.field private d:Landroid/os/Handler;
+.field private f:Z
 
-.field private e:Landroid/os/Looper;
+.field private g:Z
 
-.field private final f:Ljava/util/LinkedList;
+.field private h:Z
 
-.field private final g:Ljava/util/HashSet;
+.field private i:Lo/x;
 
-.field private final h:Ljava/util/concurrent/atomic/AtomicInteger;
-
-.field private i:Z
-
-.field private j:I
-
-.field private k:Ls/C;
+.field private j:[Lo/x;
 
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .registers 2
 
-    const/4 v2, 0x1
+    .prologue
+    .line 34
+    invoke-direct {p0}, Ls/q;-><init>()V
 
-    const-string v0, "LocationDispatcher"
+    .line 39
+    const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lz/d;-><init>(Ljava/lang/String;)V
-
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Ls/k;->a:J
-
-    iput v2, p0, Ls/k;->c:I
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
-
-    iput-object v0, p0, Ls/k;->h:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    iput-boolean v2, p0, Ls/k;->i:Z
-
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-
-    iput-object v0, p0, Ls/k;->f:Ljava/util/LinkedList;
-
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-
-    iput-object v0, p0, Ls/k;->g:Ljava/util/HashSet;
-
-    invoke-virtual {p0}, Ls/k;->b()V
+    iput-boolean v0, p0, Ls/k;->c:Z
 
     return-void
 .end method
 
-.method static synthetic a(Ls/k;)I
+.method static synthetic a(Ls/k;)Lo/x;
     .registers 2
+    .parameter
 
-    iget v0, p0, Ls/k;->c:I
+    .prologue
+    .line 34
+    iget-object v0, p0, Ls/k;->i:Lo/x;
 
-    return v0
+    return-object v0
 .end method
 
-.method static synthetic a(Ls/k;I)I
-    .registers 2
+.method private a(Lo/x;Lo/x;)Z
+    .registers 9
+    .parameter
+    .parameter
 
-    iput p1, p0, Ls/k;->c:I
+    .prologue
+    const/4 v1, 0x0
+
+    .line 211
+    invoke-virtual {p1}, Lo/x;->v()[Lo/R;
+
+    move-result-object v2
+
+    .line 212
+    invoke-virtual {p2}, Lo/x;->v()[Lo/R;
+
+    move-result-object v3
+
+    .line 213
+    array-length v0, v2
+
+    array-length v4, v3
+
+    if-eq v0, v4, :cond_e
+
+    .line 221
+    :cond_d
+    :goto_d
+    return v1
+
+    :cond_e
+    move v0, v1
+
+    .line 216
+    :goto_f
+    array-length v4, v2
+
+    if-ge v0, v4, :cond_27
+
+    .line 217
+    aget-object v4, v2, v0
+
+    invoke-virtual {v4}, Lo/R;->c()Ln/s;
+
+    move-result-object v4
+
+    aget-object v5, v3, v0
+
+    invoke-virtual {v5}, Lo/R;->c()Ln/s;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ln/s;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_d
+
+    .line 216
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_f
+
+    .line 221
+    :cond_27
+    const/4 v1, 0x1
+
+    goto :goto_d
+.end method
+
+.method static synthetic a(Ls/k;Z)Z
+    .registers 2
+    .parameter
+    .parameter
+
+    .prologue
+    .line 34
+    iput-boolean p1, p0, Ls/k;->g:Z
 
     return p1
 .end method
 
-.method private a(Landroid/location/Location;)V
-    .registers 6
+.method private ai()V
+    .registers 4
 
-    const/4 v2, 0x2
+    .prologue
+    .line 226
+    iget-boolean v0, p0, Ls/k;->c:Z
 
-    invoke-direct {p0}, Ls/k;->h()V
+    if-eqz v0, :cond_1d
 
-    invoke-virtual {p1}, Landroid/location/Location;->getProvider()Ljava/lang/String;
+    .line 227
+    iget-object v0, p0, Ls/k;->j:[Lo/x;
+
+    .line 231
+    :goto_6
+    iget-object v1, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v1}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v1
+
+    iget-object v2, p0, Ls/k;->i:Lo/x;
+
+    invoke-interface {v1, v2, v0}, Lcom/google/android/maps/driveabout/app/cI;->b(Lo/x;[Lo/x;)V
+
+    .line 232
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
 
     move-result-object v0
 
-    const-string v1, "gps"
+    iget-object v1, p0, Ls/k;->i:Lo/x;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v0, v1}, Lcom/google/android/maps/driveabout/app/cI;->b(Lo/x;)V
+
+    .line 233
+    return-void
+
+    .line 229
+    :cond_1d
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Lo/x;
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Ls/k;->i:Lo/x;
+
+    aput-object v2, v0, v1
+
+    goto :goto_6
+.end method
+
+.method private aj()V
+    .registers 4
+
+    .prologue
+    .line 236
+    iget-object v0, p0, Ls/k;->i:Lo/x;
+
+    if-eqz v0, :cond_44
+
+    iget-object v0, p0, Ls/k;->i:Lo/x;
+
+    invoke-virtual {v0}, Lo/x;->E()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_44
+
+    .line 237
+    iget-object v0, p0, Ls/k;->i:Lo/x;
+
+    invoke-virtual {v0}, Lo/x;->D()[Lo/b;
+
+    move-result-object v0
+
+    const/4 v1, 0x5
+
+    invoke-static {v0, v1}, Lo/c;->a([Lo/b;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_30
+
+    .line 239
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v1}, Ls/n;->b()Landroid/content/Context;
+
+    move-result-object v1
+
+    const v2, 0x7f0d00e2
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lcom/google/android/maps/driveabout/app/cI;->a(Ljava/lang/CharSequence;)V
+
+    .line 249
+    :goto_2f
+    return-void
+
+    .line 243
+    :cond_30
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v1}, Ls/n;->b()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/google/android/maps/driveabout/app/dp;->b(Landroid/content/Context;)Landroid/text/Spannable;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lcom/google/android/maps/driveabout/app/cI;->a(Ljava/lang/CharSequence;)V
+
+    goto :goto_2f
+
+    .line 247
+    :cond_44
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/android/maps/driveabout/app/cI;->n()V
+
+    goto :goto_2f
+.end method
+
+.method private ak()V
+    .registers 4
+
+    .prologue
+    .line 280
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v1
+
+    iget-object v0, p0, Ls/k;->i:Lo/x;
+
+    if-eqz v0, :cond_1f
+
+    invoke-static {}, Lo/c;->a()Lo/c;
+
+    move-result-object v0
+
+    iget-object v2, p0, Ls/k;->i:Lo/x;
+
+    invoke-virtual {v2}, Lo/x;->D()[Lo/b;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lo/c;->b([Lo/b;)I
+
+    move-result v0
+
+    if-lez v0, :cond_1f
+
+    const/4 v0, 0x1
+
+    :goto_1b
+    invoke-interface {v1, v0}, Lcom/google/android/maps/driveabout/app/cI;->e(Z)V
+
+    .line 282
+    return-void
+
+    .line 280
+    :cond_1f
+    const/4 v0, 0x0
+
+    goto :goto_1b
+.end method
+
+.method private c(Lo/x;[Lo/x;)Lo/x;
+    .registers 5
+    .parameter
+    .parameter
+
+    .prologue
+    .line 200
+    const/4 v0, 0x0
+
+    :goto_1
+    array-length v1, p2
+
+    if-ge v0, v1, :cond_12
+
+    .line 201
+    aget-object v1, p2, v0
+
+    invoke-direct {p0, p1, v1}, Ls/k;->a(Lo/x;Lo/x;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_f
+
+    .line 202
+    aget-object v0, p2, v0
+
+    .line 206
+    :goto_e
+    return-object v0
+
+    .line 200
+    :cond_f
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    .line 206
+    :cond_12
+    const/4 v0, 0x0
+
+    goto :goto_e
+.end method
+
+
+# virtual methods
+.method public A()Z
+    .registers 4
+
+    .prologue
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    .line 373
+    iget-object v2, p0, Ls/k;->d:Ls/p;
+
+    if-eqz v2, :cond_d
+
+    .line 374
+    invoke-virtual {p0}, Ls/k;->ad()V
+
+    .line 375
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Ls/k;->d:Ls/p;
+
+    .line 389
+    :goto_c
+    return v0
+
+    .line 377
+    :cond_d
+    iget-boolean v2, p0, Ls/k;->f:Z
+
+    if-eqz v2, :cond_22
+
+    .line 378
+    invoke-virtual {p0}, Ls/k;->ad()V
+
+    .line 379
+    iput-boolean v1, p0, Ls/k;->c:Z
+
+    .line 380
+    iget-object v2, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v2}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v2
+
+    invoke-interface {v2, v0}, Lcom/google/android/maps/driveabout/app/cI;->c(Z)V
+
+    .line 381
+    iput-boolean v1, p0, Ls/k;->f:Z
+
+    goto :goto_c
+
+    .line 383
+    :cond_22
+    iget-boolean v2, p0, Ls/k;->g:Z
+
+    if-eqz v2, :cond_35
+
+    .line 384
+    iget-object v2, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v2}, Ls/n;->f()Lo/r;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lo/r;->c()V
+
+    .line 385
+    invoke-virtual {p0}, Ls/k;->ad()V
+
+    .line 386
+    iput-boolean v1, p0, Ls/k;->g:Z
+
+    goto :goto_c
+
+    :cond_35
+    move v0, v1
+
+    .line 389
+    goto :goto_c
+.end method
+
+.method public a()V
+    .registers 2
+
+    .prologue
+    .line 69
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Ls/k;->c:Z
+
+    .line 70
+    const-string v0, "UIState"
+
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/power/a;->a(Ljava/lang/String;)V
+
+    .line 71
+    invoke-virtual {p0}, Ls/k;->b()V
+
+    .line 72
+    return-void
+.end method
+
+.method protected a(Landroid/os/Bundle;Ln/ab;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 304
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
+
+    move-result-object v0
+
+    invoke-static {p1, v0, p2}, Lcom/google/android/maps/driveabout/app/SearchActivity;->a(Landroid/os/Bundle;Lcom/google/android/maps/driveabout/app/aN;Ln/ab;)V
+
+    .line 306
+    return-void
+.end method
+
+.method protected a(Lcom/google/android/maps/driveabout/app/bM;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 442
+    invoke-super {p0, p1}, Ls/q;->a(Lcom/google/android/maps/driveabout/app/bM;)V
+
+    .line 443
+    const v0, 0x7f100115
+
+    invoke-virtual {p1, v0}, Lcom/google/android/maps/driveabout/app/bM;->b(I)V
+
+    .line 444
+    const v0, 0x7f1004b8
+
+    invoke-virtual {p1, v0}, Lcom/google/android/maps/driveabout/app/bM;->a(I)V
+
+    .line 445
+    return-void
+.end method
+
+.method protected a(Lcom/google/android/maps/driveabout/vector/d;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 438
+    return-void
+.end method
+
+.method protected a(Ln/Q;)V
+    .registers 16
+    .parameter
+
+    .prologue
+    .line 401
+    if-nez p1, :cond_3
+
+    .line 433
+    :cond_2
+    :goto_2
+    return-void
+
+    .line 404
+    :cond_3
+    const-wide/high16 v0, 0x3fc4
+
+    const-wide/high16 v2, 0x4000
+
+    const/high16 v4, 0x41f0
+
+    iget-object v5, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v5}, Ls/n;->c()Lcom/google/android/maps/driveabout/app/cK;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/google/android/maps/driveabout/app/cK;->a()Lcom/google/android/maps/driveabout/app/ci;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/google/android/maps/driveabout/app/ci;->f()Lcom/google/android/maps/driveabout/vector/l;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/google/android/maps/driveabout/vector/l;->a()F
+
+    move-result v5
+
+    sub-float/2addr v4, v5
+
+    float-to-double v4, v4
+
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->pow(DD)D
+
+    move-result-wide v2
+
+    mul-double v7, v0, v2
+
+    .line 407
+    const-wide v2, 0x7fefffffffffffffL
+
+    .line 408
+    const/4 v1, 0x0
+
+    .line 409
+    iget-boolean v0, p0, Ls/k;->c:Z
+
+    if-eqz v0, :cond_60
+
+    .line 410
+    const/4 v0, 0x0
+
+    move v4, v0
+
+    move-object v0, v1
+
+    :goto_30
+    iget-object v1, p0, Ls/k;->j:[Lo/x;
+
+    array-length v1, v1
+
+    if-ge v4, v1, :cond_61
+
+    .line 411
+    iget-object v1, p0, Ls/k;->j:[Lo/x;
+
+    aget-object v1, v1, v4
+
+    .line 412
+    invoke-virtual {v1, p1, v7, v8}, Lo/x;->a(Ln/Q;D)Lo/B;
+
+    move-result-object v9
+
+    .line 413
+    if-nez v9, :cond_46
+
+    move-wide v1, v2
+
+    .line 410
+    :goto_40
+    add-int/lit8 v3, v4, 0x1
+
+    move v4, v3
+
+    move-wide v12, v1
+
+    move-wide v2, v12
+
+    goto :goto_30
+
+    .line 416
+    :cond_46
+    invoke-virtual {v9}, Lo/B;->d()D
+
+    move-result-wide v5
+
+    .line 417
+    iget-object v10, p0, Ls/k;->i:Lo/x;
+
+    if-ne v1, v10, :cond_54
+
+    .line 422
+    const-wide v10, 0x3fe999999999999aL
+
+    mul-double/2addr v5, v10
+
+    .line 424
+    :cond_54
+    cmpg-double v5, v5, v2
+
+    if-gez v5, :cond_6b
+
+    .line 425
+    invoke-virtual {v9}, Lo/B;->d()D
+
+    move-result-wide v2
+
+    move-object v0, v1
+
+    move-wide v12, v2
+
+    move-wide v1, v12
+
+    .line 426
+    goto :goto_40
+
+    :cond_60
+    move-object v0, v1
+
+    .line 430
+    :cond_61
+    if-eqz v0, :cond_2
+
+    iget-object v1, p0, Ls/k;->i:Lo/x;
+
+    if-eq v0, v1, :cond_2
+
+    .line 431
+    invoke-virtual {p0, v0}, Ls/k;->a(Lo/x;)V
+
+    goto :goto_2
+
+    :cond_6b
+    move-wide v1, v2
+
+    goto :goto_40
+.end method
+
+.method protected a(Lo/g;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 395
+    invoke-super {p0, p1}, Ls/q;->a(Lo/g;)V
+
+    .line 396
+    invoke-virtual {p0}, Ls/k;->ad()V
+
+    .line 397
+    return-void
+.end method
+
+.method public a(Lo/x;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 295
+    iput-object p1, p0, Ls/k;->i:Lo/x;
+
+    .line 296
+    invoke-direct {p0}, Ls/k;->ai()V
+
+    .line 297
+    invoke-direct {p0}, Ls/k;->aj()V
+
+    .line 298
+    invoke-virtual {p0}, Ls/k;->u()V
+
+    .line 299
+    return-void
+.end method
+
+.method public a(Lo/x;[Lo/x;)V
+    .registers 7
+    .parameter
+    .parameter
+
+    .prologue
+    const/4 v1, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v2, 0x1
+
+    .line 156
+    invoke-virtual {p0}, Ls/k;->ad()V
+
+    .line 157
+    iget-boolean v0, p0, Ls/k;->f:Z
+
+    if-eqz v0, :cond_5f
+
+    .line 158
+    iput-boolean v3, p0, Ls/k;->f:Z
+
+    .line 159
+    array-length v0, p2
+
+    if-le v0, v2, :cond_1a
+
+    .line 160
+    iput-boolean v2, p0, Ls/k;->c:Z
+
+    .line 161
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->f()Lo/r;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v3}, Lo/r;->a(Z)V
+
+    .line 172
+    :cond_1a
+    :goto_1a
+    iput-boolean v2, p0, Ls/k;->h:Z
+
+    .line 174
+    iget-object v0, p0, Ls/k;->i:Lo/x;
+
+    if-eqz v0, :cond_78
+
+    iget-object v0, p0, Ls/k;->i:Lo/x;
+
+    invoke-direct {p0, v0, p2}, Ls/k;->c(Lo/x;[Lo/x;)Lo/x;
+
+    move-result-object v0
+
+    :goto_26
+    iput-object v0, p0, Ls/k;->i:Lo/x;
+
+    .line 175
+    iget-object v0, p0, Ls/k;->i:Lo/x;
+
+    if-nez v0, :cond_2e
+
+    .line 176
+    iput-object p1, p0, Ls/k;->i:Lo/x;
+
+    .line 178
+    :cond_2e
+    iput-object p2, p0, Ls/k;->j:[Lo/x;
+
+    .line 180
+    invoke-direct {p0}, Ls/k;->ai()V
+
+    .line 181
+    invoke-direct {p0}, Ls/k;->aj()V
+
+    .line 182
+    invoke-virtual {p0}, Ls/k;->m()V
+
+    .line 183
+    invoke-direct {p0}, Ls/k;->ak()V
+
+    .line 184
+    iget-boolean v0, p0, Ls/k;->c:Z
+
+    if-eqz v0, :cond_49
+
+    .line 185
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->f()Lo/r;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lo/r;->g()V
+
+    .line 187
+    :cond_49
+    iget-object v0, p0, Ls/k;->i:Lo/x;
+
+    invoke-virtual {v0}, Lo/x;->y()Z
+
+    move-result v0
+
+    if-nez v0, :cond_5e
+
+    iget-object v0, p0, Ls/k;->d:Ls/p;
+
+    if-eqz v0, :cond_5e
+
+    .line 188
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    iget-object v2, p0, Ls/k;->d:Ls/p;
+
+    invoke-virtual {v0, v2}, Ls/n;->a(Ls/p;)V
+
+    .line 189
+    iput-object v1, p0, Ls/k;->d:Ls/p;
+
+    .line 191
+    :cond_5e
+    return-void
+
+    .line 163
+    :cond_5f
+    iget-boolean v0, p0, Ls/k;->g:Z
+
+    if-eqz v0, :cond_1a
+
+    .line 164
+    iput-boolean v3, p0, Ls/k;->g:Z
+
+    .line 167
+    iget-boolean v0, p0, Ls/k;->c:Z
+
+    if-eqz v0, :cond_1a
+
+    array-length v0, p2
+
+    if-ne v0, v2, :cond_1a
+
+    .line 168
+    iput-boolean v3, p0, Ls/k;->c:Z
+
+    .line 169
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->f()Lo/r;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Lo/r;->a(Z)V
+
+    goto :goto_1a
+
+    :cond_78
+    move-object v0, v1
+
+    .line 174
+    goto :goto_26
+.end method
+
+.method protected a(Z)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 140
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/aN;->l()Lo/x;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2c
+
+    iget-boolean v0, p0, Ls/k;->h:Z
+
+    if-nez v0, :cond_12
+
+    if-eqz p1, :cond_2c
+
+    .line 142
+    :cond_12
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Ls/k;->h:Z
+
+    .line 143
+    iget-boolean v0, p0, Ls/k;->c:Z
+
+    if-eqz v0, :cond_2d
+
+    .line 144
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->c()Lcom/google/android/maps/driveabout/app/cK;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/cK;->a()Lcom/google/android/maps/driveabout/app/ci;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v1}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/ci;->b(Lcom/google/android/maps/driveabout/app/aN;)V
+
+    .line 151
+    :cond_2c
+    :goto_2c
+    return-void
+
+    .line 147
+    :cond_2d
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->c()Lcom/google/android/maps/driveabout/app/cK;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/cK;->a()Lcom/google/android/maps/driveabout/app/ci;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v1}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/ci;->c(Lcom/google/android/maps/driveabout/app/aN;)V
+
+    goto :goto_2c
+.end method
+
+.method public a(Ls/p;)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 58
+    iget-object v0, p0, Ls/k;->i:Lo/x;
+
+    if-eqz v0, :cond_16
+
+    iget-object v0, p0, Ls/k;->i:Lo/x;
+
+    invoke-virtual {v0}, Lo/x;->y()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_16
+
+    .line 59
+    const v0, 0x7f0d006c
+
+    invoke-virtual {p0, v0}, Ls/k;->c(I)V
+
+    .line 60
+    iput-object p1, p0, Ls/k;->d:Ls/p;
+
+    .line 61
+    const/4 v0, 0x0
+
+    .line 63
+    :goto_15
+    return v0
+
+    :cond_16
+    const/4 v0, 0x1
+
+    goto :goto_15
+.end method
+
+.method public b()V
+    .registers 3
+
+    .prologue
+    .line 76
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Ls/k;->h:Z
+
+    .line 77
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    const/4 v1, 0x3
+
+    invoke-interface {v0, v1}, Lcom/google/android/maps/driveabout/app/cI;->setViewMode(I)V
+
+    .line 78
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/android/maps/driveabout/app/cI;->C()V
+
+    .line 79
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/android/maps/driveabout/app/cI;->v()V
+
+    .line 80
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/android/maps/driveabout/app/cI;->p()V
+
+    .line 81
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/android/maps/driveabout/app/cI;->G()V
+
+    .line 83
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/aN;->m()[Lo/x;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ls/k;->j:[Lo/x;
+
+    .line 84
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/aN;->l()Lo/x;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ls/k;->i:Lo/x;
+
+    .line 86
+    invoke-virtual {p0}, Ls/k;->m()V
+
+    .line 87
+    invoke-direct {p0}, Ls/k;->ak()V
+
+    .line 89
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/aN;->z()Z
 
     move-result v0
 
     if-eqz v0, :cond_5e
 
-    iget-object v0, p0, Ls/k;->h:Ljava/util/concurrent/atomic/AtomicInteger;
+    .line 90
+    invoke-direct {p0}, Ls/k;->ai()V
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
-
-    move-result v0
-
-    if-lez v0, :cond_23
-
-    iget-boolean v0, p0, Ls/k;->i:Z
-
-    if-eqz v0, :cond_23
-
-    iget v0, p0, Ls/k;->j:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Ls/k;->j:I
-
-    :cond_22
-    return-void
-
-    :cond_23
-    iget v0, p0, Ls/k;->j:I
-
-    if-lez v0, :cond_2a
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Ls/k;->j:I
-
-    :cond_2a
-    iget v0, p0, Ls/k;->c:I
-
-    if-eq v0, v2, :cond_36
-
-    iput v2, p0, Ls/k;->c:I
-
-    iget v0, p0, Ls/k;->c:I
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Ls/k;->a(ILandroid/os/Bundle;)V
-
-    :cond_36
-    :goto_36
-    iget-object v0, p0, Ls/k;->f:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :cond_3c
-    :goto_3c
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_22
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ls/n;
-
-    invoke-virtual {v0}, Ls/n;->a()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Landroid/location/Location;->getProvider()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3c
-
-    invoke-virtual {v0}, Ls/n;->b()Landroid/location/LocationListener;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Landroid/location/LocationListener;->onLocationChanged(Landroid/location/Location;)V
-
-    goto :goto_3c
-
+    .line 92
     :cond_5e
-    invoke-virtual {p1}, Landroid/location/Location;->getProvider()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "driveabout_base_location"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_76
-
-    invoke-virtual {p1}, Landroid/location/Location;->getProvider()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "da_tunnel_heartbeat"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_36
-
-    :cond_76
-    move-object v0, p1
-
-    check-cast v0, Ls/b;
-
-    invoke-virtual {v0}, Ls/b;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_36
-
-    invoke-virtual {p0}, Ls/k;->e()V
-
-    invoke-direct {p0}, Ls/k;->f()V
-
-    goto :goto_36
-.end method
-
-.method private a(Landroid/os/Message;)V
-    .registers 4
-
-    iget v0, p1, Landroid/os/Message;->what:I
-
-    packed-switch v0, :pswitch_data_44
-
-    :goto_5
-    return-void
-
-    :pswitch_6
-    invoke-direct {p0}, Ls/k;->g()V
-
-    goto :goto_5
-
-    :pswitch_a
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Ls/n;
-
-    invoke-direct {p0, v0}, Ls/k;->a(Ls/n;)V
-
-    goto :goto_5
-
-    :pswitch_12
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Ls/n;
-
-    invoke-direct {p0, v0}, Ls/k;->b(Ls/n;)V
-
-    goto :goto_5
-
-    :pswitch_1a
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Landroid/location/Location;
-
-    invoke-direct {p0, v0}, Ls/k;->a(Landroid/location/Location;)V
-
-    goto :goto_5
-
-    :pswitch_22
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-direct {p0, v0}, Ls/k;->a(Ljava/lang/String;)V
-
-    goto :goto_5
-
-    :pswitch_2a
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-direct {p0, v0}, Ls/k;->b(Ljava/lang/String;)V
-
-    goto :goto_5
-
-    :pswitch_32
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/String;
-
-    iget v1, p1, Landroid/os/Message;->arg1:I
-
-    invoke-direct {p0, v0, v1}, Ls/k;->a(Ljava/lang/String;I)V
-
-    goto :goto_5
-
-    :pswitch_3c
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Ls/C;
-
-    invoke-direct {p0, v0}, Ls/k;->b(Ls/C;)V
-
-    goto :goto_5
-
-    :pswitch_data_44
-    .packed-switch 0xa
-        :pswitch_6
-        :pswitch_a
-        :pswitch_12
-        :pswitch_1a
-        :pswitch_22
-        :pswitch_2a
-        :pswitch_32
-        :pswitch_3c
-    .end packed-switch
-.end method
-
-.method private a(Ljava/lang/String;)V
-    .registers 4
-
-    invoke-direct {p0}, Ls/k;->h()V
-
-    iget-object v0, p0, Ls/k;->g:Ljava/util/HashSet;
-
-    invoke-virtual {v0}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_9
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_19
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/location/LocationListener;
-
-    invoke-interface {v0, p1}, Landroid/location/LocationListener;->onProviderDisabled(Ljava/lang/String;)V
-
-    goto :goto_9
-
-    :cond_19
     return-void
 .end method
 
-.method private a(Ljava/lang/String;I)V
-    .registers 6
+.method public d()V
+    .registers 4
 
-    invoke-direct {p0}, Ls/k;->h()V
-
-    iget-object v0, p0, Ls/k;->g:Ljava/util/HashSet;
-
-    invoke-virtual {v0}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_9
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1a
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/location/LocationListener;
-
+    .prologue
     const/4 v2, 0x0
 
-    invoke-interface {v0, p1, p2, v2}, Landroid/location/LocationListener;->onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
+    .line 98
+    iget-object v0, p0, Ls/k;->a:Ls/n;
 
-    goto :goto_9
+    invoke-virtual {v0}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
 
-    :cond_1a
-    return-void
-.end method
+    move-result-object v0
 
-.method static synthetic a(Ls/k;Landroid/os/Message;)V
-    .registers 2
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/aN;->l()Lo/x;
 
-    invoke-direct {p0, p1}, Ls/k;->a(Landroid/os/Message;)V
+    move-result-object v0
 
-    return-void
-.end method
+    if-eqz v0, :cond_26
 
-.method private a(Ls/n;)V
-    .registers 4
+    iget-object v0, p0, Ls/k;->i:Lo/x;
 
-    invoke-direct {p0}, Ls/k;->h()V
+    iget-object v1, p0, Ls/k;->a:Ls/n;
 
-    iget-object v0, p0, Ls/k;->f:Ljava/util/LinkedList;
-
-    invoke-virtual {v0, p1}, Ljava/util/LinkedList;->remove(Ljava/lang/Object;)Z
-
-    iget-object v0, p0, Ls/k;->f:Ljava/util/LinkedList;
-
-    invoke-virtual {v0, p1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
-
-    iget-object v0, p0, Ls/k;->g:Ljava/util/HashSet;
-
-    invoke-virtual {p1}, Ls/n;->b()Landroid/location/LocationListener;
+    invoke-virtual {v1}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method private b(Ljava/lang/String;)V
-    .registers 4
-
-    invoke-direct {p0}, Ls/k;->h()V
-
-    iget-object v0, p0, Ls/k;->g:Ljava/util/HashSet;
-
-    invoke-virtual {v0}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/app/aN;->l()Lo/x;
 
     move-result-object v1
 
-    :goto_9
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    if-eq v0, v1, :cond_26
 
-    move-result v0
+    .line 100
+    iget-object v0, p0, Ls/k;->a:Ls/n;
 
-    if-eqz v0, :cond_19
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v0}, Ls/n;->f()Lo/r;
 
     move-result-object v0
 
-    check-cast v0, Landroid/location/LocationListener;
+    iget-object v1, p0, Ls/k;->i:Lo/x;
 
-    invoke-interface {v0, p1}, Landroid/location/LocationListener;->onProviderEnabled(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lo/r;->a(Lo/x;)V
 
-    goto :goto_9
+    .line 103
+    :cond_26
+    iget-object v0, p0, Ls/k;->a:Ls/n;
 
-    :cond_19
-    return-void
-.end method
-
-.method private b(Ls/C;)V
-    .registers 6
-
-    invoke-virtual {p1}, Ls/C;->a()Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v0, p0, Ls/k;->f:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :cond_a
-    :goto_a
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_28
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v0}, Ls/n;->f()Lo/r;
 
     move-result-object v0
 
-    check-cast v0, Ls/n;
+    const/4 v1, 0x1
 
-    invoke-virtual {v0}, Ls/n;->a()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lo/r;->a(Z)V
 
-    move-result-object v3
+    .line 104
+    invoke-super {p0}, Ls/q;->d()V
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 105
+    iput-object v2, p0, Ls/k;->i:Lo/x;
 
-    move-result v3
+    .line 106
+    iput-object v2, p0, Ls/k;->j:[Lo/x;
 
-    if-eqz v3, :cond_a
-
-    invoke-static {v0}, Ls/n;->a(Ls/n;)Ls/c;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ls/c;->a(Ls/C;)V
-
-    goto :goto_a
-
-    :cond_28
+    .line 107
     return-void
-.end method
-
-.method private b(Ls/n;)V
-    .registers 5
-
-    invoke-direct {p0}, Ls/k;->h()V
-
-    iget-object v0, p0, Ls/k;->f:Ljava/util/LinkedList;
-
-    invoke-virtual {v0, p1}, Ljava/util/LinkedList;->remove(Ljava/lang/Object;)Z
-
-    iget-object v0, p0, Ls/k;->f:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :cond_e
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_25
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ls/n;
-
-    invoke-virtual {v0}, Ls/n;->b()Landroid/location/LocationListener;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Ls/n;->b()Landroid/location/LocationListener;
-
-    move-result-object v2
-
-    if-ne v0, v2, :cond_e
-
-    :goto_24
-    return-void
-
-    :cond_25
-    iget-object v0, p0, Ls/k;->g:Ljava/util/HashSet;
-
-    invoke-virtual {p1}, Ls/n;->b()Landroid/location/LocationListener;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
-
-    goto :goto_24
-.end method
-
-.method private f()V
-    .registers 5
-
-    iget-object v0, p0, Ls/k;->b:Ljava/lang/Runnable;
-
-    if-nez v0, :cond_b
-
-    new-instance v0, Ls/m;
-
-    invoke-direct {v0, p0}, Ls/m;-><init>(Ls/k;)V
-
-    iput-object v0, p0, Ls/k;->b:Ljava/lang/Runnable;
-
-    :cond_b
-    iget-wide v0, p0, Ls/k;->a:J
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v0, v0, v2
-
-    if-ltz v0, :cond_1d
-
-    iget-wide v0, p0, Ls/k;->a:J
-
-    :goto_15
-    iget-object v2, p0, Ls/k;->d:Landroid/os/Handler;
-
-    iget-object v3, p0, Ls/k;->b:Ljava/lang/Runnable;
-
-    invoke-virtual {v2, v3, v0, v1}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    return-void
-
-    :cond_1d
-    invoke-static {}, Lz/n;->a()Lz/l;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lz/l;->k()I
-
-    move-result v0
-
-    int-to-long v0, v0
-
-    goto :goto_15
-.end method
-
-.method private g()V
-    .registers 2
-
-    invoke-direct {p0}, Ls/k;->h()V
-
-    iget-object v0, p0, Ls/k;->e:Landroid/os/Looper;
-
-    if-eqz v0, :cond_f
-
-    iget-object v0, p0, Ls/k;->e:Landroid/os/Looper;
-
-    invoke-virtual {v0}, Landroid/os/Looper;->quit()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Ls/k;->e:Landroid/os/Looper;
-
-    :cond_f
-    return-void
-.end method
-
-.method private final h()V
-    .registers 4
-
-    invoke-static {}, Ln/a;->b()Z
-
-    move-result v0
-
-    if-nez v0, :cond_31
-
-    iget-object v0, p0, Ls/k;->d:Landroid/os/Handler;
-
-    if-eqz v0, :cond_31
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v0
-
-    if-eq v0, p0, :cond_31
-
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Operation must be called on location thread. Called on "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Thread;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_31
-    return-void
-.end method
-
-.method private i()Z
-    .registers 2
-
-    iget-object v0, p0, Ls/k;->d:Landroid/os/Handler;
-
-    if-eqz v0, :cond_a
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v0
-
-    if-ne v0, p0, :cond_c
-
-    :cond_a
-    const/4 v0, 0x1
-
-    :goto_b
-    return v0
-
-    :cond_c
-    const/4 v0, 0x0
-
-    goto :goto_b
-.end method
-
-
-# virtual methods
-.method public a()V
-    .registers 2
-
-    invoke-static {}, Landroid/os/Looper;->prepare()V
-
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ls/k;->e:Landroid/os/Looper;
-
-    new-instance v0, Ls/l;
-
-    invoke-direct {v0, p0}, Ls/l;-><init>(Ls/k;)V
-
-    iput-object v0, p0, Ls/k;->d:Landroid/os/Handler;
-
-    monitor-enter p0
-
-    :try_start_11
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-
-    monitor-exit p0
-    :try_end_15
-    .catchall {:try_start_11 .. :try_end_15} :catchall_19
-
-    invoke-static {}, Landroid/os/Looper;->loop()V
-
-    return-void
-
-    :catchall_19
-    move-exception v0
-
-    :try_start_1a
-    monitor-exit p0
-    :try_end_1b
-    .catchall {:try_start_1a .. :try_end_1b} :catchall_19
-
-    throw v0
-.end method
-
-.method public a(ILandroid/os/Bundle;)V
-    .registers 7
-
-    invoke-direct {p0}, Ls/k;->i()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_c
-
-    const-string v0, "gps"
-
-    invoke-direct {p0, v0, p1}, Ls/k;->a(Ljava/lang/String;I)V
-
-    :goto_b
-    return-void
-
-    :cond_c
-    iget-object v0, p0, Ls/k;->d:Landroid/os/Handler;
-
-    const/16 v1, 0x10
-
-    const/4 v2, 0x0
-
-    const-string v3, "gps"
-
-    invoke-virtual {v0, v1, p1, v2, v3}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    iget-object v1, p0, Ls/k;->d:Landroid/os/Handler;
-
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    goto :goto_b
-.end method
-
-.method public a(Ljava/lang/Runnable;)V
-    .registers 3
-
-    iget-object v0, p0, Ls/k;->d:Landroid/os/Handler;
-
-    if-eqz v0, :cond_a
-
-    iget-object v0, p0, Ls/k;->d:Landroid/os/Handler;
-
-    invoke-virtual {v0, p1}, Landroid/os/Handler;->postAtFrontOfQueue(Ljava/lang/Runnable;)Z
-
-    :goto_9
-    return-void
-
-    :cond_a
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
-
-    goto :goto_9
-.end method
-
-.method public a(Ljava/lang/String;Ls/c;)V
-    .registers 7
-
-    new-instance v0, Ls/n;
-
-    invoke-direct {v0, p1, p2}, Ls/n;-><init>(Ljava/lang/String;Ls/c;)V
-
-    iget-object v1, p0, Ls/k;->d:Landroid/os/Handler;
-
-    iget-object v2, p0, Ls/k;->d:Landroid/os/Handler;
-
-    const/16 v3, 0xb
-
-    invoke-virtual {v2, v3, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    return-void
-.end method
-
-.method public a(Ls/C;)V
-    .registers 5
-
-    const/16 v2, 0x11
-
-    invoke-virtual {p1}, Ls/C;->a()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "driveabout_base_location"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1b
-
-    iget-boolean v0, p0, Ls/k;->i:Z
-
-    if-eqz v0, :cond_1b
-
-    iget-object v0, p0, Ls/k;->d:Landroid/os/Handler;
-
-    iget-object v1, p0, Ls/k;->k:Ls/C;
-
-    invoke-virtual {v0, v2, v1}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
-
-    iput-object p1, p0, Ls/k;->k:Ls/C;
-
-    :cond_1b
-    invoke-direct {p0}, Ls/k;->i()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_25
-
-    invoke-direct {p0, p1}, Ls/k;->b(Ls/C;)V
-
-    :goto_24
-    return-void
-
-    :cond_25
-    iget-object v0, p0, Ls/k;->d:Landroid/os/Handler;
-
-    invoke-virtual {v0, v2, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    iget-object v1, p0, Ls/k;->d:Landroid/os/Handler;
-
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    goto :goto_24
-.end method
-
-.method protected b()V
-    .registers 2
-
-    invoke-virtual {p0}, Ls/k;->start()V
-
-    monitor-enter p0
-
-    :goto_4
-    :try_start_4
-    iget-object v0, p0, Ls/k;->d:Landroid/os/Handler;
-
-    if-nez v0, :cond_d
-
-    invoke-virtual {p0}, Ljava/lang/Object;->wait()V
-    :try_end_b
-    .catchall {:try_start_4 .. :try_end_b} :catchall_f
-    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_b} :catch_c
-
-    goto :goto_4
-
-    :catch_c
-    move-exception v0
-
-    :cond_d
-    :try_start_d
-    monitor-exit p0
-
-    return-void
-
-    :catchall_f
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_11
-    .catchall {:try_start_d .. :try_end_11} :catchall_f
-
-    throw v0
-.end method
-
-.method public b(Ljava/lang/String;Ls/c;)V
-    .registers 7
-
-    new-instance v0, Ls/n;
-
-    invoke-direct {v0, p1, p2}, Ls/n;-><init>(Ljava/lang/String;Ls/c;)V
-
-    iget-object v1, p0, Ls/k;->d:Landroid/os/Handler;
-
-    iget-object v2, p0, Ls/k;->d:Landroid/os/Handler;
-
-    const/16 v3, 0xc
-
-    invoke-virtual {v2, v3, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    return-void
-.end method
-
-.method public c()V
-    .registers 4
-
-    iget-object v0, p0, Ls/k;->d:Landroid/os/Handler;
-
-    iget-object v1, p0, Ls/k;->d:Landroid/os/Handler;
-
-    const/16 v2, 0xa
-
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    :try_start_d
-    invoke-virtual {p0}, Ls/k;->join()V
-    :try_end_10
-    .catch Ljava/lang/InterruptedException; {:try_start_d .. :try_end_10} :catch_11
-
-    :goto_10
-    return-void
-
-    :catch_11
-    move-exception v0
-
-    goto :goto_10
-.end method
-
-.method public d()Landroid/os/Handler;
-    .registers 2
-
-    iget-object v0, p0, Ls/k;->d:Landroid/os/Handler;
-
-    return-object v0
 .end method
 
 .method public e()V
-    .registers 3
+    .registers 2
 
-    iget-object v0, p0, Ls/k;->b:Ljava/lang/Runnable;
+    .prologue
+    .line 111
+    iget-object v0, p0, Ls/k;->a:Ls/n;
 
-    if-eqz v0, :cond_b
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
 
-    iget-object v0, p0, Ls/k;->d:Landroid/os/Handler;
+    move-result-object v0
 
-    iget-object v1, p0, Ls/k;->b:Ljava/lang/Runnable;
+    invoke-interface {v0}, Lcom/google/android/maps/driveabout/app/cI;->w()V
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+    .line 112
+    iget-object v0, p0, Ls/k;->a:Ls/n;
 
-    :cond_b
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/android/maps/driveabout/app/cI;->q()V
+
+    .line 113
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/android/maps/driveabout/app/cI;->H()V
+
+    .line 114
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/android/maps/driveabout/app/cI;->r()V
+
+    .line 115
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/android/maps/driveabout/app/cI;->s()V
+
+    .line 116
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/android/maps/driveabout/app/cI;->n()V
+
+    .line 117
     return-void
 .end method
 
-.method public onLocationChanged(Landroid/location/Location;)V
-    .registers 7
+.method protected m()V
+    .registers 4
 
-    const-wide v3, 0x3eb0c6f7a0b5ed8dL
+    .prologue
+    const/4 v0, 0x1
 
-    invoke-virtual {p1}, Landroid/location/Location;->getProvider()Ljava/lang/String;
+    .line 269
+    iget-object v1, p0, Ls/k;->a:Ls/n;
 
-    move-result-object v0
-
-    const-string v1, "gps"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_16
-
-    iget-object v1, p0, Ls/k;->h:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
-
-    :cond_16
-    const-string v1, "gps"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_26
-
-    const-string v1, "network"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4a
-
-    :cond_26
-    invoke-static {p1}, Lz/f;->a(Landroid/location/Location;)LaJ/B;
-
-    move-result-object v0
-
-    invoke-static {v0}, LaE/n;->e(LaJ/B;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4a
-
-    invoke-static {}, LaE/n;->k()LaE/n;
+    invoke-virtual {v1}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, LaE/n;->d(LaJ/B;)LaJ/B;
+    iget-boolean v2, p0, Ls/k;->f:Z
+
+    if-nez v2, :cond_2f
+
+    iget-object v2, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v2}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/google/android/maps/driveabout/app/aN;->o()Z
+
+    move-result v2
+
+    if-nez v2, :cond_20
+
+    iget-object v2, p0, Ls/k;->j:[Lo/x;
+
+    if-eqz v2, :cond_2f
+
+    iget-object v2, p0, Ls/k;->j:[Lo/x;
+
+    array-length v2, v2
+
+    if-le v2, v0, :cond_2f
+
+    :cond_20
+    :goto_20
+    invoke-interface {v1, v0}, Lcom/google/android/maps/driveabout/app/cI;->c(Z)V
+
+    .line 274
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LaJ/B;->c()I
+    iget-boolean v1, p0, Ls/k;->c:Z
 
-    move-result v1
+    invoke-interface {v0, v1}, Lcom/google/android/maps/driveabout/app/cI;->d(Z)V
 
-    int-to-double v1, v1
-
-    mul-double/2addr v1, v3
-
-    invoke-virtual {p1, v1, v2}, Landroid/location/Location;->setLatitude(D)V
-
-    invoke-virtual {v0}, LaJ/B;->e()I
-
-    move-result v0
-
-    int-to-double v0, v0
-
-    mul-double/2addr v0, v3
-
-    invoke-virtual {p1, v0, v1}, Landroid/location/Location;->setLongitude(D)V
-
-    :cond_4a
-    invoke-direct {p0}, Ls/k;->i()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_54
-
-    invoke-direct {p0, p1}, Ls/k;->a(Landroid/location/Location;)V
-
-    :goto_53
+    .line 275
     return-void
 
-    :cond_54
-    iget-object v0, p0, Ls/k;->d:Landroid/os/Handler;
+    .line 269
+    :cond_2f
+    const/4 v0, 0x0
 
-    const/16 v1, 0xd
+    goto :goto_20
+.end method
 
-    invoke-virtual {v0, v1, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+.method public p()V
+    .registers 2
+
+    .prologue
+    .line 135
+    iget-boolean v0, p0, Ls/k;->c:Z
+
+    iput-boolean v0, p0, Ls/k;->e:Z
+
+    .line 136
+    return-void
+.end method
+
+.method public q()V
+    .registers 3
+
+    .prologue
+    .line 121
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Ls/k;->h:Z
+
+    .line 122
+    iget-boolean v0, p0, Ls/k;->e:Z
+
+    iput-boolean v0, p0, Ls/k;->c:Z
+
+    .line 123
+    iget-boolean v0, p0, Ls/k;->c:Z
+
+    if-eqz v0, :cond_21
+
+    .line 124
+    invoke-virtual {p0}, Ls/k;->m()V
+
+    .line 125
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->f()Lo/r;
 
     move-result-object v0
 
-    iget-object v1, p0, Ls/k;->d:Landroid/os/Handler;
+    invoke-virtual {v0}, Lo/r;->g()V
 
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+    .line 126
+    iget-object v0, p0, Ls/k;->a:Ls/n;
 
-    goto :goto_53
+    invoke-virtual {v0}, Ls/n;->f()Lo/r;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lo/r;->a(Z)V
+
+    .line 128
+    :cond_21
+    invoke-direct {p0}, Ls/k;->ai()V
+
+    .line 129
+    invoke-direct {p0}, Ls/k;->ak()V
+
+    .line 130
+    invoke-virtual {p0}, Ls/k;->u()V
+
+    .line 131
+    return-void
 .end method
 
-.method public onProviderDisabled(Ljava/lang/String;)V
+.method protected r()V
+    .registers 1
+
+    .prologue
+    .line 291
+    return-void
+.end method
+
+.method protected u()V
     .registers 4
 
-    invoke-direct {p0}, Ls/k;->i()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_a
-
-    invoke-direct {p0, p1}, Ls/k;->a(Ljava/lang/String;)V
-
-    :goto_9
-    return-void
-
-    :cond_a
-    iget-object v0, p0, Ls/k;->d:Landroid/os/Handler;
-
-    const/16 v1, 0xe
-
-    invoke-virtual {v0, v1, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    iget-object v1, p0, Ls/k;->d:Landroid/os/Handler;
-
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    goto :goto_9
-.end method
-
-.method public onProviderEnabled(Ljava/lang/String;)V
-    .registers 4
-
-    invoke-direct {p0}, Ls/k;->i()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_a
-
-    invoke-direct {p0, p1}, Ls/k;->b(Ljava/lang/String;)V
-
-    :goto_9
-    return-void
-
-    :cond_a
-    iget-object v0, p0, Ls/k;->d:Landroid/os/Handler;
-
-    const/16 v1, 0xf
-
-    invoke-virtual {v0, v1, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    iget-object v1, p0, Ls/k;->d:Landroid/os/Handler;
-
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    goto :goto_9
-.end method
-
-.method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
-    .registers 7
-
-    const-string v0, "gps"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_11
-
-    invoke-direct {p0}, Ls/k;->i()Z
-
-    move-result v0
+    .prologue
+    .line 253
+    iget-boolean v0, p0, Ls/k;->c:Z
 
     if-eqz v0, :cond_12
 
-    invoke-direct {p0, p1, p2}, Ls/k;->a(Ljava/lang/String;I)V
+    .line 254
+    iget-object v0, p0, Ls/k;->a:Ls/n;
 
-    :cond_11
-    :goto_11
-    return-void
-
-    :cond_12
-    iget-object v0, p0, Ls/k;->d:Landroid/os/Handler;
-
-    const/16 v1, 0x10
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, p2, v2, p1}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
 
     move-result-object v0
 
-    iget-object v1, p0, Ls/k;->d:Landroid/os/Handler;
+    iget-object v1, p0, Ls/k;->i:Lo/x;
 
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+    iget-object v2, p0, Ls/k;->j:[Lo/x;
+
+    invoke-interface {v0, v1, v2}, Lcom/google/android/maps/driveabout/app/cI;->a(Lo/x;[Lo/x;)V
+
+    .line 258
+    :goto_11
+    return-void
+
+    .line 256
+    :cond_12
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v1}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lcom/google/android/maps/driveabout/app/cI;->a(Lcom/google/android/maps/driveabout/app/aN;)V
 
     goto :goto_11
+.end method
+
+.method protected v()V
+    .registers 3
+
+    .prologue
+    .line 286
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Lcom/google/android/maps/driveabout/app/cI;->setTrafficMode(I)V
+
+    .line 287
+    return-void
+.end method
+
+.method protected x()V
+    .registers 3
+
+    .prologue
+    .line 262
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Lcom/google/android/maps/driveabout/app/cI;->setTopOverlayText(Ljava/lang/CharSequence;)V
+
+    .line 263
+    return-void
+.end method
+
+.method public y()V
+    .registers 4
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 310
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/aN;->o()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_37
+
+    .line 311
+    iput-boolean v1, p0, Ls/k;->f:Z
+
+    .line 312
+    const v0, 0x7f0d006d
+
+    invoke-virtual {p0, v0}, Ls/k;->c(I)V
+
+    .line 314
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->f()Lo/r;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v1}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/app/aN;->b()Lm/b;
+
+    move-result-object v1
+
+    iget-object v2, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v2}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/google/android/maps/driveabout/app/aN;->l()Lo/x;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lo/r;->a(Lm/b;Lo/x;)V
+
+    .line 328
+    :goto_33
+    invoke-virtual {p0}, Ls/k;->m()V
+
+    .line 329
+    return-void
+
+    .line 317
+    :cond_37
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->f()Lo/r;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Lo/r;->a(Z)V
+
+    .line 318
+    iget-boolean v0, p0, Ls/k;->c:Z
+
+    if-nez v0, :cond_74
+
+    move v0, v1
+
+    :goto_45
+    iput-boolean v0, p0, Ls/k;->c:Z
+
+    .line 319
+    iput-boolean v1, p0, Ls/k;->h:Z
+
+    .line 320
+    invoke-virtual {p0}, Ls/k;->u()V
+
+    .line 321
+    invoke-virtual {p0, v2}, Ls/k;->a(Z)V
+
+    .line 322
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/aN;->l()Lo/x;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ls/k;->i:Lo/x;
+
+    .line 323
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->e()Lcom/google/android/maps/driveabout/app/aN;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/aN;->m()[Lo/x;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ls/k;->j:[Lo/x;
+
+    .line 324
+    invoke-direct {p0}, Ls/k;->ai()V
+
+    .line 326
+    iget-object v0, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v0}, Ls/n;->f()Lo/r;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lo/r;->g()V
+
+    goto :goto_33
+
+    :cond_74
+    move v0, v2
+
+    .line 318
+    goto :goto_45
+.end method
+
+.method public z()V
+    .registers 4
+
+    .prologue
+    .line 333
+    iget-object v0, p0, Ls/k;->i:Lo/x;
+
+    invoke-virtual {v0}, Lo/x;->D()[Lo/b;
+
+    move-result-object v0
+
+    .line 335
+    new-instance v1, Ls/l;
+
+    invoke-direct {v1, p0, v0}, Ls/l;-><init>(Ls/k;[Lo/b;)V
+
+    .line 368
+    iget-object v2, p0, Ls/k;->a:Ls/n;
+
+    invoke-virtual {v2}, Ls/n;->d()Lcom/google/android/maps/driveabout/app/cI;
+
+    move-result-object v2
+
+    invoke-interface {v2, v0, v1}, Lcom/google/android/maps/driveabout/app/cI;->a([Lo/b;Lcom/google/android/maps/driveabout/app/aE;)V
+
+    .line 369
+    return-void
 .end method

@@ -8,127 +8,17 @@
     .registers 1
 
     .prologue
-    .line 13
+    .line 16
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method public static checkUrlIsSecure(Ljava/lang/String;)V
-    .registers 6
-    .parameter "url"
-
-    .prologue
-    .line 55
-    :try_start_0
-    new-instance v1, Ljava/net/URL;
-
-    invoke-direct {v1, p0}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
-
-    .line 56
-    .local v1, parsed:Ljava/net/URL;
-    invoke-virtual {v1}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "https"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_25
-
-    invoke-virtual {v1}, Ljava/net/URL;->getHost()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "corp.google.com"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-    :try_end_22
-    .catch Ljava/net/MalformedURLException; {:try_start_0 .. :try_end_22} :catch_26
-
-    move-result v2
-
-    if-eqz v2, :cond_40
-
-    .line 58
-    :cond_25
-    return-void
-
-    .line 60
-    .end local v1           #parsed:Ljava/net/URL;
-    :catch_26
-    move-exception v0
-
-    .line 61
-    .local v0, e:Ljava/net/MalformedURLException;
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Cannot parse URL: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v2, v3}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 63
-    .end local v0           #e:Ljava/net/MalformedURLException;
-    :cond_40
-    new-instance v2, Ljava/lang/RuntimeException;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Insecure URL: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v2
 .end method
 
 .method public static ensureNotOnMainThread()V
     .registers 2
 
     .prologue
-    .line 31
+    .line 34
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -139,10 +29,10 @@
 
     if-eq v0, v1, :cond_b
 
-    .line 32
+    .line 35
     return-void
 
-    .line 34
+    .line 37
     :cond_b
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -157,7 +47,7 @@
     .registers 2
 
     .prologue
-    .line 20
+    .line 23
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -168,10 +58,10 @@
 
     if-ne v0, v1, :cond_b
 
-    .line 21
+    .line 24
     return-void
 
-    .line 23
+    .line 26
     :cond_b
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -188,7 +78,7 @@
     .parameter "accountName"
 
     .prologue
-    .line 41
+    .line 44
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -215,63 +105,154 @@
 .end method
 
 .method public static isBackgroundDataEnabled(Landroid/content/Context;)Z
-    .registers 3
+    .registers 9
     .parameter "context"
 
     .prologue
-    .line 67
-    const-string v1, "connectivity"
+    .line 50
+    const-string v6, "connectivity"
 
-    invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/net/ConnectivityManager;
-
-    .line 69
-    .local v0, connectivityManager:Landroid/net/ConnectivityManager;
-    invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getBackgroundDataSetting()Z
-
-    move-result v1
-
-    return v1
-.end method
-
-.method public static isWifiAvailable(Landroid/content/Context;)Z
-    .registers 4
-    .parameter "context"
-
-    .prologue
-    .line 73
-    const-string v2, "connectivity"
-
-    invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/net/ConnectivityManager;
-
-    .line 75
-    .local v0, connectivityManager:Landroid/net/ConnectivityManager;
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v2}, Landroid/net/ConnectivityManager;->getNetworkInfo(I)Landroid/net/NetworkInfo;
+    invoke-virtual {p0, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 76
-    .local v1, wifiInfo:Landroid/net/NetworkInfo;
-    if-nez v1, :cond_11
+    check-cast v1, Landroid/net/ConnectivityManager;
 
+    .line 54
+    .local v1, connectivityManager:Landroid/net/ConnectivityManager;
+    sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v7, 0xe
+
+    if-ge v6, v7, :cond_13
+
+    .line 55
+    invoke-virtual {v1}, Landroid/net/ConnectivityManager;->getBackgroundDataSetting()Z
+
+    move-result v6
+
+    .line 64
+    :goto_12
+    return v6
+
+    .line 58
+    :cond_13
+    invoke-virtual {v1}, Landroid/net/ConnectivityManager;->getAllNetworkInfo()[Landroid/net/NetworkInfo;
+
+    move-result-object v4
+
+    .line 59
+    .local v4, interfaces:[Landroid/net/NetworkInfo;
+    move-object v0, v4
+
+    .local v0, arr$:[Landroid/net/NetworkInfo;
+    array-length v5, v0
+
+    .local v5, len$:I
     const/4 v2, 0x0
 
-    :goto_10
-    return v2
+    .local v2, i$:I
+    :goto_1a
+    if-ge v2, v5, :cond_2d
 
-    :cond_11
-    invoke-virtual {v1}, Landroid/net/NetworkInfo;->isConnected()Z
+    aget-object v3, v0, v2
 
-    move-result v2
+    .line 60
+    .local v3, info:Landroid/net/NetworkInfo;
+    if-eqz v3, :cond_2a
 
-    goto :goto_10
+    invoke-virtual {v3}, Landroid/net/NetworkInfo;->getDetailedState()Landroid/net/NetworkInfo$DetailedState;
+
+    move-result-object v6
+
+    sget-object v7, Landroid/net/NetworkInfo$DetailedState;->BLOCKED:Landroid/net/NetworkInfo$DetailedState;
+
+    if-ne v6, v7, :cond_2a
+
+    .line 61
+    const/4 v6, 0x0
+
+    goto :goto_12
+
+    .line 59
+    :cond_2a
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_1a
+
+    .line 64
+    .end local v3           #info:Landroid/net/NetworkInfo;
+    :cond_2d
+    const/4 v6, 0x1
+
+    goto :goto_12
+.end method
+
+.method public static mapFromBundleStrings(Landroid/os/Bundle;)Ljava/util/Map;
+    .registers 6
+    .parameter "b"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/os/Bundle;",
+            ")",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 73
+    invoke-static {}, Lcom/google/android/finsky/utils/Maps;->newHashMap()Ljava/util/HashMap;
+
+    move-result-object v2
+
+    .line 74
+    .local v2, result:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+    invoke-virtual {p0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .local v0, i$:Ljava/util/Iterator;
+    :cond_c
+    :goto_c
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_22
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    .line 75
+    .local v1, key:Ljava/lang/String;
+    invoke-virtual {p0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 76
+    .local v3, value:Ljava/lang/String;
+    if-eqz v3, :cond_c
+
+    .line 77
+    invoke-interface {v2, v1, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_c
+
+    .line 80
+    .end local v1           #key:Ljava/lang/String;
+    .end local v3           #value:Ljava/lang/String;
+    :cond_22
+    return-object v2
 .end method

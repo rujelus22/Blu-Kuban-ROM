@@ -63,10 +63,10 @@
     .line 46
     iput v1, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->sessionstatus:I
 
-    .line 394
+    .line 371
     iput-boolean v1, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->homekeyevent:Z
 
-    .line 467
+    .line 444
     return-void
 .end method
 
@@ -120,7 +120,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 319
+    .line 296
     const-string v0, "DeviceConfiguration"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -145,27 +145,27 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 321
+    .line 298
     iget v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->sessionstatus:I
 
     if-ne v0, v3, :cond_2b
 
-    .line 322
+    .line 299
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     iput-boolean v3, v0, Lcom/samsung/client/DMApp;->userCancel:Z
 
-    .line 323
+    .line 300
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->stopSession()V
 
-    .line 324
+    .line 301
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->sessionstatus:I
 
-    .line 326
+    .line 303
     :cond_2b
     return-void
 .end method
@@ -178,7 +178,7 @@
 
     const/4 v1, 0x0
 
-    .line 330
+    .line 307
     const-string v2, "DeviceConfiguration"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -203,7 +203,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 331
+    .line 308
     const-string v2, "DeviceConfiguration"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -230,7 +230,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 332
+    .line 309
     const-string v2, "DeviceConfiguration"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -255,69 +255,69 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 346
+    .line 323
     iget-object v2, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->dcToRebootTimer:Lcom/samsung/deviceconfiguration/DeviceConfiguration$DcToRebootTimer;
 
     if-eqz v2, :cond_5b
 
-    .line 347
+    .line 324
     iget-object v2, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->dcToRebootTimer:Lcom/samsung/deviceconfiguration/DeviceConfiguration$DcToRebootTimer;
 
     invoke-virtual {v2}, Lcom/samsung/deviceconfiguration/DeviceConfiguration$DcToRebootTimer;->cancel()V
 
-    .line 350
+    .line 327
     :cond_5b
     iget v2, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->sessionstatus:I
 
     packed-switch v2, :pswitch_data_b8
 
-    .line 384
+    .line 361
     :cond_60
     :goto_60
     :pswitch_60
     return-void
 
-    .line 353
+    .line 330
     :pswitch_61
     invoke-virtual {p0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->finish()V
 
-    .line 354
+    .line 331
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->enableKeyGuard()V
 
-    .line 355
+    .line 332
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->releaseWakeLock()V
 
-    .line 356
+    .line 333
     iget-boolean v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->homekeyevent:Z
 
     if-nez v0, :cond_60
 
-    .line 357
+    .line 334
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->launchHomeScreen()V
 
     goto :goto_60
 
-    .line 363
+    .line 340
     :pswitch_78
     invoke-virtual {p0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->finish()V
 
-    .line 364
+    .line 341
     iget-object v2, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v1}, Lcom/samsung/client/DMApp;->setHfaInitiated(Z)V
 
-    .line 365
+    .line 342
     iget-object v2, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v0}, Lcom/samsung/client/DMApp;->setHfaRebooted(Z)V
 
-    .line 366
+    .line 343
     iget-object v2, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     iget-boolean v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->homekeyevent:Z
@@ -334,21 +334,21 @@
 
     goto :goto_8b
 
-    .line 371
+    .line 348
     :pswitch_91
     invoke-virtual {p0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->finish()V
 
-    .line 372
+    .line 349
     iget-object v2, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v1}, Lcom/samsung/client/DMApp;->setHfaInitiated(Z)V
 
-    .line 373
+    .line 350
     iget-object v2, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2, v0}, Lcom/samsung/client/DMApp;->setHfaRebooted(Z)V
 
-    .line 374
+    .line 351
     iget-object v2, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     iget-boolean v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->homekeyevent:Z
@@ -365,23 +365,23 @@
 
     goto :goto_a4
 
-    .line 379
+    .line 356
     :pswitch_aa
     invoke-virtual {p0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->finish()V
 
-    .line 380
+    .line 357
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->enableKeyGuard()V
 
-    .line 381
+    .line 358
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->releaseWakeLock()V
 
     goto :goto_60
 
-    .line 350
+    .line 327
     :pswitch_data_b8
     .packed-switch 0x0
         :pswitch_aa
@@ -399,7 +399,7 @@
     .registers 2
 
     .prologue
-    .line 297
+    .line 287
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
     return-object v0
@@ -410,7 +410,7 @@
     .parameter "err"
 
     .prologue
-    .line 287
+    .line 277
     const-string v0, "DeviceConfiguration"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -433,32 +433,32 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 289
+    .line 279
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 290
+    .line 280
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 291
+    .line 281
     iput p1, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->errCode:I
 
-    .line 292
+    .line 282
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->sessionstatus:I
 
-    .line 293
+    .line 283
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->showDialog(I)V
 
-    .line 294
+    .line 284
     return-void
 .end method
 
@@ -472,31 +472,31 @@
 
     const/4 v6, 0x0
 
-    .line 264
+    .line 254
     const-string v0, "DeviceConfiguration"
 
     const-string v1, "gotoSuccess .... "
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 266
+    .line 256
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 267
+    .line 257
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 269
+    .line 259
     iget-boolean v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mUpdated:Z
 
     if-eqz v0, :cond_4a
 
-    .line 270
+    .line 260
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v0}, Lcom/samsung/client/DMApp;->isMdnMsidChanged()Z
@@ -505,7 +505,7 @@
 
     if-eqz v0, :cond_33
 
-    .line 271
+    .line 261
     new-instance v0, Lcom/samsung/deviceconfiguration/DeviceConfiguration$DcToRebootTimer;
 
     move-object v1, p0
@@ -514,22 +514,22 @@
 
     iput-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->dcToRebootTimer:Lcom/samsung/deviceconfiguration/DeviceConfiguration$DcToRebootTimer;
 
-    .line 272
+    .line 262
     const/4 v0, 0x4
 
     iput v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->sessionstatus:I
 
-    .line 279
+    .line 269
     :goto_2e
     const/4 v0, 0x2
 
     invoke-virtual {p0, v0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->showDialog(I)V
 
-    .line 284
+    .line 274
     :goto_32
     return-void
 
-    .line 273
+    .line 263
     :cond_33
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
@@ -539,7 +539,7 @@
 
     if-eqz v0, :cond_47
 
-    .line 274
+    .line 264
     new-instance v0, Lcom/samsung/deviceconfiguration/DeviceConfiguration$DcToRebootTimer;
 
     move-object v1, p0
@@ -548,24 +548,24 @@
 
     iput-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->dcToRebootTimer:Lcom/samsung/deviceconfiguration/DeviceConfiguration$DcToRebootTimer;
 
-    .line 275
+    .line 265
     const/4 v0, 0x5
 
     iput v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->sessionstatus:I
 
     goto :goto_2e
 
-    .line 277
+    .line 267
     :cond_47
     iput v6, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->sessionstatus:I
 
     goto :goto_2e
 
-    .line 281
+    .line 271
     :cond_4a
     iput v6, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->sessionstatus:I
 
-    .line 282
+    .line 272
     const/4 v0, 0x3
 
     invoke-virtual {p0, v0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->showDialog(I)V
@@ -710,100 +710,50 @@
 .end method
 
 .method protected onCreateDialog(I)Landroid/app/Dialog;
-    .registers 13
+    .registers 11
     .parameter "id"
 
     .prologue
-    const/4 v10, 0x1
+    const v8, 0x108009b
 
-    const v9, 0x1080027
+    const/4 v4, 0x1
 
-    const v8, 0x7f050009
+    const v7, 0x1080027
 
-    const v7, 0x7f050016
+    const v5, 0x7f050009
 
-    const/4 v6, 0x0
+    const v6, 0x7f050016
 
-    .line 105
-    const-string v3, "DeviceConfiguration"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "onCreateDialog   Dialog id="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 106
+    .line 104
     new-instance v2, Lcom/samsung/deviceconfiguration/DeviceConfiguration$1;
 
     invoke-direct {v2, p0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration$1;-><init>(Lcom/samsung/deviceconfiguration/DeviceConfiguration;)V
 
-    .line 126
+    .line 124
     .local v2, keylistner:Landroid/content/DialogInterface$OnKeyListener;
-    packed-switch p1, :pswitch_data_1d0
+    packed-switch p1, :pswitch_data_17c
 
-    .line 259
+    .line 249
     const/4 v0, 0x0
 
-    :goto_2c
+    :goto_16
     return-object v0
 
-    .line 129
-    :pswitch_2d
+    .line 127
+    :pswitch_17
     new-instance v0, Lcom/samsung/deviceconfiguration/DeviceConfiguration$CustomDialog;
 
     invoke-direct {v0, p0, p0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration$CustomDialog;-><init>(Lcom/samsung/deviceconfiguration/DeviceConfiguration;Landroid/content/Context;)V
 
-    .line 130
+    .line 128
     .local v0, dialog:Landroid/app/ProgressDialog;
-    const-string v3, "DeviceConfiguration"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "onCreateDialog   mApp.mNIAProgress ="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
-
-    sget-boolean v5, Lcom/samsung/client/DMApp;->mNIAProgress:Z
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 132
     iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     sget-boolean v3, Lcom/samsung/client/DMApp;->mNIAProgress:Z
 
-    if-eqz v3, :cond_89
+    if-eqz v3, :cond_54
 
-    .line 133
+    .line 129
     const v3, 0x7f05000d
 
     invoke-virtual {p0, v3}, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->getString(I)Ljava/lang/String;
@@ -812,23 +762,23 @@
 
     invoke-virtual {v0, v3}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 137
-    :goto_5e
-    invoke-virtual {v0, v10}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
+    .line 133
+    :goto_2c
+    invoke-virtual {v0, v4}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
 
-    .line 138
-    invoke-virtual {v0, v10}, Landroid/app/ProgressDialog;->setCancelable(Z)V
+    .line 134
+    invoke-virtual {v0, v4}, Landroid/app/ProgressDialog;->setCancelable(Z)V
 
-    .line 139
+    .line 135
     iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v3}, Lcom/samsung/client/DMApp;->isInRestrictLockMode()Z
 
     move-result v3
 
-    if-nez v3, :cond_7b
+    if-nez v3, :cond_49
 
-    .line 140
+    .line 136
     const v3, 0x7f050013
 
     invoke-virtual {p0, v3}, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->getString(I)Ljava/lang/String;
@@ -841,25 +791,22 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/app/ProgressDialog;->setButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
-    .line 152
-    :cond_7b
+    .line 148
+    :cond_49
     iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mOnDlgDismiss:Lcom/samsung/deviceconfiguration/DeviceConfiguration$OnDlgDismiss;
 
     invoke-virtual {v0, v3}, Landroid/app/ProgressDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 153
+    .line 149
     invoke-virtual {v0, v2}, Landroid/app/ProgressDialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 154
-    invoke-virtual {v0, v6}, Landroid/app/ProgressDialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 155
+    .line 150
     iput-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
-    goto :goto_2c
+    goto :goto_16
 
-    .line 135
-    :cond_89
+    .line 131
+    :cond_54
     const v3, 0x7f050028
 
     invoke-virtual {p0, v3}, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->getString(I)Ljava/lang/String;
@@ -868,18 +815,18 @@
 
     invoke-virtual {v0, v3}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    goto :goto_5e
+    goto :goto_2c
 
-    .line 160
+    .line 155
     .end local v0           #dialog:Landroid/app/ProgressDialog;
-    :pswitch_94
+    :pswitch_5f
     const v3, 0x7f050029
 
     invoke-virtual {p0, v3}, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 161
+    .line 156
     .local v1, errStr:Ljava/lang/String;
     const-string v3, "###"
 
@@ -895,7 +842,7 @@
 
     move-result-object v1
 
-    .line 162
+    .line 157
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -910,7 +857,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v9}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v7}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -918,7 +865,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration$3;-><init>(Lcom/samsung/deviceconfiguration/DeviceConfiguration;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -928,31 +875,26 @@
 
     iput-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 174
+    .line 169
     iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mOnDlgDismiss:Lcom/samsung/deviceconfiguration/DeviceConfiguration$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 175
+    .line 170
     iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 176
-    iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
-
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 177
+    .line 171
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
-    goto/16 :goto_2c
+    goto/16 :goto_16
 
-    .line 180
+    .line 174
     .end local v1           #errStr:Ljava/lang/String;
-    :pswitch_e1
+    :pswitch_a7
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -963,13 +905,11 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v5}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    const v4, 0x108009b
-
-    invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -977,7 +917,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration$4;-><init>(Lcom/samsung/deviceconfiguration/DeviceConfiguration;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -987,30 +927,25 @@
 
     iput-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 193
+    .line 187
     iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mOnDlgDismiss:Lcom/samsung/deviceconfiguration/DeviceConfiguration$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 194
+    .line 188
     iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 195
-    iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
-
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 196
+    .line 189
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
-    goto/16 :goto_2c
+    goto/16 :goto_16
 
-    .line 199
-    :pswitch_11c
+    .line 192
+    :pswitch_da
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -1021,13 +956,11 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v5}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    const v4, 0x108009b
-
-    invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -1035,7 +968,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration$5;-><init>(Lcom/samsung/deviceconfiguration/DeviceConfiguration;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -1045,39 +978,34 @@
 
     iput-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 212
+    .line 205
     iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mOnDlgDismiss:Lcom/samsung/deviceconfiguration/DeviceConfiguration$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 213
+    .line 206
     iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 214
-    iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
-
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 215
+    .line 207
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
-    goto/16 :goto_2c
+    goto/16 :goto_16
 
-    .line 218
-    :pswitch_157
+    .line 210
+    :pswitch_10d
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v5}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    invoke-virtual {v3, v9}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v7}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -1095,7 +1023,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration$6;-><init>(Lcom/samsung/deviceconfiguration/DeviceConfiguration;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -1105,39 +1033,34 @@
 
     iput-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 232
+    .line 224
     iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mOnDlgDismiss:Lcom/samsung/deviceconfiguration/DeviceConfiguration$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 233
+    .line 225
     iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 234
-    iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
-
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 235
+    .line 226
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
-    goto/16 :goto_2c
+    goto/16 :goto_16
 
-    .line 238
-    :pswitch_193
+    .line 229
+    :pswitch_144
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v3, v8}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v5}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    invoke-virtual {v3, v9}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v7}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -1155,7 +1078,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration$7;-><init>(Lcom/samsung/deviceconfiguration/DeviceConfiguration;)V
 
-    invoke-virtual {v3, v7, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v3, v6, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
@@ -1165,39 +1088,34 @@
 
     iput-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
-    .line 253
+    .line 244
     iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
     iget-object v4, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mOnDlgDismiss:Lcom/samsung/deviceconfiguration/DeviceConfiguration$OnDlgDismiss;
 
     invoke-virtual {v3, v4}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 254
+    .line 245
     iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 255
-    iget-object v3, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
-
-    invoke-virtual {v3, v6}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 256
+    .line 246
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
-    goto/16 :goto_2c
+    goto/16 :goto_16
 
-    .line 126
+    .line 124
     nop
 
-    :pswitch_data_1d0
+    :pswitch_data_17c
     .packed-switch 0x0
-        :pswitch_2d
-        :pswitch_94
-        :pswitch_e1
-        :pswitch_11c
-        :pswitch_157
-        :pswitch_193
+        :pswitch_17
+        :pswitch_5f
+        :pswitch_a7
+        :pswitch_da
+        :pswitch_10d
+        :pswitch_144
     .end packed-switch
 .end method
 
@@ -1205,17 +1123,17 @@
     .registers 3
 
     .prologue
-    .line 446
+    .line 423
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
-    .line 448
+    .line 425
     const-string v0, "DeviceConfiguration"
 
     const-string v1, "onDestroy"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 449
+    .line 426
     return-void
 .end method
 
@@ -1281,17 +1199,17 @@
     .registers 3
 
     .prologue
-    .line 441
+    .line 418
     invoke-super {p0}, Landroid/app/Activity;->onStop()V
 
-    .line 443
+    .line 420
     const-string v0, "DeviceConfiguration"
 
     const-string v1, "onStop"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 444
+    .line 421
     return-void
 .end method
 
@@ -1303,17 +1221,17 @@
 
     const/4 v4, 0x0
 
-    .line 398
+    .line 375
     invoke-super {p0}, Landroid/app/Activity;->onUserLeaveHint()V
 
-    .line 399
+    .line 376
     const-string v1, "DeviceConfiguration"
 
     const-string v2, "onUserLeaveHint() ............ "
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 400
+    .line 377
     const-string v1, "DeviceConfiguration"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1342,7 +1260,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 403
+    .line 380
     iget-object v1, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v1}, Lcom/samsung/client/DMApp;->isHomeLaunchedByApp()Z
@@ -1351,16 +1269,16 @@
 
     if-eqz v1, :cond_33
 
-    .line 438
+    .line 415
     :cond_32
     :goto_32
     return-void
 
-    .line 428
+    .line 405
     :cond_33
     new-array v0, v5, [Landroid/content/Intent;
 
-    .line 429
+    .line 406
     .local v0, intents:[Landroid/content/Intent;
     new-instance v1, Landroid/content/Intent;
 
@@ -1370,21 +1288,21 @@
 
     aput-object v1, v0, v4
 
-    .line 430
+    .line 407
     aget-object v1, v0, v4
 
     const-string v2, "android.intent.category.HOME"
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 431
+    .line 408
     aget-object v1, v0, v4
 
     const-string v2, "android.intent.category.DEFAULT"
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 433
+    .line 410
     iget-object v1, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v1, v0}, Lcom/samsung/client/DMApp;->checkTopActivity([Landroid/content/Intent;)Z
@@ -1393,13 +1311,13 @@
 
     if-eqz v1, :cond_32
 
-    .line 434
+    .line 411
     iput-boolean v5, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->homekeyevent:Z
 
-    .line 435
+    .line 412
     invoke-direct {p0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->cancelSession()V
 
-    .line 436
+    .line 413
     iget-object v1, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->dismiss()V

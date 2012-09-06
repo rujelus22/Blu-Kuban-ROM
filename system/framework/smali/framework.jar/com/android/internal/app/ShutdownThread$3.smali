@@ -3,7 +3,7 @@
 .source "ShutdownThread.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnDismissListener;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
@@ -17,55 +17,66 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic val$context:Landroid/content/Context;
+
+
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method constructor <init>(Landroid/content/Context;)V
+    .registers 2
+    .parameter
 
     .prologue
-    .line 219
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 117
+    iput-object p1, p0, Lcom/android/internal/app/ShutdownThread$3;->val$context:Landroid/content/Context;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onDismiss(Landroid/content/DialogInterface;)V
-    .registers 4
-    .parameter "unused"
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .registers 6
+    .parameter "dialog"
+    .parameter "which"
 
     .prologue
-    .line 221
-    invoke-static {}, Lcom/android/internal/app/ShutdownThread;->access$600()Ljava/lang/Object;
+    .line 119
+    if-gez p2, :cond_3
+
+    .line 126
+    :cond_2
+    :goto_2
+    return-void
+
+    .line 122
+    :cond_3
+    iget-object v1, p0, Lcom/android/internal/app/ShutdownThread$3;->val$context:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    monitor-enter v1
+    const v2, 0x1070036
 
-    .line 222
-    const/4 v0, 0x0
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
-    :try_start_6
-    invoke-static {v0}, Lcom/android/internal/app/ShutdownThread;->access$702(Z)Z
+    move-result-object v0
 
-    .line 223
-    const/4 v0, 0x0
+    .line 124
+    .local v0, actions:[Ljava/lang/String;
+    if-eqz v0, :cond_2
 
-    invoke-static {v0}, Lcom/android/internal/app/ShutdownThread;->access$002(Z)Z
+    array-length v1, v0
 
-    .line 224
-    monitor-exit v1
+    if-ge p2, v1, :cond_2
 
-    .line 225
-    return-void
+    .line 125
+    aget-object v1, v0, p2
 
-    .line 224
-    :catchall_f
-    move-exception v0
+    invoke-static {v1}, Lcom/android/internal/app/ShutdownThread;->access$202(Ljava/lang/String;)Ljava/lang/String;
 
-    monitor-exit v1
-    :try_end_11
-    .catchall {:try_start_6 .. :try_end_11} :catchall_f
-
-    throw v0
+    goto :goto_2
 .end method

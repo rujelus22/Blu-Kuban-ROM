@@ -47,45 +47,45 @@
     .registers 2
 
     .prologue
-    .line 16023
+    .line 16484
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 16028
+    .line 16489
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierChannelEnabled_:Z
 
-    .line 16045
+    .line 16506
     sget-object v0, Lcom/google/protobuf/micro/ByteStringMicro;->EMPTY:Lcom/google/protobuf/micro/ByteStringMicro;
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierLogoIcon_:Lcom/google/protobuf/micro/ByteStringMicro;
 
-    .line 16062
+    .line 16523
     sget-object v0, Lcom/google/protobuf/micro/ByteStringMicro;->EMPTY:Lcom/google/protobuf/micro/ByteStringMicro;
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierBanner_:Lcom/google/protobuf/micro/ByteStringMicro;
 
-    .line 16079
+    .line 16540
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierSubtitle_:Ljava/lang/String;
 
-    .line 16096
+    .line 16557
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierTitle_:Ljava/lang/String;
 
-    .line 16113
+    .line 16574
     const/16 v0, 0xa0
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierImageDensity_:I
 
-    .line 16165
+    .line 16627
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->cachedSize:I
 
-    .line 16023
+    .line 16484
     return-void
 .end method
 
@@ -95,15 +95,15 @@
     .registers 2
 
     .prologue
-    .line 16167
+    .line 16630
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 16169
+    .line 16632
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->getSerializedSize()I
 
-    .line 16171
+    .line 16634
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->cachedSize:I
 
@@ -114,7 +114,7 @@
     .registers 2
 
     .prologue
-    .line 16063
+    .line 16524
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierBanner_:Lcom/google/protobuf/micro/ByteStringMicro;
 
     return-object v0
@@ -124,7 +124,7 @@
     .registers 2
 
     .prologue
-    .line 16029
+    .line 16490
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierChannelEnabled_:Z
 
     return v0
@@ -134,7 +134,7 @@
     .registers 2
 
     .prologue
-    .line 16114
+    .line 16575
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierImageDensity_:I
 
     return v0
@@ -144,7 +144,7 @@
     .registers 2
 
     .prologue
-    .line 16046
+    .line 16507
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierLogoIcon_:Lcom/google/protobuf/micro/ByteStringMicro;
 
     return-object v0
@@ -154,7 +154,7 @@
     .registers 2
 
     .prologue
-    .line 16080
+    .line 16541
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierSubtitle_:Ljava/lang/String;
 
     return-object v0
@@ -164,7 +164,7 @@
     .registers 2
 
     .prologue
-    .line 16097
+    .line 16558
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierTitle_:Ljava/lang/String;
 
     return-object v0
@@ -174,10 +174,10 @@
     .registers 4
 
     .prologue
-    .line 16175
+    .line 16639
     const/4 v0, 0x0
 
-    .line 16176
+    .line 16640
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierChannelEnabled()Z
 
@@ -185,7 +185,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 16177
+    .line 16641
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->getCarrierChannelEnabled()Z
@@ -198,7 +198,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16180
+    .line 16644
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierLogoIcon()Z
 
@@ -206,7 +206,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 16181
+    .line 16645
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->getCarrierLogoIcon()Lcom/google/protobuf/micro/ByteStringMicro;
@@ -219,7 +219,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16184
+    .line 16648
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierBanner()Z
 
@@ -227,7 +227,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 16185
+    .line 16649
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->getCarrierBanner()Lcom/google/protobuf/micro/ByteStringMicro;
@@ -240,7 +240,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16188
+    .line 16652
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierSubtitle()Z
 
@@ -248,7 +248,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 16189
+    .line 16653
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->getCarrierSubtitle()Ljava/lang/String;
@@ -261,7 +261,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16192
+    .line 16656
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierTitle()Z
 
@@ -269,7 +269,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 16193
+    .line 16657
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->getCarrierTitle()Ljava/lang/String;
@@ -282,7 +282,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16196
+    .line 16660
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierImageDensity()Z
 
@@ -290,7 +290,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 16197
+    .line 16661
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->getCarrierImageDensity()I
@@ -303,11 +303,11 @@
 
     add-int/2addr v0, v1
 
-    .line 16200
+    .line 16664
     :cond_61
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->cachedSize:I
 
-    .line 16201
+    .line 16665
     return v0
 .end method
 
@@ -315,7 +315,7 @@
     .registers 2
 
     .prologue
-    .line 16064
+    .line 16525
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierBanner:Z
 
     return v0
@@ -325,7 +325,7 @@
     .registers 2
 
     .prologue
-    .line 16030
+    .line 16491
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierChannelEnabled:Z
 
     return v0
@@ -335,7 +335,7 @@
     .registers 2
 
     .prologue
-    .line 16115
+    .line 16576
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierImageDensity:Z
 
     return v0
@@ -345,7 +345,7 @@
     .registers 2
 
     .prologue
-    .line 16047
+    .line 16508
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierLogoIcon:Z
 
     return v0
@@ -355,7 +355,7 @@
     .registers 2
 
     .prologue
-    .line 16081
+    .line 16542
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierSubtitle:Z
 
     return v0
@@ -365,7 +365,7 @@
     .registers 2
 
     .prologue
-    .line 16098
+    .line 16559
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierTitle:Z
 
     return v0
@@ -381,29 +381,29 @@
     .end annotation
 
     .prologue
-    .line 16208
+    .line 16673
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 16209
+    .line 16674
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_3e
 
-    .line 16213
+    .line 16678
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 16214
+    .line 16679
     :sswitch_d
     return-object p0
 
-    .line 16219
+    .line 16684
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -413,7 +413,7 @@
 
     goto :goto_0
 
-    .line 16223
+    .line 16688
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBytes()Lcom/google/protobuf/micro/ByteStringMicro;
 
@@ -423,7 +423,7 @@
 
     goto :goto_0
 
-    .line 16227
+    .line 16692
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBytes()Lcom/google/protobuf/micro/ByteStringMicro;
 
@@ -433,7 +433,7 @@
 
     goto :goto_0
 
-    .line 16231
+    .line 16696
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -443,7 +443,7 @@
 
     goto :goto_0
 
-    .line 16235
+    .line 16700
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -453,7 +453,7 @@
 
     goto :goto_0
 
-    .line 16239
+    .line 16704
     :sswitch_36
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -463,7 +463,7 @@
 
     goto :goto_0
 
-    .line 16209
+    .line 16674
     :sswitch_data_3e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -486,7 +486,7 @@
     .end annotation
 
     .prologue
-    .line 16021
+    .line 16482
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;
 
     move-result-object v0
@@ -499,15 +499,15 @@
     .parameter "value"
 
     .prologue
-    .line 16066
+    .line 16527
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierBanner:Z
 
-    .line 16067
+    .line 16528
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierBanner_:Lcom/google/protobuf/micro/ByteStringMicro;
 
-    .line 16068
+    .line 16529
     return-object p0
 .end method
 
@@ -516,15 +516,15 @@
     .parameter "value"
 
     .prologue
-    .line 16032
+    .line 16493
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierChannelEnabled:Z
 
-    .line 16033
+    .line 16494
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierChannelEnabled_:Z
 
-    .line 16034
+    .line 16495
     return-object p0
 .end method
 
@@ -533,15 +533,15 @@
     .parameter "value"
 
     .prologue
-    .line 16117
+    .line 16578
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierImageDensity:Z
 
-    .line 16118
+    .line 16579
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierImageDensity_:I
 
-    .line 16119
+    .line 16580
     return-object p0
 .end method
 
@@ -550,15 +550,15 @@
     .parameter "value"
 
     .prologue
-    .line 16049
+    .line 16510
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierLogoIcon:Z
 
-    .line 16050
+    .line 16511
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierLogoIcon_:Lcom/google/protobuf/micro/ByteStringMicro;
 
-    .line 16051
+    .line 16512
     return-object p0
 .end method
 
@@ -567,15 +567,15 @@
     .parameter "value"
 
     .prologue
-    .line 16083
+    .line 16544
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierSubtitle:Z
 
-    .line 16084
+    .line 16545
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierSubtitle_:Ljava/lang/String;
 
-    .line 16085
+    .line 16546
     return-object p0
 .end method
 
@@ -584,15 +584,15 @@
     .parameter "value"
 
     .prologue
-    .line 16100
+    .line 16561
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierTitle:Z
 
-    .line 16101
+    .line 16562
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->carrierTitle_:Ljava/lang/String;
 
-    .line 16102
+    .line 16563
     return-object p0
 .end method
 
@@ -606,14 +606,14 @@
     .end annotation
 
     .prologue
-    .line 16145
+    .line 16607
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierChannelEnabled()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 16146
+    .line 16608
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->getCarrierChannelEnabled()Z
@@ -622,7 +622,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 16148
+    .line 16610
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierLogoIcon()Z
 
@@ -630,7 +630,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 16149
+    .line 16611
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->getCarrierLogoIcon()Lcom/google/protobuf/micro/ByteStringMicro;
@@ -639,7 +639,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBytes(ILcom/google/protobuf/micro/ByteStringMicro;)V
 
-    .line 16151
+    .line 16613
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierBanner()Z
 
@@ -647,7 +647,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 16152
+    .line 16614
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->getCarrierBanner()Lcom/google/protobuf/micro/ByteStringMicro;
@@ -656,7 +656,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBytes(ILcom/google/protobuf/micro/ByteStringMicro;)V
 
-    .line 16154
+    .line 16616
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierSubtitle()Z
 
@@ -664,7 +664,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 16155
+    .line 16617
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->getCarrierSubtitle()Ljava/lang/String;
@@ -673,7 +673,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 16157
+    .line 16619
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierTitle()Z
 
@@ -681,7 +681,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 16158
+    .line 16620
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->getCarrierTitle()Ljava/lang/String;
@@ -690,7 +690,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 16160
+    .line 16622
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->hasCarrierImageDensity()Z
 
@@ -698,7 +698,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 16161
+    .line 16623
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCarrierInfoResponseProto;->getCarrierImageDensity()I
@@ -707,7 +707,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 16163
+    .line 16625
     :cond_54
     return-void
 .end method

@@ -1,90 +1,50 @@
-.class Lcom/google/android/maps/driveabout/app/aj;
+.class abstract Lcom/google/android/maps/driveabout/app/aJ;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Comparable;
+.source "SourceFile"
 
 
 # instance fields
-.field private final a:Lu/P;
-
-.field private final b:F
-
-.field private final c:I
+.field b:I
 
 
 # direct methods
-.method constructor <init>(Lu/P;FI)V
-    .registers 4
+.method public constructor <init>(I)V
+    .registers 2
+    .parameter
 
+    .prologue
+    .line 482
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aj;->a:Lu/P;
+    .line 483
+    iput p1, p0, Lcom/google/android/maps/driveabout/app/aJ;->b:I
 
-    iput p2, p0, Lcom/google/android/maps/driveabout/app/aj;->b:F
-
-    iput p3, p0, Lcom/google/android/maps/driveabout/app/aj;->c:I
-
+    .line 484
     return-void
-.end method
-
-.method static synthetic b(Lcom/google/android/maps/driveabout/app/aj;)Lu/P;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aj;->a:Lu/P;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public a(Lcom/google/android/maps/driveabout/app/aj;)I
-    .registers 4
+.method protected abstract a(ILjava/lang/String;)Ljava/lang/String;
+.end method
 
-    iget v0, p0, Lcom/google/android/maps/driveabout/app/aj;->b:F
+.method public a(I)Z
+    .registers 3
+    .parameter
 
-    iget v1, p1, Lcom/google/android/maps/driveabout/app/aj;->b:F
+    .prologue
+    .line 491
+    iget v0, p0, Lcom/google/android/maps/driveabout/app/aJ;->b:I
 
-    cmpg-float v0, v0, v1
-
-    if-gez v0, :cond_a
-
-    const/4 v0, -0x1
-
-    :goto_9
-    return v0
-
-    :cond_a
-    iget v0, p0, Lcom/google/android/maps/driveabout/app/aj;->b:F
-
-    iget v1, p1, Lcom/google/android/maps/driveabout/app/aj;->b:F
-
-    cmpl-float v0, v0, v1
-
-    if-lez v0, :cond_14
+    if-ge p1, v0, :cond_6
 
     const/4 v0, 0x1
 
-    goto :goto_9
-
-    :cond_14
-    iget v0, p0, Lcom/google/android/maps/driveabout/app/aj;->c:I
-
-    iget v1, p1, Lcom/google/android/maps/driveabout/app/aj;->c:I
-
-    sub-int/2addr v0, v1
-
-    goto :goto_9
-.end method
-
-.method public synthetic compareTo(Ljava/lang/Object;)I
-    .registers 3
-
-    check-cast p1, Lcom/google/android/maps/driveabout/app/aj;
-
-    invoke-virtual {p0, p1}, Lcom/google/android/maps/driveabout/app/aj;->a(Lcom/google/android/maps/driveabout/app/aj;)I
-
-    move-result v0
-
+    :goto_5
     return v0
+
+    :cond_6
+    const/4 v0, 0x0
+
+    goto :goto_5
 .end method

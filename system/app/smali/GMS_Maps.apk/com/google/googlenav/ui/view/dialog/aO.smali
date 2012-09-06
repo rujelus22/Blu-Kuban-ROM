@@ -1,89 +1,51 @@
-.class Lcom/google/googlenav/ui/view/dialog/aO;
+.class Lcom/google/googlenav/ui/view/dialog/ao;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemSelectedListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/aM;
+.field final synthetic a:Ljava/lang/String;
 
-.field private b:I
+.field final synthetic b:Lcom/google/googlenav/ui/view/dialog/an;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/ui/view/dialog/aM;I)V
+.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/an;Ljava/lang/String;)V
     .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/aO;->a:Lcom/google/googlenav/ui/view/dialog/aM;
+    .prologue
+    .line 115
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/ao;->b:Lcom/google/googlenav/ui/view/dialog/an;
+
+    iput-object p2, p0, Lcom/google/googlenav/ui/view/dialog/ao;->a:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p2, p0, Lcom/google/googlenav/ui/view/dialog/aO;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(I)V
-    .registers 2
+.method public run()V
+    .registers 3
 
-    iput p1, p0, Lcom/google/googlenav/ui/view/dialog/aO;->b:I
+    .prologue
+    .line 118
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/ao;->b:Lcom/google/googlenav/ui/view/dialog/an;
 
-    return-void
-.end method
+    iget-object v0, v0, Lcom/google/googlenav/ui/view/dialog/an;->b:Lcom/google/googlenav/ui/view/dialog/am;
 
-.method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 8
+    iget-object v0, v0, Lcom/google/googlenav/ui/view/dialog/am;->n:Landroid/webkit/WebView;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/aO;->a:Lcom/google/googlenav/ui/view/dialog/aM;
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/ao;->a:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/aM;->a(Lcom/google/googlenav/ui/view/dialog/aM;)LaY/m;
+    invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    move-result-object v0
-
-    invoke-virtual {v0}, LaY/m;->as()Lcom/google/googlenav/E;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlenav/bJ;
-
-    iget v1, p0, Lcom/google/googlenav/ui/view/dialog/aO;->b:I
-
-    invoke-virtual {v0, v1, p3}, Lcom/google/googlenav/bJ;->a(II)V
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/aO;->a:Lcom/google/googlenav/ui/view/dialog/aM;
-
-    invoke-static {v1}, Lcom/google/googlenav/ui/view/dialog/aM;->b(Lcom/google/googlenav/ui/view/dialog/aM;)LaY/m;
-
-    move-result-object v1
-
-    check-cast v1, LaY/bd;
-
-    invoke-virtual {v1}, LaY/bd;->a()V
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/aO;->a:Lcom/google/googlenav/ui/view/dialog/aM;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/view/dialog/aM;->h()V
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/aO;->a:Lcom/google/googlenav/ui/view/dialog/aM;
-
-    invoke-static {v1}, Lcom/google/googlenav/ui/view/dialog/aM;->c(Lcom/google/googlenav/ui/view/dialog/aM;)Landroid/widget/ListView;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Lcom/google/googlenav/bJ;->c()I
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Landroid/widget/ListView;->setSelection(I)V
-
-    return-void
-.end method
-
-.method public onNothingSelected(Landroid/widget/AdapterView;)V
-    .registers 2
-
+    .line 119
     return-void
 .end method

@@ -83,73 +83,73 @@
 
     const/4 v1, 0x0
 
-    .line 12580
+    .line 12858
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 12585
+    .line 12863
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetId_:Ljava/lang/String;
 
-    .line 12602
+    .line 12880
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetName_:Ljava/lang/String;
 
-    .line 12619
+    .line 12897
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetType_:Ljava/lang/String;
 
-    .line 12636
+    .line 12914
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetPackage_:Ljava/lang/String;
 
-    .line 12653
+    .line 12931
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->blobUrl_:Ljava/lang/String;
 
-    .line 12670
+    .line 12948
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetSignature_:Ljava/lang/String;
 
-    .line 12687
+    .line 12965
     iput-wide v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetSize_:J
 
-    .line 12704
+    .line 12982
     iput-wide v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->refundTimeoutMillis_:J
 
-    .line 12721
+    .line 12999
     iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->forwardLocked_:Z
 
-    .line 12738
+    .line 13016
     iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->secured_:Z
 
-    .line 12755
+    .line 13033
     iput v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->versionCode_:I
 
-    .line 12772
+    .line 13050
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->downloadAuthCookieName_:Ljava/lang/String;
 
-    .line 12789
+    .line 13067
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->downloadAuthCookieValue_:Ljava/lang/String;
 
-    .line 12806
+    .line 13084
     iput-wide v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->postInstallRefundWindowMillis_:J
 
-    .line 12896
+    .line 13175
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->cachedSize:I
 
-    .line 12580
+    .line 12858
     return-void
 .end method
 
@@ -159,7 +159,7 @@
     .registers 2
 
     .prologue
-    .line 12586
+    .line 12864
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetId_:Ljava/lang/String;
 
     return-object v0
@@ -169,7 +169,7 @@
     .registers 2
 
     .prologue
-    .line 12603
+    .line 12881
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetName_:Ljava/lang/String;
 
     return-object v0
@@ -179,7 +179,7 @@
     .registers 2
 
     .prologue
-    .line 12637
+    .line 12915
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetPackage_:Ljava/lang/String;
 
     return-object v0
@@ -189,7 +189,7 @@
     .registers 2
 
     .prologue
-    .line 12671
+    .line 12949
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetSignature_:Ljava/lang/String;
 
     return-object v0
@@ -199,7 +199,7 @@
     .registers 3
 
     .prologue
-    .line 12688
+    .line 12966
     iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetSize_:J
 
     return-wide v0
@@ -209,7 +209,7 @@
     .registers 2
 
     .prologue
-    .line 12620
+    .line 12898
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetType_:Ljava/lang/String;
 
     return-object v0
@@ -219,7 +219,7 @@
     .registers 2
 
     .prologue
-    .line 12654
+    .line 12932
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->blobUrl_:Ljava/lang/String;
 
     return-object v0
@@ -229,15 +229,15 @@
     .registers 2
 
     .prologue
-    .line 12898
+    .line 13178
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 12900
+    .line 13180
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getSerializedSize()I
 
-    .line 12902
+    .line 13182
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->cachedSize:I
 
@@ -248,7 +248,7 @@
     .registers 2
 
     .prologue
-    .line 12773
+    .line 13051
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->downloadAuthCookieName_:Ljava/lang/String;
 
     return-object v0
@@ -258,7 +258,7 @@
     .registers 2
 
     .prologue
-    .line 12790
+    .line 13068
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->downloadAuthCookieValue_:Ljava/lang/String;
 
     return-object v0
@@ -268,7 +268,7 @@
     .registers 2
 
     .prologue
-    .line 12722
+    .line 13000
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->forwardLocked_:Z
 
     return v0
@@ -278,7 +278,7 @@
     .registers 3
 
     .prologue
-    .line 12807
+    .line 13085
     iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->postInstallRefundWindowMillis_:J
 
     return-wide v0
@@ -288,7 +288,7 @@
     .registers 3
 
     .prologue
-    .line 12705
+    .line 12983
     iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->refundTimeoutMillis_:J
 
     return-wide v0
@@ -298,7 +298,7 @@
     .registers 2
 
     .prologue
-    .line 12739
+    .line 13017
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->secured_:Z
 
     return v0
@@ -308,10 +308,10 @@
     .registers 5
 
     .prologue
-    .line 12906
+    .line 13187
     const/4 v0, 0x0
 
-    .line 12907
+    .line 13188
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetId()Z
 
@@ -319,7 +319,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 12908
+    .line 13189
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getAssetId()Ljava/lang/String;
@@ -332,7 +332,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12911
+    .line 13192
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetName()Z
 
@@ -340,7 +340,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 12912
+    .line 13193
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getAssetName()Ljava/lang/String;
@@ -353,7 +353,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12915
+    .line 13196
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetType()Z
 
@@ -361,7 +361,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 12916
+    .line 13197
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getAssetType()Ljava/lang/String;
@@ -374,7 +374,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12919
+    .line 13200
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetPackage()Z
 
@@ -382,7 +382,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 12920
+    .line 13201
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getAssetPackage()Ljava/lang/String;
@@ -395,7 +395,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12923
+    .line 13204
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasBlobUrl()Z
 
@@ -403,7 +403,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 12924
+    .line 13205
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getBlobUrl()Ljava/lang/String;
@@ -416,7 +416,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12927
+    .line 13208
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetSignature()Z
 
@@ -424,7 +424,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 12928
+    .line 13209
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getAssetSignature()Ljava/lang/String;
@@ -437,7 +437,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12931
+    .line 13212
     :cond_61
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetSize()Z
 
@@ -445,7 +445,7 @@
 
     if-eqz v1, :cond_72
 
-    .line 12932
+    .line 13213
     const/16 v1, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getAssetSize()J
@@ -458,7 +458,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12935
+    .line 13216
     :cond_72
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasRefundTimeoutMillis()Z
 
@@ -466,7 +466,7 @@
 
     if-eqz v1, :cond_83
 
-    .line 12936
+    .line 13217
     const/16 v1, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getRefundTimeoutMillis()J
@@ -479,7 +479,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12939
+    .line 13220
     :cond_83
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasForwardLocked()Z
 
@@ -487,7 +487,7 @@
 
     if-eqz v1, :cond_94
 
-    .line 12940
+    .line 13221
     const/16 v1, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getForwardLocked()Z
@@ -500,7 +500,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12943
+    .line 13224
     :cond_94
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasSecured()Z
 
@@ -508,7 +508,7 @@
 
     if-eqz v1, :cond_a5
 
-    .line 12944
+    .line 13225
     const/16 v1, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getSecured()Z
@@ -521,7 +521,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12947
+    .line 13228
     :cond_a5
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasVersionCode()Z
 
@@ -529,7 +529,7 @@
 
     if-eqz v1, :cond_b6
 
-    .line 12948
+    .line 13229
     const/16 v1, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getVersionCode()I
@@ -542,7 +542,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12951
+    .line 13232
     :cond_b6
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasDownloadAuthCookieName()Z
 
@@ -550,7 +550,7 @@
 
     if-eqz v1, :cond_c7
 
-    .line 12952
+    .line 13233
     const/16 v1, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getDownloadAuthCookieName()Ljava/lang/String;
@@ -563,7 +563,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12955
+    .line 13236
     :cond_c7
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasDownloadAuthCookieValue()Z
 
@@ -571,7 +571,7 @@
 
     if-eqz v1, :cond_d8
 
-    .line 12956
+    .line 13237
     const/16 v1, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getDownloadAuthCookieValue()Ljava/lang/String;
@@ -584,7 +584,7 @@
 
     add-int/2addr v0, v1
 
-    .line 12959
+    .line 13240
     :cond_d8
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasPostInstallRefundWindowMillis()Z
 
@@ -592,7 +592,7 @@
 
     if-eqz v1, :cond_e9
 
-    .line 12960
+    .line 13241
     const/16 v1, 0x10
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getPostInstallRefundWindowMillis()J
@@ -605,11 +605,11 @@
 
     add-int/2addr v0, v1
 
-    .line 12963
+    .line 13244
     :cond_e9
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->cachedSize:I
 
-    .line 12964
+    .line 13245
     return v0
 .end method
 
@@ -617,7 +617,7 @@
     .registers 2
 
     .prologue
-    .line 12756
+    .line 13034
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->versionCode_:I
 
     return v0
@@ -627,7 +627,7 @@
     .registers 2
 
     .prologue
-    .line 12587
+    .line 12865
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetId:Z
 
     return v0
@@ -637,7 +637,7 @@
     .registers 2
 
     .prologue
-    .line 12604
+    .line 12882
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetName:Z
 
     return v0
@@ -647,7 +647,7 @@
     .registers 2
 
     .prologue
-    .line 12638
+    .line 12916
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetPackage:Z
 
     return v0
@@ -657,7 +657,7 @@
     .registers 2
 
     .prologue
-    .line 12672
+    .line 12950
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetSignature:Z
 
     return v0
@@ -667,7 +667,7 @@
     .registers 2
 
     .prologue
-    .line 12689
+    .line 12967
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetSize:Z
 
     return v0
@@ -677,7 +677,7 @@
     .registers 2
 
     .prologue
-    .line 12621
+    .line 12899
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetType:Z
 
     return v0
@@ -687,7 +687,7 @@
     .registers 2
 
     .prologue
-    .line 12655
+    .line 12933
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasBlobUrl:Z
 
     return v0
@@ -697,7 +697,7 @@
     .registers 2
 
     .prologue
-    .line 12774
+    .line 13052
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasDownloadAuthCookieName:Z
 
     return v0
@@ -707,7 +707,7 @@
     .registers 2
 
     .prologue
-    .line 12791
+    .line 13069
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasDownloadAuthCookieValue:Z
 
     return v0
@@ -717,7 +717,7 @@
     .registers 2
 
     .prologue
-    .line 12723
+    .line 13001
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasForwardLocked:Z
 
     return v0
@@ -727,7 +727,7 @@
     .registers 2
 
     .prologue
-    .line 12808
+    .line 13086
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasPostInstallRefundWindowMillis:Z
 
     return v0
@@ -737,7 +737,7 @@
     .registers 2
 
     .prologue
-    .line 12706
+    .line 12984
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasRefundTimeoutMillis:Z
 
     return v0
@@ -747,7 +747,7 @@
     .registers 2
 
     .prologue
-    .line 12740
+    .line 13018
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasSecured:Z
 
     return v0
@@ -757,7 +757,7 @@
     .registers 2
 
     .prologue
-    .line 12757
+    .line 13035
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasVersionCode:Z
 
     return v0
@@ -773,29 +773,29 @@
     .end annotation
 
     .prologue
-    .line 12971
+    .line 13253
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 12972
+    .line 13254
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_7e
 
-    .line 12976
+    .line 13258
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 12977
+    .line 13259
     :sswitch_d
     return-object p0
 
-    .line 12982
+    .line 13264
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -805,7 +805,7 @@
 
     goto :goto_0
 
-    .line 12986
+    .line 13268
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -815,7 +815,7 @@
 
     goto :goto_0
 
-    .line 12990
+    .line 13272
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -825,7 +825,7 @@
 
     goto :goto_0
 
-    .line 12994
+    .line 13276
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -835,7 +835,7 @@
 
     goto :goto_0
 
-    .line 12998
+    .line 13280
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -845,7 +845,7 @@
 
     goto :goto_0
 
-    .line 13002
+    .line 13284
     :sswitch_36
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -855,7 +855,7 @@
 
     goto :goto_0
 
-    .line 13006
+    .line 13288
     :sswitch_3e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -865,7 +865,7 @@
 
     goto :goto_0
 
-    .line 13010
+    .line 13292
     :sswitch_46
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -875,7 +875,7 @@
 
     goto :goto_0
 
-    .line 13014
+    .line 13296
     :sswitch_4e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -885,7 +885,7 @@
 
     goto :goto_0
 
-    .line 13018
+    .line 13300
     :sswitch_56
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -895,7 +895,7 @@
 
     goto :goto_0
 
-    .line 13022
+    .line 13304
     :sswitch_5e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -905,7 +905,7 @@
 
     goto :goto_0
 
-    .line 13026
+    .line 13308
     :sswitch_66
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -915,7 +915,7 @@
 
     goto :goto_0
 
-    .line 13030
+    .line 13312
     :sswitch_6e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -925,7 +925,7 @@
 
     goto :goto_0
 
-    .line 13034
+    .line 13316
     :sswitch_76
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -935,7 +935,7 @@
 
     goto :goto_0
 
-    .line 12972
+    .line 13254
     :sswitch_data_7e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -966,7 +966,7 @@
     .end annotation
 
     .prologue
-    .line 12578
+    .line 12856
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;
 
     move-result-object v0
@@ -979,15 +979,15 @@
     .parameter "value"
 
     .prologue
-    .line 12589
+    .line 12867
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetId:Z
 
-    .line 12590
+    .line 12868
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetId_:Ljava/lang/String;
 
-    .line 12591
+    .line 12869
     return-object p0
 .end method
 
@@ -996,15 +996,15 @@
     .parameter "value"
 
     .prologue
-    .line 12606
+    .line 12884
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetName:Z
 
-    .line 12607
+    .line 12885
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetName_:Ljava/lang/String;
 
-    .line 12608
+    .line 12886
     return-object p0
 .end method
 
@@ -1013,15 +1013,15 @@
     .parameter "value"
 
     .prologue
-    .line 12640
+    .line 12918
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetPackage:Z
 
-    .line 12641
+    .line 12919
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetPackage_:Ljava/lang/String;
 
-    .line 12642
+    .line 12920
     return-object p0
 .end method
 
@@ -1030,15 +1030,15 @@
     .parameter "value"
 
     .prologue
-    .line 12674
+    .line 12952
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetSignature:Z
 
-    .line 12675
+    .line 12953
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetSignature_:Ljava/lang/String;
 
-    .line 12676
+    .line 12954
     return-object p0
 .end method
 
@@ -1047,15 +1047,15 @@
     .parameter "value"
 
     .prologue
-    .line 12691
+    .line 12969
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetSize:Z
 
-    .line 12692
+    .line 12970
     iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetSize_:J
 
-    .line 12693
+    .line 12971
     return-object p0
 .end method
 
@@ -1064,15 +1064,15 @@
     .parameter "value"
 
     .prologue
-    .line 12623
+    .line 12901
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetType:Z
 
-    .line 12624
+    .line 12902
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->assetType_:Ljava/lang/String;
 
-    .line 12625
+    .line 12903
     return-object p0
 .end method
 
@@ -1081,15 +1081,15 @@
     .parameter "value"
 
     .prologue
-    .line 12657
+    .line 12935
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasBlobUrl:Z
 
-    .line 12658
+    .line 12936
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->blobUrl_:Ljava/lang/String;
 
-    .line 12659
+    .line 12937
     return-object p0
 .end method
 
@@ -1098,15 +1098,15 @@
     .parameter "value"
 
     .prologue
-    .line 12776
+    .line 13054
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasDownloadAuthCookieName:Z
 
-    .line 12777
+    .line 13055
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->downloadAuthCookieName_:Ljava/lang/String;
 
-    .line 12778
+    .line 13056
     return-object p0
 .end method
 
@@ -1115,15 +1115,15 @@
     .parameter "value"
 
     .prologue
-    .line 12793
+    .line 13071
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasDownloadAuthCookieValue:Z
 
-    .line 12794
+    .line 13072
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->downloadAuthCookieValue_:Ljava/lang/String;
 
-    .line 12795
+    .line 13073
     return-object p0
 .end method
 
@@ -1132,15 +1132,15 @@
     .parameter "value"
 
     .prologue
-    .line 12725
+    .line 13003
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasForwardLocked:Z
 
-    .line 12726
+    .line 13004
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->forwardLocked_:Z
 
-    .line 12727
+    .line 13005
     return-object p0
 .end method
 
@@ -1149,15 +1149,15 @@
     .parameter "value"
 
     .prologue
-    .line 12810
+    .line 13088
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasPostInstallRefundWindowMillis:Z
 
-    .line 12811
+    .line 13089
     iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->postInstallRefundWindowMillis_:J
 
-    .line 12812
+    .line 13090
     return-object p0
 .end method
 
@@ -1166,15 +1166,15 @@
     .parameter "value"
 
     .prologue
-    .line 12708
+    .line 12986
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasRefundTimeoutMillis:Z
 
-    .line 12709
+    .line 12987
     iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->refundTimeoutMillis_:J
 
-    .line 12710
+    .line 12988
     return-object p0
 .end method
 
@@ -1183,15 +1183,15 @@
     .parameter "value"
 
     .prologue
-    .line 12742
+    .line 13020
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasSecured:Z
 
-    .line 12743
+    .line 13021
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->secured_:Z
 
-    .line 12744
+    .line 13022
     return-object p0
 .end method
 
@@ -1200,15 +1200,15 @@
     .parameter "value"
 
     .prologue
-    .line 12759
+    .line 13037
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasVersionCode:Z
 
-    .line 12760
+    .line 13038
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->versionCode_:I
 
-    .line 12761
+    .line 13039
     return-object p0
 .end method
 
@@ -1222,14 +1222,14 @@
     .end annotation
 
     .prologue
-    .line 12852
+    .line 13131
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetId()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 12853
+    .line 13132
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getAssetId()Ljava/lang/String;
@@ -1238,7 +1238,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 12855
+    .line 13134
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetName()Z
 
@@ -1246,7 +1246,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 12856
+    .line 13135
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getAssetName()Ljava/lang/String;
@@ -1255,7 +1255,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 12858
+    .line 13137
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetType()Z
 
@@ -1263,7 +1263,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 12859
+    .line 13138
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getAssetType()Ljava/lang/String;
@@ -1272,7 +1272,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 12861
+    .line 13140
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetPackage()Z
 
@@ -1280,7 +1280,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 12862
+    .line 13141
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getAssetPackage()Ljava/lang/String;
@@ -1289,7 +1289,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 12864
+    .line 13143
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasBlobUrl()Z
 
@@ -1297,7 +1297,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 12865
+    .line 13144
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getBlobUrl()Ljava/lang/String;
@@ -1306,7 +1306,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 12867
+    .line 13146
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetSignature()Z
 
@@ -1314,7 +1314,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 12868
+    .line 13147
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getAssetSignature()Ljava/lang/String;
@@ -1323,7 +1323,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 12870
+    .line 13149
     :cond_54
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasAssetSize()Z
 
@@ -1331,7 +1331,7 @@
 
     if-eqz v0, :cond_63
 
-    .line 12871
+    .line 13150
     const/16 v0, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getAssetSize()J
@@ -1340,7 +1340,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 12873
+    .line 13152
     :cond_63
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasRefundTimeoutMillis()Z
 
@@ -1348,7 +1348,7 @@
 
     if-eqz v0, :cond_72
 
-    .line 12874
+    .line 13153
     const/16 v0, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getRefundTimeoutMillis()J
@@ -1357,7 +1357,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 12876
+    .line 13155
     :cond_72
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasForwardLocked()Z
 
@@ -1365,7 +1365,7 @@
 
     if-eqz v0, :cond_81
 
-    .line 12877
+    .line 13156
     const/16 v0, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getForwardLocked()Z
@@ -1374,7 +1374,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 12879
+    .line 13158
     :cond_81
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasSecured()Z
 
@@ -1382,7 +1382,7 @@
 
     if-eqz v0, :cond_90
 
-    .line 12880
+    .line 13159
     const/16 v0, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getSecured()Z
@@ -1391,7 +1391,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 12882
+    .line 13161
     :cond_90
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasVersionCode()Z
 
@@ -1399,7 +1399,7 @@
 
     if-eqz v0, :cond_9f
 
-    .line 12883
+    .line 13162
     const/16 v0, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getVersionCode()I
@@ -1408,7 +1408,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 12885
+    .line 13164
     :cond_9f
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasDownloadAuthCookieName()Z
 
@@ -1416,7 +1416,7 @@
 
     if-eqz v0, :cond_ae
 
-    .line 12886
+    .line 13165
     const/16 v0, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getDownloadAuthCookieName()Ljava/lang/String;
@@ -1425,7 +1425,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 12888
+    .line 13167
     :cond_ae
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasDownloadAuthCookieValue()Z
 
@@ -1433,7 +1433,7 @@
 
     if-eqz v0, :cond_bd
 
-    .line 12889
+    .line 13168
     const/16 v0, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getDownloadAuthCookieValue()Ljava/lang/String;
@@ -1442,7 +1442,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 12891
+    .line 13170
     :cond_bd
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->hasPostInstallRefundWindowMillis()Z
 
@@ -1450,7 +1450,7 @@
 
     if-eqz v0, :cond_cc
 
-    .line 12892
+    .line 13171
     const/16 v0, 0x10
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto$InstallAsset;->getPostInstallRefundWindowMillis()J
@@ -1459,7 +1459,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 12894
+    .line 13173
     :cond_cc
     return-void
 .end method

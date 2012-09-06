@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 641
+    .line 814
     iput-object p1, p0, Lcom/google/android/finsky/activities/PurchaseFragment$5;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,23 @@
 
 # virtual methods
 .method public run()V
-    .registers 2
+    .registers 3
 
     .prologue
-    .line 644
+    .line 817
     iget-object v0, p0, Lcom/google/android/finsky/activities/PurchaseFragment$5;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/activities/PurchaseFragment;->initializeDcbParams()V
+    #getter for: Lcom/google/android/finsky/activities/PurchaseFragment;->mContext:Landroid/content/Context;
+    invoke-static {v0}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$1800(Lcom/google/android/finsky/activities/PurchaseFragment;)Landroid/content/Context;
 
-    .line 645
+    move-result-object v0
+
+    new-instance v1, Lcom/google/android/finsky/activities/PurchaseFragment$5$1;
+
+    invoke-direct {v1, p0}, Lcom/google/android/finsky/activities/PurchaseFragment$5$1;-><init>(Lcom/google/android/finsky/activities/PurchaseFragment$5;)V
+
+    invoke-static {v0, v1}, Lcom/google/android/finsky/billing/carrierbilling/CarrierBillingUtils;->initializeCarrierBillingParams(Landroid/content/Context;Ljava/lang/Runnable;)V
+
+    .line 830
     return-void
 .end method

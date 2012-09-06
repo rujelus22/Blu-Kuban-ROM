@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/google/android/videochat/SelfRenderer$1$1;->val$params:Lcom/google/android/videochat/CameraManager$FrameOutputParameters;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

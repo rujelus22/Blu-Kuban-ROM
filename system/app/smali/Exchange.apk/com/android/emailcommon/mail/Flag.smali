@@ -29,8 +29,6 @@
 
 .field public static final enum SEEN:Lcom/android/emailcommon/mail/Flag;
 
-.field public static final enum SENT:Lcom/android/emailcommon/mail/Flag;
-
 .field public static final enum X_DESTROYED:Lcom/android/emailcommon/mail/Flag;
 
 .field public static final enum X_DOWNLOADED_FULL:Lcom/android/emailcommon/mail/Flag;
@@ -70,6 +68,7 @@
 
     sput-object v0, Lcom/android/emailcommon/mail/Flag;->DELETED:Lcom/android/emailcommon/mail/Flag;
 
+    .line 27
     new-instance v0, Lcom/android/emailcommon/mail/Flag;
 
     const-string v1, "SEEN"
@@ -78,6 +77,7 @@
 
     sput-object v0, Lcom/android/emailcommon/mail/Flag;->SEEN:Lcom/android/emailcommon/mail/Flag;
 
+    .line 28
     new-instance v0, Lcom/android/emailcommon/mail/Flag;
 
     const-string v1, "ANSWERED"
@@ -86,6 +86,7 @@
 
     sput-object v0, Lcom/android/emailcommon/mail/Flag;->ANSWERED:Lcom/android/emailcommon/mail/Flag;
 
+    .line 29
     new-instance v0, Lcom/android/emailcommon/mail/Flag;
 
     const-string v1, "FLAGGED"
@@ -94,6 +95,7 @@
 
     sput-object v0, Lcom/android/emailcommon/mail/Flag;->FLAGGED:Lcom/android/emailcommon/mail/Flag;
 
+    .line 30
     new-instance v0, Lcom/android/emailcommon/mail/Flag;
 
     const-string v1, "DRAFT"
@@ -102,6 +104,7 @@
 
     sput-object v0, Lcom/android/emailcommon/mail/Flag;->DRAFT:Lcom/android/emailcommon/mail/Flag;
 
+    .line 31
     new-instance v0, Lcom/android/emailcommon/mail/Flag;
 
     const-string v1, "RECENT"
@@ -112,95 +115,85 @@
 
     sput-object v0, Lcom/android/emailcommon/mail/Flag;->RECENT:Lcom/android/emailcommon/mail/Flag;
 
+    .line 42
     new-instance v0, Lcom/android/emailcommon/mail/Flag;
 
-    const-string v1, "SENT"
+    const-string v1, "X_DESTROYED"
 
     const/4 v2, 0x6
 
     invoke-direct {v0, v1, v2}, Lcom/android/emailcommon/mail/Flag;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/emailcommon/mail/Flag;->SENT:Lcom/android/emailcommon/mail/Flag;
+    sput-object v0, Lcom/android/emailcommon/mail/Flag;->X_DESTROYED:Lcom/android/emailcommon/mail/Flag;
 
-    .line 38
+    .line 47
     new-instance v0, Lcom/android/emailcommon/mail/Flag;
 
-    const-string v1, "X_DESTROYED"
+    const-string v1, "X_SEND_FAILED"
 
     const/4 v2, 0x7
 
     invoke-direct {v0, v1, v2}, Lcom/android/emailcommon/mail/Flag;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/emailcommon/mail/Flag;->X_DESTROYED:Lcom/android/emailcommon/mail/Flag;
+    sput-object v0, Lcom/android/emailcommon/mail/Flag;->X_SEND_FAILED:Lcom/android/emailcommon/mail/Flag;
 
-    .line 44
+    .line 52
     new-instance v0, Lcom/android/emailcommon/mail/Flag;
 
-    const-string v1, "X_SEND_FAILED"
+    const-string v1, "X_SEND_IN_PROGRESS"
 
     const/16 v2, 0x8
 
     invoke-direct {v0, v1, v2}, Lcom/android/emailcommon/mail/Flag;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/emailcommon/mail/Flag;->X_SEND_FAILED:Lcom/android/emailcommon/mail/Flag;
+    sput-object v0, Lcom/android/emailcommon/mail/Flag;->X_SEND_IN_PROGRESS:Lcom/android/emailcommon/mail/Flag;
 
-    .line 49
+    .line 58
     new-instance v0, Lcom/android/emailcommon/mail/Flag;
 
-    const-string v1, "X_SEND_IN_PROGRESS"
+    const-string v1, "X_DOWNLOADED_FULL"
 
     const/16 v2, 0x9
 
     invoke-direct {v0, v1, v2}, Lcom/android/emailcommon/mail/Flag;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/emailcommon/mail/Flag;->X_SEND_IN_PROGRESS:Lcom/android/emailcommon/mail/Flag;
+    sput-object v0, Lcom/android/emailcommon/mail/Flag;->X_DOWNLOADED_FULL:Lcom/android/emailcommon/mail/Flag;
 
-    .line 56
+    .line 65
     new-instance v0, Lcom/android/emailcommon/mail/Flag;
 
-    const-string v1, "X_DOWNLOADED_FULL"
+    const-string v1, "X_DOWNLOADED_PARTIAL"
 
     const/16 v2, 0xa
 
     invoke-direct {v0, v1, v2}, Lcom/android/emailcommon/mail/Flag;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/emailcommon/mail/Flag;->X_DOWNLOADED_FULL:Lcom/android/emailcommon/mail/Flag;
+    sput-object v0, Lcom/android/emailcommon/mail/Flag;->X_DOWNLOADED_PARTIAL:Lcom/android/emailcommon/mail/Flag;
 
-    .line 63
+    .line 71
     new-instance v0, Lcom/android/emailcommon/mail/Flag;
 
-    const-string v1, "X_DOWNLOADED_PARTIAL"
+    const-string v1, "X_STORE_1"
 
     const/16 v2, 0xb
 
     invoke-direct {v0, v1, v2}, Lcom/android/emailcommon/mail/Flag;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/emailcommon/mail/Flag;->X_DOWNLOADED_PARTIAL:Lcom/android/emailcommon/mail/Flag;
-
-    .line 69
-    new-instance v0, Lcom/android/emailcommon/mail/Flag;
-
-    const-string v1, "X_STORE_1"
-
-    const/16 v2, 0xc
-
-    invoke-direct {v0, v1, v2}, Lcom/android/emailcommon/mail/Flag;-><init>(Ljava/lang/String;I)V
-
     sput-object v0, Lcom/android/emailcommon/mail/Flag;->X_STORE_1:Lcom/android/emailcommon/mail/Flag;
 
-    .line 75
+    .line 77
     new-instance v0, Lcom/android/emailcommon/mail/Flag;
 
     const-string v1, "X_STORE_2"
 
-    const/16 v2, 0xd
+    const/16 v2, 0xc
 
     invoke-direct {v0, v1, v2}, Lcom/android/emailcommon/mail/Flag;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/android/emailcommon/mail/Flag;->X_STORE_2:Lcom/android/emailcommon/mail/Flag;
 
     .line 22
-    const/16 v0, 0xe
+    const/16 v0, 0xd
 
     new-array v0, v0, [Lcom/android/emailcommon/mail/Flag;
 
@@ -232,47 +225,41 @@
 
     const/4 v1, 0x6
 
-    sget-object v2, Lcom/android/emailcommon/mail/Flag;->SENT:Lcom/android/emailcommon/mail/Flag;
+    sget-object v2, Lcom/android/emailcommon/mail/Flag;->X_DESTROYED:Lcom/android/emailcommon/mail/Flag;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
 
-    sget-object v2, Lcom/android/emailcommon/mail/Flag;->X_DESTROYED:Lcom/android/emailcommon/mail/Flag;
+    sget-object v2, Lcom/android/emailcommon/mail/Flag;->X_SEND_FAILED:Lcom/android/emailcommon/mail/Flag;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8
 
-    sget-object v2, Lcom/android/emailcommon/mail/Flag;->X_SEND_FAILED:Lcom/android/emailcommon/mail/Flag;
+    sget-object v2, Lcom/android/emailcommon/mail/Flag;->X_SEND_IN_PROGRESS:Lcom/android/emailcommon/mail/Flag;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9
 
-    sget-object v2, Lcom/android/emailcommon/mail/Flag;->X_SEND_IN_PROGRESS:Lcom/android/emailcommon/mail/Flag;
+    sget-object v2, Lcom/android/emailcommon/mail/Flag;->X_DOWNLOADED_FULL:Lcom/android/emailcommon/mail/Flag;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa
 
-    sget-object v2, Lcom/android/emailcommon/mail/Flag;->X_DOWNLOADED_FULL:Lcom/android/emailcommon/mail/Flag;
+    sget-object v2, Lcom/android/emailcommon/mail/Flag;->X_DOWNLOADED_PARTIAL:Lcom/android/emailcommon/mail/Flag;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb
 
-    sget-object v2, Lcom/android/emailcommon/mail/Flag;->X_DOWNLOADED_PARTIAL:Lcom/android/emailcommon/mail/Flag;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xc
-
     sget-object v2, Lcom/android/emailcommon/mail/Flag;->X_STORE_1:Lcom/android/emailcommon/mail/Flag;
 
     aput-object v2, v0, v1
 
-    const/16 v1, 0xd
+    const/16 v1, 0xc
 
     sget-object v2, Lcom/android/emailcommon/mail/Flag;->X_STORE_2:Lcom/android/emailcommon/mail/Flag;
 

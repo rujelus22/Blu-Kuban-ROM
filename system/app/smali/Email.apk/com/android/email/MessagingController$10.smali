@@ -3,12 +3,12 @@
 .source "MessagingController.java"
 
 # interfaces
-.implements Lcom/android/emailcommon/mail/Folder$MessageRetrievalListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/email/MessagingController;->synchronizeMailboxGeneric(Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/emailcommon/provider/EmailContent$Mailbox;)Lcom/android/email/mail/StoreSynchronizer$SyncResults;
+    value = Lcom/android/email/MessagingController;->loadMessageForView(JLcom/android/email/MessagingListener;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,241 +20,331 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/email/MessagingController;
 
-.field final synthetic val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-.field final synthetic val$folder:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-.field final synthetic val$localMapCopy:Ljava/util/HashMap;
-
-.field final synthetic val$newMessages:Ljava/util/ArrayList;
+.field final synthetic val$messageId:J
 
 
 # direct methods
-.method constructor <init>(Lcom/android/email/MessagingController;Ljava/util/HashMap;Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/emailcommon/provider/EmailContent$Mailbox;Ljava/util/ArrayList;)V
-    .registers 6
-    .parameter
-    .parameter
-    .parameter
+.method constructor <init>(Lcom/android/email/MessagingController;J)V
+    .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 2229
+    .line 1847
     iput-object p1, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
 
-    iput-object p2, p0, Lcom/android/email/MessagingController$10;->val$localMapCopy:Ljava/util/HashMap;
+    iput-wide p2, p0, Lcom/android/email/MessagingController$10;->val$messageId:J
 
-    iput-object p3, p0, Lcom/android/email/MessagingController$10;->val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iput-object p4, p0, Lcom/android/email/MessagingController$10;->val$folder:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iput-object p5, p0, Lcom/android/email/MessagingController$10;->val$newMessages:Ljava/util/ArrayList;
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public loadAttachmentProgress(ILcom/android/emailcommon/mail/Folder$MessageRetrievalListener$DOWNLOAD_STATUS;)V
-    .registers 3
-    .parameter "progress"
-    .parameter "status"
+.method public run()V
+    .registers 15
 
     .prologue
-    .line 2279
-    return-void
-.end method
+    const/4 v13, 0x1
 
-.method public messageRetrieved(Lcom/android/emailcommon/mail/Message;)V
-    .registers 13
-    .parameter "message"
-
-    .prologue
-    .line 2236
-    :try_start_0
-    iget-object v0, p0, Lcom/android/email/MessagingController$10;->val$localMapCopy:Ljava/util/HashMap;
-
-    invoke-virtual {p1}, Lcom/android/emailcommon/mail/Message;->getUid()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lcom/android/email/MessagingController$LocalMessageInfo;
-
-    .line 2238
-    .local v9, localMessageInfo:Lcom/android/email/MessagingController$LocalMessageInfo;
-    const/4 v1, 0x0
-
-    .line 2239
-    .local v1, localMessage:Lcom/android/emailcommon/provider/EmailContent$Message;
-    if-nez v9, :cond_45
-
-    .line 2240
-    new-instance v1, Lcom/android/emailcommon/provider/EmailContent$Message;
-
-    .end local v1           #localMessage:Lcom/android/emailcommon/provider/EmailContent$Message;
-    invoke-direct {v1}, Lcom/android/emailcommon/provider/EmailContent$Message;-><init>()V
-    :try_end_14
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_14} :catch_6c
-
-    .line 2246
-    .restart local v1       #localMessage:Lcom/android/emailcommon/provider/EmailContent$Message;
-    :goto_14
-    if-eqz v1, :cond_44
-
-    .line 2253
-    :try_start_16
-    iget-object v0, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
+    .line 1852
+    :try_start_1
+    iget-object v10, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
 
     #getter for: Lcom/android/email/MessagingController;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/email/MessagingController;->access$100(Lcom/android/email/MessagingController;)Landroid/content/Context;
+    invoke-static {v10}, Lcom/android/email/MessagingController;->access$100(Lcom/android/email/MessagingController;)Landroid/content/Context;
+
+    move-result-object v10
+
+    iget-wide v11, p0, Lcom/android/email/MessagingController$10;->val$messageId:J
+
+    invoke-static {v10, v11, v12}, Lcom/android/emailcommon/provider/EmailContent$Message;->restoreMessageWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Message;
+
+    move-result-object v4
+
+    .line 1854
+    .local v4, message:Lcom/android/emailcommon/provider/EmailContent$Message;
+    if-nez v4, :cond_1d
+
+    .line 1855
+    iget-object v10, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
+
+    #getter for: Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
+    invoke-static {v10}, Lcom/android/email/MessagingController;->access$300(Lcom/android/email/MessagingController;)Lcom/android/email/GroupMessagingListener;
+
+    move-result-object v10
+
+    iget-wide v11, p0, Lcom/android/email/MessagingController$10;->val$messageId:J
+
+    const-string v13, "Unknown message"
+
+    invoke-virtual {v10, v11, v12, v13}, Lcom/android/email/GroupMessagingListener;->loadMessageForViewFailed(JLjava/lang/String;)V
+
+    .line 1902
+    .end local v4           #message:Lcom/android/emailcommon/provider/EmailContent$Message;
+    :goto_1c
+    return-void
+
+    .line 1858
+    .restart local v4       #message:Lcom/android/emailcommon/provider/EmailContent$Message;
+    :cond_1d
+    iget v10, v4, Lcom/android/emailcommon/provider/EmailContent$Message;->mFlagLoaded:I
+
+    if-ne v10, v13, :cond_49
+
+    .line 1859
+    iget-object v10, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
+
+    #getter for: Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
+    invoke-static {v10}, Lcom/android/email/MessagingController;->access$300(Lcom/android/email/MessagingController;)Lcom/android/email/GroupMessagingListener;
+
+    move-result-object v10
+
+    iget-wide v11, p0, Lcom/android/email/MessagingController$10;->val$messageId:J
+
+    invoke-virtual {v10, v11, v12}, Lcom/android/email/GroupMessagingListener;->loadMessageForViewFinished(J)V
+    :try_end_2c
+    .catch Lcom/android/emailcommon/mail/MessagingException; {:try_start_1 .. :try_end_2c} :catch_2d
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_2c} :catch_73
+
+    goto :goto_1c
+
+    .line 1896
+    .end local v4           #message:Lcom/android/emailcommon/provider/EmailContent$Message;
+    :catch_2d
+    move-exception v3
+
+    .line 1897
+    .local v3, me:Lcom/android/emailcommon/mail/MessagingException;
+    sget-boolean v10, Lcom/android/emailcommon/Logging;->LOGD:Z
+
+    if-eqz v10, :cond_39
+
+    const-string v10, "Email"
+
+    const-string v11, ""
+
+    invoke-static {v10, v11, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 1898
+    :cond_39
+    iget-object v10, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
+
+    #getter for: Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
+    invoke-static {v10}, Lcom/android/email/MessagingController;->access$300(Lcom/android/email/MessagingController;)Lcom/android/email/GroupMessagingListener;
+
+    move-result-object v10
+
+    iget-wide v11, p0, Lcom/android/email/MessagingController$10;->val$messageId:J
+
+    invoke-virtual {v3}, Lcom/android/emailcommon/mail/MessagingException;->getMessage()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v10, v11, v12, v13}, Lcom/android/email/GroupMessagingListener;->loadMessageForViewFailed(JLjava/lang/String;)V
+
+    goto :goto_1c
+
+    .line 1865
+    .end local v3           #me:Lcom/android/emailcommon/mail/MessagingException;
+    .restart local v4       #message:Lcom/android/emailcommon/provider/EmailContent$Message;
+    :cond_49
+    :try_start_49
+    iget-object v10, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
+
+    #getter for: Lcom/android/email/MessagingController;->mContext:Landroid/content/Context;
+    invoke-static {v10}, Lcom/android/email/MessagingController;->access$100(Lcom/android/email/MessagingController;)Landroid/content/Context;
+
+    move-result-object v10
+
+    iget-wide v11, v4, Lcom/android/emailcommon/provider/EmailContent$Message;->mAccountKey:J
+
+    invoke-static {v10, v11, v12}, Lcom/android/emailcommon/provider/Account;->restoreAccountWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Account;
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/android/email/MessagingController$10;->val$account:Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    iget-wide v3, v2, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    iget-object v2, p0, Lcom/android/email/MessagingController$10;->val$folder:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget-wide v5, v2, Lcom/android/emailcommon/provider/EmailContent;->mId:J
-
-    iget-object v2, p0, Lcom/android/email/MessagingController$10;->val$folder:Lcom/android/emailcommon/provider/EmailContent$Mailbox;
-
-    iget v7, v2, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->mType:I
-
-    move-object v2, p1
-
-    invoke-static/range {v0 .. v7}, Lcom/android/email/LegacyConversions;->updateMessageFields(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Message;Lcom/android/emailcommon/mail/Message;JJI)Z
-
-    .line 2258
-    iget-object v0, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
-
-    iget-object v2, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
+    .line 1866
+    .local v0, account:Lcom/android/emailcommon/provider/Account;
+    iget-object v10, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
 
     #getter for: Lcom/android/email/MessagingController;->mContext:Landroid/content/Context;
-    invoke-static {v2}, Lcom/android/email/MessagingController;->access$100(Lcom/android/email/MessagingController;)Landroid/content/Context;
+    invoke-static {v10}, Lcom/android/email/MessagingController;->access$100(Lcom/android/email/MessagingController;)Landroid/content/Context;
+
+    move-result-object v10
+
+    iget-wide v11, v4, Lcom/android/emailcommon/provider/EmailContent$Message;->mMailboxKey:J
+
+    invoke-static {v10, v11, v12}, Lcom/android/emailcommon/provider/Mailbox;->restoreMailboxWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/Mailbox;
 
     move-result-object v2
 
-    #calls: Lcom/android/email/MessagingController;->saveOrUpdate(Lcom/android/emailcommon/provider/EmailContent;Landroid/content/Context;)V
-    invoke-static {v0, v1, v2}, Lcom/android/email/MessagingController;->access$500(Lcom/android/email/MessagingController;Lcom/android/emailcommon/provider/EmailContent;Landroid/content/Context;)V
+    .line 1867
+    .local v2, mailbox:Lcom/android/emailcommon/provider/Mailbox;
+    if-eqz v0, :cond_65
 
-    .line 2261
-    sget-object v0, Lcom/android/emailcommon/mail/Flag;->SEEN:Lcom/android/emailcommon/mail/Flag;
+    if-nez v2, :cond_84
 
-    invoke-virtual {p1, v0}, Lcom/android/emailcommon/mail/Message;->isSet(Lcom/android/emailcommon/mail/Flag;)Z
+    .line 1868
+    :cond_65
+    iget-object v10, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
 
-    move-result v0
+    #getter for: Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
+    invoke-static {v10}, Lcom/android/email/MessagingController;->access$300(Lcom/android/email/MessagingController;)Lcom/android/email/GroupMessagingListener;
 
-    if-nez v0, :cond_44
+    move-result-object v10
 
-    .line 2262
-    iget-object v0, p0, Lcom/android/email/MessagingController$10;->val$newMessages:Ljava/util/ArrayList;
+    iget-wide v11, p0, Lcom/android/email/MessagingController$10;->val$messageId:J
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_44
-    .catch Lcom/android/emailcommon/mail/MessagingException; {:try_start_16 .. :try_end_44} :catch_52
-    .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_44} :catch_6c
+    const-string v13, "null account or mailbox"
 
-    .line 2275
-    .end local v1           #localMessage:Lcom/android/emailcommon/provider/EmailContent$Message;
-    .end local v9           #localMessageInfo:Lcom/android/email/MessagingController$LocalMessageInfo;
-    :cond_44
-    :goto_44
-    return-void
+    invoke-virtual {v10, v11, v12, v13}, Lcom/android/email/GroupMessagingListener;->loadMessageForViewFailed(JLjava/lang/String;)V
+    :try_end_72
+    .catch Lcom/android/emailcommon/mail/MessagingException; {:try_start_49 .. :try_end_72} :catch_2d
+    .catch Ljava/lang/RuntimeException; {:try_start_49 .. :try_end_72} :catch_73
 
-    .line 2242
-    .restart local v1       #localMessage:Lcom/android/emailcommon/provider/EmailContent$Message;
-    .restart local v9       #localMessageInfo:Lcom/android/email/MessagingController$LocalMessageInfo;
-    :cond_45
-    :try_start_45
-    iget-object v0, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
+    goto :goto_1c
+
+    .line 1899
+    .end local v0           #account:Lcom/android/emailcommon/provider/Account;
+    .end local v2           #mailbox:Lcom/android/emailcommon/provider/Mailbox;
+    .end local v4           #message:Lcom/android/emailcommon/provider/EmailContent$Message;
+    :catch_73
+    move-exception v9
+
+    .line 1900
+    .local v9, rte:Ljava/lang/RuntimeException;
+    iget-object v10, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
+
+    #getter for: Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
+    invoke-static {v10}, Lcom/android/email/MessagingController;->access$300(Lcom/android/email/MessagingController;)Lcom/android/email/GroupMessagingListener;
+
+    move-result-object v10
+
+    iget-wide v11, p0, Lcom/android/email/MessagingController$10;->val$messageId:J
+
+    invoke-virtual {v9}, Ljava/lang/RuntimeException;->getMessage()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v10, v11, v12, v13}, Lcom/android/email/GroupMessagingListener;->loadMessageForViewFailed(JLjava/lang/String;)V
+
+    goto :goto_1c
+
+    .line 1871
+    .end local v9           #rte:Ljava/lang/RuntimeException;
+    .restart local v0       #account:Lcom/android/emailcommon/provider/Account;
+    .restart local v2       #mailbox:Lcom/android/emailcommon/provider/Mailbox;
+    .restart local v4       #message:Lcom/android/emailcommon/provider/EmailContent$Message;
+    :cond_84
+    :try_start_84
+    iget-object v10, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
 
     #getter for: Lcom/android/email/MessagingController;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/email/MessagingController;->access$100(Lcom/android/email/MessagingController;)Landroid/content/Context;
+    invoke-static {v10}, Lcom/android/email/MessagingController;->access$100(Lcom/android/email/MessagingController;)Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object v10
 
-    iget-wide v2, v9, Lcom/android/email/MessagingController$LocalMessageInfo;->mId:J
+    invoke-static {v10, v0}, Lcom/android/emailcommon/TrafficFlags;->getSyncFlags(Landroid/content/Context;Lcom/android/emailcommon/provider/Account;)I
 
-    invoke-static {v0, v2, v3}, Lcom/android/emailcommon/provider/EmailContent$Message;->restoreMessageWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Message;
+    move-result v10
 
-    move-result-object v1
+    invoke-static {v10}, Landroid/net/TrafficStats;->setThreadStatsTag(I)V
 
-    goto :goto_14
+    .line 1873
+    iget-object v10, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
 
-    .line 2264
-    :catch_52
-    move-exception v10
+    #getter for: Lcom/android/email/MessagingController;->mContext:Landroid/content/Context;
+    invoke-static {v10}, Lcom/android/email/MessagingController;->access$100(Lcom/android/email/MessagingController;)Landroid/content/Context;
 
-    .line 2265
-    .local v10, me:Lcom/android/emailcommon/mail/MessagingException;
-    const-string v0, "Email"
+    move-result-object v10
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-static {v0, v10}, Lcom/android/email/mail/Store;->getInstance(Lcom/android/emailcommon/provider/Account;Landroid/content/Context;)Lcom/android/email/mail/Store;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v8
 
-    const-string v3, "Error while copying downloaded message."
+    .line 1874
+    .local v8, remoteStore:Lcom/android/email/mail/Store;
+    iget-object v7, v2, Lcom/android/emailcommon/provider/Mailbox;->mServerId:Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 1877
+    .local v7, remoteServerId:Ljava/lang/String;
+    iget-object v10, v4, Lcom/android/emailcommon/provider/EmailContent$Message;->mProtocolSearchInfo:Ljava/lang/String;
 
-    move-result-object v2
+    invoke-static {v10}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result v10
 
-    move-result-object v2
+    if-nez v10, :cond_a7
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 1878
+    iget-object v7, v4, Lcom/android/emailcommon/provider/EmailContent$Message;->mProtocolSearchInfo:Ljava/lang/String;
 
-    move-result-object v2
+    .line 1880
+    :cond_a7
+    invoke-virtual {v8, v7}, Lcom/android/email/mail/Store;->getFolder(Ljava/lang/String;)Lcom/android/emailcommon/mail/Folder;
 
-    invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_6b
-    .catch Ljava/lang/Exception; {:try_start_45 .. :try_end_6b} :catch_6c
+    move-result-object v5
 
-    goto :goto_44
+    .line 1881
+    .local v5, remoteFolder:Lcom/android/emailcommon/mail/Folder;
+    sget-object v10, Lcom/android/emailcommon/mail/Folder$OpenMode;->READ_WRITE:Lcom/android/emailcommon/mail/Folder$OpenMode;
 
-    .line 2270
-    .end local v1           #localMessage:Lcom/android/emailcommon/provider/EmailContent$Message;
-    .end local v9           #localMessageInfo:Lcom/android/email/MessagingController$LocalMessageInfo;
-    .end local v10           #me:Lcom/android/emailcommon/mail/MessagingException;
-    :catch_6c
-    move-exception v8
+    invoke-virtual {v5, v10}, Lcom/android/emailcommon/mail/Folder;->open(Lcom/android/emailcommon/mail/Folder$OpenMode;)V
 
-    .line 2271
-    .local v8, e:Ljava/lang/Exception;
-    const-string v0, "Email"
+    .line 1884
+    iget-object v10, v4, Lcom/android/emailcommon/provider/EmailContent$Message;->mServerId:Ljava/lang/String;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v10}, Lcom/android/emailcommon/mail/Folder;->getMessage(Ljava/lang/String;)Lcom/android/emailcommon/mail/Message;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v6
 
-    const-string v3, "Error while storing downloaded message."
+    .line 1885
+    .local v6, remoteMessage:Lcom/android/emailcommon/mail/Message;
+    new-instance v1, Lcom/android/emailcommon/mail/FetchProfile;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Lcom/android/emailcommon/mail/FetchProfile;-><init>()V
 
-    move-result-object v2
+    .line 1886
+    .local v1, fp:Lcom/android/emailcommon/mail/FetchProfile;
+    sget-object v10, Lcom/android/emailcommon/mail/FetchProfile$Item;->BODY:Lcom/android/emailcommon/mail/FetchProfile$Item;
 
-    invoke-virtual {v8}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v1, v10}, Lcom/android/emailcommon/mail/FetchProfile;->add(Ljava/lang/Object;)Z
 
-    move-result-object v3
+    .line 1887
+    const/4 v10, 0x1
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-array v10, v10, [Lcom/android/emailcommon/mail/Message;
 
-    move-result-object v2
+    const/4 v11, 0x0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    aput-object v6, v10, v11
 
-    move-result-object v2
+    const/4 v11, 0x0
 
-    invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v5, v10, v1, v11}, Lcom/android/emailcommon/mail/Folder;->fetch([Lcom/android/emailcommon/mail/Message;Lcom/android/emailcommon/mail/FetchProfile;Lcom/android/emailcommon/mail/Folder$MessageRetrievalListener;)V
 
-    goto :goto_44
+    .line 1890
+    iget-object v10, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
+
+    const/4 v11, 0x1
+
+    invoke-virtual {v10, v6, v0, v2, v11}, Lcom/android/email/MessagingController;->copyOneMessageToProvider(Lcom/android/emailcommon/mail/Message;Lcom/android/emailcommon/provider/Account;Lcom/android/emailcommon/provider/Mailbox;I)V
+
+    .line 1894
+    iget-object v10, p0, Lcom/android/email/MessagingController$10;->this$0:Lcom/android/email/MessagingController;
+
+    #getter for: Lcom/android/email/MessagingController;->mListeners:Lcom/android/email/GroupMessagingListener;
+    invoke-static {v10}, Lcom/android/email/MessagingController;->access$300(Lcom/android/email/MessagingController;)Lcom/android/email/GroupMessagingListener;
+
+    move-result-object v10
+
+    iget-wide v11, p0, Lcom/android/email/MessagingController$10;->val$messageId:J
+
+    invoke-virtual {v10, v11, v12}, Lcom/android/email/GroupMessagingListener;->loadMessageForViewFinished(J)V
+    :try_end_db
+    .catch Lcom/android/emailcommon/mail/MessagingException; {:try_start_84 .. :try_end_db} :catch_2d
+    .catch Ljava/lang/RuntimeException; {:try_start_84 .. :try_end_db} :catch_73
+
+    goto/16 :goto_1c
 .end method

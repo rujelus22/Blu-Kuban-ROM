@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/emailcommon/service/PolicyServiceProxy;->clearUnsupportedPolicies(Lcom/android/emailcommon/service/PolicySet;)Lcom/android/emailcommon/service/PolicySet;
+    value = Lcom/android/emailcommon/service/PolicyServiceProxy;->clearUnsupportedPolicies(Lcom/android/emailcommon/provider/Policy;)Lcom/android/emailcommon/provider/Policy;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,11 +20,11 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
 
-.field final synthetic val$arg0:Lcom/android/emailcommon/service/PolicySet;
+.field final synthetic val$arg0:Lcom/android/emailcommon/provider/Policy;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/emailcommon/service/PolicyServiceProxy;Lcom/android/emailcommon/service/PolicySet;)V
+.method constructor <init>(Lcom/android/emailcommon/service/PolicyServiceProxy;Lcom/android/emailcommon/provider/Policy;)V
     .registers 3
     .parameter
     .parameter
@@ -33,9 +33,9 @@
     .line 53
     iput-object p1, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$1;->this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
 
-    iput-object p2, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$1;->val$arg0:Lcom/android/emailcommon/service/PolicySet;
+    iput-object p2, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$1;->val$arg0:Lcom/android/emailcommon/provider/Policy;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -61,9 +61,9 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$1;->val$arg0:Lcom/android/emailcommon/service/PolicySet;
+    iget-object v2, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$1;->val$arg0:Lcom/android/emailcommon/provider/Policy;
 
-    invoke-interface {v1, v2}, Lcom/android/emailcommon/service/IPolicyService;->clearUnsupportedPolicies(Lcom/android/emailcommon/service/PolicySet;)Lcom/android/emailcommon/service/PolicySet;
+    invoke-interface {v1, v2}, Lcom/android/emailcommon/service/IPolicyService;->clearUnsupportedPolicies(Lcom/android/emailcommon/provider/Policy;)Lcom/android/emailcommon/provider/Policy;
 
     move-result-object v1
 

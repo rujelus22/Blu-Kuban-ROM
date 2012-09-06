@@ -3,128 +3,134 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/g;
+.implements Landroid/text/TextWatcher;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/ui/u;
-
-.field private final b:Lcom/google/android/youtube/app/ac;
-
-.field private final c:Ljava/lang/String;
+.field final synthetic a:Lcom/google/android/youtube/app/ui/aa;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/app/ui/u;Lcom/google/android/youtube/app/ac;Ljava/lang/String;)V
-    .registers 4
-    .parameter
-    .parameter
+.method constructor <init>(Lcom/google/android/youtube/app/ui/aa;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 313
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/ac;->a:Lcom/google/android/youtube/app/ui/u;
+    .line 119
+    iput-object p1, p0, Lcom/google/android/youtube/app/ui/ac;->a:Lcom/google/android/youtube/app/ui/aa;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 314
-    iput-object p3, p0, Lcom/google/android/youtube/app/ui/ac;->c:Ljava/lang/String;
-
-    .line 315
-    iput-object p2, p0, Lcom/google/android/youtube/app/ui/ac;->b:Lcom/google/android/youtube/app/ac;
-
-    .line 316
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
-    .registers 6
+.method public final afterTextChanged(Landroid/text/Editable;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 123
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_26
+
+    .line 124
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ac;->a:Lcom/google/android/youtube/app/ui/aa;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/aa;->b(Lcom/google/android/youtube/app/ui/aa;)Landroid/widget/TextView;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 125
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ac;->a:Lcom/google/android/youtube/app/ui/aa;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/aa;->c(Lcom/google/android/youtube/app/ui/aa;)Landroid/view/View;
+
+    move-result-object v0
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 126
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ac;->a:Lcom/google/android/youtube/app/ui/aa;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/google/android/youtube/app/ui/aa;->a(Lcom/google/android/youtube/app/ui/aa;Z)V
+
+    .line 132
+    :goto_25
+    return-void
+
+    .line 127
+    :cond_26
+    invoke-static {}, Lcom/google/android/youtube/app/ui/aa;->a()Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3e
+
+    .line 128
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ac;->a:Lcom/google/android/youtube/app/ui/aa;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/aa;->d(Lcom/google/android/youtube/app/ui/aa;)V
+
+    goto :goto_25
+
+    .line 130
+    :cond_3e
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ac;->a:Lcom/google/android/youtube/app/ui/aa;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/aa;->e(Lcom/google/android/youtube/app/ui/aa;)V
+
+    goto :goto_25
+.end method
+
+.method public final beforeTextChanged(Ljava/lang/CharSequence;III)V
+    .registers 5
+    .parameter
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 306
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ac;->a:Lcom/google/android/youtube/app/ui/u;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/u;->dismiss()V
-
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ac;->a:Lcom/google/android/youtube/app/ui/u;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/u;->j(Lcom/google/android/youtube/app/ui/u;)Lcom/google/android/youtube/core/Analytics;
-
-    move-result-object v0
-
-    const-string v1, "UsernameCreationError"
-
-    invoke-virtual {p2}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/Analytics;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ac;->b:Lcom/google/android/youtube/app/ac;
-
-    invoke-interface {v0, p2}, Lcom/google/android/youtube/app/ac;->a(Ljava/lang/Exception;)V
-
+    .line 121
     return-void
 .end method
 
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 9
+.method public final onTextChanged(Ljava/lang/CharSequence;III)V
+    .registers 5
+    .parameter
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 306
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ac;->a:Lcom/google/android/youtube/app/ui/u;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/u;->dismiss()V
-
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ac;->a:Lcom/google/android/youtube/app/ui/u;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/u;->j(Lcom/google/android/youtube/app/ui/u;)Lcom/google/android/youtube/core/Analytics;
-
-    move-result-object v0
-
-    const-string v1, "UsernameCreated"
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/Analytics;->b(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ac;->b:Lcom/google/android/youtube/app/ac;
-
-    new-instance v1, Lcom/google/android/youtube/core/model/UserAuth;
-
-    iget-object v2, p0, Lcom/google/android/youtube/app/ui/ac;->a:Lcom/google/android/youtube/app/ui/u;
-
-    invoke-static {v2}, Lcom/google/android/youtube/app/ui/u;->k(Lcom/google/android/youtube/app/ui/u;)Lcom/google/android/youtube/core/model/UserAuth;
-
-    move-result-object v2
-
-    iget-object v2, v2, Lcom/google/android/youtube/core/model/UserAuth;->a:Ljava/lang/String;
-
-    iget-object v3, p0, Lcom/google/android/youtube/app/ui/ac;->c:Ljava/lang/String;
-
-    iget-object v4, p0, Lcom/google/android/youtube/app/ui/ac;->a:Lcom/google/android/youtube/app/ui/u;
-
-    invoke-static {v4}, Lcom/google/android/youtube/app/ui/u;->k(Lcom/google/android/youtube/app/ui/u;)Lcom/google/android/youtube/core/model/UserAuth;
-
-    move-result-object v4
-
-    iget-object v4, v4, Lcom/google/android/youtube/core/model/UserAuth;->c:Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;
-
-    iget-object v5, p0, Lcom/google/android/youtube/app/ui/ac;->a:Lcom/google/android/youtube/app/ui/u;
-
-    invoke-static {v5}, Lcom/google/android/youtube/app/ui/u;->k(Lcom/google/android/youtube/app/ui/u;)Lcom/google/android/youtube/core/model/UserAuth;
-
-    move-result-object v5
-
-    iget-object v5, v5, Lcom/google/android/youtube/core/model/UserAuth;->d:Ljava/lang/String;
-
-    invoke-direct {v1, v2, v3, v4, v5}, Lcom/google/android/youtube/core/model/UserAuth;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;Ljava/lang/String;)V
-
-    invoke-interface {v0, v1}, Lcom/google/android/youtube/app/ac;->a(Lcom/google/android/youtube/core/model/UserAuth;)V
-
+    .line 120
     return-void
 .end method

@@ -172,7 +172,7 @@
     .line 74
     iget-object v1, p0, Lcom/sec/android/app/camera/glwidget/TwGLRecordingModePopup;->mMenuWrapper:Lcom/sec/android/glview/TwGLTitleDecorator;
 
-    const v2, 0x7f02017a
+    const v2, 0x7f020179
 
     invoke-virtual {v1, v2}, Lcom/sec/android/glview/TwGLTitleDecorator;->setNinePatchBackground(I)Z
 
@@ -198,7 +198,7 @@
     .line 77
     iget-object v1, p0, Lcom/sec/android/app/camera/glwidget/TwGLRecordingModePopup;->mList:Lcom/sec/android/glview/TwGLList;
 
-    const v2, 0x7f02017c
+    const v2, 0x7f02017b
 
     invoke-virtual {v1, v2}, Lcom/sec/android/glview/TwGLList;->setScrollBarResource(I)V
 

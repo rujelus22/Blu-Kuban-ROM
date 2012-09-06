@@ -21,7 +21,7 @@
 
 .field public static final CONTROL_WINDOW_VIEW_HAS_FOCUS:I = 0x1
 
-.field static final DEBUG:Z = true
+.field static final DEBUG:Z = false
 
 .field static final DEBUG_LOGCHK:Z = false
 

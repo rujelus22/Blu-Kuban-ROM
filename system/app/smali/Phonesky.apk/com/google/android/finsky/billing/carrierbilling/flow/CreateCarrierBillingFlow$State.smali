@@ -54,7 +54,7 @@
 
     const/4 v3, 0x0
 
-    .line 102
+    .line 97
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;
 
     const-string v1, "INIT"
@@ -63,7 +63,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;->INIT:Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;
 
-    .line 103
+    .line 98
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;
 
     const-string v1, "SHOWING_TOS"
@@ -72,7 +72,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;->SHOWING_TOS:Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;
 
-    .line 104
+    .line 99
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;
 
     const-string v1, "SHOWING_TOS_AND_USERINFO"
@@ -81,7 +81,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;->SHOWING_TOS_AND_USERINFO:Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;
 
-    .line 105
+    .line 100
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;
 
     const-string v1, "SHOWING_EDIT_USERINFO"
@@ -90,7 +90,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;->SHOWING_EDIT_USERINFO:Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;
 
-    .line 106
+    .line 101
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;
 
     const-string v1, "SENDING_REQUEST"
@@ -99,7 +99,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;->SENDING_REQUEST:Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;
 
-    .line 107
+    .line 102
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;
 
     const-string v1, "DONE"
@@ -110,7 +110,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;->DONE:Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;
 
-    .line 101
+    .line 96
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;
@@ -157,7 +157,7 @@
     .end annotation
 
     .prologue
-    .line 101
+    .line 96
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -168,7 +168,7 @@
     .parameter
 
     .prologue
-    .line 101
+    .line 96
     const-class v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -184,7 +184,7 @@
     .registers 1
 
     .prologue
-    .line 101
+    .line 96
     sget-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;->$VALUES:[Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;
 
     invoke-virtual {v0}, [Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$State;->clone()Ljava/lang/Object;

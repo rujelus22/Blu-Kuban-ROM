@@ -1,5 +1,6 @@
 .class Lcom/google/android/maps/driveabout/publisher/f;
 .super Landroid/os/Handler;
+.source "SourceFile"
 
 
 # instance fields
@@ -9,7 +10,10 @@
 # direct methods
 .method constructor <init>(Lcom/google/android/maps/driveabout/publisher/NavigationEventPublisherService;)V
     .registers 2
+    .parameter
 
+    .prologue
+    .line 130
     iput-object p1, p0, Lcom/google/android/maps/driveabout/publisher/f;->a:Lcom/google/android/maps/driveabout/publisher/NavigationEventPublisherService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -21,16 +25,22 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .registers 5
+    .parameter
 
+    .prologue
+    .line 133
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_4e
 
+    .line 159
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
+    .line 161
     :goto_8
     return-void
 
+    .line 135
     :pswitch_9
     iget-object v0, p0, Lcom/google/android/maps/driveabout/publisher/f;->a:Lcom/google/android/maps/driveabout/publisher/NavigationEventPublisherService;
 
@@ -40,6 +50,7 @@
 
     monitor-enter v1
 
+    .line 136
     :try_start_10
     iget-object v0, p0, Lcom/google/android/maps/driveabout/publisher/f;->a:Lcom/google/android/maps/driveabout/publisher/NavigationEventPublisherService;
 
@@ -51,6 +62,7 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 137
     monitor-exit v1
 
     goto :goto_8
@@ -64,6 +76,7 @@
 
     throw v0
 
+    .line 140
     :pswitch_20
     iget-object v0, p0, Lcom/google/android/maps/driveabout/publisher/f;->a:Lcom/google/android/maps/driveabout/publisher/NavigationEventPublisherService;
 
@@ -73,6 +86,7 @@
 
     monitor-enter v1
 
+    .line 141
     :try_start_27
     iget-object v0, p0, Lcom/google/android/maps/driveabout/publisher/f;->a:Lcom/google/android/maps/driveabout/publisher/NavigationEventPublisherService;
 
@@ -84,6 +98,7 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
+    .line 142
     monitor-exit v1
 
     goto :goto_8
@@ -97,6 +112,7 @@
 
     throw v0
 
+    .line 146
     :pswitch_37
     :try_start_37
     iget-object v0, p0, Lcom/google/android/maps/driveabout/publisher/f;->a:Lcom/google/android/maps/driveabout/publisher/NavigationEventPublisherService;
@@ -111,11 +127,13 @@
 
     goto :goto_8
 
+    .line 147
     :catch_40
     move-exception v0
 
     goto :goto_8
 
+    .line 153
     :pswitch_42
     :try_start_42
     iget-object v0, p0, Lcom/google/android/maps/driveabout/publisher/f;->a:Lcom/google/android/maps/driveabout/publisher/NavigationEventPublisherService;
@@ -130,11 +148,13 @@
 
     goto :goto_8
 
+    .line 154
     :catch_4b
     move-exception v0
 
     goto :goto_8
 
+    .line 133
     nop
 
     :pswitch_data_4e

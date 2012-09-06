@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:icon="@drawable/ic_menu_camera" android:id="@id/post_camera_photo" android:title="@string/menu_take_camera_photo" />
-    <item android:icon="@drawable/ic_menu_camera" android:id="@id/post_gallery_photo" android:title="@string/menu_choose_photo_from_gallery" />
-</menu>

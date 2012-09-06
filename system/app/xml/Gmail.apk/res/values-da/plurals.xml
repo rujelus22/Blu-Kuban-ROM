@@ -53,40 +53,40 @@
         <item quantity="one">Venter på handling for %1$d samtale.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er ignoreret.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er ignoreret.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er ignoreret.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er ignoreret.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er rapporteret som spam.</item>
-        <item quantity="one">lt;b>%1$d&amp;lt;/b> er rapporteret som spam.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er rapporteret som spam.</item>
+        <item quantity="one">lt;b>%1$d&amp;amp;amp;lt;/b> er rapporteret som spam.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er arkiveret.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er arkiveret.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er arkiveret.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er arkiveret.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er flyttet til indbakken.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er flyttet til indbakken.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er flyttet til indbakken.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er flyttet til indbakken.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er slettet.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er slettet.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er slettet.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er slettet.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er markeret som vigtige.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er markeret som vigtige.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er markeret som vigtige.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er markeret som vigtige.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er markeret som ikke-vigtige</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er markeret som ikke-vigtige.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er markeret som ikke-vigtige</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er markeret som ikke-vigtige.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er markeret som læst.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er markeret som læst.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er markeret som læst.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er markeret som læst.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er markeret som ulæst</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er markeret som ulæst</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er markeret som ulæst</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er markeret som ulæst</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Ændrede etiketter.</item>

@@ -28,7 +28,7 @@
 
     const/4 v2, 0x0
 
-    .line 34
+    .line 38
     new-instance v0, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;
 
     const-string v1, "DISABLED"
@@ -37,7 +37,7 @@
 
     sput-object v0, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;->DISABLED:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;
 
-    .line 35
+    .line 39
     new-instance v0, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;
 
     const-string v1, "ICONIFIED"
@@ -46,7 +46,7 @@
 
     sput-object v0, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;->ICONIFIED:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;
 
-    .line 36
+    .line 40
     new-instance v0, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;
 
     const-string v1, "EXPANDED"
@@ -55,7 +55,7 @@
 
     sput-object v0, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;->EXPANDED:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;
 
-    .line 37
+    .line 41
     new-instance v0, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;
 
     const-string v1, "CUSTOM"
@@ -64,7 +64,7 @@
 
     sput-object v0, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;->CUSTOM:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;
 
-    .line 33
+    .line 37
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;
@@ -96,7 +96,7 @@
     .parameter
 
     .prologue
-    .line 33
+    .line 37
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -107,7 +107,7 @@
     .parameter
 
     .prologue
-    .line 33
+    .line 37
     const-class v0, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -123,7 +123,7 @@
     .registers 1
 
     .prologue
-    .line 33
+    .line 37
     sget-object v0, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;->$VALUES:[Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;
 
     invoke-virtual {v0}, [Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl$SearchMode;->clone()Ljava/lang/Object;

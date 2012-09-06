@@ -18,20 +18,17 @@
 .method public abstract abandonEdit()V
 .end method
 
-.method public abstract deleteAccount(Lcom/android/emailcommon/provider/EmailContent$Account;)V
+.method public abstract deleteAccount(Lcom/android/emailcommon/provider/Account;)V
 .end method
 
-.method public abstract onIncomingSettings(Lcom/android/emailcommon/provider/EmailContent$Account;)V
+.method public abstract onEditQuickResponses(Lcom/android/emailcommon/provider/Account;)V
 .end method
 
-.method public abstract onIncomingSettingsForSeven(Lcom/android/emailcommon/provider/EmailContent$Account;)V
+.method public abstract onIncomingSettings(Lcom/android/emailcommon/provider/Account;)V
 .end method
 
-.method public abstract onOutgoingSettings(Lcom/android/emailcommon/provider/EmailContent$Account;)V
+.method public abstract onOutgoingSettings(Lcom/android/emailcommon/provider/Account;)V
 .end method
 
-.method public abstract onSyncScheduleSettings(Lcom/android/emailcommon/provider/EmailContent$Account;)V
-.end method
-
-.method public abstract updateAccounts()V
+.method public abstract onSettingsChanged(Lcom/android/emailcommon/provider/Account;Ljava/lang/String;Ljava/lang/Object;)V
 .end method

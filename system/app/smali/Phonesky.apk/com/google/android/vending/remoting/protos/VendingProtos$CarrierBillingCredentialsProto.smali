@@ -31,25 +31,25 @@
     .registers 3
 
     .prologue
-    .line 6786
+    .line 6916
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 6791
+    .line 6921
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->credentials_:Ljava/lang/String;
 
-    .line 6808
+    .line 6938
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->credentialsTimeout_:J
 
-    .line 6845
+    .line 6976
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->cachedSize:I
 
-    .line 6786
+    .line 6916
     return-void
 .end method
 
@@ -59,15 +59,15 @@
     .registers 2
 
     .prologue
-    .line 6847
+    .line 6979
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 6849
+    .line 6981
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->getSerializedSize()I
 
-    .line 6851
+    .line 6983
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->cachedSize:I
 
@@ -78,7 +78,7 @@
     .registers 2
 
     .prologue
-    .line 6792
+    .line 6922
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->credentials_:Ljava/lang/String;
 
     return-object v0
@@ -88,7 +88,7 @@
     .registers 3
 
     .prologue
-    .line 6809
+    .line 6939
     iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->credentialsTimeout_:J
 
     return-wide v0
@@ -98,10 +98,10 @@
     .registers 5
 
     .prologue
-    .line 6855
+    .line 6988
     const/4 v0, 0x0
 
-    .line 6856
+    .line 6989
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->hasCredentials()Z
 
@@ -109,7 +109,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 6857
+    .line 6990
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->getCredentials()Ljava/lang/String;
@@ -122,7 +122,7 @@
 
     add-int/2addr v0, v1
 
-    .line 6860
+    .line 6993
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->hasCredentialsTimeout()Z
 
@@ -130,7 +130,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 6861
+    .line 6994
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->getCredentialsTimeout()J
@@ -143,11 +143,11 @@
 
     add-int/2addr v0, v1
 
-    .line 6864
+    .line 6997
     :cond_21
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->cachedSize:I
 
-    .line 6865
+    .line 6998
     return v0
 .end method
 
@@ -155,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 6793
+    .line 6923
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->hasCredentials:Z
 
     return v0
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 6810
+    .line 6940
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->hasCredentialsTimeout:Z
 
     return v0
@@ -181,29 +181,29 @@
     .end annotation
 
     .prologue
-    .line 6872
+    .line 7006
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 6873
+    .line 7007
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 6877
+    .line 7011
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 6878
+    .line 7012
     :sswitch_d
     return-object p0
 
-    .line 6883
+    .line 7017
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 6887
+    .line 7021
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 6873
+    .line 7007
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -242,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 6784
+    .line 6914
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;
 
     move-result-object v0
@@ -255,15 +255,15 @@
     .parameter "value"
 
     .prologue
-    .line 6795
+    .line 6925
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->hasCredentials:Z
 
-    .line 6796
+    .line 6926
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->credentials_:Ljava/lang/String;
 
-    .line 6797
+    .line 6927
     return-object p0
 .end method
 
@@ -272,15 +272,15 @@
     .parameter "value"
 
     .prologue
-    .line 6812
+    .line 6942
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->hasCredentialsTimeout:Z
 
-    .line 6813
+    .line 6943
     iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->credentialsTimeout_:J
 
-    .line 6814
+    .line 6944
     return-object p0
 .end method
 
@@ -294,14 +294,14 @@
     .end annotation
 
     .prologue
-    .line 6837
+    .line 6968
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->hasCredentials()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 6838
+    .line 6969
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->getCredentials()Ljava/lang/String;
@@ -310,7 +310,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 6840
+    .line 6971
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->hasCredentialsTimeout()Z
 
@@ -318,7 +318,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 6841
+    .line 6972
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;->getCredentialsTimeout()J
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 6843
+    .line 6974
     :cond_1c
     return-void
 .end method

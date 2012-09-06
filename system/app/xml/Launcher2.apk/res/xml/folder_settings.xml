@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/folder_settings_title" android:key="@string/pref_folder_settings_key"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:launcher="http://schemas.android.com/apk/res/com.anddoes.launcher">
+    <com.anddoes.launcher.preference.IconListPreference android:entries="@array/folder_preview_entries" android:title="@string/folder_preview_title" android:key="@string/pref_folder_preview_key" android:defaultValue="@string/pref_folder_preview_default" android:entryValues="@array/folder_preview_values" launcher:entryIcons="@array/folder_preview_icons" />
+    <com.anddoes.launcher.preference.IconListPreference android:entries="@array/folder_background_entries" android:title="@string/folder_background_title" android:key="@string/pref_folder_background_key" android:defaultValue="@string/pref_folder_background_default" android:entryValues="@array/folder_background_values" launcher:entryIcons="@array/folder_background_icons" />
+    <CheckBoxPreference android:title="@string/auto_merge_folders_title" android:key="@string/pref_auto_merge_folders_key" android:summary="@string/auto_merge_folders_summary" android:defaultValue="@bool/pref_auto_merge_folders_default" />
+    <CheckBoxPreference android:title="@string/hide_folder_name_title" android:key="@string/pref_hide_folder_name_key" android:summary="@string/hide_folder_name_summary" android:defaultValue="@bool/pref_hide_folder_name_default" />
+    <CheckBoxPreference android:title="@string/hide_icon_labels_inside_folders_title" android:key="@string/pref_hide_icon_labels_inside_folders_key" android:summary="@string/hide_icon_labels_inside_folders_summary" android:defaultValue="@bool/pref_hide_icon_labels_inside_folders_default" />
+</PreferenceScreen>

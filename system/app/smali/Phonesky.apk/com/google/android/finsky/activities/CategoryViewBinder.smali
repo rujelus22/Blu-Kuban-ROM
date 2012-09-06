@@ -40,7 +40,7 @@
 
     .prologue
     .line 19
-    const v0, 0x7f080059
+    const v0, 0x7f08005d
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

@@ -36,24 +36,24 @@
     .parameter "handler"
 
     .prologue
-    .line 426
+    .line 364
     iput-object p1, p0, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->this$0:Lcom/google/android/finsky/utils/BitmapLoader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 427
+    .line 365
     iput-object p2, p0, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 428
+    .line 366
     iput-object p3, p0, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->mRequestUrl:Ljava/lang/String;
 
-    .line 429
+    .line 367
     iput-object p4, p0, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->mCacheKey:Ljava/lang/String;
 
-    .line 430
+    .line 368
     iput-object p5, p0, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->mBitmapLoaded:Lcom/google/android/finsky/utils/BitmapLoader$BitmapLoadedHandler;
 
-    .line 431
+    .line 369
     return-void
 .end method
 
@@ -63,7 +63,7 @@
     .parameter "x1"
 
     .prologue
-    .line 412
+    .line 350
     iput-object p1, p0, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->mBitmap:Landroid/graphics/Bitmap;
 
     return-object p1
@@ -74,7 +74,7 @@
     .parameter "x0"
 
     .prologue
-    .line 412
+    .line 350
     iget-object v0, p0, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->mBitmapLoaded:Lcom/google/android/finsky/utils/BitmapLoader$BitmapLoadedHandler;
 
     return-object v0
@@ -86,17 +86,17 @@
     .registers 5
 
     .prologue
-    .line 437
+    .line 375
     iget-object v2, p0, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->mBitmapLoaded:Lcom/google/android/finsky/utils/BitmapLoader$BitmapLoadedHandler;
 
     if-nez v2, :cond_5
 
-    .line 457
+    .line 395
     :cond_4
     :goto_4
     return-void
 
-    .line 441
+    .line 379
     :cond_5
     iget-object v2, p0, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->this$0:Lcom/google/android/finsky/utils/BitmapLoader;
 
@@ -113,20 +113,20 @@
 
     check-cast v1, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;
 
-    .line 442
+    .line 380
     .local v1, wrapper:Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;
     if-eqz v1, :cond_27
 
-    .line 443
+    .line 381
     invoke-virtual {v1, p0}, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;->removeHandlerAndCancelIfNecessary(Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;)Z
 
     move-result v0
 
-    .line 444
+    .line 382
     .local v0, canceled:Z
     if-eqz v0, :cond_4
 
-    .line 445
+    .line 383
     iget-object v2, p0, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->this$0:Lcom/google/android/finsky/utils/BitmapLoader;
 
     #getter for: Lcom/google/android/finsky/utils/BitmapLoader;->mInFlightRequests:Ljava/util/HashMap;
@@ -140,7 +140,7 @@
 
     goto :goto_4
 
-    .line 449
+    .line 387
     .end local v0           #canceled:Z
     :cond_27
     iget-object v2, p0, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->this$0:Lcom/google/android/finsky/utils/BitmapLoader;
@@ -159,14 +159,14 @@
     .end local v1           #wrapper:Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;
     check-cast v1, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;
 
-    .line 450
+    .line 388
     .restart local v1       #wrapper:Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;
     if-eqz v1, :cond_4
 
-    .line 451
+    .line 389
     invoke-virtual {v1, p0}, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;->removeHandlerAndCancelIfNecessary(Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;)Z
 
-    .line 452
+    .line 390
     #getter for: Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;->handlers:Ljava/util/List;
     invoke-static {v1}, Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;->access$600(Lcom/google/android/finsky/utils/BitmapLoader$RequestListenerWrapper;)Ljava/util/List;
 
@@ -178,7 +178,7 @@
 
     if-nez v2, :cond_4
 
-    .line 453
+    .line 391
     iget-object v2, p0, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->this$0:Lcom/google/android/finsky/utils/BitmapLoader;
 
     #getter for: Lcom/google/android/finsky/utils/BitmapLoader;->mBatchedResponses:Ljava/util/HashMap;
@@ -197,7 +197,7 @@
     .registers 2
 
     .prologue
-    .line 464
+    .line 402
     iget-object v0, p0, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->mBitmap:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -207,7 +207,7 @@
     .registers 2
 
     .prologue
-    .line 471
+    .line 409
     iget-object v0, p0, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->mRequestUrl:Ljava/lang/String;
 
     return-object v0

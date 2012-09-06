@@ -43,12 +43,12 @@
     .parameter "startcolumn"
 
     .prologue
-    .line 244
+    .line 273
     const/16 v0, 0x1000
 
     invoke-direct {p0, p1, p2, p3, v0}, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;-><init>(Ljava/io/Reader;III)V
 
-    .line 245
+    .line 274
     return-void
 .end method
 
@@ -62,8 +62,8 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 232
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 259
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
     const/4 v0, -0x1
@@ -95,38 +95,38 @@
 
     iput v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tabSize:I
 
-    .line 233
+    .line 260
     iput-object p1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->inputStream:Ljava/io/Reader;
 
-    .line 234
+    .line 261
     iput p2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->line:I
 
-    .line 235
+    .line 262
     add-int/lit8 v0, p3, -0x1
 
     iput v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->column:I
 
-    .line 237
+    .line 264
     iput p4, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufsize:I
 
     iput p4, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->available:I
 
-    .line 238
+    .line 265
     new-array v0, p4, [C
 
     iput-object v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->buffer:[C
 
-    .line 239
+    .line 266
     new-array v0, p4, [I
 
     iput-object v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufline:[I
 
-    .line 240
+    .line 267
     new-array v0, p4, [I
 
     iput-object v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufcolumn:[I
 
-    .line 241
+    .line 268
     return-void
 .end method
 
@@ -141,23 +141,23 @@
     .end annotation
 
     .prologue
-    .line 132
+    .line 148
     const/4 v1, -0x1
 
     iput v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tokenBegin:I
 
-    .line 133
+    .line 149
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->readChar()C
 
     move-result v0
 
-    .line 134
+    .line 150
     .local v0, c:C
     iget v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
 
     iput v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tokenBegin:I
 
-    .line 136
+    .line 152
     return v0
 .end method
 
@@ -168,14 +168,14 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 56
+    .line 53
     iget v4, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufsize:I
 
     add-int/lit16 v4, v4, 0x800
 
     new-array v1, v4, [C
 
-    .line 57
+    .line 54
     .local v1, newbuffer:[C
     iget v4, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufsize:I
 
@@ -183,7 +183,7 @@
 
     new-array v2, v4, [I
 
-    .line 58
+    .line 55
     .local v2, newbufline:[I
     iget v4, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufsize:I
 
@@ -191,11 +191,11 @@
 
     new-array v0, v4, [I
 
-    .line 61
+    .line 59
     .local v0, newbufcolumn:[I
     if-eqz p1, :cond_82
 
-    .line 62
+    .line 61
     :try_start_15
     iget-object v4, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->buffer:[C
 
@@ -211,7 +211,7 @@
 
     invoke-static {v4, v5, v1, v6, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 63
+    .line 62
     iget-object v4, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->buffer:[C
 
     const/4 v5, 0x0
@@ -312,7 +312,7 @@
     :try_end_75
     .catch Ljava/lang/Throwable; {:try_start_15 .. :try_end_75} :catch_b9
 
-    .line 91
+    .line 96
     :goto_75
     iget v4, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufsize:I
 
@@ -320,18 +320,18 @@
 
     iput v4, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufsize:I
 
-    .line 92
+    .line 97
     iget v4, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufsize:I
 
     iput v4, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->available:I
 
-    .line 93
+    .line 98
     iput v9, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tokenBegin:I
 
-    .line 94
+    .line 99
     return-void
 
-    .line 76
+    .line 78
     :cond_82
     :try_start_82
     iget-object v4, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->buffer:[C
@@ -348,10 +348,10 @@
 
     invoke-static {v4, v5, v1, v6, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 77
+    .line 79
     iput-object v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->buffer:[C
 
-    .line 79
+    .line 81
     iget-object v4, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufline:[I
 
     iget v5, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tokenBegin:I
@@ -366,10 +366,10 @@
 
     invoke-static {v4, v5, v2, v6, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 80
+    .line 82
     iput-object v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufline:[I
 
-    .line 82
+    .line 84
     iget-object v4, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufcolumn:[I
 
     iget v5, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tokenBegin:I
@@ -384,10 +384,10 @@
 
     invoke-static {v4, v5, v0, v6, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 83
+    .line 85
     iput-object v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufcolumn:[I
 
-    .line 85
+    .line 87
     iget v4, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
 
     iget v5, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tokenBegin:I
@@ -402,11 +402,11 @@
 
     goto :goto_75
 
-    .line 87
+    .line 90
     :catch_b9
     move-exception v3
 
-    .line 88
+    .line 92
     .local v3, t:Ljava/lang/Throwable;
     new-instance v4, Ljava/lang/Error;
 
@@ -434,36 +434,36 @@
 
     const/4 v7, 0x0
 
-    .line 97
+    .line 103
     iget v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->maxNextCharInd:I
 
     iget v3, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->available:I
 
     if-ne v2, v3, :cond_1c
 
-    .line 98
+    .line 105
     iget v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->available:I
 
     iget v3, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufsize:I
 
     if-ne v2, v3, :cond_58
 
-    .line 99
+    .line 107
     iget v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tokenBegin:I
 
     if-le v2, v4, :cond_4b
 
-    .line 100
+    .line 109
     iput v7, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->maxNextCharInd:I
 
     iput v7, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
 
-    .line 101
+    .line 110
     iget v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tokenBegin:I
 
     iput v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->available:I
 
-    .line 116
+    .line 127
     :cond_1c
     :goto_1c
     :try_start_1c
@@ -486,12 +486,12 @@
     .local v1, i:I
     if-ne v1, v8, :cond_74
 
-    .line 117
+    .line 130
     iget-object v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->inputStream:Ljava/io/Reader;
 
     invoke-virtual {v2}, Ljava/io/Reader;->close()V
 
-    .line 118
+    .line 131
     new-instance v2, Ljava/io/IOException;
 
     invoke-direct {v2}, Ljava/io/IOException;-><init>()V
@@ -500,12 +500,12 @@
     :try_end_38
     .catch Ljava/io/IOException; {:try_start_1c .. :try_end_38} :catch_38
 
-    .line 122
+    .line 137
     .end local v1           #i:I
     :catch_38
     move-exception v0
 
-    .line 123
+    .line 138
     .local v0, e:Ljava/io/IOException;
     iget v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
 
@@ -513,44 +513,44 @@
 
     iput v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
 
-    .line 124
+    .line 139
     invoke-virtual {p0, v7}, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->backup(I)V
 
-    .line 125
+    .line 140
     iget v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tokenBegin:I
 
     if-ne v2, v8, :cond_4a
 
-    .line 126
+    .line 141
     iget v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
 
     iput v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tokenBegin:I
 
-    .line 127
+    .line 142
     :cond_4a
     throw v0
 
-    .line 102
+    .line 112
     .end local v0           #e:Ljava/io/IOException;
     :cond_4b
     iget v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tokenBegin:I
 
     if-gez v2, :cond_54
 
-    .line 103
+    .line 113
     iput v7, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->maxNextCharInd:I
 
     iput v7, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
 
     goto :goto_1c
 
-    .line 105
+    .line 115
     :cond_54
     invoke-virtual {p0, v7}, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->ExpandBuff(Z)V
 
     goto :goto_1c
 
-    .line 106
+    .line 117
     :cond_58
     iget v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->available:I
 
@@ -558,14 +558,14 @@
 
     if-le v2, v3, :cond_63
 
-    .line 107
+    .line 118
     iget v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufsize:I
 
     iput v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->available:I
 
     goto :goto_1c
 
-    .line 108
+    .line 119
     :cond_63
     iget v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tokenBegin:I
 
@@ -575,14 +575,14 @@
 
     if-ge v2, v4, :cond_6f
 
-    .line 109
+    .line 120
     const/4 v2, 0x1
 
     invoke-virtual {p0, v2}, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->ExpandBuff(Z)V
 
     goto :goto_1c
 
-    .line 111
+    .line 122
     :cond_6f
     iget v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tokenBegin:I
 
@@ -590,7 +590,7 @@
 
     goto :goto_1c
 
-    .line 120
+    .line 134
     .restart local v1       #i:I
     :cond_74
     :try_start_74
@@ -602,7 +602,7 @@
     :try_end_79
     .catch Ljava/io/IOException; {:try_start_74 .. :try_end_79} :catch_38
 
-    .line 121
+    .line 135
     return-void
 .end method
 
@@ -610,14 +610,14 @@
     .registers 7
 
     .prologue
-    .line 335
+    .line 376
     iget v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
 
     iget v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tokenBegin:I
 
     if-lt v0, v1, :cond_17
 
-    .line 336
+    .line 377
     new-instance v0, Ljava/lang/String;
 
     iget-object v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->buffer:[C
@@ -634,7 +634,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Ljava/lang/String;-><init>([CII)V
 
-    .line 338
+    .line 379
     :goto_16
     return-object v0
 
@@ -691,10 +691,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 343
+    .line 385
     new-array v0, p1, [C
 
-    .line 345
+    .line 387
     .local v0, ret:[C
     iget v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
 
@@ -702,7 +702,7 @@
 
     if-lt v1, p1, :cond_14
 
-    .line 346
+    .line 388
     iget-object v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->buffer:[C
 
     iget v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
@@ -713,11 +713,11 @@
 
     invoke-static {v1, v2, v0, v4, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 352
+    .line 396
     :goto_13
     return-object v0
 
-    .line 348
+    .line 391
     :cond_14
     iget-object v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->buffer:[C
 
@@ -739,7 +739,7 @@
 
     invoke-static {v1, v2, v0, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 349
+    .line 393
     iget-object v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->buffer:[C
 
     iget v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
@@ -766,22 +766,22 @@
 
     const/4 v1, 0x1
 
-    .line 140
+    .line 157
     iget v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->column:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->column:I
 
-    .line 142
+    .line 159
     iget-boolean v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->prevCharIsLF:Z
 
     if-eqz v0, :cond_2a
 
-    .line 143
+    .line 161
     iput-boolean v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->prevCharIsLF:Z
 
-    .line 144
+    .line 162
     iget v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->line:I
 
     iput v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->column:I
@@ -790,12 +790,12 @@
 
     iput v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->line:I
 
-    .line 153
+    .line 175
     :cond_16
     :goto_16
     packed-switch p1, :pswitch_data_5a
 
-    .line 168
+    .line 191
     :goto_19
     :pswitch_19
     iget-object v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufline:[I
@@ -806,7 +806,7 @@
 
     aput v2, v0, v1
 
-    .line 169
+    .line 192
     iget-object v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufcolumn:[I
 
     iget v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
@@ -815,29 +815,29 @@
 
     aput v2, v0, v1
 
-    .line 170
+    .line 193
     return-void
 
-    .line 145
+    .line 164
     :cond_2a
     iget-boolean v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->prevCharIsCR:Z
 
     if-eqz v0, :cond_16
 
-    .line 146
+    .line 166
     iput-boolean v2, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->prevCharIsCR:Z
 
-    .line 147
+    .line 167
     const/16 v0, 0xa
 
     if-ne p1, v0, :cond_37
 
-    .line 148
+    .line 169
     iput-boolean v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->prevCharIsLF:Z
 
     goto :goto_16
 
-    .line 150
+    .line 172
     :cond_37
     iget v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->line:I
 
@@ -849,19 +849,19 @@
 
     goto :goto_16
 
-    .line 155
+    .line 178
     :pswitch_40
     iput-boolean v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->prevCharIsCR:Z
 
     goto :goto_19
 
-    .line 158
+    .line 181
     :pswitch_43
     iput-boolean v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->prevCharIsLF:Z
 
     goto :goto_19
 
-    .line 161
+    .line 184
     :pswitch_46
     iget v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->column:I
 
@@ -869,7 +869,7 @@
 
     iput v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->column:I
 
-    .line 162
+    .line 185
     iget v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->column:I
 
     iget v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tabSize:I
@@ -888,7 +888,7 @@
 
     goto :goto_19
 
-    .line 153
+    .line 175
     :pswitch_data_5a
     .packed-switch 0x9
         :pswitch_46
@@ -904,14 +904,14 @@
     .parameter "amount"
 
     .prologue
-    .line 227
+    .line 252
     iget v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->inBuf:I
 
     add-int/2addr v0, p1
 
     iput v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->inBuf:I
 
-    .line 228
+    .line 253
     iget v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
 
     sub-int/2addr v0, p1
@@ -920,7 +920,7 @@
 
     if-gez v0, :cond_13
 
-    .line 229
+    .line 254
     iget v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
 
     iget v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufsize:I
@@ -929,7 +929,7 @@
 
     iput v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
 
-    .line 230
+    .line 255
     :cond_13
     return-void
 .end method
@@ -938,7 +938,7 @@
     .registers 3
 
     .prologue
-    .line 218
+    .line 243
     iget-object v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufcolumn:[I
 
     iget v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tokenBegin:I
@@ -952,7 +952,7 @@
     .registers 3
 
     .prologue
-    .line 222
+    .line 247
     iget-object v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufline:[I
 
     iget v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->tokenBegin:I
@@ -966,7 +966,7 @@
     .registers 3
 
     .prologue
-    .line 210
+    .line 235
     iget-object v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufcolumn:[I
 
     iget v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
@@ -980,7 +980,7 @@
     .registers 3
 
     .prologue
-    .line 214
+    .line 239
     iget-object v0, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufline:[I
 
     iget v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
@@ -999,19 +999,19 @@
     .end annotation
 
     .prologue
-    .line 173
+    .line 197
     iget v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->inBuf:I
 
     if-lez v1, :cond_1e
 
-    .line 174
+    .line 199
     iget v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->inBuf:I
 
     add-int/lit8 v1, v1, -0x1
 
     iput v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->inBuf:I
 
-    .line 176
+    .line 201
     iget v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
 
     add-int/lit8 v1, v1, 0x1
@@ -1022,12 +1022,12 @@
 
     if-ne v1, v2, :cond_17
 
-    .line 177
+    .line 202
     const/4 v1, 0x0
 
     iput v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
 
-    .line 179
+    .line 204
     :cond_17
     iget-object v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->buffer:[C
 
@@ -1035,11 +1035,11 @@
 
     aget-char v0, v1, v2
 
-    .line 188
+    .line 213
     :goto_1d
     return v0
 
-    .line 182
+    .line 207
     :cond_1e
     iget v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->bufpos:I
 
@@ -1051,10 +1051,10 @@
 
     if-lt v1, v2, :cond_2b
 
-    .line 183
+    .line 208
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->FillBuff()V
 
-    .line 185
+    .line 210
     :cond_2b
     iget-object v1, p0, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->buffer:[C
 
@@ -1062,7 +1062,7 @@
 
     aget-char v0, v1, v2
 
-    .line 187
+    .line 212
     .local v0, c:C
     invoke-virtual {p0, v0}, Lorg/apache/james/mime4j/field/datetime/parser/SimpleCharStream;->UpdateLineColumn(C)V
 

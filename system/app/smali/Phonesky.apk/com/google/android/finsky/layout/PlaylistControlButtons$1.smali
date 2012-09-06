@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 92
+    .line 89
     iput-object p1, p0, Lcom/google/android/finsky/layout/PlaylistControlButtons$1;->this$0:Lcom/google/android/finsky/layout/PlaylistControlButtons;
 
     invoke-direct {p0}, Lcom/google/android/finsky/previews/StatusListener;-><init>()V
@@ -39,7 +39,7 @@
     .parameter "newSize"
 
     .prologue
-    .line 95
+    .line 92
     iget-object v1, p0, Lcom/google/android/finsky/layout/PlaylistControlButtons$1;->this$0:Lcom/google/android/finsky/layout/PlaylistControlButtons;
 
     if-lez p1, :cond_9
@@ -50,10 +50,10 @@
     #calls: Lcom/google/android/finsky/layout/PlaylistControlButtons;->setIsPlaying(Z)V
     invoke-static {v1, v0}, Lcom/google/android/finsky/layout/PlaylistControlButtons;->access$000(Lcom/google/android/finsky/layout/PlaylistControlButtons;Z)V
 
-    .line 96
+    .line 93
     return-void
 
-    .line 95
+    .line 92
     :cond_9
     const/4 v0, 0x0
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/watch" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:yt="http://schemas.android.com/apk/res/com.google.android.youtube">
+    <com.google.android.youtube.core.player.PlayerView android:layout_gravity="center_horizontal" android:id="@id/player" android:background="@color/black" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <com.google.android.youtube.core.ui.TabRow android:id="@id/tabrow" android:background="@color/ics_dark_grey" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+    <com.google.android.youtube.core.ui.Workspace android:id="@id/workspace" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include layout="@layout/s2_watch_info" />
+        <com.google.android.youtube.core.ui.PagedGridView android:orientation="vertical" android:id="@id/related" android:tag="@string/video_info_related_label_text" android:layout_width="fill_parent" android:layout_height="fill_parent" yt:numColumns="2" yt:horizontalSpacing="3.0dip" yt:verticalSpacing="3.0dip" yt:textWhenEmpty="@string/no_videos_found" yt:statusView="@layout/list_status_item" />
+        <com.google.android.youtube.core.ui.PagedListView android:orientation="vertical" android:id="@id/comments" android:tag="@string/comments" android:layout_width="fill_parent" android:layout_height="fill_parent" yt:textWhenEmpty="@string/no_comments_found" yt:statusView="@layout/list_status_item" />
+    </com.google.android.youtube.core.ui.Workspace>
+</LinearLayout>

@@ -24,10 +24,10 @@
     .parameter "cursor"
 
     .prologue
-    .line 1263
+    .line 1073
     invoke-direct {p0, p1}, Landroid/database/CursorWrapper;-><init>(Landroid/database/Cursor;)V
 
-    .line 1264
+    .line 1074
     return-void
 .end method
 
@@ -36,7 +36,7 @@
     .parameter "original"
 
     .prologue
-    .line 1297
+    .line 1107
     new-instance v0, Lcom/android/emailcommon/utility/Utility$CloseTraceCursorWrapper;
 
     invoke-direct {v0, p0}, Lcom/android/emailcommon/utility/Utility$CloseTraceCursorWrapper;-><init>(Landroid/database/Cursor;)V
@@ -50,7 +50,7 @@
     .registers 3
 
     .prologue
-    .line 1268
+    .line 1078
     new-instance v0, Ljava/lang/Exception;
 
     const-string v1, "STACK TRACE"
@@ -59,9 +59,9 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/utility/Utility$CloseTraceCursorWrapper;->mTrace:Ljava/lang/Exception;
 
-    .line 1269
+    .line 1079
     invoke-super {p0}, Landroid/database/CursorWrapper;->close()V
 
-    .line 1270
+    .line 1080
     return-void
 .end method

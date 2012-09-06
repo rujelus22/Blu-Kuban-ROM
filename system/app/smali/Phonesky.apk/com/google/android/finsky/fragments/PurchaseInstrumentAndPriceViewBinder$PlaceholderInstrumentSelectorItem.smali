@@ -18,27 +18,32 @@
 
 
 # instance fields
-.field private final mLabel:Ljava/lang/String;
-
 .field final synthetic this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Ljava/lang/String;)V
-    .registers 3
+.method private constructor <init>(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;)V
+    .registers 2
     .parameter
-    .parameter "label"
 
     .prologue
-    .line 151
+    .line 156
     iput-object p1, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$PlaceholderInstrumentSelectorItem;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 152
-    iput-object p2, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$PlaceholderInstrumentSelectorItem;->mLabel:Ljava/lang/String;
+    return-void
+.end method
 
-    .line 153
+.method synthetic constructor <init>(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$1;)V
+    .registers 3
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 156
+    invoke-direct {p0, p1}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$PlaceholderInstrumentSelectorItem;-><init>(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;)V
+
     return-void
 .end method
 
@@ -48,7 +53,7 @@
     .registers 2
 
     .prologue
-    .line 157
+    .line 160
     const/4 v0, 0x0
 
     return-object v0
@@ -58,7 +63,7 @@
     .registers 2
 
     .prologue
-    .line 172
+    .line 175
     const/4 v0, 0x0
 
     return v0
@@ -68,7 +73,7 @@
     .registers 2
 
     .prologue
-    .line 177
+    .line 180
     const/4 v0, 0x0
 
     return v0
@@ -79,7 +84,7 @@
     .parameter "isUserInitiatedSelection"
 
     .prologue
-    .line 162
+    .line 165
     iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$PlaceholderInstrumentSelectorItem;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
 
     const/4 v1, 0x0
@@ -87,7 +92,7 @@
     #calls: Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->updatePriceFromInstrument(Lcom/google/android/finsky/billing/Instrument;)V
     invoke-static {v0, v1}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->access$600(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;Lcom/google/android/finsky/billing/Instrument;)V
 
-    .line 163
+    .line 166
     return-void
 .end method
 
@@ -95,8 +100,8 @@
     .registers 2
 
     .prologue
-    .line 167
-    iget-object v0, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$PlaceholderInstrumentSelectorItem;->mLabel:Ljava/lang/String;
+    .line 170
+    const-string v0, ""
 
     return-object v0
 .end method

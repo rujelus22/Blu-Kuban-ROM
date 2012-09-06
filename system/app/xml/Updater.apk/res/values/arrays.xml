@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="reboot_type_array">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="reboot_type_array_desc">
+        <item>None</item>
+        <item>CWM</item>
+        <item>OpenRecoveryScript</item>
+        <item>4EXT</item>
+    </string-array>
+    <string-array name="check_rom_time_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>5</item>
+        <item>10</item>
+        <item>12</item>
+        <item>24</item>
+    </string-array>
+    <string-array name="kanging_is_bad">
+        <item>Modded</item>
+        <item>By</item>
+        <item>RUJELUS22</item>
+        <item>Kang</item>
+    </string-array>
+</resources>

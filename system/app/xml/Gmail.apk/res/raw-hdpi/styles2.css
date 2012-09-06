@@ -3,10 +3,22 @@
 /* Absolute size values for MDPI are 2/3rds of the corresponding HDPI values. */
 
 body {
+  background: #000000;
+  border: 0;
+  color: #ebebeb;
+  font-size: 20px;
   margin: 0;
   /* The "new notification" bar in layout/html_conversation.xml relies on these
    * padding values. */
   padding: 0 0 48px;
+}
+
+a {
+  color:#155496;
+}
+
+a:visited {
+  color: #c0c0c0;
 }
 
 .gm-body {
@@ -20,17 +32,22 @@ body {
 
 /* NOTE: this style is affected by zoom, so it is MDPI-native. It is not dpi-variable. */
 .gm-message-content {
+  background: #000000;
+  color: #ebebeb;
   padding: 12px 24px 30px;
   font-size: 14px;
 }
 
 .elided-text {
   display: none;
+  background: #1a1a1a;
+  color: #ebebeb;
 }
 
 .elided-text,
 .quoted-text {
-  color: purple;
+  background: #1a1a1a;
+  color: #ebebeb;
 }
 
 .gm-elided-text {
@@ -43,5 +60,5 @@ body {
 
 span.highlight {
   font-size: inherit;
-  background-color: yellow;
+  background-color: #155496;
 }

@@ -381,6 +381,34 @@
     return-void
 .end method
 
+.method public final a(ILandroid/renderscript/Matrix4f;)V
+    .registers 5
+    .parameter
+    .parameter
+
+    .prologue
+    .line 686
+    new-instance v0, Landroid/renderscript/FieldPacker;
+
+    const/16 v1, 0x44
+
+    invoke-direct {v0, v1}, Landroid/renderscript/FieldPacker;-><init>(I)V
+
+    .line 687
+    invoke-virtual {v0, p1}, Landroid/renderscript/FieldPacker;->addI32(I)V
+
+    .line 688
+    invoke-virtual {v0, p2}, Landroid/renderscript/FieldPacker;->addMatrix(Landroid/renderscript/Matrix4f;)V
+
+    .line 689
+    const/16 v1, 0x8
+
+    invoke-virtual {p0, v1, v0}, Lcom/android/ex/carousel/g;->invoke(ILandroid/renderscript/FieldPacker;)V
+
+    .line 690
+    return-void
+.end method
+
 .method public final a(ILandroid/renderscript/Mesh;)V
     .registers 5
     .parameter

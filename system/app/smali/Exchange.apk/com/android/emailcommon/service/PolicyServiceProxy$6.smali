@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/emailcommon/service/PolicyServiceProxy;->isSupported(Lcom/android/emailcommon/service/PolicySet;)Z
+    value = Lcom/android/emailcommon/service/PolicyServiceProxy;->remoteWipe()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,22 +20,17 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
 
-.field final synthetic val$arg0:Lcom/android/emailcommon/service/PolicySet;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/emailcommon/service/PolicyServiceProxy;Lcom/android/emailcommon/service/PolicySet;)V
-    .registers 3
-    .parameter
+.method constructor <init>(Lcom/android/emailcommon/service/PolicyServiceProxy;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 152
+    .line 134
     iput-object p1, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$6;->this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
 
-    iput-object p2, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$6;->val$arg0:Lcom/android/emailcommon/service/PolicySet;
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,7 +38,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .registers 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -51,29 +46,16 @@
     .end annotation
 
     .prologue
-    .line 154
+    .line 136
     iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$6;->this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
 
-    iget-object v1, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$6;->this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
-
     #getter for: Lcom/android/emailcommon/service/PolicyServiceProxy;->mService:Lcom/android/emailcommon/service/IPolicyService;
-    invoke-static {v1}, Lcom/android/emailcommon/service/PolicyServiceProxy;->access$100(Lcom/android/emailcommon/service/PolicyServiceProxy;)Lcom/android/emailcommon/service/IPolicyService;
+    invoke-static {v0}, Lcom/android/emailcommon/service/PolicyServiceProxy;->access$100(Lcom/android/emailcommon/service/PolicyServiceProxy;)Lcom/android/emailcommon/service/IPolicyService;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$6;->val$arg0:Lcom/android/emailcommon/service/PolicySet;
+    invoke-interface {v0}, Lcom/android/emailcommon/service/IPolicyService;->remoteWipe()V
 
-    invoke-interface {v1, v2}, Lcom/android/emailcommon/service/IPolicyService;->isSupported(Lcom/android/emailcommon/service/PolicySet;)Z
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    #setter for: Lcom/android/emailcommon/service/PolicyServiceProxy;->mReturn:Ljava/lang/Object;
-    invoke-static {v0, v1}, Lcom/android/emailcommon/service/PolicyServiceProxy;->access$002(Lcom/android/emailcommon/service/PolicyServiceProxy;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 155
+    .line 137
     return-void
 .end method

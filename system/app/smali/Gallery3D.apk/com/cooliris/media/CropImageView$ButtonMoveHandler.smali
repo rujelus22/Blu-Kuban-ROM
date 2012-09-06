@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1719
+    .line 1714
     iput-object p1, p0, Lcom/cooliris/media/CropImageView$ButtonMoveHandler;->this$0:Lcom/cooliris/media/CropImageView;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1719
+    .line 1714
     invoke-direct {p0, p1}, Lcom/cooliris/media/CropImageView$ButtonMoveHandler;-><init>(Lcom/cooliris/media/CropImageView;)V
 
     return-void
@@ -51,7 +51,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1749
+    .line 1744
     iget-object v2, p0, Lcom/cooliris/media/CropImageView$ButtonMoveHandler;->this$0:Lcom/cooliris/media/CropImageView;
 
     #getter for: Lcom/cooliris/media/CropImageView;->mButtonsAni:[Landroid/view/animation/Animation;
@@ -61,7 +61,7 @@
 
     if-nez v2, :cond_11
 
-    .line 1750
+    .line 1745
     iget-object v2, p0, Lcom/cooliris/media/CropImageView$ButtonMoveHandler;->this$0:Lcom/cooliris/media/CropImageView;
 
     const/4 v3, 0x2
@@ -71,7 +71,7 @@
     #setter for: Lcom/cooliris/media/CropImageView;->mButtonsAni:[Landroid/view/animation/Animation;
     invoke-static {v2, v3}, Lcom/cooliris/media/CropImageView;->access$202(Lcom/cooliris/media/CropImageView;[Landroid/view/animation/Animation;)[Landroid/view/animation/Animation;
 
-    .line 1752
+    .line 1747
     :cond_11
     if-eqz p1, :cond_20
 
@@ -86,20 +86,20 @@
 
     aget-object v0, v2, v3
 
-    .line 1754
+    .line 1749
     .local v0, ani:Landroid/view/animation/Animation;
     :goto_1c
     if-eqz v0, :cond_2a
 
     move-object v1, v0
 
-    .line 1765
+    .line 1760
     .end local v0           #ani:Landroid/view/animation/Animation;
     .local v1, ani:Landroid/view/animation/Animation;
     :goto_1f
     return-object v1
 
-    .line 1752
+    .line 1747
     .end local v1           #ani:Landroid/view/animation/Animation;
     :cond_20
     iget-object v2, p0, Lcom/cooliris/media/CropImageView$ButtonMoveHandler;->this$0:Lcom/cooliris/media/CropImageView;
@@ -115,12 +115,12 @@
 
     goto :goto_1c
 
-    .line 1757
+    .line 1752
     .restart local v0       #ani:Landroid/view/animation/Animation;
     :cond_2a
     if-eqz p1, :cond_4d
 
-    .line 1758
+    .line 1753
     new-instance v0, Landroid/view/animation/TranslateAnimation;
 
     .end local v0           #ani:Landroid/view/animation/Animation;
@@ -139,14 +139,14 @@
 
     invoke-direct {v0, v4, v4, v4, v2}, Landroid/view/animation/TranslateAnimation;-><init>(FFFF)V
 
-    .line 1762
+    .line 1757
     .restart local v0       #ani:Landroid/view/animation/Animation;
     :goto_3c
     const-wide/16 v2, 0x12c
 
     invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 1763
+    .line 1758
     new-instance v2, Landroid/view/animation/AccelerateInterpolator;
 
     const/high16 v3, 0x4000
@@ -157,12 +157,12 @@
 
     move-object v1, v0
 
-    .line 1765
+    .line 1760
     .end local v0           #ani:Landroid/view/animation/Animation;
     .restart local v1       #ani:Landroid/view/animation/Animation;
     goto :goto_1f
 
-    .line 1760
+    .line 1755
     .end local v1           #ani:Landroid/view/animation/Animation;
     .restart local v0       #ani:Landroid/view/animation/Animation;
     :cond_4d
@@ -197,7 +197,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1730
+    .line 1725
     iget-object v0, p0, Lcom/cooliris/media/CropImageView$ButtonMoveHandler;->this$0:Lcom/cooliris/media/CropImageView;
 
     #getter for: Lcom/cooliris/media/CropImageView;->mButtonsLayout:Landroid/view/View;
@@ -207,11 +207,11 @@
 
     if-nez v0, :cond_a
 
-    .line 1746
+    .line 1741
     :goto_9
     return-void
 
-    .line 1733
+    .line 1728
     :cond_a
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -219,7 +219,7 @@
 
     goto :goto_9
 
-    .line 1735
+    .line 1730
     :pswitch_10
     iget-object v0, p0, Lcom/cooliris/media/CropImageView$ButtonMoveHandler;->this$0:Lcom/cooliris/media/CropImageView;
 
@@ -236,7 +236,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 1736
+    .line 1731
     iget-object v0, p0, Lcom/cooliris/media/CropImageView$ButtonMoveHandler;->this$0:Lcom/cooliris/media/CropImageView;
 
     #getter for: Lcom/cooliris/media/CropImageView;->mButtonsLayout:Landroid/view/View;
@@ -250,7 +250,7 @@
 
     goto :goto_9
 
-    .line 1739
+    .line 1734
     :pswitch_29
     iget-object v0, p0, Lcom/cooliris/media/CropImageView$ButtonMoveHandler;->this$0:Lcom/cooliris/media/CropImageView;
 
@@ -265,7 +265,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 1740
+    .line 1735
     iget-object v0, p0, Lcom/cooliris/media/CropImageView$ButtonMoveHandler;->this$0:Lcom/cooliris/media/CropImageView;
 
     #getter for: Lcom/cooliris/media/CropImageView;->mButtonsLayout:Landroid/view/View;
@@ -277,7 +277,7 @@
 
     goto :goto_9
 
-    .line 1733
+    .line 1728
     :pswitch_data_40
     .packed-switch 0x0
         :pswitch_10
@@ -289,12 +289,12 @@
     .registers 2
 
     .prologue
-    .line 1725
+    .line 1720
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/cooliris/media/CropImageView$ButtonMoveHandler;->sendEmptyMessage(I)Z
 
-    .line 1726
+    .line 1721
     return-void
 .end method
 
@@ -302,11 +302,11 @@
     .registers 2
 
     .prologue
-    .line 1721
+    .line 1716
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/cooliris/media/CropImageView$ButtonMoveHandler;->sendEmptyMessage(I)Z
 
-    .line 1722
+    .line 1717
     return-void
 .end method

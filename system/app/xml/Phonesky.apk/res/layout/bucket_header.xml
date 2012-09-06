@@ -8,5 +8,5 @@
         <TextView android:textSize="@dimen/content_intermediate_size" android:textStyle="normal" android:textColor="@color/bucket_header_secondary_info" android:layout_gravity="bottom" android:id="@id/section_results" android:paddingLeft="12.0dip" android:paddingBottom="3.0dip" android:layout_height="wrap_content" android:drawableRight="@drawable/more_arrow_large_gray" android:drawablePadding="8.0dip" style="@style/BucketHeaderText" />
     </LinearLayout>
     <View android:id="@id/corpus_header_strip" android:layout_width="fill_parent" android:layout_height="@dimen/bucket_separator_height" />
-    <View android:background="@color/separator_line" android:layout_width="fill_parent" android:layout_height="@dimen/list_separator_height" />
+    <View android:background="@color/separator_line" android:layout_width="fill_parent" android:layout_height="@dimen/list_separator_thickness" />
 </LinearLayout>

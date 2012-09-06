@@ -1,98 +1,192 @@
-.class Lo/k;
+.class public Lo/K;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lo/d;
+.field private final a:I
 
-.field private final b:Lo/R;
+.field private b:Lo/I;
 
-.field private c:Lo/Q;
+.field private final c:Ljava/lang/String;
 
-.field private d:Ljava/lang/String;
+.field private final d:Ljava/lang/String;
 
-.field private e:Ljava/io/File;
+.field private final e:Ljava/lang/String;
+
+.field private final f:Ljava/lang/String;
+
+.field private final g:Z
 
 
 # direct methods
-.method public constructor <init>(Lo/d;Lo/R;Lo/Q;)V
-    .registers 4
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lo/k;->a:Lo/d;
-
+    .prologue
+    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lo/k;->b:Lo/R;
+    .line 72
+    iput p1, p0, Lo/K;->a:I
 
-    iput-object p3, p0, Lo/k;->c:Lo/Q;
+    .line 73
+    iput-object p2, p0, Lo/K;->c:Ljava/lang/String;
+
+    .line 74
+    iput-object p3, p0, Lo/K;->d:Ljava/lang/String;
+
+    .line 75
+    iput-object p4, p0, Lo/K;->e:Ljava/lang/String;
+
+    .line 76
+    iput-object p5, p0, Lo/K;->f:Ljava/lang/String;
+
+    .line 77
+    iput-boolean p6, p0, Lo/K;->g:Z
+
+    .line 78
+    return-void
+.end method
+
+.method static synthetic a(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)Lo/K;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 33
+    invoke-static {p0}, Lo/K;->b(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)Lo/K;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private a(Lo/I;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 100
+    iput-object p1, p0, Lo/K;->b:Lo/I;
+
+    .line 101
+    return-void
+.end method
+
+.method static synthetic a(Lo/K;Lo/I;)V
+    .registers 2
+    .parameter
+    .parameter
+
+    .prologue
+    .line 33
+    invoke-direct {p0, p1}, Lo/K;->a(Lo/I;)V
 
     return-void
+.end method
+
+.method private static b(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)Lo/K;
+    .registers 9
+    .parameter
+
+    .prologue
+    const/4 v5, 0x0
+
+    const/4 v7, 0x3
+
+    const/4 v6, 0x1
+
+    .line 81
+    invoke-virtual {p0, v6}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
+
+    move-result v1
+
+    .line 82
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 83
+    const/4 v0, 0x5
+
+    invoke-static {p0, v0}, Lcom/google/googlenav/common/io/protocol/b;->b(Lcom/google/googlenav/common/io/protocol/ProtoBuf;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 86
+    invoke-virtual {p0, v7}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->has(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2e
+
+    .line 87
+    invoke-virtual {p0, v7}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 88
+    const/4 v0, 0x4
+
+    invoke-virtual {p0, v0}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 90
+    :goto_20
+    invoke-virtual {p0, v6}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getInt(I)I
+
+    move-result v0
+
+    if-ne v0, v7, :cond_2c
+
+    .line 92
+    :goto_26
+    new-instance v0, Lo/K;
+
+    invoke-direct/range {v0 .. v6}, Lo/K;-><init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+
+    return-object v0
+
+    .line 90
+    :cond_2c
+    const/4 v6, 0x0
+
+    goto :goto_26
+
+    :cond_2e
+    move-object v4, v5
+
+    goto :goto_20
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 4
+.method public a()I
+    .registers 2
 
-    const/4 v2, 0x0
+    .prologue
+    .line 104
+    iget v0, p0, Lo/K;->a:I
 
-    invoke-virtual {p0, v2}, Lo/k;->a(Lo/a;)V
-
-    iget-object v0, p0, Lo/k;->d:Ljava/lang/String;
-
-    if-eqz v0, :cond_15
-
-    iget-object v0, p0, Lo/k;->a:Lo/d;
-
-    invoke-static {v0}, Lo/d;->a(Lo/d;)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lo/k;->d:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    iput-object v2, p0, Lo/k;->d:Ljava/lang/String;
-
-    :cond_15
-    return-void
-.end method
-
-.method public a(Ljava/lang/String;Ljava/io/File;)V
-    .registers 3
-
-    iput-object p1, p0, Lo/k;->d:Ljava/lang/String;
-
-    iput-object p2, p0, Lo/k;->e:Ljava/io/File;
-
-    return-void
-.end method
-
-.method public a(Lo/a;)V
-    .registers 4
-
-    iget-object v0, p0, Lo/k;->c:Lo/Q;
-
-    if-eqz v0, :cond_e
-
-    iget-object v0, p0, Lo/k;->c:Lo/Q;
-
-    iget-object v1, p0, Lo/k;->b:Lo/R;
-
-    invoke-interface {v0, v1, p1}, Lo/Q;->a(Lo/R;Lo/a;)V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lo/k;->c:Lo/Q;
-
-    :cond_e
-    return-void
+    return v0
 .end method
 
 .method public b()Ljava/lang/String;
     .registers 2
 
-    iget-object v0, p0, Lo/k;->d:Ljava/lang/String;
+    .prologue
+    .line 108
+    iget-object v0, p0, Lo/K;->c:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -100,53 +194,59 @@
 .method public c()Ljava/lang/String;
     .registers 2
 
-    iget-object v0, p0, Lo/k;->b:Lo/R;
+    .prologue
+    .line 112
+    iget-object v0, p0, Lo/K;->d:Ljava/lang/String;
 
-    invoke-virtual {v0}, Lo/R;->a()Ljava/lang/String;
+    if-nez v0, :cond_7
 
-    move-result-object v0
+    iget-object v0, p0, Lo/K;->c:Ljava/lang/String;
+
+    :goto_6
+    return-object v0
+
+    :cond_7
+    iget-object v0, p0, Lo/K;->d:Ljava/lang/String;
+
+    goto :goto_6
+.end method
+
+.method public d()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 116
+    iget-object v0, p0, Lo/K;->e:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public d()Lo/g;
-    .registers 6
+.method public e()Ljava/lang/String;
+    .registers 2
 
-    iget-object v0, p0, Lo/k;->e:Ljava/io/File;
+    .prologue
+    .line 120
+    iget-object v0, p0, Lo/K;->f:Ljava/lang/String;
 
-    invoke-static {v0}, Lo/d;->a(Ljava/io/File;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_d
-
-    invoke-virtual {p0}, Lo/k;->a()V
-
-    const/4 v0, 0x0
-
-    :goto_c
     return-object v0
+.end method
 
-    :cond_d
-    new-instance v0, Lo/g;
+.method public f()Z
+    .registers 2
 
-    iget-object v1, p0, Lo/k;->a:Lo/d;
+    .prologue
+    .line 124
+    iget-boolean v0, p0, Lo/K;->g:Z
 
-    invoke-static {v1}, Lo/d;->b(Lo/d;)Landroid/content/Context;
+    return v0
+.end method
 
-    move-result-object v1
+.method public g()Lo/I;
+    .registers 2
 
-    iget-object v2, p0, Lo/k;->d:Ljava/lang/String;
+    .prologue
+    .line 128
+    iget-object v0, p0, Lo/K;->b:Lo/I;
 
-    iget-object v3, p0, Lo/k;->e:Ljava/io/File;
-
-    iget-object v4, p0, Lo/k;->a:Lo/d;
-
-    invoke-static {v4}, Lo/d;->c(Lo/d;)Landroid/os/Handler;
-
-    move-result-object v4
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lo/g;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;Landroid/os/Handler;)V
-
-    goto :goto_c
+    return-object v0
 .end method

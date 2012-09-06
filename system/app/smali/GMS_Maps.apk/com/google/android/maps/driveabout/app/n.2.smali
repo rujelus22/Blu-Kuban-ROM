@@ -1,120 +1,125 @@
-.class public Lcom/google/android/maps/driveabout/app/n;
+.class public Lcom/google/android/maps/driveabout/app/N;
 .super Ljava/lang/Object;
-
-
-# static fields
-.field private static final b:Landroid/content/IntentFilter;
-
-.field private static final c:Landroid/content/IntentFilter;
+.source "SourceFile"
 
 
 # instance fields
-.field private final a:Landroid/content/BroadcastReceiver;
+.field private final a:I
 
-.field private final d:Landroid/content/Context;
+.field private final b:I
 
-.field private e:Z
+.field private final c:I
+
+.field private final d:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(IIII)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    new-instance v0, Landroid/content/IntentFilter;
+    .prologue
+    .line 1296
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "android.intent.action.DOCK_EVENT"
+    .line 1297
+    iput p1, p0, Lcom/google/android/maps/driveabout/app/N;->a:I
 
-    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+    .line 1298
+    iput p2, p0, Lcom/google/android/maps/driveabout/app/N;->b:I
 
-    sput-object v0, Lcom/google/android/maps/driveabout/app/n;->b:Landroid/content/IntentFilter;
+    .line 1299
+    iput p3, p0, Lcom/google/android/maps/driveabout/app/N;->c:I
 
-    new-instance v0, Landroid/content/IntentFilter;
+    .line 1300
+    iput p4, p0, Lcom/google/android/maps/driveabout/app/N;->d:I
 
-    const-string v1, "android.app.action.ENTER_CAR_MODE"
-
-    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lcom/google/android/maps/driveabout/app/n;->c:Landroid/content/IntentFilter;
-
+    .line 1301
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+.method static synthetic a(Lcom/google/android/maps/driveabout/app/N;)I
+    .registers 2
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 1290
+    iget v0, p0, Lcom/google/android/maps/driveabout/app/N;->d:I
 
-    new-instance v0, Lcom/google/android/maps/driveabout/app/o;
-
-    invoke-direct {v0, p0}, Lcom/google/android/maps/driveabout/app/o;-><init>(Lcom/google/android/maps/driveabout/app/n;)V
-
-    iput-object v0, p0, Lcom/google/android/maps/driveabout/app/n;->a:Landroid/content/BroadcastReceiver;
-
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/n;->d:Landroid/content/Context;
-
-    return-void
+    return v0
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 4
+.method public a()I
+    .registers 2
 
-    iget-boolean v0, p0, Lcom/google/android/maps/driveabout/app/n;->e:Z
+    .prologue
+    .line 1313
+    iget v0, p0, Lcom/google/android/maps/driveabout/app/N;->c:I
 
-    if-nez v0, :cond_16
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x8
-
-    if-lt v0, v1, :cond_17
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/n;->d:Landroid/content/Context;
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/n;->a:Landroid/content/BroadcastReceiver;
-
-    sget-object v2, Lcom/google/android/maps/driveabout/app/n;->c:Landroid/content/IntentFilter;
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    :goto_13
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/android/maps/driveabout/app/n;->e:Z
-
-    :cond_16
-    return-void
-
-    :cond_17
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/n;->d:Landroid/content/Context;
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/n;->a:Landroid/content/BroadcastReceiver;
-
-    sget-object v2, Lcom/google/android/maps/driveabout/app/n;->b:Landroid/content/IntentFilter;
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    goto :goto_13
+    return v0
 .end method
 
-.method public b()V
-    .registers 3
+.method public a(Lcom/google/googlenav/j;Lat/B;)Z
+    .registers 6
+    .parameter
+    .parameter
 
-    iget-boolean v0, p0, Lcom/google/android/maps/driveabout/app/n;->e:Z
-
-    if-eqz v0, :cond_e
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/n;->d:Landroid/content/Context;
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/n;->a:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-
+    .prologue
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/android/maps/driveabout/app/n;->e:Z
+    .line 1305
+    iget v1, p0, Lcom/google/android/maps/driveabout/app/N;->c:I
 
-    :cond_e
-    return-void
+    const/4 v2, 0x3
+
+    if-ne v1, v2, :cond_d
+
+    invoke-static {}, Lo/O;->a()Z
+
+    move-result v1
+
+    if-nez v1, :cond_d
+
+    .line 1308
+    :cond_c
+    :goto_c
+    return v0
+
+    :cond_d
+    iget v1, p0, Lcom/google/android/maps/driveabout/app/N;->d:I
+
+    invoke-virtual {p1, v1, p2, v0}, Lcom/google/googlenav/j;->a(ILat/B;Z)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_c
+
+    const/4 v0, 0x1
+
+    goto :goto_c
+.end method
+
+.method public b()I
+    .registers 2
+
+    .prologue
+    .line 1317
+    iget v0, p0, Lcom/google/android/maps/driveabout/app/N;->a:I
+
+    return v0
+.end method
+
+.method public c()I
+    .registers 2
+
+    .prologue
+    .line 1321
+    iget v0, p0, Lcom/google/android/maps/driveabout/app/N;->b:I
+
+    return v0
 .end method

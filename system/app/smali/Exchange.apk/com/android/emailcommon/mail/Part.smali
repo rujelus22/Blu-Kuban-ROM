@@ -23,14 +23,6 @@
     .end annotation
 .end method
 
-.method public abstract getContentId()Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getContentType()Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -64,14 +56,6 @@
 .end method
 
 .method public abstract setBody(Lcom/android/emailcommon/mail/Body;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setHeader(Ljava/lang/String;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/emailcommon/mail/MessagingException;

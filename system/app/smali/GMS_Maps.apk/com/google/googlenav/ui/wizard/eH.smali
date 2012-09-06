@@ -1,57 +1,70 @@
-.class Lcom/google/googlenav/ui/wizard/eH;
+.class public abstract Lcom/google/googlenav/ui/wizard/eH;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/googlenav/ui/wizard/eQ;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/eA;
+.field private final a:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/eA;)V
+.method public constructor <init>(Ljava/lang/String;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/eH;->a:Lcom/google/googlenav/ui/wizard/eA;
-
+    .prologue
+    .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 74
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/eH;->a:Ljava/lang/String;
+
+    .line 75
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lcom/google/googlenav/ah;)V
-    .registers 10
+.method public abstract a()Ljava/util/List;
+.end method
 
-    const/4 v5, 0x1
+.method public final b()Ljava/util/List;
+    .registers 4
 
-    new-instance v2, Lcom/google/googlenav/h;
+    .prologue
+    .line 78
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/wizard/eH;->a()Ljava/util/List;
 
-    invoke-direct {v2, p1}, Lcom/google/googlenav/h;-><init>(Lcom/google/googlenav/ah;)V
+    move-result-object v0
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/eH;->a:Lcom/google/googlenav/ui/wizard/eA;
+    .line 79
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/eA;->b:Lcom/google/googlenav/ui/wizard/hM;
+    move-result v1
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/eH;->a:Lcom/google/googlenav/ui/wizard/eA;
+    if-eqz v1, :cond_1b
 
-    invoke-static {v1}, Lcom/google/googlenav/ui/wizard/eA;->a(Lcom/google/googlenav/ui/wizard/eA;)Lcom/google/googlenav/L;
+    .line 80
+    new-instance v0, Lcom/google/googlenav/ui/view/android/bx;
 
-    move-result-object v1
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/eH;->a:Ljava/lang/String;
 
-    check-cast v1, Lcom/google/googlenav/ui/D;
+    invoke-direct {v0, v1}, Lcom/google/googlenav/ui/view/android/bx;-><init>(Ljava/lang/CharSequence;)V
 
-    const-string v3, "cstp"
+    .line 81
+    const/4 v1, 0x1
 
-    const/4 v4, 0x0
+    new-array v1, v1, [Lcom/google/googlenav/ui/view/android/Y;
 
-    const/4 v7, 0x0
+    const/4 v2, 0x0
 
-    move v6, v5
+    aput-object v0, v1, v2
 
-    invoke-virtual/range {v0 .. v7}, Lcom/google/googlenav/ui/wizard/hM;->a(Lcom/google/googlenav/ui/D;Lcom/google/googlenav/h;Ljava/lang/String;ZZZLcom/google/googlenav/ui/wizard/O;)V
+    invoke-static {v1}, Lcom/google/common/collect/cx;->a([Ljava/lang/Object;)Ljava/util/ArrayList;
 
-    return-void
+    move-result-object v0
+
+    .line 83
+    :cond_1b
+    return-object v0
 .end method

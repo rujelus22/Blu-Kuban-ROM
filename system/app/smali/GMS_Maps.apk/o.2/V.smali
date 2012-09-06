@@ -1,175 +1,65 @@
-.class public Lo/V;
-.super Lo/T;
+.class Lo/v;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# static fields
-.field private static final a:Ljava/util/regex/Pattern;
+# instance fields
+.field private final a:Lo/x;
+
+.field private final b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method private constructor <init>(Lo/x;I)V
+    .registers 3
+    .parameter
+    .parameter
 
-    const-string v0, "(\\d) (\\d)"
+    .prologue
+    .line 629
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    .line 630
+    iput-object p1, p0, Lo/v;->a:Lo/x;
 
-    move-result-object v0
+    .line 631
+    iput p2, p0, Lo/v;->b:I
 
-    sput-object v0, Lo/V;->a:Ljava/util/regex/Pattern;
+    .line 632
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lo/x;ILo/s;)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 621
+    invoke-direct {p0, p1, p2}, Lo/v;-><init>(Lo/x;I)V
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .registers 1
+.method static synthetic a(Lo/v;)Lo/x;
+    .registers 2
+    .parameter
 
-    invoke-direct {p0}, Lo/T;-><init>()V
-
-    return-void
-.end method
-
-.method private static a(Ljava/lang/String;IILjava/lang/StringBuilder;)V
-    .registers 5
-
-    :goto_0
-    if-ge p1, p2, :cond_1a
-
-    const-string v0, "&#"
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/16 v0, 0x3b
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    add-int/lit8 p1, p1, 0x1
-
-    goto :goto_0
-
-    :cond_1a
-    return-void
-.end method
-
-
-# virtual methods
-.method public a(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;
-    .registers 7
-
-    sget-object v0, Lo/V;->a:Ljava/util/regex/Pattern;
-
-    invoke-virtual {v0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_12
-
-    const-string v1, "$1  $2"
-
-    invoke-virtual {v0, v1}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    :cond_12
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v0, "{{"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v1
-
-    const/4 v0, 0x0
-
-    :goto_1e
-    if-ltz v1, :cond_32
-
-    invoke-virtual {v2, p1, v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
-
-    const-string v0, "}}"
-
-    const-string v3, "{{"
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/2addr v3, v1
-
-    invoke-virtual {p1, v0, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
-
-    move-result v0
-
-    if-gez v0, :cond_44
-
-    :cond_32
-    if-ltz v0, :cond_3b
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    invoke-virtual {v2, p1, v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
-
-    :cond_3b
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-super {p0, v0, p2}, Lo/T;->a(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v0
+    .prologue
+    .line 621
+    iget-object v0, p0, Lo/v;->a:Lo/x;
 
     return-object v0
+.end method
 
-    :cond_44
-    const-string v3, "<phoneme ph=\""
+.method static synthetic b(Lo/v;)I
+    .registers 2
+    .parameter
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .prologue
+    .line 621
+    iget v0, p0, Lo/v;->b:I
 
-    const-string v3, "{{"
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/2addr v1, v3
-
-    invoke-static {p1, v1, v0, v2}, Lo/V;->a(Ljava/lang/String;IILjava/lang/StringBuilder;)V
-
-    const-string v1, "\"/>"
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "}}"
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    const-string v1, "{{"
-
-    invoke-virtual {p1, v1, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
-
-    move-result v1
-
-    goto :goto_1e
+    return v0
 .end method

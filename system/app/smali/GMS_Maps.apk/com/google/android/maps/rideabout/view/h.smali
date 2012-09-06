@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/maps/rideabout/view/h;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # virtual methods

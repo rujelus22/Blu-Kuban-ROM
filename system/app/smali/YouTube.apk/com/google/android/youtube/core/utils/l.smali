@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/Object;)Z
+.method public abstract U()Lcom/google/android/youtube/core/utils/k;
 .end method

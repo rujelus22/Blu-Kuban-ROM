@@ -1,38 +1,84 @@
-.class final enum LK/Y;
-.super LK/S;
+.class public Lk/y;
+.super LA/j;
+.source "SourceFile"
+
+
+# instance fields
+.field private final a:I
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;I)V
-    .registers 4
+.method public constructor <init>(Lorg/w3c/dom/Node;)V
+    .registers 3
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    .line 914
+    invoke-direct {p0, p1}, LA/j;-><init>(Lorg/w3c/dom/Node;)V
 
-    invoke-direct {p0, p1, p2, v0}, LK/S;-><init>(Ljava/lang/String;ILK/Q;)V
+    .line 915
+    const-string v0, "duration"
 
+    invoke-static {p1, v0}, Lk/y;->a(Lorg/w3c/dom/Node;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lk/y;->a:I
+
+    .line 916
     return-void
 .end method
 
 
 # virtual methods
-.method a(LK/P;LK/am;LK/am;)LK/am;
-    .registers 5
+.method public a()I
+    .registers 2
 
-    invoke-super {p0, p1, p2, p3}, LK/S;->a(LK/P;LK/am;LK/am;)LK/am;
+    .prologue
+    .line 918
+    iget v0, p0, Lk/y;->a:I
+
+    return v0
+.end method
+
+.method protected a(Ljava/io/Writer;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 922
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "<sleep duration=\'"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-virtual {p0, p2, v0}, LK/Y;->b(LK/am;LK/am;)V
+    iget v1, p0, Lk/y;->a:I
 
-    return-object v0
-.end method
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-.method a(LK/P;Ljava/lang/Object;ILK/am;)LK/am;
-    .registers 6
+    move-result-object v0
 
-    new-instance v0, LK/aF;
+    const-string v1, "\'/>"
 
-    invoke-direct {v0, p1, p2, p3, p4}, LK/aF;-><init>(LK/P;Ljava/lang/Object;ILK/am;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object v0
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+    .line 923
+    return-void
 .end method

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/header" android:background="@color/list_header_secondary_grey" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListSeparator" />
+    <WebView android:id="@id/summary" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0" />
+    <Button android:id="@id/button" android:paddingLeft="@dimen/checkin_wizard_padding" android:paddingRight="@dimen/checkin_wizard_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:key="display_settings_zoom_buttons" />
+    <CheckBoxPreference android:key="display_settings_scale_bar" />
+    <ListPreference android:key="display_settings_units" />
+    <ListPreference android:key="display_settings_bubble_action" />
+</PreferenceScreen>

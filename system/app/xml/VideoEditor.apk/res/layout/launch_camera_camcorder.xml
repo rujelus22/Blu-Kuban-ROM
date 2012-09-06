@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="302.0px" android:layout_height="302.0px"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="32.0px" android:textColor="@color/mode_color" android:layout_gravity="center" android:id="@id/TextView01" android:paddingTop="10.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mode" />
-    <LinearLayout android:orientation="horizontal" android:id="@id/items" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-</LinearLayout>

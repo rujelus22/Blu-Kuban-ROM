@@ -3,12 +3,12 @@
 .source "AuthenticatedActivity.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Lcom/android/volley/Response$ErrorListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/finsky/activities/AuthenticatedActivity;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/google/android/finsky/activities/AuthenticatedActivity;->getMarketMetadataAndLoadLibraries(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 898
+    .line 824
     iput-object p1, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$10;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,17 +37,29 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 4
-    .parameter "dialog"
-    .parameter "id"
+.method public onErrorResponse(Lcom/android/volley/VolleyError;)V
+    .registers 5
+    .parameter "error"
 
     .prologue
-    .line 901
+    .line 827
+    const-string v0, "Metadata failed: %s"
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object p1, v1, v2
+
+    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 828
     iget-object v0, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$10;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->finish()V
+    invoke-virtual {v0, p1}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->handleAuthenticationError(Lcom/android/volley/VolleyError;)V
 
-    .line 902
+    .line 829
     return-void
 .end method

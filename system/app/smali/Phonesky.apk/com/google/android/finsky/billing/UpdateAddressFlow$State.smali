@@ -48,7 +48,7 @@
 
     const/4 v2, 0x0
 
-    .line 59
+    .line 55
     new-instance v0, Lcom/google/android/finsky/billing/UpdateAddressFlow$State;
 
     const-string v1, "INIT"
@@ -57,7 +57,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/UpdateAddressFlow$State;->INIT:Lcom/google/android/finsky/billing/UpdateAddressFlow$State;
 
-    .line 64
+    .line 60
     new-instance v0, Lcom/google/android/finsky/billing/UpdateAddressFlow$State;
 
     const-string v1, "SHOWING_FORM"
@@ -66,7 +66,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/UpdateAddressFlow$State;->SHOWING_FORM:Lcom/google/android/finsky/billing/UpdateAddressFlow$State;
 
-    .line 69
+    .line 65
     new-instance v0, Lcom/google/android/finsky/billing/UpdateAddressFlow$State;
 
     const-string v1, "SENDING_REQUEST"
@@ -75,7 +75,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/UpdateAddressFlow$State;->SENDING_REQUEST:Lcom/google/android/finsky/billing/UpdateAddressFlow$State;
 
-    .line 71
+    .line 67
     new-instance v0, Lcom/google/android/finsky/billing/UpdateAddressFlow$State;
 
     const-string v1, "DONE"
@@ -84,7 +84,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/UpdateAddressFlow$State;->DONE:Lcom/google/android/finsky/billing/UpdateAddressFlow$State;
 
-    .line 57
+    .line 53
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/google/android/finsky/billing/UpdateAddressFlow$State;
@@ -121,7 +121,7 @@
     .end annotation
 
     .prologue
-    .line 57
+    .line 53
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -132,7 +132,7 @@
     .parameter
 
     .prologue
-    .line 57
+    .line 53
     const-class v0, Lcom/google/android/finsky/billing/UpdateAddressFlow$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -148,7 +148,7 @@
     .registers 1
 
     .prologue
-    .line 57
+    .line 53
     sget-object v0, Lcom/google/android/finsky/billing/UpdateAddressFlow$State;->$VALUES:[Lcom/google/android/finsky/billing/UpdateAddressFlow$State;
 
     invoke-virtual {v0}, [Lcom/google/android/finsky/billing/UpdateAddressFlow$State;->clone()Ljava/lang/Object;

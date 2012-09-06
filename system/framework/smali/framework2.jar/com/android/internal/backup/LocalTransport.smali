@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final RESTORE_TOKEN:J = 0x1L
 

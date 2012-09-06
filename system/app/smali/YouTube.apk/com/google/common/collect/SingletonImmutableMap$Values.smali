@@ -13,13 +13,13 @@
     .parameter
 
     .prologue
-    .line 103
+    .line 107
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableCollection;-><init>()V
 
-    .line 104
+    .line 108
     iput-object p1, p0, Lcom/google/common/collect/SingletonImmutableMap$Values;->singleValue:Ljava/lang/Object;
 
-    .line 105
+    .line 109
     return-void
 .end method
 
@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 108
+    .line 112
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableMap$Values;->singleValue:Ljava/lang/Object;
 
     invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -44,20 +44,30 @@
     .registers 2
 
     .prologue
-    .line 112
+    .line 116
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public iterator()Lcom/google/common/collect/gf;
+.method isPartialView()Z
     .registers 2
 
     .prologue
-    .line 120
+    .line 129
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public iterator()Lcom/google/common/collect/mt;
+    .registers 2
+
+    .prologue
+    .line 125
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableMap$Values;->singleValue:Ljava/lang/Object;
 
-    invoke-static {v0}, Lcom/google/common/collect/cr;->a(Ljava/lang/Object;)Lcom/google/common/collect/gf;
+    invoke-static {v0}, Lcom/google/common/collect/ee;->a(Ljava/lang/Object;)Lcom/google/common/collect/mt;
 
     move-result-object v0
 
@@ -68,8 +78,8 @@
     .registers 2
 
     .prologue
-    .line 99
-    invoke-virtual {p0}, Lcom/google/common/collect/SingletonImmutableMap$Values;->iterator()Lcom/google/common/collect/gf;
+    .line 103
+    invoke-virtual {p0}, Lcom/google/common/collect/SingletonImmutableMap$Values;->iterator()Lcom/google/common/collect/mt;
 
     move-result-object v0
 
@@ -80,7 +90,7 @@
     .registers 2
 
     .prologue
-    .line 116
+    .line 121
     const/4 v0, 0x1
 
     return v0

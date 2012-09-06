@@ -32,10 +32,10 @@
     .registers 2
 
     .prologue
-    .line 45
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 48
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
+    .line 49
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
@@ -51,7 +51,7 @@
     .parameter "x1"
 
     .prologue
-    .line 45
+    .line 48
     invoke-direct {p0, p1}, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->add(Lcom/android/emailcommon/utility/EmailAsyncTask;)V
 
     return-void
@@ -63,7 +63,7 @@
     .parameter "x1"
 
     .prologue
-    .line 45
+    .line 48
     invoke-direct {p0, p1}, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->remove(Lcom/android/emailcommon/utility/EmailAsyncTask;)V
 
     return-void
@@ -81,25 +81,25 @@
     .end annotation
 
     .prologue
-    .line 49
+    .line 53
     .local p1, task:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<***>;"
     iget-object v1, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->mTasks:Ljava/util/LinkedList;
 
     monitor-enter v1
 
-    .line 50
+    .line 54
     :try_start_3
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->mTasks:Ljava/util/LinkedList;
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 51
+    .line 55
     monitor-exit v1
 
-    .line 52
+    .line 56
     return-void
 
-    .line 51
+    .line 55
     :catchall_a
     move-exception v0
 
@@ -122,25 +122,25 @@
     .end annotation
 
     .prologue
-    .line 55
+    .line 59
     .local p1, task:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<***>;"
     iget-object v1, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->mTasks:Ljava/util/LinkedList;
 
     monitor-enter v1
 
-    .line 56
+    .line 60
     :try_start_3
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->mTasks:Ljava/util/LinkedList;
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedList;->remove(Ljava/lang/Object;)Z
 
-    .line 57
+    .line 61
     monitor-exit v1
 
-    .line 58
+    .line 62
     return-void
 
-    .line 57
+    .line 61
     :catchall_a
     move-exception v0
 
@@ -165,25 +165,25 @@
     .end annotation
 
     .prologue
-    .line 77
+    .line 81
     .local p1, current:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<***>;"
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 78
+    .line 82
     .local v0, clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     iget-object v5, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->mTasks:Ljava/util/LinkedList;
 
     monitor-enter v5
 
-    .line 79
+    .line 83
     :try_start_7
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 80
+    .line 85
     .local v3, toRemove:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/utility/EmailAsyncTask<***>;>;"
     iget-object v4, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->mTasks:Ljava/util/LinkedList;
 
@@ -206,7 +206,7 @@
 
     check-cast v2, Lcom/android/emailcommon/utility/EmailAsyncTask;
 
-    .line 81
+    .line 86
     .local v2, task:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<***>;"
     if-eq v2, p1, :cond_12
 
@@ -220,17 +220,17 @@
 
     if-eqz v4, :cond_12
 
-    .line 82
+    .line 87
     const/4 v4, 0x1
 
     invoke-virtual {v2, v4}, Lcom/android/emailcommon/utility/EmailAsyncTask;->cancel(Z)V
 
-    .line 83
+    .line 88
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_12
 
-    .line 89
+    .line 94
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #task:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<***>;"
     .end local v3           #toRemove:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/utility/EmailAsyncTask<***>;>;"
@@ -243,7 +243,7 @@
 
     throw v4
 
-    .line 86
+    .line 91
     .restart local v1       #i$:Ljava/util/Iterator;
     .restart local v3       #toRemove:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/emailcommon/utility/EmailAsyncTask<***>;>;"
     :cond_35
@@ -265,7 +265,7 @@
 
     check-cast v2, Lcom/android/emailcommon/utility/EmailAsyncTask;
 
-    .line 87
+    .line 92
     .restart local v2       #task:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<***>;"
     iget-object v4, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->mTasks:Ljava/util/LinkedList;
 
@@ -273,14 +273,14 @@
 
     goto :goto_39
 
-    .line 89
+    .line 94
     .end local v2           #task:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<***>;"
     :cond_4b
     monitor-exit v5
     :try_end_4c
     .catchall {:try_start_35 .. :try_end_4c} :catchall_32
 
-    .line 90
+    .line 95
     return-void
 .end method
 
@@ -288,12 +288,12 @@
     .registers 5
 
     .prologue
-    .line 64
+    .line 68
     iget-object v3, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->mTasks:Ljava/util/LinkedList;
 
     monitor-enter v3
 
-    .line 65
+    .line 69
     :try_start_3
     iget-object v2, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->mTasks:Ljava/util/LinkedList;
 
@@ -315,7 +315,7 @@
 
     check-cast v1, Lcom/android/emailcommon/utility/EmailAsyncTask;
 
-    .line 66
+    .line 70
     .local v1, task:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<***>;"
     const/4 v2, 0x1
 
@@ -323,7 +323,7 @@
 
     goto :goto_9
 
-    .line 69
+    .line 73
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #task:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<***>;"
     :catchall_1a
@@ -335,7 +335,7 @@
 
     throw v2
 
-    .line 68
+    .line 72
     .restart local v0       #i$:Ljava/util/Iterator;
     :cond_1d
     :try_start_1d
@@ -343,12 +343,12 @@
 
     invoke-virtual {v2}, Ljava/util/LinkedList;->clear()V
 
-    .line 69
+    .line 73
     monitor-exit v3
     :try_end_23
     .catchall {:try_start_1d .. :try_end_23} :catchall_1a
 
-    .line 70
+    .line 74
     return-void
 .end method
 
@@ -364,7 +364,7 @@
     .end annotation
 
     .prologue
-    .line 97
+    .line 102
     .local p1, task:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<***>;"
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->mTasks:Ljava/util/LinkedList;
 
@@ -379,7 +379,7 @@
     .registers 2
 
     .prologue
-    .line 93
+    .line 98
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->mTasks:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->size()I

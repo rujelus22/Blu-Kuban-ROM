@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="abs__home" />
+    <item type="id" name="abs__up" />
+    <item type="id" name="abs__action_menu_divider" />
+    <item type="id" name="abs__action_menu_presenter" />
+    <item type="id" name="abs__progress_circular" />
+    <item type="id" name="abs__progress_horizontal" />
+    <item type="id" name="menu_item_open_profiles" />
+    <item type="id" name="abs__action_bar_title">false</item>
+    <item type="id" name="abs__action_bar_subtitle">false</item>
+    <item type="id" name="abs__imageButton">false</item>
+    <item type="id" name="abs__textButton">false</item>
+    <item type="id" name="abs__action_mode_close_button">false</item>
+    <item type="id" name="abs__activity_chooser_view_content">false</item>
+    <item type="id" name="abs__expand_activities_button">false</item>
+    <item type="id" name="abs__image">false</item>
+    <item type="id" name="abs__default_activity_button">false</item>
+    <item type="id" name="abs__list_item">false</item>
+    <item type="id" name="abs__icon">false</item>
+    <item type="id" name="abs__title">false</item>
+    <item type="id" name="abs__titleDivider">false</item>
+    <item type="id" name="abs__content">false</item>
+    <item type="id" name="abs__checkbox">false</item>
+    <item type="id" name="abs__shortcut">false</item>
+    <item type="id" name="abs__radio">false</item>
+    <item type="id" name="abs__action_bar_container">false</item>
+    <item type="id" name="abs__action_bar">false</item>
+    <item type="id" name="abs__action_context_bar">false</item>
+    <item type="id" name="abs__split_action_bar">false</item>
+    <item type="id" name="abs__action_mode_bar_stub">false</item>
+    <item type="id" name="abs__action_mode_bar">false</item>
+    <item type="id" name="button">false</item>
+    <item type="id" name="checkbox">false</item>
+    <item type="id" name="seekBar1">false</item>
+    <item type="id" name="current_value">false</item>
+    <item type="id" name="spinner1">false</item>
+    <item type="id" name="name">false</item>
+    <item type="id" name="description">false</item>
+    <item type="id" name="dashboard">false</item>
+    <item type="id" name="scrollView1">false</item>
+    <item type="id" name="linearLayout2">false</item>
+    <item type="id" name="app_info_view">false</item>
+    <item type="id" name="deviceInfoTextView">false</item>
+    <item type="id" name="frameLayout1">false</item>
+    <item type="id" name="loading_layout">false</item>
+    <item type="id" name="progressBar1">false</item>
+    <item type="id" name="textView1">false</item>
+    <item type="id" name="loading_failed_layout">false</item>
+    <item type="id" name="textView2">false</item>
+    <item type="id" name="textView3">false</item>
+    <item type="id" name="textView4">false</item>
+    <item type="id" name="pager">false</item>
+    <item type="id" name="uv_apply_reset_layout">false</item>
+    <item type="id" name="uv_apply_button">false</item>
+    <item type="id" name="uv_discard_button">false</item>
+    <item type="id" name="linearLayout1">false</item>
+    <item type="id" name="menu_reset">false</item>
+    <item type="id" name="menu_manage">false</item>
+    <item type="id" name="menu_add">false</item>
+    <item type="id" name="menu_delete">false</item>
+    <item type="id" name="menu_rename">false</item>
+</resources>

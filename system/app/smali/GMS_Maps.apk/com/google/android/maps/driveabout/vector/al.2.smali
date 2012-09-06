@@ -1,141 +1,214 @@
-.class public final enum Lcom/google/android/maps/driveabout/vector/al;
-.super Ljava/lang/Enum;
+.class Lcom/google/android/maps/driveabout/vector/aL;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final enum a:Lcom/google/android/maps/driveabout/vector/al;
+# instance fields
+.field a:Lcom/google/android/maps/driveabout/vector/k;
 
-.field public static final enum b:Lcom/google/android/maps/driveabout/vector/al;
-
-.field public static final enum c:Lcom/google/android/maps/driveabout/vector/al;
-
-.field private static final synthetic d:[Lcom/google/android/maps/driveabout/vector/al;
+.field final synthetic b:Lcom/google/android/maps/driveabout/vector/aK;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method constructor <init>(Lcom/google/android/maps/driveabout/vector/aK;Lcom/google/android/maps/driveabout/vector/k;)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 544
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/vector/aL;->b:Lcom/google/android/maps/driveabout/vector/aK;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 545
+    iput-object p2, p0, Lcom/google/android/maps/driveabout/vector/aL;->a:Lcom/google/android/maps/driveabout/vector/k;
+
+    .line 546
+    return-void
+.end method
+
+
+# virtual methods
+.method public run()V
     .registers 5
 
-    const/4 v4, 0x2
+    .prologue
+    .line 552
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/aL;->b:Lcom/google/android/maps/driveabout/vector/aK;
 
-    const/4 v3, 0x1
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/vector/aK;->a(Lcom/google/android/maps/driveabout/vector/aK;)Ljava/util/List;
 
-    const/4 v2, 0x0
+    move-result-object v1
 
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/al;
+    monitor-enter v1
 
-    const-string v1, "CENTER"
+    .line 553
+    :try_start_7
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/aL;->b:Lcom/google/android/maps/driveabout/vector/aK;
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/maps/driveabout/vector/al;-><init>(Ljava/lang/String;I)V
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/vector/aK;->a(Lcom/google/android/maps/driveabout/vector/aK;)Ljava/util/List;
 
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/al;->a:Lcom/google/android/maps/driveabout/vector/al;
+    move-result-object v0
 
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/al;
+    invoke-static {v0}, Lcom/google/common/collect/cx;->a(Ljava/lang/Iterable;)Ljava/util/ArrayList;
 
-    const-string v1, "LEFT"
+    move-result-object v0
 
-    invoke-direct {v0, v1, v3}, Lcom/google/android/maps/driveabout/vector/al;-><init>(Ljava/lang/String;I)V
+    .line 554
+    monitor-exit v1
+    :try_end_12
+    .catchall {:try_start_7 .. :try_end_12} :catchall_2c
 
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/al;->b:Lcom/google/android/maps/driveabout/vector/al;
+    .line 557
+    :try_start_12
+    sget-object v1, Lx/q;->c:Lx/q;
 
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/al;
+    invoke-static {v0, v1}, Lx/o;->a(Ljava/util/List;Lx/q;)Lx/v;
+    :try_end_17
+    .catch Lx/k; {:try_start_12 .. :try_end_17} :catch_2f
 
-    const-string v1, "RIGHT"
+    move-result-object v0
 
-    invoke-direct {v0, v1, v4}, Lcom/google/android/maps/driveabout/vector/al;-><init>(Ljava/lang/String;I)V
+    .line 575
+    :goto_18
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/aL;->b:Lcom/google/android/maps/driveabout/vector/aK;
 
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/al;->c:Lcom/google/android/maps/driveabout/vector/al;
+    invoke-static {v1}, Lcom/google/android/maps/driveabout/vector/aK;->a(Lcom/google/android/maps/driveabout/vector/aK;)Ljava/util/List;
 
-    const/4 v0, 0x3
+    move-result-object v1
 
-    new-array v0, v0, [Lcom/google/android/maps/driveabout/vector/al;
+    monitor-enter v1
 
-    sget-object v1, Lcom/google/android/maps/driveabout/vector/al;->a:Lcom/google/android/maps/driveabout/vector/al;
+    .line 576
+    :try_start_1f
+    iget-object v2, p0, Lcom/google/android/maps/driveabout/vector/aL;->b:Lcom/google/android/maps/driveabout/vector/aK;
 
-    aput-object v1, v0, v2
+    invoke-static {v2, v0}, Lcom/google/android/maps/driveabout/vector/aK;->a(Lcom/google/android/maps/driveabout/vector/aK;Lx/v;)Lx/v;
 
-    sget-object v1, Lcom/google/android/maps/driveabout/vector/al;->b:Lcom/google/android/maps/driveabout/vector/al;
+    .line 577
+    monitor-exit v1
+    :try_end_25
+    .catchall {:try_start_1f .. :try_end_25} :catchall_69
 
-    aput-object v1, v0, v3
+    .line 578
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/aL;->b:Lcom/google/android/maps/driveabout/vector/aK;
 
-    sget-object v1, Lcom/google/android/maps/driveabout/vector/al;->c:Lcom/google/android/maps/driveabout/vector/al;
+    const/4 v1, 0x1
 
-    aput-object v1, v0, v4
+    invoke-static {v0, v1}, Lcom/google/android/maps/driveabout/vector/aK;->a(Lcom/google/android/maps/driveabout/vector/aK;Z)Z
 
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/al;->d:[Lcom/google/android/maps/driveabout/vector/al;
-
+    .line 579
     return-void
-.end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .line 554
+    :catchall_2c
+    move-exception v0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public static a(I)Lcom/google/android/maps/driveabout/vector/al;
-    .registers 3
-
-    packed-switch p0, :pswitch_data_14
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "Unknown justification"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    :try_start_2d
+    monitor-exit v1
+    :try_end_2e
+    .catchall {:try_start_2d .. :try_end_2e} :catchall_2c
 
     throw v0
 
-    :pswitch_b
-    sget-object v0, Lcom/google/android/maps/driveabout/vector/al;->a:Lcom/google/android/maps/driveabout/vector/al;
+    .line 558
+    :catch_2f
+    move-exception v0
 
-    :goto_d
-    return-object v0
+    .line 561
+    :try_start_30
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/aL;->b:Lcom/google/android/maps/driveabout/vector/aK;
 
-    :pswitch_e
-    sget-object v0, Lcom/google/android/maps/driveabout/vector/al;->b:Lcom/google/android/maps/driveabout/vector/al;
-
-    goto :goto_d
-
-    :pswitch_11
-    sget-object v0, Lcom/google/android/maps/driveabout/vector/al;->c:Lcom/google/android/maps/driveabout/vector/al;
-
-    goto :goto_d
-
-    :pswitch_data_14
-    .packed-switch 0x1
-        :pswitch_b
-        :pswitch_e
-        :pswitch_11
-    .end packed-switch
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lcom/google/android/maps/driveabout/vector/al;
-    .registers 2
-
-    const-class v0, Lcom/google/android/maps/driveabout/vector/al;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-static {v0}, Lcom/google/android/maps/driveabout/vector/aK;->b(Lcom/google/android/maps/driveabout/vector/aK;)Ljava/util/List;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/maps/driveabout/vector/al;
+    invoke-static {v0}, Lcom/google/common/collect/cx;->a(Ljava/lang/Iterable;)Ljava/util/ArrayList;
 
-    return-object v0
-.end method
+    move-result-object v2
 
-.method public static values()[Lcom/google/android/maps/driveabout/vector/al;
-    .registers 1
+    .line 562
+    const/4 v0, 0x0
 
-    sget-object v0, Lcom/google/android/maps/driveabout/vector/al;->d:[Lcom/google/android/maps/driveabout/vector/al;
+    .line 563
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v0}, [Lcom/google/android/maps/driveabout/vector/al;->clone()Ljava/lang/Object;
+    move-result-object v3
+
+    move v1, v0
+
+    :goto_40
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_53
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Lcom/google/android/maps/driveabout/vector/al;
+    check-cast v0, Ln/U;
 
-    return-object v0
+    .line 564
+    invoke-virtual {v0}, Ln/U;->b()I
+
+    move-result v0
+
+    add-int/2addr v0, v1
+
+    move v1, v0
+
+    goto :goto_40
+
+    .line 566
+    :cond_53
+    const/16 v0, 0x7d0
+
+    if-ge v1, v0, :cond_5e
+
+    .line 567
+    sget-object v0, Lx/q;->d:Lx/q;
+
+    invoke-static {v2, v0}, Lx/o;->a(Ljava/util/List;Lx/q;)Lx/v;
+
+    move-result-object v0
+
+    goto :goto_18
+
+    .line 569
+    :cond_5e
+    invoke-static {}, Lx/v;->a()Lx/v;
+    :try_end_61
+    .catch Lx/k; {:try_start_30 .. :try_end_61} :catch_63
+
+    move-result-object v0
+
+    goto :goto_18
+
+    .line 571
+    :catch_63
+    move-exception v0
+
+    .line 572
+    invoke-static {}, Lx/v;->a()Lx/v;
+
+    move-result-object v0
+
+    goto :goto_18
+
+    .line 577
+    :catchall_69
+    move-exception v0
+
+    :try_start_6a
+    monitor-exit v1
+    :try_end_6b
+    .catchall {:try_start_6a .. :try_end_6b} :catchall_69
+
+    throw v0
 .end method

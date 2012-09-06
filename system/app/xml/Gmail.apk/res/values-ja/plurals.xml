@@ -53,40 +53,40 @@
         <item quantity="one">%1$d件のスレッドで操作を待機しています。</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>件をミュートしました。</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>件をミュートしました。</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件をミュートしました。</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件をミュートしました。</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>件を迷惑メールとして報告しました。</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>件を迷惑メールとして報告しました。</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件を迷惑メールとして報告しました。</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件を迷惑メールとして報告しました。</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>件をアーカイブしました。</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>件をアーカイブしました。</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件をアーカイブしました。</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件をアーカイブしました。</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>件を受信トレイに移動しました。</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>件を受信トレイに移動しました。</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件を受信トレイに移動しました。</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件を受信トレイに移動しました。</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>件を削除しました。</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>件を削除しました。</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件を削除しました。</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件を削除しました。</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>件に重要マークを付けました。</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>件に重要マークを付けました。</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件に重要マークを付けました。</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件に重要マークを付けました。</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>件の重要マークを外しました。</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>件の重要マークを外しました。</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件の重要マークを外しました。</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件の重要マークを外しました。</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>件を既読にしました。</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>件を既読にしました。</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件を既読にしました。</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件を既読にしました。</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b>件を未読にしました。</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b>件を未読にしました。</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件を未読にしました。</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>件を未読にしました。</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">ラベルを変更しました。</item>

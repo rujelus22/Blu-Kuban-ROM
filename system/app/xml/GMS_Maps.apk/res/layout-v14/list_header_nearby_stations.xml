@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/listHeader" android:focusable="false" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="horizontal" android:id="@id/toInputPanel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="2.0dip">
-        <com.google.googlenav.suggest.android.SuggestView android:textSize="18.0sp" android:id="@id/toField" android:nextFocusDown="@id/getDirectionsButton" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginRight="4.0dip" android:scrollHorizontally="true" android:singleLine="true" android:capitalize="none" android:autoText="false" android:freezesText="true" android:layout_weight="1.0" android:imeOptions="actionDone" />
-        <ImageView android:id="@id/toChooseButton" android:layout_width="32.0dip" android:layout_height="fill_parent" android:src="@drawable/spinner_ab_holo_light" />
-        <ImageButton android:id="@id/getDirectionsButton" android:background="@drawable/btn_default" android:layout_width="40.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_btn_search" />
-    </LinearLayout>
-    <LinearLayout android:orientation="horizontal" android:id="@id/vehicleTypePanel" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="2.0dip" android:layout_marginTop="1.0dip" android:layout_marginRight="4.0dip" android:layout_weight="8.0">
-        <ToggleButton android:id="@id/subwayButton" android:background="@drawable/mode_driving" android:layout_width="0.0dip" android:layout_height="42.0dip" android:layout_weight="1.0" />
-        <ToggleButton android:id="@id/busButton" android:background="@drawable/mode_transit" android:layout_width="0.0dip" android:layout_height="42.0dip" android:layout_weight="1.0" />
-        <ToggleButton android:id="@id/trainButton" android:background="@drawable/mode_bike" android:layout_width="0.0dip" android:layout_height="42.0dip" android:layout_weight="1.0" />
-        <ToggleButton android:id="@id/tramButton" android:background="@drawable/mode_walk" android:layout_width="0.0dip" android:layout_height="42.0dip" android:layout_weight="1.0" />
-    </LinearLayout>
+    <com.google.googlenav.suggest.android.SuggestView android:textSize="18.0sp" android:id="@id/toField" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" android:scrollHorizontally="true" android:singleLine="true" android:capitalize="none" android:autoText="false" android:freezesText="true" android:layout_weight="1.0" android:imeOptions="actionSearch" />
+    <ImageView android:id="@id/toChooseButton" android:clickable="true" android:layout_width="32.0dip" android:layout_height="fill_parent" android:src="@drawable/spinner_ab_holo_light" />
 </LinearLayout>

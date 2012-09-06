@@ -1,43 +1,82 @@
-.class Ls/p;
+.class public Ls/p;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lu/x;
+.field private final a:Ls/q;
 
-.field final synthetic b:Ls/o;
+.field private final b:I
+
+.field private final c:Z
 
 
 # direct methods
-.method constructor <init>(Ls/o;Lu/x;)V
-    .registers 3
+.method private constructor <init>(Ls/q;IZ)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Ls/p;->b:Ls/o;
-
-    iput-object p2, p0, Ls/p;->a:Lu/x;
-
+    .prologue
+    .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 73
+    iput-object p1, p0, Ls/p;->a:Ls/q;
+
+    .line 74
+    iput p2, p0, Ls/p;->b:I
+
+    .line 75
+    iput-boolean p3, p0, Ls/p;->c:Z
+
+    .line 76
+    return-void
+.end method
+
+.method synthetic constructor <init>(Ls/q;IZLs/o;)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 59
+    invoke-direct {p0, p1, p2, p3}, Ls/p;-><init>(Ls/q;IZ)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .registers 3
+.method protected a()Ls/q;
+    .registers 2
 
-    iget-object v0, p0, Ls/p;->b:Ls/o;
+    .prologue
+    .line 79
+    iget-object v0, p0, Ls/p;->a:Ls/q;
 
-    invoke-static {v0}, Ls/o;->b(Ls/o;)Ls/d;
+    return-object v0
+.end method
 
-    move-result-object v0
+.method protected b()I
+    .registers 2
 
-    iget-object v1, p0, Ls/p;->a:Lu/x;
+    .prologue
+    .line 83
+    iget v0, p0, Ls/p;->b:I
 
-    invoke-interface {v0, v1}, Ls/d;->a(Lu/x;)V
+    return v0
+.end method
 
-    return-void
+.method protected c()Z
+    .registers 2
+
+    .prologue
+    .line 87
+    iget-boolean v0, p0, Ls/p;->c:Z
+
+    return v0
 .end method

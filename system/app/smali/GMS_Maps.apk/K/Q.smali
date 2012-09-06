@@ -1,51 +1,77 @@
-.class final LK/Q;
-.super Ljava/lang/Object;
+.class public abstract Lk/q;
+.super LA/j;
+.source "SourceFile"
 
-# interfaces
-.implements LK/aK;
+
+# instance fields
+.field protected final a:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method public constructor <init>(JLjava/lang/String;)V
+    .registers 4
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 92
+    invoke-direct {p0, p1, p2}, LA/j;-><init>(J)V
 
+    .line 93
+    iput-object p3, p0, Lk/q;->a:Ljava/lang/String;
+
+    .line 94
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 87
+    invoke-direct {p0}, LA/j;-><init>()V
+
+    .line 88
+    iput-object p1, p0, Lk/q;->a:Ljava/lang/String;
+
+    .line 89
+    return-void
+.end method
+
+.method public constructor <init>(Lorg/w3c/dom/Node;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 97
+    invoke-direct {p0, p1}, LA/j;-><init>(Lorg/w3c/dom/Node;)V
+
+    .line 98
+    const-string v0, "provider"
+
+    invoke-static {p1, v0}, Lk/q;->a(Lorg/w3c/dom/Node;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->intern()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lk/q;->a:Ljava/lang/String;
+
+    .line 99
     return-void
 .end method
 
 
 # virtual methods
-.method public a(LK/am;)LK/aK;
+.method public b()Ljava/lang/String;
     .registers 2
 
-    return-object p0
-.end method
-
-.method public a()Z
-    .registers 2
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public b()V
-    .registers 1
-
-    return-void
-.end method
-
-.method public clear()V
-    .registers 1
-
-    return-void
-.end method
-
-.method public get()Ljava/lang/Object;
-    .registers 2
-
-    const/4 v0, 0x0
+    .prologue
+    .line 102
+    iget-object v0, p0, Lk/q;->a:Ljava/lang/String;
 
     return-object v0
 .end method

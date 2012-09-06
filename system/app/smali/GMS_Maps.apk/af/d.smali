@@ -1,68 +1,42 @@
-.class public Laf/d;
+.class LaF/d;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/widget/RadioGroup$OnCheckedChangeListener;
+
+
+# instance fields
+.field final synthetic a:LaF/c;
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
+.method constructor <init>(LaF/c;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 154
+    iput-object p1, p0, LaF/d;->a:LaF/c;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a()Z
-    .registers 1
 
-    const/4 v0, 0x0
+# virtual methods
+.method public onCheckedChanged(Landroid/widget/RadioGroup;I)V
+    .registers 4
+    .parameter
+    .parameter
 
-    return v0
-.end method
+    .prologue
+    .line 157
+    iget-object v0, p0, LaF/d;->a:LaF/c;
 
-.method public static b()Z
-    .registers 1
+    invoke-static {v0, p1}, LaF/c;->a(LaF/c;Landroid/widget/RadioGroup;)V
 
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public static c()Ljava/lang/String;
-    .registers 1
-
-    invoke-static {}, Laf/d;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_9
-
-    const-string v0, "2012-02-13 12:25:37 PST"
-
-    :goto_8
-    return-object v0
-
-    :cond_9
-    const-string v0, ""
-
-    goto :goto_8
-.end method
-
-.method public static d()Ljava/lang/String;
-    .registers 1
-
-    invoke-static {}, Laf/d;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_9
-
-    const-string v0, "olec"
-
-    :goto_8
-    return-object v0
-
-    :cond_9
-    const-string v0, ""
-
-    goto :goto_8
+    .line 158
+    return-void
 .end method

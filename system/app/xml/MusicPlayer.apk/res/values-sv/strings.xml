@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s, %2$s</string>
+    <string name="no_network_connection">Ingen anslutning</string>
+    <string name="authentication_failure_no_network">Enheten ansluts till Internet så att du kan autentisera ditt konto i Google Musik.</string>
+    <string name="authentication_failure">Inte autentiserad</string>
+    <string name="authentication_failure_error">Det gick inte att autentisera ditt konto i Google Musik.</string>
+    <string name="positive_button_text">OK</string>
+    <string name="negative_button_text">Avbryt</string>
+    <string name="save_button_text">Spara</string>
+    <string name="not_save_button_text">Spara inte</string>
+    <string name="offline_music_not_available_message">Om du vill hämta musik till enheten besöker du någon av vyerna Album, Spellistor eller Artist.</string>
+    <string name="view_albums_button_text">Öppna album</string>
+    <string name="shuffle_all">Blanda hela listan</string>
+    <string name="play_all">Spela alla</string>
+    <string name="songs_all">Alla låtar</string>
+    <string name="shuffle">Blanda</string>
+    <string name="search">Sök</string>
+    <string name="settings">Inställningar</string>
+    <string name="library_options">Visningsalternativ</string>
+    <string name="manage_music">Välj musik på enheten</string>
+    <string name="available_offline">Spara på enheten</string>
+    <string name="options">Alternativ</string>
+    <string name="clear_queue">Töm kön</string>
+    <string name="queue_cleared">Kön har rensats</string>
+    <string name="add_to_queue">Lägg till i kön</string>
+    <string name="add_to_athome_queue">Lägg till i gruppen %s</string>
+    <string name="shop_artist">Handla efter artist</string>
+    <string name="show_offline_music_only">Endast på enheten</string>
+    <string name="show_all_music">Visa all musik</string>
+    <string name="new_playlist_title">Spellistans namn</string>
+    <string name="add_to_playlist_title">Spellistans namn</string>
+    <string name="rename_playlist_title">Ändra namnet %s till</string>
+    <string name="search_section_header_artists">ARTISTER</string>
+    <string name="search_section_header_albums">ALBUM</string>
+    <string name="search_section_header_songs">LÅTAR</string>
+    <string name="search_section_header_playlists">SPELLISTOR</string>
+    <string name="shuffle_all_songs">Blanda alla spår</string>
+    <string name="stream_settings">Musikinställningar</string>
+    <string name="refresh_title">Uppdatera</string>
+    <string name="refresh_summary">Uppdatera musik från Google Play</string>
+    <string name="account_settings_title">Google-konton</string>
+    <string name="no_account_selected_summary">Tryck om du vill välja konto</string>
+    <string name="account_selected_summary">Koppla %s till Google Play</string>
+    <string name="hide_when_not_connected_title">Dölj musik som inte är tillgänglig</string>
+    <string name="hide_when_not_connected_summary">Visa enbart tillgänglig musik när du är offline</string>
+    <string name="stream_only_on_wifi_title">Endast via Wi-Fi</string>
+    <string name="stream_only_on_wifi_summary">Undvik direktuppspelning via nätverket för mobilenheter om du vill minska operatörsavgifterna.</string>
+    <string name="stream_only_hq_title">Hög kvalitet</string>
+    <string name="stream_only_hq_summary">Spela alltid musik i högsta kvalitet vid direktuppspelning</string>
+    <string name="athome_title">Android @ Home</string>
+    <string name="athome_summary">Leta efter Android @ Home-enheter.</string>
+    <string name="athome_not_remote">Om du vill lyssna på det här på Nexus Q överför du det först till musikbiblioteket på Google Play.</string>
+    <string name="athome_move_top_menu">Spela nästa</string>
+    <string name="athome_remove_menu">Ta bort från kön</string>
+    <string name="lock_screen_controls_title">Skärmlåskontroller</string>
+    <string name="lock_screen_controls_summary">Visa musikkontroller högst upp på den låsta skärmen</string>
+    <string name="debug_logs_title">Felsökningsloggar</string>
+    <string name="debug_logs_summary">Använd felsökningsloggar</string>
+    <string name="debug_logs_enable_warning_message">"Vill du aktivera felsökningsloggarna?
+Känslig information kan lagras på den externa lagringsenheten. Om du ändrar det här alternativet så kommer appen att avslutas."</string>
+    <string name="debug_logs_disable_warning_message">"Vill du inaktivera felsökningsloggarna?
+Om du ändrar det här alternativet så kommer appen att avslutas."</string>
+    <string name="tungsten_settings">Inställningar för Nexus Q</string>
+    <string name="offlinedl_only_on_wifi_title">Hämta bara via Wi-Fi</string>
+    <string name="offlinedl_only_on_wifi_summary">Undvik hämtning via nätverket för mobilenheter om du vill minska operatörsavgifterna.</string>
+    <string name="cache_streamed_title">Spara automatiskt</string>
+    <string name="cache_streamed_summary">Lagra musik tillfälligt utan att fråga</string>
+    <string name="download_queue_title">Hämta kö...</string>
+    <string name="download_queue_summary">Visa de låtar som hämtas för tillfället</string>
+    <string name="help_title">Hjälp</string>
+    <string name="show_no_downloads_title">Inga låtar i kö för hämtning</string>
+    <string name="music_version_title">Musikversion</string>
+    <string name="music_version_summary">Okänd version</string>
+    <string name="nowplaying_title">Nu spelas</string>
+    <string name="artists_title">Artister</string>
+    <string name="albums_title">Album</string>
+    <string name="genres_title">Genrer</string>
+    <string name="tracks_title">Låtar</string>
+    <string name="playlists_title">Spellistor</string>
+    <string name="recent_title">Senaste</string>
+    <string name="search_title">Sök</string>
+    <string name="no_tracks_title">Inga låtar</string>
+    <string name="delete_playlist_menu">Ta bort</string>
+    <string name="edit_playlist_menu">Redigera</string>
+    <string name="rename_playlist_menu">Byt namn</string>
+    <string name="playlist_delete_confirmation">Vill du ta bort spellistan %s?</string>
+    <string name="delete_playlist_button_confirm">Ta bort</string>
+    <string name="playlist_deleted_message">Spellista har tagits bort.</string>
+    <string name="playlist_created_message">Spellistan %s har skapats.</string>
+    <string name="playlist_renamed_message">Nytt namn på spellista: %s.</string>
+    <string name="recentlyadded">Senast tillagda</string>
+    <string name="recentlyadded_title">Senast tillagda</string>
+    <string name="all_songs_list">Alla låtar</string>
+    <string name="all_songs_list_title">Alla låtar</string>
+    <string name="storemusic_list">Gratis och köpta</string>
+    <string name="storemusic_list_title">Gratis och köpta</string>
+    <string name="freemusic_list">Gratislåtar</string>
+    <string name="freemusic_list_title">Gratislåtar</string>
+    <string name="thumbsup_list">Tummen upp</string>
+    <string name="thumbsup_list_title">Tummen upp</string>
+    <string name="unknown_artist_name">Okänd artist</string>
+    <string name="unknown_album_name">Okänt album</string>
+    <string name="unknown_playlist_name">Okänd spellista</string>
+    <string name="unknown_submitter_name">Okänd</string>
+    <string name="ringtone_menu">Använd som ringsignal</string>
+    <string name="ringtone_set">%s vald som ringsignal.</string>
+    <string name="ringtone_set_failed">Det gick inte att skapa ringsignalen.</string>
+    <string name="ringtone_needs_download">Ringsignalen anges när den har hämtats.</string>
+    <string name="play_selection">Spela</string>
+    <string name="add_to_playlist">Lägg till i spellista</string>
+    <string name="rename_playlist_menu_item">Byt namn</string>
+    <string name="add_to_playlist_selector_title">Lägg till i spellistan</string>
+    <string name="queue">Aktuell spellista</string>
+    <string name="save_play_queue_as_playlist">Spara kön</string>
+    <string name="new_playlist_for_content">Ny spellista</string>
+    <string name="new_empty_playlist">Ny spellista</string>
+    <string name="new_playlist_name_template">Spellista %d</string>
+    <string name="removed_from_playlist">%1$s har tagits bort från spellistan.</string>
+    <string name="removed_from_play_queue">%1$s har tagits bort från kön.</string>
+    <string name="playlist_too_many_songs">Det finns för många låtar. Gränsen är %d per spellista.</string>
+    <string name="emptyplaylist">Den valda spellistan är tom.</string>
+    <string name="widget_nowplaying_small_title">Musik (4 x 1)</string>
+    <string name="widget_nowplaying_large_title">Musik (4 x 4)</string>
+    <string name="appwidget_text_separator">–</string>
+    <string name="playlist_edit_label">NAMN</string>
+    <string name="create_playlist_create_text">OK</string>
+    <string name="rename_playlist_rename_text">Byt namn</string>
+    <string name="service_start_error_title">Problem med uppspelningen</string>
+    <string name="service_start_error_msg">Det gick inte att spela upp låten.</string>
+    <string name="service_start_error_button">OK</string>
+    <string name="weekpicker_set">Färdig</string>
+    <string name="weekpicker_title">Ange tid</string>
+    <string name="musicshortcutlabel">Musikspellista</string>
+    <string name="app_name">Google Play Musik</string>
+    <string name="launcher_name">Play Musik</string>
+    <string name="actionbar_title">Google Play</string>
+    <string name="playback_failed_title">Ett fel uppstod vid uppspelning av musik.</string>
+    <string name="playback_failed">Det gick inte att spela upp det valda spåret.</string>
+    <string name="cancel">Avbryt</string>
+    <string name="remove_from_playlist">Ta bort från spellista</string>
+    <string name="streamloadingtext">Ansluter till %s ...</string>
+    <string name="search_hint">Sök efter musik</string>
+    <string name="working_artists">Artister…</string>
+    <string name="working_albums">Album…</string>
+    <string name="loading">Läser in ...</string>
+    <string name="sort_by_track">Spår</string>
+    <string name="music_picker_title">Välj musikspår</string>
+    <string name="fail_to_start_stream">Det gick inte att spela upp den valda strömmen.</string>
+    <string name="search_settings_description">Artister, album och låtar</string>
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+    <string name="title_tv">Musik</string>
+    <string name="music_library">Musikbibliotek</string>
+    <string name="playlist_label">Spellista</string>
+    <string name="faux_art_all_songs_label">Alla låtar</string>
+    <string name="faux_art_playlist_label">Spellista</string>
+    <string name="faux_art_playlist_instant_mix_label">Snabbmix</string>
+    <string name="faux_art_playlist_auto_playlist_label">Automatisk spellista</string>
+    <string name="buffering">Buffrar ...</string>
+    <string name="keep_on_phone">Spara på enheten</string>
+    <string name="no_music_add_music_header">SÅ HÄR LÄGGER DU TILL MUSIK</string>
+    <string name="no_music_shop_body">Hämta miljontals låtar, bland annat hundratals kostnadsfria låtar.</string>
+    <string name="no_music_shop_button">BUTIK</string>
+    <string name="no_music_upload_body">Överför 20 000 låtar till Google Play utan kostnad.</string>
+    <string name="no_music_upload_button">LÄS MER</string>
+    <string name="no_music_usb_copy_body">Använd en USB-kabel om du vill kopiera musik från datorn till enheten.</string>
+    <string name="no_music_usb_copy_button">LÄS MER</string>
+    <string name="no_music_heading">Musikbiblioteket är tomt.</string>
+    <string name="no_music_setup_uploader_heading">Spela din musik trådlöst via direktuppspelning.</string>
+    <string name="no_music_setup_uploader_body">Lyssna på din musiksamling via direktuppspelning med Google Play Music.</string>
+    <string name="no_music_setup_usb_heading">Kopiera musik till enheten.</string>
+    <string name="no_music_setup_usb_body">Använd en USB-kabel om du vill kopiera musik från datorn till enheten.</string>
+    <string name="no_local_music_heading">Det finns ingen musik på enheten</string>
+    <string name="no_local_music_body">"Om du vill visa hela biblioteket öppnar du menyn och avmarkerar Endast på enheten.
+
+Välj den musik som du vill lagra på enheten genom att öppna menyn och knacka lätt på Välj musik på enheten."</string>
+    <string name="no_music_learn_more">Läs mer</string>
+    <string name="no_music_syncing_heading">Musiken sykroniseras just nu.</string>
+    <string name="no_music_syncing_body">Musiken synkroniseras från servern och dyker upp om en liten stund.</string>
+    <string name="no_music_scanning_heading">Söker efter musik på enheten</string>
+    <string name="no_music_scanning_body">Enheten genomsöks efter musik.</string>
+    <string name="sync_disabled">Du måste aktivera synkronisering för att musiken från Google Play Music ska kunna visas. Vill du göra det nu?</string>
+    <string name="tutorial_welcome_heading">Välkommen till Google Play Music</string>
+    <string name="tutorial_welcome_body">"Överför upp till 20 000 låtar från din egen musiksamling.
+
+Spela upp musik som du har köpt på Google Play direkt.
+
+Lyssna på all din musik på webben, i mobilen eller på en surfplatta. Hämta musik enkelt och spela upp den offline.
+
+Helt utan kostnad."</string>
+    <string name="tutorial_select_account_heading">Välj ett konto</string>
+    <string name="tutorial_select_account_body">"Koppla ditt konto till Google Play Musik och spela låtar från ditt musikbibliotek och låtar som du har köpt.
+
+Vilket konto vill du använda?"</string>
+    <string name="tutorial_sign_in">Koppla ditt konto till Google Play Musik och spela låtar från ditt musikbibliotek och låtar som du har köpt.</string>
+    <string name="tutorial_free_music_heading">Hämta gratis musik</string>
+    <string name="tutorial_free_music_body">På Google Play kan du bläddra bland hundratals kostnadsfria låtar av några av de största namnen inom rock, hiphop med mera.</string>
+    <string name="tutorial_account_heading">Välkommen</string>
+    <string name="tutorial_account_body">Du har fått en inbjudan till Google Play Music. Du kan använda den här spelaren för att lyssna på låtar som du har lagt till Google Play Music och musik som du har kopierat till din Android-enhet.</string>
+    <string name="tutorial_account_list_header">Börja med att välja ett Google-konto som ska kopplas till Google Play Music:</string>
+    <string name="tutorial_done_heading">Mycket nöje</string>
+    <string name="tutorial_done_body">"Musikspelaren är nu kopplad till ditt Google-konto.
+
+Om du redan har lagt till din musiksamling i Google Play Music kommer du att se den i spelaren.
+
+Om du inte har lagt till samlingen i Google Play Music än besöker du vår webbplats på datorn:"</string>
+    <string name="tutorial_skip">Hoppa över</string>
+    <string name="tutorial_next">Nästa</string>
+    <string name="tutorial_done">Klar</string>
+    <string name="tutorial_add_account">Lägg till konto</string>
+    <string name="tutorial_free_music">Hämta gratis låtar</string>
+    <string name="spinner_carousel">Senaste</string>
+    <string name="spinner_album">Album</string>
+    <string name="spinner_artist">Artister</string>
+    <string name="spinner_songs">Låtar</string>
+    <string name="spinner_playlists">Spellistor</string>
+    <string name="spinner_genres">Genrer</string>
+    <string name="sort_by_title">Sortera A–Z</string>
+    <string name="sort_by_artist">Sortera efter artist</string>
+    <string name="sort_by_album">Sortera efter album</string>
+    <string name="sort_by_date">Sortera efter tilläggsdatum</string>
+    <string name="more_by_artist">Mer från artisten</string>
+    <string name="make_available_offline">Spara på enheten</string>
+    <string name="search_web">Sök på webben</string>
+    <string name="manage_done">Klar</string>
+    <string name="too_many_items_title">För många objekt</string>
+    <string name="too_many_items_body">Det finns inte tillräckligt med utrymme för att spara alla valda objekt. Avmarkera några objekt.</string>
+    <string name="save_manage_music_change_title">Ändringar som inte har sparats</string>
+    <string name="save_manage_music_change_body">Vill du spara den valda musiken på enheten?</string>
+    <string name="not_all_items_can_be_kept_body">Det finns inte tillräckligt med utrymme för att spara alla valda objekt. Några objekt kommer inte att hämtas.</string>
+    <string name="free_space_overfull">Fullt (%s för mycket)</string>
+    <string name="free_space">%s LEDIGT</string>
+    <string name="stream_error_title">Musiken är inte tillgänglig nu.</string>
+    <string name="stream_error_no_space_available">Det finns ingen plats.</string>
+    <string name="stream_error_only_on_wifi">Enheten måste vara ansluten till ett Wi-Fi-nätverk för att kunna spela upp låten.</string>
+    <string name="stream_error_no_connection">Enheten måste vara online för att låten ska kunna spelas upp.</string>
+    <string name="stream_error_unauthorized_title">Autentiseringsfel.</string>
+    <string name="stream_error_unauthorized">Felaktigt användarnamn eller lösenord.</string>
+    <string name="stream_error_another_stream_being_played">Musiken har pausats eftersom du lyssnar på samlingen på en annan enhet.</string>
+    <string name="stream_error_rate_limit_reached">Musiken är inte tillgänglig för närvarande. Se till att du bara spelar upp musiksamlingen på en enhet åt gången.</string>
+    <string name="stream_error_device_not_authorized">Ditt musikbibliotek kan användas på upp till tio enheter. Du måste avauktorisera en av enheterna innan du lägger till en ny.</string>
+    <string name="stream_error_device_not_authorized_link">https://play.google.com/music/listen?view=settings_pl</string>
+    <string name="market_uri_link">market://details?id=com.google.android.music</string>
+    <string name="stream_error_device_not_authorized_not_now_button">Inte nu</string>
+    <string name="stream_error_device_not_authorized_manage_devices_button">Hantera enheter</string>
+    <string name="stream_error_learn_more">Läs mer</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/music/bin/answer.py?answer=1230356</string>
+    <string name="stream_error_another_stream_being_played_short">Musiken har pausats.</string>
+    <string name="stream_error_rate_limit_reached_short">Musiken är inte tillgänglig för tillfället.</string>
+    <string name="stream_error_device_not_authorized_short">För många enheter används med musikbiblioteket.</string>
+    <string name="stream_error_another_stream_being_played_notification">Du lyssnar på en annan enhet.</string>
+    <string name="stream_error_rate_limit_reached_notification">Du lyssnar på en annan enhet.</string>
+    <string name="stream_error_device_not_authorized_notification">Max 10 enheter per bibliotek.</string>
+    <string name="stream_error_another_stream_being_played_notification_short">Musiken har pausats.</string>
+    <string name="stream_error_rate_limit_reached_notification_short">Musiken är ej tillgänglig nu.</string>
+    <string name="stream_error_device_not_authorized_notification_short">Max. antal enheter används.</string>
+    <string name="athome_error_place_disconnected_short">Det går inte att kommunicera med Nexus Q.</string>
+    <string name="athome_error_controller_too_old_short">Den senaste versionen av appen Google Play Musik krävs för Nexus Q.</string>
+    <string name="athome_error_controller_too_old">Om du vill använda Nexus Q uppdaterar du appen Google Play Musik först.</string>
+    <string name="athome_error_controller_too_old_notification_short">Uppdatera appen Google Play Musik</string>
+    <string name="athome_error_controller_too_old_notification">att använda Nexus Q.</string>
+    <string name="athome_error_controller_too_old_update_button">Uppdatera</string>
+    <string name="athome_error_controller_too_new_short">Nexus Q behöver ny programvara.</string>
+    <string name="athome_error_controller_too_new">"Programvaran för Nexus Q  är för gammal. Om du vill uppdatera automatiskt ansluter du Nexus Q till Internet via Ethernet eller Wi-Fi."</string>
+    <string name="athome_error_controller_too_new_notification_short">Nexus Q behöver ny programvara.</string>
+    <string name="athome_error_controller_too_new_notification">Om du vill uppdatera automatiskt ansluter du Nexus Q till Internet.</string>
+    <string name="athome_error_generic_short">Nätverksfel Nexus Q.</string>
+    <string name="athome_error_generic">Nätverksanslutning till Nexus Q avbröts.</string>
+    <string name="athome_error_generic_notification_short">Nätverksfel för Nexus Q</string>
+    <string name="athome_error_generic_notification">Det går inte att kommunicera med Nexus Q. Det kan bero på en dålig nätverksanslutning eller på problem med enheten.</string>
+    <string name="athome_error_device_setup_short">Du måste återställa standardinställningarna i Nexus Q</string>
+    <string name="athome_error_device_setup">Installationen av Nexus Q är ofullständig. Återställ standardinställningarna i Nexus Q om du vill börja om.</string>
+    <string name="athome_error_device_setup_notification_short">Installationen är ofullständ.</string>
+    <string name="athome_error_device_setup_notification">Återställ standardinställningarna i Nexus Q om du vill börja om.</string>
+    <string name="athome_error_unauthorized_account_short">Kontot är obehörigt</string>
+    <string name="athome_error_unauthorized_account">Det går inte att använda kontot som du har valt med Nexus Q eftersom det är obehörigt.</string>
+    <string name="athome_error_unauthorized_account_notification_short">Kontot är obehörigt</string>
+    <string name="athome_error_unauthorized_account_notification">Det går inte att använda kontot som du har valt med Nexus Q eftersom det är obehörigt.</string>
+    <string name="athome_error_incompatible_tgs_version">En inkompatibel version av grupperingstjänsten körs på Nexus Q.</string>
+    <string name="athome_error_incompatible_tgs_version_short">Fel med grupperingstjänsten</string>
+    <string name="athome_error_incompatible_tgs_version_notification">En inkompatibel version av grupperingstjänsten körs på Nexus Q.</string>
+    <string name="athome_error_incompatible_tgs_version_notification_short">Fel med grupperingstjänsten för Nexus Q</string>
+    <string name="athome_error_unreachable_tgs">Det går inte att kommunicera med Nexus Q. Om felet kvarstår kan det hända att Nexus Q måste startas om.</string>
+    <string name="athome_error_unreachable_tgs_short">Det går inte att kontakta Nexus Q</string>
+    <string name="athome_error_unreachable_tgs_notification">Det går inte att kommunicera med Nexus Q. Om felet kvarstår kan det hända att Nexus Q måste startas om.</string>
+    <string name="athome_error_unreachable_tgs_notification_short">Det går inte att kontakta Nexus Q</string>
+    <string name="athome_error_server_network_short">Nätverksfel</string>
+    <string name="athome_error_server_network">Det gick inte att kommunicera med servern</string>
+    <string name="hide_now_playing_bar">Dölj fältet Spelas nu</string>
+    <string name="show_now_playing_bar">Visa fältet Spelas nu</string>
+    <string name="show_options">Visa alternativ</string>
+    <string name="hide_options">Dölj alternativ</string>
+    <string name="all_songs_in_genre">"Alla låtar från genren
+%s"</string>
+    <string name="preview_header">DELAS PÅ GOOGLE+</string>
+    <string name="shared_playback_full">LYSSNA EN GÅNG GRATIS</string>
+    <string name="shared_playback_partial">SMAKPROV</string>
+    <string name="btn_buy">Köp</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">Musiken hämtas …</string>
+    <string name="notification_downloading_when_on_wifi">Hämtningen av musiken fortsätter nästa gång enheten är online och ansluten till Wi-Fi</string>
+    <string name="notification_downloading_excessive_errors">Det går inte att hämta låtar just nu. Kontrollera din Internetanslutning.</string>
+    <string name="notification_downloading_done">Musiken har hämtats</string>
+    <string name="notification_ticker_ringtone_set">Ringsignalen är inställd på %s.</string>
+    <string name="notification_title_ringtone_set">Ringsignalen är inställd på %s</string>
+    <string name="notification_content_ringtone_set">Tryck här om du vill redigera ringsignalen.</string>
+    <string name="notification_ticker_ringtone_set_failed">Det gick inte att skapa ringsignalen.</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s – %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s – %s</string>
+    <string name="notification_newsongs_songcount">%d nya låtar</string>
+    <string name="notification_newsongs_subtitle">Har lagts till i Google Play Music</string>
+    <string name="carousel_label_shuffle_all">Blanda alla låtar</string>
+    <string name="song_label">LÅT</string>
+    <string name="artist_label">ARTIST</string>
+    <string name="album_label">ALBUM</string>
+    <string name="effectspanel">Equalizer</string>
+    <string name="menu_make_instant_mix">Skapa en snabbmix</string>
+    <string name="instant_mix_default_name">%s-mix</string>
+    <string name="creating_instant_mix">"En snabbmix läggs till
+i Spellistor."</string>
+    <string name="creating_instant_mix_with_seed">"En snabbmix
+som bygger på
+%s läggs till i Spellistor."</string>
+    <string name="create_instant_mix_failed">Det gick inte att skapa en snabbmix. Försök igen.</string>
+    <string name="create_instant_mix_failed_insufficient_results">Det fanns för få liknande låtar i samlingen för att en snabbmix skulle kunna skapas av %s. Prova att skapa en snabbmix av en annan låt.</string>
+    <string name="create_instant_mix_sync_timeout">"Snabbmixen har
+skapats och visas i
+spellistorna inom kort."</string>
+    <string name="create_instant_mix_btn_ok">OK</string>
+    <string name="delete">Ta bort</string>
+    <string name="confirm_delete_local_only">Vill du ta bort %s?</string>
+    <string name="confirm_delete_has_remote">%s har lästs in på sidan och överförts till Google Play Music. Endast objekt som har lästs in på sidan kommer att tas bort. Vill du ta bort dem?</string>
+    <string name="waiting_share">Delar %s</string>
+    <string name="share">Dela</string>
+    <string name="share_failure">Det gick inte att dela din musik.</string>
+    <string name="share_google_plus_footer">Om du delar musik kan personer i dina cirklar lyssna på den en gång helt gratis.</string>
+    <string name="accessibility_play">Spela upp</string>
+    <string name="accessibility_pause">Paus</string>
+    <string name="accessibility_stop">Avbryt</string>
+    <string name="accessibility_next">Nästa</string>
+    <string name="accessibility_prev">Föregående</string>
+    <string name="accessibility_shuffle">Blanda spår</string>
+    <string name="accessibility_repeat">Upprepa</string>
+    <string name="accessibility_thumbsUp">Tummen upp</string>
+    <string name="accessibility_thumbsDown">Tummen ned</string>
+    <string name="accessibility_star1">En stjärna</string>
+    <string name="accessibility_star2">Två stjärnor</string>
+    <string name="accessibility_star3">Tre stjärnor</string>
+    <string name="accessibility_star4">Fyra stjärnor</string>
+    <string name="accessibility_star5">Fem stjärnor</string>
+    <string name="accessibility_contractor">Expandera låtinformation</string>
+    <string name="accessibility_back">Tillbaka</string>
+    <string name="accessibility_contextMenu">Låtmenyn</string>
+    <string name="accessibility_home">Musiksidan</string>
+    <string name="accessibility_search">Sök</string>
+    <string name="accessibility_search_cancel">Avbryt sökningen</string>
+    <string name="accessibility_current">Nuvarande låt</string>
+    <string name="accessibility_createnewplaylist">Skapa ny spellista</string>
+    <string name="accessibility_menu">Fler alternativ</string>
+    <string name="accessibility_shop">Handla musik</string>
+    <string name="accessibility_volume">Volym</string>
+    <string name="accessibility_at_home_volume">Volym</string>
+    <string name="accessibility_select_output">Välj ljudutgång</string>
+    <string name="accessibility_close_social_mix_mode">Avsluta festmix</string>
+    <string name="header_help_add_songs">Lägg till låtar från biblioteket om du vill starta en festmix</string>
+    <string name="ringtone_replace_alert_button">Byt ut</string>
+    <string name="ringtone_replace_alert_title">Byta ringsignal</string>
+    <string name="ringtone_replace_alert_message">En ringsignal med detta namn finns redan. Vill du ersätta den?</string>
+    <string name="legal_information">Juridisk information</string>
+    <string name="license_title">Licenser för öppen källkod</string>
+    <string name="license_error">Det gick inte att läsa in licenserna.</string>
+    <string name="market_wrong_account" formatted="false">"Musiken som du försöker spela köptes via kontot %s
+
+Du är för närvarande inloggad på Google Play Music med kontot %s
+
+Om du vill lyssna på musiken du köpte måste du först byta konto."</string>
+    <string name="gplus_wrong_account" formatted="false">"Musiken som du försöker spela delades med kontot %s
+
+Du är för närvarande inloggad på Google Play Music med kontot %s
+
+Byt konto om du vill lyssna på din delade musik."</string>
+    <string name="switch_account_button">Byt konto</string>
+    <string name="switch_account_warning_message">"Är du säker på att du vill byta konto?
+Musik på den här enheten kommer att tas bort."</string>
+    <string name="switch_account_warning_button">Byt konto</string>
+    <string name="retry_button">Försök igen</string>
+    <string name="wait_for_item">Väntar på att musiken ska synkroniseras.</string>
+    <string name="wait_for_item_failure">Din musik läggs till just nu. Vänta en stund och försök igen.</string>
+    <string name="ringtone_title">Granska ringsignalen</string>
+    <string name="edit_ringtone">Redigera ringsignal</string>
+    <string name="ringtone_done">KLAR</string>
+    <string name="ringtone_file_edited_name">Klipp av %1$s</string>
+    <string name="progress_dialog_saving">Sparar ...</string>
+    <string name="start_handle">Starthandtag</string>
+    <string name="resize_handle">Ändra storlek på handtaget</string>
+    <string name="menu_reset">Återställ</string>
+    <string name="save_success_message">%1$s sparades som standardringsignal.</string>
+    <string name="save_failure_message">Det gick inte att spara %1$s som ringsignal.</string>
+    <string name="play_error">Det gick inte att spela upp mediefilen.</string>
+    <string name="write_error">Det gick inte att skriva till filen.</string>
+    <string name="read_error">Det gick inte att läsa filen.</string>
+    <string name="no_space_error">Det finns inte tillräckligt med utrymme på SD-kortet för att spara filen.</string>
+    <string name="bad_extension_error">Det går inte att redigera den här filtypen.</string>
+    <string name="no_extension_error">Det går inte att redigera en filtyp som inte har tillägget .mp3 eller .wav.</string>
+    <string name="alert_ok_button">OK</string>
+    <string name="athome_playback_title">Spelas just nu</string>
+    <string name="store_tutorial_title">Köp och spela direkt</string>
+    <string name="store_tutorial_content">Välj bland miljontals mp3-låtar, inklusive hundratals gratislåtar, i Google Play.</string>
+    <string name="store_tutorial_instruction">Om du vill besöka butiken trycker du på shoppingpåsen</string>
+    <string name="athome_added_by">Tillagd av</string>
+    <string name="athome_tutorial_title">Spela upp musik där du vill</string>
+    <string name="athome_tutorial_content">Tryck på strömikonen om du vill ange var musiken ska spelas</string>
+    <string name="athome_party_mode_disclamer">Din offentliga profilbild kan visas för andra när du använder festmix.</string>
+    <string name="athome_party_mode_disclamer_save_preference">Visa inte detta igen</string>
+    <string name="no_song_added">Kön är full. Den kan bara innehålla %1$d låtar.</string>
+    <string name="recent_added">Lades till</string>
+    <string name="recent_purchased">Köpta</string>
+    <string name="recent_played">Spelade</string>
+    <string name="now_playing_tab_now_playing">NU SPELAS</string>
+    <string name="now_playing_tab_queue">SPELA UPP LÅTARNA I KÖN</string>
+</resources>

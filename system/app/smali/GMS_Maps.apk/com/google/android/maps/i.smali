@@ -1,8 +1,9 @@
 .class Lcom/google/android/maps/i;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/googlenav/android/V;
+.implements Lcom/google/googlenav/friend/aS;
 
 
 # instance fields
@@ -12,7 +13,10 @@
 # direct methods
 .method constructor <init>(Lcom/google/android/maps/MapsActivity;)V
     .registers 2
+    .parameter
 
+    .prologue
+    .line 1859
     iput-object p1, p0, Lcom/google/android/maps/i;->a:Lcom/google/android/maps/MapsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,25 +26,22 @@
 
 
 # virtual methods
-.method public a(IILandroid/content/Intent;)V
-    .registers 5
+.method public a(I)V
+    .registers 4
+    .parameter
 
-    const/4 v0, -0x1
+    .prologue
+    .line 1862
+    if-nez p1, :cond_8
 
-    if-ne p2, v0, :cond_8
+    .line 1863
+    const/16 v0, 0x166
 
-    iget-object v0, p0, Lcom/google/android/maps/i;->a:Lcom/google/android/maps/MapsActivity;
+    const/4 v1, 0x0
 
-    invoke-virtual {v0}, Lcom/google/android/maps/MapsActivity;->finish()V
+    invoke-static {v0, v1}, Lcom/google/googlenav/ui/bn;->a(II)Landroid/widget/Toast;
 
+    .line 1866
     :cond_8
     return-void
-.end method
-
-.method public ab_()I
-    .registers 2
-
-    const/16 v0, 0x8
-
-    return v0
 .end method

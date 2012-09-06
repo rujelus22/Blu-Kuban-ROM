@@ -2,5 +2,8 @@
 <resources>
     <bool name="enable_widgets">true</bool>
     <bool name="enable_traffic_widget">true</bool>
+    <bool name="enable_latitude_widget">false</bool>
+    <bool name="enable_history_intent_service">true</bool>
     <bool name="is_tablet">false</bool>
+    <bool name="wallpaper_enabled">true</bool>
 </resources>

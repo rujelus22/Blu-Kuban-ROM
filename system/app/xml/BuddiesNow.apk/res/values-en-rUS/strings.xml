@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Buddies now</string>
-    <string name="buddy">Buddy</string>
-    <string name="unknown_contact">Unknown</string>
-    <string name="initial_text">Tap to add buddies</string>
-</resources>

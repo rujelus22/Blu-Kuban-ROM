@@ -5,6 +5,14 @@
         <item>Keskitaso</item>
         <item>Tiukka</item>
     </string-array>
+    <string-array name="preload_quota_entries">
+        <item>128 Mt</item>
+        <item>256 Mt</item>
+        <item>512 Mt</item>
+        <item>1 Gt</item>
+        <item>2 Gt</item>
+        <item>4 Gt</item>
+    </string-array>
     <string-array name="subtitles_size_entries">
         <item>Pieni</item>
         <item>Keskikokoinen</item>

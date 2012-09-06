@@ -44,45 +44,45 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 59
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 61
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
+    .line 50
     new-instance v0, Lcom/android/emailcommon/service/ServiceProxy$ProxyRunnable;
 
     invoke-direct {v0, p0, v1}, Lcom/android/emailcommon/service/ServiceProxy$ProxyRunnable;-><init>(Lcom/android/emailcommon/service/ServiceProxy;Lcom/android/emailcommon/service/ServiceProxy$1;)V
 
     iput-object v0, p0, Lcom/android/emailcommon/service/ServiceProxy;->mRunnable:Ljava/lang/Runnable;
 
-    .line 50
+    .line 52
     const-string v0, " unnamed"
 
     iput-object v0, p0, Lcom/android/emailcommon/service/ServiceProxy;->mName:Ljava/lang/String;
 
-    .line 51
+    .line 53
     new-instance v0, Lcom/android/emailcommon/service/ServiceProxy$ProxyConnection;
 
     invoke-direct {v0, p0, v1}, Lcom/android/emailcommon/service/ServiceProxy$ProxyConnection;-><init>(Lcom/android/emailcommon/service/ServiceProxy;Lcom/android/emailcommon/service/ServiceProxy$1;)V
 
     iput-object v0, p0, Lcom/android/emailcommon/service/ServiceProxy;->mConnection:Landroid/content/ServiceConnection;
 
-    .line 53
+    .line 55
     const/16 v0, 0x2d
 
     iput v0, p0, Lcom/android/emailcommon/service/ServiceProxy;->mTimeout:I
 
-    .line 55
+    .line 57
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/emailcommon/service/ServiceProxy;->mDead:Z
 
-    .line 60
+    .line 62
     iput-object p1, p0, Lcom/android/emailcommon/service/ServiceProxy;->mContext:Landroid/content/Context;
 
-    .line 61
+    .line 63
     iput-object p2, p0, Lcom/android/emailcommon/service/ServiceProxy;->mIntent:Landroid/content/Intent;
 
-    .line 62
+    .line 64
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -93,21 +93,21 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/service/ServiceProxy;->mTag:Ljava/lang/String;
 
-    .line 63
+    .line 65
     invoke-static {}, Landroid/os/Debug;->isDebuggerConnected()Z
 
     move-result v0
 
     if-eqz v0, :cond_37
 
-    .line 64
+    .line 66
     iget v0, p0, Lcom/android/emailcommon/service/ServiceProxy;->mTimeout:I
 
     shl-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/android/emailcommon/service/ServiceProxy;->mTimeout:I
 
-    .line 66
+    .line 68
     :cond_37
     return-void
 .end method
@@ -117,7 +117,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 44
     invoke-direct {p0}, Lcom/android/emailcommon/service/ServiceProxy;->runTask()V
 
     return-void
@@ -128,7 +128,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/android/emailcommon/service/ServiceProxy;->mTask:Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;
 
     return-object v0
@@ -138,32 +138,29 @@
     .registers 3
 
     .prologue
-    .line 131
+    .line 135
     new-instance v0, Ljava/lang/Thread;
 
     iget-object v1, p0, Lcom/android/emailcommon/service/ServiceProxy;->mRunnable:Ljava/lang/Runnable;
 
     invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
-    .line 132
+    .line 136
     .local v0, thread:Ljava/lang/Thread;
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 134
+    .line 138
     :try_start_a
     invoke-virtual {v0}, Ljava/lang/Thread;->join()V
     :try_end_d
-    .catch Ljava/lang/InterruptedException; {:try_start_a .. :try_end_d} :catch_11
+    .catch Ljava/lang/InterruptedException; {:try_start_a .. :try_end_d} :catch_e
 
-    .line 137
+    .line 141
     :goto_d
-    invoke-virtual {p0}, Lcom/android/emailcommon/service/ServiceProxy;->endTask()V
-
-    .line 138
     return-void
 
-    .line 135
-    :catch_11
+    .line 139
+    :catch_e
     move-exception v1
 
     goto :goto_d
@@ -175,7 +172,7 @@
     .registers 3
 
     .prologue
-    .line 114
+    .line 119
     :try_start_0
     iget-object v0, p0, Lcom/android/emailcommon/service/ServiceProxy;->mContext:Landroid/content/Context;
 
@@ -185,30 +182,30 @@
     :try_end_7
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_7} :catch_17
 
-    .line 121
+    .line 125
     :goto_7
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/emailcommon/service/ServiceProxy;->mDead:Z
 
-    .line 122
+    .line 126
     iget-object v1, p0, Lcom/android/emailcommon/service/ServiceProxy;->mConnection:Landroid/content/ServiceConnection;
 
     monitor-enter v1
 
-    .line 126
+    .line 130
     :try_start_d
     iget-object v0, p0, Lcom/android/emailcommon/service/ServiceProxy;->mConnection:Landroid/content/ServiceConnection;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notify()V
 
-    .line 127
+    .line 131
     monitor-exit v1
 
-    .line 128
+    .line 132
     return-void
 
-    .line 127
+    .line 131
     :catchall_14
     move-exception v0
 
@@ -218,7 +215,7 @@
 
     throw v0
 
-    .line 115
+    .line 120
     :catch_17
     move-exception v0
 
@@ -238,30 +235,30 @@
     .end annotation
 
     .prologue
-    .line 146
+    .line 149
     iget-boolean v0, p0, Lcom/android/emailcommon/service/ServiceProxy;->mDead:Z
 
     if-eqz v0, :cond_a
 
-    .line 147
+    .line 150
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
 
-    .line 149
+    .line 152
     :cond_a
     iput-object p1, p0, Lcom/android/emailcommon/service/ServiceProxy;->mTask:Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;
 
-    .line 150
+    .line 153
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/emailcommon/service/ServiceProxy;->mStartTime:J
 
-    .line 154
+    .line 157
     iget-object v0, p0, Lcom/android/emailcommon/service/ServiceProxy;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/emailcommon/service/ServiceProxy;->mIntent:Landroid/content/Intent;
@@ -283,10 +280,10 @@
     .parameter "name"
 
     .prologue
-    .line 141
+    .line 144
     iput-object p2, p0, Lcom/android/emailcommon/service/ServiceProxy;->mName:Ljava/lang/String;
 
-    .line 142
+    .line 145
     invoke-virtual {p0, p1}, Lcom/android/emailcommon/service/ServiceProxy;->setTask(Lcom/android/emailcommon/service/ServiceProxy$ProxyTask;)Z
 
     move-result v0
@@ -299,10 +296,10 @@
     .parameter "secs"
 
     .prologue
-    .line 104
+    .line 109
     iput p1, p0, Lcom/android/emailcommon/service/ServiceProxy;->mTimeout:I
 
-    .line 105
+    .line 110
     return-object p0
 .end method
 
@@ -310,7 +307,7 @@
     .registers 4
 
     .prologue
-    .line 190
+    .line 191
     :try_start_0
     new-instance v1, Lcom/android/emailcommon/service/ServiceProxy$1;
 
@@ -324,15 +321,15 @@
 
     move-result v1
 
-    .line 200
+    .line 201
     :goto_b
     return v1
 
-    .line 198
+    .line 199
     :catch_c
     move-exception v0
 
-    .line 200
+    .line 201
     .local v0, e:Ljava/lang/Exception;
     const/4 v1, 0x0
 
@@ -343,12 +340,12 @@
     .registers 9
 
     .prologue
-    .line 158
+    .line 161
     iget-object v3, p0, Lcom/android/emailcommon/service/ServiceProxy;->mConnection:Landroid/content/ServiceConnection;
 
     monitor-enter v3
 
-    .line 159
+    .line 162
     :try_start_3
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
     :try_end_6
@@ -356,7 +353,7 @@
 
     move-result-wide v0
 
-    .line 164
+    .line 167
     .local v0, time:J
     :try_start_7
     iget-object v2, p0, Lcom/android/emailcommon/service/ServiceProxy;->mConnection:Landroid/content/ServiceConnection;
@@ -374,15 +371,15 @@
     .catchall {:try_start_7 .. :try_end_12} :catchall_14
     .catch Ljava/lang/InterruptedException; {:try_start_7 .. :try_end_12} :catch_17
 
-    .line 172
+    .line 175
     :goto_12
     :try_start_12
     monitor-exit v3
 
-    .line 173
+    .line 176
     return-void
 
-    .line 172
+    .line 175
     .end local v0           #time:J
     :catchall_14
     move-exception v2
@@ -393,7 +390,7 @@
 
     throw v2
 
-    .line 165
+    .line 168
     .restart local v0       #time:J
     :catch_17
     move-exception v2

@@ -1,81 +1,41 @@
-.class final Lcom/google/android/youtube/app/ui/aw;
+.class public interface abstract Lcom/google/android/youtube/app/ui/aw;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/p;
-
-.field final synthetic b:Lcom/google/android/youtube/app/ui/at;
-
-
-# direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/ui/at;Lcom/google/android/youtube/app/p;)V
-    .registers 3
-    .parameter
-    .parameter
-
-    .prologue
-    .line 131
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/aw;->b:Lcom/google/android/youtube/app/ui/at;
-
-    iput-object p2, p0, Lcom/google/android/youtube/app/ui/aw;->a:Lcom/google/android/youtube/app/p;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 4
-    .parameter
+.method public abstract a(Landroid/content/res/Configuration;)V
+.end method
 
-    .prologue
-    .line 133
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/aw;->a:Lcom/google/android/youtube/app/p;
+.method public abstract a(Landroid/view/Menu;)V
+.end method
 
-    invoke-interface {v0}, Lcom/google/android/youtube/app/p;->d()Lcom/google/android/youtube/app/t;
+.method public abstract b()V
+.end method
 
-    move-result-object v0
+.method public abstract c()V
+.end method
 
-    sget-object v1, Lcom/google/android/youtube/app/t;->c:Lcom/google/android/youtube/app/t;
+.method public abstract e()I
+.end method
 
-    if-eq v0, v1, :cond_b
+.method public abstract f()Z
+.end method
 
-    .line 139
-    :cond_a
-    :goto_a
-    return-void
+.method public abstract g()V
+.end method
 
-    .line 136
-    :cond_b
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/aw;->b:Lcom/google/android/youtube/app/ui/at;
+.method public abstract h()V
+.end method
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/at;->a(Lcom/google/android/youtube/app/ui/at;)Ljava/lang/String;
+.method public abstract i()V
+.end method
 
-    move-result-object v0
+.method public abstract j()V
+.end method
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/aw;->a:Lcom/google/android/youtube/app/p;
+.method public abstract k()V
+.end method
 
-    invoke-interface {v1}, Lcom/google/android/youtube/app/p;->h()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_a
-
-    .line 137
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/aw;->b:Lcom/google/android/youtube/app/ui/at;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/at;->c(Lcom/google/android/youtube/app/ui/at;)V
-
-    goto :goto_a
+.method public abstract n()Landroid/view/View;
 .end method

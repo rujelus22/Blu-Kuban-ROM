@@ -1,51 +1,41 @@
-.class Lcom/google/googlenav/ui/wizard/fK;
+.class Lcom/google/googlenav/ui/wizard/fk;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lay/q;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field private final a:Lcom/google/googlenav/ui/view/android/Z;
-
-.field private final b:LaS/e;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/fh;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/ui/view/android/Z;LaS/e;)V
-    .registers 3
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/fh;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 138
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fk;->a:Lcom/google/googlenav/ui/wizard/fh;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fK;->a:Lcom/google/googlenav/ui/view/android/Z;
-
-    iput-object p2, p0, Lcom/google/googlenav/ui/wizard/fK;->b:LaS/e;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public aa_()V
-    .registers 2
+.method public onClick(Landroid/view/View;)V
+    .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fK;->a:Lcom/google/googlenav/ui/view/android/Z;
+    .prologue
+    .line 140
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fk;->a:Lcom/google/googlenav/ui/wizard/fh;
 
-    if-eqz v0, :cond_9
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/fh;->a()V
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fK;->a:Lcom/google/googlenav/ui/view/android/Z;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/android/Z;->onContentChanged()V
-
-    :cond_9
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fK;->b:LaS/e;
-
-    if-eqz v0, :cond_12
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fK;->b:LaS/e;
-
-    invoke-virtual {v0}, LaS/e;->onContentChanged()V
-
-    :cond_12
+    .line 141
     return-void
 .end method

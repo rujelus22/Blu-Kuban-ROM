@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/media_output_selector_layout" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/icon_volume" android:paddingLeft="@dimen/output_selector_standard_margin" android:paddingTop="@dimen/output_selector_standard_margin" android:paddingRight="0.0dip" android:paddingBottom="@dimen/output_selector_standard_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_audio_vol_multi_holo_dark" android:layout_alignParentLeft="true" />
+    <ImageView android:id="@id/icon_detailed" android:paddingLeft="0.0dip" android:paddingTop="@dimen/output_selector_standard_margin" android:paddingRight="@dimen/output_selector_standard_margin" android:paddingBottom="@dimen/output_selector_standard_margin" android:visibility="invisible" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_bt_config" android:layout_alignParentRight="true" />
+    <SeekBar android:id="@id/volume_slider" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/output_selector_standard_margin" android:layout_toLeftOf="@id/icon_detailed" android:layout_toRightOf="@id/icon_volume" style="@style/SeekBar" />
+    <RelativeLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/volume_details_section" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginRight="0.0dip" android:minHeight="@dimen/minimum_section_height_large" android:layout_below="@id/icon_volume" android:layout_alignParentLeft="true">
+        <View android:id="@id/divider" style="@style/SectionDivider" />
+        <ListView android:id="@id/active_output_list" android:visibility="gone" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/divider" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/speakers" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginRight="0.0dip" android:layout_marginBottom="@dimen/section_margin_bottom" android:minHeight="@dimen/minimum_section_height_small" android:layout_below="@id/icon_volume" android:layout_alignParentLeft="true">
+        <TextView android:id="@id/speakers_title" android:text="@string/speakers_title" style="@style/SectionTitle" />
+        <View android:id="@id/divider" android:layout_below="@id/speakers_title" style="@style/SectionDivider" />
+        <ListView android:id="@id/speaker_list" android:visibility="gone" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/divider" />
+    </LinearLayout>
+    <RelativeLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/at_home_section" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginRight="0.0dip" android:layout_marginBottom="@dimen/section_margin_bottom" android:minHeight="@dimen/minimum_section_height_large" android:layout_below="@id/speakers" android:layout_alignParentLeft="true">
+        <TextView android:id="@id/title" android:text="@string/at_home_devices_title" style="@style/SectionTitle" />
+        <View android:id="@id/divider" android:layout_below="@id/title" style="@style/SectionDivider" />
+        <ListView android:id="@id/at_home_group_list" android:visibility="gone" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/divider" />
+        <ListView android:id="@id/at_home_receiver_list" android:visibility="gone" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/divider" />
+        <Button android:textAppearance="?android:textAppearanceSmall" android:gravity="center" android:id="@id/icon_group_editing_done" android:background="@drawable/btn_group_editing_done_bg" android:padding="0.0dip" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/receiver_list_item_height" android:text="@string/group_editing_done" android:layout_below="@id/at_home_receiver_list" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/user_route_section" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginRight="0.0dip" android:minHeight="@dimen/minimum_section_height_large" android:layout_below="@id/at_home_section" android:layout_alignParentLeft="true">
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/user_route_groups" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginRight="0.0dip" android:minHeight="@dimen/minimum_section_height_large" android:layout_alignParentLeft="true">
+            <TextView android:id="@id/title" android:text="@string/user_route_devices_title" style="@style/SectionTitle" />
+            <View android:id="@id/divider" android:layout_below="@id/title" style="@style/SectionDivider" />
+            <ListView android:id="@id/user_route_group_list" android:visibility="gone" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/divider" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/user_routes" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginRight="0.0dip" android:minHeight="@dimen/minimum_section_height_large" android:layout_below="@id/user_route_groups" android:layout_alignParentLeft="true">
+            <TextView android:id="@id/title" android:text="@string/user_route_devices_title" style="@style/SectionTitle" />
+            <View android:id="@id/divider" android:layout_below="@id/title" style="@style/SectionDivider" />
+            <ListView android:id="@id/user_route_list" android:visibility="gone" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/divider" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

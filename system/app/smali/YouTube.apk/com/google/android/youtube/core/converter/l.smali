@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;)V
+.method public a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;)V
     .registers 3
     .parameter
     .parameter
@@ -29,7 +29,7 @@
     return-void
 .end method
 
-.method public a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
+.method public a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
     .registers 4
     .parameter
     .parameter

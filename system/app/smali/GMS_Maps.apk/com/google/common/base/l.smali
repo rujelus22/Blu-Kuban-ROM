@@ -1,63 +1,86 @@
-.class Lcom/google/common/base/l;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/common/base/k;
+.class final Lcom/google/common/base/l;
+.super Lcom/google/common/base/b;
+.source "SourceFile"
 
 
 # direct methods
 .method constructor <init>()V
     .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 230
+    invoke-direct {p0}, Lcom/google/common/base/b;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Ljava/lang/Class;
+.method public a(Ljava/lang/CharSequence;I)I
     .registers 4
+    .parameter
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    .line 240
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    :try_start_1
-    invoke-static {}, Ljava/lang/ClassLoader;->getSystemClassLoader()Ljava/lang/ClassLoader;
-    :try_end_4
-    .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_4} :catch_e
+    move-result v0
 
-    move-result-object v1
+    .line 241
+    invoke-static {p2, v0}, Lcom/google/common/base/P;->b(II)I
 
-    if-eqz v1, :cond_d
+    .line 242
+    if-ne p2, v0, :cond_a
 
-    :try_start_7
-    const-string v2, "com.google.common.base.internal.Finalizer"
+    const/4 p2, -0x1
 
-    invoke-virtual {v1, v2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
-    :try_end_c
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_7 .. :try_end_c} :catch_19
+    :cond_a
+    return p2
+.end method
 
-    move-result-object v0
+.method public a()Lcom/google/common/base/b;
+    .registers 1
 
-    :cond_d
-    :goto_d
-    return-object v0
+    .prologue
+    .line 304
+    return-object p0
+.end method
 
-    :catch_e
-    move-exception v1
+.method public a(Lcom/google/common/base/b;)Lcom/google/common/base/b;
+    .registers 2
+    .parameter
 
-    invoke-static {}, Lcom/google/common/base/h;->b()Ljava/util/logging/Logger;
+    .prologue
+    .line 295
+    invoke-static {p1}, Lcom/google/common/base/P;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    .line 296
+    return-object p0
+.end method
 
-    const-string v2, "Not allowed to access system class loader."
+.method public bridge synthetic a(Ljava/lang/Object;)Z
+    .registers 3
+    .parameter
 
-    invoke-virtual {v1, v2}, Ljava/util/logging/Logger;->info(Ljava/lang/String;)V
+    .prologue
+    .line 230
+    check-cast p1, Ljava/lang/Character;
 
-    goto :goto_d
+    invoke-super {p0, p1}, Lcom/google/common/base/b;->a(Ljava/lang/Character;)Z
 
-    :catch_19
-    move-exception v1
+    move-result v0
 
-    goto :goto_d
+    return v0
+.end method
+
+.method public b(C)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 232
+    const/4 v0, 0x1
+
+    return v0
 .end method

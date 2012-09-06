@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 93
+    .line 98
     iput-object p1, p0, Lcom/android/emailcommon/service/ServiceProxy$ProxyRunnable;->this$0:Lcom/android/emailcommon/service/ServiceProxy;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 93
+    .line 98
     invoke-direct {p0, p1}, Lcom/android/emailcommon/service/ServiceProxy$ProxyRunnable;-><init>(Lcom/android/emailcommon/service/ServiceProxy;)V
 
     return-void
@@ -53,7 +53,7 @@
     .registers 2
 
     .prologue
-    .line 97
+    .line 102
     :try_start_0
     iget-object v0, p0, Lcom/android/emailcommon/service/ServiceProxy$ProxyRunnable;->this$0:Lcom/android/emailcommon/service/ServiceProxy;
 
@@ -66,11 +66,11 @@
     :try_end_9
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_9} :catch_a
 
-    .line 100
+    .line 105
     :goto_9
     return-void
 
-    .line 98
+    .line 103
     :catch_a
     move-exception v0
 

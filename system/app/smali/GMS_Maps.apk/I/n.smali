@@ -1,334 +1,176 @@
-.class public LI/n;
-.super Ljava/lang/Object;
+.class public Li/n;
+.super Li/l;
+.source "SourceFile"
 
 
-# static fields
-.field private static final a:LI/p;
+# instance fields
+.field private final a:[Li/l;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    new-instance v0, LI/o;
-
-    invoke-direct {v0}, LI/o;-><init>()V
-
-    sput-object v0, LI/n;->a:LI/p;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .registers 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static a(Landroid/content/Context;I)Landroid/text/Spannable;
+.method public constructor <init>([Li/l;)V
     .registers 3
+    .parameter
 
-    sget-object v0, LI/n;->a:LI/p;
+    .prologue
+    .line 160
+    const/4 v0, 0x0
 
-    invoke-static {p0, p1, v0}, LI/n;->a(Landroid/content/Context;ILI/p;)Landroid/text/Spannable;
+    invoke-direct {p0, v0}, Li/l;-><init>(Li/m;)V
 
-    move-result-object v0
+    .line 161
+    iput-object p1, p0, Li/n;->a:[Li/l;
 
-    return-object v0
+    .line 162
+    return-void
 .end method
 
-.method static a(Landroid/content/Context;ILI/p;)Landroid/text/Spannable;
-    .registers 7
 
-    const v1, 0x15180
+# virtual methods
+.method public a()Z
+    .registers 6
 
-    const/16 v0, 0x3c
+    .prologue
+    const/4 v0, 0x0
 
-    if-ge p1, v0, :cond_8
+    .line 170
+    iget-object v2, p0, Li/n;->a:[Li/l;
 
-    move p1, v0
-
-    :cond_8
-    div-int v0, p1, v1
-
-    rem-int v1, p1, v1
-
-    div-int/lit16 v1, v1, 0xe10
-
-    rem-int/lit16 v2, p1, 0xe10
-
-    rem-int/lit16 v2, v2, 0xe10
-
-    div-int/lit8 v2, v2, 0x3c
-
-    if-lez v0, :cond_1f
-
-    invoke-interface {p2}, LI/p;->a()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {p0, v2, v0, v1, p2}, LI/n;->a(Landroid/content/Context;Ljava/lang/String;IILI/p;)Landroid/text/Spannable;
-
-    move-result-object v0
-
-    :goto_1e
-    return-object v0
-
-    :cond_1f
-    if-lez v1, :cond_2a
-
-    invoke-interface {p2}, LI/p;->b()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p0, v0, v1, v2, p2}, LI/n;->a(Landroid/content/Context;Ljava/lang/String;IILI/p;)Landroid/text/Spannable;
-
-    move-result-object v0
-
-    goto :goto_1e
-
-    :cond_2a
-    invoke-interface {p2}, LI/p;->c()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v0, "{0}"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v3
-
-    new-instance v0, Landroid/text/SpannableStringBuilder;
-
-    invoke-direct {v0, v1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
-
-    invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "{0}"
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/2addr v2, v3
-
-    invoke-virtual {v0, v3, v2, v1}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    add-int/2addr v1, v3
-
-    const/4 v2, 0x0
-
-    invoke-static {p0, v0, v2, v3, p2}, LI/n;->a(Landroid/content/Context;Landroid/text/Spannable;IILI/p;)V
-
-    invoke-static {v0, v3, v1}, LI/n;->a(Landroid/text/Spannable;II)V
-
-    invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->length()I
-
-    move-result v2
-
-    invoke-static {p0, v0, v1, v2, p2}, LI/n;->a(Landroid/content/Context;Landroid/text/Spannable;IILI/p;)V
-
-    goto :goto_1e
-.end method
-
-.method private static a(Landroid/content/Context;Ljava/lang/String;IILI/p;)Landroid/text/Spannable;
-    .registers 15
-
-    invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {p3}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string v0, "{0}"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v2
-
-    const-string v0, "{1}"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v0
-
-    const-string v3, "{0}"
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    const-string v5, "{1}"
-
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    new-instance v6, Landroid/text/SpannableStringBuilder;
-
-    invoke-direct {v6, p1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
-
-    add-int v7, v2, v3
-
-    invoke-virtual {v6, v2, v7, v1}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
-
-    if-le v0, v2, :cond_32
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v7
-
-    sub-int/2addr v3, v7
-
-    sub-int/2addr v0, v3
-
-    :cond_32
-    add-int v3, v0, v5
-
-    invoke-virtual {v6, v0, v3, v4}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
-
-    if-le v2, v0, :cond_40
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    sub-int v3, v5, v3
-
-    sub-int/2addr v2, v3
-
-    :cond_40
-    if-ge v0, v2, :cond_66
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/2addr v3, v0
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    add-int/2addr v1, v2
-
-    move v8, v1
-
-    move v1, v2
-
-    move v2, v3
-
-    move v3, v0
-
-    move v0, v8
-
-    :goto_51
-    const/4 v4, 0x0
-
-    invoke-static {p0, v6, v4, v3, p4}, LI/n;->a(Landroid/content/Context;Landroid/text/Spannable;IILI/p;)V
-
-    invoke-static {v6, v3, v2}, LI/n;->a(Landroid/text/Spannable;II)V
-
-    invoke-static {p0, v6, v2, v1, p4}, LI/n;->a(Landroid/content/Context;Landroid/text/Spannable;IILI/p;)V
-
-    invoke-static {v6, v1, v0}, LI/n;->a(Landroid/text/Spannable;II)V
-
-    invoke-virtual {v6}, Landroid/text/SpannableStringBuilder;->length()I
-
-    move-result v1
-
-    invoke-static {p0, v6, v0, v1, p4}, LI/n;->a(Landroid/content/Context;Landroid/text/Spannable;IILI/p;)V
-
-    return-object v6
-
-    :cond_66
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    add-int v3, v2, v1
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    add-int/2addr v1, v0
-
-    move v8, v1
+    array-length v3, v2
 
     move v1, v0
 
-    move v0, v8
+    :goto_5
+    if-ge v1, v3, :cond_13
 
-    move v9, v3
+    aget-object v4, v2, v1
 
-    move v3, v2
+    .line 171
+    invoke-virtual {v4}, Li/l;->a()Z
 
-    move v2, v9
+    move-result v4
 
-    goto :goto_51
+    if-nez v4, :cond_10
+
+    .line 175
+    :cond_f
+    :goto_f
+    return v0
+
+    .line 170
+    :cond_10
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_5
+
+    .line 175
+    :cond_13
+    iget-object v1, p0, Li/n;->a:[Li/l;
+
+    array-length v1, v1
+
+    if-lez v1, :cond_f
+
+    const/4 v0, 0x1
+
+    goto :goto_f
 .end method
 
-.method private static a(Landroid/content/Context;Landroid/text/Spannable;IILI/p;)V
-    .registers 9
+.method public b()[Li/l;
+    .registers 2
 
-    const/16 v3, 0x21
+    .prologue
+    .line 165
+    iget-object v0, p0, Li/n;->a:[Li/l;
 
-    if-le p3, p2, :cond_22
-
-    new-instance v0, Landroid/text/style/RelativeSizeSpan;
-
-    const v1, 0x3f19999a
-
-    invoke-direct {v0, v1}, Landroid/text/style/RelativeSizeSpan;-><init>(F)V
-
-    invoke-interface {p1, v0, p2, p3, v3}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
-
-    new-instance v0, Landroid/text/style/ForegroundColorSpan;
-
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f080037
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
-
-    move-result v1
-
-    invoke-direct {v0, v1}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
-
-    invoke-interface {p1, v0, p2, p3, v3}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
-
-    :cond_22
-    return-void
+    return-object v0
 .end method
 
-.method private static a(Landroid/text/Spannable;II)V
-    .registers 5
+.method public equals(Ljava/lang/Object;)Z
+    .registers 4
+    .parameter
 
-    if-le p2, p1, :cond_d
+    .prologue
+    .line 189
+    instance-of v0, p1, Li/n;
 
-    new-instance v0, Landroid/text/style/StyleSpan;
+    if-eqz v0, :cond_f
 
-    const/4 v1, 0x1
+    .line 190
+    check-cast p1, Li/n;
 
-    invoke-direct {v0, v1}, Landroid/text/style/StyleSpan;-><init>(I)V
+    iget-object v0, p1, Li/n;->a:[Li/l;
 
-    const/16 v1, 0x21
+    iget-object v1, p0, Li/n;->a:[Li/l;
 
-    invoke-interface {p0, v0, p1, p2, v1}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
+    invoke-static {v0, v1}, Ljava/util/Arrays;->deepEquals([Ljava/lang/Object;[Ljava/lang/Object;)Z
 
-    :cond_d
-    return-void
+    move-result v0
+
+    .line 192
+    :goto_e
+    return v0
+
+    :cond_f
+    const/4 v0, 0x0
+
+    goto :goto_e
+.end method
+
+.method public hashCode()I
+    .registers 2
+
+    .prologue
+    .line 197
+    iget-object v0, p0, Li/n;->a:[Li/l;
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .registers 4
+
+    .prologue
+    .line 180
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 181
+    const/4 v0, 0x0
+
+    :goto_6
+    iget-object v2, p0, Li/n;->a:[Li/l;
+
+    array-length v2, v2
+
+    if-ge v0, v2, :cond_19
+
+    .line 182
+    iget-object v2, p0, Li/n;->a:[Li/l;
+
+    aget-object v2, v2, v0
+
+    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 181
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_6
+
+    .line 184
+    :cond_19
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

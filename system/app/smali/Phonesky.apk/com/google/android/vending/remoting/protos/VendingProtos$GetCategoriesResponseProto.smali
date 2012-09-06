@@ -34,22 +34,22 @@
     .registers 2
 
     .prologue
-    .line 14445
+    .line 14759
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 14449
+    .line 14763
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;->categories_:Ljava/util/List;
 
-    .line 14500
+    .line 14815
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;->cachedSize:I
 
-    .line 14445
+    .line 14759
     return-void
 .end method
 
@@ -60,17 +60,17 @@
     .parameter "value"
 
     .prologue
-    .line 14466
+    .line 14780
     if-nez p1, :cond_8
 
-    .line 14467
+    .line 14781
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 14469
+    .line 14783
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;->categories_:Ljava/util/List;
 
@@ -80,20 +80,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 14470
+    .line 14784
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;->categories_:Ljava/util/List;
 
-    .line 14472
+    .line 14786
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;->categories_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 14473
+    .line 14787
     return-object p0
 .end method
 
@@ -101,15 +101,15 @@
     .registers 2
 
     .prologue
-    .line 14502
+    .line 14818
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 14504
+    .line 14820
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;->getSerializedSize()I
 
-    .line 14506
+    .line 14822
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;->cachedSize:I
 
@@ -129,7 +129,7 @@
     .end annotation
 
     .prologue
-    .line 14452
+    .line 14766
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;->categories_:Ljava/util/List;
 
     return-object v0
@@ -139,10 +139,10 @@
     .registers 5
 
     .prologue
-    .line 14510
+    .line 14827
     const/4 v2, 0x0
 
-    .line 14511
+    .line 14828
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;->getCategoriesList()Ljava/util/List;
 
@@ -166,7 +166,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$CategoryProto;
 
-    .line 14512
+    .line 14829
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$CategoryProto;
     const/4 v3, 0x1
 
@@ -178,12 +178,12 @@
 
     goto :goto_9
 
-    .line 14515
+    .line 14832
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$CategoryProto;
     :cond_1c
     iput v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;->cachedSize:I
 
-    .line 14516
+    .line 14833
     return v2
 .end method
 
@@ -197,44 +197,44 @@
     .end annotation
 
     .prologue
-    .line 14523
+    .line 14841
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 14524
+    .line 14842
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1a
 
-    .line 14528
+    .line 14846
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 14529
+    .line 14847
     :sswitch_d
     return-object p0
 
-    .line 14534
+    .line 14852
     :sswitch_e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$CategoryProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$CategoryProto;-><init>()V
 
-    .line 14535
+    .line 14853
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$CategoryProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 14536
+    .line 14854
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;->addCategories(Lcom/google/android/vending/remoting/protos/VendingProtos$CategoryProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;
 
     goto :goto_0
 
-    .line 14524
+    .line 14842
     :sswitch_data_1a
     .sparse-switch
         0x0 -> :sswitch_d
@@ -252,7 +252,7 @@
     .end annotation
 
     .prologue
-    .line 14443
+    .line 14757
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;
 
     move-result-object v0
@@ -270,7 +270,7 @@
     .end annotation
 
     .prologue
-    .line 14495
+    .line 14810
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetCategoriesResponseProto;->getCategoriesList()Ljava/util/List;
 
     move-result-object v2
@@ -293,7 +293,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$CategoryProto;
 
-    .line 14496
+    .line 14811
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$CategoryProto;
     const/4 v2, 0x1
 
@@ -301,7 +301,7 @@
 
     goto :goto_8
 
-    .line 14498
+    .line 14813
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$CategoryProto;
     :cond_19
     return-void

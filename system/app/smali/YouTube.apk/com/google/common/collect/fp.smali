@@ -3,87 +3,171 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Iterator;
+.implements Ljava/util/ListIterator;
 
 
 # instance fields
-.field final a:Ljava/util/Iterator;
+.field final synthetic a:Ljava/util/ListIterator;
 
-.field final synthetic b:Lcom/google/common/collect/fo;
+.field final synthetic b:Lcom/google/common/collect/Lists$TransformingSequentialList;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/fo;)V
+.method constructor <init>(Lcom/google/common/collect/Lists$TransformingSequentialList;Ljava/util/ListIterator;)V
     .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 293
-    iput-object p1, p0, Lcom/google/common/collect/fp;->b:Lcom/google/common/collect/fo;
+    .line 378
+    iput-object p1, p0, Lcom/google/common/collect/fp;->b:Lcom/google/common/collect/Lists$TransformingSequentialList;
+
+    iput-object p2, p0, Lcom/google/common/collect/fp;->a:Ljava/util/ListIterator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 294
-    iget-object v0, p0, Lcom/google/common/collect/fp;->b:Lcom/google/common/collect/fo;
-
-    iget-object v0, v0, Lcom/google/common/collect/fo;->a:Lcom/google/common/collect/Multisets$SetMultiset;
-
-    iget-object v0, v0, Lcom/google/common/collect/Multisets$SetMultiset;->delegate:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/common/collect/fp;->a:Ljava/util/Iterator;
 
     return-void
 .end method
 
 
 # virtual methods
+.method public final add(Ljava/lang/Object;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 381
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
 .method public final hasNext()Z
     .registers 2
 
     .prologue
-    .line 297
-    iget-object v0, p0, Lcom/google/common/collect/fp;->a:Ljava/util/Iterator;
+    .line 386
+    iget-object v0, p0, Lcom/google/common/collect/fp;->a:Ljava/util/ListIterator;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0}, Ljava/util/ListIterator;->hasNext()Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final synthetic next()Ljava/lang/Object;
+.method public final hasPrevious()Z
+    .registers 2
+
+    .prologue
+    .line 391
+    iget-object v0, p0, Lcom/google/common/collect/fp;->a:Ljava/util/ListIterator;
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final next()Ljava/lang/Object;
     .registers 3
 
     .prologue
-    .line 293
-    iget-object v0, p0, Lcom/google/common/collect/fp;->a:Ljava/util/Iterator;
+    .line 396
+    iget-object v0, p0, Lcom/google/common/collect/fp;->b:Lcom/google/common/collect/Lists$TransformingSequentialList;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v0, v0, Lcom/google/common/collect/Lists$TransformingSequentialList;->function:Lcom/google/common/base/v;
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/google/common/collect/fp;->a:Ljava/util/ListIterator;
 
-    const/4 v1, 0x1
+    invoke-interface {v1}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Lcom/google/common/collect/Multisets;->a(Ljava/lang/Object;I)Lcom/google/common/collect/fk;
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lcom/google/common/base/v;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 .end method
 
+.method public final nextIndex()I
+    .registers 2
+
+    .prologue
+    .line 401
+    iget-object v0, p0, Lcom/google/common/collect/fp;->a:Ljava/util/ListIterator;
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->nextIndex()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final previous()Ljava/lang/Object;
+    .registers 3
+
+    .prologue
+    .line 406
+    iget-object v0, p0, Lcom/google/common/collect/fp;->b:Lcom/google/common/collect/Lists$TransformingSequentialList;
+
+    iget-object v0, v0, Lcom/google/common/collect/Lists$TransformingSequentialList;->function:Lcom/google/common/base/v;
+
+    iget-object v1, p0, Lcom/google/common/collect/fp;->a:Ljava/util/ListIterator;
+
+    invoke-interface {v1}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lcom/google/common/base/v;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final previousIndex()I
+    .registers 2
+
+    .prologue
+    .line 411
+    iget-object v0, p0, Lcom/google/common/collect/fp;->a:Ljava/util/ListIterator;
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->previousIndex()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public final remove()V
     .registers 2
 
     .prologue
-    .line 303
-    iget-object v0, p0, Lcom/google/common/collect/fp;->a:Ljava/util/Iterator;
+    .line 416
+    iget-object v0, p0, Lcom/google/common/collect/fp;->a:Ljava/util/ListIterator;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+    invoke-interface {v0}, Ljava/util/ListIterator;->remove()V
 
-    .line 304
+    .line 417
     return-void
+.end method
+
+.method public final set(Ljava/lang/Object;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 421
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "not supported"
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

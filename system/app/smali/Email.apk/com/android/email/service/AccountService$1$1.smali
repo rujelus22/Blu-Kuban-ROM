@@ -30,7 +30,7 @@
     .line 103
     iput-object p1, p0, Lcom/android/email/service/AccountService$1$1;->this$1:Lcom/android/email/service/AccountService$1;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .registers 2
 
     .prologue
-    .line 108
+    .line 107
     iget-object v0, p0, Lcom/android/email/service/AccountService$1$1;->this$1:Lcom/android/email/service/AccountService$1;
 
     iget-object v0, v0, Lcom/android/email/service/AccountService$1;->this$0:Lcom/android/email/service/AccountService;
@@ -51,9 +51,9 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/android/email/ExchangeUtils;->startExchangeService(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/android/email/service/EmailServiceUtils;->startExchangeService(Landroid/content/Context;)V
 
-    .line 110
+    .line 109
     iget-object v0, p0, Lcom/android/email/service/AccountService$1$1;->this$1:Lcom/android/email/service/AccountService$1;
 
     iget-object v0, v0, Lcom/android/email/service/AccountService$1;->this$0:Lcom/android/email/service/AccountService;
@@ -65,6 +65,6 @@
 
     invoke-static {v0}, Lcom/android/email/Email;->updateLoggingFlags(Landroid/content/Context;)V
 
-    .line 111
+    .line 110
     return-void
 .end method

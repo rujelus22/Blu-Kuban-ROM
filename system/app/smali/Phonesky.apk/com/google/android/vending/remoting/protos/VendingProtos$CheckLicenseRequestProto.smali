@@ -35,30 +35,30 @@
     .registers 3
 
     .prologue
-    .line 14558
+    .line 14876
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 14563
+    .line 14881
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->packageName_:Ljava/lang/String;
 
-    .line 14580
+    .line 14898
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->versionCode_:I
 
-    .line 14597
+    .line 14915
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->nonce_:J
 
-    .line 14639
+    .line 14958
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->cachedSize:I
 
-    .line 14558
+    .line 14876
     return-void
 .end method
 
@@ -68,15 +68,15 @@
     .registers 2
 
     .prologue
-    .line 14641
+    .line 14961
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 14643
+    .line 14963
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->getSerializedSize()I
 
-    .line 14645
+    .line 14965
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->cachedSize:I
 
@@ -87,7 +87,7 @@
     .registers 3
 
     .prologue
-    .line 14598
+    .line 14916
     iget-wide v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->nonce_:J
 
     return-wide v0
@@ -97,7 +97,7 @@
     .registers 2
 
     .prologue
-    .line 14564
+    .line 14882
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->packageName_:Ljava/lang/String;
 
     return-object v0
@@ -107,10 +107,10 @@
     .registers 5
 
     .prologue
-    .line 14649
+    .line 14970
     const/4 v0, 0x0
 
-    .line 14650
+    .line 14971
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->hasPackageName()Z
 
@@ -118,7 +118,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 14651
+    .line 14972
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->getPackageName()Ljava/lang/String;
@@ -131,7 +131,7 @@
 
     add-int/2addr v0, v1
 
-    .line 14654
+    .line 14975
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->hasVersionCode()Z
 
@@ -139,7 +139,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 14655
+    .line 14976
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->getVersionCode()I
@@ -152,7 +152,7 @@
 
     add-int/2addr v0, v1
 
-    .line 14658
+    .line 14979
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->hasNonce()Z
 
@@ -160,7 +160,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 14659
+    .line 14980
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->getNonce()J
@@ -173,11 +173,11 @@
 
     add-int/2addr v0, v1
 
-    .line 14662
+    .line 14983
     :cond_31
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->cachedSize:I
 
-    .line 14663
+    .line 14984
     return v0
 .end method
 
@@ -185,7 +185,7 @@
     .registers 2
 
     .prologue
-    .line 14581
+    .line 14899
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->versionCode_:I
 
     return v0
@@ -195,7 +195,7 @@
     .registers 2
 
     .prologue
-    .line 14599
+    .line 14917
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->hasNonce:Z
 
     return v0
@@ -205,7 +205,7 @@
     .registers 2
 
     .prologue
-    .line 14565
+    .line 14883
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->hasPackageName:Z
 
     return v0
@@ -215,7 +215,7 @@
     .registers 2
 
     .prologue
-    .line 14582
+    .line 14900
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->hasVersionCode:Z
 
     return v0
@@ -231,29 +231,29 @@
     .end annotation
 
     .prologue
-    .line 14670
+    .line 14992
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 14671
+    .line 14993
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_26
 
-    .line 14675
+    .line 14997
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 14676
+    .line 14998
     :sswitch_d
     return-object p0
 
-    .line 14681
+    .line 15003
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -263,7 +263,7 @@
 
     goto :goto_0
 
-    .line 14685
+    .line 15007
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -273,7 +273,7 @@
 
     goto :goto_0
 
-    .line 14689
+    .line 15011
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -283,7 +283,7 @@
 
     goto :goto_0
 
-    .line 14671
+    .line 14993
     :sswitch_data_26
     .sparse-switch
         0x0 -> :sswitch_d
@@ -303,7 +303,7 @@
     .end annotation
 
     .prologue
-    .line 14556
+    .line 14874
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;
 
     move-result-object v0
@@ -316,15 +316,15 @@
     .parameter "value"
 
     .prologue
-    .line 14601
+    .line 14919
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->hasNonce:Z
 
-    .line 14602
+    .line 14920
     iput-wide p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->nonce_:J
 
-    .line 14603
+    .line 14921
     return-object p0
 .end method
 
@@ -333,15 +333,15 @@
     .parameter "value"
 
     .prologue
-    .line 14567
+    .line 14885
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->hasPackageName:Z
 
-    .line 14568
+    .line 14886
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->packageName_:Ljava/lang/String;
 
-    .line 14569
+    .line 14887
     return-object p0
 .end method
 
@@ -350,15 +350,15 @@
     .parameter "value"
 
     .prologue
-    .line 14584
+    .line 14902
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->hasVersionCode:Z
 
-    .line 14585
+    .line 14903
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->versionCode_:I
 
-    .line 14586
+    .line 14904
     return-object p0
 .end method
 
@@ -372,14 +372,14 @@
     .end annotation
 
     .prologue
-    .line 14628
+    .line 14947
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->hasPackageName()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 14629
+    .line 14948
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->getPackageName()Ljava/lang/String;
@@ -388,7 +388,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 14631
+    .line 14950
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->hasVersionCode()Z
 
@@ -396,7 +396,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 14632
+    .line 14951
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->getVersionCode()I
@@ -405,7 +405,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 14634
+    .line 14953
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->hasNonce()Z
 
@@ -413,7 +413,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 14635
+    .line 14954
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;->getNonce()J
@@ -422,7 +422,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 14637
+    .line 14956
     :cond_2a
     return-void
 .end method

@@ -3,23 +3,26 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Iterator;
+.implements Ljava/util/ListIterator;
 
 
 # instance fields
-.field a:I
+.field final synthetic a:Ljava/util/ListIterator;
 
 .field final synthetic b:Lcom/google/common/collect/ey;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/ey;)V
-    .registers 2
+.method constructor <init>(Lcom/google/common/collect/ey;Ljava/util/ListIterator;)V
+    .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 981
+    .line 944
     iput-object p1, p0, Lcom/google/common/collect/ez;->b:Lcom/google/common/collect/ey;
+
+    iput-object p2, p0, Lcom/google/common/collect/ez;->a:Ljava/util/ListIterator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,124 +31,139 @@
 
 
 # virtual methods
-.method public final hasNext()Z
+.method public final synthetic add(Ljava/lang/Object;)V
     .registers 3
+    .parameter
 
     .prologue
-    .line 985
-    iget v0, p0, Lcom/google/common/collect/ez;->a:I
+    .line 944
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    if-nez v0, :cond_16
-
-    iget-object v0, p0, Lcom/google/common/collect/ez;->b:Lcom/google/common/collect/ey;
-
-    iget-object v0, v0, Lcom/google/common/collect/ey;->b:Lcom/google/common/collect/Multimaps$MapMultimap;
-
-    iget-object v0, v0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
-
-    iget-object v1, p0, Lcom/google/common/collect/ez;->b:Lcom/google/common/collect/ey;
-
-    iget-object v1, v1, Lcom/google/common/collect/ey;->a:Ljava/lang/Object;
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_16
-
-    const/4 v0, 0x1
-
-    :goto_15
-    return v0
-
-    :cond_16
-    const/4 v0, 0x0
-
-    goto :goto_15
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .registers 3
-
-    .prologue
-    .line 989
-    invoke-virtual {p0}, Lcom/google/common/collect/ez;->hasNext()Z
-
-    move-result v0
-
-    if-nez v0, :cond_c
-
-    .line 990
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
     throw v0
+.end method
 
-    .line 992
-    :cond_c
-    iget v0, p0, Lcom/google/common/collect/ez;->a:I
+.method public final hasNext()Z
+    .registers 2
 
-    add-int/lit8 v0, v0, 0x1
+    .prologue
+    .line 947
+    iget-object v0, p0, Lcom/google/common/collect/ez;->a:Ljava/util/ListIterator;
 
-    iput v0, p0, Lcom/google/common/collect/ez;->a:I
+    invoke-interface {v0}, Ljava/util/ListIterator;->hasNext()Z
 
-    .line 993
-    iget-object v0, p0, Lcom/google/common/collect/ez;->b:Lcom/google/common/collect/ey;
+    move-result v0
 
-    iget-object v0, v0, Lcom/google/common/collect/ey;->b:Lcom/google/common/collect/Multimaps$MapMultimap;
+    return v0
+.end method
 
-    iget-object v0, v0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
+.method public final hasPrevious()Z
+    .registers 2
 
-    iget-object v1, p0, Lcom/google/common/collect/ez;->b:Lcom/google/common/collect/ey;
+    .prologue
+    .line 962
+    iget-object v0, p0, Lcom/google/common/collect/ez;->a:Ljava/util/ListIterator;
 
-    iget-object v1, v1, Lcom/google/common/collect/ey;->a:Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
 
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result v0
+
+    return v0
+.end method
+
+.method public final synthetic next()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 944
+    iget-object v0, p0, Lcom/google/common/collect/ez;->a:Ljava/util/ListIterator;
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/common/collect/fk;
+
+    #calls: Lcom/google/common/collect/LinkedListMultimap;->createEntry(Lcom/google/common/collect/fk;)Ljava/util/Map$Entry;
+    invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$1100(Lcom/google/common/collect/fk;)Ljava/util/Map$Entry;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final remove()V
-    .registers 3
+.method public final nextIndex()I
+    .registers 2
 
     .prologue
-    const/4 v0, 0x1
+    .line 972
+    iget-object v0, p0, Lcom/google/common/collect/ez;->a:Ljava/util/ListIterator;
 
-    .line 997
-    iget v1, p0, Lcom/google/common/collect/ez;->a:I
+    invoke-interface {v0}, Ljava/util/ListIterator;->nextIndex()I
 
-    if-ne v1, v0, :cond_19
+    move-result v0
 
-    :goto_5
-    invoke-static {v0}, Lcom/google/common/base/t;->b(Z)V
+    return v0
+.end method
 
-    .line 998
-    const/4 v0, -0x1
+.method public final synthetic previous()Ljava/lang/Object;
+    .registers 2
 
-    iput v0, p0, Lcom/google/common/collect/ez;->a:I
+    .prologue
+    .line 944
+    iget-object v0, p0, Lcom/google/common/collect/ez;->a:Ljava/util/ListIterator;
 
-    .line 999
-    iget-object v0, p0, Lcom/google/common/collect/ez;->b:Lcom/google/common/collect/ey;
+    invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
 
-    iget-object v0, v0, Lcom/google/common/collect/ey;->b:Lcom/google/common/collect/Multimaps$MapMultimap;
+    move-result-object v0
 
-    iget-object v0, v0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
+    check-cast v0, Lcom/google/common/collect/fk;
 
-    iget-object v1, p0, Lcom/google/common/collect/ez;->b:Lcom/google/common/collect/ey;
+    #calls: Lcom/google/common/collect/LinkedListMultimap;->createEntry(Lcom/google/common/collect/fk;)Ljava/util/Map$Entry;
+    invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$1100(Lcom/google/common/collect/fk;)Ljava/util/Map$Entry;
 
-    iget-object v1, v1, Lcom/google/common/collect/ey;->a:Ljava/lang/Object;
+    move-result-object v0
 
-    invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    return-object v0
+.end method
 
-    .line 1000
+.method public final previousIndex()I
+    .registers 2
+
+    .prologue
+    .line 977
+    iget-object v0, p0, Lcom/google/common/collect/ez;->a:Ljava/util/ListIterator;
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->previousIndex()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final remove()V
+    .registers 2
+
+    .prologue
+    .line 957
+    iget-object v0, p0, Lcom/google/common/collect/ez;->a:Ljava/util/ListIterator;
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->remove()V
+
+    .line 958
     return-void
+.end method
 
-    .line 997
-    :cond_19
-    const/4 v0, 0x0
+.method public final synthetic set(Ljava/lang/Object;)V
+    .registers 3
+    .parameter
 
-    goto :goto_5
+    .prologue
+    .line 944
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
 .end method

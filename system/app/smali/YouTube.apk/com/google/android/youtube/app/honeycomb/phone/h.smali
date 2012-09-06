@@ -1,75 +1,66 @@
 .class final Lcom/google/android/youtube/app/honeycomb/phone/h;
-.super Lcom/google/android/youtube/app/honeycomb/phone/f;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # instance fields
-.field final synthetic b:Lcom/google/android/youtube/app/honeycomb/phone/e;
+.field final synthetic a:Lcom/google/android/youtube/app/adapter/bj;
+
+.field final synthetic b:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/e;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 209
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/app/honeycomb/phone/h;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/e;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/e;B)V
+.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;Lcom/google/android/youtube/app/adapter/bj;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 209
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/h;->b:Lcom/google/android/youtube/app/honeycomb/phone/e;
+    .line 335
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/h;->b:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
 
-    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/f;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/e;)V
+    iput-object p2, p0, Lcom/google/android/youtube/app/honeycomb/phone/h;->a:Lcom/google/android/youtube/app/adapter/bj;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Lcom/google/android/youtube/core/model/Page;)Landroid/net/Uri;
-    .registers 4
+.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .registers 9
+    .parameter
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 213
-    iget-object v0, p1, Lcom/google/android/youtube/core/model/Page;->entries:Ljava/util/List;
+    .line 337
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/h;->a:Lcom/google/android/youtube/app/adapter/bj;
 
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_14
-
-    .line 214
-    iget-object v0, p1, Lcom/google/android/youtube/core/model/Page;->entries:Ljava/util/List;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, p3}, Lcom/google/android/youtube/app/adapter/bj;->getItem(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/Video;
+    check-cast v0, Lcom/google/android/youtube/core/model/Playlist;
 
-    iget-object v0, v0, Lcom/google/android/youtube/core/model/Video;->thumbnailUri:Landroid/net/Uri;
+    .line 338
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/h;->b:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
 
-    .line 216
-    :goto_13
-    return-object v0
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->t()Lcom/google/android/youtube/app/a;
 
-    :cond_14
-    const/4 v0, 0x0
+    move-result-object v1
 
-    goto :goto_13
+    iget-object v0, v0, Lcom/google/android/youtube/core/model/Playlist;->contentUri:Landroid/net/Uri;
+
+    const/4 v2, 0x0
+
+    invoke-interface {v1, v0, v2}, Lcom/google/android/youtube/app/a;->a(Landroid/net/Uri;Z)V
+
+    .line 339
+    return-void
 .end method

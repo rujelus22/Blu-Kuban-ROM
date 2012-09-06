@@ -17,13 +17,15 @@
 # instance fields
 .field public accessibilityOverlay:Landroid/view/View;
 
-.field public bitmapView:Landroid/widget/ImageView;
+.field public bitmapView:Lcom/google/android/finsky/layout/SmartThumbnailView;
 
 .field public bottomSeparator:Landroid/view/View;
 
 .field public creator:Lcom/google/android/finsky/layout/DecoratedTextView;
 
 .field public leftSeparator:Landroid/view/View;
+
+.field public reason:Landroid/widget/TextView;
 
 .field public rightSeparator:Landroid/view/View;
 
@@ -35,7 +37,7 @@
     .registers 1
 
     .prologue
-    .line 176
+    .line 174
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,7 +48,7 @@
     .parameter "x0"
 
     .prologue
-    .line 176
+    .line 174
     invoke-direct {p0}, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;-><init>()V
 
     return-void

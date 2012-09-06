@@ -1,23 +1,28 @@
-.class Lcom/google/android/maps/driveabout/app/cG;
+.class Lcom/google/android/maps/driveabout/app/cg;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lq/G;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lq/b;
+.field final synthetic a:Lo/I;
 
-.field final synthetic b:Lcom/google/android/maps/driveabout/app/NavigationService;
+.field final synthetic b:Lcom/google/android/maps/driveabout/app/NavigationImageView;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/NavigationService;Lq/b;)V
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/NavigationImageView;Lo/I;)V
     .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/cG;->b:Lcom/google/android/maps/driveabout/app/NavigationService;
+    .prologue
+    .line 316
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/cg;->b:Lcom/google/android/maps/driveabout/app/NavigationImageView;
 
-    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/cG;->a:Lq/b;
+    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/cg;->a:Lo/I;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,16 +31,19 @@
 
 
 # virtual methods
-.method public a()V
-    .registers 2
+.method public run()V
+    .registers 4
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/cG;->a:Lq/b;
+    .prologue
+    .line 319
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/cg;->b:Lcom/google/android/maps/driveabout/app/NavigationImageView;
 
-    invoke-virtual {v0}, Lq/b;->b()V
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/cg;->a:Lo/I;
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/cG;->b:Lcom/google/android/maps/driveabout/app/NavigationService;
+    const/4 v2, 0x0
 
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/NavigationService;->g()V
+    invoke-static {v0, v1, v2}, Lcom/google/android/maps/driveabout/app/NavigationImageView;->a(Lcom/google/android/maps/driveabout/app/NavigationImageView;Lo/I;Z)V
 
+    .line 320
     return-void
 .end method

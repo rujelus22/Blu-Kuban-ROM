@@ -53,40 +53,40 @@
         <item quantity="one">Waiting for operation on %1$d conversation.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> muted.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> muted.</item>
+        <item quantity="other">&lt;b>%1$d&lt;/b> muted.</item>
+        <item quantity="one">&lt;b>%1$d&lt;/b> muted.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> reported as spam.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> reported as spam.</item>
+        <item quantity="other">&lt;b>%1$d&lt;/b> reported as spam.</item>
+        <item quantity="one">&lt;b>%1$d&lt;/b> reported as spam.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> archived.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> archived.</item>
+        <item quantity="other">&lt;b>%1$d&lt;/b> archived.</item>
+        <item quantity="one">&lt;b>%1$d&lt;/b> archived.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> moved to the Inbox.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> moved to the Inbox.</item>
+        <item quantity="other">&lt;b>%1$d&lt;/b> moved to the Inbox.</item>
+        <item quantity="one">&lt;b>%1$d&lt;/b> moved to the Inbox.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> deleted.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> deleted.</item>
+        <item quantity="other">&lt;b>%1$d&lt;/b> deleted.</item>
+        <item quantity="one">&lt;b>%1$d&lt;/b> deleted.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> marked important.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> marked important.</item>
+        <item quantity="other">&lt;b>%1$d&lt;/b> marked important.</item>
+        <item quantity="one">&lt;b>%1$d&lt;/b> marked important.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> marked not important.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> marked not important.</item>
+        <item quantity="other">&lt;b>%1$d&lt;/b> marked not important.</item>
+        <item quantity="one">&lt;b>%1$d&lt;/b> marked not important.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> marked read.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> marked read.</item>
+        <item quantity="other">&lt;b>%1$d&lt;/b> marked read.</item>
+        <item quantity="one">&lt;b>%1$d&lt;/b> marked read.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> marked unread.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> marked unread.</item>
+        <item quantity="other">&lt;b>%1$d&lt;/b> marked unread.</item>
+        <item quantity="one">&lt;b>%1$d&lt;/b> marked unread.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Changed labels.</item>

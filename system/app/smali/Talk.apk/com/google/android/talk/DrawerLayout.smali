@@ -768,7 +768,7 @@
     if-eq v4, v9, :cond_4f
 
     .line 230
-    iget v9, v0, Lcom/google/android/talk/DrawerLayout$LayoutParams;->width:I
+    iget v9, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     if-nez v9, :cond_30
 
@@ -804,20 +804,20 @@
 
     float-to-int v9, v9
 
-    iput v9, v0, Lcom/google/android/talk/DrawerLayout$LayoutParams;->width:I
+    iput v9, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 242
     .end local v1           #leftWeight:F
     .end local v6           #rightWeight:F
     .end local v8           #totalWeight:F
     :cond_30
-    iget v9, v0, Lcom/google/android/talk/DrawerLayout$LayoutParams;->width:I
+    iget v9, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     iget v10, v0, Lcom/google/android/talk/DrawerLayout$LayoutParams;->leftMargin:I
 
     sub-int/2addr v9, v10
 
-    iput v9, v0, Lcom/google/android/talk/DrawerLayout$LayoutParams;->width:I
+    iput v9, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 245
     iget-boolean v9, p0, Lcom/google/android/talk/DrawerLayout;->mDefaultToExpandedMode:Z
@@ -825,21 +825,21 @@
     if-eqz v9, :cond_77
 
     .line 246
-    iget v9, v0, Lcom/google/android/talk/DrawerLayout$LayoutParams;->width:I
+    iget v9, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     sub-int v9, v4, v9
 
-    iput v9, v5, Lcom/google/android/talk/DrawerLayout$LayoutParams;->width:I
+    iput v9, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 250
     :goto_41
-    iget v9, v5, Lcom/google/android/talk/DrawerLayout$LayoutParams;->width:I
+    iget v9, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     iget v10, v5, Lcom/google/android/talk/DrawerLayout$LayoutParams;->leftMargin:I
 
     sub-int/2addr v9, v10
 
-    iput v9, v5, Lcom/google/android/talk/DrawerLayout$LayoutParams;->width:I
+    iput v9, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 252
     invoke-direct {p0}, Lcom/google/android/talk/DrawerLayout;->computeWidthTarget()I
@@ -908,7 +908,7 @@
 
     sub-int v9, v4, v9
 
-    iput v9, v5, Lcom/google/android/talk/DrawerLayout$LayoutParams;->width:I
+    iput v9, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     goto :goto_41
 
@@ -1005,7 +1005,7 @@
 
     move-result-object v1
 
-    iget v1, v1, Lcom/google/android/talk/DrawerLayout$LayoutParams;->width:I
+    iget v1, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     iget-object v2, p0, Lcom/google/android/talk/DrawerLayout;->mLeftView:Landroid/view/View;
 

@@ -6,9 +6,11 @@
             <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fillViewport="true">
                 <FrameLayout android:id="@id/item_details_panel" android:background="@color/title_background" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
                 <View android:id="@id/leading_strip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-                <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
-                    <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/purchase_content" />
-                </FrameLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/purchase_content" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <include layout="@layout/purchase_content_summary" />
+                    <include layout="@layout/purchase_wallet_byline" />
+                    <include layout="@layout/purchase_content_extra" />
+                </LinearLayout>
             </LinearLayout>
             <include layout="@layout/purchase_acquire_row" />
             <include layout="@layout/purchase_acquire_row_footer" />

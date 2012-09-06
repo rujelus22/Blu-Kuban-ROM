@@ -17,7 +17,7 @@
 
     .prologue
     .line 13
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 14
     iput-object p1, p0, Lcom/google/android/videochat/MediaSources;->audio:[Lcom/google/android/videochat/NamedSource;

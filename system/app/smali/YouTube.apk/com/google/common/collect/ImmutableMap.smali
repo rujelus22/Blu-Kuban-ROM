@@ -12,20 +12,20 @@
     .registers 1
 
     .prologue
-    .line 256
+    .line 293
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static builder()Lcom/google/common/collect/ca;
+.method public static builder()Lcom/google/common/collect/dm;
     .registers 1
 
     .prologue
-    .line 127
-    new-instance v0, Lcom/google/common/collect/ca;
+    .line 128
+    new-instance v0, Lcom/google/common/collect/dm;
 
-    invoke-direct {v0}, Lcom/google/common/collect/ca;-><init>()V
+    invoke-direct {v0}, Lcom/google/common/collect/dm;-><init>()V
 
     return-object v0
 .end method
@@ -37,24 +37,33 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 232
+    .line 264
     instance-of v0, p0, Lcom/google/common/collect/ImmutableMap;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_13
 
     instance-of v0, p0, Lcom/google/common/collect/ImmutableSortedMap;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_13
 
-    .line 234
-    check-cast p0, Lcom/google/common/collect/ImmutableMap;
+    move-object v0, p0
 
-    .line 252
-    :goto_b
-    return-object p0
+    .line 269
+    check-cast v0, Lcom/google/common/collect/ImmutableMap;
 
-    .line 239
-    :cond_c
+    .line 270
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->isPartialView()Z
+
+    move-result v2
+
+    if-nez v2, :cond_13
+
+    .line 289
+    :goto_12
+    return-object v0
+
+    .line 276
+    :cond_13
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -67,60 +76,60 @@
 
     check-cast v0, [Ljava/util/Map$Entry;
 
-    .line 240
+    .line 277
     array-length v2, v0
 
-    packed-switch v2, :pswitch_data_56
+    packed-switch v2, :pswitch_data_5e
 
-    .line 247
-    :goto_1c
+    .line 284
+    :goto_23
     array-length v2, v0
 
-    if-ge v1, v2, :cond_4f
+    if-ge v1, v2, :cond_57
 
-    .line 248
+    .line 285
     aget-object v2, v0, v1
 
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 249
+    .line 286
     aget-object v3, v0, v1
 
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 250
+    .line 287
     invoke-static {v2, v3}, Lcom/google/common/collect/ImmutableMap;->entryOf(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
 
     move-result-object v2
 
     aput-object v2, v0, v1
 
-    .line 247
+    .line 284
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1c
+    goto :goto_23
 
-    .line 242
-    :pswitch_34
+    .line 279
+    :pswitch_3b
     invoke-static {}, Lcom/google/common/collect/ImmutableMap;->of()Lcom/google/common/collect/ImmutableMap;
 
-    move-result-object p0
+    move-result-object v0
 
-    goto :goto_b
+    goto :goto_12
 
-    .line 244
-    :pswitch_39
-    new-instance p0, Lcom/google/common/collect/SingletonImmutableMap;
+    .line 281
+    :pswitch_40
+    new-instance v2, Lcom/google/common/collect/SingletonImmutableMap;
 
-    aget-object v2, v0, v1
+    aget-object v3, v0, v1
 
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
     aget-object v0, v0, v1
 
@@ -128,29 +137,31 @@
 
     move-result-object v0
 
-    invoke-static {v2, v0}, Lcom/google/common/collect/ImmutableMap;->entryOf(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
+    invoke-static {v3, v0}, Lcom/google/common/collect/ImmutableMap;->entryOf(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/google/common/collect/SingletonImmutableMap;-><init>(Ljava/util/Map$Entry;)V
+    invoke-direct {v2, v0}, Lcom/google/common/collect/SingletonImmutableMap;-><init>(Ljava/util/Map$Entry;)V
 
-    goto :goto_b
+    move-object v0, v2
 
-    .line 252
-    :cond_4f
-    new-instance p0, Lcom/google/common/collect/RegularImmutableMap;
+    goto :goto_12
 
-    invoke-direct {p0, v0}, Lcom/google/common/collect/RegularImmutableMap;-><init>([Ljava/util/Map$Entry;)V
+    .line 289
+    :cond_57
+    new-instance v1, Lcom/google/common/collect/RegularImmutableMap;
 
-    goto :goto_b
+    invoke-direct {v1, v0}, Lcom/google/common/collect/RegularImmutableMap;-><init>([Ljava/util/Map$Entry;)V
 
-    .line 240
-    nop
+    move-object v0, v1
 
-    :pswitch_data_56
+    goto :goto_12
+
+    .line 277
+    :pswitch_data_5e
     .packed-switch 0x0
-        :pswitch_34
-        :pswitch_39
+        :pswitch_3b
+        :pswitch_40
     .end packed-switch
 .end method
 
@@ -160,12 +171,16 @@
     .parameter
 
     .prologue
-    .line 138
-    invoke-static {p0}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 139
+    const-string v0, "null key"
+
+    invoke-static {p0, v0}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v1, "null value"
+
+    invoke-static {p1, v1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -180,7 +195,7 @@
     .registers 1
 
     .prologue
-    .line 63
+    .line 65
     sget-object v0, Lcom/google/common/collect/EmptyImmutableMap;->INSTANCE:Lcom/google/common/collect/EmptyImmutableMap;
 
     return-object v0
@@ -192,14 +207,14 @@
     .parameter
 
     .prologue
-    .line 74
+    .line 75
     new-instance v0, Lcom/google/common/collect/SingletonImmutableMap;
 
-    invoke-static {p0}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -216,7 +231,7 @@
     .parameter
 
     .prologue
-    .line 84
+    .line 85
     new-instance v0, Lcom/google/common/collect/RegularImmutableMap;
 
     const/4 v1, 0x2
@@ -254,7 +269,7 @@
     .parameter
 
     .prologue
-    .line 94
+    .line 95
     new-instance v0, Lcom/google/common/collect/RegularImmutableMap;
 
     const/4 v1, 0x3
@@ -302,7 +317,7 @@
     .parameter
 
     .prologue
-    .line 105
+    .line 106
     new-instance v0, Lcom/google/common/collect/RegularImmutableMap;
 
     const/4 v1, 0x4
@@ -360,7 +375,7 @@
     .parameter
 
     .prologue
-    .line 116
+    .line 117
     new-instance v0, Lcom/google/common/collect/RegularImmutableMap;
 
     const/4 v1, 0x5
@@ -418,7 +433,7 @@
     .registers 2
 
     .prologue
-    .line 291
+    .line 332
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -429,9 +444,12 @@
 .method public containsKey(Ljava/lang/Object;)Z
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 299
+    .line 342
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -450,6 +468,10 @@
 .end method
 
 .method public abstract containsValue(Ljava/lang/Object;)Z
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 .end method
 
 .method public abstract entrySet()Lcom/google/common/collect/ImmutableSet;
@@ -459,7 +481,7 @@
     .registers 2
 
     .prologue
-    .line 51
+    .line 54
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->entrySet()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -470,28 +492,31 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 327
+    .line 375
     if-ne p1, p0, :cond_4
 
-    .line 328
+    .line 376
     const/4 v0, 0x1
 
-    .line 334
+    .line 382
     :goto_3
     return v0
 
-    .line 330
+    .line 378
     :cond_4
     instance-of v0, p1, Ljava/util/Map;
 
     if-eqz v0, :cond_17
 
-    .line 331
+    .line 379
     check-cast p1, Ljava/util/Map;
 
-    .line 332
+    .line 380
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->entrySet()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -506,7 +531,7 @@
 
     goto :goto_3
 
-    .line 334
+    .line 382
     :cond_17
     const/4 v0, 0x0
 
@@ -514,13 +539,17 @@
 .end method
 
 .method public abstract get(Ljava/lang/Object;)Ljava/lang/Object;
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 .end method
 
 .method public hashCode()I
     .registers 2
 
     .prologue
-    .line 340
+    .line 390
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->entrySet()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -536,7 +565,7 @@
     .registers 2
 
     .prologue
-    .line 295
+    .line 337
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->size()I
 
     move-result v0
@@ -554,6 +583,9 @@
     goto :goto_7
 .end method
 
+.method abstract isPartialView()Z
+.end method
+
 .method public abstract keySet()Lcom/google/common/collect/ImmutableSet;
 .end method
 
@@ -561,7 +593,7 @@
     .registers 2
 
     .prologue
-    .line 51
+    .line 54
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->keySet()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -575,7 +607,7 @@
     .parameter
 
     .prologue
-    .line 264
+    .line 302
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -588,7 +620,7 @@
     .parameter
 
     .prologue
-    .line 282
+    .line 322
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -601,7 +633,7 @@
     .parameter
 
     .prologue
-    .line 273
+    .line 312
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -610,39 +642,11 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .registers 2
 
     .prologue
-    .line 344
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->size()I
-
-    move-result v1
-
-    mul-int/lit8 v1, v1, 0x10
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const/16 v1, 0x7b
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    .line 345
-    sget-object v1, Lcom/google/common/collect/Maps;->a:Lcom/google/common/base/o;
-
-    invoke-virtual {v1, v0, p0}, Lcom/google/common/base/o;->a(Ljava/lang/StringBuilder;Ljava/util/Map;)Ljava/lang/StringBuilder;
-
-    .line 346
-    const/16 v1, 0x7d
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 394
+    invoke-static {p0}, Lcom/google/common/collect/Maps;->b(Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -656,7 +660,7 @@
     .registers 2
 
     .prologue
-    .line 51
+    .line 54
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->values()Lcom/google/common/collect/ImmutableCollection;
 
     move-result-object v0
@@ -668,7 +672,7 @@
     .registers 2
 
     .prologue
-    .line 381
+    .line 429
     new-instance v0, Lcom/google/common/collect/ImmutableMap$SerializedForm;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/ImmutableMap$SerializedForm;-><init>(Lcom/google/common/collect/ImmutableMap;)V

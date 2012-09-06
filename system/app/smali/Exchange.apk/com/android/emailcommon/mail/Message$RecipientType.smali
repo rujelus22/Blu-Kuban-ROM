@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 31
+    .line 26
     new-instance v0, Lcom/android/emailcommon/mail/Message$RecipientType;
 
     const-string v1, "TO"
@@ -69,7 +69,7 @@
 
     sput-object v0, Lcom/android/emailcommon/mail/Message$RecipientType;->BCC:Lcom/android/emailcommon/mail/Message$RecipientType;
 
-    .line 30
+    .line 25
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/emailcommon/mail/Message$RecipientType;
@@ -102,7 +102,7 @@
     .end annotation
 
     .prologue
-    .line 30
+    .line 25
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -113,7 +113,7 @@
     .parameter
 
     .prologue
-    .line 30
+    .line 25
     const-class v0, Lcom/android/emailcommon/mail/Message$RecipientType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -129,7 +129,7 @@
     .registers 1
 
     .prologue
-    .line 30
+    .line 25
     sget-object v0, Lcom/android/emailcommon/mail/Message$RecipientType;->$VALUES:[Lcom/android/emailcommon/mail/Message$RecipientType;
 
     invoke-virtual {v0}, [Lcom/android/emailcommon/mail/Message$RecipientType;->clone()Ljava/lang/Object;

@@ -53,40 +53,40 @@
         <item quantity="one">Đang đợi thao tác trên %1$d cuộc hội thoại.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> đã ẩn.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> đã ẩn.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã ẩn.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã ẩn.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> đã báo cáo là spam.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> đã báo cáo là spam.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã báo cáo là spam.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã báo cáo là spam.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> đã lưu trữ.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> đã lưu trữ.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã lưu trữ.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã lưu trữ.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> đã di chuyển vào Hộp thư đến.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> đã di chuyển vào Hộp thư đến.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã di chuyển vào Hộp thư đến.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã di chuyển vào Hộp thư đến.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> đã xóa.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> đã xóa.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã xóa.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã xóa.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> đã đánh dấu là quan trọng.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> đã đánh dấu là quan trọng.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã đánh dấu là quan trọng.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã đánh dấu là quan trọng.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> đã đánh dấu là không quan trọng.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> đã đánh dấu là không quan trọng.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã đánh dấu là không quan trọng.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã đánh dấu là không quan trọng.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> đã đánh dấu là đã đọc.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> đã đánh dấu là đã đọc.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã đánh dấu là đã đọc.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã đánh dấu là đã đọc.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> đã đánh dấu là chưa đọc.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> đã đánh dấu là chưa đọc.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã đánh dấu là chưa đọc.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> đã đánh dấu là chưa đọc.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Nhãn đã thay đổi.</item>

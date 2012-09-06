@@ -21,28 +21,28 @@
     .parameter "_contentUriString"
 
     .prologue
-    .line 37
+    .line 34
     iget-wide v0, p1, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mMessageKey:J
 
     invoke-direct {p0, v0, v1}, Lcom/android/exchange/Request;-><init>(J)V
 
-    .line 38
+    .line 35
     iput-object p1, p0, Lcom/android/exchange/PartRequest;->mAttachment:Lcom/android/emailcommon/provider/EmailContent$Attachment;
 
-    .line 39
+    .line 36
     iget-object v0, p0, Lcom/android/exchange/PartRequest;->mAttachment:Lcom/android/emailcommon/provider/EmailContent$Attachment;
 
     iget-object v0, v0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mLocation:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/exchange/PartRequest;->mLocation:Ljava/lang/String;
 
-    .line 40
+    .line 37
     iput-object p2, p0, Lcom/android/exchange/PartRequest;->mDestination:Ljava/lang/String;
 
-    .line 41
+    .line 38
     iput-object p3, p0, Lcom/android/exchange/PartRequest;->mContentUriString:Ljava/lang/String;
 
-    .line 42
+    .line 39
     return-void
 .end method
 
@@ -55,12 +55,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 47
+    .line 44
     instance-of v1, p1, Lcom/android/exchange/PartRequest;
 
     if-nez v1, :cond_6
 
-    .line 48
+    .line 45
     .end local p1
     :cond_5
     :goto_5
@@ -73,11 +73,11 @@
     .end local p1
     iget-object v1, p1, Lcom/android/exchange/PartRequest;->mAttachment:Lcom/android/emailcommon/provider/EmailContent$Attachment;
 
-    iget-wide v1, v1, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v1, v1, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mId:J
 
     iget-object v3, p0, Lcom/android/exchange/PartRequest;->mAttachment:Lcom/android/emailcommon/provider/EmailContent$Attachment;
 
-    iget-wide v3, v3, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v3, v3, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mId:J
 
     cmp-long v1, v1, v3
 
@@ -92,10 +92,10 @@
     .registers 3
 
     .prologue
-    .line 52
+    .line 49
     iget-object v0, p0, Lcom/android/exchange/PartRequest;->mAttachment:Lcom/android/emailcommon/provider/EmailContent$Attachment;
 
-    iget-wide v0, v0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iget-wide v0, v0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mId:J
 
     long-to-int v0, v0
 

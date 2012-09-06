@@ -28,6 +28,14 @@
         <item quantity="other">%1$d sekundit tagasi</item>
         <item quantity="one">1 sekund tagasi</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Aegub %1$d päeva pärast</item>
+        <item quantity="one">Aegub 1 päeva pärast</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Aegub %1$d tunni pärast</item>
+        <item quantity="one">Aegub 1 tunni pärast</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">uued üleslaadimised</item>
         <item quantity="one">uus üleslaadimine</item>

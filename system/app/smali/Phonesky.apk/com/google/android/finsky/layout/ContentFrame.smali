@@ -77,7 +77,7 @@
     .line 46
     iget-object v4, p0, Lcom/google/android/finsky/layout/ContentFrame;->mInflater:Landroid/view/LayoutInflater;
 
-    const v5, 0x7f040097
+    const v5, 0x7f0400c5
 
     invoke-virtual {v4, v5, p0, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -93,7 +93,7 @@
     .line 50
     iget-object v4, p0, Lcom/google/android/finsky/layout/ContentFrame;->mInflater:Landroid/view/LayoutInflater;
 
-    const v5, 0x7f040096
+    const v5, 0x7f0400c4
 
     invoke-virtual {v4, v5, p0, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

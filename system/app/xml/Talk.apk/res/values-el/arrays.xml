@@ -29,6 +29,12 @@
         <item>Μόνο στο αθόρυβο</item>
         <item>Ποτέ</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>απενεργοποιημένη</item>
+        <item>χαμηλή</item>
+        <item>μεσαία</item>
+        <item>εικονική</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Χωρίς</item>
         <item>Σταθεροποίηση εικόνας: Χαμηλή</item>

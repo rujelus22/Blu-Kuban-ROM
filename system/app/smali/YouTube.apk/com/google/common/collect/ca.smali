@@ -1,115 +1,90 @@
-.class public Lcom/google/common/collect/ca;
+.class final synthetic Lcom/google/common/collect/ca;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field final a:Ljava/util/List;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
-
-    .prologue
-    .line 166
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 160
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/google/common/collect/ca;->a:Ljava/util/List;
-
-    .line 166
-    return-void
-.end method
-
-
-# virtual methods
-.method public a()Lcom/google/common/collect/ImmutableMap;
+.method static constructor <clinit>()V
     .registers 3
 
     .prologue
-    .line 199
-    iget-object v0, p0, Lcom/google/common/collect/ca;->a:Ljava/util/List;
+    .line 128
+    invoke-static {}, Lcom/google/common/collect/BstModificationResult$ModificationType;->values()[Lcom/google/common/collect/BstModificationResult$ModificationType;
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    move-result-object v0
+
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    sput-object v0, Lcom/google/common/collect/ca;->a:[I
+
+    :try_start_9
+    sget-object v0, Lcom/google/common/collect/ca;->a:[I
+
+    sget-object v1, Lcom/google/common/collect/BstModificationResult$ModificationType;->IDENTITY:Lcom/google/common/collect/BstModificationResult$ModificationType;
+
+    invoke-virtual {v1}, Lcom/google/common/collect/BstModificationResult$ModificationType;->ordinal()I
 
     move-result v1
 
-    packed-switch v1, :pswitch_data_32
+    const/4 v2, 0x1
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_2f
+
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/common/collect/ca;->a:[I
+
+    sget-object v1, Lcom/google/common/collect/BstModificationResult$ModificationType;->REBUILDING_CHANGE:Lcom/google/common/collect/BstModificationResult$ModificationType;
+
+    invoke-virtual {v1}, Lcom/google/common/collect/BstModificationResult$ModificationType;->ordinal()I
 
     move-result v1
 
-    new-array v1, v1, [Ljava/util/Map$Entry;
+    const/4 v2, 0x2
 
-    invoke-interface {v0, v1}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_2d
 
-    move-result-object v0
+    :goto_1f
+    :try_start_1f
+    sget-object v0, Lcom/google/common/collect/ca;->a:[I
 
-    check-cast v0, [Ljava/util/Map$Entry;
+    sget-object v1, Lcom/google/common/collect/BstModificationResult$ModificationType;->REBALANCING_CHANGE:Lcom/google/common/collect/BstModificationResult$ModificationType;
 
-    new-instance v1, Lcom/google/common/collect/RegularImmutableMap;
+    invoke-virtual {v1}, Lcom/google/common/collect/BstModificationResult$ModificationType;->ordinal()I
 
-    invoke-direct {v1, v0}, Lcom/google/common/collect/RegularImmutableMap;-><init>([Ljava/util/Map$Entry;)V
+    move-result v1
 
-    move-object v0, v1
+    const/4 v2, 0x3
 
-    :goto_1b
-    return-object v0
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_2b
 
-    :pswitch_1c
-    invoke-static {}, Lcom/google/common/collect/ImmutableMap;->of()Lcom/google/common/collect/ImmutableMap;
+    :goto_2a
+    return-void
 
-    move-result-object v0
+    :catch_2b
+    move-exception v0
 
-    goto :goto_1b
+    goto :goto_2a
 
-    :pswitch_21
-    new-instance v1, Lcom/google/common/collect/SingletonImmutableMap;
+    :catch_2d
+    move-exception v0
 
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    goto :goto_1f
 
-    move-result-object v0
+    :catch_2f
+    move-exception v0
 
-    invoke-static {v0}, Lcom/google/common/collect/cr;->c(Ljava/util/Iterator;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-direct {v1, v0}, Lcom/google/common/collect/SingletonImmutableMap;-><init>(Ljava/util/Map$Entry;)V
-
-    move-object v0, v1
-
-    goto :goto_1b
-
-    :pswitch_data_32
-    .packed-switch 0x0
-        :pswitch_1c
-        :pswitch_21
-    .end packed-switch
-.end method
-
-.method public a(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ca;
-    .registers 5
-    .parameter
-    .parameter
-
-    .prologue
-    .line 173
-    iget-object v0, p0, Lcom/google/common/collect/ca;->a:Ljava/util/List;
-
-    invoke-static {p1, p2}, Lcom/google/common/collect/ImmutableMap;->entryOf(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 174
-    return-object p0
+    goto :goto_14
 .end method

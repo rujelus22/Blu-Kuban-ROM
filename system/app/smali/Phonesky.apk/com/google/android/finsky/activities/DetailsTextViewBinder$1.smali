@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 104
+    .line 105
     iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsTextViewBinder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,19 +43,19 @@
     .parameter "truncatedHeight"
 
     .prologue
-    .line 107
+    .line 108
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsTextViewBinder;
 
     #setter for: Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mFullHeight:I
     invoke-static {v0, p1}, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->access$002(Lcom/google/android/finsky/activities/DetailsTextViewBinder;I)I
 
-    .line 108
+    .line 109
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsTextViewBinder;
 
     #setter for: Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mTruncatedHeight:I
     invoke-static {v0, p2}, Lcom/google/android/finsky/activities/DetailsTextViewBinder;->access$102(Lcom/google/android/finsky/activities/DetailsTextViewBinder;I)I
 
-    .line 109
+    .line 110
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsTextViewBinder;
 
     #getter for: Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mFullHeight:I
@@ -72,7 +72,7 @@
 
     if-gt v0, v1, :cond_24
 
-    .line 111
+    .line 112
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsTextViewBinder;
 
     #getter for: Lcom/google/android/finsky/activities/DetailsTextViewBinder;->mFooterIcon:Landroid/widget/ImageView;
@@ -84,11 +84,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 115
+    .line 116
     :goto_23
     return-void
 
-    .line 113
+    .line 114
     :cond_24
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsTextViewBinder$1;->this$0:Lcom/google/android/finsky/activities/DetailsTextViewBinder;
 

@@ -1,90 +1,102 @@
-.class public Lcom/google/googlenav/Y;
-.super Lcom/google/googlenav/bN;
+.class public final enum Lcom/google/googlenav/y;
+.super Ljava/lang/Enum;
+.source "SourceFile"
 
 
-# instance fields
-.field private c:I
+# static fields
+.field public static final enum a:Lcom/google/googlenav/y;
 
-.field private d:Z
+.field public static final enum b:Lcom/google/googlenav/y;
+
+.field private static final synthetic c:[Lcom/google/googlenav/y;
 
 
 # direct methods
-.method public constructor <init>(Lam/b;I)V
+.method static constructor <clinit>()V
     .registers 4
 
-    sget-object v0, LbD/gH;->b:Lam/e;
+    .prologue
+    const/4 v3, 0x1
 
-    invoke-direct {p0, p1, v0}, Lcom/google/googlenav/bN;-><init>(Lam/b;Lam/e;)V
+    const/4 v2, 0x0
 
-    iput p2, p0, Lcom/google/googlenav/Y;->c:I
+    .line 79
+    new-instance v0, Lcom/google/googlenav/y;
 
-    const/4 v0, 0x1
+    const-string v1, "ORIENTATION_PROVIDER_ACTIVITY_RESUME"
 
-    iput-boolean v0, p0, Lcom/google/googlenav/Y;->d:Z
+    invoke-direct {v0, v1, v2}, Lcom/google/googlenav/y;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/googlenav/y;->a:Lcom/google/googlenav/y;
+
+    .line 80
+    new-instance v0, Lcom/google/googlenav/y;
+
+    const-string v1, "START_MOTION_RECOGNIZER"
+
+    invoke-direct {v0, v1, v3}, Lcom/google/googlenav/y;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/googlenav/y;->b:Lcom/google/googlenav/y;
+
+    .line 78
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Lcom/google/googlenav/y;
+
+    sget-object v1, Lcom/google/googlenav/y;->a:Lcom/google/googlenav/y;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/google/googlenav/y;->b:Lcom/google/googlenav/y;
+
+    aput-object v1, v0, v3
+
+    sput-object v0, Lcom/google/googlenav/y;->c:[Lcom/google/googlenav/y;
 
     return-void
 .end method
 
-.method public constructor <init>(Lam/b;II)V
-    .registers 6
+.method private constructor <init>(Ljava/lang/String;I)V
+    .registers 3
+    .parameter
+    .parameter
 
-    invoke-virtual {p1, p2, p3}, Lam/b;->e(II)Lam/b;
+    .prologue
+    .line 78
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lcom/google/googlenav/y;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 78
+    const-class v0, Lcom/google/googlenav/y;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object v0
 
-    sget-object v1, LbD/gH;->c:Lam/e;
+    check-cast v0, Lcom/google/googlenav/y;
 
-    invoke-direct {p0, v0, v1}, Lcom/google/googlenav/bN;-><init>(Lam/b;Lam/e;)V
-
-    return-void
+    return-object v0
 .end method
 
+.method public static values()[Lcom/google/googlenav/y;
+    .registers 1
 
-# virtual methods
-.method public a()I
-    .registers 2
+    .prologue
+    .line 78
+    sget-object v0, Lcom/google/googlenav/y;->c:[Lcom/google/googlenav/y;
 
-    iget v0, p0, Lcom/google/googlenav/Y;->c:I
-
-    return v0
-.end method
-
-.method public a(I)V
-    .registers 2
-
-    iput p1, p0, Lcom/google/googlenav/Y;->c:I
-
-    return-void
-.end method
-
-.method public a(Lcom/google/googlenav/bQ;)V
-    .registers 7
-
-    invoke-static {}, Lat/h;->a()Lat/h;
+    invoke-virtual {v0}, [Lcom/google/googlenav/y;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    new-instance v1, Lcom/google/googlenav/Z;
+    check-cast v0, [Lcom/google/googlenav/y;
 
-    invoke-direct {v1, p0, p1}, Lcom/google/googlenav/Z;-><init>(Lcom/google/googlenav/Y;Lcom/google/googlenav/bQ;)V
-
-    const/16 v2, 0x54
-
-    const-string v3, "ts"
-
-    const-string v4, "r"
-
-    invoke-static {v2, v3, v4}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
-
-    invoke-virtual {v0, v1}, Lat/h;->c(Lat/g;)V
-
-    return-void
-.end method
-
-.method public b()Z
-    .registers 2
-
-    iget-boolean v0, p0, Lcom/google/googlenav/Y;->d:Z
-
-    return v0
+    return-object v0
 .end method

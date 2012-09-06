@@ -1,111 +1,101 @@
 .class final Lcom/google/android/youtube/app/ui/cu;
-.super Lcom/google/android/youtube/core/ui/f;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/g;
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/ui/ch;
+.field final synthetic a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/app/ui/ch;)V
-    .registers 3
+.method private constructor <init>(Lcom/google/android/youtube/app/ui/SubscribeHelper;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 354
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/cu;->a:Lcom/google/android/youtube/app/ui/ch;
+    .line 188
+    iput-object p1, p0, Lcom/google/android/youtube/app/ui/cu;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    .line 355
-    invoke-static {p1}, Lcom/google/android/youtube/app/ui/ch;->b(Lcom/google/android/youtube/app/ui/ch;)Lcom/google/android/youtube/core/e;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    return-void
+.end method
 
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/core/ui/f;-><init>(Lcom/google/android/youtube/core/e;)V
+.method synthetic constructor <init>(Lcom/google/android/youtube/app/ui/SubscribeHelper;B)V
+    .registers 3
+    .parameter
+    .parameter
 
-    .line 356
+    .prologue
+    .line 188
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/ui/cu;-><init>(Lcom/google/android/youtube/app/ui/SubscribeHelper;)V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/model/UserAuth;)V
+.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
     .registers 5
+    .parameter
     .parameter
 
     .prologue
-    .line 359
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cu;->a:Lcom/google/android/youtube/app/ui/ch;
+    .line 188
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cu;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/ch;->e(Lcom/google/android/youtube/app/ui/ch;)Lcom/google/android/youtube/core/client/ad;
+    sget-object v1, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->ERROR:Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;
+
+    invoke-static {v0, v1}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->a(Lcom/google/android/youtube/app/ui/SubscribeHelper;Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;)V
+
+    return-void
+.end method
+
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 6
+    .parameter
+    .parameter
+
+    .prologue
+    .line 188
+    check-cast p2, Lcom/google/android/youtube/core/async/Optional;
+
+    invoke-interface {p2}, Lcom/google/android/youtube/core/async/Optional;->get()Ljava/io/Serializable;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/cu;->a:Lcom/google/android/youtube/app/ui/ch;
+    check-cast v0, Lcom/google/android/youtube/core/model/Subscription;
 
-    invoke-static {v1}, Lcom/google/android/youtube/app/ui/ch;->f(Lcom/google/android/youtube/app/ui/ch;)Lcom/google/android/youtube/core/model/Video;
+    if-nez v0, :cond_12
 
-    move-result-object v1
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cu;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    iget-object v1, v1, Lcom/google/android/youtube/core/model/Video;->id:Ljava/lang/String;
+    sget-object v1, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->NOT_SUBSCRIBED:Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;
 
-    iget-object v2, p0, Lcom/google/android/youtube/app/ui/cu;->a:Lcom/google/android/youtube/app/ui/ch;
+    invoke-static {v0, v1}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->a(Lcom/google/android/youtube/app/ui/SubscribeHelper;Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;)V
 
-    iget-object v2, v2, Lcom/google/android/youtube/app/ui/ch;->a:Landroid/app/Activity;
-
-    invoke-static {v2, p0}, Lcom/google/android/youtube/core/async/a;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/g;)Lcom/google/android/youtube/core/async/a;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, p1, v2}, Lcom/google/android/youtube/core/client/ad;->d(Ljava/lang/String;Lcom/google/android/youtube/core/model/UserAuth;Lcom/google/android/youtube/core/async/g;)V
-
-    .line 360
+    :goto_11
     return-void
-.end method
 
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
-    .registers 5
-    .parameter
-    .parameter
+    :cond_12
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/cu;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    .prologue
-    .line 351
-    const-string v0, "Error adding to watch later"
+    iget-object v2, v0, Lcom/google/android/youtube/core/model/Subscription;->editUri:Landroid/net/Uri;
 
-    invoke-virtual {p2}, Ljava/lang/Exception;->getCause()Ljava/lang/Throwable;
+    invoke-static {v1, v2}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->a(Lcom/google/android/youtube/app/ui/SubscribeHelper;Landroid/net/Uri;)Landroid/net/Uri;
 
-    move-result-object v1
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/cu;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/L;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v1, v0}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->a(Lcom/google/android/youtube/app/ui/SubscribeHelper;Lcom/google/android/youtube/core/model/Subscription;)Lcom/google/android/youtube/core/model/Subscription;
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cu;->c:Lcom/google/android/youtube/core/e;
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cu;->a:Lcom/google/android/youtube/app/ui/SubscribeHelper;
 
-    invoke-virtual {v0, p2}, Lcom/google/android/youtube/core/e;->b(Ljava/lang/Throwable;)V
+    sget-object v1, Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;->SUBSCRIBED:Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;
 
-    return-void
-.end method
+    invoke-static {v0, v1}, Lcom/google/android/youtube/app/ui/SubscribeHelper;->a(Lcom/google/android/youtube/app/ui/SubscribeHelper;Lcom/google/android/youtube/app/ui/SubscribeHelper$SubscriptionStatus;)V
 
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 5
-    .parameter
-    .parameter
-
-    .prologue
-    .line 351
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cu;->a:Lcom/google/android/youtube/app/ui/ch;
-
-    const v1, 0x7f0a016d
-
-    invoke-static {v0, v1}, Lcom/google/android/youtube/app/ui/ch;->a(Lcom/google/android/youtube/app/ui/ch;I)V
-
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/cu;->a:Lcom/google/android/youtube/app/ui/ch;
-
-    iget-object v0, v0, Lcom/google/android/youtube/app/ui/ch;->a:Landroid/app/Activity;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/b/d;->a(Landroid/content/Context;)V
-
-    return-void
+    goto :goto_11
 .end method

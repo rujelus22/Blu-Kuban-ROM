@@ -28,6 +28,14 @@
         <item quantity="other">%1$d초 전</item>
         <item quantity="one">1초 전</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">%1$d일 후에 만료됨</item>
+        <item quantity="one">1일 후에 만료됨</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">%1$d시간 후에 만료됨</item>
+        <item quantity="one">1시간 후에 만료됨</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">새 업로드</item>
         <item quantity="one">새 업로드</item>

@@ -28,6 +28,14 @@
         <item quantity="other">Sekunde %1$d zilizopita</item>
         <item quantity="one">Sekunde 1 iliopita</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">Inaisha muda kati ya siku%1$d</item>
+        <item quantity="one">Inaisha muda kwa siku 1</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">Inaisha muda kati ya saa %1$d</item>
+        <item quantity="one">Inaisha muda kwa saa 1</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">Vipakiaji vipya</item>
         <item quantity="one">upakiaji upya</item>

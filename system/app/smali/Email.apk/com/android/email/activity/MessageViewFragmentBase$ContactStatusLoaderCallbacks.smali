@@ -30,31 +30,20 @@
 # instance fields
 .field private final mFragment:Lcom/android/email/activity/MessageViewFragmentBase;
 
-.field private mTriggered:Z
-
 
 # direct methods
-.method public constructor <init>(Lcom/android/email/activity/MessageViewFragmentBase;Z)V
-    .registers 4
+.method public constructor <init>(Lcom/android/email/activity/MessageViewFragmentBase;)V
+    .registers 2
     .parameter "fragment"
-    .parameter "triggered"
 
     .prologue
-    .line 2328
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 705
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2322
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mTriggered:Z
-
-    .line 2329
+    .line 706
     iput-object p1, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mFragment:Lcom/android/email/activity/MessageViewFragmentBase;
 
-    .line 2330
-    iput-boolean p2, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mTriggered:Z
-
-    .line 2331
+    .line 707
     return-void
 .end method
 
@@ -63,18 +52,18 @@
     .parameter "emailAddress"
 
     .prologue
-    .line 2334
+    .line 710
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 2335
+    .line 711
     .local v0, b:Landroid/os/Bundle;
     const-string v1, "email"
 
     invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2336
+    .line 712
     return-object v0
 .end method
 
@@ -97,7 +86,7 @@
     .end annotation
 
     .prologue
-    .line 2341
+    .line 717
     new-instance v0, Lcom/android/email/activity/ContactStatusLoader;
 
     iget-object v1, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mFragment:Lcom/android/email/activity/MessageViewFragmentBase;
@@ -116,7 +105,7 @@
 .end method
 
 .method public onLoadFinished(Landroid/content/Loader;Lcom/android/email/activity/ContactStatusLoader$Result;)V
-    .registers 8
+    .registers 7
     .parameter
     .parameter "result"
     .annotation system Ldalvik/annotation/Signature;
@@ -133,128 +122,50 @@
 
     .prologue
     .local p1, loader:Landroid/content/Loader;,"Landroid/content/Loader<Lcom/android/email/activity/ContactStatusLoader$Result;>;"
-    const/4 v4, 0x1
+    const/4 v0, 0x1
 
-    const v3, 0x7f0c014c
+    const/4 v1, 0x0
 
-    .line 2347
-    iget-object v1, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mFragment:Lcom/android/email/activity/MessageViewFragmentBase;
+    .line 724
+    iget-object v2, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mFragment:Lcom/android/email/activity/MessageViewFragmentBase;
 
-    iget-object v2, p2, Lcom/android/email/activity/ContactStatusLoader$Result;->mLookupUri:Landroid/net/Uri;
+    #getter for: Lcom/android/email/activity/MessageViewFragmentBase;->mContactStatusState:I
+    invoke-static {v2}, Lcom/android/email/activity/MessageViewFragmentBase;->access$200(Lcom/android/email/activity/MessageViewFragmentBase;)I
+
+    move-result v2
+
+    if-ne v2, v0, :cond_3f
+
+    .line 726
+    .local v0, triggered:Z
+    :goto_a
+    iget-object v2, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mFragment:Lcom/android/email/activity/MessageViewFragmentBase;
+
+    const/4 v3, 0x2
+
+    #setter for: Lcom/android/email/activity/MessageViewFragmentBase;->mContactStatusState:I
+    invoke-static {v2, v3}, Lcom/android/email/activity/MessageViewFragmentBase;->access$202(Lcom/android/email/activity/MessageViewFragmentBase;I)I
+
+    .line 727
+    iget-object v2, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mFragment:Lcom/android/email/activity/MessageViewFragmentBase;
+
+    iget-object v3, p2, Lcom/android/email/activity/ContactStatusLoader$Result;->mLookupUri:Landroid/net/Uri;
 
     #setter for: Lcom/android/email/activity/MessageViewFragmentBase;->mQuickContactLookupUri:Landroid/net/Uri;
-    invoke-static {v1, v2}, Lcom/android/email/activity/MessageViewFragmentBase;->access$102(Lcom/android/email/activity/MessageViewFragmentBase;Landroid/net/Uri;)Landroid/net/Uri;
+    invoke-static {v2, v3}, Lcom/android/email/activity/MessageViewFragmentBase;->access$302(Lcom/android/email/activity/MessageViewFragmentBase;Landroid/net/Uri;)Landroid/net/Uri;
 
-    .line 2349
-    iget-object v1, p2, Lcom/android/email/activity/ContactStatusLoader$Result;->mPhoto:Landroid/graphics/Bitmap;
+    .line 729
+    invoke-virtual {p2}, Lcom/android/email/activity/ContactStatusLoader$Result;->isUnknown()Z
 
-    if-eqz v1, :cond_57
+    move-result v2
 
-    .line 2352
-    invoke-static {}, Lcom/android/email/util/EmailFeature;->IsPhone()Z
+    if-eqz v2, :cond_41
 
-    move-result v1
-
-    if-ne v1, v4, :cond_1f
-
-    .line 2353
+    .line 730
     iget-object v1, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mFragment:Lcom/android/email/activity/MessageViewFragmentBase;
 
-    #getter for: Lcom/android/email/activity/MessageViewFragmentBase;->mFromBadge:Landroid/widget/ImageView;
-    invoke-static {v1}, Lcom/android/email/activity/MessageViewFragmentBase;->access$200(Lcom/android/email/activity/MessageViewFragmentBase;)Landroid/widget/ImageView;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 2355
-    :cond_1f
-    iget-object v1, p2, Lcom/android/email/activity/ContactStatusLoader$Result;->mPhoto:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v1
-
-    if-gt v1, v3, :cond_2f
-
-    iget-object v1, p2, Lcom/android/email/activity/ContactStatusLoader$Result;->mPhoto:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v1
-
-    if-le v1, v3, :cond_4b
-
-    .line 2357
-    :cond_2f
-    iget-object v1, p2, Lcom/android/email/activity/ContactStatusLoader$Result;->mPhoto:Landroid/graphics/Bitmap;
-
-    invoke-static {v1, v3, v3, v4}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 2359
-    .local v0, resize:Landroid/graphics/Bitmap;
-    iget-object v1, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mFragment:Lcom/android/email/activity/MessageViewFragmentBase;
-
-    #getter for: Lcom/android/email/activity/MessageViewFragmentBase;->mFromBadge:Landroid/widget/ImageView;
-    invoke-static {v1}, Lcom/android/email/activity/MessageViewFragmentBase;->access$200(Lcom/android/email/activity/MessageViewFragmentBase;)Landroid/widget/ImageView;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
-
-    .line 2372
-    .end local v0           #resize:Landroid/graphics/Bitmap;
-    :goto_3e
-    iget-boolean v1, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mTriggered:Z
-
-    if-eqz v1, :cond_4a
-
-    .line 2373
-    iget-object v1, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mFragment:Lcom/android/email/activity/MessageViewFragmentBase;
-
-    #calls: Lcom/android/email/activity/MessageViewFragmentBase;->onClickSender()Z
-    invoke-static {v1}, Lcom/android/email/activity/MessageViewFragmentBase;->access$700(Lcom/android/email/activity/MessageViewFragmentBase;)Z
-
-    move-result v1
-
-    iput-boolean v1, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mTriggered:Z
-
-    .line 2375
-    :cond_4a
-    return-void
-
-    .line 2361
-    :cond_4b
-    iget-object v1, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mFragment:Lcom/android/email/activity/MessageViewFragmentBase;
-
-    #getter for: Lcom/android/email/activity/MessageViewFragmentBase;->mFromBadge:Landroid/widget/ImageView;
-    invoke-static {v1}, Lcom/android/email/activity/MessageViewFragmentBase;->access$200(Lcom/android/email/activity/MessageViewFragmentBase;)Landroid/widget/ImageView;
-
-    move-result-object v1
-
-    iget-object v2, p2, Lcom/android/email/activity/ContactStatusLoader$Result;->mPhoto:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
-
-    goto :goto_3e
-
-    .line 2365
-    :cond_57
-    invoke-static {}, Lcom/android/email/util/EmailFeature;->IsPhone()Z
-
-    move-result v1
-
-    if-ne v1, v4, :cond_69
-
-    .line 2366
-    iget-object v1, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mFragment:Lcom/android/email/activity/MessageViewFragmentBase;
-
-    #getter for: Lcom/android/email/activity/MessageViewFragmentBase;->mFromBadge:Landroid/widget/ImageView;
-    invoke-static {v1}, Lcom/android/email/activity/MessageViewFragmentBase;->access$200(Lcom/android/email/activity/MessageViewFragmentBase;)Landroid/widget/ImageView;
+    #getter for: Lcom/android/email/activity/MessageViewFragmentBase;->mSenderPresenceView:Landroid/widget/ImageView;
+    invoke-static {v1}, Lcom/android/email/activity/MessageViewFragmentBase;->access$400(Lcom/android/email/activity/MessageViewFragmentBase;)Landroid/widget/ImageView;
 
     move-result-object v1
 
@@ -262,16 +173,70 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto :goto_3e
+    .line 735
+    :goto_28
+    iget-object v1, p2, Lcom/android/email/activity/ContactStatusLoader$Result;->mPhoto:Landroid/graphics/Bitmap;
 
-    .line 2368
-    :cond_69
+    if-eqz v1, :cond_37
+
+    .line 736
     iget-object v1, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mFragment:Lcom/android/email/activity/MessageViewFragmentBase;
 
-    #calls: Lcom/android/email/activity/MessageViewFragmentBase;->showDefaultQuickContactBadgeImage()V
-    invoke-static {v1}, Lcom/android/email/activity/MessageViewFragmentBase;->access$300(Lcom/android/email/activity/MessageViewFragmentBase;)V
+    #getter for: Lcom/android/email/activity/MessageViewFragmentBase;->mFromBadge:Landroid/widget/ImageView;
+    invoke-static {v1}, Lcom/android/email/activity/MessageViewFragmentBase;->access$500(Lcom/android/email/activity/MessageViewFragmentBase;)Landroid/widget/ImageView;
 
-    goto :goto_3e
+    move-result-object v1
+
+    iget-object v2, p2, Lcom/android/email/activity/ContactStatusLoader$Result;->mPhoto:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+
+    .line 738
+    :cond_37
+    if-eqz v0, :cond_3e
+
+    .line 739
+    iget-object v1, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mFragment:Lcom/android/email/activity/MessageViewFragmentBase;
+
+    #calls: Lcom/android/email/activity/MessageViewFragmentBase;->onClickSender()V
+    invoke-static {v1}, Lcom/android/email/activity/MessageViewFragmentBase;->access$600(Lcom/android/email/activity/MessageViewFragmentBase;)V
+
+    .line 741
+    :cond_3e
+    return-void
+
+    .end local v0           #triggered:Z
+    :cond_3f
+    move v0, v1
+
+    .line 724
+    goto :goto_a
+
+    .line 732
+    .restart local v0       #triggered:Z
+    :cond_41
+    iget-object v2, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mFragment:Lcom/android/email/activity/MessageViewFragmentBase;
+
+    #getter for: Lcom/android/email/activity/MessageViewFragmentBase;->mSenderPresenceView:Landroid/widget/ImageView;
+    invoke-static {v2}, Lcom/android/email/activity/MessageViewFragmentBase;->access$400(Lcom/android/email/activity/MessageViewFragmentBase;)Landroid/widget/ImageView;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 733
+    iget-object v1, p0, Lcom/android/email/activity/MessageViewFragmentBase$ContactStatusLoaderCallbacks;->mFragment:Lcom/android/email/activity/MessageViewFragmentBase;
+
+    #getter for: Lcom/android/email/activity/MessageViewFragmentBase;->mSenderPresenceView:Landroid/widget/ImageView;
+    invoke-static {v1}, Lcom/android/email/activity/MessageViewFragmentBase;->access$400(Lcom/android/email/activity/MessageViewFragmentBase;)Landroid/widget/ImageView;
+
+    move-result-object v1
+
+    iget v2, p2, Lcom/android/email/activity/ContactStatusLoader$Result;->mPresenceResId:I
+
+    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    goto :goto_28
 .end method
 
 .method public bridge synthetic onLoadFinished(Landroid/content/Loader;Ljava/lang/Object;)V
@@ -280,7 +245,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2317
+    .line 700
     check-cast p2, Lcom/android/email/activity/ContactStatusLoader$Result;
 
     .end local p2
@@ -303,7 +268,7 @@
     .end annotation
 
     .prologue
-    .line 2379
+    .line 745
     .local p1, loader:Landroid/content/Loader;,"Landroid/content/Loader<Lcom/android/email/activity/ContactStatusLoader$Result;>;"
     return-void
 .end method

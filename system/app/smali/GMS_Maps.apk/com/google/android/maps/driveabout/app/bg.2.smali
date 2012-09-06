@@ -1,47 +1,108 @@
-.class public Lcom/google/android/maps/driveabout/app/bg;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
+.class public Lcom/google/android/maps/driveabout/app/bG;
+.super Lcom/google/android/maps/driveabout/vector/aF;
+.source "SourceFile"
 
 
 # instance fields
-.field private final a:Landroid/view/View;
+.field private final d:Lcom/google/android/maps/driveabout/app/by;
+
+.field private final e:Lr/V;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;)V
-    .registers 2
+.method private constructor <init>(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;IILn/R;Lcom/google/android/maps/driveabout/app/by;Lr/V;)V
+    .registers 19
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 83
+    invoke-virtual/range {p5 .. p5}, Ln/R;->c()Ln/Q;
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/bg;->a:Landroid/view/View;
+    move-result-object v2
+
+    invoke-virtual/range {p5 .. p5}, Ln/R;->d()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual/range {p5 .. p5}, Ln/R;->f()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual/range {p6 .. p6}, Lcom/google/android/maps/driveabout/app/by;->k()Ljava/lang/String;
+
+    move-result-object v10
+
+    move-object v1, p0
+
+    move-object v3, p1
+
+    move-object v4, p2
+
+    move v5, p3
+
+    move v6, p4
+
+    move-object/from16 v9, p5
+
+    invoke-direct/range {v1 .. v10}, Lcom/google/android/maps/driveabout/vector/aF;-><init>(Ln/Q;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;IILjava/lang/String;Ljava/lang/String;Ln/R;Ljava/lang/String;)V
+
+    .line 85
+    move-object/from16 v0, p6
+
+    iput-object v0, p0, Lcom/google/android/maps/driveabout/app/bG;->d:Lcom/google/android/maps/driveabout/app/by;
+
+    .line 86
+    move-object/from16 v0, p7
+
+    iput-object v0, p0, Lcom/google/android/maps/driveabout/app/bG;->e:Lr/V;
+
+    .line 87
+    return-void
+.end method
+
+.method synthetic constructor <init>(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;IILn/R;Lcom/google/android/maps/driveabout/app/by;Lr/V;Lcom/google/android/maps/driveabout/app/bF;)V
+    .registers 9
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 76
+    invoke-direct/range {p0 .. p7}, Lcom/google/android/maps/driveabout/app/bG;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;IILn/R;Lcom/google/android/maps/driveabout/app/by;Lr/V;)V
 
     return-void
+.end method
+
+.method static synthetic a(Lcom/google/android/maps/driveabout/app/bG;)Lr/V;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 76
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/bG;->e:Lr/V;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/bg;->a:Landroid/view/View;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+.method public a()Lcom/google/android/maps/driveabout/app/by;
     .registers 2
 
-    return-void
-.end method
+    .prologue
+    .line 90
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/bG;->d:Lcom/google/android/maps/driveabout/app/by;
 
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .registers 2
-
-    return-void
+    return-object v0
 .end method

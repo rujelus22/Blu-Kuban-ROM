@@ -99,7 +99,7 @@
 
     .line 75
     .local v1, resources:Landroid/content/res/Resources;
-    const v2, 0x7f0a0038
+    const v2, 0x7f0a0037
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -108,7 +108,7 @@
     iput v2, p0, Lcom/google/android/finsky/layout/CellTitleOverlay;->mBackgroundColor:I
 
     .line 76
-    const v2, 0x7f0b0078
+    const v2, 0x7f0b0051
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -4,29 +4,34 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
+.method private constructor <init>(Landroid/content/Context;Lcom/android/emailcommon/provider/Account;)V
     .registers 3
     .parameter "context"
-    .parameter "_uri"
+    .parameter "account"
 
     .prologue
-    .line 37
+    .line 38
     invoke-direct {p0}, Lcom/android/email/mail/Sender;-><init>()V
 
-    .line 38
+    .line 39
     return-void
 .end method
 
-.method public static newInstance(Landroid/content/Context;Ljava/lang/String;)Lcom/android/email/mail/Sender;
+.method public static newInstance(Lcom/android/emailcommon/provider/Account;Landroid/content/Context;)Lcom/android/email/mail/Sender;
     .registers 3
+    .parameter "account"
     .parameter "context"
-    .parameter "uri"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/emailcommon/mail/MessagingException;
+        }
+    .end annotation
 
     .prologue
-    .line 34
+    .line 35
     new-instance v0, Lcom/android/email/mail/transport/ExchangeSender;
 
-    invoke-direct {v0, p0, p1}, Lcom/android/email/mail/transport/ExchangeSender;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-direct {v0, p1, p0}, Lcom/android/email/mail/transport/ExchangeSender;-><init>(Landroid/content/Context;Lcom/android/emailcommon/provider/Account;)V
 
     return-object v0
 .end method
@@ -37,7 +42,7 @@
     .registers 1
 
     .prologue
-    .line 42
+    .line 43
     return-void
 .end method
 
@@ -54,7 +59,7 @@
     .end annotation
 
     .prologue
-    .line 62
+    .line 61
     const/4 v0, 0x0
 
     return-object v0
@@ -64,7 +69,7 @@
     .registers 1
 
     .prologue
-    .line 46
+    .line 47
     return-void
 .end method
 
@@ -73,6 +78,6 @@
     .parameter "messageId"
 
     .prologue
-    .line 50
+    .line 51
     return-void
 .end method

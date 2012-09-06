@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<metadata widgetId="com.sec.android.widgetapp.analogclock" description="@string/unique" icon="@drawable/icon" themeName="unique" preview="@drawable/unique_bg_preview" width="@dimen/width_unique" height="@dimen/height_unique" class="com.sec.android.widgetapp.analogclock.AnalogClockActivity" />

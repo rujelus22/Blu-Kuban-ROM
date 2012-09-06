@@ -1,22 +1,26 @@
 .class public Lcom/google/googlenav/settings/LabsActivity;
-.super Landroid/preference/PreferenceActivity;
+.super Lcom/google/googlenav/settings/GmmPreferenceActivity;
+.source "SourceFile"
 
 
 # instance fields
-.field private a:LaB/d;
+.field private b:Lak/g;
 
 
 # direct methods
 .method public constructor <init>()V
     .registers 2
 
-    invoke-direct {p0}, Landroid/preference/PreferenceActivity;-><init>()V
+    .prologue
+    .line 19
+    invoke-direct {p0}, Lcom/google/googlenav/settings/GmmPreferenceActivity;-><init>()V
 
-    invoke-static {}, LaB/d;->a()LaB/d;
+    .line 20
+    invoke-static {}, Lak/g;->a()Lak/g;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/googlenav/settings/LabsActivity;->a:LaB/d;
+    iput-object v0, p0, Lcom/google/googlenav/settings/LabsActivity;->b:Lak/g;
 
     return-void
 .end method
@@ -25,30 +29,49 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .registers 13
+    .parameter
 
+    .prologue
     const/4 v1, 0x0
 
-    invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onCreate(Landroid/os/Bundle;)V
+    .line 27
+    invoke-super {p0, p1}, Lcom/google/googlenav/settings/GmmPreferenceActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f050004
+    .line 29
+    invoke-virtual {p0}, Lcom/google/googlenav/settings/LabsActivity;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_b
+
+    .line 50
+    :cond_a
+    return-void
+
+    .line 33
+    :cond_b
+    const v0, 0x7f060005
 
     invoke-virtual {p0, v0}, Lcom/google/googlenav/settings/LabsActivity;->addPreferencesFromResource(I)V
 
+    .line 34
     invoke-virtual {p0}, Lcom/google/googlenav/settings/LabsActivity;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v2
 
-    const/16 v0, 0x1e7
+    .line 35
+    const/16 v0, 0x218
 
-    invoke-static {v0}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlenav/settings/LabsActivity;->setTitle(Ljava/lang/CharSequence;)V
 
-    iget-object v0, p0, Lcom/google/googlenav/settings/LabsActivity;->a:LaB/d;
+    .line 38
+    iget-object v0, p0, Lcom/google/googlenav/settings/LabsActivity;->b:Lak/g;
 
-    invoke-virtual {v0}, LaB/d;->b()[LaB/c;
+    invoke-virtual {v0}, Lak/g;->b()[Lak/f;
 
     move-result-object v3
 
@@ -56,32 +79,36 @@
 
     move v0, v1
 
-    :goto_1f
-    if-ge v0, v4, :cond_6a
+    :goto_26
+    if-ge v0, v4, :cond_a
 
     aget-object v5, v3, v0
 
-    new-instance v6, Lcom/google/googlenav/settings/CheckBoxPreferenceWithMaxLines;
+    .line 39
+    new-instance v6, Lcom/google/googlenav/settings/c;
 
     const/16 v7, 0xf
 
-    invoke-direct {v6, p0, v7}, Lcom/google/googlenav/settings/CheckBoxPreferenceWithMaxLines;-><init>(Landroid/content/Context;I)V
+    invoke-direct {v6, p0, v7}, Lcom/google/googlenav/settings/c;-><init>(Landroid/content/Context;I)V
 
-    invoke-interface {v5}, LaB/c;->b()Ljava/lang/String;
+    .line 41
+    invoke-interface {v5}, Lak/f;->b()Ljava/lang/String;
 
     move-result-object v7
 
-    invoke-virtual {v6, v7}, Lcom/google/googlenav/settings/CheckBoxPreferenceWithMaxLines;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v7}, Lcom/google/googlenav/settings/c;->setTitle(Ljava/lang/CharSequence;)V
 
+    .line 42
     new-instance v7, Ljava/lang/StringBuilder;
 
     const-string v8, "    "
 
     invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const/16 v8, 0x1e9
+    .line 43
+    const/16 v8, 0x21a
 
-    invoke-static {v8}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
+    invoke-static {v8}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
 
     move-result-object v8
 
@@ -89,165 +116,169 @@
 
     new-array v9, v9, [Ljava/lang/String;
 
-    invoke-interface {v5}, LaB/c;->a()Ljava/lang/String;
+    invoke-interface {v5}, Lak/f;->a()Ljava/lang/String;
 
     move-result-object v10
 
     aput-object v10, v9, v1
 
-    invoke-static {v8, v9}, Las/b;->a(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v9}, Laa/b;->a(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 44
     const-string v8, "\n"
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v5}, LaB/c;->c()Ljava/lang/String;
+    .line 45
+    invoke-interface {v5}, Lak/f;->c()Ljava/lang/String;
 
     move-result-object v8
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v7}, Lcom/google/googlenav/settings/CheckBoxPreferenceWithMaxLines;->setSummary(Ljava/lang/CharSequence;)V
+    .line 46
+    invoke-virtual {v6, v7}, Lcom/google/googlenav/settings/c;->setSummary(Ljava/lang/CharSequence;)V
 
-    invoke-interface {v5}, LaB/c;->e()Z
+    .line 47
+    invoke-interface {v5}, Lak/f;->e()Z
 
     move-result v5
 
-    invoke-virtual {v6, v5}, Lcom/google/googlenav/settings/CheckBoxPreferenceWithMaxLines;->setChecked(Z)V
+    invoke-virtual {v6, v5}, Lcom/google/googlenav/settings/c;->setChecked(Z)V
 
+    .line 48
     invoke-virtual {v2, v6}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
 
+    .line 38
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1f
-
-    :cond_6a
-    return-void
+    goto :goto_26
 .end method
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
-    .registers 12
+    .registers 11
+    .parameter
+    .parameter
 
+    .prologue
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    invoke-virtual {p0}, Lcom/google/googlenav/settings/LabsActivity;->getApplication()Landroid/app/Application;
+    .line 54
+    iget-object v2, p0, Lcom/google/googlenav/settings/LabsActivity;->b:Lak/g;
 
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/google/googlenav/android/c;->a(Landroid/app/Application;)Lcom/google/googlenav/android/c;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/google/googlenav/android/c;->e()Lcom/google/googlenav/android/l;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/google/googlenav/android/l;->k()Lcom/google/googlenav/ui/D;
+    invoke-virtual {v2}, Lak/g;->b()[Lak/f;
 
     move-result-object v3
 
-    iget-object v2, p0, Lcom/google/googlenav/settings/LabsActivity;->a:LaB/d;
-
-    invoke-virtual {v2}, LaB/d;->b()[LaB/c;
-
-    move-result-object v4
-
-    array-length v5, v4
+    array-length v4, v3
 
     move v2, v1
 
-    :goto_1a
-    if-ge v2, v5, :cond_6b
+    :goto_a
+    if-ge v2, v4, :cond_5f
 
-    aget-object v6, v4, v2
+    aget-object v5, v3, v2
 
-    invoke-interface {v6}, LaB/c;->b()Ljava/lang/String;
+    .line 55
+    invoke-interface {v5}, Lak/f;->b()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
     invoke-virtual {p2}, Landroid/preference/Preference;->getTitle()Ljava/lang/CharSequence;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v7
+    move-result v6
 
-    if-eqz v7, :cond_68
+    if-eqz v6, :cond_5c
 
-    invoke-interface {v6}, LaB/c;->e()Z
+    .line 56
+    invoke-interface {v5}, Lak/f;->e()Z
 
     move-result v2
 
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_3f
 
-    iget-object v2, p0, Lcom/google/googlenav/settings/LabsActivity;->a:LaB/d;
+    .line 57
+    iget-object v2, p0, Lcom/google/googlenav/settings/LabsActivity;->b:Lak/g;
 
-    invoke-virtual {v2, v6}, LaB/d;->b(LaB/c;)V
+    invoke-virtual {v2, v5}, Lak/g;->b(Lak/f;)V
 
-    const/16 v2, 0x1ea
+    .line 58
+    iget-object v2, p0, Lcom/google/googlenav/settings/LabsActivity;->a:Lcom/google/googlenav/ui/v;
 
-    invoke-static {v2}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
+    const/16 v3, 0x21b
 
-    move-result-object v2
+    invoke-static {v3}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
+
+    move-result-object v3
 
     new-array v4, v0, [Ljava/lang/String;
 
-    invoke-interface {v6}, LaB/c;->b()Ljava/lang/String;
+    invoke-interface {v5}, Lak/f;->b()Ljava/lang/String;
 
     move-result-object v5
 
     aput-object v5, v4, v1
 
-    invoke-static {v2, v4}, Las/b;->a(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v4}, Laa/b;->a(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v3, v1}, Lcom/google/googlenav/ui/D;->a(Ljava/lang/String;)V
+    invoke-virtual {v2, v1}, Lcom/google/googlenav/ui/v;->a(Ljava/lang/String;)V
 
-    :goto_4c
+    .line 68
+    :goto_3e
     return v0
 
-    :cond_4d
-    iget-object v2, p0, Lcom/google/googlenav/settings/LabsActivity;->a:LaB/d;
+    .line 61
+    :cond_3f
+    iget-object v2, p0, Lcom/google/googlenav/settings/LabsActivity;->b:Lak/g;
 
-    invoke-virtual {v2, v6}, LaB/d;->a(LaB/c;)V
+    invoke-virtual {v2, v5}, Lak/g;->a(Lak/f;)V
 
-    const/16 v2, 0x1e8
+    .line 62
+    iget-object v2, p0, Lcom/google/googlenav/settings/LabsActivity;->a:Lcom/google/googlenav/ui/v;
 
-    invoke-static {v2}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
+    const/16 v3, 0x219
 
-    move-result-object v2
+    invoke-static {v3}, Lcom/google/googlenav/X;->a(I)Ljava/lang/String;
+
+    move-result-object v3
 
     new-array v4, v0, [Ljava/lang/String;
 
-    invoke-interface {v6}, LaB/c;->b()Ljava/lang/String;
+    invoke-interface {v5}, Lak/f;->b()Ljava/lang/String;
 
     move-result-object v5
 
     aput-object v5, v4, v1
 
-    invoke-static {v2, v4}, Las/b;->a(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v4}, Laa/b;->a(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v3, v1}, Lcom/google/googlenav/ui/D;->a(Ljava/lang/String;)V
+    invoke-virtual {v2, v1}, Lcom/google/googlenav/ui/v;->a(Ljava/lang/String;)V
 
-    goto :goto_4c
+    goto :goto_3e
 
-    :cond_68
+    .line 54
+    :cond_5c
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1a
+    goto :goto_a
 
-    :cond_6b
+    :cond_5f
     move v0, v1
 
-    goto :goto_4c
+    .line 68
+    goto :goto_3e
 .end method

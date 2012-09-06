@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/aK;
+.class Lcom/google/googlenav/ui/ak;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/google/googlenav/friend/bd;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/aH;
+.field final synthetic a:Lcom/google/googlenav/ui/ah;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/aH;)V
+.method constructor <init>(Lcom/google/googlenav/ui/ah;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/aK;->a:Lcom/google/googlenav/ui/aH;
+    .prologue
+    .line 142
+    iput-object p1, p0, Lcom/google/googlenav/ui/ak;->a:Lcom/google/googlenav/ui/ah;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,38 +26,45 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 3
+.method public a(I)V
+    .registers 5
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/aK;->a:Lcom/google/googlenav/ui/aH;
+    .prologue
+    .line 145
+    iget-object v0, p0, Lcom/google/googlenav/ui/ak;->a:Lcom/google/googlenav/ui/ah;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/aH;->b:Lcom/google/googlenav/ui/aG;
+    invoke-static {v0}, Lcom/google/googlenav/ui/ah;->a(Lcom/google/googlenav/ui/ah;)Z
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/aG;->a(Lcom/google/googlenav/ui/aG;)Lcom/google/googlenav/ui/D;
+    move-result v0
 
-    move-result-object v0
+    if-nez v0, :cond_a
 
-    const/16 v1, 0x2a7
+    if-eqz p1, :cond_16
 
-    invoke-static {v1}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
+    .line 151
+    :cond_a
+    const-string v0, "IS_COMING_FROM_SETTINGS_PAGE"
 
-    move-result-object v1
+    const/4 v1, -0x1
 
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/D;->a(Ljava/lang/String;)V
+    new-instance v2, Lcom/google/googlenav/ui/al;
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/aK;->a:Lcom/google/googlenav/ui/aH;
+    invoke-direct {v2, p0}, Lcom/google/googlenav/ui/al;-><init>(Lcom/google/googlenav/ui/ak;)V
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/aH;->b:Lcom/google/googlenav/ui/aG;
+    invoke-static {v0, v1, v2}, Lcom/google/googlenav/friend/aW;->a(Ljava/lang/String;ILcom/google/googlenav/friend/bd;)V
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/aG;->a(Lcom/google/googlenav/ui/aG;)Lcom/google/googlenav/ui/D;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/D;->aC()Lcom/google/googlenav/ui/wizard/hM;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hM;->j()V
-
+    .line 168
+    :goto_15
     return-void
+
+    .line 166
+    :cond_16
+    iget-object v0, p0, Lcom/google/googlenav/ui/ak;->a:Lcom/google/googlenav/ui/ah;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/google/googlenav/ui/ah;->a(Lcom/google/googlenav/ui/ah;Z)Z
+
+    goto :goto_15
 .end method

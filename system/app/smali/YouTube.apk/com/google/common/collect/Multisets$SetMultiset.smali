@@ -1,9 +1,9 @@
 .class Lcom/google/common/collect/Multisets$SetMultiset;
-.super Lcom/google/common/collect/bm;
+.super Lcom/google/common/collect/cu;
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/collect/fj;
+.implements Lcom/google/common/collect/iq;
 .implements Ljava/io/Serializable;
 
 
@@ -25,11 +25,11 @@
     .parameter
 
     .prologue
-    .line 193
-    invoke-direct {p0}, Lcom/google/common/collect/bm;-><init>()V
+    .line 344
+    invoke-direct {p0}, Lcom/google/common/collect/cu;-><init>()V
 
-    .line 194
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 345
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -37,7 +37,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Multisets$SetMultiset;->delegate:Ljava/util/Set;
 
-    .line 195
+    .line 346
     return-void
 .end method
 
@@ -49,7 +49,7 @@
     .parameter
 
     .prologue
-    .line 206
+    .line 359
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -62,7 +62,7 @@
     .parameter
 
     .prologue
-    .line 232
+    .line 407
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -75,7 +75,7 @@
     .parameter
 
     .prologue
-    .line 236
+    .line 411
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -88,7 +88,7 @@
     .parameter
 
     .prologue
-    .line 202
+    .line 354
     iget-object v0, p0, Lcom/google/common/collect/Multisets$SetMultiset;->delegate:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -112,7 +112,7 @@
     .registers 2
 
     .prologue
-    .line 189
+    .line 340
     invoke-virtual {p0}, Lcom/google/common/collect/Multisets$SetMultiset;->delegate()Ljava/util/Set;
 
     move-result-object v0
@@ -124,7 +124,7 @@
     .registers 2
 
     .prologue
-    .line 189
+    .line 340
     invoke-virtual {p0}, Lcom/google/common/collect/Multisets$SetMultiset;->delegate()Ljava/util/Set;
 
     move-result-object v0
@@ -136,7 +136,7 @@
     .registers 2
 
     .prologue
-    .line 198
+    .line 349
     iget-object v0, p0, Lcom/google/common/collect/Multisets$SetMultiset;->delegate:Ljava/util/Set;
 
     return-object v0
@@ -146,15 +146,15 @@
     .registers 2
 
     .prologue
-    .line 220
+    .line 375
     iget-object v0, p0, Lcom/google/common/collect/Multisets$SetMultiset;->elementSet:Ljava/util/Set;
 
-    .line 221
+    .line 376
     if-nez v0, :cond_b
 
-    new-instance v0, Lcom/google/common/collect/fn;
+    new-instance v0, Lcom/google/common/collect/jc;
 
-    invoke-direct {v0, p0}, Lcom/google/common/collect/fn;-><init>(Lcom/google/common/collect/Multisets$SetMultiset;)V
+    invoke-direct {v0, p0}, Lcom/google/common/collect/jc;-><init>(Lcom/google/common/collect/Multisets$SetMultiset;)V
 
     iput-object v0, p0, Lcom/google/common/collect/Multisets$SetMultiset;->elementSet:Ljava/util/Set;
 
@@ -166,18 +166,20 @@
     .registers 2
 
     .prologue
-    .line 227
+    .line 382
     iget-object v0, p0, Lcom/google/common/collect/Multisets$SetMultiset;->entrySet:Ljava/util/Set;
 
-    .line 228
+    .line 383
     if-nez v0, :cond_b
 
-    new-instance v0, Lcom/google/common/collect/fo;
+    .line 384
+    new-instance v0, Lcom/google/common/collect/ja;
 
-    invoke-direct {v0, p0}, Lcom/google/common/collect/fo;-><init>(Lcom/google/common/collect/Multisets$SetMultiset;)V
+    invoke-direct {v0, p0}, Lcom/google/common/collect/ja;-><init>(Lcom/google/common/collect/Multisets$SetMultiset;)V
 
     iput-object v0, p0, Lcom/google/common/collect/Multisets$SetMultiset;->entrySet:Ljava/util/Set;
 
+    .line 403
     :cond_b
     return-object v0
 .end method
@@ -185,24 +187,27 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 5
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     const/4 v0, 0x0
 
-    .line 257
-    instance-of v1, p1, Lcom/google/common/collect/fj;
+    .line 434
+    instance-of v1, p1, Lcom/google/common/collect/iq;
 
     if-eqz v1, :cond_1e
 
-    .line 258
-    check-cast p1, Lcom/google/common/collect/fj;
+    .line 435
+    check-cast p1, Lcom/google/common/collect/iq;
 
-    .line 259
+    .line 436
     invoke-virtual {p0}, Lcom/google/common/collect/Multisets$SetMultiset;->size()I
 
     move-result v1
 
-    invoke-interface {p1}, Lcom/google/common/collect/fj;->size()I
+    invoke-interface {p1}, Lcom/google/common/collect/iq;->size()I
 
     move-result v2
 
@@ -210,7 +215,7 @@
 
     iget-object v1, p0, Lcom/google/common/collect/Multisets$SetMultiset;->delegate:Ljava/util/Set;
 
-    invoke-interface {p1}, Lcom/google/common/collect/fj;->elementSet()Ljava/util/Set;
+    invoke-interface {p1}, Lcom/google/common/collect/iq;->elementSet()Ljava/util/Set;
 
     move-result-object v2
 
@@ -222,7 +227,7 @@
 
     const/4 v0, 0x1
 
-    .line 261
+    .line 438
     :cond_1e
     return v0
 .end method
@@ -233,7 +238,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 266
+    .line 443
     invoke-virtual {p0}, Lcom/google/common/collect/Multisets$SetMultiset;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -251,7 +256,7 @@
 
     move-result-object v2
 
-    .line 267
+    .line 444
     if-nez v2, :cond_17
 
     move v2, v1
@@ -270,7 +275,7 @@
 
     goto :goto_13
 
-    .line 269
+    .line 446
     :cond_1c
     return v0
 .end method
@@ -285,29 +290,29 @@
 
     const/4 v2, 0x0
 
-    .line 210
+    .line 364
     if-nez p2, :cond_9
 
-    .line 211
+    .line 365
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multisets$SetMultiset;->count(Ljava/lang/Object;)I
 
     move-result v1
 
-    .line 214
+    .line 368
     :cond_8
     :goto_8
     return v1
 
-    .line 213
+    .line 367
     :cond_9
     if-lez p2, :cond_19
 
     move v0, v1
 
     :goto_c
-    invoke-static {v0}, Lcom/google/common/base/t;->a(Z)V
+    invoke-static {v0}, Lcom/google/common/base/ag;->a(Z)V
 
-    .line 214
+    .line 368
     iget-object v0, p0, Lcom/google/common/collect/Multisets$SetMultiset;->delegate:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
@@ -323,7 +328,7 @@
     :cond_19
     move v0, v2
 
-    .line 213
+    .line 367
     goto :goto_c
 .end method
 
@@ -333,35 +338,35 @@
     .parameter
 
     .prologue
-    .line 240
+    .line 416
     const-string v0, "count"
 
     invoke-static {p2, v0}, Lcom/google/common/collect/Multisets;->a(ILjava/lang/String;)V
 
-    .line 242
+    .line 418
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multisets$SetMultiset;->count(Ljava/lang/Object;)I
 
     move-result v0
 
     if-ne p2, v0, :cond_c
 
-    .line 246
+    .line 422
     :goto_b
     return p2
 
-    .line 244
+    .line 420
     :cond_c
     if-nez p2, :cond_13
 
-    .line 245
+    .line 421
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multisets$SetMultiset;->remove(Ljava/lang/Object;)Z
 
-    .line 246
+    .line 422
     const/4 p2, 0x1
 
     goto :goto_b
 
-    .line 248
+    .line 424
     :cond_13
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -377,8 +382,8 @@
     .parameter
 
     .prologue
-    .line 253
-    invoke-static {p0, p1, p2, p3}, Lcom/google/common/collect/Multisets;->a(Lcom/google/common/collect/fj;Ljava/lang/Object;II)Z
+    .line 430
+    invoke-static {p0, p1, p2, p3}, Lcom/google/common/collect/Multisets;->a(Lcom/google/common/collect/iq;Ljava/lang/Object;II)Z
 
     move-result v0
 

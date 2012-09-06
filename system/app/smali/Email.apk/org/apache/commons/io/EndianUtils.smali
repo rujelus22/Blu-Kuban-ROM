@@ -9,7 +9,7 @@
 
     .prologue
     .line 46
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 47
     return-void
@@ -25,18 +25,18 @@
     .end annotation
 
     .prologue
-    .line 458
+    .line 481
     invoke-virtual {p0}, Ljava/io/InputStream;->read()I
 
     move-result v0
 
-    .line 460
+    .line 483
     .local v0, value:I
     const/4 v1, -0x1
 
     if-ne v1, v0, :cond_f
 
-    .line 461
+    .line 484
     new-instance v1, Ljava/io/EOFException;
 
     const-string v2, "Unexpected EOF reached"
@@ -45,7 +45,7 @@
 
     throw v1
 
-    .line 464
+    .line 487
     :cond_f
     return v0
 .end method
@@ -60,7 +60,7 @@
     .end annotation
 
     .prologue
-    .line 447
+    .line 469
     invoke-static {p0}, Lorg/apache/commons/io/EndianUtils;->readSwappedLong(Ljava/io/InputStream;)J
 
     move-result-wide v0
@@ -82,7 +82,7 @@
     .end annotation
 
     .prologue
-    .line 423
+    .line 443
     invoke-static {p0}, Lorg/apache/commons/io/EndianUtils;->readSwappedInteger(Ljava/io/InputStream;)I
 
     move-result v0
@@ -104,30 +104,30 @@
     .end annotation
 
     .prologue
-    .line 337
+    .line 348
     invoke-static {p0}, Lorg/apache/commons/io/EndianUtils;->read(Ljava/io/InputStream;)I
 
     move-result v0
 
-    .line 338
+    .line 349
     .local v0, value1:I
     invoke-static {p0}, Lorg/apache/commons/io/EndianUtils;->read(Ljava/io/InputStream;)I
 
     move-result v1
 
-    .line 339
+    .line 350
     .local v1, value2:I
     invoke-static {p0}, Lorg/apache/commons/io/EndianUtils;->read(Ljava/io/InputStream;)I
 
     move-result v2
 
-    .line 340
+    .line 351
     .local v2, value3:I
     invoke-static {p0}, Lorg/apache/commons/io/EndianUtils;->read(Ljava/io/InputStream;)I
 
     move-result v3
 
-    .line 342
+    .line 353
     .local v3, value4:I
     and-int/lit16 v4, v0, 0xff
 
@@ -166,10 +166,10 @@
     .prologue
     const/16 v3, 0x8
 
-    .line 395
+    .line 413
     new-array v0, v3, [B
 
-    .line 396
+    .line 414
     .local v0, bytes:[B
     const/4 v1, 0x0
 
@@ -177,7 +177,7 @@
     :goto_5
     if-ge v1, v3, :cond_11
 
-    .line 397
+    .line 415
     invoke-static {p0}, Lorg/apache/commons/io/EndianUtils;->read(Ljava/io/InputStream;)I
 
     move-result v2
@@ -186,12 +186,12 @@
 
     aput-byte v2, v0, v1
 
-    .line 396
+    .line 414
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_5
 
-    .line 399
+    .line 417
     :cond_11
     const/4 v2, 0x0
 
@@ -208,7 +208,7 @@
     .parameter "offset"
 
     .prologue
-    .line 218
+    .line 220
     add-int/lit8 v4, p1, 0x0
 
     aget-byte v4, p0, v4
@@ -249,7 +249,7 @@
 
     int-to-long v2, v4
 
-    .line 220
+    .line 225
     .local v2, low:J
     add-int/lit8 v4, p1, 0x4
 
@@ -291,7 +291,7 @@
 
     int-to-long v0, v4
 
-    .line 222
+    .line 230
     .local v0, high:J
     const/16 v4, 0x20
 
@@ -316,7 +316,7 @@
     .end annotation
 
     .prologue
-    .line 295
+    .line 301
     invoke-static {p0}, Lorg/apache/commons/io/EndianUtils;->read(Ljava/io/InputStream;)I
 
     move-result v0
@@ -350,18 +350,18 @@
     .end annotation
 
     .prologue
-    .line 307
+    .line 315
     invoke-static {p0}, Lorg/apache/commons/io/EndianUtils;->read(Ljava/io/InputStream;)I
 
     move-result v0
 
-    .line 308
+    .line 316
     .local v0, value1:I
     invoke-static {p0}, Lorg/apache/commons/io/EndianUtils;->read(Ljava/io/InputStream;)I
 
     move-result v1
 
-    .line 310
+    .line 318
     .local v1, value2:I
     and-int/lit16 v2, v0, 0xff
 

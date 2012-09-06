@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="config_touch_noise_threshold_distance">2.0mm</dimen>
+    <dimen name="keyboardHeight">217.16498dip</dimen>
+    <dimen name="popup_key_height">0.33000004in</dimen>
+    <dimen name="mini_keyboard_horizontal_edges_padding">16.0dip</dimen>
+    <dimen name="mini_keyboard_key_horizontal_padding">8.0dip</dimen>
+    <dimen name="keyboardHeight_stone">1.3169861in</dimen>
+    <dimen name="mini_keyboard_horizontal_edges_padding_ics">4.0dip</dimen>
+    <dimen name="mini_keyboard_slide_allowance">0.39600003in</dimen>
+    <dimen name="mini_keyboard_vertical_correction">-0.33000004in</dimen>
+    <dimen name="keyboard_vertical_correction">0.0in</dimen>
+    <dimen name="key_preview_height">80.0sp</dimen>
+    <dimen name="key_preview_offset">0.100000024in</dimen>
+    <dimen name="key_label_horizontal_padding">4.0dip</dimen>
+    <dimen name="key_hint_letter_padding">1.0dip</dimen>
+    <dimen name="key_popup_hint_letter_padding">2.0dip</dimen>
+    <dimen name="key_uppercase_letter_padding">2.0dip</dimen>
+    <dimen name="key_preview_height_ics">80.0sp</dimen>
+    <dimen name="key_preview_offset_ics">0.049999952in</dimen>
+    <dimen name="suggestions_strip_height">40.0dip</dimen>
+    <dimen name="more_suggestions_key_horizontal_padding">12.0dip</dimen>
+    <dimen name="more_suggestions_row_height">40.0dip</dimen>
+    <dimen name="more_suggestions_bottom_gap">6.0dip</dimen>
+    <dimen name="more_suggestions_modal_tolerance">0.049999952in</dimen>
+    <dimen name="more_suggestions_slide_allowance">0.100000024in</dimen>
+    <dimen name="key_preview_backing_height">660.0dip</dimen>
+    <dimen name="suggestions_strip_padding">0.0dip</dimen>
+    <dimen name="suggestion_min_width">44.0dip</dimen>
+    <dimen name="suggestion_padding">6.0dip</dimen>
+    <dimen name="suggestion_text_size">18.0dip</dimen>
+    <dimen name="more_suggestions_hint_text_size">27.0dip</dimen>
+    <dimen name="key_hysteresis_distance">8.449982dip</dimen>
+</resources>

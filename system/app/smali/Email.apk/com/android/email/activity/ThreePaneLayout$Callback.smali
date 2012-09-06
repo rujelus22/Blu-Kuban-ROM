@@ -15,20 +15,5 @@
 
 
 # virtual methods
-.method public abstract makeMessageView()V
-.end method
-
-.method public abstract onLookChanged(Z)V
-.end method
-
-.method public abstract onLookChangedAfterAni()V
-.end method
-
 .method public abstract onVisiblePanesChanged(I)V
-.end method
-
-.method public abstract setLeftSplitType(I)V
-.end method
-
-.method public abstract setRightSplitType(II)V
 .end method

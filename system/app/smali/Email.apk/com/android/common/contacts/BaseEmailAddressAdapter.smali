@@ -31,6 +31,50 @@
 
 
 # direct methods
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 3
+    .parameter "context"
+
+    .prologue
+    .line 260
+    const/16 v0, 0xa
+
+    invoke-direct {p0, p1, v0}, Lcom/android/common/contacts/BaseEmailAddressAdapter;-><init>(Landroid/content/Context;I)V
+
+    .line 261
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;I)V
+    .registers 4
+    .parameter "context"
+    .parameter "preferredMaxResultCount"
+
+    .prologue
+    .line 264
+    invoke-direct {p0, p1}, Lcom/android/common/widget/CompositeCursorAdapter;-><init>(Landroid/content/Context;)V
+
+    .line 265
+    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/common/contacts/BaseEmailAddressAdapter;->mContentResolver:Landroid/content/ContentResolver;
+
+    .line 266
+    iput p2, p0, Lcom/android/common/contacts/BaseEmailAddressAdapter;->mPreferredMaxResultCount:I
+
+    .line 268
+    new-instance v0, Lcom/android/common/contacts/BaseEmailAddressAdapter$1;
+
+    invoke-direct {v0, p0}, Lcom/android/common/contacts/BaseEmailAddressAdapter$1;-><init>(Lcom/android/common/contacts/BaseEmailAddressAdapter;)V
+
+    iput-object v0, p0, Lcom/android/common/contacts/BaseEmailAddressAdapter;->mHandler:Landroid/os/Handler;
+
+    .line 275
+    return-void
+.end method
+
 .method static synthetic access$000(Lcom/android/common/contacts/BaseEmailAddressAdapter;)Z
     .registers 2
     .parameter "x0"
@@ -456,6 +500,219 @@
 
 
 # virtual methods
+.method public areAllItemsEnabled()Z
+    .registers 2
+
+    .prologue
+    .line 344
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method protected bindView(Landroid/view/View;ILandroid/database/Cursor;I)V
+    .registers 12
+    .parameter "v"
+    .parameter "partition"
+    .parameter "cursor"
+    .parameter "position"
+
+    .prologue
+    .line 326
+    invoke-virtual {p0, p2}, Lcom/android/common/contacts/BaseEmailAddressAdapter;->getPartition(I)Lcom/android/common/widget/CompositeCursorAdapter$Partition;
+
+    move-result-object v6
+
+    check-cast v6, Lcom/android/common/contacts/BaseEmailAddressAdapter$DirectoryPartition;
+
+    .line 327
+    .local v6, directoryPartition:Lcom/android/common/contacts/BaseEmailAddressAdapter$DirectoryPartition;
+    iget-object v2, v6, Lcom/android/common/contacts/BaseEmailAddressAdapter$DirectoryPartition;->directoryType:Ljava/lang/String;
+
+    .line 328
+    .local v2, directoryType:Ljava/lang/String;
+    iget-object v3, v6, Lcom/android/common/contacts/BaseEmailAddressAdapter$DirectoryPartition;->displayName:Ljava/lang/String;
+
+    .line 329
+    .local v3, directoryName:Ljava/lang/String;
+    iget-boolean v0, v6, Lcom/android/common/contacts/BaseEmailAddressAdapter$DirectoryPartition;->loading:Z
+
+    if-eqz v0, :cond_12
+
+    .line 330
+    invoke-virtual {p0, p1, v2, v3}, Lcom/android/common/contacts/BaseEmailAddressAdapter;->bindViewLoading(Landroid/view/View;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 340
+    :goto_11
+    return-void
+
+    .line 332
+    :cond_12
+    const/4 v0, 0x0
+
+    invoke-interface {p3, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 333
+    .local v4, displayName:Ljava/lang/String;
+    const/4 v0, 0x1
+
+    invoke-interface {p3, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 334
+    .local v5, emailAddress:Ljava/lang/String;
+    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_28
+
+    invoke-static {v4, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2a
+
+    .line 335
+    :cond_28
+    move-object v4, v5
+
+    .line 336
+    const/4 v5, 0x0
+
+    :cond_2a
+    move-object v0, p0
+
+    move-object v1, p1
+
+    .line 338
+    invoke-virtual/range {v0 .. v5}, Lcom/android/common/contacts/BaseEmailAddressAdapter;->bindView(Landroid/view/View;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_11
+.end method
+
+.method protected abstract bindView(Landroid/view/View;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.end method
+
+.method protected abstract bindViewLoading(Landroid/view/View;Ljava/lang/String;Ljava/lang/String;)V
+.end method
+
+.method public getFilter()Landroid/widget/Filter;
+    .registers 3
+
+    .prologue
+    .line 359
+    new-instance v0, Lcom/android/common/contacts/BaseEmailAddressAdapter$DefaultPartitionFilter;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/android/common/contacts/BaseEmailAddressAdapter$DefaultPartitionFilter;-><init>(Lcom/android/common/contacts/BaseEmailAddressAdapter;Lcom/android/common/contacts/BaseEmailAddressAdapter$1;)V
+
+    return-object v0
+.end method
+
+.method protected getItemViewType(II)I
+    .registers 5
+    .parameter "partitionIndex"
+    .parameter "position"
+
+    .prologue
+    .line 309
+    invoke-virtual {p0, p1}, Lcom/android/common/contacts/BaseEmailAddressAdapter;->getPartition(I)Lcom/android/common/widget/CompositeCursorAdapter$Partition;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/common/contacts/BaseEmailAddressAdapter$DirectoryPartition;
+
+    .line 310
+    .local v0, partition:Lcom/android/common/contacts/BaseEmailAddressAdapter$DirectoryPartition;
+    iget-boolean v1, v0, Lcom/android/common/contacts/BaseEmailAddressAdapter$DirectoryPartition;->loading:Z
+
+    if-eqz v1, :cond_c
+
+    const/4 v1, 0x1
+
+    :goto_b
+    return v1
+
+    :cond_c
+    const/4 v1, 0x0
+
+    goto :goto_b
+.end method
+
+.method protected abstract inflateItemView(Landroid/view/ViewGroup;)Landroid/view/View;
+.end method
+
+.method protected abstract inflateItemViewLoading(Landroid/view/ViewGroup;)Landroid/view/View;
+.end method
+
+.method protected isEnabled(II)Z
+    .registers 4
+    .parameter "partitionIndex"
+    .parameter "position"
+
+    .prologue
+    .line 350
+    invoke-direct {p0, p1}, Lcom/android/common/contacts/BaseEmailAddressAdapter;->isLoading(I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_8
+
+    const/4 v0, 0x1
+
+    :goto_7
+    return v0
+
+    :cond_8
+    const/4 v0, 0x0
+
+    goto :goto_7
+.end method
+
+.method protected newView(Landroid/content/Context;ILandroid/database/Cursor;ILandroid/view/ViewGroup;)Landroid/view/View;
+    .registers 8
+    .parameter "context"
+    .parameter "partitionIndex"
+    .parameter "cursor"
+    .parameter "position"
+    .parameter "parent"
+
+    .prologue
+    .line 316
+    invoke-virtual {p0, p2}, Lcom/android/common/contacts/BaseEmailAddressAdapter;->getPartition(I)Lcom/android/common/widget/CompositeCursorAdapter$Partition;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/common/contacts/BaseEmailAddressAdapter$DirectoryPartition;
+
+    .line 317
+    .local v0, partition:Lcom/android/common/contacts/BaseEmailAddressAdapter$DirectoryPartition;
+    iget-boolean v1, v0, Lcom/android/common/contacts/BaseEmailAddressAdapter$DirectoryPartition;->loading:Z
+
+    if-eqz v1, :cond_f
+
+    .line 318
+    invoke-virtual {p0, p5}, Lcom/android/common/contacts/BaseEmailAddressAdapter;->inflateItemViewLoading(Landroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v1
+
+    .line 320
+    :goto_e
+    return-object v1
+
+    :cond_f
+    invoke-virtual {p0, p5}, Lcom/android/common/contacts/BaseEmailAddressAdapter;->inflateItemView(Landroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v1
+
+    goto :goto_e
+.end method
+
 .method protected onDirectoryLoadFinished(Ljava/lang/CharSequence;Landroid/database/Cursor;Landroid/database/Cursor;)V
     .registers 27
     .parameter "constraint"
@@ -1291,6 +1548,18 @@
     invoke-interface {p3}, Landroid/database/Cursor;->close()V
 
     goto :goto_28
+.end method
+
+.method public setAccount(Landroid/accounts/Account;)V
+    .registers 2
+    .parameter "account"
+
+    .prologue
+    .line 282
+    iput-object p1, p0, Lcom/android/common/contacts/BaseEmailAddressAdapter;->mAccount:Landroid/accounts/Account;
+
+    .line 283
+    return-void
 .end method
 
 .method showSearchPendingIfNotComplete(I)V

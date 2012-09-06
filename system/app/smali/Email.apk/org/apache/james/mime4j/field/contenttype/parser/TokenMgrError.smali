@@ -12,10 +12,10 @@
     .registers 1
 
     .prologue
-    .line 135
+    .line 137
     invoke-direct {p0}, Ljava/lang/Error;-><init>()V
 
-    .line 136
+    .line 138
     return-void
 .end method
 
@@ -25,13 +25,13 @@
     .parameter "reason"
 
     .prologue
-    .line 139
+    .line 141
     invoke-direct {p0, p1}, Ljava/lang/Error;-><init>(Ljava/lang/String;)V
 
-    .line 140
+    .line 142
     iput p2, p0, Lorg/apache/james/mime4j/field/contenttype/parser/TokenMgrError;->errorCode:I
 
-    .line 141
+    .line 143
     return-void
 .end method
 
@@ -46,14 +46,14 @@
     .parameter "reason"
 
     .prologue
-    .line 145
+    .line 146
     invoke-static/range {p1 .. p6}, Lorg/apache/james/mime4j/field/contenttype/parser/TokenMgrError;->LexicalError(ZIIILjava/lang/String;C)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, v0, p7}, Lorg/apache/james/mime4j/field/contenttype/parser/TokenMgrError;-><init>(Ljava/lang/String;I)V
 
-    .line 146
+    .line 147
     return-void
 .end method
 
@@ -67,7 +67,7 @@
     .parameter "curChar"
 
     .prologue
-    .line 111
+    .line 113
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -190,12 +190,12 @@
     .parameter "str"
 
     .prologue
-    .line 57
+    .line 56
     new-instance v2, Ljava/lang/StringBuffer;
 
     invoke-direct {v2}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 59
+    .line 58
     .local v2, retval:Ljava/lang/StringBuffer;
     const/4 v1, 0x0
 
@@ -207,7 +207,7 @@
 
     if-ge v1, v4, :cond_93
 
-    .line 60
+    .line 59
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v4
@@ -290,7 +290,7 @@
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 59
+    .line 58
     .end local v0           #ch:C
     .end local v3           #s:Ljava/lang/String;
     :goto_5c
@@ -379,7 +379,7 @@
 
     return-object v4
 
-    .line 60
+    .line 59
     :sswitch_data_98
     .sparse-switch
         0x0 -> :sswitch_5c
@@ -400,7 +400,7 @@
     .registers 2
 
     .prologue
-    .line 128
+    .line 130
     invoke-super {p0}, Ljava/lang/Error;->getMessage()Ljava/lang/String;
 
     move-result-object v0

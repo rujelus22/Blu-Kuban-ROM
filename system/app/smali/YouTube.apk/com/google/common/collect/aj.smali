@@ -1,165 +1,221 @@
-.class Lcom/google/common/collect/aj;
-.super Ljava/lang/Object;
+.class final Lcom/google/common/collect/aj;
+.super Lcom/google/common/collect/ae;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Iterator;
+.implements Ljava/util/SortedSet;
 
 
 # instance fields
-.field final a:Ljava/util/Iterator;
-
-.field final b:Ljava/util/Collection;
-
-.field final synthetic c:Lcom/google/common/collect/ai;
+.field final synthetic a:Lcom/google/common/collect/AbstractMultimap;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/ai;)V
-    .registers 4
+.method constructor <init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/SortedSet;Lcom/google/common/collect/ae;)V
+    .registers 5
     .parameter
+    .end parameter
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
+    .parameter
+    .end parameter
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 490
-    iput-object p1, p0, Lcom/google/common/collect/aj;->c:Lcom/google/common/collect/ai;
+    .line 658
+    iput-object p1, p0, Lcom/google/common/collect/aj;->a:Lcom/google/common/collect/AbstractMultimap;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 659
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/common/collect/ae;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/Collection;Lcom/google/common/collect/ae;)V
 
-    .line 488
-    iget-object v0, p0, Lcom/google/common/collect/aj;->c:Lcom/google/common/collect/ai;
-
-    iget-object v0, v0, Lcom/google/common/collect/ai;->c:Ljava/util/Collection;
-
-    iput-object v0, p0, Lcom/google/common/collect/aj;->b:Ljava/util/Collection;
-
-    .line 491
-    iget-object v0, p1, Lcom/google/common/collect/ai;->f:Lcom/google/common/collect/AbstractMultimap;
-
-    iget-object v1, p1, Lcom/google/common/collect/ai;->c:Ljava/util/Collection;
-
-    #calls: Lcom/google/common/collect/AbstractMultimap;->iteratorOrListIterator(Ljava/util/Collection;)Ljava/util/Iterator;
-    invoke-static {v0, v1}, Lcom/google/common/collect/AbstractMultimap;->access$100(Lcom/google/common/collect/AbstractMultimap;Ljava/util/Collection;)Ljava/util/Iterator;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/common/collect/aj;->a:Ljava/util/Iterator;
-
-    .line 492
+    .line 660
     return-void
 .end method
 
-.method constructor <init>(Lcom/google/common/collect/ai;Ljava/util/Iterator;)V
-    .registers 4
-    .parameter
-    .parameter
+.method private d()Ljava/util/SortedSet;
+    .registers 2
 
     .prologue
-    .line 494
-    iput-object p1, p0, Lcom/google/common/collect/aj;->c:Lcom/google/common/collect/ai;
+    .line 663
+    iget-object v0, p0, Lcom/google/common/collect/ae;->c:Ljava/util/Collection;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    check-cast v0, Ljava/util/SortedSet;
 
-    .line 488
-    iget-object v0, p0, Lcom/google/common/collect/aj;->c:Lcom/google/common/collect/ai;
-
-    iget-object v0, v0, Lcom/google/common/collect/ai;->c:Ljava/util/Collection;
-
-    iput-object v0, p0, Lcom/google/common/collect/aj;->b:Ljava/util/Collection;
-
-    .line 495
-    iput-object p2, p0, Lcom/google/common/collect/aj;->a:Ljava/util/Iterator;
-
-    .line 496
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method final a()V
-    .registers 3
-
-    .prologue
-    .line 503
-    iget-object v0, p0, Lcom/google/common/collect/aj;->c:Lcom/google/common/collect/ai;
-
-    invoke-virtual {v0}, Lcom/google/common/collect/ai;->a()V
-
-    .line 504
-    iget-object v0, p0, Lcom/google/common/collect/aj;->c:Lcom/google/common/collect/ai;
-
-    iget-object v0, v0, Lcom/google/common/collect/ai;->c:Ljava/util/Collection;
-
-    iget-object v1, p0, Lcom/google/common/collect/aj;->b:Ljava/util/Collection;
-
-    if-eq v0, v1, :cond_13
-
-    .line 505
-    new-instance v0, Ljava/util/ConcurrentModificationException;
-
-    invoke-direct {v0}, Ljava/util/ConcurrentModificationException;-><init>()V
-
-    throw v0
-
-    .line 507
-    :cond_13
-    return-void
-.end method
-
-.method public hasNext()Z
+.method public final comparator()Ljava/util/Comparator;
     .registers 2
 
     .prologue
-    .line 510
-    invoke-virtual {p0}, Lcom/google/common/collect/aj;->a()V
+    .line 668
+    invoke-direct {p0}, Lcom/google/common/collect/aj;->d()Ljava/util/SortedSet;
 
-    .line 511
-    iget-object v0, p0, Lcom/google/common/collect/aj;->a:Ljava/util/Iterator;
+    move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public next()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 515
-    invoke-virtual {p0}, Lcom/google/common/collect/aj;->a()V
-
-    .line 516
-    iget-object v0, p0, Lcom/google/common/collect/aj;->a:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/SortedSet;->comparator()Ljava/util/Comparator;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public remove()V
+.method public final first()Ljava/lang/Object;
     .registers 2
 
     .prologue
-    .line 520
-    iget-object v0, p0, Lcom/google/common/collect/aj;->a:Ljava/util/Iterator;
+    .line 673
+    invoke-virtual {p0}, Lcom/google/common/collect/aj;->a()V
 
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+    .line 674
+    invoke-direct {p0}, Lcom/google/common/collect/aj;->d()Ljava/util/SortedSet;
 
-    .line 521
-    iget-object v0, p0, Lcom/google/common/collect/aj;->c:Lcom/google/common/collect/ai;
+    move-result-object v0
 
-    iget-object v0, v0, Lcom/google/common/collect/ai;->f:Lcom/google/common/collect/AbstractMultimap;
+    invoke-interface {v0}, Ljava/util/SortedSet;->first()Ljava/lang/Object;
 
-    invoke-static {v0}, Lcom/google/common/collect/AbstractMultimap;->access$210(Lcom/google/common/collect/AbstractMultimap;)I
+    move-result-object v0
 
-    .line 522
-    iget-object v0, p0, Lcom/google/common/collect/aj;->c:Lcom/google/common/collect/ai;
+    return-object v0
+.end method
 
-    invoke-virtual {v0}, Lcom/google/common/collect/ai;->b()V
+.method public final headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
+    .registers 7
+    .parameter
 
-    .line 523
-    return-void
+    .prologue
+    .line 685
+    invoke-virtual {p0}, Lcom/google/common/collect/aj;->a()V
+
+    .line 686
+    new-instance v0, Lcom/google/common/collect/aj;
+
+    iget-object v1, p0, Lcom/google/common/collect/aj;->a:Lcom/google/common/collect/AbstractMultimap;
+
+    iget-object v2, p0, Lcom/google/common/collect/ae;->b:Ljava/lang/Object;
+
+    invoke-direct {p0}, Lcom/google/common/collect/aj;->d()Ljava/util/SortedSet;
+
+    move-result-object v3
+
+    invoke-interface {v3, p1}, Ljava/util/SortedSet;->headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/google/common/collect/ae;->d:Lcom/google/common/collect/ae;
+
+    if-nez v4, :cond_19
+
+    :goto_15
+    invoke-direct {v0, v1, v2, v3, p0}, Lcom/google/common/collect/aj;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/SortedSet;Lcom/google/common/collect/ae;)V
+
+    return-object v0
+
+    :cond_19
+    iget-object p0, p0, Lcom/google/common/collect/ae;->d:Lcom/google/common/collect/ae;
+
+    goto :goto_15
+.end method
+
+.method public final last()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 679
+    invoke-virtual {p0}, Lcom/google/common/collect/aj;->a()V
+
+    .line 680
+    invoke-direct {p0}, Lcom/google/common/collect/aj;->d()Ljava/util/SortedSet;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/SortedSet;->last()Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
+    .registers 8
+    .parameter
+    .parameter
+
+    .prologue
+    .line 693
+    invoke-virtual {p0}, Lcom/google/common/collect/aj;->a()V
+
+    .line 694
+    new-instance v0, Lcom/google/common/collect/aj;
+
+    iget-object v1, p0, Lcom/google/common/collect/aj;->a:Lcom/google/common/collect/AbstractMultimap;
+
+    iget-object v2, p0, Lcom/google/common/collect/ae;->b:Ljava/lang/Object;
+
+    invoke-direct {p0}, Lcom/google/common/collect/aj;->d()Ljava/util/SortedSet;
+
+    move-result-object v3
+
+    invoke-interface {v3, p1, p2}, Ljava/util/SortedSet;->subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/google/common/collect/ae;->d:Lcom/google/common/collect/ae;
+
+    if-nez v4, :cond_19
+
+    :goto_15
+    invoke-direct {v0, v1, v2, v3, p0}, Lcom/google/common/collect/aj;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/SortedSet;Lcom/google/common/collect/ae;)V
+
+    return-object v0
+
+    :cond_19
+    iget-object p0, p0, Lcom/google/common/collect/ae;->d:Lcom/google/common/collect/ae;
+
+    goto :goto_15
+.end method
+
+.method public final tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
+    .registers 7
+    .parameter
+
+    .prologue
+    .line 701
+    invoke-virtual {p0}, Lcom/google/common/collect/aj;->a()V
+
+    .line 702
+    new-instance v0, Lcom/google/common/collect/aj;
+
+    iget-object v1, p0, Lcom/google/common/collect/aj;->a:Lcom/google/common/collect/AbstractMultimap;
+
+    iget-object v2, p0, Lcom/google/common/collect/ae;->b:Ljava/lang/Object;
+
+    invoke-direct {p0}, Lcom/google/common/collect/aj;->d()Ljava/util/SortedSet;
+
+    move-result-object v3
+
+    invoke-interface {v3, p1}, Ljava/util/SortedSet;->tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/google/common/collect/ae;->d:Lcom/google/common/collect/ae;
+
+    if-nez v4, :cond_19
+
+    :goto_15
+    invoke-direct {v0, v1, v2, v3, p0}, Lcom/google/common/collect/aj;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;Ljava/util/SortedSet;Lcom/google/common/collect/ae;)V
+
+    return-object v0
+
+    :cond_19
+    iget-object p0, p0, Lcom/google/common/collect/ae;->d:Lcom/google/common/collect/ae;
+
+    goto :goto_15
 .end method

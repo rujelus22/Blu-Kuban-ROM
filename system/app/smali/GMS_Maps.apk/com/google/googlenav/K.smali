@@ -1,164 +1,330 @@
-.class public Lcom/google/googlenav/K;
+.class public Lcom/google/googlenav/k;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# instance fields
+.field private a:[J
 
 
 # direct methods
-.method private constructor <init>()V
+.method public constructor <init>()V
     .registers 1
 
+    .prologue
+    .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 78
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;IIIII)V
-    .registers 10
+.method public constructor <init>(Lcom/google/googlenav/common/io/protocol/ProtoBuf;)V
+    .registers 25
+    .parameter
 
-    const/4 v0, 0x6
+    .prologue
+    .line 84
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    new-array v0, v0, [Ljava/lang/String;
+    .line 85
+    const/4 v2, 0x1
 
-    const/4 v1, 0x0
+    move-object/from16 v0, p1
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->getBytes(I)[B
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v4
 
-    const-string v3, "t="
+    .line 86
+    if-eqz v4, :cond_88
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 87
+    array-length v2, v4
 
-    move-result-object v2
+    div-int/lit8 v5, v2, 0x8
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 88
+    if-lez v5, :cond_88
 
-    move-result-object v2
+    .line 89
+    new-array v2, v5, [J
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-object/from16 v0, p0
 
-    move-result-object v2
+    iput-object v2, v0, Lcom/google/googlenav/k;->a:[J
 
-    aput-object v2, v0, v1
+    .line 90
+    const/4 v3, 0x0
 
-    const/4 v1, 0x1
+    .line 91
+    const/4 v2, 0x0
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    :goto_19
+    if-ge v2, v5, :cond_88
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    .line 93
+    add-int/lit8 v6, v3, 0x1
 
-    const-string v3, "tw="
+    aget-byte v3, v4, v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    and-int/lit16 v3, v3, 0xff
 
-    move-result-object v2
+    int-to-long v7, v3
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    .line 94
+    add-int/lit8 v3, v6, 0x1
 
-    move-result-object v2
+    aget-byte v6, v4, v6
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    and-int/lit16 v6, v6, 0xff
 
-    move-result-object v2
+    int-to-long v9, v6
 
-    aput-object v2, v0, v1
+    .line 95
+    add-int/lit8 v6, v3, 0x1
 
-    const/4 v1, 0x2
+    aget-byte v3, v4, v3
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    and-int/lit16 v3, v3, 0xff
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    int-to-long v11, v3
 
-    const-string v3, "tf="
+    .line 96
+    add-int/lit8 v3, v6, 0x1
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    aget-byte v6, v4, v6
 
-    move-result-object v2
+    and-int/lit16 v6, v6, 0xff
 
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    int-to-long v13, v6
 
-    move-result-object v2
+    .line 97
+    add-int/lit8 v6, v3, 0x1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    aget-byte v3, v4, v3
 
-    move-result-object v2
+    and-int/lit16 v3, v3, 0xff
 
-    aput-object v2, v0, v1
+    int-to-long v15, v3
 
-    const/4 v1, 0x3
+    .line 98
+    add-int/lit8 v3, v6, 0x1
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    aget-byte v6, v4, v6
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    and-int/lit16 v6, v6, 0xff
 
-    const-string v3, "tl="
+    int-to-long v0, v6
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-wide/from16 v17, v0
 
-    move-result-object v2
+    .line 99
+    add-int/lit8 v6, v3, 0x1
 
-    invoke-virtual {v2, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    aget-byte v3, v4, v3
 
-    move-result-object v2
+    and-int/lit16 v3, v3, 0xff
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    int-to-long v0, v3
 
-    move-result-object v2
+    move-wide/from16 v19, v0
 
-    aput-object v2, v0, v1
+    .line 100
+    add-int/lit8 v3, v6, 0x1
 
-    const/4 v1, 0x4
+    aget-byte v6, v4, v6
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    and-int/lit16 v6, v6, 0xff
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    int-to-long v0, v6
 
-    const-string v3, "n="
+    move-wide/from16 v21, v0
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 101
+    const/16 v6, 0x38
 
-    move-result-object v2
+    shl-long v21, v21, v6
 
-    invoke-virtual {v2, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const/16 v6, 0x30
 
-    move-result-object v2
+    shl-long v19, v19, v6
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    or-long v19, v19, v21
 
-    move-result-object v2
+    const/16 v6, 0x28
 
-    aput-object v2, v0, v1
+    shl-long v17, v17, v6
 
-    const/4 v1, 0x5
+    or-long v17, v17, v19
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const/16 v6, 0x20
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    shl-long/2addr v15, v6
 
-    const-string v3, "b="
+    or-long v15, v15, v17
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/16 v6, 0x18
 
-    move-result-object v2
+    shl-long/2addr v13, v6
 
-    invoke-virtual {v2, p5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    or-long/2addr v13, v15
 
-    move-result-object v2
+    const/16 v6, 0x10
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    shl-long/2addr v11, v6
 
-    move-result-object v2
+    or-long/2addr v11, v13
 
-    aput-object v2, v0, v1
+    const/16 v6, 0x8
 
-    invoke-static {v0}, Laf/m;->a([Ljava/lang/String;)Ljava/lang/String;
+    shl-long/2addr v9, v6
 
-    move-result-object v0
+    or-long/2addr v9, v11
 
-    const/16 v1, 0x16
+    or-long v6, v9, v7
 
-    const-string v2, "TL"
+    .line 104
+    move-object/from16 v0, p0
 
-    invoke-static {v1, v2, v0}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
+    iget-object v8, v0, Lcom/google/googlenav/k;->a:[J
 
+    const-wide/high16 v9, -0x8000
+
+    add-long/2addr v6, v9
+
+    aput-wide v6, v8, v2
+
+    .line 91
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_19
+
+    .line 108
+    :cond_88
     return-void
+.end method
+
+.method private a(JI[B)V
+    .registers 10
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    const/16 v4, 0x8
+
+    .line 111
+    .line 112
+    const/4 v0, 0x0
+
+    :goto_3
+    if-ge v0, v4, :cond_13
+
+    .line 113
+    add-int/lit8 v1, p3, 0x1
+
+    const-wide/16 v2, 0xff
+
+    and-long/2addr v2, p1
+
+    long-to-int v2, v2
+
+    int-to-byte v2, v2
+
+    aput-byte v2, p4, p3
+
+    .line 114
+    shr-long/2addr p1, v4
+
+    .line 112
+    add-int/lit8 v0, v0, 0x1
+
+    move p3, v1
+
+    goto :goto_3
+
+    .line 116
+    :cond_13
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+    .registers 7
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 123
+    new-instance v2, Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    sget-object v1, Lcom/google/wireless/googlenav/proto/j2me/aS;->c:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-direct {v2, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;-><init>(Lcom/google/googlenav/common/io/protocol/ProtoBufType;)V
+
+    .line 124
+    iget-object v1, p0, Lcom/google/googlenav/k;->a:[J
+
+    if-eqz v1, :cond_2d
+
+    .line 125
+    iget-object v1, p0, Lcom/google/googlenav/k;->a:[J
+
+    array-length v1, v1
+
+    mul-int/lit8 v1, v1, 0x8
+
+    new-array v3, v1, [B
+
+    move v1, v0
+
+    .line 127
+    :goto_14
+    iget-object v4, p0, Lcom/google/googlenav/k;->a:[J
+
+    array-length v4, v4
+
+    if-ge v0, v4, :cond_29
+
+    .line 128
+    iget-object v4, p0, Lcom/google/googlenav/k;->a:[J
+
+    aget-wide v4, v4, v0
+
+    invoke-static {v4, v5}, Lat/O;->b(J)J
+
+    move-result-wide v4
+
+    .line 129
+    invoke-direct {p0, v4, v5, v1, v3}, Lcom/google/googlenav/k;->a(JI[B)V
+
+    .line 130
+    add-int/lit8 v1, v1, 0x8
+
+    .line 127
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_14
+
+    .line 132
+    :cond_29
+    const/4 v0, 0x1
+
+    invoke-virtual {v2, v0, v3}, Lcom/google/googlenav/common/io/protocol/ProtoBuf;->setBytes(I[B)Lcom/google/googlenav/common/io/protocol/ProtoBuf;
+
+    .line 134
+    :cond_2d
+    return-object v2
+.end method
+
+.method public b()[J
+    .registers 2
+
+    .prologue
+    .line 138
+    iget-object v0, p0, Lcom/google/googlenav/k;->a:[J
+
+    return-object v0
 .end method

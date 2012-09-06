@@ -32,12 +32,12 @@
     .parameter
 
     .prologue
-    .line 155
+    .line 147
     iput-object p1, p0, Lcom/android/email/Throttle$MyTimerTask;->this$0:Lcom/android/email/Throttle;
 
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
 
-    .line 169
+    .line 161
     return-void
 .end method
 
@@ -47,18 +47,18 @@
     .parameter "x1"
 
     .prologue
-    .line 155
+    .line 147
     invoke-direct {p0, p1}, Lcom/android/email/Throttle$MyTimerTask;-><init>(Lcom/android/email/Throttle;)V
 
     return-void
 .end method
 
-.method static synthetic access$500(Lcom/android/email/Throttle$MyTimerTask;)Z
+.method static synthetic access$400(Lcom/android/email/Throttle$MyTimerTask;)Z
     .registers 2
     .parameter "x0"
 
     .prologue
-    .line 155
+    .line 147
     iget-boolean v0, p0, Lcom/android/email/Throttle$MyTimerTask;->mCanceled:Z
 
     return v0
@@ -70,12 +70,12 @@
     .registers 2
 
     .prologue
-    .line 165
+    .line 157
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/email/Throttle$MyTimerTask;->mCanceled:Z
 
-    .line 166
+    .line 158
     invoke-super {p0}, Ljava/util/TimerTask;->cancel()Z
 
     move-result v0
@@ -87,7 +87,7 @@
     .registers 4
 
     .prologue
-    .line 160
+    .line 152
     iget-object v0, p0, Lcom/android/email/Throttle$MyTimerTask;->this$0:Lcom/android/email/Throttle;
 
     #getter for: Lcom/android/email/Throttle;->mHandler:Landroid/os/Handler;
@@ -103,6 +103,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 161
+    .line 153
     return-void
 .end method

@@ -1,104 +1,123 @@
-.class public final enum LF/D;
-.super Ljava/lang/Enum;
+.class LF/d;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final enum a:LF/D;
+# instance fields
+.field final synthetic a:LF/b;
 
-.field public static final enum b:LF/D;
+.field private final b:J
 
-.field public static final enum c:LF/D;
-
-.field private static final synthetic d:[LF/D;
+.field private final c:Ljava/lang/Runnable;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method private constructor <init>(LF/b;JLjava/lang/Runnable;)V
     .registers 5
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v4, 0x2
+    .prologue
+    .line 69
+    iput-object p1, p0, LF/d;->a:LF/b;
 
-    const/4 v3, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v2, 0x0
+    .line 70
+    iput-wide p2, p0, LF/d;->b:J
 
-    new-instance v0, LF/D;
+    .line 71
+    iput-object p4, p0, LF/d;->c:Ljava/lang/Runnable;
 
-    const-string v1, "LOCATION_CHANGED"
+    .line 72
+    return-void
+.end method
 
-    invoke-direct {v0, v1, v2}, LF/D;-><init>(Ljava/lang/String;I)V
+.method synthetic constructor <init>(LF/b;JLjava/lang/Runnable;LF/c;)V
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    sput-object v0, LF/D;->a:LF/D;
-
-    new-instance v0, LF/D;
-
-    const-string v1, "OFF_ROUTE"
-
-    invoke-direct {v0, v1, v3}, LF/D;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LF/D;->b:LF/D;
-
-    new-instance v0, LF/D;
-
-    const-string v1, "LOCATION_LOST"
-
-    invoke-direct {v0, v1, v4}, LF/D;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, LF/D;->c:LF/D;
-
-    const/4 v0, 0x3
-
-    new-array v0, v0, [LF/D;
-
-    sget-object v1, LF/D;->a:LF/D;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, LF/D;->b:LF/D;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, LF/D;->c:LF/D;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, LF/D;->d:[LF/D;
+    .prologue
+    .line 59
+    invoke-direct {p0, p1, p2, p3, p4}, LF/d;-><init>(LF/b;JLjava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+# virtual methods
+.method public run()V
+    .registers 6
 
+    .prologue
+    .line 76
+    iget-object v0, p0, LF/d;->a:LF/b;
+
+    invoke-static {v0}, LF/b;->a(LF/b;)LF/a;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, LF/a;->b()J
+
+    move-result-wide v0
+
+    .line 77
+    iget-wide v2, p0, LF/d;->b:J
+
+    cmp-long v2, v0, v2
+
+    if-gez v2, :cond_25
+
+    .line 78
+    iget-object v2, p0, LF/d;->a:LF/b;
+
+    iget-wide v3, p0, LF/d;->b:J
+
+    sub-long v0, v3, v0
+
+    long-to-double v0, v0
+
+    iget-object v3, p0, LF/d;->a:LF/b;
+
+    invoke-static {v3}, LF/b;->a(LF/b;)LF/a;
+
+    move-result-object v3
+
+    iget-wide v3, v3, LF/a;->a:D
+
+    div-double/2addr v0, v3
+
+    double-to-long v0, v0
+
+    invoke-static {v2, p0, v0, v1}, LF/b;->a(LF/b;Ljava/lang/Runnable;J)Z
+
+    .line 84
+    :goto_24
     return-void
-.end method
 
-.method public static valueOf(Ljava/lang/String;)LF/D;
-    .registers 2
+    .line 81
+    :cond_25
+    iget-object v0, p0, LF/d;->a:LF/b;
 
-    const-class v0, LF/D;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-static {v0}, LF/b;->b(LF/b;)Ljava/util/Map;
 
     move-result-object v0
 
-    check-cast v0, LF/D;
+    invoke-interface {v0, p0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object v0
-.end method
+    .line 82
+    iget-object v0, p0, LF/d;->a:LF/b;
 
-.method public static values()[LF/D;
-    .registers 1
+    iget-object v1, p0, LF/d;->c:Ljava/lang/Runnable;
 
-    sget-object v0, LF/D;->d:[LF/D;
+    invoke-virtual {v0, v1}, LF/b;->b(Ljava/lang/Runnable;)Z
 
-    invoke-virtual {v0}, [LF/D;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [LF/D;
-
-    return-object v0
+    goto :goto_24
 .end method

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="left|center" android:id="@id/viewSavedMap" android:background="?selectableItemBackground" android:paddingLeft="4.0dip" android:paddingTop="4.0dip" android:paddingRight="0.0dip" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/thumbnail" android:background="?selectableItemBackground" android:paddingLeft="0.0dip" android:paddingTop="0.0dip" android:paddingRight="0.0dip" android:paddingBottom="0.0dip" android:focusable="true" android:visibility="visible" android:layout_width="64.0dip" android:layout_height="64.0dip" />
+    <LinearLayout android:orientation="vertical" android:paddingLeft="4.0dip" android:paddingTop="0.0dip" android:paddingRight="4.0dip" android:paddingBottom="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:id="@id/description" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/progress" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:id="@id/progressDetail" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" style="@style/LightTextGrey" />
+            <TextView android:id="@id/progressNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="0.0" style="@style/LightTextGrey" />
+        </LinearLayout>
+        <ProgressBar android:id="@id/progressBar" android:layout_width="fill_parent" android:layout_height="4.0dip" style="@android:style/Widget.ProgressBar.Horizontal" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/controllButton" android:background="?selectableItemBackground" android:paddingLeft="0.0dip" android:paddingTop="2.0dip" android:paddingRight="8.0dip" android:paddingBottom="2.0dip" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@id/controllButtonImage" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:id="@id/controllButtonLabel" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView android:id="@id/extraInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <ImageButton android:layout_gravity="bottom" android:id="@id/dropdownButton" android:background="?selectableItemBackground" android:paddingLeft="8.0dip" android:paddingTop="0.0dip" android:paddingRight="8.0dip" android:paddingBottom="0.0dip" android:focusable="true" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+    <ImageButton android:layout_gravity="center" android:id="@id/deleteButton" android:background="?selectableItemBackground" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:focusable="true" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+</LinearLayout>

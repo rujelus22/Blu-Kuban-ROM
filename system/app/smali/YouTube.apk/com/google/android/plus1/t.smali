@@ -8,22 +8,8 @@
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 158
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/plus1/t;-><init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;B)V
-    .registers 3
-    .parameter
+.method private constructor <init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;)V
+    .registers 2
     .parameter
 
     .prologue
@@ -31,6 +17,18 @@
     iput-object p1, p0, Lcom/google/android/plus1/t;->a:Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;
 
     invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;B)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 158
+    invoke-direct {p0, p1}, Lcom/google/android/plus1/t;-><init>(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;)V
 
     return-void
 .end method
@@ -94,24 +92,20 @@
 
     const/4 v1, 0x3
 
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v1}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1d
 
     .line 163
     const-string v0, "PlusOneActivity"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "WebView loading "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -124,7 +118,7 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 165
-    :cond_21
+    :cond_1d
     iget-object v0, p0, Lcom/google/android/plus1/t;->a:Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;
 
     invoke-static {v0}, Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;->c(Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;)Landroid/os/Handler;
@@ -159,24 +153,20 @@
 
     const/4 v1, 0x6
 
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v1}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_31
 
     .line 180
     const-string v0, "PlusOneActivity"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "SignupActivity received an error when opening "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -209,7 +199,7 @@
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 183
-    :cond_35
+    :cond_31
     iget-object v0, p0, Lcom/google/android/plus1/t;->a:Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;
 
     invoke-virtual {v0, p2, p3, p4}, Lcom/google/android/plus1/BasePlusOneWebViewSignupActivity;->a(ILjava/lang/String;Ljava/lang/String;)V

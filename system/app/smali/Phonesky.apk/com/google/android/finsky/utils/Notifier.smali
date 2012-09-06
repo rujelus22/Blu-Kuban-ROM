@@ -13,10 +13,7 @@
 .method public abstract setNotificationListener(Lcom/google/android/finsky/utils/NotificationListener;)V
 .end method
 
-.method public abstract showDownloadErrorMessage(Ljava/lang/String;Ljava/lang/String;I)V
-.end method
-
-.method public abstract showExternalStorageFull(Ljava/lang/String;Ljava/lang/String;)V
+.method public abstract showDownloadErrorMessage(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Z)V
 .end method
 
 .method public abstract showExternalStorageMissing(Ljava/lang/String;Ljava/lang/String;)V
@@ -43,14 +40,17 @@
 .method public abstract showNotification(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/content/Intent;)V
 .end method
 
-.method public abstract showPurchaseErrorMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public abstract showPurchaseErrorMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end method
 
-.method public abstract showSingleUpdateAvailableMessage(Ljava/lang/String;Ljava/lang/String;)V
+.method public abstract showSingleUpdateAvailableMessage(Ljava/lang/String;)V
 .end method
 
-.method public abstract showSuccessfulInstallMessage(Ljava/lang/String;Ljava/lang/String;Z)V
+.method public abstract showSubscriptionsWarningMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end method
 
-.method public abstract showUpdatesAvailableMessage(Ljava/lang/String;I)V
+.method public abstract showSuccessfulInstallMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+.end method
+
+.method public abstract showUpdatesAvailableMessage(I)V
 .end method

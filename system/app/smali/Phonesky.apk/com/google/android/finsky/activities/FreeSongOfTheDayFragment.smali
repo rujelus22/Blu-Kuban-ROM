@@ -75,7 +75,7 @@
     .parameter "pinstripeResourceId"
 
     .prologue
-    .line 104
+    .line 105
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/FreeSongOfTheDayFragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -86,7 +86,7 @@
 
     check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 106
+    .line 107
     .local v0, backgroundTile:Landroid/graphics/drawable/BitmapDrawable;
     sget-object v1, Landroid/graphics/Shader$TileMode;->REPEAT:Landroid/graphics/Shader$TileMode;
 
@@ -94,10 +94,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/drawable/BitmapDrawable;->setTileModeXY(Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
 
-    .line 107
+    .line 108
     invoke-virtual {p1, v0}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 108
+    .line 109
     return-void
 .end method
 
@@ -108,7 +108,7 @@
 
     .prologue
     .line 61
-    const v0, 0x7f040071
+    const v0, 0x7f04007c
 
     return v0
 .end method
@@ -225,7 +225,7 @@
 
     .line 78
     .local v4, fragmentView:Landroid/view/View;
-    const v8, 0x7f0800f6
+    const v8, 0x7f08010d
 
     invoke-virtual {v4, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -235,6 +235,9 @@
 
     .line 80
     .local v6, headerHero:Lcom/google/android/finsky/layout/HeroGraphicView;
+    invoke-virtual {v6}, Lcom/google/android/finsky/layout/HeroGraphicView;->hideAccessibilityOverlay()V
+
+    .line 81
     iget-object v8, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayFragment;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
 
     invoke-static {v3, v9, v9, v9}, Lcom/google/android/finsky/utils/ThumbnailUtils;->getPageHeaderBannerUrlFromDocument(Lcom/google/android/finsky/api/model/Document;ZII)Ljava/lang/String;
@@ -243,15 +246,15 @@
 
     iget-boolean v10, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayFragment;->mRestrictHeroHeight:Z
 
-    invoke-virtual {v6, v8, v9, v10}, Lcom/google/android/finsky/layout/HeroGraphicView;->load(Lcom/google/android/finsky/utils/BitmapLoader;Ljava/lang/String;Z)V
+    invoke-virtual {v6, v8, v3, v9, v10}, Lcom/google/android/finsky/layout/HeroGraphicView;->load(Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Z)V
 
-    .line 83
-    const v8, 0x7f020092
+    .line 84
+    const v8, 0x7f0200cb
 
     invoke-direct {p0, v6, v8}, Lcom/google/android/finsky/activities/FreeSongOfTheDayFragment;->setTiledBackground(Landroid/view/View;I)V
 
-    .line 85
-    const v8, 0x7f0800f7
+    .line 86
+    const v8, 0x7f08010e
 
     invoke-virtual {v4, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -259,12 +262,12 @@
 
     check-cast v5, Lcom/google/android/finsky/layout/FreeSongOfTheDayHeader;
 
-    .line 87
+    .line 88
     .local v5, header:Lcom/google/android/finsky/layout/FreeSongOfTheDayHeader;
     invoke-virtual {v5, v1}, Lcom/google/android/finsky/layout/FreeSongOfTheDayHeader;->showDealOfTheDayInfo(Lcom/google/android/finsky/remoting/protos/DocAnnotations$DealOfTheDay;)V
 
-    .line 89
-    const v8, 0x7f080109
+    .line 90
+    const v8, 0x7f080143
 
     invoke-virtual {v4, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -272,7 +275,7 @@
 
     check-cast v7, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;
 
-    .line 91
+    .line 92
     .local v7, summary:Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;
     iget-object v8, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayFragment;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
@@ -284,8 +287,8 @@
 
     invoke-virtual {v7, v3, v8, v9, v10}, Lcom/google/android/finsky/layout/FreeSongOfTheDaySummary;->showSummary(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/navigationmanager/NavigationManager;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 93
-    const v8, 0x7f08010a
+    .line 94
+    const v8, 0x7f08012c
 
     invoke-virtual {v4, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -293,7 +296,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 94
+    .line 95
     .local v2, description:Landroid/widget/TextView;
     invoke-virtual {v3}, Lcom/google/android/finsky/api/model/Document;->getDescription()Ljava/lang/CharSequence;
 
@@ -301,23 +304,23 @@
 
     invoke-virtual {v2, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 95
-    const v8, 0x7f020091
+    .line 96
+    const v8, 0x7f0200ca
 
     invoke-direct {p0, v2, v8}, Lcom/google/android/finsky/activities/FreeSongOfTheDayFragment;->setTiledBackground(Landroid/view/View;I)V
 
-    .line 97
-    const v8, 0x7f08010b
+    .line 98
+    const v8, 0x7f080144
 
     invoke-virtual {v4, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 98
-    .local v0, albumPanel:Landroid/view/View;
-    if-eqz v0, :cond_75
-
     .line 99
+    .local v0, albumPanel:Landroid/view/View;
+    if-eqz v0, :cond_78
+
+    .line 100
     iget-object v8, p0, Lcom/google/android/finsky/activities/FreeSongOfTheDayFragment;->mAlbumViewBinder:Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;
 
     invoke-virtual {v3}, Lcom/google/android/finsky/api/model/Document;->getDetailsUrl()Ljava/lang/String;
@@ -330,8 +333,8 @@
 
     invoke-virtual {v8, v0, v3, v9, v10}, Lcom/google/android/finsky/activities/FreeSongOfTheDayAlbumViewBinder;->bind(Landroid/view/View;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 101
-    :cond_75
+    .line 102
+    :cond_78
     return-void
 .end method
 
@@ -340,6 +343,6 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 112
+    .line 113
     return-void
 .end method

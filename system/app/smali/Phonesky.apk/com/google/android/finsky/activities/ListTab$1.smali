@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 195
+    .line 229
     iput-object p1, p0, Lcom/google/android/finsky/activities/ListTab$1;->this$0:Lcom/google/android/finsky/activities/ListTab;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "view"
 
     .prologue
-    .line 198
+    .line 232
     iget-object v0, p0, Lcom/google/android/finsky/activities/ListTab$1;->this$0:Lcom/google/android/finsky/activities/ListTab;
 
     #getter for: Lcom/google/android/finsky/activities/ListTab;->mList:Lcom/google/android/finsky/api/model/DfeList;
@@ -52,7 +52,7 @@
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeList;->resetItems()V
 
-    .line 199
+    .line 233
     iget-object v0, p0, Lcom/google/android/finsky/activities/ListTab$1;->this$0:Lcom/google/android/finsky/activities/ListTab;
 
     #getter for: Lcom/google/android/finsky/activities/ListTab;->mList:Lcom/google/android/finsky/api/model/DfeList;
@@ -62,7 +62,7 @@
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeList;->clearTransientState()V
 
-    .line 200
+    .line 234
     iget-object v0, p0, Lcom/google/android/finsky/activities/ListTab$1;->this$0:Lcom/google/android/finsky/activities/ListTab;
 
     #getter for: Lcom/google/android/finsky/activities/ListTab;->mList:Lcom/google/android/finsky/api/model/DfeList;
@@ -72,12 +72,12 @@
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/DfeList;->startLoadItems()V
 
-    .line 201
+    .line 235
     iget-object v0, p0, Lcom/google/android/finsky/activities/ListTab$1;->this$0:Lcom/google/android/finsky/activities/ListTab;
 
     #calls: Lcom/google/android/finsky/activities/ListTab;->syncViewToState()V
     invoke-static {v0}, Lcom/google/android/finsky/activities/ListTab;->access$100(Lcom/google/android/finsky/activities/ListTab;)V
 
-    .line 202
+    .line 236
     return-void
 .end method

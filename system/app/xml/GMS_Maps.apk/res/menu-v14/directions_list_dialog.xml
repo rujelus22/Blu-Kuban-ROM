@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/seeMap" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_navigate" android:id="@id/navigate" android:showAsAction="always" />
+    <item android:id="@id/reverse" android:showAsAction="never" />
+    <item android:id="@id/update_route" android:showAsAction="never" />
+    <item android:id="@id/route_options" android:showAsAction="never" />
+    <item android:id="@id/agencyInfo" android:showAsAction="never" />
+    <item android:id="@id/report_a_problem" android:showAsAction="never" />
+</menu>

@@ -50,7 +50,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 46
-    const v0, 0x7f04001f
+    const v0, 0x7f040037
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/core/LicensesActivity;->setContentView(I)V
 
@@ -89,7 +89,7 @@
 
     .line 56
     :cond_26
-    const v0, 0x7f090050
+    const v0, 0x7f08007d
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/core/LicensesActivity;->findViewById(I)Landroid/view/View;
 

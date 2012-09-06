@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <fraction name="minKeyboardHeight">45.000004%p</fraction>
+    <fraction name="keyboard_top_padding">1.8180013%p</fraction>
+    <fraction name="keyboard_bottom_padding">0.0%p</fraction>
+    <fraction name="key_bottom_gap">4.3300033%p</fraction>
+    <fraction name="key_horizontal_gap">0.40500164%p</fraction>
+    <fraction name="key_bottom_gap_stone">5.009997%p</fraction>
+    <fraction name="key_horizontal_gap_stone">1.1590004%p</fraction>
+    <fraction name="key_bottom_gap_gb">5.9409976%p</fraction>
+    <fraction name="key_horizontal_gap_gb">0.996995%p</fraction>
+    <fraction name="keyboard_top_padding_ics">2.726996%p</fraction>
+    <fraction name="keyboard_bottom_padding_ics">0.0%p</fraction>
+    <fraction name="key_bottom_gap_ics">5.3679943%p</fraction>
+    <fraction name="key_horizontal_gap_ics">1.0200024%p</fraction>
+    <fraction name="key_letter_ratio">65.0%</fraction>
+    <fraction name="key_large_letter_ratio">74.0%</fraction>
+    <fraction name="key_label_ratio">39.999996%</fraction>
+    <fraction name="key_hint_letter_ratio">29.999996%</fraction>
+    <fraction name="key_hint_label_ratio">52.0%</fraction>
+    <fraction name="key_uppercase_letter_ratio">39.999996%</fraction>
+    <fraction name="key_preview_text_ratio">90.0%</fraction>
+    <fraction name="min_more_suggestions_width">60.000004%</fraction>
+</resources>

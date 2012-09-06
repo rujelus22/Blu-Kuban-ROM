@@ -24,19 +24,19 @@
     .registers 3
 
     .prologue
-    .line 42
+    .line 40
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/exchange/EmailSyncAdapterService;->sSyncAdapter:Lcom/android/exchange/EmailSyncAdapterService$SyncAdapterImpl;
 
-    .line 44
+    .line 41
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/android/exchange/EmailSyncAdapterService;->sSyncAdapterLock:Ljava/lang/Object;
 
-    .line 46
+    .line 43
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/String;
@@ -56,10 +56,10 @@
     .registers 1
 
     .prologue
-    .line 54
+    .line 48
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 55
+    .line 49
     return-void
 .end method
 
@@ -78,14 +78,14 @@
     .end annotation
 
     .prologue
-    .line 39
+    .line 38
     invoke-static/range {p0 .. p5}, Lcom/android/exchange/EmailSyncAdapterService;->performSync(Landroid/content/Context;Landroid/accounts/Account;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/ContentProviderClient;Landroid/content/SyncResult;)V
 
     return-void
 .end method
 
 .method private static performSync(Landroid/content/Context;Landroid/accounts/Account;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/ContentProviderClient;Landroid/content/SyncResult;)V
-    .registers 18
+    .registers 17
     .parameter "context"
     .parameter "account"
     .parameter "extras"
@@ -99,12 +99,12 @@
     .end annotation
 
     .prologue
-    .line 99
+    .line 92
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 100
+    .line 93
     .local v0, cr:Landroid/content/ContentResolver;
     const-string v1, "EAS EmailSyncAdapterService"
 
@@ -112,8 +112,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 103
-    sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Account;->CONTENT_URI:Landroid/net/Uri;
+    .line 96
+    sget-object v1, Lcom/android/emailcommon/provider/Account;->CONTENT_URI:Landroid/net/Uri;
 
     sget-object v2, Lcom/android/exchange/EmailSyncAdapterService;->ID_PROJECTION:[Ljava/lang/String;
 
@@ -125,9 +125,9 @@
 
     const/4 v5, 0x0
 
-    iget-object v11, p1, Landroid/accounts/Account;->name:Ljava/lang/String;
+    iget-object v10, p1, Landroid/accounts/Account;->name:Ljava/lang/String;
 
-    aput-object v11, v4, v5
+    aput-object v10, v4, v5
 
     const/4 v5, 0x0
 
@@ -135,28 +135,25 @@
 
     move-result-object v6
 
-    .line 109
+    .line 101
     .local v6, accountCursor:Landroid/database/Cursor;
     :try_start_1e
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v1
 
-    if-eqz v1, :cond_5a
+    if-eqz v1, :cond_6a
 
-    .line 110
+    .line 102
     const/4 v1, 0x0
 
     invoke-interface {v6, v1}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v7
 
-    .line 111
+    .line 104
     .local v7, accountId:J
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    .line 113
-    sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Mailbox;->CONTENT_URI:Landroid/net/Uri;
+    sget-object v1, Lcom/android/emailcommon/provider/Mailbox;->CONTENT_URI:Landroid/net/Uri;
 
     sget-object v2, Lcom/android/exchange/EmailSyncAdapterService;->ID_PROJECTION:[Ljava/lang/String;
 
@@ -170,98 +167,98 @@
 
     invoke-static {v7, v8}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v10
 
-    aput-object v11, v4, v5
+    aput-object v10, v4, v5
 
     const/4 v5, 0x0
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_40
-    .catchall {:try_start_1e .. :try_end_40} :catchall_68
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1e .. :try_end_40} :catch_63
+    :try_end_3d
+    .catchall {:try_start_1e .. :try_end_3d} :catchall_73
 
-    move-result-object v10
+    move-result-object v9
 
-    .line 118
-    .local v10, mailboxCursor:Landroid/database/Cursor;
-    :try_start_41
-    invoke-interface {v10}, Landroid/database/Cursor;->moveToFirst()Z
+    .line 107
+    .local v9, mailboxCursor:Landroid/database/Cursor;
+    :try_start_3e
+    invoke-interface {v9}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v1
 
-    if-eqz v1, :cond_57
+    if-eqz v1, :cond_67
 
-    .line 119
+    .line 108
     const-string v1, "EAS EmailSyncAdapterService"
 
-    const-string v2, "Mail sync requested"
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Mail sync requested for "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p1, Landroid/accounts/Account;->name:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 121
+    .line 110
     const/4 v1, 0x0
 
-    invoke-interface {v10, v1}, Landroid/database/Cursor;->getLong(I)J
+    invoke-interface {v9, v1}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v1
 
     const/4 v3, 0x4
 
     invoke-static {v1, v2, v3}, Lcom/android/exchange/ExchangeService;->serviceRequest(JI)V
-    :try_end_57
-    .catchall {:try_start_41 .. :try_end_57} :catchall_5e
+    :try_end_67
+    .catchall {:try_start_3e .. :try_end_67} :catchall_6e
 
-    .line 125
-    :cond_57
-    :try_start_57
-    invoke-interface {v10}, Landroid/database/Cursor;->close()V
-    :try_end_5a
-    .catchall {:try_start_57 .. :try_end_5a} :catchall_68
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_57 .. :try_end_5a} :catch_63
+    .line 114
+    :cond_67
+    :try_start_67
+    invoke-interface {v9}, Landroid/database/Cursor;->close()V
+    :try_end_6a
+    .catchall {:try_start_67 .. :try_end_6a} :catchall_73
 
-    .line 131
+    .line 118
     .end local v7           #accountId:J
-    .end local v10           #mailboxCursor:Landroid/database/Cursor;
-    :cond_5a
-    :goto_5a
+    .end local v9           #mailboxCursor:Landroid/database/Cursor;
+    :cond_6a
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 133
+    .line 120
     return-void
 
-    .line 125
+    .line 114
     .restart local v7       #accountId:J
-    .restart local v10       #mailboxCursor:Landroid/database/Cursor;
-    :catchall_5e
+    .restart local v9       #mailboxCursor:Landroid/database/Cursor;
+    :catchall_6e
     move-exception v1
 
-    :try_start_5f
-    invoke-interface {v10}, Landroid/database/Cursor;->close()V
+    :try_start_6f
+    invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
     throw v1
-    :try_end_63
-    .catchall {:try_start_5f .. :try_end_63} :catchall_68
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_5f .. :try_end_63} :catch_63
+    :try_end_73
+    .catchall {:try_start_6f .. :try_end_73} :catchall_73
 
-    .line 128
+    .line 118
     .end local v7           #accountId:J
-    .end local v10           #mailboxCursor:Landroid/database/Cursor;
-    :catch_63
-    move-exception v9
-
-    .line 129
-    .local v9, e:Landroid/database/sqlite/SQLiteException;
-    :try_start_64
-    invoke-virtual {v9}, Landroid/database/sqlite/SQLiteException;->printStackTrace()V
-    :try_end_67
-    .catchall {:try_start_64 .. :try_end_67} :catchall_68
-
-    goto :goto_5a
-
-    .line 131
-    .end local v9           #e:Landroid/database/sqlite/SQLiteException;
-    :catchall_68
+    .end local v9           #mailboxCursor:Landroid/database/Cursor;
+    :catchall_73
     move-exception v1
 
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
@@ -276,7 +273,7 @@
     .parameter "intent"
 
     .prologue
-    .line 88
+    .line 82
     sget-object v0, Lcom/android/exchange/EmailSyncAdapterService;->sSyncAdapter:Lcom/android/exchange/EmailSyncAdapterService$SyncAdapterImpl;
 
     invoke-virtual {v0}, Lcom/android/exchange/EmailSyncAdapterService$SyncAdapterImpl;->getSyncAdapterBinder()Landroid/os/IBinder;
@@ -290,21 +287,21 @@
     .registers 4
 
     .prologue
-    .line 78
+    .line 72
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
-    .line 79
+    .line 73
     sget-object v1, Lcom/android/exchange/EmailSyncAdapterService;->sSyncAdapterLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 80
+    .line 74
     :try_start_6
     sget-object v0, Lcom/android/exchange/EmailSyncAdapterService;->sSyncAdapter:Lcom/android/exchange/EmailSyncAdapterService$SyncAdapterImpl;
 
     if-nez v0, :cond_15
 
-    .line 81
+    .line 75
     new-instance v0, Lcom/android/exchange/EmailSyncAdapterService$SyncAdapterImpl;
 
     invoke-virtual {p0}, Lcom/android/exchange/EmailSyncAdapterService;->getApplicationContext()Landroid/content/Context;
@@ -315,14 +312,14 @@
 
     sput-object v0, Lcom/android/exchange/EmailSyncAdapterService;->sSyncAdapter:Lcom/android/exchange/EmailSyncAdapterService$SyncAdapterImpl;
 
-    .line 83
+    .line 77
     :cond_15
     monitor-exit v1
 
-    .line 84
+    .line 78
     return-void
 
-    .line 83
+    .line 77
     :catchall_17
     move-exception v0
 

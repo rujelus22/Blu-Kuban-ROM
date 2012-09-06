@@ -1,131 +1,82 @@
-.class Lcom/google/android/maps/driveabout/app/cv;
-.super Ljava/lang/Object;
+.class final Lcom/google/android/maps/driveabout/app/cV;
+.super Lt/c;
+.source "SourceFile"
 
 
 # instance fields
-.field a:I
+.field final synthetic a:Landroid/content/Context;
 
-.field b:Z
+.field final synthetic b:Lcom/google/android/maps/driveabout/app/dq;
 
-.field c:I
+.field final synthetic c:Lcom/google/android/maps/driveabout/app/ds;
 
 
 # direct methods
-.method public constructor <init>(IZI)V
-    .registers 4
+.method constructor <init>(Ljava/lang/String;Landroid/content/Context;Lcom/google/android/maps/driveabout/app/dq;Lcom/google/android/maps/driveabout/app/ds;)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 98
+    iput-object p2, p0, Lcom/google/android/maps/driveabout/app/cV;->a:Landroid/content/Context;
 
-    iput p1, p0, Lcom/google/android/maps/driveabout/app/cv;->a:I
+    iput-object p3, p0, Lcom/google/android/maps/driveabout/app/cV;->b:Lcom/google/android/maps/driveabout/app/dq;
 
-    iput-boolean p2, p0, Lcom/google/android/maps/driveabout/app/cv;->b:Z
+    iput-object p4, p0, Lcom/google/android/maps/driveabout/app/cV;->c:Lcom/google/android/maps/driveabout/app/ds;
 
-    iput p3, p0, Lcom/google/android/maps/driveabout/app/cv;->c:I
+    invoke-direct {p0, p1}, Lt/c;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public equals(Ljava/lang/Object;)Z
-    .registers 6
+.method public n_()V
+    .registers 4
 
-    const/4 v0, 0x1
+    .prologue
+    .line 101
+    invoke-static {}, Lt/m;->b()Lt/k;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    if-ne p0, p1, :cond_5
+    .line 102
+    if-eqz v0, :cond_24
 
-    :cond_4
-    :goto_4
-    return v0
+    invoke-static {}, Lcom/google/android/maps/driveabout/app/ca;->a()Lcom/google/android/maps/driveabout/app/ca;
 
-    :cond_5
-    if-nez p1, :cond_9
+    move-result-object v1
 
-    move v0, v1
+    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/cV;->a:Landroid/content/Context;
 
-    goto :goto_4
+    invoke-virtual {v1, v2, v0}, Lcom/google/android/maps/driveabout/app/ca;->a(Landroid/content/Context;Lt/k;)Z
 
-    :cond_9
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result v1
 
-    move-result-object v2
+    if-eqz v1, :cond_24
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 106
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/cV;->b:Lcom/google/android/maps/driveabout/app/dq;
 
-    move-result-object v3
+    invoke-virtual {v0}, Lt/k;->C()Lt/l;
 
-    if-eq v2, v3, :cond_15
+    move-result-object v0
 
-    move v0, v1
+    invoke-virtual {v0}, Lt/l;->m()I
 
-    goto :goto_4
+    move-result v0
 
-    :cond_15
-    check-cast p1, Lcom/google/android/maps/driveabout/app/cv;
+    invoke-virtual {v1, v0}, Lcom/google/android/maps/driveabout/app/dq;->b(I)V
 
-    iget v2, p0, Lcom/google/android/maps/driveabout/app/cv;->a:I
+    .line 108
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/cV;->c:Lcom/google/android/maps/driveabout/app/ds;
 
-    iget v3, p1, Lcom/google/android/maps/driveabout/app/cv;->a:I
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/ds;->b()V
 
-    if-eq v2, v3, :cond_1f
-
-    move v0, v1
-
-    goto :goto_4
-
-    :cond_1f
-    iget-boolean v2, p0, Lcom/google/android/maps/driveabout/app/cv;->b:Z
-
-    iget-boolean v3, p1, Lcom/google/android/maps/driveabout/app/cv;->b:Z
-
-    if-eq v2, v3, :cond_27
-
-    move v0, v1
-
-    goto :goto_4
-
-    :cond_27
-    iget v2, p0, Lcom/google/android/maps/driveabout/app/cv;->c:I
-
-    iget v3, p1, Lcom/google/android/maps/driveabout/app/cv;->c:I
-
-    if-eq v2, v3, :cond_4
-
-    move v0, v1
-
-    goto :goto_4
-.end method
-
-.method public hashCode()I
-    .registers 3
-
-    iget v0, p0, Lcom/google/android/maps/driveabout/app/cv;->a:I
-
-    add-int/lit8 v0, v0, 0x1f
-
-    mul-int/lit8 v1, v0, 0x1f
-
-    iget-boolean v0, p0, Lcom/google/android/maps/driveabout/app/cv;->b:Z
-
-    if-eqz v0, :cond_13
-
-    const/16 v0, 0x4cf
-
-    :goto_c
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget v1, p0, Lcom/google/android/maps/driveabout/app/cv;->c:I
-
-    add-int/2addr v0, v1
-
-    return v0
-
-    :cond_13
-    const/16 v0, 0x4d5
-
-    goto :goto_c
+    .line 112
+    :cond_24
+    return-void
 .end method

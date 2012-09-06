@@ -1,251 +1,619 @@
-.class public Lcom/google/googlenav/ui/android/e;
-.super Lcom/google/googlenav/ui/ah;
+.class Lcom/google/googlenav/ui/android/e;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
-
-# static fields
-.field private static final d:Landroid/graphics/PathEffect;
-
-.field private static final e:Landroid/graphics/Paint;
+# interfaces
+.implements Lcom/google/googlenav/ui/aS;
 
 
 # instance fields
-.field private final f:Lcom/google/googlenav/ui/android/f;
+.field private a:Landroid/graphics/Canvas;
 
-.field private final g:LaJ/a;
+.field private b:Landroid/graphics/Bitmap;
+
+.field private c:LT/f;
+
+.field private final d:Landroid/graphics/Path;
+
+.field private final e:Landroid/graphics/Paint;
+
+.field private final f:Landroid/graphics/Paint;
+
+.field private final g:Landroid/graphics/Paint;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method public constructor <init>()V
+    .registers 4
 
-    new-instance v0, Landroid/graphics/DashPathEffect;
+    .prologue
+    const/4 v0, 0x0
 
-    const/4 v1, 0x2
+    const/4 v2, 0x1
 
-    new-array v1, v1, [F
+    .line 120
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    fill-array-data v1, :array_16
+    .line 111
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/e;->a:Landroid/graphics/Canvas;
 
-    const/4 v2, 0x0
+    .line 112
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/e;->b:Landroid/graphics/Bitmap;
 
-    invoke-direct {v0, v1, v2}, Landroid/graphics/DashPathEffect;-><init>([FF)V
+    .line 113
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/e;->c:LT/f;
 
-    sput-object v0, Lcom/google/googlenav/ui/android/e;->d:Landroid/graphics/PathEffect;
+    .line 115
+    new-instance v0, Landroid/graphics/Path;
 
+    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
+
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/e;->d:Landroid/graphics/Path;
+
+    .line 116
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
-    sput-object v0, Lcom/google/googlenav/ui/android/e;->e:Landroid/graphics/Paint;
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/e;->e:Landroid/graphics/Paint;
 
+    .line 117
+    new-instance v0, Landroid/graphics/Paint;
+
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/e;->f:Landroid/graphics/Paint;
+
+    .line 118
+    new-instance v0, Landroid/graphics/Paint;
+
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    .line 121
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->e:Landroid/graphics/Paint;
+
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    .line 122
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->e:Landroid/graphics/Paint;
+
+    sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 123
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->f:Landroid/graphics/Paint;
+
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    .line 124
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->f:Landroid/graphics/Paint;
+
+    const/high16 v1, 0x4000
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    .line 125
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    .line 126
     return-void
-
-    :array_16
-    .array-data 0x4
-        0x0t 0x0t 0xa0t 0x40t
-        0x0t 0x0t 0x0t 0x40t
-    .end array-data
 .end method
 
-.method public constructor <init>()V
-    .registers 2
+.method private a(ILandroid/graphics/Paint;)V
+    .registers 5
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Lcom/google/googlenav/ui/ah;-><init>()V
+    .prologue
+    .line 158
+    shr-int/lit8 v0, p1, 0x18
 
-    new-instance v0, Lcom/google/googlenav/ui/android/f;
+    and-int/lit16 v0, v0, 0xff
 
-    invoke-direct {v0, p0}, Lcom/google/googlenav/ui/android/f;-><init>(Lcom/google/googlenav/ui/android/e;)V
+    .line 159
+    const v1, 0xffffff
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/e;->f:Lcom/google/googlenav/ui/android/f;
+    and-int/2addr v1, p1
 
-    new-instance v0, LaJ/a;
+    invoke-virtual {p2, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    invoke-direct {v0}, LaJ/a;-><init>()V
+    .line 160
+    invoke-virtual {p2, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    iput-object v0, p0, Lcom/google/googlenav/ui/android/e;->g:LaJ/a;
-
+    .line 161
     return-void
 .end method
 
-.method static synthetic a(Landroid/graphics/Bitmap;Lai/f;)Landroid/graphics/Canvas;
-    .registers 3
+.method private c()V
+    .registers 4
 
-    invoke-static {p0, p1}, Lcom/google/googlenav/ui/android/e;->b(Landroid/graphics/Bitmap;Lai/f;)Landroid/graphics/Canvas;
+    .prologue
+    .line 141
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->a:Landroid/graphics/Canvas;
+
+    if-nez v0, :cond_22
+
+    .line 145
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->c:LT/f;
+
+    invoke-virtual {v0}, LT/f;->a()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/e;->c:LT/f;
+
+    invoke-virtual {v1}, LT/f;->b()I
+
+    move-result v1
+
+    sget-object v2, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
+
+    invoke-static {v0, v1, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    return-object v0
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/e;->b:Landroid/graphics/Bitmap;
+
+    .line 147
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->b:Landroid/graphics/Bitmap;
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/e;->c:LT/f;
+
+    invoke-static {v0, v1}, Lcom/google/googlenav/ui/android/d;->a(Landroid/graphics/Bitmap;LT/f;)Landroid/graphics/Canvas;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/googlenav/ui/android/e;->a:Landroid/graphics/Canvas;
+
+    .line 149
+    :cond_22
+    return-void
 .end method
 
-.method private static b(Landroid/graphics/Bitmap;Lai/f;)Landroid/graphics/Canvas;
-    .registers 6
+.method private d()V
+    .registers 4
 
-    const/4 v3, 0x0
+    .prologue
+    .line 195
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/e;->c()V
 
-    new-instance v0, Landroid/graphics/Canvas;
+    .line 196
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->a:Landroid/graphics/Canvas;
 
-    invoke-direct {v0, p0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/e;->d:Landroid/graphics/Path;
 
-    invoke-virtual {p1}, Lai/f;->h()Landroid/graphics/Bitmap;
+    iget-object v2, p0, Lcom/google/googlenav/ui/android/e;->e:Landroid/graphics/Paint;
 
-    move-result-object v1
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    sget-object v2, Lcom/google/googlenav/ui/android/e;->e:Landroid/graphics/Paint;
+    .line 197
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->d:Landroid/graphics/Path;
 
-    invoke-virtual {v0, v1, v3, v3, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v0}, Landroid/graphics/Path;->reset()V
 
-    return-object v0
-.end method
-
-.method static synthetic g()Landroid/graphics/PathEffect;
-    .registers 1
-
-    sget-object v0, Lcom/google/googlenav/ui/android/e;->d:Landroid/graphics/PathEffect;
-
-    return-object v0
+    .line 198
+    return-void
 .end method
 
 
 # virtual methods
-.method protected a(LaJ/I;LaJ/X;)Lah/f;
-    .registers 13
+.method public a()V
+    .registers 1
 
-    const/4 v9, 0x0
+    .prologue
+    .line 180
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/e;->d()V
 
-    invoke-virtual {p1}, LaJ/I;->n()Lah/f;
+    .line 181
+    return-void
+.end method
 
-    move-result-object v8
+.method public a(III)V
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
 
-    :try_start_5
-    move-object v0, v8
+    .prologue
+    .line 166
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/e;->c()V
 
-    check-cast v0, Lai/f;
+    .line 167
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->d:Landroid/graphics/Path;
 
-    move-object v1, v0
+    invoke-virtual {v0}, Landroid/graphics/Path;->reset()V
 
-    if-eqz p2, :cond_74
+    .line 169
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->e:Landroid/graphics/Paint;
 
-    invoke-virtual {p2}, LaJ/X;->f()Z
+    int-to-float v1, p2
 
-    move-result v2
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    if-nez v2, :cond_74
+    .line 170
+    const/4 v0, 0x1
 
-    invoke-virtual {v1}, Lai/f;->a()I
+    if-ne p3, v0, :cond_20
 
-    move-result v2
+    .line 171
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->e:Landroid/graphics/Paint;
 
-    invoke-virtual {v1}, Lai/f;->b()I
-
-    move-result v3
-
-    sget-object v4, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
-
-    invoke-static {v2, v3, v4}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object v3
-
-    invoke-static {v3, v1}, Lcom/google/googlenav/ui/android/e;->b(Landroid/graphics/Bitmap;Lai/f;)Landroid/graphics/Canvas;
-
-    move-result-object v2
-
-    iget-object v4, p0, Lcom/google/googlenav/ui/android/e;->g:LaJ/a;
-
-    invoke-virtual {v4, v2}, LaJ/a;->a(Landroid/graphics/Canvas;)V
-
-    iget-object v4, p0, Lcom/google/googlenav/ui/android/e;->c:LaJ/R;
-
-    iget-object v5, p0, Lcom/google/googlenav/ui/android/e;->g:LaJ/a;
-
-    invoke-virtual {v4, p2, v5}, LaJ/R;->a(LaJ/X;LaJ/T;)V
-
-    :goto_2f
-    iget-object v4, p0, Lcom/google/googlenav/ui/android/e;->f:Lcom/google/googlenav/ui/android/f;
-
-    invoke-virtual {v4, v2, v3, v1}, Lcom/google/googlenav/ui/android/f;->a(Landroid/graphics/Canvas;Landroid/graphics/Bitmap;Lai/f;)V
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/e;->b:Lcom/google/googlenav/ui/bc;
-
-    if-eqz v1, :cond_53
-
-    invoke-virtual {p1}, LaJ/I;->c()LaJ/P;
-
-    move-result-object v7
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/e;->b:Lcom/google/googlenav/ui/bc;
-
-    iget-object v2, p0, Lcom/google/googlenav/ui/android/e;->f:Lcom/google/googlenav/ui/android/f;
-
-    invoke-virtual {v7}, LaJ/P;->f()I
-
-    move-result v3
-
-    invoke-virtual {v7}, LaJ/P;->g()I
-
-    move-result v4
-
-    const/16 v5, 0x100
-
-    const/16 v6, 0x100
-
-    invoke-virtual {v7}, LaJ/P;->e()LaJ/Y;
-
-    move-result-object v7
-
-    invoke-virtual/range {v1 .. v7}, Lcom/google/googlenav/ui/bc;->a(Lcom/google/googlenav/ui/bd;IIIILaJ/Y;)V
-
-    :cond_53
-    iget-object v1, p0, Lcom/google/googlenav/ui/android/e;->f:Lcom/google/googlenav/ui/android/f;
-
-    invoke-virtual {v1}, Lcom/google/googlenav/ui/android/f;->b()Landroid/graphics/Bitmap;
+    invoke-static {}, Lcom/google/googlenav/ui/android/d;->g()Landroid/graphics/PathEffect;
 
     move-result-object v1
 
-    if-eqz v1, :cond_6a
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
 
-    new-instance v1, Lai/f;
+    .line 175
+    :goto_1a
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->e:Landroid/graphics/Paint;
 
-    iget-object v2, p0, Lcom/google/googlenav/ui/android/e;->f:Lcom/google/googlenav/ui/android/f;
+    invoke-direct {p0, p1, v0}, Lcom/google/googlenav/ui/android/e;->a(ILandroid/graphics/Paint;)V
 
-    invoke-virtual {v2}, Lcom/google/googlenav/ui/android/f;->b()Landroid/graphics/Bitmap;
+    .line 176
+    return-void
 
-    move-result-object v2
+    .line 173
+    :cond_20
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->e:Landroid/graphics/Paint;
 
-    invoke-direct {v1, v2}, Lai/f;-><init>(Landroid/graphics/Bitmap;)V
-    :try_end_66
-    .catchall {:try_start_5 .. :try_end_66} :catchall_6f
+    const/4 v1, 0x0
 
-    invoke-interface {v8}, Lah/f;->f()V
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
 
-    :goto_69
-    return-object v1
-
-    :cond_6a
-    invoke-interface {v8}, Lah/f;->f()V
-
-    move-object v1, v9
-
-    goto :goto_69
-
-    :catchall_6f
-    move-exception v1
-
-    invoke-interface {v8}, Lah/f;->f()V
-
-    throw v1
-
-    :cond_74
-    move-object v2, v9
-
-    move-object v3, v9
-
-    goto :goto_2f
+    goto :goto_1a
 .end method
 
-.method public f()Z
-    .registers 2
+.method public a(IIIIIII)V
+    .registers 13
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
+    .prologue
+    .line 269
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/e;->c()V
+
+    .line 271
+    new-instance v0, Landroid/graphics/RectF;
+
+    div-int/lit8 v1, p3, 0x2
+
+    sub-int v1, p1, v1
+
+    int-to-float v1, v1
+
+    div-int/lit8 v2, p4, 0x2
+
+    sub-int v2, p2, v2
+
+    int-to-float v2, v2
+
+    int-to-float v3, p3
+
+    int-to-float v4, p4
+
+    invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;-><init>(FFFF)V
+
+    .line 274
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    sget-object v2, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 275
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    .line 276
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    invoke-direct {p0, p7, v1}, Lcom/google/googlenav/ui/android/e;->a(ILandroid/graphics/Paint;)V
+
+    .line 277
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/e;->a:Landroid/graphics/Canvas;
+
+    iget-object v2, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v0, v2}, Landroid/graphics/Canvas;->drawOval(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+
+    .line 280
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    int-to-float v2, p5
+
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    .line 281
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 282
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    invoke-direct {p0, p6, v1}, Lcom/google/googlenav/ui/android/e;->a(ILandroid/graphics/Paint;)V
+
+    .line 283
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/e;->a:Landroid/graphics/Canvas;
+
+    iget-object v2, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v0, v2}, Landroid/graphics/Canvas;->drawOval(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+
+    .line 284
+    return-void
+.end method
+
+.method public a(Landroid/graphics/Canvas;Landroid/graphics/Bitmap;LT/f;)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 134
+    iput-object p1, p0, Lcom/google/googlenav/ui/android/e;->a:Landroid/graphics/Canvas;
+
+    .line 135
+    iput-object p2, p0, Lcom/google/googlenav/ui/android/e;->b:Landroid/graphics/Bitmap;
+
+    .line 136
+    iput-object p3, p0, Lcom/google/googlenav/ui/android/e;->c:LT/f;
+
+    .line 137
+    return-void
+.end method
+
+.method public a([I[IZ)V
+    .registers 9
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    .line 186
+    if-eqz p3, :cond_12
+
+    .line 187
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/e;->d()V
+
+    .line 188
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->d:Landroid/graphics/Path;
+
+    aget v1, p2, v3
+
+    int-to-float v1, v1
+
+    aget v2, p2, v4
+
+    int-to-float v2, v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->moveTo(FF)V
+
+    .line 191
+    :cond_12
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->d:Landroid/graphics/Path;
+
+    aget v1, p1, v3
+
+    int-to-float v1, v1
+
+    aget v2, p1, v4
+
+    int-to-float v2, v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->lineTo(FF)V
+
+    .line 192
+    return-void
+.end method
+
+.method public a([[JIII)V
+    .registers 15
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    const/4 v9, -0x1
+
+    const/4 v2, 0x0
+
+    .line 226
+    invoke-direct {p0}, Lcom/google/googlenav/ui/android/e;->c()V
+
+    .line 228
+    new-instance v3, Landroid/graphics/Path;
+
+    invoke-direct {v3}, Landroid/graphics/Path;-><init>()V
+
+    .line 229
+    array-length v4, p1
+
+    move v1, v2
+
+    .line 230
+    :goto_c
+    if-ge v1, v4, :cond_48
+
+    .line 232
+    aget-object v0, p1, v1
+
+    aget-wide v5, v0, v2
+
+    invoke-static {v5, v6}, Lcom/google/googlenav/ui/aR;->a(J)I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    aget-object v5, p1, v1
+
+    aget-wide v5, v5, v2
+
+    invoke-static {v5, v6}, Lcom/google/googlenav/ui/aR;->b(J)I
+
+    move-result v5
+
+    int-to-float v5, v5
+
+    invoke-virtual {v3, v0, v5}, Landroid/graphics/Path;->moveTo(FF)V
+
+    .line 236
+    aget-object v0, p1, v1
+
+    array-length v5, v0
+
+    .line 237
     const/4 v0, 0x1
 
-    return v0
+    :goto_27
+    if-ge v0, v5, :cond_41
+
+    .line 238
+    aget-object v6, p1, v1
+
+    aget-wide v6, v6, v0
+
+    invoke-static {v6, v7}, Lcom/google/googlenav/ui/aR;->a(J)I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    aget-object v7, p1, v1
+
+    aget-wide v7, v7, v0
+
+    invoke-static {v7, v8}, Lcom/google/googlenav/ui/aR;->b(J)I
+
+    move-result v7
+
+    int-to-float v7, v7
+
+    invoke-virtual {v3, v6, v7}, Landroid/graphics/Path;->lineTo(FF)V
+
+    .line 237
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_27
+
+    .line 243
+    :cond_41
+    invoke-virtual {v3}, Landroid/graphics/Path;->close()V
+
+    .line 230
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_c
+
+    .line 247
+    :cond_48
+    sget-object v0, Landroid/graphics/Path$FillType;->EVEN_ODD:Landroid/graphics/Path$FillType;
+
+    invoke-virtual {v3, v0}, Landroid/graphics/Path;->setFillType(Landroid/graphics/Path$FillType;)V
+
+    .line 248
+    if-ne p4, v9, :cond_83
+
+    .line 249
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 253
+    :goto_56
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    invoke-direct {p0, p4, v0}, Lcom/google/googlenav/ui/android/e;->a(ILandroid/graphics/Paint;)V
+
+    .line 254
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->a:Landroid/graphics/Canvas;
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    invoke-virtual {v0, v3, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+
+    .line 257
+    if-eq p2, v9, :cond_82
+
+    .line 258
+    sget-object v0, Landroid/graphics/Path$FillType;->WINDING:Landroid/graphics/Path$FillType;
+
+    invoke-virtual {v3, v0}, Landroid/graphics/Path;->setFillType(Landroid/graphics/Path$FillType;)V
+
+    .line 259
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    int-to-float v1, p3
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    .line 260
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 261
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    invoke-direct {p0, p2, v0}, Lcom/google/googlenav/ui/android/e;->a(ILandroid/graphics/Paint;)V
+
+    .line 262
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->a:Landroid/graphics/Canvas;
+
+    iget-object v1, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    invoke-virtual {v0, v3, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+
+    .line 264
+    :cond_82
+    return-void
+
+    .line 251
+    :cond_83
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->g:Landroid/graphics/Paint;
+
+    sget-object v1, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    goto :goto_56
+.end method
+
+.method public b()Landroid/graphics/Bitmap;
+    .registers 2
+
+    .prologue
+    .line 287
+    iget-object v0, p0, Lcom/google/googlenav/ui/android/e;->b:Landroid/graphics/Bitmap;
+
+    return-object v0
 .end method

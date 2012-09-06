@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="general_preference_text_zoom_summary_array">
+        <item>छोटा पाठ</item>
+        <item>छोटा पाठ</item>
+        <item>सामान्य आकार का पाठ</item>
+        <item>बड़ा पाठ</item>
+        <item>बड़ा पाठ</item>
+    </string-array>
+</resources>

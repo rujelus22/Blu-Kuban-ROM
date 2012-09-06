@@ -33,7 +33,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 29
-    const v0, 0x7f0800a2
+    const v0, 0x7f0800a8
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/DescriptionEditorialHeader;->findViewById(I)Landroid/view/View;
 
@@ -44,7 +44,7 @@
     iput-object v0, p0, Lcom/google/android/finsky/layout/DescriptionEditorialHeader;->mHeader:Landroid/widget/TextView;
 
     .line 30
-    const v0, 0x7f0800a3
+    const v0, 0x7f0800a9
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/DescriptionEditorialHeader;->findViewById(I)Landroid/view/View;
 

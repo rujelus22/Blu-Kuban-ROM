@@ -1,45 +1,38 @@
-.class Lcom/google/android/finsky/layout/AppSecurityPermissions$1;
+.class final Lcom/google/android/finsky/layout/AppSecurityPermissions$1;
 .super Ljava/lang/Object;
 .source "AppSecurityPermissions.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/Comparator;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/layout/AppSecurityPermissions;->setNormalPermissionsVisibility()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/android/finsky/layout/AppSecurityPermissions;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = null
 .end annotation
 
-
-# instance fields
-.field final synthetic this$0:Lcom/google/android/finsky/layout/AppSecurityPermissions;
-
-.field final synthetic val$scrollTarget:I
-
-.field final synthetic val$scroller:Lcom/google/android/finsky/layout/ObservableScrollView;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/Comparator",
+        "<",
+        "Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/layout/AppSecurityPermissions;Lcom/google/android/finsky/layout/ObservableScrollView;I)V
-    .registers 4
-    .parameter
-    .parameter
-    .parameter
+.method constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 184
-    iput-object p1, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$1;->this$0:Lcom/google/android/finsky/layout/AppSecurityPermissions;
-
-    iput-object p2, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$1;->val$scroller:Lcom/google/android/finsky/layout/ObservableScrollView;
-
-    iput p3, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$1;->val$scrollTarget:I
-
+    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,19 +40,60 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 4
+.method public compare(Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;)I
+    .registers 7
+    .parameter "lhs"
+    .parameter "rhs"
 
     .prologue
-    .line 190
-    iget-object v0, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$1;->val$scroller:Lcom/google/android/finsky/layout/ObservableScrollView;
+    const/4 v1, 0x1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    iget v2, p0, Lcom/google/android/finsky/layout/AppSecurityPermissions$1;->val$scrollTarget:I
+    .line 54
+    iget-boolean v0, p2, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;->hasNewPermission:Z
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/layout/ObservableScrollView;->smoothScrollTo(II)V
+    if-eqz v0, :cond_d
 
-    .line 191
-    return-void
+    move v0, v1
+
+    :goto_7
+    iget-boolean v3, p1, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;->hasNewPermission:Z
+
+    if-eqz v3, :cond_f
+
+    :goto_b
+    sub-int/2addr v0, v1
+
+    return v0
+
+    :cond_d
+    move v0, v2
+
+    goto :goto_7
+
+    :cond_f
+    move v1, v2
+
+    goto :goto_b
+.end method
+
+.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .registers 4
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 51
+    check-cast p1, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;
+
+    .end local p1
+    check-cast p2, Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;
+
+    .end local p2
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/finsky/layout/AppSecurityPermissions$1;->compare(Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;Lcom/google/android/finsky/layout/AppSecurityPermissions$DetailsEntry;)I
+
+    move-result v0
+
+    return v0
 .end method

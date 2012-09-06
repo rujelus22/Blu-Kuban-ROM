@@ -532,7 +532,7 @@
 
     const-string v3, "<p>"
 
-    const-string v4, "<html><body text=white link=\"#00AEEF\"><div style=\"word-wrap:break-word; FONT-SIZE:16px; line-height:1.3em\"><p>"
+    const-string v4, "<html><body text=white link=\"#155496\"><div style=\"word-wrap:break-word; FONT-SIZE:16px; line-height:1.3em\"><p>"
 
     invoke-virtual {v0, v3, v4}, Ljava/lang/String;->replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 

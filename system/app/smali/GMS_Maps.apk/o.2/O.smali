@@ -1,42 +1,32 @@
-.class public Lo/O;
-.super Lo/T;
-
-
-# direct methods
-.method public constructor <init>()V
-    .registers 1
-
-    invoke-direct {p0}, Lo/T;-><init>()V
-
-    return-void
-.end method
+.class public interface abstract Lo/o;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # virtual methods
-.method public a(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;
-    .registers 5
+.method public abstract a(ILo/g;Lo/q;)V
+.end method
 
-    new-instance v0, Ljava/lang/StringBuilder;
+.method public abstract a(Lo/j;I)V
+.end method
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+.method public abstract a(Lo/q;)V
+.end method
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public abstract b(Lo/j;I)V
+.end method
 
-    move-result-object v0
+.method public abstract b(Lo/q;)V
+.end method
 
-    const-string v1, "<!-- GoogleNetworkTTS DisableLocalFallback -->"
+.method public abstract c(Lo/q;)V
+.end method
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public abstract d(Lo/q;)V
+.end method
 
-    move-result-object v0
+.method public abstract e(Lo/q;)V
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-super {p0, v0, p2}, Lo/T;->a(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+.method public abstract f(Lo/q;)V
 .end method

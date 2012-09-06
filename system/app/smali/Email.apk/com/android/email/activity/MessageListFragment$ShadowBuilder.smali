@@ -15,85 +15,323 @@
 
 
 # static fields
-.field private static sBackground:Landroid/graphics/Bitmap;
+.field private static sBackground:Landroid/graphics/drawable/Drawable;
 
-.field private static sCountImage:Landroid/graphics/Bitmap;
-
-.field private static sCountImageNinePatch:Landroid/graphics/NinePatch;
-
-.field private static sCountImagePointXDefault:I
-
-.field private static sCountImagePointXFour:I
-
-.field private static sCountImagePointXOne:I
-
-.field private static sCountImagePointXThree:I
-
-.field private static sCountImagePointXTwo:I
-
-.field private static sCountImageRightDefault:I
-
-.field private static sCountImageRightFour:I
-
-.field private static sCountImageRightThree:I
-
-.field private static sCountImageRightTwo:I
-
-.field private static sCountImageTop:I
+.field private static sCountMargin:F
 
 .field private static sCountPaint:Landroid/text/TextPaint;
 
-.field private static sCountTextPointXDefault:I
+.field private static sDragOffset:I
 
-.field private static sCountTextPointXFour:I
-
-.field private static sCountTextPointXOne:I
-
-.field private static sCountTextPointXThree:I
-
-.field private static sCountTextPointXTwo:I
-
-.field private static sCountTextPointY:I
-
-.field private static sEnvelopePointY:I
+.field private static sMessageMargin:F
 
 .field private static sMessagePaint:Landroid/text/TextPaint;
-
-.field private static sTouchPoint:I
 
 .field private static sTouchX:I
 
 
 # instance fields
-.field private mCountText:Ljava/lang/String;
+.field private final mCountPoint:Landroid/graphics/PointF;
 
-.field private mDragHeight:I
+.field private final mCountText:Ljava/lang/String;
+
+.field private final mDragHeight:I
 
 .field private final mDragWidth:I
 
+.field private final mMessagePoint:Landroid/graphics/PointF;
+
+.field private final mMessageText:Ljava/lang/String;
+
+.field private mOldOrientation:I
+
 
 # direct methods
-.method private constructor <init>()V
-    .registers 2
+.method public constructor <init>(Landroid/view/View;I)V
+    .registers 13
+    .parameter "view"
+    .parameter "count"
 
     .prologue
-    .line 1797
-    invoke-direct {p0}, Landroid/view/View$DragShadowBuilder;-><init>()V
+    const/4 v8, 0x1
 
-    .line 1817
-    const/4 v0, 0x0
+    const/4 v9, 0x0
 
-    iput v0, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mDragWidth:I
+    .line 641
+    invoke-direct {p0, p1}, Landroid/view/View$DragShadowBuilder;-><init>(Landroid/view/View;)V
 
+    .line 631
+    iput v9, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mOldOrientation:I
+
+    .line 642
+    invoke-virtual {p1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    .line 643
+    .local v4, res:Landroid/content/res/Resources;
+    invoke-virtual {v4}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v5
+
+    iget v3, v5, Landroid/content/res/Configuration;->orientation:I
+
+    .line 645
+    .local v3, newOrientation:I
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
+
+    move-result v5
+
+    iput v5, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mDragHeight:I
+
+    .line 646
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+
+    move-result v5
+
+    iput v5, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mDragWidth:I
+
+    .line 649
+    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sBackground:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v5, :cond_25
+
+    iget v5, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mOldOrientation:I
+
+    if-eq v5, v3, :cond_93
+
+    .line 650
+    :cond_25
+    iput v3, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mOldOrientation:I
+
+    .line 652
+    const v5, 0x7f020057
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v5
+
+    sput-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sBackground:Landroid/graphics/drawable/Drawable;
+
+    .line 653
+    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sBackground:Landroid/graphics/drawable/Drawable;
+
+    iget v6, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mDragWidth:I
+
+    iget v7, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mDragHeight:I
+
+    invoke-virtual {v5, v9, v9, v6, v7}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    .line 655
+    const v5, 0x7f0a0011
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v5
+
+    float-to-int v5, v5
+
+    sput v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sDragOffset:I
+
+    .line 657
+    new-instance v5, Landroid/text/TextPaint;
+
+    invoke-direct {v5}, Landroid/text/TextPaint;-><init>()V
+
+    sput-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
+
+    .line 659
+    const v5, 0x7f0a0014
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v2
+
+    .line 660
+    .local v2, messageTextSize:F
+    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
+
+    invoke-virtual {v5, v2}, Landroid/text/TextPaint;->setTextSize(F)V
+
+    .line 661
+    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
+
+    sget-object v6, Landroid/graphics/Typeface;->DEFAULT_BOLD:Landroid/graphics/Typeface;
+
+    invoke-virtual {v5, v6}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+
+    .line 662
+    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
+
+    invoke-virtual {v5, v8}, Landroid/text/TextPaint;->setAntiAlias(Z)V
+
+    .line 663
+    const v5, 0x7f0a0015
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v5
+
+    sput v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessageMargin:F
+
+    .line 665
+    new-instance v5, Landroid/text/TextPaint;
+
+    invoke-direct {v5}, Landroid/text/TextPaint;-><init>()V
+
+    sput-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountPaint:Landroid/text/TextPaint;
+
+    .line 667
+    const v5, 0x7f0a0012
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v1
+
+    .line 668
+    .local v1, countTextSize:F
+    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountPaint:Landroid/text/TextPaint;
+
+    invoke-virtual {v5, v1}, Landroid/text/TextPaint;->setTextSize(F)V
+
+    .line 669
+    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountPaint:Landroid/text/TextPaint;
+
+    sget-object v6, Landroid/graphics/Typeface;->DEFAULT_BOLD:Landroid/graphics/Typeface;
+
+    invoke-virtual {v5, v6}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+
+    .line 670
+    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountPaint:Landroid/text/TextPaint;
+
+    invoke-virtual {v5, v8}, Landroid/text/TextPaint;->setAntiAlias(Z)V
+
+    .line 671
+    const v5, 0x7f0a0013
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v5
+
+    sput v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountMargin:F
+
+    .line 675
+    .end local v1           #countTextSize:F
+    .end local v2           #messageTextSize:F
+    :cond_93
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    .line 677
+    .local v0, b:Landroid/graphics/Rect;
+    const/high16 v5, 0x7f0c
+
+    new-array v6, v8, [Ljava/lang/Object;
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    aput-object v7, v6, v9
+
+    invoke-virtual {v4, v5, p2, v6}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    iput-object v5, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mMessageText:Ljava/lang/String;
+
+    .line 678
+    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
+
+    iget-object v6, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mMessageText:Ljava/lang/String;
+
+    iget-object v7, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mMessageText:Ljava/lang/String;
+
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    invoke-virtual {v5, v6, v9, v7, v0}, Landroid/text/TextPaint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
+
+    .line 679
+    new-instance v5, Landroid/graphics/PointF;
+
+    iget v6, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mDragWidth:I
+
+    iget v7, v0, Landroid/graphics/Rect;->right:I
+
+    sub-int/2addr v6, v7
+
+    int-to-float v6, v6
+
+    sget v7, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessageMargin:F
+
+    sub-float/2addr v6, v7
+
+    iget v7, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mDragHeight:I
+
+    iget v8, v0, Landroid/graphics/Rect;->top:I
+
+    sub-int/2addr v7, v8
+
+    div-int/lit8 v7, v7, 0x2
+
+    int-to-float v7, v7
+
+    invoke-direct {v5, v6, v7}, Landroid/graphics/PointF;-><init>(FF)V
+
+    iput-object v5, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mMessagePoint:Landroid/graphics/PointF;
+
+    .line 682
+    invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    iput-object v5, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountText:Ljava/lang/String;
+
+    .line 683
+    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountPaint:Landroid/text/TextPaint;
+
+    iget-object v6, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountText:Ljava/lang/String;
+
+    iget-object v7, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountText:Ljava/lang/String;
+
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    invoke-virtual {v5, v6, v9, v7, v0}, Landroid/text/TextPaint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
+
+    .line 684
+    new-instance v5, Landroid/graphics/PointF;
+
+    sget v6, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountMargin:F
+
+    iget v7, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mDragHeight:I
+
+    iget v8, v0, Landroid/graphics/Rect;->top:I
+
+    sub-int/2addr v7, v8
+
+    div-int/lit8 v7, v7, 0x2
+
+    int-to-float v7, v7
+
+    invoke-direct {v5, v6, v7}, Landroid/graphics/PointF;-><init>(FF)V
+
+    iput-object v5, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountPoint:Landroid/graphics/PointF;
+
+    .line 686
     return-void
 .end method
 
-.method static synthetic access$1002(I)I
+.method static synthetic access$102(I)I
     .registers 1
     .parameter "x0"
 
     .prologue
-    .line 1797
+    .line 612
     sput p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
 
     return p0
@@ -102,805 +340,78 @@
 
 # virtual methods
 .method public onDrawShadow(Landroid/graphics/Canvas;)V
-    .registers 8
+    .registers 6
     .parameter "canvas"
 
     .prologue
-    const/4 v5, 0x0
+    .line 696
+    invoke-super {p0, p1}, Landroid/view/View$DragShadowBuilder;->onDrawShadow(Landroid/graphics/Canvas;)V
 
-    .line 1944
-    iget-object v2, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountText:Ljava/lang/String;
+    .line 697
+    sget-object v0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sBackground:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    move-result v1
+    .line 698
+    iget-object v0, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mMessageText:Ljava/lang/String;
 
-    .line 1945
-    .local v1, countLength:I
-    new-instance v0, Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mMessagePoint:Landroid/graphics/PointF;
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    iget v1, v1, Landroid/graphics/PointF;->x:F
 
-    .line 1946
-    .local v0, LineRect:Landroid/graphics/Rect;
-    packed-switch v1, :pswitch_data_270
+    iget-object v2, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mMessagePoint:Landroid/graphics/PointF;
 
-    .line 2032
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
+    iget v2, v2, Landroid/graphics/PointF;->y:F
 
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
+    sget-object v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
 
-    sub-int/2addr v2, v3
+    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    if-gez v2, :cond_22c
+    .line 699
+    iget-object v0, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountText:Ljava/lang/String;
 
-    .line 2033
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sBackground:Landroid/graphics/Bitmap;
+    iget-object v1, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountPoint:Landroid/graphics/PointF;
 
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sEnvelopePointY:I
+    iget v1, v1, Landroid/graphics/PointF;->x:F
 
-    int-to-float v3, v3
+    iget-object v2, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountPoint:Landroid/graphics/PointF;
 
-    sget-object v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
+    iget v2, v2, Landroid/graphics/PointF;->y:F
 
-    invoke-virtual {p1, v2, v5, v3, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+    sget-object v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountPaint:Landroid/text/TextPaint;
 
-    .line 2034
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXDefault:I
+    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    iput v2, v0, Landroid/graphics/Rect;->left:I
-
-    .line 2035
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    iput v2, v0, Landroid/graphics/Rect;->top:I
-
-    .line 2036
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageRightDefault:I
-
-    iput v2, v0, Landroid/graphics/Rect;->right:I
-
-    .line 2037
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXOne:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    add-int/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/Rect;->bottom:I
-
-    .line 2038
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageNinePatch:Landroid/graphics/NinePatch;
-
-    invoke-virtual {v2, p1, v0}, Landroid/graphics/NinePatch;->draw(Landroid/graphics/Canvas;Landroid/graphics/Rect;)V
-
-    .line 2039
-    iget-object v2, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountText:Ljava/lang/String;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointXDefault:I
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointY:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-
-    .line 2055
-    :goto_45
+    .line 700
     return-void
-
-    .line 1948
-    :pswitch_46
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sub-int/2addr v2, v3
-
-    if-gez v2, :cond_72
-
-    .line 1949
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sBackground:Landroid/graphics/Bitmap;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sEnvelopePointY:I
-
-    int-to-float v3, v3
-
-    sget-object v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v5, v3, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 1950
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImage:Landroid/graphics/Bitmap;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXOne:I
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 1952
-    iget-object v2, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountText:Ljava/lang/String;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointXOne:I
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointY:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-
-    goto :goto_45
-
-    .line 1955
-    :cond_72
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sBackground:Landroid/graphics/Bitmap;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sub-int/2addr v3, v4
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sEnvelopePointY:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 1957
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImage:Landroid/graphics/Bitmap;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sget v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXOne:I
-
-    sub-int/2addr v4, v5
-
-    sub-int/2addr v3, v4
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 1960
-    iget-object v2, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountText:Ljava/lang/String;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sget v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointXOne:I
-
-    sub-int/2addr v4, v5
-
-    sub-int/2addr v3, v4
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointY:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-
-    goto :goto_45
-
-    .line 1965
-    :pswitch_a9
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sub-int/2addr v2, v3
-
-    if-gez v2, :cond_e1
-
-    .line 1966
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sBackground:Landroid/graphics/Bitmap;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sEnvelopePointY:I
-
-    int-to-float v3, v3
-
-    sget-object v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v5, v3, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 1967
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXTwo:I
-
-    iput v2, v0, Landroid/graphics/Rect;->left:I
-
-    .line 1968
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    iput v2, v0, Landroid/graphics/Rect;->top:I
-
-    .line 1969
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageRightTwo:I
-
-    iput v2, v0, Landroid/graphics/Rect;->right:I
-
-    .line 1970
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXOne:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    add-int/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/Rect;->bottom:I
-
-    .line 1971
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageNinePatch:Landroid/graphics/NinePatch;
-
-    invoke-virtual {v2, p1, v0}, Landroid/graphics/NinePatch;->draw(Landroid/graphics/Canvas;Landroid/graphics/Rect;)V
-
-    .line 1972
-    iget-object v2, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountText:Ljava/lang/String;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointXTwo:I
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointY:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-
-    goto/16 :goto_45
-
-    .line 1975
-    :cond_e1
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sBackground:Landroid/graphics/Bitmap;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sub-int/2addr v3, v4
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sEnvelopePointY:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 1977
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXTwo:I
-
-    sub-int/2addr v3, v4
-
-    sub-int/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/Rect;->left:I
-
-    .line 1978
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    iput v2, v0, Landroid/graphics/Rect;->top:I
-
-    .line 1979
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageRightTwo:I
-
-    sub-int/2addr v3, v4
-
-    sub-int/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/Rect;->right:I
-
-    .line 1980
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXOne:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    add-int/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/Rect;->bottom:I
-
-    .line 1981
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageNinePatch:Landroid/graphics/NinePatch;
-
-    invoke-virtual {v2, p1, v0}, Landroid/graphics/NinePatch;->draw(Landroid/graphics/Canvas;Landroid/graphics/Rect;)V
-
-    .line 1982
-    iget-object v2, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountText:Ljava/lang/String;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sget v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointXTwo:I
-
-    sub-int/2addr v4, v5
-
-    sub-int/2addr v3, v4
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointY:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-
-    goto/16 :goto_45
-
-    .line 1987
-    :pswitch_12a
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sub-int/2addr v2, v3
-
-    if-gez v2, :cond_162
-
-    .line 1988
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sBackground:Landroid/graphics/Bitmap;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sEnvelopePointY:I
-
-    int-to-float v3, v3
-
-    sget-object v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v5, v3, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 1989
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXThree:I
-
-    iput v2, v0, Landroid/graphics/Rect;->left:I
-
-    .line 1990
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    iput v2, v0, Landroid/graphics/Rect;->top:I
-
-    .line 1991
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageRightThree:I
-
-    iput v2, v0, Landroid/graphics/Rect;->right:I
-
-    .line 1992
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXOne:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    add-int/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/Rect;->bottom:I
-
-    .line 1993
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageNinePatch:Landroid/graphics/NinePatch;
-
-    invoke-virtual {v2, p1, v0}, Landroid/graphics/NinePatch;->draw(Landroid/graphics/Canvas;Landroid/graphics/Rect;)V
-
-    .line 1994
-    iget-object v2, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountText:Ljava/lang/String;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointXThree:I
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointY:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-
-    goto/16 :goto_45
-
-    .line 1997
-    :cond_162
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sBackground:Landroid/graphics/Bitmap;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sub-int/2addr v3, v4
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sEnvelopePointY:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 1999
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXThree:I
-
-    sub-int/2addr v3, v4
-
-    sub-int/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/Rect;->left:I
-
-    .line 2000
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    iput v2, v0, Landroid/graphics/Rect;->top:I
-
-    .line 2001
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageRightThree:I
-
-    sub-int/2addr v3, v4
-
-    sub-int/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/Rect;->right:I
-
-    .line 2002
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXOne:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    add-int/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/Rect;->bottom:I
-
-    .line 2003
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageNinePatch:Landroid/graphics/NinePatch;
-
-    invoke-virtual {v2, p1, v0}, Landroid/graphics/NinePatch;->draw(Landroid/graphics/Canvas;Landroid/graphics/Rect;)V
-
-    .line 2004
-    iget-object v2, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountText:Ljava/lang/String;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sget v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointXThree:I
-
-    sub-int/2addr v4, v5
-
-    sub-int/2addr v3, v4
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointY:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-
-    goto/16 :goto_45
-
-    .line 2010
-    :pswitch_1ab
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sub-int/2addr v2, v3
-
-    if-gez v2, :cond_1e3
-
-    .line 2011
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sBackground:Landroid/graphics/Bitmap;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sEnvelopePointY:I
-
-    int-to-float v3, v3
-
-    sget-object v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v5, v3, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 2012
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXFour:I
-
-    iput v2, v0, Landroid/graphics/Rect;->left:I
-
-    .line 2013
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    iput v2, v0, Landroid/graphics/Rect;->top:I
-
-    .line 2014
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageRightFour:I
-
-    iput v2, v0, Landroid/graphics/Rect;->right:I
-
-    .line 2015
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXOne:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    add-int/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/Rect;->bottom:I
-
-    .line 2016
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageNinePatch:Landroid/graphics/NinePatch;
-
-    invoke-virtual {v2, p1, v0}, Landroid/graphics/NinePatch;->draw(Landroid/graphics/Canvas;Landroid/graphics/Rect;)V
-
-    .line 2017
-    iget-object v2, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountText:Ljava/lang/String;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointXFour:I
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointY:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-
-    goto/16 :goto_45
-
-    .line 2020
-    :cond_1e3
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sBackground:Landroid/graphics/Bitmap;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sub-int/2addr v3, v4
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sEnvelopePointY:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 2022
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXFour:I
-
-    sub-int/2addr v3, v4
-
-    sub-int/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/Rect;->left:I
-
-    .line 2023
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    iput v2, v0, Landroid/graphics/Rect;->top:I
-
-    .line 2024
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageRightFour:I
-
-    sub-int/2addr v3, v4
-
-    sub-int/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/Rect;->right:I
-
-    .line 2025
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXOne:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    add-int/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/Rect;->bottom:I
-
-    .line 2026
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageNinePatch:Landroid/graphics/NinePatch;
-
-    invoke-virtual {v2, p1, v0}, Landroid/graphics/NinePatch;->draw(Landroid/graphics/Canvas;Landroid/graphics/Rect;)V
-
-    .line 2027
-    iget-object v2, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountText:Ljava/lang/String;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sget v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointXFour:I
-
-    sub-int/2addr v4, v5
-
-    sub-int/2addr v3, v4
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointY:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-
-    goto/16 :goto_45
-
-    .line 2042
-    :cond_22c
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sBackground:Landroid/graphics/Bitmap;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sub-int/2addr v3, v4
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sEnvelopePointY:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sMessagePaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 2044
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXDefault:I
-
-    sub-int/2addr v3, v4
-
-    sub-int/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/Rect;->left:I
-
-    .line 2045
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    iput v2, v0, Landroid/graphics/Rect;->top:I
-
-    .line 2046
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    iput v2, v0, Landroid/graphics/Rect;->right:I
-
-    .line 2047
-    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImagePointXOne:I
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageTop:I
-
-    add-int/2addr v2, v3
-
-    iput v2, v0, Landroid/graphics/Rect;->bottom:I
-
-    .line 2048
-    sget-object v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountImageNinePatch:Landroid/graphics/NinePatch;
-
-    invoke-virtual {v2, p1, v0}, Landroid/graphics/NinePatch;->draw(Landroid/graphics/Canvas;Landroid/graphics/Rect;)V
-
-    .line 2049
-    iget-object v2, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mCountText:Ljava/lang/String;
-
-    sget v3, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchPoint:I
-
-    sget v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointXDefault:I
-
-    sub-int/2addr v4, v5
-
-    sub-int/2addr v3, v4
-
-    int-to-float v3, v3
-
-    sget v4, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountTextPointY:I
-
-    int-to-float v4, v4
-
-    sget-object v5, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sCountPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-
-    goto/16 :goto_45
-
-    .line 1946
-    nop
-
-    :pswitch_data_270
-    .packed-switch 0x1
-        :pswitch_46
-        :pswitch_a9
-        :pswitch_12a
-        :pswitch_1ab
-    .end packed-switch
 .end method
 
 .method public onProvideShadowMetrics(Landroid/graphics/Point;Landroid/graphics/Point;)V
-    .registers 5
+    .registers 6
     .parameter "shadowSize"
     .parameter "shadowTouchPoint"
 
     .prologue
-    .line 1938
-    const/4 v0, 0x0
+    .line 690
+    iget v0, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mDragWidth:I
 
     iget v1, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mDragHeight:I
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Point;->set(II)V
 
-    .line 1939
+    .line 691
     sget v0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sTouchX:I
 
     iget v1, p0, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->mDragHeight:I
 
     div-int/lit8 v1, v1, 0x2
 
+    sget v2, Lcom/android/email/activity/MessageListFragment$ShadowBuilder;->sDragOffset:I
+
+    add-int/2addr v1, v2
+
     invoke-virtual {p2, v0, v1}, Landroid/graphics/Point;->set(II)V
 
-    .line 1940
+    .line 692
     return-void
 .end method

@@ -12,17 +12,43 @@
 
 .field public static final d:Landroid/net/Uri;
 
-.field public static final e:Ljava/util/Set;
+.field public static final e:Landroid/net/Uri;
 
-.field private static final f:Ljava/util/HashSet;
+.field public static final f:Landroid/net/Uri;
+
+.field public static final g:Landroid/net/Uri;
+
+.field public static final h:Landroid/net/Uri;
+
+.field public static final i:Landroid/net/Uri;
+
+.field public static final j:Landroid/net/Uri;
+
+.field public static final k:Landroid/net/Uri;
+
+.field public static final l:Landroid/net/Uri;
+
+.field public static final m:Landroid/net/Uri;
+
+.field public static final n:Landroid/net/Uri;
+
+.field public static final o:Landroid/net/Uri;
+
+.field public static final p:Landroid/net/Uri;
+
+.field public static final q:Ljava/util/Set;
+
+.field private static final r:Landroid/net/Uri;
+
+.field private static final s:Ljava/util/HashSet;
 
 
 # instance fields
-.field private final g:I
+.field private final t:I
 
-.field private final h:Lcom/google/android/youtube/core/utils/SafeSearch;
+.field private final u:Lcom/google/android/youtube/core/utils/SafeSearch;
 
-.field private final i:Ljava/lang/String;
+.field private final v:Ljava/lang/String;
 
 
 # direct methods
@@ -40,7 +66,7 @@
 
     const/4 v4, 0x0
 
-    .line 55
+    .line 56
     new-instance v0, Landroid/net/Uri$Builder;
 
     invoke-direct {v0}, Landroid/net/Uri$Builder;-><init>()V
@@ -73,9 +99,26 @@
 
     move-result-object v0
 
+    .line 63
     sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
-    .line 62
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "https"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b:Landroid/net/Uri;
+
+    .line 65
     new-instance v0, Landroid/net/Uri$Builder;
 
     invoke-direct {v0}, Landroid/net/Uri$Builder;-><init>()V
@@ -108,9 +151,9 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b:Landroid/net/Uri;
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->c:Landroid/net/Uri;
 
-    .line 69
+    .line 72
     new-instance v0, Landroid/net/Uri$Builder;
 
     invoke-direct {v0}, Landroid/net/Uri$Builder;-><init>()V
@@ -143,9 +186,9 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->c:Landroid/net/Uri;
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->d:Landroid/net/Uri;
 
-    .line 76
+    .line 79
     new-instance v0, Landroid/net/Uri$Builder;
 
     invoke-direct {v0}, Landroid/net/Uri$Builder;-><init>()V
@@ -172,9 +215,293 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->d:Landroid/net/Uri;
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->e:Landroid/net/Uri;
 
-    .line 82
+    .line 85
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "/feeds/api/users/default/uploads"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->f:Landroid/net/Uri;
+
+    .line 88
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "/feeds/api/users/default/favorites"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:Landroid/net/Uri;
+
+    .line 91
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "/feeds/api/users/default/subscriptions"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->h:Landroid/net/Uri;
+
+    .line 94
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "/feeds/api/users/default/subtivity"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "inline"
+
+    const-string v2, "true"
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->i:Landroid/net/Uri;
+
+    .line 99
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "/feeds/api/users/default/subtivity"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "inline"
+
+    const-string v2, "true"
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "highlights"
+
+    const-string v2, "true"
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->j:Landroid/net/Uri;
+
+    .line 105
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "/feeds/api/users/default/events"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "inline"
+
+    const-string v2, "true"
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->k:Landroid/net/Uri;
+
+    .line 110
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "/feeds/api/users/default/watch_later"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->l:Landroid/net/Uri;
+
+    .line 113
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "/feeds/api/users/default/watch_history"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "inline"
+
+    const-string v2, "true"
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->m:Landroid/net/Uri;
+
+    .line 118
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "/feeds/api/users/default/playlists"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->n:Landroid/net/Uri;
+
+    .line 121
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "/feeds/api/users/default/newsubscriptionvideos"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->o:Landroid/net/Uri;
+
+    .line 124
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "/feeds/api/users/default/recommendations"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->p:Landroid/net/Uri;
+
+    .line 127
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "/feeds/api/users/default/suggestion"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "type"
+
+    const-string v2, "channel"
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "inline"
+
+    const-string v2, "true"
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->r:Landroid/net/Uri;
+
+    .line 133
     new-instance v0, Ljava/util/HashSet;
 
     const/16 v1, 0x10
@@ -273,9 +600,9 @@
 
     invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->f:Ljava/util/HashSet;
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->s:Ljava/util/HashSet;
 
-    .line 92
+    .line 143
     new-instance v0, Ljava/util/HashSet;
 
     const/16 v1, 0x19
@@ -428,80 +755,113 @@
 
     invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->e:Ljava/util/Set;
+    sput-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->q:Ljava/util/Set;
 
     return-void
 .end method
 
 .method public constructor <init>(ILcom/google/android/youtube/core/utils/SafeSearch;Ljava/lang/String;)V
-    .registers 7
+    .registers 8
     .parameter
     .parameter
     .parameter
 
     .prologue
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    .line 216
+    const/4 v2, 0x0
+
+    .line 346
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 217
-    const-string v1, "resultsPerPage must be > 0"
+    .line 347
+    if-lez p1, :cond_41
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
+    move v0, v1
 
-    .line 218
-    if-eqz p3, :cond_12
+    :goto_8
+    const-string v3, "resultsPerPage must be > 0"
+
+    invoke-static {v0, v3}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
+
+    .line 348
+    invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1a
 
     invoke-virtual {p3}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v0
 
-    const/4 v2, 0x2
+    const/4 v3, 0x2
 
-    if-ne v1, v2, :cond_26
+    if-ne v0, v3, :cond_1b
 
-    :cond_12
-    :goto_12
-    const-string v1, "countryCodeRestrict must be null or a two letter country code"
+    :cond_1a
+    move v2, v1
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
+    :cond_1b
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 220
-    const/16 v0, 0xf
+    const-string v1, "countryCodeRestrict must be empty or a two letter country code (given: "
 
-    iput v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 221
-    iput-object p2, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->h:Lcom/google/android/youtube/core/utils/SafeSearch;
-
-    .line 222
-    if-eqz p3, :cond_28
-
-    .line 223
-    invoke-static {p3}, Lcom/google/android/youtube/core/utils/Util;->f(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->i:Ljava/lang/String;
+    const-string v1, ")"
 
-    .line 227
-    :goto_25
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v2, v0}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
+
+    .line 352
+    iput p1, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
+
+    .line 353
+    iput-object p2, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->u:Lcom/google/android/youtube/core/utils/SafeSearch;
+
+    .line 354
+    invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_43
+
+    .line 355
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->v:Ljava/lang/String;
+
+    .line 359
+    :goto_40
     return-void
 
-    .line 218
-    :cond_26
-    const/4 v0, 0x0
+    :cond_41
+    move v0, v2
 
-    goto :goto_12
+    .line 347
+    goto :goto_8
 
-    .line 225
-    :cond_28
-    const/4 v0, 0x0
+    .line 357
+    :cond_43
+    invoke-static {p3}, Lcom/google/android/youtube/core/utils/Util;->g(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->i:Ljava/lang/String;
+    move-result-object v0
 
-    goto :goto_25
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->v:Ljava/lang/String;
+
+    goto :goto_40
 .end method
 
 .method private a(Landroid/net/Uri;I)Landroid/net/Uri;
@@ -510,7 +870,7 @@
     .parameter
 
     .prologue
-    .line 1052
+    .line 1321
     const-string v0, "start-index"
 
     invoke-virtual {p1, v0}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
@@ -527,23 +887,23 @@
 
     if-nez v0, :cond_1c
 
-    .line 1054
+    .line 1323
     :cond_10
     invoke-virtual {p1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
     move-result-object v0
 
-    .line 1055
+    .line 1324
     const/4 v1, 0x1
 
     invoke-static {v0, v1, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
 
-    .line 1056
+    .line 1325
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object p1
 
-    .line 1058
+    .line 1327
     :cond_1c
     return-object p1
 .end method
@@ -552,7 +912,7 @@
     .registers 2
 
     .prologue
-    .line 273
+    .line 421
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -565,7 +925,7 @@
 
     move-result-object v0
 
-    .line 275
+    .line 423
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
@@ -584,16 +944,12 @@
     .parameter
 
     .prologue
-    .line 763
+    .line 971
     new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "<?xml version=\'1.0\' encoding=\'UTF-8\'?><entry xmlns=\'http://www.w3.org/2005/Atom\' xmlns:yt=\'http://gdata.youtube.com/schemas/2007\'><content>"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const/16 v1, 0x1f4
 
@@ -607,13 +963,7 @@
 
     move-result-object v0
 
-    const-string v1, "</content>"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "</entry>"
+    const-string v1, "</content></entry>"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -623,8 +973,8 @@
 
     move-result-object v0
 
-    .line 769
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->g(Ljava/lang/String;)[B
+    .line 977
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->h(Ljava/lang/String;)[B
 
     move-result-object v0
 
@@ -642,28 +992,18 @@
     .parameter
 
     .prologue
-    .line 818
+    .line 1071
     new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "<?xml version=\'1.0\' encoding=\'UTF-8\'?><entry xmlns=\'http://www.w3.org/2005/Atom\' xmlns:yt=\'http://gdata.youtube.com/schemas/2007\'><id>"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "</id>"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "</entry>"
+    const-string v1, "</id></entry>"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -673,8 +1013,8 @@
 
     move-result-object v0
 
-    .line 824
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->g(Ljava/lang/String;)[B
+    .line 1077
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->h(Ljava/lang/String;)[B
 
     move-result-object v0
 
@@ -691,7 +1031,7 @@
     .parameter
 
     .prologue
-    .line 404
+    .line 588
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -728,26 +1068,121 @@
 
     move-result-object v0
 
-    .line 410
-    if-eqz p2, :cond_2d
-
-    .line 411
-    const-string v1, "time"
-
-    iget-object v2, p2, Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;->filterTerm:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    .line 413
-    :cond_2d
+    .line 594
     invoke-direct {p0, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b(Landroid/net/Uri$Builder;)V
 
-    .line 414
+    .line 598
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
 
     invoke-static {v0}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static a(Ljava/lang/String;Lcom/google/android/youtube/core/model/UserAuth;Lcom/google/android/youtube/core/async/GDataRequestFactory$ComplaintReason;Ljava/lang/String;)Lcom/google/android/youtube/core/async/GDataRequest;
+    .registers 9
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 985
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 986
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "videos"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "complaints"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v1
+
+    .line 991
+    invoke-static {p2}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/core/async/GDataRequestFactory$ComplaintReason;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory$ComplaintReason;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 992
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "<?xml version=\'1.0\' encoding=\'UTF-8\'?><entry xmlns=\'http://www.w3.org/2005/Atom\' xmlns:yt=\'http://gdata.youtube.com/schemas/2007\'><summary>"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const/16 v3, 0x1f4
+
+    const-string v4, ""
+
+    invoke-static {p3, v3, v4}, Lcom/google/android/youtube/core/utils/Util;->a(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "</summary><category scheme=\'http://gdata.youtube.com/schemas/2007/complaint-reasons.cat\' "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "term=\'"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "\'/></entry>"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 1002
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->h(Ljava/lang/String;)[B
+
+    move-result-object v0
+
+    invoke-static {v1, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;[B)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
 
@@ -766,36 +1201,32 @@
     .parameter
 
     .prologue
-    .line 328
+    .line 482
     const-string v0, "filename may not be empty"
 
-    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 329
+    .line 483
     const-string v0, "privacy may not be null"
 
-    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 330
+    .line 484
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    .line 331
+    .line 485
     const-string v0, "Slug"
 
     invoke-interface {v1, v0, p0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 332
+    .line 486
     new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "<?xml version=\'1.0\'?><entry xmlns=\'http://www.w3.org/2005/Atom\' xmlns:media=\'http://search.yahoo.com/mrss/\' xmlns:yt=\'http://gdata.youtube.com/schemas/2007\' xmlns:gml=\'http://www.opengis.net/gml\' xmlns:georss=\'http://www.georss.org/georss\'><media:group><media:title type=\'plain\'>"
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const/16 v2, 0x3c
 
@@ -817,17 +1248,13 @@
 
     move-result v0
 
-    if-nez v0, :cond_e2
+    if-nez v0, :cond_ca
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "<media:description type=\'plain\'>"
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const/16 v3, 0x1388
 
@@ -851,7 +1278,7 @@
 
     move-result-object v0
 
-    :goto_56
+    :goto_4e
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -866,22 +1293,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_68
+    if-eqz v2, :cond_60
 
     const-string p5, "People"
 
-    :cond_68
+    :cond_60
     invoke-virtual {v0, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v2, "</media:category>"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "<media:keywords>"
+    const-string v2, "</media:category><media:keywords>"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -907,11 +1328,11 @@
 
     sget-object v0, Lcom/google/android/youtube/core/model/Video$Privacy;->PRIVATE:Lcom/google/android/youtube/core/model/Video$Privacy;
 
-    if-ne p2, v0, :cond_e6
+    if-ne p2, v0, :cond_cd
 
     const-string v0, "<yt:private/>"
 
-    :goto_90
+    :goto_82
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -922,17 +1343,13 @@
 
     move-result-object v2
 
-    if-eqz p7, :cond_109
+    if-eqz p7, :cond_ec
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "<georss:where><gml:Point><gml:pos>"
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v3, p7, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -952,13 +1369,7 @@
 
     move-result-object v0
 
-    const-string v3, "</gml:pos>"
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v3, "</gml:Point></georss:where>"
+    const-string v3, "</gml:pos></gml:Point></georss:where>"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -968,7 +1379,7 @@
 
     move-result-object v0
 
-    :goto_c9
+    :goto_b1
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -983,10 +1394,10 @@
 
     move-result-object v0
 
-    .line 363
-    sget-object v2, Lcom/google/android/youtube/core/async/GDataRequestFactory;->d:Landroid/net/Uri;
+    .line 517
+    sget-object v2, Lcom/google/android/youtube/core/async/GDataRequestFactory;->e:Landroid/net/Uri;
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->g(Ljava/lang/String;)[B
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->h(Ljava/lang/String;)[B
 
     move-result-object v0
 
@@ -996,30 +1407,26 @@
 
     return-object v0
 
-    .line 332
-    :cond_e2
+    .line 486
+    :cond_ca
     const-string v0, ""
 
-    goto/16 :goto_56
+    goto :goto_4e
 
-    :cond_e6
-    new-instance v0, Ljava/lang/StringBuilder;
+    :cond_cd
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, "<yt:accessControl action=\'list\' permission=\'"
 
-    const-string v3, "<yt:accessControl action=\'list\' permission=\'"
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     sget-object v0, Lcom/google/android/youtube/core/model/Video$Privacy;->PUBLIC:Lcom/google/android/youtube/core/model/Video$Privacy;
 
-    if-ne p2, v0, :cond_106
+    if-ne p2, v0, :cond_e9
 
     const-string v0, "allowed"
 
-    :goto_f7
+    :goto_da
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -1034,17 +1441,17 @@
 
     move-result-object v0
 
-    goto :goto_90
+    goto :goto_82
 
-    :cond_106
+    :cond_e9
     const-string v0, "denied"
 
-    goto :goto_f7
+    goto :goto_da
 
-    :cond_109
+    :cond_ec
     const-string v0, ""
 
-    goto :goto_c9
+    goto :goto_b1
 .end method
 
 .method public static a(Ljava/lang/String;Lcom/google/android/youtube/core/model/UserAuth;Z)Lcom/google/android/youtube/core/async/GDataRequest;
@@ -1054,7 +1461,7 @@
     .parameter
 
     .prologue
-    .line 747
+    .line 955
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -1081,33 +1488,23 @@
 
     move-result-object v1
 
-    .line 752
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 960
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, "<?xml version=\'1.0\' encoding=\'UTF-8\'?><entry xmlns=\'http://www.w3.org/2005/Atom\' xmlns:yt=\'http://gdata.youtube.com/schemas/2007\'><yt:rating value=\'"
 
-    const-string v2, "<?xml version=\'1.0\' encoding=\'UTF-8\'?><entry xmlns=\'http://www.w3.org/2005/Atom\' xmlns:yt=\'http://gdata.youtube.com/schemas/2007\'><yt:rating value=\'"
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    if-eqz p2, :cond_46
+    if-eqz p2, :cond_3c
 
     const-string v0, "like"
 
-    :goto_29
+    :goto_25
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v2, "\'/>"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "</entry>"
+    const-string v2, "\'/></entry>"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1117,8 +1514,8 @@
 
     move-result-object v0
 
-    .line 758
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->g(Ljava/lang/String;)[B
+    .line 966
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->h(Ljava/lang/String;)[B
 
     move-result-object v0
 
@@ -1128,11 +1525,11 @@
 
     return-object v0
 
-    .line 752
-    :cond_46
+    .line 960
+    :cond_3c
     const-string v0, "dislike"
 
-    goto :goto_29
+    goto :goto_25
 .end method
 
 .method public static a(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/youtube/core/async/GDataRequest;
@@ -1141,7 +1538,7 @@
     .parameter
 
     .prologue
-    .line 520
+    .line 695
     new-instance v0, Landroid/net/Uri$Builder;
 
     invoke-direct {v0}, Landroid/net/Uri$Builder;-><init>()V
@@ -1164,17 +1561,17 @@
 
     move-result-object v0
 
-    .line 524
+    .line 699
     if-eqz p0, :cond_47
 
     if-eqz p1, :cond_47
 
-    .line 525
+    .line 700
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {p0}, Lcom/google/android/youtube/core/utils/Util;->e(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/google/android/youtube/core/utils/Util;->f(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1188,7 +1585,7 @@
 
     move-result-object v1
 
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/Util;->f(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/Util;->g(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1200,8 +1597,8 @@
 
     move-result-object v1
 
-    .line 526
-    sget-object v2, Lcom/google/android/youtube/core/async/GDataRequestFactory;->f:Ljava/util/HashSet;
+    .line 701
+    sget-object v2, Lcom/google/android/youtube/core/async/GDataRequestFactory;->s:Ljava/util/HashSet;
 
     invoke-virtual {v2, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
@@ -1209,12 +1606,12 @@
 
     if-eqz v2, :cond_47
 
-    .line 527
+    .line 702
     const-string v2, "hl"
 
     invoke-virtual {v0, v2, v1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 530
+    .line 705
     :cond_47
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
@@ -1242,21 +1639,17 @@
     .parameter
 
     .prologue
-    .line 896
+    .line 1149
     const-string v0, "editUri cannot be null"
 
-    invoke-static {p9, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p9, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 898
+    .line 1151
     new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "<?xml version=\'1.0\' encoding=\'UTF-8\'?><entry xmlns=\'http://www.w3.org/2005/Atom\' xmlns:media=\'http://search.yahoo.com/mrss/\' xmlns:yt=\'http://gdata.youtube.com/schemas/2007\' xmlns:gd=\'http://schemas.google.com/g/2005\' xmlns:gml=\'http://www.opengis.net/gml\' xmlns:georss=\'http://www.georss.org/georss\'><media:group><media:title type=\'plain\'>"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const/16 v1, 0x3c
 
@@ -1270,13 +1663,7 @@
 
     move-result-object v0
 
-    const-string v1, "</media:title>"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "<media:description type=\'plain\'>"
+    const-string v1, "</media:title><media:description type=\'plain\'>"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1294,13 +1681,7 @@
 
     move-result-object v0
 
-    const-string v1, "</media:description>"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "<media:category label=\'"
+    const-string v1, "</media:description><media:category label=\'"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1318,13 +1699,7 @@
 
     move-result-object v0
 
-    const-string v1, "\' scheme=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "http://gdata.youtube.com/schemas/2007/categories.cat"
+    const-string v1, "\' scheme=\'http://gdata.youtube.com/schemas/2007/categories.cat"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1344,13 +1719,7 @@
 
     move-result-object v0
 
-    const-string v1, "</media:category>"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "<media:keywords>"
+    const-string v1, "</media:category><media:keywords>"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1376,11 +1745,11 @@
 
     sget-object v0, Lcom/google/android/youtube/core/model/Video$Privacy;->PRIVATE:Lcom/google/android/youtube/core/model/Video$Privacy;
 
-    if-ne p5, v0, :cond_f7
+    if-ne p5, v0, :cond_db
 
     const-string v0, "<yt:private/>"
 
-    :goto_8a
+    :goto_6e
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -1395,33 +1764,33 @@
 
     move-result-object v0
 
-    .line 922
-    if-nez p6, :cond_9f
+    .line 1175
+    if-nez p6, :cond_83
 
-    .line 923
+    .line 1176
     new-instance p6, Ljava/util/LinkedHashMap;
 
     invoke-direct {p6}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 925
-    :cond_9f
-    if-eqz p5, :cond_ac
+    .line 1178
+    :cond_83
+    if-eqz p5, :cond_90
 
-    .line 926
+    .line 1179
     sget-object v1, Lcom/google/android/youtube/core/model/Video$Privacy;->PUBLIC:Lcom/google/android/youtube/core/model/Video$Privacy;
 
-    if-ne p5, v1, :cond_fa
+    if-ne p5, v1, :cond_de
 
-    .line 927
+    .line 1180
     const-string v1, "list"
 
     const-string v2, "allowed"
 
     invoke-interface {p6, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 932
-    :cond_ac
-    :goto_ac
+    .line 1185
+    :cond_90
+    :goto_90
     invoke-interface {p6}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v1
@@ -1432,15 +1801,15 @@
 
     move-object v2, v0
 
-    .line 933
-    :goto_b5
+    .line 1186
+    :goto_99
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_102
+    if-eqz v0, :cond_e6
 
-    .line 934
+    .line 1187
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -1449,7 +1818,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 935
+    .line 1188
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1502,30 +1871,30 @@
 
     move-object v2, v0
 
-    .line 937
-    goto :goto_b5
+    .line 1190
+    goto :goto_99
 
-    .line 898
-    :cond_f7
+    .line 1151
+    :cond_db
     const-string v0, ""
 
-    goto :goto_8a
+    goto :goto_6e
 
-    .line 929
-    :cond_fa
+    .line 1182
+    :cond_de
     const-string v1, "list"
 
     const-string v2, "denied"
 
     invoke-interface {p6, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_ac
+    goto :goto_90
 
-    .line 938
-    :cond_102
-    if-eqz p7, :cond_15c
+    .line 1191
+    :cond_e6
+    if-eqz p7, :cond_140
 
-    .line 939
+    .line 1192
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1554,11 +1923,11 @@
 
     move-result-object v0
 
-    .line 941
-    :goto_121
-    if-eqz p8, :cond_140
+    .line 1194
+    :goto_105
+    if-eqz p8, :cond_124
 
-    .line 942
+    .line 1195
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1587,8 +1956,8 @@
 
     move-result-object v0
 
-    .line 945
-    :cond_140
+    .line 1198
+    :cond_124
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1607,8 +1976,8 @@
 
     move-result-object v0
 
-    .line 947
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->g(Ljava/lang/String;)[B
+    .line 1200
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->h(Ljava/lang/String;)[B
 
     move-result-object v0
 
@@ -1618,10 +1987,10 @@
 
     return-object v0
 
-    :cond_15c
+    :cond_140
     move-object v0, v2
 
-    goto :goto_121
+    goto :goto_105
 .end method
 
 .method private a(Landroid/net/Uri$Builder;)V
@@ -1629,12 +1998,12 @@
     .parameter
 
     .prologue
-    .line 1030
-    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
+    .line 1299
+    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
 
     invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;I)V
 
-    .line 1031
+    .line 1300
     return-void
 .end method
 
@@ -1644,55 +2013,25 @@
     .parameter
 
     .prologue
-    .line 1023
+    .line 1292
     const-string v0, "format"
 
     const-string v1, "2,3,8,9"
 
     invoke-virtual {p1, v0, v1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 1024
+    .line 1293
     const/4 v0, 0x1
 
     invoke-static {p1, v0, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
 
-    .line 1025
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->h:Lcom/google/android/youtube/core/utils/SafeSearch;
+    .line 1294
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->c(Landroid/net/Uri$Builder;)V
 
-    if-eqz v0, :cond_22
+    .line 1295
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->d(Landroid/net/Uri$Builder;)V
 
-    const-string v0, "safeSearch"
-
-    iget-object v1, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->h:Lcom/google/android/youtube/core/utils/SafeSearch;
-
-    invoke-virtual {v1}, Lcom/google/android/youtube/core/utils/SafeSearch;->a()Lcom/google/android/youtube/core/utils/SafeSearch$SafeSearchMode;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/youtube/core/utils/SafeSearch$SafeSearchMode;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->e(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p1, v0, v1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    .line 1026
-    :cond_22
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->i:Ljava/lang/String;
-
-    if-eqz v0, :cond_2d
-
-    const-string v0, "restriction"
-
-    iget-object v1, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->i:Ljava/lang/String;
-
-    invoke-virtual {p1, v0, v1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    .line 1027
-    :cond_2d
+    .line 1296
     return-void
 .end method
 
@@ -1703,7 +2042,7 @@
     .parameter
 
     .prologue
-    .line 1067
+    .line 1336
     const-string v0, "start-index"
 
     const/4 v1, 0x1
@@ -1714,7 +2053,7 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 1068
+    .line 1337
     const-string v0, "max-results"
 
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -1723,46 +2062,43 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 1069
+    .line 1338
     return-void
 .end method
 
-.method private b(Ljava/lang/String;I)Landroid/net/Uri;
-    .registers 5
+.method public static b(Ljava/lang/String;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+    .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 435
-    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
+    .line 538
+    const-string v0, "videoId cannot be empty"
+
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    .line 539
+    const-string v0, "userAuth cannot be null"
+
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 540
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->f:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
     move-result-object v0
 
-    const-string v1, "users"
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v0, p0}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    const-string v1, "uploads"
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    .line 439
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
-
-    .line 440
+    .line 541
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
 
@@ -1774,103 +2110,28 @@
     .parameter
 
     .prologue
-    .line 1044
+    .line 1313
     const/4 v0, 0x1
 
-    iget v1, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
+    iget v1, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
 
     invoke-static {p1, v0, v1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
 
-    .line 1045
+    .line 1314
     return-void
 .end method
 
-.method private c(Ljava/lang/String;I)Landroid/net/Uri;
-    .registers 5
-    .parameter
-    .parameter
-
-    .prologue
-    .line 462
-    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
-
-    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    const-string v1, "users"
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    const-string v1, "favorites"
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    .line 466
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
-
-    .line 467
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public static c(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 4
+    .registers 2
     .parameter
 
     .prologue
-    .line 418
-    const-string v0, "uri cannot be null"
+    .line 457
+    const-string v0, "uri cannot be empty"
 
-    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 419
-    const-string v0, "true"
-
-    const-string v1, "inline"
-
-    invoke-virtual {p0, v1}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_23
-
-    .line 420
-    invoke-virtual {p0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    const-string v1, "inline"
-
-    const-string v2, "true"
-
-    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
-
-    move-result-object p0
-
-    .line 422
-    :cond_23
+    .line 458
     invoke-static {p0}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
@@ -1884,7 +2145,7 @@
     .parameter
 
     .prologue
-    .line 773
+    .line 1006
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -1913,28 +2174,18 @@
 
     move-result-object v0
 
-    .line 778
+    .line 1011
     new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "<?xml version=\'1.0\' encoding=\'UTF-8\'?><entry xmlns=\'http://www.w3.org/2005/Atom\'><id>"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    const-string v2, "</id>"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "</entry>"
+    const-string v2, "</id></entry>"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1944,8 +2195,8 @@
 
     move-result-object v1
 
-    .line 783
-    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->g(Ljava/lang/String;)[B
+    .line 1016
+    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->h(Ljava/lang/String;)[B
 
     move-result-object v1
 
@@ -1956,46 +2207,38 @@
     return-object v0
 .end method
 
-.method private d(Ljava/lang/String;I)Landroid/net/Uri;
-    .registers 5
-    .parameter
+.method private c(Landroid/net/Uri$Builder;)V
+    .registers 4
     .parameter
 
     .prologue
-    .line 552
-    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
+    .line 1341
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->u:Lcom/google/android/youtube/core/utils/SafeSearch;
 
-    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+    if-eqz v0, :cond_17
 
-    move-result-object v0
+    .line 1342
+    const-string v0, "safeSearch"
 
-    const-string v1, "users"
+    iget-object v1, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->u:Lcom/google/android/youtube/core/utils/SafeSearch;
 
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/utils/SafeSearch;->a()Lcom/google/android/youtube/core/utils/SafeSearch$SafeSearchMode;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0, p1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v1}, Lcom/google/android/youtube/core/utils/SafeSearch$SafeSearchMode;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, "playlists"
+    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->f(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    move-result-object v1
 
-    move-result-object v0
+    invoke-virtual {p1, v0, v1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 556
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
-
-    .line 557
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
-
-    move-result-object v0
-
-    return-object v0
+    .line 1345
+    :cond_17
+    return-void
 .end method
 
 .method public static d(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
@@ -2004,12 +2247,12 @@
     .parameter
 
     .prologue
-    .line 802
+    .line 1050
     const-string v0, "editUri cannot be null"
 
-    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 803
+    .line 1051
     invoke-static {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
@@ -2023,7 +2266,7 @@
     .parameter
 
     .prologue
-    .line 787
+    .line 1020
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -2052,28 +2295,18 @@
 
     move-result-object v0
 
-    .line 792
+    .line 1025
     new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "<?xml version=\'1.0\' encoding=\'UTF-8\'?><entry xmlns=\'http://www.w3.org/2005/Atom\' xmlns:yt=\'http://gdata.youtube.com/schemas/2007\'><id>"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    const-string v2, "</id>"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "</entry>"
+    const-string v2, "</id></entry>"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2083,12 +2316,85 @@
 
     move-result-object v1
 
-    .line 798
-    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->g(Ljava/lang/String;)[B
+    .line 1031
+    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->h(Ljava/lang/String;)[B
 
     move-result-object v1
 
     invoke-static {v0, p1, v1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;[B)Lcom/google/android/youtube/core/async/GDataRequest;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private d(Landroid/net/Uri$Builder;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 1348
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->v:Ljava/lang/String;
+
+    if-eqz v0, :cond_b
+
+    .line 1349
+    const-string v0, "restriction"
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->v:Ljava/lang/String;
+
+    invoke-virtual {p1, v0, v1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    .line 1351
+    :cond_b
+    return-void
+.end method
+
+.method public static e(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 602
+    const-string v0, "uri cannot be null"
+
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 603
+    const-string v0, "true"
+
+    const-string v1, "inline"
+
+    invoke-virtual {p0, v1}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_23
+
+    .line 604
+    invoke-virtual {p0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "inline"
+
+    const-string v2, "true"
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object p0
+
+    .line 606
+    :cond_23
+    invoke-static {p0}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
 
@@ -2101,12 +2407,12 @@
     .parameter
 
     .prologue
-    .line 807
+    .line 1055
     const-string v0, "editUri cannot be null"
 
-    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 808
+    .line 1056
     invoke-static {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
@@ -2120,17 +2426,7 @@
     .parameter
 
     .prologue
-    .line 951
-    const-string v0, "username can\'t be empty"
-
-    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 952
-    const-string v0, "userAuth can\'t be null"
-
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 953
+    .line 1035
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -2149,7 +2445,7 @@
 
     move-result-object v0
 
-    const-string v1, "subscriptions"
+    const-string v1, "watch_history"
 
     invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
@@ -2159,28 +2455,18 @@
 
     move-result-object v0
 
-    .line 958
+    .line 1040
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v2, "<?xml version=\'1.0\' encoding=\'UTF-8\'?><entry xmlns=\'http://www.w3.org/2005/Atom\' xmlns:yt=\'http://gdata.youtube.com/schemas/2007\'><id>"
 
-    const-string v2, "<?xml version=\'1.0\' encoding=\'UTF-8\'?><entry xmlns=\'http://www.w3.org/2005/Atom\' xmlns:yt=\'http://gdata.youtube.com/schemas/2007\'><category scheme=\'http://gdata.youtube.com/schemas/2007/subscriptiontypes.cat\' term=\'user\'/><yt:username>"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    const-string v2, "</yt:username>"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "</entry>"
+    const-string v2, "</id></entry>"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2190,37 +2476,12 @@
 
     move-result-object v1
 
-    .line 966
-    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->g(Ljava/lang/String;)[B
+    .line 1046
+    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->h(Ljava/lang/String;)[B
 
     move-result-object v1
 
     invoke-static {v0, p1, v1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;[B)Lcom/google/android/youtube/core/async/GDataRequest;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private f(Landroid/net/Uri;)Landroid/net/Uri;
-    .registers 5
-    .parameter
-
-    .prologue
-    .line 576
-    invoke-virtual {p1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    .line 577
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v1, v2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
-
-    .line 578
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
 
@@ -2233,12 +2494,12 @@
     .parameter
 
     .prologue
-    .line 812
+    .line 1060
     const-string v0, "editUri cannot be null"
 
-    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 813
+    .line 1061
     invoke-static {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
@@ -2252,17 +2513,17 @@
     .parameter
 
     .prologue
-    .line 970
+    .line 1204
     const-string v0, "username can\'t be empty"
 
-    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 971
+    .line 1205
     const-string v0, "userAuth can\'t be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 972
+    .line 1206
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -2291,28 +2552,18 @@
 
     move-result-object v0
 
-    .line 977
+    .line 1211
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v2, "<?xml version=\'1.0\' encoding=\'UTF-8\'?><entry xmlns=\'http://www.w3.org/2005/Atom\' xmlns:yt=\'http://gdata.youtube.com/schemas/2007\'><category scheme=\'http://gdata.youtube.com/schemas/2007/subscriptiontypes.cat\' term=\'user\'/><yt:username>"
 
-    const-string v2, "<?xml version=\'1.0\' encoding=\'UTF-8\'?><entry xmlns=\'http://www.w3.org/2005/Atom\' xmlns:yt=\'http://gdata.youtube.com/schemas/2007\'><category scheme=\'http://gdata.youtube.com/schemas/2007/subscriptiontypes.cat\' term=\'channel\'/><yt:username>"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    const-string v2, "</yt:username>"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "</entry>"
+    const-string v2, "</yt:username></entry>"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2322,27 +2573,12 @@
 
     move-result-object v1
 
-    .line 985
-    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->g(Ljava/lang/String;)[B
+    .line 1219
+    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->h(Ljava/lang/String;)[B
 
     move-result-object v1
 
     invoke-static {v0, p1, v1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;[B)Lcom/google/android/youtube/core/async/GDataRequest;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private g(Landroid/net/Uri;)Landroid/net/Uri;
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 1063
-    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri;I)Landroid/net/Uri;
 
     move-result-object v0
 
@@ -2355,12 +2591,12 @@
     .parameter
 
     .prologue
-    .line 832
+    .line 1065
     const-string v0, "editUri cannot be null"
 
-    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 833
+    .line 1066
     invoke-static {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
@@ -2374,17 +2610,17 @@
     .parameter
 
     .prologue
-    .line 1006
+    .line 1259
     const-string v0, "username can\'t be empty"
 
-    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 1007
+    .line 1260
     const-string v0, "userAuth can\'t be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1008
+    .line 1261
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -2407,28 +2643,18 @@
 
     move-result-object v0
 
-    .line 1013
+    .line 1266
     new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "<?xml version=\'1.0\' encoding=\'UTF-8\'?><entry xmlns=\'http://www.w3.org/2005/Atom\' xmlns:yt=\'http://gdata.youtube.com/schemas/2007\'><yt:username>"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    const-string v2, "</yt:username>"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "</entry>"
+    const-string v2, "</yt:username></entry>"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2438,8 +2664,8 @@
 
     move-result-object v1
 
-    .line 1019
-    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->g(Ljava/lang/String;)[B
+    .line 1272
+    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->h(Ljava/lang/String;)[B
 
     move-result-object v1
 
@@ -2456,13 +2682,38 @@
     .parameter
 
     .prologue
-    .line 865
+    .line 1085
     const-string v0, "editUri cannot be null"
 
-    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 866
+    .line 1086
     invoke-static {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private i(Landroid/net/Uri;)Landroid/net/Uri;
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 761
+    invoke-virtual {p1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    .line 762
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
+
+    .line 763
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
 
@@ -2475,12 +2726,46 @@
     .parameter
 
     .prologue
-    .line 989
+    .line 1118
+    const-string v0, "editUri cannot be null"
+
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1119
+    invoke-static {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private j(Landroid/net/Uri;)Landroid/net/Uri;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 1332
+    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
+
+    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri;I)Landroid/net/Uri;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static j(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 1242
     const-string v0, "subscription editUri may not be empty"
 
-    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 990
+    .line 1243
     invoke-static {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
@@ -2493,10 +2778,10 @@
     .parameter
 
     .prologue
-    .line 734
-    invoke-static {p0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;)Ljava/lang/String;
+    .line 942
+    invoke-static {p0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 735
+    .line 943
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -2525,7 +2810,7 @@
 
     move-result-object v0
 
-    .line 740
+    .line 948
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
@@ -2542,12 +2827,12 @@
     .parameter
 
     .prologue
-    .line 994
+    .line 1247
     const-string v0, "hint can\'t be empty"
 
-    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 995
+    .line 1248
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -2584,7 +2869,7 @@
 
     move-result-object v0
 
-    .line 1002
+    .line 1255
     invoke-static {v0}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
@@ -2597,7 +2882,7 @@
     .parameter
 
     .prologue
-    .line 242
+    .line 374
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -2626,7 +2911,7 @@
     .parameter
 
     .prologue
-    .line 313
+    .line 467
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -2657,13 +2942,13 @@
     .parameter
 
     .prologue
-    .line 286
+    .line 434
     const-string v0, "uri cannot be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 287
-    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g(Landroid/net/Uri;)Landroid/net/Uri;
+    .line 435
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->j(Landroid/net/Uri;)Landroid/net/Uri;
 
     move-result-object v0
 
@@ -2680,13 +2965,13 @@
     .parameter
 
     .prologue
-    .line 294
+    .line 442
     const-string v0, "uri cannot be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 295
-    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g(Landroid/net/Uri;)Landroid/net/Uri;
+    .line 443
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->j(Landroid/net/Uri;)Landroid/net/Uri;
 
     move-result-object v0
 
@@ -2702,7 +2987,7 @@
     .parameter
 
     .prologue
-    .line 384
+    .line 568
     invoke-virtual {p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory$LiveFeed;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -2717,44 +3002,17 @@
 .end method
 
 .method public final a(Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 11
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 715
-    iget v5, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move-object v4, p4
-
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;I)Lcom/google/android/youtube/core/async/GDataRequest;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final a(Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;I)Lcom/google/android/youtube/core/async/GDataRequest;
     .registers 10
     .parameter
     .parameter
     .parameter
     .parameter
-    .parameter
 
     .prologue
-    .line 691
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 923
+    iget v1, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
+
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2762,77 +3020,67 @@
 
     invoke-virtual {v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory$StandardFeed;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 692
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
     move-result-object v0
 
-    const-string v2, "standardfeeds"
+    const-string v3, "standardfeeds"
 
-    invoke-virtual {v0, v2}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v0, v3}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    move-result-object v2
+    move-result-object v3
 
-    .line 694
     invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-nez v0, :cond_4d
+    if-nez v0, :cond_4f
 
-    invoke-static {p3}, Lcom/google/android/youtube/core/utils/Util;->f(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p3}, Lcom/google/android/youtube/core/utils/Util;->g(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    sget-object v3, Lcom/google/android/youtube/core/async/GDataRequestFactory;->e:Ljava/util/Set;
+    sget-object v4, Lcom/google/android/youtube/core/async/GDataRequestFactory;->q:Ljava/util/Set;
 
-    invoke-interface {v3, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v4, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_4d
+    if-eqz v4, :cond_4f
 
-    .line 695
-    :goto_28
-    if-eqz v0, :cond_2d
+    :goto_2a
+    if-eqz v0, :cond_2f
 
-    .line 696
-    invoke-virtual {v2, v0}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v3, v0}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 698
-    :cond_2d
+    :cond_2f
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_51
 
-    .line 699
-    invoke-virtual {v2, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v3, v2}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 703
-    :goto_36
-    if-eqz p4, :cond_41
+    :goto_38
+    if-eqz p4, :cond_43
 
-    .line 704
     const-string v0, "time"
 
     invoke-virtual {p4}, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v2, v0, v1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v3, v0, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 706
-    :cond_41
-    invoke-direct {p0, v2, p5}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;I)V
+    :cond_43
+    invoke-direct {p0, v3, v1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;I)V
 
-    .line 707
-    invoke-virtual {v2}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+    invoke-virtual {v3}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
 
@@ -2842,25 +3090,23 @@
 
     return-object v0
 
-    .line 694
-    :cond_4d
+    :cond_4f
     const/4 v0, 0x0
 
-    goto :goto_28
+    goto :goto_2a
 
-    .line 701
-    :cond_4f
+    :cond_51
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "_"
+    const-string v2, "_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -2872,24 +3118,9 @@
 
     move-result-object v0
 
-    invoke-virtual {v2, v0}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v3, v0}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    goto :goto_36
-.end method
-
-.method public final a(Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 396
-    const-string v0, "upcoming"
-
-    invoke-direct {p0, v0, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Ljava/lang/String;Lcom/google/android/youtube/core/async/GDataRequestFactory$UpcomingTimeFilter;)Lcom/google/android/youtube/core/async/GDataRequest;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_38
 .end method
 
 .method public final a(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
@@ -2897,10 +3128,22 @@
     .parameter
 
     .prologue
-    .line 279
-    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
+    .line 414
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->r:Landroid/net/Uri;
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->e(Lcom/google/android/youtube/core/model/UserAuth;I)Lcom/google/android/youtube/core/async/GDataRequest;
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    .line 415
+    invoke-direct {p0, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b(Landroid/net/Uri$Builder;)V
+
+    .line 416
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
 
@@ -2908,20 +3151,98 @@
 .end method
 
 .method public final a(Lcom/google/android/youtube/core/model/UserAuth;I)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 4
+    .registers 5
     .parameter
     .parameter
 
     .prologue
-    .line 426
+    .line 545
     const-string v0, "userAuth cannot be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 427
-    const-string v0, "default"
+    .line 546
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->f:Landroid/net/Uri;
 
-    invoke-direct {p0, v0, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b(Ljava/lang/String;I)Landroid/net/Uri;
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    .line 547
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
+
+    .line 548
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final a(Lcom/google/android/youtube/core/model/UserAuth;Ljava/lang/String;)Lcom/google/android/youtube/core/async/GDataRequest;
+    .registers 7
+    .parameter
+    .parameter
+
+    .prologue
+    .line 839
+    const-string v0, "userAuth cannot be null"
+
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 840
+    const-string v0, "userId cannot be empty"
+
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    .line 841
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->h:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "fields"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "entry[yt:username=\'"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "\']"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    .line 846
+    const/4 v1, 0x1
+
+    const/16 v2, 0x32
+
+    invoke-static {v0, v1, v2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
+
+    .line 847
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
 
@@ -2937,10 +3258,10 @@
     .parameter
 
     .prologue
-    .line 230
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;)Ljava/lang/String;
+    .line 362
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 232
+    .line 364
     invoke-static {p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->l(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
@@ -2953,18 +3274,59 @@
 .end method
 
 .method public final a(Ljava/lang/String;I)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 4
+    .registers 5
     .parameter
     .parameter
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 538
+    .line 719
     const-string v0, "username cannot be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 539
-    invoke-direct {p0, p1, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->d(Ljava/lang/String;I)Landroid/net/Uri;
+    .line 720
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "users"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "playlists"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    .line 724
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    const-string v1, "uri cannot be null"
+
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
 
@@ -2981,12 +3343,12 @@
     .parameter
 
     .prologue
-    .line 260
+    .line 378
     const-string v0, "query cannot be empty"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 261
+    .line 379
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -3005,10 +3367,10 @@
 
     move-result-object v0
 
-    .line 264
+    .line 382
     if-eqz p2, :cond_22
 
-    .line 265
+    .line 383
     const-string v1, "time"
 
     invoke-virtual {p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory$TimeFilter;->toString()Ljava/lang/String;
@@ -3017,11 +3379,11 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 267
+    .line 385
     :cond_22
     invoke-direct {p0, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;)V
 
-    .line 268
+    .line 386
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
@@ -3039,10 +3401,10 @@
     .parameter
 
     .prologue
-    .line 236
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;)Ljava/lang/String;
+    .line 368
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 238
+    .line 370
     invoke-static {p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->l(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
@@ -3061,16 +3423,16 @@
     .parameter
 
     .prologue
-    .line 838
+    .line 1091
     const-string v0, ""
 
     const-string v1, "title cannot be null"
 
-    invoke-static {p1, v1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v1, "description cannot be null"
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v1, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
@@ -3102,13 +3464,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "<?xml version=\'1.0\' encoding=\'UTF-8\'?><entry xmlns=\'http://www.w3.org/2005/Atom\' xmlns:yt=\'http://gdata.youtube.com/schemas/2007\'><title type=\'text\'>"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const/16 v3, 0x3c
 
@@ -3122,13 +3480,7 @@
 
     move-result-object v2
 
-    const-string v3, "</title>"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "<summary>"
+    const-string v3, "</title><summary>"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3152,11 +3504,11 @@
 
     move-result-object v2
 
-    if-eqz p2, :cond_78
+    if-eqz p2, :cond_6e
 
     const-string v0, "<yt:private/>"
 
-    :goto_61
+    :goto_57
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -3171,7 +3523,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->g(Ljava/lang/String;)[B
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->h(Ljava/lang/String;)[B
 
     move-result-object v0
 
@@ -3181,17 +3533,17 @@
 
     return-object v0
 
-    :cond_78
+    :cond_6e
     const-string v0, ""
 
-    goto :goto_61
+    goto :goto_57
 .end method
 
 .method public final b()Lcom/google/android/youtube/core/async/GDataRequest;
     .registers 3
 
     .prologue
-    .line 388
+    .line 572
     const-string v0, "featured"
 
     const/4 v1, 0x0
@@ -3208,8 +3560,8 @@
     .parameter
 
     .prologue
-    .line 299
-    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g(Landroid/net/Uri;)Landroid/net/Uri;
+    .line 447
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->j(Landroid/net/Uri;)Landroid/net/Uri;
 
     move-result-object v0
 
@@ -3226,8 +3578,8 @@
     .parameter
 
     .prologue
-    .line 572
-    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->f(Landroid/net/Uri;)Landroid/net/Uri;
+    .line 757
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->i(Landroid/net/Uri;)Landroid/net/Uri;
 
     move-result-object v0
 
@@ -3239,19 +3591,26 @@
 .end method
 
 .method public final b(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 3
+    .registers 4
     .parameter
 
     .prologue
-    .line 308
-    const-string v0, "userAuth cannot be null"
+    .line 427
+    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v1, "userAuth cannot be null"
 
-    .line 309
-    const-string v0, "default"
+    invoke-static {p1, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->m(Ljava/lang/String;)Landroid/net/Uri;
+    sget-object v1, Lcom/google/android/youtube/core/async/GDataRequestFactory;->o:Landroid/net/Uri;
+
+    invoke-virtual {v1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;I)V
+
+    invoke-virtual {v1}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
 
@@ -3263,20 +3622,30 @@
 .end method
 
 .method public final b(Lcom/google/android/youtube/core/model/UserAuth;I)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 4
+    .registers 5
     .parameter
     .parameter
 
     .prologue
-    .line 453
+    .line 627
     const-string v0, "userAuth cannot be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 454
-    const-string v0, "default"
+    .line 628
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:Landroid/net/Uri;
 
-    invoke-direct {p0, v0, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->c(Ljava/lang/String;I)Landroid/net/Uri;
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    .line 629
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
+
+    .line 630
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
 
@@ -3288,32 +3657,53 @@
 .end method
 
 .method public final b(Ljava/lang/String;)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 3
+    .registers 5
     .parameter
 
     .prologue
-    .line 246
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;)Ljava/lang/String;
+    .line 403
+    const-string v0, "query cannot be empty"
 
-    .line 249
-    invoke-virtual {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Ljava/lang/String;)Lcom/google/android/youtube/core/async/GDataRequest;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    .line 404
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    const-string v1, "channels"
 
-.method public final b(Ljava/lang/String;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 4
-    .parameter
-    .parameter
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .prologue
-    .line 253
-    invoke-static {p2}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v0
 
-    .line 256
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Ljava/lang/String;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+    const-string v1, "q"
+
+    invoke-virtual {v0, v1, p1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    .line 407
+    const/4 v1, 0x1
+
+    iget v2, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
+
+    invoke-static {v0, v1, v2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
+
+    .line 408
+    invoke-direct {p0, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->c(Landroid/net/Uri$Builder;)V
+
+    .line 409
+    invoke-direct {p0, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->d(Landroid/net/Uri$Builder;)V
+
+    .line 410
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
 
@@ -3324,7 +3714,7 @@
     .registers 3
 
     .prologue
-    .line 392
+    .line 576
     const-string v0, "live_now"
 
     const/4 v1, 0x0
@@ -3342,12 +3732,12 @@
     .parameter
 
     .prologue
-    .line 636
-    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
+    .line 821
+    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
 
     const-string v1, "playlistUri cannot be null"
 
-    invoke-static {p1, v1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri;I)Landroid/net/Uri;
 
@@ -3365,10 +3755,19 @@
     .parameter
 
     .prologue
-    .line 431
-    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
+    .line 462
+    const-string v0, "userAuth cannot be null"
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Lcom/google/android/youtube/core/model/UserAuth;I)Lcom/google/android/youtube/core/async/GDataRequest;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 463
+    const-string v0, "default"
+
+    invoke-static {v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->m(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
 
@@ -3376,45 +3775,29 @@
 .end method
 
 .method public final c(Lcom/google/android/youtube/core/model/UserAuth;I)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 6
+    .registers 5
     .parameter
     .parameter
 
     .prologue
-    .line 475
+    .line 638
     const-string v0, "userAuth cannot be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 476
-    const-string v0, "default"
+    .line 639
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->l:Landroid/net/Uri;
 
-    sget-object v1, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
-
-    invoke-virtual {v1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
-
-    move-result-object v1
-
-    const-string v2, "users"
-
-    invoke-virtual {v1, v2}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
     move-result-object v0
 
-    const-string v1, "watch_later"
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
+    .line 640
     const/4 v1, 0x1
 
     invoke-static {v0, v1, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
 
+    .line 641
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
@@ -3429,14 +3812,16 @@
 .method public final c(Ljava/lang/String;)Lcom/google/android/youtube/core/async/GDataRequest;
     .registers 3
     .parameter
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 303
+    .line 452
     const-string v0, "username cannot be empty"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 304
+    .line 453
     invoke-static {p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->m(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
@@ -3452,7 +3837,7 @@
     .registers 3
 
     .prologue
-    .line 400
+    .line 584
     const-string v0, "recently_broadcasted"
 
     const/4 v1, 0x0
@@ -3465,12 +3850,29 @@
 .end method
 
 .method public final d(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 3
+    .registers 5
     .parameter
 
     .prologue
-    .line 565
-    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->f(Landroid/net/Uri;)Landroid/net/Uri;
+    .line 531
+    const-string v0, "uri cannot be null"
+
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 532
+    invoke-virtual {p1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    .line 533
+    iget v1, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v2, v1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
+
+    .line 534
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
 
@@ -3486,10 +3888,10 @@
     .parameter
 
     .prologue
-    .line 458
-    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
+    .line 552
+    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b(Lcom/google/android/youtube/core/model/UserAuth;I)Lcom/google/android/youtube/core/async/GDataRequest;
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Lcom/google/android/youtube/core/model/UserAuth;I)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
 
@@ -3497,20 +3899,30 @@
 .end method
 
 .method public final d(Lcom/google/android/youtube/core/model/UserAuth;I)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 4
+    .registers 5
     .parameter
     .parameter
 
     .prologue
-    .line 547
+    .line 649
     const-string v0, "userAuth cannot be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 548
-    const-string v0, "default"
+    .line 650
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->m:Landroid/net/Uri;
 
-    invoke-direct {p0, v0, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->d(Ljava/lang/String;I)Landroid/net/Uri;
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    .line 651
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
+
+    .line 652
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
 
@@ -3522,79 +3934,18 @@
 .end method
 
 .method public final d(Ljava/lang/String;)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 367
-    const-string v0, "username cannot be empty"
-
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 368
-    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b(Ljava/lang/String;I)Landroid/net/Uri;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final e(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
     .registers 4
     .parameter
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 619
-    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
+    .line 522
+    const-string v0, "username cannot be empty"
 
-    const-string v1, "playlistUri cannot be null"
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-static {p1, v1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri;I)Landroid/net/Uri;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final e(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 480
-    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
-
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->c(Lcom/google/android/youtube/core/model/UserAuth;I)Lcom/google/android/youtube/core/async/GDataRequest;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final e(Lcom/google/android/youtube/core/model/UserAuth;I)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 5
-    .parameter
-    .parameter
-
-    .prologue
-    .line 658
-    const-string v0, "userAuth cannot be null"
-
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 659
+    .line 523
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -3607,22 +3958,67 @@
 
     move-result-object v0
 
-    const-string v1, "default"
+    invoke-virtual {v0, p1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "uploads"
 
     invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v0
 
-    const-string v1, "newsubscriptionvideos"
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    .line 527
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 663
-    invoke-direct {p0, v0, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;I)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->d(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
 
-    .line 664
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final e(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 634
+    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
+
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b(Lcom/google/android/youtube/core/model/UserAuth;I)Lcom/google/android/youtube/core/async/GDataRequest;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final e(Lcom/google/android/youtube/core/model/UserAuth;I)Lcom/google/android/youtube/core/async/GDataRequest;
+    .registers 5
+    .parameter
+    .parameter
+
+    .prologue
+    .line 739
+    const-string v0, "userAuth cannot be null"
+
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 740
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->n:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    .line 741
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1, p2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
+
+    .line 742
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
@@ -3635,19 +4031,98 @@
 .end method
 
 .method public final e(Ljava/lang/String;)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 3
+    .registers 5
+    .parameter
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    .line 611
+    const-string v0, "username cannot be empty"
+
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    .line 612
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "users"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "favorites"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    .line 616
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    const-string v1, "uri cannot be empty"
+
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v2, v1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final f(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
+    .registers 5
     .parameter
 
     .prologue
-    .line 448
-    const-string v0, "username cannot be empty"
+    .line 684
+    const-string v0, "uri cannot be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 449
-    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
+    .line 685
+    invoke-virtual {p1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->c(Ljava/lang/String;I)Landroid/net/Uri;
+    move-result-object v0
+
+    const-string v1, "inline"
+
+    const-string v2, "true"
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    .line 687
+    invoke-direct {p0, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b(Landroid/net/Uri$Builder;)V
+
+    .line 688
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
 
@@ -3659,58 +4134,14 @@
 .end method
 
 .method public final f(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 6
+    .registers 3
     .parameter
 
     .prologue
-    .line 504
-    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
+    .line 645
+    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
 
-    const-string v1, "userAuth cannot be null"
-
-    invoke-static {p1, v1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v1, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
-
-    invoke-virtual {v1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
-
-    move-result-object v1
-
-    const-string v2, "users"
-
-    invoke-virtual {v1, v2}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v1
-
-    const-string v2, "default"
-
-    invoke-virtual {v1, v2}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v1
-
-    const-string v2, "watch_history"
-
-    invoke-virtual {v1, v2}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v1
-
-    const-string v2, "inline"
-
-    const-string v3, "true"
-
-    invoke-virtual {v1, v2, v3}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    invoke-static {v1, v2, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
-
-    invoke-virtual {v1}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->c(Lcom/google/android/youtube/core/model/UserAuth;I)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
 
@@ -3718,16 +4149,18 @@
 .end method
 
 .method public final f(Ljava/lang/String;)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 4
+    .registers 5
     .parameter
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 508
+    .line 661
     const-string v0, "Username cannot be empty"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 509
+    .line 662
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -3746,11 +4179,47 @@
 
     move-result-object v0
 
-    .line 512
+    const-string v1, "inline"
+
+    const-string v2, "true"
+
+    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    .line 666
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    const-string v1, "uri cannot be null"
+
+    invoke-static {v0, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
     invoke-direct {p0, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b(Landroid/net/Uri$Builder;)V
 
-    .line 513
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final g(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 750
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->i(Landroid/net/Uri;)Landroid/net/Uri;
 
     move-result-object v0
 
@@ -3766,8 +4235,8 @@
     .parameter
 
     .prologue
-    .line 543
-    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
+    .line 656
+    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
 
     invoke-virtual {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->d(Lcom/google/android/youtube/core/model/UserAuth;I)Lcom/google/android/youtube/core/async/GDataRequest;
 
@@ -3779,10 +4248,12 @@
 .method public final g(Ljava/lang/String;)Lcom/google/android/youtube/core/async/GDataRequest;
     .registers 3
     .parameter
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 534
-    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
+    .line 710
+    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
 
     invoke-virtual {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Ljava/lang/String;I)Lcom/google/android/youtube/core/async/GDataRequest;
 
@@ -3791,50 +4262,38 @@
     return-object v0
 .end method
 
-.method public final h(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+.method public final h(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
     .registers 4
     .parameter
 
     .prologue
-    .line 648
-    const-string v0, "userAuth cannot be null"
+    .line 804
+    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v1, "playlistUri cannot be null"
 
-    .line 649
-    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
+    invoke-static {p1, v1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    const-string v1, "users"
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri;I)Landroid/net/Uri;
 
     move-result-object v0
 
-    const-string v1, "default"
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-static {v0}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
 
-    const-string v1, "subscriptions"
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+.method public final h(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+    .registers 3
+    .parameter
 
-    move-result-object v0
+    .prologue
+    .line 735
+    iget v0, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
 
-    .line 653
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b(Landroid/net/Uri$Builder;)V
-
-    .line 654
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->e(Lcom/google/android/youtube/core/model/UserAuth;I)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
 
@@ -3846,12 +4305,12 @@
     .parameter
 
     .prologue
-    .line 588
+    .line 773
     const-string v0, "playlistId cannot be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 589
+    .line 774
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -3868,14 +4327,14 @@
 
     move-result-object v0
 
-    .line 592
+    .line 777
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
     invoke-static {v0, v1, v2}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;II)V
 
-    .line 593
+    .line 778
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
@@ -3888,45 +4347,19 @@
 .end method
 
 .method public final i(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
-    .registers 4
+    .registers 3
     .parameter
 
     .prologue
-    .line 672
+    .line 833
     const-string v0, "userAuth cannot be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 673
-    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
+    .line 834
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->h:Landroid/net/Uri;
 
-    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    const-string v1, "users"
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    const-string v1, "default"
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    const-string v1, "recommendations"
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    .line 677
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;)V
-
-    .line 678
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+    invoke-direct {p0, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->j(Landroid/net/Uri;)Landroid/net/Uri;
 
     move-result-object v0
 
@@ -3942,12 +4375,12 @@
     .parameter
 
     .prologue
-    .line 603
+    .line 788
     const-string v0, "playlistId cannot be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 604
+    .line 789
     sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -3964,7 +4397,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->g:I
+    iget v1, p0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->t:I
 
     const/4 v2, 0x1
 
@@ -3975,6 +4408,70 @@
     move-result-object v0
 
     invoke-static {v0}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;)Lcom/google/android/youtube/core/async/GDataRequest;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final j(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 869
+    const-string v0, "userAuth cannot be null"
+
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 870
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->j:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    .line 871
+    invoke-direct {p0, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;)V
+
+    .line 872
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final k(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 883
+    const-string v0, "userAuth cannot be null"
+
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 884
+    sget-object v0, Lcom/google/android/youtube/core/async/GDataRequestFactory;->p:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    .line 885
+    invoke-direct {p0, v0}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Landroid/net/Uri$Builder;)V
+
+    .line 886
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lcom/google/android/youtube/core/async/GDataRequest;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v0
 

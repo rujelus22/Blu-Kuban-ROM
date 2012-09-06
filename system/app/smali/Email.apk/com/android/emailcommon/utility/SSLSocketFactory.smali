@@ -31,28 +31,28 @@
     .registers 1
 
     .prologue
-    .line 172
+    .line 151
     new-instance v0, Lorg/apache/http/conn/ssl/AllowAllHostnameVerifier;
 
     invoke-direct {v0}, Lorg/apache/http/conn/ssl/AllowAllHostnameVerifier;-><init>()V
 
     sput-object v0, Lcom/android/emailcommon/utility/SSLSocketFactory;->ALLOW_ALL_HOSTNAME_VERIFIER:Lorg/apache/http/conn/ssl/X509HostnameVerifier;
 
-    .line 174
+    .line 154
     new-instance v0, Lorg/apache/http/conn/ssl/BrowserCompatHostnameVerifier;
 
     invoke-direct {v0}, Lorg/apache/http/conn/ssl/BrowserCompatHostnameVerifier;-><init>()V
 
     sput-object v0, Lcom/android/emailcommon/utility/SSLSocketFactory;->BROWSER_COMPATIBLE_HOSTNAME_VERIFIER:Lorg/apache/http/conn/ssl/X509HostnameVerifier;
 
-    .line 176
+    .line 157
     new-instance v0, Lorg/apache/http/conn/ssl/StrictHostnameVerifier;
 
     invoke-direct {v0}, Lorg/apache/http/conn/ssl/StrictHostnameVerifier;-><init>()V
 
     sput-object v0, Lcom/android/emailcommon/utility/SSLSocketFactory;->STRICT_HOSTNAME_VERIFIER:Lorg/apache/http/conn/ssl/X509HostnameVerifier;
 
-    .line 181
+    .line 162
     new-instance v0, Lcom/android/emailcommon/utility/SSLSocketFactory;
 
     invoke-direct {v0}, Lcom/android/emailcommon/utility/SSLSocketFactory;-><init>()V
@@ -68,39 +68,29 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 256
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 242
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 198
+    .line 175
     sget-object v0, Lcom/android/emailcommon/utility/SSLSocketFactory;->BROWSER_COMPATIBLE_HOSTNAME_VERIFIER:Lorg/apache/http/conn/ssl/X509HostnameVerifier;
 
     iput-object v0, p0, Lcom/android/emailcommon/utility/SSLSocketFactory;->hostnameVerifier:Lorg/apache/http/conn/ssl/X509HostnameVerifier;
 
-    .line 257
+    .line 243
     iput-object v1, p0, Lcom/android/emailcommon/utility/SSLSocketFactory;->sslcontext:Ljavax/net/ssl/SSLContext;
 
-    .line 258
+    .line 244
     invoke-static {}, Ljavax/net/ssl/HttpsURLConnection;->getDefaultSSLSocketFactory()Ljavax/net/ssl/SSLSocketFactory;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/emailcommon/utility/SSLSocketFactory;->socketfactory:Ljavax/net/ssl/SSLSocketFactory;
 
-    .line 259
+    .line 245
     iput-object v1, p0, Lcom/android/emailcommon/utility/SSLSocketFactory;->nameResolver:Lorg/apache/http/conn/scheme/HostNameResolver;
 
-    .line 260
+    .line 246
     return-void
-.end method
-
-.method public static getSocketFactory()Lcom/android/emailcommon/utility/SSLSocketFactory;
-    .registers 1
-
-    .prologue
-    .line 189
-    sget-object v0, Lcom/android/emailcommon/utility/SSLSocketFactory;->DEFAULT_FACTORY:Lcom/android/emailcommon/utility/SSLSocketFactory;
-
-    return-object v0
 .end method
 
 
@@ -120,10 +110,10 @@
     .end annotation
 
     .prologue
-    .line 296
+    .line 290
     if-nez p2, :cond_a
 
-    .line 297
+    .line 291
     new-instance v6, Ljava/lang/IllegalArgumentException;
 
     const-string v7, "Target host may not be null."
@@ -132,11 +122,11 @@
 
     throw v6
 
-    .line 299
+    .line 293
     :cond_a
     if-nez p6, :cond_14
 
-    .line 300
+    .line 294
     new-instance v6, Ljava/lang/IllegalArgumentException;
 
     const-string v7, "Parameters may not be null."
@@ -145,7 +135,7 @@
 
     throw v6
 
-    .line 303
+    .line 297
     :cond_14
     if-eqz p1, :cond_4b
 
@@ -154,49 +144,49 @@
     :goto_17
     check-cast v5, Ljavax/net/ssl/SSLSocket;
 
-    .line 305
+    .line 300
     .local v5, sslsock:Ljavax/net/ssl/SSLSocket;
     if-nez p4, :cond_1d
 
     if-lez p5, :cond_28
 
-    .line 308
+    .line 303
     :cond_1d
     if-gez p5, :cond_20
 
-    .line 309
+    .line 304
     const/4 p5, 0x0
 
-    .line 311
+    .line 306
     :cond_20
     new-instance v2, Ljava/net/InetSocketAddress;
 
     invoke-direct {v2, p4, p5}, Ljava/net/InetSocketAddress;-><init>(Ljava/net/InetAddress;I)V
 
-    .line 312
+    .line 308
     .local v2, isa:Ljava/net/InetSocketAddress;
     invoke-virtual {v5, v2}, Ljavax/net/ssl/SSLSocket;->bind(Ljava/net/SocketAddress;)V
 
-    .line 315
+    .line 311
     .end local v2           #isa:Ljava/net/InetSocketAddress;
     :cond_28
     invoke-static {p6}, Lorg/apache/http/params/HttpConnectionParams;->getConnectionTimeout(Lorg/apache/http/params/HttpParams;)I
 
     move-result v0
 
-    .line 316
+    .line 312
     .local v0, connTimeout:I
     invoke-static {p6}, Lorg/apache/http/params/HttpConnectionParams;->getSoTimeout(Lorg/apache/http/params/HttpParams;)I
 
     move-result v4
 
-    .line 319
+    .line 315
     .local v4, soTimeout:I
     iget-object v6, p0, Lcom/android/emailcommon/utility/SSLSocketFactory;->nameResolver:Lorg/apache/http/conn/scheme/HostNameResolver;
 
     if-eqz v6, :cond_50
 
-    .line 320
+    .line 316
     new-instance v3, Ljava/net/InetSocketAddress;
 
     iget-object v6, p0, Lcom/android/emailcommon/utility/SSLSocketFactory;->nameResolver:Lorg/apache/http/conn/scheme/HostNameResolver;
@@ -207,15 +197,15 @@
 
     invoke-direct {v3, v6, p3}, Ljava/net/InetSocketAddress;-><init>(Ljava/net/InetAddress;I)V
 
-    .line 325
+    .line 321
     .local v3, remoteAddress:Ljava/net/InetSocketAddress;
     :goto_3f
     invoke-virtual {v5, v3, v0}, Ljavax/net/ssl/SSLSocket;->connect(Ljava/net/SocketAddress;I)V
 
-    .line 327
+    .line 323
     invoke-virtual {v5, v4}, Ljavax/net/ssl/SSLSocket;->setSoTimeout(I)V
 
-    .line 329
+    .line 325
     :try_start_45
     iget-object v6, p0, Lcom/android/emailcommon/utility/SSLSocketFactory;->hostnameVerifier:Lorg/apache/http/conn/ssl/X509HostnameVerifier;
 
@@ -223,10 +213,10 @@
     :try_end_4a
     .catch Ljava/io/IOException; {:try_start_45 .. :try_end_4a} :catch_56
 
-    .line 340
+    .line 333
     return-object v5
 
-    .line 303
+    .line 297
     .end local v0           #connTimeout:I
     .end local v3           #remoteAddress:Ljava/net/InetSocketAddress;
     .end local v4           #soTimeout:I
@@ -238,7 +228,7 @@
 
     goto :goto_17
 
-    .line 322
+    .line 318
     .restart local v0       #connTimeout:I
     .restart local v4       #soTimeout:I
     .restart local v5       #sslsock:Ljavax/net/ssl/SSLSocket;
@@ -250,22 +240,22 @@
     .restart local v3       #remoteAddress:Ljava/net/InetSocketAddress;
     goto :goto_3f
 
-    .line 331
+    .line 327
     :catch_56
     move-exception v1
 
-    .line 334
+    .line 329
     .local v1, iox:Ljava/io/IOException;
     :try_start_57
     invoke-virtual {v5}, Ljavax/net/ssl/SSLSocket;->close()V
     :try_end_5a
     .catch Ljava/lang/Exception; {:try_start_57 .. :try_end_5a} :catch_5b
 
-    .line 337
+    .line 330
     :goto_5a
     throw v1
 
-    .line 335
+    .line 329
     :catch_5b
     move-exception v6
 
@@ -281,20 +271,18 @@
     .end annotation
 
     .prologue
-    .line 288
+    .line 276
     iget-object v0, p0, Lcom/android/emailcommon/utility/SSLSocketFactory;->socketfactory:Ljavax/net/ssl/SSLSocketFactory;
 
     invoke-virtual {v0}, Ljavax/net/ssl/SSLSocketFactory;->createSocket()Ljava/net/Socket;
 
     move-result-object v0
 
-    check-cast v0, Ljavax/net/ssl/SSLSocket;
-
     return-object v0
 .end method
 
 .method public createSocket(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;
-    .registers 8
+    .registers 7
     .parameter "socket"
     .parameter "host"
     .parameter "port"
@@ -307,47 +295,23 @@
     .end annotation
 
     .prologue
-    .line 374
-    iget-object v2, p0, Lcom/android/emailcommon/utility/SSLSocketFactory;->socketfactory:Ljavax/net/ssl/SSLSocketFactory;
-
-    invoke-virtual {v2, p1, p2, p3, p4}, Ljavax/net/ssl/SSLSocketFactory;->createSocket(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;
-
-    move-result-object v1
-
-    check-cast v1, Ljavax/net/ssl/SSLSocket;
-
-    .line 377
-    .local v1, sslSocket:Ljavax/net/ssl/SSLSocket;
-    :try_start_8
-    iget-object v2, p0, Lcom/android/emailcommon/utility/SSLSocketFactory;->hostnameVerifier:Lorg/apache/http/conn/ssl/X509HostnameVerifier;
-
-    invoke-interface {v2, p2, v1}, Lorg/apache/http/conn/ssl/X509HostnameVerifier;->verify(Ljava/lang/String;Ljavax/net/ssl/SSLSocket;)V
-    :try_end_d
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_d} :catch_e
-
-    .line 389
-    return-object v1
-
     .line 379
-    :catch_e
-    move-exception v0
+    iget-object v1, p0, Lcom/android/emailcommon/utility/SSLSocketFactory;->socketfactory:Ljavax/net/ssl/SSLSocketFactory;
 
-    .line 382
-    .local v0, iox:Ljava/io/IOException;
-    :try_start_f
-    invoke-virtual {v1}, Ljavax/net/ssl/SSLSocket;->close()V
-    :try_end_12
-    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_12} :catch_13
+    invoke-virtual {v1, p1, p2, p3, p4}, Ljavax/net/ssl/SSLSocketFactory;->createSocket(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;
+
+    move-result-object v0
+
+    check-cast v0, Ljavax/net/ssl/SSLSocket;
 
     .line 385
-    :goto_12
-    throw v0
+    .local v0, sslSocket:Ljavax/net/ssl/SSLSocket;
+    iget-object v1, p0, Lcom/android/emailcommon/utility/SSLSocketFactory;->hostnameVerifier:Lorg/apache/http/conn/ssl/X509HostnameVerifier;
 
-    .line 383
-    :catch_13
-    move-exception v2
+    invoke-interface {v1, p2, v0}, Lorg/apache/http/conn/ssl/X509HostnameVerifier;->verify(Ljava/lang/String;Ljavax/net/ssl/SSLSocket;)V
 
-    goto :goto_12
+    .line 387
+    return-object v0
 .end method
 
 .method public isSecure(Ljava/net/Socket;)Z
@@ -360,10 +324,10 @@
     .end annotation
 
     .prologue
-    .line 355
+    .line 354
     if-nez p1, :cond_a
 
-    .line 356
+    .line 355
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Socket may not be null."
@@ -372,13 +336,13 @@
 
     throw v0
 
-    .line 359
+    .line 358
     :cond_a
     instance-of v0, p1, Ljavax/net/ssl/SSLSocket;
 
     if-nez v0, :cond_16
 
-    .line 360
+    .line 359
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Socket not created by this factory."

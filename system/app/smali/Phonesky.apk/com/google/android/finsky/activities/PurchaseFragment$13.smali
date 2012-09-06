@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
-.field final synthetic val$data:Landroid/content/Intent;
-
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/activities/PurchaseFragment;Landroid/content/Intent;)V
-    .registers 3
-    .parameter
+.method constructor <init>(Lcom/google/android/finsky/activities/PurchaseFragment;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 1055
+    .line 1333
     iput-object p1, p0, Lcom/google/android/finsky/activities/PurchaseFragment$13;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
-
-    iput-object p2, p0, Lcom/google/android/finsky/activities/PurchaseFragment$13;->val$data:Landroid/content/Intent;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,14 +41,23 @@
     .registers 3
 
     .prologue
-    .line 1058
+    .line 1336
     iget-object v0, p0, Lcom/google/android/finsky/activities/PurchaseFragment$13;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
-    iget-object v1, p0, Lcom/google/android/finsky/activities/PurchaseFragment$13;->val$data:Landroid/content/Intent;
+    iget-object v1, p0, Lcom/google/android/finsky/activities/PurchaseFragment$13;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
-    #calls: Lcom/google/android/finsky/activities/PurchaseFragment;->onUpdateAddressResult(Landroid/content/Intent;)V
-    invoke-static {v0, v1}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$2300(Lcom/google/android/finsky/activities/PurchaseFragment;Landroid/content/Intent;)V
+    #getter for: Lcom/google/android/finsky/activities/PurchaseFragment;->mCheckoutPurchase:Lcom/google/android/finsky/billing/CheckoutPurchase;
+    invoke-static {v1}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$600(Lcom/google/android/finsky/activities/PurchaseFragment;)Lcom/google/android/finsky/billing/CheckoutPurchase;
 
-    .line 1059
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/billing/CheckoutPurchase;->getError()Lcom/google/android/finsky/billing/CheckoutPurchase$Error;
+
+    move-result-object v1
+
+    #calls: Lcom/google/android/finsky/activities/PurchaseFragment;->finishWithError(Lcom/google/android/finsky/billing/CheckoutPurchase$Error;)V
+    invoke-static {v0, v1}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$1700(Lcom/google/android/finsky/activities/PurchaseFragment;Lcom/google/android/finsky/billing/CheckoutPurchase$Error;)V
+
+    .line 1337
     return-void
 .end method

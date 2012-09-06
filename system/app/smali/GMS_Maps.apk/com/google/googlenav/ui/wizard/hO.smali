@@ -1,35 +1,16 @@
-.class Lcom/google/googlenav/ui/wizard/hO;
+.class public Lcom/google/googlenav/ui/wizard/ho;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lat/d;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/hM;
+.source "SourceFile"
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/hM;)V
-    .registers 2
+.method private constructor <init>()V
+    .registers 1
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/hO;->a:Lcom/google/googlenav/ui/wizard/hM;
-
+    .prologue
+    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public X()V
-    .registers 2
-
-    invoke-static {}, Lcom/google/googlenav/login/g;->j()Lcom/google/googlenav/login/g;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/login/g;->p()V
-
+    .line 47
     return-void
 .end method

@@ -52,37 +52,37 @@
     .registers 2
 
     .prologue
-    .line 2933
+    .line 3254
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 3059
+    .line 3385
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->offerType_:I
 
-    .line 3076
+    .line 3402
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->offerAbbreviation_:Ljava/lang/String;
 
-    .line 3093
+    .line 3419
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->rentalHeader_:Ljava/lang/String;
 
-    .line 3109
+    .line 3435
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->term_:Ljava/util/List;
 
-    .line 3169
+    .line 3496
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->cachedSize:I
 
-    .line 2933
+    .line 3254
     return-void
 .end method
 
@@ -93,17 +93,17 @@
     .parameter "value"
 
     .prologue
-    .line 3126
+    .line 3452
     if-nez p1, :cond_8
 
-    .line 3127
+    .line 3453
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 3129
+    .line 3455
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->term_:Ljava/util/List;
 
@@ -113,20 +113,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 3130
+    .line 3456
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->term_:Ljava/util/List;
 
-    .line 3132
+    .line 3458
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->term_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 3133
+    .line 3459
     return-object p0
 .end method
 
@@ -134,15 +134,15 @@
     .registers 2
 
     .prologue
-    .line 3171
+    .line 3499
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 3173
+    .line 3501
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->getSerializedSize()I
 
-    .line 3175
+    .line 3503
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->cachedSize:I
 
@@ -153,7 +153,7 @@
     .registers 2
 
     .prologue
-    .line 3077
+    .line 3403
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->offerAbbreviation_:Ljava/lang/String;
 
     return-object v0
@@ -163,7 +163,7 @@
     .registers 2
 
     .prologue
-    .line 3061
+    .line 3387
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->offerType_:I
 
     return v0
@@ -173,7 +173,7 @@
     .registers 2
 
     .prologue
-    .line 3094
+    .line 3420
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->rentalHeader_:Ljava/lang/String;
 
     return-object v0
@@ -183,10 +183,10 @@
     .registers 6
 
     .prologue
-    .line 3179
+    .line 3508
     const/4 v2, 0x0
 
-    .line 3180
+    .line 3509
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->hasOfferType()Z
 
@@ -194,7 +194,7 @@
 
     if-eqz v3, :cond_11
 
-    .line 3181
+    .line 3510
     const/4 v3, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->getOfferType()I
@@ -207,7 +207,7 @@
 
     add-int/2addr v2, v3
 
-    .line 3184
+    .line 3513
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->hasOfferAbbreviation()Z
 
@@ -215,7 +215,7 @@
 
     if-eqz v3, :cond_21
 
-    .line 3185
+    .line 3514
     const/4 v3, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->getOfferAbbreviation()Ljava/lang/String;
@@ -228,7 +228,7 @@
 
     add-int/2addr v2, v3
 
-    .line 3188
+    .line 3517
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->hasRentalHeader()Z
 
@@ -236,7 +236,7 @@
 
     if-eqz v3, :cond_31
 
-    .line 3189
+    .line 3518
     const/4 v3, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->getRentalHeader()Ljava/lang/String;
@@ -249,7 +249,7 @@
 
     add-int/2addr v2, v3
 
-    .line 3192
+    .line 3521
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->getTermList()Ljava/util/List;
 
@@ -273,7 +273,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm$Term;
 
-    .line 3193
+    .line 3522
     .local v0, element:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm$Term;
     const/4 v3, 0x4
 
@@ -285,12 +285,12 @@
 
     goto :goto_39
 
-    .line 3196
+    .line 3525
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm$Term;
     :cond_4c
     iput v2, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->cachedSize:I
 
-    .line 3197
+    .line 3526
     return v2
 .end method
 
@@ -307,7 +307,7 @@
     .end annotation
 
     .prologue
-    .line 3112
+    .line 3438
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->term_:Ljava/util/List;
 
     return-object v0
@@ -317,7 +317,7 @@
     .registers 2
 
     .prologue
-    .line 3078
+    .line 3404
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->hasOfferAbbreviation:Z
 
     return v0
@@ -327,7 +327,7 @@
     .registers 2
 
     .prologue
-    .line 3060
+    .line 3386
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->hasOfferType:Z
 
     return v0
@@ -337,7 +337,7 @@
     .registers 2
 
     .prologue
-    .line 3095
+    .line 3421
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->hasRentalHeader:Z
 
     return v0
@@ -353,29 +353,29 @@
     .end annotation
 
     .prologue
-    .line 3204
+    .line 3534
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 3205
+    .line 3535
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_34
 
-    .line 3209
+    .line 3539
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 3210
+    .line 3540
     :sswitch_d
     return-object p0
 
-    .line 3215
+    .line 3545
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -385,7 +385,7 @@
 
     goto :goto_0
 
-    .line 3219
+    .line 3549
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -395,7 +395,7 @@
 
     goto :goto_0
 
-    .line 3223
+    .line 3553
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -405,24 +405,24 @@
 
     goto :goto_0
 
-    .line 3227
+    .line 3557
     :sswitch_26
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm$Term;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm$Term;-><init>()V
 
-    .line 3228
+    .line 3558
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm$Term;
     const/4 v2, 0x4
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readGroup(Lcom/google/protobuf/micro/MessageMicro;I)V
 
-    .line 3229
+    .line 3559
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->addTerm(Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm$Term;)Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;
 
     goto :goto_0
 
-    .line 3205
+    .line 3535
     nop
 
     :sswitch_data_34
@@ -445,7 +445,7 @@
     .end annotation
 
     .prologue
-    .line 2931
+    .line 3251
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;
 
     move-result-object v0
@@ -458,15 +458,15 @@
     .parameter "value"
 
     .prologue
-    .line 3080
+    .line 3406
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->hasOfferAbbreviation:Z
 
-    .line 3081
+    .line 3407
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->offerAbbreviation_:Ljava/lang/String;
 
-    .line 3082
+    .line 3408
     return-object p0
 .end method
 
@@ -475,15 +475,15 @@
     .parameter "value"
 
     .prologue
-    .line 3063
+    .line 3389
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->hasOfferType:Z
 
-    .line 3064
+    .line 3390
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->offerType_:I
 
-    .line 3065
+    .line 3391
     return-object p0
 .end method
 
@@ -492,15 +492,15 @@
     .parameter "value"
 
     .prologue
-    .line 3097
+    .line 3423
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->hasRentalHeader:Z
 
-    .line 3098
+    .line 3424
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->rentalHeader_:Ljava/lang/String;
 
-    .line 3099
+    .line 3425
     return-object p0
 .end method
 
@@ -514,14 +514,14 @@
     .end annotation
 
     .prologue
-    .line 3155
+    .line 3482
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->hasOfferType()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 3156
+    .line 3483
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->getOfferType()I
@@ -530,7 +530,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 3158
+    .line 3485
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->hasOfferAbbreviation()Z
 
@@ -538,7 +538,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 3159
+    .line 3486
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->getOfferAbbreviation()Ljava/lang/String;
@@ -547,7 +547,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 3161
+    .line 3488
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->hasRentalHeader()Z
 
@@ -555,7 +555,7 @@
 
     if-eqz v2, :cond_2a
 
-    .line 3162
+    .line 3489
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->getRentalHeader()Ljava/lang/String;
@@ -564,7 +564,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 3164
+    .line 3491
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;->getTermList()Ljava/util/List;
 
@@ -588,7 +588,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm$Term;
 
-    .line 3165
+    .line 3492
     .local v0, element:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm$Term;
     const/4 v2, 0x4
 
@@ -596,7 +596,7 @@
 
     goto :goto_32
 
-    .line 3167
+    .line 3494
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm$Term;
     :cond_43
     return-void

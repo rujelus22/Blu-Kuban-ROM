@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 1051
+    .line 868
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
     return-void
@@ -31,32 +31,32 @@
     .parameter "hostName"
 
     .prologue
-    .line 1059
+    .line 877
     new-instance v1, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$SecurityRequiredDialog;
 
     invoke-direct {v1}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$SecurityRequiredDialog;-><init>()V
 
-    .line 1060
+    .line 878
     .local v1, fragment:Lcom/android/email/activity/setup/AccountCheckSettingsFragment$SecurityRequiredDialog;
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1061
+    .line 879
     .local v0, arguments:Landroid/os/Bundle;
     const-string v2, "SecurityRequiredDialog.HostName"
 
     invoke-virtual {v0, v2, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1062
+    .line 880
     invoke-virtual {v1, v0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$SecurityRequiredDialog;->setArguments(Landroid/os/Bundle;)V
 
-    .line 1063
+    .line 881
     const/4 v2, 0x0
 
     invoke-virtual {v1, p0, v2}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$SecurityRequiredDialog;->setTargetFragment(Landroid/app/Fragment;I)V
 
-    .line 1064
+    .line 882
     return-object v1
 .end method
 
@@ -69,18 +69,18 @@
     .prologue
     const/4 v8, 0x1
 
-    .line 1069
+    .line 887
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$SecurityRequiredDialog;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    .line 1070
+    .line 888
     .local v1, context:Landroid/content/Context;
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$SecurityRequiredDialog;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 1071
+    .line 889
     .local v0, arguments:Landroid/os/Bundle;
     const-string v4, "SecurityRequiredDialog.HostName"
 
@@ -88,7 +88,7 @@
 
     move-result-object v2
 
-    .line 1072
+    .line 890
     .local v2, hostName:Ljava/lang/String;
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountCheckSettingsFragment$SecurityRequiredDialog;->getTargetFragment()Landroid/app/Fragment;
 
@@ -96,7 +96,7 @@
 
     check-cast v3, Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
 
-    .line 1074
+    .line 893
     .local v3, target:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
     new-instance v4, Landroid/app/AlertDialog$Builder;
 
@@ -108,9 +108,9 @@
 
     move-result-object v4
 
-    const v5, 0x7f080118
+    const v5, 0x7f080119
 
-    invoke-virtual {v1, v5}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -118,7 +118,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f080119
+    const v5, 0x7f08011a
 
     new-array v6, v8, [Ljava/lang/Object;
 
@@ -138,9 +138,9 @@
 
     move-result-object v4
 
-    const v5, 0x7f080042
+    const v5, 0x7f080009
 
-    invoke-virtual {v1, v5}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -152,9 +152,9 @@
 
     move-result-object v4
 
-    const v5, 0x7f080043
+    const v5, 0x7f08000a
 
-    invoke-virtual {v1, v5}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 

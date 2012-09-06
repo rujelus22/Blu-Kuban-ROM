@@ -113,7 +113,7 @@
 
     move-result-object v4
 
-    sget-object v3, Lcom/google/android/finsky/config/G;->androidId:Lcom/google/android/finsky/config/GservicesValue;
+    sget-object v3, Lcom/google/android/finsky/api/DfeApiConfig;->androidId:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v3}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 
@@ -149,7 +149,7 @@
 
     sget-object v12, Landroid/os/Build$VERSION;->SDK:Ljava/lang/String;
 
-    sget-object v3, Lcom/google/android/finsky/config/G;->clientId:Lcom/google/android/finsky/config/GservicesValue;
+    sget-object v3, Lcom/google/android/finsky/api/DfeApiConfig;->clientId:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v3}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 
@@ -157,7 +157,7 @@
 
     check-cast v13, Ljava/lang/String;
 
-    sget-object v3, Lcom/google/android/finsky/config/G;->loggingId:Lcom/google/android/finsky/config/GservicesValue;
+    sget-object v3, Lcom/google/android/finsky/api/DfeApiConfig;->loggingId:Lcom/google/android/finsky/config/GservicesValue;
 
     invoke-virtual {v3}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 

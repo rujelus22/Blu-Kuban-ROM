@@ -482,11 +482,13 @@
     .prologue
     const/4 v2, 0x0
 
+    goto :goto_1b
+
     .line 1142
     iput-boolean v2, p0, Lcom/sec/android/app/camera/AbstractCameraActivity;->mCheckCalling:Z
 
     .line 1144
-    :try_start_3
+    :try_start_4
     const-string v3, "phone"
 
     invoke-static {v3}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -499,7 +501,7 @@
 
     .line 1145
     .local v1, phoneServ:Lcom/android/internal/telephony/ITelephony;
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_1c
 
     .line 1146
     invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->isOffhook()Z
@@ -516,25 +518,25 @@
 
     .line 1158
     .end local v1           #phoneServ:Lcom/android/internal/telephony/ITelephony;
-    :goto_1a
+    :goto_1b
     return v2
 
     .line 1152
     .restart local v1       #phoneServ:Lcom/android/internal/telephony/ITelephony;
-    :cond_1b
+    :cond_1c
     const-string v3, "AbstractCameraActivity"
 
     const-string v4, "phoneServ is null"
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_22
-    .catch Landroid/os/RemoteException; {:try_start_3 .. :try_end_22} :catch_23
+    :try_end_23
+    .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_23} :catch_24
 
-    goto :goto_1a
+    goto :goto_1b
 
     .line 1155
     .end local v1           #phoneServ:Lcom/android/internal/telephony/ITelephony;
-    :catch_23
+    :catch_24
     move-exception v0
 
     .line 1156
@@ -548,7 +550,7 @@
     .line 1158
     const/4 v2, 0x1
 
-    goto :goto_1a
+    goto :goto_1b
 .end method
 
 .method public checkCameraStartCondition_Security()Z
@@ -1986,7 +1988,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0201b8
+    const v4, 0x7f0201b7
 
     invoke-virtual {v3, v4}, Landroid/view/Window;->setBackgroundDrawableResource(I)V
 

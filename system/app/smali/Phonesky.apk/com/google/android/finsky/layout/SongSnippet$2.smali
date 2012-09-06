@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 97
+    .line 105
     iput-object p1, p0, Lcom/google/android/finsky/layout/SongSnippet$2;->this$0:Lcom/google/android/finsky/layout/SongSnippet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,23 +42,23 @@
     .parameter "v"
 
     .prologue
-    .line 100
+    .line 108
     iget-object v0, p0, Lcom/google/android/finsky/layout/SongSnippet$2;->this$0:Lcom/google/android/finsky/layout/SongSnippet;
 
     #getter for: Lcom/google/android/finsky/layout/SongSnippet;->mConnection:Lcom/google/android/finsky/previews/PreviewController;
-    invoke-static {v0}, Lcom/google/android/finsky/layout/SongSnippet;->access$400(Lcom/google/android/finsky/layout/SongSnippet;)Lcom/google/android/finsky/previews/PreviewController;
+    invoke-static {v0}, Lcom/google/android/finsky/layout/SongSnippet;->access$300(Lcom/google/android/finsky/layout/SongSnippet;)Lcom/google/android/finsky/previews/PreviewController;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/google/android/finsky/layout/SongSnippet$2;->this$0:Lcom/google/android/finsky/layout/SongSnippet;
 
     #getter for: Lcom/google/android/finsky/layout/SongSnippet;->mSongDetails:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
-    invoke-static {v1}, Lcom/google/android/finsky/layout/SongSnippet;->access$300(Lcom/google/android/finsky/layout/SongSnippet;)Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
+    invoke-static {v1}, Lcom/google/android/finsky/layout/SongSnippet;->access$200(Lcom/google/android/finsky/layout/SongSnippet;)Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/previews/PreviewController;->togglePlayback(Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;)V
 
-    .line 101
+    .line 109
     return-void
 .end method

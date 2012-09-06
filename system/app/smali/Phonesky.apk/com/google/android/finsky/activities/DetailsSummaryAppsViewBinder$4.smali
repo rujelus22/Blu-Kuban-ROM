@@ -3,12 +3,12 @@
 .source "DetailsSummaryAppsViewBinder.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->refundAndUninstallAsset(Ljava/lang/String;Z)V
+    value = Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->setupActionButtons(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,25 +20,25 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;
 
-.field final synthetic val$localAsset:Lcom/google/android/finsky/local/LocalAsset;
+.field final synthetic val$actions:Lcom/google/android/finsky/activities/AppActionAnalyzer;
 
-.field final synthetic val$packageName:Ljava/lang/String;
+.field final synthetic val$appPackageName:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;Lcom/google/android/finsky/local/LocalAsset;)V
+.method constructor <init>(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;Lcom/google/android/finsky/activities/AppActionAnalyzer;)V
     .registers 4
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 266
+    .line 267
     iput-object p1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$4;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;
 
-    iput-object p2, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$4;->val$packageName:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$4;->val$appPackageName:Ljava/lang/String;
 
-    iput-object p3, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$4;->val$localAsset:Lcom/google/android/finsky/local/LocalAsset;
+    iput-object p3, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$4;->val$actions:Lcom/google/android/finsky/activities/AppActionAnalyzer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,22 +47,25 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 5
+.method public onClick(Landroid/view/View;)V
+    .registers 6
+    .parameter "v"
 
     .prologue
-    .line 269
+    .line 270
     iget-object v0, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$4;->this$0:Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;
 
-    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$4;->val$packageName:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$4;->val$appPackageName:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$4;->val$localAsset:Lcom/google/android/finsky/local/LocalAsset;
+    iget-object v2, p0, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder$4;->val$actions:Lcom/google/android/finsky/activities/AppActionAnalyzer;
+
+    iget-object v2, v2, Lcom/google/android/finsky/activities/AppActionAnalyzer;->refundAccount:Ljava/lang/String;
 
     const/4 v3, 0x0
 
-    #calls: Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->uninstallAsset(Ljava/lang/String;Lcom/google/android/finsky/local/LocalAsset;Z)V
-    invoke-static {v0, v1, v2, v3}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->access$200(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;Lcom/google/android/finsky/local/LocalAsset;Z)V
+    #calls: Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->confirmRefundApp(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v0, v1, v2, v3}, Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;->access$200(Lcom/google/android/finsky/activities/DetailsSummaryAppsViewBinder;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 270
+    .line 271
     return-void
 .end method

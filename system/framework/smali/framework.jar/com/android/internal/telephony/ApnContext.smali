@@ -4,7 +4,7 @@
 
 
 # static fields
-.field protected static final DBG:Z = true
+.field protected static final DBG:Z
 
 
 # instance fields

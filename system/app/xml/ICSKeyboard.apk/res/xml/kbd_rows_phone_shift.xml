@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:latin="http://schemas.android.com/apk/res/inputmethod.latin.ported">
+    <include latin:keyboardLayout="@xml/kbd_key_styles" />
+    <include latin:keyboardLayout="@xml/kbd_numkey_styles" />
+    <Row>
+        <Key latin:keyLabel="(" latin:keyStyle="numKeyStyle" />
+        <Key latin:keyLabel="/" latin:keyStyle="numKeyStyle" />
+        <Key latin:keyLabel=")" latin:keyStyle="numKeyStyle" />
+        <Key latin:keyLabel="-" latin:keyStyle="numFunctionalKeyStyle" latin:keyWidth="fillRight" />
+    </Row>
+    <Row>
+        <Key latin:keyLabel="N" />
+        <Key latin:code="44" latin:keyLabel="@string/label_pause_key" latin:keyLabelOption="followKeyHintLabelRatio|autoXScale" />
+        <Key latin:keyLabel="," latin:keyStyle="numKeyStyle" />
+        <Key latin:keyLabel="." latin:keyStyle="numFunctionalKeyStyle" latin:keyWidth="fillRight" />
+    </Row>
+    <Row>
+        <Key latin:keyStyle="numStarKeyStyle" />
+        <Key latin:code="59" latin:keyLabel="@string/label_wait_key" latin:keyLabelOption="followKeyHintLabelRatio|autoXScale" />
+        <Key latin:keyLabel="\#" latin:keyStyle="numKeyStyle" />
+        <Key latin:keyStyle="deleteKeyStyle" latin:keyWidth="fillRight" />
+    </Row>
+    <Row>
+        <Key latin:keyStyle="numSwitchToNumericKeyStyle" />
+        <Key latin:keyLabel="+" latin:keyStyle="numKeyStyle" />
+        <Key latin:keyStyle="numSpaceKeyStyle" />
+        <Key latin:keyStyle="returnKeyStyle" latin:keyWidth="fillRight" />
+    </Row>
+</merge>

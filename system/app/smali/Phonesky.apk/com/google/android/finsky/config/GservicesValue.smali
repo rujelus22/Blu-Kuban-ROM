@@ -26,15 +26,7 @@
 
 
 # instance fields
-.field protected final mDefaultValue:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TT;"
-        }
-    .end annotation
-.end field
-
-.field protected final mKey:Ljava/lang/String;
+.field private final mKey:Ljava/lang/String;
 
 .field private mOverride:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -58,40 +50,41 @@
     return-void
 .end method
 
-.method protected constructor <init>(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 4
+.method private constructor <init>(Ljava/lang/String;)V
+    .registers 3
     .parameter "key"
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "TT;)V"
-        }
-    .end annotation
 
     .prologue
     .line 33
     .local p0, this:Lcom/google/android/finsky/config/GservicesValue;,"Lcom/google/android/finsky/config/GservicesValue<TT;>;"
-    .local p2, defaultValue:Ljava/lang/Object;,"TT;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
+    .line 29
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/finsky/config/GservicesValue;->mOverride:Ljava/lang/Object;
 
-    .line 34
-    iput-object p1, p0, Lcom/google/android/finsky/config/GservicesValue;->mKey:Ljava/lang/String;
-
     .line 35
-    iput-object p2, p0, Lcom/google/android/finsky/config/GservicesValue;->mDefaultValue:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/google/android/finsky/config/GservicesValue;->mKey:Ljava/lang/String;
 
     .line 36
     return-void
 .end method
 
-.method static synthetic access$100()Lcom/google/android/finsky/config/GservicesValue$GservicesReader;
+.method synthetic constructor <init>(Ljava/lang/String;Lcom/google/android/finsky/config/GservicesValue$1;)V
+    .registers 3
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 18
+    .local p0, this:Lcom/google/android/finsky/config/GservicesValue;,"Lcom/google/android/finsky/config/GservicesValue<TT;>;"
+    invoke-direct {p0, p1}, Lcom/google/android/finsky/config/GservicesValue;-><init>(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method static synthetic access$200()Lcom/google/android/finsky/config/GservicesValue$GservicesReader;
     .registers 1
 
     .prologue
@@ -101,9 +94,10 @@
     return-object v0
 .end method
 
-.method public static init(Landroid/content/Context;)V
-    .registers 3
+.method public static init(Landroid/content/Context;[Ljava/lang/String;)V
+    .registers 4
     .parameter "context"
+    .parameter "prefixesToCache"
 
     .prologue
     .line 22
@@ -113,7 +107,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lcom/google/android/finsky/config/GservicesValue$GservicesReaderImpl;-><init>(Landroid/content/ContentResolver;)V
+    invoke-direct {v0, v1, p1}, Lcom/google/android/finsky/config/GservicesValue$GservicesReaderImpl;-><init>(Landroid/content/ContentResolver;[Ljava/lang/String;)V
 
     sput-object v0, Lcom/google/android/finsky/config/GservicesValue;->sGservicesReader:Lcom/google/android/finsky/config/GservicesValue$GservicesReader;
 
@@ -139,10 +133,36 @@
     .end annotation
 
     .prologue
-    .line 102
+    .line 103
     new-instance v0, Lcom/google/android/finsky/config/GservicesValue$6;
 
-    invoke-direct {v0, p0, p1}, Lcom/google/android/finsky/config/GservicesValue$6;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p0, p1}, Lcom/google/android/finsky/config/GservicesValue$6;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public static value(Ljava/lang/String;Ljava/lang/Boolean;)Lcom/google/android/finsky/config/GservicesValue;
+    .registers 3
+    .parameter "key"
+    .parameter "defaultValue"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/Boolean;",
+            ")",
+            "Lcom/google/android/finsky/config/GservicesValue",
+            "<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 57
+    new-instance v0, Lcom/google/android/finsky/config/GservicesValue$1;
+
+    invoke-direct {v0, p0, p0, p1}, Lcom/google/android/finsky/config/GservicesValue$1;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;)V
 
     return-object v0
 .end method
@@ -168,7 +188,7 @@
     .line 84
     new-instance v0, Lcom/google/android/finsky/config/GservicesValue$4;
 
-    invoke-direct {v0, p0, p1}, Lcom/google/android/finsky/config/GservicesValue$4;-><init>(Ljava/lang/String;Ljava/lang/Float;)V
+    invoke-direct {v0, p0, p0, p1}, Lcom/google/android/finsky/config/GservicesValue$4;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Float;)V
 
     return-object v0
 .end method
@@ -194,7 +214,7 @@
     .line 75
     new-instance v0, Lcom/google/android/finsky/config/GservicesValue$3;
 
-    invoke-direct {v0, p0, p1}, Lcom/google/android/finsky/config/GservicesValue$3;-><init>(Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-direct {v0, p0, p0, p1}, Lcom/google/android/finsky/config/GservicesValue$3;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V
 
     return-object v0
 .end method
@@ -220,7 +240,7 @@
     .line 66
     new-instance v0, Lcom/google/android/finsky/config/GservicesValue$2;
 
-    invoke-direct {v0, p0, p1}, Lcom/google/android/finsky/config/GservicesValue$2;-><init>(Ljava/lang/String;Ljava/lang/Long;)V
+    invoke-direct {v0, p0, p0, p1}, Lcom/google/android/finsky/config/GservicesValue$2;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
     return-object v0
 .end method
@@ -246,36 +266,7 @@
     .line 93
     new-instance v0, Lcom/google/android/finsky/config/GservicesValue$5;
 
-    invoke-direct {v0, p0, p1}, Lcom/google/android/finsky/config/GservicesValue$5;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public static value(Ljava/lang/String;Z)Lcom/google/android/finsky/config/GservicesValue;
-    .registers 4
-    .parameter "key"
-    .parameter "defaultValue"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Z)",
-            "Lcom/google/android/finsky/config/GservicesValue",
-            "<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 57
-    new-instance v0, Lcom/google/android/finsky/config/GservicesValue$1;
-
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-direct {v0, p0, v1}, Lcom/google/android/finsky/config/GservicesValue$1;-><init>(Ljava/lang/String;Ljava/lang/Boolean;)V
+    invoke-direct {v0, p0, p0, p1}, Lcom/google/android/finsky/config/GservicesValue$5;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -305,9 +296,7 @@
     return-object v0
 
     :cond_7
-    iget-object v0, p0, Lcom/google/android/finsky/config/GservicesValue;->mKey:Ljava/lang/String;
-
-    invoke-virtual {p0, v0}, Lcom/google/android/finsky/config/GservicesValue;->retrieve(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lcom/google/android/finsky/config/GservicesValue;->retrieve()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -325,12 +314,10 @@
     return-object v0
 .end method
 
-.method protected abstract retrieve(Ljava/lang/String;)Ljava/lang/Object;
+.method protected abstract retrieve()Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Ljava/lang/String;",
-            ")TT;"
+            "()TT;"
         }
     .end annotation
 .end method

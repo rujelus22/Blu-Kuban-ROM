@@ -1,81 +1,53 @@
-.class final Lcom/google/android/finsky/activities/AuthenticatedActivity$1;
-.super Ljava/util/HashMap;
+.class Lcom/google/android/finsky/activities/AuthenticatedActivity$1;
+.super Ljava/lang/Object;
 .source "AuthenticatedActivity.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/finsky/activities/AuthenticatedActivity;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/google/android/finsky/activities/AuthenticatedActivity;->onCreate(Landroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/util/HashMap",
-        "<",
-        "Ljava/lang/Integer;",
-        "Ljava/lang/Class",
-        "<*>;>;"
-    }
-.end annotation
+
+# instance fields
+.field final synthetic this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lcom/google/android/finsky/activities/AuthenticatedActivity;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 160
+    iput-object p1, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$1;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public run()V
     .registers 3
 
     .prologue
-    .line 113
-    invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
+    .line 163
+    iget-object v0, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$1;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
 
-    .line 116
-    const/4 v0, 0x3
+    const/4 v1, 0x1
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->startInitializationActions(Z)V
 
-    move-result-object v0
-
-    const-class v1, Lcom/android/vending/MarketWidgetProvider;
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/finsky/activities/AuthenticatedActivity$1;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 117
-    const/4 v0, 0x2
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    const-class v1, Lcom/google/android/finsky/widget/MusicWidgetProvider;
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/finsky/activities/AuthenticatedActivity$1;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 118
-    const/4 v0, 0x4
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    const-class v1, Lcom/google/android/finsky/widget/MoviesWidgetProvider;
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/finsky/activities/AuthenticatedActivity$1;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 119
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    const-class v1, Lcom/google/android/finsky/widget/BooksWidgetProvider;
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/finsky/activities/AuthenticatedActivity$1;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 120
+    .line 164
     return-void
 .end method

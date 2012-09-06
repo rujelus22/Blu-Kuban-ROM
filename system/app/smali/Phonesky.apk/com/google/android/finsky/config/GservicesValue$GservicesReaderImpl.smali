@@ -22,25 +22,24 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/ContentResolver;)V
+.method public constructor <init>(Landroid/content/ContentResolver;[Ljava/lang/String;)V
     .registers 4
     .parameter "contentResolver"
+    .parameter "prefixesToCache"
 
     .prologue
-    .line 123
+    .line 124
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 124
+    .line 125
     iput-object p1, p0, Lcom/google/android/finsky/config/GservicesValue$GservicesReaderImpl;->mContentResolver:Landroid/content/ContentResolver;
 
-    .line 125
+    .line 126
     iget-object v0, p0, Lcom/google/android/finsky/config/GservicesValue$GservicesReaderImpl;->mContentResolver:Landroid/content/ContentResolver;
 
-    sget-object v1, Lcom/google/android/finsky/config/G;->GSERVICES_KEY_PREFIXES:[Ljava/lang/String;
+    invoke-static {v0, p2}, Lcom/google/android/gsf/Gservices;->bulkCacheByPrefix(Landroid/content/ContentResolver;[Ljava/lang/String;)V
 
-    invoke-static {v0, v1}, Lcom/google/android/gsf/Gservices;->bulkCacheByPrefix(Landroid/content/ContentResolver;[Ljava/lang/String;)V
-
-    .line 126
+    .line 127
     return-void
 .end method
 
@@ -52,7 +51,7 @@
     .parameter "defaultValue"
 
     .prologue
-    .line 130
+    .line 131
     iget-object v0, p0, Lcom/google/android/finsky/config/GservicesValue$GservicesReaderImpl;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
@@ -76,7 +75,7 @@
     .parameter "defaultValue"
 
     .prologue
-    .line 140
+    .line 141
     iget-object v1, p0, Lcom/google/android/finsky/config/GservicesValue$GservicesReaderImpl;->mContentResolver:Landroid/content/ContentResolver;
 
     const/4 v2, 0x0
@@ -85,11 +84,11 @@
 
     move-result-object v0
 
-    .line 141
+    .line 142
     .local v0, floatStr:Ljava/lang/String;
     if-eqz v0, :cond_11
 
-    .line 143
+    .line 144
     :try_start_9
     invoke-static {v0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
@@ -101,13 +100,13 @@
 
     move-result-object p2
 
-    .line 146
+    .line 147
     .end local p2
     :cond_11
     :goto_11
     return-object p2
 
-    .line 144
+    .line 145
     .restart local p2
     :catch_12
     move-exception v1
@@ -121,7 +120,7 @@
     .parameter "defaultValue"
 
     .prologue
-    .line 135
+    .line 136
     iget-object v0, p0, Lcom/google/android/finsky/config/GservicesValue$GservicesReaderImpl;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
@@ -145,7 +144,7 @@
     .parameter "defaultValue"
 
     .prologue
-    .line 151
+    .line 152
     iget-object v0, p0, Lcom/google/android/finsky/config/GservicesValue$GservicesReaderImpl;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
@@ -169,7 +168,7 @@
     .parameter "defaultValue"
 
     .prologue
-    .line 161
+    .line 162
     iget-object v0, p0, Lcom/google/android/finsky/config/GservicesValue$GservicesReaderImpl;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-static {v0, p1, p2}, Lcom/google/android/gsf/GoogleSettingsContract$Partner;->getString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -185,7 +184,7 @@
     .parameter "defaultValue"
 
     .prologue
-    .line 156
+    .line 157
     iget-object v0, p0, Lcom/google/android/finsky/config/GservicesValue$GservicesReaderImpl;->mContentResolver:Landroid/content/ContentResolver;
 
     invoke-static {v0, p1, p2}, Lcom/google/android/gsf/Gservices;->getString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;

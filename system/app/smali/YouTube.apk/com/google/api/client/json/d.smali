@@ -36,77 +36,77 @@
     .parameter
 
     .prologue
-    .line 171
+    .line 104
     if-nez p1, :cond_3
 
-    .line 229
+    .line 162
     :goto_2
     return-void
 
-    .line 174
+    .line 107
     :cond_3
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 175
-    invoke-static {p1}, Lcom/google/api/client/util/j;->a(Ljava/lang/Object;)Z
+    .line 108
+    invoke-static {p1}, Lcom/google/api/client/util/i;->a(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_11
 
-    .line 176
+    .line 109
     invoke-virtual {p0}, Lcom/google/api/client/json/d;->f()V
 
     goto :goto_2
 
-    .line 177
+    .line 110
     :cond_11
     instance-of v1, p1, Ljava/lang/String;
 
     if-eqz v1, :cond_1b
 
-    .line 178
+    .line 111
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/google/api/client/json/d;->b(Ljava/lang/String;)V
 
     goto :goto_2
 
-    .line 179
+    .line 112
     :cond_1b
     instance-of v1, p1, Ljava/math/BigDecimal;
 
     if-eqz v1, :cond_25
 
-    .line 180
+    .line 113
     check-cast p1, Ljava/math/BigDecimal;
 
     invoke-virtual {p0, p1}, Lcom/google/api/client/json/d;->a(Ljava/math/BigDecimal;)V
 
     goto :goto_2
 
-    .line 181
+    .line 114
     :cond_25
     instance-of v1, p1, Ljava/math/BigInteger;
 
     if-eqz v1, :cond_2f
 
-    .line 182
+    .line 115
     check-cast p1, Ljava/math/BigInteger;
 
     invoke-virtual {p0, p1}, Lcom/google/api/client/json/d;->a(Ljava/math/BigInteger;)V
 
     goto :goto_2
 
-    .line 183
+    .line 116
     :cond_2f
     instance-of v1, p1, Ljava/lang/Double;
 
     if-eqz v1, :cond_3d
 
-    .line 185
+    .line 118
     check-cast p1, Ljava/lang/Double;
 
     invoke-virtual {p1}, Ljava/lang/Double;->doubleValue()D
@@ -117,13 +117,13 @@
 
     goto :goto_2
 
-    .line 186
+    .line 119
     :cond_3d
     instance-of v1, p1, Ljava/lang/Long;
 
     if-eqz v1, :cond_4b
 
-    .line 187
+    .line 120
     check-cast p1, Ljava/lang/Long;
 
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
@@ -134,13 +134,13 @@
 
     goto :goto_2
 
-    .line 188
+    .line 121
     :cond_4b
     instance-of v1, p1, Ljava/lang/Float;
 
     if-eqz v1, :cond_59
 
-    .line 190
+    .line 123
     check-cast p1, Ljava/lang/Float;
 
     invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
@@ -151,7 +151,7 @@
 
     goto :goto_2
 
-    .line 191
+    .line 124
     :cond_59
     instance-of v1, p1, Ljava/lang/Integer;
 
@@ -165,7 +165,7 @@
 
     if-eqz v1, :cond_6f
 
-    .line 192
+    .line 125
     :cond_65
     check-cast p1, Ljava/lang/Number;
 
@@ -177,13 +177,13 @@
 
     goto :goto_2
 
-    .line 193
+    .line 126
     :cond_6f
     instance-of v1, p1, Ljava/lang/Boolean;
 
     if-eqz v1, :cond_7d
 
-    .line 194
+    .line 127
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
@@ -194,13 +194,13 @@
 
     goto :goto_2
 
-    .line 195
+    .line 128
     :cond_7d
     instance-of v1, p1, Lcom/google/api/client/util/DateTime;
 
     if-eqz v1, :cond_8c
 
-    .line 196
+    .line 129
     check-cast p1, Lcom/google/api/client/util/DateTime;
 
     invoke-virtual {p1}, Lcom/google/api/client/util/DateTime;->toStringRfc3339()Ljava/lang/String;
@@ -211,7 +211,7 @@
 
     goto/16 :goto_2
 
-    .line 197
+    .line 130
     :cond_8c
     instance-of v1, p1, Ljava/lang/Iterable;
 
@@ -223,12 +223,12 @@
 
     if-eqz v1, :cond_b4
 
-    .line 198
+    .line 131
     :cond_96
     invoke-virtual {p0}, Lcom/google/api/client/json/d;->b()V
 
-    .line 199
-    invoke-static {p1}, Lcom/google/api/client/util/v;->a(Ljava/lang/Object;)Ljava/lang/Iterable;
+    .line 132
+    invoke-static {p1}, Lcom/google/api/client/util/u;->a(Ljava/lang/Object;)Ljava/lang/Iterable;
 
     move-result-object v0
 
@@ -247,18 +247,18 @@
 
     move-result-object v1
 
-    .line 200
+    .line 133
     invoke-virtual {p0, v1}, Lcom/google/api/client/json/d;->a(Ljava/lang/Object;)V
 
     goto :goto_a1
 
-    .line 202
+    .line 135
     :cond_af
     invoke-virtual {p0}, Lcom/google/api/client/json/d;->c()V
 
     goto/16 :goto_2
 
-    .line 203
+    .line 136
     :cond_b4
     invoke-virtual {v0}, Ljava/lang/Class;->isEnum()Z
 
@@ -266,42 +266,42 @@
 
     if-eqz v1, :cond_d0
 
-    .line 204
+    .line 137
     check-cast p1, Ljava/lang/Enum;
 
-    invoke-static {p1}, Lcom/google/api/client/util/o;->a(Ljava/lang/Enum;)Lcom/google/api/client/util/o;
+    invoke-static {p1}, Lcom/google/api/client/util/n;->a(Ljava/lang/Enum;)Lcom/google/api/client/util/n;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/api/client/util/o;->b()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/api/client/util/n;->b()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 205
+    .line 138
     if-nez v0, :cond_cb
 
-    .line 206
+    .line 139
     invoke-virtual {p0}, Lcom/google/api/client/json/d;->f()V
 
     goto/16 :goto_2
 
-    .line 208
+    .line 141
     :cond_cb
     invoke-virtual {p0, v0}, Lcom/google/api/client/json/d;->b(Ljava/lang/String;)V
 
     goto/16 :goto_2
 
-    .line 211
+    .line 144
     :cond_d0
     invoke-virtual {p0}, Lcom/google/api/client/json/d;->d()V
 
-    .line 212
-    invoke-static {v0}, Lcom/google/api/client/util/h;->a(Ljava/lang/Class;)Lcom/google/api/client/util/h;
+    .line 145
+    invoke-static {v0}, Lcom/google/api/client/util/g;->a(Ljava/lang/Class;)Lcom/google/api/client/util/g;
 
     move-result-object v2
 
-    .line 213
-    invoke-static {p1}, Lcom/google/api/client/util/j;->b(Ljava/lang/Object;)Ljava/util/Map;
+    .line 146
+    invoke-static {p1}, Lcom/google/api/client/util/i;->b(Ljava/lang/Object;)Ljava/util/Map;
 
     move-result-object v0
 
@@ -327,32 +327,32 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 214
+    .line 147
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 215
+    .line 148
     if-eqz v1, :cond_e3
 
-    .line 216
+    .line 149
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/String;
 
-    .line 217
+    .line 150
     instance-of v4, v1, Ljava/lang/Number;
 
     if-eqz v4, :cond_111
 
-    .line 218
-    invoke-virtual {v2, v0}, Lcom/google/api/client/util/h;->b(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    .line 151
+    invoke-virtual {v2, v0}, Lcom/google/api/client/util/g;->b(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v4
 
-    .line 219
+    .line 152
     if-eqz v4, :cond_111
 
     const-class v5, Lcom/google/api/client/json/g;
@@ -363,21 +363,21 @@
 
     if-eqz v4, :cond_111
 
-    .line 220
+    .line 153
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 223
+    .line 156
     :cond_111
     invoke-virtual {p0, v0}, Lcom/google/api/client/json/d;->a(Ljava/lang/String;)V
 
-    .line 224
+    .line 157
     invoke-virtual {p0, v1}, Lcom/google/api/client/json/d;->a(Ljava/lang/Object;)V
 
     goto :goto_e3
 
-    .line 227
+    .line 160
     :cond_118
     invoke-virtual {p0}, Lcom/google/api/client/json/d;->e()V
 
@@ -412,4 +412,12 @@
 .end method
 
 .method public abstract f()V
+.end method
+
+.method public g()V
+    .registers 1
+
+    .prologue
+    .line 177
+    return-void
 .end method

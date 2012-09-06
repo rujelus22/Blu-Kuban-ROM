@@ -83,71 +83,71 @@
 
     const/4 v1, 0x0
 
-    .line 8429
+    .line 8591
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 8434
+    .line 8596
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->gaiaAuthToken_:Ljava/lang/String;
 
-    .line 8451
+    .line 8613
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->assetId_:Ljava/lang/String;
 
-    .line 8468
+    .line 8630
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->transactionId_:Ljava/lang/String;
 
-    .line 8485
+    .line 8647
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->billingInstrumentId_:Ljava/lang/String;
 
-    .line 8502
+    .line 8664
     iput v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->billingInstrumentType_:I
 
-    .line 8519
+    .line 8681
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->billingParametersId_:Ljava/lang/String;
 
-    .line 8536
+    .line 8698
     iput-object v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->carrierBillingCredentials_:Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;
 
-    .line 8556
+    .line 8718
     iput-object v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->paypalCredentials_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;
 
-    .line 8576
+    .line 8738
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->existingOrderId_:Ljava/lang/String;
 
-    .line 8593
+    .line 8755
     iput-boolean v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->tosAccepted_:Z
 
-    .line 8610
+    .line 8772
     iput-object v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->riskHeaderInfo_:Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;
 
-    .line 8630
+    .line 8792
     iput v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->productType_:I
 
-    .line 8647
+    .line 8809
     iput-object v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->signatureHash_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
 
-    .line 8667
+    .line 8829
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->developerPayload_:Ljava/lang/String;
 
-    .line 8765
+    .line 8928
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->cachedSize:I
 
-    .line 8429
+    .line 8591
     return-void
 .end method
 
@@ -157,7 +157,7 @@
     .registers 2
 
     .prologue
-    .line 8452
+    .line 8614
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->assetId_:Ljava/lang/String;
 
     return-object v0
@@ -167,7 +167,7 @@
     .registers 2
 
     .prologue
-    .line 8486
+    .line 8648
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->billingInstrumentId_:Ljava/lang/String;
 
     return-object v0
@@ -177,7 +177,7 @@
     .registers 2
 
     .prologue
-    .line 8504
+    .line 8666
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->billingInstrumentType_:I
 
     return v0
@@ -187,7 +187,7 @@
     .registers 2
 
     .prologue
-    .line 8520
+    .line 8682
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->billingParametersId_:Ljava/lang/String;
 
     return-object v0
@@ -197,15 +197,15 @@
     .registers 2
 
     .prologue
-    .line 8767
+    .line 8931
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 8769
+    .line 8933
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getSerializedSize()I
 
-    .line 8771
+    .line 8935
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->cachedSize:I
 
@@ -216,7 +216,7 @@
     .registers 2
 
     .prologue
-    .line 8538
+    .line 8700
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->carrierBillingCredentials_:Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;
 
     return-object v0
@@ -226,7 +226,7 @@
     .registers 2
 
     .prologue
-    .line 8668
+    .line 8830
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->developerPayload_:Ljava/lang/String;
 
     return-object v0
@@ -236,7 +236,7 @@
     .registers 2
 
     .prologue
-    .line 8577
+    .line 8739
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->existingOrderId_:Ljava/lang/String;
 
     return-object v0
@@ -246,7 +246,7 @@
     .registers 2
 
     .prologue
-    .line 8435
+    .line 8597
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->gaiaAuthToken_:Ljava/lang/String;
 
     return-object v0
@@ -256,7 +256,7 @@
     .registers 2
 
     .prologue
-    .line 8558
+    .line 8720
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->paypalCredentials_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;
 
     return-object v0
@@ -266,7 +266,7 @@
     .registers 2
 
     .prologue
-    .line 8632
+    .line 8794
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->productType_:I
 
     return v0
@@ -276,7 +276,7 @@
     .registers 2
 
     .prologue
-    .line 8612
+    .line 8774
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->riskHeaderInfo_:Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;
 
     return-object v0
@@ -286,10 +286,10 @@
     .registers 4
 
     .prologue
-    .line 8775
+    .line 8940
     const/4 v0, 0x0
 
-    .line 8776
+    .line 8941
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasGaiaAuthToken()Z
 
@@ -297,7 +297,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 8777
+    .line 8942
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getGaiaAuthToken()Ljava/lang/String;
@@ -310,7 +310,7 @@
 
     add-int/2addr v0, v1
 
-    .line 8780
+    .line 8945
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasAssetId()Z
 
@@ -318,7 +318,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 8781
+    .line 8946
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getAssetId()Ljava/lang/String;
@@ -331,7 +331,7 @@
 
     add-int/2addr v0, v1
 
-    .line 8784
+    .line 8949
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasTransactionId()Z
 
@@ -339,7 +339,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 8785
+    .line 8950
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getTransactionId()Ljava/lang/String;
@@ -352,7 +352,7 @@
 
     add-int/2addr v0, v1
 
-    .line 8788
+    .line 8953
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasBillingInstrumentId()Z
 
@@ -360,7 +360,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 8789
+    .line 8954
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getBillingInstrumentId()Ljava/lang/String;
@@ -373,7 +373,7 @@
 
     add-int/2addr v0, v1
 
-    .line 8792
+    .line 8957
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasTosAccepted()Z
 
@@ -381,7 +381,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 8793
+    .line 8958
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getTosAccepted()Z
@@ -394,7 +394,7 @@
 
     add-int/2addr v0, v1
 
-    .line 8796
+    .line 8961
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasCarrierBillingCredentials()Z
 
@@ -402,7 +402,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 8797
+    .line 8962
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getCarrierBillingCredentials()Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;
@@ -415,7 +415,7 @@
 
     add-int/2addr v0, v1
 
-    .line 8800
+    .line 8965
     :cond_61
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasExistingOrderId()Z
 
@@ -423,7 +423,7 @@
 
     if-eqz v1, :cond_71
 
-    .line 8801
+    .line 8966
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getExistingOrderId()Ljava/lang/String;
@@ -436,7 +436,7 @@
 
     add-int/2addr v0, v1
 
-    .line 8804
+    .line 8969
     :cond_71
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasBillingInstrumentType()Z
 
@@ -444,7 +444,7 @@
 
     if-eqz v1, :cond_82
 
-    .line 8805
+    .line 8970
     const/16 v1, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getBillingInstrumentType()I
@@ -457,7 +457,7 @@
 
     add-int/2addr v0, v1
 
-    .line 8808
+    .line 8973
     :cond_82
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasBillingParametersId()Z
 
@@ -465,7 +465,7 @@
 
     if-eqz v1, :cond_93
 
-    .line 8809
+    .line 8974
     const/16 v1, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getBillingParametersId()Ljava/lang/String;
@@ -478,7 +478,7 @@
 
     add-int/2addr v0, v1
 
-    .line 8812
+    .line 8977
     :cond_93
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasPaypalCredentials()Z
 
@@ -486,7 +486,7 @@
 
     if-eqz v1, :cond_a4
 
-    .line 8813
+    .line 8978
     const/16 v1, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getPaypalCredentials()Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;
@@ -499,7 +499,7 @@
 
     add-int/2addr v0, v1
 
-    .line 8816
+    .line 8981
     :cond_a4
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasRiskHeaderInfo()Z
 
@@ -507,7 +507,7 @@
 
     if-eqz v1, :cond_b5
 
-    .line 8817
+    .line 8982
     const/16 v1, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getRiskHeaderInfo()Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;
@@ -520,7 +520,7 @@
 
     add-int/2addr v0, v1
 
-    .line 8820
+    .line 8985
     :cond_b5
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasProductType()Z
 
@@ -528,7 +528,7 @@
 
     if-eqz v1, :cond_c6
 
-    .line 8821
+    .line 8986
     const/16 v1, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getProductType()I
@@ -541,7 +541,7 @@
 
     add-int/2addr v0, v1
 
-    .line 8824
+    .line 8989
     :cond_c6
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasSignatureHash()Z
 
@@ -549,7 +549,7 @@
 
     if-eqz v1, :cond_d7
 
-    .line 8825
+    .line 8990
     const/16 v1, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getSignatureHash()Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
@@ -562,7 +562,7 @@
 
     add-int/2addr v0, v1
 
-    .line 8828
+    .line 8993
     :cond_d7
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasDeveloperPayload()Z
 
@@ -570,7 +570,7 @@
 
     if-eqz v1, :cond_e8
 
-    .line 8829
+    .line 8994
     const/16 v1, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getDeveloperPayload()Ljava/lang/String;
@@ -583,11 +583,11 @@
 
     add-int/2addr v0, v1
 
-    .line 8832
+    .line 8997
     :cond_e8
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->cachedSize:I
 
-    .line 8833
+    .line 8998
     return v0
 .end method
 
@@ -595,7 +595,7 @@
     .registers 2
 
     .prologue
-    .line 8649
+    .line 8811
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->signatureHash_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
 
     return-object v0
@@ -605,7 +605,7 @@
     .registers 2
 
     .prologue
-    .line 8594
+    .line 8756
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->tosAccepted_:Z
 
     return v0
@@ -615,7 +615,7 @@
     .registers 2
 
     .prologue
-    .line 8469
+    .line 8631
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->transactionId_:Ljava/lang/String;
 
     return-object v0
@@ -625,7 +625,7 @@
     .registers 2
 
     .prologue
-    .line 8453
+    .line 8615
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasAssetId:Z
 
     return v0
@@ -635,7 +635,7 @@
     .registers 2
 
     .prologue
-    .line 8487
+    .line 8649
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasBillingInstrumentId:Z
 
     return v0
@@ -645,7 +645,7 @@
     .registers 2
 
     .prologue
-    .line 8503
+    .line 8665
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasBillingInstrumentType:Z
 
     return v0
@@ -655,7 +655,7 @@
     .registers 2
 
     .prologue
-    .line 8521
+    .line 8683
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasBillingParametersId:Z
 
     return v0
@@ -665,7 +665,7 @@
     .registers 2
 
     .prologue
-    .line 8537
+    .line 8699
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasCarrierBillingCredentials:Z
 
     return v0
@@ -675,7 +675,7 @@
     .registers 2
 
     .prologue
-    .line 8669
+    .line 8831
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasDeveloperPayload:Z
 
     return v0
@@ -685,7 +685,7 @@
     .registers 2
 
     .prologue
-    .line 8578
+    .line 8740
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasExistingOrderId:Z
 
     return v0
@@ -695,7 +695,7 @@
     .registers 2
 
     .prologue
-    .line 8436
+    .line 8598
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasGaiaAuthToken:Z
 
     return v0
@@ -705,7 +705,7 @@
     .registers 2
 
     .prologue
-    .line 8557
+    .line 8719
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasPaypalCredentials:Z
 
     return v0
@@ -715,7 +715,7 @@
     .registers 2
 
     .prologue
-    .line 8631
+    .line 8793
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasProductType:Z
 
     return v0
@@ -725,7 +725,7 @@
     .registers 2
 
     .prologue
-    .line 8611
+    .line 8773
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasRiskHeaderInfo:Z
 
     return v0
@@ -735,7 +735,7 @@
     .registers 2
 
     .prologue
-    .line 8648
+    .line 8810
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasSignatureHash:Z
 
     return v0
@@ -745,7 +745,7 @@
     .registers 2
 
     .prologue
-    .line 8595
+    .line 8757
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasTosAccepted:Z
 
     return v0
@@ -755,7 +755,7 @@
     .registers 2
 
     .prologue
-    .line 8470
+    .line 8632
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasTransactionId:Z
 
     return v0
@@ -771,29 +771,29 @@
     .end annotation
 
     .prologue
-    .line 8840
+    .line 9006
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 8841
+    .line 9007
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_90
 
-    .line 8845
+    .line 9011
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 8846
+    .line 9012
     :sswitch_d
     return-object p0
 
-    .line 8851
+    .line 9017
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -803,7 +803,7 @@
 
     goto :goto_0
 
-    .line 8855
+    .line 9021
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -813,7 +813,7 @@
 
     goto :goto_0
 
-    .line 8859
+    .line 9025
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -823,7 +823,7 @@
 
     goto :goto_0
 
-    .line 8863
+    .line 9029
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -833,7 +833,7 @@
 
     goto :goto_0
 
-    .line 8867
+    .line 9033
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -843,22 +843,22 @@
 
     goto :goto_0
 
-    .line 8871
+    .line 9037
     :sswitch_36
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;-><init>()V
 
-    .line 8872
+    .line 9038
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 8873
+    .line 9039
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->setCarrierBillingCredentials(Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;
 
     goto :goto_0
 
-    .line 8877
+    .line 9043
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;
     :sswitch_42
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -869,7 +869,7 @@
 
     goto :goto_0
 
-    .line 8881
+    .line 9047
     :sswitch_4a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -879,7 +879,7 @@
 
     goto :goto_0
 
-    .line 8885
+    .line 9051
     :sswitch_52
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -889,38 +889,38 @@
 
     goto :goto_0
 
-    .line 8889
+    .line 9055
     :sswitch_5a
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;-><init>()V
 
-    .line 8890
+    .line 9056
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 8891
+    .line 9057
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->setPaypalCredentials(Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;
 
     goto :goto_0
 
-    .line 8895
+    .line 9061
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;
     :sswitch_66
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;-><init>()V
 
-    .line 8896
+    .line 9062
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 8897
+    .line 9063
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->setRiskHeaderInfo(Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;
 
     goto :goto_0
 
-    .line 8901
+    .line 9067
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;
     :sswitch_72
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
@@ -931,22 +931,22 @@
 
     goto :goto_0
 
-    .line 8905
+    .line 9071
     :sswitch_7a
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;-><init>()V
 
-    .line 8906
+    .line 9072
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 8907
+    .line 9073
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->setSignatureHash(Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;
 
     goto/16 :goto_0
 
-    .line 8911
+    .line 9077
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
     :sswitch_87
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -957,7 +957,7 @@
 
     goto/16 :goto_0
 
-    .line 8841
+    .line 9007
     :sswitch_data_90
     .sparse-switch
         0x0 -> :sswitch_d
@@ -988,7 +988,7 @@
     .end annotation
 
     .prologue
-    .line 8427
+    .line 8589
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;
 
     move-result-object v0
@@ -1001,15 +1001,15 @@
     .parameter "value"
 
     .prologue
-    .line 8455
+    .line 8617
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasAssetId:Z
 
-    .line 8456
+    .line 8618
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->assetId_:Ljava/lang/String;
 
-    .line 8457
+    .line 8619
     return-object p0
 .end method
 
@@ -1018,15 +1018,15 @@
     .parameter "value"
 
     .prologue
-    .line 8489
+    .line 8651
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasBillingInstrumentId:Z
 
-    .line 8490
+    .line 8652
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->billingInstrumentId_:Ljava/lang/String;
 
-    .line 8491
+    .line 8653
     return-object p0
 .end method
 
@@ -1035,15 +1035,15 @@
     .parameter "value"
 
     .prologue
-    .line 8506
+    .line 8668
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasBillingInstrumentType:Z
 
-    .line 8507
+    .line 8669
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->billingInstrumentType_:I
 
-    .line 8508
+    .line 8670
     return-object p0
 .end method
 
@@ -1052,15 +1052,15 @@
     .parameter "value"
 
     .prologue
-    .line 8523
+    .line 8685
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasBillingParametersId:Z
 
-    .line 8524
+    .line 8686
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->billingParametersId_:Ljava/lang/String;
 
-    .line 8525
+    .line 8687
     return-object p0
 .end method
 
@@ -1069,26 +1069,26 @@
     .parameter "value"
 
     .prologue
-    .line 8540
+    .line 8702
     if-nez p1, :cond_8
 
-    .line 8541
+    .line 8703
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 8543
+    .line 8705
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasCarrierBillingCredentials:Z
 
-    .line 8544
+    .line 8706
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->carrierBillingCredentials_:Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;
 
-    .line 8545
+    .line 8707
     return-object p0
 .end method
 
@@ -1097,15 +1097,15 @@
     .parameter "value"
 
     .prologue
-    .line 8671
+    .line 8833
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasDeveloperPayload:Z
 
-    .line 8672
+    .line 8834
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->developerPayload_:Ljava/lang/String;
 
-    .line 8673
+    .line 8835
     return-object p0
 .end method
 
@@ -1114,15 +1114,15 @@
     .parameter "value"
 
     .prologue
-    .line 8580
+    .line 8742
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasExistingOrderId:Z
 
-    .line 8581
+    .line 8743
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->existingOrderId_:Ljava/lang/String;
 
-    .line 8582
+    .line 8744
     return-object p0
 .end method
 
@@ -1131,15 +1131,15 @@
     .parameter "value"
 
     .prologue
-    .line 8438
+    .line 8600
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasGaiaAuthToken:Z
 
-    .line 8439
+    .line 8601
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->gaiaAuthToken_:Ljava/lang/String;
 
-    .line 8440
+    .line 8602
     return-object p0
 .end method
 
@@ -1148,26 +1148,26 @@
     .parameter "value"
 
     .prologue
-    .line 8560
+    .line 8722
     if-nez p1, :cond_8
 
-    .line 8561
+    .line 8723
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 8563
+    .line 8725
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasPaypalCredentials:Z
 
-    .line 8564
+    .line 8726
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->paypalCredentials_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;
 
-    .line 8565
+    .line 8727
     return-object p0
 .end method
 
@@ -1176,15 +1176,15 @@
     .parameter "value"
 
     .prologue
-    .line 8634
+    .line 8796
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasProductType:Z
 
-    .line 8635
+    .line 8797
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->productType_:I
 
-    .line 8636
+    .line 8798
     return-object p0
 .end method
 
@@ -1193,26 +1193,26 @@
     .parameter "value"
 
     .prologue
-    .line 8614
+    .line 8776
     if-nez p1, :cond_8
 
-    .line 8615
+    .line 8777
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 8617
+    .line 8779
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasRiskHeaderInfo:Z
 
-    .line 8618
+    .line 8780
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->riskHeaderInfo_:Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;
 
-    .line 8619
+    .line 8781
     return-object p0
 .end method
 
@@ -1221,26 +1221,26 @@
     .parameter "value"
 
     .prologue
-    .line 8651
+    .line 8813
     if-nez p1, :cond_8
 
-    .line 8652
+    .line 8814
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 8654
+    .line 8816
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasSignatureHash:Z
 
-    .line 8655
+    .line 8817
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->signatureHash_:Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
 
-    .line 8656
+    .line 8818
     return-object p0
 .end method
 
@@ -1249,15 +1249,15 @@
     .parameter "value"
 
     .prologue
-    .line 8597
+    .line 8759
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasTosAccepted:Z
 
-    .line 8598
+    .line 8760
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->tosAccepted_:Z
 
-    .line 8599
+    .line 8761
     return-object p0
 .end method
 
@@ -1266,15 +1266,15 @@
     .parameter "value"
 
     .prologue
-    .line 8472
+    .line 8634
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasTransactionId:Z
 
-    .line 8473
+    .line 8635
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->transactionId_:Ljava/lang/String;
 
-    .line 8474
+    .line 8636
     return-object p0
 .end method
 
@@ -1288,14 +1288,14 @@
     .end annotation
 
     .prologue
-    .line 8721
+    .line 8884
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasGaiaAuthToken()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 8722
+    .line 8885
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getGaiaAuthToken()Ljava/lang/String;
@@ -1304,7 +1304,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 8724
+    .line 8887
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasAssetId()Z
 
@@ -1312,7 +1312,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 8725
+    .line 8888
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getAssetId()Ljava/lang/String;
@@ -1321,7 +1321,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 8727
+    .line 8890
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasTransactionId()Z
 
@@ -1329,7 +1329,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 8728
+    .line 8891
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getTransactionId()Ljava/lang/String;
@@ -1338,7 +1338,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 8730
+    .line 8893
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasBillingInstrumentId()Z
 
@@ -1346,7 +1346,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 8731
+    .line 8894
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getBillingInstrumentId()Ljava/lang/String;
@@ -1355,7 +1355,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 8733
+    .line 8896
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasTosAccepted()Z
 
@@ -1363,7 +1363,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 8734
+    .line 8897
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getTosAccepted()Z
@@ -1372,7 +1372,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 8736
+    .line 8899
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasCarrierBillingCredentials()Z
 
@@ -1380,7 +1380,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 8737
+    .line 8900
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getCarrierBillingCredentials()Lcom/google/android/vending/remoting/protos/VendingProtos$CarrierBillingCredentialsProto;
@@ -1389,7 +1389,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 8739
+    .line 8902
     :cond_54
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasExistingOrderId()Z
 
@@ -1397,7 +1397,7 @@
 
     if-eqz v0, :cond_62
 
-    .line 8740
+    .line 8903
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getExistingOrderId()Ljava/lang/String;
@@ -1406,7 +1406,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 8742
+    .line 8905
     :cond_62
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasBillingInstrumentType()Z
 
@@ -1414,7 +1414,7 @@
 
     if-eqz v0, :cond_71
 
-    .line 8743
+    .line 8906
     const/16 v0, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getBillingInstrumentType()I
@@ -1423,7 +1423,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 8745
+    .line 8908
     :cond_71
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasBillingParametersId()Z
 
@@ -1431,7 +1431,7 @@
 
     if-eqz v0, :cond_80
 
-    .line 8746
+    .line 8909
     const/16 v0, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getBillingParametersId()Ljava/lang/String;
@@ -1440,7 +1440,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 8748
+    .line 8911
     :cond_80
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasPaypalCredentials()Z
 
@@ -1448,7 +1448,7 @@
 
     if-eqz v0, :cond_8f
 
-    .line 8749
+    .line 8912
     const/16 v0, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getPaypalCredentials()Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCredentialsProto;
@@ -1457,7 +1457,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 8751
+    .line 8914
     :cond_8f
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasRiskHeaderInfo()Z
 
@@ -1465,7 +1465,7 @@
 
     if-eqz v0, :cond_9e
 
-    .line 8752
+    .line 8915
     const/16 v0, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getRiskHeaderInfo()Lcom/google/android/vending/remoting/protos/VendingProtos$RiskHeaderInfoProto;
@@ -1474,7 +1474,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 8754
+    .line 8917
     :cond_9e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasProductType()Z
 
@@ -1482,7 +1482,7 @@
 
     if-eqz v0, :cond_ad
 
-    .line 8755
+    .line 8918
     const/16 v0, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getProductType()I
@@ -1491,7 +1491,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 8757
+    .line 8920
     :cond_ad
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasSignatureHash()Z
 
@@ -1499,7 +1499,7 @@
 
     if-eqz v0, :cond_bc
 
-    .line 8758
+    .line 8921
     const/16 v0, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getSignatureHash()Lcom/google/android/vending/remoting/protos/VendingProtos$SignatureHashProto;
@@ -1508,7 +1508,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 8760
+    .line 8923
     :cond_bc
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->hasDeveloperPayload()Z
 
@@ -1516,7 +1516,7 @@
 
     if-eqz v0, :cond_cb
 
-    .line 8761
+    .line 8924
     const/16 v0, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseOrderRequestProto;->getDeveloperPayload()Ljava/lang/String;
@@ -1525,7 +1525,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 8763
+    .line 8926
     :cond_cb
     return-void
 .end method

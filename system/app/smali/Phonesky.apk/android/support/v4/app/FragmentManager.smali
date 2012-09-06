@@ -6,7 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/support/v4/app/FragmentManager$OnBackStackChangedListener;
+        Landroid/support/v4/app/FragmentManager$OnBackStackChangedListener;,
+        Landroid/support/v4/app/FragmentManager$BackStackEntry;
     }
 .end annotation
 
@@ -40,6 +41,9 @@
 .method public abstract findFragmentByTag(Ljava/lang/String;)Landroid/support/v4/app/Fragment;
 .end method
 
+.method public abstract getBackStackEntryAt(I)Landroid/support/v4/app/FragmentManager$BackStackEntry;
+.end method
+
 .method public abstract getFragment(Landroid/os/Bundle;Ljava/lang/String;)Landroid/support/v4/app/Fragment;
 .end method
 
@@ -47,6 +51,9 @@
 .end method
 
 .method public abstract popBackStack(II)V
+.end method
+
+.method public abstract popBackStack(Ljava/lang/String;I)V
 .end method
 
 .method public abstract putFragment(Landroid/os/Bundle;Ljava/lang/String;Landroid/support/v4/app/Fragment;)V

@@ -1,2 +1,8 @@
-.class synthetic Lcom/google/googlenav/ui/wizard/dw;
+.class public interface abstract Lcom/google/googlenav/ui/wizard/dW;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# virtual methods
+.method public abstract a()V
+.end method

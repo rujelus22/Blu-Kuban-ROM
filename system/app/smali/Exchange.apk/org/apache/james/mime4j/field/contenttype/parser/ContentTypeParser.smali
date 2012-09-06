@@ -70,10 +70,10 @@
     .registers 0
 
     .prologue
-    .line 137
+    .line 123
     invoke-static {}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_la1_0()V
 
-    .line 138
+    .line 124
     return-void
 .end method
 
@@ -88,46 +88,46 @@
 
     const/4 v3, -0x1
 
-    .line 182
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 153
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 27
+    .line 26
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->paramNames:Ljava/util/ArrayList;
 
-    .line 28
+    .line 27
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->paramValues:Ljava/util/ArrayList;
 
-    .line 134
+    .line 120
     new-array v1, v4, [I
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_la1:[I
 
-    .line 264
+    .line 225
     new-instance v1, Ljava/util/Vector;
 
     invoke-direct {v1}, Ljava/util/Vector;-><init>()V
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_expentries:Ljava/util/Vector;
 
-    .line 266
+    .line 227
     iput v3, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_kind:I
 
-    .line 183
+    .line 154
     new-instance v1, Lorg/apache/james/mime4j/field/contenttype/parser/SimpleCharStream;
 
     invoke-direct {v1, p1, v2, v2}, Lorg/apache/james/mime4j/field/contenttype/parser/SimpleCharStream;-><init>(Ljava/io/Reader;II)V
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_input_stream:Lorg/apache/james/mime4j/field/contenttype/parser/SimpleCharStream;
 
-    .line 184
+    .line 155
     new-instance v1, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;
 
     iget-object v2, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_input_stream:Lorg/apache/james/mime4j/field/contenttype/parser/SimpleCharStream;
@@ -136,39 +136,37 @@
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->token_source:Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;
 
-    .line 185
+    .line 156
     new-instance v1, Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
     invoke-direct {v1}, Lorg/apache/james/mime4j/field/contenttype/parser/Token;-><init>()V
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->token:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
-    .line 186
+    .line 157
     iput v3, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_ntk:I
 
-    .line 187
+    .line 158
     const/4 v1, 0x0
 
     iput v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_gen:I
 
-    .line 188
+    .line 159
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_3e
     if-ge v0, v4, :cond_47
 
-    .line 189
     iget-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_la1:[I
 
     aput v3, v1, v0
 
-    .line 188
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3e
 
-    .line 190
+    .line 160
     :cond_47
     return-void
 .end method
@@ -183,7 +181,7 @@
     .end annotation
 
     .prologue
-    .line 222
+    .line 189
     iget-object v0, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->token:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
     .local v0, oldToken:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
@@ -191,39 +189,38 @@
 
     if-eqz v1, :cond_1e
 
-    .line 223
     iget-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->token:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
     iget-object v1, v1, Lorg/apache/james/mime4j/field/contenttype/parser/Token;->next:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
     iput-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->token:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
-    .line 226
+    .line 191
     :goto_c
     const/4 v1, -0x1
 
     iput v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_ntk:I
 
-    .line 227
+    .line 192
     iget-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->token:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
     iget v1, v1, Lorg/apache/james/mime4j/field/contenttype/parser/Token;->kind:I
 
     if-ne v1, p1, :cond_2b
 
-    .line 228
+    .line 193
     iget v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_gen:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_gen:I
 
-    .line 229
+    .line 194
     iget-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->token:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
     return-object v1
 
-    .line 225
+    .line 190
     :cond_1e
     iget-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->token:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
@@ -239,14 +236,14 @@
 
     goto :goto_c
 
-    .line 231
+    .line 196
     :cond_2b
     iput-object v0, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->token:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
-    .line 232
+    .line 197
     iput p1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_kind:I
 
-    .line 233
+    .line 198
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->generateParseException()Lorg/apache/james/mime4j/field/contenttype/parser/ParseException;
 
     move-result-object v1
@@ -258,7 +255,7 @@
     .registers 1
 
     .prologue
-    .line 141
+    .line 126
     const/4 v0, 0x3
 
     new-array v0, v0, [I
@@ -267,10 +264,10 @@
 
     sput-object v0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_la1_0:[I
 
-    .line 144
+    .line 127
     return-void
 
-    .line 141
+    .line 126
     nop
 
     :array_a
@@ -285,7 +282,7 @@
     .registers 3
 
     .prologue
-    .line 258
+    .line 219
     iget-object v0, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->token:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
     iget-object v0, v0, Lorg/apache/james/mime4j/field/contenttype/parser/Token;->next:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
@@ -294,7 +291,7 @@
 
     if-nez v0, :cond_17
 
-    .line 259
+    .line 220
     iget-object v0, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->token:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
     iget-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->token_source:Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParserTokenManager;
@@ -309,7 +306,7 @@
 
     iput v0, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_ntk:I
 
-    .line 261
+    .line 222
     :goto_16
     return v0
 
@@ -335,15 +332,15 @@
 
     const/4 v6, 0x1
 
-    .line 269
+    .line 230
     iget-object v4, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_expentries:Ljava/util/Vector;
 
     invoke-virtual {v4}, Ljava/util/Vector;->removeAllElements()V
 
-    .line 270
+    .line 231
     new-array v3, v7, [Z
 
-    .line 271
+    .line 232
     .local v3, la1tokens:[Z
     const/4 v1, 0x0
 
@@ -351,31 +348,31 @@
     :goto_c
     if-ge v1, v7, :cond_13
 
-    .line 272
+    .line 233
     aput-boolean v8, v3, v1
 
-    .line 271
+    .line 232
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_c
 
-    .line 274
+    .line 235
     :cond_13
     iget v4, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_kind:I
 
     if-ltz v4, :cond_1e
 
-    .line 275
+    .line 236
     iget v4, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_kind:I
 
     aput-boolean v6, v3, v4
 
-    .line 276
+    .line 237
     const/4 v4, -0x1
 
     iput v4, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_kind:I
 
-    .line 278
+    .line 239
     :cond_1e
     const/4 v1, 0x0
 
@@ -384,7 +381,7 @@
 
     if-ge v1, v4, :cond_40
 
-    .line 279
+    .line 240
     iget-object v4, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_la1:[I
 
     aget v4, v4, v1
@@ -393,7 +390,7 @@
 
     if-ne v4, v5, :cond_3d
 
-    .line 280
+    .line 241
     const/4 v2, 0x0
 
     .local v2, j:I
@@ -402,7 +399,7 @@
 
     if-ge v2, v4, :cond_3d
 
-    .line 281
+    .line 242
     sget-object v4, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_la1_0:[I
 
     aget v4, v4, v1
@@ -413,58 +410,58 @@
 
     if-eqz v4, :cond_3a
 
-    .line 282
+    .line 243
     aput-boolean v6, v3, v2
 
-    .line 280
+    .line 241
     :cond_3a
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2b
 
-    .line 278
+    .line 239
     .end local v2           #j:I
     :cond_3d
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1f
 
-    .line 287
+    .line 248
     :cond_40
     const/4 v1, 0x0
 
     :goto_41
     if-ge v1, v7, :cond_59
 
-    .line 288
+    .line 249
     aget-boolean v4, v3, v1
 
     if-eqz v4, :cond_56
 
-    .line 289
+    .line 250
     new-array v4, v6, [I
 
     iput-object v4, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_expentry:[I
 
-    .line 290
+    .line 251
     iget-object v4, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_expentry:[I
 
     aput v1, v4, v8
 
-    .line 291
+    .line 252
     iget-object v4, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_expentries:Ljava/util/Vector;
 
     iget-object v5, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_expentry:[I
 
     invoke-virtual {v4, v5}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
 
-    .line 287
+    .line 248
     :cond_56
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_41
 
-    .line 294
+    .line 255
     :cond_59
     iget-object v4, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_expentries:Ljava/util/Vector;
 
@@ -474,7 +471,7 @@
 
     new-array v0, v4, [[I
 
-    .line 295
+    .line 256
     .local v0, exptokseq:[[I
     const/4 v1, 0x0
 
@@ -487,7 +484,7 @@
 
     if-ge v1, v4, :cond_77
 
-    .line 296
+    .line 257
     iget-object v4, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_expentries:Ljava/util/Vector;
 
     invoke-virtual {v4, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
@@ -498,12 +495,12 @@
 
     aput-object v4, v0, v1
 
-    .line 295
+    .line 256
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_62
 
-    .line 298
+    .line 259
     :cond_77
     new-instance v4, Lorg/apache/james/mime4j/field/contenttype/parser/ParseException;
 
@@ -529,7 +526,7 @@
     .end annotation
 
     .prologue
-    .line 39
+    .line 31
     iget-object v0, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->paramNames:Ljava/util/ArrayList;
 
     return-object v0
@@ -548,7 +545,7 @@
     .end annotation
 
     .prologue
-    .line 43
+    .line 32
     iget-object v0, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->paramValues:Ljava/util/ArrayList;
 
     return-object v0
@@ -558,7 +555,7 @@
     .registers 2
 
     .prologue
-    .line 35
+    .line 30
     iget-object v0, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->subtype:Ljava/lang/String;
 
     return-object v0
@@ -568,7 +565,7 @@
     .registers 2
 
     .prologue
-    .line 31
+    .line 29
     iget-object v0, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->type:Ljava/lang/String;
 
     return-object v0
@@ -583,25 +580,25 @@
     .end annotation
 
     .prologue
-    .line 101
+    .line 90
     const/16 v2, 0x15
 
     invoke-direct {p0, v2}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
     move-result-object v0
 
-    .line 102
+    .line 91
     .local v0, attrib:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
     const/4 v2, 0x5
 
     invoke-direct {p0, v2}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
-    .line 103
+    .line 92
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->value()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 104
+    .line 93
     .local v1, val:Ljava/lang/String;
     iget-object v2, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->paramNames:Ljava/util/ArrayList;
 
@@ -609,12 +606,12 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 105
+    .line 94
     iget-object v2, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->paramValues:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 106
+    .line 95
     return-void
 .end method
 
@@ -629,34 +626,34 @@
     .prologue
     const/16 v3, 0x15
 
-    .line 79
+    .line 67
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
     move-result-object v1
 
-    .line 80
+    .line 68
     .local v1, type:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
     const/4 v2, 0x3
 
     invoke-direct {p0, v2}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
-    .line 81
+    .line 69
     invoke-direct {p0, v3}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
     move-result-object v0
 
-    .line 82
+    .line 70
     .local v0, subtype:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
     iget-object v2, v1, Lorg/apache/james/mime4j/field/contenttype/parser/Token;->image:Ljava/lang/String;
 
     iput-object v2, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->type:Ljava/lang/String;
 
-    .line 83
+    .line 71
     iget-object v2, v0, Lorg/apache/james/mime4j/field/contenttype/parser/Token;->image:Ljava/lang/String;
 
     iput-object v2, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->subtype:Ljava/lang/String;
 
-    .line 85
+    .line 74
     :goto_16
     iget v2, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_ntk:I
 
@@ -671,7 +668,7 @@
     :goto_1f
     packed-switch v2, :pswitch_data_36
 
-    .line 90
+    .line 79
     iget-object v2, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_la1:[I
 
     const/4 v3, 0x1
@@ -680,27 +677,27 @@
 
     aput v4, v2, v3
 
-    .line 96
+    .line 85
     return-void
 
-    .line 85
+    .line 74
     :cond_2a
     iget v2, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_ntk:I
 
     goto :goto_1f
 
-    .line 93
+    .line 82
     :pswitch_2d
     const/4 v2, 0x4
 
     invoke-direct {p0, v2}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
-    .line 94
+    .line 83
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->parameter()V
 
     goto :goto_16
 
-    .line 85
+    .line 74
     nop
 
     :pswitch_data_36
@@ -718,15 +715,15 @@
     .end annotation
 
     .prologue
-    .line 72
+    .line 60
     invoke-virtual {p0}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->parse()V
 
-    .line 73
+    .line 61
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
-    .line 74
+    .line 62
     return-void
 .end method
 
@@ -741,7 +738,7 @@
     .prologue
     const/4 v4, -0x1
 
-    .line 110
+    .line 99
     iget v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_ntk:I
 
     if-ne v1, v4, :cond_1c
@@ -753,7 +750,7 @@
     :goto_9
     packed-switch v1, :pswitch_data_30
 
-    .line 118
+    .line 107
     :pswitch_c
     iget-object v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_la1:[I
 
@@ -763,23 +760,23 @@
 
     aput v3, v1, v2
 
-    .line 119
+    .line 108
     invoke-direct {p0, v4}, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_consume_token(I)Lorg/apache/james/mime4j/field/contenttype/parser/Token;
 
-    .line 120
+    .line 109
     new-instance v1, Lorg/apache/james/mime4j/field/contenttype/parser/ParseException;
 
     invoke-direct {v1}, Lorg/apache/james/mime4j/field/contenttype/parser/ParseException;-><init>()V
 
     throw v1
 
-    .line 110
+    .line 99
     :cond_1c
     iget v1, p0, Lorg/apache/james/mime4j/field/contenttype/parser/ContentTypeParser;->jj_ntk:I
 
     goto :goto_9
 
-    .line 112
+    .line 101
     :pswitch_1f
     const/16 v1, 0x15
 
@@ -787,14 +784,14 @@
 
     move-result-object v0
 
-    .line 124
+    .line 111
     .local v0, t:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
     :goto_25
     iget-object v1, v0, Lorg/apache/james/mime4j/field/contenttype/parser/Token;->image:Ljava/lang/String;
 
     return-object v1
 
-    .line 115
+    .line 104
     .end local v0           #t:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
     :pswitch_28
     const/16 v1, 0x13
@@ -803,11 +800,11 @@
 
     move-result-object v0
 
-    .line 116
+    .line 105
     .restart local v0       #t:Lorg/apache/james/mime4j/field/contenttype/parser/Token;
     goto :goto_25
 
-    .line 110
+    .line 99
     nop
 
     :pswitch_data_30

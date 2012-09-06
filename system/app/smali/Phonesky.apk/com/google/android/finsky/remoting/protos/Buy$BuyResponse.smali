@@ -15,16 +15,19 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$DeprecatedTos;,
         Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo;
     }
 .end annotation
 
 
 # instance fields
+.field private addInstrumentPromptHtml_:Ljava/lang/String;
+
 .field private baseCheckoutUrl_:Ljava/lang/String;
 
 .field private cachedSize:I
+
+.field private challenge_:Lcom/google/android/finsky/remoting/protos/ChallengeProtos$Challenge;
 
 .field private checkoutInfo_:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo;
 
@@ -32,22 +35,15 @@
 
 .field private checkoutTokenRequired_:Z
 
+.field private confirmButtonText_:Ljava/lang/String;
+
 .field private continueViaUrl_:Ljava/lang/String;
 
-.field private deprecatedLibraryUpdate_:Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
-
-.field private deprecatedTos_:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$DeprecatedTos;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private hasAddInstrumentPromptHtml:Z
 
 .field private hasBaseCheckoutUrl:Z
+
+.field private hasChallenge:Z
 
 .field private hasCheckoutInfo:Z
 
@@ -55,9 +51,9 @@
 
 .field private hasCheckoutTokenRequired:Z
 
-.field private hasContinueViaUrl:Z
+.field private hasConfirmButtonText:Z
 
-.field private hasDeprecatedLibraryUpdate:Z
+.field private hasContinueViaUrl:Z
 
 .field private hasIabPermissionError:Z
 
@@ -100,135 +96,96 @@
 
     const/4 v1, 0x0
 
-    .line 282
+    .line 294
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1544
+    .line 1403
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->purchaseResponse_:Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;
 
-    .line 1564
+    .line 1423
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->purchaseStatusResponse_:Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;
 
-    .line 1584
+    .line 1443
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->checkoutInfo_:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo;
 
-    .line 1604
+    .line 1463
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->continueViaUrl_:Ljava/lang/String;
 
-    .line 1621
+    .line 1480
     iput-boolean v2, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->checkoutTokenRequired_:Z
 
-    .line 1638
+    .line 1497
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->checkoutServiceId_:Ljava/lang/String;
 
-    .line 1655
+    .line 1514
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->baseCheckoutUrl_:Ljava/lang/String;
 
-    .line 1672
+    .line 1531
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->purchaseStatusUrl_:Ljava/lang/String;
 
-    .line 1688
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->deprecatedTos_:Ljava/util/List;
-
-    .line 1721
+    .line 1547
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->tosCheckboxHtml_:Ljava/util/List;
 
-    .line 1755
+    .line 1581
     iput v2, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->iabPermissionError_:I
 
-    .line 1772
-    iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->deprecatedLibraryUpdate_:Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
-
-    .line 1792
+    .line 1598
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->purchaseCookie_:Ljava/lang/String;
 
-    .line 1883
+    .line 1615
+    iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->challenge_:Lcom/google/android/finsky/remoting/protos/ChallengeProtos$Challenge;
+
+    .line 1635
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->addInstrumentPromptHtml_:Ljava/lang/String;
+
+    .line 1652
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->confirmButtonText_:Ljava/lang/String;
+
+    .line 1748
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->cachedSize:I
 
-    .line 282
+    .line 294
     return-void
 .end method
 
 
 # virtual methods
-.method public addDeprecatedTos(Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$DeprecatedTos;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
-    .registers 3
-    .parameter "value"
-
-    .prologue
-    .line 1705
-    if-nez p1, :cond_8
-
-    .line 1706
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw v0
-
-    .line 1708
-    :cond_8
-    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->deprecatedTos_:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_17
-
-    .line 1709
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->deprecatedTos_:Ljava/util/List;
-
-    .line 1711
-    :cond_17
-    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->deprecatedTos_:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 1712
-    return-object p0
-.end method
-
 .method public addTosCheckboxHtml(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
     .registers 3
     .parameter "value"
 
     .prologue
-    .line 1738
+    .line 1564
     if-nez p1, :cond_8
 
-    .line 1739
+    .line 1565
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1741
+    .line 1567
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->tosCheckboxHtml_:Ljava/util/List;
 
@@ -238,28 +195,38 @@
 
     if-eqz v0, :cond_17
 
-    .line 1742
+    .line 1568
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->tosCheckboxHtml_:Ljava/util/List;
 
-    .line 1744
+    .line 1570
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->tosCheckboxHtml_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1745
+    .line 1571
     return-object p0
+.end method
+
+.method public getAddInstrumentPromptHtml()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 1636
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->addInstrumentPromptHtml_:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method public getBaseCheckoutUrl()Ljava/lang/String;
     .registers 2
 
     .prologue
-    .line 1656
+    .line 1515
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->baseCheckoutUrl_:Ljava/lang/String;
 
     return-object v0
@@ -269,26 +236,36 @@
     .registers 2
 
     .prologue
-    .line 1885
+    .line 1751
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 1887
+    .line 1753
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getSerializedSize()I
 
-    .line 1889
+    .line 1755
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->cachedSize:I
 
     return v0
 .end method
 
+.method public getChallenge()Lcom/google/android/finsky/remoting/protos/ChallengeProtos$Challenge;
+    .registers 2
+
+    .prologue
+    .line 1617
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->challenge_:Lcom/google/android/finsky/remoting/protos/ChallengeProtos$Challenge;
+
+    return-object v0
+.end method
+
 .method public getCheckoutInfo()Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo;
     .registers 2
 
     .prologue
-    .line 1586
+    .line 1445
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->checkoutInfo_:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo;
 
     return-object v0
@@ -298,7 +275,7 @@
     .registers 2
 
     .prologue
-    .line 1639
+    .line 1498
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->checkoutServiceId_:Ljava/lang/String;
 
     return-object v0
@@ -308,47 +285,28 @@
     .registers 2
 
     .prologue
-    .line 1622
+    .line 1481
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->checkoutTokenRequired_:Z
 
     return v0
+.end method
+
+.method public getConfirmButtonText()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 1653
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->confirmButtonText_:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method public getContinueViaUrl()Ljava/lang/String;
     .registers 2
 
     .prologue
-    .line 1605
+    .line 1464
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->continueViaUrl_:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public getDeprecatedLibraryUpdate()Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
-    .registers 2
-
-    .prologue
-    .line 1774
-    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->deprecatedLibraryUpdate_:Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
-
-    return-object v0
-.end method
-
-.method public getDeprecatedTosList()Ljava/util/List;
-    .registers 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$DeprecatedTos;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 1691
-    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->deprecatedTos_:Ljava/util/List;
 
     return-object v0
 .end method
@@ -357,7 +315,7 @@
     .registers 2
 
     .prologue
-    .line 1757
+    .line 1583
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->iabPermissionError_:I
 
     return v0
@@ -367,7 +325,7 @@
     .registers 2
 
     .prologue
-    .line 1793
+    .line 1599
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->purchaseCookie_:Ljava/lang/String;
 
     return-object v0
@@ -377,7 +335,7 @@
     .registers 2
 
     .prologue
-    .line 1546
+    .line 1405
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->purchaseResponse_:Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;
 
     return-object v0
@@ -387,7 +345,7 @@
     .registers 2
 
     .prologue
-    .line 1566
+    .line 1425
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->purchaseStatusResponse_:Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;
 
     return-object v0
@@ -397,7 +355,7 @@
     .registers 2
 
     .prologue
-    .line 1673
+    .line 1532
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->purchaseStatusUrl_:Ljava/lang/String;
 
     return-object v0
@@ -407,10 +365,10 @@
     .registers 7
 
     .prologue
-    .line 1893
+    .line 1760
     const/4 v3, 0x0
 
-    .line 1894
+    .line 1761
     .local v3, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseResponse()Z
 
@@ -418,7 +376,7 @@
 
     if-eqz v4, :cond_11
 
-    .line 1895
+    .line 1762
     const/4 v4, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getPurchaseResponse()Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;
@@ -431,7 +389,7 @@
 
     add-int/2addr v3, v4
 
-    .line 1898
+    .line 1765
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasCheckoutInfo()Z
 
@@ -439,7 +397,7 @@
 
     if-eqz v4, :cond_21
 
-    .line 1899
+    .line 1766
     const/4 v4, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getCheckoutInfo()Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo;
@@ -452,7 +410,7 @@
 
     add-int/2addr v3, v4
 
-    .line 1902
+    .line 1769
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasContinueViaUrl()Z
 
@@ -460,7 +418,7 @@
 
     if-eqz v4, :cond_32
 
-    .line 1903
+    .line 1770
     const/16 v4, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getContinueViaUrl()Ljava/lang/String;
@@ -473,7 +431,7 @@
 
     add-int/2addr v3, v4
 
-    .line 1906
+    .line 1773
     :cond_32
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseStatusUrl()Z
 
@@ -481,7 +439,7 @@
 
     if-eqz v4, :cond_43
 
-    .line 1907
+    .line 1774
     const/16 v4, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getPurchaseStatusUrl()Ljava/lang/String;
@@ -494,7 +452,7 @@
 
     add-int/2addr v3, v4
 
-    .line 1910
+    .line 1777
     :cond_43
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasCheckoutServiceId()Z
 
@@ -502,7 +460,7 @@
 
     if-eqz v4, :cond_54
 
-    .line 1911
+    .line 1778
     const/16 v4, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getCheckoutServiceId()Ljava/lang/String;
@@ -515,7 +473,7 @@
 
     add-int/2addr v3, v4
 
-    .line 1914
+    .line 1781
     :cond_54
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasCheckoutTokenRequired()Z
 
@@ -523,7 +481,7 @@
 
     if-eqz v4, :cond_65
 
-    .line 1915
+    .line 1782
     const/16 v4, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getCheckoutTokenRequired()Z
@@ -536,7 +494,7 @@
 
     add-int/2addr v3, v4
 
-    .line 1918
+    .line 1785
     :cond_65
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasBaseCheckoutUrl()Z
 
@@ -544,7 +502,7 @@
 
     if-eqz v4, :cond_76
 
-    .line 1919
+    .line 1786
     const/16 v4, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getBaseCheckoutUrl()Ljava/lang/String;
@@ -557,48 +515,11 @@
 
     add-int/2addr v3, v4
 
-    .line 1922
+    .line 1790
     :cond_76
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getDeprecatedTosList()Ljava/util/List;
-
-    move-result-object v4
-
-    invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    .local v2, i$:Ljava/util/Iterator;
-    :goto_7e
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_92
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$DeprecatedTos;
-
-    .line 1923
-    .local v1, element:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$DeprecatedTos;
-    const/16 v4, 0x18
-
-    invoke-static {v4, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeGroupSize(ILcom/google/protobuf/micro/MessageMicro;)I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    goto :goto_7e
-
-    .line 1927
-    .end local v1           #element:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$DeprecatedTos;
-    :cond_92
     const/4 v0, 0x0
 
-    .line 1928
+    .line 1791
     .local v0, dataSize:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getTosCheckboxHtmlList()Ljava/util/List;
 
@@ -608,12 +529,13 @@
 
     move-result-object v2
 
-    :goto_9b
+    .local v2, i$:Ljava/util/Iterator;
+    :goto_7f
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_ad
+    if-eqz v4, :cond_91
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -621,7 +543,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 1929
+    .line 1792
     .local v1, element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -629,14 +551,14 @@
 
     add-int/2addr v0, v4
 
-    goto :goto_9b
+    goto :goto_7f
 
-    .line 1932
+    .line 1795
     .end local v1           #element:Ljava/lang/String;
-    :cond_ad
+    :cond_91
     add-int/2addr v3, v0
 
-    .line 1933
+    .line 1796
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getTosCheckboxHtmlList()Ljava/util/List;
 
     move-result-object v4
@@ -649,14 +571,14 @@
 
     add-int/2addr v3, v4
 
-    .line 1935
+    .line 1798
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasIabPermissionError()Z
 
     move-result v4
 
-    if-eqz v4, :cond_ca
+    if-eqz v4, :cond_ae
 
-    .line 1936
+    .line 1799
     const/16 v4, 0x26
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getIabPermissionError()I
@@ -669,15 +591,15 @@
 
     add-int/2addr v3, v4
 
-    .line 1939
-    :cond_ca
+    .line 1802
+    :cond_ae
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseStatusResponse()Z
 
     move-result v4
 
-    if-eqz v4, :cond_db
+    if-eqz v4, :cond_bf
 
-    .line 1940
+    .line 1803
     const/16 v4, 0x27
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getPurchaseStatusResponse()Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;
@@ -690,36 +612,15 @@
 
     add-int/2addr v3, v4
 
-    .line 1943
-    :cond_db
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasDeprecatedLibraryUpdate()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_ec
-
-    .line 1944
-    const/16 v4, 0x28
-
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getDeprecatedLibraryUpdate()Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    .line 1947
-    :cond_ec
+    .line 1806
+    :cond_bf
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseCookie()Z
 
     move-result v4
 
-    if-eqz v4, :cond_fd
+    if-eqz v4, :cond_d0
 
-    .line 1948
+    .line 1807
     const/16 v4, 0x2e
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getPurchaseCookie()Ljava/lang/String;
@@ -732,11 +633,74 @@
 
     add-int/2addr v3, v4
 
-    .line 1951
-    :cond_fd
+    .line 1810
+    :cond_d0
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasChallenge()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_e1
+
+    .line 1811
+    const/16 v4, 0x31
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getChallenge()Lcom/google/android/finsky/remoting/protos/ChallengeProtos$Challenge;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    .line 1814
+    :cond_e1
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasAddInstrumentPromptHtml()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_f2
+
+    .line 1815
+    const/16 v4, 0x32
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getAddInstrumentPromptHtml()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    .line 1818
+    :cond_f2
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasConfirmButtonText()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_103
+
+    .line 1819
+    const/16 v4, 0x33
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getConfirmButtonText()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    .line 1822
+    :cond_103
     iput v3, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->cachedSize:I
 
-    .line 1952
+    .line 1823
     return v3
 .end method
 
@@ -753,18 +717,38 @@
     .end annotation
 
     .prologue
-    .line 1724
+    .line 1550
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->tosCheckboxHtml_:Ljava/util/List;
 
     return-object v0
+.end method
+
+.method public hasAddInstrumentPromptHtml()Z
+    .registers 2
+
+    .prologue
+    .line 1637
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasAddInstrumentPromptHtml:Z
+
+    return v0
 .end method
 
 .method public hasBaseCheckoutUrl()Z
     .registers 2
 
     .prologue
-    .line 1657
+    .line 1516
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasBaseCheckoutUrl:Z
+
+    return v0
+.end method
+
+.method public hasChallenge()Z
+    .registers 2
+
+    .prologue
+    .line 1616
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasChallenge:Z
 
     return v0
 .end method
@@ -773,7 +757,7 @@
     .registers 2
 
     .prologue
-    .line 1585
+    .line 1444
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasCheckoutInfo:Z
 
     return v0
@@ -783,7 +767,7 @@
     .registers 2
 
     .prologue
-    .line 1640
+    .line 1499
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasCheckoutServiceId:Z
 
     return v0
@@ -793,8 +777,18 @@
     .registers 2
 
     .prologue
-    .line 1623
+    .line 1482
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasCheckoutTokenRequired:Z
+
+    return v0
+.end method
+
+.method public hasConfirmButtonText()Z
+    .registers 2
+
+    .prologue
+    .line 1654
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasConfirmButtonText:Z
 
     return v0
 .end method
@@ -803,18 +797,8 @@
     .registers 2
 
     .prologue
-    .line 1606
+    .line 1465
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasContinueViaUrl:Z
-
-    return v0
-.end method
-
-.method public hasDeprecatedLibraryUpdate()Z
-    .registers 2
-
-    .prologue
-    .line 1773
-    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasDeprecatedLibraryUpdate:Z
 
     return v0
 .end method
@@ -823,7 +807,7 @@
     .registers 2
 
     .prologue
-    .line 1756
+    .line 1582
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasIabPermissionError:Z
 
     return v0
@@ -833,7 +817,7 @@
     .registers 2
 
     .prologue
-    .line 1794
+    .line 1600
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseCookie:Z
 
     return v0
@@ -843,7 +827,7 @@
     .registers 2
 
     .prologue
-    .line 1545
+    .line 1404
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseResponse:Z
 
     return v0
@@ -853,7 +837,7 @@
     .registers 2
 
     .prologue
-    .line 1565
+    .line 1424
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseStatusResponse:Z
 
     return v0
@@ -863,7 +847,7 @@
     .registers 2
 
     .prologue
-    .line 1674
+    .line 1533
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseStatusUrl:Z
 
     return v0
@@ -879,62 +863,62 @@
     .end annotation
 
     .prologue
-    .line 1959
+    .line 1831
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1960
+    .line 1832
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_90
+    sparse-switch v0, :sswitch_data_92
 
-    .line 1964
+    .line 1836
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 1965
+    .line 1837
     :sswitch_d
     return-object p0
 
-    .line 1970
+    .line 1842
     :sswitch_e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;-><init>()V
 
-    .line 1971
+    .line 1843
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1972
+    .line 1844
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->setPurchaseResponse(Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
 
     goto :goto_0
 
-    .line 1976
+    .line 1848
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;
     :sswitch_1a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo;-><init>()V
 
-    .line 1977
+    .line 1849
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo;
     const/4 v2, 0x2
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readGroup(Lcom/google/protobuf/micro/MessageMicro;I)V
 
-    .line 1978
+    .line 1850
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->setCheckoutInfo(Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
 
     goto :goto_0
 
-    .line 1982
+    .line 1854
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo;
     :sswitch_27
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -945,7 +929,7 @@
 
     goto :goto_0
 
-    .line 1986
+    .line 1858
     :sswitch_2f
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -955,7 +939,7 @@
 
     goto :goto_0
 
-    .line 1990
+    .line 1862
     :sswitch_37
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -965,7 +949,7 @@
 
     goto :goto_0
 
-    .line 1994
+    .line 1866
     :sswitch_3f
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -975,7 +959,7 @@
 
     goto :goto_0
 
-    .line 1998
+    .line 1870
     :sswitch_47
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -985,26 +969,8 @@
 
     goto :goto_0
 
-    .line 2002
+    .line 1874
     :sswitch_4f
-    new-instance v1, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$DeprecatedTos;
-
-    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$DeprecatedTos;-><init>()V
-
-    .line 2003
-    .local v1, value:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$DeprecatedTos;
-    const/16 v2, 0x18
-
-    invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readGroup(Lcom/google/protobuf/micro/MessageMicro;I)V
-
-    .line 2004
-    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->addDeprecatedTos(Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$DeprecatedTos;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
-
-    goto :goto_0
-
-    .line 2008
-    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$DeprecatedTos;
-    :sswitch_5d
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
     move-result-object v2
@@ -1013,8 +979,8 @@
 
     goto :goto_0
 
-    .line 2012
-    :sswitch_65
+    .line 1878
+    :sswitch_57
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
     move-result v2
@@ -1023,52 +989,72 @@
 
     goto :goto_0
 
-    .line 2016
-    :sswitch_6d
+    .line 1882
+    :sswitch_5f
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;-><init>()V
 
-    .line 2017
+    .line 1883
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2018
+    .line 1884
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->setPurchaseStatusResponse(Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
 
     goto :goto_0
 
-    .line 2022
+    .line 1888
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;
-    :sswitch_79
-    new-instance v1, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
-
-    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;-><init>()V
-
-    .line 2023
-    .local v1, value:Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
-    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
-
-    .line 2024
-    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->setDeprecatedLibraryUpdate(Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
-
-    goto/16 :goto_0
-
-    .line 2028
-    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
-    :sswitch_86
+    :sswitch_6b
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->setPurchaseCookie(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
 
+    goto :goto_0
+
+    .line 1892
+    :sswitch_73
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/ChallengeProtos$Challenge;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/ChallengeProtos$Challenge;-><init>()V
+
+    .line 1893
+    .local v1, value:Lcom/google/android/finsky/remoting/protos/ChallengeProtos$Challenge;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 1894
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->setChallenge(Lcom/google/android/finsky/remoting/protos/ChallengeProtos$Challenge;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
+
+    goto :goto_0
+
+    .line 1898
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/ChallengeProtos$Challenge;
+    :sswitch_7f
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->setAddInstrumentPromptHtml(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
+
     goto/16 :goto_0
 
-    .line 1960
+    .line 1902
+    :sswitch_88
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->setConfirmButtonText(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
+
+    goto/16 :goto_0
+
+    .line 1832
     nop
 
-    :sswitch_data_90
+    :sswitch_data_92
     .sparse-switch
         0x0 -> :sswitch_d
         0xa -> :sswitch_e
@@ -1078,12 +1064,13 @@
         0x62 -> :sswitch_37
         0x68 -> :sswitch_3f
         0x72 -> :sswitch_47
-        0xc3 -> :sswitch_4f
-        0x12a -> :sswitch_5d
-        0x130 -> :sswitch_65
-        0x13a -> :sswitch_6d
-        0x142 -> :sswitch_79
-        0x172 -> :sswitch_86
+        0x12a -> :sswitch_4f
+        0x130 -> :sswitch_57
+        0x13a -> :sswitch_5f
+        0x172 -> :sswitch_6b
+        0x18a -> :sswitch_73
+        0x192 -> :sswitch_7f
+        0x19a -> :sswitch_88
     .end sparse-switch
 .end method
 
@@ -1097,7 +1084,7 @@
     .end annotation
 
     .prologue
-    .line 280
+    .line 291
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
 
     move-result-object v0
@@ -1105,20 +1092,65 @@
     return-object v0
 .end method
 
+.method public setAddInstrumentPromptHtml(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 1639
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasAddInstrumentPromptHtml:Z
+
+    .line 1640
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->addInstrumentPromptHtml_:Ljava/lang/String;
+
+    .line 1641
+    return-object p0
+.end method
+
 .method public setBaseCheckoutUrl(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
     .registers 3
     .parameter "value"
 
     .prologue
-    .line 1659
+    .line 1518
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasBaseCheckoutUrl:Z
 
-    .line 1660
+    .line 1519
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->baseCheckoutUrl_:Ljava/lang/String;
 
-    .line 1661
+    .line 1520
+    return-object p0
+.end method
+
+.method public setChallenge(Lcom/google/android/finsky/remoting/protos/ChallengeProtos$Challenge;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 1619
+    if-nez p1, :cond_8
+
+    .line 1620
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 1622
+    :cond_8
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasChallenge:Z
+
+    .line 1623
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->challenge_:Lcom/google/android/finsky/remoting/protos/ChallengeProtos$Challenge;
+
+    .line 1624
     return-object p0
 .end method
 
@@ -1127,26 +1159,26 @@
     .parameter "value"
 
     .prologue
-    .line 1588
+    .line 1447
     if-nez p1, :cond_8
 
-    .line 1589
+    .line 1448
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1591
+    .line 1450
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasCheckoutInfo:Z
 
-    .line 1592
+    .line 1451
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->checkoutInfo_:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo;
 
-    .line 1593
+    .line 1452
     return-object p0
 .end method
 
@@ -1155,15 +1187,15 @@
     .parameter "value"
 
     .prologue
-    .line 1642
+    .line 1501
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasCheckoutServiceId:Z
 
-    .line 1643
+    .line 1502
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->checkoutServiceId_:Ljava/lang/String;
 
-    .line 1644
+    .line 1503
     return-object p0
 .end method
 
@@ -1172,15 +1204,32 @@
     .parameter "value"
 
     .prologue
-    .line 1625
+    .line 1484
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasCheckoutTokenRequired:Z
 
-    .line 1626
+    .line 1485
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->checkoutTokenRequired_:Z
 
-    .line 1627
+    .line 1486
+    return-object p0
+.end method
+
+.method public setConfirmButtonText(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 1656
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasConfirmButtonText:Z
+
+    .line 1657
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->confirmButtonText_:Ljava/lang/String;
+
+    .line 1658
     return-object p0
 .end method
 
@@ -1189,43 +1238,15 @@
     .parameter "value"
 
     .prologue
-    .line 1608
+    .line 1467
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasContinueViaUrl:Z
 
-    .line 1609
+    .line 1468
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->continueViaUrl_:Ljava/lang/String;
 
-    .line 1610
-    return-object p0
-.end method
-
-.method public setDeprecatedLibraryUpdate(Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;)Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;
-    .registers 3
-    .parameter "value"
-
-    .prologue
-    .line 1776
-    if-nez p1, :cond_8
-
-    .line 1777
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw v0
-
-    .line 1779
-    :cond_8
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasDeprecatedLibraryUpdate:Z
-
-    .line 1780
-    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->deprecatedLibraryUpdate_:Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
-
-    .line 1781
+    .line 1469
     return-object p0
 .end method
 
@@ -1234,15 +1255,15 @@
     .parameter "value"
 
     .prologue
-    .line 1759
+    .line 1585
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasIabPermissionError:Z
 
-    .line 1760
+    .line 1586
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->iabPermissionError_:I
 
-    .line 1761
+    .line 1587
     return-object p0
 .end method
 
@@ -1251,15 +1272,15 @@
     .parameter "value"
 
     .prologue
-    .line 1796
+    .line 1602
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseCookie:Z
 
-    .line 1797
+    .line 1603
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->purchaseCookie_:Ljava/lang/String;
 
-    .line 1798
+    .line 1604
     return-object p0
 .end method
 
@@ -1268,26 +1289,26 @@
     .parameter "value"
 
     .prologue
-    .line 1548
+    .line 1407
     if-nez p1, :cond_8
 
-    .line 1549
+    .line 1408
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1551
+    .line 1410
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseResponse:Z
 
-    .line 1552
+    .line 1411
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->purchaseResponse_:Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;
 
-    .line 1553
+    .line 1412
     return-object p0
 .end method
 
@@ -1296,26 +1317,26 @@
     .parameter "value"
 
     .prologue
-    .line 1568
+    .line 1427
     if-nez p1, :cond_8
 
-    .line 1569
+    .line 1428
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1571
+    .line 1430
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseStatusResponse:Z
 
-    .line 1572
+    .line 1431
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->purchaseStatusResponse_:Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;
 
-    .line 1573
+    .line 1432
     return-object p0
 .end method
 
@@ -1324,15 +1345,15 @@
     .parameter "value"
 
     .prologue
-    .line 1676
+    .line 1535
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseStatusUrl:Z
 
-    .line 1677
+    .line 1536
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->purchaseStatusUrl_:Ljava/lang/String;
 
-    .line 1678
+    .line 1537
     return-object p0
 .end method
 
@@ -1346,14 +1367,14 @@
     .end annotation
 
     .prologue
-    .line 1842
+    .line 1704
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseResponse()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 1843
+    .line 1705
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getPurchaseResponse()Lcom/google/android/finsky/remoting/protos/Buy$PurchaseNotificationResponse;
@@ -1362,7 +1383,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1845
+    .line 1707
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasCheckoutInfo()Z
 
@@ -1370,7 +1391,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 1846
+    .line 1708
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getCheckoutInfo()Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$CheckoutInfo;
@@ -1379,7 +1400,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeGroup(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1848
+    .line 1710
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasContinueViaUrl()Z
 
@@ -1387,7 +1408,7 @@
 
     if-eqz v2, :cond_2b
 
-    .line 1849
+    .line 1711
     const/16 v2, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getContinueViaUrl()Ljava/lang/String;
@@ -1396,7 +1417,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1851
+    .line 1713
     :cond_2b
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseStatusUrl()Z
 
@@ -1404,7 +1425,7 @@
 
     if-eqz v2, :cond_3a
 
-    .line 1852
+    .line 1714
     const/16 v2, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getPurchaseStatusUrl()Ljava/lang/String;
@@ -1413,7 +1434,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1854
+    .line 1716
     :cond_3a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasCheckoutServiceId()Z
 
@@ -1421,7 +1442,7 @@
 
     if-eqz v2, :cond_49
 
-    .line 1855
+    .line 1717
     const/16 v2, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getCheckoutServiceId()Ljava/lang/String;
@@ -1430,7 +1451,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1857
+    .line 1719
     :cond_49
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasCheckoutTokenRequired()Z
 
@@ -1438,7 +1459,7 @@
 
     if-eqz v2, :cond_58
 
-    .line 1858
+    .line 1720
     const/16 v2, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getCheckoutTokenRequired()Z
@@ -1447,7 +1468,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 1860
+    .line 1722
     :cond_58
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasBaseCheckoutUrl()Z
 
@@ -1455,7 +1476,7 @@
 
     if-eqz v2, :cond_67
 
-    .line 1861
+    .line 1723
     const/16 v2, 0xe
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getBaseCheckoutUrl()Ljava/lang/String;
@@ -1464,9 +1485,9 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1863
+    .line 1725
     :cond_67
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getDeprecatedTosList()Ljava/util/List;
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getTosCheckboxHtmlList()Ljava/util/List;
 
     move-result-object v2
 
@@ -1486,58 +1507,26 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$DeprecatedTos;
-
-    .line 1864
-    .local v0, element:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$DeprecatedTos;
-    const/16 v2, 0x18
-
-    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeGroup(ILcom/google/protobuf/micro/MessageMicro;)V
-
-    goto :goto_6f
-
-    .line 1866
-    .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse$DeprecatedTos;
-    :cond_81
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getTosCheckboxHtmlList()Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_89
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_9b
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
     check-cast v0, Ljava/lang/String;
 
-    .line 1867
+    .line 1726
     .local v0, element:Ljava/lang/String;
     const/16 v2, 0x25
 
     invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    goto :goto_89
+    goto :goto_6f
 
-    .line 1869
+    .line 1728
     .end local v0           #element:Ljava/lang/String;
-    :cond_9b
+    :cond_81
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasIabPermissionError()Z
 
     move-result v2
 
-    if-eqz v2, :cond_aa
+    if-eqz v2, :cond_90
 
-    .line 1870
+    .line 1729
     const/16 v2, 0x26
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getIabPermissionError()I
@@ -1546,15 +1535,15 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 1872
-    :cond_aa
+    .line 1731
+    :cond_90
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseStatusResponse()Z
 
     move-result v2
 
-    if-eqz v2, :cond_b9
+    if-eqz v2, :cond_9f
 
-    .line 1873
+    .line 1732
     const/16 v2, 0x27
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getPurchaseStatusResponse()Lcom/google/android/finsky/remoting/protos/Buy$PurchaseStatusResponse;
@@ -1563,32 +1552,15 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 1875
-    :cond_b9
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasDeprecatedLibraryUpdate()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_c8
-
-    .line 1876
-    const/16 v2, 0x28
-
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getDeprecatedLibraryUpdate()Lcom/google/android/finsky/remoting/protos/Library$LibraryUpdate;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
-
-    .line 1878
-    :cond_c8
+    .line 1734
+    :cond_9f
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasPurchaseCookie()Z
 
     move-result v2
 
-    if-eqz v2, :cond_d7
+    if-eqz v2, :cond_ae
 
-    .line 1879
+    .line 1735
     const/16 v2, 0x2e
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getPurchaseCookie()Ljava/lang/String;
@@ -1597,7 +1569,58 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1881
-    :cond_d7
+    .line 1737
+    :cond_ae
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasChallenge()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_bd
+
+    .line 1738
+    const/16 v2, 0x31
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getChallenge()Lcom/google/android/finsky/remoting/protos/ChallengeProtos$Challenge;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 1740
+    :cond_bd
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasAddInstrumentPromptHtml()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_cc
+
+    .line 1741
+    const/16 v2, 0x32
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getAddInstrumentPromptHtml()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    .line 1743
+    :cond_cc
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->hasConfirmButtonText()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_db
+
+    .line 1744
+    const/16 v2, 0x33
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Buy$BuyResponse;->getConfirmButtonText()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    .line 1746
+    :cond_db
     return-void
 .end method

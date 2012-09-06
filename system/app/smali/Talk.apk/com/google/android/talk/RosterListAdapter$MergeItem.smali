@@ -43,7 +43,7 @@
     .line 240
     iput-object p1, p0, Lcom/google/android/talk/RosterListAdapter$MergeItem;->this$0:Lcom/google/android/talk/RosterListAdapter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 241
     iput p2, p0, Lcom/google/android/talk/RosterListAdapter$MergeItem;->mPosition:I

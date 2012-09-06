@@ -26,24 +26,24 @@
     .parameter "context"
 
     .prologue
-    .line 153
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 129
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 154
+    .line 130
     if-eqz p1, :cond_c
 
-    .line 155
+    .line 131
     invoke-static {p1}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/email/service/AttachmentDownloadService$AccountManagerStub;->mAccountManager:Landroid/accounts/AccountManager;
 
-    .line 159
+    .line 135
     :goto_b
     return-void
 
-    .line 157
+    .line 133
     :cond_c
     const/4 v0, 0x0
 
@@ -58,12 +58,12 @@
     .registers 2
 
     .prologue
-    .line 162
+    .line 138
     iget-object v0, p0, Lcom/android/email/service/AttachmentDownloadService$AccountManagerStub;->mAccountManager:Landroid/accounts/AccountManager;
 
     if-eqz v0, :cond_c
 
-    .line 163
+    .line 139
     iget-object v0, p0, Lcom/android/email/service/AttachmentDownloadService$AccountManagerStub;->mAccountManager:Landroid/accounts/AccountManager;
 
     invoke-virtual {v0}, Landroid/accounts/AccountManager;->getAccounts()[Landroid/accounts/Account;
@@ -72,7 +72,7 @@
 
     array-length v0, v0
 
-    .line 165
+    .line 141
     :goto_b
     return v0
 
@@ -80,4 +80,16 @@
     iget v0, p0, Lcom/android/email/service/AttachmentDownloadService$AccountManagerStub;->mNumberOfAccounts:I
 
     goto :goto_b
+.end method
+
+.method setNumberOfAccounts(I)V
+    .registers 2
+    .parameter "numberOfAccounts"
+
+    .prologue
+    .line 146
+    iput p1, p0, Lcom/android/email/service/AttachmentDownloadService$AccountManagerStub;->mNumberOfAccounts:I
+
+    .line 147
+    return-void
 .end method

@@ -1,366 +1,163 @@
 .class Lcom/google/android/maps/rideabout/app/r;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/maps/rideabout/app/q;
-
-
-# static fields
-.field private static final a:Lcom/google/android/maps/rideabout/app/r;
+.implements Landroid/content/ServiceConnection;
 
 
 # instance fields
-.field private volatile b:Lcom/google/android/maps/rideabout/app/z;
-
-.field private volatile c:Lcom/google/android/maps/rideabout/app/A;
-
-.field private volatile d:LaN/d;
-
-.field private e:Landroid/speech/tts/TextToSpeech;
-
-.field private f:Landroid/content/Context;
-
-.field private g:LaN/c;
+.field final synthetic a:Lcom/google/android/maps/rideabout/app/q;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method constructor <init>(Lcom/google/android/maps/rideabout/app/q;)V
+    .registers 2
+    .parameter
 
-    new-instance v0, Lcom/google/android/maps/rideabout/app/r;
-
-    invoke-direct {v0}, Lcom/google/android/maps/rideabout/app/r;-><init>()V
-
-    sput-object v0, Lcom/google/android/maps/rideabout/app/r;->a:Lcom/google/android/maps/rideabout/app/r;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .registers 1
+    .prologue
+    .line 200
+    iput-object p1, p0, Lcom/google/android/maps/rideabout/app/r;->a:Lcom/google/android/maps/rideabout/app/q;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0}, Lcom/google/android/maps/rideabout/app/r;->a()V
-
     return-void
-.end method
-
-.method static g()Lcom/google/android/maps/rideabout/app/r;
-    .registers 1
-
-    sget-object v0, Lcom/google/android/maps/rideabout/app/r;->a:Lcom/google/android/maps/rideabout/app/r;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 2
-
-    sget-object v0, LaN/d;->a:LaN/d;
-
-    iput-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->d:LaN/d;
-
-    return-void
-.end method
-
-.method public a(Landroid/app/Activity;)V
-    .registers 4
-
-    new-instance v0, Landroid/content/Intent;
-
-    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
-
-    const-string v1, "android.speech.tts.engine.INSTALL_TTS_DATA"
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    invoke-virtual {p1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    return-void
-.end method
-
-.method public a(Landroid/content/Context;LaN/c;)V
-    .registers 4
-
-    iput-object p1, p0, Lcom/google/android/maps/rideabout/app/r;->f:Landroid/content/Context;
-
-    new-instance v0, Landroid/speech/tts/TextToSpeech;
-
-    invoke-direct {v0, p1, p0}, Landroid/speech/tts/TextToSpeech;-><init>(Landroid/content/Context;Landroid/speech/tts/TextToSpeech$OnInitListener;)V
-
-    iput-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->e:Landroid/speech/tts/TextToSpeech;
-
-    iput-object p2, p0, Lcom/google/android/maps/rideabout/app/r;->g:LaN/c;
-
-    invoke-virtual {p0}, Lcom/google/android/maps/rideabout/app/r;->a()V
-
-    return-void
-.end method
-
-.method public a(Lcom/google/android/maps/rideabout/app/A;)V
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->b:Lcom/google/android/maps/rideabout/app/z;
-
-    if-eqz v0, :cond_a
-
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->b:Lcom/google/android/maps/rideabout/app/z;
-
-    invoke-interface {p1, v0}, Lcom/google/android/maps/rideabout/app/A;->a(Lcom/google/android/maps/rideabout/app/z;)V
-
-    :goto_9
-    return-void
-
-    :cond_a
-    iput-object p1, p0, Lcom/google/android/maps/rideabout/app/r;->c:Lcom/google/android/maps/rideabout/app/A;
-
-    goto :goto_9
-.end method
-
-.method public a(Z)V
+.method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .registers 6
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->e:Landroid/speech/tts/TextToSpeech;
+    .prologue
+    .line 203
+    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->a:Lcom/google/android/maps/rideabout/app/q;
 
-    if-nez v0, :cond_5
+    const/4 v1, 0x1
 
-    :cond_4
-    :goto_4
-    return-void
+    invoke-static {v0, v1}, Lcom/google/android/maps/rideabout/app/q;->a(Lcom/google/android/maps/rideabout/app/q;Z)Z
 
-    :cond_5
-    if-eqz p1, :cond_11
+    .line 204
+    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->a:Lcom/google/android/maps/rideabout/app/q;
 
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->e:Landroid/speech/tts/TextToSpeech;
+    check-cast p2, Lcom/google/android/maps/rideabout/app/i;
 
-    const-string v1, "     "
+    invoke-virtual {p2}, Lcom/google/android/maps/rideabout/app/i;->a()Lcom/google/android/maps/rideabout/app/NavigationService;
 
-    const/4 v2, 0x1
+    move-result-object v1
 
-    const/4 v3, 0x0
+    invoke-static {v0, v1}, Lcom/google/android/maps/rideabout/app/q;->a(Lcom/google/android/maps/rideabout/app/q;Lcom/google/android/maps/rideabout/app/NavigationService;)Lcom/google/android/maps/rideabout/app/NavigationService;
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/speech/tts/TextToSpeech;->speak(Ljava/lang/String;ILjava/util/HashMap;)I
+    .line 205
+    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->a:Lcom/google/android/maps/rideabout/app/q;
 
-    goto :goto_4
-
-    :cond_11
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->e:Landroid/speech/tts/TextToSpeech;
-
-    invoke-virtual {v0}, Landroid/speech/tts/TextToSpeech;->isSpeaking()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->e:Landroid/speech/tts/TextToSpeech;
-
-    invoke-virtual {v0}, Landroid/speech/tts/TextToSpeech;->stop()I
-
-    goto :goto_4
-.end method
-
-.method public b()LaN/d;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->d:LaN/d;
-
-    return-object v0
-.end method
-
-.method public c()Z
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->d:LaN/d;
-
-    sget-object v1, LaN/d;->c:LaN/d;
-
-    if-ne v0, v1, :cond_8
-
-    const/4 v0, 0x1
-
-    :goto_7
-    return v0
-
-    :cond_8
-    const/4 v0, 0x0
-
-    goto :goto_7
-.end method
-
-.method public d()V
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->d:LaN/d;
-
-    sget-object v1, LaN/d;->c:LaN/d;
-
-    if-ne v0, v1, :cond_7
-
-    :cond_6
-    :goto_6
-    return-void
-
-    :cond_7
-    invoke-static {}, LaN/b;->z()LaN/b;
+    invoke-static {v0}, Lcom/google/android/maps/rideabout/app/q;->a(Lcom/google/android/maps/rideabout/app/q;)Lcom/google/android/maps/rideabout/app/NavigationService;
 
     move-result-object v0
 
-    invoke-virtual {v0}, LaN/b;->u()Ljava/util/EnumSet;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/google/googlenav/ui/wizard/gJ;->b:Lcom/google/googlenav/ui/wizard/gJ;
-
-    invoke-virtual {v2, v1}, Lcom/google/googlenav/ui/wizard/gJ;->a(Ljava/util/EnumSet;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_6
-
-    sget-object v2, Lcom/google/googlenav/ui/wizard/gJ;->b:Lcom/google/googlenav/ui/wizard/gJ;
-
-    invoke-virtual {v1, v2}, Ljava/util/EnumSet;->remove(Ljava/lang/Object;)Z
-
-    invoke-virtual {v0, v1}, LaN/b;->a(Ljava/util/EnumSet;)V
-
-    goto :goto_6
-.end method
-
-.method public e()V
-    .registers 4
-
-    invoke-static {}, LaN/b;->z()LaN/b;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, LaN/b;->u()Ljava/util/EnumSet;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/google/googlenav/ui/wizard/gJ;->c:Lcom/google/googlenav/ui/wizard/gJ;
-
-    invoke-virtual {v1, v2}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {v0, v1}, LaN/b;->a(Ljava/util/EnumSet;)V
-
-    return-void
-.end method
-
-.method public f()V
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->e:Landroid/speech/tts/TextToSpeech;
-
-    if-eqz v0, :cond_9
-
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->e:Landroid/speech/tts/TextToSpeech;
-
-    invoke-virtual {v0}, Landroid/speech/tts/TextToSpeech;->shutdown()V
-
-    :cond_9
-    return-void
-.end method
-
-.method public onInit(I)V
-    .registers 7
-
-    const/4 v4, 0x0
-
-    const/4 v0, -0x1
-
-    if-ne p1, v0, :cond_c
-
-    sget-object v0, LaN/d;->e:LaN/d;
-
-    iput-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->d:LaN/d;
-
-    :cond_8
-    :goto_8
-    invoke-virtual {p0}, Lcom/google/android/maps/rideabout/app/r;->d()V
-
-    return-void
-
-    :cond_c
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->e:Landroid/speech/tts/TextToSpeech;
-
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/speech/tts/TextToSpeech;->setLanguage(Ljava/util/Locale;)I
+    invoke-virtual {v0}, Lcom/google/android/maps/rideabout/app/NavigationService;->b()Z
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_4e
+    if-nez v0, :cond_32
 
-    sget-object v0, LaN/d;->f:LaN/d;
+    .line 206
+    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->a:Lcom/google/android/maps/rideabout/app/q;
 
-    iput-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->d:LaN/d;
+    invoke-static {v0}, Lcom/google/android/maps/rideabout/app/q;->a(Lcom/google/android/maps/rideabout/app/q;)Lcom/google/android/maps/rideabout/app/NavigationService;
 
-    :cond_1d
-    :goto_1d
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->g:LaN/c;
+    move-result-object v0
 
-    if-eqz v0, :cond_8
+    iget-object v1, p0, Lcom/google/android/maps/rideabout/app/r;->a:Lcom/google/android/maps/rideabout/app/q;
 
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->g:LaN/c;
+    invoke-static {v1}, Lcom/google/android/maps/rideabout/app/q;->b(Lcom/google/android/maps/rideabout/app/q;)Lad/w;
 
-    iget-object v1, p0, Lcom/google/android/maps/rideabout/app/r;->d:LaN/d;
+    move-result-object v1
 
-    invoke-interface {v0, v1}, LaN/c;->a(LaN/d;)V
+    iget-object v2, p0, Lcom/google/android/maps/rideabout/app/r;->a:Lcom/google/android/maps/rideabout/app/q;
 
-    iput-object v4, p0, Lcom/google/android/maps/rideabout/app/r;->g:LaN/c;
+    invoke-static {v2}, Lcom/google/android/maps/rideabout/app/q;->c(Lcom/google/android/maps/rideabout/app/q;)LaP/d;
 
-    goto :goto_8
+    move-result-object v2
 
-    :pswitch_2b
-    sget-object v0, LaN/d;->b:LaN/d;
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/maps/rideabout/app/NavigationService;->a(Lad/w;LaP/d;)V
 
-    iput-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->d:LaN/d;
+    .line 208
+    :cond_32
+    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->a:Lcom/google/android/maps/rideabout/app/q;
 
-    goto :goto_1d
+    iget-object v1, p0, Lcom/google/android/maps/rideabout/app/r;->a:Lcom/google/android/maps/rideabout/app/q;
 
-    :pswitch_30
-    sget-object v0, LaN/d;->d:LaN/d;
+    invoke-static {v1}, Lcom/google/android/maps/rideabout/app/q;->a(Lcom/google/android/maps/rideabout/app/q;)Lcom/google/android/maps/rideabout/app/NavigationService;
 
-    iput-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->d:LaN/d;
+    move-result-object v1
 
-    goto :goto_1d
+    invoke-virtual {v1}, Lcom/google/android/maps/rideabout/app/NavigationService;->f()Lcom/google/android/maps/rideabout/app/o;
 
-    :pswitch_35
-    sget-object v0, LaN/d;->c:LaN/d;
+    move-result-object v1
 
-    iput-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->d:LaN/d;
+    invoke-static {v0, v1}, Lcom/google/android/maps/rideabout/app/q;->a(Lcom/google/android/maps/rideabout/app/q;Lcom/google/android/maps/rideabout/app/o;)Lcom/google/android/maps/rideabout/app/o;
 
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->c:Lcom/google/android/maps/rideabout/app/A;
+    .line 209
+    iget-object v1, p0, Lcom/google/android/maps/rideabout/app/r;->a:Lcom/google/android/maps/rideabout/app/q;
 
-    if-eqz v0, :cond_1d
+    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->a:Lcom/google/android/maps/rideabout/app/q;
 
-    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->c:Lcom/google/android/maps/rideabout/app/A;
+    invoke-static {v0}, Lcom/google/android/maps/rideabout/app/q;->d(Lcom/google/android/maps/rideabout/app/q;)Lcom/google/android/maps/MapsActivity;
 
-    new-instance v1, Lcom/google/android/maps/rideabout/app/y;
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/google/android/maps/rideabout/app/r;->f:Landroid/content/Context;
+    const-string v2, "audio"
 
-    iget-object v3, p0, Lcom/google/android/maps/rideabout/app/r;->e:Landroid/speech/tts/TextToSpeech;
+    invoke-virtual {v0, v2}, Lcom/google/android/maps/MapsActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-direct {v1, v2, v3}, Lcom/google/android/maps/rideabout/app/y;-><init>(Landroid/content/Context;Landroid/speech/tts/TextToSpeech;)V
+    move-result-object v0
 
-    invoke-interface {v0, v1}, Lcom/google/android/maps/rideabout/app/A;->a(Lcom/google/android/maps/rideabout/app/z;)V
+    check-cast v0, Landroid/media/AudioManager;
 
-    iput-object v4, p0, Lcom/google/android/maps/rideabout/app/r;->c:Lcom/google/android/maps/rideabout/app/A;
+    invoke-static {v1, v0}, Lcom/google/android/maps/rideabout/app/q;->a(Lcom/google/android/maps/rideabout/app/q;Landroid/media/AudioManager;)Landroid/media/AudioManager;
 
-    goto :goto_1d
+    .line 210
+    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->a:Lcom/google/android/maps/rideabout/app/q;
 
-    :pswitch_data_4e
-    .packed-switch -0x2
-        :pswitch_30
-        :pswitch_2b
-        :pswitch_35
-        :pswitch_35
-        :pswitch_35
-    .end packed-switch
+    invoke-static {v0}, Lcom/google/android/maps/rideabout/app/q;->e(Lcom/google/android/maps/rideabout/app/q;)Lcom/google/googlenav/ui/wizard/ju;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/ju;->M()Lcom/google/googlenav/ui/wizard/jB;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/jB;->ag()Z
+
+    move-result v0
+
+    if-nez v0, :cond_69
+
+    .line 211
+    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->a:Lcom/google/android/maps/rideabout/app/q;
+
+    invoke-virtual {v0}, Lcom/google/android/maps/rideabout/app/q;->g()V
+
+    .line 213
+    :cond_69
+    return-void
+.end method
+
+.method public onServiceDisconnected(Landroid/content/ComponentName;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 217
+    iget-object v0, p0, Lcom/google/android/maps/rideabout/app/r;->a:Lcom/google/android/maps/rideabout/app/q;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/google/android/maps/rideabout/app/q;->a(Lcom/google/android/maps/rideabout/app/q;Lcom/google/android/maps/rideabout/app/NavigationService;)Lcom/google/android/maps/rideabout/app/NavigationService;
+
+    .line 218
+    return-void
 .end method

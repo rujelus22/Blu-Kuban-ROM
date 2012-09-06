@@ -63,7 +63,7 @@
     iput-object v5, p0, Lcom/android/internal/policy/impl/CircleLockScreen;->TAG:Ljava/lang/String;
 
     .line 59
-    const/4 v5, 0x1
+    const/4 v5, 0x0
 
     iput-boolean v5, p0, Lcom/android/internal/policy/impl/CircleLockScreen;->DBG:Z
 

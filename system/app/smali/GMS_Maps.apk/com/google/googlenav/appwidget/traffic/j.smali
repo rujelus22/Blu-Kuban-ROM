@@ -1,500 +1,215 @@
 .class Lcom/google/googlenav/appwidget/traffic/j;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# static fields
-.field private static final a:Landroid/net/Uri;
+# instance fields
+.field final a:I
 
-.field private static final b:Landroid/net/Uri;
+.field final b:J
 
-.field private static final c:Landroid/net/Uri;
+.field final c:I
 
-.field private static final d:Landroid/net/Uri;
+.field private d:J
 
-.field private static final e:Landroid/net/Uri;
+.field private e:J
 
-.field private static final f:Ljava/util/Map;
+.field private f:I
 
-.field private static final g:Ljava/util/Map;
+.field private g:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method constructor <init>(IJI)V
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
 
-    const/16 v2, 0x14
-
-    const-string v0, "appwidgets://com.google.googlenav.appwidget.Traffic"
-
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/googlenav/appwidget/traffic/j;->a:Landroid/net/Uri;
-
-    sget-object v0, Lcom/google/googlenav/appwidget/traffic/j;->a:Landroid/net/Uri;
-
-    const-string v1, "update"
-
-    invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/googlenav/appwidget/traffic/j;->b:Landroid/net/Uri;
-
-    sget-object v0, Lcom/google/googlenav/appwidget/traffic/j;->a:Landroid/net/Uri;
-
-    const-string v1, "wakeup"
-
-    invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/googlenav/appwidget/traffic/j;->c:Landroid/net/Uri;
-
-    sget-object v0, Lcom/google/googlenav/appwidget/traffic/j;->a:Landroid/net/Uri;
-
-    const-string v1, "cancelUpdate"
-
-    invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/googlenav/appwidget/traffic/j;->d:Landroid/net/Uri;
-
-    sget-object v0, Lcom/google/googlenav/appwidget/traffic/j;->a:Landroid/net/Uri;
-
-    const-string v1, "updateLocation"
-
-    invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/googlenav/appwidget/traffic/j;->e:Landroid/net/Uri;
-
-    invoke-static {v2}, Lcom/google/googlenav/appwidget/traffic/j;->e(I)Ljava/util/Map;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/googlenav/appwidget/traffic/j;->f:Ljava/util/Map;
-
-    invoke-static {v2}, Lcom/google/googlenav/appwidget/traffic/j;->e(I)Ljava/util/Map;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/googlenav/appwidget/traffic/j;->g:Ljava/util/Map;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .registers 1
-
+    .prologue
+    .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 83
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/google/googlenav/appwidget/traffic/j;->g:I
+
+    .line 86
+    iput p1, p0, Lcom/google/googlenav/appwidget/traffic/j;->a:I
+
+    .line 87
+    iput-wide p2, p0, Lcom/google/googlenav/appwidget/traffic/j;->b:J
+
+    .line 88
+    iput p4, p0, Lcom/google/googlenav/appwidget/traffic/j;->c:I
+
+    .line 89
     return-void
 .end method
 
-.method static a(Landroid/net/Uri;)I
+
+# virtual methods
+.method declared-synchronized a()I
     .registers 2
 
-    const-string v0, "id"
+    .prologue
+    .line 92
+    monitor-enter p0
 
-    invoke-virtual {p0, v0}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+    :try_start_1
+    iget v0, p0, Lcom/google/googlenav/appwidget/traffic/j;->g:I
 
-    move-result-object v0
+    add-int/lit8 v0, v0, 0x1
 
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    iput v0, p0, Lcom/google/googlenav/appwidget/traffic/j;->g:I
+    :try_end_7
+    .catchall {:try_start_1 .. :try_end_7} :catchall_9
 
-    move-result v0
+    monitor-exit p0
 
     return v0
-.end method
 
-.method private static a(Landroid/net/Uri$Builder;I)Landroid/net/Uri$Builder;
-    .registers 4
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "id="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/net/Uri$Builder;->encodedQuery(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static a()Landroid/net/Uri;
-    .registers 1
-
-    sget-object v0, Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetProvider;->a:Landroid/net/Uri;
-
-    return-object v0
-.end method
-
-.method static a(I)Landroid/net/Uri;
-    .registers 5
-
-    sget-object v1, Lcom/google/googlenav/appwidget/traffic/j;->f:Ljava/util/Map;
-
-    monitor-enter v1
-
-    :try_start_3
-    sget-object v0, Lcom/google/googlenav/appwidget/traffic/j;->f:Ljava/util/Map;
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/net/Uri;
-
-    if-eqz v0, :cond_13
-
-    monitor-exit v1
-
-    :goto_12
-    return-object v0
-
-    :cond_13
-    sget-object v0, Lcom/google/googlenav/appwidget/traffic/TrafficAppWidgetProvider;->a:Landroid/net/Uri;
-
-    int-to-long v2, p0
-
-    invoke-static {v0, v2, v3}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v0
-
-    sget-object v2, Lcom/google/googlenav/appwidget/traffic/j;->f:Ljava/util/Map;
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-interface {v2, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    monitor-exit v1
-
-    goto :goto_12
-
-    :catchall_25
+    :catchall_9
     move-exception v0
 
-    monitor-exit v1
-    :try_end_27
-    .catchall {:try_start_3 .. :try_end_27} :catchall_25
+    monitor-exit p0
 
     throw v0
 .end method
 
-.method private static a(Landroid/net/Uri;Ljava/lang/String;)Z
-    .registers 4
+.method declared-synchronized a(JI)V
+    .registers 8
+    .parameter
+    .parameter
 
-    invoke-virtual {p0}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
+    .prologue
+    .line 96
+    monitor-enter p0
 
-    move-result-object v0
+    :try_start_1
+    iput-wide p1, p0, Lcom/google/googlenav/appwidget/traffic/j;->d:J
 
-    const/4 v1, 0x0
+    .line 97
+    iget-wide v0, p0, Lcom/google/googlenav/appwidget/traffic/j;->d:J
 
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    iget-wide v2, p0, Lcom/google/googlenav/appwidget/traffic/j;->b:J
 
-    move-result-object v0
+    sub-long/2addr v0, v2
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iput-wide v0, p0, Lcom/google/googlenav/appwidget/traffic/j;->e:J
 
-    move-result v0
+    .line 98
+    iput p3, p0, Lcom/google/googlenav/appwidget/traffic/j;->f:I
+    :try_end_c
+    .catchall {:try_start_1 .. :try_end_c} :catchall_e
 
-    return v0
-.end method
+    .line 99
+    monitor-exit p0
 
-.method static b()Landroid/net/Uri;
-    .registers 1
+    return-void
 
-    sget-object v0, Lcom/google/googlenav/appwidget/traffic/j;->e:Landroid/net/Uri;
-
-    return-object v0
-.end method
-
-.method static b(I)Landroid/net/Uri;
-    .registers 5
-
-    sget-object v1, Lcom/google/googlenav/appwidget/traffic/j;->g:Ljava/util/Map;
-
-    monitor-enter v1
-
-    :try_start_3
-    sget-object v0, Lcom/google/googlenav/appwidget/traffic/j;->g:Ljava/util/Map;
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/net/Uri;
-
-    if-eqz v0, :cond_13
-
-    monitor-exit v1
-
-    :goto_12
-    return-object v0
-
-    :cond_13
-    sget-object v0, Lcom/google/googlenav/appwidget/traffic/j;->b:Landroid/net/Uri;
-
-    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    invoke-static {v0, p0}, Lcom/google/googlenav/appwidget/traffic/j;->a(Landroid/net/Uri$Builder;I)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
-
-    move-result-object v0
-
-    sget-object v2, Lcom/google/googlenav/appwidget/traffic/j;->g:Ljava/util/Map;
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-interface {v2, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    monitor-exit v1
-
-    goto :goto_12
-
-    :catchall_2c
+    .line 96
+    :catchall_e
     move-exception v0
 
-    monitor-exit v1
-    :try_end_2e
-    .catchall {:try_start_3 .. :try_end_2e} :catchall_2c
+    monitor-exit p0
 
     throw v0
 .end method
 
-.method static b(Landroid/net/Uri;)Z
+.method declared-synchronized b()J
     .registers 3
 
-    if-eqz p0, :cond_1c
+    .prologue
+    .line 102
+    monitor-enter p0
 
-    const-string v0, "appwidgets"
+    :try_start_1
+    iget-wide v0, p0, Lcom/google/googlenav/appwidget/traffic/j;->d:J
+    :try_end_3
+    .catchall {:try_start_1 .. :try_end_3} :catchall_5
 
-    invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+    monitor-exit p0
 
-    move-result-object v1
+    return-wide v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :catchall_5
+    move-exception v0
 
-    move-result v0
+    monitor-exit p0
 
-    if-eqz v0, :cond_1c
+    throw v0
+.end method
 
-    const-string v0, "com.google.googlenav.appwidget.Traffic"
+.method declared-synchronized c()J
+    .registers 3
 
-    invoke-virtual {p0}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
+    .prologue
+    .line 106
+    monitor-enter p0
 
-    move-result-object v1
+    :try_start_1
+    iget-wide v0, p0, Lcom/google/googlenav/appwidget/traffic/j;->e:J
+    :try_end_3
+    .catchall {:try_start_1 .. :try_end_3} :catchall_5
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    monitor-exit p0
 
-    move-result v0
+    return-wide v0
 
-    if-eqz v0, :cond_1c
+    :catchall_5
+    move-exception v0
 
-    const/4 v0, 0x1
+    monitor-exit p0
 
-    :goto_1b
+    throw v0
+.end method
+
+.method declared-synchronized d()I
+    .registers 2
+
+    .prologue
+    .line 110
+    monitor-enter p0
+
+    :try_start_1
+    iget v0, p0, Lcom/google/googlenav/appwidget/traffic/j;->f:I
+    :try_end_3
+    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+
+    monitor-exit p0
+
     return v0
 
-    :cond_1c
-    const/4 v0, 0x0
+    :catchall_5
+    move-exception v0
 
-    goto :goto_1b
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method static c(I)Landroid/net/Uri;
+.method declared-synchronized e()I
     .registers 2
 
-    sget-object v0, Lcom/google/googlenav/appwidget/traffic/j;->c:Landroid/net/Uri;
+    .prologue
+    .line 114
+    monitor-enter p0
 
-    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+    :try_start_1
+    iget v0, p0, Lcom/google/googlenav/appwidget/traffic/j;->g:I
+    :try_end_3
+    .catchall {:try_start_1 .. :try_end_3} :catchall_5
 
-    move-result-object v0
+    monitor-exit p0
 
-    invoke-static {v0, p0}, Lcom/google/googlenav/appwidget/traffic/j;->a(Landroid/net/Uri$Builder;I)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static c(Landroid/net/Uri;)Z
-    .registers 2
-
-    invoke-static {p0}, Lcom/google/googlenav/appwidget/traffic/j;->b(Landroid/net/Uri;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    const-string v0, "update"
-
-    invoke-static {p0, v0}, Lcom/google/googlenav/appwidget/traffic/j;->a(Landroid/net/Uri;Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    const/4 v0, 0x1
-
-    :goto_f
     return v0
 
-    :cond_10
-    const/4 v0, 0x0
+    :catchall_5
+    move-exception v0
 
-    goto :goto_f
-.end method
+    monitor-exit p0
 
-.method static d(I)Landroid/net/Uri;
-    .registers 2
-
-    sget-object v0, Lcom/google/googlenav/appwidget/traffic/j;->d:Landroid/net/Uri;
-
-    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    invoke-static {v0, p0}, Lcom/google/googlenav/appwidget/traffic/j;->a(Landroid/net/Uri$Builder;I)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static d(Landroid/net/Uri;)Z
-    .registers 2
-
-    invoke-static {p0}, Lcom/google/googlenav/appwidget/traffic/j;->b(Landroid/net/Uri;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    const-string v0, "wakeup"
-
-    invoke-static {p0, v0}, Lcom/google/googlenav/appwidget/traffic/j;->a(Landroid/net/Uri;Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    const/4 v0, 0x1
-
-    :goto_f
-    return v0
-
-    :cond_10
-    const/4 v0, 0x0
-
-    goto :goto_f
-.end method
-
-.method private static e(I)Ljava/util/Map;
-    .registers 2
-
-    new-instance v0, LD/a;
-
-    invoke-direct {v0, p0}, LD/a;-><init>(I)V
-
-    return-object v0
-.end method
-
-.method static e(Landroid/net/Uri;)Z
-    .registers 2
-
-    invoke-static {p0}, Lcom/google/googlenav/appwidget/traffic/j;->b(Landroid/net/Uri;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    const-string v0, "cancelUpdate"
-
-    invoke-static {p0, v0}, Lcom/google/googlenav/appwidget/traffic/j;->a(Landroid/net/Uri;Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    const/4 v0, 0x1
-
-    :goto_f
-    return v0
-
-    :cond_10
-    const/4 v0, 0x0
-
-    goto :goto_f
-.end method
-
-.method static f(Landroid/net/Uri;)Z
-    .registers 2
-
-    invoke-static {p0}, Lcom/google/googlenav/appwidget/traffic/j;->b(Landroid/net/Uri;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    const-string v0, "updateLocation"
-
-    invoke-static {p0, v0}, Lcom/google/googlenav/appwidget/traffic/j;->a(Landroid/net/Uri;Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    const/4 v0, 0x1
-
-    :goto_f
-    return v0
-
-    :cond_10
-    const/4 v0, 0x0
-
-    goto :goto_f
+    throw v0
 .end method

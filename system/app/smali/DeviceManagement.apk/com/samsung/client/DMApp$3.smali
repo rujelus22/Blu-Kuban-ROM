@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 546
+    .line 545
     iput-object p1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -45,7 +45,7 @@
 
     const/4 v4, 0x1
 
-    .line 550
+    .line 549
     :try_start_3
     const-string v1, "DMApp"
 
@@ -71,18 +71,18 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 552
+    .line 551
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_266
 
-    .line 687
+    .line 686
     :cond_22
     :goto_22
     :pswitch_22
     return-void
 
-    .line 555
+    .line 554
     :pswitch_23
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
@@ -117,7 +117,7 @@
 
     if-ne v1, v2, :cond_22
 
-    .line 556
+    .line 555
     :cond_3e
     invoke-static {}, Lcom/samsung/client/DMApp;->access$500()Lcom/samsung/client/ISyncmlService;
 
@@ -133,7 +133,7 @@
 
     if-eq v1, v5, :cond_64
 
-    .line 558
+    .line 557
     :try_start_4a
     const-string v1, "DMApp"
 
@@ -141,7 +141,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 560
+    .line 559
     invoke-static {}, Lcom/samsung/client/DMApp;->access$500()Lcom/samsung/client/ISyncmlService;
 
     move-result-object v1
@@ -155,7 +155,7 @@
 
     invoke-interface {v1, v2}, Lcom/samsung/client/ISyncmlService;->shutdownDMSession(I)I
 
-    .line 561
+    .line 560
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     const/4 v2, 0x0
@@ -165,7 +165,7 @@
     :try_end_64
     .catch Ljava/lang/Exception; {:try_start_4a .. :try_end_64} :catch_96
 
-    .line 567
+    .line 566
     :cond_64
     :goto_64
     :try_start_64
@@ -173,20 +173,20 @@
 
     if-nez v1, :cond_c6
 
-    .line 568
+    .line 567
     invoke-static {}, Lcom/samsung/client/DMApp;->access$2100()I
 
     move-result v1
 
     if-ne v1, v4, :cond_a1
 
-    .line 569
+    .line 568
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     #calls: Lcom/samsung/client/DMApp;->hfaProgress()V
     invoke-static {v1}, Lcom/samsung/client/DMApp;->access$2500(Lcom/samsung/client/DMApp;)V
 
-    .line 595
+    .line 594
     :cond_73
     :goto_73
     invoke-static {}, Lcom/samsung/client/DMApp;->access$2100()I
@@ -197,7 +197,7 @@
 
     if-nez v1, :cond_87
 
-    .line 597
+    .line 596
     :try_start_79
     const-string v1, "DMApp"
 
@@ -205,7 +205,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 598
+    .line 597
     invoke-static {}, Lcom/samsung/client/DMApp;->access$500()Lcom/samsung/client/ISyncmlService;
 
     move-result-object v1
@@ -214,7 +214,7 @@
     :try_end_87
     .catch Ljava/lang/Exception; {:try_start_79 .. :try_end_87} :catch_11b
 
-    .line 603
+    .line 602
     :cond_87
     :goto_87
     const/4 v1, 0x0
@@ -226,11 +226,11 @@
 
     goto :goto_22
 
-    .line 684
+    .line 683
     :catch_8b
     move-exception v0
 
-    .line 685
+    .line 684
     .local v0, e:Ljava/lang/Exception;
     const-string v1, "DMApp"
 
@@ -242,12 +242,12 @@
 
     goto :goto_22
 
-    .line 562
+    .line 561
     .end local v0           #e:Ljava/lang/Exception;
     :catch_96
     move-exception v0
 
-    .line 563
+    .line 562
     .restart local v0       #e:Ljava/lang/Exception;
     :try_start_97
     const-string v1, "DMApp"
@@ -260,7 +260,7 @@
 
     goto :goto_64
 
-    .line 570
+    .line 569
     .end local v0           #e:Ljava/lang/Exception;
     :cond_a1
     invoke-static {}, Lcom/samsung/client/DMApp;->access$2100()I
@@ -269,7 +269,7 @@
 
     if-ne v1, v5, :cond_ad
 
-    .line 571
+    .line 570
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     #calls: Lcom/samsung/client/DMApp;->fumoProgress()V
@@ -277,7 +277,7 @@
 
     goto :goto_73
 
-    .line 572
+    .line 571
     :cond_ad
     invoke-static {}, Lcom/samsung/client/DMApp;->access$2100()I
 
@@ -285,7 +285,7 @@
 
     if-ne v1, v6, :cond_b9
 
-    .line 573
+    .line 572
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     #calls: Lcom/samsung/client/DMApp;->prlProgress()V
@@ -293,7 +293,7 @@
 
     goto :goto_73
 
-    .line 574
+    .line 573
     :cond_b9
     invoke-static {}, Lcom/samsung/client/DMApp;->access$2100()I
 
@@ -303,7 +303,7 @@
 
     if-ne v1, v2, :cond_73
 
-    .line 575
+    .line 574
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     #calls: Lcom/samsung/client/DMApp;->dcProgress()V
@@ -311,7 +311,7 @@
 
     goto :goto_73
 
-    .line 578
+    .line 577
     :cond_c6
     invoke-static {}, Lcom/samsung/client/DMApp;->access$2100()I
 
@@ -319,13 +319,13 @@
 
     if-ne v1, v5, :cond_fa
 
-    .line 579
+    .line 578
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     #calls: Lcom/samsung/client/DMApp;->nifumoProgress()V
     invoke-static {v1}, Lcom/samsung/client/DMApp;->access$2900(Lcom/samsung/client/DMApp;)V
 
-    .line 588
+    .line 587
     :goto_d1
     const-string v1, "DMApp"
 
@@ -353,14 +353,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 590
+    .line 589
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     iget-boolean v1, v1, Lcom/samsung/client/DMApp;->userCancel:Z
 
     if-nez v1, :cond_73
 
-    .line 591
+    .line 590
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     #calls: Lcom/samsung/client/DMApp;->handleNIAretry()V
@@ -368,7 +368,7 @@
 
     goto/16 :goto_73
 
-    .line 580
+    .line 579
     :cond_fa
     invoke-static {}, Lcom/samsung/client/DMApp;->access$2100()I
 
@@ -376,7 +376,7 @@
 
     if-ne v1, v6, :cond_106
 
-    .line 581
+    .line 580
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     #calls: Lcom/samsung/client/DMApp;->niprlProgress()V
@@ -384,7 +384,7 @@
 
     goto :goto_d1
 
-    .line 582
+    .line 581
     :cond_106
     invoke-static {}, Lcom/samsung/client/DMApp;->access$2100()I
 
@@ -394,7 +394,7 @@
 
     if-ne v1, v2, :cond_113
 
-    .line 583
+    .line 582
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     #calls: Lcom/samsung/client/DMApp;->nidcProgress()V
@@ -402,7 +402,7 @@
 
     goto :goto_d1
 
-    .line 585
+    .line 584
     :cond_113
     const-string v1, "DMApp"
 
@@ -412,11 +412,11 @@
 
     goto :goto_d1
 
-    .line 599
+    .line 598
     :catch_11b
     move-exception v0
 
-    .line 600
+    .line 599
     .restart local v0       #e:Ljava/lang/Exception;
     const-string v1, "DMApp"
 
@@ -428,7 +428,7 @@
 
     goto/16 :goto_87
 
-    .line 608
+    .line 607
     .end local v0           #e:Ljava/lang/Exception;
     :pswitch_127
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
@@ -440,7 +440,7 @@
 
     if-ne v1, v4, :cond_14d
 
-    .line 609
+    .line 608
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     #getter for: Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
@@ -454,7 +454,7 @@
 
     iput-boolean v2, v1, Lcom/samsung/prlupdate/PRLUpdate;->mUpdateAvailable:Z
 
-    .line 614
+    .line 613
     :goto_13a
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
@@ -463,7 +463,7 @@
     #setter for: Lcom/samsung/client/DMApp;->prlUpdated:I
     invoke-static {v1, v2}, Lcom/samsung/client/DMApp;->access$3302(Lcom/samsung/client/DMApp;I)I
 
-    .line 615
+    .line 614
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     #getter for: Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
@@ -477,7 +477,7 @@
 
     goto/16 :goto_22
 
-    .line 611
+    .line 610
     :cond_14d
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
@@ -494,7 +494,7 @@
 
     goto :goto_13a
 
-    .line 620
+    .line 619
     :pswitch_159
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
@@ -505,7 +505,7 @@
 
     if-ne v1, v4, :cond_17f
 
-    .line 621
+    .line 620
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     #getter for: Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
@@ -519,7 +519,7 @@
 
     iput-boolean v2, v1, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mUpdated:Z
 
-    .line 626
+    .line 625
     :goto_16c
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
@@ -528,7 +528,7 @@
     #setter for: Lcom/samsung/client/DMApp;->deviceConfigured:I
     invoke-static {v1, v2}, Lcom/samsung/client/DMApp;->access$3402(Lcom/samsung/client/DMApp;I)I
 
-    .line 627
+    .line 626
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     #getter for: Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
@@ -542,7 +542,7 @@
 
     goto/16 :goto_22
 
-    .line 623
+    .line 622
     :cond_17f
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
@@ -559,7 +559,7 @@
 
     goto :goto_16c
 
-    .line 631
+    .line 630
     :pswitch_18b
     const-string v1, "DMApp"
 
@@ -606,7 +606,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 635
+    .line 634
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     #getter for: Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
@@ -624,7 +624,7 @@
 
     if-nez v1, :cond_1f0
 
-    .line 636
+    .line 635
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     const/4 v2, 0x1
@@ -634,7 +634,7 @@
     :try_end_1cf
     .catch Ljava/lang/Exception; {:try_start_97 .. :try_end_1cf} :catch_8b
 
-    .line 639
+    .line 638
     :try_start_1cf
     const-string v1, "DMApp"
 
@@ -642,7 +642,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 640
+    .line 639
     invoke-static {}, Lcom/samsung/client/DMApp;->access$500()Lcom/samsung/client/ISyncmlService;
 
     move-result-object v1
@@ -651,7 +651,7 @@
     :try_end_1dd
     .catch Ljava/lang/Exception; {:try_start_1cf .. :try_end_1dd} :catch_1e5
 
-    .line 644
+    .line 643
     :goto_1dd
     :try_start_1dd
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
@@ -662,11 +662,11 @@
 
     goto/16 :goto_22
 
-    .line 641
+    .line 640
     :catch_1e5
     move-exception v0
 
-    .line 642
+    .line 641
     .restart local v0       #e:Ljava/lang/Exception;
     const-string v1, "DMApp"
 
@@ -678,7 +678,7 @@
 
     goto :goto_1dd
 
-    .line 649
+    .line 648
     .end local v0           #e:Ljava/lang/Exception;
     :cond_1f0
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
@@ -692,7 +692,7 @@
 
     if-eqz v1, :cond_22
 
-    .line 650
+    .line 649
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     #getter for: Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
@@ -720,7 +720,7 @@
 
     goto/16 :goto_22
 
-    .line 656
+    .line 655
     :pswitch_213
     iget-object v2, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
@@ -732,7 +732,7 @@
 
     goto/16 :goto_22
 
-    .line 660
+    .line 659
     :pswitch_21e
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
@@ -748,7 +748,7 @@
 
     goto/16 :goto_22
 
-    .line 664
+    .line 663
     :pswitch_22b
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
@@ -757,7 +757,7 @@
 
     goto/16 :goto_22
 
-    .line 668
+    .line 667
     :pswitch_232
     iget-object v2, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
@@ -770,7 +770,7 @@
 
     goto/16 :goto_22
 
-    .line 671
+    .line 670
     :pswitch_23d
     const-string v1, "DMApp"
 
@@ -778,7 +778,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 672
+    .line 671
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v1}, Lcom/samsung/client/DMApp;->postHfaStartSession()Z
@@ -787,7 +787,7 @@
 
     goto/16 :goto_22
 
-    .line 677
+    .line 676
     :pswitch_24b
     :try_start_24b
     const-string v1, "DMApp"
@@ -796,7 +796,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 678
+    .line 677
     iget-object v1, p0, Lcom/samsung/client/DMApp$3;->this$0:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v1}, Lcom/samsung/client/DMApp;->cancelDld()V
@@ -805,11 +805,11 @@
 
     goto/16 :goto_22
 
-    .line 679
+    .line 678
     :catch_259
     move-exception v0
 
-    .line 680
+    .line 679
     .restart local v0       #e:Ljava/lang/Exception;
     :try_start_25a
     const-string v1, "DMApp"
@@ -824,7 +824,7 @@
 
     goto/16 :goto_22
 
-    .line 552
+    .line 551
     nop
 
     :pswitch_data_266

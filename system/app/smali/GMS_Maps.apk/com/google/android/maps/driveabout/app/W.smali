@@ -1,36 +1,41 @@
-.class Lcom/google/android/maps/driveabout/app/W;
-.super Ljava/lang/Thread;
+.class Lcom/google/android/maps/driveabout/app/w;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnCancelListener;
 
 
 # instance fields
-.field final synthetic a:Z
-
-.field final synthetic b:Lcom/google/android/maps/driveabout/app/V;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/V;Z)V
-    .registers 3
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/DestinationActivity;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/W;->b:Lcom/google/android/maps/driveabout/app/V;
+    .prologue
+    .line 1245
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/w;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
 
-    iput-boolean p2, p0, Lcom/google/android/maps/driveabout/app/W;->a:Z
-
-    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public onCancel(Landroid/content/DialogInterface;)V
     .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/W;->b:Lcom/google/android/maps/driveabout/app/V;
+    .prologue
+    .line 1248
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/w;->a:Lcom/google/android/maps/driveabout/app/DestinationActivity;
 
-    iget-boolean v1, p0, Lcom/google/android/maps/driveabout/app/W;->a:Z
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->finish()V
 
-    invoke-static {v0, v1}, Lcom/google/android/maps/driveabout/app/V;->a(Lcom/google/android/maps/driveabout/app/V;Z)V
-
+    .line 1249
     return-void
 .end method

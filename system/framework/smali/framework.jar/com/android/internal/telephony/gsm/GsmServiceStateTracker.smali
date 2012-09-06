@@ -23,7 +23,7 @@
 
 .field static final CS_NOTIFICATION:I = 0x3e7
 
-.field static final DBG:Z = true
+.field static final DBG:Z = false
 
 .field static final DEFAULT_GPRS_CHECK_PERIOD_MILLIS:I = 0xea60
 

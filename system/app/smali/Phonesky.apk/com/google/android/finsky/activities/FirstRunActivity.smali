@@ -11,56 +11,134 @@
     .registers 1
 
     .prologue
-    .line 25
+    .line 28
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
     return-void
 .end method
 
-.method public static getIntent(Landroid/content/Context;)Landroid/content/Intent;
-    .registers 3
+.method public static getIntent(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/Intent;
+    .registers 4
+    .parameter
     .parameter
 
     .prologue
-    .line 73
+    .line 84
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/google/android/finsky/activities/FirstRunActivity;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 74
+    .line 85
+    const-string v1, "continue_intent"
+
+    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    .line 86
     return-object v0
 .end method
 
 .method public static requiresFirstRun()Z
-    .registers 1
+    .registers 7
 
     .prologue
-    .line 81
-    sget-object v0, Lcom/google/android/finsky/utils/FinskyPreferences;->viewedFirstRunDialog:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
+    const/4 v5, 0x1
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->get()Ljava/lang/Object;
+    const/4 v4, 0x0
 
-    move-result-object v0
+    .line 95
+    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    check-cast v0, Ljava/lang/Boolean;
+    const/16 v6, 0xe
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    if-gt v3, v6, :cond_16
 
-    move-result v0
+    sget-object v3, Lcom/google/android/finsky/utils/FinskyPreferences;->viewedFirstRunDialog:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
-    if-nez v0, :cond_10
+    invoke-virtual {v3}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->get()Ljava/lang/Object;
 
-    const/4 v0, 0x1
+    move-result-object v3
 
-    :goto_f
-    return v0
+    check-cast v3, Ljava/lang/Boolean;
 
-    :cond_10
-    const/4 v0, 0x0
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
 
-    goto :goto_f
+    move-result v3
+
+    if-eqz v3, :cond_1b
+
+    :cond_16
+    move v2, v5
+
+    .line 97
+    .local v2, shouldSkip:Z
+    :goto_17
+    if-eqz v2, :cond_1d
+
+    move v3, v4
+
+    .line 112
+    :goto_1a
+    return v3
+
+    .end local v2           #shouldSkip:Z
+    :cond_1b
+    move v2, v4
+
+    .line 95
+    goto :goto_17
+
+    .line 101
+    .restart local v2       #shouldSkip:Z
+    :cond_1d
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/FinskyApp;->getPackageInfoRepository()Lcom/google/android/finsky/appstate/PackageStateRepository;
+
+    move-result-object v1
+
+    .line 102
+    .local v1, repo:Lcom/google/android/finsky/appstate/PackageStateRepository;
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/android/finsky/FinskyApp;->getPackageName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v1, v3}, Lcom/google/android/finsky/appstate/PackageStateRepository;->get(Ljava/lang/String;)Lcom/google/android/finsky/appstate/PackageStateRepository$PackageState;
+
+    move-result-object v3
+
+    iget-boolean v0, v3, Lcom/google/android/finsky/appstate/PackageStateRepository$PackageState;->isUpdatedSystemApp:Z
+
+    .line 106
+    .local v0, isUpdate:Z
+    if-nez v0, :cond_40
+
+    .line 107
+    sget-object v3, Lcom/google/android/finsky/utils/FinskyPreferences;->viewedFirstRunDialog:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
+
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v5}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->put(Ljava/lang/Object;)V
+
+    move v3, v4
+
+    .line 108
+    goto :goto_1a
+
+    :cond_40
+    move v3, v5
+
+    .line 112
+    goto :goto_1a
 .end method
 
 
@@ -72,18 +150,18 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 86
+    .line 117
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/FirstRunActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v2, 0x7f020046
+    const v2, 0x7f02005c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 87
+    .line 118
     .local v0, drawable:Landroid/graphics/drawable/Drawable;
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
@@ -95,7 +173,7 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 88
+    .line 119
     return-object v0
 .end method
 
@@ -104,33 +182,33 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 29
+    .line 34
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 30
-    const v2, 0x7f040069
+    .line 35
+    const v2, 0x7f040074
 
     invoke-virtual {p0, v2}, Lcom/google/android/finsky/activities/FirstRunActivity;->setContentView(I)V
 
-    .line 32
+    .line 37
     const/4 v2, 0x0
 
     invoke-virtual {p0, v2}, Lcom/google/android/finsky/activities/FirstRunActivity;->setResult(I)V
 
-    .line 34
-    const v2, 0x7f0800ff
+    .line 39
+    const v2, 0x7f08013a
 
     invoke-virtual {p0, v2}, Lcom/google/android/finsky/activities/FirstRunActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 37
+    .line 42
     .local v1, pinstripe:Landroid/view/View;
     invoke-virtual {p0}, Lcom/google/android/finsky/activities/FirstRunActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    const v3, 0x7f020005
+    const v3, 0x7f020013
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -138,7 +216,7 @@
 
     check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 39
+    .line 44
     .local v0, backgroundTile:Landroid/graphics/drawable/BitmapDrawable;
     sget-object v2, Landroid/graphics/Shader$TileMode;->REPEAT:Landroid/graphics/Shader$TileMode;
 
@@ -146,11 +224,11 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/graphics/drawable/BitmapDrawable;->setTileModeXY(Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
 
-    .line 40
+    .line 45
     invoke-virtual {v1, v0}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 43
-    const v2, 0x7f080100
+    .line 48
+    const v2, 0x7f08013b
 
     invoke-virtual {p0, v2}, Lcom/google/android/finsky/activities/FirstRunActivity;->findViewById(I)Landroid/view/View;
 
@@ -162,7 +240,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0700cf
+    const v4, 0x7f0700db
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -176,8 +254,8 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 47
-    const v2, 0x7f080101
+    .line 52
+    const v2, 0x7f08013c
 
     invoke-virtual {p0, v2}, Lcom/google/android/finsky/activities/FirstRunActivity;->findViewById(I)Landroid/view/View;
 
@@ -189,8 +267,8 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 57
-    const v2, 0x7f080103
+    .line 62
+    const v2, 0x7f08004a
 
     invoke-virtual {p0, v2}, Lcom/google/android/finsky/activities/FirstRunActivity;->findViewById(I)Landroid/view/View;
 
@@ -202,6 +280,6 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 66
+    .line 77
     return-void
 .end method

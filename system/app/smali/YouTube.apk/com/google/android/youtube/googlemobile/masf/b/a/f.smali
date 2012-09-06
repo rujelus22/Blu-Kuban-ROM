@@ -291,13 +291,9 @@
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "ResumeServiceRequest.setPayload("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -324,14 +320,14 @@
     iput p1, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/f;->g:I
 
     iput-object p2, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/f;->k:[B
-    :try_end_27
-    .catchall {:try_start_1 .. :try_end_27} :catchall_29
+    :try_end_23
+    .catchall {:try_start_1 .. :try_end_23} :catchall_25
 
     monitor-exit p0
 
     return-void
 
-    :catchall_29
+    :catchall_25
     move-exception v0
 
     monitor-exit p0
@@ -347,13 +343,9 @@
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "ResumeServiceRequest.setResponse("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -368,14 +360,14 @@
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     iput-object p1, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/f;->a:Lcom/google/android/youtube/googlemobile/masf/b/a/g;
-    :try_end_1b
-    .catchall {:try_start_1 .. :try_end_1b} :catchall_1d
+    :try_end_17
+    .catchall {:try_start_1 .. :try_end_17} :catchall_19
 
     monitor-exit p0
 
     return-void
 
-    :catchall_1d
+    :catchall_19
     move-exception v0
 
     monitor-exit p0
@@ -391,13 +383,9 @@
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "ResumeServiceRequest.setServerTicket("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -412,14 +400,14 @@
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     iput-object p1, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/f;->b:Ljava/lang/String;
-    :try_end_1b
-    .catchall {:try_start_1 .. :try_end_1b} :catchall_1d
+    :try_end_17
+    .catchall {:try_start_1 .. :try_end_17} :catchall_19
 
     monitor-exit p0
 
     return-void
 
-    :catchall_1d
+    :catchall_19
     move-exception v0
 
     monitor-exit p0
@@ -435,13 +423,9 @@
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "ResumeServiceRequest.setProperty(\""
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -467,7 +451,7 @@
 
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/f;->f:Ljava/util/Hashtable;
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_2a
 
     new-instance v0, Ljava/util/Hashtable;
 
@@ -475,18 +459,18 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/f;->f:Ljava/util/Hashtable;
 
-    :cond_2e
+    :cond_2a
     iget-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/f;->f:Ljava/util/Hashtable;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_33
-    .catchall {:try_start_1 .. :try_end_33} :catchall_35
+    :try_end_2f
+    .catchall {:try_start_1 .. :try_end_2f} :catchall_31
 
     monitor-exit p0
 
     return-void
 
-    :catchall_35
+    :catchall_31
     move-exception v0
 
     monitor-exit p0
@@ -502,13 +486,9 @@
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v1, "ResumeServiceRequest.setRequestType("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -522,32 +502,32 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    if-nez p1, :cond_22
+    if-nez p1, :cond_1e
 
     const/4 v0, 0x0
 
     iput-short v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/f;->l:S
 
-    :goto_1e
+    :goto_1a
     iput p1, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/f;->h:I
-    :try_end_20
-    .catchall {:try_start_1 .. :try_end_20} :catchall_26
+    :try_end_1c
+    .catchall {:try_start_1 .. :try_end_1c} :catchall_22
 
     monitor-exit p0
 
     return-void
 
-    :cond_22
+    :cond_1e
     const/4 v0, 0x1
 
-    :try_start_23
+    :try_start_1f
     iput-short v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/f;->l:S
-    :try_end_25
-    .catchall {:try_start_23 .. :try_end_25} :catchall_26
+    :try_end_21
+    .catchall {:try_start_1f .. :try_end_21} :catchall_22
 
-    goto :goto_1e
+    goto :goto_1a
 
-    :catchall_26
+    :catchall_22
     move-exception v0
 
     monitor-exit p0

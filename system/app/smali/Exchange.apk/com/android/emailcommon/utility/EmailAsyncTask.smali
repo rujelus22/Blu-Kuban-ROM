@@ -51,16 +51,51 @@
     .registers 1
 
     .prologue
-    .line 38
+    .line 40
     sget-object v0, Landroid/os/AsyncTask;->SERIAL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     sput-object v0, Lcom/android/emailcommon/utility/EmailAsyncTask;->SERIAL_EXECUTOR:Ljava/util/concurrent/Executor;
 
-    .line 39
+    .line 41
     sget-object v0, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     sput-object v0, Lcom/android/emailcommon/utility/EmailAsyncTask;->PARALLEL_EXECUTOR:Ljava/util/concurrent/Executor;
 
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;)V
+    .registers 3
+    .parameter "tracker"
+
+    .prologue
+    .line 141
+    .local p0, this:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<TParams;TProgress;TResult;>;"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 142
+    iput-object p1, p0, Lcom/android/emailcommon/utility/EmailAsyncTask;->mTracker:Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
+
+    .line 143
+    iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask;->mTracker:Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
+
+    if-eqz v0, :cond_e
+
+    .line 144
+    iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask;->mTracker:Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
+
+    #calls: Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->add(Lcom/android/emailcommon/utility/EmailAsyncTask;)V
+    invoke-static {v0, p0}, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->access$100(Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;Lcom/android/emailcommon/utility/EmailAsyncTask;)V
+
+    .line 146
+    :cond_e
+    new-instance v0, Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;
+
+    invoke-direct {v0, p0}, Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;-><init>(Lcom/android/emailcommon/utility/EmailAsyncTask;)V
+
+    iput-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask;->mInnerTask:Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;
+
+    .line 147
     return-void
 .end method
 
@@ -69,10 +104,127 @@
     .parameter "x0"
 
     .prologue
-    .line 37
+    .line 39
     iget-boolean v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask;->mCancelled:Z
 
     return v0
+.end method
+
+.method private final varargs executeInternal(Ljava/util/concurrent/Executor;Z[Ljava/lang/Object;)Lcom/android/emailcommon/utility/EmailAsyncTask;
+    .registers 5
+    .parameter "executor"
+    .parameter "cancelPrevious"
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/concurrent/Executor;",
+            "Z[TParams;)",
+            "Lcom/android/emailcommon/utility/EmailAsyncTask",
+            "<TParams;TProgress;TResult;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 217
+    .local p0, this:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<TParams;TProgress;TResult;>;"
+    .local p3, params:[Ljava/lang/Object;,"[TParams;"
+    if-eqz p2, :cond_11
+
+    .line 218
+    iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask;->mTracker:Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
+
+    if-nez v0, :cond_c
+
+    .line 219
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw v0
+
+    .line 221
+    :cond_c
+    iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask;->mTracker:Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
+
+    invoke-virtual {v0, p0}, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->cancelOthers(Lcom/android/emailcommon/utility/EmailAsyncTask;)V
+
+    .line 224
+    :cond_11
+    iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask;->mInnerTask:Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;
+
+    invoke-virtual {v0, p1, p3}, Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    .line 225
+    return-object p0
+.end method
+
+.method private static runAsyncInternal(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;)Lcom/android/emailcommon/utility/EmailAsyncTask;
+    .registers 5
+    .parameter "executor"
+    .parameter "runnable"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/concurrent/Executor;",
+            "Ljava/lang/Runnable;",
+            ")",
+            "Lcom/android/emailcommon/utility/EmailAsyncTask",
+            "<",
+            "Ljava/lang/Void;",
+            "Ljava/lang/Void;",
+            "Ljava/lang/Void;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 244
+    new-instance v0, Lcom/android/emailcommon/utility/EmailAsyncTask$1;
+
+    invoke-direct {v0, v1, p1}, Lcom/android/emailcommon/utility/EmailAsyncTask$1;-><init>(Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;Ljava/lang/Runnable;)V
+
+    .line 251
+    .local v0, task:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<Ljava/lang/Void;Ljava/lang/Void;Ljava/lang/Void;>;"
+    const/4 v2, 0x0
+
+    check-cast v1, [Ljava/lang/Void;
+
+    invoke-direct {v0, p0, v2, v1}, Lcom/android/emailcommon/utility/EmailAsyncTask;->executeInternal(Ljava/util/concurrent/Executor;Z[Ljava/lang/Object;)Lcom/android/emailcommon/utility/EmailAsyncTask;
+
+    move-result-object v1
+
+    return-object v1
+.end method
+
+.method public static runAsyncParallel(Ljava/lang/Runnable;)Lcom/android/emailcommon/utility/EmailAsyncTask;
+    .registers 2
+    .parameter "runnable"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Runnable;",
+            ")",
+            "Lcom/android/emailcommon/utility/EmailAsyncTask",
+            "<",
+            "Ljava/lang/Void;",
+            "Ljava/lang/Void;",
+            "Ljava/lang/Void;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 232
+    sget-object v0, Lcom/android/emailcommon/utility/EmailAsyncTask;->PARALLEL_EXECUTOR:Ljava/util/concurrent/Executor;
+
+    invoke-static {v0, p0}, Lcom/android/emailcommon/utility/EmailAsyncTask;->runAsyncInternal(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;)Lcom/android/emailcommon/utility/EmailAsyncTask;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 
@@ -87,7 +239,7 @@
     .end annotation
 
     .prologue
-    .line 260
+    .line 264
     .local p0, this:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<TParams;TProgress;TResult;>;"
     .local p1, params:[Ljava/lang/Object;,"[TParams;"
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask;->mInnerTask:Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;
@@ -109,14 +261,14 @@
     .end annotation
 
     .prologue
-    .line 264
+    .line 268
     .local p0, this:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<TParams;TProgress;TResult;>;"
     .local p1, result:Ljava/lang/Object;,"TResult;"
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask;->mInnerTask:Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;
 
     invoke-virtual {v0, p1}, Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;->onCancelled(Ljava/lang/Object;)V
 
-    .line 265
+    .line 269
     return-void
 .end method
 
@@ -130,14 +282,34 @@
     .end annotation
 
     .prologue
-    .line 268
+    .line 272
     .local p0, this:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<TParams;TProgress;TResult;>;"
     .local p1, result:Ljava/lang/Object;,"TResult;"
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask;->mInnerTask:Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;
 
     invoke-virtual {v0, p1}, Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;->onPostExecute(Ljava/lang/Object;)V
 
-    .line 269
+    .line 273
+    return-void
+.end method
+
+.method public final cancel(Z)V
+    .registers 3
+    .parameter "mayInterruptIfRunning"
+
+    .prologue
+    .line 161
+    .local p0, this:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<TParams;TProgress;TResult;>;"
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask;->mCancelled:Z
+
+    .line 162
+    iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask;->mInnerTask:Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;
+
+    invoke-virtual {v0, p1}, Lcom/android/emailcommon/utility/EmailAsyncTask$InnerTask;->cancel(Z)Z
+
+    .line 163
     return-void
 .end method
 
@@ -159,7 +331,7 @@
     .end annotation
 
     .prologue
-    .line 161
+    .line 167
     .local p0, this:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<TParams;TProgress;TResult;>;"
     .local p1, result:Ljava/lang/Object;,"TResult;"
     return-void
@@ -175,7 +347,7 @@
     .end annotation
 
     .prologue
-    .line 172
+    .line 177
     .local p0, this:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<TParams;TProgress;TResult;>;"
     .local p1, result:Ljava/lang/Object;,"TResult;"
     return-void
@@ -185,19 +357,19 @@
     .registers 2
 
     .prologue
-    .line 145
+    .line 150
     .local p0, this:Lcom/android/emailcommon/utility/EmailAsyncTask;,"Lcom/android/emailcommon/utility/EmailAsyncTask<TParams;TProgress;TResult;>;"
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask;->mTracker:Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
 
     if-eqz v0, :cond_9
 
-    .line 146
+    .line 151
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask;->mTracker:Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;
 
     #calls: Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->remove(Lcom/android/emailcommon/utility/EmailAsyncTask;)V
     invoke-static {v0, p0}, Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;->access$200(Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;Lcom/android/emailcommon/utility/EmailAsyncTask;)V
 
-    .line 148
+    .line 153
     :cond_9
     return-void
 .end method

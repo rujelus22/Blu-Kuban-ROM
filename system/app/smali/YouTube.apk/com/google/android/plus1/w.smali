@@ -4,27 +4,29 @@
 
 
 # instance fields
-.field private final a:Lcom/google/android/plus1/ar;
+.field private final a:Lcom/google/android/plus1/as;
 
-.field private final b:Lcom/google/android/plus1/ar;
+.field private final b:Lcom/google/android/plus1/as;
 
 .field private final c:Lcom/google/android/plus1/aa;
 
-.field private final d:Lcom/google/common/collect/ew;
+.field private final d:Lcom/google/common/collect/hu;
 
 .field private final e:Ljava/util/Set;
 
-.field private final f:Lcom/google/common/collect/ew;
+.field private final f:Lcom/google/common/collect/hu;
 
-.field private final g:Ljava/util/concurrent/Executor;
+.field private final g:Ljava/util/Map;
 
-.field private final h:Lcom/google/android/plus1/ad;
+.field private final h:Ljava/util/concurrent/Executor;
 
-.field private final i:Lcom/google/android/plus1/av;
+.field private final i:Lcom/google/android/plus1/ad;
+
+.field private final j:Lcom/google/android/plus1/aw;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/plus1/am;Lcom/google/android/plus1/ar;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;)V
+.method public constructor <init>(Lcom/google/android/plus1/an;Lcom/google/android/plus1/as;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;)V
     .registers 11
     .parameter
     .parameter
@@ -32,7 +34,7 @@
     .parameter
 
     .prologue
-    .line 103
+    .line 110
     const/4 v5, 0x0
 
     move-object v0, p0
@@ -45,13 +47,13 @@
 
     move-object v4, p4
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/plus1/w;-><init>(Lcom/google/android/plus1/am;Lcom/google/android/plus1/ar;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Lcom/google/android/plus1/av;)V
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/plus1/w;-><init>(Lcom/google/android/plus1/an;Lcom/google/android/plus1/as;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Lcom/google/android/plus1/aw;)V
 
-    .line 104
+    .line 111
     return-void
 .end method
 
-.method private constructor <init>(Lcom/google/android/plus1/am;Lcom/google/android/plus1/ar;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Lcom/google/android/plus1/av;)V
+.method private constructor <init>(Lcom/google/android/plus1/an;Lcom/google/android/plus1/as;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Lcom/google/android/plus1/aw;)V
     .registers 9
     .parameter
     .parameter
@@ -60,71 +62,80 @@
     .parameter
 
     .prologue
-    .line 117
+    .line 124
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 71
-    new-instance v0, Lcom/google/android/plus1/al;
-
-    invoke-direct {v0}, Lcom/google/android/plus1/al;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/ar;
-
     .line 77
-    new-instance v0, Lcom/google/android/plus1/au;
+    new-instance v0, Lcom/google/android/plus1/am;
 
-    iget-object v1, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/ar;
+    invoke-direct {v0}, Lcom/google/android/plus1/am;-><init>()V
 
-    iget-object v2, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/ar;
+    iput-object v0, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/as;
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/plus1/au;-><init>(Lcom/google/android/plus1/ar;Lcom/google/android/plus1/ar;)V
+    .line 83
+    new-instance v0, Lcom/google/android/plus1/av;
 
-    iput-object v0, p0, Lcom/google/android/plus1/w;->b:Lcom/google/android/plus1/ar;
+    iget-object v1, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/as;
 
-    .line 80
+    iget-object v2, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/as;
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/plus1/av;-><init>(Lcom/google/android/plus1/as;Lcom/google/android/plus1/as;)V
+
+    iput-object v0, p0, Lcom/google/android/plus1/w;->b:Lcom/google/android/plus1/as;
+
+    .line 86
     new-instance v0, Lcom/google/android/plus1/aa;
 
-    invoke-direct {v0, p0}, Lcom/google/android/plus1/aa;-><init>(Lcom/google/android/plus1/w;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/google/android/plus1/aa;-><init>(Lcom/google/android/plus1/w;B)V
 
     iput-object v0, p0, Lcom/google/android/plus1/w;->c:Lcom/google/android/plus1/aa;
 
-    .line 82
+    .line 88
     invoke-static {}, Lcom/google/common/collect/HashMultimap;->create()Lcom/google/common/collect/HashMultimap;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/plus1/w;->d:Lcom/google/common/collect/ew;
+    iput-object v0, p0, Lcom/google/android/plus1/w;->d:Lcom/google/common/collect/hu;
 
-    .line 84
+    .line 90
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/plus1/w;->e:Ljava/util/Set;
 
-    .line 86
+    .line 92
     invoke-static {}, Lcom/google/common/collect/HashMultimap;->create()Lcom/google/common/collect/HashMultimap;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/plus1/w;->f:Lcom/google/common/collect/ew;
+    iput-object v0, p0, Lcom/google/android/plus1/w;->f:Lcom/google/common/collect/hu;
 
-    .line 118
-    iput-object p4, p0, Lcom/google/android/plus1/w;->g:Ljava/util/concurrent/Executor;
+    .line 94
+    invoke-static {}, Lcom/google/common/collect/Maps;->a()Ljava/util/HashMap;
 
-    .line 119
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/plus1/w;->g:Ljava/util/Map;
+
+    .line 125
+    iput-object p4, p0, Lcom/google/android/plus1/w;->h:Ljava/util/concurrent/Executor;
+
+    .line 126
     new-instance v0, Lcom/google/android/plus1/ad;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lcom/google/android/plus1/ad;-><init>(Lcom/google/android/plus1/w;Lcom/google/android/plus1/am;Lcom/google/android/plus1/ar;Ljava/util/concurrent/Executor;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lcom/google/android/plus1/ad;-><init>(Lcom/google/android/plus1/w;Lcom/google/android/plus1/an;Lcom/google/android/plus1/as;Ljava/util/concurrent/Executor;)V
 
-    iput-object v0, p0, Lcom/google/android/plus1/w;->h:Lcom/google/android/plus1/ad;
+    iput-object v0, p0, Lcom/google/android/plus1/w;->i:Lcom/google/android/plus1/ad;
 
-    .line 120
+    .line 127
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/plus1/w;->i:Lcom/google/android/plus1/av;
+    iput-object v0, p0, Lcom/google/android/plus1/w;->j:Lcom/google/android/plus1/aw;
 
-    .line 121
+    .line 128
     return-void
 .end method
 
@@ -133,8 +144,8 @@
     .parameter
 
     .prologue
-    .line 37
-    iget-object v0, p0, Lcom/google/android/plus1/w;->h:Lcom/google/android/plus1/ad;
+    .line 38
+    iget-object v0, p0, Lcom/google/android/plus1/w;->i:Lcom/google/android/plus1/ad;
 
     return-object v0
 .end method
@@ -146,14 +157,14 @@
     .parameter
 
     .prologue
-    .line 327
-    iget-object v0, p0, Lcom/google/android/plus1/w;->d:Lcom/google/common/collect/ew;
+    .line 334
+    iget-object v0, p0, Lcom/google/android/plus1/w;->d:Lcom/google/common/collect/hu;
 
-    invoke-interface {v0, p1}, Lcom/google/common/collect/ew;->get(Ljava/lang/Object;)Ljava/util/Collection;
+    invoke-interface {v0, p1}, Lcom/google/common/collect/hu;->get(Ljava/lang/Object;)Ljava/util/Collection;
 
     move-result-object v2
 
-    .line 332
+    .line 339
     invoke-static {v2}, Lcom/google/common/collect/Lists;->a(Ljava/lang/Iterable;)Ljava/util/ArrayList;
 
     move-result-object v0
@@ -176,22 +187,22 @@
 
     check-cast v0, Ljava/lang/ref/Reference;
 
-    .line 333
+    .line 340
     invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/google/android/plus1/ac;
 
-    .line 334
+    .line 341
     if-nez v1, :cond_26
 
-    .line 335
+    .line 342
     invoke-interface {v2, v0}, Ljava/util/Collection;->remove(Ljava/lang/Object;)Z
 
     goto :goto_e
 
-    .line 336
+    .line 343
     :cond_26
     invoke-interface {v2, v0}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
@@ -199,32 +210,32 @@
 
     if-eqz v0, :cond_e
 
-    .line 337
+    .line 344
     if-eqz p2, :cond_32
 
-    .line 338
+    .line 345
     invoke-interface {v1, p2}, Lcom/google/android/plus1/ac;->a(Ljava/lang/Object;)V
 
     goto :goto_e
 
-    .line 340
+    .line 347
     :cond_32
     invoke-interface {v1, p3}, Lcom/google/android/plus1/ac;->a(Ljava/lang/Exception;)V
 
     goto :goto_e
 
-    .line 344
+    .line 351
     :cond_36
     return-void
 .end method
 
-.method private a(Lcom/google/android/plus1/ap;Ljava/lang/Exception;)V
+.method private a(Lcom/google/android/plus1/aq;Ljava/lang/Exception;)V
     .registers 7
     .parameter
     .parameter
 
     .prologue
-    .line 356
+    .line 363
     iget-object v0, p0, Lcom/google/android/plus1/w;->e:Ljava/util/Set;
 
     invoke-static {v0}, Lcom/google/common/collect/Lists;->a(Ljava/lang/Iterable;)Ljava/util/ArrayList;
@@ -249,24 +260,24 @@
 
     check-cast v0, Ljava/lang/ref/Reference;
 
-    .line 357
+    .line 364
     invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/google/android/plus1/ac;
 
-    .line 358
+    .line 365
     if-nez v1, :cond_24
 
-    .line 359
+    .line 366
     iget-object v1, p0, Lcom/google/android/plus1/w;->e:Ljava/util/Set;
 
     invoke-interface {v1, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     goto :goto_a
 
-    .line 360
+    .line 367
     :cond_24
     iget-object v3, p0, Lcom/google/android/plus1/w;->e:Ljava/util/Set;
 
@@ -276,21 +287,21 @@
 
     if-eqz v0, :cond_a
 
-    .line 361
+    .line 368
     if-eqz p1, :cond_32
 
-    .line 362
+    .line 369
     invoke-interface {v1, p1}, Lcom/google/android/plus1/ac;->a(Ljava/lang/Object;)V
 
     goto :goto_a
 
-    .line 364
+    .line 371
     :cond_32
     invoke-interface {v1, p2}, Lcom/google/android/plus1/ac;->a(Ljava/lang/Exception;)V
 
     goto :goto_a
 
-    .line 368
+    .line 375
     :cond_36
     return-void
 .end method
@@ -300,14 +311,14 @@
     .parameter
 
     .prologue
-    .line 319
+    .line 326
     iget-object v0, p1, Lcom/google/android/plus1/u;->a:Landroid/net/Uri;
 
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, p1, v1}, Lcom/google/android/plus1/w;->a(Landroid/net/Uri;Lcom/google/android/plus1/u;Ljava/lang/Exception;)V
 
-    .line 320
+    .line 327
     return-void
 .end method
 
@@ -318,7 +329,7 @@
     .parameter
 
     .prologue
-    .line 37
+    .line 38
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0, p2}, Lcom/google/android/plus1/w;->a(Landroid/net/Uri;Lcom/google/android/plus1/u;Ljava/lang/Exception;)V
@@ -326,25 +337,25 @@
     return-void
 .end method
 
-.method static synthetic a(Lcom/google/android/plus1/w;Lcom/google/android/plus1/ap;)V
+.method static synthetic a(Lcom/google/android/plus1/w;Lcom/google/android/plus1/aq;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 37
-    iget-object v0, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/ar;
+    .line 38
+    iget-object v0, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/as;
 
-    invoke-interface {v0, p1}, Lcom/google/android/plus1/ar;->a(Lcom/google/android/plus1/ap;)V
+    invoke-interface {v0, p1}, Lcom/google/android/plus1/as;->a(Lcom/google/android/plus1/aq;)V
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/plus1/w;->a(Lcom/google/android/plus1/ap;Ljava/lang/Exception;)V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/plus1/w;->a(Lcom/google/android/plus1/aq;Ljava/lang/Exception;)V
 
     return-void
 .end method
 
-.method static synthetic a(Lcom/google/android/plus1/w;Lcom/google/android/plus1/as;)V
+.method static synthetic a(Lcom/google/android/plus1/w;Lcom/google/android/plus1/at;)V
     .registers 6
     .parameter
     .parameter
@@ -352,20 +363,20 @@
     .prologue
     const/4 v2, 0x6
 
-    .line 37
+    .line 38
     :try_start_1
-    iget-object v0, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/ar;
+    iget-object v0, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/as;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/plus1/as;->a(Lcom/google/android/plus1/ak;)V
+    invoke-virtual {p1, v0}, Lcom/google/android/plus1/at;->a(Lcom/google/android/plus1/ak;)V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_6} :catch_c
-    .catch Lcom/google/android/plus1/PlusOneReader$PlusOneException; {:try_start_1 .. :try_end_6} :catch_32
+    .catch Lcom/google/android/plus1/PlusOneReader$PlusOneException; {:try_start_1 .. :try_end_6} :catch_2e
 
     :cond_6
     :goto_6
-    iget-object v0, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/ar;
+    iget-object v0, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/as;
 
-    invoke-interface {v0, p1}, Lcom/google/android/plus1/ar;->b(Lcom/google/android/plus1/as;)V
+    invoke-interface {v0, p1}, Lcom/google/android/plus1/as;->b(Lcom/google/android/plus1/at;)V
 
     return-void
 
@@ -374,7 +385,7 @@
 
     const-string v1, "PlusOneController"
 
-    invoke-static {v1, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v1, v2}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v1
 
@@ -384,13 +395,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Error loading +1: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
@@ -408,12 +415,12 @@
 
     goto :goto_6
 
-    :catch_32
+    :catch_2e
     move-exception v0
 
     const-string v1, "PlusOneController"
 
-    invoke-static {v1, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v1, v2}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v1
 
@@ -423,13 +430,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Error loading +1: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Lcom/google/android/plus1/PlusOneReader$PlusOneException;->getMessage()Ljava/lang/String;
 
@@ -454,7 +457,7 @@
     .parameter
 
     .prologue
-    .line 37
+    .line 38
     invoke-direct {p0, p1}, Lcom/google/android/plus1/w;->a(Lcom/google/android/plus1/u;)V
 
     return-void
@@ -466,10 +469,10 @@
     .parameter
 
     .prologue
-    .line 37
+    .line 38
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0, p1}, Lcom/google/android/plus1/w;->a(Lcom/google/android/plus1/ap;Ljava/lang/Exception;)V
+    invoke-direct {p0, v0, p1}, Lcom/google/android/plus1/w;->a(Lcom/google/android/plus1/aq;Ljava/lang/Exception;)V
 
     return-void
 .end method
@@ -480,26 +483,26 @@
     .parameter
 
     .prologue
-    .line 37
+    .line 38
     invoke-static {p1}, Lcom/google/common/collect/Lists;->a(Ljava/lang/Iterable;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/ar;
+    iget-object v1, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/as;
 
-    invoke-interface {v1}, Lcom/google/android/plus1/ar;->c()Ljava/util/List;
+    invoke-interface {v1}, Lcom/google/android/plus1/as;->c()Ljava/util/List;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    iget-object v1, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/ar;
+    iget-object v1, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/as;
 
-    invoke-interface {v1, v0}, Lcom/google/android/plus1/ar;->a(Ljava/util/List;)V
+    invoke-interface {v1, v0}, Lcom/google/android/plus1/as;->a(Ljava/util/List;)V
 
-    iget-object v0, p0, Lcom/google/android/plus1/w;->b:Lcom/google/android/plus1/ar;
+    iget-object v0, p0, Lcom/google/android/plus1/w;->b:Lcom/google/android/plus1/as;
 
-    invoke-interface {v0}, Lcom/google/android/plus1/ar;->b()Ljava/util/Map;
+    invoke-interface {v0}, Lcom/google/android/plus1/as;->b()Ljava/util/Map;
 
     move-result-object v0
 
@@ -544,7 +547,7 @@
     .parameter
 
     .prologue
-    .line 37
+    .line 38
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -579,18 +582,18 @@
     check-cast v0, Lcom/google/android/plus1/u;
 
     :try_start_20
-    iget-object v3, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/ar;
+    iget-object v3, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/as;
 
-    invoke-interface {v3, v1, v0}, Lcom/google/android/plus1/ar;->a(Landroid/net/Uri;Lcom/google/android/plus1/u;)V
+    invoke-interface {v3, v1, v0}, Lcom/google/android/plus1/as;->a(Landroid/net/Uri;Lcom/google/android/plus1/u;)V
     :try_end_25
     .catch Ljava/io/IOException; {:try_start_20 .. :try_end_25} :catch_3a
     .catch Lcom/google/android/plus1/PlusOneReader$PlusOneException; {:try_start_20 .. :try_end_25} :catch_45
 
     :goto_25
     :try_start_25
-    iget-object v0, p0, Lcom/google/android/plus1/w;->b:Lcom/google/android/plus1/ar;
+    iget-object v0, p0, Lcom/google/android/plus1/w;->b:Lcom/google/android/plus1/as;
 
-    invoke-interface {v0, v1}, Lcom/google/android/plus1/ar;->a(Landroid/net/Uri;)Lcom/google/android/plus1/u;
+    invoke-interface {v0, v1}, Lcom/google/android/plus1/as;->a(Landroid/net/Uri;)Lcom/google/android/plus1/u;
 
     move-result-object v0
 
@@ -657,13 +660,13 @@
     return-void
 .end method
 
-.method static synthetic b(Lcom/google/android/plus1/w;)Lcom/google/android/plus1/ar;
+.method static synthetic b(Lcom/google/android/plus1/w;)Lcom/google/android/plus1/as;
     .registers 2
     .parameter
 
     .prologue
-    .line 37
-    iget-object v0, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/ar;
+    .line 38
+    iget-object v0, p0, Lcom/google/android/plus1/w;->a:Lcom/google/android/plus1/as;
 
     return-object v0
 .end method
@@ -673,19 +676,30 @@
     .parameter
 
     .prologue
-    .line 37
-    iget-object v0, p0, Lcom/google/android/plus1/w;->g:Ljava/util/concurrent/Executor;
+    .line 38
+    iget-object v0, p0, Lcom/google/android/plus1/w;->h:Ljava/util/concurrent/Executor;
 
     return-object v0
 .end method
 
-.method static synthetic d(Lcom/google/android/plus1/w;)Lcom/google/android/plus1/ar;
+.method static synthetic d(Lcom/google/android/plus1/w;)Lcom/google/android/plus1/as;
     .registers 2
     .parameter
 
     .prologue
-    .line 37
-    iget-object v0, p0, Lcom/google/android/plus1/w;->b:Lcom/google/android/plus1/ar;
+    .line 38
+    iget-object v0, p0, Lcom/google/android/plus1/w;->b:Lcom/google/android/plus1/as;
+
+    return-object v0
+.end method
+
+.method static synthetic e(Lcom/google/android/plus1/w;)Ljava/util/Map;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 38
+    iget-object v0, p0, Lcom/google/android/plus1/w;->g:Ljava/util/Map;
 
     return-object v0
 .end method
@@ -696,7 +710,7 @@
     .registers 2
 
     .prologue
-    .line 124
+    .line 131
     iget-object v0, p0, Lcom/google/android/plus1/w;->c:Lcom/google/android/plus1/aa;
 
     return-object v0
@@ -707,10 +721,10 @@
     .parameter
 
     .prologue
-    .line 168
-    iget-object v0, p0, Lcom/google/android/plus1/w;->d:Lcom/google/common/collect/ew;
+    .line 175
+    iget-object v0, p0, Lcom/google/android/plus1/w;->d:Lcom/google/common/collect/hu;
 
-    invoke-interface {v0}, Lcom/google/common/collect/ew;->entries()Ljava/util/Collection;
+    invoke-interface {v0}, Lcom/google/common/collect/hu;->entries()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -718,7 +732,7 @@
 
     move-result-object v1
 
-    .line 170
+    .line 177
     :cond_a
     :goto_a
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -727,14 +741,14 @@
 
     if-eqz v0, :cond_2a
 
-    .line 171
+    .line 178
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 172
+    .line 179
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -747,18 +761,18 @@
 
     check-cast v0, Lcom/google/android/plus1/ac;
 
-    .line 173
+    .line 180
     if-eq v0, p1, :cond_26
 
     if-nez v0, :cond_a
 
-    .line 174
+    .line 181
     :cond_26
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
     goto :goto_a
 
-    .line 177
+    .line 184
     :cond_2a
     return-void
 .end method
@@ -771,7 +785,7 @@
     .prologue
     const/4 v4, 0x6
 
-    .line 134
+    .line 141
     invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -789,27 +803,27 @@
 
     check-cast v0, Landroid/net/Uri;
 
-    .line 135
-    iget-object v2, p0, Lcom/google/android/plus1/w;->d:Lcom/google/common/collect/ew;
+    .line 142
+    iget-object v2, p0, Lcom/google/android/plus1/w;->d:Lcom/google/common/collect/hu;
 
     new-instance v3, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v3, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    invoke-interface {v2, v0, v3}, Lcom/google/common/collect/ew;->put(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-interface {v2, v0, v3}, Lcom/google/common/collect/hu;->put(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     goto :goto_5
 
-    .line 142
+    .line 149
     :cond_1c
     :try_start_1c
-    iget-object v0, p0, Lcom/google/android/plus1/w;->b:Lcom/google/android/plus1/ar;
+    iget-object v0, p0, Lcom/google/android/plus1/w;->b:Lcom/google/android/plus1/as;
 
-    invoke-interface {v0, p1}, Lcom/google/android/plus1/ar;->a(Ljava/util/Set;)Ljava/util/Map;
+    invoke-interface {v0, p1}, Lcom/google/android/plus1/as;->a(Ljava/util/Set;)Ljava/util/Map;
 
     move-result-object v0
 
-    .line 143
+    .line 150
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -823,7 +837,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_63
+    if-eqz v0, :cond_5f
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -831,7 +845,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 144
+    .line 151
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -839,35 +853,31 @@
     invoke-interface {p2, v0}, Lcom/google/android/plus1/ac;->a(Ljava/lang/Object;)V
     :try_end_3d
     .catch Lcom/google/android/plus1/PlusOneReader$PlusOneException; {:try_start_1c .. :try_end_3d} :catch_3e
-    .catch Ljava/io/IOException; {:try_start_1c .. :try_end_3d} :catch_6e
+    .catch Ljava/io/IOException; {:try_start_1c .. :try_end_3d} :catch_6a
 
     goto :goto_2a
 
-    .line 146
+    .line 153
     :catch_3e
     move-exception v0
 
-    .line 147
+    .line 154
     const-string v1, "PlusOneController"
 
-    invoke-static {v1, v4}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v1, v4}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_63
+    if-eqz v1, :cond_5f
 
-    .line 148
+    .line 155
     const-string v1, "PlusOneController"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Error loading cached +1\'s: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Lcom/google/android/plus1/PlusOneReader$PlusOneException;->getMessage()Ljava/lang/String;
 
@@ -883,10 +893,10 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 156
-    :cond_63
-    :goto_63
-    iget-object v0, p0, Lcom/google/android/plus1/w;->g:Ljava/util/concurrent/Executor;
+    .line 163
+    :cond_5f
+    :goto_5f
+    iget-object v0, p0, Lcom/google/android/plus1/w;->h:Ljava/util/concurrent/Executor;
 
     new-instance v1, Lcom/google/android/plus1/x;
 
@@ -894,34 +904,30 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 161
+    .line 168
     return-void
 
-    .line 150
-    :catch_6e
+    .line 157
+    :catch_6a
     move-exception v0
 
-    .line 151
+    .line 158
     const-string v1, "PlusOneController"
 
-    invoke-static {v1, v4}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v1, v4}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_63
+    if-eqz v1, :cond_5f
 
-    .line 152
+    .line 159
     const-string v1, "PlusOneController"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Error loading cached +1\'s: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
@@ -937,15 +943,15 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_63
+    goto :goto_5f
 .end method
 
 .method public final b()V
     .registers 3
 
     .prologue
-    .line 283
-    iget-object v0, p0, Lcom/google/android/plus1/w;->g:Ljava/util/concurrent/Executor;
+    .line 290
+    iget-object v0, p0, Lcom/google/android/plus1/w;->h:Ljava/util/concurrent/Executor;
 
     new-instance v1, Lcom/google/android/plus1/z;
 
@@ -953,7 +959,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 288
+    .line 295
     return-void
 .end method
 
@@ -964,7 +970,7 @@
     .prologue
     const/4 v2, 0x6
 
-    .line 184
+    .line 191
     iget-object v0, p0, Lcom/google/android/plus1/w;->e:Ljava/util/Set;
 
     new-instance v1, Ljava/lang/ref/WeakReference;
@@ -973,26 +979,26 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 187
+    .line 194
     :try_start_b
-    iget-object v0, p0, Lcom/google/android/plus1/w;->b:Lcom/google/android/plus1/ar;
+    iget-object v0, p0, Lcom/google/android/plus1/w;->b:Lcom/google/android/plus1/as;
 
-    invoke-interface {v0}, Lcom/google/android/plus1/ar;->a()Lcom/google/android/plus1/ap;
+    invoke-interface {v0}, Lcom/google/android/plus1/as;->a()Lcom/google/android/plus1/aq;
 
     move-result-object v0
 
-    .line 188
+    .line 195
     if-eqz v0, :cond_16
 
-    .line 189
+    .line 196
     invoke-interface {p1, v0}, Lcom/google/android/plus1/ac;->a(Ljava/lang/Object;)V
     :try_end_16
     .catch Ljava/io/IOException; {:try_start_b .. :try_end_16} :catch_21
     .catch Lcom/google/android/plus1/PlusOneReader$PlusOneException; {:try_start_b .. :try_end_16} :catch_39
 
-    .line 203
+    .line 210
     :cond_16
-    iget-object v0, p0, Lcom/google/android/plus1/w;->g:Ljava/util/concurrent/Executor;
+    iget-object v0, p0, Lcom/google/android/plus1/w;->h:Ljava/util/concurrent/Executor;
 
     new-instance v1, Lcom/google/android/plus1/y;
 
@@ -1000,23 +1006,23 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 208
+    .line 215
     return-void
 
-    .line 191
+    .line 198
     :catch_21
     move-exception v0
 
-    .line 192
+    .line 199
     const-string v1, "PlusOneController"
 
-    invoke-static {v1, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v1, v2}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v1
 
     if-eqz v1, :cond_33
 
-    .line 193
+    .line 200
     const-string v1, "PlusOneController"
 
     invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
@@ -1025,7 +1031,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 195
+    .line 202
     :cond_33
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -1033,20 +1039,20 @@
 
     throw v1
 
-    .line 196
+    .line 203
     :catch_39
     move-exception v0
 
-    .line 197
+    .line 204
     const-string v1, "PlusOneController"
 
-    invoke-static {v1, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v1, v2}, Lcom/google/android/plus1/al;->a(Ljava/lang/String;I)Z
 
     move-result v1
 
     if-eqz v1, :cond_4b
 
-    .line 198
+    .line 205
     const-string v1, "PlusOneController"
 
     invoke-virtual {v0}, Lcom/google/android/plus1/PlusOneReader$PlusOneException;->getMessage()Ljava/lang/String;
@@ -1055,7 +1061,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 200
+    .line 207
     :cond_4b
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -1069,14 +1075,14 @@
     .parameter
 
     .prologue
-    .line 215
+    .line 222
     iget-object v0, p0, Lcom/google/android/plus1/w;->e:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 217
+    .line 224
     :cond_6
     :goto_6
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -1085,7 +1091,7 @@
 
     if-eqz v0, :cond_20
 
-    .line 218
+    .line 225
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -1098,18 +1104,18 @@
 
     check-cast v0, Lcom/google/android/plus1/ac;
 
-    .line 219
+    .line 226
     if-eq v0, p1, :cond_1c
 
     if-nez v0, :cond_6
 
-    .line 220
+    .line 227
     :cond_1c
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
     goto :goto_6
 
-    .line 223
+    .line 230
     :cond_20
     return-void
 .end method
@@ -1119,20 +1125,20 @@
     .parameter
 
     .prologue
-    .line 254
-    iget-object v0, p0, Lcom/google/android/plus1/w;->i:Lcom/google/android/plus1/av;
+    .line 261
+    iget-object v0, p0, Lcom/google/android/plus1/w;->j:Lcom/google/android/plus1/aw;
 
     if-nez v0, :cond_5
 
-    .line 266
+    .line 273
     :cond_4
     return-void
 
-    .line 257
+    .line 264
     :cond_5
-    iget-object v0, p0, Lcom/google/android/plus1/w;->f:Lcom/google/common/collect/ew;
+    iget-object v0, p0, Lcom/google/android/plus1/w;->f:Lcom/google/common/collect/hu;
 
-    invoke-interface {v0}, Lcom/google/common/collect/ew;->entries()Ljava/util/Collection;
+    invoke-interface {v0}, Lcom/google/common/collect/hu;->entries()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -1140,7 +1146,7 @@
 
     move-result-object v1
 
-    .line 259
+    .line 266
     :cond_f
     :goto_f
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -1149,14 +1155,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 260
+    .line 267
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 261
+    .line 268
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -1169,12 +1175,12 @@
 
     check-cast v0, Lcom/google/android/plus1/ac;
 
-    .line 262
+    .line 269
     if-eq v0, p1, :cond_2b
 
     if-nez v0, :cond_f
 
-    .line 263
+    .line 270
     :cond_2b
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 

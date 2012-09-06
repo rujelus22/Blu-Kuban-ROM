@@ -234,19 +234,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_af
+    if-eqz v0, :cond_ab
 
     const-string v0, "GoogleAnalyticsTracker"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v5, "HTTP Response Code: "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-interface {v3}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
 
@@ -266,7 +262,7 @@
 
     invoke-static {v0, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_af
+    :cond_ab
     iget-boolean v0, p0, Lcom/google/android/apps/analytics/x;->d:Z
 
     if-nez v0, :cond_c

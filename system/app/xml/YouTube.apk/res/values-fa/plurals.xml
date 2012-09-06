@@ -28,6 +28,14 @@
         <item quantity="other">%1$d ثانیه قبل</item>
         <item quantity="one">1 ثانیه قبل</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">%1$d روز دیگر منقضی می شود</item>
+        <item quantity="one">پس از 1 روز منقضی می شود</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">%1$d ساعت دیگر منقضی می شود</item>
+        <item quantity="one">پس از 1 ساعت منقضی می شود</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">آپلودهای جدید</item>
         <item quantity="one">آپلود جدید</item>

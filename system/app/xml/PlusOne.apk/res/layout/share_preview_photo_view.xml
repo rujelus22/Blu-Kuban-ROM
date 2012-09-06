@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/share_preview" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.google.android.apps.plus.views.EsImageView android:id="@id/photo_image" android:layout_width="@dimen/stream_image_dimension" android:layout_height="@dimen/stream_image_dimension" android:layout_marginBottom="@dimen/photo_image_margin" android:src="@drawable/album_border" />
-</RelativeLayout>

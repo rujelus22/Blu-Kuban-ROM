@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <ViewStub android:id="@id/headerBar_stub" android:visibility="gone" android:layout="@layout/header_bar" android:layout_width="fill_parent" android:layout_height="@dimen/action_bar_height" />
-    <FrameLayout android:id="@id/panel" android:layout_width="fill_parent" android:layout_height="fill_parent">
+    <ViewStub android:id="@id/headerBar_stub" android:visibility="gone" android:layout="@layout/header_bar" android:layout_width="fill_parent" android:layout_height="@dimen/action_bar_height" android:layout_weight="0.0" />
+    <FrameLayout android:id="@id/panel" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
         <ViewStub android:id="@id/androidView_stub" android:layout="@layout/android_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
         <ViewStub android:id="@id/androidVectorView_stub" android:layout="@layout/android_vector_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
         <ImageView android:id="@id/empty_background" android:background="@drawable/gray_tile_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
         <ViewStub android:id="@id/bubbleContainer_stub" android:layout="@layout/bubble_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
         <include layout="@layout/button_container" />
+        <ViewStub android:id="@id/hybridStationPage_stub" android:layout="@layout/hybrid_station_page" android:layout_width="fill_parent" android:layout_height="fill_parent" />
     </FrameLayout>
+    <ViewStub android:id="@id/bottomBar_stub" android:visibility="gone" android:layout="@layout/bottom_bar_with_buttons" android:layout_width="fill_parent" android:layout_height="@dimen/action_bar_height" android:layout_weight="0.0" />
 </LinearLayout>

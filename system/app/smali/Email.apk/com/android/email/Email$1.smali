@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 276
+    .line 93
     iput-object p1, p0, Lcom/android/email/Email$1;->val$context:Landroid/content/Context;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,11 +41,11 @@
     .registers 2
 
     .prologue
-    .line 279
+    .line 96
     iget-object v0, p0, Lcom/android/email/Email$1;->val$context:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/email/Email;->setServicesEnabledSync(Landroid/content/Context;)Z
 
-    .line 280
+    .line 97
     return-void
 .end method

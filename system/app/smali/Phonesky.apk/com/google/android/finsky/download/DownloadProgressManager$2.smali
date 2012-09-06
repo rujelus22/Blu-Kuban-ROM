@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 84
+    .line 86
     iput-object p1, p0, Lcom/google/android/finsky/download/DownloadProgressManager$2;->this$0:Lcom/google/android/finsky/download/DownloadProgressManager;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -39,7 +39,7 @@
     .registers 2
 
     .prologue
-    .line 87
+    .line 89
     const/4 v0, 0x0
 
     return v0
@@ -50,12 +50,12 @@
     .parameter "selfChange"
 
     .prologue
-    .line 92
+    .line 94
     iget-object v0, p0, Lcom/google/android/finsky/download/DownloadProgressManager$2;->this$0:Lcom/google/android/finsky/download/DownloadProgressManager;
 
     #calls: Lcom/google/android/finsky/download/DownloadProgressManager;->onDownloadProgress()V
     invoke-static {v0}, Lcom/google/android/finsky/download/DownloadProgressManager;->access$200(Lcom/google/android/finsky/download/DownloadProgressManager;)V
 
-    .line 93
+    .line 95
     return-void
 .end method

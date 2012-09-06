@@ -53,17 +53,21 @@
 Не отвлекайтесь на изменение параметров маршрута и настроек приложения во время вождения. Обратите внимание: проложенные маршруты могут быть неточными, проходить через опасные и закрытые участки, а также предусматривать паромные переправы. Данные о загруженности дорог предоставляются не в реальном времени. В пешеходных маршрутах могут отсутствовать тротуары или пешеходные дорожки.
 
 Соблюдайте Правила дорожного движения и следите за дорогой!"</string>
+    <string name="da_agreement_with_walking_and_biking">"Функция навигации на Картах Google находится на стадии бета-тестирования. Используйте ее с осторожностью.
+
+Не экспериментируйте с этой программой во время движения. Данные о загруженности дорог предоставляются не в реальном времени, а маршруты могут быть неправильными, опасными, пролегать по закрытым участкам дороги или включать паромные переправы. На пешеходных маршрутах могут отсутствовать тротуары или пешеходные дорожки. Велосипедные маршруты могут включать дорожки, не подходящие для езды на велосипеде. Соблюдайте правила дорожного движения.
+
+Следите за дорогой!"</string>
     <string name="da_disclaimer_checkbox">Показать это сообщение в следующий раз</string>
     <string name="da_show_list">Детали маршрута</string>
-    <string name="da_route_overview">Весь маршрут</string>
+    <string name="da_route_and_alternates">Весь маршрут</string>
     <string name="da_show_map">Показать карту</string>
+    <string name="da_menu_more">Ещё</string>
     <string name="da_satellite">Спутник</string>
     <string name="da_traffic_view">Пробки</string>
     <string name="da_no_traffic_here">Данные о пробках отсутствуют</string>
     <string name="da_traffic">Пробки</string>
     <string name="da_area_view">Вид сверху</string>
-    <string name="da_mute">Отключить звук</string>
-    <string name="da_unmute">Включить звук</string>
     <string name="da_settings">Настройки</string>
     <string name="da_help">Справка</string>
     <string name="da_terms_privacy_notices">Условия использования</string>
@@ -72,9 +76,12 @@
     <string name="da_legal_notices">Юридические уведомления</string>
     <string name="da_navigation_suspended">Навигация приостановлена</string>
     <string name="da_exit_navigation">Выйти</string>
+    <string name="da_save">Сохранить</string>
     <string name="da_power_settings_category">Энергосбережение</string>
     <string name="da_screen_dimming_setting_title">Затемнение экрана</string>
     <string name="da_screen_dimming_setting_summary">Приглушать подсветку экрана в перерывах между инструкциями</string>
+    <string name="da_home_setting_set_address">Где вы живете?</string>
+    <string name="da_home_setting_set_address_hint">Введите адрес</string>
     <string name="da_info_settings_category">Сведения</string>
     <string name="da_email_me_when_resolved">Прислать сообщение по электронной почте, когда проблема будет устранена</string>
     <string name="da_problem_reported">Сообщение о проблеме отправлено.</string>
@@ -89,7 +96,7 @@
     <string name="da_report_a_problem_dialog_title">Сообщить о проблеме</string>
     <string name="da_rmi_preference_trackball_summary">Отправка отчетов о проблемах нажатием на трекбол (должен быть активирован)</string>
     <string name="da_rmi_preference_camera_summary">Чтобы включить отправку отчетов о проблемах, нажмите кнопку камеры (если она активирована).</string>
-    <string name="da_rmi_preference_no_button_summary">Функция не поддерживается на данном устройстве.</string>
+    <string name="da_rmi_preference_no_button_summary">Функция не поддерживается на данном устройстве</string>
     <string name="da_rmi_preference_bad_location_summary">Там, где вы сейчас находитесь, сообщить о проблеме невозможно.</string>
     <string name="da_destination_not_here_warning">Благодарим за сообщение о неверно определенном местоположении вашего пункта назначения. Сведения о вашем текущем местоположении и месте назначения будут отправлены в Google, чтобы повысить точность наших данных.</string>
     <string name="da_destination_not_here_title">Сообщить об ошибке</string>
@@ -109,6 +116,8 @@
     <string name="da_turn_on_gps">Показать настройки местоположения?</string>
     <string name="da_voice_guidance">Голосовые подсказки</string>
     <string name="da_install_voice_guidance_prompt">Чтобы пользоваться голосовой навигацией, необходимо перейти на Android Маркет и установить поддержку перевода текста в речь.</string>
+    <string name="da_voice_off">Выкл. звук</string>
+    <string name="da_voice_on">Вкл. звук</string>
     <string name="da_voice_guidance_on">Голосовые подсказки включены.</string>
     <string name="da_voice_guidance_off">Голосовые подсказки отключены.</string>
     <string name="da_dialog_ok">OК</string>
@@ -123,7 +132,7 @@
     <string name="da_map">Карта</string>
     <string name="da_clear_layers">Очистить карту</string>
     <string name="da_layer_name_parking">Парковки</string>
-    <string name="da_layer_name_attractions">Достопримечательности</string>
+    <string name="da_layer_name_attractions">Туризм</string>
     <string name="da_layer_name_gas_stations">АЗС</string>
     <string name="da_layer_name_restaurants">Рестораны</string>
     <string name="da_layer_name_supermarkets">Супермаркеты</string>
@@ -137,7 +146,7 @@
     <string name="da_record_feedback">Оставьте отзыв</string>
     <string name="da_destination_not_here">Мне не сюда</string>
     <string name="da_new_destination">След. место назначения</string>
-    <string name="da_reroute_to_destination">К месту назначения</string>
+    <string name="da_reroute_to_destination">Проложить снова</string>
     <string name="da_change_destination">Место назначения</string>
     <string name="da_search_for_destination">Поиск...</string>
     <string name="da_point_on_map">Точка на карте</string>
@@ -184,13 +193,16 @@
     <string name="da_no_image_available">Изображение недоступно.</string>
     <string name="da_image_error">Ошибка загрузки изображения.</string>
     <string name="da_no_alternate_routes">Не удается проложить альтернативный маршрут к месту назначения.</string>
-    <string name="da_picker_type_destination">Ввести место назначения</string>
+    <string name="da_picker_type_destination">Ввести адрес</string>
     <string name="da_picker_speak_destination">Произнести адрес</string>
     <string name="da_picker_contacts">Контакты</string>
     <string name="da_picker_starred_items">Отмеченные места</string>
-    <string name="da_picker_new_contact">Создать контакт</string>
+    <string name="da_picker_starred">ОТМЕЧЕННЫЕ</string>
+    <string name="da_picker_new_contact">Новый контакт</string>
+    <string name="da_go_home">Домой</string>
     <string name="da_picker_saved_destinations">Пункты назначения</string>
     <string name="da_picker_recent_destinations">Недавние места назначения</string>
+    <string name="da_picker_shortcuts">ЯРЛЫКИ</string>
     <string name="da_navigate_to">Место назначения:</string>
     <string name="da_return_to">Вернуться сюда:</string>
     <string name="da_picker_search_hint">Место назначения</string>
@@ -208,7 +220,6 @@
     <string name="da_walking">Пешком</string>
     <string name="da_bicycling">На велосипеде</string>
     <string name="da_quoted_text">\"%1$s\"</string>
-    <string name="da_more_info">Подробнее</string>
     <string name="da_walking_warning">Внимание! Пешеходные маршруты находятся в режиме бета-тестирования.</string>
     <string name="da_bicycling_warning">Внимание! Веломаршруты находятся в режиме бета-тестирования.</string>
     <string name="da_calibrate_compass_title">Калибровка компаса</string>
@@ -216,7 +227,6 @@
     <string name="da_confirm_exit_title">Хотите выйти?</string>
     <string name="da_confirm_exit_text">Сопровождение по маршруту будет прекращено.</string>
     <string name="da_route_includes_tolls">В маршруте есть платные дороги</string>
-    <string name="da_avoid_tolls">Избегать платных дорог</string>
     <string name="da_avoiding_tolls">Платные дороги исключены</string>
     <string name="da_avoiding_highways">Шоссе исключены</string>
     <string name="da_route_includes_unavoidable_tolls">Маршрут включает платные дороги.</string>
@@ -268,7 +278,7 @@
     <string name="dav_map_copyrights_map_data_only">© Google, %1$d – Картографические данные © %3$s, %2$d</string>
     <string name="CHECKINS_HOME_LOCATION">Мой дом</string>
     <string name="CHECKINS_OPT_IN_TITLE">Отметиться</string>
-    <string name="DIRECTIONS_ONLY_SHORTCUT_NAME">Маршрут на карте</string>
+    <string name="DIRECTIONS_ONLY_SHORTCUT_NAME">Маршрут</string>
     <string name="DIRECTIONS_TITLE">Маршруты</string>
     <string name="EXIT_COMMAND">Выйти</string>
     <string name="FEATURE_SWITCHER_LATITUDE_SUBTITLE">Ваши друзья на карте</string>
@@ -279,7 +289,9 @@
     <string name="FEATURE_SWITCHER_TRAFFIC">Пробки</string>
     <string name="FRIENDS_COMMAND_ACTIVATE">Локатор</string>
     <string name="FRIENDS_COMMAND_JOIN">Локатор</string>
-    <string name="FRIENDS_HISTORY_SUMMARY_TITLE">История местоположений</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE">Профиль Google+</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE_DESCRIPTION">Просмотреть профиль друга в Google+</string>
+    <string name="FRIENDS_HISTORY_SUMMARY_TITLE">История Локатора</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TICKER">{0} приглашает вас присоединиться</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TITLE">Уведомление Локатора</string>
     <string name="GOHOME_DESTINATION_HINT">Укажите адрес</string>
@@ -289,7 +301,7 @@
     <string name="GOHOME_SHORTCUT_NAME">Название ярлыка</string>
     <string name="GOHOME_TURN_BY_TURN_LABEL">С навигацией</string>
     <string name="LATITUDE_APP_NAME">Локатор</string>
-    <string name="LATITUDE_AUTO_CHECKIN_NOTIFICATION_TICKER">Вы отметились здесь: {0}. Об этом узнают {1}.</string>
+    <string name="LATITUDE_AUTO_CHECKIN_NOTIFICATION_TICKER">{1} увидят, что вы здесь: {0}</string>
     <string name="LATITUDE_AUTO_CHECKIN_NOTIFICATION_TITLE">Вы отметились здесь: {0}</string>
     <string name="LATITUDE_CHECKIN_NOTIFICATION_CONTENT_NEW">Нажмите, чтобы отметиться или отключить напоминания</string>
     <string name="LATITUDE_CHECKIN_NOTIFICATION_TICKER">Отметиться здесь: {0}?</string>
@@ -298,10 +310,26 @@
     <string name="LATITUDE_WIDGET_FRIENDS_ACTIVATE">Нажмите, чтобы войти в Локатор</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LAST_UPDATED_TIME_ABSOLUTE">Последнее обновление: {0}</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LOCATION_UNKNOWN">Местоположение неизвестно</string>
+    <string name="LATITUDE_WIDGET_START">Нажмите, чтобы запустить Локатор</string>
     <string name="LOADING">Загрузка</string>
-    <string name="LOCAL_APP_NAME">Google Адреса</string>
     <string name="MAPS_APP_NAME">Карты</string>
     <string name="MY_PLACES_COMMAND">Мои места</string>
+    <string name="MY_PLACES_DELETE_CONFIRM">Элемент &lt;b>{0}&lt;/b> будет удален с вкладки Мои метки.</string>
+    <string name="MY_PLACES_DELETE_CONFIRM_TITLE">Удалить</string>
+    <string name="MY_PLACES_DELETE_ITEM_COMMAND">Удалить</string>
+    <string name="MY_PLACES_DELETE_OWNED_MAP_CONFIRM">Карта &lt;b>{0}&lt;/b> будет удалена с вкладки Мои метки.</string>
+    <string name="MY_PLACES_DELETE_PLACE_CONFIRM">"Место &lt;b>{0}&lt;/b> и все относящиеся к нему сведения будут удалены с вкладки Мои метки: "</string>
+    <string name="MY_PLACES_DELETE_SERVICE_UNAVAILABLE">Служба недоступна. Повторите попытку позже.</string>
+    <string name="MY_PLACES_ITEM_IS_BOOKMARKED_MY_MAP">В закладках</string>
+    <string name="MY_PLACES_ITEM_IS_MY_MAP">Моя карта</string>
+    <string name="MY_PLACES_ITEM_IS_REVIEWED">Оценено</string>
+    <string name="MY_PLACES_ITEM_IS_STARRED">Помеченные</string>
+    <string name="MY_PLACES_LINK_ON_SUGGEST">С учетом данных на вкладке Мои метки</string>
+    <string name="MY_PLACES_NO_DIRECTIONS_ITEM_MESSAGE">У вас нет маршрутов.</string>
+    <string name="MY_PLACES_NO_MY_MAP_ITEM_MESSAGE">У вас нет карт.</string>
+    <string name="MY_PLACES_NO_STARRED_ITEM_MESSAGE">У вас нет отмеченных мест.</string>
+    <string name="MY_PLACES_SEE_ON_MAP_COMMAND">Карта</string>
+    <string name="MY_PLACES_SHOW_DETAIL_PAGE_COMMAND">Подробные сведения</string>
     <string name="NAVIGATE_MODE_NAVIGATION">Навигация</string>
     <string name="NEED_NET_BODY">Это приложение не может использоваться, пока не получит от вас разрешение отправлять и получать данные по сети.</string>
     <string name="NEED_NET_TITLE">Необходим доступ к сети</string>
@@ -309,8 +337,11 @@
     <string name="NET_FAIL_BODY">Для работы приложения требуется соединение для передачи данных.</string>
     <string name="NET_FAIL_TITLE">Ошибка сети</string>
     <string name="NET_UNAVAILABLE_TITLE">Сеть недоступна</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_PLURAL">Бонусы рядом: {0}</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_SINGLE">Бонусы рядом: 1</string>
+    <string name="OFFERS_FEATURE_SWITCHER_TITLE">Бонусы</string>
     <string name="PLACES_APP_NAME">Адреса</string>
-    <string name="RATINGS_CUSTOM_ASPECT_EXAMPLE_TEXT">Например, спагетти по-болонски, коктейли, музыка</string>
+    <string name="RATINGS_CORRECT_CATEGORY">Выберите подходящую категорию</string>
     <string name="RATINGS_CUSTOM_ASPECT_HINT_TEXT">Что стоит отметить?</string>
     <string name="RATINGS_OPTIN_CANCEL">Отмена</string>
     <string name="RATINGS_OPTIN_CLOSE">Закрыть</string>
@@ -326,6 +357,7 @@
     <string name="RATINGS_RATE_PLACES">Зачем оценивать места?</string>
     <string name="RATINGS_SET_APPEARANCE">Настройте свой профиль</string>
     <string name="RATINGS_WAIT">Подождите...</string>
+    <string name="RATINGS_WRONG_LABELS">Заметили ошибку?</string>
     <string name="SEARCH_HINT">Поиск на карте</string>
     <string name="SHORT_APP_NAME">Карты Google</string>
     <string name="TRAFFIC_WIDGET_END_LOCATION">Конечная точка</string>
@@ -334,8 +366,13 @@
     <string name="TRAFFIC_WIDGET_SAVE_WIDGET">Сохранить</string>
     <string name="TRAFFIC_WIDGET_START_LOCATION">Начальная точка</string>
     <string name="TRANSIT_NAVIGATION">Навигация для общ. транспорта</string>
-    <string name="TRANSIT_TITLE">Общ. транспортом</string>
-    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">Серьезная ошибка. Закройте и перезапустите приложение.</string>
+    <string name="TRANSIT_TITLE">Общ. транспорт</string>
+    <string name="TRANSIT_TYPE_FILTER_ALL">Все</string>
+    <string name="TRANSIT_TYPE_FILTER_BUS">Автобус</string>
+    <string name="TRANSIT_TYPE_FILTER_SUBWAY">Метро</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAIN">Поезд</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAM">Трамвай</string>
+    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">Произошла ошибка. Повторите попытку через несколько минут.</string>
     <string name="UNKNOWN_COMMUNICATION_FAILURE_TITLE">Неизвестная ошибка</string>
     <string name="UPGRADE_BODY">Следует установить новую версию, чтобы использовать это приложение.</string>
     <string name="UPGRADE_TITLE">Обновление ПО</string>

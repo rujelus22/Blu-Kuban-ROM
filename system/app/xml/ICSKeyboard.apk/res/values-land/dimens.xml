@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="keyboardHeight">1.0999756in</dimen>
+    <dimen name="popup_key_height">0.27999997in</dimen>
+    <dimen name="keyboardHeight_stone">0.9840001in</dimen>
+    <dimen name="mini_keyboard_slide_allowance">0.33599997in</dimen>
+    <dimen name="mini_keyboard_vertical_correction">-0.27999997in</dimen>
+    <dimen name="key_preview_offset">0.08000004in</dimen>
+    <dimen name="key_label_horizontal_padding">8.0dip</dimen>
+    <dimen name="key_preview_offset_ics">0.00999999in</dimen>
+    <dimen name="suggestions_strip_height">36.0dip</dimen>
+    <dimen name="more_suggestions_row_height">36.0dip</dimen>
+    <dimen name="key_preview_backing_height">72.0dip</dimen>
+</resources>

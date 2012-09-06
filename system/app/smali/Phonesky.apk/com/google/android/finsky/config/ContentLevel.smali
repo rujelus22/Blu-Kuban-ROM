@@ -345,10 +345,10 @@
     .parameter "preferences"
 
     .prologue
-    .line 125
+    .line 121
     const/4 v11, 0x0
 
-    .line 126
+    .line 122
     .local v11, perAccountFound:Z
     sget-object v14, Lcom/google/android/finsky/config/ContentLevel;->HIGH_MATURITY:Lcom/google/android/finsky/config/ContentLevel;
 
@@ -356,13 +356,13 @@
 
     move-result v12
 
-    .line 127
+    .line 123
     .local v12, perAccountMinimum:I
     invoke-static/range {p0 .. p0}, Lcom/google/android/finsky/api/AccountHandler;->getAccounts(Landroid/content/Context;)[Landroid/accounts/Account;
 
     move-result-object v10
 
-    .line 128
+    .line 124
     .local v10, listOfAccounts:[Landroid/accounts/Account;
     array-length v14, v10
 
@@ -372,12 +372,12 @@
     :goto_e
     if-ltz v2, :cond_2f
 
-    .line 129
+    .line 125
     aget-object v14, v10, v2
 
     iget-object v1, v14, Landroid/accounts/Account;->name:Ljava/lang/String;
 
-    .line 130
+    .line 126
     .local v1, accountName:Ljava/lang/String;
     sget-object v14, Lcom/google/android/finsky/utils/FinskyPreferences;->contentFilterLevel:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
 
@@ -397,36 +397,36 @@
 
     move-result v13
 
-    .line 133
+    .line 129
     .local v13, perAccountValue:I
     if-ltz v13, :cond_2c
 
-    .line 134
+    .line 130
     const/4 v11, 0x1
 
-    .line 135
+    .line 131
     invoke-static {v12, v13}, Ljava/lang/Math;->min(II)I
 
     move-result v12
 
-    .line 128
+    .line 124
     :cond_2c
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_e
 
-    .line 138
+    .line 134
     .end local v1           #accountName:Ljava/lang/String;
     .end local v13           #perAccountValue:I
     :cond_2f
     if-eqz v11, :cond_32
 
-    .line 155
+    .line 151
     .end local v12           #perAccountMinimum:I
     :goto_31
     return v12
 
-    .line 143
+    .line 139
     .restart local v12       #perAccountMinimum:I
     :cond_32
     new-instance v6, Lcom/google/android/finsky/config/PreferenceFile;
@@ -437,7 +437,7 @@
 
     invoke-direct {v6, v14, v15}, Lcom/google/android/finsky/config/PreferenceFile;-><init>(Ljava/lang/String;I)V
 
-    .line 144
+    .line 140
     .local v6, legacyPrefs:Lcom/google/android/finsky/config/PreferenceFile;
     const-string v14, "content_rating"
 
@@ -451,7 +451,7 @@
 
     move-result-object v5
 
-    .line 146
+    .line 142
     .local v5, legacyContentRatingPreference:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;,"Lcom/google/android/finsky/config/PreferenceFile$SharedPreference<Ljava/lang/Integer;>;"
     invoke-virtual {v5}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->exists()Z
 
@@ -459,7 +459,7 @@
 
     if-eqz v14, :cond_69
 
-    .line 147
+    .line 143
     invoke-virtual {v5}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->get()Ljava/lang/Object;
 
     move-result-object v14
@@ -470,7 +470,7 @@
 
     move-result v7
 
-    .line 148
+    .line 144
     .local v7, legacyValue:I
     invoke-static {}, Lcom/google/android/finsky/config/ContentLevel;->values()[Lcom/google/android/finsky/config/ContentLevel;
 
@@ -488,24 +488,24 @@
 
     aget-object v9, v3, v4
 
-    .line 149
+    .line 145
     .local v9, level:Lcom/google/android/finsky/config/ContentLevel;
     iget v14, v9, Lcom/google/android/finsky/config/ContentLevel;->mValue:I
 
     if-ne v14, v7, :cond_66
 
-    .line 150
+    .line 146
     iget v12, v9, Lcom/google/android/finsky/config/ContentLevel;->mValue:I
 
     goto :goto_31
 
-    .line 148
+    .line 144
     :cond_66
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_5b
 
-    .line 155
+    .line 151
     .end local v3           #arr$:[Lcom/google/android/finsky/config/ContentLevel;
     .end local v4           #i$:I
     .end local v7           #legacyValue:I
@@ -635,31 +635,11 @@
     .end packed-switch
 .end method
 
-.method public exportToSettings(Landroid/content/Context;)V
-    .registers 4
-    .parameter "context"
-
-    .prologue
-    .line 109
-    sget-object v0, Lcom/google/android/finsky/utils/FinskyPreferences;->contentFilterLevel:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
-
-    iget v1, p0, Lcom/google/android/finsky/config/ContentLevel;->mValue:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->put(Ljava/lang/Object;)V
-
-    .line 110
-    return-void
-.end method
-
 .method public getDfeValue()I
     .registers 2
 
     .prologue
-    .line 113
+    .line 109
     iget v0, p0, Lcom/google/android/finsky/config/ContentLevel;->mValue:I
 
     return v0

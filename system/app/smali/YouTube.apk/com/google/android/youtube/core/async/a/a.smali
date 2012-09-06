@@ -7,7 +7,7 @@
 .method public abstract a()V
 .end method
 
-.method public abstract a(Lcom/google/android/youtube/core/async/g;)V
+.method public abstract a(Lcom/google/android/youtube/core/async/l;)V
 .end method
 
 .method public abstract b()V

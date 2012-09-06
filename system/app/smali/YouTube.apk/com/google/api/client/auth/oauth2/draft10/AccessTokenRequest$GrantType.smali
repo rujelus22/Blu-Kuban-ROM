@@ -7,31 +7,31 @@
 .field private static final synthetic $VALUES:[Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
 
 .field public static final enum ASSERTION:Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
-    .annotation runtime Lcom/google/api/client/util/y;
+    .annotation runtime Lcom/google/api/client/util/x;
         a = "assertion"
     .end annotation
 .end field
 
 .field public static final enum AUTHORIZATION_CODE:Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
-    .annotation runtime Lcom/google/api/client/util/y;
+    .annotation runtime Lcom/google/api/client/util/x;
         a = "authorization_code"
     .end annotation
 .end field
 
 .field public static final enum NONE:Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
-    .annotation runtime Lcom/google/api/client/util/y;
+    .annotation runtime Lcom/google/api/client/util/x;
         a = "none"
     .end annotation
 .end field
 
 .field public static final enum PASSWORD:Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
-    .annotation runtime Lcom/google/api/client/util/y;
+    .annotation runtime Lcom/google/api/client/util/x;
         a = "password"
     .end annotation
 .end field
 
 .field public static final enum REFRESH_TOKEN:Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
-    .annotation runtime Lcom/google/api/client/util/y;
+    .annotation runtime Lcom/google/api/client/util/x;
         a = "refresh_token"
     .end annotation
 .end field
@@ -52,7 +52,7 @@
 
     const/4 v2, 0x0
 
-    .line 384
+    .line 399
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
 
     const-string v1, "AUTHORIZATION_CODE"
@@ -61,7 +61,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;->AUTHORIZATION_CODE:Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
 
-    .line 386
+    .line 401
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
 
     const-string v1, "PASSWORD"
@@ -70,7 +70,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;->PASSWORD:Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
 
-    .line 388
+    .line 403
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
 
     const-string v1, "ASSERTION"
@@ -79,7 +79,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;->ASSERTION:Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
 
-    .line 390
+    .line 405
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
 
     const-string v1, "REFRESH_TOKEN"
@@ -88,7 +88,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;->REFRESH_TOKEN:Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
 
-    .line 392
+    .line 407
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
 
     const-string v1, "NONE"
@@ -97,7 +97,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;->NONE:Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
 
-    .line 382
+    .line 397
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
@@ -133,7 +133,7 @@
     .parameter
 
     .prologue
-    .line 382
+    .line 397
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -144,7 +144,7 @@
     .parameter
 
     .prologue
-    .line 382
+    .line 397
     const-class v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -160,7 +160,7 @@
     .registers 1
 
     .prologue
-    .line 382
+    .line 397
     sget-object v0, Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;->$VALUES:[Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;
 
     invoke-virtual {v0}, [Lcom/google/api/client/auth/oauth2/draft10/AccessTokenRequest$GrantType;->clone()Ljava/lang/Object;

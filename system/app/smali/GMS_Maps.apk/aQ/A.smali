@@ -1,38 +1,93 @@
-.class final enum LaQ/A;
-.super LaQ/z;
+.class public abstract LaQ/a;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LaQ/H;
+
+
+# instance fields
+.field protected final a:Ljava/lang/CharSequence;
+
+.field protected final b:I
+
+.field protected final c:I
+
+.field protected final d:I
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;IIII)V
-    .registers 13
+.method public constructor <init>(Ljava/lang/CharSequence;II)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v6, 0x0
+    .prologue
+    .line 22
+    const/4 v0, -0x1
 
-    move-object v0, p0
+    invoke-direct {p0, p1, p2, p3, v0}, LaQ/a;-><init>(Ljava/lang/CharSequence;III)V
 
-    move-object v1, p1
+    .line 23
+    return-void
+.end method
 
-    move v2, p2
+.method public constructor <init>(Ljava/lang/CharSequence;III)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    move v3, p3
+    .prologue
+    .line 25
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move v4, p4
+    .line 26
+    iput-object p1, p0, LaQ/a;->a:Ljava/lang/CharSequence;
 
-    move v5, p5
+    .line 27
+    iput p2, p0, LaQ/a;->b:I
 
-    invoke-direct/range {v0 .. v6}, LaQ/z;-><init>(Ljava/lang/String;IIIILaQ/y;)V
+    .line 28
+    iput p3, p0, LaQ/a;->c:I
 
+    .line 29
+    iput p4, p0, LaQ/a;->d:I
+
+    .line 30
     return-void
 .end method
 
 
 # virtual methods
-.method public c()V
+.method public b()I
     .registers 2
 
-    sget-object v0, LaQ/x;->a:Lcom/google/googlenav/ui/wizard/ez;
+    .prologue
+    .line 34
+    iget v0, p0, LaQ/a;->b:I
 
-    invoke-interface {v0}, Lcom/google/googlenav/ui/wizard/ez;->h()V
+    return v0
+.end method
 
-    return-void
+.method public d()I
+    .registers 2
+
+    .prologue
+    .line 41
+    iget v0, p0, LaQ/a;->c:I
+
+    return v0
+.end method
+
+.method public e()I
+    .registers 2
+
+    .prologue
+    .line 45
+    iget v0, p0, LaQ/a;->d:I
+
+    return v0
 .end method

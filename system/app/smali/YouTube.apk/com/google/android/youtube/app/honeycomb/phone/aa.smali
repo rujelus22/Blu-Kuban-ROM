@@ -1,48 +1,63 @@
 .class final Lcom/google/android/youtube/app/honeycomb/phone/aa;
-.super Ljava/lang/Object;
+.super Lcom/google/android/youtube/app/adapter/i;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/MyPlaylistsActivity;
+.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/t;
+
+.field final synthetic b:Lcom/google/android/youtube/app/honeycomb/phone/z;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/MyPlaylistsActivity;)V
-    .registers 2
+.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/z;Landroid/content/Context;Landroid/view/View;ILcom/google/android/youtube/app/honeycomb/phone/t;)V
+    .registers 7
+    .parameter
+    .parameter
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 205
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/aa;->a:Lcom/google/android/youtube/app/honeycomb/phone/MyPlaylistsActivity;
+    .line 596
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/aa;->b:Lcom/google/android/youtube/app/honeycomb/phone/z;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p5, p0, Lcom/google/android/youtube/app/honeycomb/phone/aa;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
+
+    const v0, 0x7f080023
+
+    invoke-direct {p0, p2, p3, v0}, Lcom/google/android/youtube/app/adapter/i;-><init>(Landroid/content/Context;Landroid/view/View;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .registers 4
+.method protected final synthetic a(Ljava/lang/Object;Landroid/view/View;Lcom/google/android/youtube/core/async/l;)V
+    .registers 6
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 207
-    const/4 v0, -0x1
+    .line 596
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/aa;->b:Lcom/google/android/youtube/app/honeycomb/phone/z;
 
-    if-ne p2, v0, :cond_8
+    iget-object v0, v0, Lcom/google/android/youtube/app/honeycomb/phone/z;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
-    .line 208
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/aa;->a:Lcom/google/android/youtube/app/honeycomb/phone/MyPlaylistsActivity;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/t;->x(Lcom/google/android/youtube/app/honeycomb/phone/t;)Lcom/google/android/youtube/core/b/ag;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/MyPlaylistsActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/MyPlaylistsActivity;)V
+    move-result-object v0
 
-    .line 210
-    :cond_8
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/aa;->b:Lcom/google/android/youtube/app/honeycomb/phone/z;
+
+    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/phone/z;->a(Lcom/google/android/youtube/app/honeycomb/phone/z;)Lcom/google/android/youtube/core/model/UserProfile;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lcom/google/android/youtube/core/model/UserProfile;->thumbnailUri:Landroid/net/Uri;
+
+    invoke-interface {v0, v1, p3}, Lcom/google/android/youtube/core/b/ag;->a(Landroid/net/Uri;Lcom/google/android/youtube/core/async/l;)V
+
     return-void
 .end method

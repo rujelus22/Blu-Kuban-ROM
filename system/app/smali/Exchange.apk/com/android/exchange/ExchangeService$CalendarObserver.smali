@@ -27,7 +27,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/exchange/ExchangeService;Landroid/os/Handler;Lcom/android/emailcommon/provider/EmailContent$Account;)V
+.method public constructor <init>(Lcom/android/exchange/ExchangeService;Landroid/os/Handler;Lcom/android/emailcommon/provider/Account;)V
     .registers 13
     .parameter
     .parameter "handler"
@@ -40,25 +40,25 @@
 
     const/4 v7, 0x0
 
-    .line 2079
+    .line 880
     iput-object p1, p0, Lcom/android/exchange/ExchangeService$CalendarObserver;->this$0:Lcom/android/exchange/ExchangeService;
 
-    .line 2080
+    .line 881
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 2081
-    iget-wide v0, p3, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    .line 882
+    iget-wide v0, p3, Lcom/android/emailcommon/provider/Account;->mId:J
 
     iput-wide v0, p0, Lcom/android/exchange/ExchangeService$CalendarObserver;->mAccountId:J
 
-    .line 2082
-    iget-object v0, p3, Lcom/android/emailcommon/provider/EmailContent$Account;->mEmailAddress:Ljava/lang/String;
+    .line 883
+    iget-object v0, p3, Lcom/android/emailcommon/provider/Account;->mEmailAddress:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/exchange/ExchangeService$CalendarObserver;->mAccountName:Ljava/lang/String;
 
-    .line 2086
+    .line 886
     #getter for: Lcom/android/exchange/ExchangeService;->mResolver:Landroid/content/ContentResolver;
-    invoke-static {p1}, Lcom/android/exchange/ExchangeService;->access$1400(Lcom/android/exchange/ExchangeService;)Landroid/content/ContentResolver;
+    invoke-static {p1}, Lcom/android/exchange/ExchangeService;->access$700(Lcom/android/exchange/ExchangeService;)Landroid/content/ContentResolver;
 
     move-result-object v0
 
@@ -78,7 +78,7 @@
 
     new-array v4, v4, [Ljava/lang/String;
 
-    iget-object v5, p3, Lcom/android/emailcommon/provider/EmailContent$Account;->mEmailAddress:Ljava/lang/String;
+    iget-object v5, p3, Lcom/android/emailcommon/provider/Account;->mEmailAddress:Ljava/lang/String;
 
     aput-object v5, v4, v7
 
@@ -92,11 +92,11 @@
 
     move-result-object v6
 
-    .line 2091
+    .line 891
     .local v6, c:Landroid/database/Cursor;
     if-eqz v6, :cond_4a
 
-    .line 2094
+    .line 894
     :try_start_33
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -104,7 +104,7 @@
 
     if-eqz v0, :cond_47
 
-    .line 2095
+    .line 895
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -113,7 +113,7 @@
 
     iput-wide v0, p0, Lcom/android/exchange/ExchangeService$CalendarObserver;->mCalendarId:J
 
-    .line 2096
+    .line 896
     const/4 v0, 0x1
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -124,15 +124,15 @@
     :try_end_47
     .catchall {:try_start_33 .. :try_end_47} :catchall_4b
 
-    .line 2099
+    .line 899
     :cond_47
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 2102
+    .line 902
     :cond_4a
     return-void
 
-    .line 2099
+    .line 899
     :catchall_4b
     move-exception v0
 
@@ -148,12 +148,12 @@
     .parameter "selfChange"
 
     .prologue
-    .line 2107
+    .line 907
     monitor-enter p0
 
     if-nez p1, :cond_12
 
-    .line 2108
+    .line 908
     :try_start_3
     new-instance v0, Ljava/lang/Thread;
 
@@ -169,13 +169,13 @@
     :try_end_12
     .catchall {:try_start_3 .. :try_end_12} :catchall_14
 
-    .line 2189
+    .line 983
     :cond_12
     monitor-exit p0
 
     return-void
 
-    .line 2107
+    .line 907
     :catchall_14
     move-exception v0
 

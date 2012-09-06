@@ -1,5 +1,6 @@
 .class synthetic Lcom/google/googlenav/appwidget/friends/f;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # static fields
@@ -10,6 +11,8 @@
 .method static constructor <clinit>()V
     .registers 3
 
+    .prologue
+    .line 368
     invoke-static {}, Lcom/google/googlenav/appwidget/friends/g;->values()[Lcom/google/googlenav/appwidget/friends/g;
 
     move-result-object v0

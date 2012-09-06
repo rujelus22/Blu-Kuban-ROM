@@ -1,47 +1,69 @@
-.class final Lcom/google/android/maps/driveabout/vector/X;
+.class synthetic Lcom/google/android/maps/driveabout/vector/x;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
-# interfaces
-.implements Ljava/util/Comparator;
+
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method static constructor <clinit>()V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 121
+    invoke-static {}, Lcom/google/android/maps/driveabout/vector/z;->values()[Lcom/google/android/maps/driveabout/vector/z;
 
-    return-void
-.end method
+    move-result-object v0
 
+    array-length v0, v0
 
-# virtual methods
-.method public a(Lt/e;Lt/e;)I
-    .registers 5
+    new-array v0, v0, [I
 
-    invoke-virtual {p2}, Lt/e;->f()I
+    sput-object v0, Lcom/google/android/maps/driveabout/vector/x;->a:[I
 
-    move-result v0
+    :try_start_9
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/x;->a:[I
 
-    invoke-virtual {p1}, Lt/e;->f()I
+    sget-object v1, Lcom/google/android/maps/driveabout/vector/z;->a:Lcom/google/android/maps/driveabout/vector/z;
+
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/z;->ordinal()I
 
     move-result v1
 
-    sub-int/2addr v0, v1
+    const/4 v2, 0x1
 
-    return v0
-.end method
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
 
-.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 4
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/x;->a:[I
 
-    check-cast p1, Lt/e;
+    sget-object v1, Lcom/google/android/maps/driveabout/vector/z;->b:Lcom/google/android/maps/driveabout/vector/z;
 
-    check-cast p2, Lt/e;
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/z;->ordinal()I
 
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/maps/driveabout/vector/X;->a(Lt/e;Lt/e;)I
+    move-result v1
 
-    move-result v0
+    const/4 v2, 0x2
 
-    return v0
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
+
+    :goto_1f
+    return-void
+
+    :catch_20
+    move-exception v0
+
+    goto :goto_1f
+
+    :catch_22
+    move-exception v0
+
+    goto :goto_14
 .end method

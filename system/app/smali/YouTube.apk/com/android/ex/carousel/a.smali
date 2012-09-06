@@ -407,18 +407,9 @@
     .line 117
     iget-boolean v0, p0, Lcom/android/ex/carousel/a;->Y:Z
 
-    iput-boolean v0, p0, Lcom/android/ex/carousel/a;->Y:Z
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    if-eqz v1, :cond_3a
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    invoke-virtual {v1, v0}, Lcom/android/ex/carousel/b;->b(Z)V
+    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->a(Z)V
 
     .line 118
-    :cond_3a
     iget v0, p0, Lcom/android/ex/carousel/a;->y:I
 
     invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->f(I)V
@@ -426,21 +417,12 @@
     .line 119
     iget-boolean v0, p0, Lcom/android/ex/carousel/a;->z:Z
 
-    iput-boolean v0, p0, Lcom/android/ex/carousel/a;->z:Z
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    if-eqz v1, :cond_4c
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    invoke-virtual {v1, v0}, Lcom/android/ex/carousel/b;->c(Z)V
+    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->b(Z)V
 
     .line 120
-    :cond_4c
     iget-boolean v0, p0, Lcom/android/ex/carousel/a;->A:Z
 
-    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->a(Z)V
+    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->c(Z)V
 
     .line 121
     iget-object v0, p0, Lcom/android/ex/carousel/a;->R:Lcom/android/ex/carousel/d;
@@ -460,44 +442,14 @@
     .line 124
     iget v0, p0, Lcom/android/ex/carousel/a;->r:I
 
-    iput v0, p0, Lcom/android/ex/carousel/a;->r:I
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    if-eqz v1, :cond_73
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    invoke-virtual {v1, v0}, Lcom/android/ex/carousel/b;->j(I)Landroid/renderscript/Mesh;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    invoke-virtual {v1, v0}, Lcom/android/ex/carousel/b;->a(Landroid/renderscript/Mesh;)V
+    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->h(I)V
 
     .line 125
-    :cond_73
     iget v0, p0, Lcom/android/ex/carousel/a;->s:I
 
-    iput v0, p0, Lcom/android/ex/carousel/a;->s:I
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    if-eqz v1, :cond_86
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    invoke-virtual {v1, v0}, Lcom/android/ex/carousel/b;->j(I)Landroid/renderscript/Mesh;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    invoke-virtual {v1, v0}, Lcom/android/ex/carousel/b;->b(Landroid/renderscript/Mesh;)V
+    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->i(I)V
 
     .line 126
-    :cond_86
     iget-object v0, p0, Lcom/android/ex/carousel/a;->Q:Landroid/renderscript/Float4;
 
     iget v0, v0, Landroid/renderscript/Float4;->x:F
@@ -524,18 +476,9 @@
     .line 129
     iget-object v0, p0, Lcom/android/ex/carousel/a;->q:Landroid/graphics/Bitmap;
 
-    iput-object v0, p0, Lcom/android/ex/carousel/a;->q:Landroid/graphics/Bitmap;
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    if-eqz v1, :cond_ab
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    invoke-virtual {v1, v0}, Lcom/android/ex/carousel/b;->d(Landroid/graphics/Bitmap;)V
+    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->e(Landroid/graphics/Bitmap;)V
 
     .line 130
-    :cond_ab
     iget v0, p0, Lcom/android/ex/carousel/a;->B:F
 
     invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->c(F)V
@@ -558,7 +501,7 @@
     .line 134
     iget-boolean v0, p0, Lcom/android/ex/carousel/a;->F:Z
 
-    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->b(Z)V
+    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->d(Z)V
 
     .line 135
     iget v0, p0, Lcom/android/ex/carousel/a;->H:F
@@ -568,40 +511,22 @@
     .line 136
     iget v0, p0, Lcom/android/ex/carousel/a;->I:F
 
-    iput v0, p0, Lcom/android/ex/carousel/a;->I:F
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    if-eqz v1, :cond_d6
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    invoke-virtual {v1, v0}, Lcom/android/ex/carousel/b;->d(F)V
+    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->h(F)V
 
     .line 137
-    :cond_d6
     iget v0, p0, Lcom/android/ex/carousel/a;->J:F
 
-    iput v0, p0, Lcom/android/ex/carousel/a;->J:F
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    if-eqz v1, :cond_e3
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    invoke-virtual {v1, v0}, Lcom/android/ex/carousel/b;->e(F)V
+    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->i(F)V
 
     .line 138
-    :cond_e3
     iget v0, p0, Lcom/android/ex/carousel/a;->W:I
 
-    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->h(I)V
+    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->j(I)V
 
     .line 139
     iget v0, p0, Lcom/android/ex/carousel/a;->X:I
 
-    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->i(I)V
+    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->k(I)V
 
     .line 140
     iget-object v0, p0, Lcom/android/ex/carousel/a;->N:[F
@@ -615,74 +540,47 @@
     .line 141
     iget v0, p0, Lcom/android/ex/carousel/a;->S:F
 
-    iput v0, p0, Lcom/android/ex/carousel/a;->S:F
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    if-eqz v1, :cond_103
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    invoke-virtual {v1, v0}, Lcom/android/ex/carousel/b;->j(F)V
+    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->j(F)V
 
     .line 142
-    :cond_103
     iget-wide v0, p0, Lcom/android/ex/carousel/a;->T:J
 
-    iput-wide v0, p0, Lcom/android/ex/carousel/a;->T:J
-
-    iget-object v2, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    if-eqz v2, :cond_110
-
-    iget-object v2, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    invoke-virtual {v2, v0, v1}, Lcom/android/ex/carousel/b;->a(J)V
+    invoke-virtual {p0, v0, v1}, Lcom/android/ex/carousel/a;->a(J)V
 
     .line 143
-    :cond_110
     iget-wide v0, p0, Lcom/android/ex/carousel/a;->U:J
 
     iput-wide v0, p0, Lcom/android/ex/carousel/a;->U:J
 
     iget-object v2, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
 
-    if-eqz v2, :cond_11d
+    if-eqz v2, :cond_c9
 
     iget-object v2, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
 
     invoke-virtual {v2, v0, v1}, Lcom/android/ex/carousel/b;->b(J)V
 
     .line 144
-    :cond_11d
+    :cond_c9
     iget-object v0, p0, Lcom/android/ex/carousel/a;->V:Landroid/graphics/Bitmap;
 
-    iput-object v0, p0, Lcom/android/ex/carousel/a;->V:Landroid/graphics/Bitmap;
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    if-eqz v1, :cond_12a
-
-    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
-
-    invoke-virtual {v1, v0}, Lcom/android/ex/carousel/b;->e(Landroid/graphics/Bitmap;)V
+    invoke-virtual {p0, v0}, Lcom/android/ex/carousel/a;->d(Landroid/graphics/Bitmap;)V
 
     .line 145
-    :cond_12a
     iget-object v0, p0, Lcom/android/ex/carousel/a;->Z:[I
 
     iput-object v0, p0, Lcom/android/ex/carousel/a;->Z:[I
 
     iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
 
-    if-eqz v1, :cond_137
+    if-eqz v1, :cond_db
 
     iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
 
     invoke-virtual {v1, v0}, Lcom/android/ex/carousel/b;->a([I)V
 
     .line 146
-    :cond_137
+    :cond_db
     return-void
 .end method
 
@@ -846,6 +744,27 @@
     return-void
 .end method
 
+.method public final a(ILandroid/renderscript/Mesh;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 168
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    if-eqz v0, :cond_9
+
+    .line 169
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    invoke-virtual {v0, p1, p2}, Lcom/android/ex/carousel/b;->a(ILandroid/renderscript/Mesh;)V
+
+    .line 171
+    :cond_9
+    return-void
+.end method
+
 .method public final a(IZ)V
     .registers 5
     .parameter
@@ -870,6 +789,50 @@
 
     .line 419
     :cond_e
+    return-void
+.end method
+
+.method public final a(I[F)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 193
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    if-eqz v0, :cond_9
+
+    .line 194
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    invoke-virtual {v0, p1, p2}, Lcom/android/ex/carousel/b;->a(I[F)V
+
+    .line 196
+    :cond_9
+    return-void
+.end method
+
+.method public final a(J)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 749
+    iput-wide p1, p0, Lcom/android/ex/carousel/a;->T:J
+
+    .line 750
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    if-eqz v0, :cond_b
+
+    .line 751
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    invoke-virtual {v0, p1, p2}, Lcom/android/ex/carousel/b;->a(J)V
+
+    .line 753
+    :cond_b
     return-void
 .end method
 
@@ -940,20 +903,20 @@
     .parameter
 
     .prologue
-    .line 335
-    iput-boolean p1, p0, Lcom/android/ex/carousel/a;->A:Z
+    .line 275
+    iput-boolean p1, p0, Lcom/android/ex/carousel/a;->Y:Z
 
-    .line 336
+    .line 276
     iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
 
     if-eqz v0, :cond_b
 
-    .line 337
+    .line 277
     iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
 
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/b;->d(Z)V
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/b;->b(Z)V
 
-    .line 339
+    .line 279
     :cond_b
     return-void
 .end method
@@ -1137,20 +1100,20 @@
     .parameter
 
     .prologue
-    .line 688
-    iput-boolean p1, p0, Lcom/android/ex/carousel/a;->F:Z
+    .line 323
+    iput-boolean p1, p0, Lcom/android/ex/carousel/a;->z:Z
 
-    .line 689
+    .line 324
     iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
 
     if-eqz v0, :cond_b
 
-    .line 690
+    .line 325
     iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
 
-    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/b;->a(Z)V
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/b;->c(Z)V
 
-    .line 692
+    .line 327
     :cond_b
     return-void
 .end method
@@ -1253,6 +1216,29 @@
     return-void
 .end method
 
+.method public final c(Z)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 335
+    iput-boolean p1, p0, Lcom/android/ex/carousel/a;->A:Z
+
+    .line 336
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    if-eqz v0, :cond_b
+
+    .line 337
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/b;->d(Z)V
+
+    .line 339
+    :cond_b
+    return-void
+.end method
+
 .method public final d(F)V
     .registers 3
     .parameter
@@ -1299,6 +1285,52 @@
     return-void
 .end method
 
+.method public final d(Landroid/graphics/Bitmap;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 503
+    iput-object p1, p0, Lcom/android/ex/carousel/a;->V:Landroid/graphics/Bitmap;
+
+    .line 504
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    if-eqz v0, :cond_b
+
+    .line 505
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/b;->e(Landroid/graphics/Bitmap;)V
+
+    .line 507
+    :cond_b
+    return-void
+.end method
+
+.method public final d(Z)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 688
+    iput-boolean p1, p0, Lcom/android/ex/carousel/a;->F:Z
+
+    .line 689
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    if-eqz v0, :cond_b
+
+    .line 690
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/b;->a(Z)V
+
+    .line 692
+    :cond_b
+    return-void
+.end method
+
 .method public final e(F)V
     .registers 3
     .parameter
@@ -1341,6 +1373,29 @@
     invoke-virtual {v0, p1}, Lcom/android/ex/carousel/b;->f(I)V
 
     .line 259
+    :cond_b
+    return-void
+.end method
+
+.method public final e(Landroid/graphics/Bitmap;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 517
+    iput-object p1, p0, Lcom/android/ex/carousel/a;->q:Landroid/graphics/Bitmap;
+
+    .line 518
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    if-eqz v0, :cond_b
+
+    .line 519
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/b;->d(Landroid/graphics/Bitmap;)V
+
+    .line 521
     :cond_b
     return-void
 .end method
@@ -1485,7 +1540,136 @@
     return-void
 .end method
 
+.method public final h(F)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 702
+    iput p1, p0, Lcom/android/ex/carousel/a;->I:F
+
+    .line 703
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    if-eqz v0, :cond_b
+
+    .line 704
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/b;->d(F)V
+
+    .line 706
+    :cond_b
+    return-void
+.end method
+
 .method public final h(I)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 532
+    iput p1, p0, Lcom/android/ex/carousel/a;->r:I
+
+    .line 533
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    if-eqz v0, :cond_11
+
+    .line 534
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/b;->j(I)Landroid/renderscript/Mesh;
+
+    move-result-object v0
+
+    .line 535
+    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    invoke-virtual {v1, v0}, Lcom/android/ex/carousel/b;->a(Landroid/renderscript/Mesh;)V
+
+    .line 537
+    :cond_11
+    return-void
+.end method
+
+.method public final i(F)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 709
+    iput p1, p0, Lcom/android/ex/carousel/a;->J:F
+
+    .line 710
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    if-eqz v0, :cond_b
+
+    .line 711
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/b;->e(F)V
+
+    .line 713
+    :cond_b
+    return-void
+.end method
+
+.method public final i(I)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 563
+    iput p1, p0, Lcom/android/ex/carousel/a;->s:I
+
+    .line 564
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    if-eqz v0, :cond_11
+
+    .line 565
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/b;->j(I)Landroid/renderscript/Mesh;
+
+    move-result-object v0
+
+    .line 566
+    iget-object v1, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    invoke-virtual {v1, v0}, Lcom/android/ex/carousel/b;->b(Landroid/renderscript/Mesh;)V
+
+    .line 568
+    :cond_11
+    return-void
+.end method
+
+.method public final j(F)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 733
+    iput p1, p0, Lcom/android/ex/carousel/a;->S:F
+
+    .line 734
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    if-eqz v0, :cond_b
+
+    .line 735
+    iget-object v0, p0, Lcom/android/ex/carousel/a;->l:Lcom/android/ex/carousel/b;
+
+    invoke-virtual {v0, p1}, Lcom/android/ex/carousel/b;->j(F)V
+
+    .line 737
+    :cond_b
+    return-void
+.end method
+
+.method public final j(I)V
     .registers 3
     .parameter
 
@@ -1508,7 +1692,7 @@
     return-void
 .end method
 
-.method public final i(I)V
+.method public final k(I)V
     .registers 3
     .parameter
 

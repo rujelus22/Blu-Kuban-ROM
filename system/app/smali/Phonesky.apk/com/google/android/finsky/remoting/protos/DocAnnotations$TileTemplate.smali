@@ -31,25 +31,25 @@
     .registers 2
 
     .prologue
-    .line 2369
+    .line 1883
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 2374
+    .line 1888
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->colorThemeArgb_:Ljava/lang/String;
 
-    .line 2391
+    .line 1905
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->colorTextArgb_:Ljava/lang/String;
 
-    .line 2426
+    .line 1941
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->cachedSize:I
 
-    .line 2369
+    .line 1883
     return-void
 .end method
 
@@ -59,15 +59,15 @@
     .registers 2
 
     .prologue
-    .line 2428
+    .line 1944
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 2430
+    .line 1946
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->getSerializedSize()I
 
-    .line 2432
+    .line 1948
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->cachedSize:I
 
@@ -78,7 +78,7 @@
     .registers 2
 
     .prologue
-    .line 2392
+    .line 1906
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->colorTextArgb_:Ljava/lang/String;
 
     return-object v0
@@ -88,7 +88,7 @@
     .registers 2
 
     .prologue
-    .line 2375
+    .line 1889
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->colorThemeArgb_:Ljava/lang/String;
 
     return-object v0
@@ -98,10 +98,10 @@
     .registers 4
 
     .prologue
-    .line 2436
+    .line 1953
     const/4 v0, 0x0
 
-    .line 2437
+    .line 1954
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->hasColorThemeArgb()Z
 
@@ -109,7 +109,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 2438
+    .line 1955
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->getColorThemeArgb()Ljava/lang/String;
@@ -122,7 +122,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2441
+    .line 1958
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->hasColorTextArgb()Z
 
@@ -130,7 +130,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 2442
+    .line 1959
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->getColorTextArgb()Ljava/lang/String;
@@ -143,11 +143,11 @@
 
     add-int/2addr v0, v1
 
-    .line 2445
+    .line 1962
     :cond_21
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->cachedSize:I
 
-    .line 2446
+    .line 1963
     return v0
 .end method
 
@@ -155,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 2393
+    .line 1907
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->hasColorTextArgb:Z
 
     return v0
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 2376
+    .line 1890
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->hasColorThemeArgb:Z
 
     return v0
@@ -181,29 +181,29 @@
     .end annotation
 
     .prologue
-    .line 2453
+    .line 1971
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 2454
+    .line 1972
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 2458
+    .line 1976
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 2459
+    .line 1977
     :sswitch_d
     return-object p0
 
-    .line 2464
+    .line 1982
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 2468
+    .line 1986
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 2454
+    .line 1972
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -242,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 2367
+    .line 1880
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;
 
     move-result-object v0
@@ -255,15 +255,15 @@
     .parameter "value"
 
     .prologue
-    .line 2395
+    .line 1909
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->hasColorTextArgb:Z
 
-    .line 2396
+    .line 1910
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->colorTextArgb_:Ljava/lang/String;
 
-    .line 2397
+    .line 1911
     return-object p0
 .end method
 
@@ -272,15 +272,15 @@
     .parameter "value"
 
     .prologue
-    .line 2378
+    .line 1892
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->hasColorThemeArgb:Z
 
-    .line 2379
+    .line 1893
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->colorThemeArgb_:Ljava/lang/String;
 
-    .line 2380
+    .line 1894
     return-object p0
 .end method
 
@@ -294,14 +294,14 @@
     .end annotation
 
     .prologue
-    .line 2418
+    .line 1933
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->hasColorThemeArgb()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 2419
+    .line 1934
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->getColorThemeArgb()Ljava/lang/String;
@@ -310,7 +310,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2421
+    .line 1936
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->hasColorTextArgb()Z
 
@@ -318,7 +318,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 2422
+    .line 1937
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$TileTemplate;->getColorTextArgb()Ljava/lang/String;
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2424
+    .line 1939
     :cond_1c
     return-void
 .end method

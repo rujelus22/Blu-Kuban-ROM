@@ -31,14 +31,14 @@
     .parameter "context"
 
     .prologue
-    .line 35
+    .line 34
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, v0, v1}, Lcom/google/android/finsky/layout/PlaylistControlButtons;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 36
+    .line 35
     return-void
 .end method
 
@@ -48,12 +48,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 39
+    .line 38
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/android/finsky/layout/PlaylistControlButtons;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 40
+    .line 39
     return-void
 .end method
 
@@ -64,29 +64,29 @@
     .parameter "defStyle"
 
     .prologue
-    .line 43
+    .line 42
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 30
+    .line 29
     invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/PlaylistControlButtons;->mDocs:Ljava/util/Collection;
 
-    .line 32
+    .line 31
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/finsky/layout/PlaylistControlButtons;->mIsPlaying:Z
 
-    .line 92
+    .line 89
     new-instance v0, Lcom/google/android/finsky/layout/PlaylistControlButtons$1;
 
     invoke-direct {v0, p0}, Lcom/google/android/finsky/layout/PlaylistControlButtons$1;-><init>(Lcom/google/android/finsky/layout/PlaylistControlButtons;)V
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/PlaylistControlButtons;->mStatusListener:Lcom/google/android/finsky/previews/StatusListener;
 
-    .line 44
+    .line 43
     new-instance v0, Lcom/google/android/finsky/previews/PreviewController;
 
     iget-object v1, p0, Lcom/google/android/finsky/layout/PlaylistControlButtons;->mStatusListener:Lcom/google/android/finsky/previews/StatusListener;
@@ -95,7 +95,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/layout/PlaylistControlButtons;->mConnection:Lcom/google/android/finsky/previews/PreviewController;
 
-    .line 45
+    .line 44
     return-void
 .end method
 
@@ -105,7 +105,7 @@
     .parameter "x1"
 
     .prologue
-    .line 27
+    .line 26
     invoke-direct {p0, p1}, Lcom/google/android/finsky/layout/PlaylistControlButtons;->setIsPlaying(Z)V
 
     return-void
@@ -127,85 +127,77 @@
 .end method
 
 .method private updateState()V
-    .registers 7
+    .registers 4
 
     .prologue
-    const/4 v5, 0x0
-
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
     .line 79
-    iget-boolean v2, p0, Lcom/google/android/finsky/layout/PlaylistControlButtons;->mIsPlaying:Z
+    iget-boolean v1, p0, Lcom/google/android/finsky/layout/PlaylistControlButtons;->mIsPlaying:Z
 
-    if-nez v2, :cond_2a
+    if-nez v1, :cond_12
 
     .line 80
-    const v2, 0x7f0700fe
+    const v1, 0x7f07010e
 
-    invoke-virtual {p0, v2}, Lcom/google/android/finsky/layout/PlaylistControlButtons;->setText(I)V
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/layout/PlaylistControlButtons;->setText(I)V
 
     .line 81
-    const v1, 0x7f020017
+    const v0, 0x7f02002d
+
+    .line 86
+    .local v0, drawableId:I
+    :goto_e
+    invoke-virtual {p0, v2, v2, v0, v2}, Lcom/google/android/finsky/layout/PlaylistControlButtons;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
     .line 87
-    .local v1, drawableId:I
-    :goto_f
-    invoke-virtual {p0}, Lcom/google/android/finsky/layout/PlaylistControlButtons;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .line 88
-    .local v0, drawable:Landroid/graphics/drawable/Drawable;
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v2
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v3
-
-    invoke-virtual {v0, v5, v5, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    .line 89
-    invoke-virtual {p0, v4, v4, v0, v4}, Lcom/google/android/finsky/layout/PlaylistControlButtons;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    .line 90
     return-void
 
     .line 83
-    .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
-    .end local v1           #drawableId:I
-    :cond_2a
-    const v2, 0x7f0700ff
+    .end local v0           #drawableId:I
+    :cond_12
+    const v1, 0x7f07010f
 
-    invoke-virtual {p0, v2}, Lcom/google/android/finsky/layout/PlaylistControlButtons;->setText(I)V
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/layout/PlaylistControlButtons;->setText(I)V
 
-    .line 85
-    const v1, 0x7f020018
+    .line 84
+    const v0, 0x7f02002e
 
-    .restart local v1       #drawableId:I
-    goto :goto_f
+    .restart local v0       #drawableId:I
+    goto :goto_e
 .end method
 
 
 # virtual methods
 .method public onAttachedToWindow()V
-    .registers 1
+    .registers 2
 
     .prologue
-    .line 53
+    .line 52
     invoke-super {p0}, Landroid/widget/TextView;->onAttachedToWindow()V
+
+    .line 53
+    iget-object v0, p0, Lcom/google/android/finsky/layout/PlaylistControlButtons;->mConnection:Lcom/google/android/finsky/previews/PreviewController;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/previews/PreviewController;->getCurrentQueueSize()I
+
+    move-result v0
+
+    if-lez v0, :cond_10
+
+    const/4 v0, 0x1
+
+    :goto_c
+    invoke-direct {p0, v0}, Lcom/google/android/finsky/layout/PlaylistControlButtons;->setIsPlaying(Z)V
 
     .line 54
     return-void
+
+    .line 53
+    :cond_10
+    const/4 v0, 0x0
+
+    goto :goto_c
 .end method
 
 .method public onClick(Landroid/view/View;)V
@@ -273,10 +265,10 @@
     .end annotation
 
     .prologue
-    .line 48
+    .line 47
     .local p1, docs:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/google/android/finsky/api/model/Document;>;"
     iput-object p1, p0, Lcom/google/android/finsky/layout/PlaylistControlButtons;->mDocs:Ljava/util/Collection;
 
-    .line 49
+    .line 48
     return-void
 .end method

@@ -37,7 +37,7 @@
     .line 39
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/google/android/talk/SettingsCache;->sInstanceLock:Ljava/lang/Object;
 
@@ -50,7 +50,7 @@
 
     .prologue
     .line 86
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 43
     new-instance v0, Lcom/google/android/talk/SettingsCache$1;

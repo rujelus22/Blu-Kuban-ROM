@@ -101,24 +101,17 @@
     .parameter "newVersion"
 
     .prologue
-    .line 240
-    const-string v0, "LogsProvider"
-
-    const-string v1, "onUpgrade entered"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 242
+    .line 241
     const/16 v0, 0x29
 
-    if-eq p2, v0, :cond_f
+    if-eq p2, v0, :cond_8
 
     const/16 v0, 0x2a
 
-    if-ne p2, v0, :cond_9e
+    if-ne p2, v0, :cond_7c
 
-    .line 243
-    :cond_f
+    .line 242
+    :cond_8
     const-string v0, ""
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -157,114 +150,87 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 257
-    const-string v0, "LogsProvider"
-
-    const-string v1, "adding 4 new columns in the logs table after upgrade"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 258
-    const-string v0, "ALTER TABLE logs ADD cityid TEXT;"
-
-    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 259
-    const-string v0, "ALTER TABLE logs ADD fname TEXT;"
-
-    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
     .line 260
-    const-string v0, "ALTER TABLE logs ADD lname TEXT;"
-
-    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 261
-    const-string v0, "ALTER TABLE logs ADD bname TEXT;"
-
-    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 263
     const-string v0, "ALTER TABLE logs ADD voicemail_uri TEXT;"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 264
+    .line 261
     const-string v0, "ALTER TABLE logs ADD is_read INTEGER;"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 265
+    .line 262
     const-string v0, "ALTER TABLE logs ADD countryiso TEXT;"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 266
+    .line 263
     const-string v0, "ALTER TABLE logs ADD geocoded_location TEXT;"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 267
+    .line 264
     const-string v0, "ALTER TABLE logs ADD lookup_uri TEXT;"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 268
+    .line 265
     const-string v0, "ALTER TABLE logs ADD matched_number TEXT;"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 269
+    .line 266
     const-string v0, "ALTER TABLE logs ADD normalized_number TEXT;"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 270
+    .line 267
     const-string v0, "ALTER TABLE logs ADD photo_id INTEGER NOT NULL DEFAULT 0;"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 271
+    .line 268
     const-string v0, "ALTER TABLE logs ADD formatted_number TEXT;"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 273
+    .line 270
     const-string v0, "ALTER TABLE logs ADD _data TEXT;"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 274
+    .line 271
     const-string v0, "ALTER TABLE logs ADD has_content INTEGER;"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 275
+    .line 272
     const-string v0, "ALTER TABLE logs ADD mime_type TEXT;"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 276
+    .line 273
     const-string v0, "ALTER TABLE logs ADD source_data TEXT;"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 277
+    .line 274
     const-string v0, "ALTER TABLE logs ADD source_package TEXT;"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 278
+    .line 275
     const-string v0, "ALTER TABLE logs ADD state INTEGER;"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 288
-    :goto_9d
+    .line 285
+    :goto_7b
     return-void
 
-    .line 280
-    :cond_9e
+    .line 277
+    :cond_7c
     const-string v0, ""
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -303,23 +269,23 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 282
+    .line 279
     const-string v0, "DROP TABLE IF EXISTS logs"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 283
+    .line 280
     const-string v0, "DROP TABLE IF EXISTS sns_msg_receiver_map"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 284
+    .line 281
     const-string v0, "DROP TABLE IF EXISTS duration_table"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 286
+    .line 283
     invoke-virtual {p0, p1}, Lcom/sec/android/provider/logsprovider/LogsProvider$DatabaseHelper;->onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    goto :goto_9d
+    goto :goto_7b
 .end method

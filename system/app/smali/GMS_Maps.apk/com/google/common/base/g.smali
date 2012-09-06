@@ -1,42 +1,67 @@
-.class final enum Lcom/google/common/base/g;
-.super Lcom/google/common/base/e;
+.class Lcom/google/common/base/g;
+.super Lcom/google/common/base/b;
+.source "SourceFile"
+
+
+# instance fields
+.field final synthetic p:Lcom/google/common/base/o;
+
+.field final synthetic q:Lcom/google/common/base/b;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;I)V
-    .registers 4
+.method constructor <init>(Lcom/google/common/base/b;Lcom/google/common/base/o;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    .line 680
+    iput-object p1, p0, Lcom/google/common/base/g;->q:Lcom/google/common/base/b;
 
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/common/base/e;-><init>(Ljava/lang/String;ILcom/google/common/base/d;)V
+    iput-object p2, p0, Lcom/google/common/base/g;->p:Lcom/google/common/base/o;
+
+    invoke-direct {p0}, Lcom/google/common/base/b;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/Object;)I
-    .registers 3
+.method public a()Lcom/google/common/base/b;
+    .registers 1
 
-    invoke-static {p1}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+    .prologue
+    .line 688
+    return-object p0
+.end method
+
+.method public bridge synthetic a(Ljava/lang/Object;)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 680
+    check-cast p1, Ljava/lang/Character;
+
+    invoke-super {p0, p1}, Lcom/google/common/base/b;->a(Ljava/lang/Character;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public a(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 4
+.method public b(C)Z
+    .registers 3
+    .parameter
 
-    if-ne p1, p2, :cond_4
+    .prologue
+    .line 682
+    iget-object v0, p0, Lcom/google/common/base/g;->p:Lcom/google/common/base/o;
 
-    const/4 v0, 0x1
+    invoke-virtual {v0, p1}, Lcom/google/common/base/o;->b(C)Z
 
-    :goto_3
+    move-result v0
+
     return v0
-
-    :cond_4
-    const/4 v0, 0x0
-
-    goto :goto_3
 .end method

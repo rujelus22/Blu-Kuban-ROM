@@ -20,12 +20,14 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Z)V
-    .registers 10
+    .registers 11
     .parameter
     .parameter
     .parameter
 
     .prologue
+    const/4 v6, 0x0
+
     .line 104
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -117,12 +119,12 @@
 
     move-result-object v4
 
-    :goto_55
+    :goto_56
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_89
+    if-eqz v0, :cond_8a
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -143,19 +145,19 @@
     .line 122
     instance-of v2, v1, Lorg/apache/http/conn/scheme/LayeredSocketFactory;
 
-    if-eqz v2, :cond_82
+    if-eqz v2, :cond_83
 
     .line 123
     new-instance v2, Lcom/google/android/common/http/a;
 
     check-cast v1, Lorg/apache/http/conn/scheme/LayeredSocketFactory;
 
-    invoke-direct {v2, p0, v1}, Lcom/google/android/common/http/a;-><init>(Lcom/google/android/common/http/GoogleHttpClient;Lorg/apache/http/conn/scheme/LayeredSocketFactory;)V
+    invoke-direct {v2, p0, v1, v6}, Lcom/google/android/common/http/a;-><init>(Lcom/google/android/common/http/GoogleHttpClient;Lorg/apache/http/conn/scheme/LayeredSocketFactory;B)V
 
     move-object v1, v2
 
     .line 127
-    :goto_75
+    :goto_76
     new-instance v2, Lorg/apache/http/conn/scheme/Scheme;
 
     invoke-virtual {v5}, Lorg/apache/http/conn/scheme/Scheme;->getDefaultPort()I
@@ -166,20 +168,20 @@
 
     invoke-virtual {v3, v2}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
 
-    goto :goto_55
+    goto :goto_56
 
     .line 125
-    :cond_82
+    :cond_83
     new-instance v2, Lcom/google/android/common/http/b;
 
-    invoke-direct {v2, p0, v1}, Lcom/google/android/common/http/b;-><init>(Lcom/google/android/common/http/GoogleHttpClient;Lorg/apache/http/conn/scheme/SocketFactory;)V
+    invoke-direct {v2, p0, v1, v6}, Lcom/google/android/common/http/b;-><init>(Lcom/google/android/common/http/GoogleHttpClient;Lorg/apache/http/conn/scheme/SocketFactory;B)V
 
     move-object v1, v2
 
-    goto :goto_75
+    goto :goto_76
 
     .line 129
-    :cond_89
+    :cond_8a
     return-void
 .end method
 
@@ -723,20 +725,16 @@
     move-result-object v2
 
     .line 241
-    if-nez v2, :cond_42
+    if-nez v2, :cond_3e
 
     .line 242
     const-string v2, "GoogleHttpClient"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Blocked by "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v4, v1, Lcom/google/android/common/http/e;->a:Ljava/lang/String;
 
@@ -768,8 +766,8 @@
     throw v0
 
     .line 244
-    :cond_42
-    if-ne v2, v0, :cond_49
+    :cond_3e
+    if-ne v2, v0, :cond_45
 
     .line 245
     invoke-direct {p0, p1, p2}, Lcom/google/android/common/http/GoogleHttpClient;->a(Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
@@ -777,17 +775,17 @@
     move-result-object v0
 
     .line 260
-    :goto_48
+    :goto_44
     return-object v0
 
     .line 249
-    :cond_49
-    :try_start_49
+    :cond_45
+    :try_start_45
     new-instance v0, Ljava/net/URI;
 
     invoke-direct {v0, v2}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
-    :try_end_4e
-    .catch Ljava/net/URISyntaxException; {:try_start_49 .. :try_end_4e} :catch_5a
+    :try_end_4a
+    .catch Ljava/net/URISyntaxException; {:try_start_45 .. :try_end_4a} :catch_56
 
     .line 255
     invoke-static {p1}, Lcom/google/android/common/http/GoogleHttpClient;->a(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/impl/client/RequestWrapper;
@@ -802,10 +800,10 @@
 
     move-result-object v0
 
-    goto :goto_48
+    goto :goto_44
 
     .line 250
-    :catch_5a
+    :catch_56
     move-exception v0
 
     .line 251
@@ -813,13 +811,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Bad URL from rule: "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v1, v1, Lcom/google/android/common/http/e;->a:Ljava/lang/String;
 

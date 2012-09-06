@@ -4,20 +4,20 @@
     <string name="generic_ok">موافق</string>
     <string name="generic_cancel">إلغاء</string>
     <string name="generic_save">حفظ</string>
-    <string name="generic_load">رفع</string>
+    <string name="generic_load">تحميل</string>
     <string name="generic_forget">إنس</string>
     <string name="generic_close">أغلق</string>
     <string name="generic_clear">مسح</string>
     <string name="generic_continue">استمرار</string>
     <string name="generic_grant">إمنح</string>
-    <string name="generic_deny">أرفض</string>
+    <string name="generic_deny">رفض</string>
     <string name="toast_unknown">مجهول</string>
     <string name="toast_granted">ممنوح</string>
     <string name="toast_denied">مرفوض</string>
     <string name="toast_package" formatted="false">%s )%s) حصلت على %s تصريح سوبريوزر</string>
     <string name="toast_name" formatted="false">%s حصلت على %s تصريح سوبريوزر</string>
     <string name="toast_interactive">للوضع التفاعلي</string>
-    <string name="tab_apps">التطبيقات</string>
+    <string name="tab_apps">تطبيقات</string>
     <string name="tab_logs">سجلات</string>
     <string name="tab_settings">إعدادات</string>
     <string name="tab_apps_empty">لا توجد تطبيقات</string>
@@ -25,7 +25,7 @@
     <string name="superuser_request_from">:طلب سوبريوزر</string>
     <string name="superuser_request_uid">طلب تصريح</string>
     <string name="superuser_request_command">أمر</string>
-    <string name="superuser_prompt_again">أسالني مجددا المرة التالية</string>
+    <string name="superuser_prompt_again">السؤال في كل مرة</string>
     <string name="superuser_command_shell">(وضع تفاعلي)</string>
     <string name="superuser_user_unknown">مجهولة</string>
     <string name="install_binary">ملفات ال-SU تحتاج للتحديث، موافق؟</string>
@@ -37,7 +37,7 @@
     <string name="uninstall_binary_failure">عملية المسح فشلت !</string>
     <string name="boot_ota_superuser_restored">SuperSU إستعاد تلقائياً تصريح ال-Superuser</string>
     <string name="settings_tap_xda">اضغط لزيارة موضوع XDA</string>
-    <string name="settings_upgrade">حدث الى نسخة Pro</string>
+    <string name="settings_upgrade">ترقية إلى نسخة Pro</string>
     <string name="settings_upgrade_description">ادعم تطوير البرنامج و فعل خصائص جديدة</string>
     <string name="settings_pro_required">تحتاج سوبريوزر Pro لهذه الخاصية</string>
     <string name="settings_category_root">سوبريوزر</string>
@@ -57,7 +57,7 @@
     <string name="settings_show_notifications_enabled">أظهر إنذارا عندما يطلب تطبيق تصريحاً(يمكن تعديله لكل تطبيق)</string>
     <string name="settings_show_notifications_disabled">لا تظهر إنذارا عندما يطلب تطبيق تصريحاً(يمكن تعديله لكل تطبيق)</string>
     <string name="settings_category_logs">سجلات</string>
-    <string name="settings_log">تسجيل</string>
+    <string name="settings_log">التسجيل</string>
     <string name="settings_log_select">إختر مستوى السجلات</string>
     <string name="settings_log_age">أغلق السجلات بعد ...</string>
     <string name="settings_log_age_select">إختر مدة صلاحية السجلات</string>
@@ -78,7 +78,7 @@
     <string name="settings_cleanup_full_unroot_title">إحذف الروت كلياً</string>
     <string name="settings_cleanup_full_unroot_description">نظف لحذف الروت</string>
     <string name="settings_cleanup_full_unroot_success">إذا نجح التنظيف، ستفقد الروت، وسيتم إغلاق التطبيق تلقائياً في غضون ثوان، للعلم فبعض أنواع الكيرنل تعيد تركيب الروت عند إعادة التشغيل، تريد المتابعة؟</string>
-    <string name="settings_cleanup_switch_superuser_title">إستعمل تطبيقا آخر لإعطاء التصاريح</string>
+    <string name="settings_cleanup_switch_superuser_title">تحويل لتطبيق superuser آخر</string>
     <string name="settings_cleanup_switch_superuser_description">نظف لتغيير تطبيق إعطاء التصاريح</string>
     <string name="settings_cleanup_switch_superuser_success">إذا نجح التنظيف، سيتم إغلاق التطبيق في غضون ثوان، بعدها إفتح تطبيق إعطاء التصاريح الآخر وقم بتحديث ملفاته، هل تريد الاستمرار؟</string>
     <string name="settings_cleanup_reinstall_title">إعادة التثبيت</string>

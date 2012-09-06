@@ -1,62 +1,49 @@
 .class final Lcom/google/common/collect/ec;
-.super Ljava/lang/Object;
+.super Lcom/google/common/collect/ed;
 .source "SourceFile"
-
-# interfaces
-.implements Lcom/google/common/collect/em;
 
 
 # instance fields
-.field final a:Ljava/lang/String;
+.field final synthetic a:Ljava/lang/Iterable;
+
+.field final synthetic b:Lcom/google/common/base/v;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
-    .registers 2
+.method constructor <init>(Ljava/lang/Iterable;Lcom/google/common/base/v;)V
+    .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 801
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 706
+    iput-object p1, p0, Lcom/google/common/collect/ec;->a:Ljava/lang/Iterable;
 
-    .line 802
-    iput-object p1, p0, Lcom/google/common/collect/ec;->a:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/common/collect/ec;->b:Lcom/google/common/base/v;
 
-    .line 803
+    invoke-direct {p0}, Lcom/google/common/collect/ed;-><init>()V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/common/collect/ee;)Lcom/google/common/collect/em;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 809
-    return-object p0
-.end method
-
-.method public final get()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 805
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final n_()Ljava/lang/Object;
+.method public final iterator()Ljava/util/Iterator;
     .registers 3
 
     .prologue
-    .line 812
-    new-instance v0, Lcom/google/common/collect/NullOutputException;
+    .line 709
+    iget-object v0, p0, Lcom/google/common/collect/ec;->a:Ljava/lang/Iterable;
 
-    iget-object v1, p0, Lcom/google/common/collect/ec;->a:Ljava/lang/String;
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    invoke-direct {v0, v1}, Lcom/google/common/collect/NullOutputException;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    throw v0
+    iget-object v1, p0, Lcom/google/common/collect/ec;->b:Lcom/google/common/base/v;
+
+    invoke-static {v0, v1}, Lcom/google/common/collect/ee;->a(Ljava/util/Iterator;Lcom/google/common/base/v;)Ljava/util/Iterator;
+
+    move-result-object v0
+
+    return-object v0
 .end method

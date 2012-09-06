@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 910
+    .line 844
     iput-object p1, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$11;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,15 +43,11 @@
     .parameter "id"
 
     .prologue
-    .line 913
+    .line 847
     iget-object v0, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$11;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
 
-    #calls: Lcom/google/android/finsky/activities/AuthenticatedActivity;->addAccount()V
-    invoke-static {v0}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->access$400(Lcom/google/android/finsky/activities/AuthenticatedActivity;)V
+    invoke-virtual {v0}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->finish()V
 
-    .line 914
-    invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
-
-    .line 915
+    .line 848
     return-void
 .end method

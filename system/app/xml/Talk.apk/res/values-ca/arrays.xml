@@ -29,6 +29,12 @@
         <item>Només quan està en silenci</item>
         <item>Mai</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>desactivada</item>
+        <item>baixa</item>
+        <item>mitjana</item>
+        <item>virtual</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Cap</item>
         <item>Estabilització de la imatge: baixa</item>

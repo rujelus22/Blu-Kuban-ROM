@@ -103,9 +103,9 @@
     <string name="follow_gplus">Google Plus</string>
     <string name="follow_twitter">Twitter</string>
     <string name="follow_nothanks">Não obrigado</string>
-    <string name="settings_category_language">Language</string>
+    <string name="settings_category_language">Língua</string>
     <string name="settings_language_title">Language override</string>
     <string name="settings_language_popup">Selecionar Idioma</string>
-    <string name="settings_language_default">Default language</string>
-    <string name="settings_language_restart">SuperSU needs to be restarted for the language change to be activated (if the chosen language is supported)</string>
+    <string name="settings_language_default">Língua padrão</string>
+    <string name="settings_language_restart">SuperSU precisa reiniciar para que a mudança de língua seja ativada (se a lingua escolhida é suportada)</string>
 </resources>

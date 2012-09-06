@@ -17,9 +17,9 @@
     <bool name="config_bypass_keyguard_if_slider_open">true</bool>
     <bool name="config_automatic_brightness_available">true</bool>
     <bool name="config_annoy_dianne">true</bool>
-    <bool name="config_unplugTurnsOnScreen">true</bool>
-    <bool name="config_animateScreenLights">true</bool>
-    <bool name="config_allowAllRotations">false</bool>
+    <bool name="config_unplugTurnsOnScreen">false</bool>
+    <bool name="config_animateScreenLights">false</bool>
+    <bool name="config_allowAllRotations">true</bool>
     <bool name="config_reverseDefaultRotation">false</bool>
     <bool name="config_deskDockEnablesAccelerometer">false</bool>
     <bool name="config_carDockEnablesAccelerometer">true</bool>
@@ -28,9 +28,9 @@
     <bool name="config_disableAdbIcon">true</bool>
     <bool name="config_use_strict_phone_number_comparation">false</bool>
     <bool name="config_intrusiveNotificationLed">true</bool>
-    <bool name="config_disableMenuKeyInLockScreen">false</bool>
+    <bool name="config_disableMenuKeyInLockScreen">true</bool>
     <bool name="config_enableLockBeforeUnlockScreen">false</bool>
-    <bool name="config_enableLockScreenRotation">false</bool>
+    <bool name="config_enableLockScreenRotation">true</bool>
     <bool name="config_enable_puk_unlock_screen">true</bool>
     <bool name="config_enable_emergency_call_while_sim_locked">true</bool>
     <bool name="config_IOPControlFrequency">false</bool>

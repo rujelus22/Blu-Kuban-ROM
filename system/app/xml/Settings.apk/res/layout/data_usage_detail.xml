@@ -5,8 +5,8 @@
         <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="@android:dimen/preference_item_padding_inner" android:layout_weight="1.0">
             <ImageView android:id="@id/app_icon" android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="centerInside" />
             <LinearLayout android:orientation="vertical" android:id="@id/app_titles" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" />
-            <TextView android:textColor="#ffd88d3a" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/data_usage_label_foreground" />
-            <TextView android:textColor="#ffd88d3a" android:id="@id/app_foreground" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <TextView android:textColor="#ff155496" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/data_usage_label_foreground" />
+            <TextView android:textColor="#ff155496" android:id="@id/app_foreground" android:layout_width="fill_parent" android:layout_height="wrap_content" />
             <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/data_usage_label_background" />
             <TextView android:id="@id/app_background" android:layout_width="fill_parent" android:layout_height="wrap_content" />
         </LinearLayout>

@@ -78,11 +78,11 @@
     .line 60
     const/16 v0, 0xff
 
-    const/16 v1, 0x8
+    const/16 v1, 0x15
 
-    const/16 v2, 0x83
+    const/16 v2, 0x54
 
-    const/16 v3, 0xd3
+    const/16 v3, 0x96
 
     invoke-static {v0, v1, v2, v3}, Landroid/graphics/Color;->argb(IIII)I
 
@@ -216,7 +216,7 @@
     .parameter "glContext"
 
     .prologue
-    const v4, 0x7f020193
+    const v4, 0x7f020192
 
     const/4 v7, 0x0
 
@@ -538,7 +538,7 @@
 
     const/high16 v11, 0x4000
 
-    const v12, 0x7f02017b
+    const v12, 0x7f02017a
 
     move v10, v4
 

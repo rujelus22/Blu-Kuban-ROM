@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 328
+    .line 355
     iput-object p1, p0, Lcom/google/android/finsky/previews/PreviewPlayer$2;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "error"
 
     .prologue
-    .line 331
+    .line 358
     const-string v0, "Unable to load JSON: %s"
 
     const/4 v1, 0x1
@@ -59,7 +59,7 @@
 
     invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 332
+    .line 359
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer$2;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     const/4 v1, 0x0
@@ -67,12 +67,12 @@
     #setter for: Lcom/google/android/finsky/previews/PreviewPlayer;->mCurrentUnrollRequest:Lcom/android/volley/toolbox/JsonObjectRequest;
     invoke-static {v0, v1}, Lcom/google/android/finsky/previews/PreviewPlayer;->access$102(Lcom/google/android/finsky/previews/PreviewPlayer;Lcom/android/volley/toolbox/JsonObjectRequest;)Lcom/android/volley/toolbox/JsonObjectRequest;
 
-    .line 333
+    .line 360
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer$2;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     #calls: Lcom/google/android/finsky/previews/PreviewPlayer;->notifyError()V
     invoke-static {v0}, Lcom/google/android/finsky/previews/PreviewPlayer;->access$200(Lcom/google/android/finsky/previews/PreviewPlayer;)V
 
-    .line 334
+    .line 361
     return-void
 .end method

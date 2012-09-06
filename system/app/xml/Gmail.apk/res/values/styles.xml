@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="ListViewWhiteCustom" parent="@android:style/Widget.Holo.Light.ListView" />
-    <style name="LightNoTitleBarTheme" parent="@android:style/Theme.Light.NoTitleBar">
+    <style name="ListViewWhiteCustom" parent="@android:style/Widget.Holo.ListView" />
+    <style name="LightNoTitleBarTheme" parent="@android:style/Theme.Black.NoTitleBar">
         <item name="android:windowContentOverlay">@null</item>
-        <item name="android:listViewWhiteStyle">@android:style/Widget.ListView.White</item>
+        <item name="android:listViewWhiteStyle">@android:style/Widget.ListView</item>
     </style>
     <style name="Logo">
         <item name="android:src">@drawable/logo</item>
@@ -21,7 +21,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
-    <style name="ComposeFieldLinearLayout" parent="@android:style/Widget.Holo.Light.EditText">
+    <style name="ComposeFieldLinearLayout" parent="@android:style/Widget.Holo.EditText">
         <item name="android:orientation">horizontal</item>
         <item name="android:paddingLeft">0.0dip</item>
         <item name="android:paddingRight">0.0dip</item>
@@ -33,11 +33,11 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:minHeight">48.0dip</item>
     </style>
-    <style name="PlainEditText" parent="@android:style/Widget.EditText">
+    <style name="PlainEditText" parent="@android:style/Widget.Holo.EditText">
         <item name="android:background">@android:color/transparent</item>
     </style>
-    <style name="ComposeTheme" parent="@android:style/Theme.Holo.Light" />
-    <style name="EmailInput" parent="@android:style/Widget.AutoCompleteTextView">
+    <style name="ComposeTheme" parent="@android:style/Theme.Holo" />
+    <style name="EmailInput" parent="@android:style/Widget.Holo.AutoCompleteTextView">
         <item name="android:background">@android:color/transparent</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -51,20 +51,20 @@
         <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
         <item name="android:windowExitAnimation">@anim/dialog_exit</item>
     </style>
-    <style name="MinTimeProgressDialog" parent="@android:style/Theme.Holo.Light.Dialog">
+    <style name="MinTimeProgressDialog" parent="@android:style/Theme.Holo.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowAnimationStyle">@style/MinTimeAnimationStyle</item>
     </style>
-    <style name="MinTimeProgressView" parent="@android:style/Widget.Holo.Light.ProgressBar" />
-    <style name="GmailActionBarStylePlain" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
+    <style name="MinTimeProgressView" parent="@android:style/Widget.Holo.ProgressBar" />
+    <style name="GmailActionBarStylePlain" parent="@android:style/Widget.Holo.ActionBar.Solid">
         <item name="android:displayOptions"></item>
     </style>
-    <style name="GmailHoloTheme" parent="@android:style/Theme.Holo.Light">
+    <style name="GmailHoloTheme" parent="@android:style/Theme.Holo">
         <item name="android:listViewWhiteStyle">@style/ListViewWhiteCustom</item>
         <item name="android:actionBarStyle">@style/GmailActionBarStylePlain</item>
     </style>
-    <style name="GmailLabelsHoloTheme" parent="@android:style/Theme.Holo.Light">
+    <style name="GmailLabelsHoloTheme" parent="@android:style/Theme.Holo">
         <item name="android:listViewWhiteStyle">@style/ListViewWhiteCustom</item>
     </style>
     <style name="conversation_undo_bar">
@@ -190,7 +190,7 @@
         <item name="android:windowEnterAnimation">@anim/action_popup_enter</item>
         <item name="android:windowExitAnimation">@anim/action_popup_exit</item>
     </style>
-    <style name="ConversationListFade" parent="@android:attr/listViewWhiteStyle">
+    <style name="ConversationListFade" parent="@android:attr/listViewStyle">
         <item name="android:cacheColorHint">@android:color/transparent</item>
     </style>
     <style name="WidgetListStyle" />
@@ -202,9 +202,9 @@
     <style name="UndoText">
         <item name="android:textSize">12.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">#ffaaaaaa</item>
+        <item name="android:textColor">#ff990000</item>
     </style>
-    <style name="ShortcutWidgetTheme" parent="@android:style/Theme.Holo.Light.DialogWhenLarge" />
+    <style name="ShortcutWidgetTheme" parent="@android:style/Theme.Holo" />
     <style name="InvisibleShortcutWidgetTheme" parent="@style/ShortcutWidgetTheme">
         <item name="android:windowNoDisplay">true</item>
     </style>
@@ -268,18 +268,20 @@
         <item name="android:maxLines">2</item>
     </style>
     <style name="WidgetTitle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
-        <item name="android:textColor">#ff333333</item>
+        <item name="android:textColor">#ffffffff</item>
         <item name="android:singleLine">true</item>
     </style>
     <style name="WidgetSubtitle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Subtitle">
-        <item name="android:textColor">#ff777777</item>
+        <item name="android:textColor">#ff155496</item>
         <item name="android:singleLine">true</item>
     </style>
     <style name="RecipientEditTextViewStyle" parent="@style/RecipientEditTextView">
+        <item name="android:textColor">#ffffffff</item>
         <item name="android:gravity">bottom</item>
         <item name="android:minHeight">42.0dip</item>
     </style>
     <style name="ComposeEditTextView">
+        <item name="android:textColor">#ffffffff</item>
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:background">@null</item>
         <item name="android:layout_width">fill_parent</item>
@@ -295,7 +297,7 @@
         <item name="android:layout_marginTop">4.0dip</item>
         <item name="android:layout_marginRight">4.0dip</item>
     </style>
-    <style name="ComposeFieldLayout" parent="@android:style/Widget.Holo.Light.EditText">
+    <style name="ComposeFieldLayout" parent="@android:style/Widget.Holo.EditText">
         <item name="android:gravity">center_vertical</item>
         <item name="android:paddingTop">0.0dip</item>
         <item name="android:focusable">false</item>
@@ -308,6 +310,7 @@
         <item name="android:orientation">vertical</item>
     </style>
     <style name="ComposeBodyStyle">
+        <item name="android:textColor">#ffffffff</item>
         <item name="android:textColorHint">@color/compose_label_text</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:layout_gravity">center_vertical</item>
@@ -324,7 +327,7 @@
     <style name="ComposeButton">
         <item name="android:textSize">12.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">#ff777777</item>
+        <item name="android:textColor">#ffffffff</item>
         <item name="android:gravity">left</item>
         <item name="android:layout_gravity">left|center</item>
         <item name="android:background">@android:color/transparent</item>
@@ -340,7 +343,7 @@
     </style>
     <style name="attachment_name">
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
-        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColor">@android:color/white</item>
         <item name="android:ellipsize">end</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -349,7 +352,7 @@
         <item name="android:maxLines">1</item>
     </style>
     <style name="attachment_size" parent="@style/attachment_name">
-        <item name="android:textColor">#ff555555</item>
+        <item name="android:textColor">#ffffffff</item>
     </style>
     <style name="attachment_thumbnail">
         <item name="android:layout_width">wrap_content</item>
@@ -358,7 +361,7 @@
     </style>
     <style name="unreadCount">
         <item name="android:textSize">18.0sp</item>
-        <item name="android:textColor">#ffbcbcbc</item>
+        <item name="android:textColor">#ffffffff</item>
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -369,7 +372,7 @@
     </style>
     <style name="unreadCountActionBar" parent="@style/unreadCount">
         <item name="android:textSize">36.0dip</item>
-        <item name="android:textColor">#ffbbbbbb</item>
+        <item name="android:textColor">#ffffffff</item>
         <item name="android:layout_marginRight">8.0dip</item>
     </style>
     <style name="AccountSwitchSpinnerItem">
@@ -380,14 +383,14 @@
     </style>
     <style name="AccountSpinnerDropdownTextSecondary">
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
-        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
     <style name="AccountSpinnerAnchorTextPrimary" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title" />
     <style name="AccountSpinnerAnchorTextSecondary" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Subtitle">
         <item name="android:textColor">@color/actionbar_secondary</item>
     </style>
     <style name="NotificationPrimaryText">
-        <item name="android:textColor">#ffcccccc</item>
+        <item name="android:textColor">#ffebebeb</item>
     </style>
     <style name="NotificationSecondaryText" />
     <style name="RecipientEditTextView" parent="@android:attr/autoCompleteTextViewStyle">

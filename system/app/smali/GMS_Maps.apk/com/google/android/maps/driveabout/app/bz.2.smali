@@ -1,42 +1,44 @@
-.class Lcom/google/android/maps/driveabout/app/bz;
+.class Lcom/google/android/maps/driveabout/app/bZ;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field a:I
-
-.field b:I
-
-.field c:I
-
-.field d:I
-
-.field e:Z
-
-.field f:Z
-
-.field final synthetic g:Lcom/google/android/maps/driveabout/app/bv;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/bY;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/bv;IIIIZZ)V
-    .registers 8
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/bY;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/bz;->g:Lcom/google/android/maps/driveabout/app/bv;
+    .prologue
+    .line 473
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/bZ;->a:Lcom/google/android/maps/driveabout/app/bY;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p2, p0, Lcom/google/android/maps/driveabout/app/bz;->a:I
+    return-void
+.end method
 
-    iput p3, p0, Lcom/google/android/maps/driveabout/app/bz;->b:I
 
-    iput p4, p0, Lcom/google/android/maps/driveabout/app/bz;->c:I
+# virtual methods
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .registers 4
+    .parameter
+    .parameter
 
-    iput p5, p0, Lcom/google/android/maps/driveabout/app/bz;->d:I
+    .prologue
+    .line 476
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/bZ;->a:Lcom/google/android/maps/driveabout/app/bY;
 
-    iput-boolean p6, p0, Lcom/google/android/maps/driveabout/app/bz;->e:Z
+    iget-object v0, v0, Lcom/google/android/maps/driveabout/app/bY;->a:Lcom/google/android/maps/driveabout/app/NavigationActivity;
 
-    iput-boolean p7, p0, Lcom/google/android/maps/driveabout/app/bz;->f:Z
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/NavigationActivity;->c()V
 
+    .line 477
     return-void
 .end method

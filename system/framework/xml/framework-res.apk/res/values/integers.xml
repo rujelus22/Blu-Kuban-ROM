@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="config_shortAnimTime">200</integer>
-    <integer name="config_mediumAnimTime">400</integer>
-    <integer name="config_longAnimTime">500</integer>
+    <integer name="config_shortAnimTime">150</integer>
+    <integer name="config_mediumAnimTime">250</integer>
+    <integer name="config_longAnimTime">350</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
     <integer name="config_activityShortDur">150</integer>
-    <integer name="config_activityDefaultDur">220</integer>
+    <integer name="config_activityDefaultDur">200</integer>
     <integer name="config_radioScanningTimeout">0</integer>
     <integer name="config_networkTransitionTimeout">60000</integer>
     <integer name="config_max_pan_devices">5</integer>
@@ -23,7 +23,7 @@
     <integer name="config_lowBatteryWarningLevel">15</integer>
     <integer name="config_lowBatteryCloseWarningLevel">20</integer>
     <integer name="config_defaultNotificationLedOn">500</integer>
-    <integer name="config_defaultNotificationLedOff">2000</integer>
+    <integer name="config_defaultNotificationLedOff">1000</integer>
     <integer name="config_notificationsBatteryLowARGB">-65536</integer>
     <integer name="config_notificationsBatteryMediumARGB">-65536</integer>
     <integer name="config_notificationsBatteryFullARGB">-16776961</integer>

@@ -12,7 +12,7 @@
 
 
 # static fields
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final EVENT_CALL_WAITING:I = 0x6c
 
@@ -58,7 +58,7 @@
 
 .field private static final LOG_TAG:Ljava/lang/String; = "CallManager"
 
-.field private static final VDBG:Z = true
+.field private static final VDBG:Z
 
 
 # instance fields

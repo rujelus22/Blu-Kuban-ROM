@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/wizard/hs;
+.class Lcom/google/googlenav/ui/wizard/hS;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lax/bc;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/hp;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/hQ;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/hp;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/hQ;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/hs;->a:Lcom/google/googlenav/ui/wizard/hp;
+    .prologue
+    .line 1054
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/hS;->a:Lcom/google/googlenav/ui/wizard/hQ;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,30 +26,24 @@
 
 
 # virtual methods
-.method public a(I)V
-    .registers 4
+.method public onClick(Landroid/view/View;)V
+    .registers 6
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hs;->a:Lcom/google/googlenav/ui/wizard/hp;
+    .prologue
+    .line 1057
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hS;->a:Lcom/google/googlenav/ui/wizard/hQ;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/hp;->b:Lcom/google/googlenav/ui/wizard/hM;
+    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/hQ;->a:Lcom/google/googlenav/ui/wizard/hG;
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/hM;->j()V
+    const/16 v1, 0x5f1
 
-    if-nez p1, :cond_f
+    const/4 v2, 0x0
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hs;->a:Lcom/google/googlenav/ui/wizard/hp;
+    const/4 v3, 0x0
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/hp;->a(Lcom/google/googlenav/ui/wizard/hp;)V
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/googlenav/ui/wizard/hG;->a(IILjava/lang/Object;)Z
 
-    :goto_e
+    .line 1058
     return-void
-
-    :cond_f
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/hs;->a:Lcom/google/googlenav/ui/wizard/hp;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/google/googlenav/ui/wizard/hp;->a(Lcom/google/googlenav/ui/wizard/hp;Z)V
-
-    goto :goto_e
 .end method

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 181
+    .line 183
     iput-object p1, p0, Lcom/google/android/street/StreetView$1;->this$0:Lcom/google/android/street/StreetView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .registers 5
 
     .prologue
-    .line 184
+    .line 186
     :try_start_0
     iget-object v0, p0, Lcom/google/android/street/StreetView$1;->this$0:Lcom/google/android/street/StreetView;
 
@@ -60,11 +60,11 @@
     :try_end_e
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_e} :catch_f
 
-    .line 190
+    .line 192
     :goto_e
     return-void
 
-    .line 185
+    .line 187
     :catch_f
     move-exception v0
 

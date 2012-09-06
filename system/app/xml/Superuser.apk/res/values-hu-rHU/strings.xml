@@ -13,7 +13,7 @@
     <string name="generic_deny">Megtagad</string>
     <string name="toast_unknown">ismeretlen</string>
     <string name="toast_granted">engedélyezve</string>
-    <string name="toast_denied">megtagadva</string>
+    <string name="toast_denied">Elutasítva</string>
     <string name="toast_package" formatted="false">%s (%s) óta %s superuser jogokkal</string>
     <string name="toast_name" formatted="false">%s %s superuser jogokkal</string>
     <string name="toast_interactive">egy interaktív felületen</string>
@@ -35,7 +35,7 @@
     <string name="install_binary_failure">Sikertelen telepítés !</string>
     <string name="uninstall_binary_progress">Eltávolítás, kérlek várj ...</string>
     <string name="uninstall_binary_failure">Az eltávolítás sikertelen !</string>
-    <string name="boot_ota_superuser_restored">A SuperSU automatikusan visszaállítja a Superuser hozzáférését</string>
+    <string name="boot_ota_superuser_restored">SuperSU automatikusan visszaállította a Superuser jogokat</string>
     <string name="settings_tap_xda">Érintsd meg az XDA fórumtéma eléréséhez</string>
     <string name="settings_upgrade">Frissítés Pro verzióra</string>
     <string name="settings_upgrade_description">A fejlesztés támogatása és az extra funkciók feloldása</string>

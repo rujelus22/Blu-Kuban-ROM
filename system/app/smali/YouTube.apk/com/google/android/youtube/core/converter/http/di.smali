@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 491
+    .line 87
     invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
     return-void
@@ -16,25 +16,31 @@
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
-    .registers 5
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
+    .registers 6
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 494
-    const-class v0, Lcom/google/android/youtube/core/model/Video$Builder;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    .line 90
+    invoke-virtual {p1}, Lcom/google/android/youtube/core/utils/x;->peek()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/model/Video$Builder;
+    check-cast v0, Lcom/google/android/youtube/core/model/UserProfile$Builder;
 
-    .line 495
-    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/Video$Builder;->location(Ljava/lang/String;)Lcom/google/android/youtube/core/model/Video$Builder;
+    .line 91
+    invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    .line 496
+    move-result v1
+
+    if-nez v1, :cond_f
+
+    .line 92
+    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/UserProfile$Builder;->displayUsername(Ljava/lang/String;)Lcom/google/android/youtube/core/model/UserProfile$Builder;
+
+    .line 94
+    :cond_f
     return-void
 .end method

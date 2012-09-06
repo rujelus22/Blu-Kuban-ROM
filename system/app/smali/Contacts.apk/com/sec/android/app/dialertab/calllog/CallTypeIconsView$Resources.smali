@@ -46,7 +46,7 @@
 
     .line 133
     .local v0, r:Landroid/content/res/Resources;
-    const v1, 0x7f020203
+    const v1, 0x7f020198
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -55,7 +55,7 @@
     iput-object v1, p0, Lcom/sec/android/app/dialertab/calllog/CallTypeIconsView$Resources;->incoming:Landroid/graphics/drawable/Drawable;
 
     .line 134
-    const v1, 0x7f020205
+    const v1, 0x7f02019a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -64,7 +64,7 @@
     iput-object v1, p0, Lcom/sec/android/app/dialertab/calllog/CallTypeIconsView$Resources;->outgoing:Landroid/graphics/drawable/Drawable;
 
     .line 135
-    const v1, 0x7f020202
+    const v1, 0x7f020199
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

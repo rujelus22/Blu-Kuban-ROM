@@ -15,10 +15,10 @@
     .registers 2
 
     .prologue
-    .line 28
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 30
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
+    .line 31
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/apache/james/mime4j/message/AbstractBody;->parent:Lorg/apache/james/mime4j/message/Entity;
@@ -33,9 +33,9 @@
     .parameter "parent"
 
     .prologue
-    .line 42
+    .line 44
     iput-object p1, p0, Lorg/apache/james/mime4j/message/AbstractBody;->parent:Lorg/apache/james/mime4j/message/Entity;
 
-    .line 43
+    .line 45
     return-void
 .end method

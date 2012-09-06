@@ -242,18 +242,18 @@ fråga"</b></string>
     <string name="account_intro_recommended_title">Slå ihop med Google</string>
     <string name="common_message">"Med ett Google-konto kan du:
 
-"<li><ul>se och ordna all din information var du än befinner dig</ul></li>"
+"<ul><li>se och ordna all din information var du än befinner dig</li></ul>"
 
-"<li><ul>automatiskt säkerhetskopiera information</ul></li>"
+"<ul><li>automatiskt säkerhetskopiera information</li></ul>"
 
-"<li><ul>enkelt använda Googles tjänster var du än befinner dig.</ul></li></string>
+"<ul><li>enkelt använda Googles tjänster var du än befinner dig.</li></ul></string>
     <string name="add_account_message">" Du kan använda fler än ett Google-konto (till exempel ett privatkonto och ett jobbkonto). Tryck på "<b>Logga in</b> eller <b>Skapa konto</b> om du vill lägga till ett Google-konto</string>
     <string name="account_intro_default_message">Tappa aldrig bort dina grejer igen. Med ett Google-konto har du allt på ett säkert ställe.</string>
     <string name="account_intro_custom_endtext">Har du %s? Logga in nu.</string>
     <string name="account_intro_simple_message">Vill du lägga till ett befintligt konto eller skapa ett nytt?</string>
     <string name="learn_more_title"><annotation id="learn_more">Läs mer</annotation></string>
     <string name="learn_more_account_intro">"Med ett Google-konto kan du
-"<li><ul>Se och organisera all din information var du än befinner dig.<li>Automatiskt säkerhetskopiera data, t.ex. e-post, kontakter, musik och bilder.</li><li>Enkelt använda Googles tjänster var du än befinner dig, som Kontakter, Kalender, Maps med mera.</li></ul></li></string>
+"<ul><li>Se och organisera all din information var du än befinner dig.<li>Automatiskt säkerhetskopiera data, t.ex. e-post, kontakter, musik och bilder.</li><li>Enkelt använda Googles tjänster var du än befinner dig, som Kontakter, Kalender, Maps med mera.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Om Google-konton</string>
     <string name="learn_more_web_history">"I Webbhistorik justeras sökresultaten utifrån vad du har sökt efter och vilka webbplatser du har besökt så att du får en anpassad upplevelse från Google.
 

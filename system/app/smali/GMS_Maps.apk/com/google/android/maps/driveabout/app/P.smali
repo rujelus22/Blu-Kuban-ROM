@@ -1,198 +1,251 @@
-.class Lcom/google/android/maps/driveabout/app/P;
-.super Ljava/lang/Object;
+.class public Lcom/google/android/maps/driveabout/app/p;
+.super Lcom/google/android/maps/driveabout/app/o;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+.field private a:F
+
+.field private b:Landroid/graphics/Paint;
+
+.field private c:Landroid/graphics/RectF;
+
+.field private d:F
+
+.field private e:F
 
 
 # direct methods
-.method private constructor <init>(Lcom/google/android/maps/driveabout/app/DestinationActivity;)V
-    .registers 2
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 6
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/P;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+    .prologue
+    const/high16 v3, 0x4080
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 61
+    invoke-direct {p0}, Lcom/google/android/maps/driveabout/app/o;-><init>()V
 
+    .line 51
+    new-instance v0, Landroid/graphics/Paint;
+
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/maps/driveabout/app/p;->b:Landroid/graphics/Paint;
+
+    .line 62
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    .line 63
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
+
+    .line 64
+    const v2, 0x7f0b00ea
+
+    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/android/maps/driveabout/app/p;->d:F
+
+    .line 65
+    mul-float v0, v1, v3
+
+    const/high16 v2, 0x3f00
+
+    mul-float/2addr v0, v2
+
+    iput v0, p0, Lcom/google/android/maps/driveabout/app/p;->e:F
+
+    .line 67
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/p;->b:Landroid/graphics/Paint;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    .line 68
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/p;->b:Landroid/graphics/Paint;
+
+    const v2, -0xe2a4db
+
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 69
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/p;->b:Landroid/graphics/Paint;
+
+    sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 71
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/p;->b:Landroid/graphics/Paint;
+
+    mul-float/2addr v1, v3
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    .line 72
+    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/app/p;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/google/android/maps/driveabout/app/p;->a(Landroid/graphics/Rect;)V
+
+    .line 73
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/google/android/maps/driveabout/app/DestinationActivity;Lcom/google/android/maps/driveabout/app/t;)V
-    .registers 3
+.method private a(Landroid/graphics/Rect;)V
+    .registers 6
+    .parameter
 
-    invoke-direct {p0, p1}, Lcom/google/android/maps/driveabout/app/P;-><init>(Lcom/google/android/maps/driveabout/app/DestinationActivity;)V
+    .prologue
+    .line 82
+    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
 
+    move-result v0
+
+    int-to-float v0, v0
+
+    iget v1, p0, Lcom/google/android/maps/driveabout/app/p;->d:F
+
+    sub-float/2addr v0, v1
+
+    const/high16 v1, 0x4000
+
+    div-float/2addr v0, v1
+
+    .line 83
+    new-instance v1, Landroid/graphics/RectF;
+
+    invoke-direct {v1, p1}, Landroid/graphics/RectF;-><init>(Landroid/graphics/Rect;)V
+
+    iput-object v1, p0, Lcom/google/android/maps/driveabout/app/p;->c:Landroid/graphics/RectF;
+
+    .line 84
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/p;->c:Landroid/graphics/RectF;
+
+    iget v2, p0, Lcom/google/android/maps/driveabout/app/p;->e:F
+
+    add-float/2addr v2, v0
+
+    iget v3, p0, Lcom/google/android/maps/driveabout/app/p;->e:F
+
+    add-float/2addr v0, v3
+
+    invoke-virtual {v1, v2, v0}, Landroid/graphics/RectF;->inset(FF)V
+
+    .line 85
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 5
+.method public draw(Landroid/graphics/Canvas;)V
+    .registers 8
+    .parameter
 
-    const/4 v3, 0x0
+    .prologue
+    .line 89
+    const v0, 0xffffff
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/P;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    const v1, 0x7f0f00a6
+    .line 90
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/p;->c:Landroid/graphics/RectF;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->findViewById(I)Landroid/view/View;
+    const/high16 v2, 0x4387
 
-    move-result-object v0
+    iget v0, p0, Lcom/google/android/maps/driveabout/app/p;->a:F
 
-    new-instance v1, Lcom/google/android/maps/driveabout/app/cp;
+    const/high16 v3, 0x43b4
 
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/P;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+    mul-float/2addr v3, v0
 
-    invoke-virtual {v2}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->getApplicationContext()Landroid/content/Context;
+    const/4 v4, 0x0
 
-    move-result-object v2
+    iget-object v5, p0, Lcom/google/android/maps/driveabout/app/p;->b:Landroid/graphics/Paint;
 
-    invoke-direct {v1, v2}, Lcom/google/android/maps/driveabout/app/cp;-><init>(Landroid/content/Context;)V
+    move-object v0, p1
 
-    invoke-static {v1, v3}, Law/g;->a(Law/e;Lcom/google/googlenav/android/ac;)V
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
-    invoke-static {}, Law/g;->a()Law/g;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0, v3}, Law/g;->a(Landroid/view/View;Law/f;)V
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/P;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
-
-    const v1, 0x7f0f00a9
-
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/google/android/maps/driveabout/app/Q;
-
-    invoke-direct {v1, p0}, Lcom/google/android/maps/driveabout/app/Q;-><init>(Lcom/google/android/maps/driveabout/app/P;)V
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/P;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
-
-    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/app/P;->c()Lcom/google/android/maps/driveabout/app/S;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->a(Lcom/google/android/maps/driveabout/app/DestinationActivity;Lcom/google/android/maps/driveabout/app/S;)Lcom/google/android/maps/driveabout/app/S;
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/P;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/P;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
-
-    const v2, 0x7f0f0127
-
-    invoke-virtual {v0, v2}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/maps/driveabout/widgets/TravelModeSelector;
-
-    invoke-static {v1, v0}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->a(Lcom/google/android/maps/driveabout/app/DestinationActivity;Lcom/google/android/maps/driveabout/widgets/TravelModeSelector;)Lcom/google/android/maps/driveabout/widgets/TravelModeSelector;
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/P;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
-
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->e(Lcom/google/android/maps/driveabout/app/DestinationActivity;)Lcom/google/android/maps/driveabout/widgets/TravelModeSelector;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/google/android/maps/driveabout/app/R;
-
-    invoke-direct {v1, p0}, Lcom/google/android/maps/driveabout/app/R;-><init>(Lcom/google/android/maps/driveabout/app/P;)V
-
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/widgets/TravelModeSelector;->a(Lcom/google/android/maps/driveabout/widgets/e;)V
-
+    .line 91
     return-void
 .end method
 
-.method public a(Landroid/view/Menu;)V
+.method public getOpacity()I
     .registers 2
 
+    .prologue
+    .line 95
+    const/4 v0, -0x3
+
+    return v0
+.end method
+
+.method protected onBoundsChange(Landroid/graphics/Rect;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 77
+    invoke-direct {p0, p1}, Lcom/google/android/maps/driveabout/app/p;->a(Landroid/graphics/Rect;)V
+
+    .line 78
+    invoke-super {p0, p1}, Lcom/google/android/maps/driveabout/app/o;->onBoundsChange(Landroid/graphics/Rect;)V
+
+    .line 79
     return-void
 .end method
 
-.method public a(Z)V
-    .registers 6
+.method public onLevelChange(I)Z
+    .registers 4
+    .parameter
 
-    const v3, 0x7f0f00a8
+    .prologue
+    .line 100
+    invoke-super {p0, p1}, Lcom/google/android/maps/driveabout/app/o;->onLevelChange(I)Z
 
-    const/16 v2, 0x8
+    .line 101
+    int-to-float v0, p1
 
-    const/4 v1, 0x0
+    const v1, 0x461c4000
 
-    if-nez p1, :cond_1b
+    div-float/2addr v0, v1
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/P;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
+    iput v0, p0, Lcom/google/android/maps/driveabout/app/p;->a:F
 
-    invoke-virtual {v0, v3}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->findViewById(I)Landroid/view/View;
+    .line 102
+    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/app/p;->invalidateSelf()V
 
-    move-result-object v0
+    .line 103
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/P;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
-
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->e(Lcom/google/android/maps/driveabout/app/DestinationActivity;)Lcom/google/android/maps/driveabout/widgets/TravelModeSelector;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Lcom/google/android/maps/driveabout/widgets/TravelModeSelector;->setVisibility(I)V
-
-    :goto_1a
-    return-void
-
-    :cond_1b
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/P;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
-
-    invoke-virtual {v0, v3}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/P;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
-
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->e(Lcom/google/android/maps/driveabout/app/DestinationActivity;)Lcom/google/android/maps/driveabout/widgets/TravelModeSelector;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lcom/google/android/maps/driveabout/widgets/TravelModeSelector;->setVisibility(I)V
-
-    goto :goto_1a
+    return v0
 .end method
 
-.method public b()V
-    .registers 1
+.method public setAlpha(I)V
+    .registers 2
+    .parameter
 
+    .prologue
+    .line 108
     return-void
 .end method
 
-.method protected c()Lcom/google/android/maps/driveabout/app/S;
-    .registers 5
+.method public setColorFilter(Landroid/graphics/ColorFilter;)V
+    .registers 2
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/P;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/P;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
-
-    invoke-static {v1}, Lcom/google/android/maps/driveabout/app/DestinationActivity;->g(Lcom/google/android/maps/driveabout/app/DestinationActivity;)Lcom/google/android/maps/driveabout/app/ae;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/P;->c:Lcom/google/android/maps/driveabout/app/DestinationActivity;
-
-    invoke-static {v2}, Lcom/google/android/maps/driveabout/app/ci;->c(Landroid/content/Context;)Z
-
-    move-result v2
-
-    const/4 v3, 0x1
-
-    invoke-static {v0, v1, v2, v3}, Lcom/google/android/maps/driveabout/app/S;->a(Landroid/content/Context;Lcom/google/android/maps/driveabout/app/ae;ZZ)Lcom/google/android/maps/driveabout/app/S;
-
-    move-result-object v0
-
-    return-object v0
+    .prologue
+    .line 112
+    return-void
 .end method

@@ -33,14 +33,14 @@
     .parameter
 
     .prologue
-    .line 157
+    .line 148
     iput-object p1, p0, Lcom/android/email/activity/setup/EditQuickResponseDialog$1;->this$0:Lcom/android/email/activity/setup/EditQuickResponseDialog;
 
     iput-object p2, p0, Lcom/android/email/activity/setup/EditQuickResponseDialog$1;->val$context:Landroid/content/Context;
 
     iput-object p3, p0, Lcom/android/email/activity/setup/EditQuickResponseDialog$1;->val$text:Ljava/lang/String;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -51,7 +51,7 @@
     .registers 4
 
     .prologue
-    .line 160
+    .line 151
     iget-object v1, p0, Lcom/android/email/activity/setup/EditQuickResponseDialog$1;->this$0:Lcom/android/email/activity/setup/EditQuickResponseDialog;
 
     #getter for: Lcom/android/email/activity/setup/EditQuickResponseDialog;->mQuickResponse:Lcom/android/emailcommon/provider/QuickResponse;
@@ -65,7 +65,7 @@
 
     if-nez v1, :cond_18
 
-    .line 161
+    .line 152
     iget-object v1, p0, Lcom/android/email/activity/setup/EditQuickResponseDialog$1;->this$0:Lcom/android/email/activity/setup/EditQuickResponseDialog;
 
     #getter for: Lcom/android/email/activity/setup/EditQuickResponseDialog;->mQuickResponse:Lcom/android/emailcommon/provider/QuickResponse;
@@ -77,17 +77,17 @@
 
     invoke-virtual {v1, v2}, Lcom/android/emailcommon/provider/QuickResponse;->save(Landroid/content/Context;)Landroid/net/Uri;
 
-    .line 167
+    .line 158
     :goto_17
     return-void
 
-    .line 163
+    .line 154
     :cond_18
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 164
+    .line 155
     .local v0, values:Landroid/content/ContentValues;
     const-string v1, "quickResponse"
 
@@ -95,7 +95,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 165
+    .line 156
     iget-object v1, p0, Lcom/android/email/activity/setup/EditQuickResponseDialog$1;->this$0:Lcom/android/email/activity/setup/EditQuickResponseDialog;
 
     #getter for: Lcom/android/email/activity/setup/EditQuickResponseDialog;->mQuickResponse:Lcom/android/emailcommon/provider/QuickResponse;

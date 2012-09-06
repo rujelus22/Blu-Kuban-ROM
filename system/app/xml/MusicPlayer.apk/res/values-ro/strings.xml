@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="NsongsMalbums">%1$s, %2$s</string>
+    <string name="no_network_connection">Neconectat</string>
+    <string name="authentication_failure_no_network">Pentru autentificarea contului dvs. Muzică Google, trebuie să fiţi conectat(ă) la internet.</string>
+    <string name="authentication_failure">Autentificarea nu s-a realizat</string>
+    <string name="authentication_failure_error">Contul dvs. Muzică Google nu a putut fi autentificat.</string>
+    <string name="positive_button_text">OK</string>
+    <string name="negative_button_text">Anulaţi</string>
+    <string name="save_button_text">Salvaţi</string>
+    <string name="not_save_button_text">Nu salvaţi</string>
+    <string name="offline_music_not_available_message">Pentru a păstra muzica pe dispozitiv, accesaţi afişările Albume, Liste de redare sau Artist.</string>
+    <string name="view_albums_button_text">Accesaţi Albume</string>
+    <string name="shuffle_all">Redaţi toată lista în mod aleatoriu</string>
+    <string name="play_all">Redaţi toate</string>
+    <string name="songs_all">Toate cântecele</string>
+    <string name="shuffle">Redaţi aleatoriu</string>
+    <string name="search">Căutaţi</string>
+    <string name="settings">Setări</string>
+    <string name="library_options">Opţiuni de afişare</string>
+    <string name="manage_music">Alegeţi muzica dispoz.</string>
+    <string name="available_offline">Păstraţi pe dispoz.</string>
+    <string name="options">Opţiuni</string>
+    <string name="clear_queue">Ştergeţi coada</string>
+    <string name="queue_cleared">Coadă a fost golită</string>
+    <string name="add_to_queue">Adăugaţi în coadă</string>
+    <string name="add_to_athome_queue">Adăugaţi la %s</string>
+    <string name="shop_artist">Cumpăraţi după artist</string>
+    <string name="show_offline_music_only">Numai pe dispozitiv</string>
+    <string name="show_all_music">Afişaţi toată muzica</string>
+    <string name="new_playlist_title">Numele listei de redare</string>
+    <string name="add_to_playlist_title">Numele listei de redare</string>
+    <string name="rename_playlist_title">Redenumiţi „%s” în</string>
+    <string name="search_section_header_artists">ARTIŞTI</string>
+    <string name="search_section_header_albums">ALBUME</string>
+    <string name="search_section_header_songs">CÂNTECE</string>
+    <string name="search_section_header_playlists">LISTE DE REDARE</string>
+    <string name="shuffle_all_songs">Redaţi toată lista în mod aleatoriu</string>
+    <string name="stream_settings">Setări Muzică</string>
+    <string name="refresh_title">Actualizaţi</string>
+    <string name="refresh_summary">Actualizaţi muzica de pe Google Play</string>
+    <string name="account_settings_title">Cont Google</string>
+    <string name="no_account_selected_summary">Atingeţi pentru a alege contul</string>
+    <string name="account_selected_summary">Conectaţi-vă la Google Play utilizând %s</string>
+    <string name="hide_when_not_connected_title">Ascundeţi muzica nedisponibilă</string>
+    <string name="hide_when_not_connected_summary">Când dispozitivul este offline, afişaţi numai muzica disponibilă</string>
+    <string name="stream_only_on_wifi_title">Flux numai prin Wi-Fi</string>
+    <string name="stream_only_on_wifi_summary">Pentru a reduce taxele impuse de operator pentru date, nu transmiteţi în flux prin intermediul reţelelor mobile</string>
+    <string name="stream_only_hq_title">Flux de înaltă calitate</string>
+    <string name="stream_only_hq_summary">Transmiteţi mereu muzică în flux la cea mai înaltă calitate</string>
+    <string name="athome_title">Android@Domiciliu</string>
+    <string name="athome_summary">Căutaţi dispozitive pentru Android@Domiciliu.</string>
+    <string name="athome_not_remote">Pentru a asculta acest cântec pe Nexus Q, încărcaţi-l mai întâi în biblioteca dvs. muzicală Google Play.</string>
+    <string name="athome_move_top_menu">Redaţi următorul</string>
+    <string name="athome_remove_menu">Eliminaţi din coadă</string>
+    <string name="lock_screen_controls_title">Bloc. comenzi ecran</string>
+    <string name="lock_screen_controls_summary">Afişaţi comenzi pentru muzică sus pe ecranul de blocare</string>
+    <string name="debug_logs_title">Jurnale de depanare</string>
+    <string name="debug_logs_summary">Utilizaţi jurnale de depanare</string>
+    <string name="debug_logs_enable_warning_message">"Sigur doriţi să activaţi jurnalele de depanare?
+Informaţiile sensibile ar putea fi stocate pe stocarea externă. Modificarea acestei opţiuni va opri aplicaţia."</string>
+    <string name="debug_logs_disable_warning_message">"Sigur doriţi să dezactivaţi jurnalele de depanare?
+Modificarea acestei opţiuni va opri aplicaţia."</string>
+    <string name="tungsten_settings">Setări Nexus Q</string>
+    <string name="offlinedl_only_on_wifi_title">Descărcaţi numai prin Wi-Fi</string>
+    <string name="offlinedl_only_on_wifi_summary">Pentru a reduce taxele impuse de operator pentru date, nu efectuaţi descărcări prin intermediul reţelelor mobile</string>
+    <string name="cache_streamed_title">Automat în cache</string>
+    <string name="cache_streamed_summary">Stocaţi temporar muzica fără a se solicita permisiunea</string>
+    <string name="download_queue_title">Descărcaţi coada</string>
+    <string name="download_queue_summary">Afişaţi cântecele descărcate în prezent</string>
+    <string name="help_title">Ajutor</string>
+    <string name="show_no_downloads_title">Nu există cântece în coadă pentru descărcare</string>
+    <string name="music_version_title">Versiunea aplicaţiei Muzică</string>
+    <string name="music_version_summary">Versiune necunoscută</string>
+    <string name="nowplaying_title">Acum se redă</string>
+    <string name="artists_title">Artişti</string>
+    <string name="albums_title">Albume</string>
+    <string name="genres_title">Genuri</string>
+    <string name="tracks_title">Cântece</string>
+    <string name="playlists_title">Liste de redare</string>
+    <string name="recent_title">Recente</string>
+    <string name="search_title">Căutaţi</string>
+    <string name="no_tracks_title">Niciun cântec</string>
+    <string name="delete_playlist_menu">Ştergeţi</string>
+    <string name="edit_playlist_menu">Modificaţi</string>
+    <string name="rename_playlist_menu">Redenumiţi</string>
+    <string name="playlist_delete_confirmation">Doriţi să ştergeţi lista de redare „%s”?</string>
+    <string name="delete_playlist_button_confirm">Ştergeţi</string>
+    <string name="playlist_deleted_message">Listă de redare ştearsă.</string>
+    <string name="playlist_created_message">Lista de redare „%s” a fost creată.</string>
+    <string name="playlist_renamed_message">Listă de redare redenumită „%s”.</string>
+    <string name="recentlyadded">Ultimele adăugate</string>
+    <string name="recentlyadded_title">Ultimele adăugate</string>
+    <string name="all_songs_list">Toate cântecele</string>
+    <string name="all_songs_list_title">Toate cântecele</string>
+    <string name="storemusic_list">Gratuite şi achiziţionate</string>
+    <string name="storemusic_list_title">Gratuite şi achiziţionate</string>
+    <string name="freemusic_list">Cântece gratuite</string>
+    <string name="freemusic_list_title">Cântece gratuite</string>
+    <string name="thumbsup_list">Vot pozitiv</string>
+    <string name="thumbsup_list_title">Vot pozitiv</string>
+    <string name="unknown_artist_name">Artist necunoscut</string>
+    <string name="unknown_album_name">Album necunoscut</string>
+    <string name="unknown_playlist_name">Listă redare necunoscută</string>
+    <string name="unknown_submitter_name">Necunoscut</string>
+    <string name="ringtone_menu">Utilizaţi ca ton de apel</string>
+    <string name="ringtone_set">„%s” a fost setat ca ton de apel.</string>
+    <string name="ringtone_set_failed">Tonul de sonerie nu a putut fi creat.</string>
+    <string name="ringtone_needs_download">Tonul de sonerie va fi setat după ce va fi descărcat.</string>
+    <string name="play_selection">Redaţi</string>
+    <string name="add_to_playlist">Adăugaţi la lista de redare</string>
+    <string name="rename_playlist_menu_item">Redenumiţi</string>
+    <string name="add_to_playlist_selector_title">Adăug. la lista de redare</string>
+    <string name="queue">Lista de redare curentă</string>
+    <string name="save_play_queue_as_playlist">Salvaţi coada</string>
+    <string name="new_playlist_for_content">Listă de redare nouă</string>
+    <string name="new_empty_playlist">Listă de redare nouă</string>
+    <string name="new_playlist_name_template">Listă de redare %d</string>
+    <string name="removed_from_playlist">„%1$s” a fost eliminat din lista de redare.</string>
+    <string name="removed_from_play_queue">„%1$s” a fost eliminat din coada de redare.</string>
+    <string name="playlist_too_many_songs">Prea multe cântece. Maximum %d per listă redare.</string>
+    <string name="emptyplaylist">Lista de redare selectată este goală.</string>
+    <string name="widget_nowplaying_small_title">Muzică (4x1)</string>
+    <string name="widget_nowplaying_large_title">Muzică (4x4)</string>
+    <string name="appwidget_text_separator">-</string>
+    <string name="playlist_edit_label">NUME</string>
+    <string name="create_playlist_create_text">OK</string>
+    <string name="rename_playlist_rename_text">Redenumiţi</string>
+    <string name="service_start_error_title">Problemă de redare</string>
+    <string name="service_start_error_msg">Cântecul nu a putut fi redat.</string>
+    <string name="service_start_error_button">OK</string>
+    <string name="weekpicker_set">Terminat</string>
+    <string name="weekpicker_title">Setaţi ora</string>
+    <string name="musicshortcutlabel">Listă de redare muzică</string>
+    <string name="app_name">Muzică Google Play</string>
+    <string name="launcher_name">Muzică Play</string>
+    <string name="actionbar_title">Google Play</string>
+    <string name="playback_failed_title">Eroare la redarea muzicii.</string>
+    <string name="playback_failed">Melodia solicitată nu a putut fi redată.</string>
+    <string name="cancel">Anulaţi</string>
+    <string name="remove_from_playlist">Eliminaţi din lista de redare</string>
+    <string name="streamloadingtext">Se conectează la %s...</string>
+    <string name="search_hint">Căutaţi muzică</string>
+    <string name="working_artists">Artişti...</string>
+    <string name="working_albums">Albume...</string>
+    <string name="loading">Se încarcă...</string>
+    <string name="sort_by_track">Înregistrări</string>
+    <string name="music_picker_title">Selectaţi o melodie</string>
+    <string name="fail_to_start_stream">Fluxul solicitat nu a putut fi redat.</string>
+    <string name="search_settings_description">Artişti, albume şi melodii</string>
+    <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
+    <string name="title_tv">Muzică</string>
+    <string name="music_library">Bibliotecă muzicală</string>
+    <string name="playlist_label">Listă de redare</string>
+    <string name="faux_art_all_songs_label">Toate cântecele</string>
+    <string name="faux_art_playlist_label">Listă de redare</string>
+    <string name="faux_art_playlist_instant_mix_label">Mixaj instant</string>
+    <string name="faux_art_playlist_auto_playlist_label">Listă de redare automată</string>
+    <string name="buffering">Se utilizează memoria tampon...</string>
+    <string name="keep_on_phone">Păstraţi pe dispozitiv</string>
+    <string name="no_music_add_music_header">MODALITĂŢI DE ADĂUGARE A MUZICII</string>
+    <string name="no_music_shop_body">Cumpăraţi din milioane de cântece, inclusiv sute de melodii gratuite.</string>
+    <string name="no_music_shop_button">CUMPĂRAŢI</string>
+    <string name="no_music_upload_body">Încărcaţi gratuit 20.000 de cântece pe Google Play.</string>
+    <string name="no_music_upload_button">AFLAŢI MAI MULTE</string>
+    <string name="no_music_usb_copy_body">Pentru a copia muzică de pe computer pe dispozitivul dvs., utilizaţi un cablu USB.</string>
+    <string name="no_music_usb_copy_button">AFLAŢI MAI MULTE</string>
+    <string name="no_music_heading">Biblioteca dvs. muzicală este goală.</string>
+    <string name="no_music_setup_uploader_heading">Transmiteţi în flux muzică prin conexiunea wireless.</string>
+    <string name="no_music_setup_uploader_body">Puteţi să transmiteţi în flux colecţia muzicală personală utilizând Google Play Music.</string>
+    <string name="no_music_setup_usb_heading">Copiaţi muzică pe dispozitivul dvs.</string>
+    <string name="no_music_setup_usb_body">Pentru a copia muzică de pe computer pe dispozitivul dvs., utilizaţi un cablu USB.</string>
+    <string name="no_local_music_heading">Nu există muzică păstrată pe dispozitiv</string>
+    <string name="no_local_music_body">"Pentru a afişa biblioteca dvs. completă, deschideţi meniul şi debifaţi „Numai de pe dispozitiv”.
+
+Pentru a alege muzica de stocat pe dispozitivul dvs. deschideţi meniul şi atingeţi „Alegeţi muzica dispoz.”."</string>
+    <string name="no_music_learn_more">Aflaţi mai multe</string>
+    <string name="no_music_syncing_heading">Muzica este în curs de sincronizare.</string>
+    <string name="no_music_syncing_body">Muzica este în curs de sincronizare cu serverul şi ar trebui să apară imediat.</string>
+    <string name="no_music_scanning_heading">Se scanează dispozitivul în căutarea fişierelor de muzică.</string>
+    <string name="no_music_scanning_body">Dispozitivul dvs. este scanat pentru a se găsi fişiere muzicale.</string>
+    <string name="sync_disabled">Este necesar să configuraţi sincronizarea înainte ca muzica din Google Play Music să fie afişată. Doriţi să faceţi acest lucru acum?</string>
+    <string name="tutorial_welcome_heading">Bun venit la Google Play Music</string>
+    <string name="tutorial_welcome_body">"Încărcaţi până la 20.000 de cântece din colecţia personală de muzică.
+
+Redaţi instantaneu muzica achiziţionată de pe Google Play.
+
+Ascultaţi toată muzica dvs. pe web sau pe orice telefon ori tabletă. Descărcaţi cu uşurinţă pentru a reda muzica dvs. offline.
+
+Totul gratuit."</string>
+    <string name="tutorial_select_account_heading">Alegeţi un cont</string>
+    <string name="tutorial_select_account_body">"Conectaţi-vă contul la Muzică Google Play, astfel încât să puteţi reda biblioteca muzicală şi achiziţiile efectuate din magazin.
+
+Ce cont doriţi să utilizaţi?"</string>
+    <string name="tutorial_sign_in">Conectaţi-vă contul la Muzică Google Play, astfel încât să puteţi reda biblioteca muzicală şi achiziţiile efectuate din magazin.</string>
+    <string name="tutorial_free_music_heading">Descărcaţi muzică gratuită</string>
+    <string name="tutorial_free_music_body">Răsfoiţi sutele de melodii gratuite din Google Play, care aparţin unora dintre cele mai mari nume din muzica rock, hip-hop şi altele.</string>
+    <string name="tutorial_account_heading">Bun venit</string>
+    <string name="tutorial_account_body">Sunteţi invitat(ă) la Google Play Music. Puteţi utiliza acest player pentru a accesa instantaneu cântecele pe care le adăugaţi pe Google Play Music şi altă muzică pe care aţi copiat-o pe dispozitivul dvs. Android.</string>
+    <string name="tutorial_account_list_header">Începeţi prin selectarea unui Cont Google pentru a conecta acest player la Google Play Music:</string>
+    <string name="tutorial_done_heading">Audiţie plăcută!</string>
+    <string name="tutorial_done_body">"Playerul din Music este conectat acum la Contul dvs. Google.
+
+Dacă aţi adăugat deja colecţia dvs. muzicală pe Google Play Music, aceasta va începe să apară în player.
+
+Dacă doriţi să adăugaţi în continuare muzică pe Google Play Music, începeţi prin a vizita site-ul nostru web de pe computer:"</string>
+    <string name="tutorial_skip">Omiteţi</string>
+    <string name="tutorial_next">Înainte</string>
+    <string name="tutorial_done">Terminat</string>
+    <string name="tutorial_add_account">Adăugaţi un cont</string>
+    <string name="tutorial_free_music">Descărcaţi melodii gratuite</string>
+    <string name="spinner_carousel">Recente</string>
+    <string name="spinner_album">Albume</string>
+    <string name="spinner_artist">Artişti</string>
+    <string name="spinner_songs">Cântece</string>
+    <string name="spinner_playlists">Liste de redare</string>
+    <string name="spinner_genres">Genuri</string>
+    <string name="sort_by_title">Sortaţi A – Z</string>
+    <string name="sort_by_artist">Sortaţi după artist</string>
+    <string name="sort_by_album">Sortaţi după album</string>
+    <string name="sort_by_date">Sortaţi după data la care a fost adăugat</string>
+    <string name="more_by_artist">Altele de la acest artist</string>
+    <string name="make_available_offline">Păstraţi pe dispozitiv</string>
+    <string name="search_web">Căutaţi pe web</string>
+    <string name="manage_done">Terminat</string>
+    <string name="too_many_items_title">Prea multe articole</string>
+    <string name="too_many_items_body">Nu există spaţiu suficient pentru a stoca toate articolele selectate. Deselectaţi unele articole pentru a elibera spaţiu.</string>
+    <string name="save_manage_music_change_title">Modificări nesalvate</string>
+    <string name="save_manage_music_change_body">Doriţi să păstraţi muzica selectată pe dispozitiv?</string>
+    <string name="not_all_items_can_be_kept_body">Nu există spaţiu suficient pentru a stoca toate articolele selectate. Nu toate aceste articole vor fi descărcate.</string>
+    <string name="free_space_overfull">Stoc. plină (peste %s)</string>
+    <string name="free_space">SPAŢIU LIBER: %s</string>
+    <string name="stream_error_title">Muzică temporar indisponibilă.</string>
+    <string name="stream_error_no_space_available">Nu există spaţiu disponibil.</string>
+    <string name="stream_error_only_on_wifi">Trebuie să vă aflaţi într-o reţea Wi-Fi pentru a reda acest cântec.</string>
+    <string name="stream_error_no_connection">Pentru a reda acest cântec trebuie să fiţi online.</string>
+    <string name="stream_error_unauthorized_title">Eroare la autorizare.</string>
+    <string name="stream_error_unauthorized">Numele de utilizator sau parola este incorectă.</string>
+    <string name="stream_error_another_stream_being_played">Muzica s-a întrerupt, deoarece ascultaţi colecţia pe un alt dispozitiv.</string>
+    <string name="stream_error_rate_limit_reached">Muzica este temporar indisponibilă. Asiguraţi-vă că redarea colecţiei se face pe un singur dispozitiv odată.</string>
+    <string name="stream_error_device_not_authorized">Biblioteca dvs. muzicală poate fi utilizată cu maximum 10 dispozitive. Va trebui să anulaţi autorizarea unuia dintre dispozitive înainte de a adăuga altul.</string>
+    <string name="stream_error_device_not_authorized_link">https://play.google.com/music/listen?view=settings_pl</string>
+    <string name="market_uri_link">market://details?id=com.google.android.music</string>
+    <string name="stream_error_device_not_authorized_not_now_button">Nu acum</string>
+    <string name="stream_error_device_not_authorized_manage_devices_button">Gestionaţi dispozitive</string>
+    <string name="stream_error_learn_more">Aflaţi mai multe</string>
+    <string name="too_many_devices_help_link">http://www.google.com/support/music/bin/answer.py?answer=1230356</string>
+    <string name="stream_error_another_stream_being_played_short">Muzica a fost întreruptă.</string>
+    <string name="stream_error_rate_limit_reached_short">Muzică temporar indisponibilă.</string>
+    <string name="stream_error_device_not_authorized_short">Prea multe dispozitive utilizate cu biblioteca muzicală.</string>
+    <string name="stream_error_another_stream_being_played_notification">Ascultaţi pe un alt dispozitiv.</string>
+    <string name="stream_error_rate_limit_reached_notification">Ascultaţi pe un alt dispozitiv.</string>
+    <string name="stream_error_device_not_authorized_notification">Max. 10 dispozitive per bibliotecă.</string>
+    <string name="stream_error_another_stream_being_played_notification_short">Muzica a fost întreruptă.</string>
+    <string name="stream_error_rate_limit_reached_notification_short">Muzică temporar indisponibilă.</string>
+    <string name="stream_error_device_not_authorized_notification_short">Limită disp. muzicale atinsă.</string>
+    <string name="athome_error_place_disconnected_short">Nu se poate comunica cu Nexus Q.</string>
+    <string name="athome_error_controller_too_old_short">Nexus Q necesită ultima versiune a aplicaţiei Muzică Google Play.</string>
+    <string name="athome_error_controller_too_old">Pentru a utiliza Nexus Q, actualizaţi mai întâi aplicaţia Muzică Google Play.</string>
+    <string name="athome_error_controller_too_old_notification_short">Actualizaţi Muzică Google Play</string>
+    <string name="athome_error_controller_too_old_notification">pentru a funcţiona cu Nexus Q.</string>
+    <string name="athome_error_controller_too_old_update_button">Actualizaţi</string>
+    <string name="athome_error_controller_too_new_short">Nexus Q necesită software nou.</string>
+    <string name="athome_error_controller_too_new">Software-ul Nexus Q este învechit. Pentru actualizarea automată, conectaţi Nexus Q la internet prin Ethernet sau Wi-Fi.</string>
+    <string name="athome_error_controller_too_new_notification_short">Nexus Q necesită software nou.</string>
+    <string name="athome_error_controller_too_new_notification">Pentru actualizarea automată, conectaţi Nexus Q la internet.</string>
+    <string name="athome_error_generic_short">Eroare de reţea Nexus Q.</string>
+    <string name="athome_error_generic">S-a pierdut conexiunea la reţea cu Nexus Q.</string>
+    <string name="athome_error_generic_notification_short">Eroare de reţea Nexus Q</string>
+    <string name="athome_error_generic_notification">Nu se poate comunica cu Nexus Q, probabil din cauza conexiunii slabe sau a unei probleme cu dispozitivul.</string>
+    <string name="athome_error_device_setup_short">Nexus Q necesită resetarea la setările din fabrică.</string>
+    <string name="athome_error_device_setup">Configurarea Nexus Q este incompletă. Pentru a începe din nou, resetaţi Nexus Q la setările din fabrică.</string>
+    <string name="athome_error_device_setup_notification_short">Config. Nexus Q incompletă.</string>
+    <string name="athome_error_device_setup_notification">Pentru a începe din nou, resetaţi Nexus Q la setările din fabrică.</string>
+    <string name="athome_error_unauthorized_account_short">Contul nu este autorizat</string>
+    <string name="athome_error_unauthorized_account">Contul selectat nu este autorizat pentru utilizarea cu Nexus Q</string>
+    <string name="athome_error_unauthorized_account_notification_short">Contul nu este autorizat</string>
+    <string name="athome_error_unauthorized_account_notification">Contul selectat nu este autorizat pentru utilizarea cu Nexus Q.</string>
+    <string name="athome_error_incompatible_tgs_version">Pe Nexus Q rulează o versiune incompatibilă a serviciului de grupare.</string>
+    <string name="athome_error_incompatible_tgs_version_short">Eroare serv. de grup. Nexus Q</string>
+    <string name="athome_error_incompatible_tgs_version_notification">Pe Nexus Q rulează o versiune incompatibilă a serviciului de grupare.</string>
+    <string name="athome_error_incompatible_tgs_version_notification_short">Eroare serv. de grup. Nexus Q</string>
+    <string name="athome_error_unreachable_tgs">Nu se poate comunica cu Nexus Q. Dacă problema persistă, ar putea fi necesar să reporniţi Nexus Q.</string>
+    <string name="athome_error_unreachable_tgs_short">Nu se poate contacta Nexus Q</string>
+    <string name="athome_error_unreachable_tgs_notification">Nu se poate comunica cu Nexus Q. Dacă problema persistă, ar putea fi necesar să reporniţi Nexus Q.</string>
+    <string name="athome_error_unreachable_tgs_notification_short">Nu se poate contacta Nexus Q</string>
+    <string name="athome_error_server_network_short">Eroare de reţea</string>
+    <string name="athome_error_server_network">Nu se poate comunica cu serverul</string>
+    <string name="hide_now_playing_bar">Asc. bara „Acum se redă”</string>
+    <string name="show_now_playing_bar">Afişaţi bara „Acum se redă”</string>
+    <string name="show_options">Afişaţi opţiunile</string>
+    <string name="hide_options">Ascundeţi opţiunile</string>
+    <string name="all_songs_in_genre">"Toate cântecele din genul
+%s"</string>
+    <string name="preview_header">DISTRIBUIT PE GOOGLE+</string>
+    <string name="shared_playback_full">REDARE COMPLETĂ GRATUITĂ</string>
+    <string name="shared_playback_partial">MOSTRĂ</string>
+    <string name="btn_buy">Cumpăraţi</string>
+    <string name="wall_album_label_no_year" formatted="false">"%s
+%s
+%s"</string>
+    <string name="wall_artist_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_genre_label" formatted="false">"%s
+%s"</string>
+    <string name="wall_playlist_label" formatted="false">"%s
+%s"</string>
+    <string name="notification_downloading_offline_music">Se păstrează muzica solicitată…</string>
+    <string name="notification_downloading_when_on_wifi">Păstrarea muzicii solicitate va continua data viitoare când dispozitivul este online şi conectat la Wi-Fi</string>
+    <string name="notification_downloading_excessive_errors">În acest moment nu se pot descărca cântece. Verificaţi conexiunea la internet.</string>
+    <string name="notification_downloading_done">Muzica solicitată a fost descărcată</string>
+    <string name="notification_ticker_ringtone_set">Ton de sonerie setat la „%s”.</string>
+    <string name="notification_title_ringtone_set">Ton de sonerie setat la „%s”</string>
+    <string name="notification_content_ringtone_set">Atingeţi pentru a edita acest ton de sonerie.</string>
+    <string name="notification_ticker_ringtone_set_failed">Tonul de sonerie nu a putut fi creat.</string>
+    <string name="notification_newsongs_songname_artist" formatted="false">%s – %s</string>
+    <string name="notification_newsongs_album_artist" formatted="false">%s – %s</string>
+    <string name="notification_newsongs_songcount">%d (de) cântece noi</string>
+    <string name="notification_newsongs_subtitle">Adăugate la Google Play Music</string>
+    <string name="carousel_label_shuffle_all">Redaţi-le aleatoriu pe toate</string>
+    <string name="song_label">CÂNTEC</string>
+    <string name="artist_label">ARTIST</string>
+    <string name="album_label">ALBUM</string>
+    <string name="effectspanel">Egalizator</string>
+    <string name="menu_make_instant_mix">Realizaţi un mixaj instant</string>
+    <string name="instant_mix_default_name">Mixaj %s</string>
+    <string name="creating_instant_mix">"Se adaugă un mixaj instant
+la listele de redare."</string>
+    <string name="creating_instant_mix_with_seed">"Se adaugă un mixaj instant
+la listele de redare, pe baza
+%s."</string>
+    <string name="create_instant_mix_failed">Nu s-a putut crea mixajul instant. Încercaţi din nou.</string>
+    <string name="create_instant_mix_failed_insufficient_results">Nu au existat suficiente cântece similare în colecţia dvs. pentru a crea un mixaj instant utilizând „%s”. Încercaţi să realizaţi un mixaj instant utilizând alt cântec.</string>
+    <string name="create_instant_mix_sync_timeout">"Mixajul instant a fost
+creat şi va apărea
+în scurt timp în listele dvs. de redare."</string>
+    <string name="create_instant_mix_btn_ok">OK</string>
+    <string name="delete">Ştergeţi</string>
+    <string name="confirm_delete_local_only">Doriţi să ştergeţi „%s”?</string>
+    <string name="confirm_delete_has_remote">„%s” a fost transferat şi încărcat în Google Play Music. Numai articolele transferate vor fi şterse. Doriţi să le ştergeţi?</string>
+    <string name="waiting_share">Se distribuie %s</string>
+    <string name="share">Distribuiţi</string>
+    <string name="share_failure">A apărut o problemă la distribuirea muzicii dvs.</string>
+    <string name="share_google_plus_footer">Distribuirea permite o redare completă, gratuită, pentru persoanele din cercurile dvs.</string>
+    <string name="accessibility_play">Redaţi</string>
+    <string name="accessibility_pause">Pauză</string>
+    <string name="accessibility_stop">Opriţi</string>
+    <string name="accessibility_next">Înainte</string>
+    <string name="accessibility_prev">Înapoi</string>
+    <string name="accessibility_shuffle">Redaţi aleatoriu</string>
+    <string name="accessibility_repeat">Repetaţi</string>
+    <string name="accessibility_thumbsUp">Vot pozitiv</string>
+    <string name="accessibility_thumbsDown">Vot negativ</string>
+    <string name="accessibility_star1">O stea</string>
+    <string name="accessibility_star2">Două stele</string>
+    <string name="accessibility_star3">Trei stele</string>
+    <string name="accessibility_star4">Patru stele</string>
+    <string name="accessibility_star5">Cinci stele</string>
+    <string name="accessibility_contractor">Extindeţi informaţiile despre cântec</string>
+    <string name="accessibility_back">Înapoi</string>
+    <string name="accessibility_contextMenu">Meniu cântece</string>
+    <string name="accessibility_home">Ecran de pornire Muzică</string>
+    <string name="accessibility_search">Căutaţi</string>
+    <string name="accessibility_search_cancel">Anulaţi căutarea actuală</string>
+    <string name="accessibility_current">Cântecul curent</string>
+    <string name="accessibility_createnewplaylist">Creaţi o listă de redare nouă</string>
+    <string name="accessibility_menu">Mai multe opţiuni</string>
+    <string name="accessibility_shop">Achiziţionaţi muzică</string>
+    <string name="accessibility_volume">Volum</string>
+    <string name="accessibility_at_home_volume">Volum</string>
+    <string name="accessibility_select_output">Selectaţi ieşirea audio</string>
+    <string name="accessibility_close_social_mix_mode">Închideţi modul Mixaj social</string>
+    <string name="header_help_add_songs">Adăugaţi cântece din biblioteca dvs. pentru a începe un mixaj social</string>
+    <string name="ringtone_replace_alert_button">Înlocuiţi</string>
+    <string name="ringtone_replace_alert_title">Înlocuiţi tonul de sonerie</string>
+    <string name="ringtone_replace_alert_message">Un ton de sonerie cu acest nume există deja. Doriţi să-l înlocuiţi?</string>
+    <string name="legal_information">Informaţii de ordin juridic</string>
+    <string name="license_title">Licenţe open source</string>
+    <string name="license_error">Licenţele nu au putut fi încărcate.</string>
+    <string name="market_wrong_account" formatted="false">"Muzica pe care încercaţi să o redaţi a fost achiziţionată utilizând contul %s
+
+În prezent, sunteţi conectat(ă) la Google Play Music utilizând contul %s
+
+Pentru a asculta muzica achiziţionată, schimbaţi mai întâi conturile."</string>
+    <string name="gplus_wrong_account" formatted="false">"Contul %s are acces la muzica pe care încercaţi să o redaţi
+
+În prezent, sunteţi conectat(ă) la Google Play Music utilizând contul %s
+
+Pentru a asculta muzica la care este permis accesul, mai întâi schimbaţi conturile."</string>
+    <string name="switch_account_button">Schimbaţi conturile</string>
+    <string name="switch_account_warning_message">"Sigur doriţi să comutaţi între conturi?
+Muzica păstrată pe acest dispozitiv va fi eliminată."</string>
+    <string name="switch_account_warning_button">Comutaţi între conturi</string>
+    <string name="retry_button">Încercaţi din nou</string>
+    <string name="wait_for_item">Se aşteaptă sincronizarea muzicii.</string>
+    <string name="wait_for_item_failure">Muzica dvs. este în curs de adăugare. Aşteptaţi puţin şi încercaţi din nou.</string>
+    <string name="ringtone_title">Examinaţi tonul de apel</string>
+    <string name="edit_ringtone">Editaţi tonul de sonerie</string>
+    <string name="ringtone_done">TERMINAT</string>
+    <string name="ringtone_file_edited_name">Extras din %1$s</string>
+    <string name="progress_dialog_saving">Se salvează...</string>
+    <string name="start_handle">Marcaj pornire</string>
+    <string name="resize_handle">Marcaj redimensionare</string>
+    <string name="menu_reset">Resetaţi</string>
+    <string name="save_success_message">%1$s a fost salvat ca ton de sonerie prestabilit.</string>
+    <string name="save_failure_message">Nu s-a putut salva %1$s ca ton de sonerie.</string>
+    <string name="play_error">Acest fişier media nu a putut fi redat.</string>
+    <string name="write_error">Nu s-a putut scrie în fişier.</string>
+    <string name="read_error">Fişierul nu a putut fi citit.</string>
+    <string name="no_space_error">Nu există suficient spaţiu pe cardul SD pentru a salva acest fişier.</string>
+    <string name="bad_extension_error">Nu puteţi edita fişiere de acest tip.</string>
+    <string name="no_extension_error">Nu puteţi edita un fişier care nu are extensia .mp3 sau .wav.</string>
+    <string name="alert_ok_button">OK</string>
+    <string name="athome_playback_title">În curs de redare</string>
+    <string name="store_tutorial_title">Cumpăraţi şi redaţi instantaneu</string>
+    <string name="store_tutorial_content">Puteţi cumpăra milioane de melodii în format MP3 de pe Google Play, inclusiv sute de cântece gratuite.</string>
+    <string name="store_tutorial_instruction">Pentru a vizita magazinul, atingeţi pictograma pungă de cumpărături</string>
+    <string name="athome_added_by">Adăugat de</string>
+    <string name="athome_tutorial_title">Redaţi muzica acolo unde doriţi</string>
+    <string name="athome_tutorial_content">Atingeţi pictograma de transmitere în flux pentru a alege unde să fie redată muzica dvs.</string>
+    <string name="athome_party_mode_disclamer">Când utilizaţi mixajul social, fotografia profilului dvs. public ar putea fi vizibilă pentru alţi utilizatori</string>
+    <string name="athome_party_mode_disclamer_save_preference">Nu doresc să se mai afişeze acest mesaj</string>
+    <string name="no_song_added">Coada de redare este plină. Max. este %1$d cântece.</string>
+    <string name="recent_added">Adăugat</string>
+    <string name="recent_purchased">Achiziţionat</string>
+    <string name="recent_played">Redat</string>
+    <string name="now_playing_tab_now_playing">ÎN CURS DE REDARE</string>
+    <string name="now_playing_tab_queue">REDAŢI COADA</string>
+</resources>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:swypeime="http://schemas.android.com/apk/res/com.swype.android.inputmethod">
-    <PreferenceCategory android:title="@string/pref_messages_title" android:key="pref_main">
-        <com.swype.android.connect.widget.IconPreferenceScreen android:title="@string/pref_messages_refresh" android:key="messages_refresh_btn" />
-    </PreferenceCategory>
-</PreferenceScreen>

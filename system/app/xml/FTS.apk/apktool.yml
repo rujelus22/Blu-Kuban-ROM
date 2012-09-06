@@ -1,6 +1,0 @@
-version: 1.4.3
-apkFileName: FTS.apk
-isFrameworkApk: false
-usesFramework:
-  ids:
-  - 1

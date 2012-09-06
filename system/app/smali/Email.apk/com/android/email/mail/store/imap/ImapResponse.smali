@@ -16,16 +16,16 @@
     .parameter "isContinuationRequest"
 
     .prologue
-    .line 26
+    .line 27
     invoke-direct {p0}, Lcom/android/email/mail/store/imap/ImapList;-><init>()V
 
-    .line 27
+    .line 28
     iput-object p1, p0, Lcom/android/email/mail/store/imap/ImapResponse;->mTag:Ljava/lang/String;
 
-    .line 28
+    .line 29
     iput-boolean p2, p0, Lcom/android/email/mail/store/imap/ImapResponse;->mIsContinuationRequest:Z
 
-    .line 29
+    .line 30
     return-void
 .end method
 
@@ -34,7 +34,7 @@
     .parameter "symbol"
 
     .prologue
-    .line 32
+    .line 33
     const-string v0, "OK"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -96,14 +96,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 143
+    .line 134
     invoke-super {p0, p1}, Lcom/android/email/mail/store/imap/ImapList;->equalsForTest(Lcom/android/email/mail/store/imap/ImapElement;)Z
 
     move-result v2
 
     if-nez v2, :cond_8
 
-    .line 159
+    .line 150
     :cond_7
     :goto_7
     return v1
@@ -111,21 +111,21 @@
     :cond_8
     move-object v0, p1
 
-    .line 146
+    .line 137
     check-cast v0, Lcom/android/email/mail/store/imap/ImapResponse;
 
-    .line 147
+    .line 138
     .local v0, thatResponse:Lcom/android/email/mail/store/imap/ImapResponse;
     iget-object v2, p0, Lcom/android/email/mail/store/imap/ImapResponse;->mTag:Ljava/lang/String;
 
     if-nez v2, :cond_1b
 
-    .line 148
+    .line 139
     iget-object v2, v0, Lcom/android/email/mail/store/imap/ImapResponse;->mTag:Ljava/lang/String;
 
     if-nez v2, :cond_7
 
-    .line 156
+    .line 147
     :cond_13
     iget-boolean v2, p0, Lcom/android/email/mail/store/imap/ImapResponse;->mIsContinuationRequest:Z
 
@@ -133,12 +133,12 @@
 
     if-ne v2, v3, :cond_7
 
-    .line 159
+    .line 150
     const/4 v1, 0x1
 
     goto :goto_7
 
-    .line 152
+    .line 143
     :cond_1b
     iget-object v2, p0, Lcom/android/email/mail/store/imap/ImapResponse;->mTag:Ljava/lang/String;
 
@@ -157,7 +157,7 @@
     .registers 3
 
     .prologue
-    .line 115
+    .line 106
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapResponse;->getResponseCodeOrEmpty()Lcom/android/email/mail/store/imap/ImapString;
 
     move-result-object v0
@@ -170,10 +170,10 @@
 
     if-nez v0, :cond_f
 
-    .line 116
+    .line 107
     sget-object v0, Lcom/android/email/mail/store/imap/ImapString;->EMPTY:Lcom/android/email/mail/store/imap/ImapString;
 
-    .line 119
+    .line 110
     :goto_e
     return-object v0
 
@@ -191,17 +191,17 @@
     .registers 3
 
     .prologue
-    .line 103
+    .line 94
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapResponse;->isStatusResponse()Z
 
     move-result v0
 
     if-nez v0, :cond_9
 
-    .line 104
+    .line 95
     sget-object v0, Lcom/android/email/mail/store/imap/ImapString;->EMPTY:Lcom/android/email/mail/store/imap/ImapString;
 
-    .line 106
+    .line 97
     :goto_8
     return-object v0
 
@@ -227,17 +227,17 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 126
+    .line 117
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapResponse;->isStatusResponse()Z
 
     move-result v1
 
     if-nez v1, :cond_a
 
-    .line 127
+    .line 118
     sget-object v0, Lcom/android/email/mail/store/imap/ImapString;->EMPTY:Lcom/android/email/mail/store/imap/ImapString;
 
-    .line 129
+    .line 120
     :goto_9
     return-object v0
 
@@ -262,11 +262,27 @@
     goto :goto_9
 .end method
 
+.method public isBad()Z
+    .registers 3
+
+    .prologue
+    .line 69
+    const/4 v0, 0x0
+
+    const-string v1, "BAD"
+
+    invoke-virtual {p0, v0, v1}, Lcom/android/email/mail/store/imap/ImapResponse;->is(ILjava/lang/String;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public isContinuationRequest()Z
     .registers 2
 
     .prologue
-    .line 50
+    .line 51
     iget-boolean v0, p0, Lcom/android/email/mail/store/imap/ImapResponse;->mIsContinuationRequest:Z
 
     return v0
@@ -278,7 +294,7 @@
     .parameter "responseType"
 
     .prologue
-    .line 95
+    .line 85
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapResponse;->isTagged()Z
 
     move-result v0
@@ -306,32 +322,16 @@
     goto :goto_11
 .end method
 
-.method public isExist()Z
-    .registers 3
-
-    .prologue
-    .line 83
-    const/4 v0, 0x1
-
-    const-string v1, "EXISTS"
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/email/mail/store/imap/ImapResponse;->isDataResponse(ILjava/lang/String;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isFetch()Z
+.method public isNo()Z
     .registers 3
 
     .prologue
     .line 76
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    const-string v1, "FETCH"
+    const-string v1, "NO"
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/email/mail/store/imap/ImapResponse;->isDataResponse(ILjava/lang/String;)Z
+    invoke-virtual {p0, v0, v1}, Lcom/android/email/mail/store/imap/ImapResponse;->is(ILjava/lang/String;)Z
 
     move-result v0
 
@@ -342,7 +342,7 @@
     .registers 3
 
     .prologue
-    .line 61
+    .line 62
     const/4 v0, 0x0
 
     const-string v1, "OK"
@@ -358,7 +358,7 @@
     .registers 2
 
     .prologue
-    .line 54
+    .line 55
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/email/mail/store/imap/ImapResponse;->getStringOrEmpty(I)Lcom/android/email/mail/store/imap/ImapString;
@@ -380,7 +380,7 @@
     .registers 2
 
     .prologue
-    .line 43
+    .line 44
     iget-object v0, p0, Lcom/android/email/mail/store/imap/ImapResponse;->mTag:Ljava/lang/String;
 
     if-eqz v0, :cond_6
@@ -396,30 +396,14 @@
     goto :goto_5
 .end method
 
-.method public isVanished()Z
-    .registers 3
-
-    .prologue
-    .line 69
-    const/4 v0, 0x0
-
-    const-string v1, "VANISHED"
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/email/mail/store/imap/ImapResponse;->is(ILjava/lang/String;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public toString()Ljava/lang/String;
     .registers 4
 
     .prologue
-    .line 134
+    .line 125
     iget-object v0, p0, Lcom/android/email/mail/store/imap/ImapResponse;->mTag:Ljava/lang/String;
 
-    .line 135
+    .line 126
     .local v0, tag:Ljava/lang/String;
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapResponse;->isContinuationRequest()Z
 
@@ -427,10 +411,10 @@
 
     if-eqz v1, :cond_a
 
-    .line 136
+    .line 127
     const-string v0, "+"
 
-    .line 138
+    .line 129
     :cond_a
     new-instance v1, Ljava/lang/StringBuilder;
 

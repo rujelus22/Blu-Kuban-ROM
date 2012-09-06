@@ -93,7 +93,7 @@
     iput-object v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->i:Lcom/google/android/youtube/coreicecream/ui/f;
 
     .line 86
-    const v0, 0x7f0a0095
+    const v0, 0x7f0b00ba
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -102,7 +102,7 @@
     iput-object v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->g:Ljava/lang/String;
 
     .line 87
-    const v0, 0x7f0a0096
+    const v0, 0x7f0b00bb
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -221,7 +221,7 @@
 
     move-result v1
 
-    invoke-virtual {p0, v1}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->b(F)V
+    invoke-virtual {p0, v1}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setOverscrollSlots(F)V
 
     .line 102
     const/16 v1, 0xe
@@ -230,7 +230,7 @@
 
     move-result v1
 
-    invoke-virtual {p0, v1}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->f(F)V
+    invoke-virtual {p0, v1}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setSwaySensitivity(F)V
 
     .line 103
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
@@ -243,7 +243,7 @@
     invoke-interface {v0, v4}, Landroid/view/SurfaceHolder;->setFormat(I)V
 
     .line 106
-    invoke-virtual {p0, v3, v3, v3, v3}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->a(FFFF)V
+    invoke-virtual {p0, v3, v3, v3, v3}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setBackgroundColor(FFFF)V
 
     .line 107
     invoke-virtual {p0, v4}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setZOrderOnTop(Z)V
@@ -255,45 +255,45 @@
 
     const/4 v1, -0x1
 
-    invoke-virtual {v0, v1}, Lcom/android/ex/carousel/a;->i(I)V
+    invoke-virtual {v0, v1}, Lcom/android/ex/carousel/a;->k(I)V
 
     .line 110
     iget v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->o:F
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->d(F)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setRadius(F)V
 
     .line 111
     iget v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->k:I
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->d(I)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setRowCount(I)V
 
     .line 112
     iget v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->l:F
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->a(F)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setRowSpacing(F)V
 
     .line 113
     iget v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->n:I
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->b(I)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setVisibleSlots(I)V
 
     .line 114
     iget v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->n:I
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->e(I)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setVisibleDetails(I)V
 
     .line 115
     iget v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->m:I
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->a(I)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setSlotCount(I)V
 
     .line 117
-    invoke-virtual {p0, v5}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->a(Z)V
+    invoke-virtual {p0, v5}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setDrawRuler(Z)V
 
     .line 118
     const/16 v0, 0x102
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->f(I)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setDetailTextureAlignment(I)V
 
     .line 120
     sget-object v0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->f:Landroid/graphics/Bitmap;
@@ -309,7 +309,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f020026
+    const v1, 0x7f020039
 
     invoke-static {v0, v1}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -321,42 +321,42 @@
     :cond_dc
     sget-object v0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->f:Landroid/graphics/Bitmap;
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->a(Landroid/graphics/Bitmap;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setDefaultBitmap(Landroid/graphics/Bitmap;)V
 
     .line 125
     sget-object v0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->f:Landroid/graphics/Bitmap;
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->b(Landroid/graphics/Bitmap;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setLoadingBitmap(Landroid/graphics/Bitmap;)V
 
     .line 128
-    invoke-virtual {p0, v4}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->b(Z)V
+    invoke-virtual {p0, v4}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setCardsFaceTangent(Z)V
 
     .line 129
     const v0, -0x4036f025
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->e(F)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setCardRotation(F)V
 
     .line 130
-    invoke-virtual {p0, v6}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->h(I)V
+    invoke-virtual {p0, v6}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setDragModel(I)V
 
     .line 131
     iget v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->n:I
 
     mul-int/lit8 v0, v0, 0x4
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->c(I)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setPrefetchCardCount(I)V
 
     .line 132
     iget v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->p:F
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->g(F)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setCameraZ(F)V
 
     .line 134
     iget v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->q:I
 
     iget v1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->r:I
 
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->a(II)V
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setCardSize(II)V
 
     .line 136
     new-instance v0, Lcom/google/android/youtube/coreicecream/ui/d;
@@ -368,7 +368,7 @@
     .line 137
     iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->e:Lcom/google/android/youtube/coreicecream/ui/d;
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->a(Lcom/android/ex/carousel/d;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setCallback(Lcom/android/ex/carousel/d;)V
 
     .line 138
     return-void
@@ -643,250 +643,43 @@
     return-object v0
 .end method
 
-.method public final a(F)V
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 194
-    invoke-super {p0, p1}, Lcom/android/ex/carousel/CarouselView;->a(F)V
-
-    .line 195
-    iput p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->l:F
-
-    .line 196
-    return-void
-.end method
-
 .method public final a(I)V
-    .registers 6
+    .registers 4
     .parameter
 
     .prologue
-    .line 168
+    .line 325
     invoke-super {p0, p1}, Lcom/android/ex/carousel/CarouselView;->a(I)V
 
-    .line 169
-    iput p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->m:I
+    .line 326
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->v:Ljava/lang/Float;
 
-    .line 170
-    const-wide v0, 0x401921fb54442d18L
+    if-nez v0, :cond_e
 
-    int-to-double v2, p1
+    .line 327
+    const/4 v0, 0x0
 
-    div-double/2addr v0, v2
-
-    double-to-float v0, v0
-
-    .line 172
-    const v1, 0x3fc90fdb
-
-    iget v2, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->n:I
-
-    add-int/lit8 v2, v2, -0x1
-
-    int-to-float v2, v2
-
-    mul-float/2addr v0, v2
-
-    const/high16 v2, 0x4000
-
-    div-float/2addr v0, v2
-
-    add-float/2addr v0, v1
-
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->c(F)V
-
-    .line 173
-    return-void
-.end method
-
-.method public final a(II)V
-    .registers 7
-    .parameter
-    .parameter
-
-    .prologue
-    .line 199
-    iput p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->q:I
-
-    .line 200
-    iput p2, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->r:I
-
-    .line 202
-    new-instance v0, Landroid/graphics/Matrix;
-
-    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
-
-    .line 203
-    const/high16 v1, 0x3f80
-
-    iget v2, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->r:I
-
-    int-to-float v2, v2
-
-    iget v3, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->q:I
-
-    int-to-float v3, v3
-
-    div-float/2addr v2, v3
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->setScale(FF)V
-
-    .line 204
-    const/16 v1, 0x9
-
-    new-array v1, v1, [F
-
-    .line 205
-    invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->getValues([F)V
-
-    .line 206
-    invoke-virtual {p0, v1}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->a([F)V
-
-    .line 207
-    return-void
-.end method
-
-.method public final a(Landroid/widget/Adapter;)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 238
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 239
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->b:Landroid/widget/Adapter;
-
-    if-eqz v0, :cond_e
-
-    .line 240
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->b:Landroid/widget/Adapter;
-
-    iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->e:Lcom/google/android/youtube/coreicecream/ui/d;
-
-    invoke-interface {v0, v1}, Landroid/widget/Adapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
-
-    .line 242
-    :cond_e
-    iput-object p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->b:Landroid/widget/Adapter;
-
-    .line 243
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->b:Landroid/widget/Adapter;
-
-    iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->e:Lcom/google/android/youtube/coreicecream/ui/d;
-
-    invoke-interface {v0, v1}, Landroid/widget/Adapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
-
-    .line 244
-    return-void
-.end method
-
-.method public final a(Landroid/widget/AdapterView$OnItemClickListener;)V
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 225
-    iput-object p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->c:Landroid/widget/AdapterView$OnItemClickListener;
-
-    .line 226
-    return-void
-.end method
-
-.method public final a(Landroid/widget/AdapterView$OnItemLongClickListener;)V
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 229
-    iput-object p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->d:Landroid/widget/AdapterView$OnItemLongClickListener;
-
-    .line 230
-    return-void
-.end method
-
-.method public final b(I)V
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 177
-    invoke-super {p0, p1}, Lcom/android/ex/carousel/CarouselView;->b(I)V
-
-    .line 178
-    invoke-super {p0, p1}, Lcom/android/ex/carousel/CarouselView;->e(I)V
-
-    .line 179
-    iput p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->n:I
-
-    .line 180
-    return-void
-.end method
-
-.method public final b(II)V
-    .registers 3
-    .parameter
-    .parameter
-
-    .prologue
-    .line 210
-    iput p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->s:I
-
-    .line 211
-    iput p2, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->t:I
-
-    .line 212
-    return-void
-.end method
-
-.method public final c(Landroid/graphics/Bitmap;)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 219
-    invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->getHolder()Landroid/view/SurfaceHolder;
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
 
-    const/4 v1, 0x2
+    iput-object v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->v:Ljava/lang/Float;
 
-    invoke-interface {v0, v1}, Landroid/view/SurfaceHolder;->setFormat(I)V
+    .line 329
+    :cond_e
+    invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->b()Lcom/android/ex/carousel/a;
 
-    .line 220
-    invoke-super {p0, p1}, Lcom/android/ex/carousel/CarouselView;->c(Landroid/graphics/Bitmap;)V
+    move-result-object v0
 
-    .line 221
-    const/4 v0, 0x0
+    iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->v:Ljava/lang/Float;
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setZOrderOnTop(Z)V
+    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
 
-    .line 222
-    return-void
-.end method
+    move-result v1
 
-.method public final c(Z)V
-    .registers 3
-    .parameter
+    invoke-virtual {v0, v1}, Lcom/android/ex/carousel/a;->d(F)V
 
-    .prologue
-    .line 145
-    iget-boolean v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->j:Z
-
-    if-eq v0, p1, :cond_b
-
-    .line 146
-    iput-boolean p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->j:Z
-
-    .line 148
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->e:Lcom/google/android/youtube/coreicecream/ui/d;
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/coreicecream/ui/d;->onChanged()V
-
-    .line 150
-    :cond_b
+    .line 330
     return-void
 .end method
 
@@ -898,36 +691,6 @@
     const/4 v0, 0x1
 
     return v0
-.end method
-
-.method public final d(F)V
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 154
-    iput p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->o:F
-
-    .line 155
-    invoke-super {p0, p1}, Lcom/android/ex/carousel/CarouselView;->d(F)V
-
-    .line 156
-    return-void
-.end method
-
-.method public final d(I)V
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 184
-    invoke-super {p0, p1}, Lcom/android/ex/carousel/CarouselView;->d(I)V
-
-    .line 185
-    iput p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->k:I
-
-    .line 186
-    return-void
 .end method
 
 .method public destroyRenderScriptGL()V
@@ -999,105 +762,6 @@
     invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->destroyRenderScriptGL()V
 
     .line 253
-    return-void
-.end method
-
-.method public final g(F)V
-    .registers 9
-    .parameter
-
-    .prologue
-    const/4 v6, 0x2
-
-    const/4 v5, 0x1
-
-    const/4 v4, 0x0
-
-    const/4 v3, 0x3
-
-    const/4 v2, 0x0
-
-    .line 159
-    new-array v0, v3, [F
-
-    aput v2, v0, v4
-
-    aput v2, v0, v5
-
-    aput p1, v0, v6
-
-    .line 161
-    new-array v1, v3, [F
-
-    aput v2, v1, v4
-
-    aput v2, v1, v5
-
-    iget v2, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->o:F
-
-    neg-float v2, v2
-
-    aput v2, v1, v6
-
-    .line 162
-    new-array v2, v3, [F
-
-    fill-array-data v2, :array_22
-
-    .line 163
-    invoke-virtual {p0, v0, v1, v2}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->a([F[F[F)V
-
-    .line 164
-    return-void
-
-    .line 162
-    nop
-
-    :array_22
-    .array-data 0x4
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x80t 0x3ft
-        0x0t 0x0t 0x0t 0x0t
-    .end array-data
-.end method
-
-.method public final g(I)V
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 325
-    invoke-super {p0, p1}, Lcom/android/ex/carousel/CarouselView;->g(I)V
-
-    .line 326
-    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->v:Ljava/lang/Float;
-
-    if-nez v0, :cond_e
-
-    .line 327
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->v:Ljava/lang/Float;
-
-    .line 329
-    :cond_e
-    invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->b()Lcom/android/ex/carousel/a;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->v:Ljava/lang/Float;
-
-    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lcom/android/ex/carousel/a;->d(F)V
-
-    .line 330
     return-void
 .end method
 
@@ -1296,6 +960,342 @@
     invoke-super {p0, p1}, Lcom/android/ex/carousel/CarouselView;->onWindowVisibilityChanged(I)V
 
     goto :goto_f
+.end method
+
+.method public setAdapter(Landroid/widget/Adapter;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 238
+    invoke-static {p1}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 239
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->b:Landroid/widget/Adapter;
+
+    if-eqz v0, :cond_e
+
+    .line 240
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->b:Landroid/widget/Adapter;
+
+    iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->e:Lcom/google/android/youtube/coreicecream/ui/d;
+
+    invoke-interface {v0, v1}, Landroid/widget/Adapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
+
+    .line 242
+    :cond_e
+    iput-object p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->b:Landroid/widget/Adapter;
+
+    .line 243
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->b:Landroid/widget/Adapter;
+
+    iget-object v1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->e:Lcom/google/android/youtube/coreicecream/ui/d;
+
+    invoke-interface {v0, v1}, Landroid/widget/Adapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
+
+    .line 244
+    return-void
+.end method
+
+.method public setBackgroundBitmap(Landroid/graphics/Bitmap;)V
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 219
+    invoke-virtual {p0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->getHolder()Landroid/view/SurfaceHolder;
+
+    move-result-object v0
+
+    const/4 v1, 0x2
+
+    invoke-interface {v0, v1}, Landroid/view/SurfaceHolder;->setFormat(I)V
+
+    .line 220
+    invoke-super {p0, p1}, Lcom/android/ex/carousel/CarouselView;->setBackgroundBitmap(Landroid/graphics/Bitmap;)V
+
+    .line 221
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setZOrderOnTop(Z)V
+
+    .line 222
+    return-void
+.end method
+
+.method public setCameraZ(F)V
+    .registers 9
+    .parameter
+
+    .prologue
+    const/4 v6, 0x2
+
+    const/4 v5, 0x1
+
+    const/4 v4, 0x0
+
+    const/4 v3, 0x3
+
+    const/4 v2, 0x0
+
+    .line 159
+    new-array v0, v3, [F
+
+    aput v2, v0, v4
+
+    aput v2, v0, v5
+
+    aput p1, v0, v6
+
+    .line 161
+    new-array v1, v3, [F
+
+    aput v2, v1, v4
+
+    aput v2, v1, v5
+
+    iget v2, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->o:F
+
+    neg-float v2, v2
+
+    aput v2, v1, v6
+
+    .line 162
+    new-array v2, v3, [F
+
+    fill-array-data v2, :array_22
+
+    .line 163
+    invoke-virtual {p0, v0, v1, v2}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setLookAt([F[F[F)V
+
+    .line 164
+    return-void
+
+    .line 162
+    nop
+
+    :array_22
+    .array-data 0x4
+        0x0t 0x0t 0x0t 0x0t
+        0x0t 0x0t 0x80t 0x3ft
+        0x0t 0x0t 0x0t 0x0t
+    .end array-data
+.end method
+
+.method public setCardSize(II)V
+    .registers 7
+    .parameter
+    .parameter
+
+    .prologue
+    .line 199
+    iput p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->q:I
+
+    .line 200
+    iput p2, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->r:I
+
+    .line 202
+    new-instance v0, Landroid/graphics/Matrix;
+
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
+
+    .line 203
+    const/high16 v1, 0x3f80
+
+    iget v2, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->r:I
+
+    int-to-float v2, v2
+
+    iget v3, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->q:I
+
+    int-to-float v3, v3
+
+    div-float/2addr v2, v3
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->setScale(FF)V
+
+    .line 204
+    const/16 v1, 0x9
+
+    new-array v1, v1, [F
+
+    .line 205
+    invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->getValues([F)V
+
+    .line 206
+    invoke-virtual {p0, v1}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setDefaultCardMatrix([F)V
+
+    .line 207
+    return-void
+.end method
+
+.method public setDetailSize(II)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 210
+    iput p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->s:I
+
+    .line 211
+    iput p2, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->t:I
+
+    .line 212
+    return-void
+.end method
+
+.method public setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 225
+    iput-object p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->c:Landroid/widget/AdapterView$OnItemClickListener;
+
+    .line 226
+    return-void
+.end method
+
+.method public setOnItemLongClickListener(Landroid/widget/AdapterView$OnItemLongClickListener;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 229
+    iput-object p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->d:Landroid/widget/AdapterView$OnItemLongClickListener;
+
+    .line 230
+    return-void
+.end method
+
+.method public setRadius(F)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 154
+    iput p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->o:F
+
+    .line 155
+    invoke-super {p0, p1}, Lcom/android/ex/carousel/CarouselView;->setRadius(F)V
+
+    .line 156
+    return-void
+.end method
+
+.method public setRowCount(I)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 184
+    invoke-super {p0, p1}, Lcom/android/ex/carousel/CarouselView;->setRowCount(I)V
+
+    .line 185
+    iput p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->k:I
+
+    .line 186
+    return-void
+.end method
+
+.method public setRowSpacing(F)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 194
+    invoke-super {p0, p1}, Lcom/android/ex/carousel/CarouselView;->setRowSpacing(F)V
+
+    .line 195
+    iput p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->l:F
+
+    .line 196
+    return-void
+.end method
+
+.method public setSlotCount(I)V
+    .registers 6
+    .parameter
+
+    .prologue
+    .line 168
+    invoke-super {p0, p1}, Lcom/android/ex/carousel/CarouselView;->setSlotCount(I)V
+
+    .line 169
+    iput p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->m:I
+
+    .line 170
+    const-wide v0, 0x401921fb54442d18L
+
+    int-to-double v2, p1
+
+    div-double/2addr v0, v2
+
+    double-to-float v0, v0
+
+    .line 172
+    const v1, 0x3fc90fdb
+
+    iget v2, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->n:I
+
+    add-int/lit8 v2, v2, -0x1
+
+    int-to-float v2, v2
+
+    mul-float/2addr v0, v2
+
+    const/high16 v2, 0x4000
+
+    div-float/2addr v0, v2
+
+    add-float/2addr v0, v1
+
+    invoke-virtual {p0, v0}, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->setStartAngle(F)V
+
+    .line 173
+    return-void
+.end method
+
+.method public setSplitDetailViews(Z)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 145
+    iget-boolean v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->j:Z
+
+    if-eq v0, p1, :cond_b
+
+    .line 146
+    iput-boolean p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->j:Z
+
+    .line 148
+    iget-object v0, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->e:Lcom/google/android/youtube/coreicecream/ui/d;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/coreicecream/ui/d;->onChanged()V
+
+    .line 150
+    :cond_b
+    return-void
+.end method
+
+.method public setVisibleSlots(I)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 177
+    invoke-super {p0, p1}, Lcom/android/ex/carousel/CarouselView;->setVisibleSlots(I)V
+
+    .line 178
+    invoke-super {p0, p1}, Lcom/android/ex/carousel/CarouselView;->setVisibleDetails(I)V
+
+    .line 179
+    iput p1, p0, Lcom/google/android/youtube/coreicecream/ui/AdapterCarousel;->n:I
+
+    .line 180
+    return-void
 .end method
 
 .method public surfaceChanged(Landroid/view/SurfaceHolder;III)V

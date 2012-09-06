@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/ics_light_grey" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:yt="http://schemas.android.com/apk/res/com.google.android.youtube">
+    <LinearLayout android:orientation="horizontal" android:background="@drawable/bg_stripes_light_drawable" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/avatar" android:layout_width="80.0dip" android:layout_height="80.0dip" android:layout_margin="8.0dip" />
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="@dimen/huge_font_size" android:textStyle="bold" android:textColor="@color/ics_grey" android:ellipsize="end" android:id="@id/username" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:layout_marginBottom="-4.0dip" />
+            <TextView android:textSize="@dimen/small_font_size" android:textStyle="normal" android:textColor="@color/ics_grey" android:ellipsize="end" android:id="@id/email" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="4.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <include layout="@layout/account_stats" />
+        </LinearLayout>
+    </LinearLayout>
+    <include layout="@layout/my_channel_stack_buttons" />
+</LinearLayout>

@@ -1,16 +1,15 @@
-.class public interface abstract Ld/W;
-.super Ljava/lang/Object;
+.class Ld/w;
+.super Ld/v;
+.source "SourceFile"
 
 
-# virtual methods
-.method public abstract a()J
-.end method
+# direct methods
+.method constructor <init>()V
+    .registers 1
 
-.method public abstract b()Ljava/util/Set;
-.end method
+    .prologue
+    .line 475
+    invoke-direct {p0}, Ld/v;-><init>()V
 
-.method public abstract c()Z
-.end method
-
-.method public abstract d()Ljava/util/Map;
+    return-void
 .end method

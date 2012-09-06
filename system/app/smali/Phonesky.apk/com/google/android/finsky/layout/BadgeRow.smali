@@ -40,7 +40,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b005c
+    const v1, 0x7f0b0047
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -60,17 +60,15 @@
     .parameter "badgeUrl"
 
     .prologue
-    const/4 v2, 0x0
-
     .line 70
-    if-nez p2, :cond_4
+    if-nez p2, :cond_3
 
     .line 85
-    :goto_3
+    :goto_2
     return-void
 
     .line 74
-    :cond_4
+    :cond_3
     invoke-virtual {p0}, Lcom/google/android/finsky/layout/BadgeRow;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -81,13 +79,13 @@
 
     .line 75
     .local v8, inflater:Landroid/view/LayoutInflater;
-    const v0, 0x7f04000b
+    const v0, 0x7f040009
 
     iget-object v1, p0, Lcom/google/android/finsky/layout/BadgeRow;->mExtraBadgeContainer:Landroid/widget/LinearLayout;
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {v8, v0, v1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {v8, v0, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v6
 
@@ -95,11 +93,13 @@
 
     .line 78
     .local v6, badgeView:Landroid/widget/ImageView;
+    const/4 v2, 0x0
+
     new-instance v3, Lcom/google/android/finsky/layout/ThumbnailListener;
 
     const/4 v0, 0x1
 
-    invoke-direct {v3, v6, v2, v0}, Lcom/google/android/finsky/layout/ThumbnailListener;-><init>(Landroid/widget/ImageView;Landroid/view/View;Z)V
+    invoke-direct {v3, v6, v0}, Lcom/google/android/finsky/layout/ThumbnailListener;-><init>(Landroid/widget/ImageView;Z)V
 
     iget v4, p0, Lcom/google/android/finsky/layout/BadgeRow;->mBadgeImageSize:I
 
@@ -134,7 +134,7 @@
 
     invoke-virtual {v0, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    goto :goto_3
+    goto :goto_2
 .end method
 
 .method protected onFinishInflate()V
@@ -145,7 +145,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 43
-    const v0, 0x7f080027
+    const v0, 0x7f080018
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/BadgeRow;->findViewById(I)Landroid/view/View;
 
@@ -156,7 +156,7 @@
     iput-object v0, p0, Lcom/google/android/finsky/layout/BadgeRow;->mExtraBadgeContainer:Landroid/widget/LinearLayout;
 
     .line 44
-    const v0, 0x7f080028
+    const v0, 0x7f080019
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/layout/BadgeRow;->findViewById(I)Landroid/view/View;
 

@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 190
+    .line 191
     iput-object p1, p0, Lcom/android/emailcommon/service/ServiceProxy$1;->this$0:Lcom/android/emailcommon/service/ServiceProxy;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,6 +46,6 @@
     .end annotation
 
     .prologue
-    .line 196
+    .line 197
     return-void
 .end method

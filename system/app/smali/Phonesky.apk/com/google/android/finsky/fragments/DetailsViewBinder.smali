@@ -29,7 +29,7 @@
     .registers 1
 
     .prologue
-    .line 29
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,7 +44,7 @@
     .parameter "headerStringId"
 
     .prologue
-    .line 66
+    .line 65
     if-ltz p3, :cond_c
 
     iget-object v1, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mContext:Landroid/content/Context;
@@ -53,15 +53,15 @@
 
     move-result-object v0
 
-    .line 67
+    .line 66
     .local v0, headerString:Ljava/lang/String;
     :goto_8
     invoke-virtual {p0, p1, p2, v0}, Lcom/google/android/finsky/fragments/DetailsViewBinder;->bind(Landroid/view/View;Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)V
 
-    .line 68
+    .line 67
     return-void
 
-    .line 66
+    .line 65
     .end local v0           #headerString:Ljava/lang/String;
     :cond_c
     const-string v0, ""
@@ -76,20 +76,20 @@
     .parameter "headerString"
 
     .prologue
-    .line 71
+    .line 70
     iput-object p1, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mLayout:Landroid/view/View;
 
-    .line 72
+    .line 71
     iput-object p2, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mDoc:Lcom/google/android/finsky/api/model/Document;
 
-    .line 74
+    .line 73
     invoke-virtual {p2}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
 
     move-result v0
 
     invoke-virtual {p0, p1, p3, v0}, Lcom/google/android/finsky/fragments/DetailsViewBinder;->bind(Landroid/view/View;Ljava/lang/String;I)V
 
-    .line 75
+    .line 74
     return-void
 .end method
 
@@ -100,13 +100,13 @@
     .parameter "headerBackendId"
 
     .prologue
-    .line 78
+    .line 77
     iput-object p1, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mLayout:Landroid/view/View;
 
-    .line 80
+    .line 79
     invoke-virtual {p0, p2, p3}, Lcom/google/android/finsky/fragments/DetailsViewBinder;->setupHeader(Ljava/lang/String;I)V
 
-    .line 81
+    .line 80
     return-void
 .end method
 
@@ -114,7 +114,7 @@
     .registers 4
 
     .prologue
-    .line 101
+    .line 100
     iget-object v1, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mLayout:Landroid/view/View;
 
     iget v2, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mHeaderLayoutId:I
@@ -125,16 +125,16 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 102
+    .line 101
     .local v0, headerView:Landroid/widget/TextView;
     if-eqz v0, :cond_11
 
-    .line 103
+    .line 102
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 105
+    .line 104
     :cond_11
     return-void
 .end method
@@ -146,16 +146,16 @@
     .parameter "navManager"
 
     .prologue
-    .line 58
+    .line 57
     iput-object p1, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mContext:Landroid/content/Context;
 
-    .line 59
+    .line 58
     iput-object p2, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mDfeApi:Lcom/google/android/finsky/api/DfeApi;
 
-    .line 60
+    .line 59
     iput-object p3, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
-    .line 61
+    .line 60
     iget-object v0, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -164,12 +164,12 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 62
-    const v0, 0x7f0800a2
+    .line 61
+    const v0, 0x7f0800a8
 
     iput v0, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mHeaderLayoutId:I
 
-    .line 63
+    .line 62
     return-void
 .end method
 
@@ -178,12 +178,12 @@
     .parameter "error"
 
     .prologue
-    .line 127
+    .line 119
     iget-object v0, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mLayoutSwitcher:Lcom/google/android/finsky/layout/LayoutSwitcher;
 
     if-eqz v0, :cond_f
 
-    .line 128
+    .line 120
     iget-object v0, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mLayoutSwitcher:Lcom/google/android/finsky/layout/LayoutSwitcher;
 
     iget-object v1, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mContext:Landroid/content/Context;
@@ -194,71 +194,49 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/LayoutSwitcher;->switchToErrorMode(Ljava/lang/String;)V
 
-    .line 130
+    .line 122
     :cond_f
     return-void
 .end method
 
 .method public setHeaderNavigable(Z)V
-    .registers 8
+    .registers 7
     .parameter "isNavigable"
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v2, 0x0
 
-    const/4 v4, 0x0
+    .line 107
+    iget-object v3, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mLayout:Landroid/view/View;
 
-    .line 108
-    iget-object v2, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mLayout:Landroid/view/View;
+    iget v4, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mHeaderLayoutId:I
 
-    iget v3, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mHeaderLayoutId:I
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 109
+    .line 108
     .local v0, headerView:Landroid/widget/TextView;
-    if-eqz p1, :cond_28
+    if-eqz p1, :cond_14
+
+    const v1, 0x7f02008e
+
+    .line 109
+    .local v1, rightDrawableId:I
+    :goto_10
+    invoke-virtual {v0, v2, v2, v1, v2}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
     .line 110
-    invoke-virtual {v0}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    const v3, 0x7f020065
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    .line 112
-    .local v1, rightDrawable:Landroid/graphics/drawable/Drawable;
-    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v2
-
-    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v3
-
-    invoke-virtual {v1, v5, v5, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    .line 114
-    invoke-virtual {v0, v4, v4, v1, v4}, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    .line 118
-    .end local v1           #rightDrawable:Landroid/graphics/drawable/Drawable;
-    :goto_27
     return-void
 
-    .line 116
-    :cond_28
-    invoke-virtual {v0, v4, v4, v4, v4}, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    .end local v1           #rightDrawableId:I
+    :cond_14
+    move v1, v2
 
-    goto :goto_27
+    .line 108
+    goto :goto_10
 .end method
 
 .method protected setupHeader(Ljava/lang/String;I)V
@@ -267,7 +245,7 @@
     .parameter "headerBackendId"
 
     .prologue
-    .line 87
+    .line 86
     iget-object v2, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mLayout:Landroid/view/View;
 
     iget v3, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mHeaderLayoutId:I
@@ -278,25 +256,25 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 88
+    .line 87
     .local v1, headerView:Landroid/widget/TextView;
     if-eqz v1, :cond_22
 
-    .line 89
+    .line 88
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-nez v2, :cond_19
 
-    .line 91
+    .line 90
     invoke-virtual {p1}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 95
+    .line 94
     :cond_19
     iget-object v2, p0, Lcom/google/android/finsky/fragments/DetailsViewBinder;->mContext:Landroid/content/Context;
 
@@ -304,11 +282,11 @@
 
     move-result v0
 
-    .line 96
+    .line 95
     .local v0, color:I
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 98
+    .line 97
     .end local v0           #color:I
     :cond_22
     return-void

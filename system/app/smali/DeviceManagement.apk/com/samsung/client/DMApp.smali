@@ -164,50 +164,50 @@
 
     const/4 v1, 0x0
 
-    .line 102
+    .line 101
     const/4 v0, 0x0
 
     sput-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
-    .line 112
+    .line 111
     sput v1, Lcom/samsung/client/DMApp;->niaRetries:I
 
-    .line 151
+    .line 150
     sput v1, Lcom/samsung/client/DMApp;->mAppState:I
 
-    .line 152
+    .line 151
     sput-boolean v1, Lcom/samsung/client/DMApp;->mNIAProgress:Z
 
-    .line 153
+    .line 152
     sput-boolean v1, Lcom/samsung/client/DMApp;->isForeground:Z
 
-    .line 156
+    .line 155
     sput v2, Lcom/samsung/client/DMApp;->sendStatusRetries:I
 
-    .line 157
+    .line 156
     const/4 v0, 0x3
 
     sput v0, Lcom/samsung/client/DMApp;->mPhoneState:I
 
-    .line 158
+    .line 157
     sput v1, Lcom/samsung/client/DMApp;->mCallState:I
 
-    .line 159
+    .line 158
     sput-boolean v1, Lcom/samsung/client/DMApp;->mAirModeState:Z
 
-    .line 160
+    .line 159
     sput-boolean v2, Lcom/samsung/client/DMApp;->mIPCavailable:Z
 
-    .line 162
+    .line 161
     sput v1, Lcom/samsung/client/DMApp;->mSessionType:I
 
-    .line 189
+    .line 188
     sput-boolean v1, Lcom/samsung/client/DMApp;->isInitialized:Z
 
-    .line 191
+    .line 190
     sput-boolean v1, Lcom/samsung/client/DMApp;->hfaNotification:Z
 
-    .line 192
+    .line 191
     sput-boolean v1, Lcom/samsung/client/DMApp;->cancelling:Z
 
     return-void
@@ -217,165 +217,165 @@
     .registers 7
 
     .prologue
-    .line 194
+    .line 193
     invoke-direct {p0}, Landroid/app/Application;-><init>()V
 
-    .line 104
+    .line 103
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->mPowerMgr:Landroid/os/PowerManager;
 
-    .line 105
+    .line 104
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 106
+    .line 105
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->mKeyguardMgr:Landroid/app/KeyguardManager;
 
-    .line 107
+    .line 106
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->mKeyguardLock:Landroid/app/KeyguardManager$KeyguardLock;
 
-    .line 108
+    .line 107
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->mKeyguardDisabled:Z
 
-    .line 109
+    .line 108
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->isUpdateCompleted:Z
 
-    .line 111
+    .line 110
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->numRetries:I
 
-    .line 114
+    .line 113
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->instId:I
 
-    .line 115
+    .line 114
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->sessStatus:I
 
-    .line 116
+    .line 115
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->errCode:I
 
-    .line 117
+    .line 116
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->sessUpdate:I
 
-    .line 118
+    .line 117
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->userCancel:Z
 
-    .line 119
+    .line 118
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->userCancelDld:Z
 
-    .line 120
+    .line 119
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
-    .line 121
+    .line 120
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->previousActivity:Landroid/app/Activity;
 
-    .line 122
+    .line 121
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->fumoRunStatus:I
 
-    .line 123
+    .line 122
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->fumoUpdateStatus:I
 
-    .line 124
+    .line 123
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->fumoUserStart:Z
 
-    .line 125
+    .line 124
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->replace:Z
 
-    .line 126
+    .line 125
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->downloadInProgress:Z
 
-    .line 127
+    .line 126
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/samsung/client/DMApp;->deviceConfigured:I
 
-    .line 128
+    .line 127
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/samsung/client/DMApp;->prlUpdated:I
 
-    .line 129
+    .line 128
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->total:I
 
-    .line 130
+    .line 129
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->current:I
 
-    .line 131
+    .line 130
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/samsung/client/DMApp;->slot:I
 
-    .line 132
+    .line 131
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
 
-    .line 133
+    .line 132
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->mdn:I
 
-    .line 134
+    .line 133
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->msid:I
 
-    .line 135
+    .line 134
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->nai:I
 
-    .line 136
+    .line 135
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->bc10bc14changed:I
 
-    .line 161
+    .line 160
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->mSan:Lcom/samsung/client/TslcmnSan$TslSanMsg;
 
-    .line 179
+    .line 178
     new-instance v0, Lcom/samsung/client/DMApp$DMAppBroadcastReceiver;
 
     const/4 v1, 0x0
@@ -384,58 +384,58 @@
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 180
+    .line 179
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->isRegistered:Z
 
-    .line 181
+    .line 180
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->mStartCntrRunning:Z
 
-    .line 183
+    .line 182
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->mWimaxHandler:Lcom/samsung/client/WimaxHandler;
 
-    .line 185
+    .line 184
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->offReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 186
+    .line 185
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->onReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 187
+    .line 186
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->localeChangeReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 335
+    .line 334
     new-instance v0, Lcom/samsung/client/DMApp$1;
 
     invoke-direct {v0, p0}, Lcom/samsung/client/DMApp$1;-><init>(Lcom/samsung/client/DMApp;)V
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->mConnection:Landroid/content/ServiceConnection;
 
-    .line 364
+    .line 363
     new-instance v0, Lcom/samsung/client/DMApp$2;
 
     invoke-direct {v0, p0}, Lcom/samsung/client/DMApp$2;-><init>(Lcom/samsung/client/DMApp;)V
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->mCallback:Lcom/samsung/client/ISyncmlServiceDMCallback;
 
-    .line 546
+    .line 545
     new-instance v0, Lcom/samsung/client/DMApp$3;
 
     invoke-direct {v0, p0}, Lcom/samsung/client/DMApp$3;-><init>(Lcom/samsung/client/DMApp;)V
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->mHandler:Landroid/os/Handler;
 
-    .line 1564
+    .line 1563
     new-instance v0, Lcom/samsung/client/DMApp$4;
 
     const-wide/16 v2, 0x2710
@@ -448,7 +448,7 @@
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->ctd:Landroid/os/CountDownTimer;
 
-    .line 1712
+    .line 1698
     new-instance v0, Lcom/samsung/client/DMApp$5;
 
     const-wide/16 v2, 0x3e8
@@ -461,14 +461,14 @@
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->delayedBgNiaSession:Landroid/os/CountDownTimer;
 
-    .line 2188
+    .line 2174
     new-instance v0, Lcom/samsung/client/DMApp$6;
 
     invoke-direct {v0, p0}, Lcom/samsung/client/DMApp$6;-><init>(Lcom/samsung/client/DMApp;)V
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->mListener:Landroid/telephony/PhoneStateListener;
 
-    .line 2408
+    .line 2394
     new-instance v0, Lcom/samsung/client/DMApp$7;
 
     const-wide/16 v2, 0x1388
@@ -481,12 +481,12 @@
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->delayStart:Landroid/os/CountDownTimer;
 
-    .line 2743
+    .line 2729
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->homeLaunchedByApp:Z
 
-    .line 2868
+    .line 2854
     new-instance v0, Lcom/samsung/client/DMApp$8;
 
     const-wide/16 v2, 0x2710
@@ -499,7 +499,7 @@
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->sendStatusRetry:Landroid/os/CountDownTimer;
 
-    .line 2894
+    .line 2880
     new-instance v0, Lcom/samsung/client/DMApp$9;
 
     const-wide/16 v2, 0x7530
@@ -512,7 +512,7 @@
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->hangedTimer:Landroid/os/CountDownTimer;
 
-    .line 3105
+    .line 3091
     new-instance v0, Lcom/samsung/client/DMApp$10;
 
     const-wide/16 v2, 0x1b58
@@ -525,7 +525,7 @@
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->radioResetTimer:Landroid/os/CountDownTimer;
 
-    .line 3194
+    .line 3180
     new-instance v0, Lcom/samsung/client/DMApp$11;
 
     const-wide/16 v2, 0x1388
@@ -538,7 +538,7 @@
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->fumoRunTimer:Landroid/os/CountDownTimer;
 
-    .line 3214
+    .line 3200
     new-instance v0, Lcom/samsung/client/DMApp$12;
 
     const-wide/16 v2, 0xbb8
@@ -551,7 +551,7 @@
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->cancelUpdateSessionTimer:Landroid/os/CountDownTimer;
 
-    .line 3235
+    .line 3221
     new-instance v0, Lcom/samsung/client/DMApp$13;
 
     const-wide/16 v2, 0xbb8
@@ -564,17 +564,17 @@
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->cancelDldSessionTimer:Landroid/os/CountDownTimer;
 
-    .line 195
+    .line 194
     const-string v0, "DMApp"
 
     const-string v1, "Constructor()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 196
+    .line 195
     sput-object p0, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
 
-    .line 197
+    .line 196
     return-void
 .end method
 
@@ -586,21 +586,21 @@
 
     const/4 v0, 0x1
 
-    .line 1602
+    .line 1601
     const-string v1, "DMApp"
 
     const-string v2, "NIASessionBlocked()"
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1603
+    .line 1602
     sget v1, Lcom/samsung/client/DMApp;->mSessionType:I
 
     const/4 v2, 0x4
 
     if-ne v1, v2, :cond_1a
 
-    .line 1604
+    .line 1603
     const-string v1, "dc_enable"
 
     invoke-virtual {p0, v1}, Lcom/samsung/client/DMApp;->readFromPreference(Ljava/lang/String;)J
@@ -611,12 +611,12 @@
 
     if-nez v1, :cond_29
 
-    .line 1617
+    .line 1616
     :cond_19
     :goto_19
     return v0
 
-    .line 1607
+    .line 1606
     :cond_1a
     sget v1, Lcom/samsung/client/DMApp;->mSessionType:I
 
@@ -624,7 +624,7 @@
 
     if-ne v1, v2, :cond_2b
 
-    .line 1608
+    .line 1607
     const-string v1, "prl_enable"
 
     invoke-virtual {p0, v1}, Lcom/samsung/client/DMApp;->readFromPreference(Ljava/lang/String;)J
@@ -635,13 +635,13 @@
 
     if-eqz v1, :cond_19
 
-    .line 1617
+    .line 1616
     :cond_29
     const/4 v0, 0x0
 
     goto :goto_19
 
-    .line 1611
+    .line 1610
     :cond_2b
     sget v1, Lcom/samsung/client/DMApp;->mSessionType:I
 
@@ -649,7 +649,7 @@
 
     if-ne v1, v2, :cond_29
 
-    .line 1612
+    .line 1611
     const-string v1, "fumo_enable"
 
     invoke-virtual {p0, v1}, Lcom/samsung/client/DMApp;->readFromPreference(Ljava/lang/String;)J
@@ -668,7 +668,7 @@
     .parameter
 
     .prologue
-    .line 2084
+    .line 2070
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -691,7 +691,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2085
+    .line 2071
     const-string v0, "DMAPP_STATE"
 
     const/4 v1, 0x3
@@ -700,12 +700,12 @@
 
     move-result-object v0
 
-    .line 2086
+    .line 2072
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 2087
+    .line 2073
     const-string v1, "DM_WIFI_DISABLE"
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
@@ -714,10 +714,10 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 2088
+    .line 2074
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 2089
+    .line 2075
     return-void
 .end method
 
@@ -726,7 +726,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget v0, p0, Lcom/samsung/client/DMApp;->total:I
 
     return v0
@@ -738,7 +738,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     iput p1, p0, Lcom/samsung/client/DMApp;->total:I
 
     return p1
@@ -749,7 +749,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget v0, p0, Lcom/samsung/client/DMApp;->current:I
 
     return v0
@@ -761,7 +761,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     iput p1, p0, Lcom/samsung/client/DMApp;->current:I
 
     return p1
@@ -772,7 +772,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget-boolean v0, p0, Lcom/samsung/client/DMApp;->downloadInProgress:Z
 
     return v0
@@ -784,7 +784,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     iput-boolean p1, p0, Lcom/samsung/client/DMApp;->downloadInProgress:Z
 
     return p1
@@ -796,7 +796,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     iput-boolean p1, p0, Lcom/samsung/client/DMApp;->replace:Z
 
     return p1
@@ -807,7 +807,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget v0, p0, Lcom/samsung/client/DMApp;->instId:I
 
     return v0
@@ -819,7 +819,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     iput p1, p0, Lcom/samsung/client/DMApp;->instId:I
 
     return p1
@@ -830,7 +830,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget v0, p0, Lcom/samsung/client/DMApp;->fumoRunStatus:I
 
     return v0
@@ -842,7 +842,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     iput p1, p0, Lcom/samsung/client/DMApp;->fumoRunStatus:I
 
     return p1
@@ -853,7 +853,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget-object v0, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
 
     return-object v0
@@ -865,7 +865,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     iput-object p1, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
 
     return-object p1
@@ -876,7 +876,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget-boolean v0, p0, Lcom/samsung/client/DMApp;->fumoUserStart:Z
 
     return v0
@@ -888,7 +888,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     iput-boolean p1, p0, Lcom/samsung/client/DMApp;->fumoUserStart:Z
 
     return p1
@@ -900,7 +900,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     iput p1, p0, Lcom/samsung/client/DMApp;->fumoUpdateStatus:I
 
     return p1
@@ -911,7 +911,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mWimaxHandler:Lcom/samsung/client/WimaxHandler;
 
     return-object v0
@@ -922,7 +922,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     return-object v0
@@ -932,7 +932,7 @@
     .registers 1
 
     .prologue
-    .line 52
+    .line 51
     sget v0, Lcom/samsung/client/DMApp;->mSessionType:I
 
     return v0
@@ -943,7 +943,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     sput p0, Lcom/samsung/client/DMApp;->mSessionType:I
 
     return p0
@@ -954,7 +954,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->NIASessionBlocked()Z
 
     move-result v0
@@ -967,7 +967,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->removeSanMessage_startService()V
 
     return-void
@@ -977,7 +977,7 @@
     .registers 1
 
     .prologue
-    .line 52
+    .line 51
     sget-object v0, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
 
     return-object v0
@@ -988,7 +988,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->hfaProgress()V
 
     return-void
@@ -999,7 +999,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->fumoProgress()V
 
     return-void
@@ -1010,7 +1010,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->prlProgress()V
 
     return-void
@@ -1021,7 +1021,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->dcProgress()V
 
     return-void
@@ -1032,7 +1032,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->nifumoProgress()V
 
     return-void
@@ -1043,7 +1043,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->niprlProgress()V
 
     return-void
@@ -1054,7 +1054,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->nidcProgress()V
 
     return-void
@@ -1065,7 +1065,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->handleNIAretry()V
 
     return-void
@@ -1076,7 +1076,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget v0, p0, Lcom/samsung/client/DMApp;->prlUpdated:I
 
     return v0
@@ -1088,7 +1088,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     iput p1, p0, Lcom/samsung/client/DMApp;->prlUpdated:I
 
     return p1
@@ -1099,7 +1099,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget v0, p0, Lcom/samsung/client/DMApp;->deviceConfigured:I
 
     return v0
@@ -1111,7 +1111,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     iput p1, p0, Lcom/samsung/client/DMApp;->deviceConfigured:I
 
     return p1
@@ -1123,7 +1123,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     invoke-direct {p0, p1}, Lcom/samsung/client/DMApp;->handleFumoRunStatus(I)V
 
     return-void
@@ -1134,7 +1134,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->handleATCommands()V
 
     return-void
@@ -1146,7 +1146,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     invoke-direct {p0, p1}, Lcom/samsung/client/DMApp;->startNIASession(Lcom/samsung/client/TslcmnSan$TslSanMsg;)V
 
     return-void
@@ -1157,7 +1157,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->next_san_msg()Lcom/samsung/client/TslcmnSan$TslSanMsg;
 
     move-result-object v0
@@ -1170,7 +1170,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget-boolean v0, p0, Lcom/samsung/client/DMApp;->isRegistered:Z
 
     return v0
@@ -1182,7 +1182,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     iput-boolean p1, p0, Lcom/samsung/client/DMApp;->isRegistered:Z
 
     return p1
@@ -1193,7 +1193,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mReceiver:Landroid/content/BroadcastReceiver;
 
     return-object v0
@@ -1204,7 +1204,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget-boolean v0, p0, Lcom/samsung/client/DMApp;->mStartCntrRunning:Z
 
     return v0
@@ -1216,7 +1216,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     iput-boolean p1, p0, Lcom/samsung/client/DMApp;->mStartCntrRunning:Z
 
     return p1
@@ -1227,7 +1227,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mSan:Lcom/samsung/client/TslcmnSan$TslSanMsg;
 
     return-object v0
@@ -1238,7 +1238,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->reconnectSyncmlService()V
 
     return-void
@@ -1248,7 +1248,7 @@
     .registers 1
 
     .prologue
-    .line 52
+    .line 51
     sget-boolean v0, Lcom/samsung/client/DMApp;->hfaNotification:Z
 
     return v0
@@ -1258,7 +1258,7 @@
     .registers 1
 
     .prologue
-    .line 52
+    .line 51
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     return-object v0
@@ -1269,7 +1269,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     sput-object p0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     return-object p0
@@ -1280,7 +1280,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mCallback:Lcom/samsung/client/ISyncmlServiceDMCallback;
 
     return-object v0
@@ -1291,7 +1291,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 51
     iget v0, p0, Lcom/samsung/client/DMApp;->sessStatus:I
 
     return v0
@@ -1303,7 +1303,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     iput p1, p0, Lcom/samsung/client/DMApp;->sessStatus:I
 
     return p1
@@ -1315,7 +1315,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     iput p1, p0, Lcom/samsung/client/DMApp;->errCode:I
 
     return p1
@@ -1327,7 +1327,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 51
     iput p1, p0, Lcom/samsung/client/DMApp;->sessUpdate:I
 
     return p1
@@ -1339,7 +1339,7 @@
     .parameter "b"
 
     .prologue
-    .line 2047
+    .line 2033
     and-int/lit16 v0, p2, 0xff
 
     shr-int/2addr v0, p1
@@ -1357,32 +1357,32 @@
 
     const/4 v5, 0x0
 
-    .line 1031
+    .line 1030
     const-string v0, "DMApp"
 
     const-string v1, "dcProgress()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1033
+    .line 1032
     const/4 v0, 0x0
 
     :try_start_a
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    .line 1035
+    .line 1034
     iget v0, p0, Lcom/samsung/client/DMApp;->errCode:I
 
     if-nez v0, :cond_ce
 
-    .line 1036
+    .line 1035
     iget v0, p0, Lcom/samsung/client/DMApp;->sessUpdate:I
 
     and-int/lit16 v0, v0, 0xff
 
     int-to-byte v0, v0
 
-    .line 1037
+    .line 1036
     const/4 v1, 0x0
 
     invoke-direct {p0, v1, v0}, Lcom/samsung/client/DMApp;->checkSet(IB)I
@@ -1391,7 +1391,7 @@
 
     iput v1, p0, Lcom/samsung/client/DMApp;->mdn:I
 
-    .line 1038
+    .line 1037
     const/4 v1, 0x1
 
     invoke-direct {p0, v1, v0}, Lcom/samsung/client/DMApp;->checkSet(IB)I
@@ -1400,7 +1400,7 @@
 
     iput v1, p0, Lcom/samsung/client/DMApp;->msid:I
 
-    .line 1039
+    .line 1038
     const/4 v1, 0x2
 
     invoke-direct {p0, v1, v0}, Lcom/samsung/client/DMApp;->checkSet(IB)I
@@ -1409,7 +1409,7 @@
 
     iput v1, p0, Lcom/samsung/client/DMApp;->nai:I
 
-    .line 1040
+    .line 1039
     const/4 v1, 0x5
 
     invoke-direct {p0, v1, v0}, Lcom/samsung/client/DMApp;->checkSet(IB)I
@@ -1418,7 +1418,7 @@
 
     iput v0, p0, Lcom/samsung/client/DMApp;->bc10bc14changed:I
 
-    .line 1041
+    .line 1040
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1443,7 +1443,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1042
+    .line 1041
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1468,7 +1468,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1043
+    .line 1042
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1493,7 +1493,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1044
+    .line 1043
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1518,7 +1518,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1046
+    .line 1045
     iget v0, p0, Lcom/samsung/client/DMApp;->mdn:I
 
     if-eq v0, v3, :cond_aa
@@ -1535,13 +1535,13 @@
 
     if-ne v0, v3, :cond_bc
 
-    .line 1048
+    .line 1047
     :cond_aa
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/samsung/client/DMApp;->deviceConfigured:I
 
-    .line 1053
+    .line 1052
     :goto_ad
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mHandler:Landroid/os/Handler;
 
@@ -1559,12 +1559,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1070
+    .line 1069
     :cond_bb
     :goto_bb
     return-void
 
-    .line 1050
+    .line 1049
     :cond_bc
     const/4 v0, 0x0
 
@@ -1574,11 +1574,11 @@
 
     goto :goto_ad
 
-    .line 1065
+    .line 1064
     :catch_c0
     move-exception v0
 
-    .line 1066
+    .line 1065
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -1587,12 +1587,12 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1067
+    .line 1066
     invoke-virtual {p0, v5}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
     goto :goto_bb
 
-    .line 1056
+    .line 1055
     :cond_ce
     :try_start_ce
     iget-boolean v0, p0, Lcom/samsung/client/DMApp;->userCancel:Z
@@ -1605,7 +1605,7 @@
 
     if-eqz v0, :cond_bb
 
-    .line 1062
+    .line 1061
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;
@@ -1627,7 +1627,7 @@
 
     const/4 v6, 0x0
 
-    .line 827
+    .line 826
     :try_start_2
     const-string v3, "DMApp"
 
@@ -1653,19 +1653,19 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 828
+    .line 827
     iget-boolean v3, p0, Lcom/samsung/client/DMApp;->fumoUserStart:Z
 
     if-nez v3, :cond_ac
 
-    .line 829
+    .line 828
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->isUpdateCompleted()Z
 
     move-result v3
 
     if-eqz v3, :cond_8b
 
-    .line 830
+    .line 829
     const-string v3, "DMApp"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1696,7 +1696,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 832
+    .line 831
     iget v3, p0, Lcom/samsung/client/DMApp;->errCode:I
 
     if-eqz v3, :cond_5f
@@ -1711,26 +1711,26 @@
 
     if-nez v3, :cond_5f
 
-    .line 835
+    .line 834
     sget v3, Lcom/samsung/client/DMApp;->sendStatusRetries:I
 
     add-int/lit8 v3, v3, 0x1
 
     sput v3, Lcom/samsung/client/DMApp;->sendStatusRetries:I
 
-    .line 836
+    .line 835
     iget-object v3, p0, Lcom/samsung/client/DMApp;->sendStatusRetry:Landroid/os/CountDownTimer;
 
     invoke-virtual {v3}, Landroid/os/CountDownTimer;->start()Landroid/os/CountDownTimer;
     :try_end_5e
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_5e} :catch_72
 
-    .line 1002
+    .line 1001
     :cond_5e
     :goto_5e
     return-void
 
-    .line 841
+    .line 840
     :cond_5f
     :try_start_5f
     const-string v3, "DMApp"
@@ -1739,19 +1739,19 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 842
+    .line 841
     sget-object v3, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     invoke-interface {v3}, Lcom/samsung/client/ISyncmlService;->abortFumoStatusRetry()I
 
-    .line 843
+    .line 842
     const/4 v3, 0x1
 
     sput v3, Lcom/samsung/client/DMApp;->sendStatusRetries:I
     :try_end_6e
     .catch Ljava/lang/Exception; {:try_start_5f .. :try_end_6e} :catch_80
 
-    .line 848
+    .line 847
     :goto_6e
     :try_start_6e
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->removeStatus()V
@@ -1760,11 +1760,11 @@
 
     goto :goto_5e
 
-    .line 998
+    .line 997
     :catch_72
     move-exception v0
 
-    .line 999
+    .line 998
     .local v0, e:Ljava/lang/Exception;
     const-string v3, "DMApp"
 
@@ -1774,17 +1774,17 @@
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1000
+    .line 999
     invoke-virtual {p0, v6}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
     goto :goto_5e
 
-    .line 844
+    .line 843
     .end local v0           #e:Ljava/lang/Exception;
     :catch_80
     move-exception v0
 
-    .line 845
+    .line 844
     .restart local v0       #e:Ljava/lang/Exception;
     :try_start_81
     const-string v3, "DMApp"
@@ -1799,7 +1799,7 @@
 
     goto :goto_6e
 
-    .line 851
+    .line 850
     .end local v0           #e:Ljava/lang/Exception;
     :cond_8b
     :try_start_8b
@@ -1809,21 +1809,21 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 852
+    .line 851
     sget-object v3, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     iget v4, p0, Lcom/samsung/client/DMApp;->instId:I
 
     invoke-interface {v3, v4}, Lcom/samsung/client/ISyncmlService;->shutdownDMSession(I)I
 
-    .line 853
+    .line 852
     const/4 v3, 0x0
 
     iput v3, p0, Lcom/samsung/client/DMApp;->instId:I
     :try_end_9c
     .catch Ljava/lang/Exception; {:try_start_8b .. :try_end_9c} :catch_a1
 
-    .line 857
+    .line 856
     :goto_9c
     const/4 v3, 0x0
 
@@ -1832,11 +1832,11 @@
 
     goto :goto_5e
 
-    .line 854
+    .line 853
     :catch_a1
     move-exception v0
 
-    .line 855
+    .line 854
     .restart local v0       #e:Ljava/lang/Exception;
     const-string v3, "DMApp"
 
@@ -1848,14 +1848,14 @@
 
     goto :goto_9c
 
-    .line 863
+    .line 862
     .end local v0           #e:Ljava/lang/Exception;
     :cond_ac
     iget-boolean v3, p0, Lcom/samsung/client/DMApp;->userCancelDld:Z
 
     if-ne v3, v7, :cond_108
 
-    .line 864
+    .line 863
     const-string v3, "DMApp"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1882,7 +1882,7 @@
     :try_end_ca
     .catch Ljava/lang/Exception; {:try_start_9d .. :try_end_ca} :catch_72
 
-    .line 868
+    .line 867
     :try_start_ca
     const-string v3, "DMApp"
 
@@ -1890,35 +1890,35 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 869
+    .line 868
     sget-object v3, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     iget v4, p0, Lcom/samsung/client/DMApp;->instId:I
 
     invoke-interface {v3, v4}, Lcom/samsung/client/ISyncmlService;->shutdownDMSession(I)I
 
-    .line 870
+    .line 869
     const/4 v3, 0x0
 
     iput v3, p0, Lcom/samsung/client/DMApp;->instId:I
     :try_end_db
     .catch Ljava/lang/Exception; {:try_start_ca .. :try_end_db} :catch_ee
 
-    .line 874
+    .line 873
     :goto_db
     const/4 v3, 0x0
 
     :try_start_dc
     invoke-virtual {p0, v3}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    .line 875
+    .line 874
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     instance-of v3, v3, Lcom/samsung/fumo/SendStatus;
 
     if-eqz v3, :cond_f9
 
-    .line 876
+    .line 875
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v3, Lcom/samsung/fumo/SendStatus;
@@ -1927,11 +1927,11 @@
 
     goto/16 :goto_5e
 
-    .line 871
+    .line 870
     :catch_ee
     move-exception v0
 
-    .line 872
+    .line 871
     .restart local v0       #e:Ljava/lang/Exception;
     const-string v3, "DMApp"
 
@@ -1943,7 +1943,7 @@
 
     goto :goto_db
 
-    .line 877
+    .line 876
     .end local v0           #e:Ljava/lang/Exception;
     :cond_f9
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
@@ -1952,7 +1952,7 @@
 
     if-eqz v3, :cond_5e
 
-    .line 878
+    .line 877
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v3, Lcom/samsung/fumo/UpdateSoftware;
@@ -1961,13 +1961,13 @@
 
     goto/16 :goto_5e
 
-    .line 884
+    .line 883
     :cond_108
     iget-boolean v3, p0, Lcom/samsung/client/DMApp;->downloadInProgress:Z
 
     if-eqz v3, :cond_18c
 
-    .line 885
+    .line 884
     const-string v3, "DMApp"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2004,19 +2004,19 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 888
+    .line 887
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/samsung/client/DMApp;->downloadInProgress:Z
 
-    .line 890
+    .line 889
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     instance-of v3, v3, Lcom/samsung/fumo/FirmwareUpdate;
 
     if-eqz v3, :cond_159
 
-    .line 891
+    .line 890
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v3, Lcom/samsung/fumo/FirmwareUpdate;
@@ -2025,7 +2025,7 @@
     :try_end_142
     .catch Ljava/lang/Exception; {:try_start_dc .. :try_end_142} :catch_72
 
-    .line 903
+    .line 902
     :goto_142
     :try_start_142
     const-string v3, "DMApp"
@@ -2034,21 +2034,21 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 904
+    .line 903
     sget-object v3, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     iget v4, p0, Lcom/samsung/client/DMApp;->instId:I
 
     invoke-interface {v3, v4}, Lcom/samsung/client/ISyncmlService;->shutdownDMSession(I)I
 
-    .line 905
+    .line 904
     const/4 v3, 0x0
 
     iput v3, p0, Lcom/samsung/client/DMApp;->instId:I
     :try_end_153
     .catch Ljava/lang/Exception; {:try_start_142 .. :try_end_153} :catch_181
 
-    .line 909
+    .line 908
     :goto_153
     const/4 v3, 0x0
 
@@ -2057,7 +2057,7 @@
 
     goto/16 :goto_5e
 
-    .line 893
+    .line 892
     :cond_159
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
@@ -2065,14 +2065,14 @@
 
     if-eqz v3, :cond_16b
 
-    .line 894
+    .line 893
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v3, Lcom/samsung/fumo/SendStatus;
 
     invoke-virtual {v3}, Lcom/samsung/fumo/SendStatus;->removeUpdateStatus()V
 
-    .line 900
+    .line 899
     :cond_166
     :goto_166
     const/4 v3, 0x1
@@ -2081,7 +2081,7 @@
 
     goto :goto_142
 
-    .line 895
+    .line 894
     :cond_16b
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
@@ -2101,16 +2101,16 @@
 
     if-eqz v3, :cond_166
 
-    .line 897
+    .line 896
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->clearActivity()V
 
     goto :goto_166
 
-    .line 906
+    .line 905
     :catch_181
     move-exception v0
 
-    .line 907
+    .line 906
     .restart local v0       #e:Ljava/lang/Exception;
     const-string v3, "DMApp"
 
@@ -2124,7 +2124,7 @@
 
     goto :goto_153
 
-    .line 914
+    .line 913
     .end local v0           #e:Ljava/lang/Exception;
     :cond_18c
     :try_start_18c
@@ -2134,14 +2134,14 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 915
+    .line 914
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     instance-of v3, v3, Lcom/samsung/fumo/UpdateSoftware;
 
     if-eqz v3, :cond_1a0
 
-    .line 916
+    .line 915
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v3, Lcom/samsung/fumo/UpdateSoftware;
@@ -2150,7 +2150,7 @@
     :try_end_1a0
     .catch Ljava/lang/Exception; {:try_start_18c .. :try_end_1a0} :catch_1f8
 
-    .line 921
+    .line 920
     :cond_1a0
     :goto_1a0
     :try_start_1a0
@@ -2158,14 +2158,14 @@
 
     if-nez v3, :cond_27b
 
-    .line 922
+    .line 921
     iget v3, p0, Lcom/samsung/client/DMApp;->sessUpdate:I
 
     and-int/lit16 v3, v3, 0xff
 
     int-to-byte v2, v3
 
-    .line 923
+    .line 922
     .local v2, ses_upd:B
     const/4 v3, 0x4
 
@@ -2173,7 +2173,7 @@
 
     move-result v1
 
-    .line 924
+    .line 923
     .local v1, fumo:I
     const-string v3, "DMApp"
 
@@ -2197,7 +2197,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 925
+    .line 924
     if-ne v1, v7, :cond_203
 
     sget-object v3, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
@@ -2206,7 +2206,7 @@
 
     if-eqz v3, :cond_203
 
-    .line 927
+    .line 926
     :try_start_1cc
     sget-object v3, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
@@ -2214,24 +2214,24 @@
 
     invoke-interface {v3, v4}, Lcom/samsung/client/ISyncmlService;->registerDMCallback(Lcom/samsung/client/ISyncmlServiceDMCallback;)V
 
-    .line 928
+    .line 927
     iget-object v3, p0, Lcom/samsung/client/DMApp;->fumoRunTimer:Landroid/os/CountDownTimer;
 
     invoke-virtual {v3}, Landroid/os/CountDownTimer;->start()Landroid/os/CountDownTimer;
 
-    .line 931
+    .line 930
     const/4 v3, 0x1
 
     iput-boolean v3, p0, Lcom/samsung/client/DMApp;->replace:Z
 
-    .line 932
+    .line 931
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     instance-of v3, v3, Lcom/samsung/fumo/FirmwareUpdate;
 
     if-eqz v3, :cond_5e
 
-    .line 933
+    .line 932
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v3, Lcom/samsung/fumo/FirmwareUpdate;
@@ -2247,11 +2247,11 @@
 
     goto/16 :goto_5e
 
-    .line 934
+    .line 933
     :catch_1ec
     move-exception v0
 
-    .line 935
+    .line 934
     .local v0, e:Landroid/os/RemoteException;
     :try_start_1ed
     const-string v3, "DMApp"
@@ -2264,14 +2264,14 @@
 
     goto/16 :goto_5e
 
-    .line 918
+    .line 917
     .end local v0           #e:Landroid/os/RemoteException;
     .end local v1           #fumo:I
     .end local v2           #ses_upd:B
     :catch_1f8
     move-exception v0
 
-    .line 919
+    .line 918
     .local v0, e:Ljava/lang/Exception;
     const-string v3, "DMApp"
 
@@ -2283,14 +2283,14 @@
 
     goto :goto_1a0
 
-    .line 937
+    .line 936
     .end local v0           #e:Ljava/lang/Exception;
     .restart local v1       #fumo:I
     .restart local v2       #ses_upd:B
     :cond_203
     if-nez v1, :cond_5e
 
-    .line 939
+    .line 938
     const-string v3, "DMApp"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2329,19 +2329,19 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 943
+    .line 942
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     instance-of v3, v3, Lcom/samsung/fumo/FirmwareUpdate;
 
     if-eqz v3, :cond_25e
 
-    .line 944
+    .line 943
     iget-boolean v3, p0, Lcom/samsung/client/DMApp;->replace:Z
 
     if-eqz v3, :cond_256
 
-    .line 945
+    .line 944
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v3, Lcom/samsung/fumo/FirmwareUpdate;
@@ -2352,7 +2352,7 @@
     :try_end_23f
     .catch Ljava/lang/Exception; {:try_start_1ed .. :try_end_23f} :catch_72
 
-    .line 958
+    .line 957
     :goto_23f
     :try_start_23f
     const-string v3, "DMApp"
@@ -2361,21 +2361,21 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 960
+    .line 959
     sget-object v3, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     iget v4, p0, Lcom/samsung/client/DMApp;->instId:I
 
     invoke-interface {v3, v4}, Lcom/samsung/client/ISyncmlService;->shutdownDMSession(I)I
 
-    .line 961
+    .line 960
     const/4 v3, 0x0
 
     iput v3, p0, Lcom/samsung/client/DMApp;->instId:I
     :try_end_250
     .catch Ljava/lang/Exception; {:try_start_23f .. :try_end_250} :catch_270
 
-    .line 967
+    .line 966
     :goto_250
     const/4 v3, 0x0
 
@@ -2384,7 +2384,7 @@
 
     goto/16 :goto_5e
 
-    .line 947
+    .line 946
     :cond_256
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
@@ -2394,7 +2394,7 @@
 
     goto :goto_23f
 
-    .line 950
+    .line 949
     :cond_25e
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
@@ -2402,14 +2402,14 @@
 
     if-eqz v3, :cond_26b
 
-    .line 951
+    .line 950
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v3, Lcom/samsung/fumo/SendStatus;
 
     invoke-virtual {v3}, Lcom/samsung/fumo/SendStatus;->removeUpdateStatus()V
 
-    .line 954
+    .line 953
     :cond_26b
     const/4 v3, 0x1
 
@@ -2417,11 +2417,11 @@
 
     goto :goto_23f
 
-    .line 964
+    .line 963
     :catch_270
     move-exception v0
 
-    .line 965
+    .line 964
     .restart local v0       #e:Ljava/lang/Exception;
     const-string v3, "DMApp"
 
@@ -2433,7 +2433,7 @@
 
     goto :goto_250
 
-    .line 971
+    .line 970
     .end local v0           #e:Ljava/lang/Exception;
     .end local v1           #fumo:I
     .end local v2           #ses_upd:B
@@ -2476,19 +2476,19 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 975
+    .line 974
     iget-boolean v3, p0, Lcom/samsung/client/DMApp;->userCancel:Z
 
     if-eqz v3, :cond_2c2
 
-    .line 976
+    .line 975
     const/4 v3, 0x1
 
     invoke-virtual {p0, v3}, Lcom/samsung/client/DMApp;->updateCompleted(Z)V
     :try_end_2ab
     .catch Ljava/lang/Exception; {:try_start_251 .. :try_end_2ab} :catch_72
 
-    .line 988
+    .line 987
     :goto_2ab
     :try_start_2ab
     const-string v3, "DMApp"
@@ -2497,21 +2497,21 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 990
+    .line 989
     sget-object v3, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     iget v4, p0, Lcom/samsung/client/DMApp;->instId:I
 
     invoke-interface {v3, v4}, Lcom/samsung/client/ISyncmlService;->shutdownDMSession(I)I
 
-    .line 991
+    .line 990
     const/4 v3, 0x0
 
     iput v3, p0, Lcom/samsung/client/DMApp;->instId:I
     :try_end_2bc
     .catch Ljava/lang/Exception; {:try_start_2ab .. :try_end_2bc} :catch_2e4
 
-    .line 995
+    .line 994
     :goto_2bc
     const/4 v3, 0x0
 
@@ -2520,7 +2520,7 @@
 
     goto/16 :goto_5e
 
-    .line 977
+    .line 976
     :cond_2c2
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
@@ -2528,7 +2528,7 @@
 
     if-eqz v3, :cond_2d2
 
-    .line 978
+    .line 977
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v3, Lcom/samsung/fumo/FirmwareUpdate;
@@ -2539,7 +2539,7 @@
 
     goto :goto_2ab
 
-    .line 980
+    .line 979
     :cond_2d2
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
@@ -2547,14 +2547,14 @@
 
     if-eqz v3, :cond_2df
 
-    .line 981
+    .line 980
     iget-object v3, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v3, Lcom/samsung/fumo/SendStatus;
 
     invoke-virtual {v3}, Lcom/samsung/fumo/SendStatus;->removeUpdateStatus()V
 
-    .line 984
+    .line 983
     :cond_2df
     const/4 v3, 0x1
 
@@ -2562,11 +2562,11 @@
 
     goto :goto_2ab
 
-    .line 992
+    .line 991
     :catch_2e4
     move-exception v0
 
-    .line 993
+    .line 992
     .restart local v0       #e:Ljava/lang/Exception;
     const-string v3, "DMApp"
 
@@ -2585,7 +2585,7 @@
     .registers 1
 
     .prologue
-    .line 200
+    .line 199
     sget-object v0, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
 
     return-object v0
@@ -2595,7 +2595,7 @@
     .registers 1
 
     .prologue
-    .line 322
+    .line 321
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     return-object v0
@@ -2615,14 +2615,14 @@
 
     const/4 v2, 0x1
 
-    .line 2211
+    .line 2197
     const-string v0, "DMApp"
 
     const-string v1, "handleATCommands"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2212
+    .line 2198
     iget-object v0, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
 
     const/4 v1, 0x0
@@ -2631,12 +2631,12 @@
 
     packed-switch v0, :pswitch_data_1e4
 
-    .line 2306
+    .line 2292
     :cond_17
     :goto_17
     return-void
 
-    .line 2214
+    .line 2200
     :pswitch_18
     const-string v0, "DMApp"
 
@@ -2644,28 +2644,28 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2215
+    .line 2201
     iget-object v0, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
 
     aget-byte v0, v0, v2
 
     if-ne v2, v0, :cond_32
 
-    .line 2216
+    .line 2202
     const-string v0, "DMApp"
 
     const-string v1, "Enable DC"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2217
+    .line 2203
     const-string v0, "dc_enable"
 
     invoke-virtual {p0, v0, v3, v4}, Lcom/samsung/client/DMApp;->writeToPreferences(Ljava/lang/String;J)V
 
     goto :goto_17
 
-    .line 2218
+    .line 2204
     :cond_32
     iget-object v0, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
 
@@ -2673,21 +2673,21 @@
 
     if-nez v0, :cond_45
 
-    .line 2219
+    .line 2205
     const-string v0, "DMApp"
 
     const-string v1, "Disable DC"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2220
+    .line 2206
     const-string v0, "dc_enable"
 
     invoke-virtual {p0, v0, v7, v8}, Lcom/samsung/client/DMApp;->writeToPreferences(Ljava/lang/String;J)V
 
     goto :goto_17
 
-    .line 2221
+    .line 2207
     :cond_45
     iget-object v0, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
 
@@ -2695,14 +2695,14 @@
 
     if-ne v5, v0, :cond_6c
 
-    .line 2222
+    .line 2208
     const-string v0, "DMApp"
 
     const-string v1, "Start DC"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2223
+    .line 2209
     const-string v0, "dc_enable"
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->readFromPreference(Ljava/lang/String;)J
@@ -2713,7 +2713,7 @@
 
     if-nez v0, :cond_17
 
-    .line 2224
+    .line 2210
     new-instance v0, Landroid/content/Intent;
 
     sget-object v1, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
@@ -2722,15 +2722,15 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2226
+    .line 2212
     invoke-virtual {v0, v6}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 2228
+    .line 2214
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_17
 
-    .line 2230
+    .line 2216
     :cond_6c
     const/4 v0, 0x3
 
@@ -2740,7 +2740,7 @@
 
     if-ne v0, v1, :cond_17
 
-    .line 2231
+    .line 2217
     const-string v0, "DMApp"
 
     const-string v1, "Enable Logging already done at ARM9 side"
@@ -2749,7 +2749,7 @@
 
     goto :goto_17
 
-    .line 2237
+    .line 2223
     :pswitch_7b
     const-string v0, "DMApp"
 
@@ -2757,28 +2757,28 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2238
+    .line 2224
     iget-object v0, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
 
     aget-byte v0, v0, v2
 
     if-ne v2, v0, :cond_95
 
-    .line 2239
+    .line 2225
     const-string v0, "DMApp"
 
     const-string v1, "Enable PRL"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2240
+    .line 2226
     const-string v0, "prl_enable"
 
     invoke-virtual {p0, v0, v3, v4}, Lcom/samsung/client/DMApp;->writeToPreferences(Ljava/lang/String;J)V
 
     goto :goto_17
 
-    .line 2241
+    .line 2227
     :cond_95
     iget-object v0, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
 
@@ -2786,19 +2786,19 @@
 
     if-nez v0, :cond_b5
 
-    .line 2242
+    .line 2228
     const-string v0, "DMApp"
 
     const-string v1, "Disable PRL"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2243
+    .line 2229
     const-string v0, "prl_enable"
 
     invoke-virtual {p0, v0, v7, v8}, Lcom/samsung/client/DMApp;->writeToPreferences(Ljava/lang/String;J)V
 
-    .line 2244
+    .line 2230
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.samsung.client.PRL_ALARM"
@@ -2811,7 +2811,7 @@
 
     goto/16 :goto_17
 
-    .line 2246
+    .line 2232
     :cond_b5
     iget-object v0, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
 
@@ -2819,10 +2819,98 @@
 
     if-ne v5, v0, :cond_dd
 
-    .line 2247
+    .line 2233
     const-string v0, "DMApp"
 
     const-string v1, "Start PRL"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2235
+    const-string v0, "prl_enable"
+
+    invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->readFromPreference(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    cmp-long v0, v3, v0
+
+    if-nez v0, :cond_17
+
+    .line 2236
+    new-instance v0, Landroid/content/Intent;
+
+    sget-object v1, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
+
+    const-class v2, Lcom/samsung/prlupdate/PRLUpdate;
+
+    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 2238
+    invoke-virtual {v0, v6}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    .line 2239
+    invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->startActivity(Landroid/content/Intent;)V
+
+    goto/16 :goto_17
+
+    .line 2241
+    :cond_dd
+    const/4 v0, 0x4
+
+    iget-object v1, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
+
+    aget-byte v1, v1, v2
+
+    if-ne v0, v1, :cond_106
+
+    .line 2242
+    const-string v0, "DMApp"
+
+    const-string v1, "Check every 90 days"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2243
+    const-string v0, "prl_enable"
+
+    invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->readFromPreference(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    cmp-long v0, v3, v0
+
+    if-nez v0, :cond_17
+
+    .line 2244
+    const-wide/32 v0, 0x493e0
+
+    new-instance v2, Landroid/content/Intent;
+
+    const-string v3, "com.samsung.client.PRL_ALARM"
+
+    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string v3, "prl_interval"
+
+    invoke-virtual {p0, v0, v1, v2, v3}, Lcom/samsung/client/DMApp;->setAlarm(JLandroid/content/Intent;Ljava/lang/String;)V
+
+    goto/16 :goto_17
+
+    .line 2247
+    :cond_106
+    const/4 v0, 0x5
+
+    iget-object v1, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
+
+    aget-byte v1, v1, v2
+
+    if-ne v0, v1, :cond_17
+
+    .line 2248
+    const-string v0, "DMApp"
+
+    const-string v1, "Check every 180 days"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -2838,94 +2926,6 @@
     if-nez v0, :cond_17
 
     .line 2250
-    new-instance v0, Landroid/content/Intent;
-
-    sget-object v1, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
-
-    const-class v2, Lcom/samsung/prlupdate/PRLUpdate;
-
-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 2252
-    invoke-virtual {v0, v6}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 2253
-    invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->startActivity(Landroid/content/Intent;)V
-
-    goto/16 :goto_17
-
-    .line 2255
-    :cond_dd
-    const/4 v0, 0x4
-
-    iget-object v1, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
-
-    aget-byte v1, v1, v2
-
-    if-ne v0, v1, :cond_106
-
-    .line 2256
-    const-string v0, "DMApp"
-
-    const-string v1, "Check every 90 days"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2257
-    const-string v0, "prl_enable"
-
-    invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->readFromPreference(Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    cmp-long v0, v3, v0
-
-    if-nez v0, :cond_17
-
-    .line 2258
-    const-wide/32 v0, 0x493e0
-
-    new-instance v2, Landroid/content/Intent;
-
-    const-string v3, "com.samsung.client.PRL_ALARM"
-
-    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    const-string v3, "prl_interval"
-
-    invoke-virtual {p0, v0, v1, v2, v3}, Lcom/samsung/client/DMApp;->setAlarm(JLandroid/content/Intent;Ljava/lang/String;)V
-
-    goto/16 :goto_17
-
-    .line 2261
-    :cond_106
-    const/4 v0, 0x5
-
-    iget-object v1, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
-
-    aget-byte v1, v1, v2
-
-    if-ne v0, v1, :cond_17
-
-    .line 2262
-    const-string v0, "DMApp"
-
-    const-string v1, "Check every 180 days"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2263
-    const-string v0, "prl_enable"
-
-    invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->readFromPreference(Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    cmp-long v0, v3, v0
-
-    if-nez v0, :cond_17
-
-    .line 2264
     const-wide/32 v0, 0x927c0
 
     new-instance v2, Landroid/content/Intent;
@@ -2940,7 +2940,7 @@
 
     goto/16 :goto_17
 
-    .line 2271
+    .line 2257
     :pswitch_12f
     const-string v0, "DMApp"
 
@@ -2948,28 +2948,28 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2272
+    .line 2258
     iget-object v0, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
 
     aget-byte v0, v0, v2
 
     if-ne v2, v0, :cond_14a
 
-    .line 2273
+    .line 2259
     const-string v0, "DMApp"
 
     const-string v1, "Enable FUMO"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2274
+    .line 2260
     const-string v0, "fumo_enable"
 
     invoke-virtual {p0, v0, v3, v4}, Lcom/samsung/client/DMApp;->writeToPreferences(Ljava/lang/String;J)V
 
     goto/16 :goto_17
 
-    .line 2275
+    .line 2261
     :cond_14a
     iget-object v0, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
 
@@ -2977,19 +2977,19 @@
 
     if-nez v0, :cond_16a
 
-    .line 2276
+    .line 2262
     const-string v0, "DMApp"
 
     const-string v1, "Disable FUMO"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2277
+    .line 2263
     const-string v0, "fumo_enable"
 
     invoke-virtual {p0, v0, v7, v8}, Lcom/samsung/client/DMApp;->writeToPreferences(Ljava/lang/String;J)V
 
-    .line 2278
+    .line 2264
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.samsung.client.FUMO_ALARM"
@@ -3002,7 +3002,7 @@
 
     goto/16 :goto_17
 
-    .line 2280
+    .line 2266
     :cond_16a
     iget-object v0, p0, Lcom/samsung/client/DMApp;->at_cmds:[B
 
@@ -3010,14 +3010,14 @@
 
     if-ne v5, v0, :cond_192
 
-    .line 2281
+    .line 2267
     const-string v0, "DMApp"
 
     const-string v1, "Start FUMO"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2282
+    .line 2268
     const-string v0, "fumo_enable"
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->readFromPreference(Ljava/lang/String;)J
@@ -3028,7 +3028,7 @@
 
     if-nez v0, :cond_17
 
-    .line 2283
+    .line 2269
     new-instance v0, Landroid/content/Intent;
 
     sget-object v1, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
@@ -3037,15 +3037,15 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2285
+    .line 2271
     invoke-virtual {v0, v6}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 2287
+    .line 2273
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->startActivity(Landroid/content/Intent;)V
 
     goto/16 :goto_17
 
-    .line 2289
+    .line 2275
     :cond_192
     const/4 v0, 0x4
 
@@ -3055,14 +3055,14 @@
 
     if-ne v0, v1, :cond_1bb
 
-    .line 2290
+    .line 2276
     const-string v0, "DMApp"
 
     const-string v1, "Check every 90 days"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2291
+    .line 2277
     const-string v0, "fumo_enable"
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->readFromPreference(Ljava/lang/String;)J
@@ -3073,7 +3073,7 @@
 
     if-nez v0, :cond_17
 
-    .line 2292
+    .line 2278
     const-wide/32 v0, 0x493e0
 
     new-instance v2, Landroid/content/Intent;
@@ -3088,7 +3088,7 @@
 
     goto/16 :goto_17
 
-    .line 2296
+    .line 2282
     :cond_1bb
     const/4 v0, 0x5
 
@@ -3098,14 +3098,14 @@
 
     if-ne v0, v1, :cond_17
 
-    .line 2297
+    .line 2283
     const-string v0, "DMApp"
 
     const-string v1, "Check every 180 days"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2298
+    .line 2284
     const-string v0, "fumo_enable"
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->readFromPreference(Ljava/lang/String;)J
@@ -3116,7 +3116,7 @@
 
     if-nez v0, :cond_17
 
-    .line 2299
+    .line 2285
     const-wide/32 v0, 0x927c0
 
     new-instance v2, Landroid/content/Intent;
@@ -3131,7 +3131,7 @@
 
     goto/16 :goto_17
 
-    .line 2212
+    .line 2198
     :pswitch_data_1e4
     .packed-switch 0x1
         :pswitch_18
@@ -3149,7 +3149,7 @@
 
     const/4 v3, 0x1
 
-    .line 1202
+    .line 1201
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3184,19 +3184,19 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1204
+    .line 1203
     if-nez p1, :cond_2d
 
     iget-boolean v0, p0, Lcom/samsung/client/DMApp;->fumoUserStart:Z
 
     if-nez v0, :cond_2d
 
-    .line 1265
+    .line 1264
     :cond_2c
     :goto_2c
     return-void
 
-    .line 1206
+    .line 1205
     :cond_2d
     if-ne p1, v3, :cond_48
 
@@ -3204,31 +3204,31 @@
 
     if-nez v0, :cond_48
 
-    .line 1207
+    .line 1206
     const-string v0, "DMApp"
 
     const-string v1, "handleFumoRunStatus():Bootstart"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1208
+    .line 1207
     sput v4, Lcom/samsung/client/DMApp;->mSessionType:I
 
-    .line 1209
+    .line 1208
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->storeSlot()I
 
     move-result v0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->slot:I
 
-    .line 1210
+    .line 1209
     const/16 v0, 0x65
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
     goto :goto_2c
 
-    .line 1225
+    .line 1224
     :cond_48
     if-ne p1, v3, :cond_90
 
@@ -3236,33 +3236,33 @@
 
     if-eqz v0, :cond_90
 
-    .line 1226
+    .line 1225
     iget-object v0, p0, Lcom/samsung/client/DMApp;->fumoRunTimer:Landroid/os/CountDownTimer;
 
     invoke-virtual {v0}, Landroid/os/CountDownTimer;->start()Landroid/os/CountDownTimer;
 
-    .line 1228
+    .line 1227
     iput-boolean v3, p0, Lcom/samsung/client/DMApp;->replace:Z
 
-    .line 1230
+    .line 1229
     :try_start_55
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     if-eqz v0, :cond_2c
 
-    .line 1231
+    .line 1230
     sget-boolean v0, Lcom/samsung/client/DMApp;->isForeground:Z
 
     if-nez v0, :cond_2c
 
-    .line 1233
+    .line 1232
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     instance-of v0, v0, Lcom/samsung/fumo/FirmwareUpdate;
 
     if-eqz v0, :cond_78
 
-    .line 1234
+    .line 1233
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v0, Lcom/samsung/fumo/FirmwareUpdate;
@@ -3277,11 +3277,11 @@
 
     goto :goto_2c
 
-    .line 1242
+    .line 1241
     :catch_6d
     move-exception v0
 
-    .line 1243
+    .line 1242
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -3292,7 +3292,7 @@
 
     goto :goto_2c
 
-    .line 1238
+    .line 1237
     :cond_78
     :try_start_78
     const-string v0, "com.samsung.client.UserTouch"
@@ -3313,7 +3313,7 @@
 
     if-eqz v0, :cond_2c
 
-    .line 1239
+    .line 1238
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->bringUItoForeground(Landroid/app/Activity;)V
@@ -3322,7 +3322,7 @@
 
     goto :goto_2c
 
-    .line 1245
+    .line 1244
     :cond_90
     if-nez p1, :cond_2c
 
@@ -3330,48 +3330,48 @@
 
     if-eqz v0, :cond_2c
 
-    .line 1247
+    .line 1246
     :try_start_96
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     if-eqz v0, :cond_2c
 
-    .line 1248
+    .line 1247
     new-instance v0, Lcom/samsung/client/Tsldm_ses_opt_binder;
 
     invoke-direct {v0}, Lcom/samsung/client/Tsldm_ses_opt_binder;-><init>()V
 
-    .line 1249
+    .line 1248
     const/4 v1, 0x0
 
     iput v1, v0, Lcom/samsung/client/Tsldm_ses_opt_binder;->enc:I
 
-    .line 1250
+    .line 1249
     const/4 v1, 0x1
 
     iput v1, v0, Lcom/samsung/client/Tsldm_ses_opt_binder;->ver:I
 
-    .line 1252
+    .line 1251
     const/16 v1, 0x1800
 
     iput v1, v0, Lcom/samsung/client/Tsldm_ses_opt_binder;->max_msg_sz:I
 
-    .line 1253
+    .line 1252
     const v1, 0x8c00
 
     iput v1, v0, Lcom/samsung/client/Tsldm_ses_opt_binder;->max_obj_sz:I
 
-    .line 1254
+    .line 1253
     const/4 v1, 0x0
 
     iput v1, v0, Lcom/samsung/client/Tsldm_ses_opt_binder;->cookie:I
 
-    .line 1255
+    .line 1254
     const-string v1, "Device"
 
     iput-object v1, v0, Lcom/samsung/client/Tsldm_ses_opt_binder;->disp_name:Ljava/lang/String;
 
-    .line 1257
+    .line 1256
     sget-object v1, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     iget-object v2, p0, Lcom/samsung/client/DMApp;->mCallback:Lcom/samsung/client/ISyncmlServiceDMCallback;
@@ -3382,7 +3382,7 @@
 
     iput v0, p0, Lcom/samsung/client/DMApp;->instId:I
 
-    .line 1258
+    .line 1257
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     const/4 v1, 0x2
@@ -3397,11 +3397,11 @@
 
     goto/16 :goto_2c
 
-    .line 1260
+    .line 1259
     :catch_ca
     move-exception v0
 
-    .line 1261
+    .line 1260
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Landroid/os/RemoteException;->getMessage()Ljava/lang/String;
@@ -3417,33 +3417,33 @@
     .registers 4
 
     .prologue
-    .line 1540
+    .line 1539
     const-string v0, "DMApp"
 
     const-string v1, "handleNIAretry()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1542
+    .line 1541
     iget v0, p0, Lcom/samsung/client/DMApp;->errCode:I
 
     if-nez v0, :cond_16
 
-    .line 1543
+    .line 1542
     const-string v0, "DMApp"
 
     const-string v1, "handleNIAretry(): session success, removing message"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1545
+    .line 1544
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->removeSanMessage_startService()V
 
-    .line 1562
+    .line 1561
     :goto_15
     return-void
 
-    .line 1546
+    .line 1545
     :cond_16
     iget v0, p0, Lcom/samsung/client/DMApp;->errCode:I
 
@@ -3463,7 +3463,7 @@
 
     if-ne v0, v1, :cond_5b
 
-    .line 1547
+    .line 1546
     :cond_25
     sget v0, Lcom/samsung/client/DMApp;->niaRetries:I
 
@@ -3471,19 +3471,19 @@
 
     if-lt v0, v1, :cond_35
 
-    .line 1548
+    .line 1547
     const-string v0, "DMApp"
 
     const-string v1, "handleNIAretry(): session error, retries over, removing message"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1550
+    .line 1549
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->removeSanMessage_startService()V
 
     goto :goto_15
 
-    .line 1553
+    .line 1552
     :cond_35
     sget v0, Lcom/samsung/client/DMApp;->niaRetries:I
 
@@ -3491,12 +3491,12 @@
 
     sput v0, Lcom/samsung/client/DMApp;->niaRetries:I
 
-    .line 1554
+    .line 1553
     iget-object v0, p0, Lcom/samsung/client/DMApp;->ctd:Landroid/os/CountDownTimer;
 
     invoke-virtual {v0}, Landroid/os/CountDownTimer;->start()Landroid/os/CountDownTimer;
 
-    .line 1555
+    .line 1554
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3523,7 +3523,7 @@
 
     goto :goto_15
 
-    .line 1559
+    .line 1558
     :cond_5b
     const-string v0, "DMApp"
 
@@ -3549,7 +3549,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1560
+    .line 1559
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->removeSanMessage_startService()V
 
     goto :goto_15
@@ -3563,14 +3563,14 @@
 
     const/4 v5, 0x1
 
-    .line 775
+    .line 774
     const-string v2, "DMApp"
 
     const-string v3, "hfaProgress()"
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 777
+    .line 776
     :try_start_9
     iget-object v2, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
@@ -3578,7 +3578,7 @@
 
     if-eqz v2, :cond_16
 
-    .line 778
+    .line 777
     iget-object v2, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v2, Lcom/samsung/handsfreeactivation/StartUp;
@@ -3587,7 +3587,7 @@
 
     iput-boolean v3, v2, Lcom/samsung/handsfreeactivation/StartUp;->mAppCancel:Z
 
-    .line 781
+    .line 780
     :cond_16
     iget v2, p0, Lcom/samsung/client/DMApp;->errCode:I
 
@@ -3605,7 +3605,7 @@
 
     if-ne v2, v3, :cond_d8
 
-    .line 782
+    .line 781
     :cond_25
     iget v2, p0, Lcom/samsung/client/DMApp;->sessUpdate:I
 
@@ -3613,7 +3613,7 @@
 
     int-to-byte v1, v2
 
-    .line 783
+    .line 782
     .local v1, ses_upd:B
     const/4 v2, 0x0
 
@@ -3623,7 +3623,7 @@
 
     iput v2, p0, Lcom/samsung/client/DMApp;->mdn:I
 
-    .line 784
+    .line 783
     const/4 v2, 0x1
 
     invoke-direct {p0, v2, v1}, Lcom/samsung/client/DMApp;->checkSet(IB)I
@@ -3632,7 +3632,7 @@
 
     iput v2, p0, Lcom/samsung/client/DMApp;->msid:I
 
-    .line 785
+    .line 784
     const/4 v2, 0x2
 
     invoke-direct {p0, v2, v1}, Lcom/samsung/client/DMApp;->checkSet(IB)I
@@ -3641,7 +3641,7 @@
 
     iput v2, p0, Lcom/samsung/client/DMApp;->nai:I
 
-    .line 786
+    .line 785
     const/4 v2, 0x5
 
     invoke-direct {p0, v2, v1}, Lcom/samsung/client/DMApp;->checkSet(IB)I
@@ -3650,7 +3650,7 @@
 
     iput v2, p0, Lcom/samsung/client/DMApp;->bc10bc14changed:I
 
-    .line 787
+    .line 786
     const-string v2, "DMApp"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3675,7 +3675,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 788
+    .line 787
     const-string v2, "DMApp"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3700,7 +3700,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 789
+    .line 788
     const-string v2, "DMApp"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3725,7 +3725,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 790
+    .line 789
     const-string v2, "DMApp"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3750,7 +3750,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 792
+    .line 791
     iget v2, p0, Lcom/samsung/client/DMApp;->mdn:I
 
     if-eq v2, v5, :cond_ba
@@ -3763,28 +3763,28 @@
 
     if-ne v2, v5, :cond_c2
 
-    .line 793
+    .line 792
     :cond_ba
     iget v2, p0, Lcom/samsung/client/DMApp;->nai:I
 
     if-ne v2, v5, :cond_be
 
-    .line 796
+    .line 795
     :cond_be
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->gotoSuccess()V
 
-    .line 816
+    .line 815
     .end local v1           #ses_upd:B
     :cond_c1
     :goto_c1
     return-void
 
-    .line 798
+    .line 797
     .restart local v1       #ses_upd:B
     :cond_c2
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->gotoFailure()V
 
-    .line 799
+    .line 798
     const/4 v2, 0x0
 
     invoke-virtual {p0, v2}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
@@ -3793,12 +3793,12 @@
 
     goto :goto_c1
 
-    .line 812
+    .line 811
     .end local v1           #ses_upd:B
     :catch_ca
     move-exception v0
 
-    .line 813
+    .line 812
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "DMApp"
 
@@ -3808,12 +3808,12 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 814
+    .line 813
     invoke-virtual {p0, v6}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
     goto :goto_c1
 
-    .line 803
+    .line 802
     .end local v0           #e:Ljava/lang/Exception;
     :cond_d8
     const/4 v2, 0x0
@@ -3821,19 +3821,19 @@
     :try_start_d9
     invoke-virtual {p0, v2}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    .line 805
+    .line 804
     iget-boolean v2, p0, Lcom/samsung/client/DMApp;->userCancel:Z
 
     if-nez v2, :cond_c1
 
-    .line 808
+    .line 807
     iget-object v2, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     instance-of v2, v2, Lcom/samsung/handsfreeactivation/StartUp;
 
     if-eqz v2, :cond_c1
 
-    .line 809
+    .line 808
     iget-object v2, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v2, Lcom/samsung/handsfreeactivation/StartUp;
@@ -3851,7 +3851,7 @@
     .registers 2
 
     .prologue
-    .line 1598
+    .line 1597
     invoke-static {p0}, Lcom/samsung/client/SANStorage;->next_san_msg(Landroid/content/Context;)Lcom/samsung/client/TslcmnSan$TslSanMsg;
 
     move-result-object v0
@@ -3871,32 +3871,32 @@
 
     const/4 v3, 0x1
 
-    .line 1755
+    .line 1741
     const-string v1, "DMApp"
 
     const-string v2, "nidcProgress()"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1758
+    .line 1744
     const/4 v1, 0x0
 
     :try_start_c
     invoke-virtual {p0, v1}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    .line 1760
+    .line 1746
     iget v1, p0, Lcom/samsung/client/DMApp;->errCode:I
 
     if-nez v1, :cond_107
 
-    .line 1762
+    .line 1748
     iget v0, p0, Lcom/samsung/client/DMApp;->sessUpdate:I
 
     and-int/lit16 v0, v0, 0xff
 
     int-to-byte v0, v0
 
-    .line 1763
+    .line 1749
     const/4 v1, 0x0
 
     invoke-direct {p0, v1, v0}, Lcom/samsung/client/DMApp;->checkSet(IB)I
@@ -3905,7 +3905,7 @@
 
     iput v1, p0, Lcom/samsung/client/DMApp;->mdn:I
 
-    .line 1764
+    .line 1750
     const/4 v1, 0x1
 
     invoke-direct {p0, v1, v0}, Lcom/samsung/client/DMApp;->checkSet(IB)I
@@ -3914,7 +3914,7 @@
 
     iput v1, p0, Lcom/samsung/client/DMApp;->msid:I
 
-    .line 1765
+    .line 1751
     const/4 v1, 0x2
 
     invoke-direct {p0, v1, v0}, Lcom/samsung/client/DMApp;->checkSet(IB)I
@@ -3923,7 +3923,7 @@
 
     iput v1, p0, Lcom/samsung/client/DMApp;->nai:I
 
-    .line 1766
+    .line 1752
     const/4 v1, 0x5
 
     invoke-direct {p0, v1, v0}, Lcom/samsung/client/DMApp;->checkSet(IB)I
@@ -3932,7 +3932,7 @@
 
     iput v0, p0, Lcom/samsung/client/DMApp;->bc10bc14changed:I
 
-    .line 1767
+    .line 1753
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3957,7 +3957,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1768
+    .line 1754
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3982,7 +3982,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1769
+    .line 1755
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4007,7 +4007,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1770
+    .line 1756
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4032,12 +4032,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1772
+    .line 1758
     sget-boolean v0, Lcom/samsung/client/DMApp;->isForeground:Z
 
     if-eqz v0, :cond_ee
 
-    .line 1773
+    .line 1759
     iget v0, p0, Lcom/samsung/client/DMApp;->mdn:I
 
     if-eq v0, v3, :cond_b0
@@ -4054,13 +4054,13 @@
 
     if-ne v0, v3, :cond_df
 
-    .line 1775
+    .line 1761
     :cond_b0
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/samsung/client/DMApp;->deviceConfigured:I
 
-    .line 1779
+    .line 1765
     :goto_b3
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mHandler:Landroid/os/Handler;
 
@@ -4078,7 +4078,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1791
+    .line 1777
     :cond_c1
     :goto_c1
     const-string v0, "DMApp"
@@ -4105,17 +4105,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1792
+    .line 1778
     const/4 v0, 0x0
 
     sput v0, Lcom/samsung/client/DMApp;->niaRetries:I
 
-    .line 1829
+    .line 1815
     :cond_de
     :goto_de
     return-void
 
-    .line 1777
+    .line 1763
     :cond_df
     const/4 v0, 0x0
 
@@ -4125,11 +4125,11 @@
 
     goto :goto_b3
 
-    .line 1826
+    .line 1812
     :catch_e3
     move-exception v0
 
-    .line 1827
+    .line 1813
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -4140,12 +4140,12 @@
 
     goto :goto_de
 
-    .line 1782
+    .line 1768
     :cond_ee
     :try_start_ee
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->clearActivity()V
 
-    .line 1783
+    .line 1769
     iget v0, p0, Lcom/samsung/client/DMApp;->mdn:I
 
     if-eq v0, v3, :cond_f9
@@ -4154,7 +4154,7 @@
 
     if-ne v0, v3, :cond_fe
 
-    .line 1785
+    .line 1771
     :cond_f9
     const/4 v0, 0x1
 
@@ -4162,20 +4162,20 @@
 
     goto :goto_c1
 
-    .line 1786
+    .line 1772
     :cond_fe
     iget v0, p0, Lcom/samsung/client/DMApp;->bc10bc14changed:I
 
     if-ne v0, v3, :cond_c1
 
-    .line 1787
+    .line 1773
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->handleBC10BC14Changed(Z)V
 
     goto :goto_c1
 
-    .line 1794
+    .line 1780
     :cond_107
     iget v1, p0, Lcom/samsung/client/DMApp;->errCode:I
 
@@ -4193,13 +4193,13 @@
 
     if-ne v1, v2, :cond_15a
 
-    .line 1795
+    .line 1781
     :cond_115
     sget v0, Lcom/samsung/client/DMApp;->niaRetries:I
 
     if-lt v0, v4, :cond_de
 
-    .line 1796
+    .line 1782
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4224,7 +4224,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1797
+    .line 1783
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v0, Lcom/samsung/deviceconfiguration/DeviceConfiguration;
@@ -4233,7 +4233,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/deviceconfiguration/DeviceConfiguration;->gotoFailure(I)V
 
-    .line 1807
+    .line 1793
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4258,29 +4258,29 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1808
+    .line 1794
     const/4 v0, 0x0
 
     sput v0, Lcom/samsung/client/DMApp;->niaRetries:I
 
     goto :goto_de
 
-    .line 1812
+    .line 1798
     :cond_15a
     :goto_15a
     if-ge v0, v5, :cond_164
 
-    .line 1813
+    .line 1799
     iget-object v1, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->removeDialog(I)V
 
-    .line 1812
+    .line 1798
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_15a
 
-    .line 1815
+    .line 1801
     :cond_164
     new-instance v0, Landroid/content/Intent;
 
@@ -4288,32 +4288,32 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1816
+    .line 1802
     const-string v1, "android.intent.category.HOME"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1817
+    .line 1803
     const-string v1, "android.intent.category.DEFAULT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1818
+    .line 1804
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/samsung/client/DMApp;->homeLaunchedByApp:Z
 
-    .line 1819
+    .line 1805
     iget-object v1, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 1820
+    .line 1806
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 1822
+    .line 1808
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4338,7 +4338,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1823
+    .line 1809
     const/4 v0, 0x0
 
     sput v0, Lcom/samsung/client/DMApp;->niaRetries:I
@@ -4354,34 +4354,34 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 1890
+    .line 1876
     const-string v0, "DMApp"
 
     const-string v1, "nifumoProgress()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1892
+    .line 1878
     :try_start_8
     iget v0, p0, Lcom/samsung/client/DMApp;->errCode:I
 
     if-nez v0, :cond_106
 
-    .line 1893
+    .line 1879
     iget v0, p0, Lcom/samsung/client/DMApp;->sessUpdate:I
 
     and-int/lit16 v0, v0, 0xff
 
     int-to-byte v0, v0
 
-    .line 1894
+    .line 1880
     const/4 v1, 0x4
 
     invoke-direct {p0, v1, v0}, Lcom/samsung/client/DMApp;->checkSet(IB)I
 
     move-result v0
 
-    .line 1895
+    .line 1881
     const-string v1, "DMApp"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -4404,7 +4404,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1896
+    .line 1882
     if-ne v0, v4, :cond_c0
 
     sget-object v1, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
@@ -4413,7 +4413,7 @@
 
     if-eqz v1, :cond_c0
 
-    .line 1898
+    .line 1884
     :try_start_34
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
@@ -4421,12 +4421,12 @@
 
     invoke-interface {v0, v1}, Lcom/samsung/client/ISyncmlService;->registerDMCallback(Lcom/samsung/client/ISyncmlServiceDMCallback;)V
 
-    .line 1899
+    .line 1885
     iget-object v0, p0, Lcom/samsung/client/DMApp;->fumoRunTimer:Landroid/os/CountDownTimer;
 
     invoke-virtual {v0}, Landroid/os/CountDownTimer;->start()Landroid/os/CountDownTimer;
 
-    .line 1900
+    .line 1886
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->replace:Z
@@ -4434,14 +4434,14 @@
     .catch Landroid/os/RemoteException; {:try_start_34 .. :try_end_43} :catch_82
     .catch Ljava/lang/Exception; {:try_start_34 .. :try_end_43} :catch_8d
 
-    .line 1905
+    .line 1891
     :goto_43
     :try_start_43
     sget-boolean v0, Lcom/samsung/client/DMApp;->isForeground:Z
 
     if-eqz v0, :cond_98
 
-    .line 1939
+    .line 1925
     :cond_47
     :goto_47
     const-string v0, "DMApp"
@@ -4468,12 +4468,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1940
+    .line 1926
     const/4 v0, 0x0
 
     sput v0, Lcom/samsung/client/DMApp;->niaRetries:I
 
-    .line 1968
+    .line 1954
     :cond_64
     :goto_64
     const-string v0, "DMApp"
@@ -4500,20 +4500,20 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1969
+    .line 1955
     const/4 v0, 0x0
 
     sput v0, Lcom/samsung/client/DMApp;->niaRetries:I
 
-    .line 1973
+    .line 1959
     :goto_81
     return-void
 
-    .line 1901
+    .line 1887
     :catch_82
     move-exception v0
 
-    .line 1902
+    .line 1888
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Landroid/os/RemoteException;->getMessage()Ljava/lang/String;
@@ -4526,11 +4526,11 @@
 
     goto :goto_43
 
-    .line 1970
+    .line 1956
     :catch_8d
     move-exception v0
 
-    .line 1971
+    .line 1957
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -4541,7 +4541,7 @@
 
     goto :goto_81
 
-    .line 1907
+    .line 1893
     :cond_98
     :try_start_98
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
@@ -4550,7 +4550,7 @@
 
     if-eqz v0, :cond_a8
 
-    .line 1908
+    .line 1894
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v0, Lcom/samsung/fumo/FirmwareUpdate;
@@ -4563,7 +4563,7 @@
 
     goto :goto_47
 
-    .line 1910
+    .line 1896
     :cond_a8
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
@@ -4583,35 +4583,35 @@
 
     if-eqz v0, :cond_47
 
-    .line 1912
+    .line 1898
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->bringUItoForeground(Landroid/app/Activity;)V
 
     goto :goto_47
 
-    .line 1914
+    .line 1900
     :cond_c0
     if-nez v0, :cond_47
 
-    .line 1915
+    .line 1901
     sget-boolean v0, Lcom/samsung/client/DMApp;->isForeground:Z
 
     if-eqz v0, :cond_f7
 
-    .line 1916
+    .line 1902
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     instance-of v0, v0, Lcom/samsung/fumo/FirmwareUpdate;
 
     if-eqz v0, :cond_d8
 
-    .line 1917
+    .line 1903
     iget-boolean v0, p0, Lcom/samsung/client/DMApp;->replace:Z
 
     if-eqz v0, :cond_ef
 
-    .line 1918
+    .line 1904
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v0, Lcom/samsung/fumo/FirmwareUpdate;
@@ -4622,10 +4622,75 @@
     :try_end_d8
     .catch Ljava/lang/Exception; {:try_start_98 .. :try_end_d8} :catch_8d
 
-    .line 1929
+    .line 1915
     :cond_d8
     :goto_d8
     :try_start_d8
+    const-string v0, "DMApp"
+
+    const-string v1, "FUMOshutdownDMSession()"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1917
+    sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
+
+    iget v1, p0, Lcom/samsung/client/DMApp;->instId:I
+
+    invoke-interface {v0, v1}, Lcom/samsung/client/ISyncmlService;->shutdownDMSession(I)I
+
+    .line 1918
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/samsung/client/DMApp;->instId:I
+    :try_end_e9
+    .catch Ljava/lang/Exception; {:try_start_d8 .. :try_end_e9} :catch_fb
+
+    .line 1922
+    :goto_e9
+    const/4 v0, 0x0
+
+    :try_start_ea
+    invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
+
+    goto/16 :goto_47
+
+    .line 1907
+    :cond_ef
+    iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
+
+    check-cast v0, Lcom/samsung/fumo/FirmwareUpdate;
+
+    invoke-virtual {v0}, Lcom/samsung/fumo/FirmwareUpdate;->noUpdateAlert()V
+
+    goto :goto_d8
+
+    .line 1912
+    :cond_f7
+    invoke-virtual {p0}, Lcom/samsung/client/DMApp;->clearActivity()V
+
+    goto :goto_d8
+
+    .line 1919
+    :catch_fb
+    move-exception v0
+
+    .line 1920
+    const-string v1, "DMApp"
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_105
+    .catch Ljava/lang/Exception; {:try_start_ea .. :try_end_105} :catch_8d
+
+    goto :goto_e9
+
+    .line 1929
+    :cond_106
+    :try_start_106
     const-string v0, "DMApp"
 
     const-string v1, "FUMOshutdownDMSession()"
@@ -4643,36 +4708,30 @@
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->instId:I
-    :try_end_e9
-    .catch Ljava/lang/Exception; {:try_start_d8 .. :try_end_e9} :catch_fb
+    :try_end_117
+    .catch Ljava/lang/Exception; {:try_start_106 .. :try_end_117} :catch_125
 
     .line 1936
-    :goto_e9
+    :goto_117
     const/4 v0, 0x0
 
-    :try_start_ea
+    :try_start_118
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    goto/16 :goto_47
+    .line 1938
+    iget-boolean v0, p0, Lcom/samsung/client/DMApp;->userCancel:Z
 
-    .line 1921
-    :cond_ef
-    iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
+    if-eqz v0, :cond_130
 
-    check-cast v0, Lcom/samsung/fumo/FirmwareUpdate;
+    .line 1939
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, Lcom/samsung/fumo/FirmwareUpdate;->noUpdateAlert()V
+    invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->updateCompleted(Z)V
 
-    goto :goto_d8
-
-    .line 1926
-    :cond_f7
-    invoke-virtual {p0}, Lcom/samsung/client/DMApp;->clearActivity()V
-
-    goto :goto_d8
+    goto/16 :goto_64
 
     .line 1933
-    :catch_fb
+    :catch_125
     move-exception v0
 
     .line 1934
@@ -4683,69 +4742,10 @@
     move-result-object v2
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_105
-    .catch Ljava/lang/Exception; {:try_start_ea .. :try_end_105} :catch_8d
-
-    goto :goto_e9
-
-    .line 1943
-    :cond_106
-    :try_start_106
-    const-string v0, "DMApp"
-
-    const-string v1, "FUMOshutdownDMSession()"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1945
-    sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
-
-    iget v1, p0, Lcom/samsung/client/DMApp;->instId:I
-
-    invoke-interface {v0, v1}, Lcom/samsung/client/ISyncmlService;->shutdownDMSession(I)I
-
-    .line 1946
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/samsung/client/DMApp;->instId:I
-    :try_end_117
-    .catch Ljava/lang/Exception; {:try_start_106 .. :try_end_117} :catch_125
-
-    .line 1950
-    :goto_117
-    const/4 v0, 0x0
-
-    :try_start_118
-    invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
-
-    .line 1952
-    iget-boolean v0, p0, Lcom/samsung/client/DMApp;->userCancel:Z
-
-    if-eqz v0, :cond_130
-
-    .line 1953
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->updateCompleted(Z)V
-
-    goto/16 :goto_64
-
-    .line 1947
-    :catch_125
-    move-exception v0
-
-    .line 1948
-    const-string v1, "DMApp"
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_117
 
-    .line 1954
+    .line 1940
     :cond_130
     sget v0, Lcom/samsung/client/DMApp;->niaRetries:I
 
@@ -4753,19 +4753,19 @@
 
     if-lt v0, v1, :cond_64
 
-    .line 1956
+    .line 1942
     sget-boolean v0, Lcom/samsung/client/DMApp;->isForeground:Z
 
     if-eqz v0, :cond_14a
 
-    .line 1957
+    .line 1943
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     instance-of v0, v0, Lcom/samsung/fumo/FirmwareUpdate;
 
     if-eqz v0, :cond_64
 
-    .line 1958
+    .line 1944
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v0, Lcom/samsung/fumo/FirmwareUpdate;
@@ -4776,7 +4776,7 @@
 
     goto/16 :goto_64
 
-    .line 1963
+    .line 1949
     :cond_14a
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->clearActivity()V
     :try_end_14d
@@ -4793,32 +4793,32 @@
 
     const/4 v3, 0x1
 
-    .line 1832
+    .line 1818
     const-string v0, "DMApp"
 
     const-string v1, "niprlProgress()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1835
+    .line 1821
     const/4 v0, 0x0
 
     :try_start_a
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    .line 1837
+    .line 1823
     iget v0, p0, Lcom/samsung/client/DMApp;->errCode:I
 
     if-nez v0, :cond_c4
 
-    .line 1839
+    .line 1825
     iget v0, p0, Lcom/samsung/client/DMApp;->sessUpdate:I
 
     and-int/lit16 v0, v0, 0xff
 
     int-to-byte v0, v0
 
-    .line 1840
+    .line 1826
     const/4 v1, 0x3
 
     invoke-direct {p0, v1, v0}, Lcom/samsung/client/DMApp;->checkSet(IB)I
@@ -4827,7 +4827,7 @@
 
     iput v1, p0, Lcom/samsung/client/DMApp;->prlUpdated:I
 
-    .line 1841
+    .line 1827
     const/4 v1, 0x5
 
     invoke-direct {p0, v1, v0}, Lcom/samsung/client/DMApp;->checkSet(IB)I
@@ -4836,7 +4836,7 @@
 
     iput v0, p0, Lcom/samsung/client/DMApp;->bc10bc14changed:I
 
-    .line 1842
+    .line 1828
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4861,7 +4861,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1843
+    .line 1829
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4886,12 +4886,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1845
+    .line 1831
     sget-boolean v0, Lcom/samsung/client/DMApp;->isForeground:Z
 
     if-eqz v0, :cond_a5
 
-    .line 1849
+    .line 1835
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/samsung/client/DMApp;->mHandler:Landroid/os/Handler;
@@ -4908,7 +4908,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1860
+    .line 1846
     :cond_6a
     :goto_6a
     const-string v0, "DMApp"
@@ -4935,12 +4935,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1862
+    .line 1848
     const/4 v0, 0x0
 
     sput v0, Lcom/samsung/client/DMApp;->niaRetries:I
 
-    .line 1882
+    .line 1868
     :cond_87
     :goto_87
     const-string v0, "DMApp"
@@ -4967,25 +4967,25 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1883
+    .line 1869
     const/4 v0, 0x0
 
     sput v0, Lcom/samsung/client/DMApp;->niaRetries:I
 
-    .line 1887
+    .line 1873
     :goto_a4
     return-void
 
-    .line 1852
+    .line 1838
     :cond_a5
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->clearActivity()V
 
-    .line 1853
+    .line 1839
     iget v0, p0, Lcom/samsung/client/DMApp;->bc10bc14changed:I
 
     if-ne v0, v3, :cond_bc
 
-    .line 1854
+    .line 1840
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->handleBC10BC14Changed(Z)V
@@ -4994,11 +4994,11 @@
 
     goto :goto_6a
 
-    .line 1884
+    .line 1870
     :catch_b1
     move-exception v0
 
-    .line 1885
+    .line 1871
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -5009,19 +5009,19 @@
 
     goto :goto_a4
 
-    .line 1855
+    .line 1841
     :cond_bc
     :try_start_bc
     iget v0, p0, Lcom/samsung/client/DMApp;->prlUpdated:I
 
     if-ne v0, v3, :cond_6a
 
-    .line 1856
+    .line 1842
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->resetRadio()V
 
     goto :goto_6a
 
-    .line 1864
+    .line 1850
     :cond_c4
     iget v0, p0, Lcom/samsung/client/DMApp;->errCode:I
 
@@ -5041,18 +5041,18 @@
 
     if-ne v0, v1, :cond_106
 
-    .line 1865
+    .line 1851
     :cond_d3
     sget v0, Lcom/samsung/client/DMApp;->niaRetries:I
 
     if-lt v0, v2, :cond_87
 
-    .line 1866
+    .line 1852
     sget-boolean v0, Lcom/samsung/client/DMApp;->isForeground:Z
 
     if-eqz v0, :cond_102
 
-    .line 1867
+    .line 1853
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v0, Lcom/samsung/prlupdate/PRLUpdate;
@@ -5061,7 +5061,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/prlupdate/PRLUpdate;->gotoFailure(I)V
 
-    .line 1871
+    .line 1857
     :goto_e4
     const-string v0, "DMApp"
 
@@ -5087,26 +5087,26 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1872
+    .line 1858
     const/4 v0, 0x0
 
     sput v0, Lcom/samsung/client/DMApp;->niaRetries:I
 
     goto :goto_87
 
-    .line 1869
+    .line 1855
     :cond_102
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->clearActivity()V
 
     goto :goto_e4
 
-    .line 1875
+    .line 1861
     :cond_106
     sget-boolean v0, Lcom/samsung/client/DMApp;->isForeground:Z
 
     if-eqz v0, :cond_115
 
-    .line 1876
+    .line 1862
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v0, Lcom/samsung/prlupdate/PRLUpdate;
@@ -5117,7 +5117,7 @@
 
     goto/16 :goto_87
 
-    .line 1878
+    .line 1864
     :cond_115
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->clearActivity()V
     :try_end_118
@@ -5132,27 +5132,27 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1005
+    .line 1004
     const-string v0, "DMApp"
 
     const-string v1, "prlProgress()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1007
+    .line 1006
     :try_start_8
     iget v0, p0, Lcom/samsung/client/DMApp;->errCode:I
 
     if-nez v0, :cond_4b
 
-    .line 1008
+    .line 1007
     iget v0, p0, Lcom/samsung/client/DMApp;->sessUpdate:I
 
     and-int/lit16 v0, v0, 0xff
 
     int-to-byte v0, v0
 
-    .line 1009
+    .line 1008
     const/4 v1, 0x3
 
     invoke-direct {p0, v1, v0}, Lcom/samsung/client/DMApp;->checkSet(IB)I
@@ -5161,7 +5161,7 @@
 
     iput v0, p0, Lcom/samsung/client/DMApp;->prlUpdated:I
 
-    .line 1010
+    .line 1009
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5186,7 +5186,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1011
+    .line 1010
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/samsung/client/DMApp;->mHandler:Landroid/os/Handler;
@@ -5203,7 +5203,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1021
+    .line 1020
     :cond_40
     :goto_40
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->isHfaInitiated()Z
@@ -5212,23 +5212,23 @@
 
     if-nez v0, :cond_4a
 
-    .line 1022
+    .line 1021
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    .line 1028
+    .line 1027
     :cond_4a
     :goto_4a
     return-void
 
-    .line 1013
+    .line 1012
     :cond_4b
     iget-boolean v0, p0, Lcom/samsung/client/DMApp;->userCancel:Z
 
     if-nez v0, :cond_40
 
-    .line 1016
+    .line 1015
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v0, Lcom/samsung/prlupdate/PRLUpdate;
@@ -5241,11 +5241,11 @@
 
     goto :goto_40
 
-    .line 1024
+    .line 1023
     :catch_59
     move-exception v0
 
-    .line 1025
+    .line 1024
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -5254,7 +5254,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1026
+    .line 1025
     invoke-virtual {p0, v5}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
     goto :goto_4a
@@ -5264,12 +5264,12 @@
     .registers 4
 
     .prologue
-    .line 2626
+    .line 2612
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     if-nez v0, :cond_15
 
-    .line 2627
+    .line 2613
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/samsung/client/ISyncmlService;
@@ -5286,7 +5286,7 @@
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/samsung/client/DMApp;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
 
-    .line 2631
+    .line 2617
     :cond_15
     return-void
 .end method
@@ -5299,7 +5299,7 @@
     .prologue
     const-wide/16 v4, -0x1
 
-    .line 2343
+    .line 2329
     const-string v0, "alarm"
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -5308,7 +5308,7 @@
 
     check-cast v0, Landroid/app/AlarmManager;
 
-    .line 2345
+    .line 2331
     sget-object v1, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
 
     const/4 v2, 0x0
@@ -5319,13 +5319,13 @@
 
     move-result-object v1
 
-    .line 2348
+    .line 2334
     invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
-    .line 2350
+    .line 2336
     invoke-virtual {p0, p2, v4, v5}, Lcom/samsung/client/DMApp;->writeToPreferences(Ljava/lang/String;J)V
 
-    .line 2351
+    .line 2337
     const-string v0, "prl_interval"
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -5334,17 +5334,17 @@
 
     if-eqz v0, :cond_27
 
-    .line 2352
+    .line 2338
     const-string v0, "prl_next_time"
 
     invoke-virtual {p0, v0, v4, v5}, Lcom/samsung/client/DMApp;->writeToPreferences(Ljava/lang/String;J)V
 
-    .line 2357
+    .line 2343
     :cond_26
     :goto_26
     return-void
 
-    .line 2353
+    .line 2339
     :cond_27
     const-string v0, "fumo_interval"
 
@@ -5354,7 +5354,7 @@
 
     if-eqz v0, :cond_26
 
-    .line 2354
+    .line 2340
     const-string v0, "fumo_next_time"
 
     invoke-virtual {p0, v0, v4, v5}, Lcom/samsung/client/DMApp;->writeToPreferences(Ljava/lang/String;J)V
@@ -5368,43 +5368,43 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1998
+    .line 1984
     const-string v0, "DMApp"
 
     const-string v1, "removeSanMessage()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2000
+    .line 1986
     invoke-static {p0}, Lcom/samsung/client/SANStorage;->remove_san_msg(Landroid/content/Context;)V
 
-    .line 2001
+    .line 1987
     sput v2, Lcom/samsung/client/DMApp;->niaRetries:I
 
-    .line 2002
+    .line 1988
     sput-boolean v2, Lcom/samsung/client/DMApp;->mNIAProgress:Z
 
-    .line 2003
+    .line 1989
     const-string v0, "DMApp"
 
     const-string v1, "Start SAN service"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2006
+    .line 1992
     sget v0, Lcom/samsung/client/DMApp;->mSessionType:I
 
     const/4 v1, 0x2
 
     if-eq v0, v1, :cond_21
 
-    .line 2007
+    .line 1993
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->releaseWakeLock()V
 
-    .line 2008
+    .line 1994
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->enableKeyGuard()V
 
-    .line 2011
+    .line 1997
     :cond_21
     new-instance v0, Landroid/content/Intent;
 
@@ -5414,7 +5414,7 @@
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 2012
+    .line 1998
     return-void
 .end method
 
@@ -5424,14 +5424,14 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 1376
+    .line 1375
     const-string v0, "DMApp"
 
     const-string v1, "removeStatus()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1380
+    .line 1379
     :try_start_8
     iget-boolean v0, p0, Lcom/samsung/client/DMApp;->userCancel:Z
 
@@ -5447,7 +5447,7 @@
 
     if-eq v0, v1, :cond_3d
 
-    .line 1381
+    .line 1380
     :cond_16
     const-string v0, "DMApp"
 
@@ -5455,21 +5455,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1382
+    .line 1381
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     instance-of v0, v0, Lcom/samsung/fumo/SendStatus;
 
     if-eqz v0, :cond_2a
 
-    .line 1383
+    .line 1382
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v0, Lcom/samsung/fumo/SendStatus;
 
     invoke-virtual {v0}, Lcom/samsung/fumo/SendStatus;->removeUpdateStatus()V
 
-    .line 1386
+    .line 1385
     :cond_2a
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
@@ -5477,26 +5477,26 @@
 
     invoke-interface {v0, v1}, Lcom/samsung/client/ISyncmlService;->shutdownDMSession(I)I
 
-    .line 1387
+    .line 1386
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->instId:I
 
-    .line 1389
+    .line 1388
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    .line 1392
+    .line 1391
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->updateCompleted(Z)V
 
-    .line 1439
+    .line 1438
     :goto_3c
     return-void
 
-    .line 1395
+    .line 1394
     :cond_3d
     iget v0, p0, Lcom/samsung/client/DMApp;->sessUpdate:I
 
@@ -5504,14 +5504,14 @@
 
     int-to-byte v0, v0
 
-    .line 1396
+    .line 1395
     const/4 v1, 0x4
 
     invoke-direct {p0, v1, v0}, Lcom/samsung/client/DMApp;->checkSet(IB)I
 
     move-result v1
 
-    .line 1397
+    .line 1396
     const-string v0, "DMApp"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -5534,21 +5534,21 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1398
+    .line 1397
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     instance-of v0, v0, Lcom/samsung/fumo/SendStatus;
 
     if-eqz v0, :cond_6c
 
-    .line 1399
+    .line 1398
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v0, Lcom/samsung/fumo/SendStatus;
 
     invoke-virtual {v0}, Lcom/samsung/fumo/SendStatus;->removeUpdateStatus()V
 
-    .line 1401
+    .line 1400
     :cond_6c
     if-ne v1, v4, :cond_b4
 
@@ -5556,73 +5556,73 @@
 
     if-eqz v0, :cond_b4
 
-    .line 1402
+    .line 1401
     const-string v0, "DMApp"
 
     const-string v1, "removeStatus() fumoRun() "
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1404
+    .line 1403
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     iget-object v1, p0, Lcom/samsung/client/DMApp;->mCallback:Lcom/samsung/client/ISyncmlServiceDMCallback;
 
     invoke-interface {v0, v1}, Lcom/samsung/client/ISyncmlService;->registerDMCallback(Lcom/samsung/client/ISyncmlServiceDMCallback;)V
 
-    .line 1405
+    .line 1404
     iget-object v0, p0, Lcom/samsung/client/DMApp;->fumoRunTimer:Landroid/os/CountDownTimer;
 
     invoke-virtual {v0}, Landroid/os/CountDownTimer;->start()Landroid/os/CountDownTimer;
 
-    .line 1407
+    .line 1406
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->replace:Z
 
-    .line 1409
+    .line 1408
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.samsung.intent.START_CIFUMO"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1410
+    .line 1409
     const-string v1, "android.intent.category.DEFAULT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 1411
+    .line 1410
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1412
+    .line 1411
     const/high16 v1, 0x80
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1414
+    .line 1413
     const-string v1, "firmware_download_started"
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 1415
+    .line 1414
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->startActivity(Landroid/content/Intent;)V
     :try_end_a8
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_a8} :catch_a9
 
     goto :goto_3c
 
-    .line 1436
+    .line 1435
     :catch_a9
     move-exception v0
 
-    .line 1437
+    .line 1436
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -5633,7 +5633,7 @@
 
     goto :goto_3c
 
-    .line 1417
+    .line 1416
     :cond_b4
     :try_start_b4
     const-string v0, "DMApp"
@@ -5642,38 +5642,38 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1418
+    .line 1417
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     iget v1, p0, Lcom/samsung/client/DMApp;->instId:I
 
     invoke-interface {v0, v1}, Lcom/samsung/client/ISyncmlService;->shutdownDMSession(I)I
 
-    .line 1419
+    .line 1418
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->instId:I
 
-    .line 1421
+    .line 1420
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->startFumoNoSlotChange()Z
 
     move-result v0
 
     if-nez v0, :cond_d5
 
-    .line 1422
+    .line 1421
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    .line 1425
+    .line 1424
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->updateCompleted(Z)V
 
     goto/16 :goto_3c
 
-    .line 1427
+    .line 1426
     :cond_d5
     new-instance v0, Landroid/content/Intent;
 
@@ -5681,24 +5681,24 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1428
+    .line 1427
     const-string v1, "android.intent.category.DEFAULT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 1429
+    .line 1428
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1430
+    .line 1429
     const/high16 v1, 0x80
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1432
+    .line 1431
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->startActivity(Landroid/content/Intent;)V
     :try_end_ef
     .catch Ljava/lang/Exception; {:try_start_b4 .. :try_end_ef} :catch_a9
@@ -5717,8 +5717,8 @@
 
     const/4 v5, 0x1
 
-    .line 2052
-    .line 2055
+    .line 2038
+    .line 2041
     const-string v0, "wifi"
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -5727,7 +5727,7 @@
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    .line 2056
+    .line 2042
     const-string v1, "DMApp"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -5750,16 +5750,16 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2059
+    .line 2045
     if-eqz v0, :cond_7a
 
-    .line 2061
+    .line 2047
     :try_start_25
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getWifiState()I
 
     move-result v1
 
-    .line 2062
+    .line 2048
     const-string v2, "DMApp"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -5782,19 +5782,19 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2064
+    .line 2050
     if-ne p1, v5, :cond_64
 
     if-eq v1, v7, :cond_64
 
     if-eq v1, v6, :cond_64
 
-    .line 2066
+    .line 2052
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
 
-    .line 2076
+    .line 2062
     :cond_4b
     :goto_4b
     const-string v0, "DMApp"
@@ -5819,11 +5819,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2081
+    .line 2067
     :goto_63
     return-void
 
-    .line 2067
+    .line 2053
     :cond_64
     if-nez p1, :cond_4b
 
@@ -5831,7 +5831,7 @@
 
     if-ne v1, v6, :cond_4b
 
-    .line 2069
+    .line 2055
     :cond_6a
     const/4 v1, 0x0
 
@@ -5841,11 +5841,11 @@
 
     goto :goto_4b
 
-    .line 2077
+    .line 2063
     :catch_6f
     move-exception v0
 
-    .line 2078
+    .line 2064
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -5856,7 +5856,7 @@
 
     goto :goto_63
 
-    .line 2074
+    .line 2060
     :cond_7a
     :try_start_7a
     const-string v0, "DMApp"
@@ -5899,7 +5899,7 @@
 
     const/4 v3, 0x1
 
-    .line 1627
+    .line 1626
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5924,7 +5924,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1630
+    .line 1629
     :try_start_20
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
@@ -5934,24 +5934,24 @@
     :try_end_27
     .catch Landroid/os/RemoteException; {:try_start_20 .. :try_end_27} :catch_6a
 
-    .line 1636
+    .line 1635
     :goto_27
     sput v4, Lcom/samsung/client/DMApp;->mSessionType:I
 
-    .line 1638
+    .line 1637
     iget v0, p1, Lcom/samsung/client/TslcmnSan$TslSanMsg;->uiMode:I
 
     if-ne v0, v3, :cond_75
 
-    .line 1640
+    .line 1639
     sput-boolean v4, Lcom/samsung/client/DMApp;->isForeground:Z
 
-    .line 1648
+    .line 1645
     const/4 v0, 0x4
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->setSessionType(I)V
 
-    .line 1649
+    .line 1646
     new-instance v0, Landroid/content/Intent;
 
     sget-object v1, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
@@ -5960,45 +5960,45 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1650
+    .line 1647
     invoke-virtual {v0, v6}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1651
+    .line 1648
     invoke-virtual {v0, v5}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1653
+    .line 1650
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->startActivity(Landroid/content/Intent;)V
 
-    .line 1682
+    .line 1668
     :cond_45
     :goto_45
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->acquireWakeLock()V
 
-    .line 1683
+    .line 1669
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->disableKeyGuard()V
 
-    .line 1685
+    .line 1671
     sput-boolean v3, Lcom/samsung/client/DMApp;->mNIAProgress:Z
 
-    .line 1686
+    .line 1672
     sput v3, Lcom/samsung/client/DMApp;->niaRetries:I
 
-    .line 1688
+    .line 1674
     iput-object p1, p0, Lcom/samsung/client/DMApp;->mSan:Lcom/samsung/client/TslcmnSan$TslSanMsg;
 
-    .line 1690
+    .line 1676
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->storeSlot()I
 
     move-result v0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->slot:I
 
-    .line 1691
+    .line 1677
     const/16 v0, 0x65
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    .line 1694
+    .line 1680
     sget-object v0, Lcom/samsung/client/SanService;->mSanWl:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
@@ -6007,20 +6007,20 @@
 
     if-eqz v0, :cond_69
 
-    .line 1695
+    .line 1681
     sget-object v0, Lcom/samsung/client/SanService;->mSanWl:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 1697
+    .line 1683
     :cond_69
     return-void
 
-    .line 1631
+    .line 1630
     :catch_6a
     move-exception v0
 
-    .line 1632
+    .line 1631
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Landroid/os/RemoteException;->getMessage()Ljava/lang/String;
@@ -6031,7 +6031,7 @@
 
     goto :goto_27
 
-    .line 1655
+    .line 1652
     :cond_75
     iget v0, p1, Lcom/samsung/client/TslcmnSan$TslSanMsg;->uiMode:I
 
@@ -6049,11 +6049,11 @@
 
     if-ne v0, v1, :cond_45
 
-    .line 1659
+    .line 1656
     :cond_83
     sput-boolean v3, Lcom/samsung/client/DMApp;->isForeground:Z
 
-    .line 1675
+    .line 1661
     new-instance v0, Landroid/content/Intent;
 
     sget-object v1, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
@@ -6062,13 +6062,13 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1676
+    .line 1662
     invoke-virtual {v0, v6}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1677
+    .line 1663
     invoke-virtual {v0, v5}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1679
+    .line 1665
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_45
@@ -6078,25 +6078,25 @@
     .registers 5
 
     .prologue
-    .line 2092
+    .line 2078
     const-string v0, "DMApp"
 
     const-string v1, "!!!storeSlot !!!!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2093
+    .line 2079
     const/4 v0, -0x1
 
-    .line 2094
+    .line 2080
     new-instance v1, Lcom/sprint/internal/ConnectionManager;
 
     invoke-direct {v1, p0}, Lcom/sprint/internal/ConnectionManager;-><init>(Landroid/content/Context;)V
 
-    .line 2096
+    .line 2082
     if-eqz v1, :cond_13
 
-    .line 2098
+    .line 2084
     :try_start_f
     invoke-virtual {v1}, Lcom/sprint/internal/ConnectionManager;->getDataProfile()I
     :try_end_12
@@ -6104,7 +6104,7 @@
 
     move-result v0
 
-    .line 2103
+    .line 2089
     :cond_13
     :goto_13
     const-string v1, "DMApp"
@@ -6129,14 +6129,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2104
+    .line 2090
     return v0
 
-    .line 2100
+    .line 2086
     :catch_2c
     move-exception v1
 
-    .line 2101
+    .line 2087
     const-string v2, "DMApp"
 
     invoke-virtual {v1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -6154,7 +6154,7 @@
     .registers 2
 
     .prologue
-    .line 3145
+    .line 3131
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->isHfaInitiated()Z
 
     move-result v0
@@ -6167,7 +6167,7 @@
     .parameter "value"
 
     .prologue
-    .line 327
+    .line 326
     const-string v2, "DMApp"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -6190,7 +6190,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 328
+    .line 327
     const-string v2, "DMAPP_STATE"
 
     const/4 v3, 0x3
@@ -6199,13 +6199,13 @@
 
     move-result-object v1
 
-    .line 330
+    .line 329
     .local v1, sp:Landroid/content/SharedPreferences;
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 331
+    .line 330
     .local v0, editor:Landroid/content/SharedPreferences$Editor;
     const-string v2, "DM_WIMAX_DISABLE"
 
@@ -6215,10 +6215,10 @@
 
     invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 332
+    .line 331
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 333
+    .line 332
     return-void
 .end method
 
@@ -6226,7 +6226,7 @@
     .registers 4
 
     .prologue
-    .line 2612
+    .line 2598
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6255,7 +6255,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2613
+    .line 2599
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
@@ -6264,12 +6264,12 @@
 
     if-nez v0, :cond_2b
 
-    .line 2614
+    .line 2600
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 2616
+    .line 2602
     :cond_2b
     return-void
 .end method
@@ -6279,20 +6279,20 @@
     .parameter
 
     .prologue
-    .line 1700
+    .line 1686
     const-string v0, "DMApp"
 
     const-string v1, "bringUItoForeground()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1702
+    .line 1688
     iput-object p1, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
-    .line 1703
+    .line 1689
     invoke-virtual {p1}, Landroid/app/Activity;->finish()V
 
-    .line 1705
+    .line 1691
     sget v0, Lcom/samsung/client/DMApp;->niaRetries:I
 
     const/4 v1, 0x5
@@ -6303,18 +6303,18 @@
 
     if-eqz v0, :cond_1d
 
-    .line 1706
+    .line 1692
     :cond_15
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/samsung/client/DMApp;->isForeground:Z
 
-    .line 1708
+    .line 1694
     iget-object v0, p0, Lcom/samsung/client/DMApp;->delayedBgNiaSession:Landroid/os/CountDownTimer;
 
     invoke-virtual {v0}, Landroid/os/CountDownTimer;->start()Landroid/os/CountDownTimer;
 
-    .line 1710
+    .line 1696
     :cond_1d
     return-void
 .end method
@@ -6327,7 +6327,7 @@
 
     const/4 v3, 0x1
 
-    .line 1268
+    .line 1267
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6352,12 +6352,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1270
+    .line 1269
     iget-boolean v0, p0, Lcom/samsung/client/DMApp;->downloadInProgress:Z
 
     if-nez v0, :cond_78
 
-    .line 1273
+    .line 1272
     :try_start_20
     const-string v0, "DMApp"
 
@@ -6365,14 +6365,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1274
+    .line 1273
     iget-object v0, p0, Lcom/samsung/client/DMApp;->fumoRunTimer:Landroid/os/CountDownTimer;
 
     invoke-virtual {v0}, Landroid/os/CountDownTimer;->cancel()V
     :try_end_2c
     .catch Ljava/lang/Exception; {:try_start_20 .. :try_end_2c} :catch_62
 
-    .line 1279
+    .line 1278
     :goto_2c
     :try_start_2c
     const-string v0, "DMApp"
@@ -6381,14 +6381,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1280
+    .line 1279
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     invoke-interface {v0}, Lcom/samsung/client/ISyncmlService;->fumoAbort()V
     :try_end_38
     .catch Ljava/lang/Exception; {:try_start_2c .. :try_end_38} :catch_6d
 
-    .line 1285
+    .line 1284
     :goto_38
     const-string v0, "DMApp"
 
@@ -6396,54 +6396,54 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1286
+    .line 1285
     invoke-virtual {p0, v4}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    .line 1298
+    .line 1297
     :goto_42
     iput-boolean v3, p0, Lcom/samsung/client/DMApp;->userCancelDld:Z
 
-    .line 1299
+    .line 1298
     iput-boolean v4, p0, Lcom/samsung/client/DMApp;->downloadInProgress:Z
 
-    .line 1301
+    .line 1300
     sget-boolean v0, Lcom/samsung/client/DMApp;->mAirModeState:Z
 
     if-nez v0, :cond_61
 
-    .line 1303
+    .line 1302
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.samsung.intent.SEND_STATUS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1304
+    .line 1303
     const-string v1, "android.intent.category.DEFAULT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 1306
+    .line 1305
     const-string v1, "cancel_dld_status"
 
     invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1308
+    .line 1307
     iget-object v1, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 1312
+    .line 1311
     :cond_61
     return-void
 
-    .line 1275
+    .line 1274
     :catch_62
     move-exception v0
 
-    .line 1276
+    .line 1275
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -6454,11 +6454,11 @@
 
     goto :goto_2c
 
-    .line 1281
+    .line 1280
     :catch_6d
     move-exception v0
 
-    .line 1282
+    .line 1281
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -6469,14 +6469,14 @@
 
     goto :goto_38
 
-    .line 1290
+    .line 1289
     :cond_78
     :try_start_78
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     if-eqz v0, :cond_82
 
-    .line 1291
+    .line 1290
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     const/4 v1, 0x1
@@ -6485,18 +6485,18 @@
     :try_end_82
     .catch Landroid/os/RemoteException; {:try_start_78 .. :try_end_82} :catch_85
 
-    .line 1296
+    .line 1295
     :cond_82
     :goto_82
     sput-boolean v3, Lcom/samsung/client/DMApp;->cancelling:Z
 
     goto :goto_42
 
-    .line 1293
+    .line 1292
     :catch_85
     move-exception v0
 
-    .line 1294
+    .line 1293
     invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto :goto_82
@@ -6506,24 +6506,24 @@
     .registers 3
 
     .prologue
-    .line 2041
+    .line 2027
     const-string v0, "DMApp"
 
     const-string v1, "cancelUpdate !!!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2042
+    .line 2028
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->fumoUserStart:Z
 
-    .line 2043
+    .line 2029
     iget-object v0, p0, Lcom/samsung/client/DMApp;->cancelUpdateSessionTimer:Landroid/os/CountDownTimer;
 
     invoke-virtual {v0}, Landroid/os/CountDownTimer;->start()Landroid/os/CountDownTimer;
 
-    .line 2044
+    .line 2030
     return-void
 .end method
 
@@ -6533,7 +6533,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 2635
+    .line 2621
     :try_start_1
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -6545,7 +6545,7 @@
 
     move-result v1
 
-    .line 2637
+    .line 2623
     const-string v2, "DMApp"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -6570,18 +6570,18 @@
     :try_end_23
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_1 .. :try_end_23} :catch_26
 
-    .line 2638
+    .line 2624
     if-ne v1, v0, :cond_30
 
-    .line 2645
+    .line 2631
     :goto_25
     return v0
 
-    .line 2641
+    .line 2627
     :catch_26
     move-exception v0
 
-    .line 2642
+    .line 2628
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Landroid/provider/Settings$SettingNotFoundException;->getMessage()Ljava/lang/String;
@@ -6590,7 +6590,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2645
+    .line 2631
     :cond_30
     const/4 v0, 0x0
 
@@ -6601,7 +6601,7 @@
     .registers 2
 
     .prologue
-    .line 2660
+    .line 2646
     const/4 v0, 0x0
 
     return v0
@@ -6615,7 +6615,7 @@
 
     const/4 v1, 0x0
 
-    .line 2173
+    .line 2159
     const/4 v2, 0x3
 
     sget v3, Lcom/samsung/client/DMApp;->mPhoneState:I
@@ -6626,21 +6626,21 @@
 
     if-ne v0, v2, :cond_28
 
-    .line 2176
+    .line 2162
     :cond_b
     const/4 v2, 0x7
 
     iput v2, p0, Lcom/samsung/client/DMApp;->sessStatus:I
 
-    .line 2177
+    .line 2163
     const/4 v2, -0x2
 
     iput v2, p0, Lcom/samsung/client/DMApp;->errCode:I
 
-    .line 2178
+    .line 2164
     iput v1, p0, Lcom/samsung/client/DMApp;->sessUpdate:I
 
-    .line 2179
+    .line 2165
     iget-object v2, p0, Lcom/samsung/client/DMApp;->mHandler:Landroid/os/Handler;
 
     iget-object v3, p0, Lcom/samsung/client/DMApp;->mHandler:Landroid/os/Handler;
@@ -6653,7 +6653,7 @@
 
     invoke-virtual {v2, v0, v3, v4}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 2181
+    .line 2167
     const-string v0, "DMApp"
 
     const-string v2, "RADIO NOT AVAILABLE"
@@ -6662,7 +6662,7 @@
 
     move v0, v1
 
-    .line 2185
+    .line 2171
     :cond_28
     return v0
 .end method
@@ -6676,7 +6676,7 @@
 
     const/4 v3, 0x0
 
-    .line 2755
+    .line 2741
     const-string v0, "activity"
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -6685,19 +6685,19 @@
 
     check-cast v0, Landroid/app/ActivityManager;
 
-    .line 2756
+    .line 2742
     invoke-virtual {v0, v4}, Landroid/app/ActivityManager;->getRunningTasks(I)Ljava/util/List;
 
     move-result-object v0
 
-    .line 2758
+    .line 2744
     invoke-interface {v0, v3}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/app/ActivityManager$RunningTaskInfo;
 
-    .line 2759
+    .line 2745
     const-string v1, "DMApp"
 
     iget-object v2, v0, Landroid/app/ActivityManager$RunningTaskInfo;->topActivity:Landroid/content/ComponentName;
@@ -6708,7 +6708,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2760
+    .line 2746
     const-string v1, "DMApp"
 
     iget-object v2, v0, Landroid/app/ActivityManager$RunningTaskInfo;->topActivity:Landroid/content/ComponentName;
@@ -6719,20 +6719,20 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2762
+    .line 2748
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v5
 
     move v2, v3
 
-    .line 2764
+    .line 2750
     :goto_2f
     array-length v1, p1
 
     if-ge v2, v1, :cond_62
 
-    .line 2765
+    .line 2751
     aget-object v1, p1, v2
 
     const/high16 v6, 0x1
@@ -6741,12 +6741,12 @@
 
     move-result-object v1
 
-    .line 2767
+    .line 2753
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
 
-    .line 2768
+    .line 2754
     :goto_3e
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
@@ -6754,7 +6754,7 @@
 
     if-eqz v1, :cond_72
 
-    .line 2769
+    .line 2755
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
@@ -6763,7 +6763,7 @@
 
     iget-object v1, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    .line 2770
+    .line 2756
     iget-object v7, v1, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
     iget-object v8, v0, Landroid/app/ActivityManager$RunningTaskInfo;->topActivity:Landroid/content/ComponentName;
@@ -6778,7 +6778,7 @@
 
     if-eqz v7, :cond_63
 
-    .line 2771
+    .line 2757
     const-string v0, "DMApp"
 
     const-string v1, "HOME SCREEN"
@@ -6787,11 +6787,11 @@
 
     move v3, v4
 
-    .line 2779
+    .line 2765
     :cond_62
     return v3
 
-    .line 2774
+    .line 2760
     :cond_63
     const-string v7, "DMApp"
 
@@ -6799,7 +6799,7 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2775
+    .line 2761
     const-string v7, "DMApp"
 
     iget-object v1, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
@@ -6808,7 +6808,7 @@
 
     goto :goto_3e
 
-    .line 2764
+    .line 2750
     :cond_72
     add-int/lit8 v1, v2, 0x1
 
@@ -6821,7 +6821,7 @@
     .registers 4
 
     .prologue
-    .line 1976
+    .line 1962
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6846,16 +6846,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1978
+    .line 1964
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     if-nez v0, :cond_1f
 
-    .line 1995
+    .line 1981
     :goto_1e
     return-void
 
-    .line 1982
+    .line 1968
     :cond_1f
     const/4 v0, 0x0
 
@@ -6864,56 +6864,56 @@
 
     if-ge v0, v1, :cond_2b
 
-    .line 1983
+    .line 1969
     iget-object v1, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->removeDialog(I)V
 
-    .line 1982
+    .line 1968
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_20
 
-    .line 1985
+    .line 1971
     :cond_2b
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 1986
+    .line 1972
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.MAIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1987
+    .line 1973
     const-string v1, "android.intent.category.HOME"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1988
+    .line 1974
     const-string v1, "android.intent.category.DEFAULT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1989
+    .line 1975
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1990
+    .line 1976
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/samsung/client/DMApp;->homeLaunchedByApp:Z
 
-    .line 1991
+    .line 1977
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->startActivity(Landroid/content/Intent;)V
 
-    .line 1993
+    .line 1979
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->enableKeyGuard()V
 
-    .line 1994
+    .line 1980
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->releaseWakeLock()V
 
     goto :goto_1e
@@ -6923,25 +6923,25 @@
     .registers 3
 
     .prologue
-    .line 718
+    .line 717
     const-string v0, "DMApp"
 
     const-string v1, "dcStartSession()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 720
+    .line 719
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->checkRadioState_DisplayError()Z
 
     move-result v0
 
     if-nez v0, :cond_e
 
-    .line 726
+    .line 725
     :goto_d
     return-void
 
-    .line 724
+    .line 723
     :cond_e
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->storeSlot()I
 
@@ -6949,7 +6949,7 @@
 
     iput v0, p0, Lcom/samsung/client/DMApp;->slot:I
 
-    .line 725
+    .line 724
     const/16 v0, 0x65
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
@@ -6961,7 +6961,7 @@
     .registers 4
 
     .prologue
-    .line 2602
+    .line 2588
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6986,29 +6986,29 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2604
+    .line 2590
     iget-boolean v0, p0, Lcom/samsung/client/DMApp;->mKeyguardDisabled:Z
 
     if-nez v0, :cond_2d
 
-    .line 2605
+    .line 2591
     const-string v0, "DMApp"
 
     const-string v1, "disabled KeyGuard."
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2606
+    .line 2592
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mKeyguardLock:Landroid/app/KeyguardManager$KeyguardLock;
 
     invoke-virtual {v0}, Landroid/app/KeyguardManager$KeyguardLock;->disableKeyguard()V
 
-    .line 2607
+    .line 2593
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->mKeyguardDisabled:Z
 
-    .line 2609
+    .line 2595
     :cond_2d
     return-void
 .end method
@@ -7017,7 +7017,7 @@
     .registers 4
 
     .prologue
-    .line 2590
+    .line 2576
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7042,29 +7042,29 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2592
+    .line 2578
     iget-boolean v0, p0, Lcom/samsung/client/DMApp;->mKeyguardDisabled:Z
 
     if-eqz v0, :cond_2d
 
-    .line 2593
+    .line 2579
     const-string v0, "DMApp"
 
     const-string v1, "enabled KeyGuard."
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2594
+    .line 2580
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->mKeyguardDisabled:Z
 
-    .line 2595
+    .line 2581
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mKeyguardLock:Landroid/app/KeyguardManager$KeyguardLock;
 
     invoke-virtual {v0}, Landroid/app/KeyguardManager$KeyguardLock;->reenableKeyguard()V
 
-    .line 2599
+    .line 2585
     :cond_2d
     return-void
 .end method
@@ -7075,22 +7075,22 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 729
+    .line 728
     const-string v2, "DMApp"
 
     const-string v3, "fumoStartSession()"
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 730
+    .line 729
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/samsung/client/DMApp;->fumoUserStart:Z
 
-    .line 731
+    .line 730
     iput-boolean v4, p0, Lcom/samsung/client/DMApp;->replace:Z
 
-    .line 733
+    .line 732
     :try_start_d
     const-string v2, "DMAPP_STATE"
 
@@ -7100,7 +7100,7 @@
 
     move-result-object v1
 
-    .line 735
+    .line 734
     .local v1, sp:Landroid/content/SharedPreferences;
     const-string v2, "UpgradePending"
 
@@ -7112,14 +7112,14 @@
 
     if-eqz v2, :cond_3b
 
-    .line 736
+    .line 735
     const-string v2, "DMApp"
 
     const-string v3, "Upgrade Pending"
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 737
+    .line 736
     const-string v2, "FUMO_DESCRIPTION"
 
     const-string v3, "Firmware Update Package"
@@ -7130,7 +7130,7 @@
 
     invoke-virtual {p0, v2}, Lcom/samsung/client/DMApp;->gotoUpdate(Ljava/lang/String;)V
 
-    .line 764
+    .line 763
     :cond_2f
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->storeSlot()I
 
@@ -7138,18 +7138,18 @@
 
     iput v2, p0, Lcom/samsung/client/DMApp;->slot:I
 
-    .line 765
+    .line 764
     const/16 v2, 0x65
 
     invoke-virtual {p0, v2}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    .line 772
+    .line 771
     .end local v1           #sp:Landroid/content/SharedPreferences;
     :cond_3a
     :goto_3a
     return-void
 
-    .line 740
+    .line 739
     .restart local v1       #sp:Landroid/content/SharedPreferences;
     :cond_3b
     const-wide/16 v2, 0x0
@@ -7166,7 +7166,7 @@
 
     if-eqz v2, :cond_3a
 
-    .line 744
+    .line 743
     sget-object v2, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2}, Lcom/samsung/client/DMApp;->checkDunEnabled()Z
@@ -7175,7 +7175,7 @@
 
     if-nez v2, :cond_3a
 
-    .line 748
+    .line 747
     sget-object v2, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2}, Lcom/samsung/client/DMApp;->checkAirplaneMode()Z
@@ -7184,19 +7184,19 @@
 
     if-nez v2, :cond_3a
 
-    .line 752
+    .line 751
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->checkRadioState_DisplayError()Z
 
     move-result v2
 
     if-eqz v2, :cond_3a
 
-    .line 756
+    .line 755
     sget-object v2, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     if-eqz v2, :cond_2f
 
-    .line 758
+    .line 757
     sget-object v2, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     invoke-interface {v2}, Lcom/samsung/client/ISyncmlService;->isBatteryLow()Z
@@ -7209,12 +7209,12 @@
 
     goto :goto_3a
 
-    .line 767
+    .line 766
     .end local v1           #sp:Landroid/content/SharedPreferences;
     :catch_6c
     move-exception v0
 
-    .line 768
+    .line 767
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "DMApp"
 
@@ -7224,7 +7224,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 769
+    .line 768
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->reconnectSyncmlService()V
 
     goto :goto_3a
@@ -7234,7 +7234,7 @@
     .registers 2
 
     .prologue
-    .line 703
+    .line 702
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     return-object v0
@@ -7245,10 +7245,10 @@
     .parameter
 
     .prologue
-    .line 2553
+    .line 2539
     packed-switch p1, :pswitch_data_4c
 
-    .line 2571
+    .line 2557
     :pswitch_3
     const v0, 0x7f050072
 
@@ -7259,7 +7259,7 @@
     :goto_a
     return-object v0
 
-    .line 2555
+    .line 2541
     :pswitch_b
     const v0, 0x7f05006a
 
@@ -7269,7 +7269,7 @@
 
     goto :goto_a
 
-    .line 2557
+    .line 2543
     :pswitch_13
     const v0, 0x7f05006b
 
@@ -7279,7 +7279,7 @@
 
     goto :goto_a
 
-    .line 2559
+    .line 2545
     :pswitch_1b
     const v0, 0x7f05006c
 
@@ -7289,7 +7289,7 @@
 
     goto :goto_a
 
-    .line 2561
+    .line 2547
     :pswitch_23
     const v0, 0x7f05006d
 
@@ -7299,7 +7299,7 @@
 
     goto :goto_a
 
-    .line 2563
+    .line 2549
     :pswitch_2b
     const v0, 0x7f05006e
 
@@ -7309,7 +7309,7 @@
 
     goto :goto_a
 
-    .line 2565
+    .line 2551
     :pswitch_33
     const v0, 0x7f05006f
 
@@ -7319,7 +7319,7 @@
 
     goto :goto_a
 
-    .line 2567
+    .line 2553
     :pswitch_3b
     const v0, 0x7f050070
 
@@ -7329,7 +7329,7 @@
 
     goto :goto_a
 
-    .line 2569
+    .line 2555
     :pswitch_43
     const v0, 0x7f050071
 
@@ -7339,7 +7339,7 @@
 
     goto :goto_a
 
-    .line 2553
+    .line 2539
     nop
 
     :pswitch_data_4c
@@ -7360,7 +7360,7 @@
     .registers 4
 
     .prologue
-    .line 1141
+    .line 1140
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7385,32 +7385,32 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1142
+    .line 1141
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     instance-of v0, v0, Lcom/samsung/handsfreeactivation/StartUp;
 
     if-eqz v0, :cond_2c
 
-    .line 1146
+    .line 1145
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/samsung/handsfreeactivation/ActFail;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1149
+    .line 1148
     iget-object v1, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 1151
+    .line 1150
     :cond_2c
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 1152
+    .line 1151
     return-void
 .end method
 
@@ -7418,7 +7418,7 @@
     .registers 4
 
     .prologue
-    .line 1128
+    .line 1127
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7443,7 +7443,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1130
+    .line 1129
     const-string v0, "notification"
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -7452,34 +7452,34 @@
 
     check-cast v0, Landroid/app/NotificationManager;
 
-    .line 1131
+    .line 1130
     const/16 v1, 0x4d
 
     invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->cancel(I)V
 
-    .line 1132
+    .line 1131
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/samsung/handsfreeactivation/ActSuccess;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1135
+    .line 1134
     iget-object v1, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 1136
+    .line 1135
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 1137
+    .line 1136
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/samsung/client/DMApp;->hfaNotification:Z
 
-    .line 1138
+    .line 1137
     return-void
 .end method
 
@@ -7488,7 +7488,7 @@
     .parameter
 
     .prologue
-    .line 1315
+    .line 1314
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7513,7 +7513,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1318
+    .line 1317
     :try_start_1a
     const-string v0, "DMAPP_STATE"
 
@@ -7523,37 +7523,37 @@
 
     move-result-object v0
 
-    .line 1321
+    .line 1320
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 1322
+    .line 1321
     const-string v1, "FUMO_DESCRIPTION"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 1323
+    .line 1322
     const-string v1, "UpgradePending"
 
     const/4 v2, 0x1
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 1324
+    .line 1323
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 1326
+    .line 1325
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     if-eqz v0, :cond_3c
 
-    .line 1327
+    .line 1326
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 1330
+    .line 1329
     :cond_3c
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
@@ -7561,71 +7561,71 @@
 
     if-eqz v0, :cond_56
 
-    .line 1331
+    .line 1330
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     check-cast v0, Lcom/samsung/fumo/FirmwareUpdate;
 
     invoke-virtual {v0}, Lcom/samsung/fumo/FirmwareUpdate;->gotosuccess()V
 
-    .line 1336
+    .line 1335
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/samsung/fumo/UpdateSoftware;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1338
+    .line 1337
     iget-object v1, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 1358
+    .line 1357
     :goto_55
     return-void
 
-    .line 1340
+    .line 1339
     :cond_56
     sget-boolean v0, Lcom/samsung/client/DMApp;->cancelling:Z
 
     if-nez v0, :cond_80
 
-    .line 1341
+    .line 1340
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.samsung.intent.UPDATE_FIRMWARE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1342
+    .line 1341
     const-string v1, "android.intent.category.DEFAULT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 1343
+    .line 1342
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1344
+    .line 1343
     const/high16 v1, 0x80
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1346
+    .line 1345
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->startActivity(Landroid/content/Intent;)V
     :try_end_74
     .catch Ljava/lang/Exception; {:try_start_1a .. :try_end_74} :catch_75
 
     goto :goto_55
 
-    .line 1354
+    .line 1353
     :catch_75
     move-exception v0
 
-    .line 1355
+    .line 1354
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -7636,7 +7636,7 @@
 
     goto :goto_55
 
-    .line 1349
+    .line 1348
     :cond_80
     :try_start_80
     const-string v0, "DMApp"
@@ -7645,12 +7645,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1350
+    .line 1349
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/samsung/client/DMApp;->cancelling:Z
 
-    .line 1351
+    .line 1350
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->cancelUpdate()V
     :try_end_8d
     .catch Ljava/lang/Exception; {:try_start_80 .. :try_end_8d} :catch_75
@@ -7665,7 +7665,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 1462
+    .line 1461
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7688,44 +7688,44 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1464
+    .line 1463
     invoke-virtual {p0, v6}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    .line 1466
+    .line 1465
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.samsung.intent.EMERGENCY_CALL_DLG"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1467
+    .line 1466
     const-string v1, "android.intent.category.DEFAULT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v1
 
-    .line 1468
+    .line 1467
     const/high16 v0, 0x1000
 
     invoke-virtual {v1, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1469
+    .line 1468
     const/high16 v0, 0x80
 
     invoke-virtual {v1, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1472
+    .line 1471
     if-eqz p1, :cond_39
 
-    .line 1473
+    .line 1472
     invoke-virtual {p0, v1}, Lcom/samsung/client/DMApp;->startActivity(Landroid/content/Intent;)V
 
-    .line 1482
+    .line 1481
     :goto_38
     return-void
 
-    .line 1475
+    .line 1474
     :cond_39
     const-string v0, "alarm"
 
@@ -7735,14 +7735,14 @@
 
     check-cast v0, Landroid/app/AlarmManager;
 
-    .line 1476
+    .line 1475
     const/high16 v2, 0x800
 
     invoke-static {p0, v6, v1, v2}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v1
 
-    .line 1479
+    .line 1478
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -7763,7 +7763,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 1442
+    .line 1441
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7786,41 +7786,41 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1444
+    .line 1443
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.samsung.intent.REBOOTDLG"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1445
+    .line 1444
     const-string v1, "android.intent.category.DEFAULT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v1
 
-    .line 1446
+    .line 1445
     const/high16 v0, 0x1000
 
     invoke-virtual {v1, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1447
+    .line 1446
     const/high16 v0, 0x80
 
     invoke-virtual {v1, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1449
+    .line 1448
     if-eqz p1, :cond_36
 
-    .line 1450
+    .line 1449
     invoke-virtual {p0, v1}, Lcom/samsung/client/DMApp;->startActivity(Landroid/content/Intent;)V
 
-    .line 1459
+    .line 1458
     :goto_35
     return-void
 
-    .line 1452
+    .line 1451
     :cond_36
     const-string v0, "alarm"
 
@@ -7830,14 +7830,14 @@
 
     check-cast v0, Landroid/app/AlarmManager;
 
-    .line 1453
+    .line 1452
     const/high16 v2, 0x800
 
     invoke-static {p0, v6, v1, v2}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v1
 
-    .line 1456
+    .line 1455
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -7855,28 +7855,28 @@
     .registers 5
 
     .prologue
-    .line 2928
+    .line 2914
     const-string v0, "DMApp"
 
     const-string v1, "hfaStartSession()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2930
+    .line 2916
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->checkRadioState_DisplayError()Z
 
     move-result v0
 
     if-nez v0, :cond_f
 
-    .line 2931
+    .line 2917
     const/4 v0, 0x0
 
-    .line 2934
+    .line 2920
     :goto_e
     return v0
 
-    .line 2933
+    .line 2919
     :cond_f
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mHandler:Landroid/os/Handler;
 
@@ -7892,7 +7892,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 2934
+    .line 2920
     const/4 v0, 0x1
 
     goto :goto_e
@@ -7904,12 +7904,12 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 2583
+    .line 2569
     iget v1, p0, Lcom/samsung/client/DMApp;->bc10bc14changed:I
 
     if-ne v1, v0, :cond_6
 
-    .line 2586
+    .line 2572
     :goto_5
     return v0
 
@@ -7923,19 +7923,19 @@
     .registers 4
 
     .prologue
-    .line 2159
+    .line 2145
     const-string v0, "DMApp"
 
     const-string v1, "isDMSessionNotActive"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2160
+    .line 2146
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     if-eqz v0, :cond_1f
 
-    .line 2163
+    .line 2149
     :try_start_b
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
@@ -7945,15 +7945,15 @@
 
     move-result v0
 
-    .line 2169
+    .line 2155
     :goto_11
     return v0
 
-    .line 2164
+    .line 2150
     :catch_12
     move-exception v0
 
-    .line 2165
+    .line 2151
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Landroid/os/RemoteException;->getMessage()Ljava/lang/String;
@@ -7962,10 +7962,10 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2166
+    .line 2152
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->reconnectSyncmlService()V
 
-    .line 2169
+    .line 2155
     :cond_1f
     const/4 v0, 0x0
 
@@ -7976,7 +7976,7 @@
     .registers 4
 
     .prologue
-    .line 3149
+    .line 3135
     const-string v0, "DMAPP_STATE"
 
     const/4 v1, 0x3
@@ -7985,7 +7985,7 @@
 
     move-result-object v0
 
-    .line 3151
+    .line 3137
     const-string v1, "HFA_INITIATED"
 
     const/4 v2, 0x0
@@ -8001,7 +8001,7 @@
     .registers 2
 
     .prologue
-    .line 2746
+    .line 2732
     iget-boolean v0, p0, Lcom/samsung/client/DMApp;->homeLaunchedByApp:Z
 
     return v0
@@ -8015,7 +8015,7 @@
 
     const/4 v1, 0x0
 
-    .line 3131
+    .line 3117
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
@@ -8026,10 +8026,10 @@
 
     move-result v2
 
-    .line 3133
+    .line 3119
     if-ne v2, v0, :cond_27
 
-    .line 3134
+    .line 3120
     :goto_e
     const-string v1, "DMApp"
 
@@ -8053,13 +8053,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3135
+    .line 3121
     return v0
 
     :cond_27
     move v0, v1
 
-    .line 3133
+    .line 3119
     goto :goto_e
 .end method
 
@@ -8069,7 +8069,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 2576
+    .line 2562
     iget v1, p0, Lcom/samsung/client/DMApp;->mdn:I
 
     if-eq v1, v0, :cond_9
@@ -8078,7 +8078,7 @@
 
     if-ne v1, v0, :cond_a
 
-    .line 2579
+    .line 2565
     :cond_9
     :goto_9
     return v0
@@ -8093,18 +8093,18 @@
     .registers 2
 
     .prologue
-    .line 2918
+    .line 2904
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     if-nez v0, :cond_9
 
-    .line 2919
+    .line 2905
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->reconnectSyncmlService()V
 
-    .line 2920
+    .line 2906
     const/4 v0, 0x0
 
-    .line 2922
+    .line 2908
     :goto_8
     return v0
 
@@ -8118,7 +8118,7 @@
     .registers 2
 
     .prologue
-    .line 3183
+    .line 3169
     iget-boolean v0, p0, Lcom/samsung/client/DMApp;->isUpdateCompleted:Z
 
     return v0
@@ -8132,14 +8132,14 @@
 
     const/4 v1, 0x0
 
-    .line 2682
+    .line 2668
     const-string v0, "DMApp"
 
     const-string v3, "ishomeScreenLaunched...... "
 
     invoke-static {v0, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2683
+    .line 2669
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -8150,13 +8150,13 @@
 
     move v0, v1
 
-    .line 2687
+    .line 2673
     :goto_12
     array-length v4, v3
 
     if-ge v0, v4, :cond_4b
 
-    .line 2688
+    .line 2674
     const-string v4, "DMApp"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -8195,7 +8195,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2691
+    .line 2677
     aget-object v4, v3, v1
 
     invoke-virtual {v4}, Ljava/lang/StackTraceElement;->getMethodName()Ljava/lang/String;
@@ -8210,41 +8210,41 @@
 
     if-eqz v4, :cond_59
 
-    .line 2697
+    .line 2683
     :cond_4b
     array-length v3, v3
 
     if-ge v0, v3, :cond_7d
 
-    .line 2698
+    .line 2684
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->isHomeLaunchedByApp()Z
 
     move-result v0
 
     if-eqz v0, :cond_5c
 
-    .line 2699
+    .line 2685
     invoke-virtual {p0, v1}, Lcom/samsung/client/DMApp;->setHomeLaunchedByApp(Z)V
 
-    .line 2700
+    .line 2686
     const/4 v1, 0x2
 
-    .line 2740
+    .line 2726
     :cond_58
     :goto_58
     return v1
 
-    .line 2687
+    .line 2673
     :cond_59
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_12
 
-    .line 2728
+    .line 2714
     :cond_5c
     new-array v0, v2, [Landroid/content/Intent;
 
-    .line 2729
+    .line 2715
     new-instance v2, Landroid/content/Intent;
 
     const-string v3, "android.intent.action.MAIN"
@@ -8253,28 +8253,28 @@
 
     aput-object v2, v0, v1
 
-    .line 2730
+    .line 2716
     aget-object v2, v0, v1
 
     const-string v3, "android.intent.category.HOME"
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2731
+    .line 2717
     aget-object v2, v0, v1
 
     const-string v3, "android.intent.category.DEFAULT"
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2733
+    .line 2719
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->checkTopActivity([Landroid/content/Intent;)Z
 
     move-result v0
 
     if-eqz v0, :cond_58
 
-    .line 2734
+    .line 2720
     const/4 v1, 0x3
 
     goto :goto_58
@@ -8282,7 +8282,7 @@
     :cond_7d
     move v1, v2
 
-    .line 2740
+    .line 2726
     goto :goto_58
 .end method
 
@@ -8290,12 +8290,12 @@
     .registers 4
 
     .prologue
-    .line 1188
+    .line 1187
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 1189
+    .line 1188
     const v1, 0x7f050062
 
     invoke-virtual {p0, v1}, Lcom/samsung/client/DMApp;->getString(I)Ljava/lang/String;
@@ -8304,7 +8304,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1190
+    .line 1189
     const v1, 0x7f050064
 
     invoke-virtual {p0, v1}, Lcom/samsung/client/DMApp;->getString(I)Ljava/lang/String;
@@ -8313,7 +8313,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1193
+    .line 1192
     const v1, 0x7f050065
 
     invoke-virtual {p0, v1}, Lcom/samsung/client/DMApp;->getString(I)Ljava/lang/String;
@@ -8324,15 +8324,15 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1194
+    .line 1193
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1196
+    .line 1195
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->startActivity(Landroid/content/Intent;)V
 
-    .line 1197
+    .line 1196
     return-void
 .end method
 
@@ -8340,43 +8340,43 @@
     .registers 3
 
     .prologue
-    .line 2783
+    .line 2769
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.MAIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2784
+    .line 2770
     const-string v1, "android.intent.category.HOME"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2785
+    .line 2771
     const-string v1, "android.intent.category.DEFAULT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2786
+    .line 2772
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/samsung/client/DMApp;->homeLaunchedByApp:Z
 
-    .line 2787
+    .line 2773
     iget-object v1, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     if-eqz v1, :cond_1e
 
-    .line 2788
+    .line 2774
     iget-object v1, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 2793
+    .line 2779
     :goto_1d
     return-void
 
-    .line 2791
+    .line 2777
     :cond_1e
     const-string v0, "DMApp"
 
@@ -8391,40 +8391,40 @@
     .registers 4
 
     .prologue
-    .line 2665
+    .line 2651
     :try_start_0
     sget-object v1, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     if-eqz v1, :cond_b
 
-    .line 2667
+    .line 2653
     sget-object v1, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     invoke-interface {v1}, Lcom/samsung/client/ISyncmlService;->isBatteryLow()Z
 
     move-result v1
 
-    .line 2677
+    .line 2663
     :goto_a
     return v1
 
-    .line 2671
+    .line 2657
     :cond_b
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->reconnectSyncmlService()V
     :try_end_e
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_e} :catch_10
 
-    .line 2677
+    .line 2663
     :goto_e
     const/4 v1, 0x0
 
     goto :goto_a
 
-    .line 2674
+    .line 2660
     :catch_10
     move-exception v0
 
-    .line 2675
+    .line 2661
     .local v0, e:Ljava/lang/Exception;
     const-string v1, "DMApp"
 
@@ -8441,7 +8441,7 @@
     .registers 4
 
     .prologue
-    .line 205
+    .line 204
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -8464,7 +8464,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 206
+    .line 205
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.samsung.client.INIT_SERVICE"
@@ -8473,7 +8473,7 @@
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 207
+    .line 206
     return-void
 .end method
 
@@ -8487,7 +8487,7 @@
 
     const/4 v6, 0x0
 
-    .line 211
+    .line 210
     const-string v3, "DMApp"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -8510,7 +8510,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 212
+    .line 211
     const-string v3, "DMApp"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -8535,29 +8535,29 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 214
+    .line 213
     sget-boolean v3, Lcom/samsung/client/DMApp;->isInitialized:Z
 
     if-eqz v3, :cond_41
 
-    .line 215
+    .line 214
     const-string v3, "DMApp"
 
     const-string v4, "onInit(): Already Initialized return"
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 301
+    .line 300
     :goto_40
     return-void
 
-    .line 220
+    .line 219
     :cond_41
     sget-object v3, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     if-nez v3, :cond_55
 
-    .line 221
+    .line 220
     new-instance v3, Landroid/content/Intent;
 
     const-class v4, Lcom/samsung/client/ISyncmlService;
@@ -8572,7 +8572,7 @@
 
     invoke-virtual {p0, v3, v4, v7}, Lcom/samsung/client/DMApp;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
 
-    .line 226
+    .line 225
     :cond_55
     const-string v3, "power"
 
@@ -8584,7 +8584,7 @@
 
     iput-object v3, p0, Lcom/samsung/client/DMApp;->mPowerMgr:Landroid/os/PowerManager;
 
-    .line 227
+    .line 226
     iget-object v3, p0, Lcom/samsung/client/DMApp;->mPowerMgr:Landroid/os/PowerManager;
 
     const v4, 0x3000000a
@@ -8597,7 +8597,7 @@
 
     iput-object v3, p0, Lcom/samsung/client/DMApp;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 231
+    .line 230
     const-string v3, "keyguard"
 
     invoke-virtual {p0, v3}, Lcom/samsung/client/DMApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -8608,7 +8608,7 @@
 
     iput-object v3, p0, Lcom/samsung/client/DMApp;->mKeyguardMgr:Landroid/app/KeyguardManager;
 
-    .line 232
+    .line 231
     iget-object v3, p0, Lcom/samsung/client/DMApp;->mKeyguardMgr:Landroid/app/KeyguardManager;
 
     const-string v4, "DMApp"
@@ -8619,10 +8619,10 @@
 
     iput-object v3, p0, Lcom/samsung/client/DMApp;->mKeyguardLock:Landroid/app/KeyguardManager$KeyguardLock;
 
-    .line 233
+    .line 232
     iput-boolean v6, p0, Lcom/samsung/client/DMApp;->mKeyguardDisabled:Z
 
-    .line 236
+    .line 235
     const-string v3, "phone"
 
     invoke-virtual {p0, v3}, Lcom/samsung/client/DMApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -8633,7 +8633,7 @@
 
     iput-object v3, p0, Lcom/samsung/client/DMApp;->mTelManager:Landroid/telephony/TelephonyManager;
 
-    .line 237
+    .line 236
     iget-object v3, p0, Lcom/samsung/client/DMApp;->mTelManager:Landroid/telephony/TelephonyManager;
 
     iget-object v4, p0, Lcom/samsung/client/DMApp;->mListener:Landroid/telephony/PhoneStateListener;
@@ -8642,14 +8642,14 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
 
-    .line 241
+    .line 240
     new-instance v3, Lcom/samsung/client/DMApp$OffReceiver;
 
     invoke-direct {v3, p0, v8}, Lcom/samsung/client/DMApp$OffReceiver;-><init>(Lcom/samsung/client/DMApp;Lcom/samsung/client/DMApp$1;)V
 
     iput-object v3, p0, Lcom/samsung/client/DMApp;->offReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 242
+    .line 241
     iget-object v3, p0, Lcom/samsung/client/DMApp;->offReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v4, Landroid/content/IntentFilter;
@@ -8660,14 +8660,14 @@
 
     invoke-virtual {p0, v3, v4}, Lcom/samsung/client/DMApp;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 244
+    .line 243
     new-instance v3, Lcom/samsung/client/DMApp$OnReceiver;
 
     invoke-direct {v3, p0, v8}, Lcom/samsung/client/DMApp$OnReceiver;-><init>(Lcom/samsung/client/DMApp;Lcom/samsung/client/DMApp$1;)V
 
     iput-object v3, p0, Lcom/samsung/client/DMApp;->onReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 245
+    .line 244
     iget-object v3, p0, Lcom/samsung/client/DMApp;->onReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v4, Landroid/content/IntentFilter;
@@ -8678,12 +8678,12 @@
 
     invoke-virtual {p0, v3, v4}, Lcom/samsung/client/DMApp;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 248
+    .line 247
     new-instance v0, Lcom/samsung/client/DMApp$AirplaneModeReceiver;
 
     invoke-direct {v0, p0, v8}, Lcom/samsung/client/DMApp$AirplaneModeReceiver;-><init>(Lcom/samsung/client/DMApp;Lcom/samsung/client/DMApp$1;)V
 
-    .line 249
+    .line 248
     .local v0, airModeReceiver:Lcom/samsung/client/DMApp$AirplaneModeReceiver;
     new-instance v3, Landroid/content/IntentFilter;
 
@@ -8693,14 +8693,14 @@
 
     invoke-virtual {p0, v0, v3}, Lcom/samsung/client/DMApp;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 252
+    .line 251
     new-instance v3, Lcom/samsung/client/DMApp$LocaleChangeReceiver;
 
     invoke-direct {v3, p0, v8}, Lcom/samsung/client/DMApp$LocaleChangeReceiver;-><init>(Lcom/samsung/client/DMApp;Lcom/samsung/client/DMApp$1;)V
 
     iput-object v3, p0, Lcom/samsung/client/DMApp;->localeChangeReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 253
+    .line 252
     iget-object v3, p0, Lcom/samsung/client/DMApp;->localeChangeReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v4, Landroid/content/IntentFilter;
@@ -8711,20 +8711,20 @@
 
     invoke-virtual {p0, v3, v4}, Lcom/samsung/client/DMApp;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 263
+    .line 262
     sput-boolean v7, Lcom/samsung/client/DMApp;->isInitialized:Z
 
-    .line 264
+    .line 263
     sput-boolean v6, Lcom/samsung/client/DMApp;->cancelling:Z
 
-    .line 266
+    .line 265
     new-instance v3, Lcom/samsung/client/WimaxHandler;
 
     invoke-direct {v3}, Lcom/samsung/client/WimaxHandler;-><init>()V
 
     iput-object v3, p0, Lcom/samsung/client/DMApp;->mWimaxHandler:Lcom/samsung/client/WimaxHandler;
 
-    .line 269
+    .line 268
     :try_start_e8
     const-string v3, "DMAPP_STATE"
 
@@ -8734,7 +8734,7 @@
 
     move-result-object v2
 
-    .line 271
+    .line 270
     .local v2, sp:Landroid/content/SharedPreferences;
     const-string v3, "DM_WIMAX_DISABLE"
 
@@ -8746,33 +8746,33 @@
 
     if-ne v3, v7, :cond_10f
 
-    .line 272
+    .line 271
     const-string v3, "DMApp"
 
     const-string v4, " Wimax enable pending .... enabling now ...."
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 273
+    .line 272
     iget-object v3, p0, Lcom/samsung/client/DMApp;->mWimaxHandler:Lcom/samsung/client/WimaxHandler;
 
     if-eqz v3, :cond_10f
 
-    .line 275
+    .line 274
     const-string v3, "DMApp"
 
     const-string v4, " Wimax .... mWimaxHandler.enableJavaWimaxDmApp"
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 276
+    .line 275
     iget-object v3, p0, Lcom/samsung/client/DMApp;->mWimaxHandler:Lcom/samsung/client/WimaxHandler;
 
     invoke-virtual {v3}, Lcom/samsung/client/WimaxHandler;->enableJavaWimaxDmApp()V
     :try_end_10f
     .catch Ljava/lang/Exception; {:try_start_e8 .. :try_end_10f} :catch_142
 
-    .line 284
+    .line 283
     .end local v2           #sp:Landroid/content/SharedPreferences;
     :cond_10f
     :goto_10f
@@ -8782,7 +8782,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 288
+    .line 287
     :try_start_116
     const-string v3, "DMAPP_STATE"
 
@@ -8792,7 +8792,7 @@
 
     move-result-object v2
 
-    .line 290
+    .line 289
     .restart local v2       #sp:Landroid/content/SharedPreferences;
     const-string v3, "DM_WIFI_DISABLE"
 
@@ -8804,19 +8804,19 @@
 
     if-ne v3, v7, :cond_139
 
-    .line 291
+    .line 290
     const-string v3, "DMApp"
 
     const-string v4, " Wifi enable pending .... enabling now ...."
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 292
+    .line 291
     const/4 v3, 0x1
 
     invoke-direct {p0, v3}, Lcom/samsung/client/DMApp;->setWIFIenabled(Z)V
 
-    .line 293
+    .line 292
     const/4 v3, 0x0
 
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -8827,7 +8827,7 @@
     :try_end_139
     .catch Ljava/lang/Exception; {:try_start_116 .. :try_end_139} :catch_14d
 
-    .line 300
+    .line 299
     .end local v2           #sp:Landroid/content/SharedPreferences;
     :cond_139
     :goto_139
@@ -8839,11 +8839,11 @@
 
     goto/16 :goto_40
 
-    .line 281
+    .line 280
     :catch_142
     move-exception v1
 
-    .line 282
+    .line 281
     .local v1, e:Ljava/lang/Exception;
     const-string v3, "DMApp"
 
@@ -8855,12 +8855,12 @@
 
     goto :goto_10f
 
-    .line 297
+    .line 296
     .end local v1           #e:Ljava/lang/Exception;
     :catch_14d
     move-exception v1
 
-    .line 298
+    .line 297
     .restart local v1       #e:Ljava/lang/Exception;
     const-string v3, "DMApp"
 
@@ -8877,17 +8877,17 @@
     .registers 3
 
     .prologue
-    .line 3123
+    .line 3109
     invoke-super {p0}, Landroid/app/Application;->onLowMemory()V
 
-    .line 3124
+    .line 3110
     const-string v0, "DMApp"
 
     const-string v1, "onLowMemory"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3127
+    .line 3113
     return-void
 .end method
 
@@ -8897,7 +8897,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 305
+    .line 304
     :try_start_1
     sget-object v1, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
@@ -8907,53 +8907,53 @@
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_8} :catch_2a
 
-    .line 309
+    .line 308
     :goto_8
     iget-object v1, p0, Lcom/samsung/client/DMApp;->mConnection:Landroid/content/ServiceConnection;
 
     invoke-virtual {p0, v1}, Lcom/samsung/client/DMApp;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 310
+    .line 309
     sput-object v3, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
-    .line 311
+    .line 310
     iput-object v3, p0, Lcom/samsung/client/DMApp;->mConnection:Landroid/content/ServiceConnection;
 
-    .line 312
+    .line 311
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->releaseWakeLock()V
 
-    .line 313
+    .line 312
     iput-object v3, p0, Lcom/samsung/client/DMApp;->mPowerMgr:Landroid/os/PowerManager;
 
-    .line 314
+    .line 313
     iput-object v3, p0, Lcom/samsung/client/DMApp;->mTelManager:Landroid/telephony/TelephonyManager;
 
-    .line 315
+    .line 314
     iput-object v3, p0, Lcom/samsung/client/DMApp;->mWimaxHandler:Lcom/samsung/client/WimaxHandler;
 
-    .line 316
+    .line 315
     iget-object v1, p0, Lcom/samsung/client/DMApp;->onReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v1}, Lcom/samsung/client/DMApp;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 317
+    .line 316
     iget-object v1, p0, Lcom/samsung/client/DMApp;->offReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v1}, Lcom/samsung/client/DMApp;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 318
+    .line 317
     iget-object v1, p0, Lcom/samsung/client/DMApp;->localeChangeReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v1}, Lcom/samsung/client/DMApp;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 319
+    .line 318
     return-void
 
-    .line 306
+    .line 305
     :catch_2a
     move-exception v0
 
-    .line 307
+    .line 306
     .local v0, e:Ljava/lang/Exception;
     const-string v1, "DMApp"
 
@@ -8970,26 +8970,26 @@
     .registers 3
 
     .prologue
-    .line 2938
+    .line 2924
     const-string v0, "DMApp"
 
     const-string v1, "postHfaStartSession()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2940
+    .line 2926
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->storeSlot()I
 
     move-result v0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->slot:I
 
-    .line 2941
+    .line 2927
     const/16 v0, 0x65
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    .line 2945
+    .line 2931
     const/4 v0, 0x1
 
     return v0
@@ -9000,14 +9000,14 @@
     .parameter
 
     .prologue
-    .line 1621
+    .line 1620
     const-string v0, "DMApp"
 
     const-string v1, "postNIASession()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1623
+    .line 1622
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/samsung/client/DMApp;->mHandler:Landroid/os/Handler;
@@ -9020,7 +9020,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1624
+    .line 1623
     return-void
 .end method
 
@@ -9028,25 +9028,25 @@
     .registers 3
 
     .prologue
-    .line 707
+    .line 706
     const-string v0, "DMApp"
 
     const-string v1, "prlStartSession()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 709
+    .line 708
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->checkRadioState_DisplayError()Z
 
     move-result v0
 
     if-nez v0, :cond_e
 
-    .line 715
+    .line 714
     :goto_d
     return-void
 
-    .line 713
+    .line 712
     :cond_e
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->storeSlot()I
 
@@ -9054,7 +9054,7 @@
 
     iput v0, p0, Lcom/samsung/client/DMApp;->slot:I
 
-    .line 714
+    .line 713
     const/16 v0, 0x65
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
@@ -9067,7 +9067,7 @@
     .parameter "key"
 
     .prologue
-    .line 2317
+    .line 2303
     const-string v1, "DMAPP_STATE"
 
     const/4 v2, 0x3
@@ -9076,7 +9076,7 @@
 
     move-result-object v0
 
-    .line 2319
+    .line 2305
     .local v0, sp:Landroid/content/SharedPreferences;
     const-wide/16 v1, -0x1
 
@@ -9091,14 +9091,14 @@
     .registers 3
 
     .prologue
-    .line 2023
+    .line 2009
     const-string v0, "DMApp"
 
     const-string v1, "Rebooting the device  !!!!!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2025
+    .line 2011
     const-string v0, "power"
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -9107,10 +9107,10 @@
 
     check-cast v0, Landroid/os/PowerManager;
 
-    .line 2026
+    .line 2012
     invoke-virtual {v0}, Landroid/os/PowerManager;->systemReboot()V
 
-    .line 2027
+    .line 2013
     return-void
 .end method
 
@@ -9118,14 +9118,14 @@
     .registers 3
 
     .prologue
-    .line 2015
+    .line 2001
     const-string v0, "DMApp"
 
     const-string v1, "Rebooting Fota device arm9_fota!!!!!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2017
+    .line 2003
     const-string v0, "power"
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -9134,12 +9134,12 @@
 
     check-cast v0, Landroid/os/PowerManager;
 
-    .line 2018
+    .line 2004
     const-string v1, "arm9_fota"
 
     invoke-virtual {v0, v1}, Landroid/os/PowerManager;->systemFotaReboot(Ljava/lang/String;)V
 
-    .line 2019
+    .line 2005
     return-void
 .end method
 
@@ -9147,7 +9147,7 @@
     .registers 4
 
     .prologue
-    .line 2619
+    .line 2605
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -9176,7 +9176,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2620
+    .line 2606
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
@@ -9185,12 +9185,12 @@
 
     if-eqz v0, :cond_2b
 
-    .line 2621
+    .line 2607
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 2623
+    .line 2609
     :cond_2b
     return-void
 .end method
@@ -9199,14 +9199,14 @@
     .registers 4
 
     .prologue
-    .line 2031
+    .line 2017
     const-string v0, "DMApp"
 
     const-string v1, "Resetting Radio !!!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2034
+    .line 2020
     :try_start_7
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
@@ -9214,15 +9214,15 @@
     :try_end_c
     .catch Landroid/os/RemoteException; {:try_start_7 .. :try_end_c} :catch_d
 
-    .line 2038
+    .line 2024
     :goto_c
     return-void
 
-    .line 2035
+    .line 2021
     :catch_d
     move-exception v0
 
-    .line 2036
+    .line 2022
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Landroid/os/RemoteException;->getMessage()Ljava/lang/String;
@@ -9243,7 +9243,7 @@
 
     const/4 v4, 0x1
 
-    .line 2108
+    .line 2094
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -9266,12 +9266,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2109
+    .line 2095
     new-instance v0, Lcom/sprint/internal/ConnectionManager;
 
     invoke-direct {v0, p0}, Lcom/sprint/internal/ConnectionManager;-><init>(Landroid/content/Context;)V
 
-    .line 2111
+    .line 2097
     const-string v1, "DMApp"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -9296,29 +9296,29 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2112
+    .line 2098
     if-ne p1, v5, :cond_68
 
     iget-boolean v1, p0, Lcom/samsung/client/DMApp;->isRegistered:Z
 
     if-nez v1, :cond_68
 
-    .line 2114
+    .line 2100
     new-instance v1, Landroid/content/IntentFilter;
 
     const-string v2, "android.intent.action.ANY_DATA_STATE"
 
     invoke-direct {v1, v2}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 2116
+    .line 2102
     iget-object v2, p0, Lcom/samsung/client/DMApp;->mReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v2, v1}, Lcom/samsung/client/DMApp;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 2117
+    .line 2103
     iput-boolean v4, p0, Lcom/samsung/client/DMApp;->isRegistered:Z
 
-    .line 2118
+    .line 2104
     const-string v1, "DMApp"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -9343,25 +9343,25 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2122
+    .line 2108
     :cond_68
     if-eqz v0, :cond_7e
 
-    .line 2124
+    .line 2110
     if-nez p1, :cond_a4
 
-    .line 2125
+    .line 2111
     :try_start_6c
     invoke-virtual {v0}, Lcom/sprint/internal/ConnectionManager;->release()V
 
-    .line 2127
+    .line 2113
     const-string v0, "DMApp"
 
     const-string v1, "SaveWifiStateInSharedPref = 0"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2128
+    .line 2114
     const/4 v0, 0x0
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -9372,7 +9372,7 @@
     :try_end_7e
     .catch Ljava/lang/Exception; {:try_start_6c .. :try_end_7e} :catch_c8
 
-    .line 2143
+    .line 2129
     :cond_7e
     :goto_7e
     if-nez p1, :cond_95
@@ -9381,14 +9381,14 @@
 
     if-nez v0, :cond_95
 
-    .line 2144
+    .line 2130
     const-string v0, "DMApp"
 
     const-string v1, "NIA Start after change of slot"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2145
+    .line 2131
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.samsung.client.SAN_SERVICE"
@@ -9397,18 +9397,18 @@
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 2148
+    .line 2134
     :cond_95
     if-ne p1, v5, :cond_a3
 
-    .line 2149
+    .line 2135
     const-string v0, "DMApp"
 
     const-string v1, "hangedTimer.start()..... "
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2151
+    .line 2137
     :try_start_9e
     iget-object v0, p0, Lcom/samsung/client/DMApp;->hangedTimer:Landroid/os/CountDownTimer;
 
@@ -9416,17 +9416,17 @@
     :try_end_a3
     .catch Ljava/lang/Exception; {:try_start_9e .. :try_end_a3} :catch_d3
 
-    .line 2156
+    .line 2142
     :cond_a3
     :goto_a3
     return-void
 
-    .line 2131
+    .line 2117
     :cond_a4
     :try_start_a4
     invoke-virtual {v0, p1}, Lcom/sprint/internal/ConnectionManager;->requestDataProfile(I)V
 
-    .line 2133
+    .line 2119
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -9449,7 +9449,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2134
+    .line 2120
     const/4 v0, 0x1
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -9462,11 +9462,11 @@
 
     goto :goto_7e
 
-    .line 2138
+    .line 2124
     :catch_c8
     move-exception v0
 
-    .line 2139
+    .line 2125
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -9477,11 +9477,11 @@
 
     goto :goto_7e
 
-    .line 2152
+    .line 2138
     :catch_d3
     move-exception v0
 
-    .line 2153
+    .line 2139
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -9498,39 +9498,39 @@
     .parameter
 
     .prologue
-    .line 1587
+    .line 1586
     const-string v0, "DMApp"
 
     const-string v1, "retryNIASession()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1588
+    .line 1587
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->storeSlot()I
 
     move-result v0
 
     iput v0, p0, Lcom/samsung/client/DMApp;->slot:I
 
-    .line 1589
+    .line 1588
     const/16 v0, 0x65
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    .line 1592
+    .line 1591
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/samsung/client/DMApp;->mNIAProgress:Z
 
-    .line 1593
+    .line 1592
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->userCancel:Z
 
-    .line 1594
+    .line 1593
     iput-object p1, p0, Lcom/samsung/client/DMApp;->mSan:Lcom/samsung/client/TslcmnSan$TslSanMsg;
 
-    .line 1595
+    .line 1594
     return-void
 .end method
 
@@ -9538,31 +9538,31 @@
     .registers 3
 
     .prologue
-    .line 1155
+    .line 1154
     const-string v0, "DMApp"
 
     const-string v1, "retrySession()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1156
+    .line 1155
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/samsung/handsfreeactivation/StartUp;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1159
+    .line 1158
     iget-object v1, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 1160
+    .line 1159
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 1161
+    .line 1160
     return-void
 .end method
 
@@ -9575,7 +9575,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2323
+    .line 2309
     const-string v0, "alarm"
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -9584,7 +9584,7 @@
 
     check-cast v0, Landroid/app/AlarmManager;
 
-    .line 2325
+    .line 2311
     sget-object v1, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
 
     const/high16 v2, 0x800
@@ -9593,7 +9593,7 @@
 
     move-result-object v1
 
-    .line 2328
+    .line 2314
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -9602,10 +9602,10 @@
 
     invoke-virtual {v0, v4, v2, v3, v1}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
 
-    .line 2331
+    .line 2317
     invoke-virtual {p0, p4, p1, p2}, Lcom/samsung/client/DMApp;->writeToPreferences(Ljava/lang/String;J)V
 
-    .line 2332
+    .line 2318
     const-string v0, "prl_interval"
 
     invoke-virtual {p4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -9614,7 +9614,7 @@
 
     if-eqz v0, :cond_2f
 
-    .line 2333
+    .line 2319
     const-string v0, "prl_next_time"
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -9625,12 +9625,12 @@
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/samsung/client/DMApp;->writeToPreferences(Ljava/lang/String;J)V
 
-    .line 2340
+    .line 2326
     :cond_2e
     :goto_2e
     return-void
 
-    .line 2335
+    .line 2321
     :cond_2f
     const-string v0, "fumo_interval"
 
@@ -9640,7 +9640,7 @@
 
     if-eqz v0, :cond_2e
 
-    .line 2336
+    .line 2322
     const-string v0, "fumo_next_time"
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -9659,20 +9659,20 @@
     .parameter "newActivity"
 
     .prologue
-    .line 695
+    .line 694
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     iput-object v0, p0, Lcom/samsung/client/DMApp;->previousActivity:Landroid/app/Activity;
 
-    .line 696
+    .line 695
     iput-object p1, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
-    .line 697
+    .line 696
     iget-object v0, p0, Lcom/samsung/client/DMApp;->currentActivity:Landroid/app/Activity;
 
     if-eqz v0, :cond_28
 
-    .line 698
+    .line 697
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -9701,7 +9701,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 700
+    .line 699
     :cond_28
     return-void
 .end method
@@ -9712,69 +9712,69 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 3081
+    .line 3067
     const-string v0, "DMApp"
 
     const-string v1, "setFumoAlarm"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3083
+    .line 3069
     const/4 v0, 0x2
 
     sput v0, Lcom/samsung/client/DMApp;->mSessionType:I
 
-    .line 3084
+    .line 3070
     sget-object v0, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
 
     iput-boolean v2, v0, Lcom/samsung/client/DMApp;->userCancel:Z
 
-    .line 3085
+    .line 3071
     sget-object v0, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
 
     iput-boolean v2, v0, Lcom/samsung/client/DMApp;->userCancelDld:Z
 
-    .line 3087
+    .line 3073
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->fumoUserStart:Z
 
-    .line 3088
+    .line 3074
     iput-boolean v2, p0, Lcom/samsung/client/DMApp;->replace:Z
 
-    .line 3090
+    .line 3076
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.samsung.intent.START_CIFUMO"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3091
+    .line 3077
     const-string v1, "android.intent.category.DEFAULT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 3092
+    .line 3078
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 3093
+    .line 3079
     const/high16 v1, 0x80
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 3095
+    .line 3081
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->startActivity(Landroid/content/Intent;)V
 
-    .line 3096
+    .line 3082
     iget-object v0, p0, Lcom/samsung/client/DMApp;->radioResetTimer:Landroid/os/CountDownTimer;
 
     invoke-virtual {v0}, Landroid/os/CountDownTimer;->start()Landroid/os/CountDownTimer;
 
-    .line 3103
+    .line 3089
     return-void
 .end method
 
@@ -9783,7 +9783,7 @@
     .parameter
 
     .prologue
-    .line 3155
+    .line 3141
     const-string v0, "DMAPP_STATE"
 
     const/4 v1, 0x3
@@ -9792,20 +9792,20 @@
 
     move-result-object v0
 
-    .line 3157
+    .line 3143
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 3158
+    .line 3144
     const-string v1, "HFA_INITIATED"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 3159
+    .line 3145
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 3162
+    .line 3148
     :try_start_13
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
@@ -9813,15 +9813,15 @@
     :try_end_18
     .catch Landroid/os/RemoteException; {:try_start_13 .. :try_end_18} :catch_19
 
-    .line 3166
+    .line 3152
     :goto_18
     return-void
 
-    .line 3163
+    .line 3149
     :catch_19
     move-exception v0
 
-    .line 3164
+    .line 3150
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Landroid/os/RemoteException;->getMessage()Ljava/lang/String;
@@ -9838,7 +9838,7 @@
     .parameter
 
     .prologue
-    .line 3175
+    .line 3161
     const-string v0, "DMAPP_STATE"
 
     const/4 v1, 0x3
@@ -9847,20 +9847,20 @@
 
     move-result-object v0
 
-    .line 3177
+    .line 3163
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 3178
+    .line 3164
     const-string v1, "HFA_REBOOTED"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 3179
+    .line 3165
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 3180
+    .line 3166
     return-void
 .end method
 
@@ -9869,10 +9869,10 @@
     .parameter "flag"
 
     .prologue
-    .line 2750
+    .line 2736
     iput-boolean p1, p0, Lcom/samsung/client/DMApp;->homeLaunchedByApp:Z
 
-    .line 2751
+    .line 2737
     return-void
 .end method
 
@@ -9882,17 +9882,17 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 1164
+    .line 1163
     const-string v0, "DMApp"
 
     const-string v1, "setNotification() numRetries = 0"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1165
+    .line 1164
     iput v6, p0, Lcom/samsung/client/DMApp;->numRetries:I
 
-    .line 1166
+    .line 1165
     const-string v0, "notification"
 
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -9901,7 +9901,7 @@
 
     check-cast v0, Landroid/app/NotificationManager;
 
-    .line 1167
+    .line 1166
     new-instance v1, Landroid/app/Notification;
 
     const v2, 0x7f020004
@@ -9918,38 +9918,38 @@
 
     invoke-direct {v1, v2, v3, v4, v5}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
 
-    .line 1169
+    .line 1168
     new-instance v2, Landroid/content/Intent;
 
     const-class v3, Lcom/samsung/handsfreeactivation/StartUp;
 
     invoke-direct {v2, p0, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1171
+    .line 1170
     const-string v3, "android.intent.category.DEFAULT"
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v2
 
-    .line 1172
+    .line 1171
     const/high16 v3, 0x1000
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1174
+    .line 1173
     const/high16 v3, 0x80
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1175
+    .line 1174
     const/high16 v3, 0x800
 
     invoke-static {p0, v6, v2, v3}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v2
 
-    .line 1177
+    .line 1176
     const v3, 0x7f050075
 
     invoke-virtual {p0, v3}, Lcom/samsung/client/DMApp;->getString(I)Ljava/lang/String;
@@ -9964,24 +9964,24 @@
 
     invoke-virtual {v1, p0, v3, v4, v2}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 1180
+    .line 1179
     iget v2, v1, Landroid/app/Notification;->flags:I
 
     or-int/lit8 v2, v2, 0x20
 
     iput v2, v1, Landroid/app/Notification;->flags:I
 
-    .line 1181
+    .line 1180
     const/16 v2, 0x4d
 
     invoke-virtual {v0, v2, v1}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
 
-    .line 1182
+    .line 1181
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/samsung/client/DMApp;->hfaNotification:Z
 
-    .line 1183
+    .line 1182
     return-void
 .end method
 
@@ -9990,10 +9990,10 @@
     .parameter "sessionType"
 
     .prologue
-    .line 691
+    .line 690
     sput p1, Lcom/samsung/client/DMApp;->mSessionType:I
 
-    .line 692
+    .line 691
     return-void
 .end method
 
@@ -10002,10 +10002,10 @@
     .parameter "flag"
 
     .prologue
-    .line 3187
+    .line 3173
     iput-boolean p1, p0, Lcom/samsung/client/DMApp;->isUpdateCompleted:Z
 
-    .line 3188
+    .line 3174
     return-void
 .end method
 
@@ -10017,35 +10017,35 @@
 
     const/4 v0, 0x0
 
-    .line 3013
+    .line 2999
     const-string v2, "DMApp"
 
     const-string v3, "start_fumo_Noslot"
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3015
+    .line 3001
     const/4 v2, 0x2
 
     sput v2, Lcom/samsung/client/DMApp;->mSessionType:I
 
-    .line 3016
+    .line 3002
     sget-object v2, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
 
     iput-boolean v0, v2, Lcom/samsung/client/DMApp;->userCancel:Z
 
-    .line 3017
+    .line 3003
     sget-object v2, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
 
     iput-boolean v0, v2, Lcom/samsung/client/DMApp;->userCancelDld:Z
 
-    .line 3019
+    .line 3005
     iput-boolean v1, p0, Lcom/samsung/client/DMApp;->fumoUserStart:Z
 
-    .line 3020
+    .line 3006
     iput-boolean v0, p0, Lcom/samsung/client/DMApp;->replace:Z
 
-    .line 3022
+    .line 3008
     const-string v2, "DMAPP_STATE"
 
     const/4 v3, 0x3
@@ -10054,7 +10054,7 @@
 
     move-result-object v2
 
-    .line 3024
+    .line 3010
     const-string v3, "UpgradePending"
 
     invoke-interface {v2, v3, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -10063,14 +10063,14 @@
 
     if-eqz v3, :cond_3a
 
-    .line 3025
+    .line 3011
     const-string v1, "DMApp"
 
     const-string v3, "Upgrade Pending"
 
     invoke-static {v1, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3026
+    .line 3012
     const-string v1, "FUMO_DESCRIPTION"
 
     const-string v3, "Firmware Update Package"
@@ -10081,12 +10081,12 @@
 
     invoke-virtual {p0, v1}, Lcom/samsung/client/DMApp;->gotoUpdate(Ljava/lang/String;)V
 
-    .line 3077
+    .line 3063
     :cond_39
     :goto_39
     return v0
 
-    .line 3031
+    .line 3017
     :cond_3a
     const-wide/16 v2, 0x0
 
@@ -10102,7 +10102,7 @@
 
     if-eqz v2, :cond_39
 
-    .line 3035
+    .line 3021
     sget-object v2, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2}, Lcom/samsung/client/DMApp;->checkDunEnabled()Z
@@ -10111,14 +10111,14 @@
 
     if-nez v2, :cond_39
 
-    .line 3039
+    .line 3025
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->checkRadioState_DisplayError()Z
 
     move-result v2
 
     if-eqz v2, :cond_39
 
-    .line 3043
+    .line 3029
     sget-object v2, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2}, Lcom/samsung/client/DMApp;->checkAirplaneMode()Z
@@ -10127,7 +10127,7 @@
 
     if-nez v2, :cond_39
 
-    .line 3049
+    .line 3035
     :try_start_5e
     sget-object v2, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
@@ -10139,25 +10139,25 @@
 
     if-nez v2, :cond_39
 
-    .line 3074
+    .line 3060
     :goto_66
     iput-boolean v1, p0, Lcom/samsung/client/DMApp;->mStartCntrRunning:Z
 
-    .line 3075
+    .line 3061
     iget-object v0, p0, Lcom/samsung/client/DMApp;->delayStart:Landroid/os/CountDownTimer;
 
     invoke-virtual {v0}, Landroid/os/CountDownTimer;->start()Landroid/os/CountDownTimer;
 
     move v0, v1
 
-    .line 3077
+    .line 3063
     goto :goto_39
 
-    .line 3052
+    .line 3038
     :catch_6f
     move-exception v0
 
-    .line 3053
+    .line 3039
     const-string v2, "DMApp"
 
     invoke-virtual {v0}, Landroid/os/RemoteException;->getMessage()Ljava/lang/String;
@@ -10177,24 +10177,24 @@
 
     const/4 v0, 0x0
 
-    .line 2949
+    .line 2935
     const-string v2, "DMApp"
 
     const-string v3, "start_hfa_prl"
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2951
+    .line 2937
     const/4 v2, 0x3
 
     sput v2, Lcom/samsung/client/DMApp;->mSessionType:I
 
-    .line 2952
+    .line 2938
     sget-object v2, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
 
     iput-boolean v0, v2, Lcom/samsung/client/DMApp;->userCancel:Z
 
-    .line 2954
+    .line 2940
     const-wide/16 v2, 0x0
 
     sget-object v4, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
@@ -10209,12 +10209,12 @@
 
     if-nez v2, :cond_1f
 
-    .line 2986
+    .line 2972
     :cond_1e
     :goto_1e
     return v0
 
-    .line 2958
+    .line 2944
     :cond_1f
     sget-object v2, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
 
@@ -10224,12 +10224,12 @@
 
     if-nez v2, :cond_1e
 
-    .line 2962
+    .line 2948
     sget v2, Lcom/samsung/client/DMApp;->mCallState:I
 
     if-nez v2, :cond_1e
 
-    .line 2966
+    .line 2952
     sget-object v2, Lcom/samsung/client/DMApp;->mApp:Lcom/samsung/client/DMApp;
 
     invoke-virtual {v2}, Lcom/samsung/client/DMApp;->checkDunEnabled()Z
@@ -10238,57 +10238,57 @@
 
     if-nez v2, :cond_1e
 
-    .line 2970
+    .line 2956
     new-instance v2, Landroid/content/Intent;
 
     const-string v3, "com.samsung.intent.START_CIPRL"
 
     invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2971
+    .line 2957
     const-string v3, "android.intent.category.DEFAULT"
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v2
 
-    .line 2972
+    .line 2958
     const/high16 v3, 0x1000
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 2973
+    .line 2959
     const/high16 v3, 0x80
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 2975
+    .line 2961
     invoke-virtual {p0, v2}, Lcom/samsung/client/DMApp;->startActivity(Landroid/content/Intent;)V
 
-    .line 2977
+    .line 2963
     invoke-virtual {p0, v1}, Lcom/samsung/client/DMApp;->setHfaInitiated(Z)V
 
-    .line 2978
+    .line 2964
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->setHfaRebooted(Z)V
 
-    .line 2980
+    .line 2966
     const-string v0, "DMApp"
 
     const-string v2, "IN PRL"
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2983
+    .line 2969
     iput-boolean v1, p0, Lcom/samsung/client/DMApp;->mStartCntrRunning:Z
 
-    .line 2984
+    .line 2970
     iget-object v0, p0, Lcom/samsung/client/DMApp;->delayStart:Landroid/os/CountDownTimer;
 
     invoke-virtual {v0}, Landroid/os/CountDownTimer;->start()Landroid/os/CountDownTimer;
 
     move v0, v1
 
-    .line 2986
+    .line 2972
     goto :goto_1e
 .end method
 
@@ -10298,14 +10298,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1073
+    .line 1072
     const-string v0, "DMApp"
 
     const-string v1, "stopSession()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1076
+    .line 1075
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -10330,12 +10330,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1078
+    .line 1077
     iget-boolean v0, p0, Lcom/samsung/client/DMApp;->isRegistered:Z
 
     if-eqz v0, :cond_4a
 
-    .line 1080
+    .line 1079
     :try_start_26
     iget-object v0, p0, Lcom/samsung/client/DMApp;->mReceiver:Landroid/content/BroadcastReceiver;
 
@@ -10343,11 +10343,11 @@
     :try_end_2b
     .catch Ljava/lang/Exception; {:try_start_26 .. :try_end_2b} :catch_bd
 
-    .line 1084
+    .line 1083
     :goto_2b
     iput-boolean v3, p0, Lcom/samsung/client/DMApp;->isRegistered:Z
 
-    .line 1085
+    .line 1084
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -10372,10 +10372,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1086
+    .line 1085
     invoke-virtual {p0, v3}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    .line 1088
+    .line 1087
     :cond_4a
     const-string v0, "DMApp"
 
@@ -10401,20 +10401,20 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1089
+    .line 1088
     iget-boolean v0, p0, Lcom/samsung/client/DMApp;->mStartCntrRunning:Z
 
     if-eqz v0, :cond_8c
 
-    .line 1090
+    .line 1089
     iget-object v0, p0, Lcom/samsung/client/DMApp;->delayStart:Landroid/os/CountDownTimer;
 
     invoke-virtual {v0}, Landroid/os/CountDownTimer;->cancel()V
 
-    .line 1091
+    .line 1090
     iput-boolean v3, p0, Lcom/samsung/client/DMApp;->mStartCntrRunning:Z
 
-    .line 1092
+    .line 1091
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -10439,24 +10439,24 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1093
+    .line 1092
     invoke-virtual {p0, v3}, Lcom/samsung/client/DMApp;->restoreSlot(I)V
 
-    .line 1097
+    .line 1096
     :cond_8c
     iget-object v0, p0, Lcom/samsung/client/DMApp;->ctd:Landroid/os/CountDownTimer;
 
     invoke-virtual {v0}, Landroid/os/CountDownTimer;->cancel()V
 
-    .line 1098
+    .line 1097
     sget v0, Lcom/samsung/client/DMApp;->niaRetries:I
 
     if-eqz v0, :cond_98
 
-    .line 1099
+    .line 1098
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->removeSanMessage_startService()V
 
-    .line 1102
+    .line 1101
     :cond_98
     const-string v0, "DMApp"
 
@@ -10464,7 +10464,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1104
+    .line 1103
     :try_start_9f
     iget-object v0, p0, Lcom/samsung/client/DMApp;->hangedTimer:Landroid/os/CountDownTimer;
 
@@ -10472,7 +10472,7 @@
     :try_end_a4
     .catch Ljava/lang/Exception; {:try_start_9f .. :try_end_a4} :catch_c9
 
-    .line 1110
+    .line 1109
     :goto_a4
     :try_start_a4
     const-string v0, "DMApp"
@@ -10481,21 +10481,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1111
+    .line 1110
     iget-object v0, p0, Lcom/samsung/client/DMApp;->fumoRunTimer:Landroid/os/CountDownTimer;
 
     invoke-virtual {v0}, Landroid/os/CountDownTimer;->cancel()V
     :try_end_b0
     .catch Ljava/lang/Exception; {:try_start_a4 .. :try_end_b0} :catch_d4
 
-    .line 1117
+    .line 1116
     :goto_b0
     :try_start_b0
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     if-eqz v0, :cond_bc
 
-    .line 1118
+    .line 1117
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     iget v1, p0, Lcom/samsung/client/DMApp;->instId:I
@@ -10506,16 +10506,16 @@
     :try_end_bc
     .catch Ljava/lang/Exception; {:try_start_b0 .. :try_end_bc} :catch_df
 
-    .line 1124
+    .line 1123
     :cond_bc
     :goto_bc
     return-void
 
-    .line 1081
+    .line 1080
     :catch_bd
     move-exception v0
 
-    .line 1082
+    .line 1081
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -10526,11 +10526,11 @@
 
     goto/16 :goto_2b
 
-    .line 1105
+    .line 1104
     :catch_c9
     move-exception v0
 
-    .line 1106
+    .line 1105
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -10541,11 +10541,11 @@
 
     goto :goto_a4
 
-    .line 1112
+    .line 1111
     :catch_d4
     move-exception v0
 
-    .line 1114
+    .line 1113
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -10556,11 +10556,11 @@
 
     goto :goto_b0
 
-    .line 1120
+    .line 1119
     :catch_df
     move-exception v0
 
-    .line 1121
+    .line 1120
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
@@ -10569,7 +10569,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1122
+    .line 1121
     invoke-direct {p0}, Lcom/samsung/client/DMApp;->reconnectSyncmlService()V
 
     goto :goto_bc
@@ -10586,7 +10586,7 @@
 
     const/4 v6, 0x0
 
-    .line 1485
+    .line 1484
     const-string v0, "DMApp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -10609,53 +10609,53 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1486
+    .line 1485
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->isUpdateCompleted()Z
 
     move-result v0
 
     if-eqz v0, :cond_6f
 
-    .line 1487
+    .line 1486
     if-eqz p1, :cond_44
 
-    .line 1488
+    .line 1487
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.samsung.intent.UPDATE_COMPLETE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1489
+    .line 1488
     const-string v1, "android.intent.category.DEFAULT"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 1490
+    .line 1489
     invoke-virtual {v0, v4}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1491
+    .line 1490
     invoke-virtual {v0, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1493
+    .line 1492
     const-string v1, "fwUpdateDialog"
 
     invoke-virtual {v0, v1, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1494
+    .line 1493
     invoke-virtual {p0, v0}, Lcom/samsung/client/DMApp;->startActivity(Landroid/content/Intent;)V
 
-    .line 1531
+    .line 1530
     :goto_40
     invoke-virtual {p0, v6}, Lcom/samsung/client/DMApp;->setUpdateCompleted(Z)V
 
-    .line 1536
+    .line 1535
     :goto_43
     return-void
 
-    .line 1518
+    .line 1517
     :cond_44
     const-string v0, "alarm"
 
@@ -10665,32 +10665,32 @@
 
     check-cast v0, Landroid/app/AlarmManager;
 
-    .line 1519
+    .line 1518
     new-instance v1, Landroid/content/Intent;
 
     const-class v2, Lcom/samsung/fumo/FWUpdateComplete;
 
     invoke-direct {v1, p0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1520
+    .line 1519
     invoke-virtual {v1, v4}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1521
+    .line 1520
     invoke-virtual {v1, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1523
+    .line 1522
     const-string v2, "fwUpdateDialog"
 
     invoke-virtual {v1, v2, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1524
+    .line 1523
     const/high16 v2, 0x800
 
     invoke-static {p0, v6, v1, v2}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v1
 
-    .line 1527
+    .line 1526
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -10703,11 +10703,11 @@
 
     goto :goto_40
 
-    .line 1533
+    .line 1532
     :cond_6f
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->enableKeyGuard()V
 
-    .line 1534
+    .line 1533
     invoke-virtual {p0}, Lcom/samsung/client/DMApp;->releaseWakeLock()V
 
     goto :goto_43
@@ -10719,34 +10719,34 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1361
+    .line 1360
     const-string v0, "DMApp"
 
     const-string v1, "updateSoftware()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1363
+    .line 1362
     const-string v0, "DMAPP_STATE"
 
     invoke-virtual {p0, v0, v2}, Lcom/samsung/client/DMApp;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 1364
+    .line 1363
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 1365
+    .line 1364
     const-string v1, "UpgradePending"
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 1366
+    .line 1365
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 1368
+    .line 1367
     :try_start_1a
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
@@ -10754,7 +10754,7 @@
 
     invoke-interface {v0, v1}, Lcom/samsung/client/ISyncmlService;->registerDMCallback(Lcom/samsung/client/ISyncmlServiceDMCallback;)V
 
-    .line 1369
+    .line 1368
     sget-object v0, Lcom/samsung/client/DMApp;->mService:Lcom/samsung/client/ISyncmlService;
 
     const/4 v1, 0x1
@@ -10763,15 +10763,15 @@
     :try_end_27
     .catch Landroid/os/RemoteException; {:try_start_1a .. :try_end_27} :catch_28
 
-    .line 1373
+    .line 1372
     :goto_27
     return-void
 
-    .line 1370
+    .line 1369
     :catch_28
     move-exception v0
 
-    .line 1371
+    .line 1370
     const-string v1, "DMApp"
 
     invoke-virtual {v0}, Landroid/os/RemoteException;->getMessage()Ljava/lang/String;
@@ -10789,7 +10789,7 @@
     .parameter "value"
 
     .prologue
-    .line 2309
+    .line 2295
     const-string v2, "DMAPP_STATE"
 
     const/4 v3, 0x3
@@ -10798,19 +10798,19 @@
 
     move-result-object v1
 
-    .line 2311
+    .line 2297
     .local v1, sp:Landroid/content/SharedPreferences;
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 2312
+    .line 2298
     .local v0, edit:Landroid/content/SharedPreferences$Editor;
     invoke-interface {v0, p1, p2, p3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    .line 2313
+    .line 2299
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 2314
+    .line 2300
     return-void
 .end method

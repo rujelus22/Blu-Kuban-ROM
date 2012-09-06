@@ -29,6 +29,12 @@
         <item>Tik kai veikia tyliai</item>
         <item>Niekada</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>išjungta</item>
+        <item>mažas</item>
+        <item>vidutinis</item>
+        <item>virtualus</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Nėra</item>
         <item>Vaizdo stabilizavimas: mažas</item>

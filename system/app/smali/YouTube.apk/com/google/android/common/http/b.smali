@@ -13,23 +13,8 @@
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/common/http/GoogleHttpClient;Lorg/apache/http/conn/scheme/SocketFactory;)V
-    .registers 4
-    .parameter
-    .parameter
-
-    .prologue
-    .line 138
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/common/http/b;-><init>(Lcom/google/android/common/http/GoogleHttpClient;Lorg/apache/http/conn/scheme/SocketFactory;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/common/http/GoogleHttpClient;Lorg/apache/http/conn/scheme/SocketFactory;B)V
-    .registers 4
-    .parameter
+.method private constructor <init>(Lcom/google/android/common/http/GoogleHttpClient;Lorg/apache/http/conn/scheme/SocketFactory;)V
+    .registers 3
     .parameter
     .parameter
 
@@ -40,6 +25,19 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p2, p0, Lcom/google/android/common/http/b;->a:Lorg/apache/http/conn/scheme/SocketFactory;
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/common/http/GoogleHttpClient;Lorg/apache/http/conn/scheme/SocketFactory;B)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 138
+    invoke-direct {p0, p1, p2}, Lcom/google/android/common/http/b;-><init>(Lcom/google/android/common/http/GoogleHttpClient;Lorg/apache/http/conn/scheme/SocketFactory;)V
 
     return-void
 .end method

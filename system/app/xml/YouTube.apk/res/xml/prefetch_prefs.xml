@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:layout="@layout/preload_summary" />
+    <CheckBoxPreference android:title="@string/preload_subscriptions_title" android:key="@string/prefetch_subscriptions_pref_key" />
+    <CheckBoxPreference android:title="@string/preload_watch_later_title" android:key="@string/prefetch_watch_later_pref_key" />
+</PreferenceScreen>

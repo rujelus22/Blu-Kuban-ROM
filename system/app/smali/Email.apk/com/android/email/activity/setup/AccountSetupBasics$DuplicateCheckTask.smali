@@ -19,7 +19,7 @@
         "<",
         "Ljava/lang/Void;",
         "Ljava/lang/Void;",
-        "Lcom/android/emailcommon/provider/EmailContent$Account;",
+        "Lcom/android/emailcommon/provider/Account;",
         ">;"
     }
 .end annotation
@@ -32,91 +32,65 @@
 
 .field private final mContext:Landroid/content/Context;
 
-.field private final mDomain:Ljava/lang/String;
-
-.field private final mEmail:Ljava/lang/String;
-
 .field final synthetic this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/email/activity/setup/AccountSetupBasics;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
+.method public constructor <init>(Lcom/android/email/activity/setup/AccountSetupBasics;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 6
     .parameter
     .parameter "context"
     .parameter "checkHost"
     .parameter "checkLogin"
-    .parameter "domain"
-    .parameter "email"
 
     .prologue
-    .line 1606
+    .line 479
     iput-object p1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 1607
+    .line 480
     iput-object p2, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->mContext:Landroid/content/Context;
 
-    .line 1608
+    .line 481
     iput-object p3, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->mCheckHost:Ljava/lang/String;
 
-    .line 1609
+    .line 482
     iput-object p4, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->mCheckLogin:Ljava/lang/String;
 
-    .line 1610
-    iput-object p5, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->mDomain:Ljava/lang/String;
+    .line 484
+    const/4 v0, 0x1
 
-    .line 1611
-    iput-object p6, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->mEmail:Ljava/lang/String;
+    #setter for: Lcom/android/email/activity/setup/AccountSetupBasics;->mNextButtonInhibit:Z
+    invoke-static {p1, v0}, Lcom/android/email/activity/setup/AccountSetupBasics;->access$102(Lcom/android/email/activity/setup/AccountSetupBasics;Z)Z
 
-    .line 1615
+    .line 485
     return-void
 .end method
 
 
 # virtual methods
-.method protected varargs doInBackground([Ljava/lang/Void;)Lcom/android/emailcommon/provider/EmailContent$Account;
-    .registers 10
+.method protected varargs doInBackground([Ljava/lang/Void;)Lcom/android/emailcommon/provider/Account;
+    .registers 8
     .parameter "params"
 
     .prologue
-    .line 1619
-    iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->mCheckLogin:Ljava/lang/String;
+    .line 489
+    iget-object v1, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->mContext:Landroid/content/Context;
 
-    const-string v1, "@"
+    const-wide/16 v2, -0x1
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->mCheckHost:Ljava/lang/String;
 
-    move-result-object v7
+    iget-object v5, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->mCheckLogin:Ljava/lang/String;
 
-    .line 1620
-    .local v7, emailParts:[Ljava/lang/String;
-    const/4 v0, 0x0
+    invoke-static {v1, v2, v3, v4, v5}, Lcom/android/emailcommon/utility/Utility;->findExistingAccount(Landroid/content/Context;JLjava/lang/String;Ljava/lang/String;)Lcom/android/emailcommon/provider/Account;
 
-    aget-object v0, v7, v0
+    move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 1621
-    .local v4, username:Ljava/lang/String;
-    iget-object v0, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->mContext:Landroid/content/Context;
-
-    const-wide/16 v1, -0x1
-
-    iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->mCheckHost:Ljava/lang/String;
-
-    iget-object v5, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->mEmail:Ljava/lang/String;
-
-    invoke-static/range {v0 .. v5}, Lcom/android/emailcommon/utility/Utility;->findExistingAccount(Landroid/content/Context;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    move-result-object v6
-
-    .line 1623
-    .local v6, account:Lcom/android/emailcommon/provider/EmailContent$Account;
-    return-object v6
+    .line 491
+    .local v0, account:Lcom/android/emailcommon/provider/Account;
+    return-object v0
 .end method
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
@@ -124,48 +98,56 @@
     .parameter "x0"
 
     .prologue
-    .line 1594
+    .line 474
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
-    invoke-virtual {p0, p1}, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->doInBackground([Ljava/lang/Void;)Lcom/android/emailcommon/provider/EmailContent$Account;
+    invoke-virtual {p0, p1}, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->doInBackground([Ljava/lang/Void;)Lcom/android/emailcommon/provider/Account;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected onPostExecute(Lcom/android/emailcommon/provider/EmailContent$Account;)V
-    .registers 8
+.method protected onPostExecute(Lcom/android/emailcommon/provider/Account;)V
+    .registers 7
     .parameter "duplicateAccount"
 
     .prologue
-    .line 1631
+    .line 496
+    iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
+
+    const/4 v4, 0x0
+
+    #setter for: Lcom/android/email/activity/setup/AccountSetupBasics;->mNextButtonInhibit:Z
+    invoke-static {v3, v4}, Lcom/android/email/activity/setup/AccountSetupBasics;->access$102(Lcom/android/email/activity/setup/AccountSetupBasics;Z)Z
+
+    .line 498
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
     #getter for: Lcom/android/email/activity/setup/AccountSetupBasics;->mPaused:Z
-    invoke-static {v3}, Lcom/android/email/activity/setup/AccountSetupBasics;->access$700(Lcom/android/email/activity/setup/AccountSetupBasics;)Z
+    invoke-static {v3}, Lcom/android/email/activity/setup/AccountSetupBasics;->access$200(Lcom/android/email/activity/setup/AccountSetupBasics;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_9
+    if-eqz v3, :cond_f
 
-    .line 1660
-    :goto_8
+    .line 514
+    :goto_e
     return-void
 
-    .line 1634
-    :cond_9
-    if-eqz p1, :cond_20
+    .line 500
+    :cond_f
+    if-eqz p1, :cond_23
 
-    .line 1635
-    iget-object v3, p1, Lcom/android/emailcommon/provider/EmailContent$Account;->mDisplayName:Ljava/lang/String;
+    .line 501
+    iget-object v3, p1, Lcom/android/emailcommon/provider/Account;->mDisplayName:Ljava/lang/String;
 
     invoke-static {v3}, Lcom/android/email/activity/setup/DuplicateAccountDialogFragment;->newInstance(Ljava/lang/String;)Lcom/android/email/activity/setup/DuplicateAccountDialogFragment;
 
     move-result-object v1
 
-    .line 1637
+    .line 503
     .local v1, dialogFragment:Lcom/android/email/activity/setup/DuplicateAccountDialogFragment;
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
@@ -177,45 +159,11 @@
 
     invoke-virtual {v1, v3, v4}, Lcom/android/email/activity/setup/DuplicateAccountDialogFragment;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 1638
-    const/4 v3, 0x0
+    goto :goto_e
 
-    sput-boolean v3, Lcom/android/email/activity/setup/AccountSetupBasics;->mNextButtonInhibit:Z
-
-    goto :goto_8
-
-    .line 1645
+    .line 506
     .end local v1           #dialogFragment:Lcom/android/email/activity/setup/DuplicateAccountDialogFragment;
-    :cond_20
-    const-string v3, "mopera.net"
-
-    iget-object v4, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->mDomain:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3a
-
-    .line 1646
-    iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->mContext:Landroid/content/Context;
-
-    check-cast v3, Landroid/app/Activity;
-
-    invoke-static {}, Lcom/android/email/activity/setup/SetupData;->getFlowMode()I
-
-    move-result v4
-
-    invoke-static {}, Lcom/android/email/activity/setup/SetupData;->getAccount()Lcom/android/emailcommon/provider/EmailContent$Account;
-
-    move-result-object v5
-
-    invoke-static {v3, v4, v5}, Lcom/android/email/activity/setup/AccountSetupIncoming;->actionIncomingSettings(Landroid/app/Activity;ILcom/android/emailcommon/provider/EmailContent$Account;)V
-
-    goto :goto_8
-
-    .line 1652
-    :cond_3a
+    :cond_23
     const/4 v3, 0x3
 
     const/4 v4, 0x0
@@ -224,7 +172,7 @@
 
     move-result-object v0
 
-    .line 1654
+    .line 509
     .local v0, checkerFragment:Lcom/android/email/activity/setup/AccountCheckSettingsFragment;
     iget-object v3, p0, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->this$0:Lcom/android/email/activity/setup/AccountSetupBasics;
 
@@ -236,21 +184,21 @@
 
     move-result-object v2
 
-    .line 1655
+    .line 510
     .local v2, transaction:Landroid/app/FragmentTransaction;
     const-string v3, "AccountCheckSettingsFragment"
 
     invoke-virtual {v2, v0, v3}, Landroid/app/FragmentTransaction;->add(Landroid/app/Fragment;Ljava/lang/String;)Landroid/app/FragmentTransaction;
 
-    .line 1656
+    .line 511
     const-string v3, "back"
 
     invoke-virtual {v2, v3}, Landroid/app/FragmentTransaction;->addToBackStack(Ljava/lang/String;)Landroid/app/FragmentTransaction;
 
-    .line 1657
+    .line 512
     invoke-virtual {v2}, Landroid/app/FragmentTransaction;->commit()I
 
-    goto :goto_8
+    goto :goto_e
 .end method
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
@@ -258,11 +206,11 @@
     .parameter "x0"
 
     .prologue
-    .line 1594
-    check-cast p1, Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 474
+    check-cast p1, Lcom/android/emailcommon/provider/Account;
 
     .end local p1
-    invoke-virtual {p0, p1}, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->onPostExecute(Lcom/android/emailcommon/provider/EmailContent$Account;)V
+    invoke-virtual {p0, p1}, Lcom/android/email/activity/setup/AccountSetupBasics$DuplicateCheckTask;->onPostExecute(Lcom/android/emailcommon/provider/Account;)V
 
     return-void
 .end method

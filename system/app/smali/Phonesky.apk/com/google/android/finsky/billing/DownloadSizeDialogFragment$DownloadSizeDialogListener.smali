@@ -15,10 +15,7 @@
 
 
 # virtual methods
-.method public abstract onDownloadCancel()V
-.end method
-
-.method public abstract onDownloadOk()V
+.method public abstract onDownloadOk(Z)V
 .end method
 
 .method public abstract onDownloadWifi()V

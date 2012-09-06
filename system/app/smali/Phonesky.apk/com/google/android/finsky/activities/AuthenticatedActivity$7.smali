@@ -3,12 +3,12 @@
 .source "AuthenticatedActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/android/volley/Response$ErrorListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/activities/AuthenticatedActivity;->initializeAndContinue(Z)V
+    value = Lcom/google/android/finsky/activities/AuthenticatedActivity;->loadTocAndContinue(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
 
-.field final synthetic val$shouldHandleIntent:Z
-
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/activities/AuthenticatedActivity;Z)V
-    .registers 3
-    .parameter
+.method constructor <init>(Lcom/google/android/finsky/activities/AuthenticatedActivity;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 776
+    .line 762
     iput-object p1, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$7;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
-
-    iput-boolean p2, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$7;->val$shouldHandleIntent:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,18 +37,21 @@
 
 
 # virtual methods
-.method public run()V
+.method public onErrorResponse(Lcom/android/volley/VolleyError;)V
     .registers 3
+    .parameter "error"
 
     .prologue
-    .line 779
+    .line 765
     iget-object v0, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$7;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
 
-    iget-boolean v1, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$7;->val$shouldHandleIntent:Z
+    invoke-virtual {v0}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->hideLoadingIndicator()V
 
-    #calls: Lcom/google/android/finsky/activities/AuthenticatedActivity;->loadTocAndContinue(Z)V
-    invoke-static {v0, v1}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->access$100(Lcom/google/android/finsky/activities/AuthenticatedActivity;Z)V
+    .line 766
+    iget-object v0, p0, Lcom/google/android/finsky/activities/AuthenticatedActivity$7;->this$0:Lcom/google/android/finsky/activities/AuthenticatedActivity;
 
-    .line 780
+    invoke-virtual {v0, p1}, Lcom/google/android/finsky/activities/AuthenticatedActivity;->handleAuthenticationError(Lcom/android/volley/VolleyError;)V
+
+    .line 767
     return-void
 .end method

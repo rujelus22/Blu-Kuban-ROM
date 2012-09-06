@@ -41,7 +41,7 @@
     .line 2481
     iput-object p1, p0, Lcom/google/android/talk/ChatView$DeltaCursor;->this$0:Lcom/google/android/talk/ChatView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 2478
     iput v3, p0, Lcom/google/android/talk/ChatView$DeltaCursor;->mDateColumn:I

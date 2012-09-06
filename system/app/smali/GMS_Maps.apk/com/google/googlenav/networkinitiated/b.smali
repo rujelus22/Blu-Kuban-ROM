@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/googlenav/networkinitiated/b;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # virtual methods

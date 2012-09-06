@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/base/k;
+.implements Lcom/google/common/base/v;
 .implements Ljava/io/Serializable;
 
 
@@ -12,39 +12,39 @@
 
 
 # instance fields
-.field private final predicate:Lcom/google/common/base/u;
+.field private final predicate:Lcom/google/common/base/ah;
 
 
 # direct methods
-.method private constructor <init>(Lcom/google/common/base/u;)V
+.method private constructor <init>(Lcom/google/common/base/ah;)V
     .registers 3
     .parameter
 
     .prologue
-    .line 228
+    .line 241
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 229
-    invoke-static {p1}, Lcom/google/common/base/t;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 242
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/common/base/u;
+    check-cast v0, Lcom/google/common/base/ah;
 
-    iput-object v0, p0, Lcom/google/common/base/Functions$PredicateFunction;->predicate:Lcom/google/common/base/u;
+    iput-object v0, p0, Lcom/google/common/base/Functions$PredicateFunction;->predicate:Lcom/google/common/base/ah;
 
-    .line 230
+    .line 243
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/google/common/base/u;Lcom/google/common/base/l;)V
+.method synthetic constructor <init>(Lcom/google/common/base/ah;Lcom/google/common/base/w;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 224
-    invoke-direct {p0, p1}, Lcom/google/common/base/Functions$PredicateFunction;-><init>(Lcom/google/common/base/u;)V
+    .line 238
+    invoke-direct {p0, p1}, Lcom/google/common/base/Functions$PredicateFunction;-><init>(Lcom/google/common/base/ah;)V
 
     return-void
 .end method
@@ -56,10 +56,10 @@
     .parameter
 
     .prologue
-    .line 233
-    iget-object v0, p0, Lcom/google/common/base/Functions$PredicateFunction;->predicate:Lcom/google/common/base/u;
+    .line 247
+    iget-object v0, p0, Lcom/google/common/base/Functions$PredicateFunction;->predicate:Lcom/google/common/base/ah;
 
-    invoke-interface {v0, p1}, Lcom/google/common/base/u;->apply(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Lcom/google/common/base/ah;->apply(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -75,7 +75,7 @@
     .parameter
 
     .prologue
-    .line 224
+    .line 238
     invoke-virtual {p0, p1}, Lcom/google/common/base/Functions$PredicateFunction;->apply(Ljava/lang/Object;)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -86,26 +86,29 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 236
+    .line 251
     instance-of v0, p1, Lcom/google/common/base/Functions$PredicateFunction;
 
     if-eqz v0, :cond_f
 
-    .line 237
+    .line 252
     check-cast p1, Lcom/google/common/base/Functions$PredicateFunction;
 
-    .line 238
-    iget-object v0, p0, Lcom/google/common/base/Functions$PredicateFunction;->predicate:Lcom/google/common/base/u;
+    .line 253
+    iget-object v0, p0, Lcom/google/common/base/Functions$PredicateFunction;->predicate:Lcom/google/common/base/ah;
 
-    iget-object v1, p1, Lcom/google/common/base/Functions$PredicateFunction;->predicate:Lcom/google/common/base/u;
+    iget-object v1, p1, Lcom/google/common/base/Functions$PredicateFunction;->predicate:Lcom/google/common/base/ah;
 
     invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 240
+    .line 255
     :goto_e
     return v0
 
@@ -119,8 +122,8 @@
     .registers 2
 
     .prologue
-    .line 243
-    iget-object v0, p0, Lcom/google/common/base/Functions$PredicateFunction;->predicate:Lcom/google/common/base/u;
+    .line 259
+    iget-object v0, p0, Lcom/google/common/base/Functions$PredicateFunction;->predicate:Lcom/google/common/base/ah;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
@@ -133,18 +136,14 @@
     .registers 3
 
     .prologue
-    .line 246
+    .line 263
     new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "forPredicate("
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/common/base/Functions$PredicateFunction;->predicate:Lcom/google/common/base/u;
+    iget-object v1, p0, Lcom/google/common/base/Functions$PredicateFunction;->predicate:Lcom/google/common/base/ah;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

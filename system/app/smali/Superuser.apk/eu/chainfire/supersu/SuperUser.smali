@@ -376,7 +376,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;[Ljava/lang/String;)Ljava/util/List;
-    .registers 14
+    .registers 12
 
     const/4 v0, 0x0
 
@@ -385,12 +385,6 @@
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     :try_start_6
-    const-string v2, "SuperSU"
-
-    const-string v3, "[SuperSU][SU%] START"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v2
@@ -427,8 +421,8 @@
 
     const/4 v2, 0x0
 
-    :goto_32
-    if-lt v2, v7, :cond_48
+    :goto_2b
+    if-lt v2, v7, :cond_41
 
     const-string v2, "exit\n"
 
@@ -444,31 +438,13 @@
 
     const/16 v3, 0xff
 
-    if-ne v2, v3, :cond_92
+    if-ne v2, v3, :cond_62
 
-    :goto_47
+    :goto_40
     return-object v0
 
-    :cond_48
+    :cond_41
     aget-object v8, p1, v2
-
-    const-string v9, "SuperSU"
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    const-string v11, "[SuperSU][SU+] "
-
-    invoke-direct {v10, v11}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v10, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     new-instance v9, Ljava/lang/StringBuilder;
 
@@ -494,94 +470,50 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_32
+    goto :goto_2b
 
-    :cond_7a
+    :cond_5f
     invoke-virtual {v6}, Ljava/io/DataInputStream;->readLine()Ljava/lang/String;
 
-    move-result-object v2
-
-    const-string v3, "SuperSU"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v7, "[SuperSU][SU-] "
-
-    invoke-direct {v4, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v3, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_92
+    :cond_62
     invoke-virtual {v6}, Ljava/io/DataInputStream;->available()I
 
     move-result v2
 
-    if-gtz v2, :cond_7a
+    if-gtz v2, :cond_5f
 
-    :goto_98
+    :goto_68
     invoke-virtual {v5}, Ljava/io/DataInputStream;->available()I
 
     move-result v2
 
-    if-gtz v2, :cond_a7
-
-    const-string v2, "SuperSU"
-
-    const-string v3, "[SuperSU][SU%] END"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    if-gtz v2, :cond_70
 
     move-object v0, v1
 
-    goto :goto_47
+    goto :goto_40
 
-    :cond_a7
+    :cond_70
     invoke-virtual {v5}, Ljava/io/DataInputStream;->readLine()Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v3, "SuperSU"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v6, "[SuperSU][SU*] "
-
-    invoke-direct {v4, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_c2
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_c2} :catch_c3
-    .catch Ljava/lang/InterruptedException; {:try_start_6 .. :try_end_c2} :catch_c5
+    :try_end_77
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_77} :catch_78
+    .catch Ljava/lang/InterruptedException; {:try_start_6 .. :try_end_77} :catch_7a
 
-    goto :goto_98
+    goto :goto_68
 
-    :catch_c3
+    :catch_78
     move-exception v1
 
-    goto :goto_47
+    goto :goto_40
 
-    :catch_c5
+    :catch_7a
     move-exception v1
 
-    goto :goto_47
+    goto :goto_40
 .end method
 
 .method public static a(Ljava/util/List;)Ljava/util/List;

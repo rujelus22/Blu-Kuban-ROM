@@ -6,15 +6,18 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/android/finsky/remoting/protos/CommonDevice$InstrumentSetupInfo;,
+        Lcom/google/android/finsky/remoting/protos/CommonDevice$PasswordPrompt;,
         Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTos;,
         Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierTosEntry;,
         Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;,
-        Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;,
         Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrumentStatus;,
         Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingCredentials;,
         Lcom/google/android/finsky/remoting/protos/CommonDevice$CarrierBillingInstrument;,
         Lcom/google/android/finsky/remoting/protos/CommonDevice$CreditCardInstrument;,
-        Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
+        Lcom/google/android/finsky/remoting/protos/CommonDevice$EfeParam;,
+        Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;,
+        Lcom/google/android/finsky/remoting/protos/CommonDevice$Money;
     }
 .end annotation
 

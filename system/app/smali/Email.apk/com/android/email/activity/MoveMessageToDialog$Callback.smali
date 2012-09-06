@@ -15,8 +15,5 @@
 
 
 # virtual methods
-.method public abstract onMoveConversationAlwaysToMailboxSelected(JJ[J[Ljava/lang/String;I)V
-.end method
-
-.method public abstract onMoveToMailboxSelected(JJ[JI)V
+.method public abstract onMoveToMailboxSelected(J[J)V
 .end method

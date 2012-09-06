@@ -14,12 +14,12 @@
     .parameter
 
     .prologue
-    .line 359
+    .line 374
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/collect/AbstractBiMap;-><init>(Ljava/util/Map;Lcom/google/common/collect/AbstractBiMap;Lcom/google/common/collect/a;)V
 
-    .line 360
+    .line 375
     return-void
 .end method
 
@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 357
+    .line 372
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/AbstractBiMap$Inverse;-><init>(Ljava/util/Map;Lcom/google/common/collect/AbstractBiMap;)V
 
     return-void
@@ -41,10 +41,10 @@
     .parameter
 
     .prologue
-    .line 382
+    .line 399
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 383
+    .line 400
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v0
@@ -53,7 +53,7 @@
 
     invoke-virtual {p0, v0}, Lcom/google/common/collect/AbstractBiMap$Inverse;->setInverse(Lcom/google/common/collect/AbstractBiMap;)V
 
-    .line 384
+    .line 401
     return-void
 .end method
 
@@ -62,17 +62,17 @@
     .parameter
 
     .prologue
-    .line 375
+    .line 391
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 376
-    invoke-virtual {p0}, Lcom/google/common/collect/AbstractBiMap$Inverse;->inverse()Lcom/google/common/collect/as;
+    .line 392
+    invoke-virtual {p0}, Lcom/google/common/collect/AbstractBiMap$Inverse;->inverse()Lcom/google/common/collect/bj;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 377
+    .line 393
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .registers 2
 
     .prologue
-    .line 357
+    .line 372
     invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->delegate()Ljava/util/Map;
 
     move-result-object v0
@@ -94,12 +94,12 @@
     .registers 2
 
     .prologue
-    .line 387
-    invoke-virtual {p0}, Lcom/google/common/collect/AbstractBiMap$Inverse;->inverse()Lcom/google/common/collect/as;
+    .line 405
+    invoke-virtual {p0}, Lcom/google/common/collect/AbstractBiMap$Inverse;->inverse()Lcom/google/common/collect/bj;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/common/collect/as;->inverse()Lcom/google/common/collect/as;
+    invoke-interface {v0}, Lcom/google/common/collect/bj;->inverse()Lcom/google/common/collect/bj;
 
     move-result-object v0
 
@@ -110,7 +110,7 @@
     .registers 2
 
     .prologue
-    .line 357
+    .line 372
     invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->values()Ljava/util/Set;
 
     move-result-object v0

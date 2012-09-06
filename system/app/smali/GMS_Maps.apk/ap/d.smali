@@ -1,515 +1,671 @@
-.class public Lap/d;
-.super Lap/b;
+.class public LaP/d;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field private a:J
-
-.field private e:J
-
-.field private f:J
-
-.field private g:J
-
-.field private h:I
-
-.field private i:Z
+.field private final a:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lap/c;)V
-    .registers 3
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lap/d;-><init>(Lap/c;Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lap/c;Ljava/lang/Runnable;)V
+.method public constructor <init>(Ljava/util/List;)V
     .registers 4
+    .parameter
 
-    const/4 v0, 0x0
+    .prologue
+    .line 38
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, p2, v0}, Lap/d;-><init>(Lap/c;Ljava/lang/Runnable;Ljava/lang/String;)V
+    .line 39
+    if-nez p1, :cond_d
 
-    return-void
-.end method
+    .line 40
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-.method public constructor <init>(Lap/c;Ljava/lang/Runnable;Ljava/lang/String;)V
-    .registers 8
+    const-string v1, "Stages cannot be null."
 
-    const-wide/16 v2, -0x1
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {p0, p1, p2, p3}, Lap/b;-><init>(Lap/c;Ljava/lang/Runnable;Ljava/lang/String;)V
+    throw v0
 
-    const-wide/16 v0, 0x0
+    .line 42
+    :cond_d
+    iput-object p1, p0, LaP/d;->a:Ljava/util/List;
 
-    iput-wide v0, p0, Lap/d;->a:J
-
-    iput-wide v2, p0, Lap/d;->e:J
-
-    iput-wide v2, p0, Lap/d;->f:J
-
-    iput-wide v2, p0, Lap/d;->g:J
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lap/d;->h:I
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lap/d;->i:Z
-
+    .line 43
     return-void
 .end method
 
 
 # virtual methods
-.method public declared-synchronized a(J)V
-    .registers 4
+.method public a()I
+    .registers 2
 
-    monitor-enter p0
+    .prologue
+    .line 63
+    iget-object v0, p0, LaP/d;->a:Ljava/util/List;
 
-    :try_start_1
-    iput-wide p1, p0, Lap/d;->a:J
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_5
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized a(Z)V
-    .registers 3
-
-    monitor-enter p0
-
-    :try_start_1
-    iput-boolean p1, p0, Lap/d;->i:Z
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_5
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized b(I)V
-    .registers 3
-
-    monitor-enter p0
-
-    :try_start_1
-    iput p1, p0, Lap/d;->h:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_5
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized b(J)V
-    .registers 4
-
-    monitor-enter p0
-
-    :try_start_1
-    iput-wide p1, p0, Lap/d;->e:J
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_5
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized c(J)V
-    .registers 4
-
-    monitor-enter p0
-
-    :try_start_1
-    iput-wide p1, p0, Lap/d;->f:J
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_5
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method declared-synchronized d()I
-    .registers 5
-
-    const-wide/16 v2, -0x1
-
-    monitor-enter p0
-
-    :try_start_3
-    iget-object v0, p0, Lap/d;->b:Lap/c;
-
-    invoke-virtual {v0, p0}, Lap/c;->c(Lap/a;)Z
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-eqz v0, :cond_13
-
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Lap/d;->g:J
-
-    iget v0, p0, Lap/d;->h:I
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_22
-
-    :goto_11
-    monitor-exit p0
-
     return v0
-
-    :cond_13
-    :try_start_13
-    iget-wide v0, p0, Lap/d;->g:J
-
-    cmp-long v0, v0, v2
-
-    if-eqz v0, :cond_20
-
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Lap/d;->g:J
-
-    iget v0, p0, Lap/d;->h:I
-    :try_end_1f
-    .catchall {:try_start_13 .. :try_end_1f} :catchall_22
-
-    goto :goto_11
-
-    :cond_20
-    const/4 v0, 0x0
-
-    goto :goto_11
-
-    :catchall_22
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method
 
-.method public g()V
-    .registers 5
+.method public a(I)LaP/g;
+    .registers 3
+    .parameter
 
-    const-wide/16 v2, -0x1
+    .prologue
+    .line 70
+    iget-object v0, p0, LaP/d;->a:Ljava/util/List;
 
-    monitor-enter p0
-
-    :try_start_3
-    iget v0, p0, Lap/d;->h:I
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_c
-
-    iget v0, p0, Lap/d;->h:I
-
-    if-lez v0, :cond_29
-
-    :cond_c
-    iget-wide v0, p0, Lap/d;->g:J
-
-    cmp-long v0, v0, v2
-
-    if-nez v0, :cond_29
-
-    iget-wide v0, p0, Lap/d;->e:J
-
-    cmp-long v0, v0, v2
-
-    if-nez v0, :cond_30
-
-    invoke-static {}, Laf/b;->a()Laf/b;
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Laf/b;->v()Laf/a;
+    check-cast v0, LaP/g;
+
+    return-object v0
+.end method
+
+.method public a(II)LaP/h;
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 56
+    iget-object v0, p0, LaP/d;->a:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0}, Laf/a;->b()J
+    check-cast v0, LaP/g;
 
-    move-result-wide v0
+    invoke-virtual {v0, p2}, LaP/g;->a(I)LaP/h;
 
-    iget-wide v2, p0, Lap/d;->a:J
+    move-result-object v0
 
-    add-long/2addr v0, v2
-
-    iput-wide v0, p0, Lap/d;->g:J
-
-    :cond_29
-    :goto_29
-    monitor-exit p0
-    :try_end_2a
-    .catchall {:try_start_3 .. :try_end_2a} :catchall_38
-
-    iget-object v0, p0, Lap/d;->b:Lap/c;
-
-    invoke-virtual {v0, p0}, Lap/c;->a(Lap/a;)V
-
-    return-void
-
-    :cond_30
-    :try_start_30
-    iget-wide v0, p0, Lap/d;->e:J
-
-    iget-wide v2, p0, Lap/d;->a:J
-
-    add-long/2addr v0, v2
-
-    iput-wide v0, p0, Lap/d;->g:J
-
-    goto :goto_29
-
-    :catchall_38
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_3a
-    .catchall {:try_start_30 .. :try_end_3a} :catchall_38
-
-    throw v0
+    return-object v0
 .end method
 
-.method declared-synchronized h()V
-    .registers 5
+.method public a(LaP/t;)LaP/h;
+    .registers 4
+    .parameter
 
-    monitor-enter p0
+    .prologue
+    .line 49
+    iget v0, p1, LaP/t;->a:I
 
-    :try_start_1
-    iget-wide v0, p0, Lap/d;->g:J
+    iget v1, p1, LaP/t;->b:I
 
-    const-wide/16 v2, -0x1
+    invoke-virtual {p0, v0, v1}, LaP/d;->a(II)LaP/h;
 
-    cmp-long v0, v0, v2
+    move-result-object v0
 
-    if-eqz v0, :cond_e
-
-    iget-object v0, p0, Lap/d;->b:Lap/c;
-
-    invoke-virtual {v0, p0}, Lap/c;->a(Lap/d;)V
-    :try_end_e
-    .catchall {:try_start_1 .. :try_end_e} :catchall_10
-
-    :cond_e
-    monitor-exit p0
-
-    return-void
-
-    :catchall_10
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+    return-object v0
 .end method
 
-.method i()V
-    .registers 5
+.method public a(LaP/a;)Z
+    .registers 4
+    .parameter
 
-    const-wide/16 v2, -0x1
+    .prologue
+    .line 100
+    iget-object v0, p1, LaP/a;->a:LaP/t;
 
-    monitor-enter p0
+    invoke-virtual {p0, v0}, LaP/d;->b(LaP/t;)Z
 
-    :try_start_3
-    iget-wide v0, p0, Lap/d;->f:J
+    move-result v0
 
-    cmp-long v0, v0, v2
+    if-eqz v0, :cond_19
 
-    if-nez v0, :cond_17
+    iget-object v0, p1, LaP/a;->a:LaP/t;
 
-    const-wide/16 v0, -0x1
+    invoke-virtual {p0, v0}, LaP/d;->e(LaP/t;)Z
 
-    iput-wide v0, p0, Lap/d;->g:J
+    move-result v0
 
-    :goto_d
-    monitor-exit p0
-    :try_end_e
-    .catchall {:try_start_3 .. :try_end_e} :catchall_2a
+    if-eqz v0, :cond_17
 
-    invoke-super {p0}, Lap/b;->i()V
+    iget v0, p1, LaP/a;->b:F
 
-    iget-object v0, p0, Lap/d;->b:Lap/c;
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, p0}, Lap/c;->a(Lap/a;)V
+    cmpl-float v0, v0, v1
 
-    return-void
+    if-nez v0, :cond_19
 
     :cond_17
-    :try_start_17
-    iget v0, p0, Lap/d;->h:I
+    const/4 v0, 0x1
 
-    if-lez v0, :cond_21
+    :goto_18
+    return v0
 
-    iget v0, p0, Lap/d;->h:I
+    :cond_19
+    const/4 v0, 0x0
 
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, Lap/d;->h:I
-
-    :cond_21
-    iget v0, p0, Lap/d;->h:I
-
-    if-nez v0, :cond_2d
-
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Lap/d;->g:J
-
-    goto :goto_d
-
-    :catchall_2a
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_2c
-    .catchall {:try_start_17 .. :try_end_2c} :catchall_2a
-
-    throw v0
-
-    :cond_2d
-    :try_start_2d
-    iget-boolean v0, p0, Lap/d;->i:Z
-
-    if-eqz v0, :cond_39
-
-    iget-wide v0, p0, Lap/d;->g:J
-
-    iget-wide v2, p0, Lap/d;->f:J
-
-    add-long/2addr v0, v2
-
-    iput-wide v0, p0, Lap/d;->g:J
-
-    goto :goto_d
-
-    :cond_39
-    invoke-static {}, Laf/b;->a()Laf/b;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Laf/b;->v()Laf/a;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Laf/a;->b()J
-
-    move-result-wide v0
-
-    iget-wide v2, p0, Lap/d;->f:J
-
-    add-long/2addr v0, v2
-
-    iput-wide v0, p0, Lap/d;->g:J
-    :try_end_4a
-    .catchall {:try_start_2d .. :try_end_4a} :catchall_2a
-
-    goto :goto_d
+    goto :goto_18
 .end method
 
-.method public declared-synchronized k()J
+.method public b(I)I
     .registers 3
+    .parameter
 
-    monitor-enter p0
+    .prologue
+    .line 77
+    iget-object v0, p0, LaP/d;->a:Ljava/util/List;
 
-    :try_start_1
-    iget-wide v0, p0, Lap/d;->g:J
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    monitor-exit p0
+    move-result-object v0
 
-    return-wide v0
+    check-cast v0, LaP/g;
 
-    :catchall_5
-    move-exception v0
+    invoke-virtual {v0}, LaP/g;->a()I
 
-    monitor-exit p0
+    move-result v0
 
-    throw v0
+    return v0
 .end method
 
-.method public declared-synchronized l()Z
-    .registers 5
+.method public b()Z
+    .registers 4
 
-    monitor-enter p0
+    .prologue
+    const/4 v1, 0x0
 
-    :try_start_1
-    iget-wide v0, p0, Lap/d;->g:J
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_e
+    .line 191
+    iget-object v0, p0, LaP/d;->a:Ljava/util/List;
 
-    const-wide/16 v2, -0x1
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    cmp-long v0, v0, v2
+    move-result v0
 
-    if-nez v0, :cond_c
+    if-lez v0, :cond_2f
+
+    iget-object v0, p0, LaP/d;->a:Ljava/util/List;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LaP/g;
+
+    invoke-virtual {v0}, LaP/g;->a()I
+
+    move-result v0
+
+    if-lez v0, :cond_2f
+
+    .line 192
+    iget-object v0, p0, LaP/d;->a:Ljava/util/List;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LaP/g;
+
+    invoke-virtual {v0, v1}, LaP/g;->a(I)LaP/h;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, LaP/h;->b()LaP/q;
+
+    move-result-object v0
+
+    sget-object v2, LaP/q;->a:LaP/q;
+
+    if-ne v0, v2, :cond_2d
 
     const/4 v0, 0x1
 
-    :goto_a
-    monitor-exit p0
-
+    .line 194
+    :goto_2c
     return v0
 
-    :cond_c
+    :cond_2d
+    move v0, v1
+
+    .line 192
+    goto :goto_2c
+
+    :cond_2f
+    move v0, v1
+
+    .line 194
+    goto :goto_2c
+.end method
+
+.method b(II)Z
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 139
+    invoke-virtual {p0, p1}, LaP/d;->c(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_e
+
+    invoke-virtual {p0, p2}, LaP/d;->d(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_e
+
+    const/4 v0, 0x1
+
+    :goto_d
+    return v0
+
+    :cond_e
     const/4 v0, 0x0
+
+    goto :goto_d
+.end method
+
+.method public b(LaP/t;)Z
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 104
+    iget v0, p1, LaP/t;->a:I
+
+    invoke-virtual {p0}, LaP/d;->a()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_1c
+
+    iget v0, p1, LaP/t;->a:I
+
+    if-ltz v0, :cond_1c
+
+    iget v0, p1, LaP/t;->b:I
+
+    iget v1, p1, LaP/t;->a:I
+
+    invoke-virtual {p0, v1}, LaP/d;->b(I)I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_1c
+
+    iget v0, p1, LaP/t;->b:I
+
+    if-ltz v0, :cond_1c
+
+    const/4 v0, 0x1
+
+    :goto_1b
+    return v0
+
+    :cond_1c
+    const/4 v0, 0x0
+
+    goto :goto_1b
+.end method
+
+.method public c()F
+    .registers 4
+
+    .prologue
+    .line 201
+    new-instance v1, LaP/v;
+
+    invoke-direct {v1, p0}, LaP/v;-><init>(LaP/d;)V
+
+    .line 202
+    const/4 v0, 0x0
+
+    .line 203
+    :goto_6
+    invoke-virtual {v1}, LaP/v;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1a
+
+    .line 204
+    invoke-virtual {v1}, LaP/v;->a()LaP/t;
+
+    move-result-object v2
+
+    .line 205
+    invoke-virtual {p0, v2}, LaP/d;->a(LaP/t;)LaP/h;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, LaP/h;->w()F
+
+    move-result v2
+
+    add-float/2addr v0, v2
+
+    .line 206
+    goto :goto_6
+
+    .line 207
+    :cond_1a
+    return v0
+.end method
+
+.method c(I)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 148
+    if-nez p1, :cond_4
+
+    const/4 v0, 0x1
+
+    :goto_3
+    return v0
+
+    :cond_4
+    const/4 v0, 0x0
+
+    goto :goto_3
+.end method
+
+.method c(II)Z
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 166
+    invoke-virtual {p0, p1}, LaP/d;->e(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_e
+
+    invoke-virtual {p0, p1, p2}, LaP/d;->d(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_e
+
+    const/4 v0, 0x1
+
+    :goto_d
+    return v0
+
+    :cond_e
+    const/4 v0, 0x0
+
+    goto :goto_d
+.end method
+
+.method public c(LaP/t;)Z
+    .registers 9
+    .parameter
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 117
+    iget v0, p1, LaP/t;->a:I
+
+    invoke-virtual {p0}, LaP/d;->a()I
+
+    move-result v3
+
+    if-lt v0, v3, :cond_b
+
+    .line 127
+    :goto_a
+    return v2
+
+    .line 120
+    :cond_b
+    invoke-virtual {p0, p1}, LaP/d;->a(LaP/t;)LaP/h;
+
+    move-result-object v3
+
+    .line 121
+    iget v0, p1, LaP/t;->a:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    invoke-virtual {p0, v0}, LaP/d;->a(I)LaP/g;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, LaP/g;->a(I)LaP/h;
+
+    move-result-object v4
+
+    .line 124
+    invoke-virtual {v3}, LaP/h;->j()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_60
+
+    invoke-virtual {v4}, LaP/h;->j()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_60
+
+    invoke-virtual {v3}, LaP/h;->j()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v4}, LaP/h;->j()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_60
+
+    move v0, v1
+
+    .line 127
+    :goto_3e
+    invoke-virtual {v3}, LaP/h;->b()LaP/q;
+
+    move-result-object v5
+
+    sget-object v6, LaP/q;->d:LaP/q;
+
+    if-ne v5, v6, :cond_62
+
+    invoke-virtual {v4}, LaP/h;->b()LaP/q;
+
+    move-result-object v5
+
+    sget-object v6, LaP/q;->b:LaP/q;
+
+    if-ne v5, v6, :cond_62
+
+    invoke-virtual {v3}, LaP/h;->i()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v4}, LaP/h;->i()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_62
+
+    if-nez v0, :cond_62
+
+    :goto_5e
+    move v2, v1
 
     goto :goto_a
 
-    :catchall_e
-    move-exception v0
+    :cond_60
+    move v0, v2
 
-    monitor-exit p0
+    .line 124
+    goto :goto_3e
 
-    throw v0
+    :cond_62
+    move v1, v2
+
+    .line 127
+    goto :goto_5e
+.end method
+
+.method d(I)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 157
+    if-nez p1, :cond_4
+
+    const/4 v0, 0x1
+
+    :goto_3
+    return v0
+
+    :cond_4
+    const/4 v0, 0x0
+
+    goto :goto_3
+.end method
+
+.method d(II)Z
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 184
+    invoke-virtual {p0, p1}, LaP/d;->b(I)I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    if-ne p2, v0, :cond_a
+
+    const/4 v0, 0x1
+
+    :goto_9
+    return v0
+
+    :cond_a
+    const/4 v0, 0x0
+
+    goto :goto_9
+.end method
+
+.method public d(LaP/t;)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 143
+    iget v0, p1, LaP/t;->a:I
+
+    invoke-virtual {p0, v0}, LaP/d;->c(I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method e(I)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 175
+    invoke-virtual {p0}, LaP/d;->a()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    if-ne p1, v0, :cond_a
+
+    const/4 v0, 0x1
+
+    :goto_9
+    return v0
+
+    :cond_a
+    const/4 v0, 0x0
+
+    goto :goto_9
+.end method
+
+.method public e(LaP/t;)Z
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 161
+    iget v0, p1, LaP/t;->a:I
+
+    iget v1, p1, LaP/t;->b:I
+
+    invoke-virtual {p0, v0, v1}, LaP/d;->c(II)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public f(LaP/t;)Z
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 170
+    iget v0, p1, LaP/t;->a:I
+
+    invoke-virtual {p0, v0}, LaP/d;->e(I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public g(LaP/t;)Z
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 179
+    iget v0, p1, LaP/t;->a:I
+
+    iget v1, p1, LaP/t;->b:I
+
+    invoke-virtual {p0, v0, v1}, LaP/d;->d(II)Z
+
+    move-result v0
+
+    return v0
 .end method

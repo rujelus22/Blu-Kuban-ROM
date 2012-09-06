@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1361
+    .line 1356
     iput-object p1, p0, Lcom/cooliris/media/CropImage$24$1;->this$1:Lcom/cooliris/media/CropImage$24;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 
     const/4 v3, 0x1
 
-    .line 1364
+    .line 1359
     iget-object v2, p0, Lcom/cooliris/media/CropImage$24$1;->this$1:Lcom/cooliris/media/CropImage$24;
 
     iget-object v5, v2, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
@@ -61,14 +61,14 @@
     :goto_d
     iput-boolean v2, v5, Lcom/cooliris/media/CropImage;->mWaitingToPick:Z
 
-    .line 1365
+    .line 1360
     iget-object v2, p0, Lcom/cooliris/media/CropImage$24$1;->this$1:Lcom/cooliris/media/CropImage$24;
 
     iget v2, v2, Lcom/cooliris/media/CropImage$24;->mNumFaces:I
 
     if-lez v2, :cond_2c
 
-    .line 1366
+    .line 1361
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -79,7 +79,7 @@
 
     if-ge v0, v2, :cond_31
 
-    .line 1367
+    .line 1362
     iget-object v2, p0, Lcom/cooliris/media/CropImage$24$1;->this$1:Lcom/cooliris/media/CropImage$24;
 
     iget-object v5, p0, Lcom/cooliris/media/CropImage$24$1;->this$1:Lcom/cooliris/media/CropImage$24;
@@ -91,7 +91,7 @@
     #calls: Lcom/cooliris/media/CropImage$24;->handleFace(Landroid/media/FaceDetector$Face;)V
     invoke-static {v2, v5}, Lcom/cooliris/media/CropImage$24;->access$2700(Lcom/cooliris/media/CropImage$24;Landroid/media/FaceDetector$Face;)V
 
-    .line 1366
+    .line 1361
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_16
@@ -100,17 +100,17 @@
     :cond_2a
     move v2, v4
 
-    .line 1364
+    .line 1359
     goto :goto_d
 
-    .line 1370
+    .line 1365
     :cond_2c
     iget-object v2, p0, Lcom/cooliris/media/CropImage$24$1;->this$1:Lcom/cooliris/media/CropImage$24;
 
     #calls: Lcom/cooliris/media/CropImage$24;->makeDefault()V
     invoke-static {v2}, Lcom/cooliris/media/CropImage$24;->access$2800(Lcom/cooliris/media/CropImage$24;)V
 
-    .line 1372
+    .line 1367
     :cond_31
     iget-object v2, p0, Lcom/cooliris/media/CropImage$24$1;->this$1:Lcom/cooliris/media/CropImage$24;
 
@@ -123,7 +123,7 @@
 
     invoke-virtual {v2}, Lcom/cooliris/media/CropImageView;->invalidate()V
 
-    .line 1373
+    .line 1368
     iget-object v2, p0, Lcom/cooliris/media/CropImage$24$1;->this$1:Lcom/cooliris/media/CropImage$24;
 
     iget-object v2, v2, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
@@ -141,7 +141,7 @@
 
     if-ne v2, v3, :cond_6b
 
-    .line 1374
+    .line 1369
     iget-object v2, p0, Lcom/cooliris/media/CropImage$24$1;->this$1:Lcom/cooliris/media/CropImage$24;
 
     iget-object v5, v2, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
@@ -165,7 +165,7 @@
 
     iput-object v2, v5, Lcom/cooliris/media/CropImage;->mCrop:Lcom/cooliris/media/HighlightView;
 
-    .line 1375
+    .line 1370
     iget-object v2, p0, Lcom/cooliris/media/CropImage$24$1;->this$1:Lcom/cooliris/media/CropImage$24;
 
     iget-object v2, v2, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
@@ -174,7 +174,7 @@
 
     invoke-virtual {v2, v3}, Lcom/cooliris/media/HighlightView;->setFocus(Z)V
 
-    .line 1378
+    .line 1373
     :cond_6b
     iget-object v2, p0, Lcom/cooliris/media/CropImage$24$1;->this$1:Lcom/cooliris/media/CropImage$24;
 
@@ -182,7 +182,7 @@
 
     if-le v2, v3, :cond_81
 
-    .line 1381
+    .line 1376
     iget-object v2, p0, Lcom/cooliris/media/CropImage$24$1;->this$1:Lcom/cooliris/media/CropImage$24;
 
     iget-object v2, v2, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
@@ -195,11 +195,11 @@
 
     move-result-object v1
 
-    .line 1383
+    .line 1378
     .local v1, t:Landroid/widget/Toast;
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    .line 1385
+    .line 1380
     .end local v1           #t:Landroid/widget/Toast;
     :cond_81
     return-void

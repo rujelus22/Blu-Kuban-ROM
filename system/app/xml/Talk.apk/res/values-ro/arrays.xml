@@ -29,6 +29,12 @@
         <item>Numai când profilul este Silenţios</item>
         <item>Niciodată</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>dezactivată</item>
+        <item>redusă</item>
+        <item>medie</item>
+        <item>virtuală</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Oprită</item>
         <item>Stabilizarea imaginii: redusă</item>

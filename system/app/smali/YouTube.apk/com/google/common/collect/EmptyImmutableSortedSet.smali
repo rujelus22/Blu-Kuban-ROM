@@ -12,7 +12,7 @@
     .registers 1
 
     .prologue
-    .line 56
+    .line 61
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -41,7 +41,7 @@
     .parameter
 
     .prologue
-    .line 49
+    .line 50
     const/4 v0, 0x0
 
     return v0
@@ -52,7 +52,7 @@
     .parameter
 
     .prologue
-    .line 70
+    .line 75
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
@@ -63,22 +63,25 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 74
+    .line 79
     instance-of v0, p1, Ljava/util/Set;
 
     if-eqz v0, :cond_b
 
-    .line 75
+    .line 80
     check-cast p1, Ljava/util/Set;
 
-    .line 76
+    .line 81
     invoke-interface {p1}, Ljava/util/Set;->isEmpty()Z
 
     move-result v0
 
-    .line 78
+    .line 83
     :goto_a
     return v0
 
@@ -92,7 +95,7 @@
     .registers 2
 
     .prologue
-    .line 90
+    .line 96
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -100,41 +103,35 @@
     throw v0
 .end method
 
-.method hasPartialArray()Z
-    .registers 2
-
-    .prologue
-    .line 110
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public hashCode()I
     .registers 2
 
     .prologue
-    .line 82
+    .line 87
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method headSetImpl(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet;
-    .registers 2
+.method headSetImpl(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedSet;
+    .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 98
+    .line 106
     return-object p0
 .end method
 
 .method indexOf(Ljava/lang/Object;)I
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 114
+    .line 121
     const/4 v0, -0x1
 
     return v0
@@ -144,18 +141,28 @@
     .registers 2
 
     .prologue
-    .line 45
+    .line 46
     const/4 v0, 0x1
 
     return v0
 .end method
 
-.method public iterator()Lcom/google/common/collect/gf;
+.method isPartialView()Z
     .registers 2
 
     .prologue
-    .line 53
-    invoke-static {}, Lcom/google/common/collect/cr;->a()Lcom/google/common/collect/gf;
+    .line 58
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public iterator()Lcom/google/common/collect/mt;
+    .registers 2
+
+    .prologue
+    .line 54
+    invoke-static {}, Lcom/google/common/collect/ee;->a()Lcom/google/common/collect/mt;
 
     move-result-object v0
 
@@ -167,7 +174,7 @@
 
     .prologue
     .line 33
-    invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableSortedSet;->iterator()Lcom/google/common/collect/gf;
+    invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableSortedSet;->iterator()Lcom/google/common/collect/mt;
 
     move-result-object v0
 
@@ -178,7 +185,7 @@
     .registers 2
 
     .prologue
-    .line 94
+    .line 101
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -190,28 +197,31 @@
     .registers 2
 
     .prologue
-    .line 41
+    .line 42
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method subSetImpl(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet;
+.method subSetImpl(Ljava/lang/Object;ZLjava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedSet;
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 112
+    return-object p0
+.end method
+
+.method tailSetImpl(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedSet;
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 102
-    return-object p0
-.end method
-
-.method tailSetImpl(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet;
-    .registers 2
-    .parameter
-
-    .prologue
-    .line 106
+    .line 117
     return-object p0
 .end method
 
@@ -219,7 +229,7 @@
     .registers 2
 
     .prologue
-    .line 59
+    .line 64
     sget-object v0, Lcom/google/common/collect/EmptyImmutableSortedSet;->EMPTY_ARRAY:[Ljava/lang/Object;
 
     return-object v0
@@ -230,19 +240,19 @@
     .parameter
 
     .prologue
-    .line 63
+    .line 68
     array-length v0, p1
 
     if-lez v0, :cond_7
 
-    .line 64
+    .line 69
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     aput-object v1, p1, v0
 
-    .line 66
+    .line 71
     :cond_7
     return-object p1
 .end method
@@ -251,7 +261,7 @@
     .registers 2
 
     .prologue
-    .line 86
+    .line 91
     const-string v0, "[]"
 
     return-object v0

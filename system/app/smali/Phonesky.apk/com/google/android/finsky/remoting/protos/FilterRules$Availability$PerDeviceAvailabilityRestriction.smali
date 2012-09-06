@@ -23,11 +23,15 @@
 
 .field private deviceRestriction_:I
 
+.field private filterInfo_:Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+
 .field private hasAndroidId:Z
 
 .field private hasChannelId:Z
 
 .field private hasDeviceRestriction:Z
+
+.field private hasFilterInfo:Z
 
 
 # direct methods
@@ -37,26 +41,31 @@
     .prologue
     const-wide/16 v1, 0x0
 
-    .line 551
+    .line 961
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 556
+    .line 966
     iput-wide v1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->androidId_:J
 
-    .line 573
+    .line 983
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->deviceRestriction_:I
 
-    .line 590
+    .line 1000
     iput-wide v1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->channelId_:J
 
-    .line 630
+    .line 1017
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->filterInfo_:Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+
+    .line 1068
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->cachedSize:I
 
-    .line 551
+    .line 961
     return-void
 .end method
 
@@ -66,7 +75,7 @@
     .registers 3
 
     .prologue
-    .line 557
+    .line 967
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->androidId_:J
 
     return-wide v0
@@ -76,15 +85,15 @@
     .registers 2
 
     .prologue
-    .line 632
+    .line 1071
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 634
+    .line 1073
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->getSerializedSize()I
 
-    .line 636
+    .line 1075
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->cachedSize:I
 
@@ -95,7 +104,7 @@
     .registers 3
 
     .prologue
-    .line 591
+    .line 1001
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->channelId_:J
 
     return-wide v0
@@ -105,20 +114,30 @@
     .registers 2
 
     .prologue
-    .line 575
+    .line 985
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->deviceRestriction_:I
 
     return v0
+.end method
+
+.method public getFilterInfo()Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+    .registers 2
+
+    .prologue
+    .line 1019
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->filterInfo_:Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+
+    return-object v0
 .end method
 
 .method public getSerializedSize()I
     .registers 5
 
     .prologue
-    .line 640
+    .line 1080
     const/4 v0, 0x0
 
-    .line 641
+    .line 1081
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->hasAndroidId()Z
 
@@ -126,7 +145,7 @@
 
     if-eqz v1, :cond_12
 
-    .line 642
+    .line 1082
     const/16 v1, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->getAndroidId()J
@@ -139,7 +158,7 @@
 
     add-int/2addr v0, v1
 
-    .line 645
+    .line 1085
     :cond_12
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->hasDeviceRestriction()Z
 
@@ -147,7 +166,7 @@
 
     if-eqz v1, :cond_23
 
-    .line 646
+    .line 1086
     const/16 v1, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->getDeviceRestriction()I
@@ -160,7 +179,7 @@
 
     add-int/2addr v0, v1
 
-    .line 649
+    .line 1089
     :cond_23
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->hasChannelId()Z
 
@@ -168,7 +187,7 @@
 
     if-eqz v1, :cond_34
 
-    .line 650
+    .line 1090
     const/16 v1, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->getChannelId()J
@@ -181,11 +200,32 @@
 
     add-int/2addr v0, v1
 
-    .line 653
+    .line 1093
     :cond_34
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->hasFilterInfo()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_45
+
+    .line 1094
+    const/16 v1, 0xf
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->getFilterInfo()Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 1097
+    :cond_45
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->cachedSize:I
 
-    .line 654
+    .line 1098
     return v0
 .end method
 
@@ -193,7 +233,7 @@
     .registers 2
 
     .prologue
-    .line 558
+    .line 968
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->hasAndroidId:Z
 
     return v0
@@ -203,7 +243,7 @@
     .registers 2
 
     .prologue
-    .line 592
+    .line 1002
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->hasChannelId:Z
 
     return v0
@@ -213,14 +253,24 @@
     .registers 2
 
     .prologue
-    .line 574
+    .line 984
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->hasDeviceRestriction:Z
 
     return v0
 .end method
 
+.method public hasFilterInfo()Z
+    .registers 2
+
+    .prologue
+    .line 1018
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->hasFilterInfo:Z
+
+    return v0
+.end method
+
 .method public mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
-    .registers 5
+    .registers 6
     .parameter "input"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -229,65 +279,81 @@
     .end annotation
 
     .prologue
-    .line 661
+    .line 1106
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 662
+    .line 1107
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_26
+    sparse-switch v0, :sswitch_data_32
 
-    .line 666
+    .line 1111
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
-    move-result v1
+    move-result v2
 
-    if-nez v1, :cond_0
+    if-nez v2, :cond_0
 
-    .line 667
+    .line 1112
     :sswitch_d
     return-object p0
 
-    .line 672
+    .line 1117
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readFixed64()J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-virtual {p0, v1, v2}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->setAndroidId(J)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
+    invoke-virtual {p0, v2, v3}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->setAndroidId(J)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
 
     goto :goto_0
 
-    .line 676
+    .line 1121
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
-    move-result v1
+    move-result v2
 
-    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->setDeviceRestriction(I)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->setDeviceRestriction(I)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
 
     goto :goto_0
 
-    .line 680
+    .line 1125
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-virtual {p0, v1, v2}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->setChannelId(J)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
+    invoke-virtual {p0, v2, v3}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->setChannelId(J)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
 
     goto :goto_0
 
-    .line 662
-    :sswitch_data_26
+    .line 1129
+    :sswitch_26
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;-><init>()V
+
+    .line 1130
+    .local v1, value:Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 1131
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->setFilterInfo(Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
+
+    goto :goto_0
+
+    .line 1107
+    :sswitch_data_32
     .sparse-switch
         0x0 -> :sswitch_d
         0x51 -> :sswitch_e
         0x58 -> :sswitch_16
         0x60 -> :sswitch_1e
+        0x7a -> :sswitch_26
     .end sparse-switch
 .end method
 
@@ -301,7 +367,7 @@
     .end annotation
 
     .prologue
-    .line 549
+    .line 958
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
 
     move-result-object v0
@@ -314,15 +380,15 @@
     .parameter "value"
 
     .prologue
-    .line 560
+    .line 970
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->hasAndroidId:Z
 
-    .line 561
+    .line 971
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->androidId_:J
 
-    .line 562
+    .line 972
     return-object p0
 .end method
 
@@ -331,15 +397,15 @@
     .parameter "value"
 
     .prologue
-    .line 594
+    .line 1004
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->hasChannelId:Z
 
-    .line 595
+    .line 1005
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->channelId_:J
 
-    .line 596
+    .line 1006
     return-object p0
 .end method
 
@@ -348,15 +414,43 @@
     .parameter "value"
 
     .prologue
-    .line 577
+    .line 987
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->hasDeviceRestriction:Z
 
-    .line 578
+    .line 988
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->deviceRestriction_:I
 
-    .line 579
+    .line 989
+    return-object p0
+.end method
+
+.method public setFilterInfo(Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;)Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 1021
+    if-nez p1, :cond_8
+
+    .line 1022
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 1024
+    :cond_8
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->hasFilterInfo:Z
+
+    .line 1025
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->filterInfo_:Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+
+    .line 1026
     return-object p0
 .end method
 
@@ -370,14 +464,14 @@
     .end annotation
 
     .prologue
-    .line 619
+    .line 1054
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->hasAndroidId()Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    .line 620
+    .line 1055
     const/16 v0, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->getAndroidId()J
@@ -386,7 +480,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeFixed64(IJ)V
 
-    .line 622
+    .line 1057
     :cond_f
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->hasDeviceRestriction()Z
 
@@ -394,7 +488,7 @@
 
     if-eqz v0, :cond_1e
 
-    .line 623
+    .line 1058
     const/16 v0, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->getDeviceRestriction()I
@@ -403,7 +497,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 625
+    .line 1060
     :cond_1e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->hasChannelId()Z
 
@@ -411,7 +505,7 @@
 
     if-eqz v0, :cond_2d
 
-    .line 626
+    .line 1061
     const/16 v0, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->getChannelId()J
@@ -420,7 +514,24 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 628
+    .line 1063
     :cond_2d
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->hasFilterInfo()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3c
+
+    .line 1064
+    const/16 v0, 0xf
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/FilterRules$Availability$PerDeviceAvailabilityRestriction;->getFilterInfo()Lcom/google/android/finsky/remoting/protos/FilterRules$FilterEvaluationInfo;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 1066
+    :cond_3c
     return-void
 .end method

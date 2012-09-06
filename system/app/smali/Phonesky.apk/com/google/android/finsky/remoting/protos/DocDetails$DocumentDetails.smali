@@ -33,15 +33,31 @@
 
 .field private hasBookDetails:Z
 
+.field private hasMagazineDetails:Z
+
 .field private hasSongDetails:Z
 
 .field private hasSubscriptionDetails:Z
 
+.field private hasTvEpisodeDetails:Z
+
+.field private hasTvSeasonDetails:Z
+
+.field private hasTvShowDetails:Z
+
 .field private hasVideoDetails:Z
+
+.field private magazineDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;
 
 .field private songDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
 .field private subscriptionDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;
+
+.field private tvEpisodeDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$TvEpisodeDetails;
+
+.field private tvSeasonDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$TvSeasonDetails;
+
+.field private tvShowDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$TvShowDetails;
 
 .field private videoDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
 
@@ -53,36 +69,48 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 9
+    .line 10
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 14
+    .line 15
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->appDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
 
-    .line 34
+    .line 35
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->albumDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;
 
-    .line 54
+    .line 55
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->artistDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
 
-    .line 74
+    .line 75
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->songDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
-    .line 94
+    .line 95
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->bookDetails_:Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
 
-    .line 114
+    .line 115
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->videoDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
 
-    .line 134
+    .line 135
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->subscriptionDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;
 
-    .line 198
+    .line 155
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->magazineDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;
+
+    .line 175
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->tvShowDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$TvShowDetails;
+
+    .line 195
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->tvSeasonDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$TvSeasonDetails;
+
+    .line 215
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->tvEpisodeDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$TvEpisodeDetails;
+
+    .line 296
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->cachedSize:I
 
-    .line 9
+    .line 10
     return-void
 .end method
 
@@ -92,7 +120,7 @@
     .registers 2
 
     .prologue
-    .line 36
+    .line 37
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->albumDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;
 
     return-object v0
@@ -102,7 +130,7 @@
     .registers 2
 
     .prologue
-    .line 16
+    .line 17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->appDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
 
     return-object v0
@@ -112,7 +140,7 @@
     .registers 2
 
     .prologue
-    .line 56
+    .line 57
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->artistDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
 
     return-object v0
@@ -122,7 +150,7 @@
     .registers 2
 
     .prologue
-    .line 96
+    .line 97
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->bookDetails_:Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
 
     return-object v0
@@ -132,29 +160,39 @@
     .registers 2
 
     .prologue
-    .line 200
+    .line 299
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 202
+    .line 301
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getSerializedSize()I
 
-    .line 204
+    .line 303
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->cachedSize:I
 
     return v0
 .end method
 
+.method public getMagazineDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;
+    .registers 2
+
+    .prologue
+    .line 157
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->magazineDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;
+
+    return-object v0
+.end method
+
 .method public getSerializedSize()I
     .registers 4
 
     .prologue
-    .line 208
+    .line 308
     const/4 v0, 0x0
 
-    .line 209
+    .line 309
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasAppDetails()Z
 
@@ -162,7 +200,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 210
+    .line 310
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
@@ -175,7 +213,7 @@
 
     add-int/2addr v0, v1
 
-    .line 213
+    .line 313
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasAlbumDetails()Z
 
@@ -183,7 +221,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 214
+    .line 314
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getAlbumDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;
@@ -196,7 +234,7 @@
 
     add-int/2addr v0, v1
 
-    .line 217
+    .line 317
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasArtistDetails()Z
 
@@ -204,7 +242,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 218
+    .line 318
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getArtistDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
@@ -217,7 +255,7 @@
 
     add-int/2addr v0, v1
 
-    .line 221
+    .line 321
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasSongDetails()Z
 
@@ -225,7 +263,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 222
+    .line 322
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getSongDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
@@ -238,7 +276,7 @@
 
     add-int/2addr v0, v1
 
-    .line 225
+    .line 325
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasBookDetails()Z
 
@@ -246,7 +284,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 226
+    .line 326
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getBookDetails()Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
@@ -259,7 +297,7 @@
 
     add-int/2addr v0, v1
 
-    .line 229
+    .line 329
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasVideoDetails()Z
 
@@ -267,7 +305,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 230
+    .line 330
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getVideoDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
@@ -280,7 +318,7 @@
 
     add-int/2addr v0, v1
 
-    .line 233
+    .line 333
     :cond_61
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasSubscriptionDetails()Z
 
@@ -288,7 +326,7 @@
 
     if-eqz v1, :cond_71
 
-    .line 234
+    .line 334
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getSubscriptionDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;
@@ -301,11 +339,95 @@
 
     add-int/2addr v0, v1
 
-    .line 237
+    .line 337
     :cond_71
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasMagazineDetails()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_82
+
+    .line 338
+    const/16 v1, 0x8
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getMagazineDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 341
+    :cond_82
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasTvShowDetails()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_93
+
+    .line 342
+    const/16 v1, 0x9
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getTvShowDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$TvShowDetails;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 345
+    :cond_93
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasTvSeasonDetails()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_a4
+
+    .line 346
+    const/16 v1, 0xa
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getTvSeasonDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$TvSeasonDetails;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 349
+    :cond_a4
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasTvEpisodeDetails()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_b5
+
+    .line 350
+    const/16 v1, 0xb
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getTvEpisodeDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$TvEpisodeDetails;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeMessageSize(ILcom/google/protobuf/micro/MessageMicro;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 353
+    :cond_b5
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->cachedSize:I
 
-    .line 238
+    .line 354
     return v0
 .end method
 
@@ -313,7 +435,7 @@
     .registers 2
 
     .prologue
-    .line 76
+    .line 77
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->songDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
     return-object v0
@@ -323,8 +445,38 @@
     .registers 2
 
     .prologue
-    .line 136
+    .line 137
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->subscriptionDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;
+
+    return-object v0
+.end method
+
+.method public getTvEpisodeDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$TvEpisodeDetails;
+    .registers 2
+
+    .prologue
+    .line 217
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->tvEpisodeDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$TvEpisodeDetails;
+
+    return-object v0
+.end method
+
+.method public getTvSeasonDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$TvSeasonDetails;
+    .registers 2
+
+    .prologue
+    .line 197
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->tvSeasonDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$TvSeasonDetails;
+
+    return-object v0
+.end method
+
+.method public getTvShowDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$TvShowDetails;
+    .registers 2
+
+    .prologue
+    .line 177
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->tvShowDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$TvShowDetails;
 
     return-object v0
 .end method
@@ -333,7 +485,7 @@
     .registers 2
 
     .prologue
-    .line 116
+    .line 117
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->videoDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
 
     return-object v0
@@ -343,7 +495,7 @@
     .registers 2
 
     .prologue
-    .line 35
+    .line 36
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasAlbumDetails:Z
 
     return v0
@@ -353,7 +505,7 @@
     .registers 2
 
     .prologue
-    .line 15
+    .line 16
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasAppDetails:Z
 
     return v0
@@ -363,7 +515,7 @@
     .registers 2
 
     .prologue
-    .line 55
+    .line 56
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasArtistDetails:Z
 
     return v0
@@ -373,8 +525,18 @@
     .registers 2
 
     .prologue
-    .line 95
+    .line 96
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasBookDetails:Z
+
+    return v0
+.end method
+
+.method public hasMagazineDetails()Z
+    .registers 2
+
+    .prologue
+    .line 156
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasMagazineDetails:Z
 
     return v0
 .end method
@@ -383,7 +545,7 @@
     .registers 2
 
     .prologue
-    .line 75
+    .line 76
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasSongDetails:Z
 
     return v0
@@ -393,8 +555,38 @@
     .registers 2
 
     .prologue
-    .line 135
+    .line 136
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasSubscriptionDetails:Z
+
+    return v0
+.end method
+
+.method public hasTvEpisodeDetails()Z
+    .registers 2
+
+    .prologue
+    .line 216
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasTvEpisodeDetails:Z
+
+    return v0
+.end method
+
+.method public hasTvSeasonDetails()Z
+    .registers 2
+
+    .prologue
+    .line 196
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasTvSeasonDetails:Z
+
+    return v0
+.end method
+
+.method public hasTvShowDetails()Z
+    .registers 2
+
+    .prologue
+    .line 176
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasTvShowDetails:Z
 
     return v0
 .end method
@@ -403,7 +595,7 @@
     .registers 2
 
     .prologue
-    .line 115
+    .line 116
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasVideoDetails:Z
 
     return v0
@@ -419,141 +611,205 @@
     .end annotation
 
     .prologue
-    .line 245
+    .line 362
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 246
+    .line 363
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_62
+    sparse-switch v0, :sswitch_data_94
 
-    .line 250
+    .line 367
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 251
+    .line 368
     :sswitch_d
     return-object p0
 
-    .line 256
+    .line 373
     :sswitch_e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;-><init>()V
 
-    .line 257
+    .line 374
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 258
+    .line 375
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->setAppDetails(Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;
 
     goto :goto_0
 
-    .line 262
+    .line 379
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
     :sswitch_1a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;-><init>()V
 
-    .line 263
+    .line 380
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 264
+    .line 381
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->setAlbumDetails(Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;
 
     goto :goto_0
 
-    .line 268
+    .line 385
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;
     :sswitch_26
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;-><init>()V
 
-    .line 269
+    .line 386
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 270
+    .line 387
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->setArtistDetails(Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;
 
     goto :goto_0
 
-    .line 274
+    .line 391
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
     :sswitch_32
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;-><init>()V
 
-    .line 275
+    .line 392
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 276
+    .line 393
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->setSongDetails(Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;
 
     goto :goto_0
 
-    .line 280
+    .line 397
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
     :sswitch_3e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;-><init>()V
 
-    .line 281
+    .line 398
     .local v1, value:Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 282
+    .line 399
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->setBookDetails(Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;
 
     goto :goto_0
 
-    .line 286
+    .line 403
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
     :sswitch_4a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;-><init>()V
 
-    .line 287
+    .line 404
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 288
+    .line 405
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->setVideoDetails(Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;
 
     goto :goto_0
 
-    .line 292
+    .line 409
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
     :sswitch_56
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;-><init>()V
 
-    .line 293
+    .line 410
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 294
+    .line 411
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->setSubscriptionDetails(Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;
 
     goto :goto_0
 
-    .line 246
-    :sswitch_data_62
+    .line 415
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;
+    :sswitch_62
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;-><init>()V
+
+    .line 416
+    .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 417
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->setMagazineDetails(Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;
+
+    goto :goto_0
+
+    .line 421
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;
+    :sswitch_6e
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$TvShowDetails;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$TvShowDetails;-><init>()V
+
+    .line 422
+    .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$TvShowDetails;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 423
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->setTvShowDetails(Lcom/google/android/finsky/remoting/protos/DocDetails$TvShowDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;
+
+    goto :goto_0
+
+    .line 427
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocDetails$TvShowDetails;
+    :sswitch_7a
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$TvSeasonDetails;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$TvSeasonDetails;-><init>()V
+
+    .line 428
+    .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$TvSeasonDetails;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 429
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->setTvSeasonDetails(Lcom/google/android/finsky/remoting/protos/DocDetails$TvSeasonDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;
+
+    goto/16 :goto_0
+
+    .line 433
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocDetails$TvSeasonDetails;
+    :sswitch_87
+    new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$TvEpisodeDetails;
+
+    invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$TvEpisodeDetails;-><init>()V
+
+    .line 434
+    .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$TvEpisodeDetails;
+    invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 435
+    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->setTvEpisodeDetails(Lcom/google/android/finsky/remoting/protos/DocDetails$TvEpisodeDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;
+
+    goto/16 :goto_0
+
+    .line 363
+    :sswitch_data_94
     .sparse-switch
         0x0 -> :sswitch_d
         0xa -> :sswitch_e
@@ -563,6 +819,10 @@
         0x2a -> :sswitch_3e
         0x32 -> :sswitch_4a
         0x3a -> :sswitch_56
+        0x42 -> :sswitch_62
+        0x4a -> :sswitch_6e
+        0x52 -> :sswitch_7a
+        0x5a -> :sswitch_87
     .end sparse-switch
 .end method
 
@@ -589,26 +849,26 @@
     .parameter "value"
 
     .prologue
-    .line 38
+    .line 39
     if-nez p1, :cond_8
 
-    .line 39
+    .line 40
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 41
+    .line 42
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasAlbumDetails:Z
 
-    .line 42
+    .line 43
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->albumDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;
 
-    .line 43
+    .line 44
     return-object p0
 .end method
 
@@ -617,26 +877,26 @@
     .parameter "value"
 
     .prologue
-    .line 18
+    .line 19
     if-nez p1, :cond_8
 
-    .line 19
+    .line 20
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 21
+    .line 22
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasAppDetails:Z
 
-    .line 22
+    .line 23
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->appDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
 
-    .line 23
+    .line 24
     return-object p0
 .end method
 
@@ -645,26 +905,26 @@
     .parameter "value"
 
     .prologue
-    .line 58
+    .line 59
     if-nez p1, :cond_8
 
-    .line 59
+    .line 60
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 61
+    .line 62
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasArtistDetails:Z
 
-    .line 62
+    .line 63
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->artistDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
 
-    .line 63
+    .line 64
     return-object p0
 .end method
 
@@ -673,26 +933,54 @@
     .parameter "value"
 
     .prologue
-    .line 98
+    .line 99
     if-nez p1, :cond_8
 
-    .line 99
+    .line 100
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 101
+    .line 102
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasBookDetails:Z
 
-    .line 102
+    .line 103
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->bookDetails_:Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
 
-    .line 103
+    .line 104
+    return-object p0
+.end method
+
+.method public setMagazineDetails(Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 159
+    if-nez p1, :cond_8
+
+    .line 160
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 162
+    :cond_8
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasMagazineDetails:Z
+
+    .line 163
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->magazineDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;
+
+    .line 164
     return-object p0
 .end method
 
@@ -701,26 +989,26 @@
     .parameter "value"
 
     .prologue
-    .line 78
+    .line 79
     if-nez p1, :cond_8
 
-    .line 79
+    .line 80
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 81
+    .line 82
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasSongDetails:Z
 
-    .line 82
+    .line 83
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->songDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
 
-    .line 83
+    .line 84
     return-object p0
 .end method
 
@@ -729,26 +1017,110 @@
     .parameter "value"
 
     .prologue
-    .line 138
+    .line 139
     if-nez p1, :cond_8
 
-    .line 139
+    .line 140
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 141
+    .line 142
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasSubscriptionDetails:Z
 
-    .line 142
+    .line 143
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->subscriptionDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;
 
-    .line 143
+    .line 144
+    return-object p0
+.end method
+
+.method public setTvEpisodeDetails(Lcom/google/android/finsky/remoting/protos/DocDetails$TvEpisodeDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 219
+    if-nez p1, :cond_8
+
+    .line 220
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 222
+    :cond_8
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasTvEpisodeDetails:Z
+
+    .line 223
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->tvEpisodeDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$TvEpisodeDetails;
+
+    .line 224
+    return-object p0
+.end method
+
+.method public setTvSeasonDetails(Lcom/google/android/finsky/remoting/protos/DocDetails$TvSeasonDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 199
+    if-nez p1, :cond_8
+
+    .line 200
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 202
+    :cond_8
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasTvSeasonDetails:Z
+
+    .line 203
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->tvSeasonDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$TvSeasonDetails;
+
+    .line 204
+    return-object p0
+.end method
+
+.method public setTvShowDetails(Lcom/google/android/finsky/remoting/protos/DocDetails$TvShowDetails;)Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 179
+    if-nez p1, :cond_8
+
+    .line 180
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 182
+    :cond_8
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasTvShowDetails:Z
+
+    .line 183
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->tvShowDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$TvShowDetails;
+
+    .line 184
     return-object p0
 .end method
 
@@ -757,26 +1129,26 @@
     .parameter "value"
 
     .prologue
-    .line 118
+    .line 119
     if-nez p1, :cond_8
 
-    .line 119
+    .line 120
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 121
+    .line 122
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasVideoDetails:Z
 
-    .line 122
+    .line 123
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->videoDetails_:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
 
-    .line 123
+    .line 124
     return-object p0
 .end method
 
@@ -790,14 +1162,14 @@
     .end annotation
 
     .prologue
-    .line 175
+    .line 261
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasAppDetails()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 176
+    .line 262
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getAppDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AppDetails;
@@ -806,7 +1178,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 178
+    .line 264
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasAlbumDetails()Z
 
@@ -814,7 +1186,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 179
+    .line 265
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getAlbumDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$AlbumDetails;
@@ -823,7 +1195,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 181
+    .line 267
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasArtistDetails()Z
 
@@ -831,7 +1203,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 182
+    .line 268
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getArtistDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$ArtistDetails;
@@ -840,7 +1212,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 184
+    .line 270
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasSongDetails()Z
 
@@ -848,7 +1220,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 185
+    .line 271
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getSongDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$SongDetails;
@@ -857,7 +1229,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 187
+    .line 273
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasBookDetails()Z
 
@@ -865,7 +1237,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 188
+    .line 274
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getBookDetails()Lcom/google/android/finsky/remoting/protos/BookInfo$BookDetails;
@@ -874,7 +1246,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 190
+    .line 276
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasVideoDetails()Z
 
@@ -882,7 +1254,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 191
+    .line 277
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getVideoDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
@@ -891,7 +1263,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 193
+    .line 279
     :cond_54
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasSubscriptionDetails()Z
 
@@ -899,7 +1271,7 @@
 
     if-eqz v0, :cond_62
 
-    .line 194
+    .line 280
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getSubscriptionDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$SubscriptionDetails;
@@ -908,7 +1280,75 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 196
+    .line 282
     :cond_62
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasMagazineDetails()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_71
+
+    .line 283
+    const/16 v0, 0x8
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getMagazineDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$MagazineDetails;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 285
+    :cond_71
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasTvShowDetails()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_80
+
+    .line 286
+    const/16 v0, 0x9
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getTvShowDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$TvShowDetails;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 288
+    :cond_80
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasTvSeasonDetails()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8f
+
+    .line 289
+    const/16 v0, 0xa
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getTvSeasonDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$TvSeasonDetails;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 291
+    :cond_8f
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->hasTvEpisodeDetails()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9e
+
+    .line 292
+    const/16 v0, 0xb
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$DocumentDetails;->getTvEpisodeDetails()Lcom/google/android/finsky/remoting/protos/DocDetails$TvEpisodeDetails;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
+
+    .line 294
+    :cond_9e
     return-void
 .end method

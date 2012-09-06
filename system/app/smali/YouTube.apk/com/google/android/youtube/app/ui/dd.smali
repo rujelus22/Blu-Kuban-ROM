@@ -3,70 +3,73 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnShowListener;
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
-.field final synthetic a:Landroid/widget/EditText;
-
-.field final synthetic b:Lcom/google/android/youtube/app/ui/da;
+.field final synthetic a:Lcom/google/android/youtube/app/ui/dc;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/ui/da;Landroid/widget/EditText;)V
-    .registers 3
-    .parameter
+.method private constructor <init>(Lcom/google/android/youtube/app/ui/dc;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 141
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/dd;->b:Lcom/google/android/youtube/app/ui/da;
-
-    iput-object p2, p0, Lcom/google/android/youtube/app/ui/dd;->a:Landroid/widget/EditText;
+    .line 77
+    iput-object p1, p0, Lcom/google/android/youtube/app/ui/dd;->a:Lcom/google/android/youtube/app/ui/dc;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final onShow(Landroid/content/DialogInterface;)V
-    .registers 5
+.method synthetic constructor <init>(Lcom/google/android/youtube/app/ui/dc;B)V
+    .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 144
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dd;->a:Landroid/widget/EditText;
+    .line 77
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/ui/dd;-><init>(Lcom/google/android/youtube/app/ui/dc;)V
 
-    invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
+    return-void
+.end method
 
-    .line 145
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dd;->b:Lcom/google/android/youtube/app/ui/da;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/da;->a(Lcom/google/android/youtube/app/ui/da;)Landroid/app/Activity;
+# virtual methods
+.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 77
+    const-string v0, "Error retrieving thumbnail "
+
+    invoke-static {v0, p2}, Lcom/google/android/youtube/core/L;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 77
+    check-cast p1, Landroid/net/Uri;
+
+    check-cast p2, Landroid/graphics/Bitmap;
+
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/dd;->a:Lcom/google/android/youtube/app/ui/dc;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/dc;->a(Lcom/google/android/youtube/app/ui/dc;)Lcom/google/android/youtube/app/adapter/bm;
 
     move-result-object v0
 
-    const-string v1, "input_method"
+    invoke-virtual {v0, p1, p2}, Lcom/google/android/youtube/app/adapter/bm;->a(Landroid/net/Uri;Landroid/graphics/Bitmap;)V
 
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/inputmethod/InputMethodManager;
-
-    .line 147
-    if-eqz v0, :cond_1b
-
-    .line 148
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/dd;->a:Landroid/widget/EditText;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->showSoftInput(Landroid/view/View;I)Z
-
-    .line 150
-    :cond_1b
     return-void
 .end method

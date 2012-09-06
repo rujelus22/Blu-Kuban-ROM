@@ -15,96 +15,110 @@
 .end method
 
 .method public static a(Landroid/content/Context;)V
-    .registers 8
+    .registers 9
     .parameter
 
     .prologue
     const/4 v4, 0x0
 
-    const v6, 0x7f0900bd
+    const v7, 0x7f080131
 
-    .line 72
+    .line 75
     invoke-static {}, Lcom/google/android/youtube/core/L;->e()V
 
-    .line 73
+    .line 76
     new-instance v0, Landroid/content/ComponentName;
 
     const-class v1, Lcom/google/android/youtube/app/honeycomb/widget/WidgetProvider;
 
     invoke-direct {v0, p0, v1}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 74
+    .line 77
     invoke-static {p0}, Landroid/appwidget/AppWidgetManager;->getInstance(Landroid/content/Context;)Landroid/appwidget/AppWidgetManager;
 
     move-result-object v1
 
-    .line 75
+    .line 78
     invoke-virtual {v1, v0}, Landroid/appwidget/AppWidgetManager;->getAppWidgetIds(Landroid/content/ComponentName;)[I
 
     move-result-object v2
 
-    .line 76
+    .line 79
     if-eqz v2, :cond_1b
 
     array-length v0, v2
 
     if-nez v0, :cond_1f
 
-    .line 79
+    .line 82
     :cond_1b
     invoke-static {}, Lcom/google/android/youtube/core/L;->d()V
 
-    .line 98
+    .line 103
     :goto_1e
     return-void
 
-    .line 83
+    .line 86
     :cond_1f
     invoke-static {p0}, Lcom/google/android/youtube/app/honeycomb/widget/WidgetProvider;->b(Landroid/content/Context;)V
 
-    .line 86
+    .line 89
     new-instance v3, Landroid/content/Intent;
 
     const-class v0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;
 
     invoke-direct {v3, v4, v4, p0, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 87
+    .line 90
     const/4 v0, 0x0
 
     :goto_2a
     array-length v4, v2
 
-    if-ge v0, v4, :cond_3e
+    if-ge v0, v4, :cond_48
 
-    .line 88
+    .line 91
     invoke-static {p0}, Lcom/google/android/youtube/app/honeycomb/widget/c;->a(Landroid/content/Context;)Landroid/widget/RemoteViews;
 
     move-result-object v4
 
-    .line 89
-    aget v5, v2, v0
+    .line 92
+    sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    invoke-virtual {v4, v5, v6, v3}, Landroid/widget/RemoteViews;->setRemoteAdapter(IILandroid/content/Intent;)V
+    const/16 v6, 0xe
 
-    .line 90
+    if-lt v5, v6, :cond_42
+
+    .line 93
+    invoke-virtual {v4, v7, v3}, Landroid/widget/RemoteViews;->setRemoteAdapter(ILandroid/content/Intent;)V
+
+    .line 98
+    :goto_3a
     aget v5, v2, v0
 
     invoke-virtual {v1, v5, v4}, Landroid/appwidget/AppWidgetManager;->updateAppWidget(ILandroid/widget/RemoteViews;)V
 
-    .line 87
+    .line 90
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2a
 
     .line 96
-    :cond_3e
+    :cond_42
+    aget v5, v2, v0
+
+    invoke-virtual {v4, v5, v7, v3}, Landroid/widget/RemoteViews;->setRemoteAdapter(IILandroid/content/Intent;)V
+
+    goto :goto_3a
+
+    .line 101
+    :cond_48
     invoke-static {p0}, Landroid/appwidget/AppWidgetManager;->getInstance(Landroid/content/Context;)Landroid/appwidget/AppWidgetManager;
 
     move-result-object v0
 
-    .line 97
-    invoke-virtual {v0, v2, v6}, Landroid/appwidget/AppWidgetManager;->notifyAppWidgetViewDataChanged([II)V
+    .line 102
+    invoke-virtual {v0, v2, v7}, Landroid/appwidget/AppWidgetManager;->notifyAppWidgetViewDataChanged([II)V
 
     goto :goto_1e
 .end method
@@ -114,7 +128,7 @@
     .parameter
 
     .prologue
-    .line 104
+    .line 109
     const-string v0, "alarm"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -123,14 +137,14 @@
 
     check-cast v0, Landroid/app/AlarmManager;
 
-    .line 105
+    .line 110
     invoke-static {p0}, Lcom/google/android/youtube/app/honeycomb/widget/a;->a(Landroid/content/Context;)Landroid/app/PendingIntent;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
-    .line 106
+    .line 111
     return-void
 .end method
 
@@ -141,13 +155,13 @@
     .parameter
 
     .prologue
-    .line 32
+    .line 33
     invoke-static {}, Lcom/google/android/youtube/core/L;->e()V
 
-    .line 34
+    .line 35
     invoke-static {p1}, Lcom/google/android/youtube/app/honeycomb/widget/WidgetProvider;->b(Landroid/content/Context;)V
 
-    .line 36
+    .line 37
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;
@@ -156,7 +170,10 @@
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->stopService(Landroid/content/Intent;)Z
 
-    .line 37
+    .line 38
+    invoke-super {p0, p1}, Landroid/appwidget/AppWidgetProvider;->onDisabled(Landroid/content/Context;)V
+
+    .line 39
     return-void
 .end method
 
@@ -169,6 +186,9 @@
     invoke-static {}, Lcom/google/android/youtube/core/L;->e()V
 
     .line 28
+    invoke-super {p0, p1}, Landroid/appwidget/AppWidgetProvider;->onEnabled(Landroid/content/Context;)V
+
+    .line 29
     return-void
 .end method
 
@@ -178,16 +198,12 @@
     .parameter
 
     .prologue
-    .line 58
+    .line 61
     new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "onReceive "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -201,7 +217,7 @@
 
     invoke-static {}, Lcom/google/android/youtube/core/L;->d()V
 
-    .line 59
+    .line 62
     const-string v0, "com.google.android.youtube.action.widget_update"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -212,23 +228,23 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2c
-
-    .line 60
-    invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
-
-    .line 61
-    invoke-static {p1}, Lcom/google/android/youtube/app/honeycomb/widget/WidgetProvider;->a(Landroid/content/Context;)V
-
-    .line 65
-    :goto_2b
-    return-void
+    if-eqz v0, :cond_28
 
     .line 63
-    :cond_2c
+    invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
+
+    .line 64
+    invoke-static {p1}, Lcom/google/android/youtube/app/honeycomb/widget/WidgetProvider;->a(Landroid/content/Context;)V
+
+    .line 68
+    :goto_27
+    return-void
+
+    .line 66
+    :cond_28
     invoke-super {p0, p1, p2}, Landroid/appwidget/AppWidgetProvider;->onReceive(Landroid/content/Context;Landroid/content/Intent;)V
 
-    goto :goto_2b
+    goto :goto_27
 .end method
 
 .method public onUpdate(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;[I)V
@@ -238,12 +254,15 @@
     .parameter
 
     .prologue
-    .line 45
+    .line 47
     invoke-static {}, Lcom/google/android/youtube/core/L;->e()V
 
-    .line 46
+    .line 48
     invoke-static {p1}, Lcom/google/android/youtube/app/honeycomb/widget/WidgetProvider;->a(Landroid/content/Context;)V
 
-    .line 47
+    .line 49
+    invoke-super {p0, p1, p2, p3}, Landroid/appwidget/AppWidgetProvider;->onUpdate(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;[I)V
+
+    .line 50
     return-void
 .end method

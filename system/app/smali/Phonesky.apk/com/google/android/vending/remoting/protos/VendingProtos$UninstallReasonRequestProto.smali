@@ -31,25 +31,25 @@
     .registers 2
 
     .prologue
-    .line 10882
+    .line 11108
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 10894
+    .line 11120
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->assetId_:Ljava/lang/String;
 
-    .line 10911
+    .line 11137
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->reason_:I
 
-    .line 10948
+    .line 11175
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->cachedSize:I
 
-    .line 10882
+    .line 11108
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .registers 2
 
     .prologue
-    .line 10895
+    .line 11121
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->assetId_:Ljava/lang/String;
 
     return-object v0
@@ -69,15 +69,15 @@
     .registers 2
 
     .prologue
-    .line 10950
+    .line 11178
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 10952
+    .line 11180
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->getSerializedSize()I
 
-    .line 10954
+    .line 11182
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->cachedSize:I
 
@@ -88,7 +88,7 @@
     .registers 2
 
     .prologue
-    .line 10913
+    .line 11139
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->reason_:I
 
     return v0
@@ -98,10 +98,10 @@
     .registers 4
 
     .prologue
-    .line 10958
+    .line 11187
     const/4 v0, 0x0
 
-    .line 10959
+    .line 11188
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->hasAssetId()Z
 
@@ -109,7 +109,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 10960
+    .line 11189
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->getAssetId()Ljava/lang/String;
@@ -122,7 +122,7 @@
 
     add-int/2addr v0, v1
 
-    .line 10963
+    .line 11192
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->hasReason()Z
 
@@ -130,7 +130,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 10964
+    .line 11193
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->getReason()I
@@ -143,11 +143,11 @@
 
     add-int/2addr v0, v1
 
-    .line 10967
+    .line 11196
     :cond_21
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->cachedSize:I
 
-    .line 10968
+    .line 11197
     return v0
 .end method
 
@@ -155,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 10896
+    .line 11122
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->hasAssetId:Z
 
     return v0
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 10912
+    .line 11138
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->hasReason:Z
 
     return v0
@@ -181,29 +181,29 @@
     .end annotation
 
     .prologue
-    .line 10975
+    .line 11205
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 10976
+    .line 11206
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 10980
+    .line 11210
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 10981
+    .line 11211
     :sswitch_d
     return-object p0
 
-    .line 10986
+    .line 11216
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 10990
+    .line 11220
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 10976
+    .line 11206
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -242,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 10880
+    .line 11106
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;
 
     move-result-object v0
@@ -255,15 +255,15 @@
     .parameter "value"
 
     .prologue
-    .line 10898
+    .line 11124
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->hasAssetId:Z
 
-    .line 10899
+    .line 11125
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->assetId_:Ljava/lang/String;
 
-    .line 10900
+    .line 11126
     return-object p0
 .end method
 
@@ -272,15 +272,15 @@
     .parameter "value"
 
     .prologue
-    .line 10915
+    .line 11141
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->hasReason:Z
 
-    .line 10916
+    .line 11142
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->reason_:I
 
-    .line 10917
+    .line 11143
     return-object p0
 .end method
 
@@ -294,14 +294,14 @@
     .end annotation
 
     .prologue
-    .line 10940
+    .line 11167
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->hasAssetId()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 10941
+    .line 11168
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->getAssetId()Ljava/lang/String;
@@ -310,7 +310,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 10943
+    .line 11170
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->hasReason()Z
 
@@ -318,7 +318,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 10944
+    .line 11171
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonRequestProto;->getReason()I
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 10946
+    .line 11173
     :cond_1c
     return-void
 .end method

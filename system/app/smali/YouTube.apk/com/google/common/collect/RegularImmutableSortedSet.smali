@@ -4,129 +4,59 @@
 
 
 # instance fields
-.field private final elements:[Ljava/lang/Object;
-
-.field private final fromIndex:I
-
-.field private final toIndex:I
+.field private final transient elements:Lcom/google/common/collect/ImmutableList;
 
 
 # direct methods
-.method constructor <init>([Ljava/lang/Object;Ljava/util/Comparator;)V
+.method constructor <init>(Lcom/google/common/collect/ImmutableList;Ljava/util/Comparator;)V
     .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 54
+    .line 53
     invoke-direct {p0, p2}, Lcom/google/common/collect/ImmutableSortedSet;-><init>(Ljava/util/Comparator;)V
+
+    .line 54
+    iput-object p1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
 
     .line 55
-    iput-object p1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:[Ljava/lang/Object;
+    invoke-virtual {p1}, Lcom/google/common/collect/ImmutableList;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_10
+
+    const/4 v0, 0x1
+
+    :goto_c
+    invoke-static {v0}, Lcom/google/common/base/ag;->a(Z)V
 
     .line 56
+    return-void
+
+    .line 55
+    :cond_10
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->fromIndex:I
-
-    .line 57
-    array-length v0, p1
-
-    iput v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->toIndex:I
-
-    .line 58
-    return-void
-.end method
-
-.method constructor <init>([Ljava/lang/Object;Ljava/util/Comparator;II)V
-    .registers 5
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 62
-    invoke-direct {p0, p2}, Lcom/google/common/collect/ImmutableSortedSet;-><init>(Ljava/util/Comparator;)V
-
-    .line 63
-    iput-object p1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:[Ljava/lang/Object;
-
-    .line 64
-    iput p3, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->fromIndex:I
-
-    .line 65
-    iput p4, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->toIndex:I
-
-    .line 66
-    return-void
+    goto :goto_c
 .end method
 
 .method private binarySearch(Ljava/lang/Object;)I
-    .registers 6
+    .registers 4
     .parameter
 
     .prologue
-    .line 131
-    iget v1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->fromIndex:I
-
-    .line 132
-    iget v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->toIndex:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    move v2, v1
-
-    move v1, v0
-
-    .line 134
-    :goto_8
-    if-gt v2, v1, :cond_23
-
-    .line 135
-    sub-int v0, v1, v2
-
-    div-int/lit8 v0, v0, 0x2
-
-    add-int/2addr v0, v2
-
-    .line 136
-    iget-object v3, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:[Ljava/lang/Object;
-
-    aget-object v3, v3, v0
-
-    invoke-virtual {p0, p1, v3}, Lcom/google/common/collect/RegularImmutableSortedSet;->unsafeCompare(Ljava/lang/Object;Ljava/lang/Object;)I
-
-    move-result v3
-
     .line 137
-    if-gez v3, :cond_1d
-
-    .line 138
-    add-int/lit8 v0, v0, -0x1
-
-    move v1, v0
-
-    goto :goto_8
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->comparator:Ljava/util/Comparator;
 
     .line 139
-    :cond_1d
-    if-lez v3, :cond_26
+    iget-object v1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
 
-    .line 140
-    add-int/lit8 v0, v0, 0x1
+    invoke-static {v1, p1, v0}, Ljava/util/Collections;->binarySearch(Ljava/util/List;Ljava/lang/Object;Ljava/util/Comparator;)I
 
-    move v2, v0
+    move-result v0
 
-    goto :goto_8
-
-    .line 144
-    :cond_23
-    neg-int v0, v2
-
-    add-int/lit8 v0, v0, -0x1
-
-    :cond_26
     return v0
 .end method
 
@@ -136,54 +66,49 @@
     .parameter
 
     .prologue
-    .line 242
-    if-ge p1, p2, :cond_c
+    .line 241
+    if-nez p1, :cond_9
+
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->size()I
+
+    move-result v0
+
+    if-ne p2, v0, :cond_9
+
+    .line 247
+    :goto_8
+    return-object p0
 
     .line 243
+    :cond_9
+    if-ge p1, p2, :cond_1a
+
+    .line 244
     new-instance v0, Lcom/google/common/collect/RegularImmutableSortedSet;
 
-    iget-object v1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:[Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
+
+    invoke-virtual {v1, p1, p2}, Lcom/google/common/collect/ImmutableList;->subList(II)Lcom/google/common/collect/ImmutableList;
+
+    move-result-object v1
 
     iget-object v2, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->comparator:Ljava/util/Comparator;
 
-    invoke-direct {v0, v1, v2, p1, p2}, Lcom/google/common/collect/RegularImmutableSortedSet;-><init>([Ljava/lang/Object;Ljava/util/Comparator;II)V
+    invoke-direct {v0, v1, v2}, Lcom/google/common/collect/RegularImmutableSortedSet;-><init>(Lcom/google/common/collect/ImmutableList;Ljava/util/Comparator;)V
 
-    .line 246
-    :goto_b
-    return-object v0
+    move-object p0, v0
 
-    :cond_c
+    goto :goto_8
+
+    .line 247
+    :cond_1a
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->comparator:Ljava/util/Comparator;
 
     invoke-static {v0}, Lcom/google/common/collect/RegularImmutableSortedSet;->emptySet(Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableSortedSet;
 
-    move-result-object v0
+    move-result-object p0
 
-    goto :goto_b
-.end method
-
-.method private findSubsetIndex(Ljava/lang/Object;)I
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 236
-    invoke-direct {p0, p1}, Lcom/google/common/collect/RegularImmutableSortedSet;->binarySearch(Ljava/lang/Object;)I
-
-    move-result v0
-
-    .line 237
-    if-ltz v0, :cond_7
-
-    :goto_6
-    return v0
-
-    :cond_7
-    neg-int v0, v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    goto :goto_6
+    goto :goto_8
 .end method
 
 
@@ -195,15 +120,15 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 84
+    .line 72
     if-nez p1, :cond_4
 
-    .line 90
+    .line 78
     :cond_3
     :goto_3
     return v0
 
-    .line 88
+    .line 76
     :cond_4
     :try_start_4
     invoke-direct {p0, p1}, Lcom/google/common/collect/RegularImmutableSortedSet;->binarySearch(Ljava/lang/Object;)I
@@ -218,7 +143,7 @@
 
     goto :goto_3
 
-    .line 90
+    .line 78
     :catch_c
     move-exception v1
 
@@ -230,134 +155,135 @@
     .parameter
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v0, 0x1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    .line 97
+    .line 87
     invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->comparator()Ljava/util/Comparator;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-static {p1, v0}, Lcom/google/common/collect/RegularImmutableSortedSet;->hasSameComparator(Ljava/lang/Iterable;Ljava/util/Comparator;)Z
+    invoke-static {v2, p1}, Lcom/google/common/collect/kc;->a(Ljava/util/Comparator;Ljava/lang/Iterable;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_12
+    if-eqz v2, :cond_12
 
     invoke-interface {p1}, Ljava/util/Collection;->size()I
 
-    move-result v0
+    move-result v2
 
-    if-gt v0, v3, :cond_17
+    if-gt v2, v0, :cond_17
 
-    .line 98
+    .line 89
     :cond_12
     invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableSortedSet;->containsAll(Ljava/util/Collection;)Z
 
     move-result v0
 
     .line 125
+    :cond_16
     :goto_16
     return v0
 
-    .line 105
+    .line 96
     :cond_17
-    iget v1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->fromIndex:I
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->iterator()Lcom/google/common/collect/mt;
 
-    .line 106
+    move-result-object v3
+
+    .line 97
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
 
-    .line 107
+    .line 98
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v2
 
-    .line 110
-    :cond_21
-    :goto_21
-    iget v5, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->toIndex:I
-
-    if-lt v1, v5, :cond_27
-
-    move v0, v2
-
-    .line 111
-    goto :goto_16
-
-    .line 114
-    :cond_27
-    iget-object v5, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:[Ljava/lang/Object;
-
-    aget-object v5, v5, v1
-
-    invoke-virtual {p0, v5, v0}, Lcom/google/common/collect/RegularImmutableSortedSet;->unsafeCompare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .line 102
+    :cond_23
+    :goto_23
+    :try_start_23
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    .line 116
-    if-gez v5, :cond_34
+    if-eqz v5, :cond_48
 
-    .line 117
-    add-int/lit8 v1, v1, 0x1
+    .line 104
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    goto :goto_21
+    move-result-object v5
 
-    .line 118
-    :cond_34
-    if-nez v5, :cond_45
+    invoke-virtual {p0, v5, v2}, Lcom/google/common/collect/RegularImmutableSortedSet;->unsafeCompare(Ljava/lang/Object;Ljava/lang/Object;)I
 
-    .line 119
+    move-result v5
+
+    .line 106
+    if-nez v5, :cond_3e
+
+    .line 108
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v0
+    move-result v2
 
-    if-nez v0, :cond_3e
+    if-eqz v2, :cond_16
 
-    move v0, v3
+    .line 113
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    :try_end_3c
+    .catch Ljava/lang/NullPointerException; {:try_start_23 .. :try_end_3c} :catch_42
+    .catch Ljava/lang/ClassCastException; {:try_start_23 .. :try_end_3c} :catch_45
+
+    move-result-object v2
+
+    goto :goto_23
+
+    .line 115
+    :cond_3e
+    if-lez v5, :cond_23
+
+    move v0, v1
+
+    .line 116
+    goto :goto_16
 
     .line 120
+    :catch_42
+    move-exception v0
+
+    move v0, v1
+
     goto :goto_16
 
     .line 122
-    :cond_3e
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    :catch_45
+    move-exception v0
 
-    move-result-object v0
+    move v0, v1
 
-    .line 123
-    add-int/lit8 v1, v1, 0x1
+    goto :goto_16
 
-    goto :goto_21
-
-    .line 124
-    :cond_45
-    if-lez v5, :cond_21
-
-    move v0, v2
+    :cond_48
+    move v0, v1
 
     .line 125
     goto :goto_16
 .end method
 
 .method final createAsList()Lcom/google/common/collect/ImmutableList;
-    .registers 5
+    .registers 3
 
     .prologue
-    .line 271
+    .line 273
     new-instance v0, Lcom/google/common/collect/ImmutableSortedAsList;
 
-    iget-object v1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:[Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
 
-    iget v2, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->fromIndex:I
-
-    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->size()I
-
-    move-result v3
-
-    invoke-direct {v0, v1, v2, v3, p0}, Lcom/google/common/collect/ImmutableSortedAsList;-><init>([Ljava/lang/Object;IILcom/google/common/collect/ImmutableSortedSet;)V
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/ImmutableSortedAsList;-><init>(Lcom/google/common/collect/ImmutableSortedSet;Lcom/google/common/collect/ImmutableList;)V
 
     return-object v0
 .end method
@@ -365,21 +291,24 @@
 .method public final equals(Ljava/lang/Object;)Z
     .registers 8
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    .line 168
+    .line 155
     if-ne p1, p0, :cond_5
 
-    .line 197
+    .line 186
     :cond_4
     :goto_4
     return v0
 
-    .line 171
+    .line 158
     :cond_5
     instance-of v2, p1, Ljava/util/Set;
 
@@ -387,14 +316,14 @@
 
     move v0, v1
 
-    .line 172
+    .line 159
     goto :goto_4
 
-    .line 175
+    .line 162
     :cond_b
     check-cast p1, Ljava/util/Set;
 
-    .line 176
+    .line 163
     invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->size()I
 
     move-result v2
@@ -407,84 +336,84 @@
 
     move v0, v1
 
-    .line 177
+    .line 164
     goto :goto_4
 
-    .line 180
+    .line 167
     :cond_19
     iget-object v2, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->comparator:Ljava/util/Comparator;
 
-    invoke-static {p1, v2}, Lcom/google/common/collect/RegularImmutableSortedSet;->hasSameComparator(Ljava/lang/Iterable;Ljava/util/Comparator;)Z
+    invoke-static {v2, p1}, Lcom/google/common/collect/kc;->a(Ljava/util/Comparator;Ljava/lang/Iterable;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_46
+    if-eqz v2, :cond_47
 
-    .line 181
+    .line 168
     invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    .line 170
+    :try_start_25
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->iterator()Lcom/google/common/collect/mt;
 
     move-result-object v3
 
-    .line 183
-    :try_start_25
-    iget v2, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->fromIndex:I
+    .line 171
+    :cond_29
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    :goto_27
-    iget v4, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->toIndex:I
+    move-result v4
 
-    if-ge v2, v4, :cond_4
+    if-eqz v4, :cond_4
 
-    .line 184
+    .line 172
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 185
-    if-eqz v4, :cond_3b
+    .line 173
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    iget-object v5, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:[Ljava/lang/Object;
+    move-result-object v5
 
-    aget-object v5, v5, v2
+    .line 174
+    if-eqz v5, :cond_3f
 
-    invoke-virtual {p0, v5, v4}, Lcom/google/common/collect/RegularImmutableSortedSet;->unsafeCompare(Ljava/lang/Object;Ljava/lang/Object;)I
-    :try_end_38
-    .catch Ljava/lang/ClassCastException; {:try_start_25 .. :try_end_38} :catch_40
-    .catch Ljava/util/NoSuchElementException; {:try_start_25 .. :try_end_38} :catch_43
+    invoke-virtual {p0, v4, v5}, Lcom/google/common/collect/RegularImmutableSortedSet;->unsafeCompare(Ljava/lang/Object;Ljava/lang/Object;)I
+    :try_end_3c
+    .catch Ljava/lang/ClassCastException; {:try_start_25 .. :try_end_3c} :catch_41
+    .catch Ljava/util/NoSuchElementException; {:try_start_25 .. :try_end_3c} :catch_44
 
     move-result v4
 
-    if-eqz v4, :cond_3d
+    if-eqz v4, :cond_29
 
-    :cond_3b
+    :cond_3f
     move v0, v1
 
-    .line 187
+    .line 176
+    goto :goto_4
+
+    .line 181
+    :catch_41
+    move-exception v0
+
+    move v0, v1
+
     goto :goto_4
 
     .line 183
-    :cond_3d
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_27
-
-    .line 192
-    :catch_40
+    :catch_44
     move-exception v0
 
     move v0, v1
 
     goto :goto_4
 
-    .line 194
-    :catch_43
-    move-exception v0
-
-    move v0, v1
-
-    goto :goto_4
-
-    .line 197
-    :cond_46
+    .line 186
+    :cond_47
     invoke-virtual {p0, p1}, Lcom/google/common/collect/RegularImmutableSortedSet;->containsAll(Ljava/util/Collection;)Z
 
     move-result v0
@@ -496,130 +425,124 @@
     .registers 3
 
     .prologue
-    .line 213
-    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:[Ljava/lang/Object;
+    .line 191
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
 
-    iget v1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->fromIndex:I
-
-    aget-object v0, v0, v1
-
-    return-object v0
-.end method
-
-.method final hasPartialArray()Z
-    .registers 3
-
-    .prologue
-    .line 251
-    iget v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->fromIndex:I
-
-    if-nez v0, :cond_b
-
-    iget v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->toIndex:I
-
-    iget-object v1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:[Ljava/lang/Object;
-
-    array-length v1, v1
-
-    if-eq v0, v1, :cond_d
-
-    :cond_b
-    const/4 v0, 0x1
-
-    :goto_c
-    return v0
-
-    :cond_d
-    const/4 v0, 0x0
-
-    goto :goto_c
-.end method
-
-.method public final hashCode()I
-    .registers 4
-
-    .prologue
-    .line 203
     const/4 v1, 0x0
 
-    .line 204
-    iget v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->fromIndex:I
-
-    :goto_3
-    iget v2, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->toIndex:I
-
-    if-ge v0, v2, :cond_13
-
-    .line 205
-    iget-object v2, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:[Ljava/lang/Object;
-
-    aget-object v2, v2, v0
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    add-int/2addr v1, v2
-
-    .line 204
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_3
-
-    .line 207
-    :cond_13
-    return v1
-.end method
-
-.method final headSetImpl(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet;
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 223
-    iget v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->fromIndex:I
-
-    invoke-direct {p0, p1}, Lcom/google/common/collect/RegularImmutableSortedSet;->findSubsetIndex(Ljava/lang/Object;)I
-
-    move-result v1
-
-    invoke-direct {p0, v0, v1}, Lcom/google/common/collect/RegularImmutableSortedSet;->createSubset(II)Lcom/google/common/collect/ImmutableSortedSet;
+    invoke-virtual {v0, v1}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method final indexOf(Ljava/lang/Object;)I
-    .registers 5
+.method final headSetImpl(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedSet;
+    .registers 8
     .parameter
+    .parameter
+
+    .prologue
+    .line 202
+    if-eqz p2, :cond_1a
+
+    .line 203
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
+
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->comparator()Ljava/util/Comparator;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/google/common/collect/SortedLists$KeyPresentBehavior;->FIRST_AFTER:Lcom/google/common/collect/SortedLists$KeyPresentBehavior;
+
+    sget-object v4, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->NEXT_HIGHER:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/google/common/collect/SortedLists;->a(Ljava/util/List;Ljava/lang/Object;Ljava/util/Comparator;Lcom/google/common/collect/SortedLists$KeyPresentBehavior;Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;)I
+
+    move-result v0
+
+    .line 209
+    :goto_14
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v1, v0}, Lcom/google/common/collect/RegularImmutableSortedSet;->createSubset(II)Lcom/google/common/collect/ImmutableSortedSet;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 206
+    :cond_1a
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
+
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->comparator()Ljava/util/Comparator;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/google/common/collect/SortedLists$KeyPresentBehavior;->FIRST_PRESENT:Lcom/google/common/collect/SortedLists$KeyPresentBehavior;
+
+    sget-object v4, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->NEXT_HIGHER:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/google/common/collect/SortedLists;->a(Ljava/util/List;Ljava/lang/Object;Ljava/util/Comparator;Lcom/google/common/collect/SortedLists$KeyPresentBehavior;Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;)I
+
+    move-result v0
+
+    goto :goto_14
+.end method
+
+.method final indexOf(Ljava/lang/Object;)I
+    .registers 7
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     const/4 v0, -0x1
 
-    .line 255
+    .line 253
     if-nez p1, :cond_4
 
-    .line 266
+    .line 268
     :cond_3
     :goto_3
     return v0
 
-    .line 260
+    .line 258
     :cond_4
     :try_start_4
-    invoke-direct {p0, p1}, Lcom/google/common/collect/RegularImmutableSortedSet;->binarySearch(Ljava/lang/Object;)I
-    :try_end_7
-    .catch Ljava/lang/ClassCastException; {:try_start_4 .. :try_end_7} :catch_19
+    iget-object v1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
+
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->comparator()Ljava/util/Comparator;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/google/common/collect/SortedLists$KeyPresentBehavior;->ANY_PRESENT:Lcom/google/common/collect/SortedLists$KeyPresentBehavior;
+
+    sget-object v4, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->INVERTED_INSERTION_INDEX:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
+
+    invoke-static {v1, p1, v2, v3, v4}, Lcom/google/common/collect/SortedLists;->a(Ljava/util/List;Ljava/lang/Object;Ljava/util/Comparator;Lcom/google/common/collect/SortedLists$KeyPresentBehavior;Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;)I
+    :try_end_11
+    .catch Ljava/lang/ClassCastException; {:try_start_4 .. :try_end_11} :catch_22
 
     move-result v1
 
-    .line 266
+    .line 268
     if-ltz v1, :cond_3
 
-    iget-object v2, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:[Ljava/lang/Object;
+    iget-object v2, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
 
-    aget-object v2, v2, v1
+    invoke-virtual {v2, v1}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
 
     invoke-virtual {v2, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -627,14 +550,12 @@
 
     if-eqz v2, :cond_3
 
-    iget v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->fromIndex:I
-
-    sub-int v0, v1, v0
+    move v0, v1
 
     goto :goto_3
 
-    .line 262
-    :catch_19
+    .line 261
+    :catch_22
     move-exception v1
 
     goto :goto_3
@@ -644,26 +565,34 @@
     .registers 2
 
     .prologue
-    .line 76
+    .line 63
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public final iterator()Lcom/google/common/collect/gf;
-    .registers 4
+.method final isPartialView()Z
+    .registers 2
 
     .prologue
-    .line 71
-    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:[Ljava/lang/Object;
+    .line 143
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
 
-    iget v1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->fromIndex:I
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->isPartialView()Z
 
-    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->size()I
+    move-result v0
 
-    move-result v2
+    return v0
+.end method
 
-    invoke-static {v0, v1, v2}, Lcom/google/common/collect/cr;->a([Ljava/lang/Object;II)Lcom/google/common/collect/gf;
+.method public final iterator()Lcom/google/common/collect/mt;
+    .registers 2
+
+    .prologue
+    .line 59
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->iterator()Lcom/google/common/collect/mt;
 
     move-result-object v0
 
@@ -674,8 +603,8 @@
     .registers 2
 
     .prologue
-    .line 35
-    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->iterator()Lcom/google/common/collect/gf;
+    .line 45
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->iterator()Lcom/google/common/collect/mt;
 
     move-result-object v0
 
@@ -686,44 +615,87 @@
     .registers 3
 
     .prologue
-    .line 219
-    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:[Ljava/lang/Object;
+    .line 196
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
 
-    iget v1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->toIndex:I
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->size()I
+
+    move-result v1
 
     add-int/lit8 v1, v1, -0x1
 
-    aget-object v0, v0, v1
+    invoke-virtual {v0, v1}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
 .method public final size()I
-    .registers 3
+    .registers 2
 
     .prologue
-    .line 80
-    iget v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->toIndex:I
+    .line 68
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
 
-    iget v1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->fromIndex:I
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->size()I
 
-    sub-int/2addr v0, v1
+    move-result v0
 
     return v0
 .end method
 
-.method final subSetImpl(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet;
-    .registers 5
+.method final subSetImpl(Ljava/lang/Object;ZLjava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedSet;
+    .registers 6
+    .parameter
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 227
-    invoke-direct {p0, p1}, Lcom/google/common/collect/RegularImmutableSortedSet;->findSubsetIndex(Ljava/lang/Object;)I
+    .line 215
+    invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/RegularImmutableSortedSet;->tailSetImpl(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedSet;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p3, p4}, Lcom/google/common/collect/ImmutableSortedSet;->headSetImpl(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedSet;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method final tailSetImpl(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedSet;
+    .registers 8
+    .parameter
+    .parameter
+
+    .prologue
+    .line 222
+    if-eqz p2, :cond_1d
+
+    .line 223
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
+
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->comparator()Ljava/util/Comparator;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/google/common/collect/SortedLists$KeyPresentBehavior;->FIRST_PRESENT:Lcom/google/common/collect/SortedLists$KeyPresentBehavior;
+
+    sget-object v4, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->NEXT_HIGHER:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/google/common/collect/SortedLists;->a(Ljava/util/List;Ljava/lang/Object;Ljava/util/Comparator;Lcom/google/common/collect/SortedLists$KeyPresentBehavior;Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;)I
 
     move-result v0
 
-    invoke-direct {p0, p2}, Lcom/google/common/collect/RegularImmutableSortedSet;->findSubsetIndex(Ljava/lang/Object;)I
+    .line 229
+    :goto_14
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->size()I
 
     move-result v1
 
@@ -732,99 +704,65 @@
     move-result-object v0
 
     return-object v0
-.end method
 
-.method final tailSetImpl(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet;
-    .registers 4
-    .parameter
+    .line 226
+    :cond_1d
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
 
-    .prologue
-    .line 232
-    invoke-direct {p0, p1}, Lcom/google/common/collect/RegularImmutableSortedSet;->findSubsetIndex(Ljava/lang/Object;)I
+    invoke-static {p1}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->comparator()Ljava/util/Comparator;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/google/common/collect/SortedLists$KeyPresentBehavior;->FIRST_AFTER:Lcom/google/common/collect/SortedLists$KeyPresentBehavior;
+
+    sget-object v4, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->NEXT_HIGHER:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/google/common/collect/SortedLists;->a(Ljava/util/List;Ljava/lang/Object;Ljava/util/Comparator;Lcom/google/common/collect/SortedLists$KeyPresentBehavior;Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;)I
 
     move-result v0
 
-    iget v1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->toIndex:I
+    goto :goto_14
+.end method
 
-    invoke-direct {p0, v0, v1}, Lcom/google/common/collect/RegularImmutableSortedSet;->createSubset(II)Lcom/google/common/collect/ImmutableSortedSet;
+.method public final toArray()[Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 147
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->toArray()[Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final toArray()[Ljava/lang/Object;
-    .registers 6
-
-    .prologue
-    .line 150
-    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->size()I
-
-    move-result v0
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    .line 151
-    iget-object v1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:[Ljava/lang/Object;
-
-    iget v2, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->fromIndex:I
-
-    const/4 v3, 0x0
-
-    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->size()I
-
-    move-result v4
-
-    invoke-static {v1, v2, v0, v3, v4}, Lcom/google/common/collect/fu;->a([Ljava/lang/Object;I[Ljava/lang/Object;II)V
-
-    .line 152
-    return-object v0
-.end method
-
 .method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 6
+    .registers 3
     .parameter
 
     .prologue
-    .line 157
-    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableSortedSet;->size()I
+    .line 151
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:Lcom/google/common/collect/ImmutableList;
 
-    move-result v0
+    invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    .line 158
-    array-length v1, p1
+    move-result-object v0
 
-    if-ge v1, v0, :cond_14
+    return-object v0
+.end method
 
-    .line 159
-    invoke-static {p1, v0}, Lcom/google/common/collect/fq;->a([Ljava/lang/Object;I)[Ljava/lang/Object;
+.method final unsafeComparator()Ljava/util/Comparator;
+    .registers 2
 
-    move-result-object p1
+    .prologue
+    .line 237
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->comparator:Ljava/util/Comparator;
 
-    .line 163
-    :cond_b
-    :goto_b
-    iget-object v1, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->elements:[Ljava/lang/Object;
-
-    iget v2, p0, Lcom/google/common/collect/RegularImmutableSortedSet;->fromIndex:I
-
-    const/4 v3, 0x0
-
-    invoke-static {v1, v2, p1, v3, v0}, Lcom/google/common/collect/fu;->a([Ljava/lang/Object;I[Ljava/lang/Object;II)V
-
-    .line 164
-    return-object p1
-
-    .line 160
-    :cond_14
-    array-length v1, p1
-
-    if-le v1, v0, :cond_b
-
-    .line 161
-    const/4 v1, 0x0
-
-    aput-object v1, p1, v0
-
-    goto :goto_b
+    return-object v0
 .end method

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="detail_texture_offset_x">0.0px</dimen>
-    <dimen name="detail_texture_offset_y_top_row">0.6600001px</dimen>
-    <dimen name="detail_texture_offset_y_bottom_row">0.0px</dimen>
-</resources>

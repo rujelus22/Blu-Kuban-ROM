@@ -5,7 +5,7 @@
         <item>मॉडरेट करें</item>
         <item>सख़्त</item>
     </string-array>
-    <string-array name="prefetch_quota_entries">
+    <string-array name="preload_quota_entries">
         <item>128 MB</item>
         <item>256 MB</item>
         <item>512 MB</item>

@@ -31,7 +31,7 @@
     .line 377
     iput-object p1, p0, Lcom/google/android/talk/fragments/SearchChatResultFragment$GmailJsInterface;->this$0:Lcom/google/android/talk/fragments/SearchChatResultFragment;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 378
     return-void

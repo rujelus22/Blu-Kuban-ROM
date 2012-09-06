@@ -1,126 +1,90 @@
-.class public final enum LF/S;
-.super Ljava/lang/Enum;
+.class synthetic LF/s;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # static fields
-.field public static final enum a:LF/S;
-
-.field public static final enum b:LF/S;
-
-.field public static final enum c:LF/S;
-
-.field private static final synthetic e:[LF/S;
-
-
-# instance fields
-.field private final d:Ljava/lang/String;
+.field static final synthetic a:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .registers 3
 
-    const/4 v5, 0x2
-
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    new-instance v0, LF/S;
-
-    const-string v1, "GPS"
-
-    const-string v2, "gps"
-
-    invoke-direct {v0, v1, v3, v2}, LF/S;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, LF/S;->a:LF/S;
-
-    new-instance v0, LF/S;
-
-    const-string v1, "NETWORK"
-
-    const-string v2, "network"
-
-    invoke-direct {v0, v1, v4, v2}, LF/S;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, LF/S;->b:LF/S;
-
-    new-instance v0, LF/S;
-
-    const-string v1, "TIMER"
-
-    const-string v2, "speed_provider"
-
-    invoke-direct {v0, v1, v5, v2}, LF/S;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, LF/S;->c:LF/S;
-
-    const/4 v0, 0x3
-
-    new-array v0, v0, [LF/S;
-
-    sget-object v1, LF/S;->a:LF/S;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, LF/S;->b:LF/S;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, LF/S;->c:LF/S;
-
-    aput-object v1, v0, v5
-
-    sput-object v0, LF/S;->e:[LF/S;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 4
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput-object p3, p0, LF/S;->d:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)LF/S;
-    .registers 2
-
-    const-class v0, LF/S;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    .prologue
+    .line 113
+    invoke-static {}, LC/A;->values()[LC/A;
 
     move-result-object v0
 
-    check-cast v0, LF/S;
+    array-length v0, v0
 
-    return-object v0
-.end method
+    new-array v0, v0, [I
 
-.method public static values()[LF/S;
-    .registers 1
+    sput-object v0, LF/s;->a:[I
 
-    sget-object v0, LF/S;->e:[LF/S;
+    :try_start_9
+    sget-object v0, LF/s;->a:[I
 
-    invoke-virtual {v0}, [LF/S;->clone()Ljava/lang/Object;
+    sget-object v1, LC/A;->a:LC/A;
 
-    move-result-object v0
+    invoke-virtual {v1}, LC/A;->ordinal()I
 
-    check-cast v0, [LF/S;
+    move-result v1
 
-    return-object v0
-.end method
+    const/4 v2, 0x1
 
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_2f
 
-# virtual methods
-.method public a()Ljava/lang/String;
-    .registers 2
+    :goto_14
+    :try_start_14
+    sget-object v0, LF/s;->a:[I
 
-    iget-object v0, p0, LF/S;->d:Ljava/lang/String;
+    sget-object v1, LC/A;->b:LC/A;
 
-    return-object v0
+    invoke-virtual {v1}, LC/A;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_2d
+
+    :goto_1f
+    :try_start_1f
+    sget-object v0, LF/s;->a:[I
+
+    sget-object v1, LC/A;->c:LC/A;
+
+    invoke-virtual {v1}, LC/A;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_2b
+
+    :goto_2a
+    return-void
+
+    :catch_2b
+    move-exception v0
+
+    goto :goto_2a
+
+    :catch_2d
+    move-exception v0
+
+    goto :goto_1f
+
+    :catch_2f
+    move-exception v0
+
+    goto :goto_14
 .end method

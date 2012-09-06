@@ -8,10 +8,10 @@
     .registers 1
 
     .prologue
-    .line 48
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 33
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
+    .line 34
     return-void
 .end method
 
@@ -25,7 +25,7 @@
     .parameter "tag"
 
     .prologue
-    .line 83
+    .line 79
     return-void
 .end method
 
@@ -36,7 +36,7 @@
     .parameter "tag"
 
     .prologue
-    .line 80
+    .line 76
     return-void
 .end method
 
@@ -45,40 +45,7 @@
     .parameter "moreCommandsToRun"
 
     .prologue
-    .line 132
-    return-void
-.end method
-
-.method public deleteUserAccountStatus(Landroid/os/Bundle;J)V
-    .registers 4
-    .parameter "bundle"
-    .parameter "accountId"
-
-    .prologue
-    .line 136
-    return-void
-.end method
-
-.method public folderPushStatus(Lcom/android/emailcommon/provider/EmailContent$Mailbox;Lcom/android/emailcommon/mail/MessagingException;I)V
-    .registers 4
-    .parameter "mailbox"
-    .parameter "e"
-    .parameter "progress"
-
-    .prologue
-    .line 142
-    return-void
-.end method
-
-.method public foldersCommandFinished(JILjava/lang/String;Lcom/android/emailcommon/mail/MessagingException;)V
-    .registers 6
-    .parameter "accountId"
-    .parameter "command"
-    .parameter "folderName"
-    .parameter "result"
-
-    .prologue
-    .line 156
+    .line 123
     return-void
 .end method
 
@@ -88,7 +55,7 @@
     .parameter "message"
 
     .prologue
-    .line 55
+    .line 40
     return-void
 .end method
 
@@ -97,7 +64,7 @@
     .parameter "accountId"
 
     .prologue
-    .line 58
+    .line 43
     return-void
 .end method
 
@@ -106,7 +73,7 @@
     .parameter "accountId"
 
     .prologue
-    .line 52
+    .line 37
     return-void
 .end method
 
@@ -119,19 +86,18 @@
     .parameter "background"
 
     .prologue
-    .line 120
+    .line 112
     return-void
 .end method
 
-.method public loadAttachmentFinished(JJJZ)V
-    .registers 8
+.method public loadAttachmentFinished(JJJ)V
+    .registers 7
     .parameter "accountId"
     .parameter "messageId"
     .parameter "attachmentId"
-    .parameter "requiresDownload"
 
     .prologue
-    .line 116
+    .line 104
     return-void
 .end method
 
@@ -143,7 +109,7 @@
     .parameter "requiresDownload"
 
     .prologue
-    .line 105
+    .line 98
     return-void
 .end method
 
@@ -153,7 +119,7 @@
     .parameter "message"
 
     .prologue
-    .line 77
+    .line 73
     return-void
 .end method
 
@@ -162,7 +128,7 @@
     .parameter "messageId"
 
     .prologue
-    .line 74
+    .line 70
     return-void
 .end method
 
@@ -171,24 +137,7 @@
     .parameter "messageId"
 
     .prologue
-    .line 71
-    return-void
-.end method
-
-.method public movemessageToOtherAccountCallback(ZJJJJJJII)V
-    .registers 16
-    .parameter "result"
-    .parameter "messageId"
-    .parameter "source_accountId"
-    .parameter "orig_boxkey"
-    .parameter "target_accountId"
-    .parameter "target_boxkey"
-    .parameter "source_trashMailboxId"
-    .parameter "target_server_type"
-    .parameter "source_server_type"
-
-    .prologue
-    .line 101
+    .line 67
     return-void
 .end method
 
@@ -197,7 +146,7 @@
     .parameter "accountId"
 
     .prologue
-    .line 89
+    .line 85
     return-void
 .end method
 
@@ -208,7 +157,7 @@
     .parameter "reason"
 
     .prologue
-    .line 92
+    .line 88
     return-void
 .end method
 
@@ -218,18 +167,7 @@
     .parameter "messageId"
 
     .prologue
-    .line 86
-    return-void
-.end method
-
-.method public syncMailboxStatus(JLcom/android/emailcommon/mail/MessagingException;I)V
-    .registers 5
-    .parameter "mailboxId"
-    .parameter "e"
-    .parameter "progress"
-
-    .prologue
-    .line 145
+    .line 82
     return-void
 .end method
 
@@ -240,19 +178,30 @@
     .parameter "e"
 
     .prologue
-    .line 68
+    .line 64
     return-void
 .end method
 
-.method public synchronizeMailboxFinished(JJII)V
-    .registers 7
+.method public synchronizeMailboxFinished(JJIILjava/util/ArrayList;)V
+    .registers 8
     .parameter "accountId"
     .parameter "mailboxId"
     .parameter "totalMessagesInMailbox"
     .parameter "numNewMessages"
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(JJII",
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/Long;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 65
+    .line 61
+    .local p7, addedMessages:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
     return-void
 .end method
 
@@ -262,19 +211,6 @@
     .parameter "mailboxId"
 
     .prologue
-    .line 61
-    return-void
-.end method
-
-.method public updateMailboxCallback(Lcom/android/emailcommon/mail/MessagingException;JJII)V
-    .registers 8
-    .parameter "result"
-    .parameter "accountId"
-    .parameter "mailboxId"
-    .parameter "progress"
-    .parameter "numNewMessages"
-
-    .prologue
-    .line 149
+    .line 46
     return-void
 .end method

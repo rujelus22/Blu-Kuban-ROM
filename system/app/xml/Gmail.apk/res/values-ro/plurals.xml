@@ -53,40 +53,40 @@
         <item quantity="one">Se aşteaptă operarea pentru %1$d conversaţie.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> suprimate.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> suprimate.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> suprimate.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> suprimate.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> raportate ca spam.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> raportată ca spam.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> raportate ca spam.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> raportată ca spam.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> arhivate.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> arhivată.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> arhivate.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> arhivată.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> mutate în Mesaje primite.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> mutată în Mesaje primite.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> mutate în Mesaje primite.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> mutată în Mesaje primite.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> şterse.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> ştearsă.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> şterse.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ştearsă.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> marcate ca importante.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> marcată ca importantă.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> marcate ca importante.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> marcată ca importantă.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> marcate ca neimportante.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> marcată ca neimportantă.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> marcate ca neimportante.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> marcată ca neimportantă.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> marcate drept citite.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> marcată drept citită.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> marcate drept citite.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> marcată drept citită.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> marcate ca necitite.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> marcată ca necitită.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> marcate ca necitite.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> marcată ca necitită.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Etichete modificate.</item>

@@ -25,7 +25,7 @@
     <string name="personalization_popup_first_time_header">Ungathanda ukuvula ukuqashelwa komuntu siqu kule divaysi?</string>
     <string name="personalization_popup_message">Ukuthuthukisa ikhwalithi yokuqaphela amagama, i-Gooogle izohlobanisa okuqophiwe kwakho ne-Akhawunti ye-Google START_LINKNenqubomgomo Yofumfihlo YefoniEND_LINK.</string>
     <string name="personalization_more_info">Ulwazi olubanzi</string>
-    <string name="personalization_popup_disable_message">Uma uvimbela lesi sici, ngeke sisakwazi ukuqaphela izwi lakho, futhi akukho ukuqopha kwesikhathi esizayo kule divaysi okuzohlobana ne-Akhawunti yakho ye-Google.NEW_LINE NEW_LINEIya EKUQALENI_LINKideshibhodi ye-GoogleEND_LINK ukuphatha idatha yakho.</string>
+    <string name="personalization_popup_disable_message">Uma uvimbela lesici, ngeke sisakwazi ukuqaphela izwi lakho, futhi akukho ukuqopha kwesikhathi esizayo kule divaysi okuzohlobana ne-Akhawunti yakho ye-Google.NEW_LINE NEW_LINEIya EKUQALENI_LINKideshibhodi ye-GoogleEND_LINK ukuphatha idatha yakho.</string>
     <string name="button_yes">Yebo</string>
     <string name="button_no">Cha</string>
     <string name="connection_retying">Izama futhi...</string>

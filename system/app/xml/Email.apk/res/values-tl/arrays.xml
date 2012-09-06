@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="general_preference_text_zoom_summary_array">
+        <item>Napakaliit na teksto</item>
+        <item>Maliit na teksto</item>
+        <item>Tesktong may karaniwang laki</item>
+        <item>Malaking teksto</item>
+        <item>Napakalaking teksto</item>
+    </string-array>
+</resources>

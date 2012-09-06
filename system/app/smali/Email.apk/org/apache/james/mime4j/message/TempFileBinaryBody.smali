@@ -21,7 +21,7 @@
     .registers 1
 
     .prologue
-    .line 42
+    .line 43
     const-class v0, Lorg/apache/james/mime4j/message/TempFileBinaryBody;
 
     invoke-static {v0}, Lorg/apache/james/mime4j/LogFactory;->getLog(Ljava/lang/Class;)Lorg/apache/james/mime4j/Log;
@@ -44,7 +44,7 @@
     .end annotation
 
     .prologue
-    .line 81
+    .line 82
     iget-object v0, p0, Lorg/apache/james/mime4j/message/TempFileBinaryBody;->tempFile:Lorg/apache/james/mime4j/util/TempFile;
 
     invoke-interface {v0}, Lorg/apache/james/mime4j/util/TempFile;->getInputStream()Ljava/io/InputStream;
@@ -59,10 +59,10 @@
     .parameter "parent"
 
     .prologue
-    .line 74
+    .line 75
     iput-object p1, p0, Lorg/apache/james/mime4j/message/TempFileBinaryBody;->parent:Lorg/apache/james/mime4j/message/Entity;
 
-    .line 75
+    .line 76
     return-void
 .end method
 
@@ -76,13 +76,13 @@
     .end annotation
 
     .prologue
-    .line 88
+    .line 89
     invoke-virtual {p0}, Lorg/apache/james/mime4j/message/TempFileBinaryBody;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v0
 
     invoke-static {v0, p1}, Lorg/apache/commons/io/IOUtils;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)I
 
-    .line 89
+    .line 90
     return-void
 .end method

@@ -1,389 +1,305 @@
-.class public Lcom/google/android/maps/driveabout/app/aH;
+.class Lcom/google/android/maps/driveabout/app/ah;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/widget/ListAdapter;
+.source "SourceFile"
 
 
 # instance fields
-.field private a:Lu/x;
+.field final a:Ln/s;
 
-.field private b:I
+.field final b:Lo/Q;
 
-.field private final c:Ljava/util/ArrayList;
+.field final c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method constructor <init>(Lo/P;)V
+    .registers 3
+    .parameter
 
+    .prologue
+    .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/maps/driveabout/app/aH;->c:Ljava/util/ArrayList;
-
-    return-void
-.end method
-
-.method private a()V
-    .registers 4
-
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/aH;->c:Ljava/util/ArrayList;
-
-    monitor-enter v2
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_5
-    :try_start_5
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aH;->c:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-ge v1, v0, :cond_1c
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aH;->c:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 89
+    invoke-virtual {p1}, Lo/P;->c()Ln/s;
 
     move-result-object v0
 
-    check-cast v0, Landroid/database/DataSetObserver;
+    iput-object v0, p0, Lcom/google/android/maps/driveabout/app/ah;->a:Ln/s;
 
-    invoke-virtual {v0}, Landroid/database/DataSetObserver;->onChanged()V
+    .line 90
+    invoke-virtual {p1}, Lo/P;->d()Lo/Q;
 
-    add-int/lit8 v0, v1, 0x1
+    move-result-object v0
 
-    move v1, v0
+    iput-object v0, p0, Lcom/google/android/maps/driveabout/app/ah;->b:Lo/Q;
 
-    goto :goto_5
+    .line 91
+    invoke-virtual {p1}, Lo/P;->e()Ljava/lang/String;
 
-    :cond_1c
-    monitor-exit v2
+    move-result-object v0
 
+    iput-object v0, p0, Lcom/google/android/maps/driveabout/app/ah;->c:Ljava/lang/String;
+
+    .line 92
     return-void
-
-    :catchall_1e
-    move-exception v0
-
-    monitor-exit v2
-    :try_end_20
-    .catchall {:try_start_5 .. :try_end_20} :catchall_1e
-
-    throw v0
 .end method
 
 
 # virtual methods
-.method public a(Lu/I;)V
-    .registers 4
+.method public a(Lcom/google/android/maps/driveabout/app/ah;)Z
+    .registers 8
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aH;->a:Lu/x;
-
-    if-eqz v0, :cond_23
-
-    if-eqz p1, :cond_23
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aH;->a:Lu/x;
-
-    invoke-virtual {p1}, Lu/I;->i()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lu/x;->a(I)Lu/I;
-
-    move-result-object v0
-
-    if-ne v0, p1, :cond_23
-
-    iget v0, p0, Lcom/google/android/maps/driveabout/app/aH;->b:I
-
-    invoke-virtual {p1}, Lu/I;->i()I
-
-    move-result v1
-
-    if-eq v0, v1, :cond_23
-
-    invoke-virtual {p1}, Lu/I;->i()I
-
-    move-result v0
-
-    iput v0, p0, Lcom/google/android/maps/driveabout/app/aH;->b:I
-
-    invoke-direct {p0}, Lcom/google/android/maps/driveabout/app/aH;->a()V
-
-    :cond_23
-    return-void
-.end method
-
-.method public a(Lu/x;)Z
-    .registers 4
-
+    .prologue
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/aH;->a:Lu/x;
+    .line 139
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/ah;->c:Ljava/lang/String;
 
-    if-eq p1, v1, :cond_d
+    if-nez v1, :cond_a
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/aH;->a:Lu/x;
+    .line 140
+    iget-object v1, p1, Lcom/google/android/maps/driveabout/app/ah;->c:Ljava/lang/String;
 
-    iput v0, p0, Lcom/google/android/maps/driveabout/app/aH;->b:I
+    if-eqz v1, :cond_14
 
-    invoke-direct {p0}, Lcom/google/android/maps/driveabout/app/aH;->a()V
-
-    const/4 v0, 0x1
-
-    :cond_d
-    return v0
-.end method
-
-.method public areAllItemsEnabled()Z
-    .registers 2
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public getCount()I
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aH;->a:Lu/x;
-
-    if-nez v0, :cond_6
-
-    const/4 v0, 0x0
-
-    :goto_5
-    return v0
-
-    :cond_6
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aH;->a:Lu/x;
-
-    invoke-virtual {v0}, Lu/x;->k()I
-
-    move-result v0
-
-    iget v1, p0, Lcom/google/android/maps/driveabout/app/aH;->b:I
-
-    sub-int/2addr v0, v1
-
-    goto :goto_5
-.end method
-
-.method public getItem(I)Ljava/lang/Object;
-    .registers 4
-
-    iget v0, p0, Lcom/google/android/maps/driveabout/app/aH;->b:I
-
-    add-int/2addr v0, p1
-
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/aH;->a:Lu/x;
-
-    if-nez v1, :cond_9
-
-    const/4 v0, 0x0
-
-    :goto_8
-    return-object v0
-
+    .line 148
     :cond_9
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/aH;->a:Lu/x;
-
-    invoke-virtual {v1, v0}, Lu/x;->a(I)Lu/I;
-
-    move-result-object v0
-
-    goto :goto_8
-.end method
-
-.method public getItemId(I)J
-    .registers 4
-
-    iget v0, p0, Lcom/google/android/maps/driveabout/app/aH;->b:I
-
-    add-int/2addr v0, p1
-
-    int-to-long v0, v0
-
-    return-wide v0
-.end method
-
-.method public getItemViewType(I)I
-    .registers 3
-
-    const/4 v0, 0x0
-
+    :goto_9
     return v0
-.end method
 
-.method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 6
-
-    if-eqz p2, :cond_6
-
-    instance-of v0, p2, Lcom/google/android/maps/driveabout/app/StepDescriptionView;
-
-    if-nez v0, :cond_2b
-
-    :cond_6
-    new-instance p2, Lcom/google/android/maps/driveabout/app/DirectionsListItem;
-
-    invoke-virtual {p3}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-direct {p2, v0}, Lcom/google/android/maps/driveabout/app/DirectionsListItem;-><init>(Landroid/content/Context;)V
-
-    :goto_f
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aH;->a:Lu/x;
-
-    iget v1, p0, Lcom/google/android/maps/driveabout/app/aH;->b:I
-
-    add-int/2addr v1, p1
-
-    invoke-virtual {v0, v1}, Lu/x;->a(I)Lu/I;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Lcom/google/android/maps/driveabout/app/DirectionsListItem;->a(Lu/I;)V
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aH;->a:Lu/x;
-
-    invoke-virtual {v0}, Lu/x;->q()I
-
-    move-result v0
-
-    invoke-virtual {p2, v0}, Lcom/google/android/maps/driveabout/app/DirectionsListItem;->a(I)V
-
-    if-nez p1, :cond_2e
-
-    const/4 v0, 0x1
-
-    :goto_27
-    invoke-virtual {p2, v0}, Lcom/google/android/maps/driveabout/app/DirectionsListItem;->a(Z)V
-
-    return-object p2
-
-    :cond_2b
-    check-cast p2, Lcom/google/android/maps/driveabout/app/DirectionsListItem;
-
-    goto :goto_f
-
-    :cond_2e
-    const/4 v0, 0x0
-
-    goto :goto_27
-.end method
-
-.method public getViewTypeCount()I
-    .registers 2
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public hasStableIds()Z
-    .registers 2
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public isEmpty()Z
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aH;->a:Lu/x;
-
-    if-eqz v0, :cond_a
-
-    invoke-virtual {p0}, Lcom/google/android/maps/driveabout/app/aH;->getCount()I
-
-    move-result v0
-
-    if-nez v0, :cond_c
-
+    .line 143
     :cond_a
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/ah;->c:Ljava/lang/String;
+
+    iget-object v2, p1, Lcom/google/android/maps/driveabout/app/ah;->c:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_9
+
+    .line 146
+    :cond_14
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/ah;->a:Ln/s;
+
+    invoke-static {v1}, Ln/Q;->a(Ln/s;)Ln/Q;
+
+    move-result-object v1
+
+    .line 147
+    iget-object v2, p1, Lcom/google/android/maps/driveabout/app/ah;->a:Ln/s;
+
+    invoke-static {v2}, Ln/Q;->a(Ln/s;)Ln/Q;
+
+    move-result-object v2
+
+    .line 148
+    invoke-virtual {v1, v2}, Ln/Q;->c(Ln/Q;)F
+
+    move-result v2
+
+    float-to-double v2, v2
+
+    invoke-virtual {v1}, Ln/Q;->e()D
+
+    move-result-wide v4
+
+    div-double v1, v2, v4
+
+    const-wide/high16 v3, 0x4069
+
+    cmpg-double v1, v1, v3
+
+    if-gtz v1, :cond_9
+
     const/4 v0, 0x1
 
-    :goto_b
-    return v0
-
-    :cond_c
-    const/4 v0, 0x0
-
-    goto :goto_b
+    goto :goto_9
 .end method
 
-.method public isEnabled(I)Z
-    .registers 3
+.method public equals(Ljava/lang/Object;)Z
+    .registers 6
+    .parameter
 
+    .prologue
     const/4 v0, 0x1
 
+    const/4 v1, 0x0
+
+    .line 105
+    if-ne p0, p1, :cond_5
+
+    .line 129
+    :cond_4
+    :goto_4
     return v0
+
+    .line 108
+    :cond_5
+    if-eqz p1, :cond_11
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-eq v2, v3, :cond_13
+
+    :cond_11
+    move v0, v1
+
+    .line 109
+    goto :goto_4
+
+    .line 111
+    :cond_13
+    check-cast p1, Lcom/google/android/maps/driveabout/app/ah;
+
+    .line 112
+    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/ah;->a:Ln/s;
+
+    iget-object v3, p1, Lcom/google/android/maps/driveabout/app/ah;->a:Ln/s;
+
+    invoke-virtual {v2, v3}, Ln/s;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_21
+
+    move v0, v1
+
+    .line 113
+    goto :goto_4
+
+    .line 115
+    :cond_21
+    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/ah;->b:Lo/Q;
+
+    if-nez v2, :cond_2b
+
+    .line 116
+    iget-object v2, p1, Lcom/google/android/maps/driveabout/app/ah;->b:Lo/Q;
+
+    if-eqz v2, :cond_37
+
+    move v0, v1
+
+    .line 117
+    goto :goto_4
+
+    .line 119
+    :cond_2b
+    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/ah;->b:Lo/Q;
+
+    iget-object v3, p1, Lcom/google/android/maps/driveabout/app/ah;->b:Lo/Q;
+
+    invoke-virtual {v2, v3}, Lo/Q;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_37
+
+    move v0, v1
+
+    .line 120
+    goto :goto_4
+
+    .line 122
+    :cond_37
+    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/ah;->c:Ljava/lang/String;
+
+    if-nez v2, :cond_41
+
+    .line 123
+    iget-object v2, p1, Lcom/google/android/maps/driveabout/app/ah;->c:Ljava/lang/String;
+
+    if-eqz v2, :cond_4
+
+    move v0, v1
+
+    .line 124
+    goto :goto_4
+
+    .line 126
+    :cond_41
+    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/ah;->c:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/google/android/maps/driveabout/app/ah;->c:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_4
+
+    move v0, v1
+
+    .line 127
+    goto :goto_4
 .end method
 
-.method public registerDataSetObserver(Landroid/database/DataSetObserver;)V
+.method public hashCode()I
     .registers 4
 
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/aH;->c:Ljava/util/ArrayList;
+    .prologue
+    const/4 v1, 0x0
 
-    monitor-enter v1
+    .line 96
+    .line 97
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ah;->a:Ln/s;
 
-    :try_start_3
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aH;->c:Ljava/util/ArrayList;
+    invoke-virtual {v0}, Ln/s;->hashCode()I
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    move-result v0
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aH;->c:Ljava/util/ArrayList;
+    .line 98
+    mul-int/lit8 v2, v0, 0x1f
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ah;->b:Lo/Q;
 
-    monitor-exit v1
+    if-nez v0, :cond_17
 
-    return-void
+    move v0, v1
 
-    :catchall_f
-    move-exception v0
+    :goto_e
+    add-int/2addr v0, v2
 
-    monitor-exit v1
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_f
+    .line 99
+    mul-int/lit8 v0, v0, 0x1f
 
-    throw v0
-.end method
+    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/ah;->c:Ljava/lang/String;
 
-.method public unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
-    .registers 4
+    if-nez v2, :cond_1e
 
-    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/aH;->c:Ljava/util/ArrayList;
+    :goto_15
+    add-int/2addr v0, v1
 
-    monitor-enter v1
+    .line 100
+    return v0
 
-    :try_start_3
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/aH;->c:Ljava/util/ArrayList;
+    .line 98
+    :cond_17
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/ah;->b:Lo/Q;
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Lo/Q;->hashCode()I
 
-    monitor-exit v1
+    move-result v0
 
-    return-void
+    goto :goto_e
 
-    :catchall_a
-    move-exception v0
+    .line 99
+    :cond_1e
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/app/ah;->c:Ljava/lang/String;
 
-    monitor-exit v1
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
-    throw v0
+    move-result v1
+
+    goto :goto_15
 .end method

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="appName">Puhehaku</string>
+    <string name="appName">Äänihaku</string>
     <string name="settings">Asetukset</string>
     <string name="settings_button">Asetukset</string>
     <string name="listening">Puhu nyt</string>
@@ -16,7 +16,7 @@
     <string name="error">Tuntematon ongelma</string>
     <string name="audio_file_access">Tallennettujen äänitiedostojen käyttöoikeus</string>
     <string name="audio_file_access_desc">Saa käyttää tallennettuja lausahduksia huomautusten luomiseen ja raakaäänianalyysiin.</string>
-    <string name="shortcut_access">Puhehaun pikanäppäimet</string>
+    <string name="shortcut_access">Äänihaun pikanäppäimet</string>
     <string name="shortcut_access_desc">Saa käyttää äänihakujen pikanäppäimiä</string>
     <string name="personalization_header">Yksilöllinen tunnistus</string>
     <string name="personalization_settings_message">Paranna puheentunnistuksen tarkkuutta</string>
@@ -34,7 +34,7 @@
     <string name="help_header">Kokeile sanoa...</string>
     <string name="voice_actions">Äänitoiminnot</string>
     <string name="did_you_mean">Tarkoititko...</string>
-    <string name="or_try_search">tai kokeile mitä tahansa Google-puhehakua</string>
+    <string name="or_try_search">tai kokeile mitä tahansa Google-äänihakua</string>
     <string name="dial">Soita</string>
     <string name="go">Siirry</string>
     <string name="tryagain">Puhu uudelleen</string>
@@ -50,7 +50,7 @@
     <string name="sms_sent">Viesti lähetettiin.</string>
     <string name="no_suggestions">Ei ehdotuksia</string>
     <string name="add_number">Lisää numero</string>
-    <string name="voiceSearchPreferences">Puhehaun asetukset</string>
+    <string name="voiceSearchPreferences">Äänihaun asetukset</string>
     <string name="imePreferences">Google Voice -kirjoitusasetukset</string>
     <string name="prefTitle_language">Kieli</string>
     <string name="prefDialogTitle_language">Kieli</string>
@@ -197,35 +197,35 @@
     <string name="prefSummary_safeSearchOff">Pois käytöstä – Älä suodata hakutuloksia</string>
     <string name="prefSummary_safeSearchModerate">Keskitaso – Suodata vain voimakkaan seksuaaliset kuvat</string>
     <string name="prefSummary_safeSearchStrict">Tiukka – Suodata sekä voimakkaan seksuaalinen teksti että kuvat</string>
-    <string name="prefSummary_safeSearchSuffix">Koskee vain Google-puhehakua</string>
+    <string name="prefSummary_safeSearchSuffix">Koskee vain Google-äänihakua</string>
     <string name="prefDialogTitle_safeSearch">SafeSearch</string>
     <string name="prefTitle_profanityFilter">Estä loukkaavat sanat</string>
     <string name="prefSummary_profanityFilter">Piilota tunnistetut loukkaavat äänitulokset</string>
     <string name="prefSummary_ime_profanityFilter">Piilota tunnistettu loukkaava teksti</string>
-    <string name="warningDialogTitle">Puhehaku</string>
-    <string name="warningDialogMessageUnsupportedLanguage">"Puhehaku ei tällä hetkellä tue laitteesi kieltä.
+    <string name="warningDialogTitle">Äänihaku</string>
+    <string name="warningDialogMessageUnsupportedLanguage">"Äänihaku ei tällä hetkellä tue laitteesi kieltä.
 
 Käytämme sen sijaan kieltä %s.
 
-Voit vaihtaa puhehaun kielen Asetuksissa."</string>
-    <string name="warningDialogMessageLocaleChanged">"Puhehaun kieleksi on vaihdettu %s.
+Voit vaihtaa toiseen äänihaun kieleen Asetuksissa."</string>
+    <string name="warningDialogMessageLocaleChanged">"Äänihaun kieleksi on vaihdettu %s.
 
-Voit vaihtaa puhehaun kielen Asetuksista."</string>
-    <string name="warningDialogMessageNewBackoffDefault">"Puhehaun kieleksi on vaihdettu %s.
+Voit vaihtaa toiseen äänihaun kieleen Asetuksien kautta."</string>
+    <string name="warningDialogMessageNewBackoffDefault">"Äänihaun kieleksi on vaihdettu %s.
 
-Voit vaihtaa puhehaun kielen Asetuksista."</string>
-    <string name="warningDialogMessageNewBackoffNotDefault">"Puhehaku tukee nyt toista laitteesi oletuskieltä: %s.
+Voit vaihtaa toiseen äänihaun kieleen Asetuksien kautta."</string>
+    <string name="warningDialogMessageNewBackoffNotDefault">"Äänihaku tukee nyt toista laitteesi oletuskieltä: %s.
 
-Voit vaihtaa puhehaun kielen Asetuksissa."</string>
-    <string name="warningDialogMessageNewSupportedLanguageDefault">"Puhehaku tukee nyt laitteesi kieltä: %s.
+Voit vaihtaa tähän tai toiseen äänihaun kieleen Asetuksissa."</string>
+    <string name="warningDialogMessageNewSupportedLanguageDefault">"Äänihaku tukee nyt laitteesi kieltä: %s.
 
-Voit vaihtaa puhehaun kielen Asetuksien kautta."</string>
-    <string name="warningDialogMessageNewSupportedLanguageNotDefault">"Puhehaku tukee nyt laitteesi kieltä: %s.
+Voit vaihtaa toiseen äänihaun kieleen Asetuksien kautta."</string>
+    <string name="warningDialogMessageNewSupportedLanguageNotDefault">"Äänihaku tukee nyt laitteesi kieltä: %s.
 
-Voit vaihtaa puhehaun kielen Asetuksissa."</string>
+Voit vaihtaa tähän tai toiseen äänihaun kieleen Asetuksissa."</string>
     <string name="ok">OK</string>
     <string name="cancel">Peruuta</string>
-    <string name="shortcuts_searchable_description">Puhehakuhistoria</string>
+    <string name="shortcuts_searchable_description">Äänihakuhistoria</string>
     <string name="message_too_long">Viesti on liian pitkä.</string>
     <string name="send_email_submit">Lähetä</string>
     <string name="send_sms_submit">Lähetä</string>
@@ -237,7 +237,7 @@ Voit vaihtaa puhehaun kielen Asetuksissa."</string>
     <string name="menu_item_settings_title">Asetukset</string>
     <string name="help_watch_video">katso video</string>
     <string name="help_watch_video_capitalized">Katso video</string>
-    <string name="help_title_action"><annotation action="true">Puhetoimintojen</annotation> avulla voit hakea, hallinnoida ja viestiä.</string>
+    <string name="help_title_action"><annotation action="true">Äänitoimintojen</annotation> avulla voit hakea, hallinnoida ja viestiä.</string>
     <string name="help_hint_format">%s</string>
     <string name="show_hints_on_search_title">Näytä vihjeet</string>
     <string name="show_hints_on_search">Näytä vinkit hakukentässä</string>

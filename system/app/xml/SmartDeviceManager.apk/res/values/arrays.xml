@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="property_files">
-        <item>local.properties</item>
-        <item>subtype.properties</item>
-        <item>prod.properties</item>
-        <item>sparkle.properties</item>
-    </string-array>
-</resources>

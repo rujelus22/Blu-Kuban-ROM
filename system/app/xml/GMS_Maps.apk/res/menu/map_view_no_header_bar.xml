@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_search" android:id="@id/search" />
+    <item android:icon="@drawable/ic_menu_directions" android:id="@id/directions" />
+    <item android:icon="@drawable/ic_menu_places" android:id="@id/places" />
+    <item android:icon="@drawable/ic_menu_layers" android:id="@id/layers" />
+    <item android:icon="@drawable/ic_menu_mylocation" android:id="@id/mylocation" />
+    <item android:icon="@drawable/ic_menu_latitude" android:id="@id/latitude" />
+    <item android:icon="@drawable/ic_menu_revert" android:id="@id/clear_map" />
+    <item android:icon="@drawable/ic_menu_offline" android:id="@id/save_map" />
+    <item android:icon="@drawable/ic_menu_star" android:id="@id/my_places" />
+    <item android:icon="@drawable/ic_menu_preferences" android:id="@id/settings" />
+    <item android:icon="@drawable/ic_menu_help" android:id="@id/help" />
+</menu>

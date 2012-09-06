@@ -39,35 +39,35 @@
     .registers 2
 
     .prologue
-    .line 193
+    .line 262
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 198
+    .line 267
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->detailsUrl_:Ljava/lang/String;
 
-    .line 215
+    .line 284
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->purchaseDocid_:Ljava/lang/String;
 
-    .line 232
+    .line 301
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->parentDocid_:Ljava/lang/String;
 
-    .line 249
+    .line 318
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->offerType_:I
 
-    .line 292
+    .line 362
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->cachedSize:I
 
-    .line 193
+    .line 262
     return-void
 .end method
 
@@ -77,15 +77,15 @@
     .registers 2
 
     .prologue
-    .line 294
+    .line 365
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 296
+    .line 367
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->getSerializedSize()I
 
-    .line 298
+    .line 369
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->cachedSize:I
 
@@ -96,7 +96,7 @@
     .registers 2
 
     .prologue
-    .line 199
+    .line 268
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->detailsUrl_:Ljava/lang/String;
 
     return-object v0
@@ -106,7 +106,7 @@
     .registers 2
 
     .prologue
-    .line 251
+    .line 320
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->offerType_:I
 
     return v0
@@ -116,7 +116,7 @@
     .registers 2
 
     .prologue
-    .line 233
+    .line 302
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->parentDocid_:Ljava/lang/String;
 
     return-object v0
@@ -126,7 +126,7 @@
     .registers 2
 
     .prologue
-    .line 216
+    .line 285
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->purchaseDocid_:Ljava/lang/String;
 
     return-object v0
@@ -136,10 +136,10 @@
     .registers 4
 
     .prologue
-    .line 302
+    .line 374
     const/4 v0, 0x0
 
-    .line 303
+    .line 375
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->hasDetailsUrl()Z
 
@@ -147,7 +147,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 304
+    .line 376
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->getDetailsUrl()Ljava/lang/String;
@@ -160,7 +160,7 @@
 
     add-int/2addr v0, v1
 
-    .line 307
+    .line 379
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->hasPurchaseDocid()Z
 
@@ -168,7 +168,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 308
+    .line 380
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->getPurchaseDocid()Ljava/lang/String;
@@ -181,7 +181,7 @@
 
     add-int/2addr v0, v1
 
-    .line 311
+    .line 383
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->hasParentDocid()Z
 
@@ -189,7 +189,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 312
+    .line 384
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->getParentDocid()Ljava/lang/String;
@@ -202,7 +202,7 @@
 
     add-int/2addr v0, v1
 
-    .line 315
+    .line 387
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->hasOfferType()Z
 
@@ -210,7 +210,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 316
+    .line 388
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->getOfferType()I
@@ -223,11 +223,11 @@
 
     add-int/2addr v0, v1
 
-    .line 319
+    .line 391
     :cond_41
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->cachedSize:I
 
-    .line 320
+    .line 392
     return v0
 .end method
 
@@ -235,7 +235,7 @@
     .registers 2
 
     .prologue
-    .line 200
+    .line 269
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->hasDetailsUrl:Z
 
     return v0
@@ -245,7 +245,7 @@
     .registers 2
 
     .prologue
-    .line 250
+    .line 319
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->hasOfferType:Z
 
     return v0
@@ -255,7 +255,7 @@
     .registers 2
 
     .prologue
-    .line 234
+    .line 303
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->hasParentDocid:Z
 
     return v0
@@ -265,7 +265,7 @@
     .registers 2
 
     .prologue
-    .line 217
+    .line 286
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->hasPurchaseDocid:Z
 
     return v0
@@ -281,29 +281,29 @@
     .end annotation
 
     .prologue
-    .line 327
+    .line 400
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 328
+    .line 401
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_2e
 
-    .line 332
+    .line 405
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 333
+    .line 406
     :sswitch_d
     return-object p0
 
-    .line 338
+    .line 411
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -313,7 +313,7 @@
 
     goto :goto_0
 
-    .line 342
+    .line 415
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -323,7 +323,7 @@
 
     goto :goto_0
 
-    .line 346
+    .line 419
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -333,7 +333,7 @@
 
     goto :goto_0
 
-    .line 350
+    .line 423
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -343,7 +343,7 @@
 
     goto :goto_0
 
-    .line 328
+    .line 401
     :sswitch_data_2e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -364,7 +364,7 @@
     .end annotation
 
     .prologue
-    .line 191
+    .line 259
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;
 
     move-result-object v0
@@ -377,15 +377,15 @@
     .parameter "value"
 
     .prologue
-    .line 202
+    .line 271
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->hasDetailsUrl:Z
 
-    .line 203
+    .line 272
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->detailsUrl_:Ljava/lang/String;
 
-    .line 204
+    .line 273
     return-object p0
 .end method
 
@@ -394,15 +394,15 @@
     .parameter "value"
 
     .prologue
-    .line 253
+    .line 322
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->hasOfferType:Z
 
-    .line 254
+    .line 323
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->offerType_:I
 
-    .line 255
+    .line 324
     return-object p0
 .end method
 
@@ -411,15 +411,15 @@
     .parameter "value"
 
     .prologue
-    .line 236
+    .line 305
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->hasParentDocid:Z
 
-    .line 237
+    .line 306
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->parentDocid_:Ljava/lang/String;
 
-    .line 238
+    .line 307
     return-object p0
 .end method
 
@@ -428,15 +428,15 @@
     .parameter "value"
 
     .prologue
-    .line 219
+    .line 288
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->hasPurchaseDocid:Z
 
-    .line 220
+    .line 289
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->purchaseDocid_:Ljava/lang/String;
 
-    .line 221
+    .line 290
     return-object p0
 .end method
 
@@ -450,14 +450,14 @@
     .end annotation
 
     .prologue
-    .line 278
+    .line 348
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->hasDetailsUrl()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 279
+    .line 349
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->getDetailsUrl()Ljava/lang/String;
@@ -466,7 +466,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 281
+    .line 351
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->hasPurchaseDocid()Z
 
@@ -474,7 +474,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 282
+    .line 352
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->getPurchaseDocid()Ljava/lang/String;
@@ -483,7 +483,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 284
+    .line 354
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->hasParentDocid()Z
 
@@ -491,7 +491,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 285
+    .line 355
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->getParentDocid()Ljava/lang/String;
@@ -500,7 +500,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 287
+    .line 357
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->hasOfferType()Z
 
@@ -508,7 +508,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 288
+    .line 358
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;->getOfferType()I
@@ -517,7 +517,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 290
+    .line 360
     :cond_38
     return-void
 .end method

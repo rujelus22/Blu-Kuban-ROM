@@ -16,16 +16,16 @@
     .parameter
 
     .prologue
-    .line 362
+    .line 452
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableSet;-><init>()V
 
-    .line 363
+    .line 453
     iput-object p1, p0, Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;->source:[Ljava/lang/Object;
 
-    .line 364
+    .line 454
     iput p2, p0, Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;->hashCode:I
 
-    .line 365
+    .line 455
     return-void
 .end method
 
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 409
+    .line 497
     iget v0, p0, Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;->hashCode:I
 
     return v0
@@ -45,7 +45,7 @@
     .registers 2
 
     .prologue
-    .line 374
+    .line 465
     const/4 v0, 0x0
 
     return v0
@@ -55,20 +55,24 @@
     .registers 2
 
     .prologue
-    .line 413
+    .line 501
     const/4 v0, 0x1
 
     return v0
 .end method
 
-.method public iterator()Lcom/google/common/collect/gf;
-    .registers 2
+.method public iterator()Lcom/google/common/collect/mt;
+    .registers 3
 
     .prologue
-    .line 378
-    new-instance v0, Lcom/google/common/collect/ck;
+    .line 469
+    new-instance v0, Lcom/google/common/collect/du;
 
-    invoke-direct {v0, p0}, Lcom/google/common/collect/ck;-><init>(Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;)V
+    iget-object v1, p0, Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;->source:[Ljava/lang/Object;
+
+    array-length v1, v1
+
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/du;-><init>(Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;I)V
 
     return-object v0
 .end method
@@ -77,8 +81,8 @@
     .registers 2
 
     .prologue
-    .line 358
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;->iterator()Lcom/google/common/collect/gf;
+    .line 448
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;->iterator()Lcom/google/common/collect/mt;
 
     move-result-object v0
 
@@ -89,7 +93,7 @@
     .registers 2
 
     .prologue
-    .line 370
+    .line 461
     iget-object v0, p0, Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;->source:[Ljava/lang/Object;
 
     array-length v0, v0
@@ -101,7 +105,7 @@
     .registers 2
 
     .prologue
-    .line 389
+    .line 477
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;->size()I
 
     move-result v0
@@ -120,22 +124,22 @@
     .parameter
 
     .prologue
-    .line 393
+    .line 481
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;->size()I
 
     move-result v0
 
-    .line 394
+    .line 482
     array-length v1, p1
 
     if-ge v1, v0, :cond_1e
 
-    .line 395
-    invoke-static {p1, v0}, Lcom/google/common/collect/fq;->a([Ljava/lang/Object;I)[Ljava/lang/Object;
+    .line 483
+    invoke-static {p1, v0}, Lcom/google/common/collect/jd;->a([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 402
+    .line 490
     :cond_b
     :goto_b
     const/4 v0, 0x0
@@ -147,7 +151,7 @@
 
     if-ge v0, v1, :cond_25
 
-    .line 403
+    .line 491
     iget-object v1, p0, Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;->source:[Ljava/lang/Object;
 
     aget-object v1, v1, v0
@@ -158,25 +162,25 @@
 
     aput-object v1, p1, v0
 
-    .line 402
+    .line 490
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_c
 
-    .line 396
+    .line 484
     :cond_1e
     array-length v1, p1
 
     if-le v1, v0, :cond_b
 
-    .line 397
+    .line 485
     const/4 v1, 0x0
 
     aput-object v1, p1, v0
 
     goto :goto_b
 
-    .line 405
+    .line 493
     :cond_25
     return-object p1
 .end method

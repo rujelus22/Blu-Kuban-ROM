@@ -60,9 +60,9 @@
     const/4 v2, 0x1
 
     .line 41
-    sparse-switch p1, :sswitch_data_24
+    sparse-switch p1, :sswitch_data_42
 
-    .line 59
+    .line 75
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v2
@@ -104,12 +104,55 @@
 
     goto :goto_8
 
+    .line 60
+    .end local v0           #_arg0:Ljava/lang/String;
+    .end local v1           #_result:I
+    :sswitch_23
+    const-string v3, "com.android.vending.billing.IBillingAccountService"
+
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 62
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 63
+    .restart local v0       #_arg0:Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/vending/billing/IBillingAccountService$Stub;->getOffers(Ljava/lang/String;)Landroid/os/Bundle;
+
+    move-result-object v1
+
+    .line 64
+    .local v1, _result:Landroid/os/Bundle;
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 65
+    if-eqz v1, :cond_3c
+
+    .line 66
+    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 67
+    invoke-virtual {v1, p3, v2}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
+
+    goto :goto_8
+
+    .line 70
+    :cond_3c
+    const/4 v3, 0x0
+
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_8
+
     .line 41
     nop
 
-    :sswitch_data_24
+    :sswitch_data_42
     .sparse-switch
         0x1 -> :sswitch_f
+        0x2 -> :sswitch_23
         0x5f4e5446 -> :sswitch_9
     .end sparse-switch
 .end method

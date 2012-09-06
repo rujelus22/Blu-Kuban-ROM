@@ -1,53 +1,170 @@
-.class Lbd/A;
+.class public Lbd/a;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/p;
-
-.field final synthetic b:Lbd/C;
-
-.field final synthetic c:Lam/b;
-
-.field final synthetic d:Lbd/x;
+.source "SourceFile"
 
 
 # direct methods
-.method constructor <init>(Lbd/x;Lcom/google/googlenav/ui/p;Lbd/C;Lam/b;)V
-    .registers 5
+.method public static a(D)D
+    .registers 6
+    .parameter
 
-    iput-object p1, p0, Lbd/A;->d:Lbd/x;
+    .prologue
+    .line 51
+    const-wide v0, 0x416312d000000000L
 
-    iput-object p2, p0, Lbd/A;->a:Lcom/google/googlenav/ui/p;
+    div-double v0, p0, v0
 
-    iput-object p3, p0, Lbd/A;->b:Lbd/C;
+    const-wide v2, 0x400921fb54442d18L
 
-    iput-object p4, p0, Lbd/A;->c:Lam/b;
+    mul-double/2addr v0, v2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-wide v2, 0x4066800000000000L
 
-    return-void
+    div-double/2addr v0, v2
+
+    return-wide v0
 .end method
 
+.method public static a(DDDD)D
+    .registers 20
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-# virtual methods
-.method public onClick(Landroid/view/View;)V
+    .prologue
+    .line 33
+    invoke-static {p0, p1}, Lbd/a;->a(D)D
+
+    move-result-wide v0
+
+    .line 34
+    invoke-static {p2, p3}, Lbd/a;->a(D)D
+
+    move-result-wide v2
+
+    .line 35
+    invoke-static/range {p4 .. p5}, Lbd/a;->a(D)D
+
+    move-result-wide v4
+
+    .line 36
+    invoke-static/range {p6 .. p7}, Lbd/a;->a(D)D
+
+    move-result-wide v6
+
+    .line 37
+    const-wide/high16 v8, 0x3fe0
+
+    sub-double v10, v4, v0
+
+    mul-double/2addr v8, v10
+
+    invoke-static {v8, v9}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v8
+
+    .line 38
+    const-wide/high16 v10, 0x3fe0
+
+    sub-double v2, v6, v2
+
+    mul-double/2addr v2, v10
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v2
+
+    .line 39
+    mul-double v6, v8, v8
+
+    mul-double/2addr v2, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->cos(D)D
+
+    move-result-wide v0
+
+    mul-double/2addr v0, v2
+
+    invoke-static {v4, v5}, Ljava/lang/Math;->cos(D)D
+
+    move-result-wide v2
+
+    mul-double/2addr v0, v2
+
+    add-double/2addr v0, v6
+
+    .line 40
+    const-wide/high16 v2, 0x4000
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
+
+    move-result-wide v4
+
+    const-wide/16 v6, 0x0
+
+    const-wide/high16 v8, 0x3ff0
+
+    sub-double v0, v8, v0
+
+    invoke-static {v6, v7, v0, v1}, Ljava/lang/Math;->max(DD)D
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
+
+    move-result-wide v0
+
+    invoke-static {v4, v5, v0, v1}, Ljava/lang/Math;->atan2(DD)D
+
+    move-result-wide v0
+
+    mul-double/2addr v0, v2
+
+    .line 41
+    const-wide v2, 0x415849c600000000L
+
+    mul-double/2addr v0, v2
+
+    .line 42
+    return-wide v0
+.end method
+
+.method public static b(D)D
     .registers 6
+    .parameter
 
-    iget-object v0, p0, Lbd/A;->a:Lcom/google/googlenav/ui/p;
+    .prologue
+    .line 62
+    const-wide v0, 0x3ff921fb54442d18L
 
-    const/16 v1, 0x906
+    invoke-static {p0, p1}, Lbd/a;->a(D)D
 
-    iget-object v2, p0, Lbd/A;->b:Lbd/C;
+    move-result-wide v2
 
-    iget v2, v2, Lbd/C;->i:I
+    invoke-static {v2, v3}, Ljava/lang/Math;->abs(D)D
 
-    iget-object v3, p0, Lbd/A;->c:Lam/b;
+    move-result-wide v2
 
-    invoke-interface {v0, v1, v2, v3}, Lcom/google/googlenav/ui/p;->a(IILjava/lang/Object;)Z
+    sub-double/2addr v0, v2
 
-    return-void
+    .line 63
+    const-wide v2, 0x415849c600000000L
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v0
+
+    mul-double/2addr v0, v2
+
+    .line 65
+    const-wide v2, 0x400921fb54442d18L
+
+    mul-double/2addr v0, v2
+
+    const-wide v2, 0x4066800000000000L
+
+    div-double/2addr v0, v2
+
+    return-wide v0
 .end method

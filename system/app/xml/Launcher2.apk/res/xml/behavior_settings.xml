@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/behavior_settings_title" android:key="@string/pref_behavior_settings_key"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference android:entries="@array/screen_orientation_entries" android:title="@string/screen_orientation_title" android:key="@string/pref_screen_orientation_key" android:defaultValue="@string/pref_screen_orientation_default" android:entryValues="@array/screen_orientation_values" />
+    <ListPreference android:entries="@array/action_entries" android:title="@string/home_key_action_title" android:key="@string/pref_home_key_action_key" android:defaultValue="@string/pref_home_key_action_default" android:entryValues="@array/action_values" />
+    <CheckBoxPreference android:title="@string/home_key_to_default_screen_title" android:key="@string/pref_home_key_to_default_screen_key" android:summary="@string/home_key_to_default_screen_summary" android:defaultValue="@bool/pref_home_key_to_default_screen_default" />
+    <CheckBoxPreference android:title="@string/enable_quick_action_title" android:key="@string/pref_enable_quick_action_key" android:summary="@string/enable_quick_action_summary" android:defaultValue="@bool/pref_enable_quick_action_default" />
+    <PreferenceCategory android:title="@string/gestures_title" android:key="@string/pref_gestures_settings_key">
+        <ListPreference android:entries="@array/action_entries" android:title="@string/pinch_in_title" android:key="@string/pref_pinch_in_action_key" android:defaultValue="@string/pref_pinch_in_action_default" android:entryValues="@array/action_values" />
+        <ListPreference android:entries="@array/action_entries" android:title="@string/swipe_up_title" android:key="@string/pref_swipe_up_action_key" android:defaultValue="@string/pref_swipe_up_action_default" android:entryValues="@array/action_values" />
+        <ListPreference android:entries="@array/action_entries" android:title="@string/swipe_down_title" android:key="@string/pref_swipe_down_action_key" android:defaultValue="@string/pref_swipe_down_action_default" android:entryValues="@array/action_values" />
+        <ListPreference android:entries="@array/action_entries" android:title="@string/two_finger_swipe_up_title" android:key="@string/pref_two_finger_swipe_up_action_key" android:defaultValue="@string/pref_two_finger_swipe_up_action_default" android:entryValues="@array/action_values" />
+        <ListPreference android:entries="@array/action_entries" android:title="@string/two_finger_swipe_down_title" android:key="@string/pref_two_finger_swipe_down_action_key" android:defaultValue="@string/pref_two_finger_swipe_down_action_default" android:entryValues="@array/action_values" />
+        <ListPreference android:entries="@array/action_entries" android:title="@string/desktop_double_tap_title" android:key="@string/pref_desktop_double_tap_action_key" android:defaultValue="@string/pref_desktop_double_tap_action_default" android:entryValues="@array/action_values" />
+        <ListPreference android:entries="@array/desktop_long_press_entries" android:title="@string/desktop_long_press_title" android:key="@string/pref_desktop_long_press_action_key" android:defaultValue="@string/pref_desktop_long_press_action_default" android:entryValues="@array/desktop_long_press_values" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/haptic_feedback_title">
+        <CheckBoxPreference android:title="@string/drawer_touch_feedback" android:key="@string/pref_drawer_touch_feedback_key" android:defaultValue="@bool/pref_drawer_touch_feedback_default" android:summaryOn="@string/enabled" android:summaryOff="@string/disabled" />
+        <CheckBoxPreference android:title="@string/icon_long_press_feedback" android:key="@string/pref_icon_long_press_feedback_key" android:defaultValue="@bool/pref_icon_long_press_feedback_default" android:summaryOn="@string/enabled" android:summaryOff="@string/disabled" />
+        <CheckBoxPreference android:title="@string/desktop_long_press_feedback" android:key="@string/pref_desktop_long_press_feedback_key" android:defaultValue="@bool/pref_desktop_long_press_feedback_default" android:summaryOn="@string/enabled" android:summaryOff="@string/disabled" />
+    </PreferenceCategory>
+</PreferenceScreen>

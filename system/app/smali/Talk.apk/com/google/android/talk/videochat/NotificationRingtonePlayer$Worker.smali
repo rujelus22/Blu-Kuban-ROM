@@ -35,12 +35,12 @@
     .line 237
     iput-object p1, p0, Lcom/google/android/talk/videochat/NotificationRingtonePlayer$Worker;->this$0:Lcom/google/android/talk/videochat/NotificationRingtonePlayer;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 234
     new-instance v1, Ljava/lang/Object;
 
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v1 .. v1}, Ljava/lang/Object;-><init>()V
 
     iput-object v1, p0, Lcom/google/android/talk/videochat/NotificationRingtonePlayer$Worker;->mLock:Ljava/lang/Object;
 

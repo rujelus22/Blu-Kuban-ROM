@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/CameraControlDialog" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:background="@drawable/popup_top_dark" android:layout_width="472.0px" android:layout_height="80.0px">
-        <com.sec.android.app.ve.ui.HelveticaTextView android:textSize="24.0px" android:layout_gravity="center_vertical" android:id="@id/export_imgdur" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0px" android:text="@string/launchcamera" />
-    </LinearLayout>
-    <ListView android:gravity="center_vertical" android:id="@id/exportres_imgdur_list" android:background="@drawable/popup_center_bright" android:layout_width="472.0px" android:layout_height="290.0px" />
-</LinearLayout>

@@ -518,7 +518,7 @@
     .line 197
     iget-object v0, p0, Lcom/sec/android/app/camera/glwidget/TwGLDialogPopup;->mTextArea:Lcom/sec/android/glview/TwGLViewGroup;
 
-    const v1, 0x7f0201af
+    const v1, 0x7f0201ae
 
     invoke-virtual {v0, v1}, Lcom/sec/android/glview/TwGLViewGroup;->setNinePatchBackground(I)Z
 
@@ -550,7 +550,7 @@
     .line 199
     iget-object v0, p0, Lcom/sec/android/app/camera/glwidget/TwGLDialogPopup;->mButtonArea:Lcom/sec/android/glview/TwGLViewGroup;
 
-    const v1, 0x7f0201ae
+    const v1, 0x7f0201ad
 
     invoke-virtual {v0, v1}, Lcom/sec/android/glview/TwGLViewGroup;->setNinePatchBackground(I)Z
 

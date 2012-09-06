@@ -91,7 +91,7 @@
     .line 480
     .local p0, this:Lcom/google/common/collect/MapMaker$StrategyImpl;,"Lcom/google/common/collect/MapMaker$StrategyImpl<TK;TV;>;"
     .local p2, computer:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TK;+TV;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 481
     #getter for: Lcom/google/common/collect/MapMaker;->keyStrength:Lcom/google/common/collect/MapMaker$Strength;

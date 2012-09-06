@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/g;
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
@@ -19,15 +19,15 @@
     .parameter
 
     .prologue
-    .line 143
+    .line 146
     iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/ui/g;->a:Lcom/google/android/youtube/app/honeycomb/ui/d;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 144
+    .line 147
     iput-object p2, p0, Lcom/google/android/youtube/app/honeycomb/ui/g;->b:Lcom/google/android/youtube/core/model/LiveEvent;
 
-    .line 145
+    .line 148
     return-void
 .end method
 
@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 139
+    .line 142
     iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/g;->a:Lcom/google/android/youtube/app/honeycomb/ui/d;
 
     iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/ui/g;->b:Lcom/google/android/youtube/core/model/LiveEvent;
@@ -55,7 +55,7 @@
     .parameter
 
     .prologue
-    .line 139
+    .line 142
     check-cast p2, Landroid/graphics/Bitmap;
 
     iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/ui/g;->a:Lcom/google/android/youtube/app/honeycomb/ui/d;

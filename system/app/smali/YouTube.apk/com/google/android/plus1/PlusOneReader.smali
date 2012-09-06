@@ -4,7 +4,7 @@
 
 
 # virtual methods
-.method public abstract a()Lcom/google/android/plus1/ap;
+.method public abstract a()Lcom/google/android/plus1/aq;
 .end method
 
 .method public abstract a(Landroid/net/Uri;)Lcom/google/android/plus1/u;

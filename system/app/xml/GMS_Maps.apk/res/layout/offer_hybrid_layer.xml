@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/offer_fragment_container" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/feature_switcher_anchor" android:background="@drawable/actionbar_background" android:visibility="gone" android:layout_alignParentTop="true" layout="@layout/feature_switcher_anchor" />
+    <TextView android:textAppearance="@style/HeaderBarTitle" android:gravity="center_vertical" android:id="@id/titleText" android:background="@drawable/actionbar_background" android:paddingLeft="5.0dip" android:paddingTop="5.0dip" android:paddingRight="3.0dip" android:paddingBottom="5.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/action_bar_height" android:singleLine="true" android:layout_toRightOf="@id/feature_switcher_anchor" android:layout_alignParentTop="true" />
+    <fragment android:id="@id/offer_fragment" android:tag="offer_fragment_layer" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/titleText" class="com.google.android.apps.common.offerslib.OfferDetailsFragment" />
+</RelativeLayout>

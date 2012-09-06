@@ -35,28 +35,28 @@
 
     const/4 v2, 0x0
 
-    .line 51
+    .line 52
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
-    .line 38
+    .line 39
     iput-object v4, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->s:Ljava/io/PushbackInputStream;
 
-    .line 39
+    .line 40
     iput-object v4, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->boundary:[B
 
-    .line 40
+    .line 41
     iput-boolean v3, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->first:Z
 
-    .line 41
+    .line 42
     iput-boolean v2, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->eof:Z
 
-    .line 42
+    .line 43
     iput-boolean v2, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->parenteof:Z
 
-    .line 43
+    .line 44
     iput-boolean v3, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->moreParts:Z
 
-    .line 53
+    .line 54
     new-instance v2, Ljava/io/PushbackInputStream;
 
     invoke-virtual {p2}, Ljava/lang/String;->length()I
@@ -69,7 +69,7 @@
 
     iput-object v2, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->s:Ljava/io/PushbackInputStream;
 
-    .line 55
+    .line 56
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -88,7 +88,7 @@
 
     move-result-object p2
 
-    .line 56
+    .line 57
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -97,7 +97,7 @@
 
     iput-object v2, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->boundary:[B
 
-    .line 57
+    .line 58
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -108,7 +108,7 @@
 
     if-ge v1, v2, :cond_4c
 
-    .line 58
+    .line 59
     iget-object v2, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->boundary:[B
 
     invoke-virtual {p2, v1}, Ljava/lang/String;->charAt(I)C
@@ -119,29 +119,29 @@
 
     aput-byte v3, v2, v1
 
-    .line 57
+    .line 58
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_3b
 
-    .line 65
+    .line 66
     :cond_4c
     invoke-virtual {p0}, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->read()I
 
     move-result v0
 
-    .line 66
+    .line 67
     .local v0, b:I
     const/4 v2, -0x1
 
     if-eq v0, v2, :cond_58
 
-    .line 67
+    .line 68
     iget-object v2, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->s:Ljava/io/PushbackInputStream;
 
     invoke-virtual {v2, v0}, Ljava/io/PushbackInputStream;->unread(I)V
 
-    .line 69
+    .line 70
     :cond_58
     return-void
 .end method
@@ -163,7 +163,7 @@
 
     const/4 v7, 0x1
 
-    .line 148
+    .line 149
     const/4 v2, 0x0
 
     .local v2, i:I
@@ -174,14 +174,14 @@
 
     if-ge v2, v5, :cond_31
 
-    .line 149
+    .line 150
     iget-object v5, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->s:Ljava/io/PushbackInputStream;
 
     invoke-virtual {v5}, Ljava/io/PushbackInputStream;->read()I
 
     move-result v0
 
-    .line 150
+    .line 151
     .local v0, b:I
     iget-object v5, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->boundary:[B
 
@@ -189,15 +189,15 @@
 
     if-eq v0, v5, :cond_2e
 
-    .line 151
+    .line 152
     if-eq v0, v8, :cond_1e
 
-    .line 152
+    .line 153
     iget-object v5, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->s:Ljava/io/PushbackInputStream;
 
     invoke-virtual {v5, v0}, Ljava/io/PushbackInputStream;->unread(I)V
 
-    .line 154
+    .line 155
     :cond_1e
     add-int/lit8 v3, v2, -0x1
 
@@ -205,7 +205,7 @@
     :goto_20
     if-ltz v3, :cond_55
 
-    .line 155
+    .line 156
     iget-object v5, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->s:Ljava/io/PushbackInputStream;
 
     iget-object v7, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->boundary:[B
@@ -214,19 +214,19 @@
 
     invoke-virtual {v5, v7}, Ljava/io/PushbackInputStream;->unread(I)V
 
-    .line 154
+    .line 155
     add-int/lit8 v3, v3, -0x1
 
     goto :goto_20
 
-    .line 148
+    .line 149
     .end local v3           #j:I
     :cond_2e
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_6
 
-    .line 164
+    .line 165
     .end local v0           #b:I
     :cond_31
     iget-object v5, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->s:Ljava/io/PushbackInputStream;
@@ -235,7 +235,7 @@
 
     move-result v4
 
-    .line 165
+    .line 166
     .local v4, prev:I
     iget-object v5, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->s:Ljava/io/PushbackInputStream;
 
@@ -243,7 +243,7 @@
 
     move-result v1
 
-    .line 166
+    .line 167
     .local v1, curr:I
     if-ne v4, v9, :cond_41
 
@@ -255,7 +255,7 @@
     :goto_42
     iput-boolean v5, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->moreParts:Z
 
-    .line 168
+    .line 169
     :cond_44
     const/16 v5, 0xa
 
@@ -265,23 +265,23 @@
 
     if-ne v4, v5, :cond_58
 
-    .line 174
+    .line 175
     :goto_4c
     if-ne v1, v8, :cond_52
 
-    .line 175
+    .line 176
     iput-boolean v6, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->moreParts:Z
 
-    .line 176
+    .line 177
     iput-boolean v7, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->parenteof:Z
 
-    .line 179
+    .line 180
     :cond_52
     iput-boolean v7, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->eof:Z
 
     move v6, v7
 
-    .line 181
+    .line 182
     .end local v1           #curr:I
     .end local v4           #prev:I
     :cond_55
@@ -292,14 +292,14 @@
     :cond_56
     move v5, v6
 
-    .line 166
+    .line 167
     goto :goto_42
 
-    .line 171
+    .line 172
     :cond_58
     move v4, v1
 
-    .line 172
+    .line 173
     iget-object v5, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->s:Ljava/io/PushbackInputStream;
 
     invoke-virtual {v5}, Ljava/io/PushbackInputStream;->read()I
@@ -322,12 +322,12 @@
     .end annotation
 
     .prologue
-    .line 77
+    .line 78
     iget-object v0, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->s:Ljava/io/PushbackInputStream;
 
     invoke-virtual {v0}, Ljava/io/PushbackInputStream;->close()V
 
-    .line 78
+    .line 79
     return-void
 .end method
 
@@ -340,7 +340,7 @@
     .end annotation
 
     .prologue
-    .line 108
+    .line 109
     :cond_0
     invoke-virtual {p0}, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->read()I
 
@@ -350,7 +350,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 110
+    .line 111
     return-void
 .end method
 
@@ -358,7 +358,7 @@
     .registers 2
 
     .prologue
-    .line 88
+    .line 89
     iget-boolean v0, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->moreParts:Z
 
     return v0
@@ -368,7 +368,7 @@
     .registers 2
 
     .prologue
-    .line 98
+    .line 99
     iget-boolean v0, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->parenteof:Z
 
     return v0
@@ -387,27 +387,27 @@
 
     const/4 v3, -0x1
 
-    .line 116
+    .line 117
     iget-boolean v4, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->eof:Z
 
     if-eqz v4, :cond_8
 
     move v0, v3
 
-    .line 143
+    .line 144
     :goto_7
     return v0
 
-    .line 120
+    .line 121
     :cond_8
     iget-boolean v4, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->first:Z
 
     if-eqz v4, :cond_16
 
-    .line 121
+    .line 122
     iput-boolean v2, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->first:Z
 
-    .line 122
+    .line 123
     invoke-direct {p0}, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->matchBoundary()Z
 
     move-result v4
@@ -416,10 +416,10 @@
 
     move v0, v3
 
-    .line 123
+    .line 124
     goto :goto_7
 
-    .line 127
+    .line 128
     :cond_16
     iget-object v4, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->s:Ljava/io/PushbackInputStream;
 
@@ -427,7 +427,7 @@
 
     move-result v0
 
-    .line 128
+    .line 129
     .local v0, b1:I
     iget-object v4, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->s:Ljava/io/PushbackInputStream;
 
@@ -435,7 +435,7 @@
 
     move-result v1
 
-    .line 130
+    .line 131
     .local v1, b2:I
     const/16 v4, 0xd
 
@@ -445,7 +445,7 @@
 
     if-ne v1, v4, :cond_32
 
-    .line 131
+    .line 132
     invoke-direct {p0}, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->matchBoundary()Z
 
     move-result v4
@@ -454,19 +454,19 @@
 
     move v0, v3
 
-    .line 132
+    .line 133
     goto :goto_7
 
-    .line 136
+    .line 137
     :cond_32
     if-eq v1, v3, :cond_39
 
-    .line 137
+    .line 138
     iget-object v4, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->s:Ljava/io/PushbackInputStream;
 
     invoke-virtual {v4, v1}, Ljava/io/PushbackInputStream;->unread(I)V
 
-    .line 140
+    .line 141
     :cond_39
     if-ne v0, v3, :cond_3c
 
@@ -475,7 +475,7 @@
     :cond_3c
     iput-boolean v2, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->parenteof:Z
 
-    .line 141
+    .line 142
     iget-boolean v2, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->parenteof:Z
 
     iput-boolean v2, p0, Lorg/apache/james/mime4j/MimeBoundaryInputStream;->eof:Z

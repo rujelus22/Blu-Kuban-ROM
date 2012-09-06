@@ -53,40 +53,40 @@
         <item quantity="one">"S'està esperant l'operació en %1$d conversa."</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">"Se n'han silenciat &amp;lt;b>%1$d&amp;lt;/b>."</item>
-        <item quantity="one">"Se n'ha silenciat &amp;lt;b>%1$d&amp;lt;/b>."</item>
+        <item quantity="other">"Se n'han silenciat &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>."</item>
+        <item quantity="one">"Se n'ha silenciat &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>."</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">"S'ha informat de &amp;lt;b>%1$d&amp;lt;/b> converses com a activitat brossa."</item>
-        <item quantity="one">"S'ha informat d'&amp;lt;b>%1$d&amp;lt;/b> conversa com a activitat brossa."</item>
+        <item quantity="other">"S'ha informat de &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> converses com a activitat brossa."</item>
+        <item quantity="one">"S'ha informat d'&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> conversa com a activitat brossa."</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">"Se n'han arxivat &amp;lt;b>%1$d&amp;lt;/b>."</item>
-        <item quantity="one">"Se n'ha arxivat &amp;lt;b>%1$d&amp;lt;/b>."</item>
+        <item quantity="other">"Se n'han arxivat &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>."</item>
+        <item quantity="one">"Se n'ha arxivat &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>."</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">"Se n'han mogut &amp;lt;b>%1$d&amp;lt;/b> a la bústia d'entrada."</item>
-        <item quantity="one">"Se n'ha mogut &amp;lt;b>%1$d&amp;lt;/b> a la bústia d'entrada."</item>
+        <item quantity="other">"Se n'han mogut &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> a la bústia d'entrada."</item>
+        <item quantity="one">"Se n'ha mogut &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> a la bústia d'entrada."</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">"Se n'han suprimit &amp;lt;b>%1$d&amp;lt;/b>."</item>
-        <item quantity="one">"Se n'ha suprimit &amp;lt;b>%1$d&amp;lt;/b>."</item>
+        <item quantity="other">"Se n'han suprimit &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>."</item>
+        <item quantity="one">"Se n'ha suprimit &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>."</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">"S'han marcat &amp;lt;b>%1$d&amp;lt;/b> converses com a importants."</item>
-        <item quantity="one">"Se n'ha marcat &amp;lt;b>%1$d&amp;lt;/b> com a important."</item>
+        <item quantity="other">"S'han marcat &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> converses com a importants."</item>
+        <item quantity="one">"Se n'ha marcat &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> com a important."</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">"Se n'han marcat &amp;lt;b>%1$d&amp;lt;/b> com a no importants."</item>
-        <item quantity="one">"Se n'ha marcat &amp;lt;b>%1$d&amp;lt;/b> com a no important."</item>
+        <item quantity="other">"Se n'han marcat &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> com a no importants."</item>
+        <item quantity="one">"Se n'ha marcat &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> com a no important."</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">"Se n'han marcat &amp;lt;b>%1$d&amp;lt;/b> com a llegides."</item>
-        <item quantity="one">"Se n'ha marcat &amp;lt;b>%1$d&amp;lt;/b> com a llegida."</item>
+        <item quantity="other">"Se n'han marcat &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> com a llegides."</item>
+        <item quantity="one">"Se n'ha marcat &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> com a llegida."</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">"Se n'han marcat &amp;lt;b>%1$d&amp;lt;/b> com a no llegides."</item>
-        <item quantity="one">"Se n'ha marcat &amp;lt;b>%1$d&amp;lt;/b> com a no llegida."</item>
+        <item quantity="other">"Se n'han marcat &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> com a no llegides."</item>
+        <item quantity="one">"Se n'ha marcat &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> com a no llegida."</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">"S'han canviat les etiquetes"</item>

@@ -33,7 +33,7 @@
     .prologue
     .line 21
     .local p2, list:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;>;"
-    const v0, 0x7f0400b4
+    const v0, 0x7f0400fc
 
     const/4 v1, 0x0
 
@@ -58,10 +58,10 @@
     .parameter "parent"
 
     .prologue
-    .line 43
+    .line 42
     if-nez p2, :cond_12
 
-    .line 44
+    .line 43
     invoke-virtual {p0}, Lcom/google/android/finsky/adapters/SearchSpinnerAdapter;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -70,7 +70,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0400b4
+    const v3, 0x7f0400fc
 
     const/4 v4, 0x0
 
@@ -78,7 +78,7 @@
 
     move-result-object p2
 
-    .line 48
+    .line 47
     :cond_12
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/adapters/SearchSpinnerAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -86,9 +86,9 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;
 
-    .line 49
+    .line 48
     .local v0, item:Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;
-    const v2, 0x7f080183
+    const v2, 0x7f08020b
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -96,7 +96,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 50
+    .line 49
     .local v1, spinnerText:Landroid/widget/TextView;
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;->getHeader()Ljava/lang/String;
 
@@ -108,53 +108,29 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 52
+    .line 51
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;->getCurrent()Z
 
     move-result v2
 
-    if-eqz v2, :cond_45
+    if-eqz v2, :cond_39
 
-    .line 53
-    invoke-virtual {p0}, Lcom/google/android/finsky/adapters/SearchSpinnerAdapter;->getContext()Landroid/content/Context;
+    .line 52
+    const v2, 0x7f0a002f
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    const v3, 0x7f0a0030
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
-
-    move-result v2
-
-    invoke-virtual {p2, v2}, Landroid/view/View;->setBackgroundColor(I)V
-
-    .line 59
-    :goto_44
-    return-object p2
+    invoke-virtual {p2, v2}, Landroid/view/View;->setBackgroundResource(I)V
 
     .line 56
-    :cond_45
-    invoke-virtual {p0}, Lcom/google/android/finsky/adapters/SearchSpinnerAdapter;->getContext()Landroid/content/Context;
+    :goto_38
+    return-object p2
 
-    move-result-object v2
+    .line 54
+    :cond_39
+    const v2, 0x7f020045
 
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p2, v2}, Landroid/view/View;->setBackgroundResource(I)V
 
-    move-result-object v2
-
-    const v3, 0x7f02002c
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    invoke-virtual {p2, v2}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    goto :goto_44
+    goto :goto_38
 .end method
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
@@ -173,7 +149,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0400b5
+    const v3, 0x7f0400fd
 
     const/4 v4, 0x0
 
@@ -206,23 +182,6 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 35
-    invoke-virtual {p0}, Lcom/google/android/finsky/adapters/SearchSpinnerAdapter;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    const v3, 0x7f0a0004
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
-
-    .line 37
+    .line 36
     return-object p2
 .end method

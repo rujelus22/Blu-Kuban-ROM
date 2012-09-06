@@ -3,7 +3,7 @@
 .source "PaginatedList.java"
 
 # interfaces
-.implements Lcom/google/android/finsky/api/PaginatedDfeRequest$PaginatedListener;
+.implements Lcom/android/volley/Response$Listener;
 
 
 # annotations
@@ -21,7 +21,7 @@
         "Ljava/lang/Object;",
         ">",
         "Lcom/google/android/finsky/api/model/DfeModel;",
-        "Lcom/google/android/finsky/api/PaginatedDfeRequest$PaginatedListener",
+        "Lcom/android/volley/Response$Listener",
         "<TT;>;"
     }
 .end annotation
@@ -82,13 +82,13 @@
     .parameter "url"
 
     .prologue
-    .line 59
+    .line 61
     .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, v0}, Lcom/google/android/finsky/api/model/PaginatedList;-><init>(Ljava/lang/String;Z)V
 
-    .line 60
+    .line 62
     return-void
 .end method
 
@@ -98,30 +98,30 @@
     .parameter "autoLoadNextPage"
 
     .prologue
-    .line 62
+    .line 64
     .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
     invoke-direct {p0}, Lcom/google/android/finsky/api/model/DfeModel;-><init>()V
 
-    .line 38
+    .line 40
     const/16 v0, 0xc
 
     iput v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mWindowDistance:I
 
-    .line 44
-    invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
+    .line 46
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mItems:Ljava/util/List;
 
-    .line 52
-    invoke-static {}, Lcom/google/android/finsky/utils/Lists;->newArrayList()Ljava/util/ArrayList;
+    .line 54
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mUrlOffsetList:Ljava/util/List;
 
-    .line 63
+    .line 65
     iget-object v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mUrlOffsetList:Ljava/util/List;
 
     new-instance v1, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
@@ -132,15 +132,15 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 64
+    .line 66
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mMoreAvailable:Z
 
-    .line 65
+    .line 67
     iput-boolean p2, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mAutoLoadNextPage:Z
 
-    .line 66
+    .line 68
     return-void
 .end method
 
@@ -164,30 +164,30 @@
     .local p1, urlMap:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;>;"
     const/4 v2, 0x0
 
-    .line 70
+    .line 72
     invoke-direct {p0, v2, p3}, Lcom/google/android/finsky/api/model/PaginatedList;-><init>(Ljava/lang/String;Z)V
 
-    .line 72
+    .line 74
     iput-object p1, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mUrlOffsetList:Ljava/util/List;
 
-    .line 75
+    .line 77
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_7
     if-ge v0, p2, :cond_11
 
-    .line 76
+    .line 78
     iget-object v1, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mItems:Ljava/util/List;
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 75
+    .line 77
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_7
 
-    .line 78
+    .line 80
     :cond_11
     return-void
 .end method
@@ -197,13 +197,13 @@
     .parameter "urlOffsetPair"
 
     .prologue
-    .line 319
+    .line 341
     .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
     iget-object v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mCurrentRequest:Lcom/android/volley/Request;
 
     if-eqz v0, :cond_17
 
-    .line 320
+    .line 342
     iget-object v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mCurrentRequest:Lcom/android/volley/Request;
 
     invoke-virtual {v0}, Lcom/android/volley/Request;->getUrl()Ljava/lang/String;
@@ -218,18 +218,18 @@
 
     if-nez v0, :cond_23
 
-    .line 322
+    .line 344
     iget-object v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mCurrentRequest:Lcom/android/volley/Request;
 
     invoke-virtual {v0}, Lcom/android/volley/Request;->cancel()V
 
-    .line 327
+    .line 349
     :cond_17
     iget v0, p1, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;->offset:I
 
     iput v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mCurrentOffset:I
 
-    .line 328
+    .line 350
     iget-object v0, p1, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;->url:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/api/model/PaginatedList;->makeRequest(Ljava/lang/String;)Lcom/android/volley/Request;
@@ -238,7 +238,7 @@
 
     iput-object v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mCurrentRequest:Lcom/android/volley/Request;
 
-    .line 329
+    .line 351
     :cond_23
     return-void
 .end method
@@ -249,13 +249,48 @@
     .registers 2
 
     .prologue
-    .line 87
+    .line 100
     .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mCurrentRequest:Lcom/android/volley/Request;
 
-    .line 88
+    .line 101
+    return-void
+.end method
+
+.method public flushAllPages()V
+    .registers 4
+
+    .prologue
+    .line 241
+    .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
+    const/4 v0, 0x0
+
+    .local v0, i:I
+    :goto_1
+    iget-object v1, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mItems:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_12
+
+    .line 242
+    iget-object v1, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mItems:Ljava/util/List;
+
+    const/4 v2, 0x0
+
+    invoke-interface {v1, v0, v2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    .line 241
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    .line 244
+    :cond_12
     return-void
 .end method
 
@@ -263,17 +298,17 @@
     .registers 4
 
     .prologue
-    .line 211
+    .line 224
     .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
     iget v1, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mLastPositionRequested:I
 
     if-gez v1, :cond_5
 
-    .line 222
+    .line 235
     :cond_4
     return-void
 
-    .line 215
+    .line 228
     :cond_5
     const/4 v0, 0x0
 
@@ -287,7 +322,7 @@
 
     if-ge v0, v1, :cond_4
 
-    .line 216
+    .line 229
     iget v1, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mLastPositionRequested:I
 
     iget v2, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mWindowDistance:I
@@ -306,13 +341,13 @@
 
     if-ge v0, v1, :cond_21
 
-    .line 215
+    .line 228
     :goto_1e
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_6
 
-    .line 220
+    .line 233
     :cond_21
     iget-object v1, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mItems:Ljava/util/List;
 
@@ -327,7 +362,7 @@
     .registers 2
 
     .prologue
-    .line 94
+    .line 107
     .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
     iget-object v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mItems:Ljava/util/List;
 
@@ -348,18 +383,18 @@
     .end annotation
 
     .prologue
-    .line 152
+    .line 165
     .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
     iput p1, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mLastPositionRequested:I
 
-    .line 153
+    .line 166
     const/4 v2, 0x0
 
-    .line 154
+    .line 167
     .local v2, result:Ljava/lang/Object;,"TD;"
     if-gez p1, :cond_1e
 
-    .line 155
+    .line 168
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -384,7 +419,7 @@
 
     throw v4
 
-    .line 158
+    .line 171
     :cond_1e
     invoke-virtual {p0}, Lcom/google/android/finsky/api/model/PaginatedList;->getCount()I
 
@@ -392,14 +427,14 @@
 
     if-ge p1, v4, :cond_6b
 
-    .line 159
+    .line 172
     iget-object v4, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mItems:Ljava/util/List;
 
     invoke-interface {v4, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 160
+    .line 173
     iget-boolean v4, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mAutoLoadNextPage:Z
 
     if-eqz v4, :cond_4d
@@ -416,7 +451,7 @@
 
     if-lt p1, v4, :cond_4d
 
-    .line 162
+    .line 175
     iget-object v4, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mUrlOffsetList:Ljava/util/List;
 
     iget-object v5, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mUrlOffsetList:Ljava/util/List;
@@ -433,19 +468,19 @@
 
     check-cast v3, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
 
-    .line 163
+    .line 176
     .local v3, wrapper:Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
     invoke-direct {p0, v3}, Lcom/google/android/finsky/api/model/PaginatedList;->requestMoreItemsIfNoRequestExists(Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;)V
 
-    .line 165
+    .line 178
     .end local v3           #wrapper:Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
     :cond_4d
     if-nez v2, :cond_6b
 
-    .line 166
+    .line 179
     const/4 v3, 0x0
 
-    .line 167
+    .line 180
     .restart local v3       #wrapper:Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
     iget-object v4, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mUrlOffsetList:Ljava/util/List;
 
@@ -467,23 +502,23 @@
 
     check-cast v0, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
 
-    .line 168
+    .line 181
     .local v0, currentWrapper:Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
     iget v4, v0, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;->offset:I
 
     if-gt v4, p1, :cond_68
 
-    .line 169
+    .line 182
     move-object v3, v0
 
     goto :goto_56
 
-    .line 174
+    .line 187
     .end local v0           #currentWrapper:Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
     :cond_68
     invoke-direct {p0, v3}, Lcom/google/android/finsky/api/model/PaginatedList;->requestMoreItemsIfNoRequestExists(Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;)V
 
-    .line 177
+    .line 190
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #result:Ljava/lang/Object;,"TD;"
     .end local v3           #wrapper:Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
@@ -501,6 +536,61 @@
     .end annotation
 .end method
 
+.method public getListPageUrls()Ljava/util/Set;
+    .registers 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 86
+    .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
+    new-instance v2, Ljava/util/HashSet;
+
+    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
+
+    .line 87
+    .local v2, urls:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
+    iget-object v3, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mUrlOffsetList:Ljava/util/List;
+
+    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .local v0, i$:Ljava/util/Iterator;
+    :goto_b
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1d
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
+
+    .line 88
+    .local v1, pair:Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
+    iget-object v3, v1, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;->url:Ljava/lang/String;
+
+    invoke-interface {v2, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    goto :goto_b
+
+    .line 90
+    .end local v1           #pair:Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
+    :cond_1d
+    return-object v2
+.end method
+
 .method protected abstract getNextPageUrl(Ljava/lang/Object;)Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -514,7 +604,7 @@
     .registers 2
 
     .prologue
-    .line 238
+    .line 260
     .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
     iget-boolean v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mMoreAvailable:Z
 
@@ -525,7 +615,7 @@
     .registers 2
 
     .prologue
-    .line 117
+    .line 130
     .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
     iget-object v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mLastResponse:Ljava/lang/Object;
 
@@ -568,14 +658,14 @@
     .parameter "error"
 
     .prologue
-    .line 122
+    .line 135
     .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
     invoke-virtual {p0}, Lcom/google/android/finsky/api/model/PaginatedList;->clearTransientState()V
 
-    .line 123
+    .line 136
     invoke-super {p0, p1}, Lcom/google/android/finsky/api/model/DfeModel;->onErrorResponse(Lcom/android/volley/VolleyError;)V
 
-    .line 124
+    .line 137
     return-void
 .end method
 
@@ -589,28 +679,28 @@
     .end annotation
 
     .prologue
-    .line 257
+    .line 279
     .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
     .local p1, response:Ljava/lang/Object;,"TT;"
     invoke-virtual {p0}, Lcom/google/android/finsky/api/model/PaginatedList;->clearErrors()V
 
-    .line 258
+    .line 280
     iput-object p1, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mLastResponse:Ljava/lang/Object;
 
-    .line 260
+    .line 282
     iget-object v5, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mItems:Ljava/util/List;
 
     invoke-interface {v5}, Ljava/util/List;->size()I
 
     move-result v4
 
-    .line 262
+    .line 284
     .local v4, oldSize:I
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/api/model/PaginatedList;->getItemsFromResponse(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v2
 
-    .line 263
+    .line 285
     .local v2, items:Ljava/util/List;,"Ljava/util/List<TD;>;"
     iget v5, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mCurrentOffset:I
 
@@ -622,22 +712,22 @@
 
     if-lt v5, v6, :cond_6e
 
-    .line 264
+    .line 286
     iget-object v5, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mItems:Ljava/util/List;
 
     invoke-interface {v5, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 276
+    .line 298
     :cond_1e
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/api/model/PaginatedList;->getNextPageUrl(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 278
+    .line 300
     .local v3, nextPageUrl:Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 282
+    .line 304
     .local v1, isNextRequestAtEndOfListAvail:Z
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -649,7 +739,7 @@
 
     if-ne v5, v4, :cond_3d
 
-    .line 283
+    .line 305
     iget-object v5, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mUrlOffsetList:Ljava/util/List;
 
     new-instance v6, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
@@ -664,7 +754,7 @@
 
     invoke-interface {v5, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 287
+    .line 309
     :cond_3d
     iget-object v5, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mItems:Ljava/util/List;
 
@@ -698,10 +788,10 @@
 
     if-lez v5, :cond_5e
 
-    .line 289
+    .line 311
     const/4 v1, 0x1
 
-    .line 292
+    .line 314
     :cond_5e
     if-eqz v1, :cond_99
 
@@ -714,16 +804,16 @@
     :goto_65
     iput-boolean v5, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mMoreAvailable:Z
 
-    .line 295
+    .line 317
     invoke-virtual {p0}, Lcom/google/android/finsky/api/model/PaginatedList;->clearTransientState()V
 
-    .line 296
+    .line 318
     invoke-virtual {p0}, Lcom/google/android/finsky/api/model/PaginatedList;->notifyDataSetChanged()V
 
-    .line 297
+    .line 319
     return-void
 
-    .line 266
+    .line 288
     .end local v1           #isNextRequestAtEndOfListAvail:Z
     .end local v3           #nextPageUrl:Ljava/lang/String;
     :cond_6e
@@ -737,7 +827,7 @@
 
     if-ge v0, v5, :cond_1e
 
-    .line 267
+    .line 289
     iget v5, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mCurrentOffset:I
 
     add-int/2addr v5, v0
@@ -750,7 +840,7 @@
 
     if-ge v5, v6, :cond_8f
 
-    .line 268
+    .line 290
     iget-object v5, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mItems:Ljava/util/List;
 
     iget v6, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mCurrentOffset:I
@@ -763,13 +853,13 @@
 
     invoke-interface {v5, v6, v7}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 266
+    .line 288
     :goto_8c
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_6f
 
-    .line 270
+    .line 292
     :cond_8f
     iget-object v5, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mItems:Ljava/util/List;
 
@@ -781,7 +871,7 @@
 
     goto :goto_8c
 
-    .line 292
+    .line 314
     .end local v0           #i:I
     .restart local v1       #isNextRequestAtEndOfListAvail:Z
     .restart local v3       #nextPageUrl:Ljava/lang/String;
@@ -795,21 +885,21 @@
     .registers 2
 
     .prologue
-    .line 228
+    .line 250
     .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mMoreAvailable:Z
 
-    .line 229
+    .line 251
     iget-object v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mItems:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 230
+    .line 252
     invoke-virtual {p0}, Lcom/google/android/finsky/api/model/PaginatedList;->notifyDataSetChanged()V
 
-    .line 231
+    .line 253
     return-void
 .end method
 
@@ -817,7 +907,7 @@
     .registers 6
 
     .prologue
-    .line 186
+    .line 199
     .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
     invoke-virtual {p0}, Lcom/google/android/finsky/api/model/PaginatedList;->inErrorState()Z
 
@@ -825,13 +915,13 @@
 
     if-eqz v3, :cond_3d
 
-    .line 188
+    .line 201
     invoke-virtual {p0}, Lcom/google/android/finsky/api/model/PaginatedList;->clearTransientState()V
 
-    .line 191
+    .line 204
     const/4 v2, 0x0
 
-    .line 192
+    .line 205
     .local v2, wrapper:Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
     iget v3, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mCurrentOffset:I
 
@@ -839,7 +929,7 @@
 
     if-eq v3, v4, :cond_28
 
-    .line 193
+    .line 206
     iget-object v3, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mUrlOffsetList:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -860,7 +950,7 @@
 
     check-cast v0, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
 
-    .line 194
+    .line 207
     .local v0, currentWrapper:Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
     iget v3, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mCurrentOffset:I
 
@@ -868,16 +958,16 @@
 
     if-ne v3, v4, :cond_15
 
-    .line 195
+    .line 208
     move-object v2, v0
 
-    .line 200
+    .line 213
     .end local v0           #currentWrapper:Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
     .end local v1           #i$:Ljava/util/Iterator;
     :cond_28
     if-nez v2, :cond_3a
 
-    .line 201
+    .line 214
     iget-object v3, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mUrlOffsetList:Ljava/util/List;
 
     iget-object v4, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mUrlOffsetList:Ljava/util/List;
@@ -895,12 +985,12 @@
     .end local v2           #wrapper:Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
     check-cast v2, Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
 
-    .line 203
+    .line 216
     .restart local v2       #wrapper:Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
     :cond_3a
     invoke-direct {p0, v2}, Lcom/google/android/finsky/api/model/PaginatedList;->requestMoreItemsIfNoRequestExists(Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;)V
 
-    .line 205
+    .line 218
     .end local v2           #wrapper:Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;
     :cond_3d
     return-void
@@ -911,11 +1001,11 @@
     .parameter "distance"
 
     .prologue
-    .line 98
+    .line 111
     .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
     iput p1, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mWindowDistance:I
 
-    .line 99
+    .line 112
     return-void
 .end method
 
@@ -923,7 +1013,7 @@
     .registers 3
 
     .prologue
-    .line 137
+    .line 150
     .local p0, this:Lcom/google/android/finsky/api/model/PaginatedList;,"Lcom/google/android/finsky/api/model/PaginatedList<TT;TD;>;"
     iget-boolean v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mMoreAvailable:Z
 
@@ -935,10 +1025,10 @@
 
     if-nez v0, :cond_19
 
-    .line 138
+    .line 151
     invoke-virtual {p0}, Lcom/google/android/finsky/api/model/PaginatedList;->clearErrors()V
 
-    .line 139
+    .line 152
     iget-object v0, p0, Lcom/google/android/finsky/api/model/PaginatedList;->mUrlOffsetList:Ljava/util/List;
 
     const/4 v1, 0x0
@@ -951,7 +1041,7 @@
 
     invoke-direct {p0, v0}, Lcom/google/android/finsky/api/model/PaginatedList;->requestMoreItemsIfNoRequestExists(Lcom/google/android/finsky/api/model/PaginatedList$UrlOffsetPair;)V
 
-    .line 141
+    .line 154
     :cond_19
     return-void
 .end method

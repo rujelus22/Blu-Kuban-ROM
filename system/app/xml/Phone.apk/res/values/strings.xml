@@ -1238,6 +1238,10 @@ Contact Help Desk"</string>
     <string name="call_save_enable">Voice call protection is enabled</string>
     <string name="call_save_disable">Voice call protection is disabled</string>
     <string name="vtcall_disable_duringwifi">Video call is not possible as Wi-Fi is on now</string>
+    <item type="string" name="APKTOOL_DUMMY_04be">false</item>
+    <item type="string" name="APKTOOL_DUMMY_04bf">false</item>
+    <item type="string" name="APKTOOL_DUMMY_04c0">false</item>
+    <item type="string" name="APKTOOL_DUMMY_04c1">false</item>
     <string name="sprint_call_guard">Call Guard</string>
     <string name="sprint_call_guard_enable">Extra key press required for roam calls</string>
     <string name="sprint_call_guard_disable">Extra key press not required for roam calls</string>
@@ -1308,8 +1312,4 @@ Emergency Call Back mode."</string>
     <string name="ecbm_mode_active">Emergency Callback Mode is active</string>
     <string name="own_number_text">My number:</string>
     <string name="ecbm_redial_text">Redial</string>
-    <item type="string" name="APKTOOL_DUMMY_04be">false</item>
-    <item type="string" name="APKTOOL_DUMMY_04bf">false</item>
-    <item type="string" name="APKTOOL_DUMMY_04c0">false</item>
-    <item type="string" name="APKTOOL_DUMMY_04c1">false</item>
 </resources>

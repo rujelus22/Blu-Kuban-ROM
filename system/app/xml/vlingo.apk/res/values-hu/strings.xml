@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="driving_mode">Vezetés mód</string>
-    <string name="app_name">Hangvezérlő</string>
-    <string name="incar">Beszélő</string>
-    <string name="incar_icon">Beszélő</string>
-    <string name="Vlingo">Hangutasítások</string>
-    <string name="widget_name">Hang</string>
-</resources>

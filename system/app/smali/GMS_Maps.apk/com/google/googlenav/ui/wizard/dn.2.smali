@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/wizard/dn;
+.class Lcom/google/googlenav/ui/wizard/dN;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/dm;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/dL;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/dm;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/dL;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/dn;->a:Lcom/google/googlenav/ui/wizard/dm;
+    .prologue
+    .line 761
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/dN;->a:Lcom/google/googlenav/ui/wizard/dL;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,16 +26,21 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 3
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/dn;->a:Lcom/google/googlenav/ui/wizard/dm;
+    .prologue
+    .line 773
+    if-ltz p3, :cond_5
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/dm;->a(Lcom/google/googlenav/ui/wizard/dm;)Lcom/google/googlenav/ui/wizard/dq;
+    .line 774
+    invoke-virtual {p2}, Landroid/view/View;->performClick()Z
 
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/google/googlenav/ui/wizard/dq;->a()V
-
+    .line 776
+    :cond_5
     return-void
 .end method

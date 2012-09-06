@@ -5,42 +5,40 @@
 
 # instance fields
 .field private ad:Ljava/lang/Boolean;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
     .end annotation
 .end field
 
 .field private clickDeltaHex:Ljava/lang/String;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
         a = "cdx"
     .end annotation
 .end field
 
 .field private id:Ljava/lang/String;
-    .annotation runtime Lcom/google/api/client/util/s;
+    .annotation runtime Lcom/google/api/client/util/r;
     .end annotation
 .end field
 
 
 # direct methods
-.method synthetic constructor <init>()V
-    .registers 2
+.method private constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 493
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lcom/google/android/apps/pos/network/k;-><init>(B)V
+    .line 519
+    invoke-direct {p0}, Lcom/google/android/apps/pos/network/u;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>(B)V
+.method synthetic constructor <init>(B)V
     .registers 2
     .parameter
 
     .prologue
-    .line 493
-    invoke-direct {p0}, Lcom/google/android/apps/pos/network/u;-><init>()V
+    .line 519
+    invoke-direct {p0}, Lcom/google/android/apps/pos/network/k;-><init>()V
 
     return-void
 .end method
@@ -51,7 +49,7 @@
     .parameter
 
     .prologue
-    .line 493
+    .line 519
     iput-object p1, p0, Lcom/google/android/apps/pos/network/k;->id:Ljava/lang/String;
 
     return-object p1

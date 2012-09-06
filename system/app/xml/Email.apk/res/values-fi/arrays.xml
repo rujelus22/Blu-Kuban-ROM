@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="general_preference_text_zoom_summary_array">
+        <item>Hyvin pieni teksti</item>
+        <item>Pieni teksti</item>
+        <item>Normaalikokoinen teksti</item>
+        <item>Suuri teksti</item>
+        <item>Valtava teksti</item>
+    </string-array>
+</resources>

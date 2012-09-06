@@ -1,19 +1,23 @@
-.class Lcom/google/android/maps/driveabout/app/dT;
+.class Lcom/google/android/maps/driveabout/app/dt;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lr/aI;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/maps/driveabout/app/dO;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/ds;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/driveabout/app/dO;)V
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/ds;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/dT;->a:Lcom/google/android/maps/driveabout/app/dO;
+    .prologue
+    .line 133
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/dt;->a:Lcom/google/android/maps/driveabout/app/ds;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,38 +26,28 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 5
+.method public a(Lr/aH;)V
+    .registers 4
+    .parameter
 
-    const/4 v1, 0x0
+    .prologue
+    .line 141
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/dt;->a:Lcom/google/android/maps/driveabout/app/ds;
 
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/app/dT;->a:Lcom/google/android/maps/driveabout/app/dO;
+    const/4 v1, 0x3
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/dT;->a:Lcom/google/android/maps/driveabout/app/dO;
+    invoke-static {v0, v1}, Lcom/google/android/maps/driveabout/app/ds;->a(Lcom/google/android/maps/driveabout/app/ds;I)V
 
-    invoke-static {v0}, Lcom/google/android/maps/driveabout/app/dO;->c(Lcom/google/android/maps/driveabout/app/dO;)Lcom/google/android/maps/driveabout/app/cW;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/cW;->i()Lcom/google/android/maps/driveabout/app/a;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/a;->b()Z
-
-    move-result v0
-
-    if-nez v0, :cond_18
-
-    const/4 v0, 0x1
-
-    :goto_14
-    invoke-virtual {v2, v0, v1}, Lcom/google/android/maps/driveabout/app/dO;->a(ZZ)V
-
+    .line 142
     return-void
+.end method
 
-    :cond_18
-    move v0, v1
+.method public a(Lr/aH;Ln/am;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    goto :goto_14
+    .prologue
+    .line 136
+    return-void
 .end method

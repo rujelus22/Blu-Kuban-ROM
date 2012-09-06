@@ -137,7 +137,7 @@
         <item>Xitsonga (Sudáfrica)</item>
     </string-array>
     <string-array name="prefEntries_safeSearch">
-        <item>Desactivado</item>
+        <item>Apagado</item>
         <item>Moderar</item>
         <item>Estricto</item>
     </string-array>

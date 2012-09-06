@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 139
+    .line 149
     iput-object p1, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler$2;->this$0:Lcom/google/android/finsky/utils/SelfUpdateScheduler;
 
     iput-object p2, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler$2;->val$download:Lcom/google/android/finsky/download/Download;
@@ -43,19 +43,19 @@
 
 # virtual methods
 .method public run()V
-    .registers 9
+    .registers 12
 
     .prologue
     const/4 v1, 0x0
 
     const/4 v5, 0x0
 
-    .line 144
+    .line 154
     new-instance v6, Lcom/google/android/finsky/utils/SelfUpdateScheduler$2$1;
 
     invoke-direct {v6, p0}, Lcom/google/android/finsky/utils/SelfUpdateScheduler$2$1;-><init>(Lcom/google/android/finsky/utils/SelfUpdateScheduler$2;)V
 
-    .line 152
+    .line 162
     .local v6, listener:Lcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;
     iget-object v0, p0, Lcom/google/android/finsky/utils/SelfUpdateScheduler$2;->val$download:Lcom/google/android/finsky/download/Download;
 
@@ -65,12 +65,18 @@
 
     const-wide/16 v2, -0x1
 
+    const-string v9, ""
+
     move-object v4, v1
 
     move v7, v5
 
-    invoke-static/range {v0 .. v7}, Lcom/google/android/finsky/utils/PackageManagerHelper;->installPackage(Landroid/net/Uri;Ljava/lang/String;JLjava/lang/String;ZLcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;Z)V
+    move v8, v5
 
-    .line 154
+    move-object v10, v1
+
+    invoke-static/range {v0 .. v10}, Lcom/google/android/finsky/utils/PackageManagerHelper;->installPackage(Landroid/net/Uri;Ljava/lang/String;JLjava/lang/String;ZLcom/google/android/finsky/utils/PackageManagerHelper$InstallPackageListener;ZZLjava/lang/String;Lcom/google/android/finsky/remoting/protos/AndroidAppDelivery$EncryptionParams;)V
+
+    .line 164
     return-void
 .end method

@@ -12,8 +12,8 @@
     .registers 3
 
     .prologue
-    .line 86
-    invoke-static {}, Lcom/google/common/base/CaseFormat;->values()[Lcom/google/common/base/CaseFormat;
+    .line 52
+    invoke-static {}, Lcom/google/common/base/AbstractIterator$State;->values()[Lcom/google/common/base/AbstractIterator$State;
 
     move-result-object v0
 
@@ -26,9 +26,9 @@
     :try_start_9
     sget-object v0, Lcom/google/common/base/a;->a:[I
 
-    sget-object v1, Lcom/google/common/base/CaseFormat;->LOWER_UNDERSCORE:Lcom/google/common/base/CaseFormat;
+    sget-object v1, Lcom/google/common/base/AbstractIterator$State;->DONE:Lcom/google/common/base/AbstractIterator$State;
 
-    invoke-virtual {v1}, Lcom/google/common/base/CaseFormat;->ordinal()I
+    invoke-virtual {v1}, Lcom/google/common/base/AbstractIterator$State;->ordinal()I
 
     move-result v1
 
@@ -36,15 +36,15 @@
 
     aput v2, v0, v1
     :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_49
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
 
     :goto_14
     :try_start_14
     sget-object v0, Lcom/google/common/base/a;->a:[I
 
-    sget-object v1, Lcom/google/common/base/CaseFormat;->UPPER_UNDERSCORE:Lcom/google/common/base/CaseFormat;
+    sget-object v1, Lcom/google/common/base/AbstractIterator$State;->READY:Lcom/google/common/base/AbstractIterator$State;
 
-    invoke-virtual {v1}, Lcom/google/common/base/CaseFormat;->ordinal()I
+    invoke-virtual {v1}, Lcom/google/common/base/AbstractIterator$State;->ordinal()I
 
     move-result v1
 
@@ -52,80 +52,17 @@
 
     aput v2, v0, v1
     :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_47
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
 
     :goto_1f
-    :try_start_1f
-    sget-object v0, Lcom/google/common/base/a;->a:[I
-
-    sget-object v1, Lcom/google/common/base/CaseFormat;->LOWER_HYPHEN:Lcom/google/common/base/CaseFormat;
-
-    invoke-virtual {v1}, Lcom/google/common/base/CaseFormat;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_45
-
-    :goto_2a
-    :try_start_2a
-    sget-object v0, Lcom/google/common/base/a;->a:[I
-
-    sget-object v1, Lcom/google/common/base/CaseFormat;->LOWER_CAMEL:Lcom/google/common/base/CaseFormat;
-
-    invoke-virtual {v1}, Lcom/google/common/base/CaseFormat;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_35
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_43
-
-    :goto_35
-    :try_start_35
-    sget-object v0, Lcom/google/common/base/a;->a:[I
-
-    sget-object v1, Lcom/google/common/base/CaseFormat;->UPPER_CAMEL:Lcom/google/common/base/CaseFormat;
-
-    invoke-virtual {v1}, Lcom/google/common/base/CaseFormat;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_40
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_35 .. :try_end_40} :catch_41
-
-    :goto_40
     return-void
 
-    :catch_41
-    move-exception v0
-
-    goto :goto_40
-
-    :catch_43
-    move-exception v0
-
-    goto :goto_35
-
-    :catch_45
-    move-exception v0
-
-    goto :goto_2a
-
-    :catch_47
+    :catch_20
     move-exception v0
 
     goto :goto_1f
 
-    :catch_49
+    :catch_22
     move-exception v0
 
     goto :goto_14

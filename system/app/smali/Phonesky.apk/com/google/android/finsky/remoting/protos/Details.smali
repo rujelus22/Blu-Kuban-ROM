@@ -8,6 +8,7 @@
     value = {
         Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsEntry;,
         Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsResponse;,
+        Lcom/google/android/finsky/remoting/protos/Details$BulkDetailsRequest;,
         Lcom/google/android/finsky/remoting/protos/Details$DetailsResponse;
     }
 .end annotation

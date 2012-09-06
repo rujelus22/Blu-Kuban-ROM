@@ -1,120 +1,52 @@
-.class Lcom/google/googlenav/ui/view/android/rideabout/o;
+.class public Lcom/google/googlenav/ui/view/android/rideabout/o;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/android/rideabout/n;
+.field private final a:Ljava/lang/String;
+
+.field private final b:Landroid/text/style/CharacterStyle;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/rideabout/n;)V
-    .registers 2
+.method public constructor <init>(Ljava/lang/String;Landroid/text/style/CharacterStyle;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/rideabout/o;->a:Lcom/google/googlenav/ui/view/android/rideabout/n;
-
+    .prologue
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 27
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/rideabout/o;->a:Ljava/lang/String;
+
+    .line 28
+    iput-object p2, p0, Lcom/google/googlenav/ui/view/android/rideabout/o;->b:Landroid/text/style/CharacterStyle;
+
+    .line 29
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 6
+.method public a()Ljava/lang/String;
+    .registers 2
 
-    check-cast p1, Landroid/widget/TextView;
+    .prologue
+    .line 32
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/rideabout/o;->a:Ljava/lang/String;
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+    return-object v0
+.end method
 
-    move-result-object v0
+.method public b()Landroid/text/style/CharacterStyle;
+    .registers 2
 
-    sget-object v1, Lcom/google/googlenav/android/ab;->a:Ljava/util/regex/Pattern;
+    .prologue
+    .line 36
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/rideabout/o;->b:Landroid/text/style/CharacterStyle;
 
-    invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/google/googlenav/android/ab;->b:Ljava/util/regex/Pattern;
-
-    invoke-virtual {v2, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v0
-
-    invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4d
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "tel:"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v1}, Ljava/util/regex/Matcher;->group()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    :goto_33
-    const/16 v1, 0x61
-
-    const-string v2, "ca"
-
-    const-string v3, "l"
-
-    invoke-static {v1, v2, v3}, Laf/m;->a(ILjava/lang/String;Ljava/lang/String;)Z
-
-    new-instance v1, Landroid/content/Intent;
-
-    const-string v2, "android.intent.action.VIEW"
-
-    invoke-direct {v1, v2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/rideabout/o;->a:Lcom/google/googlenav/ui/view/android/rideabout/n;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/view/android/rideabout/n;->a(Lcom/google/googlenav/ui/view/android/rideabout/n;)Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-
-    :cond_4c
-    return-void
-
-    :cond_4d
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4c
-
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->group()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    goto :goto_33
+    return-object v0
 .end method

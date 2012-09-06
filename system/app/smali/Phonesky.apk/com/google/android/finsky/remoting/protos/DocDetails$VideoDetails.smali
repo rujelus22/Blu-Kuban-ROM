@@ -15,7 +15,29 @@
 
 
 # instance fields
+.field private audioLanguage_:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private cachedSize:I
+
+.field private captionLanguage_:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private contentRating_:Ljava/lang/String;
 
@@ -89,85 +111,183 @@
     .prologue
     const-wide/16 v1, 0x0
 
-    .line 2140
+    .line 2346
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 2144
+    .line 2350
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->credit_:Ljava/util/List;
 
-    .line 2178
+    .line 2384
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->duration_:Ljava/lang/String;
 
-    .line 2195
+    .line 2401
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->releaseDate_:Ljava/lang/String;
 
-    .line 2212
+    .line 2418
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->contentRating_:Ljava/lang/String;
 
-    .line 2229
+    .line 2435
     iput-wide v1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->likes_:J
 
-    .line 2246
+    .line 2452
     iput-wide v1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->dislikes_:J
 
-    .line 2262
+    .line 2468
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->genre_:Ljava/util/List;
 
-    .line 2295
+    .line 2501
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->trailer_:Ljava/util/List;
 
-    .line 2328
+    .line 2534
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->rentalTerm_:Ljava/util/List;
 
-    .line 2414
+    .line 2567
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->audioLanguage_:Ljava/util/List;
+
+    .line 2600
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->captionLanguage_:Ljava/util/List;
+
+    .line 2695
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->cachedSize:I
 
-    .line 2140
+    .line 2346
     return-void
 .end method
 
 
 # virtual methods
-.method public addCredit(Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;)Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
+.method public addAudioLanguage(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
     .registers 3
     .parameter "value"
 
     .prologue
-    .line 2161
+    .line 2584
     if-nez p1, :cond_8
 
-    .line 2162
+    .line 2585
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2164
+    .line 2587
+    :cond_8
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->audioLanguage_:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_17
+
+    .line 2588
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->audioLanguage_:Ljava/util/List;
+
+    .line 2590
+    :cond_17
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->audioLanguage_:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 2591
+    return-object p0
+.end method
+
+.method public addCaptionLanguage(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 2617
+    if-nez p1, :cond_8
+
+    .line 2618
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 2620
+    :cond_8
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->captionLanguage_:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_17
+
+    .line 2621
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->captionLanguage_:Ljava/util/List;
+
+    .line 2623
+    :cond_17
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->captionLanguage_:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 2624
+    return-object p0
+.end method
+
+.method public addCredit(Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;)Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 2367
+    if-nez p1, :cond_8
+
+    .line 2368
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 2370
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->credit_:Ljava/util/List;
 
@@ -177,20 +297,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 2165
+    .line 2371
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->credit_:Ljava/util/List;
 
-    .line 2167
+    .line 2373
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->credit_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2168
+    .line 2374
     return-object p0
 .end method
 
@@ -199,17 +319,17 @@
     .parameter "value"
 
     .prologue
-    .line 2279
+    .line 2485
     if-nez p1, :cond_8
 
-    .line 2280
+    .line 2486
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2282
+    .line 2488
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->genre_:Ljava/util/List;
 
@@ -219,20 +339,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 2283
+    .line 2489
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->genre_:Ljava/util/List;
 
-    .line 2285
+    .line 2491
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->genre_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2286
+    .line 2492
     return-object p0
 .end method
 
@@ -241,17 +361,17 @@
     .parameter "value"
 
     .prologue
-    .line 2345
+    .line 2551
     if-nez p1, :cond_8
 
-    .line 2346
+    .line 2552
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2348
+    .line 2554
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->rentalTerm_:Ljava/util/List;
 
@@ -261,20 +381,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 2349
+    .line 2555
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->rentalTerm_:Ljava/util/List;
 
-    .line 2351
+    .line 2557
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->rentalTerm_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2352
+    .line 2558
     return-object p0
 .end method
 
@@ -283,17 +403,17 @@
     .parameter "value"
 
     .prologue
-    .line 2312
+    .line 2518
     if-nez p1, :cond_8
 
-    .line 2313
+    .line 2519
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2315
+    .line 2521
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->trailer_:Ljava/util/List;
 
@@ -303,47 +423,113 @@
 
     if-eqz v0, :cond_17
 
-    .line 2316
+    .line 2522
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->trailer_:Ljava/util/List;
 
-    .line 2318
+    .line 2524
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->trailer_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2319
+    .line 2525
     return-object p0
+.end method
+
+.method public getAudioLanguageCount()I
+    .registers 2
+
+    .prologue
+    .line 2572
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->audioLanguage_:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getAudioLanguageList()Ljava/util/List;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 2570
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->audioLanguage_:Ljava/util/List;
+
+    return-object v0
 .end method
 
 .method public getCachedSize()I
     .registers 2
 
     .prologue
-    .line 2416
+    .line 2698
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 2418
+    .line 2700
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getSerializedSize()I
 
-    .line 2420
+    .line 2702
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->cachedSize:I
 
     return v0
 .end method
 
+.method public getCaptionLanguageCount()I
+    .registers 2
+
+    .prologue
+    .line 2605
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->captionLanguage_:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getCaptionLanguageList()Ljava/util/List;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 2603
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->captionLanguage_:Ljava/util/List;
+
+    return-object v0
+.end method
+
 .method public getContentRating()Ljava/lang/String;
     .registers 2
 
     .prologue
-    .line 2213
+    .line 2419
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->contentRating_:Ljava/lang/String;
 
     return-object v0
@@ -362,7 +548,7 @@
     .end annotation
 
     .prologue
-    .line 2147
+    .line 2353
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->credit_:Ljava/util/List;
 
     return-object v0
@@ -372,7 +558,7 @@
     .registers 3
 
     .prologue
-    .line 2247
+    .line 2453
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->dislikes_:J
 
     return-wide v0
@@ -382,7 +568,7 @@
     .registers 2
 
     .prologue
-    .line 2179
+    .line 2385
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->duration_:Ljava/lang/String;
 
     return-object v0
@@ -401,7 +587,7 @@
     .end annotation
 
     .prologue
-    .line 2265
+    .line 2471
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->genre_:Ljava/util/List;
 
     return-object v0
@@ -411,7 +597,7 @@
     .registers 3
 
     .prologue
-    .line 2230
+    .line 2436
     iget-wide v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->likes_:J
 
     return-wide v0
@@ -421,7 +607,7 @@
     .registers 2
 
     .prologue
-    .line 2196
+    .line 2402
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->releaseDate_:Ljava/lang/String;
 
     return-object v0
@@ -440,7 +626,7 @@
     .end annotation
 
     .prologue
-    .line 2331
+    .line 2537
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->rentalTerm_:Ljava/util/List;
 
     return-object v0
@@ -450,10 +636,10 @@
     .registers 8
 
     .prologue
-    .line 2424
+    .line 2707
     const/4 v3, 0x0
 
-    .line 2425
+    .line 2708
     .local v3, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getCreditList()Ljava/util/List;
 
@@ -477,7 +663,7 @@
 
     check-cast v1, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;
 
-    .line 2426
+    .line 2709
     .local v1, element:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;
     const/4 v4, 0x1
 
@@ -489,7 +675,7 @@
 
     goto :goto_9
 
-    .line 2429
+    .line 2712
     .end local v1           #element:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasDuration()Z
@@ -498,7 +684,7 @@
 
     if-eqz v4, :cond_2c
 
-    .line 2430
+    .line 2713
     const/4 v4, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getDuration()Ljava/lang/String;
@@ -511,7 +697,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2433
+    .line 2716
     :cond_2c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasReleaseDate()Z
 
@@ -519,7 +705,7 @@
 
     if-eqz v4, :cond_3c
 
-    .line 2434
+    .line 2717
     const/4 v4, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getReleaseDate()Ljava/lang/String;
@@ -532,7 +718,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2437
+    .line 2720
     :cond_3c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasContentRating()Z
 
@@ -540,7 +726,7 @@
 
     if-eqz v4, :cond_4c
 
-    .line 2438
+    .line 2721
     const/4 v4, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getContentRating()Ljava/lang/String;
@@ -553,7 +739,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2441
+    .line 2724
     :cond_4c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasLikes()Z
 
@@ -561,7 +747,7 @@
 
     if-eqz v4, :cond_5c
 
-    .line 2442
+    .line 2725
     const/4 v4, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getLikes()J
@@ -574,7 +760,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2445
+    .line 2728
     :cond_5c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasDislikes()Z
 
@@ -582,7 +768,7 @@
 
     if-eqz v4, :cond_6c
 
-    .line 2446
+    .line 2729
     const/4 v4, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getDislikes()J
@@ -595,11 +781,11 @@
 
     add-int/2addr v3, v4
 
-    .line 2450
+    .line 2733
     :cond_6c
     const/4 v0, 0x0
 
-    .line 2451
+    .line 2734
     .local v0, dataSize:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getGenreList()Ljava/util/List;
 
@@ -622,7 +808,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 2452
+    .line 2735
     .local v1, element:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
 
@@ -632,12 +818,12 @@
 
     goto :goto_75
 
-    .line 2455
+    .line 2738
     .end local v1           #element:Ljava/lang/String;
     :cond_87
     add-int/2addr v3, v0
 
-    .line 2456
+    .line 2739
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getGenreList()Ljava/util/List;
 
     move-result-object v4
@@ -650,7 +836,7 @@
 
     add-int/2addr v3, v4
 
-    .line 2458
+    .line 2741
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getTrailerList()Ljava/util/List;
 
     move-result-object v4
@@ -672,7 +858,7 @@
 
     check-cast v1, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;
 
-    .line 2459
+    .line 2742
     .local v1, element:Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;
     const/16 v4, 0x8
 
@@ -684,7 +870,7 @@
 
     goto :goto_9b
 
-    .line 2462
+    .line 2745
     .end local v1           #element:Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;
     :cond_af
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getRentalTermList()Ljava/util/List;
@@ -708,7 +894,7 @@
 
     check-cast v1, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;
 
-    .line 2463
+    .line 2746
     .local v1, element:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;
     const/16 v4, 0x9
 
@@ -720,12 +906,118 @@
 
     goto :goto_b7
 
-    .line 2466
+    .line 2750
     .end local v1           #element:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;
     :cond_cb
+    const/4 v0, 0x0
+
+    .line 2751
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getAudioLanguageList()Ljava/util/List;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_d4
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_e6
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    .line 2752
+    .local v1, element:Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
+
+    move-result v4
+
+    add-int/2addr v0, v4
+
+    goto :goto_d4
+
+    .line 2755
+    .end local v1           #element:Ljava/lang/String;
+    :cond_e6
+    add-int/2addr v3, v0
+
+    .line 2756
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getAudioLanguageList()Ljava/util/List;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    mul-int/lit8 v4, v4, 0x1
+
+    add-int/2addr v3, v4
+
+    .line 2759
+    const/4 v0, 0x0
+
+    .line 2760
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getCaptionLanguageList()Ljava/util/List;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_fb
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_10d
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    .line 2761
+    .restart local v1       #element:Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSizeNoTag(Ljava/lang/String;)I
+
+    move-result v4
+
+    add-int/2addr v0, v4
+
+    goto :goto_fb
+
+    .line 2764
+    .end local v1           #element:Ljava/lang/String;
+    :cond_10d
+    add-int/2addr v3, v0
+
+    .line 2765
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getCaptionLanguageList()Ljava/util/List;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    mul-int/lit8 v4, v4, 0x1
+
+    add-int/2addr v3, v4
+
+    .line 2767
     iput v3, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->cachedSize:I
 
-    .line 2467
+    .line 2768
     return v3
 .end method
 
@@ -742,7 +1034,7 @@
     .end annotation
 
     .prologue
-    .line 2298
+    .line 2504
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->trailer_:Ljava/util/List;
 
     return-object v0
@@ -752,7 +1044,7 @@
     .registers 2
 
     .prologue
-    .line 2214
+    .line 2420
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasContentRating:Z
 
     return v0
@@ -762,7 +1054,7 @@
     .registers 2
 
     .prologue
-    .line 2248
+    .line 2454
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasDislikes:Z
 
     return v0
@@ -772,7 +1064,7 @@
     .registers 2
 
     .prologue
-    .line 2180
+    .line 2386
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasDuration:Z
 
     return v0
@@ -782,7 +1074,7 @@
     .registers 2
 
     .prologue
-    .line 2231
+    .line 2437
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasLikes:Z
 
     return v0
@@ -792,7 +1084,7 @@
     .registers 2
 
     .prologue
-    .line 2197
+    .line 2403
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasReleaseDate:Z
 
     return v0
@@ -808,44 +1100,44 @@
     .end annotation
 
     .prologue
-    .line 2474
+    .line 2776
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 2475
+    .line 2777
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_62
+    sparse-switch v0, :sswitch_data_72
 
-    .line 2479
+    .line 2781
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 2480
+    .line 2782
     :sswitch_d
     return-object p0
 
-    .line 2485
+    .line 2787
     :sswitch_e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;-><init>()V
 
-    .line 2486
+    .line 2788
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2487
+    .line 2789
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->addCredit(Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;)Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
 
     goto :goto_0
 
-    .line 2491
+    .line 2793
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;
     :sswitch_1a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -856,7 +1148,7 @@
 
     goto :goto_0
 
-    .line 2495
+    .line 2797
     :sswitch_22
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -866,7 +1158,7 @@
 
     goto :goto_0
 
-    .line 2499
+    .line 2801
     :sswitch_2a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -876,7 +1168,7 @@
 
     goto :goto_0
 
-    .line 2503
+    .line 2805
     :sswitch_32
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -886,7 +1178,7 @@
 
     goto :goto_0
 
-    .line 2507
+    .line 2809
     :sswitch_3a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt64()J
 
@@ -896,7 +1188,7 @@
 
     goto :goto_0
 
-    .line 2511
+    .line 2813
     :sswitch_42
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -906,39 +1198,60 @@
 
     goto :goto_0
 
-    .line 2515
+    .line 2817
     :sswitch_4a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;-><init>()V
 
-    .line 2516
+    .line 2818
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2517
+    .line 2819
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->addTrailer(Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;)Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
 
     goto :goto_0
 
-    .line 2521
+    .line 2823
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;
     :sswitch_56
     new-instance v1, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;-><init>()V
 
-    .line 2522
+    .line 2824
     .local v1, value:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 2523
+    .line 2825
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->addRentalTerm(Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;)Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
 
     goto :goto_0
 
-    .line 2475
-    :sswitch_data_62
+    .line 2829
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;
+    :sswitch_62
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->addAudioLanguage(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
+
+    goto :goto_0
+
+    .line 2833
+    :sswitch_6a
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->addCaptionLanguage(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
+
+    goto :goto_0
+
+    .line 2777
+    :sswitch_data_72
     .sparse-switch
         0x0 -> :sswitch_d
         0xa -> :sswitch_e
@@ -950,6 +1263,8 @@
         0x3a -> :sswitch_42
         0x42 -> :sswitch_4a
         0x4a -> :sswitch_56
+        0x52 -> :sswitch_62
+        0x5a -> :sswitch_6a
     .end sparse-switch
 .end method
 
@@ -963,7 +1278,7 @@
     .end annotation
 
     .prologue
-    .line 2138
+    .line 2343
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;
 
     move-result-object v0
@@ -976,15 +1291,15 @@
     .parameter "value"
 
     .prologue
-    .line 2216
+    .line 2422
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasContentRating:Z
 
-    .line 2217
+    .line 2423
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->contentRating_:Ljava/lang/String;
 
-    .line 2218
+    .line 2424
     return-object p0
 .end method
 
@@ -993,15 +1308,15 @@
     .parameter "value"
 
     .prologue
-    .line 2250
+    .line 2456
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasDislikes:Z
 
-    .line 2251
+    .line 2457
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->dislikes_:J
 
-    .line 2252
+    .line 2458
     return-object p0
 .end method
 
@@ -1010,15 +1325,15 @@
     .parameter "value"
 
     .prologue
-    .line 2182
+    .line 2388
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasDuration:Z
 
-    .line 2183
+    .line 2389
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->duration_:Ljava/lang/String;
 
-    .line 2184
+    .line 2390
     return-object p0
 .end method
 
@@ -1027,15 +1342,15 @@
     .parameter "value"
 
     .prologue
-    .line 2233
+    .line 2439
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasLikes:Z
 
-    .line 2234
+    .line 2440
     iput-wide p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->likes_:J
 
-    .line 2235
+    .line 2441
     return-object p0
 .end method
 
@@ -1044,15 +1359,15 @@
     .parameter "value"
 
     .prologue
-    .line 2199
+    .line 2405
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasReleaseDate:Z
 
-    .line 2200
+    .line 2406
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->releaseDate_:Ljava/lang/String;
 
-    .line 2201
+    .line 2407
     return-object p0
 .end method
 
@@ -1066,7 +1381,7 @@
     .end annotation
 
     .prologue
-    .line 2385
+    .line 2660
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getCreditList()Ljava/util/List;
 
     move-result-object v2
@@ -1089,7 +1404,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;
 
-    .line 2386
+    .line 2661
     .local v0, element:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;
     const/4 v2, 0x1
 
@@ -1097,7 +1412,7 @@
 
     goto :goto_8
 
-    .line 2388
+    .line 2663
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoCredit;
     :cond_19
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasDuration()Z
@@ -1106,7 +1421,7 @@
 
     if-eqz v2, :cond_27
 
-    .line 2389
+    .line 2664
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getDuration()Ljava/lang/String;
@@ -1115,7 +1430,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2391
+    .line 2666
     :cond_27
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasReleaseDate()Z
 
@@ -1123,7 +1438,7 @@
 
     if-eqz v2, :cond_35
 
-    .line 2392
+    .line 2667
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getReleaseDate()Ljava/lang/String;
@@ -1132,7 +1447,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2394
+    .line 2669
     :cond_35
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasContentRating()Z
 
@@ -1140,7 +1455,7 @@
 
     if-eqz v2, :cond_43
 
-    .line 2395
+    .line 2670
     const/4 v2, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getContentRating()Ljava/lang/String;
@@ -1149,7 +1464,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2397
+    .line 2672
     :cond_43
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasLikes()Z
 
@@ -1157,7 +1472,7 @@
 
     if-eqz v2, :cond_51
 
-    .line 2398
+    .line 2673
     const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getLikes()J
@@ -1166,7 +1481,7 @@
 
     invoke-virtual {p1, v2, v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 2400
+    .line 2675
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->hasDislikes()Z
 
@@ -1174,7 +1489,7 @@
 
     if-eqz v2, :cond_5f
 
-    .line 2401
+    .line 2676
     const/4 v2, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getDislikes()J
@@ -1183,7 +1498,7 @@
 
     invoke-virtual {p1, v2, v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt64(IJ)V
 
-    .line 2403
+    .line 2678
     :cond_5f
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getGenreList()Ljava/util/List;
 
@@ -1206,7 +1521,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 2404
+    .line 2679
     .local v0, element:Ljava/lang/String;
     const/4 v2, 0x7
 
@@ -1214,7 +1529,7 @@
 
     goto :goto_67
 
-    .line 2406
+    .line 2681
     .end local v0           #element:Ljava/lang/String;
     :cond_78
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getTrailerList()Ljava/util/List;
@@ -1238,7 +1553,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;
 
-    .line 2407
+    .line 2682
     .local v0, element:Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;
     const/16 v2, 0x8
 
@@ -1246,7 +1561,7 @@
 
     goto :goto_80
 
-    .line 2409
+    .line 2684
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;
     :cond_92
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getRentalTermList()Ljava/util/List;
@@ -1270,7 +1585,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;
 
-    .line 2410
+    .line 2685
     .local v0, element:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;
     const/16 v2, 0x9
 
@@ -1278,8 +1593,72 @@
 
     goto :goto_9a
 
-    .line 2412
+    .line 2687
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/DocDetails$VideoRentalTerm;
     :cond_ac
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getAudioLanguageList()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_b4
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_c6
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    .line 2688
+    .local v0, element:Ljava/lang/String;
+    const/16 v2, 0xa
+
+    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    goto :goto_b4
+
+    .line 2690
+    .end local v0           #element:Ljava/lang/String;
+    :cond_c6
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$VideoDetails;->getCaptionLanguageList()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_ce
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_e0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    .line 2691
+    .restart local v0       #element:Ljava/lang/String;
+    const/16 v2, 0xb
+
+    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    goto :goto_ce
+
+    .line 2693
+    .end local v0           #element:Ljava/lang/String;
+    :cond_e0
     return-void
 .end method

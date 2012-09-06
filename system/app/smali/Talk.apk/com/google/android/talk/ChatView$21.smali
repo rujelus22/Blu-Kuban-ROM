@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/google/android/talk/ChatView$21;->val$accountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

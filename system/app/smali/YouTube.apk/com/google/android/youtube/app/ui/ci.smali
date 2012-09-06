@@ -1,55 +1,57 @@
-.class final Lcom/google/android/youtube/app/ui/ci;
-.super Ljava/lang/Object;
+.class public final Lcom/google/android/youtube/app/ui/ci;
+.super Lcom/google/android/youtube/core/ui/q;
 .source "SourceFile"
-
-# interfaces
-.implements Lcom/google/android/youtube/app/ui/t;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/ui/ch;
+.field private final a:Z
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/ui/ch;)V
-    .registers 2
+.method public constructor <init>(Landroid/app/Activity;Lcom/google/android/youtube/core/ui/g;Lcom/google/android/youtube/app/adapter/bj;Lcom/google/android/youtube/core/async/ar;Lcom/google/android/youtube/core/b/ag;Lcom/google/android/youtube/core/d;Z)V
+    .registers 9
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 242
-    iput-object p1, p0, Lcom/google/android/youtube/app/ui/ci;->a:Lcom/google/android/youtube/app/ui/ch;
+    .line 34
+    invoke-direct/range {p0 .. p6}, Lcom/google/android/youtube/core/ui/q;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/ui/g;Lcom/google/android/youtube/core/a/d;Lcom/google/android/youtube/core/async/ar;Lcom/google/android/youtube/core/b/ag;Lcom/google/android/youtube/core/d;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 35
+    const/4 v0, 0x0
 
+    iput-boolean v0, p0, Lcom/google/android/youtube/app/ui/ci;->a:Z
+
+    .line 36
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/model/Playlist;)V
-    .registers 6
+.method protected final bridge synthetic b(Ljava/lang/Object;)Landroid/net/Uri;
+    .registers 3
     .parameter
 
     .prologue
-    .line 244
-    iget-object v0, p0, Lcom/google/android/youtube/app/ui/ci;->a:Lcom/google/android/youtube/app/ui/ch;
+    .line 21
+    check-cast p1, Lcom/google/android/youtube/core/model/Playlist;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/ch;->a(Lcom/google/android/youtube/app/ui/ch;)Lcom/google/android/youtube/core/async/UserAuthorizer;
+    iget-boolean v0, p0, Lcom/google/android/youtube/app/ui/ci;->a:Z
 
-    move-result-object v0
+    if-eqz v0, :cond_9
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/ui/ci;->a:Lcom/google/android/youtube/app/ui/ch;
+    iget-object v0, p1, Lcom/google/android/youtube/core/model/Playlist;->hqThumbnailUri:Landroid/net/Uri;
 
-    iget-object v1, v1, Lcom/google/android/youtube/app/ui/ch;->a:Landroid/app/Activity;
+    :goto_8
+    return-object v0
 
-    new-instance v2, Lcom/google/android/youtube/app/ui/cl;
+    :cond_9
+    iget-object v0, p1, Lcom/google/android/youtube/core/model/Playlist;->thumbnailUri:Landroid/net/Uri;
 
-    iget-object v3, p0, Lcom/google/android/youtube/app/ui/ci;->a:Lcom/google/android/youtube/app/ui/ch;
-
-    invoke-direct {v2, v3, p1}, Lcom/google/android/youtube/app/ui/cl;-><init>(Lcom/google/android/youtube/app/ui/ch;Lcom/google/android/youtube/core/model/Playlist;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Landroid/app/Activity;Lcom/google/android/youtube/core/async/av;)V
-
-    .line 245
-    return-void
+    goto :goto_8
 .end method

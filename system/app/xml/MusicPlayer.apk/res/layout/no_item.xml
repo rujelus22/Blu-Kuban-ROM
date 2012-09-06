@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/empty_view_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/no_item_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="-7.0dip" android:src="@drawable/noitems_multi_based" android:scaleType="matrix" android:layout_centerInParent="true" />
-    <TextView android:textSize="24.0sp" android:textColor="@color/no_item_text" android:ellipsize="none" android:id="@id/no_item_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_below="@id/no_item_image" android:layout_centerHorizontal="true" />
-    <include android:id="@id/add_music" layout="@layout/list_main_header2" />
-</RelativeLayout>

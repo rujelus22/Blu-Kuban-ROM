@@ -530,7 +530,7 @@
 
     const/4 v6, 0x0
 
-    const v7, 0x7f02018c
+    const v7, 0x7f02018b
 
     move v3, v2
 
@@ -582,7 +582,7 @@
 
     int-to-float v5, v5
 
-    const v6, 0x7f02018d
+    const v6, 0x7f02018c
 
     invoke-direct {v1, v3, v4, v5, v6}, Lcom/sec/android/glview/TwGLImage;-><init>(Lcom/sec/android/glview/TwGLContext;FFI)V
 
@@ -630,7 +630,7 @@
 
     int-to-float v4, v4
 
-    const v5, 0x7f02018e
+    const v5, 0x7f02018d
 
     invoke-direct {v1, v3, v4, v2, v5}, Lcom/sec/android/glview/TwGLImage;-><init>(Lcom/sec/android/glview/TwGLContext;FFI)V
 
@@ -710,7 +710,7 @@
     .line 190
     iget-object v0, p0, Lcom/sec/android/app/camera/glwidget/TwGLEditableShortcutMenu;->mLandscapeList:Lcom/sec/android/glview/TwGLList;
 
-    const v1, 0x7f02017c
+    const v1, 0x7f02017b
 
     invoke-virtual {v0, v1}, Lcom/sec/android/glview/TwGLList;->setScrollBarResource(I)V
 

@@ -27,20 +27,20 @@
     .registers 2
 
     .prologue
-    .line 13596
+    .line 13890
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 13601
+    .line 13895
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;->assetType_:I
 
-    .line 13632
+    .line 13927
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;->cachedSize:I
 
-    .line 13596
+    .line 13890
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .registers 2
 
     .prologue
-    .line 13603
+    .line 13897
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;->assetType_:I
 
     return v0
@@ -60,15 +60,15 @@
     .registers 2
 
     .prologue
-    .line 13634
+    .line 13930
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 13636
+    .line 13932
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;->getSerializedSize()I
 
-    .line 13638
+    .line 13934
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;->cachedSize:I
 
@@ -79,10 +79,10 @@
     .registers 4
 
     .prologue
-    .line 13642
+    .line 13939
     const/4 v0, 0x0
 
-    .line 13643
+    .line 13940
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;->hasAssetType()Z
 
@@ -90,7 +90,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 13644
+    .line 13941
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;->getAssetType()I
@@ -103,11 +103,11 @@
 
     add-int/2addr v0, v1
 
-    .line 13647
+    .line 13944
     :cond_11
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;->cachedSize:I
 
-    .line 13648
+    .line 13945
     return v0
 .end method
 
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 13602
+    .line 13896
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;->hasAssetType:Z
 
     return v0
@@ -131,29 +131,29 @@
     .end annotation
 
     .prologue
-    .line 13655
+    .line 13953
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 13656
+    .line 13954
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_16
 
-    .line 13660
+    .line 13958
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 13661
+    .line 13959
     :sswitch_d
     return-object p0
 
-    .line 13666
+    .line 13964
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 13656
+    .line 13954
     :sswitch_data_16
     .sparse-switch
         0x0 -> :sswitch_d
@@ -181,7 +181,7 @@
     .end annotation
 
     .prologue
-    .line 13594
+    .line 13888
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;
 
     move-result-object v0
@@ -194,15 +194,15 @@
     .parameter "value"
 
     .prologue
-    .line 13605
+    .line 13899
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;->hasAssetType:Z
 
-    .line 13606
+    .line 13900
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;->assetType_:I
 
-    .line 13607
+    .line 13901
     return-object p0
 .end method
 
@@ -216,14 +216,14 @@
     .end annotation
 
     .prologue
-    .line 13627
+    .line 13922
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;->hasAssetType()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 13628
+    .line 13923
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetSubCategoriesRequestProto;->getAssetType()I
@@ -232,7 +232,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 13630
+    .line 13925
     :cond_e
     return-void
 .end method

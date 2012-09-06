@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/music_player_title_button" android:background="@drawable/music_play_title_bg_center" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:focusable="true" android:layout_width="fill_parent" android:layout_height="102.0dip">
-        <include layout="@layout/music_player_title" />
-    </RelativeLayout>
-    <ImageView android:id="@id/ImageButtonTopSrs" android:background="@drawable/music_play_srs_button_bg" android:focusable="true" android:visibility="invisible" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="11.0dip" android:src="@drawable/music_play_control_srs_off" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" android:contentDescription="@string/tts_srs_button" />
-    <ImageView android:id="@id/ImageButtonTopVolume" android:background="@drawable/music_play_volume_button_bg" android:focusable="true" android:visibility="visible" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="11.0dip" android:src="@drawable/music_play_volume_button" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:contentDescription="@string/tts_volume_button" />
-</merge>

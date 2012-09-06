@@ -1,41 +1,41 @@
-.class final Lcom/google/android/maps/driveabout/app/eL;
+.class Lcom/google/android/maps/driveabout/app/el;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/maps/driveabout/app/eR;
+.implements Landroid/content/DialogInterface$OnCancelListener;
 
 
 # instance fields
-.field private final a:Landroid/media/ToneGenerator;
+.field final synthetic a:Lcom/google/android/maps/driveabout/app/dD;
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 4
+.method constructor <init>(Lcom/google/android/maps/driveabout/app/dD;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 757
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/app/el;->a:Lcom/google/android/maps/driveabout/app/dD;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Landroid/media/ToneGenerator;
-
-    const/4 v1, 0x4
-
-    const/16 v2, 0x64
-
-    invoke-direct {v0, v1, v2}, Landroid/media/ToneGenerator;-><init>(II)V
-
-    iput-object v0, p0, Lcom/google/android/maps/driveabout/app/eL;->a:Landroid/media/ToneGenerator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(I)V
+.method public onCancel(Landroid/content/DialogInterface;)V
     .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/eL;->a:Landroid/media/ToneGenerator;
+    .prologue
+    .line 760
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/app/el;->a:Lcom/google/android/maps/driveabout/app/dD;
 
-    invoke-virtual {v0, p1}, Landroid/media/ToneGenerator;->startTone(I)Z
+    invoke-virtual {v0}, Lcom/google/android/maps/driveabout/app/dD;->t()V
 
+    .line 761
     return-void
 .end method

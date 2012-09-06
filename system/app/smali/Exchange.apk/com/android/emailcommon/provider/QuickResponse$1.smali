@@ -32,8 +32,8 @@
     .registers 1
 
     .prologue
-    .line 202
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 205
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,7 +45,7 @@
     .parameter "in"
 
     .prologue
-    .line 205
+    .line 208
     new-instance v0, Lcom/android/emailcommon/provider/QuickResponse;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .parameter "x0"
 
     .prologue
-    .line 202
+    .line 205
     invoke-virtual {p0, p1}, Lcom/android/emailcommon/provider/QuickResponse$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/emailcommon/provider/QuickResponse;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .parameter "size"
 
     .prologue
-    .line 210
+    .line 213
     new-array v0, p1, [Lcom/android/emailcommon/provider/QuickResponse;
 
     return-object v0
@@ -84,7 +84,7 @@
     .parameter "x0"
 
     .prologue
-    .line 202
+    .line 205
     invoke-virtual {p0, p1}, Lcom/android/emailcommon/provider/QuickResponse$1;->newArray(I)[Lcom/android/emailcommon/provider/QuickResponse;
 
     move-result-object v0

@@ -73,7 +73,7 @@
 
     const/4 v9, 0x0
 
-    .line 802
+    .line 794
     const-class v0, Lorg/apache/james/mime4j/util/CharsetUtil;
 
     invoke-static {v0}, Lorg/apache/james/mime4j/LogFactory;->getLog(Ljava/lang/Class;)Lorg/apache/james/mime4j/Log;
@@ -82,8 +82,8 @@
 
     sput-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->log:Lorg/apache/james/mime4j/Log;
 
-    .line 820
-    const/16 v0, 0x92
+    .line 812
+    const/16 v0, 0x93
 
     new-array v0, v0, [Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -497,7 +497,7 @@
 
     const-string v5, "ISO-8859-8"
 
-    const/4 v6, 0x7
+    const/4 v6, 0x6
 
     new-array v6, v6, [Ljava/lang/String;
 
@@ -526,12 +526,6 @@
     const/4 v7, 0x5
 
     const-string v8, "8859_8"
-
-    aput-object v8, v6, v7
-
-    const/4 v7, 0x6
-
-    const-string v8, "iso-8859-8-i"
 
     aput-object v8, v6, v7
 
@@ -979,7 +973,7 @@
 
     const-string v5, "EUC-KR"
 
-    const/16 v6, 0xc
+    const/16 v6, 0x8
 
     new-array v6, v6, [Ljava/lang/String;
 
@@ -1020,30 +1014,6 @@
     const/4 v7, 0x7
 
     const-string v8, "euckr"
-
-    aput-object v8, v6, v7
-
-    const/16 v7, 0x8
-
-    const-string v8, "ibm-1363_P11B-1998"
-
-    aput-object v8, v6, v7
-
-    const/16 v7, 0x9
-
-    const-string v8, "ibm-1363"
-
-    aput-object v8, v6, v7
-
-    const/16 v7, 0xa
-
-    const-string v8, "CP949"
-
-    aput-object v8, v6, v7
-
-    const/16 v7, 0xb
-
-    const-string v8, "Cp949"
 
     aput-object v8, v6, v7
 
@@ -2871,7 +2841,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Cp949C"
+    const-string v4, "Cp949"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -2883,7 +2853,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Cp950"
+    const-string v4, "Cp949C"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -2895,7 +2865,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Cp964"
+    const-string v4, "Cp950"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -2907,7 +2877,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Cp970"
+    const-string v4, "Cp964"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -2919,7 +2889,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Cp1006"
+    const-string v4, "Cp970"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -2931,7 +2901,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Cp1025"
+    const-string v4, "Cp1006"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -2943,7 +2913,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Cp1046"
+    const-string v4, "Cp1025"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -2955,7 +2925,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Cp1097"
+    const-string v4, "Cp1046"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -2967,7 +2937,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Cp1098"
+    const-string v4, "Cp1097"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -2979,7 +2949,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Cp1112"
+    const-string v4, "Cp1098"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -2991,7 +2961,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Cp1122"
+    const-string v4, "Cp1112"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -3003,7 +2973,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Cp1123"
+    const-string v4, "Cp1122"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -3015,7 +2985,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Cp1124"
+    const-string v4, "Cp1123"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -3027,7 +2997,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Cp1381"
+    const-string v4, "Cp1124"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -3039,7 +3009,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Cp1383"
+    const-string v4, "Cp1381"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -3051,7 +3021,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Cp33722"
+    const-string v4, "Cp1383"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -3063,7 +3033,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "Big5_Solaris"
+    const-string v4, "Cp33722"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -3075,7 +3045,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "EUC_JP_LINUX"
+    const-string v4, "Big5_Solaris"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -3087,7 +3057,7 @@
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    const-string v4, "EUC_JP_Solaris"
+    const-string v4, "EUC_JP_LINUX"
 
     new-array v5, v1, [Ljava/lang/String;
 
@@ -3096,6 +3066,18 @@
     aput-object v3, v0, v2
 
     const/16 v2, 0x7d
+
+    new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
+
+    const-string v4, "EUC_JP_Solaris"
+
+    new-array v5, v1, [Ljava/lang/String;
+
+    invoke-direct {v3, v4, v9, v5, v9}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lorg/apache/james/mime4j/util/CharsetUtil$1;)V
+
+    aput-object v3, v0, v2
+
+    const/16 v2, 0x7e
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3115,7 +3097,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x7e
+    const/16 v2, 0x7f
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3127,7 +3109,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x7f
+    const/16 v2, 0x80
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3139,7 +3121,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x80
+    const/16 v2, 0x81
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3151,7 +3133,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x81
+    const/16 v2, 0x82
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3163,7 +3145,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x82
+    const/16 v2, 0x83
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3175,7 +3157,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x83
+    const/16 v2, 0x84
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3187,7 +3169,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x84
+    const/16 v2, 0x85
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3199,7 +3181,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x85
+    const/16 v2, 0x86
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3211,7 +3193,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x86
+    const/16 v2, 0x87
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3223,7 +3205,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x87
+    const/16 v2, 0x88
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3237,7 +3219,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x88
+    const/16 v2, 0x89
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3249,7 +3231,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x89
+    const/16 v2, 0x8a
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3261,7 +3243,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x8a
+    const/16 v2, 0x8b
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3287,7 +3269,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x8b
+    const/16 v2, 0x8c
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3299,7 +3281,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x8c
+    const/16 v2, 0x8d
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3311,7 +3293,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x8d
+    const/16 v2, 0x8e
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3323,7 +3305,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x8e
+    const/16 v2, 0x8f
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3335,7 +3317,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x8f
+    const/16 v2, 0x90
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3347,7 +3329,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x90
+    const/16 v2, 0x91
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3359,7 +3341,7 @@
 
     aput-object v3, v0, v2
 
-    const/16 v2, 0x91
+    const/16 v2, 0x92
 
     new-instance v3, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
@@ -3373,48 +3355,48 @@
 
     sput-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    .line 1150
+    .line 1005
     sput-object v9, Lorg/apache/james/mime4j/util/CharsetUtil;->decodingSupported:Ljava/util/TreeSet;
 
-    .line 1156
+    .line 1011
     sput-object v9, Lorg/apache/james/mime4j/util/CharsetUtil;->encodingSupported:Ljava/util/TreeSet;
 
-    .line 1162
+    .line 1017
     sput-object v9, Lorg/apache/james/mime4j/util/CharsetUtil;->charsetMap:Ljava/util/HashMap;
 
-    .line 1165
+    .line 1020
     new-instance v0, Ljava/util/TreeSet;
 
     invoke-direct {v0}, Ljava/util/TreeSet;-><init>()V
 
     sput-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->decodingSupported:Ljava/util/TreeSet;
 
-    .line 1166
+    .line 1021
     new-instance v0, Ljava/util/TreeSet;
 
     invoke-direct {v0}, Ljava/util/TreeSet;-><init>()V
 
     sput-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->encodingSupported:Ljava/util/TreeSet;
 
-    .line 1167
+    .line 1022
     const/4 v0, 0x5
 
     new-array v2, v0, [B
 
-    fill-array-data v2, :array_e4e
+    fill-array-data v2, :array_e34
 
     move v0, v1
 
-    .line 1170
-    :goto_d4a
+    .line 1023
+    :goto_d3a
     sget-object v3, Lorg/apache/james/mime4j/util/CharsetUtil;->JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
     array-length v3, v3
 
-    if-ge v0, v3, :cond_d92
+    if-ge v0, v3, :cond_d7e
 
-    .line 1172
-    :try_start_d4f
+    .line 1025
+    :try_start_d3f
     new-instance v3, Ljava/lang/String;
 
     sget-object v4, Lorg/apache/james/mime4j/util/CharsetUtil;->JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
@@ -3428,7 +3410,7 @@
 
     invoke-direct {v3, v2, v4}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
 
-    .line 1173
+    .line 1026
     sget-object v3, Lorg/apache/james/mime4j/util/CharsetUtil;->decodingSupported:Ljava/util/TreeSet;
 
     sget-object v4, Lorg/apache/james/mime4j/util/CharsetUtil;->JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
@@ -3440,20 +3422,18 @@
 
     move-result-object v4
 
-    sget-object v5, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v4
 
     invoke-virtual {v3, v4}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
-    :try_end_d6f
-    .catch Ljava/lang/UnsupportedOperationException; {:try_start_d4f .. :try_end_d6f} :catch_e4a
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_d4f .. :try_end_d6f} :catch_e47
+    :try_end_d5d
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_d3f .. :try_end_d5d} :catch_e30
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_d3f .. :try_end_d5d} :catch_e2d
 
-    .line 1178
-    :goto_d6f
-    :try_start_d6f
+    .line 1031
+    :goto_d5d
+    :try_start_d5d
     const-string v3, "dummy"
 
     sget-object v4, Lorg/apache/james/mime4j/util/CharsetUtil;->JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
@@ -3467,7 +3447,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
 
-    .line 1179
+    .line 1032
     sget-object v3, Lorg/apache/james/mime4j/util/CharsetUtil;->encodingSupported:Ljava/util/TreeSet;
 
     sget-object v4, Lorg/apache/james/mime4j/util/CharsetUtil;->JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
@@ -3479,25 +3459,23 @@
 
     move-result-object v4
 
-    sget-object v5, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v4
 
     invoke-virtual {v3, v4}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
-    :try_end_d8f
-    .catch Ljava/lang/UnsupportedOperationException; {:try_start_d6f .. :try_end_d8f} :catch_e44
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_d6f .. :try_end_d8f} :catch_e41
+    :try_end_d7b
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_d5d .. :try_end_d7b} :catch_e2a
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_d5d .. :try_end_d7b} :catch_e27
 
-    .line 1170
-    :goto_d8f
+    .line 1023
+    :goto_d7b
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_d4a
+    goto :goto_d3a
 
-    .line 1185
-    :cond_d92
+    .line 1038
+    :cond_d7e
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -3506,20 +3484,20 @@
 
     move v0, v1
 
-    .line 1186
-    :goto_d9a
+    .line 1039
+    :goto_d86
     sget-object v2, Lorg/apache/james/mime4j/util/CharsetUtil;->JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
     array-length v2, v2
 
-    if-ge v0, v2, :cond_dec
+    if-ge v0, v2, :cond_dd2
 
-    .line 1187
+    .line 1040
     sget-object v2, Lorg/apache/james/mime4j/util/CharsetUtil;->JAVA_CHARSETS:[Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
     aget-object v3, v2, v0
 
-    .line 1188
+    .line 1041
     sget-object v2, Lorg/apache/james/mime4j/util/CharsetUtil;->charsetMap:Ljava/util/HashMap;
 
     #getter for: Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->canonical:Ljava/lang/String;
@@ -3527,23 +3505,21 @@
 
     move-result-object v4
 
-    sget-object v5, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v4
 
     invoke-virtual {v2, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1189
+    .line 1042
     #getter for: Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->mime:Ljava/lang/String;
     invoke-static {v3}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$200(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)Ljava/lang/String;
 
     move-result-object v2
 
-    if-eqz v2, :cond_dc7
+    if-eqz v2, :cond_daf
 
-    .line 1190
+    .line 1043
     sget-object v2, Lorg/apache/james/mime4j/util/CharsetUtil;->charsetMap:Ljava/util/HashMap;
 
     #getter for: Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->mime:Ljava/lang/String;
@@ -3551,27 +3527,25 @@
 
     move-result-object v4
 
-    sget-object v5, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v4
 
     invoke-virtual {v2, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1192
-    :cond_dc7
+    .line 1045
+    :cond_daf
     #getter for: Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->aliases:[Ljava/lang/String;
     invoke-static {v3}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$300(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)[Ljava/lang/String;
 
     move-result-object v2
 
-    if-eqz v2, :cond_de9
+    if-eqz v2, :cond_dcf
 
     move v2, v1
 
-    .line 1193
-    :goto_dce
+    .line 1046
+    :goto_db6
     #getter for: Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->aliases:[Ljava/lang/String;
     invoke-static {v3}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$300(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)[Ljava/lang/String;
 
@@ -3579,9 +3553,9 @@
 
     array-length v4, v4
 
-    if-ge v2, v4, :cond_de9
+    if-ge v2, v4, :cond_dcf
 
-    .line 1194
+    .line 1047
     sget-object v4, Lorg/apache/james/mime4j/util/CharsetUtil;->charsetMap:Ljava/util/HashMap;
 
     #getter for: Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->aliases:[Ljava/lang/String;
@@ -3591,36 +3565,34 @@
 
     aget-object v5, v5, v2
 
-    sget-object v6, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v5
 
     invoke-virtual {v4, v5, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1193
+    .line 1046
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_dce
+    goto :goto_db6
 
-    .line 1186
-    :cond_de9
+    .line 1039
+    :cond_dcf
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_d9a
+    goto :goto_d86
 
-    .line 1199
-    :cond_dec
+    .line 1052
+    :cond_dd2
     sget-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->log:Lorg/apache/james/mime4j/Log;
 
     invoke-virtual {v0}, Lorg/apache/james/mime4j/Log;->isDebugEnabled()Z
 
     move-result v0
 
-    if-eqz v0, :cond_e28
+    if-eqz v0, :cond_e0e
 
-    .line 1200
+    .line 1053
     sget-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->log:Lorg/apache/james/mime4j/Log;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3645,7 +3617,7 @@
 
     invoke-virtual {v0, v1}, Lorg/apache/james/mime4j/Log;->debug(Ljava/lang/Object;)V
 
-    .line 1201
+    .line 1055
     sget-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->log:Lorg/apache/james/mime4j/Log;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3670,8 +3642,8 @@
 
     invoke-virtual {v0, v1}, Lorg/apache/james/mime4j/Log;->debug(Ljava/lang/Object;)V
 
-    .line 1225
-    :cond_e28
+    .line 1079
+    :cond_e0e
     const-string v0, "US-ASCII"
 
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
@@ -3680,7 +3652,7 @@
 
     sput-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->US_ASCII:Ljava/nio/charset/Charset;
 
-    .line 1228
+    .line 1082
     const-string v0, "ISO-8859-1"
 
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
@@ -3689,7 +3661,7 @@
 
     sput-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->ISO_8859_1:Ljava/nio/charset/Charset;
 
-    .line 1231
+    .line 1085
     const-string v0, "UTF-8"
 
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
@@ -3700,34 +3672,34 @@
 
     return-void
 
-    .line 1181
-    :catch_e41
+    .line 1034
+    :catch_e27
     move-exception v3
 
-    goto/16 :goto_d8f
+    goto/16 :goto_d7b
 
-    .line 1180
-    :catch_e44
+    .line 1033
+    :catch_e2a
     move-exception v3
 
-    goto/16 :goto_d8f
+    goto/16 :goto_d7b
 
-    .line 1175
-    :catch_e47
+    .line 1028
+    :catch_e2d
     move-exception v3
 
-    goto/16 :goto_d6f
+    goto/16 :goto_d5d
 
-    .line 1174
-    :catch_e4a
+    .line 1027
+    :catch_e30
     move-exception v3
 
-    goto/16 :goto_d6f
+    goto/16 :goto_d5d
 
-    .line 1167
+    .line 1022
     nop
 
-    :array_e4e
+    :array_e34
     .array-data 0x1
         0x64t
         0x75t
@@ -3741,10 +3713,10 @@
     .registers 1
 
     .prologue
-    .line 801
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 793
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 804
+    .line 796
     return-void
 .end method
 
@@ -3753,15 +3725,15 @@
     .parameter
 
     .prologue
-    .line 1332
+    .line 1192
     const-string v0, "ISO-8859-1"
 
-    .line 1335
+    .line 1195
     if-nez p0, :cond_5
 
     move-object p0, v0
 
-    .line 1339
+    .line 1198
     :cond_5
     :try_start_5
     invoke-static {p0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
@@ -3771,15 +3743,15 @@
 
     move-result-object v0
 
-    .line 1349
+    .line 1206
     :goto_9
     return-object v0
 
-    .line 1340
+    .line 1199
     :catch_a
     move-exception v1
 
-    .line 1341
+    .line 1200
     sget-object v2, Lorg/apache/james/mime4j/util/CharsetUtil;->log:Lorg/apache/james/mime4j/Log;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3822,18 +3794,18 @@
 
     invoke-virtual {v2, v1}, Lorg/apache/james/mime4j/Log;->info(Ljava/lang/Object;)V
 
-    .line 1344
+    .line 1202
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
     move-result-object v0
 
     goto :goto_9
 
-    .line 1345
+    .line 1203
     :catch_3c
     move-exception v1
 
-    .line 1346
+    .line 1204
     sget-object v2, Lorg/apache/james/mime4j/util/CharsetUtil;->log:Lorg/apache/james/mime4j/Log;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3876,7 +3848,7 @@
 
     invoke-virtual {v2, v1}, Lorg/apache/james/mime4j/Log;->info(Ljava/lang/Object;)V
 
-    .line 1349
+    .line 1206
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
     move-result-object v0
@@ -3884,126 +3856,15 @@
     goto :goto_9
 .end method
 
-.method public static getLocalCharset()Ljava/lang/String;
-    .registers 4
-
-    .prologue
-    .line 1396
-    sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
-
-    const-string v3, "GT-P1000"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    const/4 v3, 0x1
-
-    if-ne v2, v3, :cond_e
-
-    .line 1397
-    const-string v1, "ASCII"
-
-    .line 1416
-    .local v0, currentLocale:Ljava/util/Locale;
-    :cond_d
-    :goto_d
-    return-object v1
-
-    .line 1403
-    .end local v0           #currentLocale:Ljava/util/Locale;
-    :cond_e
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
-
-    move-result-object v0
-
-    .line 1405
-    .restart local v0       #currentLocale:Ljava/util/Locale;
-    const/4 v1, 0x0
-
-    .line 1406
-    .local v1, defaultCharset:Ljava/lang/String;
-    sget-object v2, Ljava/util/Locale;->CHINA:Ljava/util/Locale;
-
-    invoke-virtual {v0, v2}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_23
-
-    sget-object v2, Ljava/util/Locale;->CHINESE:Ljava/util/Locale;
-
-    invoke-virtual {v0, v2}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2a
-
-    .line 1407
-    :cond_23
-    const-string v1, "GB2312"
-
-    .line 1413
-    :cond_25
-    :goto_25
-    if-nez v1, :cond_d
-
-    .line 1416
-    const-string v1, "ASCII"
-
-    goto :goto_d
-
-    .line 1408
-    :cond_2a
-    sget-object v2, Ljava/util/Locale;->TAIWAN:Ljava/util/Locale;
-
-    invoke-virtual {v0, v2}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_35
-
-    .line 1409
-    const-string v1, "BIG5"
-
-    goto :goto_25
-
-    .line 1410
-    :cond_35
-    sget-object v2, Ljava/util/Locale;->KOREA:Ljava/util/Locale;
-
-    invoke-virtual {v0, v2}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_45
-
-    sget-object v2, Ljava/util/Locale;->KOREAN:Ljava/util/Locale;
-
-    invoke-virtual {v0, v2}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_25
-
-    .line 1411
-    :cond_45
-    const-string v1, "EUC-KR"
-
-    goto :goto_25
-.end method
-
 .method public static isDecodingSupported(Ljava/lang/String;)Z
     .registers 3
     .parameter "charsetName"
 
     .prologue
-    .line 1294
+    .line 1154
     sget-object v0, Lorg/apache/james/mime4j/util/CharsetUtil;->decodingSupported:Ljava/util/TreeSet;
 
-    sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v1
 
@@ -4019,7 +3880,7 @@
     .parameter "ch"
 
     .prologue
-    .line 1243
+    .line 1100
     const/16 v0, 0x20
 
     if-eq p0, v0, :cond_10
@@ -4055,10 +3916,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1255
+    .line 1115
     if-nez p0, :cond_b
 
-    .line 1256
+    .line 1116
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "String may not be null"
@@ -4067,7 +3928,7 @@
 
     throw v0
 
-    .line 1258
+    .line 1118
     :cond_b
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -4075,11 +3936,11 @@
 
     move v1, v0
 
-    .line 1259
+    .line 1119
     :goto_10
     if-ge v1, v2, :cond_20
 
-    .line 1260
+    .line 1120
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v3
@@ -4090,17 +3951,17 @@
 
     if-nez v3, :cond_1d
 
-    .line 1264
+    .line 1124
     :goto_1c
     return v0
 
-    .line 1259
+    .line 1119
     :cond_1d
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_10
 
-    .line 1264
+    .line 1124
     :cond_20
     const/4 v0, 0x1
 
@@ -4112,12 +3973,10 @@
     .parameter "charsetName"
 
     .prologue
-    .line 1324
+    .line 1184
     sget-object v1, Lorg/apache/james/mime4j/util/CharsetUtil;->charsetMap:Ljava/util/HashMap;
 
-    sget-object v2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    invoke-virtual {p0, v2}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v2
 
@@ -4127,24 +3986,24 @@
 
     check-cast v0, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    .line 1325
+    .line 1185
     .local v0, c:Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_13
 
-    .line 1326
+    .line 1186
     #getter for: Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->canonical:Ljava/lang/String;
     invoke-static {v0}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$100(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1328
-    :goto_14
+    .line 1188
+    :goto_12
     return-object v1
 
-    :cond_15
+    :cond_13
     const/4 v1, 0x0
 
-    goto :goto_14
+    goto :goto_12
 .end method
 
 .method public static toMimeCharset(Ljava/lang/String;)Ljava/lang/String;
@@ -4152,12 +4011,10 @@
     .parameter "charsetName"
 
     .prologue
-    .line 1305
+    .line 1165
     sget-object v1, Lorg/apache/james/mime4j/util/CharsetUtil;->charsetMap:Ljava/util/HashMap;
 
-    sget-object v2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    invoke-virtual {p0, v2}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v2
 
@@ -4167,22 +4024,22 @@
 
     check-cast v0, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
 
-    .line 1306
+    .line 1166
     .local v0, c:Lorg/apache/james/mime4j/util/CharsetUtil$Charset;
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_13
 
-    .line 1307
+    .line 1167
     #getter for: Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->mime:Ljava/lang/String;
     invoke-static {v0}, Lorg/apache/james/mime4j/util/CharsetUtil$Charset;->access$200(Lorg/apache/james/mime4j/util/CharsetUtil$Charset;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1309
-    :goto_14
+    .line 1169
+    :goto_12
     return-object v1
 
-    :cond_15
+    :cond_13
     const/4 v1, 0x0
 
-    goto :goto_14
+    goto :goto_12
 .end method

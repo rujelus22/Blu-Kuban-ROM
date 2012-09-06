@@ -38,6 +38,6 @@
     <string-array name="appdetail_notification_items">
         <item>Globale standaard</item>
         <item>Ingeschakeld</item>
-        <item>Uitgeschakeld</item>
+        <item>In-actief</item>
     </string-array>
 </resources>

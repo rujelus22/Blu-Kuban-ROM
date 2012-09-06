@@ -1,80 +1,45 @@
 .class final Lcom/google/android/youtube/core/converter/http/ay;
-.super Lcom/google/android/youtube/core/converter/l;
+.super Lcom/google/android/youtube/core/converter/http/ar;
 .source "SourceFile"
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method constructor <init>(Lcom/google/android/youtube/core/converter/k;)V
+    .registers 2
+    .parameter
 
     .prologue
-    .line 96
-    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
+    .line 121
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/converter/http/ar;-><init>(Lcom/google/android/youtube/core/converter/k;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
-    .registers 7
-    .parameter
-    .parameter
+.method protected final a()Lcom/google/android/youtube/core/converter/c;
+    .registers 2
+
+    .prologue
+    .line 131
+    new-instance v0, Lcom/google/android/youtube/core/converter/d;
+
+    invoke-direct {v0}, Lcom/google/android/youtube/core/converter/d;-><init>()V
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/converter/d;->a()Lcom/google/android/youtube/core/converter/c;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic a(Lorg/apache/http/HttpEntity;)Ljava/lang/Object;
+    .registers 3
     .parameter
 
     .prologue
-    .line 99
-    invoke-static {p3}, Lcom/google/android/youtube/core/utils/Util;->f(Ljava/lang/String;)Ljava/lang/String;
+    .line 121
+    const/4 v0, 0x0
 
-    move-result-object v1
-
-    .line 101
-    :try_start_4
-    const-class v0, Lcom/google/android/youtube/core/model/LiveEvent$Builder;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->a(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/youtube/core/model/LiveEvent$Builder;
-
-    .line 102
-    invoke-static {v1}, Lcom/google/android/youtube/core/model/LiveEvent$Status;->valueOf(Ljava/lang/String;)Lcom/google/android/youtube/core/model/LiveEvent$Status;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lcom/google/android/youtube/core/model/LiveEvent$Builder;->status(Lcom/google/android/youtube/core/model/LiveEvent$Status;)Lcom/google/android/youtube/core/model/LiveEvent$Builder;
-    :try_end_13
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_4 .. :try_end_13} :catch_14
-
-    .line 106
-    :goto_13
-    return-void
-
-    .line 103
-    :catch_14
-    move-exception v0
-
-    .line 104
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unexpected status "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/L;->c(Ljava/lang/String;)V
-
-    goto :goto_13
+    return-object v0
 .end method

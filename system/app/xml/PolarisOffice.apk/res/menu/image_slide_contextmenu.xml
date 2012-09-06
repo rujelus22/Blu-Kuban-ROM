@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@id/resize_contextmenu" android:title="@string/dm_resize" />
-    <item android:id="@id/delete_contextmenu" android:title="@string/dm_delete" />
-    <item android:id="@id/forward_contextmenu" android:title="@string/dm_forward" />
-    <item android:id="@id/backward_contextmenu" android:title="@string/dm_backward" />
-</menu>

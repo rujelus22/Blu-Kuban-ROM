@@ -25,15 +25,11 @@
 
 .field private hasLibraryName:Z
 
-.field private hasLibraryUrl:Z
-
 .field private hasName:Z
 
 .field private landingUrl_:Ljava/lang/String;
 
 .field private libraryName_:Ljava/lang/String;
-
-.field private libraryUrl_:Ljava/lang/String;
 
 .field private name_:Ljava/lang/String;
 
@@ -43,40 +39,35 @@
     .registers 2
 
     .prologue
-    .line 335
+    .line 370
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 340
+    .line 375
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->backend_:I
 
-    .line 357
+    .line 392
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->name_:Ljava/lang/String;
 
-    .line 374
+    .line 409
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->landingUrl_:Ljava/lang/String;
 
-    .line 391
+    .line 426
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->libraryName_:Ljava/lang/String;
 
-    .line 408
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->libraryUrl_:Ljava/lang/String;
-
-    .line 456
+    .line 471
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->cachedSize:I
 
-    .line 335
+    .line 370
     return-void
 .end method
 
@@ -86,7 +77,7 @@
     .registers 2
 
     .prologue
-    .line 342
+    .line 377
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->backend_:I
 
     return v0
@@ -96,15 +87,15 @@
     .registers 2
 
     .prologue
-    .line 458
+    .line 474
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 460
+    .line 476
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getSerializedSize()I
 
-    .line 462
+    .line 478
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->cachedSize:I
 
@@ -115,7 +106,7 @@
     .registers 2
 
     .prologue
-    .line 375
+    .line 410
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->landingUrl_:Ljava/lang/String;
 
     return-object v0
@@ -125,18 +116,8 @@
     .registers 2
 
     .prologue
-    .line 392
+    .line 427
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->libraryName_:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public getLibraryUrl()Ljava/lang/String;
-    .registers 2
-
-    .prologue
-    .line 409
-    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->libraryUrl_:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -145,7 +126,7 @@
     .registers 2
 
     .prologue
-    .line 358
+    .line 393
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->name_:Ljava/lang/String;
 
     return-object v0
@@ -155,10 +136,10 @@
     .registers 4
 
     .prologue
-    .line 466
+    .line 483
     const/4 v0, 0x0
 
-    .line 467
+    .line 484
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasBackend()Z
 
@@ -166,7 +147,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 468
+    .line 485
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getBackend()I
@@ -179,7 +160,7 @@
 
     add-int/2addr v0, v1
 
-    .line 471
+    .line 488
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasName()Z
 
@@ -187,7 +168,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 472
+    .line 489
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getName()Ljava/lang/String;
@@ -200,7 +181,7 @@
 
     add-int/2addr v0, v1
 
-    .line 475
+    .line 492
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasLandingUrl()Z
 
@@ -208,7 +189,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 476
+    .line 493
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getLandingUrl()Ljava/lang/String;
@@ -221,7 +202,7 @@
 
     add-int/2addr v0, v1
 
-    .line 479
+    .line 496
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasLibraryName()Z
 
@@ -229,7 +210,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 480
+    .line 497
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getLibraryName()Ljava/lang/String;
@@ -242,32 +223,11 @@
 
     add-int/2addr v0, v1
 
-    .line 483
+    .line 500
     :cond_41
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasLibraryUrl()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_51
-
-    .line 484
-    const/4 v1, 0x5
-
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getLibraryUrl()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 487
-    :cond_51
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->cachedSize:I
 
-    .line 488
+    .line 501
     return v0
 .end method
 
@@ -275,7 +235,7 @@
     .registers 2
 
     .prologue
-    .line 341
+    .line 376
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasBackend:Z
 
     return v0
@@ -285,7 +245,7 @@
     .registers 2
 
     .prologue
-    .line 376
+    .line 411
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasLandingUrl:Z
 
     return v0
@@ -295,18 +255,8 @@
     .registers 2
 
     .prologue
-    .line 393
+    .line 428
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasLibraryName:Z
-
-    return v0
-.end method
-
-.method public hasLibraryUrl()Z
-    .registers 2
-
-    .prologue
-    .line 410
-    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasLibraryUrl:Z
 
     return v0
 .end method
@@ -315,7 +265,7 @@
     .registers 2
 
     .prologue
-    .line 359
+    .line 394
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasName:Z
 
     return v0
@@ -331,29 +281,29 @@
     .end annotation
 
     .prologue
-    .line 495
+    .line 509
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 496
+    .line 510
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_36
+    sparse-switch v0, :sswitch_data_2e
 
-    .line 500
+    .line 514
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 501
+    .line 515
     :sswitch_d
     return-object p0
 
-    .line 506
+    .line 520
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -363,7 +313,7 @@
 
     goto :goto_0
 
-    .line 510
+    .line 524
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -373,7 +323,7 @@
 
     goto :goto_0
 
-    .line 514
+    .line 528
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -383,7 +333,7 @@
 
     goto :goto_0
 
-    .line 518
+    .line 532
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -393,25 +343,14 @@
 
     goto :goto_0
 
-    .line 522
-    :sswitch_2e
-    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->setLibraryUrl(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
-
-    goto :goto_0
-
-    .line 496
-    :sswitch_data_36
+    .line 510
+    :sswitch_data_2e
     .sparse-switch
         0x0 -> :sswitch_d
         0x8 -> :sswitch_e
         0x12 -> :sswitch_16
         0x1a -> :sswitch_1e
         0x22 -> :sswitch_26
-        0x2a -> :sswitch_2e
     .end sparse-switch
 .end method
 
@@ -425,7 +364,7 @@
     .end annotation
 
     .prologue
-    .line 333
+    .line 367
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
 
     move-result-object v0
@@ -438,15 +377,15 @@
     .parameter "value"
 
     .prologue
-    .line 344
+    .line 379
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasBackend:Z
 
-    .line 345
+    .line 380
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->backend_:I
 
-    .line 346
+    .line 381
     return-object p0
 .end method
 
@@ -455,15 +394,15 @@
     .parameter "value"
 
     .prologue
-    .line 378
+    .line 413
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasLandingUrl:Z
 
-    .line 379
+    .line 414
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->landingUrl_:Ljava/lang/String;
 
-    .line 380
+    .line 415
     return-object p0
 .end method
 
@@ -472,32 +411,15 @@
     .parameter "value"
 
     .prologue
-    .line 395
+    .line 430
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasLibraryName:Z
 
-    .line 396
+    .line 431
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->libraryName_:Ljava/lang/String;
 
-    .line 397
-    return-object p0
-.end method
-
-.method public setLibraryUrl(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
-    .registers 3
-    .parameter "value"
-
-    .prologue
-    .line 412
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasLibraryUrl:Z
-
-    .line 413
-    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->libraryUrl_:Ljava/lang/String;
-
-    .line 414
+    .line 432
     return-object p0
 .end method
 
@@ -506,15 +428,15 @@
     .parameter "value"
 
     .prologue
-    .line 361
+    .line 396
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasName:Z
 
-    .line 362
+    .line 397
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->name_:Ljava/lang/String;
 
-    .line 363
+    .line 398
     return-object p0
 .end method
 
@@ -528,14 +450,14 @@
     .end annotation
 
     .prologue
-    .line 439
+    .line 457
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasBackend()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 440
+    .line 458
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getBackend()I
@@ -544,7 +466,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 442
+    .line 460
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasName()Z
 
@@ -552,7 +474,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 443
+    .line 461
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getName()Ljava/lang/String;
@@ -561,7 +483,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 445
+    .line 463
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasLandingUrl()Z
 
@@ -569,7 +491,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 446
+    .line 464
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getLandingUrl()Ljava/lang/String;
@@ -578,7 +500,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 448
+    .line 466
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasLibraryName()Z
 
@@ -586,7 +508,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 449
+    .line 467
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getLibraryName()Ljava/lang/String;
@@ -595,24 +517,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 451
+    .line 469
     :cond_38
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->hasLibraryUrl()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_46
-
-    .line 452
-    const/4 v0, 0x5
-
-    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;->getLibraryUrl()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
-
-    .line 454
-    :cond_46
     return-void
 .end method

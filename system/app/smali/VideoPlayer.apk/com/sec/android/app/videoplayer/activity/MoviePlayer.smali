@@ -19,7 +19,7 @@
 
 .field private static final BACK_KEY_TIME_TO_EXPIRE:I = 0x640
 
-.field public static final DEBUG:Z = true
+.field public static final DEBUG:Z = false
 
 .field private static final DELAYED_ACTION_AFTER_RESUME:I = 0x1
 

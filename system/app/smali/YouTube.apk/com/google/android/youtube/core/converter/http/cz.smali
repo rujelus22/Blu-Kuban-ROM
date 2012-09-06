@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/converter/http/cv;
+.field final synthetic a:Lcom/google/android/youtube/core/converter/http/cx;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/core/converter/http/cv;)V
+.method constructor <init>(Lcom/google/android/youtube/core/converter/http/cx;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 104
-    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/cz;->a:Lcom/google/android/youtube/core/converter/http/cv;
+    .line 38
+    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/cz;->a:Lcom/google/android/youtube/core/converter/http/cx;
 
     invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
@@ -23,47 +23,33 @@
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
-    .registers 6
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 41
+    new-instance v0, Lcom/google/android/youtube/core/model/m;
+
+    invoke-direct {v0}, Lcom/google/android/youtube/core/model/m;-><init>()V
+
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->offer(Ljava/lang/Object;)Z
+
+    .line 42
+    return-void
+.end method
+
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
+    .registers 4
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 107
-    const-class v0, Lcom/google/android/youtube/core/model/p;
+    .line 45
+    invoke-virtual {p1}, Lcom/google/android/youtube/core/utils/x;->poll()Ljava/lang/Object;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->a(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/youtube/core/model/p;
-
-    .line 109
-    :try_start_8
-    invoke-virtual {p3}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/google/android/youtube/core/utils/Util;->c(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/model/p;->o(Landroid/net/Uri;)Lcom/google/android/youtube/core/model/p;
-    :try_end_13
-    .catch Ljava/net/MalformedURLException; {:try_start_8 .. :try_end_13} :catch_14
-
-    .line 113
-    :goto_13
+    .line 46
     return-void
-
-    .line 111
-    :catch_14
-    move-exception v0
-
-    const-string v0, "Badly formed clickthrough uri - ignoring"
-
-    invoke-static {v0}, Lcom/google/android/youtube/core/L;->c(Ljava/lang/String;)V
-
-    goto :goto_13
 .end method

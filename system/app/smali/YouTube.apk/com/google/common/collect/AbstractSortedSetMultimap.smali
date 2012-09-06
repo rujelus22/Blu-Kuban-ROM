@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/collect/ga;
+.implements Lcom/google/common/collect/km;
 
 
 # static fields
@@ -25,6 +25,18 @@
 
 
 # virtual methods
+.method public asMap()Ljava/util/Map;
+    .registers 2
+
+    .prologue
+    .line 110
+    invoke-super {p0}, Lcom/google/common/collect/AbstractSetMultimap;->asMap()Ljava/util/Map;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method bridge synthetic createCollection()Ljava/util/Collection;
     .registers 2
 
@@ -81,9 +93,12 @@
 .method public get(Ljava/lang/Object;)Ljava/util/SortedSet;
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 51
+    .line 65
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractSetMultimap;->get(Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v0
@@ -122,9 +137,12 @@
 .method public removeAll(Ljava/lang/Object;)Ljava/util/SortedSet;
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 55
+    .line 77
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractSetMultimap;->removeAll(Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v0
@@ -168,7 +186,7 @@
     .parameter
 
     .prologue
-    .line 60
+    .line 92
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractSetMultimap;->replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/Set;
 
     move-result-object v0
@@ -182,7 +200,7 @@
     .registers 2
 
     .prologue
-    .line 70
+    .line 120
     invoke-super {p0}, Lcom/google/common/collect/AbstractSetMultimap;->values()Ljava/util/Collection;
 
     move-result-object v0

@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 17
+    .line 16
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 69
+    .line 59
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v6
@@ -31,18 +31,18 @@
 
     move-object v0, v5
 
-    .line 78
+    .line 68
     :cond_8
     :goto_8
     return-object v0
 
-    .line 72
+    .line 62
     :cond_9
     invoke-static {p1}, Lcom/google/android/finsky/api/AccountHandler;->getAccounts(Landroid/content/Context;)[Landroid/accounts/Account;
 
     move-result-object v1
 
-    .line 73
+    .line 63
     .local v1, accounts:[Landroid/accounts/Account;
     move-object v2, v1
 
@@ -58,7 +58,7 @@
 
     aget-object v0, v2, v3
 
-    .line 74
+    .line 64
     .local v0, a:Landroid/accounts/Account;
     iget-object v6, v0, Landroid/accounts/Account;->name:Ljava/lang/String;
 
@@ -68,7 +68,7 @@
 
     if-nez v6, :cond_8
 
-    .line 73
+    .line 63
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_10
@@ -77,7 +77,7 @@
     :cond_1f
     move-object v0, v5
 
-    .line 78
+    .line 68
     goto :goto_8
 .end method
 
@@ -98,37 +98,42 @@
     .end annotation
 
     .prologue
-    .line 100
+    .line 90
     .local p1, preference:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;,"Lcom/google/android/finsky/config/PreferenceFile$SharedPreference<Ljava/lang/String;>;"
     invoke-virtual {p1}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->get()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
-    .line 101
-    .local v0, currentAccountName:Ljava/lang/String;
-    invoke-static {v0, p0}, Lcom/google/android/finsky/api/AccountHandler;->hasAccount(Ljava/lang/String;Landroid/content/Context;)Z
+    .line 91
+    .local v1, currentAccountName:Ljava/lang/String;
+    invoke-static {v1, p0}, Lcom/google/android/finsky/api/AccountHandler;->hasAccount(Ljava/lang/String;Landroid/content/Context;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_14
+    if-eqz v2, :cond_14
 
-    .line 102
-    new-instance v1, Landroid/accounts/Account;
+    .line 92
+    new-instance v0, Landroid/accounts/Account;
 
     const-string v2, "com.google"
 
-    invoke-direct {v1, v0, v2}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 107
+    .line 99
     :goto_13
-    return-object v1
+    return-object v0
 
+    .line 97
     :cond_14
     invoke-static {p0}, Lcom/google/android/finsky/api/AccountHandler;->getFirstAccount(Landroid/content/Context;)Landroid/accounts/Account;
 
-    move-result-object v1
+    move-result-object v0
+
+    .line 98
+    .local v0, account:Landroid/accounts/Account;
+    invoke-static {v0, p1}, Lcom/google/android/finsky/api/AccountHandler;->saveAccountToPreferences(Landroid/accounts/Account;Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;)V
 
     goto :goto_13
 .end method
@@ -138,12 +143,12 @@
     .parameter "context"
 
     .prologue
-    .line 34
+    .line 25
     invoke-static {p0}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
 
     move-result-object v0
 
-    .line 35
+    .line 26
     .local v0, am:Landroid/accounts/AccountManager;
     const-string v1, "com.google"
 
@@ -159,12 +164,12 @@
     .parameter "context"
 
     .prologue
-    .line 57
+    .line 47
     invoke-static {p0}, Lcom/google/android/finsky/api/AccountHandler;->getAccounts(Landroid/content/Context;)[Landroid/accounts/Account;
 
     move-result-object v0
 
-    .line 58
+    .line 48
     .local v0, accounts:[Landroid/accounts/Account;
     array-length v1, v0
 
@@ -189,7 +194,7 @@
     .parameter "context"
 
     .prologue
-    .line 89
+    .line 79
     invoke-static {p0, p1}, Lcom/google/android/finsky/api/AccountHandler;->findAccount(Ljava/lang/String;Landroid/content/Context;)Landroid/accounts/Account;
 
     move-result-object v0
@@ -207,14 +212,14 @@
     goto :goto_7
 .end method
 
-.method public static saveAccountToPreferences(Ljava/lang/String;Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;)V
-    .registers 2
-    .parameter "accountName"
+.method public static saveAccountToPreferences(Landroid/accounts/Account;Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;)V
+    .registers 3
+    .parameter "account"
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/lang/String;",
+            "Landroid/accounts/Account;",
             "Lcom/google/android/finsky/config/PreferenceFile$SharedPreference",
             "<",
             "Ljava/lang/String;",
@@ -223,17 +228,19 @@
     .end annotation
 
     .prologue
-    .line 45
+    .line 35
     .local p1, preference:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;,"Lcom/google/android/finsky/config/PreferenceFile$SharedPreference<Ljava/lang/String;>;"
     if-nez p0, :cond_3
 
-    .line 50
+    .line 40
     :goto_2
     return-void
 
-    .line 49
+    .line 39
     :cond_3
-    invoke-virtual {p1, p0}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->put(Ljava/lang/Object;)V
+    iget-object v0, p0, Landroid/accounts/Account;->name:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;->put(Ljava/lang/Object;)V
 
     goto :goto_2
 .end method

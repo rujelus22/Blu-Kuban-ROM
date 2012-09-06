@@ -4,6 +4,9 @@
 
 
 # annotations
+.annotation build Lcom/google/common/annotations/VisibleForTesting;
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser;
 .end annotation
@@ -15,80 +18,44 @@
 
 
 # instance fields
-.field flag:Ljava/lang/Boolean;
+.field final flag:Ljava/lang/Boolean;
 
-.field flags:Lcom/android/emailcommon/provider/EmailContent$FollowupFlag;
+.field final flags:Ljava/lang/Integer;
 
-.field id:J
+.field final id:J
 
-.field irmRemoved:Z
-
-.field lastVerb:I
-
-.field lastVerbTime:J
-
-.field read:Ljava/lang/Boolean;
+.field final read:Ljava/lang/Boolean;
 
 .field final synthetic this$1:Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser;JLjava/lang/Boolean;Ljava/lang/Boolean;Lcom/android/emailcommon/provider/EmailContent$FollowupFlag;IJ)V
-    .registers 10
+.method constructor <init>(Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser;JLjava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Integer;)V
+    .registers 7
     .parameter
     .parameter "_id"
     .parameter "_read"
     .parameter "_flag"
-    .parameter "ff"
-    .parameter "_lastVerb"
-    .parameter "_lastVerbTime"
+    .parameter "_flags"
 
     .prologue
-    .line 1884
+    .line 903
     iput-object p1, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser$ServerChange;->this$1:Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1885
+    .line 904
     iput-wide p2, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser$ServerChange;->id:J
 
-    .line 1886
+    .line 905
     iput-object p4, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser$ServerChange;->read:Ljava/lang/Boolean;
 
-    .line 1887
+    .line 906
     iput-object p5, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser$ServerChange;->flag:Ljava/lang/Boolean;
 
-    .line 1888
-    iput-object p6, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser$ServerChange;->flags:Lcom/android/emailcommon/provider/EmailContent$FollowupFlag;
+    .line 907
+    iput-object p6, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser$ServerChange;->flags:Ljava/lang/Integer;
 
-    .line 1889
-    iput p7, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser$ServerChange;->lastVerb:I
-
-    .line 1890
-    iput-wide p8, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser$ServerChange;->lastVerbTime:J
-
-    .line 1892
-    return-void
-.end method
-
-.method constructor <init>(Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser;JZ)V
-    .registers 5
-    .parameter
-    .parameter "_id"
-    .parameter "_irmRemoved"
-
-    .prologue
-    .line 1876
-    iput-object p1, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser$ServerChange;->this$1:Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser;
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
-    .line 1877
-    iput-wide p2, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser$ServerChange;->id:J
-
-    .line 1878
-    iput-boolean p4, p0, Lcom/android/exchange/adapter/EmailSyncAdapter$EasEmailSyncParser$ServerChange;->irmRemoved:Z
-
-    .line 1879
+    .line 908
     return-void
 .end method

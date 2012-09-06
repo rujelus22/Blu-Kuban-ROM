@@ -20,86 +20,98 @@
     .registers 2
 
     .prologue
-    .line 120
+    .line 122
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractSetMultimap;-><init>(Ljava/util/Map;)V
 
-    .line 73
+    .line 75
     const/16 v0, 0x8
 
     iput v0, p0, Lcom/google/common/collect/LinkedHashMultimap;->expectedValuesPerKey:I
 
-    .line 121
+    .line 123
     new-instance v0, Ljava/util/LinkedHashSet;
 
     invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
 
     iput-object v0, p0, Lcom/google/common/collect/LinkedHashMultimap;->linkedEntries:Ljava/util/Collection;
 
-    .line 122
+    .line 124
     return-void
 .end method
 
 .method private constructor <init>(II)V
-    .registers 5
+    .registers 10
     .parameter
     .parameter
 
     .prologue
-    .line 125
+    .line 127
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0, p1}, Ljava/util/LinkedHashMap;-><init>(I)V
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractSetMultimap;-><init>(Ljava/util/Map;)V
 
-    .line 73
+    .line 75
     const/16 v0, 0x8
 
     iput v0, p0, Lcom/google/common/collect/LinkedHashMultimap;->expectedValuesPerKey:I
 
-    .line 126
-    if-ltz p2, :cond_1e
+    .line 128
+    if-ltz p2, :cond_27
 
     const/4 v0, 0x1
 
     :goto_f
-    invoke-static {v0}, Lcom/google/common/base/t;->a(Z)V
+    invoke-static {v0}, Lcom/google/common/base/ag;->a(Z)V
 
-    .line 127
+    .line 129
     iput p2, p0, Lcom/google/common/collect/LinkedHashMultimap;->expectedValuesPerKey:I
 
-    .line 128
+    .line 130
     new-instance v0, Ljava/util/LinkedHashSet;
 
-    mul-int v1, p1, p2
+    const-wide/32 v1, 0x40000000
+
+    int-to-long v3, p1
+
+    int-to-long v5, p2
+
+    mul-long/2addr v3, v5
+
+    invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v1
+
+    long-to-int v1, v1
 
     invoke-direct {v0, v1}, Ljava/util/LinkedHashSet;-><init>(I)V
 
     iput-object v0, p0, Lcom/google/common/collect/LinkedHashMultimap;->linkedEntries:Ljava/util/Collection;
 
-    .line 130
+    .line 133
     return-void
 
-    .line 126
-    :cond_1e
+    .line 128
+    :cond_27
     const/4 v0, 0x0
 
     goto :goto_f
 .end method
 
-.method private constructor <init>(Lcom/google/common/collect/ew;)V
+.method private constructor <init>(Lcom/google/common/collect/hu;)V
     .registers 4
     .parameter
 
     .prologue
-    .line 133
+    .line 136
     new-instance v0, Ljava/util/LinkedHashMap;
 
-    invoke-interface {p1}, Lcom/google/common/collect/ew;->keySet()Ljava/util/Set;
+    invoke-interface {p1}, Lcom/google/common/collect/hu;->keySet()Ljava/util/Set;
 
     move-result-object v1
 
@@ -115,15 +127,15 @@
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractSetMultimap;-><init>(Ljava/util/Map;)V
 
-    .line 73
+    .line 75
     const/16 v0, 0x8
 
     iput v0, p0, Lcom/google/common/collect/LinkedHashMultimap;->expectedValuesPerKey:I
 
-    .line 135
+    .line 138
     new-instance v0, Ljava/util/LinkedHashSet;
 
-    invoke-interface {p1}, Lcom/google/common/collect/ew;->size()I
+    invoke-interface {p1}, Lcom/google/common/collect/hu;->size()I
 
     move-result v1
 
@@ -135,10 +147,10 @@
 
     iput-object v0, p0, Lcom/google/common/collect/LinkedHashMultimap;->linkedEntries:Ljava/util/Collection;
 
-    .line 137
-    invoke-virtual {p0, p1}, Lcom/google/common/collect/LinkedHashMultimap;->putAll(Lcom/google/common/collect/ew;)Z
+    .line 140
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/LinkedHashMultimap;->putAll(Lcom/google/common/collect/hu;)Z
 
-    .line 138
+    .line 141
     return-void
 .end method
 
@@ -146,7 +158,7 @@
     .registers 1
 
     .prologue
-    .line 88
+    .line 90
     new-instance v0, Lcom/google/common/collect/LinkedHashMultimap;
 
     invoke-direct {v0}, Lcom/google/common/collect/LinkedHashMultimap;-><init>()V
@@ -160,7 +172,7 @@
     .parameter
 
     .prologue
-    .line 102
+    .line 104
     new-instance v0, Lcom/google/common/collect/LinkedHashMultimap;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/LinkedHashMultimap;-><init>(II)V
@@ -168,15 +180,15 @@
     return-object v0
 .end method
 
-.method public static create(Lcom/google/common/collect/ew;)Lcom/google/common/collect/LinkedHashMultimap;
+.method public static create(Lcom/google/common/collect/hu;)Lcom/google/common/collect/LinkedHashMultimap;
     .registers 2
     .parameter
 
     .prologue
-    .line 116
+    .line 118
     new-instance v0, Lcom/google/common/collect/LinkedHashMultimap;
 
-    invoke-direct {v0, p0}, Lcom/google/common/collect/LinkedHashMultimap;-><init>(Lcom/google/common/collect/ew;)V
+    invoke-direct {v0, p0}, Lcom/google/common/collect/LinkedHashMultimap;-><init>(Lcom/google/common/collect/hu;)V
 
     return-object v0
 .end method
@@ -186,22 +198,22 @@
     .parameter
 
     .prologue
-    .line 364
+    .line 377
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 365
+    .line 378
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/common/collect/LinkedHashMultimap;->expectedValuesPerKey:I
 
-    .line 366
+    .line 379
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
 
     move-result v0
 
-    .line 367
+    .line 380
     new-instance v1, Ljava/util/LinkedHashMap;
 
     invoke-static {v0}, Lcom/google/common/collect/Maps;->b(I)I
@@ -212,7 +224,7 @@
 
     invoke-virtual {p0, v1}, Lcom/google/common/collect/LinkedHashMultimap;->setMap(Ljava/util/Map;)V
 
-    .line 368
+    .line 381
     new-instance v1, Ljava/util/LinkedHashSet;
 
     iget v2, p0, Lcom/google/common/collect/LinkedHashMultimap;->expectedValuesPerKey:I
@@ -223,15 +235,15 @@
 
     iput-object v1, p0, Lcom/google/common/collect/LinkedHashMultimap;->linkedEntries:Ljava/util/Collection;
 
-    .line 370
-    invoke-static {p0, p1, v0}, Lcom/google/common/collect/fx;->a(Lcom/google/common/collect/ew;Ljava/io/ObjectInputStream;I)V
+    .line 383
+    invoke-static {p0, p1, v0}, Lcom/google/common/collect/jt;->a(Lcom/google/common/collect/hu;Ljava/io/ObjectInputStream;I)V
 
-    .line 371
+    .line 384
     iget-object v0, p0, Lcom/google/common/collect/LinkedHashMultimap;->linkedEntries:Ljava/util/Collection;
 
     invoke-interface {v0}, Ljava/util/Collection;->clear()V
 
-    .line 372
+    .line 385
     const/4 v0, 0x0
 
     :goto_2c
@@ -241,17 +253,17 @@
 
     if-ge v0, v1, :cond_46
 
-    .line 374
+    .line 387
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 376
+    .line 389
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 377
+    .line 390
     iget-object v3, p0, Lcom/google/common/collect/LinkedHashMultimap;->linkedEntries:Ljava/util/Collection;
 
     invoke-static {v1, v2}, Lcom/google/common/collect/Maps;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
@@ -260,12 +272,12 @@
 
     invoke-interface {v3, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    .line 372
+    .line 385
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2c
 
-    .line 379
+    .line 392
     :cond_46
     return-void
 .end method
@@ -275,18 +287,18 @@
     .parameter
 
     .prologue
-    .line 353
+    .line 365
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 354
+    .line 366
     iget v0, p0, Lcom/google/common/collect/LinkedHashMultimap;->expectedValuesPerKey:I
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeInt(I)V
 
-    .line 355
-    invoke-static {p0, p1}, Lcom/google/common/collect/fx;->a(Lcom/google/common/collect/ew;Ljava/io/ObjectOutputStream;)V
+    .line 367
+    invoke-static {p0, p1}, Lcom/google/common/collect/jt;->a(Lcom/google/common/collect/hu;Ljava/io/ObjectOutputStream;)V
 
-    .line 356
+    .line 368
     iget-object v0, p0, Lcom/google/common/collect/LinkedHashMultimap;->linkedEntries:Ljava/util/Collection;
 
     invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
@@ -306,14 +318,14 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 357
+    .line 369
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
 
     invoke-virtual {p1, v2}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 358
+    .line 370
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -322,7 +334,7 @@
 
     goto :goto_11
 
-    .line 360
+    .line 372
     :cond_2c
     return-void
 .end method
@@ -333,7 +345,7 @@
     .registers 2
 
     .prologue
-    .line 69
+    .line 71
     invoke-super {p0}, Lcom/google/common/collect/AbstractSetMultimap;->asMap()Ljava/util/Map;
 
     move-result-object v0
@@ -345,7 +357,7 @@
     .registers 1
 
     .prologue
-    .line 69
+    .line 71
     invoke-super {p0}, Lcom/google/common/collect/AbstractSetMultimap;->clear()V
 
     return-void
@@ -357,7 +369,7 @@
     .parameter
 
     .prologue
-    .line 69
+    .line 71
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractSetMultimap;->containsEntry(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
@@ -370,7 +382,7 @@
     .parameter
 
     .prologue
-    .line 69
+    .line 71
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractSetMultimap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v0
@@ -383,7 +395,7 @@
     .parameter
 
     .prologue
-    .line 69
+    .line 71
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractSetMultimap;->containsValue(Ljava/lang/Object;)Z
 
     move-result v0
@@ -395,7 +407,7 @@
     .registers 2
 
     .prologue
-    .line 69
+    .line 71
     invoke-virtual {p0}, Lcom/google/common/collect/LinkedHashMultimap;->createCollection()Ljava/util/Set;
 
     move-result-object v0
@@ -406,16 +418,19 @@
 .method final createCollection(Ljava/lang/Object;)Ljava/util/Collection;
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 164
-    new-instance v0, Lcom/google/common/collect/cz;
+    .line 167
+    new-instance v0, Lcom/google/common/collect/er;
 
     invoke-virtual {p0}, Lcom/google/common/collect/LinkedHashMultimap;->createCollection()Ljava/util/Set;
 
     move-result-object v1
 
-    invoke-direct {v0, p0, p1, v1}, Lcom/google/common/collect/cz;-><init>(Lcom/google/common/collect/LinkedHashMultimap;Ljava/lang/Object;Ljava/util/Set;)V
+    invoke-direct {v0, p0, p1, v1}, Lcom/google/common/collect/er;-><init>(Lcom/google/common/collect/LinkedHashMultimap;Ljava/lang/Object;Ljava/util/Set;)V
 
     return-object v0
 .end method
@@ -424,7 +439,7 @@
     .registers 3
 
     .prologue
-    .line 150
+    .line 153
     new-instance v0, Ljava/util/LinkedHashSet;
 
     iget v1, p0, Lcom/google/common/collect/LinkedHashMultimap;->expectedValuesPerKey:I
@@ -442,17 +457,17 @@
     .registers 3
 
     .prologue
-    .line 282
+    .line 290
     iget-object v0, p0, Lcom/google/common/collect/LinkedHashMultimap;->linkedEntries:Ljava/util/Collection;
 
     invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 284
-    new-instance v1, Lcom/google/common/collect/cy;
+    .line 292
+    new-instance v1, Lcom/google/common/collect/eq;
 
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/cy;-><init>(Lcom/google/common/collect/LinkedHashMultimap;Ljava/util/Iterator;)V
+    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/eq;-><init>(Lcom/google/common/collect/LinkedHashMultimap;Ljava/util/Iterator;)V
 
     return-object v1
 .end method
@@ -461,7 +476,7 @@
     .registers 2
 
     .prologue
-    .line 69
+    .line 71
     invoke-virtual {p0}, Lcom/google/common/collect/LinkedHashMultimap;->entries()Ljava/util/Set;
 
     move-result-object v0
@@ -473,7 +488,7 @@
     .registers 2
 
     .prologue
-    .line 330
+    .line 341
     invoke-super {p0}, Lcom/google/common/collect/AbstractSetMultimap;->entries()Ljava/util/Set;
 
     move-result-object v0
@@ -486,7 +501,7 @@
     .parameter
 
     .prologue
-    .line 69
+    .line 71
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractSetMultimap;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -499,7 +514,7 @@
     .parameter
 
     .prologue
-    .line 69
+    .line 71
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractSetMultimap;->get(Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v0
@@ -511,7 +526,7 @@
     .registers 2
 
     .prologue
-    .line 69
+    .line 71
     invoke-super {p0}, Lcom/google/common/collect/AbstractSetMultimap;->hashCode()I
 
     move-result v0
@@ -523,7 +538,7 @@
     .registers 2
 
     .prologue
-    .line 69
+    .line 71
     invoke-super {p0}, Lcom/google/common/collect/AbstractSetMultimap;->isEmpty()Z
 
     move-result v0
@@ -535,7 +550,7 @@
     .registers 2
 
     .prologue
-    .line 69
+    .line 71
     invoke-super {p0}, Lcom/google/common/collect/AbstractSetMultimap;->keySet()Ljava/util/Set;
 
     move-result-object v0
@@ -543,12 +558,12 @@
     return-object v0
 .end method
 
-.method public final bridge synthetic keys()Lcom/google/common/collect/fj;
+.method public final bridge synthetic keys()Lcom/google/common/collect/iq;
     .registers 2
 
     .prologue
-    .line 69
-    invoke-super {p0}, Lcom/google/common/collect/AbstractSetMultimap;->keys()Lcom/google/common/collect/fj;
+    .line 71
+    invoke-super {p0}, Lcom/google/common/collect/AbstractSetMultimap;->keys()Lcom/google/common/collect/iq;
 
     move-result-object v0
 
@@ -561,7 +576,7 @@
     .parameter
 
     .prologue
-    .line 69
+    .line 71
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractSetMultimap;->put(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
@@ -569,13 +584,13 @@
     return v0
 .end method
 
-.method public final bridge synthetic putAll(Lcom/google/common/collect/ew;)Z
+.method public final bridge synthetic putAll(Lcom/google/common/collect/hu;)Z
     .registers 3
     .parameter
 
     .prologue
-    .line 69
-    invoke-super {p0, p1}, Lcom/google/common/collect/AbstractSetMultimap;->putAll(Lcom/google/common/collect/ew;)Z
+    .line 71
+    invoke-super {p0, p1}, Lcom/google/common/collect/AbstractSetMultimap;->putAll(Lcom/google/common/collect/hu;)Z
 
     move-result v0
 
@@ -588,7 +603,7 @@
     .parameter
 
     .prologue
-    .line 69
+    .line 71
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractSetMultimap;->putAll(Ljava/lang/Object;Ljava/lang/Iterable;)Z
 
     move-result v0
@@ -602,7 +617,7 @@
     .parameter
 
     .prologue
-    .line 69
+    .line 71
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractSetMultimap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
@@ -615,7 +630,7 @@
     .parameter
 
     .prologue
-    .line 69
+    .line 71
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractSetMultimap;->removeAll(Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v0
@@ -629,7 +644,7 @@
     .parameter
 
     .prologue
-    .line 69
+    .line 71
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/LinkedHashMultimap;->replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/Set;
 
     move-result-object v0
@@ -640,10 +655,14 @@
 .method public final replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/Set;
     .registers 4
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+    .end parameter
 
     .prologue
-    .line 314
+    .line 325
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractSetMultimap;->replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/Set;
 
     move-result-object v0
@@ -655,7 +674,7 @@
     .registers 2
 
     .prologue
-    .line 69
+    .line 71
     invoke-super {p0}, Lcom/google/common/collect/AbstractSetMultimap;->size()I
 
     move-result v0
@@ -667,7 +686,7 @@
     .registers 2
 
     .prologue
-    .line 69
+    .line 71
     invoke-super {p0}, Lcom/google/common/collect/AbstractSetMultimap;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -679,7 +698,7 @@
     .registers 2
 
     .prologue
-    .line 341
+    .line 352
     invoke-super {p0}, Lcom/google/common/collect/AbstractSetMultimap;->values()Ljava/util/Collection;
 
     move-result-object v0

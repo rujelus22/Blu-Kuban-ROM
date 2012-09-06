@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 607
+    .line 521
     iput-object p1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$1;->this$0:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     iput-object p2, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$1;->val$doc:Lcom/google/android/finsky/api/model/Document;
@@ -47,7 +47,7 @@
     .parameter "v"
 
     .prologue
-    .line 610
+    .line 524
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.VIEW"
@@ -68,7 +68,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 612
+    .line 526
     .local v0, browserIntent:Landroid/content/Intent;
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -76,6 +76,6 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 613
+    .line 527
     return-void
 .end method

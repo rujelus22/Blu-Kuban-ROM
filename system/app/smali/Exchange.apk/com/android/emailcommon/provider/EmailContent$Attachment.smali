@@ -3,6 +3,7 @@
 .source "EmailContent.java"
 
 # interfaces
+.implements Landroid/os/Parcelable;
 .implements Lcom/android/emailcommon/provider/EmailContent$AttachmentColumns;
 
 
@@ -53,8 +54,6 @@
 
 .field public mFlags:I
 
-.field public mIsInline:I
-
 .field public mLocation:Ljava/lang/String;
 
 .field public mMessageKey:J
@@ -63,17 +62,13 @@
 
 .field public mSize:J
 
-.field public mVoiceMailAttDuration:I
-
-.field public mVoiceMailAttOrder:I
-
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 3
 
     .prologue
-    .line 6142
+    .line 1043
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -100,7 +95,7 @@
 
     sput-object v0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 6146
+    .line 1045
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -127,8 +122,8 @@
 
     sput-object v0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->MESSAGE_ID_URI:Landroid/net/Uri;
 
-    .line 6224
-    const/16 v0, 0x10
+    .line 1074
+    const/16 v0, 0xd
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -210,27 +205,9 @@
 
     aput-object v2, v0, v1
 
-    const/16 v1, 0xd
-
-    const-string v2, "vmAttOrder"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xe
-
-    const-string v2, "vmAttDuration"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xf
-
-    const-string v2, "isInline"
-
-    aput-object v2, v0, v1
-
     sput-object v0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->CONTENT_PROJECTION:[Ljava/lang/String;
 
-    .line 6517
+    .line 1275
     new-instance v0, Lcom/android/emailcommon/provider/EmailContent$Attachment$1;
 
     invoke-direct {v0}, Lcom/android/emailcommon/provider/EmailContent$Attachment$1;-><init>()V
@@ -244,15 +221,15 @@
     .registers 2
 
     .prologue
-    .line 6303
+    .line 1117
     invoke-direct {p0}, Lcom/android/emailcommon/provider/EmailContent;-><init>()V
 
-    .line 6304
+    .line 1118
     sget-object v0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v0, p0, Lcom/android/emailcommon/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
+    iput-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mBaseUri:Landroid/net/Uri;
 
-    .line 6305
+    .line 1119
     return-void
 .end method
 
@@ -261,146 +238,125 @@
     .parameter "in"
 
     .prologue
-    .line 6486
+    .line 1252
     invoke-direct {p0}, Lcom/android/emailcommon/provider/EmailContent;-><init>()V
 
-    .line 6487
+    .line 1253
     sget-object v1, Lcom/android/emailcommon/provider/EmailContent$Attachment;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v1, p0, Lcom/android/emailcommon/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
+    iput-object v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mBaseUri:Landroid/net/Uri;
 
-    .line 6488
+    .line 1254
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v1
 
-    iput-wide v1, p0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iput-wide v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mId:J
 
-    .line 6489
+    .line 1255
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mFileName:Ljava/lang/String;
 
-    .line 6490
+    .line 1256
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mMimeType:Ljava/lang/String;
 
-    .line 6491
+    .line 1257
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v1
 
     iput-wide v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mSize:J
 
-    .line 6492
+    .line 1258
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContentId:Ljava/lang/String;
 
-    .line 6493
+    .line 1259
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContentUri:Ljava/lang/String;
 
-    .line 6494
+    .line 1260
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v1
 
     iput-wide v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mMessageKey:J
 
-    .line 6495
+    .line 1261
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mLocation:Ljava/lang/String;
 
-    .line 6496
+    .line 1262
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mEncoding:Ljava/lang/String;
 
-    .line 6497
+    .line 1263
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContent:Ljava/lang/String;
 
-    .line 6498
+    .line 1264
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mFlags:I
 
-    .line 6499
+    .line 1265
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v1
 
     iput-wide v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mAccountKey:J
 
-    .line 6500
+    .line 1266
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 6501
+    .line 1267
     .local v0, contentBytesLen:I
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_6c
+    if-ne v0, v1, :cond_5a
 
-    .line 6502
+    .line 1268
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContentBytes:[B
 
-    .line 6508
+    .line 1273
     :goto_59
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v1
-
-    iput v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mVoiceMailAttOrder:I
-
-    .line 6509
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v1
-
-    iput v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mVoiceMailAttDuration:I
-
-    .line 6513
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v1
-
-    iput v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mIsInline:I
-
-    .line 6515
     return-void
 
-    .line 6504
-    :cond_6c
+    .line 1270
+    :cond_5a
     new-array v1, v0, [B
 
     iput-object v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContentBytes:[B
 
-    .line 6505
+    .line 1271
     iget-object v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContentBytes:[B
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->readByteArray([B)V
@@ -409,318 +365,153 @@
 .end method
 
 .method public static restoreAttachmentWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Attachment;
-    .registers 10
+    .registers 9
     .parameter
     .parameter
 
     .prologue
-    const/4 v6, 0x0
+    .line 1128
+    const-class v1, Lcom/android/emailcommon/provider/EmailContent$Attachment;
 
-    .line 6315
-    sget-object v0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->CONTENT_URI:Landroid/net/Uri;
+    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Attachment;->CONTENT_URI:Landroid/net/Uri;
 
-    invoke-static {v0, p1, p2}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
+    sget-object v3, Lcom/android/emailcommon/provider/EmailContent$Attachment;->CONTENT_PROJECTION:[Ljava/lang/String;
 
-    move-result-object v1
+    move-object v0, p0
 
-    .line 6318
-    :try_start_7
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    move-wide v4, p1
 
-    move-result-object v0
-
-    sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Attachment;->CONTENT_PROJECTION:[Ljava/lang/String;
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_13
-    .catchall {:try_start_7 .. :try_end_13} :catchall_4a
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_13} :catch_3b
-
-    move-result-object v1
-
-    .line 6320
-    :try_start_14
-    invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2e
-
-    .line 6321
-    const-class v0, Lcom/android/emailcommon/provider/EmailContent$Attachment;
-
-    invoke-static {v1, v0}, Lcom/android/emailcommon/provider/EmailContent$Attachment;->getContent(Landroid/database/Cursor;Ljava/lang/Class;)Lcom/android/emailcommon/provider/EmailContent;
+    invoke-static/range {v0 .. v5}, Lcom/android/emailcommon/provider/EmailContent;->restoreContentWithId(Landroid/content/Context;Ljava/lang/Class;Landroid/net/Uri;[Ljava/lang/String;J)Lcom/android/emailcommon/provider/EmailContent;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/emailcommon/provider/EmailContent$Attachment;
-    :try_end_22
-    .catchall {:try_start_14 .. :try_end_22} :catchall_58
-    .catch Ljava/lang/Exception; {:try_start_14 .. :try_end_22} :catch_5a
 
-    .line 6328
-    if-eqz v1, :cond_2d
-
-    invoke-interface {v1}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v2
-
-    if-nez v2, :cond_2d
-
-    .line 6329
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    :cond_2d
-    :goto_2d
     return-object v0
-
-    .line 6328
-    :cond_2e
-    if-eqz v1, :cond_39
-
-    invoke-interface {v1}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_39
-
-    .line 6329
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    :cond_39
-    move-object v0, v6
-
-    goto :goto_2d
-
-    .line 6325
-    :catch_3b
-    move-exception v0
-
-    move-object v0, v6
-
-    .line 6328
-    :goto_3d
-    if-eqz v0, :cond_48
-
-    invoke-interface {v0}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v1
-
-    if-nez v1, :cond_48
-
-    .line 6329
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
-
-    :cond_48
-    move-object v0, v6
-
-    goto :goto_2d
-
-    .line 6328
-    :catchall_4a
-    move-exception v0
-
-    move-object v1, v6
-
-    :goto_4c
-    if-eqz v1, :cond_57
-
-    invoke-interface {v1}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v2
-
-    if-nez v2, :cond_57
-
-    .line 6329
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    :cond_57
-    throw v0
-
-    .line 6328
-    :catchall_58
-    move-exception v0
-
-    goto :goto_4c
-
-    .line 6325
-    :catch_5a
-    move-exception v0
-
-    move-object v0, v1
-
-    goto :goto_3d
 .end method
 
 .method public static restoreAttachmentsWithMessageId(Landroid/content/Context;J)[Lcom/android/emailcommon/provider/EmailContent$Attachment;
-    .registers 16
+    .registers 14
     .parameter "context"
     .parameter "messageId"
 
     .prologue
-    const/4 v12, 0x0
+    const/4 v3, 0x0
 
-    .line 6337
+    .line 1137
     sget-object v0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->MESSAGE_ID_URI:Landroid/net/Uri;
 
     invoke-static {v0, p1, p2}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 6338
+    .line 1138
     .local v1, uri:Landroid/net/Uri;
-    const/4 v8, 0x0
-
-    .line 6340
-    .local v8, c:Landroid/database/Cursor;
-    :try_start_8
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     sget-object v2, Lcom/android/emailcommon/provider/EmailContent$Attachment;->CONTENT_PROJECTION:[Ljava/lang/String;
 
-    const/4 v3, 0x0
+    move-object v4, v3
 
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
+    move-object v5, v3
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v8
 
-    .line 6341
+    .line 1141
+    .local v8, c:Landroid/database/Cursor;
+    :try_start_13
     invoke-interface {v8}, Landroid/database/Cursor;->getCount()I
 
     move-result v9
 
-    .line 6342
+    .line 1142
     .local v9, count:I
     new-array v7, v9, [Lcom/android/emailcommon/provider/EmailContent$Attachment;
 
-    .line 6343
+    .line 1143
     .local v7, attachments:[Lcom/android/emailcommon/provider/EmailContent$Attachment;
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
-    .local v11, i:I
-    :goto_1c
-    if-ge v11, v9, :cond_2e
+    .local v10, i:I
+    :goto_1a
+    if-ge v10, v9, :cond_2c
 
-    .line 6344
+    .line 1144
     invoke-interface {v8}, Landroid/database/Cursor;->moveToNext()Z
 
-    .line 6345
+    .line 1145
     new-instance v6, Lcom/android/emailcommon/provider/EmailContent$Attachment;
 
     invoke-direct {v6}, Lcom/android/emailcommon/provider/EmailContent$Attachment;-><init>()V
 
-    .line 6346
+    .line 1146
     .local v6, attach:Lcom/android/emailcommon/provider/EmailContent$Attachment;
     invoke-virtual {v6, v8}, Lcom/android/emailcommon/provider/EmailContent$Attachment;->restore(Landroid/database/Cursor;)V
 
-    .line 6347
-    aput-object v6, v7, v11
-    :try_end_2b
-    .catchall {:try_start_8 .. :try_end_2b} :catchall_48
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_2b} :catch_3a
+    .line 1147
+    aput-object v6, v7, v10
+    :try_end_29
+    .catchall {:try_start_13 .. :try_end_29} :catchall_30
 
-    .line 6343
-    add-int/lit8 v11, v11, 0x1
+    .line 1143
+    add-int/lit8 v10, v10, 0x1
 
-    goto :goto_1c
+    goto :goto_1a
 
-    .line 6353
+    .line 1151
     .end local v6           #attach:Lcom/android/emailcommon/provider/EmailContent$Attachment;
-    :cond_2e
-    if-eqz v8, :cond_39
-
-    invoke-interface {v8}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_39
-
-    .line 6354
+    :cond_2c
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
+
+    return-object v7
 
     .end local v7           #attachments:[Lcom/android/emailcommon/provider/EmailContent$Attachment;
     .end local v9           #count:I
-    .end local v11           #i:I
-    :cond_39
-    :goto_39
-    return-object v7
-
-    .line 6350
-    :catch_3a
-    move-exception v10
-
-    .line 6353
-    .local v10, e:Ljava/lang/Exception;
-    if-eqz v8, :cond_46
-
-    invoke-interface {v8}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_46
-
-    .line 6354
-    invoke-interface {v8}, Landroid/database/Cursor;->close()V
-
-    :cond_46
-    move-object v7, v12
-
-    goto :goto_39
-
-    .line 6353
-    .end local v10           #e:Ljava/lang/Exception;
-    :catchall_48
+    .end local v10           #i:I
+    :catchall_30
     move-exception v0
 
-    if-eqz v8, :cond_54
-
-    invoke-interface {v8}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v2
-
-    if-nez v2, :cond_54
-
-    .line 6354
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    :cond_54
     throw v0
 .end method
 
 
 # virtual methods
+.method public describeContents()I
+    .registers 2
+
+    .prologue
+    .line 1226
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public restore(Landroid/database/Cursor;)V
     .registers 4
     .parameter "cursor"
 
     .prologue
-    .line 6404
+    .line 1190
     sget-object v0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->CONTENT_URI:Landroid/net/Uri;
 
-    iput-object v0, p0, Lcom/android/emailcommon/provider/EmailContent;->mBaseUri:Landroid/net/Uri;
+    iput-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mBaseUri:Landroid/net/Uri;
 
-    .line 6405
+    .line 1191
     const/4 v0, 0x0
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    iput-wide v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mId:J
 
-    .line 6406
+    .line 1192
     const/4 v0, 0x1
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -729,7 +520,7 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mFileName:Ljava/lang/String;
 
-    .line 6407
+    .line 1193
     const/4 v0, 0x2
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -738,7 +529,7 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mMimeType:Ljava/lang/String;
 
-    .line 6408
+    .line 1194
     const/4 v0, 0x3
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -747,7 +538,7 @@
 
     iput-wide v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mSize:J
 
-    .line 6409
+    .line 1195
     const/4 v0, 0x4
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -756,7 +547,7 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContentId:Ljava/lang/String;
 
-    .line 6410
+    .line 1196
     const/4 v0, 0x5
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -765,7 +556,7 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContentUri:Ljava/lang/String;
 
-    .line 6411
+    .line 1197
     const/4 v0, 0x6
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -774,7 +565,7 @@
 
     iput-wide v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mMessageKey:J
 
-    .line 6412
+    .line 1198
     const/4 v0, 0x7
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -783,7 +574,7 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mLocation:Ljava/lang/String;
 
-    .line 6413
+    .line 1199
     const/16 v0, 0x8
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -792,7 +583,7 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mEncoding:Ljava/lang/String;
 
-    .line 6414
+    .line 1200
     const/16 v0, 0x9
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -801,7 +592,7 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContent:Ljava/lang/String;
 
-    .line 6415
+    .line 1201
     const/16 v0, 0xa
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getInt(I)I
@@ -810,7 +601,7 @@
 
     iput v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mFlags:I
 
-    .line 6416
+    .line 1202
     const/16 v0, 0xb
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getBlob(I)[B
@@ -819,7 +610,7 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContentBytes:[B
 
-    .line 6417
+    .line 1203
     const/16 v0, 0xc
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -828,34 +619,7 @@
 
     iput-wide v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mAccountKey:J
 
-    .line 6418
-    const/16 v0, 0xd
-
-    invoke-interface {p1, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v0
-
-    iput v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mVoiceMailAttOrder:I
-
-    .line 6419
-    const/16 v0, 0xe
-
-    invoke-interface {p1, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v0
-
-    iput v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mVoiceMailAttDuration:I
-
-    .line 6422
-    const/16 v0, 0xf
-
-    invoke-interface {p1, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v0
-
-    iput v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mIsInline:I
-
-    .line 6424
+    .line 1204
     return-void
 .end method
 
@@ -863,12 +627,12 @@
     .registers 5
 
     .prologue
-    .line 6428
+    .line 1208
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 6429
+    .line 1209
     .local v0, values:Landroid/content/ContentValues;
     const-string v1, "fileName"
 
@@ -876,14 +640,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6430
+    .line 1210
     const-string v1, "mimeType"
 
     iget-object v2, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mMimeType:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6431
+    .line 1211
     const-string v1, "size"
 
     iget-wide v2, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mSize:J
@@ -894,21 +658,21 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 6432
+    .line 1212
     const-string v1, "contentId"
 
     iget-object v2, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContentId:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6433
+    .line 1213
     const-string v1, "contentUri"
 
     iget-object v2, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContentUri:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6434
+    .line 1214
     const-string v1, "messageKey"
 
     iget-wide v2, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mMessageKey:J
@@ -919,28 +683,28 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 6435
+    .line 1215
     const-string v1, "location"
 
     iget-object v2, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mLocation:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6436
+    .line 1216
     const-string v1, "encoding"
 
     iget-object v2, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mEncoding:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6437
+    .line 1217
     const-string v1, "content"
 
     iget-object v2, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContent:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6438
+    .line 1218
     const-string v1, "flags"
 
     iget v2, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mFlags:I
@@ -951,14 +715,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 6439
+    .line 1219
     const-string v1, "content_bytes"
 
     iget-object v2, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContentBytes:[B
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 6440
+    .line 1220
     const-string v1, "accountKey"
 
     iget-wide v2, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mAccountKey:J
@@ -969,40 +733,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 6441
-    const-string v1, "vmAttOrder"
-
-    iget v2, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mVoiceMailAttOrder:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 6442
-    const-string v1, "vmAttDuration"
-
-    iget v2, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mVoiceMailAttDuration:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 6445
-    const-string v1, "isInline"
-
-    iget v2, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mIsInline:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 6448
+    .line 1221
     return-object v0
 .end method
 
@@ -1010,7 +741,7 @@
     .registers 4
 
     .prologue
-    .line 6529
+    .line 1290
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1147,18 +878,6 @@
 
     move-result-object v0
 
-    const-string v1, ", "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mIsInline:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
     const-string v1, "]"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1170,4 +889,100 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public writeToParcel(Landroid/os/Parcel;I)V
+    .registers 5
+    .parameter "dest"
+    .parameter "flags"
+
+    .prologue
+    .line 1232
+    iget-wide v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mId:J
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+
+    .line 1233
+    iget-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mFileName:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 1234
+    iget-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mMimeType:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 1235
+    iget-wide v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mSize:J
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+
+    .line 1236
+    iget-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContentId:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 1237
+    iget-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContentUri:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 1238
+    iget-wide v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mMessageKey:J
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+
+    .line 1239
+    iget-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mLocation:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 1240
+    iget-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mEncoding:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 1241
+    iget-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContent:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 1242
+    iget v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mFlags:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 1243
+    iget-wide v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mAccountKey:J
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+
+    .line 1244
+    iget-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContentBytes:[B
+
+    if-nez v0, :cond_45
+
+    .line 1245
+    const/4 v0, -0x1
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 1250
+    :goto_44
+    return-void
+
+    .line 1247
+    :cond_45
+    iget-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContentBytes:[B
+
+    array-length v0, v0
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 1248
+    iget-object v0, p0, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mContentBytes:[B
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
+
+    goto :goto_44
 .end method

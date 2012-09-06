@@ -1,214 +1,62 @@
-.class public Lcom/google/googlenav/ui/view/dialog/V;
-.super Lcom/google/googlenav/ui/view/android/ap;
+.class Lcom/google/googlenav/ui/view/dialog/v;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field private final a:Lcom/google/googlenav/ui/view/dialog/Z;
+.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/s;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlenav/ui/view/dialog/Z;)V
-    .registers 3
+.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/s;)V
+    .registers 2
+    .parameter
 
-    const v0, 0x7f0d001a
+    .prologue
+    .line 200
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/v;->a:Lcom/google/googlenav/ui/view/dialog/s;
 
-    invoke-direct {p0, v0}, Lcom/google/googlenav/ui/view/android/ap;-><init>(I)V
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/V;->a:Lcom/google/googlenav/ui/view/dialog/Z;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method static synthetic a(Lcom/google/googlenav/ui/view/dialog/V;)Lcom/google/googlenav/ui/view/dialog/Z;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/V;->a:Lcom/google/googlenav/ui/view/dialog/Z;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method protected a(Landroid/app/ActionBar;)V
+.method public onClick(Landroid/view/View;)V
     .registers 4
+    .parameter
 
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/V;->getActionBar()Landroid/app/ActionBar;
+    .prologue
+    .line 203
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/v;->a:Lcom/google/googlenav/ui/view/dialog/s;
 
-    move-result-object v0
-
-    const v1, 0x7f0201cb
-
-    invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setIcon(I)V
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/V;->getActionBar()Landroid/app/ActionBar;
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/s;->d(Lcom/google/googlenav/ui/view/dialog/s;)Landroid/support/v4/view/ViewPager;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->c()I
 
-    invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setDisplayHomeAsUpEnabled(Z)V
+    move-result v0
 
-    return-void
-.end method
+    .line 204
+    if-lez v0, :cond_17
 
-.method protected c()Landroid/view/View;
-    .registers 7
+    .line 205
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/v;->a:Lcom/google/googlenav/ui/view/dialog/s;
 
-    const/4 v5, 0x0
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/V;->getLayoutInflater()Landroid/view/LayoutInflater;
-
-    move-result-object v0
-
-    const v1, 0x7f0300cd
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-static {v1}, Lcom/google/googlenav/ui/view/dialog/s;->d(Lcom/google/googlenav/ui/view/dialog/s;)Landroid/support/v4/view/ViewPager;
 
     move-result-object v1
 
-    const v0, 0x7f0f0008
+    add-int/lit8 v0, v0, -0x1
 
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v0}, Landroid/support/v4/view/ViewPager;->setCurrentItem(I)V
 
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    if-eqz v0, :cond_96
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/V;->f()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    :goto_1f
-    const/16 v0, 0x23b
-
-    invoke-static {v0}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/String;
-
-    invoke-static {}, Lcom/google/googlenav/M;->ac()Ljava/lang/String;
-
-    move-result-object v3
-
-    aput-object v3, v2, v5
-
-    const/4 v3, 0x1
-
-    invoke-static {}, Lcom/google/googlenav/M;->T()Ljava/lang/String;
-
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    invoke-static {v0, v2}, Las/b;->a(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const v0, 0x7f0f0266
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    invoke-static {v2}, Landroid/text/Html;->fromHtml(Ljava/lang/String;)Landroid/text/Spanned;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
-
-    invoke-virtual {v0}, Landroid/widget/TextView;->requestFocus()Z
-
-    const v0, 0x7f0f0267
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/Button;
-
-    invoke-virtual {v0, v5}, Landroid/widget/Button;->setVisibility(I)V
-
-    const/16 v2, 0x243
-
-    invoke-static {v2}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
-
-    new-instance v2, Lcom/google/googlenav/ui/view/dialog/W;
-
-    invoke-direct {v2, p0}, Lcom/google/googlenav/ui/view/dialog/W;-><init>(Lcom/google/googlenav/ui/view/dialog/V;)V
-
-    invoke-virtual {v0, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    const v0, 0x7f0f0144
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/Button;
-
-    invoke-virtual {v0, v5}, Landroid/widget/Button;->setVisibility(I)V
-
-    const/16 v2, 0x62
-
-    invoke-static {v2}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
-
-    new-instance v2, Lcom/google/googlenav/ui/view/dialog/X;
-
-    invoke-direct {v2, p0}, Lcom/google/googlenav/ui/view/dialog/X;-><init>(Lcom/google/googlenav/ui/view/dialog/V;)V
-
-    invoke-virtual {v0, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    new-instance v0, Lcom/google/googlenav/ui/view/dialog/Y;
-
-    invoke-direct {v0, p0}, Lcom/google/googlenav/ui/view/dialog/Y;-><init>(Lcom/google/googlenav/ui/view/dialog/V;)V
-
-    invoke-virtual {p0, v0}, Lcom/google/googlenav/ui/view/dialog/V;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
-
-    return-object v1
-
-    :cond_96
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/V;->f()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/google/googlenav/ui/view/dialog/V;->setTitle(Ljava/lang/CharSequence;)V
-
-    goto :goto_1f
-.end method
-
-.method public f()Ljava/lang/String;
-    .registers 2
-
-    const/16 v0, 0x237
-
-    invoke-static {v0}, Lcom/google/googlenav/U;->a(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    .line 207
+    :cond_17
+    return-void
 .end method

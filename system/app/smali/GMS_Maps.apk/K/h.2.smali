@@ -1,99 +1,178 @@
-.class LK/h;
+.class public Lk/h;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Iterator;
-
-
-# instance fields
-.field a:Ljava/util/Map$Entry;
-
-.field final synthetic b:Ljava/util/Iterator;
-
-.field final synthetic c:LK/g;
+.implements Lk/a;
 
 
 # direct methods
-.method constructor <init>(LK/g;Ljava/util/Iterator;)V
-    .registers 3
+.method public constructor <init>()V
+    .registers 1
 
-    iput-object p1, p0, LK/h;->c:LK/g;
-
-    iput-object p2, p0, LK/h;->b:Ljava/util/Iterator;
-
+    .prologue
+    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method private a(Lk/k;)Ljava/lang/String;
+    .registers 5
+    .parameter
 
-# virtual methods
-.method public hasNext()Z
-    .registers 2
+    .prologue
+    .line 95
+    invoke-virtual {p1}, Lk/k;->a()Ljava/util/List;
 
-    iget-object v0, p0, LK/h;->b:Ljava/util/Iterator;
+    move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    .line 96
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
+
+    move-result-object v1
+
+    .line 97
+    :cond_c
+    invoke-interface {v1}, Ljava/util/ListIterator;->hasPrevious()Z
 
     move-result v0
 
-    return v0
+    if-eqz v0, :cond_23
+
+    .line 98
+    invoke-interface {v1}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LA/j;
+
+    .line 99
+    instance-of v2, v0, Lk/z;
+
+    if-eqz v2, :cond_c
+
+    .line 100
+    check-cast v0, Lk/z;
+
+    invoke-virtual {v0}, Lk/z;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 103
+    :goto_22
+    return-object v0
+
+    :cond_23
+    const/4 v0, 0x0
+
+    goto :goto_22
 .end method
 
-.method public next()Ljava/lang/Object;
-    .registers 2
 
-    iget-object v0, p0, LK/h;->b:Ljava/util/Iterator;
+# virtual methods
+.method public a(Ljava/util/HashMap;Lk/k;Lcom/google/android/maps/driveabout/app/NavigationActivity;Lcom/google/android/maps/driveabout/app/cK;Lcom/google/android/maps/driveabout/app/aN;Ljava/lang/StringBuilder;)Z
+    .registers 10
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .prologue
+    .line 83
+    const-string v0, "state"
+
+    invoke-virtual {p1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/Map$Entry;
+    check-cast v0, Ljava/lang/String;
 
-    iput-object v0, p0, LK/h;->a:Ljava/util/Map$Entry;
+    .line 84
+    invoke-direct {p0, p2}, Lk/h;->a(Lk/k;)Ljava/lang/String;
 
-    iget-object v0, p0, LK/h;->a:Ljava/util/Map$Entry;
+    move-result-object v1
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    .line 85
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_14
+
+    .line 86
+    const/4 v0, 0x1
+
+    .line 89
+    :goto_13
+    return v0
+
+    .line 88
+    :cond_14
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Actual State: "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 89
+    const/4 v0, 0x0
+
+    goto :goto_13
+.end method
+
+.method public a()[Ljava/lang/String;
+    .registers 4
+
+    .prologue
+    .line 68
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    const-string v2, "state"
+
+    aput-object v2, v0, v1
 
     return-object v0
 .end method
 
-.method public remove()V
-    .registers 3
+.method public b()[Ljava/lang/String;
+    .registers 4
 
-    iget-object v0, p0, LK/h;->a:Ljava/util/Map$Entry;
-
-    if-eqz v0, :cond_1b
-
+    .prologue
+    .line 73
     const/4 v0, 0x1
 
-    :goto_5
-    invoke-static {v0}, Lcom/google/common/base/v;->b(Z)V
+    new-array v0, v0, [Ljava/lang/String;
 
-    iget-object v0, p0, LK/h;->a:Ljava/util/Map$Entry;
+    const/4 v1, 0x0
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    const-string v2, "state"
 
-    move-result-object v0
+    aput-object v2, v0, v1
 
-    iget-object v1, p0, LK/h;->b:Ljava/util/Iterator;
-
-    invoke-interface {v1}, Ljava/util/Iterator;->remove()V
-
-    iget-object v1, p0, LK/h;->c:LK/g;
-
-    iget-object v1, v1, LK/g;->a:LK/a;
-
-    invoke-static {v1, v0}, LK/a;->b(LK/a;Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_1b
-    const/4 v0, 0x0
-
-    goto :goto_5
+    return-object v0
 .end method

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="android_system_label">Android 系統</string>
+    <string name="lockscreen_network_locked_message">網路已鎖定</string>
+    <string name="lockscreen_sim_puk_locked_message">SIM 的 PUK 已鎖定。</string>
+    <string name="lockscreen_sim_puk_locked_instructions">請參閱《使用者指南》或聯絡客戶服務中心。</string>
+    <string name="lockscreen_sim_locked_message">SIM 卡已鎖定。</string>
+    <string name="lockscreen_sim_unlock_progress_dialog_message">解鎖 SIM 卡中...</string>
+    <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"畫出解鎖圖形已錯誤 %d 次。
+
+ 請在 %d 秒後再嘗試。"</string>
+    <string name="lockscreen_failed_attempts_almost_glogin" formatted="false">"畫出解鎖圖形已錯誤 %d 次。再錯誤 %d 次後，系統會要求使用 Google 登入來解鎖。
+
+ 請在 %d 秒後再試一次。"</string>
+    <string name="lockscreen_too_many_failed_attempts_countdown">%d 秒後再試一次。</string>
+    <string name="lockscreen_forgot_pattern_button_text">忘記解鎖圖形？</string>
+    <string name="lockscreen_glogin_forgot_pattern">解除封鎖帳戶</string>
+    <string name="lockscreen_glogin_too_many_attempts">解鎖圖形出錯次數過多！</string>
+    <string name="lockscreen_glogin_instructions">如要解除鎖定，請使用 Google 帳戶登入</string>
+    <string name="lockscreen_glogin_username_hint">使用者名稱 (電子郵件)</string>
+    <string name="lockscreen_glogin_password_hint">密碼</string>
+    <string name="lockscreen_glogin_submit_button">登入</string>
+    <string name="lockscreen_glogin_invalid_input">使用者名稱或密碼錯誤。</string>
+    <string name="lockscreen_glogin_checking_password">檢查中...</string>
+    <string name="lockscreen_unlock_label">解除封鎖</string>
+    <string name="lockscreen_sound_on_label">開啟音效</string>
+    <string name="lockscreen_sound_off_label">關閉音效</string>
+    <string name="lockscreen_phone_label">電話</string>
+    <string name="lockscreen_messaging_label">訊息</string>
+    <string name="lockscreen_carrier_default">(沒有服務)</string>
+    <string name="lockscreen_screen_locked">螢幕已鎖定。</string>
+    <string name="lockscreen_instructions_when_pattern_enabled">按下 [Menu] 解鎖或撥打緊急電話。</string>
+    <string name="lockscreen_instructions_when_pattern_disabled">按下 Menu 鍵解鎖。</string>
+    <string name="lockscreen_pattern_instructions">畫出解鎖圖形</string>
+    <string name="lockscreen_emergency_call">緊急電話</string>
+    <string name="lockscreen_return_to_call">返回通話</string>
+    <string name="lockscreen_pattern_correct">正確！</string>
+    <string name="lockscreen_pattern_wrong">很抱歉，請再試一次</string>
+    <string name="lockscreen_plugged_in">正在充電 (%d%%)</string>
+    <string name="lockscreen_charged">充電完成。</string>
+    <string name="lockscreen_low_battery">請連接充電器。</string>
+    <string name="lockscreen_missing_sim_message_short">"沒有 SIM  卡。"</string>
+    <string name="lockscreen_missing_sim_message">手機未插入 SIM 卡。</string>
+    <string name="lockscreen_missing_sim_instructions">請插入 SIM 卡。</string>
+    <string name="full_wday_month_day_no_year">M 月 d 日E</string>
+    <string name="global_action_silent_mode_on_status">音效已關閉</string>
+    <string name="global_action_silent_mode_off_status">音效已開啟</string>
+    <string name="emergency_calls_only">僅可撥打緊急電話</string>
+    <string name="zzz_dual_clock_city_seoul">首爾</string>
+    <string name="zzz_dual_clock_city_local">本地時間</string>
+    <string name="zzz_glass_lock_help_text_1">手機已鎖住</string>
+    <string name="zzz_glass_lock_help_text_2">滑動鏡面解鎖</string>
+    <string name="zzz_puzzle_lock_help_text_3">填充拼圖解鎖</string>
+    <string name="zzz_smart_unlock_help_text_1">畫出</string>
+    <string name="missed_call">未接來電</string>
+    <string name="missed_text">未讀信息</string>
+    <string name="missed_calls">未接來電</string>
+    <string name="missed_texts">未讀信息</string>
+    <string name="reboot">重啟手機</string>
+    <string name="reboot_recovery">恢復模式</string>
+    <string name="reboot_download">刷機模式</string>
+    <string name="yes">確定</string>
+    <string name="no">取消</string>
+    <string name="quickpanel_wifi_ap_text">无线基地台</string>
+    <string name="quickpanel_dc_text">數據</string>
+    <string name="quickpanel_network_mode_text">網絡模式</string>
+    <string name="quickpanel_sound_text">聲音</string>
+    <string name="quickpanel_sound_vibration_text">聲音/震動</string>
+    <string name="quickpanel_silent_text">靜音</string>
+    <string name="quickpanel_vibration_text">震動</string>
+    <string name="quickpanel_rotation_text">旋轉</string>
+    <string name="quickpanel_bluetooth_text">藍牙</string>
+    <string name="quickpanel_autosync_text">同步</string>
+    <string name="quickpanel_brightness_text">亮度</string>
+    <string name="quickpanel_screen_timeout_text">屏幕超時</string>
+    <string name="quickpanel_lockscreen_text">鎖屏</string>
+    <string name="quickpanel_airplane_text">飛行</string>
+    <string name="quickpanel_flashlight_text">手電筒</string>
+    <string name="quickpanel_reboot_text">重啟</string>
+    <string name="quickpanel_shutdown_text">關機</string>
+    <string name="airplane_mode">在飛行模式中</string>
+    <string name="shutdown_confirm">手機即將關機。</string>
+    <string name="screen_timeout_seconds">屏幕超時設置爲: %d 秒</string>
+    <string name="screen_timeout_minutes">屏幕超時設置爲: %d 分鍾</string>
+    <string name="screen_timeout_hours">屏幕超時設置爲: %d 小時</string>
+</resources>

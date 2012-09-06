@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/maps/driveabout/publisher/a;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
 .implements Landroid/os/IInterface;

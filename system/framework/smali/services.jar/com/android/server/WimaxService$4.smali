@@ -406,7 +406,7 @@
 
     move-result v6
 
-    const/4 v7, 0x1
+    const/4 v7, 0x0
 
     if-ne v6, v7, :cond_156
 
@@ -798,7 +798,7 @@
 
     move-result v6
 
-    const/4 v7, 0x1
+    const/4 v7, 0x0
 
     if-ne v6, v7, :cond_2a5
 
@@ -987,7 +987,7 @@
 
     move-result v6
 
-    const/4 v7, 0x1
+    const/4 v7, 0x0
 
     if-ne v6, v7, :cond_3aa
 
@@ -1183,7 +1183,7 @@
 
     move-result v6
 
-    const/4 v7, 0x1
+    const/4 v7, 0x0
 
     if-ne v6, v7, :cond_3ec
 

@@ -1,90 +1,62 @@
-.class Lo/o;
+.class public final Lo/O;
 .super Ljava/lang/Object;
-
-
-# instance fields
-.field private final a:Ljava/util/ArrayList;
+.source "SourceFile"
 
 
 # direct methods
-.method private constructor <init>()V
+.method public static a(I)Ljava/lang/String;
     .registers 2
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 28
+    packed-switch p0, :pswitch_data_10
 
-    new-instance v0, Ljava/util/ArrayList;
+    .line 36
+    :pswitch_3
+    const-string v0, ""
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    :goto_5
+    return-object v0
 
-    iput-object v0, p0, Lo/o;->a:Ljava/util/ArrayList;
+    .line 30
+    :pswitch_6
+    const-string v0, "Driving"
 
-    return-void
+    goto :goto_5
+
+    .line 32
+    :pswitch_9
+    const-string v0, "Walking"
+
+    goto :goto_5
+
+    .line 34
+    :pswitch_c
+    const-string v0, "Bicycling"
+
+    goto :goto_5
+
+    .line 28
+    nop
+
+    :pswitch_data_10
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_3
+        :pswitch_9
+        :pswitch_c
+    .end packed-switch
 .end method
 
-.method synthetic constructor <init>(Lo/m;)V
-    .registers 2
+.method public static a()Z
+    .registers 1
 
-    invoke-direct {p0}, Lo/o;-><init>()V
+    .prologue
+    .line 44
+    invoke-static {}, Lcom/google/googlenav/K;->C()Z
 
-    return-void
-.end method
+    move-result v0
 
-
-# virtual methods
-.method public a()Lo/l;
-    .registers 4
-
-    new-instance v1, Lo/n;
-
-    iget-object v0, p0, Lo/o;->a:Ljava/util/ArrayList;
-
-    iget-object v2, p0, Lo/o;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    new-array v2, v2, [Lo/l;
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lo/l;
-
-    invoke-direct {v1, v0}, Lo/n;-><init>([Lo/l;)V
-
-    return-object v1
-.end method
-
-.method public a(Lo/l;)V
-    .registers 4
-
-    instance-of v0, p1, Lo/n;
-
-    if-eqz v0, :cond_14
-
-    iget-object v0, p0, Lo/o;->a:Ljava/util/ArrayList;
-
-    check-cast p1, Lo/n;
-
-    invoke-virtual {p1}, Lo/n;->b()[Lo/l;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
-
-    :goto_13
-    return-void
-
-    :cond_14
-    iget-object v0, p0, Lo/o;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_13
+    return v0
 .end method

@@ -43,40 +43,40 @@
     .registers 2
 
     .prologue
-    .line 2724
+    .line 3040
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 2729
+    .line 3045
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->trailerId_:Ljava/lang/String;
 
-    .line 2746
+    .line 3062
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->title_:Ljava/lang/String;
 
-    .line 2763
+    .line 3079
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->thumbnailUrl_:Ljava/lang/String;
 
-    .line 2780
+    .line 3096
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->watchUrl_:Ljava/lang/String;
 
-    .line 2797
+    .line 3113
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->duration_:Ljava/lang/String;
 
-    .line 2845
+    .line 3162
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->cachedSize:I
 
-    .line 2724
+    .line 3040
     return-void
 .end method
 
@@ -86,15 +86,15 @@
     .registers 2
 
     .prologue
-    .line 2847
+    .line 3165
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 2849
+    .line 3167
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->getSerializedSize()I
 
-    .line 2851
+    .line 3169
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->cachedSize:I
 
@@ -105,7 +105,7 @@
     .registers 2
 
     .prologue
-    .line 2798
+    .line 3114
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->duration_:Ljava/lang/String;
 
     return-object v0
@@ -115,10 +115,10 @@
     .registers 4
 
     .prologue
-    .line 2855
+    .line 3174
     const/4 v0, 0x0
 
-    .line 2856
+    .line 3175
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasTrailerId()Z
 
@@ -126,7 +126,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 2857
+    .line 3176
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->getTrailerId()Ljava/lang/String;
@@ -139,7 +139,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2860
+    .line 3179
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasTitle()Z
 
@@ -147,7 +147,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 2861
+    .line 3180
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->getTitle()Ljava/lang/String;
@@ -160,7 +160,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2864
+    .line 3183
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasThumbnailUrl()Z
 
@@ -168,7 +168,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 2865
+    .line 3184
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->getThumbnailUrl()Ljava/lang/String;
@@ -181,7 +181,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2868
+    .line 3187
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasWatchUrl()Z
 
@@ -189,7 +189,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 2869
+    .line 3188
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->getWatchUrl()Ljava/lang/String;
@@ -202,7 +202,7 @@
 
     add-int/2addr v0, v1
 
-    .line 2872
+    .line 3191
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasDuration()Z
 
@@ -210,7 +210,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 2873
+    .line 3192
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->getDuration()Ljava/lang/String;
@@ -223,11 +223,11 @@
 
     add-int/2addr v0, v1
 
-    .line 2876
+    .line 3195
     :cond_51
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->cachedSize:I
 
-    .line 2877
+    .line 3196
     return v0
 .end method
 
@@ -235,7 +235,7 @@
     .registers 2
 
     .prologue
-    .line 2764
+    .line 3080
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->thumbnailUrl_:Ljava/lang/String;
 
     return-object v0
@@ -245,7 +245,7 @@
     .registers 2
 
     .prologue
-    .line 2747
+    .line 3063
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->title_:Ljava/lang/String;
 
     return-object v0
@@ -255,7 +255,7 @@
     .registers 2
 
     .prologue
-    .line 2730
+    .line 3046
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->trailerId_:Ljava/lang/String;
 
     return-object v0
@@ -265,7 +265,7 @@
     .registers 2
 
     .prologue
-    .line 2781
+    .line 3097
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->watchUrl_:Ljava/lang/String;
 
     return-object v0
@@ -275,7 +275,7 @@
     .registers 2
 
     .prologue
-    .line 2799
+    .line 3115
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasDuration:Z
 
     return v0
@@ -285,7 +285,7 @@
     .registers 2
 
     .prologue
-    .line 2765
+    .line 3081
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasThumbnailUrl:Z
 
     return v0
@@ -295,7 +295,7 @@
     .registers 2
 
     .prologue
-    .line 2748
+    .line 3064
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasTitle:Z
 
     return v0
@@ -305,7 +305,7 @@
     .registers 2
 
     .prologue
-    .line 2731
+    .line 3047
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasTrailerId:Z
 
     return v0
@@ -315,7 +315,7 @@
     .registers 2
 
     .prologue
-    .line 2782
+    .line 3098
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasWatchUrl:Z
 
     return v0
@@ -331,29 +331,29 @@
     .end annotation
 
     .prologue
-    .line 2884
+    .line 3204
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 2885
+    .line 3205
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_36
 
-    .line 2889
+    .line 3209
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 2890
+    .line 3210
     :sswitch_d
     return-object p0
 
-    .line 2895
+    .line 3215
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -363,7 +363,7 @@
 
     goto :goto_0
 
-    .line 2899
+    .line 3219
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -373,7 +373,7 @@
 
     goto :goto_0
 
-    .line 2903
+    .line 3223
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -383,7 +383,7 @@
 
     goto :goto_0
 
-    .line 2907
+    .line 3227
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -393,7 +393,7 @@
 
     goto :goto_0
 
-    .line 2911
+    .line 3231
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -403,7 +403,7 @@
 
     goto :goto_0
 
-    .line 2885
+    .line 3205
     :sswitch_data_36
     .sparse-switch
         0x0 -> :sswitch_d
@@ -425,7 +425,7 @@
     .end annotation
 
     .prologue
-    .line 2722
+    .line 3037
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;
 
     move-result-object v0
@@ -438,15 +438,15 @@
     .parameter "value"
 
     .prologue
-    .line 2801
+    .line 3117
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasDuration:Z
 
-    .line 2802
+    .line 3118
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->duration_:Ljava/lang/String;
 
-    .line 2803
+    .line 3119
     return-object p0
 .end method
 
@@ -455,15 +455,15 @@
     .parameter "value"
 
     .prologue
-    .line 2767
+    .line 3083
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasThumbnailUrl:Z
 
-    .line 2768
+    .line 3084
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->thumbnailUrl_:Ljava/lang/String;
 
-    .line 2769
+    .line 3085
     return-object p0
 .end method
 
@@ -472,15 +472,15 @@
     .parameter "value"
 
     .prologue
-    .line 2750
+    .line 3066
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasTitle:Z
 
-    .line 2751
+    .line 3067
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->title_:Ljava/lang/String;
 
-    .line 2752
+    .line 3068
     return-object p0
 .end method
 
@@ -489,15 +489,15 @@
     .parameter "value"
 
     .prologue
-    .line 2733
+    .line 3049
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasTrailerId:Z
 
-    .line 2734
+    .line 3050
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->trailerId_:Ljava/lang/String;
 
-    .line 2735
+    .line 3051
     return-object p0
 .end method
 
@@ -506,15 +506,15 @@
     .parameter "value"
 
     .prologue
-    .line 2784
+    .line 3100
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasWatchUrl:Z
 
-    .line 2785
+    .line 3101
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->watchUrl_:Ljava/lang/String;
 
-    .line 2786
+    .line 3102
     return-object p0
 .end method
 
@@ -528,14 +528,14 @@
     .end annotation
 
     .prologue
-    .line 2828
+    .line 3145
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasTrailerId()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 2829
+    .line 3146
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->getTrailerId()Ljava/lang/String;
@@ -544,7 +544,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2831
+    .line 3148
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasTitle()Z
 
@@ -552,7 +552,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 2832
+    .line 3149
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->getTitle()Ljava/lang/String;
@@ -561,7 +561,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2834
+    .line 3151
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasThumbnailUrl()Z
 
@@ -569,7 +569,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 2835
+    .line 3152
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->getThumbnailUrl()Ljava/lang/String;
@@ -578,7 +578,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2837
+    .line 3154
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasWatchUrl()Z
 
@@ -586,7 +586,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 2838
+    .line 3155
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->getWatchUrl()Ljava/lang/String;
@@ -595,7 +595,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2840
+    .line 3157
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->hasDuration()Z
 
@@ -603,7 +603,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 2841
+    .line 3158
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocDetails$Trailer;->getDuration()Ljava/lang/String;
@@ -612,7 +612,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 2843
+    .line 3160
     :cond_46
     return-void
 .end method

@@ -1,253 +1,406 @@
-.class public Lg/e;
-.super Ljava/lang/Object;
+.class Lg/e;
+.super Landroid/os/Handler;
+.source "SourceFile"
 
 
 # instance fields
-.field private final a:Ljava/util/ArrayList;
+.field final synthetic a:Lg/c;
+
+.field private final b:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method constructor <init>(Lg/c;Landroid/os/Looper;I)V
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 413
+    iput-object p1, p0, Lg/e;->a:Lg/c;
 
-    new-instance v0, Ljava/util/ArrayList;
+    .line 414
+    invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    .line 415
+    iput p3, p0, Lg/e;->b:I
 
-    iput-object v0, p0, Lg/e;->a:Ljava/util/ArrayList;
-
-    return-void
-.end method
-
-.method public constructor <init>(I)V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(I)V
-
-    iput-object v0, p0, Lg/e;->a:Ljava/util/ArrayList;
-
-    return-void
-.end method
-
-.method public static a(Ljava/io/DataInputStream;)Lg/e;
-    .registers 5
-
-    invoke-virtual {p0}, Ljava/io/DataInputStream;->readInt()I
-
-    move-result v1
-
-    new-instance v2, Lg/e;
-
-    invoke-direct {v2, v1}, Lg/e;-><init>(I)V
-
-    const/4 v0, 0x0
-
-    :goto_a
-    if-ge v0, v1, :cond_16
-
-    invoke-static {p0}, Lg/f;->a(Ljava/io/DataInputStream;)Lg/f;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Lg/e;->a(Lg/f;)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_a
-
-    :cond_16
-    return-object v2
-.end method
-
-.method private a(Lg/f;)V
-    .registers 3
-
-    iget-object v0, p0, Lg/e;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
+    .line 416
     return-void
 .end method
 
 
 # virtual methods
-.method public a([F)F
-    .registers 8
+.method public handleMessage(Landroid/os/Message;)V
+    .registers 7
+    .parameter
 
-    const-wide/16 v0, 0x0
+    .prologue
+    .line 420
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    iget-object v2, p0, Lg/e;->a:Ljava/util/ArrayList;
+    packed-switch v0, :pswitch_data_e2
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    .line 502
+    :cond_5
+    :goto_5
+    return-void
 
-    move-result-object v3
-
-    move-wide v1, v0
-
-    :goto_9
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2c
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
+    .line 422
+    :pswitch_6
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lg/f;
 
-    iget v4, v0, Lg/f;->a:I
+    .line 425
+    iget-object v1, p0, Lg/e;->a:Lg/c;
 
-    const/4 v5, -0x1
+    invoke-static {v1}, Lg/c;->b(Lg/c;)Ljava/lang/Object;
 
-    if-ne v4, v5, :cond_21
+    move-result-object v1
 
-    iget v0, v0, Lg/f;->b:F
+    monitor-enter v1
 
-    float-to-double v4, v0
+    .line 426
+    :try_start_11
+    iget-object v2, p0, Lg/e;->a:Lg/c;
 
-    add-double v0, v1, v4
+    invoke-static {v2}, Lg/c;->g(Lg/c;)I
 
-    :goto_1f
-    move-wide v1, v0
+    move-result v2
 
-    goto :goto_9
-
-    :cond_21
-    iget v4, v0, Lg/f;->b:F
-
-    iget v0, v0, Lg/f;->a:I
-
-    aget v0, p1, v0
-
-    mul-float/2addr v0, v4
-
-    float-to-double v4, v0
-
-    add-double v0, v1, v4
-
-    goto :goto_1f
-
-    :cond_2c
-    double-to-float v0, v1
-
-    return v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .registers 4
-
-    if-ne p0, p1, :cond_4
-
-    const/4 v0, 0x1
-
-    :goto_3
-    return v0
-
-    :cond_4
-    instance-of v0, p1, Lg/e;
-
-    if-nez v0, :cond_a
-
-    const/4 v0, 0x0
-
-    goto :goto_3
-
-    :cond_a
-    check-cast p1, Lg/e;
-
-    iget-object v0, p0, Lg/e;->a:Ljava/util/ArrayList;
-
-    iget-object v1, p1, Lg/e;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    goto :goto_3
-.end method
-
-.method public hashCode()I
-    .registers 2
-
-    iget-object v0, p0, Lg/e;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->toArray()[Ljava/lang/Object;
+    .line 427
+    invoke-static {v0}, Lg/f;->a(Lg/f;)Lcom/google/android/location/internal/INetworkLocationInternal;
 
     move-result-object v0
 
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+    .line 428
+    monitor-exit v1
+    :try_end_1c
+    .catchall {:try_start_11 .. :try_end_1c} :catchall_2c
 
-    move-result v0
+    .line 429
+    if-eqz v0, :cond_5
 
-    add-int/lit16 v0, v0, 0x20f
+    .line 431
+    :try_start_1e
+    iget-object v1, p0, Lg/e;->a:Lg/c;
 
-    return v0
-.end method
+    invoke-static {v1}, Lg/c;->h(Lg/c;)Lcom/google/android/location/internal/a;
 
-.method public toString()Ljava/lang/String;
-    .registers 5
+    move-result-object v1
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    iget v3, p0, Lg/e;->b:I
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-interface {v0, v2, v1, v3}, Lcom/google/android/location/internal/INetworkLocationInternal;->a(ILcom/google/android/location/internal/ILocationListener;I)V
+    :try_end_29
+    .catch Landroid/os/RemoteException; {:try_start_1e .. :try_end_29} :catch_2a
 
-    iget-object v0, p0, Lg/e;->a:Ljava/util/ArrayList;
+    goto :goto_5
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    .line 432
+    :catch_2a
+    move-exception v0
+
+    goto :goto_5
+
+    .line 428
+    :catchall_2c
+    move-exception v0
+
+    :try_start_2d
+    monitor-exit v1
+    :try_end_2e
+    .catchall {:try_start_2d .. :try_end_2e} :catchall_2c
+
+    throw v0
+
+    .line 439
+    :pswitch_2f
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Lg/f;
+
+    .line 441
+    iget-object v1, p0, Lg/e;->a:Lg/c;
+
+    invoke-static {v1}, Lg/c;->b(Lg/c;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    monitor-enter v1
+
+    .line 442
+    :try_start_3a
+    invoke-static {v0}, Lg/f;->a(Lg/f;)Lcom/google/android/location/internal/INetworkLocationInternal;
 
     move-result-object v2
 
-    :goto_b
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    .line 443
+    monitor-exit v1
+    :try_end_3f
+    .catchall {:try_start_3a .. :try_end_3f} :catchall_54
 
-    move-result v0
+    .line 444
+    if-eqz v2, :cond_4a
 
-    if-eqz v0, :cond_32
+    .line 446
+    :try_start_41
+    iget-object v1, p0, Lg/e;->a:Lg/c;
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v1}, Lg/c;->h(Lg/c;)Lcom/google/android/location/internal/a;
+
+    move-result-object v1
+
+    invoke-interface {v2, v1}, Lcom/google/android/location/internal/INetworkLocationInternal;->a(Lcom/google/android/location/internal/ILocationListener;)V
+    :try_end_4a
+    .catch Landroid/os/RemoteException; {:try_start_41 .. :try_end_4a} :catch_de
+
+    .line 451
+    :cond_4a
+    :goto_4a
+    iget-object v1, p0, Lg/e;->a:Lg/c;
+
+    invoke-static {v1}, Lg/c;->i(Lg/c;)Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
+
+    goto :goto_5
+
+    .line 443
+    :catchall_54
+    move-exception v0
+
+    :try_start_55
+    monitor-exit v1
+    :try_end_56
+    .catchall {:try_start_55 .. :try_end_56} :catchall_54
+
+    throw v0
+
+    .line 455
+    :pswitch_57
+    iget-object v0, p0, Lg/e;->a:Lg/c;
+
+    invoke-static {v0}, Lg/c;->j(Lg/c;)Lcom/google/android/location/internal/d;
 
     move-result-object v0
+
+    .line 456
+    iget-object v1, p0, Lg/e;->a:Lg/c;
+
+    invoke-static {v1}, Lg/c;->b(Lg/c;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    monitor-enter v1
+
+    .line 457
+    :try_start_64
+    iget-object v2, v0, Lcom/google/android/location/internal/d;->a:Lcom/google/android/location/internal/e;
+
+    iget-object v3, p0, Lg/e;->a:Lg/c;
+
+    invoke-static {v3}, Lg/c;->k(Lg/c;)Lcom/google/android/location/internal/d;
+
+    move-result-object v3
+
+    iget-object v3, v3, Lcom/google/android/location/internal/d;->a:Lcom/google/android/location/internal/e;
+
+    if-eq v2, v3, :cond_8c
+
+    iget-object v2, p0, Lg/e;->a:Lg/c;
+
+    invoke-static {v2}, Lg/c;->c(Lg/c;)Lg/f;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_8c
+
+    .line 458
+    iget-object v2, p0, Lg/e;->a:Lg/c;
+
+    invoke-static {v2}, Lg/c;->d(Lg/c;)Lg/e;
+
+    move-result-object v2
+
+    const/4 v3, 0x2
+
+    iget-object v4, p0, Lg/e;->a:Lg/c;
+
+    invoke-static {v4}, Lg/c;->c(Lg/c;)Lg/f;
+
+    move-result-object v4
+
+    invoke-static {v2, v3, v4}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
+
+    .line 463
+    :cond_8c
+    iget-object v2, p0, Lg/e;->a:Lg/c;
+
+    invoke-static {v2, v0}, Lg/c;->a(Lg/c;Lcom/google/android/location/internal/d;)V
+
+    .line 464
+    monitor-exit v1
+
+    goto/16 :goto_5
+
+    :catchall_94
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_96
+    .catchall {:try_start_64 .. :try_end_96} :catchall_94
+
+    throw v0
+
+    .line 468
+    :pswitch_97
+    iget-object v0, p0, Lg/e;->a:Lg/c;
+
+    invoke-static {v0}, Lg/c;->l(Lg/c;)Landroid/os/HandlerThread;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/HandlerThread;->quit()Z
+
+    goto/16 :goto_5
+
+    .line 472
+    :pswitch_a2
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lg/f;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    .line 474
+    iget-object v1, p0, Lg/e;->a:Lg/c;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v1}, Lg/c;->b(Lg/c;)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lg/f;->toString()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v0
+    monitor-enter v1
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v3, " "
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 475
+    :try_start_ad
+    invoke-static {v0}, Lg/f;->a(Lg/f;)Lcom/google/android/location/internal/INetworkLocationInternal;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 476
+    monitor-exit v1
+    :try_end_b2
+    .catchall {:try_start_ad .. :try_end_b2} :catchall_bd
+
+    .line 477
+    if-eqz v0, :cond_5
+
+    .line 479
+    const/4 v1, 0x1
+
+    :try_start_b5
+    invoke-interface {v0, v1}, Lcom/google/android/location/internal/INetworkLocationInternal;->a(Z)V
+    :try_end_b8
+    .catch Landroid/os/RemoteException; {:try_start_b5 .. :try_end_b8} :catch_ba
+
+    goto/16 :goto_5
+
+    .line 480
+    :catch_ba
+    move-exception v0
+
+    goto/16 :goto_5
+
+    .line 476
+    :catchall_bd
+    move-exception v0
+
+    :try_start_be
+    monitor-exit v1
+    :try_end_bf
+    .catchall {:try_start_be .. :try_end_bf} :catchall_bd
+
+    throw v0
+
+    .line 487
+    :pswitch_c0
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Lg/f;
+
+    .line 489
+    iget-object v1, p0, Lg/e;->a:Lg/c;
+
+    invoke-static {v1}, Lg/c;->b(Lg/c;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    monitor-enter v1
+
+    .line 490
+    :try_start_cb
+    invoke-static {v0}, Lg/f;->a(Lg/f;)Lcom/google/android/location/internal/INetworkLocationInternal;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 491
+    monitor-exit v1
+    :try_end_d0
+    .catchall {:try_start_cb .. :try_end_d0} :catchall_db
 
-    goto :goto_b
+    .line 492
+    if-eqz v0, :cond_5
 
-    :cond_32
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 494
+    const/4 v1, 0x0
 
-    move-result-object v0
+    :try_start_d3
+    invoke-interface {v0, v1}, Lcom/google/android/location/internal/INetworkLocationInternal;->a(Z)V
+    :try_end_d6
+    .catch Landroid/os/RemoteException; {:try_start_d3 .. :try_end_d6} :catch_d8
 
-    return-object v0
+    goto/16 :goto_5
+
+    .line 495
+    :catch_d8
+    move-exception v0
+
+    goto/16 :goto_5
+
+    .line 491
+    :catchall_db
+    move-exception v0
+
+    :try_start_dc
+    monitor-exit v1
+    :try_end_dd
+    .catchall {:try_start_dc .. :try_end_dd} :catchall_db
+
+    throw v0
+
+    .line 447
+    :catch_de
+    move-exception v1
+
+    goto/16 :goto_4a
+
+    .line 420
+    nop
+
+    :pswitch_data_e2
+    .packed-switch 0x1
+        :pswitch_6
+        :pswitch_2f
+        :pswitch_57
+        :pswitch_97
+        :pswitch_a2
+        :pswitch_c0
+    .end packed-switch
 .end method

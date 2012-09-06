@@ -4,33 +4,31 @@
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/tablet/ah;
+.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/tablet/ag;
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/youtube/app/honeycomb/tablet/ah;)V
-    .registers 3
+.method private constructor <init>(Lcom/google/android/youtube/app/honeycomb/tablet/ag;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 791
-    const/4 v0, 0x0
+    .line 995
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/al;->a:Lcom/google/android/youtube/app/honeycomb/tablet/ag;
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/app/honeycomb/tablet/al;-><init>(Lcom/google/android/youtube/app/honeycomb/tablet/ah;B)V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>(Lcom/google/android/youtube/app/honeycomb/tablet/ah;B)V
+.method synthetic constructor <init>(Lcom/google/android/youtube/app/honeycomb/tablet/ag;B)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 791
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/al;->a:Lcom/google/android/youtube/app/honeycomb/tablet/ah;
-
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    .line 995
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/honeycomb/tablet/al;-><init>(Lcom/google/android/youtube/app/honeycomb/tablet/ag;)V
 
     return-void
 .end method
@@ -41,10 +39,10 @@
     .registers 4
 
     .prologue
-    .line 794
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/al;->a:Lcom/google/android/youtube/app/honeycomb/tablet/ah;
+    .line 998
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/al;->a:Lcom/google/android/youtube/app/honeycomb/tablet/ag;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/ah;->e(Lcom/google/android/youtube/app/honeycomb/tablet/ah;)Landroid/app/Activity;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/ag;->h(Lcom/google/android/youtube/app/honeycomb/tablet/ag;)Landroid/app/Activity;
 
     move-result-object v0
 
@@ -56,7 +54,7 @@
 
     invoke-virtual {v0, p0, v1}, Landroid/app/Activity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 796
+    .line 1000
     return-void
 .end method
 
@@ -64,16 +62,16 @@
     .registers 2
 
     .prologue
-    .line 799
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/al;->a:Lcom/google/android/youtube/app/honeycomb/tablet/ah;
+    .line 1003
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/al;->a:Lcom/google/android/youtube/app/honeycomb/tablet/ag;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/ah;->f(Lcom/google/android/youtube/app/honeycomb/tablet/ah;)Landroid/app/Activity;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/ag;->i(Lcom/google/android/youtube/app/honeycomb/tablet/ag;)Landroid/app/Activity;
 
     move-result-object v0
 
     invoke-virtual {v0, p0}, Landroid/app/Activity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 800
+    .line 1004
     return-void
 .end method
 
@@ -83,32 +81,32 @@
     .parameter
 
     .prologue
-    .line 804
+    .line 1008
     invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
 
-    .line 805
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/al;->a:Lcom/google/android/youtube/app/honeycomb/tablet/ah;
+    .line 1009
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/al;->a:Lcom/google/android/youtube/app/honeycomb/tablet/ag;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/ah;->g(Lcom/google/android/youtube/app/honeycomb/tablet/ah;)Lcom/google/android/youtube/core/player/aq;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/ag;->e(Lcom/google/android/youtube/app/honeycomb/tablet/ag;)Lcom/google/android/youtube/core/player/bi;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/player/aq;->b()Z
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/player/bi;->c()Z
 
     move-result v0
 
     if-eqz v0, :cond_18
 
-    .line 806
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/al;->a:Lcom/google/android/youtube/app/honeycomb/tablet/ah;
+    .line 1010
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/al;->a:Lcom/google/android/youtube/app/honeycomb/tablet/ag;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/ah;->g(Lcom/google/android/youtube/app/honeycomb/tablet/ah;)Lcom/google/android/youtube/core/player/aq;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/ag;->e(Lcom/google/android/youtube/app/honeycomb/tablet/ag;)Lcom/google/android/youtube/core/player/bi;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/player/aq;->e()V
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/player/bi;->f()V
 
-    .line 808
+    .line 1012
     :cond_18
     return-void
 .end method

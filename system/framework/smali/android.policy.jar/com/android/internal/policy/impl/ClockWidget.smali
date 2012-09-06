@@ -16,7 +16,7 @@
 
 
 # static fields
-.field public static final DBG:Z = true
+.field public static final DBG:Z = false
 
 .field private static final TAG:Ljava/lang/String; = "ClockWidget"
 

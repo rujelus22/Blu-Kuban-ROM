@@ -90,7 +90,7 @@
     .parameter
 
     .prologue
-    .line 117
+    .line 125
     new-instance v0, Lorg/codehaus/jackson/JsonLocation;
 
     const-wide/16 v2, -0x1
@@ -114,24 +114,24 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 70
+    .line 78
     iget-object v0, p0, Lorg/codehaus/jackson/a/h;->g:Lorg/codehaus/jackson/a/h;
 
-    .line 71
+    .line 79
     if-nez v0, :cond_d
 
-    .line 72
+    .line 80
     new-instance v0, Lorg/codehaus/jackson/a/h;
 
     invoke-direct {v0, p0, v1, p1, p2}, Lorg/codehaus/jackson/a/h;-><init>(Lorg/codehaus/jackson/a/h;III)V
 
     iput-object v0, p0, Lorg/codehaus/jackson/a/h;->g:Lorg/codehaus/jackson/a/h;
 
-    .line 76
+    .line 84
     :goto_c
     return-object v0
 
-    .line 75
+    .line 83
     :cond_d
     invoke-direct {v0, v1, p1, p2}, Lorg/codehaus/jackson/a/h;->a(III)V
 
@@ -143,10 +143,10 @@
     .parameter
 
     .prologue
-    .line 140
+    .line 148
     iput-object p1, p0, Lorg/codehaus/jackson/a/h;->f:Ljava/lang/String;
 
-    .line 141
+    .line 149
     return-void
 .end method
 
@@ -158,24 +158,24 @@
     .prologue
     const/4 v1, 0x2
 
-    .line 81
+    .line 89
     iget-object v0, p0, Lorg/codehaus/jackson/a/h;->g:Lorg/codehaus/jackson/a/h;
 
-    .line 82
+    .line 90
     if-nez v0, :cond_d
 
-    .line 83
+    .line 91
     new-instance v0, Lorg/codehaus/jackson/a/h;
 
     invoke-direct {v0, p0, v1, p1, p2}, Lorg/codehaus/jackson/a/h;-><init>(Lorg/codehaus/jackson/a/h;III)V
 
     iput-object v0, p0, Lorg/codehaus/jackson/a/h;->g:Lorg/codehaus/jackson/a/h;
 
-    .line 87
+    .line 95
     :goto_c
     return-object v0
 
-    .line 86
+    .line 94
     :cond_d
     invoke-direct {v0, v1, p1, p2}, Lorg/codehaus/jackson/a/h;->a(III)V
 
@@ -186,7 +186,7 @@
     .registers 2
 
     .prologue
-    .line 97
+    .line 105
     iget-object v0, p0, Lorg/codehaus/jackson/a/h;->f:Ljava/lang/String;
 
     return-object v0
@@ -196,7 +196,7 @@
     .registers 2
 
     .prologue
-    .line 100
+    .line 108
     iget-object v0, p0, Lorg/codehaus/jackson/a/h;->c:Lorg/codehaus/jackson/a/h;
 
     return-object v0
@@ -206,14 +206,14 @@
     .registers 3
 
     .prologue
-    .line 134
+    .line 142
     iget v0, p0, Lorg/codehaus/jackson/a/h;->b:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lorg/codehaus/jackson/a/h;->b:I
 
-    .line 135
+    .line 143
     iget v1, p0, Lorg/codehaus/jackson/a/h;->a:I
 
     if-eqz v1, :cond_e
@@ -232,102 +232,104 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .registers 4
 
     .prologue
-    const/16 v3, 0x5d
-
     const/16 v2, 0x22
 
-    .line 156
+    .line 164
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x40
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 157
+    .line 165
     iget v1, p0, Lorg/codehaus/jackson/a/h;->a:I
 
-    packed-switch v1, :pswitch_data_4a
+    packed-switch v1, :pswitch_data_4c
 
-    .line 178
-    :goto_10
+    .line 186
+    :goto_e
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 159
-    :pswitch_15
+    .line 167
+    :pswitch_13
     const-string v1, "/"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_10
+    goto :goto_e
 
-    .line 162
-    :pswitch_1b
+    .line 170
+    :pswitch_19
     const/16 v1, 0x5b
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 163
+    .line 171
     invoke-virtual {p0}, Lorg/codehaus/jackson/a/h;->f()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 164
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    .line 172
+    const/16 v1, 0x5d
 
-    goto :goto_10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 167
+    goto :goto_e
+
+    .line 175
     :pswitch_2b
     const/16 v1, 0x7b
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 168
+    .line 176
     iget-object v1, p0, Lorg/codehaus/jackson/a/h;->f:Ljava/lang/String;
 
-    if-eqz v1, :cond_43
+    if-eqz v1, :cond_45
 
-    .line 169
+    .line 177
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 170
+    .line 178
     iget-object v1, p0, Lorg/codehaus/jackson/a/h;->f:Ljava/lang/String;
 
     invoke-static {v0, v1}, Lorg/codehaus/jackson/util/b;->a(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    .line 171
+    .line 179
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 175
+    .line 183
     :goto_3f
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const/16 v1, 0x7d
 
-    goto :goto_10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 173
-    :cond_43
+    goto :goto_e
+
+    .line 181
+    :cond_45
     const/16 v1, 0x3f
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_3f
 
-    .line 157
+    .line 165
     nop
 
-    :pswitch_data_4a
+    :pswitch_data_4c
     .packed-switch 0x0
-        :pswitch_15
-        :pswitch_1b
+        :pswitch_13
+        :pswitch_19
         :pswitch_2b
     .end packed-switch
 .end method

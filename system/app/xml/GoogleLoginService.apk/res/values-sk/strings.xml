@@ -242,18 +242,18 @@ otázka"</b></string>
     <string name="account_intro_recommended_title">Prepojiť so službou Google</string>
     <string name="common_message">"Účet Google vám umožňuje
 
-"<li><ul>Zobraziť a usporiadať informácie odkiaľkoľvek.</ul></li>"
+"<ul><li>Zobraziť a usporiadať informácie odkiaľkoľvek.</li></ul>"
 
-"<li><ul>Automaticky zálohovať údaje.</ul></li>"
+"<ul><li>Automaticky zálohovať údaje.</li></ul>"
 
-"<li><ul>Jednoducho používať služby Google odkiaľkoľvek.</ul></li></string>
+"<ul><li>Jednoducho používať služby Google odkiaľkoľvek.</li></ul></string>
     <string name="add_account_message">" Môžete použiť viac ako jeden účet Google (napr. váš domáci a pracovný účet). Účet Google vytvoríte dotykom na položky "<b>Prihlásiť sa</b> alebo <b>Vytvoriť účet</b></string>
     <string name="account_intro_default_message">Svoje veci už nikdy nestratíte. Účet Google udržuje všetko v bezpečí.</string>
     <string name="account_intro_custom_endtext">Máte %s? Prihláste sa.</string>
     <string name="account_intro_simple_message">Chcete pridať existujúci účet alebo vytvoriť nový?</string>
     <string name="learn_more_title"><annotation id="learn_more">Viac informácií</annotation></string>
     <string name="learn_more_account_intro">"Účet Google vám umožňuje
-"<li><ul>Zobraziť a usporiadať všetky vaše informácie odkiaľkoľvek.<li>Automaticky zálohovať vaše údaje, ako sú e-maily, kontakty, hudbu a fotografie.</li><li>Používať služby Google, vrátane kontaktov, kalendára, máp a ďalších, odkiaľkoľvek.</li></ul></li></string>
+"<ul><li>Zobraziť a usporiadať všetky vaše informácie odkiaľkoľvek.<li>Automaticky zálohovať vaše údaje, ako sú e-maily, kontakty, hudbu a fotografie.</li><li>Používať služby Google, vrátane kontaktov, kalendára, máp a ďalších, odkiaľkoľvek.</li></li></ul></string>
     <string name="learn_more_account_intro_title">O účtoch Google</string>
     <string name="learn_more_web_history">"Webová história upravuje výsledky vyhľadávania na základe hľadaných výrazov a navštívených stránok. Poskytuje vám tak osobnejší prístup pri práci so službami Google.
 

@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 225
+    .line 240
     iput-object p1, p0, Lcom/google/android/talk/FeatureManager$SetFeaturesTask$1;->this$0:Lcom/google/android/talk/FeatureManager$SetFeaturesTask;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,11 +41,11 @@
     .registers 2
 
     .prologue
-    .line 229
+    .line 244
     iget-object v0, p0, Lcom/google/android/talk/FeatureManager$SetFeaturesTask$1;->this$0:Lcom/google/android/talk/FeatureManager$SetFeaturesTask;
 
     invoke-virtual {v0}, Lcom/google/android/talk/FeatureManager$SetFeaturesTask;->doInBackground()V
 
-    .line 230
+    .line 245
     return-void
 .end method

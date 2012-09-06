@@ -476,13 +476,11 @@
     :try_start_0
     new-instance v0, Lcom/google/android/apps/analytics/d;
 
-    const/4 v1, 0x2
-
-    invoke-direct {v0, p1, p2, p3, v1}, Lcom/google/android/apps/analytics/d;-><init>(ILjava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v0, p1, p2, p3, p4}, Lcom/google/android/apps/analytics/d;-><init>(ILjava/lang/String;Ljava/lang/String;I)V
 
     iget-object v1, p0, Lcom/google/android/apps/analytics/i;->r:Lcom/google/android/apps/analytics/e;
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_10
 
     new-instance v1, Lcom/google/android/apps/analytics/e;
 
@@ -490,24 +488,24 @@
 
     iput-object v1, p0, Lcom/google/android/apps/analytics/i;->r:Lcom/google/android/apps/analytics/e;
 
-    :cond_11
+    :cond_10
     iget-object v1, p0, Lcom/google/android/apps/analytics/i;->r:Lcom/google/android/apps/analytics/e;
 
     invoke-virtual {v1, v0}, Lcom/google/android/apps/analytics/e;->a(Lcom/google/android/apps/analytics/d;)V
-    :try_end_16
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_16} :catch_18
+    :try_end_15
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_15} :catch_17
 
     const/4 v0, 0x1
 
-    :goto_17
+    :goto_16
     return v0
 
-    :catch_18
+    :catch_17
     move-exception v0
 
     const/4 v0, 0x0
 
-    goto :goto_17
+    goto :goto_16
 .end method
 
 .method public final b()Z
@@ -587,7 +585,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_7a
+    if-eqz v2, :cond_76
 
     iget-object v0, p0, Lcom/google/android/apps/analytics/i;->m:Lcom/google/android/apps/analytics/o;
 
@@ -605,19 +603,15 @@
 
     iget-boolean v2, p0, Lcom/google/android/apps/analytics/i;->b:Z
 
-    if-eqz v2, :cond_78
+    if-eqz v2, :cond_74
 
     const-string v2, "GoogleAnalyticsTracker"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "Sending "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     array-length v0, v0
 
@@ -637,12 +631,12 @@
 
     invoke-static {v2, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_78
+    :cond_74
     move v0, v1
 
     goto :goto_1f
 
-    :cond_7a
+    :cond_76
     iput-boolean v1, p0, Lcom/google/android/apps/analytics/i;->o:Z
 
     iget-boolean v1, p0, Lcom/google/android/apps/analytics/i;->b:Z

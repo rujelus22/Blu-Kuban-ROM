@@ -1,5 +1,5 @@
 .class public Lcom/android/email/SecurityPolicy$PolicyAdmin;
-.super Lcom/android/emailcommon/variant/DeviceAdminReceiverWraper;
+.super Landroid/app/admin/DeviceAdminReceiver;
 .source "SecurityPolicy.java"
 
 
@@ -19,8 +19,8 @@
     .registers 1
 
     .prologue
-    .line 1448
-    invoke-direct {p0}, Lcom/android/emailcommon/variant/DeviceAdminReceiverWraper;-><init>()V
+    .line 736
+    invoke-direct {p0}, Landroid/app/admin/DeviceAdminReceiver;-><init>()V
 
     return-void
 .end method
@@ -33,8 +33,8 @@
     .parameter "intent"
 
     .prologue
-    .line 1474
-    const v0, 0x7f08011b
+    .line 762
+    const v0, 0x7f08011d
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -49,12 +49,12 @@
     .parameter "intent"
 
     .prologue
-    .line 1464
+    .line 752
     const/4 v0, 0x2
 
     invoke-static {p1, v0}, Lcom/android/email/service/EmailBroadcastProcessorService;->processDevicePolicyMessage(Landroid/content/Context;I)V
 
-    .line 1466
+    .line 754
     return-void
 .end method
 
@@ -64,12 +64,12 @@
     .parameter "intent"
 
     .prologue
-    .line 1455
+    .line 743
     const/4 v0, 0x1
 
     invoke-static {p1, v0}, Lcom/android/email/service/EmailBroadcastProcessorService;->processDevicePolicyMessage(Landroid/content/Context;I)V
 
-    .line 1457
+    .line 745
     return-void
 .end method
 
@@ -79,12 +79,12 @@
     .parameter "intent"
 
     .prologue
-    .line 1482
+    .line 770
     const/4 v0, 0x3
 
     invoke-static {p1, v0}, Lcom/android/email/service/EmailBroadcastProcessorService;->processDevicePolicyMessage(Landroid/content/Context;I)V
 
-    .line 1484
+    .line 772
     return-void
 .end method
 
@@ -94,28 +94,11 @@
     .parameter "intent"
 
     .prologue
-    .line 1491
+    .line 779
     const/4 v0, 0x4
 
     invoke-static {p1, v0}, Lcom/android/email/service/EmailBroadcastProcessorService;->processDevicePolicyMessage(Landroid/content/Context;I)V
 
-    .line 1493
-    return-void
-.end method
-
-.method public onRecoveryPasswordRequested(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 4
-    .parameter "context"
-    .parameter "intent"
-
-    .prologue
-    .line 1499
-    invoke-static {p1}, Lcom/android/email/SecurityPolicy;->getInstance(Landroid/content/Context;)Lcom/android/email/SecurityPolicy;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/email/SecurityPolicy;->sendRecoveryPassword()V
-
-    .line 1500
+    .line 781
     return-void
 .end method

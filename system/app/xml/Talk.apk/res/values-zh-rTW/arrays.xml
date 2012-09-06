@@ -29,6 +29,12 @@
         <item>靜音時才啟用</item>
         <item>永遠不要</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>關閉</item>
+        <item>低</item>
+        <item>中</item>
+        <item>虛擬</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>無</item>
         <item>影像穩定：低</item>

@@ -1,42 +1,57 @@
-.class Ld/A;
+.class public Ld/a;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Ld/al;
-
-.field final synthetic b:Ld/y;
+# static fields
+.field private static final a:Ld/d;
 
 
 # direct methods
-.method constructor <init>(Ld/y;Ld/al;)V
-    .registers 3
-
-    iput-object p1, p0, Ld/A;->b:Ld/y;
-
-    iput-object p2, p0, Ld/A;->a:Ld/al;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public run()V
+.method static constructor <clinit>()V
     .registers 2
 
-    iget-object v0, p0, Ld/A;->a:Ld/al;
+    .prologue
+    .line 125
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-eqz v0, :cond_9
+    const/16 v1, 0xe
 
-    iget-object v0, p0, Ld/A;->a:Ld/al;
+    if-lt v0, v1, :cond_e
 
-    invoke-virtual {v0}, Ld/al;->e()V
+    .line 126
+    new-instance v0, Ld/b;
 
-    :cond_9
+    invoke-direct {v0}, Ld/b;-><init>()V
+
+    sput-object v0, Ld/a;->a:Ld/d;
+
+    .line 130
+    :goto_d
     return-void
+
+    .line 128
+    :cond_e
+    new-instance v0, Ld/c;
+
+    invoke-direct {v0}, Ld/c;-><init>()V
+
+    sput-object v0, Ld/a;->a:Ld/d;
+
+    goto :goto_d
+.end method
+
+.method public static a(Landroid/view/accessibility/AccessibilityManager;)Z
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 196
+    sget-object v0, Ld/a;->a:Ld/d;
+
+    invoke-interface {v0, p0}, Ld/d;->a(Landroid/view/accessibility/AccessibilityManager;)Z
+
+    move-result v0
+
+    return v0
 .end method

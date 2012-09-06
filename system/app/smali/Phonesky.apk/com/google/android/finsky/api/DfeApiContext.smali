@@ -14,7 +14,7 @@
 
 .field private final mContext:Landroid/content/Context;
 
-.field private final mExperiments:Lcom/google/android/finsky/experiments/DfeExperiments;
+.field private final mExperiments:Lcom/google/android/finsky/experiments/Experiments;
 
 .field private mHasPerformedInitialTokenInvalidation:Z
 
@@ -32,6 +32,8 @@
 
 .field private mLastAuthToken:Ljava/lang/String;
 
+.field private final mNotificationManager:Lcom/google/android/finsky/api/DfeNotificationManager;
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -46,11 +48,13 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lcom/android/volley/toolbox/AndroidAuthenticator;Lcom/android/volley/Cache;Ljava/lang/String;IILjava/util/Locale;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 18
+.method protected constructor <init>(Landroid/content/Context;Lcom/android/volley/toolbox/AndroidAuthenticator;Lcom/android/volley/Cache;Lcom/google/android/finsky/experiments/Experiments;Lcom/google/android/finsky/api/DfeNotificationManager;Ljava/lang/String;IILjava/util/Locale;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+    .registers 20
     .parameter "context"
     .parameter "authenticator"
     .parameter "cache"
+    .parameter "experiments"
+    .parameter "notificationManager"
     .parameter "appVersionString"
     .parameter "appVersionCode"
     .parameter "apiVersion"
@@ -58,214 +62,323 @@
     .parameter "mccmnc"
     .parameter "clientId"
     .parameter "loggingId"
+    .parameter "contentFilterLevel"
 
     .prologue
-    .line 78
+    .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 44
-    invoke-static {}, Lcom/google/android/finsky/utils/Maps;->newHashMap()Ljava/util/HashMap;
+    new-instance v1, Ljava/util/HashMap;
 
-    move-result-object v2
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
-
-    .line 79
-    iput-object p1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mContext:Landroid/content/Context;
-
-    .line 80
-    iput-object p2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mAuthenticator:Lcom/android/volley/toolbox/AndroidAuthenticator;
-
-    .line 81
-    iput-object p3, p0, Lcom/google/android/finsky/api/DfeApiContext;->mCache:Lcom/android/volley/Cache;
-
-    .line 82
-    new-instance v2, Lcom/google/android/finsky/experiments/DfeExperiments;
-
-    invoke-direct {v2}, Lcom/google/android/finsky/experiments/DfeExperiments;-><init>()V
-
-    iput-object v2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mExperiments:Lcom/google/android/finsky/experiments/DfeExperiments;
-
-    .line 83
-    iget-object v3, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
-
-    const-string v4, "X-DFE-Device-Id"
-
-    sget-object v2, Lcom/google/android/finsky/config/G;->androidId:Lcom/google/android/finsky/config/GservicesValue;
-
-    invoke-virtual {v2}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Long;
-
-    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v5
-
-    invoke-static {v5, v6}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v3, v4, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 84
-    iget-object v2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
-
-    const-string v3, "Accept-Language"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p7}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "-"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {p7}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-interface {v2, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 85
-    invoke-static {p8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_60
+    iput-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
 
     .line 86
-    iget-object v2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
+    iput-object p1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mContext:Landroid/content/Context;
 
-    const-string v3, "X-DFE-MCCMNC"
-
-    invoke-interface {v2, v3, p8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 87
+    iput-object p2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mAuthenticator:Lcom/android/volley/toolbox/AndroidAuthenticator;
 
     .line 88
-    :cond_60
-    invoke-static/range {p9 .. p9}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_6f
+    iput-object p3, p0, Lcom/google/android/finsky/api/DfeApiContext;->mCache:Lcom/android/volley/Cache;
 
     .line 89
-    iget-object v2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
+    iput-object p5, p0, Lcom/google/android/finsky/api/DfeApiContext;->mNotificationManager:Lcom/google/android/finsky/api/DfeNotificationManager;
 
-    const-string v3, "X-DFE-Client-Id"
-
-    move-object/from16 v0, p9
-
-    invoke-interface {v2, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 90
+    iput-object p4, p0, Lcom/google/android/finsky/api/DfeApiContext;->mExperiments:Lcom/google/android/finsky/experiments/Experiments;
 
     .line 91
-    :cond_6f
-    invoke-static/range {p9 .. p9}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_7e
-
-    .line 92
     iget-object v2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
 
-    const-string v3, "X-DFE-Logging-Id"
+    const-string v3, "X-DFE-Device-Id"
 
-    move-object/from16 v0, p10
+    sget-object v1, Lcom/google/android/finsky/api/DfeApiConfig;->androidId:Lcom/google/android/finsky/config/GservicesValue;
 
-    invoke-interface {v2, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Long;
+
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v2, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 93
+    iget-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
+
+    const-string v2, "Accept-Language"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p9}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "-"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {p9}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 94
-    :cond_7e
-    iget-object v2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
-
-    const-string v3, "User-Agent"
-
-    invoke-direct {p0, p4, p5, p6}, Lcom/google/android/finsky/api/DfeApiContext;->makeUserAgentString(Ljava/lang/String;II)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-interface {v2, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 96
-    iget-object v2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
-
-    const-string v3, "X-DFE-SmallestScreenWidthDp"
-
-    invoke-direct {p0, p1}, Lcom/google/android/finsky/api/DfeApiContext;->getSmallestScreenWidthDp(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-interface {v2, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 97
-    iget-object v2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mContext:Landroid/content/Context;
-
-    if-eqz v2, :cond_b0
-
-    .line 98
-    iget-object v2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mContext:Landroid/content/Context;
-
-    invoke-static {v2}, Lcom/google/android/finsky/config/ContentLevel;->importFromSettings(Landroid/content/Context;)Lcom/google/android/finsky/config/ContentLevel;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/google/android/finsky/config/ContentLevel;->getDfeValue()I
+    invoke-static/range {p10 .. p10}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    .line 99
-    .local v1, contentFilterLevel:I
-    iget-object v2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
+    if-nez v1, :cond_60
 
-    const-string v3, "X-DFE-Filter-Level"
+    .line 95
+    iget-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    const-string v2, "X-DFE-MCCMNC"
 
-    move-result-object v4
+    move-object/from16 v0, p10
 
-    invoke-interface {v2, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 97
+    :cond_60
+    invoke-static/range {p11 .. p11}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_6f
+
+    .line 98
+    iget-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
+
+    const-string v2, "X-DFE-Client-Id"
+
+    move-object/from16 v0, p11
+
+    invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 100
+    :cond_6f
+    invoke-static/range {p11 .. p11}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_7e
+
+    .line 101
+    iget-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
+
+    const-string v2, "X-DFE-Logging-Id"
+
+    move-object/from16 v0, p12
+
+    invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 103
+    :cond_7e
+    iget-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
+
+    const-string v2, "User-Agent"
+
+    invoke-direct {p0, p6, p7, p8}, Lcom/google/android/finsky/api/DfeApiContext;->makeUserAgentString(Ljava/lang/String;II)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 105
+    iget-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
+
+    const-string v2, "X-DFE-SmallestScreenWidthDp"
+
+    invoke-direct {p0, p1}, Lcom/google/android/finsky/api/DfeApiContext;->getSmallestScreenWidthDp(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 107
+    iget-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
+
+    const-string v2, "X-DFE-Filter-Level"
+
+    invoke-static/range {p13 .. p13}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 109
     invoke-direct {p0}, Lcom/google/android/finsky/api/DfeApiContext;->checkUrlRules()V
 
-    .line 102
-    .end local v1           #contentFilterLevel:I
-    :cond_b0
+    .line 110
     return-void
+.end method
+
+.method private static checkUrlIsSecure(Ljava/lang/String;)V
+    .registers 6
+    .parameter "url"
+
+    .prologue
+    .line 135
+    :try_start_0
+    new-instance v1, Ljava/net/URL;
+
+    invoke-direct {v1, p0}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+
+    .line 136
+    .local v1, parsed:Ljava/net/URL;
+    invoke-virtual {v1}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "https"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_35
+
+    invoke-virtual {v1}, Ljava/net/URL;->getHost()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "corp.google.com"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_35
+
+    invoke-virtual {v1}, Ljava/net/URL;->getHost()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "192.168.0"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    :try_end_32
+    .catch Ljava/net/MalformedURLException; {:try_start_0 .. :try_end_32} :catch_36
+
+    move-result v2
+
+    if-eqz v2, :cond_50
+
+    .line 139
+    :cond_35
+    return-void
+
+    .line 141
+    .end local v1           #parsed:Ljava/net/URL;
+    :catch_36
+    move-exception v0
+
+    .line 142
+    .local v0, e:Ljava/net/MalformedURLException;
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Cannot parse URL: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    invoke-static {v2, v3}, Lcom/google/android/finsky/utils/DfeLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 144
+    .end local v0           #e:Ljava/net/MalformedURLException;
+    :cond_50
+    new-instance v2, Ljava/lang/RuntimeException;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Insecure URL: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v2
 .end method
 
 .method private checkUrlRules()V
     .registers 6
 
     .prologue
-    .line 108
+    .line 116
     sget-object v2, Lcom/google/android/finsky/api/DfeApi;->BASE_URI:Landroid/net/Uri;
 
     invoke-virtual {v2}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 109
+    .line 117
     .local v1, uriString:Ljava/lang/String;
     iget-object v2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mContext:Landroid/content/Context;
 
@@ -273,11 +386,11 @@
 
     move-result-object v0
 
-    .line 110
+    .line 118
     .local v0, rewritten:Ljava/lang/String;
     if-nez v0, :cond_27
 
-    .line 111
+    .line 119
     new-instance v2, Ljava/lang/RuntimeException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -302,324 +415,364 @@
 
     throw v2
 
-    .line 113
+    .line 121
     :cond_27
-    invoke-static {v0}, Lcom/google/android/finsky/utils/Utils;->checkUrlIsSecure(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/finsky/api/DfeApiContext;->checkUrlIsSecure(Ljava/lang/String;)V
 
-    .line 114
+    .line 122
     return-void
 .end method
 
-.method public static create(Ljava/lang/String;)Lcom/google/android/finsky/api/DfeApiContext;
-    .registers 18
+.method public static create(Landroid/content/Context;Lcom/android/volley/Cache;Lcom/google/android/finsky/experiments/Experiments;Lcom/google/android/finsky/api/DfeNotificationManager;Ljava/lang/String;I)Lcom/google/android/finsky/api/DfeApiContext;
+    .registers 27
+    .parameter "context"
+    .parameter "cache"
+    .parameter "experiments"
+    .parameter "dfeNotificationManager"
     .parameter "accountName"
+    .parameter "contentFilterLevel"
 
     .prologue
-    .line 53
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/finsky/FinskyApp;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    .line 54
-    .local v2, context:Landroid/content/Context;
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v2}, Lcom/google/android/finsky/api/AccountHandler;->findAccount(Ljava/lang/String;Landroid/content/Context;)Landroid/accounts/Account;
-
-    move-result-object v12
-
-    .line 55
-    .local v12, account:Landroid/accounts/Account;
-    new-instance v3, Lcom/android/volley/toolbox/AndroidAuthenticator;
-
-    sget-object v1, Lcom/google/android/finsky/config/G;->authTokenType:Lcom/google/android/finsky/config/GservicesValue;
-
-    invoke-virtual {v1}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    invoke-direct {v3, v2, v12, v1}, Lcom/android/volley/toolbox/AndroidAuthenticator;-><init>(Landroid/content/Context;Landroid/accounts/Account;Ljava/lang/String;)V
-
-    .line 59
-    .local v3, authenticator:Lcom/android/volley/toolbox/AndroidAuthenticator;
-    :try_start_1b
-    invoke-virtual {v2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v15
-
-    .line 60
-    .local v15, pm:Landroid/content/pm/PackageManager;
-    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v15, v1, v4}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-
-    move-result-object v14
-
     .line 61
-    .local v14, pi:Landroid/content/pm/PackageInfo;
-    iget-object v5, v14, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
+    move-object/from16 v0, p4
 
-    .line 62
-    .local v5, appVersionName:Ljava/lang/String;
-    iget v6, v14, Landroid/content/pm/PackageInfo;->versionCode:I
+    move-object/from16 v1, p0
 
-    .line 63
-    .local v6, appVersionCode:I
-    const-string v1, "phone"
-
-    invoke-virtual {v2, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/google/android/finsky/api/AccountHandler;->findAccount(Ljava/lang/String;Landroid/content/Context;)Landroid/accounts/Account;
 
     move-result-object v16
 
-    check-cast v16, Landroid/telephony/TelephonyManager;
+    .line 62
+    .local v16, account:Landroid/accounts/Account;
+    new-instance v4, Lcom/android/volley/toolbox/AndroidAuthenticator;
 
-    .line 65
-    .local v16, telephonyManager:Landroid/telephony/TelephonyManager;
-    new-instance v1, Lcom/google/android/finsky/api/DfeApiContext;
+    sget-object v2, Lcom/google/android/finsky/api/DfeApiConfig;->authTokenType:Lcom/google/android/finsky/config/GservicesValue;
 
-    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
+    invoke-virtual {v2}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v4}, Lcom/google/android/finsky/FinskyApp;->getCache()Lcom/android/volley/Cache;
+    check-cast v2, Ljava/lang/String;
 
-    move-result-object v4
+    move-object/from16 v0, p0
 
-    const/4 v7, 0x3
+    move-object/from16 v1, v16
+
+    invoke-direct {v4, v0, v1, v2}, Lcom/android/volley/toolbox/AndroidAuthenticator;-><init>(Landroid/content/Context;Landroid/accounts/Account;Ljava/lang/String;)V
+
+    .line 66
+    .local v4, authenticator:Lcom/android/volley/toolbox/AndroidAuthenticator;
+    :try_start_19
+    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v19
+
+    .line 67
+    .local v19, pm:Landroid/content/pm/PackageManager;
+    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v2, v3}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+
+    move-result-object v18
+
+    .line 68
+    .local v18, pi:Landroid/content/pm/PackageInfo;
+    move-object/from16 v0, v18
+
+    iget-object v8, v0, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
+
+    .line 69
+    .local v8, appVersionName:Ljava/lang/String;
+    move-object/from16 v0, v18
+
+    iget v9, v0, Landroid/content/pm/PackageInfo;->versionCode:I
+
+    .line 70
+    .local v9, appVersionCode:I
+    const-string v2, "phone"
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v20
+
+    check-cast v20, Landroid/telephony/TelephonyManager;
+
+    .line 72
+    .local v20, telephonyManager:Landroid/telephony/TelephonyManager;
+    new-instance v2, Lcom/google/android/finsky/api/DfeApiContext;
+
+    const/4 v10, 0x3
 
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
-    move-result-object v8
-
-    invoke-virtual/range {v16 .. v16}, Landroid/telephony/TelephonyManager;->getSimOperator()Ljava/lang/String;
-
-    move-result-object v9
-
-    sget-object v10, Lcom/google/android/finsky/config/G;->clientId:Lcom/google/android/finsky/config/GservicesValue;
-
-    invoke-virtual {v10}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Ljava/lang/String;
-
-    sget-object v11, Lcom/google/android/finsky/config/G;->loggingId:Lcom/google/android/finsky/config/GservicesValue;
-
-    invoke-virtual {v11}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
-
     move-result-object v11
 
-    check-cast v11, Ljava/lang/String;
+    invoke-virtual/range {v20 .. v20}, Landroid/telephony/TelephonyManager;->getSimOperator()Ljava/lang/String;
 
-    invoke-direct/range {v1 .. v11}, Lcom/google/android/finsky/api/DfeApiContext;-><init>(Landroid/content/Context;Lcom/android/volley/toolbox/AndroidAuthenticator;Lcom/android/volley/Cache;Ljava/lang/String;IILjava/util/Locale;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_5a
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1b .. :try_end_5a} :catch_5b
+    move-result-object v12
 
-    return-object v1
+    sget-object v3, Lcom/google/android/finsky/api/DfeApiConfig;->clientId:Lcom/google/android/finsky/config/GservicesValue;
 
-    .line 71
-    .end local v5           #appVersionName:Ljava/lang/String;
-    .end local v6           #appVersionCode:I
-    .end local v14           #pi:Landroid/content/pm/PackageInfo;
-    .end local v15           #pm:Landroid/content/pm/PackageManager;
-    .end local v16           #telephonyManager:Landroid/telephony/TelephonyManager;
-    :catch_5b
-    move-exception v13
+    invoke-virtual {v3}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
 
-    .line 72
-    .local v13, e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    new-instance v1, Ljava/lang/RuntimeException;
+    move-result-object v13
 
-    const-string v4, "Can\'t find our own package"
+    check-cast v13, Ljava/lang/String;
 
-    invoke-direct {v1, v4, v13}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    sget-object v3, Lcom/google/android/finsky/api/DfeApiConfig;->loggingId:Lcom/google/android/finsky/config/GservicesValue;
 
-    throw v1
+    invoke-virtual {v3}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
+
+    move-result-object v14
+
+    check-cast v14, Ljava/lang/String;
+
+    move-object/from16 v3, p0
+
+    move-object/from16 v5, p1
+
+    move-object/from16 v6, p2
+
+    move-object/from16 v7, p3
+
+    move/from16 v15, p5
+
+    invoke-direct/range {v2 .. v15}, Lcom/google/android/finsky/api/DfeApiContext;-><init>(Landroid/content/Context;Lcom/android/volley/toolbox/AndroidAuthenticator;Lcom/android/volley/Cache;Lcom/google/android/finsky/experiments/Experiments;Lcom/google/android/finsky/api/DfeNotificationManager;Ljava/lang/String;IILjava/util/Locale;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+    :try_end_62
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_19 .. :try_end_62} :catch_63
+
+    return-object v2
+
+    .line 77
+    .end local v8           #appVersionName:Ljava/lang/String;
+    .end local v9           #appVersionCode:I
+    .end local v18           #pi:Landroid/content/pm/PackageInfo;
+    .end local v19           #pm:Landroid/content/pm/PackageManager;
+    .end local v20           #telephonyManager:Landroid/telephony/TelephonyManager;
+    :catch_63
+    move-exception v17
+
+    .line 78
+    .local v17, e:Landroid/content/pm/PackageManager$NameNotFoundException;
+    new-instance v2, Ljava/lang/RuntimeException;
+
+    const-string v3, "Can\'t find our own package"
+
+    move-object/from16 v0, v17
+
+    invoke-direct {v2, v3, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v2
 .end method
 
 .method private getSmallestScreenWidthDp(Landroid/content/Context;)Ljava/lang/String;
-    .registers 10
+    .registers 7
     .parameter "context"
 
     .prologue
-    const/4 v7, -0x1
+    .line 253
+    sget v3, Lcom/google/android/finsky/api/DfeApiContext;->sCachedSmallestScreenWidthDp:I
 
-    .line 205
-    sget v5, Lcom/google/android/finsky/api/DfeApiContext;->sCachedSmallestScreenWidthDp:I
+    const/4 v4, -0x1
 
-    if-ne v5, v7, :cond_42
+    if-ne v3, v4, :cond_17
 
-    .line 206
+    .line 254
+    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v4, 0xe
+
+    if-lt v3, v4, :cond_1e
+
+    .line 255
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    .line 209
-    .local v0, clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
-    :try_start_11
-    const-string v5, "smallestScreenWidthDp"
-
-    invoke-virtual {v0, v5}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    .line 210
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v5
-
-    iget v5, v5, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
-
-    sput v5, Lcom/google/android/finsky/api/DfeApiContext;->sCachedSmallestScreenWidthDp:I
-    :try_end_22
-    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_22} :catch_49
-
-    .line 215
-    :goto_22
-    sget v5, Lcom/google/android/finsky/api/DfeApiContext;->sCachedSmallestScreenWidthDp:I
-
-    if-ne v5, v7, :cond_42
-
-    .line 216
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v3
 
-    .line 217
-    .local v3, metrics:Landroid/util/DisplayMetrics;
-    iget v5, v3, Landroid/util/DisplayMetrics;->widthPixels:I
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
-    int-to-float v5, v5
+    move-result-object v3
 
-    iget v6, v3, Landroid/util/DisplayMetrics;->density:F
+    iget v3, v3, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
 
-    div-float/2addr v5, v6
+    sput v3, Lcom/google/android/finsky/api/DfeApiContext;->sCachedSmallestScreenWidthDp:I
 
-    float-to-int v4, v5
+    .line 265
+    :cond_17
+    :goto_17
+    sget v3, Lcom/google/android/finsky/api/DfeApiContext;->sCachedSmallestScreenWidthDp:I
 
-    .line 218
-    .local v4, widthDp:I
-    iget v5, v3, Landroid/util/DisplayMetrics;->heightPixels:I
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    int-to-float v5, v5
+    move-result-object v3
 
-    iget v6, v3, Landroid/util/DisplayMetrics;->density:F
+    return-object v3
 
-    div-float/2addr v5, v6
+    .line 258
+    :cond_1e
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    float-to-int v2, v5
+    move-result-object v3
 
-    .line 220
-    .local v2, heightDp:I
-    invoke-static {v4, v2}, Ljava/lang/Math;->min(II)I
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result v5
+    move-result-object v1
 
-    sput v5, Lcom/google/android/finsky/api/DfeApiContext;->sCachedSmallestScreenWidthDp:I
+    .line 259
+    .local v1, metrics:Landroid/util/DisplayMetrics;
+    iget v3, v1, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 223
-    .end local v0           #clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
-    .end local v2           #heightDp:I
-    .end local v3           #metrics:Landroid/util/DisplayMetrics;
-    .end local v4           #widthDp:I
-    :cond_42
-    sget v5, Lcom/google/android/finsky/api/DfeApiContext;->sCachedSmallestScreenWidthDp:I
+    int-to-float v3, v3
 
-    invoke-static {v5}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    iget v4, v1, Landroid/util/DisplayMetrics;->density:F
 
-    move-result-object v5
+    div-float/2addr v3, v4
 
-    return-object v5
+    float-to-int v2, v3
 
-    .line 212
-    .restart local v0       #clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
-    :catch_49
-    move-exception v1
+    .line 260
+    .local v2, widthDp:I
+    iget v3, v1, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    .line 213
-    .local v1, ex:Ljava/lang/Exception;
-    const-string v5, "smallestScreenWidthDp does not exist, using pre-ics hack."
+    int-to-float v3, v3
 
-    const/4 v6, 0x0
+    iget v4, v1, Landroid/util/DisplayMetrics;->density:F
 
-    new-array v6, v6, [Ljava/lang/Object;
+    div-float/2addr v3, v4
 
-    invoke-static {v5, v6}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    float-to-int v0, v3
 
-    goto :goto_22
+    .line 262
+    .local v0, heightDp:I
+    invoke-static {v2, v0}, Ljava/lang/Math;->min(II)I
+
+    move-result v3
+
+    sput v3, Lcom/google/android/finsky/api/DfeApiContext;->sCachedSmallestScreenWidthDp:I
+
+    goto :goto_17
 .end method
 
 .method private makeUserAgentString(Ljava/lang/String;II)Ljava/lang/String;
-    .registers 9
+    .registers 12
     .parameter "versionString"
     .parameter "versionCode"
     .parameter "apiVersion"
 
     .prologue
-    .line 117
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+    .line 148
+    sget-object v3, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
-    const-string v1, "Android-Finsky/%s (api=%d,versionCode=%d,sdk=%d)"
+    invoke-static {v3}, Lcom/google/android/finsky/api/DfeApiContext;->sanitizeHeaderValue(Ljava/lang/String;)Ljava/lang/String;
 
-    const/4 v2, 0x4
+    move-result-object v0
 
-    new-array v2, v2, [Ljava/lang/Object;
+    .line 149
+    .local v0, device:Ljava/lang/String;
+    sget-object v3, Landroid/os/Build;->HARDWARE:Ljava/lang/String;
 
-    const/4 v3, 0x0
+    invoke-static {v3}, Lcom/google/android/finsky/api/DfeApiContext;->sanitizeHeaderValue(Ljava/lang/String;)Ljava/lang/String;
 
-    aput-object p1, v2, v3
+    move-result-object v1
 
-    const/4 v3, 0x1
+    .line 150
+    .local v1, hardware:Ljava/lang/String;
+    sget-object v3, Landroid/os/Build;->PRODUCT:Ljava/lang/String;
+
+    invoke-static {v3}, Lcom/google/android/finsky/api/DfeApiContext;->sanitizeHeaderValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 151
+    .local v2, product:Ljava/lang/String;
+    sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    const-string v4, "Android-Finsky/%s (api=%d,versionCode=%d,sdk=%d,device=%s,hardware=%s,product=%s)"
+
+    const/4 v5, 0x7
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v6, 0x0
+
+    aput-object p1, v5, v6
+
+    const/4 v6, 0x1
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v7
 
-    aput-object v4, v2, v3
+    aput-object v7, v5, v6
 
-    const/4 v3, 0x2
+    const/4 v6, 0x2
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v7
 
-    aput-object v4, v2, v3
+    aput-object v7, v5, v6
 
-    const/4 v3, 0x3
+    const/4 v6, 0x3
 
-    sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v7, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v7
 
-    aput-object v4, v2, v3
+    aput-object v7, v5, v6
 
-    invoke-static {v0, v1, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v6, 0x4
+
+    aput-object v0, v5, v6
+
+    const/4 v6, 0x5
+
+    aput-object v1, v5, v6
+
+    const/4 v6, 0x6
+
+    aput-object v2, v5, v6
+
+    invoke-static {v3, v4, v5}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    return-object v3
+.end method
+
+.method static sanitizeHeaderValue(Ljava/lang/String;)Ljava/lang/String;
+    .registers 4
+    .parameter "value"
+
+    .prologue
+    .line 158
+    invoke-static {p0}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "("
+
+    const-string v2, ""
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, ")"
+
+    const-string v2, ""
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -632,7 +785,7 @@
     .registers 2
 
     .prologue
-    .line 125
+    .line 165
     iget-object v0, p0, Lcom/google/android/finsky/api/DfeApiContext;->mAuthenticator:Lcom/android/volley/toolbox/AndroidAuthenticator;
 
     invoke-virtual {v0}, Lcom/android/volley/toolbox/AndroidAuthenticator;->getAccount()Landroid/accounts/Account;
@@ -646,12 +799,12 @@
     .registers 3
 
     .prologue
-    .line 132
+    .line 172
     invoke-virtual {p0}, Lcom/google/android/finsky/api/DfeApiContext;->getAccount()Landroid/accounts/Account;
 
     move-result-object v0
 
-    .line 133
+    .line 173
     .local v0, currentAccount:Landroid/accounts/Account;
     if-nez v0, :cond_8
 
@@ -670,18 +823,18 @@
     .registers 2
 
     .prologue
-    .line 154
+    .line 194
     iget-object v0, p0, Lcom/google/android/finsky/api/DfeApiContext;->mCache:Lcom/android/volley/Cache;
 
     return-object v0
 .end method
 
-.method public getExperiments()Lcom/google/android/finsky/experiments/DfeExperiments;
+.method public getExperiments()Lcom/google/android/finsky/experiments/Experiments;
     .registers 2
 
     .prologue
-    .line 137
-    iget-object v0, p0, Lcom/google/android/finsky/api/DfeApiContext;->mExperiments:Lcom/google/android/finsky/experiments/DfeExperiments;
+    .line 177
+    iget-object v0, p0, Lcom/google/android/finsky/api/DfeApiContext;->mExperiments:Lcom/google/android/finsky/experiments/Experiments;
 
     return-object v0
 .end method
@@ -706,7 +859,7 @@
     .end annotation
 
     .prologue
-    .line 167
+    .line 214
     monitor-enter p0
 
     :try_start_1
@@ -714,15 +867,15 @@
 
     if-nez v1, :cond_b
 
-    .line 168
+    .line 215
     invoke-virtual {p0}, Lcom/google/android/finsky/api/DfeApiContext;->invalidateAuthToken()V
 
-    .line 169
+    .line 216
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHasPerformedInitialTokenInvalidation:Z
 
-    .line 171
+    .line 218
     :cond_b
     iget-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mAuthenticator:Lcom/android/volley/toolbox/AndroidAuthenticator;
 
@@ -732,60 +885,68 @@
 
     iput-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mLastAuthToken:Ljava/lang/String;
 
-    .line 173
-    invoke-static {}, Lcom/google/android/finsky/utils/Maps;->newHashMap()Ljava/util/HashMap;
+    .line 220
+    new-instance v0, Ljava/util/HashMap;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 174
+    .line 221
     .local v0, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     iget-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
 
     invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
-    .line 175
-    iget-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mExperiments:Lcom/google/android/finsky/experiments/DfeExperiments;
+    .line 222
+    iget-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mExperiments:Lcom/google/android/finsky/experiments/Experiments;
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/experiments/DfeExperiments;->hasEnabledExperiments()Z
+    if-eqz v1, :cond_34
+
+    iget-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mExperiments:Lcom/google/android/finsky/experiments/Experiments;
+
+    invoke-interface {v1}, Lcom/google/android/finsky/experiments/Experiments;->hasEnabledExperiments()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_34
 
-    .line 176
+    .line 223
     const-string v1, "X-DFE-Enabled-Experiments"
 
-    iget-object v2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mExperiments:Lcom/google/android/finsky/experiments/DfeExperiments;
+    iget-object v2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mExperiments:Lcom/google/android/finsky/experiments/Experiments;
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/experiments/DfeExperiments;->getEnabledExperimentsHeaderValue()Ljava/lang/String;
+    invoke-interface {v2}, Lcom/google/android/finsky/experiments/Experiments;->getEnabledExperimentsHeaderValue()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 179
-    :cond_2f
-    iget-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mExperiments:Lcom/google/android/finsky/experiments/DfeExperiments;
+    .line 226
+    :cond_34
+    iget-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mExperiments:Lcom/google/android/finsky/experiments/Experiments;
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/experiments/DfeExperiments;->hasUnsupportedExperiments()Z
+    if-eqz v1, :cond_4b
+
+    iget-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mExperiments:Lcom/google/android/finsky/experiments/Experiments;
+
+    invoke-interface {v1}, Lcom/google/android/finsky/experiments/Experiments;->hasUnsupportedExperiments()Z
 
     move-result v1
 
-    if-eqz v1, :cond_42
+    if-eqz v1, :cond_4b
 
-    .line 180
+    .line 227
     const-string v1, "X-DFE-Unsupported-Experiments"
 
-    iget-object v2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mExperiments:Lcom/google/android/finsky/experiments/DfeExperiments;
+    iget-object v2, p0, Lcom/google/android/finsky/api/DfeApiContext;->mExperiments:Lcom/google/android/finsky/experiments/Experiments;
 
-    invoke-virtual {v2}, Lcom/google/android/finsky/experiments/DfeExperiments;->getUnsupportedExperimentsHeaderValue()Ljava/lang/String;
+    invoke-interface {v2}, Lcom/google/android/finsky/experiments/Experiments;->getUnsupportedExperimentsHeaderValue()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 183
-    :cond_42
+    .line 230
+    :cond_4b
     const-string v1, "Authorization"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -809,17 +970,17 @@
     move-result-object v2
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_5c
-    .catchall {:try_start_1 .. :try_end_5c} :catchall_5e
+    :try_end_65
+    .catchall {:try_start_1 .. :try_end_65} :catchall_67
 
-    .line 184
+    .line 231
     monitor-exit p0
 
     return-object v0
 
-    .line 167
+    .line 214
     .end local v0           #headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
-    :catchall_5e
+    :catchall_67
     move-exception v1
 
     monitor-exit p0
@@ -827,28 +988,38 @@
     throw v1
 .end method
 
+.method public getNotificationManager()Lcom/google/android/finsky/api/DfeNotificationManager;
+    .registers 2
+
+    .prologue
+    .line 201
+    iget-object v0, p0, Lcom/google/android/finsky/api/DfeApiContext;->mNotificationManager:Lcom/google/android/finsky/api/DfeNotificationManager;
+
+    return-object v0
+.end method
+
 .method public invalidateAuthToken()V
     .registers 3
 
     .prologue
-    .line 144
+    .line 184
     iget-object v0, p0, Lcom/google/android/finsky/api/DfeApiContext;->mLastAuthToken:Ljava/lang/String;
 
     if-eqz v0, :cond_e
 
-    .line 145
+    .line 185
     iget-object v0, p0, Lcom/google/android/finsky/api/DfeApiContext;->mAuthenticator:Lcom/android/volley/toolbox/AndroidAuthenticator;
 
     iget-object v1, p0, Lcom/google/android/finsky/api/DfeApiContext;->mLastAuthToken:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/android/volley/toolbox/AndroidAuthenticator;->invalidateAuthToken(Ljava/lang/String;)V
 
-    .line 146
+    .line 186
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/finsky/api/DfeApiContext;->mLastAuthToken:Ljava/lang/String;
 
-    .line 148
+    .line 188
     :cond_e
     return-void
 .end method
@@ -857,21 +1028,21 @@
     .registers 7
 
     .prologue
-    .line 189
+    .line 236
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 190
+    .line 237
     .local v3, sb:Ljava/lang/StringBuilder;
     const-string v4, "[DfeApiContext headers={"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 191
+    .line 238
     const/4 v0, 0x1
 
-    .line 192
+    .line 239
     .local v0, first:Z
     iget-object v4, p0, Lcom/google/android/finsky/api/DfeApiContext;->mHeaders:Ljava/util/Map;
 
@@ -897,14 +1068,14 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 193
+    .line 240
     .local v1, header:Ljava/lang/String;
     if-eqz v0, :cond_3a
 
-    .line 194
+    .line 241
     const/4 v0, 0x0
 
-    .line 198
+    .line 245
     :goto_24
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -928,7 +1099,7 @@
 
     goto :goto_15
 
-    .line 196
+    .line 243
     :cond_3a
     const-string v4, ", "
 
@@ -936,14 +1107,14 @@
 
     goto :goto_24
 
-    .line 200
+    .line 247
     .end local v1           #header:Ljava/lang/String;
     :cond_40
     const-string v4, "}]"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 201
+    .line 248
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4

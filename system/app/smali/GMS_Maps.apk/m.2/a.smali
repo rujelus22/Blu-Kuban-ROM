@@ -1,70 +1,121 @@
-.class public abstract Lm/a;
+.class public LM/a;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # static fields
-.field private static a:Lm/b;
+.field public static final a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
+.method static constructor <clinit>()V
+    .registers 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    const/16 v5, 0x218
 
+    const/16 v4, 0x41b
+
+    const/4 v1, 0x0
+
+    .line 16
+    new-instance v0, Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-direct {v0}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;-><init>()V
+
+    sput-object v0, LM/a;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    .line 18
+    sget-object v2, LM/a;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-object v0, v1
+
+    check-cast v0, LM/b;
+
+    const/4 v0, 0x2
+
+    sget-object v3, LM/c;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-virtual {v2, v4, v0, v3}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    move-object v0, v1
+
+    check-cast v0, LM/b;
+
+    const/4 v0, 0x6
+
+    sget-object v3, LM/e;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-virtual {v2, v4, v0, v3}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    move-object v0, v1
+
+    check-cast v0, LM/b;
+
+    const/16 v0, 0x9
+
+    sget-object v3, LM/e;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-virtual {v2, v4, v0, v3}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    move-object v0, v1
+
+    check-cast v0, LM/b;
+
+    const/4 v0, 0x3
+
+    invoke-virtual {v2, v5, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    move-object v0, v1
+
+    check-cast v0, LM/b;
+
+    const/4 v0, 0x4
+
+    invoke-virtual {v2, v5, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    move-object v0, v1
+
+    check-cast v0, LM/b;
+
+    const/4 v0, 0x7
+
+    invoke-virtual {v2, v5, v0, v1}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v2
+
+    move-object v0, v1
+
+    check-cast v0, LM/b;
+
+    const/4 v0, 0x5
+
+    sget-object v3, LM/c;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-virtual {v2, v4, v0, v3}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    move-result-object v0
+
+    const/16 v2, 0x21b
+
+    check-cast v1, LM/b;
+
+    const/16 v1, 0x8
+
+    sget-object v3, Lbn/a;->a:Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    invoke-virtual {v0, v2, v1, v3}, Lcom/google/googlenav/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/google/googlenav/common/io/protocol/ProtoBufType;
+
+    .line 44
     return-void
-.end method
-
-.method public static a()Lm/b;
-    .registers 1
-
-    sget-object v0, Lm/a;->a:Lm/b;
-
-    return-object v0
-.end method
-
-.method public static declared-synchronized a(Lm/b;)V
-    .registers 3
-
-    const-class v0, Lm/a;
-
-    monitor-enter v0
-
-    :try_start_3
-    sput-object p0, Lm/a;->a:Lm/b;
-    :try_end_5
-    .catchall {:try_start_3 .. :try_end_5} :catchall_7
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_7
-    move-exception v1
-
-    monitor-exit v0
-
-    throw v1
-.end method
-
-.method public static a(Ljava/lang/String;I)Z
-    .registers 3
-
-    sget-object v0, Lm/a;->a:Lm/b;
-
-    if-eqz v0, :cond_b
-
-    sget-object v0, Lm/a;->a:Lm/b;
-
-    invoke-interface {v0, p0, p1}, Lm/b;->a(Ljava/lang/String;I)Z
-
-    move-result v0
-
-    :goto_a
-    return v0
-
-    :cond_b
-    const/4 v0, 0x0
-
-    goto :goto_a
 .end method

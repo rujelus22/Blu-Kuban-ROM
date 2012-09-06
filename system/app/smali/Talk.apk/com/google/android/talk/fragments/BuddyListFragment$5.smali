@@ -30,7 +30,7 @@
     .line 858
     iput-object p1, p0, Lcom/google/android/talk/fragments/BuddyListFragment$5;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -67,7 +67,7 @@
     .line 866
     iget-object v5, p0, Lcom/google/android/talk/fragments/BuddyListFragment$5;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    iget-object v5, v5, Lcom/google/android/talk/fragments/BuddyListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v5, v5, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-interface {v5}, Lcom/google/android/talk/IRosterListAdapter;->getActiveCallState()Lcom/google/android/talk/RosterListAdapter$CallState;
 
@@ -96,7 +96,7 @@
 
     iget-object v6, p0, Lcom/google/android/talk/fragments/BuddyListFragment$5;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    iget-object v6, v6, Lcom/google/android/talk/fragments/BuddyListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
+    iget-object v6, v6, Lcom/google/android/talk/fragments/RosterListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
 
     iget-wide v6, v6, Lcom/google/android/talk/TalkApp$AccountInfo;->accountId:J
 
@@ -142,7 +142,7 @@
     :goto_4e
     iget-object v5, p0, Lcom/google/android/talk/fragments/BuddyListFragment$5;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    iget-object v5, v5, Lcom/google/android/talk/fragments/BuddyListFragment;->mHandler:Landroid/os/Handler;
+    iget-object v5, v5, Lcom/google/android/talk/fragments/RosterListFragment;->mHandler:Landroid/os/Handler;
 
     new-instance v6, Lcom/google/android/talk/fragments/BuddyListFragment$5$1;
 
@@ -179,7 +179,7 @@
 
     iget-object v6, p0, Lcom/google/android/talk/fragments/BuddyListFragment$5;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    iget-object v6, v6, Lcom/google/android/talk/fragments/BuddyListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
+    iget-object v6, v6, Lcom/google/android/talk/fragments/RosterListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
 
     iget-wide v6, v6, Lcom/google/android/talk/TalkApp$AccountInfo;->accountId:J
 

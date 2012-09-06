@@ -3,12 +3,12 @@
 .source "FinskyApp.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/google/android/finsky/library/Accounts;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/FinskyApp;->clearCacheAsync(Ljava/lang/Runnable;)V
+    value = Lcom/google/android/finsky/FinskyApp;->onCreate()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/FinskyApp;
 
-.field final synthetic val$callback:Ljava/lang/Runnable;
-
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/FinskyApp;Ljava/lang/Runnable;)V
-    .registers 3
-    .parameter
+.method constructor <init>(Lcom/google/android/finsky/FinskyApp;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 471
+    .line 320
     iput-object p1, p0, Lcom/google/android/finsky/FinskyApp$2;->this$0:Lcom/google/android/finsky/FinskyApp;
-
-    iput-object p2, p0, Lcom/google/android/finsky/FinskyApp$2;->val$callback:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,33 +37,44 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 5
+.method public getAccount(Ljava/lang/String;)Landroid/accounts/Account;
+    .registers 3
+    .parameter "name"
 
     .prologue
-    .line 474
+    .line 328
     iget-object v0, p0, Lcom/google/android/finsky/FinskyApp$2;->this$0:Lcom/google/android/finsky/FinskyApp;
 
-    #getter for: Lcom/google/android/finsky/FinskyApp;->mBitmapRequestQueue:Lcom/android/volley/RequestQueue;
-    invoke-static {v0}, Lcom/google/android/finsky/FinskyApp;->access$100(Lcom/google/android/finsky/FinskyApp;)Lcom/android/volley/RequestQueue;
+    invoke-static {p1, v0}, Lcom/google/android/finsky/api/AccountHandler;->findAccount(Ljava/lang/String;Landroid/content/Context;)Landroid/accounts/Account;
 
     move-result-object v0
 
-    new-instance v1, Lcom/android/volley/toolbox/ClearCacheRequest;
+    return-object v0
+.end method
 
-    iget-object v2, p0, Lcom/google/android/finsky/FinskyApp$2;->this$0:Lcom/google/android/finsky/FinskyApp;
+.method public getAccounts()Ljava/util/List;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Landroid/accounts/Account;",
+            ">;"
+        }
+    .end annotation
 
-    #getter for: Lcom/google/android/finsky/FinskyApp;->mBitmapCache:Lcom/android/volley/Cache;
-    invoke-static {v2}, Lcom/google/android/finsky/FinskyApp;->access$000(Lcom/google/android/finsky/FinskyApp;)Lcom/android/volley/Cache;
+    .prologue
+    .line 323
+    iget-object v0, p0, Lcom/google/android/finsky/FinskyApp$2;->this$0:Lcom/google/android/finsky/FinskyApp;
 
-    move-result-object v2
+    invoke-static {v0}, Lcom/google/android/finsky/api/AccountHandler;->getAccounts(Landroid/content/Context;)[Landroid/accounts/Account;
 
-    iget-object v3, p0, Lcom/google/android/finsky/FinskyApp$2;->val$callback:Ljava/lang/Runnable;
+    move-result-object v0
 
-    invoke-direct {v1, v2, v3}, Lcom/android/volley/toolbox/ClearCacheRequest;-><init>(Lcom/android/volley/Cache;Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lcom/google/android/finsky/utils/Lists;->newArrayList([Ljava/lang/Object;)Ljava/util/ArrayList;
 
-    invoke-virtual {v0, v1}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
+    move-result-object v0
 
-    .line 475
-    return-void
+    return-object v0
 .end method

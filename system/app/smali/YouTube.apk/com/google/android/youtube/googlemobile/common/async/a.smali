@@ -334,7 +334,7 @@
     throw v0
 .end method
 
-.method public final declared-synchronized k_()I
+.method public final declared-synchronized h_()I
     .registers 2
 
     monitor-enter p0
@@ -356,7 +356,7 @@
     throw v0
 .end method
 
-.method public final declared-synchronized l_()Z
+.method public final declared-synchronized i_()Z
     .registers 3
 
     monitor-enter p0
@@ -397,7 +397,7 @@
     throw v0
 .end method
 
-.method protected final declared-synchronized m_()V
+.method protected final declared-synchronized j_()V
     .registers 2
 
     monitor-enter p0

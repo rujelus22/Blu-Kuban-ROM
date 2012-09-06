@@ -14,10 +14,10 @@
     .registers 2
 
     .prologue
-    .line 38
+    .line 41
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 43
+    .line 46
     new-instance v0, Lcom/android/email/service/AccountService$1;
 
     invoke-direct {v0, p0}, Lcom/android/email/service/AccountService$1;-><init>(Lcom/android/email/service/AccountService;)V
@@ -32,7 +32,7 @@
     .parameter "x0"
 
     .prologue
-    .line 38
+    .line 41
     iget-object v0, p0, Lcom/android/email/service/AccountService;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -45,17 +45,30 @@
     .parameter "intent"
 
     .prologue
-    .line 145
+    .line 120
     iget-object v0, p0, Lcom/android/email/service/AccountService;->mContext:Landroid/content/Context;
 
     if-nez v0, :cond_6
 
-    .line 146
+    .line 121
     iput-object p0, p0, Lcom/android/email/service/AccountService;->mContext:Landroid/content/Context;
 
-    .line 154
+    .line 125
     :cond_6
+    :try_start_6
+    invoke-static {p0}, Lcom/android/emailcommon/Device;->getDeviceId(Landroid/content/Context;)Ljava/lang/String;
+    :try_end_9
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_9} :catch_c
+
+    .line 128
+    :goto_9
     iget-object v0, p0, Lcom/android/email/service/AccountService;->mBinder:Lcom/android/emailcommon/service/IAccountService$Stub;
 
     return-object v0
+
+    .line 126
+    :catch_c
+    move-exception v0
+
+    goto :goto_9
 .end method

@@ -23,22 +23,22 @@
     .end annotation
 
     .prologue
-    .line 54
+    .line 38
     invoke-direct {p0}, Lcom/android/emailcommon/mail/Multipart;-><init>()V
 
-    .line 55
+    .line 39
     invoke-virtual {p0}, Lcom/android/emailcommon/internet/MimeMultipart;->generateBoundary()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/emailcommon/internet/MimeMultipart;->mBoundary:Ljava/lang/String;
 
-    .line 56
+    .line 40
     const-string v0, "mixed"
 
     invoke-virtual {p0, v0}, Lcom/android/emailcommon/internet/MimeMultipart;->setSubType(Ljava/lang/String;)V
 
-    .line 57
+    .line 41
     return-void
 .end method
 
@@ -52,13 +52,13 @@
     .end annotation
 
     .prologue
-    .line 60
+    .line 43
     invoke-direct {p0}, Lcom/android/emailcommon/mail/Multipart;-><init>()V
 
-    .line 61
+    .line 44
     iput-object p1, p0, Lcom/android/emailcommon/internet/MimeMultipart;->mContentType:Ljava/lang/String;
 
-    .line 63
+    .line 46
     const/4 v1, 0x0
 
     :try_start_6
@@ -78,7 +78,7 @@
 
     iput-object v1, p0, Lcom/android/emailcommon/internet/MimeMultipart;->mSubType:Ljava/lang/String;
 
-    .line 64
+    .line 47
     const-string v1, "boundary"
 
     invoke-static {p1, v1}, Lcom/android/emailcommon/internet/MimeUtility;->getHeaderParameter(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -87,12 +87,12 @@
 
     iput-object v1, p0, Lcom/android/emailcommon/internet/MimeMultipart;->mBoundary:Ljava/lang/String;
 
-    .line 65
+    .line 48
     iget-object v1, p0, Lcom/android/emailcommon/internet/MimeMultipart;->mBoundary:Ljava/lang/String;
 
     if-nez v1, :cond_5a
 
-    .line 66
+    .line 49
     new-instance v1, Lcom/android/emailcommon/mail/MessagingException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -119,11 +119,11 @@
     :try_end_3a
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_3a} :catch_3a
 
-    .line 68
+    .line 51
     :catch_3a
     move-exception v0
 
-    .line 69
+    .line 52
     .local v0, e:Ljava/lang/Exception;
     new-instance v1, Lcom/android/emailcommon/mail/MessagingException;
 
@@ -155,7 +155,7 @@
 
     throw v1
 
-    .line 73
+    .line 56
     .end local v0           #e:Ljava/lang/Exception;
     :cond_5a
     return-void
@@ -167,18 +167,18 @@
     .registers 7
 
     .prologue
-    .line 76
+    .line 59
     new-instance v1, Ljava/lang/StringBuffer;
 
     invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 77
+    .line 60
     .local v1, sb:Ljava/lang/StringBuffer;
     const-string v2, "----"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 78
+    .line 61
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -187,7 +187,7 @@
 
     if-ge v0, v2, :cond_26
 
-    .line 79
+    .line 62
     invoke-static {}, Ljava/lang/Math;->random()D
 
     move-result-wide v2
@@ -206,12 +206,12 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 78
+    .line 61
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_b
 
-    .line 81
+    .line 64
     :cond_26
     invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
@@ -233,7 +233,7 @@
     .end annotation
 
     .prologue
-    .line 94
+    .line 77
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMultipart;->mContentType:Ljava/lang/String;
 
     return-object v0
@@ -248,7 +248,7 @@
     .end annotation
 
     .prologue
-    .line 280
+    .line 105
     const/4 v0, 0x0
 
     return-object v0
@@ -258,7 +258,7 @@
     .registers 2
 
     .prologue
-    .line 284
+    .line 109
     iget-object v0, p0, Lcom/android/emailcommon/internet/MimeMultipart;->mSubType:Ljava/lang/String;
 
     return-object v0
@@ -274,10 +274,10 @@
     .end annotation
 
     .prologue
-    .line 89
+    .line 72
     iput-object p1, p0, Lcom/android/emailcommon/internet/MimeMultipart;->mPreamble:Ljava/lang/String;
 
-    .line 90
+    .line 73
     return-void
 .end method
 
@@ -291,10 +291,10 @@
     .end annotation
 
     .prologue
-    .line 98
+    .line 81
     iput-object p1, p0, Lcom/android/emailcommon/internet/MimeMultipart;->mSubType:Ljava/lang/String;
 
-    .line 99
+    .line 82
     const-string v0, "multipart/%s; boundary=\"%s\""
 
     const/4 v1, 0x2
@@ -317,6 +317,6 @@
 
     iput-object v0, p0, Lcom/android/emailcommon/internet/MimeMultipart;->mContentType:Ljava/lang/String;
 
-    .line 100
+    .line 83
     return-void
 .end method

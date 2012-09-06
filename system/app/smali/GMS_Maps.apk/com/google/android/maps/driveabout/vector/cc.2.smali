@@ -1,208 +1,209 @@
-.class public final enum Lcom/google/android/maps/driveabout/vector/cc;
-.super Ljava/lang/Enum;
+.class synthetic Lcom/google/android/maps/driveabout/vector/cC;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # static fields
-.field public static final enum a:Lcom/google/android/maps/driveabout/vector/cc;
+.field static final synthetic a:[I
 
-.field public static final enum b:Lcom/google/android/maps/driveabout/vector/cc;
-
-.field public static final enum c:Lcom/google/android/maps/driveabout/vector/cc;
-
-.field public static final enum d:Lcom/google/android/maps/driveabout/vector/cc;
-
-.field public static final enum e:Lcom/google/android/maps/driveabout/vector/cc;
-
-.field public static final enum f:Lcom/google/android/maps/driveabout/vector/cc;
-
-.field public static final enum g:Lcom/google/android/maps/driveabout/vector/cc;
-
-.field public static final enum h:Lcom/google/android/maps/driveabout/vector/cc;
-
-.field public static final enum i:Lcom/google/android/maps/driveabout/vector/cc;
-
-.field private static final synthetic j:[Lcom/google/android/maps/driveabout/vector/cc;
+.field static final synthetic b:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .registers 3
 
-    const/4 v7, 0x4
+    .prologue
+    .line 1637
+    invoke-static {}, Lcom/google/android/maps/driveabout/vector/cF;->values()[Lcom/google/android/maps/driveabout/vector/cF;
 
-    const/4 v6, 0x3
+    move-result-object v0
 
-    const/4 v5, 0x2
+    array-length v0, v0
 
-    const/4 v4, 0x1
+    new-array v0, v0, [I
 
-    const/4 v3, 0x0
+    sput-object v0, Lcom/google/android/maps/driveabout/vector/cC;->b:[I
 
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/cc;
+    :try_start_9
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/cC;->b:[I
 
-    const-string v1, "BASE"
+    sget-object v1, Lcom/google/android/maps/driveabout/vector/cF;->a:Lcom/google/android/maps/driveabout/vector/cF;
 
-    invoke-direct {v0, v1, v3}, Lcom/google/android/maps/driveabout/vector/cc;-><init>(Ljava/lang/String;I)V
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/cF;->ordinal()I
 
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/cc;->a:Lcom/google/android/maps/driveabout/vector/cc;
+    move-result v1
 
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/cc;
+    const/4 v2, 0x1
 
-    const-string v1, "DROP_SHADOWS_OUTER"
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_79
 
-    invoke-direct {v0, v1, v4}, Lcom/google/android/maps/driveabout/vector/cc;-><init>(Ljava/lang/String;I)V
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/cC;->b:[I
 
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/cc;->b:Lcom/google/android/maps/driveabout/vector/cc;
+    sget-object v1, Lcom/google/android/maps/driveabout/vector/cF;->b:Lcom/google/android/maps/driveabout/vector/cF;
 
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/cc;
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/cF;->ordinal()I
 
-    const-string v1, "ELEVATED_COLOR"
+    move-result v1
 
-    invoke-direct {v0, v1, v5}, Lcom/google/android/maps/driveabout/vector/cc;-><init>(Ljava/lang/String;I)V
+    const/4 v2, 0x2
 
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/cc;->c:Lcom/google/android/maps/driveabout/vector/cc;
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_77
 
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/cc;
+    :goto_1f
+    :try_start_1f
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/cC;->b:[I
 
-    const-string v1, "UNDERGROUND_MODE_MASK"
+    sget-object v1, Lcom/google/android/maps/driveabout/vector/cF;->c:Lcom/google/android/maps/driveabout/vector/cF;
 
-    invoke-direct {v0, v1, v6}, Lcom/google/android/maps/driveabout/vector/cc;-><init>(Ljava/lang/String;I)V
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/cF;->ordinal()I
 
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/cc;->d:Lcom/google/android/maps/driveabout/vector/cc;
+    move-result v1
 
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/cc;
+    const/4 v2, 0x3
 
-    const-string v1, "UNDERGROUND_STENCIL"
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_75
 
-    invoke-direct {v0, v1, v7}, Lcom/google/android/maps/driveabout/vector/cc;-><init>(Ljava/lang/String;I)V
+    .line 487
+    :goto_2a
+    invoke-static {}, Lcom/google/android/maps/driveabout/vector/D;->values()[Lcom/google/android/maps/driveabout/vector/D;
 
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/cc;->e:Lcom/google/android/maps/driveabout/vector/cc;
+    move-result-object v0
 
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/cc;
+    array-length v0, v0
 
-    const-string v1, "UNDERGROUND_COLOR"
+    new-array v0, v0, [I
+
+    sput-object v0, Lcom/google/android/maps/driveabout/vector/cC;->a:[I
+
+    :try_start_33
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/cC;->a:[I
+
+    sget-object v1, Lcom/google/android/maps/driveabout/vector/D;->a:Lcom/google/android/maps/driveabout/vector/D;
+
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/D;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_3e
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_33 .. :try_end_3e} :catch_73
+
+    :goto_3e
+    :try_start_3e
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/cC;->a:[I
+
+    sget-object v1, Lcom/google/android/maps/driveabout/vector/D;->d:Lcom/google/android/maps/driveabout/vector/D;
+
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/D;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_49
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3e .. :try_end_49} :catch_71
+
+    :goto_49
+    :try_start_49
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/cC;->a:[I
+
+    sget-object v1, Lcom/google/android/maps/driveabout/vector/D;->e:Lcom/google/android/maps/driveabout/vector/D;
+
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/D;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_54
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_49 .. :try_end_54} :catch_6f
+
+    :goto_54
+    :try_start_54
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/cC;->a:[I
+
+    sget-object v1, Lcom/google/android/maps/driveabout/vector/D;->b:Lcom/google/android/maps/driveabout/vector/D;
+
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/D;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_5f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_54 .. :try_end_5f} :catch_6d
+
+    :goto_5f
+    :try_start_5f
+    sget-object v0, Lcom/google/android/maps/driveabout/vector/cC;->a:[I
+
+    sget-object v1, Lcom/google/android/maps/driveabout/vector/D;->c:Lcom/google/android/maps/driveabout/vector/D;
+
+    invoke-virtual {v1}, Lcom/google/android/maps/driveabout/vector/D;->ordinal()I
+
+    move-result v1
 
     const/4 v2, 0x5
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/maps/driveabout/vector/cc;-><init>(Ljava/lang/String;I)V
+    aput v2, v0, v1
+    :try_end_6a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5f .. :try_end_6a} :catch_6b
 
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/cc;->f:Lcom/google/android/maps/driveabout/vector/cc;
-
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/cc;
-
-    const-string v1, "DROP_SHADOWS_INNER"
-
-    const/4 v2, 0x6
-
-    invoke-direct {v0, v1, v2}, Lcom/google/android/maps/driveabout/vector/cc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/cc;->g:Lcom/google/android/maps/driveabout/vector/cc;
-
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/cc;
-
-    const-string v1, "ANIMATED_ELEVATED_COLOR"
-
-    const/4 v2, 0x7
-
-    invoke-direct {v0, v1, v2}, Lcom/google/android/maps/driveabout/vector/cc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/cc;->h:Lcom/google/android/maps/driveabout/vector/cc;
-
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/cc;
-
-    const-string v1, "DEFAULT"
-
-    const/16 v2, 0x8
-
-    invoke-direct {v0, v1, v2}, Lcom/google/android/maps/driveabout/vector/cc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/cc;->i:Lcom/google/android/maps/driveabout/vector/cc;
-
-    const/16 v0, 0x9
-
-    new-array v0, v0, [Lcom/google/android/maps/driveabout/vector/cc;
-
-    sget-object v1, Lcom/google/android/maps/driveabout/vector/cc;->a:Lcom/google/android/maps/driveabout/vector/cc;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcom/google/android/maps/driveabout/vector/cc;->b:Lcom/google/android/maps/driveabout/vector/cc;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcom/google/android/maps/driveabout/vector/cc;->c:Lcom/google/android/maps/driveabout/vector/cc;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcom/google/android/maps/driveabout/vector/cc;->d:Lcom/google/android/maps/driveabout/vector/cc;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lcom/google/android/maps/driveabout/vector/cc;->e:Lcom/google/android/maps/driveabout/vector/cc;
-
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x5
-
-    sget-object v2, Lcom/google/android/maps/driveabout/vector/cc;->f:Lcom/google/android/maps/driveabout/vector/cc;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    sget-object v2, Lcom/google/android/maps/driveabout/vector/cc;->g:Lcom/google/android/maps/driveabout/vector/cc;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
-
-    sget-object v2, Lcom/google/android/maps/driveabout/vector/cc;->h:Lcom/google/android/maps/driveabout/vector/cc;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x8
-
-    sget-object v2, Lcom/google/android/maps/driveabout/vector/cc;->i:Lcom/google/android/maps/driveabout/vector/cc;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/cc;->j:[Lcom/google/android/maps/driveabout/vector/cc;
-
+    :goto_6a
     return-void
-.end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    :catch_6b
+    move-exception v0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    goto :goto_6a
 
-    return-void
-.end method
+    :catch_6d
+    move-exception v0
 
-.method public static valueOf(Ljava/lang/String;)Lcom/google/android/maps/driveabout/vector/cc;
-    .registers 2
+    goto :goto_5f
 
-    const-class v0, Lcom/google/android/maps/driveabout/vector/cc;
+    :catch_6f
+    move-exception v0
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    goto :goto_54
 
-    move-result-object v0
+    :catch_71
+    move-exception v0
 
-    check-cast v0, Lcom/google/android/maps/driveabout/vector/cc;
+    goto :goto_49
 
-    return-object v0
-.end method
+    :catch_73
+    move-exception v0
 
-.method public static values()[Lcom/google/android/maps/driveabout/vector/cc;
-    .registers 1
+    goto :goto_3e
 
-    sget-object v0, Lcom/google/android/maps/driveabout/vector/cc;->j:[Lcom/google/android/maps/driveabout/vector/cc;
+    .line 1637
+    :catch_75
+    move-exception v0
 
-    invoke-virtual {v0}, [Lcom/google/android/maps/driveabout/vector/cc;->clone()Ljava/lang/Object;
+    goto :goto_2a
 
-    move-result-object v0
+    :catch_77
+    move-exception v0
 
-    check-cast v0, [Lcom/google/android/maps/driveabout/vector/cc;
+    goto :goto_1f
 
-    return-object v0
+    :catch_79
+    move-exception v0
+
+    goto :goto_14
 .end method

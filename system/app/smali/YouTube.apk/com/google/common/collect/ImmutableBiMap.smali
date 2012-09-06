@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/collect/as;
+.implements Lcom/google/common/collect/bj;
 
 
 # static fields
@@ -29,7 +29,7 @@
     .registers 1
 
     .prologue
-    .line 206
+    .line 213
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableMap;-><init>()V
 
     return-void
@@ -45,62 +45,71 @@
     return-object v0
 .end method
 
-.method public static builder()Lcom/google/common/collect/bv;
+.method public static builder()Lcom/google/common/collect/dg;
     .registers 1
 
     .prologue
     .line 114
-    new-instance v0, Lcom/google/common/collect/bv;
+    new-instance v0, Lcom/google/common/collect/dg;
 
-    invoke-direct {v0}, Lcom/google/common/collect/bv;-><init>()V
+    invoke-direct {v0}, Lcom/google/common/collect/dg;-><init>()V
 
     return-object v0
 .end method
 
 .method public static copyOf(Ljava/util/Map;)Lcom/google/common/collect/ImmutableBiMap;
-    .registers 2
+    .registers 3
     .parameter
 
     .prologue
-    .line 192
+    .line 195
     instance-of v0, p0, Lcom/google/common/collect/ImmutableBiMap;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_e
 
-    .line 194
-    check-cast p0, Lcom/google/common/collect/ImmutableBiMap;
+    move-object v0, p0
 
-    .line 203
-    :goto_6
-    return-object p0
+    .line 197
+    check-cast v0, Lcom/google/common/collect/ImmutableBiMap;
 
-    .line 198
-    :cond_7
+    .line 200
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableBiMap;->isPartialView()Z
+
+    move-result v1
+
+    if-nez v1, :cond_e
+
+    .line 210
+    :goto_d
+    return-object v0
+
+    .line 205
+    :cond_e
     invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_19
 
-    .line 199
+    .line 206
     invoke-static {}, Lcom/google/common/collect/ImmutableBiMap;->of()Lcom/google/common/collect/ImmutableBiMap;
-
-    move-result-object p0
-
-    goto :goto_6
-
-    .line 202
-    :cond_12
-    invoke-static {p0}, Lcom/google/common/collect/ImmutableMap;->copyOf(Ljava/util/Map;)Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
 
-    .line 203
-    new-instance p0, Lcom/google/common/collect/RegularImmutableBiMap;
+    goto :goto_d
 
-    invoke-direct {p0, v0}, Lcom/google/common/collect/RegularImmutableBiMap;-><init>(Lcom/google/common/collect/ImmutableMap;)V
+    .line 209
+    :cond_19
+    invoke-static {p0}, Lcom/google/common/collect/ImmutableMap;->copyOf(Ljava/util/Map;)Lcom/google/common/collect/ImmutableMap;
 
-    goto :goto_6
+    move-result-object v1
+
+    .line 210
+    new-instance v0, Lcom/google/common/collect/RegularImmutableBiMap;
+
+    invoke-direct {v0, v1}, Lcom/google/common/collect/RegularImmutableBiMap;-><init>(Lcom/google/common/collect/ImmutableMap;)V
+
+    goto :goto_d
 .end method
 
 .method public static of()Lcom/google/common/collect/ImmutableBiMap;
@@ -228,9 +237,12 @@
 .method public containsKey(Ljava/lang/Object;)Z
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 219
+    .line 227
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
@@ -245,9 +257,12 @@
 .method public containsValue(Ljava/lang/Object;)Z
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 223
+    .line 231
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->inverse()Lcom/google/common/collect/ImmutableBiMap;
 
     move-result-object v0
@@ -266,7 +281,7 @@
     .registers 2
 
     .prologue
-    .line 227
+    .line 235
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
@@ -293,9 +308,12 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 264
+    .line 274
     if-eq p1, p0, :cond_c
 
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
@@ -326,7 +344,7 @@
     .parameter
 
     .prologue
-    .line 252
+    .line 261
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -337,9 +355,12 @@
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 231
+    .line 239
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
@@ -355,7 +376,7 @@
     .registers 2
 
     .prologue
-    .line 268
+    .line 278
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
@@ -370,7 +391,7 @@
 .method public abstract inverse()Lcom/google/common/collect/ImmutableBiMap;
 .end method
 
-.method public bridge synthetic inverse()Lcom/google/common/collect/as;
+.method public bridge synthetic inverse()Lcom/google/common/collect/bj;
     .registers 2
 
     .prologue
@@ -386,7 +407,7 @@
     .registers 2
 
     .prologue
-    .line 256
+    .line 265
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
@@ -402,7 +423,7 @@
     .registers 2
 
     .prologue
-    .line 235
+    .line 243
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
@@ -430,7 +451,7 @@
     .registers 2
 
     .prologue
-    .line 260
+    .line 270
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
@@ -446,7 +467,7 @@
     .registers 2
 
     .prologue
-    .line 272
+    .line 282
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
@@ -474,7 +495,7 @@
     .registers 2
 
     .prologue
-    .line 243
+    .line 251
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->inverse()Lcom/google/common/collect/ImmutableBiMap;
 
     move-result-object v0
@@ -514,7 +535,7 @@
     .registers 2
 
     .prologue
-    .line 310
+    .line 323
     new-instance v0, Lcom/google/common/collect/ImmutableBiMap$SerializedForm;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/ImmutableBiMap$SerializedForm;-><init>(Lcom/google/common/collect/ImmutableBiMap;)V

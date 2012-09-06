@@ -31,25 +31,25 @@
     .registers 2
 
     .prologue
-    .line 1443
+    .line 903
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 1448
+    .line 908
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->displayName_:Ljava/lang/String;
 
-    .line 1465
+    .line 925
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->profileImageUrl_:Ljava/lang/String;
 
-    .line 1500
+    .line 961
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->cachedSize:I
 
-    .line 1443
+    .line 903
     return-void
 .end method
 
@@ -59,15 +59,15 @@
     .registers 2
 
     .prologue
-    .line 1502
+    .line 964
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 1504
+    .line 966
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->getSerializedSize()I
 
-    .line 1506
+    .line 968
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->cachedSize:I
 
@@ -78,7 +78,7 @@
     .registers 2
 
     .prologue
-    .line 1449
+    .line 909
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->displayName_:Ljava/lang/String;
 
     return-object v0
@@ -88,7 +88,7 @@
     .registers 2
 
     .prologue
-    .line 1466
+    .line 926
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->profileImageUrl_:Ljava/lang/String;
 
     return-object v0
@@ -98,10 +98,10 @@
     .registers 4
 
     .prologue
-    .line 1510
+    .line 973
     const/4 v0, 0x0
 
-    .line 1511
+    .line 974
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->hasDisplayName()Z
 
@@ -109,7 +109,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 1512
+    .line 975
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->getDisplayName()Ljava/lang/String;
@@ -122,7 +122,7 @@
 
     add-int/2addr v0, v1
 
-    .line 1515
+    .line 978
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->hasProfileImageUrl()Z
 
@@ -130,7 +130,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 1516
+    .line 979
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->getProfileImageUrl()Ljava/lang/String;
@@ -143,11 +143,11 @@
 
     add-int/2addr v0, v1
 
-    .line 1519
+    .line 982
     :cond_21
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->cachedSize:I
 
-    .line 1520
+    .line 983
     return v0
 .end method
 
@@ -155,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 1450
+    .line 910
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->hasDisplayName:Z
 
     return v0
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 1467
+    .line 927
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->hasProfileImageUrl:Z
 
     return v0
@@ -181,29 +181,29 @@
     .end annotation
 
     .prologue
-    .line 1527
+    .line 991
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 1528
+    .line 992
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 1532
+    .line 996
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1533
+    .line 997
     :sswitch_d
     return-object p0
 
-    .line 1538
+    .line 1002
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 1542
+    .line 1006
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 1528
+    .line 992
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -242,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 1441
+    .line 900
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;
 
     move-result-object v0
@@ -255,15 +255,15 @@
     .parameter "value"
 
     .prologue
-    .line 1452
+    .line 912
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->hasDisplayName:Z
 
-    .line 1453
+    .line 913
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->displayName_:Ljava/lang/String;
 
-    .line 1454
+    .line 914
     return-object p0
 .end method
 
@@ -272,15 +272,15 @@
     .parameter "value"
 
     .prologue
-    .line 1469
+    .line 929
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->hasProfileImageUrl:Z
 
-    .line 1470
+    .line 930
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->profileImageUrl_:Ljava/lang/String;
 
-    .line 1471
+    .line 931
     return-object p0
 .end method
 
@@ -294,14 +294,14 @@
     .end annotation
 
     .prologue
-    .line 1492
+    .line 953
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->hasDisplayName()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 1493
+    .line 954
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->getDisplayName()Ljava/lang/String;
@@ -310,7 +310,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1495
+    .line 956
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->hasProfileImageUrl()Z
 
@@ -318,7 +318,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 1496
+    .line 957
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/DocAnnotations$PlusPerson;->getProfileImageUrl()Ljava/lang/String;
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 1498
+    .line 959
     :cond_1c
     return-void
 .end method

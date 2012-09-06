@@ -728,7 +728,7 @@
 
     move/from16 v1, v21
 
-    if-eq v0, v1, :cond_2b
+    if-eq v0, v0, :cond_2b
 
     .line 284
     const/16 v23, 0xd
@@ -1154,7 +1154,7 @@
 
     move/from16 v1, v22
 
-    if-eq v0, v1, :cond_2b
+    if-eq v0, v0, :cond_2b
 
     .line 318
     if-eqz v22, :cond_41b

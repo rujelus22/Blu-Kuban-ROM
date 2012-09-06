@@ -25,7 +25,7 @@
 
 .field static final EVENT_SERVICE_STATE_CHANGED:I = 0x65
 
-.field private static final LOCAL_DEBUG:Z = true
+.field private static final LOCAL_DEBUG:Z = false
 
 .field static final LOG_TAG:Ljava/lang/String; = "GSM"
 

@@ -37,6 +37,7 @@
     <integer name="folder_max_count_x">4</integer>
     <integer name="folder_max_count_y">4</integer>
     <integer name="folder_max_num_items">16</integer>
+    <integer name="config_preview_size_percentage">27</integer>
     <integer name="apps_customize_maxCellCountX">-1</integer>
     <integer name="apps_customize_maxCellCountY">-1</integer>
 </resources>

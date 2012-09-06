@@ -1,2 +1,3 @@
-.class public interface abstract LbC/c;
+.class public interface abstract Lbc/c;
 .super Ljava/lang/Object;
+.source "SourceFile"

@@ -227,10 +227,10 @@
     .parameter "regionCode"
 
     .prologue
-    .line 107
+    .line 111
     if-nez p1, :cond_a
 
-    .line 108
+    .line 112
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "regionCode cannot be null."
@@ -239,7 +239,7 @@
 
     throw v0
 
-    .line 110
+    .line 114
     :cond_a
     iget-object v0, p0, Lcom/android/i18n/addressinput/FormOptions;->mOverrideFieldOrder:Ljava/util/Map;
 
@@ -248,6 +248,25 @@
     move-result-object v0
 
     check-cast v0, [Lcom/android/i18n/addressinput/AddressField;
+
+    return-object v0
+.end method
+
+.method getHiddenFields()Ljava/util/EnumSet;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/EnumSet",
+            "<",
+            "Lcom/android/i18n/addressinput/AddressField;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 89
+    iget-object v0, p0, Lcom/android/i18n/addressinput/FormOptions;->mHiddenFields:Ljava/util/EnumSet;
 
     return-object v0
 .end method

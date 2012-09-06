@@ -14,21 +14,8 @@
 
 
 # direct methods
-.method synthetic constructor <init>()V
+.method private constructor <init>()V
     .registers 2
-
-    .prologue
-    .line 1128
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lcom/google/net/async/t;-><init>(B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(B)V
-    .registers 3
-    .parameter
 
     .prologue
     const/4 v0, 0x0
@@ -49,5 +36,16 @@
     iput-object v0, p0, Lcom/google/net/async/t;->d:Lcom/google/net/async/an;
 
     .line 1128
+    return-void
+.end method
+
+.method synthetic constructor <init>(B)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 1128
+    invoke-direct {p0}, Lcom/google/net/async/t;-><init>()V
+
     return-void
 .end method

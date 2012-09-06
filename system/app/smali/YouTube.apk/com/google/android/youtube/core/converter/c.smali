@@ -8,22 +8,8 @@
 
 
 # direct methods
-.method synthetic constructor <init>(Ljava/util/Map;)V
+.method private constructor <init>(Ljava/util/Map;)V
     .registers 3
-    .parameter
-
-    .prologue
-    .line 17
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/core/converter/c;-><init>(Ljava/util/Map;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/util/Map;B)V
-    .registers 4
-    .parameter
     .parameter
 
     .prologue
@@ -38,6 +24,18 @@
     iput-object v0, p0, Lcom/google/android/youtube/core/converter/c;->a:Ljava/util/Map;
 
     .line 27
+    return-void
+.end method
+
+.method synthetic constructor <init>(Ljava/util/Map;B)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 17
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/converter/c;-><init>(Ljava/util/Map;)V
+
     return-void
 .end method
 

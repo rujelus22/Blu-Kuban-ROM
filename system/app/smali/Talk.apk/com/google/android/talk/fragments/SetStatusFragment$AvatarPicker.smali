@@ -36,7 +36,7 @@
     .line 1138
     iput-object p1, p0, Lcom/google/android/talk/fragments/SetStatusFragment$AvatarPicker;->this$0:Lcom/google/android/talk/fragments/SetStatusFragment;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1139
     invoke-virtual {p0, p2}, Lcom/google/android/talk/fragments/SetStatusFragment$AvatarPicker;->onRestoreInstanceState(Landroid/os/Bundle;)V

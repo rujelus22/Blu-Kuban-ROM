@@ -25,14 +25,14 @@
     .parameter
 
     .prologue
-    .line 452
+    .line 469
     const/4 v0, 0x0
 
     array-length v1, p1
 
     invoke-direct {p0, p1, v0, v1}, Lcom/google/common/primitives/Chars$CharArrayAsList;-><init>([CII)V
 
-    .line 453
+    .line 470
     return-void
 .end method
 
@@ -43,19 +43,19 @@
     .parameter
 
     .prologue
-    .line 455
+    .line 472
     invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
 
-    .line 456
+    .line 473
     iput-object p1, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->array:[C
 
-    .line 457
+    .line 474
     iput p2, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->start:I
 
-    .line 458
+    .line 475
     iput p3, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->end:I
 
-    .line 459
+    .line 476
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .parameter
 
     .prologue
-    .line 476
+    .line 493
     instance-of v0, p1, Ljava/lang/Character;
 
     if-eqz v0, :cond_19
@@ -111,29 +111,29 @@
 
     const/4 v1, 0x0
 
-    .line 520
+    .line 536
     if-ne p1, p0, :cond_5
 
-    .line 536
+    .line 552
     :cond_4
     :goto_4
     return v0
 
-    .line 523
+    .line 539
     :cond_5
     instance-of v2, p1, Lcom/google/common/primitives/Chars$CharArrayAsList;
 
     if-eqz v2, :cond_2f
 
-    .line 524
+    .line 540
     check-cast p1, Lcom/google/common/primitives/Chars$CharArrayAsList;
 
-    .line 525
+    .line 541
     invoke-virtual {p0}, Lcom/google/common/primitives/Chars$CharArrayAsList;->size()I
 
     move-result v3
 
-    .line 526
+    .line 542
     invoke-virtual {p1}, Lcom/google/common/primitives/Chars$CharArrayAsList;->size()I
 
     move-result v2
@@ -142,17 +142,17 @@
 
     move v0, v1
 
-    .line 527
+    .line 543
     goto :goto_4
 
     :cond_17
     move v2, v1
 
-    .line 529
+    .line 545
     :goto_18
     if-ge v2, v3, :cond_4
 
-    .line 530
+    .line 546
     iget-object v4, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->array:[C
 
     iget v5, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->start:I
@@ -173,16 +173,16 @@
 
     move v0, v1
 
-    .line 531
+    .line 547
     goto :goto_4
 
-    .line 529
+    .line 545
     :cond_2c
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_18
 
-    .line 536
+    .line 552
     :cond_2f
     invoke-super {p0, p1}, Ljava/util/AbstractList;->equals(Ljava/lang/Object;)Z
 
@@ -196,14 +196,14 @@
     .parameter
 
     .prologue
-    .line 470
+    .line 487
     invoke-virtual {p0}, Lcom/google/common/primitives/Chars$CharArrayAsList;->size()I
 
     move-result v0
 
-    invoke-static {p1, v0}, Lcom/google/common/base/t;->a(II)I
+    invoke-static {p1, v0}, Lcom/google/common/base/ag;->a(II)I
 
-    .line 471
+    .line 488
     iget-object v0, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->array:[C
 
     iget v1, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->start:I
@@ -224,7 +224,7 @@
     .parameter
 
     .prologue
-    .line 444
+    .line 461
     invoke-virtual {p0, p1}, Lcom/google/common/primitives/Chars$CharArrayAsList;->get(I)Ljava/lang/Character;
 
     move-result-object v0
@@ -236,10 +236,10 @@
     .registers 4
 
     .prologue
-    .line 540
+    .line 556
     const/4 v1, 0x1
 
-    .line 541
+    .line 557
     iget v0, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->start:I
 
     :goto_3
@@ -247,7 +247,7 @@
 
     if-ge v0, v2, :cond_11
 
-    .line 542
+    .line 558
     mul-int/lit8 v1, v1, 0x1f
 
     iget-object v2, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->array:[C
@@ -256,12 +256,12 @@
 
     add-int/2addr v1, v2
 
-    .line 541
+    .line 557
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
 
-    .line 544
+    .line 560
     :cond_11
     return v1
 .end method
@@ -271,12 +271,12 @@
     .parameter
 
     .prologue
-    .line 482
+    .line 499
     instance-of v0, p1, Ljava/lang/Character;
 
     if-eqz v0, :cond_1a
 
-    .line 483
+    .line 500
     iget-object v0, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->array:[C
 
     check-cast p1, Ljava/lang/Character;
@@ -293,15 +293,15 @@
 
     move-result v0
 
-    .line 484
+    .line 501
     if-ltz v0, :cond_1a
 
-    .line 485
+    .line 502
     iget v1, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->start:I
 
     sub-int/2addr v0, v1
 
-    .line 488
+    .line 505
     :goto_19
     return v0
 
@@ -315,7 +315,7 @@
     .registers 2
 
     .prologue
-    .line 466
+    .line 483
     const/4 v0, 0x0
 
     return v0
@@ -326,12 +326,12 @@
     .parameter
 
     .prologue
-    .line 493
+    .line 510
     instance-of v0, p1, Ljava/lang/Character;
 
     if-eqz v0, :cond_1a
 
-    .line 494
+    .line 511
     iget-object v0, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->array:[C
 
     check-cast p1, Ljava/lang/Character;
@@ -348,15 +348,15 @@
 
     move-result v0
 
-    .line 495
+    .line 512
     if-ltz v0, :cond_1a
 
-    .line 496
+    .line 513
     iget v1, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->start:I
 
     sub-int/2addr v0, v1
 
-    .line 499
+    .line 516
     :goto_19
     return v0
 
@@ -372,37 +372,43 @@
     .parameter
 
     .prologue
-    .line 503
+    .line 520
     invoke-virtual {p0}, Lcom/google/common/primitives/Chars$CharArrayAsList;->size()I
 
     move-result v0
 
-    invoke-static {p1, v0}, Lcom/google/common/base/t;->a(II)I
+    invoke-static {p1, v0}, Lcom/google/common/base/ag;->a(II)I
 
-    .line 504
+    .line 521
     iget-object v0, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->array:[C
 
     iget v1, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->start:I
 
     add-int/2addr v1, p1
 
-    aget-char v0, v0, v1
+    aget-char v1, v0, v1
 
-    .line 505
-    iget-object v1, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->array:[C
+    .line 522
+    iget-object v2, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->array:[C
 
-    iget v2, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->start:I
+    iget v0, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->start:I
 
-    add-int/2addr v2, p1
+    add-int v3, v0, p1
 
-    invoke-virtual {p2}, Ljava/lang/Character;->charValue()C
+    invoke-static {p2}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v3
+    move-result-object v0
 
-    aput-char v3, v1, v2
+    check-cast v0, Ljava/lang/Character;
 
-    .line 506
-    invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    invoke-virtual {v0}, Ljava/lang/Character;->charValue()C
+
+    move-result v0
+
+    aput-char v0, v2, v3
+
+    .line 523
+    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v0
 
@@ -415,7 +421,7 @@
     .parameter
 
     .prologue
-    .line 444
+    .line 461
     check-cast p2, Ljava/lang/Character;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/common/primitives/Chars$CharArrayAsList;->set(ILjava/lang/Character;)Ljava/lang/Character;
@@ -429,7 +435,7 @@
     .registers 3
 
     .prologue
-    .line 462
+    .line 479
     iget v0, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->end:I
 
     iget v1, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->start:I
@@ -445,23 +451,23 @@
     .parameter
 
     .prologue
-    .line 511
+    .line 527
     invoke-virtual {p0}, Lcom/google/common/primitives/Chars$CharArrayAsList;->size()I
 
     move-result v0
 
-    .line 512
-    invoke-static {p1, p2, v0}, Lcom/google/common/base/t;->a(III)V
+    .line 528
+    invoke-static {p1, p2, v0}, Lcom/google/common/base/ag;->a(III)V
 
-    .line 513
+    .line 529
     if-ne p1, p2, :cond_e
 
-    .line 514
+    .line 530
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 516
+    .line 532
     :goto_d
     return-object v0
 
@@ -487,15 +493,15 @@
     .registers 6
 
     .prologue
-    .line 558
+    .line 574
     invoke-virtual {p0}, Lcom/google/common/primitives/Chars$CharArrayAsList;->size()I
 
     move-result v0
 
-    .line 559
+    .line 575
     new-array v1, v0, [C
 
-    .line 560
+    .line 576
     iget-object v2, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->array:[C
 
     iget v3, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->start:I
@@ -504,7 +510,7 @@
 
     invoke-static {v2, v3, v1, v4, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 561
+    .line 577
     return-object v1
 .end method
 
@@ -512,7 +518,7 @@
     .registers 5
 
     .prologue
-    .line 548
+    .line 564
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Lcom/google/common/primitives/Chars$CharArrayAsList;->size()I
@@ -523,7 +529,7 @@
 
     invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 549
+    .line 565
     const/16 v0, 0x5b
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -538,7 +544,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 550
+    .line 566
     iget v0, p0, Lcom/google/common/primitives/Chars$CharArrayAsList;->start:I
 
     add-int/lit8 v0, v0, 0x1
@@ -548,7 +554,7 @@
 
     if-ge v0, v2, :cond_32
 
-    .line 551
+    .line 567
     const-string v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -561,12 +567,12 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 550
+    .line 566
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1e
 
-    .line 553
+    .line 569
     :cond_32
     const/16 v0, 0x5d
 

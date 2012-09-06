@@ -1,192 +1,193 @@
-.class public abstract Lcom/google/android/youtube/core/utils/n;
+.class public final Lcom/google/android/youtube/core/utils/n;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field private a:Z
-
-.field private b:Landroid/os/Binder;
-
-.field private final c:Ljava/lang/Class;
-
-.field private final d:Landroid/content/ServiceConnection;
-
-
 # direct methods
-.method public constructor <init>(Ljava/lang/Class;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 38
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 39
-    invoke-static {p1}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Class;
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/utils/n;->c:Ljava/lang/Class;
-
-    .line 40
-    new-instance v0, Lcom/google/android/youtube/core/utils/o;
-
-    invoke-direct {v0, p0}, Lcom/google/android/youtube/core/utils/o;-><init>(Lcom/google/android/youtube/core/utils/n;)V
-
-    iput-object v0, p0, Lcom/google/android/youtube/core/utils/n;->d:Landroid/content/ServiceConnection;
-
-    .line 59
-    return-void
-.end method
-
-.method static synthetic a(Lcom/google/android/youtube/core/utils/n;Landroid/os/Binder;)Landroid/os/Binder;
-    .registers 2
-    .parameter
-    .parameter
-
-    .prologue
-    .line 27
-    iput-object p1, p0, Lcom/google/android/youtube/core/utils/n;->b:Landroid/os/Binder;
-
-    return-object p1
-.end method
-
-.method static synthetic a(Lcom/google/android/youtube/core/utils/n;)Z
+.method public static a(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
     .parameter
 
     .prologue
-    .line 27
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/utils/n;->a:Z
+    .line 81
+    if-nez p0, :cond_8
 
-    return v0
+    .line 82
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 84
+    :cond_8
+    return-object p0
 .end method
 
-.method static synthetic b(Lcom/google/android/youtube/core/utils/n;)Landroid/os/Binder;
+.method public static a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 97
+    if-nez p0, :cond_c
+
+    .line 98
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 100
+    :cond_c
+    return-object p0
+.end method
+
+.method public static a(Ljava/lang/String;)Ljava/lang/String;
     .registers 2
     .parameter
 
     .prologue
-    .line 27
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/n;->b:Landroid/os/Binder;
+    .line 111
+    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    return-object v0
+    move-result v0
+
+    if-eqz v0, :cond_c
+
+    .line 112
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw v0
+
+    .line 114
+    :cond_c
+    return-object p0
 .end method
 
-
-# virtual methods
-.method public final a()Landroid/os/Binder;
-    .registers 2
-
-    .prologue
-    .line 88
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/n;->b:Landroid/os/Binder;
-
-    return-object v0
-.end method
-
-.method public final a(Landroid/content/Context;)V
-    .registers 6
+.method public static a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    .registers 4
+    .parameter
     .parameter
 
     .prologue
-    const/4 v2, 0x1
+    .line 127
+    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    .line 62
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/utils/n;->a:Z
-
-    if-nez v0, :cond_2f
-
-    .line 63
-    iput-boolean v2, p0, Lcom/google/android/youtube/core/utils/n;->a:Z
-
-    .line 64
-    new-instance v0, Landroid/content/Intent;
-
-    iget-object v1, p0, Lcom/google/android/youtube/core/utils/n;->c:Ljava/lang/Class;
-
-    invoke-direct {v0, p1, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 65
-    iget-object v1, p0, Lcom/google/android/youtube/core/utils/n;->d:Landroid/content/ServiceConnection;
-
-    invoke-virtual {p1, v0, v1, v2}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2f
-
-    .line 68
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Could not bind to "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 71
-    :cond_2f
-    return-void
-.end method
-
-.method protected abstract a(Landroid/os/Binder;)V
-.end method
-
-.method public final b(Landroid/content/Context;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 74
-    iget-boolean v0, p0, Lcom/google/android/youtube/core/utils/n;->a:Z
-
-    if-eqz v0, :cond_15
-
-    .line 75
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/google/android/youtube/core/utils/n;->a:Z
-
-    .line 77
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/n;->b:Landroid/os/Binder;
+    move-result v0
 
     if-eqz v0, :cond_10
 
-    .line 78
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/n;->b:Landroid/os/Binder;
+    .line 128
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/core/utils/n;->a(Landroid/os/Binder;)V
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 80
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 130
     :cond_10
-    iget-object v0, p0, Lcom/google/android/youtube/core/utils/n;->d:Landroid/content/ServiceConnection;
+    return-object p0
+.end method
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
+.method public static a(Z)V
+    .registers 2
+    .parameter
 
-    .line 82
-    :cond_15
+    .prologue
+    .line 26
+    if-nez p0, :cond_8
+
+    .line 27
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw v0
+
+    .line 29
+    :cond_8
     return-void
 .end method
 
-.method protected abstract b(Landroid/os/Binder;)V
+.method public static a(ZLjava/lang/Object;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 40
+    if-nez p0, :cond_c
+
+    .line 41
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 43
+    :cond_c
+    return-void
+.end method
+
+.method public static b(Z)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 53
+    if-nez p0, :cond_8
+
+    .line 54
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw v0
+
+    .line 56
+    :cond_8
+    return-void
+.end method
+
+.method public static b(ZLjava/lang/Object;)V
+    .registers 4
+    .parameter
+    .parameter
+
+    .prologue
+    .line 68
+    if-nez p0, :cond_c
+
+    .line 69
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 71
+    :cond_c
+    return-void
 .end method

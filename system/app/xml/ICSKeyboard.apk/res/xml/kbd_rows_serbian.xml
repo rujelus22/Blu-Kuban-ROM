@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:latin="http://schemas.android.com/apk/res/inputmethod.latin.ported">
+    <include latin:keyboardLayout="@xml/kbd_key_styles" />
+    <Row latin:keyWidth="9.090996%p">
+        <Key latin:moreKeys="1" latin:keyLabel="љ" latin:keyHintLabel="1" />
+        <Key latin:moreKeys="2" latin:keyLabel="њ" latin:keyHintLabel="2" />
+        <Key latin:moreKeys="3" latin:keyLabel="е" latin:keyHintLabel="3" />
+        <Key latin:moreKeys="4" latin:keyLabel="р" latin:keyHintLabel="4" />
+        <Key latin:moreKeys="5" latin:keyLabel="т" latin:keyHintLabel="5" />
+        <Key latin:moreKeys="6" latin:keyLabel="з" latin:keyHintLabel="6" />
+        <Key latin:moreKeys="7" latin:keyLabel="у" latin:keyHintLabel="7" />
+        <Key latin:moreKeys="8" latin:keyLabel="и" latin:keyHintLabel="8" />
+        <Key latin:moreKeys="9" latin:keyLabel="о" latin:keyHintLabel="9" />
+        <Key latin:moreKeys="0" latin:keyLabel="п" latin:keyHintLabel="0" />
+        <Key latin:keyLabel="ш" latin:keyWidth="fillRight" />
+    </Row>
+    <Row latin:keyWidth="9.090996%p">
+        <Key latin:keyLabel="а" />
+        <Key latin:keyLabel="с" />
+        <Key latin:keyLabel="д" />
+        <Key latin:keyLabel="ф" />
+        <Key latin:keyLabel="г" />
+        <Key latin:keyLabel="х" />
+        <Key latin:keyLabel="ј" />
+        <Key latin:keyLabel="к" />
+        <Key latin:keyLabel="л" />
+        <Key latin:keyLabel="ч" />
+        <Key latin:keyLabel="ћ" latin:keyWidth="fillRight" />
+    </Row>
+    <Row latin:keyWidth="8.500004%p">
+        <Key latin:keyStyle="shiftKeyStyle" latin:keyWidth="11.749994%p" />
+        <Key latin:keyLabel="ѕ" />
+        <Key latin:keyLabel="џ" />
+        <Key latin:keyLabel="ц" />
+        <Key latin:keyLabel="в" />
+        <Key latin:keyLabel="б" />
+        <Key latin:keyLabel="н" />
+        <Key latin:keyLabel="м" />
+        <Key latin:keyLabel="ђ" />
+        <Key latin:keyLabel="ж" />
+        <Key latin:keyStyle="deleteKeyStyle" latin:keyWidth="fillRight" />
+    </Row>
+    <include latin:keyboardLayout="@xml/kbd_qwerty_row4" />
+</merge>

@@ -1,69 +1,104 @@
-.class final synthetic Lcom/google/android/youtube/app/ui/bz;
+.class final Lcom/google/android/youtube/app/ui/bz;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
-# static fields
-.field static final synthetic a:[I
+
+# instance fields
+.field final synthetic a:Landroid/app/Activity;
+
+.field final synthetic b:Lcom/google/android/youtube/app/ui/bt;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method constructor <init>(Lcom/google/android/youtube/app/ui/bt;Landroid/app/Activity;)V
     .registers 3
+    .parameter
+    .parameter
 
     .prologue
-    .line 78
-    invoke-static {}, Lcom/google/android/youtube/core/model/Subscription$Type;->values()[Lcom/google/android/youtube/core/model/Subscription$Type;
+    .line 179
+    iput-object p1, p0, Lcom/google/android/youtube/app/ui/bz;->b:Lcom/google/android/youtube/app/ui/bt;
+
+    iput-object p2, p0, Lcom/google/android/youtube/app/ui/bz;->a:Landroid/app/Activity;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onClick(Landroid/view/View;)V
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 181
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/bz;->b:Lcom/google/android/youtube/app/ui/bt;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/bt;->f(Lcom/google/android/youtube/app/ui/bt;)Landroid/widget/ProgressBar;
 
     move-result-object v0
 
-    array-length v0, v0
+    const/4 v1, 0x0
 
-    new-array v0, v0, [I
+    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    sput-object v0, Lcom/google/android/youtube/app/ui/bz;->a:[I
+    .line 182
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/bz;->b:Lcom/google/android/youtube/app/ui/bt;
 
-    :try_start_9
-    sget-object v0, Lcom/google/android/youtube/app/ui/bz;->a:[I
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/bt;->g(Lcom/google/android/youtube/app/ui/bt;)Landroid/widget/ImageView;
 
-    sget-object v1, Lcom/google/android/youtube/core/model/Subscription$Type;->USER:Lcom/google/android/youtube/core/model/Subscription$Type;
+    move-result-object v0
 
-    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/Subscription$Type;->ordinal()I
+    const/16 v1, 0x8
 
-    move-result v1
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    const/4 v2, 0x1
+    .line 183
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/bz;->b:Lcom/google/android/youtube/app/ui/bt;
 
-    aput v2, v0, v1
-    :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
+    invoke-static {v0}, Lcom/google/android/youtube/app/ui/bt;->a(Lcom/google/android/youtube/app/ui/bt;)Landroid/widget/EditText;
 
-    :goto_14
-    :try_start_14
-    sget-object v0, Lcom/google/android/youtube/app/ui/bz;->a:[I
+    move-result-object v0
 
-    sget-object v1, Lcom/google/android/youtube/core/model/Subscription$Type;->CHANNEL:Lcom/google/android/youtube/core/model/Subscription$Type;
+    const/4 v1, 0x1
 
-    invoke-virtual {v1}, Lcom/google/android/youtube/core/model/Subscription$Type;->ordinal()I
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setSelected(Z)V
 
-    move-result v1
+    .line 185
+    new-instance v0, Landroid/content/Intent;
 
-    const/4 v2, 0x2
+    const-string v1, "com.google.zxing.client.android.YOUTUBE_SCAN"
 
-    aput v2, v0, v1
-    :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    :goto_1f
+    .line 186
+    const-string v1, "SCAN_MODE"
+
+    const-string v2, "QR_CODE_MODE"
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 187
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/bz;->a:Landroid/app/Activity;
+
+    invoke-virtual {v1}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 188
+    iget-object v1, p0, Lcom/google/android/youtube/app/ui/bz;->a:Landroid/app/Activity;
+
+    const/16 v2, 0x6b6
+
+    invoke-virtual {v1, v0, v2}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
+
+    .line 189
     return-void
-
-    :catch_20
-    move-exception v0
-
-    goto :goto_1f
-
-    :catch_22
-    move-exception v0
-
-    goto :goto_14
 .end method

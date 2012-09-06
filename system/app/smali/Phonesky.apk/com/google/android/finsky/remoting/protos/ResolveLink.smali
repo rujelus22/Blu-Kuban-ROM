@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/android/finsky/remoting/protos/ResolveLink$RedeemGiftCard;,
         Lcom/google/android/finsky/remoting/protos/ResolveLink$DirectPurchase;,
         Lcom/google/android/finsky/remoting/protos/ResolveLink$ResolveLinkResponse;
     }

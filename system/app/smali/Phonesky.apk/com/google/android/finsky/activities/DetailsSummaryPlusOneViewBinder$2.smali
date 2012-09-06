@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 97
+    .line 145
     invoke-static {}, Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;->values()[Lcom/google/android/finsky/activities/DetailsSummaryPlusOneViewBinder$PlusOneButtonState;
 
     move-result-object v0

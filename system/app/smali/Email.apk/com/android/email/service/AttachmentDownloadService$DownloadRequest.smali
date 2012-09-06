@@ -43,41 +43,41 @@
     .parameter "attachment"
 
     .prologue
-    .line 211
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 177
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 201
+    .line 171
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;->inProgress:Z
 
-    .line 212
-    iget-wide v1, p2, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    .line 178
+    iget-wide v1, p2, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mId:J
 
     iput-wide v1, p0, Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;->attachmentId:J
 
-    .line 213
+    .line 179
     iget-wide v1, p2, Lcom/android/emailcommon/provider/EmailContent$Attachment;->mMessageKey:J
 
     invoke-static {p1, v1, v2}, Lcom/android/emailcommon/provider/EmailContent$Message;->restoreMessageWithId(Landroid/content/Context;J)Lcom/android/emailcommon/provider/EmailContent$Message;
 
     move-result-object v0
 
-    .line 214
+    .line 180
     .local v0, msg:Lcom/android/emailcommon/provider/EmailContent$Message;
     if-eqz v0, :cond_27
 
-    .line 215
+    .line 181
     iget-wide v1, v0, Lcom/android/emailcommon/provider/EmailContent$Message;->mAccountKey:J
 
     iput-wide v1, p0, Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;->accountId:J
 
-    .line 216
-    iget-wide v1, v0, Lcom/android/emailcommon/provider/EmailContent;->mId:J
+    .line 182
+    iget-wide v1, v0, Lcom/android/emailcommon/provider/EmailContent$Message;->mId:J
 
     iput-wide v1, p0, Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;->messageId:J
 
-    .line 220
+    .line 186
     :goto_1a
     #calls: Lcom/android/email/service/AttachmentDownloadService;->getPriority(Lcom/android/emailcommon/provider/EmailContent$Attachment;)I
     invoke-static {p2}, Lcom/android/email/service/AttachmentDownloadService;->access$100(Lcom/android/emailcommon/provider/EmailContent$Attachment;)I
@@ -86,17 +86,17 @@
 
     iput v1, p0, Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;->priority:I
 
-    .line 221
+    .line 187
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
     iput-wide v1, p0, Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;->time:J
 
-    .line 222
+    .line 188
     return-void
 
-    .line 218
+    .line 184
     :cond_27
     const-wide/16 v1, -0x1
 
@@ -114,7 +114,7 @@
     .parameter "x2"
 
     .prologue
-    .line 190
+    .line 165
     invoke-direct {p0, p1, p2}, Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;-><init>(Landroid/content/Context;Lcom/android/emailcommon/provider/EmailContent$Attachment;)V
 
     return-void
@@ -129,12 +129,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 234
+    .line 200
     instance-of v2, p1, Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;
 
     if-nez v2, :cond_6
 
-    .line 237
+    .line 202
     :cond_5
     :goto_5
     return v1
@@ -142,10 +142,10 @@
     :cond_6
     move-object v0, p1
 
-    .line 236
+    .line 201
     check-cast v0, Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;
 
-    .line 237
+    .line 202
     .local v0, req:Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;
     iget-wide v2, v0, Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;->attachmentId:J
 
@@ -164,7 +164,7 @@
     .registers 3
 
     .prologue
-    .line 226
+    .line 192
     iget-wide v0, p0, Lcom/android/email/service/AttachmentDownloadService$DownloadRequest;->attachmentId:J
 
     long-to-int v0, v0

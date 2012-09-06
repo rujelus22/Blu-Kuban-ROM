@@ -4,9 +4,6 @@
 
 
 # virtual methods
-.method public abstract discardBefore(I)V
-.end method
-
 .method public abstract postError(Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {

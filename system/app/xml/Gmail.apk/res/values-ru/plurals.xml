@@ -53,40 +53,40 @@
         <item quantity="one">Цепочек, ожидающих действия: %1$d.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">Скрытых цепочек: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Скрытых цепочек: &amp;lt;b>%1$d&amp;lt;/b&amp;amp;gt.</item>
+        <item quantity="other">Скрытых цепочек: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Скрытых цепочек: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b&amp;amp;amp;amp;gt.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">Цепочек, помеченных как спам: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Цепочек, помеченных как спам: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Цепочек, помеченных как спам: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Цепочек, помеченных как спам: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">Архивировано (&amp;lt;b>%1$d&amp;lt;/b>)</item>
-        <item quantity="one">Архивировано (&amp;lt;b>%1$d&amp;lt;/b>)</item>
+        <item quantity="other">Архивировано (&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
+        <item quantity="one">Архивировано (&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>)</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">Цепочек, перемещенных во входящие: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Цепочек, перемещенных во входящие: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Цепочек, перемещенных во входящие: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Цепочек, перемещенных во входящие: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">Удаленных цепочек: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Удаленных цепочек: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Удаленных цепочек: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Удаленных цепочек: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">Цепочек, помеченных как важные: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Цепочек, помеченных как важные: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Цепочек, помеченных как важные: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Цепочек, помеченных как важные: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">Цепочек, помеченных как неважные: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Цепочек, помеченных как неважные: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Цепочек, помеченных как неважные: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Цепочек, помеченных как неважные: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">Цепочек, помеченных как прочитанные: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Цепочек, помеченных как прочитанные: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Цепочек, помеченных как прочитанные: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Цепочек, помеченных как прочитанные: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">Цепочек, помеченных как непрочитанные: &amp;lt;b>%1$d&amp;lt;/b>.</item>
-        <item quantity="one">Цепочек, помеченных как непрочитанные: &amp;lt;b>%1$d&amp;lt;/b>.</item>
+        <item quantity="other">Цепочек, помеченных как непрочитанные: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
+        <item quantity="one">Цепочек, помеченных как непрочитанные: &amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b>.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Ярлыки изменены.</item>

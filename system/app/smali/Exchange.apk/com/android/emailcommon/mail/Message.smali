@@ -31,18 +31,6 @@
     .end annotation
 .end field
 
-.field private mTags:Ljava/util/HashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/HashMap",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field protected mUid:Ljava/lang/String;
 
 
@@ -51,7 +39,7 @@
     .registers 1
 
     .prologue
-    .line 28
+    .line 23
     const/4 v0, 0x0
 
     new-array v0, v0, [Lcom/android/emailcommon/mail/Message;
@@ -65,16 +53,13 @@
     .registers 2
 
     .prologue
+    .line 22
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 31
     const/4 v0, 0x0
 
-    .line 27
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
-    .line 36
     iput-object v0, p0, Lcom/android/emailcommon/mail/Message;->mFlags:Ljava/util/HashSet;
-
-    .line 39
-    iput-object v0, p0, Lcom/android/emailcommon/mail/Message;->mTags:Ljava/util/HashMap;
 
     return-void
 .end method
@@ -92,19 +77,19 @@
     .end annotation
 
     .prologue
-    .line 148
+    .line 109
     iget-object v0, p0, Lcom/android/emailcommon/mail/Message;->mFlags:Ljava/util/HashSet;
 
     if-nez v0, :cond_b
 
-    .line 149
+    .line 110
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/android/emailcommon/mail/Message;->mFlags:Ljava/util/HashSet;
 
-    .line 151
+    .line 112
     :cond_b
     iget-object v0, p0, Lcom/android/emailcommon/mail/Message;->mFlags:Ljava/util/HashSet;
 
@@ -132,21 +117,21 @@
     .end annotation
 
     .prologue
-    .line 166
+    .line 127
     if-eqz p2, :cond_a
 
-    .line 167
+    .line 128
     invoke-direct {p0}, Lcom/android/emailcommon/mail/Message;->getFlagSet()Ljava/util/HashSet;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 171
+    .line 132
     :goto_9
     return-void
 
-    .line 169
+    .line 130
     :cond_a
     invoke-direct {p0}, Lcom/android/emailcommon/mail/Message;->getFlagSet()Ljava/util/HashSet;
 
@@ -161,7 +146,7 @@
     .registers 3
 
     .prologue
-    .line 230
+    .line 157
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

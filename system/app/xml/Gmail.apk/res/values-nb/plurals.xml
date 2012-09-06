@@ -53,40 +53,40 @@
         <item quantity="one">Venter på operasjon på %1$d samtale.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> ignorert.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er ignorert.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> ignorert.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er ignorert.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er rapportert som nettsøppel.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er rapportert som nettsøppel.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er rapportert som nettsøppel.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er rapportert som nettsøppel.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er arkivert.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er arkivert.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er arkivert.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er arkivert.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er flyttet til innboksen.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er flyttet til innboksen.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er flyttet til innboksen.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er flyttet til innboksen.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er slettet.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er slettet.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er slettet.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er slettet.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er merket som viktig.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er merket som viktig.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er merket som viktig.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er merket som viktig.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er merket som ikke viktige.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er merket som ikke viktig.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er merket som ikke viktige.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er merket som ikke viktig.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er merket som lest.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er merket som lest.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er merket som lest.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er merket som lest.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> er merket som uleste.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> er merket som ulest.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er merket som uleste.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> er merket som ulest.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Etikettene er endret.</item>

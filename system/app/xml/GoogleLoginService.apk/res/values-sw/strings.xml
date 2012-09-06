@@ -241,11 +241,11 @@ usalama"</b></string>
     <string name="account_intro_recommended_title">Tumia Google</string>
     <string name="common_message">"Akaunti ya Google inakuwezesha
 
-"<li><ul> kuangalia na kupangilia taarifa zako zote ukiwa mahali popote. </ul></li>"
+"<ul><li> kuangalia na kupangilia taarifa zako zote ukiwa mahali popote. </li></ul>"
 
-"<li><ul>Weka akiba taarifa zako moja kwa moja. </ul></li>"
+"<ul><li>Weka akiba taarifa zako moja kwa moja. </li></ul>"
 
-"<li><ul>Tumia huduma za Google kwa urahisi ukiwa mahali popote.</ul></li></string>
+"<ul><li>Tumia huduma za Google kwa urahisi ukiwa mahali popote.</li></ul></string>
     <string name="add_account_message">" Unaweza kutumia zaidi ya Akaunti moja ya Google (kama vile akaunti yako ya nyumbani na ya kazini). Gusa "<b>Ingia </b> au <b>Unda Akaunti</b> ili kuongeza Akaunti ya Google</string>
     <string name="account_intro_default_message">Usipoteze vitu vyako tena. Akaunti ya Google huweka kila kitu salama.</string>
     <string name="account_intro_custom_endtext">Tayari una %s? Ingia sasa.</string>

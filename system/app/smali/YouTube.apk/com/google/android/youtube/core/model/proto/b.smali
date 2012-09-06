@@ -35,15 +35,10 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lcom/google/android/youtube/core/model/proto/b;-><init>(C)V
-
-    sput-object v0, Lcom/google/android/youtube/core/model/proto/b;->a:Lcom/google/android/youtube/core/model/proto/b;
+    invoke-direct {v0, v1}, Lcom/google/android/youtube/core/model/proto/b;-><init>(B)V
 
     .line 1839
-    invoke-static {}, Lcom/google/android/youtube/core/model/proto/a;->a()V
-
-    .line 1840
-    sget-object v0, Lcom/google/android/youtube/core/model/proto/b;->a:Lcom/google/android/youtube/core/model/proto/b;
+    sput-object v0, Lcom/google/android/youtube/core/model/proto/b;->a:Lcom/google/android/youtube/core/model/proto/b;
 
     invoke-static {}, Lcom/google/android/youtube/core/model/proto/c;->a()Lcom/google/android/youtube/core/model/proto/c;
 
@@ -55,21 +50,8 @@
     return-void
 .end method
 
-.method synthetic constructor <init>()V
+.method private constructor <init>()V
     .registers 2
-
-    .prologue
-    .line 601
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lcom/google/android/youtube/core/model/proto/b;-><init>(B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(B)V
-    .registers 3
-    .parameter
 
     .prologue
     .line 604
@@ -117,7 +99,7 @@
     return-void
 .end method
 
-.method private constructor <init>(C)V
+.method private constructor <init>(B)V
     .registers 3
     .parameter
 
@@ -157,6 +139,17 @@
     iput v0, p0, Lcom/google/android/youtube/core/model/proto/b;->i:I
 
     .line 607
+    return-void
+.end method
+
+.method synthetic constructor <init>(C)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 601
+    invoke-direct {p0}, Lcom/google/android/youtube/core/model/proto/b;-><init>()V
+
     return-void
 .end method
 

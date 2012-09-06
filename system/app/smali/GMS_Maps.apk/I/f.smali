@@ -1,96 +1,193 @@
-.class public LI/f;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lat/p;
+.class Li/f;
+.super Li/a;
+.source "SourceFile"
 
 
 # instance fields
-.field private final a:Lat/h;
+.field private a:Li/a;
 
-.field private final b:LI/e;
+.field private b:Ljava/lang/String;
 
-.field private final c:Ljava/lang/Class;
+.field private c:Ljava/io/File;
+
+.field private final d:Landroid/os/Handler;
+
+.field private e:I
+
+.field private f:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Lat/h;LI/e;Ljava/lang/Class;)V
-    .registers 4
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;Landroid/os/Handler;)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 191
+    invoke-direct {p0}, Li/a;-><init>()V
 
-    iput-object p1, p0, LI/f;->a:Lat/h;
+    .line 192
+    iput-object p1, p0, Li/f;->f:Landroid/content/Context;
 
-    iput-object p2, p0, LI/f;->b:LI/e;
+    .line 193
+    iput-object p2, p0, Li/f;->b:Ljava/lang/String;
 
-    iput-object p3, p0, LI/f;->c:Ljava/lang/Class;
+    .line 194
+    iput-object p3, p0, Li/f;->c:Ljava/io/File;
 
+    .line 195
+    iput-object p4, p0, Li/f;->d:Landroid/os/Handler;
+
+    .line 196
     return-void
+.end method
+
+.method static synthetic a(Li/f;Li/a;)Li/a;
+    .registers 2
+    .parameter
+    .parameter
+
+    .prologue
+    .line 183
+    iput-object p1, p0, Li/f;->a:Li/a;
+
+    return-object p1
 .end method
 
 
 # virtual methods
-.method public a(IZLjava/lang/String;)V
-    .registers 5
+.method public a()V
+    .registers 2
 
-    const/4 v0, 0x3
+    .prologue
+    .line 227
+    iget-object v0, p0, Li/f;->a:Li/a;
 
-    if-ne p1, v0, :cond_17
+    if-eqz v0, :cond_9
 
-    if-eqz p2, :cond_17
+    .line 228
+    iget-object v0, p0, Li/f;->a:Li/a;
 
-    const/4 v0, 0x1
+    invoke-virtual {v0}, Li/a;->a()V
 
-    :goto_6
-    if-nez v0, :cond_d
-
-    iget-object v0, p0, LI/f;->a:Lat/h;
-
-    invoke-virtual {v0, p0}, Lat/h;->b(Lat/p;)V
-
-    :cond_d
-    iget-object v0, p0, LI/f;->b:LI/e;
-
-    if-eqz v0, :cond_16
-
-    iget-object v0, p0, LI/f;->b:LI/e;
-
-    invoke-interface {v0}, LI/e;->b()V
-
-    :cond_16
+    .line 230
+    :cond_9
     return-void
-
-    :cond_17
-    const/4 v0, 0x0
-
-    goto :goto_6
 .end method
 
-.method public a(Lat/g;)V
-    .registers 4
+.method public a(Li/b;)V
+    .registers 5
+    .parameter
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .prologue
+    .line 200
+    iget-object v0, p0, Li/f;->c:Ljava/io/File;
+
+    if-nez v0, :cond_f
+
+    .line 203
+    const-string v0, "AlertGenerator"
+
+    const-string v1, "mFile=null"
+
+    invoke-static {v0, v1}, Lh/a;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 204
+    invoke-interface {p1, p0}, Li/b;->a(Li/a;)V
+
+    .line 221
+    :goto_e
+    return-void
+
+    .line 208
+    :cond_f
+    iget-object v0, p0, Li/f;->f:Landroid/content/Context;
+
+    iget-object v1, p0, Li/f;->c:Ljava/io/File;
+
+    iget-object v2, p0, Li/f;->d:Landroid/os/Handler;
+
+    invoke-static {v0, v1, v2}, Li/O;->a(Landroid/content/Context;Ljava/io/File;Landroid/os/Handler;)Li/a;
 
     move-result-object v0
 
-    iget-object v1, p0, LI/f;->c:Ljava/lang/Class;
+    iput-object v0, p0, Li/f;->a:Li/a;
 
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    .line 209
+    iget-object v0, p0, Li/f;->a:Li/a;
 
-    move-result v0
+    if-nez v0, :cond_29
 
-    if-eqz v0, :cond_11
+    .line 210
+    invoke-interface {p1, p0}, Li/b;->a(Li/a;)V
 
-    iget-object v0, p0, LI/f;->a:Lat/h;
+    .line 220
+    :goto_22
+    iget v0, p0, Li/f;->e:I
 
-    invoke-virtual {v0, p0}, Lat/h;->b(Lat/p;)V
+    add-int/lit8 v0, v0, 0x1
 
-    :cond_11
+    iput v0, p0, Li/f;->e:I
+
+    goto :goto_e
+
+    .line 212
+    :cond_29
+    iget-object v0, p0, Li/f;->a:Li/a;
+
+    new-instance v1, Li/g;
+
+    invoke-direct {v1, p0, p1}, Li/g;-><init>(Li/f;Li/b;)V
+
+    invoke-virtual {v0, v1}, Li/a;->a(Li/b;)V
+
+    goto :goto_22
+.end method
+
+.method public b()V
+    .registers 2
+
+    .prologue
+    .line 234
+    iget-object v0, p0, Li/f;->a:Li/a;
+
+    if-eqz v0, :cond_9
+
+    .line 235
+    iget-object v0, p0, Li/f;->a:Li/a;
+
+    invoke-virtual {v0}, Li/a;->b()V
+
+    .line 237
+    :cond_9
     return-void
 .end method
 
-.method public b(Lat/g;)V
+.method public d()V
     .registers 2
 
+    .prologue
+    const/4 v0, 0x0
+
+    .line 248
+    iput-object v0, p0, Li/f;->c:Ljava/io/File;
+
+    .line 249
+    iput-object v0, p0, Li/f;->b:Ljava/lang/String;
+
+    .line 250
     return-void
+.end method
+
+.method public e()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 253
+    iget-object v0, p0, Li/f;->b:Ljava/lang/String;
+
+    return-object v0
 .end method

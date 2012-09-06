@@ -1,30 +1,42 @@
 .class Lcom/google/googlenav/suggest/android/d;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/suggest/android/SuggestProvider;
+.field final synthetic a:Lcom/google/googlenav/suggest/android/BaseSuggestView;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/suggest/android/SuggestProvider;)V
+.method constructor <init>(Lcom/google/googlenav/suggest/android/BaseSuggestView;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/suggest/android/d;->a:Lcom/google/googlenav/suggest/android/SuggestProvider;
+    .prologue
+    .line 77
+    iput-object p1, p0, Lcom/google/googlenav/suggest/android/d;->a:Lcom/google/googlenav/suggest/android/BaseSuggestView;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 4
+.method public run()V
+    .registers 3
 
-    iget-object v0, p0, Lcom/google/googlenav/suggest/android/d;->a:Lcom/google/googlenav/suggest/android/SuggestProvider;
+    .prologue
+    .line 80
+    iget-object v0, p0, Lcom/google/googlenav/suggest/android/d;->a:Lcom/google/googlenav/suggest/android/BaseSuggestView;
 
-    invoke-static {v0}, Lcom/google/googlenav/suggest/android/SuggestProvider;->a(Lcom/google/googlenav/suggest/android/SuggestProvider;)V
+    const/4 v1, 0x0
 
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/suggest/android/BaseSuggestView;->a(Z)V
+
+    .line 81
     return-void
 .end method

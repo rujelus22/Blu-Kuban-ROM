@@ -17,8 +17,6 @@
 # instance fields
 .field public description:Ljava/lang/String;
 
-.field info:Lcom/android/email/MessagingController$CommandInfo;
-
 .field public listener:Lcom/android/email/MessagingListener;
 
 .field public runnable:Ljava/lang/Runnable;
@@ -29,8 +27,8 @@
     .registers 1
 
     .prologue
-    .line 5467
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 2158
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -40,7 +38,7 @@
     .parameter "x0"
 
     .prologue
-    .line 5467
+    .line 2158
     invoke-direct {p0}, Lcom/android/email/MessagingController$Command;-><init>()V
 
     return-void
@@ -52,7 +50,7 @@
     .registers 2
 
     .prologue
-    .line 5478
+    .line 2167
     iget-object v0, p0, Lcom/android/email/MessagingController$Command;->description:Ljava/lang/String;
 
     return-object v0

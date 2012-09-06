@@ -102,17 +102,13 @@
 
     iget-object v0, p0, Lcom/google/wireless/gdata/GDataException;->cause:Ljava/lang/Throwable;
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_2f
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, " "
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/google/wireless/gdata/GDataException;->cause:Ljava/lang/Throwable;
 
@@ -128,7 +124,7 @@
 
     move-result-object v0
 
-    :goto_2a
+    :goto_26
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -139,8 +135,8 @@
 
     return-object v0
 
-    :cond_33
+    :cond_2f
     const-string v0, ""
 
-    goto :goto_2a
+    goto :goto_26
 .end method

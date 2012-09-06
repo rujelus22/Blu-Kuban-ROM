@@ -1,66 +1,91 @@
-.class synthetic Lau/c;
+.class Lau/c;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/maps/driveabout/vector/ef;
 
 
-# static fields
-.field static final synthetic a:[I
+# instance fields
+.field final synthetic a:Lau/a;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method constructor <init>(Lau/a;)V
+    .registers 2
+    .parameter
 
-    invoke-static {}, Lau/f;->values()[Lau/f;
+    .prologue
+    .line 152
+    iput-object p1, p0, Lau/c;->a:Lau/a;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a(Ln/Q;I)V
+    .registers 6
+    .parameter
+    .parameter
+
+    .prologue
+    .line 156
+    new-instance v0, Lat/B;
+
+    invoke-virtual {p1}, Ln/Q;->a()I
+
+    move-result v1
+
+    invoke-virtual {p1}, Ln/Q;->c()I
+
+    move-result v2
+
+    invoke-direct {v0, v1, v2}, Lat/B;-><init>(II)V
+
+    invoke-static {}, Lcom/google/googlenav/bI;->a()LY/c;
+
+    move-result-object v1
+
+    invoke-static {v0, p2, v1}, Lan/d;->a(Lat/B;ILY/c;)V
+
+    .line 162
+    iget-object v0, p0, Lau/c;->a:Lau/a;
+
+    invoke-static {v0}, Lau/a;->a(Lau/a;)Ll/q;
 
     move-result-object v0
 
-    array-length v0, v0
+    if-eqz v0, :cond_35
 
-    new-array v0, v0, [I
+    iget-object v0, p0, Lau/c;->a:Lau/a;
 
-    sput-object v0, Lau/c;->a:[I
+    invoke-static {v0}, Lau/a;->a(Lau/a;)Ll/q;
 
-    :try_start_9
-    sget-object v0, Lau/c;->a:[I
+    move-result-object v0
 
-    sget-object v1, Lau/f;->b:Lau/f;
+    invoke-virtual {v0}, Ll/q;->d()Z
 
-    invoke-virtual {v1}, Lau/f;->ordinal()I
+    move-result v0
 
-    move-result v1
+    if-eqz v0, :cond_35
 
-    const/4 v2, 0x1
+    .line 163
+    const/16 v0, 0x68
 
-    aput v2, v0, v1
-    :try_end_14
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
+    const-string v1, "v"
 
-    :goto_14
-    :try_start_14
-    sget-object v0, Lau/c;->a:[I
+    iget-object v2, p0, Lau/c;->a:Lau/a;
 
-    sget-object v1, Lau/f;->c:Lau/f;
+    invoke-static {v2, p2}, Lau/a;->a(Lau/a;I)Ljava/lang/String;
 
-    invoke-virtual {v1}, Lau/f;->ordinal()I
+    move-result-object v2
 
-    move-result v1
+    invoke-static {v0, v1, v2}, LaT/k;->a(ILjava/lang/String;Ljava/lang/String;)V
 
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
-
-    :goto_1f
+    .line 167
+    :cond_35
     return-void
-
-    :catch_20
-    move-exception v0
-
-    goto :goto_1f
-
-    :catch_22
-    move-exception v0
-
-    goto :goto_14
 .end method

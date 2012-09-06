@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/google/android/talk/AccountLoginUtils$NoBackgroundDataDialogFragment$1;->val$activity:Landroid/app/Activity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

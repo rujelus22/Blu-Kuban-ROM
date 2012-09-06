@@ -1,11 +1,14 @@
 .class Lcom/google/android/finsky/download/DownloadQueueImpl$7;
-.super Lcom/google/android/finsky/download/DownloadQueueImpl$ListenerNotifier;
+.super Ljava/lang/Object;
 .source "DownloadQueueImpl.java"
+
+# interfaces
+.implements Lcom/google/android/finsky/utils/ParameterizedRunnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/download/DownloadQueueImpl;->notifyListeners(Lcom/google/android/finsky/download/DownloadQueueImpl$UpdateListenerType;Lcom/google/android/finsky/download/Download;)V
+    value = Lcom/google/android/finsky/download/DownloadQueueImpl;->enqueueDownload(Lcom/google/android/finsky/download/InternalDownload;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -13,50 +16,106 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/android/finsky/utils/ParameterizedRunnable",
+        "<",
+        "Landroid/net/Uri;",
+        ">;"
+    }
+.end annotation
+
 
 # instance fields
 .field final synthetic this$0:Lcom/google/android/finsky/download/DownloadQueueImpl;
 
-.field final synthetic val$currentHttpStatus:I
+.field final synthetic val$context:Landroid/content/Context;
 
-.field final synthetic val$download:Lcom/google/android/finsky/download/Download;
+.field final synthetic val$download:Lcom/google/android/finsky/download/InternalDownload;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/finsky/download/DownloadQueueImpl;Lcom/google/android/finsky/download/DownloadQueueImpl$UpdateListenerType;Lcom/google/android/finsky/download/Download;I)V
-    .registers 5
+.method constructor <init>(Lcom/google/android/finsky/download/DownloadQueueImpl;Lcom/google/android/finsky/download/InternalDownload;Landroid/content/Context;)V
+    .registers 4
     .parameter
-    .parameter "x0"
     .parameter
     .parameter
 
     .prologue
-    .line 317
+    .line 545
     iput-object p1, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$7;->this$0:Lcom/google/android/finsky/download/DownloadQueueImpl;
 
-    iput-object p3, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$7;->val$download:Lcom/google/android/finsky/download/Download;
+    iput-object p2, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$7;->val$download:Lcom/google/android/finsky/download/InternalDownload;
 
-    iput p4, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$7;->val$currentHttpStatus:I
+    iput-object p3, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$7;->val$context:Landroid/content/Context;
 
-    invoke-direct {p0, p1, p2}, Lcom/google/android/finsky/download/DownloadQueueImpl$ListenerNotifier;-><init>(Lcom/google/android/finsky/download/DownloadQueueImpl;Lcom/google/android/finsky/download/DownloadQueueImpl$UpdateListenerType;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public updateListener(Lcom/google/android/finsky/download/DownloadQueueListener;)V
-    .registers 4
-    .parameter "listener"
+.method public run(Landroid/net/Uri;)V
+    .registers 6
+    .parameter "uri"
 
     .prologue
-    .line 320
-    iget-object v0, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$7;->val$download:Lcom/google/android/finsky/download/Download;
+    .line 548
+    const-string v0, "Enqueued %s as %s"
 
-    iget v1, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$7;->val$currentHttpStatus:I
+    const/4 v1, 0x2
 
-    invoke-interface {p1, v0, v1}, Lcom/google/android/finsky/download/DownloadQueueListener;->onError(Lcom/google/android/finsky/download/Download;I)V
+    new-array v1, v1, [Ljava/lang/Object;
 
-    .line 321
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$7;->val$download:Lcom/google/android/finsky/download/InternalDownload;
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 551
+    new-instance v0, Landroid/os/Handler;
+
+    iget-object v1, p0, Lcom/google/android/finsky/download/DownloadQueueImpl$7;->val$context:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    new-instance v1, Lcom/google/android/finsky/download/DownloadQueueImpl$7$1;
+
+    invoke-direct {v1, p0, p1}, Lcom/google/android/finsky/download/DownloadQueueImpl$7$1;-><init>(Lcom/google/android/finsky/download/DownloadQueueImpl$7;Landroid/net/Uri;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 566
+    return-void
+.end method
+
+.method public bridge synthetic run(Ljava/lang/Object;)V
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 545
+    check-cast p1, Landroid/net/Uri;
+
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/google/android/finsky/download/DownloadQueueImpl$7;->run(Landroid/net/Uri;)V
+
     return-void
 .end method

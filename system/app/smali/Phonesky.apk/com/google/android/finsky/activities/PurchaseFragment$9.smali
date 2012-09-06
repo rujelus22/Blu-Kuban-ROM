@@ -3,12 +3,12 @@
 .source "PurchaseFragment.java"
 
 # interfaces
-.implements Lcom/android/volley/Response$ErrorListener;
+.implements Landroid/text/Html$ImageGetter;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/activities/PurchaseFragment;->attemptDocLoadFromPurchaseDocId()V
+    value = Lcom/google/android/finsky/activities/PurchaseFragment;->updateButtons()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 746
+    .line 1223
     iput-object p1, p0, Lcom/google/android/finsky/activities/PurchaseFragment$9;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,28 +37,38 @@
 
 
 # virtual methods
-.method public onErrorResponse(Lcom/android/volley/VolleyError;)V
-    .registers 4
-    .parameter "error"
+.method public getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    .registers 6
+    .parameter "source"
 
     .prologue
-    .line 749
-    iget-object v0, p0, Lcom/google/android/finsky/activities/PurchaseFragment$9;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
+    const/4 v3, 0x0
 
+    .line 1226
     iget-object v1, p0, Lcom/google/android/finsky/activities/PurchaseFragment$9;->this$0:Lcom/google/android/finsky/activities/PurchaseFragment;
 
-    #getter for: Lcom/google/android/finsky/activities/PurchaseFragment;->mInnerDetails:Lcom/google/android/finsky/api/model/DfeDetails;
-    invoke-static {v1}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$1600(Lcom/google/android/finsky/activities/PurchaseFragment;)Lcom/google/android/finsky/api/model/DfeDetails;
+    invoke-virtual {v1}, Lcom/google/android/finsky/activities/PurchaseFragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/DfeDetails;->getVolleyError()Lcom/android/volley/VolleyError;
+    const v2, 0x7f02005e
 
-    move-result-object v1
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    #calls: Lcom/google/android/finsky/activities/PurchaseFragment;->showDocumentLoadError(Lcom/android/volley/VolleyError;)V
-    invoke-static {v0, v1}, Lcom/google/android/finsky/activities/PurchaseFragment;->access$1900(Lcom/google/android/finsky/activities/PurchaseFragment;Lcom/android/volley/VolleyError;)V
+    move-result-object v0
 
-    .line 750
-    return-void
+    .line 1228
+    .local v0, drawable:Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v1
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v2
+
+    invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    .line 1230
+    return-object v0
 .end method

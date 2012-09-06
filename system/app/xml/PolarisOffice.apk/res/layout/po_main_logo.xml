@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:layout_gravity="center_horizontal" android:id="@id/iv_main_logo_port" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="147.32999dip" android:src="@drawable/about_logo" />
-    <ImageView android:layout_gravity="bottom|center" android:id="@id/iv_main_infraware_port" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="37.329987dip" android:src="@drawable/logo_infraware" />
-    <ImageView android:layout_gravity="center_horizontal" android:id="@id/iv_main_logo_land" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="42.669983dip" android:src="@drawable/about_logo" />
-    <ImageView android:layout_gravity="bottom|center" android:id="@id/iv_main_infraware_land" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="28.0dip" android:src="@drawable/logo_infraware" />
-</FrameLayout>

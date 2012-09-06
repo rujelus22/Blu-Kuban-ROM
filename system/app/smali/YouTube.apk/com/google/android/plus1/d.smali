@@ -11,22 +11,8 @@
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/plus1/BasePlusOneButton;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 532
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/plus1/d;-><init>(Lcom/google/android/plus1/BasePlusOneButton;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/plus1/BasePlusOneButton;B)V
-    .registers 3
-    .parameter
+.method private constructor <init>(Lcom/google/android/plus1/BasePlusOneButton;)V
+    .registers 2
     .parameter
 
     .prologue
@@ -34,6 +20,18 @@
     iput-object p1, p0, Lcom/google/android/plus1/d;->a:Lcom/google/android/plus1/BasePlusOneButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/plus1/BasePlusOneButton;B)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 532
+    invoke-direct {p0, p1}, Lcom/google/android/plus1/d;-><init>(Lcom/google/android/plus1/BasePlusOneButton;)V
 
     return-void
 .end method

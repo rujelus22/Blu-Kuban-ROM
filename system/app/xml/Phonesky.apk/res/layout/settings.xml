@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="@string/settings_general_section_header">
+    <PreferenceCategory android:title="@string/settings_general_section_header" android:key="category-general">
         <CheckBoxPreference android:title="@string/notifications" android:key="update-notifications" android:summary="@string/notification_description" />
         <CheckBoxPreference android:title="@string/auto_update_by_default_label" android:key="auto-update-by-default" android:summary="@string/auto_update_by_default_description" />
         <CheckBoxPreference android:title="@string/auto_update_over_wifi_only_label" android:key="update-over-wifi-only" android:summary="@string/auto_update_over_wifi_only_description" />

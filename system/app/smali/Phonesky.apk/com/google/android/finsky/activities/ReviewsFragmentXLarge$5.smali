@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 167
+    .line 168
     iput-object p1, p0, Lcom/google/android/finsky/activities/ReviewsFragmentXLarge$5;->this$0:Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,16 +43,16 @@
     .parameter "hasFocus"
 
     .prologue
-    .line 170
+    .line 171
     if-eqz p2, :cond_7
 
-    .line 171
+    .line 172
     iget-object v0, p0, Lcom/google/android/finsky/activities/ReviewsFragmentXLarge$5;->this$0:Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;
 
     #calls: Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;->expandForm()V
     invoke-static {v0}, Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;->access$300(Lcom/google/android/finsky/activities/ReviewsFragmentXLarge;)V
 
-    .line 173
+    .line 174
     :cond_7
     return-void
 .end method

@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="gal_completed_fmt">
-        <item quantity="other">%1$d results from %2$s</item>
-        <item quantity="one">%1$d result from %2$s</item>
-    </plurals>
-    <plurals name="message_deleted_toast">
-        <item quantity="other">Messages deleted.</item>
-        <item quantity="one">Message deleted.</item>
-    </plurals>
     <plurals name="move_messages">
         <item quantity="other">Move messages</item>
         <item quantity="one">Move message</item>
@@ -25,6 +17,10 @@
         <item quantity="other">%1$d accounts</item>
         <item quantity="one">%1$d account</item>
     </plurals>
+    <plurals name="picker_combined_view_account_count">
+        <item quantity="other">%d accounts</item>
+        <item quantity="one">%d account</item>
+    </plurals>
     <plurals name="message_view_selected_message_count">
         <item quantity="other">%d selected</item>
         <item quantity="one">%d selected</item>
@@ -34,8 +30,12 @@
         <item quantity="one">Attachment %1$d</item>
     </plurals>
     <plurals name="message_delete_confirm">
-        <item quantity="other">Discard these messages?</item>
-        <item quantity="one">Discard this message?</item>
+        <item quantity="other">Delete these messages?</item>
+        <item quantity="one">Delete this message?</item>
+    </plurals>
+    <plurals name="message_deleted_toast">
+        <item quantity="other">Messages deleted.</item>
+        <item quantity="one">Message deleted.</item>
     </plurals>
     <plurals name="message_moved_toast">
         <item quantity="other">%1$d messages moved to %2$s</item>
@@ -57,24 +57,8 @@
         <item quantity="other">%dGB</item>
         <item quantity="one">%dGB</item>
     </plurals>
-    <plurals name="message_view_attachment_bytes_float">
-        <item quantity="other">%.1fB</item>
-        <item quantity="one">%.1fB</item>
-    </plurals>
-    <plurals name="message_view_attachment_kilobytes_float">
-        <item quantity="other">%.1fKB</item>
-        <item quantity="one">%.1fKB</item>
-    </plurals>
-    <plurals name="message_view_attachment_megabytes_float">
-        <item quantity="other">%.1fMB</item>
-        <item quantity="one">%.1fMB</item>
-    </plurals>
-    <plurals name="message_view_attachment_gigabytes_float">
-        <item quantity="other">%.1fGB</item>
-        <item quantity="one">%.1fGB</item>
-    </plurals>
-    <plurals name="search_results_title">
-        <item quantity="other">%1$s results for %2$s</item>
-        <item quantity="one">%s result for \"%s\"</item>
+    <plurals name="gal_completed_fmt">
+        <item quantity="other">%1$d results from %2$s</item>
+        <item quantity="one">%1$d result from %2$s</item>
     </plurals>
 </resources>

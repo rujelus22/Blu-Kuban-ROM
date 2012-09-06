@@ -60,7 +60,7 @@
 
     iput-object p7, p0, Lcom/google/android/videochat/CallManager$2;->val$existingCall:Lcom/google/android/videochat/CallState;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

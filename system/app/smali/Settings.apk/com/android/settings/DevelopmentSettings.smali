@@ -277,7 +277,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_16
 
     .line 198
     const-string v1, "hdcp_checking"
@@ -288,18 +288,16 @@
 
     .line 199
     .local v0, hdcpChecking:Landroid/preference/Preference;
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_16
 
     .line 201
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 204
     .end local v0           #hdcpChecking:Landroid/preference/Preference;
-    :cond_19
+    :cond_16
     return-void
 .end method
 
@@ -703,7 +701,7 @@
 
     const-string v1, "persist.sys.ui.hw"
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -2309,8 +2307,6 @@
 
     iget-object v4, p0, Lcom/android/settings/DevelopmentSettings;->mKeepScreenOn:Landroid/preference/CheckBoxPreference;
 
-    invoke-virtual {v1, v4}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 211
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -2324,7 +2320,7 @@
     .local v0, cr:Landroid/content/ContentResolver;
     iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mRestrictionPolicy:Landroid/app/enterprise/RestrictionPolicy;
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_2d
 
     .line 215
     iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mEnableAdb:Landroid/preference/CheckBoxPreference;
@@ -2349,7 +2345,7 @@
     invoke-virtual {v1, v4}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
     .line 220
-    :cond_30
+    :cond_2d
     iget-object v4, p0, Lcom/android/settings/DevelopmentSettings;->mEnableAdb:Landroid/preference/CheckBoxPreference;
 
     const-string v1, "adb_enabled"
@@ -2358,11 +2354,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_81
+    if-eqz v1, :cond_7e
 
     move v1, v2
 
-    :goto_3b
+    :goto_38
     invoke-virtual {v4, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 222
@@ -2374,11 +2370,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_83
+    if-eqz v1, :cond_80
 
     move v1, v2
 
-    :goto_49
+    :goto_46
     invoke-virtual {v4, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 224
@@ -2390,9 +2386,9 @@
 
     move-result v4
 
-    if-eqz v4, :cond_85
+    if-eqz v4, :cond_82
 
-    :goto_56
+    :goto_53
     invoke-virtual {v1, v2}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 226
@@ -2437,21 +2433,21 @@
     .line 242
     return-void
 
-    :cond_81
+    :cond_7e
     move v1, v3
 
     .line 220
-    goto :goto_3b
+    goto :goto_38
 
-    :cond_83
+    :cond_80
     move v1, v3
 
     .line 222
-    goto :goto_49
+    goto :goto_46
 
-    :cond_85
+    :cond_82
     move v2, v3
 
     .line 224
-    goto :goto_56
+    goto :goto_53
 .end method

@@ -1,5 +1,6 @@
 .class public Lcom/google/googlenav/networkinitiated/h;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
 .implements Lcom/google/googlenav/networkinitiated/b;
@@ -12,11 +13,16 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 2
+    .parameter
 
+    .prologue
+    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 28
     iput-object p1, p0, Lcom/google/googlenav/networkinitiated/h;->a:Landroid/content/Context;
 
+    .line 29
     return-void
 .end method
 
@@ -24,10 +30,15 @@
 # virtual methods
 .method public a(Landroid/content/Intent;)Z
     .registers 4
+    .parameter
 
-    const-string v0, "com.google.android.c2dm.intent.REGISTRATION"
+    .prologue
+    .line 33
+    const-string v0, "refreshList"
 
-    invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    const-string v1, "op"
+
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -39,53 +50,44 @@
 .end method
 
 .method public b(Landroid/content/Intent;)V
-    .registers 8
+    .registers 5
+    .parameter
 
-    const-string v0, "registration_id"
+    .prologue
+    .line 38
+    new-instance v0, Landroid/content/Intent;
 
-    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    const-string v1, "com.google.googlenav.friend.android.LatitudeBroadcastReceiver.ACTION_REFRESH_FRIENDS"
 
-    move-result-object v0
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "error"
+    .line 39
+    const-string v1, "respondingGaiaId"
 
-    invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "unregistered"
+    const-string v2, "respondingGaiaId"
 
     invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    if-eqz v1, :cond_1b
+    move-result-object v2
 
-    const-string v2, "NONE"
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 40
+    const-string v1, "timestamp"
 
-    move-result v1
+    const-string v2, "timestamp"
 
-    if-eqz v1, :cond_2f
+    invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    :cond_1b
-    invoke-static {}, Lat/h;->a()Lat/h;
+    move-result-object v2
 
-    move-result-object v1
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    new-instance v2, Lcom/google/googlenav/networkinitiated/i;
+    .line 41
+    iget-object v1, p0, Lcom/google/googlenav/networkinitiated/h;->a:Landroid/content/Context;
 
-    const/4 v3, 0x4
+    invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    new-instance v4, Lcom/google/googlenav/networkinitiated/k;
-
-    iget-object v5, p0, Lcom/google/googlenav/networkinitiated/h;->a:Landroid/content/Context;
-
-    invoke-direct {v4, v5}, Lcom/google/googlenav/networkinitiated/k;-><init>(Landroid/content/Context;)V
-
-    invoke-direct {v2, v0, v3, v4}, Lcom/google/googlenav/networkinitiated/i;-><init>(Ljava/lang/String;ILcom/google/googlenav/networkinitiated/j;)V
-
-    invoke-virtual {v1, v2}, Lat/h;->c(Lat/g;)V
-
-    :cond_2f
+    .line 42
     return-void
 .end method

@@ -3,12 +3,19 @@
 .source "SourceFile"
 
 
+# instance fields
+.field final synthetic a:Lcom/google/android/youtube/core/converter/http/ag;
+
+
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method constructor <init>(Lcom/google/android/youtube/core/converter/http/ag;)V
+    .registers 2
+    .parameter
 
     .prologue
-    .line 33
+    .line 84
+    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/aj;->a:Lcom/google/android/youtube/core/converter/http/ag;
+
     invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
     return-void
@@ -16,19 +23,24 @@
 
 
 # virtual methods
-.method public final a(Lcom/google/android/youtube/core/utils/p;Lorg/xml/sax/Attributes;)V
-    .registers 4
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
+    .registers 5
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 36
-    new-instance v0, Ljava/util/ArrayList;
+    .line 87
+    const-class v0, Lcom/google/android/youtube/core/model/Event$Builder;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->a(Ljava/lang/Class;)Ljava/lang/Object;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/p;->offer(Ljava/lang/Object;)Z
+    move-result-object v0
 
-    .line 37
+    check-cast v0, Lcom/google/android/youtube/core/model/Event$Builder;
+
+    invoke-virtual {v0, p3}, Lcom/google/android/youtube/core/model/Event$Builder;->groupId(Ljava/lang/String;)Lcom/google/android/youtube/core/model/Event$Builder;
+
+    .line 88
     return-void
 .end method

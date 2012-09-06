@@ -28,34 +28,41 @@
 
 
 # instance fields
-.field private mAccountChanging:Z
+.field private mIsFirstLoad:Z
 
 .field final synthetic this$0:Lcom/android/email/activity/MailboxListFragment;
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/email/activity/MailboxListFragment;Z)V
-    .registers 3
+.method private constructor <init>(Lcom/android/email/activity/MailboxListFragment;)V
+    .registers 2
     .parameter
-    .parameter "accountChanging"
 
     .prologue
-    .line 1786
+    .line 755
     iput-object p1, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1787
-    iput-boolean p2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->mAccountChanging:Z
+    return-void
+.end method
 
-    .line 1788
+.method synthetic constructor <init>(Lcom/android/email/activity/MailboxListFragment;Lcom/android/email/activity/MailboxListFragment$1;)V
+    .registers 3
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 755
+    invoke-direct {p0, p1}, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;-><init>(Lcom/android/email/activity/MailboxListFragment;)V
+
     return-void
 .end method
 
 
 # virtual methods
 .method public onCreateLoader(ILandroid/os/Bundle;)Landroid/content/Loader;
-    .registers 7
+    .registers 8
     .parameter "id"
     .parameter "args"
     .annotation system Ldalvik/annotation/Signature;
@@ -71,7 +78,75 @@
     .end annotation
 
     .prologue
-    .line 1796
+    .line 760
+    sget-boolean v0, Lcom/android/emailcommon/Logging;->DEBUG_LIFECYCLE:Z
+
+    if-eqz v0, :cond_22
+
+    sget-boolean v0, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v0, :cond_22
+
+    .line 761
+    const-string v0, "Email"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " onCreateLoader"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 763
+    :cond_22
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->mIsFirstLoad:Z
+
+    .line 764
+    iget-object v0, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+
+    invoke-virtual {v0}, Lcom/android/email/activity/MailboxListFragment;->getAccountId()J
+
+    move-result-wide v0
+
+    const-wide/high16 v2, 0x1000
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_3c
+
+    .line 765
+    iget-object v0, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+
+    invoke-virtual {v0}, Lcom/android/email/activity/MailboxListFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/email/activity/MailboxFragmentAdapter;->createCombinedViewLoader(Landroid/content/Context;)Landroid/content/Loader;
+
+    move-result-object v0
+
+    .line 767
+    :goto_3b
+    return-object v0
+
+    :cond_3c
     iget-object v0, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
 
     invoke-virtual {v0}, Lcom/android/email/activity/MailboxListFragment;->getActivity()Landroid/app/Activity;
@@ -80,22 +155,26 @@
 
     iget-object v1, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
 
-    #getter for: Lcom/android/email/activity/MailboxListFragment;->mAccountId:J
-    invoke-static {v1}, Lcom/android/email/activity/MailboxListFragment;->access$1400(Lcom/android/email/activity/MailboxListFragment;)J
+    invoke-virtual {v1}, Lcom/android/email/activity/MailboxListFragment;->getAccountId()J
 
     move-result-wide v1
 
-    const/4 v3, 0x0
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
 
-    invoke-static {v0, v1, v2, v3}, Lcom/android/email/activity/MailboxesAdapter;->createLoader(Landroid/content/Context;JI)Landroid/content/Loader;
+    #getter for: Lcom/android/email/activity/MailboxListFragment;->mParentMailboxId:J
+    invoke-static {v3}, Lcom/android/email/activity/MailboxListFragment;->access$400(Lcom/android/email/activity/MailboxListFragment;)J
+
+    move-result-wide v3
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/android/email/activity/MailboxFragmentAdapter;->createMailboxesLoader(Landroid/content/Context;JJ)Landroid/content/Loader;
 
     move-result-object v0
 
-    return-object v0
+    goto :goto_3b
 .end method
 
 .method public onLoadFinished(Landroid/content/Loader;Landroid/database/Cursor;)V
-    .registers 11
+    .registers 15
     .parameter
     .parameter "cursor"
     .annotation system Ldalvik/annotation/Signature;
@@ -112,232 +191,266 @@
 
     .prologue
     .local p1, loader:Landroid/content/Loader;,"Landroid/content/Loader<Landroid/database/Cursor;>;"
+    const-wide/16 v10, -0x1
+
+    const/4 v9, 0x1
+
+    const/4 v8, 0x0
+
     const/4 v7, 0x0
 
-    const/4 v6, 0x1
+    .line 774
+    sget-boolean v3, Lcom/android/emailcommon/Logging;->DEBUG_LIFECYCLE:Z
 
-    const/4 v5, 0x0
+    if-eqz v3, :cond_2f
 
-    .line 1807
-    if-eqz p2, :cond_b
+    sget-boolean v3, Lcom/android/email/Email;->DEBUG:Z
 
-    invoke-interface {p2}, Landroid/database/Cursor;->isClosed()Z
+    if-eqz v3, :cond_2f
 
-    move-result v2
+    .line 775
+    const-string v3, "Email"
 
-    if-eqz v2, :cond_13
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    .line 1808
-    :cond_b
-    const-string v2, "Email"
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "Null cursor"
+    iget-object v5, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
 
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 1876
-    :goto_12
-    return-void
+    move-result-object v4
 
-    .line 1812
-    :cond_13
-    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+    const-string v5, " onLoadFinished  count="
 
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-interface {p2}, Landroid/database/Cursor;->getCount()I
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 783
+    :cond_2f
     iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
 
-    #getter for: Lcom/android/email/activity/MailboxListFragment;->mAccountId:J
-    invoke-static {v3}, Lcom/android/email/activity/MailboxListFragment;->access$1400(Lcom/android/email/activity/MailboxListFragment;)J
+    invoke-virtual {v3}, Lcom/android/email/activity/MailboxListFragment;->getAccountId()J
 
     move-result-wide v3
 
-    #setter for: Lcom/android/email/activity/MailboxListFragment;->mLastLoadedAccountId:J
-    invoke-static {v2, v3, v4}, Lcom/android/email/activity/MailboxListFragment;->access$2402(Lcom/android/email/activity/MailboxListFragment;J)J
+    const-wide/high16 v5, 0x1000
 
-    .line 1814
-    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+    cmp-long v3, v3, v5
 
-    invoke-virtual {v2}, Lcom/android/email/activity/MailboxListFragment;->getListView()Landroid/widget/ListView;
+    if-eqz v3, :cond_59
+
+    move-object v0, p2
+
+    .line 784
+    check-cast v0, Lcom/android/email/activity/MailboxFragmentAdapter$CursorWithExtras;
+
+    .line 786
+    .local v0, c:Lcom/android/email/activity/MailboxFragmentAdapter$CursorWithExtras;
+    iget v3, v0, Lcom/android/email/activity/MailboxFragmentAdapter$CursorWithExtras;->mChildCount:I
+
+    if-nez v3, :cond_59
+
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+
+    #calls: Lcom/android/email/activity/MailboxListFragment;->isRoot()Z
+    invoke-static {v3}, Lcom/android/email/activity/MailboxListFragment;->access$500(Lcom/android/email/activity/MailboxListFragment;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_59
+
+    .line 788
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+
+    #getter for: Lcom/android/email/activity/MailboxListFragment;->mListAdapter:Lcom/android/email/activity/MailboxFragmentAdapter;
+    invoke-static {v3}, Lcom/android/email/activity/MailboxListFragment;->access$600(Lcom/android/email/activity/MailboxListFragment;)Lcom/android/email/activity/MailboxFragmentAdapter;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p2}, Lcom/android/email/activity/MailboxFragmentAdapter;->swapCursor(Landroid/database/Cursor;)Landroid/database/Cursor;
+
+    .line 789
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+
+    invoke-virtual {v3}, Lcom/android/email/activity/MailboxListFragment;->navigateUp()Z
+
+    .line 840
+    .end local v0           #c:Lcom/android/email/activity/MailboxFragmentAdapter$CursorWithExtras;
+    :goto_58
+    return-void
+
+    .line 795
+    :cond_59
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+
+    invoke-virtual {v3}, Lcom/android/email/activity/MailboxListFragment;->getListView()Landroid/widget/ListView;
+
+    move-result-object v2
+
+    .line 797
+    .local v2, lv:Landroid/widget/ListView;
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+
+    #getter for: Lcom/android/email/activity/MailboxListFragment;->mSavedListState:Landroid/os/Parcelable;
+    invoke-static {v3}, Lcom/android/email/activity/MailboxListFragment;->access$700(Lcom/android/email/activity/MailboxListFragment;)Landroid/os/Parcelable;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_94
+
+    .line 798
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+
+    #getter for: Lcom/android/email/activity/MailboxListFragment;->mSavedListState:Landroid/os/Parcelable;
+    invoke-static {v3}, Lcom/android/email/activity/MailboxListFragment;->access$700(Lcom/android/email/activity/MailboxListFragment;)Landroid/os/Parcelable;
 
     move-result-object v1
 
-    .line 1816
-    .local v1, lv:Landroid/widget/ListView;
-    iget-boolean v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->mAccountChanging:Z
+    .line 799
+    .local v1, listState:Landroid/os/Parcelable;
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
 
-    if-eqz v2, :cond_45
+    #setter for: Lcom/android/email/activity/MailboxListFragment;->mSavedListState:Landroid/os/Parcelable;
+    invoke-static {v3, v7}, Lcom/android/email/activity/MailboxListFragment;->access$702(Lcom/android/email/activity/MailboxListFragment;Landroid/os/Parcelable;)Landroid/os/Parcelable;
 
-    .line 1817
-    const/4 v0, 0x0
-
-    .line 1824
-    .local v0, lss:Lcom/android/emailcommon/utility/Utility$ListStateSaver;
-    :goto_29
+    .line 804
+    :goto_72
     invoke-interface {p2}, Landroid/database/Cursor;->getCount()I
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_5f
+    if-nez v3, :cond_99
 
-    .line 1828
-    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
-
-    #getter for: Lcom/android/email/activity/MailboxListFragment;->mListAdapter:Lcom/android/email/activity/MailboxesAdapter;
-    invoke-static {v2}, Lcom/android/email/activity/MailboxListFragment;->access$400(Lcom/android/email/activity/MailboxListFragment;)Lcom/android/email/activity/MailboxesAdapter;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v7}, Lcom/android/email/activity/MailboxesAdapter;->swapCursor(Landroid/database/Cursor;)Landroid/database/Cursor;
-
-    .line 1829
-    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
-
-    invoke-virtual {v2, v5}, Lcom/android/email/activity/MailboxListFragment;->setListShown(Z)V
-
-    .line 1870
-    :cond_3d
-    :goto_3d
-    if-eqz v0, :cond_42
-
-    .line 1871
-    invoke-virtual {v0, v1}, Lcom/android/emailcommon/utility/Utility$ListStateSaver;->restore(Landroid/widget/AbsListView;)V
-
-    .line 1875
-    :cond_42
-    iput-boolean v5, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->mAccountChanging:Z
-
-    goto :goto_12
-
-    .line 1818
-    .end local v0           #lss:Lcom/android/emailcommon/utility/Utility$ListStateSaver;
-    :cond_45
-    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
-
-    #getter for: Lcom/android/email/activity/MailboxListFragment;->mSavedListState:Lcom/android/emailcommon/utility/Utility$ListStateSaver;
-    invoke-static {v2}, Lcom/android/email/activity/MailboxListFragment;->access$2500(Lcom/android/email/activity/MailboxListFragment;)Lcom/android/emailcommon/utility/Utility$ListStateSaver;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_59
-
-    .line 1819
-    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
-
-    #getter for: Lcom/android/email/activity/MailboxListFragment;->mSavedListState:Lcom/android/emailcommon/utility/Utility$ListStateSaver;
-    invoke-static {v2}, Lcom/android/email/activity/MailboxListFragment;->access$2500(Lcom/android/email/activity/MailboxListFragment;)Lcom/android/emailcommon/utility/Utility$ListStateSaver;
-
-    move-result-object v0
-
-    .line 1820
-    .restart local v0       #lss:Lcom/android/emailcommon/utility/Utility$ListStateSaver;
-    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
-
-    #setter for: Lcom/android/email/activity/MailboxListFragment;->mSavedListState:Lcom/android/emailcommon/utility/Utility$ListStateSaver;
-    invoke-static {v2, v7}, Lcom/android/email/activity/MailboxListFragment;->access$2502(Lcom/android/email/activity/MailboxListFragment;Lcom/android/emailcommon/utility/Utility$ListStateSaver;)Lcom/android/emailcommon/utility/Utility$ListStateSaver;
-
-    goto :goto_29
-
-    .line 1822
-    .end local v0           #lss:Lcom/android/emailcommon/utility/Utility$ListStateSaver;
-    :cond_59
-    new-instance v0, Lcom/android/emailcommon/utility/Utility$ListStateSaver;
-
-    invoke-direct {v0, v1}, Lcom/android/emailcommon/utility/Utility$ListStateSaver;-><init>(Landroid/widget/AbsListView;)V
-
-    .restart local v0       #lss:Lcom/android/emailcommon/utility/Utility$ListStateSaver;
-    goto :goto_29
-
-    .line 1833
-    :cond_5f
-    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
-
-    #getter for: Lcom/android/email/activity/MailboxListFragment;->mListAdapter:Lcom/android/email/activity/MailboxesAdapter;
-    invoke-static {v2}, Lcom/android/email/activity/MailboxListFragment;->access$400(Lcom/android/email/activity/MailboxListFragment;)Lcom/android/email/activity/MailboxesAdapter;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/android/email/activity/MailboxesAdapter;->setAdapterInfo()V
-
-    .line 1834
-    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
-
-    #getter for: Lcom/android/email/activity/MailboxListFragment;->mListAdapter:Lcom/android/email/activity/MailboxesAdapter;
-    invoke-static {v2}, Lcom/android/email/activity/MailboxListFragment;->access$400(Lcom/android/email/activity/MailboxListFragment;)Lcom/android/email/activity/MailboxesAdapter;
-
-    move-result-object v2
-
+    .line 807
     iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
 
-    #getter for: Lcom/android/email/activity/MailboxListFragment;->mListAdapter:Lcom/android/email/activity/MailboxesAdapter;
-    invoke-static {v3}, Lcom/android/email/activity/MailboxListFragment;->access$400(Lcom/android/email/activity/MailboxListFragment;)Lcom/android/email/activity/MailboxesAdapter;
+    #getter for: Lcom/android/email/activity/MailboxListFragment;->mListAdapter:Lcom/android/email/activity/MailboxFragmentAdapter;
+    invoke-static {v3}, Lcom/android/email/activity/MailboxListFragment;->access$600(Lcom/android/email/activity/MailboxListFragment;)Lcom/android/email/activity/MailboxFragmentAdapter;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/android/email/activity/MailboxesAdapter;->getMailboxCursor()Landroid/database/Cursor;
+    invoke-virtual {v3, v7}, Lcom/android/email/activity/MailboxFragmentAdapter;->swapCursor(Landroid/database/Cursor;)Landroid/database/Cursor;
 
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/android/email/activity/MailboxesAdapter;->swapCursor(Landroid/database/Cursor;)Landroid/database/Cursor;
-
-    .line 1835
-    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
-
+    .line 808
     iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
 
-    #getter for: Lcom/android/email/activity/MailboxListFragment;->mListAdapter:Lcom/android/email/activity/MailboxesAdapter;
-    invoke-static {v3}, Lcom/android/email/activity/MailboxListFragment;->access$400(Lcom/android/email/activity/MailboxListFragment;)Lcom/android/email/activity/MailboxesAdapter;
+    invoke-virtual {v3, v8}, Lcom/android/email/activity/MailboxListFragment;->setListShown(Z)V
+
+    .line 836
+    :cond_86
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+
+    const/4 v4, -0x1
+
+    #setter for: Lcom/android/email/activity/MailboxListFragment;->mDropTargetId:I
+    invoke-static {v3, v4}, Lcom/android/email/activity/MailboxListFragment;->access$1102(Lcom/android/email/activity/MailboxListFragment;I)I
+
+    .line 837
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+
+    #setter for: Lcom/android/email/activity/MailboxListFragment;->mDropTargetView:Lcom/android/email/activity/MailboxListItem;
+    invoke-static {v3, v7}, Lcom/android/email/activity/MailboxListFragment;->access$1202(Lcom/android/email/activity/MailboxListFragment;Lcom/android/email/activity/MailboxListItem;)Lcom/android/email/activity/MailboxListItem;
+
+    .line 839
+    iput-boolean v8, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->mIsFirstLoad:Z
+
+    goto :goto_58
+
+    .line 801
+    .end local v1           #listState:Landroid/os/Parcelable;
+    :cond_94
+    invoke-virtual {v2}, Landroid/widget/ListView;->onSaveInstanceState()Landroid/os/Parcelable;
+
+    move-result-object v1
+
+    .restart local v1       #listState:Landroid/os/Parcelable;
+    goto :goto_72
+
+    .line 811
+    :cond_99
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+
+    #setter for: Lcom/android/email/activity/MailboxListFragment;->mParentDetermined:Z
+    invoke-static {v3, v9}, Lcom/android/email/activity/MailboxListFragment;->access$802(Lcom/android/email/activity/MailboxListFragment;Z)Z
+
+    .line 813
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+
+    #getter for: Lcom/android/email/activity/MailboxListFragment;->mListAdapter:Lcom/android/email/activity/MailboxFragmentAdapter;
+    invoke-static {v3}, Lcom/android/email/activity/MailboxListFragment;->access$600(Lcom/android/email/activity/MailboxListFragment;)Lcom/android/email/activity/MailboxFragmentAdapter;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Lcom/android/email/activity/MailboxListFragment;->setListAdapter(Landroid/widget/ListAdapter;)V
+    invoke-virtual {v3, p2}, Lcom/android/email/activity/MailboxFragmentAdapter;->swapCursor(Landroid/database/Cursor;)Landroid/database/Cursor;
 
-    .line 1836
-    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+    .line 814
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
 
-    invoke-virtual {v2, v6}, Lcom/android/email/activity/MailboxListFragment;->setListShown(Z)V
+    invoke-virtual {v3, v9}, Lcom/android/email/activity/MailboxListFragment;->setListShown(Z)V
 
-    .line 1862
-    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+    .line 818
+    invoke-virtual {v2, v1}, Landroid/widget/ListView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    iget-boolean v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->mAccountChanging:Z
+    .line 821
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
 
-    #calls: Lcom/android/email/activity/MailboxListFragment;->highlightSelectedMailbox(Z)V
-    invoke-static {v2, v3}, Lcom/android/email/activity/MailboxListFragment;->access$2600(Lcom/android/email/activity/MailboxListFragment;Z)V
+    #getter for: Lcom/android/email/activity/MailboxListFragment;->mNextHighlightedMailboxId:J
+    invoke-static {v3}, Lcom/android/email/activity/MailboxListFragment;->access$900(Lcom/android/email/activity/MailboxListFragment;)J
 
-    .line 1863
-    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+    move-result-wide v3
 
-    #getter for: Lcom/android/email/activity/MailboxListFragment;->mListAdapter:Lcom/android/email/activity/MailboxesAdapter;
-    invoke-static {v2}, Lcom/android/email/activity/MailboxListFragment;->access$400(Lcom/android/email/activity/MailboxListFragment;)Lcom/android/email/activity/MailboxesAdapter;
+    cmp-long v3, v3, v10
 
-    move-result-object v2
+    if-eqz v3, :cond_c9
 
-    invoke-virtual {v2}, Lcom/android/email/activity/MailboxesAdapter;->getChangeMailboxFlag()Z
+    .line 822
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
 
-    move-result v2
+    iget-object v4, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
 
-    if-ne v2, v6, :cond_3d
+    #getter for: Lcom/android/email/activity/MailboxListFragment;->mNextHighlightedMailboxId:J
+    invoke-static {v4}, Lcom/android/email/activity/MailboxListFragment;->access$900(Lcom/android/email/activity/MailboxListFragment;)J
 
-    .line 1864
-    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+    move-result-wide v4
 
-    #getter for: Lcom/android/email/activity/MailboxListFragment;->mListAdapter:Lcom/android/email/activity/MailboxesAdapter;
-    invoke-static {v2}, Lcom/android/email/activity/MailboxListFragment;->access$400(Lcom/android/email/activity/MailboxListFragment;)Lcom/android/email/activity/MailboxesAdapter;
+    invoke-virtual {v3, v4, v5}, Lcom/android/email/activity/MailboxListFragment;->setHighlightedMailbox(J)V
 
-    move-result-object v2
+    .line 823
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
 
-    invoke-virtual {v2, v5}, Lcom/android/email/activity/MailboxesAdapter;->setChangeMailboxFlag(Z)V
+    #setter for: Lcom/android/email/activity/MailboxListFragment;->mNextHighlightedMailboxId:J
+    invoke-static {v3, v10, v11}, Lcom/android/email/activity/MailboxListFragment;->access$902(Lcom/android/email/activity/MailboxListFragment;J)J
 
-    .line 1865
-    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+    .line 828
+    :cond_c9
+    iget-object v3, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
 
-    #getter for: Lcom/android/email/activity/MailboxListFragment;->mCallback:Lcom/android/email/activity/MailboxListFragment$Callback;
-    invoke-static {v2}, Lcom/android/email/activity/MailboxListFragment;->access$2700(Lcom/android/email/activity/MailboxListFragment;)Lcom/android/email/activity/MailboxListFragment$Callback;
+    iget-boolean v4, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->mIsFirstLoad:Z
 
-    move-result-object v2
+    #calls: Lcom/android/email/activity/MailboxListFragment;->updateHighlightedMailbox(Z)Z
+    invoke-static {v3, v4}, Lcom/android/email/activity/MailboxListFragment;->access$1000(Lcom/android/email/activity/MailboxListFragment;Z)Z
 
-    invoke-interface {v2, v5, v6}, Lcom/android/email/activity/MailboxListFragment$Callback;->setTotalCountFromMailbox(IZ)V
+    move-result v3
 
-    goto :goto_3d
+    if-nez v3, :cond_86
+
+    goto :goto_58
 .end method
 
 .method public bridge synthetic onLoadFinished(Landroid/content/Loader;Ljava/lang/Object;)V
@@ -346,7 +459,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1783
+    .line 755
     check-cast p2, Landroid/database/Cursor;
 
     .end local p2
@@ -356,7 +469,7 @@
 .end method
 
 .method public onLoaderReset(Landroid/content/Loader;)V
-    .registers 4
+    .registers 5
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -369,30 +482,54 @@
     .end annotation
 
     .prologue
-    .line 1880
+    .line 844
     .local p1, loader:Landroid/content/Loader;,"Landroid/content/Loader<Landroid/database/Cursor;>;"
+    sget-boolean v0, Lcom/android/emailcommon/Logging;->DEBUG_LIFECYCLE:Z
+
+    if-eqz v0, :cond_22
+
+    sget-boolean v0, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v0, :cond_22
+
+    .line 845
+    const-string v0, "Email"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v2, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " onLoaderReset"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 847
+    :cond_22
     iget-object v0, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
 
-    #getter for: Lcom/android/email/activity/MailboxListFragment;->mListAdapter:Lcom/android/email/activity/MailboxesAdapter;
-    invoke-static {v0}, Lcom/android/email/activity/MailboxListFragment;->access$400(Lcom/android/email/activity/MailboxListFragment;)Lcom/android/email/activity/MailboxesAdapter;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_12
-
-    .line 1881
-    iget-object v0, p0, Lcom/android/email/activity/MailboxListFragment$MailboxListLoaderCallbacks;->this$0:Lcom/android/email/activity/MailboxListFragment;
-
-    #getter for: Lcom/android/email/activity/MailboxListFragment;->mListAdapter:Lcom/android/email/activity/MailboxesAdapter;
-    invoke-static {v0}, Lcom/android/email/activity/MailboxListFragment;->access$400(Lcom/android/email/activity/MailboxListFragment;)Lcom/android/email/activity/MailboxesAdapter;
+    #getter for: Lcom/android/email/activity/MailboxListFragment;->mListAdapter:Lcom/android/email/activity/MailboxFragmentAdapter;
+    invoke-static {v0}, Lcom/android/email/activity/MailboxListFragment;->access$600(Lcom/android/email/activity/MailboxListFragment;)Lcom/android/email/activity/MailboxFragmentAdapter;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/android/email/activity/MailboxesAdapter;->swapCursor(Landroid/database/Cursor;)Landroid/database/Cursor;
+    invoke-virtual {v0, v1}, Lcom/android/email/activity/MailboxFragmentAdapter;->swapCursor(Landroid/database/Cursor;)Landroid/database/Cursor;
 
-    .line 1882
-    :cond_12
+    .line 848
     return-void
 .end method

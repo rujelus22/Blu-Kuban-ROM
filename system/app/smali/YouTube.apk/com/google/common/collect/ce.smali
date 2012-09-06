@@ -1,63 +1,69 @@
-.class final Lcom/google/common/collect/ce;
-.super Lcom/google/common/collect/gf;
+.class final synthetic Lcom/google/common/collect/ce;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Ljava/util/Iterator;
-
-.field final synthetic b:Lcom/google/common/collect/ImmutableMultimap$Values;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/ImmutableMultimap$Values;Ljava/util/Iterator;)V
+.method static constructor <clinit>()V
     .registers 3
-    .parameter
-    .parameter
 
     .prologue
-    .line 496
-    iput-object p1, p0, Lcom/google/common/collect/ce;->b:Lcom/google/common/collect/ImmutableMultimap$Values;
+    .line 104
+    invoke-static {}, Lcom/google/common/collect/BstSide;->values()[Lcom/google/common/collect/BstSide;
 
-    iput-object p2, p0, Lcom/google/common/collect/ce;->a:Ljava/util/Iterator;
+    move-result-object v0
 
-    invoke-direct {p0}, Lcom/google/common/collect/gf;-><init>()V
+    array-length v0, v0
 
+    new-array v0, v0, [I
+
+    sput-object v0, Lcom/google/common/collect/ce;->a:[I
+
+    :try_start_9
+    sget-object v0, Lcom/google/common/collect/ce;->a:[I
+
+    sget-object v1, Lcom/google/common/collect/BstSide;->LEFT:Lcom/google/common/collect/BstSide;
+
+    invoke-virtual {v1}, Lcom/google/common/collect/BstSide;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
+
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/common/collect/ce;->a:[I
+
+    sget-object v1, Lcom/google/common/collect/BstSide;->RIGHT:Lcom/google/common/collect/BstSide;
+
+    invoke-virtual {v1}, Lcom/google/common/collect/BstSide;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
+
+    :goto_1f
     return-void
-.end method
 
+    :catch_20
+    move-exception v0
 
-# virtual methods
-.method public final hasNext()Z
-    .registers 2
+    goto :goto_1f
 
-    .prologue
-    .line 498
-    iget-object v0, p0, Lcom/google/common/collect/ce;->a:Ljava/util/Iterator;
+    :catch_22
+    move-exception v0
 
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 501
-    iget-object v0, p0, Lcom/google/common/collect/ce;->a:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_14
 .end method

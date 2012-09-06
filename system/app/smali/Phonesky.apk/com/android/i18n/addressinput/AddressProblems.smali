@@ -52,6 +52,23 @@
     return-void
 .end method
 
+.method public getProblem(Lcom/android/i18n/addressinput/AddressField;)Lcom/android/i18n/addressinput/AddressProblemType;
+    .registers 3
+    .parameter "addressField"
+
+    .prologue
+    .line 58
+    iget-object v0, p0, Lcom/android/i18n/addressinput/AddressProblems;->mProblems:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/i18n/addressinput/AddressProblemType;
+
+    return-object v0
+.end method
+
 .method public getProblems()Ljava/util/Map;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;

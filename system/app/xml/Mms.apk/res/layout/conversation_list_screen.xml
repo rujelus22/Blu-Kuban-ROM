@@ -20,7 +20,7 @@
     </LinearLayout>
     <FrameLayout android:orientation="vertical" android:id="@id/empty_screen" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
         <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@id/emptyText" android:layout_width="fill_parent" android:layout_height="fill_parent">
-            <TextView android:textSize="24.0sp" android:textColor="@touchwiz:color/tw_color145" android:ellipsize="marquee" android:layout_gravity="center" android:id="@id/empty_list_textView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Conversation_count_zero" android:singleLine="true" android:drawableTop="@drawable/noitems_no_conversation" />
+            <TextView android:textSize="24.0sp" android:textColor="@touchwiz:color/tw_color001" android:ellipsize="marquee" android:layout_gravity="center" android:id="@id/empty_list_textView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Conversation_count_zero" android:singleLine="true" android:drawableTop="@drawable/noitems_no_conversation" />
         </LinearLayout>
     </FrameLayout>
 </merge>

@@ -53,40 +53,40 @@
         <item quantity="one">Wacht op bewerking van %1$d conversatie.</item>
     </plurals>
     <plurals name="conversation_muted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> gedempt.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> gedempt.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> gedempt.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> gedempt.</item>
     </plurals>
     <plurals name="conversation_spammed">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> gerapporteerd als spam.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> gerapporteerd als spam.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> gerapporteerd als spam.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> gerapporteerd als spam.</item>
     </plurals>
     <plurals name="conversation_archived">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> gearchiveerd.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> gearchiveerd.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> gearchiveerd.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> gearchiveerd.</item>
     </plurals>
     <plurals name="conversation_moved_to_inbox">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> verplaatst naar Postvak IN.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> verplaatst naar Postvak IN.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> verplaatst naar Postvak IN.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> verplaatst naar Postvak IN.</item>
     </plurals>
     <plurals name="conversation_deleted">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> verwijderd.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> verwijderd.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> verwijderd.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> verwijderd.</item>
     </plurals>
     <plurals name="conversation_marked_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> gemarkeerd als belangrijk.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> gemarkeerd als belangrijk.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> gemarkeerd als belangrijk.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> gemarkeerd als belangrijk.</item>
     </plurals>
     <plurals name="conversation_marked_not_important">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> gemarkeerd als niet belangrijk.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> gemarkeerd als niet belangrijk.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> gemarkeerd als niet belangrijk.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> gemarkeerd als niet belangrijk.</item>
     </plurals>
     <plurals name="conversation_marked_read">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> gemarkeerd als gelezen.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> gemarkeerd als gelezen.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> gemarkeerd als gelezen.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> gemarkeerd als gelezen.</item>
     </plurals>
     <plurals name="conversation_marked_unread">
-        <item quantity="other">&amp;lt;b>%1$d&amp;lt;/b> gemarkeerd als ongelezen.</item>
-        <item quantity="one">&amp;lt;b>%1$d&amp;lt;/b> gemarkeerd als ongelezen.</item>
+        <item quantity="other">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> gemarkeerd als ongelezen.</item>
+        <item quantity="one">&amp;amp;amp;lt;b>%1$d&amp;amp;amp;lt;/b> gemarkeerd als ongelezen.</item>
     </plurals>
     <plurals name="conversation_label_changed">
         <item quantity="other">Labels gewijzigd.</item>

@@ -1,13 +1,27 @@
-.class public interface abstract Lcom/google/googlenav/ui/wizard/bY;
+.class Lcom/google/googlenav/ui/wizard/by;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LaQ/bE;
 
 
-# virtual methods
-.method public abstract a()V
-.end method
+# instance fields
+.field a:Landroid/widget/TextView;
 
-.method public abstract a(Ljava/lang/String;)V
-.end method
+.field final synthetic b:Lcom/google/googlenav/ui/wizard/bx;
 
-.method public abstract b()V
+
+# direct methods
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/bx;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 338
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/by;->b:Lcom/google/googlenav/ui/wizard/bx;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 378
+    .line 405
     iput-object p1, p0, Lcom/google/android/finsky/previews/PreviewPlayer$6;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "mp"
 
     .prologue
-    .line 381
+    .line 408
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer$6;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     #getter for: Lcom/google/android/finsky/previews/PreviewPlayer;->mListenerProxy:Lcom/google/android/finsky/previews/StatusListener;
@@ -52,7 +52,7 @@
 
     invoke-virtual {v0}, Lcom/google/android/finsky/previews/StatusListener;->completed()V
 
-    .line 382
+    .line 409
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer$6;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     #getter for: Lcom/google/android/finsky/previews/PreviewPlayer;->mStatusListeners:Ljava/util/List;
@@ -69,12 +69,12 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 384
+    .line 411
     iget-object v0, p0, Lcom/google/android/finsky/previews/PreviewPlayer$6;->this$0:Lcom/google/android/finsky/previews/PreviewPlayer;
 
     #calls: Lcom/google/android/finsky/previews/PreviewPlayer;->playNextTrack()V
     invoke-static {v0}, Lcom/google/android/finsky/previews/PreviewPlayer;->access$800(Lcom/google/android/finsky/previews/PreviewPlayer;)V
 
-    .line 385
+    .line 412
     return-void
 .end method

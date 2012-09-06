@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="@string/photo_preference_category" android:key="@string/photo_settings_disabled_key" android:order="3500">
-        <Preference android:persistent="false" android:title="@string/photo_sync_disabled_title" android:key="@string/photo_sync_disabled_preference_key" />
-    </PreferenceCategory>
-</PreferenceScreen>

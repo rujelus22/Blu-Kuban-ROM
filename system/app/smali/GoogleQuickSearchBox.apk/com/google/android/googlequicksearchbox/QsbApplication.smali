@@ -1155,7 +1155,7 @@
 .end method
 
 .method protected createPrefetcher()Lcom/google/android/googlequicksearchbox/google/prefetch/SearchResultsPagePrefetcher;
-    .registers 6
+    .registers 5
 
     .prologue
     .line 911
@@ -1174,17 +1174,13 @@
 
     move-result-object v3
 
-    invoke-virtual {p0}, Lcom/google/android/googlequicksearchbox/QsbApplication;->getUriRewriter()Lcom/google/android/googlequicksearchbox/google/UriRewriter;
-
-    move-result-object v4
-
-    invoke-static {v1, v2, v3, v4}, Lcom/google/android/googlequicksearchbox/google/prefetch/SearchBoxPreloader;->create(Lcom/google/android/googlequicksearchbox/QsbContext;Lcom/google/android/googlequicksearchbox/google/SearchUrlHelper;Lcom/google/android/googlequicksearchbox/google/prefetch/PrefetchStrategy;Lcom/google/android/googlequicksearchbox/google/UriRewriter;)Lcom/google/android/googlequicksearchbox/google/prefetch/SearchBoxPreloader;
+    invoke-static {v1, v2, v3}, Lcom/google/android/googlequicksearchbox/google/prefetch/SearchBoxPreloader;->create(Lcom/google/android/googlequicksearchbox/QsbContext;Lcom/google/android/googlequicksearchbox/google/SearchUrlHelper;Lcom/google/android/googlequicksearchbox/google/prefetch/PrefetchStrategy;)Lcom/google/android/googlequicksearchbox/google/prefetch/SearchBoxPreloader;
 
     move-result-object v0
 
     .line 914
     .local v0, srpp:Lcom/google/android/googlequicksearchbox/google/prefetch/SearchResultsPagePrefetcher;
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1a
 
     .line 915
     new-instance v0, Lcom/google/android/googlequicksearchbox/google/prefetch/NopPrefetcher;
@@ -1194,7 +1190,7 @@
 
     .line 917
     .restart local v0       #srpp:Lcom/google/android/googlequicksearchbox/google/prefetch/SearchResultsPagePrefetcher;
-    :cond_1e
+    :cond_1a
     return-object v0
 .end method
 

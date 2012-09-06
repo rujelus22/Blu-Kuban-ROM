@@ -43,7 +43,7 @@
 
     iget-object v1, p0, Lcom/google/api/client/util/f;->a:Ljava/lang/Class;
 
-    invoke-static {v0, v1}, Lcom/google/api/client/util/v;->a(Ljava/util/Collection;Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/google/api/client/util/u;->a(Ljava/util/Collection;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 

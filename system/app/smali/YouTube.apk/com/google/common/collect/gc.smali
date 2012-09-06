@@ -1,75 +1,49 @@
 .class final Lcom/google/common/collect/gc;
-.super Lcom/google/common/collect/bp;
+.super Lcom/google/common/collect/k;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Ljava/util/Map$Entry;
-
-.field final synthetic b:Lcom/google/common/collect/gb;
+.field final synthetic a:Lcom/google/common/collect/ga;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/gb;Ljava/util/Map$Entry;)V
+.method constructor <init>(Lcom/google/common/collect/ga;Lcom/google/common/collect/gg;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 1013
-    iput-object p1, p0, Lcom/google/common/collect/gc;->b:Lcom/google/common/collect/gb;
+    .line 3399
+    iput-object p1, p0, Lcom/google/common/collect/gc;->a:Lcom/google/common/collect/ga;
 
-    iput-object p2, p0, Lcom/google/common/collect/gc;->a:Ljava/util/Map$Entry;
-
-    invoke-direct {p0}, Lcom/google/common/collect/bp;-><init>()V
+    invoke-direct {p0, p2}, Lcom/google/common/collect/k;-><init>(Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a()Ljava/util/Map$Entry;
-    .registers 2
+.method protected final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+    .parameter
 
     .prologue
-    .line 1015
-    iget-object v0, p0, Lcom/google/common/collect/gc;->a:Ljava/util/Map$Entry;
+    .line 3399
+    check-cast p1, Lcom/google/common/collect/gg;
 
-    return-object v0
-.end method
-
-.method protected final bridge synthetic delegate()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 1013
-    iget-object v0, p0, Lcom/google/common/collect/gc;->a:Ljava/util/Map$Entry;
-
-    return-object v0
-.end method
-
-.method public final synthetic getValue()Ljava/lang/Object;
-    .registers 3
-
-    .prologue
-    .line 1013
-    iget-object v0, p0, Lcom/google/common/collect/gc;->a:Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {p1}, Lcom/google/common/collect/gg;->getNextExpirable()Lcom/google/common/collect/gg;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/Collection;
+    iget-object v1, p0, Lcom/google/common/collect/gc;->a:Lcom/google/common/collect/ga;
 
-    iget-object v1, p0, Lcom/google/common/collect/gc;->b:Lcom/google/common/collect/gb;
+    iget-object v1, v1, Lcom/google/common/collect/ga;->a:Lcom/google/common/collect/gg;
 
-    iget-object v1, v1, Lcom/google/common/collect/gb;->b:Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;
+    if-ne v0, v1, :cond_d
 
-    iget-object v1, v1, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;->mutex:Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    invoke-static {v0, v1}, Lcom/google/common/collect/Synchronized;->b(Ljava/util/Collection;Ljava/lang/Object;)Ljava/util/Collection;
-
-    move-result-object v0
-
+    :cond_d
     return-object v0
 .end method

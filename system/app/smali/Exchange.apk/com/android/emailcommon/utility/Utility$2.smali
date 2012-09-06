@@ -35,7 +35,7 @@
     .parameter
 
     .prologue
-    .line 721
+    .line 550
     iput-object p1, p0, Lcom/android/emailcommon/utility/Utility$2;->val$r:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -50,7 +50,7 @@
     .parameter "x0"
 
     .prologue
-    .line 721
+    .line 550
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -66,23 +66,13 @@
     .parameter "params"
 
     .prologue
-    .line 725
-    :try_start_0
+    .line 552
     iget-object v0, p0, Lcom/android/emailcommon/utility/Utility$2;->val$r:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-    :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_5} :catch_7
 
-    .line 728
-    :goto_5
+    .line 553
     const/4 v0, 0x0
 
     return-object v0
-
-    .line 726
-    :catch_7
-    move-exception v0
-
-    goto :goto_5
 .end method

@@ -85,11 +85,11 @@
 
     const v4, 0x7f0200e4
 
-    const v5, 0x7f020191
+    const v5, 0x7f020190
 
     const/4 v6, 0x0
 
-    const v7, 0x7f020196
+    const v7, 0x7f020195
 
     move v3, v2
 

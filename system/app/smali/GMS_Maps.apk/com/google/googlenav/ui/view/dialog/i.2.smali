@@ -1,87 +1,62 @@
-.class Lcom/google/googlenav/ui/view/dialog/i;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements LaD/c;
+.class Lcom/google/googlenav/ui/view/dialog/I;
+.super Lcom/google/googlenav/ui/view/dialog/Q;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:I
-
-.field final synthetic b:Lcom/google/googlenav/ui/view/dialog/d;
+.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/F;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/d;I)V
+.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/F;)V
     .registers 3
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/i;->b:Lcom/google/googlenav/ui/view/dialog/d;
+    .prologue
+    .line 360
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/I;->a:Lcom/google/googlenav/ui/view/dialog/F;
 
-    iput p2, p0, Lcom/google/googlenav/ui/view/dialog/i;->a:I
+    const/4 v0, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0}, Lcom/google/googlenav/ui/view/dialog/Q;-><init>(Lcom/google/googlenav/ui/view/dialog/G;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
+.method public onAnimationEnd(Landroid/view/animation/Animation;)V
     .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/i;->b:Lcom/google/googlenav/ui/view/dialog/d;
+    .prologue
+    .line 367
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/I;->a:Lcom/google/googlenav/ui/view/dialog/F;
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/dialog/F;->c()V
 
-    invoke-static {v0, v1}, Lcom/google/googlenav/ui/view/dialog/d;->a(Lcom/google/googlenav/ui/view/dialog/d;Z)V
-
+    .line 368
     return-void
 .end method
 
-.method public a(LaD/n;)V
+.method public onAnimationStart(Landroid/view/animation/Animation;)V
     .registers 4
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/i;->b:Lcom/google/googlenav/ui/view/dialog/d;
+    .prologue
+    .line 363
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/I;->a:Lcom/google/googlenav/ui/view/dialog/F;
 
-    iget v1, p0, Lcom/google/googlenav/ui/view/dialog/i;->a:I
-
-    invoke-static {v0, v1}, Lcom/google/googlenav/ui/view/dialog/d;->a(Lcom/google/googlenav/ui/view/dialog/d;I)LaD/d;
+    invoke-static {v0}, Lcom/google/googlenav/ui/view/dialog/F;->a(Lcom/google/googlenav/ui/view/dialog/F;)Lcom/google/googlenav/ui/view/dialog/V;
 
     move-result-object v0
 
-    invoke-virtual {p1}, LaD/n;->d()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, LaD/d;->a(Ljava/util/List;)V
-
-    return-void
-.end method
-
-.method public b(LaD/n;)V
-    .registers 5
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/i;->b:Lcom/google/googlenav/ui/view/dialog/d;
-
-    iget v1, p0, Lcom/google/googlenav/ui/view/dialog/i;->a:I
-
-    invoke-virtual {p1}, LaD/n;->b()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v1, v2}, Lcom/google/googlenav/ui/view/dialog/d;->a(Lcom/google/googlenav/ui/view/dialog/d;ILjava/lang/String;)V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/i;->b:Lcom/google/googlenav/ui/view/dialog/d;
-
-    iget v1, p0, Lcom/google/googlenav/ui/view/dialog/i;->a:I
-
-    invoke-static {v0, v1}, Lcom/google/googlenav/ui/view/dialog/d;->b(Lcom/google/googlenav/ui/view/dialog/d;I)V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/i;->b:Lcom/google/googlenav/ui/view/dialog/d;
+    iget-object v0, v0, Lcom/google/googlenav/ui/view/dialog/V;->l:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/google/googlenav/ui/view/dialog/d;->a(Lcom/google/googlenav/ui/view/dialog/d;Z)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
+    .line 364
     return-void
 .end method

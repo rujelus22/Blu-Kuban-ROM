@@ -31,7 +31,7 @@
 
 .field ratingBar:Landroid/widget/RatingBar;
 
-.field thumbnailBitmapView:Landroid/widget/ImageView;
+.field thumbnailBitmapView:Lcom/google/android/finsky/layout/SmartThumbnailView;
 
 .field title:Landroid/widget/TextView;
 
@@ -41,7 +41,7 @@
     .registers 1
 
     .prologue
-    .line 135
+    .line 137
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -52,7 +52,7 @@
     .parameter "x0"
 
     .prologue
-    .line 135
+    .line 137
     invoke-direct {p0}, Lcom/google/android/finsky/adapters/DocumentGridItem$ViewHolder;-><init>()V
 
     return-void

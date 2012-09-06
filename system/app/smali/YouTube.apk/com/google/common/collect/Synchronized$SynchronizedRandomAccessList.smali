@@ -11,15 +11,19 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Ljava/lang/Object;)V
+.method constructor <init>(Ljava/util/List;Ljava/lang/Object;)V
     .registers 3
     .parameter
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 470
+    .line 400
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Synchronized$SynchronizedList;-><init>(Ljava/util/List;Ljava/lang/Object;)V
 
-    .line 471
+    .line 401
     return-void
 .end method

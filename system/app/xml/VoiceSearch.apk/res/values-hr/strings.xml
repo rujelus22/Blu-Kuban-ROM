@@ -51,7 +51,7 @@
     <string name="no_suggestions">Nema prijedloga</string>
     <string name="add_number">Dodaj broj</string>
     <string name="voiceSearchPreferences">Postavke Glas. pretraž.</string>
-    <string name="imePreferences">Postavke Gooogle govora u tekst</string>
+    <string name="imePreferences">Postavke upisivanja za Google Voice</string>
     <string name="prefTitle_language">Jezik</string>
     <string name="prefDialogTitle_language">Jezik</string>
     <string name="prefDefault_language">zadano</string>
@@ -263,7 +263,7 @@ Posjetite donju web-lokaciju kako biste pronašli popis više opcija ili pritisn
     <string name="permission_label_set_alarm">postavka alarma na budilici</string>
     <string name="permission_description_set_alarm">Omogućuje aplikaciji da namjesti alarm u instaliranoj aplikaciji budilice. Neke aplikacije budilice možda neće primijeniti ovu značajku.</string>
     <string name="help_search_title">pretraživanje weba</string>
-    <string name="ime_service_label">Google govor u tekst</string>
+    <string name="ime_service_label">Upisivanje za Google Voice</string>
     <string name="ime_listening">Slušanje</string>
     <string name="ime_listening_done">Gotovo</string>
     <string name="ime_working">Čekaju se rezultati</string>

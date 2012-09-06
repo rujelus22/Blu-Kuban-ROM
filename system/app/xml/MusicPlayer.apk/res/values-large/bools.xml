@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="grid_scroll_horizontal">false</bool>
+    <bool name="grid_scroll_overlay_follows_thumb">true</bool>
+    <bool name="grid_scroll_auto_fade">true</bool>
+    <bool name="grid_expanded_cluster_label_horizontal">true</bool>
+    <bool name="grid_expand_label_vertical">true</bool>
+    <bool name="grid_cluster_expand_label_vertical">true</bool>
+    <bool name="grid_expand_label_expand_cell">true</bool>
+    <bool name="grid_label_show_song_count">true</bool>
+    <bool name="grid_context_menu_show_mark">true</bool>
+</resources>

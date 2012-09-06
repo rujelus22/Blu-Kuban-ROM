@@ -1,22 +1,43 @@
-.class public Lcom/google/googlenav/ui/wizard/fQ;
+.class Lcom/google/googlenav/ui/wizard/fq;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lag/f;
 
 
 # instance fields
-.field public final a:Ljava/lang/CharSequence;
-
-.field public final b:I
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/fp;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/CharSequence;I)V
-    .registers 3
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/fp;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 92
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fq;->a:Lcom/google/googlenav/ui/wizard/fp;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fQ;->a:Ljava/lang/CharSequence;
+    return-void
+.end method
 
-    iput p2, p0, Lcom/google/googlenav/ui/wizard/fQ;->b:I
 
+# virtual methods
+.method public a(Lag/c;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 95
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fq;->a:Lcom/google/googlenav/ui/wizard/fp;
+
+    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/fp;->a:Lcom/google/googlenav/ui/wizard/fo;
+
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/wizard/fo;->a()V
+
+    .line 96
     return-void
 .end method

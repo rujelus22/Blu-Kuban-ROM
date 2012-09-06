@@ -49,9 +49,9 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400aa
+    const v1, 0x7f0400dc
 
-    const v2, 0x7f080165
+    const v2, 0x7f080161
 
     invoke-direct {p0, v0, v1, v2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;II)V
 
@@ -65,13 +65,15 @@
 
 # virtual methods
 .method public getDropDownView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 12
+    .registers 14
     .parameter "position"
     .parameter "convertView"
     .parameter "parent"
 
     .prologue
-    const/4 v4, 0x0
+    const/16 v9, 0x8
+
+    const/4 v6, 0x0
 
     .line 98
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->getItem(I)Ljava/lang/Object;
@@ -84,10 +86,10 @@
     .local v2, item:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;
     invoke-super {p0, p1, p2, p3}, Landroid/widget/ArrayAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v4
 
     .line 100
-    .local v3, view:Landroid/view/View;
+    .local v4, view:Landroid/view/View;
     iget-object v5, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
 
     #getter for: Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->purchaseSpinnerLeftPadding:I
@@ -95,19 +97,19 @@
 
     move-result v5
 
-    iget-object v6, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
+    iget-object v7, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
 
     #getter for: Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->purchaseSpinnerRightPadding:I
-    invoke-static {v6}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->access$200(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;)I
+    invoke-static {v7}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->access$200(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;)I
 
-    move-result v6
+    move-result v7
 
-    invoke-virtual {v3, v5, v4, v6, v4}, Landroid/view/View;->setPadding(IIII)V
+    invoke-virtual {v4, v5, v6, v7, v6}, Landroid/view/View;->setPadding(IIII)V
 
     .line 102
-    const v5, 0x7f080165
+    const v5, 0x7f080161
 
-    invoke-virtual {v3, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -122,26 +124,26 @@
 
     move-result v5
 
-    iget-object v6, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
-
-    #getter for: Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->purchaseSpinnerDescriptionRightPadding:I
-    invoke-static {v6}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->access$400(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;)I
-
-    move-result v6
-
     iget-object v7, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
 
-    #getter for: Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->purchaseSpinnerDescriptionBottomPadding:I
-    invoke-static {v7}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->access$500(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;)I
+    #getter for: Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->purchaseSpinnerDescriptionRightPadding:I
+    invoke-static {v7}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->access$400(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;)I
 
     move-result v7
 
-    invoke-virtual {v1, v4, v5, v6, v7}, Landroid/widget/TextView;->setPadding(IIII)V
+    iget-object v8, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->this$0:Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;
+
+    #getter for: Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->purchaseSpinnerDescriptionBottomPadding:I
+    invoke-static {v8}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;->access$500(Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder;)I
+
+    move-result v8
+
+    invoke-virtual {v1, v6, v5, v7, v8}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 107
-    const v5, 0x7f080166
+    const v5, 0x7f080162
 
-    invoke-virtual {v3, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -153,7 +155,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_63
+    if-eqz v5, :cond_9f
 
     .line 109
     sget-object v5, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
@@ -161,7 +163,7 @@
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 110
-    invoke-virtual {v0, v4}, Landroid/widget/RadioButton;->setVisibility(I)V
+    invoke-virtual {v0, v6}, Landroid/widget/RadioButton;->setVisibility(I)V
 
     .line 111
     iget-object v5, p0, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentAdapter;->mSpinner:Landroid/widget/Spinner;
@@ -170,36 +172,103 @@
 
     move-result v5
 
-    if-ne v5, p1, :cond_58
+    if-ne v5, p1, :cond_99
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
-    :cond_58
-    invoke-virtual {v0, v4}, Landroid/widget/RadioButton;->setChecked(Z)V
+    :goto_5a
+    invoke-virtual {v0, v5}, Landroid/widget/RadioButton;->setChecked(Z)V
 
     .line 112
     invoke-interface {v2}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;->isEnabled()Z
 
-    move-result v4
+    move-result v5
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setEnabled(Z)V
+    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 117
-    :goto_62
-    return-object v3
+    .line 113
+    const v5, 0x7f0801c4
+
+    invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/widget/TextView;
 
     .line 114
-    :cond_63
-    sget-object v4, Landroid/graphics/Typeface;->DEFAULT_BOLD:Landroid/graphics/Typeface;
+    .local v3, message:Landroid/widget/TextView;
+    invoke-interface {v2}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;->getInstrument()Lcom/google/android/finsky/billing/Instrument;
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    move-result-object v5
+
+    if-eqz v5, :cond_9b
+
+    invoke-interface {v2}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;->getInstrument()Lcom/google/android/finsky/billing/Instrument;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/google/android/finsky/billing/Instrument;->hasMessages()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_9b
 
     .line 115
-    const/16 v4, 0x8
+    invoke-interface {v2}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;->getInstrument()Lcom/google/android/finsky/billing/Instrument;
 
-    invoke-virtual {v0, v4}, Landroid/widget/RadioButton;->setVisibility(I)V
+    move-result-object v5
 
-    goto :goto_62
+    invoke-virtual {v5}, Lcom/google/android/finsky/billing/Instrument;->getMessages()Ljava/util/List;
+
+    move-result-object v5
+
+    invoke-interface {v5, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/CharSequence;
+
+    invoke-virtual {v3, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 116
+    invoke-interface {v2}, Lcom/google/android/finsky/fragments/PurchaseInstrumentAndPriceViewBinder$InstrumentSelectorItem;->isEnabled()Z
+
+    move-result v5
+
+    invoke-virtual {v3, v5}, Landroid/widget/TextView;->setEnabled(Z)V
+
+    .line 117
+    invoke-virtual {v3, v6}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 125
+    .end local v3           #message:Landroid/widget/TextView;
+    :goto_98
+    return-object v4
+
+    :cond_99
+    move v5, v6
+
+    .line 111
+    goto :goto_5a
+
+    .line 119
+    .restart local v3       #message:Landroid/widget/TextView;
+    :cond_9b
+    invoke-virtual {v3, v9}, Landroid/widget/TextView;->setVisibility(I)V
+
+    goto :goto_98
+
+    .line 122
+    .end local v3           #message:Landroid/widget/TextView;
+    :cond_9f
+    sget-object v5, Landroid/graphics/Typeface;->DEFAULT_BOLD:Landroid/graphics/Typeface;
+
+    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 123
+    invoke-virtual {v0, v9}, Landroid/widget/RadioButton;->setVisibility(I)V
+
+    goto :goto_98
 .end method
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
@@ -235,7 +304,7 @@
 
     .line 82
     .local v1, inflater:Landroid/view/LayoutInflater;
-    const v3, 0x7f0400ab
+    const v3, 0x7f0400dd
 
     const/4 v4, 0x0
 

@@ -1,195 +1,177 @@
 .class final Lcom/google/common/collect/ac;
-.super Ljava/util/AbstractSet;
+.super Lcom/google/common/collect/v;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/SortedMap;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/common/collect/ab;
+.field d:Ljava/util/SortedSet;
+
+.field final synthetic e:Lcom/google/common/collect/AbstractMultimap;
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/common/collect/ab;)V
-    .registers 3
-    .parameter
-
-    .prologue
-    .line 994
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/common/collect/ac;-><init>(Lcom/google/common/collect/ab;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/common/collect/ab;B)V
+.method constructor <init>(Lcom/google/common/collect/AbstractMultimap;Ljava/util/SortedMap;)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 994
-    iput-object p1, p0, Lcom/google/common/collect/ac;->a:Lcom/google/common/collect/ab;
+    .line 1300
+    iput-object p1, p0, Lcom/google/common/collect/ac;->e:Lcom/google/common/collect/AbstractMultimap;
 
-    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
+    .line 1301
+    invoke-direct {p0, p1, p2}, Lcom/google/common/collect/v;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/util/Map;)V
 
+    .line 1302
     return-void
 .end method
 
 
 # virtual methods
-.method public final clear()V
+.method public final comparator()Ljava/util/Comparator;
     .registers 2
 
     .prologue
-    .line 1014
-    iget-object v0, p0, Lcom/google/common/collect/ac;->a:Lcom/google/common/collect/ab;
+    .line 1310
+    iget-object v0, p0, Lcom/google/common/collect/ac;->a:Ljava/util/Map;
 
-    iget-object v0, v0, Lcom/google/common/collect/ab;->b:Lcom/google/common/collect/AbstractMultimap;
+    check-cast v0, Ljava/util/SortedMap;
 
-    invoke-virtual {v0}, Lcom/google/common/collect/AbstractMultimap;->clear()V
-
-    .line 1015
-    return-void
-.end method
-
-.method public final contains(Ljava/lang/Object;)Z
-    .registers 5
-    .parameter
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 1005
-    instance-of v0, p1, Lcom/google/common/collect/fk;
-
-    if-nez v0, :cond_7
-
-    move v0, v1
-
-    .line 1010
-    :goto_6
-    return v0
-
-    .line 1008
-    :cond_7
-    check-cast p1, Lcom/google/common/collect/fk;
-
-    .line 1009
-    iget-object v0, p0, Lcom/google/common/collect/ac;->a:Lcom/google/common/collect/ab;
-
-    iget-object v0, v0, Lcom/google/common/collect/ab;->b:Lcom/google/common/collect/AbstractMultimap;
-
-    #getter for: Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
-    invoke-static {v0}, Lcom/google/common/collect/AbstractMultimap;->access$000(Lcom/google/common/collect/AbstractMultimap;)Ljava/util/Map;
+    invoke-interface {v0}, Ljava/util/SortedMap;->comparator()Ljava/util/Comparator;
 
     move-result-object v0
-
-    invoke-interface {p1}, Lcom/google/common/collect/fk;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Collection;
-
-    .line 1010
-    if-eqz v0, :cond_29
-
-    invoke-interface {v0}, Ljava/util/Collection;->size()I
-
-    move-result v0
-
-    invoke-interface {p1}, Lcom/google/common/collect/fk;->b()I
-
-    move-result v2
-
-    if-ne v0, v2, :cond_29
-
-    const/4 v0, 0x1
-
-    goto :goto_6
-
-    :cond_29
-    move v0, v1
-
-    goto :goto_6
-.end method
-
-.method public final iterator()Ljava/util/Iterator;
-    .registers 3
-
-    .prologue
-    .line 996
-    new-instance v0, Lcom/google/common/collect/z;
-
-    iget-object v1, p0, Lcom/google/common/collect/ac;->a:Lcom/google/common/collect/ab;
-
-    iget-object v1, v1, Lcom/google/common/collect/ab;->b:Lcom/google/common/collect/AbstractMultimap;
-
-    invoke-direct {v0, v1}, Lcom/google/common/collect/z;-><init>(Lcom/google/common/collect/AbstractMultimap;)V
 
     return-object v0
 .end method
 
-.method public final remove(Ljava/lang/Object;)Z
-    .registers 4
-    .parameter
-
-    .prologue
-    .line 1017
-    invoke-virtual {p0, p1}, Lcom/google/common/collect/ac;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_18
-
-    iget-object v0, p0, Lcom/google/common/collect/ac;->a:Lcom/google/common/collect/ab;
-
-    iget-object v0, v0, Lcom/google/common/collect/ab;->b:Lcom/google/common/collect/AbstractMultimap;
-
-    check-cast p1, Lcom/google/common/collect/fk;
-
-    invoke-interface {p1}, Lcom/google/common/collect/fk;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    #calls: Lcom/google/common/collect/AbstractMultimap;->removeValuesForKey(Ljava/lang/Object;)I
-    invoke-static {v0, v1}, Lcom/google/common/collect/AbstractMultimap;->access$500(Lcom/google/common/collect/AbstractMultimap;Ljava/lang/Object;)I
-
-    move-result v0
-
-    if-lez v0, :cond_18
-
-    const/4 v0, 0x1
-
-    :goto_17
-    return v0
-
-    :cond_18
-    const/4 v0, 0x0
-
-    goto :goto_17
-.end method
-
-.method public final size()I
+.method public final firstKey()Ljava/lang/Object;
     .registers 2
 
     .prologue
-    .line 999
-    iget-object v0, p0, Lcom/google/common/collect/ac;->a:Lcom/google/common/collect/ab;
+    .line 1315
+    iget-object v0, p0, Lcom/google/common/collect/ac;->a:Ljava/util/Map;
 
-    iget-object v0, v0, Lcom/google/common/collect/ab;->b:Lcom/google/common/collect/AbstractMultimap;
+    check-cast v0, Ljava/util/SortedMap;
 
-    #getter for: Lcom/google/common/collect/AbstractMultimap;->map:Ljava/util/Map;
-    invoke-static {v0}, Lcom/google/common/collect/AbstractMultimap;->access$000(Lcom/google/common/collect/AbstractMultimap;)Ljava/util/Map;
+    invoke-interface {v0}, Ljava/util/SortedMap;->firstKey()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Map;->size()I
+    return-object v0
+.end method
 
-    move-result v0
+.method public final headMap(Ljava/lang/Object;)Ljava/util/SortedMap;
+    .registers 5
+    .parameter
 
-    return v0
+    .prologue
+    .line 1325
+    new-instance v1, Lcom/google/common/collect/ac;
+
+    iget-object v2, p0, Lcom/google/common/collect/ac;->e:Lcom/google/common/collect/AbstractMultimap;
+
+    iget-object v0, p0, Lcom/google/common/collect/ac;->a:Ljava/util/Map;
+
+    check-cast v0, Ljava/util/SortedMap;
+
+    invoke-interface {v0, p1}, Ljava/util/SortedMap;->headMap(Ljava/lang/Object;)Ljava/util/SortedMap;
+
+    move-result-object v0
+
+    invoke-direct {v1, v2, v0}, Lcom/google/common/collect/ac;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/util/SortedMap;)V
+
+    return-object v1
+.end method
+
+.method public final synthetic keySet()Ljava/util/Set;
+    .registers 4
+
+    .prologue
+    .line 1298
+    iget-object v0, p0, Lcom/google/common/collect/ac;->d:Ljava/util/SortedSet;
+
+    if-nez v0, :cond_12
+
+    new-instance v1, Lcom/google/common/collect/ad;
+
+    iget-object v2, p0, Lcom/google/common/collect/ac;->e:Lcom/google/common/collect/AbstractMultimap;
+
+    iget-object v0, p0, Lcom/google/common/collect/ac;->a:Ljava/util/Map;
+
+    check-cast v0, Ljava/util/SortedMap;
+
+    invoke-direct {v1, v2, v0}, Lcom/google/common/collect/ad;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/util/SortedMap;)V
+
+    iput-object v1, p0, Lcom/google/common/collect/ac;->d:Ljava/util/SortedSet;
+
+    move-object v0, v1
+
+    :cond_12
+    return-object v0
+.end method
+
+.method public final lastKey()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 1320
+    iget-object v0, p0, Lcom/google/common/collect/ac;->a:Ljava/util/Map;
+
+    check-cast v0, Ljava/util/SortedMap;
+
+    invoke-interface {v0}, Ljava/util/SortedMap;->lastKey()Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final subMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedMap;
+    .registers 6
+    .parameter
+    .parameter
+
+    .prologue
+    .line 1330
+    new-instance v1, Lcom/google/common/collect/ac;
+
+    iget-object v2, p0, Lcom/google/common/collect/ac;->e:Lcom/google/common/collect/AbstractMultimap;
+
+    iget-object v0, p0, Lcom/google/common/collect/ac;->a:Ljava/util/Map;
+
+    check-cast v0, Ljava/util/SortedMap;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/SortedMap;->subMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedMap;
+
+    move-result-object v0
+
+    invoke-direct {v1, v2, v0}, Lcom/google/common/collect/ac;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/util/SortedMap;)V
+
+    return-object v1
+.end method
+
+.method public final tailMap(Ljava/lang/Object;)Ljava/util/SortedMap;
+    .registers 5
+    .parameter
+
+    .prologue
+    .line 1335
+    new-instance v1, Lcom/google/common/collect/ac;
+
+    iget-object v2, p0, Lcom/google/common/collect/ac;->e:Lcom/google/common/collect/AbstractMultimap;
+
+    iget-object v0, p0, Lcom/google/common/collect/ac;->a:Ljava/util/Map;
+
+    check-cast v0, Ljava/util/SortedMap;
+
+    invoke-interface {v0, p1}, Ljava/util/SortedMap;->tailMap(Ljava/lang/Object;)Ljava/util/SortedMap;
+
+    move-result-object v0
+
+    invoke-direct {v1, v2, v0}, Lcom/google/common/collect/ac;-><init>(Lcom/google/common/collect/AbstractMultimap;Ljava/util/SortedMap;)V
+
+    return-object v1
 .end method

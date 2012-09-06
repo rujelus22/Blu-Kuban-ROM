@@ -23,15 +23,15 @@
     .registers 2
 
     .prologue
-    .line 11012
+    .line 11242
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 11027
+    .line 11258
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonResponseProto;->cachedSize:I
 
-    .line 11012
+    .line 11242
     return-void
 .end method
 
@@ -41,15 +41,15 @@
     .registers 2
 
     .prologue
-    .line 11029
+    .line 11261
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonResponseProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 11031
+    .line 11263
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonResponseProto;->getSerializedSize()I
 
-    .line 11033
+    .line 11265
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonResponseProto;->cachedSize:I
 
@@ -60,14 +60,14 @@
     .registers 2
 
     .prologue
-    .line 11037
+    .line 11270
     const/4 v0, 0x0
 
-    .line 11038
+    .line 11271
     .local v0, size:I
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonResponseProto;->cachedSize:I
 
-    .line 11039
+    .line 11272
     return v0
 .end method
 
@@ -81,28 +81,28 @@
     .end annotation
 
     .prologue
-    .line 11046
+    .line 11280
     :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 11047
+    .line 11281
     .local v0, tag:I
     packed-switch v0, :pswitch_data_e
 
-    .line 11051
+    .line 11285
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonResponseProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 11052
+    .line 11286
     :pswitch_d
     return-object p0
 
-    .line 11047
+    .line 11281
     :pswitch_data_e
     .packed-switch 0x0
         :pswitch_d
@@ -119,7 +119,7 @@
     .end annotation
 
     .prologue
-    .line 11010
+    .line 11240
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonResponseProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$UninstallReasonResponseProto;
 
     move-result-object v0
@@ -137,6 +137,6 @@
     .end annotation
 
     .prologue
-    .line 11025
+    .line 11256
     return-void
 .end method

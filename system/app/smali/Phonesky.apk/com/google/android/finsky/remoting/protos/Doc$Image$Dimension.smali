@@ -33,21 +33,21 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 26
+    .line 28
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 31
+    .line 33
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->width_:I
 
-    .line 48
+    .line 50
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->height_:I
 
-    .line 85
+    .line 88
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->cachedSize:I
 
-    .line 26
+    .line 28
     return-void
 .end method
 
@@ -57,15 +57,15 @@
     .registers 2
 
     .prologue
-    .line 87
+    .line 91
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 89
+    .line 93
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->getSerializedSize()I
 
-    .line 91
+    .line 95
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->cachedSize:I
 
@@ -76,7 +76,7 @@
     .registers 2
 
     .prologue
-    .line 49
+    .line 51
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->height_:I
 
     return v0
@@ -86,10 +86,10 @@
     .registers 4
 
     .prologue
-    .line 95
+    .line 100
     const/4 v0, 0x0
 
-    .line 96
+    .line 101
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->hasWidth()Z
 
@@ -97,7 +97,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 97
+    .line 102
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->getWidth()I
@@ -110,7 +110,7 @@
 
     add-int/2addr v0, v1
 
-    .line 100
+    .line 105
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->hasHeight()Z
 
@@ -118,7 +118,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 101
+    .line 106
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->getHeight()I
@@ -131,11 +131,11 @@
 
     add-int/2addr v0, v1
 
-    .line 104
+    .line 109
     :cond_21
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->cachedSize:I
 
-    .line 105
+    .line 110
     return v0
 .end method
 
@@ -143,7 +143,7 @@
     .registers 2
 
     .prologue
-    .line 32
+    .line 34
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->width_:I
 
     return v0
@@ -153,7 +153,7 @@
     .registers 2
 
     .prologue
-    .line 50
+    .line 52
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->hasHeight:Z
 
     return v0
@@ -163,7 +163,7 @@
     .registers 2
 
     .prologue
-    .line 33
+    .line 35
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->hasWidth:Z
 
     return v0
@@ -179,29 +179,29 @@
     .end annotation
 
     .prologue
-    .line 112
+    .line 118
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 113
+    .line 119
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 117
+    .line 123
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 118
+    .line 124
     :sswitch_d
     return-object p0
 
-    .line 123
+    .line 129
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -211,7 +211,7 @@
 
     goto :goto_0
 
-    .line 127
+    .line 133
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -221,7 +221,7 @@
 
     goto :goto_0
 
-    .line 113
+    .line 119
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -240,7 +240,7 @@
     .end annotation
 
     .prologue
-    .line 24
+    .line 25
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;
 
     move-result-object v0
@@ -253,15 +253,15 @@
     .parameter "value"
 
     .prologue
-    .line 52
+    .line 54
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->hasHeight:Z
 
-    .line 53
+    .line 55
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->height_:I
 
-    .line 54
+    .line 56
     return-object p0
 .end method
 
@@ -270,15 +270,15 @@
     .parameter "value"
 
     .prologue
-    .line 35
+    .line 37
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->hasWidth:Z
 
-    .line 36
+    .line 38
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->width_:I
 
-    .line 37
+    .line 39
     return-object p0
 .end method
 
@@ -292,14 +292,14 @@
     .end annotation
 
     .prologue
-    .line 77
+    .line 80
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->hasWidth()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 78
+    .line 81
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->getWidth()I
@@ -308,7 +308,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 80
+    .line 83
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->hasHeight()Z
 
@@ -316,7 +316,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 81
+    .line 84
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Doc$Image$Dimension;->getHeight()I
@@ -325,7 +325,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 83
+    .line 86
     :cond_1c
     return-void
 .end method

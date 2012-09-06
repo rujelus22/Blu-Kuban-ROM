@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/popup_header" />
+    <com.google.googlenav.ui.android.GmmListView android:id="@id/listView" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>

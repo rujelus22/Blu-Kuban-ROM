@@ -21,7 +21,7 @@
     .end annotation
 
     .prologue
-    .line 40
+    .line 41
     iget-object v0, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->inputStream:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->available()I
@@ -40,12 +40,12 @@
     .end annotation
 
     .prologue
-    .line 51
+    .line 52
     iget-object v0, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->inputStream:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
 
-    .line 52
+    .line 53
     return-void
 .end method
 
@@ -54,17 +54,17 @@
     .parameter "readlimit"
 
     .prologue
-    .line 64
+    .line 65
     iget-object v0, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->inputStream:Ljava/io/InputStream;
 
     invoke-virtual {v0, p1}, Ljava/io/InputStream;->mark(I)V
 
-    .line 65
+    .line 66
     iget-wide v0, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->position:J
 
     iput-wide v0, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->markedPosition:J
 
-    .line 66
+    .line 67
     return-void
 .end method
 
@@ -72,7 +72,7 @@
     .registers 2
 
     .prologue
-    .line 60
+    .line 61
     iget-object v0, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->inputStream:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->markSupported()Z
@@ -91,20 +91,20 @@
     .end annotation
 
     .prologue
-    .line 44
+    .line 45
     iget-object v1, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->inputStream:Ljava/io/InputStream;
 
     invoke-virtual {v1}, Ljava/io/InputStream;->read()I
 
     move-result v0
 
-    .line 45
+    .line 46
     .local v0, b:I
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_10
 
-    .line 46
+    .line 47
     iget-wide v1, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->position:J
 
     const-wide/16 v3, 0x1
@@ -113,7 +113,7 @@
 
     iput-wide v1, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->position:J
 
-    .line 47
+    .line 48
     :cond_10
     return v0
 .end method
@@ -128,14 +128,14 @@
     .end annotation
 
     .prologue
-    .line 75
+    .line 76
     iget-object v1, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->inputStream:Ljava/io/InputStream;
 
     invoke-virtual {v1, p1}, Ljava/io/InputStream;->read([B)I
 
     move-result v0
 
-    .line 76
+    .line 77
     .local v0, c:I
     iget-wide v1, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->position:J
 
@@ -145,7 +145,7 @@
 
     iput-wide v1, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->position:J
 
-    .line 77
+    .line 78
     return v0
 .end method
 
@@ -161,14 +161,14 @@
     .end annotation
 
     .prologue
-    .line 81
+    .line 82
     iget-object v1, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->inputStream:Ljava/io/InputStream;
 
     invoke-virtual {v1, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
 
     move-result v0
 
-    .line 82
+    .line 83
     .local v0, c:I
     iget-wide v1, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->position:J
 
@@ -178,7 +178,7 @@
 
     iput-wide v1, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->position:J
 
-    .line 83
+    .line 84
     return v0
 .end method
 
@@ -191,17 +191,17 @@
     .end annotation
 
     .prologue
-    .line 55
+    .line 56
     iget-object v0, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->inputStream:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
 
-    .line 56
+    .line 57
     iget-wide v0, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->markedPosition:J
 
     iput-wide v0, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->position:J
 
-    .line 57
+    .line 58
     return-void
 .end method
 
@@ -215,14 +215,14 @@
     .end annotation
 
     .prologue
-    .line 69
+    .line 70
     iget-object v2, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->inputStream:Ljava/io/InputStream;
 
     invoke-virtual {v2, p1, p2}, Ljava/io/InputStream;->skip(J)J
 
     move-result-wide v0
 
-    .line 70
+    .line 71
     .local v0, c:J
     iget-wide v2, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->position:J
 
@@ -230,6 +230,6 @@
 
     iput-wide v2, p0, Lorg/apache/james/mime4j/util/PositionInputStream;->position:J
 
-    .line 71
+    .line 72
     return-wide v0
 .end method

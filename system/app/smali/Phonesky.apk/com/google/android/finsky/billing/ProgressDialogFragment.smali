@@ -75,7 +75,7 @@
 
     const-string v3, "message_id"
 
-    const v4, 0x7f0700e5
+    const v4, 0x7f0700f4
 
     invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 

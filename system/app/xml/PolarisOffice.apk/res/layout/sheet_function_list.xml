@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center_vertical" android:background="@drawable/header_1_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <EditText android:id="@id/EditFunction" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.669983dip" android:layout_marginRight="8.669983dip" android:singleLine="true" android:inputType="textEmailAddress" android:imeOptions="actionDone" />
-    </LinearLayout>
-    <TextView android:textSize="20.0sp" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/TextNoItem" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/fm_msg_no_items" />
-    <ListView android:id="@id/ListFunction" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="5.0dip" android:layout_marginRight="3.0dip" android:drawSelectorOnTop="false" android:cacheColorHint="#00000000" />
-</LinearLayout>

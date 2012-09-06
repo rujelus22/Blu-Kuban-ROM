@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/emailcommon/service/PolicyServiceProxy;->policiesRequired(J)V
+    value = Lcom/android/emailcommon/service/PolicyServiceProxy;->setAccountHoldFlag(JZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,20 +22,25 @@
 
 .field final synthetic val$arg0:J
 
+.field final synthetic val$arg1:Z
+
 
 # direct methods
-.method constructor <init>(Lcom/android/emailcommon/service/PolicyServiceProxy;J)V
-    .registers 4
+.method constructor <init>(Lcom/android/emailcommon/service/PolicyServiceProxy;JZ)V
+    .registers 5
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 171
+    .line 143
     iput-object p1, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$7;->this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
 
     iput-wide p2, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$7;->val$arg0:J
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    iput-boolean p4, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$7;->val$arg1:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,7 +48,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .registers 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -51,7 +56,7 @@
     .end annotation
 
     .prologue
-    .line 173
+    .line 145
     iget-object v0, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$7;->this$0:Lcom/android/emailcommon/service/PolicyServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/PolicyServiceProxy;->mService:Lcom/android/emailcommon/service/IPolicyService;
@@ -61,8 +66,10 @@
 
     iget-wide v1, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$7;->val$arg0:J
 
-    invoke-interface {v0, v1, v2}, Lcom/android/emailcommon/service/IPolicyService;->policiesRequired(J)V
+    iget-boolean v3, p0, Lcom/android/emailcommon/service/PolicyServiceProxy$7;->val$arg1:Z
 
-    .line 174
+    invoke-interface {v0, v1, v2, v3}, Lcom/android/emailcommon/service/IPolicyService;->setAccountHoldFlag(JZ)V
+
+    .line 146
     return-void
 .end method

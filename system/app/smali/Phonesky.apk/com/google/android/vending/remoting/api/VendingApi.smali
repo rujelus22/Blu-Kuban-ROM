@@ -6,8 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/android/vending/remoting/api/VendingApi$CountriesConverter;,
-        Lcom/google/android/vending/remoting/api/VendingApi$AssetListConverter;
+        Lcom/google/android/vending/remoting/api/VendingApi$CountriesConverter;
     }
 .end annotation
 
@@ -25,16 +24,16 @@
     .parameter "apiContext"
 
     .prologue
-    .line 71
+    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 72
+    .line 66
     iput-object p1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
-    .line 73
+    .line 67
     iput-object p2, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mApiContext:Lcom/google/android/vending/remoting/api/VendingApiContext;
 
-    .line 74
+    .line 68
     return-void
 .end method
 
@@ -59,7 +58,7 @@
     .end annotation
 
     .prologue
-    .line 243
+    .line 182
     const-string v0, "https://android.clients.google.com/vending/api/ApiRequest"
 
     const-class v1, Lcom/google/android/vending/remoting/protos/VendingProtos$AckNotificationsRequestProto;
@@ -78,17 +77,15 @@
 
     move-result-object v0
 
-    .line 246
-    const/4 v1, 0x0
+    .line 185
+    invoke-virtual {v0}, Lcom/google/android/vending/remoting/api/VendingRequest;->setAvoidBulkCancel()V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/vending/remoting/api/VendingRequest;->setDrainable(Z)V
-
-    .line 247
+    .line 186
     iget-object v1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     invoke-virtual {v1, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
 
-    .line 248
+    .line 187
     return-void
 .end method
 
@@ -97,12 +94,12 @@
     .parameter
 
     .prologue
-    .line 220
+    .line 159
     new-instance v2, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsRequestProto;
 
     invoke-direct {v2}, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsRequestProto;-><init>()V
 
-    .line 221
+    .line 160
     const-string v0, "https://android.clients.google.com/vending/api/ApiRequest"
 
     const-class v1, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckForNotificationsRequestProto;
@@ -121,12 +118,12 @@
 
     move-result-object v0
 
-    .line 230
+    .line 169
     iget-object v1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     invoke-virtual {v1, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
 
-    .line 231
+    .line 170
     return-void
 .end method
 
@@ -149,7 +146,7 @@
     .end annotation
 
     .prologue
-    .line 179
+    .line 118
     const-string v0, "https://android.clients.google.com/vending/api/ApiRequest"
 
     const-class v1, Lcom/google/android/vending/remoting/protos/VendingProtos$CheckLicenseRequestProto;
@@ -168,67 +165,12 @@
 
     move-result-object v0
 
-    .line 182
+    .line 121
     iget-object v1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     invoke-virtual {v1, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
 
-    .line 183
-    return-void
-.end method
-
-.method public fetchAssetInfo(Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
-    .registers 11
-    .parameter
-    .parameter
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Lcom/android/volley/Response$Listener",
-            "<",
-            "Lcom/google/android/vending/model/AssetList;",
-            ">;",
-            "Lcom/android/volley/Response$ErrorListener;",
-            ")V"
-        }
-    .end annotation
-
-    .prologue
     .line 122
-    new-instance v2, Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;
-
-    invoke-direct {v2}, Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;-><init>()V
-
-    .line 123
-    invoke-virtual {v2, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;->addAssetId(Ljava/lang/String;)Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;
-
-    .line 124
-    const-string v0, "https://android.clients.google.com/vending/api/ApiRequest"
-
-    const-class v1, Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;
-
-    const-class v3, Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsResponseProto;
-
-    new-instance v4, Lcom/google/android/vending/remoting/api/VendingApi$AssetListConverter;
-
-    invoke-direct {v4, p2}, Lcom/google/android/vending/remoting/api/VendingApi$AssetListConverter;-><init>(Lcom/android/volley/Response$Listener;)V
-
-    iget-object v5, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mApiContext:Lcom/google/android/vending/remoting/api/VendingApiContext;
-
-    move-object v6, p3
-
-    invoke-static/range {v0 .. v6}, Lcom/google/android/vending/remoting/api/VendingRequest;->make(Ljava/lang/String;Ljava/lang/Class;Lcom/google/protobuf/micro/MessageMicro;Ljava/lang/Class;Lcom/android/volley/Response$Listener;Lcom/google/android/vending/remoting/api/VendingApiContext;Lcom/android/volley/Response$ErrorListener;)Lcom/google/android/vending/remoting/api/VendingRequest;
-
-    move-result-object v0
-
-    .line 128
-    iget-object v1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
-
-    invoke-virtual {v1, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
-
-    .line 129
     return-void
 .end method
 
@@ -255,28 +197,28 @@
     .end annotation
 
     .prologue
-    .line 105
+    .line 83
     new-instance v2, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;
 
     invoke-direct {v2}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;-><init>()V
 
-    .line 106
+    .line 84
     invoke-virtual {v2, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->setAssetId(Ljava/lang/String;)Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;
 
-    .line 107
+    .line 85
     invoke-virtual {v2, p2}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->setFlagType(I)Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;
 
-    .line 108
+    .line 86
     invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_14
 
-    .line 109
+    .line 87
     invoke-virtual {v2, p3}, Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;->setFlagMessage(Ljava/lang/String;)Lcom/google/android/vending/remoting/protos/VendingProtos$ModifyCommentRequestProto;
 
-    .line 111
+    .line 89
     :cond_14
     const-string v0, "https://android.clients.google.com/vending/api/ApiRequest"
 
@@ -294,12 +236,12 @@
 
     move-result-object v0
 
-    .line 114
+    .line 92
     iget-object v1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     invoke-virtual {v1, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
 
-    .line 115
+    .line 93
     return-void
 .end method
 
@@ -307,72 +249,10 @@
     .registers 2
 
     .prologue
-    .line 81
+    .line 75
     iget-object v0, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mApiContext:Lcom/google/android/vending/remoting/api/VendingApiContext;
 
     return-object v0
-.end method
-
-.method public getAsset(Ljava/lang/String;Ljava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
-    .registers 12
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            "Lcom/android/volley/Response$Listener",
-            "<",
-            "Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;",
-            ">;",
-            "Lcom/android/volley/Response$ErrorListener;",
-            ")V"
-        }
-    .end annotation
-
-    .prologue
-    .line 160
-    new-instance v2, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;
-
-    invoke-direct {v2}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;-><init>()V
-
-    .line 161
-    invoke-virtual {v2, p2}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->setAssetId(Ljava/lang/String;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;
-
-    .line 162
-    if-eqz p1, :cond_d
-
-    .line 163
-    invoke-virtual {v2, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;->setDirectDownloadKey(Ljava/lang/String;)Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;
-
-    .line 165
-    :cond_d
-    const-string v0, "https://android.clients.google.com/vending/api/ApiRequest"
-
-    const-class v1, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetRequestProto;
-
-    const-class v3, Lcom/google/android/vending/remoting/protos/VendingProtos$GetAssetResponseProto;
-
-    iget-object v5, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mApiContext:Lcom/google/android/vending/remoting/api/VendingApiContext;
-
-    move-object v4, p3
-
-    move-object v6, p4
-
-    invoke-static/range {v0 .. v6}, Lcom/google/android/vending/remoting/api/VendingRequest;->make(Ljava/lang/String;Ljava/lang/Class;Lcom/google/protobuf/micro/MessageMicro;Ljava/lang/Class;Lcom/android/volley/Response$Listener;Lcom/google/android/vending/remoting/api/VendingApiContext;Lcom/android/volley/Response$ErrorListener;)Lcom/google/android/vending/remoting/api/VendingRequest;
-
-    move-result-object v0
-
-    .line 168
-    iget-object v1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
-
-    invoke-virtual {v1, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
-
-    .line 169
-    return-void
 .end method
 
 .method public getBillingCountries(Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
@@ -394,7 +274,7 @@
     .end annotation
 
     .prologue
-    .line 322
+    .line 251
     const-string v0, "https://android.clients.google.com/vending/api/ApiRequest"
 
     const-class v1, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataRequestProto;
@@ -417,12 +297,12 @@
 
     move-result-object v0
 
-    .line 326
+    .line 255
     iget-object v1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     invoke-virtual {v1, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
 
-    .line 327
+    .line 256
     return-void
 .end method
 
@@ -445,7 +325,7 @@
     .end annotation
 
     .prologue
-    .line 193
+    .line 132
     const-string v0, "https://android.clients.google.com/vending/api/ApiRequest"
 
     const-class v1, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppPurchaseInformationRequestProto;
@@ -464,12 +344,12 @@
 
     move-result-object v0
 
-    .line 197
+    .line 136
     iget-object v1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     invoke-virtual {v1, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
 
-    .line 198
+    .line 137
     return-void
 .end method
 
@@ -495,7 +375,7 @@
     .end annotation
 
     .prologue
-    .line 141
+    .line 105
     .local p4, listener:Lcom/android/volley/Response$Listener;,"Lcom/android/volley/Response$Listener<Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataResponseProto;>;"
     new-instance v0, Lcom/google/android/vending/remoting/api/GetMarketMetadataRequest;
 
@@ -513,123 +393,13 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/google/android/vending/remoting/api/GetMarketMetadataRequest;-><init>(Lcom/google/android/vending/remoting/protos/VendingProtos$GetMarketMetadataRequestProto;IILcom/android/volley/Response$Listener;Lcom/google/android/vending/remoting/api/VendingApiContext;Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 143
+    .line 107
     .local v0, request:Lcom/google/android/vending/remoting/api/GetMarketMetadataRequest;
     iget-object v1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     invoke-virtual {v1, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
 
-    .line 144
-    return-void
-.end method
-
-.method public getVendingHistory(Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
-    .registers 10
-    .parameter
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/android/volley/Response$Listener",
-            "<",
-            "Lcom/google/android/vending/model/AssetList;",
-            ">;",
-            "Lcom/android/volley/Response$ErrorListener;",
-            ")V"
-        }
-    .end annotation
-
-    .prologue
-    const/4 v0, 0x1
-
-    .line 90
-    new-instance v2, Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;
-
-    invoke-direct {v2}, Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;-><init>()V
-
-    .line 91
-    invoke-virtual {v2, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;->setRetrieveVendingHistory(Z)Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;
-
-    .line 92
-    invoke-virtual {v2, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;->setRetrieveExtendedInfo(Z)Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;
-
-    .line 93
-    const-string v0, "https://android.clients.google.com/vending/api/ApiRequest"
-
-    const-class v1, Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsRequestProto;
-
-    const-class v3, Lcom/google/android/vending/remoting/protos/VendingProtos$AssetsResponseProto;
-
-    new-instance v4, Lcom/google/android/vending/remoting/api/VendingApi$AssetListConverter;
-
-    invoke-direct {v4, p1}, Lcom/google/android/vending/remoting/api/VendingApi$AssetListConverter;-><init>(Lcom/android/volley/Response$Listener;)V
-
-    iget-object v5, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mApiContext:Lcom/google/android/vending/remoting/api/VendingApiContext;
-
-    move-object v6, p2
-
-    invoke-static/range {v0 .. v6}, Lcom/google/android/vending/remoting/api/VendingRequest;->make(Ljava/lang/String;Ljava/lang/Class;Lcom/google/protobuf/micro/MessageMicro;Ljava/lang/Class;Lcom/android/volley/Response$Listener;Lcom/google/android/vending/remoting/api/VendingApiContext;Lcom/android/volley/Response$ErrorListener;)Lcom/google/android/vending/remoting/api/VendingRequest;
-
-    move-result-object v0
-
-    .line 97
-    iget-object v1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
-
-    invoke-virtual {v1, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
-
-    .line 98
-    return-void
-.end method
-
-.method public reconstructDatabase(Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
-    .registers 11
-    .parameter
-    .parameter
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;",
-            "Lcom/android/volley/Response$Listener",
-            "<",
-            "Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseResponseProto;",
-            ">;",
-            "Lcom/android/volley/Response$ErrorListener;",
-            ")V"
-        }
-    .end annotation
-
-    .prologue
-    .line 259
-    const-string v0, "https://android.clients.google.com/vending/api/ApiRequest"
-
-    const-class v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseRequestProto;
-
-    const-class v3, Lcom/google/android/vending/remoting/protos/VendingProtos$ReconstructDatabaseResponseProto;
-
-    iget-object v5, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mApiContext:Lcom/google/android/vending/remoting/api/VendingApiContext;
-
-    move-object v2, p1
-
-    move-object v4, p2
-
-    move-object v6, p3
-
-    invoke-static/range {v0 .. v6}, Lcom/google/android/vending/remoting/api/VendingRequest;->make(Ljava/lang/String;Ljava/lang/Class;Lcom/google/protobuf/micro/MessageMicro;Ljava/lang/Class;Lcom/android/volley/Response$Listener;Lcom/google/android/vending/remoting/api/VendingApiContext;Lcom/android/volley/Response$ErrorListener;)Lcom/google/android/vending/remoting/api/VendingRequest;
-
-    move-result-object v0
-
-    .line 262
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/google/android/vending/remoting/api/VendingRequest;->setDrainable(Z)V
-
-    .line 263
-    iget-object v1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
-
-    invoke-virtual {v1, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
-
-    .line 264
+    .line 108
     return-void
 .end method
 
@@ -652,7 +422,7 @@
     .end annotation
 
     .prologue
-    .line 309
+    .line 238
     const-string v0, "https://android.clients.google.com/vending/api/ApiRequest"
 
     const-class v1, Lcom/google/android/vending/remoting/protos/VendingProtos$BillingEventRequestProto;
@@ -671,69 +441,15 @@
 
     move-result-object v0
 
-    .line 312
-    const/4 v1, 0x0
+    .line 241
+    invoke-virtual {v0}, Lcom/google/android/vending/remoting/api/VendingRequest;->setAvoidBulkCancel()V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/vending/remoting/api/VendingRequest;->setDrainable(Z)V
-
-    .line 313
+    .line 242
     iget-object v1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     invoke-virtual {v1, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
 
-    .line 314
-    return-void
-.end method
-
-.method public refundAsset(Lcom/google/android/vending/remoting/protos/VendingProtos$RefundRequestProto;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
-    .registers 11
-    .parameter
-    .parameter
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/vending/remoting/protos/VendingProtos$RefundRequestProto;",
-            "Lcom/android/volley/Response$Listener",
-            "<",
-            "Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;",
-            ">;",
-            "Lcom/android/volley/Response$ErrorListener;",
-            ")V"
-        }
-    .end annotation
-
-    .prologue
-    .line 336
-    const-string v0, "https://android.clients.google.com/vending/api/ApiRequest"
-
-    const-class v1, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundRequestProto;
-
-    const-class v3, Lcom/google/android/vending/remoting/protos/VendingProtos$RefundResponseProto;
-
-    iget-object v5, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mApiContext:Lcom/google/android/vending/remoting/api/VendingApiContext;
-
-    move-object v2, p1
-
-    move-object v4, p2
-
-    move-object v6, p3
-
-    invoke-static/range {v0 .. v6}, Lcom/google/android/vending/remoting/api/VendingRequest;->make(Ljava/lang/String;Ljava/lang/Class;Lcom/google/protobuf/micro/MessageMicro;Ljava/lang/Class;Lcom/android/volley/Response$Listener;Lcom/google/android/vending/remoting/api/VendingApiContext;Lcom/android/volley/Response$ErrorListener;)Lcom/google/android/vending/remoting/api/VendingRequest;
-
-    move-result-object v0
-
-    .line 339
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/google/android/vending/remoting/api/VendingRequest;->setDrainable(Z)V
-
-    .line 340
-    iget-object v1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
-
-    invoke-virtual {v1, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
-
-    .line 341
+    .line 243
     return-void
 .end method
 
@@ -756,7 +472,7 @@
     .end annotation
 
     .prologue
-    .line 275
+    .line 198
     const-string v0, "https://android.clients.google.com/vending/api/ApiRequest"
 
     const-class v1, Lcom/google/android/vending/remoting/protos/VendingProtos$RestoreApplicationsRequestProto;
@@ -775,17 +491,15 @@
 
     move-result-object v0
 
-    .line 278
-    const/4 v1, 0x0
+    .line 201
+    invoke-virtual {v0}, Lcom/google/android/vending/remoting/api/VendingRequest;->setAvoidBulkCancel()V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/vending/remoting/api/VendingRequest;->setDrainable(Z)V
-
-    .line 279
+    .line 202
     iget-object v1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     invoke-virtual {v1, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
 
-    .line 280
+    .line 203
     return-void
 .end method
 
@@ -808,7 +522,7 @@
     .end annotation
 
     .prologue
-    .line 208
+    .line 147
     const-string v0, "https://android.clients.google.com/vending/api/ApiRequest"
 
     const-class v1, Lcom/google/android/vending/remoting/protos/VendingProtos$InAppRestoreTransactionsRequestProto;
@@ -827,12 +541,12 @@
 
     move-result-object v0
 
-    .line 212
+    .line 151
     iget-object v1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     invoke-virtual {v1, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
 
-    .line 213
+    .line 152
     return-void
 .end method
 
@@ -855,7 +569,7 @@
     .end annotation
 
     .prologue
-    .line 291
+    .line 214
     const-string v0, "https://android.clients.google.com/vending/api/ApiRequest"
 
     const-class v1, Lcom/google/android/vending/remoting/protos/VendingProtos$ContentSyncRequestProto;
@@ -874,16 +588,42 @@
 
     move-result-object v0
 
-    .line 294
-    const/4 v1, 0x0
+    .line 218
+    invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/vending/remoting/api/VendingRequest;->setDrainable(Z)V
+    move-result-object v1
 
-    .line 295
+    invoke-virtual {v1}, Lcom/google/android/finsky/FinskyApp;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "android_id"
+
+    invoke-static {v1, v2}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 220
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_28
+
+    .line 221
+    const-string v2, "X-Public-Android-Id"
+
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/vending/remoting/api/VendingRequest;->addExtraHeader(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 223
+    :cond_28
+    invoke-virtual {v0}, Lcom/google/android/vending/remoting/api/VendingRequest;->setAvoidBulkCancel()V
+
+    .line 224
     iget-object v1, p0, Lcom/google/android/vending/remoting/api/VendingApi;->mRequestQueue:Lcom/android/volley/RequestQueue;
 
     invoke-virtual {v1, v0}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
 
-    .line 296
+    .line 225
     return-void
 .end method

@@ -26,7 +26,7 @@
     .line 76
     const/4 v0, 0x0
 
-    invoke-static {p0, p1, p2, p3, v0}, Lcom/google/android/youtube/core/utils/g;->a(Landroid/app/Activity;IILandroid/content/Intent;Ljava/lang/String;)Z
+    invoke-static {p0, p1, p2, p3, v0}, Lcom/google/android/youtube/core/utils/i;->a(Landroid/app/Activity;IILandroid/content/Intent;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -59,12 +59,12 @@
     check-cast v0, Lcom/google/android/youtube/app/YouTubeApplication;
 
     .line 52
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->J()Lcom/google/android/youtube/core/Analytics;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->F()Lcom/google/android/youtube/core/Analytics;
 
     move-result-object v1
 
     .line 53
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->K()Lcom/google/android/youtube/core/j;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->Y()Lcom/google/android/youtube/core/j;
 
     move-result-object v0
 
@@ -106,9 +106,9 @@
     .line 63
     if-eqz v0, :cond_3d
 
-    sget-object v0, Lcom/google/android/youtube/core/client/DefaultVideoStatsClient$Referrers;->WIDGET:Lcom/google/android/youtube/core/client/DefaultVideoStatsClient$Referrers;
+    sget-object v0, Lcom/google/android/youtube/app/m;->L:Lcom/google/android/youtube/core/b/aj;
 
-    invoke-static {p0, v1, v0}, Lcom/google/android/youtube/app/honeycomb/tablet/WatchActivity;->a(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/youtube/core/client/al;)Landroid/content/Intent;
+    invoke-static {p0, v1, v0}, Lcom/google/android/youtube/app/honeycomb/tablet/WatchActivity;->a(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/youtube/core/b/aj;)Landroid/content/Intent;
 
     move-result-object v0
 
@@ -121,9 +121,9 @@
 
     .line 63
     :cond_3d
-    sget-object v0, Lcom/google/android/youtube/core/client/DefaultVideoStatsClient$Referrers;->WIDGET:Lcom/google/android/youtube/core/client/DefaultVideoStatsClient$Referrers;
+    sget-object v0, Lcom/google/android/youtube/app/m;->L:Lcom/google/android/youtube/core/b/aj;
 
-    invoke-static {p0, v1, v0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;->a(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/youtube/core/client/al;)Landroid/content/Intent;
+    invoke-static {p0, v1, v0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;->a(Landroid/content/Context;Ljava/lang/String;Lcom/google/android/youtube/core/b/aj;)Landroid/content/Intent;
 
     move-result-object v0
 

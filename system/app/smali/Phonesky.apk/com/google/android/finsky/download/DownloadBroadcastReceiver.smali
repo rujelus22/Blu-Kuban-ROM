@@ -12,7 +12,7 @@
     .registers 1
 
     .prologue
-    .line 25
+    .line 23
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -24,7 +24,7 @@
     .parameter "x1"
 
     .prologue
-    .line 25
+    .line 23
     invoke-direct {p0, p1}, Lcom/google/android/finsky/download/DownloadBroadcastReceiver;->getHttpStatusForUri(Landroid/net/Uri;)I
 
     move-result v0
@@ -36,7 +36,7 @@
     .registers 1
 
     .prologue
-    .line 25
+    .line 23
     sget-object v0, Lcom/google/android/finsky/download/DownloadBroadcastReceiver;->sDownloadQueueImpl:Lcom/google/android/finsky/download/DownloadQueueImpl;
 
     return-object v0
@@ -47,7 +47,7 @@
     .parameter "destinationUri"
 
     .prologue
-    .line 116
+    .line 140
     sget-object v2, Lcom/google/android/finsky/download/DownloadBroadcastReceiver;->sDownloadQueueImpl:Lcom/google/android/finsky/download/DownloadQueueImpl;
 
     invoke-virtual {v2}, Lcom/google/android/finsky/download/DownloadQueueImpl;->getDownloadManager()Lcom/google/android/finsky/download/DownloadManager;
@@ -58,7 +58,7 @@
 
     move-result-object v0
 
-    .line 118
+    .line 142
     .local v0, cursor:Landroid/database/Cursor;
     if-eqz v0, :cond_13
 
@@ -70,26 +70,26 @@
 
     if-eq v2, v3, :cond_15
 
-    .line 119
+    .line 143
     :cond_13
     const/4 v1, -0x1
 
-    .line 124
+    .line 148
     :goto_14
     return v1
 
-    .line 121
+    .line 145
     :cond_15
     invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 122
+    .line 146
     const/4 v2, 0x0
 
     invoke-interface {v0, v2}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v1
 
-    .line 123
+    .line 147
     .local v1, httpStatus:I
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
@@ -101,137 +101,234 @@
     .parameter "downloadQueue"
 
     .prologue
-    .line 29
+    .line 27
     sput-object p0, Lcom/google/android/finsky/download/DownloadBroadcastReceiver;->sDownloadQueueImpl:Lcom/google/android/finsky/download/DownloadQueueImpl;
 
-    .line 30
+    .line 28
     return-void
 .end method
 
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 12
+    .registers 18
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    const/4 v8, 0x0
+    .line 32
+    const-string v12, "Intent received at DownloadBroadcastReceiver"
+
+    const/4 v13, 0x0
+
+    new-array v13, v13, [Ljava/lang/Object;
+
+    invoke-static {v12, v13}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 34
-    const-string v6, "Intent received at DownloadBroadcastReceiver"
+    invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
-    new-array v7, v8, [Ljava/lang/Object;
+    move-result-object v10
 
-    invoke-static {v6, v7}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    .line 35
+    .local v10, intentUri:Landroid/net/Uri;
+    invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    .line 36
-    invoke-virtual {p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+    move-result-object v9
 
-    move-result-object v2
+    .line 38
+    .local v9, intentAction:Ljava/lang/String;
+    if-nez v10, :cond_7f
 
-    .line 37
+    .line 41
+    const-string v12, "extra_download_id"
+
+    const-wide/16 v13, -0x1
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v12, v13, v14}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
+
+    move-result-wide v5
+
+    .line 42
+    .local v5, id:J
+    const-wide/16 v12, -0x1
+
+    cmp-long v12, v5, v12
+
+    if-nez v12, :cond_33
+
+    .line 43
+    const-string v12, "extra_click_download_ids"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v12}, Landroid/content/Intent;->getLongArrayExtra(Ljava/lang/String;)[J
+
+    move-result-object v7
+
+    .line 45
+    .local v7, idArray:[J
+    if-eqz v7, :cond_33
+
+    array-length v12, v7
+
+    const/4 v13, 0x1
+
+    if-ne v12, v13, :cond_33
+
+    .line 46
+    const/4 v12, 0x0
+
+    aget-wide v5, v7, v12
+
+    .line 49
+    .end local v7           #idArray:[J
+    :cond_33
+    const-wide/16 v12, -0x1
+
+    cmp-long v12, v5, v12
+
+    if-eqz v12, :cond_45
+
+    .line 50
+    invoke-static {v5, v6}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 51
+    .local v8, idString:Ljava/lang/String;
+    invoke-static {v8}, Lcom/google/android/finsky/download/DownloadManagerConstants;->getContentUriString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v12}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v10
+
+    .line 63
+    .end local v5           #id:J
+    .end local v8           #idString:Ljava/lang/String;
+    :cond_45
+    :goto_45
+    move-object v2, v10
+
+    .line 64
     .local v2, contentUri:Landroid/net/Uri;
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    move-object v1, v9
 
-    move-result-object v1
-
-    .line 39
+    .line 66
     .local v1, action:Ljava/lang/String;
-    sget-object v6, Lcom/google/android/finsky/download/DownloadBroadcastReceiver;->sDownloadQueueImpl:Lcom/google/android/finsky/download/DownloadQueueImpl;
+    sget-object v12, Lcom/google/android/finsky/download/DownloadBroadcastReceiver;->sDownloadQueueImpl:Lcom/google/android/finsky/download/DownloadQueueImpl;
 
-    invoke-virtual {v6, v2}, Lcom/google/android/finsky/download/DownloadQueueImpl;->getExisting(Landroid/net/Uri;)Lcom/google/android/finsky/download/InternalDownload;
+    invoke-virtual {v12, v2}, Lcom/google/android/finsky/download/DownloadQueueImpl;->getDownloadByContentUri(Landroid/net/Uri;)Lcom/google/android/finsky/download/Download;
 
     move-result-object v4
 
-    .line 40
-    .local v4, download:Lcom/google/android/finsky/download/InternalDownload;
-    if-nez v4, :cond_4c
+    .line 67
+    .local v4, download:Lcom/google/android/finsky/download/Download;
+    if-nez v4, :cond_8a
 
-    .line 41
-    const-string v6, "DownloadBroadcastReceiver could not find download in queue."
+    .line 68
+    const-string v12, "DownloadBroadcastReceiver could not find %s in queue."
 
-    new-array v7, v8, [Ljava/lang/Object;
+    const/4 v13, 0x1
 
-    invoke-static {v6, v7}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    new-array v13, v13, [Ljava/lang/Object;
 
-    .line 51
-    const-string v6, "android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED"
+    const/4 v14, 0x0
 
-    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    aput-object v2, v13, v14
 
-    move-result v6
+    invoke-static {v12, v13}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    if-eqz v6, :cond_4b
+    .line 80
+    const-string v12, "android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED"
 
-    .line 52
+    invoke-virtual {v1, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v12
+
+    if-eqz v12, :cond_7e
+
+    .line 81
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
     move-result-object p1
 
-    .line 54
+    .line 83
     invoke-static {}, Lcom/google/android/finsky/FinskyApp;->get()Lcom/google/android/finsky/FinskyApp;
 
-    move-result-object v6
+    move-result-object v12
 
-    invoke-virtual {v6}, Lcom/google/android/finsky/FinskyApp;->getCurrentAccount()Landroid/accounts/Account;
+    invoke-virtual {v12}, Lcom/google/android/finsky/FinskyApp;->getCurrentAccount()Landroid/accounts/Account;
 
     move-result-object v3
 
-    .line 55
+    .line 84
     .local v3, currentAccount:Landroid/accounts/Account;
-    if-nez v3, :cond_3b
+    if-eqz v3, :cond_7e
 
-    .line 58
-    sget-object v6, Lcom/google/android/finsky/utils/FinskyPreferences;->currentAccount:Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;
+    .line 85
+    invoke-static/range {p1 .. p1}, Lcom/google/android/finsky/activities/MainActivity;->getMyDownloadsIntent(Landroid/content/Context;)Landroid/content/Intent;
 
-    invoke-static {p1, v6}, Lcom/google/android/finsky/api/AccountHandler;->getAccountFromPreferences(Landroid/content/Context;Lcom/google/android/finsky/config/PreferenceFile$SharedPreference;)Landroid/accounts/Account;
+    move-result-object v11
 
-    move-result-object v3
+    .line 86
+    .local v11, myAppsIntent:Landroid/content/Intent;
+    const/high16 v12, 0x1000
 
-    .line 61
-    :cond_3b
-    if-eqz v3, :cond_4b
+    invoke-virtual {v11, v12}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 62
-    iget-object v0, v3, Landroid/accounts/Account;->name:Ljava/lang/String;
+    .line 87
+    move-object/from16 v0, p1
 
-    .line 63
-    .local v0, accountName:Ljava/lang/String;
-    invoke-static {p1, v0}, Lcom/google/android/finsky/activities/MainActivity;->getMyDownloadsIntent(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v11}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    move-result-object v5
-
-    .line 64
-    .local v5, myAppsIntent:Landroid/content/Intent;
-    const/high16 v6, 0x1000
-
-    invoke-virtual {v5, v6}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
-
-    .line 65
-    invoke-virtual {p1, v5}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-
-    .line 110
-    .end local v0           #accountName:Ljava/lang/String;
+    .line 134
     .end local v3           #currentAccount:Landroid/accounts/Account;
-    .end local v5           #myAppsIntent:Landroid/content/Intent;
-    :cond_4b
-    :goto_4b
+    .end local v11           #myAppsIntent:Landroid/content/Intent;
+    :cond_7e
+    :goto_7e
     return-void
 
-    .line 71
-    :cond_4c
-    new-instance v6, Lcom/google/android/finsky/download/DownloadBroadcastReceiver$1;
+    .line 58
+    .end local v1           #action:Ljava/lang/String;
+    .end local v2           #contentUri:Landroid/net/Uri;
+    .end local v4           #download:Lcom/google/android/finsky/download/Download;
+    :cond_7f
+    const-string v12, "android.intent.action.DOWNLOAD_COMPLETED"
 
-    invoke-direct {v6, p0, v2, v1}, Lcom/google/android/finsky/download/DownloadBroadcastReceiver$1;-><init>(Lcom/google/android/finsky/download/DownloadBroadcastReceiver;Landroid/net/Uri;Ljava/lang/String;)V
+    invoke-virtual {v12, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const/4 v7, 0x1
+    move-result v12
 
-    new-array v7, v7, [Landroid/net/Uri;
+    if-eqz v12, :cond_45
 
-    aput-object v2, v7, v8
+    .line 59
+    const-string v9, "android.intent.action.DOWNLOAD_COMPLETE"
 
-    invoke-virtual {v6, v7}, Lcom/google/android/finsky/download/DownloadBroadcastReceiver$1;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+    goto :goto_45
 
-    goto :goto_4b
+    .line 94
+    .restart local v1       #action:Ljava/lang/String;
+    .restart local v2       #contentUri:Landroid/net/Uri;
+    .restart local v4       #download:Lcom/google/android/finsky/download/Download;
+    :cond_8a
+    new-instance v12, Lcom/google/android/finsky/download/DownloadBroadcastReceiver$1;
+
+    invoke-direct {v12, p0, v2, v1}, Lcom/google/android/finsky/download/DownloadBroadcastReceiver$1;-><init>(Lcom/google/android/finsky/download/DownloadBroadcastReceiver;Landroid/net/Uri;Ljava/lang/String;)V
+
+    const/4 v13, 0x1
+
+    new-array v13, v13, [Landroid/net/Uri;
+
+    const/4 v14, 0x0
+
+    aput-object v2, v13, v14
+
+    invoke-virtual {v12, v13}, Lcom/google/android/finsky/download/DownloadBroadcastReceiver$1;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    goto :goto_7e
 .end method

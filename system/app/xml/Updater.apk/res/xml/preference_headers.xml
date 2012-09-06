@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers android:key="header"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <header android:icon="@drawable/icon_1" android:title="@string/rom" android:key="header_details" android:summary="" android:fragment="com.acquariusoft.UpdateMe.PreferencePage.PrefsFragmentInfo" />
+</preference-headers>

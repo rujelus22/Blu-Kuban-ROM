@@ -4,24 +4,8 @@
 
 
 # direct methods
-.method synthetic constructor <init>(Landroid/content/Context;Landroid/view/View;Lcom/google/android/youtube/core/ui/m;)V
-    .registers 5
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    .line 167
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p2, p3, v0}, Lcom/google/android/youtube/core/ui/n;-><init>(Landroid/content/Context;Landroid/view/View;Lcom/google/android/youtube/core/ui/m;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Landroid/content/Context;Landroid/view/View;Lcom/google/android/youtube/core/ui/m;B)V
-    .registers 5
-    .parameter
+.method private constructor <init>(Landroid/content/Context;Landroid/view/View;Lcom/google/android/youtube/core/ui/m;)V
+    .registers 4
     .parameter
     .parameter
     .parameter
@@ -37,6 +21,20 @@
     return-void
 .end method
 
+.method synthetic constructor <init>(Landroid/content/Context;Landroid/view/View;Lcom/google/android/youtube/core/ui/m;B)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 167
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/youtube/core/ui/n;-><init>(Landroid/content/Context;Landroid/view/View;Lcom/google/android/youtube/core/ui/m;)V
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public final a()V
@@ -47,13 +45,13 @@
     invoke-super {p0}, Lcom/google/android/youtube/core/ui/l;->a()V
 
     .line 191
-    invoke-virtual {p0}, Lcom/google/android/youtube/core/ui/n;->e()V
+    invoke-virtual {p0}, Lcom/google/android/youtube/core/ui/n;->d()V
 
     .line 192
     return-void
 .end method
 
-.method protected final d()V
+.method protected final c()V
     .registers 3
 
     .prologue
@@ -68,7 +66,7 @@
     return-void
 .end method
 
-.method protected final e()V
+.method protected final d()V
     .registers 3
 
     .prologue

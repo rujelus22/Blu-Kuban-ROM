@@ -8,15 +8,23 @@
 
 .field public static final enum AD:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
+.field public static final enum CUED:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+
 .field public static final enum LIVE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
 .field public static final enum MOVIE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+
+.field public static final enum REMOTE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
 .field public static final enum YOUTUBE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
 
 # instance fields
+.field public final minimalInPortrait:Z
+
 .field public final progressColor:I
+
+.field public final showButtonsInPortrait:Z
 
 .field public final supportsBuffered:Z
 
@@ -31,133 +39,221 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 15
+    .registers 11
 
     .prologue
-    const/4 v14, 0x3
+    .line 34
+    new-instance v0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
-    const/4 v13, 0x2
+    const-string v1, "YOUTUBE"
 
     const/4 v2, 0x0
 
     const/4 v3, 0x1
 
-    .line 28
-    new-instance v0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+    const v4, -0xeaab6a
 
-    const-string v1, "YOUTUBE"
+    const/4 v5, 0x1
 
-    const v4, -0xd0cf
+    const/4 v6, 0x1
 
-    move v5, v3
+    const/4 v7, 0x1
 
-    move v6, v3
+    const/4 v8, 0x1
 
-    move v7, v3
+    const/4 v9, 0x0
 
-    move v8, v3
+    const/4 v10, 0x0
 
-    invoke-direct/range {v0 .. v8}, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;-><init>(Ljava/lang/String;IZIZZZZ)V
+    invoke-direct/range {v0 .. v10}, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;-><init>(Ljava/lang/String;IZIZZZZZZ)V
 
     sput-object v0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->YOUTUBE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
-    .line 29
-    new-instance v4, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+    .line 35
+    new-instance v0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
-    const-string v5, "AD"
+    const-string v1, "REMOTE"
 
-    const v8, -0x1744d5
+    const/4 v2, 0x1
 
-    move v6, v3
+    const/4 v3, 0x0
 
-    move v7, v3
+    const v4, -0xeaab6a
 
-    move v9, v2
+    const/4 v5, 0x0
 
-    move v10, v2
+    const/4 v6, 0x0
 
-    move v11, v2
+    const/4 v7, 0x1
 
-    move v12, v2
+    const/4 v8, 0x1
 
-    invoke-direct/range {v4 .. v12}, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;-><init>(Ljava/lang/String;IZIZZZZ)V
+    const/4 v9, 0x0
 
-    sput-object v4, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->AD:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+    const/4 v10, 0x0
 
-    .line 30
-    new-instance v4, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+    invoke-direct/range {v0 .. v10}, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;-><init>(Ljava/lang/String;IZIZZZZZZ)V
 
-    const-string v5, "MOVIE"
+    sput-object v0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->REMOTE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
-    const v8, -0x3900cd
+    .line 36
+    new-instance v0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
-    move v6, v13
+    const-string v1, "AD"
 
-    move v7, v3
+    const/4 v2, 0x2
 
-    move v9, v3
+    const/4 v3, 0x1
 
-    move v10, v3
+    const v4, -0xeaab6a
 
-    move v11, v3
+    const/4 v5, 0x0
 
-    move v12, v3
+    const/4 v6, 0x0
 
-    invoke-direct/range {v4 .. v12}, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;-><init>(Ljava/lang/String;IZIZZZZ)V
+    const/4 v7, 0x1
 
-    sput-object v4, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->MOVIE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+    const/4 v8, 0x0
 
-    .line 31
-    new-instance v4, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+    const/4 v9, 0x1
 
-    const-string v5, "LIVE"
+    const/4 v10, 0x0
 
-    move v6, v14
+    invoke-direct/range {v0 .. v10}, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;-><init>(Ljava/lang/String;IZIZZZZZZ)V
 
-    move v7, v2
+    sput-object v0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->AD:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
-    move v8, v2
+    .line 37
+    new-instance v0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
-    move v9, v2
+    const-string v1, "MOVIE"
 
-    move v10, v2
+    const/4 v2, 0x3
 
-    move v11, v3
+    const/4 v3, 0x1
 
-    move v12, v2
+    const v4, -0xeaab6a
 
-    invoke-direct/range {v4 .. v12}, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;-><init>(Ljava/lang/String;IZIZZZZ)V
+    const/4 v5, 0x1
 
-    sput-object v4, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->LIVE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+    const/4 v6, 0x1
 
-    .line 27
-    const/4 v0, 0x4
+    const/4 v7, 0x1
+
+    const/4 v8, 0x1
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x1
+
+    invoke-direct/range {v0 .. v10}, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;-><init>(Ljava/lang/String;IZIZZZZZZ)V
+
+    sput-object v0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->MOVIE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+
+    .line 38
+    new-instance v0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+
+    const-string v1, "LIVE"
+
+    const/4 v2, 0x4
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x1
+
+    const/4 v8, 0x1
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    invoke-direct/range {v0 .. v10}, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;-><init>(Ljava/lang/String;IZIZZZZZZ)V
+
+    sput-object v0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->LIVE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+
+    .line 39
+    new-instance v0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+
+    const-string v1, "CUED"
+
+    const/4 v2, 0x5
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x1
+
+    const/4 v8, 0x1
+
+    const/4 v9, 0x1
+
+    const/4 v10, 0x1
+
+    invoke-direct/range {v0 .. v10}, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;-><init>(Ljava/lang/String;IZIZZZZZZ)V
+
+    sput-object v0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->CUED:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+
+    .line 33
+    const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
-    sget-object v1, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->YOUTUBE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+    const/4 v1, 0x0
 
-    aput-object v1, v0, v2
+    sget-object v2, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->YOUTUBE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
-    sget-object v1, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->AD:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v3
+    const/4 v1, 0x1
 
-    sget-object v1, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->MOVIE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+    sget-object v2, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->REMOTE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
-    aput-object v1, v0, v13
+    aput-object v2, v0, v1
 
-    sget-object v1, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->LIVE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+    const/4 v1, 0x2
 
-    aput-object v1, v0, v14
+    sget-object v2, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->AD:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x3
+
+    sget-object v2, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->MOVIE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x4
+
+    sget-object v2, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->LIVE:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x5
+
+    sget-object v2, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->CUED:Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
+
+    aput-object v2, v0, v1
 
     sput-object v0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->$VALUES:[Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;IZIZZZZ)V
-    .registers 9
+.method private constructor <init>(Ljava/lang/String;IZIZZZZZZ)V
+    .registers 11
+    .parameter
+    .parameter
     .parameter
     .parameter
     .parameter
@@ -168,28 +264,34 @@
     .parameter
 
     .prologue
-    .line 46
+    .line 58
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 47
+    .line 59
     iput-boolean p3, p0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->supportsTimeBar:Z
 
-    .line 48
+    .line 60
     iput p4, p0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->progressColor:I
 
-    .line 49
+    .line 61
     iput-boolean p5, p0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->supportsBuffered:Z
 
-    .line 50
+    .line 62
     iput-boolean p6, p0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->supportsScrubber:Z
 
-    .line 51
+    .line 63
     iput-boolean p7, p0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->supportsPlayHQCC:Z
 
-    .line 52
+    .line 64
     iput-boolean p8, p0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->supportsNextPrevious:Z
 
-    .line 53
+    .line 65
+    iput-boolean p9, p0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->minimalInPortrait:Z
+
+    .line 66
+    iput-boolean p10, p0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->showButtonsInPortrait:Z
+
+    .line 67
     return-void
 .end method
 
@@ -198,7 +300,7 @@
     .parameter
 
     .prologue
-    .line 27
+    .line 33
     const-class v0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -214,7 +316,7 @@
     .registers 1
 
     .prologue
-    .line 27
+    .line 33
     sget-object v0, Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->$VALUES:[Lcom/google/android/youtube/core/player/ControllerOverlay$Style;
 
     invoke-virtual {v0}, [Lcom/google/android/youtube/core/player/ControllerOverlay$Style;->clone()Ljava/lang/Object;

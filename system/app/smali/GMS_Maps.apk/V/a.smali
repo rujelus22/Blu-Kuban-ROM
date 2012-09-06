@@ -1,596 +1,419 @@
-.class public LV/a;
-.super LU/c;
-
-# interfaces
-.implements LU/m;
+.class public abstract Lv/a;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field private a:Ljava/io/File;
+.field protected final a:Ljava/util/LinkedList;
+
+.field protected b:I
+
+.field public c:Ljava/lang/Object;
+
+.field public d:I
+
+.field private final e:Lv/e;
+
+.field private final f:I
+
+.field private final g:I
+
+.field private final h:I
+
+.field private i:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .registers 5
+.method public constructor <init>(IILv/e;)V
+    .registers 6
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, LU/c;-><init>()V
+    .prologue
+    .line 118
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/io/File;
+    .line 119
+    new-instance v0, Ljava/util/LinkedList;
 
-    invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    iput-object v0, p0, LV/a;->a:Ljava/io/File;
+    iput-object v0, p0, Lv/a;->a:Ljava/util/LinkedList;
 
-    iget-object v0, p0, LV/a;->a:Ljava/io/File;
+    .line 121
+    iput p2, p0, Lv/a;->h:I
 
-    invoke-virtual {v0}, Ljava/io/File;->isDirectory()Z
+    .line 122
+    const/4 v0, 0x1
 
-    move-result v0
+    iget v1, p0, Lv/a;->h:I
 
-    if-nez v0, :cond_31
+    shl-int/2addr v0, v1
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    iput v0, p0, Lv/a;->f:I
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    .line 123
+    iget v0, p0, Lv/a;->f:I
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    add-int/lit8 v0, v0, -0x1
 
-    const-string v2, "Directory "
+    iput v0, p0, Lv/a;->g:I
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 125
+    iput-object p3, p0, Lv/a;->e:Lv/e;
 
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " must already exist"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_31
-    iget-object v0, p0, LV/a;->a:Ljava/io/File;
-
-    invoke-virtual {v0}, Ljava/io/File;->canWrite()Z
+    .line 126
+    invoke-direct {p0, p1}, Lv/a;->d(I)I
 
     move-result v0
 
-    if-nez v0, :cond_58
+    iput v0, p0, Lv/a;->i:I
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    .line 127
+    invoke-virtual {p0}, Lv/a;->a()V
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Directory "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " must be writeable"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_58
-    iget-object v0, p0, LV/a;->a:Ljava/io/File;
-
-    invoke-virtual {v0}, Ljava/io/File;->canRead()Z
-
-    move-result v0
-
-    if-nez v0, :cond_7f
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Directory "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " must be readable"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_7f
+    .line 128
     return-void
 .end method
 
-.method private c(Ljava/lang/String;)Ljava/lang/String;
+.method private d(I)I
     .registers 4
+    .parameter
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    .prologue
+    .line 143
+    iget v0, p0, Lv/a;->h:I
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    shr-int v1, p1, v0
 
-    invoke-virtual {p0}, LV/a;->b()Ljava/lang/String;
+    iget v0, p0, Lv/a;->g:I
 
-    move-result-object v1
+    and-int/2addr v0, p1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_c
 
-    move-result-object v0
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_a
+    add-int/2addr v0, v1
 
-    move-result-object v0
+    return v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_c
+    const/4 v0, 0x0
 
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private d(Ljava/lang/String;)Ljava/io/File;
-    .registers 4
-
-    new-instance v0, Ljava/io/File;
-
-    invoke-direct {p0, p1}, LV/a;->c(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    return-object v0
+    goto :goto_a
 .end method
 
 
 # virtual methods
-.method public a([BLjava/lang/String;)I
-    .registers 8
+.method public a(I)Ljava/lang/Object;
+    .registers 5
+    .parameter
 
-    const/4 v0, -0x1
+    .prologue
+    .line 153
+    iget v0, p0, Lv/a;->i:I
 
-    :try_start_1
-    new-instance v1, Ljava/io/FileOutputStream;
+    if-le p1, v0, :cond_2f
 
-    invoke-direct {p0, p2}, LV/a;->d(Ljava/lang/String;)Ljava/io/File;
+    .line 154
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
-    move-result-object v2
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, p1}, Ljava/io/FileOutputStream;->write([B)V
+    const-string v2, "Index out of bound : "
 
-    invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    array-length v1, p1
+    move-result-object v1
 
-    add-int/lit8 v1, v1, -0x1
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    div-int/lit16 v0, v1, 0x1000
-    :try_end_15
-    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_15} :catch_1a
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_15} :catch_38
+    move-result-object v1
+
+    const-string v2, "(index) > "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lv/a;->i:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "(size)"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 157
+    :cond_2f
+    :goto_2f
+    iget-object v0, p0, Lv/a;->a:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
+
+    move-result v0
+
+    if-lt p1, v0, :cond_43
+
+    .line 158
+    iget-object v0, p0, Lv/a;->a:Ljava/util/LinkedList;
+
+    iget-object v1, p0, Lv/a;->e:Lv/e;
+
+    invoke-virtual {v1}, Lv/e;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_2f
+
+    .line 160
+    :cond_43
+    iget-object v0, p0, Lv/a;->a:Ljava/util/LinkedList;
+
+    invoke-virtual {v0, p1}, Ljava/util/LinkedList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public a()V
+    .registers 2
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 132
+    iput v0, p0, Lv/a;->b:I
+
+    .line 133
+    iput v0, p0, Lv/a;->d:I
+
+    .line 136
+    invoke-virtual {p0, v0}, Lv/a;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lv/a;->c:Ljava/lang/Object;
+
+    .line 137
+    return-void
+.end method
+
+.method public a(Ljava/lang/Object;I)V
+    .registers 7
+    .parameter
+    .parameter
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 193
+    invoke-virtual {p0}, Lv/a;->a()V
+
+    move v1, v2
+
+    .line 195
+    :goto_5
+    if-ge v1, p2, :cond_2a
+
+    .line 196
+    iget v0, p0, Lv/a;->f:I
+
+    .line 197
+    iget v3, p0, Lv/a;->f:I
+
+    add-int/2addr v3, v1
+
+    if-le v3, p2, :cond_10
+
+    .line 198
+    sub-int v0, p2, v1
+
+    .line 200
+    :cond_10
+    iget v3, p0, Lv/a;->b:I
+
+    invoke-virtual {p0, v3}, Lv/a;->a(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-static {p1, v1, v3, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 201
+    add-int/2addr v1, v0
+
+    .line 202
+    iget v3, p0, Lv/a;->f:I
+
+    if-ne v0, v3, :cond_27
+
+    .line 203
+    iget v0, p0, Lv/a;->b:I
 
     add-int/lit8 v0, v0, 0x1
 
-    mul-int/lit16 v0, v0, 0x1000
+    iput v0, p0, Lv/a;->b:I
 
-    :goto_19
+    .line 204
+    iput v2, p0, Lv/a;->d:I
+
+    goto :goto_5
+
+    .line 206
+    :cond_27
+    iput v0, p0, Lv/a;->d:I
+
+    goto :goto_5
+
+    .line 209
+    :cond_2a
+    return-void
+.end method
+
+.method public b()I
+    .registers 3
+
+    .prologue
+    .line 218
+    iget-object v0, p0, Lv/a;->a:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
+
+    move-result v0
+
+    iget v1, p0, Lv/a;->h:I
+
+    shl-int/2addr v0, v1
+
     return v0
-
-    :catch_1a
-    move-exception v1
-
-    const-string v2, "Fixed_Persistence_Store"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Couldn\'t write block:  "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v1}, Ljava/io/FileNotFoundException;->getMessage()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v2, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_19
-
-    :catch_38
-    move-exception v1
-
-    const-string v2, "Fixed_Persistence_Store"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Couldn\'t write block:  "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v2, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_19
 .end method
 
-.method protected b()Ljava/lang/String;
+.method public b(I)V
+    .registers 7
+    .parameter
+
+    .prologue
+    .line 170
+    iget v0, p0, Lv/a;->f:I
+
+    if-lt p1, v0, :cond_2a
+
+    .line 171
+    iget v0, p0, Lv/a;->g:I
+
+    and-int/2addr v0, p1
+
+    .line 172
+    iget v1, p0, Lv/a;->b:I
+
+    add-int/lit8 v1, v1, 0x1
+
+    iput v1, p0, Lv/a;->b:I
+
+    .line 173
+    iget v1, p0, Lv/a;->b:I
+
+    iget v2, p0, Lv/a;->i:I
+
+    if-eq v1, v2, :cond_27
+
+    .line 174
+    iget-object v1, p0, Lv/a;->c:Ljava/lang/Object;
+
+    .line 175
+    iget v2, p0, Lv/a;->b:I
+
+    invoke-virtual {p0, v2}, Lv/a;->a(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lv/a;->c:Ljava/lang/Object;
+
+    .line 177
+    if-eqz v0, :cond_27
+
+    .line 179
+    iget v2, p0, Lv/a;->f:I
+
+    iget-object v3, p0, Lv/a;->c:Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    invoke-static {v1, v2, v3, v4, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 182
+    :cond_27
+    iput v0, p0, Lv/a;->d:I
+
+    .line 186
+    :goto_29
+    return-void
+
+    .line 184
+    :cond_2a
+    iput p1, p0, Lv/a;->d:I
+
+    goto :goto_29
+.end method
+
+.method public c()V
+    .registers 3
+
+    .prologue
+    .line 223
+    iget-object v0, p0, Lv/a;->e:Lv/e;
+
+    iget-object v1, p0, Lv/a;->a:Ljava/util/LinkedList;
+
+    invoke-virtual {v0, v1}, Lv/e;->a(Ljava/util/List;)V
+
+    .line 224
+    iget-object v0, p0, Lv/a;->a:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->clear()V
+
+    .line 225
+    return-void
+.end method
+
+.method public c(I)V
     .registers 4
+    .parameter
 
-    new-instance v0, Ljava/io/File;
+    .prologue
+    .line 213
+    invoke-direct {p0, p1}, Lv/a;->d(I)I
 
-    iget-object v1, p0, LV/a;->a:Ljava/io/File;
+    move-result v0
 
-    const-string v2, "FIXED_DATA_"
+    iget v1, p0, Lv/a;->i:I
 
-    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
 
-    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    move-result v0
 
-    move-result-object v0
+    iput v0, p0, Lv/a;->i:I
 
-    return-object v0
-.end method
-
-.method public b(Ljava/lang/String;)[B
-    .registers 8
-
-    const/4 v1, 0x0
-
-    :try_start_1
-    invoke-direct {p0, p1}, LV/a;->d(Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v0
-
-    new-instance v2, Ljava/io/FileInputStream;
-
-    invoke-direct {v2, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_bf
-    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_a} :catch_38
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_a} :catch_7b
-
-    :try_start_a
-    invoke-virtual {v0}, Ljava/io/File;->length()J
-
-    move-result-wide v3
-
-    long-to-int v3, v3
-
-    new-array v0, v3, [B
-
-    invoke-static {p1, v2, v3, v0}, LV/k;->a(Ljava/lang/String;Ljava/io/InputStream;I[B)V
-    :try_end_14
-    .catchall {:try_start_a .. :try_end_14} :catchall_e5
-    .catch Ljava/io/FileNotFoundException; {:try_start_a .. :try_end_14} :catch_e9
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_14} :catch_e7
-
-    if-eqz v2, :cond_19
-
-    :try_start_16
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
-    :try_end_19
-    .catch Ljava/io/IOException; {:try_start_16 .. :try_end_19} :catch_1a
-
-    :cond_19
-    :goto_19
-    return-object v0
-
-    :catch_1a
-    move-exception v1
-
-    const-string v2, "Fixed_Persistence_Store"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Couldn\'t close file:  "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v2, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_19
-
-    :catch_38
-    move-exception v0
-
-    move-object v2, v1
-
-    :goto_3a
-    :try_start_3a
-    const-string v3, "Fixed_Persistence_Store"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Couldn\'t find file:  "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v0}, Ljava/io/FileNotFoundException;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v3, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_56
-    .catchall {:try_start_3a .. :try_end_56} :catchall_e5
-
-    if-eqz v2, :cond_5b
-
-    :try_start_58
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
-    :try_end_5b
-    .catch Ljava/io/IOException; {:try_start_58 .. :try_end_5b} :catch_5d
-
-    :cond_5b
-    :goto_5b
-    move-object v0, v1
-
-    goto :goto_19
-
-    :catch_5d
-    move-exception v0
-
-    const-string v2, "Fixed_Persistence_Store"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Couldn\'t close file:  "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_5b
-
-    :catch_7b
-    move-exception v0
-
-    move-object v2, v1
-
-    :goto_7d
-    :try_start_7d
-    const-string v3, "Fixed_Persistence_Store"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Couldn\'t read file:  "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v3, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_99
-    .catchall {:try_start_7d .. :try_end_99} :catchall_e5
-
-    if-eqz v2, :cond_9e
-
-    :try_start_9b
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
-    :try_end_9e
-    .catch Ljava/io/IOException; {:try_start_9b .. :try_end_9e} :catch_a1
-
-    :cond_9e
-    :goto_9e
-    move-object v0, v1
-
-    goto/16 :goto_19
-
-    :catch_a1
-    move-exception v0
-
-    const-string v2, "Fixed_Persistence_Store"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Couldn\'t close file:  "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_9e
-
-    :catchall_bf
-    move-exception v0
-
-    move-object v2, v1
-
-    :goto_c1
-    if-eqz v2, :cond_c6
-
-    :try_start_c3
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
-    :try_end_c6
-    .catch Ljava/io/IOException; {:try_start_c3 .. :try_end_c6} :catch_c7
-
-    :cond_c6
-    :goto_c6
-    throw v0
-
-    :catch_c7
-    move-exception v1
-
-    const-string v2, "Fixed_Persistence_Store"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Couldn\'t close file:  "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v2, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_c6
-
-    :catchall_e5
-    move-exception v0
-
-    goto :goto_c1
-
-    :catch_e7
-    move-exception v0
-
-    goto :goto_7d
-
-    :catch_e9
-    move-exception v0
-
-    goto/16 :goto_3a
+    .line 214
+    return-void
 .end method

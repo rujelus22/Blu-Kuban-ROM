@@ -1330,7 +1330,7 @@
 
     move-object/from16 v20, v0
 
-    if-eqz v20, :cond_3f4
+    if-eqz v20, :cond_3df
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/DisplaySettings;->getResources()Landroid/content/res/Resources;
 
@@ -1342,7 +1342,7 @@
 
     move-result v20
 
-    if-nez v20, :cond_3f4
+    if-nez v20, :cond_3df
 
     .line 199
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/DisplaySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -1430,7 +1430,7 @@
 
     move-result v20
 
-    if-eqz v20, :cond_431
+    if-eqz v20, :cond_41c
 
     const/16 v20, 0x1
 
@@ -1496,7 +1496,7 @@
 
     move/from16 v1, v22
 
-    if-ne v0, v1, :cond_435
+    if-ne v0, v1, :cond_420
 
     const/16 v20, 0x1
 
@@ -1538,8 +1538,6 @@
 
     move-object/from16 v21, v0
 
-    invoke-virtual/range {v20 .. v21}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
     .line 231
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/DisplaySettings;->getActivity()Landroid/app/Activity;
 
@@ -1549,7 +1547,7 @@
 
     move-result v20
 
-    if-eqz v20, :cond_289
+    if-eqz v20, :cond_286
 
     .line 232
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/DisplaySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -1588,26 +1586,8 @@
     invoke-virtual/range {v20 .. v21}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     .line 237
-    :cond_289
-    const-string v20, "mode"
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Lcom/android/settings/DisplaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v20
-
-    check-cast v20, Landroid/preference/PreferenceScreen;
-
-    move-object/from16 v0, v20
-
-    move-object/from16 v1, p0
-
-    iput-object v0, v1, Lcom/android/settings/DisplaySettings;->mMode:Landroid/preference/PreferenceScreen;
-
     .line 238
+    :cond_286
     const-string v20, "SPH-D710"
 
     const-string v21, "SHV-E110S"
@@ -1616,7 +1596,7 @@
 
     move-result v20
 
-    if-nez v20, :cond_2af
+    if-nez v20, :cond_29a
 
     const-string v20, "GT-I9100G"
 
@@ -1626,10 +1606,10 @@
 
     move-result v20
 
-    if-eqz v20, :cond_2bc
+    if-eqz v20, :cond_2a7
 
     .line 239
-    :cond_2af
+    :cond_29a
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/DisplaySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v20
@@ -1643,14 +1623,14 @@
     invoke-virtual/range {v20 .. v21}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     .line 248
-    :cond_2bc
+    :cond_2a7
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/settings/DisplaySettings;->mEnableLog:Z
 
     move/from16 v20, v0
 
-    if-eqz v20, :cond_2cb
+    if-eqz v20, :cond_2b6
 
     const-string v20, "DisplaySettings"
 
@@ -1659,7 +1639,7 @@
     invoke-static/range {v20 .. v21}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 250
-    :cond_2cb
+    :cond_2b6
     const-string v20, "SPH-D710"
 
     const-string v21, "GT-N7000"
@@ -1668,7 +1648,7 @@
 
     move-result v20
 
-    if-nez v20, :cond_2df
+    if-nez v20, :cond_2ca
 
     const-string v20, "SPH-D710"
 
@@ -1678,10 +1658,10 @@
 
     move-result v20
 
-    if-eqz v20, :cond_46b
+    if-eqz v20, :cond_456
 
     .line 251
-    :cond_2df
+    :cond_2ca
     const-string v12, "com.android.calendar"
 
     .line 252
@@ -1730,7 +1710,7 @@
     .local v11, info_5:Landroid/content/pm/ApplicationInfo;
     const/16 v20, 0x0
 
-    :try_start_2f4
+    :try_start_2df
     move-object/from16 v0, v17
 
     move/from16 v1, v20
@@ -1782,24 +1762,24 @@
     move/from16 v2, v20
 
     invoke-virtual {v0, v1, v2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
-    :try_end_325
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2f4 .. :try_end_325} :catch_439
+    :try_end_310
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2df .. :try_end_310} :catch_424
 
     move-result-object v11
 
     .line 275
-    if-eqz v7, :cond_3f3
+    if-eqz v7, :cond_3de
 
-    if-eqz v8, :cond_3f3
+    if-eqz v8, :cond_3de
 
-    if-eqz v9, :cond_3f3
+    if-eqz v9, :cond_3de
 
-    if-eqz v10, :cond_3f3
+    if-eqz v10, :cond_3de
 
-    if-eqz v11, :cond_3f3
+    if-eqz v11, :cond_3de
 
     .line 277
-    :try_start_330
+    :try_start_31b
     const-string v20, "font_size"
 
     move-object/from16 v0, p0
@@ -1990,8 +1970,8 @@
     move-result-object v21
 
     invoke-static/range {v20 .. v21}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_3f3
-    .catch Ljava/lang/RuntimeException; {:try_start_330 .. :try_end_3f3} :catch_446
+    :try_end_3de
+    .catch Ljava/lang/RuntimeException; {:try_start_31b .. :try_end_3de} :catch_431
 
     .line 291
     .end local v7           #info_1:Landroid/content/pm/ApplicationInfo;
@@ -2005,13 +1985,13 @@
     .end local v15           #mPackageName_4:Ljava/lang/String;
     .end local v16           #mPackageName_5:Ljava/lang/String;
     .end local v17           #mPm:Landroid/content/pm/PackageManager;
-    :cond_3f3
-    :goto_3f3
+    :cond_3de
+    :goto_3de
     return-void
 
     .line 202
-    :cond_3f4
-    :try_start_3f4
+    :cond_3df
+    :try_start_3df
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/settings/DisplaySettings;->mNotificationPulse:Landroid/preference/CheckBoxPreference;
@@ -2034,11 +2014,11 @@
 
     move/from16 v1, v22
 
-    if-ne v0, v1, :cond_42e
+    if-ne v0, v1, :cond_419
 
     const/16 v20, 0x1
 
-    :goto_40e
+    :goto_3f9
     move-object/from16 v0, v21
 
     move/from16 v1, v20
@@ -2057,13 +2037,13 @@
     move-object/from16 v1, p0
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
-    :try_end_422
-    .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_3f4 .. :try_end_422} :catch_424
+    :try_end_40d
+    .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_3df .. :try_end_40d} :catch_40f
 
     goto/16 :goto_1ad
 
     .line 204
-    :catch_424
+    :catch_40f
     move-exception v19
 
     .line 205
@@ -2078,19 +2058,19 @@
 
     .line 202
     .end local v19           #snfe:Landroid/provider/Settings$SettingNotFoundException;
-    :cond_42e
+    :cond_419
     const/16 v20, 0x0
 
-    goto :goto_40e
+    goto :goto_3f9
 
     .line 213
-    :cond_431
+    :cond_41c
     const/16 v20, 0x0
 
     goto/16 :goto_1f6
 
     .line 221
-    :cond_435
+    :cond_420
     const/16 v20, 0x0
 
     goto/16 :goto_235
@@ -2107,7 +2087,7 @@
     .restart local v15       #mPackageName_4:Ljava/lang/String;
     .restart local v16       #mPackageName_5:Ljava/lang/String;
     .restart local v17       #mPm:Landroid/content/pm/PackageManager;
-    :catch_439
+    :catch_424
     move-exception v6
 
     .line 272
@@ -2122,11 +2102,11 @@
 
     invoke-static {v0, v1, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_3f3
+    goto :goto_3de
 
     .line 280
     .end local v6           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    :catch_446
+    :catch_431
     move-exception v6
 
     .line 281
@@ -2164,7 +2144,7 @@
 
     invoke-static {v0, v1, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_3f3
+    goto :goto_3de
 
     .line 288
     .end local v6           #e:Ljava/lang/RuntimeException;
@@ -2179,7 +2159,7 @@
     .end local v15           #mPackageName_4:Ljava/lang/String;
     .end local v16           #mPackageName_5:Ljava/lang/String;
     .end local v17           #mPm:Landroid/content/pm/PackageManager;
-    :cond_46b
+    :cond_456
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/DisplaySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v20
@@ -2190,9 +2170,7 @@
 
     move-object/from16 v21, v0
 
-    invoke-virtual/range {v20 .. v21}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
-
-    goto/16 :goto_3f3
+    goto/16 :goto_3de
 .end method
 
 .method public onPause()V

@@ -21,7 +21,7 @@
     .parameter
 
     .prologue
-    .line 191
+    .line 195
     iput-object p1, p0, Lcom/google/common/collect/f;->c:Lcom/google/common/collect/e;
 
     iput-object p2, p0, Lcom/google/common/collect/f;->b:Ljava/util/Iterator;
@@ -37,7 +37,7 @@
     .registers 2
 
     .prologue
-    .line 195
+    .line 200
     iget-object v0, p0, Lcom/google/common/collect/f;->b:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -51,7 +51,7 @@
     .registers 2
 
     .prologue
-    .line 198
+    .line 204
     iget-object v0, p0, Lcom/google/common/collect/f;->b:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -62,7 +62,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/f;->a:Ljava/util/Map$Entry;
 
-    .line 199
+    .line 205
     iget-object v0, p0, Lcom/google/common/collect/f;->a:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -76,7 +76,7 @@
     .registers 3
 
     .prologue
-    .line 202
+    .line 209
     iget-object v0, p0, Lcom/google/common/collect/f;->a:Ljava/util/Map$Entry;
 
     if-eqz v0, :cond_1b
@@ -84,21 +84,21 @@
     const/4 v0, 0x1
 
     :goto_5
-    invoke-static {v0}, Lcom/google/common/base/t;->b(Z)V
+    invoke-static {v0}, Lcom/google/common/base/ag;->b(Z)V
 
-    .line 203
+    .line 210
     iget-object v0, p0, Lcom/google/common/collect/f;->a:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 204
+    .line 211
     iget-object v1, p0, Lcom/google/common/collect/f;->b:Ljava/util/Iterator;
 
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
-    .line 205
+    .line 212
     iget-object v1, p0, Lcom/google/common/collect/f;->c:Lcom/google/common/collect/e;
 
     iget-object v1, v1, Lcom/google/common/collect/e;->a:Lcom/google/common/collect/AbstractBiMap;
@@ -106,10 +106,10 @@
     #calls: Lcom/google/common/collect/AbstractBiMap;->removeFromInverseMap(Ljava/lang/Object;)V
     invoke-static {v1, v0}, Lcom/google/common/collect/AbstractBiMap;->access$400(Lcom/google/common/collect/AbstractBiMap;Ljava/lang/Object;)V
 
-    .line 206
+    .line 213
     return-void
 
-    .line 202
+    .line 209
     :cond_1b
     const/4 v0, 0x0
 

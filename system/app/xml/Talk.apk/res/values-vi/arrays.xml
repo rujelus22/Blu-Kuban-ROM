@@ -29,6 +29,12 @@
         <item>Chỉ khi ở chế độ im lặng</item>
         <item>Chưa bao giờ</item>
     </string-array>
+    <string-array name="prefEntries_image_stabilization_values">
+        <item>tắt</item>
+        <item>thấp</item>
+        <item>trung bình</item>
+        <item>ảo</item>
+    </string-array>
     <string-array name="prefEntries_image_stabilization_entries">
         <item>Không</item>
         <item>Ổn định hình ảnh: Thấp</item>

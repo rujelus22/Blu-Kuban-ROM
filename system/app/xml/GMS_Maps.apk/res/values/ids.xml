@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item type="id" name="listOptionsHeader" />
+    <item type="id" name="filterButton1" />
+    <item type="id" name="filterButton2" />
+    <item type="id" name="filterButton3" />
+    <item type="id" name="filterButton4" />
+    <item type="id" name="optionsButton1" />
+    <item type="id" name="optionsButton2" />
+    <item type="id" name="optionsButton3" />
+    <item type="id" name="optionsButton4" />
     <item type="id" name="search_box">false</item>
+    <item type="id" name="ad_action_texts">false</item>
+    <item type="id" name="directionButton">false</item>
+    <item type="id" name="callButton">false</item>
+    <item type="id" name="dialog_scroll">false</item>
+    <item type="id" name="address_bar">false</item>
+    <item type="id" name="page_icon">false</item>
+    <item type="id" name="page_reload">false</item>
+    <item type="id" name="page_url">false</item>
+    <item type="id" name="open_browser">false</item>
+    <item type="id" name="page_load_progress">false</item>
+    <item type="id" name="webView">false</item>
+    <item type="id" name="text_divider">false</item>
+    <item type="id" name="banner_text">false</item>
+    <item type="id" name="ad_text1">false</item>
+    <item type="id" name="ad_text2">false</item>
     <item type="id" name="ad_banner">false</item>
     <item type="id" name="left_image">false</item>
     <item type="id" name="left_text">false</item>
     <item type="id" name="right_text">false</item>
-    <item type="id" name="listItemAd">false</item>
+    <item type="id" name="adMenu">false</item>
     <item type="id" name="title">false</item>
+    <item type="id" name="divider">false</item>
+    <item type="id" name="contents">false</item>
+    <item type="id" name="actionItem">false</item>
+    <item type="id" name="buttonIcon">false</item>
+    <item type="id" name="desc">false</item>
+    <item type="id" name="headerButtonPanel">false</item>
+    <item type="id" name="titleText">false</item>
+    <item type="id" name="listView">false</item>
     <item type="id" name="placeCreationLayout">false</item>
-    <item type="id" name="headerTitle">false</item>
     <item type="id" name="addPlaceLayout">false</item>
     <item type="id" name="placeNameTitle">false</item>
     <item type="id" name="placeNameEditField">false</item>
@@ -25,8 +56,12 @@
     <item type="id" name="addPlaceSearchResults">false</item>
     <item type="id" name="searchList">false</item>
     <item type="id" name="postButtonInstructions">false</item>
+    <item type="id" name="preIcsHeader">false</item>
+    <item type="id" name="headerTitle">false</item>
     <item type="id" name="androidVectorView">false</item>
     <item type="id" name="androidView">false</item>
+    <item type="id" name="area_selector_top_bar">false</item>
+    <item type="id" name="bottom_bar">false</item>
     <item type="id" name="noButtonPanel">false</item>
     <item type="id" name="button3">false</item>
     <item type="id" name="content">false</item>
@@ -42,6 +77,7 @@
     <item type="id" name="bubbleWithClickableIcons">false</item>
     <item type="id" name="left_image_divider">false</item>
     <item type="id" name="text_parent">false</item>
+    <item type="id" name="bubble_view_container">false</item>
     <item type="id" name="right_image_divider">false</item>
     <item type="id" name="right_image">false</item>
     <item type="id" name="bubbleContainer">false</item>
@@ -51,11 +87,21 @@
     <item type="id" name="footer_spacer">false</item>
     <item type="id" name="navigation_footer">false</item>
     <item type="id" name="header_container">false</item>
+    <item type="id" name="header_horizontal_container">false</item>
     <item type="id" name="transit_nav_top_bar_stub">false</item>
+    <item type="id" name="public_alerts_banner_stub">false</item>
     <item type="id" name="directions_map_banner_view_stub">false</item>
     <item type="id" name="ad_layer_banner_stub">false</item>
     <item type="id" name="promo_view_banner_stub">false</item>
     <item type="id" name="refinement_banner_stub">false</item>
+    <item type="id" name="promo_view_banner_v2_stub">false</item>
+    <item type="id" name="directions_elevation_banner_stub">false</item>
+    <item type="id" name="directions_elevation_banner">false</item>
+    <item type="id" name="measurement_banner_stub">false</item>
+    <item type="id" name="measurement_banner">false</item>
+    <item type="id" name="content_hint_popup_stub">false</item>
+    <item type="id" name="new_features_content_hint_stub">false</item>
+    <item type="id" name="btn_list_label">false</item>
     <item type="id" name="btn_list">false</item>
     <item type="id" name="btn_prev_down">false</item>
     <item type="id" name="btn_notification_settings">false</item>
@@ -82,16 +128,16 @@
     <item type="id" name="knownForTerms">false</item>
     <item type="id" name="view_on_map">false</item>
     <item type="id" name="more_info">false</item>
-    <item type="id" name="titleHeaderOld">false</item>
-    <item type="id" name="headerIcon">false</item>
     <item type="id" name="pagerFrame">false</item>
     <item type="id" name="boardPager">false</item>
+    <item type="id" name="boardPagerStrip">false</item>
     <item type="id" name="pagerTitleBarOverlay">false</item>
     <item type="id" name="pagerGoLeft">false</item>
     <item type="id" name="pagerGoRight">false</item>
     <item type="id" name="timeFrame">false</item>
-    <item type="id" name="listView">false</item>
     <item type="id" name="overlay">false</item>
+    <item type="id" name="titleHeaderOld">false</item>
+    <item type="id" name="headerIcon">false</item>
     <item type="id" name="leaderboardItemContainer">false</item>
     <item type="id" name="leaderboardItemBack">false</item>
     <item type="id" name="leaderboardItem">false</item>
@@ -106,7 +152,6 @@
     <item type="id" name="earnedPointBadge">false</item>
     <item type="id" name="flash">false</item>
     <item type="id" name="crown">false</item>
-    <item type="id" name="resultBaseRoot">false</item>
     <item type="id" name="panel">false</item>
     <item type="id" name="checkinPlace">false</item>
     <item type="id" name="earnedPointInfo">false</item>
@@ -118,7 +163,6 @@
     <item type="id" name="learnMore">false</item>
     <item type="id" name="stub_feature_opt_out">false</item>
     <item type="id" name="feature_opt_out_layout">false</item>
-    <item type="id" name="headerButtonPanel">false</item>
     <item type="id" name="headerButtonLayout">false</item>
     <item type="id" name="headerRefreshDivider">false</item>
     <item type="id" name="headerProgress">false</item>
@@ -136,13 +180,17 @@
     <item type="id" name="notificationsCheckbox">false</item>
     <item type="id" name="searchLayout">false</item>
     <item type="id" name="searchReverseGeocode">false</item>
+    <item type="id" name="checkbox">false</item>
+    <item type="id" name="secondLine">false</item>
+    <item type="id" name="firstLine">false</item>
     <item type="id" name="collapse_command">false</item>
     <item type="id" name="collapse_icon">false</item>
     <item type="id" name="collapse_summary">false</item>
     <item type="id" name="top">false</item>
     <item type="id" name="bodyText">false</item>
-    <item type="id" name="checkbox">false</item>
-    <item type="id" name="selector_arrow">false</item>
+    <item type="id" name="actionListItem">false</item>
+    <item type="id" name="action">false</item>
+    <item type="id" name="content_hint_popup">false</item>
     <item type="id" name="notificationCount">false</item>
     <item type="id" name="hintText">false</item>
     <item type="id" name="addressLabel">false</item>
@@ -172,21 +220,12 @@
     <item type="id" name="da_showMapButton">false</item>
     <item type="id" name="da_destination_activity_button_image">false</item>
     <item type="id" name="da_destination_activity_button_text">false</item>
-    <item type="id" name="buttons">false</item>
     <item type="id" name="viewPager">false</item>
     <item type="id" name="title_strip">false</item>
+    <item type="id" name="buttons">false</item>
     <item type="id" name="da_icon">false</item>
     <item type="id" name="da_primaryText">false</item>
     <item type="id" name="da_secondaryText">false</item>
-    <item type="id" name="da_details_list_header">false</item>
-    <item type="id" name="da_kmlDetails">false</item>
-    <item type="id" name="da_name">false</item>
-    <item type="id" name="da_rating">false</item>
-    <item type="id" name="da_address">false</item>
-    <item type="id" name="da_mapButton">false</item>
-    <item type="id" name="da_navigateButton">false</item>
-    <item type="id" name="da_callButton">false</item>
-    <item type="id" name="da_streetviewButton">false</item>
     <item type="id" name="da_turnIcon">false</item>
     <item type="id" name="da_fullTextLayout">false</item>
     <item type="id" name="da_fullText">false</item>
@@ -210,7 +249,6 @@
     <item type="id" name="da_menu_bottom_row">false</item>
     <item type="id" name="da_bubbleTitle">false</item>
     <item type="id" name="da_bubbleText">false</item>
-    <item type="id" name="titleText">false</item>
     <item type="id" name="dismiss">false</item>
     <item type="id" name="da_list">false</item>
     <item type="id" name="da_spacer">false</item>
@@ -225,7 +263,6 @@
     <item type="id" name="da_directionsListView">false</item>
     <item type="id" name="da_topOverlayText">false</item>
     <item type="id" name="da_nextStepView">false</item>
-    <item type="id" name="da_alertModeIndicator">false</item>
     <item type="id" name="da_destinationSideView">false</item>
     <item type="id" name="da_routeSummaryToast">false</item>
     <item type="id" name="da_statusBar">false</item>
@@ -244,7 +281,11 @@
     <item type="id" name="da_menu_show_list">false</item>
     <item type="id" name="da_menu_voice_toggle">false</item>
     <item type="id" name="da_menu_more">false</item>
+    <item type="id" name="da_menu_share_destination_separator">false</item>
+    <item type="id" name="da_menu_share_destination">false</item>
     <item type="id" name="da_menu_change_destination">false</item>
+    <item type="id" name="da_menu_report_a_problem_separator">false</item>
+    <item type="id" name="da_menu_report_a_problem">false</item>
     <item type="id" name="da_navigationRootView">false</item>
     <item type="id" name="da_mapFrame">false</item>
     <item type="id" name="da_text">false</item>
@@ -253,6 +294,7 @@
     <item type="id" name="da_direction">false</item>
     <item type="id" name="da_popup_selector">false</item>
     <item type="id" name="selector_frame">false</item>
+    <item type="id" name="selector_arrow">false</item>
     <item type="id" name="list">false</item>
     <item type="id" name="da_recording_levels">false</item>
     <item type="id" name="da_email_me_checkbox">false</item>
@@ -294,6 +336,7 @@
     <item type="id" name="da_destinationButtonPanel">false</item>
     <item type="id" name="da_rerouteToDestinationButton">false</item>
     <item type="id" name="da_destinationNotHereButton">false</item>
+    <item type="id" name="da_destinationInfoButton">false</item>
     <item type="id" name="da_exitButton">false</item>
     <item type="id" name="da_travelModeButton">false</item>
     <item type="id" name="da_travelModeDownArrow">false</item>
@@ -308,24 +351,25 @@
     <item type="id" name="primaryText">false</item>
     <item type="id" name="secondaryText">false</item>
     <item type="id" name="directionSummaryListItem">false</item>
-    <item type="id" name="directionsPanel">false</item>
+    <item type="id" name="directionsPanelTablet">false</item>
+    <item type="id" name="focusStealer">false</item>
     <item type="id" name="fromInputPanel">false</item>
     <item type="id" name="fromField">false</item>
     <item type="id" name="fromChooseButton">false</item>
     <item type="id" name="toInputPanel">false</item>
     <item type="id" name="getDirectionsButton">false</item>
     <item type="id" name="toChooseButton">false</item>
+    <item type="id" name="switchStartEnd">false</item>
+    <item type="id" name="optionsPanel">false</item>
+    <item type="id" name="cancel">false</item>
+    <item type="id" name="directionsPanel">false</item>
     <item type="id" name="drivingButton">false</item>
     <item type="id" name="transitButton">false</item>
     <item type="id" name="bikingButton">false</item>
     <item type="id" name="walkingButton">false</item>
+    <item type="id" name="getDirectionsButtonPanel">false</item>
     <item type="id" name="navigateButton">false</item>
     <item type="id" name="getDirectionsLabel">false</item>
-    <item type="id" name="directionsPanelTablet">false</item>
-    <item type="id" name="switchStartEnd">false</item>
-    <item type="id" name="optionsPanel">false</item>
-    <item type="id" name="cancel">false</item>
-    <item type="id" name="getDirectionsButtonPanel">false</item>
     <item type="id" name="directionsActionBarView">false</item>
     <item type="id" name="routeSummary">false</item>
     <item type="id" name="to">false</item>
@@ -333,7 +377,6 @@
     <item type="id" name="line2">false</item>
     <item type="id" name="trafficDot">false</item>
     <item type="id" name="directions_map_banner_view">false</item>
-    <item type="id" name="divider">false</item>
     <item type="id" name="label">false</item>
     <item type="id" name="transitTimeInfo">false</item>
     <item type="id" name="transitLine1">false</item>
@@ -349,8 +392,11 @@
     <item type="id" name="refreshButton">false</item>
     <item type="id" name="proceedButton">false</item>
     <item type="id" name="editText">false</item>
+    <item type="id" name="elevation_banner">false</item>
+    <item type="id" name="elevation_content">false</item>
+    <item type="id" name="elevation_chart">false</item>
+    <item type="id" name="elevation_series">false</item>
     <item type="id" name="emptyStars">false</item>
-    <item type="id" name="desc">false</item>
     <item type="id" name="snapToPlace">false</item>
     <item type="id" name="okButton">false</item>
     <item type="id" name="favicon">false</item>
@@ -382,6 +428,8 @@
     <item type="id" name="feature_switcher_icon">false</item>
     <item type="id" name="featureSwitcherDivider">false</item>
     <item type="id" name="subtitle">false</item>
+    <item type="id" name="camera_pick">false</item>
+    <item type="id" name="gallery_pick">false</item>
     <item type="id" name="filterOption1">false</item>
     <item type="id" name="filterOption2">false</item>
     <item type="id" name="filterOption3">false</item>
@@ -389,6 +437,22 @@
     <item type="id" name="filterOption5">false</item>
     <item type="id" name="floorpickerlayout">false</item>
     <item type="id" name="floorpicker">false</item>
+    <item type="id" name="placard">false</item>
+    <item type="id" name="avatar">false</item>
+    <item type="id" name="placardDetails">false</item>
+    <item type="id" name="email">false</item>
+    <item type="id" name="details">false</item>
+    <item type="id" name="lastUpdated">false</item>
+    <item type="id" name="distanceAndHeading">false</item>
+    <item type="id" name="mapButton">false</item>
+    <item type="id" name="directionsButton">false</item>
+    <item type="id" name="streetViewButton">false</item>
+    <item type="id" name="plusProfile">false</item>
+    <item type="id" name="checkinStatus">false</item>
+    <item type="id" name="pingForCheckin">false</item>
+    <item type="id" name="sharingOptions">false</item>
+    <item type="id" name="removeFriend">false</item>
+    <item type="id" name="listItemAction">false</item>
     <item type="id" name="widgetItem0">false</item>
     <item type="id" name="photo0">false</item>
     <item type="id" name="user0">false</item>
@@ -408,7 +472,6 @@
     <item type="id" name="checkin2">false</item>
     <item type="id" name="location2">false</item>
     <item type="id" name="accountName">false</item>
-    <item type="id" name="lastUpdated">false</item>
     <item type="id" name="left">false</item>
     <item type="id" name="reportingStatus">false</item>
     <item type="id" name="myLocation">false</item>
@@ -421,22 +484,33 @@
     <item type="id" name="signedOutLayout">false</item>
     <item type="id" name="friendsListHeader">false</item>
     <item type="id" name="locationPrivacyNotification">false</item>
+    <item type="id" name="sharingNotification">false</item>
     <item type="id" name="inviteNotification">false</item>
     <item type="id" name="wifiNotification">false</item>
     <item type="id" name="waiting">false</item>
     <item type="id" name="waitingText">false</item>
     <item type="id" name="waitingProgress">false</item>
+    <item type="id" name="hintTitle">false</item>
+    <item type="id" name="hintHeader">false</item>
+    <item type="id" name="hintTableRow1">false</item>
+    <item type="id" name="hintTableRow2">false</item>
+    <item type="id" name="hintTableRow3">false</item>
+    <item type="id" name="hintTableRow4">false</item>
+    <item type="id" name="hintTableRow5">false</item>
+    <item type="id" name="hintFooter">false</item>
+    <item type="id" name="hintOK">false</item>
     <item type="id" name="viewSwitcher">false</item>
     <item type="id" name="progressContainer">false</item>
     <item type="id" name="progressBar">false</item>
     <item type="id" name="loadingText">false</item>
-    <item type="id" name="webView">false</item>
-    <item type="id" name="rate_bar">false</item>
-    <item type="id" name="gridItem">false</item>
-    <item type="id" name="frame">false</item>
-    <item type="id" name="caption">false</item>
+    <item type="id" name="header">false</item>
+    <item type="id" name="headerText">false</item>
+    <item type="id" name="installButton">false</item>
     <item type="id" name="header_bar">false</item>
+    <item type="id" name="header_bar_with_feature_switcher">false</item>
+    <item type="id" name="header_bar_extra_items">false</item>
     <item type="id" name="search_bar">false</item>
+    <item type="id" name="vehicle_type_spinner">false</item>
     <item type="id" name="btn_header_places">false</item>
     <item type="id" name="btn_header_places_divider">false</item>
     <item type="id" name="btn_header_layer">false</item>
@@ -473,18 +547,17 @@
     <item type="id" name="info_text">false</item>
     <item type="id" name="hotpot_photo_upload_post">false</item>
     <item type="id" name="divider_line">false</item>
-    <item type="id" name="email">false</item>
+    <item type="id" name="nearbyStationPage">false</item>
+    <item type="id" name="handle">false</item>
+    <item type="id" name="nearbyStationListView">false</item>
+    <item type="id" name="waitingTitle">false</item>
     <item type="id" name="groups">false</item>
     <item type="id" name="list_parent">false</item>
     <item type="id" name="add_friends_field">false</item>
     <item type="id" name="add_friends">false</item>
-    <item type="id" name="placard">false</item>
-    <item type="id" name="avatar">false</item>
     <item type="id" name="explanation">false</item>
-    <item type="id" name="justifications_list">false</item>
     <item type="id" name="labActionListItem">false</item>
     <item type="id" name="author">false</item>
-    <item type="id" name="header">false</item>
     <item type="id" name="signout">false</item>
     <item type="id" name="locationReportingHeader">false</item>
     <item type="id" name="pauseReportingCheckBox">false</item>
@@ -502,10 +575,16 @@
     <item type="id" name="ratingRemindersCheckBox">false</item>
     <item type="id" name="ratingRemindersDivider">false</item>
     <item type="id" name="managePlaces">false</item>
+    <item type="id" name="button">false</item>
+    <item type="id" name="summary">false</item>
     <item type="id" name="loadingMoreResult">false</item>
     <item type="id" name="listHeader">false</item>
     <item type="id" name="header1">false</item>
     <item type="id" name="header2">false</item>
+    <item type="id" name="header_line_top">false</item>
+    <item type="id" name="divider1">false</item>
+    <item type="id" name="divider2">false</item>
+    <item type="id" name="divider3">false</item>
     <item type="id" name="headerButton4">false</item>
     <item type="id" name="header_line">false</item>
     <item type="id" name="directionsTopBar">false</item>
@@ -524,106 +603,146 @@
     <item type="id" name="duration">false</item>
     <item type="id" name="inTraffic">false</item>
     <item type="id" name="travelAdvisories">false</item>
+    <item type="id" name="travelAdvisoriesView">false</item>
     <item type="id" name="headerDividerBottom">false</item>
     <item type="id" name="headerButton1Divider">false</item>
     <item type="id" name="headerButton2Divider">false</item>
     <item type="id" name="headerButton3Divider">false</item>
     <item type="id" name="headerButton4Divider">false</item>
     <item type="id" name="subTitles">false</item>
-    <item type="id" name="vehicleTypePanel">false</item>
-    <item type="id" name="subwayButton">false</item>
-    <item type="id" name="busButton">false</item>
-    <item type="id" name="trainButton">false</item>
-    <item type="id" name="tramButton">false</item>
+    <item type="id" name="offerSettingsBar">false</item>
     <item type="id" name="listHeaderOfferSetting">false</item>
     <item type="id" name="directionSpinner">false</item>
-    <item type="id" name="headsignSpinner">false</item>
-    <item type="id" name="listItemAction">false</item>
-    <item type="id" name="structured_text_parent">false</item>
-    <item type="id" name="hours_parent">false</item>
-    <item type="id" name="floorpickerfloor">false</item>
-    <item type="id" name="floorlabel">false</item>
-    <item type="id" name="searchresults">false</item>
-    <item type="id" name="mylocation">false</item>
+    <item type="id" name="listItemAd">false</item>
+    <item type="id" name="textView">false</item>
+    <item type="id" name="confirmPlaceIcon">false</item>
+    <item type="id" name="confirmPlaceText">false</item>
+    <item type="id" name="confirmPlaceButton">false</item>
     <item type="id" name="personalAvatar">false</item>
     <item type="id" name="networkInitiatedRefreshing">false</item>
     <item type="id" name="time">false</item>
     <item type="id" name="google_reviews_block">false</item>
     <item type="id" name="header_text">false</item>
-    <item type="id" name="divider1">false</item>
     <item type="id" name="google_reviews_group">false</item>
-    <item type="id" name="footer_text">false</item>
     <item type="id" name="third_party_reviews_title">false</item>
-    <item type="id" name="divider2">false</item>
     <item type="id" name="third_party_reviews_group">false</item>
-    <item type="id" name="loadingContainer">false</item>
-    <item type="id" name="loadingMessage">false</item>
-    <item type="id" name="linearLayout">false</item>
-    <item type="id" name="errorMessage">false</item>
-    <item type="id" name="rating_bar">false</item>
-    <item type="id" name="text_title">false</item>
-    <item type="id" name="triplet_buttons">false</item>
-    <item type="id" name="triplet_action_buttons">false</item>
-    <item type="id" name="check_in_button">false</item>
-    <item type="id" name="check_in_icon">false</item>
-    <item type="id" name="check_in_text">false</item>
-    <item type="id" name="headerDividerVertical">false</item>
-    <item type="id" name="add_photo_button">false</item>
-    <item type="id" name="add_photo_icon">false</item>
-    <item type="id" name="add_photo_text">false</item>
-    <item type="id" name="triplet_rating_bar">false</item>
     <item type="id" name="placemarkNote">false</item>
     <item type="id" name="live_events_section">false</item>
     <item type="id" name="events_group">false</item>
     <item type="id" name="more_events_container">false</item>
     <item type="id" name="providers_links">false</item>
+    <item type="id" name="noDataText">false</item>
     <item type="id" name="viewOfflineMap">false</item>
     <item type="id" name="offlineMapDescription">false</item>
     <item type="id" name="editOfflineMap">false</item>
     <item type="id" name="deleteOfflineMap">false</item>
+    <item type="id" name="placeIcon">false</item>
+    <item type="id" name="placeDuration">false</item>
+    <item type="id" name="placeStats">false</item>
+    <item type="id" name="verticalDivider">false</item>
+    <item type="id" name="businessName">false</item>
+    <item type="id" name="businessAddress">false</item>
     <item type="id" name="map_marker_wrapper">false</item>
     <item type="id" name="suggestField">false</item>
     <item type="id" name="suggestedCategory">false</item>
-    <item type="id" name="related_places_parent">false</item>
+    <item type="id" name="frame">false</item>
     <item type="id" name="listItemSeparator">false</item>
-    <item type="id" name="separatorText">false</item>
-    <item type="id" name="acceptSuggestion">false</item>
-    <item type="id" name="dismissSuggestion">false</item>
+    <item type="id" name="viewSavedMap">false</item>
+    <item type="id" name="thumbnail">false</item>
+    <item type="id" name="progressDetail">false</item>
+    <item type="id" name="progressNumber">false</item>
+    <item type="id" name="controllButton">false</item>
+    <item type="id" name="controllButtonImage">false</item>
+    <item type="id" name="controllButtonLabel">false</item>
+    <item type="id" name="extraInfo">false</item>
+    <item type="id" name="dropdownButton">false</item>
+    <item type="id" name="deleteButton">false</item>
+    <item type="id" name="staticMapListItem">false</item>
+    <item type="id" name="static_map">false</item>
+    <item type="id" name="map_caption">false</item>
+    <item type="id" name="left_caption">false</item>
+    <item type="id" name="right_caption">false</item>
+    <item type="id" name="travelDescription">false</item>
+    <item type="id" name="travelDistance">false</item>
     <item type="id" name="google_userfeedback_block">false</item>
+    <item type="id" name="userfeedback_background_block">false</item>
+    <item type="id" name="userfeedback_selectable_block">false</item>
     <item type="id" name="question_container">false</item>
     <item type="id" name="expander_icon">false</item>
     <item type="id" name="question_answer_container">false</item>
     <item type="id" name="question_text">false</item>
+    <item type="id" name="footer_text">false</item>
     <item type="id" name="user_answers_group">false</item>
     <item type="id" name="row_answers_divider_line">false</item>
     <item type="id" name="user_answers_row_group">false</item>
     <item type="id" name="separator">false</item>
     <item type="id" name="column_answers_divider_line">false</item>
-    <item type="id" name="review_block_parent">false</item>
-    <item type="id" name="more_link">false</item>
-    <item type="id" name="listItemWhatsNew">false</item>
+    <item type="id" name="placeTimestamp">false</item>
     <item type="id" name="main_progress">false</item>
-    <item type="id" name="listOptionsHeader">false</item>
     <item type="id" name="refinementButtons">false</item>
-    <item type="id" name="filterButton1">false</item>
-    <item type="id" name="filterButton2">false</item>
-    <item type="id" name="filterButton3">false</item>
-    <item type="id" name="filterButton4">false</item>
-    <item type="id" name="optionsButton1">false</item>
-    <item type="id" name="optionsButton2">false</item>
-    <item type="id" name="optionsButton3">false</item>
-    <item type="id" name="optionsButton4">false</item>
     <item type="id" name="refinementButtonsSpicybowl">false</item>
+    <item type="id" name="blue_divider">false</item>
+    <item type="id" name="linkDivider">false</item>
+    <item type="id" name="website">false</item>
+    <item type="id" name="reservations">false</item>
+    <item type="id" name="titleBar">false</item>
+    <item type="id" name="starButton">false</item>
+    <item type="id" name="photoButton">false</item>
+    <item type="id" name="pager">false</item>
+    <item type="id" name="photosTitle">false</item>
+    <item type="id" name="photosContainer">false</item>
+    <item type="id" name="addPhotoImage">false</item>
+    <item type="id" name="addPhotoTitle">false</item>
+    <item type="id" name="view_on_googleplus">false</item>
+    <item type="id" name="gplus_image">false</item>
+    <item type="id" name="on_google_desciption">false</item>
+    <item type="id" name="on_google_plus_header">false</item>
+    <item type="id" name="on_google_plus_text">false</item>
+    <item type="id" name="on_google_plus_button">false</item>
+    <item type="id" name="addPhoto">false</item>
+    <item type="id" name="photo">false</item>
+    <item type="id" name="permanentlyClosed">false</item>
+    <item type="id" name="locationAndDetails">false</item>
+    <item type="id" name="knownForTermsTitle">false</item>
+    <item type="id" name="phoneTitle">false</item>
+    <item type="id" name="phone">false</item>
+    <item type="id" name="openHoursTitle">false</item>
+    <item type="id" name="openHours">false</item>
+    <item type="id" name="unverifiedTitle">false</item>
+    <item type="id" name="unverified">false</item>
+    <item type="id" name="hierarchiesHeadlineTitle">false</item>
+    <item type="id" name="hierarchiesHeadline">false</item>
+    <item type="id" name="expandyText">false</item>
+    <item type="id" name="expandyIcon">false</item>
+    <item type="id" name="historyPager">false</item>
+    <item type="id" name="failedLoad">false</item>
+    <item type="id" name="failedLoadText">false</item>
+    <item type="id" name="failedLoadButton">false</item>
+    <item type="id" name="noHistory">false</item>
+    <item type="id" name="noHistoryText">false</item>
     <item type="id" name="descriptiveText">false</item>
     <item type="id" name="confirm">false</item>
     <item type="id" name="personDescription">false</item>
-    <item type="id" name="summary">false</item>
     <item type="id" name="checkoutButton">false</item>
+    <item type="id" name="locationSettingsSelector">false</item>
+    <item type="id" name="locationSettings">false</item>
+    <item type="id" name="locationSettingsSubtitle">false</item>
+    <item type="id" name="viewAndManageCirclesSelector">false</item>
+    <item type="id" name="viewAndManageCircles">false</item>
+    <item type="id" name="viewAndManageCirclesSubtitle">false</item>
+    <item type="id" name="cityLevelSharingTitle">false</item>
+    <item type="id" name="cityLevelSharingSubtitle">false</item>
+    <item type="id" name="cityLevelSharingAudience">false</item>
+    <item type="id" name="fineGrainSharingTitle">false</item>
+    <item type="id" name="fineGrainSharingSubtitle">false</item>
+    <item type="id" name="fineGrainSharingAudience">false</item>
     <item type="id" name="headerBar_stub">false</item>
     <item type="id" name="androidView_stub">false</item>
     <item type="id" name="androidVectorView_stub">false</item>
     <item type="id" name="empty_background">false</item>
     <item type="id" name="bubbleContainer_stub">false</item>
+    <item type="id" name="hybridStationPage_stub">false</item>
+    <item type="id" name="bottomBar_stub">false</item>
     <item type="id" name="tablet_list_icon_wrapper">false</item>
     <item type="id" name="btn_list_xlarge">false</item>
     <item type="id" name="text_list_xlarge">false</item>
@@ -631,10 +750,22 @@
     <item type="id" name="dialog_panel">false</item>
     <item type="id" name="overlayText">false</item>
     <item type="id" name="overlayProgress">false</item>
+    <item type="id" name="myLocationCorrection">false</item>
     <item type="id" name="instructions">false</item>
+    <item type="id" name="tabhost">false</item>
+    <item type="id" name="header_bar_with_extra_items">false</item>
+    <item type="id" name="header_bar_first_row">false</item>
+    <item type="id" name="lineNames">false</item>
+    <item type="id" name="oneIcon">false</item>
+    <item type="id" name="icon1">false</item>
+    <item type="id" name="icon2">false</item>
+    <item type="id" name="icon3">false</item>
+    <item type="id" name="icon4">false</item>
     <item type="id" name="longNameLines">false</item>
     <item type="id" name="shortNameLines">false</item>
     <item type="id" name="duplicatedLineText">false</item>
+    <item type="id" name="new_features_content_hint">false</item>
+    <item type="id" name="leftImage">false</item>
     <item type="id" name="titleDivider">false</item>
     <item type="id" name="accept_and_share">false</item>
     <item type="id" name="sharing_mode">false</item>
@@ -642,24 +773,27 @@
     <item type="id" name="no_thanks">false</item>
     <item type="id" name="block">false</item>
     <item type="id" name="next">false</item>
+    <item type="id" name="suggestView">false</item>
+    <item type="id" name="selectOnMap">false</item>
     <item type="id" name="offer_view_switcher">false</item>
     <item type="id" name="progressbar_loading_offer">false</item>
     <item type="id" name="offer_details">false</item>
+    <item type="id" name="offer_fragment_container">false</item>
+    <item type="id" name="feature_switcher_anchor">false</item>
+    <item type="id" name="offer_fragment">false</item>
     <item type="id" name="enable_content_hints">false</item>
     <item type="id" name="disabled">false</item>
+    <item type="id" name="offline_layer_top_bar">false</item>
     <item type="id" name="optIn">false</item>
     <item type="id" name="people_audience_view_chip_container">false</item>
     <item type="id" name="people_audience_view_button">false</item>
     <item type="id" name="pieline">false</item>
-    <item type="id" name="moreActions">false</item>
-    <item type="id" name="place_page_action_bar">false</item>
-    <item type="id" name="user_photo">false</item>
-    <item type="id" name="review_button">false</item>
-    <item type="id" name="review_icon">false</item>
-    <item type="id" name="share_button">false</item>
-    <item type="id" name="share_icon">false</item>
+    <item type="id" name="horizontalRule">false</item>
     <item type="id" name="place_page_simple_list_item">false</item>
     <item type="id" name="place_page_streetview">false</item>
+    <item type="id" name="interiorImage">false</item>
+    <item type="id" name="interior_title">false</item>
+    <item type="id" name="streetview_title">false</item>
     <item type="id" name="adHeader">false</item>
     <item type="id" name="star">false</item>
     <item type="id" name="eventLine1">false</item>
@@ -679,36 +813,35 @@
     <item type="id" name="more_offers_text">false</item>
     <item type="id" name="justificationPhoto">false</item>
     <item type="id" name="justificationOrAwards">false</item>
-    <item type="id" name="right_image_border">false</item>
-    <item type="id" name="offers_details_text">false</item>
-    <item type="id" name="placemark_icon">false</item>
-    <item type="id" name="ratingsBlock">false</item>
-    <item type="id" name="ratingImage">false</item>
-    <item type="id" name="ratingContainer">false</item>
-    <item type="id" name="reviewCount">false</item>
-    <item type="id" name="place_and_rating">false</item>
-    <item type="id" name="ratingLabel">false</item>
+    <item type="id" name="main_fields">false</item>
     <item type="id" name="locationBar">false</item>
     <item type="id" name="locationIndicator">false</item>
     <item type="id" name="locationLabel">false</item>
     <item type="id" name="expanderTriangle">false</item>
     <item type="id" name="placesHeader">false</item>
     <item type="id" name="searchView">false</item>
+    <item type="id" name="caption">false</item>
     <item type="id" name="categoryList">false</item>
+    <item type="id" name="plattersPromo">false</item>
     <item type="id" name="plattersHeader">false</item>
     <item type="id" name="plattersDivider">false</item>
     <item type="id" name="platters">false</item>
+    <item type="id" name="reviewPrompt">false</item>
     <item type="id" name="refinementsHeader">false</item>
     <item type="id" name="refinementsDivider">false</item>
     <item type="id" name="refinements">false</item>
-    <item type="id" name="second_line">false</item>
     <item type="id" name="first_line">false</item>
+    <item type="id" name="second_line">false</item>
     <item type="id" name="profile">false</item>
     <item type="id" name="profileHeader">false</item>
     <item type="id" name="profile_content">false</item>
+    <item type="id" name="promo_container">false</item>
     <item type="id" name="leftChip">false</item>
     <item type="id" name="refinement">false</item>
     <item type="id" name="rightChip">false</item>
+    <item type="id" name="toReviewHeader">false</item>
+    <item type="id" name="recentPlacesContainer">false</item>
+    <item type="id" name="overallScore">false</item>
     <item type="id" name="snapToPlaceContainer">false</item>
     <item type="id" name="snapToPlaceText">false</item>
     <item type="id" name="snapToPlaceNote">false</item>
@@ -716,6 +849,7 @@
     <item type="id" name="defaultCategories">false</item>
     <item type="id" name="progressView">false</item>
     <item type="id" name="informationPanel">false</item>
+    <item type="id" name="searchBox">false</item>
     <item type="id" name="circleList">false</item>
     <item type="id" name="ok">false</item>
     <item type="id" name="dialogTitle">false</item>
@@ -736,9 +870,12 @@
     <item type="id" name="photo_group">false</item>
     <item type="id" name="photo_container">false</item>
     <item type="id" name="photo_innerframe">false</item>
-    <item type="id" name="photo">false</item>
+    <item type="id" name="pp_hierarchies_children">false</item>
     <item type="id" name="kmlDetails">false</item>
-    <item type="id" name="textView">false</item>
+    <item type="id" name="loadingContainer">false</item>
+    <item type="id" name="loadingMessage">false</item>
+    <item type="id" name="linearLayout">false</item>
+    <item type="id" name="errorMessage">false</item>
     <item type="id" name="event_view_container">false</item>
     <item type="id" name="event_separator">false</item>
     <item type="id" name="event_click_target">false</item>
@@ -752,64 +889,82 @@
     <item type="id" name="see_offers_more">false</item>
     <item type="id" name="see_offers_fewer">false</item>
     <item type="id" name="text_views">false</item>
-    <item type="id" name="photo_frame">false</item>
-    <item type="id" name="attribution">false</item>
     <item type="id" name="gallery">false</item>
     <item type="id" name="pagecount">false</item>
-    <item type="id" name="photosFrame">false</item>
-    <item type="id" name="storyLoading">false</item>
-    <item type="id" name="photoGroup">false</item>
+    <item type="id" name="attribution">false</item>
     <item type="id" name="story">false</item>
-    <item type="id" name="contents">false</item>
     <item type="id" name="third_party_review_link_container">false</item>
     <item type="id" name="third_party_review_link">false</item>
     <item type="id" name="third_party_review_separator">false</item>
     <item type="id" name="header3">false</item>
     <item type="id" name="user_feedback_container">false</item>
     <item type="id" name="answer_text">false</item>
+    <item type="id" name="ratingTable">false</item>
+    <item type="id" name="marginLeft">false</item>
+    <item type="id" name="ratingImagePlacePage">false</item>
+    <item type="id" name="ratingItem1">false</item>
+    <item type="id" name="ratingLabel">false</item>
+    <item type="id" name="ratingItem2">false</item>
+    <item type="id" name="ratingItem3">false</item>
+    <item type="id" name="ratingItem4">false</item>
+    <item type="id" name="reviewCountAndPricePlacePage">false</item>
+    <item type="id" name="zagatExplanationPlacePage">false</item>
+    <item type="id" name="marginRight">false</item>
+    <item type="id" name="zagatEditorial">false</item>
+    <item type="id" name="top_border">false</item>
+    <item type="id" name="placemark_details">false</item>
+    <item type="id" name="placemark_photo">false</item>
+    <item type="id" name="placemark_title">false</item>
+    <item type="id" name="placemark_address">false</item>
+    <item type="id" name="zagat_aspects">false</item>
     <item type="id" name="radio">false</item>
     <item type="id" name="ad_promo">false</item>
-    <item type="id" name="rating_reminders_opt_out_container">false</item>
-    <item type="id" name="rating_reminders_opt_out_title">false</item>
-    <item type="id" name="rating_reminders_opt_out_description">false</item>
-    <item type="id" name="rating_reminders_yes">false</item>
-    <item type="id" name="rating_reminders_no">false</item>
-    <item type="id" name="ratings_add_aspect">false</item>
-    <item type="id" name="autocomplete_aspect">false</item>
-    <item type="id" name="sentiment_group">false</item>
-    <item type="id" name="rating_add_aspect_button_negative">false</item>
-    <item type="id" name="rating_add_aspect_button_positive">false</item>
-    <item type="id" name="customAspect_examples">false</item>
+    <item type="id" name="ad_promo_v2">false</item>
+    <item type="id" name="ad_banner_map">false</item>
+    <item type="id" name="ad_banner_map_icon">false</item>
+    <item type="id" name="ad_banner_scroll">false</item>
+    <item type="id" name="ad_banner_text">false</item>
+    <item type="id" name="ad_banner_title">false</item>
+    <item type="id" name="ad_banner_visurl">false</item>
+    <item type="id" name="ad_banner_creative1">false</item>
+    <item type="id" name="ad_banner_creative2">false</item>
+    <item type="id" name="ad_banner_extension">false</item>
+    <item type="id" name="right_divider">false</item>
+    <item type="id" name="ad_banner_extension_icon">false</item>
+    <item type="id" name="public_alerts_banner">false</item>
+    <item type="id" name="banner_text_container">false</item>
+    <item type="id" name="headline_text">false</item>
+    <item type="id" name="description_text">false</item>
+    <item type="id" name="aspect_label_container">false</item>
     <item type="id" name="aspect_label">false</item>
+    <item type="id" name="wrong_labels">false</item>
+    <item type="id" name="rating_tip">false</item>
     <item type="id" name="aspect_rating_group">false</item>
     <item type="id" name="aspect_rating_0">false</item>
     <item type="id" name="aspect_rating_1">false</item>
     <item type="id" name="aspect_rating_2">false</item>
     <item type="id" name="aspect_rating_3">false</item>
-    <item type="id" name="aspect_delete">false</item>
-    <item type="id" name="negative_sentiment">false</item>
-    <item type="id" name="positive_sentiment">false</item>
+    <item type="id" name="ratings_cost_layout">false</item>
     <item type="id" name="cost_label">false</item>
-    <item type="id" name="cost_secondary_label">false</item>
+    <item type="id" name="continuous_cost_container">false</item>
     <item type="id" name="cost_currency_symbol">false</item>
     <item type="id" name="aspect_cost">false</item>
+    <item type="id" name="bucketed_price_container">false</item>
+    <item type="id" name="bucketed_price_tip">false</item>
+    <item type="id" name="bucketed_price_group">false</item>
+    <item type="id" name="bucketed_price_1">false</item>
+    <item type="id" name="bucketed_price_2">false</item>
+    <item type="id" name="bucketed_price_3">false</item>
+    <item type="id" name="bucketed_price_4">false</item>
+    <item type="id" name="xlargeDialogTitle">false</item>
+    <item type="id" name="ratings_scroll_view">false</item>
     <item type="id" name="ratings_top_bar">false</item>
-    <item type="id" name="ratings_title">false</item>
-    <item type="id" name="ratings_address">false</item>
     <item type="id" name="aspect_ratings">false</item>
     <item type="id" name="post_bar">false</item>
     <item type="id" name="user_identity">false</item>
+    <item type="id" name="add_photo">false</item>
     <item type="id" name="post">false</item>
-    <item type="id" name="business_name_container">false</item>
-    <item type="id" name="optional_separator">false</item>
-    <item type="id" name="binary_ratings">false</item>
-    <item type="id" name="additional_ratings_control">false</item>
-    <item type="id" name="additional_ratings_divider">false</item>
-    <item type="id" name="additional_binary_ratings">false</item>
-    <item type="id" name="tell_us_more">false</item>
-    <item type="id" name="text_review">false</item>
-    <item type="id" name="hotpot_icon">false</item>
-    <item type="id" name="rate_more">false</item>
+    <item type="id" name="delete_review">false</item>
     <item type="id" name="ratings_setappearance">false</item>
     <item type="id" name="ratings_heading">false</item>
     <item type="id" name="ratings_subheading">false</item>
@@ -824,35 +979,16 @@
     <item type="id" name="ratings_photo_view">false</item>
     <item type="id" name="ratings_photo_delete_icon">false</item>
     <item type="id" name="photo_upload_container">false</item>
+    <item type="id" name="photo_upload_divider">false</item>
     <item type="id" name="ratings_photo_progress">false</item>
     <item type="id" name="photo_scrollview">false</item>
-    <item type="id" name="photo_parent_layout">false</item>
     <item type="id" name="photo_layout">false</item>
-    <item type="id" name="attach_photo">false</item>
-    <item type="id" name="attach_photo_large">false</item>
-    <item type="id" name="upload_hint">false</item>
-    <item type="id" name="photo_upload_divider">false</item>
-    <item type="id" name="profile_pic">false</item>
-    <item type="id" name="nickname">false</item>
-    <item type="id" name="reviews_label">false</item>
-    <item type="id" name="reviews_counter">false</item>
-    <item type="id" name="ratings_label">false</item>
-    <item type="id" name="ratings_counter">false</item>
-    <item type="id" name="rating_heading_container">false</item>
-    <item type="id" name="overall_rating">false</item>
-    <item type="id" name="star_1">false</item>
-    <item type="id" name="star_2">false</item>
-    <item type="id" name="star_3">false</item>
-    <item type="id" name="star_4">false</item>
-    <item type="id" name="star_5">false</item>
-    <item type="id" name="done_bar">false</item>
-    <item type="id" name="back_to_place">false</item>
-    <item type="id" name="rating_summary">false</item>
-    <item type="id" name="recommendations_explanation">false</item>
-    <item type="id" name="need_more_ratings">false</item>
     <item type="id" name="write_review_label">false</item>
     <item type="id" name="write_review">false</item>
-    <item type="id" name="recent_friend_checkins_list">false</item>
+    <item type="id" name="legend_line">false</item>
+    <item type="id" name="realtime_icon">false</item>
+    <item type="id" name="legend_text">false</item>
+    <item type="id" name="schedule_text">false</item>
     <item type="id" name="refinement_banner">false</item>
     <item type="id" name="refinement_content">false</item>
     <item type="id" name="rideabout_separator">false</item>
@@ -861,12 +997,16 @@
     <item type="id" name="stationary_layout">false</item>
     <item type="id" name="check_box">false</item>
     <item type="id" name="i_was_stationary">false</item>
-    <item type="id" name="divider3">false</item>
     <item type="id" name="privacy_note">false</item>
     <item type="id" name="divider4">false</item>
-    <item type="id" name="problem_type">false</item>
     <item type="id" name="email_me_layout">false</item>
+    <item type="id" name="email_me_check_box">false</item>
     <item type="id" name="email_me">false</item>
+    <item type="id" name="email_me_divider1">false</item>
+    <item type="id" name="email_me_privacy_note">false</item>
+    <item type="id" name="problem_type">false</item>
+    <item type="id" name="problem_subtype">false</item>
+    <item type="id" name="spaceInfo">false</item>
     <item type="id" name="search_plate">false</item>
     <item type="id" name="search_edit_frame">false</item>
     <item type="id" name="search_src_text">false</item>
@@ -878,9 +1018,9 @@
     <item type="id" name="homeAddress">false</item>
     <item type="id" name="speedbump">false</item>
     <item type="id" name="sponsoredLink">false</item>
+    <item type="id" name="linkText">false</item>
     <item type="id" name="creativeLine1">false</item>
     <item type="id" name="creativeLine2">false</item>
-    <item type="id" name="linkText">false</item>
     <item type="id" name="placePageAd">false</item>
     <item type="id" name="ad_header">false</item>
     <item type="id" name="ad_creative1">false</item>
@@ -893,49 +1033,46 @@
     <item type="id" name="reviewContentSummary">false</item>
     <item type="id" name="photoContentSummary">false</item>
     <item type="id" name="subtitleText">false</item>
-    <item type="id" name="migrateAllInfo">false</item>
-    <item type="id" name="migrateSomeInfo">false</item>
-    <item type="id" name="examplesPanel">false</item>
-    <item type="id" name="exampleHelperText">false</item>
-    <item type="id" name="exampleBeforeText">false</item>
-    <item type="id" name="exampleBeforeExtra">false</item>
-    <item type="id" name="exampleAfterText">false</item>
-    <item type="id" name="exampleAfterExtra">false</item>
-    <item type="id" name="circlesInfo">false</item>
-    <item type="id" name="changeYourMindInfo">false</item>
-    <item type="id" name="migrateAll">false</item>
+    <item type="id" name="yourNameWillBeVisible">false</item>
+    <item type="id" name="bullet1">false</item>
+    <item type="id" name="bullet2">false</item>
+    <item type="id" name="bullet3">false</item>
+    <item type="id" name="showExample">false</item>
+    <item type="id" name="exampleLayout">false</item>
+    <item type="id" name="exampleTitle">false</item>
+    <item type="id" name="exampleFrame">false</item>
+    <item type="id" name="exampleReviewPlaceHolder">false</item>
     <item type="id" name="migrateSome">false</item>
-    <item type="id" name="dummyText">false</item>
     <item type="id" name="paragraph">false</item>
     <item type="id" name="select_all_header">false</item>
-    <item type="id" name="businessName">false</item>
     <item type="id" name="photos">false</item>
     <item type="id" name="review">false</item>
     <item type="id" name="cancelInfo">false</item>
     <item type="id" name="publicContentTitle">false</item>
     <item type="id" name="publicContentSummary">false</item>
+    <item type="id" name="publicIdentity">false</item>
     <item type="id" name="privateContentTitle">false</item>
     <item type="id" name="privateContentSummary">false</item>
     <item type="id" name="futureContent">false</item>
-    <item type="id" name="thankYou">false</item>
     <item type="id" name="accept">false</item>
-    <item type="id" name="bullet1">false</item>
-    <item type="id" name="bullet2">false</item>
-    <item type="id" name="bullet3">false</item>
+    <item type="id" name="body">false</item>
     <item type="id" name="migrationList">false</item>
+    <item type="id" name="contentSummaryHelpText">false</item>
     <item type="id" name="done">false</item>
-    <item type="id" name="listItemSpinner">false</item>
     <item type="id" name="acceptButton">false</item>
     <item type="id" name="station_title">false</item>
-    <item type="id" name="tabhost">false</item>
+    <item type="id" name="tabsLayout">false</item>
     <item type="id" name="workspace">false</item>
     <item type="id" name="distanceAndHeadingParent">false</item>
-    <item type="id" name="buttonIcon">false</item>
     <item type="id" name="buttonText">false</item>
     <item type="id" name="buttonSuperscriptIcon">false</item>
     <item type="id" name="left_tier">false</item>
-    <item type="id" name="justificationSnippet">false</item>
-    <item type="id" name="rate_this_place">false</item>
+    <item type="id" name="rating_bar">false</item>
+    <item type="id" name="review_icon">false</item>
+    <item type="id" name="review_text">false</item>
+    <item type="id" name="items">false</item>
+    <item type="id" name="item_text">false</item>
+    <item type="id" name="item_divider">false</item>
     <item type="id" name="bodyParent_stub">false</item>
     <item type="id" name="themedWebViewContainer_stub">false</item>
     <item type="id" name="bodyParent">false</item>
@@ -955,7 +1092,14 @@
     <item type="id" name="speed">false</item>
     <item type="id" name="confirmButton">false</item>
     <item type="id" name="nearbyPanel">false</item>
+    <item type="id" name="schematic">false</item>
+    <item type="id" name="time_table_scroll">false</item>
+    <item type="id" name="time_table">false</item>
+    <item type="id" name="horizontal_scroll">false</item>
+    <item type="id" name="whole_view">false</item>
+    <item type="id" name="pinned_view">false</item>
     <item type="id" name="departureTime">false</item>
+    <item type="id" name="headerButtonMap">false</item>
     <item type="id" name="statusBar">false</item>
     <item type="id" name="routeStatus">false</item>
     <item type="id" name="trafficStatusButton">false</item>
@@ -975,11 +1119,28 @@
     <item type="id" name="staleLocationMarker">false</item>
     <item type="id" name="grayDotOn">false</item>
     <item type="id" name="grayDotOff">false</item>
+    <item type="id" name="scrollPanel">false</item>
     <item type="id" name="vibrationCheckBox">false</item>
     <item type="id" name="voiceCheckBox">false</item>
     <item type="id" name="voiceVolumeSlider">false</item>
     <item type="id" name="ringtoneCheckBox">false</item>
     <item type="id" name="ringtoneVolumeSlider">false</item>
+    <item type="id" name="alert_title">false</item>
+    <item type="id" name="alert_title_text">false</item>
+    <item type="id" name="down_arrow">false</item>
+    <item type="id" name="up_arrow">false</item>
+    <item type="id" name="detail_text">false</item>
+    <item type="id" name="line_title">false</item>
+    <item type="id" name="line_title_text">false</item>
+    <item type="id" name="lineIcon">false</item>
+    <item type="id" name="left_bound">false</item>
+    <item type="id" name="vertical_divider_bound">false</item>
+    <item type="id" name="right_bound">false</item>
+    <item type="id" name="left_detail_text">false</item>
+    <item type="id" name="horizontal_divider_details">false</item>
+    <item type="id" name="right_detail_text">false</item>
+    <item type="id" name="list_item_divider">false</item>
+    <item type="id" name="transit_type">false</item>
     <item type="id" name="alertsTitle">false</item>
     <item type="id" name="alertsList">false</item>
     <item type="id" name="alertsDivider">false</item>
@@ -1014,6 +1175,8 @@
     <item type="id" name="prevStep">false</item>
     <item type="id" name="nextStep">false</item>
     <item type="id" name="distanceTimeSeparator">false</item>
+    <item type="id" name="route_summary">false</item>
+    <item type="id" name="cost">false</item>
     <item type="id" name="timeLine">false</item>
     <item type="id" name="summaryListView">false</item>
     <item type="id" name="summarySchematic">false</item>
@@ -1021,6 +1184,8 @@
     <item type="id" name="previous">false</item>
     <item type="id" name="choices">false</item>
     <item type="id" name="urlTextLayout">false</item>
+    <item type="id" name="user_identity_container">false</item>
+    <item type="id" name="user_identity_subtitle">false</item>
     <item type="id" name="vs_timeout_dialog">false</item>
     <item type="id" name="vs_icon">false</item>
     <item type="id" name="vs_action">false</item>
@@ -1032,48 +1197,66 @@
     <item type="id" name="vs_phone_number">false</item>
     <item type="id" name="vs_timeout_go_button">false</item>
     <item type="id" name="vs_timeout_cancel_button">false</item>
-    <item type="id" name="table">false</item>
     <item type="id" name="tabrow">false</item>
-    <item type="id" name="xlargeDialogTitle">false</item>
-    <item type="id" name="menu_notifications">false</item>
-    <item type="id" name="menu_refresh">false</item>
+    <item type="id" name="zagatPlaceSummary">false</item>
+    <item type="id" name="directions">false</item>
+    <item type="id" name="call">false</item>
+    <item type="id" name="leaderboard">false</item>
     <item type="id" name="search">false</item>
     <item type="id" name="da_menu_new_contact">false</item>
     <item type="id" name="da_menu_route_options">false</item>
+    <item type="id" name="da_menu_home_location">false</item>
     <item type="id" name="da_travel_mode">false</item>
     <item type="id" name="da_menu_show_map">false</item>
     <item type="id" name="da_menu_route_overview_back_to_map">false</item>
+    <item type="id" name="da_menu_show_list_back_to_map">false</item>
+    <item type="id" name="da_menu_search_free_drive">false</item>
+    <item type="id" name="da_menu_settings_free_drive">false</item>
     <item type="id" name="da_menu_mute">false</item>
     <item type="id" name="da_menu_unmute">false</item>
-    <item type="id" name="da_menu_show_list_back_to_map">false</item>
-    <item type="id" name="da_menu_report_a_problem">false</item>
     <item type="id" name="da_menu_debug_enable_mock_provider">false</item>
     <item type="id" name="da_menu_debug_disable_mock_provider">false</item>
     <item type="id" name="da_menu_debug_dump_event_log">false</item>
     <item type="id" name="da_menu_debug_dump_gl_memory_stats">false</item>
-    <item type="id" name="menu_show_map">false</item>
-    <item type="id" name="menu_privacy">false</item>
-    <item type="id" name="menu_my_friends">false</item>
-    <item type="id" name="menu_invite">false</item>
-    <item type="id" name="directions">false</item>
+    <item type="id" name="reverse_start_end">false</item>
+    <item type="id" name="navigate">false</item>
+    <item type="id" name="get_directions">false</item>
+    <item type="id" name="reverse">false</item>
+    <item type="id" name="update_route">false</item>
+    <item type="id" name="route_options">false</item>
+    <item type="id" name="agencyInfo">false</item>
+    <item type="id" name="report_a_problem">false</item>
+    <item type="id" name="seeMap">false</item>
+    <item type="id" name="show_hide_stale_friends">false</item>
+    <item type="id" name="location_settings">false</item>
+    <item type="id" name="help">false</item>
+    <item type="id" name="streetview">false</item>
+    <item type="id" name="share">false</item>
+    <item type="id" name="addContact">false</item>
+    <item type="id" name="offline">false</item>
+    <item type="id" name="report">false</item>
+    <item type="id" name="toggleStar">false</item>
+    <item type="id" name="clear_map">false</item>
+    <item type="id" name="save_map">false</item>
+    <item type="id" name="show_offline">false</item>
+    <item type="id" name="settings">false</item>
     <item type="id" name="places">false</item>
     <item type="id" name="layers">false</item>
-    <item type="id" name="clear_map">false</item>
-    <item type="id" name="settings">false</item>
-    <item type="id" name="help">false</item>
     <item type="id" name="prev">false</item>
     <item type="id" name="navigation">false</item>
-    <item type="id" name="more">false</item>
-    <item type="id" name="seeMap">false</item>
-    <item type="id" name="add_category">false</item>
-    <item type="id" name="add_photo">false</item>
-    <item type="id" name="menu_delete">false</item>
-    <item type="id" name="contextual_group">false</item>
-    <item type="id" name="join_latitude">false</item>
+    <item type="id" name="mylocation">false</item>
     <item type="id" name="latitude">false</item>
     <item type="id" name="my_places">false</item>
-    <item type="id" name="ra_menu_playback">false</item>
-    <item type="id" name="ra_menu_mocked_tracking">false</item>
+    <item type="id" name="street_view">false</item>
+    <item type="id" name="search_nearby_stations">false</item>
+    <item type="id" name="manual_tile_prefetch">false</item>
+    <item type="id" name="seeMyOffers">false</item>
+    <item type="id" name="publish">false</item>
+    <item type="id" name="rbl">false</item>
+    <item type="id" name="add_category">false</item>
+    <item type="id" name="contextual_group">false</item>
     <item type="id" name="exit_transit_navigation">false</item>
     <item type="id" name="notification_settings">false</item>
+    <item type="id" name="ra_menu_playback">false</item>
+    <item type="id" name="ra_menu_mocked_tracking">false</item>
 </resources>

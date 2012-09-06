@@ -1,273 +1,317 @@
-.class public Lcom/google/googlenav/ui/view/dialog/a;
-.super Lcom/google/googlenav/ui/view/android/ap;
+.class Lcom/google/googlenav/ui/view/dialog/A;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements LaQ/H;
 
 
 # instance fields
-.field protected a:I
-
-.field protected b:I
-
-.field protected c:Landroid/view/View;
-
-.field private final d:I
+.field private final a:Lam/f;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/view/View;II)V
-    .registers 5
+.method public constructor <init>(Lam/f;)V
+    .registers 2
+    .parameter
 
-    invoke-direct {p0, p4}, Lcom/google/googlenav/ui/view/android/ap;-><init>(I)V
+    .prologue
+    .line 452
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p3, p0, Lcom/google/googlenav/ui/view/dialog/a;->d:I
+    .line 453
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/A;->a:Lam/f;
 
-    invoke-virtual {p0, p2}, Lcom/google/googlenav/ui/view/dialog/a;->a(Landroid/view/View;)V
-
+    .line 454
     return-void
 .end method
 
 
 # virtual methods
-.method public L_()Z
-    .registers 2
+.method public a(Landroid/view/View;)LaQ/bE;
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 473
+    new-instance v1, Lcom/google/googlenav/ui/view/dialog/B;
 
     const/4 v0, 0x0
 
-    return v0
-.end method
+    invoke-direct {v1, v0}, Lcom/google/googlenav/ui/view/dialog/B;-><init>(Lcom/google/googlenav/ui/view/dialog/t;)V
 
-.method protected N_()V
-    .registers 1
+    .line 474
+    const v0, 0x7f10008c
 
-    return-void
-.end method
-
-.method public a(Landroid/view/View;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/a;->c:Landroid/view/View;
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/a;->h()V
-
-    return-void
-.end method
-
-.method protected c()Landroid/view/View;
-    .registers 4
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/a;->getLayoutInflater()Landroid/view/LayoutInflater;
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    iget v1, p0, Lcom/google/googlenav/ui/view/dialog/a;->d:I
+    check-cast v0, Landroid/widget/TableLayout;
 
-    const/4 v2, 0x0
+    invoke-static {v1, v0}, Lcom/google/googlenav/ui/view/dialog/B;->a(Lcom/google/googlenav/ui/view/dialog/B;Landroid/widget/TableLayout;)Landroid/widget/TableLayout;
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    .line 475
+    const v0, 0x7f10008e
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Landroid/widget/TextView;
+
+    invoke-static {v1, v0}, Lcom/google/googlenav/ui/view/dialog/B;->a(Lcom/google/googlenav/ui/view/dialog/B;Landroid/widget/TextView;)Landroid/widget/TextView;
+
+    .line 476
+    const v0, 0x7f100090
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    invoke-static {v1, v0}, Lcom/google/googlenav/ui/view/dialog/B;->b(Lcom/google/googlenav/ui/view/dialog/B;Landroid/widget/TextView;)Landroid/widget/TextView;
+
+    .line 477
+    const v0, 0x7f100091
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    invoke-static {v1, v0}, Lcom/google/googlenav/ui/view/dialog/B;->c(Lcom/google/googlenav/ui/view/dialog/B;Landroid/widget/TextView;)Landroid/widget/TextView;
+
+    .line 478
+    const v0, 0x7f100092
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    invoke-static {v1, v0}, Lcom/google/googlenav/ui/view/dialog/B;->d(Lcom/google/googlenav/ui/view/dialog/B;Landroid/widget/TextView;)Landroid/widget/TextView;
+
+    .line 479
+    const v0, 0x7f10008f
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    invoke-static {v1, v0}, Lcom/google/googlenav/ui/view/dialog/B;->a(Lcom/google/googlenav/ui/view/dialog/B;Landroid/widget/ImageView;)Landroid/widget/ImageView;
+
+    .line 480
+    const v0, 0x7f10008d
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    invoke-static {v1, v0}, Lcom/google/googlenav/ui/view/dialog/B;->b(Lcom/google/googlenav/ui/view/dialog/B;Landroid/widget/ImageView;)Landroid/widget/ImageView;
+
+    .line 481
+    return-object v1
 .end method
 
-.method protected g()V
+.method public a(Lcom/google/googlenav/ui/g;LaQ/bE;)V
     .registers 6
+    .parameter
+    .parameter
 
-    const/4 v3, 0x0
+    .prologue
+    .line 486
+    check-cast p2, Lcom/google/googlenav/ui/view/dialog/B;
 
-    const/4 v1, -0x2
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/a;->h:Landroid/view/View;
-
-    invoke-virtual {v0, v1, v1}, Landroid/view/View;->measure(II)V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/a;->h:Landroid/view/View;
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/a;->h:Landroid/view/View;
-
-    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v1
-
-    iget-object v2, p0, Lcom/google/googlenav/ui/view/dialog/a;->h:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v2
-
-    invoke-virtual {v0, v3, v3, v1, v2}, Landroid/view/View;->layout(IIII)V
-
-    const v0, 0x7f0f008e
-
-    invoke-virtual {p0, v0}, Lcom/google/googlenav/ui/view/dialog/a;->findViewById(I)Landroid/view/View;
+    .line 488
+    invoke-static {p2}, Lcom/google/googlenav/ui/view/dialog/B;->a(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/TextView;
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/a;->getWindow()Landroid/view/Window;
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/A;->a:Lam/f;
+
+    invoke-virtual {v1}, Lam/f;->b()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    move-result-object v2
+    .line 489
+    invoke-static {p2}, Lcom/google/googlenav/ui/view/dialog/B;->b(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/TextView;
 
-    iget-object v3, p0, Lcom/google/googlenav/ui/view/dialog/a;->h:Landroid/view/View;
+    move-result-object v0
 
-    invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/A;->a:Lam/f;
 
-    move-result v3
+    invoke-virtual {v1}, Lam/f;->e()Ljava/lang/String;
 
-    iput v3, v2, Landroid/view/WindowManager$LayoutParams;->width:I
+    move-result-object v1
 
-    iget-object v3, p0, Lcom/google/googlenav/ui/view/dialog/a;->h:Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
+    .line 490
+    invoke-static {p2}, Lcom/google/googlenav/ui/view/dialog/B;->c(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/TextView;
 
-    move-result v3
+    move-result-object v0
 
-    iput v3, v2, Landroid/view/WindowManager$LayoutParams;->height:I
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/A;->a:Lam/f;
 
-    iget v3, p0, Lcom/google/googlenav/ui/view/dialog/a;->a:I
+    invoke-virtual {v1}, Lam/f;->f()Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/view/View;->getRight()I
+    move-result-object v1
 
-    move-result v4
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
+    .line 491
+    invoke-static {p2}, Lcom/google/googlenav/ui/view/dialog/B;->d(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/TextView;
 
-    move-result v0
+    move-result-object v0
 
-    add-int/2addr v0, v4
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/A;->a:Lam/f;
 
-    div-int/lit8 v0, v0, 0x2
+    invoke-virtual {v1}, Lam/f;->d()Ljava/lang/String;
 
-    sub-int v0, v3, v0
+    move-result-object v1
 
-    iput v0, v2, Landroid/view/WindowManager$LayoutParams;->x:I
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    iget v0, p0, Lcom/google/googlenav/ui/view/dialog/a;->b:I
+    .line 492
+    invoke-static {p2}, Lcom/google/googlenav/ui/view/dialog/B;->e(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/ImageView;
 
-    iput v0, v2, Landroid/view/WindowManager$LayoutParams;->y:I
+    move-result-object v1
 
-    const/16 v0, 0x33
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/A;->a:Lam/f;
 
-    iput v0, v2, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    invoke-virtual {v0}, Lam/f;->g()LS/f;
 
-    iget v0, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
+    move-result-object v0
 
-    const v3, 0x20100
+    check-cast v0, LT/f;
 
-    or-int/2addr v0, v3
+    invoke-virtual {v0}, LT/f;->h()Landroid/graphics/Bitmap;
 
-    iput v0, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    return-void
-.end method
+    .line 493
+    invoke-static {p2}, Lcom/google/googlenav/ui/view/dialog/B;->f(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/ImageView;
 
-.method public h()V
-    .registers 4
+    move-result-object v1
 
-    const/4 v2, 0x0
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/A;->a:Lam/f;
 
-    const/4 v0, 0x2
-
-    new-array v0, v0, [I
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/a;->c:Landroid/view/View;
-
-    if-eqz v1, :cond_27
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/a;->c:Landroid/view/View;
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->getLocationOnScreen([I)V
-
-    aget v1, v0, v2
-
-    iget-object v2, p0, Lcom/google/googlenav/ui/view/dialog/a;->c:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
-
-    move-result v2
-
-    div-int/lit8 v2, v2, 0x2
-
-    add-int/2addr v1, v2
-
-    iput v1, p0, Lcom/google/googlenav/ui/view/dialog/a;->a:I
-
-    const/4 v1, 0x1
-
-    aget v0, v0, v1
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/dialog/a;->c:Landroid/view/View;
-
-    invoke-virtual {v1}, Landroid/view/View;->getHeight()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, Lcom/google/googlenav/ui/view/dialog/a;->b:I
-
-    :goto_26
-    return-void
-
-    :cond_27
-    iput v2, p0, Lcom/google/googlenav/ui/view/dialog/a;->a:I
-
-    iput v2, p0, Lcom/google/googlenav/ui/view/dialog/a;->b:I
-
-    goto :goto_26
-.end method
-
-.method public onKeyDown(ILandroid/view/KeyEvent;)Z
-    .registers 4
-
-    invoke-super {p0, p1, p2}, Lcom/google/googlenav/ui/view/android/ap;->onKeyDown(ILandroid/view/KeyEvent;)Z
+    invoke-virtual {v0}, Lam/f;->a()Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_7a
 
-    :goto_6
-    return v0
-
-    :cond_7
-    const/16 v0, 0x13
-
-    if-ne p1, v0, :cond_10
-
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/a;->cancel()V
-
-    const/4 v0, 0x1
-
-    goto :goto_6
-
-    :cond_10
     const/4 v0, 0x0
 
-    goto :goto_6
-.end method
+    :goto_56
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-.method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 3
+    .line 497
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/A;->a:Lam/f;
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+    invoke-virtual {v0}, Lam/f;->j()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-eqz v0, :cond_7d
 
-    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/a;->cancel()V
+    .line 498
+    invoke-static {p2}, Lcom/google/googlenav/ui/view/dialog/B;->c(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/TextView;
 
-    const/4 v0, 0x1
+    move-result-object v0
 
-    :goto_a
-    return v0
+    invoke-static {}, Lcom/google/googlenav/ui/bn;->e()Landroid/content/Context;
 
-    :cond_b
+    move-result-object v1
+
+    const v2, 0x7f0f010f
+
+    invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
+
+    .line 500
+    invoke-static {p2}, Lcom/google/googlenav/ui/view/dialog/B;->g(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/TableLayout;
+
+    move-result-object v0
+
+    const v1, 0x7f020286
+
+    invoke-virtual {v0, v1}, Landroid/widget/TableLayout;->setBackgroundResource(I)V
+
+    .line 506
+    :goto_79
+    return-void
+
+    .line 493
+    :cond_7a
+    const/16 v0, 0x8
+
+    goto :goto_56
+
+    .line 502
+    :cond_7d
+    invoke-static {p2}, Lcom/google/googlenav/ui/view/dialog/B;->c(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/TextView;
+
+    move-result-object v0
+
+    invoke-static {}, Lcom/google/googlenav/ui/bn;->e()Landroid/content/Context;
+
+    move-result-object v1
+
+    const v2, 0x7f0f0110
+
+    invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
+
+    .line 504
+    invoke-static {p2}, Lcom/google/googlenav/ui/view/dialog/B;->g(Lcom/google/googlenav/ui/view/dialog/B;)Landroid/widget/TableLayout;
+
+    move-result-object v0
+
+    const v1, 0x7f020285
+
+    invoke-virtual {v0, v1}, Landroid/widget/TableLayout;->setBackgroundResource(I)V
+
+    goto :goto_79
+.end method
+
+.method public a()Z
+    .registers 2
+
+    .prologue
+    .line 463
     const/4 v0, 0x0
 
-    goto :goto_a
+    return v0
+.end method
+
+.method public b()I
+    .registers 2
+
+    .prologue
+    .line 468
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public c()I
+    .registers 2
+
+    .prologue
+    .line 458
+    const v0, 0x7f04001c
+
+    return v0
 .end method

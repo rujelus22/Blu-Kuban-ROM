@@ -734,7 +734,7 @@
     .registers 11
 
     .prologue
-    const v9, 0x7f06002b
+    const v9, 0x7f06002a
 
     const/4 v8, 0x2
 
@@ -759,7 +759,7 @@
     invoke-virtual {v0}, Ljava/io/File;->mkdir()Z
 
     .line 586
-    const v0, 0x7f06002c
+    const v0, 0x7f06002b
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/FileCopy/FileCopy;->findViewById(I)Landroid/view/View;
 
@@ -770,7 +770,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/FileCopy/FileCopy;->mPhotoText:Landroid/widget/TextView;
 
     .line 588
-    const v0, 0x7f06002e
+    const v0, 0x7f06002d
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/FileCopy/FileCopy;->findViewById(I)Landroid/view/View;
 
@@ -781,7 +781,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/FileCopy/FileCopy;->mVideoText:Landroid/widget/TextView;
 
     .line 590
-    const v0, 0x7f06002d
+    const v0, 0x7f06002c
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/FileCopy/FileCopy;->findViewById(I)Landroid/view/View;
 
@@ -792,7 +792,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/FileCopy/FileCopy;->mMp3Text:Landroid/widget/TextView;
 
     .line 592
-    const v0, 0x7f06002f
+    const v0, 0x7f06002e
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/FileCopy/FileCopy;->findViewById(I)Landroid/view/View;
 
@@ -803,7 +803,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/FileCopy/FileCopy;->mVoiceText:Landroid/widget/TextView;
 
     .line 594
-    const v0, 0x7f060030
+    const v0, 0x7f06002f
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/FileCopy/FileCopy;->findViewById(I)Landroid/view/View;
 
@@ -814,7 +814,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/FileCopy/FileCopy;->mPhotoText2:Landroid/widget/TextView;
 
     .line 596
-    const v0, 0x7f060032
+    const v0, 0x7f060031
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/FileCopy/FileCopy;->findViewById(I)Landroid/view/View;
 
@@ -825,7 +825,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/FileCopy/FileCopy;->mVideoText2:Landroid/widget/TextView;
 
     .line 598
-    const v0, 0x7f060031
+    const v0, 0x7f060030
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/FileCopy/FileCopy;->findViewById(I)Landroid/view/View;
 
@@ -836,7 +836,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/FileCopy/FileCopy;->mMp3Text2:Landroid/widget/TextView;
 
     .line 600
-    const v0, 0x7f060033
+    const v0, 0x7f060032
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/FileCopy/FileCopy;->findViewById(I)Landroid/view/View;
 
@@ -868,7 +868,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
     .line 612
-    const v0, 0x7f060035
+    const v0, 0x7f060034
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/FileCopy/FileCopy;->findViewById(I)Landroid/view/View;
 
@@ -879,7 +879,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/FileCopy/FileCopy;->mPhoto:Landroid/widget/EditText;
 
     .line 614
-    const v0, 0x7f060036
+    const v0, 0x7f060035
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/FileCopy/FileCopy;->findViewById(I)Landroid/view/View;
 
@@ -890,7 +890,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/FileCopy/FileCopy;->mMp3:Landroid/widget/EditText;
 
     .line 616
-    const v0, 0x7f060037
+    const v0, 0x7f060036
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/FileCopy/FileCopy;->findViewById(I)Landroid/view/View;
 
@@ -901,7 +901,7 @@
     iput-object v0, p0, Lcom/android/samsungtest/FileCopy/FileCopy;->mVideo:Landroid/widget/EditText;
 
     .line 618
-    const v0, 0x7f060038
+    const v0, 0x7f060037
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/FileCopy/FileCopy;->findViewById(I)Landroid/view/View;
 
@@ -929,7 +929,7 @@
     sput-object v0, Lcom/android/samsungtest/FileCopy/FileCopy;->mFileCopyThread:Lcom/android/samsungtest/FileCopy/FileCopy$FileCopyThread;
 
     .line 626
-    const v0, 0x7f060034
+    const v0, 0x7f060033
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/FileCopy/FileCopy;->findViewById(I)Landroid/view/View;
 
@@ -949,7 +949,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 642
-    const v0, 0x7f060039
+    const v0, 0x7f060038
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/FileCopy/FileCopy;->findViewById(I)Landroid/view/View;
 
@@ -969,7 +969,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 656
-    const v0, 0x7f06003a
+    const v0, 0x7f060039
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/FileCopy/FileCopy;->findViewById(I)Landroid/view/View;
 
@@ -989,7 +989,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 672
-    const v0, 0x7f060029
+    const v0, 0x7f060028
 
     invoke-virtual {p0, v0}, Lcom/android/samsungtest/FileCopy/FileCopy;->findViewById(I)Landroid/view/View;
 
@@ -1028,7 +1028,7 @@
     .line 682
     iget-object v0, p0, Lcom/android/samsungtest/FileCopy/FileCopy;->mCopyPathGroup:Landroid/widget/RadioGroup;
 
-    const v1, 0x7f06002a
+    const v1, 0x7f060029
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioGroup;->check(I)V
 
@@ -1139,7 +1139,7 @@
 
     move-result v25
 
-    const v26, 0x7f06002a
+    const v26, 0x7f060029
 
     move/from16 v0, v25
 

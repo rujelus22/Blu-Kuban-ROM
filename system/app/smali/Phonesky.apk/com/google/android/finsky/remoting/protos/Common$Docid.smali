@@ -35,30 +35,30 @@
     .registers 2
 
     .prologue
-    .line 237
+    .line 333
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 242
+    .line 338
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->backendDocid_:Ljava/lang/String;
 
-    .line 259
+    .line 355
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->type_:I
 
-    .line 276
+    .line 372
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->backend_:I
 
-    .line 318
+    .line 415
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->cachedSize:I
 
-    .line 237
+    .line 333
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .registers 2
 
     .prologue
-    .line 278
+    .line 374
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->backend_:I
 
     return v0
@@ -78,7 +78,7 @@
     .registers 2
 
     .prologue
-    .line 243
+    .line 339
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->backendDocid_:Ljava/lang/String;
 
     return-object v0
@@ -88,15 +88,15 @@
     .registers 2
 
     .prologue
-    .line 320
+    .line 418
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 322
+    .line 420
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$Docid;->getSerializedSize()I
 
-    .line 324
+    .line 422
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->cachedSize:I
 
@@ -107,10 +107,10 @@
     .registers 4
 
     .prologue
-    .line 328
+    .line 427
     const/4 v0, 0x0
 
-    .line 329
+    .line 428
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$Docid;->hasBackendDocid()Z
 
@@ -118,7 +118,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 330
+    .line 429
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$Docid;->getBackendDocid()Ljava/lang/String;
@@ -131,7 +131,7 @@
 
     add-int/2addr v0, v1
 
-    .line 333
+    .line 432
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$Docid;->hasType()Z
 
@@ -139,7 +139,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 334
+    .line 433
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$Docid;->getType()I
@@ -152,7 +152,7 @@
 
     add-int/2addr v0, v1
 
-    .line 337
+    .line 436
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$Docid;->hasBackend()Z
 
@@ -160,7 +160,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 338
+    .line 437
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$Docid;->getBackend()I
@@ -173,11 +173,11 @@
 
     add-int/2addr v0, v1
 
-    .line 341
+    .line 440
     :cond_31
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->cachedSize:I
 
-    .line 342
+    .line 441
     return v0
 .end method
 
@@ -185,7 +185,7 @@
     .registers 2
 
     .prologue
-    .line 261
+    .line 357
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->type_:I
 
     return v0
@@ -195,7 +195,7 @@
     .registers 2
 
     .prologue
-    .line 277
+    .line 373
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->hasBackend:Z
 
     return v0
@@ -205,7 +205,7 @@
     .registers 2
 
     .prologue
-    .line 244
+    .line 340
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->hasBackendDocid:Z
 
     return v0
@@ -215,7 +215,7 @@
     .registers 2
 
     .prologue
-    .line 260
+    .line 356
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->hasType:Z
 
     return v0
@@ -231,29 +231,29 @@
     .end annotation
 
     .prologue
-    .line 349
+    .line 449
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 350
+    .line 450
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_26
 
-    .line 354
+    .line 454
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Common$Docid;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 355
+    .line 455
     :sswitch_d
     return-object p0
 
-    .line 360
+    .line 460
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -263,7 +263,7 @@
 
     goto :goto_0
 
-    .line 364
+    .line 464
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -273,7 +273,7 @@
 
     goto :goto_0
 
-    .line 368
+    .line 468
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -283,7 +283,7 @@
 
     goto :goto_0
 
-    .line 350
+    .line 450
     :sswitch_data_26
     .sparse-switch
         0x0 -> :sswitch_d
@@ -303,7 +303,7 @@
     .end annotation
 
     .prologue
-    .line 235
+    .line 330
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/Common$Docid;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/Common$Docid;
 
     move-result-object v0
@@ -316,15 +316,15 @@
     .parameter "value"
 
     .prologue
-    .line 280
+    .line 376
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->hasBackend:Z
 
-    .line 281
+    .line 377
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->backend_:I
 
-    .line 282
+    .line 378
     return-object p0
 .end method
 
@@ -333,15 +333,15 @@
     .parameter "value"
 
     .prologue
-    .line 246
+    .line 342
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->hasBackendDocid:Z
 
-    .line 247
+    .line 343
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->backendDocid_:Ljava/lang/String;
 
-    .line 248
+    .line 344
     return-object p0
 .end method
 
@@ -350,15 +350,15 @@
     .parameter "value"
 
     .prologue
-    .line 263
+    .line 359
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->hasType:Z
 
-    .line 264
+    .line 360
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Common$Docid;->type_:I
 
-    .line 265
+    .line 361
     return-object p0
 .end method
 
@@ -372,14 +372,14 @@
     .end annotation
 
     .prologue
-    .line 307
+    .line 404
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$Docid;->hasBackendDocid()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 308
+    .line 405
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$Docid;->getBackendDocid()Ljava/lang/String;
@@ -388,7 +388,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 310
+    .line 407
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$Docid;->hasType()Z
 
@@ -396,7 +396,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 311
+    .line 408
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$Docid;->getType()I
@@ -405,7 +405,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 313
+    .line 410
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$Docid;->hasBackend()Z
 
@@ -413,7 +413,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 314
+    .line 411
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Common$Docid;->getBackend()I
@@ -422,7 +422,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 316
+    .line 413
     :cond_2a
     return-void
 .end method

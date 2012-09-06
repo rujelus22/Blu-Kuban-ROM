@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 239
+    .line 244
     iput-object p2, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$1;->val$runnable:Ljava/lang/Runnable;
 
     invoke-direct {p0, p1}, Lcom/android/emailcommon/utility/EmailAsyncTask;-><init>(Lcom/android/emailcommon/utility/EmailAsyncTask$Tracker;)V
@@ -51,7 +51,7 @@
     .parameter "x0"
 
     .prologue
-    .line 239
+    .line 244
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -67,12 +67,12 @@
     .parameter "params"
 
     .prologue
-    .line 242
+    .line 247
     iget-object v0, p0, Lcom/android/emailcommon/utility/EmailAsyncTask$1;->val$runnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 243
+    .line 248
     const/4 v0, 0x0
 
     return-object v0

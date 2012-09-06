@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="general_preference_text_zoom_summary_array">
+        <item>Niecīga izmēra teksts</item>
+        <item>Maza izmēra teksts</item>
+        <item>Parasta izmēra teksts</item>
+        <item>Liela izmēra teksts</item>
+        <item>Milzīga izmēra teksts</item>
+    </string-array>
+</resources>

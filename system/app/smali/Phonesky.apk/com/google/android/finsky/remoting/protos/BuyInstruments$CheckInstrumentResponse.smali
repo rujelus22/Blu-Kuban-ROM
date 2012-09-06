@@ -55,35 +55,35 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 372
+    .line 420
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 377
+    .line 425
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->userHasValidInstrument_:Z
 
-    .line 394
+    .line 442
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->checkoutTokenRequired_:Z
 
-    .line 410
+    .line 458
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->instrument_:Ljava/util/List;
 
-    .line 443
+    .line 491
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->eligibleInstrument_:Ljava/util/List;
 
-    .line 509
+    .line 558
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->cachedSize:I
 
-    .line 372
+    .line 420
     return-void
 .end method
 
@@ -94,17 +94,17 @@
     .parameter "value"
 
     .prologue
-    .line 460
+    .line 508
     if-nez p1, :cond_8
 
-    .line 461
+    .line 509
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 463
+    .line 511
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->eligibleInstrument_:Ljava/util/List;
 
@@ -114,20 +114,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 464
+    .line 512
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->eligibleInstrument_:Ljava/util/List;
 
-    .line 466
+    .line 514
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->eligibleInstrument_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 467
+    .line 515
     return-object p0
 .end method
 
@@ -136,17 +136,17 @@
     .parameter "value"
 
     .prologue
-    .line 427
+    .line 475
     if-nez p1, :cond_8
 
-    .line 428
+    .line 476
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 430
+    .line 478
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->instrument_:Ljava/util/List;
 
@@ -156,20 +156,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 431
+    .line 479
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->instrument_:Ljava/util/List;
 
-    .line 433
+    .line 481
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->instrument_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 434
+    .line 482
     return-object p0
 .end method
 
@@ -177,15 +177,15 @@
     .registers 2
 
     .prologue
-    .line 511
+    .line 561
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 513
+    .line 563
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->getSerializedSize()I
 
-    .line 515
+    .line 565
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->cachedSize:I
 
@@ -196,7 +196,7 @@
     .registers 2
 
     .prologue
-    .line 395
+    .line 443
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->checkoutTokenRequired_:Z
 
     return v0
@@ -215,7 +215,7 @@
     .end annotation
 
     .prologue
-    .line 446
+    .line 494
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->eligibleInstrument_:Ljava/util/List;
 
     return-object v0
@@ -234,7 +234,7 @@
     .end annotation
 
     .prologue
-    .line 413
+    .line 461
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->instrument_:Ljava/util/List;
 
     return-object v0
@@ -244,10 +244,10 @@
     .registers 6
 
     .prologue
-    .line 519
+    .line 570
     const/4 v2, 0x0
 
-    .line 520
+    .line 571
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->hasUserHasValidInstrument()Z
 
@@ -255,7 +255,7 @@
 
     if-eqz v3, :cond_11
 
-    .line 521
+    .line 572
     const/4 v3, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->getUserHasValidInstrument()Z
@@ -268,7 +268,7 @@
 
     add-int/2addr v2, v3
 
-    .line 524
+    .line 575
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->hasCheckoutTokenRequired()Z
 
@@ -276,7 +276,7 @@
 
     if-eqz v3, :cond_21
 
-    .line 525
+    .line 576
     const/4 v3, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->getCheckoutTokenRequired()Z
@@ -289,7 +289,7 @@
 
     add-int/2addr v2, v3
 
-    .line 528
+    .line 579
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->getInstrumentList()Ljava/util/List;
 
@@ -313,7 +313,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
-    .line 529
+    .line 580
     .local v0, element:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
     const/4 v3, 0x4
 
@@ -325,7 +325,7 @@
 
     goto :goto_29
 
-    .line 532
+    .line 583
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
     :cond_3c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->getEligibleInstrumentList()Ljava/util/List;
@@ -349,7 +349,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
-    .line 533
+    .line 584
     .restart local v0       #element:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
     const/4 v3, 0x5
 
@@ -361,12 +361,12 @@
 
     goto :goto_44
 
-    .line 536
+    .line 587
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
     :cond_57
     iput v2, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->cachedSize:I
 
-    .line 537
+    .line 588
     return v2
 .end method
 
@@ -374,7 +374,7 @@
     .registers 2
 
     .prologue
-    .line 378
+    .line 426
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->userHasValidInstrument_:Z
 
     return v0
@@ -384,7 +384,7 @@
     .registers 2
 
     .prologue
-    .line 396
+    .line 444
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->hasCheckoutTokenRequired:Z
 
     return v0
@@ -394,7 +394,7 @@
     .registers 2
 
     .prologue
-    .line 379
+    .line 427
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->hasUserHasValidInstrument:Z
 
     return v0
@@ -410,29 +410,29 @@
     .end annotation
 
     .prologue
-    .line 544
+    .line 596
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 545
+    .line 597
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_36
 
-    .line 549
+    .line 601
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 550
+    .line 602
     :sswitch_d
     return-object p0
 
-    .line 555
+    .line 607
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -442,7 +442,7 @@
 
     goto :goto_0
 
-    .line 559
+    .line 611
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -452,38 +452,38 @@
 
     goto :goto_0
 
-    .line 563
+    .line 615
     :sswitch_1e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;-><init>()V
 
-    .line 564
+    .line 616
     .local v1, value:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 565
+    .line 617
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->addInstrument(Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;)Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;
 
     goto :goto_0
 
-    .line 569
+    .line 621
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
     :sswitch_2a
     new-instance v1, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;-><init>()V
 
-    .line 570
+    .line 622
     .restart local v1       #value:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 571
+    .line 623
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->addEligibleInstrument(Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;)Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;
 
     goto :goto_0
 
-    .line 545
+    .line 597
     :sswitch_data_36
     .sparse-switch
         0x0 -> :sswitch_d
@@ -504,7 +504,7 @@
     .end annotation
 
     .prologue
-    .line 370
+    .line 417
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;
 
     move-result-object v0
@@ -517,15 +517,15 @@
     .parameter "value"
 
     .prologue
-    .line 398
+    .line 446
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->hasCheckoutTokenRequired:Z
 
-    .line 399
+    .line 447
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->checkoutTokenRequired_:Z
 
-    .line 400
+    .line 448
     return-object p0
 .end method
 
@@ -534,15 +534,15 @@
     .parameter "value"
 
     .prologue
-    .line 381
+    .line 429
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->hasUserHasValidInstrument:Z
 
-    .line 382
+    .line 430
     iput-boolean p1, p0, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->userHasValidInstrument_:Z
 
-    .line 383
+    .line 431
     return-object p0
 .end method
 
@@ -556,14 +556,14 @@
     .end annotation
 
     .prologue
-    .line 495
+    .line 544
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->hasUserHasValidInstrument()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 496
+    .line 545
     const/4 v2, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->getUserHasValidInstrument()Z
@@ -572,7 +572,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 498
+    .line 547
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->hasCheckoutTokenRequired()Z
 
@@ -580,7 +580,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 499
+    .line 548
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->getCheckoutTokenRequired()Z
@@ -589,7 +589,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 501
+    .line 550
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->getInstrumentList()Ljava/util/List;
 
@@ -613,7 +613,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
-    .line 502
+    .line 551
     .local v0, element:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
     const/4 v2, 0x4
 
@@ -621,7 +621,7 @@
 
     goto :goto_24
 
-    .line 504
+    .line 553
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
     :cond_35
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/BuyInstruments$CheckInstrumentResponse;->getEligibleInstrumentList()Ljava/util/List;
@@ -645,7 +645,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
-    .line 505
+    .line 554
     .restart local v0       #element:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
     const/4 v2, 0x5
 
@@ -653,7 +653,7 @@
 
     goto :goto_3d
 
-    .line 507
+    .line 556
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
     :cond_4e
     return-void

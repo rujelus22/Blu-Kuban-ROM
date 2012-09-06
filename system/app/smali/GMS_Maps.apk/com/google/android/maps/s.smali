@@ -1,58 +1,209 @@
-.class Lcom/google/android/maps/s;
+.class synthetic Lcom/google/android/maps/s;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/googlenav/login/p;
+.source "SourceFile"
 
 
-# instance fields
-.field final synthetic a:Z
+# static fields
+.field static final synthetic a:[I
 
-.field final synthetic b:Lcom/google/android/maps/MapsActivity;
+.field static final synthetic b:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/maps/MapsActivity;Z)V
+.method static constructor <clinit>()V
     .registers 3
 
-    iput-object p1, p0, Lcom/google/android/maps/s;->b:Lcom/google/android/maps/MapsActivity;
+    .prologue
+    .line 2285
+    invoke-static {}, Lcom/google/android/maps/B;->values()[Lcom/google/android/maps/B;
 
-    iput-boolean p2, p0, Lcom/google/android/maps/s;->a:Z
+    move-result-object v0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    array-length v0, v0
 
-    return-void
-.end method
+    new-array v0, v0, [I
 
+    sput-object v0, Lcom/google/android/maps/s;->b:[I
 
-# virtual methods
-.method public a()V
-    .registers 3
+    :try_start_9
+    sget-object v0, Lcom/google/android/maps/s;->b:[I
 
-    iget-boolean v0, p0, Lcom/google/android/maps/s;->a:Z
+    sget-object v1, Lcom/google/android/maps/B;->b:Lcom/google/android/maps/B;
 
-    invoke-static {}, Lcom/google/googlenav/M;->a()Lcom/google/googlenav/M;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/googlenav/M;->aB()Z
+    invoke-virtual {v1}, Lcom/google/android/maps/B;->ordinal()I
 
     move-result v1
 
-    if-eq v0, v1, :cond_19
+    const/4 v2, 0x1
 
-    iget-object v0, p0, Lcom/google/android/maps/s;->b:Lcom/google/android/maps/MapsActivity;
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_79
 
-    invoke-static {v0}, Lcom/google/android/maps/MapsActivity;->d(Lcom/google/android/maps/MapsActivity;)Lcom/google/googlenav/ui/D;
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/android/maps/s;->b:[I
+
+    sget-object v1, Lcom/google/android/maps/B;->c:Lcom/google/android/maps/B;
+
+    invoke-virtual {v1}, Lcom/google/android/maps/B;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_77
+
+    :goto_1f
+    :try_start_1f
+    sget-object v0, Lcom/google/android/maps/s;->b:[I
+
+    sget-object v1, Lcom/google/android/maps/B;->d:Lcom/google/android/maps/B;
+
+    invoke-virtual {v1}, Lcom/google/android/maps/B;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_75
+
+    :goto_2a
+    :try_start_2a
+    sget-object v0, Lcom/google/android/maps/s;->b:[I
+
+    sget-object v1, Lcom/google/android/maps/B;->e:Lcom/google/android/maps/B;
+
+    invoke-virtual {v1}, Lcom/google/android/maps/B;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_35
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2a .. :try_end_35} :catch_73
+
+    :goto_35
+    :try_start_35
+    sget-object v0, Lcom/google/android/maps/s;->b:[I
+
+    sget-object v1, Lcom/google/android/maps/B;->f:Lcom/google/android/maps/B;
+
+    invoke-virtual {v1}, Lcom/google/android/maps/B;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_40
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_35 .. :try_end_40} :catch_71
+
+    :goto_40
+    :try_start_40
+    sget-object v0, Lcom/google/android/maps/s;->b:[I
+
+    sget-object v1, Lcom/google/android/maps/B;->g:Lcom/google/android/maps/B;
+
+    invoke-virtual {v1}, Lcom/google/android/maps/B;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_4b
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_40 .. :try_end_4b} :catch_6f
+
+    .line 1324
+    :goto_4b
+    invoke-static {}, Lcom/google/android/maps/A;->values()[Lcom/google/android/maps/A;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/D;->I()Lcom/google/googlenav/ui/av;
+    array-length v0, v0
 
-    move-result-object v0
+    new-array v0, v0, [I
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/av;->b()V
+    sput-object v0, Lcom/google/android/maps/s;->a:[I
 
-    :cond_19
+    :try_start_54
+    sget-object v0, Lcom/google/android/maps/s;->a:[I
+
+    sget-object v1, Lcom/google/android/maps/A;->b:Lcom/google/android/maps/A;
+
+    invoke-virtual {v1}, Lcom/google/android/maps/A;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_5f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_54 .. :try_end_5f} :catch_6d
+
+    :goto_5f
+    :try_start_5f
+    sget-object v0, Lcom/google/android/maps/s;->a:[I
+
+    sget-object v1, Lcom/google/android/maps/A;->c:Lcom/google/android/maps/A;
+
+    invoke-virtual {v1}, Lcom/google/android/maps/A;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_6a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5f .. :try_end_6a} :catch_6b
+
+    :goto_6a
     return-void
+
+    :catch_6b
+    move-exception v0
+
+    goto :goto_6a
+
+    :catch_6d
+    move-exception v0
+
+    goto :goto_5f
+
+    .line 2285
+    :catch_6f
+    move-exception v0
+
+    goto :goto_4b
+
+    :catch_71
+    move-exception v0
+
+    goto :goto_40
+
+    :catch_73
+    move-exception v0
+
+    goto :goto_35
+
+    :catch_75
+    move-exception v0
+
+    goto :goto_2a
+
+    :catch_77
+    move-exception v0
+
+    goto :goto_1f
+
+    :catch_79
+    move-exception v0
+
+    goto :goto_14
 .end method

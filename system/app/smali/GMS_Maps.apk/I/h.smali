@@ -1,135 +1,53 @@
-.class public LI/h;
+.class Li/h;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements LI/i;
+.implements Landroid/speech/tts/TextToSpeech$OnUtteranceCompletedListener;
 
 
 # instance fields
-.field private final a:Landroid/os/Handler;
+.field final synthetic a:Li/d;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>(Li/d;)V
     .registers 2
+    .parameter
+
+    .prologue
+    .line 103
+    iput-object p1, p0, Li/h;->a:Li/d;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Landroid/os/Handler;
-
-    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
-
-    iput-object v0, p0, LI/h;->a:Landroid/os/Handler;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
-    .registers 4
+.method synthetic constructor <init>(Li/d;Li/e;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Landroid/os/Handler;
-
-    invoke-direct {v0, p1, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
-
-    iput-object v0, p0, LI/h;->a:Landroid/os/Handler;
+    .prologue
+    .line 103
+    invoke-direct {p0, p1}, Li/h;-><init>(Li/d;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Landroid/os/Looper;
-    .registers 2
-
-    iget-object v0, p0, LI/h;->a:Landroid/os/Handler;
-
-    invoke-virtual {v0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public a(I)Landroid/os/Message;
+.method public onUtteranceCompleted(Ljava/lang/String;)V
     .registers 3
+    .parameter
 
-    iget-object v0, p0, LI/h;->a:Landroid/os/Handler;
+    .prologue
+    .line 107
+    iget-object v0, p0, Li/h;->a:Li/d;
 
-    invoke-virtual {v0, p1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+    invoke-static {v0, p1}, Li/d;->a(Li/d;Ljava/lang/String;)V
 
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public a(IIILjava/lang/Object;)Landroid/os/Message;
-    .registers 6
-
-    iget-object v0, p0, LI/h;->a:Landroid/os/Handler;
-
-    invoke-virtual {v0, p1, p2, p3, p4}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public a(ILjava/lang/Object;)Landroid/os/Message;
-    .registers 4
-
-    iget-object v0, p0, LI/h;->a:Landroid/os/Handler;
-
-    invoke-virtual {v0, p1, p2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public a(Ljava/lang/Runnable;)V
-    .registers 3
-
-    iget-object v0, p0, LI/h;->a:Landroid/os/Handler;
-
-    invoke-virtual {v0, p1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
-
+    .line 108
     return-void
-.end method
-
-.method public a(Landroid/os/Message;)Z
-    .registers 3
-
-    iget-object v0, p0, LI/h;->a:Landroid/os/Handler;
-
-    invoke-virtual {v0, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public b(Ljava/lang/Runnable;)Z
-    .registers 3
-
-    iget-object v0, p0, LI/h;->a:Landroid/os/Handler;
-
-    invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public b(Ljava/lang/Runnable;J)Z
-    .registers 5
-
-    iget-object v0, p0, LI/h;->a:Landroid/os/Handler;
-
-    invoke-virtual {v0, p1, p2, p3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    move-result v0
-
-    return v0
 .end method

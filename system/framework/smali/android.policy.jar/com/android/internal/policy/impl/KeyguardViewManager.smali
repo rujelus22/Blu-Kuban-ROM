@@ -16,7 +16,7 @@
 
 
 # static fields
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z
 
 .field private static TAG:Ljava/lang/String;
 
@@ -595,13 +595,13 @@
 
     const/16 v3, 0x7d4
 
-    const/4 v5, -0x1
+    const/4 v5, -0x3
 
     invoke-direct/range {v0 .. v5}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
 
     .line 134
     .local v0, lp:Landroid/view/WindowManager$LayoutParams;
-    const/16 v1, 0x10
+    const/16 v1, 0x0
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 

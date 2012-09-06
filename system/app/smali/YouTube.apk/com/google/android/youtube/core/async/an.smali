@@ -3,31 +3,39 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/g;
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
 .field final synthetic a:Lcom/google/android/youtube/core/async/am;
 
-.field private final b:Lcom/google/android/youtube/core/async/g;
+.field private final b:Lcom/google/android/youtube/core/async/l;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/core/async/am;Lcom/google/android/youtube/core/async/g;)V
-    .registers 3
+.method public constructor <init>(Lcom/google/android/youtube/core/async/am;Lcom/google/android/youtube/core/async/l;)V
+    .registers 4
     .parameter
     .parameter
 
     .prologue
-    .line 114
+    .line 38
     iput-object p1, p0, Lcom/google/android/youtube/core/async/an;->a:Lcom/google/android/youtube/core/async/am;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 115
-    iput-object p2, p0, Lcom/google/android/youtube/core/async/an;->b:Lcom/google/android/youtube/core/async/g;
+    .line 39
+    const-string v0, "targetCallback can\'t be null"
 
-    .line 116
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/core/async/l;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/an;->b:Lcom/google/android/youtube/core/async/l;
+
+    .line 40
     return-void
 .end method
 
@@ -39,55 +47,45 @@
     .parameter
 
     .prologue
-    .line 125
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/an;->b:Lcom/google/android/youtube/core/async/g;
+    .line 48
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/an;->b:Lcom/google/android/youtube/core/async/l;
 
-    invoke-interface {v0, p1, p2}, Lcom/google/android/youtube/core/async/g;->a(Ljava/lang/Object;Ljava/lang/Exception;)V
+    invoke-interface {v0, p1, p2}, Lcom/google/android/youtube/core/async/l;->a(Ljava/lang/Object;Ljava/lang/Exception;)V
 
-    .line 126
+    .line 49
     return-void
 .end method
 
 .method public final a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 8
+    .registers 6
     .parameter
     .parameter
 
     .prologue
-    .line 120
+    .line 43
     iget-object v0, p0, Lcom/google/android/youtube/core/async/an;->a:Lcom/google/android/youtube/core/async/am;
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/async/am;->b(Lcom/google/android/youtube/core/async/am;)Lcom/google/android/youtube/core/cache/b;
+    invoke-static {v0}, Lcom/google/android/youtube/core/async/am;->b(Lcom/google/android/youtube/core/async/am;)Ljava/util/concurrent/atomic/AtomicLong;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/google/android/youtube/core/async/an;->a:Lcom/google/android/youtube/core/async/am;
 
-    invoke-virtual {v1, p1}, Lcom/google/android/youtube/core/async/am;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1}, Lcom/google/android/youtube/core/async/am;->a(Lcom/google/android/youtube/core/async/am;)Lcom/google/android/youtube/core/utils/d;
 
     move-result-object v1
 
-    new-instance v2, Lcom/google/android/youtube/core/async/Timestamped;
+    invoke-interface {v1}, Lcom/google/android/youtube/core/utils/d;->a()J
 
-    iget-object v3, p0, Lcom/google/android/youtube/core/async/an;->a:Lcom/google/android/youtube/core/async/am;
+    move-result-wide v1
 
-    invoke-static {v3}, Lcom/google/android/youtube/core/async/am;->a(Lcom/google/android/youtube/core/async/am;)Lcom/google/android/youtube/core/utils/c;
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
 
-    move-result-object v3
+    .line 44
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/an;->b:Lcom/google/android/youtube/core/async/l;
 
-    invoke-interface {v3}, Lcom/google/android/youtube/core/utils/c;->a()J
+    invoke-interface {v0, p1, p2}, Lcom/google/android/youtube/core/async/l;->a(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    move-result-wide v3
-
-    invoke-direct {v2, p2, v3, v4}, Lcom/google/android/youtube/core/async/Timestamped;-><init>(Ljava/lang/Object;J)V
-
-    invoke-interface {v0, v1, v2}, Lcom/google/android/youtube/core/cache/b;->a(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    .line 121
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/an;->b:Lcom/google/android/youtube/core/async/g;
-
-    invoke-interface {v0, p1, p2}, Lcom/google/android/youtube/core/async/g;->a(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    .line 122
+    .line 45
     return-void
 .end method

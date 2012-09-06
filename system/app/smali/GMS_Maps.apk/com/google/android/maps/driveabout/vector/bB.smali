@@ -1,97 +1,73 @@
-.class Lcom/google/android/maps/driveabout/vector/bB;
+.class Lcom/google/android/maps/driveabout/vector/bb;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/maps/driveabout/vector/cB;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
-.field private a:Landroid/content/Context;
-
-.field private b:Lcom/google/android/maps/driveabout/vector/cB;
-
-.field private c:I
-
-.field private d:Lx/T;
-
-.field private e:Lr/b;
-
-.field private f:Lr/l;
+.field final synthetic a:Lcom/google/android/maps/driveabout/vector/ba;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/maps/driveabout/vector/cB;ILandroid/content/Context;Lr/l;)V
-    .registers 5
+.method constructor <init>(Lcom/google/android/maps/driveabout/vector/ba;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 786
+    iput-object p1, p0, Lcom/google/android/maps/driveabout/vector/bb;->a:Lcom/google/android/maps/driveabout/vector/ba;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p3, p0, Lcom/google/android/maps/driveabout/vector/bB;->a:Landroid/content/Context;
-
-    iput-object p1, p0, Lcom/google/android/maps/driveabout/vector/bB;->b:Lcom/google/android/maps/driveabout/vector/cB;
-
-    iput p2, p0, Lcom/google/android/maps/driveabout/vector/bB;->c:I
-
-    iput-object p4, p0, Lcom/google/android/maps/driveabout/vector/bB;->f:Lr/l;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lcom/google/android/maps/driveabout/vector/cU;Z)Lcom/google/android/maps/driveabout/vector/cn;
-    .registers 4
+.method public a(Lcom/google/android/maps/driveabout/vector/ca;Lcom/google/android/maps/driveabout/vector/ca;)I
+    .registers 5
+    .parameter
+    .parameter
 
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/cn;
+    .prologue
+    .line 789
+    invoke-virtual {p2}, Lcom/google/android/maps/driveabout/vector/ca;->a()Ln/l;
 
-    invoke-direct {v0, p1}, Lcom/google/android/maps/driveabout/vector/cn;-><init>(Lcom/google/android/maps/driveabout/vector/cU;)V
+    move-result-object v0
 
-    return-object v0
-.end method
+    invoke-interface {v0}, Ln/l;->i()I
 
-.method public a(Lcom/google/android/maps/driveabout/vector/cU;IZ)Lcom/google/android/maps/driveabout/vector/cz;
-    .registers 10
+    move-result v0
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bB;->b:Lcom/google/android/maps/driveabout/vector/cB;
-
-    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/maps/driveabout/vector/cB;->a(Lcom/google/android/maps/driveabout/vector/cU;IZ)Lcom/google/android/maps/driveabout/vector/cz;
+    invoke-virtual {p1}, Lcom/google/android/maps/driveabout/vector/ca;->a()Ln/l;
 
     move-result-object v1
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bB;->d:Lx/T;
+    invoke-interface {v1}, Ln/l;->i()I
 
-    if-nez v0, :cond_10
+    move-result v1
 
-    invoke-static {}, Lx/T;->b()Lx/T;
+    sub-int/2addr v0, v1
 
-    move-result-object v0
+    return v0
+.end method
 
-    iput-object v0, p0, Lcom/google/android/maps/driveabout/vector/bB;->d:Lx/T;
+.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .registers 4
+    .parameter
+    .parameter
 
-    :cond_10
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bB;->e:Lr/b;
+    .prologue
+    .line 786
+    check-cast p1, Lcom/google/android/maps/driveabout/vector/ca;
 
-    if-nez v0, :cond_1c
+    check-cast p2, Lcom/google/android/maps/driveabout/vector/ca;
 
-    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/bB;->f:Lr/l;
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/maps/driveabout/vector/bb;->a(Lcom/google/android/maps/driveabout/vector/ca;Lcom/google/android/maps/driveabout/vector/ca;)I
 
-    invoke-virtual {v0}, Lr/l;->i()Lr/b;
+    move-result v0
 
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/maps/driveabout/vector/bB;->e:Lr/b;
-
-    :cond_1c
-    new-instance v0, Lcom/google/android/maps/driveabout/vector/bw;
-
-    iget-object v2, p0, Lcom/google/android/maps/driveabout/vector/bB;->e:Lr/b;
-
-    iget-object v3, p0, Lcom/google/android/maps/driveabout/vector/bB;->d:Lx/T;
-
-    iget v4, p0, Lcom/google/android/maps/driveabout/vector/bB;->c:I
-
-    iget-object v5, p0, Lcom/google/android/maps/driveabout/vector/bB;->f:Lr/l;
-
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/maps/driveabout/vector/bw;-><init>(Lcom/google/android/maps/driveabout/vector/cz;Lr/b;Lx/T;ILr/l;)V
-
-    return-object v0
+    return v0
 .end method

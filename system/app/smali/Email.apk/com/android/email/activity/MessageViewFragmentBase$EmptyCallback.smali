@@ -26,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 655
+    .line 233
     new-instance v0, Lcom/android/email/activity/MessageViewFragmentBase$EmptyCallback;
 
     invoke-direct {v0}, Lcom/android/email/activity/MessageViewFragmentBase$EmptyCallback;-><init>()V
@@ -40,8 +40,8 @@
     .registers 1
 
     .prologue
-    .line 654
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 232
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -53,7 +53,7 @@
     .parameter "errorMessage"
 
     .prologue
-    .line 667
+    .line 234
     return-void
 .end method
 
@@ -61,7 +61,7 @@
     .registers 1
 
     .prologue
-    .line 671
+    .line 235
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .registers 1
 
     .prologue
-    .line 675
+    .line 236
     return-void
 .end method
 
@@ -77,24 +77,7 @@
     .registers 1
 
     .prologue
-    .line 679
-    return-void
-.end method
-
-.method public onMessageViewGone()V
-    .registers 1
-
-    .prologue
-    .line 663
-    return-void
-.end method
-
-.method public onMessageViewShown(I)V
-    .registers 2
-    .parameter "mailboxType"
-
-    .prologue
-    .line 659
+    .line 237
     return-void
 .end method
 
@@ -103,7 +86,7 @@
     .parameter "url"
 
     .prologue
-    .line 683
+    .line 240
     const/4 v0, 0x0
 
     return v0

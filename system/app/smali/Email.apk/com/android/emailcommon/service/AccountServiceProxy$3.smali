@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/emailcommon/service/AccountServiceProxy;->notifyNewMessages(JJI)V
+    value = Lcom/android/emailcommon/service/AccountServiceProxy;->reconcileAccounts(Ljava/lang/String;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,32 +20,27 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/emailcommon/service/AccountServiceProxy;
 
-.field final synthetic val$accountId:J
+.field final synthetic val$accountManagerType:Ljava/lang/String;
 
-.field final synthetic val$lastestMsgId:J
-
-.field final synthetic val$messageCount:I
+.field final synthetic val$protocol:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/emailcommon/service/AccountServiceProxy;JJI)V
-    .registers 7
-    .parameter
+.method constructor <init>(Lcom/android/emailcommon/service/AccountServiceProxy;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 4
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 66
+    .line 70
     iput-object p1, p0, Lcom/android/emailcommon/service/AccountServiceProxy$3;->this$0:Lcom/android/emailcommon/service/AccountServiceProxy;
 
-    iput-wide p2, p0, Lcom/android/emailcommon/service/AccountServiceProxy$3;->val$accountId:J
+    iput-object p2, p0, Lcom/android/emailcommon/service/AccountServiceProxy$3;->val$protocol:Ljava/lang/String;
 
-    iput-wide p4, p0, Lcom/android/emailcommon/service/AccountServiceProxy$3;->val$lastestMsgId:J
+    iput-object p3, p0, Lcom/android/emailcommon/service/AccountServiceProxy$3;->val$accountManagerType:Ljava/lang/String;
 
-    iput p6, p0, Lcom/android/emailcommon/service/AccountServiceProxy$3;->val$messageCount:I
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -53,7 +48,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 7
+    .registers 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -61,7 +56,7 @@
     .end annotation
 
     .prologue
-    .line 68
+    .line 73
     iget-object v0, p0, Lcom/android/emailcommon/service/AccountServiceProxy$3;->this$0:Lcom/android/emailcommon/service/AccountServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/AccountServiceProxy;->mService:Lcom/android/emailcommon/service/IAccountService;
@@ -69,14 +64,12 @@
 
     move-result-object v0
 
-    iget-wide v1, p0, Lcom/android/emailcommon/service/AccountServiceProxy$3;->val$accountId:J
+    iget-object v1, p0, Lcom/android/emailcommon/service/AccountServiceProxy$3;->val$protocol:Ljava/lang/String;
 
-    iget-wide v3, p0, Lcom/android/emailcommon/service/AccountServiceProxy$3;->val$lastestMsgId:J
+    iget-object v2, p0, Lcom/android/emailcommon/service/AccountServiceProxy$3;->val$accountManagerType:Ljava/lang/String;
 
-    iget v5, p0, Lcom/android/emailcommon/service/AccountServiceProxy$3;->val$messageCount:I
+    invoke-interface {v0, v1, v2}, Lcom/android/emailcommon/service/IAccountService;->reconcileAccounts(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-interface/range {v0 .. v5}, Lcom/android/emailcommon/service/IAccountService;->notifyNewMessages(JJI)V
-
-    .line 69
+    .line 74
     return-void
 .end method

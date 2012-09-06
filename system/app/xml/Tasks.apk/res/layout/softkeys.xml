@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:id="@id/softkeyview" android:background="@drawable/winset_softkey_bg" android:paddingLeft="@dimen/padding_size" android:paddingTop="@dimen/padding_right_size_1" android:paddingRight="@dimen/padding_size" android:paddingBottom="@dimen/padding_bottom_size" android:layout_width="fill_parent" android:layout_height="@dimen/softkey_height_size"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <Button android:textSize="@dimen/softkey_text_size" android:ellipsize="marquee" android:gravity="center" android:id="@id/softkey_left" android:layout_width="fill_parent" android:layout_height="fill_parent" android:singleLine="true" android:layout_weight="1.0" />
-    <Button android:textSize="@dimen/softkey_text_size" android:ellipsize="marquee" android:gravity="center" android:id="@id/softkey_right" android:layout_width="fill_parent" android:layout_height="fill_parent" android:singleLine="true" android:layout_weight="1.0" />
-</LinearLayout>

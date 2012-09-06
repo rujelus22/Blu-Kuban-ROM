@@ -1,63 +1,206 @@
-.class final Lcom/google/common/collect/fu;
+.class abstract Lcom/google/common/collect/fu;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lcom/google/common/collect/gg;
+
 
 # direct methods
-.method private constructor <init>()V
+.method constructor <init>()V
     .registers 1
 
     .prologue
-    .line 119
+    .line 838
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method static a(Ljava/util/List;II)Ljava/util/List;
+
+# virtual methods
+.method public getExpirationTime()J
+    .registers 2
+
+    .prologue
+    .line 866
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public getHash()I
+    .registers 2
+
+    .prologue
+    .line 856
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public getKey()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 861
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public getNext()Lcom/google/common/collect/gg;
+    .registers 2
+
+    .prologue
+    .line 851
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public getNextEvictable()Lcom/google/common/collect/gg;
+    .registers 2
+
+    .prologue
+    .line 896
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public getNextExpirable()Lcom/google/common/collect/gg;
+    .registers 2
+
+    .prologue
+    .line 876
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public getPreviousEvictable()Lcom/google/common/collect/gg;
+    .registers 2
+
+    .prologue
+    .line 906
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public getPreviousExpirable()Lcom/google/common/collect/gg;
+    .registers 2
+
+    .prologue
+    .line 886
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public getValueReference()Lcom/google/common/collect/gs;
+    .registers 2
+
+    .prologue
+    .line 841
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public setExpirationTime(J)V
     .registers 4
     .parameter
-    .parameter
-    .parameter
 
     .prologue
-    .line 43
-    invoke-interface {p0, p1, p2}, Ljava/util/List;->subList(II)Ljava/util/List;
+    .line 871
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    return-object v0
+    throw v0
 .end method
 
-.method static a([Ljava/lang/Object;I[Ljava/lang/Object;II)V
-    .registers 6
-    .parameter
-    .parameter
-    .parameter
-    .parameter
+.method public setNextEvictable(Lcom/google/common/collect/gg;)V
+    .registers 3
     .parameter
 
     .prologue
-    .line 77
-    const/4 v0, 0x0
+    .line 901
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    invoke-static {p0, p1, p2, v0, p4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    .line 78
-    return-void
+    throw v0
 .end method
 
-.method static a([Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 2
+.method public setNextExpirable(Lcom/google/common/collect/gg;)V
+    .registers 3
     .parameter
 
     .prologue
-    .line 60
-    invoke-virtual {p0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
+    .line 881
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    check-cast v0, [Ljava/lang/Object;
+    throw v0
+.end method
 
-    return-object v0
+.method public setPreviousEvictable(Lcom/google/common/collect/gg;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 911
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public setPreviousExpirable(Lcom/google/common/collect/gg;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 891
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public setValueReference(Lcom/google/common/collect/gs;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 846
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
 .end method

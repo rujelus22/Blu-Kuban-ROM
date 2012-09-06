@@ -1,52 +1,50 @@
 .class final Lcom/google/common/collect/fo;
-.super Ljava/util/AbstractSet;
+.super Lcom/google/common/collect/i;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/common/collect/Multisets$SetMultiset;
+.field final synthetic a:Lcom/google/common/collect/Lists$StringAsImmutableList;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/Multisets$SetMultiset;)V
-    .registers 2
+.method constructor <init>(Lcom/google/common/collect/Lists$StringAsImmutableList;II)V
+    .registers 4
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 288
-    iput-object p1, p0, Lcom/google/common/collect/fo;->a:Lcom/google/common/collect/Multisets$SetMultiset;
+    .line 565
+    iput-object p1, p0, Lcom/google/common/collect/fo;->a:Lcom/google/common/collect/Lists$StringAsImmutableList;
 
-    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
+    invoke-direct {p0, p2, p3}, Lcom/google/common/collect/i;-><init>(II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final iterator()Ljava/util/Iterator;
-    .registers 2
+.method protected final synthetic a(I)Ljava/lang/Object;
+    .registers 3
+    .parameter
 
     .prologue
-    .line 293
-    new-instance v0, Lcom/google/common/collect/fp;
+    .line 565
+    iget-object v0, p0, Lcom/google/common/collect/fo;->a:Lcom/google/common/collect/Lists$StringAsImmutableList;
 
-    invoke-direct {v0, p0}, Lcom/google/common/collect/fp;-><init>(Lcom/google/common/collect/fo;)V
+    #getter for: Lcom/google/common/collect/Lists$StringAsImmutableList;->string:Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/common/collect/Lists$StringAsImmutableList;->access$000(Lcom/google/common/collect/Lists$StringAsImmutableList;)Ljava/lang/String;
 
-    return-object v0
-.end method
+    move-result-object v0
 
-.method public final size()I
-    .registers 2
-
-    .prologue
-    .line 290
-    iget-object v0, p0, Lcom/google/common/collect/fo;->a:Lcom/google/common/collect/Multisets$SetMultiset;
-
-    iget-object v0, v0, Lcom/google/common/collect/Multisets$SetMultiset;->delegate:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->size()I
+    invoke-virtual {v0, p1}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    return v0
+    invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+
+    move-result-object v0
+
+    return-object v0
 .end method

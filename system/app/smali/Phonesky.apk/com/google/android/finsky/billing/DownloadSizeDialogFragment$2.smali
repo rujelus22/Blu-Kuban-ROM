@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 64
+    .line 142
     iput-object p1, p0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$2;->this$0:Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "whichButton"
 
     .prologue
-    .line 67
+    .line 145
     iget-object v0, p0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$2;->this$0:Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment;->getTargetFragment()Landroid/support/v4/app/Fragment;
@@ -52,8 +52,8 @@
 
     check-cast v0, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$DownloadSizeDialogListener;
 
-    invoke-interface {v0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$DownloadSizeDialogListener;->onDownloadOk()V
+    invoke-interface {v0}, Lcom/google/android/finsky/billing/DownloadSizeDialogFragment$DownloadSizeDialogListener;->onDownloadWifi()V
 
-    .line 68
+    .line 146
     return-void
 .end method

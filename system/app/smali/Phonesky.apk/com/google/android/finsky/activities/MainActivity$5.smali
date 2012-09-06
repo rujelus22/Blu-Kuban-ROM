@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/finsky/activities/MainActivity;->initializeCarrierBillingParams()V
+    value = Lcom/google/android/finsky/activities/MainActivity;->initializeBilling()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 330
+    .line 404
     iput-object p1, p0, Lcom/google/android/finsky/activities/MainActivity$5;->this$0:Lcom/google/android/finsky/activities/MainActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,15 +38,38 @@
 
 # virtual methods
 .method public run()V
-    .registers 2
+    .registers 6
 
     .prologue
-    .line 333
-    iget-object v0, p0, Lcom/google/android/finsky/activities/MainActivity$5;->this$0:Lcom/google/android/finsky/activities/MainActivity;
+    .line 408
+    new-instance v1, Landroid/os/Handler;
 
-    #calls: Lcom/google/android/finsky/activities/MainActivity;->initializeCarrierBillingProvisioning()V
-    invoke-static {v0}, Lcom/google/android/finsky/activities/MainActivity;->access$500(Lcom/google/android/finsky/activities/MainActivity;)V
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    .line 334
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    new-instance v2, Lcom/google/android/finsky/activities/MainActivity$5$1;
+
+    invoke-direct {v2, p0}, Lcom/google/android/finsky/activities/MainActivity$5$1;-><init>(Lcom/google/android/finsky/activities/MainActivity$5;)V
+
+    sget-object v0, Lcom/google/android/finsky/config/G;->initializeBillingDelayMs:Lcom/google/android/finsky/config/GservicesValue;
+
+    invoke-virtual {v0}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    int-to-long v3, v0
+
+    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 420
     return-void
 .end method

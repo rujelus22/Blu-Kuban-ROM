@@ -167,11 +167,11 @@
 
     int-to-float v6, v0
 
-    const v7, 0x7f02018f
+    const v7, 0x7f02018e
 
-    const v8, 0x7f02018f
+    const v8, 0x7f02018e
 
-    const v9, 0x7f02018f
+    const v9, 0x7f02018e
 
     invoke-static {}, Lcom/sec/android/app/camera/glwidget/TwGLSelectPictureMenu;->access$600()I
 
@@ -213,11 +213,11 @@
 
     int-to-float v6, v0
 
-    const v7, 0x7f020193
+    const v7, 0x7f020192
 
-    const v8, 0x7f020193
+    const v8, 0x7f020192
 
-    const v9, 0x7f020193
+    const v9, 0x7f020192
 
     invoke-static {}, Lcom/sec/android/app/camera/glwidget/TwGLSelectPictureMenu;->access$600()I
 
@@ -375,7 +375,7 @@
 
     const/high16 v11, 0x4000
 
-    const v12, 0x7f02017b
+    const v12, 0x7f02017a
 
     move v8, v2
 

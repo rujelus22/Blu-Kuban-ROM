@@ -39,12 +39,12 @@
     iput-boolean v0, p0, Lcom/sec/android/app/dialertab/dialpad/EllipsisTextView;->mEllipsized:Z
 
     .line 46
-    const/high16 v0, 0x4236
+    const/high16 v0, 0x41c0
 
     iput v0, p0, Lcom/sec/android/app/dialertab/dialpad/EllipsisTextView;->mMaxTextSize:F
 
     .line 51
-    const/high16 v0, 0x41c0
+    const/high16 v0, 0x416e
 
     iput v0, p0, Lcom/sec/android/app/dialertab/dialpad/EllipsisTextView;->mMinTextSize:F
 
@@ -112,12 +112,12 @@
     iput-boolean v0, p0, Lcom/sec/android/app/dialertab/dialpad/EllipsisTextView;->mEllipsized:Z
 
     .line 46
-    const/high16 v0, 0x4236
+    const/high16 v0, 0x41c0
 
     iput v0, p0, Lcom/sec/android/app/dialertab/dialpad/EllipsisTextView;->mMaxTextSize:F
 
     .line 51
-    const/high16 v0, 0x41c0
+    const/high16 v0, 0x416e
 
     iput v0, p0, Lcom/sec/android/app/dialertab/dialpad/EllipsisTextView;->mMinTextSize:F
 
@@ -177,12 +177,12 @@
     iput-boolean v0, p0, Lcom/sec/android/app/dialertab/dialpad/EllipsisTextView;->mEllipsized:Z
 
     .line 46
-    const/high16 v0, 0x4236
+    const/high16 v0, 0x41c0
 
     iput v0, p0, Lcom/sec/android/app/dialertab/dialpad/EllipsisTextView;->mMaxTextSize:F
 
     .line 51
-    const/high16 v0, 0x41c0
+    const/high16 v0, 0x416e
 
     iput v0, p0, Lcom/sec/android/app/dialertab/dialpad/EllipsisTextView;->mMinTextSize:F
 

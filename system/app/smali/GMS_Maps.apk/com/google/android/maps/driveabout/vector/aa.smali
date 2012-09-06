@@ -1,13 +1,8 @@
-.class public interface abstract Lcom/google/android/maps/driveabout/vector/aa;
+.class public interface abstract Lcom/google/android/maps/driveabout/vector/aA;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # virtual methods
-.method public abstract a(Lcom/google/android/maps/driveabout/vector/aT;Lcom/google/android/maps/driveabout/vector/t;Lcom/google/android/maps/driveabout/vector/J;)V
-.end method
-
-.method public abstract a_(Lcom/google/android/maps/driveabout/vector/aT;)V
-.end method
-
-.method public abstract b(Lcom/google/android/maps/driveabout/vector/aT;)V
+.method public abstract a(Lcom/google/android/maps/driveabout/vector/ay;)Z
 .end method

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/about_settings_title"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:title="@string/about_title" android:key="@string/pref_about_key" android:summary="@string/about_summary" />
+    <ListPreference android:entries="@array/check_updates_entries" android:title="@string/check_updates_title" android:key="@string/pref_check_updates_key" android:defaultValue="@string/pref_check_updates_default" android:entryValues="@array/check_updates_values" />
+    <Preference android:title="@string/check_for_update_now_title" android:key="@string/pref_check_for_update_now_key" />
+    <Preference android:title="@string/rate_app_title" android:key="@string/pref_rate_app_key" android:summary="@string/rate_app_summary" />
+    <Preference android:title="@string/more_apps_title" android:key="@string/pref_more_apps_key" android:summary="@string/more_apps_summary" />
+    <Preference android:title="@string/help_title" android:key="@string/pref_help_key" android:summary="@string/help_summary" />
+</PreferenceScreen>

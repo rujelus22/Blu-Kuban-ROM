@@ -41,7 +41,7 @@
     iput-object v0, p0, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->mRosterListener:Lcom/google/android/talk/fragments/GroupChatInviteeListFragment$RosterListener;
 
     .line 67
-    iput-object p1, p0, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
+    iput-object p1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mAccountInfo:Lcom/google/android/talk/TalkApp$AccountInfo;
 
     .line 68
     iput-object p3, p0, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->mParticipants:[Ljava/lang/String;
@@ -131,7 +131,7 @@
     .prologue
     .line 149
     :try_start_0
-    iget-object v1, p0, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     iget-object v2, p0, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->mRosterListener:Lcom/google/android/talk/fragments/GroupChatInviteeListFragment$RosterListener;
 
@@ -175,22 +175,22 @@
 
     invoke-direct {v0, v1}, Lcom/google/android/talk/RosterListAdapter;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iput-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     .line 119
-    iget-object v0, p0, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-interface {v0}, Lcom/google/android/talk/IRosterListAdapter;->suppressIndent()V
 
     .line 120
-    iget-object v0, p0, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     const/4 v1, 0x1
 
     invoke-interface {v0, v1}, Lcom/google/android/talk/IRosterListAdapter;->suppressVideoButton(Z)V
 
     .line 121
-    iget-object v0, p0, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-virtual {p0}, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->getAccountInfo()Lcom/google/android/talk/TalkApp$AccountInfo;
 
@@ -289,19 +289,19 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->mList:Landroid/widget/ListView;
+    iget-object v2, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mList:Landroid/widget/ListView;
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->registerForContextMenu(Landroid/view/View;)V
 
     .line 142
-    iget-object v1, p0, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->mList:Landroid/widget/ListView;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mList:Landroid/widget/ListView;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/widget/ListView;->setTextFilterEnabled(Z)V
 
     .line 143
-    iget-object v1, p0, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     invoke-virtual {p0, v1}, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->setListAdapter(Lcom/google/android/talk/IRosterListAdapter;)V
 
@@ -378,7 +378,7 @@
 
     .line 97
     :cond_b
-    iget-object v0, p0, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
+    iget-object v0, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mRosterListAdapter:Lcom/google/android/talk/IRosterListAdapter;
 
     const/4 v1, 0x0
 
@@ -447,12 +447,12 @@
     .prologue
     .line 157
     :try_start_0
-    iget-object v1, p0, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     if-eqz v1, :cond_b
 
     .line 158
-    iget-object v1, p0, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v1, p0, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     iget-object v2, p0, Lcom/google/android/talk/fragments/GroupChatInviteeListFragment;->mRosterListener:Lcom/google/android/talk/fragments/GroupChatInviteeListFragment$RosterListener;
 

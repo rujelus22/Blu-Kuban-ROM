@@ -12,7 +12,7 @@
     .registers 1
 
     .prologue
-    .line 35
+    .line 34
     new-instance v0, Lorg/apache/commons/io/output/NullWriter;
 
     invoke-direct {v0}, Lorg/apache/commons/io/output/NullWriter;-><init>()V
@@ -26,10 +26,10 @@
     .registers 1
 
     .prologue
-    .line 40
+    .line 39
     invoke-direct {p0}, Ljava/io/Writer;-><init>()V
 
-    .line 41
+    .line 40
     return-void
 .end method
 
@@ -39,7 +39,7 @@
     .registers 1
 
     .prologue
-    .line 100
+    .line 94
     return-void
 .end method
 
@@ -47,7 +47,7 @@
     .registers 1
 
     .prologue
-    .line 95
+    .line 89
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .parameter "idx"
 
     .prologue
-    .line 50
+    .line 48
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .parameter "str"
 
     .prologue
-    .line 79
+    .line 74
     return-void
 .end method
 
@@ -76,7 +76,7 @@
     .parameter "end"
 
     .prologue
-    .line 90
+    .line 84
     return-void
 .end method
 
@@ -85,7 +85,7 @@
     .parameter "chr"
 
     .prologue
-    .line 59
+    .line 56
     return-void
 .end method
 
@@ -96,6 +96,6 @@
     .parameter "end"
 
     .prologue
-    .line 70
+    .line 66
     return-void
 .end method

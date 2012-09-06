@@ -1,9 +1,6 @@
 .class final Lcom/google/android/youtube/app/ui/bs;
-.super Ljava/lang/Object;
+.super Landroid/database/DataSetObserver;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -11,36 +8,55 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/ui/br;)V
+.method private constructor <init>(Lcom/google/android/youtube/app/ui/br;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 65
+    .line 242
     iput-object p1, p0, Lcom/google/android/youtube/app/ui/bs;->a:Lcom/google/android/youtube/app/ui/br;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/youtube/app/ui/br;B)V
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 242
+    invoke-direct {p0, p1}, Lcom/google/android/youtube/app/ui/bs;-><init>(Lcom/google/android/youtube/app/ui/br;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 3
+.method public final onChanged()V
+    .registers 2
 
     .prologue
-    .line 67
+    .line 246
     iget-object v0, p0, Lcom/google/android/youtube/app/ui/bs;->a:Lcom/google/android/youtube/app/ui/br;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/ui/br;->a(Lcom/google/android/youtube/app/ui/br;)Landroid/app/NotificationManager;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/br;->notifyDataSetChanged()V
 
-    move-result-object v0
+    .line 247
+    return-void
+.end method
 
-    const/16 v1, 0x3e8
+.method public final onInvalidated()V
+    .registers 2
 
-    invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->cancel(I)V
+    .prologue
+    .line 251
+    iget-object v0, p0, Lcom/google/android/youtube/app/ui/bs;->a:Lcom/google/android/youtube/app/ui/br;
 
-    .line 68
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/br;->notifyDataSetInvalidated()V
+
+    .line 252
     return-void
 .end method

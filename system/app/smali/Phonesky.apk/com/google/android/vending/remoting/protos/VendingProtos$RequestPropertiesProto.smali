@@ -77,76 +77,76 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 16261
+    .line 16726
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 16266
+    .line 16731
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->userAuthToken_:Ljava/lang/String;
 
-    .line 16283
+    .line 16748
     iput-boolean v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->userAuthTokenSecure_:Z
 
-    .line 16300
+    .line 16765
     iput v1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->softwareVersion_:I
 
-    .line 16317
+    .line 16782
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->aid_:Ljava/lang/String;
 
-    .line 16334
+    .line 16799
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->productNameAndVersion_:Ljava/lang/String;
 
-    .line 16351
+    .line 16816
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->userLanguage_:Ljava/lang/String;
 
-    .line 16368
+    .line 16833
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->userCountry_:Ljava/lang/String;
 
-    .line 16385
+    .line 16850
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->operatorName_:Ljava/lang/String;
 
-    .line 16402
+    .line 16867
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->simOperatorName_:Ljava/lang/String;
 
-    .line 16419
+    .line 16884
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->operatorNumericName_:Ljava/lang/String;
 
-    .line 16436
+    .line 16901
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->simOperatorNumericName_:Ljava/lang/String;
 
-    .line 16453
+    .line 16918
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->clientId_:Ljava/lang/String;
 
-    .line 16470
+    .line 16935
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->loggingId_:Ljava/lang/String;
 
-    .line 16554
+    .line 17020
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->cachedSize:I
 
-    .line 16261
+    .line 16726
     return-void
 .end method
 
@@ -156,7 +156,7 @@
     .registers 2
 
     .prologue
-    .line 16318
+    .line 16783
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->aid_:Ljava/lang/String;
 
     return-object v0
@@ -166,15 +166,15 @@
     .registers 2
 
     .prologue
-    .line 16556
+    .line 17023
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 16558
+    .line 17025
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getSerializedSize()I
 
-    .line 16560
+    .line 17027
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->cachedSize:I
 
@@ -185,7 +185,7 @@
     .registers 2
 
     .prologue
-    .line 16454
+    .line 16919
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->clientId_:Ljava/lang/String;
 
     return-object v0
@@ -195,7 +195,7 @@
     .registers 2
 
     .prologue
-    .line 16471
+    .line 16936
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->loggingId_:Ljava/lang/String;
 
     return-object v0
@@ -205,7 +205,7 @@
     .registers 2
 
     .prologue
-    .line 16386
+    .line 16851
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->operatorName_:Ljava/lang/String;
 
     return-object v0
@@ -215,7 +215,7 @@
     .registers 2
 
     .prologue
-    .line 16420
+    .line 16885
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->operatorNumericName_:Ljava/lang/String;
 
     return-object v0
@@ -225,7 +225,7 @@
     .registers 2
 
     .prologue
-    .line 16335
+    .line 16800
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->productNameAndVersion_:Ljava/lang/String;
 
     return-object v0
@@ -235,10 +235,10 @@
     .registers 4
 
     .prologue
-    .line 16564
+    .line 17032
     const/4 v0, 0x0
 
-    .line 16565
+    .line 17033
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasUserAuthToken()Z
 
@@ -246,7 +246,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 16566
+    .line 17034
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getUserAuthToken()Ljava/lang/String;
@@ -259,7 +259,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16569
+    .line 17037
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasUserAuthTokenSecure()Z
 
@@ -267,7 +267,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 16570
+    .line 17038
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getUserAuthTokenSecure()Z
@@ -280,7 +280,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16573
+    .line 17041
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasSoftwareVersion()Z
 
@@ -288,7 +288,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 16574
+    .line 17042
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getSoftwareVersion()I
@@ -301,7 +301,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16577
+    .line 17045
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasAid()Z
 
@@ -309,7 +309,7 @@
 
     if-eqz v1, :cond_41
 
-    .line 16578
+    .line 17046
     const/4 v1, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getAid()Ljava/lang/String;
@@ -322,7 +322,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16581
+    .line 17049
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasProductNameAndVersion()Z
 
@@ -330,7 +330,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 16582
+    .line 17050
     const/4 v1, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getProductNameAndVersion()Ljava/lang/String;
@@ -343,7 +343,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16585
+    .line 17053
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasUserLanguage()Z
 
@@ -351,7 +351,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 16586
+    .line 17054
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getUserLanguage()Ljava/lang/String;
@@ -364,7 +364,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16589
+    .line 17057
     :cond_61
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasUserCountry()Z
 
@@ -372,7 +372,7 @@
 
     if-eqz v1, :cond_71
 
-    .line 16590
+    .line 17058
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getUserCountry()Ljava/lang/String;
@@ -385,7 +385,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16593
+    .line 17061
     :cond_71
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasOperatorName()Z
 
@@ -393,7 +393,7 @@
 
     if-eqz v1, :cond_82
 
-    .line 16594
+    .line 17062
     const/16 v1, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getOperatorName()Ljava/lang/String;
@@ -406,7 +406,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16597
+    .line 17065
     :cond_82
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasSimOperatorName()Z
 
@@ -414,7 +414,7 @@
 
     if-eqz v1, :cond_93
 
-    .line 16598
+    .line 17066
     const/16 v1, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getSimOperatorName()Ljava/lang/String;
@@ -427,7 +427,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16601
+    .line 17069
     :cond_93
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasOperatorNumericName()Z
 
@@ -435,7 +435,7 @@
 
     if-eqz v1, :cond_a4
 
-    .line 16602
+    .line 17070
     const/16 v1, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getOperatorNumericName()Ljava/lang/String;
@@ -448,7 +448,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16605
+    .line 17073
     :cond_a4
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasSimOperatorNumericName()Z
 
@@ -456,7 +456,7 @@
 
     if-eqz v1, :cond_b5
 
-    .line 16606
+    .line 17074
     const/16 v1, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getSimOperatorNumericName()Ljava/lang/String;
@@ -469,7 +469,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16609
+    .line 17077
     :cond_b5
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasClientId()Z
 
@@ -477,7 +477,7 @@
 
     if-eqz v1, :cond_c6
 
-    .line 16610
+    .line 17078
     const/16 v1, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getClientId()Ljava/lang/String;
@@ -490,7 +490,7 @@
 
     add-int/2addr v0, v1
 
-    .line 16613
+    .line 17081
     :cond_c6
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasLoggingId()Z
 
@@ -498,7 +498,7 @@
 
     if-eqz v1, :cond_d7
 
-    .line 16614
+    .line 17082
     const/16 v1, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getLoggingId()Ljava/lang/String;
@@ -511,11 +511,11 @@
 
     add-int/2addr v0, v1
 
-    .line 16617
+    .line 17085
     :cond_d7
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->cachedSize:I
 
-    .line 16618
+    .line 17086
     return v0
 .end method
 
@@ -523,7 +523,7 @@
     .registers 2
 
     .prologue
-    .line 16403
+    .line 16868
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->simOperatorName_:Ljava/lang/String;
 
     return-object v0
@@ -533,7 +533,7 @@
     .registers 2
 
     .prologue
-    .line 16437
+    .line 16902
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->simOperatorNumericName_:Ljava/lang/String;
 
     return-object v0
@@ -543,7 +543,7 @@
     .registers 2
 
     .prologue
-    .line 16301
+    .line 16766
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->softwareVersion_:I
 
     return v0
@@ -553,7 +553,7 @@
     .registers 2
 
     .prologue
-    .line 16267
+    .line 16732
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->userAuthToken_:Ljava/lang/String;
 
     return-object v0
@@ -563,7 +563,7 @@
     .registers 2
 
     .prologue
-    .line 16284
+    .line 16749
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->userAuthTokenSecure_:Z
 
     return v0
@@ -573,7 +573,7 @@
     .registers 2
 
     .prologue
-    .line 16369
+    .line 16834
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->userCountry_:Ljava/lang/String;
 
     return-object v0
@@ -583,7 +583,7 @@
     .registers 2
 
     .prologue
-    .line 16352
+    .line 16817
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->userLanguage_:Ljava/lang/String;
 
     return-object v0
@@ -593,7 +593,7 @@
     .registers 2
 
     .prologue
-    .line 16319
+    .line 16784
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasAid:Z
 
     return v0
@@ -603,7 +603,7 @@
     .registers 2
 
     .prologue
-    .line 16455
+    .line 16920
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasClientId:Z
 
     return v0
@@ -613,7 +613,7 @@
     .registers 2
 
     .prologue
-    .line 16472
+    .line 16937
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasLoggingId:Z
 
     return v0
@@ -623,7 +623,7 @@
     .registers 2
 
     .prologue
-    .line 16387
+    .line 16852
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasOperatorName:Z
 
     return v0
@@ -633,7 +633,7 @@
     .registers 2
 
     .prologue
-    .line 16421
+    .line 16886
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasOperatorNumericName:Z
 
     return v0
@@ -643,7 +643,7 @@
     .registers 2
 
     .prologue
-    .line 16336
+    .line 16801
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasProductNameAndVersion:Z
 
     return v0
@@ -653,7 +653,7 @@
     .registers 2
 
     .prologue
-    .line 16404
+    .line 16869
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasSimOperatorName:Z
 
     return v0
@@ -663,7 +663,7 @@
     .registers 2
 
     .prologue
-    .line 16438
+    .line 16903
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasSimOperatorNumericName:Z
 
     return v0
@@ -673,7 +673,7 @@
     .registers 2
 
     .prologue
-    .line 16302
+    .line 16767
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasSoftwareVersion:Z
 
     return v0
@@ -683,7 +683,7 @@
     .registers 2
 
     .prologue
-    .line 16268
+    .line 16733
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasUserAuthToken:Z
 
     return v0
@@ -693,7 +693,7 @@
     .registers 2
 
     .prologue
-    .line 16285
+    .line 16750
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasUserAuthTokenSecure:Z
 
     return v0
@@ -703,7 +703,7 @@
     .registers 2
 
     .prologue
-    .line 16370
+    .line 16835
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasUserCountry:Z
 
     return v0
@@ -713,7 +713,7 @@
     .registers 2
 
     .prologue
-    .line 16353
+    .line 16818
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasUserLanguage:Z
 
     return v0
@@ -729,29 +729,29 @@
     .end annotation
 
     .prologue
-    .line 16625
+    .line 17094
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 16626
+    .line 17095
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_76
 
-    .line 16630
+    .line 17099
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 16631
+    .line 17100
     :sswitch_d
     return-object p0
 
-    .line 16636
+    .line 17105
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -761,7 +761,7 @@
 
     goto :goto_0
 
-    .line 16640
+    .line 17109
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
 
@@ -771,7 +771,7 @@
 
     goto :goto_0
 
-    .line 16644
+    .line 17113
     :sswitch_1e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -781,7 +781,7 @@
 
     goto :goto_0
 
-    .line 16648
+    .line 17117
     :sswitch_26
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -791,7 +791,7 @@
 
     goto :goto_0
 
-    .line 16652
+    .line 17121
     :sswitch_2e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -801,7 +801,7 @@
 
     goto :goto_0
 
-    .line 16656
+    .line 17125
     :sswitch_36
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -811,7 +811,7 @@
 
     goto :goto_0
 
-    .line 16660
+    .line 17129
     :sswitch_3e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -821,7 +821,7 @@
 
     goto :goto_0
 
-    .line 16664
+    .line 17133
     :sswitch_46
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -831,7 +831,7 @@
 
     goto :goto_0
 
-    .line 16668
+    .line 17137
     :sswitch_4e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -841,7 +841,7 @@
 
     goto :goto_0
 
-    .line 16672
+    .line 17141
     :sswitch_56
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -851,7 +851,7 @@
 
     goto :goto_0
 
-    .line 16676
+    .line 17145
     :sswitch_5e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -861,7 +861,7 @@
 
     goto :goto_0
 
-    .line 16680
+    .line 17149
     :sswitch_66
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -871,7 +871,7 @@
 
     goto :goto_0
 
-    .line 16684
+    .line 17153
     :sswitch_6e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -881,7 +881,7 @@
 
     goto :goto_0
 
-    .line 16626
+    .line 17095
     :sswitch_data_76
     .sparse-switch
         0x0 -> :sswitch_d
@@ -911,7 +911,7 @@
     .end annotation
 
     .prologue
-    .line 16259
+    .line 16724
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;
 
     move-result-object v0
@@ -924,15 +924,15 @@
     .parameter "value"
 
     .prologue
-    .line 16321
+    .line 16786
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasAid:Z
 
-    .line 16322
+    .line 16787
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->aid_:Ljava/lang/String;
 
-    .line 16323
+    .line 16788
     return-object p0
 .end method
 
@@ -941,15 +941,15 @@
     .parameter "value"
 
     .prologue
-    .line 16457
+    .line 16922
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasClientId:Z
 
-    .line 16458
+    .line 16923
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->clientId_:Ljava/lang/String;
 
-    .line 16459
+    .line 16924
     return-object p0
 .end method
 
@@ -958,15 +958,15 @@
     .parameter "value"
 
     .prologue
-    .line 16474
+    .line 16939
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasLoggingId:Z
 
-    .line 16475
+    .line 16940
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->loggingId_:Ljava/lang/String;
 
-    .line 16476
+    .line 16941
     return-object p0
 .end method
 
@@ -975,15 +975,15 @@
     .parameter "value"
 
     .prologue
-    .line 16389
+    .line 16854
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasOperatorName:Z
 
-    .line 16390
+    .line 16855
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->operatorName_:Ljava/lang/String;
 
-    .line 16391
+    .line 16856
     return-object p0
 .end method
 
@@ -992,15 +992,15 @@
     .parameter "value"
 
     .prologue
-    .line 16423
+    .line 16888
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasOperatorNumericName:Z
 
-    .line 16424
+    .line 16889
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->operatorNumericName_:Ljava/lang/String;
 
-    .line 16425
+    .line 16890
     return-object p0
 .end method
 
@@ -1009,15 +1009,15 @@
     .parameter "value"
 
     .prologue
-    .line 16338
+    .line 16803
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasProductNameAndVersion:Z
 
-    .line 16339
+    .line 16804
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->productNameAndVersion_:Ljava/lang/String;
 
-    .line 16340
+    .line 16805
     return-object p0
 .end method
 
@@ -1026,15 +1026,15 @@
     .parameter "value"
 
     .prologue
-    .line 16406
+    .line 16871
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasSimOperatorName:Z
 
-    .line 16407
+    .line 16872
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->simOperatorName_:Ljava/lang/String;
 
-    .line 16408
+    .line 16873
     return-object p0
 .end method
 
@@ -1043,15 +1043,15 @@
     .parameter "value"
 
     .prologue
-    .line 16440
+    .line 16905
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasSimOperatorNumericName:Z
 
-    .line 16441
+    .line 16906
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->simOperatorNumericName_:Ljava/lang/String;
 
-    .line 16442
+    .line 16907
     return-object p0
 .end method
 
@@ -1060,15 +1060,15 @@
     .parameter "value"
 
     .prologue
-    .line 16304
+    .line 16769
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasSoftwareVersion:Z
 
-    .line 16305
+    .line 16770
     iput p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->softwareVersion_:I
 
-    .line 16306
+    .line 16771
     return-object p0
 .end method
 
@@ -1077,15 +1077,15 @@
     .parameter "value"
 
     .prologue
-    .line 16270
+    .line 16735
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasUserAuthToken:Z
 
-    .line 16271
+    .line 16736
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->userAuthToken_:Ljava/lang/String;
 
-    .line 16272
+    .line 16737
     return-object p0
 .end method
 
@@ -1094,15 +1094,15 @@
     .parameter "value"
 
     .prologue
-    .line 16287
+    .line 16752
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasUserAuthTokenSecure:Z
 
-    .line 16288
+    .line 16753
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->userAuthTokenSecure_:Z
 
-    .line 16289
+    .line 16754
     return-object p0
 .end method
 
@@ -1111,15 +1111,15 @@
     .parameter "value"
 
     .prologue
-    .line 16372
+    .line 16837
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasUserCountry:Z
 
-    .line 16373
+    .line 16838
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->userCountry_:Ljava/lang/String;
 
-    .line 16374
+    .line 16839
     return-object p0
 .end method
 
@@ -1128,15 +1128,15 @@
     .parameter "value"
 
     .prologue
-    .line 16355
+    .line 16820
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasUserLanguage:Z
 
-    .line 16356
+    .line 16821
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->userLanguage_:Ljava/lang/String;
 
-    .line 16357
+    .line 16822
     return-object p0
 .end method
 
@@ -1150,14 +1150,14 @@
     .end annotation
 
     .prologue
-    .line 16513
+    .line 16979
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasUserAuthToken()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 16514
+    .line 16980
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getUserAuthToken()Ljava/lang/String;
@@ -1166,7 +1166,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 16516
+    .line 16982
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasUserAuthTokenSecure()Z
 
@@ -1174,7 +1174,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 16517
+    .line 16983
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getUserAuthTokenSecure()Z
@@ -1183,7 +1183,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 16519
+    .line 16985
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasSoftwareVersion()Z
 
@@ -1191,7 +1191,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 16520
+    .line 16986
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getSoftwareVersion()I
@@ -1200,7 +1200,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 16522
+    .line 16988
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasAid()Z
 
@@ -1208,7 +1208,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 16523
+    .line 16989
     const/4 v0, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getAid()Ljava/lang/String;
@@ -1217,7 +1217,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 16525
+    .line 16991
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasProductNameAndVersion()Z
 
@@ -1225,7 +1225,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 16526
+    .line 16992
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getProductNameAndVersion()Ljava/lang/String;
@@ -1234,7 +1234,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 16528
+    .line 16994
     :cond_46
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasUserLanguage()Z
 
@@ -1242,7 +1242,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 16529
+    .line 16995
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getUserLanguage()Ljava/lang/String;
@@ -1251,7 +1251,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 16531
+    .line 16997
     :cond_54
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasUserCountry()Z
 
@@ -1259,7 +1259,7 @@
 
     if-eqz v0, :cond_62
 
-    .line 16532
+    .line 16998
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getUserCountry()Ljava/lang/String;
@@ -1268,7 +1268,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 16534
+    .line 17000
     :cond_62
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasOperatorName()Z
 
@@ -1276,7 +1276,7 @@
 
     if-eqz v0, :cond_71
 
-    .line 16535
+    .line 17001
     const/16 v0, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getOperatorName()Ljava/lang/String;
@@ -1285,7 +1285,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 16537
+    .line 17003
     :cond_71
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasSimOperatorName()Z
 
@@ -1293,7 +1293,7 @@
 
     if-eqz v0, :cond_80
 
-    .line 16538
+    .line 17004
     const/16 v0, 0x9
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getSimOperatorName()Ljava/lang/String;
@@ -1302,7 +1302,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 16540
+    .line 17006
     :cond_80
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasOperatorNumericName()Z
 
@@ -1310,7 +1310,7 @@
 
     if-eqz v0, :cond_8f
 
-    .line 16541
+    .line 17007
     const/16 v0, 0xa
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getOperatorNumericName()Ljava/lang/String;
@@ -1319,7 +1319,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 16543
+    .line 17009
     :cond_8f
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasSimOperatorNumericName()Z
 
@@ -1327,7 +1327,7 @@
 
     if-eqz v0, :cond_9e
 
-    .line 16544
+    .line 17010
     const/16 v0, 0xb
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getSimOperatorNumericName()Ljava/lang/String;
@@ -1336,7 +1336,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 16546
+    .line 17012
     :cond_9e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasClientId()Z
 
@@ -1344,7 +1344,7 @@
 
     if-eqz v0, :cond_ad
 
-    .line 16547
+    .line 17013
     const/16 v0, 0xc
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getClientId()Ljava/lang/String;
@@ -1353,7 +1353,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 16549
+    .line 17015
     :cond_ad
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->hasLoggingId()Z
 
@@ -1361,7 +1361,7 @@
 
     if-eqz v0, :cond_bc
 
-    .line 16550
+    .line 17016
     const/16 v0, 0xd
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RequestPropertiesProto;->getLoggingId()Ljava/lang/String;
@@ -1370,7 +1370,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 16552
+    .line 17018
     :cond_bc
     return-void
 .end method

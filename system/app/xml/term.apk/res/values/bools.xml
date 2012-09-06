@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="pref_utf8_by_default_default">false</bool>
+    <bool name="pref_close_window_on_process_exit_default">true</bool>
+    <bool name="pref_verify_path_default">true</bool>
+    <bool name="pref_do_path_extensions_default">true</bool>
+    <bool name="pref_allow_prepend_path_default">true</bool>
+</resources>

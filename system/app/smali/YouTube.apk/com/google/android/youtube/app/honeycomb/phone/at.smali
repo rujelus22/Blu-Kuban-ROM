@@ -1,106 +1,63 @@
 .class final Lcom/google/android/youtube/app/honeycomb/phone/at;
-.super Landroid/content/BroadcastReceiver;
+.super Lcom/google/android/youtube/core/ui/j;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;
+.field final synthetic a:Lcom/google/android/youtube/core/utils/o;
+
+.field final synthetic b:Lcom/google/android/youtube/app/honeycomb/phone/as;
 
 
 # direct methods
-.method synthetic constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;)V
-    .registers 3
+.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/as;Landroid/app/Activity;Lcom/google/android/youtube/core/ui/g;Lcom/google/android/youtube/core/a/a;Lcom/google/android/youtube/core/async/ar;Lcom/google/android/youtube/core/d;Lcom/google/android/youtube/core/utils/o;)V
+    .registers 14
     .parameter
-
-    .prologue
-    .line 739
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/youtube/app/honeycomb/phone/at;-><init>(Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;B)V
-    .registers 3
+    .parameter
+    .parameter
+    .parameter
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 739
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/at;->a:Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;
+    .line 79
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/at;->b:Lcom/google/android/youtube/app/honeycomb/phone/as;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput-object p7, p0, Lcom/google/android/youtube/app/honeycomb/phone/at;->a:Lcom/google/android/youtube/core/utils/o;
+
+    move-object v0, p0
+
+    move-object v1, p2
+
+    move-object v2, p3
+
+    move-object v3, p4
+
+    move-object v4, p5
+
+    move-object v5, p6
+
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/youtube/core/ui/j;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/ui/g;Lcom/google/android/youtube/core/a/a;Lcom/google/android/youtube/core/async/ar;Lcom/google/android/youtube/core/d;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .registers 4
-
-    .prologue
-    .line 741
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/at;->a:Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;
-
-    new-instance v1, Landroid/content/IntentFilter;
-
-    const-string v2, "android.media.AUDIO_BECOMING_NOISY"
-
-    invoke-direct {v1, v2}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p0, v1}, Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    .line 743
-    return-void
-.end method
-
-.method public final b()V
-    .registers 2
-
-    .prologue
-    .line 746
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/at;->a:Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;
-
-    invoke-virtual {v0, p0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-
-    .line 747
-    return-void
-.end method
-
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 4
-    .parameter
+.method public final bridge synthetic a(Ljava/lang/Object;)Z
+    .registers 3
     .parameter
 
     .prologue
-    .line 751
-    invoke-static {}, Lcom/google/android/youtube/core/L;->b()V
+    .line 79
+    check-cast p1, Lcom/google/android/youtube/core/model/LiveEvent;
 
-    .line 752
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/at;->a:Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/at;->a:Lcom/google/android/youtube/core/utils/o;
 
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;->b(Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;)Lcom/google/android/youtube/core/player/aq;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/player/aq;->b()Z
+    invoke-interface {v0, p1}, Lcom/google/android/youtube/core/utils/o;->a(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_18
-
-    .line 753
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/at;->a:Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;->b(Lcom/google/android/youtube/app/honeycomb/phone/WatchActivity;)Lcom/google/android/youtube/core/player/aq;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/youtube/core/player/aq;->e()V
-
-    .line 755
-    :cond_18
-    return-void
+    return v0
 .end method

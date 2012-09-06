@@ -16,10 +16,10 @@
     .registers 1
 
     .prologue
-    .line 48
+    .line 42
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 68
+    .line 49
     return-void
 .end method
 
@@ -30,7 +30,7 @@
     .parameter "intent"
 
     .prologue
-    .line 212
+    .line 158
     const-string v0, "android.accounts.AccountAuthenticator"
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -43,7 +43,7 @@
 
     if-eqz v0, :cond_16
 
-    .line 213
+    .line 159
     new-instance v0, Lcom/android/email/service/EasAuthenticatorService$EasAuthenticator;
 
     invoke-direct {v0, p0, p0}, Lcom/android/email/service/EasAuthenticatorService$EasAuthenticator;-><init>(Lcom/android/email/service/EasAuthenticatorService;Landroid/content/Context;)V
@@ -52,7 +52,7 @@
 
     move-result-object v0
 
-    .line 215
+    .line 161
     :goto_15
     return-object v0
 

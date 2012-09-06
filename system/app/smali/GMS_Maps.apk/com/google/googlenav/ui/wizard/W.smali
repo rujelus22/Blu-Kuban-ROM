@@ -1,78 +1,69 @@
-.class Lcom/google/googlenav/ui/wizard/W;
-.super Lax/bl;
+.class synthetic Lcom/google/googlenav/ui/wizard/w;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# instance fields
-.field final synthetic b:Lcom/google/googlenav/ui/wizard/aX;
-
-.field final synthetic c:Lcom/google/googlenav/ui/wizard/R;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/R;Lax/bq;Lcom/google/googlenav/ui/wizard/aX;)V
-    .registers 4
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/W;->c:Lcom/google/googlenav/ui/wizard/R;
-
-    iput-object p3, p0, Lcom/google/googlenav/ui/wizard/W;->b:Lcom/google/googlenav/ui/wizard/aX;
-
-    invoke-direct {p0, p2}, Lax/bl;-><init>(Lax/bq;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public E_()V
+.method static constructor <clinit>()V
     .registers 3
 
-    invoke-super {p0}, Lax/bl;->E_()V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/W;->c:Lcom/google/googlenav/ui/wizard/R;
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/W;->b:Lcom/google/googlenav/ui/wizard/aX;
-
-    invoke-static {v0, v1}, Lcom/google/googlenav/ui/wizard/R;->a(Lcom/google/googlenav/ui/wizard/R;Lcom/google/googlenav/ui/wizard/aX;)V
-
-    return-void
-.end method
-
-.method public F_()V
-    .registers 3
-
-    invoke-super {p0}, Lax/bl;->F_()V
-
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/W;->c:Lcom/google/googlenav/ui/wizard/R;
-
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/R;->a:Lcom/google/googlenav/ui/wizard/P;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/P;->g(Lcom/google/googlenav/ui/wizard/P;)Lcom/google/googlenav/ui/wizard/aj;
+    .prologue
+    .line 160
+    invoke-static {}, Lcom/google/googlenav/ui/wizard/m;->values()[Lcom/google/googlenav/ui/wizard/m;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    array-length v0, v0
 
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/wizard/aj;->a(Z)V
+    new-array v0, v0, [I
 
+    sput-object v0, Lcom/google/googlenav/ui/wizard/w;->a:[I
+
+    :try_start_9
+    sget-object v0, Lcom/google/googlenav/ui/wizard/w;->a:[I
+
+    sget-object v1, Lcom/google/googlenav/ui/wizard/m;->c:Lcom/google/googlenav/ui/wizard/m;
+
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/wizard/m;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_22
+
+    :goto_14
+    :try_start_14
+    sget-object v0, Lcom/google/googlenav/ui/wizard/w;->a:[I
+
+    sget-object v1, Lcom/google/googlenav/ui/wizard/m;->b:Lcom/google/googlenav/ui/wizard/m;
+
+    invoke-virtual {v1}, Lcom/google/googlenav/ui/wizard/m;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_20
+
+    :goto_1f
     return-void
-.end method
 
-.method public i()V
-    .registers 3
+    :catch_20
+    move-exception v0
 
-    invoke-super {p0}, Lax/bl;->i()V
+    goto :goto_1f
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/W;->c:Lcom/google/googlenav/ui/wizard/R;
+    :catch_22
+    move-exception v0
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/R;->a:Lcom/google/googlenav/ui/wizard/P;
-
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/P;->g(Lcom/google/googlenav/ui/wizard/P;)Lcom/google/googlenav/ui/wizard/aj;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/wizard/aj;->a(Z)V
-
-    return-void
+    goto :goto_14
 .end method

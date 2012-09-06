@@ -24,7 +24,7 @@
 
 .field static final ALL_DEVICES_DISCONNECTED:I = 0x34
 
-.field private static final DBG:Z = true
+.field private static final DBG:Z = false
 
 .field private static final DEVICES_DISCONNECT_TIMEOUT:I = 0x67
 

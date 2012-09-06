@@ -1,348 +1,226 @@
 .class public Lcom/google/android/maps/driveabout/vector/co;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# static fields
-.field private static final a:Ljava/util/Set;
+# instance fields
+.field private a:Ljava/lang/Boolean;
+
+.field private b:Ljava/lang/Boolean;
+
+.field private c:Ljava/lang/Boolean;
+
+.field private d:Ljava/lang/Integer;
+
+.field private e:Ljava/lang/Integer;
+
+.field private f:Z
+
+.field private g:I
+
+.field private h:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .registers 2
 
-    new-instance v0, Ljava/util/HashSet;
+    .prologue
+    .line 930
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+    .line 937
+    const v0, 0x73217bce
 
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->ARABIC:Ljava/lang/Character$UnicodeBlock;
+    iput v0, p0, Lcom/google/android/maps/driveabout/vector/co;->g:I
 
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    .line 938
+    const v0, 0x338cc6ef
 
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->BASIC_LATIN:Ljava/lang/Character$UnicodeBlock;
+    iput v0, p0, Lcom/google/android/maps/driveabout/vector/co;->h:I
 
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    return-void
+.end method
 
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->COMBINING_DIACRITICAL_MARKS:Ljava/lang/Character$UnicodeBlock;
 
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+# virtual methods
+.method public a()Lcom/google/android/maps/driveabout/vector/co;
+    .registers 2
 
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->CYRILLIC:Ljava/lang/Character$UnicodeBlock;
+    .prologue
+    .line 979
+    const/4 v0, 0x1
 
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    iput-boolean v0, p0, Lcom/google/android/maps/driveabout/vector/co;->f:Z
 
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->ENCLOSED_ALPHANUMERICS:Ljava/lang/Character$UnicodeBlock;
+    .line 980
+    return-object p0
+.end method
 
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+.method public a(I)Lcom/google/android/maps/driveabout/vector/co;
+    .registers 3
+    .parameter
 
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->GENERAL_PUNCTUATION:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->GEOMETRIC_SHAPES:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->GREEK:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->HEBREW:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->IPA_EXTENSIONS:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->LATIN_EXTENDED_A:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->LATIN_EXTENDED_ADDITIONAL:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->LATIN_EXTENDED_B:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->LATIN_1_SUPPLEMENT:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->LETTERLIKE_SYMBOLS:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->MISCELLANEOUS_SYMBOLS:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->NUMBER_FORMS:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->SPACING_MODIFIER_LETTERS:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->THAI:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->HANGUL_JAMO:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->CJK_RADICALS_SUPPLEMENT:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->KANGXI_RADICALS:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->CJK_SYMBOLS_AND_PUNCTUATION:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->HIRAGANA:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->KATAKANA:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->BOPOMOFO:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->HANGUL_COMPATIBILITY_JAMO:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->KANBUN:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->BOPOMOFO_EXTENDED:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->KATAKANA_PHONETIC_EXTENSIONS:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->ENCLOSED_CJK_LETTERS_AND_MONTHS:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->CJK_COMPATIBILITY:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->CJK_UNIFIED_IDEOGRAPHS:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->HANGUL_SYLLABLES:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->CJK_COMPATIBILITY_IDEOGRAPHS:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->CJK_COMPATIBILITY_FORMS:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->HALFWIDTH_AND_FULLWIDTH_FORMS:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Ljava/lang/Character$UnicodeBlock;->CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT:Ljava/lang/Character$UnicodeBlock;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
+    .prologue
+    .line 959
+    invoke-virtual {p0, p1, p1}, Lcom/google/android/maps/driveabout/vector/co;->a(II)Lcom/google/android/maps/driveabout/vector/co;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/maps/driveabout/vector/co;->a:Ljava/util/Set;
-
-    return-void
+    return-object v0
 .end method
 
-.method private constructor <init>()V
-    .registers 1
+.method public a(II)Lcom/google/android/maps/driveabout/vector/co;
+    .registers 4
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 967
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public static a(Ljava/lang/String;)Ljava/lang/String;
-    .registers 9
+    iput-object v0, p0, Lcom/google/android/maps/driveabout/vector/co;->d:Ljava/lang/Integer;
 
-    const/4 v0, 0x0
+    .line 968
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/4 v2, 0x0
+    move-result-object v0
 
-    if-nez p0, :cond_6
+    iput-object v0, p0, Lcom/google/android/maps/driveabout/vector/co;->e:Ljava/lang/Integer;
 
-    move-object p0, v0
-
-    :cond_5
-    :goto_5
+    .line 969
     return-object p0
-
-    :cond_6
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    move v1, v2
-
-    :goto_b
-    if-ge v1, v3, :cond_5b
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->codePointAt(I)I
-
-    move-result v4
-
-    invoke-static {v4}, Lcom/google/android/maps/driveabout/vector/co;->a(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_26
-
-    if-eqz v0, :cond_62
-
-    int-to-char v4, v4
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move v7, v1
-
-    move-object v1, v0
-
-    move v0, v7
-
-    :goto_20
-    add-int/lit8 v0, v0, 0x1
-
-    move v7, v0
-
-    move-object v0, v1
-
-    move v1, v7
-
-    goto :goto_b
-
-    :cond_26
-    invoke-static {v4}, Ljava/lang/Character$UnicodeBlock;->of(I)Ljava/lang/Character$UnicodeBlock;
-
-    move-result-object v5
-
-    sget-object v6, Lcom/google/android/maps/driveabout/vector/co;->a:Ljava/util/Set;
-
-    invoke-interface {v6, v5}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_51
-
-    if-nez v0, :cond_40
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_40
-    const/16 v5, 0x20
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    :cond_45
-    :goto_45
-    invoke-static {v4}, Ljava/lang/Character;->isSupplementaryCodePoint(I)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_62
-
-    add-int/lit8 v1, v1, 0x1
-
-    move v7, v1
-
-    move-object v1, v0
-
-    move v0, v7
-
-    goto :goto_20
-
-    :cond_51
-    if-eqz v0, :cond_45
-
-    invoke-static {v4}, Ljava/lang/Character;->toChars(I)[C
-
-    move-result-object v5
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append([C)Ljava/lang/StringBuilder;
-
-    goto :goto_45
-
-    :cond_5b
-    if-eqz v0, :cond_5
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    goto :goto_5
-
-    :cond_62
-    move v7, v1
-
-    move-object v1, v0
-
-    move v0, v7
-
-    goto :goto_20
 .end method
 
-.method private static a(I)Z
+.method public a(Z)Lcom/google/android/maps/driveabout/vector/co;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 941
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/maps/driveabout/vector/co;->a:Ljava/lang/Boolean;
+
+    .line 942
+    return-object p0
+.end method
+
+.method public b()Lcom/google/android/maps/driveabout/vector/co;
     .registers 2
 
-    if-ltz p0, :cond_8
+    .prologue
+    .line 984
+    const/4 v0, 0x0
 
-    const/16 v0, 0x7f
+    iput-boolean v0, p0, Lcom/google/android/maps/driveabout/vector/co;->f:Z
 
-    if-gt p0, v0, :cond_8
+    .line 985
+    return-object p0
+.end method
+
+.method public b(II)Lcom/google/android/maps/driveabout/vector/co;
+    .registers 3
+    .parameter
+    .parameter
+
+    .prologue
+    .line 973
+    iput p1, p0, Lcom/google/android/maps/driveabout/vector/co;->g:I
+
+    .line 974
+    iput p2, p0, Lcom/google/android/maps/driveabout/vector/co;->h:I
+
+    .line 975
+    return-object p0
+.end method
+
+.method public b(Z)Lcom/google/android/maps/driveabout/vector/co;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 946
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/maps/driveabout/vector/co;->b:Ljava/lang/Boolean;
+
+    .line 947
+    return-object p0
+.end method
+
+.method public c()Lcom/google/android/maps/driveabout/vector/cn;
+    .registers 10
+
+    .prologue
+    .line 989
+    iget-object v0, p0, Lcom/google/android/maps/driveabout/vector/co;->e:Ljava/lang/Integer;
+
+    if-eqz v0, :cond_28
 
     const/4 v0, 0x1
 
-    :goto_7
-    return v0
+    :goto_5
+    const-string v1, "Texture ID must be specified."
 
-    :cond_8
+    invoke-static {v0, v1}, Lcom/google/common/base/P;->b(ZLjava/lang/Object;)V
+
+    .line 990
+    new-instance v0, Lcom/google/android/maps/driveabout/vector/cn;
+
+    iget-object v1, p0, Lcom/google/android/maps/driveabout/vector/co;->a:Ljava/lang/Boolean;
+
+    iget-object v2, p0, Lcom/google/android/maps/driveabout/vector/co;->b:Ljava/lang/Boolean;
+
+    iget-object v3, p0, Lcom/google/android/maps/driveabout/vector/co;->c:Ljava/lang/Boolean;
+
+    iget-boolean v4, p0, Lcom/google/android/maps/driveabout/vector/co;->f:Z
+
+    iget-object v5, p0, Lcom/google/android/maps/driveabout/vector/co;->d:Ljava/lang/Integer;
+
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+
+    move-result v5
+
+    iget-object v6, p0, Lcom/google/android/maps/driveabout/vector/co;->e:Ljava/lang/Integer;
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    iget v7, p0, Lcom/google/android/maps/driveabout/vector/co;->g:I
+
+    iget v8, p0, Lcom/google/android/maps/driveabout/vector/co;->h:I
+
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/maps/driveabout/vector/cn;-><init>(Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;ZIIII)V
+
+    return-object v0
+
+    .line 989
+    :cond_28
     const/4 v0, 0x0
 
-    goto :goto_7
+    goto :goto_5
+.end method
+
+.method public c(Z)Lcom/google/android/maps/driveabout/vector/co;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 951
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/maps/driveabout/vector/co;->c:Ljava/lang/Boolean;
+
+    .line 952
+    return-object p0
 .end method

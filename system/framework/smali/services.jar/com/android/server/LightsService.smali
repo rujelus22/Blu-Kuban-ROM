@@ -16,7 +16,7 @@
 
 .field static final BRIGHTNESS_MODE_USER:I = 0x0
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field static final LIGHT_FLASH_HARDWARE:I = 0x2
 

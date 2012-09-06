@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="view_flipper">false</item>
+    <item type="id" name="window_list_label">false</item>
+    <item type="id" name="window_list_separator">false</item>
+    <item type="id" name="window_list_close">false</item>
+    <item type="id" name="menu_new_window">false</item>
+    <item type="id" name="menu_close_window">false</item>
+    <item type="id" name="menu_window_list">false</item>
+    <item type="id" name="menu_toggle_soft_keyboard">false</item>
+    <item type="id" name="menu_special_keys">false</item>
+    <item type="id" name="menu_preferences">false</item>
+    <item type="id" name="menu_reset">false</item>
+    <item type="id" name="menu_send_email">false</item>
+    <item type="id" name="menu_toggle_wakelock">false</item>
+    <item type="id" name="menu_toggle_wifilock">false</item>
+</resources>

@@ -58,7 +58,7 @@
 
     const/4 v3, 0x0
 
-    .line 20
+    .line 23
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "Unknown"
@@ -67,7 +67,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->Unknown:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 21
+    .line 24
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "HomeFeed"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->HomeFeed:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 22
+    .line 25
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "Browse"
@@ -85,7 +85,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->Browse:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 23
+    .line 26
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "SearchResults"
@@ -94,7 +94,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->SearchResults:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 24
+    .line 27
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "RelatedVideos"
@@ -103,7 +103,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->RelatedVideos:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 25
+    .line 28
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "Uploads"
@@ -114,7 +114,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->Uploads:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 26
+    .line 29
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "Favorites"
@@ -125,7 +125,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->Favorites:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 27
+    .line 30
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "Playlist"
@@ -136,7 +136,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->Playlist:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 28
+    .line 31
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "ChannelUploads"
@@ -147,7 +147,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->ChannelUploads:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 29
+    .line 32
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "ChannelFavorites"
@@ -158,7 +158,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->ChannelFavorites:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 30
+    .line 33
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "ChannelActivity"
@@ -169,7 +169,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->ChannelActivity:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 31
+    .line 34
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "Widget"
@@ -180,7 +180,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->Widget:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 32
+    .line 35
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "RelatedArtist"
@@ -191,7 +191,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->RelatedArtist:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 33
+    .line 36
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "ArtistTracks"
@@ -202,7 +202,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->ArtistTracks:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 34
+    .line 37
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "UploaderNotification"
@@ -213,7 +213,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->UploaderNotification:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 35
+    .line 38
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "Live"
@@ -224,7 +224,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->Live:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 36
+    .line 39
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "WatchLater"
@@ -235,7 +235,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->WatchLater:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 37
+    .line 40
     new-instance v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     const-string v1, "WatchHistory"
@@ -246,7 +246,7 @@
 
     sput-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->WatchHistory:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    .line 19
+    .line 22
     const/16 v0, 0x12
 
     new-array v0, v0, [Lcom/google/android/youtube/core/Analytics$VideoCategory;
@@ -360,7 +360,7 @@
     .parameter
 
     .prologue
-    .line 19
+    .line 22
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -371,7 +371,7 @@
     .parameter
 
     .prologue
-    .line 19
+    .line 22
     const-class v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -387,7 +387,7 @@
     .registers 1
 
     .prologue
-    .line 19
+    .line 22
     sget-object v0, Lcom/google/android/youtube/core/Analytics$VideoCategory;->$VALUES:[Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
     invoke-virtual {v0}, [Lcom/google/android/youtube/core/Analytics$VideoCategory;->clone()Ljava/lang/Object;

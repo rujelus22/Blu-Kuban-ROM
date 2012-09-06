@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/emailcommon/service/EmailServiceProxy;->validate(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZZ)Landroid/os/Bundle;
+    value = Lcom/android/emailcommon/service/EmailServiceProxy;->autoDiscover(Ljava/lang/String;Ljava/lang/String;)Landroid/os/Bundle;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,52 +20,27 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
-.field final synthetic val$host:Ljava/lang/String;
-
 .field final synthetic val$password:Ljava/lang/String;
-
-.field final synthetic val$port:I
-
-.field final synthetic val$protocol:Ljava/lang/String;
-
-.field final synthetic val$ssl:Z
-
-.field final synthetic val$trustCertificates:Z
 
 .field final synthetic val$userName:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/emailcommon/service/EmailServiceProxy;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZZ)V
-    .registers 9
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
+.method constructor <init>(Lcom/android/emailcommon/service/EmailServiceProxy;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 4
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 180
+    .line 224
     iput-object p1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
-    iput-object p2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$protocol:Ljava/lang/String;
+    iput-object p2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$userName:Ljava/lang/String;
 
-    iput-object p3, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$host:Ljava/lang/String;
+    iput-object p3, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$password:Ljava/lang/String;
 
-    iput-object p4, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$userName:Ljava/lang/String;
-
-    iput-object p5, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$password:Ljava/lang/String;
-
-    iput p6, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$port:I
-
-    iput-boolean p7, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$ssl:Z
-
-    iput-boolean p8, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$trustCertificates:Z
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -73,7 +48,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 10
+    .registers 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -81,7 +56,7 @@
     .end annotation
 
     .prologue
-    .line 182
+    .line 226
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mCallback:Lcom/android/emailcommon/service/IEmailServiceCallback;
@@ -91,7 +66,6 @@
 
     if-eqz v0, :cond_17
 
-    .line 183
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
     #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mService:Lcom/android/emailcommon/service/IEmailService;
@@ -108,38 +82,28 @@
 
     invoke-interface {v0, v1}, Lcom/android/emailcommon/service/IEmailService;->setCallback(Lcom/android/emailcommon/service/IEmailServiceCallback;)V
 
-    .line 184
+    .line 227
     :cond_17
-    iget-object v8, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
-
     iget-object v0, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
 
+    iget-object v1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->this$0:Lcom/android/emailcommon/service/EmailServiceProxy;
+
     #getter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mService:Lcom/android/emailcommon/service/IEmailService;
-    invoke-static {v0}, Lcom/android/emailcommon/service/EmailServiceProxy;->access$100(Lcom/android/emailcommon/service/EmailServiceProxy;)Lcom/android/emailcommon/service/IEmailService;
+    invoke-static {v1}, Lcom/android/emailcommon/service/EmailServiceProxy;->access$100(Lcom/android/emailcommon/service/EmailServiceProxy;)Lcom/android/emailcommon/service/IEmailService;
 
-    move-result-object v0
+    move-result-object v1
 
-    iget-object v1, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$protocol:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$userName:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$host:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$password:Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$userName:Ljava/lang/String;
+    invoke-interface {v1, v2, v3}, Lcom/android/emailcommon/service/IEmailService;->autoDiscover(Ljava/lang/String;Ljava/lang/String;)Landroid/os/Bundle;
 
-    iget-object v4, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$password:Ljava/lang/String;
-
-    iget v5, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$port:I
-
-    iget-boolean v6, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$ssl:Z
-
-    iget-boolean v7, p0, Lcom/android/emailcommon/service/EmailServiceProxy$5;->val$trustCertificates:Z
-
-    invoke-interface/range {v0 .. v7}, Lcom/android/emailcommon/service/IEmailService;->validate(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZZ)Landroid/os/Bundle;
-
-    move-result-object v0
+    move-result-object v1
 
     #setter for: Lcom/android/emailcommon/service/EmailServiceProxy;->mReturn:Ljava/lang/Object;
-    invoke-static {v8, v0}, Lcom/android/emailcommon/service/EmailServiceProxy;->access$302(Lcom/android/emailcommon/service/EmailServiceProxy;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/android/emailcommon/service/EmailServiceProxy;->access$202(Lcom/android/emailcommon/service/EmailServiceProxy;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 186
+    .line 228
     return-void
 .end method

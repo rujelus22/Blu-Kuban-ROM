@@ -1,26 +1,36 @@
 .class public abstract Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;
-.super Landroid/app/Activity;
+.super Landroid/support/v4/app/FragmentActivity;
 .source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/youtube/app/remote/ae;
+.implements Lcom/google/android/youtube/core/async/bd;
 
 
 # instance fields
-.field private a:Lcom/google/android/youtube/app/YouTubeApplication;
+.field private m:Lcom/google/android/youtube/app/YouTubeApplication;
 
-.field private b:Landroid/content/SharedPreferences;
+.field private n:Landroid/content/SharedPreferences;
 
-.field private c:Lcom/google/android/youtube/core/Analytics;
+.field private o:Lcom/google/android/youtube/core/Analytics;
 
-.field private d:Lcom/google/android/youtube/app/o;
+.field private p:Lcom/google/android/youtube/app/a;
 
-.field private e:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
+.field private q:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
 
-.field private f:Landroid/app/ActionBar;
+.field private r:Landroid/app/ActionBar;
 
-.field private g:Lcom/google/android/youtube/app/ui/af;
+.field private s:Lcom/google/android/youtube/app/ui/am;
 
-.field private h:Z
+.field private t:Z
 
-.field private i:Lcom/google/android/youtube/app/ui/bb;
+.field private u:Lcom/google/android/youtube/app/ui/bq;
+
+.field private v:Lcom/google/android/youtube/core/async/UserAuthorizer;
+
+.field private w:Lcom/google/android/youtube/app/remote/ab;
+
+.field private x:Lcom/google/android/youtube/app/honeycomb/phone/au;
 
 
 # direct methods
@@ -28,26 +38,22 @@
     .registers 1
 
     .prologue
-    .line 33
-    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
+    .line 41
+    invoke-direct {p0}, Landroid/support/v4/app/FragmentActivity;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected a(I)Landroid/app/Dialog;
+.method public a(Landroid/app/Activity;Lcom/google/android/youtube/core/model/UserAuth;)V
     .registers 3
+    .parameter
     .parameter
 
     .prologue
-    .line 224
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method protected abstract a()Ljava/lang/String;
+    .line 322
+    return-void
 .end method
 
 .method protected a(Lcom/google/android/youtube/app/YouTubeApplication;)V
@@ -55,107 +61,100 @@
     .parameter
 
     .prologue
-    .line 155
+    .line 205
     return-void
 .end method
 
-.method protected final a(Ljava/lang/String;)V
+.method public a(Lcom/google/android/youtube/app/remote/RemoteControl;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 336
+    if-eqz p1, :cond_8
+
+    .line 337
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->u:Lcom/google/android/youtube/app/ui/bq;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/youtube/app/ui/bq;->a(Lcom/google/android/youtube/app/remote/RemoteControl;)V
+
+    .line 341
+    :goto_7
+    return-void
+
+    .line 339
+    :cond_8
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->u:Lcom/google/android/youtube/app/ui/bq;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/bq;->a()V
+
+    goto :goto_7
+.end method
+
+.method protected b(I)Landroid/app/Dialog;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 283
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method protected final b(Ljava/lang/String;)V
     .registers 4
     .parameter
 
     .prologue
     const/16 v1, 0x8
 
-    .line 101
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->f:Landroid/app/ActionBar;
+    .line 151
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->r:Landroid/app/ActionBar;
 
     invoke-virtual {v0, v1, v1}, Landroid/app/ActionBar;->setDisplayOptions(II)V
 
-    .line 103
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->f:Landroid/app/ActionBar;
+    .line 153
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->r:Landroid/app/ActionBar;
 
     invoke-virtual {v0, p1}, Landroid/app/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 104
+    .line 154
     return-void
 .end method
 
-.method protected final d(I)V
+.method protected abstract e()Ljava/lang/String;
+.end method
+
+.method protected final e(I)V
     .registers 4
     .parameter
 
     .prologue
     const/16 v1, 0x8
 
-    .line 95
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->f:Landroid/app/ActionBar;
+    .line 145
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->r:Landroid/app/ActionBar;
 
     invoke-virtual {v0, v1, v1}, Landroid/app/ActionBar;->setDisplayOptions(II)V
 
-    .line 97
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->f:Landroid/app/ActionBar;
+    .line 147
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->r:Landroid/app/ActionBar;
 
     invoke-virtual {v0, p1}, Landroid/app/ActionBar;->setTitle(I)V
 
-    .line 98
+    .line 148
     return-void
 .end method
 
-.method protected d()Z
+.method protected f()Z
     .registers 2
 
     .prologue
-    .line 120
+    .line 170
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method protected final k()V
-    .registers 4
-
-    .prologue
-    .line 107
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->f:Landroid/app/ActionBar;
-
-    const/4 v1, 0x0
-
-    const/16 v2, 0x8
-
-    invoke-virtual {v0, v1, v2}, Landroid/app/ActionBar;->setDisplayOptions(II)V
-
-    .line 109
-    return-void
-.end method
-
-.method protected final l()Lcom/google/android/youtube/app/o;
-    .registers 2
-
-    .prologue
-    .line 180
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->d:Lcom/google/android/youtube/app/o;
-
-    return-object v0
-.end method
-
-.method protected final m()Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
-    .registers 2
-
-    .prologue
-    .line 184
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->e:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
-
-    return-object v0
-.end method
-
-.method public final n()Lcom/google/android/youtube/core/Analytics;
-    .registers 2
-
-    .prologue
-    .line 236
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->c:Lcom/google/android/youtube/core/Analytics;
-
-    return-object v0
 .end method
 
 .method public onActivityResult(IILandroid/content/Intent;)V
@@ -165,10 +164,10 @@
     .parameter
 
     .prologue
-    .line 229
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->a:Lcom/google/android/youtube/app/YouTubeApplication;
+    .line 288
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->m:Lcom/google/android/youtube/app/YouTubeApplication;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->D()Lcom/google/android/youtube/core/async/UserAuthorizer;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->Q()Lcom/google/android/youtube/core/async/UserAuthorizer;
 
     move-result-object v0
 
@@ -178,160 +177,210 @@
 
     if-eqz v0, :cond_d
 
-    .line 233
+    .line 292
     :goto_c
     return-void
 
-    .line 232
+    .line 291
     :cond_d
-    invoke-static {p0, p1, p2, p3}, Lcom/google/android/youtube/core/utils/g;->a(Landroid/app/Activity;IILandroid/content/Intent;)Z
+    invoke-static {p0, p1, p2, p3}, Lcom/google/android/youtube/core/utils/i;->a(Landroid/app/Activity;IILandroid/content/Intent;)Z
 
     goto :goto_c
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .registers 5
+    .registers 6
     .parameter
 
     .prologue
-    const/4 v2, 0x4
+    const/4 v3, 0x4
 
-    const/4 v0, 0x3
+    const/4 v2, 0x3
 
-    .line 49
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+    const/4 v1, 0x0
 
-    .line 50
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->setDefaultKeyMode(I)V
+    .line 64
+    invoke-static {}, Lcom/google/android/youtube/core/utils/Util;->c()Z
 
-    .line 51
-    invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->setVolumeControlStream(I)V
+    move-result v0
 
-    .line 52
+    if-eqz v0, :cond_c
+
+    .line 65
+    invoke-virtual {p0, v1}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->setRequestedOrientation(I)V
+
+    .line 68
+    :cond_c
+    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
+
+    .line 69
+    invoke-virtual {p0, v2}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->setDefaultKeyMode(I)V
+
+    .line 70
+    invoke-virtual {p0, v2}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->setVolumeControlStream(I)V
+
+    .line 71
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->h:Z
+    iput-boolean v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->t:Z
 
-    .line 54
+    .line 73
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->getActionBar()Landroid/app/ActionBar;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->f:Landroid/app/ActionBar;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->r:Landroid/app/ActionBar;
 
-    .line 55
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->f:Landroid/app/ActionBar;
-
-    const/4 v1, 0x0
+    .line 74
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->r:Landroid/app/ActionBar;
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setNavigationMode(I)V
 
-    .line 56
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->f:Landroid/app/ActionBar;
-
-    const v1, 0x7f02005c
-
-    invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setIcon(I)V
-
-    .line 57
-    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->d()Z
+    .line 75
+    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->f()Z
 
     move-result v0
 
-    if-eqz v0, :cond_78
+    if-nez v0, :cond_2e
 
-    .line 58
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->f:Landroid/app/ActionBar;
+    .line 76
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->r:Landroid/app/ActionBar;
 
-    const v1, 0x7f02005d
+    invoke-virtual {v0, v3, v3}, Landroid/app/ActionBar;->setDisplayOptions(II)V
 
-    invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setLogo(I)V
-
-    .line 64
-    :goto_30
+    .line 80
+    :cond_2e
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->getApplication()Landroid/app/Application;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/youtube/app/YouTubeApplication;
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->a:Lcom/google/android/youtube/app/YouTubeApplication;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->m:Lcom/google/android/youtube/app/YouTubeApplication;
 
-    .line 65
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->a:Lcom/google/android/youtube/app/YouTubeApplication;
+    .line 81
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->m:Lcom/google/android/youtube/app/YouTubeApplication;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->J()Lcom/google/android/youtube/core/Analytics;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->F()Lcom/google/android/youtube/core/Analytics;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->c:Lcom/google/android/youtube/core/Analytics;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->o:Lcom/google/android/youtube/core/Analytics;
 
-    .line 66
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->a:Lcom/google/android/youtube/app/YouTubeApplication;
+    .line 82
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->m:Lcom/google/android/youtube/app/YouTubeApplication;
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->a(Lcom/google/android/youtube/app/YouTubeApplication;)V
 
-    .line 68
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->a:Lcom/google/android/youtube/app/YouTubeApplication;
+    .line 84
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->m:Lcom/google/android/youtube/app/YouTubeApplication;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->C()Landroid/content/SharedPreferences;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->O()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->b:Landroid/content/SharedPreferences;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->n:Landroid/content/SharedPreferences;
 
-    .line 69
-    new-instance v0, Lcom/google/android/youtube/app/honeycomb/phone/ak;
+    .line 85
+    new-instance v0, Lcom/google/android/youtube/app/honeycomb/phone/bk;
 
-    invoke-direct {v0, p0}, Lcom/google/android/youtube/app/honeycomb/phone/ak;-><init>(Landroid/app/Activity;)V
+    invoke-direct {v0, p0}, Lcom/google/android/youtube/app/honeycomb/phone/bk;-><init>(Landroid/app/Activity;)V
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->d:Lcom/google/android/youtube/app/o;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->p:Lcom/google/android/youtube/app/a;
 
-    .line 70
+    .line 86
     new-instance v0, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->d:Lcom/google/android/youtube/app/o;
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->p:Lcom/google/android/youtube/app/a;
 
-    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->a()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->e()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-direct {v0, p0, v1, v2}, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/app/o;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v1, v2}, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/app/a;Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->e:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->q:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
 
-    .line 72
-    new-instance v0, Lcom/google/android/youtube/app/ui/af;
+    .line 88
+    new-instance v0, Lcom/google/android/youtube/app/ui/am;
 
-    invoke-direct {v0, p0}, Lcom/google/android/youtube/app/ui/af;-><init>(Landroid/app/Activity;)V
+    invoke-direct {v0, p0}, Lcom/google/android/youtube/app/ui/am;-><init>(Landroid/app/Activity;)V
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->g:Lcom/google/android/youtube/app/ui/af;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->s:Lcom/google/android/youtube/app/ui/am;
 
-    .line 73
-    new-instance v0, Lcom/google/android/youtube/app/ui/bb;
+    .line 89
+    new-instance v0, Lcom/google/android/youtube/app/ui/bq;
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->a:Lcom/google/android/youtube/app/YouTubeApplication;
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->o:Lcom/google/android/youtube/core/Analytics;
 
-    invoke-virtual {v1}, Lcom/google/android/youtube/app/YouTubeApplication;->p()Lcom/google/android/youtube/app/p;
+    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->m:Lcom/google/android/youtube/app/YouTubeApplication;
+
+    invoke-virtual {v2}, Lcom/google/android/youtube/app/YouTubeApplication;->d()Lcom/google/android/youtube/app/k;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/google/android/youtube/app/k;->m()I
+
+    move-result v2
+
+    invoke-direct {v0, p0, v1, v2}, Lcom/google/android/youtube/app/ui/bq;-><init>(Landroid/content/Context;Lcom/google/android/youtube/core/Analytics;I)V
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->u:Lcom/google/android/youtube/app/ui/bq;
+
+    .line 92
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->m:Lcom/google/android/youtube/app/YouTubeApplication;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->Q()Lcom/google/android/youtube/core/async/UserAuthorizer;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->v:Lcom/google/android/youtube/core/async/UserAuthorizer;
+
+    .line 93
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->v:Lcom/google/android/youtube/core/async/UserAuthorizer;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Lcom/google/android/youtube/core/async/bd;)V
+
+    .line 95
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->m:Lcom/google/android/youtube/app/YouTubeApplication;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->D()Lcom/google/android/youtube/app/remote/ab;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->w:Lcom/google/android/youtube/app/remote/ab;
+
+    .line 96
+    new-instance v0, Lcom/google/android/youtube/app/honeycomb/phone/au;
+
+    invoke-direct {v0, p0}, Lcom/google/android/youtube/app/honeycomb/phone/au;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->x:Lcom/google/android/youtube/app/honeycomb/phone/au;
+
+    .line 97
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->x:Lcom/google/android/youtube/app/honeycomb/phone/au;
+
+    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->c:Lcom/google/android/youtube/core/Analytics;
+    const v2, 0x7f0f0004
 
-    invoke-direct {v0, p0, v1, v2}, Lcom/google/android/youtube/app/ui/bb;-><init>(Landroid/content/Context;Lcom/google/android/youtube/app/p;Lcom/google/android/youtube/core/Analytics;)V
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->i:Lcom/google/android/youtube/app/ui/bb;
+    move-result v1
 
-    .line 74
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/honeycomb/phone/au;->b(Z)V
+
+    .line 99
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->q:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
+
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->x:Lcom/google/android/youtube/app/honeycomb/phone/au;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;->a(Lcom/google/android/youtube/app/honeycomb/ui/l;)V
+
+    .line 100
     return-void
-
-    .line 60
-    :cond_78
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->f:Landroid/app/ActionBar;
-
-    invoke-virtual {v0, v2, v2}, Landroid/app/ActionBar;->setDisplayOptions(II)V
-
-    goto :goto_30
 .end method
 
 .method protected final onCreateDialog(I)Landroid/app/Dialog;
@@ -341,7 +390,7 @@
     .end annotation
 
     .prologue
-    .line 194
+    .line 253
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->onCreateDialog(ILandroid/os/Bundle;)Landroid/app/Dialog;
@@ -359,22 +408,22 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 203
+    .line 262
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->isFinishing()Z
 
     move-result v1
 
     if-eqz v1, :cond_8
 
-    .line 210
+    .line 269
     :goto_7
     return-object v0
 
-    .line 206
+    .line 265
     :cond_8
     packed-switch p1, :pswitch_data_28
 
-    .line 210
+    .line 269
     if-eqz p2, :cond_23
 
     packed-switch p1, :pswitch_data_2e
@@ -382,43 +431,43 @@
     goto :goto_7
 
     :pswitch_11
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->a:Lcom/google/android/youtube/app/YouTubeApplication;
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->m:Lcom/google/android/youtube/app/YouTubeApplication;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->h()Lcom/google/android/youtube/app/aa;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->i()Lcom/google/android/youtube/app/g;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0, p2}, Lcom/google/android/youtube/app/aa;->a(Landroid/app/Activity;Landroid/os/Bundle;)Landroid/app/Dialog;
+    invoke-virtual {v0, p0, p2}, Lcom/google/android/youtube/app/g;->a(Landroid/app/Activity;Landroid/os/Bundle;)Landroid/app/Dialog;
 
     move-result-object v0
 
     goto :goto_7
 
-    .line 208
+    .line 267
     :pswitch_1c
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->g:Lcom/google/android/youtube/app/ui/af;
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->s:Lcom/google/android/youtube/app/ui/am;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/af;->a()Landroid/app/Dialog;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/am;->a()Landroid/app/Dialog;
 
     move-result-object v0
 
     goto :goto_7
 
-    .line 210
+    .line 269
     :cond_23
-    invoke-virtual {p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->a(I)Landroid/app/Dialog;
+    invoke-virtual {p0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->b(I)Landroid/app/Dialog;
 
     move-result-object v0
 
     goto :goto_7
 
-    .line 206
+    .line 265
     :pswitch_data_28
     .packed-switch 0x3f1
         :pswitch_1c
     .end packed-switch
 
-    .line 210
+    .line 269
     :pswitch_data_2e
     .packed-switch 0x3eb
         :pswitch_11
@@ -430,17 +479,39 @@
     .parameter
 
     .prologue
-    .line 159
-    invoke-super {p0, p1}, Landroid/app/Activity;->onCreateOptionsMenu(Landroid/view/Menu;)Z
+    .line 209
+    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreateOptionsMenu(Landroid/view/Menu;)Z
 
-    .line 160
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->e:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
+    .line 210
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->q:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
 
     invoke-virtual {v0, p1}, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;->a(Landroid/view/Menu;)Z
 
-    move-result v0
+    .line 211
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->x:Lcom/google/android/youtube/app/honeycomb/phone/au;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/youtube/app/honeycomb/phone/au;->a(Landroid/view/Menu;)V
+
+    .line 212
+    const/4 v0, 0x1
 
     return v0
+.end method
+
+.method protected onDestroy()V
+    .registers 2
+
+    .prologue
+    .line 104
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->v:Lcom/google/android/youtube/core/async/UserAuthorizer;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->b(Lcom/google/android/youtube/core/async/bd;)V
+
+    .line 105
+    invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onDestroy()V
+
+    .line 106
+    return-void
 .end method
 
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z
@@ -449,24 +520,24 @@
     .parameter
 
     .prologue
-    .line 241
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->i:Lcom/google/android/youtube/app/ui/bb;
+    .line 300
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->u:Lcom/google/android/youtube/app/ui/bq;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/app/ui/bb;->a(I)Z
+    invoke-virtual {v0, p1}, Lcom/google/android/youtube/app/ui/bq;->b(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_a
 
-    .line 242
+    .line 301
     const/4 v0, 0x1
 
-    .line 244
+    .line 303
     :goto_9
     return v0
 
     :cond_a
-    invoke-super {p0, p1, p2}, Landroid/app/Activity;->onKeyDown(ILandroid/view/KeyEvent;)Z
+    invoke-super {p0, p1, p2}, Landroid/support/v4/app/FragmentActivity;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
@@ -479,24 +550,24 @@
     .parameter
 
     .prologue
-    .line 249
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->i:Lcom/google/android/youtube/app/ui/bb;
+    .line 308
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->u:Lcom/google/android/youtube/app/ui/bq;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/youtube/app/ui/bb;->b(I)Z
+    invoke-virtual {v0, p1}, Lcom/google/android/youtube/app/ui/bq;->c(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_a
 
-    .line 250
+    .line 309
     const/4 v0, 0x1
 
-    .line 252
+    .line 311
     :goto_9
     return v0
 
     :cond_a
-    invoke-super {p0, p1, p2}, Landroid/app/Activity;->onKeyUp(ILandroid/view/KeyEvent;)Z
+    invoke-super {p0, p1, p2}, Landroid/support/v4/app/FragmentActivity;->onKeyUp(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
@@ -508,7 +579,7 @@
     .parameter
 
     .prologue
-    .line 165
+    .line 224
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v0
@@ -517,20 +588,20 @@
 
     if-ne v0, v1, :cond_10
 
-    .line 166
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->d:Lcom/google/android/youtube/app/o;
+    .line 225
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->p:Lcom/google/android/youtube/app/a;
 
-    invoke-interface {v0}, Lcom/google/android/youtube/app/o;->a()V
+    invoke-interface {v0}, Lcom/google/android/youtube/app/a;->a()V
 
-    .line 167
+    .line 226
     const/4 v0, 0x1
 
-    .line 169
+    .line 228
     :goto_f
     return v0
 
     :cond_10
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->e:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->q:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
 
     invoke-virtual {v0, p1}, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;->a(Landroid/view/MenuItem;)Z
 
@@ -543,33 +614,52 @@
     .registers 2
 
     .prologue
-    .line 82
-    iget-boolean v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->h:Z
+    .line 114
+    iget-boolean v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->t:Z
 
     if-eqz v0, :cond_9
 
-    .line 83
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->e:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
+    .line 115
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->q:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
 
     invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;->b()V
 
-    .line 85
+    .line 117
     :cond_9
-    invoke-super {p0}, Landroid/app/Activity;->onPause()V
+    invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onPause()V
 
-    .line 86
+    .line 118
     return-void
+.end method
+
+.method public onPrepareOptionsMenu(Landroid/view/Menu;)Z
+    .registers 4
+    .parameter
+
+    .prologue
+    .line 217
+    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onPrepareOptionsMenu(Landroid/view/Menu;)Z
+
+    move-result v0
+
+    .line 218
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->x:Lcom/google/android/youtube/app/honeycomb/phone/au;
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/honeycomb/phone/au;->a()V
+
+    .line 219
+    return v0
 .end method
 
 .method protected onResume()V
     .registers 3
 
     .prologue
-    .line 90
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    .line 122
+    invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onResume()V
 
-    .line 91
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->c:Lcom/google/android/youtube/core/Analytics;
+    .line 123
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->o:Lcom/google/android/youtube/core/Analytics;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -581,7 +671,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/Analytics;->a(Ljava/lang/String;)V
 
-    .line 92
+    .line 124
     return-void
 .end method
 
@@ -591,13 +681,88 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 175
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->e:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
+    .line 234
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->q:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
 
     invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;->a(Z)V
 
-    .line 176
+    .line 235
     return v1
+.end method
+
+.method protected onStart()V
+    .registers 3
+
+    .prologue
+    .line 128
+    invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onStart()V
+
+    .line 129
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->w:Lcom/google/android/youtube/app/remote/ab;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/remote/ab;->c()V
+
+    .line 130
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->w:Lcom/google/android/youtube/app/remote/ab;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/youtube/app/remote/ab;->a(Lcom/google/android/youtube/app/remote/ae;)V
+
+    .line 131
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->w:Lcom/google/android/youtube/app/remote/ab;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/remote/ab;->b()Lcom/google/android/youtube/app/remote/RemoteControl;
+
+    move-result-object v0
+
+    .line 132
+    if-eqz v0, :cond_1a
+
+    .line 133
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->u:Lcom/google/android/youtube/app/ui/bq;
+
+    invoke-virtual {v1, v0}, Lcom/google/android/youtube/app/ui/bq;->a(Lcom/google/android/youtube/app/remote/RemoteControl;)V
+
+    .line 135
+    :cond_1a
+    return-void
+.end method
+
+.method protected onStop()V
+    .registers 2
+
+    .prologue
+    .line 139
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->w:Lcom/google/android/youtube/app/remote/ab;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/remote/ab;->d()V
+
+    .line 140
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->w:Lcom/google/android/youtube/app/remote/ab;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/youtube/app/remote/ab;->b(Lcom/google/android/youtube/app/remote/ae;)V
+
+    .line 141
+    invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onStop()V
+
+    .line 142
+    return-void
+.end method
+
+.method protected final s()V
+    .registers 4
+
+    .prologue
+    .line 157
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->r:Landroid/app/ActionBar;
+
+    const/4 v1, 0x0
+
+    const/16 v2, 0x8
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/ActionBar;->setDisplayOptions(II)V
+
+    .line 159
+    return-void
 .end method
 
 .method public final setContentView(I)V
@@ -605,10 +770,10 @@
     .parameter
 
     .prologue
-    .line 129
-    invoke-super {p0, p1}, Landroid/app/Activity;->setContentView(I)V
+    .line 179
+    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->setContentView(I)V
 
-    .line 130
+    .line 180
     return-void
 .end method
 
@@ -617,10 +782,10 @@
     .parameter
 
     .prologue
-    .line 134
-    invoke-super {p0, p1}, Landroid/app/Activity;->setContentView(Landroid/view/View;)V
+    .line 184
+    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->setContentView(Landroid/view/View;)V
 
-    .line 135
+    .line 185
     return-void
 .end method
 
@@ -630,9 +795,70 @@
     .parameter
 
     .prologue
-    .line 139
-    invoke-super {p0, p1, p2}, Landroid/app/Activity;->setContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    .line 189
+    invoke-super {p0, p1, p2}, Landroid/support/v4/app/FragmentActivity;->setContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 140
+    .line 190
+    return-void
+.end method
+
+.method protected final t()Lcom/google/android/youtube/app/a;
+    .registers 2
+
+    .prologue
+    .line 239
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->p:Lcom/google/android/youtube/app/a;
+
+    return-object v0
+.end method
+
+.method protected final u()Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
+    .registers 2
+
+    .prologue
+    .line 243
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->q:Lcom/google/android/youtube/app/honeycomb/ui/MenuHelperImpl;
+
+    return-object v0
+.end method
+
+.method public final v()Lcom/google/android/youtube/core/Analytics;
+    .registers 2
+
+    .prologue
+    .line 295
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->o:Lcom/google/android/youtube/core/Analytics;
+
+    return-object v0
+.end method
+
+.method protected final w()Lcom/google/android/youtube/app/ui/bq;
+    .registers 2
+
+    .prologue
+    .line 315
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->u:Lcom/google/android/youtube/app/ui/bq;
+
+    return-object v0
+.end method
+
+.method protected final x()Lcom/google/android/youtube/app/honeycomb/phone/au;
+    .registers 2
+
+    .prologue
+    .line 332
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->x:Lcom/google/android/youtube/app/honeycomb/phone/au;
+
+    return-object v0
+.end method
+
+.method public z()V
+    .registers 1
+
+    .prologue
+    .line 328
+    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/phone/YouTubeActivity;->finish()V
+
+    .line 329
     return-void
 .end method

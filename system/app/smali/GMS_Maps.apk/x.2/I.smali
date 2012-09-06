@@ -1,422 +1,230 @@
-.class Lx/I;
+.class synthetic Lx/i;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# instance fields
-.field private final a:[B
+# static fields
+.field static final synthetic a:[I
 
-.field private final b:I
-
-.field private c:I
-
-.field private d:I
+.field static final synthetic b:[I
 
 
 # direct methods
-.method constructor <init>(I)V
+.method static constructor <clinit>()V
     .registers 3
 
-    const/16 v0, 0x2000
+    .prologue
+    .line 324
+    invoke-static {}, Lx/m;->values()[Lx/m;
 
-    new-array v0, v0, [B
+    move-result-object v0
 
-    invoke-direct {p0, p1, v0}, Lx/I;-><init>(I[B)V
+    array-length v0, v0
 
-    return-void
-.end method
+    new-array v0, v0, [I
 
-.method constructor <init>(I[B)V
-    .registers 4
+    sput-object v0, Lx/i;->b:[I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    :try_start_9
+    sget-object v0, Lx/i;->b:[I
 
-    const/4 v0, -0x1
+    sget-object v1, Lx/m;->a:Lx/m;
 
-    iput v0, p0, Lx/I;->d:I
-
-    iput-object p2, p0, Lx/I;->a:[B
-
-    iput p1, p0, Lx/I;->b:I
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lx/I;->c:I
-
-    return-void
-.end method
-
-.method constructor <init>([B)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lx/I;->d:I
-
-    iput-object p1, p0, Lx/I;->a:[B
-
-    iget-object v0, p0, Lx/I;->a:[B
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lx/A;->a([BI)I
-
-    move-result v0
-
-    iput v0, p0, Lx/I;->b:I
-
-    iget-object v0, p0, Lx/I;->a:[B
-
-    const/4 v1, 0x4
-
-    invoke-static {v0, v1}, Lx/A;->a([BI)I
-
-    move-result v0
-
-    iput v0, p0, Lx/I;->c:I
-
-    return-void
-.end method
-
-.method static synthetic a(Lx/I;)I
-    .registers 2
-
-    iget v0, p0, Lx/I;->b:I
-
-    return v0
-.end method
-
-.method static a(Lx/aa;)Lx/I;
-    .registers 6
-
-    const/16 v2, 0x1ffc
-
-    const/16 v0, 0x2000
-
-    new-array v0, v0, [B
-
-    invoke-interface {p0, v0}, Lx/aa;->a([B)V
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1, v2}, Lx/A;->c([BII)I
+    invoke-virtual {v1}, Lx/m;->ordinal()I
 
     move-result v1
 
-    invoke-static {v0, v2}, Lx/A;->a([BI)I
+    const/4 v2, 0x1
 
-    move-result v2
+    aput v2, v0, v1
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_14} :catch_86
 
-    if-eq v1, v2, :cond_37
+    :goto_14
+    :try_start_14
+    sget-object v0, Lx/i;->b:[I
 
-    new-instance v0, Ljava/io/IOException;
+    sget-object v1, Lx/m;->b:Lx/m;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Lx/m;->ordinal()I
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v1
 
-    const-string v4, "Unexpected checksum: "
+    const/4 v2, 0x2
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_1f} :catch_84
 
-    move-result-object v3
+    :goto_1f
+    :try_start_1f
+    sget-object v0, Lx/i;->b:[I
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    sget-object v1, Lx/m;->c:Lx/m;
 
-    move-result-object v1
+    invoke-virtual {v1}, Lx/m;->ordinal()I
 
-    const-string v3, ", expected: "
+    move-result v1
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v2, 0x3
 
-    move-result-object v1
+    aput v2, v0, v1
+    :try_end_2a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_82
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    .line 241
+    :goto_2a
+    invoke-static {}, Lx/c;->values()[Lx/c;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    array-length v0, v0
 
-    move-result-object v1
+    new-array v0, v0, [I
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    sput-object v0, Lx/i;->a:[I
 
-    throw v0
+    :try_start_33
+    sget-object v0, Lx/i;->a:[I
 
-    :cond_37
-    new-instance v1, Lx/I;
+    sget-object v1, Lx/c;->d:Lx/c;
 
-    invoke-direct {v1, v0}, Lx/I;-><init>([B)V
+    invoke-virtual {v1}, Lx/c;->ordinal()I
 
-    return-object v1
-.end method
+    move-result v1
 
-.method static synthetic b(Lx/I;)I
-    .registers 2
+    const/4 v2, 0x1
 
-    iget v0, p0, Lx/I;->c:I
+    aput v2, v0, v1
+    :try_end_3e
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_33 .. :try_end_3e} :catch_80
 
-    return v0
-.end method
+    :goto_3e
+    :try_start_3e
+    sget-object v0, Lx/i;->a:[I
 
+    sget-object v1, Lx/c;->c:Lx/c;
 
-# virtual methods
-.method a()I
-    .registers 2
+    invoke-virtual {v1}, Lx/c;->ordinal()I
 
-    iget v0, p0, Lx/I;->b:I
+    move-result v1
 
-    return v0
-.end method
+    const/4 v2, 0x2
 
-.method a(I)V
-    .registers 6
+    aput v2, v0, v1
+    :try_end_49
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3e .. :try_end_49} :catch_7e
 
-    iget-object v0, p0, Lx/I;->a:[B
+    :goto_49
+    :try_start_49
+    sget-object v0, Lx/i;->a:[I
 
-    mul-int/lit8 v1, p1, 0x14
+    sget-object v1, Lx/c;->a:Lx/c;
 
-    add-int/lit8 v1, v1, 0x8
+    invoke-virtual {v1}, Lx/c;->ordinal()I
 
-    const-wide/16 v2, -0x1
+    move-result v1
 
-    invoke-static {v0, v1, v2, v3}, Lx/A;->a([BIJ)V
+    const/4 v2, 0x3
 
+    aput v2, v0, v1
+    :try_end_54
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_49 .. :try_end_54} :catch_7c
+
+    :goto_54
+    :try_start_54
+    sget-object v0, Lx/i;->a:[I
+
+    sget-object v1, Lx/c;->b:Lx/c;
+
+    invoke-virtual {v1}, Lx/c;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_5f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_54 .. :try_end_5f} :catch_7a
+
+    :goto_5f
+    :try_start_5f
+    sget-object v0, Lx/i;->a:[I
+
+    sget-object v1, Lx/c;->e:Lx/c;
+
+    invoke-virtual {v1}, Lx/c;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_6a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5f .. :try_end_6a} :catch_78
+
+    :goto_6a
+    :try_start_6a
+    sget-object v0, Lx/i;->a:[I
+
+    sget-object v1, Lx/c;->f:Lx/c;
+
+    invoke-virtual {v1}, Lx/c;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_75
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6a .. :try_end_75} :catch_76
+
+    :goto_75
     return-void
-.end method
 
-.method a(Lx/H;)V
-    .registers 4
+    :catch_76
+    move-exception v0
 
-    iget v0, p0, Lx/I;->c:I
+    goto :goto_75
 
-    invoke-virtual {p0, p1, v0}, Lx/I;->a(Lx/H;I)V
+    :catch_78
+    move-exception v0
 
-    iget v0, p0, Lx/I;->c:I
+    goto :goto_6a
 
-    add-int/lit8 v0, v0, 0x1
+    :catch_7a
+    move-exception v0
 
-    iput v0, p0, Lx/I;->c:I
+    goto :goto_5f
 
-    iget v0, p1, Lx/H;->b:I
+    :catch_7c
+    move-exception v0
 
-    iget v1, p1, Lx/H;->d:I
+    goto :goto_54
 
-    add-int/2addr v0, v1
+    :catch_7e
+    move-exception v0
 
-    iget v1, p1, Lx/H;->e:I
+    goto :goto_49
 
-    add-int/2addr v0, v1
+    :catch_80
+    move-exception v0
 
-    iput v0, p0, Lx/I;->d:I
+    goto :goto_3e
 
-    return-void
-.end method
+    .line 324
+    :catch_82
+    move-exception v0
 
-.method a(Lx/H;I)V
-    .registers 5
+    goto :goto_2a
 
-    iget-object v0, p0, Lx/I;->a:[B
+    :catch_84
+    move-exception v0
 
-    mul-int/lit8 v1, p2, 0x14
+    goto :goto_1f
 
-    add-int/lit8 v1, v1, 0x8
+    :catch_86
+    move-exception v0
 
-    invoke-virtual {p1, v0, v1}, Lx/H;->a([BI)V
-
-    return-void
-.end method
-
-.method b()I
-    .registers 2
-
-    iget v0, p0, Lx/I;->c:I
-
-    return v0
-.end method
-
-.method b(I)J
-    .registers 4
-
-    iget-object v0, p0, Lx/I;->a:[B
-
-    mul-int/lit8 v1, p1, 0x14
-
-    add-int/lit8 v1, v1, 0x8
-
-    invoke-static {v0, v1}, Lx/H;->b([BI)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method b(Lx/aa;)V
-    .registers 7
-
-    const/16 v4, 0x1ffc
-
-    const/4 v3, 0x0
-
-    iget-object v0, p0, Lx/I;->a:[B
-
-    iget v1, p0, Lx/I;->b:I
-
-    invoke-static {v0, v3, v1}, Lx/A;->a([BII)V
-
-    iget-object v0, p0, Lx/I;->a:[B
-
-    const/4 v1, 0x4
-
-    iget v2, p0, Lx/I;->c:I
-
-    invoke-static {v0, v1, v2}, Lx/A;->a([BII)V
-
-    iget-object v0, p0, Lx/I;->a:[B
-
-    invoke-static {v0, v3, v4}, Lx/A;->c([BII)I
-
-    move-result v0
-
-    iget-object v1, p0, Lx/I;->a:[B
-
-    invoke-static {v1, v4, v0}, Lx/A;->a([BII)V
-
-    iget-object v0, p0, Lx/I;->a:[B
-
-    invoke-interface {p1, v0}, Lx/aa;->b([B)V
-
-    return-void
-.end method
-
-.method c()I
-    .registers 4
-
-    iget v0, p0, Lx/I;->c:I
-
-    if-nez v0, :cond_6
-
-    const/4 v0, 0x0
-
-    :goto_5
-    return v0
-
-    :cond_6
-    iget v0, p0, Lx/I;->d:I
-
-    if-gez v0, :cond_1c
-
-    iget v0, p0, Lx/I;->c:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    invoke-virtual {p0, v0}, Lx/I;->e(I)Lx/H;
-
-    move-result-object v0
-
-    iget v1, v0, Lx/H;->b:I
-
-    iget v2, v0, Lx/H;->d:I
-
-    add-int/2addr v1, v2
-
-    iget v0, v0, Lx/H;->e:I
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, Lx/I;->d:I
-
-    :cond_1c
-    iget v0, p0, Lx/I;->d:I
-
-    goto :goto_5
-.end method
-
-.method c(I)I
-    .registers 4
-
-    iget-object v0, p0, Lx/I;->a:[B
-
-    mul-int/lit8 v1, p1, 0x14
-
-    add-int/lit8 v1, v1, 0x8
-
-    invoke-static {v0, v1}, Lx/H;->c([BI)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method d(I)I
-    .registers 4
-
-    iget-object v0, p0, Lx/I;->a:[B
-
-    mul-int/lit8 v1, p1, 0x14
-
-    add-int/lit8 v1, v1, 0x8
-
-    invoke-static {v0, v1}, Lx/H;->d([BI)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method e(I)Lx/H;
-    .registers 5
-
-    iget-object v0, p0, Lx/I;->a:[B
-
-    mul-int/lit8 v1, p1, 0x14
-
-    add-int/lit8 v1, v1, 0x8
-
-    iget v2, p0, Lx/I;->b:I
-
-    invoke-static {v0, v1, v2, p1}, Lx/H;->a([BIII)Lx/H;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "ID:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lx/I;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " Size:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lx/I;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_14
 .end method

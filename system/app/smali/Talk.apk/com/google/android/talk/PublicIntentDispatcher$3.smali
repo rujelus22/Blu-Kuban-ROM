@@ -35,7 +35,7 @@
 
     iput-boolean p2, p0, Lcom/google/android/talk/PublicIntentDispatcher$3;->val$needLogin:Z
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -70,7 +70,7 @@
 
     move-result-object v3
 
-    iget-wide v3, v3, Lcom/google/android/talk/PublicIntentDispatcher$FromAccountInfo;->accountId:J
+    iget-wide v3, v3, Lcom/google/android/talk/TalkApp$AccountInfo;->accountId:J
 
     iget-object v5, p0, Lcom/google/android/talk/PublicIntentDispatcher$3;->this$0:Lcom/google/android/talk/PublicIntentDispatcher;
 

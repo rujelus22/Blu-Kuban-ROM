@@ -26,16 +26,16 @@
     .parameter "interval"
 
     .prologue
-    .line 453
+    .line 430
     iput-object p1, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration$DcToRebootTimer;->this$0:Lcom/samsung/deviceconfiguration/DeviceConfiguration;
 
-    .line 454
+    .line 431
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
 
-    .line 455
+    .line 432
     invoke-virtual {p0}, Lcom/samsung/deviceconfiguration/DeviceConfiguration$DcToRebootTimer;->start()Landroid/os/CountDownTimer;
 
-    .line 456
+    .line 433
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .registers 2
 
     .prologue
-    .line 463
+    .line 440
     iget-object v0, p0, Lcom/samsung/deviceconfiguration/DeviceConfiguration$DcToRebootTimer;->this$0:Lcom/samsung/deviceconfiguration/DeviceConfiguration;
 
     #getter for: Lcom/samsung/deviceconfiguration/DeviceConfiguration;->mPrgDlg:Landroid/app/Dialog;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 464
+    .line 441
     return-void
 .end method
 
@@ -64,13 +64,13 @@
     .parameter "millisUntilFinished"
 
     .prologue
-    .line 459
+    .line 436
     const-string v0, "DeviceConfiguration"
 
     const-string v1, "1 second over"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 460
+    .line 437
     return-void
 .end method

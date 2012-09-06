@@ -28,6 +28,14 @@
         <item quantity="other">לפני %1$d שניות</item>
         <item quantity="one">לפני שנייה אחת</item>
     </plurals>
+    <plurals name="days_remaining">
+        <item quantity="other">התוקף יפוג בעוד %1$d ימים</item>
+        <item quantity="one">התוקף פג תוך יום</item>
+    </plurals>
+    <plurals name="hours_remaining">
+        <item quantity="other">התוקף יפוג בעוד %1$d שעות</item>
+        <item quantity="one">התוקף פג תוך שעה</item>
+    </plurals>
     <plurals name="recent_uploads">
         <item quantity="other">העלאות חדשות</item>
         <item quantity="one">העלאה חדשה</item>

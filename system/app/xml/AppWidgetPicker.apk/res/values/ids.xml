@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="appwidgetpicker_imageview">false</item>
+    <item type="id" name="appwidgetpicker_textview">false</item>
+    <item type="id" name="appwidgetpicker_count">false</item>
+</resources>

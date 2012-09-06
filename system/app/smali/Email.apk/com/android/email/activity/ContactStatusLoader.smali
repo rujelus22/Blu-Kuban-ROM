@@ -21,7 +21,12 @@
 
 
 # static fields
-.field static final PHOTO_PROJECTION:[Ljava/lang/String;
+.field static final PHOTO_PROJECTION:[Ljava/lang/String; = null
+
+.field static final PRESENCE_UNKNOWN_RESOURCE_ID:I = 0x108006a
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+.end field
 
 .field static final PROJECTION_PHOTO_ID_PRESENCE:[Ljava/lang/String;
 
@@ -41,7 +46,7 @@
 
     const/4 v2, 0x0
 
-    .line 43
+    .line 45
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
@@ -56,7 +61,7 @@
 
     sput-object v0, Lcom/android/email/activity/ContactStatusLoader;->PROJECTION_PHOTO_ID_PRESENCE:[Ljava/lang/String;
 
-    .line 52
+    .line 53
     new-array v0, v3, [Ljava/lang/String;
 
     const-string v1, "data15"
@@ -87,13 +92,13 @@
     return-void
 .end method
 
-.method public static load(Landroid/content/Context;Ljava/lang/String;)Lcom/android/email/activity/ContactStatusLoader$Result;
+.method public static getContactInfo(Landroid/content/Context;Ljava/lang/String;)Lcom/android/email/activity/ContactStatusLoader$Result;
     .registers 23
     .parameter "context"
     .parameter "emailAddress"
 
     .prologue
-    .line 104
+    .line 105
     sget-object v2, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_LOOKUP_URI:Landroid/net/Uri;
 
     invoke-static/range {p1 .. p1}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
@@ -104,7 +109,7 @@
 
     move-result-object v3
 
-    .line 105
+    .line 106
     .local v3, uri:Landroid/net/Uri;
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -122,18 +127,18 @@
 
     move-result-object v12
 
-    .line 107
+    .line 109
     .local v12, c:Landroid/database/Cursor;
     if-nez v12, :cond_1c
 
-    .line 108
+    .line 110
     sget-object v2, Lcom/android/email/activity/ContactStatusLoader$Result;->UNKNOWN:Lcom/android/email/activity/ContactStatusLoader$Result;
 
-    .line 142
+    .line 144
     :goto_1b
     return-object v2
 
-    .line 113
+    .line 115
     :cond_1c
     :try_start_1c
     invoke-interface {v12}, Landroid/database/Cursor;->moveToFirst()Z
@@ -142,17 +147,17 @@
 
     if-nez v2, :cond_28
 
-    .line 114
+    .line 116
     sget-object v2, Lcom/android/email/activity/ContactStatusLoader$Result;->UNKNOWN:Lcom/android/email/activity/ContactStatusLoader$Result;
     :try_end_24
     .catchall {:try_start_1c .. :try_end_24} :catchall_72
 
-    .line 119
+    .line 121
     invoke-interface {v12}, Landroid/database/Cursor;->close()V
 
     goto :goto_1b
 
-    .line 116
+    .line 118
     :cond_28
     const/4 v2, 0x0
 
@@ -161,7 +166,7 @@
 
     move-result-wide v17
 
-    .line 117
+    .line 119
     .local v17, photoId:J
     const/4 v2, 0x1
 
@@ -171,20 +176,20 @@
 
     move-result v19
 
-    .line 119
+    .line 121
     .local v19, presenceStatus:I
     invoke-interface {v12}, Landroid/database/Cursor;->close()V
 
-    .line 123
+    .line 125
     invoke-static/range {v19 .. v19}, Landroid/provider/ContactsContract$StatusUpdates;->getPresenceIconResourceId(I)I
 
     move-result v20
 
-    .line 126
+    .line 128
     .local v20, presenceStatusResId:I
     const/4 v15, 0x0
 
-    .line 127
+    .line 129
     .local v15, photo:Landroid/graphics/Bitmap;
     const-wide/16 v4, -0x1
 
@@ -192,7 +197,7 @@
 
     if-eqz v2, :cond_62
 
-    .line 128
+    .line 130
     sget-object v2, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     move-wide/from16 v0, v17
@@ -219,11 +224,11 @@
 
     move-result-object v16
 
-    .line 131
+    .line 133
     .local v16, photoData:[B
     if-eqz v16, :cond_62
 
-    .line 133
+    .line 135
     const/4 v2, 0x0
 
     :try_start_58
@@ -241,7 +246,7 @@
 
     move-result-object v15
 
-    .line 141
+    .line 143
     .end local v16           #photoData:[B
     :cond_62
     :goto_62
@@ -253,7 +258,7 @@
 
     move-result-object v14
 
-    .line 142
+    .line 144
     .local v14, lookupUri:Landroid/net/Uri;
     new-instance v2, Lcom/android/email/activity/ContactStatusLoader$Result;
 
@@ -263,7 +268,7 @@
 
     goto :goto_1b
 
-    .line 119
+    .line 121
     .end local v14           #lookupUri:Landroid/net/Uri;
     .end local v15           #photo:Landroid/graphics/Bitmap;
     .end local v17           #photoId:J
@@ -276,7 +281,7 @@
 
     throw v2
 
-    .line 134
+    .line 136
     .restart local v15       #photo:Landroid/graphics/Bitmap;
     .restart local v16       #photoData:[B
     .restart local v17       #photoId:J
@@ -285,7 +290,7 @@
     :catch_77
     move-exception v13
 
-    .line 135
+    .line 137
     .local v13, e:Ljava/lang/OutOfMemoryError;
     const-string v2, "Email"
 
@@ -327,7 +332,7 @@
 
     iget-object v1, p0, Lcom/android/email/activity/ContactStatusLoader;->mEmailAddress:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/android/email/activity/ContactStatusLoader;->load(Landroid/content/Context;Ljava/lang/String;)Lcom/android/email/activity/ContactStatusLoader$Result;
+    invoke-static {v0, v1}, Lcom/android/email/activity/ContactStatusLoader;->getContactInfo(Landroid/content/Context;Ljava/lang/String;)Lcom/android/email/activity/ContactStatusLoader$Result;
 
     move-result-object v0
 
@@ -338,7 +343,7 @@
     .registers 2
 
     .prologue
-    .line 39
+    .line 40
     invoke-virtual {p0}, Lcom/android/email/activity/ContactStatusLoader;->loadInBackground()Lcom/android/email/activity/ContactStatusLoader$Result;
 
     move-result-object v0
@@ -350,10 +355,10 @@
     .registers 1
 
     .prologue
-    .line 158
+    .line 160
     invoke-virtual {p0}, Lcom/android/email/activity/ContactStatusLoader;->stopLoading()V
 
-    .line 159
+    .line 161
     return-void
 .end method
 
@@ -361,13 +366,13 @@
     .registers 1
 
     .prologue
-    .line 147
+    .line 149
     invoke-virtual {p0}, Lcom/android/email/activity/ContactStatusLoader;->cancelLoad()Z
 
-    .line 148
+    .line 150
     invoke-virtual {p0}, Lcom/android/email/activity/ContactStatusLoader;->forceLoad()V
 
-    .line 149
+    .line 151
     return-void
 .end method
 
@@ -375,9 +380,9 @@
     .registers 1
 
     .prologue
-    .line 153
+    .line 155
     invoke-virtual {p0}, Lcom/android/email/activity/ContactStatusLoader;->cancelLoad()Z
 
-    .line 154
+    .line 156
     return-void
 .end method

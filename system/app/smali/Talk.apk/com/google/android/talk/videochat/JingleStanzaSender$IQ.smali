@@ -37,7 +37,7 @@
 
     .prologue
     .line 101
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 102
     iput-object p1, p0, Lcom/google/android/talk/videochat/JingleStanzaSender$IQ;->id:Ljava/lang/String;

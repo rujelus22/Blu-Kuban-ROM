@@ -1,267 +1,317 @@
-.class LK/C;
-.super LK/A;
+.class public Lk/C;
+.super LA/j;
+.source "SourceFile"
 
-# interfaces
-.implements Ljava/util/List;
+
+# static fields
+.field private static final b:Ljava/util/HashMap;
 
 
 # instance fields
-.field final synthetic g:LK/r;
+.field private final a:Ljava/lang/String;
+
+.field private final c:Ljava/util/HashMap;
 
 
 # direct methods
-.method constructor <init>(LK/r;Ljava/lang/Object;Ljava/util/List;LK/A;)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 3
 
-    iput-object p1, p0, LK/C;->g:LK/r;
+    .prologue
+    .line 445
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {p0, p1, p2, p3, p4}, LK/A;-><init>(LK/r;Ljava/lang/Object;Ljava/util/Collection;LK/A;)V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
+    sput-object v0, Lk/C;->b:Ljava/util/HashMap;
+
+    .line 448
+    sget-object v0, Lk/C;->b:Ljava/util/HashMap;
+
+    const-string v1, "layers"
+
+    const-string v2, "clear"
+
+    invoke-static {v2}, Lcom/google/common/collect/ImmutableSet;->d(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSet;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 449
     return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 452
+    invoke-direct {p0}, LA/j;-><init>()V
+
+    .line 450
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lk/C;->c:Ljava/util/HashMap;
+
+    .line 453
+    iput-object p1, p0, Lk/C;->a:Ljava/lang/String;
+
+    .line 454
+    return-void
+.end method
+
+.method public constructor <init>(Lorg/w3c/dom/Node;)V
+    .registers 6
+    .parameter
+
+    .prologue
+    .line 457
+    invoke-direct {p0, p1}, LA/j;-><init>(Lorg/w3c/dom/Node;)V
+
+    .line 450
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lk/C;->c:Ljava/util/HashMap;
+
+    .line 458
+    const-string v0, "action"
+
+    invoke-static {p1, v0}, Lk/C;->a(Lorg/w3c/dom/Node;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lk/C;->a:Ljava/lang/String;
+
+    .line 459
+    sget-object v0, Lk/C;->b:Ljava/util/HashMap;
+
+    iget-object v1, p0, Lk/C;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    .line 460
+    if-eqz v0, :cond_38
+
+    .line 461
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_22
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_38
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    .line 462
+    iget-object v2, p0, Lk/C;->c:Ljava/util/HashMap;
+
+    invoke-static {p1, v0}, Lk/C;->a(Lorg/w3c/dom/Node;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v0, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_22
+
+    .line 465
+    :cond_38
+    return-void
+.end method
+
+.method public static a(Lorg/w3c/dom/Node;)Lk/C;
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 469
+    const-string v0, "param2"
+
+    invoke-static {p0, v0}, Lk/C;->b(Lorg/w3c/dom/Node;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_e
+
+    .line 470
+    new-instance v0, Lk/B;
+
+    invoke-direct {v0, p0}, Lk/B;-><init>(Lorg/w3c/dom/Node;)V
+
+    .line 474
+    :goto_d
+    return-object v0
+
+    .line 471
+    :cond_e
+    const-string v0, "param"
+
+    invoke-static {p0, v0}, Lk/C;->b(Lorg/w3c/dom/Node;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1c
+
+    .line 472
+    new-instance v0, Lk/D;
+
+    invoke-direct {v0, p0}, Lk/D;-><init>(Lorg/w3c/dom/Node;)V
+
+    goto :goto_d
+
+    .line 474
+    :cond_1c
+    new-instance v0, Lk/C;
+
+    invoke-direct {v0, p0}, Lk/C;-><init>(Lorg/w3c/dom/Node;)V
+
+    goto :goto_d
 .end method
 
 
 # virtual methods
-.method public add(ILjava/lang/Object;)V
-    .registers 5
+.method public a()Ljava/lang/String;
+    .registers 2
 
-    invoke-virtual {p0}, LK/C;->a()V
+    .prologue
+    .line 505
+    const/4 v0, 0x0
 
-    invoke-virtual {p0}, LK/C;->e()Ljava/util/Collection;
+    return-object v0
+.end method
+
+.method public a(Ljava/lang/String;)Ljava/lang/String;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 497
+    iget-object v0, p0, Lk/C;->c:Ljava/util/HashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
+    check-cast v0, Ljava/lang/String;
 
-    move-result v0
+    return-object v0
+.end method
 
-    invoke-virtual {p0}, LK/C;->g()Ljava/util/List;
+.method protected a(Ljava/io/Writer;)V
+    .registers 4
+    .parameter
 
-    move-result-object v1
+    .prologue
+    .line 487
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-interface {v1, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, LK/C;->g:LK/r;
+    const-string v1, "<ui action=\'"
 
-    invoke-static {v1}, LK/r;->c(LK/r;)I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v0, :cond_1c
+    move-result-object v0
 
-    invoke-virtual {p0}, LK/C;->d()V
+    iget-object v1, p0, Lk/C;->a:Ljava/lang/String;
 
-    :cond_1c
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\' "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+    .line 488
+    invoke-virtual {p0, p1}, Lk/C;->b(Ljava/io/Writer;)V
+
+    .line 489
+    const-string v0, "/>"
+
+    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+    .line 490
     return-void
 .end method
 
-.method public addAll(ILjava/util/Collection;)Z
-    .registers 7
-
-    invoke-interface {p2}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    const/4 v0, 0x0
-
-    :cond_7
-    :goto_7
-    return v0
-
-    :cond_8
-    invoke-virtual {p0}, LK/C;->size()I
-
-    move-result v1
-
-    invoke-virtual {p0}, LK/C;->g()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->addAll(ILjava/util/Collection;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_7
-
-    invoke-virtual {p0}, LK/C;->e()Ljava/util/Collection;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/Collection;->size()I
-
-    move-result v2
-
-    iget-object v3, p0, LK/C;->g:LK/r;
-
-    sub-int/2addr v2, v1
-
-    invoke-static {v3, v2}, LK/r;->a(LK/r;I)I
-
-    if-nez v1, :cond_7
-
-    invoke-virtual {p0}, LK/C;->d()V
-
-    goto :goto_7
-.end method
-
-.method g()Ljava/util/List;
+.method public b()Ljava/lang/String;
     .registers 2
 
-    invoke-virtual {p0}, LK/C;->e()Ljava/util/Collection;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/List;
+    .prologue
+    .line 493
+    iget-object v0, p0, Lk/C;->a:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public get(I)Ljava/lang/Object;
-    .registers 3
-
-    invoke-virtual {p0}, LK/C;->a()V
-
-    invoke-virtual {p0}, LK/C;->g()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public indexOf(Ljava/lang/Object;)I
-    .registers 3
-
-    invoke-virtual {p0}, LK/C;->a()V
-
-    invoke-virtual {p0}, LK/C;->g()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public lastIndexOf(Ljava/lang/Object;)I
-    .registers 3
-
-    invoke-virtual {p0}, LK/C;->a()V
-
-    invoke-virtual {p0}, LK/C;->g()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/List;->lastIndexOf(Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public listIterator()Ljava/util/ListIterator;
+.method protected b(Ljava/io/Writer;)V
     .registers 2
+    .parameter
 
-    invoke-virtual {p0}, LK/C;->a()V
-
-    new-instance v0, LK/D;
-
-    invoke-direct {v0, p0}, LK/D;-><init>(LK/C;)V
-
-    return-object v0
+    .prologue
+    .line 483
+    return-void
 .end method
 
-.method public listIterator(I)Ljava/util/ListIterator;
-    .registers 3
-
-    invoke-virtual {p0}, LK/C;->a()V
-
-    new-instance v0, LK/D;
-
-    invoke-direct {v0, p0, p1}, LK/D;-><init>(LK/C;I)V
-
-    return-object v0
-.end method
-
-.method public remove(I)Ljava/lang/Object;
+.method public b(Ljava/lang/String;)Z
     .registers 4
+    .parameter
 
-    invoke-virtual {p0}, LK/C;->a()V
+    .prologue
+    .line 501
+    const-string v0, "true"
 
-    invoke-virtual {p0}, LK/C;->g()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    iget-object v1, p0, LK/C;->g:LK/r;
-
-    invoke-static {v1}, LK/r;->b(LK/r;)I
-
-    invoke-virtual {p0}, LK/C;->b()V
-
-    return-object v0
-.end method
-
-.method public set(ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 4
-
-    invoke-virtual {p0}, LK/C;->a()V
-
-    invoke-virtual {p0}, LK/C;->g()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public subList(II)Ljava/util/List;
-    .registers 7
-
-    invoke-virtual {p0}, LK/C;->a()V
-
-    iget-object v0, p0, LK/C;->g:LK/r;
-
-    invoke-virtual {p0}, LK/C;->c()Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lk/C;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {p0}, LK/C;->g()Ljava/util/List;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v2
+    move-result v0
 
-    invoke-interface {v2, p1, p2}, Ljava/util/List;->subList(II)Ljava/util/List;
+    return v0
+.end method
 
-    move-result-object v2
+.method public c()Z
+    .registers 3
 
-    invoke-virtual {p0}, LK/C;->f()LK/A;
+    .prologue
+    .line 515
+    const-string v0, "true"
 
-    move-result-object v3
+    invoke-virtual {p0}, Lk/C;->a()Ljava/lang/String;
 
-    if-nez v3, :cond_1c
+    move-result-object v1
 
-    :goto_17
-    invoke-static {v0, v1, v2, p0}, LK/r;->a(LK/r;Ljava/lang/Object;Ljava/util/List;LK/A;)Ljava/util/List;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result v0
 
-    return-object v0
-
-    :cond_1c
-    invoke-virtual {p0}, LK/C;->f()LK/A;
-
-    move-result-object p0
-
-    goto :goto_17
+    return v0
 .end method

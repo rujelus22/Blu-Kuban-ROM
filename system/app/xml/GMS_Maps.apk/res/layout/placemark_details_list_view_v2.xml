@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="left" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/photo" android:layout_width="49.0dip" android:layout_height="49.0dip" android:src="@drawable/placeholder_photo" android:scaleType="centerCrop" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <LinearLayout android:gravity="top|left|center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="3.0dip" android:layout_marginBottom="5.0dip">
+        <TextView android:ellipsize="end" android:id="@id/title" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_marginBottom="2.0dip" android:singleLine="true" android:layout_alignParentLeft="true" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="7.0dip">
+            <com.google.googlenav.ui.view.android.HeadingView android:id="@id/heading" android:visibility="invisible" android:layout_width="14.0dip" android:layout_height="14.0dip" android:layout_marginRight="5.0dip" android:layout_alignParentRight="true" />
+            <com.google.googlenav.ui.view.android.DistanceView android:id="@id/distance" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_toLeftOf="@id/heading" />
+            <TextView android:textSize="12.0dip" android:textColor="@color/spicy_light_gray" android:ellipsize="end" android:id="@id/addressLine1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_toLeftOf="@id/distance" android:layout_alignParentLeft="true" />
+        </RelativeLayout>
+        <include layout="@layout/zagat_review_summary" />
+        <TextView android:ellipsize="end" android:id="@id/snippet" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:singleLine="true" />
+        <LinearLayout android:gravity="top|left|center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+            <ImageView android:id="@id/justificationPhoto" android:visibility="gone" android:layout_width="34.0dip" android:layout_height="34.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="3.0dip" />
+            <TextView android:ellipsize="end" android:gravity="top|left|center" android:id="@id/justificationOrAwards" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/offers" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip">
+            <ImageView android:layout_gravity="center" android:id="@id/offers_image" android:paddingRight="@dimen/place_page_offer_list_item_icon_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/coupon" android:scaleType="centerInside" style="@style/PlacePageTertiary" />
+            <TextView android:ellipsize="end" android:id="@id/offers_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+            <TextView android:id="@id/more_offers_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@style/PlacePageSecondaryClickable" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

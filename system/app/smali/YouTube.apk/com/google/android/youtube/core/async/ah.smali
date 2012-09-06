@@ -1,231 +1,131 @@
-.class final Lcom/google/android/youtube/core/async/ah;
+.class public final Lcom/google/android/youtube/core/async/ah;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/g;
+.implements Lcom/google/android/youtube/core/async/ar;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/async/ag;
+.field private final a:Lcom/google/android/youtube/core/c/a;
 
-.field private final b:Lcom/google/android/youtube/core/async/g;
+.field private final b:Lcom/google/android/youtube/core/converter/a;
+
+.field private final c:Lcom/google/android/youtube/core/converter/b;
+
+.field private final d:Z
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/core/async/ag;Lcom/google/android/youtube/core/async/g;)V
-    .registers 4
+.method public constructor <init>(Lcom/google/android/youtube/core/c/a;Lcom/google/android/youtube/core/converter/a;Lcom/google/android/youtube/core/converter/b;Z)V
+    .registers 6
+    .parameter
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 52
-    iput-object p1, p0, Lcom/google/android/youtube/core/async/ah;->a:Lcom/google/android/youtube/core/async/ag;
-
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
-    const-string v0, "originalCallback cannot be null"
+    .line 45
+    const-string v0, "masf may not be null"
 
-    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/youtube/core/async/g;
+    check-cast v0, Lcom/google/android/youtube/core/c/a;
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/ah;->b:Lcom/google/android/youtube/core/async/g;
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/ah;->a:Lcom/google/android/youtube/core/c/a;
 
-    .line 54
+    .line 46
+    const-string v0, "requestConverter may not be null"
+
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/core/converter/a;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/ah;->b:Lcom/google/android/youtube/core/converter/a;
+
+    .line 48
+    const-string v0, "responseConverter may not be null"
+
+    invoke-static {p3, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/core/converter/b;
+
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/ah;->c:Lcom/google/android/youtube/core/converter/b;
+
+    .line 50
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/youtube/core/async/ah;->d:Z
+
+    .line 51
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
-    .registers 4
+.method public final a(Ljava/lang/Object;Lcom/google/android/youtube/core/async/l;)V
+    .registers 6
     .parameter
     .parameter
 
     .prologue
-    .line 48
-    check-cast p1, Lcom/google/android/youtube/core/async/GDataRequest;
+    .line 54
+    const-string v0, "request may not be null"
 
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ah;->b:Lcom/google/android/youtube/core/async/g;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0, p1, p2}, Lcom/google/android/youtube/core/async/g;->a(Ljava/lang/Object;Ljava/lang/Exception;)V
+    .line 55
+    const-string v0, "callback may not be null"
 
-    return-void
-.end method
+    invoke-static {p2, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 7
-    .parameter
-    .parameter
+    .line 57
+    :try_start_a
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/ah;->b:Lcom/google/android/youtube/core/converter/a;
 
-    .prologue
-    const/4 v0, 0x0
-
-    .line 48
-    check-cast p1, Lcom/google/android/youtube/core/async/GDataRequest;
-
-    check-cast p2, Lcom/google/android/youtube/core/model/Video;
-
-    invoke-virtual {p2}, Lcom/google/android/youtube/core/model/Video;->isLive()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2c
-
-    iget-object v1, p2, Lcom/google/android/youtube/core/model/Video;->streams:Ljava/util/Set;
-
-    sget-object v2, Lcom/google/android/youtube/core/model/Stream$Quality;->STREAM_HLS:Lcom/google/android/youtube/core/model/Stream$Quality;
-
-    const/4 v3, 0x0
-
-    invoke-static {v1, v2, v0, v3}, Lcom/google/android/youtube/core/model/Stream;->getMatchingStream(Ljava/util/Set;Lcom/google/android/youtube/core/model/Stream$Quality;ZLjava/util/Set;)Lcom/google/android/youtube/core/model/Stream;
+    invoke-interface {v0, p1}, Lcom/google/android/youtube/core/converter/a;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-nez v0, :cond_21
+    check-cast v0, Lcom/google/android/youtube/googlemobile/masf/a/m;
 
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ah;->b:Lcom/google/android/youtube/core/async/g;
+    .line 58
+    new-instance v1, Lcom/google/android/youtube/core/async/ai;
 
-    new-instance v1, Lcom/google/android/youtube/core/player/MissingStreamException;
+    iget-object v2, p0, Lcom/google/android/youtube/core/async/ah;->c:Lcom/google/android/youtube/core/converter/b;
 
-    invoke-direct {v1}, Lcom/google/android/youtube/core/player/MissingStreamException;-><init>()V
+    invoke-direct {v1, p1, p2, v2}, Lcom/google/android/youtube/core/async/ai;-><init>(Ljava/lang/Object;Lcom/google/android/youtube/core/async/l;Lcom/google/android/youtube/core/converter/b;)V
 
-    invoke-interface {v0, p1, v1}, Lcom/google/android/youtube/core/async/g;->a(Ljava/lang/Object;Ljava/lang/Exception;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/googlemobile/masf/a/m;->a(Lcom/google/android/youtube/googlemobile/masf/a/n;)V
 
-    :goto_20
+    .line 59
+    iget-object v1, p0, Lcom/google/android/youtube/core/async/ah;->a:Lcom/google/android/youtube/core/c/a;
+
+    iget-boolean v2, p0, Lcom/google/android/youtube/core/async/ah;->d:Z
+
+    invoke-interface {v1, v0, v2}, Lcom/google/android/youtube/core/c/a;->a(Lcom/google/android/youtube/googlemobile/masf/a/m;Z)V
+    :try_end_23
+    .catch Lcom/google/android/youtube/core/converter/ConverterException; {:try_start_a .. :try_end_23} :catch_24
+
+    .line 63
+    :goto_23
     return-void
 
-    :cond_21
-    iget-object v1, p0, Lcom/google/android/youtube/core/async/ah;->b:Lcom/google/android/youtube/core/async/g;
+    .line 60
+    :catch_24
+    move-exception v0
 
-    new-instance v2, Lcom/google/android/youtube/core/model/u;
+    .line 61
+    invoke-interface {p2, p1, v0}, Lcom/google/android/youtube/core/async/l;->a(Ljava/lang/Object;Ljava/lang/Exception;)V
 
-    invoke-direct {v2, v0}, Lcom/google/android/youtube/core/model/u;-><init>(Lcom/google/android/youtube/core/model/Stream;)V
-
-    invoke-interface {v1, p1, v2}, Lcom/google/android/youtube/core/async/g;->a(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    goto :goto_20
-
-    :cond_2c
-    iget-boolean v1, p2, Lcom/google/android/youtube/core/model/Video;->is3d:Z
-
-    if-eqz v1, :cond_74
-
-    iget-object v1, p2, Lcom/google/android/youtube/core/model/Video;->threeDSource:Lcom/google/android/youtube/core/model/Video$ThreeDSource;
-
-    sget-object v2, Lcom/google/android/youtube/core/model/Video$ThreeDSource;->DECLARED:Lcom/google/android/youtube/core/model/Video$ThreeDSource;
-
-    if-eq v1, v2, :cond_3c
-
-    iget-object v1, p2, Lcom/google/android/youtube/core/model/Video;->threeDSource:Lcom/google/android/youtube/core/model/Video$ThreeDSource;
-
-    sget-object v2, Lcom/google/android/youtube/core/model/Video$ThreeDSource;->UPLOADED:Lcom/google/android/youtube/core/model/Video$ThreeDSource;
-
-    if-ne v1, v2, :cond_74
-
-    :cond_3c
-    iget-object v1, p0, Lcom/google/android/youtube/core/async/ah;->a:Lcom/google/android/youtube/core/async/ag;
-
-    invoke-static {v1}, Lcom/google/android/youtube/core/async/ag;->a(Lcom/google/android/youtube/core/async/ag;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_74
-
-    iget-object v1, p0, Lcom/google/android/youtube/core/async/ah;->a:Lcom/google/android/youtube/core/async/ag;
-
-    iget-object v2, p2, Lcom/google/android/youtube/core/model/Video;->streams:Ljava/util/Set;
-
-    invoke-static {v1, v2}, Lcom/google/android/youtube/core/async/ag;->a(Lcom/google/android/youtube/core/async/ag;Ljava/util/Set;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_74
-
-    const/4 v0, 0x1
-
-    move v2, v0
-
-    :goto_50
-    if-eqz v2, :cond_76
-
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ah;->a:Lcom/google/android/youtube/core/async/ag;
-
-    iget-object v1, p2, Lcom/google/android/youtube/core/model/Video;->streams:Ljava/util/Set;
-
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/async/ag;->b(Lcom/google/android/youtube/core/async/ag;Ljava/util/Set;)Lcom/google/android/youtube/core/model/Stream;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    :goto_5b
-    if-eqz v2, :cond_80
-
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ah;->a:Lcom/google/android/youtube/core/async/ag;
-
-    iget-object v2, p2, Lcom/google/android/youtube/core/model/Video;->streams:Ljava/util/Set;
-
-    invoke-static {v0, v2}, Lcom/google/android/youtube/core/async/ag;->d(Lcom/google/android/youtube/core/async/ag;Ljava/util/Set;)Lcom/google/android/youtube/core/model/Stream;
-
-    move-result-object v0
-
-    :goto_65
-    if-nez v1, :cond_89
-
-    if-nez v0, :cond_89
-
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ah;->b:Lcom/google/android/youtube/core/async/g;
-
-    new-instance v1, Lcom/google/android/youtube/core/player/MissingStreamException;
-
-    invoke-direct {v1}, Lcom/google/android/youtube/core/player/MissingStreamException;-><init>()V
-
-    invoke-interface {v0, p1, v1}, Lcom/google/android/youtube/core/async/g;->a(Ljava/lang/Object;Ljava/lang/Exception;)V
-
-    goto :goto_20
-
-    :cond_74
-    move v2, v0
-
-    goto :goto_50
-
-    :cond_76
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ah;->a:Lcom/google/android/youtube/core/async/ag;
-
-    iget-object v1, p2, Lcom/google/android/youtube/core/model/Video;->streams:Ljava/util/Set;
-
-    invoke-static {v0, v1}, Lcom/google/android/youtube/core/async/ag;->c(Lcom/google/android/youtube/core/async/ag;Ljava/util/Set;)Lcom/google/android/youtube/core/model/Stream;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    goto :goto_5b
-
-    :cond_80
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ah;->a:Lcom/google/android/youtube/core/async/ag;
-
-    iget-object v2, p2, Lcom/google/android/youtube/core/model/Video;->streams:Ljava/util/Set;
-
-    invoke-static {v0, v2}, Lcom/google/android/youtube/core/async/ag;->e(Lcom/google/android/youtube/core/async/ag;Ljava/util/Set;)Lcom/google/android/youtube/core/model/Stream;
-
-    move-result-object v0
-
-    goto :goto_65
-
-    :cond_89
-    new-instance v2, Lcom/google/android/youtube/core/model/u;
-
-    invoke-direct {v2, v1, v0}, Lcom/google/android/youtube/core/model/u;-><init>(Lcom/google/android/youtube/core/model/Stream;Lcom/google/android/youtube/core/model/Stream;)V
-
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ah;->b:Lcom/google/android/youtube/core/async/g;
-
-    invoke-interface {v0, p1, v2}, Lcom/google/android/youtube/core/async/g;->a(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    goto :goto_20
+    goto :goto_23
 .end method

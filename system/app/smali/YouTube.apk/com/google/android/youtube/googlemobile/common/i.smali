@@ -49,14 +49,6 @@
     goto :goto_17
 .end method
 
-.method private constructor <init>()V
-    .registers 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method private static a(Ljava/lang/String;I)Ljava/lang/Object;
     .registers 6
 
@@ -98,20 +90,16 @@
     goto :goto_10
 
     :cond_1f
-    packed-switch p1, :pswitch_data_6e
+    packed-switch p1, :pswitch_data_6a
 
     :try_start_22
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Bad class: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -135,12 +123,12 @@
 
     throw v1
 
-    :catch_45
+    :catch_41
     move-exception v1
 
     goto :goto_12
 
-    :pswitch_47
+    :pswitch_43
     new-instance v1, Ljava/lang/Boolean;
 
     invoke-interface {v2}, Ljava/io/DataInput;->readBoolean()Z
@@ -153,7 +141,7 @@
 
     goto :goto_12
 
-    :pswitch_52
+    :pswitch_4e
     new-instance v1, Ljava/lang/Integer;
 
     invoke-interface {v2}, Ljava/io/DataInput;->readInt()I
@@ -166,7 +154,7 @@
 
     goto :goto_12
 
-    :pswitch_5d
+    :pswitch_59
     new-instance v1, Ljava/lang/Long;
 
     invoke-interface {v2}, Ljava/io/DataInput;->readLong()J
@@ -179,10 +167,10 @@
 
     goto :goto_12
 
-    :pswitch_68
+    :pswitch_64
     invoke-interface {v2}, Ljava/io/DataInput;->readUTF()Ljava/lang/String;
-    :try_end_6b
-    .catch Ljava/io/IOException; {:try_start_22 .. :try_end_6b} :catch_45
+    :try_end_67
+    .catch Ljava/io/IOException; {:try_start_22 .. :try_end_67} :catch_41
 
     move-result-object v0
 
@@ -190,12 +178,12 @@
 
     nop
 
-    :pswitch_data_6e
+    :pswitch_data_6a
     .packed-switch 0x0
-        :pswitch_47
-        :pswitch_52
-        :pswitch_5d
-        :pswitch_68
+        :pswitch_43
+        :pswitch_4e
+        :pswitch_59
+        :pswitch_64
     .end packed-switch
 .end method
 
@@ -243,7 +231,7 @@
     :try_start_19
     instance-of v3, p1, Ljava/lang/Boolean;
 
-    if-eqz v3, :cond_46
+    if-eqz v3, :cond_42
 
     check-cast p1, Ljava/lang/Boolean;
 
@@ -269,13 +257,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Writing: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -289,11 +273,11 @@
 
     goto :goto_e
 
-    :cond_46
-    :try_start_46
+    :cond_42
+    :try_start_42
     instance-of v3, p1, Ljava/lang/String;
 
-    if-eqz v3, :cond_50
+    if-eqz v3, :cond_4c
 
     check-cast p1, Ljava/lang/String;
 
@@ -301,10 +285,10 @@
 
     goto :goto_26
 
-    :cond_50
+    :cond_4c
     instance-of v3, p1, Ljava/lang/Integer;
 
-    if-eqz v3, :cond_5e
+    if-eqz v3, :cond_5a
 
     check-cast p1, Ljava/lang/Integer;
 
@@ -316,10 +300,10 @@
 
     goto :goto_26
 
-    :cond_5e
+    :cond_5a
     instance-of v3, p1, Ljava/lang/Long;
 
-    if-eqz v3, :cond_6c
+    if-eqz v3, :cond_68
 
     check-cast p1, Ljava/lang/Long;
 
@@ -331,18 +315,14 @@
 
     goto :goto_26
 
-    :cond_6c
+    :cond_68
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "Bad type: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -369,8 +349,8 @@
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
-    :try_end_93
-    .catch Ljava/io/IOException; {:try_start_46 .. :try_end_93} :catch_2e
+    :try_end_8b
+    .catch Ljava/io/IOException; {:try_start_42 .. :try_end_8b} :catch_2e
 .end method
 
 .method public static a(Ljava/lang/String;Z)V

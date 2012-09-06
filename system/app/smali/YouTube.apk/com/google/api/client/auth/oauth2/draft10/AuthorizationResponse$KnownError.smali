@@ -36,7 +36,7 @@
 
     const/4 v3, 0x0
 
-    .line 79
+    .line 82
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
 
     const-string v1, "INVALID_REQUEST"
@@ -45,7 +45,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;->INVALID_REQUEST:Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
 
-    .line 82
+    .line 85
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
 
     const-string v1, "INVALID_CLIENT"
@@ -54,7 +54,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;->INVALID_CLIENT:Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
 
-    .line 85
+    .line 88
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
 
     const-string v1, "UNAUTHORIZED_CLIENT"
@@ -63,7 +63,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;->UNAUTHORIZED_CLIENT:Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
 
-    .line 88
+    .line 91
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
 
     const-string v1, "REDIRECT_URI_MISMATCH"
@@ -72,7 +72,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;->REDIRECT_URI_MISMATCH:Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
 
-    .line 91
+    .line 94
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
 
     const-string v1, "ACCESS_DENIED"
@@ -81,7 +81,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;->ACCESS_DENIED:Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
 
-    .line 94
+    .line 97
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
 
     const-string v1, "UNSUPPORTED_RESPONSE_TYPE"
@@ -92,7 +92,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;->UNSUPPORTED_RESPONSE_TYPE:Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
 
-    .line 97
+    .line 100
     new-instance v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
 
     const-string v1, "INVALID_SCOPE"
@@ -103,7 +103,7 @@
 
     sput-object v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;->INVALID_SCOPE:Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
 
-    .line 73
+    .line 76
     const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
@@ -151,7 +151,7 @@
     .parameter
 
     .prologue
-    .line 73
+    .line 76
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -162,7 +162,7 @@
     .parameter
 
     .prologue
-    .line 73
+    .line 76
     const-class v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -178,7 +178,7 @@
     .registers 1
 
     .prologue
-    .line 73
+    .line 76
     sget-object v0, Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;->$VALUES:[Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;
 
     invoke-virtual {v0}, [Lcom/google/api/client/auth/oauth2/draft10/AuthorizationResponse$KnownError;->clone()Ljava/lang/Object;

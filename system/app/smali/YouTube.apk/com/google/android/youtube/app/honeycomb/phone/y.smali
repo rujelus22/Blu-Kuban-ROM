@@ -3,26 +3,21 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/app/ui/p;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:I
-
-.field final synthetic b:Lcom/google/android/youtube/app/honeycomb/phone/MyPlaylistsActivity;
+.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/MyPlaylistsActivity;I)V
-    .registers 3
-    .parameter
+.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/t;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 102
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/y;->b:Lcom/google/android/youtube/app/honeycomb/phone/MyPlaylistsActivity;
-
-    iput p2, p0, Lcom/google/android/youtube/app/honeycomb/phone/y;->a:I
+    .line 308
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/y;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,36 +26,42 @@
 
 
 # virtual methods
-.method public final synthetic a(ILjava/lang/Object;)Z
-    .registers 5
-    .parameter
-    .parameter
+.method public final run()V
+    .registers 3
 
     .prologue
-    .line 102
-    check-cast p2, Lcom/google/android/youtube/core/model/Playlist;
+    .line 312
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/y;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/y;->b:Lcom/google/android/youtube/app/honeycomb/phone/MyPlaylistsActivity;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/t;->s(Lcom/google/android/youtube/app/honeycomb/phone/t;)Landroid/widget/ListView;
 
-    invoke-static {v0, p2}, Lcom/google/android/youtube/app/honeycomb/phone/MyPlaylistsActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/MyPlaylistsActivity;Lcom/google/android/youtube/core/model/Playlist;)Lcom/google/android/youtube/core/model/Playlist;
+    move-result-object v1
 
-    iget v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/y;->a:I
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/y;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
-    if-ne p1, v0, :cond_14
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/t;->r(Lcom/google/android/youtube/app/honeycomb/phone/t;)Z
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/y;->b:Lcom/google/android/youtube/app/honeycomb/phone/MyPlaylistsActivity;
+    move-result v0
 
-    const/16 v1, 0x3ee
+    if-eqz v0, :cond_1a
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/honeycomb/phone/MyPlaylistsActivity;->showDialog(I)V
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/y;->a:Lcom/google/android/youtube/app/honeycomb/phone/t;
 
-    const/4 v0, 0x1
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/t;->l(Lcom/google/android/youtube/app/honeycomb/phone/t;)I
 
-    :goto_13
-    return v0
+    move-result v0
 
-    :cond_14
+    add-int/lit8 v0, v0, -0x1
+
+    :goto_16
+    invoke-virtual {v1, v0}, Landroid/widget/ListView;->setSelection(I)V
+
+    .line 314
+    return-void
+
+    .line 312
+    :cond_1a
     const/4 v0, 0x0
 
-    goto :goto_13
+    goto :goto_16
 .end method

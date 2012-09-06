@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 542
+    .line 580
     iput-object p1, p0, Lcom/google/android/street/StreetView$3;->this$0:Lcom/google/android/street/StreetView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,20 +42,20 @@
     .parameter "visible"
 
     .prologue
-    .line 544
+    .line 582
     if-eqz p1, :cond_8
 
-    .line 545
+    .line 583
     iget-object v0, p0, Lcom/google/android/street/StreetView$3;->this$0:Lcom/google/android/street/StreetView;
 
     #calls: Lcom/google/android/street/StreetView;->updateButtonsEnabled()V
     invoke-static {v0}, Lcom/google/android/street/StreetView;->access$1200(Lcom/google/android/street/StreetView;)V
 
-    .line 550
+    .line 588
     :goto_7
     return-void
 
-    .line 548
+    .line 586
     :cond_8
     iget-object v0, p0, Lcom/google/android/street/StreetView$3;->this$0:Lcom/google/android/street/StreetView;
 
@@ -76,7 +76,7 @@
     .parameter "zoomIn"
 
     .prologue
-    .line 553
+    .line 591
     iget-object v0, p0, Lcom/google/android/street/StreetView$3;->this$0:Lcom/google/android/street/StreetView;
 
     if-eqz p1, :cond_a
@@ -87,10 +87,10 @@
     #calls: Lcom/google/android/street/StreetView;->smoothZoom(F)V
     invoke-static {v0, v1}, Lcom/google/android/street/StreetView;->access$1400(Lcom/google/android/street/StreetView;F)V
 
-    .line 554
+    .line 592
     return-void
 
-    .line 553
+    .line 591
     :cond_a
     const/high16 v1, -0x4080
 

@@ -254,9 +254,9 @@
 
     const/high16 v5, 0x41b0
 
-    const v6, 0x7f0201c8
+    const v6, 0x7f0201c7
 
-    const v7, 0x7f0201c7
+    const v7, 0x7f0201c6
 
     const v8, 0x3ecccccd
 
@@ -291,9 +291,9 @@
 
     const/high16 v5, 0x41b0
 
-    const v6, 0x7f0201c8
+    const v6, 0x7f0201c7
 
-    const v7, 0x7f0201c7
+    const v7, 0x7f0201c6
 
     const v8, 0x3ecccccd
 
@@ -572,7 +572,7 @@
     .line 150
     iget-object v0, p0, Lcom/sec/android/app/camera/glwidget/TwGLActionMenu;->mPopupGroup:Lcom/sec/android/glview/TwGLViewGroup;
 
-    const v1, 0x7f0201c5
+    const v1, 0x7f0201c4
 
     invoke-virtual {v0, v1}, Lcom/sec/android/glview/TwGLViewGroup;->setNinePatchBackground(I)Z
 

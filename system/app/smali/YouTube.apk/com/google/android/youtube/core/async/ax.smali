@@ -1,109 +1,160 @@
 .class final Lcom/google/android/youtube/core/async/ax;
-.super Lcom/google/android/youtube/core/async/au;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/async/UserAuthorizer;
+.field private a:Lcom/google/android/youtube/core/async/l;
 
-.field private c:Lcom/google/android/youtube/core/async/av;
+.field private b:Ljava/lang/Object;
+
+.field private c:Ljava/lang/Object;
+
+.field private d:Ljava/lang/Exception;
+
+.field private e:Z
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/core/async/UserAuthorizer;Lcom/google/android/youtube/core/async/av;)V
-    .registers 3
-    .parameter
+.method private constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 67
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(B)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 669
-    iput-object p1, p0, Lcom/google/android/youtube/core/async/ax;->a:Lcom/google/android/youtube/core/async/UserAuthorizer;
+    .line 67
+    invoke-direct {p0}, Lcom/google/android/youtube/core/async/ax;-><init>()V
 
-    invoke-direct {p0, p1}, Lcom/google/android/youtube/core/async/au;-><init>(Lcom/google/android/youtube/core/async/UserAuthorizer;)V
-
-    .line 670
-    iput-object p2, p0, Lcom/google/android/youtube/core/async/ax;->c:Lcom/google/android/youtube/core/async/av;
-
-    .line 671
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .registers 2
+.method public final a(Lcom/google/android/youtube/core/async/l;Ljava/lang/Object;Ljava/lang/Exception;)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
-    .line 681
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ax;->a:Lcom/google/android/youtube/core/async/UserAuthorizer;
+    .line 84
+    iput-object p1, p0, Lcom/google/android/youtube/core/async/ax;->a:Lcom/google/android/youtube/core/async/l;
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->b(Lcom/google/android/youtube/core/async/UserAuthorizer;)V
+    .line 85
+    iput-object p2, p0, Lcom/google/android/youtube/core/async/ax;->b:Ljava/lang/Object;
 
-    .line 682
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ax;->c:Lcom/google/android/youtube/core/async/av;
+    .line 86
+    iput-object p3, p0, Lcom/google/android/youtube/core/async/ax;->d:Ljava/lang/Exception;
 
-    invoke-interface {v0}, Lcom/google/android/youtube/core/async/av;->d_()V
-
-    .line 683
+    .line 87
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/ax;->c:Lcom/google/android/youtube/core/async/av;
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/ax;->c:Ljava/lang/Object;
 
-    .line 684
+    .line 88
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/android/youtube/core/async/ax;->e:Z
+
+    .line 89
     return-void
 .end method
 
-.method public final a(Ljava/lang/Exception;)V
-    .registers 3
+.method public final a(Lcom/google/android/youtube/core/async/l;Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 5
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 688
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ax;->a:Lcom/google/android/youtube/core/async/UserAuthorizer;
+    .line 76
+    iput-object p1, p0, Lcom/google/android/youtube/core/async/ax;->a:Lcom/google/android/youtube/core/async/l;
 
-    invoke-static {v0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->b(Lcom/google/android/youtube/core/async/UserAuthorizer;)V
+    .line 77
+    iput-object p2, p0, Lcom/google/android/youtube/core/async/ax;->b:Ljava/lang/Object;
 
-    .line 689
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ax;->c:Lcom/google/android/youtube/core/async/av;
+    .line 78
+    iput-object p3, p0, Lcom/google/android/youtube/core/async/ax;->c:Ljava/lang/Object;
 
-    invoke-interface {v0, p1}, Lcom/google/android/youtube/core/async/av;->a(Ljava/lang/Exception;)V
-
-    .line 690
+    .line 79
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/ax;->c:Lcom/google/android/youtube/core/async/av;
+    iput-object v0, p0, Lcom/google/android/youtube/core/async/ax;->d:Ljava/lang/Exception;
 
-    .line 691
+    .line 80
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/youtube/core/async/ax;->e:Z
+
+    .line 81
     return-void
 .end method
 
-.method public final a(Ljava/lang/String;Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;Ljava/lang/String;)V
-    .registers 7
-    .parameter
-    .parameter
-    .parameter
+.method public final run()V
+    .registers 5
 
     .prologue
-    .line 675
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ax;->c:Lcom/google/android/youtube/core/async/av;
+    const/4 v3, 0x0
 
-    new-instance v1, Lcom/google/android/youtube/core/model/UserAuth;
+    .line 92
+    iget-boolean v0, p0, Lcom/google/android/youtube/core/async/ax;->e:Z
 
-    iget-object v2, p0, Lcom/google/android/youtube/core/async/ax;->a:Lcom/google/android/youtube/core/async/UserAuthorizer;
+    if-eqz v0, :cond_1d
 
-    invoke-static {v2}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Lcom/google/android/youtube/core/async/UserAuthorizer;)Ljava/lang/String;
+    .line 93
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/ax;->a:Lcom/google/android/youtube/core/async/l;
 
-    move-result-object v2
+    iget-object v1, p0, Lcom/google/android/youtube/core/async/ax;->b:Ljava/lang/Object;
 
-    invoke-direct {v1, p1, v2, p2, p3}, Lcom/google/android/youtube/core/model/UserAuth;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/google/android/youtube/core/model/UserAuth$AuthMethod;Ljava/lang/String;)V
+    iget-object v2, p0, Lcom/google/android/youtube/core/async/ax;->c:Ljava/lang/Object;
 
-    invoke-interface {v0, v1}, Lcom/google/android/youtube/core/async/av;->a(Lcom/google/android/youtube/core/model/UserAuth;)V
+    invoke-interface {v0, v1, v2}, Lcom/google/android/youtube/core/async/l;->a(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 676
+    .line 97
+    :goto_e
+    iput-object v3, p0, Lcom/google/android/youtube/core/async/ax;->a:Lcom/google/android/youtube/core/async/l;
+
+    .line 98
+    iput-object v3, p0, Lcom/google/android/youtube/core/async/ax;->b:Ljava/lang/Object;
+
+    .line 99
+    iput-object v3, p0, Lcom/google/android/youtube/core/async/ax;->c:Ljava/lang/Object;
+
+    .line 100
+    iput-object v3, p0, Lcom/google/android/youtube/core/async/ax;->d:Ljava/lang/Exception;
+
+    .line 101
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/youtube/core/async/ax;->c:Lcom/google/android/youtube/core/async/av;
+    iput-boolean v0, p0, Lcom/google/android/youtube/core/async/ax;->e:Z
 
-    .line 677
+    .line 102
+    invoke-static {p0}, Lcom/google/android/youtube/core/async/aw;->a(Lcom/google/android/youtube/core/async/ax;)V
+
+    .line 103
     return-void
+
+    .line 95
+    :cond_1d
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/ax;->a:Lcom/google/android/youtube/core/async/l;
+
+    iget-object v1, p0, Lcom/google/android/youtube/core/async/ax;->b:Ljava/lang/Object;
+
+    iget-object v2, p0, Lcom/google/android/youtube/core/async/ax;->d:Ljava/lang/Exception;
+
+    invoke-interface {v0, v1, v2}, Lcom/google/android/youtube/core/async/l;->a(Ljava/lang/Object;Ljava/lang/Exception;)V
+
+    goto :goto_e
 .end method

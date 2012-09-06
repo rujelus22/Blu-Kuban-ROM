@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/common/base/w;
+.implements Lcom/google/common/base/am;
 .implements Ljava/io/Serializable;
 
 
@@ -12,22 +12,22 @@
 
 
 # instance fields
-.field final delegate:Lcom/google/common/base/w;
+.field final delegate:Lcom/google/common/base/am;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/base/w;)V
+.method constructor <init>(Lcom/google/common/base/am;)V
     .registers 2
     .parameter
 
     .prologue
-    .line 186
+    .line 222
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 187
-    iput-object p1, p0, Lcom/google/common/base/Suppliers$ThreadSafeSupplier;->delegate:Lcom/google/common/base/w;
+    .line 223
+    iput-object p1, p0, Lcom/google/common/base/Suppliers$ThreadSafeSupplier;->delegate:Lcom/google/common/base/am;
 
-    .line 188
+    .line 224
     return-void
 .end method
 
@@ -37,16 +37,16 @@
     .registers 3
 
     .prologue
-    .line 190
-    iget-object v1, p0, Lcom/google/common/base/Suppliers$ThreadSafeSupplier;->delegate:Lcom/google/common/base/w;
+    .line 227
+    iget-object v1, p0, Lcom/google/common/base/Suppliers$ThreadSafeSupplier;->delegate:Lcom/google/common/base/am;
 
     monitor-enter v1
 
-    .line 191
+    .line 228
     :try_start_3
-    iget-object v0, p0, Lcom/google/common/base/Suppliers$ThreadSafeSupplier;->delegate:Lcom/google/common/base/w;
+    iget-object v0, p0, Lcom/google/common/base/Suppliers$ThreadSafeSupplier;->delegate:Lcom/google/common/base/am;
 
-    invoke-interface {v0}, Lcom/google/common/base/w;->get()Ljava/lang/Object;
+    invoke-interface {v0}, Lcom/google/common/base/am;->get()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -56,7 +56,7 @@
 
     return-object v0
 
-    .line 192
+    .line 229
     :catchall_b
     move-exception v0
 

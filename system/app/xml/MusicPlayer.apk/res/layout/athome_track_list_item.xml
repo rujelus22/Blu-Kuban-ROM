@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="bottom" android:layout_width="fill_parent" android:layout_height="66.0dip" android:baselineAligned="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_vertical" android:background="@drawable/playlist_tile" android:paddingLeft="@dimen/left_track_list_padding" android:layout_width="fill_parent" android:layout_height="66.0dip" android:ignoreGravity="@id/icon"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <include android:id="@id/second_column_icon" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/combobox_padding" android:layout_marginRight="@dimen/combobox_padding" android:layout_alignParentRight="true" layout="@layout/list_item_common" />
+    </RelativeLayout>
+    <ImageView android:id="@id/dim_layer" android:background="@drawable/bg_free_listen" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

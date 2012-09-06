@@ -242,18 +242,18 @@ jautājums"</b></string>
     <string name="account_intro_recommended_title">Google konta iestatīšana</string>
     <string name="common_message">"Izmantojot Google kontu, varat:
 
-"<li><ul>skatīt un kārtot visu savu informāciju no jebkuras vietas;</ul></li>"
+"<ul><li>skatīt un kārtot visu savu informāciju no jebkuras vietas;</li></ul>"
 
-"<li><ul>automātiski veidot savu datu dublējumkopijas;</ul></li>"
+"<ul><li>automātiski veidot savu datu dublējumkopijas;</li></ul>"
 
-"<li><ul>ērti izmantot Google pakalpojumus no jebkuras vietas.</ul></li></string>
+"<ul><li>ērti izmantot Google pakalpojumus no jebkuras vietas.</li></ul></string>
     <string name="add_account_message">" Varat izmantot vairākus Google kontus (piemēram, savu personīgo un darba kontu). Lai pievienotu Google kontu, pieskarieties vienumam "<b>Pierakstīties</b> vai <b>Izveidot kontu</b>.</string>
     <string name="account_intro_default_message">Nekad vairs nezaudējiet savus objektus. Google kontā viss tiek saglabāts.</string>
     <string name="account_intro_custom_endtext">Vai jums ir %s konts? Pierakstieties tūlīt.</string>
     <string name="account_intro_simple_message">Vai vēlaties pievienot esošu kontu vai izveidot jaunu?</string>
     <string name="learn_more_title">Uzziniet vairāk</string>
     <string name="learn_more_account_intro">"Izmantojot Google kontu, varat
-"<li><ul>skatīt un kārtot visu informāciju, atrodoties jebkur.<li>Automātiski dublējiet datus, piemēram, e-pastu, kontaktpersonas, mūziku un attēlus.</li><li>Jebkurā atrašanās vietā vienkārši izmantojiet Google pakalpojumus, tostarp Kontaktpersonas, Maps un citus pakalpojumus.</li></ul></li></string>
+"<ul><li>skatīt un kārtot visu informāciju, atrodoties jebkur.<li>Automātiski dublējiet datus, piemēram, e-pastu, kontaktpersonas, mūziku un attēlus.</li><li>Jebkurā atrašanās vietā vienkārši izmantojiet Google pakalpojumus, tostarp Kontaktpersonas, Maps un citus pakalpojumus.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Par Google kontiem</string>
     <string name="learn_more_web_history">"Tīmekļa vēsturē meklēšanas rezultāti tiek pielāgoti, pamatojoties uz to, ko esat meklējis un kādas vietnes esat apmeklējis, nodrošinot personalizētu Google pieredzi.
 

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/media_info_main_text_item_oneline_layout" android:background="@drawable/media_info_item_background" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="49.0dip" android:layout_marginLeft="1.0dip" android:layout_marginRight="1.0dip">
-        <Button android:textColor="@color/tw_white" android:ellipsize="marquee" android:gravity="center" android:id="@id/media_info_main_text_item_text_button" android:background="@drawable/music_play_btn_selector" android:focusable="true" android:layout_width="34.0dip" android:layout_height="34.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:marqueeRepeatLimit="marquee_forever" />
-        <TextView android:textSize="20.0sp" android:textColor="@color/tw_white" android:ellipsize="marquee" android:id="@id/media_info_main_text_item_line1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:singleLine="true" android:layout_toLeftOf="@id/media_info_main_text_item_text_button" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:marqueeRepeatLimit="marquee_forever" />
-    </RelativeLayout>
-    <ImageView android:background="@drawable/music_info_list_line" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="-20.0dip" android:layout_marginRight="-20.0dip" />
-</LinearLayout>

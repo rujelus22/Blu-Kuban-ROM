@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<level-list
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/ws_running" android:maxLevel="0" />
-    <item android:drawable="@drawable/ws_access" android:maxLevel="1" />
-    <item android:drawable="@drawable/ws_int_request_access" android:maxLevel="2" />
-    <item android:drawable="@drawable/ws_request" android:maxLevel="3" />
-</level-list>

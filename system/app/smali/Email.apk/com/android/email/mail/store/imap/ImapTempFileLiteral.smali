@@ -20,17 +20,17 @@
     .end annotation
 
     .prologue
-    .line 49
+    .line 46
     invoke-direct {p0}, Lcom/android/email/mail/store/imap/ImapString;-><init>()V
 
-    .line 50
+    .line 47
     invoke-virtual {p1}, Lcom/android/email/FixedLengthInputStream;->getLength()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/email/mail/store/imap/ImapTempFileLiteral;->mSize:I
 
-    .line 51
+    .line 48
     const-string v1, "imap"
 
     const-string v2, ".tmp"
@@ -45,78 +45,21 @@
 
     iput-object v1, p0, Lcom/android/email/mail/store/imap/ImapTempFileLiteral;->mFile:Ljava/io/File;
 
-    .line 59
+    .line 54
     new-instance v0, Ljava/io/FileOutputStream;
 
     iget-object v1, p0, Lcom/android/email/mail/store/imap/ImapTempFileLiteral;->mFile:Ljava/io/File;
 
     invoke-direct {v0, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 60
+    .line 55
     .local v0, out:Ljava/io/OutputStream;
     invoke-static {p1, v0}, Lorg/apache/commons/io/IOUtils;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)I
 
-    .line 61
-    invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
+    .line 56
+    invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
 
-    .line 62
-    return-void
-.end method
-
-.method constructor <init>(Lcom/android/email/FixedLengthInputStream;Lcom/android/emailcommon/mail/Folder$MessageRetrievalListener;)V
-    .registers 7
-    .parameter "stream"
-    .parameter "mListener"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/android/emailcommon/mail/MessagingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 65
-    invoke-direct {p0}, Lcom/android/email/mail/store/imap/ImapString;-><init>()V
-
-    .line 66
-    invoke-virtual {p1}, Lcom/android/email/FixedLengthInputStream;->getLength()I
-
-    move-result v1
-
-    iput v1, p0, Lcom/android/email/mail/store/imap/ImapTempFileLiteral;->mSize:I
-
-    .line 67
-    const-string v1, "imap"
-
-    const-string v2, ".tmp"
-
-    invoke-static {}, Lcom/android/emailcommon/TempDirectory;->getTempDirectory()Ljava/io/File;
-
-    move-result-object v3
-
-    invoke-static {v1, v2, v3}, Ljava/io/File;->createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/android/email/mail/store/imap/ImapTempFileLiteral;->mFile:Ljava/io/File;
-
-    .line 75
-    new-instance v0, Ljava/io/FileOutputStream;
-
-    iget-object v1, p0, Lcom/android/email/mail/store/imap/ImapTempFileLiteral;->mFile:Ljava/io/File;
-
-    invoke-direct {v0, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-
-    .line 76
-    .local v0, out:Ljava/io/OutputStream;
-    iget v1, p0, Lcom/android/email/mail/store/imap/ImapTempFileLiteral;->mSize:I
-
-    invoke-static {p1, v0, p2, v1}, Lorg/apache/commons/io/IOUtils;->copy_status(Ljava/io/InputStream;Ljava/io/OutputStream;Lcom/android/emailcommon/mail/Folder$MessageRetrievalListener;I)I
-
-    .line 77
-    invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
-
-    .line 78
+    .line 57
     return-void
 .end method
 
@@ -126,7 +69,7 @@
     .registers 5
 
     .prologue
-    .line 122
+    .line 101
     :try_start_0
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapTempFileLiteral;->isDestroyed()Z
 
@@ -142,26 +85,26 @@
 
     if-eqz v1, :cond_13
 
-    .line 123
+    .line 102
     iget-object v1, p0, Lcom/android/email/mail/store/imap/ImapTempFileLiteral;->mFile:Ljava/io/File;
 
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
     :try_end_13
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_13} :catch_17
 
-    .line 129
+    .line 108
     :cond_13
     :goto_13
     invoke-super {p0}, Lcom/android/email/mail/store/imap/ImapString;->destroy()V
 
-    .line 130
+    .line 109
     return-void
 
-    .line 125
+    .line 104
     :catch_17
     move-exception v0
 
-    .line 127
+    .line 106
     .local v0, re:Ljava/lang/RuntimeException;
     const-string v1, "Email"
 
@@ -201,19 +144,19 @@
     .end annotation
 
     .prologue
-    .line 87
+    .line 67
     :try_start_0
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapTempFileLiteral;->destroy()V
     :try_end_3
     .catchall {:try_start_0 .. :try_end_3} :catchall_7
 
-    .line 89
+    .line 69
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 91
+    .line 71
     return-void
 
-    .line 89
+    .line 69
     :catchall_7
     move-exception v0
 
@@ -226,10 +169,10 @@
     .registers 4
 
     .prologue
-    .line 95
+    .line 75
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapTempFileLiteral;->checkNotDestroyed()V
 
-    .line 97
+    .line 77
     :try_start_3
     new-instance v1, Ljava/io/FileInputStream;
 
@@ -239,15 +182,15 @@
     :try_end_a
     .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_a} :catch_b
 
-    .line 104
+    .line 83
     :goto_a
     return-object v1
 
-    .line 98
+    .line 78
     :catch_b
     move-exception v0
 
-    .line 101
+    .line 80
     .local v0, e:Ljava/io/FileNotFoundException;
     const-string v1, "Email"
 
@@ -255,7 +198,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 104
+    .line 83
     new-instance v1, Ljava/io/ByteArrayInputStream;
 
     const/4 v2, 0x0
@@ -271,10 +214,10 @@
     .registers 4
 
     .prologue
-    .line 110
+    .line 89
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapTempFileLiteral;->checkNotDestroyed()V
 
-    .line 112
+    .line 91
     :try_start_3
     invoke-virtual {p0}, Lcom/android/email/mail/store/imap/ImapTempFileLiteral;->getAsStream()Ljava/io/InputStream;
 
@@ -290,15 +233,15 @@
 
     move-result-object v1
 
-    .line 115
+    .line 94
     :goto_f
     return-object v1
 
-    .line 113
+    .line 92
     :catch_10
     move-exception v0
 
-    .line 114
+    .line 93
     .local v0, e:Ljava/io/IOException;
     const-string v1, "Email"
 
@@ -306,7 +249,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 115
+    .line 94
     const-string v1, ""
 
     goto :goto_f
@@ -316,7 +259,7 @@
     .registers 2
 
     .prologue
-    .line 138
+    .line 117
     iget-object v0, p0, Lcom/android/email/mail/store/imap/ImapTempFileLiteral;->mFile:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
@@ -330,7 +273,7 @@
     .registers 5
 
     .prologue
-    .line 134
+    .line 113
     const-string v0, "{%d byte literal(file)}"
 
     const/4 v1, 0x1

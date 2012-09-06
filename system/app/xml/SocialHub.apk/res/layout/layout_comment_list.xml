@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="vertical" android:id="@id/RelativeLayout01" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:id="@id/top_text_view" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <com.sec.android.socialhub.view.SocialHubDirectComposer android:id="@id/direct_composer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
-    <LinearLayout android:id="@id/listview_comment" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/direct_composer" android:layout_below="@id/top_text_view" />
-    <include android:id="@id/layout_two_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/direct_composer" android:layout_below="@id/listview_comment" android:layout_alignParentBottom="true" layout="@layout/common_softkey_2_button" />
-</RelativeLayout>

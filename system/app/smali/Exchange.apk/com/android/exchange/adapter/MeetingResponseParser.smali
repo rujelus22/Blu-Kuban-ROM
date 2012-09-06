@@ -19,13 +19,13 @@
     .end annotation
 
     .prologue
-    .line 59
+    .line 30
     invoke-direct {p0, p1}, Lcom/android/exchange/adapter/Parser;-><init>(Ljava/io/InputStream;)V
 
-    .line 61
+    .line 31
     iput-object p2, p0, Lcom/android/exchange/adapter/MeetingResponseParser;->mService:Lcom/android/exchange/EasSyncService;
 
-    .line 63
+    .line 32
     return-void
 .end method
 
@@ -42,10 +42,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 101
+    .line 51
     const/4 v0, 0x0
 
-    .line 103
+    .line 52
     .local v0, res:Z
     invoke-virtual {p0, v3}, Lcom/android/exchange/adapter/MeetingResponseParser;->nextTag(I)I
 
@@ -55,14 +55,14 @@
 
     if-eq v1, v2, :cond_10
 
-    .line 105
+    .line 53
     new-instance v1, Ljava/io/IOException;
 
     invoke-direct {v1}, Ljava/io/IOException;-><init>()V
 
     throw v1
 
-    .line 109
+    .line 55
     :cond_10
     :goto_10
     invoke-virtual {p0, v3}, Lcom/android/exchange/adapter/MeetingResponseParser;->nextTag(I)I
@@ -73,25 +73,25 @@
 
     if-eq v1, v2, :cond_25
 
-    .line 111
-    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 56
+    iget v1, p0, Lcom/android/exchange/adapter/MeetingResponseParser;->tag:I
 
     const/16 v2, 0x20a
 
     if-ne v1, v2, :cond_21
 
-    .line 113
+    .line 57
     invoke-virtual {p0}, Lcom/android/exchange/adapter/MeetingResponseParser;->parseResult()V
 
     goto :goto_10
 
-    .line 117
+    .line 59
     :cond_21
     invoke-virtual {p0}, Lcom/android/exchange/adapter/MeetingResponseParser;->skipTag()V
 
     goto :goto_10
 
-    .line 123
+    .line 62
     :cond_25
     return v0
 .end method
@@ -109,7 +109,7 @@
 
     const/4 v5, 0x1
 
-    .line 69
+    .line 35
     :cond_2
     :goto_2
     const/16 v1, 0x20a
@@ -122,23 +122,23 @@
 
     if-eq v1, v2, :cond_5f
 
-    .line 71
-    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    .line 36
+    iget v1, p0, Lcom/android/exchange/adapter/MeetingResponseParser;->tag:I
 
     const/16 v2, 0x20b
 
     if-ne v1, v2, :cond_34
 
-    .line 73
+    .line 37
     invoke-virtual {p0}, Lcom/android/exchange/adapter/MeetingResponseParser;->getValueInt()I
 
     move-result v0
 
-    .line 75
+    .line 38
     .local v0, status:I
     if-eq v0, v5, :cond_2
 
-    .line 77
+    .line 39
     iget-object v1, p0, Lcom/android/exchange/adapter/MeetingResponseParser;->mService:Lcom/android/exchange/EasSyncService;
 
     new-array v2, v5, [Ljava/lang/String;
@@ -167,16 +167,16 @@
 
     goto :goto_2
 
-    .line 81
+    .line 41
     .end local v0           #status:I
     :cond_34
-    iget v1, p0, Lcom/android/exchange/adapter/Parser;->tag:I
+    iget v1, p0, Lcom/android/exchange/adapter/MeetingResponseParser;->tag:I
 
     const/16 v2, 0x205
 
     if-ne v1, v2, :cond_5b
 
-    .line 83
+    .line 42
     iget-object v1, p0, Lcom/android/exchange/adapter/MeetingResponseParser;->mService:Lcom/android/exchange/EasSyncService;
 
     new-array v2, v5, [Ljava/lang/String;
@@ -209,13 +209,13 @@
 
     goto :goto_2
 
-    .line 87
+    .line 44
     :cond_5b
     invoke-virtual {p0}, Lcom/android/exchange/adapter/MeetingResponseParser;->skipTag()V
 
     goto :goto_2
 
-    .line 93
+    .line 47
     :cond_5f
     return-void
 .end method

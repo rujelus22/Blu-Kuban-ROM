@@ -26,17 +26,17 @@
     .parameter "name"
 
     .prologue
-    .line 1698
+    .line 1044
     iput-object p1, p0, Lcom/android/email/provider/EmailProvider$BodyDatabaseHelper;->this$0:Lcom/android/email/provider/EmailProvider;
 
-    .line 1699
+    .line 1045
     const/4 v0, 0x0
 
     const/4 v1, 0x6
 
     invoke-direct {p0, p2, p3, v0, v1}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
-    .line 1700
+    .line 1046
     return-void
 .end method
 
@@ -47,17 +47,17 @@
     .parameter "db"
 
     .prologue
-    .line 1704
+    .line 1050
     const-string v0, "EmailProvider"
 
     const-string v1, "Creating EmailProviderBody database"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1705
+    .line 1051
     invoke-static {p1}, Lcom/android/email/provider/EmailProvider;->createBodyTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1706
+    .line 1052
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .parameter "db"
 
     .prologue
-    .line 1715
+    .line 1061
     return-void
 .end method
 
@@ -77,9 +77,9 @@
     .parameter "newVersion"
 
     .prologue
-    .line 1710
+    .line 1056
     invoke-static {p1, p2, p3}, Lcom/android/email/provider/EmailProvider;->upgradeBodyTable(Landroid/database/sqlite/SQLiteDatabase;II)V
 
-    .line 1711
+    .line 1057
     return-void
 .end method

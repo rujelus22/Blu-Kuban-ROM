@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AboutDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:textColor">?android:textColorPrimaryInverseDisableOnly</item>
+    </style>
+    <style name="Kang" parent="@android:style/Theme.Holo">
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+</resources>

@@ -3,7 +3,7 @@
     <string name="da_google_maps">谷歌地图</string>
     <string name="da_google_maps_navigation">谷歌地图导航</string>
     <string name="da_net_fail_title">网络连接失败</string>
-    <string name="da_net_fail_body">此应用程序需要有效的数据连接。</string>
+    <string name="da_net_fail_body">此应用需要有效的数据连接。</string>
     <string name="da_beta">测试版</string>
     <string name="da_destination">目的地</string>
     <string name="da_toward">前往%1$s</string>
@@ -48,33 +48,40 @@
     <string name="da_navigation">导航</string>
     <string name="da_search_label">搜索</string>
     <string name="da_layers">图层</string>
-    <string name="da_agreement_with_walking">"Google 地图导航应用程序目前尚处于测试阶段，请务必谨慎使用！
+    <string name="da_agreement_with_walking">"Google 地图导航应用目前尚处于测试阶段，请务必谨慎使用！
 
-请勿在驾车时操作此应用程序。路况信息并不能反应实时状况；路线可能有错误，包含危险路段、禁止通行的路段或轮渡路段。步行路线可能缺少人行道信息。请遵守相关法律。
+请勿在驾车时操作此应用。路况信息并不能反应实时状况；路线可能有错误，包含危险路段、禁止通行的路段或轮渡路段。步行路线可能缺少人行道信息。请遵守相关法律。
 
 行驶过程中，请注意观察路况！"</string>
+    <string name="da_agreement_with_walking_and_biking">"“Google Maps Navigation”应用目前尚处于测试阶段，请务必谨慎使用！
+
+请勿在行进过程中操作此应用。路况信息并不是实时信息；路线可能有误，也可能包含危险路段、禁止通行或需搭乘轮渡的路段。步行路线可能包含未设人行道或步道的路段。自行车路线可能包含不适合骑车的路段。请遵守相关法律。
+
+行进过程中请注意前方路况！"</string>
     <string name="da_disclaimer_checkbox">下次显示此讯息</string>
     <string name="da_show_list">路线列表</string>
-    <string name="da_route_overview">路线信息</string>
+    <string name="da_route_and_alternates">路线和备选路线</string>
     <string name="da_show_map">显示地图</string>
+    <string name="da_menu_more">更多</string>
     <string name="da_satellite">卫星</string>
     <string name="da_traffic_view">路况视图</string>
     <string name="da_no_traffic_here">没有关于此处的路况信息</string>
     <string name="da_traffic">路况</string>
     <string name="da_area_view">区域视图</string>
-    <string name="da_mute">静音</string>
-    <string name="da_unmute">取消静音</string>
     <string name="da_settings">设置</string>
     <string name="da_help">帮助</string>
-    <string name="da_terms_privacy_notices">条款和条件</string>
+    <string name="da_terms_privacy_notices">条款、隐私权和声明</string>
     <string name="da_terms_and_conditions">条款</string>
     <string name="da_privacy_policy">隐私权政策</string>
     <string name="da_legal_notices">法律声明</string>
     <string name="da_navigation_suspended">导航已暂停</string>
     <string name="da_exit_navigation">退出导航</string>
+    <string name="da_save">保存</string>
     <string name="da_power_settings_category">电源设置</string>
     <string name="da_screen_dimming_setting_title">屏幕调暗</string>
     <string name="da_screen_dimming_setting_summary">在给出下个指示前调暗屏幕，以节省电量</string>
+    <string name="da_home_setting_set_address">设置家庭地址</string>
+    <string name="da_home_setting_set_address_hint">输入地址</string>
     <string name="da_info_settings_category">信息</string>
     <string name="da_email_me_when_resolved">问题解决后给我发送电子邮件</string>
     <string name="da_problem_reported">问题已报告</string>
@@ -82,7 +89,7 @@
     <string name="da_attention">注意</string>
     <string name="da_rmi_warning">"通过“报告问题”功能可以录制一条语音信息，描述地图或路线中存在的问题。15 秒后，系统会自动将该信息连同您的当前位置和路线一起发送给 Google。
 
-可在应用程序设置中启用一键式快捷方式。
+可在应用设置中启用一键式快捷方式。
 
 如果您选择接收有关该问题的解决情况的电子邮件，那么系统会存储您的电子邮件地址以及您的当前位置和注释，直到该问题得到解决为止。"</string>
     <string name="da_report_a_problem">报告问题</string>
@@ -109,6 +116,8 @@
     <string name="da_turn_on_gps">显示位置设置？</string>
     <string name="da_voice_guidance">语音导航</string>
     <string name="da_install_voice_guidance_prompt">对于语音导航，您需要访问 Android 电子市场，安装文本转语音支持。</string>
+    <string name="da_voice_off">关闭语音</string>
+    <string name="da_voice_on">打开语音</string>
     <string name="da_voice_guidance_on">语音导航已开启</string>
     <string name="da_voice_guidance_off">语音导航已关闭</string>
     <string name="da_dialog_ok">确定</string>
@@ -127,14 +136,14 @@
     <string name="da_layer_name_gas_stations">加油站</string>
     <string name="da_layer_name_restaurants">餐馆</string>
     <string name="da_layer_name_supermarkets">超市</string>
-    <string name="da_layer_name_atms_and_banks">银行</string>
+    <string name="da_layer_name_atms_and_banks">ATM 机和银行</string>
     <string name="da_layer_name_convenience_stores">便利店</string>
     <string name="da_query_banks_and_atms">银行</string>
     <string name="da_rerouting">正在重选路线...</string>
     <string name="da_via">经由%s</string>
     <string name="da_to_destination">到%s</string>
     <string name="da_via_name_separator">" 与 "</string>
-    <string name="da_record_feedback">录下反馈</string>
+    <string name="da_record_feedback">录制反馈</string>
     <string name="da_destination_not_here">目的地不是这里</string>
     <string name="da_new_destination">下一个目的地</string>
     <string name="da_reroute_to_destination">返回目的地</string>
@@ -188,9 +197,12 @@
     <string name="da_picker_speak_destination">说出目的地</string>
     <string name="da_picker_contacts">联系人</string>
     <string name="da_picker_starred_items">加星标的地点</string>
+    <string name="da_picker_starred">已加星标</string>
     <string name="da_picker_new_contact">新建联系人</string>
-    <string name="da_picker_saved_destinations">保存的目的地</string>
+    <string name="da_go_home">回家</string>
+    <string name="da_picker_saved_destinations">已保存的目的地</string>
     <string name="da_picker_recent_destinations">近期导航过的目的地</string>
+    <string name="da_picker_shortcuts">快捷方式</string>
     <string name="da_navigate_to">导航到</string>
     <string name="da_return_to">返回到</string>
     <string name="da_picker_search_hint">目的地</string>
@@ -203,12 +215,11 @@
 只要点击地址旁边的星标图标，就可以给 Google 地图中的搜索结果加注星标。"</string>
     <string name="da_picker_no_contacts">"您的所有联系人都没有地址信息。
 
-您可以添加新联系人，也可以在 Google 通讯录应用程序中为现有联系人设置地址信息。"</string>
+您可以添加新联系人，也可以在 Google 通讯录应用中为现有联系人设置地址信息。"</string>
     <string name="da_driving">驾车</string>
     <string name="da_walking">步行</string>
     <string name="da_bicycling">骑自行车</string>
     <string name="da_quoted_text">“%1$s”</string>
-    <string name="da_more_info">更多信息</string>
     <string name="da_walking_warning">步行路线（测试版）：慎用</string>
     <string name="da_bicycling_warning">自行车路线（测试版）：请慎用</string>
     <string name="da_calibrate_compass_title">罗盘校准</string>
@@ -216,7 +227,6 @@
     <string name="da_confirm_exit_title">要退出导航吗？</string>
     <string name="da_confirm_exit_text">此操作会关闭所有路线导航功能。</string>
     <string name="da_route_includes_tolls">该路线包含收费路段</string>
-    <string name="da_avoid_tolls">避开收费路段</string>
     <string name="da_avoiding_tolls">避开收费路段</string>
     <string name="da_avoiding_highways">避开高速公路</string>
     <string name="da_route_includes_unavoidable_tolls">此路线包含收费路段。</string>
@@ -272,17 +282,19 @@
     <string name="DIRECTIONS_TITLE">路线</string>
     <string name="EXIT_COMMAND">退出</string>
     <string name="FEATURE_SWITCHER_LATITUDE_SUBTITLE">寻找家人和朋友</string>
-    <string name="FEATURE_SWITCHER_LOCAL">地方信息</string>
+    <string name="FEATURE_SWITCHER_LOCAL">本地</string>
     <string name="FEATURE_SWITCHER_LOCAL_SUBTITLE">查找餐馆、酒吧等等</string>
     <string name="FEATURE_SWITCHER_MAP">地图</string>
     <string name="FEATURE_SWITCHER_NAV">GPS 导航</string>
     <string name="FEATURE_SWITCHER_TRAFFIC">路况信息</string>
     <string name="FRIENDS_COMMAND_ACTIVATE">纵横</string>
     <string name="FRIENDS_COMMAND_JOIN">加入谷歌纵横</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE">Google+ 个人资料</string>
+    <string name="FRIENDS_GOOGLE_PLUS_PROFILE_DESCRIPTION">查看 Google+ 好友的个人资料</string>
     <string name="FRIENDS_HISTORY_SUMMARY_TITLE">位置记录</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TICKER">{0}希望您报告位置</string>
     <string name="FRIENDS_PING_ME_NOTIFICATION_TITLE">“谷歌纵横”所在位置请求</string>
-    <string name="GOHOME_DESTINATION_HINT">请输入地址</string>
+    <string name="GOHOME_DESTINATION_HINT">输入地址</string>
     <string name="GOHOME_PICK_SHORTCUT_IMAGE">快捷方式图标</string>
     <string name="GOHOME_SAVE_SHORTCUT">保存</string>
     <string name="GOHOME_SHORTCUT_DESTINATION">目的地</string>
@@ -292,25 +304,44 @@
     <string name="LATITUDE_AUTO_CHECKIN_NOTIFICATION_TICKER">位于{0}，与{1}分享</string>
     <string name="LATITUDE_AUTO_CHECKIN_NOTIFICATION_TITLE">已在“{0}”报告了位置</string>
     <string name="LATITUDE_CHECKIN_NOTIFICATION_CONTENT_NEW">点按以报告所在位置或停止提醒</string>
-    <string name="LATITUDE_CHECKIN_NOTIFICATION_TICKER">要在{0}报告位置吗？</string>
-    <string name="LATITUDE_CHECKIN_NOTIFICATION_TITLE">要报告位置吗？</string>
+    <string name="LATITUDE_CHECKIN_NOTIFICATION_TICKER">要在{0}签到吗？</string>
+    <string name="LATITUDE_CHECKIN_NOTIFICATION_TITLE">要签到吗？</string>
     <string name="LATITUDE_CHECKIN_NOTIFICATION_TITLE_NEW">您是在“{0}”吗？</string>
     <string name="LATITUDE_WIDGET_FRIENDS_ACTIVATE">请点按登录谷歌纵横</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LAST_UPDATED_TIME_ABSOLUTE">最后更新时间：{0}</string>
     <string name="LATITUDE_WIDGET_FRIENDS_LOCATION_UNKNOWN">该位置未知</string>
+    <string name="LATITUDE_WIDGET_START">点按以启动谷歌纵横</string>
     <string name="LOADING">正在加载</string>
-    <string name="LOCAL_APP_NAME">Google 周边搜索</string>
     <string name="MAPS_APP_NAME">地图</string>
     <string name="MY_PLACES_COMMAND">我的地点</string>
+    <string name="MY_PLACES_DELETE_CONFIRM">&lt;b>{0}&lt;/b>将从“我的地点”中删除。</string>
+    <string name="MY_PLACES_DELETE_CONFIRM_TITLE">删除</string>
+    <string name="MY_PLACES_DELETE_ITEM_COMMAND">删除</string>
+    <string name="MY_PLACES_DELETE_OWNED_MAP_CONFIRM">&lt;b>{0}&lt;/b>将从“我的地点”中永久删除。</string>
+    <string name="MY_PLACES_DELETE_PLACE_CONFIRM">&lt;b>{0}&lt;/b>将从“我的地点”中删除，并且与此地点相关的活动也将永久删除：</string>
+    <string name="MY_PLACES_DELETE_SERVICE_UNAVAILABLE">服务无法使用，请稍后重试。</string>
+    <string name="MY_PLACES_ITEM_IS_BOOKMARKED_MY_MAP">加入书签的地图</string>
+    <string name="MY_PLACES_ITEM_IS_MY_MAP">我的地图</string>
+    <string name="MY_PLACES_ITEM_IS_REVIEWED">已评论</string>
+    <string name="MY_PLACES_ITEM_IS_STARRED">已加星标</string>
+    <string name="MY_PLACES_LINK_ON_SUGGEST">已根据“我的地点”个性化</string>
+    <string name="MY_PLACES_NO_DIRECTIONS_ITEM_MESSAGE">您没有路线记录。</string>
+    <string name="MY_PLACES_NO_MY_MAP_ITEM_MESSAGE">您没有地图。</string>
+    <string name="MY_PLACES_NO_STARRED_ITEM_MESSAGE">您没有已加星标的地点。</string>
+    <string name="MY_PLACES_SEE_ON_MAP_COMMAND">地图</string>
+    <string name="MY_PLACES_SHOW_DETAIL_PAGE_COMMAND">详情</string>
     <string name="NAVIGATE_MODE_NAVIGATION">导航</string>
-    <string name="NEED_NET_BODY">在授权允许此应用程序通过网络发送和接收数据前，您无法使用该应用程序。</string>
+    <string name="NEED_NET_BODY">在授权允许此应用通过网络发送和接收数据前，您无法使用该应用。</string>
     <string name="NEED_NET_TITLE">需要访问网络</string>
-    <string name="NETWORK_DATA_ERROR">此应用程序需要使用网络连接。请联络您的运营商。</string>
-    <string name="NET_FAIL_BODY">此应用程序需要有效的数据连接。</string>
+    <string name="NETWORK_DATA_ERROR">此应用需要使用网络连接。请联络您的运营商。</string>
+    <string name="NET_FAIL_BODY">此应用需要有效的数据连接。</string>
     <string name="NET_FAIL_TITLE">网络连接失败</string>
     <string name="NET_UNAVAILABLE_TITLE">无法连接网络</string>
-    <string name="PLACES_APP_NAME">本地搜索</string>
-    <string name="RATINGS_CUSTOM_ASPECT_EXAMPLE_TEXT">例如，炸酱面、啤酒、音乐</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_PLURAL">附近有 {0} 项优惠</string>
+    <string name="OFFERS_FEATURE_SWITCHER_SUBTITLE_SINGLE">附近有 1 项优惠</string>
+    <string name="OFFERS_FEATURE_SWITCHER_TITLE">优惠</string>
+    <string name="PLACES_APP_NAME">本地</string>
+    <string name="RATINGS_CORRECT_CATEGORY">请为此地点选择正确的类别</string>
     <string name="RATINGS_CUSTOM_ASPECT_HINT_TEXT">最具吸引力的内容是什么？</string>
     <string name="RATINGS_OPTIN_CANCEL">取消</string>
     <string name="RATINGS_OPTIN_CLOSE">关闭</string>
@@ -318,14 +349,15 @@
     <string name="RATINGS_OPTIN_GOTO_PLACES">&lt;b>向大家推荐&lt;/b>！在计算机上访问 &lt;b>{0}&lt;/b>，以便添加朋友并了解他们喜欢哪些地点。</string>
     <string name="RATINGS_OPTIN_HEADING">设置您要在 Google 商家信息上公开显示的昵称。</string>
     <string name="RATINGS_OPTIN_NICKNAME">姓名或昵称：</string>
-    <string name="RATINGS_OPTIN_RATEPLACES_SUBHEADER">对您喜爱的餐馆、咖啡馆和其他地点进行评级，以便在搜索结果中获取符合您的个人偏好的建议。</string>
+    <string name="RATINGS_OPTIN_RATEPLACES_SUBHEADER">对您喜爱的餐馆、咖啡馆和其他地点评分，以便在搜索结果中获得合您偏好的建议。</string>
     <string name="RATINGS_OPTIN_SAVE">开始保存</string>
-    <string name="RATINGS_OPTIN_SUBHEADING">您对地点的评级会和此昵称一样&lt;b>公开显示在网络上&lt;/b>。&lt;a href=#>了解详情&lt;/a>。</string>
-    <string name="RATINGS_POSTING_AS">以{0}身份在网络上公开发布。</string>
+    <string name="RATINGS_OPTIN_SUBHEADING">您对地点的评分会随此昵称&lt;b>公开显示在网络上&lt;/b>。&lt;a href=#>了解详情&lt;/a>。</string>
+    <string name="RATINGS_POSTING_AS">以{0}的名义在网络上公开发布。</string>
     <string name="RATINGS_POSTING_PUBLICLY">在网络上公开发布。</string>
-    <string name="RATINGS_RATE_PLACES">为什么要给地点评级？</string>
+    <string name="RATINGS_RATE_PLACES">为什么要给地点评分？</string>
     <string name="RATINGS_SET_APPEARANCE">设置头像</string>
     <string name="RATINGS_WAIT">请稍候...</string>
+    <string name="RATINGS_WRONG_LABELS">标签有误？</string>
     <string name="SEARCH_HINT">搜索地图</string>
     <string name="SHORT_APP_NAME">Google 地图</string>
     <string name="TRAFFIC_WIDGET_END_LOCATION">终点</string>
@@ -335,9 +367,14 @@
     <string name="TRAFFIC_WIDGET_START_LOCATION">起点</string>
     <string name="TRANSIT_NAVIGATION">公交导航</string>
     <string name="TRANSIT_TITLE">公交</string>
-    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">发生严重错误。请退出并重新启动。</string>
+    <string name="TRANSIT_TYPE_FILTER_ALL">全部</string>
+    <string name="TRANSIT_TYPE_FILTER_BUS">公交车</string>
+    <string name="TRANSIT_TYPE_FILTER_SUBWAY">地铁</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAIN">火车</string>
+    <string name="TRANSIT_TYPE_FILTER_TRAM">电车</string>
+    <string name="UNKNOWN_COMMUNICATION_FAILURE_BODY">有错误发生...请在几分钟后重试。</string>
     <string name="UNKNOWN_COMMUNICATION_FAILURE_TITLE">未知错误</string>
-    <string name="UPGRADE_BODY">必须安装新版本才能使用此应用程序。</string>
+    <string name="UPGRADE_BODY">必须安装新版本才能使用此应用。</string>
     <string name="UPGRADE_TITLE">软件升级</string>
     <string name="WALLPAPER_AUTHOR">Google</string>
     <string name="WALLPAPER_DESCRIPTION">Google 地图动态壁纸</string>

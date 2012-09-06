@@ -23,7 +23,7 @@
     .registers 4
 
     .prologue
-    .line 208
+    .line 202
     :cond_0
     :goto_0
     iget-object v2, p0, Lorg/apache/commons/io/FileCleaningTracker$Reaper;->this$0:Lorg/apache/commons/io/FileCleaningTracker;
@@ -42,11 +42,11 @@
 
     if-lez v2, :cond_2d
 
-    .line 209
+    .line 203
     :cond_10
     const/4 v1, 0x0
 
-    .line 212
+    .line 206
     .local v1, tracker:Lorg/apache/commons/io/FileCleaningTracker$Tracker;
     :try_start_11
     iget-object v2, p0, Lorg/apache/commons/io/FileCleaningTracker$Reaper;->this$0:Lorg/apache/commons/io/FileCleaningTracker;
@@ -62,17 +62,17 @@
     :try_end_1b
     .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_1b} :catch_2b
 
-    .line 216
+    .line 210
     .restart local v1       #tracker:Lorg/apache/commons/io/FileCleaningTracker$Tracker;
     if-eqz v1, :cond_0
 
-    .line 217
+    .line 211
     invoke-virtual {v1}, Lorg/apache/commons/io/FileCleaningTracker$Tracker;->delete()Z
 
-    .line 218
+    .line 212
     invoke-virtual {v1}, Lorg/apache/commons/io/FileCleaningTracker$Tracker;->clear()V
 
-    .line 219
+    .line 213
     iget-object v2, p0, Lorg/apache/commons/io/FileCleaningTracker$Reaper;->this$0:Lorg/apache/commons/io/FileCleaningTracker;
 
     iget-object v2, v2, Lorg/apache/commons/io/FileCleaningTracker;->trackers:Ljava/util/Collection;
@@ -81,16 +81,16 @@
 
     goto :goto_0
 
-    .line 213
+    .line 207
     .end local v1           #tracker:Lorg/apache/commons/io/FileCleaningTracker$Tracker;
     :catch_2b
     move-exception v0
 
-    .line 214
+    .line 208
     .local v0, e:Ljava/lang/Exception;
     goto :goto_0
 
-    .line 222
+    .line 216
     .end local v0           #e:Ljava/lang/Exception;
     :cond_2d
     return-void

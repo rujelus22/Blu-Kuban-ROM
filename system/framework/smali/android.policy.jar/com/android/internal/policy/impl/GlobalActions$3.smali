@@ -26,7 +26,7 @@
     .parameter "x1"
 
     .prologue
-    .line 300
+    .line 195
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$3;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-direct {p0, p2, p3}, Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;-><init>(II)V
@@ -37,33 +37,24 @@
 
 # virtual methods
 .method public onPress()V
-    .registers 3
+    .registers 4
 
     .prologue
-    .line 302
-    new-instance v0, Landroid/content/Intent;
-
-    const-string v1, "android.settings.ACCESSIBILITY_SETTINGS"
-
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 303
-    .local v0, intent:Landroid/content/Intent;
-    const/high16 v1, 0x1000
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
-
-    .line 304
-    iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$3;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+    .line 197
+    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$3;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Lcom/android/internal/policy/impl/GlobalActions;->access$000(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$100(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    const-string v1, "null"
 
-    .line 305
+    const/4 v2, 0x1
+
+    invoke-static {v0, v1, v2}, Lcom/android/internal/app/ShutdownThread;->reboot(Landroid/content/Context;Ljava/lang/String;Z)V
+
+    .line 198
     return-void
 .end method
 
@@ -71,54 +62,17 @@
     .registers 2
 
     .prologue
-    .line 310
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public showConditional()Z
-    .registers 5
-
-    .prologue
+    .line 205
     const/4 v0, 0x1
 
-    const/4 v1, 0x0
-
-    .line 314
-    iget-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions$3;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
-
-    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mContext:Landroid/content/Context;
-    invoke-static {v2}, Lcom/android/internal/policy/impl/GlobalActions;->access$000(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    const-string v3, "power_key_hold"
-
-    invoke-static {v2, v3, v1}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v2
-
-    if-ne v2, v0, :cond_15
-
-    :goto_14
     return v0
-
-    :cond_15
-    move v0, v1
-
-    goto :goto_14
 .end method
 
 .method public showDuringKeyguard()Z
     .registers 2
 
     .prologue
-    .line 307
+    .line 201
     const/4 v0, 0x1
 
     return v0

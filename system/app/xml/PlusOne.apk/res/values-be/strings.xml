@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="ps_cache_status_title">Папярэдняя загрузка фота Picasa:</string>
-    <string name="ps_cache_status">Спампаваць фатаграфіі: %1$s з %2$s</string>
-    <string name="ps_cache_done">Спампоўванне завершанае</string>
-</resources>

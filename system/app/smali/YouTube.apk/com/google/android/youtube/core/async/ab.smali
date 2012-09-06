@@ -3,72 +3,39 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/g;
+.implements Landroid/content/DialogInterface$OnDismissListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/async/aa;
-
-.field private final b:Lcom/google/android/youtube/core/async/GDataRequest;
-
-.field private final c:Lcom/google/android/youtube/core/async/g;
+.field final synthetic a:Lcom/google/android/youtube/core/async/FroyoSignInActivity;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/core/async/aa;Lcom/google/android/youtube/core/async/GDataRequest;Lcom/google/android/youtube/core/async/g;)V
-    .registers 4
-    .parameter
-    .parameter
+.method constructor <init>(Lcom/google/android/youtube/core/async/FroyoSignInActivity;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 75
-    iput-object p1, p0, Lcom/google/android/youtube/core/async/ab;->a:Lcom/google/android/youtube/core/async/aa;
+    .line 119
+    iput-object p1, p0, Lcom/google/android/youtube/core/async/ab;->a:Lcom/google/android/youtube/core/async/FroyoSignInActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 76
-    iput-object p2, p0, Lcom/google/android/youtube/core/async/ab;->b:Lcom/google/android/youtube/core/async/GDataRequest;
-
-    .line 77
-    iput-object p3, p0, Lcom/google/android/youtube/core/async/ab;->c:Lcom/google/android/youtube/core/async/g;
-
-    .line 78
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
-    .registers 5
-    .parameter
-    .parameter
-
-    .prologue
-    .line 70
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ab;->c:Lcom/google/android/youtube/core/async/g;
-
-    iget-object v1, p0, Lcom/google/android/youtube/core/async/ab;->b:Lcom/google/android/youtube/core/async/GDataRequest;
-
-    invoke-interface {v0, v1, p2}, Lcom/google/android/youtube/core/async/g;->a(Ljava/lang/Object;Ljava/lang/Exception;)V
-
-    return-void
-.end method
-
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 5
-    .parameter
+.method public final onDismiss(Landroid/content/DialogInterface;)V
+    .registers 3
     .parameter
 
     .prologue
-    .line 70
-    check-cast p2, Landroid/graphics/Bitmap;
+    .line 121
+    iget-object v0, p0, Lcom/google/android/youtube/core/async/ab;->a:Lcom/google/android/youtube/core/async/FroyoSignInActivity;
 
-    iget-object v0, p0, Lcom/google/android/youtube/core/async/ab;->c:Lcom/google/android/youtube/core/async/g;
+    invoke-virtual {v0}, Lcom/google/android/youtube/core/async/FroyoSignInActivity;->finish()V
 
-    iget-object v1, p0, Lcom/google/android/youtube/core/async/ab;->b:Lcom/google/android/youtube/core/async/GDataRequest;
-
-    invoke-interface {v0, v1, p2}, Lcom/google/android/youtube/core/async/g;->a(Ljava/lang/Object;Ljava/lang/Object;)V
-
+    .line 122
     return-void
 .end method

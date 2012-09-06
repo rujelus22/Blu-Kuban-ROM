@@ -1,19 +1,20 @@
-.class Lcom/google/googlenav/ui/view/dialog/aQ;
+.class public abstract Lcom/google/googlenav/ui/view/dialog/aq;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/View$OnTouchListener;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/aP;
+.field final synthetic a:Lcom/google/googlenav/ui/view/dialog/am;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/dialog/aP;)V
+.method public constructor <init>(Lcom/google/googlenav/ui/view/dialog/am;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/aQ;->a:Lcom/google/googlenav/ui/view/dialog/aP;
+    .prologue
+    .line 37
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/dialog/aq;->a:Lcom/google/googlenav/ui/view/dialog/am;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,37 +23,36 @@
 
 
 # virtual methods
-.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .registers 4
+.method public abstract a()V
+.end method
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+.method public abstract b()V
+.end method
 
-    move-result v0
+.method public c()V
+    .registers 1
 
-    packed-switch v0, :pswitch_data_14
+    .prologue
+    .line 48
+    invoke-virtual {p0}, Lcom/google/googlenav/ui/view/dialog/aq;->b()V
 
-    :cond_7
-    :goto_7
-    const/4 v0, 0x0
+    .line 49
+    return-void
+.end method
 
-    return v0
+.method public d()V
+    .registers 2
 
-    :pswitch_9
-    invoke-virtual {p1}, Landroid/view/View;->hasFocus()Z
+    .prologue
+    .line 53
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/dialog/aq;->a:Lcom/google/googlenav/ui/view/dialog/am;
 
-    move-result v0
+    invoke-virtual {v0}, Lcom/google/googlenav/ui/view/dialog/am;->i()Landroid/widget/ViewSwitcher;
 
-    if-nez v0, :cond_7
+    move-result-object v0
 
-    invoke-virtual {p1}, Landroid/view/View;->requestFocus()Z
+    invoke-virtual {v0}, Landroid/widget/ViewSwitcher;->showNext()V
 
-    goto :goto_7
-
-    nop
-
-    :pswitch_data_14
-    .packed-switch 0x0
-        :pswitch_9
-        :pswitch_9
-    .end packed-switch
+    .line 54
+    return-void
 .end method

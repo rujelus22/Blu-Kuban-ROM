@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="@dimen/listPreferredItemHeight"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/Icon" android:layout_width="56.299988dip" android:layout_height="56.299988dip" android:layout_margin="3.2999878dip" android:scaleType="centerInside" />
-    <com.sec.android.app.myfiles.fileselector.views.MXSelectedImageView android:id="@id/boundary" android:visibility="gone" android:layout_width="58.0dip" android:layout_height="58.0dip" android:layout_margin="2.0dip" android:scaleType="center" />
-    <com.sec.android.app.myfiles.fileselector.views.MXTw3TextView android:textAppearance="?android:textAppearanceLarge" android:layout_gravity="center_vertical" android:id="@id/text1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:singleLine="true" android:layout_weight="1.0" android:layout_toRightOf="@id/Icon" android:layout_centerVertical="true" />
-    <ImageView android:id="@id/overlay" android:layout_width="56.299988dip" android:layout_height="56.299988dip" android:layout_margin="3.2999878dip" android:scaleType="center" />
-</RelativeLayout>

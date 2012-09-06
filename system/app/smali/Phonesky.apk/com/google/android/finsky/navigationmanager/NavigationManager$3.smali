@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 625
+    .line 539
     iput-object p1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$3;->this$0:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     iput-object p2, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$3;->val$doc:Lcom/google/android/finsky/api/model/Document;
@@ -48,22 +48,22 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 7
+    .registers 8
     .parameter "v"
 
     .prologue
     const/4 v4, 0x0
 
-    .line 628
+    .line 542
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$3;->val$doc:Lcom/google/android/finsky/api/model/Document;
 
     invoke-virtual {v0}, Lcom/google/android/finsky/api/model/Document;->canUseAsPartialDocument()Z
 
     move-result v0
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1e
 
-    .line 629
+    .line 543
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$3;->this$0:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     iget-object v1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$3;->val$doc:Lcom/google/android/finsky/api/model/Document;
@@ -80,14 +80,16 @@
 
     iget-object v3, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$3;->val$referrerUrl:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToDocPage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    move-object v5, v4
 
-    .line 633
-    :goto_1c
+    invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToDocPage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 547
+    :goto_1d
     return-void
 
-    .line 631
-    :cond_1d
+    .line 545
+    :cond_1e
     iget-object v0, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$3;->this$0:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     iget-object v1, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$3;->val$doc:Lcom/google/android/finsky/api/model/Document;
@@ -100,7 +102,9 @@
 
     iget-object v3, p0, Lcom/google/android/finsky/navigationmanager/NavigationManager$3;->val$referrerUrl:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToDocPage(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    move-object v5, v4
 
-    goto :goto_1c
+    invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToDocPage(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_1d
 .end method

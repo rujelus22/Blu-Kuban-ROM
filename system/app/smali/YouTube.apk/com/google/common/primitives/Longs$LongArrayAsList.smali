@@ -25,14 +25,14 @@
     .parameter
 
     .prologue
-    .line 437
+    .line 461
     const/4 v0, 0x0
 
     array-length v1, p1
 
     invoke-direct {p0, p1, v0, v1}, Lcom/google/common/primitives/Longs$LongArrayAsList;-><init>([JII)V
 
-    .line 438
+    .line 462
     return-void
 .end method
 
@@ -43,19 +43,19 @@
     .parameter
 
     .prologue
-    .line 440
+    .line 464
     invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
 
-    .line 441
+    .line 465
     iput-object p1, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->array:[J
 
-    .line 442
+    .line 466
     iput p2, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->start:I
 
-    .line 443
+    .line 467
     iput p3, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->end:I
 
-    .line 444
+    .line 468
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .parameter
 
     .prologue
-    .line 461
+    .line 485
     instance-of v0, p1, Ljava/lang/Long;
 
     if-eqz v0, :cond_19
@@ -111,29 +111,29 @@
 
     const/4 v1, 0x0
 
-    .line 505
+    .line 528
     if-ne p1, p0, :cond_5
 
-    .line 521
+    .line 544
     :cond_4
     :goto_4
     return v0
 
-    .line 508
+    .line 531
     :cond_5
     instance-of v2, p1, Lcom/google/common/primitives/Longs$LongArrayAsList;
 
     if-eqz v2, :cond_31
 
-    .line 509
+    .line 532
     check-cast p1, Lcom/google/common/primitives/Longs$LongArrayAsList;
 
-    .line 510
+    .line 533
     invoke-virtual {p0}, Lcom/google/common/primitives/Longs$LongArrayAsList;->size()I
 
     move-result v3
 
-    .line 511
+    .line 534
     invoke-virtual {p1}, Lcom/google/common/primitives/Longs$LongArrayAsList;->size()I
 
     move-result v2
@@ -142,17 +142,17 @@
 
     move v0, v1
 
-    .line 512
+    .line 535
     goto :goto_4
 
     :cond_17
     move v2, v1
 
-    .line 514
+    .line 537
     :goto_18
     if-ge v2, v3, :cond_4
 
-    .line 515
+    .line 538
     iget-object v4, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->array:[J
 
     iget v5, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->start:I
@@ -175,16 +175,16 @@
 
     move v0, v1
 
-    .line 516
+    .line 539
     goto :goto_4
 
-    .line 514
+    .line 537
     :cond_2e
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_18
 
-    .line 521
+    .line 544
     :cond_31
     invoke-super {p0, p1}, Ljava/util/AbstractList;->equals(Ljava/lang/Object;)Z
 
@@ -198,14 +198,14 @@
     .parameter
 
     .prologue
-    .line 455
+    .line 479
     invoke-virtual {p0}, Lcom/google/common/primitives/Longs$LongArrayAsList;->size()I
 
     move-result v0
 
-    invoke-static {p1, v0}, Lcom/google/common/base/t;->a(II)I
+    invoke-static {p1, v0}, Lcom/google/common/base/ag;->a(II)I
 
-    .line 456
+    .line 480
     iget-object v0, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->array:[J
 
     iget v1, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->start:I
@@ -226,7 +226,7 @@
     .parameter
 
     .prologue
-    .line 429
+    .line 453
     invoke-virtual {p0, p1}, Lcom/google/common/primitives/Longs$LongArrayAsList;->get(I)Ljava/lang/Long;
 
     move-result-object v0
@@ -238,10 +238,10 @@
     .registers 7
 
     .prologue
-    .line 525
+    .line 548
     const/4 v1, 0x1
 
-    .line 526
+    .line 549
     iget v0, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->start:I
 
     :goto_3
@@ -249,7 +249,7 @@
 
     if-ge v0, v2, :cond_17
 
-    .line 527
+    .line 550
     mul-int/lit8 v1, v1, 0x1f
 
     iget-object v2, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->array:[J
@@ -266,12 +266,12 @@
 
     add-int/2addr v1, v2
 
-    .line 526
+    .line 549
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
 
-    .line 529
+    .line 552
     :cond_17
     return v1
 .end method
@@ -281,12 +281,12 @@
     .parameter
 
     .prologue
-    .line 467
+    .line 491
     instance-of v0, p1, Ljava/lang/Long;
 
     if-eqz v0, :cond_1a
 
-    .line 468
+    .line 492
     iget-object v0, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->array:[J
 
     check-cast p1, Ljava/lang/Long;
@@ -303,15 +303,15 @@
 
     move-result v0
 
-    .line 469
+    .line 493
     if-ltz v0, :cond_1a
 
-    .line 470
+    .line 494
     iget v1, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->start:I
 
     sub-int/2addr v0, v1
 
-    .line 473
+    .line 497
     :goto_19
     return v0
 
@@ -325,7 +325,7 @@
     .registers 2
 
     .prologue
-    .line 451
+    .line 475
     const/4 v0, 0x0
 
     return v0
@@ -336,12 +336,12 @@
     .parameter
 
     .prologue
-    .line 478
+    .line 502
     instance-of v0, p1, Ljava/lang/Long;
 
     if-eqz v0, :cond_1a
 
-    .line 479
+    .line 503
     iget-object v0, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->array:[J
 
     check-cast p1, Ljava/lang/Long;
@@ -358,15 +358,15 @@
 
     move-result v0
 
-    .line 480
+    .line 504
     if-ltz v0, :cond_1a
 
-    .line 481
+    .line 505
     iget v1, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->start:I
 
     sub-int/2addr v0, v1
 
-    .line 484
+    .line 508
     :goto_19
     return v0
 
@@ -377,42 +377,48 @@
 .end method
 
 .method public set(ILjava/lang/Long;)Ljava/lang/Long;
-    .registers 9
+    .registers 10
     .parameter
     .parameter
 
     .prologue
-    .line 488
+    .line 512
     invoke-virtual {p0}, Lcom/google/common/primitives/Longs$LongArrayAsList;->size()I
 
     move-result v0
 
-    invoke-static {p1, v0}, Lcom/google/common/base/t;->a(II)I
+    invoke-static {p1, v0}, Lcom/google/common/base/ag;->a(II)I
 
-    .line 489
+    .line 513
     iget-object v0, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->array:[J
 
     iget v1, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->start:I
 
     add-int/2addr v1, p1
 
-    aget-wide v0, v0, v1
+    aget-wide v1, v0, v1
 
-    .line 490
-    iget-object v2, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->array:[J
+    .line 514
+    iget-object v3, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->array:[J
 
-    iget v3, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->start:I
+    iget v0, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->start:I
 
-    add-int/2addr v3, p1
+    add-int v4, v0, p1
 
-    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
+    invoke-static {p2}, Lcom/google/common/base/ag;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-wide v4
+    move-result-object v0
 
-    aput-wide v4, v2, v3
+    check-cast v0, Ljava/lang/Long;
 
-    .line 491
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v5
+
+    aput-wide v5, v3, v4
+
+    .line 515
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
@@ -425,7 +431,7 @@
     .parameter
 
     .prologue
-    .line 429
+    .line 453
     check-cast p2, Ljava/lang/Long;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/common/primitives/Longs$LongArrayAsList;->set(ILjava/lang/Long;)Ljava/lang/Long;
@@ -439,7 +445,7 @@
     .registers 3
 
     .prologue
-    .line 447
+    .line 471
     iget v0, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->end:I
 
     iget v1, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->start:I
@@ -455,23 +461,23 @@
     .parameter
 
     .prologue
-    .line 496
+    .line 519
     invoke-virtual {p0}, Lcom/google/common/primitives/Longs$LongArrayAsList;->size()I
 
     move-result v0
 
-    .line 497
-    invoke-static {p1, p2, v0}, Lcom/google/common/base/t;->a(III)V
+    .line 520
+    invoke-static {p1, p2, v0}, Lcom/google/common/base/ag;->a(III)V
 
-    .line 498
+    .line 521
     if-ne p1, p2, :cond_e
 
-    .line 499
+    .line 522
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 501
+    .line 524
     :goto_d
     return-object v0
 
@@ -497,15 +503,15 @@
     .registers 6
 
     .prologue
-    .line 543
+    .line 566
     invoke-virtual {p0}, Lcom/google/common/primitives/Longs$LongArrayAsList;->size()I
 
     move-result v0
 
-    .line 544
+    .line 567
     new-array v1, v0, [J
 
-    .line 545
+    .line 568
     iget-object v2, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->array:[J
 
     iget v3, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->start:I
@@ -514,7 +520,7 @@
 
     invoke-static {v2, v3, v1, v4, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 546
+    .line 569
     return-object v1
 .end method
 
@@ -522,7 +528,7 @@
     .registers 6
 
     .prologue
-    .line 533
+    .line 556
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Lcom/google/common/primitives/Longs$LongArrayAsList;->size()I
@@ -533,7 +539,7 @@
 
     invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 534
+    .line 557
     const/16 v0, 0x5b
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -548,7 +554,7 @@
 
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 535
+    .line 558
     iget v0, p0, Lcom/google/common/primitives/Longs$LongArrayAsList;->start:I
 
     add-int/lit8 v0, v0, 0x1
@@ -558,7 +564,7 @@
 
     if-ge v0, v2, :cond_32
 
-    .line 536
+    .line 559
     const-string v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -571,12 +577,12 @@
 
     invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 535
+    .line 558
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1e
 
-    .line 538
+    .line 561
     :cond_32
     const/16 v0, 0x5d
 

@@ -1,163 +1,140 @@
-.class final Lcom/google/api/client/http/r;
+.class public abstract Lcom/google/api/client/http/r;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lcom/google/api/client/http/g;
 
-
-# instance fields
-.field private final a:Lcom/google/api/client/http/g;
-
-.field private final b:Ljava/lang/String;
-
-.field private final c:Ljava/lang/String;
-
-.field private final d:J
+# static fields
+.field static final a:Ljava/util/logging/Logger;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/api/client/http/g;Ljava/lang/String;Ljava/lang/String;J)V
-    .registers 6
-    .parameter
-    .parameter
-    .parameter
-    .parameter
+.method static constructor <clinit>()V
+    .registers 1
 
     .prologue
-    .line 47
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 68
+    const-class v0, Lcom/google/api/client/http/r;
 
-    .line 48
-    iput-object p1, p0, Lcom/google/api/client/http/r;->a:Lcom/google/api/client/http/g;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    .line 49
-    iput-object p2, p0, Lcom/google/api/client/http/r;->b:Ljava/lang/String;
+    move-result-object v0
 
-    .line 50
-    iput-wide p4, p0, Lcom/google/api/client/http/r;->d:J
+    invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
 
-    .line 51
-    iput-object p3, p0, Lcom/google/api/client/http/r;->c:Ljava/lang/String;
+    move-result-object v0
 
-    .line 52
+    sput-object v0, Lcom/google/api/client/http/r;->a:Ljava/util/logging/Logger;
+
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)Z
-    .registers 2
-    .parameter
+.method public constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 83
-    if-eqz p0, :cond_14
+    .line 66
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "text/"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_12
-
-    const-string v0, "application/"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_14
-
-    :cond_12
-    const/4 v0, 0x1
-
-    :goto_13
-    return v0
-
-    :cond_14
-    const/4 v0, 0x0
-
-    goto :goto_13
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
+.method public final a()Lcom/google/api/client/http/n;
     .registers 2
 
     .prologue
-    .line 63
-    iget-object v0, p0, Lcom/google/api/client/http/r;->c:Ljava/lang/String;
+    .line 77
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/google/api/client/http/r;->a(Lcom/google/api/client/http/o;)Lcom/google/api/client/http/n;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public final a(Ljava/io/OutputStream;)V
-    .registers 5
+.method public final a(Lcom/google/api/client/http/o;)Lcom/google/api/client/http/n;
+    .registers 3
     .parameter
 
     .prologue
-    .line 55
-    new-instance v0, Ljava/io/ByteArrayOutputStream;
+    .line 89
+    new-instance v0, Lcom/google/api/client/http/n;
 
-    invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
+    invoke-direct {v0, p0, p1}, Lcom/google/api/client/http/n;-><init>(Lcom/google/api/client/http/r;Lcom/google/api/client/http/o;)V
 
-    .line 56
-    iget-object v1, p0, Lcom/google/api/client/http/r;->a:Lcom/google/api/client/http/g;
-
-    invoke-interface {v1, v0}, Lcom/google/api/client/http/g;->a(Ljava/io/OutputStream;)V
-
-    .line 57
-    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object v0
-
-    .line 58
-    sget-object v1, Lcom/google/api/client/http/p;->a:Ljava/util/logging/Logger;
-
-    new-instance v2, Ljava/lang/String;
-
-    invoke-direct {v2, v0}, Ljava/lang/String;-><init>([B)V
-
-    invoke-virtual {v1, v2}, Ljava/util/logging/Logger;->config(Ljava/lang/String;)V
-
-    .line 59
-    invoke-virtual {p1, v0}, Ljava/io/OutputStream;->write([B)V
-
-    .line 60
-    return-void
+    return-object v0
 .end method
 
-.method public final b()J
+.method protected abstract a(Ljava/lang/String;)Lcom/google/api/client/http/u;
+.end method
+
+.method final b()Lcom/google/api/client/http/l;
     .registers 3
 
     .prologue
-    .line 67
-    iget-wide v0, p0, Lcom/google/api/client/http/r;->d:J
+    .line 98
+    new-instance v0, Lcom/google/api/client/http/l;
 
-    return-wide v0
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/google/api/client/http/l;-><init>(Lcom/google/api/client/http/r;Lcom/google/api/client/http/HttpMethod;)V
+
+    return-object v0
 .end method
 
-.method public final c()Z
+.method protected abstract b(Ljava/lang/String;)Lcom/google/api/client/http/u;
+.end method
+
+.method protected c(Ljava/lang/String;)Lcom/google/api/client/http/u;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 154
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public c()Z
     .registers 2
 
     .prologue
-    .line 88
-    iget-object v0, p0, Lcom/google/api/client/http/r;->a:Lcom/google/api/client/http/g;
-
-    invoke-interface {v0}, Lcom/google/api/client/http/g;->c()Z
-
-    move-result v0
+    .line 110
+    const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public final e()Ljava/lang/String;
+.method protected d(Ljava/lang/String;)Lcom/google/api/client/http/u;
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 168
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public d()Z
     .registers 2
 
     .prologue
-    .line 71
-    iget-object v0, p0, Lcom/google/api/client/http/r;->b:Ljava/lang/String;
+    .line 122
+    const/4 v0, 0x0
 
-    return-object v0
+    return v0
+.end method
+
+.method protected abstract e(Ljava/lang/String;)Lcom/google/api/client/http/u;
+.end method
+
+.method protected abstract f(Ljava/lang/String;)Lcom/google/api/client/http/u;
 .end method

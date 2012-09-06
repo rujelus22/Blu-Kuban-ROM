@@ -56,42 +56,42 @@
     .registers 2
 
     .prologue
-    .line 11699
+    .line 11953
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 11833
+    .line 12091
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->countryCode_:Ljava/lang/String;
 
-    .line 11850
+    .line 12108
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->countryName_:Ljava/lang/String;
 
-    .line 11867
+    .line 12125
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->paypalCountryInfo_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCountryInfoProto;
 
-    .line 11887
+    .line 12145
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->allowsReducedBillingAddress_:Z
 
-    .line 11903
+    .line 12161
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->instrumentAddressSpec_:Ljava/util/List;
 
-    .line 11975
+    .line 12234
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->cachedSize:I
 
-    .line 11699
+    .line 11953
     return-void
 .end method
 
@@ -102,17 +102,17 @@
     .parameter "value"
 
     .prologue
-    .line 11920
+    .line 12178
     if-nez p1, :cond_8
 
-    .line 11921
+    .line 12179
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 11923
+    .line 12181
     :cond_8
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->instrumentAddressSpec_:Ljava/util/List;
 
@@ -122,20 +122,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 11924
+    .line 12182
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->instrumentAddressSpec_:Ljava/util/List;
 
-    .line 11926
+    .line 12184
     :cond_17
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->instrumentAddressSpec_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 11927
+    .line 12185
     return-object p0
 .end method
 
@@ -143,7 +143,7 @@
     .registers 2
 
     .prologue
-    .line 11888
+    .line 12146
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->allowsReducedBillingAddress_:Z
 
     return v0
@@ -153,15 +153,15 @@
     .registers 2
 
     .prologue
-    .line 11977
+    .line 12237
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 11979
+    .line 12239
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->getSerializedSize()I
 
-    .line 11981
+    .line 12241
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->cachedSize:I
 
@@ -172,7 +172,7 @@
     .registers 2
 
     .prologue
-    .line 11834
+    .line 12092
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->countryCode_:Ljava/lang/String;
 
     return-object v0
@@ -182,7 +182,7 @@
     .registers 2
 
     .prologue
-    .line 11851
+    .line 12109
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->countryName_:Ljava/lang/String;
 
     return-object v0
@@ -201,7 +201,7 @@
     .end annotation
 
     .prologue
-    .line 11906
+    .line 12164
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->instrumentAddressSpec_:Ljava/util/List;
 
     return-object v0
@@ -211,7 +211,7 @@
     .registers 2
 
     .prologue
-    .line 11869
+    .line 12127
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->paypalCountryInfo_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCountryInfoProto;
 
     return-object v0
@@ -221,10 +221,10 @@
     .registers 6
 
     .prologue
-    .line 11985
+    .line 12246
     const/4 v2, 0x0
 
-    .line 11986
+    .line 12247
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->hasCountryCode()Z
 
@@ -232,7 +232,7 @@
 
     if-eqz v3, :cond_11
 
-    .line 11987
+    .line 12248
     const/4 v3, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->getCountryCode()Ljava/lang/String;
@@ -245,7 +245,7 @@
 
     add-int/2addr v2, v3
 
-    .line 11990
+    .line 12251
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->hasCountryName()Z
 
@@ -253,7 +253,7 @@
 
     if-eqz v3, :cond_21
 
-    .line 11991
+    .line 12252
     const/4 v3, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->getCountryName()Ljava/lang/String;
@@ -266,7 +266,7 @@
 
     add-int/2addr v2, v3
 
-    .line 11994
+    .line 12255
     :cond_21
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->hasPaypalCountryInfo()Z
 
@@ -274,7 +274,7 @@
 
     if-eqz v3, :cond_31
 
-    .line 11995
+    .line 12256
     const/4 v3, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->getPaypalCountryInfo()Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCountryInfoProto;
@@ -287,7 +287,7 @@
 
     add-int/2addr v2, v3
 
-    .line 11998
+    .line 12259
     :cond_31
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->hasAllowsReducedBillingAddress()Z
 
@@ -295,7 +295,7 @@
 
     if-eqz v3, :cond_41
 
-    .line 11999
+    .line 12260
     const/4 v3, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->getAllowsReducedBillingAddress()Z
@@ -308,7 +308,7 @@
 
     add-int/2addr v2, v3
 
-    .line 12002
+    .line 12263
     :cond_41
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->getInstrumentAddressSpecList()Ljava/util/List;
 
@@ -332,7 +332,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country$InstrumentAddressSpec;
 
-    .line 12003
+    .line 12264
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country$InstrumentAddressSpec;
     const/4 v3, 0x7
 
@@ -344,12 +344,12 @@
 
     goto :goto_49
 
-    .line 12006
+    .line 12267
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country$InstrumentAddressSpec;
     :cond_5c
     iput v2, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->cachedSize:I
 
-    .line 12007
+    .line 12268
     return v2
 .end method
 
@@ -357,7 +357,7 @@
     .registers 2
 
     .prologue
-    .line 11889
+    .line 12147
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->hasAllowsReducedBillingAddress:Z
 
     return v0
@@ -367,7 +367,7 @@
     .registers 2
 
     .prologue
-    .line 11835
+    .line 12093
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->hasCountryCode:Z
 
     return v0
@@ -377,7 +377,7 @@
     .registers 2
 
     .prologue
-    .line 11852
+    .line 12110
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->hasCountryName:Z
 
     return v0
@@ -387,7 +387,7 @@
     .registers 2
 
     .prologue
-    .line 11868
+    .line 12126
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->hasPaypalCountryInfo:Z
 
     return v0
@@ -403,29 +403,29 @@
     .end annotation
 
     .prologue
-    .line 12014
+    .line 12276
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 12015
+    .line 12277
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_40
 
-    .line 12019
+    .line 12281
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 12020
+    .line 12282
     :sswitch_d
     return-object p0
 
-    .line 12025
+    .line 12287
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -435,7 +435,7 @@
 
     goto :goto_0
 
-    .line 12029
+    .line 12291
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -445,22 +445,22 @@
 
     goto :goto_0
 
-    .line 12033
+    .line 12295
     :sswitch_1e
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCountryInfoProto;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCountryInfoProto;-><init>()V
 
-    .line 12034
+    .line 12296
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCountryInfoProto;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 12035
+    .line 12297
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->setPaypalCountryInfo(Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCountryInfoProto;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;
 
     goto :goto_0
 
-    .line 12039
+    .line 12301
     .end local v1           #value:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCountryInfoProto;
     :sswitch_2a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readBool()Z
@@ -471,24 +471,24 @@
 
     goto :goto_0
 
-    .line 12043
+    .line 12305
     :sswitch_32
     new-instance v1, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country$InstrumentAddressSpec;
 
     invoke-direct {v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country$InstrumentAddressSpec;-><init>()V
 
-    .line 12044
+    .line 12306
     .local v1, value:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country$InstrumentAddressSpec;
     const/4 v2, 0x7
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readGroup(Lcom/google/protobuf/micro/MessageMicro;I)V
 
-    .line 12045
+    .line 12307
     invoke-virtual {p0, v1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->addInstrumentAddressSpec(Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country$InstrumentAddressSpec;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;
 
     goto :goto_0
 
-    .line 12015
+    .line 12277
     nop
 
     :sswitch_data_40
@@ -512,7 +512,7 @@
     .end annotation
 
     .prologue
-    .line 11697
+    .line 11951
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;
 
     move-result-object v0
@@ -525,15 +525,15 @@
     .parameter "value"
 
     .prologue
-    .line 11891
+    .line 12149
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->hasAllowsReducedBillingAddress:Z
 
-    .line 11892
+    .line 12150
     iput-boolean p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->allowsReducedBillingAddress_:Z
 
-    .line 11893
+    .line 12151
     return-object p0
 .end method
 
@@ -542,15 +542,15 @@
     .parameter "value"
 
     .prologue
-    .line 11837
+    .line 12095
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->hasCountryCode:Z
 
-    .line 11838
+    .line 12096
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->countryCode_:Ljava/lang/String;
 
-    .line 11839
+    .line 12097
     return-object p0
 .end method
 
@@ -559,15 +559,15 @@
     .parameter "value"
 
     .prologue
-    .line 11854
+    .line 12112
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->hasCountryName:Z
 
-    .line 11855
+    .line 12113
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->countryName_:Ljava/lang/String;
 
-    .line 11856
+    .line 12114
     return-object p0
 .end method
 
@@ -576,26 +576,26 @@
     .parameter "value"
 
     .prologue
-    .line 11871
+    .line 12129
     if-nez p1, :cond_8
 
-    .line 11872
+    .line 12130
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 11874
+    .line 12132
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->hasPaypalCountryInfo:Z
 
-    .line 11875
+    .line 12133
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->paypalCountryInfo_:Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCountryInfoProto;
 
-    .line 11876
+    .line 12134
     return-object p0
 .end method
 
@@ -609,14 +609,14 @@
     .end annotation
 
     .prologue
-    .line 11958
+    .line 12217
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->hasCountryCode()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 11959
+    .line 12218
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->getCountryCode()Ljava/lang/String;
@@ -625,7 +625,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 11961
+    .line 12220
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->hasCountryName()Z
 
@@ -633,7 +633,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 11962
+    .line 12221
     const/4 v2, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->getCountryName()Ljava/lang/String;
@@ -642,7 +642,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 11964
+    .line 12223
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->hasPaypalCountryInfo()Z
 
@@ -650,7 +650,7 @@
 
     if-eqz v2, :cond_2a
 
-    .line 11965
+    .line 12224
     const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->getPaypalCountryInfo()Lcom/google/android/vending/remoting/protos/VendingProtos$PaypalCountryInfoProto;
@@ -659,7 +659,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 11967
+    .line 12226
     :cond_2a
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->hasAllowsReducedBillingAddress()Z
 
@@ -667,7 +667,7 @@
 
     if-eqz v2, :cond_38
 
-    .line 11968
+    .line 12227
     const/4 v2, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->getAllowsReducedBillingAddress()Z
@@ -676,7 +676,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeBool(IZ)V
 
-    .line 11970
+    .line 12229
     :cond_38
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;->getInstrumentAddressSpecList()Ljava/util/List;
 
@@ -700,7 +700,7 @@
 
     check-cast v0, Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country$InstrumentAddressSpec;
 
-    .line 11971
+    .line 12230
     .local v0, element:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country$InstrumentAddressSpec;
     const/4 v2, 0x7
 
@@ -708,7 +708,7 @@
 
     goto :goto_40
 
-    .line 11973
+    .line 12232
     .end local v0           #element:Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country$InstrumentAddressSpec;
     :cond_51
     return-void

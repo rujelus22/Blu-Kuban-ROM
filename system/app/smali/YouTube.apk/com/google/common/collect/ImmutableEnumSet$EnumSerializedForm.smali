@@ -20,13 +20,13 @@
     .parameter
 
     .prologue
-    .line 112
+    .line 107
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 113
+    .line 108
     iput-object p1, p0, Lcom/google/common/collect/ImmutableEnumSet$EnumSerializedForm;->delegate:Ljava/util/EnumSet;
 
-    .line 114
+    .line 109
     return-void
 .end method
 
@@ -36,7 +36,7 @@
     .registers 3
 
     .prologue
-    .line 117
+    .line 112
     new-instance v0, Lcom/google/common/collect/ImmutableEnumSet;
 
     iget-object v1, p0, Lcom/google/common/collect/ImmutableEnumSet$EnumSerializedForm;->delegate:Ljava/util/EnumSet;
@@ -45,7 +45,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lcom/google/common/collect/ImmutableEnumSet;-><init>(Ljava/util/Set;)V
+    invoke-direct {v0, v1}, Lcom/google/common/collect/ImmutableEnumSet;-><init>(Ljava/util/EnumSet;)V
 
     return-object v0
 .end method

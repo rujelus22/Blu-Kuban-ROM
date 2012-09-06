@@ -711,225 +711,223 @@
 
 .field public static final camera_mode_thumbnail_bg:I = 0x7f02015b
 
-.field public static final camera_mode_thumbnail_bg_empty:I = 0x7f02015c
+.field public static final camera_mode_thumbnail_bg_press:I = 0x7f02015c
 
-.field public static final camera_mode_thumbnail_bg_press:I = 0x7f02015d
+.field public static final camera_mode_timer_10_nor:I = 0x7f02015d
 
-.field public static final camera_mode_timer_10_nor:I = 0x7f02015e
+.field public static final camera_mode_timer_10_press:I = 0x7f02015e
 
-.field public static final camera_mode_timer_10_press:I = 0x7f02015f
+.field public static final camera_mode_timer_2_nor:I = 0x7f02015f
 
-.field public static final camera_mode_timer_2_nor:I = 0x7f020160
+.field public static final camera_mode_timer_2_press:I = 0x7f020160
 
-.field public static final camera_mode_timer_2_press:I = 0x7f020161
+.field public static final camera_mode_timer_5_nor:I = 0x7f020161
 
-.field public static final camera_mode_timer_5_nor:I = 0x7f020162
+.field public static final camera_mode_timer_5_press:I = 0x7f020162
 
-.field public static final camera_mode_timer_5_press:I = 0x7f020163
+.field public static final camera_mode_timer_off_nor:I = 0x7f020163
 
-.field public static final camera_mode_timer_off_nor:I = 0x7f020164
+.field public static final camera_mode_timer_off_press:I = 0x7f020164
 
-.field public static final camera_mode_timer_off_press:I = 0x7f020165
+.field public static final camera_mode_whitebalance_auto_nor:I = 0x7f020165
 
-.field public static final camera_mode_whitebalance_auto_nor:I = 0x7f020166
+.field public static final camera_mode_whitebalance_auto_press:I = 0x7f020166
 
-.field public static final camera_mode_whitebalance_auto_press:I = 0x7f020167
+.field public static final camera_mode_whitebalance_cloudy_nor:I = 0x7f020167
 
-.field public static final camera_mode_whitebalance_cloudy_nor:I = 0x7f020168
+.field public static final camera_mode_whitebalance_cloudy_press:I = 0x7f020168
 
-.field public static final camera_mode_whitebalance_cloudy_press:I = 0x7f020169
+.field public static final camera_mode_whitebalance_day_light_nor:I = 0x7f020169
 
-.field public static final camera_mode_whitebalance_day_light_nor:I = 0x7f02016a
+.field public static final camera_mode_whitebalance_day_light_press:I = 0x7f02016a
 
-.field public static final camera_mode_whitebalance_day_light_press:I = 0x7f02016b
+.field public static final camera_mode_whitebalance_fluorescen_nor:I = 0x7f02016b
 
-.field public static final camera_mode_whitebalance_fluorescen_nor:I = 0x7f02016c
+.field public static final camera_mode_whitebalance_fluorescen_press:I = 0x7f02016c
 
-.field public static final camera_mode_whitebalance_fluorescen_press:I = 0x7f02016d
+.field public static final camera_mode_whitebalance_horizon_nor:I = 0x7f02016d
 
-.field public static final camera_mode_whitebalance_horizon_nor:I = 0x7f02016e
+.field public static final camera_mode_whitebalance_horizon_press:I = 0x7f02016e
 
-.field public static final camera_mode_whitebalance_horizon_press:I = 0x7f02016f
+.field public static final camera_mode_whitebalance_incandescent_nor:I = 0x7f02016f
 
-.field public static final camera_mode_whitebalance_incandescent_nor:I = 0x7f020170
+.field public static final camera_mode_whitebalance_incandescent_press:I = 0x7f020170
 
-.field public static final camera_mode_whitebalance_incandescent_press:I = 0x7f020171
+.field public static final camera_mode_whitebalance_shade_nor:I = 0x7f020171
 
-.field public static final camera_mode_whitebalance_shade_nor:I = 0x7f020172
+.field public static final camera_mode_whitebalance_shade_press:I = 0x7f020172
 
-.field public static final camera_mode_whitebalance_shade_press:I = 0x7f020173
+.field public static final camera_more_btn:I = 0x7f020173
 
-.field public static final camera_more_btn:I = 0x7f020174
+.field public static final camera_normal_bg:I = 0x7f020174
 
-.field public static final camera_normal_bg:I = 0x7f020175
+.field public static final camera_normal_opacity_l_bg:I = 0x7f020175
 
-.field public static final camera_normal_opacity_l_bg:I = 0x7f020176
+.field public static final camera_option_popup_anker:I = 0x7f020176
 
-.field public static final camera_option_popup_anker:I = 0x7f020177
+.field public static final camera_option_popup_bg:I = 0x7f020177
 
-.field public static final camera_option_popup_bg:I = 0x7f020178
+.field public static final camera_option_popup_bg_02:I = 0x7f020178
 
-.field public static final camera_option_popup_bg_02:I = 0x7f020179
+.field public static final camera_option_popup_bg_2depth:I = 0x7f020179
 
-.field public static final camera_option_popup_bg_2depth:I = 0x7f02017a
+.field public static final camera_option_popup_line:I = 0x7f02017a
 
-.field public static final camera_option_popup_line:I = 0x7f02017b
+.field public static final camera_option_popup_scroll:I = 0x7f02017b
 
-.field public static final camera_option_popup_scroll:I = 0x7f02017c
+.field public static final camera_popup_ex:I = 0x7f02017c
 
-.field public static final camera_popup_ex:I = 0x7f02017d
+.field public static final camera_popup_ex_bar:I = 0x7f02017d
 
-.field public static final camera_popup_ex_bar:I = 0x7f02017e
+.field public static final camera_popup_ex_line:I = 0x7f02017e
 
-.field public static final camera_popup_ex_line:I = 0x7f02017f
+.field public static final camera_popup_list_noconnected05:I = 0x7f02017f
 
-.field public static final camera_popup_list_noconnected05:I = 0x7f020180
+.field public static final camera_popup_list_wifi_05:I = 0x7f020180
 
-.field public static final camera_popup_list_wifi_05:I = 0x7f020181
+.field public static final camera_popup_thumb:I = 0x7f020181
 
-.field public static final camera_popup_thumb:I = 0x7f020182
+.field public static final camera_popup_zoom:I = 0x7f020182
 
-.field public static final camera_popup_zoom:I = 0x7f020183
+.field public static final camera_popup_zoom_bar:I = 0x7f020183
 
-.field public static final camera_popup_zoom_bar:I = 0x7f020184
+.field public static final camera_quickview_bg_pressed:I = 0x7f020184
 
-.field public static final camera_quickview_bg_pressed:I = 0x7f020185
+.field public static final camera_radio_btn_off:I = 0x7f020185
 
-.field public static final camera_radio_btn_off:I = 0x7f020186
+.field public static final camera_radio_btn_on:I = 0x7f020186
 
-.field public static final camera_radio_btn_on:I = 0x7f020187
+.field public static final camera_rec:I = 0x7f020187
 
-.field public static final camera_rec:I = 0x7f020188
+.field public static final camera_shoot_share_history_01:I = 0x7f020188
 
-.field public static final camera_shoot_share_history_01:I = 0x7f020189
+.field public static final camera_shoot_share_history_02:I = 0x7f020189
 
-.field public static final camera_shoot_share_history_02:I = 0x7f02018a
+.field public static final camera_shoot_share_history_03:I = 0x7f02018a
 
-.field public static final camera_shoot_share_history_03:I = 0x7f02018b
+.field public static final camera_shortcut_bg:I = 0x7f02018b
 
-.field public static final camera_shortcut_bg:I = 0x7f02018c
+.field public static final camera_shortcut_line_h_01:I = 0x7f02018c
 
-.field public static final camera_shortcut_line_h_01:I = 0x7f02018d
+.field public static final camera_shortcut_line_v_01:I = 0x7f02018d
 
-.field public static final camera_shortcut_line_v_01:I = 0x7f02018e
+.field public static final cancel_button:I = 0x7f02018e
 
-.field public static final cancel_button:I = 0x7f02018f
+.field public static final control_bar_button:I = 0x7f02018f
 
-.field public static final control_bar_button:I = 0x7f020190
+.field public static final control_bar_button_on:I = 0x7f020190
 
-.field public static final control_bar_button_on:I = 0x7f020191
+.field public static final default_icon:I = 0x7f020191
 
-.field public static final default_icon:I = 0x7f020192
+.field public static final empty:I = 0x7f020192
 
-.field public static final empty:I = 0x7f020193
+.field public static final emptynine:I = 0x7f020193
 
-.field public static final emptynine:I = 0x7f020194
+.field public static final highlight:I = 0x7f020194
 
-.field public static final highlight:I = 0x7f020195
+.field public static final highlight_transparent:I = 0x7f020195
 
-.field public static final highlight_transparent:I = 0x7f020196
+.field public static final ic_menu_3d_globe:I = 0x7f020196
 
-.field public static final ic_menu_3d_globe:I = 0x7f020197
+.field public static final ic_menu_delete:I = 0x7f020197
 
-.field public static final ic_menu_delete:I = 0x7f020198
+.field public static final ic_menu_edit_group:I = 0x7f020198
 
-.field public static final ic_menu_edit_group:I = 0x7f020199
+.field public static final ic_menu_save:I = 0x7f020199
 
-.field public static final ic_menu_save:I = 0x7f02019a
+.field public static final ic_menu_view_details:I = 0x7f02019a
 
-.field public static final ic_menu_view_details:I = 0x7f02019b
+.field public static final icon:I = 0x7f02019b
 
-.field public static final icon:I = 0x7f02019c
+.field public static final indicator_autocrop:I = 0x7f02019c
 
-.field public static final indicator_autocrop:I = 0x7f02019d
+.field public static final kor_camera_icon_mms:I = 0x7f02019d
 
-.field public static final kor_camera_icon_mms:I = 0x7f02019e
+.field public static final kor_camera_icon_msg:I = 0x7f02019e
 
-.field public static final kor_camera_icon_msg:I = 0x7f02019f
+.field public static final light_effects_bottom:I = 0x7f02019f
 
-.field public static final light_effects_bottom:I = 0x7f0201a0
+.field public static final light_effects_top:I = 0x7f0201a0
 
-.field public static final light_effects_top:I = 0x7f0201a1
+.field public static final list_selector_background_focus:I = 0x7f0201a1
 
-.field public static final list_selector_background_focus:I = 0x7f0201a2
+.field public static final menu_background_fill_parent_width:I = 0x7f0201a2
 
-.field public static final menu_background_fill_parent_width:I = 0x7f0201a3
+.field public static final menu_bg:I = 0x7f0201a3
 
-.field public static final menu_bg:I = 0x7f0201a4
+.field public static final menu_btn_n_l1:I = 0x7f0201a4
 
-.field public static final menu_btn_n_l1:I = 0x7f0201a5
+.field public static final menu_btn_p_l1:I = 0x7f0201a5
 
-.field public static final menu_btn_p_l1:I = 0x7f0201a6
+.field public static final menu_splitter_l1:I = 0x7f0201a6
 
-.field public static final menu_splitter_l1:I = 0x7f0201a7
+.field public static final overscroll_landscape_edge:I = 0x7f0201a7
 
-.field public static final overscroll_landscape_edge:I = 0x7f0201a8
+.field public static final overscroll_landscape_left_glow:I = 0x7f0201a8
 
-.field public static final overscroll_landscape_left_glow:I = 0x7f0201a9
+.field public static final overscroll_landscape_right_glow:I = 0x7f0201a9
 
-.field public static final overscroll_landscape_right_glow:I = 0x7f0201aa
+.field public static final overscroll_portrait_bottom_glow:I = 0x7f0201aa
 
-.field public static final overscroll_portrait_bottom_glow:I = 0x7f0201ab
+.field public static final overscroll_portrait_edge:I = 0x7f0201ab
 
-.field public static final overscroll_portrait_edge:I = 0x7f0201ac
+.field public static final overscroll_portrait_top_glow:I = 0x7f0201ac
 
-.field public static final overscroll_portrait_top_glow:I = 0x7f0201ad
+.field public static final popup_bottom_medium:I = 0x7f0201ad
 
-.field public static final popup_bottom_medium:I = 0x7f0201ae
+.field public static final popup_top_dark:I = 0x7f0201ae
 
-.field public static final popup_top_dark:I = 0x7f0201af
+.field public static final seek_thumb:I = 0x7f0201af
 
-.field public static final seek_thumb:I = 0x7f0201b0
+.field public static final shareshot:I = 0x7f0201b0
 
-.field public static final shareshot:I = 0x7f0201b1
+.field public static final sharewith_icon:I = 0x7f0201b1
 
-.field public static final sharewith_icon:I = 0x7f0201b2
+.field public static final sharewith_icon_press:I = 0x7f0201b2
 
-.field public static final sharewith_icon_press:I = 0x7f0201b3
+.field public static final shutter_down:I = 0x7f0201b3
 
-.field public static final shutter_down:I = 0x7f0201b4
+.field public static final shutter_left:I = 0x7f0201b4
 
-.field public static final shutter_left:I = 0x7f0201b5
+.field public static final shutter_right:I = 0x7f0201b5
 
-.field public static final shutter_right:I = 0x7f0201b6
+.field public static final shutter_up:I = 0x7f0201b6
 
-.field public static final shutter_up:I = 0x7f0201b7
+.field public static final spinner_bg:I = 0x7f0201b7
 
-.field public static final spinner_bg:I = 0x7f0201b8
+.field public static final spinner_black_20:I = 0x7f0201b8
 
-.field public static final spinner_black_20:I = 0x7f0201b9
+.field public static final spinner_white_76:I = 0x7f0201b9
 
-.field public static final spinner_white_76:I = 0x7f0201ba
+.field public static final tw30_camera_ev_gauge:I = 0x7f0201ba
 
-.field public static final tw30_camera_ev_gauge:I = 0x7f0201bb
+.field public static final tw30_camera_ev_gauge_focus:I = 0x7f0201bb
 
-.field public static final tw30_camera_ev_gauge_focus:I = 0x7f0201bc
+.field public static final tw30_camera_focus_fail:I = 0x7f0201bc
 
-.field public static final tw30_camera_focus_fail:I = 0x7f0201bd
+.field public static final tw30_camera_focus_notready:I = 0x7f0201bd
 
-.field public static final tw30_camera_focus_notready:I = 0x7f0201be
+.field public static final tw30_camera_indicator_transparent:I = 0x7f0201be
 
-.field public static final tw30_camera_indicator_transparent:I = 0x7f0201bf
+.field public static final tw30_camera_ready:I = 0x7f0201bf
 
-.field public static final tw30_camera_ready:I = 0x7f0201c0
+.field public static final tw30_camera_shootingmode_popup_bg:I = 0x7f0201c0
 
-.field public static final tw30_camera_shootingmode_popup_bg:I = 0x7f0201c1
+.field public static final tw30_camera_timer_icon_bg:I = 0x7f0201c1
 
-.field public static final tw30_camera_timer_icon_bg:I = 0x7f0201c2
+.field public static final tw30_icon_camcorder:I = 0x7f0201c2
 
-.field public static final tw30_icon_camcorder:I = 0x7f0201c3
+.field public static final tw30_icon_camera:I = 0x7f0201c3
 
-.field public static final tw30_icon_camera:I = 0x7f0201c4
+.field public static final tw_btn_01_default_disable:I = 0x7f0201c4
 
-.field public static final tw_btn_01_default_disable:I = 0x7f0201c5
+.field public static final tw_progress_horizontal:I = 0x7f0201c5
 
-.field public static final tw_progress_horizontal:I = 0x7f0201c6
+.field public static final tw_progressbar:I = 0x7f0201c6
 
-.field public static final tw_progressbar:I = 0x7f0201c7
+.field public static final tw_progressbar_bg:I = 0x7f0201c7
 
-.field public static final tw_progressbar_bg:I = 0x7f0201c8
-
-.field public static final videooverlay:I = 0x7f0201c9
+.field public static final videooverlay:I = 0x7f0201c8
 
 
 # direct methods

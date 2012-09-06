@@ -49,18 +49,18 @@
     .end annotation
 
     .prologue
-    .line 290
+    .line 256
     .local p0, this:Lcom/google/android/finsky/config/PreferenceFile$PrefixSharedPreference;,"Lcom/google/android/finsky/config/PreferenceFile$PrefixSharedPreference<TT;>;"
     .local p2, defaultValue:Ljava/lang/Object;,"TT;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 291
+    .line 257
     iput-object p1, p0, Lcom/google/android/finsky/config/PreferenceFile$PrefixSharedPreference;->mPrefix:Ljava/lang/String;
 
-    .line 292
+    .line 258
     iput-object p2, p0, Lcom/google/android/finsky/config/PreferenceFile$PrefixSharedPreference;->mDefaultValue:Ljava/lang/Object;
 
-    .line 293
+    .line 259
     return-void
 .end method
 
@@ -80,7 +80,7 @@
     .end annotation
 
     .prologue
-    .line 297
+    .line 263
     .local p0, this:Lcom/google/android/finsky/config/PreferenceFile$PrefixSharedPreference;,"Lcom/google/android/finsky/config/PreferenceFile$PrefixSharedPreference<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

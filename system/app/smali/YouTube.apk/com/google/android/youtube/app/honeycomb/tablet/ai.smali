@@ -3,26 +3,21 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/coreicecream/ui/i;
+.implements Landroid/widget/ShareActionProvider$OnShareTargetSelectedListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/core/player/ControllerOverlay;
-
-.field final synthetic b:Lcom/google/android/youtube/app/honeycomb/tablet/ah;
+.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/tablet/ag;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/tablet/ah;Lcom/google/android/youtube/core/player/ControllerOverlay;)V
-    .registers 3
-    .parameter
+.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/tablet/ag;)V
+    .registers 2
     .parameter
 
     .prologue
-    .line 300
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/ai;->b:Lcom/google/android/youtube/app/honeycomb/tablet/ah;
-
-    iput-object p2, p0, Lcom/google/android/youtube/app/honeycomb/tablet/ai;->a:Lcom/google/android/youtube/core/player/ControllerOverlay;
+    .line 655
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/ai;->a:Lcom/google/android/youtube/app/honeycomb/tablet/ag;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,15 +26,25 @@
 
 
 # virtual methods
-.method public final a()V
-    .registers 2
+.method public final onShareTargetSelected(Landroid/widget/ShareActionProvider;Landroid/content/Intent;)Z
+    .registers 5
+    .parameter
+    .parameter
 
     .prologue
-    .line 302
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/ai;->a:Lcom/google/android/youtube/core/player/ControllerOverlay;
+    .line 657
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/ai;->a:Lcom/google/android/youtube/app/honeycomb/tablet/ag;
 
-    invoke-interface {v0}, Lcom/google/android/youtube/core/player/ControllerOverlay;->b()V
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/tablet/ag;->d(Lcom/google/android/youtube/app/honeycomb/tablet/ag;)Lcom/google/android/youtube/core/Analytics;
 
-    .line 303
-    return-void
+    move-result-object v0
+
+    const-string v1, "Share"
+
+    invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/Analytics;->b(Ljava/lang/String;)V
+
+    .line 658
+    const/4 v0, 0x0
+
+    return v0
 .end method

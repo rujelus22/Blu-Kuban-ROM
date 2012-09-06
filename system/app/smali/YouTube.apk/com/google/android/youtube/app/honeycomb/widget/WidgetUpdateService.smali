@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/google/android/youtube/core/async/av;
-.implements Lcom/google/android/youtube/core/async/g;
+.implements Lcom/google/android/youtube/core/async/bc;
+.implements Lcom/google/android/youtube/core/async/l;
 
 
 # instance fields
-.field private a:Lcom/google/android/youtube/app/c/b;
+.field private a:Lcom/google/android/youtube/app/d/b;
 
 .field private b:Lcom/google/android/youtube/core/async/GDataRequestFactory;
 
@@ -18,19 +18,23 @@
 
 .field private e:Z
 
+.field private final f:Ljava/util/concurrent/Semaphore;
+
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .registers 3
 
     .prologue
+    const/4 v1, 0x0
+
     .line 37
     invoke-direct {p0}, Landroid/widget/RemoteViewsService;-><init>()V
 
     .line 48
     new-instance v0, Lcom/google/android/youtube/app/honeycomb/widget/b;
 
-    invoke-direct {v0, p0}, Lcom/google/android/youtube/app/honeycomb/widget/b;-><init>(Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;)V
+    invoke-direct {v0, p0, v1}, Lcom/google/android/youtube/app/honeycomb/widget/b;-><init>(Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;B)V
 
     iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->c:Lcom/google/android/youtube/app/honeycomb/widget/b;
 
@@ -41,7 +45,14 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->d:Ljava/util/List;
 
-    .line 166
+    .line 52
+    new-instance v0, Ljava/util/concurrent/Semaphore;
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/Semaphore;-><init>(I)V
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->f:Ljava/util/concurrent/Semaphore;
+
+    .line 168
     return-void
 .end method
 
@@ -56,225 +67,88 @@
     return-object v0
 .end method
 
-.method private declared-synchronized b()V
-    .registers 11
-
-    .prologue
-    .line 54
-    monitor-enter p0
-
-    :try_start_1
-    iget-boolean v1, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->e:Z
-
-    if-nez v1, :cond_42
-
-    .line 57
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->e:Z
-
-    .line 59
-    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->getApplication()Landroid/app/Application;
-
-    move-result-object v1
-
-    move-object v0, v1
-
-    check-cast v0, Lcom/google/android/youtube/app/YouTubeApplication;
-
-    move-object v3, v0
-
-    .line 60
-    invoke-virtual {v3}, Lcom/google/android/youtube/app/YouTubeApplication;->D()Lcom/google/android/youtube/core/async/UserAuthorizer;
-
-    move-result-object v8
-
-    .line 61
-    invoke-virtual {v3}, Lcom/google/android/youtube/app/YouTubeApplication;->i()Lcom/google/android/youtube/core/client/ad;
-
-    move-result-object v9
-
-    .line 62
-    new-instance v2, Lcom/google/android/youtube/app/v;
-
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v2, v9, v1}, Lcom/google/android/youtube/app/v;-><init>(Lcom/google/android/youtube/core/client/ad;Ljava/lang/String;)V
-
-    .line 63
-    new-instance v1, Lcom/google/android/youtube/app/c/b;
-
-    invoke-virtual {v3}, Lcom/google/android/youtube/app/YouTubeApplication;->o()Lcom/google/android/youtube/core/client/af;
-
-    move-result-object v3
-
-    invoke-virtual {v2}, Lcom/google/android/youtube/app/v;->a()Ljava/util/concurrent/ConcurrentHashMap;
-
-    move-result-object v4
-
-    const/16 v5, 0x8
-
-    const/16 v6, 0x18
-
-    const/4 v7, 0x1
-
-    invoke-direct/range {v1 .. v7}, Lcom/google/android/youtube/app/c/b;-><init>(Lcom/google/android/youtube/core/async/ad;Lcom/google/android/youtube/core/client/af;Ljava/util/concurrent/ConcurrentMap;IIZ)V
-
-    iput-object v1, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->a:Lcom/google/android/youtube/app/c/b;
-
-    .line 65
-    invoke-interface {v9}, Lcom/google/android/youtube/core/client/ad;->a()Lcom/google/android/youtube/core/async/GDataRequestFactory;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->b:Lcom/google/android/youtube/core/async/GDataRequestFactory;
-
-    .line 68
-    invoke-virtual {v8, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Lcom/google/android/youtube/core/async/av;)V
-    :try_end_42
-    .catchall {:try_start_1 .. :try_end_42} :catchall_4c
-
-    .line 75
-    :cond_42
-    :try_start_42
-    invoke-virtual {p0}, Ljava/lang/Object;->wait()V
-    :try_end_45
-    .catchall {:try_start_42 .. :try_end_45} :catchall_4c
-    .catch Ljava/lang/Exception; {:try_start_42 .. :try_end_45} :catch_47
-
-    .line 79
-    :goto_45
-    monitor-exit p0
-
-    return-void
-
-    .line 76
-    :catch_47
-    move-exception v1
-
-    .line 77
-    :try_start_48
-    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
-    :try_end_4b
-    .catchall {:try_start_48 .. :try_end_4b} :catchall_4c
-
-    goto :goto_45
-
-    .line 54
-    :catchall_4c
-    move-exception v1
-
-    monitor-exit p0
-
-    throw v1
-.end method
-
-.method static synthetic b(Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;)V
-    .registers 1
-    .parameter
-
-    .prologue
-    .line 37
-    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->b()V
-
-    return-void
-.end method
-
-.method private declared-synchronized c()V
+.method private b()V
     .registers 8
 
     .prologue
     const/4 v0, 0x0
 
-    .line 99
-    monitor-enter p0
+    const/4 v5, 0x0
 
-    const/4 v1, 0x0
+    .line 101
+    iput-object v5, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->a:Lcom/google/android/youtube/app/d/b;
 
-    :try_start_3
-    iput-object v1, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->a:Lcom/google/android/youtube/app/c/b;
-
-    .line 100
-    const/4 v1, 0x0
-
-    iput-boolean v1, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->e:Z
-
-    .line 103
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
+    .line 102
+    iput-boolean v0, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->e:Z
 
     .line 105
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->f:Ljava/util/concurrent/Semaphore;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/Semaphore;->release()V
+
+    .line 107
     iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->d:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_5b
 
-    .line 107
+    .line 109
     new-instance v1, Landroid/content/ComponentName;
 
     const-class v2, Lcom/google/android/youtube/app/honeycomb/widget/WidgetProvider;
 
     invoke-direct {v1, p0, v2}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 108
+    .line 110
     invoke-static {p0}, Landroid/appwidget/AppWidgetManager;->getInstance(Landroid/content/Context;)Landroid/appwidget/AppWidgetManager;
 
     move-result-object v2
 
-    .line 109
+    .line 111
     new-instance v3, Landroid/content/Intent;
 
-    const/4 v4, 0x0
+    const-class v4, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;
 
-    const/4 v5, 0x0
+    invoke-direct {v3, v5, v5, p0, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;Landroid/content/Context;Ljava/lang/Class;)V
 
-    const-class v6, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;
-
-    invoke-direct {v3, v4, v5, p0, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 110
+    .line 112
     invoke-virtual {v2, v1}, Landroid/appwidget/AppWidgetManager;->getAppWidgetIds(Landroid/content/ComponentName;)[I
 
     move-result-object v1
 
-    .line 111
-    :goto_2b
+    .line 113
+    :goto_29
     array-length v4, v1
 
-    if-ge v0, v4, :cond_42
+    if-ge v0, v4, :cond_40
 
-    .line 112
+    .line 114
     invoke-static {p0}, Lcom/google/android/youtube/app/honeycomb/widget/c;->b(Landroid/content/Context;)Landroid/widget/RemoteViews;
 
     move-result-object v4
 
-    .line 114
+    .line 116
     aget v5, v1, v0
 
-    const v6, 0x7f0900bd
+    const v6, 0x7f080131
 
     invoke-virtual {v4, v5, v6, v3}, Landroid/widget/RemoteViews;->setRemoteAdapter(IILandroid/content/Intent;)V
 
-    .line 115
+    .line 117
     aget v5, v1, v0
 
     invoke-virtual {v2, v5, v4}, Landroid/appwidget/AppWidgetManager;->updateAppWidget(ILandroid/widget/RemoteViews;)V
 
-    .line 111
+    .line 113
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2b
+    goto :goto_29
 
-    .line 117
-    :cond_42
+    .line 119
+    :cond_40
     invoke-static {}, Lcom/google/android/youtube/core/L;->e()V
 
     const-string v0, "alarm"
@@ -300,33 +174,104 @@
     move-result-object v4
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
-    :try_end_5d
-    .catchall {:try_start_3 .. :try_end_5d} :catchall_5f
 
-    .line 119
-    :cond_5d
-    monitor-exit p0
-
+    .line 121
+    :cond_5b
     return-void
-
-    .line 99
-    :catchall_5f
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method
 
-.method private d()V
+.method static synthetic b(Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;)V
+    .registers 10
+    .parameter
+
+    .prologue
+    const/4 v6, 0x1
+
+    .line 37
+    iget-boolean v0, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->e:Z
+
+    if-nez v0, :cond_3b
+
+    iput-boolean v6, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->e:Z
+
+    invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->getApplication()Landroid/app/Application;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    check-cast v2, Lcom/google/android/youtube/app/YouTubeApplication;
+
+    invoke-virtual {v2}, Lcom/google/android/youtube/app/YouTubeApplication;->Q()Lcom/google/android/youtube/core/async/UserAuthorizer;
+
+    move-result-object v7
+
+    invoke-virtual {v2}, Lcom/google/android/youtube/app/YouTubeApplication;->j()Lcom/google/android/youtube/core/b/ae;
+
+    move-result-object v8
+
+    invoke-virtual {v2}, Lcom/google/android/youtube/app/YouTubeApplication;->y()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/google/android/youtube/app/b;
+
+    invoke-direct {v1, v8, v0}, Lcom/google/android/youtube/app/b;-><init>(Lcom/google/android/youtube/core/b/ae;Ljava/lang/String;)V
+
+    new-instance v0, Lcom/google/android/youtube/app/d/b;
+
+    invoke-virtual {v2}, Lcom/google/android/youtube/app/YouTubeApplication;->p()Lcom/google/android/youtube/core/b/ag;
+
+    move-result-object v2
+
+    invoke-virtual {v1}, Lcom/google/android/youtube/app/b;->a()Ljava/util/concurrent/ConcurrentHashMap;
+
+    move-result-object v3
+
+    const/16 v4, 0x8
+
+    const/16 v5, 0x18
+
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/youtube/app/d/b;-><init>(Lcom/google/android/youtube/core/async/ar;Lcom/google/android/youtube/core/b/ag;Ljava/util/concurrent/ConcurrentMap;IIZ)V
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->a:Lcom/google/android/youtube/app/d/b;
+
+    invoke-interface {v8}, Lcom/google/android/youtube/core/b/ae;->a()Lcom/google/android/youtube/core/async/GDataRequestFactory;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->b:Lcom/google/android/youtube/core/async/GDataRequestFactory;
+
+    invoke-virtual {v7, p0}, Lcom/google/android/youtube/core/async/UserAuthorizer;->a(Lcom/google/android/youtube/core/async/bc;)V
+
+    :cond_3b
+    :try_start_3b
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->f:Ljava/util/concurrent/Semaphore;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/Semaphore;->acquire()V
+    :try_end_40
+    .catch Ljava/lang/Exception; {:try_start_3b .. :try_end_40} :catch_41
+
+    :goto_40
+    return-void
+
+    :catch_41
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto :goto_40
+.end method
+
+.method private c()V
     .registers 3
 
     .prologue
-    .line 139
+    .line 141
     invoke-static {}, Lcom/google/android/youtube/core/L;->e()V
 
-    .line 140
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->a:Lcom/google/android/youtube/app/c/b;
+    .line 142
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->a:Lcom/google/android/youtube/app/d/b;
 
     iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->b:Lcom/google/android/youtube/core/async/GDataRequestFactory;
 
@@ -334,9 +279,9 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1, p0}, Lcom/google/android/youtube/app/c/b;->a(Lcom/google/android/youtube/core/async/GDataRequest;Lcom/google/android/youtube/core/async/g;)V
+    invoke-virtual {v0, v1, p0}, Lcom/google/android/youtube/app/d/b;->a(Lcom/google/android/youtube/core/async/GDataRequest;Lcom/google/android/youtube/core/async/l;)V
 
-    .line 141
+    .line 143
     return-void
 .end method
 
@@ -347,20 +292,20 @@
     .parameter
 
     .prologue
-    .line 122
+    .line 124
     invoke-static {}, Lcom/google/android/youtube/core/L;->e()V
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->a:Lcom/google/android/youtube/app/c/b;
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->a:Lcom/google/android/youtube/app/d/b;
 
     iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->b:Lcom/google/android/youtube/core/async/GDataRequestFactory;
 
-    invoke-virtual {v1, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->a(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
+    invoke-virtual {v1, p1}, Lcom/google/android/youtube/core/async/GDataRequestFactory;->b(Lcom/google/android/youtube/core/model/UserAuth;)Lcom/google/android/youtube/core/async/GDataRequest;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1, p0}, Lcom/google/android/youtube/app/c/b;->a(Lcom/google/android/youtube/core/async/GDataRequest;Lcom/google/android/youtube/core/async/g;)V
+    invoke-virtual {v0, v1, p0}, Lcom/google/android/youtube/app/d/b;->a(Lcom/google/android/youtube/core/async/GDataRequest;Lcom/google/android/youtube/core/async/l;)V
 
-    .line 123
+    .line 125
     return-void
 .end method
 
@@ -369,10 +314,10 @@
     .parameter
 
     .prologue
-    .line 130
-    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->d()V
+    .line 132
+    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->c()V
 
-    .line 131
+    .line 133
     return-void
 .end method
 
@@ -398,7 +343,7 @@
     :try_end_c
     .catchall {:try_start_6 .. :try_end_c} :catchall_10
 
-    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->c()V
+    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->b()V
 
     return-void
 
@@ -436,7 +381,7 @@
     :try_end_10
     .catchall {:try_start_5 .. :try_end_10} :catchall_14
 
-    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->c()V
+    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->b()V
 
     return-void
 
@@ -448,14 +393,14 @@
     throw v0
 .end method
 
-.method public final d_()V
+.method public final e_()V
     .registers 1
 
     .prologue
-    .line 126
-    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->d()V
+    .line 128
+    invoke-direct {p0}, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->c()V
 
-    .line 127
+    .line 129
     return-void
 .end method
 
@@ -464,7 +409,7 @@
     .parameter
 
     .prologue
-    .line 157
+    .line 159
     iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/widget/WidgetUpdateService;->c:Lcom/google/android/youtube/app/honeycomb/widget/b;
 
     return-object v0

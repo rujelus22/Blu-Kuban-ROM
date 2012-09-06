@@ -22,7 +22,7 @@
     iput p2, p0, Lcom/google/android/youtube/googlemobile/masf/a/c;->b:I
 
     :goto_7
-    if-eqz p1, :cond_5c
+    if-eqz p1, :cond_58
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -30,7 +30,7 @@
 
     :cond_d
     :goto_d
-    if-lez v0, :cond_51
+    if-lez v0, :cond_4d
 
     add-int/lit8 v1, v0, -0x1
 
@@ -82,13 +82,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "unrecognised encoding: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -102,8 +98,8 @@
 
     throw v0
 
-    :cond_51
-    if-lez p2, :cond_5d
+    :cond_4d
+    if-lez p2, :cond_59
 
     new-instance v0, Lcom/google/android/youtube/googlemobile/masf/d;
 
@@ -113,11 +109,11 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/a/c;->a:Lcom/google/android/youtube/googlemobile/masf/d;
 
-    :cond_5c
-    :goto_5c
+    :cond_58
+    :goto_58
     return-void
 
-    :cond_5d
+    :cond_59
     new-instance v0, Lcom/google/android/youtube/googlemobile/masf/d;
 
     const v1, 0x7fffffff
@@ -126,7 +122,7 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/googlemobile/masf/a/c;->a:Lcom/google/android/youtube/googlemobile/masf/d;
 
-    goto :goto_5c
+    goto :goto_58
 .end method
 
 

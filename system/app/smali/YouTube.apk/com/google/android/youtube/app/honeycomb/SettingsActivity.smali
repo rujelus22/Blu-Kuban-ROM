@@ -6,7 +6,9 @@
 # instance fields
 .field private a:Lcom/google/android/youtube/app/YouTubeApplication;
 
-.field private b:Lcom/google/android/youtube/app/ui/cf;
+.field private b:Lcom/google/android/youtube/app/ui/dj;
+
+.field private c:Lcom/google/android/youtube/app/honeycomb/SettingsActivity$PrefetchPrefsFragment;
 
 
 # direct methods
@@ -14,10 +16,10 @@
     .registers 1
 
     .prologue
-    .line 38
+    .line 43
     invoke-direct {p0}, Landroid/preference/PreferenceActivity;-><init>()V
 
-    .line 205
+    .line 377
     return-void
 .end method
 
@@ -26,7 +28,7 @@
     .parameter
 
     .prologue
-    .line 38
+    .line 43
     iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/SettingsActivity;->a:Lcom/google/android/youtube/app/YouTubeApplication;
 
     return-object v0
@@ -34,17 +36,29 @@
 
 
 # virtual methods
+.method public final a(Lcom/google/android/youtube/app/honeycomb/SettingsActivity$PrefetchPrefsFragment;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 138
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/SettingsActivity;->c:Lcom/google/android/youtube/app/honeycomb/SettingsActivity$PrefetchPrefsFragment;
+
+    .line 139
+    return-void
+.end method
+
 .method public onBuildHeaders(Ljava/util/List;)V
     .registers 3
     .parameter
 
     .prologue
-    .line 45
+    .line 51
     const v0, 0x7f060002
 
     invoke-virtual {p0, v0, p1}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity;->loadHeadersFromResource(ILjava/util/List;)V
 
-    .line 46
+    .line 52
     return-void
 .end method
 
@@ -55,18 +69,18 @@
     .prologue
     const/16 v1, 0xc
 
-    .line 50
+    .line 56
     invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 52
+    .line 58
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity;->getActionBar()Landroid/app/ActionBar;
 
     move-result-object v0
 
-    .line 53
+    .line 59
     invoke-virtual {v0, v1, v1}, Landroid/app/ActionBar;->setDisplayOptions(II)V
 
-    .line 56
+    .line 62
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity;->getApplication()Landroid/app/Application;
 
     move-result-object v0
@@ -75,14 +89,14 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/SettingsActivity;->a:Lcom/google/android/youtube/app/YouTubeApplication;
 
-    .line 57
-    new-instance v0, Lcom/google/android/youtube/app/ui/cf;
+    .line 63
+    new-instance v0, Lcom/google/android/youtube/app/ui/dj;
 
-    invoke-direct {v0, p0}, Lcom/google/android/youtube/app/ui/cf;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, p0}, Lcom/google/android/youtube/app/ui/dj;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/SettingsActivity;->b:Lcom/google/android/youtube/app/ui/cf;
+    iput-object v0, p0, Lcom/google/android/youtube/app/honeycomb/SettingsActivity;->b:Lcom/google/android/youtube/app/ui/dj;
 
-    .line 58
+    .line 64
     return-void
 .end method
 
@@ -91,10 +105,10 @@
     .parameter
 
     .prologue
-    .line 68
-    sparse-switch p1, :sswitch_data_6c
+    .line 74
+    sparse-switch p1, :sswitch_data_66
 
-    .line 99
+    .line 108
     invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onCreateDialog(I)Landroid/app/Dialog;
 
     move-result-object v0
@@ -102,25 +116,13 @@
     :goto_7
     return-object v0
 
-    .line 70
+    .line 76
     :sswitch_8
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f0a00a6
-
-    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v0
-
-    const v1, 0x1080027
-
-    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v0
-
-    const v1, 0x7f0a00a7
+    const v1, 0x7f0b00ca
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -128,9 +130,9 @@
 
     const v1, 0x104000a
 
-    new-instance v2, Lcom/google/android/youtube/app/honeycomb/d;
+    new-instance v2, Lcom/google/android/youtube/app/honeycomb/e;
 
-    invoke-direct {v2, p0}, Lcom/google/android/youtube/app/honeycomb/d;-><init>(Lcom/google/android/youtube/app/honeycomb/SettingsActivity;)V
+    invoke-direct {v2, p0}, Lcom/google/android/youtube/app/honeycomb/e;-><init>(Lcom/google/android/youtube/app/honeycomb/SettingsActivity;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -150,23 +152,23 @@
 
     goto :goto_7
 
-    .line 83
-    :sswitch_3a
+    .line 88
+    :sswitch_2c
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f0a00f8
+    const v1, 0x7f0b0130
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x7f100001
+    const v1, 0x7f110001
 
     iget-object v2, p0, Lcom/google/android/youtube/app/honeycomb/SettingsActivity;->a:Lcom/google/android/youtube/app/YouTubeApplication;
 
-    invoke-virtual {v2}, Lcom/google/android/youtube/app/YouTubeApplication;->E()Lcom/google/android/youtube/core/utils/SafeSearch;
+    invoke-virtual {v2}, Lcom/google/android/youtube/app/YouTubeApplication;->R()Lcom/google/android/youtube/core/utils/SafeSearch;
 
     move-result-object v2
 
@@ -178,9 +180,9 @@
 
     move-result v2
 
-    new-instance v3, Lcom/google/android/youtube/app/honeycomb/e;
+    new-instance v3, Lcom/google/android/youtube/app/honeycomb/f;
 
-    invoke-direct {v3, p0}, Lcom/google/android/youtube/app/honeycomb/e;-><init>(Lcom/google/android/youtube/app/honeycomb/SettingsActivity;)V
+    invoke-direct {v3, p0}, Lcom/google/android/youtube/app/honeycomb/f;-><init>(Lcom/google/android/youtube/app/honeycomb/SettingsActivity;)V
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setSingleChoiceItems(IILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -192,22 +194,35 @@
 
     goto :goto_7
 
-    .line 96
-    :sswitch_65
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/SettingsActivity;->b:Lcom/google/android/youtube/app/ui/cf;
+    .line 102
+    :sswitch_57
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/SettingsActivity;->b:Lcom/google/android/youtube/app/ui/dj;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/cf;->a()Landroid/app/Dialog;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/ui/dj;->a()Landroid/app/Dialog;
 
     move-result-object v0
 
     goto :goto_7
 
-    .line 68
-    :sswitch_data_6c
+    .line 105
+    :sswitch_5e
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/SettingsActivity;->c:Lcom/google/android/youtube/app/honeycomb/SettingsActivity$PrefetchPrefsFragment;
+
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$PrefetchPrefsFragment;->a()Landroid/app/Dialog;
+
+    move-result-object v0
+
+    goto :goto_7
+
+    .line 74
+    nop
+
+    :sswitch_data_66
     .sparse-switch
         0x3ea -> :sswitch_8
-        0x3f6 -> :sswitch_3a
-        0x3fd -> :sswitch_65
+        0x3f6 -> :sswitch_2c
+        0x3fd -> :sswitch_57
+        0x401 -> :sswitch_5e
     .end sparse-switch
 .end method
 
@@ -216,46 +231,74 @@
     .parameter
 
     .prologue
-    .line 104
+    .line 122
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_e
 
-    .line 109
+    .line 127
     const/4 v0, 0x0
 
     :goto_8
     return v0
 
-    .line 106
+    .line 124
     :pswitch_9
     invoke-virtual {p0}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity;->finish()V
 
-    .line 107
+    .line 125
     const/4 v0, 0x1
 
     goto :goto_8
 
-    .line 104
+    .line 122
     :pswitch_data_e
     .packed-switch 0x102002c
         :pswitch_9
     .end packed-switch
 .end method
 
+.method protected onPrepareDialog(ILandroid/app/Dialog;Landroid/os/Bundle;)V
+    .registers 5
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 113
+    const/16 v0, 0x401
+
+    if-ne p1, v0, :cond_a
+
+    .line 114
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/SettingsActivity;->c:Lcom/google/android/youtube/app/honeycomb/SettingsActivity$PrefetchPrefsFragment;
+
+    invoke-virtual {v0, p3}, Lcom/google/android/youtube/app/honeycomb/SettingsActivity$PrefetchPrefsFragment;->a(Landroid/os/Bundle;)V
+
+    .line 118
+    :goto_9
+    return-void
+
+    .line 116
+    :cond_a
+    invoke-super {p0, p1, p2, p3}, Landroid/preference/PreferenceActivity;->onPrepareDialog(ILandroid/app/Dialog;Landroid/os/Bundle;)V
+
+    goto :goto_9
+.end method
+
 .method protected onResume()V
     .registers 3
 
     .prologue
-    .line 62
+    .line 68
     invoke-super {p0}, Landroid/preference/PreferenceActivity;->onResume()V
 
-    .line 63
+    .line 69
     iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/SettingsActivity;->a:Lcom/google/android/youtube/app/YouTubeApplication;
 
-    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->J()Lcom/google/android/youtube/core/Analytics;
+    invoke-virtual {v0}, Lcom/google/android/youtube/app/YouTubeApplication;->F()Lcom/google/android/youtube/core/Analytics;
 
     move-result-object v0
 
@@ -269,7 +312,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/youtube/core/Analytics;->a(Ljava/lang/String;)V
 
-    .line 64
+    .line 70
     return-void
 .end method
 
@@ -277,7 +320,7 @@
     .registers 2
 
     .prologue
-    .line 116
+    .line 134
     const/4 v0, 0x0
 
     return v0

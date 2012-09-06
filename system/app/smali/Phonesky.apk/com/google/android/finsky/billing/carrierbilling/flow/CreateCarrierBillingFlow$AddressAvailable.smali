@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 111
+    .line 106
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$AddressAvailable;
 
     const-string v1, "FULL_ADDRESS"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$AddressAvailable;->FULL_ADDRESS:Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$AddressAvailable;
 
-    .line 112
+    .line 107
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$AddressAvailable;
 
     const-string v1, "ADDRESS_SNIPPET"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$AddressAvailable;->ADDRESS_SNIPPET:Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$AddressAvailable;
 
-    .line 113
+    .line 108
     new-instance v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$AddressAvailable;
 
     const-string v1, "NO_ADDRESS"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$AddressAvailable;->NO_ADDRESS:Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$AddressAvailable;
 
-    .line 110
+    .line 105
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$AddressAvailable;
@@ -104,7 +104,7 @@
     .end annotation
 
     .prologue
-    .line 110
+    .line 105
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -115,7 +115,7 @@
     .parameter
 
     .prologue
-    .line 110
+    .line 105
     const-class v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$AddressAvailable;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -131,7 +131,7 @@
     .registers 1
 
     .prologue
-    .line 110
+    .line 105
     sget-object v0, Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$AddressAvailable;->$VALUES:[Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$AddressAvailable;
 
     invoke-virtual {v0}, [Lcom/google/android/finsky/billing/carrierbilling/flow/CreateCarrierBillingFlow$AddressAvailable;->clone()Ljava/lang/Object;

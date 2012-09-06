@@ -8,7 +8,7 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/tablet/a;Landroid/app/Activity;Lcom/google/android/youtube/app/o;Lcom/google/android/youtube/core/ui/h;Lcom/google/android/youtube/app/honeycomb/ui/b;Lcom/google/android/youtube/core/client/ad;Lcom/google/android/youtube/core/e;Lcom/google/android/youtube/core/client/af;Lcom/google/android/youtube/core/Analytics;Lcom/google/android/youtube/core/Analytics$VideoCategory;Lcom/google/android/youtube/core/client/al;)V
+.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/tablet/a;Landroid/app/Activity;Lcom/google/android/youtube/app/a;Lcom/google/android/youtube/core/ui/g;Lcom/google/android/youtube/app/honeycomb/ui/b;Lcom/google/android/youtube/core/b/ae;Lcom/google/android/youtube/core/d;Lcom/google/android/youtube/core/b/ag;Lcom/google/android/youtube/core/Analytics;Lcom/google/android/youtube/core/Analytics$VideoCategory;Lcom/google/android/youtube/core/b/aj;)V
     .registers 23
     .parameter
     .parameter
@@ -23,7 +23,7 @@
     .parameter
 
     .prologue
-    .line 175
+    .line 177
     iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/tablet/e;->a:Lcom/google/android/youtube/app/honeycomb/tablet/a;
 
     move-object v0, p0
@@ -48,7 +48,7 @@
 
     move-object/from16 v10, p11
 
-    invoke-direct/range {v0 .. v10}, Lcom/google/android/youtube/app/honeycomb/ui/d;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/app/o;Lcom/google/android/youtube/core/ui/h;Lcom/google/android/youtube/app/honeycomb/ui/b;Lcom/google/android/youtube/core/client/ad;Lcom/google/android/youtube/core/e;Lcom/google/android/youtube/core/client/af;Lcom/google/android/youtube/core/Analytics;Lcom/google/android/youtube/core/Analytics$VideoCategory;Lcom/google/android/youtube/core/client/al;)V
+    invoke-direct/range {v0 .. v10}, Lcom/google/android/youtube/app/honeycomb/ui/d;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/app/a;Lcom/google/android/youtube/core/ui/g;Lcom/google/android/youtube/app/honeycomb/ui/b;Lcom/google/android/youtube/core/b/ae;Lcom/google/android/youtube/core/d;Lcom/google/android/youtube/core/b/ag;Lcom/google/android/youtube/core/Analytics;Lcom/google/android/youtube/core/Analytics$VideoCategory;Lcom/google/android/youtube/core/b/aj;)V
 
     return-void
 .end method
@@ -60,7 +60,7 @@
     .parameter
 
     .prologue
-    .line 179
+    .line 181
     iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/tablet/e;->a:Lcom/google/android/youtube/app/honeycomb/tablet/a;
 
     invoke-static {v0, p1}, Lcom/google/android/youtube/app/honeycomb/tablet/a;->a(Lcom/google/android/youtube/app/honeycomb/tablet/a;Lcom/google/android/youtube/core/model/LiveEvent;)Z
@@ -75,7 +75,7 @@
     .parameter
 
     .prologue
-    .line 175
+    .line 177
     check-cast p1, Lcom/google/android/youtube/core/model/LiveEvent;
 
     invoke-virtual {p0, p1}, Lcom/google/android/youtube/app/honeycomb/tablet/e;->a(Lcom/google/android/youtube/core/model/LiveEvent;)Z

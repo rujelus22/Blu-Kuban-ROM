@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="rom_info_props">
+        <item>ro.build.display.id</item>
+        <item>ro.build.version.release</item>
+        <item>ro.build.date</item>
+        <item>ro.product.device</item>
+    </string-array>
+</resources>

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 162
+    .line 159
     iput-object p1, p0, Lcom/google/android/finsky/activities/ReviewDialog$3;->this$0:Lcom/google/android/finsky/activities/ReviewDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,6 +43,6 @@
     .parameter "whichButton"
 
     .prologue
-    .line 165
+    .line 162
     return-void
 .end method

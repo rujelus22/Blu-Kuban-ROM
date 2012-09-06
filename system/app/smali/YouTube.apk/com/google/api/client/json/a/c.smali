@@ -38,7 +38,7 @@
     .line 48
     iget-object v0, p0, Lcom/google/api/client/json/a/c;->a:Lorg/codehaus/jackson/JsonGenerator;
 
-    invoke-virtual {v0}, Lorg/codehaus/jackson/JsonGenerator;->f()V
+    invoke-virtual {v0}, Lorg/codehaus/jackson/JsonGenerator;->g()V
 
     .line 49
     return-void
@@ -163,7 +163,7 @@
     .line 118
     iget-object v0, p0, Lcom/google/api/client/json/a/c;->a:Lorg/codehaus/jackson/JsonGenerator;
 
-    invoke-virtual {v0}, Lorg/codehaus/jackson/JsonGenerator;->a()V
+    invoke-virtual {v0}, Lorg/codehaus/jackson/JsonGenerator;->b()V
 
     .line 119
     return-void
@@ -190,7 +190,7 @@
     .line 63
     iget-object v0, p0, Lcom/google/api/client/json/a/c;->a:Lorg/codehaus/jackson/JsonGenerator;
 
-    invoke-virtual {v0}, Lorg/codehaus/jackson/JsonGenerator;->b()V
+    invoke-virtual {v0}, Lorg/codehaus/jackson/JsonGenerator;->c()V
 
     .line 64
     return-void
@@ -203,7 +203,7 @@
     .line 123
     iget-object v0, p0, Lcom/google/api/client/json/a/c;->a:Lorg/codehaus/jackson/JsonGenerator;
 
-    invoke-virtual {v0}, Lorg/codehaus/jackson/JsonGenerator;->c()V
+    invoke-virtual {v0}, Lorg/codehaus/jackson/JsonGenerator;->d()V
 
     .line 124
     return-void
@@ -216,7 +216,7 @@
     .line 68
     iget-object v0, p0, Lcom/google/api/client/json/a/c;->a:Lorg/codehaus/jackson/JsonGenerator;
 
-    invoke-virtual {v0}, Lorg/codehaus/jackson/JsonGenerator;->d()V
+    invoke-virtual {v0}, Lorg/codehaus/jackson/JsonGenerator;->e()V
 
     .line 69
     return-void
@@ -229,8 +229,21 @@
     .line 78
     iget-object v0, p0, Lcom/google/api/client/json/a/c;->a:Lorg/codehaus/jackson/JsonGenerator;
 
-    invoke-virtual {v0}, Lorg/codehaus/jackson/JsonGenerator;->e()V
+    invoke-virtual {v0}, Lorg/codehaus/jackson/JsonGenerator;->f()V
 
     .line 79
+    return-void
+.end method
+
+.method public final g()V
+    .registers 2
+
+    .prologue
+    .line 133
+    iget-object v0, p0, Lcom/google/api/client/json/a/c;->a:Lorg/codehaus/jackson/JsonGenerator;
+
+    invoke-virtual {v0}, Lorg/codehaus/jackson/JsonGenerator;->a()Lorg/codehaus/jackson/JsonGenerator;
+
+    .line 134
     return-void
 .end method

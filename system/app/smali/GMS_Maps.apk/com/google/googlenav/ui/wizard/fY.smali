@@ -1,19 +1,23 @@
-.class Lcom/google/googlenav/ui/wizard/fY;
+.class Lcom/google/googlenav/ui/wizard/fy;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lcom/google/googlenav/ui/wizard/aX;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/fX;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/ft;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/fX;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/ft;)V
     .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fY;->a:Lcom/google/googlenav/ui/wizard/fX;
+    .prologue
+    .line 501
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/fy;->a:Lcom/google/googlenav/ui/wizard/ft;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,28 +26,12 @@
 
 
 # virtual methods
-.method public a(Z)V
-    .registers 4
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/fY;->a:Lcom/google/googlenav/ui/wizard/fX;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/wizard/fX;->a(I)V
-
-    return-void
-.end method
-
-.method public b(Z)V
-    .registers 2
-
-    return-void
-.end method
-
-.method public c(Z)V
-    .registers 2
-
-    invoke-virtual {p0, p1}, Lcom/google/googlenav/ui/wizard/fY;->b(Z)V
-
+    .prologue
+    .line 506
     return-void
 .end method

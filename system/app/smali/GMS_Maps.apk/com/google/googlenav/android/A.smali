@@ -1,95 +1,122 @@
-.class public Lcom/google/googlenav/android/A;
+.class public Lcom/google/googlenav/android/a;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
+.method public static a()Z
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    .line 26
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    return-void
+    const/16 v1, 0x9
+
+    if-lt v0, v1, :cond_8
+
+    const/4 v0, 0x1
+
+    :goto_7
+    return v0
+
+    :cond_8
+    const/4 v0, 0x0
+
+    goto :goto_7
 .end method
 
-.method private a(J)V
-    .registers 7
+.method public static b()Z
+    .registers 2
 
-    invoke-static {}, Laf/b;->a()Laf/b;
+    .prologue
+    .line 36
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    move-result-object v0
+    const/16 v1, 0xb
 
-    invoke-virtual {v0}, Laf/b;->v()Laf/a;
+    if-lt v0, v1, :cond_e
 
-    move-result-object v0
+    invoke-static {}, Lcom/google/googlenav/common/c;->b()Z
 
-    invoke-interface {v0}, Laf/a;->b()J
+    move-result v0
 
-    move-result-wide v0
+    if-nez v0, :cond_e
 
-    invoke-static {}, Lae/d;->c()Lae/c;
+    const/4 v0, 0x1
 
-    move-result-object v2
+    :goto_d
+    return v0
 
-    invoke-virtual {v2}, Lae/c;->f()J
+    :cond_e
+    const/4 v0, 0x0
 
-    move-result-wide v2
-
-    sub-long/2addr v0, v2
-
-    cmp-long v0, v0, p1
-
-    if-lez v0, :cond_34
-
-    invoke-static {}, Lcom/google/googlenav/prefetch/android/p;->d()Lcom/google/googlenav/prefetch/android/p;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/p;->e()V
-
-    invoke-static {}, Lcom/google/android/maps/driveabout/vector/cS;->f()V
-
-    invoke-static {}, Lcom/google/googlenav/prefetch/android/a;->c()Lcom/google/googlenav/prefetch/android/a;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/prefetch/android/a;->b()V
-
-    sget-object v0, Lcom/google/googlenav/prefetch/android/d;->b:Lcom/google/googlenav/prefetch/android/d;
-
-    invoke-static {v0}, Lcom/google/googlenav/prefetch/android/PrefetcherService;->a(Lcom/google/googlenav/prefetch/android/d;)V
-
-    const-string v0, "LAST_NETWORK_CONNECTED"
-
-    invoke-static {v0}, Lbf/c;->b(Ljava/lang/String;)V
-
-    :cond_34
-    return-void
+    goto :goto_d
 .end method
 
-.method static synthetic a(Lcom/google/googlenav/android/A;J)V
-    .registers 3
+.method public static c()Z
+    .registers 2
 
-    invoke-direct {p0, p1, p2}, Lcom/google/googlenav/android/A;->a(J)V
+    .prologue
+    .line 46
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    return-void
+    const/16 v1, 0xe
+
+    if-lt v0, v1, :cond_e
+
+    invoke-static {}, Lcom/google/googlenav/common/c;->b()Z
+
+    move-result v0
+
+    if-nez v0, :cond_e
+
+    const/4 v0, 0x1
+
+    :goto_d
+    return v0
+
+    :cond_e
+    const/4 v0, 0x0
+
+    goto :goto_d
 .end method
 
+.method public static d()Z
+    .registers 2
 
-# virtual methods
-.method public a()V
-    .registers 4
+    .prologue
+    .line 55
+    const/16 v0, 0xf
 
-    const/4 v2, 0x1
+    .line 59
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    sget-object v0, Lcom/google/googlenav/z;->a:Lcom/google/googlenav/z;
+    if-lt v1, v0, :cond_8
 
-    new-instance v1, Lcom/google/googlenav/android/B;
+    const/4 v0, 0x1
 
-    invoke-direct {v1, p0, v2, v2}, Lcom/google/googlenav/android/B;-><init>(Lcom/google/googlenav/android/A;ZZ)V
+    :goto_7
+    return v0
 
-    const/4 v2, -0x1
+    :cond_8
+    const/4 v0, 0x0
 
-    invoke-static {v0, v1, v2}, Lcom/google/googlenav/u;->a(Lcom/google/googlenav/z;Lcom/google/googlenav/x;I)V
+    goto :goto_7
+.end method
 
-    return-void
+.method public static e()Z
+    .registers 2
+
+    .prologue
+    .line 63
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v1, "sdk"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
 .end method

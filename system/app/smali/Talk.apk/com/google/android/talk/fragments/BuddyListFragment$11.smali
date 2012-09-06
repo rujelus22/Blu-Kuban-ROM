@@ -30,7 +30,7 @@
     .line 1746
     iput-object p1, p0, Lcom/google/android/talk/fragments/BuddyListFragment$11;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -52,7 +52,7 @@
     :try_start_7
     iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment$11;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    iget-object v1, v1, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v1, v1, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     if-eqz v1, :cond_1c
 
@@ -66,7 +66,7 @@
     .line 1754
     iget-object v1, p0, Lcom/google/android/talk/fragments/BuddyListFragment$11;->this$0:Lcom/google/android/talk/fragments/BuddyListFragment;
 
-    iget-object v1, v1, Lcom/google/android/talk/fragments/BuddyListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
+    iget-object v1, v1, Lcom/google/android/talk/fragments/RosterListFragment;->mImSession:Lcom/google/android/gtalkservice/IImSession;
 
     invoke-interface {v1}, Lcom/google/android/gtalkservice/IImSession;->closeAllChatSessions()V
 

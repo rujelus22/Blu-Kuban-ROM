@@ -135,7 +135,7 @@
     return-void
 .end method
 
-.method private displayError(Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;)Landroid/widget/TextView;
+.method private displayError(Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;)Landroid/widget/TextView;
     .registers 3
     .parameter "error"
 
@@ -143,14 +143,14 @@
     .line 272
     iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mBillingAddress:Lcom/google/android/finsky/layout/BillingAddress;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/finsky/layout/BillingAddress;->displayError(Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;)Landroid/widget/TextView;
+    invoke-virtual {v0, p1}, Lcom/google/android/finsky/layout/BillingAddress;->displayError(Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;)Landroid/widget/TextView;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method private getAddressOrShowErrors()Lcom/google/android/finsky/remoting/protos/Address;
+.method private getAddressOrShowErrors()Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
     .registers 3
 
     .prologue
@@ -162,7 +162,7 @@
     move-result-object v0
 
     .line 285
-    .local v0, validationErrors:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;>;"
+    .local v0, validationErrors:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;>;"
     invoke-virtual {p0, v0}, Lcom/google/android/finsky/billing/UpdateAddressFragment;->displayErrors(Ljava/util/List;)V
 
     .line 286
@@ -175,7 +175,7 @@
     .line 287
     iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mBillingAddress:Lcom/google/android/finsky/layout/BillingAddress;
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/layout/BillingAddress;->getAddress()Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-virtual {v1}, Lcom/google/android/finsky/layout/BillingAddress;->getAddress()Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
     move-result-object v1
 
@@ -310,10 +310,10 @@
 .end method
 
 .method private onBillingCountriesLoaded()V
-    .registers 7
+    .registers 6
 
     .prologue
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
     .line 164
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/UpdateAddressFragment;->isAdded()Z
@@ -361,7 +361,7 @@
     :cond_23
     iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mSaveButton:Landroid/widget/Button;
 
-    invoke-virtual {v1, v5}, Landroid/widget/Button;->setEnabled(Z)V
+    invoke-virtual {v1, v4}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 173
     iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mSavedInstanceState:Landroid/os/Bundle;
@@ -381,15 +381,13 @@
     invoke-static {v1, v2}, Lcom/google/android/finsky/utils/FinskyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 177
-    const v1, 0x7f0700ef
+    const v1, 0x7f07006d
 
-    const v2, 0x7f070072
+    const v2, 0x7f0700f6
 
-    const v3, 0x7f0700e7
+    const v3, 0x7f070059
 
-    const v4, 0x7f070060
-
-    invoke-static {v1, v2, v3, v4}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->newInstance(IIII)Lcom/google/android/finsky/activities/SimpleAlertDialog;
+    invoke-static {v1, v2, v3}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->newInstance(III)Lcom/google/android/finsky/activities/SimpleAlertDialog;
 
     move-result-object v0
 
@@ -399,7 +397,7 @@
 
     check-cast v1, Landroid/os/Bundle;
 
-    invoke-virtual {v0, p0, v5, v1}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->setCallback(Landroid/support/v4/app/Fragment;ILandroid/os/Bundle;)Lcom/google/android/finsky/activities/SimpleAlertDialog;
+    invoke-virtual {v0, p0, v4, v1}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->setCallback(Landroid/support/v4/app/Fragment;ILandroid/os/Bundle;)Lcom/google/android/finsky/activities/SimpleAlertDialog;
 
     .line 181
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/UpdateAddressFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
@@ -426,11 +424,11 @@
     .line 202
     iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mInstrument:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;->getBillingAddress()Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;->getBillingAddress()Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Address;->hasPostalCountry()Z
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->hasPostalCountry()Z
 
     move-result v0
 
@@ -439,11 +437,11 @@
     .line 203
     iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mInstrument:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;->getBillingAddress()Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;->getBillingAddress()Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Address;->getPostalCountry()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->getPostalCountry()Ljava/lang/String;
 
     move-result-object v0
 
@@ -476,15 +474,15 @@
 
     iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mInstrument:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;->getBillingAddress()Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;->getBillingAddress()Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/Address;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->getName()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/BillingAddress;->setName(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/BillingAddress;->setDefaultName(Ljava/lang/String;)V
 
     .line 215
     iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mBillingAddress:Lcom/google/android/finsky/layout/BillingAddress;
@@ -508,22 +506,22 @@
 
     iget-object v3, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mInstrument:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
-    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;->getBillingAddress()Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-virtual {v3}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;->getBillingAddress()Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
     move-result-object v3
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/finsky/layout/BillingAddress;->setAddressSpec(Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;Lcom/google/android/finsky/remoting/protos/Address;)V
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/finsky/layout/BillingAddress;->setAddressSpec(Lcom/google/android/vending/remoting/protos/VendingProtos$PurchaseMetadataResponseProto$Countries$Country;Lcom/google/android/finsky/remoting/protos/CommonDevice$BillingAddressSpec;Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;)V
 
     .line 218
     iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mBillingAddress:Lcom/google/android/finsky/layout/BillingAddress;
 
     iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mInstrument:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;->getBillingAddress()Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;->getBillingAddress()Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/Address;->getPhoneNumber()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;->getPhoneNumber()Ljava/lang/String;
 
     move-result-object v1
 
@@ -574,14 +572,14 @@
             "(",
             "Ljava/util/List",
             "<",
-            "Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;",
+            "Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;",
             ">;)V"
         }
     .end annotation
 
     .prologue
     .line 252
-    .local p1, inputValidationErrors:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;>;"
+    .local p1, inputValidationErrors:Ljava/util/List;,"Ljava/util/List<Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;>;"
     invoke-direct {p0}, Lcom/google/android/finsky/billing/UpdateAddressFragment;->clearErrorMessages()V
 
     .line 254
@@ -608,11 +606,11 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;
+    check-cast v0, Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;
 
     .line 256
-    .local v0, error:Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;
-    invoke-direct {p0, v0}, Lcom/google/android/finsky/billing/UpdateAddressFragment;->displayError(Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;)Landroid/widget/TextView;
+    .local v0, error:Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;
+    invoke-direct {p0, v0}, Lcom/google/android/finsky/billing/UpdateAddressFragment;->displayError(Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;)Landroid/widget/TextView;
 
     move-result-object v3
 
@@ -626,7 +624,7 @@
     goto :goto_b
 
     .line 262
-    .end local v0           #error:Lcom/google/android/finsky/remoting/protos/CommonDevice$InputValidationError;
+    .end local v0           #error:Lcom/google/android/finsky/remoting/protos/ChallengeProtos$InputValidationError;
     .end local v3           #textView:Landroid/widget/TextView;
     :cond_21
     iget-object v5, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mMainView:Landroid/view/ViewGroup;
@@ -692,18 +690,18 @@
 
     .line 233
     :pswitch_8
-    invoke-direct {p0}, Lcom/google/android/finsky/billing/UpdateAddressFragment;->getAddressOrShowErrors()Lcom/google/android/finsky/remoting/protos/Address;
+    invoke-direct {p0}, Lcom/google/android/finsky/billing/UpdateAddressFragment;->getAddressOrShowErrors()Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
 
     move-result-object v0
 
     .line 234
-    .local v0, fullAddress:Lcom/google/android/finsky/remoting/protos/Address;
+    .local v0, fullAddress:Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
     if-eqz v0, :cond_7
 
     .line 235
     iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mInstrument:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
-    invoke-virtual {v1, v0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;->setBillingAddress(Lcom/google/android/finsky/remoting/protos/Address;)Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
+    invoke-virtual {v1, v0}, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;->setBillingAddress(Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;)Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
     .line 236
     iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mListener:Lcom/google/android/finsky/billing/UpdateAddressFragment$UpdateAddressResultListener;
@@ -717,7 +715,7 @@
     goto :goto_7
 
     .line 240
-    .end local v0           #fullAddress:Lcom/google/android/finsky/remoting/protos/Address;
+    .end local v0           #fullAddress:Lcom/google/android/finsky/remoting/protos/BillingAddress$Address;
     :pswitch_1d
     iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mListener:Lcom/google/android/finsky/billing/UpdateAddressFragment$UpdateAddressResultListener;
 
@@ -731,212 +729,211 @@
 
     .line 231
     :pswitch_data_26
-    .packed-switch 0x7f080038
+    .packed-switch 0x7f08002d
         :pswitch_8
         :pswitch_1d
     .end packed-switch
 .end method
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
-    .registers 8
+    .registers 7
     .parameter "inflater"
     .parameter "container"
     .parameter "savedInstanceState"
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     .line 92
     if-nez p2, :cond_5
 
     .line 93
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 142
     :goto_4
-    return-object v1
+    return-object v0
 
     .line 95
     :cond_5
     iput-object p3, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mSavedInstanceState:Landroid/os/Bundle;
 
     .line 96
-    const v1, 0x7f040016
+    const v0, 0x7f04001b
 
-    invoke-virtual {p1, v1, p2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {p1, v0, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/view/ViewGroup;
+    check-cast v0, Landroid/view/ViewGroup;
 
-    iput-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mMainView:Landroid/view/ViewGroup;
+    iput-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mMainView:Landroid/view/ViewGroup;
 
     .line 98
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/UpdateAddressFragment;->getArguments()Landroid/os/Bundle;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string v2, "instrument_display_name"
+    const-string v1, "instrument_display_name"
 
-    invoke-virtual {v1, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mInstrumentDisplayName:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mInstrumentDisplayName:Ljava/lang/String;
 
     .line 99
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/UpdateAddressFragment;->getArguments()Landroid/os/Bundle;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string v2, "update_address_header"
+    const-string v1, "update_address_header"
 
-    invoke-virtual {v1, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mHeaderText:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mHeaderText:Ljava/lang/String;
 
     .line 101
     invoke-virtual {p0}, Lcom/google/android/finsky/billing/UpdateAddressFragment;->getArguments()Landroid/os/Bundle;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string v2, "instrument"
+    const-string v1, "instrument"
 
-    invoke-virtual {v1, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+    invoke-static {v0, v1}, Lcom/google/android/finsky/utils/ParcelableProto;->getProtoFromBundle(Landroid/os/Bundle;Ljava/lang/String;)Lcom/google/protobuf/micro/MessageMicro;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/finsky/utils/ParcelableProto;
+    check-cast v0, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
+
+    iput-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mInstrument:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
 
     .line 103
-    .local v0, instrumentParcelableProto:Lcom/google/android/finsky/utils/ParcelableProto;,"Lcom/google/android/finsky/utils/ParcelableProto<Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;>;"
-    invoke-virtual {v0}, Lcom/google/android/finsky/utils/ParcelableProto;->getPayload()Lcom/google/protobuf/micro/MessageMicro;
+    iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mMainView:Landroid/view/ViewGroup;
 
-    move-result-object v1
+    const v1, 0x7f080054
 
-    check-cast v1, Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
-    iput-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mInstrument:Lcom/google/android/finsky/remoting/protos/CommonDevice$Instrument;
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mHeaderTextView:Landroid/widget/TextView;
+
+    .line 104
+    iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mMainView:Landroid/view/ViewGroup;
+
+    const v1, 0x7f080055
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mInstrumentName:Landroid/widget/TextView;
 
     .line 105
-    iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mMainView:Landroid/view/ViewGroup;
+    iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mMainView:Landroid/view/ViewGroup;
 
-    const v2, 0x7f080050
+    const v1, 0x7f080028
 
-    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/widget/TextView;
+    check-cast v0, Lcom/google/android/finsky/layout/BillingAddress;
 
-    iput-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mHeaderTextView:Landroid/widget/TextView;
-
-    .line 106
-    iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mMainView:Landroid/view/ViewGroup;
-
-    const v2, 0x7f080051
-
-    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mInstrumentName:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mBillingAddress:Lcom/google/android/finsky/layout/BillingAddress;
 
     .line 107
-    iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mMainView:Landroid/view/ViewGroup;
+    iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mBillingAddress:Lcom/google/android/finsky/layout/BillingAddress;
 
-    const v2, 0x7f080033
+    const v1, 0x7f070036
 
-    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/finsky/layout/BillingAddress;
-
-    iput-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mBillingAddress:Lcom/google/android/finsky/layout/BillingAddress;
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/BillingAddress;->setNameInputHint(I)V
 
     .line 110
-    iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mBillingAddress:Lcom/google/android/finsky/layout/BillingAddress;
+    iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mBillingAddress:Lcom/google/android/finsky/layout/BillingAddress;
 
-    new-instance v2, Lcom/google/android/finsky/billing/UpdateAddressFragment$1;
+    new-instance v1, Lcom/google/android/finsky/billing/UpdateAddressFragment$1;
 
-    invoke-direct {v2, p0}, Lcom/google/android/finsky/billing/UpdateAddressFragment$1;-><init>(Lcom/google/android/finsky/billing/UpdateAddressFragment;)V
+    invoke-direct {v1, p0}, Lcom/google/android/finsky/billing/UpdateAddressFragment$1;-><init>(Lcom/google/android/finsky/billing/UpdateAddressFragment;)V
 
-    invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/BillingAddress;->setBillingCountryChangeListener(Lcom/google/android/finsky/layout/BillingAddress$BillingCountryChangeListener;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/BillingAddress;->setBillingCountryChangeListener(Lcom/google/android/finsky/layout/BillingAddress$BillingCountryChangeListener;)V
 
     .line 118
-    iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mBillingAddress:Lcom/google/android/finsky/layout/BillingAddress;
+    iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mBillingAddress:Lcom/google/android/finsky/layout/BillingAddress;
 
-    new-instance v2, Lcom/google/android/finsky/billing/UpdateAddressFragment$2;
+    new-instance v1, Lcom/google/android/finsky/billing/UpdateAddressFragment$2;
 
-    invoke-direct {v2, p0}, Lcom/google/android/finsky/billing/UpdateAddressFragment$2;-><init>(Lcom/google/android/finsky/billing/UpdateAddressFragment;)V
+    invoke-direct {v1, p0}, Lcom/google/android/finsky/billing/UpdateAddressFragment$2;-><init>(Lcom/google/android/finsky/billing/UpdateAddressFragment;)V
 
-    invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/BillingAddress;->setInitializationStateListener(Lcom/google/android/finsky/layout/BillingAddress$InitializationStateListener;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/finsky/layout/BillingAddress;->setInitializationStateListener(Lcom/google/android/finsky/layout/BillingAddress$InitializationStateListener;)V
 
     .line 134
-    iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mMainView:Landroid/view/ViewGroup;
+    iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mMainView:Landroid/view/ViewGroup;
 
-    const v2, 0x7f080038
+    const v1, 0x7f08002d
 
-    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/widget/Button;
+    check-cast v0, Landroid/widget/Button;
 
-    iput-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mSaveButton:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mSaveButton:Landroid/widget/Button;
 
     .line 135
-    iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mSaveButton:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mSaveButton:Landroid/widget/Button;
 
-    invoke-virtual {v1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 136
-    iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mSaveButton:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mSaveButton:Landroid/widget/Button;
 
-    invoke-virtual {v1, v3}, Landroid/widget/Button;->setEnabled(Z)V
+    invoke-virtual {v0, v2}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 137
-    iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mSaveButton:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mSaveButton:Landroid/widget/Button;
 
-    const v2, 0x7f070050
+    const v1, 0x7f07004a
 
-    invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 
     .line 138
-    iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mMainView:Landroid/view/ViewGroup;
+    iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mMainView:Landroid/view/ViewGroup;
 
-    const v2, 0x7f080039
+    const v1, 0x7f08002e
 
-    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/widget/Button;
+    check-cast v0, Landroid/widget/Button;
 
-    iput-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mCancelButton:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mCancelButton:Landroid/widget/Button;
 
     .line 139
-    iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mCancelButton:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mCancelButton:Landroid/widget/Button;
 
-    invoke-virtual {v1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 140
-    iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mCancelButton:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mCancelButton:Landroid/widget/Button;
 
-    const v2, 0x7f070060
+    const v1, 0x7f070059
 
-    invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 
     .line 141
     invoke-direct {p0}, Lcom/google/android/finsky/billing/UpdateAddressFragment;->loadBillingCountries()V
 
     .line 142
-    iget-object v1, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mMainView:Landroid/view/ViewGroup;
+    iget-object v0, p0, Lcom/google/android/finsky/billing/UpdateAddressFragment;->mMainView:Landroid/view/ViewGroup;
 
     goto/16 :goto_4
 .end method

@@ -12,12 +12,12 @@
     .registers 2
 
     .prologue
-    .line 57
+    .line 58
     const-string v0, "notification.android@gmail.com"
 
     invoke-direct {p0, v0}, Landroid/app/IntentService;-><init>(Ljava/lang/String;)V
 
-    .line 58
+    .line 59
     return-void
 .end method
 
@@ -33,10 +33,10 @@
     .registers 4
 
     .prologue
-    .line 82
+    .line 83
     invoke-super {p0}, Landroid/app/IntentService;->onCreate()V
 
-    .line 83
+    .line 84
     const-string v0, "power"
 
     invoke-virtual {p0, v0}, Lcom/google/android/youtube/app/c2dm/C2dmBaseReceiverService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -45,7 +45,7 @@
 
     check-cast v0, Landroid/os/PowerManager;
 
-    .line 84
+    .line 85
     const/4 v1, 0x1
 
     const-string v2, "C2DM_LIB"
@@ -56,12 +56,12 @@
 
     iput-object v0, p0, Lcom/google/android/youtube/app/c2dm/C2dmBaseReceiverService;->a:Landroid/os/PowerManager$WakeLock;
 
-    .line 85
+    .line 86
     iget-object v0, p0, Lcom/google/android/youtube/app/c2dm/C2dmBaseReceiverService;->a:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 86
+    .line 87
     return-void
 .end method
 
@@ -69,12 +69,12 @@
     .registers 2
 
     .prologue
-    .line 94
+    .line 95
     iget-object v0, p0, Lcom/google/android/youtube/app/c2dm/C2dmBaseReceiverService;->a:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 95
+    .line 96
     return-void
 .end method
 
@@ -87,7 +87,7 @@
 
     const/4 v1, 0x0
 
-    .line 102
+    .line 103
     iget-object v0, p0, Lcom/google/android/youtube/app/c2dm/C2dmBaseReceiverService;->a:Landroid/os/PowerManager$WakeLock;
 
     if-eqz v0, :cond_43
@@ -103,9 +103,9 @@
     const/4 v0, 0x1
 
     :goto_10
-    invoke-static {v0}, Lcom/google/android/youtube/core/utils/k;->b(Z)V
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/n;->b(Z)V
 
-    .line 103
+    .line 104
     const-string v0, "com.google.android.c2dm.intent.REGISTRATION"
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -116,9 +116,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_cd
+    if-eqz v0, :cond_c5
 
-    .line 104
+    .line 105
     const-string v0, "registration_id"
 
     invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -153,7 +153,7 @@
 
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 110
+    .line 111
     :cond_42
     :goto_42
     return-void
@@ -161,12 +161,12 @@
     :cond_43
     move v0, v1
 
-    .line 102
+    .line 103
     goto :goto_10
 
-    .line 104
+    .line 105
     :cond_45
-    if-eqz v2, :cond_be
+    if-eqz v2, :cond_b6
 
     invoke-interface {v4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -178,13 +178,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "Registration error "
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -216,13 +212,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v5, "Scheduling registration retry, backoff = "
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-direct {v0, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -260,11 +252,11 @@
 
     cmp-long v0, v0, v5
 
-    if-gez v0, :cond_e9
+    if-gez v0, :cond_e1
 
     mul-long v0, v2, v7
 
-    :goto_b0
+    :goto_a8
     invoke-interface {v4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v2
@@ -275,11 +267,11 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->a(Landroid/content/SharedPreferences$Editor;)V
 
     goto :goto_42
 
-    :cond_be
+    :cond_b6
     invoke-interface {v4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
@@ -290,12 +282,12 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->a(Landroid/content/SharedPreferences$Editor;)V
 
     goto/16 :goto_42
 
-    .line 105
-    :cond_cd
+    .line 106
+    :cond_c5
     const-string v0, "com.google.android.c2dm.intent.RECEIVE"
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -306,15 +298,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_de
+    if-eqz v0, :cond_d6
 
-    .line 106
+    .line 107
     invoke-virtual {p0, p0, p1}, Lcom/google/android/youtube/app/c2dm/C2dmBaseReceiverService;->a(Landroid/content/Context;Landroid/content/Intent;)V
 
     goto/16 :goto_42
 
-    .line 107
-    :cond_de
+    .line 108
+    :cond_d6
     const-string v0, "com.google.android.c2dm.intent.RETRY"
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -325,8 +317,8 @@
 
     goto/16 :goto_42
 
-    :cond_e9
+    :cond_e1
     move-wide v0, v2
 
-    goto :goto_b0
+    goto :goto_a8
 .end method

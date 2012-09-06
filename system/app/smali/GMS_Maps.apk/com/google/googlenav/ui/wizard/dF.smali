@@ -1,78 +1,52 @@
-.class Lcom/google/googlenav/ui/wizard/dF;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/widget/TabHost$OnTabChangeListener;
+.class Lcom/google/googlenav/ui/wizard/df;
+.super LY/b;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Ljava/util/Map;
+.field final synthetic a:Lcom/google/googlenav/friend/ah;
 
-.field final synthetic b:Lcom/google/googlenav/ui/Workspace;
-
-.field final synthetic c:Lcom/google/googlenav/ui/wizard/dD;
+.field final synthetic b:Lcom/google/googlenav/ui/wizard/dc;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/dD;Ljava/util/Map;Lcom/google/googlenav/ui/Workspace;)V
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/dc;LY/c;Lcom/google/googlenav/friend/ah;)V
     .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/dF;->c:Lcom/google/googlenav/ui/wizard/dD;
+    .prologue
+    .line 159
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/df;->b:Lcom/google/googlenav/ui/wizard/dc;
 
-    iput-object p2, p0, Lcom/google/googlenav/ui/wizard/dF;->a:Ljava/util/Map;
+    iput-object p3, p0, Lcom/google/googlenav/ui/wizard/df;->a:Lcom/google/googlenav/friend/ah;
 
-    iput-object p3, p0, Lcom/google/googlenav/ui/wizard/dF;->b:Lcom/google/googlenav/ui/Workspace;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, LY/b;-><init>(LY/c;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onTabChanged(Ljava/lang/String;)V
-    .registers 5
+.method public a()V
+    .registers 3
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/dF;->a:Ljava/util/Map;
+    .prologue
+    .line 162
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/df;->b:Lcom/google/googlenav/ui/wizard/dc;
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/df;->a:Lcom/google/googlenav/friend/ah;
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/wizard/dc;->d(Lcom/google/googlenav/friend/ah;)V
 
-    check-cast v0, Ljava/lang/Integer;
+    .line 163
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/df;->b:Lcom/google/googlenav/ui/wizard/dc;
 
-    if-eqz v0, :cond_1c
+    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/df;->a:Lcom/google/googlenav/friend/ah;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v0, v1}, Lcom/google/googlenav/ui/wizard/dc;->a(Lcom/google/googlenav/friend/ah;)V
 
-    move-result v1
-
-    if-ltz v1, :cond_1c
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    iget-object v2, p0, Lcom/google/googlenav/ui/wizard/dF;->b:Lcom/google/googlenav/ui/Workspace;
-
-    invoke-virtual {v2}, Lcom/google/googlenav/ui/Workspace;->c()I
-
-    move-result v2
-
-    if-lt v1, v2, :cond_1d
-
-    :cond_1c
-    :goto_1c
+    .line 164
     return-void
-
-    :cond_1d
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/dF;->b:Lcom/google/googlenav/ui/Workspace;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Lcom/google/googlenav/ui/Workspace;->b(I)V
-
-    goto :goto_1c
 .end method

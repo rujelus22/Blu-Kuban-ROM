@@ -4,16 +4,6 @@
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 44
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method static synthetic a([DDII)I
     .registers 8
     .parameter
@@ -24,7 +14,7 @@
     .prologue
     move v0, p3
 
-    .line 43
+    .line 45
     :goto_1
     if-ge v0, p4, :cond_d
 
@@ -56,7 +46,7 @@
     .parameter
 
     .prologue
-    .line 43
+    .line 45
     add-int/lit8 v0, p4, -0x1
 
     :goto_2

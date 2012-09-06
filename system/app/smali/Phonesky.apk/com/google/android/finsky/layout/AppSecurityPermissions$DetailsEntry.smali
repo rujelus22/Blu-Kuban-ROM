@@ -19,6 +19,8 @@
 
 .field public detailedDescription:Ljava/lang/CharSequence;
 
+.field public hasNewPermission:Z
+
 .field public headerText:Ljava/lang/String;
 
 .field public newContentText:Ljava/lang/CharSequence;
@@ -29,7 +31,7 @@
     .registers 1
 
     .prologue
-    .line 206
+    .line 219
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

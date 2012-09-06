@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:id="@id/allitem" android:background="@drawable/calendars_selector_background" android:clickable="false" android:layout_width="fill_parent" android:layout_height="65.32999dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textAppearance="@touchwiz:style/TwTextAppearanceListTwoLinePrimary" android:textColor="@drawable/calendar_text_first" android:gravity="center_vertical" android:id="@id/allitemtext" android:paddingLeft="13.329987dip" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
-    <CheckBox android:id="@id/allitemcheck" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="65.32999dip" android:layout_marginRight="6.7599792dip" />
-</LinearLayout>

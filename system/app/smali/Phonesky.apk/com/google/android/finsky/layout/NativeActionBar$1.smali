@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 77
+    .line 91
     iput-object p1, p0, Lcom/google/android/finsky/layout/NativeActionBar$1;->this$0:Lcom/google/android/finsky/layout/NativeActionBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,18 +41,18 @@
     .registers 2
 
     .prologue
-    .line 80
+    .line 94
     iget-object v0, p0, Lcom/google/android/finsky/layout/NativeActionBar$1;->this$0:Lcom/google/android/finsky/layout/NativeActionBar;
 
     #calls: Lcom/google/android/finsky/layout/NativeActionBar;->clearSearchIfNecessary()V
     invoke-static {v0}, Lcom/google/android/finsky/layout/NativeActionBar;->access$000(Lcom/google/android/finsky/layout/NativeActionBar;)V
 
-    .line 81
+    .line 95
     iget-object v0, p0, Lcom/google/android/finsky/layout/NativeActionBar$1;->this$0:Lcom/google/android/finsky/layout/NativeActionBar;
 
     #calls: Lcom/google/android/finsky/layout/NativeActionBar;->syncActionBar()V
     invoke-static {v0}, Lcom/google/android/finsky/layout/NativeActionBar;->access$100(Lcom/google/android/finsky/layout/NativeActionBar;)V
 
-    .line 82
+    .line 96
     return-void
 .end method

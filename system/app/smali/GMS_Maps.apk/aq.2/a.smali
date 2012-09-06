@@ -1,269 +1,282 @@
 .class public Laq/a;
 .super Ljava/lang/Object;
-
-
-# instance fields
-.field private a:Ljava/lang/String;
-
-.field private final b:I
-
-.field private final c:I
-
-.field private final d:Ljava/lang/Object;
-
-.field private final e:Ljava/lang/Object;
-
-.field private final f:Z
-
-.field private final g:Laq/a;
+.source "SourceFile"
 
 
 # direct methods
-.method private constructor <init>(Ljava/lang/String;IILjava/lang/Object;Ljava/lang/Object;ZLaq/a;)V
+.method public static a(JLbd/b;Landroid/os/Bundle;Ljava/lang/String;)Landroid/location/Location;
     .registers 10
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .prologue
+    const-wide v3, 0x416312d000000000L
 
-    if-ltz p3, :cond_a
+    .line 38
+    if-nez p2, :cond_9
 
-    const v0, 0xfffe
+    .line 39
+    const/4 v0, 0x0
 
-    if-le p3, v0, :cond_12
+    .line 53
+    :cond_8
+    :goto_8
+    return-object v0
 
-    :cond_a
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    .line 41
+    :cond_9
+    new-instance v0, Landroid/location/Location;
 
-    const-string v1, "For compatibility to Android, menu item order must be between 0 and 65534"
+    invoke-direct {v0, p4}, Landroid/location/Location;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    .line 42
+    iget v1, p2, Lbd/b;->d:I
 
-    throw v0
+    int-to-float v1, v1
 
-    :cond_12
-    iput-object p1, p0, Laq/a;->a:Ljava/lang/String;
+    const/high16 v2, 0x447a
 
-    iput p2, p0, Laq/a;->b:I
+    div-float/2addr v1, v2
 
-    iput p3, p0, Laq/a;->c:I
+    invoke-virtual {v0, v1}, Landroid/location/Location;->setAccuracy(F)V
 
-    iput-object p4, p0, Laq/a;->d:Ljava/lang/Object;
+    .line 43
+    iget v1, p2, Lbd/b;->h:I
 
-    iput-object p5, p0, Laq/a;->e:Ljava/lang/Object;
+    .line 44
+    const/4 v2, -0x1
 
-    iput-boolean p6, p0, Laq/a;->f:Z
+    if-eq v1, v2, :cond_20
 
-    iput-object p7, p0, Laq/a;->g:Laq/a;
+    .line 45
+    int-to-float v1, v1
 
-    return-void
+    invoke-virtual {v0, v1}, Landroid/location/Location;->setBearing(F)V
+
+    .line 47
+    :cond_20
+    iget v1, p2, Lbd/b;->b:I
+
+    int-to-double v1, v1
+
+    div-double/2addr v1, v3
+
+    invoke-virtual {v0, v1, v2}, Landroid/location/Location;->setLatitude(D)V
+
+    .line 48
+    iget v1, p2, Lbd/b;->c:I
+
+    int-to-double v1, v1
+
+    div-double/2addr v1, v3
+
+    invoke-virtual {v0, v1, v2}, Landroid/location/Location;->setLongitude(D)V
+
+    .line 49
+    const-wide/32 v1, 0xf4240
+
+    div-long v1, p0, v1
+
+    invoke-virtual {v0, v1, v2}, Landroid/location/Location;->setTime(J)V
+
+    .line 50
+    if-eqz p3, :cond_8
+
+    .line 51
+    invoke-virtual {v0, p3}, Landroid/location/Location;->setExtras(Landroid/os/Bundle;)V
+
+    goto :goto_8
 .end method
 
-.method public static a(Laq/a;Z)Laq/a;
-    .registers 10
+.method public static a(Ln/B;)Landroid/os/Bundle;
+    .registers 4
+    .parameter
 
-    new-instance v0, Laq/a;
+    .prologue
+    .line 78
+    new-instance v0, Landroid/os/Bundle;
 
-    iget-object v1, p0, Laq/a;->a:Ljava/lang/String;
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    iget v2, p0, Laq/a;->b:I
+    .line 80
+    const-string v1, "networkLocationSource"
 
-    iget v3, p0, Laq/a;->c:I
+    const-string v2, "cached"
 
-    iget-object v4, p0, Laq/a;->d:Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v5, p0, Laq/a;->e:Ljava/lang/Object;
+    .line 82
+    const-string v1, "networkLocationType"
 
-    move v6, p1
+    const-string v2, "wifi"
 
-    move-object v7, p0
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-direct/range {v0 .. v7}, Laq/a;-><init>(Ljava/lang/String;IILjava/lang/Object;Ljava/lang/Object;ZLaq/a;)V
+    .line 84
+    if-eqz p0, :cond_2b
 
+    .line 85
+    const-string v1, "levelId"
+
+    invoke-virtual {p0}, Ln/B;->a()Ln/p;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ln/p;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 86
+    const-string v1, "levelNumberE3"
+
+    invoke-virtual {p0}, Ln/B;->b()I
+
+    move-result v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    .line 88
+    :cond_2b
     return-object v0
 .end method
 
-.method public static a(Ljava/lang/String;II)Laq/a;
+.method public static a(Landroid/location/Location;Ljava/lang/String;F)Lbd/b;
     .registers 11
+    .parameter
+    .parameter
+    .parameter
 
-    const/4 v4, 0x0
+    .prologue
+    const-wide v4, 0x416312d000000000L
 
-    new-instance v0, Laq/a;
+    .line 113
+    if-nez p0, :cond_9
 
-    const/4 v6, 0x0
+    .line 114
+    const/4 v0, 0x0
 
-    move-object v1, p0
-
-    move v2, p1
-
-    move v3, p2
-
-    move-object v5, v4
-
-    move-object v7, v4
-
-    invoke-direct/range {v0 .. v7}, Laq/a;-><init>(Ljava/lang/String;IILjava/lang/Object;Ljava/lang/Object;ZLaq/a;)V
-
+    .line 130
+    :goto_8
     return-object v0
-.end method
 
-.method public static a(Ljava/lang/String;IILjava/lang/Object;Ljava/lang/Object;)Laq/a;
-    .registers 13
+    .line 116
+    :cond_9
+    invoke-virtual {p0}, Landroid/location/Location;->getLatitude()D
 
-    new-instance v0, Laq/a;
+    move-result-wide v0
 
-    const/4 v6, 0x0
+    mul-double/2addr v0, v4
 
+    double-to-int v1, v0
+
+    .line 117
+    invoke-virtual {p0}, Landroid/location/Location;->getLongitude()D
+
+    move-result-wide v2
+
+    mul-double/2addr v2, v4
+
+    double-to-int v2, v2
+
+    .line 118
+    invoke-virtual {p0}, Landroid/location/Location;->getAccuracy()F
+
+    move-result v0
+
+    const/high16 v3, 0x447a
+
+    mul-float/2addr v0, v3
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v3
+
+    .line 119
+    invoke-virtual {p0}, Landroid/location/Location;->getBearing()F
+
+    move-result v0
+
+    float-to-int v6, v0
+
+    .line 120
+    invoke-virtual {p0}, Landroid/location/Location;->hasBearing()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_33
+
+    invoke-virtual {p0}, Landroid/location/Location;->getBearing()F
+
+    move-result v0
+
+    cmpl-float v0, v0, p2
+
+    if-nez v0, :cond_34
+
+    .line 121
+    :cond_33
+    const/4 v6, -0x1
+
+    .line 123
+    :cond_34
     const/4 v7, 0x0
 
-    move-object v1, p0
-
-    move v2, p1
-
-    move v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    invoke-direct/range {v0 .. v7}, Laq/a;-><init>(Ljava/lang/String;IILjava/lang/Object;Ljava/lang/Object;ZLaq/a;)V
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public a()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Laq/a;->a:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public a(Ljava/lang/String;)V
-    .registers 2
-
-    iput-object p1, p0, Laq/a;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public b()I
-    .registers 2
-
-    iget v0, p0, Laq/a;->c:I
-
-    return v0
-.end method
-
-.method public c()Ljava/lang/Object;
-    .registers 2
-
-    iget-object v0, p0, Laq/a;->d:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public d()Ljava/lang/Object;
-    .registers 2
-
-    iget-object v0, p0, Laq/a;->e:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public e()Z
-    .registers 2
-
-    iget-boolean v0, p0, Laq/a;->f:Z
-
-    return v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v1, 0x0
-
-    instance-of v0, p1, Laq/a;
-
-    if-nez v0, :cond_6
-
-    :goto_5
-    return v1
-
-    :cond_6
-    move-object v0, p1
-
-    check-cast v0, Laq/a;
-
-    invoke-super {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_23
-
-    iget-object v2, v0, Laq/a;->g:Laq/a;
-
-    invoke-virtual {p0, v2}, Laq/a;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_23
-
-    iget-object v2, p0, Laq/a;->g:Laq/a;
-
-    if-eqz v2, :cond_26
-
-    iget-object v2, p0, Laq/a;->g:Laq/a;
-
-    invoke-virtual {v2, v0}, Laq/a;->equals(Ljava/lang/Object;)Z
+    .line 124
+    invoke-virtual {p0}, Landroid/location/Location;->hasSpeed()Z
 
     move-result v0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_3f
 
-    :cond_23
-    const/4 v0, 0x1
+    .line 125
+    invoke-virtual {p0}, Landroid/location/Location;->getSpeed()F
 
-    :goto_24
-    move v1, v0
+    move-result v7
 
-    goto :goto_5
+    .line 130
+    :cond_3f
+    new-instance v0, Lbd/b;
 
-    :cond_26
-    move v0, v1
+    const-string v4, ""
 
-    goto :goto_24
+    move-object v5, p1
+
+    invoke-direct/range {v0 .. v7}, Lbd/b;-><init>(IIILjava/lang/String;Ljava/lang/String;IF)V
+
+    goto :goto_8
 .end method
 
-.method public hashCode()I
-    .registers 2
+.method public static a(Landroid/location/Location;Ln/B;F)Lbd/b;
+    .registers 4
+    .parameter
+    .parameter
+    .parameter
 
-    iget-object v0, p0, Laq/a;->g:Laq/a;
+    .prologue
+    .line 97
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_b
+    .line 98
+    if-eqz p1, :cond_b
 
-    iget-object v0, p0, Laq/a;->g:Laq/a;
+    .line 101
+    invoke-virtual {p1}, Ln/B;->a()Ln/p;
 
-    invoke-virtual {v0}, Laq/a;->hashCode()I
+    move-result-object v0
 
-    move-result v0
+    invoke-virtual {v0}, Ln/p;->toString()Ljava/lang/String;
 
-    :goto_a
-    return v0
+    move-result-object v0
 
+    .line 103
     :cond_b
-    invoke-super {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-static {p0, v0, p2}, Laq/a;->a(Landroid/location/Location;Ljava/lang/String;F)Lbd/b;
 
-    move-result v0
-
-    goto :goto_a
-.end method
-
-.method public toString()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Laq/a;->a:Ljava/lang/String;
+    move-result-object v0
 
     return-object v0
 .end method

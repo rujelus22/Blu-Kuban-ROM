@@ -34,6 +34,8 @@
 
 .field private hasHomeUrl:Z
 
+.field private hasIconOverrideUrl:Z
+
 .field private hasTosCheckboxTextMarketingEmails:Z
 
 .field private hasTosContent:Z
@@ -45,6 +47,8 @@
 .field private hasUserSettings:Z
 
 .field private homeUrl_:Ljava/lang/String;
+
+.field private iconOverrideUrl_:Ljava/lang/String;
 
 .field private tosCheckboxTextMarketingEmails_:Ljava/lang/String;
 
@@ -64,53 +68,58 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 9
+    .line 10
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 13
+    .line 14
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->corpus_:Ljava/util/List;
 
-    .line 47
+    .line 48
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->tosVersionDeprecated_:I
 
-    .line 64
+    .line 65
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->tosContent_:Ljava/lang/String;
 
-    .line 81
+    .line 82
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->tosCheckboxTextMarketingEmails_:Ljava/lang/String;
 
-    .line 98
+    .line 99
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->tosToken_:Ljava/lang/String;
 
-    .line 115
+    .line 116
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->homeUrl_:Ljava/lang/String;
 
-    .line 132
+    .line 133
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->experiments_:Lcom/google/android/finsky/remoting/protos/Toc$Experiments;
 
-    .line 152
+    .line 153
     iput-object v1, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->userSettings_:Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;
 
-    .line 217
+    .line 173
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->iconOverrideUrl_:Ljava/lang/String;
+
+    .line 240
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->cachedSize:I
 
-    .line 9
+    .line 10
     return-void
 .end method
 
@@ -121,17 +130,17 @@
     .parameter "value"
 
     .prologue
-    .line 30
+    .line 31
     if-nez p1, :cond_8
 
-    .line 31
+    .line 32
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 33
+    .line 34
     :cond_8
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->corpus_:Ljava/util/List;
 
@@ -141,20 +150,20 @@
 
     if-eqz v0, :cond_17
 
-    .line 34
+    .line 35
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->corpus_:Ljava/util/List;
 
-    .line 36
+    .line 37
     :cond_17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->corpus_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 37
+    .line 38
     return-object p0
 .end method
 
@@ -162,15 +171,15 @@
     .registers 2
 
     .prologue
-    .line 219
+    .line 243
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 221
+    .line 245
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getSerializedSize()I
 
-    .line 223
+    .line 247
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->cachedSize:I
 
@@ -181,7 +190,7 @@
     .registers 2
 
     .prologue
-    .line 18
+    .line 19
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->corpus_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -204,7 +213,7 @@
     .end annotation
 
     .prologue
-    .line 16
+    .line 17
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->corpus_:Ljava/util/List;
 
     return-object v0
@@ -214,7 +223,7 @@
     .registers 2
 
     .prologue
-    .line 134
+    .line 135
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->experiments_:Lcom/google/android/finsky/remoting/protos/Toc$Experiments;
 
     return-object v0
@@ -224,8 +233,18 @@
     .registers 2
 
     .prologue
-    .line 116
+    .line 117
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->homeUrl_:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getIconOverrideUrl()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 174
+    iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->iconOverrideUrl_:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -234,10 +253,10 @@
     .registers 6
 
     .prologue
-    .line 227
+    .line 252
     const/4 v2, 0x0
 
-    .line 228
+    .line 253
     .local v2, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getCorpusList()Ljava/util/List;
 
@@ -261,7 +280,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
 
-    .line 229
+    .line 254
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
     const/4 v3, 0x1
 
@@ -273,7 +292,7 @@
 
     goto :goto_9
 
-    .line 232
+    .line 257
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
     :cond_1c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasTosVersionDeprecated()Z
@@ -282,7 +301,7 @@
 
     if-eqz v3, :cond_2c
 
-    .line 233
+    .line 258
     const/4 v3, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getTosVersionDeprecated()I
@@ -295,7 +314,7 @@
 
     add-int/2addr v2, v3
 
-    .line 236
+    .line 261
     :cond_2c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasTosContent()Z
 
@@ -303,7 +322,7 @@
 
     if-eqz v3, :cond_3c
 
-    .line 237
+    .line 262
     const/4 v3, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getTosContent()Ljava/lang/String;
@@ -316,7 +335,7 @@
 
     add-int/2addr v2, v3
 
-    .line 240
+    .line 265
     :cond_3c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasHomeUrl()Z
 
@@ -324,7 +343,7 @@
 
     if-eqz v3, :cond_4c
 
-    .line 241
+    .line 266
     const/4 v3, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getHomeUrl()Ljava/lang/String;
@@ -337,7 +356,7 @@
 
     add-int/2addr v2, v3
 
-    .line 244
+    .line 269
     :cond_4c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasExperiments()Z
 
@@ -345,7 +364,7 @@
 
     if-eqz v3, :cond_5c
 
-    .line 245
+    .line 270
     const/4 v3, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getExperiments()Lcom/google/android/finsky/remoting/protos/Toc$Experiments;
@@ -358,7 +377,7 @@
 
     add-int/2addr v2, v3
 
-    .line 248
+    .line 273
     :cond_5c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasTosCheckboxTextMarketingEmails()Z
 
@@ -366,7 +385,7 @@
 
     if-eqz v3, :cond_6c
 
-    .line 249
+    .line 274
     const/4 v3, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getTosCheckboxTextMarketingEmails()Ljava/lang/String;
@@ -379,7 +398,7 @@
 
     add-int/2addr v2, v3
 
-    .line 252
+    .line 277
     :cond_6c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasTosToken()Z
 
@@ -387,7 +406,7 @@
 
     if-eqz v3, :cond_7c
 
-    .line 253
+    .line 278
     const/4 v3, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getTosToken()Ljava/lang/String;
@@ -400,7 +419,7 @@
 
     add-int/2addr v2, v3
 
-    .line 256
+    .line 281
     :cond_7c
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasUserSettings()Z
 
@@ -408,7 +427,7 @@
 
     if-eqz v3, :cond_8d
 
-    .line 257
+    .line 282
     const/16 v3, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getUserSettings()Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;
@@ -421,11 +440,32 @@
 
     add-int/2addr v2, v3
 
-    .line 260
+    .line 285
     :cond_8d
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasIconOverrideUrl()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_9e
+
+    .line 286
+    const/16 v3, 0x9
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getIconOverrideUrl()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->computeStringSize(ILjava/lang/String;)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    .line 289
+    :cond_9e
     iput v2, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->cachedSize:I
 
-    .line 261
+    .line 290
     return v2
 .end method
 
@@ -433,7 +473,7 @@
     .registers 2
 
     .prologue
-    .line 82
+    .line 83
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->tosCheckboxTextMarketingEmails_:Ljava/lang/String;
 
     return-object v0
@@ -443,7 +483,7 @@
     .registers 2
 
     .prologue
-    .line 65
+    .line 66
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->tosContent_:Ljava/lang/String;
 
     return-object v0
@@ -453,7 +493,7 @@
     .registers 2
 
     .prologue
-    .line 99
+    .line 100
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->tosToken_:Ljava/lang/String;
 
     return-object v0
@@ -463,7 +503,7 @@
     .registers 2
 
     .prologue
-    .line 48
+    .line 49
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->tosVersionDeprecated_:I
 
     return v0
@@ -473,7 +513,7 @@
     .registers 2
 
     .prologue
-    .line 154
+    .line 155
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->userSettings_:Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;
 
     return-object v0
@@ -483,7 +523,7 @@
     .registers 2
 
     .prologue
-    .line 133
+    .line 134
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasExperiments:Z
 
     return v0
@@ -493,8 +533,18 @@
     .registers 2
 
     .prologue
-    .line 117
+    .line 118
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasHomeUrl:Z
+
+    return v0
+.end method
+
+.method public hasIconOverrideUrl()Z
+    .registers 2
+
+    .prologue
+    .line 175
+    iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasIconOverrideUrl:Z
 
     return v0
 .end method
@@ -503,7 +553,7 @@
     .registers 2
 
     .prologue
-    .line 83
+    .line 84
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasTosCheckboxTextMarketingEmails:Z
 
     return v0
@@ -513,7 +563,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 67
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasTosContent:Z
 
     return v0
@@ -523,7 +573,7 @@
     .registers 2
 
     .prologue
-    .line 100
+    .line 101
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasTosToken:Z
 
     return v0
@@ -533,7 +583,7 @@
     .registers 2
 
     .prologue
-    .line 49
+    .line 50
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasTosVersionDeprecated:Z
 
     return v0
@@ -543,7 +593,7 @@
     .registers 2
 
     .prologue
-    .line 153
+    .line 154
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasUserSettings:Z
 
     return v0
@@ -559,44 +609,44 @@
     .end annotation
 
     .prologue
-    .line 268
+    .line 298
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 269
+    .line 299
     .local v0, tag:I
-    sparse-switch v0, :sswitch_data_5a
+    sparse-switch v0, :sswitch_data_62
 
-    .line 273
+    .line 303
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 274
+    .line 304
     :sswitch_d
     return-object p0
 
-    .line 279
+    .line 309
     :sswitch_e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;-><init>()V
 
-    .line 280
+    .line 310
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 281
+    .line 311
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->addCorpus(Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;)Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;
 
     goto :goto_0
 
-    .line 285
+    .line 315
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
     :sswitch_1a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
@@ -607,7 +657,7 @@
 
     goto :goto_0
 
-    .line 289
+    .line 319
     :sswitch_22
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -617,7 +667,7 @@
 
     goto :goto_0
 
-    .line 293
+    .line 323
     :sswitch_2a
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -627,22 +677,22 @@
 
     goto :goto_0
 
-    .line 297
+    .line 327
     :sswitch_32
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Toc$Experiments;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Toc$Experiments;-><init>()V
 
-    .line 298
+    .line 328
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Toc$Experiments;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 299
+    .line 329
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->setExperiments(Lcom/google/android/finsky/remoting/protos/Toc$Experiments;)Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;
 
     goto :goto_0
 
-    .line 303
+    .line 333
     .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Toc$Experiments;
     :sswitch_3e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
@@ -653,7 +703,7 @@
 
     goto :goto_0
 
-    .line 307
+    .line 337
     :sswitch_46
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -663,23 +713,34 @@
 
     goto :goto_0
 
-    .line 311
+    .line 341
     :sswitch_4e
     new-instance v1, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;
 
     invoke-direct {v1}, Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;-><init>()V
 
-    .line 312
+    .line 342
     .local v1, value:Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;
     invoke-virtual {p1, v1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readMessage(Lcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 313
+    .line 343
     invoke-virtual {p0, v1}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->setUserSettings(Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;)Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;
 
     goto :goto_0
 
-    .line 269
-    :sswitch_data_5a
+    .line 347
+    .end local v1           #value:Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;
+    :sswitch_5a
+    invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->setIconOverrideUrl(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;
+
+    goto :goto_0
+
+    .line 299
+    :sswitch_data_62
     .sparse-switch
         0x0 -> :sswitch_d
         0xa -> :sswitch_e
@@ -690,6 +751,7 @@
         0x32 -> :sswitch_3e
         0x3a -> :sswitch_46
         0x42 -> :sswitch_4e
+        0x4a -> :sswitch_5a
     .end sparse-switch
 .end method
 
@@ -716,26 +778,26 @@
     .parameter "value"
 
     .prologue
-    .line 136
+    .line 137
     if-nez p1, :cond_8
 
-    .line 137
+    .line 138
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 139
+    .line 140
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasExperiments:Z
 
-    .line 140
+    .line 141
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->experiments_:Lcom/google/android/finsky/remoting/protos/Toc$Experiments;
 
-    .line 141
+    .line 142
     return-object p0
 .end method
 
@@ -744,15 +806,32 @@
     .parameter "value"
 
     .prologue
-    .line 119
+    .line 120
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasHomeUrl:Z
 
-    .line 120
+    .line 121
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->homeUrl_:Ljava/lang/String;
 
-    .line 121
+    .line 122
+    return-object p0
+.end method
+
+.method public setIconOverrideUrl(Ljava/lang/String;)Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;
+    .registers 3
+    .parameter "value"
+
+    .prologue
+    .line 177
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasIconOverrideUrl:Z
+
+    .line 178
+    iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->iconOverrideUrl_:Ljava/lang/String;
+
+    .line 179
     return-object p0
 .end method
 
@@ -761,15 +840,15 @@
     .parameter "value"
 
     .prologue
-    .line 85
+    .line 86
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasTosCheckboxTextMarketingEmails:Z
 
-    .line 86
+    .line 87
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->tosCheckboxTextMarketingEmails_:Ljava/lang/String;
 
-    .line 87
+    .line 88
     return-object p0
 .end method
 
@@ -778,15 +857,15 @@
     .parameter "value"
 
     .prologue
-    .line 68
+    .line 69
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasTosContent:Z
 
-    .line 69
+    .line 70
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->tosContent_:Ljava/lang/String;
 
-    .line 70
+    .line 71
     return-object p0
 .end method
 
@@ -795,15 +874,15 @@
     .parameter "value"
 
     .prologue
-    .line 102
+    .line 103
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasTosToken:Z
 
-    .line 103
+    .line 104
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->tosToken_:Ljava/lang/String;
 
-    .line 104
+    .line 105
     return-object p0
 .end method
 
@@ -812,15 +891,15 @@
     .parameter "value"
 
     .prologue
-    .line 51
+    .line 52
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasTosVersionDeprecated:Z
 
-    .line 52
+    .line 53
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->tosVersionDeprecated_:I
 
-    .line 53
+    .line 54
     return-object p0
 .end method
 
@@ -829,26 +908,26 @@
     .parameter "value"
 
     .prologue
-    .line 156
+    .line 157
     if-nez p1, :cond_8
 
-    .line 157
+    .line 158
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 159
+    .line 160
     :cond_8
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasUserSettings:Z
 
-    .line 160
+    .line 161
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->userSettings_:Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;
 
-    .line 161
+    .line 162
     return-object p0
 .end method
 
@@ -862,7 +941,7 @@
     .end annotation
 
     .prologue
-    .line 191
+    .line 211
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getCorpusList()Ljava/util/List;
 
     move-result-object v2
@@ -885,7 +964,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
 
-    .line 192
+    .line 212
     .local v0, element:Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
     const/4 v2, 0x1
 
@@ -893,7 +972,7 @@
 
     goto :goto_8
 
-    .line 194
+    .line 214
     .end local v0           #element:Lcom/google/android/finsky/remoting/protos/Toc$CorpusMetadata;
     :cond_19
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasTosVersionDeprecated()Z
@@ -902,7 +981,7 @@
 
     if-eqz v2, :cond_27
 
-    .line 195
+    .line 215
     const/4 v2, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getTosVersionDeprecated()I
@@ -911,7 +990,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 197
+    .line 217
     :cond_27
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasTosContent()Z
 
@@ -919,7 +998,7 @@
 
     if-eqz v2, :cond_35
 
-    .line 198
+    .line 218
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getTosContent()Ljava/lang/String;
@@ -928,7 +1007,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 200
+    .line 220
     :cond_35
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasHomeUrl()Z
 
@@ -936,7 +1015,7 @@
 
     if-eqz v2, :cond_43
 
-    .line 201
+    .line 221
     const/4 v2, 0x4
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getHomeUrl()Ljava/lang/String;
@@ -945,7 +1024,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 203
+    .line 223
     :cond_43
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasExperiments()Z
 
@@ -953,7 +1032,7 @@
 
     if-eqz v2, :cond_51
 
-    .line 204
+    .line 224
     const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getExperiments()Lcom/google/android/finsky/remoting/protos/Toc$Experiments;
@@ -962,7 +1041,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 206
+    .line 226
     :cond_51
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasTosCheckboxTextMarketingEmails()Z
 
@@ -970,7 +1049,7 @@
 
     if-eqz v2, :cond_5f
 
-    .line 207
+    .line 227
     const/4 v2, 0x6
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getTosCheckboxTextMarketingEmails()Ljava/lang/String;
@@ -979,7 +1058,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 209
+    .line 229
     :cond_5f
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasTosToken()Z
 
@@ -987,7 +1066,7 @@
 
     if-eqz v2, :cond_6d
 
-    .line 210
+    .line 230
     const/4 v2, 0x7
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getTosToken()Ljava/lang/String;
@@ -996,7 +1075,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 212
+    .line 232
     :cond_6d
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasUserSettings()Z
 
@@ -1004,7 +1083,7 @@
 
     if-eqz v2, :cond_7c
 
-    .line 213
+    .line 233
     const/16 v2, 0x8
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getUserSettings()Lcom/google/android/finsky/remoting/protos/Toc$UserSettings;
@@ -1013,7 +1092,24 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeMessage(ILcom/google/protobuf/micro/MessageMicro;)V
 
-    .line 215
+    .line 235
     :cond_7c
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->hasIconOverrideUrl()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_8b
+
+    .line 236
+    const/16 v2, 0x9
+
+    invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Toc$TocResponse;->getIconOverrideUrl()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
+
+    .line 238
+    :cond_8b
     return-void
 .end method

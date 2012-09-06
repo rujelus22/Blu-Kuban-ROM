@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.android.mms.ui.MessageContactHeader android:gravity="center_vertical" android:id="@id/msg_contact_header" android:layout_width="fill_parent" android:layout_height="25.329987dip" style="?android:attr/windowTitleBackgroundStyle"
+<com.android.mms.ui.MessageContactHeader android:gravity="center_vertical" android:id="@id/msg_contact_header" android:background="@drawable/hub_title_bg" android:layout_width="fill_parent" android:layout_height="48.0dip"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:ellipsize="marquee" android:id="@id/contact_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:singleLine="true" android:maxLength="3120" style="?android:attr/windowTitleStyle" />
+    <LinearLayout android:gravity="left|center" android:layout_width="40.0dip" android:layout_height="fill_parent">
+        <ImageButton android:background="@drawable/ic_launcher_smsmms" android:clickable="false" android:duplicateParentState="true" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" />
+    </LinearLayout>
+    <TextView android:textSize="18.659973sp" android:textColor="@touchwiz:color/tw_color001" android:ellipsize="marquee" android:id="@id/contact_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:singleLine="true" android:maxLength="3120" />
+    <LinearLayout android:gravity="right|center" android:id="@id/sendbuttons" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentRight="true" android:contentDescription="@string/attach_button_description">
+        <ImageButton android:layout_gravity="right" android:id="@id/attach_button" android:background="@drawable/msg_btn_compose_selector" android:layout_width="60.0dip" android:layout_height="fill_parent" android:src="@drawable/msg_attach_icon" />
+    </LinearLayout>
 </com.android.mms.ui.MessageContactHeader>

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 197
+    .line 196
     iput-object p1, p0, Lcom/google/android/finsky/adapters/SearchAdapter$2;->this$0:Lcom/google/android/finsky/adapters/SearchAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
     .end annotation
 
     .prologue
-    .line 201
+    .line 200
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v1, p0, Lcom/google/android/finsky/adapters/SearchAdapter$2;->this$0:Lcom/google/android/finsky/adapters/SearchAdapter;
 
@@ -73,7 +73,7 @@
 
     check-cast v0, Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;
 
-    .line 204
+    .line 203
     .local v0, item:Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;
     iget-object v1, p0, Lcom/google/android/finsky/adapters/SearchAdapter$2;->this$0:Lcom/google/android/finsky/adapters/SearchAdapter;
 
@@ -86,25 +86,25 @@
 
     move-result v1
 
-    if-nez v1, :cond_44
+    if-nez v1, :cond_43
 
     invoke-virtual {v0}, Lcom/google/android/finsky/remoting/protos/Search$RelatedSearch;->getCurrent()Z
 
     move-result v1
 
-    if-nez v1, :cond_44
+    if-nez v1, :cond_43
 
     iget-object v1, p0, Lcom/google/android/finsky/adapters/SearchAdapter$2;->this$0:Lcom/google/android/finsky/adapters/SearchAdapter;
 
     iget-object v1, v1, Lcom/google/android/finsky/adapters/SearchAdapter;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
-    invoke-virtual {v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getCurrentPageType()Lcom/google/android/finsky/navigationmanager/NavigationState;
+    invoke-virtual {v1}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getCurrentPageType()I
 
-    move-result-object v1
+    move-result v1
 
-    sget-object v2, Lcom/google/android/finsky/navigationmanager/NavigationState;->SEARCH:Lcom/google/android/finsky/navigationmanager/NavigationState;
+    const/4 v2, 0x7
 
-    if-ne v1, v2, :cond_44
+    if-ne v1, v2, :cond_43
 
     .line 206
     iget-object v1, p0, Lcom/google/android/finsky/adapters/SearchAdapter$2;->this$0:Lcom/google/android/finsky/adapters/SearchAdapter;
@@ -131,7 +131,7 @@
     invoke-virtual {v1, v2, v3, v4}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->goToSearch(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 209
-    :cond_44
+    :cond_43
     return-void
 .end method
 

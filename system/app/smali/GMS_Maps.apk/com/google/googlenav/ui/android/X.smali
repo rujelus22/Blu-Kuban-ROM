@@ -1,41 +1,14 @@
-.class Lcom/google/googlenav/ui/android/X;
+.class public interface abstract Lcom/google/googlenav/ui/android/x;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/android/RealtimeScheduleTransitStationView$RealtimePulseImageView;
-
-
-# direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/android/RealtimeScheduleTransitStationView$RealtimePulseImageView;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/googlenav/ui/android/X;->a:Lcom/google/googlenav/ui/android/RealtimeScheduleTransitStationView$RealtimePulseImageView;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.source "SourceFile"
 
 
 # virtual methods
-.method public run()V
-    .registers 2
+.method public abstract a(Lat/B;Lat/B;IFLcom/google/googlenav/ui/android/w;)V
+.end method
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/android/X;->a:Lcom/google/googlenav/ui/android/RealtimeScheduleTransitStationView$RealtimePulseImageView;
+.method public abstract b()Z
+.end method
 
-    invoke-virtual {v0}, Lcom/google/googlenav/ui/android/RealtimeScheduleTransitStationView$RealtimePulseImageView;->getBackground()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/drawable/AnimationDrawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->stop()V
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->start()V
-
-    return-void
+.method public abstract c()V
 .end method

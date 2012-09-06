@@ -1,61 +1,92 @@
-.class Lcom/google/googlenav/ui/wizard/ai;
+.class Lcom/google/googlenav/ui/wizard/aI;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Lax/bn;
+.implements Lcom/google/googlenav/ui/wizard/bn;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/ad;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/aJ;
+
+.field final synthetic b:Lcom/google/googlenav/ui/wizard/aE;
 
 
 # direct methods
-.method private constructor <init>(Lcom/google/googlenav/ui/wizard/ad;)V
-    .registers 2
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/aE;Lcom/google/googlenav/ui/wizard/aJ;)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/ai;->a:Lcom/google/googlenav/ui/wizard/ad;
+    .prologue
+    .line 127
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/aI;->b:Lcom/google/googlenav/ui/wizard/aE;
+
+    iput-object p2, p0, Lcom/google/googlenav/ui/wizard/aI;->a:Lcom/google/googlenav/ui/wizard/aJ;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/google/googlenav/ui/wizard/ad;Lcom/google/googlenav/ui/wizard/ae;)V
-    .registers 3
-
-    invoke-direct {p0, p1}, Lcom/google/googlenav/ui/wizard/ai;-><init>(Lcom/google/googlenav/ui/wizard/ad;)V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public a(J)V
+.method public a(Z)V
     .registers 5
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/ai;->a:Lcom/google/googlenav/ui/wizard/ad;
+    .prologue
+    .line 143
+    invoke-static {}, Lcom/google/googlenav/friend/af;->A()V
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/ad;->a(Lcom/google/googlenav/ui/wizard/ad;)Lcom/google/googlenav/ui/wizard/ah;
+    .line 144
+    const-string v0, "home_speedbump_ack"
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/wizard/ah;->a(Ljava/util/List;)V
+    invoke-static {v0, v1, v2}, Lcom/google/googlenav/friend/aW;->a(Ljava/lang/String;ILcom/google/googlenav/friend/be;)V
 
+    .line 146
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/aI;->a:Lcom/google/googlenav/ui/wizard/aJ;
+
+    invoke-interface {v0}, Lcom/google/googlenav/ui/wizard/aJ;->a()V
+
+    .line 147
     return-void
 .end method
 
-.method public a(Lam/b;Ljava/util/List;Lam/b;J)V
-    .registers 7
+.method public b(Z)V
+    .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/ai;->a:Lcom/google/googlenav/ui/wizard/ad;
+    .prologue
+    .line 131
+    invoke-static {}, Lcom/google/googlenav/friend/af;->z()V
 
-    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/ad;->a(Lcom/google/googlenav/ui/wizard/ad;)Lcom/google/googlenav/ui/wizard/ah;
+    .line 132
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/aI;->a:Lcom/google/googlenav/ui/wizard/aJ;
 
-    move-result-object v0
+    invoke-interface {v0}, Lcom/google/googlenav/ui/wizard/aJ;->b()V
 
-    invoke-interface {v0, p2}, Lcom/google/googlenav/ui/wizard/ah;->a(Ljava/util/List;)V
+    .line 133
+    return-void
+.end method
 
+.method public c(Z)V
+    .registers 3
+    .parameter
+
+    .prologue
+    .line 137
+    invoke-static {}, Lcom/google/googlenav/friend/af;->z()V
+
+    .line 138
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/aI;->a:Lcom/google/googlenav/ui/wizard/aJ;
+
+    invoke-interface {v0}, Lcom/google/googlenav/ui/wizard/aJ;->b()V
+
+    .line 139
     return-void
 .end method

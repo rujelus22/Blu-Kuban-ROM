@@ -27,20 +27,20 @@
     .registers 2
 
     .prologue
-    .line 11296
+    .line 11538
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 11301
+    .line 11543
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;->assetId_:Ljava/lang/String;
 
-    .line 11333
+    .line 11576
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;->cachedSize:I
 
-    .line 11296
+    .line 11538
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .registers 2
 
     .prologue
-    .line 11302
+    .line 11544
     iget-object v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;->assetId_:Ljava/lang/String;
 
     return-object v0
@@ -60,15 +60,15 @@
     .registers 2
 
     .prologue
-    .line 11335
+    .line 11579
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 11337
+    .line 11581
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;->getSerializedSize()I
 
-    .line 11339
+    .line 11583
     :cond_7
     iget v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;->cachedSize:I
 
@@ -79,10 +79,10 @@
     .registers 4
 
     .prologue
-    .line 11343
+    .line 11588
     const/4 v0, 0x0
 
-    .line 11344
+    .line 11589
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;->hasAssetId()Z
 
@@ -90,7 +90,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 11345
+    .line 11590
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;->getAssetId()Ljava/lang/String;
@@ -103,11 +103,11 @@
 
     add-int/2addr v0, v1
 
-    .line 11348
+    .line 11593
     :cond_11
     iput v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;->cachedSize:I
 
-    .line 11349
+    .line 11594
     return v0
 .end method
 
@@ -115,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 11303
+    .line 11545
     iget-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;->hasAssetId:Z
 
     return v0
@@ -131,29 +131,29 @@
     .end annotation
 
     .prologue
-    .line 11356
+    .line 11602
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 11357
+    .line 11603
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_16
 
-    .line 11361
+    .line 11607
     invoke-virtual {p0, p1, v0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 11362
+    .line 11608
     :sswitch_d
     return-object p0
 
-    .line 11367
+    .line 11613
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 11357
+    .line 11603
     :sswitch_data_16
     .sparse-switch
         0x0 -> :sswitch_d
@@ -181,7 +181,7 @@
     .end annotation
 
     .prologue
-    .line 11294
+    .line 11536
     invoke-virtual {p0, p1}, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;
 
     move-result-object v0
@@ -194,15 +194,15 @@
     .parameter "value"
 
     .prologue
-    .line 11305
+    .line 11547
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;->hasAssetId:Z
 
-    .line 11306
+    .line 11548
     iput-object p1, p0, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;->assetId_:Ljava/lang/String;
 
-    .line 11307
+    .line 11549
     return-object p0
 .end method
 
@@ -216,14 +216,14 @@
     .end annotation
 
     .prologue
-    .line 11328
+    .line 11571
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;->hasAssetId()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 11329
+    .line 11572
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/vending/remoting/protos/VendingProtos$RemoveAssetRequestProto;->getAssetId()Ljava/lang/String;
@@ -232,7 +232,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 11331
+    .line 11574
     :cond_e
     return-void
 .end method

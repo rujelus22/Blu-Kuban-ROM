@@ -21,7 +21,7 @@
     .parameter
 
     .prologue
-    .line 231
+    .line 238
     iput-object p1, p0, Lcom/google/common/collect/h;->c:Lcom/google/common/collect/g;
 
     iput-object p2, p0, Lcom/google/common/collect/h;->b:Ljava/util/Iterator;
@@ -37,7 +37,7 @@
     .registers 2
 
     .prologue
-    .line 235
+    .line 242
     iget-object v0, p0, Lcom/google/common/collect/h;->b:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -51,7 +51,7 @@
     .registers 2
 
     .prologue
-    .line 239
+    .line 246
     iget-object v0, p0, Lcom/google/common/collect/h;->b:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -67,12 +67,12 @@
     .registers 3
 
     .prologue
-    .line 243
+    .line 250
     iget-object v0, p0, Lcom/google/common/collect/h;->b:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    .line 244
+    .line 251
     iget-object v0, p0, Lcom/google/common/collect/h;->c:Lcom/google/common/collect/g;
 
     iget-object v0, v0, Lcom/google/common/collect/g;->b:Lcom/google/common/collect/AbstractBiMap;
@@ -82,6 +82,6 @@
     #calls: Lcom/google/common/collect/AbstractBiMap;->removeFromInverseMap(Ljava/lang/Object;)V
     invoke-static {v0, v1}, Lcom/google/common/collect/AbstractBiMap;->access$400(Lcom/google/common/collect/AbstractBiMap;Ljava/lang/Object;)V
 
-    .line 245
+    .line 252
     return-void
 .end method

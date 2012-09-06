@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 887
+    .line 882
     iput-object p1, p0, Lcom/cooliris/media/CropImage$22;->this$0:Lcom/cooliris/media/CropImage;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,6 +42,6 @@
     .parameter "arg0"
 
     .prologue
-    .line 890
+    .line 885
     return-void
 .end method

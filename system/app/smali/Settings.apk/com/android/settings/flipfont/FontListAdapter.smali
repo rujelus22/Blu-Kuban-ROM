@@ -861,7 +861,7 @@
 
     .line 219
     :cond_51
-    const/high16 v5, -0x100
+    const/4 v5, -0x1
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setTextColor(I)V
 

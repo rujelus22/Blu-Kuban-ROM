@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="day_label_text_size">11.0sp</dimen>
+    <dimen name="all_day_bottom_margin">8.0dip</dimen>
+    <dimen name="one_day_header_height">0.0dip</dimen>
+    <dimen name="day_header_bottom_margin">4.0dip</dimen>
+    <dimen name="date_header_text_size">12.0sp</dimen>
+    <dimen name="hours_text_size">12.0sp</dimen>
+    <dimen name="allday_text_size">12.0sp</dimen>
+    <dimen name="ampm_text_size">10.0sp</dimen>
+    <dimen name="day_view_event_text_size">12.0sp</dimen>
+    <dimen name="week_view_event_text_size">12.0sp</dimen>
+    <dimen name="event_text_vertical_margin">2.0dip</dimen>
+    <dimen name="event_text_horizontal_margin">4.0dip</dimen>
+    <dimen name="event_min_height">24.0dip</dimen>
+    <dimen name="min_hours_width">24.0dip</dimen>
+    <dimen name="hours_left_margin">20.0dip</dimen>
+    <dimen name="hours_right_margin">4.0dip</dimen>
+    <dimen name="day_header_height">16.0dip</dimen>
+    <dimen name="widget_day_num_size">36.0sp</dimen>
+    <dimen name="widget_day_num_top_padding">-4.0dip</dimen>
+    <dimen name="action_bar_date_text_size">22.0sp</dimen>
+    <dimen name="new_event_hint_text_size">12.0sp</dimen>
+    <dimen name="edit_event_view_width">800.0dip</dimen>
+    <dimen name="edit_event_view_padding_left">80.0dip</dimen>
+    <dimen name="edit_event_view_padding_right">80.0dip</dimen>
+    <dimen name="event_info_text_size">14.0dip</dimen>
+    <dimen name="event_info_desc_margin_left">0.0dip</dimen>
+    <dimen name="event_info_desc_margin_right">0.0dip</dimen>
+    <dimen name="chip_padding">8.0dip</dimen>
+    <dimen name="chip_height">32.0dip</dimen>
+    <dimen name="chip_text_size">14.0sp</dimen>
+</resources>

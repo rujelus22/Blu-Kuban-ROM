@@ -22,7 +22,7 @@
     .registers 1
 
     .prologue
-    .line 350
+    .line 299
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
     return-void
@@ -33,27 +33,27 @@
     .parameter "accountName"
 
     .prologue
-    .line 358
+    .line 307
     new-instance v1, Lcom/android/email/activity/setup/AccountSecurity$SecurityNeededDialog;
 
     invoke-direct {v1}, Lcom/android/email/activity/setup/AccountSecurity$SecurityNeededDialog;-><init>()V
 
-    .line 359
+    .line 308
     .local v1, dialog:Lcom/android/email/activity/setup/AccountSecurity$SecurityNeededDialog;
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 360
+    .line 309
     .local v0, b:Landroid/os/Bundle;
     const-string v2, "account_name"
 
     invoke-virtual {v0, v2, p0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 361
+    .line 310
     invoke-virtual {v1, v0}, Lcom/android/email/activity/setup/AccountSecurity$SecurityNeededDialog;->setArguments(Landroid/os/Bundle;)V
 
-    .line 362
+    .line 311
     return-object v1
 .end method
 
@@ -65,42 +65,55 @@
     .parameter "which"
 
     .prologue
-    .line 382
+    .line 334
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity$SecurityNeededDialog;->dismiss()V
 
-    .line 383
+    .line 335
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity$SecurityNeededDialog;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/email/activity/setup/AccountSecurity;
 
-    .line 384
+    .line 336
     .local v0, activity:Lcom/android/email/activity/setup/AccountSecurity;
-    #getter for: Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSecurity;->access$000(Lcom/android/email/activity/setup/AccountSecurity;)Lcom/android/emailcommon/provider/EmailContent$Account;
+    #getter for: Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/Account;
+    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSecurity;->access$000(Lcom/android/email/activity/setup/AccountSecurity;)Lcom/android/emailcommon/provider/Account;
 
     move-result-object v1
 
     if-nez v1, :cond_13
 
-    .line 387
+    .line 338
     invoke-virtual {v0}, Lcom/android/email/activity/setup/AccountSecurity;->finish()V
 
-    .line 400
+    .line 357
     :goto_12
     return-void
 
-    .line 390
+    .line 341
     :cond_13
-    packed-switch p2, :pswitch_data_2e
+    packed-switch p2, :pswitch_data_44
 
     goto :goto_12
 
-    .line 395
+    .line 349
     :pswitch_17
-    #getter for: Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSecurity;->access$000(Lcom/android/email/activity/setup/AccountSecurity;)Lcom/android/emailcommon/provider/EmailContent$Account;
+    sget-boolean v1, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v1, :cond_22
+
+    .line 350
+    const-string v1, "Email/AccountSecurity"
+
+    const-string v2, "User declines; repost notification"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 352
+    :cond_22
+    #getter for: Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/Account;
+    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSecurity;->access$000(Lcom/android/email/activity/setup/AccountSecurity;)Lcom/android/emailcommon/provider/Account;
 
     move-result-object v1
 
@@ -108,31 +121,44 @@
 
     move-result-object v2
 
-    #calls: Lcom/android/email/activity/setup/AccountSecurity;->repostNotification(Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/email/SecurityPolicy;)V
-    invoke-static {v0, v1, v2}, Lcom/android/email/activity/setup/AccountSecurity;->access$200(Lcom/android/email/activity/setup/AccountSecurity;Lcom/android/emailcommon/provider/EmailContent$Account;Lcom/android/email/SecurityPolicy;)V
+    #calls: Lcom/android/email/activity/setup/AccountSecurity;->repostNotification(Lcom/android/emailcommon/provider/Account;Lcom/android/email/SecurityPolicy;)V
+    invoke-static {v0, v1, v2}, Lcom/android/email/activity/setup/AccountSecurity;->access$200(Lcom/android/email/activity/setup/AccountSecurity;Lcom/android/emailcommon/provider/Account;Lcom/android/email/SecurityPolicy;)V
 
-    .line 397
+    .line 354
     invoke-virtual {v0}, Lcom/android/email/activity/setup/AccountSecurity;->finish()V
 
     goto :goto_12
 
-    .line 392
-    :pswitch_26
-    #getter for: Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/EmailContent$Account;
-    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSecurity;->access$000(Lcom/android/email/activity/setup/AccountSecurity;)Lcom/android/emailcommon/provider/EmailContent$Account;
+    .line 343
+    :pswitch_31
+    sget-boolean v1, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v1, :cond_3c
+
+    .line 344
+    const-string v1, "Email/AccountSecurity"
+
+    const-string v2, "User accepts; advance to next step"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 346
+    :cond_3c
+    #getter for: Lcom/android/email/activity/setup/AccountSecurity;->mAccount:Lcom/android/emailcommon/provider/Account;
+    invoke-static {v0}, Lcom/android/email/activity/setup/AccountSecurity;->access$000(Lcom/android/email/activity/setup/AccountSecurity;)Lcom/android/emailcommon/provider/Account;
 
     move-result-object v1
 
-    #calls: Lcom/android/email/activity/setup/AccountSecurity;->tryAdvanceSecurity(Lcom/android/emailcommon/provider/EmailContent$Account;)V
-    invoke-static {v0, v1}, Lcom/android/email/activity/setup/AccountSecurity;->access$100(Lcom/android/email/activity/setup/AccountSecurity;Lcom/android/emailcommon/provider/EmailContent$Account;)V
+    #calls: Lcom/android/email/activity/setup/AccountSecurity;->tryAdvanceSecurity(Lcom/android/emailcommon/provider/Account;)V
+    invoke-static {v0, v1}, Lcom/android/email/activity/setup/AccountSecurity;->access$100(Lcom/android/email/activity/setup/AccountSecurity;Lcom/android/emailcommon/provider/Account;)V
 
     goto :goto_12
 
-    .line 390
-    :pswitch_data_2e
+    .line 341
+    :pswitch_data_44
     .packed-switch -0x2
         :pswitch_17
-        :pswitch_26
+        :pswitch_31
     .end packed-switch
 .end method
 
@@ -141,7 +167,7 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 367
+    .line 316
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity$SecurityNeededDialog;->getArguments()Landroid/os/Bundle;
 
     move-result-object v4
@@ -152,37 +178,37 @@
 
     move-result-object v0
 
-    .line 369
+    .line 318
     .local v0, accountName:Ljava/lang/String;
     invoke-virtual {p0}, Lcom/android/email/activity/setup/AccountSecurity$SecurityNeededDialog;->getActivity()Landroid/app/Activity;
 
     move-result-object v2
 
-    .line 370
+    .line 319
     .local v2, context:Landroid/content/Context;
-    invoke-virtual {v2}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 371
+    .line 320
     .local v3, res:Landroid/content/res/Resources;
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v1, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 372
+    .line 321
     .local v1, b:Landroid/app/AlertDialog$Builder;
-    const v4, 0x7f080120
+    const v4, 0x7f08011e
 
     invoke-virtual {v1, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    .line 373
+    .line 322
     const v4, 0x1010355
 
     invoke-virtual {v1, v4}, Landroid/app/AlertDialog$Builder;->setIconAttribute(I)Landroid/app/AlertDialog$Builder;
 
-    .line 374
-    const v4, 0x7f080121
+    .line 323
+    const v4, 0x7f08011f
 
     const/4 v5, 0x1
 
@@ -198,17 +224,30 @@
 
     invoke-virtual {v1, v4}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 375
-    const v4, 0x7f080042
+    .line 324
+    const v4, 0x7f080009
 
     invoke-virtual {v1, v4, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 376
-    const v4, 0x7f080043
+    .line 325
+    const v4, 0x7f08000a
 
     invoke-virtual {v1, v4, p0}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 377
+    .line 326
+    sget-boolean v4, Lcom/android/email/Email;->DEBUG:Z
+
+    if-eqz v4, :cond_4a
+
+    .line 327
+    const-string v4, "Email/AccountSecurity"
+
+    const-string v5, "Posting security needed dialog"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 329
+    :cond_4a
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v4

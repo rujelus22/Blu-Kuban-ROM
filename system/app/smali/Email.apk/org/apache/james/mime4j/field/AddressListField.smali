@@ -27,15 +27,15 @@
     .parameter "parseException"
 
     .prologue
-    .line 35
+    .line 34
     invoke-direct {p0, p1, p2, p3}, Lorg/apache/james/mime4j/field/Field;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 36
+    .line 35
     iput-object p4, p0, Lorg/apache/james/mime4j/field/AddressListField;->addressList:Lorg/apache/james/mime4j/field/address/AddressList;
 
-    .line 37
+    .line 36
     iput-object p5, p0, Lorg/apache/james/mime4j/field/AddressListField;->parseException:Lorg/apache/james/mime4j/field/address/parser/ParseException;
 
-    .line 38
+    .line 37
     return-void
 .end method

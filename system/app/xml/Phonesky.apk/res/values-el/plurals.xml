@@ -5,8 +5,8 @@
         <item quantity="one">%1$d αποτέλεσμα</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">Βρέθηκαν %1$d ενημερώσεις για τον λογαριασμό %2$s .</item>
-        <item quantity="one">Βρέθηκε %1$d ενημέρωση για τον λογαριασμό %2$s .</item>
+        <item quantity="other">Βρέθηκαν %1$d ενημερώσεις.</item>
+        <item quantity="one">Βρέθηκε %1$d ενημέρωση.</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">%1$s άτομα το επισήμαναν με +1.</item>

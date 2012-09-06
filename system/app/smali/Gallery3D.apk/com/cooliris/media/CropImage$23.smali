@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 1006
+    .line 1001
     iput-object p1, p0, Lcom/cooliris/media/CropImage$23;->this$0:Lcom/cooliris/media/CropImage;
 
     iput-object p2, p0, Lcom/cooliris/media/CropImage$23;->val$b:Landroid/graphics/Bitmap;
@@ -46,7 +46,7 @@
     .registers 3
 
     .prologue
-    .line 1008
+    .line 1003
     iget-object v0, p0, Lcom/cooliris/media/CropImage$23;->this$0:Lcom/cooliris/media/CropImage;
 
     iget-object v1, p0, Lcom/cooliris/media/CropImage$23;->val$b:Landroid/graphics/Bitmap;
@@ -54,6 +54,6 @@
     #calls: Lcom/cooliris/media/CropImage;->saveOutput(Landroid/graphics/Bitmap;)V
     invoke-static {v0, v1}, Lcom/cooliris/media/CropImage;->access$2200(Lcom/cooliris/media/CropImage;Landroid/graphics/Bitmap;)V
 
-    .line 1009
+    .line 1004
     return-void
 .end method

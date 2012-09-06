@@ -1,0 +1,183 @@
+#!/system/bin/sh
+#
+#Blu Kuban Tweaks File
+#
+#Created by RUJELUS22
+
+LOG_FILE=/data/tweaks.log
+
+if [ -e $LOG_FILE ]; then
+	rm $LOG_FILE;
+fi;
+echo "Tweaks Script Started at $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LOG_FILE;
+if [ -e /system/bin/make_ext4fs ]; then
+    /system/xbin/busybox mount -o remount,noatime,nodiratime,barrier=0,nobh /system;
+	/system/xbin/busybox mount -o remount,noatime,noauto_da_alloc,nosuid,nodev,nodiratime,barrier=0,nobh /cache
+	/system/xbin/busybox mount -o remount,noatime,noauto_da_alloc,nosuid,nodev,nodiratime,barrier=0,nobh /data
+	echo "Remounting /system with remount,noatime,nodiratime,barrier=0,nobh" | tee -a $LOG_FILE;
+	echo "Remounting /cache and /data with remount,noatime,noauto_da_alloc,nosuid,nodev,nodiratime,barrier=0,nobh" | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/vm/min_free_kbytes ]; then
+	echo "4096" > /proc/sys/vm/min_free_kbytes;
+	echo "min_free_kbytes set to 4096" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/vm/min_free_kbytes | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/vm/lowmem_reserve_ratio ]; then
+	echo "100 100" > /proc/sys/vm/lowmem_reserve_ratio;
+	echo "lowmem_reserve_ratio to 100 100" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/vm/lowmem_reserve_ratio | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/vm/page-cluster ]; then
+	echo "5" > /proc/sys/vm/page-cluster;
+	echo "page-cluster set to 5" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/vm/page-cluster | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/fs/file-max ]; then
+	echo "524288" > /proc/sys/fs/file-max;
+	echo "file-max set to 524288" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/fs/file-max | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/fs/inotify/max_queued_events ]; then
+	echo "32000" > /proc/sys/fs/inotify/max_queued_events;
+	echo "max_queued_events set to 32000" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/fs/inotify/max_queued_events | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/fs/inotify/max_user_instances ]; then
+	echo "256" > /proc/sys/fs/inotify/max_user_instances;
+	echo "max_user_instances set to 256" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/fs/inotify/max_user_instances | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/fs/inotify/max_user_watches ]; then
+	echo "10240" > /proc/sys/fs/inotify/max_user_watches;
+	echo "max_user_watches set to 10240" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/fs/inotify/max_user_watches | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/fs/lease-break-time ]; then
+	echo "10" > /proc/sys/fs/lease-break-time;
+	echo "max_user_watches set to 10" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/fs/lease-break-time | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/fs/lease-break-time ]; then
+	echo "10" > /proc/sys/fs/lease-break-time;
+	echo "lease-break-time set to 10" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/fs/lease-break-time | tee -a $LOG_FILE;
+fi;
+if [ -e /sys/module/lowmemorykiller/parameters/adj ] ; then
+    echo "0,1,2,4,6,15" > /sys/module/lowmemorykiller/parameters/adj;
+	echo "lowmemorykiller/parameters/adj set to 0,1,2,4,6,15" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /sys/module/lowmemorykiller/parameters/adj | tee -a $LOG_FILE;
+fi;
+if [ -e /sys/module/lowmemorykiller/parameters/minfree ]; then
+	echo "2560,4096,6144,12288,14336,18432" > /sys/module/lowmemorykiller/parameters/minfree;
+	echo "minfree set to 2560,4096,6144,12288,14336,18432" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /sys/module/lowmemorykiller/parameters/minfree | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/kernel/msgmax ]; then
+	echo "65536" > /proc/sys/kernel/msgmax;
+	echo "msgmax set to 65536" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/kernel/msgmax | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/kernel/msgmni ]; then
+	echo "65536" > /proc/sys/kernel/msgmni;
+	echo "msgmni set to 65536" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/kernel/msgmni | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/kernel/sem ]; then
+	echo "500 512000 64 2048" > /proc/sys/kernel/sem;
+	echo "sem set to 500 512000 64 2048" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/kernel/sem | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/kernel/shmmax ]; then
+	echo "268435456" > /proc/sys/kernel/shmmax;
+	echo "shmmax set to 268435456" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/kernel/shmmax | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/kernel/threads-max ]; then
+	echo "524288" > /proc/sys/kernel/threads-max;
+	echo "threads-max set to 524288" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/kernel/threads-max | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/net/core/wmem_max ]; then
+	echo "524288" > /proc/sys/net/core/wmem_max;
+	echo "wmem_max set to 524288" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/net/core/wmem_max | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/net/core/rmem_max ]; then
+	echo "524288" > /proc/sys/net/core/rmem_max;
+	echo "rmem_max set to 524288" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/net/core/rmem_max | tee -a $LOG_FILE;
+fi;
+if [ -e  /proc/sys/net/ipv4/tcp_tw_reuse ]; then
+	echo "1" > /proc/sys/net/ipv4/tcp_tw_reuse;
+	echo "tcp_tw_reuse set to 1" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/net/ipv4/tcp_tw_reuse | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/net/ipv4/tcp_sack ]; then
+	echo "1" > /proc/sys/net/ipv4/tcp_sack;
+	echo "tcp_sack set to 1" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/net/ipv4/tcp_sack | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/net/ipv4/tcp_dsack ]; then
+	echo "1" > /proc/sys/net/ipv4/tcp_dsack;
+	echo "tcp_dsack set to 1" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/net/ipv4/tcp_dsack | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/net/ipv4/tcp_ecn ]; then
+	echo "0" > /proc/sys/net/ipv4/tcp_ecn;
+	echo "tcp_ecn set to 0" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/net/ipv4/tcp_ecn | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/net/ipv4/tcp_rfc1337 ]; then
+	echo "1" > /proc/sys/net/ipv4/tcp_rfc1337;
+	echo "tcp_rfc1337 set to 1" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/net/ipv4/tcp_rfc1337 | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/net/ipv4/tcp_fack ]; then
+	echo "1" > /proc/sys/net/ipv4/tcp_fack;
+	echo "tcp_fack set to 1" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/net/ipv4/tcp_fack | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/net/ipv4/tcp_mem ]; then
+	echo "187000 187000 187000" > /proc/sys/net/ipv4/tcp_mem;
+	echo "tcp_mem set to 187000 187000 187000" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/net/ipv4/tcp_mem | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/net/ipv4/tcp_no_metrics_save ]; then
+	echo "1" > /proc/sys/net/ipv4/tcp_no_metrics_save;
+	echo "tcp_no_metrics_save set to 1" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/net/ipv4/tcp_no_metrics_save | tee -a $LOG_FILE;
+fi;
+if [ -e /proc/sys/net/core/netdev_max_backlog ]; then
+	echo "2500" > /proc/sys/net/core/netdev_max_backlog;
+	echo "netdev_max_backlog set to 2500" | tee -a $LOG_FILE;
+	echo "Actual Value:" | tee -a $LOG_FILE;
+	cat /proc/sys/net/core/netdev_max_backlog | tee -a $LOG_FILE;
+fi;
+
+echo "Tweaks Script Finished at $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LOG_FILE;

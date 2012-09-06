@@ -242,18 +242,18 @@ sorusu"</b></string>
     <string name="account_intro_recommended_title">Google yap</string>
     <string name="common_message">"Bir Google hesabıyla: 
 
-"<li><ul>Tüm bilgilerinizi istediğiniz yerden görebilir ve düzenleyebilirsiniz.</ul></li>"
+"<ul><li>Tüm bilgilerinizi istediğiniz yerden görebilir ve düzenleyebilirsiniz.</li></ul>"
 
-"<li><ul>Verilerinizi otomatik olarak yedekleyebilirsiniz.</ul></li>"
+"<ul><li>Verilerinizi otomatik olarak yedekleyebilirsiniz.</li></ul>"
 
-"<li><ul>Google hizmetlerini her yerden kolayca kullanabilirsiniz.</ul></li></string>
+"<ul><li>Google hizmetlerini her yerden kolayca kullanabilirsiniz.</li></ul></string>
     <string name="add_account_message">" Birden fazla Google Hesabı kullanabilirsiniz (örneğin ev ve iş hesaplarınız). Bir Google Hesabı eklemek için "<b>Oturum aç</b> veya <b>Hesap Oluştur</b>"'a dokunun"</string>
     <string name="account_intro_default_message">Bir daha hiçbir şeyinizi kaybetmeyin. Google Hesabı her şeyinizin güvende kalmasını sağlar.</string>
     <string name="account_intro_custom_endtext">%s hizmetini kullanıyor musunuz? Şimdi oturum açın.</string>
     <string name="account_intro_simple_message">Mevcut bir hesabı eklemek mi yoksa yeni bir hesap oluşturmak mı istersiniz?</string>
     <string name="learn_more_title"><annotation id="learn_more">Daha fazla bilgi edinin</annotation></string>
     <string name="learn_more_account_intro">"Google hesabı ile şunları yapabilirsiniz:
-"<li><ul>Tüm bilgilerinizi her yerden görüntüleyebilir ve düzenleyebilirsiniz.<li>E-posta, kişiler, müzik ve resimler gibi verilerinizi otomatik olarak yedekleyebilirsiniz.</li><li>Kişiler, Takvim, Google Haritalar ve diğer Google hizmetlerini istediğiniz yerden kolayca kullanabilirsiniz.</li></ul></li></string>
+"<ul><li>Tüm bilgilerinizi her yerden görüntüleyebilir ve düzenleyebilirsiniz.<li>E-posta, kişiler, müzik ve resimler gibi verilerinizi otomatik olarak yedekleyebilirsiniz.</li><li>Kişiler, Takvim, Google Haritalar ve diğer Google hizmetlerini istediğiniz yerden kolayca kullanabilirsiniz.</li></li></ul></string>
     <string name="learn_more_account_intro_title">Google Hesapları Hakkında</string>
     <string name="learn_more_web_history">"Web Geçmişi, arama sonuçlarını neleri aradığınıza ve hangi siteleri ziyaret ettiğinize göre düzenler, böylece kişiselleştirilmiş bir Google deneyimi sağlar.
 

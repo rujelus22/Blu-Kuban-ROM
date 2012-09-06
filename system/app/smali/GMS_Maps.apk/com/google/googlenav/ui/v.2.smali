@@ -1,51 +1,41 @@
-.class final Lcom/google/googlenav/ui/v;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
+.class Lcom/google/googlenav/ui/V;
+.super Lcom/google/googlenav/x;
+.source "SourceFile"
 
 
 # instance fields
-.field final synthetic a:Lbb/l;
-
-.field final synthetic b:I
+.field final synthetic a:Lcom/google/googlenav/ui/v;
 
 
 # direct methods
-.method constructor <init>(Lbb/l;I)V
-    .registers 3
+.method constructor <init>(Lcom/google/googlenav/ui/v;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/v;->a:Lbb/l;
+    .prologue
+    .line 1277
+    iput-object p1, p0, Lcom/google/googlenav/ui/V;->a:Lcom/google/googlenav/ui/v;
 
-    iput p2, p0, Lcom/google/googlenav/ui/v;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/googlenav/x;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .registers 6
+.method public a()V
+    .registers 2
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/v;->a:Lbb/l;
+    .prologue
+    .line 1280
+    iget-object v0, p0, Lcom/google/googlenav/ui/V;->a:Lcom/google/googlenav/ui/v;
 
-    iget-object v1, v0, Lbb/l;->n:[I
+    invoke-static {v0}, Lcom/google/googlenav/ui/v;->e(Lcom/google/googlenav/ui/v;)LaM/am;
 
-    iget v2, p0, Lcom/google/googlenav/ui/v;->b:I
+    move-result-object v0
 
-    if-eqz p2, :cond_c
+    invoke-virtual {v0}, LaM/am;->O()V
 
-    const/4 v0, 0x1
-
-    :goto_9
-    aput v0, v1, v2
-
+    .line 1281
     return-void
-
-    :cond_c
-    const/4 v0, 0x0
-
-    goto :goto_9
 .end method

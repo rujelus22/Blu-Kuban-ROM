@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/android/finsky/remoting/protos/DocumentV2$Annotations;,
         Lcom/google/android/finsky/remoting/protos/DocumentV2$DocV2;
     }
 .end annotation

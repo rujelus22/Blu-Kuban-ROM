@@ -189,7 +189,7 @@
     .line 81
     iget-object v2, p0, Lcom/sec/android/app/camera/glwidget/TwGLShootAndShareSettingMenu;->mList:Lcom/sec/android/glview/TwGLList;
 
-    const v3, 0x7f02017c
+    const v3, 0x7f02017b
 
     invoke-virtual {v2, v3}, Lcom/sec/android/glview/TwGLList;->setScrollBarResource(I)V
 
@@ -1140,7 +1140,7 @@
     .line 106
     iget-object v0, p0, Lcom/sec/android/app/camera/glwidget/TwGLShootAndShareSettingMenu;->mMenuWrapper:Lcom/sec/android/glview/TwGLTitleDecorator;
 
-    const v1, 0x7f02017a
+    const v1, 0x7f020179
 
     invoke-virtual {v0, v1}, Lcom/sec/android/glview/TwGLTitleDecorator;->setNinePatchBackground(I)Z
 
@@ -1152,7 +1152,7 @@
     :cond_c
     iget-object v0, p0, Lcom/sec/android/app/camera/glwidget/TwGLShootAndShareSettingMenu;->mMenuWrapper:Lcom/sec/android/glview/TwGLTitleDecorator;
 
-    const v1, 0x7f020178
+    const v1, 0x7f020177
 
     invoke-virtual {v0, v1}, Lcom/sec/android/glview/TwGLTitleDecorator;->setNinePatchBackground(I)Z
 

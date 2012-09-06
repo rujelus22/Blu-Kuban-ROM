@@ -9,10 +9,10 @@
     .parameter "in"
 
     .prologue
-    .line 46
+    .line 45
     invoke-direct {p0, p1}, Lorg/apache/commons/io/input/ProxyInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 47
+    .line 46
     return-void
 .end method
 
@@ -27,19 +27,19 @@
     .end annotation
 
     .prologue
-    .line 63
+    .line 62
     iget-object v0, p0, Lorg/apache/commons/io/input/AutoCloseInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
 
-    .line 64
+    .line 63
     new-instance v0, Lorg/apache/commons/io/input/ClosedInputStream;
 
     invoke-direct {v0}, Lorg/apache/commons/io/input/ClosedInputStream;-><init>()V
 
     iput-object v0, p0, Lorg/apache/commons/io/input/AutoCloseInputStream;->in:Ljava/io/InputStream;
 
-    .line 65
+    .line 64
     return-void
 .end method
 
@@ -52,13 +52,13 @@
     .end annotation
 
     .prologue
-    .line 127
+    .line 125
     invoke-virtual {p0}, Lorg/apache/commons/io/input/AutoCloseInputStream;->close()V
 
-    .line 128
+    .line 126
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 129
+    .line 127
     return-void
 .end method
 
@@ -71,23 +71,23 @@
     .end annotation
 
     .prologue
-    .line 76
+    .line 75
     iget-object v1, p0, Lorg/apache/commons/io/input/AutoCloseInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v1}, Ljava/io/InputStream;->read()I
 
     move-result v0
 
-    .line 77
+    .line 76
     .local v0, n:I
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_c
 
-    .line 78
+    .line 77
     invoke-virtual {p0}, Lorg/apache/commons/io/input/AutoCloseInputStream;->close()V
 
-    .line 80
+    .line 79
     :cond_c
     return v0
 .end method
@@ -102,23 +102,23 @@
     .end annotation
 
     .prologue
-    .line 93
+    .line 92
     iget-object v1, p0, Lorg/apache/commons/io/input/AutoCloseInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v1, p1}, Ljava/io/InputStream;->read([B)I
 
     move-result v0
 
-    .line 94
+    .line 93
     .local v0, n:I
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_c
 
-    .line 95
+    .line 94
     invoke-virtual {p0}, Lorg/apache/commons/io/input/AutoCloseInputStream;->close()V
 
-    .line 97
+    .line 96
     :cond_c
     return v0
 .end method
@@ -135,23 +135,23 @@
     .end annotation
 
     .prologue
-    .line 112
+    .line 111
     iget-object v1, p0, Lorg/apache/commons/io/input/AutoCloseInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v1, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
 
     move-result v0
 
-    .line 113
+    .line 112
     .local v0, n:I
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_c
 
-    .line 114
+    .line 113
     invoke-virtual {p0}, Lorg/apache/commons/io/input/AutoCloseInputStream;->close()V
 
-    .line 116
+    .line 115
     :cond_c
     return v0
 .end method

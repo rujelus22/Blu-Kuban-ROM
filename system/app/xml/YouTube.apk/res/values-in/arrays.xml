@@ -5,6 +5,14 @@
         <item>Longgar</item>
         <item>Ketat</item>
     </string-array>
+    <string-array name="preload_quota_entries">
+        <item>128 MB</item>
+        <item>256 MB</item>
+        <item>512 MB</item>
+        <item>1 GB</item>
+        <item>2 GB</item>
+        <item>4 GB</item>
+    </string-array>
     <string-array name="subtitles_size_entries">
         <item>Kecil</item>
         <item>Sedang</item>

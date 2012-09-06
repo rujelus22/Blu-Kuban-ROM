@@ -1,70 +1,104 @@
-.class public final Lcom/google/android/youtube/core/converter/http/al;
-.super Ljava/lang/Object;
+.class final Lcom/google/android/youtube/core/converter/http/al;
+.super Lcom/google/android/youtube/core/converter/l;
 .source "SourceFile"
 
-# interfaces
-.implements Lorg/apache/http/HttpResponseInterceptor;
+
+# instance fields
+.field final synthetic a:Lcom/google/android/youtube/core/converter/http/ag;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
+.method constructor <init>(Lcom/google/android/youtube/core/converter/http/ag;)V
+    .registers 2
+    .parameter
 
     .prologue
-    .line 21
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 64
+    iput-object p1, p0, Lcom/google/android/youtube/core/converter/http/al;->a:Lcom/google/android/youtube/core/converter/http/ag;
+
+    invoke-direct {p0}, Lcom/google/android/youtube/core/converter/l;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final process(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)V
-    .registers 6
+.method public final a(Lcom/google/android/youtube/core/utils/x;Lorg/xml/sax/Attributes;Ljava/lang/String;)V
+    .registers 7
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 24
-    invoke-interface {p1}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+    .line 67
+    const-string v0, "http://gdata.youtube.com/schemas/2007/userevents.cat"
+
+    const-string v1, "scheme"
+
+    invoke-interface {p2, v1}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_27
+
+    .line 68
+    const-string v0, "term"
+
+    invoke-interface {p2, v0}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 25
-    if-nez v0, :cond_7
+    invoke-static {v0}, Lcom/google/android/youtube/core/utils/Util;->g(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 44
-    :cond_6
-    :goto_6
+    move-result-object v1
+
+    .line 70
+    :try_start_18
+    invoke-static {v1}, Lcom/google/android/youtube/core/model/Event$Action;->valueOf(Ljava/lang/String;)Lcom/google/android/youtube/core/model/Event$Action;
+
+    move-result-object v2
+
+    .line 71
+    const-class v0, Lcom/google/android/youtube/core/model/Event$Builder;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/youtube/core/utils/x;->a(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/youtube/core/model/Event$Builder;
+
+    invoke-virtual {v0, v2}, Lcom/google/android/youtube/core/model/Event$Builder;->action(Lcom/google/android/youtube/core/model/Event$Action;)Lcom/google/android/youtube/core/model/Event$Builder;
+    :try_end_27
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_18 .. :try_end_27} :catch_28
+
+    .line 76
+    :cond_27
+    :goto_27
     return-void
 
-    .line 28
-    :cond_7
-    invoke-interface {v0}, Lorg/apache/http/HttpEntity;->getContentEncoding()Lorg/apache/http/Header;
+    .line 73
+    :catch_28
+    move-exception v0
 
-    move-result-object v1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 29
-    if-eqz v1, :cond_6
+    const-string v2, "Unexpected event action "
 
-    const-string v2, "gzip"
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v1}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result v1
+    move-result-object v0
 
-    if-eqz v1, :cond_6
+    invoke-static {v0}, Lcom/google/android/youtube/core/L;->c(Ljava/lang/String;)V
 
-    .line 30
-    new-instance v1, Lcom/google/android/youtube/core/converter/http/am;
-
-    invoke-direct {v1, p0, v0}, Lcom/google/android/youtube/core/converter/http/am;-><init>(Lcom/google/android/youtube/core/converter/http/al;Lorg/apache/http/HttpEntity;)V
-
-    invoke-interface {p1, v1}, Lorg/apache/http/HttpResponse;->setEntity(Lorg/apache/http/HttpEntity;)V
-
-    goto :goto_6
+    goto :goto_27
 .end method

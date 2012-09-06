@@ -123,15 +123,15 @@
 
 .field public static final SENSOR_DELAY_FASTEST:I = 0x0
 
-.field public static final SENSOR_DELAY_GAME:I = 0x1
+.field public static final SENSOR_DELAY_GAME:I = 0x0
 
-.field public static final SENSOR_DELAY_NORMAL:I = 0x3
+.field public static final SENSOR_DELAY_NORMAL:I = 0x0
 
-.field public static final SENSOR_DELAY_UI:I = 0x2
+.field public static final SENSOR_DELAY_UI:I = 0x0
 
 .field private static final SENSOR_DISABLE:I = -0x1
 
-.field public static final SENSOR_LIGHT:I = 0x10
+.field public static final SENSOR_LIGHT:I = 0x0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
@@ -161,7 +161,7 @@
     .end annotation
 .end field
 
-.field public static final SENSOR_PROXIMITY:I = 0x20
+.field public static final SENSOR_PROXIMITY:I = 0x0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field

@@ -1,23 +1,23 @@
-.class Lcom/google/googlenav/ui/wizard/dQ;
+.class Lcom/google/googlenav/ui/wizard/dq;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/content/DialogInterface$OnCancelListener;
 
 
 # instance fields
-.field final synthetic a:Lbb/m;
-
-.field final synthetic b:Lcom/google/googlenav/ui/wizard/dP;
+.field final synthetic a:Lcom/google/googlenav/ui/wizard/dp;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/wizard/dP;Lbb/m;)V
-    .registers 3
+.method constructor <init>(Lcom/google/googlenav/ui/wizard/dp;)V
+    .registers 2
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/dQ;->b:Lcom/google/googlenav/ui/wizard/dP;
-
-    iput-object p2, p0, Lcom/google/googlenav/ui/wizard/dQ;->a:Lbb/m;
+    .prologue
+    .line 336
+    iput-object p1, p0, Lcom/google/googlenav/ui/wizard/dq;->a:Lcom/google/googlenav/ui/wizard/dp;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,24 +26,16 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 5
+.method public onCancel(Landroid/content/DialogInterface;)V
+    .registers 3
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/dQ;->b:Lcom/google/googlenav/ui/wizard/dP;
+    .prologue
+    .line 339
+    iget-object v0, p0, Lcom/google/googlenav/ui/wizard/dq;->a:Lcom/google/googlenav/ui/wizard/dp;
 
-    iget-object v0, v0, Lcom/google/googlenav/ui/wizard/dP;->e:Lcom/google/googlenav/ui/wizard/dO;
+    invoke-static {v0}, Lcom/google/googlenav/ui/wizard/dp;->a(Lcom/google/googlenav/ui/wizard/dp;)V
 
-    iget-object v1, p0, Lcom/google/googlenav/ui/wizard/dQ;->b:Lcom/google/googlenav/ui/wizard/dP;
-
-    iget-boolean v1, v1, Lcom/google/googlenav/ui/wizard/dP;->d:Z
-
-    iget-object v2, p0, Lcom/google/googlenav/ui/wizard/dQ;->b:Lcom/google/googlenav/ui/wizard/dP;
-
-    iget-object v2, v2, Lcom/google/googlenav/ui/wizard/dP;->a:Lcom/google/googlenav/ui/wizard/dS;
-
-    iget-object v3, p0, Lcom/google/googlenav/ui/wizard/dQ;->a:Lbb/m;
-
-    invoke-static {v0, v1, v2, v3}, Lcom/google/googlenav/ui/wizard/dO;->a(Lcom/google/googlenav/ui/wizard/dO;ZLcom/google/googlenav/ui/wizard/dS;Lbb/m;)V
-
+    .line 340
     return-void
 .end method

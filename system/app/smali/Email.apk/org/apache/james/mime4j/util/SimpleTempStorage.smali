@@ -28,7 +28,7 @@
     .registers 1
 
     .prologue
-    .line 43
+    .line 42
     const-class v0, Lorg/apache/james/mime4j/util/SimpleTempStorage;
 
     invoke-static {v0}, Lorg/apache/james/mime4j/LogFactory;->getLog(Ljava/lang/Class;)Lorg/apache/james/mime4j/Log;
@@ -46,20 +46,20 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 51
+    .line 50
     invoke-direct {p0}, Lorg/apache/james/mime4j/util/TempStorage;-><init>()V
 
-    .line 45
+    .line 44
     iput-object v2, p0, Lorg/apache/james/mime4j/util/SimpleTempStorage;->rootPath:Lorg/apache/james/mime4j/util/TempPath;
 
-    .line 46
+    .line 45
     new-instance v0, Ljava/util/Random;
 
     invoke-direct {v0}, Ljava/util/Random;-><init>()V
 
     iput-object v0, p0, Lorg/apache/james/mime4j/util/SimpleTempStorage;->random:Ljava/util/Random;
 
-    .line 52
+    .line 51
     new-instance v0, Lorg/apache/james/mime4j/util/SimpleTempStorage$SimpleTempPath;
 
     const-string v1, "java.io.tmpdir"
@@ -72,7 +72,7 @@
 
     iput-object v0, p0, Lorg/apache/james/mime4j/util/SimpleTempStorage;->rootPath:Lorg/apache/james/mime4j/util/TempPath;
 
-    .line 53
+    .line 52
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .registers 2
 
     .prologue
-    .line 116
+    .line 118
     iget-object v0, p0, Lorg/apache/james/mime4j/util/SimpleTempStorage;->rootPath:Lorg/apache/james/mime4j/util/TempPath;
 
     return-object v0

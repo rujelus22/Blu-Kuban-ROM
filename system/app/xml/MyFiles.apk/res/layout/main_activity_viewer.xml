@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.sec.android.app.myfiles.Panel_Myfilelist_bySpinner android:orientation="vertical" android:id="@id/main_activity_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <com.sec.android.app.myfiles.MainActivityView android:id="@id/main_activity_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/main_activity_panel" />
-</RelativeLayout>

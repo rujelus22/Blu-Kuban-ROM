@@ -78,7 +78,7 @@
 
     const-string v1, "PROCESSING"
 
-    const v2, 0x7f0a002f
+    const v2, 0x7f0b003b
 
     invoke-direct {v0, v1, v5, v2}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 
@@ -89,7 +89,7 @@
 
     const-string v1, "DELETED"
 
-    const v2, 0x7f0a0030
+    const v2, 0x7f0b003d
 
     invoke-direct {v0, v1, v6, v2}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 
@@ -100,7 +100,7 @@
 
     const-string v1, "COUNTRY_RESTRICTED"
 
-    const v2, 0x7f0a003e
+    const v2, 0x7f0b004b
 
     invoke-direct {v0, v1, v7, v2}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 
@@ -111,7 +111,7 @@
 
     const-string v1, "NOT_AVAILABLE_ON_MOBILE"
 
-    const v2, 0x7f0a003f
+    const v2, 0x7f0b004c
 
     invoke-direct {v0, v1, v8, v2}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 
@@ -124,7 +124,7 @@
 
     const/4 v2, 0x5
 
-    const v3, 0x7f0a0040
+    const v3, 0x7f0b004d
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 
@@ -137,7 +137,7 @@
 
     const/4 v2, 0x6
 
-    const v3, 0x7f0a0037
+    const v3, 0x7f0b0044
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 
@@ -150,7 +150,7 @@
 
     const/4 v2, 0x7
 
-    const v3, 0x7f0a0038
+    const v3, 0x7f0b0045
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 
@@ -163,7 +163,7 @@
 
     const/16 v2, 0x8
 
-    const v3, 0x7f0a0039
+    const v3, 0x7f0b0046
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 
@@ -176,7 +176,7 @@
 
     const/16 v2, 0x9
 
-    const v3, 0x7f0a003a
+    const v3, 0x7f0b0047
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 
@@ -189,7 +189,7 @@
 
     const/16 v2, 0xa
 
-    const v3, 0x7f0a003b
+    const v3, 0x7f0b0048
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 
@@ -202,7 +202,7 @@
 
     const/16 v2, 0xb
 
-    const v3, 0x7f0a003c
+    const v3, 0x7f0b0049
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 
@@ -215,7 +215,7 @@
 
     const/16 v2, 0xc
 
-    const v3, 0x7f0a003d
+    const v3, 0x7f0b004a
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 
@@ -228,7 +228,7 @@
 
     const/16 v2, 0xd
 
-    const v3, 0x7f0a0041
+    const v3, 0x7f0b004e
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 
@@ -241,7 +241,7 @@
 
     const/16 v2, 0xe
 
-    const v3, 0x7f0a0042
+    const v3, 0x7f0b004f
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 
@@ -254,7 +254,7 @@
 
     const/16 v2, 0xf
 
-    const v3, 0x7f0a0043
+    const v3, 0x7f0b0050
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 
@@ -267,7 +267,7 @@
 
     const/16 v2, 0x10
 
-    const v3, 0x7f0a0044
+    const v3, 0x7f0b0051
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 
@@ -280,7 +280,7 @@
 
     const/16 v2, 0x11
 
-    const v3, 0x7f0a0045
+    const v3, 0x7f0b0052
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/youtube/core/model/Video$State;-><init>(Ljava/lang/String;II)V
 

@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="setup_padding_left_button">300.0dip</dimen>
-    <dimen name="setup_padding_right_button">300.0dip</dimen>
-    <dimen name="mailbox_list_padding_left">16.0dip</dimen>
-    <dimen name="mailbox_list_padding_right">24.0dip</dimen>
-    <dimen name="mailbox_list_count_margin_left">16.0dip</dimen>
-    <dimen name="account_setup_soft_1button_width">373.0dip</dimen>
-    <dimen name="account_setup_soft_2button_width">263.0dip</dimen>
-    <dimen name="account_setup_type_layout_marginTop">29.0dip</dimen>
-    <dimen name="account_setup_type_layout_marginBottom">21.0dip</dimen>
-    <dimen name="setup_padding_top">16.0dip</dimen>
-    <dimen name="setup_padding_left">142.0dip</dimen>
-    <dimen name="setup_padding_right">142.0dip</dimen>
-    <dimen name="account_setting_fragment_width">685.0dip</dimen>
+    <dimen name="compose_scrollview_width">800.0dip</dimen>
+    <dimen name="actionbar_subject_padding_right">0.0dip</dimen>
+    <dimen name="chip_height">26.0dip</dimen>
+    <dimen name="mailbox_list_width">160.0dip</dimen>
+    <dimen name="message_list_width">160.0dip</dimen>
+    <dimen name="action_bar_account_name_max_width">100.0dip</dimen>
+    <dimen name="action_bar_mailbox_name_max_width">100.0dip</dimen>
+    <dimen name="action_bar_mailbox_name_left_margin">8.0dip</dimen>
 </resources>

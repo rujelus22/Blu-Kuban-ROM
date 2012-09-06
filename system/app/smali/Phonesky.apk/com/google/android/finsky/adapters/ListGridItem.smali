@@ -17,7 +17,7 @@
 # instance fields
 .field private final mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
 
-.field private final mBucket:Lcom/google/android/finsky/model/Bucket;
+.field private final mBucket:Lcom/google/android/finsky/api/model/Bucket;
 
 .field private final mColumns:I
 
@@ -39,7 +39,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/finsky/api/model/Document;IIIILcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/navigationmanager/NavigationManager;Ljava/lang/String;Lcom/google/android/finsky/api/model/DfeToc;)V
+.method private constructor <init>(Landroid/content/Context;Lcom/google/android/finsky/api/model/Document;IIIILcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/navigationmanager/NavigationManager;Ljava/lang/String;Lcom/google/android/finsky/api/model/DfeToc;)V
     .registers 12
     .parameter "context"
     .parameter "doc"
@@ -53,44 +53,44 @@
     .parameter "toc"
 
     .prologue
-    .line 87
+    .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 88
+    .line 84
     iput-object p1, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mContext:Landroid/content/Context;
 
-    .line 89
-    invoke-static {p2}, Lcom/google/android/finsky/api/model/Document;->convertToBucket(Lcom/google/android/finsky/api/model/Document;)Lcom/google/android/finsky/model/Bucket;
+    .line 85
+    invoke-static {p2}, Lcom/google/android/finsky/api/model/Document;->convertToBucket(Lcom/google/android/finsky/api/model/Document;)Lcom/google/android/finsky/api/model/Bucket;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/model/Bucket;
+    iput-object v0, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/api/model/Bucket;
 
-    .line 90
+    .line 86
     iput-object p8, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
-    .line 91
+    .line 87
     iput-object p10, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mToc:Lcom/google/android/finsky/api/model/DfeToc;
 
-    .line 92
+    .line 88
     iput-object p7, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
 
-    .line 93
+    .line 89
     iput-object p9, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mReferrerUrl:Ljava/lang/String;
 
-    .line 94
+    .line 90
     iput p3, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mWidth:I
 
-    .line 95
+    .line 91
     iput p4, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mHeight:I
 
-    .line 96
+    .line 92
     iput p5, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mRows:I
 
-    .line 97
+    .line 93
     iput p6, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mColumns:I
 
-    .line 98
+    .line 94
     return-void
 .end method
 
@@ -104,14 +104,14 @@
     .parameter "toc"
 
     .prologue
-    .line 74
+    .line 70
     const/4 v3, 0x4
 
     const/4 v4, 0x2
 
     const/4 v5, 0x2
 
-    const/4 v6, 0x2
+    const/4 v6, 0x1
 
     move-object v0, p0
 
@@ -129,17 +129,17 @@
 
     invoke-direct/range {v0 .. v10}, Lcom/google/android/finsky/adapters/ListGridItem;-><init>(Landroid/content/Context;Lcom/google/android/finsky/api/model/Document;IIIILcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/navigationmanager/NavigationManager;Ljava/lang/String;Lcom/google/android/finsky/api/model/DfeToc;)V
 
-    .line 75
+    .line 71
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/google/android/finsky/adapters/ListGridItem;)Lcom/google/android/finsky/model/Bucket;
+.method static synthetic access$000(Lcom/google/android/finsky/adapters/ListGridItem;)Lcom/google/android/finsky/api/model/Bucket;
     .registers 2
     .parameter "x0"
 
     .prologue
-    .line 30
-    iget-object v0, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/model/Bucket;
+    .line 26
+    iget-object v0, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/api/model/Bucket;
 
     return-object v0
 .end method
@@ -149,7 +149,7 @@
     .parameter "x0"
 
     .prologue
-    .line 30
+    .line 26
     iget-object v0, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mReferrerUrl:Ljava/lang/String;
 
     return-object v0
@@ -160,7 +160,7 @@
     .parameter "x0"
 
     .prologue
-    .line 30
+    .line 26
     iget-object v0, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mToc:Lcom/google/android/finsky/api/model/DfeToc;
 
     return-object v0
@@ -171,356 +171,323 @@
     .parameter "x0"
 
     .prologue
-    .line 30
+    .line 26
     iget-object v0, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
 
     return-object v0
 .end method
 
-.method private bindBucketEntry(Lcom/google/android/finsky/model/Bucket;IILandroid/view/ViewGroup;)V
-    .registers 18
+.method private bindBucketEntry(Lcom/google/android/finsky/api/model/Bucket;IILandroid/view/ViewGroup;)V
+    .registers 15
     .parameter "bucket"
     .parameter "row"
     .parameter "column"
     .parameter "docEntry"
 
     .prologue
-    .line 187
-    iget v1, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mColumns:I
-
-    mul-int/2addr v1, p2
-
-    add-int v11, v1, p3
-
-    .line 188
-    .local v11, itemIndex:I
-    invoke-virtual {p1}, Lcom/google/android/finsky/model/Bucket;->getChildren()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v1, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lcom/google/android/finsky/api/model/Document;
-
-    .line 189
-    .local v9, doc:Lcom/google/android/finsky/api/model/Document;
-    invoke-virtual/range {p4 .. p4}, Landroid/view/ViewGroup;->getTag()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;
-
-    .line 190
-    .local v10, holder:Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;
-    if-nez v10, :cond_75
-
-    .line 191
-    new-instance v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;
-
-    .end local v10           #holder:Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;
-    const/4 v1, 0x0
-
-    invoke-direct {v10, v1}, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;-><init>(Lcom/google/android/finsky/adapters/ListGridItem$1;)V
-
-    .line 192
-    .restart local v10       #holder:Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;
-    const v1, 0x7f080013
-
-    move-object/from16 v0, p4
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/ImageView;
-
-    iput-object v1, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->bitmapView:Landroid/widget/ImageView;
-
-    .line 193
-    const v1, 0x7f080017
-
-    move-object/from16 v0, p4
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->title:Landroid/widget/TextView;
-
-    .line 194
-    const v1, 0x7f080018
-
-    move-object/from16 v0, p4
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/finsky/layout/DecoratedTextView;
-
-    iput-object v1, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->creator:Lcom/google/android/finsky/layout/DecoratedTextView;
-
-    .line 195
-    const v1, 0x7f0800ef
-
-    move-object/from16 v0, p4
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    iput-object v1, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->bottomSeparator:Landroid/view/View;
-
-    .line 196
-    const v1, 0x7f080111
-
-    move-object/from16 v0, p4
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    iput-object v1, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->leftSeparator:Landroid/view/View;
-
-    .line 197
-    const v1, 0x7f080131
-
-    move-object/from16 v0, p4
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    iput-object v1, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->rightSeparator:Landroid/view/View;
-
-    .line 198
-    const v1, 0x7f080011
-
-    move-object/from16 v0, p4
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    iput-object v1, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->accessibilityOverlay:Landroid/view/View;
-
-    .line 199
-    move-object/from16 v0, p4
-
-    invoke-virtual {v0, v10}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
-
-    .line 202
-    :cond_75
-    iget-object v1, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->accessibilityOverlay:Landroid/view/View;
-
-    iget-object v2, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
-
-    iget-object v3, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mReferrerUrl:Ljava/lang/String;
-
-    invoke-virtual {v2, v9, v3}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getClickListener(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/view/View$OnClickListener;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 206
-    invoke-virtual {v9}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
-
-    move-result-object v12
-
-    .line 207
-    .local v12, title:Ljava/lang/String;
-    iget-object v1, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->title:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 209
-    iget-object v1, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->creator:Lcom/google/android/finsky/layout/DecoratedTextView;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/DecoratedTextView;->setVisibility(I)V
-
-    .line 210
-    iget-object v1, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->creator:Lcom/google/android/finsky/layout/DecoratedTextView;
-
-    invoke-virtual {v9}, Lcom/google/android/finsky/api/model/Document;->getCreator()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/google/android/finsky/layout/DecoratedTextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 211
-    iget-object v1, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
-
-    iget-object v2, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->creator:Lcom/google/android/finsky/layout/DecoratedTextView;
-
-    invoke-static {v9, v1, v2}, Lcom/google/android/finsky/utils/BadgeUtils;->configureCreatorBadge(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/layout/DecoratedTextView;)V
-
-    .line 214
-    iget-object v2, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->bottomSeparator:Landroid/view/View;
-
-    iget v1, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mMaxRowCount:I
-
-    add-int/lit8 v1, v1, -0x1
-
-    if-ne p2, v1, :cond_10e
-
-    const/16 v1, 0x8
-
-    :goto_ab
-    invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 216
-    iget-object v2, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->leftSeparator:Landroid/view/View;
-
-    if-nez p3, :cond_110
-
-    const/16 v1, 0x8
-
-    :goto_b4
-    invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 218
-    iget-object v2, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->rightSeparator:Landroid/view/View;
-
-    iget v1, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mColumns:I
-
-    add-int/lit8 v1, v1, -0x1
-
-    move/from16 v0, p3
-
-    if-ne v0, v1, :cond_112
-
-    const/16 v1, 0x8
-
-    :goto_c3
-    invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 221
-    invoke-virtual {v9}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
-
-    move-result v1
-
-    invoke-static {v1}, Lcom/google/android/finsky/utils/CorpusResourceUtils;->getCorpusCellContentDescriptionResource(I)I
-
-    move-result v8
-
-    .line 223
-    .local v8, descriptionStringId:I
-    iget-object v1, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->accessibilityOverlay:Landroid/view/View;
-
-    iget-object v2, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mContext:Landroid/content/Context;
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v9}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
-
-    move-result-object v6
-
-    aput-object v6, v3, v4
-
-    const/4 v4, 0x1
-
-    invoke-virtual {v9}, Lcom/google/android/finsky/api/model/Document;->getCreator()Ljava/lang/String;
-
-    move-result-object v6
-
-    aput-object v6, v3, v4
-
-    invoke-virtual {v2, v8, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    .line 226
-    iget-object v1, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->bitmapView:Landroid/widget/ImageView;
-
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v1
-
-    iget v5, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    .line 227
-    .local v5, iconWidth:I
-    iget-object v2, v10, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->bitmapView:Landroid/widget/ImageView;
-
-    const/4 v1, 0x0
-
-    invoke-static {v9, v5, v1}, Lcom/google/android/finsky/utils/ThumbnailUtils;->getIconUrlFromDocument(Lcom/google/android/finsky/api/model/Document;II)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v9}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
-
-    move-result v1
-
-    iget-object v4, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    invoke-static {v1, v4}, Lcom/google/android/finsky/utils/CorpusResourceUtils;->getPlaceholderIcon(ILandroid/content/res/Resources;)Landroid/graphics/Bitmap;
-
-    move-result-object v4
-
-    const/4 v6, 0x0
+    const/16 v6, 0x8
 
     const/4 v7, 0x0
 
-    move-object v1, p0
+    .line 186
+    iget v5, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mColumns:I
 
-    invoke-virtual/range {v1 .. v7}, Lcom/google/android/finsky/adapters/ListGridItem;->bindImage(Landroid/widget/ImageView;Ljava/lang/String;Landroid/graphics/Bitmap;IIZ)V
+    mul-int/2addr v5, p2
 
-    .line 230
-    return-void
+    add-int v3, v5, p3
 
-    .line 214
-    .end local v5           #iconWidth:I
-    .end local v8           #descriptionStringId:I
-    :cond_10e
-    const/4 v1, 0x0
+    .line 187
+    .local v3, itemIndex:I
+    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Bucket;->getChildren()Ljava/util/List;
 
-    goto :goto_ab
+    move-result-object v5
+
+    invoke-interface {v5, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/finsky/api/model/Document;
+
+    .line 188
+    .local v1, doc:Lcom/google/android/finsky/api/model/Document;
+    invoke-virtual {p4}, Landroid/view/ViewGroup;->getTag()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;
+
+    .line 189
+    .local v2, holder:Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;
+    if-nez v2, :cond_73
+
+    .line 190
+    new-instance v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;
+
+    .end local v2           #holder:Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;
+    const/4 v5, 0x0
+
+    invoke-direct {v2, v5}, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;-><init>(Lcom/google/android/finsky/adapters/ListGridItem$1;)V
+
+    .line 191
+    .restart local v2       #holder:Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;
+    const v5, 0x7f08001b
+
+    invoke-virtual {p4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/google/android/finsky/layout/SmartThumbnailView;
+
+    iput-object v5, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->bitmapView:Lcom/google/android/finsky/layout/SmartThumbnailView;
+
+    .line 192
+    const v5, 0x7f08001e
+
+    invoke-virtual {p4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/widget/TextView;
+
+    iput-object v5, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->title:Landroid/widget/TextView;
+
+    .line 193
+    const v5, 0x7f08001f
+
+    invoke-virtual {p4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/google/android/finsky/layout/DecoratedTextView;
+
+    iput-object v5, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->creator:Lcom/google/android/finsky/layout/DecoratedTextView;
+
+    .line 194
+    const v5, 0x7f080169
+
+    invoke-virtual {p4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/widget/TextView;
+
+    iput-object v5, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->reason:Landroid/widget/TextView;
+
+    .line 195
+    const v5, 0x7f080106
+
+    invoke-virtual {p4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    iput-object v5, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->bottomSeparator:Landroid/view/View;
+
+    .line 196
+    const v5, 0x7f080167
+
+    invoke-virtual {p4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    iput-object v5, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->leftSeparator:Landroid/view/View;
+
+    .line 197
+    const v5, 0x7f080168
+
+    invoke-virtual {p4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    iput-object v5, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->rightSeparator:Landroid/view/View;
+
+    .line 198
+    const v5, 0x7f080014
+
+    invoke-virtual {p4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    iput-object v5, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->accessibilityOverlay:Landroid/view/View;
+
+    .line 199
+    invoke-virtual {p4, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
+
+    .line 202
+    :cond_73
+    iget-object v5, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->accessibilityOverlay:Landroid/view/View;
+
+    iget-object v8, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mNavigationManager:Lcom/google/android/finsky/navigationmanager/NavigationManager;
+
+    iget-object v9, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mReferrerUrl:Ljava/lang/String;
+
+    invoke-virtual {v8, v1, v9}, Lcom/google/android/finsky/navigationmanager/NavigationManager;->getClickListener(Lcom/google/android/finsky/api/model/Document;Ljava/lang/String;)Landroid/view/View$OnClickListener;
+
+    move-result-object v8
+
+    invoke-virtual {v5, v8}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 206
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 207
+    .local v4, title:Ljava/lang/String;
+    iget-object v5, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->title:Landroid/widget/TextView;
+
+    invoke-virtual {v5, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 209
+    iget-object v5, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->creator:Lcom/google/android/finsky/layout/DecoratedTextView;
+
+    invoke-virtual {v5, v7}, Lcom/google/android/finsky/layout/DecoratedTextView;->setVisibility(I)V
+
+    .line 210
+    iget-object v5, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->creator:Lcom/google/android/finsky/layout/DecoratedTextView;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Document;->getCreator()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v5, v8}, Lcom/google/android/finsky/layout/DecoratedTextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 212
+    iget-object v5, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->reason:Landroid/widget/TextView;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Document;->getRecommendationReason()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v5, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 213
+    iget-object v5, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
+
+    iget-object v8, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->creator:Lcom/google/android/finsky/layout/DecoratedTextView;
+
+    const/4 v9, -0x1
+
+    invoke-static {v1, v5, v8, v9}, Lcom/google/android/finsky/utils/BadgeUtils;->configureCreatorBadge(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/utils/BitmapLoader;Lcom/google/android/finsky/layout/DecoratedTextView;I)V
 
     .line 216
-    :cond_110
-    const/4 v1, 0x0
+    iget-object v8, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->bottomSeparator:Landroid/view/View;
 
-    goto :goto_b4
+    iget v5, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mMaxRowCount:I
+
+    add-int/lit8 v5, v5, -0x1
+
+    if-ne p2, v5, :cond_f2
+
+    move v5, v6
+
+    :goto_b1
+    invoke-virtual {v8, v5}, Landroid/view/View;->setVisibility(I)V
 
     .line 218
-    :cond_112
-    const/4 v1, 0x0
+    iget-object v8, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->leftSeparator:Landroid/view/View;
 
-    goto :goto_c3
+    if-nez p3, :cond_f4
+
+    move v5, v6
+
+    :goto_b9
+    invoke-virtual {v8, v5}, Landroid/view/View;->setVisibility(I)V
+
+    .line 220
+    iget-object v5, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->rightSeparator:Landroid/view/View;
+
+    iget v8, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mColumns:I
+
+    add-int/lit8 v8, v8, -0x1
+
+    if-ne p3, v8, :cond_f6
+
+    :goto_c4
+    invoke-virtual {v5, v6}, Landroid/view/View;->setVisibility(I)V
+
+    .line 223
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Document;->getBackend()I
+
+    move-result v5
+
+    invoke-static {v5}, Lcom/google/android/finsky/utils/CorpusResourceUtils;->getCorpusCellContentDescriptionResource(I)I
+
+    move-result v0
+
+    .line 225
+    .local v0, descriptionStringId:I
+    iget-object v5, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->accessibilityOverlay:Landroid/view/View;
+
+    iget-object v6, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mContext:Landroid/content/Context;
+
+    const/4 v8, 0x2
+
+    new-array v8, v8, [Ljava/lang/Object;
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Document;->getTitle()Ljava/lang/String;
+
+    move-result-object v9
+
+    aput-object v9, v8, v7
+
+    const/4 v7, 0x1
+
+    invoke-virtual {v1}, Lcom/google/android/finsky/api/model/Document;->getCreator()Ljava/lang/String;
+
+    move-result-object v9
+
+    aput-object v9, v8, v7
+
+    invoke-virtual {v6, v0, v8}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    .line 228
+    iget-object v5, v2, Lcom/google/android/finsky/adapters/ListGridItem$BucketEntryViewHolder;->bitmapView:Lcom/google/android/finsky/layout/SmartThumbnailView;
+
+    iget-object v6, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
+
+    invoke-virtual {v5, v1, v6}, Lcom/google/android/finsky/layout/SmartThumbnailView;->bind(Lcom/google/android/finsky/api/model/Document;Lcom/google/android/finsky/utils/BitmapLoader;)V
+
+    .line 229
+    return-void
+
+    .end local v0           #descriptionStringId:I
+    :cond_f2
+    move v5, v7
+
+    .line 216
+    goto :goto_b1
+
+    :cond_f4
+    move v5, v7
+
+    .line 218
+    goto :goto_b9
+
+    :cond_f6
+    move v6, v7
+
+    .line 220
+    goto :goto_c4
 .end method
 
-.method private getDisplayedColumns(Lcom/google/android/finsky/model/Bucket;I)I
+.method private getDisplayedColumns(Lcom/google/android/finsky/api/model/Bucket;I)I
     .registers 5
     .parameter "bucket"
     .parameter "row"
 
     .prologue
-    .line 116
-    invoke-direct {p0, p1}, Lcom/google/android/finsky/adapters/ListGridItem;->getDisplayedRows(Lcom/google/android/finsky/model/Bucket;)I
+    .line 112
+    invoke-direct {p0, p1}, Lcom/google/android/finsky/adapters/ListGridItem;->getDisplayedRows(Lcom/google/android/finsky/api/model/Bucket;)I
 
     move-result v0
 
     if-ge p2, v0, :cond_15
 
-    invoke-virtual {p1}, Lcom/google/android/finsky/model/Bucket;->getChildCount()I
+    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Bucket;->getChildCount()I
 
     move-result v0
 
@@ -545,13 +512,13 @@
     goto :goto_14
 .end method
 
-.method private getDisplayedRows(Lcom/google/android/finsky/model/Bucket;)I
+.method private getDisplayedRows(Lcom/google/android/finsky/api/model/Bucket;)I
     .registers 6
     .parameter "bucket"
 
     .prologue
-    .line 112
-    invoke-virtual {p1}, Lcom/google/android/finsky/model/Bucket;->getChildCount()I
+    .line 108
+    invoke-virtual {p1}, Lcom/google/android/finsky/api/model/Bucket;->getChildCount()I
 
     move-result v0
 
@@ -588,16 +555,16 @@
     .prologue
     const/4 v12, 0x0
 
-    .line 122
+    .line 118
     iget-object v10, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mContext:Landroid/content/Context;
 
     invoke-static {v10}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v6
 
-    .line 123
+    .line 119
     .local v6, inflater:Landroid/view/LayoutInflater;
-    const v10, 0x7f080053
+    const v10, 0x7f080057
 
     invoke-virtual {p1, v10}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -605,7 +572,7 @@
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 124
+    .line 120
     .local v0, bucketHeader:Landroid/widget/LinearLayout;
     new-instance v10, Lcom/google/android/finsky/adapters/ListGridItem$1;
 
@@ -613,8 +580,8 @@
 
     invoke-virtual {v0, v10}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 132
-    const v10, 0x7f080056
+    .line 128
+    const v10, 0x7f08005a
 
     invoke-virtual {p1, v10}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -622,11 +589,11 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    .line 133
+    .line 129
     .local v5, headerText:Landroid/widget/TextView;
-    iget-object v10, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/model/Bucket;
+    iget-object v10, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/api/model/Bucket;
 
-    invoke-virtual {v10}, Lcom/google/android/finsky/model/Bucket;->getTitle()Ljava/lang/String;
+    invoke-virtual {v10}, Lcom/google/android/finsky/api/model/Bucket;->getTitle()Ljava/lang/String;
 
     move-result-object v10
 
@@ -636,12 +603,12 @@
 
     invoke-virtual {v5, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 134
+    .line 130
     iget-object v10, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mContext:Landroid/content/Context;
 
-    iget-object v11, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/model/Bucket;
+    iget-object v11, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/api/model/Bucket;
 
-    invoke-virtual {v11}, Lcom/google/android/finsky/model/Bucket;->getBackend()I
+    invoke-virtual {v11}, Lcom/google/android/finsky/api/model/Bucket;->getBackend()I
 
     move-result v11
 
@@ -651,8 +618,17 @@
 
     invoke-virtual {v5, v10}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 137
-    const v10, 0x7f08005c
+    .line 133
+    iget-object v10, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/api/model/Bucket;
+
+    invoke-virtual {v10}, Lcom/google/android/finsky/api/model/Bucket;->getTitle()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v0, v10}, Landroid/widget/LinearLayout;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    .line 135
+    const v10, 0x7f080060
 
     invoke-virtual {p1, v10}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -660,43 +636,43 @@
 
     check-cast v1, Landroid/widget/LinearLayout;
 
-    .line 138
+    .line 136
     .local v1, bucketRowHolder:Landroid/widget/LinearLayout;
     const/4 v7, 0x0
 
     .local v7, row:I
-    :goto_47
+    :goto_50
     iget v10, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mRows:I
 
-    if-ge v7, v10, :cond_b4
+    if-ge v7, v10, :cond_bd
 
-    .line 139
+    .line 137
     invoke-virtual {v1, v7}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v9
 
     check-cast v9, Landroid/widget/LinearLayout;
 
-    .line 141
+    .line 139
     .local v9, rowOfBucketEntries:Landroid/widget/LinearLayout;
-    iget-object v10, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/model/Bucket;
+    iget-object v10, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/api/model/Bucket;
 
-    invoke-direct {p0, v10}, Lcom/google/android/finsky/adapters/ListGridItem;->getDisplayedRows(Lcom/google/android/finsky/model/Bucket;)I
+    invoke-direct {p0, v10}, Lcom/google/android/finsky/adapters/ListGridItem;->getDisplayedRows(Lcom/google/android/finsky/api/model/Bucket;)I
 
     move-result v10
 
     iput v10, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mMaxRowCount:I
 
-    .line 142
+    .line 140
     iget v10, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mMaxRowCount:I
 
-    if-ge v7, v10, :cond_aa
+    if-ge v7, v10, :cond_b3
 
-    .line 143
-    if-nez v9, :cond_77
+    .line 141
+    if-nez v9, :cond_80
 
-    .line 144
-    const v10, 0x7f04001a
+    .line 142
+    const v10, 0x7f04001f
 
     invoke-virtual {v6, v10, v1, v12}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -705,7 +681,7 @@
     .end local v9           #rowOfBucketEntries:Landroid/widget/LinearLayout;
     check-cast v9, Landroid/widget/LinearLayout;
 
-    .line 146
+    .line 144
     .restart local v9       #rowOfBucketEntries:Landroid/widget/LinearLayout;
     invoke-virtual {v9}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -713,222 +689,118 @@
 
     check-cast v8, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 148
+    .line 146
     .local v8, rowLayoutParams:Landroid/widget/LinearLayout$LayoutParams;
     iput v12, v8, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
-    .line 149
+    .line 147
     const/high16 v10, 0x3f80
 
     iput v10, v8, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
-    .line 150
+    .line 148
     invoke-virtual {v1, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 152
+    .line 150
     .end local v8           #rowLayoutParams:Landroid/widget/LinearLayout$LayoutParams;
-    :cond_77
+    :cond_80
     invoke-virtual {v9, v12}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 153
-    iget-object v10, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/model/Bucket;
+    .line 151
+    iget-object v10, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/api/model/Bucket;
 
-    invoke-direct {p0, v10, v7}, Lcom/google/android/finsky/adapters/ListGridItem;->getDisplayedColumns(Lcom/google/android/finsky/model/Bucket;I)I
+    invoke-direct {p0, v10, v7}, Lcom/google/android/finsky/adapters/ListGridItem;->getDisplayedColumns(Lcom/google/android/finsky/api/model/Bucket;I)I
 
     move-result v3
 
-    .line 154
+    .line 152
     .local v3, displayedColumns:I
     const/4 v2, 0x0
 
     .local v2, column:I
-    :goto_81
+    :goto_8a
     iget v10, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mColumns:I
 
-    if-ge v2, v10, :cond_b1
+    if-ge v2, v10, :cond_ba
 
-    .line 155
+    .line 153
     invoke-virtual {v9, v2}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 156
+    .line 154
     .local v4, docEntry:Landroid/view/View;
-    if-nez v4, :cond_95
+    if-nez v4, :cond_9e
 
-    .line 157
-    const v10, 0x7f040084
+    .line 155
+    const v10, 0x7f040091
 
     invoke-virtual {v6, v10, v9, v12}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v4
 
-    .line 159
+    .line 157
     invoke-virtual {v9, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 162
-    :cond_95
-    if-ge v2, v3, :cond_a5
+    .line 160
+    :cond_9e
+    if-ge v2, v3, :cond_ae
 
-    .line 163
-    iget-object v11, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/model/Bucket;
+    .line 161
+    iget-object v11, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBucket:Lcom/google/android/finsky/api/model/Bucket;
 
     move-object v10, v4
 
     check-cast v10, Landroid/view/ViewGroup;
 
-    invoke-direct {p0, v11, v7, v2, v10}, Lcom/google/android/finsky/adapters/ListGridItem;->bindBucketEntry(Lcom/google/android/finsky/model/Bucket;IILandroid/view/ViewGroup;)V
+    invoke-direct {p0, v11, v7, v2, v10}, Lcom/google/android/finsky/adapters/ListGridItem;->bindBucketEntry(Lcom/google/android/finsky/api/model/Bucket;IILandroid/view/ViewGroup;)V
 
-    .line 164
+    .line 162
     invoke-virtual {v4, v12}, Landroid/view/View;->setVisibility(I)V
 
-    .line 154
-    :goto_a2
+    .line 152
+    :goto_ab
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_81
+    goto :goto_8a
 
-    .line 166
-    :cond_a5
+    .line 164
+    :cond_ae
     const/4 v10, 0x4
 
     invoke-virtual {v4, v10}, Landroid/view/View;->setVisibility(I)V
 
-    goto :goto_a2
+    goto :goto_ab
 
-    .line 170
+    .line 168
     .end local v2           #column:I
     .end local v3           #displayedColumns:I
     .end local v4           #docEntry:Landroid/view/View;
-    :cond_aa
-    if-eqz v9, :cond_b1
+    :cond_b3
+    if-eqz v9, :cond_ba
 
-    .line 171
+    .line 169
     const/16 v10, 0x8
 
     invoke-virtual {v9, v10}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 138
-    :cond_b1
+    .line 136
+    :cond_ba
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_47
+    goto :goto_50
 
-    .line 174
+    .line 172
     .end local v9           #rowOfBucketEntries:Landroid/widget/LinearLayout;
-    :cond_b4
+    :cond_bd
     return-void
-.end method
-
-.method protected bindImage(Landroid/widget/ImageView;Ljava/lang/String;Landroid/graphics/Bitmap;IIZ)V
-    .registers 15
-    .parameter "safeView"
-    .parameter "urlToLoad"
-    .parameter "temporaryDisplay"
-    .parameter "maxWidth"
-    .parameter "maxHeight"
-    .parameter "resizeView"
-
-    .prologue
-    .line 258
-    invoke-virtual {p1}, Landroid/widget/ImageView;->getTag()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-
-    .line 260
-    .local v7, oldContainer:Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-    if-eqz v7, :cond_1c
-
-    invoke-virtual {v7}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getRequestUrl()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1c
-
-    .line 261
-    invoke-virtual {v7}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getRequestUrl()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_19
-
-    .line 288
-    :goto_18
-    return-void
-
-    .line 264
-    :cond_19
-    invoke-virtual {v7}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->cancelRequest()V
-
-    .line 268
-    :cond_1c
-    iget-object v0, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mBitmapLoader:Lcom/google/android/finsky/utils/BitmapLoader;
-
-    new-instance v3, Lcom/google/android/finsky/adapters/ListGridItem$2;
-
-    invoke-direct {v3, p0, p1}, Lcom/google/android/finsky/adapters/ListGridItem$2;-><init>(Lcom/google/android/finsky/adapters/ListGridItem;Landroid/widget/ImageView;)V
-
-    move-object v1, p2
-
-    move-object v2, p3
-
-    move v4, p4
-
-    move v5, p5
-
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/finsky/utils/BitmapLoader;->get(Ljava/lang/String;Landroid/graphics/Bitmap;Lcom/google/android/finsky/utils/BitmapLoader$BitmapLoadedHandler;II)Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-
-    move-result-object v6
-
-    .line 277
-    .local v6, newContainer:Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;
-    if-eqz p6, :cond_33
-
-    .line 280
-    invoke-virtual {p1}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    iput p4, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    .line 282
-    :cond_33
-    invoke-virtual {v6}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_40
-
-    .line 283
-    invoke-virtual {v6}, Lcom/google/android/finsky/utils/BitmapLoader$BitmapContainer;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
-
-    .line 286
-    :cond_40
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 287
-    invoke-virtual {p1, v6}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
-
-    goto :goto_18
 .end method
 
 .method public getCellHeight()I
     .registers 2
 
     .prologue
-    .line 297
+    .line 238
     iget v0, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mHeight:I
 
     return v0
@@ -938,7 +810,7 @@
     .registers 2
 
     .prologue
-    .line 292
+    .line 233
     iget v0, p0, Lcom/google/android/finsky/adapters/ListGridItem;->mWidth:I
 
     return v0
@@ -948,7 +820,7 @@
     .registers 2
 
     .prologue
-    .line 107
+    .line 103
     sget-object v0, Lcom/google/android/finsky/adapters/UnevenGridItemType;->LIST_FOUR_BLOCK_4x2:Lcom/google/android/finsky/adapters/UnevenGridItemType;
 
     return-object v0
@@ -958,8 +830,8 @@
     .registers 2
 
     .prologue
-    .line 102
-    const v0, 0x7f040083
+    .line 98
+    const v0, 0x7f040090
 
     return v0
 .end method

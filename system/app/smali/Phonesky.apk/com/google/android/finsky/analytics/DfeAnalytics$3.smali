@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 169
+    .line 168
     iput-object p1, p0, Lcom/google/android/finsky/analytics/DfeAnalytics$3;->this$0:Lcom/google/android/finsky/analytics/DfeAnalytics;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .registers 2
 
     .prologue
-    .line 172
+    .line 171
     iget-object v0, p0, Lcom/google/android/finsky/analytics/DfeAnalytics$3;->this$0:Lcom/google/android/finsky/analytics/DfeAnalytics;
 
     #calls: Lcom/google/android/finsky/analytics/DfeAnalytics;->flushLogs()V
     invoke-static {v0}, Lcom/google/android/finsky/analytics/DfeAnalytics;->access$000(Lcom/google/android/finsky/analytics/DfeAnalytics;)V
 
-    .line 173
+    .line 172
     return-void
 .end method

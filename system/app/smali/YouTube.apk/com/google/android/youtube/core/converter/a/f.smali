@@ -34,7 +34,7 @@
     :goto_8
     const-string v3, "service version number should be > 0"
 
-    invoke-static {v0, v3}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
 
     .line 25
     const v0, 0xffff
@@ -44,7 +44,7 @@
     :goto_12
     const-string v0, "service version should be <= 0xffff"
 
-    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/k;->a(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/google/android/youtube/core/utils/n;->a(ZLjava/lang/Object;)V
 
     .line 26
     iput p2, p0, Lcom/google/android/youtube/core/converter/a/f;->b:I
@@ -52,7 +52,7 @@
     .line 27
     const-string v0, "service string can\'t be null"
 
-    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/k;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/youtube/core/utils/n;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

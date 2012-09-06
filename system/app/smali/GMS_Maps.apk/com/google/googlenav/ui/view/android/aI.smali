@@ -1,36 +1,50 @@
-.class Lcom/google/googlenav/ui/view/android/aI;
-.super Lcom/google/googlenav/ui/android/M;
+.class Lcom/google/googlenav/ui/view/android/ai;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnShowListener;
 
 
 # instance fields
-.field final synthetic a:I
+.field final synthetic a:Lcom/google/googlenav/ui/view/p;
 
-.field final synthetic b:Lcom/google/googlenav/ui/view/android/aH;
+.field final synthetic b:Lcom/google/googlenav/ui/view/android/ah;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/aH;I)V
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/ah;Lcom/google/googlenav/ui/view/p;)V
     .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/aI;->b:Lcom/google/googlenav/ui/view/android/aH;
+    .prologue
+    .line 38
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/ai;->b:Lcom/google/googlenav/ui/view/android/ah;
 
-    iput p2, p0, Lcom/google/googlenav/ui/view/android/aI;->a:I
+    iput-object p2, p0, Lcom/google/googlenav/ui/view/android/ai;->a:Lcom/google/googlenav/ui/view/p;
 
-    invoke-direct {p0}, Lcom/google/googlenav/ui/android/M;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/view/View;)V
+.method public onShow(Landroid/content/DialogInterface;)V
     .registers 4
+    .parameter
 
-    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/aI;->b:Lcom/google/googlenav/ui/view/android/aH;
+    .prologue
+    .line 41
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/ai;->a:Lcom/google/googlenav/ui/view/p;
 
-    iget v1, p0, Lcom/google/googlenav/ui/view/android/aI;->a:I
+    iget-object v0, v0, Lcom/google/googlenav/ui/view/p;->e:Lcom/google/googlenav/ui/view/w;
 
-    invoke-static {v0, v1}, Lcom/google/googlenav/ui/view/android/aH;->a(Lcom/google/googlenav/ui/view/android/aH;I)V
+    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/ai;->b:Lcom/google/googlenav/ui/view/android/ah;
 
+    invoke-interface {v0, v1}, Lcom/google/googlenav/ui/view/w;->a(Landroid/app/Dialog;)V
+
+    .line 42
     return-void
 .end method

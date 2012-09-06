@@ -38,19 +38,19 @@
     .parameter
 
     .prologue
-    .line 95
+    .line 102
     iput-object p1, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->this$0:Lorg/apache/james/mime4j/message/Message;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 93
+    .line 100
     new-instance v0, Ljava/util/Stack;
 
     invoke-direct {v0}, Ljava/util/Stack;-><init>()V
 
     iput-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
-    .line 96
+    .line 103
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .parameter "c"
 
     .prologue
-    .line 99
+    .line 106
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->peek()Ljava/lang/Object;
@@ -72,7 +72,7 @@
 
     if-nez v0, :cond_47
 
-    .line 100
+    .line 107
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -131,7 +131,7 @@
 
     throw v0
 
-    .line 103
+    .line 111
     :cond_47
     return-void
 .end method
@@ -149,17 +149,17 @@
     .end annotation
 
     .prologue
-    .line 169
+    .line 176
     const-class v0, Lorg/apache/james/mime4j/message/Entity;
 
     invoke-direct {p0, v0}, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->expect(Ljava/lang/Class;)V
 
-    .line 171
+    .line 178
     invoke-virtual {p1}, Lorg/apache/james/mime4j/BodyDescriptor;->getTransferEncoding()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 172
+    .line 179
     const-string v1, "base64"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -168,14 +168,14 @@
 
     if-eqz v1, :cond_39
 
-    .line 173
+    .line 180
     new-instance v0, Lorg/apache/james/mime4j/decoder/Base64InputStream;
 
     invoke-direct {v0, p2}, Lorg/apache/james/mime4j/decoder/Base64InputStream;-><init>(Ljava/io/InputStream;)V
 
     move-object p2, v0
 
-    .line 179
+    .line 186
     :cond_17
     :goto_17
     invoke-virtual {p1}, Lorg/apache/james/mime4j/BodyDescriptor;->getMimeType()Ljava/lang/String;
@@ -190,7 +190,7 @@
 
     if-eqz v0, :cond_48
 
-    .line 180
+    .line 187
     new-instance v0, Lorg/apache/james/mime4j/message/MemoryTextBody;
 
     invoke-virtual {p1}, Lorg/apache/james/mime4j/BodyDescriptor;->getCharset()Ljava/lang/String;
@@ -201,7 +201,7 @@
 
     move-object v1, v0
 
-    .line 185
+    .line 192
     :goto_2d
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
@@ -213,10 +213,10 @@
 
     invoke-virtual {v0, v1}, Lorg/apache/james/mime4j/message/Entity;->setBody(Lorg/apache/james/mime4j/message/Body;)V
 
-    .line 186
+    .line 193
     return-void
 
-    .line 174
+    .line 181
     :cond_39
     const-string v1, "quoted-printable"
 
@@ -226,7 +226,7 @@
 
     if-eqz v0, :cond_17
 
-    .line 175
+    .line 182
     new-instance v0, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;
 
     invoke-direct {v0, p2}, Lorg/apache/james/mime4j/decoder/QuotedPrintableInputStream;-><init>(Ljava/io/InputStream;)V
@@ -235,7 +235,7 @@
 
     goto :goto_17
 
-    .line 182
+    .line 189
     :cond_48
     new-instance v0, Lorg/apache/james/mime4j/message/MemoryBinaryBody;
 
@@ -250,17 +250,17 @@
     .registers 2
 
     .prologue
-    .line 210
+    .line 217
     const-class v0, Lorg/apache/james/mime4j/message/BodyPart;
 
     invoke-direct {p0, v0}, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->expect(Ljava/lang/Class;)V
 
-    .line 211
+    .line 218
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->pop()Ljava/lang/Object;
 
-    .line 212
+    .line 219
     return-void
 .end method
 
@@ -268,12 +268,12 @@
     .registers 3
 
     .prologue
-    .line 146
+    .line 154
     const-class v0, Lorg/apache/james/mime4j/message/Header;
 
     invoke-direct {p0, v0}, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->expect(Ljava/lang/Class;)V
 
-    .line 147
+    .line 155
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->pop()Ljava/lang/Object;
@@ -282,12 +282,12 @@
 
     check-cast v0, Lorg/apache/james/mime4j/message/Header;
 
-    .line 148
+    .line 156
     const-class v1, Lorg/apache/james/mime4j/message/Entity;
 
     invoke-direct {p0, v1}, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->expect(Ljava/lang/Class;)V
 
-    .line 149
+    .line 157
     iget-object v1, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
     invoke-virtual {v1}, Ljava/util/Stack;->peek()Ljava/lang/Object;
@@ -298,7 +298,7 @@
 
     invoke-virtual {v1, v0}, Lorg/apache/james/mime4j/message/Entity;->setHeader(Lorg/apache/james/mime4j/message/Header;)V
 
-    .line 150
+    .line 158
     return-void
 .end method
 
@@ -306,17 +306,17 @@
     .registers 2
 
     .prologue
-    .line 123
+    .line 131
     const-class v0, Lorg/apache/james/mime4j/message/Message;
 
     invoke-direct {p0, v0}, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->expect(Ljava/lang/Class;)V
 
-    .line 124
+    .line 132
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->pop()Ljava/lang/Object;
 
-    .line 125
+    .line 133
     return-void
 .end method
 
@@ -324,12 +324,12 @@
     .registers 2
 
     .prologue
-    .line 192
+    .line 199
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->pop()Ljava/lang/Object;
 
-    .line 193
+    .line 200
     return-void
 .end method
 
@@ -343,17 +343,17 @@
     .end annotation
 
     .prologue
-    .line 218
+    .line 225
     const-class v0, Lorg/apache/james/mime4j/message/Multipart;
 
     invoke-direct {p0, v0}, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->expect(Ljava/lang/Class;)V
 
-    .line 219
+    .line 226
     new-instance v1, Ljava/lang/StringBuffer;
 
     invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 221
+    .line 228
     :goto_a
     invoke-virtual {p1}, Ljava/io/InputStream;->read()I
 
@@ -363,14 +363,14 @@
 
     if-eq v0, v2, :cond_16
 
-    .line 222
+    .line 229
     int-to-char v0, v0
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
     goto :goto_a
 
-    .line 224
+    .line 231
     :cond_16
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
@@ -386,7 +386,7 @@
 
     invoke-virtual {v0, v1}, Lorg/apache/james/mime4j/message/Multipart;->setEpilogue(Ljava/lang/String;)V
 
-    .line 225
+    .line 232
     return-void
 .end method
 
@@ -395,12 +395,12 @@
     .parameter
 
     .prologue
-    .line 138
+    .line 146
     const-class v0, Lorg/apache/james/mime4j/message/Header;
 
     invoke-direct {p0, v0}, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->expect(Ljava/lang/Class;)V
 
-    .line 139
+    .line 147
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->peek()Ljava/lang/Object;
@@ -415,7 +415,7 @@
 
     invoke-virtual {v0, v1}, Lorg/apache/james/mime4j/message/Header;->addField(Lorg/apache/james/mime4j/field/Field;)V
 
-    .line 140
+    .line 148
     return-void
 .end method
 
@@ -429,17 +429,17 @@
     .end annotation
 
     .prologue
-    .line 231
+    .line 238
     const-class v0, Lorg/apache/james/mime4j/message/Multipart;
 
     invoke-direct {p0, v0}, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->expect(Ljava/lang/Class;)V
 
-    .line 232
+    .line 239
     new-instance v1, Ljava/lang/StringBuffer;
 
     invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 234
+    .line 241
     :goto_a
     invoke-virtual {p1}, Ljava/io/InputStream;->read()I
 
@@ -449,14 +449,14 @@
 
     if-eq v0, v2, :cond_16
 
-    .line 235
+    .line 242
     int-to-char v0, v0
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
     goto :goto_a
 
-    .line 237
+    .line 244
     :cond_16
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
@@ -472,7 +472,7 @@
 
     invoke-virtual {v0, v1}, Lorg/apache/james/mime4j/message/Multipart;->setPreamble(Ljava/lang/String;)V
 
-    .line 238
+    .line 245
     return-void
 .end method
 
@@ -486,7 +486,7 @@
     .end annotation
 
     .prologue
-    .line 246
+    .line 253
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Not supported"
@@ -500,17 +500,17 @@
     .registers 3
 
     .prologue
-    .line 199
+    .line 206
     const-class v0, Lorg/apache/james/mime4j/message/Multipart;
 
     invoke-direct {p0, v0}, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->expect(Ljava/lang/Class;)V
 
-    .line 201
+    .line 208
     new-instance v1, Lorg/apache/james/mime4j/message/BodyPart;
 
     invoke-direct {v1}, Lorg/apache/james/mime4j/message/BodyPart;-><init>()V
 
-    .line 202
+    .line 209
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->peek()Ljava/lang/Object;
@@ -521,12 +521,12 @@
 
     invoke-virtual {v0, v1}, Lorg/apache/james/mime4j/message/Multipart;->addBodyPart(Lorg/apache/james/mime4j/message/BodyPart;)V
 
-    .line 203
+    .line 210
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
     invoke-virtual {v0, v1}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 204
+    .line 211
     return-void
 .end method
 
@@ -534,7 +534,7 @@
     .registers 3
 
     .prologue
-    .line 131
+    .line 139
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
     new-instance v1, Lorg/apache/james/mime4j/message/Header;
@@ -543,7 +543,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 132
+    .line 140
     return-void
 .end method
 
@@ -551,7 +551,7 @@
     .registers 3
 
     .prologue
-    .line 109
+    .line 117
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->isEmpty()Z
@@ -560,29 +560,29 @@
 
     if-eqz v0, :cond_10
 
-    .line 110
+    .line 118
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
     iget-object v1, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->this$0:Lorg/apache/james/mime4j/message/Message;
 
     invoke-virtual {v0, v1}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 117
+    .line 125
     :goto_f
     return-void
 
-    .line 112
+    .line 120
     :cond_10
     const-class v0, Lorg/apache/james/mime4j/message/Entity;
 
     invoke-direct {p0, v0}, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->expect(Ljava/lang/Class;)V
 
-    .line 113
+    .line 121
     new-instance v1, Lorg/apache/james/mime4j/message/Message;
 
     invoke-direct {v1}, Lorg/apache/james/mime4j/message/Message;-><init>()V
 
-    .line 114
+    .line 122
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->peek()Ljava/lang/Object;
@@ -593,7 +593,7 @@
 
     invoke-virtual {v0, v1}, Lorg/apache/james/mime4j/message/Entity;->setBody(Lorg/apache/james/mime4j/message/Body;)V
 
-    .line 115
+    .line 123
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
     invoke-virtual {v0, v1}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
@@ -606,12 +606,12 @@
     .parameter
 
     .prologue
-    .line 156
+    .line 164
     const-class v0, Lorg/apache/james/mime4j/message/Entity;
 
     invoke-direct {p0, v0}, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->expect(Ljava/lang/Class;)V
 
-    .line 158
+    .line 166
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->peek()Ljava/lang/Object;
@@ -620,19 +620,19 @@
 
     check-cast v0, Lorg/apache/james/mime4j/message/Entity;
 
-    .line 159
+    .line 167
     new-instance v1, Lorg/apache/james/mime4j/message/Multipart;
 
     invoke-direct {v1}, Lorg/apache/james/mime4j/message/Multipart;-><init>()V
 
-    .line 160
+    .line 168
     invoke-virtual {v0, v1}, Lorg/apache/james/mime4j/message/Entity;->setBody(Lorg/apache/james/mime4j/message/Body;)V
 
-    .line 161
+    .line 169
     iget-object v0, p0, Lorg/apache/james/mime4j/message/Message$MessageBuilder;->stack:Ljava/util/Stack;
 
     invoke-virtual {v0, v1}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 162
+    .line 170
     return-void
 .end method

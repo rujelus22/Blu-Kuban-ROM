@@ -10,30 +10,6 @@
 
 .field private b:I
 
-.field private c:I
-
-.field private d:I
-
-
-# direct methods
-.method public constructor <init>()V
-    .registers 2
-
-    const/4 v0, 0x3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/c;->b:I
-
-    iput v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/c;->c:I
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/c;->d:I
-
-    return-void
-.end method
-
 
 # virtual methods
 .method public abstract c()Ljava/io/InputStream;
@@ -67,7 +43,7 @@
     monitor-enter p0
 
     :try_start_1
-    iget v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/c;->d:I
+    iget v0, p0, Lcom/google/android/youtube/googlemobile/masf/b/a/c;->b:I
     :try_end_3
     .catchall {:try_start_1 .. :try_end_3} :catchall_5
 

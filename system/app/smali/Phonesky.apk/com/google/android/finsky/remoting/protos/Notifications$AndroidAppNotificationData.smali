@@ -31,25 +31,25 @@
     .registers 2
 
     .prologue
-    .line 9
+    .line 10
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 14
+    .line 15
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->versionCode_:I
 
-    .line 31
+    .line 32
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->assetId_:Ljava/lang/String;
 
-    .line 66
+    .line 68
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->cachedSize:I
 
-    .line 9
+    .line 10
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .registers 2
 
     .prologue
-    .line 32
+    .line 33
     iget-object v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->assetId_:Ljava/lang/String;
 
     return-object v0
@@ -69,15 +69,15 @@
     .registers 2
 
     .prologue
-    .line 68
+    .line 71
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 70
+    .line 73
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->getSerializedSize()I
 
-    .line 72
+    .line 75
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->cachedSize:I
 
@@ -88,10 +88,10 @@
     .registers 4
 
     .prologue
-    .line 76
+    .line 80
     const/4 v0, 0x0
 
-    .line 77
+    .line 81
     .local v0, size:I
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->hasVersionCode()Z
 
@@ -99,7 +99,7 @@
 
     if-eqz v1, :cond_11
 
-    .line 78
+    .line 82
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->getVersionCode()I
@@ -112,7 +112,7 @@
 
     add-int/2addr v0, v1
 
-    .line 81
+    .line 85
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->hasAssetId()Z
 
@@ -120,7 +120,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 82
+    .line 86
     const/4 v1, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->getAssetId()Ljava/lang/String;
@@ -133,11 +133,11 @@
 
     add-int/2addr v0, v1
 
-    .line 85
+    .line 89
     :cond_21
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->cachedSize:I
 
-    .line 86
+    .line 90
     return v0
 .end method
 
@@ -145,7 +145,7 @@
     .registers 2
 
     .prologue
-    .line 15
+    .line 16
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->versionCode_:I
 
     return v0
@@ -155,7 +155,7 @@
     .registers 2
 
     .prologue
-    .line 33
+    .line 34
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->hasAssetId:Z
 
     return v0
@@ -165,7 +165,7 @@
     .registers 2
 
     .prologue
-    .line 16
+    .line 17
     iget-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->hasVersionCode:Z
 
     return v0
@@ -181,29 +181,29 @@
     .end annotation
 
     .prologue
-    .line 93
+    .line 98
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 94
+    .line 99
     .local v0, tag:I
     sparse-switch v0, :sswitch_data_1e
 
-    .line 98
+    .line 103
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 99
+    .line 104
     :sswitch_d
     return-object p0
 
-    .line 104
+    .line 109
     :sswitch_e
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readInt32()I
 
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 108
+    .line 113
     :sswitch_16
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readString()Ljava/lang/String;
 
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 94
+    .line 99
     :sswitch_data_1e
     .sparse-switch
         0x0 -> :sswitch_d
@@ -255,15 +255,15 @@
     .parameter "value"
 
     .prologue
-    .line 35
+    .line 36
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->hasAssetId:Z
 
-    .line 36
+    .line 37
     iput-object p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->assetId_:Ljava/lang/String;
 
-    .line 37
+    .line 38
     return-object p0
 .end method
 
@@ -272,15 +272,15 @@
     .parameter "value"
 
     .prologue
-    .line 18
+    .line 19
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->hasVersionCode:Z
 
-    .line 19
+    .line 20
     iput p1, p0, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->versionCode_:I
 
-    .line 20
+    .line 21
     return-object p0
 .end method
 
@@ -294,14 +294,14 @@
     .end annotation
 
     .prologue
-    .line 58
+    .line 60
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->hasVersionCode()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 59
+    .line 61
     const/4 v0, 0x1
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->getVersionCode()I
@@ -310,7 +310,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeInt32(II)V
 
-    .line 61
+    .line 63
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->hasAssetId()Z
 
@@ -318,7 +318,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 62
+    .line 64
     const/4 v0, 0x2
 
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/Notifications$AndroidAppNotificationData;->getAssetId()Ljava/lang/String;
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/micro/CodedOutputStreamMicro;->writeString(ILjava/lang/String;)V
 
-    .line 64
+    .line 66
     :cond_1c
     return-void
 .end method

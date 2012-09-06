@@ -1,45 +1,35 @@
-.class LaQ/c;
+.class LaQ/C;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnLongClickListener;
+.implements LaQ/bE;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/wizard/ez;
+.field a:Landroid/view/View;
 
-.field final synthetic b:LaQ/a;
+.field b:LaQ/bw;
+
+.field c:Landroid/widget/LinearLayout;
+
+.field d:Ljava/util/List;
 
 
 # direct methods
-.method constructor <init>(LaQ/a;Lcom/google/googlenav/ui/wizard/ez;)V
-    .registers 3
+.method constructor <init>()V
+    .registers 2
 
-    iput-object p1, p0, LaQ/c;->b:LaQ/a;
-
-    iput-object p2, p0, LaQ/c;->a:Lcom/google/googlenav/ui/wizard/ez;
-
+    .prologue
+    .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public onLongClick(Landroid/view/View;)Z
-    .registers 4
-
-    invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
+    .line 55
+    invoke-static {}, Lcom/google/common/collect/cx;->a()Ljava/util/ArrayList;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/googlenav/ui/wizard/C;
+    iput-object v0, p0, LaQ/C;->d:Ljava/util/List;
 
-    iget-object v1, p0, LaQ/c;->a:Lcom/google/googlenav/ui/wizard/ez;
-
-    invoke-interface {v1, v0}, Lcom/google/googlenav/ui/wizard/ez;->b(Lcom/google/googlenav/ui/wizard/C;)V
-
-    const/4 v0, 0x1
-
-    return v0
+    return-void
 .end method

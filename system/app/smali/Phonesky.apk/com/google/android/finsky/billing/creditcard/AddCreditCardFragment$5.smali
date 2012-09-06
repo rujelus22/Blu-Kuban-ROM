@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 371
+    .line 366
     iput-object p1, p0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$5;->this$0:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,31 +42,55 @@
     .parameter "view"
 
     .prologue
-    .line 374
-    const v1, 0x7f07003c
-
+    .line 369
     const v2, 0x7f040014
 
-    const v3, 0x7f070162
+    const v3, 0x7f070197
 
     const/4 v4, -0x1
 
-    invoke-static {v1, v2, v3, v4}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->newInstanceWithLayout(IIII)Lcom/google/android/finsky/activities/SimpleAlertDialog;
-
-    move-result-object v0
-
-    .line 377
-    .local v0, sad:Lcom/google/android/finsky/activities/SimpleAlertDialog;
-    iget-object v1, p0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$5;->this$0:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
-
-    invoke-virtual {v1}, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
+    invoke-static {v2, v3, v4}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->newInstanceWithLayout(III)Lcom/google/android/finsky/activities/SimpleAlertDialog;
 
     move-result-object v1
 
-    const-string v2, "privacy_policy"
+    .line 371
+    .local v1, sad:Lcom/google/android/finsky/activities/SimpleAlertDialog;
+    new-instance v0, Landroid/os/Bundle;
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 378
+    .line 372
+    .local v0, argumentsBundle:Landroid/os/Bundle;
+    const-string v3, "url_key"
+
+    sget-object v2, Lcom/google/android/finsky/config/G;->checkoutPrivacyPolicyUrl:Lcom/google/android/finsky/config/GservicesValue;
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/config/GservicesValue;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-static {v2}, Lcom/google/android/finsky/billing/BillingUtils;->replaceLanguageAndRegion(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v3, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 374
+    invoke-virtual {v1, v0}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->setViewConfiguration(Landroid/os/Bundle;)Lcom/google/android/finsky/activities/SimpleAlertDialog;
+
+    .line 375
+    iget-object v2, p0, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment$5;->this$0:Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;
+
+    invoke-virtual {v2}, Lcom/google/android/finsky/billing/creditcard/AddCreditCardFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
+
+    move-result-object v2
+
+    const-string v3, "privacy_policy"
+
+    invoke-virtual {v1, v2, v3}, Lcom/google/android/finsky/activities/SimpleAlertDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
+
+    .line 376
     return-void
 .end method

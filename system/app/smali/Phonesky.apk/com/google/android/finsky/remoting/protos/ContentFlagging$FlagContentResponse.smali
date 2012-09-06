@@ -23,15 +23,15 @@
     .registers 2
 
     .prologue
-    .line 82
+    .line 87
     invoke-direct {p0}, Lcom/google/protobuf/micro/MessageMicro;-><init>()V
 
-    .line 97
+    .line 102
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/ContentFlagging$FlagContentResponse;->cachedSize:I
 
-    .line 82
+    .line 87
     return-void
 .end method
 
@@ -41,15 +41,15 @@
     .registers 2
 
     .prologue
-    .line 99
+    .line 105
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/ContentFlagging$FlagContentResponse;->cachedSize:I
 
     if-gez v0, :cond_7
 
-    .line 101
+    .line 107
     invoke-virtual {p0}, Lcom/google/android/finsky/remoting/protos/ContentFlagging$FlagContentResponse;->getSerializedSize()I
 
-    .line 103
+    .line 109
     :cond_7
     iget v0, p0, Lcom/google/android/finsky/remoting/protos/ContentFlagging$FlagContentResponse;->cachedSize:I
 
@@ -60,14 +60,14 @@
     .registers 2
 
     .prologue
-    .line 107
+    .line 114
     const/4 v0, 0x0
 
-    .line 108
+    .line 115
     .local v0, size:I
     iput v0, p0, Lcom/google/android/finsky/remoting/protos/ContentFlagging$FlagContentResponse;->cachedSize:I
 
-    .line 109
+    .line 116
     return v0
 .end method
 
@@ -81,28 +81,28 @@
     .end annotation
 
     .prologue
-    .line 116
+    .line 124
     :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/micro/CodedInputStreamMicro;->readTag()I
 
     move-result v0
 
-    .line 117
+    .line 125
     .local v0, tag:I
     packed-switch v0, :pswitch_data_e
 
-    .line 121
+    .line 129
     invoke-virtual {p0, p1, v0}, Lcom/google/android/finsky/remoting/protos/ContentFlagging$FlagContentResponse;->parseUnknownField(Lcom/google/protobuf/micro/CodedInputStreamMicro;I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 122
+    .line 130
     :pswitch_d
     return-object p0
 
-    .line 117
+    .line 125
     :pswitch_data_e
     .packed-switch 0x0
         :pswitch_d
@@ -119,7 +119,7 @@
     .end annotation
 
     .prologue
-    .line 80
+    .line 84
     invoke-virtual {p0, p1}, Lcom/google/android/finsky/remoting/protos/ContentFlagging$FlagContentResponse;->mergeFrom(Lcom/google/protobuf/micro/CodedInputStreamMicro;)Lcom/google/android/finsky/remoting/protos/ContentFlagging$FlagContentResponse;
 
     move-result-object v0
@@ -130,13 +130,8 @@
 .method public writeTo(Lcom/google/protobuf/micro/CodedOutputStreamMicro;)V
     .registers 2
     .parameter "output"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
-    .line 95
+    .line 100
     return-void
 .end method

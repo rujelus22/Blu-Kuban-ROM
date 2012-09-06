@@ -1,19 +1,28 @@
-.class Lcom/google/googlenav/ui/view/android/aS;
+.class Lcom/google/googlenav/ui/view/android/as;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/googlenav/ui/view/android/aP;
+.field final synthetic a:I
+
+.field final synthetic b:Lcom/google/googlenav/ui/view/android/aq;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlenav/ui/view/android/aP;)V
-    .registers 2
+.method constructor <init>(Lcom/google/googlenav/ui/view/android/aq;I)V
+    .registers 3
+    .parameter
+    .parameter
 
-    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/aS;->a:Lcom/google/googlenav/ui/view/android/aP;
+    .prologue
+    .line 306
+    iput-object p1, p0, Lcom/google/googlenav/ui/view/android/as;->b:Lcom/google/googlenav/ui/view/android/aq;
+
+    iput p2, p0, Lcom/google/googlenav/ui/view/android/as;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,55 +31,24 @@
 
 
 # virtual methods
-.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 10
+.method public onClick(Landroid/view/View;)V
+    .registers 6
+    .parameter
 
-    invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
+    .prologue
+    .line 310
+    iget-object v0, p0, Lcom/google/googlenav/ui/view/android/as;->b:Lcom/google/googlenav/ui/view/android/aq;
 
-    move-result-object v0
+    iget-object v0, v0, Lcom/google/googlenav/ui/view/android/aq;->g:Lcom/google/googlenav/ui/g;
 
-    invoke-interface {v0, p3}, Landroid/widget/Adapter;->getItem(I)Ljava/lang/Object;
+    iget v1, p0, Lcom/google/googlenav/ui/view/android/as;->a:I
 
-    move-result-object v0
+    const/4 v2, -0x1
 
-    check-cast v0, Lcom/google/googlenav/ar;
+    const/4 v3, 0x0
 
-    invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
+    invoke-interface {v0, v1, v2, v3}, Lcom/google/googlenav/ui/g;->a(IILjava/lang/Object;)Z
 
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlenav/ui/view/android/aV;
-
-    invoke-virtual {v0, p3}, Lcom/google/googlenav/ui/view/android/aV;->isEnabled(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2d
-
-    invoke-virtual {v0, p3}, Lcom/google/googlenav/ui/view/android/aV;->getItem(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlenav/ar;
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ar;->a()Lcom/google/googlenav/ap;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/googlenav/ap;->c()Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/googlenav/ui/view/android/aS;->a:Lcom/google/googlenav/ui/view/android/aP;
-
-    iget-object v1, v1, Lcom/google/googlenav/ui/view/android/aP;->f:Lcom/google/googlenav/ui/p;
-
-    const/4 v2, 0x5
-
-    const/4 v3, -0x1
-
-    invoke-interface {v1, v2, v3, v0}, Lcom/google/googlenav/ui/p;->a(IILjava/lang/Object;)Z
-
-    :cond_2d
+    .line 311
     return-void
 .end method

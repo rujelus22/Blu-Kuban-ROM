@@ -15,6 +15,8 @@
 
 
 # static fields
+.field public static final AccountSelectorView:[I
+
 .field public static final ArtistBucketEntry:[I
 
 .field public static final CellTitleOverlay:[I
@@ -23,6 +25,10 @@
 
 .field public static final DecoratedTextView:[I
 
+.field public static final DetailsButtonColumnLayout:[I
+
+.field public static final FifeImageView:[I
+
 .field public static final HeroGraphicView:[I
 
 .field public static final HistogramTable:[I
@@ -30,6 +36,8 @@
 .field public static final HorizontalStrip:[I
 
 .field public static final MarginBox:[I
+
+.field public static final PostPurchaseSummary:[I
 
 
 # direct methods
@@ -43,37 +51,64 @@
 
     const/4 v2, 0x0
 
-    .line 2913
+    .line 3656
     new-array v0, v3, [I
 
-    const v1, 0x7f01000a
+    const v1, 0x7f01000f
+
+    aput v1, v0, v2
+
+    sput-object v0, Lcom/android/vending/R$styleable;->AccountSelectorView:[I
+
+    .line 3679
+    new-array v0, v3, [I
+
+    const v1, 0x7f01000e
 
     aput v1, v0, v2
 
     sput-object v0, Lcom/android/vending/R$styleable;->ArtistBucketEntry:[I
 
-    .line 2942
+    .line 3708
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_46
+    fill-array-data v0, :array_68
 
     sput-object v0, Lcom/android/vending/R$styleable;->CellTitleOverlay:[I
 
-    .line 2985
+    .line 3751
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_4e
+    fill-array-data v0, :array_70
 
     sput-object v0, Lcom/android/vending/R$styleable;->ContentFrame:[I
 
-    .line 3020
+    .line 3786
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_56
+    fill-array-data v0, :array_78
 
     sput-object v0, Lcom/android/vending/R$styleable;->DecoratedTextView:[I
 
-    .line 3066
+    .line 3832
+    new-array v0, v3, [I
+
+    const v1, 0x7f010010
+
+    aput v1, v0, v2
+
+    sput-object v0, Lcom/android/vending/R$styleable;->DetailsButtonColumnLayout:[I
+
+    .line 3865
+    const/4 v0, 0x4
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_80
+
+    sput-object v0, Lcom/android/vending/R$styleable;->FifeImageView:[I
+
+    .line 3934
     new-array v0, v3, [I
 
     const v1, 0x7f010001
@@ -82,16 +117,16 @@
 
     sput-object v0, Lcom/android/vending/R$styleable;->HeroGraphicView:[I
 
-    .line 3095
+    .line 3963
     new-array v0, v3, [I
 
-    const v1, 0x7f010006
+    const v1, 0x7f01000a
 
     aput v1, v0, v2
 
     sput-object v0, Lcom/android/vending/R$styleable;->HistogramTable:[I
 
-    .line 3124
+    .line 3992
     new-array v0, v3, [I
 
     const/high16 v1, 0x7f01
@@ -100,36 +135,52 @@
 
     sput-object v0, Lcom/android/vending/R$styleable;->HorizontalStrip:[I
 
-    .line 3147
+    .line 4015
     new-array v0, v3, [I
 
-    const v1, 0x7f010007
+    const v1, 0x7f01000b
 
     aput v1, v0, v2
 
     sput-object v0, Lcom/android/vending/R$styleable;->MarginBox:[I
 
+    .line 4044
+    new-array v0, v3, [I
+
+    const v1, 0x7f010011
+
+    aput v1, v0, v2
+
+    sput-object v0, Lcom/android/vending/R$styleable;->PostPurchaseSummary:[I
+
     return-void
 
-    .line 2942
-    nop
+    .line 3708
+    :array_68
+    .array-data 0x4
+        0xct 0x0t 0x1t 0x7ft
+        0xdt 0x0t 0x1t 0x7ft
+    .end array-data
 
-    :array_46
+    .line 3751
+    :array_70
+    .array-data 0x4
+        0x6t 0x0t 0x1t 0x7ft
+        0x7t 0x0t 0x1t 0x7ft
+    .end array-data
+
+    .line 3786
+    :array_78
     .array-data 0x4
         0x8t 0x0t 0x1t 0x7ft
         0x9t 0x0t 0x1t 0x7ft
     .end array-data
 
-    .line 2985
-    :array_4e
+    .line 3865
+    :array_80
     .array-data 0x4
         0x2t 0x0t 0x1t 0x7ft
         0x3t 0x0t 0x1t 0x7ft
-    .end array-data
-
-    .line 3020
-    :array_56
-    .array-data 0x4
         0x4t 0x0t 0x1t 0x7ft
         0x5t 0x0t 0x1t 0x7ft
     .end array-data
@@ -139,7 +190,7 @@
     .registers 1
 
     .prologue
-    .line 2902
+    .line 3645
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

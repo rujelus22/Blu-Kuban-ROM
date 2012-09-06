@@ -35,17 +35,17 @@
     .parameter
 
     .prologue
-    .line 1198
+    .line 1193
     iput-object p1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1199
+    .line 1194
     const/high16 v0, 0x3f80
 
     iput v0, p0, Lcom/cooliris/media/CropImage$24;->mScale:F
 
-    .line 1203
+    .line 1198
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/media/FaceDetector$Face;
@@ -61,7 +61,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1198
+    .line 1193
     invoke-direct {p0, p1}, Lcom/cooliris/media/CropImage$24;->handleFace(Landroid/media/FaceDetector$Face;)V
 
     return-void
@@ -72,7 +72,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1198
+    .line 1193
     invoke-direct {p0}, Lcom/cooliris/media/CropImage$24;->makeDefault()V
 
     return-void
@@ -83,12 +83,12 @@
     .parameter "f"
 
     .prologue
-    .line 1211
+    .line 1206
     new-instance v7, Landroid/graphics/PointF;
 
     invoke-direct {v7}, Landroid/graphics/PointF;-><init>()V
 
-    .line 1213
+    .line 1208
     .local v7, midPoint:Landroid/graphics/PointF;
     invoke-virtual {p1}, Landroid/media/FaceDetector$Face;->eyesDistance()F
 
@@ -102,11 +102,11 @@
 
     mul-int/lit8 v10, v1, 0x2
 
-    .line 1214
+    .line 1209
     .local v10, r:I
     invoke-virtual {p1, v7}, Landroid/media/FaceDetector$Face;->getMidPoint(Landroid/graphics/PointF;)V
 
-    .line 1215
+    .line 1210
     iget v1, v7, Landroid/graphics/PointF;->x:F
 
     iget v4, p0, Lcom/cooliris/media/CropImage$24;->mScale:F
@@ -115,7 +115,7 @@
 
     iput v1, v7, Landroid/graphics/PointF;->x:F
 
-    .line 1216
+    .line 1211
     iget v1, v7, Landroid/graphics/PointF;->y:F
 
     iget v4, p0, Lcom/cooliris/media/CropImage$24;->mScale:F
@@ -124,18 +124,18 @@
 
     iput v1, v7, Landroid/graphics/PointF;->y:F
 
-    .line 1218
+    .line 1213
     iget v1, v7, Landroid/graphics/PointF;->x:F
 
     float-to-int v8, v1
 
-    .line 1219
+    .line 1214
     .local v8, midX:I
     iget v1, v7, Landroid/graphics/PointF;->y:F
 
     float-to-int v9, v1
 
-    .line 1221
+    .line 1216
     .local v9, midY:I
     new-instance v0, Lcom/cooliris/media/HighlightView;
 
@@ -148,7 +148,7 @@
 
     invoke-direct {v0, v1}, Lcom/cooliris/media/HighlightView;-><init>(Landroid/view/View;)V
 
-    .line 1223
+    .line 1218
     .local v0, hv:Lcom/cooliris/media/HighlightView;
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
@@ -161,7 +161,7 @@
 
     move-result v11
 
-    .line 1224
+    .line 1219
     .local v11, width:I
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
@@ -174,7 +174,7 @@
 
     move-result v6
 
-    .line 1226
+    .line 1221
     .local v6, height:I
     new-instance v2, Landroid/graphics/Rect;
 
@@ -184,7 +184,7 @@
 
     invoke-direct {v2, v1, v4, v11, v6}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 1228
+    .line 1223
     .local v2, imageRect:Landroid/graphics/Rect;
     new-instance v3, Landroid/graphics/RectF;
 
@@ -198,7 +198,7 @@
 
     invoke-direct {v3, v1, v4, v5, v12}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 1229
+    .line 1224
     .local v3, faceRect:Landroid/graphics/RectF;
     neg-int v1, v10
 
@@ -210,7 +210,7 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 1230
+    .line 1225
     iget v1, v3, Landroid/graphics/RectF;->left:F
 
     const/4 v4, 0x0
@@ -219,7 +219,7 @@
 
     if-gez v1, :cond_6c
 
-    .line 1231
+    .line 1226
     iget v1, v3, Landroid/graphics/RectF;->left:F
 
     neg-float v1, v1
@@ -230,7 +230,7 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 1234
+    .line 1229
     :cond_6c
     iget v1, v3, Landroid/graphics/RectF;->top:F
 
@@ -240,7 +240,7 @@
 
     if-gez v1, :cond_7c
 
-    .line 1235
+    .line 1230
     iget v1, v3, Landroid/graphics/RectF;->top:F
 
     neg-float v1, v1
@@ -251,7 +251,7 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 1238
+    .line 1233
     :cond_7c
     iget v1, v3, Landroid/graphics/RectF;->right:F
 
@@ -263,7 +263,7 @@
 
     if-lez v1, :cond_94
 
-    .line 1239
+    .line 1234
     iget v1, v3, Landroid/graphics/RectF;->right:F
 
     iget v4, v2, Landroid/graphics/Rect;->right:I
@@ -282,7 +282,7 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 1242
+    .line 1237
     :cond_94
     iget v1, v3, Landroid/graphics/RectF;->bottom:F
 
@@ -294,7 +294,7 @@
 
     if-lez v1, :cond_ac
 
-    .line 1243
+    .line 1238
     iget v1, v3, Landroid/graphics/RectF;->bottom:F
 
     iget v4, v2, Landroid/graphics/Rect;->bottom:I
@@ -313,7 +313,7 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 1247
+    .line 1242
     :cond_ac
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->mImageMatrix:Landroid/graphics/Matrix;
 
@@ -347,7 +347,7 @@
     :goto_c5
     invoke-virtual/range {v0 .. v5}, Lcom/cooliris/media/HighlightView;->setup(Landroid/graphics/Matrix;Landroid/graphics/Rect;Landroid/graphics/RectF;ZZ)V
 
-    .line 1249
+    .line 1244
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
     #getter for: Lcom/cooliris/media/CropImage;->mImageView:Lcom/cooliris/media/CropImageView;
@@ -357,10 +357,10 @@
 
     invoke-virtual {v1, v0}, Lcom/cooliris/media/CropImageView;->add(Lcom/cooliris/media/HighlightView;)V
 
-    .line 1250
+    .line 1245
     return-void
 
-    .line 1247
+    .line 1242
     :cond_d2
     const/4 v5, 0x0
 
@@ -373,7 +373,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1254
+    .line 1249
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
     #getter for: Lcom/cooliris/media/CropImage;->mBitmap:Landroid/graphics/Bitmap;
@@ -383,18 +383,18 @@
 
     if-nez v1, :cond_11
 
-    .line 1255
+    .line 1250
     const-string v1, "CropImage"
 
     const-string v4, "makeDefault() : mBitmap is null"
 
     invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1317
+    .line 1312
     :goto_10
     return-void
 
-    .line 1259
+    .line 1254
     :cond_11
     new-instance v0, Lcom/cooliris/media/HighlightView;
 
@@ -407,7 +407,7 @@
 
     invoke-direct {v0, v1}, Lcom/cooliris/media/HighlightView;-><init>(Landroid/view/View;)V
 
-    .line 1261
+    .line 1256
     .local v0, hv:Lcom/cooliris/media/HighlightView;
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
@@ -420,7 +420,7 @@
 
     move-result v9
 
-    .line 1262
+    .line 1257
     .local v9, width:I
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
@@ -433,7 +433,7 @@
 
     move-result v8
 
-    .line 1263
+    .line 1258
     .local v8, height:I
     const-string v1, "CropImage"
 
@@ -467,20 +467,20 @@
 
     invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1265
+    .line 1260
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2, v5, v5, v9, v8}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 1269
+    .line 1264
     .local v2, imageRect:Landroid/graphics/Rect;
     move v7, v9
 
-    .line 1270
+    .line 1265
     .local v7, cropWidth:I
     move v6, v8
 
-    .line 1272
+    .line 1267
     .local v6, cropHeight:I
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
@@ -500,7 +500,7 @@
 
     if-eqz v1, :cond_15f
 
-    .line 1273
+    .line 1268
     :cond_69
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
@@ -520,7 +520,7 @@
 
     if-eqz v1, :cond_96
 
-    .line 1274
+    .line 1269
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
     #getter for: Lcom/cooliris/media/CropImage;->mAspectX:I
@@ -537,7 +537,7 @@
 
     if-le v1, v4, :cond_145
 
-    .line 1275
+    .line 1270
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
     #getter for: Lcom/cooliris/media/CropImage;->mAspectY:I
@@ -556,20 +556,20 @@
 
     div-int v6, v1, v4
 
-    .line 1281
+    .line 1276
     :cond_96
     :goto_96
     if-le v6, v8, :cond_156
 
-    .line 1282
+    .line 1277
     mul-int v1, v7, v8
 
     div-int v7, v1, v6
 
-    .line 1283
+    .line 1278
     move v6, v8
 
-    .line 1300
+    .line 1295
     :cond_9d
     :goto_9d
     const-string v1, "CropImage"
@@ -618,7 +618,7 @@
 
     invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1301
+    .line 1296
     const-string v1, "CropImage"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -651,18 +651,18 @@
 
     invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1303
+    .line 1298
     sub-int v1, v9, v7
 
     div-int/lit8 v10, v1, 0x2
 
-    .line 1304
+    .line 1299
     .local v10, x:I
     sub-int v1, v8, v6
 
     div-int/lit8 v11, v1, 0x2
 
-    .line 1306
+    .line 1301
     .local v11, y:I
     new-instance v3, Landroid/graphics/RectF;
 
@@ -680,7 +680,7 @@
 
     invoke-direct {v3, v1, v4, v12, v13}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 1308
+    .line 1303
     .local v3, cropRect:Landroid/graphics/RectF;
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
@@ -691,7 +691,7 @@
 
     if-nez v1, :cond_1a8
 
-    .line 1309
+    .line 1304
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
     iget-object v1, v1, Lcom/cooliris/media/CropImage;->mCrop:Lcom/cooliris/media/HighlightView;
@@ -706,14 +706,14 @@
 
     if-eqz v1, :cond_11e
 
-    .line 1310
+    .line 1305
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
     iget-object v1, v1, Lcom/cooliris/media/CropImage;->mCrop:Lcom/cooliris/media/HighlightView;
 
     iget-object v3, v1, Lcom/cooliris/media/HighlightView;->mCropRect:Landroid/graphics/RectF;
 
-    .line 1315
+    .line 1310
     :cond_11e
     :goto_11e
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->mImageMatrix:Landroid/graphics/Matrix;
@@ -748,7 +748,7 @@
     :cond_137
     invoke-virtual/range {v0 .. v5}, Lcom/cooliris/media/HighlightView;->setup(Landroid/graphics/Matrix;Landroid/graphics/Rect;Landroid/graphics/RectF;ZZ)V
 
-    .line 1316
+    .line 1311
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
     #getter for: Lcom/cooliris/media/CropImage;->mImageView:Lcom/cooliris/media/CropImageView;
@@ -760,7 +760,7 @@
 
     goto/16 :goto_10
 
-    .line 1277
+    .line 1272
     .end local v3           #cropRect:Landroid/graphics/RectF;
     .end local v10           #x:I
     .end local v11           #y:I
@@ -785,21 +785,21 @@
 
     goto/16 :goto_96
 
-    .line 1284
+    .line 1279
     :cond_156
     if-le v7, v9, :cond_9d
 
-    .line 1285
+    .line 1280
     mul-int v1, v6, v9
 
     div-int v6, v1, v7
 
-    .line 1286
+    .line 1281
     move v7, v9
 
     goto/16 :goto_9d
 
-    .line 1289
+    .line 1284
     :cond_15f
     invoke-static {v9, v8}, Ljava/lang/Math;->min(II)I
 
@@ -809,10 +809,10 @@
 
     div-int/lit8 v7, v1, 0x3
 
-    .line 1290
+    .line 1285
     move v6, v7
 
-    .line 1292
+    .line 1287
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
     #getter for: Lcom/cooliris/media/CropImage;->mAspectX:I
@@ -831,7 +831,7 @@
 
     if-eqz v1, :cond_9d
 
-    .line 1293
+    .line 1288
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
     #getter for: Lcom/cooliris/media/CropImage;->mAspectX:I
@@ -848,7 +848,7 @@
 
     if-le v1, v4, :cond_197
 
-    .line 1294
+    .line 1289
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
     #getter for: Lcom/cooliris/media/CropImage;->mAspectY:I
@@ -869,7 +869,7 @@
 
     goto/16 :goto_9d
 
-    .line 1296
+    .line 1291
     :cond_197
     iget-object v1, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
@@ -891,7 +891,7 @@
 
     goto/16 :goto_9d
 
-    .line 1312
+    .line 1307
     .restart local v3       #cropRect:Landroid/graphics/RectF;
     .restart local v10       #x:I
     .restart local v11       #y:I
@@ -910,7 +910,7 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 1321
+    .line 1316
     iget-object v9, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
     #getter for: Lcom/cooliris/media/CropImage;->mBitmap:Landroid/graphics/Bitmap;
@@ -922,11 +922,11 @@
 
     move-object v2, v8
 
-    .line 1342
+    .line 1337
     :goto_a
     return-object v2
 
-    .line 1326
+    .line 1321
     :cond_b
     :try_start_b
     iget-object v9, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
@@ -940,7 +940,7 @@
 
     move-result v7
 
-    .line 1327
+    .line 1322
     .local v7, width:I
     iget-object v9, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
@@ -953,7 +953,7 @@
 
     move-result v4
 
-    .line 1328
+    .line 1323
     .local v4, height:I
     const-wide v9, 0x40fd4c0000000000L
 
@@ -969,11 +969,11 @@
 
     double-to-float v5, v9
 
-    .line 1329
+    .line 1324
     .local v5, scale:F
     iput v5, p0, Lcom/cooliris/media/CropImage$24;->mScale:F
 
-    .line 1332
+    .line 1327
     int-to-float v9, v7
 
     mul-float/2addr v9, v5
@@ -984,7 +984,7 @@
 
     and-int/lit8 v6, v9, -0x2
 
-    .line 1333
+    .line 1328
     .local v6, w:I
     int-to-float v9, v4
 
@@ -994,7 +994,7 @@
 
     move-result v3
 
-    .line 1334
+    .line 1329
     .local v3, h:I
     sget-object v9, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
@@ -1002,13 +1002,13 @@
 
     move-result-object v2
 
-    .line 1335
+    .line 1330
     .local v2, faceBitmap:Landroid/graphics/Bitmap;
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 1336
+    .line 1331
     .local v0, canvas:Landroid/graphics/Canvas;
     int-to-float v9, v6
 
@@ -1024,7 +1024,7 @@
 
     invoke-virtual {v0, v9, v10}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 1337
+    .line 1332
     iget-object v9, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
     #getter for: Lcom/cooliris/media/CropImage;->mBitmap:Landroid/graphics/Bitmap;
@@ -1044,7 +1044,7 @@
 
     goto :goto_a
 
-    .line 1340
+    .line 1335
     .end local v0           #canvas:Landroid/graphics/Canvas;
     .end local v2           #faceBitmap:Landroid/graphics/Bitmap;
     .end local v3           #h:I
@@ -1055,13 +1055,13 @@
     :catch_5e
     move-exception v1
 
-    .line 1341
+    .line 1336
     .local v1, e:Ljava/lang/IllegalArgumentException;
     invoke-virtual {v1}, Ljava/lang/IllegalArgumentException;->printStackTrace()V
 
     move-object v2, v8
 
-    .line 1342
+    .line 1337
     goto :goto_a
 .end method
 
@@ -1071,7 +1071,7 @@
     .registers 6
 
     .prologue
-    .line 1347
+    .line 1342
     iget-object v2, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
     #getter for: Lcom/cooliris/media/CropImage;->mImageView:Lcom/cooliris/media/CropImageView;
@@ -1085,12 +1085,12 @@
 
     iput-object v2, p0, Lcom/cooliris/media/CropImage$24;->mImageMatrix:Landroid/graphics/Matrix;
 
-    .line 1348
+    .line 1343
     invoke-direct {p0}, Lcom/cooliris/media/CropImage$24;->prepareBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 1350
+    .line 1345
     .local v1, faceBitmap:Landroid/graphics/Bitmap;
     const/high16 v2, 0x3f80
 
@@ -1100,7 +1100,7 @@
 
     iput v2, p0, Lcom/cooliris/media/CropImage$24;->mScale:F
 
-    .line 1351
+    .line 1346
     if-eqz v1, :cond_39
 
     iget-object v2, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
@@ -1112,7 +1112,7 @@
 
     if-eqz v2, :cond_39
 
-    .line 1352
+    .line 1347
     new-instance v0, Landroid/media/FaceDetector;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
@@ -1129,7 +1129,7 @@
 
     invoke-direct {v0, v2, v3, v4}, Landroid/media/FaceDetector;-><init>(III)V
 
-    .line 1354
+    .line 1349
     .local v0, detector:Landroid/media/FaceDetector;
     iget-object v2, p0, Lcom/cooliris/media/CropImage$24;->mFaces:[Landroid/media/FaceDetector$Face;
 
@@ -1139,7 +1139,7 @@
 
     iput v2, p0, Lcom/cooliris/media/CropImage$24;->mNumFaces:I
 
-    .line 1357
+    .line 1352
     .end local v0           #detector:Landroid/media/FaceDetector;
     :cond_39
     if-eqz v1, :cond_4a
@@ -1157,10 +1157,10 @@
 
     if-nez v2, :cond_4a
 
-    .line 1358
+    .line 1353
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1361
+    .line 1356
     :cond_4a
     iget-object v2, p0, Lcom/cooliris/media/CropImage$24;->this$0:Lcom/cooliris/media/CropImage;
 
@@ -1175,6 +1175,6 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1387
+    .line 1382
     return-void
 .end method

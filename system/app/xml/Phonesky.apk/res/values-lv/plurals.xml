@@ -5,8 +5,8 @@
         <item quantity="one">%1$d rezultāts</item>
     </plurals>
     <plurals name="notification_updates_available_message">
-        <item quantity="other">Kontam %2$s ir pieejami %1$d atjauninājumi.</item>
-        <item quantity="one">Kontam %2$s ir pieejams %1$d atjauninājums.</item>
+        <item quantity="other">Atrasti %1$d atjauninājumi.</item>
+        <item quantity="one">Atrasts %1$d atjauninājums.</item>
     </plurals>
     <plurals name="plus_one_multiple_global">
         <item quantity="other">%1$s personas atzīmēja šo ar +1.</item>

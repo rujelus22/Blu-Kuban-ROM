@@ -1,122 +1,122 @@
 .class final Lcom/google/android/youtube/app/honeycomb/phone/l;
-.super Ljava/lang/Object;
+.super Lcom/google/android/youtube/app/ui/e;
 .source "SourceFile"
-
-# interfaces
-.implements Lcom/google/android/youtube/core/async/g;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
-
-.field private final b:Ljava/lang/String;
+.field final synthetic a:Lcom/google/android/youtube/app/honeycomb/phone/k;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;Ljava/lang/String;)V
-    .registers 3
+.method constructor <init>(Lcom/google/android/youtube/app/honeycomb/phone/k;Landroid/app/Activity;Lcom/google/android/youtube/core/ui/g;Lcom/google/android/youtube/core/a/a;Lcom/google/android/youtube/core/b/ae;Lcom/google/android/youtube/core/d;Z)V
+    .registers 15
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 356
-    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/l;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+    .line 224
+    iput-object p1, p0, Lcom/google/android/youtube/app/honeycomb/phone/l;->a:Lcom/google/android/youtube/app/honeycomb/phone/k;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v6, 0x1
 
-    .line 357
-    iput-object p2, p0, Lcom/google/android/youtube/app/honeycomb/phone/l;->b:Ljava/lang/String;
+    move-object v0, p0
 
-    .line 358
+    move-object v1, p2
+
+    move-object v2, p3
+
+    move-object v3, p4
+
+    move-object v4, p5
+
+    move-object v5, p6
+
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/youtube/app/ui/e;-><init>(Landroid/app/Activity;Lcom/google/android/youtube/core/ui/g;Lcom/google/android/youtube/core/a/a;Lcom/google/android/youtube/core/b/ae;Lcom/google/android/youtube/core/d;Z)V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Exception;)V
-    .registers 6
+.method public final a(Lcom/google/android/youtube/core/model/Event;I)V
+    .registers 7
     .parameter
     .parameter
 
     .prologue
-    .line 349
-    instance-of v0, p2, Lorg/apache/http/client/HttpResponseException;
-
-    if-eqz v0, :cond_25
-
-    move-object v0, p2
-
-    check-cast v0, Lorg/apache/http/client/HttpResponseException;
-
-    invoke-virtual {v0}, Lorg/apache/http/client/HttpResponseException;->getStatusCode()I
+    .line 228
+    invoke-virtual {p1}, Lcom/google/android/youtube/core/model/Event;->targetIsVideo()Z
 
     move-result v0
 
-    const/16 v1, 0x190
+    if-eqz v0, :cond_2d
 
-    if-ne v0, v1, :cond_25
+    .line 229
+    iget-object v0, p1, Lcom/google/android/youtube/core/model/Event;->targetVideo:Lcom/google/android/youtube/core/model/Video;
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/l;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+    if-eqz v0, :cond_29
 
-    const v1, 0x7f0a0126
+    .line 230
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/l;->a:Lcom/google/android/youtube/app/honeycomb/phone/k;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/l;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
-
-    const/4 v2, 0x1
-
-    invoke-static {v1, v0, v2}, Lcom/google/android/youtube/core/utils/Util;->b(Landroid/content/Context;Ljava/lang/CharSequence;I)V
-
-    :goto_1e
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/l;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;Z)Z
-
-    return-void
-
-    :cond_25
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/l;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
-
-    const/16 v1, 0x3f9
-
-    invoke-virtual {v0, v1}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->removeDialog(I)V
-
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/l;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
-
-    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->c(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;)Lcom/google/android/youtube/core/e;
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/k;->a(Lcom/google/android/youtube/app/honeycomb/phone/k;)Lcom/google/android/youtube/core/Analytics;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Lcom/google/android/youtube/core/e;->b(Ljava/lang/Throwable;)V
+    sget-object v1, Lcom/google/android/youtube/core/Analytics$VideoCategory;->ChannelActivity:Lcom/google/android/youtube/core/Analytics$VideoCategory;
 
-    goto :goto_1e
-.end method
+    invoke-virtual {v0, v1, p2}, Lcom/google/android/youtube/core/Analytics;->a(Lcom/google/android/youtube/core/Analytics$VideoCategory;I)V
 
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 6
-    .parameter
-    .parameter
+    .line 231
+    iget-object v0, p1, Lcom/google/android/youtube/core/model/Event;->action:Lcom/google/android/youtube/core/model/Event$Action;
 
-    .prologue
-    .line 349
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/l;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+    sget-object v1, Lcom/google/android/youtube/core/model/Event$Action;->VIDEO_UPLOADED:Lcom/google/android/youtube/core/model/Event$Action;
 
-    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/l;->b:Ljava/lang/String;
+    if-ne v0, v1, :cond_2a
 
-    const/4 v2, 0x1
+    sget-object v0, Lcom/google/android/youtube/app/m;->c:Lcom/google/android/youtube/core/b/aj;
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/youtube/core/utils/Util;->b(Landroid/content/Context;Ljava/lang/CharSequence;I)V
+    .line 234
+    :goto_1d
+    iget-object v1, p0, Lcom/google/android/youtube/app/honeycomb/phone/l;->a:Lcom/google/android/youtube/app/honeycomb/phone/k;
 
-    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/l;->a:Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;
+    invoke-static {v1}, Lcom/google/android/youtube/app/honeycomb/phone/k;->b(Lcom/google/android/youtube/app/honeycomb/phone/k;)Lcom/google/android/youtube/app/a;
 
-    const/4 v1, 0x0
+    move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;->a(Lcom/google/android/youtube/app/honeycomb/phone/ChannelActivity;Z)Z
+    iget-object v2, p1, Lcom/google/android/youtube/core/model/Event;->target:Ljava/lang/String;
 
+    const/4 v3, 0x0
+
+    invoke-interface {v1, v2, v3, v0}, Lcom/google/android/youtube/app/a;->a(Ljava/lang/String;ZLcom/google/android/youtube/core/b/aj;)V
+
+    .line 239
+    :cond_29
+    :goto_29
     return-void
+
+    .line 231
+    :cond_2a
+    sget-object v0, Lcom/google/android/youtube/app/m;->d:Lcom/google/android/youtube/core/b/aj;
+
+    goto :goto_1d
+
+    .line 237
+    :cond_2d
+    iget-object v0, p0, Lcom/google/android/youtube/app/honeycomb/phone/l;->a:Lcom/google/android/youtube/app/honeycomb/phone/k;
+
+    invoke-static {v0}, Lcom/google/android/youtube/app/honeycomb/phone/k;->b(Lcom/google/android/youtube/app/honeycomb/phone/k;)Lcom/google/android/youtube/app/a;
+
+    move-result-object v0
+
+    iget-object v1, p1, Lcom/google/android/youtube/core/model/Event;->target:Ljava/lang/String;
+
+    invoke-interface {v0, v1}, Lcom/google/android/youtube/app/a;->a(Ljava/lang/String;)V
+
+    goto :goto_29
 .end method

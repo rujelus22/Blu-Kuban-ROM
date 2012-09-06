@@ -12,7 +12,7 @@
     <string name="generic_grant">Χορηγησε</string>
     <string name="generic_deny">Απεκλεισε</string>
     <string name="toast_unknown">Αγνωστο</string>
-    <string name="toast_granted">Απεκτησε</string>
+    <string name="toast_granted">Παραχωρήθηκε</string>
     <string name="toast_denied">Αρνηθηκε</string>
     <string name="toast_package" formatted="false">%s (%s) εχει %s δικαιωματα superuser</string>
     <string name="toast_name" formatted="false">%s εχει %s δικαιωματα superuser</string>
